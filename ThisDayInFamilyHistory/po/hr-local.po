@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"PO-Revision-Date: 2026-04-08 15:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 msgid "This Day in Family History"
 msgstr "Ovaj dan u povijesti obitelji"
@@ -126,11 +126,11 @@ msgstr "%(female_name)s je krštena %(year)s u mjestu %(place)s."
 
 #, python-format
 msgid "%(male_name)s was married in %(year)s at %(place)s."
-msgstr "%(male_name)s je umro %(year)s u mjestu %(place)s."
+msgstr "%(male_name)s je bio oženjen %(year)s u mjestu %(place)s."
 
 #, python-format
 msgid "%(female_name)s was married in %(year)s at %(place)s."
-msgstr "%(female_name)s je umrla %(year)s u mjestu %(place)s."
+msgstr "%(female_name)s je bila udata %(year)s u mjestu %(place)s."
 
 #, python-format
 msgid "%(male_name)s received an annulment in %(year)s at %(place)s."
@@ -242,12 +242,12 @@ msgstr "%(female_name)s je dodijeljena titula %(year)s u mjestu %(place)s."
 #, python-format
 msgid "%(male_name)s was granted a divorce in %(year)s at %(place)s."
 msgstr ""
-"%(male_name)s je dobio dozvolu za razvod braka %(year)s u mjestu %(place)s."
+"%(male_name)s je dobio dozvolu za razvod braka %(year)s. u mjestu %(place)s."
 
 #, python-format
 msgid "%(female_name)s was granted a divorce in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s je dobila dozvolu za razvod braka %(year)s u mjestu "
+"%(female_name)s je dobila dozvolu za razvod braka %(year)s. u mjestu "
 "%(place)s."
 
 #, python-format
@@ -379,11 +379,11 @@ msgstr "%(female_name)s je dobila dogovor o braku %(year)s u mjestu %(place)s."
 
 #, python-format
 msgid "%(male_name)s entered military service in %(year)s at %(place)s."
-msgstr "%(male_name)s je ušao u vojnu službu %(year)s u mjestu %(place)s."
+msgstr "%(male_name)s je počeo vojnu službu %(year)s u mjestu %(place)s."
 
 #, python-format
 msgid "%(female_name)s entered military service in %(year)s at %(place)s."
-msgstr "%(female_name)s je ušala u vojnu službu %(year)s u mjestu %(place)s."
+msgstr "%(female_name)s je počela vojnu službu %(year)s u mjestu %(place)s."
 
 #, python-format
 msgid "%(male_name)s became naturalized in %(year)s at %(place)s."
@@ -411,11 +411,14 @@ msgstr "%(female_name)s je zaređena %(year)s u mjestu %(place)s."
 
 #, python-format
 msgid "%(male_name)s was granted probate in %(year)s at %(place)s."
-msgstr "%(male_name)s je proglasio oporuku %(year)s u mjestu %(place)s."
+msgstr ""
+"%(male_name)s je imenovan izvršiteljem oporuke %(year)s u mjestu %(place)s."
 
 #, python-format
 msgid "%(female_name)s was granted probate in %(year)s at %(place)s."
-msgstr "%(female_name)s je proglasila oporuku %(year)s u mjestu %(place)s."
+msgstr ""
+"%(female_name)s je imenovana izvršiteljicom oporuke %(year)s u mjestu "
+"%(place)s."
 
 #, python-format
 msgid "%(male_name)s retired in %(year)s at %(place)s."

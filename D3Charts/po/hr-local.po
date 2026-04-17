@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-11-15 19:51+0000\n"
+"PO-Revision-Date: 2026-04-08 15:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
@@ -152,7 +152,7 @@ msgid "The number of descendant levels to contract on initial display."
 msgstr "Broj sklopljenih razina potomaka pri prvobitnom prikazu."
 
 msgid "The font size in pixels for each node."
-msgstr "Veličina fonta za svaki čvor."
+msgstr "Veličina fonta za svako čvorište."
 
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Da li prikazati duple rodoslove u izvještaju."
@@ -176,7 +176,7 @@ msgid "RGB-color for non-expandable row background."
 msgstr "RGB boja za pozadinu neproširivog retka."
 
 msgid "Include records marked private"
-msgstr "Uključi zapise, označene kao privatne"
+msgstr "Uključi zapise koji su označeni kao privatni"
 
 msgid "Whether to include private objects."
 msgstr "Da li uključiti privatne objekte."
@@ -197,10 +197,10 @@ msgid "Navigation"
 msgstr "Navigacija"
 
 msgid "Contraction/Expansion mechanism"
-msgstr "Mehanizam za sklapljanje/rasklapanja"
+msgstr "Mehanizam za sklapljanje/rasklapanje"
 
 msgid "Entire node."
-msgstr "Cjelokupno čvorište."
+msgstr "Cijelo čvorište."
 
 msgid "Arrow images at start of node."
 msgstr "Slika strelica na početku čvorišta."

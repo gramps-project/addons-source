@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-11-15 19:51+0000\n"
+"PO-Revision-Date: 2026-04-08 15:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 msgid "PlaceCompletion"
 msgstr "Upotpunjavanje mjesta"
@@ -72,23 +72,23 @@ msgid "Loading lat/lon file in Memory..."
 msgstr "Učitavanje datoteke sa zemljopisnim širinama i dužinama u memoriju …"
 
 msgid "Examining places"
-msgstr "Pregledavanje mjesta"
+msgstr "Ispitivanje mjesta"
 
 msgid "Set Tag"
-msgstr "Postavi etiketu"
+msgstr "Postavi oznaku"
 
 msgid "Doing Place changes"
 msgstr "Mijenjanje mjesta"
 
 msgid "No place record was modified."
-msgstr "Nije promijenjen nijedan zapis za mjesta."
+msgstr "Nije promijenjen nijedan zapis mjesta."
 
 msgid "1 place record was modified."
-msgstr "1 zapis za mjesta je promijenjen."
+msgstr "1 zapis mjesta je promijenjen."
 
 #, python-format
 msgid "%d place records were modified."
-msgstr "%d zapisa za mjesta su promijenjena."
+msgstr "%d zapisa mjesta su promijenjena."
 
 msgid "Change places"
 msgstr "Promijeni mjesta"
@@ -145,7 +145,7 @@ msgstr ""
 "Početak naslova [, grad] [, poštanski broj] [, okrug] [, država] [, zemlja]"
 
 msgid "Don't search"
-msgstr "Bez pretrage"
+msgstr "Nemoj pretraživati"
 
 msgid "GeoNames country file, city search"
 msgstr "GeoNames datoteka zemalja, traženje grada"
@@ -188,7 +188,7 @@ msgid "Apply all suggested changes"
 msgstr "Primijeni sve predložene promjene"
 
 msgid "Selection of the Places you want to complete:"
-msgstr "Odabir mjesta, koja želiš urediti:"
+msgstr "Odabir mjesta koja želiš urediti:"
 
 msgid "Parish:"
 msgstr "Župa:"
@@ -212,7 +212,7 @@ msgid "Height:"
 msgstr "Visina:"
 
 msgid "1. Look up latitude and longitude:"
-msgstr "1. Nađi zemljopisnu širinu i dužinu:"
+msgstr "1. Pronađi zemljopisnu širinu i dužinu:"
 
 msgid "Search in:"
 msgstr "Traži u:"

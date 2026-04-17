@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2026-02-03 10:43+0000\n"
+"PO-Revision-Date: 2026-04-08 15:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,38 +13,38 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 msgid "TR-Title"
-msgstr "TR-Titula"
+msgstr "Izvještaj o zadacima – Naslov"
 
 #, python-format
 msgid "Report on Notes Tagged '%s'"
 msgstr "Izvještaj o zabilješkama s oznakom „%s”"
 
 msgid "TR-Heading"
-msgstr "TR-Naslov"
+msgstr "Izvještaj o zadacima – Naslov"
 
 msgid "NoteTable"
-msgstr "NapomenaTabela"
+msgstr "Tablica napomena"
 
 msgid "TR-Table"
-msgstr "TR-Tabela"
+msgstr "Izvještaj o zadacima – Tablica"
 
 msgid "TR-TableCell"
-msgstr "TR-Stolaćeliju"
+msgstr "Izvještaj o zadacima – Polje tablice"
 
 msgid "TR-Normal-Bold"
-msgstr "TR-Normalni-Odvažan"
+msgstr "Izvještaj o zadacima – Normalno-Podebljano"
 
 msgid "TR-Normal"
-msgstr "TR-Normalni"
+msgstr "Izvještaj o zadacima – Normalno"
 
 msgid "TR-Note"
-msgstr "TR-Bilješka"
+msgstr "Izvještaj o zadacima – Bilješka"
 
 msgid "TR-BorderCell"
-msgstr "TR-Graničnaćelija"
+msgstr "Izvještaj o zadacima – Rub polja"
 
 msgid "date: "
 msgstr "datum: "
@@ -65,10 +65,10 @@ msgid "The style used for the title of the page."
 msgstr "Stil za naslov stranice."
 
 msgid "The basic style used for the table cell display."
-msgstr "Osnovni stil koji se koristi za prikaz ćelija tablice."
+msgstr "Osnovni stil koji se koristi za prikaz polja tablice."
 
 msgid "The basic style used for the table border cell display."
-msgstr "Osnovni stil koji se koristi za prikaz ćelija obruba tablice."
+msgstr "Osnovni stil koji se koristi za prikaz ruba polja tablice."
 
 msgid "The basic style used for the table display."
 msgstr "Osnovni stil koji se koristi za prikaz tablice."
@@ -80,5 +80,5 @@ msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
-"Stvara popis svih zabilježaka sa zadanom oznakom, zajedno sa zapisima na "
-"koje se referenciraju, npr. osobu, obitelj, događaj, itd."
+"Stvara popis svih zabilješki sa zadanom oznakom, zajedno sa zapisima na koje "
+"se referenciraju, npr. osobu, obitelj, događaj, itd."

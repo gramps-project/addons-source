@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2026-03-05 22:10+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"PO-Revision-Date: 2026-04-14 18:01+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -95,6 +95,9 @@ msgstr ""
 "Il file di destinazione %s esiste già.\n"
 "Vuoi sovrascriverlo?"
 
+msgid "Default View"
+msgstr "Vista predefinita"
+
 msgid "Expand All"
 msgstr "Espandi tutto"
 
@@ -113,6 +116,9 @@ msgid "Whether to show duplicate family trees in the report."
 msgstr ""
 "Indica se visualizzare o meno gli alberi familiari duplicati nel resoconto."
 
+msgid "Expanded Row Background Color"
+msgstr "Colore di sfondo della riga espansa"
+
 msgid "Include records marked private"
 msgstr "Includere informazioni marcate come private"
 
@@ -122,8 +128,23 @@ msgstr "Indica se includere oggetti privati."
 msgid "Include Last Name Only"
 msgstr "Includi solo il cognome"
 
+msgid "How to handle living people."
+msgstr "Come trattare persone viventi."
+
+msgid "Whether or not to include people who may have recently died."
+msgstr "Includere o meno persone che possono essere morte di recente."
+
 msgid "Navigation"
 msgstr "Navigazione"
+
+msgid "Contraction/Expansion mechanism"
+msgstr "Meccanismo di Contrazione/Espansione"
+
+msgid "Entire node."
+msgstr "Nodo intero."
+
+msgid "Where to click to expand/contract nodes."
+msgstr "Dove cliccare per espandere/contrarre nodi."
 
 msgid "Auto-generate HREF links for nodes"
 msgstr "Genera automaticamente collegamenti HREF per i nodi"
@@ -137,6 +158,36 @@ msgid "URL prefix to apply to each auto-generated HREF link."
 msgstr ""
 "Prefisso dell'URL da applicare ad ogni collegamento HREF generato "
 "automaticamente."
+
+msgid "No file extension."
+msgstr "Nessuna estensione del file."
+
+msgid ".html"
+msgstr ".html"
+
+msgid ".htm"
+msgstr ".htm"
+
+msgid ".shtml"
+msgstr ".shtml"
+
+msgid ".php"
+msgstr ".php"
+
+msgid ".php3"
+msgstr ".php3"
+
+msgid ".cgi"
+msgstr ".cgi"
+
+msgid "Remove all whitespace."
+msgstr "Rimuovi tutti gli spazi vuoti."
+
+msgid "Replace whitespace with dash(-)."
+msgstr "Sostituisci gli spazi vuoti con il trattino (-)."
+
+msgid "Replace whitespace with underscore(_)"
+msgstr "Sostituisci gli spazi vuoti con l'underscore (_)"
 
 msgid "Generations to generate HREF links"
 msgstr "Generazioni per cui generare collegamenti HREF"
@@ -155,6 +206,9 @@ msgstr "Esclude i coniugi"
 
 msgid "Whether or not to generate links for spouses."
 msgstr "Generare o non generare collegamenti per i coniugi."
+
+msgid "Biography Content"
+msgstr "Contenuto della biografia"
 
 msgid "Text Color"
 msgstr "Colore del testo"

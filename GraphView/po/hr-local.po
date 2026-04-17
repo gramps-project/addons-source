@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-11-15 19:51+0000\n"
+"PO-Revision-Date: 2026-04-08 15:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 msgid "Graph View"
 msgstr "Prikaz dijagrama"
@@ -82,13 +82,13 @@ msgid "Unknown avatar:"
 msgstr "Nepoznat avatar:"
 
 msgid "Choose Unknown avatar"
-msgstr "Odaberi nepoznati avatar"
+msgstr "Odaberi avatar za osobe nepoznatog spola"
 
 msgid "Other avatar:"
-msgstr "Drugi avatari:"
+msgstr "Drugi avatar:"
 
 msgid "Choose Other avatar"
-msgstr "Odaberi drugi avatar"
+msgstr "Odaberi avatar za druge"
 
 msgid "Active person border size"
 msgstr "Veličina ruba aktivne osobe"
@@ -121,7 +121,7 @@ msgid "Show person images"
 msgstr "Prikaži slike osobe"
 
 msgid "Show persons thumbnails in search result list."
-msgstr "Prikaži sličice osobe u popisu rezultata pretrage."
+msgstr "Prikaži minijature osobe u popisu rezultata pretrage."
 
 msgid "Show bookmarked first"
 msgstr "Prikaži najprije označene"
@@ -136,10 +136,10 @@ msgid "Select a dot file name"
 msgstr "Odaberi dot ime datoteke"
 
 msgid "Zoom in"
-msgstr "Uvećaj"
+msgstr "Uvećaj prikaz"
 
 msgid "Zoom out"
-msgstr "Umanji"
+msgstr "Umanji prikaz"
 
 msgid "Zoom to original"
 msgstr "Zumiraj na originalnu veličinu"
@@ -301,11 +301,11 @@ msgstr "O dijagramu srodstva"
 
 #, python-format
 msgid "Adding Tags to person (%s)"
-msgstr "Dodavanje etiketa osobi (%s)"
+msgstr "Dodavanje oznaka osobi (%s)"
 
 #, python-format
 msgid "Adding Tags to family (%s)"
-msgstr "Dodavanje etiketa obitelji (%s)"
+msgstr "Dodavanje oznaka obitelji (%s)"
 
 #, python-format
 msgid "Deleting the person [%s] will remove it from the database."

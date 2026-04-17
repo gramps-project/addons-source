@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2025-12-14 21:00+0000\n"
+"PO-Revision-Date: 2026-04-17 07:09+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 
 msgid "Display relations and distances with the home person"
 msgstr "Zobraziť vzťahy a vzdialenosti s domácou osobou"
@@ -25,6 +25,15 @@ msgstr "Vzťah a vzdialenosti s koreňom"
 
 msgid "Select filter to restrict people"
 msgstr "Vyberte filter na obmedzenie osôb"
+
+msgid "Filter rule"
+msgstr "Pravidlo filtra"
+
+msgid "Select the filter rule"
+msgstr "Výber pravidla filtra"
+
+msgid "Deep generations"
+msgstr "Ďaleké generácie"
 
 msgid "Relation"
 msgstr "Vzťah"
@@ -44,6 +53,18 @@ msgstr "Úroveň"
 msgid "Period"
 msgstr "Obdobie"
 
+msgid "Shared Subtree"
+msgstr "Zdieľaný podstrom"
+
+msgid "Centrality"
+msgstr "Centralita"
+
+msgid "Unique Ancestors"
+msgstr "Jedineční predkovia"
+
+msgid "Surname Diversity"
+msgstr "Rozmanitosť priezvisk"
+
 msgid "Save"
 msgstr "Uložiť"
 
@@ -60,7 +81,7 @@ msgid "Disabled"
 msgstr "Vypnuté"
 
 msgid "Enable or disable family network metrics"
-msgstr "Zapnúť alebo vypnúť  metriky rodinnej siete"
+msgstr "Zapnúť alebo vypnúť metriky rodinnej siete"
 
 msgid "Generating relation map..."
 msgstr "Generovanie mapy vzťahov..."
@@ -74,11 +95,17 @@ msgstr "_Vybrať"
 msgid "Please, select a folder"
 msgstr "Prosím, vyberte priečinok"
 
+msgid "Foldername need"
+msgstr "Názov priečinka je potrebný"
+
 msgid "Foldername will be used for saving the content."
 msgstr "Názov priečinka bude použitý pre ukladanie obsahu."
 
 msgid "Failed to save data."
 msgstr "Údaje sa nepodarilo uložiť."
+
+msgid "Relationships Map and Tab"
+msgstr "Mapa vzťahov a záložka"
 
 msgid "Enable family network metrics"
 msgstr "Zapnúť metriky rodinnej siete"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2026-02-03 10:43+0000\n"
+"PO-Revision-Date: 2026-04-08 15:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 msgid "Hide person"
 msgstr "Sakrij osobu"
@@ -37,7 +37,7 @@ msgid "Life Line Chart"
 msgstr "Linijski dijagram života"
 
 msgid "Zoom in"
-msgstr "Uvećaj"
+msgstr "Uvećaj prikaz"
 
 msgid "Ctrl"
 msgstr "Ctrl"
@@ -46,7 +46,7 @@ msgid "Mouse wheel"
 msgstr "Kotačić miša"
 
 msgid "Zoom out"
-msgstr "Umanji"
+msgstr "Umanji prikaz"
 
 msgid "Zoom to original"
 msgstr "Zumiraj na originalnu veličinu"
@@ -115,8 +115,42 @@ msgstr "Aktiviraj etiketu rođenja."
 msgid "Birth label along path"
 msgstr "Etiketa rođenja uzduž staze"
 
+msgid "The birth label is aligned to the individual line."
+msgstr "Etiketa rođenja poravnata je s individualnom linijom."
+
 msgid "Birth label rotation"
 msgstr "Rotacija etikete rođenja"
+
+msgid "The birth label is written in a text frame rotated by this value."
+msgstr ""
+"Etiketa rođenja ispisana je u tekstualnom okviru koji je okrenut za ovu "
+"vrijednost."
+
+msgid "Horizontal offset of birth label"
+msgstr "Vodoravni odmak etiketa rođenja"
+
+msgid ""
+"The birth label is moved horizontally by this value, which is given "
+"relatively to the font size."
+msgstr ""
+"Etiketa rođenja se pomiče vodoravno za ovu vrijednost, koja je zadana "
+"relativno u odnosu na veličinu fonta."
+
+msgid "Vertical offset of birth label"
+msgstr "Okomiti odmak etiketa rođenja"
+
+msgid ""
+"The birth label is moved vertically by this value, which is given relatively "
+"to the font size."
+msgstr ""
+"Etiketa rođenja se pomiče okomito za ovu vrijednost, koja je zadana "
+"relativno u odnosu na veličinu fonta."
+
+msgid "Wrap words in birth label"
+msgstr "Prelomi riječi u etiketi rođenja"
+
+msgid "The birth label content is wrapped where possible."
+msgstr "Sadržaj etikete rođenja će se prelamati gdje je moguće."
 
 msgid "Birth label anchor"
 msgstr "Sidro etikete rođenja"

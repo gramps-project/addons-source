@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"PO-Revision-Date: 2026-04-08 15:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 msgid "Quilt Chart"
 msgstr "Poplunasti dijagram"
@@ -25,10 +25,10 @@ msgid "Quilt chart"
 msgstr "Poplunasti dijagram"
 
 msgid "Select the name for which you want to see."
-msgstr "Odaberi ime koje želiš vidjeti.."
+msgstr "Odaberi ime koje želiš vidjeti."
 
 msgid "Clear the entry field in the name selection box."
-msgstr "Ukloni unošeno polje u izborniku imena."
+msgstr "Isparzni polje unosa u izborniku imena."
 
 msgid "Nothing is selected"
 msgstr "Ništa nije odabrano"
@@ -58,11 +58,11 @@ msgstr "Postavi kao početnu osobu"
 
 #, python-format
 msgid "Adding Tags to person (%s)"
-msgstr "Dodavanje etiketa osobi (%s)"
+msgstr "Dodavanje oznaka osobi (%s)"
 
 #, python-format
 msgid "Adding Tags to family (%s)"
-msgstr "Dodavanje etiketa obitelji (%s)"
+msgstr "Dodavanje oznaka obitelji (%s)"
 
 msgid "Printing the tree"
 msgstr "Ispis stabla"
@@ -79,13 +79,13 @@ msgstr ""
 "Novi položaj osobe će biti u blizini gornjeg lijevog kuta."
 
 msgid "The path color"
-msgstr "Boja linije"
+msgstr "Boja staze"
 
 msgid "The selected person color"
 msgstr "Boja odabrane osobe"
 
 msgid "The path transparency"
-msgstr "Prozirnost linije"
+msgstr "Prozirnost staze"
 
 msgid "General options"
-msgstr "Opći opcije"
+msgstr "Opće opcije"

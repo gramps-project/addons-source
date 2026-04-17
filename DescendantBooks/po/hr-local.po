@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-08-14 13:01+0000\n"
+"PO-Revision-Date: 2026-04-08 15:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,14 +13,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 msgid "Descendant Book"
 msgstr "Knjiga o potomcima"
 
 msgid "Produces one or more descendant reports based on a supplied query."
 msgstr ""
-"Stvara jedan ili više izvještaja o potomcima, na osnovi dostavljenog upita."
+"Stvara jedan ili više izvještaja o potomcima na osnovi dostavljenog upita."
 
 msgid "Detailed Descendant Book"
 msgstr "Detaljna knjiga o potomcima"
@@ -28,12 +28,12 @@ msgstr "Detaljna knjiga o potomcima"
 msgid ""
 "Produces one or more detailed descendant reports based on a supplied query."
 msgstr ""
-"Stvara jedan ili više detaljnih izvještaja o potomcima, na osnovi "
+"Stvara jedan ili više detaljnih izvještaja o potomcima na osnovi "
 "dostavljenog upita."
 
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
-msgstr "sup. pogledaj %(reference)s : %(spouse)s"
+msgstr "supružnik, pogledaj %(reference)s : %(spouse)s"
 
 #, python-format
 msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
@@ -56,8 +56,7 @@ msgid "{report_count:d}. {name}"
 msgstr "{report_count:d}. {name}"
 
 msgid "Select filter to restrict people that appear in the report"
-msgstr ""
-"Odaberi filtar za ograničavanje osoba, koje će se pojaviti u izvještaju"
+msgstr "Odaberi filtar za ograničavanje osoba koje će se pojaviti u izvještaju"
 
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Da li prikazati duple rodoslove u izvještaju."
@@ -96,7 +95,7 @@ msgstr "Izvještaj, generacija, osoba, ime"
 
 #, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
-msgstr "Vidi Izvještaj: {report}, Generacija: {generation}, Osoba: {person}"
+msgstr "Vidi izvještaj: {report}, Generacija: {generation}, Osoba: {person}"
 
 #, python-format
 msgid "Report appearances for %s"
@@ -160,7 +159,7 @@ msgid " %(value)s%(endnotes)s"
 msgstr " %(value)s%(endnotes)s"
 
 msgid "List children"
-msgstr "Popiši djecu"
+msgstr "Popis djece"
 
 msgid "Add descendant reference in child list"
 msgstr "Dodaj reference potomaka u popisu djece"
@@ -169,19 +168,19 @@ msgid "Include Index of Names"
 msgstr "Uključi indekse imena"
 
 msgid "Whether to include the index of Names at the end of the report."
-msgstr "Da li uključiti index imena na kraju izvještaja."
+msgstr "Da li uključiti indekse imena na kraju izvještaja."
 
 msgid "Include index of Dates"
 msgstr "Uključi indekse datuma"
 
 msgid "Whether to include the index of Dates at the end of the report."
-msgstr "Da li uključiti index datuma na kraju izvještaja."
+msgstr "Da li uključiti indekse datuma na kraju izvještaja."
 
 msgid "Include index of Places"
 msgstr "Uključi indekse mjesta"
 
 msgid "Whether to include the index of Places at the end of the report."
-msgstr "Da li uključiti index mjesta na kraju izvještaja."
+msgstr "Da li uključiti indekse mjesta na kraju izvještaja."
 
 msgid "Include the 'Report appearances' section with each person"
 msgstr "Uključi odjeljak „Izvjesti pojavljivanja” sa svakom osobom"
@@ -197,7 +196,7 @@ msgid "The style used for the children list."
 msgstr "Stil za popis djece."
 
 msgid "The basic style used for Note header."
-msgstr "Osnovni stil za zaglavlje zabilježaka."
+msgstr "Osnovni stil za zaglavlje zabilješke."
 
 msgid "The style used for the first personal entry."
 msgstr "Stil za prvi osobni unos."
@@ -209,7 +208,7 @@ msgid "The style used for additional detail data."
 msgstr "Stil za dodatne detaljne podatke."
 
 msgid "The style used for note detail data."
-msgstr "Stil za detalje podatke zabilježaka."
+msgstr "Stil za podatke detalja zabilješke."
 
 msgid "The style used for the date in the Index of Dates."
 msgstr "Stil za datume u indeksu datuma."

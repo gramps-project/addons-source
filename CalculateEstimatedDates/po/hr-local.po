@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"PO-Revision-Date: 2026-04-08 15:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,13 +13,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 msgid "Select filter to restrict people"
 msgstr "Odaberi filtar za ograničavanje osoba"
 
 msgid "Calculated Date Estimates"
-msgstr "Procijenjeni datumi"
+msgstr "Izračunate procjene datuma"
 
 msgid "Source to remove and/or add"
 msgstr "Izvor koji želiš ukloniti i/ili dodati"
@@ -34,28 +34,28 @@ msgstr ""
 "izvršavanja"
 
 msgid "Do not add birth events"
-msgstr "Ne uključuj rođenja"
+msgstr "Ne uključuj događaje rođenja"
 
 msgid "Add birth events without dates"
-msgstr "Uključi rođenja bez datuma"
+msgstr "Uključi događaje rođenja bez datuma"
 
 msgid "Add birth events with dates"
-msgstr "Uključi rođenja s datumima"
+msgstr "Uključi događaje rođenja s datumima"
 
 msgid "Add a birth events with or without estimated dates"
-msgstr "Uključi rođenja sa ili bez procijenjenih datuma"
+msgstr "Uključi događaje rođenja sa ili bez procijenjenih datuma"
 
 msgid "Do not add death events"
-msgstr "Ne uključuj smrti"
+msgstr "Ne uključuj događaje smrti"
 
 msgid "Add death events without dates"
-msgstr "Uključi smrti bez datuma"
+msgstr "Uključi događaje smrti bez datuma"
 
 msgid "Add death events with dates"
-msgstr "Uključi smrti s datumima"
+msgstr "Uključi događaje smrti s datumima"
 
 msgid "Add death events with or without estimated dates"
-msgstr "Uključi smrti sa ili bez procijenjenih datuma"
+msgstr "Uključi događaje smrti sa ili bez procijenjenih datuma"
 
 msgid "Maximum age"
 msgstr "Najviša životna dob"
@@ -64,7 +64,7 @@ msgid "Maximum age that one can live to"
 msgstr "Najviša moguća životna dob"
 
 msgid "Maximum age difference between siblings"
-msgstr "Najveća starosna razlika između braće i sestara"
+msgstr "Najveća razlika u godinama između braće i sestara"
 
 msgid "Average years between two generations"
 msgstr "Prosječni razmak u godinama između dviju generacija"
@@ -79,7 +79,7 @@ msgid "Extremes (after and before)"
 msgstr "Ekstremi (nakon i prije)"
 
 msgid "Dates on events are either about or after/before"
-msgstr "Datumi u događajima sadrže ili ’oko' ili 'prije/nakon’"
+msgstr "Datumi u događajima sadrže „oko” ili „prije/nakon”"
 
 msgid ""
 "The Calculate Estimated Dates Tool is used to add and remove birth and death "
@@ -119,7 +119,7 @@ msgstr ""
 "događaja), kako bi se dodali svi mogući događaji."
 
 msgid "Calculate Estimated Dates"
-msgstr "Procijeni datume"
+msgstr "Izračunaj procijenjene datume"
 
 msgid "Select All"
 msgstr "Odaberi sve"
@@ -153,7 +153,7 @@ msgid "Are you sure you want to reselect data?"
 msgstr "Zaista želiš ponovo odabrati podatke?"
 
 msgid "Run Select Again"
-msgstr "Odaberi ponovo"
+msgstr "Pokreni ponovno biranje"
 
 msgid "Evidence"
 msgstr "Dokaz"
@@ -178,23 +178,23 @@ msgid ""
 "Selecting... \n"
 "\n"
 msgstr ""
-"Odabiranje … \n"
+"Biranje … \n"
 "\n"
 
 msgid "Add birth and death events"
-msgstr "Uključi rođenja i smrti"
+msgstr "Uključi događaje rođenja i smrti"
 
 msgid "Add birth event"
-msgstr "Uključi rođenja"
+msgstr "Uključi događaj rođenja"
 
 msgid "Add death event"
-msgstr "Uključi smrti"
+msgstr "Uključi događaj smrti"
 
 msgid "No events to be added."
-msgstr "Nema događaja, koji bi se mogli dodati."
+msgstr "Nema događaja koji bi se mogli dodati."
 
 msgid "Selecting... "
-msgstr "Odabiranje … "
+msgstr "Biranje … "
 
 #, python-format
 msgid "Adding events '%s'..."
@@ -202,28 +202,28 @@ msgstr "Dodavanje događaja „%s” …"
 
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
-msgstr "Dodano je rođenje na osnovi %(evidence)s iz %(name)s"
+msgstr "Dodan je događaj rođenja na osnovi %(evidence)s iz %(name)s"
 
 #, python-format
 msgid "Added birth event based on %s"
-msgstr "Dodano je rođenje na osnovi %s"
+msgstr "Dodan je događaj rođenja na osnovi %s"
 
 msgid "Estimated birth date"
 msgstr "Procijenjeni datum rođenja"
 
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
-msgstr "Dodana je smrt na osnovi %(evidence)s, od %(person)s"
+msgstr "Dodan je događaj smrti na osnovi %(evidence)s, od %(person)s"
 
 #, python-format
 msgid "Added death event based on %s"
-msgstr "Dodana je smrt na osnovi %s"
+msgstr "Dodan je događaj smrti na osnovi %s"
 
 msgid "Estimated death date"
 msgstr "Procijenjeni datum smrti"
 
 msgid " Done! Committing..."
-msgstr " Završeno! Primjenjivanje …"
+msgstr " Gotovo! Primjenjivanje …"
 
 #, python-format
 msgid "Added %d events."
@@ -233,4 +233,4 @@ msgid "Estimated date"
 msgstr "Procijenjeni datum"
 
 msgid "Calculates estimated dates for birth and death."
-msgstr "Procjenjuje datume rođenja i smrti."
+msgstr "Izračunava procijenjene datume rođenja i smrti."

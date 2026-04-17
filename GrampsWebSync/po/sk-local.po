@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-11 21:37+0200\n"
-"PO-Revision-Date: 2025-10-14 05:07+0000\n"
+"PO-Revision-Date: 2026-04-17 07:09+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Web Sync"
@@ -99,11 +99,44 @@ msgstr "Stiahnutý súbor XML sa nepodarilo importovať."
 msgid "Comparing local and remote data..."
 msgstr "Porovnávanie miestnych a vzdialených údajov..."
 
+msgid "Server authorization error."
+msgstr "Chyba autorizácie servera."
+
+msgid "Server authorization error: insufficient permissions."
+msgstr "Chyba autorizácie servera: nedostatočné oprávnenia."
+
+msgid "Error: URL not found."
+msgstr "Chyba: Adresa URL sa nenašla."
+
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr "Zmeny sa nedajú synchronizovať so serverom: objekty boli upravené."
 
+#, python-format
+msgid "Error %s while connecting to server."
+msgstr "Chyba %s pri pripájaní k serveru."
+
+msgid "URL error while connecting to server."
+msgstr "Chyba URL pri pripájaní k serveru."
+
 msgid "Unable to synchronize changes to server."
 msgstr "Zmeny sa nedajú synchronizovať so serverom."
+
+msgid "Continue without transport encryption?"
+msgstr "Pokračovať bez šifrovania prenosu?"
+
+msgid ""
+"You have specified a URL with http scheme. If you continue, your password "
+"will be sent in clear text over the network. Use only for local testing!"
+msgstr ""
+"Zadali ste URL so schémou http. Ak budete pokračovať, vaše heslo bude "
+"odoslané cez sieť v nezakódovanej podobe. Používajte len na lokálne "
+"testovanie!"
+
+msgid "Continue with HTTP"
+msgstr "Pokračovať s HTTP"
+
+msgid "Use HTTPS"
+msgstr "Použiť HTTPS"
 
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
@@ -132,8 +165,20 @@ msgstr ""
 "Ak chcete namiesto toho zlúčiť dva výrazne odlišné stromy s možnosťou "
 "vykonať ručné úpravy, použite namiesto toho nástroj na import a zlúčenie."
 
+msgid "Server URL: "
+msgstr "URL servera: "
+
 msgid "Bidirectional Synchronization"
 msgstr "Obojsmerná synchronizácia"
+
+msgid "Reset remote to local"
+msgstr "Obnoviť vzdialené na lokálne"
+
+msgid "Reset local to remote"
+msgstr "Obnoviť lokálne na vzdialené"
+
+msgid "Merge"
+msgstr "Zlúčiť"
 
 msgid "Local changes"
 msgstr "Lokálne zmeny"
@@ -147,16 +192,43 @@ msgstr "Vzdialené zmeny"
 msgid "Simultaneous changes"
 msgstr "Súbežné zmeny"
 
+msgid "Fetching information about media files..."
+msgstr "Načítavanie informácií o mediálnych súboroch..."
+
+msgid "Both trees are the same."
+msgstr "Obidva stromy sú rovnaké."
+
+msgid "Applying changes to local database ..."
+msgstr "Aplikovanie zmien do lokálnej databázy ..."
+
+msgid "No changes to apply to local database."
+msgstr "Žiadne zmeny na aplikovanie do lokálnej databázy."
+
+msgid "Applying changes to remote database ..."
+msgstr "Aplikovanie zmien do vzdialenej databázy ..."
+
+msgid "No changes to apply to remote database."
+msgstr "Žiadne zmeny na aplikovanie do vzdialenej databázy."
+
+msgid "Successfully applied changes to local database."
+msgstr "Zmeny boli úspešne aplikované v lokálnej databáze."
+
+msgid "Missing locally"
+msgstr "Chýbajúce lokálne"
+
+msgid "Missing remotely"
+msgstr "Chýbajúce vzdialene"
+
 #, python-format
 msgid "Downloading %s media file"
 msgid_plural "Downloading %s media files"
-msgstr[0] "Sťahovanie %s súboru"
-msgstr[1] "Sťahovanie %s súborov"
-msgstr[2] "Sťahovanie %s súborov"
+msgstr[0] "Sťahovanie %s mediálneho súboru"
+msgstr[1] "Sťahovanie %s mediálnych súborov"
+msgstr[2] "Sťahovanie %s mediálnych súborov"
 
 #, python-format
 msgid "Uploading %s media file"
 msgid_plural "Uploading %s media files"
-msgstr[0] "Nahrávanie %s súboru"
-msgstr[1] "Nahrávanie %s súborov"
-msgstr[2] "Nahrávanie %s súborov"
+msgstr[0] "Nahrávanie %s mediálneho súboru"
+msgstr[1] "Nahrávanie %s mediálnych súborov"
+msgstr[2] "Nahrávanie %s mediálnych súborov"

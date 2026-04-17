@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2026-04-17 16:23+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
+"addons/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.17.1-dev\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Family Sheet"
+msgstr "Family Sheet"
+
+msgid ""
+"Produces a family sheet showing full information about a person and his/her "
+"partners and children."
+msgstr ""
+"Vytvoří rodinný list se všemi informacemi o osobě jejích partnerech a dětech."
+
+#, python-format
+msgid "\\u2192 %s"
+msgstr "\\u2192 %s"
+
+#, python-format
+msgid "Address (%(date)s): %(location)s"
+msgstr "Adresa (%(date)s): %(location)s"
+
+#, python-format
+msgid "Address: %(location)s"
+msgstr "Adresa: %(location)s"
+
+msgid "Source references:"
+msgstr "Odkazy na zdroje:"
+
+#, python-format
+msgid ", page %s"
+msgstr ", strana %s"
+
+msgid "Notes:"
+msgstr "Poznámky:"
+
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "%(ymd_date)s"
+
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "%(ym_date)s"
+
+#, python-format
+msgid "in %(y_date)s"
+msgstr "%(y_date)s"
+
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "%(placeholder)s"
+
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "%(placeholder)s %(partial)s"
+
+#, python-format
+msgid "in %(place)s"
+msgstr "%(place)s"
+
+msgid "Center person"
+msgstr "Ústřední osoba"
+
+msgid "Print sheets for"
+msgstr "Vytisknout listy pro"
+
+msgid "Center person only"
+msgstr "Pouze ústřední osoba"
+
+msgid "Center person and all descendants"
+msgstr "Ústřední osoba se všemi potomky"
+
+msgid "Whether to include descendants, and which ones."
+msgstr "Zda zahrnout potomky a které."
+
+msgid "Replace first name with call name"
+msgstr "Nahradit křestní jméno volacím jménem"
+
+msgid "Underline call name in first name / add call name to first name"
+msgstr ""
+"Podtrhnout volací jméno v křestním jménu / přidat volací jméno ke křestnímu "
+"jménu"
+
+msgid "Whether to include call name, and how."
+msgstr "Zda zahrnout volací jméno a jak."
+
+msgid "Print placeholders for missing information"
+msgstr "Zobrazit prázdné pole při chybějících udajích"
+
+msgid "The basic style used for the text display"
+msgstr "Základní styl použitý na zobrazení textu"
+
+msgid "The style used for the page key on the top"
+msgstr "Styl použitý pro klávesu stránky nahoře"
+
+msgid "The style used for names"
+msgstr "Styl použitý pro jména"
+
+msgid "The style used for numbers"
+msgstr "Styl použitý pro čísla"
+
+msgid "The style used for footnotes (notes and source references)"
+msgstr "Styl použitý pro poznámky pod čarou (poznámky a odkazy na zdroje)"

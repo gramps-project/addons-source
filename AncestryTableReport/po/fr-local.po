@@ -1,168 +1,92 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-11 20:51+0100\n"
-"PO-Revision-Date: 2026-03-11 21:40+0100\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"PO-Revision-Date: 2026-03-26 16:09+0000\n"
+"Last-Translator: Bruno FORESTIER <bforest76@gmail.com>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
+"addons/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.2\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: Weblate 5.17-dev\n"
 
-#: AncestryTableReport.gpr.py:3
 msgid "Ancestry Table"
 msgstr "Tableau d'ascendance"
 
-#: AncestryTableReport.gpr.py:4
 msgid "Produces a table of ancestry about a person"
 msgstr "Génère le tableau d'ascendance d'un individu"
 
-#: AncestryTableReport.py:133
 #, python-format
 msgid "Person %(name)s is not in the Database"
-msgstr "L'individu %(name)s in'est pas dans la base de données"
+msgstr "L'individu %(name)s n'est pas dans la base de données"
 
-#: AncestryTableReport.py:277
 #, python-format
 msgid "Ancestry Table Report for %(name)s"
 msgstr "Tableau d'ascendance de %(name)s"
 
-#: AncestryTableReport.py:311
 #, python-format
 msgid "Generation %(gen_number)d"
 msgstr "Génération %(gen_number)d"
 
-#: AncestryTableReport.py:360
 #, python-format
 msgid "Number of Ancestors for %(name)s"
 msgstr "Nombre d'ascendants de %(name)s"
 
-#: AncestryTableReport.py:370
 msgid "Generation"
 msgstr "Génération"
 
-#: AncestryTableReport.py:371
-msgid "Ancestors"
-msgstr "Ascendants"
-
-#: AncestryTableReport.py:372
-msgid "Maximum"
-msgstr "Maximum"
-
-#: AncestryTableReport.py:416
-msgid "Total"
-msgstr "Total"
-
-#: AncestryTableReport.py:461
-msgid "Report Options"
-msgstr "Options du rapport"
-
-#: AncestryTableReport.py:463
-msgid "Center Person"
-msgstr "Individu central"
-
-#: AncestryTableReport.py:464
-msgid "The center person for the report"
-msgstr "L'individu central du rapport"
-
-#: AncestryTableReport.py:467
-msgid "Generations"
-msgstr "Générations"
-
-#: AncestryTableReport.py:468
-msgid "The number of generations to include in the report"
-msgstr "Le nombre de générations à inclure dans le rapport"
-
-#: AncestryTableReport.py:471
-msgid "Page break between generations"
-msgstr "Saut de page entre chaque génération"
-
-#: AncestryTableReport.py:472
 msgid "To start a new page after each generation."
-msgstr "Commencer une nouvelle page après chaque génération"
+msgstr "Commencer une nouvelle page après chaque génération."
 
-#: AncestryTableReport.py:475
 msgid "Number of ancestors per generation"
-msgstr "Nombre d'ascendants par génération"
+msgstr "Nombre d'ancêtres par génération"
 
-#: AncestryTableReport.py:476
 msgid "Add a page with tne number of ancestors per generation."
-msgstr "Ajouter une page avec le nombre d'ascendants par génération"
+msgstr "Ajouter une page avec le nombre d'ascendants par génération."
 
-#: AncestryTableReport.py:485
-msgid "Report Options (2)"
-msgstr "Options du rapport (2)"
-
-#: AncestryTableReport.py:495
 msgid "Mask the name of the calendar in the dates"
 msgstr "Masquer le nom du calendrier dans les dates"
 
-#: AncestryTableReport.py:496
 msgid ""
 "By default, except for gregorian dates, Gramps shows the name of the "
 "calendar in the dates."
 msgstr ""
 "Par défaut, sauf pour les dates du calendrier grégorien, Gramps affiche le "
-"nom du calendrier dans les dates"
+"nom du calendrier dans les dates."
 
-#: AncestryTableReport.py:519
 msgid "The style used for the title of the report."
-msgstr "Style utilisé pour le titre du rapport"
+msgstr "Le style utilisé pour le titre du rapport."
 
-#: AncestryTableReport.py:530
-msgid "The style used for the generation header."
-msgstr "Le style utilisé pour la génération."
-
-#: AncestryTableReport.py:541
 msgid "The style used for the Sosa number of the paternal branch."
-msgstr "Style utilisé pour le numéro Sosa de la branche paternelle"
+msgstr "Style utilisé pour le numéro Sosa de la branche paternelle."
 
-#: AncestryTableReport.py:552
 msgid "The style used for the Sosa number of the maternal branch."
-msgstr "Style utilisé pour le numéro Sosa de la branche maternelle"
+msgstr "Style utilisé pour le numéro Sosa de la branche maternelle."
 
-#: AncestryTableReport.py:562
 msgid "The style used for the data of the males."
-msgstr "Le style utilisé pour les hommes."
+msgstr "Style utilisé pour les hommes."
 
-#: AncestryTableReport.py:572
 msgid "The style used for the data of the females."
-msgstr "Style utilisé pour les femmes"
+msgstr "Style utilisé pour les femmes."
 
-#: AncestryTableReport.py:583
 msgid "The style used for the marriage."
-msgstr "Style utilisé pour le mariage"
+msgstr "Style utilisé pour le mariage."
 
-#: AncestryTableReport.py:593
-msgid ""
-"The style used for an empty row.\n"
-"To enlarge the height of the empty row, just increse the size of the police."
-msgstr ""
-"Style utilisé pour une ligne vide\n"
-"Pour accroître la hauteur de la ligne vide, augmenter la taille de la police"
-
-#: AncestryTableReport.py:632
 msgid ""
 "The style used for the header table of the number of ancestors per "
 "generation."
 msgstr ""
-"Style utilisé pour l'en-tête du total du nombre d'ascendants par génération"
+"Style utilisé pour l'en-tête du tableau du nombre d'ascendants par "
+"génération."
 
-#: AncestryTableReport.py:643
 msgid "The style used for the number of ancestors per generation."
-msgstr "Style utilisé pour le nombre d'ascendants par génération"
+msgstr "Style utilisé pour le nombre d'ascendants par génération."
 
-#: AncestryTableReport.py:654
 msgid ""
 "The style used for the total line of the number of ancestors per generation."
 msgstr ""
-"Style utilisé pour la ligne du total du nombre d'ascendants par génération"
+"Style utilisé pour la ligne du total du nombre d'ascendants par génération."

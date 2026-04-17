@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2026-02-03 10:43+0000\n"
+"PO-Revision-Date: 2026-04-08 15:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,11 +13,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 msgid "The place was not found. You may clarify the search keywords."
 msgstr ""
 "Mjesto nije pronađeno. Možeš pojasniti ključne riječi za pretraživanje."
+
+msgid "Failed to search for the coordinates due to some unexpected error."
+msgstr "Neuspjelo pretraživanje koordinata zbog neočekivane greške."
 
 msgid "The place was not found."
 msgstr "Mjesto nije pronađeno."
@@ -27,6 +30,9 @@ msgstr "Mjesto nije identificirano."
 
 msgid "Coordinates were not given."
 msgstr "Koordinate nisu zadane."
+
+msgid "Failed to interpret the input format."
+msgstr "Neuspjelo tumačenje formata unosa."
 
 #, python-brace-format
 msgid "DB entry [{id}] {name}:"
@@ -39,7 +45,7 @@ msgid "No place is active"
 msgstr "Nijedno mjesto nije aktivno"
 
 msgid "Place Coordinate Gramplet view"
-msgstr "Koordinate mjesta"
+msgstr "Prikaz grampleta za koordinate mjesta"
 
 msgid "View for the place coordinate gramplet."
 msgstr "Prikaz grampleta za koordinate mjesta."
@@ -57,7 +63,7 @@ msgid "Place Coordinate Gramplet"
 msgstr "Koordinate mjesta – Gramplet"
 
 msgid "Map Menu"
-msgstr "Izbornik za kartu"
+msgstr "Izbornik karte"
 
 msgid "Add city as place"
 msgstr "Dodaj grad kao mjesto"
@@ -88,10 +94,10 @@ msgstr ""
 "na karti u prikazu „Kartografija”"
 
 msgid "Search location from DB"
-msgstr "Traži lokaciju iz baze podataka"
+msgstr "Traži mjesto iz baze podataka"
 
 msgid "Apply geo location to Database"
-msgstr "Primijeni geopodatke lokacije na bazu podataka"
+msgstr "Primijeni geopodatke mjesta na bazu podataka"
 
 msgid "Go"
 msgstr "Idi"

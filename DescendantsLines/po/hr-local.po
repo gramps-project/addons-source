@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-09-28 12:02+0000\n"
+"PO-Revision-Date: 2026-04-08 15:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 msgid "Descendants Lines"
 msgstr "Linije potomaka"
@@ -46,7 +46,7 @@ msgid "The destination file for the content."
 msgstr "Odredišna datoteka za sadržaj."
 
 msgid "The number of generations to include in the chart. (0 for unlimited)"
-msgstr "Broj generacija koje se uključuju u dijagram. (0 = neograničeno)"
+msgstr "Broj generacija koje se uključuju u dijagram. (0 za neograničeno)"
 
 msgid "Use d'Aboville descendant numbering system"
 msgstr "Koristi d'Aboville sistem brojenja potomaka"
@@ -73,7 +73,7 @@ msgid "Maximum image width in pixels, 0=don't scale for width."
 msgstr "Maksimalna širina slike u pixelima, 0 = ne skaliraj za širinu."
 
 msgid "Image Location"
-msgstr "Položaj slike"
+msgstr "Mjesto slike"
 
 msgid "Above text"
 msgstr "Iznad teksta"
@@ -82,16 +82,16 @@ msgid "Left of text"
 msgstr "Lijevo od teksta"
 
 msgid "Position of image relative to text"
-msgstr "Položaj slike, relativan u odnosu na tekst"
+msgstr "Mjesto slike, relativno u odnosu na tekst"
 
 msgid "Colour Name by Gender"
 msgstr "Oboji imena prema spolu"
 
 msgid "Color the name to indicate a person's gender in the chart."
-msgstr "Oboji ime, za označavanje spola u dijagramu."
+msgstr "Oboji ime za označavanje spola u dijagramu."
 
 msgid "Use alternate events, if Primary event is not found"
-msgstr "Koristi alternativne događaje, ako primarni događaj nije nađen"
+msgstr "Koristi alternativne događaje, ako primarni događaj nije pronađen"
 
 msgid ""
 "For Birth (baptism, christen)\n"
@@ -105,11 +105,11 @@ msgstr ""
 "   Smrt (pokop, kremiranje, objava)."
 
 msgid "Sort Events by Date"
-msgstr "Razvrsatj događaje po datumu"
+msgstr "Razvrstaj događaje po datumu"
 
 msgid "Sort events by date (else use the order of the 'Display Format' above)."
 msgstr ""
-"Razvrsatj događaje po datumu (inače koristi raspored, kao u gornjem formatu "
+"Razvrstaj događaje po datumu (inače koristi raspored, kao u gornjem formatu "
 "prikaza)."
 
 msgid "Text style"
@@ -333,7 +333,7 @@ msgstr ""
 "Postavke za privatnost se provjeravaju samo za ove vrste Gramps objekata"
 
 msgid "Privacy text"
-msgstr "Tekst za privatne"
+msgstr "Tekst za privatnost"
 
 msgid "Text to display in block, when a Person is marked private"
 msgstr "Tekst prikazan u bloku osobe, označene kao privatne"

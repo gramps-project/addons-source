@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-31 08:46+0200\n"
-"PO-Revision-Date: 2026-03-17 06:11+0000\n"
+"PO-Revision-Date: 2026-04-13 09:10+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -14,20 +14,18 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.17-dev\n"
 
-#: TMGimporter/libtmg.py:2324 TMGimporter/libtmg.py:2357
-#: TMGimporter/libtmg.py:2439 TMGimporter/libtmg.py:2466
-#, fuzzy
 msgid "TMG import failed"
-msgstr "Importador TMG"
+msgstr "A importação TMG falhou"
 
-#: TMGimporter/libtmg.py:2325
 msgid ""
 "The current Family Tree is not empty.\n"
 "\n"
 "Please create a new empty Family Tree before importing a TMG backup file."
 msgstr ""
+"A árvore de família actual não está vazia.\n"
+"\n"
+"Por favor, crie uma árvore vazia antes de importar uma salvaguarda do TMG."
 
-#: TMGimporter/libtmg.py:2358
 msgid ""
 "The TMG backup file could not be read: PJC version information is missing or "
 "unreadable.\n"
@@ -35,13 +33,15 @@ msgid ""
 "Please ensure you are using a backup created by TMG 9.02 or later "
 "(PjcVersion >= 11.0)."
 msgstr ""
+"Foi impossível ler a salvaguarda do TMG: a informação de versão PJC está em "
+"falta ou ilegível.\n"
+"\n"
+"Por favor, assegure-se de que está a usar uma salvaguarda do TMG 9.02 ou "
+"posterior (versão PJC maior ou igual que 11.0)."
 
-#: TMGimporter/libtmg.py:2370
-#, fuzzy
 msgid "TMG version not supported"
-msgstr "TMG não suportado"
+msgstr "Versão TMG não suportada"
 
-#: TMGimporter/libtmg.py:2371
 #, python-format
 msgid ""
 "This backup was created with an older version of TMG (PjcVersion %(ver)s, "
@@ -53,15 +53,24 @@ msgid ""
 "See: https://gramps-project.org/wiki/index.php/"
 "Addon:TMGimporter#Before_Import_From_TMG_Backup_file"
 msgstr ""
+"Esta salvaguarda foi criada com uma versão mais antiga do TMG (versão PJC "
+"%(ver)s, equivalente ao TMG 9.01 ou anterior).\n"
+"\n"
+"Por favor, actualize o seu projeto TMG para a versão 9.05, crie uma "
+"salvaguarda e, em seguida, importe-o novamente.\n"
+"\n"
+"Veja: https://gramps-project.org/wiki/index.php/"
+"Addon:TMGimporter#Before_Import_From_TMG_Backup_file"
 
-#: TMGimporter/libtmg.py:2440
 msgid ""
 "No datasets were found in this TMG backup file.\n"
 "\n"
 "The backup may be corrupt or empty."
 msgstr ""
+"Não foram encontrados conjuntos de dados nesta salvaguarda TMG.\n"
+"\n"
+"A salvaguarda pode estar corrompida ou vazia."
 
-#: TMGimporter/libtmg.py:2467
 #, python-format
 msgid ""
 "%(filename)s does not appear to be a valid TMG backup file.\n"
@@ -71,80 +80,14 @@ msgid ""
 "\n"
 "Ensure the file was created by TMG version 5.x or later."
 msgstr ""
+"%(filename)s não parece ser uma salvaguarda válida do TMG.\n"
+"\n"
+"O ficheiro deve ser um arquivo de salvaguarda do TMG (*.SQZ) contendo um "
+"ficheiro de configuração do projecto (.PJC).\n"
+"\n"
+"Certifique-se de que o ficheiro foi criado pela versão 5.x ou posterior do "
+"TMG."
 
-#: TMGimporter/libtmg.py:2636
-#, python-format
-msgid "Could not create media directory %s"
-msgstr ""
-
-#: TMGimporter/libtmg.py:2640
-#, python-format
-msgid "Media directory %s is not writable"
-msgstr ""
-
-#: TMGimporter/libtmg.py:2646
-#, python-format
-msgid ""
-"Media directory %s exists. Delete it first, then restart the import process"
-msgstr ""
-
-#: TMGimporter/libtmg.py:2662
-#, python-format
-msgid "Error extracting into %s"
-msgstr ""
-
-#: TMGimporter/libtmg.py:2673
-msgid "Base path for relative media set"
-msgstr ""
-
-#: TMGimporter/libtmg.py:2674
-#, python-format
-msgid ""
-"The base media path of this Family Tree has been set to %s. Consider taking "
-"a simpler path. You can change this in the Preferences, while moving your "
-"media files to the new position, and using the media manager tool, option "
-"'Replace substring in the path' to set correct paths in your media objects."
-msgstr ""
-
-#: TMGimporter/libtmg.py:2682
-msgid "Cannot set base media path"
-msgstr ""
-
-#: TMGimporter/libtmg.py:2683
-#, python-format
-msgid ""
-"The Family Tree you imported into already has a base media path: "
-"%(orig_path)s. The imported media objects however are relative from the path "
-"%(path)s. You can change the media path in the Preferences or you can "
-"convert the imported files to the existing base media path. You can do that "
-"by moving your media files to the new position, and using the media manager "
-"tool, option 'Replace substring in the path' to set correct paths in your "
-"media objects."
-msgstr ""
-
-#: TMGimporter/libtmg.py:2709 TMGimporter/libtmg.py:2734
-msgid "Database Information"
-msgstr ""
-
-#: TMGimporter/libtmg.py:2711
-msgid "_OK"
-msgstr ""
-
-#: TMGimporter/libtmg.py:2717
-msgid "Setting"
-msgstr ""
-
-#: TMGimporter/libtmg.py:2718
-msgid "Value"
-msgstr ""
-
-#: TMGimporter/importtmg.py:83 TMGimporter/importtmg.py:104
-#: TMGimporter/importtmg.py:125
-#, python-format
-msgid "%s could not be opened"
-msgstr ""
-
-#: TMGimporter/importtmg.py:84
 #, python-format
 msgid ""
 "Directly importing from TMG files is not supported\n"
@@ -175,7 +118,6 @@ msgstr ""
 "Por favor, consulte:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 
-#: TMGimporter/importtmg.py:105
 #, python-format
 msgid ""
 "Directly importing from TMG files is not supportedby the TMG Importer "
@@ -190,7 +132,6 @@ msgstr ""
 "*.TMG - ficheiro de controlo de versão para TMG 2.0 a TMG 4.0d. Por favor, "
 "consulte: %(gramps_wiki_import_pjc_direct_url)s"
 
-#: TMGimporter/importtmg.py:126
 #, python-format
 msgid ""
 "Directly importing from TMG files is not supportedby the TMG Importer "
@@ -205,29 +146,21 @@ msgstr ""
 "*.VER - ficheiro de controlo de versão para TMG 1.2 e anteriores. Por favor, "
 "consulte: %(gramps_wiki_import_pjc_direct_url)s"
 
-#: TMGimporter/importtmg.gpr.py:45
 msgid "TMG Project Backup"
 msgstr "Salvaguarda de projecto TMG"
 
-#: TMGimporter/importtmg.gpr.py:46 TMGimporter/importtmg.gpr.py:67
-#: TMGimporter/importtmg.gpr.py:82 TMGimporter/importtmg.gpr.py:97
 msgid "Import TMG project files"
 msgstr "Importar ficheiros de projecto TMG"
 
-#: TMGimporter/importtmg.gpr.py:66 TMGimporter/importtmg.gpr.py:81
-#: TMGimporter/importtmg.gpr.py:96
 msgid "TMG Unsupported"
 msgstr "TMG não suportado"
 
-#: TMGimporter/libtmg.glade:15
 msgid "TMG Importer"
 msgstr "Importador TMG"
 
-#: TMGimporter/libtmg.glade:31
 msgid "Unreleased Addon - Work In Progress"
 msgstr "Extensão não lançada - Trabalho em curso"
 
-#: TMGimporter/libtmg.glade:51
 msgid ""
 "Wholly Genes - The Master Genealogist (TMG) Importer\n"
 "\n"
@@ -237,14 +170,8 @@ msgstr ""
 "\n"
 "Seleccione o conjunto de dados TMG que deseja importar."
 
-#: TMGimporter/libtmg.glade:77
-msgid "ID"
-msgstr ""
-
-#: TMGimporter/libtmg.glade:88
 msgid "Data Set Name"
 msgstr "Nome do conjunto de dados"
 
-#: TMGimporter/libtmg.glade:148
 msgid "_Import TMG Data Set"
 msgstr "_Importar conjunto de dados TMG"

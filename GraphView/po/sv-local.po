@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-11-11 10:51+0000\n"
+"PO-Revision-Date: 2026-04-07 13:46+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 msgid "Graph View"
 msgstr "Diagramvy"
@@ -125,6 +125,9 @@ msgstr "Visa miniatyrbilder av personer i sökresultatlistan."
 msgid "Show bookmarked first"
 msgstr "Visa bokmärkt först"
 
+msgid "Show bookmarked persons first in search result list."
+msgstr "Visa bokmärkta personer först i sökresultatlistan."
+
 msgid "Search"
 msgstr "Sök"
 
@@ -149,6 +152,15 @@ msgstr "Gå till aktiv person"
 msgid "Go to bookmark"
 msgstr "Gå till bokmärke"
 
+msgid "Center view on selected bookmark"
+msgstr "Centrera vyn på valt bokmärke"
+
+msgid "Bookmarks for current graph"
+msgstr "Bokmärken för aktuell graf"
+
+msgid "Other Bookmarks"
+msgstr "Andra bokmärken"
+
 msgid "Ancestor generations"
 msgstr "Förfädersgenerationer"
 
@@ -163,6 +175,16 @@ msgstr "Horisontellt avstånd mellan generationer"
 
 msgid "Spacings"
 msgstr "Mellanrum"
+
+msgid "All connected"
+msgstr "Alla anslutna"
+
+msgid ""
+"Show all connected persons limited by generation restrictions.\n"
+"Works slow, so don't set large generation values."
+msgstr ""
+"Visa alla anslutna personer begränsade av generationsbegränsningar\n"
+"Fungerar långsamt, så ange inte stora genereringsvärden."
 
 msgid "Add active person"
 msgstr "Lägg till aktiv person"

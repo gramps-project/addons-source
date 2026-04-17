@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-11-15 19:51+0000\n"
+"PO-Revision-Date: 2026-04-08 15:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 msgid "People related to <filter>"
 msgstr "Osobe u srodstvu s <filtrom>"
@@ -35,8 +35,14 @@ msgstr "Izvor odgovara parametrima"
 msgid "Matches Sources with values containing the chosen parameters"
 msgstr "Pronalazi izvore s vrijednostima koje sadrže odabrane parametre"
 
+msgid "People with multiple parent records"
+msgstr "Osobe s višestrukim roditeljskim zapisa"
+
 msgid "Matches people who have more than one set of parents"
 msgstr "Odgovara osobama koje imaju više od jednog para roditelja"
+
+msgid "Match associations of <person filter>"
+msgstr "Poklopi veze od <filtar osobe>"
 
 msgid "Does NOT match with selected Role"
 msgstr "NE podudara se s odabranom ulogom"
@@ -60,16 +66,16 @@ msgid "Matches families with an event with a selected role"
 msgstr "Pronalazi obitelji s događajima s odabranom ulogom"
 
 msgid "Events of families matching a <family filter>"
-msgstr "Događaji obitelji koje odgovaraju <filtru za obitelji>"
+msgstr "Događaji obitelji koje odgovaraju <filtru obitelji>"
 
 msgid "Families matching <event filter>"
-msgstr "Obitelji koje odgavaraju <filtru za događaje>"
+msgstr "Obitelji koje odgavaraju <filtru događaja>"
 
 msgid "Matches families that are matched by an event filter"
-msgstr "Pronalazi obitelji koje odgovaraju filtru za događaje"
+msgstr "Pronalazi obitelji koje odgovaraju filtru događaja"
 
 msgid "Matches families matched by an event filter"
-msgstr "Pronalazi obitelji koje odgovaraju filtru za događaje"
+msgstr "Pronalazi obitelji koje odgovaraju filtru događaja"
 
 msgid "Number of degrees of separation from person."
 msgstr "Broj stupnjeva razdvajanja od osobe."
@@ -79,6 +85,9 @@ msgstr "Stupnjevi:"
 
 msgid "People with <count> of <event>"
 msgstr "Osobe s <brojem> <događaja>"
+
+msgid "Matches persons which have events of given type and number."
+msgstr "Odgovara osobama koje imaju događaje zadane vrste i broja."
 
 msgid "Include Children"
 msgstr "Uključi djecu"
@@ -93,7 +102,7 @@ msgid "Include the parents in the matching families."
 msgstr "Uključi roditelje u pronađenim obiteljima."
 
 msgid "Family Filter name:"
-msgstr "Ime filtra za obitelji:"
+msgstr "Ime filtra obitelji:"
 
 msgid "People who are part of families matching <filter>"
 msgstr "Osobe koje su dio obitelji koje odgovaraju <filtru>"

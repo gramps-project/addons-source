@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-09-30 08:02+0000\n"
+"PO-Revision-Date: 2026-04-17 07:09+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 
 msgid "Graph View"
 msgstr "Grafický pohľad"
@@ -47,14 +47,56 @@ msgstr "Vodorovne: sprava doľava"
 msgid "Time Direction"
 msgstr "Časový smer"
 
+msgid "Limit number of people displayed (use 0 for unlimited)"
+msgstr "Obmedziť počet zobrazených osôb (pre neobmedzený počet zadajte 0)"
+
 msgid "Person theme"
 msgstr "Téma osoby"
 
 msgid "Path color to home person"
 msgstr "Farba cesty k domovskej osobe"
 
+msgid "Font:"
+msgstr "Písmo:"
+
+msgid "Avatars style"
+msgstr "Štýl avatarov"
+
+msgid "PNG files"
+msgstr "Súbory PNG"
+
+msgid "Male avatar:"
+msgstr "Avatar muža:"
+
+msgid "Choose male avatar"
+msgstr "Vybrať avatar muža"
+
+msgid "Female avatar:"
+msgstr "Avatar ženy:"
+
+msgid "Choose female avatar"
+msgstr "Vybrať avatar ženy"
+
+msgid "Unknown avatar:"
+msgstr "Avatar neznámej osoby:"
+
+msgid "Choose Unknown avatar"
+msgstr "Vybrať avatar neznámej osoby"
+
+msgid "Other avatar:"
+msgstr "Avatar inej osoby:"
+
+msgid "Choose Other avatar"
+msgstr "Vybrať avatar inej osoby"
+
 msgid "Active person border size"
 msgstr "Veľkosť ohraničenia aktívnej osoby"
+
+msgid "Person border size"
+msgstr "Veľkosť ohraničenia osoby"
+
+msgid "Themes"
+msgstr "Témy"
 
 msgid "Show animation"
 msgstr "Zobraziť animáciu"
@@ -62,17 +104,32 @@ msgstr "Zobraziť animáciu"
 msgid "Animation speed (1..5 and 5 is the slower)"
 msgstr "Rýchlosť animácie (1..5 a 5 je najpomalšia)"
 
+msgid "Animation count (0..8 use 0 to turn off)"
+msgstr "Počet animácií (0..8, použite 0 na vypnutie)"
+
 msgid "Animation"
 msgstr "Animácia"
 
+msgid "Search in all database"
+msgstr "Vyhľadávať v celej databáze"
+
+msgid "Also apply search by all database."
+msgstr "Použije tiež vyhľadávanie po celej databáze."
+
 msgid "Show person images"
-msgstr "Zobraziť osobné obrázky"
+msgstr "Zobraziť obrázky osôb"
+
+msgid "Show persons thumbnails in search result list."
+msgstr "Zobrazí miniatúry osôb v zozname výsledkov vyhľadávania."
+
+msgid "Show bookmarked first"
+msgstr "Zobraziť najskôr osoby v záložkách"
+
+msgid "Show bookmarked persons first in search result list."
+msgstr "Zobrazí osoby v záložkách ako prvé v zozname výsledkov vyhľadávania."
 
 msgid "Search"
 msgstr "Hľadanie"
-
-msgid "Select a dot file name"
-msgstr "Vyberte názov dot súboru"
 
 msgid "Zoom in"
 msgstr "Priblížiť"
@@ -81,16 +138,22 @@ msgid "Zoom out"
 msgstr "Oddialiť"
 
 msgid "Zoom to original"
-msgstr "Pôvodné priblíženie"
+msgstr "Zväčšiť na originálnu veľkosť"
 
 msgid "Zoom to best fit"
-msgstr "Prispôsobiť priblíženie obsahu"
+msgstr "Zväčšiť na optimálnu veľkosť"
 
 msgid "Go to active person"
 msgstr "Prejsť na aktívnu osobu"
 
 msgid "Go to bookmark"
 msgstr "Prejsť na záložku"
+
+msgid "Center view on selected bookmark"
+msgstr "Vycentrovať zobrazenie na vybranú záložku"
+
+msgid "Bookmarks for current graph"
+msgstr "Záložky pre aktuálny graf"
 
 msgid "Other Bookmarks"
 msgstr "Ďalšie záložky"
@@ -107,14 +170,80 @@ msgstr "Vertikálne rozostupy medzi generáciami"
 msgid "Horizontal spacing between generations"
 msgstr "Horizontálne rozostupy medzi generáciami"
 
+msgid "Spacings"
+msgstr "Rozostupy"
+
+msgid "All connected"
+msgstr "Všetky prepojené"
+
+msgid ""
+"Show all connected persons limited by generation restrictions.\n"
+"Works slow, so don't set large generation values."
+msgstr ""
+"Zobrazí všetky prepojené osoby s ohľadom na obmedzenia generácií.\n"
+"Funguje pomaly, preto nenastavujte veľké hodnoty generácií."
+
 msgid "Add active person"
 msgstr "Pridať aktívnu osobu"
+
+msgid "Call the bookmark editor"
+msgstr "Vyvolať editor záložiek"
+
+msgid ""
+"You don't have any bookmarks yet...\n"
+"Try to add some frequently used persons to speedup navigation."
+msgstr ""
+"Ešte nemáte žiadne záložky...\n"
+"Skúste pridať niektoré často používané osoby, aby ste urýchlili navigáciu."
+
+msgid "No bookmarks for this graph..."
+msgstr "Žiadne záložky pre tento graf..."
 
 msgid "No other bookmarks..."
 msgstr "Žiadne iné záložky..."
 
+#, python-format
+msgid "found: %s"
+msgstr "nájdené: %s"
+
+#, python-format
+msgid ""
+"Add active person to bookmarks\n"
+"%s"
+msgstr ""
+"Pridať aktívnu osobu do záložiek\n"
+"%s"
+
+#, python-format
+msgid ""
+"Person <b><i>%s</i></b> is not in the current view.\n"
+"Do you want to set it active and rebuild view?"
+msgstr ""
+"Osoba <b><i>%s</i></b> nie je v aktuálnom zobrazení.\n"
+"Chcete ju nastaviť ako aktívnu a prebudovať zobrazenie?"
+
 msgid "Change active person?"
 msgstr "Zmeniť aktívnu osobu?"
+
+#, python-brace-format
+msgid ""
+"This graph would contain at least {people_count} people, which exceeds the "
+"limit of {people_limit} people. For performance reasons, at least "
+"{people_missing} people won't be shown. You can change this limit in the "
+"view configuration."
+msgstr ""
+"Tento graf by obsahoval najmenej {people_count} osôb, čo presahuje limit "
+"{people_limit} osôb. Z dôvodu výkonu sa najmenej {people_missing} osôb "
+"nezobrazí. Tento limit môžete zmeniť v konfigurácii zobrazenia."
+
+msgid "Incomplete graph"
+msgstr "Neúplný graf"
+
+msgid "Image on right side"
+msgstr "Obrázok na pravej strane"
+
+msgid "Image on left side"
+msgstr "Obrázok na ľavej strane"
 
 #, python-format
 msgid "%s "
@@ -125,6 +254,15 @@ msgstr "<b>Značky:</b>"
 
 msgid "Lines type"
 msgstr "Typ čiar"
+
+msgid "Direct"
+msgstr "Priame"
+
+msgid "Curves"
+msgstr "Krivky"
+
+msgid "Ortho"
+msgstr "Pravoúhlé"
 
 msgid "Copy"
 msgstr "Kopírovať"
@@ -194,8 +332,17 @@ msgstr "Vymazať rodinu [%s]"
 msgid "Dynamic and interactive graph of relations"
 msgstr "Dynamický a interaktívny graf vzťahov"
 
+msgid "Dark (default)"
+msgstr "Tmavá (predvolená)"
+
 msgid "Light"
 msgstr "Svetlá"
+
+msgid "Cartoon"
+msgstr "Kreslená"
+
+msgid "Modern"
+msgstr "Moderná"
 
 msgid "Persons from current graph"
 msgstr "Osoby z aktuálneho grafu"

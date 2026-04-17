@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-04-06 09:03+0000\n"
+"PO-Revision-Date: 2026-04-17 07:09+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
@@ -36,25 +36,25 @@ msgid "Male Background Color"
 msgstr "Pozadie pre mužov"
 
 msgid "RGB-color for male box background."
-msgstr "RGB-farba pre pozadie kolónky pre mužov."
+msgstr "RGB-farba pre pozadie rámika pre mužov."
 
 msgid "Male Expandable Background Color"
 msgstr "Farba rozbaľovacieho pozadia pre mužov"
 
 msgid "RGB-color for male expandable box background."
-msgstr "RGB-farba pozadia rozbaliteľnej kolónky pre mužov."
+msgstr "RGB-farba pozadia rozšíriteľného rámika pre mužov."
 
 msgid "Female Background"
 msgstr "Pozadie pre ženy"
 
 msgid "RGB-color for female box background."
-msgstr "RGB-farba pozadia kolónky pre ženy."
+msgstr "RGB-farba pozadia rámika pre ženy."
 
 msgid "Female Expandable Background"
 msgstr "Farba rozbaľovacieho pozadia pre ženy"
 
 msgid "RGB-color for female expandable box background."
-msgstr "RGB-farba pozadia rozbaliteľnej kolónky pre ženy."
+msgstr "RGB-farba pozadia rozšíriteľného rámika pre ženy."
 
 msgid "The destination path for generated files."
 msgstr "Cieľová cesta pre vygenerované súbory."
@@ -91,13 +91,13 @@ msgid "Paternal Background Color"
 msgstr "Farba pozadia otcovskej línie"
 
 msgid "RGB-color for paternal box background."
-msgstr "RGB-farba pre pozadie kolónky otcovskej línie."
+msgstr "RGB-farba pre pozadie rámika otcovskej línie."
 
 msgid "Maternal Background"
 msgstr "Pozadie materskej línie"
 
 msgid "RGB-color for maternal box background."
-msgstr "RGB -farba pre pozadie kolónky materskej línie."
+msgstr "RGB -farba pre pozadie rámika materskej línie."
 
 msgid "Ancestral Fan Chart"
 msgstr "Vejárový graf predkov"

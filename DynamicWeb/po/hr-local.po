@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-11-01 19:51+0000\n"
+"PO-Revision-Date: 2026-04-08 15:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 msgid "Dynamic Web Report"
 msgstr "Dinamični web izvještaj"
@@ -60,10 +60,10 @@ msgstr "Gradijent"
 
 #, python-format
 msgid "Could not create the directory: %(path)s"
-msgstr "Nije bilo moguće stvoriti stazu: %(path)s"
+msgstr "Nije bilo moguće stvoriti direktorij: %(path)s"
 
 msgid "Dynamic Web Site Report"
-msgstr "Dinamična web stranica"
+msgstr "Dinamična web stranica – Izvještaj"
 
 msgid "Exporting family tree data ..."
 msgstr "Izvoz podataka rodoslova …"
@@ -81,29 +81,29 @@ msgid ""
 msgstr "Konfiguracija stranice nije važeća: više stranica imaju isti sadržaj"
 
 msgid "DynWeb|Home"
-msgstr "Početna"
+msgstr "Početna stranica"
 
 msgid "Tree"
 msgstr "Stablo"
 
 msgid "Search results"
-msgstr "Rezultati traženja"
+msgstr "Rezultati pretrage"
 
 msgid "Indexes"
 msgstr "Indeksi"
 
 msgid "(filtered from _MAX_ total entries)"
-msgstr "(filtrirano iz _MAKS_ ukupno unosa)"
+msgstr "(filtrirano iz _MAKS_ ukupnih unosa)"
 
 #, python-format
 msgid "(m. %s)"
 msgstr "(b. %s)"
 
 msgid "(sort by name)"
-msgstr "(sortiraj po imenu)"
+msgstr "(razvrstaj po imenu)"
 
 msgid "(sort by quantity)"
-msgstr "(sortiraj po količini)"
+msgstr "(razvrstaj po količini)"
 
 msgid ": activate to sort column ascending"
 msgstr ": aktiviraj za uzlazno razvrstavanje stupca"
@@ -136,7 +136,7 @@ msgid "Examples"
 msgstr "Primjeri"
 
 msgid "F"
-msgstr "Ž"
+msgstr "O"
 
 msgid "Families Index"
 msgstr "Indeks obitelji"
@@ -145,7 +145,7 @@ msgid "Family Nick Name"
 msgstr "Obiteljski nadimak"
 
 msgid "File ready"
-msgstr "Datoteka je premna"
+msgstr "Datoteka je spremna"
 
 msgid "Include dates columns on the index pages"
 msgstr "Uključi stupce s datumima na stranicama indeksa"
@@ -187,7 +187,7 @@ msgid "No matching surname."
 msgstr "Nema odgovarajućih prezimena."
 
 msgid "Other participants"
-msgstr "Ostali sudionici"
+msgstr "Drugi sudionici"
 
 msgid "Person page"
 msgstr "Stranica osobe"
@@ -247,7 +247,7 @@ msgid "Search:"
 msgstr "Traži:"
 
 msgid "Select the background color scheme"
-msgstr "Odaberi sistem boje za pozadinu"
+msgstr "Odaberi shemu boja za pozadinu"
 
 msgid "Select the children distribution (fan charts only)"
 msgstr "Odaberi distribuciju djece (samo za lepezaste dijagrame)"
@@ -354,10 +354,10 @@ msgid "Without title"
 msgstr "Bez naslova"
 
 msgid "Zoom in"
-msgstr "Uvećaj"
+msgstr "Uvećaj prikaz"
 
 msgid "Zoom out"
-msgstr "Umanji"
+msgstr "Umanji prikaz"
 
 msgid "all"
 msgstr "sve"
@@ -380,7 +380,7 @@ msgstr "Zadži „%(dst)s” (novije od „%(src)s”)"
 
 #, python-format
 msgid "Copying \"%(src)s\" to \"%(dst)s\""
-msgstr "Kopiraj „%(src)s” prema „%(dst)s”"
+msgstr "Kopiraj „%(src)s” u „%(dst)s”"
 
 #, python-format
 msgid "Unable to overwrite archive file \"%(path)s\""
@@ -429,7 +429,7 @@ msgstr ""
 "__NB_REPOSITORIES__ zamjenjuje se brojem spremišta.\n"
 "__NB_PLACES__ zamjenjuje se brojem mjesta.\n"
 "__MEDIA_<gid>__ zamjenjuje se medijem s Gramps ID <gid>.\n"
-"__THUMB_<gid>__ zamjenjuje se sličicom medija s Gramps ID <gid>.\n"
+"__THUMB_<gid>__ zamjenjuje se s minijaturom medija s Gramps ID <gid>.\n"
 "__EXPORT_DATE__ zamjenjuje se aktualnim datumom.\n"
 "__GRAMPS_VERSION__ zamjenjuje se Gramps verzijom.\n"
 "__GRAMPS_HOMEPAGE__ zamjenjuje se poveznicom na Grampsovu početnu web "
@@ -444,7 +444,7 @@ msgid ""
 "Whether to create an archive file (in ZIP or TGZ format) containing the web "
 "site"
 msgstr ""
-"Da li stvoriti arhivsku datoteku (u ZIP ili TGZ formatu), koja sadrži web "
+"Da li stvoriti arhivsku datoteku (u ZIP ili TGZ formatu) koja sadrži web "
 "stranicu"
 
 msgid "Archive file"
@@ -457,12 +457,11 @@ msgid "Web site title"
 msgstr "Naslov web-stranice"
 
 msgid "The title of the web site"
-msgstr "Naslov za web stranicu"
+msgstr "Naslov web-stranice"
 
 msgid "Select filter to restrict people that appear on web site"
 msgstr ""
-"Odaberi filtar za ograničavanje osoba, koje će biti prikazane na web "
-"stranicama"
+"Odaberi filtar za ograničavanje osoba koje će se prikazati na web stranicama"
 
 msgid "Name format (short)"
 msgstr "Format imena (skraćeno)"
@@ -471,13 +470,13 @@ msgid "Select the format to display a shorter version of the names"
 msgstr "Odaberi format za skraćeni prikaz imena"
 
 msgid "Web site template"
-msgstr "Predložak za web stranicu"
+msgstr "Predložak za web-stranicu"
 
 msgid "Select the template of the web site"
-msgstr "Odaberi predložak za web stranicu"
+msgstr "Odaberi predložak za web-stranicu"
 
 msgid "Include records marked private"
-msgstr "Uključi zapise, označene kao privatne"
+msgstr "Uključi zapise koji su označeni kao privatni"
 
 msgid "Whether to include private objects"
 msgstr "Da li uključiti privatne objekte"
@@ -492,34 +491,34 @@ msgid ""
 "This allows you to restrict information on people who have not been dead for "
 "very long"
 msgstr ""
-"Ovime se ograničava prikaz informacija osoba, koje su tek nedavno preminule"
+"Ovime se ograničava prikaz informacija osoba koje su tek nedavno preminule"
 
 msgid "Export notes"
 msgstr "Izvezi zabilješke"
 
 msgid "Whether to export notes in the web pages"
-msgstr "Da li izvesti zabilješke u web stranicu"
+msgstr "Da li izvesti zabilješke u web-stranici"
 
 msgid "Export sources"
 msgstr "Izvezi izvore"
 
 msgid "Whether to export sources and citations in the web pages"
-msgstr "Da li izvesti izvore i citate u web stranicu"
+msgstr "Da li izvesti izvore i citate u web-stranici"
 
 msgid "Export addresses"
 msgstr "Izvezi adrese"
 
 msgid "Whether to export addresses in the web pages"
-msgstr "Da li izvesti adrese u web stranicu"
+msgstr "Da li izvesti adrese u web-stranici"
 
 msgid "Whether or not to include the Repository Pages."
-msgstr "Da li uključiti stranice sa spremištima."
+msgstr "Da li uključiti stranice spremišta."
 
 msgid "Include images and media"
-msgstr "Uključi slike i medijske objekte"
+msgstr "Uključi slike i medije"
 
 msgid "Whether to include images and media in the web pages"
-msgstr "Da li uključiti slike i medije u web stranice"
+msgstr "Da li uključiti slike i medije u web-stranicama"
 
 msgid "Copy, rename files with an internal Gramps identifier"
 msgstr "Kopiraj, preimenuj datoteke s internom Gramps oznakom"
@@ -537,7 +536,7 @@ msgid "Whether to make a copy of the media"
 msgstr "Da li stvoriti kopije medija"
 
 msgid "Print the notes type"
-msgstr "Ispiši vrstu zabilježaka"
+msgstr "Ispiši vrstu zabilješki"
 
 msgid "Whether to print the notes type in the notes text"
 msgstr "Da li ispisati vrstu zabilješke u tekstu zabilješke"
@@ -566,10 +565,10 @@ msgid ""
 msgstr "Da li uključiti polubraću s roditeljima i braću/sestre"
 
 msgid "Enable page configuration"
-msgstr "Omogući konfiguraciju stranice"
+msgstr "Aktiviraj konfiguraciju stranice"
 
 msgid "Whether to enable page configuration"
-msgstr "Da li omogućiti konfiguraciju stranice"
+msgstr "Da li aktivirati konfiguraciju stranice"
 
 msgid "Whether to use tabbed panels for the different sections of the pages."
 msgstr "Da li koristiti registarske kartice za različite odjeljke stranice."
@@ -655,7 +654,7 @@ msgid ""
 "The maximum number of generations to include in the ancestor and descendant "
 "trees and graphs"
 msgstr ""
-"Maksimalni broj uključenih generacija u stabla predaka i potomaka, kao i u "
+"Maksimalni broj uključenih generacija u stablima predaka i potomaka te "
 "dijagramima"
 
 msgid "Choose the default SVG tree graph type"
@@ -675,7 +674,7 @@ msgstr ""
 
 msgid ""
 "Choose the background color scheme for the persons in the SVG tree graph"
-msgstr "Odaberi sistem boje pozadine za osobe u dijagramu SVG stabla"
+msgstr "Odaberi sustav boje pozadine za osobe u dijagramu SVG stabla"
 
 msgid "Theme"
 msgstr "Tema"
@@ -690,7 +689,7 @@ msgid "HTML user brand name / icon"
 msgstr "HTML korisnička marka / ikona"
 
 msgid "A note to be used as the brand name or image in the menu"
-msgstr "Zabilješka u izborniku, koja se koristi kao marka ili slika"
+msgstr "Zabilješka u izborniku koja se koristi kao marka ili slika"
 
 msgid "Custom pages"
 msgstr "Prilagođene stranice"
@@ -724,7 +723,7 @@ msgid "Number of pages"
 msgstr "Broj stranica"
 
 msgid "Number pages in the web site menu."
-msgstr "Pobroji stranice u izborniku web stranice."
+msgstr "Pobroji stranice u izborniku web-stranice."
 
 #, python-format
 msgid "Contents of page %(index)i"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-26 15:11-0500\n"
-"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"PO-Revision-Date: 2026-04-08 15:09+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,13 +13,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 msgid "Sources and Citations Report"
 msgstr "Izvještaj o izvorima i citatima"
 
 msgid "Provides a source and Citations Report with notes"
-msgstr "Stvara izvještaj o izvorima i citatima, zajedno sa zabilješkama"
+msgstr "Stvara izvještaj o izvorima i citatima sa zabilješkama"
 
 #, python-format
 msgid "Key: %s"
@@ -76,13 +76,13 @@ msgid " %s"
 msgstr " %s"
 
 msgid "Title of the Report"
-msgstr "Naslov ovog izvještaja"
+msgstr "Naslov izvještaja"
 
 msgid "Title string for the report."
 msgstr "Znakovni niz za naslov izvještaja."
 
 msgid "Subtitle of the Report"
-msgstr "Podnaslov ovog izvještaja"
+msgstr "Podnaslov izvještaja"
 
 msgid "Subtitle string for the report."
 msgstr "Znakovni niz za podnaslov izvještaja."
@@ -97,34 +97,34 @@ msgid "Show persons"
 msgstr "Prikaži osobe"
 
 msgid "Whether to show events and persons mentioned in the note"
-msgstr "Da li prikazati događaje i osobe, navedene u zabilješki"
+msgstr "Da li prikazati događaje i osobe navedene u zabilješci"
 
 msgid "The style used for the title of the report."
-msgstr "Stil korišten za naslov izvještaja."
+msgstr "Stil za naslov izvještaja."
 
 msgid "The style used for the subtitle of the report."
 msgstr "Stil koji se koristi za podnaslov izvještaja."
 
 msgid "The style used for the footer of the report."
-msgstr "Stil koji se koristi za podnožje izvješća."
+msgstr "Stil koji se koristi za podnožje izvještaja."
 
 msgid "The style used for source title."
-msgstr "Stil korišten za naslov izvora."
+msgstr "Stil koji se koristi za naslov izvora."
 
 msgid "The style used for source subtitle."
-msgstr "Stil koji se koristi za izvorni podnaslov."
+msgstr "Stil koji se koristi za podnaslov izvora."
 
 msgid "The style used for Source details."
-msgstr "Stil korišten za detalje izvora."
+msgstr "Stil koji se koristiza detalje izvora."
 
 msgid "The style used for citation title."
-msgstr "Stil korišten za naslov citata."
+msgstr "Stil koji se koristi za naslov citata."
 
 msgid "The style used for a column title."
-msgstr "Stil korišten za naslov stupca."
+msgstr "Stil koji se koristi za naslov stupca."
 
 msgid "The style used for each section."
-msgstr "Stil korišten za odlomke."
+msgstr "Stil koji se koristi za svaki odlomak."
 
 msgid "The style used for event and person details."
-msgstr "Stil korišten za detalje događaja i osobe."
+msgstr "Stil koji se koristi za detalje događaja i osobe."

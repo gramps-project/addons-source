@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-12-14 21:00+0000\n"
+"PO-Revision-Date: 2026-04-17 07:09+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 
 msgid "Select Form"
 msgstr "Vybrať formulár"
@@ -22,6 +22,9 @@ msgstr "Gramplet Formulár"
 
 msgid "Gramplet interface for Forms"
 msgstr "Gramplet rozhranie pre formuláre"
+
+msgid "Forms"
+msgstr "Formuláre"
 
 msgid "Order"
 msgstr "Poradie"
@@ -141,6 +144,9 @@ msgstr "Úroveň"
 msgid "Regiment/Vessel"
 msgstr "Pluk/Plavidlo"
 
+msgid "Date Enlisted"
+msgstr "Dátum odvodu"
+
 msgid "Street Address"
 msgstr "Adresa ulice"
 
@@ -171,8 +177,17 @@ msgstr "Dňa"
 msgid "Other service, if any"
 msgstr "Ostatné služby, ak existujú"
 
+msgid "No. on pension roll"
+msgstr "Č. na dôchodkovom zozname"
+
 msgid "Number of Regiment"
 msgstr "Číslo pluku"
+
+msgid "By what other name was your Company called"
+msgstr "Ako inak sa vaša rota ešte volala"
+
+msgid "By what other name was your Regiment called"
+msgstr "Ako inak sa váš pluk ešte volal"
 
 msgid "Date married"
 msgstr "Dátum sobáša"
@@ -1183,11 +1198,17 @@ msgstr "Počet izieb"
 msgid "Children Total"
 msgstr "Detí celkom"
 
+msgid "Personal Occupation"
+msgstr "Osobné zamestnanie"
+
 msgid "SEX"
 msgstr "POHLAVIE"
 
 msgid "Number of living children"
 msgstr "Počet žijúcich detí"
+
+msgid "PERSONAL OCCUPATION"
+msgstr "OSOBNÉ ZAMESTNANIE"
 
 msgid "See INSTRUCTIONS"
 msgstr "Pozri INŠTRUKCIE"
@@ -1507,7 +1528,7 @@ msgid "40. Maple Sugar Lbs."
 msgstr "40. Javorový cukor - libry"
 
 msgid "41. Cider Galls."
-msgstr "41. Jablčný mušt - galóny"
+msgstr "41. Mušt - galóny"
 
 msgid "42. Fulled Cloth Yards"
 msgstr "42. Valchovaná vlnená tkanina - yardy"
@@ -1848,6 +1869,9 @@ msgstr "Denominácia nedeľnej školy"
 
 msgid "5. Sex"
 msgstr "5. Pohlavie"
+
+msgid "WeeksOccupation"
+msgstr "Týždne zamestnania"
 
 msgid "Wages"
 msgstr "Mzdy"

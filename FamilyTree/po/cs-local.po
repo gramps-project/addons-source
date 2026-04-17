@@ -1,0 +1,183 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3.2.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2026-04-17 16:23+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
+"addons/cs/>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.17.1-dev\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+"X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#, python-format
+msgid "Family Tree for %s"
+msgstr "Rodinný strom pro %s"
+
+msgid "Paper too small"
+msgstr "Papír je příliš malý"
+
+msgid "Some elements may not appear or be badly rendered."
+msgstr "Některé prvky se nemusí zobrazit nebo můžou být špatně vykreslené."
+
+msgid "Anonymous"
+msgstr "Anonymní"
+
+msgid "born"
+msgstr "narození"
+
+msgid "baptised"
+msgstr "křest"
+
+msgid "died"
+msgstr "úmrtí"
+
+msgid "buried"
+msgstr "pohřeb"
+
+msgid "cremated"
+msgstr "kremace"
+
+msgid "married"
+msgstr "manželství"
+
+msgid "divorced"
+msgstr "rozvod"
+
+msgid "resident"
+msgstr "bydliště"
+
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "%(ymd_date)s"
+
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "%(ym_date)s"
+
+#, python-format
+msgid "in %(y_date)s"
+msgstr "%(y_date)s"
+
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "%(placeholder)s"
+
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "%(placeholder)s %(partial)s"
+
+#, python-format
+msgid "in %(place)s"
+msgstr "%(place)s"
+
+#, python-format
+msgid "(%(description)s)"
+msgstr "(%(description)s)"
+
+msgid "The center family for the tree"
+msgstr "Ústřední rodina pro strom"
+
+msgid "Ancestor Generations"
+msgstr "Generací předků"
+
+msgid "Descendant Generations"
+msgstr "Generací potomků"
+
+msgid "Kekule number of husband"
+msgstr "Kekuléovo číslo manžela"
+
+msgid ""
+"The Kekule number of the husband (central family). Set 0 to not show Kekule "
+"numbers"
+msgstr ""
+"Kekuléovo číslo manžela (ústřední rodina). Nastavte hodnotu 0, aby se "
+"Kekuléova čísla nezobrazovaly"
+
+msgid "Scale to fit on a single page"
+msgstr "Přizpůsobit na jednu stránku"
+
+msgid "Whether to scale to fit on a single page."
+msgstr "Zda se má přizpůsobit tak, aby se vešlo na jednu stránku."
+
+msgid "No color"
+msgstr "Bez barev"
+
+msgid "First generation"
+msgstr "První generace"
+
+msgid "Second generation"
+msgstr "Druhá generace"
+
+msgid "Third generation"
+msgstr "Třetí generace"
+
+msgid "Male line"
+msgstr "Mužská linie"
+
+msgid "Male line and illegitimate children"
+msgstr "Mužská linie a nemanželské děti"
+
+msgid "Female line"
+msgstr "Ženská linie"
+
+msgid "Replace first name with call name"
+msgstr "Nahradit křestní jméno volacím jménem"
+
+msgid "Underline call name in first name / add call name to first name"
+msgstr ""
+"Podtrhnout volací jméno v křestním jménu / přidat volací jméno ke křestnímu "
+"jménu"
+
+msgid "Include Occupation"
+msgstr "Zahrnout povolání"
+
+msgid "Include Residence"
+msgstr "Zahrnout bydliště"
+
+msgid "Print event data (dead person)"
+msgstr "Zobrazit údaje o události (zemřelá osoba)"
+
+msgid "Year only"
+msgstr "Pouze rok"
+
+msgid "Full date"
+msgstr "Celé datum"
+
+msgid "Full date and place"
+msgstr "Celá datum i místo"
+
+msgid "Print event data (living person)"
+msgstr "Zobrazit údaje o události (žijící osoba)"
+
+msgid "Fall back to baptism if birth event missing"
+msgstr "Pokud chybí narození, použít křest"
+
+msgid "Fall back to burial or cremation if death event missing"
+msgstr "Použít pohřeb nebo kremaci, pokud chybí úmrtí"
+
+msgid "Protect private items"
+msgstr "Chránit soukromé údaje"
+
+msgid "Include event description"
+msgstr "Zahrnout popis událostí"
+
+msgid "Text Options"
+msgstr "Možnosti textu"
+
+msgid "The style used for names."
+msgstr "Styl použitý pro jména."
+
+msgid "The style used for data (birth, death, marriage, divorce)."
+msgstr "Styl použitý po údaje (narození, úmrtí, svatba, rozvod)."
+
+msgid "Produces a graphical family tree."
+msgstr "Vytvoří grafický rodinný strom."

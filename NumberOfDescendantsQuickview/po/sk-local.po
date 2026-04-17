@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-08-15 16:02+0000\n"
+"PO-Revision-Date: 2026-04-17 07:09+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,10 +12,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.17.1-dev\n"
+
+#, python-format
+msgid "Number of %s's descendants"
+msgstr "Počet potomkov osoby %s"
 
 msgid "Generation"
 msgstr "Generácia"
+
+msgid "Seen"
+msgstr "Videní"
+
+msgid "Outlived"
+msgstr "Prežití"
+
+msgid "Now alive"
+msgstr "Teraz žijú"
+
+#, python-format
+msgid "Seen = number of descendants whose birth %s has lived to see"
+msgstr "Videní = počet potomkov, ktorých narodenia sa osoba %s dožila"
+
+#, python-format
+msgid "Outlived = number of descendants who died while %s was still alive"
+msgstr "Prežití = počet potomkov, ktorí zomreli, kým bola osoba %s ešte nažive"
 
 msgid "Number of descendants"
 msgstr "Počet potomkov"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-06-11 04:56+0000\n"
+"PO-Revision-Date: 2026-04-12 04:54+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
@@ -27,7 +27,7 @@ msgid "Failed to copy web files : %s"
 msgstr "Kan webbestand %s niet kopiëren"
 
 msgid "Ancestral Collapsible Tree Options"
-msgstr "Inklapbare voorouderboom opties"
+msgstr "Inklapbare afkomstboom opties"
 
 msgid "Include Generations"
 msgstr "Generaties opnemen"
@@ -63,7 +63,7 @@ msgid "The destination file name for html content."
 msgstr "De bestemmingsbestandsnaam voor html-inhoud."
 
 msgid "Ancestral Collapsible Tree"
-msgstr "Inklapbare voorouderboom"
+msgstr "Inklapbare afkomstboom"
 
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
@@ -86,7 +86,7 @@ msgstr ""
 "bibliotheek."
 
 msgid "Ancestral Fan Chart Options"
-msgstr "Opties cirkeldiagram voorouders"
+msgstr "Cirkeldiagram afkomst opties"
 
 msgid "Paternal Background Color"
 msgstr "Vaderlijke achtergrondkleur"
@@ -101,7 +101,7 @@ msgid "RGB-color for maternal box background."
 msgstr "RGB-kleur voor moederlijke kaderachtergrond."
 
 msgid "Ancestral Fan Chart"
-msgstr "Cirkeldiagram voorouders"
+msgstr "Cirkeldiagram van afkomst"
 
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
