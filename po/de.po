@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-11 17:13-0700\n"
-"PO-Revision-Date: 2026-04-07 13:46+0000\n"
+"PO-Revision-Date: 2026-04-13 09:10+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -241,17 +241,12 @@ msgid "The style used for the marriage."
 msgstr "Der für die Hochzeit verwendete Stil."
 
 #: AncestryTableReport.py:593
-#, fuzzy
-#| msgid ""
-#| "The style used for an empty row.\n"
-#| "To enlarge the height of the empty row, just increse the size of the "
-#| "police."
 msgid ""
 "The style used for an empty row.\n"
 "To enlarge the height of the empty row, just increase the size of the font."
 msgstr ""
 "Das für eine leere Zeile verwendete Format.\n"
-"Um die Höhe der leeren Zeile zu vergrößern, vergrößere einfach die "
+"Um die Höhe der leeren Zeile zu vergrößern, vergröße einfach die "
 "Schriftgröße."
 
 #: AncestryTableReport.py:632
@@ -4929,7 +4924,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
 msgid "Theme"
-msgstr "Erscheinungsbild"
+msgstr "Thema"
 
 #: DynamicWeb/dynamicweb.py:5190
 msgid "Pages"
