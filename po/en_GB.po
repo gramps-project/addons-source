@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-03 08:54-0800\n"
-"PO-Revision-Date: 2026-03-18 12:09+0000\n"
+"PO-Revision-Date: 2026-03-22 23:06+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/en_GB/>\n"
@@ -16073,10 +16073,8 @@ msgid "Sources Changed"
 msgstr ""
 
 #: LastChange/LastChangeReport.py:304
-#, fuzzy
-#| msgid "No changes need."
 msgid "Notes Changed"
-msgstr "No changes need."
+msgstr "Notes Changed"
 
 #: LastChange/LastChangeReport.py:321
 msgid "Citations Changed"
@@ -16732,16 +16730,12 @@ msgid "This report only supports PDF as output file format."
 msgstr ""
 
 #: MediaReport/media_report.py:229
-#, fuzzy
-#| msgid "General Data"
 msgid "General:"
-msgstr "General Data"
+msgstr "General:"
 
 #: MediaReport/media_report.py:250
-#, fuzzy
-#| msgid "<-- Image Types -->"
 msgid "Image type:"
-msgstr "<-- Image Types -->"
+msgstr "Image type:"
 
 #: MediaReport/media_report.py:426
 msgid "Heading"
@@ -17790,10 +17784,8 @@ msgid "Alternative Name"
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:618
-#, fuzzy
-#| msgid "Latitude :"
 msgid "Latitude, Longitude"
-msgstr "Latitude :"
+msgstr "Latitude, Longitude"
 
 #: PersonEverything/PersonEverything.py:648
 msgid "Repository type"
@@ -18511,10 +18503,8 @@ msgid "Correct -50° in 50°S"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1142
-#, fuzzy
-#| msgid "No changes need."
 msgid "No changes"
-msgstr "No changes need."
+msgstr "No changes"
 
 #: PlaceCompletion/PlaceCompletion.py:1143
 msgid "City[, State]"
@@ -18585,10 +18575,8 @@ msgid "All Places"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1335
-#, fuzzy
-#| msgid "Latitude/ Longitude/ Altitude GPS coordinates"
 msgid "No Latitude/Longitude given"
-msgstr "Latitude/ Longitude/ Altitude GPS coordinates"
+msgstr "No Latitude/Longitude given"
 
 #: PlaceCompletion/placecompletion.glade:85
 msgid "_Google Maps"
@@ -18607,10 +18595,8 @@ msgid "Parish:"
 msgstr ""
 
 #: PlaceCompletion/placecompletion.glade:271
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place _filter:"
-msgstr "Place titles"
+msgstr "Place _filter:"
 
 #: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
@@ -18879,10 +18865,8 @@ msgid "Clear selections"
 msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:213
-#, fuzzy
-#| msgid "Attach a tag on selected places."
 msgid "Apply to selected places"
-msgstr "Attach a tag on selected places."
+msgstr "Apply to selected places"
 
 #: PlaceUpdate/PlaceUpdate.py:266
 msgid "Setting place properties"
@@ -20659,20 +20643,16 @@ msgid "Birth date:"
 msgstr ""
 
 #: SourceIndex/census.glade:364
-#, fuzzy
-#| msgid "Media Path Update"
 msgid "Death date:"
-msgstr "Media Path Update"
+msgstr "Death date:"
 
 #: SourceIndex/census.glade:381 SourceIndex/death.glade:1035
 msgid "Birth place:"
 msgstr ""
 
 #: SourceIndex/census.glade:414
-#, fuzzy
-#| msgid "Legacy place"
 msgid "Death place:"
-msgstr "Legacy place"
+msgstr "Death place:"
 
 #: SourceIndex/census.glade:447
 msgid "Family status:"
@@ -20701,10 +20681,8 @@ msgstr ""
 
 #: SourceIndex/census.glade:904 SourceIndex/death.glade:217
 #: SourceIndex/marriage.glade:1296
-#, fuzzy
-#| msgid "column"
 msgid "Volume:"
-msgstr "column"
+msgstr "Volume:"
 
 #: SourceIndex/census.glade:1046
 msgid "order, person, surname, given, age, status, occupation, etc ..."
@@ -20848,10 +20826,8 @@ msgid "Select a birth source"
 msgstr ""
 
 #: SourceIndex/index.glade:617
-#, fuzzy
-#| msgid "Select an image to begin..."
 msgid "Select a marriage source"
-msgstr "Select an image to begin..."
+msgstr "Select a marriage source"
 
 #: SourceIndex/index.glade:678
 msgid "Select a death source"
@@ -20972,10 +20948,8 @@ msgid "Sources and Citations Report"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:33
-#, fuzzy
-#| msgid "Provide a short description for this image."
 msgid "Provides a source and Citations Report with notes"
-msgstr "Provide a short description for this image."
+msgstr "Provides a source and Citations Report with notes"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:272
 #, python-format
@@ -22623,10 +22597,8 @@ msgid "Attribute updated"
 msgstr ""
 
 #: activity_row_generator.py:160
-#, fuzzy
-#| msgid "No changes need."
 msgid "Note updated"
-msgstr "No changes need."
+msgstr "Note updated"
 
 #: constants.py:390
 msgid "Column - Icons"
@@ -23251,10 +23223,8 @@ msgid "Foundation date:"
 msgstr ""
 
 #: markdown_place_history_formatter.py:60
-#, fuzzy
-#| msgid "Place titles"
 msgid "Coordinates:"
-msgstr "Place titles"
+msgstr "Coordinates:"
 
 #: markdown_place_history_formatter.py:61
 msgid "Administrative history"
@@ -23269,10 +23239,8 @@ msgid "Full hierarchy"
 msgstr ""
 
 #: markdown_place_history_formatter.py:68
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place Type:"
-msgstr "Place titles"
+msgstr "Place Type:"
 
 #: markdown_place_history_formatter.py:69
 msgid "Last Retrieved At:"
