@@ -6,7 +6,7 @@ register(
     status=STABLE,
     audience=EXPERT,
     version = '1.0.34',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     fname="ftdna_import.py",
     category=TOOL_UTILS,
     toolclass="FamilyFinder",

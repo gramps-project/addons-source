@@ -40,7 +40,7 @@ register(
         "fix capitalization of the given names."
     ),
     version = '1.0.40',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,  # not yet tested with python 3
     fname="ChangeGivenNames.py",
     authors=["Donald N. Allingham", "Doug Blank"],

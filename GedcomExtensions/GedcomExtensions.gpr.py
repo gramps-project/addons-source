@@ -33,7 +33,7 @@ register(
     name_accell=_("GEDCOM Extensions (GED2)"),
     description=_("Extensions to the common GEDCOM format."),
     version = '1.0.40',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     audience=EXPERT,
     fname="GedcomExtensions.py",

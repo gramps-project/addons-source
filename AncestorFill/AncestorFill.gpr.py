@@ -9,7 +9,7 @@ register(
     name=_("AncestorFill"),
     description=_("Report on the filling of the tree"),
     version = '1.0.24',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     include_in_listing=True,
     status=STABLE,
     fname="AncestorFill.py",

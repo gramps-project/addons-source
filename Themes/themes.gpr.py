@@ -32,7 +32,7 @@ register(
         " adjustment.  Especially useful for Windows users."
     ),
     version = '0.0.16',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     fname="themes_load.py",
     authors=["Paul Culley"],
     authors_email=["paulr2787@gmail.com"],

@@ -36,7 +36,7 @@ register(
     detached_width=600,
     detached_height=450,
     version = '2.0.13',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     help_url="Addon:DNASegmentMap",
     include_in_listing=True,
 )

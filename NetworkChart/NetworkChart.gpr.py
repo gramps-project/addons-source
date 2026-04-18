@@ -34,7 +34,7 @@ register(
     # help_url = URL_WIKISTRING+'NetworkChart',
     description=_("Generates a family network chart."),
     version = '0.0.33',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     include_in_listing=True,
     requires_mod=["networkx", "pygraphviz"],
 )

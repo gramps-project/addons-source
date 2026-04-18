@@ -24,7 +24,7 @@ register(
     category=("Ancestry", _("Charts")),
     description=_("The view shows a quilt chart visualisation of a family tree"),
     version = '1.0.26',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     audience=EXPERT,
     fname="QuiltView.py",

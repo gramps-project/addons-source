@@ -25,7 +25,7 @@ register(
     name=_("Heatmap"),
     description=_("Create a heatmap web report."),
     version = '1.2.8',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="heatmap.py",
     authors=["Matthias Kemmer"],

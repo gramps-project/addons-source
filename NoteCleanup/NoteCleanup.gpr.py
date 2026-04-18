@@ -31,7 +31,7 @@ register(
     name=_("Note Cleanup"),
     description=_("Clean up Notes that contain HTML markup"),
     version = '1.0.24',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="NoteCleanup.py",
     authors=["Paul Culley"],

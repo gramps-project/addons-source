@@ -34,7 +34,7 @@ register(
         "Requires PostgreSQL 15+ with extensions. Gramps Web compatible."
     ),
     version = '1.5.2',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     audience=EXPERT,  # For advanced users who can configure PostgreSQL
     fname="postgresqlenhanced.py",

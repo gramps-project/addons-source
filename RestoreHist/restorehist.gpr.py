@@ -35,7 +35,7 @@ register(
         "visited to be found via the 'Go' menu."
     ),
     version = '0.0.21',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     fname="restorehist.py",
     authors=["Paul Culley"],
     authors_email=["paulr2787@gmail.com"],

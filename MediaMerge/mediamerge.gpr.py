@@ -34,7 +34,7 @@ register(
         "media that have the same path and merges them."
     ),
     version = '1.0.14',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="mediamerge.py",
     authors=["Paul Culley"],

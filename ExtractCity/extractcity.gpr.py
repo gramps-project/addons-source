@@ -34,7 +34,7 @@ register(
     name=_("Extract Place Data from a Place Title"),
     description=_("Attempts to extract city and state/province " "from a place title"),
     version = '1.0.17',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="extractcity.py",
     authors=["Donald N. Allingham"],

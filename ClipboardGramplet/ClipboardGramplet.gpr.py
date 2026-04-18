@@ -11,7 +11,7 @@ register(
     description=_("Gramplet for grouping collections of items to aid in data entry."),
     status=STABLE,
     version = '1.0.48',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     height=200,
     gramplet="ClipboardGramplet",
     fname="ClipboardGramplet.py",

@@ -10,6 +10,6 @@ register(
     gramplet="PythonGramplet",
     gramplet_title=_("Python Shell"),
     version = '1.0.39',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     help_url="PythonGramplet",
 )

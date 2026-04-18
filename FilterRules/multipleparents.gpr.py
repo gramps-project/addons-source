@@ -29,7 +29,7 @@ register(
     version = '0.0.15',
     authors=["Dave Scheipers"],
     authors_email=["dave.scheipers@gmail.com"],
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="multipleparents.py",
     ruleclass="MultipleParents",  # must be rule class name

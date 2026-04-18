@@ -33,7 +33,7 @@ register(
         "Compares a Gramps XML database with the current one, and allows merging of the differences."
     ),
     version = '0.0.25',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="importmerge.py",
     authors=["Paul Culley"],

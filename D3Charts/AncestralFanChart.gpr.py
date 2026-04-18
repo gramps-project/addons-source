@@ -36,6 +36,6 @@ register(
         "JavaScript library."
     ),
     version = '1.0.41',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     help_url="Addon:D3_Ancestral_and_Descendant_Charts#Ancestral_Fan_Chart",
 )

@@ -28,7 +28,7 @@ register(
         "Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields."
     ),
     version = '0.0.46',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="PlaceCompletion.py",
     authors=["B. Malengier", "Mathieu MD"],

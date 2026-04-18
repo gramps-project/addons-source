@@ -31,7 +31,7 @@ register(
     name=_("Deterministic ID"),
     description=_("Set/reset Gramps to use a Deterministic ID"),
     version = '1.0.14',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="DetId.py",
     authors=["Paul Culley"],

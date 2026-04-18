@@ -10,7 +10,7 @@ register(
     name=_("Biography"),
     description=_("Display a text biography"),
     version = '1.0.18',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="BiographyQuickview.py",
     authors=["A Guinane"],

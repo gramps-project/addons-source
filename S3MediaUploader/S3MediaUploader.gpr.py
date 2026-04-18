@@ -38,7 +38,7 @@ register(
         "Upload media files to S3 (or compatible) object-based storage via the command line."
     ),
     version = '0.1.11',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     requires_mod=["boto3"],
     help_url="https://www.grampsweb.org/install_setup/s3/",
 )

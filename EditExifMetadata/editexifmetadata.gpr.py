@@ -36,7 +36,7 @@ register(
     detached_width=550,
     detached_height=550,
     version = '2.0.16',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     include_in_listing=True,
     fname="editexifmetadata.py",

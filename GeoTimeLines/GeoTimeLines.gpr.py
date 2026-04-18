@@ -27,7 +27,7 @@ register(
         "A view showing all the places visited by a person or persons on various date."
     ),
     version = '1.0.5',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=BETA,
     audience=EXPERT,
     help_url="https://gramps.discourse.group/t/timelines-map-addon-beta-testing/6130",

@@ -24,7 +24,7 @@ register(
     name=_("Avatar Generator Tool"),
     description=_("A tool to add avatar pictures to your family tree"),
     version = '1.0.18',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="AvatarGenerator.py",
     authors=["Matthias Kemmer"],

@@ -9,7 +9,7 @@ register(
     version = '0.0.2',
     authors=[""],
     authors_email=[""],
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="matchpersonfilterrole.py",
     ruleclass="MatchesPersonFilterRole",  # must be rule class name

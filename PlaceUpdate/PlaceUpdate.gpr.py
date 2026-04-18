@@ -5,7 +5,7 @@ register(
     description=_("Gramplet to manipulate multiple places"),
     status=STABLE,
     version = '1.0.12',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     fname="PlaceUpdate.py",
     gramplet="PlaceUpdate",
     height=375,

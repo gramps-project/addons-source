@@ -32,7 +32,7 @@ register(
     name=_("Extended Person Attributes"),
     description=_("Gramplet showing the attributes of a person"),
     version = '1.0.35',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,  # not yet tested with python 3
     fname="ExtendedAttributes.py",
     height=200,
@@ -48,7 +48,7 @@ register(
     name=_("Extended Family Attributes"),
     description=_("Gramplet showing the attributes of a family"),
     version = '1.0.35',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,  # not yet tested with python 3
     fname="ExtendedAttributes.py",
     height=200,

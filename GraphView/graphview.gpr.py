@@ -5,7 +5,7 @@ register(
     category=("Ancestry", _("Charts")),
     description=_("Dynamic and interactive graph of relations"),
     version = '1.0.145',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="graphview.py",
     authors=["Gary Burton"],

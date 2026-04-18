@@ -16,7 +16,7 @@ register(
         "accept all."
     ),
     version = '0.0.19',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="birthorder.py",
     authors=["Paul R. Culley"],

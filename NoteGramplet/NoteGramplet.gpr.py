@@ -12,7 +12,7 @@ register(
     detached_width=500,
     detached_height=400,
     version = '1.0.41',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     help_url="NoteGramplet",
     navtypes=["Person"],
 )

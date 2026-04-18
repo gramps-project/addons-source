@@ -15,7 +15,7 @@ register(
     detached_width=510,
     detached_height=480,
     version = '1.0.52',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     audience=EXPERT,
     fname="DataEntryGramplet.py",

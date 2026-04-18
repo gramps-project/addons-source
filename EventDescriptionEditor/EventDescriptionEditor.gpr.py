@@ -28,7 +28,7 @@ register(
         "description of multiple events."
     ),
     version = '1.0.16',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="EventDescriptionEditor.py",
     authors=["Matthias Kemmer"],

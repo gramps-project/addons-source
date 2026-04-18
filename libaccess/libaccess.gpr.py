@@ -34,7 +34,7 @@ register(
         "Provides a library for generic access to " "the database and gen.lib."
     ),
     version = '1.0.36',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     audience=DEVELOPER,
     fname="libaccess.py",

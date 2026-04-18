@@ -28,7 +28,7 @@ register(
     fname="AnniversariesGramplet.py",
     height=200,
     gramplet="AnniversariesGramplet",
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     gramplet_title=_("Anniversaries"),
     help_url="AnniversariesGramplet",
 )

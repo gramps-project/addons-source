@@ -10,7 +10,7 @@ register(
     status=STABLE,
     audience=DEVELOPER,
     version = '0.0.3',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     fname="GrampsChat.py",
     help_url="https://github.com/gramps-project/addons-source/tree/maintenance/gramps60/GrampsChat",
     requires_mod=["litellm"],

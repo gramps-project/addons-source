@@ -11,7 +11,7 @@ register(
     description=_("Library for web site collections"),
     status=STABLE,  # not yet tested with python 3
     version = '1.0.38',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     fname="libwebconnect.py",
     load_on_reg=True,
     help_url="Addon:Web_Connect_Pack#Prerequisites",

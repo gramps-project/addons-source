@@ -18,6 +18,6 @@ register(
     authors_email=["m.d.nauta@hetnet.nl"],
     description=_("Merge primary objects via the command line."),
     version = '1.0.41',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     help_url="https://github.com/gramps-project/addons-source/blob/maintenance/gramps60/CliMerge",
 )

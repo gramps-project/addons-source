@@ -14,7 +14,7 @@ register(
     detached_width=510,
     detached_height=480,
     version = '1.0.47',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     help_url="Deep_Connections_Gramplet",
     navtypes=["Person"],
 )

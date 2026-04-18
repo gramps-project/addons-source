@@ -37,7 +37,7 @@ register(
         "descendants of the selected person"
     ),
     version = '0.1.66',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="TimelinePedigreeView.py",
     authors=["Felix Heß"],

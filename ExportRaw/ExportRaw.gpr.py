@@ -4,7 +4,7 @@ register(
     name=_("Raw Export"),
     description=_("This is a raw python object dump"),
     version = '1.0.42',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     audience=DEVELOPER,
     fname="ExportRaw.py",

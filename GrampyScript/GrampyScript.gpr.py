@@ -27,7 +27,7 @@ register(
     fname="GrampyScript.py",
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     gramplet="GrampyScript",
     gramplet_title=_("Gram.py Script"),
     help_url="Addon:GrampyScript",

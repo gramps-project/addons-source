@@ -31,7 +31,7 @@ register(
     name=_("Thumbnail Generator"),
     description=_("Generates thumbnails for media files"),
     version = '1.0.31',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="ThumbnailGenerator.py",
     authors=["Nick Hall"],

@@ -12,7 +12,7 @@ register(
     status=EXPERIMENTAL,
     audience = DEVELOPER,
     version = '1.2.2',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     include_in_listing=True,
     height=400,
     gramplet="etreeGramplet",

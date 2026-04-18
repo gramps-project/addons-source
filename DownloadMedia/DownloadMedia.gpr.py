@@ -36,7 +36,7 @@ register(
     name=_("Download media files from the internet"),
     description=_("This tool downloads media files from the internet"),
     version = '1.0.21',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="DownloadMedia.py",
     authors=["Tim Lyons"],

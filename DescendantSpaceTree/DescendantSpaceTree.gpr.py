@@ -39,6 +39,6 @@ register(
         "with many descendants or generations."
     ),
     version = '1.1.2',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     help_url="Addon:DescendantSpaceTree",
 )

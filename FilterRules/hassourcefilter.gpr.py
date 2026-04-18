@@ -30,7 +30,7 @@ register(
     version = '0.0.28',
     authors=["Dave Scheipers", "Paul Culley"],
     authors_email=["paulr2787@gmail.com"],
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="hassourcefilter.py",
     ruleclass="HasSourceParameter",  # must be rule class name

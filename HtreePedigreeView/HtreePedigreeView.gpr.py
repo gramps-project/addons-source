@@ -38,7 +38,7 @@ register(
         "ancestors of the selected person"
     ),
     version = '0.0.35',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="HtreePedigreeView.py",
     authors=["Pat Lefebre"],

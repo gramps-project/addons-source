@@ -27,7 +27,7 @@ register(
     version = '1.1.16',
     authors=["Matthias Kemmer"],
     authors_email=["matt.familienforschung@gmail.com"],
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="degreesofseparation.py",
     ruleclass="DegreesOfSeparation",  # must be rule class name

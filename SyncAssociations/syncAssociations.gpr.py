@@ -6,7 +6,7 @@ register(
         "Traverses the Person list for all Associations that are bi-directional and adds any which are missing to the Associated Person."
     ),
     version = '0.0.14',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="syncAssociations.py",
     authors=["Gary Griffin"],

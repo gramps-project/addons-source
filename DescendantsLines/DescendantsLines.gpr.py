@@ -27,7 +27,7 @@ register(
     name=_("Descendants Lines"),
     description=_("Produces descendants lines of a person"),
     version = '1.1.13',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="DescendantsLines.py",
     category=CATEGORY_DRAW,

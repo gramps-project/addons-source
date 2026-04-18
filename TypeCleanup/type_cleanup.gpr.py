@@ -30,7 +30,7 @@ register(
     name=_("Type Cleanup"),
     description=_("Clean up (remove) custom types"),
     version = '1.0.14',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="type_cleanup.py",
     authors=["Paul Culley"],

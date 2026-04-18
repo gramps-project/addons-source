@@ -29,7 +29,7 @@ register(
     version = '0.0.28',
     authors=["Paul Culley"],
     authors_email=["paulr2787@gmail.com"],
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="hasrolerule.py",
     ruleclass="HasPersonEventRole",  # must be rule class name
@@ -45,7 +45,7 @@ register(
     version = '0.0.28',
     authors=["Paul Culley"],
     authors_email=["paulr2787@gmail.com"],
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="hasrolerule.py",
     ruleclass="HasFamilyEventRole",  # must be rule class name

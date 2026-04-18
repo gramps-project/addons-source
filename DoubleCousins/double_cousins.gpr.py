@@ -25,7 +25,7 @@ register(
     name=_("Double Cousins"),
     description=_("A text report listing double cousins."),
     version = '1.0.9',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="double_cousins.py",
     authors=["Matthias Kemmer"],

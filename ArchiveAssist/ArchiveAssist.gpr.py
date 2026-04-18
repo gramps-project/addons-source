@@ -15,7 +15,7 @@
 
 register(
     GRAMPLET,
-    gramps_target_version = '6.0',
+    gramps_target_version = '6.1',
     version = '1.0.1',
     id="ArchiveAssist",
     name="Archive Assist",

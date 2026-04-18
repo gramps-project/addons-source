@@ -22,6 +22,6 @@ register(
         "upon mouse-events."
     ),
     version = '2.3.50',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     help_url="Addon:DenominoViso",
 )

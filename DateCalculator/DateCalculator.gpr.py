@@ -28,7 +28,7 @@ register(
     authors_email=["doug.blank@gmail.com", "steve@youngs.cc"],
     height=300,
     gramplet="DateCalculator",
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     gramplet_title=_("Date Calculator"),
     help_url="DateCalculator",
 )

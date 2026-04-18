@@ -24,7 +24,7 @@ register(
     name=_("BirthIndex"),
     description=_("BirthIndex"),
     version = '0.0.40',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     include_in_listing=False,
     status=UNSTABLE,  # not yet tested with python 3, toplevel + signals + managedwindow
     fname="birth.py",
@@ -40,7 +40,7 @@ register(
     name=_("MarriageIndex"),
     description=_("MarriageIndex"),
     version = '0.0.38',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     include_in_listing=False,
     status=STABLE,  # not yet tested with python 3,
     fname="marriage.py",
@@ -56,7 +56,7 @@ register(
     name=_("DeathIndex"),
     description=_("DeathIndex"),
     version = '0.0.38',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     include_in_listing=False,
     status=UNSTABLE,  # not yet tested with python 3, toplevel + signals + managedwindow
     fname="death.py",
@@ -72,7 +72,7 @@ register(
     name=_("CensusIndex"),
     description=_("CensusIndex"),
     version = '0.0.38',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     include_in_listing=False,
     status=UNSTABLE,  # not yet tested with python 3, toplevel + signals + managedwindow
     fname="census.py",
@@ -88,7 +88,7 @@ register(
     name=_("Witness"),
     description=_("Witness"),
     version = '0.0.38',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     include_in_listing=False,
     status=UNSTABLE,  # not yet tested with python 3, toplevel + signals + managedwindow
     fname="witness.py",
@@ -104,7 +104,7 @@ register(
     name=_("SourceIndex"),
     description=_("SourceIndex"),
     version = '0.0.42',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     include_in_listing=False,
     status=STABLE,  # not yet tested with python 3, see feature 5552
     fname="index.py",

@@ -7,7 +7,7 @@ register(
         "about a person and his/her partners and children."
     ),
     version = '3.4.51',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="FamilySheet.py",
     authors=["Reinhard Mueller"],

@@ -24,7 +24,7 @@ register(
     name=_("Combined"),
     description=_("A view showing relationships and events for a person"),
     version = '2.0.15',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="combinedview.py",
     authors=["The Gramps project"],

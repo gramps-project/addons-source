@@ -12,7 +12,7 @@ register(
     status=STABLE,
     audience=EXPERT,
     version = '1.0.45',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     height=200,
     gramplet="ImportGramplet",
     fname="ImportGramplet.py",

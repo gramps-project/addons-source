@@ -10,7 +10,7 @@ register(
     name=_("Timeline"),
     description=_("Display a person's events on a timeline"),
     version = '1.0.36',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="TimelineQuickview.py",
     authors=["Douglas Blank"],

@@ -24,7 +24,7 @@ register(
     name_accell=_("_PostgreSQL Database"),
     description=_("PostgreSQL Database"),
     version = '1.0.20',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     audience=EXPERT,
     fname="postgresql.py",

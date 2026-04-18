@@ -30,7 +30,7 @@ register(
     id="GoogleEarth",
     name=_("GoogleEarth"),
     version = '1.0.53',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="GoogleEarthWriteKML.py",
     description=_("Creates data file for GoogleEarth and opens it"),

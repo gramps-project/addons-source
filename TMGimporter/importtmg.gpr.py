@@ -37,7 +37,7 @@ Import from an Whollygenes - The Master Genealogist (TMG) Project backup file
 # ------------------------------------------------------------------------
 dbfavailable = False
 direct_tmg_pjc_ver_support = False
-grampsversion = "6.0"
+grampsversion = "6.1"
 
 register(
     IMPORT,

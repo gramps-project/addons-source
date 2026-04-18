@@ -12,7 +12,7 @@ register(
     description=_("Collection of Web sites for Sweden (requires libwebconnect)"),
     status=STABLE,
     version = '1.0.6',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     fname="SVWebPack.py",
     load_on_reg=True,
     depends_on=["libwebconnect"],

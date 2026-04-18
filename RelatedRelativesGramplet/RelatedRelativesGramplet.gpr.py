@@ -10,6 +10,6 @@ register(
     gramplet="RelatedRelativesGramplet",
     gramplet_title=_("Related Relatives"),
     version = '1.0.41',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     help_url="RelatedRelativesGramplet",
 )

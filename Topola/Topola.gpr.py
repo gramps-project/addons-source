@@ -6,7 +6,7 @@ register(
     status=STABLE,
     version = '1.1.14',
     fname="topola.py",
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     authors=["Przemek Więch"],
     authors_email=["pwiech@gmail.com"],
     category=TOOL_ANAL,

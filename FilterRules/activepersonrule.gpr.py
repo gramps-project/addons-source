@@ -29,7 +29,7 @@ register(
     version = '0.0.15',
     authors=["Paul Culley"],
     authors_email=["paulr2787@gmail.com"],
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="activepersonrule.py",
     ruleclass="IsActivePerson",  # must be rule class name

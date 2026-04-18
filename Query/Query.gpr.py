@@ -11,7 +11,7 @@ register(
     description=_("Gramplet for running SQL-like queries"),
     status=UNSTABLE,  # not yet tested with python 3
     version = '1.0.45',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     include_in_listing=False,
     height=200,
     gramplet="QueryGramplet",
@@ -39,5 +39,5 @@ register(
     authors="Douglas Blank",
     authors_email="doug.blank@gmail.com",
     version = '1.0.45',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
 )

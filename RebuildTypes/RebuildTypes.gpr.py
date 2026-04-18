@@ -26,7 +26,7 @@ register(
     name=_("Rebuild Gramps Types"),
     description=_("Rebuilds Gramps Types"),
     version = '1.0.21',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     include_in_listing=False,
     status=UNSTABLE,
     fname="RebuildTypes.py",

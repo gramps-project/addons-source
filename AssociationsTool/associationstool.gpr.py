@@ -22,7 +22,7 @@
 Gramps registration file
 """
 
-MODULE_VERSION = "6.0"
+MODULE_VERSION = "6.1"
 
 # ------------------------------------------------------------------------
 #

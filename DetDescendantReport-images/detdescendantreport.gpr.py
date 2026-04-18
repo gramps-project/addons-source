@@ -6,7 +6,7 @@ register(
         "Produces a detailed descendant report with all images and optional todo list."
     ),
     version = '1.0.17',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="detdescendantreporti.py",
     authors=["Jon Schewe"],

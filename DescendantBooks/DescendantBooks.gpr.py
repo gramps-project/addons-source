@@ -22,7 +22,7 @@ register(
     name=_("Descendant Book"),
     description=_("Produces one or more descendant reports based on a supplied query."),
     version = '1.1.34',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="DescendantBookReport.py",
     authors=["Matt Keenan", "Giansalvo Gusinu"],
@@ -43,7 +43,7 @@ register(
         "Produces one or more detailed descendant reports based on a supplied query."
     ),
     version = '1.1.34',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="DetailedDescendantBookReport.py",
     authors=["Matt Keenan", "Giansalvo Gusinu"],

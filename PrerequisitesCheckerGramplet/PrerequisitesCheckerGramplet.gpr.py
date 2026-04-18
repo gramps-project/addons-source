@@ -29,7 +29,7 @@ register(
     name=_("Prerequisites Checker"),
     description=_("Prerequisites Checker Gramplet"),
     version = '1.2.9',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="PrerequisitesCheckerGramplet.py",
     height=300,

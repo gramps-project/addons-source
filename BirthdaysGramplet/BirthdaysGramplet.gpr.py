@@ -29,7 +29,7 @@ register(
     fname="BirthdaysGramplet.py",
     height=200,
     gramplet="BirthdaysGramplet",
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     gramplet_title=_("Birthdays"),
     help_url="BirthdaysGramplet",
 )

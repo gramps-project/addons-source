@@ -29,7 +29,7 @@ register(
     name=_("Check Place Titles"),
     description=_("Check place titles"),
     version = '1.0.19',
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     include_in_listing=False,
     status=STABLE,
     fname="checkplacetitles.py",

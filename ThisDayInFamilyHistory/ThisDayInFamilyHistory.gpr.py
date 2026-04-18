@@ -15,5 +15,5 @@ register(
     expand=True,
     gramplet_title=_("This Day in Family History"),
     help_url="This Day In Family History",
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
 )
