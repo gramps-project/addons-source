@@ -53,9 +53,7 @@ try:
     gi.require_version("Gtk", "3.0")
     gi.require_version("Gdk", "3.0")
 except (ImportError, ValueError, AttributeError) as err:
-    raise unittest.SkipTest(
-        "GTK 3.0 / PyGObject not available: %s" % err
-    )
+    raise unittest.SkipTest("GTK 3.0 / PyGObject not available: %s" % err)
 
 # ------------------------
 # Gramps modules
@@ -126,9 +124,7 @@ class ImportMergeTagTestCase(unittest.TestCase):
         stub = self._make_stub()
 
         with DbTxn("import merge", self.db1, batch=True) as trans:
-            ImportMerge.do_commits(
-                stub, S_ADD, "Tag", tag_handle, A_ADD, trans
-            )
+            ImportMerge.do_commits(stub, S_ADD, "Tag", tag_handle, A_ADD, trans)
 
         self.assertEqual(self.db1.get_number_of_tags(), 1)
         committed = self.db1.get_tag_from_handle(tag_handle)
@@ -162,9 +158,7 @@ class ImportMergeTagTestCase(unittest.TestCase):
         stub.check_miss = lambda *a, **kw: False
 
         with DbTxn("import merge", self.db1, batch=True) as trans:
-            ImportMerge.do_commits(
-                stub, S_DIFFERS, "Tag", tag_handle, A_ADD, trans
-            )
+            ImportMerge.do_commits(stub, S_DIFFERS, "Tag", tag_handle, A_ADD, trans)
 
         committed = self.db1.get_tag_from_handle(tag_handle)
         self.assertIsNotNone(committed)
