@@ -19,7 +19,7 @@
 #
 # $Id$
 #
-from gramps.version import major_version, VERSION_TUPLE
+from gramps.version import VERSION_TUPLE
 
 if VERSION_TUPLE < (5, 2, 0):
     additional_args = {}
@@ -34,7 +34,7 @@ register(
     status = STABLE,
     version = '1.0.42',
     fname="PedigreeChart.py",
-    gramps_target_version=major_version,
+    gramps_target_version="6.1",
     authors=["Jakim Friant"],
     authors_email=["jakim@friant.org"],
     category=CATEGORY_DRAW,
