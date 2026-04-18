@@ -44,8 +44,21 @@ from types import SimpleNamespace
 import pytest
 
 # The ImportMerge module imports Gtk at module load — skip the whole file if
-# gi/Gtk aren't available (headless-without-GTK environments).
+# gi/Gtk aren't available (headless-without-GTK environments). On systems
+# where both GTK3 and GTK4 are present, pin Gtk to 3.0 before any gramps
+# import (mirrors what gramps.grampsapp does at startup); otherwise
+# PyGObject loads GTK4 and the gramps.gui import chain crashes on
+# Gtk.IconSize.MENU (a GTK3-only enum).
 pytest.importorskip("gi")
+import gi  # noqa: E402
+
+try:
+    gi.require_version("Gtk", "3.0")
+    gi.require_version("Gdk", "3.0")
+except (ValueError, AttributeError):
+    pytest.skip(
+        "GTK 3.0 typelib not available", allow_module_level=True
+    )
 
 # ------------------------
 # Gramps modules
