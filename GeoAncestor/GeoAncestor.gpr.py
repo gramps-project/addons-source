@@ -30,7 +30,7 @@ register(
     id="geoancestor",
     name=_("Ancestors map"),
     description=_("A view showing ancestors places on the map."),
-    version = '1.0.13',
+    version = '1.0.14',
     gramps_target_version="6.1",
     status=STABLE,
     fname="GeoAncestor.py",

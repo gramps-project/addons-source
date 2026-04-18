@@ -24,7 +24,7 @@ register(
     id="ageatdeath",
     name=_("Filter people by their age at death"),
     description=_("Filter rule that matches people by their age at death"),
-    version = '1.0.16',
+    version = '1.0.17',
     authors=["Matthias Kemmer"],
     authors_email=["matt.familienforschung@gmail.com"],
     gramps_target_version="6.1",

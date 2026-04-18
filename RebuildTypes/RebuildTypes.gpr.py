@@ -25,7 +25,7 @@ register(
     id="rebuild_types",
     name=_("Rebuild Gramps Types"),
     description=_("Rebuilds Gramps Types"),
-    version = '1.0.21',
+    version = '1.0.22',
     gramps_target_version="6.1",
     include_in_listing=False,
     status=UNSTABLE,

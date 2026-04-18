@@ -35,7 +35,7 @@ register(
     id="downloadmedia",
     name=_("Download media files from the internet"),
     description=_("This tool downloads media files from the internet"),
-    version = '1.0.21',
+    version = '1.0.22',
     gramps_target_version="6.1",
     status=STABLE,
     fname="DownloadMedia.py",

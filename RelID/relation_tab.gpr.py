@@ -36,7 +36,7 @@ register(
     name=_("Display relations and distances with the home person"),
     description=_("Will display relational informations with the home person"),
     help_url="Addon:RelID",
-    version = '1.1.4',
+    version = '1.1.5',
     gramps_target_version=MODULE_VERSION,
     include_in_listing=True,
     status=EXPERIMENTAL,

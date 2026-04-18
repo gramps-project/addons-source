@@ -24,7 +24,7 @@ register(
     id="Heatmap",
     name=_("Heatmap"),
     description=_("Create a heatmap web report."),
-    version = '1.2.8',
+    version = '1.2.9',
     gramps_target_version="6.1",
     status=STABLE,
     fname="heatmap.py",

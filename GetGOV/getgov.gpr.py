@@ -33,7 +33,7 @@ register(
     description=_("Gramplet to get places from the GOV database"),
     status=STABLE,
     audience=EXPERT,
-    version = '1.0.24',
+    version = '1.0.25',
     gramps_target_version="6.1",
     fname="getgov.py",
     gramplet="GetGOV",

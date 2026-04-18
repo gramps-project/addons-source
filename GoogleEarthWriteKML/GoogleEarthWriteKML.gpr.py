@@ -29,7 +29,7 @@ register(
     MAPSERVICE,
     id="GoogleEarth",
     name=_("GoogleEarth"),
-    version = '1.0.53',
+    version = '1.0.54',
     gramps_target_version="6.1",
     status=STABLE,
     fname="GoogleEarthWriteKML.py",
