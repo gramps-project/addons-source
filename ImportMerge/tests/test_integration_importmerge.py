@@ -38,10 +38,8 @@ Regression coverage:
 import os
 import shutil
 import tempfile
-import types
+import unittest
 from types import SimpleNamespace
-
-import pytest
 
 # The ImportMerge module imports Gtk at module load — skip the whole file if
 # gi/Gtk aren't available (headless-without-GTK environments). On systems
@@ -49,15 +47,14 @@ import pytest
 # import (mirrors what gramps.grampsapp does at startup); otherwise
 # PyGObject loads GTK4 and the gramps.gui import chain crashes on
 # Gtk.IconSize.MENU (a GTK3-only enum).
-pytest.importorskip("gi")
-import gi  # noqa: E402
-
 try:
+    import gi
+
     gi.require_version("Gtk", "3.0")
     gi.require_version("Gdk", "3.0")
-except (ValueError, AttributeError):
-    pytest.skip(
-        "GTK 3.0 typelib not available", allow_module_level=True
+except (ImportError, ValueError, AttributeError) as err:
+    raise unittest.SkipTest(
+        "GTK 3.0 / PyGObject not available: %s" % err
     )
 
 # ------------------------
@@ -75,47 +72,12 @@ from ImportMerge.importmerge import ImportMerge, S_ADD, S_DIFFERS, A_ADD
 
 def _make_db(suffix):
     """Create a fresh on-disk Gramps SQLite DB inside a temp directory."""
-    tmpdir = tempfile.mkdtemp(prefix=f"gramps_test_{suffix}_")
-    db_path = os.path.join(tmpdir, f"db_{suffix}")
+    tmpdir = tempfile.mkdtemp(prefix="gramps_test_%s_" % suffix)
+    db_path = os.path.join(tmpdir, "db_%s" % suffix)
     os.makedirs(db_path)
     db = make_database("sqlite")
     db.load(db_path, None)
     return db, tmpdir
-
-
-@pytest.fixture
-def db1():
-    """Destination Gramps DB (the one being merged into)."""
-    db, tmpdir = _make_db("db1")
-    yield db
-    try:
-        db.close()
-    except Exception:
-        pass
-    shutil.rmtree(tmpdir, ignore_errors=True)
-
-
-@pytest.fixture
-def db2():
-    """Source Gramps DB (simulates the XML being imported)."""
-    db, tmpdir = _make_db("db2")
-    yield db
-    try:
-        db.close()
-    except Exception:
-        pass
-    shutil.rmtree(tmpdir, ignore_errors=True)
-
-
-def _make_stub(db1, db2):
-    """Stub ``self`` for ``ImportMerge.do_commits`` — no GUI attributes."""
-    return SimpleNamespace(
-        db1=db1,
-        db2=db2,
-        added={},
-        missing={},
-        diffs={},
-    )
 
 
 def _add_tag(db, name):
@@ -127,60 +89,87 @@ def _add_tag(db, name):
     return handle
 
 
-def test_add_tag_does_not_crash(db1, db2):
-    """Regression for bug 0014056 — adding a Tag via do_commits must succeed.
+class ImportMergeTagTestCase(unittest.TestCase):
+    """Regression tests for bug 0014056 (Tag handling in do_commits)."""
 
-    Before the fix, this raised ``AttributeError: 'SQLite' object has no
-    attribute 'has_tag_gramps_id'`` because the generic GID-conflict check
-    didn't special-case Tag (a table object without a gramps_id field).
-    """
-    tag_handle = _add_tag(db2, "Imported")
-    stub = _make_stub(db1, db2)
+    def setUp(self):
+        self.db1, self.tmp1 = _make_db("db1")
+        self.db2, self.tmp2 = _make_db("db2")
 
-    with DbTxn("import merge", db1, batch=True) as trans:
-        ImportMerge.do_commits(stub, S_ADD, "Tag", tag_handle, A_ADD, trans)
+    def tearDown(self):
+        for db in (self.db1, self.db2):
+            try:
+                db.close()
+            except Exception:
+                pass
+        shutil.rmtree(self.tmp1, ignore_errors=True)
+        shutil.rmtree(self.tmp2, ignore_errors=True)
 
-    # Tag should now exist in the destination DB.
-    assert db1.get_number_of_tags() == 1
-    committed = db1.get_tag_from_handle(tag_handle)
-    assert committed is not None
-    assert committed.get_name() == "Imported"
-
-
-def test_differing_tag_does_not_crash(db1, db2):
-    """S_DIFFERS branch must also skip the gramps_id check for Tag.
-
-    Same root cause as the S_ADD path: the GID-conflict block at the end of
-    the S_DIFFERS branch dereferences ``item.gramps_id`` and calls
-    ``has_tag_gramps_id`` — both fail for Tag objects.
-    """
-    tag_handle = _add_tag(db1, "Original")
-    # Same handle in db2 with a different name — simulates S_DIFFERS.
-    tag2 = Tag()
-    tag2.set_handle(tag_handle)
-    tag2.set_name("Modified")
-    with DbTxn("seed db2", db2, batch=True) as trans:
-        db2.add_tag(tag2, trans)
-
-    stub = _make_stub(db1, db2)
-
-    # diff_result is invoked by do_commits on the S_DIFFERS path; stub it to
-    # return the db2 version as the resolved item (action = A_ADD ⇒ "replace").
-    def fake_diff_result(action, obj_type, hndl):
-        item1 = db1.get_tag_from_handle(hndl)
-        item2 = db2.get_tag_from_handle(hndl)
-        return item1, item2, item2
-
-    stub.diff_result = fake_diff_result
-    stub.check_diffs = lambda *a, **kw: False
-    stub.check_added = lambda *a, **kw: False
-    stub.check_miss = lambda *a, **kw: False
-
-    with DbTxn("import merge", db1, batch=True) as trans:
-        ImportMerge.do_commits(
-            stub, S_DIFFERS, "Tag", tag_handle, A_ADD, trans
+    def _make_stub(self):
+        """Stub ``self`` for ``ImportMerge.do_commits`` — no GUI attributes."""
+        return SimpleNamespace(
+            db1=self.db1,
+            db2=self.db2,
+            added={},
+            missing={},
+            diffs={},
         )
 
-    committed = db1.get_tag_from_handle(tag_handle)
-    assert committed is not None
-    assert committed.get_name() == "Modified"
+    def test_add_tag_does_not_crash(self):
+        """Regression for bug 0014056 — adding a Tag via do_commits must succeed.
+
+        Before the fix, this raised ``AttributeError: 'SQLite' object has no
+        attribute 'has_tag_gramps_id'`` because the generic GID-conflict check
+        didn't special-case Tag (a table object without a gramps_id field).
+        """
+        tag_handle = _add_tag(self.db2, "Imported")
+        stub = self._make_stub()
+
+        with DbTxn("import merge", self.db1, batch=True) as trans:
+            ImportMerge.do_commits(
+                stub, S_ADD, "Tag", tag_handle, A_ADD, trans
+            )
+
+        self.assertEqual(self.db1.get_number_of_tags(), 1)
+        committed = self.db1.get_tag_from_handle(tag_handle)
+        self.assertIsNotNone(committed)
+        self.assertEqual(committed.get_name(), "Imported")
+
+    def test_differing_tag_does_not_crash(self):
+        """S_DIFFERS branch must also skip the gramps_id check for Tag.
+
+        Same root cause as the S_ADD path: the GID-conflict block at the end
+        of the S_DIFFERS branch dereferences ``item.gramps_id`` and calls
+        ``has_tag_gramps_id`` — both fail for Tag objects.
+        """
+        tag_handle = _add_tag(self.db1, "Original")
+        tag2 = Tag()
+        tag2.set_handle(tag_handle)
+        tag2.set_name("Modified")
+        with DbTxn("seed db2", self.db2, batch=True) as trans:
+            self.db2.add_tag(tag2, trans)
+
+        stub = self._make_stub()
+
+        def fake_diff_result(action, obj_type, hndl):
+            item1 = self.db1.get_tag_from_handle(hndl)
+            item2 = self.db2.get_tag_from_handle(hndl)
+            return item1, item2, item2
+
+        stub.diff_result = fake_diff_result
+        stub.check_diffs = lambda *a, **kw: False
+        stub.check_added = lambda *a, **kw: False
+        stub.check_miss = lambda *a, **kw: False
+
+        with DbTxn("import merge", self.db1, batch=True) as trans:
+            ImportMerge.do_commits(
+                stub, S_DIFFERS, "Tag", tag_handle, A_ADD, trans
+            )
+
+        committed = self.db1.get_tag_from_handle(tag_handle)
+        self.assertIsNotNone(committed)
+        self.assertEqual(committed.get_name(), "Modified")
+
+
+if __name__ == "__main__":
+    unittest.main()
