@@ -59,6 +59,7 @@ except (ImportError, ValueError, AttributeError) as err:
 # Gramps modules
 # ------------------------
 from gramps.gen.db import DbTxn
+from gramps.gen.db.base import DbReadBase
 from gramps.gen.db.utils import make_database
 from gramps.gen.lib import Tag
 
@@ -68,8 +69,13 @@ from gramps.gen.lib import Tag
 from ImportMerge.importmerge import ImportMerge, S_ADD, S_DIFFERS, A_ADD
 
 
-def _make_db(suffix):
-    """Create a fresh on-disk Gramps SQLite DB inside a temp directory."""
+def _make_db(suffix: str) -> tuple[DbReadBase, str]:
+    """Create a fresh on-disk Gramps SQLite DB inside a temp directory.
+
+    :param suffix: Short label used in the temp-directory prefix.
+    :returns: A ``(db, tmpdir)`` tuple — the caller owns ``tmpdir`` and must
+        remove it.
+    """
     tmpdir = tempfile.mkdtemp(prefix="gramps_test_%s_" % suffix)
     db_path = os.path.join(tmpdir, "db_%s" % suffix)
     os.makedirs(db_path)
@@ -78,8 +84,13 @@ def _make_db(suffix):
     return db, tmpdir
 
 
-def _add_tag(db, name):
-    """Add a Tag to ``db`` and return its handle."""
+def _add_tag(db: DbReadBase, name: str) -> str:
+    """Add a Tag to ``db`` and return its handle.
+
+    :param db: The database to add the tag to.
+    :param name: The tag name.
+    :returns: The handle of the newly-created tag.
+    """
     tag = Tag()
     tag.set_name(name)
     with DbTxn("add tag", db, batch=True) as trans:
@@ -87,14 +98,19 @@ def _add_tag(db, name):
     return handle
 
 
+# ------------------------------------------------------------
+#
+# ImportMergeTagTestCase
+#
+# ------------------------------------------------------------
 class ImportMergeTagTestCase(unittest.TestCase):
     """Regression tests for bug 0014056 (Tag handling in do_commits)."""
 
-    def setUp(self):
+    def setUp(self) -> None:
         self.db1, self.tmp1 = _make_db("db1")
         self.db2, self.tmp2 = _make_db("db2")
 
-    def tearDown(self):
+    def tearDown(self) -> None:
         for db in (self.db1, self.db2):
             try:
                 db.close()
@@ -103,7 +119,7 @@ class ImportMergeTagTestCase(unittest.TestCase):
         shutil.rmtree(self.tmp1, ignore_errors=True)
         shutil.rmtree(self.tmp2, ignore_errors=True)
 
-    def _make_stub(self):
+    def _make_stub(self) -> SimpleNamespace:
         """Stub ``self`` for ``ImportMerge.do_commits`` — no GUI attributes."""
         return SimpleNamespace(
             db1=self.db1,
@@ -113,7 +129,7 @@ class ImportMergeTagTestCase(unittest.TestCase):
             diffs={},
         )
 
-    def test_add_tag_does_not_crash(self):
+    def test_add_tag_does_not_crash(self) -> None:
         """Regression for bug 0014056 — adding a Tag via do_commits must succeed.
 
         Before the fix, this raised ``AttributeError: 'SQLite' object has no
@@ -131,7 +147,7 @@ class ImportMergeTagTestCase(unittest.TestCase):
         self.assertIsNotNone(committed)
         self.assertEqual(committed.get_name(), "Imported")
 
-    def test_differing_tag_does_not_crash(self):
+    def test_differing_tag_does_not_crash(self) -> None:
         """S_DIFFERS branch must also skip the gramps_id check for Tag.
 
         Same root cause as the S_ADD path: the GID-conflict block at the end
@@ -147,7 +163,9 @@ class ImportMergeTagTestCase(unittest.TestCase):
 
         stub = self._make_stub()
 
-        def fake_diff_result(action, obj_type, hndl):
+        def fake_diff_result(
+            action: int, obj_type: str, hndl: str
+        ) -> tuple[Tag | None, Tag | None, Tag | None]:
             item1 = self.db1.get_tag_from_handle(hndl)
             item2 = self.db2.get_tag_from_handle(hndl)
             return item1, item2, item2
