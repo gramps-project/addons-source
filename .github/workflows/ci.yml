@@ -1,0 +1,237 @@
+name: CI
+
+on:
+  push:
+    branches: [maintenance/gramps60]
+  pull_request:
+    branches: [maintenance/gramps60]
+
+env:
+  CI_IMAGE: ghcr.io/${{ github.repository }}/gramps-ci:gramps60
+
+jobs:
+  # -----------------------------------------------------------------
+  # Lint (ci container)
+  # -----------------------------------------------------------------
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    # Non-blocking until the existing ruff E9/F63/F7/F82 errors across the
+    # addon set are cleaned up in a follow-up PR. Flip this off in that PR.
+    continue-on-error: true
+    container:
+      image: ghcr.io/${{ github.repository }}/gramps-ci:gramps60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run ruff (syntax and import errors only)
+        run: ruff check --select=E9,F63,F7,F82 --no-fix --exclude='*.gpr.py' .
+
+      - name: Check trailing whitespace in Python files
+        run: |
+          if git --no-pager grep --color -n --full-name '[ \t]$' -- '*.py'; then
+            echo "::error::Trailing whitespace found in Python files"
+            exit 1
+          fi
+
+  # -----------------------------------------------------------------
+  # Addon structure (bare runner — just bash, no deps needed)
+  # -----------------------------------------------------------------
+  addon-structure:
+    name: Addon Structure
+    runs-on: ubuntu-latest
+    # Non-blocking until the four addons missing po/template.pot are fixed
+    # in a follow-up PR. Flip this off in that PR.
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check all addons have po/template.pot
+        run: |
+          failed=0
+          for gpr in */*.gpr.py; do
+            addon_dir="$(dirname "$gpr")"
+            if [ ! -d "$addon_dir/po" ]; then
+              echo "::error::$addon_dir is missing po/ directory"
+              failed=1
+            elif [ ! -f "$addon_dir/po/template.pot" ]; then
+              echo "::error::$addon_dir is missing po/template.pot"
+              failed=1
+            fi
+          done
+          if [ "$failed" -eq 0 ]; then
+            echo "All addons have po/template.pot"
+          fi
+          exit $failed
+
+  # -----------------------------------------------------------------
+  # Compile check (ci container)
+  # -----------------------------------------------------------------
+  compile-check:
+    name: Compile Check
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository }}/gramps-ci:gramps60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile all Python files (excluding .gpr.py)
+        shell: bash
+        run: |
+          failed=0
+          while IFS= read -r f; do
+            if ! python3 -m py_compile "$f" 2>&1; then
+              failed=1
+            fi
+          done < <(find . -name '*.py' ! -name '*.gpr.py' ! -path './.git/*' ! -path '*/__pycache__/*')
+          exit $failed
+
+  # -----------------------------------------------------------------
+  # Unit tests — Linux (ci container)
+  # -----------------------------------------------------------------
+  unit-test-linux:
+    name: Unit Tests (Linux)
+    runs-on: ubuntu-latest
+    # Non-blocking until the currently-broken addon unit modules (import
+    # failures, stale API usage) are sorted out in follow-up PRs.
+    continue-on-error: true
+    container:
+      image: ghcr.io/${{ github.repository }}/gramps-ci:gramps60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run per-addon unit tests
+        env:
+          PYTHONPATH: .
+        run: |
+          modules=""
+          for f in */tests/test_*.py; do
+            [ -f "$f" ] || continue
+            case "$(basename "$f")" in
+              test_integration*) continue ;;
+            esac
+            case "$f" in
+              Sqlite/tests/test_sqlite.py) continue ;;
+            esac
+            mod="${f%.py}"
+            mod="${mod//\//.}"
+            modules="$modules $mod"
+          done
+          if [ -n "$modules" ]; then
+            echo "Running unit tests:$modules"
+            python3 -m unittest -v $modules
+          else
+            echo "No per-addon unit test modules found"
+          fi
+
+  # -----------------------------------------------------------------
+  # Unit tests — Windows (conda-forge: bundles PyGObject + GTK + Gramps)
+  # -----------------------------------------------------------------
+  unit-test-windows:
+    name: Unit Tests (Windows)
+    runs-on: windows-latest
+    # Non-blocking for the same reason as unit-test-linux.
+    continue-on-error: true
+    defaults:
+      run:
+        shell: bash -el {0}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Miniforge
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          miniforge-version: latest
+          activate-environment: addons-ci
+          environment-file: .github/environment.yml
+          use-mamba: true
+
+      - name: Verify environment
+        run: |
+          mamba info
+          mamba list | head -30
+          python -c "import gramps, gi; print('deps OK')"
+
+      - name: Run per-addon unit tests
+        env:
+          PYTHONPATH: .
+        run: |
+          modules=""
+          for f in */tests/test_*.py; do
+            [ -f "$f" ] || continue
+            case "$(basename "$f")" in
+              test_integration*) continue ;;
+            esac
+            case "$f" in
+              Sqlite/tests/test_sqlite.py) continue ;;
+            esac
+            mod="${f%.py}"
+            mod="${mod//\//.}"
+            modules="$modules $mod"
+          done
+          if [ -n "$modules" ]; then
+            echo "Running unit tests:$modules"
+            python -m unittest -v $modules
+          else
+            echo "No per-addon unit test modules found"
+          fi
+
+  # -----------------------------------------------------------------
+  # Integration tests — Gramps (ci container, xvfb available)
+  # -----------------------------------------------------------------
+  integration-test:
+    name: Integration Tests (Gramps)
+    runs-on: ubuntu-latest
+    needs: [unit-test-linux]
+    container:
+      image: ghcr.io/${{ github.repository }}/gramps-ci:gramps60
+      options: --init
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run plugin registration tests
+        env:
+          PYTHONPATH: .
+        run: python3 -m unittest discover -s tests -p "test_*.py" -t . -v
+
+      - name: Run per-addon integration tests
+        env:
+          PYTHONPATH: .
+        run: |
+          modules=""
+          for f in */tests/test_integration*.py; do
+            [ -f "$f" ] || continue
+            mod="${f%.py}"
+            mod="${mod//\//.}"
+            modules="$modules $mod"
+          done
+          if [ -n "$modules" ]; then
+            echo "Running per-addon integration tests:$modules"
+            python3 -m unittest -v $modules
+          else
+            echo "No per-addon integration test modules found"
+          fi
+
+  # -----------------------------------------------------------------
+  # Build (ci container)
+  # -----------------------------------------------------------------
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository }}/gramps-ci:gramps60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Determine GRAMPSPATH
+        id: gramps-path
+        run: |
+          GPATH=$(python3 -c "import gramps, os; print(os.path.dirname(os.path.dirname(gramps.__file__)))")
+          echo "path=$GPATH" >> "$GITHUB_OUTPUT"
+
+      - name: Build all addons
+        env:
+          GRAMPSPATH: ${{ steps.gramps-path.outputs.path }}
+        run: |
+          mkdir -p ../download
+          python3 make.py gramps60 build all
