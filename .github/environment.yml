@@ -6,7 +6,10 @@ dependencies:
   - pygobject
   - gtk3
   - pip
+  # Addon runtime deps (dbf, networkx, lxml, svgwrite, boto3, etc.) are
+  # installed at CI runtime by ci.yml's auto-derive step from .gpr.py
+  # requires_mod — single source of truth. Keep only the stable base
+  # here (Gramps + orjson for plugin registration).
   - pip:
       - "gramps>=6.0,<6.1"
       - orjson
-      - dbf

@@ -37,13 +37,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         xauth \
     && rm -rf /var/lib/apt/lists/*
 
+# Addon runtime deps (dbf, networkx, lxml, svgwrite, boto3, etc.) are
+# NOT baked in here — ci.yml's "Install addon runtime deps (derived from
+# requires_mod)" step pip-installs them at CI runtime from every
+# .gpr.py's requires_mod list, matching what Gramps' Addon Manager does
+# for an end user. Keeps .gpr.py the single source of truth.
 RUN pip install --no-cache-dir \
         PyGObject \
         pycairo \
         "gramps>=6.0,<6.1" \
         orjson \
-        ruff \
-        dbf
+        ruff
 
 RUN apt-get purge -y gcc python3-dev pkg-config && apt-get autoremove -y
 
