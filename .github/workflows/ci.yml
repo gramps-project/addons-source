@@ -139,6 +139,14 @@ jobs:
           fi
 
       - name: Run per-addon unit tests
+        # Filename convention (all OSes):
+        #   test_*.py              — general (any OS)
+        #   test_linux_*.py        — Linux-only
+        #   test_windows_*.py      — Windows-only
+        #   test_integration_*.py  — Linux-only, full-pipeline/DB-backed
+        # The Linux job runs test_*.py except the Windows-only and
+        # integration buckets. Integration tests run in their own job.
+        #
         # shell: bash — the container's default shell is /bin/sh
         # (dash on python:3.12-slim), which does not support the
         # ${var//pattern/repl} and ${var%.py} parameter expansions
@@ -152,6 +160,7 @@ jobs:
             [ -f "$f" ] || continue
             case "$(basename "$f")" in
               test_integration*) continue ;;
+              test_windows_*)    continue ;;
             esac
             case "$f" in
               Sqlite/tests/test_sqlite.py) continue ;;
@@ -226,6 +235,8 @@ jobs:
           fi
 
       - name: Run per-addon unit tests
+        # See filename-convention note in unit-test-linux. The Windows
+        # job runs test_*.py except test_linux_* and test_integration_*.
         env:
           PYTHONPATH: .
         run: |
@@ -234,6 +245,7 @@ jobs:
             [ -f "$f" ] || continue
             case "$(basename "$f")" in
               test_integration*) continue ;;
+              test_linux_*)      continue ;;
             esac
             case "$f" in
               Sqlite/tests/test_sqlite.py) continue ;;
