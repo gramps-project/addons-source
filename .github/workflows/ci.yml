@@ -100,6 +100,44 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install addon runtime deps (derived from requires_mod)
+        # Auto-derive the union of requires_mod across every .gpr.py in
+        # the repo. Mirrors Gramps' Addon Manager install path
+        # (gramps/gui/plug/_windows.py __on_install_clicked → req.install →
+        # gen/utils/requirements.py). Keeps .gpr.py files as the single
+        # source of truth for addon deps — no parallel list to maintain
+        # in the image or workflow. Best-effort: a package needing exotic
+        # system deps (pygraphviz → graphviz-dev, psycopg2 → libpq-dev)
+        # may fail here; the affected addon's tests will skip or fail in
+        # isolation without blocking the rest.
+        shell: bash
+        run: |
+          addon_mods=$(python3 - <<'PY'
+          import ast, glob, re
+          pat = re.compile(r"requires_mod\s*=\s*(\[[^\]]*\])")
+          mods = set()
+          for f in glob.glob("*/*.gpr.py"):
+              try:
+                  text = open(f, encoding="utf-8").read()
+              except OSError:
+                  continue
+              for m in pat.finditer(text):
+                  try:
+                      mods.update(ast.literal_eval(m.group(1)))
+                  except (ValueError, SyntaxError):
+                      pass
+          print(" ".join(sorted(mods)))
+          PY
+          )
+          if [ -n "$addon_mods" ]; then
+            echo "→ addon deps: $addon_mods"
+            for mod in $addon_mods; do
+              pip install "$mod" || echo "× $mod failed to install (continuing)"
+            done
+          else
+            echo "no requires_mod declarations found"
+          fi
+
       - name: Run per-addon unit tests
         env:
           PYTHONPATH: .
@@ -152,6 +190,36 @@ jobs:
           mamba list | head -30
           python -c "import gramps, gi; print('deps OK')"
 
+      - name: Install addon runtime deps (derived from requires_mod)
+        # See unit-test-linux for rationale. Uses `python` (conda-forge
+        # env) to match the surrounding Windows job style.
+        run: |
+          addon_mods=$(python - <<'PY'
+          import ast, glob, re
+          pat = re.compile(r"requires_mod\s*=\s*(\[[^\]]*\])")
+          mods = set()
+          for f in glob.glob("*/*.gpr.py"):
+              try:
+                  text = open(f, encoding="utf-8").read()
+              except OSError:
+                  continue
+              for m in pat.finditer(text):
+                  try:
+                      mods.update(ast.literal_eval(m.group(1)))
+                  except (ValueError, SyntaxError):
+                      pass
+          print(" ".join(sorted(mods)))
+          PY
+          )
+          if [ -n "$addon_mods" ]; then
+            echo "→ addon deps: $addon_mods"
+            for mod in $addon_mods; do
+              pip install "$mod" || echo "× $mod failed to install (continuing)"
+            done
+          else
+            echo "no requires_mod declarations found"
+          fi
+
       - name: Run per-addon unit tests
         env:
           PYTHONPATH: .
@@ -188,6 +256,38 @@ jobs:
       options: --init
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install addon runtime deps (derived from requires_mod)
+        # See unit-test-linux for rationale. The plugin registration test
+        # subprocess-loads each addon's module, which imports its
+        # requires_mod packages.
+        shell: bash
+        run: |
+          addon_mods=$(python3 - <<'PY'
+          import ast, glob, re
+          pat = re.compile(r"requires_mod\s*=\s*(\[[^\]]*\])")
+          mods = set()
+          for f in glob.glob("*/*.gpr.py"):
+              try:
+                  text = open(f, encoding="utf-8").read()
+              except OSError:
+                  continue
+              for m in pat.finditer(text):
+                  try:
+                      mods.update(ast.literal_eval(m.group(1)))
+                  except (ValueError, SyntaxError):
+                      pass
+          print(" ".join(sorted(mods)))
+          PY
+          )
+          if [ -n "$addon_mods" ]; then
+            echo "→ addon deps: $addon_mods"
+            for mod in $addon_mods; do
+              pip install "$mod" || echo "× $mod failed to install (continuing)"
+            done
+          else
+            echo "no requires_mod declarations found"
+          fi
 
       - name: Run plugin registration tests
         env:
