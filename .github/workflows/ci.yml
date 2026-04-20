@@ -139,6 +139,11 @@ jobs:
           fi
 
       - name: Run per-addon unit tests
+        # shell: bash — the container's default shell is /bin/sh
+        # (dash on python:3.12-slim), which does not support the
+        # ${var//pattern/repl} and ${var%.py} parameter expansions
+        # used below. Falls silently under continue-on-error.
+        shell: bash
         env:
           PYTHONPATH: .
         run: |
@@ -290,11 +295,19 @@ jobs:
           fi
 
       - name: Run plugin registration tests
+        # shell: bash for consistency with the surrounding steps; the
+        # current command uses no bashisms, but keeps this block safe
+        # against future edits. Container default is /bin/sh → dash.
+        shell: bash
         env:
           PYTHONPATH: .
         run: python3 -m unittest discover -s tests -p "test_*.py" -t . -v
 
       - name: Run per-addon integration tests
+        # shell: bash — see unit-test-linux for rationale; the
+        # ${var//pattern/repl} and ${var%.py} expansions below are
+        # bash-only.
+        shell: bash
         env:
           PYTHONPATH: .
         run: |
