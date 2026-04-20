@@ -55,11 +55,15 @@ except (ImportError, ValueError, AttributeError) as err:
 # ------------------------
 # Gramps modules
 # ------------------------
-# Addon root goes on sys.path so ``from DataEntryGramplet import
-# DataEntryGramplet`` resolves the module-level class. The unittest
-# discovery entrypoint (tests/) lacks an __init__.py, so this
-# ``__file__``-based hack is still the right way to make the addon
-# importable during local and CI runs.
+# Addon root goes on sys.path so ``from DataEntryGramplet.DataEntryGramplet
+# import DataEntryGramplet`` resolves the class inside the addon module.
+# The fully-qualified form matters: when unittest loads this file as
+# ``DataEntryGramplet.tests.test_...``, the outer ``DataEntryGramplet``
+# is already a namespace package in ``sys.modules``, so a bare
+# ``from DataEntryGramplet import DataEntryGramplet`` would bind the
+# submodule instead of the class. The ``tests/`` directory lacks an
+# __init__.py, so this ``__file__``-based hack is still the right way
+# to make the addon importable during local and CI runs.
 ADDON_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if ADDON_DIR not in sys.path:
     sys.path.insert(0, ADDON_DIR)
@@ -83,7 +87,7 @@ if "GRAMPS_RESOURCES" not in os.environ:
 # not surface spurious errors.
 try:
     import gramps.gui.dialog as gramps_dialog  # noqa: E402
-    from DataEntryGramplet import DataEntryGramplet  # noqa: E402
+    from DataEntryGramplet.DataEntryGramplet import DataEntryGramplet  # noqa: E402
 except Exception as err:  # noqa: BLE001 — environment guard
     raise unittest.SkipTest("DataEntryGramplet module unavailable: %s" % err)
 
