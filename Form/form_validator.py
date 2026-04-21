@@ -127,7 +127,8 @@ def validate_form_dom(dom: xml.dom.minidom.Document) -> list[str]:
 
     Checks that:
 
-    * a ``<forms>`` root element exists;
+    * a ``<forms>`` root element exists and contains at least one
+      ``<form>`` definition;
     * each ``<form>`` element has ``id``, ``title`` and ``type`` attributes;
     * each ``<section>`` element has non-empty ``role`` and ``type``
       attributes;
@@ -144,9 +145,77 @@ def validate_form_dom(dom: xml.dom.minidom.Document) -> list[str]:
         return ["Missing <forms> root element"]
 
     errors: list[str] = []
-    for form in top[0].getElementsByTagName("form"):
+    forms = top[0].getElementsByTagName("form")
+    if not forms:
+        errors.append("<forms> root element contains no <form> definitions")
+    for form in forms:
         errors.extend(validate_form_element(form))
     return errors
+
+
+def get_form_warnings(dom: xml.dom.minidom.Document) -> list[str]:
+    """
+    Collect non-fatal warnings about a parsed form definitions DOM.
+
+    Warnings describe likely authoring mistakes that do not prevent the
+    form from loading. Currently covers Gramps bug 11010's observation
+    that a section's ``<column>`` ``<size>`` values are expected to sum
+    to 100 — sections that declare explicit sizes on every column but do
+    not sum to 100 are reported as warnings so callers can log them
+    without blocking the form from loading.
+
+    Sections without any sized columns, or with only some columns
+    sized, are skipped because the intent is ambiguous.
+
+    :param dom: a parsed ``xml.dom.minidom.Document``
+    :returns: a list of human-readable warning messages; empty when
+              nothing questionable is detected
+    """
+    warnings: list[str] = []
+    top = dom.getElementsByTagName("forms")
+    if not top:
+        return warnings
+
+    for form in top[0].getElementsByTagName("form"):
+        form_id = (
+            form.attributes["id"].value
+            if "id" in form.attributes
+            else "<missing id>"
+        )
+        for section in form.getElementsByTagName("section"):
+            role = (
+                section.attributes["role"].value
+                if "role" in section.attributes
+                else "<missing role>"
+            )
+            columns = section.getElementsByTagName("column")
+            if not columns:
+                continue
+
+            sizes: list[int] = []
+            all_sized = True
+            for column in columns:
+                size_nodes = column.getElementsByTagName("size")
+                if not size_nodes or not size_nodes[0].childNodes:
+                    all_sized = False
+                    break
+                try:
+                    sizes.append(int(size_nodes[0].childNodes[0].data))
+                except ValueError:
+                    all_sized = False
+                    break
+            if not all_sized:
+                continue
+
+            total = sum(sizes)
+            if total != 100:
+                warnings.append(
+                    "Form '%s': section '%s' column sizes sum to %d "
+                    "(expected 100); form will still load but column "
+                    "widths may not render as intended"
+                    % (form_id, role, total)
+                )
+    return warnings
 
 
 def parse_and_validate(path: str) -> tuple[xml.dom.minidom.Document | None, list[str]]:
