@@ -22,12 +22,16 @@
 Integration tests for the Form addon loader — covers
 ``gramps-project/gramps#11707`` (*ValueError: not enough values to
 unpack* when a form's ``<section type='family'>`` title lacks the
-``X/Y`` separator).
+``X/Y`` separator) and ``gramps-project/gramps#11010`` (empty
+``<forms>`` roots used to load silently, and column-size mismatches
+had no diagnostic).
 
 Scenarios covered:
 
 * Malformed XML produces an ``ErrorDialog`` rather than a bare traceback.
 * A partially-broken file still loads its well-formed ``<form>`` entries.
+* Empty ``<forms>`` roots surface as an ``ErrorDialog`` (bug 11010 item a).
+* Column-size mismatches are logged as WARNINGs only (bug 11010 item b).
 * The shipped built-in definition files load cleanly without any error
   dialogs being raised.
 
@@ -39,6 +43,7 @@ Run with::
 # ------------------------
 # Python modules
 # ------------------------
+import logging
 import os
 import shutil
 import sys
@@ -228,6 +233,75 @@ class TestErrorDialogWiring(FormLoaderTestCase):
         _, body = self.shown[0]
         self.assertIn("bogus", body)
         self.assertNotIn("F1", list(instance.get_form_ids()))
+
+
+# ---------------------------------------------------------------------------
+# Empty / content-less definition files (Gramps bug 11010 item a)
+# ---------------------------------------------------------------------------
+class TestEmptyFormsValidation(FormLoaderTestCase):
+    """
+    A definition file whose ``<forms>`` root contains no ``<form>``
+    children used to load silently. The validator now surfaces it as an
+    ErrorDialog so the user notices the empty file.
+    """
+
+    def test_empty_forms_element_shows_error_dialog(self) -> None:
+        """Empty ``<forms/>`` must raise an ErrorDialog, not load silently."""
+        self._write("custom.xml", "<forms/>")
+        self._patch_definition_files(["custom.xml"])
+
+        instance = self.form.Form(definition_dir=self.tmp_dir)
+
+        self.assertTrue(self.shown, "no ErrorDialog was displayed for empty <forms>")
+        title, body = self.shown[0]
+        self.assertIn("Invalid Form definition file", title)
+        self.assertIn("no <form>", body)
+        self.assertEqual(list(instance.get_form_ids()), [])
+
+
+# ---------------------------------------------------------------------------
+# Column-size warnings (Gramps bug 11010 item b) — WARNING only, not errors
+# ---------------------------------------------------------------------------
+class TestColumnSizeWarnings(FormLoaderTestCase):
+    """
+    Sections whose ``<column>`` sizes do not sum to 100 must be logged
+    as warnings only — 78 shipped forms trip this check, so escalating
+    to an ErrorDialog would harass users on every launch.
+    """
+
+    def test_column_size_sum_warning_is_logged_not_dialog(self) -> None:
+        """Column-size mismatch → WARNING log entry, no ErrorDialog."""
+        self._write(
+            "custom.xml",
+            textwrap.dedent("""\
+                <forms>
+                    <form id='F1' type='Census' title='x'>
+                        <section role='Primary' type='person'>
+                            <column><_attribute>A</_attribute><size>25</size></column>
+                        </section>
+                    </form>
+                </forms>
+                """),
+        )
+        self._patch_definition_files(["custom.xml"])
+
+        with self.assertLogs(".FormGramplet", level=logging.WARNING) as log_ctx:
+            instance = self.form.Form(definition_dir=self.tmp_dir)
+
+        self.assertFalse(
+            self.shown,
+            "column-size mismatch must not produce an ErrorDialog:\n"
+            + "\n".join("%s: %s" % (t, b) for t, b in self.shown),
+        )
+        self.assertIn(
+            "F1",
+            list(instance.get_form_ids()),
+            "the form must still load despite the size mismatch",
+        )
+        self.assertTrue(
+            any("sum to 25" in message for message in log_ctx.output),
+            "expected a column-size warning in the log",
+        )
 
 
 # ---------------------------------------------------------------------------
