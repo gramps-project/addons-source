@@ -1286,8 +1286,9 @@ class PrerequisitesCheckerGramplet(Gramplet):
             import gi
 
             repository = gi.Repository.get_default()
-            if repository.enumerate_versions("GExiv2"):
-                gi.require_version("GExiv2", "0.10")
+            v_array = repository.enumerate_versions("GExiv2")
+            if v_array:
+                gi.require_version("GExiv2", v_array[-1])
                 from gi.repository import GExiv2
 
                 try:
@@ -1299,8 +1300,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
 
         except ImportError:
             gexiv2_str = _("not found")
-        except ValueError:
-            gexiv2_str = "not new enough"
+        except ValueError as err:
+            gexiv2_str = f"Version error: {err}"
 
         try:
             vers_str = Popen(["exiv2", "-V"], stdout=PIPE).communicate(input=None)[0]
