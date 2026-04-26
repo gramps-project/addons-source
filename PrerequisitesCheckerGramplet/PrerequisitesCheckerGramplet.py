@@ -952,25 +952,18 @@ class PrerequisitesCheckerGramplet(Gramplet):
         # Start check
 
         try:
-            import PyICU
+            import icu
 
             try:
-                pyicu_str = PyICU.VERSION
-                icu_str = PyICU.ICU_VERSION
+                pyicu_str = icu.VERSION
+                icu_str = icu.ICU_VERSION
             except Exception:  # any failure to 'get' the version
                 pyicu_str = _("unknown version")
                 icu_str = _("unknown version")
             result = " • PyICU " + pyicu_str + " (ICU " + icu_str + ")"
 
         except ImportError:
-            pyicu_str = _("not found")
-            try:
-                import icu
-
-                icu_str = icu.PY_VERSION
-            except Exception:
-                icu_str = _("not found")
-            result = " • PyICU " + pyicu_str + " but we have ICU " + icu_str
+            result = " • PyICU not installed"
 
         # End check
         self.append_text(result)
