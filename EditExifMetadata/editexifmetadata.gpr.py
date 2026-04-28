@@ -35,7 +35,7 @@ register(
     gramplet_title=_("Edit Exif Metadata"),
     detached_width=550,
     detached_height=550,
-    version = '2.0.17',
+    version = '2.0.18',
     gramps_target_version="6.1",
     status=STABLE,
     include_in_listing=True,
