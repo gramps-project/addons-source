@@ -552,7 +552,7 @@ class GetGOV(Gramplet):
             end_str = end[0].childNodes[0].data
 
         if begin_str and end_str:
-            date_str = _("from %s to %s") % ({'begin_str':begin_str, 'end_str':end_str})
+            date_str = _("from %(begin)s to %(end)s" % {'begin': begin_str, 'end': end_str} )
         elif begin_str:
             date_str = _("after %s") % begin_str
         elif end_str:
