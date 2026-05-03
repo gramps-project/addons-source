@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-31 08:46+0200\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: TMGimporter/libtmg.py:2324 TMGimporter/libtmg.py:2357
-#: TMGimporter/libtmg.py:2439 TMGimporter/libtmg.py:2466
+#: TMGimporter/libtmg.py:2319 TMGimporter/libtmg.py:2352
+#: TMGimporter/libtmg.py:2434 TMGimporter/libtmg.py:2461
 msgid "TMG import failed"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2325
+#: TMGimporter/libtmg.py:2320
 msgid ""
 "The current Family Tree is not empty.\n"
 "\n"
 "Please create a new empty Family Tree before importing a TMG backup file."
 msgstr ""
 
-#: TMGimporter/libtmg.py:2358
+#: TMGimporter/libtmg.py:2353
 msgid ""
 "The TMG backup file could not be read: PJC version information is missing or "
 "unreadable.\n"
@@ -38,11 +38,11 @@ msgid ""
 "(PjcVersion >= 11.0)."
 msgstr ""
 
-#: TMGimporter/libtmg.py:2370
+#: TMGimporter/libtmg.py:2365
 msgid "TMG version not supported"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2371
+#: TMGimporter/libtmg.py:2366
 #, python-format
 msgid ""
 "This backup was created with an older version of TMG (PjcVersion %(ver)s, "
@@ -55,14 +55,14 @@ msgid ""
 "Addon:TMGimporter#Before_Import_From_TMG_Backup_file"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2440
+#: TMGimporter/libtmg.py:2435
 msgid ""
 "No datasets were found in this TMG backup file.\n"
 "\n"
 "The backup may be corrupt or empty."
 msgstr ""
 
-#: TMGimporter/libtmg.py:2467
+#: TMGimporter/libtmg.py:2462
 #, python-format
 msgid ""
 "%(filename)s does not appear to be a valid TMG backup file.\n"
@@ -73,32 +73,32 @@ msgid ""
 "Ensure the file was created by TMG version 5.x or later."
 msgstr ""
 
-#: TMGimporter/libtmg.py:2636
+#: TMGimporter/libtmg.py:2635
 #, python-format
 msgid "Could not create media directory %s"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2640
+#: TMGimporter/libtmg.py:2639
 #, python-format
 msgid "Media directory %s is not writable"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2646
+#: TMGimporter/libtmg.py:2645
 #, python-format
 msgid ""
 "Media directory %s exists. Delete it first, then restart the import process"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2662
+#: TMGimporter/libtmg.py:2661
 #, python-format
 msgid "Error extracting into %s"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2673
+#: TMGimporter/libtmg.py:2672
 msgid "Base path for relative media set"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2674
+#: TMGimporter/libtmg.py:2673
 #, python-format
 msgid ""
 "The base media path of this Family Tree has been set to %s. Consider taking "
@@ -107,11 +107,11 @@ msgid ""
 "'Replace substring in the path' to set correct paths in your media objects."
 msgstr ""
 
-#: TMGimporter/libtmg.py:2682
+#: TMGimporter/libtmg.py:2681
 msgid "Cannot set base media path"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2683
+#: TMGimporter/libtmg.py:2682
 #, python-format
 msgid ""
 "The Family Tree you imported into already has a base media path: "
@@ -123,19 +123,19 @@ msgid ""
 "media objects."
 msgstr ""
 
-#: TMGimporter/libtmg.py:2709 TMGimporter/libtmg.py:2734
+#: TMGimporter/libtmg.py:2708 TMGimporter/libtmg.py:2733
 msgid "Database Information"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2711
+#: TMGimporter/libtmg.py:2710
 msgid "_OK"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2717
+#: TMGimporter/libtmg.py:2716
 msgid "Setting"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2718
+#: TMGimporter/libtmg.py:2717
 msgid "Value"
 msgstr ""
 
@@ -166,20 +166,36 @@ msgstr ""
 #: TMGimporter/importtmg.py:105
 #, python-format
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer "
-"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
-"TMG project was created by:TMG version 5.x or greater.Your file:*.TMG - "
-"Version Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
+"Directly importing from TMG files is not supported\n"
+"by the TMG Importer Addon.\n"
+"\n"
+"You need to use an backup copy of TMG project(*.sqz)\n"
+"\n"
+"Ensure that your TMG project was created by:\n"
+"TMG version 5.x or greater.\n"
+"\n"
+"Your file:\n"
+"*.TMG - Version Control File for TMG 2.0 to TMG 4.0d\n"
+"\n"
+"Please refer to:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 
 #: TMGimporter/importtmg.py:126
 #, python-format
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer "
-"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
-"TMG project was created by:TMG version 5.x or greater.Your file:*.VER - "
-"Version Control File for TMG 1.2 and earlierPlease refer to:"
+"Directly importing from TMG files is not supported\n"
+"by the TMG Importer Addon.\n"
+"\n"
+"You need to use an backup copy of TMG project(*.sqz)\n"
+"\n"
+"Ensure that your TMG project was created by:\n"
+"TMG version 5.x or greater.\n"
+"\n"
+"Your file:\n"
+"*.VER - Version Control File for TMG 1.2 and earlier\n"
+"\n"
+"Please refer to:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 

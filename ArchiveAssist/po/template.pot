@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ClipboardGramplet/ClipboardGramplet.gpr.py:10
-#: ClipboardGramplet/ClipboardGramplet.gpr.py:18
-msgid "Collections Clipboard"
+#: ArchiveAssist/ArchiveAssist.gpr.py:22
+msgid ""
+"Parses strings from Riksarkivet and ArkivDigital to create sources and "
+"citations."
 msgstr ""
 
-#: ClipboardGramplet/ClipboardGramplet.gpr.py:11
-msgid "Gramplet for grouping collections of items to aid in data entry."
+#: ArchiveAssist/ArchiveAssist.gpr.py:26
+msgid "Archive Assist"
 msgstr ""

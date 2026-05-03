@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,131 +25,131 @@ msgstr ""
 msgid "Produces descendants lines of a person"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:463
+#: DescendantsLines/DescendantsLines.py:472
 msgid "Using SVG type for supplemental document is not supported!"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1329
+#: DescendantsLines/DescendantsLines.py:1338
 msgid "Unknown"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1525
+#: DescendantsLines/DescendantsLines.py:1534
 msgid "Report Options"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1527
+#: DescendantsLines/DescendantsLines.py:1536
 msgid "Center Person"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1528
+#: DescendantsLines/DescendantsLines.py:1537
 msgid "The center person for the report"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1531
+#: DescendantsLines/DescendantsLines.py:1540
 msgid "Output format"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1532
+#: DescendantsLines/DescendantsLines.py:1541
 msgid "PNG format"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1533
+#: DescendantsLines/DescendantsLines.py:1542
 msgid "SVG format"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1534
+#: DescendantsLines/DescendantsLines.py:1543
 msgid "PDF format"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1535
+#: DescendantsLines/DescendantsLines.py:1544
 msgid "PS format"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1536
+#: DescendantsLines/DescendantsLines.py:1545
 msgid "The output format to be used"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1540
+#: DescendantsLines/DescendantsLines.py:1549
 msgid "Destination"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1541
+#: DescendantsLines/DescendantsLines.py:1550
 msgid "The destination file for the content."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1544
+#: DescendantsLines/DescendantsLines.py:1553
 msgid "Generations"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1545
+#: DescendantsLines/DescendantsLines.py:1554
 msgid "The number of generations to include in the chart. (0 for unlimited)"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1550
+#: DescendantsLines/DescendantsLines.py:1559
 msgid "Use d'Aboville descendant numbering system"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1552
+#: DescendantsLines/DescendantsLines.py:1561
 msgid "Prepend name with d'Aboville descendant number in the chart."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1555
+#: DescendantsLines/DescendantsLines.py:1564
 msgid "Include an image"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1556
+#: DescendantsLines/DescendantsLines.py:1565
 msgid "Whether to include an image if one is available."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1560
+#: DescendantsLines/DescendantsLines.py:1569
 msgid "Max Image height"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1561
+#: DescendantsLines/DescendantsLines.py:1570
 msgid "Maximum image height in pixels, 0=don't scale for height."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1565
+#: DescendantsLines/DescendantsLines.py:1574
 msgid "Max Image width"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1566
+#: DescendantsLines/DescendantsLines.py:1575
 msgid "Maximum image width in pixels, 0=don't scale for width."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1570
+#: DescendantsLines/DescendantsLines.py:1579
 msgid "Image Location"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1571
+#: DescendantsLines/DescendantsLines.py:1580
 msgid "Above text"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1572
+#: DescendantsLines/DescendantsLines.py:1581
 msgid "Left of text"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1573
+#: DescendantsLines/DescendantsLines.py:1582
 msgid "Position of image relative to text"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1577
+#: DescendantsLines/DescendantsLines.py:1586
 msgid "Report Options (2)"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1579
+#: DescendantsLines/DescendantsLines.py:1588
 msgid "Colour Name by Gender"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1581
+#: DescendantsLines/DescendantsLines.py:1590
 msgid "Color the name to indicate a person's gender in the chart."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1585
+#: DescendantsLines/DescendantsLines.py:1594
 msgid "Use alternate events, if Primary event is not found"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1586
+#: DescendantsLines/DescendantsLines.py:1595
 msgid ""
 "For Birth (baptism, christen)\n"
 "   Marriage (marr_lic, engagement)\n"
@@ -157,319 +157,333 @@ msgid ""
 "   Death (burial, cremation, probate)."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1592
+#: DescendantsLines/DescendantsLines.py:1601
 msgid "Sort Events by Date"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1593
+#: DescendantsLines/DescendantsLines.py:1602
 msgid "Sort events by date (else use the order of the 'Display Format' above)."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1597
+#: DescendantsLines/DescendantsLines.py:1606
 msgid "Text style"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1598
+#: DescendantsLines/DescendantsLines.py:1607
 msgid "Center-aligned text"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1599
+#: DescendantsLines/DescendantsLines.py:1608
 msgid "Left-aligned text"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1600
+#: DescendantsLines/DescendantsLines.py:1609
 msgid "Alignment of the text in the block for each person on the chart"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1604
+#: DescendantsLines/DescendantsLines.py:1613
 msgid "Max Note Length"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1605
+#: DescendantsLines/DescendantsLines.py:1614
 msgid ""
 "Maximum length of an event's note field in a text block, '$e(n)'\n"
 " 0=no limit "
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1610
+#: DescendantsLines/DescendantsLines.py:1618
+msgid "Font Name"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1620
+msgid ""
+"Name of the Font to use. On Windows enter the file name of the .ttf at /"
+"Windows/Fonts"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1623
+msgid "Font base size"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1627
 msgid "Display"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1612
+#: DescendantsLines/DescendantsLines.py:1629
 msgid "Box around Person's block"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1613
+#: DescendantsLines/DescendantsLines.py:1630
 msgid "Draw a thin black box around each person' text block."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1617
+#: DescendantsLines/DescendantsLines.py:1634
 msgid "All Person's blocks have the same height"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1618
+#: DescendantsLines/DescendantsLines.py:1635
 msgid ""
 "All the blocks of all the person have the same height, which is the height "
 "of the highest block."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1623
+#: DescendantsLines/DescendantsLines.py:1640
 msgid "All Person's blocks have the same width"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1624
+#: DescendantsLines/DescendantsLines.py:1641
 msgid ""
 "All the blocks of all the person have the same width, which is the width of "
 "the widthest block."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1629
+#: DescendantsLines/DescendantsLines.py:1646
 msgid "Colour blocks by Generation"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1630
+#: DescendantsLines/DescendantsLines.py:1647
 msgid "Colour the background of text blocks by generation."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1634
+#: DescendantsLines/DescendantsLines.py:1651
 msgid "Descend block colour intensity"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1635
+#: DescendantsLines/DescendantsLines.py:1652
 msgid ""
 "Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
 "colour"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1639
+#: DescendantsLines/DescendantsLines.py:1656
 msgid "Spouse block colour intensity"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1640
+#: DescendantsLines/DescendantsLines.py:1657
 msgid ""
 "Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1645
+#: DescendantsLines/DescendantsLines.py:1662
 msgid "Display Formats"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1647
+#: DescendantsLines/DescendantsLines.py:1664
 msgid "Name Display Format"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1650
+#: DescendantsLines/DescendantsLines.py:1667
 msgid ""
 "f=first & middle names, l=surname, n=nickname,\n"
 "c=commonly used given name, t=title, s=suffix, g=family nick name\n"
 "See Wiki Manual > Reports > part 2"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1656
+#: DescendantsLines/DescendantsLines.py:1673
 msgid ""
 "Descendant\n"
 "Display Format"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1662
-#: DescendantsLines/DescendantsLines.py:1681
+#: DescendantsLines/DescendantsLines.py:1679
+#: DescendantsLines/DescendantsLines.py:1698
 msgid ""
 "[event, list]$e(formating)\n"
 "See Wiki Manual > Reports > part 2\n"
 "formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1675
+#: DescendantsLines/DescendantsLines.py:1692
 msgid ""
 "Spousal\n"
 "Display Format"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1688
+#: DescendantsLines/DescendantsLines.py:1705
 msgid "Replace"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1691
+#: DescendantsLines/DescendantsLines.py:1708
 msgid ""
 "Replace Display Format:\n"
 "'Replace this'/' with this'"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1693
+#: DescendantsLines/DescendantsLines.py:1710
 msgid ""
 "i.e.\n"
 "United States of America/USA"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1697
+#: DescendantsLines/DescendantsLines.py:1714
 msgid "Spouse and Family"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1699
+#: DescendantsLines/DescendantsLines.py:1716
 msgid "Vertical edge descendant to spouse-bar"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1700
+#: DescendantsLines/DescendantsLines.py:1717
 msgid "The length of the vertical edge from descendant to spouse-bar."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1704
+#: DescendantsLines/DescendantsLines.py:1721
 msgid "Vertical edge spouse-bar to spouse"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1705
+#: DescendantsLines/DescendantsLines.py:1722
 msgid "The length of the vertical edge from spouse-bar to spouse."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1709
+#: DescendantsLines/DescendantsLines.py:1726
 msgid "Vertical space spouse-bar to other spouse"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1710
+#: DescendantsLines/DescendantsLines.py:1727
 msgid ""
 "The space to add between one spouse-bar and another spouse in case of "
 "multiple families with the same descendant."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1715
+#: DescendantsLines/DescendantsLines.py:1732
 msgid "Horizontal space descendant to spouse"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1716
+#: DescendantsLines/DescendantsLines.py:1733
 msgid "The space to add between the descendant and the spouse."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1721
+#: DescendantsLines/DescendantsLines.py:1738
 msgid "Horizonal space family to family"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1722
+#: DescendantsLines/DescendantsLines.py:1739
 msgid ""
 "The space to add between the more extern descendant (or spouse) of a family "
 "and the more extern descendant (or spouse) of the next family."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1727
+#: DescendantsLines/DescendantsLines.py:1744
 msgid "Horizontal distance spouse to family edge"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1728
+#: DescendantsLines/DescendantsLines.py:1745
 msgid ""
 "If this value is 0, the children bar is centered under the spouse. The "
 "bigger the value, more the center is moved to the left towards the "
 "descendant."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1733
+#: DescendantsLines/DescendantsLines.py:1750
 msgid "Children"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1735
+#: DescendantsLines/DescendantsLines.py:1752
 msgid "OL_PAD"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1736
+#: DescendantsLines/DescendantsLines.py:1753
 msgid "The number of ??? pad"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1739
+#: DescendantsLines/DescendantsLines.py:1756
 msgid "Vertical edge spouse-bar to child-bar"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1740
+#: DescendantsLines/DescendantsLines.py:1757
 msgid "The length of the vertical edge from spouse-bar to child-bar."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1746
+#: DescendantsLines/DescendantsLines.py:1763
 msgid "Children distance"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1747
+#: DescendantsLines/DescendantsLines.py:1764
 msgid "The horizontal distance between two children of the same family."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1751
+#: DescendantsLines/DescendantsLines.py:1768
 msgid "Vertical edge child to child-bar"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1753
+#: DescendantsLines/DescendantsLines.py:1770
 msgid "The length of the vertical edge from child to child-bar."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1756
+#: DescendantsLines/DescendantsLines.py:1773
 msgid "MIN_C_WIDTH"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1757
+#: DescendantsLines/DescendantsLines.py:1774
 msgid "The number of ??? min width"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1762
+#: DescendantsLines/DescendantsLines.py:1779
 msgid "Space around text"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1763
+#: DescendantsLines/DescendantsLines.py:1780
 msgid "The space to add around the text block of a person."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1767
+#: DescendantsLines/DescendantsLines.py:1784
 msgid "Space between lines of text"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1768
+#: DescendantsLines/DescendantsLines.py:1785
 msgid "The space to add between a line and the next in a person text block."
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1773
+#: DescendantsLines/DescendantsLines.py:1790
 msgid "Header and Footer"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1775
+#: DescendantsLines/DescendantsLines.py:1792
 msgid "Title text"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1776
+#: DescendantsLines/DescendantsLines.py:1793
 msgid "The text that will be written in the header of the document"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1780
+#: DescendantsLines/DescendantsLines.py:1797
 msgid "Footer text"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1781
+#: DescendantsLines/DescendantsLines.py:1798
 msgid "The text that will be written in the footer of the document"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1785
+#: DescendantsLines/DescendantsLines.py:1802
 msgid "Title and footer coefficient"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1786
+#: DescendantsLines/DescendantsLines.py:1803
 msgid ""
 "A number that multiply the base size of the text in the title and in the "
 "footer"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1791
+#: DescendantsLines/DescendantsLines.py:1808
 msgid "Privacy"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1793
+#: DescendantsLines/DescendantsLines.py:1810
 msgid "Protect People, Images or Events that are marked Private"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1795
+#: DescendantsLines/DescendantsLines.py:1812
 msgid "The Privacy setting of only these types of Gramps objects are checked"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1799
+#: DescendantsLines/DescendantsLines.py:1816
 msgid "Privacy text"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1800
+#: DescendantsLines/DescendantsLines.py:1817
 msgid "Text to display in block, when a Person is marked private"
 msgstr ""
 
-#: DescendantsLines/DescendantsLines.py:1815
+#: DescendantsLines/DescendantsLines.py:1832
 msgid "The default style."
 msgstr ""

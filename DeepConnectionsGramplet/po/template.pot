@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,120 +29,187 @@ msgstr ""
 msgid "Deep Connections"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:62
 msgid "Double-click name for details"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:60
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:63
 msgid "No Family Tree loaded."
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
-msgid "Pause"
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
+msgid "⏸ Pause"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:67
-msgid "Continue"
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:108
+msgid "Pause the current search"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
-msgid "Copy"
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:111
+msgid "▶ Continue"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:107
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:114
+msgid "Continue searching for more relations"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:118
+msgid "📋 Copy"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:120
+msgid "Copy selected people to clipboard"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:128
+msgid "🗑 Clear"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
+msgid "Clear all results and reset"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
+msgid "Ready to search"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:185
+#, python-brace-format
+msgid ""
+"Search Depth: {depth} | People Processed: {processed} | Queue Size: "
+"{queue_size}"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 msgid "mentioned in note"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:126
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:237
 msgid "child"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:130
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:241
 msgid "husband"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:132
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:243
 msgid "wife"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:245
 msgid "Note on Family"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:258
 msgid "sibling"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:147
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:264
 msgid "father"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:150
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:266
 msgid "mother"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:268
 msgid "Note on Parent Family"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:272
 #, python-format
 msgid "%s (association)"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:277
 msgid "Note on Person"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:308
 #, python-format
 msgid ""
 "\n"
 "   %s of "
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:206
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:335
 msgid "No Home Person set."
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:336
+msgid "Error: No Home Person set"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:341
 msgid "No Active Person set."
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:213
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:342
+msgid "Error: No Active Person set"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:347
+msgid "Initializing search..."
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:356
 msgid "self"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:366
 msgid "Looking for relationship between\n"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:367
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:368
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:382
+msgid "Searching for connections..."
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:402
 #, python-format
 msgid ""
 "Found relation #%d: \n"
 "   "
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:423
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:427
+msgid "Paused - Press Continue to search for more relations"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:456
 #, python-format
 msgid ""
 "\n"
-"Search completed. %d relations found."
+"Search completed. %d relation paths found."
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:460
+msgid "Search completed - {} relation paths found"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:471
+msgid "Error during search: {}"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:481
+msgid "Resuming search..."
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:489
+msgid "Search interrupted by user"
 msgstr ""

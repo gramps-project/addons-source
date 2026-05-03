@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,81 +17,85 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: PedigreeChart/PedigreeChart.gpr.py:25
+#: PedigreeChart/PedigreeChart.gpr.py:32
 msgid "Pedigree Chart"
 msgstr ""
 
-#: PedigreeChart/PedigreeChart.gpr.py:26
+#: PedigreeChart/PedigreeChart.gpr.py:33
 msgid "Alternate version of the traditional pedigree chart."
 msgstr ""
 
-#: PedigreeChart/PedigreeChart.py:372
+#: PedigreeChart/PedigreeChart.py:381
 #, python-format
 msgid "Person %s is not in the Database"
 msgstr ""
 
-#: PedigreeChart/PedigreeChart.py:375 PedigreeChart/PedigreeChart.py:523
-msgid "Mother"
-msgstr ""
-
-#: PedigreeChart/PedigreeChart.py:379
+#: PedigreeChart/PedigreeChart.py:391
 #, python-format
 msgid "Pedigree Chart for %s"
 msgstr ""
 
-#: PedigreeChart/PedigreeChart.py:526
+#: PedigreeChart/PedigreeChart.py:462 PedigreeChart/PedigreeChart.py:579
+msgid "Mother"
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:582
 msgid "Father"
 msgstr ""
 
-#: PedigreeChart/PedigreeChart.py:528
+#: PedigreeChart/PedigreeChart.py:585
 #, python-format
 msgid "Page %d"
 msgstr ""
 
-#: PedigreeChart/PedigreeChart.py:630
+#: PedigreeChart/PedigreeChart.py:704
 msgid "Tree Options"
 msgstr ""
 
-#: PedigreeChart/PedigreeChart.py:632
+#: PedigreeChart/PedigreeChart.py:706
 msgid "Center Person"
 msgstr ""
 
-#: PedigreeChart/PedigreeChart.py:633
+#: PedigreeChart/PedigreeChart.py:707
 msgid "The center person for the tree"
 msgstr ""
 
-#: PedigreeChart/PedigreeChart.py:636
+#: PedigreeChart/PedigreeChart.py:710
 msgid "Generations"
 msgstr ""
 
-#: PedigreeChart/PedigreeChart.py:637
+#: PedigreeChart/PedigreeChart.py:711
 msgid "The number of generations to include in the tree"
 msgstr ""
 
-#: PedigreeChart/PedigreeChart.py:640
+#: PedigreeChart/PedigreeChart.py:714
 msgid "Show Mother/Father captions"
 msgstr ""
 
-#: PedigreeChart/PedigreeChart.py:641
+#: PedigreeChart/PedigreeChart.py:715
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr ""
 
-#: PedigreeChart/PedigreeChart.py:653
-msgid "The basic style used for the text display."
-msgstr ""
-
-#: PedigreeChart/PedigreeChart.py:657
+#: PedigreeChart/PedigreeChart.py:718
 msgid "Show page numbers"
 msgstr ""
 
-#: PedigreeChart/PedigreeChart.py:658
+#: PedigreeChart/PedigreeChart.py:719
 msgid "Add a footer on every page with the page number and date printed."
 msgstr ""
 
-#: PedigreeChart/PedigreeChart.py:662
+#: PedigreeChart/PedigreeChart.py:731
+msgid "The basic style used for the text display."
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:740
 msgid "The basic style used for the title display."
 msgstr ""
 
-#: PedigreeChart/PedigreeChart.py:671
-msgid "Style used for labels and captions"
+#: PedigreeChart/PedigreeChart.py:749
+msgid "Style used for names (only for PDF document and PostScript)."
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:758
+msgid "Style used for labels and captions."
 msgstr ""

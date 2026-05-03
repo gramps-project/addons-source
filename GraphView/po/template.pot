@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -602,6 +602,18 @@ msgstr ""
 
 #: GraphView/avatars.py:64
 msgid "Updated"
+msgstr ""
+
+#: GraphView/avatars.py:65
+msgid "Generic (dark)"
+msgstr ""
+
+#: GraphView/avatars.py:66
+msgid "Generic (gray)"
+msgstr ""
+
+#: GraphView/avatars.py:67
+msgid "Generic (light)"
 msgstr ""
 
 #: GraphView/search_widget.py:82
