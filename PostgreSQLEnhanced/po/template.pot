@@ -1,14 +1,14 @@
-# PostgreSQL Enhanced Database Backend for Gramps
-# Copyright (C) 2025 Greg Lamberson
-# This file is distributed under the same license as the gramps package.
-# Greg Lamberson <lamberson@yahoo.com>, 2025.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps 60\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 19:09+0300\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,55 +22,8 @@ msgstr ""
 msgid "Object {obj_type}:{handle} was modified by another user"
 msgstr ""
 
-#: PostgreSQLEnhanced/migration.py:168
-msgid "Starting migration..."
-msgstr ""
-
-#: PostgreSQLEnhanced/migration.py:182
-#, python-format
-msgid "Migrating %s objects..."
-msgstr ""
-
-#: PostgreSQLEnhanced/migration.py:193
-#, python-format, python-brace-format
-msgid "Migrated %s {obj_type} objects"
-msgstr ""
-
-#: PostgreSQLEnhanced/migration.py:209
-msgid "Migration completed!"
-msgstr ""
-
-#: PostgreSQLEnhanced/migration.py:438
-msgid "Starting upgrade..."
-msgstr ""
-
-#: PostgreSQLEnhanced/migration.py:470
-#, python-format
-msgid "Upgrading %s objects..."
-msgstr ""
-
-#: PostgreSQLEnhanced/migration.py:478
-msgid "Creating indexes..."
-msgstr ""
-
-#: PostgreSQLEnhanced/migration.py:489
-msgid "Upgrade completed!"
-msgstr ""
-
-#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:33
-msgid "PostgreSQL Enhanced"
-msgstr ""
-
-#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:34
-msgid "PostgreSQL _Enhanced Database"
-msgstr ""
-
-#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:36
-msgid ""
-"Advanced PostgreSQL backend with JSONB storage, graph database support "
-"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
-"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
-"compatible."
+#: PostgreSQLEnhanced/queries.py:364
+msgid "pg_trgm extension required for duplicate detection"
 msgstr ""
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:154
@@ -156,7 +109,53 @@ msgstr ""
 msgid "Full-text search requires JSONB support or search capabilities"
 msgstr ""
 
-#: PostgreSQLEnhanced/queries.py:364
-msgid "pg_trgm extension required for duplicate detection"
+#: PostgreSQLEnhanced/migration.py:168
+msgid "Starting migration..."
 msgstr ""
 
+#: PostgreSQLEnhanced/migration.py:182
+#, python-format
+msgid "Migrating %s objects..."
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:193
+#, python-format, python-brace-format
+msgid "Migrated %s {obj_type} objects"
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:209
+msgid "Migration completed!"
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:438
+msgid "Starting upgrade..."
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:470
+#, python-format
+msgid "Upgrading %s objects..."
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:478
+msgid "Creating indexes..."
+msgstr ""
+
+#: PostgreSQLEnhanced/migration.py:489
+msgid "Upgrade completed!"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:28
+msgid "PostgreSQL Enhanced"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:29
+msgid "PostgreSQL _Enhanced Database"
+msgstr ""
+
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:31
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
+msgstr ""

@@ -17,11 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ClipboardGramplet/ClipboardGramplet.gpr.py:10
-#: ClipboardGramplet/ClipboardGramplet.gpr.py:18
-msgid "Collections Clipboard"
+#: GrampsChat/GrampsChat.gpr.py:4 GrampsChat/GrampsChat.gpr.py:9
+msgid "GrampsChat"
 msgstr ""
 
-#: ClipboardGramplet/ClipboardGramplet.gpr.py:11
-msgid "Gramplet for grouping collections of items to aid in data entry."
+#: GrampsChat/GrampsChat.gpr.py:5
+msgid "AI Chatbot Gramplet (requires connecting to an LLM service)"
 msgstr ""

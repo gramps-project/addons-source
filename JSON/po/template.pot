@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,11 +37,19 @@ msgstr ""
 msgid "This is a JSON import"
 msgstr ""
 
-#: JSON/JSONImport.py:56
+#: JSON/JSONImport.py:69
 msgid "JSON import"
 msgstr ""
 
-#: JSON/JSONImport.py:85
+#: JSON/JSONImport.py:98
 #, python-format
 msgid "%s could not be opened\n"
+msgstr ""
+
+#: JSON/JSONImport.py:105
+msgid "Results"
+msgstr ""
+
+#: JSON/JSONImport.py:105
+msgid "done"
 msgstr ""

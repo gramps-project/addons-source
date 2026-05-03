@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: AnniversariesGramplet/AnniversariesGramplet.py:51
+msgid "Double-click on a row to edit the event."
+msgstr ""
+
+#: AnniversariesGramplet/AnniversariesGramplet.py:56
+msgid "Date"
+msgstr ""
+
+#: AnniversariesGramplet/AnniversariesGramplet.py:58
+msgid "Participant"
+msgstr ""
+
+#: AnniversariesGramplet/AnniversariesGramplet.py:59
+msgid "Age"
+msgstr ""
+
+#: AnniversariesGramplet/AnniversariesGramplet.py:61
+msgid "Event Type"
+msgstr ""
+
+#: AnniversariesGramplet/AnniversariesGramplet.gpr.py:24
+#: AnniversariesGramplet/AnniversariesGramplet.gpr.py:32
+msgid "Anniversaries"
+msgstr ""
+
+#: AnniversariesGramplet/AnniversariesGramplet.gpr.py:25
+msgid "A gramplet that displays the anniversaries of events"
+msgstr ""
