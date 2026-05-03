@@ -42,7 +42,8 @@ msgstr ""
 
 #: GetGOV/getgov.py:555
 #, python-format
-msgid "from %(begin_str)s to %(end_str)s"
+msgctxt "end"
+msgid "from %(begin)s to %(end)s"
 msgstr ""
 
 #: GetGOV/getgov.py:557
