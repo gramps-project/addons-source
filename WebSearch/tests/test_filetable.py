@@ -37,6 +37,22 @@ Mocks are used to avoid real file operations during tests.
 Each test ensures that the file table behaves correctly according to its configuration.
 """
 
+# The TMGimporter module imports Gtk at module load — skip the whole file if
+# gi/Gtk aren't available (headless-without-GTK environments). On systems
+# where both GTK3 and GTK4 are present, pin Gtk to 3.0 before any gramps
+# import (mirrors what gramps.grampsapp does at startup); otherwise
+# PyGObject loads GTK4 and the gramps.gui import chain crashes on
+# Gtk.IconSize.MENU (a GTK3-only enum).
+try:
+    import gi
+
+    gi.require_version("Gtk", "3.0")
+    gi.require_version("Gdk", "3.0")
+except (ImportError, ValueError, AttributeError) as err:
+    raise unittest.SkipTest("GTK 3.0 / PyGObject not available: %s" % err)
+
+
+
 import unittest
 import os
 

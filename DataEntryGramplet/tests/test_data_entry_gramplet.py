@@ -319,7 +319,7 @@ class TestGprRegistration(unittest.TestCase):
         self.assertEqual(kwargs["id"], "Data Entry Gramplet")
         self.assertEqual(kwargs["gramplet"], "DataEntryGramplet")
         self.assertEqual(kwargs["fname"], "DataEntryGramplet.py")
-        self.assertEqual(kwargs["gramps_target_version"], "6.0")
+        self.assertEqual(kwargs["gramps_target_version"], "6.1")
         self.assertEqual(kwargs["status"], "STABLE")
         # Navigation type must stay Person — the active object is fetched that way.
         self.assertEqual(kwargs["navtypes"], ["Person"])

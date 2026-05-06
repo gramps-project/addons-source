@@ -250,7 +250,7 @@ class TestGprRegistration(unittest.TestCase):
         self.assertEqual(args, ("TOOL",))
         self.assertEqual(kwargs["id"], "calculateestimateddates")
         self.assertEqual(kwargs["fname"], "CalculateEstimatedDates.py")
-        self.assertEqual(kwargs["gramps_target_version"], "6.0")
+        self.assertEqual(kwargs["gramps_target_version"], "6.1")
         self.assertEqual(kwargs["status"], "STABLE")
         self.assertEqual(kwargs["toolclass"], "CalcToolManagedWindow")
         self.assertEqual(kwargs["optionclass"], "CalcEstDateOptions")
