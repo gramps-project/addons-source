@@ -51,10 +51,19 @@ try:
 except (ImportError, ValueError, AttributeError) as err:
     raise unittest.SkipTest("GTK 3.0 / PyGObject not available: %s" % err)
 
-
-
-import unittest
 import os
+
+import sys
+import unittest
+
+# Make sure addon modules are importable from the parent directory
+# (matches the convention used by TMGimporter/Form tests). Required when
+# the test is loaded via its dotted path — e.g.
+# `python3 -m unittest WebSearch.tests.test_filetable` from
+# addons-source/, the form used by addons-source's own ci.yml — where
+# `models`/`constants`/`db_file_table` are otherwise resolved against
+# the addons-source root rather than against `WebSearch/`.
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from models import DBFileTableConfig
 from constants import DuplicateHandlingMode, DB_FILE_TABLE_DIR
