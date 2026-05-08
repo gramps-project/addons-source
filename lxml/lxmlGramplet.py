@@ -397,7 +397,7 @@ class lxmlGramplet(Gramplet):
             os.system(f'xmllint')
 
         try:
-            if os.name is 'nt':
+            if os.name == 'nt':
                 os.system(f'xmllint --relaxng {rng} --noout {filename} {options}')
                 LOG.debug('xmllint (relaxng) : %s' % filename)
             else:
@@ -755,7 +755,7 @@ class lxmlGramplet(Gramplet):
 
         dtd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.dtd')
         try:
-            if os.name is 'nt':
+            if os.name == 'nt':
                 os.system(f'xmllint --dtdvalid {dtd} {filename} {options}')
             else:
                 os.system(f'xmllint --dtdvalid file://{dtd} {filename} {options}')
