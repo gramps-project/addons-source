@@ -26,6 +26,7 @@ from gramps.gen.lib.date import Today
 from gramps.gen.utils.db import get_participant_from_event
 from gramps.gen.datehandler import get_date
 from gramps.gen.config import config
+from gramps.gen.errors import WindowActiveError
 from gramps.gui.editors import EditEvent
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
