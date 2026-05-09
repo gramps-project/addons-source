@@ -94,6 +94,7 @@ definition_files = [
     "form_dk.xml",
     "form_fr.xml",
     "form_gb.xml",
+    "form_ie.xml",
     "form_pl.xml",
     "form_us.xml",
     "test.xml",
