@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms>
+    <form id='IE1926' type='Census' title='Form A. Census of the Irish Free State, 1926' date='1926-04-18'>
+        <heading>
+            <_attribute>County or Co. Borough</_attribute>
+        </heading>
+        <heading>
+            <_attribute>District Electoral Division or Ward</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Townland</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Urban Dist. Town or Village</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Street etc with No of House</_attribute>
+        </heading>
+        <heading>
+            <_attribute>No. of Schedule</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Persons</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Males</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Females</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Rooms</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>16</size>
+                <_longname>Name and Surname</_longname>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>7</size>
+                <_longname>Relationship to Head of Household</_longname>
+            </column>
+            <column>
+                <_attribute>Year Age</_attribute>
+                <size>4</size>
+                <_longname>Age in years</_longname>
+            </column>
+            <column>
+                <_attribute>Month Age</_attribute>
+                <size>4</size>
+                <_longname>Age in months</_longname>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+                <size>4</size>
+            </column>
+            <column>
+                <_attribute>Married</_attribute>
+                <size>4</size>
+                <_longname>Marriage or Orphanhood</_longname>
+            </column>
+            <column>
+                <_attribute>Birthplace</_attribute>
+                <size>9</size>
+            </column>
+            <column>
+                <_attribute>Irish Language</_attribute>
+                <size>9</size>
+                <_longname>"Irish only", "Irish and English", "English and Irish", "Read but cannot speak Irish"</_longname>
+            </column>
+            <column>
+                <_attribute>Religion</_attribute>
+                <size>9</size>
+            </column>
+            <column>
+                <_attribute>Personal Occupation</_attribute>
+                <size>9</size>
+            </column>
+            <column>
+                <_attribute>Employment</_attribute>
+                <size>9</size>
+            </column>
+            <column>
+                <_attribute>Years Married</_attribute>
+                <size>4</size>
+                <_longname>Years married in present Marriage</_longname>
+            </column>
+            <column>
+                <_attribute>Months Married</_attribute>
+                <size>4</size>
+                <_longname>Months married in present Marriage</_longname>
+            </column>
+            <column>
+                <_attribute>Present Marriage Children</_attribute>
+                <size>4</size>
+                <_longname>Children born alive to present marriage</_longname>
+            </column>
+            <column>
+                <_attribute>Total Children Under 18 Living</_attribute>
+                <size>4</size>
+            </column>
+        </section>
+    </form>
+</forms>
