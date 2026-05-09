@@ -1315,7 +1315,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
 
         except Exception:
             # By default, exiv2 is not installed in most linux. Not important.
-            vers_str = _("can't found it because exiv2 not installed")
+            vers_str = _("exiv2 executable not installed, can't retrieve libexiv2 version.")
         result = _("GExiv2 : %s (Exiv2 library : %s)") % (gexiv2_str, vers_str)
         # End check
         self.append_text(result)
@@ -2342,4 +2342,5 @@ def verstr(nums):
 
 
 def vertup(ver_str):
-    return tuple(map(int, ver_str.split(".")))
+    return tuple(map(int, ver_str.split("."))
+)
