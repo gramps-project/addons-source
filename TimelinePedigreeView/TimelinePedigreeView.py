@@ -578,7 +578,7 @@ class TimelinePedigreeView(NavigationView):
         """
         try:
             self.Tree_Rebuild()
-        except AttributeError(msg):
+        except AttributeError as msg:
             RunDatabaseRepair(str(msg))
 
     def change_db(self, db):
