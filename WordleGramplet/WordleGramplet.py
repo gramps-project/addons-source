@@ -21,18 +21,11 @@
 
 #------------------------------------------------------------------------
 #
-# python modules
-#
-#------------------------------------------------------------------------
-from itertools import imap
-
-#------------------------------------------------------------------------
-#
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gen.plug import Gramplet
-from gen.plug.report import utils as ReportUtils
+from gramps.gen.plug import Gramplet
+from gramps.gen.plug.report import utils as ReportUtils
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -94,7 +87,7 @@ class WordleGramplet(Gramplet):
         self.filter = self.filter_list.get_filter()
         people = self.filter.apply(self.dbstate.db, iter_people)
         cnt = 0
-        for person in imap(self.dbstate.db.get_person_from_handle, people):
+        for person in map(self.dbstate.db.get_person_from_handle, people):
             allnames = [person.get_primary_name()] + person.get_alternate_names()
             allnames = set([name.get_group_name().strip() for name in allnames])
             for surname in allnames:
@@ -136,7 +129,7 @@ class WordleGramplet(Gramplet):
         self.append_text((_("Total people") + ": %d") % total_people, "begin")
 
     def build_options(self):
-        from gen.plug.menu import FilterOption, PersonOption, NumberOption
+        from gramps.gen.plug.menu import FilterOption, PersonOption, NumberOption
         self.bins = NumberOption(_("Number of font sizes"), 5, 1, 10)
         self.add_option(self.bins)
 
