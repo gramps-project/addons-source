@@ -20,12 +20,13 @@
 # $Id: SourceReferences.py 2228 2013-10-17 16:46:53Z romjerome $
 #
 
-from ListModel import ListModel, NOSORT
-from Utils import navigation_label
-from gen.plug import Gramplet
-import gtk
+from gi.repository import Gtk
 
+import gramps.gen.errors as Errors
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.gen.plug import Gramplet
+from gramps.gen.utils.db import navigation_label
+from gramps.gui.listmodel import ListModel, NOSORT
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -46,7 +47,7 @@ class SourceReferences(Gramplet):
         """
         Build the GUI interface.
         """
-        top = gtk.TreeView()
+        top = Gtk.TreeView()
         titles = [(_('Type'), 0, 100),
                   (_('Name'), 1, 100),
                   ('', 2, 1), #hidden column for the handle
@@ -108,9 +109,9 @@ def edit_object(dbstate, uistate, reftype, ref):
     """
     Invokes the appropriate editor for an object type and given handle.
     """
-    from gui.editors import (EditEvent, EditPerson, EditFamily, EditSource,
-                             EditPlace, EditMedia, EditRepository,
-                             EditCitation)
+    from gramps.gui.editors import (EditEvent, EditPerson, EditFamily,
+                                    EditSource, EditPlace, EditMedia,
+                                    EditRepository, EditCitation)
 
     if reftype == 'Person':
         try:
@@ -150,7 +151,7 @@ def edit_object(dbstate, uistate, reftype, ref):
                              "editor and open an editor for the citation "
                              "alone")
 
-            from QuestionDialog import WarningDialog
+            from gramps.gui.dialog import WarningDialog
             WarningDialog(_("Cannot open new citation editor"),
                           blocked_text)
     elif reftype == 'Place':
