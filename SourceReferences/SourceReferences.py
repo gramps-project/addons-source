@@ -25,6 +25,7 @@ from Utils import navigation_label
 from gen.plug import Gramplet
 import gtk
 
+import gramps.gen.errors as Errors
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
