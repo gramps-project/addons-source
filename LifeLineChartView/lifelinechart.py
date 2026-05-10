@@ -1166,7 +1166,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             tooltip = ""
             if gr_individual:
                 if (self._tooltip_individual_cache is None or \
-                    self._tooltip_individual_cache != gr_individual, gr_family):
+                    self._tooltip_individual_cache != (gr_individual, gr_family)):
                     if self._tooltip_individual_cache != (gr_individual, gr_family):
                         self._tooltip_individual_cache = gr_individual, gr_family
                         self.queue_draw_wrapper()
