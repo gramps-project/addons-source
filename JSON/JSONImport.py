@@ -92,7 +92,7 @@ def importData(db, filename, user):
                     elif isinstance(obj, Place):
                         db.add_place(obj, trans)
                     else:
-                        LOG.warn("ignored: " + data)
+                        LOG.warn("ignored: " + repr(obj))
                     line = fp.readline()
     except EnvironmentError as err:
         user.notify_error(_("%s could not be opened\n") % filename, str(err))
