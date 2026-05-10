@@ -26,6 +26,7 @@ import os
 import threading
 from collections.abc import Callable
 from datetime import datetime
+from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
 
