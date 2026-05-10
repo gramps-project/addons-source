@@ -27,6 +27,7 @@
 #
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.gen.errors import ReportError
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
