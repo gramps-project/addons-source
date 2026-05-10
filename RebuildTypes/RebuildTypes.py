@@ -28,8 +28,8 @@
 # GRAMPS modules
 #
 #-------------------------------------------------------------------------
-from gui.plug import tool
-from QuestionDialog import OkDialog
+from gramps.gui.plug import tool
+from gramps.gui.dialog import OkDialog
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
