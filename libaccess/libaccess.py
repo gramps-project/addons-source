@@ -50,7 +50,14 @@ Additionals goals:
 
 """
 
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.db import DbTxn
+
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 import itertools
 
@@ -85,9 +92,6 @@ class Null(object):
 
     def __call__(self, *args, **kwargs):
         return NONE
-
-    def __cmp__(self, other):
-        return cmp(None, other)
 
     def __hash__(self):
         return hash(None)
