@@ -69,7 +69,7 @@ try:
     GZIP_OK = True
 except ImportError:
     GZIP_OK = False
-    ErrorDialog(_('Where is gzip?'), _('"gzip" is missing'), parent=self.uistate.window)
+    ErrorDialog(_('Where is gzip?'), _('"gzip" is missing'))
     LOG.error('No gzip')
 
 #-------------------------------------------------------------------------
@@ -91,7 +91,7 @@ try:
     LIBXSLT_VERSION = etree.LIBXSLT_VERSION
 except ImportError:
     LXML_OK = False
-    ErrorDialog(_('Missing python3 lxml'), _('Please, try to install "python3 lxml" package.'), parent=self.uistate.window)
+    ErrorDialog(_('Missing python3 lxml'), _('Please, try to install "python3 lxml" package.'))
     LOG.debug('No lxml')
 
 #-------------------------------------------------------------------------
