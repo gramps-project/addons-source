@@ -21,7 +21,7 @@
 
 # $Id$
 
-#import os
+import sys
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
