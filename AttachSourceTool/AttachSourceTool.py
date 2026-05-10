@@ -209,6 +209,3 @@ class AttachSourceWindow(PluginWindows.ToolManagedWindowBatch):
         self.db.add_source(source, self.trans)
         return source
 
-        self.db.add_event(event, self.trans)
-        return event
-
