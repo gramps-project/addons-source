@@ -56,7 +56,7 @@ from gi.repository import Pango, PangoCairo
 # Gramps Modules
 #
 #-------------------------------------------------------------------------
-from gramps.gen.lib import Person, Family, ChildRef, Name
+from gramps.gen.lib import Person, Family, ChildRef, Name, Surname
 from gramps.gui.views.navigationview import NavigationView
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.errors import WindowActiveError
