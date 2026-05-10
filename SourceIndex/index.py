@@ -420,9 +420,7 @@ class Index(tool.Tool, ManagedWindow):
 
         'Load indexes' means to load ordered tables, search environment
         """
-
-        files = f.endswith('.xml')
-        parent_path = os.path.join(USER_PLUGINS, 'SourceIndex')
+        pass
 
 
     def save_indexes(self):
