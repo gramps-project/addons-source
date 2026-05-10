@@ -40,6 +40,7 @@ import os
 import re
 import pickle
 import sys
+import time
 from urllib.parse import urlparse, parse_qs
 
 # -------------------------------------------------------------------------
@@ -1958,7 +1959,6 @@ class PostgreSQLEnhanced(DBAPI):
                         pass
 
                 if attempt < max_retries - 1:
-                    import time
                     time.sleep(0.01 * (2 ** attempt))  # Exponential backoff
                     continue
                 else:
