@@ -249,7 +249,7 @@ class Person(Object):
 
     setters = {
         "handle": lambda self, value: self.setit("handle", value),
-        "gramps_id": lambda self: self.setit("gramps_id", value),
+        "gramps_id": lambda self, value: self.setit("gramps_id", value),
         }
 
     def setit(self, attr, value):
