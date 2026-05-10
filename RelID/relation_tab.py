@@ -41,7 +41,7 @@ from gramps.gui.utils import ProgressMeter
 from gramps.gui.plug import tool
 from gramps.gen.plug.menu import StringOption, FilterOption, PersonOption, EnumeratedListOption
 import gramps.gen.plug.report.utils as ReportUtils
-from gramps.gui.dialog import WarningDialog, OkDialog
+from gramps.gui.dialog import WarningDialog, OkDialog, ErrorDialog
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.relationship import get_relationship_calculator
 from gramps.gen.filters import GenericFilterFactory, rules
