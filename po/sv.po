@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-11 17:13-0700\n"
-"PO-Revision-Date: 2026-04-07 13:46+0000\n"
+"PO-Revision-Date: 2026-04-23 05:09+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -43,7 +43,7 @@ msgstr "Namntyp"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
-msgstr "Primärt namn"
+msgstr "Huvudnamn"
 
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
@@ -14475,7 +14475,7 @@ msgstr "Hemadress"
 
 #: Form/form_us.xml.h:2529
 msgid "Citizenship"
-msgstr ""
+msgstr "Medborgarskap"
 
 #: Form/form_us.xml.h:2530
 msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
@@ -15527,7 +15527,7 @@ msgstr "Förfädersgenerationer"
 
 #: GraphView/graphview.py:1168
 msgid "Descendant generations"
-msgstr "Ättlingagenerationer"
+msgstr "Ättlingsgenerationer"
 
 #: GraphView/graphview.py:1179
 msgid "Vertical spacing between generations"
@@ -16290,7 +16290,7 @@ msgstr "Saknas"
 
 #: ImportMerge/importmerge.py:94
 msgid "Different"
-msgstr "Olik"
+msgstr "Annan"
 
 #: ImportMerge/importmerge.py:109
 msgid "Delete original"
