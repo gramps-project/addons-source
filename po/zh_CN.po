@@ -6,7 +6,7 @@
 # 黄晓敏 (武汉工业职业技术学院管理工程系会计0801班), 2009.
 # 赖洁(Lexi), 2009.
 # Anthony Fok (霍东灵) <foka@debian.org>, 2015.
-# Tian Shixiong <tiansworld@fedoraproject.org>, 2025.
+# Tian Shixiong <tiansworld@fedoraproject.org>, 2025, 2026.
 # reducedradius <feixiang512@outlook.com>, 2026.
 # Zizhuo JIa <jzz0313@outlook.com>, 2026.
 msgid ""
@@ -14,8 +14,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS VERSION 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-11 17:13-0700\n"
-"PO-Revision-Date: 2026-04-04 17:51+0000\n"
-"Last-Translator: Zizhuo JIa <jzz0313@outlook.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Tian Shixiong <tiansworld@fedoraproject.org>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/gramps-project/addons/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Poedit-Language: Chinese\n"
 "X-Poedit-Country: CHINA\n"
@@ -14224,7 +14224,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2529
 msgid "Citizenship"
-msgstr ""
+msgstr "公民身份"
 
 #: Form/form_us.xml.h:2530
 msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
@@ -15232,11 +15232,11 @@ msgstr ""
 
 #: GraphView/graphview.py:1164
 msgid "Ancestor generations"
-msgstr ""
+msgstr "祖先代数"
 
 #: GraphView/graphview.py:1168
 msgid "Descendant generations"
-msgstr ""
+msgstr "后辈代数"
 
 #: GraphView/graphview.py:1179
 #, fuzzy
@@ -17715,7 +17715,7 @@ msgstr ""
 
 #: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
 msgid "Overview"
-msgstr ""
+msgstr "概览"
 
 #: Overview/Overview.gpr.py:45
 msgid "Family Overview"
