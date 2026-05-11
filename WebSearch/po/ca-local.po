@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-01 14:55+0300\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
 "PO-Revision-Date: 2025-09-03 03:01+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
@@ -16,6 +16,24 @@ msgstr ""
 
 msgid "No title"
 msgstr "Sense títol"
+
+msgid "Note:"
+msgstr "Nota:"
+
+msgid "Add link to note"
+msgstr "Afegir enllaç a la nota"
+
+msgid "Add link to attribute"
+msgstr "Afegir enllaç a l'atribut"
+
+msgid "Show QR-code"
+msgstr "Mostrar codi QR"
+
+msgid "Hide link for selected item"
+msgstr "Amagar l'enllaç per a l'element seleccionat"
+
+msgid "Hide link for all items"
+msgstr "Amagar l'enllaç per a tots els elements"
 
 msgid "## ⚙️ System Information"
 msgstr "## ⚙️ Informació del sistema"
@@ -44,21 +62,3 @@ msgstr ""
 
 msgid "## 💬 Support"
 msgstr "## 💬 Assistència"
-
-msgid "Note:"
-msgstr "Nota:"
-
-msgid "Add link to note"
-msgstr "Afegir enllaç a la nota"
-
-msgid "Add link to attribute"
-msgstr "Afegir enllaç a l'atribut"
-
-msgid "Show QR-code"
-msgstr "Mostrar codi QR"
-
-msgid "Hide link for selected item"
-msgstr "Amagar l'enllaç per a l'element seleccionat"
-
-msgid "Hide link for all items"
-msgstr "Amagar l'enllaç per a tots els elements"

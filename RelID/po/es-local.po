@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2025-10-31 18:02+0000\n"
-"Last-Translator: Alejandro Moctezuma <moctezumaalejandro25@gmail.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,19 +12,133 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Display relations and distances with the home person"
+msgstr "Exhibe relaciones y distancias con la persona inicial"
+
+msgid "Will display relational informations with the home person"
+msgstr "Exhibirá informaciones relacionales con la persona inicial"
+
+msgid "Relation and distances with root"
+msgstr "Relación y distancias con raíz"
 
 msgid "Select filter to restrict people"
 msgstr "Seleccione filtro para restringir las personas"
 
+msgid "Filter rule"
+msgstr "Regla de filtro"
+
+msgid "Select the filter rule"
+msgstr "Seleccione la regla del filtro"
+
+msgid "Deep generations"
+msgstr "Generaciones profundas"
+
+msgid "How deep should we go?"
+msgstr "¿Cuánto de profundo iríamos?"
+
+msgid "Rel_id"
+msgstr "Rel_id"
+
 msgid "Relation"
 msgstr "Relación"
+
+msgid "up"
+msgstr "arriba"
+
+msgid "down"
+msgstr "abajo"
+
+msgid "Common MRA"
+msgstr "MRA común"
 
 msgid "Period"
 msgstr "Período"
 
+msgid "Shared Subtree"
+msgstr "Subárbol compartido"
+
+msgid "Centrality"
+msgstr "Centralidad"
+
+msgid "Unique Ancestors"
+msgstr "Ancestros únicos"
+
+msgid "Surname Diversity"
+msgstr "Diversidad de Apellido"
+
 msgid "Save"
 msgstr "Guardar"
 
+msgid "Quit"
+msgstr "Salir"
+
+msgid "No default person set."
+msgstr "No establecida ninguna persona por defecto."
+
+msgid "Please wait, filtering..."
+msgstr "Por favor, espera, filtrando..."
+
+msgid "Network Metrics"
+msgstr "Métricas de red"
+
+msgid "Enabled"
+msgstr "Habilitado"
+
+msgid "Enable or disable family network metrics"
+msgstr "Habilita o inhabilita las métricas de la red familiar"
+
+msgid "Generating relation map..."
+msgstr "Generando mapa de relación…"
+
+msgid ""
+"\n"
+"Filtering\tCurrent match\t\tTime of pass\n"
+msgstr ""
+"\n"
+"Filtrar\tCoincidencia actual\t\tTiempo de aprobar\n"
+
+#, python-format
+msgid "%d/%d \t\t %d/%d \t\t%f"
+msgstr "%d/%d \t\t %d/%d \t\t%f"
+
+msgid "Total of handled entries : {len(self.stats_list)}\n"
+msgstr "Total de apuntes manipulados : {len(self.stats_list)}\n"
+
+msgid "Folder Chooser"
+msgstr "Selector de Capeta"
+
 msgid "_Select"
 msgstr "_Seleccionar"
+
+msgid "Please, select a folder"
+msgstr "Selecciona una carpeta"
+
+msgid "Foldername need"
+msgstr "Nombre de carpeta necesario"
+
+msgid "Foldername will be used for saving the content."
+msgstr "Nombre de carpeta será utilizado para guardar el contenido."
+
+msgid "Did you set a foldername?"
+msgstr "¿Estableció un nombre de carpeta?"
+
+msgid "Cannot set a valid location."
+msgstr "No se puede establecer una ubicación válida."
+
+#, python-brace-format
+msgid "Data saved to : {filename}"
+msgstr "Datos guardados a {filename}"
+
+msgid "Failed to save data."
+msgstr "Incorrecto al guardar datos."
+
+msgid "Relationships Map and Tab"
+msgstr "Mapa y Tabla Relacional"
+
+msgid "Enable family network metrics"
+msgstr "Habilita métricas de red de familia"
+
+msgid "Whether to calculate and display family network metrics."
+msgstr "Si o no calcula y exhibe familia de métricas de red."

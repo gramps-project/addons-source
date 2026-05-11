@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-09-05 10:02+0000\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,20 +12,40 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "This Day in Family History"
 msgstr "Tento deň v rodinnej histórii"
 
+msgid ""
+"A configurable program that shows you the connected events from your family "
+"tree that match today's day and month."
+msgstr ""
+"Konfigurovateľný program, ktorý vám zobrazí pripojené udalosti z vášho "
+"rodinného stromu, ktoré zodpovedajú dnešnému dňu a mesiacu."
+
+msgid "Database is not open, can't check history right now."
+msgstr ""
+"Databáza nie je otvorená, momentálne nie je možné skontrolovať históriu."
+
 #, python-format
 msgid "On %(date)s in family history ...\n"
-msgstr "Deň %(date)s v rodinnej histórii ...\n"
+msgstr "Dňa %(date)s v rodinnej histórii ...\n"
+
+msgid "... nothing happened!  Check again tomorrow!"
+msgstr "... sa nič nestalo!  Skontrolujte znova zajtra!"
+
+msgid "Report only living tree members"
+msgstr "Hlásiť iba žijúcich členov stromu"
 
 msgid "Show these events"
 msgstr "Zobraziť tieto udalosti"
 
 msgid "Sort by "
 msgstr "Zoradiť podľa "
+
+msgid "Sort in ascending order?"
+msgstr "Zoradiť vzostupne?"
 
 msgid "January"
 msgstr "Január"
@@ -97,11 +117,105 @@ msgstr "%(female_name)s bola adoptovaná v roku %(year)s v mieste %(place)s."
 
 #, python-format
 msgid "%(male_name)s was christened in %(year)s at %(place)s."
-msgstr "%(male_name)s bol pokrstený v roku %(year)s v mieste %(place)s."
+msgstr "%(male_name)s bol krstený v roku %(year)s v mieste %(place)s."
 
 #, python-format
 msgid "%(female_name)s was christened in %(year)s at %(place)s."
+msgstr "%(female_name)s bola krstená v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s was married in %(year)s at %(place)s."
+msgstr "%(male_name)s bol ženatý v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s was married in %(year)s at %(place)s."
+msgstr "%(female_name)s bola vydatá v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s received an annulment in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s dostal anuláciu manželstva v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s received an annulment in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s dostala anuláciu manželstva v roku %(year)s v mieste "
+"%(place)s."
+
+#, python-format
+msgid "%(male_name)s was baptized in %(year)s at %(place)s."
+msgstr "%(male_name)s bol pokrstený v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s was baptized in %(year)s at %(place)s."
 msgstr "%(female_name)s bola pokrstená v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s became a bar mitzvah in %(year)s at %(place)s."
+msgstr "%(male_name)s sa stal bar micva v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s became a bar mitzvah in %(year)s at %(place)s."
+msgstr "%(female_name)s sa stala bar micva v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s became a bat mitzvah in %(year)s at %(place)s."
+msgstr "%(male_name)s sa stal bat micva v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s became a bat mitzvah in %(year)s at %(place)s."
+msgstr "%(female_name)s sa stala bat micva v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s was born in %(year)s at %(place)s."
+msgstr "%(male_name)s sa narodil v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s was born in %(year)s at %(place)s."
+msgstr "%(female_name)s sa narodila v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s was blessed in %(year)s at %(place)s."
+msgstr "%(male_name)s bol požehnaný v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s was blessed in %(year)s at %(place)s."
+msgstr "%(female_name)s bola požehnaná v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s was buried in %(year)s at %(place)s."
+msgstr "%(male_name)s bol pochovaný v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s was buried in %(year)s at %(place)s."
+msgstr "%(female_name)s bola pochovaná v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s participated in a census in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s sa zúčastnil sčítania ľudu v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s participated in a census in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s sa zúčastnila sčítania ľudu v roku %(year)s v mieste "
+"%(place)s."
+
+#, python-format
+msgid "%(male_name)s was confirmed in %(year)s at %(place)s."
+msgstr "%(male_name)s bol konfirmovaný v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s was confirmed in %(year)s at %(place)s."
+msgstr "%(female_name)s bola konfirmovaná v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s was cremated in %(year)s at %(place)s."
+msgstr "%(male_name)s bol spopolnený v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s was cremated in %(year)s at %(place)s."
+msgstr "%(female_name)s bola spopolnená v roku %(year)s v mieste %(place)s."
 
 #, python-format
 msgid "%(male_name)s died in %(year)s at %(place)s."
@@ -175,11 +289,11 @@ msgstr ""
 
 #, python-format
 msgid "%(male_name)s graduated in %(year)s at %(place)s."
-msgstr "%(male_name)s promoval v roku %(year)s v mieste %(place)s."
+msgstr "%(male_name)s ukončil štúdium v roku %(year)s v mieste %(place)s."
 
 #, python-format
 msgid "%(female_name)s graduated in %(year)s at %(place)s."
-msgstr "%(female_name)s promovala v roku %(year)s v mieste %(place)s."
+msgstr "%(female_name)s ukončila štúdium v roku %(year)s v mieste %(place)s."
 
 #, python-format
 msgid "%(male_name)s immigrated in %(year)s at %(place)s."
@@ -209,12 +323,24 @@ msgstr ""
 #, python-format
 msgid "%(male_name)s entered a civil union in %(year)s at %(place)s."
 msgstr ""
-"%(male_name)s uzavrel civilný zväzok v roku %(year)s v mieste %(place)s."
+"%(male_name)s vstúpil do civilného zväzku v roku %(year)s v mieste %(place)s."
 
 #, python-format
 msgid "%(female_name)s entered a civil union in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s uzavrela civilný zväzok v roku %(year)s v mieste %(place)s."
+"%(female_name)s vstúpila do civilného zväzku v roku %(year)s v mieste "
+"%(place)s."
+
+#, python-format
+msgid "%(male_name)s had a custom marriage in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s uzavrel zvykové manželstvo v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(female_name)s had a custom marriage in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s uzavrela zvykové manželstvo v roku %(year)s v mieste "
+"%(place)s."
 
 #, python-format
 msgid "%(male_name)s announced a marriage banns in %(year)s at %(place)s."
@@ -246,6 +372,19 @@ msgid "%(female_name)s obtained a marriage license in %(year)s at %(place)s."
 msgstr ""
 "%(female_name)s dostala povolenie k sobášu v roku %(year)s v mieste "
 "%(place)s."
+
+#, python-format
+msgid "%(male_name)s obtained a marriage settlement in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s získal manželskú dohodu o vysporiadaní v roku %(year)s v "
+"mieste %(place)s."
+
+#, python-format
+msgid ""
+"%(female_name)s obtained a marriage settlement in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s získala manželskú dohodu o vysporiadaní v roku %(year)s v "
+"mieste %(place)s."
 
 #, python-format
 msgid "%(male_name)s entered military service in %(year)s at %(place)s."
@@ -282,6 +421,18 @@ msgstr "%(male_name)s bol vysvätený v roku %(year)s v mieste %(place)s."
 #, python-format
 msgid "%(female_name)s was ordained in %(year)s at %(place)s."
 msgstr "%(female_name)s bola vysvätená v roku %(year)s v mieste %(place)s."
+
+#, python-format
+msgid "%(male_name)s was granted probate in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s dostal rozhodnutie o dedičstve v roku %(year)s v mieste "
+"%(place)s."
+
+#, python-format
+msgid "%(female_name)s was granted probate in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s dostala rozhodnutie o dedičstve v roku %(year)s v mieste "
+"%(place)s."
 
 #, python-format
 msgid "%(male_name)s retired in %(year)s at %(place)s."

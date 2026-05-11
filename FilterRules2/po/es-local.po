@@ -1,0 +1,93 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Y-chromosomal inheritance of <filter>"
+msgstr "Herencia de cromosoma Y de <filtro>"
+
+msgid ""
+"Matches recorded descendants of a filter result following Y-chromosomal "
+"inheritance patterns."
+msgstr ""
+"Coincidencias registradas descendientes de un resultado de filtro siguiendo "
+"patrones de herencia cromosómica Y."
+
+msgid "X-chromosomal ancestors of <person>"
+msgstr "Ancestros con X‐cromosoma de <persona>"
+
+msgid ""
+"Matches ancestors of <person> following a X-chromosomal inheritance pattern."
+msgstr ""
+"Coincide con los ancestros de la <persona> siguiendo un patrón de herencia X "
+"cromosómica."
+
+msgid "X-chromosomal descendants of <person>"
+msgstr "Descendientes de cromosoma X de <persona>"
+
+msgid ""
+"Matches descendants of <person> following a X-chromosomal inheritance "
+"pattern."
+msgstr ""
+"Coincide con descendientes de <persona> seguida de una herencia del patrón "
+"de cromosoma X."
+
+msgid "Patrilineal progenitor of <person>"
+msgstr "Progenitor patrilineal de <persona>"
+
+msgid "Matches the earliest recorded patrilineal ancestor father."
+msgstr "Coincide con el padre ancestro patrilineal registrado más temprano."
+
+msgid "Mitochondrial inheritance of <filter>"
+msgstr "Herencia mitocondrial de <filtro>"
+
+msgid ""
+"Matches recorded descendants of a filter result following mitochondrial "
+"inheritance patterns."
+msgstr ""
+"Coincidencias descendientes registrados de un resultado de filtro siguiendo "
+"patrones de herencia mitocondrial."
+
+msgid "Matrilineal progenitrix of <person>"
+msgstr "Matrilineal progenitrix de <persona>"
+
+msgid "Matches the earliest recorded matrilineal ancestor mother."
+msgstr "Coincide con la madre del antepasado matrilineal registrada."
+
+msgid ""
+"Matches all descendants of <person> following a X-chromosomal inheritance "
+"pattern."
+msgstr ""
+"Empareja todos los descendientes de <persona> siguientes un patrón de "
+"herencia de cromosoma X."
+
+msgid "Mitochondrial inheritance of <person>"
+msgstr "Herencia mitocondrial de <persona>"
+
+msgid ""
+"Matches recorded descendants of person following mitochondrial inheritance "
+"patterns."
+msgstr ""
+"Coincidencias descendientes registrados de personas siguiendo patrones de "
+"herencia mitocondrial."
+
+msgid "Y-chromosomal inheritance of <person>"
+msgstr "Cromosoma Y hereda de <persona>"
+
+msgid ""
+"Matches recorded descendants of person following Y-chromosomal inheritance "
+"patterns."
+msgstr ""
+"Coincidencias descendientes registrados de persona siguiendo patrones de "
+"herencia cromosómica Y."

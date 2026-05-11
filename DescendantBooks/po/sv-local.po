@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-06-05 06:02+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-10 14:47+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,24 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
-
-msgid "Descendant Book"
-msgstr "Bok för ättlingar"
-
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-"Producerar en eller flera rapporter för ättlingar baserade på en angiven "
-"fråga."
-
-msgid "Detailed Descendant Book"
-msgstr "Detaljerad bok för ättlingar"
-
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Producerar en eller flera detaljerade rapporter för ättlingar baserade på en "
-"angiven fråga."
+"X-Generator: Weblate 2026.5-dev\n"
 
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
@@ -225,6 +208,23 @@ msgstr "Mall som används för rubriken i platsindexet."
 
 msgid "The style used for the references in the Index of Places."
 msgstr "Mall som används för referenserna i platsindexet."
+
+msgid "Descendant Book"
+msgstr "Bok för ättlingar"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Producerar en eller flera rapporter för ättlingar baserade på en angiven "
+"fråga."
+
+msgid "Detailed Descendant Book"
+msgstr "Detaljerad bok för ättlingar"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Producerar en eller flera detaljerade rapporter för ättlingar baserade på en "
+"angiven fråga."
 
 #, python-format
 msgid "Deep pruning ascendants from %s people..."

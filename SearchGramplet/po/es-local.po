@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-23 09:41-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,10 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 
 msgid "Search"
 msgstr "Buscar"
+
+msgid "Gramplet for search objects in database."
+msgstr "Gramplet para buscar objetos en la base de datos."
+
+msgid "Show bookmarked first"
+msgstr "Mostrar marcador primero"
 
 msgid "Sort by object type"
 msgstr "Ordenar por tipo de objeto"
@@ -29,8 +35,34 @@ msgstr "Menú para establecer objetos de búsqueda"
 msgid "Select objects to search"
 msgstr "Seleccione objetos para buscar"
 
+msgid "SearchGramplet configuration menu"
+msgstr "Menú de configuración de SearchGramplet"
+
+#, python-format
+msgid "found: %s"
+msgstr "encontrado: %s"
+
+msgid "No matches..."
+msgstr "Sin coincidencia…"
+
+msgid "Start type to search"
+msgstr "Teclee el texto para buscar"
+
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+"Teclee el texto para buscar objetos.\n"
+"Para mostrar todos los objetos introduzca solo el símbolo «*»."
+
 msgid "Search..."
 msgstr "Buscar…"
+
+msgid "Remove from bookmarks"
+msgstr "Retirar de los marcadores"
+
+msgid "Add to bookmarks"
+msgstr "Agregar a marcadores"
 
 #, python-format
 msgid "Birth: %s"
@@ -39,3 +71,9 @@ msgstr "Nacimiento: %s"
 #, python-format
 msgid "Death: %s"
 msgstr "Defunción: %s"
+
+msgid "Set as Active person"
+msgstr "Establecer como persona Activa"
+
+msgid "Set as Home person"
+msgstr "Establecer como persona Inicial"

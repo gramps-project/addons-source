@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-11-02 17:36+0000\n"
-"Last-Translator: Alejandro Moctezuma <moctezumaalejandro25@gmail.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,17 +12,57 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+#, python-format
+msgid "%(abbrev)s %(date)s in %(place)s"
+msgstr "%(abbrev)s %(date)s en %(place)s"
+
+#, python-format
+msgid "%(abbrev)s %(date)s%(place)s"
+msgstr "%(abbrev)s %(date)s%(place)s"
 
 #, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
 msgstr "%(event_type)s: %(date)s en %(place)s"
 
+#, python-format
+msgid "%(event_type)s: %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#, python-format
+msgid "%(event_type)s: %(place)s"
+msgstr "%(event_type)s: %(place)s"
+
+msgid "Click to make this event active"
+msgstr "Pulse para crear este evento activo"
+
 msgid "Click to visit this link"
 msgstr "Pulse para visitar este enlace"
 
+msgid ": "
+msgstr ": "
+
+msgid "Combined"
+msgstr "Combinados"
+
+msgid "A view showing relationships and events for a person"
+msgstr "Una vista que muestra las relaciones y los eventos de una persona"
+
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+"Necesita fijar una 'persona por defecto' para ir. Seleccione la Vista de "
+"Gente, seleccione la persona que quiere como 'Persona inicial', después "
+"confirme su elección por medio del menú Editar → Establecer Persona Inicial."
+
 msgid "Order"
-msgstr "Orden"
+msgstr "Ordenación"
+
+msgid "Edit the active event"
+msgstr "Edita el evento activo"
 
 msgid "Show Tags"
 msgstr "Mostrar etiquetas"

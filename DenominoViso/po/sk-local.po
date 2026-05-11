@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-09-05 10:02+0000\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,16 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "No Source"
 msgstr "Žiadny zdroj"
 
 msgid "onclick"
-msgstr "onclick"
+msgstr "kliknutím"
 
 msgid "onmouseover"
-msgstr "onmouseover"
+msgstr "prejdením myšou"
 
 msgid "Ancestor"
 msgstr "Predok"
@@ -51,7 +51,7 @@ msgid "top to bottom"
 msgstr "zhora nadol"
 
 msgid "bottom to top"
-msgstr "zospodu navrch"
+msgstr "zdola nahor"
 
 msgid "role"
 msgstr "rola"
@@ -70,7 +70,7 @@ msgid "No central person selected"
 msgstr "Nebola vybratá hlavná osoba"
 
 msgid "Unknown time direction"
-msgstr "Neznámy časový smer"
+msgstr "Neznámy smer času"
 
 msgid "author"
 msgstr "autor"
@@ -88,7 +88,7 @@ msgid "of"
 msgstr "z"
 
 msgid "the chart type runs out of bounds"
-msgstr "typ grafu prekračuje hranice"
+msgstr "typ grafu presahuje hranice"
 
 msgid "Search"
 msgstr "Hľadanie"
@@ -97,7 +97,7 @@ msgid "in"
 msgstr "na"
 
 msgid "DenominoViso Options"
-msgstr "Možnosti DenominoViso"
+msgstr "Voľby DenominoViso"
 
 msgid "The destination file for the html-content."
 msgstr "Cieľový súbor pre obsah html."
@@ -112,13 +112,13 @@ msgid "Title of the webpage"
 msgstr "Názov webovej stránky"
 
 msgid "Any string you wish."
-msgstr "Akýkoľvek reťazec, ktorý si želáte."
+msgstr "Ľubovoľný reťazec."
 
 msgid "Display mode"
 msgstr "Režim zobrazenia"
 
 msgid "Either plot ancestor or descendants graph."
-msgstr "Buď vykresliť graf predkov alebo potomkov."
+msgstr "Buď vykreslí graf predkov alebo graf potomkov."
 
 msgid "Display type"
 msgstr "Typ zobrazenia"
@@ -130,7 +130,7 @@ msgid "Direction of time"
 msgstr "Smer času"
 
 msgid "Direction in which time increases."
-msgstr "Smer, v ktorom čas narastá."
+msgstr "Smer, ktorým plynie čas."
 
 msgid "Max chart width (%)"
 msgstr "Maximálna šírka grafu (%)"
@@ -155,7 +155,7 @@ msgstr ""
 "upozornenie o autorských právach."
 
 msgid "Include Options"
-msgstr "Možnosti zahrnutia"
+msgstr "Voľby zahrnutia"
 
 msgid "Include private records"
 msgstr "Zahrnúť súkromné záznamy"
@@ -225,7 +225,7 @@ msgid "Whether to include a person's sources."
 msgstr "Či zahrnúť zdroje osoby."
 
 msgid "Image Options"
-msgstr "Možnosti obrázka"
+msgstr "Voľby obrázka"
 
 msgid "Include Photos/Images from Gallery"
 msgstr "Zahrnúť fotografie/obrázky z galérie"
@@ -258,7 +258,7 @@ msgid "Image attribute that should be used as source reference"
 msgstr "Atribút obrázka, ktorý by mal byť použitý ako zdrojová referencia"
 
 msgid "Style Options"
-msgstr "Možnosti štýlu"
+msgstr "Voľby štýlu"
 
 msgid "Color of active person:"
 msgstr "Farba aktívnej osoby:"
@@ -318,7 +318,7 @@ msgid "Extra style settings:"
 msgstr "Dodatočné nastavenia štýlu:"
 
 msgid "Whatever css style settings are needed."
-msgstr "Akékoľvek potrebné nastavenia štýlu CSS."
+msgstr "Akékoľvek nastavenia štýlu CSS, ktoré sú potrebné."
 
 msgid "Mouse event handler"
 msgstr "Obsluha udalostí myši"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-08-15 16:02+0000\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "The place was not found. You may clarify the search keywords."
 msgstr "Miesto nebolo nájdené. Môžete spresniť kľúčové slová vyhľadávania."
@@ -36,8 +36,17 @@ msgstr "Nepodarilo sa interpretovať vstupný formát."
 msgid "DB entry [{id}] {name}:"
 msgstr "Položka DB [{id}] {name}:"
 
+msgid "Nothing has been searched yet"
+msgstr "Zatiaľ nebolo nič vyhľadané"
+
 msgid "No place is active"
 msgstr "Žiadne miesto nie je aktívne"
+
+msgid "Place Coordinate Gramplet view"
+msgstr "Pohľad grampletu Súradnice miesta"
+
+msgid "View for the place coordinate gramplet."
+msgstr "Zobrazenie pre gramplet súradníc miest."
 
 msgid "Place and Coordinates"
 msgstr "Miesto a súradnice"
@@ -74,6 +83,22 @@ msgstr "Poštové smerovacie číslo:"
 
 msgid "Show found place externally in Google Maps"
 msgstr "Zobraziť nájdené miesto externe v Mapách Google"
+
+msgid ""
+"Take last clicked position\n"
+"from Geography map"
+msgstr ""
+"Použiť poslednú kliknutú pozíciu\n"
+"z mapy Zemepis"
+
+msgid "Search location from DB"
+msgstr "Hľadať polohu z DB"
+
+msgid "Apply geo location to Database"
+msgstr "Aplikovať geolokáciu do databázy"
+
+msgid "Go"
+msgstr "Prejsť"
 
 msgid "Show help"
 msgstr "Zobraziť pomoc"

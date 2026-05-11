@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-03-07 06:31+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "Data Entry Gramplet"
 msgstr "Gegevensinvoer Gramplet"
@@ -77,9 +77,18 @@ msgstr "Kopieer actieve gegevens"
 msgid "in"
 msgstr "in"
 
+msgid "No Family Tree is open."
+msgstr "Geen stamboom geopend."
+
+msgid "Please open a Family Tree to edit data."
+msgstr "Open een stamboom om gegevens te bewerken."
+
 #, python-format
 msgid "Gramplet Data Edit: %s"
 msgstr "Gramplet-gegevens bewerken: %s"
+
+msgid "Please open a Family Tree before adding a person."
+msgstr "Open een stamboom voordat u een persoon toevoegt."
 
 msgid "Please provide a name."
 msgstr "Geef een naam op."
@@ -112,7 +121,7 @@ msgid "Can't add new person as a husband."
 msgstr "Kan geen nieuwe persoon toevoegen als echtgenoot."
 
 msgid "Can't add new person as a sibling."
-msgstr "Kan geen nieuwe persoon toevoegen als broer of zus."
+msgstr "Kan geen nieuwe persoon toevoegen als broer/zus."
 
 msgid "Can't add new person as a child."
 msgstr "Kan geen nieuwe persoon toevoegen als kind."

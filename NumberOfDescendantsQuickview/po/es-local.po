@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,36 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+#, python-format
+msgid "Number of %s's descendants"
+msgstr "Número de %s de descendientes"
 
 msgid "Generation"
 msgstr "Generación"
+
+msgid "Seen"
+msgstr "Visto"
+
+msgid "Outlived"
+msgstr "Sobrevivió"
+
+msgid "Now alive"
+msgstr "Ahora vivo"
+
+#, python-format
+msgid "Seen = number of descendants whose birth %s has lived to see"
+msgstr "Visto = número de descendientes cuyo nacimiento %s ha vivido para ver"
+
+#, python-format
+msgid "Outlived = number of descendants who died while %s was still alive"
+msgstr ""
+"Sobrevivido = número de descendientes quien falleció mientras %s aún estaba "
+"vivo"
+
+msgid "Number of descendants"
+msgstr "Número de descendientes"
+
+msgid "Shows the number of descendants of the current person"
+msgstr "Muestra el número de descendientes de la persona actual"

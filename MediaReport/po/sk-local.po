@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:38+0000\n"
-"PO-Revision-Date: 2025-09-05 10:02+0000\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,43 +12,76 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "Media Report"
-msgstr "Mediálna správa"
+msgstr "Správa o médiách"
 
 msgid "Generates report including images, image data and notes."
-msgstr "Generuje správu vrátane obrázkov, údajov o obrázkoch a poznámok."
+msgstr "Generuje správu obsahujúcu obrázky, údaje o obrázkoch a poznámky."
 
 msgid "INFO"
 msgstr "INFO"
 
+msgid "You have to select an image to generate this report."
+msgstr "Na vygenerovanie tejto správy musíte vybrať obrázok."
+
+msgid ""
+"You have to select a custom note or uncheck the option 'include custom note' "
+"to generate this report."
+msgstr ""
+"Na vygenerovanie tejto správy musíte vybrať vlastnú poznámku alebo zrušiť "
+"začiarknutie voľby „zahrnúť vlastnú poznámku“."
+
+msgid "This report only supports PDF as output file format."
+msgstr "Táto správa podporuje ako výstupný formát iba PDF."
+
 msgid "General:"
 msgstr "Všeobecné:"
+
+msgid "Image type:"
+msgstr "Typ obrázku:"
 
 msgid "Heading"
 msgstr "Nadpis"
 
 msgid "Select a media file for this report"
-msgstr "Vyberte mediálny súbor pre túto zostavu"
+msgstr "Vyberte mediálny súbor pre túto správu"
 
 msgid "Custom note"
 msgstr "Vlastná poznámka"
 
 msgid "Select a note for this report"
-msgstr "Vyberte poznámku pre túto zostavu"
+msgstr "Vyberte poznámku pre túto správu"
 
 msgid "Include custom note"
 msgstr "Zahrnúť vlastnú poznámku"
 
+msgid "The custom note will be included"
+msgstr "Vlastná poznámka bude zahrnutá"
+
 msgid "Include referenced people"
-msgstr "Zahrnúť odkazovaných ľudí"
+msgstr "Zahrnúť odkazované osoby"
+
+msgid "Referenced people will be included"
+msgstr "Odkazované osoby budú zahrnuté"
 
 msgid "Include media data"
 msgstr "Zahrnúť mediálne údaje"
 
+msgid "Tags, notes and attributes will be included"
+msgstr "Štítky, poznámky a atribúty budú zahrnuté"
+
 msgid "Media width"
-msgstr "Šírka médií"
+msgstr "Šírka média"
+
+#, no-python-format
+msgid "Maximum media width in % of available page width."
+msgstr "Maximálna šírka média v % dostupnej šírky stránky."
 
 msgid "Media height"
-msgstr "Výška médií"
+msgstr "Výška média"
+
+#, no-python-format
+msgid "Maximum media height in % of available page height."
+msgstr "Maximálna výška média v % dostupnej výšky stránky."

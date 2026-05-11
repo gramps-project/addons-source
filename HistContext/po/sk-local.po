@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-03 16:13-0800\n"
-"PO-Revision-Date: 2026-04-17 07:09+0000\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,13 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "Historical Context"
 msgstr "Historický kontext"
 
 msgid "Lists relevant historical events during the lifetime of a Person"
-msgstr "Uvádza relevantné historické udalosti počas života osoby"
+msgstr "Uvádza relevantné historické udalosti počas času života osoby"
 
 msgid "Rows starting with this in the text column will be hidden "
 msgstr "Riadky v stĺpci textu, ktoré začínajú týmto textom, budú skryté "
@@ -26,20 +26,23 @@ msgstr "Riadky v stĺpci textu, ktoré začínajú týmto textom, budú skryté 
 msgid "Use filter "
 msgstr "Použiť filter "
 
+msgid "Show outside life span "
+msgstr "Zobraziť mimo obdobia života "
+
 msgid "Use full dates"
 msgstr "Použiť úplné dátumy"
 
 msgid "Foreground color items in lifespan"
-msgstr "Farba popredia prvkov v životnom cykle"
+msgstr "Farba popredia prvkov v období života"
 
 msgid "Background color items in lifespan"
-msgstr "Farba pozadia prvkov v životnom cykle"
+msgstr "Farba pozadia prvkov v období života"
 
 msgid "Foreground color items outside lifespan"
-msgstr "Farba popredia prvkov mimo životného cyklu"
+msgstr "Farba popredia prvkov mimo obdobia života"
 
 msgid "Background color items outside lifespan"
-msgstr "Farba pozadia prvkov mimo životného cyklu"
+msgstr "Farba pozadia prvkov mimo obdobia života"
 
 msgid "Select from files"
 msgstr "Vybrať zo súborov"
@@ -60,4 +63,4 @@ msgid "Cannot open URL: "
 msgstr "URL adresa sa nedá otvoriť: "
 
 msgid "Double click row to follow link"
-msgstr "Dvojkliknutím na riadok prejsť na odkaz"
+msgstr "Dvojklikom na riadok prejdite na odkaz"

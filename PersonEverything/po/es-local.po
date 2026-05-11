@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+#, python-format
+msgid "All information about %s"
+msgstr "Toda la información sobre %s"
+
+msgid "Primary name"
+msgstr "Nombre primario"
+
+msgid "Alternate name"
+msgstr "Nombre alternativo"
+
+msgid " This is the primary birth event."
+msgstr " Este es el evento de nacimiento primario."
+
+msgid " This is the primary death event."
+msgstr " Este es el primer evento de defunción."
+
+msgid "Relationship to Father"
+msgstr "Relación con el padre"
+
+msgid "Relationship to Mother"
+msgstr "Relación con la madre"
+
+msgid "Parent Family"
+msgstr "Familia de Padre"
+
+msgid ""
+"Details of any children and events etc. would be in a similar report for the "
+"father or mother."
+msgstr ""
+"Los detalles de los niños y eventos, etc. estarían en un informe similar "
+"para el padre o la madre."
+
+msgid "Temple and status"
+msgstr "Sien y estado"
+
+msgid "LDS Ordinance family"
+msgstr "Familia ordenante LDS"
+
+msgid "LDS "
+msgstr "LDS "
+
+msgid "Street, City, County, State, Postal Code, Country, Phone number"
+msgstr ""
+"Calle, Ciudad, Condado, Estado, Código Postal, País, número de Teléfono"
 
 msgid "Media Reference"
 msgstr "Referencia a objeto audiovisual"
@@ -20,17 +65,65 @@ msgstr "Referencia a objeto audiovisual"
 msgid "Description and Path"
 msgstr "Descripción y ruta"
 
+msgid "Referenced Region"
+msgstr "Región de referencia"
+
+msgid "Mime type"
+msgstr "Tipo MIME"
+
 msgid ""
 "Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
 msgstr ""
 "Nombre(s) de pila: tratamiento, de pila, sufijo, apelativo, apodo, apodo "
 "familiar"
 
+msgid "Note type"
+msgstr "Tipo de nota"
+
+msgid "Parent Place"
+msgstr "Lugar del padre"
+
+msgid "Alternate Location"
+msgstr "Lugar Alternativo"
+
+msgid "Alternative Name"
+msgstr "Nombre Alternativo"
+
 msgid "Latitude, Longitude"
 msgstr "Latitud, longitud"
+
+msgid "Repository type"
+msgstr "Tipo de repositorio"
+
+msgid "Repository reference"
+msgstr "Referencia del repositorio"
 
 msgid "Media type"
 msgstr "Tipo de objeto audiovisual"
 
 msgid "Origin type"
 msgstr "Tipo de origen"
+
+msgid "Prefix, surname, connector"
+msgstr "Prefijo, apellido, conector"
+
+msgid "{This is the primary surname}"
+msgstr "{Esto es el apellido primario }"
+
+msgid "Tag name"
+msgstr "Nombre de etiqueta"
+
+msgid "Tag colour and priority"
+msgstr "Color de etiqueta y prioridad"
+
+msgid "No source information found"
+msgstr "No se ha encontrado información de origen"
+
+msgid "The style used for the title of the page."
+msgstr "El estilo utilizado para el título de la página."
+
+msgid "PersonEverything Report"
+msgstr "Informe de PersonEverything"
+
+msgid "Produces a report containing everything about the active person"
+msgstr "Produce un informe que contiene todo sobre la persona activa"

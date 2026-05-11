@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2026-04-17 07:09+0000\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "Include witnesses"
 msgstr "Zahrnúť svedkov"
@@ -37,3 +37,15 @@ msgstr "Typ priezviska:"
 
 msgid "Export failed"
 msgstr "Export neúspešný"
+
+msgid "Export GEDCOM Extensions (GED2)"
+msgstr "Export rozšíření GEDCOM (GED2)"
+
+msgid "GEDCOM Extensions (GED2)"
+msgstr "Rozšírenia GEDCOM (GED2)"
+
+msgid "Extensions to the common GEDCOM format."
+msgstr "Rozšírenia pre bežný formát GEDCOM."
+
+msgid "GEDCOM Extensions options"
+msgstr "Voľby rozšírení GEDCOM"

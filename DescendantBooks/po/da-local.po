@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-04-28 18:11+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -12,24 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
-
-msgid "Descendant Book"
-msgstr "Efterkommerbog"
-
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-"Danner en eller flere efterkommerrapporter baseret på en angivet "
-"forespørgsel."
-
-msgid "Detailed Descendant Book"
-msgstr "Detaljeret efterkommerbog"
-
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Danner en eller flere detaljerede efterkommerbøger baseret på en angivet "
-"forespørgsel."
+"X-Generator: Weblate 5.17.1-dev\n"
 
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
@@ -202,6 +185,23 @@ msgstr "Stilen der benyttes til oveskiften i Indeks over Steder."
 
 msgid "The style used for the references in the Index of Places."
 msgstr "Stilen der benyttes til henvisninger i Indeks over Steder."
+
+msgid "Descendant Book"
+msgstr "Efterkommerbog"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Danner en eller flere efterkommerrapporter baseret på en angivet "
+"forespørgsel."
+
+msgid "Detailed Descendant Book"
+msgstr "Detaljeret efterkommerbog"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Danner en eller flere detaljerede efterkommerbøger baseret på en angivet "
+"forespørgsel."
 
 #, python-format
 msgid "Deep pruning ascendants from %s people..."

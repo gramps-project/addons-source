@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-08-11 18:01+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-02-20 09:09+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,10 +13,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 
-msgid "Select Form"
-msgstr "בחירת טופס"
+msgid "Reference:"
+msgstr "אזכור:"
+
+msgid "Headings"
+msgstr "כותרות"
 
 msgid "Form Gramplet"
 msgstr "גרמפלט טפסים"
@@ -24,11 +27,71 @@ msgstr "גרמפלט טפסים"
 msgid "Order"
 msgstr "סדר"
 
-msgid "Reference:"
-msgstr "אזכור:"
+msgid "Select Form"
+msgstr "בחירת טופס"
 
-msgid "Headings"
-msgstr "כותרות"
+msgid "BirthPlace"
+msgstr "מקום לידה"
+
+msgid "3. Place of Birth"
+msgstr "3. מקום לידה"
+
+msgid "WorshipPlaces"
+msgstr "מקום פולחן"
+
+msgid "38. Places of Worship"
+msgstr "38. מקום פולחן"
+
+msgid "AcresCultivation"
+msgstr "AcresCultivation"
+
+msgid "13. Origin"
+msgstr "13. מוצא"
+
+msgid "Relation"
+msgstr "יוחסה"
+
+msgid "BirthPlaceFather"
+msgstr "מקום לידת אב"
+
+msgid "13. Birth Place of Father"
+msgstr "13. מקום לידת אב"
+
+msgid "Buildings"
+msgstr "מבנים"
+
+msgid "Seating"
+msgstr "תושבת"
+
+msgid "Section"
+msgstr "מקטע"
+
+msgid "4. Place of habitation"
+msgstr "4. מקום לידת אם"
+
+msgid "2. Family"
+msgstr "2. משפחה"
+
+msgid "9. Country or place of birth"
+msgstr "9. מדינה או מקום לידה"
+
+msgid "5. Place of Habitation: Township"
+msgstr "5. מקום מגוקים: עיירה"
+
+msgid "6. Place of Habitation: Range"
+msgstr "6. מקום מגורים: תחום"
+
+msgid "7. Place of Habitation: Meridian"
+msgstr "7. מקום מגורים: קו־אורך"
+
+msgid "8. Place of Habitation: Municipality"
+msgstr "8. מקום מגורים: עירייה"
+
+msgid "13. Country or place of birth"
+msgstr "13. מדינה או מקום לידה"
+
+msgid "EmploymentPlace"
+msgstr "מקום תעסוקה"
 
 msgid "Sheet No."
 msgstr "מספר גליון"
@@ -93,9 +156,6 @@ msgstr "קשר למשפחה"
 msgid "Native voters"
 msgstr "מצביעים ילידים"
 
-msgid "Section"
-msgstr "מקטע"
-
 msgid "Place of Birth-Self"
 msgstr "מקום לידה – האדם עצמו"
 
@@ -113,9 +173,6 @@ msgstr "מקום לידת האב"
 
 msgid "Birthplace"
 msgstr "מקום לידה"
-
-msgid "Relation"
-msgstr "יוחסה"
 
 msgid "Enumerated date from"
 msgstr "מתאריך משוער"
@@ -177,11 +234,14 @@ msgstr "תקופת שרות צבאי"
 msgid "Place discharged"
 msgstr "מקום השחרור"
 
+msgid "Place of Work"
+msgstr "מקום עבודה"
+
 msgid "Event Place (Original)"
 msgstr "מקום אירוע (מקור)"
 
-msgid "Place of Work"
-msgstr "מקום עבודה"
+msgid "Type of roof"
+msgstr "סוג גג"
 
 msgid "Relation to Head of Family"
 msgstr "קרבה לראש המשפחה"
@@ -203,63 +263,3 @@ msgstr "ועד מועצה מקומית"
 
 msgid "Head of Family"
 msgstr "ראש משפחה"
-
-msgid "BirthPlace"
-msgstr "מקום לידה"
-
-msgid "3. Place of Birth"
-msgstr "3. מקום לידה"
-
-msgid "WorshipPlaces"
-msgstr "מקום פולחן"
-
-msgid "38. Places of Worship"
-msgstr "38. מקום פולחן"
-
-msgid "AcresCultivation"
-msgstr "AcresCultivation"
-
-msgid "13. Origin"
-msgstr "13. מוצא"
-
-msgid "BirthPlaceFather"
-msgstr "מקום לידת אב"
-
-msgid "13. Birth Place of Father"
-msgstr "13. מקום לידת אב"
-
-msgid "Buildings"
-msgstr "מבנים"
-
-msgid "Seating"
-msgstr "תושבת"
-
-msgid "4. Place of habitation"
-msgstr "4. מקום לידת אם"
-
-msgid "2. Family"
-msgstr "2. משפחה"
-
-msgid "9. Country or place of birth"
-msgstr "9. מדינה או מקום לידה"
-
-msgid "5. Place of Habitation: Township"
-msgstr "5. מקום מגוקים: עיירה"
-
-msgid "6. Place of Habitation: Range"
-msgstr "6. מקום מגורים: תחום"
-
-msgid "7. Place of Habitation: Meridian"
-msgstr "7. מקום מגורים: קו־אורך"
-
-msgid "8. Place of Habitation: Municipality"
-msgstr "8. מקום מגורים: עירייה"
-
-msgid "13. Country or place of birth"
-msgstr "13. מדינה או מקום לידה"
-
-msgid "EmploymentPlace"
-msgstr "מקום תעסוקה"
-
-msgid "Type of roof"
-msgstr "סוג גג"

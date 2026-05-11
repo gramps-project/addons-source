@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,13 +12,59 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "PhpGedView"
+msgstr "PhpGedView"
+
+msgid "Download a GEDCOM file from a phpGedView server."
+msgstr "Descargar un archivo GEDCOM desde un servidor phpGedView."
+
+msgid "Fetching index list..."
+msgstr "Índice de listado obtenido…"
+
+msgid "Fetching records..."
+msgstr "Registros obtenidos…"
+
+msgid "Logging in..."
+msgstr "Inicio de sesión…"
+
+msgid "Fetching GEDCOM..."
+msgstr "Obteniendo GEDCOM…"
+
+msgid "Importing GEDCOM..."
+msgstr "Importando GEDCOM…"
+
+msgid "Error: login failed"
+msgstr "Error: inicio incorrecto"
 
 msgid "done."
 msgstr "hecho."
 
 msgid "Connecting..."
 msgstr "Conectando…"
+
+msgid "Get version..."
+msgstr "Obtiene la versión…"
+
+#, python-format
+msgid "Version %s"
+msgstr "Versión: %s"
+
+msgid "Reading file list..."
+msgstr "Lista de archivos de lectura…"
+
+msgid "Error: Invalid URL"
+msgstr "Error: URL no válida"
+
+msgid "- default -"
+msgstr "- por defecto -"
+
+msgid "phpGedView import"
+msgstr "phpGedView importa"
+
+msgid "http://"
+msgstr "http://"
 
 msgid "Username:"
 msgstr "Nombre de usuario:"

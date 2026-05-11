@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-10-31 18:02+0000\n"
-"Last-Translator: Alejandro Moctezuma <moctezumaalejandro25@gmail.com>\n"
+"POT-Creation-Date: 2026-05-10 10:42-0700\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 
 msgid ""
 "\n"
@@ -27,6 +27,13 @@ msgid ""
 msgstr ""
 "\n"
 "<u><b>RECOMENDABLE</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
+"as necessary for Geography and Charts</i>:\n"
+msgstr ""
+"<i>Las instalaciones de los siguientes paquetes son <b>ALTAMENTE "
+"RECOMENDADOS</b> como necesario para Geografía y Mapas</i>:\n"
 
 msgid ""
 "\n"
@@ -69,6 +76,9 @@ msgstr ""
 "\n"
 "<u><b>Comprobaciones diagnósticas</b></u>\n"
 
+msgid "Check for potential issues.\n"
+msgstr "Comprobar posibles problemas.\n"
+
 msgid ""
 "\n"
 "Environment settings:\n"
@@ -92,6 +102,16 @@ msgstr ""
 "\n"
 "<u><b>Respalde sus archivos de genealogía.</b></u>\n"
 
+msgid ""
+" • Test your backups by creating a new Family Tree and then importing the "
+"backup."
+msgstr ""
+" • Prueba tus respaldos creando un Árbol de Familia nuevo y luego importando "
+"el respaldo."
+
+msgid ", is the most current version.\n"
+msgstr ", es la versión más actual.\n"
+
 #, python-format
 msgid ""
 "You have Gramps %s. Please make a backup and then upgrade.\n"
@@ -101,8 +121,210 @@ msgstr ""
 "actualización.\n"
 "%s"
 
+#, python-format
+msgid ""
+"You have Gramps %s installed; an unreleased development version. Thank you "
+"for contributing and testing; please report any issues. Backups are your "
+"friend.\n"
+msgstr ""
+"Tiene instalado Gramps %s; una versión de desarrollo sin publicar. Gracias "
+"por contribuir y probar; por favor reporte cualquier incidencia. Los "
+"respaldos son tu amigo.\n"
+
+#, python-format
+msgid "You have Gramps %s. Congratulations, you have the current version.\n"
+msgstr "Tienes Gramps %s. Enhorabuena, tienes la versión actual.\n"
+
+msgid " (Requires version "
+msgstr " (Requiere versión "
+
+msgid " or greater installed.)\n"
+msgstr " o más instalado.)\n"
+
+msgid " (Passed: version "
+msgstr " (Pasado: versión "
+
 msgid "unknown version"
 msgstr "versión desconocida"
 
+msgid "DISPLAY not set"
+msgstr "DISPLAY no establecido"
+
+msgid " or greater.)\n"
+msgstr " o mayor.)\n"
+
 msgid " (Requires "
 msgstr " (Requiere "
+
+msgid " • Berkeley Database library (bsddb3: "
+msgstr " • Biblioteca de base de datos de Berkeley (bsddb3: "
+
+msgid " • SQLite Database library (sqlite3: "
+msgstr " • Biblioteca SQLite Database (sqlite3: "
+
+msgid " • xdg-utils (Manual check see instructions link)"
+msgstr " • xdg-utils (El control manual ve enlace de instrucciones)"
+
+msgid " • librsvg2 (Manual check see instructions link)"
+msgstr " • librsvg2 (El control manual ve enlace de instrucciones)"
+
+msgid ""
+" • language-pack-gnome-xx (Manual check see instructions link) for your "
+"Language <show locale here TBD>"
+msgstr ""
+" • language-pack-gnome-xx (Compruebe instrucciones del enlace al manual) "
+"para su Idioma <muestre su localización aquí TBD>"
+
+msgid " or greater installed.)"
+msgstr " o mayor instalado.)"
+
+msgid " or greater)"
+msgstr " o mayor)"
+
+msgid "Graphviz not in system PATH"
+msgstr "Graphviz no en la ruta PATH del sistema"
+
+msgid "Ghostscript not in system PATH"
+msgstr "Ghostscript no dentro de la ruta PATH del sistema"
+
+msgid " (Passed: version 0.5.x is installed.)"
+msgstr " (Aprobado: está instalada la versión 0.5.x.)"
+
+msgid " (Requires version 0.5.x)"
+msgstr " (Requiere versión 0.5.x)"
+
+msgid " • python-fontconfig not found, (Requires version 0.5.x)"
+msgstr " • python-fontconfig no encontrado, (Requires version 0.5.x)"
+
+msgid " • python-fontconfig installed, version unavailable"
+msgstr " • python-fontconfig instalado, versión no disponible"
+
+msgid " or greater installed.) (enchant module: "
+msgstr " o más alto instalado.) (embelesar módulo: "
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+" • rcs %s TBD (Aprobado: versión %s o más sumo instalado. Si no encima "
+"Windows de Microsoft)"
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+" • rcs %s TBD (Requiere versión %s o mayor instalado. Si no en Microsoft "
+"Windows)"
+
+#, python-format
+msgid "GExiv2 : %s (Exiv2 library : %s)"
+msgstr "GExiv2 : %s (Exiv2 biblioteca : %s)"
+
+msgid "found another font"
+msgstr "encontrada otro letra tipográfica"
+
+msgid ""
+"For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
+"white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
+msgstr ""
+"Para extensión Networkchart, fuente <a href=\"https://www.fontsquirrel.com/"
+"fonts/white-rabbit\">Conejo Blanco</a> proporciona un resultado "
+"extremadamente legible.\n"
+
+msgid "not installed"
+msgstr "no instalado"
+
+msgid "     and one of either: (pydotplus: "
+msgstr "     y uno de los dos: (pydotplus: "
+
+msgid ") or (pygraphviz: "
+msgstr ") o (pygraphviz: "
+
+msgid "Installed(MS-Windows)"
+msgstr "Instalado(MS-Windows)"
+
+msgid "Installed(Linux/Mac)"
+msgstr "Instalado(Linux/Mac)"
+
+msgid "not installed "
+msgstr "no instalado "
+
+msgid "not found."
+msgstr "no encontrado."
+
+msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
+msgstr "Estándar. Pasado: programa instalado - 32-bit en 64-bit Win OS."
+
+msgid ") (Requires the gramps addon listed under 'Plugin lib')"
+msgstr ") (Requiere el complemento de gramps enumerado bajo 'Plugin lib')"
+
+msgid "DBF installed"
+msgstr "DBF instalado"
+
+msgid ".)(Requires version "
+msgstr ".)(Requiere versión "
+
+msgid " installed.)(Passed: version "
+msgstr " instalado.)(Aprobado: versión "
+
+#, python-format
+msgid "(OpenCV facedetection: %s)"
+msgstr "(OpenCV detección de rostro: %s)"
+
+msgid " (lxml: not found. Requires version "
+msgstr " (lxml: no encontrado. Requiere versión "
+
+msgid " • Requires: MongoDB TBD / pymongo TBD"
+msgstr " • Requiere: MongoDB TBD / pymongo TBD"
+
+#, python-format
+msgid " • Operating System: %s"
+msgstr " • Sistema operativo: %s"
+
+msgid ""
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
+"a></b></u>\n"
+msgstr ""
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
+"a></b></u>\n"
+
+msgid "not set"
+msgstr "no fijado"
+
+msgid "not tested"
+msgstr "no probado"
+
+msgid ""
+"\n"
+"Installed Locales\\Translations (If only English is listed please re-install "
+"Gramps again and make sure to select all the Translations and Dictionaries)\n"
+"\n"
+msgstr ""
+"\n"
+"Locales instalados\\Traducciones (Si sólo se enumera el inglés por favor "
+"vuelva a instalar Gramps y asegúrese de seleccionar todas las traducciones y "
+"diccionarios)\n"
+"\n"
+
+msgid ""
+"\n"
+"Gramps Environment variables:\n"
+msgstr ""
+"\n"
+"Variables de entorno de Gramps:\n"
+
+msgid "found"
+msgstr "encontrado"
+
+msgid ""
+"Sphinx is a tool that builds the Gramps development documentation and man "
+"pages\n"
+msgstr ""
+"Sphinx es una herramienta que construye la documentación de desarrollo de "
+"Gramps y páginas de man\n"

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-11-02 17:36+0000\n"
-"Last-Translator: Alejandro Moctezuma <moctezumaalejandro25@gmail.com>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,56 +12,108 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 
-msgid "Leave alone"
-msgstr "Dejar tal cual"
+msgid "No title"
+msgstr "Ningún título"
 
-msgid "Separate"
-msgstr "Separar"
+msgid "No data available."
+msgstr "No hay ningún dato disponible."
 
-msgid "AI Provider"
-msgstr "Proveedor de IA"
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "DIVISIONES ADMINISTRATIVAS HISTÓRICAS DE"
 
-msgid "OpenAI"
-msgstr "OpenAI"
+msgid "Foundation date:"
+msgstr "Fecha de fundación:"
 
-msgid "Mistral AI"
-msgstr "Mistral AI"
+msgid "Note:"
+msgstr "Nota:"
 
-msgid "OpenAI API Key"
-msgstr "Clave de API de OpenAI"
+msgid "Coordinates:"
+msgstr "Coordenadas:"
 
-msgid "OpenAI Model"
-msgstr "Modelo de OpenAI"
+msgid "Administrative history"
+msgstr "Historia administrativa"
 
-#, python-format
-msgid "Visited: %s"
-msgstr "Visitado: %s"
+msgid "Data provided to AI:"
+msgstr "Datos proporcionados a la IA:"
 
-#, python-format
-msgid "Link: %s"
-msgstr "Enlace: %s"
+msgid "Full hierarchy"
+msgstr "Jerarquía completa"
 
-#, python-format
-msgid "Attribute: %s"
-msgstr "Atributo: %s"
+msgid "Place Type:"
+msgstr "Tipo de lugar:"
 
-#, python-format
-msgid "Value: %s"
-msgstr "Valor: %s"
+msgid "Save Coordinates to the Place"
+msgstr "Guardar coordenadas en el lugar"
 
-#, python-format
-msgid "Loaded from file: %s"
-msgstr "Cargado desde archivo: %s"
+msgid "AI provider is disabled"
+msgstr "Se desactivó el proveedor de IA"
 
-#, python-format
-msgid "Domain: %s"
-msgstr "Dominio: %s"
+msgid "No AI API key provided"
+msgstr "No se proporcionó ninguna clave de API de IA"
 
-#, python-format
-msgid "Object: %s"
-msgstr "Objeto: %s"
+msgid "Keys"
+msgstr "Claves"
+
+msgid "Website URL"
+msgstr "URL del sitio web"
+
+msgid "Add link to note"
+msgstr "Agregar enlace a nota"
+
+msgid "Add link to attribute"
+msgstr "Agregar enlace a atributo"
+
+msgid "Show QR-code"
+msgstr "Mostrar código QR"
+
+msgid "Copy link to clipboard"
+msgstr "Copiar enlace en el portapapeles"
+
+msgid "Hide link for selected item"
+msgstr "Ocultar enlace para el elemento seleccionado"
+
+msgid "Hide link for all items"
+msgstr "Ocultar enlace para todos los elementos"
+
+msgid "Edit Attribute with the Link"
+msgstr "Editar atributo con el enlace"
+
+msgid "Edit Note with the Link"
+msgstr "Editar nota con el enlace"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 Sugerencias de IA"
+
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr "El atributo ya no existe. Se quitará el icono adicional"
+
+msgid "Note no longer exists. The extra icon is removed"
+msgstr "La nota ya no existe. Se quitará el icono adicional"
+
+msgid "Error creating note"
+msgstr "Error al crear la nota"
+
+msgid "URL is copied to the Clipboard"
+msgstr "El URL se copió en el portapapeles"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Título: {title}"
+
+msgid "QR-code"
+msgstr "Código QR"
+
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Falta la dependencia «qrcode»"
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Error al generar el código QR:\n"
+"Error original: «{}»"
 
 msgid "Note Link (parsed)"
 msgstr "Enlace a nota (analizado)"
@@ -71,9 +123,6 @@ msgstr "Enlace a nota (interna)"
 
 msgid "Note Link (external)"
 msgstr "Enlace a nota (externa)"
-
-msgid "No title"
-msgstr "Ningún título"
 
 msgid "## 🧩 About WebSearch"
 msgstr "## 🧩 Acerca de WebSearch"
@@ -149,97 +198,68 @@ msgstr "📖 Ver uso detallado en: "
 msgid "## 💬 Support"
 msgstr "## 💬 Asistencia"
 
-msgid "No data available."
-msgstr "No hay ningún dato disponible."
+msgid "Leave alone"
+msgstr "Dejar tal cual"
 
-msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
-msgstr "DIVISIONES ADMINISTRATIVAS HISTÓRICAS DE"
+msgid "Separate"
+msgstr "Separar"
 
-msgid "Foundation date:"
-msgstr "Fecha de fundación:"
+msgid "AI Provider"
+msgstr "Proveedor de IA"
 
-msgid "Coordinates:"
-msgstr "Coordenadas:"
+msgid "OpenAI"
+msgstr "OpenAI"
 
-msgid "Administrative history"
-msgstr "Historia administrativa"
+msgid "Mistral AI"
+msgstr "Mistral AI"
 
-msgid "Data provided to AI:"
-msgstr "Datos proporcionados a la IA:"
+msgid "OpenAI API Key"
+msgstr "Clave de API de OpenAI"
 
-msgid "Full hierarchy"
-msgstr "Jerarquía completa"
+msgid "OpenAI Model"
+msgstr "Modelo de OpenAI"
 
-msgid "Place Type:"
-msgstr "Tipo de lugar:"
-
-msgid "QR-code"
-msgstr "Código QR"
-
-msgid "⚠ Missing dependency \"qrcode\""
-msgstr "⚠ Falta la dependencia «qrcode»"
+msgid "WebSearch"
+msgstr "WebSearch"
 
 msgid ""
-"⚠ Error generating QR code:\n"
-"Original error: “{}”"
+"Customized queries for online services based on the active Person, Place, "
+"Family, or Source record"
 msgstr ""
-"⚠ Error al generar el código QR:\n"
-"Error original: «{}»"
+"Consultas personalizadas para servicios en línea basadas en el registro "
+"activo de Persona, Lugar, Familia u Origen"
 
-msgid "Save Coordinates to the Place"
-msgstr "Guardar coordenadas en el lugar"
+#, python-format
+msgid "Visited: %s"
+msgstr "Visitado: %s"
 
-msgid "AI provider is disabled"
-msgstr "Se desactivó el proveedor de IA"
+#, python-format
+msgid "Link: %s"
+msgstr "Enlace: %s"
 
-msgid "No AI API key provided"
-msgstr "No se proporcionó ninguna clave de API de IA"
+#, python-format
+msgid "Attribute: %s"
+msgstr "Atributo: %s"
 
-msgid "Keys"
-msgstr "Claves"
+#, python-format
+msgid "Value: %s"
+msgstr "Valor: %s"
 
-msgid "Website URL"
-msgstr "URL del sitio web"
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "Cargado desde archivo: %s"
 
-msgid "Add link to note"
-msgstr "Añadir enlace a nota"
+#, python-format
+msgid "Domain: %s"
+msgstr "Dominio: %s"
 
-msgid "Add link to attribute"
-msgstr "Añadir enlace a atributo"
+#, python-format
+msgid "Object: %s"
+msgstr "Objeto: %s"
 
-msgid "Show QR-code"
-msgstr "Mostrar código QR"
+#, python-format
+msgid "Pattern: %s"
+msgstr "Patrón: %s"
 
-msgid "Copy link to clipboard"
-msgstr "Copiar enlace en el portapapeles"
-
-msgid "Hide link for selected item"
-msgstr "Ocultar enlace para el elemento seleccionado"
-
-msgid "Hide link for all items"
-msgstr "Ocultar enlace para todos los elementos"
-
-msgid "Edit Attribute with the Link"
-msgstr "Editar atributo con el enlace"
-
-msgid "Edit Note with the Link"
-msgstr "Editar nota con el enlace"
-
-msgid "🔍 AI Suggestions"
-msgstr "🔍 Sugerencias de IA"
-
-msgid "Attribute no longer exists. The extra icon is removed"
-msgstr "El atributo ya no existe. Se quitará el icono adicional"
-
-msgid "Note no longer exists. The extra icon is removed"
-msgstr "La nota ya no existe. Se quitará el icono adicional"
-
-msgid "Error creating note"
-msgstr "Error al crear la nota"
-
-msgid "URL is copied to the Clipboard"
-msgstr "El URL se copió en el portapapeles"
-
-#, python-brace-format
-msgid "Title: {title}"
-msgstr "Título: {title}"
+msgid "Place history loaded"
+msgstr "Lugar de historia cargado"

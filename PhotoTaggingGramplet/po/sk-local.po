@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2026-04-17 07:09+0000\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,19 +12,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
+
+msgid "Replace existing references to the person being assigned without asking"
+msgstr "Nahradiť existujúce odkazy na priraďovanú osobu bez opýtania sa"
 
 msgid "Face detection"
-msgstr "Tvárová detekcia"
+msgstr "Detekcia tvárí"
+
+msgid "Minimum face width (px)"
+msgstr "Minimálna šírka tváre (px)"
 
 msgid "Minimum face height (px)"
 msgstr "Minimálna výška tváre (px)"
 
 msgid "Detect faces inside existing boxes"
-msgstr "Rozpoznávať tváre vo vnútri existujúcich rámikov"
+msgstr "Detekovať tváre vo vnútri existujúcich rámikov"
+
+msgid "Sensitivity (1 min .. 20 max)"
+msgstr "Citlivosť (1 min .. 20 max)"
 
 msgid "Add Person"
-msgstr "Pridanie osoby"
+msgstr "Pridať osobu"
 
 msgid "Clear Reference"
 msgstr "Vymazať odkaz"
@@ -32,11 +41,23 @@ msgstr "Vymazať odkaz"
 msgid "Remove Selection"
 msgstr "Odstrániť výber"
 
+msgid "Edit referenced Person"
+msgstr "Upraviť odkazovanú osobu"
+
 msgid "Zoom In"
 msgstr "Zväčšiť"
 
 msgid "Zoom Out"
 msgstr "Zmenšiť"
+
+msgid "Detect faces"
+msgstr "Detekovať tváre"
+
+msgid "Detect faces (OpenCV module required)"
+msgstr "Detekovať tváre (vyžaduje sa modul OpenCV)"
+
+msgid "XMP Region Name"
+msgstr "Názov oblasti XMP"
 
 msgid "Set as active person"
 msgstr "Nastaviť ako aktívnu osobu"
@@ -44,14 +65,40 @@ msgstr "Nastaviť ako aktívnu osobu"
 msgid "_Select"
 msgstr "_Vybrať"
 
+#, python-brace-format
+msgid "Replace to {0}"
+msgstr "Nahradiť za {0}"
+
 msgid "Detecting faces..."
-msgstr "Rozpoznávanie tvárí..."
+msgstr "Detekovanie tvárí..."
 
 msgid "Detection finished"
 msgstr "Detekcia dokončená"
 
+#, python-brace-format
+msgid "Another region of this image is associated with {name}. Remove it?"
+msgstr "Iná oblasť tohto obrázku je priradená k {name}. Odstrániť ju?"
+
+#, python-brace-format
+msgid ""
+"{count} other regions of this image are associated with {name}. Remove them?"
+msgstr ""
+"Ďalších {count} oblastí tohto obrázku je priradených k {name}. Odstrániť ich?"
+
+#, python-format
+msgid "Male person|Dead at %s"
+msgstr "Muž | Zomrel v %s"
+
+#, python-format
+msgid "Female person|Dead at %s"
+msgstr "Žena | Zomrela v %s"
+
+#, python-format
+msgid "Unknown gender person|Dead at %s"
+msgstr "Osoba neznámeho pohlavia | Zomrela v %s"
+
 msgid "Photo Tagging"
-msgstr "Označovanie fotografií"
+msgstr "Označovanie osôb na fotografiách"
 
 msgid "Gramplet for tagging people in photos"
-msgstr "Gramplet na označenie ľudí na fotografiách"
+msgstr "Gramplet na označovanie osôb na fotografiách"

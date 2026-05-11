@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 19:09+0300\n"
-"PO-Revision-Date: 2025-10-13 04:07+0000\n"
-"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-03-26 16:09+0000\n"
+"Last-Translator: Bruno FORESTIER <bforest76@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -12,11 +12,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #, python-brace-format
 msgid "Object {obj_type}:{handle} was modified by another user"
 msgstr "L'objet {obj_type}:{handle} a été modifié par un autre utilisateur"
+
+msgid "JSONB support"
+msgstr "Support JSONB"
+
+msgid "Version warning"
+msgstr "Avertissement de version"
+
+msgid "Extensions"
+msgstr "Extensions"
+
+msgid "Migration manager not initialized"
+msgstr "Gestionnaire de migration pas initialisé"
 
 msgid "Starting migration..."
 msgstr "Démarrage de la migration..."
@@ -50,15 +62,3 @@ msgstr "PostgreSQL Avancé"
 
 msgid "PostgreSQL _Enhanced Database"
 msgstr "Base de données PostgreSQL _Avancée"
-
-msgid "JSONB support"
-msgstr "Support JSONB"
-
-msgid "Version warning"
-msgstr "Avertissement de version"
-
-msgid "Extensions"
-msgstr "Extensions"
-
-msgid "Migration manager not initialized"
-msgstr "Gestionnaire de migration pas initialisé"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:29+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
 "PO-Revision-Date: 2025-03-24 10:31+0000\n"
 "Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
@@ -61,43 +61,6 @@ msgstr "生成されたファイルの保存先パス。"
 msgid "The destination file name for html content."
 msgstr "HTML コンテンツの保存先ファイル名。"
 
-msgid "Ancestral Collapsible Tree"
-msgstr "祖先の折りたたみ式ツリー"
-
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"D3.js JavaScript ライブラリから折りたたみ可能なツリー レイアウトとして表され"
-"る祖先のグラフィカル表現 (SVG) を含む Web ページを生成します。"
-
-msgid "Descendant Indented Tree"
-msgstr "子孫インデントツリー"
-
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-"D3.js JavaScript ライブラリから、折りたたみ可能なインデントされたツリー レイ"
-"アウトとして表される子孫のグラフィカル表現 (SVG) を含む Web ページを生成しま"
-"す。"
-
-msgid "Ancestral Fan Chart Options"
-msgstr "祖先扇形チャートのオプション"
-
-msgid "Paternal Background Color"
-msgstr "父方の背景色"
-
-msgid "RGB-color for paternal box background."
-msgstr "父親のボックスの背景の RGB カラー。"
-
-msgid "Maternal Background"
-msgstr "母方の背景"
-
-msgid "RGB-color for maternal box background."
-msgstr "母方ボックスの背景の RGB カラー。"
-
 msgid "Ancestral Fan Chart"
 msgstr "祖先扇形チャート"
 
@@ -108,12 +71,11 @@ msgstr ""
 "D3.js JavaScript ライブラリからファン チャートとして表される祖先のグラフィカ"
 "ル表現 (SVG) を含む Web ページを生成します。"
 
-#, python-format
-msgid "See %(reference)s : %(spouse)s"
-msgstr "表示 %(reference)s : %(spouse)s"
-
 msgid "Generating report..."
 msgstr "レポートの生成中..."
+
+msgid "Descendant Indented Tree"
+msgstr "子孫インデントツリー"
 
 msgid "Invalid Destination Directory"
 msgstr "無効な宛先ディレクトリ"
@@ -312,3 +274,37 @@ msgstr "本文フォントサイズ"
 
 msgid "The font size in pixels for biography body text."
 msgstr "経歴本文のフォント サイズ (ピクセル単位)。"
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"D3.js JavaScript ライブラリから、折りたたみ可能なインデントされたツリー レイ"
+"アウトとして表される子孫のグラフィカル表現 (SVG) を含む Web ページを生成しま"
+"す。"
+
+msgid "Ancestral Fan Chart Options"
+msgstr "祖先扇形チャートのオプション"
+
+msgid "Paternal Background Color"
+msgstr "父方の背景色"
+
+msgid "RGB-color for paternal box background."
+msgstr "父親のボックスの背景の RGB カラー。"
+
+msgid "Maternal Background"
+msgstr "母方の背景"
+
+msgid "RGB-color for maternal box background."
+msgstr "母方ボックスの背景の RGB カラー。"
+
+msgid "Ancestral Collapsible Tree"
+msgstr "祖先の折りたたみ式ツリー"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"D3.js JavaScript ライブラリから折りたたみ可能なツリー レイアウトとして表され"
+"る祖先のグラフィカル表現 (SVG) を含む Web ページを生成します。"

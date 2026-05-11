@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2026-03-09 14:09+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-04-20 04:09+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,26 +12,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
-
-msgid "Select Form"
-msgstr "Valintalomake"
-
-msgid "Form Gramplet"
-msgstr "Lomake-Gramplet"
-
-msgid "Gramplet interface for Forms"
-msgstr "Lomakkeiden Gramplet-käyttöliittymä"
-
-msgid "Forms"
-msgstr "Lomakkeet"
-
-msgid "Order"
-msgstr "Järjestys"
-
-msgid "Form"
-msgstr "Lomake"
 
 #, python-format
 msgid "Form: %s"
@@ -49,317 +31,32 @@ msgstr "Viite:"
 msgid "Headings"
 msgstr "Otsikot"
 
-msgid "Page No."
-msgstr "Sivunumero"
+msgid "Form Gramplet"
+msgstr "Lomake-Gramplet"
 
-msgid "Enumeration Date"
-msgstr "Luettelopäivä"
+msgid "Gramplet interface for Forms"
+msgstr "Lomakkeiden Gramplet-käyttöliittymä"
 
-msgid "Number of students"
-msgstr "Oppilaiden määrä"
+msgid "Forms"
+msgstr "Lomakkeet"
 
-msgid "Family No."
-msgstr "Perheen numero"
+msgid "Order"
+msgstr "Järjestys"
 
-msgid "Other Cattle"
-msgstr "Muuta karjaa"
+msgid "Form"
+msgstr "Lomake"
 
-msgid "Peas and Beans"
-msgstr "Herneet ja pavut"
-
-msgid "Number of days ill"
-msgstr "Sairaspäivien määrä"
-
-msgid "Relationship to head"
-msgstr "Suhde päähenkilöön"
-
-msgid "Owner"
-msgstr "Omistaja"
-
-msgid "Number of years in US"
-msgstr "Vuosia Yhdysvalloissa"
-
-msgid "Able to read"
-msgstr "Lukutaitoinen"
-
-msgid "Date Discharged"
-msgstr "Kotiutumispäivämäärä"
-
-msgid "Street Address"
-msgstr "Katuosoite"
-
-msgid "Relation to head"
-msgstr "Suhde päähenkilöön"
-
-msgid "Number of children living"
-msgstr "Elävien lasten määrä"
-
-msgid "Number of farm schedule"
-msgstr "Maatilasuunnitelmien lukumäärä"
-
-msgid "Industry"
-msgstr "Teollisuus"
-
-msgid "Unincorporated place"
-msgstr "Rekisteröimätön paikka"
-
-msgid "Institution"
-msgstr "Laitos"
-
-msgid "Color/Race"
-msgstr "Väri/Rotu"
-
-msgid "Number of Farm Schedule"
-msgstr "Maatilasuunnitelmien määrä"
-
-msgid "Type of work"
-msgstr "Työn tyyppi"
-
-msgid "Date of Birth"
-msgstr "Syntymäpäivä"
-
-msgid "Place of Birth"
-msgstr "Syntymäpaikka"
-
-msgid "Enlistment Place"
-msgstr "Värväytyspaikka"
-
-msgid "Other service, if any"
-msgstr "Mahdollinen muu palvelu"
-
-msgid "Number of Regiment"
-msgstr "Rykmentin numero"
-
-msgid "Where imprisoned"
-msgstr "Missä vangittiin"
-
-msgid "Date married"
-msgstr "Avioliiton päivämäärä"
-
-msgid "Street Name"
-msgstr "Kadunnimi"
-
-msgid "Relation to Family"
-msgstr "Suhde perheeseen"
-
-msgid "Number of Colleges"
-msgstr "Yliopistojen lukumäärä"
-
-msgid "Number of Pupils"
-msgstr "Oppilaiden määrä"
-
-msgid "Number of cattle sold"
-msgstr "Myydyn karjan määrä"
-
-msgid "Township"
-msgstr "Kaupunkikunta"
-
-msgid "Section"
-msgstr "Osa"
-
-msgid "Birthplace"
-msgstr "Syntymäpaikka"
-
-msgid "Relation"
-msgstr "Suhde"
-
-msgid "Parents Place of Marriage"
-msgstr "Vanhempien vihkipaikka"
-
-msgid "Personal Estate"
-msgstr "Irtaimisto"
-
-msgid "Personal Property"
-msgstr "Henkilökohtainen omaisuus"
-
-msgid "Number of house"
-msgstr "Talon numero"
-
-msgid "Condition"
-msgstr "Ehto"
+msgid "Select Form"
+msgstr "Valintalomake"
 
 msgid "Schedule"
 msgstr "Ajoitus"
 
-msgid "Name of Village"
-msgstr "Kylän nimi"
-
-msgid "Colored males 45 and over"
-msgstr "Värilliset miehet, 45 v. täyttäneet"
-
-msgid "Blind Females"
-msgstr "Sokeita naisia"
-
-msgid "Number of times married"
-msgstr "Avioliittojen lukumäärä"
-
-msgid "Number of years in the US"
-msgstr "Vuosa Yhdysvalloissa"
-
-msgid "Ancestry"
-msgstr "Esivanhemmat"
-
-msgid "Year married"
-msgstr "Avioitumisvuosi"
-
-msgid "in"
-msgstr "paikassa"
-
-msgid "of"
-msgstr "/"
-
-msgid "Residing in the"
-msgstr "Asuinpaikka"
-
-msgid "Date of birth"
-msgstr "Syntymäpäivä"
-
-msgid "Date of Death"
-msgstr "Kuolinpävä"
-
-msgid "Date of Burial"
-msgstr "Hautauspäivä"
-
-msgid "Burial Date"
-msgstr "Hautauspäivä"
-
-msgid "in the Counties of"
-msgstr "piirikunnissa"
-
-msgid "Nearest Relative"
-msgstr "Lähisukulainen"
-
-msgid "Hair Color"
-msgstr "Hiusten väri"
-
-msgid "Other characteristics"
-msgstr "Muut tuntomerkit"
-
-msgid "Place entered"
-msgstr "Annettu paikka"
-
-msgid "Eye color"
-msgstr "Silmien väri"
-
-msgid "Hair color"
-msgstr "Hiusten väri"
-
-msgid "Residents Status"
-msgstr "Asukkaiden asema"
-
-msgid "Event Place (Original)"
-msgstr "Tapahtumapaikka (alkuperäinen)"
-
-msgid "Birth Year (Estimated)"
-msgstr "Syntymävuosi (arvio)"
-
-msgid "Spouse's Gender"
-msgstr "Puolison sukupuoli"
-
-msgid "Spouse's Age"
-msgstr "Puolison ikä"
-
-msgid "Spouse's Birth Year (Estimated)"
-msgstr "Puolison syntymävuosi (arvio)"
-
-msgid "Spouse's Father's Name"
-msgstr "Puolison isän nimi"
-
-msgid "Spouse's Mother's Name"
-msgstr "Puolison äidin nimi"
-
-msgid "Record Number"
-msgstr "Tietueen numero"
-
-msgid "Volume"
-msgstr "Volyymi"
-
-msgid "Volume Beginning Year"
-msgstr "Volyymin alkuvuosi"
-
-msgid "Volume Ending Year"
-msgstr "Volyymin päättymisvuosi"
-
-msgid "Town or City"
-msgstr "Kaupunki"
-
-msgid "Where Born"
-msgstr "Missä syntynyt"
-
-msgid "Place of Work"
-msgstr "Työpikka"
-
-msgid "Children Living"
-msgstr "Lapsia elossa"
-
-msgid "Children Dead"
-msgstr "Kuolleita lapsia"
-
-msgid "Previous Residence"
-msgstr "Aiempi asuinpaikka"
-
-msgid "Date Married"
-msgstr "Avioliiton solmimispäivä"
-
-msgid "Registration District"
-msgstr "Alue jonne rekisteröity"
-
-msgid "Administrative Area"
-msgstr "Hallintoalue"
-
-msgid "County/Administrative Area"
-msgstr "Maakunta/hallintoalue"
-
-msgid "Maiden Surname"
-msgstr "Tyttönimi"
-
-msgid "Banns/Licence"
-msgstr "Kuulutukset/Luvat"
-
-msgid "Deceased"
-msgstr "Kuollut"
-
-msgid "Maiden surname of woman who was married"
-msgstr "Naimisissa olleen naisen tyttönimi"
-
-msgid "Usual Address"
-msgstr "Tavallinen osoite"
-
-msgid "City or Borough"
-msgstr "Kaupunki tai kaupunginosa"
-
-msgid "Parish or Township"
-msgstr "Seurakunta tai kunta"
-
-msgid "NAMES of each Person who abode therein the preceding Night."
-msgstr "Kaikkien edellisenä yönä siellä asuneen henkilön NIMET."
-
-msgid "Relation to Head of Family"
-msgstr "Suhde perheenpäähän"
-
-msgid "Village or Hamlet"
-msgstr "Kylä tai taajama"
-
-msgid "Number of Rooms"
-msgstr "Huoneiden määrä"
-
-msgid "Personal Occupation"
-msgstr "Henkilön ammatti"
-
-msgid "Nationality"
-msgstr "Kansallisuus"
-
-msgid "Number of living children"
-msgstr "Elossa olevien lasten määrä"
-
-msgid "Relation to Head"
-msgstr "Suhde päähenkilöön"
-
-msgid "Head of Family"
-msgstr "Perheenpää"
-
 msgid "EnumDistrict"
 msgstr "EnumDistrict"
+
+msgid "Township"
+msgstr "Kaupunkikunta"
 
 msgid "Comprising"
 msgstr "Koostuen"
@@ -445,6 +142,9 @@ msgstr "6. Perheet"
 msgid "5. Families"
 msgstr "5. Perheet"
 
+msgid "Relation"
+msgstr "Suhde"
+
 msgid "10. Relationship to Head of Family"
 msgstr "10. Suhde perheenpäähän"
 
@@ -457,8 +157,14 @@ msgstr "5. Väri"
 msgid "BirthYear"
 msgstr "Syntymävuosi"
 
+msgid "Nationality"
+msgstr "Kansallisuus"
+
 msgid "PageRef"
 msgstr "Sivuviite"
+
+msgid "Institution"
+msgstr "Laitos"
 
 msgid "Buildings"
 msgstr "Rakennukset"
@@ -469,11 +175,251 @@ msgstr "Nimitys"
 msgid "3.Relation to head of family"
 msgstr "3. Suhde perheenpäähän"
 
+msgid "Section"
+msgstr "Osa"
+
 msgid "Wages"
 msgstr "Palkat"
 
 msgid "2. Family"
 msgstr "2. Perhe"
+
+msgid "Page No."
+msgstr "Sivunumero"
+
+msgid "Enumeration Date"
+msgstr "Luettelopäivä"
+
+msgid "Number of students"
+msgstr "Oppilaiden määrä"
+
+msgid "Family No."
+msgstr "Perheen numero"
+
+msgid "Other Cattle"
+msgstr "Muuta karjaa"
+
+msgid "Peas and Beans"
+msgstr "Herneet ja pavut"
+
+msgid "Number of days ill"
+msgstr "Sairaspäivien määrä"
+
+msgid "Relationship to head"
+msgstr "Suhde päähenkilöön"
+
+msgid "Owner"
+msgstr "Omistaja"
+
+msgid "Number of years in US"
+msgstr "Vuosia Yhdysvalloissa"
+
+msgid "Able to read"
+msgstr "Lukutaitoinen"
+
+msgid "Date Discharged"
+msgstr "Kotiutumispäivämäärä"
+
+msgid "Street Address"
+msgstr "Katuosoite"
+
+msgid "Relation to head"
+msgstr "Suhde päähenkilöön"
+
+msgid "Number of children living"
+msgstr "Elävien lasten määrä"
+
+msgid "Number of farm schedule"
+msgstr "Maatilasuunnitelmien lukumäärä"
+
+msgid "Industry"
+msgstr "Teollisuus"
+
+msgid "Unincorporated place"
+msgstr "Rekisteröimätön paikka"
+
+msgid "Color/Race"
+msgstr "Väri/Rotu"
+
+msgid "Number of Farm Schedule"
+msgstr "Maatilasuunnitelmien määrä"
+
+msgid "Type of work"
+msgstr "Työn tyyppi"
+
+msgid "Date of Birth"
+msgstr "Syntymäpäivä"
+
+msgid "Place of Birth"
+msgstr "Syntymäpaikka"
+
+msgid "Enlistment Place"
+msgstr "Värväytyspaikka"
+
+msgid "Other service, if any"
+msgstr "Mahdollinen muu palvelu"
+
+msgid "Number of Regiment"
+msgstr "Rykmentin numero"
+
+msgid "Where imprisoned"
+msgstr "Missä vangittiin"
+
+msgid "Date married"
+msgstr "Avioliiton päivämäärä"
+
+msgid "Street Name"
+msgstr "Kadunnimi"
+
+msgid "Relation to Family"
+msgstr "Suhde perheeseen"
+
+msgid "Number of Colleges"
+msgstr "Yliopistojen lukumäärä"
+
+msgid "Number of Pupils"
+msgstr "Oppilaiden määrä"
+
+msgid "Number of cattle sold"
+msgstr "Myydyn karjan määrä"
+
+msgid "Birthplace"
+msgstr "Syntymäpaikka"
+
+msgid "Parents Place of Marriage"
+msgstr "Vanhempien vihkipaikka"
+
+msgid "Personal Estate"
+msgstr "Irtaimisto"
+
+msgid "Personal Property"
+msgstr "Henkilökohtainen omaisuus"
+
+msgid "Number of house"
+msgstr "Talon numero"
+
+msgid "Condition"
+msgstr "Ehto"
+
+msgid "Name of Village"
+msgstr "Kylän nimi"
+
+msgid "Colored males 45 and over"
+msgstr "Värilliset miehet, 45 v. täyttäneet"
+
+msgid "Blind Females"
+msgstr "Sokeita naisia"
+
+msgid "Number of times married"
+msgstr "Avioliittojen lukumäärä"
+
+msgid "Number of years in the US"
+msgstr "Vuosa Yhdysvalloissa"
+
+msgid "Ancestry"
+msgstr "Esivanhemmat"
+
+msgid "Year married"
+msgstr "Avioitumisvuosi"
+
+msgid "in"
+msgstr "paikassa"
+
+msgid "of"
+msgstr "/"
+
+msgid "Residing in the"
+msgstr "Asuinpaikka"
+
+msgid "Date of birth"
+msgstr "Syntymäpäivä"
+
+msgid "Date of Death"
+msgstr "Kuolinpävä"
+
+msgid "Date of Burial"
+msgstr "Hautauspäivä"
+
+msgid "Burial Date"
+msgstr "Hautauspäivä"
+
+msgid "in the Counties of"
+msgstr "piirikunnissa"
+
+msgid "Nearest Relative"
+msgstr "Lähisukulainen"
+
+msgid "Hair Color"
+msgstr "Hiusten väri"
+
+msgid "Other characteristics"
+msgstr "Muut tuntomerkit"
+
+msgid "Place entered"
+msgstr "Annettu paikka"
+
+msgid "Eye color"
+msgstr "Silmien väri"
+
+msgid "Hair color"
+msgstr "Hiusten väri"
+
+msgid "Residents Status"
+msgstr "Asukkaiden asema"
+
+msgid "Town or City"
+msgstr "Kaupunki"
+
+msgid "Where Born"
+msgstr "Missä syntynyt"
+
+msgid "Place of Work"
+msgstr "Työpikka"
+
+msgid "Children Living"
+msgstr "Lapsia elossa"
+
+msgid "Children Dead"
+msgstr "Kuolleita lapsia"
+
+msgid "Previous Residence"
+msgstr "Aiempi asuinpaikka"
+
+msgid "Date Married"
+msgstr "Avioliiton solmimispäivä"
+
+msgid "Event Place (Original)"
+msgstr "Tapahtumapaikka (alkuperäinen)"
+
+msgid "Birth Year (Estimated)"
+msgstr "Syntymävuosi (arvio)"
+
+msgid "Spouse's Gender"
+msgstr "Puolison sukupuoli"
+
+msgid "Spouse's Age"
+msgstr "Puolison ikä"
+
+msgid "Spouse's Birth Year (Estimated)"
+msgstr "Puolison syntymävuosi (arvio)"
+
+msgid "Spouse's Father's Name"
+msgstr "Puolison isän nimi"
+
+msgid "Spouse's Mother's Name"
+msgstr "Puolison äidin nimi"
+
+msgid "Record Number"
+msgstr "Tietueen numero"
+
+msgid "Volume"
+msgstr "Volyymi"
+
+msgid "Volume Beginning Year"
+msgstr "Volyymin alkuvuosi"
+
+msgid "Volume Ending Year"
+msgstr "Volyymin päättymisvuosi"
 
 msgid "Can read and write"
 msgstr "Luku- ja kirjoitustaito"
@@ -489,3 +435,57 @@ msgstr "Kattotyyppi"
 
 msgid "Arrived since"
 msgstr "Saapunut tästä lähtien"
+
+msgid "Registration District"
+msgstr "Alue jonne rekisteröity"
+
+msgid "Administrative Area"
+msgstr "Hallintoalue"
+
+msgid "County/Administrative Area"
+msgstr "Maakunta/hallintoalue"
+
+msgid "Maiden Surname"
+msgstr "Tyttönimi"
+
+msgid "Banns/Licence"
+msgstr "Kuulutukset/Luvat"
+
+msgid "Deceased"
+msgstr "Kuollut"
+
+msgid "Maiden surname of woman who was married"
+msgstr "Naimisissa olleen naisen tyttönimi"
+
+msgid "Usual Address"
+msgstr "Tavallinen osoite"
+
+msgid "City or Borough"
+msgstr "Kaupunki tai kaupunginosa"
+
+msgid "Parish or Township"
+msgstr "Seurakunta tai kunta"
+
+msgid "NAMES of each Person who abode therein the preceding Night."
+msgstr "Kaikkien edellisenä yönä siellä asuneen henkilön NIMET."
+
+msgid "Relation to Head of Family"
+msgstr "Suhde perheenpäähän"
+
+msgid "Village or Hamlet"
+msgstr "Kylä tai taajama"
+
+msgid "Number of Rooms"
+msgstr "Huoneiden määrä"
+
+msgid "Personal Occupation"
+msgstr "Henkilön ammatti"
+
+msgid "Number of living children"
+msgstr "Elossa olevien lasten määrä"
+
+msgid "Relation to Head"
+msgstr "Suhde päähenkilöön"
+
+msgid "Head of Family"
+msgstr "Perheenpää"

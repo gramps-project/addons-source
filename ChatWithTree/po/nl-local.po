@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-22 21:36+0200\n"
-"PO-Revision-Date: 2026-03-17 06:11+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,26 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
-
-msgid "Database change detected"
-msgstr "Wijziging in database gedetecteerd"
-
-msgid "Type a message..."
-msgstr "Schrijf een bericht…"
-
-msgid "Send"
-msgstr "Versturen"
-
-msgid "Chat with Tree initialized. Type /help for help."
-msgstr "Chatten met Tree geïnitialiseerd. Typ /help voor hulp."
-
-msgid ""
-"The ChatWithTree addon is not yet initialized. Please reload Gramps or "
-"select a database."
-msgstr ""
-"De toevoeging ChatWithTree is nog niet geïnitialiseerd. Laad Gramps opnieuw "
-"of kies een database."
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "Tree: '{}'"
 msgstr "Tree: '{}'"
@@ -46,3 +27,25 @@ msgstr ""
 
 msgid "Chat With Tree"
 msgstr "Chatten met Tree"
+
+msgid "Type a message..."
+msgstr "Schrijf een bericht…"
+
+msgid "Send"
+msgstr "Versturen"
+
+msgid "Chat with Tree initialized.                 Type /help for help."
+msgstr "Chat met Tree geïnitialiseerd.                 Typ /help voor hulp."
+
+msgid ""
+"The ChatWithTree addon is not yet initialized.                     Please "
+"reload Gramps or select a database."
+msgstr ""
+"De toevoeging ChatWithTree is nog niet geïnitialiseerd.                     "
+"Laad Gramps opnieuw of kies een database."
+
+msgid "The chatbot is currently processing a query. Please wait."
+msgstr "De chatbot verwerkt momenteel een zoekopdracht. Even geduld."
+
+msgid "An error occurred while processing your query."
+msgstr "Er is een fout opgetreden tijdens het verwerken van de zoekopdracht."

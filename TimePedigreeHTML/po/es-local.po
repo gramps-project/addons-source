@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,105 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Failed writing "
+msgstr "Escritura incorrecta "
+
+msgid "Year of Birth of Center Person"
+msgstr "Año de Nacimiento de la Persona Central"
+
+msgid "The year of birth of the center person. Estimate a year if unknown"
+msgstr ""
+"El año de nacimiento de la persona central. Estima un año si es desconocido"
+
+msgid "Destination directory"
+msgstr "Directorio de destino"
+
+msgid "Path for generated files"
+msgstr "Ruta para archivos generados"
 
 msgid "The destination file name for html content."
-msgstr "El nombre de archivo de destino del contenido HTML."
+msgstr "El nombre de archivo de destino del contenido html."
+
+msgid "Default Age"
+msgstr "Edad por defecto"
+
+msgid "Default age of parent when child is born with unknown year of birth"
+msgstr ""
+"Edad predeterminada del padre cuando nace el niño con año de nacimiento "
+"desconocido"
+
+msgid "What to show"
+msgstr "Lo que se muestra"
+
+msgid "Show GrampsID"
+msgstr "Mostrar GrampsID"
+
+msgid "Show GrampsID on top right of the box"
+msgstr "Muestra GrampsID en la cima derecha de la caja"
+
+msgid "Optimize"
+msgstr "Optimizar"
+
+msgid "Use as little space in horizontal direction as possible"
+msgstr "Emplee tan poco espacio en dirección horizontal como sea posible"
+
+msgid "Male Box Color"
+msgstr "Color de Caja Macho"
+
+msgid "Box background color for male person"
+msgstr "Color de fondo de caja para hombre"
+
+msgid "Female Box Color"
+msgstr "Color de Caja Femenina"
+
+msgid "Box background color for female person"
+msgstr "Caja con color de fondo para persona femenina"
+
+msgid "Number of pixel per year"
+msgstr "Número de píxel por año"
+
+msgid "How many pixel height is one year?"
+msgstr "Cuánta cota de píxel es un año ?"
+
+msgid "Offset X Coordinate"
+msgstr "Desplazamiento de Coordenada X"
+
+msgid "Offset Y Coordinate"
+msgstr "Desplazamiento de Coordenada Y"
+
+msgid "Width of a box in pixel"
+msgstr "Anchura de una caja en píxel"
+
+msgid "Width of the box of a person in pixel"
+msgstr "Anchura de la caja de una persona en píxel"
+
+msgid "Horizontal space between boxes in pixel"
+msgstr "Espacio horizontal entre cajas en píxel"
+
+msgid "Minimum horizontal space between 2 boxes in pixel"
+msgstr "Espacio horizontal mínimo entre 2 cajas en pixel"
+
+msgid "Length of vertical part of a line in pixel"
+msgstr "Longitud de la parte vertical de una línea en pixel"
+
+msgid ""
+"Parent and child boxes are connected with lines. This is the length of the "
+"vertical part of the lines in pixel"
+msgstr ""
+"Las cajas para padres e hijos están conectadas con líneas. Esta es la "
+"longitud de la parte vertical de las líneas en pixel"
+
+msgid "Number of pixel between left border and scale"
+msgstr "Número de píxel entre borde izquierdo y escala"
+
+msgid "Timeline Pedigree Report"
+msgstr "Informe genealógico de la cronología"
+
+msgid ""
+"Creates an HTML webpage that uses JavaScript to show a pedigree block "
+"diagram arranged vertically by birth date"
+msgstr ""
+"Crea una página web HTML que utiliza JavaScript para mostrar un diagrama de "
+"bloques genealógico organizado verticalmente por fecha de nacimiento"

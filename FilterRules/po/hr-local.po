@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2026-04-08 15:09+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-11 10:35+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "People related to <filter>"
 msgstr "Osobe u srodstvu s <filtrom>"
@@ -113,6 +113,9 @@ msgstr "Filtriraj ljude prema dobi u trenutku smrti"
 msgid "Filter rule that matches people by their age at death"
 msgstr "Pravilo filtriranja koje uspoređuje ljude prema dobi u trenutku smrti"
 
+msgid "Role:"
+msgstr "Uloga:"
+
 msgid "Multiple Parents Filter"
 msgstr "Filtar višebrojnih roditelja"
 
@@ -127,6 +130,12 @@ msgstr "Aktivna osoba"
 
 msgid "Matches sources with a particular value"
 msgstr "Pronalazi izvore s određenom vrijednosti"
+
+msgid "Events from people with role"
+msgstr "Događaji osoba s ulogom"
+
+msgid "Matches event of people filter with role"
+msgstr "Uspoređuje filtar događaja osoba s ulogom"
 
 msgid "Active person"
 msgstr "Aktivna osoba"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "The Tool requires at least one tag to execute."
+msgstr "La Herramienta requiere al menos una lengüeta para ejecutar."
+
+msgid "ERROR"
+msgstr "ERROR"
+
+msgid "Add/Remove"
+msgstr "Agregar/Retirar"
+
+msgid "Add or remove tags from objects."
+msgstr "Agrega o retira lengüetas desde objetos."
+
+msgid "Add Tags"
+msgstr "Añadir Lengüetas"
 
 msgid "Remove Tags"
 msgstr "Quitar etiquetas"
@@ -20,11 +35,56 @@ msgstr "Quitar etiquetas"
 msgid "General options"
 msgstr "Opciones generales"
 
+msgid "Choose a category."
+msgstr "Elija una categoría."
+
+msgid "Choose Tag"
+msgstr "Elija Lengüeta"
+
+msgid "Choose a tag to remove."
+msgstr "Elija una lengüeta a retirar."
+
 msgid "Persons"
 msgstr "Personas"
+
+msgid "Filter options"
+msgstr "Opciones del filtro"
+
+#, python-format
+msgid "All %s"
+msgstr "Todo %s"
+
+msgid "Add/Remove Tag Tool"
+msgstr "Agregar/Retirar Herramienta de Lengüeta"
+
+msgid ""
+"Unable to run the tool. Please check if your database contains tags, filters "
+"and objects."
+msgstr ""
+"No es capaz de ejecutar la herramienta. Compruebe si su base de datos "
+"contiene etiquetas, filtros y objetos."
+
+msgid "WARNING"
+msgstr "AVISO"
+
+#, python-format
+msgid "No %s objects were found in database."
+msgstr "Ningún objeto %s fue encontrado en la base de datos."
 
 msgid "Process tags..."
 msgstr "Procesar etiquetas…"
 
+msgid "added"
+msgstr "agregado"
+
+msgid "removed"
+msgstr "retirado"
+
+msgid "Tag '{}' was {} to {} {} objects.\n"
+msgstr "La etiqueta '{}' fue {} a objetos {} {}.\n"
+
 msgid "INFO"
 msgstr "INF."
+
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr "Añade o retira una lengüeta desde grupos de gente, eventos, etc."

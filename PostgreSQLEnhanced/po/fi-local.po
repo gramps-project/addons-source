@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 19:09+0300\n"
-"PO-Revision-Date: 2025-09-03 21:58+0000\n"
-"Last-Translator: Matti Niemelä <matti.u.niemela@gmail.com>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-04-20 04:09+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,56 +12,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #, python-brace-format
 msgid "Object {obj_type}:{handle} was modified by another user"
 msgstr "Toinen käyttäjä muokkasi objektia {obj_type}:{handle}"
 
-msgid "Starting migration..."
-msgstr "Aloitetaan siirto..."
-
-#, python-format
-msgid "Migrating %s objects..."
-msgstr "Siirretään %s objektia..."
-
-#, python-format, python-brace-format
-msgid "Migrated %s {obj_type} objects"
-msgstr "Siirretty %s {obj_type} objektia"
-
-msgid "Migration completed!"
-msgstr "Siirto valmis!"
-
-msgid "Starting upgrade..."
-msgstr "Aloitetaan päivitys..."
-
-#, python-format
-msgid "Upgrading %s objects..."
-msgstr "Päivitetään %s objektia..."
-
-msgid "Creating indexes..."
-msgstr "Luodaan indeksejä..."
-
-msgid "Upgrade completed!"
-msgstr "Päivitys valmistunut!"
-
-msgid "PostgreSQL Enhanced"
-msgstr "PostgreSQL Enhanced"
-
-msgid "PostgreSQL _Enhanced Database"
-msgstr "PostgreSQL _Enhanced tietokanta"
-
-msgid ""
-"Advanced PostgreSQL backend with JSONB storage, graph database support "
-"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
-"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
-"compatible."
-msgstr ""
-"Edistynyt PostgreSQL-taustajärjestelmä JSONB-tallennuksella, "
-"graafitietokannan tuella (Apache AGE), vektorien samankaltaisuudella "
-"(pgvector) ja tekoäly-/koneoppimisominaisuuksilla. Edistyneille käyttäjille. "
-"Vaatii PostgreSQL 15+ laajennuksen. Gramps Web -yhteensopiva."
+msgid "pg_trgm extension required for duplicate detection"
+msgstr "pg_trgm-laajennus tarvitaan kaksoiskappaleiden tunnistamiseen"
 
 msgid ""
 "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
@@ -113,5 +72,46 @@ msgstr "Laajennetut kyselyt vaativat JSONB-tuen"
 msgid "Full-text search requires JSONB support or search capabilities"
 msgstr "Kokotekstihaku vaatii JSONB-tuen tai hakuominaisuudet"
 
-msgid "pg_trgm extension required for duplicate detection"
-msgstr "pg_trgm-laajennus tarvitaan kaksoiskappaleiden tunnistamiseen"
+msgid "Starting migration..."
+msgstr "Aloitetaan siirto..."
+
+#, python-format
+msgid "Migrating %s objects..."
+msgstr "Siirretään %s objektia..."
+
+#, python-format, python-brace-format
+msgid "Migrated %s {obj_type} objects"
+msgstr "Siirretty %s {obj_type} objektia"
+
+msgid "Migration completed!"
+msgstr "Siirto valmis!"
+
+msgid "Starting upgrade..."
+msgstr "Aloitetaan päivitys..."
+
+#, python-format
+msgid "Upgrading %s objects..."
+msgstr "Päivitetään %s objektia..."
+
+msgid "Creating indexes..."
+msgstr "Luodaan indeksejä..."
+
+msgid "Upgrade completed!"
+msgstr "Päivitys valmistunut!"
+
+msgid "PostgreSQL Enhanced"
+msgstr "PostgreSQL Enhanced"
+
+msgid "PostgreSQL _Enhanced Database"
+msgstr "PostgreSQL _Enhanced tietokanta"
+
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
+msgstr ""
+"Edistynyt PostgreSQL-taustajärjestelmä JSONB-tallennuksella, "
+"graafitietokannan tuella (Apache AGE), vektorien samankaltaisuudella "
+"(pgvector) ja tekoäly-/koneoppimisominaisuuksilla. Edistyneille käyttäjille. "
+"Vaatii PostgreSQL 15+ laajennuksen. Gramps Web -yhteensopiva."

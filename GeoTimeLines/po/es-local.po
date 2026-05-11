@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-10-31 18:02+0000\n"
-"Last-Translator: Alejandro Moctezuma <moctezumaalejandro25@gmail.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,106 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "TimeLines Map"
+msgstr "Mapa de Líneas de Tiempo"
+
+msgid "Choose View Format"
+msgstr "Elegir Formato de Vista"
 
 msgid "Almost done"
 msgstr "Casi listo"
+
+msgid "Gathering data"
+msgstr "Obtener datos"
+
+#, python-format
+msgid "Number of Persons: %s"
+msgstr "Número de personas: %s"
+
+msgid ""
+"Stagger the map markers\n"
+"to differentiate different\n"
+"markers at the same location"
+msgstr ""
+"Escalona los marcadores del mapa\n"
+"para diferenciar marcadores \n"
+"distintos en el mismo lugar"
+
+msgid ""
+"Stagger Radius (hectometers)\n"
+"as measured along the equator\n"
+"(includes latitude distortion)"
+msgstr ""
+"Radio de desfase (hectómetros)\n"
+"medido a lo largo del ecuador\n"
+"(incluye la distorsión latitudinal)"
+
+msgid ""
+"Display markers for unknown ancestors\n"
+"based on earliest descendant location"
+msgstr ""
+"Exhibe marcadores para ancestros no\n"
+"conocidos basados en lugar descendiente más temprano"
+
+msgid ""
+"Days to keep lines on the map after\n"
+"an event"
+msgstr ""
+"Días para conservar líneas en el mapa\n"
+"tras un evento"
+
+msgid "Use custom map icons"
+msgstr "Utiliza iconos de mapa personales"
+
+msgid ""
+"If there is no birth event for a person, their age\n"
+"is assumed to be this at their first event"
+msgstr ""
+"Si no hay evento de nacimiento para una persona,\n"
+"su edad se supone que es esto en su primer evento"
+
+msgid ""
+"If there is no death event for a person, they will\n"
+"be assumed dead at this age"
+msgstr ""
+"Si no hay evento de fallecimiento para una persona,\n"
+"será defunción asumida con esta edad"
+
+msgid "Number of steps"
+msgstr "Número de pasos"
+
+msgid "Type of steps"
+msgstr "Tipo de pasos"
+
+msgid "Steps per millisecond"
+msgstr "Pasos por milisegundo"
+
+msgid "Initial map view on Gramps startup"
+msgstr "Vista del mapa inicial sobre el inicio de Gramps"
+
+msgid ""
+"Initial map view after startup and\n"
+"after changing the active person"
+msgstr ""
+"Vista de mapa inicial tras inicio y\n"
+"tras cambiar la persona activa"
+
+msgid "Show map travel lines on startup"
+msgstr "Mostrar mapa de líneas de viaje al arrancar"
+
+msgid "Show time ticks on navigation bar on startup"
+msgstr "Mostrar tiempo de marcas en la barra de navegación al arrancar"
+
+msgid "TimeLines Map options"
+msgstr "Opciones de Mapa TimeLines"
+
+msgid ""
+"A view showing all the places visited by a person or persons on various date."
+msgstr ""
+"Una vista que muestra todos los lugares visitados por una persona o personas "
+"en varias fechas."
+
+msgid "TimeLines map"
+msgstr "Mapa TimeLines"

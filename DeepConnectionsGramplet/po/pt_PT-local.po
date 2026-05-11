@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-03-08 07:05+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "Deep Connections Gramplet"
 msgstr "Gramplet Ligações profundas"
@@ -25,11 +25,40 @@ msgstr ""
 msgid "Deep Connections"
 msgstr "Ligações profundas"
 
-msgid "Pause"
-msgstr "Pausa"
+msgid "⏸ Pause"
+msgstr "⏸ Pausa"
 
-msgid "Copy"
-msgstr "Copiar"
+msgid "Pause the current search"
+msgstr "Pausar a procura actual"
+
+msgid "▶ Continue"
+msgstr "▶ Continuar"
+
+msgid "Continue searching for more relations"
+msgstr "Continuar a procurar mais parentescos"
+
+msgid "📋 Copy"
+msgstr "📋 Copiar"
+
+msgid "Copy selected people to clipboard"
+msgstr "Copiar indivíduos seleccionados para a memória"
+
+msgid "🗑 Clear"
+msgstr "🗑 Limpar"
+
+msgid "Clear all results and reset"
+msgstr "Limpar os resultados e repor"
+
+msgid "Ready to search"
+msgstr "Pronto a procurar"
+
+#, python-brace-format
+msgid ""
+"Search Depth: {depth} | People Processed: {processed} | Queue Size: "
+"{queue_size}"
+msgstr ""
+"Profundidade da procura: {depth} | Indivíduos processados: {processed} | "
+"Tamanho da fila: {queue_size}"
 
 msgid "mentioned in note"
 msgstr "mencionado na nota"
@@ -58,8 +87,17 @@ msgstr ""
 "\n"
 "   %s de "
 
+msgid "Error: No Home Person set"
+msgstr "Erro: sem indivíduo principal"
+
 msgid "No Active Person set."
 msgstr "Sem indivíduo activo definido."
+
+msgid "Error: No Active Person set"
+msgstr "Erro: sem indivíduo activo definido"
+
+msgid "Initializing search..."
+msgstr "A inicializar a procura..."
 
 msgid "Looking for relationship between\n"
 msgstr "A procurar parentesco entre\n"
@@ -71,6 +109,9 @@ msgstr "  <b>%s</b> (indivíduo inicial) e\n"
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (indivíduo activo)...\n"
+
+msgid "Searching for connections..."
+msgstr "A procurar ligações..."
 
 #, python-format
 msgid ""
@@ -87,10 +128,25 @@ msgstr ""
 "Em pausa.\n"
 "Clique em Continuar para procurar mais relações.\n"
 
+msgid "Paused - Press Continue to search for more relations"
+msgstr "Em pausa. - Clique em Continuar para procurar mais parentescos"
+
 #, python-format
 msgid ""
 "\n"
-"Search completed. %d relations found."
+"Search completed. %d relation paths found."
 msgstr ""
 "\n"
 "Procura concluída. Encontradas %d relações."
+
+msgid "Search completed - {} relation paths found"
+msgstr "Procura concluída - Encontrados {} caminhos"
+
+msgid "Error during search: {}"
+msgstr "Erro durante a procura: {}"
+
+msgid "Resuming search..."
+msgstr "A retomar a procura..."
+
+msgid "Search interrupted by user"
+msgstr "Procura interrompida por si"

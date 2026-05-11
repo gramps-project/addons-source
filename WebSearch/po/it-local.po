@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-09-12 17:22+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-04-14 18:01+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,105 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
+
+msgid "No data available."
+msgstr "Nessun dato disponibile."
+
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "DIVISIONE AMMINISTRATIVA STORICA DI"
+
+msgid "Foundation date:"
+msgstr "Data di fondazione:"
+
+msgid "Note:"
+msgstr "Nota:"
+
+msgid "Coordinates:"
+msgstr "Coordinate:"
+
+msgid "Administrative history"
+msgstr "Storia amministrativa"
+
+msgid "Data provided to AI:"
+msgstr "Dati forniti all'IA:"
+
+msgid "Full hierarchy"
+msgstr "Gerarchia completa"
+
+msgid "Place Type:"
+msgstr "Tipo luogo:"
+
+msgid "Last Retrieved At:"
+msgstr "Ultimo recupero:"
+
+msgid "AI provider is disabled"
+msgstr "Il fornitore di IA è disabilitato"
+
+msgid "No AI API key provided"
+msgstr "Nessuna chiave API per IA fornita"
+
+msgid "AI-generated historical place data is currently disabled"
+msgstr "I dati storici di luoghi generati da IA sono attualmente disabilitati"
+
+msgid "AI provider is unknown. Please check your AI provider settings."
+msgstr ""
+"Il fornitore di IA è sconosciuto. Verificare le impostazioni del fornitore "
+"di IA."
+
+msgid "Show QR-code"
+msgstr "Mostra codice QR"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 Suggerimenti tramite IA"
+
+#, python-format
+msgid "Note #%(id)s has been successfully added"
+msgstr "La nota #%(id)s è stata aggiunta"
+
+msgid "Attribute has been successfully added"
+msgstr "L'attributo è stato aggiunto"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Titolo: {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "Sostituito: {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "Vuoto: {keys}"
+
+msgid "QR-code"
+msgstr "Codice QR"
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Errore durante la generazione del codice QR:\n"
+"Errore originale: “{}”"
+
+msgid "Without it, QR code generation will not work."
+msgstr "Senza di essa, la generazione del codice QR non funziona."
+
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr ""
+"ℹ️ Questa libreria è richiesta per accedere le funzionalità che si basano su "
+"OpenAI."
+
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Senza di essa, i suggerimenti del sito e la storia dei luoghi generati "
+"tramite IA saranno disabilitati."
+
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *Suggerimento: clic su un qualsiasi percorso qui sopra per aprirlo nel "
+"gestore di file.*"
 
 msgid "Separate"
 msgstr "Separato"
@@ -71,101 +169,3 @@ msgstr "Ricerca web"
 #, python-format
 msgid "Loaded from file: %s"
 msgstr "Caricato dal file: %s"
-
-msgid "Without it, QR code generation will not work."
-msgstr "Senza di essa, la generazione del codice QR non funziona."
-
-msgid "ℹ️ This library is required for accessing OpenAI-based features."
-msgstr ""
-"ℹ️ Questa libreria è richiesta per accedere le funzionalità che si basano su "
-"OpenAI."
-
-msgid ""
-"Without it, AI-generated site suggestions and place history will be disabled."
-msgstr ""
-"Senza di essa, i suggerimenti del sito e la storia dei luoghi generati "
-"tramite IA saranno disabilitati."
-
-msgid "  💡 *Tip: click any path above to open it in your file manager.*"
-msgstr ""
-"  💡 *Suggerimento: clic su un qualsiasi percorso qui sopra per aprirlo nel "
-"gestore di file.*"
-
-msgid "No data available."
-msgstr "Nessun dato disponibile."
-
-msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
-msgstr "DIVISIONE AMMINISTRATIVA STORICA DI"
-
-msgid "Foundation date:"
-msgstr "Data di fondazione:"
-
-msgid "Note:"
-msgstr "Nota:"
-
-msgid "Coordinates:"
-msgstr "Coordinate:"
-
-msgid "Administrative history"
-msgstr "Storia amministrativa"
-
-msgid "Data provided to AI:"
-msgstr "Dati forniti all'IA:"
-
-msgid "Full hierarchy"
-msgstr "Gerarchia completa"
-
-msgid "Place Type:"
-msgstr "Tipo luogo:"
-
-msgid "Last Retrieved At:"
-msgstr "Ultimo recupero:"
-
-msgid "QR-code"
-msgstr "Codice QR"
-
-msgid ""
-"⚠ Error generating QR code:\n"
-"Original error: “{}”"
-msgstr ""
-"⚠ Errore durante la generazione del codice QR:\n"
-"Errore originale: “{}”"
-
-msgid "AI provider is disabled"
-msgstr "Il fornitore di IA è disabilitato"
-
-msgid "No AI API key provided"
-msgstr "Nessuna chiave API per IA fornita"
-
-msgid "AI-generated historical place data is currently disabled"
-msgstr "I dati storici di luoghi generati da IA sono attualmente disabilitati"
-
-msgid "AI provider is unknown. Please check your AI provider settings."
-msgstr ""
-"Il fornitore di IA è sconosciuto. Verificare le impostazioni del fornitore "
-"di IA."
-
-msgid "Show QR-code"
-msgstr "Mostra codice QR"
-
-msgid "🔍 AI Suggestions"
-msgstr "🔍 Suggerimenti tramite IA"
-
-#, python-format
-msgid "Note #%(id)s has been successfully added"
-msgstr "La nota #%(id)s è stata aggiunta"
-
-msgid "Attribute has been successfully added"
-msgstr "L'attributo è stato aggiunto"
-
-#, python-brace-format
-msgid "Title: {title}"
-msgstr "Titolo: {title}"
-
-#, python-brace-format
-msgid "Replaced: {keys}"
-msgstr "Sostituito: {keys}"
-
-#, python-brace-format
-msgid "Empty: {keys}"
-msgstr "Vuoto: {keys}"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 
 msgid "Thumbnail Generator"
 msgstr "Generador de miniaturas"
+
+msgid "Generates thumbnails for media files"
+msgstr "Genera miniaturas para archivos multimedia"
+
+msgid "Generating media thumbnails"
+msgstr "Genera miniaturas para multimedia"
+
+msgid "Generating thumbnails for person references"
+msgstr "Genera miniaturas para referencias de persona"
+
+msgid "Generating thumbnails for family references"
+msgstr "Genera miniaturas para referencias de familia"
+
+msgid "Generating thumbnails for event references"
+msgstr "Genera miniaturas para referencias de evento"
+
+msgid "Generating thumbnails for place references"
+msgstr "Genera miniaturas para referencias de lugar"
+
+msgid "Generating thumbnails for source references"
+msgstr "Genera miniaturas para referencias de origen"

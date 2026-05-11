@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"POT-Creation-Date: 2025-09-09 18:33+0100\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,436 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Network Chart"
+msgstr "Cuadro de Red"
+
+msgid "Generates a family network chart."
+msgstr "Genera un cuadro de red de familia."
+
+msgid "File exists. Overwrite?"
+msgstr "El archivo existe. ¿Sobrescribo?"
+
+msgid "created"
+msgstr "creado"
+
+msgid "last_written"
+msgstr "último_escrito"
+
+msgid "Main"
+msgstr "Principal"
+
+msgid "Orthogonal (right angles in connectors)"
+msgstr "Ortogonal (ángulos derecho en conectores)"
+
+msgid "Straight (no right angles in connectors)"
+msgstr "Directo (sin ángulos derechos en conectores)"
+
+msgid "Curved (curved and straight connectors)"
+msgstr "Curvado (conexiones curvadas y rectas)"
+
+msgid "Default (Orthogonal)"
+msgstr "Por defecto (Ortogonal)"
+
+msgid "Select the graph line connector format."
+msgstr "Selecciona el formato del conector de la línea del gráfico."
+
+msgid "Top to Bottom"
+msgstr "Cima a Suelo"
+
+msgid "Left to Right"
+msgstr "Izq a Der"
+
+msgid "Bottom to Top"
+msgstr "Suelo a Cima"
+
+msgid "Right to Left"
+msgstr "Derecho a Izquierdo"
+
+msgid "Default (Top to Bottom)"
+msgstr "Predeterminado (Cima a Suelo)"
+
+msgid "Select the graph direction."
+msgstr "Seleccione la dirección del gráfico."
+
+msgid "URL Style"
+msgstr "Estilo URL"
+
+msgid "Include URLs from database."
+msgstr "Incluye las URL desde base de datos."
+
+msgid "Dynamic URL = Prefix + GrampID + Suffix"
+msgstr "URL Dinámica = Prefijo + GramID + Sufijo"
+
+msgid "Static URL = Prefix"
+msgstr "URL Estática = Prefijo"
+
+msgid "Don't include URLs"
+msgstr "No incluir las URL"
+
+msgid "Default (include)"
+msgstr "Predeterminado (incluye)"
+
+msgid "Select URL style."
+msgstr "Seleccionar estilo de URL."
+
+msgid "URL Prefix,Suffix"
+msgstr "Prefijo,Sufijo de URL"
+
+msgid ""
+"Enter the Prefix,Suffix (use comma)\n"
+"for dynamically generated URLs.\n"
+"URL = Prefix + GrampsID + Suffix."
+msgstr ""
+"Introduzca el Prefijo,Sufijo (utilice coma)\n"
+"para las URL generadas dinámicamente.\n"
+"URL = Prefijo + GrampsID + Sufijo."
+
+msgid "Enter Font Name"
+msgstr "Introducir Nombre del Tipo de Letra"
+
+msgid ""
+"Enter the primary font style for the chart.\n"
+"Must already be installed.\n"
+"White Rabbit can be obtained from\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+msgstr ""
+"Introduzca el estilo de tipo de letra primario para el cuadro\n"
+"Ya debe estar instalado.\n"
+"Mientras el conejo puede ser obtenido desde\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+
+msgid "Spacing (inch)"
+msgstr "Espaciado (pulgada)"
+
+msgid ""
+"Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
+msgstr ""
+"Introduzca la distancia de separación entre «Generaciones» en pulgadas "
+"(0.1-5.0)."
+
+msgid "Enter Chart Title"
+msgstr "Introducir Título del Cuadro"
+
+msgid "Set the title of the chart."
+msgstr "Establece el título del cuadro."
+
+msgid "Default (svg)"
+msgstr "Predeterminado (svg)"
+
+msgid ""
+"svg - Scalable Vector Graphics file.\n"
+"pdf - Adobe Portable Document Format.\n"
+msgstr ""
+"svg – Scalable Vector Graphics file.\n"
+"pdf – Adobe Portable Document Format.\n"
+
+msgid "The destination folder for generated files."
+msgstr "La carpeta de destino para archivos generados."
+
+msgid "network"
+msgstr "red"
+
+msgid "The filename for the generated svg network chart."
+msgstr "El nombre de archivo para el cuadro de red svg generado."
+
+msgid "Different node shapes/edges for gender."
+msgstr "Diferentes formas/bordes de nodos para género."
+
+msgid "Node differences for gender."
+msgstr "Diferencias de nodo para género."
+
+msgid "Male Background"
+msgstr "Fondo Masculino"
+
+msgid "RGB-color for male box background."
+msgstr "Color RGB para el fondo de la caja masculina."
+
+msgid "Male Background Alpha"
+msgstr "Fondo Alfa Masculino"
+
+msgid "Alpha for Male box background (transparent=0, solid=255)."
+msgstr "Alfa para fondo de caja Masculina (transparente=0, sólido=255)."
+
+msgid "Male Box Edge"
+msgstr "Borde de Caja Masculino"
+
+msgid "RGB-color for Male box edge."
+msgstr "Color RGB para borde de caja Masculino."
+
+msgid "Female Background"
+msgstr "Antecedentes femeninos"
+
+msgid "RGB-color for Female box background."
+msgstr "RGB‐Color para fondo de caja Femenina."
+
+msgid "Female Background Alpha"
+msgstr "Alfa de Fondo Femenino"
+
+msgid "Alpha for Female box background (transparent=0, solid=255)."
+msgstr "Alfa para fondo de caja Femenina (transparente=0, sólido=255)."
+
+msgid "Female Box Edge"
+msgstr "Borde de Caja Femenina"
+
+msgid "RGB-color for Female box edge."
+msgstr "RGB‐Color para borde de caja Femenina."
+
+msgid "Other Background"
+msgstr "Otro Fondo"
+
+msgid "RGB-color for other box background."
+msgstr "RGB‐Color para otro fondo de caja."
+
+msgid "Other Background Alpha"
+msgstr "Otro fondo alfa"
+
+msgid "Alpha for Other box background (transparent=0, solid=255)."
+msgstr "Alfa para Otro fondo de caja (transparente=0, sólido=255)."
+
+msgid "Family Connector Line"
+msgstr "Línea de Conexión de Familia"
+
+msgid "RGB-color for family connector line."
+msgstr "Color RGB para línea de conexión de familia."
+
+msgid "Marriage Connector Line"
+msgstr "Línea de Conector Matrimonial"
+
+msgid "RGB-color for marriage connector line."
+msgstr "RGB‐Color para línea de conector del matrimonio."
+
+msgid "Highlight Connector Line"
+msgstr "Línea de conector resaltado"
+
+msgid ""
+"RGB-color for the highlighted path between two individuals.  If the "
+"graph.inverts, reverse the order to change."
+msgstr ""
+"Color‐RGB para la ruta resaltada ente dos individuales. Si el graph.inverts, "
+"revierte el orden a cambia."
+
+msgid "Trim Box Edge"
+msgstr "Recortar borde de caja"
+
+msgid "RGB-color for box edge that has been trimmed."
+msgstr "Color‐RGB para borde de caja que ha sido recortado."
+
+msgid "Remove color background on all nodes."
+msgstr "Retira el color del fondo sobre todos los nodos."
+
+msgid "Removes color background for individuals (nodes) on chart."
+msgstr "Retira el color del fondo para individuales (nodos) sobre el cuadro."
+
+msgid ""
+"Enter year to start\n"
+"rounding birthday\n"
+"to year only"
+msgstr ""
+"Introduce año inicial\n"
+"redondeando el cumpleaños\n"
+"a solo el año"
+
+msgid ""
+"Birthdays after this year are represented by the year only.  Invalid entries "
+"will be ignored."
+msgstr ""
+"Nacimientos tras este año representado por solo el año. Los apuntes no "
+"válidos serán ignoradas."
+
+msgid "Round birthday to year after year entered (above)."
+msgstr "Redondeo de nacimiento al año tras el año introducido (arriba)."
+
+msgid "Represent birthday by year only."
+msgstr "Representa nacimiento solo por año."
+
+msgid ""
+"Enter year to start\n"
+"rounding marriage\n"
+"date to year only"
+msgstr ""
+"Introduce año para inicio\n"
+"redondeando el día del\n"
+"matrimonio a solo el año"
+
+msgid ""
+"Marriages after this year are represented bythe year only. Invalid entries "
+"will be ignored."
+msgstr ""
+"Matrimonio tras este año sea representado por el año solo. Apuntes no "
+"válidos se hacen caso omiso."
+
+msgid "Round marriage to year after year entered (above)."
+msgstr "Redondeo de matrimonio al año tras el año introducido (encima)."
+
+msgid "Represent marriage by year only."
+msgstr "Representa matrimonio sólo por año."
+
+msgid ""
+"Attempts to remove middle names.  Only works for entries with birth year in "
+"the record."
+msgstr ""
+"Intentos de retirar nombres medios. Solo funciona para apuntes con año de "
+"nacimiento en el registro."
+
+msgid "Remove middle names."
+msgstr "Quitar los segundos nombres."
+
+msgid "Allow inclusion of private records in chart."
+msgstr "Concede inclusión de registros privados en cuadro."
+
+msgid "Trim"
+msgstr "Recorte"
+
+msgid "Trim descendants"
+msgstr "Recortar descendientes"
+
+msgid "All descendants (children) of selected individuals will not be shown."
+msgstr ""
+"Todos los descendientes (hijos) de individuales seleccionados no serán "
+"mostrados."
+
+msgid "Enable trimming of descendants."
+msgstr "Habilita recorte de descendientes."
+
+msgid ""
+"You must enter valid person(s) before \n"
+"enabling trimming of descendants from tree."
+msgstr ""
+"Debe introducir persona(s) válida(s) antes de \n"
+"habilitar recorte de los descendientes del árbol."
+
+msgid "Trim ancestors"
+msgstr "Recortar ancestros"
+
+msgid "All ancestors (parents) of selected individuals will not be shown."
+msgstr ""
+"No se mostrarán todos los antepasados (padres) de individuos seleccionados."
+
+msgid "Enable trimming of ancestors."
+msgstr "Habilitar recorte de antepasados."
+
+msgid "Enable trimming of ancestors from tree."
+msgstr "Habilita recorte de antepasados desde árbol."
+
+msgid "Enable trim groups."
+msgstr "Habilita recorte de grupos."
+
+msgid ""
+"Remove groups less than Min Group Size.  Automatic\n"
+"for databases with more than 1500 individuals."
+msgstr ""
+"Eliminar grupos menos que Tamaño de Grupo Min. Automático\n"
+"para bases de datos con más de 1.500 individuos."
+
+msgid "Min Group Size"
+msgstr "Tam Min Grupo"
+
+msgid ""
+"Enter the minimum size group to display.\n"
+"Value may be 2 or greater."
+msgstr ""
+"Introduzca el grupo de tamaño mínimo para exhibir.\n"
+"El valor puede ser 2 o mayor."
+
+msgid ""
+"Select Start and\n"
+"End Individuals in\n"
+"displayed path(s).\n"
+"Select two"
+msgstr ""
+"Seleccione Inicio e\n"
+"Individuos Finales en\n"
+"ruta(s) exhibida.\n"
+"Seleccione dos"
+
+msgid ""
+"Starting and ending person for displayed path(s).\n"
+"Select two people"
+msgstr ""
+"Comenzar y finalizar persona para ruta(s) exhibida(s).\n"
+"Seleccione dos personas"
+
+msgid "Highlight path(s)"
+msgstr "Resaltar ruta(s)"
+
+msgid "Direct"
+msgstr "Directo"
+
+msgid "Any"
+msgstr "Cualquiera"
 
 msgid "Default (None)"
 msgstr "Predeterminado (ninguno)"
+
+msgid ""
+"None - Don't highlight paths.\n"
+"Direct - Highlight direct descendant/ancestor paths.\n"
+"Any - Highlight any path(s) including direct or indirect."
+msgstr ""
+"Ninguno – No resaltar rutas.\n"
+"Directo – Resalte de rutas directas descendientes/ancestros directos.\n"
+"Cualquiera – Resaltar cualquier ruta(s) incluyendo directa o indirecta."
+
+msgid "Show only path(s)"
+msgstr "Mostrar sólo ruta(s)"
+
+msgid "Default (none)"
+msgstr "Por defecto (ninguno)"
+
+msgid ""
+"None - Don't show paths only.\n"
+"Direct - Show only direct descendant/ancestor paths.\n"
+"Any - Show only path(s) direct or indirect."
+msgstr ""
+"Ninguno – No muestres solamente rutas.\n"
+"Directo – Sólo muestra rutas directas descendientes/ancestor.\n"
+"Cualquiera – Solo muestra ruta(s) directa o indirecta."
+
+msgid "Select person at center of selection radius in graph."
+msgstr "Seleccione persona en el centro del radio de selección en el gráfico."
+
+msgid ""
+"Max connections\n"
+"from center"
+msgstr ""
+"Conexión máx.\n"
+"desde centro"
+
+msgid ""
+"Enter the maximum number of connections allowed from\n"
+"the center person.  Value may be 1 or greater."
+msgstr ""
+"Introducir el número máximo de conexiones concedida\n"
+"desde persona del centro.  El valor puede ser 1 o mayor."
+
+msgid "Limit graph to max connections from center."
+msgstr "Limitar el gráfico al número máximo de conexiones desde el centro."
+
+msgid "Display up to max connections from central person."
+msgstr "Exhibir hasta el número máximo de conexiones desde la persona central."
+
+msgid "Highlight central person in graph."
+msgstr "Resalte la persona central en el gráfico."
+
+msgid "Add yellow color background to central person."
+msgstr "Añade un fondo de color amarillo a la persona central."
+
+msgid "Use database handle instead of GrampID id in URLs."
+msgstr ""
+"Utilice el identificador de la base de datos en lugar del ID de GrampID en "
+"las URL."
+
+msgid ""
+"Use database handle instead of the gramps id for URLs.\n"
+"The handle should never change whereas gramps ids can."
+msgstr ""
+"Utilice manipulación de base de datos en vez del id de gramps para las URL.\n"
+"El manipulador nunca cambiaría donde gramps ids pueda."
+
+msgid "Confirm overwrite file."
+msgstr "Confirme sobrescritura del archivo."
+
+msgid "Enable/disable confirmation of file overwrite."
+msgstr "Habilita/inhabilita confirmación de sobrescritura del archivo."

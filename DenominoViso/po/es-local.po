@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-06-21 17:01+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,13 +12,71 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "No Source"
+msgstr "Son fuente"
+
+msgid "onclick"
+msgstr "onclick"
+
+msgid "onmouseover"
+msgstr "onmouseover"
+
+msgid "Ancestor"
+msgstr "Ancestro"
+
+msgid "Descendant"
+msgstr "Descendiente"
+
+msgid "Fan"
+msgstr "Abanico"
+
+msgid "Growth Spiral"
+msgstr "Crecimiento espiral"
+
+msgid "Mandelbrot Tree"
+msgstr "Árbol Mandelbrot"
+
+msgid "Pythagoras Tree"
+msgstr "Árbol Pitágoras"
+
+msgid "right to left"
+msgstr "derecha a izquierda"
+
+msgid "left to right"
+msgstr "izquierda a derecha"
+
+msgid "top to bottom"
+msgstr "techo a suelo"
+
+msgid "bottom to top"
+msgstr "suelo a techo"
+
+msgid "role"
+msgstr "rol"
 
 msgid "description"
 msgstr "descripción"
 
 msgid "witnesses"
 msgstr "testigos"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Fallo al escribir {target_path}: {message}"
+
+msgid "No central person selected"
+msgstr "Ninguna persona central seleccionada"
+
+msgid "Unknown time direction"
+msgstr "Dirección temporal desconocida"
+
+msgid "author"
+msgstr "autor"
+
+msgid "publication_info"
+msgstr "publication_info"
 
 msgid "abbreviation"
 msgstr "abreviatura"
@@ -29,38 +87,118 @@ msgstr "volumen"
 msgid "of"
 msgstr "de"
 
+msgid "the chart type runs out of bounds"
+msgstr "el tipo de cuadro ejecuta fuera de acotaciones"
+
 msgid "Search"
 msgstr "Buscar"
 
+msgid "in"
+msgstr "en"
+
+msgid "DenominoViso Options"
+msgstr "Opciones DenominoViso"
+
+msgid "The destination file for the html-content."
+msgstr "El archivo destino para el html-content."
+
+msgid "Central Person"
+msgstr "Persona Central"
+
+msgid "The central person for the tree"
+msgstr "La persona central para el árbol"
+
+msgid "Title of the webpage"
+msgstr "Título de la página web"
+
+msgid "Any string you wish."
+msgstr "Cualquier cadena deseada."
+
+msgid "Display mode"
+msgstr "Modo pantalla"
+
+msgid "Either plot ancestor or descendants graph."
+msgstr "O bien traza ancestro o gráfico descendiente."
+
+msgid "Display type"
+msgstr "Tipo de pantalla"
+
+msgid "The type of graph to create."
+msgstr "El tipo de grafos para crear."
+
+msgid "Direction of time"
+msgstr "Dirección de tiempo"
+
+msgid "Direction in which time increases."
+msgstr "Dirección en la cual el tiempo se incremente."
+
 msgid "Max chart width (%)"
-msgstr "Anchura máxima del gráfico (%)"
+msgstr "Anchura máxima del cuadro (%)"
 
 msgid "Width of the tree as fraction of the browser window"
 msgstr "La anchura del árbol como fracción de la ventana del navegador"
 
 msgid "Max chart height (px)"
-msgstr "Altura máxima del gráfico (px)"
+msgstr "Altura máxima del cuadro (px)"
 
 msgid "Height of the tree in pixels."
 msgstr "La altura del árbol en píxeles."
 
+msgid "Closing remarks"
+msgstr "Cerrando remarcados"
+
+msgid ""
+"List of strings, free text added at the bottom, for example for a copyright "
+"notice."
+msgstr ""
+"Listado de cadenas, texto libre añadido en el suelo, por ejemplo para una "
+"notificación de derechos de copia."
+
+msgid "Include Options"
+msgstr "Incluir opciones"
+
+msgid "Include private records"
+msgstr "Incluir registros privados"
+
 msgid "Whether to leave out private data."
 msgstr "Indica si se deben excluir los datos privados."
+
+msgid "Include Events"
+msgstr "Incluir Eventos"
 
 msgid "Whether to include a person's events."
 msgstr "Indica si se deben incluir los eventos de una persona."
 
+msgid "Include birth children"
+msgstr "Incluir nacimiento de hijo"
+
+msgid "Whether to include the birth of children in the list of events."
+msgstr "Si o no incluir el nacimiento del hijo en el listado de eventos."
+
+msgid "Include death relatives"
+msgstr "Incluir defunción relativa"
+
 msgid ""
 "Whether to include the death of relatives during the lifetime of person."
 msgstr ""
-"Indica si se deben incluir los fallecimientos de parientes durante la vida "
-"de la persona."
+"Indica si se deben incluir las defunciones de parientes durante la vida de "
+"la persona."
+
+msgid "Include witness note"
+msgstr "Incluir nota de hermano"
+
+msgid ""
+"Whether to include the note belonging to a witness (if the event_format "
+"contains <witnesses>)"
+msgstr ""
+"Si o no incluir la nota perteneciendo a un germano (su el event_format "
+"contiene <witnesses>)"
 
 msgid "Whether to include a person's attributes"
 msgstr "Indica si se deben incluir los atributos de una persona"
 
 msgid "Include Addresses"
-msgstr "Incluir direcciones"
+msgstr "Incluir Direcciones"
 
 msgid "Whether to include a person's addresses."
 msgstr "Indica si se deben incluir las direcciones de una persona."
@@ -92,23 +230,199 @@ msgstr "Indica si se deben incluir las fuentes de una persona."
 msgid "Image Options"
 msgstr "Opciones de imágenes"
 
+msgid "Include Photos/Images from Gallery"
+msgstr "Incluir foto/imagen desde Galería"
+
 msgid "Whether to include images"
 msgstr "Indica si se deben incluir imágenes"
 
 msgid "Copy Image"
 msgstr "Copiar imagen"
 
+msgid "Copy the images to a designated directory."
+msgstr "Copia las imágenes a un directorio designado."
+
 msgid "Images with Attribute"
 msgstr "Imágenes con atributo"
+
+msgid "Determine images with which attributes to in/exclude"
+msgstr "Determina imágenes con las cueles atributos a entrar/excluir"
+
+msgid "Include Image source references"
+msgstr "Incluye referencias de origen de Imagen"
+
+msgid "Whether to include references for images"
+msgstr "Si o no incluir referencias para imágenes"
+
+msgid "Source reference attribute"
+msgstr "Origen referencia atributo"
+
+msgid "Image attribute that should be used as source reference"
+msgstr "Atributo de imagen que sería utilizado como referencia fuente"
 
 msgid "Style Options"
 msgstr "Opciones de estilo"
 
+msgid "Color of active person:"
+msgstr "Color de persona activa:"
+
+msgid "RGB-color of geometric shape of the activated person."
+msgstr "Color RGB de compartición geométrica de la persona activada."
+
 msgid "Color of found persons:"
 msgstr "Color de personas encontradas:"
+
+msgid "RGB-color of geometric shape of the persons found."
+msgstr "Color RGB de compartición geométrica de la persona encontrada."
+
+msgid "Color of male persons:"
+msgstr "Color de personas masculinas:"
+
+msgid "RGB-color of geometric shape of the male persons."
+msgstr "Color RBB de compartición geométrica de las personas masculinas."
+
+msgid "Colour of female persons:"
+msgstr "Color de personas femeninas:"
+
+msgid "RGB-color of geometric shape of the female persons."
+msgstr "Color RGB de forma geométrica de las personas femeninas."
+
+msgid "Width of rectangle (hrd):"
+msgstr "Anchura de rectángulo (hrd):"
+
+msgid ""
+"The width of a person rectangle of the regular chart type expressed as "
+"fraction of the horizontal rectangle distance."
+msgstr ""
+"La anchura de una persona rectangular del tipo de cuadro usual expresada "
+"como fracción de distancia del rectángulo horizontal."
+
+msgid "Height of rectangle (hrd):"
+msgstr "La altura de rectángulo (hrd):"
+
+msgid ""
+"The height of a person rectangle of the regular chart type expressed as "
+"fraction of the horizontal rectangle distance."
+msgstr ""
+"La altura de un rectángulo de persona del tipo de cuadro regular como "
+"fracción de la distancia del rectángulo horizontal."
+
+msgid "Vertical distance of rectangles (hrd):"
+msgstr "Distancia vertical de rectángulo (hrd):"
+
+msgid ""
+"The vertical distance of person rectangles of the regular chart type "
+"expressed as fraction of the horizontal rectangle distance."
+msgstr ""
+"La distancia vertical de rectángulos de persona del tipo de cuadro regular "
+"expresada como fracción de la distancia horizontal del rectángulo."
+
+msgid "Extra style settings:"
+msgstr "Ajustes del estilo adicional:"
+
+msgid "Whatever css style settings are needed."
+msgstr "Lo que sea el estilo css de ajustes son necesarios."
+
+msgid "Mouse event handler"
+msgstr "Manipulador del evento del ratón"
+
+msgid "Mouse handler used to interact with visitor of webpage."
+msgstr ""
+"Manipulador del ratón utilizado para interactuar con visitante de página web."
+
+msgid "Birth relationship linestyle"
+msgstr "Estilo lineal de relación de nacimiento"
+
+msgid ""
+"List of lists where each sublist is a list with information about the dash "
+"pattern of lines connecting children to parents."
+msgstr ""
+"Listado de listados donde cada sublistado es un listado con información "
+"sobre el patrón guión de líneas conectando hijos a antecesores."
+
+msgid "Source confidence color"
+msgstr "Color de confidencia origen"
+
+msgid ""
+"List of lists where each sublist is a list with information on the color to "
+"use for a certain confidence level."
+msgstr ""
+"Listado de listados cuando cada listado sub es un listado con información en "
+"el color para utilizar en cierto nivel de confidencia."
+
+msgid "Event format"
+msgstr "Formato de evento"
+
+msgid "at"
+msgstr "en"
+
+msgid ""
+"List os strings with placeholders for events. Known placeholders: <type>, "
+"<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
+"<attribute-value>."
+msgstr ""
+"Listado de cadena con contenedores para eventos. Conoce contenedores: "
+"<tipo>, <rol>, <fecha>, <lugar>, <descripción>, <testigos>, <nacimiento> y "
+"cualquier <valor‐atributivo>."
+
+msgid "Source format"
+msgstr "Formato origen"
+
+msgid ""
+"List of strings with placeholders for sources. Known placeholders: <title>, "
+"<volume>, <author>, <publication_info> and <abbreviation>."
+msgstr ""
+"Lista de cadenas con marcadores de posición para las fuentes. Marcadores de "
+"posición conocidos: <título>, <volumen>, <autor>, <informe_publicación> y "
+"<abreviación>."
+
+msgid "restricted to:"
+msgstr "restringido a:"
+
+msgid "to directory:"
+msgstr "al directorio:"
 
 msgid "Save images in ..."
 msgstr "Guardar imágenes en…"
 
+msgid "should be"
+msgstr "sería"
+
+msgid "Included"
+msgstr "Incluido"
+
+msgid "Excluded"
+msgstr "Excluido"
+
+msgid "Name HTML-wrapper file"
+msgstr "Nombre del archivo cubierto en HTML"
+
+msgid "Save HTML-wrapper file as ..."
+msgstr "Guardar archivo cubierto con HTML como…"
+
+msgid "Give a filename ..."
+msgstr "Proporciona un nombre de archivo …"
+
 msgid "Relation type"
 msgstr "Tipo de relación"
+
+msgid "Use dashed linestyle"
+msgstr "Utilice un estilo de línea discontinua"
+
+msgid "Dash length"
+msgstr "Longitud del guion"
+
+msgid "Inter-dash length"
+msgstr "Longitud entre guiones"
+
+msgid "DenominoViso"
+msgstr "DenominoViso"
+
+msgid ""
+"Generates a web (HTML) page with a graphical representation of ancestors/"
+"descendants (SVG) where details about individuals become visible upon mouse-"
+"events."
+msgstr ""
+"Genera una página web (HTML) con una representación gráfica de antecesores/"
+"descendientes (SVG) donde los detalles sobre individuales se vuelven "
+"visibles hasta el evento del ratón."

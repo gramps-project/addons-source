@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,69 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 
-msgid "Copy"
-msgstr "Copiar"
+msgid "Deep Connections Gramplet"
+msgstr "Conexiones profundas de Gramplet"
+
+msgid "Gramplet showing a deep relationship between active and home people"
+msgstr "Gramplet mostrando una relación profunda entre activo y gente inicial"
+
+msgid "Deep Connections"
+msgstr "Conexiones Profundas"
+
+msgid "mentioned in note"
+msgstr "mencionado en nota"
+
+msgid "Note on Family"
+msgstr "Nota en Familia"
+
+msgid "sibling"
+msgstr "hermano"
+
+msgid "Note on Parent Family"
+msgstr "Nota en Familia Antecesora"
+
+#, python-format
+msgid "%s (association)"
+msgstr "%s (asociación)"
+
+msgid "Note on Person"
+msgstr "Nota sobre persona"
+
+#, python-format
+msgid ""
+"\n"
+"   %s of "
+msgstr ""
+"\n"
+"   %s de "
+
+msgid "No Active Person set."
+msgstr "Ninguna Persona Activa fijada."
+
+msgid "Looking for relationship between\n"
+msgstr "Buscando relación entre\n"
+
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr "  <b>%s</b> (Persona Inicial) y\n"
+
+#, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "  <b>%s</b> (Persona Activa)…\n"
+
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Relación nº %d encontrada: \n"
+"   "
+
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"Pausado.\n"
+"Presione Continuar para buscar relaciones adicionales.\n"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,10 +12,67 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Set Privacy Tool"
+msgstr "Establecer herramienta de privacidad"
+
+#, python-format
+msgid "Set private: %d %s\n"
+msgstr "Establecer privacidad: %d %s\n"
+
+#, python-format
+msgid "Not private: %d %s\n"
+msgstr "No privados: %d %s\n"
+
+msgid "Set persons private.."
+msgstr "Establecer personas privadas."
+
+msgid "Set events private.."
+msgstr "Establecer eventos privados.."
+
+msgid "Set media private.."
+msgstr "Establecer medio privado.."
+
+msgid "Set adresses private.."
+msgstr "Establecer direcciones privadas.."
+
+msgid "Set internet objects private.."
+msgstr "Establecer objetos de internet privados.."
+
+msgid ""
+"The time range in years from today you want to set objects private.\n"
+"'0 years' = remove privacy from all objects."
+msgstr ""
+"El intervalo de tiempo en años a partir de hoy en el que desea que los "
+"objetos sean privados.\n"
+"'0 años' = retira privacidad desde todos los objetos."
+
+msgid "Always private if no date."
+msgstr "Siempre privado si no hay fecha."
+
+msgid "If checked, all objects without a date will also be set private."
+msgstr ""
+"Si se marca, todas las opciones sin una fecha además serán establecidos a "
+"privados."
 
 msgid "Select filter to restrict people"
 msgstr "Seleccione filtro para restringir las personas"
 
 msgid "Persons"
 msgstr "Personas"
+
+msgid "Select filter to restrict events"
+msgstr "Seleccione filtro para restringir eventos"
+
+msgid "Select filter to restrict medias"
+msgstr "Seleccione filtro para restringir medios"
+
+msgid "Internet type filter"
+msgstr "Tipo del filtro de Internet"
+
+msgid "E-Mail"
+msgstr "Correo-e"
+
+msgid "Set all objects of the last <number> of years private."
+msgstr "Establecer todo los objetos del último <número> de años privados."

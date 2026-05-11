@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 17:04+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
 "PO-Revision-Date: 2025-09-03 03:01+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
@@ -13,12 +13,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.13.1-dev\n"
-
-msgid "Order"
-msgstr "Ordre"
-
-msgid "Form"
-msgstr "Formulari"
 
 msgid "New Form"
 msgstr "Formulari nou"
@@ -31,6 +25,21 @@ msgstr "Referència:"
 
 msgid "Headings"
 msgstr "Encapçalaments"
+
+msgid "Order"
+msgstr "Ordre"
+
+msgid "Form"
+msgstr "Formulari"
+
+msgid "Relation"
+msgstr "Relació"
+
+msgid "Seating"
+msgstr "Seients"
+
+msgid "2. Family"
+msgstr "2. Família"
 
 msgid "Sheet No."
 msgstr "Full núm."
@@ -47,9 +56,6 @@ msgstr "En data"
 msgid "City of"
 msgstr "Ciutat de"
 
-msgid "Relation"
-msgstr "Relació"
-
 msgid "Parents Place of Marriage"
 msgstr "Lloc de matrimoni dels pares"
 
@@ -64,9 +70,3 @@ msgstr "Lloc de naixement dels pares"
 
 msgid "Nearest Relative"
 msgstr "Familiar més proper"
-
-msgid "Seating"
-msgstr "Seients"
-
-msgid "2. Family"
-msgstr "2. Família"

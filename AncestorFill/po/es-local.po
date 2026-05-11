@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2026-04-13 09:10+0000\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
 "Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 
 msgid "AncestorFill"
 msgstr "Relleno de ancestros"
@@ -26,3 +26,64 @@ msgstr "AncestorFill para %s"
 
 msgid "Generation "
 msgstr "Generación "
+
+msgid "Number of Ancestors found "
+msgstr "Número de Ancestros encontrados "
+
+msgid "Percent of Ancestors found "
+msgstr "Porcentaje de Ancestros encontrados "
+
+msgid "Number of unique Ancestors found "
+msgstr "Número de Ancestros únicos encontrados "
+
+msgid "Number of theoretical Ancestors "
+msgstr "Número de Ancestros teóricos "
+
+msgid "Pedigree Collapse "
+msgstr "Colapso del Pedigrí "
+
+msgid "Total Number of Ancestors found "
+msgstr "Número Total de Ancestros encontrados "
+
+msgid "Total Number of unique Ancestors found "
+msgstr "Número Total de Ancestros únicos encontrados "
+
+msgid ""
+"\n"
+"\n"
+"Note: This report only counts ancestors with a parent-child relationship of "
+"birth."
+msgstr ""
+"\n"
+"\n"
+"Nota: este informe solo cuenta ancestros con una relación de nacimiento "
+"padre-hijo."
+
+msgid "Filled digit"
+msgstr "Dígito completado"
+
+msgid ""
+"The number of digits after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr ""
+"El número de dígitos tras la coma que se deben incluir en el informe para el "
+"porcentaje de antepasado encontrado en una generación determinada"
+
+msgid "Collapsed digit"
+msgstr "Dígito colapsado"
+
+msgid ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+msgstr ""
+"El número de dígitos tras la coma para incluir en el informe para el "
+"pedigree Colapso"
+
+msgid "Display theoretical"
+msgstr "Representación teorética"
+
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr "Si exhibe el número teórico de ancestros por generación"
+
+msgid "The style used for the title of the page."
+msgstr "El estilo utilizado para el título de la página."
