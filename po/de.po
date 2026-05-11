@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-11 17:13-0700\n"
+"POT-Creation-Date: 2026-05-08 10:05-0700\n"
 "PO-Revision-Date: 2026-04-26 15:09+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
@@ -46,10 +46,6 @@ msgstr "Zeigt alle Namen aller Personen"
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
 msgstr "Namensart"
-
-#: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
-msgid "Primary Name"
-msgstr "Primärer Name"
 
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
@@ -147,7 +143,7 @@ msgstr ""
 "Ob die theoretische Anzahl der Vorfahren pro Generation angezeigt werden soll"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
-#: DescendantBooks/DetailedDescendantBookReport.py:1536
+#: DescendantBooks/DetailedDescendantBookReport.py:1538
 #: DetDescendantReport-images/detdescendantreporti.py:1252
 #: LastChange/LastChangeReport.py:378
 #: LinesOfDescendency/lines-of-descendency.py:72
@@ -268,6 +264,44 @@ msgstr ""
 "Der für die Gesamtzeile der Anzahl der Vorfahren pro Generation verwendete "
 "Stil."
 
+#: AnniversariesGramplet/AnniversariesGramplet.gpr.py:24
+#: AnniversariesGramplet/AnniversariesGramplet.gpr.py:32
+#, fuzzy
+#| msgid "Inverse"
+msgid "Anniversaries"
+msgstr "Umgekehrt"
+
+#: AnniversariesGramplet/AnniversariesGramplet.gpr.py:25
+#, fuzzy
+#| msgid "a gramplet that displays the birthdays of the living people"
+msgid "A gramplet that displays the anniversaries of events"
+msgstr "ein Gramplet, das die Geburtstage der lebenden Personen anzeigt"
+
+#: AnniversariesGramplet/AnniversariesGramplet.py:51
+#, fuzzy
+#| msgid "Double-click on a row to edit the selected participant."
+msgid "Double-click on a row to edit the event."
+msgstr ""
+"Doppelklicke auf eine Zeile, um den ausgewählten Beteiligten zu bearbeiten."
+
+#: AnniversariesGramplet/AnniversariesGramplet.py:58
+#, fuzzy
+#| msgid "Other participants"
+msgid "Participant"
+msgstr "Andere Beteiligte"
+
+#: ArchiveAssist/ArchiveAssist.gpr.py:22
+msgid ""
+"Parses strings from Riksarkivet and ArkivDigital to create sources and "
+"citations."
+msgstr ""
+
+#: ArchiveAssist/ArchiveAssist.gpr.py:26
+#, fuzzy
+#| msgid "Archive file"
+msgid "Archive Assist"
+msgstr "Archivdatei"
+
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
 msgstr "Verknüpfungsdaten prüfen"
@@ -300,7 +334,7 @@ msgstr "Hängt eine gemeinsame Quelle an mehrere Objekte an."
 
 #: AttachSourceTool/AttachSourceTool.py:70
 #: AvatarGenerator/AvatarGenerator.py:86
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:87
 #: RelID/relation_tab.py:310 SetAttributeTool/SetAttributeTool.py:71
 #: SetPrivacyTool/SetPrivacyTool.py:312
 msgid "Select filter to restrict people"
@@ -339,7 +373,7 @@ msgid "ID of source to attach"
 msgstr "ID der anzuhängenden Quelle"
 
 #: AttachSourceTool/AttachSourceTool.py:157
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:241
 #: SetAttributeTool/SetAttributeTool.py:151
 #: SetAttributeTool/SetAttributeTool.py:193
 msgid "Processing...\n"
@@ -794,7 +828,7 @@ msgid "Only show birthdays with tag"
 msgstr "Nur Geburtstage mit Etikett anzeigen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:194
 msgid "Calculate Estimated Dates"
 msgstr "Geschätzte Daten berechnen"
 
@@ -802,90 +836,90 @@ msgstr "Geschätzte Daten berechnen"
 msgid "Calculates estimated dates for birth and death."
 msgstr "Berechnet geschätzte Daten für Geburt und Tod."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Calculated Date Estimates"
 msgstr "Berechnete Datumsschätzungen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid "Source to remove and/or add"
 msgstr "Quelle zum Entfernen und/oder Hinzufügen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:103
 msgid "Remove previously added events, notes, and source"
 msgstr "Zuvor hinzugefügte Ereignisse, Notizen und Quellen entfernen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
 "Entfernen von berechneten Ereignissen, Notizen und Quellen; erfolgt sofort "
 "beim Ausführen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:108
 msgid "Do not add birth events"
 msgstr "Keine Geburtsereignisse hinzufügen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:109
 msgid "Add birth events without dates"
 msgstr "Geburtsereignisse ohne Datum hinzufügen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
 msgid "Add birth events with dates"
 msgstr "Geburtsereignisse mit Datum hinzufügen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 msgid "Add a birth events with or without estimated dates"
 msgstr "Geburtsereignisse mit oder ohne geschätzte Daten hinzufügen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:115
 msgid "Do not add death events"
 msgstr "Keine Todesereignisse hinzufügen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:112
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:116
 msgid "Add death events without dates"
 msgstr "Todesereignisse ohne Datum hinzufügen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:117
 msgid "Add death events with dates"
 msgstr "Todesereignisse mit Datum hinzufügen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:114
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Add death events with or without estimated dates"
 msgstr "Hinzufügen von Todesereignissen mit oder ohne geschätztes Datum"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:122
 msgid "Maximum age"
 msgstr "Maximales Alter"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:121
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:125
 msgid "Maximum age that one can live to"
 msgstr "Höchstalter, das eine Person erreichen kann"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:127
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:131
 msgid "Maximum age difference between siblings"
 msgstr "Maximaler Altersabstand zwischen Geschwistern"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Average years between two generations"
 msgstr "Durchschnittlicher Jahresabstand zwischen zwei Generationen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:136
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:140
 msgid "Estimated Dates"
 msgstr "Geschätzte Daten"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:141
 msgid "Approximate (about)"
 msgstr "Ungefähr (um)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:138
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:142
 msgid "Extremes (after and before)"
 msgstr "Extremwerte (nach und vor)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:139
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:143
 msgid "Dates on events are either about or after/before"
 msgstr "Die Daten der Ereignisse sind entweder um oder nach/vor"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:172
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:176
 msgid ""
 "The Calculate Estimated Dates Tool is used to add and remove birth and death "
 "events for people that are missing these events.\n"
@@ -926,27 +960,23 @@ msgstr ""
 "Möglicherweise musst du das Werkzeug wiederholt ausführen (ohne vorherige "
 "Ereignisse zu entfernen), um alle möglichen Ereignisse hinzuzufügen."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:199
-msgid "Select All"
-msgstr "Alle Auswählen"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:204
 msgid "Select None"
 msgstr "Keine auswählen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:205
 msgid "Toggle Selection"
 msgstr "Auswahl umkehren"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:206
 msgid "Add Selected Events"
 msgstr "Ausgewählte Ereignisse hinzufügen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:212
 msgid "Remove Events, Notes, and Source and Reselect Data"
 msgstr "Ereignisse, Notizen und Quelle entfernen und Daten neu auswählen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:213
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
@@ -954,44 +984,50 @@ msgstr ""
 "Bist du sicher, dass du frühere Ereignisse, Notizen und die Quelle entfernen "
 "und die Daten erneut auswählen möchtest?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
 msgid "Remove and Run Select Again"
 msgstr "Entfernen und Auswahl erneut ausführen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:218
 msgid "Reselect Data"
 msgstr "Daten neu auswählen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:215
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:219
 msgid "Are you sure you want to reselect data?"
 msgstr "Bist du sicher, dass du die Daten erneut auswählen willst?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:216
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:220
 msgid "Run Select Again"
 msgstr "Auswählen erneut ausführen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:240
 msgid "Evidence"
 msgstr "Beleg"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:240
 msgid "Relative"
 msgstr "Verwandte(r)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:255
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:261
 msgid "Removing old estimations... "
 msgstr "Alte Schätzungen entfernen... "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:256
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:262
 #, python-format
 msgid "Removing '%s'..."
 msgstr "Entferne '%s'..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:319
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:338
 msgid "done!\n"
 msgstr "fertig!\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:323
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:341
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:432
+#, python-format
+msgid "Skipped %d people due to errors (see log).\n"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:347
 msgid ""
 "Selecting... \n"
 "\n"
@@ -999,70 +1035,75 @@ msgstr ""
 "Auswählen... \n"
 "\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:359
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:395
 msgid "Add birth and death events"
 msgstr "Geburts- und Todesereignisse hinzufügen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:361
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:397
 msgid "Add birth event"
 msgstr "Geburtsereignis hinzufügen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:363
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:399
 msgid "Add death event"
 msgstr "Todesereignis hinzufügen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:398
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:445
 msgid "No events to be added."
 msgstr "Es sind keine Ereignisse hinzuzufügen."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:439
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:489
 msgid "Selecting... "
 msgstr "Auswählen... "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:440
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:491
 #, python-format
 msgid "Adding events '%s'..."
 msgstr "Hinzufügen der Ereignisse '%s'..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:516
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
 msgstr "Geburtsereignis basierend auf %(evidence)s, von %(name)s hinzugefügt"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:519
 #, python-format
 msgid "Added birth event based on %s"
 msgstr "Geburtsereignis basierend auf %s hinzugefügt"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:521
 msgid "Estimated birth date"
 msgstr "Geschätztes Geburtsdatum"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:531
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
 msgstr ""
 "Todesereignis auf der Grundlage von %(evidence)s, von %(person)s hinzugefügt"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:534
 #, python-format
 msgid "Added death event based on %s"
 msgstr "Todesereignis basierend auf %s hinzugefügt"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:485
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:536
 msgid "Estimated death date"
 msgstr "Geschätztes Todesdatum"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:495
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:553
 msgid " Done! Committing..."
 msgstr " Fertig! Festlegen..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:499
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:559
 #, python-format
 msgid "Added %d events."
 msgstr "%d Ereignisse hinzugefügt."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:527
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:562
+#, python-format
+msgid " (Skipped %d rows due to errors; see log.)"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:589
 msgid "Estimated date"
 msgstr "Geschätztes Datum"
 
@@ -1123,32 +1164,42 @@ msgstr ""
 msgid "Chat With Tree"
 msgstr "Mit Baum kommunizieren"
 
-#: ChatWithTree/ChatWithTree.py:103
-msgid "Database change detected"
-msgstr "Datenbankänderung erkannt"
-
-#: ChatWithTree/ChatWithTree.py:148
+#: ChatWithTree/ChatWithTree.py:149
 msgid "Type a message..."
 msgstr "Gib eine Nachricht ein..."
 
-#: ChatWithTree/ChatWithTree.py:152
+#: ChatWithTree/ChatWithTree.py:153
 msgid "Send"
 msgstr "Senden"
 
-#: ChatWithTree/ChatWithTree.py:159
-msgid "Chat with Tree initialized. Type /help for help."
+#: ChatWithTree/ChatWithTree.py:163
+#, fuzzy
+#| msgid "Chat with Tree initialized. Type /help for help."
+msgid "Chat with Tree initialized.                 Type /help for help."
 msgstr ""
 "Mit Baum kommunizieren initialisiert. Gib /help ein, um Hilfe zu erhalten."
 
-#: ChatWithTree/ChatWithTree.py:314
+#: ChatWithTree/ChatWithTree.py:449
+#, fuzzy
+#| msgid ""
+#| "The ChatWithTree addon is not yet initialized. Please reload Gramps or "
+#| "select a database."
 msgid ""
-"The ChatWithTree addon is not yet initialized. Please reload Gramps or "
-"select a database."
+"The ChatWithTree addon is not yet initialized.                     Please "
+"reload Gramps or select a database."
 msgstr ""
 "Das Zusatzmodul MitBaumKommunizieren ist noch nicht initialisiert. Bitte "
 "lade Gramps neu oder wähle eine Datenbank aus."
 
-#: ChatWithTree/chatwithllm.py:78
+#: ChatWithTree/ChatWithTree.py:458
+msgid "The chatbot is currently processing a query. Please wait."
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:485
+msgid "An error occurred while processing your query."
+msgstr ""
+
+#: ChatWithTree/chatwithllm.py:119
 msgid "Tree: '{}'"
 msgstr "Baum: '{}'"
 
@@ -1243,11 +1294,6 @@ msgstr ""
 "Gramplet für die Gruppierung von Sammlungen von Elementen zur Erleichterung "
 "der Dateneingabe."
 
-#: ClipboardGramplet/ClipboardGramplet.py:83
-#, python-format
-msgid "Clipboard Gramplet: %s"
-msgstr "Zwischenablage Gramplet: %s"
-
 #: ClockGramplet/ClockGramplet.gpr.py:4 ClockGramplet/ClockGramplet.gpr.py:9
 msgid "Clock"
 msgstr "Uhr"
@@ -1286,7 +1332,7 @@ msgstr "Etiketten anzeigen"
 msgid "Vertical Details"
 msgstr "Vertikale Details"
 
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:62
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:79
 msgid "Order"
 msgstr "Reihenfolge"
 
@@ -1341,82 +1387,82 @@ msgstr ""
 "die als zusammenfaltbares Baumlayout aus der JavaScript-Bibliothek D3.js "
 "dargestellt wird."
 
-#: D3Charts/AncestralCollapsibleTree.py:326
-#: D3Charts/AncestralCollapsibleTree.py:771
-#: D3Charts/AncestralCollapsibleTree.py:785 D3Charts/AncestralFanChart.py:401
-#: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
-#: D3Charts/DescendantIndentedTree.py:1499
-#: D3Charts/DescendantIndentedTree.py:1562
-#: D3Charts/DescendantIndentedTree.py:1569
-#: D3Charts/DescendantIndentedTree.py:1676
-#: D3Charts/DescendantIndentedTree.py:1696 DenominoViso/DenominoViso.py:394
+#: D3Charts/AncestralCollapsibleTree.py:327
+#: D3Charts/AncestralCollapsibleTree.py:772
+#: D3Charts/AncestralCollapsibleTree.py:786 D3Charts/AncestralFanChart.py:402
+#: D3Charts/AncestralFanChart.py:649 D3Charts/AncestralFanChart.py:675
+#: D3Charts/DescendantIndentedTree.py:1504
+#: D3Charts/DescendantIndentedTree.py:1567
+#: D3Charts/DescendantIndentedTree.py:1574
+#: D3Charts/DescendantIndentedTree.py:1681
+#: D3Charts/DescendantIndentedTree.py:1701 DenominoViso/DenominoViso.py:394
 #: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
 msgstr "Fehler beim Schreiben von {target_path}: {message}"
 
-#: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
-#: D3Charts/DescendantIndentedTree.py:1518
+#: D3Charts/AncestralCollapsibleTree.py:346 D3Charts/AncestralFanChart.py:421
+#: D3Charts/DescendantIndentedTree.py:1523
 #, python-format
 msgid "Failed to create directory structure : %s"
 msgstr "Verzeichnisstruktur konnte nicht erstellt werden: %s"
 
-#: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
-#: D3Charts/DescendantIndentedTree.py:1554
+#: D3Charts/AncestralCollapsibleTree.py:369 D3Charts/AncestralFanChart.py:444
+#: D3Charts/DescendantIndentedTree.py:1559
 #, python-format
 msgid "Failed to copy web files : %s"
 msgstr "Fehler beim Kopieren von Webdateien : %s"
 
-#: D3Charts/AncestralCollapsibleTree.py:816
+#: D3Charts/AncestralCollapsibleTree.py:817
 msgid "Ancestral Collapsible Tree Options"
 msgstr "Optionen für den zusammenklappbaren Ahnenbaum"
 
-#: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
-#: D3Charts/DescendantIndentedTree.py:1803
+#: D3Charts/AncestralCollapsibleTree.py:841 D3Charts/AncestralFanChart.py:724
+#: D3Charts/DescendantIndentedTree.py:1808
 #: DescendantSpaceTree/DescendantSpaceTree.py:1082
 msgid "Include Generations"
 msgstr "Generationen einbeziehen"
 
-#: D3Charts/AncestralCollapsibleTree.py:846
+#: D3Charts/AncestralCollapsibleTree.py:847
 msgid "Male Background Color"
 msgstr "Hintergrundfarbe männlich"
 
-#: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
+#: D3Charts/AncestralCollapsibleTree.py:848 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
 msgstr "RGB-Hintergrundfarbe für männliche Box."
 
-#: D3Charts/AncestralCollapsibleTree.py:850
+#: D3Charts/AncestralCollapsibleTree.py:851
 msgid "Male Expandable Background Color"
 msgstr "Männliche, erweiterbare Hintergrundfarbe"
 
-#: D3Charts/AncestralCollapsibleTree.py:852
+#: D3Charts/AncestralCollapsibleTree.py:853
 msgid "RGB-color for male expandable box background."
 msgstr "RGB-Hintergrundfarbe für männliche erweiterbare Box."
 
-#: D3Charts/AncestralCollapsibleTree.py:855 NetworkChart/NetworkChart.py:1022
+#: D3Charts/AncestralCollapsibleTree.py:856 NetworkChart/NetworkChart.py:1022
 msgid "Female Background"
 msgstr "Hintergrund weiblich"
 
-#: D3Charts/AncestralCollapsibleTree.py:856
+#: D3Charts/AncestralCollapsibleTree.py:857
 msgid "RGB-color for female box background."
 msgstr "RGB-Hintergrundfarbe für weibliche Box."
 
-#: D3Charts/AncestralCollapsibleTree.py:859
+#: D3Charts/AncestralCollapsibleTree.py:860
 msgid "Female Expandable Background"
 msgstr "Weiblicher, erweiterbarer Hintergrund"
 
-#: D3Charts/AncestralCollapsibleTree.py:861
+#: D3Charts/AncestralCollapsibleTree.py:862
 msgid "RGB-color for female expandable box background."
 msgstr "RGB-Hintergrundfarbe für weibliche erweiterbare Box."
 
-#: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
-#: D3Charts/DescendantIndentedTree.py:1825
+#: D3Charts/AncestralCollapsibleTree.py:868 D3Charts/AncestralFanChart.py:740
+#: D3Charts/DescendantIndentedTree.py:1830
 #: DescendantSpaceTree/DescendantSpaceTree.py:1132
 msgid "The destination path for generated files."
 msgstr "Der Zielpfad für die generierten Dateien."
 
-#: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
-#: D3Charts/DescendantIndentedTree.py:1830
+#: D3Charts/AncestralCollapsibleTree.py:873 D3Charts/AncestralFanChart.py:745
+#: D3Charts/DescendantIndentedTree.py:1835
 #: TimePedigreeHTML/TimePedigreeHtml.py:865
 msgid "The destination file name for html content."
 msgstr "Der Name der Zieldatei für den HTML-Inhalt."
@@ -1433,28 +1479,28 @@ msgstr ""
 "Erzeugt eine Webseite mit einer grafischen Darstellung der Vorfahren (SVG) "
 "in Form eines Fächerdiagramms aus der JavaScript-Bibliothek D3.js."
 
-#: D3Charts/AncestralFanChart.py:707
+#: D3Charts/AncestralFanChart.py:708
 msgid "Ancestral Fan Chart Options"
 msgstr "Ahnenfächerdiagramm Optionen"
 
-#: D3Charts/AncestralFanChart.py:729
+#: D3Charts/AncestralFanChart.py:730
 msgid "Paternal Background Color"
 msgstr "Väterliche Hintergrundfarbe"
 
-#: D3Charts/AncestralFanChart.py:730
+#: D3Charts/AncestralFanChart.py:731
 msgid "RGB-color for paternal box background."
 msgstr "RGB-Hintergrundfarbe für väterliche Box."
 
-#: D3Charts/AncestralFanChart.py:733
+#: D3Charts/AncestralFanChart.py:734
 msgid "Maternal Background"
 msgstr "Mütterlicher Hintergrund"
 
-#: D3Charts/AncestralFanChart.py:734
+#: D3Charts/AncestralFanChart.py:735
 msgid "RGB-color for maternal box background."
 msgstr "RGB-Hintergrundfarbe für mütterliche Box."
 
 #: D3Charts/DescendantIndentedTree.gpr.py:23
-#: D3Charts/DescendantIndentedTree.py:909
+#: D3Charts/DescendantIndentedTree.py:914
 msgid "Descendant Indented Tree"
 msgstr "Nachkommenschaft eingerückter Baum"
 
@@ -1468,21 +1514,23 @@ msgstr ""
 "die als zusammenklappbares eingerücktes Baumlayout aus der D3.js JavaScript-"
 "Bibliothek dargestellt wird."
 
-#: D3Charts/DescendantIndentedTree.py:673
-#, python-format
+#: D3Charts/DescendantIndentedTree.py:678
+#, fuzzy, python-format
+#| msgid "See %(reference)s : %(spouse)s"
+msgctxt "spouse"
 msgid "See %(reference)s : %(spouse)s"
 msgstr "Siehe %(reference)s : %(spouse)s"
 
-#: D3Charts/DescendantIndentedTree.py:764
+#: D3Charts/DescendantIndentedTree.py:769
 msgid "Generating report..."
 msgstr "Erstelle Bericht..."
 
-#: D3Charts/DescendantIndentedTree.py:1364
+#: D3Charts/DescendantIndentedTree.py:1369
 #: DescendantSpaceTree/DescendantSpaceTree.py:771
 msgid "Invalid Destination Directory"
 msgstr "Ungültiges Zielverzeichnis"
 
-#: D3Charts/DescendantIndentedTree.py:1365
+#: D3Charts/DescendantIndentedTree.py:1370
 #, python-format
 msgid ""
 "Destinaton diretory %s does not exist\n"
@@ -1491,12 +1539,12 @@ msgstr ""
 "Das Zielverzeichnis %s existiert nicht\n"
 "Möchtest du versuchen, es zu erstellen?"
 
-#: D3Charts/DescendantIndentedTree.py:1374
+#: D3Charts/DescendantIndentedTree.py:1379
 #, python-brace-format
 msgid "Failed to create {target_path}: {message}"
 msgstr "Erstellen von {target_path} fehlgeschlagen: {message}"
 
-#: D3Charts/DescendantIndentedTree.py:1390
+#: D3Charts/DescendantIndentedTree.py:1395
 #, python-format
 msgid ""
 "Destination file %s already exists.\n"
@@ -1505,255 +1553,255 @@ msgstr ""
 "Die Zieldatei %s existiert bereits.\n"
 "Möchtest du sie überschreiben?"
 
-#: D3Charts/DescendantIndentedTree.py:1445
+#: D3Charts/DescendantIndentedTree.py:1450
 msgid "Default View"
 msgstr "Standardansicht"
 
-#: D3Charts/DescendantIndentedTree.py:1448
+#: D3Charts/DescendantIndentedTree.py:1453
 msgid "Expand All"
 msgstr "Alles ausklappen"
 
-#: D3Charts/DescendantIndentedTree.py:1810
+#: D3Charts/DescendantIndentedTree.py:1815
 msgid "Include contraction level"
 msgstr "Kontraktionsstufe einbeziehen"
 
-#: D3Charts/DescendantIndentedTree.py:1812
+#: D3Charts/DescendantIndentedTree.py:1817
 msgid "The number of descendant levels to contract on initial display."
 msgstr ""
 "Die Anzahl der nachgelagerten Ebenen, die bei der ersten Anzeige "
 "zusammengezogen werden."
 
-#: D3Charts/DescendantIndentedTree.py:1819
+#: D3Charts/DescendantIndentedTree.py:1824
 msgid "The font size in pixels for each node."
 msgstr "Die Schriftgröße in Punkten für jeden Knoten."
 
-#: D3Charts/DescendantIndentedTree.py:1847
+#: D3Charts/DescendantIndentedTree.py:1852
 #: DescendantBooks/DescendantBookReport.py:552
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Ob doppelte Stammbäume im Bericht angezeigt werden sollen."
 
-#: D3Charts/DescendantIndentedTree.py:1851
+#: D3Charts/DescendantIndentedTree.py:1856
 msgid "Expanded Row Background Color"
 msgstr "Hintergrundfarbe der erweiterten Zeile"
 
-#: D3Charts/DescendantIndentedTree.py:1852
+#: D3Charts/DescendantIndentedTree.py:1857
 msgid "RGB-color for expanded row background."
 msgstr "RGB-Hintergrundfarbe der erweiterten Zeile."
 
-#: D3Charts/DescendantIndentedTree.py:1855
+#: D3Charts/DescendantIndentedTree.py:1860
 msgid "Expandable Background Color"
 msgstr "Erweiterbar Hintergrundfarbe"
 
-#: D3Charts/DescendantIndentedTree.py:1857
+#: D3Charts/DescendantIndentedTree.py:1862
 msgid "RGB-color for expandable row background."
 msgstr "RGB-Farbe für den Hintergrund der erweiterbaren Zeile."
 
-#: D3Charts/DescendantIndentedTree.py:1860
+#: D3Charts/DescendantIndentedTree.py:1865
 msgid "Non-Expandable Background Color"
 msgstr "Nicht-Erweiterbar Hintergrundfarbe"
 
-#: D3Charts/DescendantIndentedTree.py:1862
+#: D3Charts/DescendantIndentedTree.py:1867
 msgid "RGB-color for non-expandable row background."
 msgstr "RGB-Farbe für den Hintergrund einer nicht erweiterbaren Zeile."
 
-#: D3Charts/DescendantIndentedTree.py:1866 DynamicWeb/dynamicweb.py:4811
+#: D3Charts/DescendantIndentedTree.py:1871 DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
 msgstr "Als vertraulich gekennzeichnete Datensätze einbeziehen"
 
-#: D3Charts/DescendantIndentedTree.py:1868
+#: D3Charts/DescendantIndentedTree.py:1873
 msgid "Whether to include private objects."
 msgstr "Ob vertrauliche Objekte einbezogen werden sollen."
 
-#: D3Charts/DescendantIndentedTree.py:1876 DynamicWeb/dynamicweb.py:4819
+#: D3Charts/DescendantIndentedTree.py:1881 DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
 msgstr "Nur Nachname einschließen"
 
-#: D3Charts/DescendantIndentedTree.py:1878 DynamicWeb/dynamicweb.py:4822
+#: D3Charts/DescendantIndentedTree.py:1883 DynamicWeb/dynamicweb.py:4822
 msgid "Include Full Name Only"
 msgstr "Nur den vollständigen Namen einschließen"
 
-#: D3Charts/DescendantIndentedTree.py:1880
+#: D3Charts/DescendantIndentedTree.py:1885
 msgid "How to handle living people."
 msgstr "Wie mit lebenden Personen umzugehen ist."
 
-#: D3Charts/DescendantIndentedTree.py:1887
+#: D3Charts/DescendantIndentedTree.py:1892
 msgid "Whether or not to include people who may have recently died."
 msgstr ""
 "Ob Personen, die kürzlich verstorben sind, aufgenommen werden sollen oder "
 "nicht."
 
-#: D3Charts/DescendantIndentedTree.py:1895
+#: D3Charts/DescendantIndentedTree.py:1900
 msgid "Navigation"
 msgstr "Navigation"
 
-#: D3Charts/DescendantIndentedTree.py:1897
+#: D3Charts/DescendantIndentedTree.py:1902
 msgid "Contraction/Expansion mechanism"
 msgstr "Einklapp/Ausklappmechanismus"
 
-#: D3Charts/DescendantIndentedTree.py:1900
+#: D3Charts/DescendantIndentedTree.py:1905
 msgid "Entire node."
 msgstr "Gesamter Knoten."
 
-#: D3Charts/DescendantIndentedTree.py:1901
+#: D3Charts/DescendantIndentedTree.py:1906
 msgid "Arrow images at start of node."
 msgstr "Pfeilbilder am Anfang des Knotens."
 
-#: D3Charts/DescendantIndentedTree.py:1902
+#: D3Charts/DescendantIndentedTree.py:1907
 msgid "Plus/Minus images at start of node."
 msgstr "Plus/Minus-Bilder am Anfang des Knotens."
 
-#: D3Charts/DescendantIndentedTree.py:1903
-#: D3Charts/DescendantIndentedTree.py:1932
+#: D3Charts/DescendantIndentedTree.py:1908
+#: D3Charts/DescendantIndentedTree.py:1937
 msgid "Where to click to expand/contract nodes."
 msgstr "Wo zum Erweitern/Verkleinern von Knoten klicken."
 
-#: D3Charts/DescendantIndentedTree.py:1907
+#: D3Charts/DescendantIndentedTree.py:1912
 msgid "Auto-generate HREF links for nodes"
 msgstr "HREF-Links für Knoten automatisch generieren"
 
-#: D3Charts/DescendantIndentedTree.py:1909
+#: D3Charts/DescendantIndentedTree.py:1914
 msgid "Whether to auto-generate HTML links for each node on the report."
 msgstr ""
 "Ob HTML-Links für jeden Knoten im Bericht automatisch generiert werden "
 "sollen."
 
-#: D3Charts/DescendantIndentedTree.py:1915
+#: D3Charts/DescendantIndentedTree.py:1920
 msgid "URL prefix path."
 msgstr "URL-Präfixpfad."
 
-#: D3Charts/DescendantIndentedTree.py:1917
+#: D3Charts/DescendantIndentedTree.py:1922
 msgid "URL prefix to apply to each auto-generated HREF link."
 msgstr ""
 "URL-Präfix, das für jeden automatisch generierten HREF-Link gelten soll."
 
-#: D3Charts/DescendantIndentedTree.py:1923
+#: D3Charts/DescendantIndentedTree.py:1928
 msgid "URL file extension"
 msgstr "URL Dateierweiterung"
 
-#: D3Charts/DescendantIndentedTree.py:1925
+#: D3Charts/DescendantIndentedTree.py:1930
 msgid "No file extension."
 msgstr "Keine Dateierweiterung."
 
-#: D3Charts/DescendantIndentedTree.py:1926
+#: D3Charts/DescendantIndentedTree.py:1931
 msgid ".html"
 msgstr ".html"
 
-#: D3Charts/DescendantIndentedTree.py:1927
+#: D3Charts/DescendantIndentedTree.py:1932
 msgid ".htm"
 msgstr ".htm"
 
-#: D3Charts/DescendantIndentedTree.py:1928
+#: D3Charts/DescendantIndentedTree.py:1933
 msgid ".shtml"
 msgstr ".shtml"
 
-#: D3Charts/DescendantIndentedTree.py:1929
+#: D3Charts/DescendantIndentedTree.py:1934
 msgid ".php"
 msgstr ".php"
 
-#: D3Charts/DescendantIndentedTree.py:1930
+#: D3Charts/DescendantIndentedTree.py:1935
 msgid ".php3"
 msgstr ".php3"
 
-#: D3Charts/DescendantIndentedTree.py:1931
+#: D3Charts/DescendantIndentedTree.py:1936
 msgid ".cgi"
 msgstr ".cgi"
 
-#: D3Charts/DescendantIndentedTree.py:1937
+#: D3Charts/DescendantIndentedTree.py:1942
 msgid "URL file name delimeter"
 msgstr "URL Dateinamen Begrenzung"
 
-#: D3Charts/DescendantIndentedTree.py:1939
+#: D3Charts/DescendantIndentedTree.py:1944
 msgid "Remove all whitespace."
 msgstr "Alle Leerzeichen entfernen."
 
-#: D3Charts/DescendantIndentedTree.py:1940
+#: D3Charts/DescendantIndentedTree.py:1945
 msgid "Replace whitespace with dash(-)."
 msgstr "Leerzeichen durch Bindestrich(-) ersetzen."
 
-#: D3Charts/DescendantIndentedTree.py:1941
+#: D3Charts/DescendantIndentedTree.py:1946
 msgid "Replace whitespace with underscore(_)"
 msgstr "Leerzeichen durch Unterstrich(_) ersetzen"
 
-#: D3Charts/DescendantIndentedTree.py:1942
+#: D3Charts/DescendantIndentedTree.py:1947
 msgid "What to use as file name delimiter replacing whitespace."
 msgstr ""
 "Was als Trennzeichen für den Dateinamen zu verwenden ist, um Leerzeichen zu "
 "ersetzen."
 
-#: D3Charts/DescendantIndentedTree.py:1947
+#: D3Charts/DescendantIndentedTree.py:1952
 msgid "Generations to generate HREF links"
 msgstr "Generationen zur Erzeugung von HREF-Links"
 
-#: D3Charts/DescendantIndentedTree.py:1949
+#: D3Charts/DescendantIndentedTree.py:1954
 msgid "The number of generations to generate HREF links."
 msgstr "Die Anzahl der Generationen zur Erzeugung von HREF-Links."
 
-#: D3Charts/DescendantIndentedTree.py:1955
+#: D3Charts/DescendantIndentedTree.py:1960
 msgid "Exclude persons who died before (years)"
 msgstr "Personen ausschließen, die vor (Jahren) gestorben sind"
 
-#: D3Charts/DescendantIndentedTree.py:1958
+#: D3Charts/DescendantIndentedTree.py:1963
 msgid ""
 "Whether to generate links for people who died in infancy, -1 excludes nobody."
 msgstr ""
 "Ob Links für Personen, die im Säuglingsalter gestorben sind, generiert "
 "werden sollen, -1 schließt niemanden aus."
 
-#: D3Charts/DescendantIndentedTree.py:1964
+#: D3Charts/DescendantIndentedTree.py:1969
 msgid "Exclude center person"
 msgstr "Zentrale Person ausschließen"
 
-#: D3Charts/DescendantIndentedTree.py:1965
+#: D3Charts/DescendantIndentedTree.py:1970
 msgid "Whether or not to generate links for center person."
 msgstr "Ob Links für die zentrale Person generiert werden sollen oder nicht."
 
-#: D3Charts/DescendantIndentedTree.py:1970
+#: D3Charts/DescendantIndentedTree.py:1975
 msgid "Exclude Spouses"
 msgstr "Partner ausschließen"
 
-#: D3Charts/DescendantIndentedTree.py:1971
+#: D3Charts/DescendantIndentedTree.py:1976
 msgid "Whether or not to generate links for spouses."
 msgstr "Ob Links für Partner erstellt werden sollen oder nicht."
 
-#: D3Charts/DescendantIndentedTree.py:1978
+#: D3Charts/DescendantIndentedTree.py:1983
 msgid "Biography Content"
 msgstr "Biografie Inhalt"
 
-#: D3Charts/DescendantIndentedTree.py:1980
+#: D3Charts/DescendantIndentedTree.py:1985
 msgid "Show biography tooltips"
 msgstr "Biografie Werkzeughinweise anzeigen"
 
-#: D3Charts/DescendantIndentedTree.py:1981
+#: D3Charts/DescendantIndentedTree.py:1986
 msgid "Whether to show biography tooltips when hovering over a node."
 msgstr ""
 "Ob Biografie-Werkzeughinweise angezeigt werden sollen, wenn der Mauszeiger "
 "über einen Knoten bewegt wird."
 
-#: D3Charts/DescendantIndentedTree.py:2025
+#: D3Charts/DescendantIndentedTree.py:2030
 msgid "Text Color"
 msgstr "Textfarbe"
 
-#: D3Charts/DescendantIndentedTree.py:2027
+#: D3Charts/DescendantIndentedTree.py:2032
 msgid "RGB-color for biography text."
 msgstr "RGB-Farbe für Biografietext."
 
-#: D3Charts/DescendantIndentedTree.py:2032
+#: D3Charts/DescendantIndentedTree.py:2037
 msgid "RGB-color for biography tooltip."
 msgstr "RGB-Farbe für Biografie-Werkzeughinweis."
 
-#: D3Charts/DescendantIndentedTree.py:2035
+#: D3Charts/DescendantIndentedTree.py:2040
 msgid "Header Font size"
 msgstr "Kopfzeile Schriftgröße"
 
-#: D3Charts/DescendantIndentedTree.py:2037
+#: D3Charts/DescendantIndentedTree.py:2042
 msgid "The font size in pixels for biography header text."
 msgstr "Die Schriftgröße in Pixeln für den Biografie- Kopfzeilentext."
 
-#: D3Charts/DescendantIndentedTree.py:2043
+#: D3Charts/DescendantIndentedTree.py:2048
 msgid "Body Font size"
 msgstr "Textkörper Schriftgröße"
 
-#: D3Charts/DescendantIndentedTree.py:2045
+#: D3Charts/DescendantIndentedTree.py:2050
 msgid "The font size in pixels for biography body text."
 msgstr "Die Schriftgröße in Pixeln für den Biografietext."
 
@@ -1967,7 +2015,7 @@ msgstr "Dateneingabe Gramplet"
 msgid "Gramplet for quick data entry"
 msgstr "Gramplet zur schnellen Dateneingabe"
 
-#: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:45
+#: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:56
 #: NoteGramplet/NoteGramplet.py:65
 msgid "Active person"
 msgstr "Aktive Person"
@@ -1985,8 +2033,9 @@ msgstr "Quellen?"
 msgid "Surname, Given"
 msgstr "Nachname, Vorname"
 
-#: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:111
-#: RelID/relation_tab.py:363
+#: DataEntryGramplet/DataEntryGramplet.py:89 GrampyScript/GrampyScript.py:127
+#: GrampyScript/GrampyScript.py:147 GrampyScript/GrampyScript.py:304
+#: NoteGramplet/NoteGramplet.py:111 RelID/relation_tab.py:363
 msgid "Save"
 msgstr "Speichern"
 
@@ -2049,92 +2098,107 @@ msgstr "Aktive Daten kopieren"
 msgid "in"
 msgstr "in"
 
-#: DataEntryGramplet/DataEntryGramplet.py:441
-#: DataEntryGramplet/DataEntryGramplet.py:569
+#: DataEntryGramplet/DataEntryGramplet.py:428
+#: DataEntryGramplet/DataEntryGramplet.py:507
+#, fuzzy
+#| msgid "Family Tree file"
+msgid "No Family Tree is open."
+msgstr "Stammbaumdatei"
+
+#: DataEntryGramplet/DataEntryGramplet.py:429
+msgid "Please open a Family Tree to edit data."
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:446
+#: DataEntryGramplet/DataEntryGramplet.py:578
 #, python-format
 msgid "Gramplet Data Edit: %s"
 msgstr "Gramplet-Daten bearbeiten: %s"
 
-#: DataEntryGramplet/DataEntryGramplet.py:515
+#: DataEntryGramplet/DataEntryGramplet.py:508
+msgid "Please open a Family Tree before adding a person."
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:524
 msgid "Can't add new person."
 msgstr "Kann neue Person nicht hinzufügen."
 
-#: DataEntryGramplet/DataEntryGramplet.py:515
+#: DataEntryGramplet/DataEntryGramplet.py:524
 msgid "Please provide a name."
 msgstr "Bitte gib einen Namen an."
 
-#: DataEntryGramplet/DataEntryGramplet.py:523
-#: DataEntryGramplet/DataEntryGramplet.py:526
+#: DataEntryGramplet/DataEntryGramplet.py:532
+#: DataEntryGramplet/DataEntryGramplet.py:535
 msgid "Can't add new person as a parent."
 msgstr "Kann neue Person nicht als Elternteil hinzufügen."
 
-#: DataEntryGramplet/DataEntryGramplet.py:523
-#: DataEntryGramplet/DataEntryGramplet.py:531
-#: DataEntryGramplet/DataEntryGramplet.py:536
-#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:532
+#: DataEntryGramplet/DataEntryGramplet.py:540
+#: DataEntryGramplet/DataEntryGramplet.py:545
 #: DataEntryGramplet/DataEntryGramplet.py:550
-#: DataEntryGramplet/DataEntryGramplet.py:555
-#: DataEntryGramplet/DataEntryGramplet.py:560
-#: DataEntryGramplet/DataEntryGramplet.py:565
+#: DataEntryGramplet/DataEntryGramplet.py:559
+#: DataEntryGramplet/DataEntryGramplet.py:564
+#: DataEntryGramplet/DataEntryGramplet.py:569
+#: DataEntryGramplet/DataEntryGramplet.py:574
 msgid "Please set an active person."
 msgstr "Bitte setz eine aktive Person."
 
-#: DataEntryGramplet/DataEntryGramplet.py:526
-#: DataEntryGramplet/DataEntryGramplet.py:545
+#: DataEntryGramplet/DataEntryGramplet.py:535
+#: DataEntryGramplet/DataEntryGramplet.py:554
 msgid "Please set the new person's gender."
 msgstr "Bitte gib das Geschlecht der neuen Person an."
 
-#: DataEntryGramplet/DataEntryGramplet.py:531
+#: DataEntryGramplet/DataEntryGramplet.py:540
 msgid "Can't add new person as a mother."
 msgstr "Kann neue Person nicht als Mutter hinzufügen."
 
-#: DataEntryGramplet/DataEntryGramplet.py:536
+#: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Can't add new person as a father."
 msgstr "Kann neue Person nicht als Vater hinzufügen."
 
-#: DataEntryGramplet/DataEntryGramplet.py:541
-#: DataEntryGramplet/DataEntryGramplet.py:545
-#: DataEntryGramplet/DataEntryGramplet.py:768
-#: DataEntryGramplet/DataEntryGramplet.py:805
-#: DataEntryGramplet/DataEntryGramplet.py:838
+#: DataEntryGramplet/DataEntryGramplet.py:550
+#: DataEntryGramplet/DataEntryGramplet.py:554
+#: DataEntryGramplet/DataEntryGramplet.py:777
+#: DataEntryGramplet/DataEntryGramplet.py:814
+#: DataEntryGramplet/DataEntryGramplet.py:847
 msgid "Can't add new person as a spouse."
 msgstr "Kann neue Person nicht als Partner hinzufügen."
 
-#: DataEntryGramplet/DataEntryGramplet.py:550
+#: DataEntryGramplet/DataEntryGramplet.py:559
 msgid "Can't add new person as a wife."
 msgstr "Kann neue Person nicht als Ehefrau hinzufügen."
 
-#: DataEntryGramplet/DataEntryGramplet.py:555
+#: DataEntryGramplet/DataEntryGramplet.py:564
 msgid "Can't add new person as a husband."
 msgstr "Kann neue Person nicht als Ehemann hinzufügen."
 
-#: DataEntryGramplet/DataEntryGramplet.py:560
+#: DataEntryGramplet/DataEntryGramplet.py:569
 msgid "Can't add new person as a sibling."
 msgstr "Kann neue Person nicht als Geschwister hinzufügen."
 
-#: DataEntryGramplet/DataEntryGramplet.py:565
-#: DataEntryGramplet/DataEntryGramplet.py:938
+#: DataEntryGramplet/DataEntryGramplet.py:574
+#: DataEntryGramplet/DataEntryGramplet.py:947
 msgid "Can't add new person as a child."
 msgstr "Kann neue Person nicht als Kind hinzufügen."
 
-#: DataEntryGramplet/DataEntryGramplet.py:763
+#: DataEntryGramplet/DataEntryGramplet.py:772
 msgid "Please set Active person."
 msgstr "Bitte aktive Person setzen."
 
-#: DataEntryGramplet/DataEntryGramplet.py:764
+#: DataEntryGramplet/DataEntryGramplet.py:773
 msgid "Can't add new person as a spouse to no one."
 msgstr "Kann neue Person nicht als Partner zu niemandem hinzufügen."
 
-#: DataEntryGramplet/DataEntryGramplet.py:767
+#: DataEntryGramplet/DataEntryGramplet.py:776
 msgid "Please set gender on Active or new person."
 msgstr "Bitte Geschlecht der aktiven oder neuen Person einstellen."
 
-#: DataEntryGramplet/DataEntryGramplet.py:804
-#: DataEntryGramplet/DataEntryGramplet.py:837
+#: DataEntryGramplet/DataEntryGramplet.py:813
+#: DataEntryGramplet/DataEntryGramplet.py:846
 msgid "Same genders on Active and new person."
 msgstr "Gleiche Geschlechter bei Aktiver und neuer Person."
 
-#: DataEntryGramplet/DataEntryGramplet.py:937
+#: DataEntryGramplet/DataEntryGramplet.py:946
 msgid "Please set gender on Active person."
 msgstr "Bitte gib Sie bei aktiver Person das Geschlecht an."
 
@@ -2179,7 +2243,6 @@ msgid "Calculate"
 msgstr "Berechnen"
 
 #: DateCalculator/DateCalculator.py:107
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
 #: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3863
 msgid "Copy"
 msgstr "Kopieren"
@@ -2214,36 +2277,91 @@ msgstr ""
 msgid "Deep Connections"
 msgstr "Tiefe Verbindungen"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
-msgid "Pause"
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
+#, fuzzy
+#| msgid "Pause"
+msgid "⏸ Pause"
 msgstr "Pause"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:107
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:108
+#, fuzzy
+#| msgid "Years at current residence"
+msgid "Pause the current search"
+msgstr "Jahre am aktuellen Wohnort"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:111
+msgid "▶ Continue"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:114
+#, fuzzy
+#| msgid ""
+#| "Paused.\n"
+#| "Press Continue to search for additional relations.\n"
+msgid "Continue searching for more relations"
+msgstr ""
+"Angehalten.\n"
+"Klicke auf Weiter, um nach weiteren Beziehungen zu suchen.\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:118
+#, fuzzy
+#| msgid "Copy"
+msgid "📋 Copy"
+msgstr "Kopieren"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:120
+#, fuzzy
+#| msgid "Copy link to clipboard"
+msgid "Copy selected people to clipboard"
+msgstr "Verknüpfung in die Zwischenablage kopieren"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:128
+msgid "🗑 Clear"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
+msgid "Clear all results and reset"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
+#, fuzzy
+#| msgid "Start type to search"
+msgid "Ready to search"
+msgstr "Tippe zum Starten der Suche"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:185
+#, python-brace-format
+msgid ""
+"Search Depth: {depth} | People Processed: {processed} | Queue Size: "
+"{queue_size}"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 msgid "mentioned in note"
 msgstr "In Notiz erwähnt"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:245
 msgid "Note on Family"
 msgstr "Notiz zur Familie"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:258
 msgid "sibling"
 msgstr "Geschwister"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:268
 msgid "Note on Parent Family"
 msgstr "Notiz zur Elternfamilie"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:272
 #, python-format
 msgid "%s (association)"
 msgstr "%s (Assoziation)"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:277
 msgid "Note on Person"
 msgstr "Notiz zur Person"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:308
 #, python-format
 msgid ""
 "\n"
@@ -2252,25 +2370,47 @@ msgstr ""
 "\n"
 "   %s von "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:336
+#, fuzzy
+#| msgid "No Active Person set."
+msgid "Error: No Home Person set"
+msgstr "Keine aktive Person festgelegt."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:341
 msgid "No Active Person set."
 msgstr "Keine aktive Person festgelegt."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:342
+#, fuzzy
+#| msgid "No Active Person set."
+msgid "Error: No Active Person set"
+msgstr "Keine aktive Person festgelegt."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:347
+msgid "Initializing search..."
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:366
 msgid "Looking for relationship between\n"
 msgstr "Suche nach Beziehung zwischen\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:367
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
 msgstr "  <b>%s</b> (Hauptperson) und\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:368
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (Aktive Person)...\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:382
+#, fuzzy
+#| msgid "Fetching records..."
+msgid "Searching for connections..."
+msgstr "Datensätze abrufen..."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:402
 #, python-format
 msgid ""
 "Found relation #%d: \n"
@@ -2279,7 +2419,7 @@ msgstr ""
 "Beziehung #%d gefunden: \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:423
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
@@ -2287,14 +2427,51 @@ msgstr ""
 "Angehalten.\n"
 "Klicke auf Weiter, um nach weiteren Beziehungen zu suchen.\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
-#, python-format
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:427
+#, fuzzy
+#| msgid ""
+#| "Paused.\n"
+#| "Press Continue to search for additional relations.\n"
+msgid "Paused - Press Continue to search for more relations"
+msgstr ""
+"Angehalten.\n"
+"Klicke auf Weiter, um nach weiteren Beziehungen zu suchen.\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:456
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "Search completed. %d relations found."
 msgid ""
 "\n"
-"Search completed. %d relations found."
+"Search completed. %d relation paths found."
 msgstr ""
 "\n"
 "Suche abgeschlossen. %d Beziehungen gefunden."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:460
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "Search completed. %d relations found."
+msgid "Search completed - {} relation paths found"
+msgstr ""
+"\n"
+"Suche abgeschlossen. %d Beziehungen gefunden."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:471
+msgid "Error during search: {}"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:481
+#, fuzzy
+#| msgid "Removing '%s'..."
+msgid "Resuming search..."
+msgstr "Entferne '%s'..."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:489
+msgid "Search interrupted by user"
+msgstr ""
 
 #: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
@@ -2553,10 +2730,6 @@ msgstr ""
 #: DenominoViso/DenominoViso.py:2635
 msgid "Whether to include a person's attributes"
 msgstr "Ob die Attribute einer Person aufgenommen werden sollen"
-
-#: DenominoViso/DenominoViso.py:2638
-msgid "Include Addresses"
-msgstr "Adressen Einbeziehen"
 
 #: DenominoViso/DenominoViso.py:2639
 msgid "Whether to include a person's addresses."
@@ -2888,7 +3061,7 @@ msgid "Descendants Report"
 msgstr "Nachkommenbericht"
 
 #: DescendantBooks/DescendantBookReport.py:423
-#: DescendantBooks/DetailedDescendantBookReport.py:421
+#: DescendantBooks/DetailedDescendantBookReport.py:423
 #, python-format
 msgid "Writing %s reports..."
 msgstr "Schreibe %s Berichte..."
@@ -2899,13 +3072,13 @@ msgid "{report_count}. Descendants of {name}"
 msgstr "{report_count}. Nachkommen von {name}"
 
 #: DescendantBooks/DescendantBookReport.py:481
-#: DescendantBooks/DetailedDescendantBookReport.py:617
+#: DescendantBooks/DetailedDescendantBookReport.py:619
 #, python-brace-format
 msgid "{report_count:d}. {name}"
 msgstr "{report_count:d}. {name}"
 
 #: DescendantBooks/DescendantBookReport.py:510
-#: DescendantBooks/DetailedDescendantBookReport.py:1341
+#: DescendantBooks/DetailedDescendantBookReport.py:1343
 msgid "Select filter to restrict people that appear in the report"
 msgstr ""
 "Wähle einen Filter aus, um die Personen einzuschränken, die im Bericht "
@@ -2944,160 +3117,160 @@ msgstr ""
 msgid "Detailed Descendants Report"
 msgstr "Ausführlicher Nachkommenbericht"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:359
+#: DescendantBooks/DetailedDescendantBookReport.py:364
 #, python-format
 msgid "Generating %s report references..."
 msgstr "Erstelle %s Berichtsreferenzen..."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:453
+#: DescendantBooks/DetailedDescendantBookReport.py:455
 #, python-format
 msgid "%(report_count)s. Descendant Report for %(person_name)s"
 msgstr "%(report_count)s. Nachkommenbericht für %(person_name)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:519
+#: DescendantBooks/DetailedDescendantBookReport.py:521
 msgid "Index of Places"
 msgstr "Ortsverzeichnis"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:542
+#: DescendantBooks/DetailedDescendantBookReport.py:544
 msgid "Index of Dates"
 msgstr "Datumsindex"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:565
+#: DescendantBooks/DetailedDescendantBookReport.py:567
 msgid "Index of Names"
 msgstr "Namensverzeichnis"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:571
+#: DescendantBooks/DetailedDescendantBookReport.py:573
 msgid "Report, Generation, Person, Name"
 msgstr "Bericht, Generation, Person, Name"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:697
+#: DescendantBooks/DetailedDescendantBookReport.py:699
 #, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
 msgstr "Siehe Bericht : {report}, Generation : {generation}, Person : {person}"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:765
-#: DescendantBooks/DetailedDescendantBookReport.py:777
+#: DescendantBooks/DetailedDescendantBookReport.py:767
+#: DescendantBooks/DetailedDescendantBookReport.py:779
 #, python-format
 msgid "Report appearances for %s"
 msgstr "Berichtserscheinungsbild für %s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:770
+#: DescendantBooks/DetailedDescendantBookReport.py:772
 #, python-brace-format
 msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
 msgstr ""
 "Ehepartner von: Bericht: {report}, Generation: {generation}, Person:{person}"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:782
+#: DescendantBooks/DetailedDescendantBookReport.py:784
 #, python-brace-format
 msgid "Report: {report}, Generation: {generation}, Person: {person}"
 msgstr "Bericht: {report}, Generation: {generation}, Person: {person}"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:806
+#: DescendantBooks/DetailedDescendantBookReport.py:808
 #, python-format
 msgid "%(event_name)s of %(name)s "
 msgstr "%(event_name)s von %(name)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:810
+#: DescendantBooks/DetailedDescendantBookReport.py:812
 #, python-format
 msgid "%(event_name)s of %(name)s and %(mate)s "
 msgstr "%(event_name)s von %(name)s und %(mate)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:814
-#: DescendantBooks/DetailedDescendantBookReport.py:858
+#: DescendantBooks/DetailedDescendantBookReport.py:816
+#: DescendantBooks/DetailedDescendantBookReport.py:860
 #: DetDescendantReport-images/detdescendantreporti.py:454
 #, python-format
 msgid "%(date)s, %(place)s"
 msgstr "%(date)s, %(place)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:817
-#: DescendantBooks/DetailedDescendantBookReport.py:861
+#: DescendantBooks/DetailedDescendantBookReport.py:819
+#: DescendantBooks/DetailedDescendantBookReport.py:863
 #: DetDescendantReport-images/detdescendantreporti.py:457
 #, python-format
 msgid "%(date)s"
 msgstr "%(date)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:819
-#: DescendantBooks/DetailedDescendantBookReport.py:863
+#: DescendantBooks/DetailedDescendantBookReport.py:821
+#: DescendantBooks/DetailedDescendantBookReport.py:865
 #: DetDescendantReport-images/detdescendantreporti.py:459
 #, python-format
 msgid "%(place)s"
 msgstr "%(place)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:821
+#: DescendantBooks/DetailedDescendantBookReport.py:823
 #, python-format
 msgid ". Ref: %(repno)s %(gen)s %(per)s "
 msgstr ". Ref: %(repno)s %(gen)s %(per)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:850
+#: DescendantBooks/DetailedDescendantBookReport.py:852
 #, python-format
 msgid "%(event_name)s:"
 msgstr "%(event_name)s:"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:875
+#: DescendantBooks/DetailedDescendantBookReport.py:877
 #, python-format
 msgid " %(event_text)s"
 msgstr " %(event_text)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:993
+#: DescendantBooks/DetailedDescendantBookReport.py:995
 #, python-brace-format
 msgid "Ref: {number}. {name}"
 msgstr "Ref: {number}. {name}"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1233
+#: DescendantBooks/DetailedDescendantBookReport.py:1235
 #: DetDescendantReport-images/detdescendantreporti.py:811
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
 msgstr "%(name_kind)s: %(name)s%(endnotes)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1294
+#: DescendantBooks/DetailedDescendantBookReport.py:1296
 #, python-format
 msgid "%(type)s:"
 msgstr "%(type)s:"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1299
+#: DescendantBooks/DetailedDescendantBookReport.py:1301
 #, python-format
 msgid " %(value)s%(endnotes)s"
 msgstr " %(value)s%(endnotes)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1401
+#: DescendantBooks/DetailedDescendantBookReport.py:1403
 #: DetDescendantReport-images/detdescendantreporti.py:1147
 msgid "List children"
 msgstr "Kinder auflisten"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1418
+#: DescendantBooks/DetailedDescendantBookReport.py:1420
 #: DetDescendantReport-images/detdescendantreporti.py:1164
 msgid "Add descendant reference in child list"
 msgstr "Nachkommenreferenz in Kinderliste hinzufügen"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1482
+#: DescendantBooks/DetailedDescendantBookReport.py:1484
 msgid "Include Index of Names"
 msgstr "Namensverzeichnis einbeziehen"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1483
+#: DescendantBooks/DetailedDescendantBookReport.py:1485
 msgid "Whether to include the index of Names at the end of the report."
 msgstr "Ob das Namensverzeichnis am Ende des Berichts aufgenommen werden soll."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1487
+#: DescendantBooks/DetailedDescendantBookReport.py:1489
 msgid "Include index of Dates"
 msgstr "Datumsindex einbeziehen"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1488
+#: DescendantBooks/DetailedDescendantBookReport.py:1490
 msgid "Whether to include the index of Dates at the end of the report."
 msgstr "Ob der Datumsindex am Ende des Berichts erscheinen soll."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1492
+#: DescendantBooks/DetailedDescendantBookReport.py:1494
 msgid "Include index of Places"
 msgstr "Ortsverzeichnis einbeziehen"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1493
+#: DescendantBooks/DetailedDescendantBookReport.py:1495
 msgid "Whether to include the index of Places at the end of the report."
 msgstr "Ob das Ortsverzeichnis am Ende des Berichts erscheinen soll."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1497
+#: DescendantBooks/DetailedDescendantBookReport.py:1499
 msgid "Include the 'Report appearances' section with each person"
 msgstr "Fügt den Abschnitt „Vorkommen im Bericht“ bei jeder Person ein"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1499
+#: DescendantBooks/DetailedDescendantBookReport.py:1501
 msgid ""
 "The 'Report appearances' section shows other places in the report where the "
 "person is mentioned."
@@ -3105,58 +3278,58 @@ msgstr ""
 "Der Abschnitt „Vorkommen im Bericht“ zeigt andere Stellen im Bericht, an "
 "denen die Person erwähnt wird."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1566
+#: DescendantBooks/DetailedDescendantBookReport.py:1568
 #: DetDescendantReport-images/detdescendantreporti.py:1282
 msgid "The style used for the children list."
 msgstr "Der für die Kinderliste verwendete Stil."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1576
+#: DescendantBooks/DetailedDescendantBookReport.py:1578
 msgid "The basic style used for Note header."
 msgstr "Der Basisstil, der für die Kopfzeile der Notiz verwendet wird."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1593
+#: DescendantBooks/DetailedDescendantBookReport.py:1595
 #: DetDescendantReport-images/detdescendantreporti.py:1305
 msgid "The style used for the first personal entry."
 msgstr "Der für den ersten persönlichen Eintrag verwendete Stil."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1603
+#: DescendantBooks/DetailedDescendantBookReport.py:1605
 #: DetDescendantReport-images/detdescendantreporti.py:1315
 msgid "The style used for the More About header and for headers of mates."
 msgstr ""
 "Der Stil, der für die Überschrift Mehr über und für die Überschriften der "
 "Partner verwendet wird."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1614
+#: DescendantBooks/DetailedDescendantBookReport.py:1616
 #: DetDescendantReport-images/detdescendantreporti.py:1326
 msgid "The style used for additional detail data."
 msgstr "Der für zusätzliche Detaildaten verwendete Stil."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1624
-#: DescendantBooks/DetailedDescendantBookReport.py:1634
+#: DescendantBooks/DetailedDescendantBookReport.py:1626
+#: DescendantBooks/DetailedDescendantBookReport.py:1636
 msgid "The style used for note detail data."
 msgstr "Der für die Notizdetails verwendete Stil."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1644
+#: DescendantBooks/DetailedDescendantBookReport.py:1646
 msgid "The style used for the date in the Index of Dates."
 msgstr "Der Stil, der für das Datum im Index der Daten verwendet wird."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1654
+#: DescendantBooks/DetailedDescendantBookReport.py:1656
 msgid "The style used for the events in the Index of Dates."
 msgstr "Der Stil, der für die Ereignisse im Index der Daten verwendet wird."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1664
+#: DescendantBooks/DetailedDescendantBookReport.py:1666
 msgid "The style used for the header in the Index of Names."
 msgstr "Der Stil, der für die Überschrift im Namensregister verwendet wird."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1674
+#: DescendantBooks/DetailedDescendantBookReport.py:1676
 msgid "The style used for the references in the Index of Names."
 msgstr "Der für die Verweise im Namensregister verwendete Stil."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1684
+#: DescendantBooks/DetailedDescendantBookReport.py:1686
 msgid "The style used for the header in the Index of Places."
 msgstr "Der für die Kopfzeile des Ortsverzeichnisses verwendete Stil."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1695
+#: DescendantBooks/DetailedDescendantBookReport.py:1697
 msgid "The style used for the references in the Index of Places."
 msgstr "Der für die Verweise im Ortsverzeichnis verwendete Stil."
 
@@ -3412,112 +3585,112 @@ msgstr "Nachkommenschaftslinien"
 msgid "Produces descendants lines of a person"
 msgstr "Erzeugt Nachkommenlinien einer Person"
 
-#: DescendantsLines/DescendantsLines.py:463
+#: DescendantsLines/DescendantsLines.py:472
 msgid "Using SVG type for supplemental document is not supported!"
 msgstr ""
 "Die Verwendung des SVG-Typs für ergänzende Dokumente wird nicht unterstützt!"
 
-#: DescendantsLines/DescendantsLines.py:1531
+#: DescendantsLines/DescendantsLines.py:1540
 msgid "Output format"
 msgstr "Ausgabeformat"
 
-#: DescendantsLines/DescendantsLines.py:1532
+#: DescendantsLines/DescendantsLines.py:1541
 msgid "PNG format"
 msgstr "PNG-Format"
 
-#: DescendantsLines/DescendantsLines.py:1533
+#: DescendantsLines/DescendantsLines.py:1542
 msgid "SVG format"
 msgstr "SVG-Format"
 
-#: DescendantsLines/DescendantsLines.py:1534
+#: DescendantsLines/DescendantsLines.py:1543
 msgid "PDF format"
 msgstr "PDF-Format"
 
-#: DescendantsLines/DescendantsLines.py:1535
+#: DescendantsLines/DescendantsLines.py:1544
 msgid "PS format"
 msgstr "PS-Format"
 
-#: DescendantsLines/DescendantsLines.py:1536
+#: DescendantsLines/DescendantsLines.py:1545
 msgid "The output format to be used"
 msgstr "Das zu verwendende Ausgabeformat"
 
-#: DescendantsLines/DescendantsLines.py:1541
+#: DescendantsLines/DescendantsLines.py:1550
 msgid "The destination file for the content."
 msgstr "Die Zieldatei für den Inhalt."
 
-#: DescendantsLines/DescendantsLines.py:1545
+#: DescendantsLines/DescendantsLines.py:1554
 msgid "The number of generations to include in the chart. (0 for unlimited)"
 msgstr ""
 "Die Anzahl der Generationen, die in das Diagramm aufgenommen werden sollen. "
 "(0 für unbegrenzt)"
 
-#: DescendantsLines/DescendantsLines.py:1550
+#: DescendantsLines/DescendantsLines.py:1559
 msgid "Use d'Aboville descendant numbering system"
 msgstr "Verwende d'Aboville Nachkommennummerierungssystem"
 
-#: DescendantsLines/DescendantsLines.py:1552
+#: DescendantsLines/DescendantsLines.py:1561
 msgid "Prepend name with d'Aboville descendant number in the chart."
 msgstr ""
 "Den Namen mit der Nummer des Nachkommen von d'Aboville in der Grafik "
 "voranstellen."
 
-#: DescendantsLines/DescendantsLines.py:1555
+#: DescendantsLines/DescendantsLines.py:1564
 msgid "Include an image"
 msgstr "Bild einfügen"
 
-#: DescendantsLines/DescendantsLines.py:1556
+#: DescendantsLines/DescendantsLines.py:1565
 msgid "Whether to include an image if one is available."
 msgstr "Ob ein Bild eingefügt werden soll, wenn eines verfügbar ist."
 
-#: DescendantsLines/DescendantsLines.py:1560
+#: DescendantsLines/DescendantsLines.py:1569
 msgid "Max Image height"
 msgstr "Maximale Bildhöhe"
 
-#: DescendantsLines/DescendantsLines.py:1561
+#: DescendantsLines/DescendantsLines.py:1570
 msgid "Maximum image height in pixels, 0=don't scale for height."
 msgstr "Maximale Bildhöhe in Pixeln, 0 = Höhe nicht skalieren."
 
-#: DescendantsLines/DescendantsLines.py:1565
+#: DescendantsLines/DescendantsLines.py:1574
 msgid "Max Image width"
 msgstr "Maximale Bildbreite"
 
-#: DescendantsLines/DescendantsLines.py:1566
+#: DescendantsLines/DescendantsLines.py:1575
 msgid "Maximum image width in pixels, 0=don't scale for width."
 msgstr "Maximale Bildbreite in Pixeln, 0 = keine Skalierung der Breite."
 
-#: DescendantsLines/DescendantsLines.py:1570
+#: DescendantsLines/DescendantsLines.py:1579
 msgid "Image Location"
 msgstr "Bildposition"
 
-#: DescendantsLines/DescendantsLines.py:1571
+#: DescendantsLines/DescendantsLines.py:1580
 msgid "Above text"
 msgstr "Über dem Text"
 
-#: DescendantsLines/DescendantsLines.py:1572
+#: DescendantsLines/DescendantsLines.py:1581
 msgid "Left of text"
 msgstr "Links vom Text"
 
-#: DescendantsLines/DescendantsLines.py:1573
+#: DescendantsLines/DescendantsLines.py:1582
 msgid "Position of image relative to text"
 msgstr "Position des Bildes relativ zum Text"
 
-#: DescendantsLines/DescendantsLines.py:1579
+#: DescendantsLines/DescendantsLines.py:1588
 msgid "Colour Name by Gender"
 msgstr "Farbe Name nach Geschlecht"
 
-#: DescendantsLines/DescendantsLines.py:1581
+#: DescendantsLines/DescendantsLines.py:1590
 msgid "Color the name to indicate a person's gender in the chart."
 msgstr ""
 "Den Namen einfärben, um das Geschlecht einer Person in dem Diagramm "
 "anzuzeigen."
 
-#: DescendantsLines/DescendantsLines.py:1585
+#: DescendantsLines/DescendantsLines.py:1594
 msgid "Use alternate events, if Primary event is not found"
 msgstr ""
 "Verwende alternative Ereignisse, wenn das primäre Ereignis nicht gefunden "
 "wird"
 
-#: DescendantsLines/DescendantsLines.py:1586
+#: DescendantsLines/DescendantsLines.py:1595
 msgid ""
 "For Birth (baptism, christen)\n"
 "   Marriage (marr_lic, engagement)\n"
@@ -3529,37 +3702,37 @@ msgstr ""
 "   Scheidung (Annullierung, Scheidungsantrag),\n"
 "   Tod (Beerdigung, Einäscherung, Nachlassverfahren)."
 
-#: DescendantsLines/DescendantsLines.py:1592
+#: DescendantsLines/DescendantsLines.py:1601
 msgid "Sort Events by Date"
 msgstr "Ereignisse nach Datum sortieren"
 
-#: DescendantsLines/DescendantsLines.py:1593
+#: DescendantsLines/DescendantsLines.py:1602
 msgid "Sort events by date (else use the order of the 'Display Format' above)."
 msgstr ""
 "Ereignisse nach Datum sortieren (ansonsten die Reihenfolge des obigen "
 "'Anzeigeformats' verwenden)."
 
-#: DescendantsLines/DescendantsLines.py:1597
+#: DescendantsLines/DescendantsLines.py:1606
 msgid "Text style"
 msgstr "Textstil"
 
-#: DescendantsLines/DescendantsLines.py:1598
+#: DescendantsLines/DescendantsLines.py:1607
 msgid "Center-aligned text"
 msgstr "Zentrierter Text"
 
-#: DescendantsLines/DescendantsLines.py:1599
+#: DescendantsLines/DescendantsLines.py:1608
 msgid "Left-aligned text"
 msgstr "Linksbündiger Text"
 
-#: DescendantsLines/DescendantsLines.py:1600
+#: DescendantsLines/DescendantsLines.py:1609
 msgid "Alignment of the text in the block for each person on the chart"
 msgstr "Ausrichtung des Textes im Block für jede Person in der Tabelle"
 
-#: DescendantsLines/DescendantsLines.py:1604
+#: DescendantsLines/DescendantsLines.py:1613
 msgid "Max Note Length"
 msgstr "Maximale Notizlänge"
 
-#: DescendantsLines/DescendantsLines.py:1605
+#: DescendantsLines/DescendantsLines.py:1614
 msgid ""
 "Maximum length of an event's note field in a text block, '$e(n)'\n"
 " 0=no limit "
@@ -3568,19 +3741,37 @@ msgstr ""
 "'$e(n)'.\n"
 " 0=keine Begrenzung "
 
-#: DescendantsLines/DescendantsLines.py:1612
+#: DescendantsLines/DescendantsLines.py:1618
+#, fuzzy
+#| msgid "Font name"
+msgid "Font Name"
+msgstr "Schriftartname"
+
+#: DescendantsLines/DescendantsLines.py:1620
+msgid ""
+"Name of the Font to use. On Windows enter the file name of the .ttf at /"
+"Windows/Fonts"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1623
+#, fuzzy
+#| msgid "Database size"
+msgid "Font base size"
+msgstr "Datenbankgröße"
+
+#: DescendantsLines/DescendantsLines.py:1629
 msgid "Box around Person's block"
 msgstr "Kasten um den Block der Person"
 
-#: DescendantsLines/DescendantsLines.py:1613
+#: DescendantsLines/DescendantsLines.py:1630
 msgid "Draw a thin black box around each person' text block."
 msgstr "Zeichne einen dünnen schwarzen Rahmen um den Textblock jeder Person."
 
-#: DescendantsLines/DescendantsLines.py:1617
+#: DescendantsLines/DescendantsLines.py:1634
 msgid "All Person's blocks have the same height"
 msgstr "Alle Blöcke von Person haben die gleiche Höhe"
 
-#: DescendantsLines/DescendantsLines.py:1618
+#: DescendantsLines/DescendantsLines.py:1635
 msgid ""
 "All the blocks of all the person have the same height, which is the height "
 "of the highest block."
@@ -3588,11 +3779,11 @@ msgstr ""
 "Alle Blöcke aller Personen haben dieselbe Höhe, nämlich die Höhe des "
 "höchsten Blocks."
 
-#: DescendantsLines/DescendantsLines.py:1623
+#: DescendantsLines/DescendantsLines.py:1640
 msgid "All Person's blocks have the same width"
 msgstr "Alle Blöcke von Person haben die gleiche Breite"
 
-#: DescendantsLines/DescendantsLines.py:1624
+#: DescendantsLines/DescendantsLines.py:1641
 msgid ""
 "All the blocks of all the person have the same width, which is the width of "
 "the widthest block."
@@ -3600,19 +3791,19 @@ msgstr ""
 "Alle Blöcke aller Personen haben dieselbe Breite, nämlich die Breite des "
 "breitesten Blocks."
 
-#: DescendantsLines/DescendantsLines.py:1629
+#: DescendantsLines/DescendantsLines.py:1646
 msgid "Colour blocks by Generation"
 msgstr "Blöcke nach Generation färben"
 
-#: DescendantsLines/DescendantsLines.py:1630
+#: DescendantsLines/DescendantsLines.py:1647
 msgid "Colour the background of text blocks by generation."
 msgstr "Den Hintergrund von Textblöcken nach Generation einfärben."
 
-#: DescendantsLines/DescendantsLines.py:1634
+#: DescendantsLines/DescendantsLines.py:1651
 msgid "Descend block colour intensity"
 msgstr "Blockfarbintensität verringern"
 
-#: DescendantsLines/DescendantsLines.py:1635
+#: DescendantsLines/DescendantsLines.py:1652
 msgid ""
 "Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
 "colour"
@@ -3620,26 +3811,26 @@ msgstr ""
 "Intensität der Hintergrundfarbe im Nachkommenblock, 0 = schwach, 255 = "
 "intensive Farbe"
 
-#: DescendantsLines/DescendantsLines.py:1639
+#: DescendantsLines/DescendantsLines.py:1656
 msgid "Spouse block colour intensity"
 msgstr "Intensität der Blockfarbe für Ehepartner"
 
-#: DescendantsLines/DescendantsLines.py:1640
+#: DescendantsLines/DescendantsLines.py:1657
 msgid ""
 "Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
 msgstr ""
 "Intensität der Hintergrundfarbe im Ehepartnerblock, 0 = schwach, 255 = "
 "intensive Farbe"
 
-#: DescendantsLines/DescendantsLines.py:1645
+#: DescendantsLines/DescendantsLines.py:1662
 msgid "Display Formats"
 msgstr "Anzeigeformate"
 
-#: DescendantsLines/DescendantsLines.py:1647
+#: DescendantsLines/DescendantsLines.py:1664
 msgid "Name Display Format"
 msgstr "Name Anzeigeformat"
 
-#: DescendantsLines/DescendantsLines.py:1650
+#: DescendantsLines/DescendantsLines.py:1667
 msgid ""
 "f=first & middle names, l=surname, n=nickname,\n"
 "c=commonly used given name, t=title, s=suffix, g=family nick name\n"
@@ -3649,8 +3840,8 @@ msgstr ""
 "c=häufig verwendeter Vorname, t=Titel, s=Suffix, g=Familienspitzname\n"
 "Siehe Wiki-Handbuch > Berichte > Teil 2"
 
-#: DescendantsLines/DescendantsLines.py:1662
-#: DescendantsLines/DescendantsLines.py:1681
+#: DescendantsLines/DescendantsLines.py:1679
+#: DescendantsLines/DescendantsLines.py:1698
 msgid ""
 "[event, list]$e(formating)\n"
 "See Wiki Manual > Reports > part 2\n"
@@ -3660,13 +3851,13 @@ msgstr ""
 "Siehe Wiki-Handbuch > Berichte > Teil 2\n"
 "Formatierung: Daten=d(ymdMo) Orte=D(elcuspnoitxy) Notizen=n Abgekürzter Typ=t"
 
-#: DescendantsLines/DescendantsLines.py:1688
+#: DescendantsLines/DescendantsLines.py:1705
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
 #: ImportMerge/importmerge.glade:407 ImportMerge/importmerge.py:911
 msgid "Replace"
 msgstr "Ersetzen"
 
-#: DescendantsLines/DescendantsLines.py:1693
+#: DescendantsLines/DescendantsLines.py:1710
 msgid ""
 "i.e.\n"
 "United States of America/USA"
@@ -3674,32 +3865,32 @@ msgstr ""
 "d. h.\n"
 "Vereinigte Staaten von Amerika/USA"
 
-#: DescendantsLines/DescendantsLines.py:1697
+#: DescendantsLines/DescendantsLines.py:1714
 msgid "Spouse and Family"
 msgstr "Ehepartner und Familie"
 
-#: DescendantsLines/DescendantsLines.py:1699
+#: DescendantsLines/DescendantsLines.py:1716
 msgid "Vertical edge descendant to spouse-bar"
 msgstr "Vertikale Kante, die zum Ehepartner-Balken hin abfällt"
 
-#: DescendantsLines/DescendantsLines.py:1700
+#: DescendantsLines/DescendantsLines.py:1717
 msgid "The length of the vertical edge from descendant to spouse-bar."
 msgstr "Die Länge der vertikalen Kante vom Nachkommen zum Ehepartnerbalken."
 
-#: DescendantsLines/DescendantsLines.py:1704
+#: DescendantsLines/DescendantsLines.py:1721
 msgid "Vertical edge spouse-bar to spouse"
 msgstr "Vertikale Kante Ehepartnerleiste zu Ehepartner"
 
-#: DescendantsLines/DescendantsLines.py:1705
+#: DescendantsLines/DescendantsLines.py:1722
 msgid "The length of the vertical edge from spouse-bar to spouse."
 msgstr ""
 "Die Länge der vertikalen Kante von der Ehepartnerleiste zum Ehepartner."
 
-#: DescendantsLines/DescendantsLines.py:1709
+#: DescendantsLines/DescendantsLines.py:1726
 msgid "Vertical space spouse-bar to other spouse"
 msgstr "Vertikaler Abstand zwischen Ehepartnerleiste und anderem Ehepartner"
 
-#: DescendantsLines/DescendantsLines.py:1710
+#: DescendantsLines/DescendantsLines.py:1727
 msgid ""
 "The space to add between one spouse-bar and another spouse in case of "
 "multiple families with the same descendant."
@@ -3708,21 +3899,21 @@ msgstr ""
 "Ehepartnerleiste eingefügt werden muss, wenn mehrere Familien denselben "
 "Nachkommen haben."
 
-#: DescendantsLines/DescendantsLines.py:1715
+#: DescendantsLines/DescendantsLines.py:1732
 msgid "Horizontal space descendant to spouse"
 msgstr "Horizontaler Raum für Nachkommen des Ehepartners"
 
-#: DescendantsLines/DescendantsLines.py:1716
+#: DescendantsLines/DescendantsLines.py:1733
 msgid "The space to add between the descendant and the spouse."
 msgstr ""
 "Der Abstand, der zwischen dem Nachkommen und dem Ehepartner eingefügt werden "
 "soll."
 
-#: DescendantsLines/DescendantsLines.py:1721
+#: DescendantsLines/DescendantsLines.py:1738
 msgid "Horizonal space family to family"
 msgstr "Horizontaler Abstand von Familie zu Familie"
 
-#: DescendantsLines/DescendantsLines.py:1722
+#: DescendantsLines/DescendantsLines.py:1739
 msgid ""
 "The space to add between the more extern descendant (or spouse) of a family "
 "and the more extern descendant (or spouse) of the next family."
@@ -3731,11 +3922,11 @@ msgstr ""
 "Familie und dem äußersten Nachkommen (oder Ehepartner) der nächsten Familie "
 "eingefügt werden soll."
 
-#: DescendantsLines/DescendantsLines.py:1727
+#: DescendantsLines/DescendantsLines.py:1744
 msgid "Horizontal distance spouse to family edge"
 msgstr "Horizontaler Abstand zwischen Ehepartner und Familienrand"
 
-#: DescendantsLines/DescendantsLines.py:1728
+#: DescendantsLines/DescendantsLines.py:1745
 msgid ""
 "If this value is 0, the children bar is centered under the spouse. The "
 "bigger the value, more the center is moved to the left towards the "
@@ -3745,83 +3936,83 @@ msgstr ""
 "zentriert. Je größer der Wert, desto weiter wird die Mitte nach links in "
 "Richtung der Nachkommen verschoben."
 
-#: DescendantsLines/DescendantsLines.py:1735
+#: DescendantsLines/DescendantsLines.py:1752
 msgid "OL_PAD"
 msgstr "OL_FELD"
 
-#: DescendantsLines/DescendantsLines.py:1736
+#: DescendantsLines/DescendantsLines.py:1753
 msgid "The number of ??? pad"
 msgstr "Die Anzahl der ??? Felder"
 
-#: DescendantsLines/DescendantsLines.py:1739
+#: DescendantsLines/DescendantsLines.py:1756
 msgid "Vertical edge spouse-bar to child-bar"
 msgstr "Vertikale Kante der Ehepartnerleiste zur Kinderleiste"
 
-#: DescendantsLines/DescendantsLines.py:1740
+#: DescendantsLines/DescendantsLines.py:1757
 msgid "The length of the vertical edge from spouse-bar to child-bar."
 msgstr ""
 "Die Länge der vertikalen Kante von der Ehepartnerleiste bis zur Kinderleiste."
 
-#: DescendantsLines/DescendantsLines.py:1746
+#: DescendantsLines/DescendantsLines.py:1763
 msgid "Children distance"
 msgstr "Kinderabstand"
 
-#: DescendantsLines/DescendantsLines.py:1747
+#: DescendantsLines/DescendantsLines.py:1764
 msgid "The horizontal distance between two children of the same family."
 msgstr "Der horizontale Abstand zwischen zwei Kindern derselben Familie."
 
-#: DescendantsLines/DescendantsLines.py:1751
+#: DescendantsLines/DescendantsLines.py:1768
 msgid "Vertical edge child to child-bar"
 msgstr "Vertikale Kante Kind zu Kindleiste"
 
-#: DescendantsLines/DescendantsLines.py:1753
+#: DescendantsLines/DescendantsLines.py:1770
 msgid "The length of the vertical edge from child to child-bar."
 msgstr "Die Länge der vertikalen Kante vom Kind zu der Kindleiste."
 
-#: DescendantsLines/DescendantsLines.py:1756
+#: DescendantsLines/DescendantsLines.py:1773
 msgid "MIN_C_WIDTH"
 msgstr "MIN_K_BREITE"
 
-#: DescendantsLines/DescendantsLines.py:1757
+#: DescendantsLines/DescendantsLines.py:1774
 msgid "The number of ??? min width"
 msgstr "Die Anzahl der ??? min Breite"
 
-#: DescendantsLines/DescendantsLines.py:1762
+#: DescendantsLines/DescendantsLines.py:1779
 msgid "Space around text"
 msgstr "Abstand um Text herum"
 
-#: DescendantsLines/DescendantsLines.py:1763
+#: DescendantsLines/DescendantsLines.py:1780
 msgid "The space to add around the text block of a person."
 msgstr ""
 "Der Abstand, der um den Textblock einer Person herum hinzugefügt werden soll."
 
-#: DescendantsLines/DescendantsLines.py:1767
+#: DescendantsLines/DescendantsLines.py:1784
 msgid "Space between lines of text"
 msgstr "Abstand zwischen Textzeilen"
 
-#: DescendantsLines/DescendantsLines.py:1768
+#: DescendantsLines/DescendantsLines.py:1785
 msgid "The space to add between a line and the next in a person text block."
 msgstr ""
 "Der Abstand, der zwischen einer Zeile und der nächsten in einem "
 "Personentextblock eingefügt werden soll."
 
-#: DescendantsLines/DescendantsLines.py:1773
+#: DescendantsLines/DescendantsLines.py:1790
 msgid "Header and Footer"
 msgstr "Kopf- und Fußzeile"
 
-#: DescendantsLines/DescendantsLines.py:1776
+#: DescendantsLines/DescendantsLines.py:1793
 msgid "The text that will be written in the header of the document"
 msgstr "Der Text, der in die Kopfzeile des Dokuments geschrieben wird"
 
-#: DescendantsLines/DescendantsLines.py:1781
+#: DescendantsLines/DescendantsLines.py:1798
 msgid "The text that will be written in the footer of the document"
 msgstr "Der Text, der in die Fußzeile des Dokuments geschrieben wird"
 
-#: DescendantsLines/DescendantsLines.py:1785
+#: DescendantsLines/DescendantsLines.py:1802
 msgid "Title and footer coefficient"
 msgstr "Titel- und Fußzeilenkoeffizient"
 
-#: DescendantsLines/DescendantsLines.py:1786
+#: DescendantsLines/DescendantsLines.py:1803
 msgid ""
 "A number that multiply the base size of the text in the title and in the "
 "footer"
@@ -3829,29 +4020,29 @@ msgstr ""
 "Eine Zahl, die die Basisgröße des Textes im Titel und in der Fußzeile "
 "vervielfacht"
 
-#: DescendantsLines/DescendantsLines.py:1793
+#: DescendantsLines/DescendantsLines.py:1810
 msgid "Protect People, Images or Events that are marked Private"
 msgstr ""
 "Personen, Bilder oder Ereignisse schützen, die als vertraulich "
 "gekennzeichnet sind"
 
-#: DescendantsLines/DescendantsLines.py:1795
+#: DescendantsLines/DescendantsLines.py:1812
 msgid "The Privacy setting of only these types of Gramps objects are checked"
 msgstr ""
 "Die Datenschutzeinstellung nur für diese Arten von Gramps-Objekten ist "
 "aktiviert"
 
-#: DescendantsLines/DescendantsLines.py:1799
+#: DescendantsLines/DescendantsLines.py:1816
 msgid "Privacy text"
 msgstr "Datenschutztext"
 
-#: DescendantsLines/DescendantsLines.py:1800
+#: DescendantsLines/DescendantsLines.py:1817
 msgid "Text to display in block, when a Person is marked private"
 msgstr ""
 "Text, der im Block angezeigt wird, wenn eine Person als vertraulich markiert "
 "ist"
 
-#: DescendantsLines/DescendantsLines.py:1815
+#: DescendantsLines/DescendantsLines.py:1832
 msgid "The default style."
 msgstr "Der Standardstil."
 
@@ -4803,7 +4994,7 @@ msgstr "Ob die Gramps ID versteckt werden soll"
 msgid "List"
 msgstr "Liste"
 
-#: DynamicWeb/dynamicweb.py:5002
+#: DynamicWeb/dynamicweb.py:5002 GrampyScript/GrampyScript.py:382
 msgid "Table"
 msgstr "Tabelle"
 
@@ -6077,12 +6268,12 @@ msgstr "Fundstelle zu %s DNA-Verbindung hinzufügen"
 msgid "The active Person"
 msgstr "Die aktive Person"
 
-#: FilterRules/activepersonrule.py:47
+#: FilterRules/activepersonrule.py:58
 msgid "Matches the active person"
 msgstr "Entspricht der aktiven Person"
 
-#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
-#: FilterRules/ageatdeath.py:74
+#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:90
+#: FilterRules/ageatdeath.py:92
 msgid "Filter people by their age at death"
 msgstr "Personen nach ihrem Sterbealter filtern"
 
@@ -6090,11 +6281,11 @@ msgstr "Personen nach ihrem Sterbealter filtern"
 msgid "Filter rule that matches people by their age at death"
 msgstr "Filterregel, die Personen nach ihrem Alter beim Tod abgleicht"
 
-#: FilterRules/ageatdeath.py:47
+#: FilterRules/ageatdeath.py:65
 msgid "Age in years at person's death."
 msgstr "Alter in Jahren beim Tod der Person."
 
-#: FilterRules/ageatdeath.py:71 SourceIndex/birth.glade:544
+#: FilterRules/ageatdeath.py:89 SourceIndex/birth.glade:544
 #: SourceIndex/birth.glade:762 SourceIndex/census.glade:286
 #: SourceIndex/death.glade:521 SourceIndex/death.glade:669
 #: SourceIndex/death.glade:939 SourceIndex/marriage.glade:467
@@ -6106,26 +6297,26 @@ msgstr "Alter:"
 
 #: FilterRules/associationsofpersonmatch.gpr.py:25
 #: FilterRules/associationsofpersonmatch.gpr.py:26
-#: FilterRules/associationsofpersonmatch.py:46
-#: FilterRules/associationsofpersonmatch.py:47
+#: FilterRules/associationsofpersonmatch.py:65
+#: FilterRules/associationsofpersonmatch.py:66
 msgid "Match associations of <person filter>"
 msgstr "Entspricht den Zuordnungen von <Personenfilter>"
 
 #: FilterRules/degreesofseparation.gpr.py:25
-#: FilterRules/degreesofseparation.py:60
+#: FilterRules/degreesofseparation.py:79
 msgid "People separated less than <N> degrees of <person>"
 msgstr "Personen, die weniger als <N> Grad von <Person> entfernt sind"
 
 #: FilterRules/degreesofseparation.gpr.py:26
-#: FilterRules/degreesofseparation.py:62
+#: FilterRules/degreesofseparation.py:81
 msgid "Filter rule that matches relatives by degrees of separation"
 msgstr "Filterregel, die Verwandten nach dem Grad der Entfernung entspricht"
 
-#: FilterRules/degreesofseparation.py:47
+#: FilterRules/degreesofseparation.py:66
 msgid "Number of degrees of separation from person."
 msgstr "Anzahl der Grad der Trennung von der Person."
 
-#: FilterRules/degreesofseparation.py:59
+#: FilterRules/degreesofseparation.py:78
 msgid "Degrees:"
 msgstr "Grade:"
 
@@ -6146,7 +6337,7 @@ msgstr "Entspricht Familien, auf die ein Ereignisfilter zutrifft"
 msgid "People with events with a selected role"
 msgstr "Personen mit Ereignissen mit einer ausgewählten Rolle"
 
-#: FilterRules/hasrolerule.gpr.py:28 FilterRules/hasrolerule.py:69
+#: FilterRules/hasrolerule.gpr.py:28 FilterRules/hasrolerule.py:99
 msgid "Matches people with an event with a selected role"
 msgstr "Entspricht Personen mit einem Ereignis mit einer ausgewählten Rolle"
 
@@ -6154,28 +6345,28 @@ msgstr "Entspricht Personen mit einem Ereignis mit einer ausgewählten Rolle"
 msgid "Families with events with a selected role"
 msgstr "Familien mit Ereignissen mit einer ausgewählten Rolle"
 
-#: FilterRules/hasrolerule.gpr.py:44 FilterRules/hasrolerule.py:93
+#: FilterRules/hasrolerule.gpr.py:44 FilterRules/hasrolerule.py:114
 msgid "Matches families with an event with a selected role"
 msgstr "Entspricht Familien mit einem Ereignis mit einer ausgewählten Rolle"
 
-#: FilterRules/hasrolerule.py:55
+#: FilterRules/hasrolerule.py:71
 msgid "Does NOT match with selected Role"
 msgstr "Stimmt NICHT mit der ausgewählten Rolle überein"
 
-#: FilterRules/hasrolerule.py:56
+#: FilterRules/hasrolerule.py:73
 msgid "Finds the items that don't have event Roles of the selected type."
 msgstr ""
 "Findet die Elemente, die keine Ereignisrollen des ausgewählten Typs haben."
 
-#: FilterRules/hasrolerule.py:67 FilterRules/hasrolerule.py:91
+#: FilterRules/hasrolerule.py:97 FilterRules/hasrolerule.py:112
 msgid "Inverse"
 msgstr "Umgekehrt"
 
-#: FilterRules/hasrolerule.py:68
+#: FilterRules/hasrolerule.py:98
 msgid "People with events with the <role>"
 msgstr "Personen mit Ereignissen mit der <Rolle>"
 
-#: FilterRules/hasrolerule.py:92
+#: FilterRules/hasrolerule.py:113
 msgid "Families with events with the <role>"
 msgstr "Familien mit Ereignissen mit der <Rolle>"
 
@@ -6192,66 +6383,80 @@ msgid "Matches sources with a particular value"
 msgstr "Entspricht Quellen mit einem bestimmten Wert"
 
 #: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
-#: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
+#: FilterRules/infamilyrule.py:144 FilterRules/infamilyrule.py:145
 msgid "People who are part of families matching <filter>"
 msgstr "Personen, die Teil von Familien sind, die <Filter> entsprechen"
 
-#: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
+#: FilterRules/infamilyrule.py:67 FilterRules/infamilyrule.py:142
 msgid "Include Children"
 msgstr "Kinder einbeziehen"
 
-#: FilterRules/infamilyrule.py:49
+#: FilterRules/infamilyrule.py:68
 msgid "Include the children in the matching families."
 msgstr "Die Kinder in die passenden Familien einbeziehen."
 
-#: FilterRules/infamilyrule.py:75 FilterRules/infamilyrule.py:124
+#: FilterRules/infamilyrule.py:94 FilterRules/infamilyrule.py:143
 msgid "Include Parents"
 msgstr "Eltern einbeziehen"
 
-#: FilterRules/infamilyrule.py:76
+#: FilterRules/infamilyrule.py:95
 msgid "Include the parents in the matching families."
 msgstr "Die Eltern in die passenden Familien einbeziehen."
 
-#: FilterRules/infamilyrule.py:122 FilterRules/isfamilyfiltermatchevent.py:62
+#: FilterRules/infamilyrule.py:141 FilterRules/isfamilyfiltermatchevent.py:81
 msgid "Family Filter name:"
 msgstr "Familienfilter Name:"
 
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:25
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:26
-#: FilterRules/isfamilyfiltermatchevent.py:63
-#: FilterRules/isfamilyfiltermatchevent.py:64
+#: FilterRules/isfamilyfiltermatchevent.py:82
+#: FilterRules/isfamilyfiltermatchevent.py:83
 msgid "Events of families matching a <family filter>"
 msgstr "Ereignisse von Familien, die einem <Familienfilter> entsprechen"
 
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:27
-#: FilterRules/isrelatedwithfiltermatch.py:53
+#: FilterRules/isrelatedwithfiltermatch.py:65
 msgid "People related to <filter>"
 msgstr "Personen, die mit <Filter> verwandt sind"
 
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:29
-#: FilterRules/isrelatedwithfiltermatch.py:55
+#: FilterRules/isrelatedwithfiltermatch.py:68
 msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
 "Entspricht Personen, die mit einer Person verwandt sind, die durch einen "
 "Personenfilter gefunden wurde"
 
+#: FilterRules/matchpersonfilterrole.gpr.py:7
+msgid "Events from people with role"
+msgstr ""
+
+#: FilterRules/matchpersonfilterrole.gpr.py:8
+#, fuzzy
+#| msgid "Matches people with an event with a selected role"
+msgid "Matches event of people filter with role"
+msgstr "Entspricht Personen mit einem Ereignis mit einer ausgewählten Rolle"
+
+#: FilterRules/matchpersonfilterrole.py:69
+msgid "Role:"
+msgstr ""
+
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
 msgstr "Mehrere Eltern Filter"
 
-#: FilterRules/multipleparents.py:42
+#: FilterRules/multipleparents.py:55
 msgid "People with multiple parent records"
 msgstr "Personen mit mehreren Elterndatensätzen"
 
-#: FilterRules/multipleparents.py:43
+#: FilterRules/multipleparents.py:56
 msgid "Matches people who have more than one set of parents"
 msgstr "Passt zu Personen, die mehr als ein Elternpaar haben"
 
-#: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:50
+#: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:71
 msgid "People with <count> of <event>"
 msgstr "Personen mit <Anzahl> von <Ereignis>"
 
-#: FilterRules/peopleeventscount.gpr.py:26 FilterRules/peopleeventscount.py:52
+#: FilterRules/peopleeventscount.gpr.py:26 FilterRules/peopleeventscount.py:72
 msgid "Matches persons which have events of given type and number."
 msgstr ""
 "Entspricht Personen, die Ereignisse der angegebenen Art und Anzahl haben."
@@ -6383,32 +6588,77 @@ msgstr "Suche nach möglichen Koordinaten mit „,“-Zeichen"
 msgid "Fix coords"
 msgstr "Koordinaten korrigieren"
 
-#: Form/editform.py:181
+#: Form/CensusCheckQuickview.gpr.py:9
+#, fuzzy
+#| msgid "Censuses"
+msgid "CensusCheck"
+msgstr "Volkszählungen"
+
+#: Form/CensusCheckQuickview.gpr.py:10
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"descendents"
+msgstr ""
+
+#: Form/CensusCheckQuickview.gpr.py:23
+#, fuzzy
+#| msgid "Censuses"
+msgid "CensusCheckUp"
+msgstr "Volkszählungen"
+
+#: Form/CensusCheckQuickview.gpr.py:24
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"ancestors"
+msgstr ""
+
+#: Form/CensusCheckQuickview.py:122 Form/CensusCheckUpQuickview.py:122
+#, python-format
+msgid "Census Check for %s"
+msgstr ""
+
+#: Form/editform.py:191
 #, python-format
 msgid "Form: %s"
 msgstr "Formular: %s"
 
-#: Form/editform.py:183
+#: Form/editform.py:193
 msgid "New Form"
 msgstr "Neues Formular"
 
-#: Form/editform.py:190
+#: Form/editform.py:200
 msgid "Edit Form"
 msgstr "Formular bearbeiten"
 
-#: Form/editform.py:225 SourceIndex/birth.glade:113
+#: Form/editform.py:235 SourceIndex/birth.glade:113
 #: SourceIndex/census.glade:873 SourceIndex/death.glade:182
 #: SourceIndex/marriage.glade:1263
 msgid "Reference:"
 msgstr "Referenz:"
 
-#: Form/editform.py:421
+#: Form/editform.py:431
 msgid "Headings"
 msgstr "Überschriften"
 
-#: Form/form.py:65
+#: Form/form.py:82
 msgid "Form"
 msgstr "Formular"
+
+#: Form/form.py:173
+msgid "XML syntax error in Form definition file"
+msgstr ""
+
+#: Form/form.py:184
+#, fuzzy
+#| msgid "Failed to read proto file %s: %s"
+msgid "Failed to read Form definition file"
+msgstr "Das Lesen der Proto-Datei %s ist fehlgeschlagen: %s"
+
+#: Form/form.py:193
+#, fuzzy
+#| msgid "Invalid Destination Directory"
+msgid "Invalid Form definition file"
+msgstr "Ungültiges Zielverzeichnis"
 
 #: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
 #: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
@@ -7860,7 +8110,7 @@ msgstr "13. Jahr der Einbürgerung, falls zuvor Ausländer"
 #: Form/form_ca.xml.h:838 Form/form_us.xml.h:904 Form/form_us.xml.h:979
 #: Form/form_us.xml.h:1139 Form/form_us.xml.h:1147 Form/form_us.xml.h:2358
 #: Form/form_us.xml.h:2364 Form/form_us.xml.h:2437 Form/form_us.xml.h:2467
-#: Form/form_us.xml.h:2561
+#: Form/form_us.xml.h:2579
 msgid "Race"
 msgstr "Rasse"
 
@@ -8941,7 +9191,7 @@ msgstr "Arbeitsort"
 #: Form/form_dk.xml.h:345 Form/form_dk.xml.h:371 Form/form_dk.xml.h:395
 #: Form/form_dk.xml.h:417 Form/form_dk.xml.h:435 Form/form_gb.xml.h:50
 #: Form/form_us.xml.h:985 Form/form_us.xml.h:1009 Form/form_us.xml.h:2374
-#: Form/form_us.xml.h:2556
+#: Form/form_us.xml.h:2563
 msgid "Date of Birth"
 msgstr "Geburtsdatum"
 
@@ -9172,7 +9422,7 @@ msgstr "Mädchenname der Frau, die verheiratet war"
 #: Form/form_gb.xml.h:51 Form/form_us.xml.h:986 Form/form_us.xml.h:1008
 #: Form/form_us.xml.h:1141 Form/form_us.xml.h:1155 Form/form_us.xml.h:1452
 #: Form/form_us.xml.h:2375 Form/form_us.xml.h:2488 Form/form_us.xml.h:2513
-#: Form/form_us.xml.h:2557
+#: Form/form_us.xml.h:2565
 msgid "Place of Birth"
 msgstr "Geburtsort"
 
@@ -10561,7 +10811,7 @@ msgstr "Wert von Immobilien"
 #: Form/form_us.xml.h:1525 Form/form_us.xml.h:1542 Form/form_us.xml.h:1563
 #: Form/form_us.xml.h:1585 Form/form_us.xml.h:1611 Form/form_us.xml.h:1657
 #: Form/form_us.xml.h:1870 Form/form_us.xml.h:2336 Form/form_us.xml.h:2353
-#: Form/form_us.xml.h:2528 Form/form_us.xml.h:2577
+#: Form/form_us.xml.h:2528 Form/form_us.xml.h:2599
 msgid "Place of birth"
 msgstr "Geburtsort"
 
@@ -11539,7 +11789,7 @@ msgstr "Rang"
 
 #: Form/form_us.xml.h:650 Form/form_us.xml.h:1489 Form/form_us.xml.h:1534
 #: Form/form_us.xml.h:2093 Form/form_us.xml.h:2129 Form/form_us.xml.h:2167
-#: Form/form_us.xml.h:2205 Form/form_us.xml.h:2587
+#: Form/form_us.xml.h:2205 Form/form_us.xml.h:2609
 msgid "Company"
 msgstr "Unternehmen"
 
@@ -11587,7 +11837,7 @@ msgid "Ward of city"
 msgstr "Stadtbezirk"
 
 #: Form/form_us.xml.h:670 Form/form_us.xml.h:755 Form/form_us.xml.h:795
-#: Form/form_us.xml.h:838 Form/form_us.xml.h:1069 Form/form_us.xml.h:2594
+#: Form/form_us.xml.h:838 Form/form_us.xml.h:1069 Form/form_us.xml.h:2616
 msgid "Street Address"
 msgstr "Straße und Hausnummer"
 
@@ -12496,7 +12746,7 @@ msgstr "Wenn nein, geben Sie diesbezüglich Informationen an"
 msgid "Witness name and P.O Address"
 msgstr "Name des Zeugen und Postanschrift"
 
-#: Form/form_us.xml.h:1061 Form/form_us.xml.h:2599
+#: Form/form_us.xml.h:1061 Form/form_us.xml.h:2621
 msgid "Widow of"
 msgstr "Witwe von"
 
@@ -14569,12 +14819,12 @@ msgid "Legitimate"
 msgstr "Legitim"
 
 #: Form/form_us.xml.h:2369 Form/form_us.xml.h:2390 Form/form_us.xml.h:2483
-#: Form/form_us.xml.h:2570
+#: Form/form_us.xml.h:2592
 msgid "Place of Record"
 msgstr "Ort der Aufzeichnung"
 
 #: Form/form_us.xml.h:2370 Form/form_us.xml.h:2391 Form/form_us.xml.h:2484
-#: Form/form_us.xml.h:2571
+#: Form/form_us.xml.h:2593
 msgid "Book/Volume"
 msgstr "Buch/Band"
 
@@ -14749,10 +14999,6 @@ msgstr "Alter in Jahren."
 msgid "Home Address"
 msgstr "Heimatadresse"
 
-#: Form/form_us.xml.h:2529
-msgid "Citizenship"
-msgstr "Staatsbürgerschaft"
-
 #: Form/form_us.xml.h:2530
 msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
 msgstr ""
@@ -14763,7 +15009,7 @@ msgstr ""
 msgid "If not a citizen, of what nation are you a citizen or subject?"
 msgstr "Wenn nicht Bürger, von welcher Nation sind Sie Bürger oder Untertan?"
 
-#: Form/form_us.xml.h:2533 Form/form_us.xml.h:2559
+#: Form/form_us.xml.h:2533 Form/form_us.xml.h:2575
 msgid "Employer's Name & address"
 msgstr "Name und Anschrift des Arbeitgebers"
 
@@ -14809,11 +15055,11 @@ msgstr "Haarfarbe"
 msgid "Bald"
 msgstr "Kahl"
 
-#: Form/form_us.xml.h:2547 Form/form_us.xml.h:2569
+#: Form/form_us.xml.h:2547 Form/form_us.xml.h:2591
 msgid "Place of Registration"
 msgstr "Ort der Registrierung"
 
-#: Form/form_us.xml.h:2548 Form/form_us.xml.h:2568
+#: Form/form_us.xml.h:2548 Form/form_us.xml.h:2590
 msgid "Date of Registration"
 msgstr "Datum der Registrierung"
 
@@ -14825,103 +15071,260 @@ msgstr "Laufende Nummer"
 msgid "Order Number"
 msgstr "Auftragsnummer"
 
+#: Form/form_us.xml.h:2551
+#, fuzzy
+#| msgid "Registration No."
+msgid "Registration Card"
+msgstr "Registrierungsnr."
+
 #: Form/form_us.xml.h:2552
+msgid ""
+"Found in lower left corner\n"
+"      D.S.S. Form 1\n"
+"        (Men 21 - 31)\n"
+"      D.S.S. Form 1 (Rev. 6-9-41)\n"
+"        (Men who turned 21 since 1st registration)\n"
+"      D.S.S. Form 1 (Rev. 1/1/42)\n"
+"        (Men born Feb 17, 1897 to Dec 31 1921)\n"
+"      D.S.S. Form 1 (Rev. 4/1/42)\n"
+"        (Men 45-64)\n"
+"      D.S.S. Form 1 (Rev. 6/1/42)\n"
+"        (Men 18-20)\n"
+"      D.S.S. Form 1 (Rev. 11/16/42)\n"
+"        (Men who turned 18 since\n"
+"         previous registration)"
+msgstr ""
+
+#: Form/form_us.xml.h:2554
+msgid "(1) First, Middle, Last"
+msgstr ""
+
+#: Form/form_us.xml.h:2555
 msgid "Place of Residence"
 msgstr "Wohnort"
 
-#: Form/form_us.xml.h:2553
+#: Form/form_us.xml.h:2556
+msgid ""
+"(2) Address or Place of Residence\n"
+" No. and street or R.F.D. No., Town, County, State"
+msgstr ""
+
+#: Form/form_us.xml.h:2557
 msgid "Mailing Address"
 msgstr "Postanschrift"
 
-#: Form/form_us.xml.h:2554
+#: Form/form_us.xml.h:2558
+msgid ""
+" Not used on D.S.S. Form 1\n"
+" (3) Used on all other forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2559
 msgid "Telephone"
 msgstr "Telefon"
 
-#: Form/form_us.xml.h:2555
+#: Form/form_us.xml.h:2560
+msgid ""
+"(3) On D.S.S. Form 1\n"
+"(4) On all other forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2561
 msgid "Age in years"
 msgstr "Alter in Jahren"
 
-#: Form/form_us.xml.h:2558
+#: Form/form_us.xml.h:2562
+msgid ""
+"(4) On D.S.S. Form 1\n"
+"(5) On all other forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2564
+#, fuzzy
+#| msgid "Age in years"
+msgid "(Below Age in Years)"
+msgstr "Alter in Jahren"
+
+#: Form/form_us.xml.h:2566
+msgid ""
+"(5) On D.S.S. Form 1\n"
+"(6) On all other forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2567
+#, fuzzy
+#| msgid "Citizenship"
+msgid "Country of Citizenship"
+msgstr "Staatsbürgerschaft"
+
+#: Form/form_us.xml.h:2568
+msgid ""
+"(6) On D.S.S. Form 1\n"
+"Not used on other forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2569
 msgid "Who will always know your address (Name & Address)"
 msgstr "Wer wird immer Ihre Adresse kennen (Name & Adresse)"
 
-#: Form/form_us.xml.h:2560
+#: Form/form_us.xml.h:2570
+msgid ""
+"(7 & 9) On D.S.S. Form 1\n"
+"(7) On all but D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) On D.S.S. Form 1 (Rev. 6-9-41)"
+msgstr ""
+
+#: Form/form_us.xml.h:2571
+#, fuzzy
+#| msgid "Relationship Type"
+msgid "Relationship "
+msgstr "Beziehungstyp"
+
+#: Form/form_us.xml.h:2572
+msgid "(8) Only on D.S.S. Form 1"
+msgstr ""
+
+#: Form/form_us.xml.h:2573
+#, fuzzy
+#| msgid "Occupation:"
+msgid "Occupation "
+msgstr "Beruf:"
+
+#: Form/form_us.xml.h:2574
+msgid "(7) Only on D.S.S. Form 1 (Rev. 6-9-41)"
+msgstr ""
+
+#: Form/form_us.xml.h:2576
+msgid ""
+"(10) On D.S.S. Form 1\n"
+"(9) On D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) on all others forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2577
 msgid "Place of employment or business"
 msgstr "Arbeitsort oder Geschäft"
 
-#: Form/form_us.xml.h:2564 Form/form_us.xml.h:2582
+#: Form/form_us.xml.h:2578
+msgid ""
+"(11) On D.S.S. Form 1\n"
+"(10) On D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(9) on all others forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2580
+msgid ""
+"White\n"
+"Negro\n"
+"Oriental\n"
+"Indian\n"
+"Filipino"
+msgstr ""
+
+#: Form/form_us.xml.h:2583 Form/form_us.xml.h:2604
 msgid "Complexion"
 msgstr "Teint"
 
-#: Form/form_us.xml.h:2565
+#: Form/form_us.xml.h:2584
+msgid ""
+"Sallow\n"
+"Light\n"
+"Ruddy\n"
+"Dark\n"
+"Freckled\n"
+"Light brown\n"
+"Dark brown\n"
+"Black"
+msgstr ""
+
+#: Form/form_us.xml.h:2585
 msgid "Eyes"
 msgstr "Augen"
 
-#: Form/form_us.xml.h:2566
+#: Form/form_us.xml.h:2586
+msgid ""
+"Blue\n"
+"Gray\n"
+"Hazel\n"
+"Brown\n"
+"Black"
+msgstr ""
+
+#: Form/form_us.xml.h:2587
 msgid "Hair"
 msgstr "Haare"
 
-#: Form/form_us.xml.h:2567
+#: Form/form_us.xml.h:2588
+msgid ""
+"Blonde\n"
+"Red\n"
+"Brown\n"
+"Black\n"
+"Gray\n"
+"Bald"
+msgstr ""
+
+#: Form/form_us.xml.h:2589
 msgid "Other characteristics"
 msgstr "Andere Eigenschaften"
 
-#: Form/form_us.xml.h:2574
+#: Form/form_us.xml.h:2596
 msgid "Date entered"
 msgstr "Antrittsdatum"
 
-#: Form/form_us.xml.h:2575
+#: Form/form_us.xml.h:2597
 msgid "Place entered"
 msgstr "Antrittsort"
 
-#: Form/form_us.xml.h:2576
+#: Form/form_us.xml.h:2598
 msgid "Term of enlistment"
 msgstr "Dienstzeit"
 
-#: Form/form_us.xml.h:2580
+#: Form/form_us.xml.h:2602
 msgid "Eye color"
 msgstr "Augenfarbe"
 
-#: Form/form_us.xml.h:2581
+#: Form/form_us.xml.h:2603
 msgid "Hair color"
 msgstr "Haarfarbe"
 
-#: Form/form_us.xml.h:2584
+#: Form/form_us.xml.h:2606
 msgid "Rank in"
 msgstr "Rang beim Eintritt"
 
-#: Form/form_us.xml.h:2585
+#: Form/form_us.xml.h:2607
 msgid "Branch"
 msgstr "Waffengattung"
 
-#: Form/form_us.xml.h:2586
+#: Form/form_us.xml.h:2608
 msgid "Regiment/Unit/Ship"
 msgstr "Regiment/Einheit/Schiff"
 
-#: Form/form_us.xml.h:2588
+#: Form/form_us.xml.h:2610
 msgid "Service Number"
 msgstr "Personenkennziffer"
 
-#: Form/form_us.xml.h:2589
+#: Form/form_us.xml.h:2611
 msgid "No. of enlistment"
 msgstr "Nr der Einberufung"
 
-#: Form/form_us.xml.h:2590
+#: Form/form_us.xml.h:2612
 msgid "Date discharged"
 msgstr "Entlassungsdatum"
 
-#: Form/form_us.xml.h:2591
+#: Form/form_us.xml.h:2613
 msgid "Place discharged"
 msgstr "Ort der Entlassung"
 
-#: Form/form_us.xml.h:2592
+#: Form/form_us.xml.h:2614
 msgid "Rank out"
 msgstr "Rang beim Austritt"
 
-#: Form/form_us.xml.h:2597
+#: Form/form_us.xml.h:2619
 msgid "Industry/Employer"
 msgstr "Branche/Arbeitgeber"
 
-#: Form/form_us.xml.h:2600
+#: Form/form_us.xml.h:2622
 msgid "Residents Status"
 msgstr "Einwohner Status"
 
@@ -15267,8 +15670,10 @@ msgid "GOV error on id %s with code: "
 msgstr "GOV-Fehler bei ID %s mit Code: "
 
 #: GetGOV/getgov.py:555
-#, python-format
-msgid "from %s to %s"
+#, fuzzy, python-format
+#| msgid "from %s to %s"
+msgctxt "end"
+msgid "from %(begin)s to %(end)s"
 msgstr "von %s bis %s"
 
 #: GetGOV/getgov.py:557
@@ -15327,6 +15732,14 @@ msgid ""
 msgstr ""
 "kmz/KML-Datei „%s“\n"
 "im Benutzerverzeichnis „%s“ überschreiben?"
+
+#: GrampsChat/GrampsChat.gpr.py:4 GrampsChat/GrampsChat.gpr.py:9
+msgid "GrampsChat"
+msgstr ""
+
+#: GrampsChat/GrampsChat.gpr.py:5
+msgid "AI Chatbot Gramplet (requires connecting to an LLM service)"
+msgstr ""
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:116
 #: GrampsWebSync/grampswebsync.py:209
@@ -15546,11 +15959,6 @@ msgstr "Zusammenführen"
 msgid "Local changes"
 msgstr "Lokale Änderungen"
 
-#: GrampsWebSync/grampswebsync.py:900 GrampsWebSync/grampswebsync.py:905
-#: GrampsWebSync/grampswebsync.py:907
-msgid "Modified"
-msgstr "Verändert"
-
 #: GrampsWebSync/grampswebsync.py:902
 msgid "Remote changes"
 msgstr "Entfernte Änderungen"
@@ -15609,6 +16017,79 @@ msgid_plural "Uploading %s media files"
 msgstr[0] "Hochladen von %s Mediendatei"
 msgstr[1] "Hochladen von %s Mediendateien"
 
+#: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
+msgid "Gram.py Script"
+msgstr ""
+
+#: GrampyScript/GrampyScript.gpr.py:24
+msgid "Run a special Gramps Python script"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:91
+#, fuzzy
+#| msgid "Loaded from file: %s"
+msgid "Load query from a .script file"
+msgstr "Geladen aus Datei: %s"
+
+#: GrampyScript/GrampyScript.py:121
+#, fuzzy
+#| msgid "Save tree as file"
+msgid "Save query to a .script file"
+msgstr "Baum als Datei speichern"
+
+#: GrampyScript/GrampyScript.py:141
+#, fuzzy
+#| msgid "Downloading %s media file"
+#| msgid_plural "Downloading %s media files"
+msgid "Download results as a CSV file"
+msgstr "Herunterladen von %s Mediendatei"
+
+#: GrampyScript/GrampyScript.py:303
+#, fuzzy
+#| msgid "OpenAI"
+msgid "Open..."
+msgstr "OpenAI"
+
+#: GrampyScript/GrampyScript.py:305
+#, fuzzy
+#| msgid "Save images in ..."
+msgid "Save as..."
+msgstr "Bilder speichern in ..."
+
+#: GrampyScript/GrampyScript.py:319
+msgid "Save as CSV"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:320
+#, fuzzy
+#| msgid "Copy link to clipboard"
+msgid "Copy to clipboard"
+msgstr "Verknüpfung in die Zwischenablage kopieren"
+
+#: GrampyScript/GrampyScript.py:395
+#, fuzzy
+#| msgid "Quilt Chart"
+msgid "Chart"
+msgstr "Steppdiagramm"
+
+#: GrampyScript/GrampyScript.py:400
+msgid "Execute <Alt+Enter>"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:402
+msgid "Execute the script"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:416
+#, fuzzy
+#| msgid "Read"
+msgid "Ready..."
+msgstr "Lesen"
+
+#: GrampyScript/GrampyScript.py:1028
+msgid "Gram.py Script Edited Data"
+msgstr ""
+
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
 msgstr "Dunkel (Standard)"
@@ -15624,6 +16105,18 @@ msgstr "Cartoon"
 #: GraphView/avatars.py:63
 msgid "Modern"
 msgstr "Modern"
+
+#: GraphView/avatars.py:65
+msgid "Generic (dark)"
+msgstr ""
+
+#: GraphView/avatars.py:66
+msgid "Generic (gray)"
+msgstr ""
+
+#: GraphView/avatars.py:67
+msgid "Generic (light)"
+msgstr ""
 
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
 #: GraphView/graphview.py:189
@@ -15813,14 +16306,6 @@ msgstr "Lesezeichen für das aktuelles Diagramm"
 #: GraphView/graphview.py:1133
 msgid "Other Bookmarks"
 msgstr "Andere Lesezeichen"
-
-#: GraphView/graphview.py:1164
-msgid "Ancestor generations"
-msgstr "Vorfahrengenerationen"
-
-#: GraphView/graphview.py:1168
-msgid "Descendant generations"
-msgstr "Nachkommengenerationen"
 
 #: GraphView/graphview.py:1179
 msgid "Vertical spacing between generations"
@@ -16608,10 +17093,6 @@ msgstr "Gramps XML importieren und zusammenführen"
 msgid "Missing"
 msgstr "Fehlt"
 
-#: ImportMerge/importmerge.py:94
-msgid "Different"
-msgstr "Unterschiedlich"
-
 #: ImportMerge/importmerge.py:109
 msgid "Delete original"
 msgstr "Original löschen"
@@ -16752,7 +17233,7 @@ msgstr "JSON-Import"
 msgid "This is a JSON import"
 msgstr "Dies ist ein JSON-Import"
 
-#: JSON/JSONImport.py:56
+#: JSON/JSONImport.py:69
 msgid "JSON import"
 msgstr "JSON-Import"
 
@@ -17643,10 +18124,6 @@ msgid "Check media paths and report missing, duplicate and extra files"
 msgstr ""
 "Medienpfade prüfen und fehlende, doppelte und zusätzliche Dateien melden"
 
-#: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
-msgid "Export"
-msgstr "Exportieren"
-
 #: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
 msgid "Export the results to a text file"
 msgstr "Exportiere die Ergebnisse in eine Textdatei"
@@ -18479,10 +18956,6 @@ msgstr "Personenübersicht"
 msgid "Gramplet showing an overview of events for a person"
 msgstr "Gramplet zeigt eine Übersicht der Ereignisse für eine Person"
 
-#: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
-msgid "Overview"
-msgstr "Übersicht"
-
 #: Overview/Overview.gpr.py:45
 msgid "Family Overview"
 msgstr "Familienübersicht"
@@ -18500,47 +18973,53 @@ msgid "Double-click on a row to edit the selected participant."
 msgstr ""
 "Doppelklicke auf eine Zeile, um den ausgewählten Beteiligten zu bearbeiten."
 
-#: PedigreeChart/PedigreeChart.gpr.py:25
+#: PedigreeChart/PedigreeChart.gpr.py:32
 msgid "Pedigree Chart"
 msgstr "Ahnentafeldiagramm"
 
-#: PedigreeChart/PedigreeChart.gpr.py:26
+#: PedigreeChart/PedigreeChart.gpr.py:33
 msgid "Alternate version of the traditional pedigree chart."
 msgstr "Alternative Version der traditionellen Ahnentafel."
 
-#: PedigreeChart/PedigreeChart.py:379
+#: PedigreeChart/PedigreeChart.py:391
 #, python-format
 msgid "Pedigree Chart for %s"
 msgstr "Ahnentafeldiagramm für %s"
 
-#: PedigreeChart/PedigreeChart.py:528
+#: PedigreeChart/PedigreeChart.py:585
 #, python-format
 msgid "Page %d"
 msgstr "Seite %d"
 
-#: PedigreeChart/PedigreeChart.py:640
+#: PedigreeChart/PedigreeChart.py:714
 msgid "Show Mother/Father captions"
 msgstr "Beschriftungen für Mutter/Vater anzeigen"
 
-#: PedigreeChart/PedigreeChart.py:641
+#: PedigreeChart/PedigreeChart.py:715
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr "Zeigee den Titel von Mutter oder Vater neben jedem Vorfahrenfeld an."
 
-#: PedigreeChart/PedigreeChart.py:657
+#: PedigreeChart/PedigreeChart.py:718
 msgid "Show page numbers"
 msgstr "Seitenzahlen anzeigen"
 
-#: PedigreeChart/PedigreeChart.py:658
+#: PedigreeChart/PedigreeChart.py:719
 msgid "Add a footer on every page with the page number and date printed."
 msgstr ""
 "Auf jeder Seite eine Fußzeile mit der Seitenzahl und dem Datum hinzufügen."
 
-#: PedigreeChart/PedigreeChart.py:662
+#: PedigreeChart/PedigreeChart.py:740
 msgid "The basic style used for the title display."
 msgstr "Der für die Titelanzeige verwendete Grundstil."
 
-#: PedigreeChart/PedigreeChart.py:671
-msgid "Style used for labels and captions"
+#: PedigreeChart/PedigreeChart.py:749
+msgid "Style used for names (only for PDF document and PostScript)."
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:758
+#, fuzzy
+#| msgid "Style used for labels and captions"
+msgid "Style used for labels and captions."
 msgstr "Stil für Beschriftungen und Bildunterschriften"
 
 #: PersonEverything/PersonEverything.gpr.py:32
@@ -19959,15 +20438,15 @@ msgstr "Indizes erstellen..."
 msgid "Upgrade completed!"
 msgstr "Aktualisierung abgeschlossen!"
 
-#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:33
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:28
 msgid "PostgreSQL Enhanced"
 msgstr "PostgreSQL erweitert"
 
-#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:34
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:29
 msgid "PostgreSQL _Enhanced Database"
 msgstr "PostgreSQL _Erweiterte Datenbank"
 
-#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:36
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:31
 msgid ""
 "Advanced PostgreSQL backend with JSONB storage, graph database support "
 "(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
@@ -21745,7 +22224,7 @@ msgid "Origin:"
 msgstr "Herkunft:"
 
 #: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
-#: markdown_place_history_formatter.py:59
+#: WebSearch/markdown_place_history_formatter.py:59
 msgid "Note:"
 msgstr "Notiz:"
 
@@ -22312,12 +22791,26 @@ msgstr ""
 "%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:105
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "Directly importing from TMG files is not supportedby the TMG Importer "
+#| "Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that "
+#| "your TMG project was created by:TMG version 5.x or greater.Your "
+#| "file:*.TMG - Version Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
+#| "%(gramps_wiki_import_pjc_direct_url)s"
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer "
-"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
-"TMG project was created by:TMG version 5.x or greater.Your file:*.TMG - "
-"Version Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
+"Directly importing from TMG files is not supported\n"
+"by the TMG Importer Addon.\n"
+"\n"
+"You need to use an backup copy of TMG project(*.sqz)\n"
+"\n"
+"Ensure that your TMG project was created by:\n"
+"TMG version 5.x or greater.\n"
+"\n"
+"Your file:\n"
+"*.TMG - Version Control File for TMG 2.0 to TMG 4.0d\n"
+"\n"
+"Please refer to:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "Der direkte Import aus TMG-Dateien wird vom TMG Importer Zusatzprogramm "
@@ -22327,12 +22820,26 @@ msgstr ""
 "bis TMG 4.0d Siehe: %(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:126
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "Directly importing from TMG files is not supportedby the TMG Importer "
+#| "Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that "
+#| "your TMG project was created by:TMG version 5.x or greater.Your "
+#| "file:*.VER - Version Control File for TMG 1.2 and earlierPlease refer to:"
+#| "%(gramps_wiki_import_pjc_direct_url)s"
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer "
-"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
-"TMG project was created by:TMG version 5.x or greater.Your file:*.VER - "
-"Version Control File for TMG 1.2 and earlierPlease refer to:"
+"Directly importing from TMG files is not supported\n"
+"by the TMG Importer Addon.\n"
+"\n"
+"You need to use an backup copy of TMG project(*.sqz)\n"
+"\n"
+"Ensure that your TMG project was created by:\n"
+"TMG version 5.x or greater.\n"
+"\n"
+"Your file:\n"
+"*.VER - Version Control File for TMG 1.2 and earlier\n"
+"\n"
+"Please refer to:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "Der direkte Import aus TMG-Dateien wird vom TMG Importer -Zusatzprogramm "
@@ -22367,12 +22874,12 @@ msgstr "Datensatzname"
 msgid "_Import TMG Data Set"
 msgstr "TMG-Datensatz _importieren"
 
-#: TMGimporter/libtmg.py:2324 TMGimporter/libtmg.py:2357
-#: TMGimporter/libtmg.py:2439 TMGimporter/libtmg.py:2466
+#: TMGimporter/libtmg.py:2319 TMGimporter/libtmg.py:2352
+#: TMGimporter/libtmg.py:2434 TMGimporter/libtmg.py:2461
 msgid "TMG import failed"
 msgstr "TMG-Import ist fehlgeschlagen"
 
-#: TMGimporter/libtmg.py:2325
+#: TMGimporter/libtmg.py:2320
 msgid ""
 "The current Family Tree is not empty.\n"
 "\n"
@@ -22383,7 +22890,7 @@ msgstr ""
 "Bitte erstelle einen neuen leeren Stammbaum, bevor du eine TMG-"
 "Sicherungsdatei importierst."
 
-#: TMGimporter/libtmg.py:2358
+#: TMGimporter/libtmg.py:2353
 msgid ""
 "The TMG backup file could not be read: PJC version information is missing or "
 "unreadable.\n"
@@ -22397,11 +22904,11 @@ msgstr ""
 "Bitte stelle sicher, dass du eine Sicherung verwendest, die mit TMG 9.02 "
 "oder höher erstellt wurde (PjcVersion >= 11.0)."
 
-#: TMGimporter/libtmg.py:2370
+#: TMGimporter/libtmg.py:2365
 msgid "TMG version not supported"
 msgstr "TMG-Version wird nicht unterstützt"
 
-#: TMGimporter/libtmg.py:2371
+#: TMGimporter/libtmg.py:2366
 #, python-format
 msgid ""
 "This backup was created with an older version of TMG (PjcVersion %(ver)s, "
@@ -22422,7 +22929,7 @@ msgstr ""
 "Siehe: https://gramps-project.org/wiki/index.php/"
 "Addon:TMGimporter#Before_Import_From_TMG_Backup_file"
 
-#: TMGimporter/libtmg.py:2440
+#: TMGimporter/libtmg.py:2435
 msgid ""
 "No datasets were found in this TMG backup file.\n"
 "\n"
@@ -22432,7 +22939,7 @@ msgstr ""
 "\n"
 "Die Sicherung ist möglicherweise beschädigt oder leer."
 
-#: TMGimporter/libtmg.py:2467
+#: TMGimporter/libtmg.py:2462
 #, python-format
 msgid ""
 "%(filename)s does not appear to be a valid TMG backup file.\n"
@@ -23589,11 +24096,11 @@ msgstr "Sammlung von Websites für die USA (erfordert libwebconnect)"
 msgid "US Google"
 msgstr "US Google"
 
-#: WebSearch.gpr.py:34 WebSearch.gpr.py:47
+#: WebSearch/WebSearch.gpr.py:34 WebSearch/WebSearch.gpr.py:47
 msgid "WebSearch"
 msgstr "WebSuche"
 
-#: WebSearch.gpr.py:36
+#: WebSearch/WebSearch.gpr.py:36
 msgid ""
 "Customized queries for online services based on the active Person, Place, "
 "Family, or Source record"
@@ -23601,86 +24108,86 @@ msgstr ""
 "Benutzerdefinierte Abfragen für Online-Dienste auf der Grundlage des aktiven "
 "Personen-, Orts-, Familien- oder Quellendatensatzes"
 
-#: WebSearch.py:468
+#: WebSearch/WebSearch.py:468
 msgid "Save Coordinates to the Place"
 msgstr "Koordinaten zum Ort speichern"
 
-#: WebSearch.py:609
+#: WebSearch/WebSearch.py:609
 msgid "AI provider is disabled"
 msgstr "Der KI-Anbieter ist deaktiviert"
 
-#: WebSearch.py:613
+#: WebSearch/WebSearch.py:613
 msgid "No AI API key provided"
 msgstr "Kein KI-API-Schlüssel angegeben"
 
-#: WebSearch.py:619
+#: WebSearch/WebSearch.py:619
 msgid "AI-generated historical place data is currently disabled"
 msgstr "KI-generierte historische Ortsdaten sind derzeit deaktiviert"
 
-#: WebSearch.py:629
+#: WebSearch/WebSearch.py:629
 msgid "AI provider is unknown. Please check your AI provider settings."
 msgstr ""
 "Der KI-Anbieter ist unbekannt. Bitte überprüfe deine KI-"
 "Anbietereinstellungen."
 
-#: WebSearch.py:649
+#: WebSearch/WebSearch.py:649
 msgid "⏳ Generating historical place data, please wait..."
 msgstr "⏳ Historische Ortsdaten werden generiert, bitte warten..."
 
-#: WebSearch.py:1521
+#: WebSearch/WebSearch.py:1520
 msgid "Keys"
 msgstr "Schlüssel"
 
-#: WebSearch.py:1523
+#: WebSearch/WebSearch.py:1522
 msgid "Website URL"
 msgstr "Website-URL"
 
-#: WebSearch.py:1526
+#: WebSearch/WebSearch.py:1525
 msgid "Add link to note"
 msgstr "Verknüpfung zur Notiz hinzufügen"
 
-#: WebSearch.py:1528
+#: WebSearch/WebSearch.py:1527
 msgid "Add link to attribute"
 msgstr "Verknüpfung zum Attribut hinzufügen"
 
-#: WebSearch.py:1530
+#: WebSearch/WebSearch.py:1529
 msgid "Show QR-code"
 msgstr "QR-Code anzeigen"
 
-#: WebSearch.py:1532
+#: WebSearch/WebSearch.py:1531
 msgid "Copy link to clipboard"
 msgstr "Verknüpfung in die Zwischenablage kopieren"
 
-#: WebSearch.py:1535
+#: WebSearch/WebSearch.py:1534
 msgid "Hide link for selected item"
 msgstr "Verknüpfung für ausgewähltes Element ausblenden"
 
-#: WebSearch.py:1538
+#: WebSearch/WebSearch.py:1537
 msgid "Hide link for all items"
 msgstr "Verknüpfung für alle Elemente ausblenden"
 
-#: WebSearch.py:1542
+#: WebSearch/WebSearch.py:1541
 msgid "Edit Attribute with the Link"
 msgstr "Attribut mit dem Link bearbeiten"
 
-#: WebSearch.py:1546
+#: WebSearch/WebSearch.py:1545
 msgid "Edit Note with the Link"
 msgstr "Notiz mit dem Link bearbeiten"
 
-#: WebSearch.py:1549
+#: WebSearch/WebSearch.py:1548
 msgid "🔍 AI Suggestions"
 msgstr "🔍 KI-Vorschläge"
 
-#: WebSearch.py:1769
+#: WebSearch/WebSearch.py:1767
 msgid "Attribute no longer exists. The extra icon is removed"
 msgstr ""
 "Das Attribut existiert nicht mehr. Das zusätzliche Symbol wird entfernt"
 
-#: WebSearch.py:1815
+#: WebSearch/WebSearch.py:1813
 msgid "Note no longer exists. The extra icon is removed"
 msgstr "Die Notiz existiert nicht mehr. Das zusätzliche Symbol wird entfernt"
 
-#: WebSearch.py:1840
+#: WebSearch/WebSearch.py:1838
 #, python-brace-format
 msgid ""
 "📌 This '{title}' web link was archived for future reference by the "
@@ -23699,46 +24206,557 @@ msgstr ""
 "Du kannst diesen Link verwenden, um die Quelle zu besuchen und die "
 "Informationen zu dieser Entität zu überprüfen."
 
-#: WebSearch.py:1926
+#: WebSearch/WebSearch.py:1924
 #, python-format
 msgid "Note #%(id)s has been successfully added"
 msgstr "Notiz #%(id)s wurde erfolgreich hinzugefügt"
 
-#: WebSearch.py:1929
+#: WebSearch/WebSearch.py:1927
 msgid "Error creating note"
 msgstr "Fehler beim Erstellen der Notiz"
 
-#: WebSearch.py:1949
+#: WebSearch/WebSearch.py:1947
 msgid "URL is copied to the Clipboard"
 msgstr "URL wird in die Zwischenablage kopiert"
 
-#: WebSearch.py:2068
+#: WebSearch/WebSearch.py:2066
 msgid "WebSearch Link"
 msgstr "WebSuche Link"
 
-#: WebSearch.py:2110
+#: WebSearch/WebSearch.py:2108
 msgid "Attribute has been successfully added"
 msgstr "Attribut wurde erfolgreich hinzugefügt"
 
-#: WebSearch.py:2142
+#: WebSearch/WebSearch.py:2140
 #, python-brace-format
 msgid "Title: {title}"
 msgstr "Titel: {title}"
 
-#: WebSearch.py:2146
+#: WebSearch/WebSearch.py:2144
 #, python-brace-format
 msgid "Replaced: {keys}"
 msgstr "Ersetzt: {keys}"
 
-#: WebSearch.py:2149
+#: WebSearch/WebSearch.py:2147
 #, python-brace-format
 msgid "Empty: {keys}"
 msgstr "Leer: {keys}"
 
-#: WebSearch.py:2151
+#: WebSearch/WebSearch.py:2149
 #, python-brace-format
 msgid "Comment: {comment}"
 msgstr "Kommentar: {comment}"
+
+#: WebSearch/activity_row_generator.py:110
+#, python-format
+msgid "Visited: %s"
+msgstr "Besucht: %s"
+
+#: WebSearch/activity_row_generator.py:114
+#: WebSearch/activity_row_generator.py:129
+#, python-format
+msgid "Link: %s"
+msgstr "Link: %s"
+
+#: WebSearch/activity_row_generator.py:116
+#, python-format
+msgid "Attribute: %s"
+msgstr "Attribut: %s"
+
+#: WebSearch/activity_row_generator.py:118
+#, python-format
+msgid "Value: %s"
+msgstr "Wert: %s"
+
+#: WebSearch/activity_row_generator.py:123
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "Geladen aus Datei: %s"
+
+#: WebSearch/activity_row_generator.py:126
+#, python-format
+msgid "Domain: %s"
+msgstr "Domäne: %s"
+
+#: WebSearch/activity_row_generator.py:131
+#, python-format
+msgid "Object: %s"
+msgstr "Objekt: %s"
+
+#: WebSearch/activity_row_generator.py:135
+#, python-format
+msgid "Pattern: %s"
+msgstr "Muster: %s"
+
+#: WebSearch/activity_row_generator.py:138
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "Objekt-Gramps-ID: %s"
+
+#: WebSearch/activity_row_generator.py:142
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s: %s → %s: %s"
+
+#: WebSearch/activity_row_generator.py:152
+msgid "Link visited"
+msgstr "Link besucht"
+
+#: WebSearch/activity_row_generator.py:153
+msgid "Link saved to Note"
+msgstr "Link in Notiz gespeichert"
+
+#: WebSearch/activity_row_generator.py:154
+msgid "Link saved to Attribute"
+msgstr "Link in Attribut gespeichert"
+
+#: WebSearch/activity_row_generator.py:155
+msgid "Place history loaded"
+msgstr "Ortsgeschichte geladen"
+
+#: WebSearch/activity_row_generator.py:156
+msgid "Domain skipped"
+msgstr "Domäne übersprungen"
+
+#: WebSearch/activity_row_generator.py:157
+msgid "Link hidden for object"
+msgstr "Link für Objekt ausgeblendet"
+
+#: WebSearch/activity_row_generator.py:158
+msgid "Link hidden for all objects"
+msgstr "Link für alle Objekte ausgeblendet"
+
+#: WebSearch/activity_row_generator.py:159
+msgid "Attribute updated"
+msgstr "Attribut aktualisiert"
+
+#: WebSearch/activity_row_generator.py:160
+msgid "Note updated"
+msgstr "Notiz aktualisiert"
+
+#: WebSearch/constants.py:390
+msgid "Column - Icons"
+msgstr "Spalte - Symbole"
+
+#: WebSearch/constants.py:391
+msgid "Column - Source Types (flags)"
+msgstr "Spalte - Quellentypen (Kennzeichen)"
+
+#: WebSearch/constants.py:392
+msgid "Column - Keys"
+msgstr "Spalte - Schlüssel"
+
+#: WebSearch/constants.py:393
+msgid "Column - Title"
+msgstr "Spalte - Titel"
+
+#: WebSearch/constants.py:394
+msgid "Column - Website Url"
+msgstr "Spalte - Website-Url"
+
+#: WebSearch/constants.py:395
+msgid "Column - Comment"
+msgstr "Spalte - Anmerkung"
+
+#: WebSearch/constants.py:424
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "Symbol - Besuchte URLs (Häkchen)"
+
+#: WebSearch/constants.py:425
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "Symbol - Gespeicherte URLs (Diskette)"
+
+#: WebSearch/constants.py:426
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "Symbol - URLs, die mit UID-Attributen verknüpft sind (UID- Ausweis)"
+
+#: WebSearch/constants.py:427
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "Symbol - URLs aus regionalen CSV-Dateien ( Kennzeichen)"
+
+#: WebSearch/constants.py:428
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "Symbol - URLs aus statischen CSV-Dateien (roter Stift)"
+
+#: WebSearch/constants.py:429
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "Symbol - URLs aus gängigen CSV-Dateien (Erde)"
+
+#: WebSearch/constants.py:430
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "Symbol - URLs aus Kreuz-CSV-Dateien (Shuffle-Pfeile)"
+
+#: WebSearch/constants.py:431
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr ""
+"Symbol - URLs aus dem benutzerdefinierten Benutzerverzeichnis "
+"(Tabellenkalkulationssymbol)"
+
+#: WebSearch/constants.py:432
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Symbol - URLs auf der Registerkarte „Attribute“ (Symbol „A“)"
+
+#: WebSearch/constants.py:433
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Symbol - URLs aus der Registerkarte „Internet“ (Symbol „I“)"
+
+#: WebSearch/constants.py:434
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Symbol - URLs aus der Registerkarte „Notizen“ („N“-Symbol)"
+
+#: WebSearch/info_panel.py:108
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 Über WebSearch"
+
+#: WebSearch/info_panel.py:111
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"WebSearch ist ein Gramplet für Gramps, das dir hilft, Websites zu "
+"genealogischen Themen zu durchsuchen."
+
+#: WebSearch/info_panel.py:117
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"Es unterstützt CSV-basierte Linkvorlagen, KI-gestützte Website-Erkennung und "
+"direkte Integration mit Notizen und Attributen."
+
+#: WebSearch/info_panel.py:125
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Systeminformationen"
+
+#: WebSearch/info_panel.py:128
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Fehlt:** `qrcode`"
+
+#: WebSearch/info_panel.py:130
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Diese Python-Bibliothek ist auf deinem System nicht verfügbar."
+
+#: WebSearch/info_panel.py:133
+msgid "Without it, QR code generation will not work."
+msgstr "Ohne diese Funktion funktioniert die QR-Code-Generierung nicht."
+
+#: WebSearch/info_panel.py:136
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Normalerweise installiert mit: `pip install qrcode[pil]`"
+
+#: WebSearch/info_panel.py:140 WebSearch/info_panel.py:162
+#: WebSearch/info_panel.py:181
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Hinweis: Bei einigen Betriebssystemen oder Umgebungen sind möglicherweise "
+"alternative Installationsmethoden erforderlich.*"
+
+#: WebSearch/info_panel.py:147
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **Fehlt:** `openai`"
+
+#: WebSearch/info_panel.py:149
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr ""
+"ℹ️ Diese Bibliothek ist für den Zugriff auf OpenAI-basierte Funktionen "
+"erforderlich."
+
+#: WebSearch/info_panel.py:153
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Ohne sie werden die KI-generierten Seitenvorschläge und Ortegeschichte "
+"deaktiviert."
+
+#: WebSearch/info_panel.py:158
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 Normalerweise installiert mit: `pip install openai`"
+
+#: WebSearch/info_panel.py:169
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Fehlt:** `requests`"
+
+#: WebSearch/info_panel.py:171
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Diese Bibliothek wird für die Kommunikation mit Web-APIs verwendet."
+
+#: WebSearch/info_panel.py:174
+msgid "Without it, external data sources may not be accessible."
+msgstr ""
+"Ohne diese Funktion sind externe Datenquellen möglicherweise nicht "
+"zugänglich."
+
+#: WebSearch/info_panel.py:177
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 Normalerweise installiert mit: `pip install requests`"
+
+#: WebSearch/info_panel.py:188
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Speicherorte der Datendateien"
+
+#: WebSearch/info_panel.py:191
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"Nachfolgend findest du die Pfade zu den System- und benutzerdefinierten "
+"Datendateien, die von WebSearch verwendet werden."
+
+#: WebSearch/info_panel.py:195
+msgid "#### CSV File Paths"
+msgstr "#### CSV-Dateipfade"
+
+#: WebSearch/info_panel.py:197
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr "- **Systempfad:** `{dir|%s}` – enthält die integrierten CSV-Dateien"
+
+#: WebSearch/info_panel.py:201
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **Benutzerdefinierter Pfad:** `{dir|%s}` – für benutzerdefinierte CSV-"
+"Dateien"
+
+#: WebSearch/info_panel.py:205
+msgid "#### JSON File Paths"
+msgstr "#### JSON-Dateipfade"
+
+#: WebSearch/info_panel.py:208
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **Systempfad:** `{dir|%s}` – enthält die integrierte Datei "
+"attribute_mapping.json"
+
+#: WebSearch/info_panel.py:214
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **Benutzerdefinierter Pfad:** `{dir|%s}` – für benutzerdefinierte "
+"attribute_mapping.json-Datei"
+
+#: WebSearch/info_panel.py:221
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *Tipp: Klicke auf einen beliebigen Pfad oben, um ihn in deiner "
+"Dateiverwaltung zu öffnen.*"
+
+#: WebSearch/info_panel.py:224
+msgid "📖 View detailed usage in: "
+msgstr "📖 Detaillierte Verwendung anzeigen in: "
+
+#: WebSearch/info_panel.py:233
+msgid "## 💬 Support"
+msgstr "## 💬 Unterstützung"
+
+#: WebSearch/info_panel.py:234
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 Erstellt und gepflegt von Yurii Liubymyi"
+
+#: WebSearch/info_panel.py:237
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 Wenn du Hilfe oder Feedback brauchst, kannst du gerne `@Urchello` im "
+"Gramps-Forum erwähnen:"
+
+#: WebSearch/info_panel.py:241
+msgid "Gramps Forum (Discourse)"
+msgstr ""
+
+#: WebSearch/info_panel.py:245
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr "✅ Fehlerberichte und Funktionsanfragen sind völlig **kostenlos**."
+
+#: WebSearch/info_panel.py:249
+#, fuzzy
+#| msgid "Issues"
+msgid "GitHub Issues"
+msgstr "Probleme"
+
+#: WebSearch/info_panel.py:252
+msgid "Gramps Bug Tracker"
+msgstr ""
+
+#: WebSearch/info_panel.py:255
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 WebSearch Gramplet-Version: `%s`"
+
+#: WebSearch/internet_links_loader.py:70 WebSearch/internet_links_loader.py:71
+msgid "No title"
+msgstr "Kein Titel"
+
+#: WebSearch/markdown_place_history_formatter.py:52
+msgid "No data available."
+msgstr "Keine Daten verfügbar."
+
+#: WebSearch/markdown_place_history_formatter.py:57
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "HISTORISCHE VERWALTUNGSTEILUNGEN VON"
+
+#: WebSearch/markdown_place_history_formatter.py:58
+msgid "Foundation date:"
+msgstr "Gründungsdatum:"
+
+#: WebSearch/markdown_place_history_formatter.py:60
+msgid "Coordinates:"
+msgstr "Koordinaten:"
+
+#: WebSearch/markdown_place_history_formatter.py:61
+msgid "Administrative history"
+msgstr "Verwaltungsgeschichte"
+
+#: WebSearch/markdown_place_history_formatter.py:62
+msgid "Data provided to AI:"
+msgstr "An die KI übermittelte Daten:"
+
+#: WebSearch/markdown_place_history_formatter.py:64
+msgid "Full hierarchy"
+msgstr "Vollständige Hierarchie"
+
+#: WebSearch/markdown_place_history_formatter.py:68
+msgid "Place Type:"
+msgstr "Ortstart:"
+
+#: WebSearch/markdown_place_history_formatter.py:69
+msgid "Last Retrieved At:"
+msgstr "Zuletzt abgerufen am:"
+
+#: WebSearch/note_links_loader.py:69
+msgid "Note Link (parsed)"
+msgstr "Notizverknüpfung (analysiert)"
+
+#: WebSearch/note_links_loader.py:120
+msgid "Note Link (internal)"
+msgstr "Notiz-Link (intern)"
+
+#: WebSearch/note_links_loader.py:123
+msgid "Note Link (external)"
+msgstr "Notiz-Link (extern)"
+
+#: WebSearch/qr_window.py:76
+msgid "QR-code"
+msgstr "QR-Code"
+
+#: WebSearch/qr_window.py:107 WebSearch/qr_window.py:110
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Fehlende Abhängigkeit „qrcode“"
+
+#: WebSearch/qr_window.py:121
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Fehler beim Generieren des QR-Codes:\n"
+"Ursprünglicher Fehler: „{}“"
+
+#: WebSearch/settings_ui_manager.py:112
+msgid "Middle Name Handling"
+msgstr "Handhabung des mittleren Namens"
+
+#: WebSearch/settings_ui_manager.py:117
+msgid "Leave alone"
+msgstr "In Ruhe lassen"
+
+#: WebSearch/settings_ui_manager.py:118
+msgid "Separate"
+msgstr "Trennen Sie"
+
+#: WebSearch/settings_ui_manager.py:128
+msgid "URL Compactness Level"
+msgstr "URL-Kompaktheitsstufe"
+
+#: WebSearch/settings_ui_manager.py:134
+msgid "Shortest - No Prefix, No Keys"
+msgstr "Kürzeste - kein Präfix, keine Schlüssel"
+
+#: WebSearch/settings_ui_manager.py:137
+msgid "Compact - No Prefix, Keys Without Attributes"
+msgstr "Kompakt - Kein Präfix, Schlüssel ohne Attribute"
+
+#: WebSearch/settings_ui_manager.py:140
+msgid "Compact - No Prefix, Keys With Attributes"
+msgstr "Kompakt - kein Präfix, Schlüssel mit Attributen"
+
+#: WebSearch/settings_ui_manager.py:143
+msgid "Long - Without Prefix on the Left"
+msgstr "Lang - ohne Präfix auf der linken Seite"
+
+#: WebSearch/settings_ui_manager.py:150
+msgid "URL Prefix Replacement"
+msgstr "URL-Präfix-Ersetzung"
+
+#: WebSearch/settings_ui_manager.py:157
+msgid "AI Provider"
+msgstr "KI-Anbieter"
+
+#: WebSearch/settings_ui_manager.py:162
+msgid "(Disabled)"
+msgstr "(Deaktiviert)"
+
+#: WebSearch/settings_ui_manager.py:163
+msgid "OpenAI"
+msgstr "OpenAI"
+
+#: WebSearch/settings_ui_manager.py:164
+msgid "Mistral AI"
+msgstr "Mistral AI"
+
+#: WebSearch/settings_ui_manager.py:171
+msgid "OpenAI API Key"
+msgstr "OpenAI API-Schlüssel"
+
+#: WebSearch/settings_ui_manager.py:176
+msgid "OpenAI Model"
+msgstr "OpenAI-Modell"
+
+#: WebSearch/settings_ui_manager.py:181
+msgid "Mistral API Key"
+msgstr "Mistral API Schlüssel"
+
+#: WebSearch/settings_ui_manager.py:186
+msgid "Mistral Model"
+msgstr "Mistral Modell"
+
+#: WebSearch/settings_ui_manager.py:191
+msgid "Show Links From the 'Attributes' tab"
+msgstr "Verknüpfungen auf der Registerkarte „Attribute“ anzeigen"
+
+#: WebSearch/settings_ui_manager.py:196
+msgid "Show Links From the 'Internet' tab"
+msgstr "Verknüpfungen aus der Registerkarte „Internet“ anzeigen"
+
+#: WebSearch/settings_ui_manager.py:201
+msgid "Show Links From the Notes"
+msgstr "Verknüpfungen aus den Notizen anzeigen"
+
+#: WebSearch/settings_ui_manager.py:209
+msgid "Enable AI-generated historical place data"
+msgstr "Aktiviere KI-generierte historische Ortsdaten"
+
+#: WebSearch/settings_ui_manager.py:215
+msgid "Custom country code for AI notes (optional)"
+msgstr "Benutzerdefinierter Ländercode für KI-Notizen (optional)"
+
+#: WebSearch/settings_ui_manager.py:244
+msgid "Enable CSV Files"
+msgstr "CSV-Dateien ermöglichen"
+
+#: WebSearch/settings_ui_manager.py:251
+msgid "Display Columns"
+msgstr "Spalten anzeigen"
+
+#: WebSearch/settings_ui_manager.py:265
+msgid "Display Icons"
+msgstr "Symbole anzeigen"
 
 #: WordleGramplet/WordleGramplet.gpr.py:4
 #: WordleGramplet/WordleGramplet.gpr.py:10
@@ -23761,337 +24779,6 @@ msgstr "Anzahl der Schriftgrößen"
 msgid "Select filter to restrict list"
 msgstr "Filter auswählen, um Liste einzuschränken"
 
-#: activity_row_generator.py:110
-#, python-format
-msgid "Visited: %s"
-msgstr "Besucht: %s"
-
-#: activity_row_generator.py:114 activity_row_generator.py:129
-#, python-format
-msgid "Link: %s"
-msgstr "Link: %s"
-
-#: activity_row_generator.py:116
-#, python-format
-msgid "Attribute: %s"
-msgstr "Attribut: %s"
-
-#: activity_row_generator.py:118
-#, python-format
-msgid "Value: %s"
-msgstr "Wert: %s"
-
-#: activity_row_generator.py:123
-#, python-format
-msgid "Loaded from file: %s"
-msgstr "Geladen aus Datei: %s"
-
-#: activity_row_generator.py:126
-#, python-format
-msgid "Domain: %s"
-msgstr "Domäne: %s"
-
-#: activity_row_generator.py:131
-#, python-format
-msgid "Object: %s"
-msgstr "Objekt: %s"
-
-#: activity_row_generator.py:135
-#, python-format
-msgid "Pattern: %s"
-msgstr "Muster: %s"
-
-#: activity_row_generator.py:138
-#, python-format
-msgid "Object Gramps ID: %s"
-msgstr "Objekt-Gramps-ID: %s"
-
-#: activity_row_generator.py:142
-#, python-format
-msgid "%s: %s → %s: %s"
-msgstr "%s: %s → %s: %s"
-
-#: activity_row_generator.py:152
-msgid "Link visited"
-msgstr "Link besucht"
-
-#: activity_row_generator.py:153
-msgid "Link saved to Note"
-msgstr "Link in Notiz gespeichert"
-
-#: activity_row_generator.py:154
-msgid "Link saved to Attribute"
-msgstr "Link in Attribut gespeichert"
-
-#: activity_row_generator.py:155
-msgid "Place history loaded"
-msgstr "Ortsgeschichte geladen"
-
-#: activity_row_generator.py:156
-msgid "Domain skipped"
-msgstr "Domäne übersprungen"
-
-#: activity_row_generator.py:157
-msgid "Link hidden for object"
-msgstr "Link für Objekt ausgeblendet"
-
-#: activity_row_generator.py:158
-msgid "Link hidden for all objects"
-msgstr "Link für alle Objekte ausgeblendet"
-
-#: activity_row_generator.py:159
-msgid "Attribute updated"
-msgstr "Attribut aktualisiert"
-
-#: activity_row_generator.py:160
-msgid "Note updated"
-msgstr "Notiz aktualisiert"
-
-#: constants.py:390
-msgid "Column - Icons"
-msgstr "Spalte - Symbole"
-
-#: constants.py:391
-msgid "Column - Source Types (flags)"
-msgstr "Spalte - Quellentypen (Kennzeichen)"
-
-#: constants.py:392
-msgid "Column - Keys"
-msgstr "Spalte - Schlüssel"
-
-#: constants.py:393
-msgid "Column - Title"
-msgstr "Spalte - Titel"
-
-#: constants.py:394
-msgid "Column - Website Url"
-msgstr "Spalte - Website-Url"
-
-#: constants.py:395
-msgid "Column - Comment"
-msgstr "Spalte - Anmerkung"
-
-#: constants.py:424
-msgid "Icon - Visited URLs (checkmark)"
-msgstr "Symbol - Besuchte URLs (Häkchen)"
-
-#: constants.py:425
-msgid "Icon - Saved URLs (floppy disk)"
-msgstr "Symbol - Gespeicherte URLs (Diskette)"
-
-#: constants.py:426
-msgid "Icon - URLs linked to UID attributes (UID badge)"
-msgstr "Symbol - URLs, die mit UID-Attributen verknüpft sind (UID- Ausweis)"
-
-#: constants.py:427
-msgid "Icon - URLs from regional CSV files (flag)"
-msgstr "Symbol - URLs aus regionalen CSV-Dateien ( Kennzeichen)"
-
-#: constants.py:428
-msgid "Icon - URLs from static CSV files (red pin)"
-msgstr "Symbol - URLs aus statischen CSV-Dateien (roter Stift)"
-
-#: constants.py:429
-msgid "Icon - URLs from common CSV files (earth)"
-msgstr "Symbol - URLs aus gängigen CSV-Dateien (Erde)"
-
-#: constants.py:430
-msgid "Icon - URLs from cross CSV files (shuffle arrows)"
-msgstr "Symbol - URLs aus Kreuz-CSV-Dateien (Shuffle-Pfeile)"
-
-#: constants.py:431
-msgid "Icon - URLs from custom user directory (spreadsheet icon)"
-msgstr ""
-"Symbol - URLs aus dem benutzerdefinierten Benutzerverzeichnis "
-"(Tabellenkalkulationssymbol)"
-
-#: constants.py:432
-msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr "Symbol - URLs auf der Registerkarte „Attribute“ (Symbol „A“)"
-
-#: constants.py:433
-msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr "Symbol - URLs aus der Registerkarte „Internet“ (Symbol „I“)"
-
-#: constants.py:434
-msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr "Symbol - URLs aus der Registerkarte „Notizen“ („N“-Symbol)"
-
-#: info_panel.py:108
-msgid "## 🧩 About WebSearch"
-msgstr "## 🧩 Über WebSearch"
-
-#: info_panel.py:111
-msgid ""
-"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
-"websites."
-msgstr ""
-"WebSearch ist ein Gramplet für Gramps, das dir hilft, Websites zu "
-"genealogischen Themen zu durchsuchen."
-
-#: info_panel.py:117
-msgid ""
-"It supports CSV-based link templates, AI-assisted site discovery, and direct "
-"integration with notes and attributes."
-msgstr ""
-"Es unterstützt CSV-basierte Linkvorlagen, KI-gestützte Website-Erkennung und "
-"direkte Integration mit Notizen und Attributen."
-
-#: info_panel.py:125
-msgid "## ⚙️ System Information"
-msgstr "## ⚙️ Systeminformationen"
-
-#: info_panel.py:128
-msgid "🔻 **Missing:** `qrcode`"
-msgstr "🔻 **Fehlt:** `qrcode`"
-
-#: info_panel.py:130
-msgid "ℹ️ This Python library is not available in your system."
-msgstr "ℹ️ Diese Python-Bibliothek ist auf deinem System nicht verfügbar."
-
-#: info_panel.py:133
-msgid "Without it, QR code generation will not work."
-msgstr "Ohne diese Funktion funktioniert die QR-Code-Generierung nicht."
-
-#: info_panel.py:136
-msgid "💡 Usually installed with: `pip install qrcode[pil]`"
-msgstr "💡 Normalerweise installiert mit: `pip install qrcode[pil]`"
-
-#: info_panel.py:140 info_panel.py:162 info_panel.py:181
-msgid ""
-"*Note: Some operating systems or environments may require alternative "
-"installation methods.*"
-msgstr ""
-"*Hinweis: Bei einigen Betriebssystemen oder Umgebungen sind möglicherweise "
-"alternative Installationsmethoden erforderlich.*"
-
-#: info_panel.py:147
-msgid "🔻 **Missing:** `openai`"
-msgstr "🔻 **Fehlt:** `openai`"
-
-#: info_panel.py:149
-msgid "ℹ️ This library is required for accessing OpenAI-based features."
-msgstr ""
-"ℹ️ Diese Bibliothek ist für den Zugriff auf OpenAI-basierte Funktionen "
-"erforderlich."
-
-#: info_panel.py:153
-msgid ""
-"Without it, AI-generated site suggestions and place history will be disabled."
-msgstr ""
-"Ohne sie werden die KI-generierten Seitenvorschläge und Ortegeschichte "
-"deaktiviert."
-
-#: info_panel.py:158
-msgid "💡 Usually installed with: `pip install openai`"
-msgstr "💡 Normalerweise installiert mit: `pip install openai`"
-
-#: info_panel.py:169
-msgid "🔻 **Missing:** `requests`"
-msgstr "🔻 **Fehlt:** `requests`"
-
-#: info_panel.py:171
-msgid "ℹ️ This library is used to communicate with web APIs."
-msgstr "ℹ️ Diese Bibliothek wird für die Kommunikation mit Web-APIs verwendet."
-
-#: info_panel.py:174
-msgid "Without it, external data sources may not be accessible."
-msgstr ""
-"Ohne diese Funktion sind externe Datenquellen möglicherweise nicht "
-"zugänglich."
-
-#: info_panel.py:177
-msgid "💡 Usually installed with: `pip install requests`"
-msgstr "💡 Normalerweise installiert mit: `pip install requests`"
-
-#: info_panel.py:188
-msgid "## 📂 Data File Locations"
-msgstr "## 📂 Speicherorte der Datendateien"
-
-#: info_panel.py:191
-msgid ""
-"Below are the paths to system and user-defined data files used by WebSearch."
-msgstr ""
-"Nachfolgend findest du die Pfade zu den System- und benutzerdefinierten "
-"Datendateien, die von WebSearch verwendet werden."
-
-#: info_panel.py:195
-msgid "#### CSV File Paths"
-msgstr "#### CSV-Dateipfade"
-
-#: info_panel.py:197
-#, python-format
-msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
-msgstr "- **Systempfad:** `{dir|%s}` – enthält die integrierten CSV-Dateien"
-
-#: info_panel.py:201
-#, python-format
-msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
-msgstr ""
-"- **Benutzerdefinierter Pfad:** `{dir|%s}` – für benutzerdefinierte CSV-"
-"Dateien"
-
-#: info_panel.py:205
-msgid "#### JSON File Paths"
-msgstr "#### JSON-Dateipfade"
-
-#: info_panel.py:208
-#, python-format
-msgid ""
-"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
-"file"
-msgstr ""
-"- **Systempfad:** `{dir|%s}` – enthält die integrierte Datei "
-"attribute_mapping.json"
-
-#: info_panel.py:214
-#, python-format
-msgid ""
-"- **User-defined path:** `{dir|%s}` – for custom user-defined "
-"attribute_mapping.json file"
-msgstr ""
-"- **Benutzerdefinierter Pfad:** `{dir|%s}` – für benutzerdefinierte "
-"attribute_mapping.json-Datei"
-
-#: info_panel.py:221
-msgid "  💡 *Tip: click any path above to open it in your file manager.*"
-msgstr ""
-"  💡 *Tipp: Klicke auf einen beliebigen Pfad oben, um ihn in deiner "
-"Dateiverwaltung zu öffnen.*"
-
-#: info_panel.py:224
-msgid "📖 View detailed usage in: "
-msgstr "📖 Detaillierte Verwendung anzeigen in: "
-
-#: info_panel.py:233
-msgid "## 💬 Support"
-msgstr "## 💬 Unterstützung"
-
-#: info_panel.py:234
-msgid "👤 Created and maintained by Yurii Liubymyi"
-msgstr "👤 Erstellt und gepflegt von Yurii Liubymyi"
-
-#: info_panel.py:237
-msgid ""
-"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
-"forum:"
-msgstr ""
-"💬 Wenn du Hilfe oder Feedback brauchst, kannst du gerne `@Urchello` im "
-"Gramps-Forum erwähnen:"
-
-#: info_panel.py:245
-msgid "✅ Bug reports and feature requests are completely **free of charge**."
-msgstr "✅ Fehlerberichte und Funktionsanfragen sind völlig **kostenlos**."
-
-#: info_panel.py:255
-#, python-format
-msgid "🧩 WebSearch Gramplet version: `%s`"
-msgstr "🧩 WebSearch Gramplet-Version: `%s`"
-
-#: internet_links_loader.py:70 internet_links_loader.py:71
-msgid "No title"
-msgstr "Kein Titel"
-
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
 msgstr ""
@@ -24110,7 +24797,7 @@ msgstr "libaccess Person bearbeiten"
 msgid "Library for web site collections"
 msgstr "Bibliothek für Website-Sammlungen"
 
-#: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
+#: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:20
 msgid "etree"
 msgstr "etree"
 
@@ -24118,65 +24805,72 @@ msgstr "etree"
 msgid "Gramplet for testing etree with Gramps XML"
 msgstr "Gramplet zum Testen von etree mit Gramps-XML"
 
-#: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
+#: lxml/etreeGramplet.py:83 lxml/lxmlGramplet.py:115
 msgid "Invalid timestamp"
 msgstr "Ungültiger Zeitstempel"
 
-#: lxml/etreeGramplet.py:139
-msgid "No file parsed..."
-msgstr "Keine Datei analysiert..."
+#: lxml/etreeGramplet.py:130 lxml/lxmlGramplet.py:173
+msgid ""
+"Select a Gramps XML file and\n"
+" click on the Run button."
+msgstr ""
 
-#: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
-msgid "Number of editions back"
+#: lxml/etreeGramplet.py:155 lxml/lxmlGramplet.py:197
+msgid "No file loaded..."
+msgstr "Keine Datei geladen..."
+
+#: lxml/etreeGramplet.py:203 lxml/etreeGramplet.py:209
+#, fuzzy
+#| msgid "Number of editions back"
+msgid "Number of additions and modifications back"
 msgstr "Anzahl der zurückliegenden Ausgaben"
 
-#: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
-#, python-format
-msgid "Please fix space on \"%s\""
-msgstr "Bitte korrigiere das Leerzeichen in „%s“"
+#: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
+#, fuzzy
+#| msgid "No source information found"
+msgid "Print more informations on console"
+msgstr "Keine Quelleninformation gefunden"
 
-#: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
-msgid "Space character on filename"
-msgstr "Leerzeichen im Dateinamen"
-
-#: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
-msgid "Sorry, no support for your OS yet!"
-msgstr "Entschuldigung, noch keine Unterstützung für dein Betriebssystem!"
-
-#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
+#: lxml/etreeGramplet.py:254
 #, python-format
 msgid "Cannot uncompress \"%s\""
 msgstr "Dekomprimierung von „%s“ nicht möglich"
 
-#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
+#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:334
 msgid "Is it a compressed .gramps?"
 msgstr "Ist es eine komprimierte .gramps?"
 
-#: lxml/etreeGramplet.py:256 lxml/etreeGramplet.py:263 lxml/lxmlGramplet.py:278
-#: lxml/lxmlGramplet.py:286
-#, python-format
-msgid ""
-"From:\n"
-" \"%(file1)s\"\n"
-" to:\n"
-" \"%(file2)s\".\n"
-msgstr ""
-"Von:\n"
-" „%(file1)s”\n"
-" nach:\n"
-" „%(file2)s”.\n"
-
-#: lxml/etreeGramplet.py:261 lxml/lxmlGramplet.py:283
+#: lxml/etreeGramplet.py:265
 #, python-format
 msgid "Cannot copy \"%s\""
 msgstr "Kann „%s” nicht kopieren"
 
-#: lxml/etreeGramplet.py:418
+#: lxml/etreeGramplet.py:265 lxml/lxmlGramplet.py:348
+#, fuzzy
+#| msgid "Is it a compressed .gramps?"
+msgid "Is it a .gramps?"
+msgstr "Ist es eine komprimierte .gramps?"
+
+#: lxml/etreeGramplet.py:282
+msgid "Sorry, no support for your OS yet!"
+msgstr "Entschuldigung, noch keine Unterstützung für dein Betriebssystem!"
+
+#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:420
 #, python-format
-msgid "XML: Last %s editions since %s, were at/on :\n"
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "Kann den Inhalt von „%(file)s” nicht analysieren"
+
+#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:420
+msgid "Parsing issue"
+msgstr "Analyseproblem"
+
+#: lxml/etreeGramplet.py:498
+#, fuzzy, python-format
+#| msgid "XML: Last %s editions since %s, were at/on :\n"
+msgid "XML: Last %s additions and modifications since %s, were on :\n"
 msgstr "XML: Die letzten %s Ausgaben seit %s, waren am/am :\n"
 
-#: lxml/etreeGramplet.py:471
+#: lxml/etreeGramplet.py:554
 #, python-format
 msgid ""
 "\n"
@@ -24187,115 +24881,151 @@ msgstr ""
 "XML: Anzahl der Datensätze und Beziehungen : \t%s\n"
 "\n"
 
-#: lxml/etreeGramplet.py:474
-#, python-format
+#: lxml/etreeGramplet.py:557
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of tags : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of tags : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Etiketten: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:476
-#, python-format
+#: lxml/etreeGramplet.py:559
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of tags : \n"
+#| "\t\t\t%s\n"
 msgid ""
 "Number of tags : \n"
-"\t\t\t%s\n"
+"\t\t\t%06s\n"
 msgstr ""
 "Anzahl der Etiketten: \n"
 "\t\t\t%s\n"
 
-#: lxml/etreeGramplet.py:478
-#, python-format
+#: lxml/etreeGramplet.py:561
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of  events : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of  events : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Ereignisse: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:481
-#, python-format
+#: lxml/etreeGramplet.py:564
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of persons : \n"
+#| "\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
 msgid ""
 "Number of persons : \n"
-"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+"\t\t\t%06s\t|\t(%06s) and (%06s)* surnames\n"
 msgstr ""
 "Anzahl der Personen: \n"
 "\t\t\t%s\t|\t(%s) und (%s)* Nachnamen\n"
 
-#: lxml/etreeGramplet.py:483
-#, python-format
+#: lxml/etreeGramplet.py:566
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of persons : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of persons : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Personen : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:484
-#, python-format
+#: lxml/etreeGramplet.py:567
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of families : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of families : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Familien : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:485
-#, python-format
+#: lxml/etreeGramplet.py:568
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of sources : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of sources : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Quellen : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:487
-#, python-format
+#: lxml/etreeGramplet.py:570
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of citations : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of citations : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Fundstellen : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:490
-#, python-format
+#: lxml/etreeGramplet.py:573
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of places : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of places : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Orte : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:491
-#, python-format
+#: lxml/etreeGramplet.py:574
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of media objects : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of media objects : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Medienobjekte : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:492
-#, python-format
+#: lxml/etreeGramplet.py:575
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of repositories : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of repositories : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Aufbewahrungsorte : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:493
-#, python-format
+#: lxml/etreeGramplet.py:576
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of notes : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of notes : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Notizen: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:498
+#: lxml/etreeGramplet.py:581
 #, python-format
 msgid ""
 "\n"
@@ -24304,7 +25034,7 @@ msgstr ""
 "\n"
 "XML: Anzahl der zusätzlichen Datensätze und Beziehungen: \t%s\n"
 
-#: lxml/etreeGramplet.py:502
+#: lxml/etreeGramplet.py:585
 #, python-format
 msgid ""
 "* loaded Family Tree base:\n"
@@ -24313,7 +25043,7 @@ msgstr ""
 "* geladene Stammbaumbasis:\n"
 " „%s”\n"
 
-#: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
+#: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:20
 msgid "lxml"
 msgstr "lxml"
 
@@ -24321,375 +25051,331 @@ msgstr "lxml"
 msgid "Gramplet for testing lxml and XSLT"
 msgstr "Gramplet zum Testen von lxml und XSLT"
 
-#: lxml/lxmlGramplet.py:67
+#: lxml/lxmlGramplet.py:72
 msgid "\"gzip\" is missing"
 msgstr "„gzip” fehlt"
 
-#: lxml/lxmlGramplet.py:67
+#: lxml/lxmlGramplet.py:72
 msgid "Where is gzip?"
 msgstr "Wo ist gzip?"
 
-#: lxml/lxmlGramplet.py:89
+#: lxml/lxmlGramplet.py:94
 msgid "Missing python3 lxml"
 msgstr "Fehlende Python3 lxml"
 
-#: lxml/lxmlGramplet.py:89
+#: lxml/lxmlGramplet.py:94
 msgid "Please, try to install \"python3 lxml\" package."
 msgstr "Bitte versuche das Paket „python3 lxml” zu installieren."
 
-#: lxml/lxmlGramplet.py:164
-msgid "No file loaded..."
-msgstr "Keine Datei geladen..."
+#: lxml/lxmlGramplet.py:255 lxml/lxmlGramplet.py:273 lxml/lxmlGramplet.py:749
+#, fuzzy
+#| msgid "Filter options"
+msgid "xmllint options"
+msgstr "Filteroptionen"
 
-#: lxml/lxmlGramplet.py:298
-#, python-format
-msgid "Cannot validate \"%(file)s\" !"
-msgstr "Kann „%(file)s” nicht prüfen!"
+#: lxml/lxmlGramplet.py:264 lxml/lxmlGramplet.py:282
+#, fuzzy
+#| msgid "Legacy place"
+msgid "debug places"
+msgstr "Historischer Ort"
 
-#: lxml/lxmlGramplet.py:298
+#: lxml/lxmlGramplet.py:265 lxml/lxmlGramplet.py:283
+msgid "debug xml"
+msgstr ""
+
+#: lxml/lxmlGramplet.py:382
 msgid "XSD validation (lxml)"
 msgstr "XSD-Prüfung (lxml)"
 
-#: lxml/lxmlGramplet.py:306
+#: lxml/lxmlGramplet.py:390
 #, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
 msgstr "xmllint: überspringe DTD-Validierung für „%(file)s”"
 
-#: lxml/lxmlGramplet.py:318
+#: lxml/lxmlGramplet.py:407
 #, python-format
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
 msgstr "xmllint: überspringe RelaxNG-Prüfung für „%(file)s”"
 
-#: lxml/lxmlGramplet.py:329
-#, python-format
-msgid "Cannot parse content of \"%(file)s\""
-msgstr "Kann den Inhalt von „%(file)s” nicht analysieren"
-
-#: lxml/lxmlGramplet.py:329
-msgid "Parsing issue"
-msgstr "Analyseproblem"
-
-#: lxml/lxmlGramplet.py:333
-msgid "Gramps version"
-msgstr "Grampsversion"
-
-#: lxml/lxmlGramplet.py:333
-#, python-format
-msgid ""
-"Wrong namespace\n"
-"Need: %s"
+#: lxml/lxmlGramplet.py:423
+msgid "Custom \"test.xml\" file"
 msgstr ""
-"Falscher Namensraum\n"
-"Benötige: %s"
 
-#: lxml/lxmlGramplet.py:337
+#: lxml/lxmlGramplet.py:423
+msgid "Please try to fix \"test.xml\""
+msgstr ""
+
+#: lxml/lxmlGramplet.py:432
 #, python-format
 msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
 msgstr "Kann „%(file)s” nicht mit RelaxNG-Schema prüfen"
 
-#: lxml/lxmlGramplet.py:337
+#: lxml/lxmlGramplet.py:432
 msgid "RelaxNG validation"
 msgstr "RelaxNG-Prüfung"
 
-#: lxml/lxmlGramplet.py:341
+#: lxml/lxmlGramplet.py:445
 #, python-format
 msgid "Cannot parse \"%(file)s\" via etree"
 msgstr "Kann „%(file)s” nicht mit etree analysieren"
 
-#: lxml/lxmlGramplet.py:341
+#: lxml/lxmlGramplet.py:445
 msgid "File issue"
 msgstr "Dateiproblem"
 
-#: lxml/lxmlGramplet.py:359
+#: lxml/lxmlGramplet.py:484
 msgid "Parsing file..."
 msgstr "Analysiere Datei..."
 
-#: lxml/lxmlGramplet.py:456
+#: lxml/lxmlGramplet.py:569
+#, python-format
+msgid " - (%(lang)s)"
+msgstr ""
+
+#: lxml/lxmlGramplet.py:572
+#, python-format
+msgid " - (? or %(lang)s)"
+msgstr ""
+
+#: lxml/lxmlGramplet.py:609
 msgid "Missing header"
 msgstr "Fehlende Kopfzeile"
 
-#: lxml/lxmlGramplet.py:456
+#: lxml/lxmlGramplet.py:609 lxml/lxmlGramplet.py:719
+#, fuzzy
+#| msgid ""
+#| "Not a valid .gramps.\n"
+#| "Cannot run the gramplet...\n"
+#| "Please, try to use a .gramps\n"
+#| "generated by Gramps 4.x."
 msgid ""
 "Not a valid .gramps.\n"
 "Cannot run the gramplet...\n"
 "Please, try to use a .gramps\n"
-"generated by Gramps 4.x."
+"generated by Gramps 6.x."
 msgstr ""
 "Keine gültige .gramps.\n"
 "Kann das Gramplet nicht ausführen...\n"
 "Bitte versuche, eine .gramps zu verwenden\n"
 "die mit Gramps 4.x erzeugt wurde."
 
-#: lxml/lxmlGramplet.py:469 lxml/lxmlGramplet.py:474 lxml/lxmlGramplet.py:479
-#: lxml/lxmlGramplet.py:484
+#: lxml/lxmlGramplet.py:622 lxml/lxmlGramplet.py:627 lxml/lxmlGramplet.py:632
+#: lxml/lxmlGramplet.py:637
 msgid "0"
 msgstr "0"
 
-#: lxml/lxmlGramplet.py:495
+#: lxml/lxmlGramplet.py:652
 msgid "File parsed with"
 msgstr "Datei analysiert mit"
 
-#: lxml/lxmlGramplet.py:498
+#: lxml/lxmlGramplet.py:654
 msgid " by Gramps "
 msgstr " von Gramps "
 
-#: lxml/lxmlGramplet.py:498
+#: lxml/lxmlGramplet.py:654
 msgid "File was generated on "
 msgstr "Datei wurde erstellt am "
 
-#: lxml/lxmlGramplet.py:500
+#: lxml/lxmlGramplet.py:656
 msgid "Period: "
 msgstr "Zeitraum: "
 
-#: lxml/lxmlGramplet.py:502
-msgid " entries for surname(s); no frequency yet"
+#: lxml/lxmlGramplet.py:659 lxml/lxmlGramplet.py:663
+#, fuzzy, python-brace-format
+#| msgid "Ref: {number}. {name}"
+msgid "\t{number} surname"
+msgid_plural "\t{number} surnames; no frequency yet\n"
+msgstr[0] "Ref: {number}. {name}"
+msgstr[1] "Ref: {number}. {name}"
+
+#: lxml/lxmlGramplet.py:659
+#, fuzzy, python-brace-format
+#| msgid " entries for surname(s); no frequency yet"
+msgid "\t{number} surname; no frequency yet"
 msgstr " Einträge für Nachname(n); noch keine Häufigkeit"
 
-#: lxml/lxmlGramplet.py:503
-msgid " entries for place(s)"
-msgstr " Einträge für Ort(e)"
+#: lxml/lxmlGramplet.py:660 lxml/lxmlGramplet.py:667
+#, fuzzy, python-brace-format
+#| msgid "Ref: {number}. {name}"
+msgid "\t{number} place"
+msgid_plural "\t{number} places\n"
+msgstr[0] "Ref: {number}. {name}"
+msgstr[1] "Ref: {number}. {name}"
 
-#: lxml/lxmlGramplet.py:504
-msgid " note(s)"
-msgstr " Notiz(en)"
+#: lxml/lxmlGramplet.py:661 lxml/lxmlGramplet.py:671
+#, fuzzy, python-brace-format
+#| msgid "Ref: {number}. {name}"
+msgid "\t{number} note"
+msgid_plural "\t{number} notes\n"
+msgstr[0] "Ref: {number}. {name}"
+msgstr[1] "Ref: {number}. {name}"
 
-#: lxml/lxmlGramplet.py:505
-msgid " source(s)"
-msgstr " Quelle(n)"
+#: lxml/lxmlGramplet.py:675
+#, fuzzy, python-brace-format
+#| msgid "New source"
+msgid "\t{number} source"
+msgid_plural "\t{number} sources\n"
+msgstr[0] "Neue Quelle"
+msgstr[1] "Neue Quelle"
 
-#: lxml/lxmlGramplet.py:521 lxml/lxmlGramplet.py:717
+#: lxml/lxmlGramplet.py:694 lxml/lxmlGramplet.py:919
 msgid "Gallery.html"
 msgstr "Galerie.html"
 
-#: lxml/lxmlGramplet.py:522
-#, python-format
-msgid "2. Has generated a media index on \"%(file)s\".\n"
+#: lxml/lxmlGramplet.py:695
+#, fuzzy, python-format
+#| msgid "2. Has generated a media index on \"%(file)s\".\n"
+msgid "1. Has generated a media index on \"%(file)s\".\n"
 msgstr "2. Hat einen Medienindex in „%(file)s“ erstellt.\n"
 
-#: lxml/lxmlGramplet.py:525
-#, python-format
-msgid "3. Has written entries into \"%(file)s\".\n"
-msgstr "3. Hat Einträge in „%(file)s“ geschrieben\n"
+#: lxml/lxmlGramplet.py:719
+msgid "XML SyntaxError"
+msgstr ""
 
-#: lxml/lxmlGramplet.py:544
+#: lxml/lxmlGramplet.py:723
 msgid "Matches XSD schema."
 msgstr "Entspricht XSD-Schema."
 
-#: lxml/lxmlGramplet.py:565
+#: lxml/lxmlGramplet.py:763
 msgid "xmllint: skip DTD validation"
 msgstr "xmllint: DTD-Prüfung überspringen"
 
-#: lxml/lxmlGramplet.py:589
+#: lxml/lxmlGramplet.py:787
 msgid "I am looking at ..."
 msgstr "Ich suche in …"
 
-#: lxml/lxmlGramplet.py:590
+#: lxml/lxmlGramplet.py:788
 msgid "Content generated by Gramps"
 msgstr "Inhalt generiert von Gramps"
 
-#: lxml/lxmlGramplet.py:593
+#: lxml/lxmlGramplet.py:791
 msgid "List of sources"
 msgstr "Liste der Quellen"
 
-#: lxml/lxmlGramplet.py:611
+#: lxml/lxmlGramplet.py:810
 msgid "Australia"
 msgstr "Australien"
 
-#: lxml/lxmlGramplet.py:612
+#: lxml/lxmlGramplet.py:811
 msgid "Brazil"
 msgstr "Brasilien"
 
-#: lxml/lxmlGramplet.py:623
+#: lxml/lxmlGramplet.py:822
 msgid "India"
 msgstr "Indien"
 
-#: lxml/lxmlGramplet.py:625
+#: lxml/lxmlGramplet.py:824
 msgid "Norway"
 msgstr "Norwegen"
 
-#: lxml/lxmlGramplet.py:626
+#: lxml/lxmlGramplet.py:825
 msgid "Portugal"
 msgstr "Portugal"
 
-#: lxml/lxmlGramplet.py:695
-#, python-format
-msgid "1. Has generated \"%s\".\n"
+#: lxml/lxmlGramplet.py:896
+#, fuzzy, python-format
+#| msgid "1. Has generated \"%s\".\n"
+msgid "2. Has generated \"%s\".\n"
 msgstr "1. Hat „%s“ erstellt.\n"
 
-#: lxml/lxmlGramplet.py:696
-#, python-format
+#: lxml/lxmlGramplet.py:898
+#, fuzzy, python-format
+#| msgid ""
+#| "Try to open\n"
+#| " \"%s\"\n"
+#| " into your prefered web navigator ..."
 msgid ""
 "Try to open\n"
 " \"%s\"\n"
-" into your prefered web navigator ..."
+" into your preferred web navigator ..."
 msgstr ""
 "Versuche \n"
 " „%s“\n"
 " in deinem bevorzugten Web- Browser zu öffnen ..."
 
-#: markdown_place_history_formatter.py:52
-msgid "No data available."
-msgstr "Keine Daten verfügbar."
+#~ msgid "Primary Name"
+#~ msgstr "Primärer Name"
 
-#: markdown_place_history_formatter.py:57
-msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
-msgstr "HISTORISCHE VERWALTUNGSTEILUNGEN VON"
+#~ msgid "Select All"
+#~ msgstr "Alle Auswählen"
 
-#: markdown_place_history_formatter.py:58
-msgid "Foundation date:"
-msgstr "Gründungsdatum:"
+#~ msgid "Database change detected"
+#~ msgstr "Datenbankänderung erkannt"
 
-#: markdown_place_history_formatter.py:60
-msgid "Coordinates:"
-msgstr "Koordinaten:"
+#, python-format
+#~ msgid "Clipboard Gramplet: %s"
+#~ msgstr "Zwischenablage Gramplet: %s"
 
-#: markdown_place_history_formatter.py:61
-msgid "Administrative history"
-msgstr "Verwaltungsgeschichte"
+#~ msgid "Include Addresses"
+#~ msgstr "Adressen Einbeziehen"
 
-#: markdown_place_history_formatter.py:62
-msgid "Data provided to AI:"
-msgstr "An die KI übermittelte Daten:"
+#~ msgid "Modified"
+#~ msgstr "Verändert"
 
-#: markdown_place_history_formatter.py:64
-msgid "Full hierarchy"
-msgstr "Vollständige Hierarchie"
+#~ msgid "Ancestor generations"
+#~ msgstr "Vorfahrengenerationen"
 
-#: markdown_place_history_formatter.py:68
-msgid "Place Type:"
-msgstr "Ortstart:"
+#~ msgid "Descendant generations"
+#~ msgstr "Nachkommengenerationen"
 
-#: markdown_place_history_formatter.py:69
-msgid "Last Retrieved At:"
-msgstr "Zuletzt abgerufen am:"
+#~ msgid "Different"
+#~ msgstr "Unterschiedlich"
 
-#: note_links_loader.py:69
-msgid "Note Link (parsed)"
-msgstr "Notizverknüpfung (analysiert)"
+#~ msgid "Export"
+#~ msgstr "Exportieren"
 
-#: note_links_loader.py:124
-msgid "Note Link (internal)"
-msgstr "Notiz-Link (intern)"
+#~ msgid "Overview"
+#~ msgstr "Übersicht"
 
-#: note_links_loader.py:127
-msgid "Note Link (external)"
-msgstr "Notiz-Link (extern)"
+#~ msgid "No file parsed..."
+#~ msgstr "Keine Datei analysiert..."
 
-#: qr_window.py:88
-msgid "QR-code"
-msgstr "QR-Code"
+#, python-format
+#~ msgid "Please fix space on \"%s\""
+#~ msgstr "Bitte korrigiere das Leerzeichen in „%s“"
 
-#: qr_window.py:119 qr_window.py:122
-msgid "⚠ Missing dependency \"qrcode\""
-msgstr "⚠ Fehlende Abhängigkeit „qrcode“"
+#~ msgid "Space character on filename"
+#~ msgstr "Leerzeichen im Dateinamen"
 
-#: qr_window.py:133
-msgid ""
-"⚠ Error generating QR code:\n"
-"Original error: “{}”"
-msgstr ""
-"⚠ Fehler beim Generieren des QR-Codes:\n"
-"Ursprünglicher Fehler: „{}“"
+#, python-format
+#~ msgid ""
+#~ "From:\n"
+#~ " \"%(file1)s\"\n"
+#~ " to:\n"
+#~ " \"%(file2)s\".\n"
+#~ msgstr ""
+#~ "Von:\n"
+#~ " „%(file1)s”\n"
+#~ " nach:\n"
+#~ " „%(file2)s”.\n"
 
-#: settings_ui_manager.py:112
-msgid "Middle Name Handling"
-msgstr "Handhabung des mittleren Namens"
+#, python-format
+#~ msgid "Cannot validate \"%(file)s\" !"
+#~ msgstr "Kann „%(file)s” nicht prüfen!"
 
-#: settings_ui_manager.py:117
-msgid "Leave alone"
-msgstr "In Ruhe lassen"
+#~ msgid "Gramps version"
+#~ msgstr "Grampsversion"
 
-#: settings_ui_manager.py:118
-msgid "Separate"
-msgstr "Trennen Sie"
+#, python-format
+#~ msgid ""
+#~ "Wrong namespace\n"
+#~ "Need: %s"
+#~ msgstr ""
+#~ "Falscher Namensraum\n"
+#~ "Benötige: %s"
 
-#: settings_ui_manager.py:128
-msgid "URL Compactness Level"
-msgstr "URL-Kompaktheitsstufe"
+#~ msgid " entries for place(s)"
+#~ msgstr " Einträge für Ort(e)"
 
-#: settings_ui_manager.py:134
-msgid "Shortest - No Prefix, No Keys"
-msgstr "Kürzeste - kein Präfix, keine Schlüssel"
+#~ msgid " note(s)"
+#~ msgstr " Notiz(en)"
 
-#: settings_ui_manager.py:137
-msgid "Compact - No Prefix, Keys Without Attributes"
-msgstr "Kompakt - Kein Präfix, Schlüssel ohne Attribute"
+#~ msgid " source(s)"
+#~ msgstr " Quelle(n)"
 
-#: settings_ui_manager.py:140
-msgid "Compact - No Prefix, Keys With Attributes"
-msgstr "Kompakt - kein Präfix, Schlüssel mit Attributen"
-
-#: settings_ui_manager.py:143
-msgid "Long - Without Prefix on the Left"
-msgstr "Lang - ohne Präfix auf der linken Seite"
-
-#: settings_ui_manager.py:150
-msgid "URL Prefix Replacement"
-msgstr "URL-Präfix-Ersetzung"
-
-#: settings_ui_manager.py:157
-msgid "AI Provider"
-msgstr "KI-Anbieter"
-
-#: settings_ui_manager.py:162
-msgid "(Disabled)"
-msgstr "(Deaktiviert)"
-
-#: settings_ui_manager.py:163
-msgid "OpenAI"
-msgstr "OpenAI"
-
-#: settings_ui_manager.py:164
-msgid "Mistral AI"
-msgstr "Mistral AI"
-
-#: settings_ui_manager.py:171
-msgid "OpenAI API Key"
-msgstr "OpenAI API-Schlüssel"
-
-#: settings_ui_manager.py:176
-msgid "OpenAI Model"
-msgstr "OpenAI-Modell"
-
-#: settings_ui_manager.py:181
-msgid "Mistral API Key"
-msgstr "Mistral API Schlüssel"
-
-#: settings_ui_manager.py:186
-msgid "Mistral Model"
-msgstr "Mistral Modell"
-
-#: settings_ui_manager.py:191
-msgid "Show Links From the 'Attributes' tab"
-msgstr "Verknüpfungen auf der Registerkarte „Attribute“ anzeigen"
-
-#: settings_ui_manager.py:196
-msgid "Show Links From the 'Internet' tab"
-msgstr "Verknüpfungen aus der Registerkarte „Internet“ anzeigen"
-
-#: settings_ui_manager.py:201
-msgid "Show Links From the Notes"
-msgstr "Verknüpfungen aus den Notizen anzeigen"
-
-#: settings_ui_manager.py:209
-msgid "Enable AI-generated historical place data"
-msgstr "Aktiviere KI-generierte historische Ortsdaten"
-
-#: settings_ui_manager.py:215
-msgid "Custom country code for AI notes (optional)"
-msgstr "Benutzerdefinierter Ländercode für KI-Notizen (optional)"
-
-#: settings_ui_manager.py:244
-msgid "Enable CSV Files"
-msgstr "CSV-Dateien ermöglichen"
-
-#: settings_ui_manager.py:251
-msgid "Display Columns"
-msgstr "Spalten anzeigen"
-
-#: settings_ui_manager.py:265
-msgid "Display Icons"
-msgstr "Symbole anzeigen"
+#, python-format
+#~ msgid "3. Has written entries into \"%(file)s\".\n"
+#~ msgstr "3. Hat Einträge in „%(file)s“ geschrieben\n"
 
 #, python-format
 #~ msgid ""
