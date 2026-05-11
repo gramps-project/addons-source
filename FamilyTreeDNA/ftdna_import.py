@@ -69,7 +69,7 @@ class FamilyFinder(tool.Tool,ManagedWindow):
     """
     def __init__(self, dbstate, user, options_class, name, callback=None):
         uistate = user.uistate
-        
+
         tool.Tool.__init__(self, dbstate, options_class, name)
 
         self.window_name = _('Family Finder Tool')
@@ -80,9 +80,9 @@ class FamilyFinder(tool.Tool,ManagedWindow):
         """
         Initialise the gramplet.
         """
-        
+
         window = Gtk.Window()
-        
+
         root = self.__create_gui()
 #        self.gui.get_container_widget().remove(self.gui.textview)
 #        self.gui.get_container_widget().add_with_viewport(root)
@@ -93,7 +93,7 @@ class FamilyFinder(tool.Tool,ManagedWindow):
         window.set_position(Gtk.WindowPosition.CENTER_ON_PARENT)
         self.set_window(window, None, self.window_name)
         self.show()
-        
+
     def __create_gui(self):
         """
         Create and display the GUI components of the gramplet.
@@ -120,10 +120,10 @@ class FamilyFinder(tool.Tool,ManagedWindow):
         vbox3 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         vbox3.pack_start(Segment_label, False, True, 20)
         vbox3.pack_start(self.SegmentName, False, True, 10)
-        
+
         vbox4 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         vbox4.pack_start(self.ImportHaplo, False, True, 20)
-        vbox4.pack_start(Haplo_label, False, True, 10)        
+        vbox4.pack_start(Haplo_label, False, True, 10)
 
         SearchString_label = Gtk.Label(_('FTDNA Note string :'))
         self.NoteString = Gtk.Entry()
@@ -139,8 +139,8 @@ class FamilyFinder(tool.Tool,ManagedWindow):
 
         vbox6 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         vbox6.pack_start(CitationString_label, False, True, 20)
-        vbox6.pack_start(self.CitationID, False, True, 10) 
-        
+        vbox6.pack_start(self.CitationID, False, True, 10)
+
         active_handle = self.uistate.get_active('Person')
         if active_handle == None:
             return
@@ -149,30 +149,30 @@ class FamilyFinder(tool.Tool,ManagedWindow):
         except:
             return
         self.Active_label = Gtk.Label(_('Active Person : ') + _nd.display(active))
-        
+
         vbox.pack_start(self.Active_label, False, True, 0)
         vbox.pack_start(vbox2, False, True, 0)
         vbox.pack_start(vbox3, False, True, 0)
         vbox.pack_start(vbox4, False, True, 0)
         vbox.pack_start(vbox5, False, True, 0)
         vbox.pack_start(vbox6, False, True, 0)
-        
-        
+
+
         button_box = Gtk.HButtonBox()
         button_box.set_layout(Gtk.ButtonBoxStyle.SPREAD)
 
         get = Gtk.Button(label=_('Import'))
         get.set_tooltip_text(_('Import data from Family Finder files'))
         get.connect("clicked", self.__import_ftdna_data)
-        
+
         close = Gtk.Button(_('Close'))
         close.set_tooltip_text(_('Close the Family Finder Tool'))
         close.connect('clicked', self.close)
-        
+
         help = Gtk.Button(_('Help'))
         help.set_tooltip_text(_('Read Help manual'))
         help.connect('clicked', self.__web_help)
-        
+
         button_box.add(help)
         button_box.add(get)
         button_box.add(close)
@@ -205,7 +205,7 @@ class FamilyFinder(tool.Tool,ManagedWindow):
 #
 # Summarize Issues
 #
-        if self.msg[0] : 
+        if self.msg[0] :
             warn_str += str(self.msg[0])+" GrampsID error extracting haplogroup" + "\n"
         if self.msg[1] :
             warn_str += str(self.msg[1])+" Haplogroup already set"  + "\n"
@@ -245,8 +245,8 @@ class FamilyFinder(tool.Tool,ManagedWindow):
             reader = csv.reader(file1)
             body_line = False
             for row in reader:
-                if row[12]: 
-                    if  body_line: 
+                if row[12]:
+                    if  body_line:
                         concat_name = ' '.join([row[1],row[2],row[3]])
                         new_name = re.sub("\\s{2,}", ' ', concat_name)
                         self.__FFdata.append((new_name.strip(),row[10],row[11],row[12]))
@@ -280,10 +280,10 @@ class FamilyFinder(tool.Tool,ManagedWindow):
                     stop_pos = len(i)
                     gid = i[start_pos:stop_pos]
             person = self.dbstate.db.get_person_from_gramps_id(gid)
-            if person : 
-                if match[1] : 
+            if person :
+                if match[1] :
                     y_count += self.__process_specific_haplogroup(person, match[1],"Y-DNA")
-                if match[2] : 
+                if match[2] :
                     mt_count += self.__process_specific_haplogroup(person, match[2],"mtDNA")
             else:
                 print(WARN_MODULE, "No person found for FamilyFinder note {} ".format(match[3][0:30]))
@@ -298,7 +298,7 @@ class FamilyFinder(tool.Tool,ManagedWindow):
         attr_found = False
         for i in attr_list :
             if attr_type == i.get_type() : attr_found = True
-        if attr_found : 
+        if attr_found :
             print(WARN_MODULE, "{} attribute already present - not adding to {}".format(attr_type, _nd.display(person)))
             self.msg[1] += 1
         else:
@@ -326,24 +326,24 @@ class FamilyFinder(tool.Tool,ManagedWindow):
                     stop_pos = len(i)
                     gid = i[start_pos:stop_pos]
             match_person = self.dbstate.db.get_person_from_gramps_id(gid)
-            if match_person : 
+            if match_person :
                 match_handle = match_person.get_handle()
                 note_txt = ""
                 new_match = True
                 assoc_needed = True
                 for seg in self.__Segment :
-                    if match[0] == seg[0] : 
+                    if match[0] == seg[0] :
                         need_note = True
-                        if new_match : 
+                        if new_match :
                             update_needed = True
                             for existing_assoc in active_person.get_person_ref_list() :
-                                if existing_assoc.get_relation() == rel: 
+                                if existing_assoc.get_relation() == rel:
                                     existing_person = self.dbstate.db.get_person_from_handle(existing_assoc.ref)
                                     if match_handle == existing_person.get_handle() :
                                         update_needed = False
                                         need_note = False
                                         note_txt = ""
-                            if update_needed : 
+                            if update_needed :
                                 personRef = PersonRef()
                                 personRef.set_reference_handle(match_handle)
                                 personRef.set_relation(rel)
@@ -353,12 +353,12 @@ class FamilyFinder(tool.Tool,ManagedWindow):
                                 new_match = False
                                 count += 1
                             else:
-                                if assoc_needed : 
+                                if assoc_needed :
                                     print(WARN_MODULE, "DNA Association already exists for {} to {}".format(_nd.display(active_person), _nd.display(match_person)))
                                     assoc_needed = False
                                 need_note = False
                                 note_txt = ""
-                        if need_note: 
+                        if need_note:
                             note_txt += seg[1]+","+seg[2]+","+seg[3]+","+seg[4]+","+seg[5]+"\n"
                 if note_txt :
                     new_note = Note()
@@ -372,9 +372,9 @@ class FamilyFinder(tool.Tool,ManagedWindow):
                     if make_cit :
                         citID = self.CitationID.get_text()
                         cit = None
-                        if citID : 
+                        if citID :
                             cit = self.dbstate.db.get_citation_from_gramps_id(citID)
-                            if not cit : 
+                            if not cit :
                                 self.msg[4] = 1
                         if not cit :
                             cit_source = Source()
@@ -394,7 +394,7 @@ class FamilyFinder(tool.Tool,ManagedWindow):
                     with DbTxn (_('Add Citation to %s DNA Association' ) % _nd.display(match_person), self.dbstate.db) as self.trans:
                         personRef.add_citation(cit.handle)
                         self.dbstate.db.commit_person(active_person, self.trans)
-            else : 
+            else :
                 print(WARN_MODULE, "Gramps ID in FamilyFinder note {} not valid".format(gid))
                 self.msg[3] += 1
         return count
