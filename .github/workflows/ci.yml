@@ -29,7 +29,10 @@ jobs:
 
       - name: Check trailing whitespace in Python files
         run: |
-          if git --no-pager grep --color -n --full-name '[ \t]$' -- '*.py'; then
+          # Use PCRE (-P): in BRE/ERE the bracket expression [ \t] is the
+          # set { space, backslash, 't' } — git grep matches anything ending
+          # in 't', not just whitespace. -P makes \t a tab.
+          if git --no-pager grep --color -n --full-name -P '[ \t]+$' -- '*.py'; then
             echo "::error::Trailing whitespace found in Python files"
             exit 1
           fi
