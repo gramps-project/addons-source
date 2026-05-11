@@ -196,11 +196,11 @@ class GeoTimeLines(GeoGraphyView):
         ('geotimelines.default_show_ticks', True),
         ('geotimelines.persist_drawn_lines_days', 730),
         #('geotimelines.date-format', config.get("preferences.date-format")),
-        
+
         ('geotimelines.animation_step_interval', 4),
         ('geotimelines.animation_step_type', 1),
         ('geotimelines.animation_step_time', 200),
-        
+
         ('geotimelines.use_custom_icons', True),
         ('geotimelines.initial_view_type', 1),
         ('geotimelines.active_view_type', 1),
@@ -255,18 +255,18 @@ class GeoTimeLines(GeoGraphyView):
         self.large_move = False
         self.cal = None
         self.didtree = False
-        
+
         #from geography
         self.mapservice = config.get('geography.map_service')
         self.default_marker = None
         self._set_default_marker()
-        
+
         theme = Gtk.IconTheme.get_default()
 
         self.geo_othermap = {}
         self.geo_person = theme.load_surface("gramps-person", 48, 1, None, 0)
-        
-        
+
+
         self.DB_CHOICE_POPUP = 0
         self.DB_CHOICE_ACTIVE = 1
         self.DB_CHOICE_ANC = 2
@@ -285,7 +285,7 @@ class GeoTimeLines(GeoGraphyView):
             self.DB_CHOICE_DB : 'Entire Database',
             self.DB_CHOICE_FILTER : 'From Filter'
         }
-        
+
         self.DB_CHOICE_SAME = 2
         self.DB_CHOICES_SWITCH = {
             self.DB_CHOICE_POPUP : 'Ask in Popup',
@@ -299,7 +299,7 @@ class GeoTimeLines(GeoGraphyView):
         self.all_person_duration = {} # gramps_id : [[firstdate,birth?],[deaddate,dead?]]
         self.all_person_icons = {}    # draw and store all possible custom icons for each person
         self.all_selected_persons = []
-        
+
         self.missingparents = {} #[[place,year,gen,numbermissing]]
         self.missingparent_icon = None
         #bottom gui
@@ -307,17 +307,17 @@ class GeoTimeLines(GeoGraphyView):
         self.show_all = True
         self.show_lines = self._config.get('geotimelines.default_show_lines')
         self.btn_showall = None
-        
+
         #slider values
-        self.slider = None   
+        self.slider = None
         self.minslider = None
         self.maxslider = None
         self.slider_marks = []
         self.mindt = None
         self.maxdt = None
-        
+
         self.ymdindex = [(0,"Years"), (1,"Months"), (2,"Days")]
-        
+
         #animation
         self.play = False
         self.animation_step_interval = self._config.get("geotimelines.animation_step_interval")
@@ -443,21 +443,21 @@ class GeoTimeLines(GeoGraphyView):
         a string object being a hexcode starting with # and having an
         equal amount of r g b values.
         markerlayer handles having a colour poorly. If it is not None,
-        then it will draw a large, ugly, marker. 
+        then it will draw a large, ugly, marker.
         See markerlayer.py lines 161, 191-238
-        
+
         I've forced markerlayer to have color=None, and instead use it for
         my own purposes now.
         """
         dummy_menu = menu
         dummy_event = event
-        
+
         if gramps_id and self._config.get("geotimelines.use_custom_icons"):
             default = self._draw_cairo_surface(gramps_id, placeid=placeid, event_type=event_type)
         else:
             default = self.default_marker
         value = default
-        
+
         if differtype:  # in case multiple evts
             value = default  # we use default icon.
 
@@ -584,7 +584,7 @@ class GeoTimeLines(GeoGraphyView):
             ),
         )
         self.uistate.set_busy_cursor(False)
-        
+
     def bubble_message(self, event, lat, lon, marks):
         #from geoperson.py
         '''
@@ -595,7 +595,7 @@ class GeoTimeLines(GeoGraphyView):
             map_clicked(self, osm, event)
         #event  -   mouse click
         #marks  -   list of markers at lat, lon
-        #           taken from self.sort    
+        #           taken from self.sort
         '''
         places = {}
         #from all selected marks, sort them first by place:
@@ -608,14 +608,14 @@ class GeoTimeLines(GeoGraphyView):
             places[places_id] = sorted(places[places_id],
                    key=operator.itemgetter(8,6)
                   )
-            
+
         self.menu = Gtk.Menu()
         menu = self.menu
         currentdt = self._discretedaytodatetime(self.slider.get_value())
         for places_id in places:
             marks = places[places_id]
             old_gramps_id = None
-            
+
             '''
             add_item = Gtk.MenuItem()
             add_item.show()
@@ -642,7 +642,7 @@ class GeoTimeLines(GeoGraphyView):
                 if gramps_id != old_gramps_id:
                     old_gramps_id = gramps_id
                     self.add_person_bubble_message(event, lat, lon, menu, mark)
-            
+
                 #make bubble message
                 evt = self.dbstate.db.get_event_from_gramps_id(event_id)
                 #descr = evt.get_description().replace("&","\u0026")
@@ -668,10 +668,10 @@ class GeoTimeLines(GeoGraphyView):
                     )
                 else:
                     message += "(%s) [%s], %s %s" % (date, event_type, role, descr)
-                
+
                 if (self._eyeartodatetime(mark[6]) - currentdt).days > 0 and not self.show_all:
                     message = "<span foreground='grey'><i>%s</i></span>" % message
-                
+
                 #do bubble logic
                 add_item = Gtk.MenuItem(label=message)
                 add_item.get_children()[0].set_use_markup(True)
@@ -747,10 +747,10 @@ class GeoTimeLines(GeoGraphyView):
         center.connect("activate", self.center_here, event, lat, lon, mark)
         itemoption.append(center)
 
-    def add_specific_menu(self, menu, event, lat, lon): 
-        """ 
+    def add_specific_menu(self, menu, event, lat, lon):
+        """
         Add specific entry to the navigation (right click) menu.
-        """ 
+        """
         menu.append(Gtk.SeparatorMenuItem())
         add_item = Gtk.MenuItem(label=_("Choose View Format"))
         add_item.connect("activate", lambda s : self._startupdialog())
@@ -775,7 +775,7 @@ class GeoTimeLines(GeoGraphyView):
         self.lifeway_layer.clear_ways()
         self.date_layer.clear_dates()
         self.dialog = False
-        
+
         if self.database_choice == self.DB_CHOICE_POPUP and not self.show_startup_dialog:
             self.show_startup_dialog = True
             self._startupdialog()
@@ -800,7 +800,7 @@ class GeoTimeLines(GeoGraphyView):
                     progress.set_pass(_('Almost done'), 5)
                     #add truncated list containing locations of children births for drawing lines
                     temp_all_sort = self.all_sort.copy()
-                    temp_all_sort.extend(self.place_list_lines) 
+                    temp_all_sort.extend(self.place_list_lines)
                     progress.step()
                     progress.set_header("Sorting Data")
                     temp_all_sort = sorted(temp_all_sort,
@@ -820,9 +820,9 @@ class GeoTimeLines(GeoGraphyView):
                     progress.step()
                     progress.close()
                     self.message_layer.add_message("Welcome to TimeLines Map!")
-                    
+
                     self._calculateminmax()
-                    
+
                     #make bottom control box
                     if not self.hbox_control:
                         self._buildhboxcontrol()
@@ -836,7 +836,7 @@ class GeoTimeLines(GeoGraphyView):
 
             # Show map!
             self._refreshdisplay()
-        
+
     def _calculateMissingParents(self):
         for person_id in self.missingparents:
             #earliest place mentioned
@@ -903,9 +903,9 @@ class GeoTimeLines(GeoGraphyView):
                 pop.show_all()
                 #load something
                 self.all_selected_persons = [activeperson]
-        else:   
+        else:
             self._perperson(activeperson, generation=0)
-            
+
         #fallback
         if len(self.all_selected_persons) == 0:
             self.all_selected_persons = [activeperson]
@@ -935,14 +935,14 @@ class GeoTimeLines(GeoGraphyView):
         if person not in self.all_selected_persons:
             self.all_selected_persons.append(person)
         else:
-            return  
+            return
         #call this method again for all parents in this person's family
         #if dbc = ancestors or both
-        if ((dbc == self.DB_CHOICE_ANC or 
+        if ((dbc == self.DB_CHOICE_ANC or
             dbc == self.DB_CHOICE_ANCDES or
             dbc == self.DB_CHOICE_REL) and
             (direction == None or direction == 'up')):
-            if dbc == self.DB_CHOICE_ANCDES: 
+            if dbc == self.DB_CHOICE_ANCDES:
                 if activeperson == person:
                     direction = 'up'
             if len(person.get_parent_family_handle_list()) >0:
@@ -964,11 +964,11 @@ class GeoTimeLines(GeoGraphyView):
         if activeperson == person:
             direction = None
         #if dbc = descendants or both
-        if ((dbc == self.DB_CHOICE_DESC or 
+        if ((dbc == self.DB_CHOICE_DESC or
             dbc == self.DB_CHOICE_ANCDES or
             dbc == self.DB_CHOICE_REL) and
             (direction == None or direction == 'down')):
-            if dbc == self.DB_CHOICE_ANCDES: 
+            if dbc == self.DB_CHOICE_ANCDES:
                 if activeperson == person:
                     direction = 'down'
             for family_handle in person.get_family_handle_list():
@@ -979,7 +979,7 @@ class GeoTimeLines(GeoGraphyView):
                             child = self.dbstate.db.get_person_from_handle(child_ref.ref)
                             if child:
                                 self._perperson(child, direction=direction, generation=generation+1)
-        
+
     def _isbirthevent(self, event_type):
         return (event_type == EventType.BIRTH or event_type == EventType.BAPTISM)
     def _isdeathevent(self, event_type):
@@ -993,7 +993,7 @@ class GeoTimeLines(GeoGraphyView):
             event = self.dbstate.db.get_event_from_handle(event_ref.ref)
             event_type = EventType(event.get_type())
             # note: Only grab the first listed birth/death for each of those types
-            # why?: If there are multiple say birth events, GRAMPS displays 
+            # why?: If there are multiple say birth events, GRAMPS displays
             #       the top entry when viewing the person—display only this event
             #       as opposed to displaying all of them in this geography view
             if self._isbirthevent(event_type) or self._isdeathevent(event_type):
@@ -1037,7 +1037,7 @@ class GeoTimeLines(GeoGraphyView):
                     else:
                         self._append_to_places_without_coord(
                                                     place.gramps_id, descr)
-                    
+
             '''
                 find the interval a person is living
                 store it as:
@@ -1076,7 +1076,7 @@ class GeoTimeLines(GeoGraphyView):
             This is helpful in cases where few events may exist for the
             parent—especially for women—and helps track them on the map.
             Technically this should just be for the mothers.
-            
+
             This won't add events, but will add "places" for drawing lines
         '''
         #all_sort_lines_dict
@@ -1135,7 +1135,7 @@ class GeoTimeLines(GeoGraphyView):
                                                                 self.person_colour_dict[person.gramps_id]
                                                                 )
                                     break
-                            
+
     def _drawlines(self, lines):
         """
         Create all displacements for one person's events.
@@ -1167,7 +1167,7 @@ class GeoTimeLines(GeoGraphyView):
             if len(points) > 1:
                 self.lifeway_layer.add_way(points, reducedcolor)
         return False
-        
+
     def _calculateminmax(self):
         self.mindt = dt(9999,12,31)
         self.maxdt = dt(1,1,1)
@@ -1190,7 +1190,7 @@ class GeoTimeLines(GeoGraphyView):
                 try:
                     date = self._eyeartodatetime(place[6])
                     if date < self.mindt: self.mindt = date
-                    if date > self.maxdt: 
+                    if date > self.maxdt:
                         self.maxdt = date
                 except:
                     #probably an event with no date—skip
@@ -1201,7 +1201,7 @@ class GeoTimeLines(GeoGraphyView):
     '''#############################
         Time stuff
     #############################'''
-    
+
     def _eyeartodatetime(self, eyear):
         y = int(eyear[0:4])
         m = max(1,int(eyear[4:6]))
@@ -1213,7 +1213,7 @@ class GeoTimeLines(GeoGraphyView):
         m = date.month
         d = date.day
         return str("%04d" % y) + str("%02d" % m) + str("%02d" % d)
-        
+
     def _datetimetoiso(self,date):
         y = date.year
         m = date.month
@@ -1228,7 +1228,7 @@ class GeoTimeLines(GeoGraphyView):
 
     def _discretedaytoeyear(self, d):
         return self._datetimetoeyear(self._discretedaytodatetime(d))
-    
+
     def _discretedaytoiso(self, d):
         return self._datetimetoiso(self._discretedaytodatetime(d))
 
@@ -1252,11 +1252,11 @@ class GeoTimeLines(GeoGraphyView):
             addedmonths = (monthstoadd+indate.month)%12
             return indate.replace(year=indate.year+addedyears,month=addedmonths)+td(daystoadd)
         '''
-        
+
     '''#############################
         gui stuff
     #############################'''
-    
+
     def _animate_step_interval(self, spinbutton):
         self.animation_step_interval = int(spinbutton.get_value())
     def _animate_step_type(self, comboboxtext):
@@ -1276,7 +1276,7 @@ class GeoTimeLines(GeoGraphyView):
             targetdt = self._addmonth(currentdt,self.animation_step_interval)
         else: #day
             targetdt = currentdt + td(self.animation_step_interval)
-        
+
         self.slider.set_value(self._datetimetodiscreteday(targetdt))
 
         if self.slider.get_value() == self.maxslider:
@@ -1298,9 +1298,9 @@ class GeoTimeLines(GeoGraphyView):
 
     def _animate_start(self, button):
         self.play = not self.play
-        if self.play: 
+        if self.play:
             button.set_label("Pause")
-        else: 
+        else:
             button.set_label("Play")
         self._animate(button)
 
@@ -1309,7 +1309,7 @@ class GeoTimeLines(GeoGraphyView):
 
     def _button_showall(self, button, playbutton):
         self.show_all = button.get_active()
-        if self.show_all: 
+        if self.show_all:
             if self.play:
                 self.play = not self.play
                 playbutton.set_label("Play")
@@ -1330,20 +1330,20 @@ class GeoTimeLines(GeoGraphyView):
 
     def _buildhboxcontrol(self):
         # pack_start(child, bool expand, bool fill, int padding)
-        
+
         #########################################
         # Widgets                               #
         #########################################
-        
+
         self.hbox_control = Gtk.Box(
-            homogeneous=False, 
+            homogeneous=False,
             spacing=3,
             orientation=Gtk.Orientation.HORIZONTAL
         )
         self.hbox_control.show()
-        
+
         leftbox = Gtk.Box(
-            homogeneous=False, 
+            homogeneous=False,
             spacing=3,
             orientation=Gtk.Orientation.VERTICAL
         )
@@ -1352,16 +1352,16 @@ class GeoTimeLines(GeoGraphyView):
         leftbox.set_margin_top(4)
         leftbox.set_margin_bottom(4)
         leftbox.show()
-        
+
         animatebox = Gtk.Box(
-            homogeneous=False, 
+            homogeneous=False,
             spacing=3,
             orientation=Gtk.Orientation.HORIZONTAL
         )
         animatebox.show()
-        
+
         rightbox = Gtk.Box(
-            homogeneous=False, 
+            homogeneous=False,
             spacing=3,
             orientation=Gtk.Orientation.VERTICAL
         )
@@ -1370,15 +1370,15 @@ class GeoTimeLines(GeoGraphyView):
         rightbox.set_margin_top(4)
         rightbox.set_margin_bottom(4)
         rightbox.show()
-        
+
         rightboxgrid = Gtk.Grid()
         rightboxgrid.set_border_width(0)  #width around?
         rightboxgrid.set_column_spacing(4) #space between col
         rightboxgrid.set_row_spacing(0)
         rightboxgrid.show()
-        
+
         rightbox.pack_start(rightboxgrid, True, False, 1)
-        
+
         '''
             animation control
         '''
@@ -1392,7 +1392,7 @@ class GeoTimeLines(GeoGraphyView):
         lbl.show()
         lbl.set_label("Advance")
         animatebox.pack_start(lbl, False, False, 1)
-        
+
         #value, lower, upper, step_inc, page_inc, page_size
         ad = Gtk.Adjustment(self.animation_step_interval, -1000, 1000, 1, 0, 0)
         spnbtn = Gtk.SpinButton(adjustment=ad, climb_rate=1, digits=0)
@@ -1411,7 +1411,7 @@ class GeoTimeLines(GeoGraphyView):
         cmbbxtxt.connect('changed', self._animate_step_type )
         cmbbxtxt.show()
         animatebox.pack_start(cmbbxtxt, False, False, 1)
-        
+
         lbl = Gtk.Label()
         lbl.show()
         lbl.set_label("every")
@@ -1422,12 +1422,12 @@ class GeoTimeLines(GeoGraphyView):
         spnbtn.show()
         spnbtn.connect('value-changed',self._animate_step_time)
         animatebox.pack_start(spnbtn, False, False, 1)
-        
+
         lbl = Gtk.Label()
         lbl.show()
         lbl.set_label("ms")
         animatebox.pack_start(lbl, False, False, 1)
-        
+
         '''
             done animation control
         '''
@@ -1437,36 +1437,36 @@ class GeoTimeLines(GeoGraphyView):
         self.btn_showall.set_active(True)
         self.btn_showall.connect('clicked', self._button_showall, playbtn)
         rightboxgrid.attach(self.btn_showall, 1, 1, 1, 1)
-        
+
         self.btn_setview = Gtk.Button()
         self.btn_setview.show()
         self.btn_setview.set_label("Set View")
         self.btn_setview.connect('clicked', lambda s : self._startupdialog())
         rightboxgrid.attach(self.btn_setview, 2, 1, 1, 1)
-        
+
         ckbtn = Gtk.CheckButton()
         ckbtn.show()
         ckbtn.set_label("Show Lines")
         ckbtn.set_active(self._config.get("geotimelines.default_show_lines"))
         ckbtn.connect('toggled', self._checkbutton_lines )
         rightboxgrid.attach(ckbtn, 2, 2, 1, 1)
-        
+
         ckbtn = Gtk.CheckButton()
         ckbtn.show()
         ckbtn.set_label("Show Ticks")
         ckbtn.set_active(self._config.get("geotimelines.default_show_ticks"))
         ckbtn.connect('clicked', lambda s : self._buildslidermarks(s.get_active()))
         rightboxgrid.attach(ckbtn, 1, 2, 1, 1)
-        
+
         #########################################
         # Slider                                #
         #########################################
-        
-        adj = Gtk.Adjustment(value=int(self.maxslider/2), 
-                             lower=self.minslider, 
+
+        adj = Gtk.Adjustment(value=int(self.maxslider/2),
+                             lower=self.minslider,
                              upper=self.maxslider,
-                             step_increment=1, 
-                             page_increment=0, 
+                             step_increment=1,
+                             page_increment=0,
                              page_size=0)
         self.slider = Gtk.Scale(orientation=Gtk.Orientation.HORIZONTAL,
                            adjustment=adj)
@@ -1478,17 +1478,17 @@ class GeoTimeLines(GeoGraphyView):
         self.slider.show()
         self._calculateminmax()
         self._buildsliderrange()
-        
+
         #########################################
         # Pack                                  #
         #########################################
-        
+
         #leftbox.pack_start(Gtk.Separator(), False, False, 1)
         #f = Gtk.Frame()
         #f.add(animatebox)
         leftbox.pack_start(animatebox, True, False, 1)
         #leftbox.pack_start(f, False, False, 1)
-        
+
 
         self.hbox_control.pack_start(leftbox, False, False, 1)
         separator = Gtk.Separator()
@@ -1503,25 +1503,25 @@ class GeoTimeLines(GeoGraphyView):
         separator.show()
         self.hbox_control.pack_start(separator, False, False, 1)
         self.hbox_control.pack_start(rightbox, False, False, 1)
-        
-        self.vbox.pack_start(self.hbox_control, False, False, 1)
-        
-        '''
-        btn = Gtk.Button()
-        btn.show()
-        btn.set_label("hi")
-        btn.connect('released', lambda s : print('released'))
-        self.hbox_control.pack_start(btn, False, False, 1)
-        
-        btn = Gtk.Button()
-        btn.show()
-        btn.set_label("hi")
-        btn.connect('released', lambda s : print('released'))
-        self.hbox_control.pack_start(btn, False, False, 1)
-        '''
-        
 
-    def _buildsliderrange(self):  
+        self.vbox.pack_start(self.hbox_control, False, False, 1)
+
+        '''
+        btn = Gtk.Button()
+        btn.show()
+        btn.set_label("hi")
+        btn.connect('released', lambda s : print('released'))
+        self.hbox_control.pack_start(btn, False, False, 1)
+
+        btn = Gtk.Button()
+        btn.show()
+        btn.set_label("hi")
+        btn.connect('released', lambda s : print('released'))
+        self.hbox_control.pack_start(btn, False, False, 1)
+        '''
+
+
+    def _buildsliderrange(self):
         self.slider.clear_marks()
         self.slider_marks = []
         self.slider.set_range(self.minslider, self.maxslider)
@@ -1557,7 +1557,7 @@ class GeoTimeLines(GeoGraphyView):
         pos = int(scale.get_value()) #in discrete days
         currentdt = self.mindt + td(days=pos)
         #currenteyear = self._datetimetoeyear(currentdt)
-        
+
         #days to put proper events on the map—these use custom icons
         daysextra = self._config.get("geotimelines.persist_drawn_lines_days")
         #
@@ -1568,7 +1568,7 @@ class GeoTimeLines(GeoGraphyView):
         #
         #!!This grabs all the data within a time interval (daysextra)
         #
-        
+
         Adt = self.mindt + td(days=pos)
         A = self._datetimetoeyear(Adt)
         Bdt = self.mindt + td(days=pos-daysextra)
@@ -1587,14 +1587,14 @@ class GeoTimeLines(GeoGraphyView):
                 placedata = self.missingparents[person_id][0]
                 if (currentdt - last_time).days < 0:
                     self.sort.append(placedata)
-                    
+
         #self.sort = []
-        
+
         '''
             drawing lines
         '''
         #
-        #!!This grabs the most recent data, 
+        #!!This grabs the most recent data,
         #!!and all the data within a time interval (showlineslastdays) for drawing lines!
         #
         showlineslastdays = self._config.get("geotimelines.persist_drawn_lines_days") #days
@@ -1635,12 +1635,12 @@ class GeoTimeLines(GeoGraphyView):
                             #Grab the olddata if the current data within "showlineslastdays" days
                             #of the current date and store for purposes of drawing lines.
                             #
-                            #Since "self.all_sort_lines_dict" is sorted by dategrab the 
+                            #Since "self.all_sort_lines_dict" is sorted by dategrab the
                             #previously indexed event.
-                            if (days_since_data < showlineslastdays and 
+                            if (days_since_data < showlineslastdays and
                                 days_since_data >= 0):
                                 self.lines_marks_dict[person_id].append(olddata)
-                            
+
                         '''
                             add most recent event for all living persons
                         '''
@@ -1652,7 +1652,7 @@ class GeoTimeLines(GeoGraphyView):
                             numevents+=1
                         else:
                             if self.show_lines:
-                                self.lines_marks_dict[person_id].append(olddata) 
+                                self.lines_marks_dict[person_id].append(olddata)
                             break
 
                     if olddata:
@@ -1669,8 +1669,8 @@ class GeoTimeLines(GeoGraphyView):
                         #self._add_person_marker(tempplace[3],tempplace[4],tempplace[8])
 
 
-        
-        
+
+
 
         self.lifeway_layer.clear_ways()
         if self.show_lines:
@@ -1684,7 +1684,7 @@ class GeoTimeLines(GeoGraphyView):
         self.message_layer.clear_messages()
         #self.message_layer.add_message(_("d: %s") % scale.get_value())
         self.message_layer.add_message(_("Number of Persons: %s") % currentpeople)
-        
+
 
 
     #def animate(
@@ -1702,7 +1702,7 @@ class GeoTimeLines(GeoGraphyView):
         self.marker_layer.add_marker(
             (float(lat), float(lon)), value, 0, gramps_id=gramps_id#Gdk.Color.to_string(self.person_colour_dict[gramps_id])
         )
-    
+
     #def _mapdebug(self, menu):
         #pass
         #self.slider.set_value(74796)
@@ -1714,7 +1714,7 @@ class GeoTimeLines(GeoGraphyView):
         #self.osm.image_add(49,-100,GdkPixbuf.Pixbuf.new_from_file('gramps/plugins/view/sunflower.png'))
         #self.osm.gps_add(49,-100,0)
         #self.osm.gps_add(59,-100,0)
- 
+
 
     def _get_configure_page_funcs(self):
         """
@@ -1728,7 +1728,7 @@ class GeoTimeLines(GeoGraphyView):
         Must be done in the associated view.
         """
         topframemargin = 10
-        
+
         grid = Gtk.Grid()
         grid.set_border_width(12)
         grid.set_column_spacing(6)
@@ -1747,22 +1747,22 @@ class GeoTimeLines(GeoGraphyView):
         ####.attach(child, column, row, width, height)
         grid.attach(leftgrid, 1, 1, 2, 1)
         grid.attach(rightgrid, 3, 1, 2, 1)
-        
+
         #########################################
         # Left Grid                             #
         #########################################
-            
+
         preferenceoptions = Gtk.Grid()
         preferenceoptions.set_border_width(12)
         preferenceoptions.set_column_spacing(6)
         preferenceoptions.set_row_spacing(6)
         preferenceoptions.set_margin_top(topframemargin)
-        
+
         leftgrid.attach(preferenceoptions, 1, 2, 2, 1)
         f = Gtk.Frame.new("Preferences")
         f.set_label_align(0.5, 0.5)
         leftgrid.attach(f, 1, 2, 2, 1)
-        
+
 
 
         staggerrow=1
@@ -1776,7 +1776,7 @@ class GeoTimeLines(GeoGraphyView):
             _('Stagger the map markers\n'
               'to differentiate different\n'
               'markers at the same location'),
-            1, 
+            1,
             'geotimelines.separate_markers')
         staggergrid2 = Gtk.Grid()
         staggergrid2.set_border_width(6)
@@ -1788,7 +1788,7 @@ class GeoTimeLines(GeoGraphyView):
             'geotimelines.show_missing_gen_radius',
             (1, 100),
         )
-        
+
         configdialog.add_combo(
             preferenceoptions,
             _("Display markers for unknown ancestors\nbased on earliest descendant location"),
@@ -1805,22 +1805,22 @@ class GeoTimeLines(GeoGraphyView):
             'geotimelines.persist_drawn_lines_days',
             (1, 36500),
         )
-            
+
         mapiconoptions = Gtk.Grid()
         mapiconoptions.set_border_width(12)
         mapiconoptions.set_column_spacing(6)
         mapiconoptions.set_row_spacing(6)
         mapiconoptions.set_margin_top(topframemargin)
-        
+
         leftgrid.attach(mapiconoptions, 1, 3, 2, 1)
         f = Gtk.Frame.new("Map Icon Options")
         f.set_label_align(0.5, 0.5)
-        leftgrid.attach(f, 1, 3, 2, 1)   
-            
+        leftgrid.attach(f, 1, 3, 2, 1)
+
         configdialog.add_checkbox(
             mapiconoptions,
             _('Use custom map icons'),
-            1, 
+            1,
             'geotimelines.use_custom_icons',
             extra_callback = self._config_use_custom_icons
             )
@@ -1830,15 +1830,15 @@ class GeoTimeLines(GeoGraphyView):
             2,
             'geotimelines.assumeage',
             (1, 120),
-        ) 
+        )
         configdialog.add_spinner(
             mapiconoptions,
             _("If there is no death event for a person, they will\nbe assumed dead at this age"),
             3,
             'geotimelines.assumedeath',
             (1, 120),
-        ) 
-            
+        )
+
         # Date format:
         '''
         obox = Gtk.ComboBoxText()
@@ -1852,7 +1852,7 @@ class GeoTimeLines(GeoGraphyView):
         preferenceoptions.attach(Gtk.Label("Date Format: "), 1, 3, 1, 1)
         preferenceoptions.attach(obox, 2, 3, 1, 1)
         '''
-            
+
         #########################################
         # Right Grid                            #
         #########################################
@@ -1862,7 +1862,7 @@ class GeoTimeLines(GeoGraphyView):
         animationgrid.set_column_spacing(6)
         animationgrid.set_row_spacing(6)
         animationgrid.set_margin_top(topframemargin)
-        
+
         rightgrid.attach(animationgrid, 1, 1, 2, 1)
         f = Gtk.Frame.new("Default Animation Options")
         f.set_label_align(0.5, 0.5)
@@ -1895,18 +1895,18 @@ class GeoTimeLines(GeoGraphyView):
             (1, 1000),
             #callback=self.cb_update_maxgen,
         )
-        
+
         defaultoptions = Gtk.Grid()
         defaultoptions.set_border_width(12)
         defaultoptions.set_column_spacing(6)
         defaultoptions.set_row_spacing(6)
         defaultoptions.set_margin_top(topframemargin)
-        
+
         rightgrid.attach(defaultoptions, 1, 2, 2, 1)
         f = Gtk.Frame.new("Default Behaviour Options")
         f.set_label_align(0.5, 0.5)
         rightgrid.attach(f, 1, 2, 2, 1)
-        
+
         startupreflist = []
         for c in self.DB_CHOICES_INITIAL.values():
             startupreflist.append((len(startupreflist), c))
@@ -1930,27 +1930,27 @@ class GeoTimeLines(GeoGraphyView):
             onchangereflist,
             #callback=self.cb_update_font,
             #valueactive=True, #store value or position
-        )        
+        )
         configdialog.add_checkbox(
             defaultoptions,
             _('Show map travel lines on startup'),
-            3, 
+            3,
             'geotimelines.default_show_lines',
             )
         configdialog.add_checkbox(
             defaultoptions,
                 _('Show time ticks on navigation bar on startup'),
-            4, 
+            4,
             'geotimelines.default_show_ticks',
             )
-        
-        
+
+
         notesgrid = Gtk.Grid()
         notesgrid.set_border_width(12)
         notesgrid.set_column_spacing(6)
         notesgrid.set_row_spacing(6)
         notesgrid.set_margin_top(topframemargin)
-        
+
         #col row w h
         rightgrid.attach(notesgrid, 1, 3, 2, 1)
         f = Gtk.Frame.new("Other")
@@ -1970,13 +1970,13 @@ class GeoTimeLines(GeoGraphyView):
         lbl.set_size_request(70,-1)
         lbl.set_label(str(int(avg_animate_calc_time)))
         notesgrid.attach(lbl, 2, 1, 1, 1)
-        
+
         return _('TimeLines Map options'), grid
 
     def _refreshdisplay(self):
         self._set_default_marker()
         self._create_markers()
-        
+
         if self.show_all:
             self.sort = self.all_sort
             self._create_markers()
@@ -1992,7 +1992,7 @@ class GeoTimeLines(GeoGraphyView):
                 self.message_layer.add_message(_("Number of Persons: %s") % len(self.all_sort_lines_dict))
         else:
             self._slideraction(self.slider)
-        
+
         self.lifeway_layer.clear_ways() #removes lines
         if self.show_lines:
             if self.show_all:
@@ -2000,7 +2000,7 @@ class GeoTimeLines(GeoGraphyView):
             else: #using slider
                 self._drawlines(self.lines_marks_dict)
         self._set_center_and_zoom()
-        
+
         #self.clear_view()
         #self.build_widget()
         #self._buildslider()
@@ -2018,57 +2018,57 @@ class GeoTimeLines(GeoGraphyView):
         text = Gtk.Label(label="Choose one of the following to construct this mapview. This can be\nchanged later by right-clicking and selecting \"Choose View Format\"")
         text.set_use_markup(True)
         dialog.vbox.add(text)
-        
+
         btn = Gtk.Button()
         btn.show()
         btn.set_label(f"<b>Only</b> \"{_nd.display(self.dbstate.db.get_person_from_handle(self.uistate.get_active('Person')))}\"")
         btn.get_children()[0].set_use_markup(True)
         btn.connect('released', self._startupdialogbutton, dialog, self.DB_CHOICE_ACTIVE)
         dialog.vbox.add(btn)
-        
+
         btn = Gtk.Button()
         btn.show()
         btn.set_label(f"\"{_nd.display(self.dbstate.db.get_person_from_handle(self.uistate.get_active('Person')))}\" and their <b>Ancestors</b>")
         btn.get_children()[0].set_use_markup(True)
         btn.connect('released', self._startupdialogbutton, dialog, self.DB_CHOICE_ANC)
         dialog.vbox.add(btn)
-        
+
         btn = Gtk.Button()
         btn.show()
         btn.set_label(f"\"{_nd.display(self.dbstate.db.get_person_from_handle(self.uistate.get_active('Person')))}\" and their <b>Descendants</b>")
         btn.get_children()[0].set_use_markup(True)
         btn.connect('released', self._startupdialogbutton, dialog, self.DB_CHOICE_DESC)
         dialog.vbox.add(btn)
-        
+
         btn = Gtk.Button()
         btn.show()
         btn.set_label(f"\"{_nd.display(self.dbstate.db.get_person_from_handle(self.uistate.get_active('Person')))}\" and both their <b>Ancestors and Descendants</b>")
         btn.get_children()[0].set_use_markup(True)
         btn.connect('released', self._startupdialogbutton, dialog, self.DB_CHOICE_ANCDES)
         dialog.vbox.add(btn)
-        
+
         btn = Gtk.Button()
         btn.show()
         btn.set_label(f"<b>All Connections</b> to \"{_nd.display(self.dbstate.db.get_person_from_handle(self.uistate.get_active('Person')))}\"")
         btn.get_children()[0].set_use_markup(True)
         btn.connect('released', self._startupdialogbutton, dialog, self.DB_CHOICE_REL)
         dialog.vbox.add(btn)
-        
+
         btn = Gtk.Button()
         btn.show()
         btn.set_label(f"<b>Entire Database</b>")
         btn.get_children()[0].set_use_markup(True)
         btn.connect('released', self._startupdialogbutton, dialog, self.DB_CHOICE_DB)
         dialog.vbox.add(btn)
-        
+
         btn = Gtk.Button()
         btn.show()
         btn.set_label(f"Selection from <b>Filter</b>")
         btn.get_children()[0].set_use_markup(True)
         btn.connect('released', self._startupdialogbutton, dialog, self.DB_CHOICE_FILTER)
         dialog.vbox.add(btn)
-        
-        
+
+
         parent = None
         if not parent:  # if we don't have an explicit parent,
             # try to find one
@@ -2089,7 +2089,7 @@ class GeoTimeLines(GeoGraphyView):
         self.show_startup_dialog = False
         self.goto_handle()
 
-        
+
     '''
     def _date_format_changed(self, obj):
         self._config.set("geotimelines.date-format", obj.get_active())
@@ -2128,7 +2128,7 @@ class GeoTimeLines(GeoGraphyView):
             return self.all_person_icons[gramps_id]["ring_small"]
         else:
             return self.all_person_icons[gramps_id]["circle"]
-                
+
     def _generateIcons(self):
         self.missingparent_icon = self._draw_text(Gdk.RGBA(0.5,0.5,0.5,0.50), 20.0, "?")
         for gramps_id in self.person_colour_dict:
@@ -2145,16 +2145,16 @@ class GeoTimeLines(GeoGraphyView):
                 "?small" : self._draw_text(colour, 20.0, "?"),
                 "x" : self._draw_text(colour, 30.0, "x"),
                 "+" : self._draw_text(colour, 40.0, "+"),
-                "—" : self._draw_text(colour, 40.0, "-"),            
+                "—" : self._draw_text(colour, 40.0, "-"),
             }
 
     def _draw_circle(self, colour):
         surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, 48, 48)
         ctx = cairo.Context(surface)
-        
+
         ctx.set_line_width(4.0)
         radius = 8
-        
+
         ctx.set_line_width(6.0)
         ctx.set_source_rgba(
             0,
@@ -2164,7 +2164,7 @@ class GeoTimeLines(GeoGraphyView):
         )
         ctx.arc(24,24, radius, 0, 2*math.pi)
         ctx.stroke()
-        
+
         ctx.set_line_width(4.0)
         ctx.set_source_rgba(
             colour.red,
@@ -2180,11 +2180,11 @@ class GeoTimeLines(GeoGraphyView):
         #ctx.set_source_surface(surface, -24, -24)
         ctx.save()
         return surface
-        
+
     def _draw_house(self, colour):
         surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, 48, 48)
         ctx = cairo.Context(surface)
-        
+
         ctx.set_line_width(3.5)
         ctx.set_source_rgba(
             0,
@@ -2199,7 +2199,7 @@ class GeoTimeLines(GeoGraphyView):
         ctx.line_to(32,32)
         ctx.line_to(16,32)
         ctx.stroke()
-        
+
         ctx.set_line_width(4.0)
         ctx.set_source_rgba(
             colour.red,
@@ -2224,14 +2224,14 @@ class GeoTimeLines(GeoGraphyView):
         imghght = 48
         surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, imgwdth, imghght)
         ctx = cairo.Context(surface)
-        
-        
+
+
         height = 10 #less arc
         width = 18
         arcradius = 28
         arcadditionalheight = 8 #arc reaches over height
         angle = math.asin((width/2)/arcradius)
-        
+
         ctx.set_line_width(3.5)
         ctx.set_source_rgba(
             0,
@@ -2245,7 +2245,7 @@ class GeoTimeLines(GeoGraphyView):
         ctx.line_to(imgwdth/2+width/2,imghght/2+height/2+arcadditionalheight/2)
         ctx.line_to(imgwdth/2-width/2,imghght/2+height/2+arcadditionalheight/2)
         ctx.stroke()
-        
+
         ctx.set_line_width(4.0)
         ctx.set_source_rgba(
             0.65,
@@ -2270,7 +2270,7 @@ class GeoTimeLines(GeoGraphyView):
         ctx.move_to(imgwdth/2-2*width/5,imghght/2-(height+arcadditionalheight)/8)
         ctx.line_to(imgwdth/2+2*width/5,imghght/2-(height+arcadditionalheight)/8)
         ctx.stroke()
-        
+
         ctx.set_line_width(6.0)
         ctx.set_source_rgba(
             colour.red,
@@ -2281,17 +2281,17 @@ class GeoTimeLines(GeoGraphyView):
         ctx.move_to(imgwdth/2-2*width/5,imghght/2-(height+arcadditionalheight)/8)
         ctx.line_to(imgwdth/2+2*width/5,imghght/2-(height+arcadditionalheight)/8)
         ctx.stroke()
-    
+
         ctx.save()
         return surface
-        
+
     def _draw_text(self, colour, fontsize, text):
         surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, 48, 48)
         ctx = cairo.Context(surface)
 
         ctx.set_line_width(4.0)
         radius = 4
-        
+
         ctx.set_source_rgba(
             0,
             0,
@@ -2299,15 +2299,15 @@ class GeoTimeLines(GeoGraphyView):
             colour.alpha,
         )
         ctx.set_font_size(fontsize)
-        ctx.select_font_face("Arial", cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD) 
+        ctx.select_font_face("Arial", cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
         extents = ctx.text_extents(text)
         x = 24-(extents.width/2 + extents.x_bearing);
         y = 24-(extents.height/2 + extents.y_bearing);
-        ctx.move_to(x, y) 
+        ctx.move_to(x, y)
         ctx.text_path(text)
         ctx.set_line_width(2)
         ctx.stroke()
-        
+
         ctx.set_source_rgba(
             colour.red,
             colour.green,
@@ -2315,16 +2315,16 @@ class GeoTimeLines(GeoGraphyView):
             colour.alpha
         )
         ctx.set_font_size(fontsize)
-        ctx.select_font_face("Arial", cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD) 
+        ctx.select_font_face("Arial", cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
         extents = ctx.text_extents(text)
         x = 24-(extents.width/2 + extents.x_bearing);
         y = 24-(extents.height/2 + extents.y_bearing);
-        ctx.move_to(x, y) 
+        ctx.move_to(x, y)
         ctx.text_path(text)
         ctx.set_line_width(2)
         ctx.fill()
-        
-        
+
+
         #ctx.set_source_surface(surface, -24, -24)
         ctx.save()
         return surface
@@ -2332,11 +2332,11 @@ class GeoTimeLines(GeoGraphyView):
     def _draw_cut_ring(self, colour, radius):
         surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, 48, 48)
         ctx = cairo.Context(surface)
-        
+
         number_of_segments = 7
 
         pathlength=2*radius*math.pi
-        
+
         ctx.set_line_width(6.2)
         ctx.set_dash([1.6*pathlength/38.5, 1.9*pathlength/38.5], 1)
         ctx.set_source_rgba(
@@ -2347,7 +2347,7 @@ class GeoTimeLines(GeoGraphyView):
         )
         ctx.arc(24,24, radius, 0, 2*math.pi)
         ctx.stroke()
-                
+
         ctx.set_line_width(6.0)
         ctx.set_dash([1.4*pathlength/38.5, 2.1*pathlength/38.5], 1)
         ctx.set_source_rgba(
@@ -2365,7 +2365,7 @@ class GeoTimeLines(GeoGraphyView):
     def _draw_square(self, colour):
         surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, 16, 16)
         ctx = cairo.Context(surface)
-        
+
         ctx.set_line_width(3.5)
         ctx.set_source_rgba(
             0,
@@ -2379,7 +2379,7 @@ class GeoTimeLines(GeoGraphyView):
         ctx.line_to(15,1)
         ctx.line_to(1,1)
         ctx.fill()
-        
+
         ctx.set_line_width(4.0)
         ctx.set_source_rgba(
             colour.red,
