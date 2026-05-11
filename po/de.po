@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-10 10:43-0700\n"
-"PO-Revision-Date: 2026-05-10 07:02+0000\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -20893,6 +20893,8 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1311
 msgid "exiv2 executable not installed, can't retrieve libexiv2 version."
 msgstr ""
+"Die ausführbare Datei „exiv2“ ist nicht installiert, die Version von „"
+"libexiv2“ kann nicht ermittelt werden."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1312
 #, python-format
