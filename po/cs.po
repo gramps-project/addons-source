@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-11 17:13-0700\n"
-"PO-Revision-Date: 2026-04-17 16:23+0000\n"
+"PO-Revision-Date: 2026-04-20 04:09+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
@@ -2420,27 +2420,27 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2583
 msgid "Direction in which time increases."
-msgstr ""
+msgstr "Směr, kterým plyne čas."
 
 #: DenominoViso/DenominoViso.py:2592
 msgid "Max chart width (%)"
-msgstr ""
+msgstr "Maximální šířka grafu (%)"
 
 #: DenominoViso/DenominoViso.py:2593
 msgid "Width of the tree as fraction of the browser window"
-msgstr ""
+msgstr "Šířka stromu jako podíl šířky okna prohlížeče"
 
 #: DenominoViso/DenominoViso.py:2596
 msgid "Max chart height (px)"
-msgstr ""
+msgstr "Maximální výška grafu (px)"
 
 #: DenominoViso/DenominoViso.py:2597
 msgid "Height of the tree in pixels."
-msgstr ""
+msgstr "Výška stromu v pixelech."
 
 #: DenominoViso/DenominoViso.py:2600
 msgid "Closing remarks"
-msgstr ""
+msgstr "Závěrečné poznámky"
 
 #: DenominoViso/DenominoViso.py:2601
 msgid ""
