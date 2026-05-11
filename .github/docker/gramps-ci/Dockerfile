@@ -26,6 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         gir1.2-pango-1.0 \
         gir1.2-gdkpixbuf-2.0 \
         gir1.2-atk-1.0 \
+        gir1.2-gexiv2-0.10 \
         gcc \
         pkg-config \
         python3-dev \
