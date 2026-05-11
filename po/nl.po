@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-10 10:43-0700\n"
-"PO-Revision-Date: 2026-05-09 13:09+0000\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -873,7 +873,7 @@ msgstr "Maximum leeftijd die iemand kan bereiken"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:131
 msgid "Maximum age difference between siblings"
-msgstr "Maximaal leeftijdsverschil tussen broers en zussen"
+msgstr "Maximaal leeftijdsverschil tussen broers/zussen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Average years between two generations"
@@ -2137,7 +2137,7 @@ msgstr "Kan geen nieuwe persoon toevoegen als echtgenoot."
 
 #: DataEntryGramplet/DataEntryGramplet.py:569
 msgid "Can't add new person as a sibling."
-msgstr "Kan geen nieuwe persoon toevoegen als broer of zus."
+msgstr "Kan geen nieuwe persoon toevoegen als broer/zus."
 
 #: DataEntryGramplet/DataEntryGramplet.py:574
 #: DataEntryGramplet/DataEntryGramplet.py:947
@@ -2295,7 +2295,7 @@ msgstr "Opmerking over familie"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:258
 msgid "sibling"
-msgstr "broer of zus"
+msgstr "broer/zus"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:268
 msgid "Note on Parent Family"
@@ -4110,12 +4110,12 @@ msgid ""
 "25% of their DNA similar to half-siblings instead of 12.5% like normal first "
 "cousins.\n"
 msgstr ""
-"Dubbelneven en achterneven komen voor wanneer twee broers en zussen van "
-"familie A trouwen met twee broers en zussen van familie B. Hun kinderen zijn "
+"Dubbelneven en achterneven komen voor wanneer twee broers/zussen van familie "
+"A trouwen met twee broers/zussen van familie B. Hun kinderen zijn "
 "dubbelneven en delen dezelfde vier grootouders in plaats van zes zoals bij "
 "normale neven en nichten. Daarom zijn ze genetisch dichter bij elkaar dan "
-"normale neven en nichten en delen ze 25% van hun DNA zoals bij halfbroers en "
-"halfzussen in plaats van 12,5% zoals bij normale neven en nichten.\n"
+"normale neven en nichten en delen ze 25% van hun DNA zoals bij halfbroers/-"
+"zussen in plaats van 12,5% zoals bij normale neven en nichten.\n"
 
 #: DoubleCousins/double_cousins.py:136
 msgid "No double cousins were found in your database."
@@ -4865,8 +4865,8 @@ msgstr "Al dan niet gezinspagina's opnemen"
 msgid ""
 "Whether to include half and/ or step-siblings with the parents and siblings"
 msgstr ""
-"Of half- en/of stiefbroers en -zussen met de ouders en broers en zussen "
-"moeten worden ogepnomen"
+"Of half- en/of stiefbroers en -zussen met de ouders en broers/zussen moeten "
+"worden ogepnomen"
 
 #: DynamicWeb/dynamicweb.py:4968
 msgid "Enable page configuration"
@@ -15364,11 +15364,11 @@ msgstr "Generaties omlaag"
 
 #: GenealogyTree/gt_sandclock.py:246
 msgid "Include siblings"
-msgstr "Voeg broers en zussen toe"
+msgstr "Inclusief broers/zussen"
 
 #: GenealogyTree/gt_sandclock.py:247
 msgid "Include siblings of ancestors."
-msgstr "Broers en zussen van voorouders toevoegen."
+msgstr "Inclusief broers/zussen van voorouders."
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
@@ -17681,11 +17681,11 @@ msgstr "Persoon weergeven"
 
 #: LifeLineChartView/lifelinechart.py:2622
 msgid "Show siblings"
-msgstr "Broers en zussen weergeven"
+msgstr "Broers/zussen weergeven"
 
 #: LifeLineChartView/lifelinechart.py:2627
 msgid "Hide siblings"
-msgstr "Verberg broers en zussen"
+msgstr "Broers/zussen verbergen"
 
 #: LifeLineChartView/lifelinechart.py:2652
 msgid "Show ancestors above "
@@ -20788,6 +20788,8 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1311
 msgid "exiv2 executable not installed, can't retrieve libexiv2 version."
 msgstr ""
+"exiv2 uitvoerbaar bestand niet geïnstalleerd, kan libexiv2-versie niet "
+"ophalen."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1312
 #, python-format
