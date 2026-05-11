@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-08-23 15:02+0000\n"
-"Last-Translator: Krystian Safjan <ksafjan@gmail.com>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2025-12-14 21:00+0000\n"
+"Last-Translator: WaldiS <sto@tutanota.de>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
 "Language: pl\n"
@@ -13,28 +13,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.15-dev\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
-
-msgid "Descendant Book"
-msgstr "Księga potomków"
-
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-"Tworzy jeden lub więcej raportów potomków na podstawie dostarczonego "
-"zapytania."
-
-msgid "Detailed Descendant Book"
-msgstr "Szczegółowa księga potomków"
-
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Tworzy jeden lub więcej szczegółowych raportów potomków na podstawie "
-"dostarczonego zapytania."
 
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
@@ -231,6 +214,23 @@ msgstr "Styl używany do nagłówka w indeksie miejsc."
 
 msgid "The style used for the references in the Index of Places."
 msgstr "Styl używany do odniesień w indeksie miejsc."
+
+msgid "Descendant Book"
+msgstr "Księga potomków"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Tworzy jeden lub więcej raportów potomków na podstawie dostarczonego "
+"zapytania."
+
+msgid "Detailed Descendant Book"
+msgstr "Szczegółowa księga potomków"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Tworzy jeden lub więcej szczegółowych raportów potomków na podstawie "
+"dostarczonego zapytania."
 
 #, python-format
 msgid "Deep pruning ascendants from %s people..."

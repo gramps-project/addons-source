@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,13 +12,121 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Note Cleanup"
+msgstr "Purga de Nota"
+
+msgid "Clean up Notes that contain HTML markup"
+msgstr "Purga las Notas que contengan marcadores de HTML"
+
+msgid "Note Cleanup Tool"
+msgstr "Herramienta del Purgado de Nota"
+
+msgid "Cleaned Notes"
+msgstr "Notas Purgadas"
+
+msgid "Links Only"
+msgstr "Solo Enlaces"
+
+msgid "Issues"
+msgstr "Incidencias"
+
+msgid "Close the Note Cleanup Tool"
+msgstr "Cierra la Herramienta de Purga de Nota"
 
 msgid "Save All"
 msgstr "Guardar todo"
 
+msgid "Save All Changes"
+msgstr "Guardar Todos los Cambios"
+
 msgid "Search"
 msgstr "Buscar"
 
+msgid "Search for Untidy Notes"
+msgstr "Buscar Notas Unitarias"
+
+msgid "Generate Test Notes"
+msgstr "Genera Notas de Test"
+
+msgid ""
+"Generate Test notes in range N99996-N99999.\n"
+"These are added to your database, so you may want to work with a test "
+"database or delete them later."
+msgstr ""
+"Genera notas de prueba en el rango N99996-N99999.\n"
+"Estas se añadirán a tu base de datos, por lo que te recomendamos trabajar "
+"con una base de datos de prueba o eliminarlas posteriormente."
+
 msgid "Export"
 msgstr "Exportar"
+
+msgid "Export the results to a text file"
+msgstr "Exporta los resultados a un archivo de texto"
+
+msgid ""
+"Please back up your database before running this tool.\n"
+"\n"
+"Start the tool by pressing the 'Search' button, then review the results.\n"
+"When satisifed press the 'Save All' button to save your work.\n"
+"You may export a summary list of the notes that were found using the "
+"'Export' button."
+msgstr ""
+"Por favor, vuelva a subir su base de datos antes de ejecutar esta "
+"herramienta.\n"
+"\n"
+"Comience la herramienta pulsando el botón «Buscar», luego revise los "
+"resultados.\n"
+"Cuando se sienta presiona el botón «Guardar todo» para salvar tu trabajo.\n"
+"Puede exportar una lista sumaria de las notas que se encontraron utilizando "
+"el botón «Exportar»."
+
+msgid "Clean up Notes"
+msgstr "Purgar Notas"
+
+msgid "Cleanup Test Notes"
+msgstr "Purgar Notas de Prueba"
+
+msgid "Add Test Note"
+msgstr "Agregar Nota de Prueba"
+
+msgid "Export results to a text file"
+msgstr "Exportar los resultados a un archivo de texto"
+
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Error al escribir el informe: %s"
+
+msgid ""
+"\n"
+"\n"
+"Notes selected on the left pane are shown Before cleanup in this box."
+msgstr ""
+"\n"
+"\n"
+"Notas seleccionadas en el panel izquierdo muestro Antes de purgar en esta "
+"caja."
+
+msgid ""
+"\n"
+"\n"
+"Notes selected on the left pane are shown After cleanup in this box.\n"
+"If you wish to make changes, you can make them here and use the style "
+"controls in the toolbar above."
+msgstr ""
+"\n"
+"\n"
+"Notas seleccionadas en el panel izquierdo son mostradas tras la purga en "
+"esta caja.\n"
+"Si desea hacer cambios, puede hacerlos aquí y utilizar los controles de "
+"estilo en la barra de herramientas anterior."
+
+msgid "Saving Notes"
+msgstr "Guardando Notas"
+
+msgid "Saving Cleaned Notes"
+msgstr "Guardando Notas Purgadas"
+
+msgid "Scanning Notes"
+msgstr "Explorando notas"

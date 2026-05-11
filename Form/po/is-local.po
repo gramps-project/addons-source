@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2026-02-10 21:09+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-04-30 20:09+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <https://hosted.weblate.org/projects/gramps-project/"
 "addons/is/>\n"
@@ -12,7 +12,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 
 msgid "Reference:"
 msgstr "Tilvísun:"
+
+msgid "Column37"
+msgstr "Dálkur37"
+
+msgid "Column38"
+msgstr "Dálkur38"
+
+msgid "Column39"
+msgstr "Dálkur39"
+
+msgid "Place of birth"
+msgstr "Fæðingarstaður"
+
+msgid "Place of Birth"
+msgstr "Fæðingarstaður"
+
+msgid "Place married"
+msgstr "Staður hjónavígslu"
+
+msgid "Volume"
+msgstr "Bindi"

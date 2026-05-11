@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-06-05 06:02+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,366 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
+
+msgid "No title"
+msgstr "Geen titel"
+
+msgid "No data available."
+msgstr "Geen gegevens beschikbaar."
+
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "HISTORISCHE ADMINISTRATIEVE DELEN VAN"
+
+msgid "Foundation date:"
+msgstr "Oprichtingsdatum:"
+
+msgid "Note:"
+msgstr "Notitie:"
+
+msgid "Coordinates:"
+msgstr "Coördinaten:"
+
+msgid "Administrative history"
+msgstr "Administratieve geschiedenis"
+
+msgid "Data provided to AI:"
+msgstr "Gegevens verstrekt aan AI:"
+
+msgid "Full hierarchy"
+msgstr "Volledige hiërarchie"
+
+msgid "Place Type:"
+msgstr "Locatietype:"
+
+msgid "Last Retrieved At:"
+msgstr "Laatst opgehaald op:"
+
+msgid "Save Coordinates to the Place"
+msgstr "Coördinaten naar de plaats opslaan"
+
+msgid "AI provider is disabled"
+msgstr "AI-leverancier is uitgeschakeld"
+
+msgid "No AI API key provided"
+msgstr "Geen AI API-sleutel opgegeven"
+
+msgid "AI-generated historical place data is currently disabled"
+msgstr ""
+"AI-gegenereerde historische plaatsgegevens zijn momenteel uitgeschakeld"
+
+msgid "AI provider is unknown. Please check your AI provider settings."
+msgstr ""
+"AI-leverancier is onbekend. Controleer uw instellingen voor de AI-"
+"leverancier."
+
+msgid "⏳ Generating historical place data, please wait..."
+msgstr "⏳ Historische plaatsgegevens genereren, even geduld…"
+
+msgid "Keys"
+msgstr "Sleutels"
+
+msgid "Website URL"
+msgstr "Website-URL"
+
+msgid "Add link to note"
+msgstr "Koppeling toevoegen aan notitie"
+
+msgid "Add link to attribute"
+msgstr "Koppeling toevoegen aan attribuut"
+
+msgid "Show QR-code"
+msgstr "QR-code weergeven"
+
+msgid "Copy link to clipboard"
+msgstr "Koppeling naar klembord kopiëren"
+
+msgid "Hide link for selected item"
+msgstr "Koppeling verbergen voor geselecteerd item"
+
+msgid "Hide link for all items"
+msgstr "Koppeling verbergen voor alle items"
+
+msgid "Edit Attribute with the Link"
+msgstr "Kenmerk met de link bewerken"
+
+msgid "Edit Note with the Link"
+msgstr "Notitie met de link bewerken"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 AI-suggesties"
+
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr "Kenmerk bestaat niet meer. Extra pictogram wordt verwijderd"
+
+msgid "Note no longer exists. The extra icon is removed"
+msgstr "Notitie bestaat niet meer. Exptra pictogram wordt verwijderd"
+
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+"📌 Deze '{title}' weblink werd gearchiveerd voor toekomstig gebruik door de "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Je kunt deze link gebruiken om de bron opnieuw te bezoeken en de informatie "
+"met betrekking tot deze entiteit te verifiëren."
+
+#, python-format
+msgid "Note #%(id)s has been successfully added"
+msgstr "Notitie #%(id)s is met succes toegevoeg"
+
+msgid "Error creating note"
+msgstr "Fout bij aanmaken notitie"
+
+msgid "URL is copied to the Clipboard"
+msgstr "URL is gekopieerd naar het klembord"
+
+msgid "WebSearch Link"
+msgstr "WebSearch Link"
+
+msgid "Attribute has been successfully added"
+msgstr "Attribuut is met success toegevoegd"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Titel: {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "Vervangen: {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "Leeg: {keys}"
+
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "Commentaar: {comment}"
+
+msgid "Column - Icons"
+msgstr "Kolom - Pictogrammen"
+
+msgid "Column - Source Types (flags)"
+msgstr "Kolom - Brontypen (kenmerken)"
+
+msgid "Column - Keys"
+msgstr "Kolom - Sleutels"
+
+msgid "Column - Title"
+msgstr "Kolom - Titel"
+
+msgid "Column - Website Url"
+msgstr "Kolom - Website-url"
+
+msgid "Column - Comment"
+msgstr "Kolom - Commentaar"
+
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "Pictogram - Bezochte URLs (vinkje)"
+
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "Pictogram - Opgeslagen URLs (diskette)"
+
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "Pictogram - URLs gekoppeld met UID-attributen (UID-insigne)"
+
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "Pictogram - URLs van regionale CSV-gegevens uit (vlag)"
+
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "Pictogram - URLs van statische CSV-bestanden (rode pin)"
+
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "Pictogram - URLs van algemene CSV-bestanden (aarde)"
+
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "Pictogram - URLs van CSV-kruisgegevens (pijlen)"
+
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr "Pictogram - URLs van aangepaste gebruikersmap (tabel)"
+
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Pictogram - URLs van de tab 'Attributen' ('A'-pictogram)"
+
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Pictogram - URLs van de tab 'Internet' ('I'-pictogram)"
+
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Pictogram - URLs van de tab 'Notities' ('N'-pictogram)"
+
+msgid "QR-code"
+msgstr "QR-code"
+
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Ontbrekende afhankelijkheid \"qrcode\""
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Fout bij genereren QR-code:\n"
+"Originele fout: “{}”"
+
+msgid "Note Link (parsed)"
+msgstr "Notitiekoppeling (verwerkt)"
+
+msgid "Note Link (internal)"
+msgstr "Notitiekoppeling (intern)"
+
+msgid "Note Link (external)"
+msgstr "Notitiekoppeling (extern)"
+
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 Over WebSearch"
+
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"WebSearch is een Gramps Gramplet dat u helpt bij het zoeken naar genealogie-"
+"gerelateerde websites."
+
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"Het ondersteunt op CSV gebaseerde linktemplates, AI-ondersteunde ontdekking "
+"van websites en biedt directe integratie met notities en kenmerken."
+
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Systeeminformatie"
+
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Ontbrekend:** `qrcode`"
+
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Deze Python-bibliotheek is niet beschikbaar op uw systeem."
+
+msgid "Without it, QR code generation will not work."
+msgstr "Zonder zal het genereren van QR-codes niet werken."
+
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Meestal geïnstalleerd met: `pip install qrcode[pil]`"
+
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Opmerking: Sommige besturingssystemen of omgevingen vereisen mogelijk "
+"alternatieve installatiemethoden.*"
+
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **Ontbrekend:** `openai`"
+
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr ""
+"ℹ️ Deze bibliotheek is vereist voor toegang tot OpenAI-gebaseerde functies."
+
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Zonder zullen AI-gegenereerde sitevoorstellen en plaatsgeschiedenis "
+"uitgeschakeld zijn."
+
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 Meestal geïnstalleerd met: `pip install openai`"
+
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Ontbrekend:** `requests`"
+
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Deze bibliotheek wordt gebruikt om te communiceren met web-API's."
+
+msgid "Without it, external data sources may not be accessible."
+msgstr "Zonder zijn externe gegevensbronnen mogelijk niet toegankelijk."
+
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 Meestal geïnstalleerd met: `pip install requests`"
+
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Locatie van gegevensbestanden"
+
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"Hieronder staan de paden naar systeem- en gebruikersgedefinieerde "
+"gegevensbestanden gebruikt door WebSearch."
+
+msgid "#### CSV File Paths"
+msgstr "#### CSV-bestandspaden"
+
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr "- **Systeempad:** `{dir|%s}` – bevat de ingebouwde CSV-bestanden"
+
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **Gebruikersgedefinieerd pad:** `{dir|%s}` – voor aangepaste "
+"gebruikersgedefinieerde CSV-bestanden"
+
+msgid "#### JSON File Paths"
+msgstr "#### JSON-bestandspaden"
+
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **Systeempad:** `{dir|%s}` – bevat het ingebouwde bestand "
+"attribute_mapping.json"
+
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **Gebruikersgedefinieerd pad:** `{dir|%s}` – voor het aangepaste "
+"gebruikersgedefinieerde bestand attribute_mapping.json"
+
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *Tip: klik op een pad hierboven om het openen in uw bestandsverkenner.*"
+
+msgid "📖 View detailed usage in: "
+msgstr "📖 Gebruiksdetails in: "
+
+msgid "## 💬 Support"
+msgstr "## 💬 Ondersteuning"
+
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 Gemaakt en onderhouden door Yurii Liubymyi"
+
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 Voor hulp of reacties, vermeld gerust `@Urchello` op het Gramps forum:"
+
+msgid "Gramps Forum (Discourse)"
+msgstr "Gramps Forum (Discourse)"
+
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr "✅ Foutmeldingen en functieverzoeken zijn volledig **gratis**."
+
+msgid "GitHub Issues"
+msgstr "GitHub Issues"
+
+msgid "Gramps Bug Tracker"
+msgstr "Gramps Bug Tracker"
+
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 WebSearch Gramplet versie: `%s`"
 
 msgid "Middle Name Handling"
 msgstr "Verwerking van middelste namen"
@@ -165,353 +524,3 @@ msgstr "Kenmerk bijgewerkt"
 
 msgid "Note updated"
 msgstr "Notitie bijgewerkt"
-
-msgid "Note Link (parsed)"
-msgstr "Notitiekoppeling (verwerkt)"
-
-msgid "Note Link (internal)"
-msgstr "Notitiekoppeling (intern)"
-
-msgid "Note Link (external)"
-msgstr "Notitiekoppeling (extern)"
-
-msgid "No title"
-msgstr "Geen titel"
-
-msgid "## 🧩 About WebSearch"
-msgstr "## 🧩 Over WebSearch"
-
-msgid ""
-"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
-"websites."
-msgstr ""
-"WebSearch is een Gramps Gramplet dat u helpt bij het zoeken naar genealogie-"
-"gerelateerde websites."
-
-msgid ""
-"It supports CSV-based link templates, AI-assisted site discovery, and direct "
-"integration with notes and attributes."
-msgstr ""
-"Het ondersteunt op CSV gebaseerde linktemplates, AI-ondersteunde ontdekking "
-"van websites en biedt directe integratie met notities en kenmerken."
-
-msgid "## ⚙️ System Information"
-msgstr "## ⚙️ Systeeminformatie"
-
-msgid "🔻 **Missing:** `qrcode`"
-msgstr "🔻 **Ontbrekend:** `qrcode`"
-
-msgid "ℹ️ This Python library is not available in your system."
-msgstr "ℹ️ Deze Python-bibliotheek is niet beschikbaar op uw systeem."
-
-msgid "Without it, QR code generation will not work."
-msgstr "Zonder zal het genereren van QR-codes niet werken."
-
-msgid "💡 Usually installed with: `pip install qrcode[pil]`"
-msgstr "💡 Meestal geïnstalleerd met: `pip install qrcode[pil]`"
-
-msgid ""
-"*Note: Some operating systems or environments may require alternative "
-"installation methods.*"
-msgstr ""
-"*Opmerking: Sommige besturingssystemen of omgevingen vereisen mogelijk "
-"alternatieve installatiemethoden.*"
-
-msgid "🔻 **Missing:** `openai`"
-msgstr "🔻 **Ontbrekend:** `openai`"
-
-msgid "ℹ️ This library is required for accessing OpenAI-based features."
-msgstr ""
-"ℹ️ Deze bibliotheek is vereist voor toegang tot OpenAI-gebaseerde functies."
-
-msgid ""
-"Without it, AI-generated site suggestions and place history will be disabled."
-msgstr ""
-"Zonder zullen AI-gegenereerde sitevoorstellen en plaatsgeschiedenis "
-"uitgeschakeld zijn."
-
-msgid "💡 Usually installed with: `pip install openai`"
-msgstr "💡 Meestal geïnstalleerd met: `pip install openai`"
-
-msgid "🔻 **Missing:** `requests`"
-msgstr "🔻 **Ontbrekend:** `requests`"
-
-msgid "ℹ️ This library is used to communicate with web APIs."
-msgstr "ℹ️ Deze bibliotheek wordt gebruikt om te communiceren met web-API's."
-
-msgid "Without it, external data sources may not be accessible."
-msgstr "Zonder zijn externe gegevensbronnen mogelijk niet toegankelijk."
-
-msgid "💡 Usually installed with: `pip install requests`"
-msgstr "💡 Meestal geïnstalleerd met: `pip install requests`"
-
-msgid "## 📂 Data File Locations"
-msgstr "## 📂 Locatie van gegevensbestanden"
-
-msgid ""
-"Below are the paths to system and user-defined data files used by WebSearch."
-msgstr ""
-"Hieronder staan de paden naar systeem- en gebruikersgedefinieerde "
-"gegevensbestanden gebruikt door WebSearch."
-
-msgid "#### CSV File Paths"
-msgstr "#### CSV-bestandspaden"
-
-#, python-format
-msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
-msgstr "- **Systeempad:** `{dir|%s}` – bevat de ingebouwde CSV-bestanden"
-
-#, python-format
-msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
-msgstr ""
-"- **Gebruikersgedefinieerd pad:** `{dir|%s}` – voor aangepaste "
-"gebruikersgedefinieerde CSV-bestanden"
-
-msgid "#### JSON File Paths"
-msgstr "#### JSON-bestandspaden"
-
-#, python-format
-msgid ""
-"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
-"file"
-msgstr ""
-"- **Systeempad:** `{dir|%s}` – bevat het ingebouwde bestand "
-"attribute_mapping.json"
-
-#, python-format
-msgid ""
-"- **User-defined path:** `{dir|%s}` – for custom user-defined "
-"attribute_mapping.json file"
-msgstr ""
-"- **Gebruikersgedefinieerd pad:** `{dir|%s}` – voor het aangepaste "
-"gebruikersgedefinieerde bestand attribute_mapping.json"
-
-msgid "  💡 *Tip: click any path above to open it in your file manager.*"
-msgstr ""
-"  💡 *Tip: klik op een pad hierboven om het openen in uw bestandsverkenner.*"
-
-msgid "📖 View detailed usage in: "
-msgstr "📖 Gebruiksdetails in: "
-
-msgid "## 💬 Support"
-msgstr "## 💬 Ondersteuning"
-
-msgid "👤 Created and maintained by Yurii Liubymyi"
-msgstr "👤 Gemaakt en onderhouden door Yurii Liubymyi"
-
-msgid ""
-"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
-"forum:"
-msgstr ""
-"💬 Voor hulp of reacties, vermeld gerust `@Urchello` op het Gramps forum:"
-
-msgid "✅ Bug reports and feature requests are completely **free of charge**."
-msgstr "✅ Foutmeldingen en functieverzoeken zijn volledig **gratis**."
-
-#, python-format
-msgid "🧩 WebSearch Gramplet version: `%s`"
-msgstr "🧩 WebSearch Gramplet versie: `%s`"
-
-msgid "Column - Icons"
-msgstr "Kolom - Pictogrammen"
-
-msgid "Column - Source Types (flags)"
-msgstr "Kolom - Brontypen (kenmerken)"
-
-msgid "Column - Keys"
-msgstr "Kolom - Sleutels"
-
-msgid "Column - Title"
-msgstr "Kolom - Titel"
-
-msgid "Column - Website Url"
-msgstr "Kolom - Website-url"
-
-msgid "Column - Comment"
-msgstr "Kolom - Commentaar"
-
-msgid "Icon - Visited URLs (checkmark)"
-msgstr "Pictogram - Bezochte URLs (vinkje)"
-
-msgid "Icon - Saved URLs (floppy disk)"
-msgstr "Pictogram - Opgeslagen URLs (diskette)"
-
-msgid "Icon - URLs linked to UID attributes (UID badge)"
-msgstr "Pictogram - URLs gekoppeld met UID-attributen (UID-insigne)"
-
-msgid "Icon - URLs from regional CSV files (flag)"
-msgstr "Pictogram - URLs van regionale CSV-gegevens uit (vlag)"
-
-msgid "Icon - URLs from static CSV files (red pin)"
-msgstr "Pictogram - URLs van statische CSV-bestanden (rode pin)"
-
-msgid "Icon - URLs from common CSV files (earth)"
-msgstr "Pictogram - URLs van algemene CSV-bestanden (aarde)"
-
-msgid "Icon - URLs from cross CSV files (shuffle arrows)"
-msgstr "Pictogram - URLs van CSV-kruisgegevens (pijlen)"
-
-msgid "Icon - URLs from custom user directory (spreadsheet icon)"
-msgstr "Pictogram - URLs van aangepaste gebruikersmap (tabel)"
-
-msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr "Pictogram - URLs van de tab 'Attributen' ('A'-pictogram)"
-
-msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr "Pictogram - URLs van de tab 'Internet' ('I'-pictogram)"
-
-msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr "Pictogram - URLs van de tab 'Notities' ('N'-pictogram)"
-
-msgid "No data available."
-msgstr "Geen gegevens beschikbaar."
-
-msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
-msgstr "HISTORISCHE ADMINISTRATIEVE DELEN VAN"
-
-msgid "Foundation date:"
-msgstr "Oprichtingsdatum:"
-
-msgid "Note:"
-msgstr "Notitie:"
-
-msgid "Coordinates:"
-msgstr "Coördinaten:"
-
-msgid "Administrative history"
-msgstr "Administratieve geschiedenis"
-
-msgid "Data provided to AI:"
-msgstr "Gegevens verstrekt aan AI:"
-
-msgid "Full hierarchy"
-msgstr "Volledige hiërarchie"
-
-msgid "Place Type:"
-msgstr "Locatietype:"
-
-msgid "Last Retrieved At:"
-msgstr "Laatst opgehaald op:"
-
-msgid "QR-code"
-msgstr "QR-code"
-
-msgid "⚠ Missing dependency \"qrcode\""
-msgstr "⚠ Ontbrekende afhankelijkheid \"qrcode\""
-
-msgid ""
-"⚠ Error generating QR code:\n"
-"Original error: “{}”"
-msgstr ""
-"⚠ Fout bij genereren QR-code:\n"
-"Originele fout: “{}”"
-
-msgid "Save Coordinates to the Place"
-msgstr "Coördinaten naar de plaats opslaan"
-
-msgid "AI provider is disabled"
-msgstr "AI-leverancier is uitgeschakeld"
-
-msgid "No AI API key provided"
-msgstr "Geen AI API-sleutel opgegeven"
-
-msgid "AI-generated historical place data is currently disabled"
-msgstr ""
-"AI-gegenereerde historische plaatsgegevens zijn momenteel uitgeschakeld"
-
-msgid "AI provider is unknown. Please check your AI provider settings."
-msgstr ""
-"AI-leverancier is onbekend. Controleer uw instellingen voor de AI-"
-"leverancier."
-
-msgid "⏳ Generating historical place data, please wait..."
-msgstr "⏳ Historische plaatsgegevens genereren, even geduld…"
-
-msgid "Keys"
-msgstr "Sleutels"
-
-msgid "Website URL"
-msgstr "Website-URL"
-
-msgid "Add link to note"
-msgstr "Koppeling toevoegen aan notitie"
-
-msgid "Add link to attribute"
-msgstr "Koppeling toevoegen aan attribuut"
-
-msgid "Show QR-code"
-msgstr "QR-code weergeven"
-
-msgid "Copy link to clipboard"
-msgstr "Koppeling naar klembord kopiëren"
-
-msgid "Hide link for selected item"
-msgstr "Koppeling verbergen voor geselecteerd item"
-
-msgid "Hide link for all items"
-msgstr "Koppeling verbergen voor alle items"
-
-msgid "Edit Attribute with the Link"
-msgstr "Kenmerk met de link bewerken"
-
-msgid "Edit Note with the Link"
-msgstr "Notitie met de link bewerken"
-
-msgid "🔍 AI Suggestions"
-msgstr "🔍 AI-suggesties"
-
-msgid "Attribute no longer exists. The extra icon is removed"
-msgstr "Kenmerk bestaat niet meer. Extra pictogram wordt verwijderd"
-
-msgid "Note no longer exists. The extra icon is removed"
-msgstr "Notitie bestaat niet meer. Exptra pictogram wordt verwijderd"
-
-#, python-brace-format
-msgid ""
-"📌 This '{title}' web link was archived for future reference by the "
-"WebSearch gramplet (v. {version}):\n"
-"\n"
-"🔗 {url}\n"
-"\n"
-"You can use this link to revisit the source and verify the information "
-"related to this entity."
-msgstr ""
-"📌 Deze '{title}' weblink werd gearchiveerd voor toekomstig gebruik door de "
-"WebSearch gramplet (v. {version}):\n"
-"\n"
-"🔗 {url}\n"
-"\n"
-"Je kunt deze link gebruiken om de bron opnieuw te bezoeken en de informatie "
-"met betrekking tot deze entiteit te verifiëren."
-
-#, python-format
-msgid "Note #%(id)s has been successfully added"
-msgstr "Notitie #%(id)s is met succes toegevoeg"
-
-msgid "Error creating note"
-msgstr "Fout bij aanmaken notitie"
-
-msgid "URL is copied to the Clipboard"
-msgstr "URL is gekopieerd naar het klembord"
-
-msgid "WebSearch Link"
-msgstr "WebSearch Link"
-
-msgid "Attribute has been successfully added"
-msgstr "Attribuut is met success toegevoegd"
-
-#, python-brace-format
-msgid "Title: {title}"
-msgstr "Titel: {title}"
-
-#, python-brace-format
-msgid "Replaced: {keys}"
-msgstr "Vervangen: {keys}"
-
-#, python-brace-format
-msgid "Empty: {keys}"
-msgstr "Leeg: {keys}"
-
-#, python-brace-format
-msgid "Comment: {comment}"
-msgstr "Commentaar: {comment}"

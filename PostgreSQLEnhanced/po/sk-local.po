@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 19:09+0300\n"
-"PO-Revision-Date: 2025-09-05 10:02+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,40 +12,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
-msgid "Starting migration..."
-msgstr "Začiatok migrácie..."
+#, python-brace-format
+msgid "Object {obj_type}:{handle} was modified by another user"
+msgstr "Objekt {obj_type}:{handle} bol modifikovaný iným používateľom"
 
-#, python-format
-msgid "Migrating %s objects..."
-msgstr "Migrovanie %s objektov..."
-
-#, python-format, python-brace-format
-msgid "Migrated %s {obj_type} objects"
-msgstr "Premigrované %s {obj_type} objektov"
-
-msgid "Migration completed!"
-msgstr "Migrácia dokončená!"
-
-msgid "Starting upgrade..."
-msgstr "Začiatok aktualizácie..."
-
-#, python-format
-msgid "Upgrading %s objects..."
-msgstr "Aktualizovanie %s objektov..."
-
-msgid "Creating indexes..."
-msgstr "Vytváranie indexov..."
-
-msgid "Upgrade completed!"
-msgstr "Aktualizácia dokončená!"
-
-msgid "PostgreSQL Enhanced"
-msgstr "PostgreSQL Enhanced"
-
-msgid "PostgreSQL _Enhanced Database"
-msgstr "Databáza PostgreSQL _Enhanced"
+msgid "pg_trgm extension required for duplicate detection"
+msgstr "Na detekciu duplikátov je potrebné rozšírenie pg_trgm"
 
 msgid ""
 "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
@@ -98,5 +72,46 @@ msgid "Full-text search requires JSONB support or search capabilities"
 msgstr ""
 "Fulltextové vyhľadávanie vyžaduje podporu JSONB alebo schopnosti vyhľadávania"
 
-msgid "pg_trgm extension required for duplicate detection"
-msgstr "Na detekciu duplikátov je potrebné rozšírenie pg_trgm"
+msgid "Starting migration..."
+msgstr "Začiatok migrácie..."
+
+#, python-format
+msgid "Migrating %s objects..."
+msgstr "Migrovanie %s objektov..."
+
+#, python-format, python-brace-format
+msgid "Migrated %s {obj_type} objects"
+msgstr "Premigrované %s {obj_type} objektov"
+
+msgid "Migration completed!"
+msgstr "Migrácia dokončená!"
+
+msgid "Starting upgrade..."
+msgstr "Začiatok aktualizácie..."
+
+#, python-format
+msgid "Upgrading %s objects..."
+msgstr "Aktualizovanie %s objektov..."
+
+msgid "Creating indexes..."
+msgstr "Vytváranie registrov..."
+
+msgid "Upgrade completed!"
+msgstr "Aktualizácia dokončená!"
+
+msgid "PostgreSQL Enhanced"
+msgstr "PostgreSQL Enhanced"
+
+msgid "PostgreSQL _Enhanced Database"
+msgstr "Databáza PostgreSQL _Enhanced"
+
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
+msgstr ""
+"Pokročilý backend PostgreSQL s ukladaním JSONB, podporou grafových databáz "
+"(Apache AGE), vektorovou podobnosťou (pgvector) a funkciami umelej "
+"inteligencie a strojového učenia. Určené pre pokročilých používateľov. "
+"Vyžaduje PostgreSQL 15+ s rozšíreniami. Kompatibilné s Gramps Web."

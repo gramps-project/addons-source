@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2026-04-17 07:09+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,25 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17.1-dev\n"
-
-msgid "Select Form"
-msgstr "Vybrať formulár"
-
-msgid "Form Gramplet"
-msgstr "Gramplet Formulár"
-
-msgid "Gramplet interface for Forms"
-msgstr "Gramplet rozhranie pre formuláre"
-
-msgid "Forms"
-msgstr "Formuláre"
-
-msgid "Order"
-msgstr "Poradie"
-
-msgid "Form"
-msgstr "Formulár"
+"X-Generator: Weblate 2026.5-dev\n"
 
 #, python-format
 msgid "Form: %s"
@@ -47,6 +29,753 @@ msgstr "Odkaz:"
 
 msgid "Headings"
 msgstr "Nadpisy"
+
+#, python-format
+msgid "Census Check for %s"
+msgstr "Kontrola sčítania pre osobu %s"
+
+msgid "Form Gramplet"
+msgstr "Gramplet Formulár"
+
+msgid "Gramplet interface for Forms"
+msgstr "Gramplet rozhranie pre formuláre"
+
+msgid "Forms"
+msgstr "Formuláre"
+
+msgid "Order"
+msgstr "Poradie"
+
+msgid "Form"
+msgstr "Formulár"
+
+msgid "XML syntax error in Form definition file"
+msgstr "Chyba syntaxe XML v súbore s definíciou formulára"
+
+msgid "Failed to read Form definition file"
+msgstr "Nepodarilo sa načítať súbor s definíciou formulára"
+
+msgid "Invalid Form definition file"
+msgstr "Neplatný súbor s definíciou formulára"
+
+msgid "Select Form"
+msgstr "Vybrať formulár"
+
+msgid "CensusCheck"
+msgstr "Kontrola sčítania"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"descendents"
+msgstr ""
+"Skontroluje, či chýbajú udalosti sčítania ľudu pre osobu a niektorých jej "
+"potomkov"
+
+msgid "CensusCheckUp"
+msgstr "Kontrola sčítania⬆️"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"ancestors"
+msgstr ""
+"Skontroluje, či chýbajú udalosti sčítania ľudu pre osobu a niektorých jej "
+"predkov"
+
+msgid "Schedule"
+msgstr "Rozvrh"
+
+msgid "EnumDistrict"
+msgstr "EnumDistrict"
+
+msgid "Township"
+msgstr "Obec"
+
+msgid "Comprising"
+msgstr "Obsahujúci"
+
+msgid "OfTheSaid"
+msgstr "Z uvedeného"
+
+msgid "Enumerator"
+msgstr "Sčítací komisár"
+
+msgid "1. Names of Inmates"
+msgstr "1. Mená väzňov"
+
+msgid "2. Profession, Trade or Occupation"
+msgstr "2. Profesia, obchod alebo zamestnanie"
+
+msgid "BirthPlace"
+msgstr "Miesto narodenia"
+
+msgid "3. Place of Birth"
+msgstr "3. Miesto narodenia"
+
+msgid "4. Religion"
+msgstr "4. Náboženstvo"
+
+msgid "5. Residence if Outside of Limits"
+msgstr "5. Bydlisko, ak je mimo hraníc"
+
+msgid "6. Age at Next Birthday"
+msgstr "6. Vek pri ďalších narodeninách"
+
+msgid "SexMale"
+msgstr "Pohlavie mužské"
+
+msgid "7. Sex: Male"
+msgstr "7. Pohlavie: mužské"
+
+msgid "SexFemale"
+msgstr "Pohlavie ženské"
+
+msgid "8. Sex: Female"
+msgstr "8. Pohlavie: ženské"
+
+msgid "MaritalStatus"
+msgstr "Rodinný stav"
+
+msgid "9. Married or Single"
+msgstr "9. Ženatý (vydatá) alebo slobodný (-á)"
+
+msgid "Coloured"
+msgstr "Farební"
+
+msgid "10. Coloured Persons - Negroes"
+msgstr "10. Farebné osoby - černosi"
+
+msgid "Indians"
+msgstr "Indiáni"
+
+msgid "11. Indians, if any"
+msgstr "11. Indiáni, ak sú"
+
+msgid "ResidentsMale"
+msgstr "Obyvatelia muži"
+
+msgid "12. Residents: Members, Male"
+msgstr "12. Obyvatelia: členovia, muži"
+
+msgid "ResidentsFemale"
+msgstr "Obyvatelia ženy"
+
+msgid "13. Residents: Members, Female"
+msgstr "13. Obyvatelia: členovia, ženy"
+
+msgid "NonMembersMale"
+msgstr "Nečlenovia muži"
+
+msgid "14. Residents: Not Members: Male"
+msgstr "14. Obyvatelia: nečlenovia: muži"
+
+msgid "NonMembersFemale"
+msgstr "Nečlenovia ženy"
+
+msgid "15. Residents: Not Members: Female"
+msgstr "15. Obyvatelia: nečlenovia: ženy"
+
+msgid "AbsentMembersMale"
+msgstr "Chýbajúci členovia muži"
+
+msgid "16. Members Absent: Male"
+msgstr "16. Členovia chýbajúci: muži"
+
+msgid "AbsentMembersFemale"
+msgstr "Chýbajúci členovia ženy"
+
+msgid "17. Members Absent: Female"
+msgstr "17. Členovia chýbajúci: ženy"
+
+msgid "18. Deaf and Dumb: Male"
+msgstr "18. Nepočujúci a nemí: muži"
+
+msgid "19. Deaf and Dumb: Female"
+msgstr "19. Nepočujúci a nemí: ženy"
+
+msgid "20. Blind: Male"
+msgstr "20. Nevidiaci: muži"
+
+msgid "21. Blind: Female"
+msgstr "21. Nevidiaci: ženy"
+
+msgid "24. Attending School: Male"
+msgstr "24. Navštevujúci školu: muži"
+
+msgid "25. Attending School: Female"
+msgstr "25. Navštevujúci školu: ženy"
+
+msgid "26. Births During the Year 1851: Male"
+msgstr "26. Narodenia v roku 1851: muži"
+
+msgid "27. Births During the Year 1851: Female"
+msgstr "27. Narodenia v roku 1851: ženy"
+
+msgid "28. Deaths During the Year 1851: Male"
+msgstr "28. Úmrtia v roku 1851: muži"
+
+msgid "29. Deaths During the Year 1851: Female"
+msgstr "29. Úmrtia v roku 1851: ženy"
+
+msgid "30. Age and Cause of Deaths"
+msgstr "30. Vek a príčina úmrtí"
+
+msgid "Houses"
+msgstr "Domy"
+
+msgid ""
+"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
+msgstr ""
+"31. Domy: tehlové, kamenné, drevené, zrubové, chatrče alebo iné druhy obydlí"
+
+msgid "32. Houses: No. of Stories"
+msgstr "32. Domy: počet poschodí"
+
+msgid "33. No. of Families Occupying"
+msgstr "33. Počet obývajúcich rodín"
+
+msgid "34. Houses: Vacant"
+msgstr "34. Domy: prázdne"
+
+msgid "35. Houses: Building"
+msgstr "35. Domy: budovy"
+
+msgid "Shops"
+msgstr "Obchody"
+
+msgid "36. Shops, Stores, Inns, Taverns etc."
+msgstr "36. Obchody, sklady, hostince, krčmy atď."
+
+msgid "37. Public Buildings"
+msgstr "37. Verejné budovy"
+
+msgid "38. Places of Worship"
+msgstr "38. Miesta bohoslužieb"
+
+msgid ""
+"39. Information on Mills, Factories etc., their cost, power, produce, etc."
+msgstr ""
+"39. Informácie o mlynoch, továrňach atď., ich nákladoch, výkone, produkcii "
+"atď."
+
+msgid "40. Number of Persons Usually Employed Therein"
+msgstr "40. Počet osôb tam zvyčajne zamestnaných"
+
+msgid "41. General Remarks of the Enumerator"
+msgstr "41. Všeobecné poznámky sčítacieho komisára"
+
+msgid "1. Name of Occupier"
+msgstr "1. Meno obyvateľa"
+
+msgid "Concession"
+msgstr "Koncesia"
+
+msgid "2. Concession or Range"
+msgstr "2. Koncesia alebo rozsah"
+
+msgid "Lot"
+msgstr "Pozemok"
+
+msgid "3. Lot or part of Lot"
+msgstr "3. Pozemok alebo časť pozemku"
+
+msgid "4. Number of Acres of Land: Held by each person or family"
+msgstr "4. Počet akrov pôdy: vo vlastníctve každej osoby alebo rodiny"
+
+msgid "AcresCultivation"
+msgstr "Obrábané akre"
+
+msgid "5. Number of Acres of Land: Under Cultivation"
+msgstr "5. Počet akrov pôdy: obrábaná"
+
+msgid "6. Number of Acres of Land: Under Crops in 1851"
+msgstr "6. Počet akrov pôdy: osiata v roku 1851"
+
+msgid "7. Number of Acres of Land: Under Pasture in 1851"
+msgstr "7. Počet akrov pôdy: pasienky v roku 1851"
+
+msgid "8. Number of Acres of Land: Gardens or Orchards"
+msgstr "8. Počet akrov pôdy: záhrady alebo sady"
+
+msgid "9. Number of Acres of Land: Under Wood or Wild"
+msgstr "9. Počet akrov pôdy: lesy alebo divoká príroda"
+
+msgid "10. Wheat: Acres"
+msgstr "10. Pšenica: akre"
+
+msgid "11. Wheat: Produce Bsh."
+msgstr "11. Pšenica: Produkcia bsh."
+
+msgid "12. Barley: Acres"
+msgstr "12. Jačmeň: akre"
+
+msgid "13. Barley: Produce Bsh."
+msgstr "13. Jačmeň: Produkcia bsh."
+
+msgid "14. Rye: Acres"
+msgstr "14. Raž: akre"
+
+msgid "15. Rye: Produce Bsh."
+msgstr "15. Raž: Produkcia bsh."
+
+msgid "16. Peas: Acres"
+msgstr "16. Hrach: akre"
+
+msgid "17. Peas: Produce Bsh."
+msgstr "17. Hrach: Produkcia bsh."
+
+msgid "18. Oats: Acres"
+msgstr "18. Ovos: akre"
+
+msgid "19. Oats: Produce Bsh."
+msgstr "19. Ovos: Produkcia bsh."
+
+msgid "20. B.Wheat: Acres"
+msgstr "20. Pohánka: akre"
+
+msgid "21. B.Wheat: Produce Bsh."
+msgstr "21. Pohánka: Produkcia bsh."
+
+msgid "22. Corn: Acres"
+msgstr "22. Kukurica: akre"
+
+msgid "23. Corn: Produce Bsh."
+msgstr "23. Kukurica: Produkcia bsh."
+
+msgid "24. Potatoes: Acres"
+msgstr "24. Zemiaky: akre"
+
+msgid "25. Potatoes: Produce Bsh."
+msgstr "25. Zemiaky: Produkcia bsh."
+
+msgid "26. Turnips: Acres"
+msgstr "26. Kvaka: akre"
+
+msgid "27. Turnips: Produce Bsh."
+msgstr "27. Kvaka: Produkcia bsh."
+
+msgid "28. Clover, Timothy or other grass seed - Bsh."
+msgstr "28. Ďatelina, timotejka alebo iné semeno trávy - bsh."
+
+msgid "29. Carrots - Bsh."
+msgstr "29. Mrkva - bsh."
+
+msgid "30. Mangle Wurtzel"
+msgstr "30. Kŕmna repa"
+
+msgid "31. Beans Bush"
+msgstr "31. Fazuľa v bušloch"
+
+msgid "32. Hops Lbs."
+msgstr "32. Chmeľ v librách"
+
+msgid "33. Hay, Bundles or Tons"
+msgstr "33. Seno, balíky alebo tony"
+
+msgid "34. Flax or Hemp, Lbs."
+msgstr "34. Ľan alebo konope, libry"
+
+msgid "35. Tobacco Lbs."
+msgstr "35. Tabak - libry"
+
+msgid "36. Wool Lbs."
+msgstr "36. Vlna - libry"
+
+msgid "37."
+msgstr "37."
+
+msgid "38."
+msgstr "38."
+
+msgid "39."
+msgstr "39."
+
+msgid "40. Maple Sugar Lbs."
+msgstr "40. Javorový cukor - libry"
+
+msgid "41. Cider Galls."
+msgstr "41. Mušt - galóny"
+
+msgid "42. Fulled Cloth Yards"
+msgstr "42. Valchovaná vlnená tkanina - yardy"
+
+msgid "43. Linnen - Yds."
+msgstr "43. Ľan - yardy"
+
+msgid "44. Flannel - Yds."
+msgstr "44. Flanel - yardy"
+
+msgid "Bulls"
+msgstr "Býky"
+
+msgid "45. Bulls, Oxen or Steers"
+msgstr "45. Býky, voly alebo kastrované býky"
+
+msgid "Milch Cows"
+msgstr "Dojné kravy"
+
+msgid "46. Milch Cows"
+msgstr "46. Dojné kravy"
+
+msgid "Calves"
+msgstr "Teľatá"
+
+msgid "47. Calves or Heifers"
+msgstr "47. Teľatá alebo jalovice"
+
+msgid "Horses"
+msgstr "Kone"
+
+msgid "48. Horses of all ages"
+msgstr "48. Kone všetkých vekových kategórií"
+
+msgid "Sheep"
+msgstr "Ovce"
+
+msgid "49. Sheep"
+msgstr "49. Ovce"
+
+msgid "Pigs"
+msgstr "Svine"
+
+msgid "50. Pigs"
+msgstr "50. Svine"
+
+msgid "51. Butter - Lbs."
+msgstr "51. Maslo - libry"
+
+msgid "52. Cheese - Lbs."
+msgstr "52. Syr - libry"
+
+msgid "Beef"
+msgstr "Hovädzie mäso"
+
+msgid "53. Beef - Barrels or Cwts."
+msgstr "53. Hovädzie mäso – barely alebo centnery"
+
+msgid "Pork"
+msgstr "Bravčové mäso"
+
+msgid "54. Pork - Barrels or Cwts."
+msgstr "54. Bravčové mäso – barely alebo centnery"
+
+msgid "Fish"
+msgstr "Ryby"
+
+msgid "55. Quantity of Fish Cured"
+msgstr "55. Množstvo konzervovaných rýb"
+
+msgid "56. Remarks"
+msgstr "56. Poznámky"
+
+msgid "2. Profession, trade or occupation"
+msgstr "2. Povolanie, remeslo alebo zamestnanie"
+
+msgid "5. Religion"
+msgstr "5. Náboženstvo"
+
+msgid "6. Residence, if out of limits"
+msgstr "6. Bydlisko, ak je mimo hraníc"
+
+msgid "7. Age next Birthday"
+msgstr "7. Vek na najbližšie narodeniny"
+
+msgid "8. Sex: Male"
+msgstr "8. Pohlavie: mužské"
+
+msgid "9. Sex:Female"
+msgstr "9. Pohlavie: ženské"
+
+msgid "Widowers"
+msgstr "Vdovci"
+
+msgid "11. Widowers"
+msgstr "11. Vdovci"
+
+msgid "Widows"
+msgstr "Vdovy"
+
+msgid "12. Widows"
+msgstr "12. Vdovy"
+
+msgid "13. Coloured Persons, Mulato or Indians"
+msgstr "13. Farebné osoby, mulati alebo Indiáni"
+
+msgid "14. Members: Male"
+msgstr "14. Členovia: muži"
+
+msgid "15. Members: Female"
+msgstr "15. Členovia: ženy"
+
+msgid "16. Not Members: Male"
+msgstr "16. Nečlenovia: muži"
+
+msgid "17. Not Members: Female"
+msgstr "17. Nečlenovia: ženy"
+
+msgid "20. Deaf and Dumb"
+msgstr "20. Nepočujúci a nemí"
+
+msgid "Blind"
+msgstr "Nevidiaci"
+
+msgid "21. Blind"
+msgstr "21. Nevidiaci"
+
+msgid "23. Attending School within the year: Male"
+msgstr "23. Navštevujúci školu počas roka: muži"
+
+msgid "24. Attending School within the year: Female"
+msgstr "24. Navštevujúci školu počas roka: ženy"
+
+msgid "25. Persons over 20, who cannot read or write: Male"
+msgstr "25. Osoby nad 20 rokov, ktoré nevedia čítať ani písať: muži"
+
+msgid "26. Persons over 20, who cannot read or write: Female"
+msgstr "25. Osoby nad 20 rokov, ktoré nevedia čítať ani písať: ženy"
+
+msgid "27. Births in 1860: Male"
+msgstr "27. Narodenia v roku 1860: muži"
+
+msgid "28. Births in 1860: Female"
+msgstr "28. Narodenia v roku 1860: ženy"
+
+msgid "29. Deaths in 1860: Male"
+msgstr "29. Úmrtia v roku 1860: muži"
+
+msgid "30. Deaths in 1860: Female"
+msgstr "30. Úmrtia v roku 1860: ženy"
+
+msgid "31. Age and cause of death"
+msgstr "31. Vek a príčina smrti"
+
+msgid "32. Houses: Brick, Stone, Frame, Log, etc."
+msgstr "32. Domy: tehlové, kamenné, drevené, zrubové atď."
+
+msgid "33. Houses: No. of Stories"
+msgstr "33. Domy: Počet poschodí"
+
+msgid "34. Houses: No. of families living in the house"
+msgstr "34. Domy: počet rodín žijúcich v dome"
+
+msgid "35. Houses: Vacant"
+msgstr "35. Domy: prázdne"
+
+msgid "36. Houses: Being built"
+msgstr "36. Domy: vo výstavbe"
+
+msgid "Vessels"
+msgstr "Plavidlá"
+
+msgid "1. Vessels"
+msgstr "1. Plavidlá"
+
+msgid "Shanties"
+msgstr "Chatrče"
+
+msgid "2. Shanties"
+msgstr "2. Chatrče"
+
+msgid "3. Dwelling houses in construction"
+msgstr "3. Obytné domy vo výstavbe"
+
+msgid "4. Dwelling houses unoccupied"
+msgstr "4. Obytné domy neobývané"
+
+msgid "5. Dwelling houses inhabited"
+msgstr "5. Obytné domy obývané"
+
+msgid "6.Families"
+msgstr "6.Rodiny"
+
+msgid "7. Names"
+msgstr "7. Mená"
+
+msgid "Sex"
+msgstr "Pohlavie"
+
+msgid "8. Sex"
+msgstr "8. Pohlavie"
+
+msgid "9. Age"
+msgstr "9. Vek"
+
+msgid "10. Born within last twelve months"
+msgstr "10. Narodení v priebehu posledných dvanástich mesiacov"
+
+msgid "11. Country or Province of Birth"
+msgstr "11. Krajina alebo provincia narodenia"
+
+msgid "12. Religion"
+msgstr "12. Náboženstvo"
+
+msgid "13. Origin"
+msgstr "13. Pôvod"
+
+msgid "14. Profession, Occupation or Trade"
+msgstr "14. Profesia, povolanie alebo remeslo"
+
+msgid "Scholar"
+msgstr "Študent"
+
+msgid "17. Going to school"
+msgstr "17. Chodiaci do školy"
+
+msgid "18. Over 20 unable to read"
+msgstr "18. Nad 20 rokov nevediaci čítať"
+
+msgid "19. Over 20 unable to write"
+msgstr "19. Nad 20 rokov nevediaci písať"
+
+msgid "22. Unsound mind"
+msgstr "22. Duševne chorí"
+
+msgid "23. Date of Operations and Remarks"
+msgstr "23. Dátum operácií a poznámky"
+
+msgid "3. Houses in construction"
+msgstr "3. Domy vo výstavbe"
+
+msgid "4. Houses unoccupied"
+msgstr "4. Domy neobývané"
+
+msgid "5. Houses inhabited"
+msgstr "5. Domy obývané"
+
+msgid "6. Families"
+msgstr "6. Rodiny"
+
+msgid "16. Going to school"
+msgstr "16. Chodiaci do školy"
+
+msgid "1. Vessels and Shanties"
+msgstr "1. Plavidlá a chatrče"
+
+msgid "5. Families"
+msgstr "5. Rodiny"
+
+msgid "7. Sex"
+msgstr "7. Pohlavie"
+
+msgid "Relation"
+msgstr "Vzťah"
+
+msgid "10. Relationship to Head of Family"
+msgstr "10. Vzťah k hlave rodiny"
+
+msgid "SubTitle"
+msgstr "Podtitul"
+
+msgid "4. Sex"
+msgstr "4. Pohlavie"
+
+msgid "Colour"
+msgstr "Farba"
+
+msgid "5. Colour"
+msgstr "5. Farba"
+
+msgid "27. Extra earning (From other than chief occupation or trade)"
+msgstr ""
+"27. Dodatočné príjmy (z iných činností ako hlavné zamestnanie alebo remeslo)"
+
+msgid "28. Months at school in 1910"
+msgstr "28. Mesiace v škole v roku 1910"
+
+msgid "Read"
+msgstr "Čítanie"
+
+msgid "29. Can read"
+msgstr "29. Vie čítať"
+
+msgid "Write"
+msgstr "Písanie"
+
+msgid "30. Can write"
+msgstr "30. Vie písať"
+
+msgid "SpeakEnglish"
+msgstr "Hovorí anglicky"
+
+msgid "31. Can speak English"
+msgstr "31. Vie hovoriť anglicky"
+
+msgid "SpeakFrench"
+msgstr "Hovorí francúzsky"
+
+msgid "32. Can speak French"
+msgstr "32. Vie hovoriť francúzsky"
+
+msgid "33. Mother tongue (If spoken)"
+msgstr "33. Materinský jazyk (ak sa ním hovorí)"
+
+msgid "Infirmities"
+msgstr "Postihnutia"
+
+msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
+msgstr "34. Postihnutia: a. Nepočujúci a nemý; b. Nevidiaci; c. Duševne chorý"
+
+msgid "PageRef"
+msgstr "Odkaz na stránku"
+
+msgid "3. Place of Habitation"
+msgstr "3. Miesto bydliska"
+
+msgid "4. Houses: In construction"
+msgstr "4. Domy: vo výstavbe"
+
+msgid "5. Houses: Vacant"
+msgstr "5. Domy: neobývané"
+
+msgid "6. Houses: Inhabited"
+msgstr "6. Domy: obývané"
+
+msgid "Institution"
+msgstr "Inštitúcia"
+
+msgid "7. Institution: Special or legal name"
+msgstr "7. Inštitúcia: Špecifický alebo právny názov"
+
+msgid "Buildings"
+msgstr "Budovy"
+
+msgid "8. Institution: Number of buildings"
+msgstr "8. Inštitúcia: Počet budov"
+
+msgid "9. Number of families in house or institution"
+msgstr "9. Počet rodín v dome alebo inštitúcii"
+
+msgid "Rooms"
+msgstr "Izby"
+
+msgid "LeasedStores"
+msgstr "Prenajaté obchody"
+
+msgid "Denomination"
+msgstr "Denominácia"
+
+msgid "Seating"
+msgstr "Sedenie"
+
+msgid "SSDenomination"
+msgstr "Denominácia nedeľnej školy"
+
+msgid "Section"
+msgstr "Sekcia"
+
+msgid "5. Sex"
+msgstr "5. Pohlavie"
+
+msgid "WeeksOccupation"
+msgstr "Týždne zamestnania"
+
+msgid "Wages"
+msgstr "Mzdy"
+
+msgid "2. Family"
+msgstr "2. Rodina"
+
+msgid "10. Sex"
+msgstr "10. Pohlavie"
 
 msgid "NARA publication"
 msgstr "Publikácia NARA"
@@ -87,20 +816,8 @@ msgstr "Počet študentov"
 msgid "Family No."
 msgstr "Rodina č."
 
-msgid "Sex"
-msgstr "Pohlavie"
-
-msgid "Horses"
-msgstr "Kone"
-
-msgid "Milch Cows"
-msgstr "Dojné kravy"
-
 msgid "Other Cattle"
 msgstr "Ostatný dobytok"
-
-msgid "Sheep"
-msgstr "Ovce"
 
 msgid "Peas and Beans"
 msgstr "Hrach a fazuľa"
@@ -113,9 +830,6 @@ msgstr "Vzťah k hlave"
 
 msgid "Illness on day of enumeration"
 msgstr "Choroba v dni sčítania"
-
-msgid "Blind"
-msgstr "Nevidiaci"
 
 msgid "Deaf and dumb"
 msgstr "Hluchonemý"
@@ -139,7 +853,7 @@ msgid "Able to write"
 msgstr "Dokáže písať"
 
 msgid "Rank"
-msgstr "Úroveň"
+msgstr "Poradie"
 
 msgid "Regiment/Vessel"
 msgstr "Pluk/Plavidlo"
@@ -155,9 +869,6 @@ msgstr "Vzťah k hlave"
 
 msgid "Number of farm schedule"
 msgstr "Počet poľnohospodárskych plánov"
-
-msgid "Institution"
-msgstr "Inštitúcia"
 
 msgid "Color/Race"
 msgstr "Farba/Rasa"
@@ -239,12 +950,6 @@ msgstr "Počet predaných kusov dobytka"
 
 msgid "City of"
 msgstr "Mesto"
-
-msgid "Township"
-msgstr "Obec"
-
-msgid "Section"
-msgstr "Sekcia"
 
 msgid "White Female"
 msgstr "Biela žena"
@@ -342,15 +1047,6 @@ msgstr "Mesiace v škole v roku 1904-vysoká"
 msgid "Months in school in 1904; College"
 msgstr "Mesiace v škole v roku 1904; vysoká"
 
-msgid "Read"
-msgstr "Čítanie"
-
-msgid "Write"
-msgstr "Písanie"
-
-msgid "Relation"
-msgstr "Vzťah"
-
 msgid "Color or Race"
 msgstr "Farba alebo rasa"
 
@@ -377,9 +1073,6 @@ msgstr "Číslo domu"
 
 msgid "Condition"
 msgstr "Stav"
-
-msgid "Schedule"
-msgstr "Rozvrh"
 
 msgid "Name of Village"
 msgstr "Názov obce"
@@ -1010,9 +1703,6 @@ msgstr "Vek v rokoch"
 msgid "Home Address"
 msgstr "Domáca adresa"
 
-msgid "Citizenship"
-msgstr "Občianstvo"
-
 msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
 msgstr ""
 "Rodený občan, Naturalizovaný občan, Cudzinec, Neobčan alebo občan Indián"
@@ -1032,8 +1722,14 @@ msgstr "Rasa "
 msgid "Hair Color"
 msgstr "Farba vlasov"
 
+msgid "Place of Registration"
+msgstr "Miesto registrácie"
+
 msgid "Date of Registration"
 msgstr "Dátum registrácie"
+
+msgid "Registration Card"
+msgstr "Registračné karta"
 
 msgid "Place of Residence"
 msgstr "Miesto bydliska"
@@ -1046,6 +1742,15 @@ msgstr "Telefón"
 
 msgid "Age in years"
 msgstr "Vek v rokoch"
+
+msgid "Country of Citizenship"
+msgstr "Krajina občianstva"
+
+msgid "Relationship "
+msgstr "Vzťah "
+
+msgid "Occupation "
+msgstr "Povolanie "
 
 msgid "Complexion"
 msgstr "Pleť"
@@ -1074,17 +1779,17 @@ msgstr "Služobné číslo"
 msgid "Place discharged"
 msgstr "Miesto prepustenia"
 
-msgid "Spouse's Mother's Name"
-msgstr "Meno matky manžela/manželky"
-
-msgid "Volume"
-msgstr "Zväzok"
-
 msgid "Place of Work"
 msgstr "Miesto práce"
 
 msgid "Date Married"
 msgstr "Dátum sobáša"
+
+msgid "Spouse's Mother's Name"
+msgstr "Meno matky manžela/manželky"
+
+msgid "Volume"
+msgstr "Zväzok"
 
 msgid "Registration District"
 msgstr "Registračný obvod"
@@ -1224,660 +1929,3 @@ msgstr "Hlava rodiny"
 
 msgid "Total Children"
 msgstr "Detí celkom"
-
-msgid "EnumDistrict"
-msgstr "EnumDistrict"
-
-msgid "Comprising"
-msgstr "Obsahujúci"
-
-msgid "OfTheSaid"
-msgstr "Z uvedeného"
-
-msgid "Enumerator"
-msgstr "Sčítací komisár"
-
-msgid "1. Names of Inmates"
-msgstr "1. Mená väzňov"
-
-msgid "2. Profession, Trade or Occupation"
-msgstr "2. Profesia, obchod alebo zamestnanie"
-
-msgid "BirthPlace"
-msgstr "Miesto narodenia"
-
-msgid "3. Place of Birth"
-msgstr "3. Miesto narodenia"
-
-msgid "4. Religion"
-msgstr "4. Náboženstvo"
-
-msgid "6. Age at Next Birthday"
-msgstr "6. Vek pri ďalších narodeninách"
-
-msgid "SexMale"
-msgstr "Pohlavie mužské"
-
-msgid "7. Sex: Male"
-msgstr "7. Pohlavie: mužské"
-
-msgid "SexFemale"
-msgstr "Pohlavie ženské"
-
-msgid "8. Sex: Female"
-msgstr "8. Pohlavie: ženské"
-
-msgid "MaritalStatus"
-msgstr "Rodinný stav"
-
-msgid "9. Married or Single"
-msgstr "9. Ženatý (vydatá) alebo slobodný (-á)"
-
-msgid "Coloured"
-msgstr "Farební"
-
-msgid "10. Coloured Persons - Negroes"
-msgstr "10. Farebné osoby - černosi"
-
-msgid "Indians"
-msgstr "Indiáni"
-
-msgid "11. Indians, if any"
-msgstr "11. Indiáni, ak sú"
-
-msgid "ResidentsMale"
-msgstr "Obyvatelia muži"
-
-msgid "12. Residents: Members, Male"
-msgstr "12. Obyvatelia: členovia, muži"
-
-msgid "ResidentsFemale"
-msgstr "Obyvatelia ženy"
-
-msgid "13. Residents: Members, Female"
-msgstr "13. Obyvatelia: členovia, ženy"
-
-msgid "NonMembersMale"
-msgstr "Nečlenovia muži"
-
-msgid "14. Residents: Not Members: Male"
-msgstr "14. Obyvatelia: nečlenovia: muži"
-
-msgid "NonMembersFemale"
-msgstr "Nečlenovia ženy"
-
-msgid "15. Residents: Not Members: Female"
-msgstr "15. Obyvatelia: nečlenovia: ženy"
-
-msgid "AbsentMembersMale"
-msgstr "Chýbajúci členovia muži"
-
-msgid "16. Members Absent: Male"
-msgstr "16. Členovia chýbajúci: muži"
-
-msgid "AbsentMembersFemale"
-msgstr "Chýbajúci členovia ženy"
-
-msgid "17. Members Absent: Female"
-msgstr "17. Členovia chýbajúci: ženy"
-
-msgid "18. Deaf and Dumb: Male"
-msgstr "18. Nepočujúci a nemí: muži"
-
-msgid "19. Deaf and Dumb: Female"
-msgstr "19. Nepočujúci a nemí: ženy"
-
-msgid "20. Blind: Male"
-msgstr "20. Nevidiaci: muži"
-
-msgid "21. Blind: Female"
-msgstr "21. Nevidiaci: ženy"
-
-msgid "24. Attending School: Male"
-msgstr "24. Navštevujúci školu: muži"
-
-msgid "25. Attending School: Female"
-msgstr "25. Navštevujúci školu: ženy"
-
-msgid "26. Births During the Year 1851: Male"
-msgstr "26. Narodenia v roku 1851: muži"
-
-msgid "27. Births During the Year 1851: Female"
-msgstr "27. Narodenia v roku 1851: ženy"
-
-msgid "28. Deaths During the Year 1851: Male"
-msgstr "28. Úmrtia v roku 1851: muži"
-
-msgid "29. Deaths During the Year 1851: Female"
-msgstr "29. Úmrtia v roku 1851: ženy"
-
-msgid "30. Age and Cause of Deaths"
-msgstr "30. Vek a príčina úmrtí"
-
-msgid "Houses"
-msgstr "Domy"
-
-msgid ""
-"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
-msgstr ""
-"31. Domy: tehlové, kamenné, drevené, zrubové, chatrče alebo iné druhy obydlí"
-
-msgid "32. Houses: No. of Stories"
-msgstr "32. Domy: počet poschodí"
-
-msgid "33. No. of Families Occupying"
-msgstr "33. Počet obývajúcich rodín"
-
-msgid "34. Houses: Vacant"
-msgstr "34. Domy: prázdne"
-
-msgid "35. Houses: Building"
-msgstr "35. Domy: budovy"
-
-msgid "Shops"
-msgstr "Obchody"
-
-msgid "36. Shops, Stores, Inns, Taverns etc."
-msgstr "36. Obchody, sklady, hostince, krčmy atď."
-
-msgid "37. Public Buildings"
-msgstr "37. Verejné budovy"
-
-msgid "38. Places of Worship"
-msgstr "38. Miesta bohoslužieb"
-
-msgid ""
-"39. Information on Mills, Factories etc., their cost, power, produce, etc."
-msgstr ""
-"39. Informácie o mlynoch, továrňach atď., ich nákladoch, výkone, produkcii "
-"atď."
-
-msgid "40. Number of Persons Usually Employed Therein"
-msgstr "40. Počet osôb tam zvyčajne zamestnaných"
-
-msgid "41. General Remarks of the Enumerator"
-msgstr "41. Všeobecné poznámky sčítacieho komisára"
-
-msgid "1. Name of Occupier"
-msgstr "1. Meno obyvateľa"
-
-msgid "Concession"
-msgstr "Koncesia"
-
-msgid "2. Concession or Range"
-msgstr "2. Koncesia alebo rozsah"
-
-msgid "Lot"
-msgstr "Pozemok"
-
-msgid "3. Lot or part of Lot"
-msgstr "3. Pozemok alebo časť pozemku"
-
-msgid "4. Number of Acres of Land: Held by each person or family"
-msgstr "4. Počet akrov pôdy: vo vlastníctve každej osoby alebo rodiny"
-
-msgid "AcresCultivation"
-msgstr "Obrábané akre"
-
-msgid "5. Number of Acres of Land: Under Cultivation"
-msgstr "5. Počet akrov pôdy: obrábaná"
-
-msgid "6. Number of Acres of Land: Under Crops in 1851"
-msgstr "6. Počet akrov pôdy: osiata v roku 1851"
-
-msgid "7. Number of Acres of Land: Under Pasture in 1851"
-msgstr "7. Počet akrov pôdy: pasienky v roku 1851"
-
-msgid "8. Number of Acres of Land: Gardens or Orchards"
-msgstr "8. Počet akrov pôdy: záhrady alebo sady"
-
-msgid "9. Number of Acres of Land: Under Wood or Wild"
-msgstr "9. Počet akrov pôdy: lesy alebo divoká príroda"
-
-msgid "10. Wheat: Acres"
-msgstr "10. Pšenica: akre"
-
-msgid "11. Wheat: Produce Bsh."
-msgstr "11. Pšenica: Produkcia bsh."
-
-msgid "12. Barley: Acres"
-msgstr "12. Jačmeň: akre"
-
-msgid "13. Barley: Produce Bsh."
-msgstr "13. Jačmeň: Produkcia bsh."
-
-msgid "14. Rye: Acres"
-msgstr "14. Raž: akre"
-
-msgid "15. Rye: Produce Bsh."
-msgstr "15. Raž: Produkcia bsh."
-
-msgid "16. Peas: Acres"
-msgstr "16. Hrach: akre"
-
-msgid "17. Peas: Produce Bsh."
-msgstr "17. Hrach: Produkcia bsh."
-
-msgid "18. Oats: Acres"
-msgstr "18. Ovos: akre"
-
-msgid "19. Oats: Produce Bsh."
-msgstr "19. Ovos: Produkcia bsh."
-
-msgid "20. B.Wheat: Acres"
-msgstr "20. Pohánka: akre"
-
-msgid "21. B.Wheat: Produce Bsh."
-msgstr "21. Pohánka: Produkcia bsh."
-
-msgid "22. Corn: Acres"
-msgstr "22. Kukurica: akre"
-
-msgid "23. Corn: Produce Bsh."
-msgstr "23. Kukurica: Produkcia bsh."
-
-msgid "24. Potatoes: Acres"
-msgstr "24. Zemiaky: akre"
-
-msgid "25. Potatoes: Produce Bsh."
-msgstr "25. Zemiaky: Produkcia bsh."
-
-msgid "26. Turnips: Acres"
-msgstr "26. Kvaka: akre"
-
-msgid "27. Turnips: Produce Bsh."
-msgstr "27. Kvaka: Produkcia bsh."
-
-msgid "28. Clover, Timothy or other grass seed - Bsh."
-msgstr "28. Ďatelina, timotejka alebo iné semeno trávy - bsh."
-
-msgid "29. Carrots - Bsh."
-msgstr "29. Mrkva - bsh."
-
-msgid "30. Mangle Wurtzel"
-msgstr "30. Kŕmna repa"
-
-msgid "31. Beans Bush"
-msgstr "31. Fazuľa v bušloch"
-
-msgid "32. Hops Lbs."
-msgstr "32. Chmeľ v librách"
-
-msgid "33. Hay, Bundles or Tons"
-msgstr "33. Seno, balíky alebo tony"
-
-msgid "34. Flax or Hemp, Lbs."
-msgstr "34. Ľan alebo konope, libry"
-
-msgid "35. Tobacco Lbs."
-msgstr "35. Tabak - libry"
-
-msgid "36. Wool Lbs."
-msgstr "36. Vlna - libry"
-
-msgid "37."
-msgstr "37."
-
-msgid "38."
-msgstr "38."
-
-msgid "39."
-msgstr "39."
-
-msgid "40. Maple Sugar Lbs."
-msgstr "40. Javorový cukor - libry"
-
-msgid "41. Cider Galls."
-msgstr "41. Mušt - galóny"
-
-msgid "42. Fulled Cloth Yards"
-msgstr "42. Valchovaná vlnená tkanina - yardy"
-
-msgid "43. Linnen - Yds."
-msgstr "43. Ľan - yardy"
-
-msgid "44. Flannel - Yds."
-msgstr "44. Flanel - yardy"
-
-msgid "Bulls"
-msgstr "Býky"
-
-msgid "45. Bulls, Oxen or Steers"
-msgstr "45. Býky, voly alebo kastrované býky"
-
-msgid "46. Milch Cows"
-msgstr "46. Dojné kravy"
-
-msgid "Calves"
-msgstr "Teľatá"
-
-msgid "47. Calves or Heifers"
-msgstr "47. Teľatá alebo jalovice"
-
-msgid "48. Horses of all ages"
-msgstr "48. Kone všetkých vekových kategórií"
-
-msgid "49. Sheep"
-msgstr "49. Ovce"
-
-msgid "Pigs"
-msgstr "Svine"
-
-msgid "50. Pigs"
-msgstr "50. Svine"
-
-msgid "51. Butter - Lbs."
-msgstr "51. Maslo - libry"
-
-msgid "52. Cheese - Lbs."
-msgstr "52. Syr - libry"
-
-msgid "Beef"
-msgstr "Hovädzie mäso"
-
-msgid "53. Beef - Barrels or Cwts."
-msgstr "53. Hovädzie mäso – barely alebo centnery"
-
-msgid "Pork"
-msgstr "Bravčové mäso"
-
-msgid "54. Pork - Barrels or Cwts."
-msgstr "54. Bravčové mäso – barely alebo centnery"
-
-msgid "Fish"
-msgstr "Ryby"
-
-msgid "55. Quantity of Fish Cured"
-msgstr "55. Množstvo konzervovaných rýb"
-
-msgid "56. Remarks"
-msgstr "56. Poznámky"
-
-msgid "2. Profession, trade or occupation"
-msgstr "2. Povolanie, remeslo alebo zamestnanie"
-
-msgid "5. Religion"
-msgstr "5. Náboženstvo"
-
-msgid "6. Residence, if out of limits"
-msgstr "6. Bydlisko, ak je mimo hraníc"
-
-msgid "7. Age next Birthday"
-msgstr "7. Vek na najbližšie narodeniny"
-
-msgid "8. Sex: Male"
-msgstr "8. Pohlavie: mužské"
-
-msgid "9. Sex:Female"
-msgstr "9. Pohlavie: ženské"
-
-msgid "Widowers"
-msgstr "Vdovci"
-
-msgid "11. Widowers"
-msgstr "11. Vdovci"
-
-msgid "Widows"
-msgstr "Vdovy"
-
-msgid "12. Widows"
-msgstr "12. Vdovy"
-
-msgid "13. Coloured Persons, Mulato or Indians"
-msgstr "13. Farebné osoby, mulati alebo Indiáni"
-
-msgid "14. Members: Male"
-msgstr "14. Členovia: muži"
-
-msgid "15. Members: Female"
-msgstr "15. Členovia: ženy"
-
-msgid "16. Not Members: Male"
-msgstr "16. Nečlenovia: muži"
-
-msgid "17. Not Members: Female"
-msgstr "17. Nečlenovia: ženy"
-
-msgid "20. Deaf and Dumb"
-msgstr "20. Nepočujúci a nemí"
-
-msgid "21. Blind"
-msgstr "21. Nevidiaci"
-
-msgid "23. Attending School within the year: Male"
-msgstr "23. Navštevujúci školu počas roka: muži"
-
-msgid "24. Attending School within the year: Female"
-msgstr "24. Navštevujúci školu počas roka: ženy"
-
-msgid "25. Persons over 20, who cannot read or write: Male"
-msgstr "25. Osoby nad 20 rokov, ktoré nevedia čítať ani písať: muži"
-
-msgid "26. Persons over 20, who cannot read or write: Female"
-msgstr "25. Osoby nad 20 rokov, ktoré nevedia čítať ani písať: ženy"
-
-msgid "27. Births in 1860: Male"
-msgstr "27. Narodenia v roku 1860: muži"
-
-msgid "28. Births in 1860: Female"
-msgstr "28. Narodenia v roku 1860: ženy"
-
-msgid "29. Deaths in 1860: Male"
-msgstr "29. Úmrtia v roku 1860: muži"
-
-msgid "30. Deaths in 1860: Female"
-msgstr "30. Úmrtia v roku 1860: ženy"
-
-msgid "31. Age and cause of death"
-msgstr "31. Vek a príčina smrti"
-
-msgid "32. Houses: Brick, Stone, Frame, Log, etc."
-msgstr "32. Domy: tehlové, kamenné, drevené, zrubové atď."
-
-msgid "33. Houses: No. of Stories"
-msgstr "33. Domy: Počet poschodí"
-
-msgid "34. Houses: No. of families living in the house"
-msgstr "34. Domy: počet rodín žijúcich v dome"
-
-msgid "35. Houses: Vacant"
-msgstr "35. Domy: prázdne"
-
-msgid "36. Houses: Being built"
-msgstr "36. Domy: vo výstavbe"
-
-msgid "Vessels"
-msgstr "Plavidlá"
-
-msgid "1. Vessels"
-msgstr "1. Plavidlá"
-
-msgid "Shanties"
-msgstr "Chatrče"
-
-msgid "2. Shanties"
-msgstr "2. Chatrče"
-
-msgid "3. Dwelling houses in construction"
-msgstr "3. Obytné domy vo výstavbe"
-
-msgid "4. Dwelling houses unoccupied"
-msgstr "4. Obytné domy neobývané"
-
-msgid "5. Dwelling houses inhabited"
-msgstr "5. Obytné domy obývané"
-
-msgid "6.Families"
-msgstr "6.Rodiny"
-
-msgid "7. Names"
-msgstr "7. Mená"
-
-msgid "8. Sex"
-msgstr "8. Pohlavie"
-
-msgid "9. Age"
-msgstr "9. Vek"
-
-msgid "10. Born within last twelve months"
-msgstr "10. Narodení v priebehu posledných dvanástich mesiacov"
-
-msgid "11. Country or Province of Birth"
-msgstr "11. Krajina alebo provincia narodenia"
-
-msgid "12. Religion"
-msgstr "12. Náboženstvo"
-
-msgid "13. Origin"
-msgstr "13. Pôvod"
-
-msgid "14. Profession, Occupation or Trade"
-msgstr "14. Profesia, povolanie alebo remeslo"
-
-msgid "Scholar"
-msgstr "Študent"
-
-msgid "17. Going to school"
-msgstr "17. Chodiaci do školy"
-
-msgid "18. Over 20 unable to read"
-msgstr "18. Nad 20 rokov nevediaci čítať"
-
-msgid "19. Over 20 unable to write"
-msgstr "19. Nad 20 rokov nevediaci písať"
-
-msgid "22. Unsound mind"
-msgstr "22. Duševne chorí"
-
-msgid "23. Date of Operations and Remarks"
-msgstr "23. Dátum operácií a poznámky"
-
-msgid "3. Houses in construction"
-msgstr "3. Domy vo výstavbe"
-
-msgid "4. Houses unoccupied"
-msgstr "4. Domy neobývané"
-
-msgid "5. Houses inhabited"
-msgstr "5. Domy obývané"
-
-msgid "6. Families"
-msgstr "6. Rodiny"
-
-msgid "16. Going to school"
-msgstr "16. Chodiaci do školy"
-
-msgid "1. Vessels and Shanties"
-msgstr "1. Plavidlá a chatrče"
-
-msgid "5. Families"
-msgstr "5. Rodiny"
-
-msgid "7. Sex"
-msgstr "7. Pohlavie"
-
-msgid "10. Relationship to Head of Family"
-msgstr "10. Vzťah k hlave rodiny"
-
-msgid "SubTitle"
-msgstr "Podtitul"
-
-msgid "4. Sex"
-msgstr "4. Pohlavie"
-
-msgid "Colour"
-msgstr "Farba"
-
-msgid "5. Colour"
-msgstr "5. Farba"
-
-msgid "27. Extra earning (From other than chief occupation or trade)"
-msgstr ""
-"27. Dodatočné príjmy (z iných činností ako hlavné zamestnanie alebo remeslo)"
-
-msgid "28. Months at school in 1910"
-msgstr "28. Mesiace v škole v roku 1910"
-
-msgid "29. Can read"
-msgstr "29. Vie čítať"
-
-msgid "30. Can write"
-msgstr "30. Vie písať"
-
-msgid "SpeakEnglish"
-msgstr "Hovorí anglicky"
-
-msgid "31. Can speak English"
-msgstr "31. Vie hovoriť anglicky"
-
-msgid "SpeakFrench"
-msgstr "Hovorí francúzsky"
-
-msgid "32. Can speak French"
-msgstr "32. Vie hovoriť francúzsky"
-
-msgid "33. Mother tongue (If spoken)"
-msgstr "33. Materinský jazyk (ak sa ním hovorí)"
-
-msgid "Infirmities"
-msgstr "Postihnutia"
-
-msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
-msgstr "34. Postihnutia: a. Nepočujúci a nemý; b. Nevidiaci; c. Duševne chorý"
-
-msgid "PageRef"
-msgstr "Odkaz na stránku"
-
-msgid "3. Place of Habitation"
-msgstr "3. Miesto bydliska"
-
-msgid "4. Houses: In construction"
-msgstr "4. Domy: vo výstavbe"
-
-msgid "5. Houses: Vacant"
-msgstr "5. Domy: neobývané"
-
-msgid "6. Houses: Inhabited"
-msgstr "6. Domy: obývané"
-
-msgid "7. Institution: Special or legal name"
-msgstr "7. Inštitúcia: Špecifický alebo právny názov"
-
-msgid "Buildings"
-msgstr "Budovy"
-
-msgid "8. Institution: Number of buildings"
-msgstr "8. Inštitúcia: Počet budov"
-
-msgid "9. Number of families in house or institution"
-msgstr "9. Počet rodín v dome alebo inštitúcii"
-
-msgid "Rooms"
-msgstr "Izby"
-
-msgid "LeasedStores"
-msgstr "Prenajaté obchody"
-
-msgid "Denomination"
-msgstr "Denominácia"
-
-msgid "Seating"
-msgstr "Sedenie"
-
-msgid "SSDenomination"
-msgstr "Denominácia nedeľnej školy"
-
-msgid "5. Sex"
-msgstr "5. Pohlavie"
-
-msgid "WeeksOccupation"
-msgstr "Týždne zamestnania"
-
-msgid "Wages"
-msgstr "Mzdy"
-
-msgid "2. Family"
-msgstr "2. Rodina"
-
-msgid "10. Sex"
-msgstr "10. Pohlavie"

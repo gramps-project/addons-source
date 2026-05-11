@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Detailed Descendant Report With All Images"
+msgstr "Informe detallado de descendientes con todas las imágenes"
+
+msgid ""
+"Produces a detailed descendant report with all images and optional todo list."
+msgstr ""
+"Genera un informe detallado de los descendientes con todas las imágenes y "
+"una lista de tareas opcional."
+
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#, python-format
+msgid "%(event_name)s: %(event_text)s"
+msgstr "%(event_name)s: %(event_text)s"
+
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
+#, python-format
+msgid "%(type)s: %(value)s"
+msgstr "%(type)s: %(value)s"
+
+msgid "List children"
+msgstr "Listado descendiente"
+
+msgid "Add descendant reference in child list"
+msgstr "Agrega referencia descendiente en listado de hijos"
+
+msgid "Include TODO notes"
+msgstr "Incluir notas TODO"
+
+msgid "Whether to include TODO notes."
+msgstr "Indique si se deben incluir notas TODO."
+
+msgid "The style used for the title of the page."
+msgstr "El estilo utilizado para el título de la página."
+
+msgid "The style used for the children list."
+msgstr "El estilo utilizado para el listado de herederos."
+
+msgid "The style used for the first personal entry."
+msgstr "El estilo utilizado para el primer apunte personal."
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr ""
+"El estilo utilizado para la cabecera Más Sobre y para cabeceras de mates."
+
+msgid "The style used for additional detail data."
+msgstr "El estilo utilizado para datos detallados adicionales."
+
+msgid "The style used for image labels."
+msgstr "El estilo utilizado para las etiquetas de las imágenes."
+
+msgid "A style used for image captions."
+msgstr "El estilo utilizado para las etiquetas de la imagen."

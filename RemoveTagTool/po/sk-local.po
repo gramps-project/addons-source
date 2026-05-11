@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-09-05 10:02+0000\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,10 +12,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "The Tool requires at least one tag to execute."
-msgstr "Nástroj vyžaduje na spustenie aspoň jednu značku."
+msgstr "Nástroj vyžaduje na spustenie aspoň jeden štítok."
 
 msgid "ERROR"
 msgstr "CHYBA"
@@ -23,33 +23,56 @@ msgstr "CHYBA"
 msgid "Add/Remove"
 msgstr "Pridať/Odstrániť"
 
+msgid "Add or remove tags from objects."
+msgstr "Pridajte alebo odstráňte štítky z objektov."
+
+msgid "Add Tags"
+msgstr "Pridať štítky"
+
+msgid "Remove Tags"
+msgstr "Odstrániť štítky"
+
 msgid "General options"
-msgstr "Všeobecné možnosti"
+msgstr "Všeobecné voľby"
+
+msgid "Choose a category."
+msgstr "Vyberte kategóriu."
 
 msgid "Choose Tag"
-msgstr "Vybrať značku"
+msgstr "Vybrať štítok"
 
 msgid "Choose a tag to remove."
-msgstr "Vyberte značku na odstránenie."
+msgstr "Vyberte štítok na odstránenie."
 
 msgid "Persons"
 msgstr "Osoby"
 
 msgid "Filter options"
-msgstr "Možnosti filtra"
+msgstr "Voľby filtra"
 
 #, python-format
 msgid "All %s"
 msgstr "Všetky %s"
 
 msgid "Add/Remove Tag Tool"
-msgstr "Nástroj na pridanie/odstránenie značiek"
+msgstr "Nástroj na pridanie/odstránenie štítkov"
+
+msgid ""
+"Unable to run the tool. Please check if your database contains tags, filters "
+"and objects."
+msgstr ""
+"Nástroj sa nedá spustiť. Skontrolujte, či vaša databáza obsahuje štítky, "
+"filtre a objekty."
 
 msgid "WARNING"
 msgstr "UPOZORNENIE"
 
+#, python-format
+msgid "No %s objects were found in database."
+msgstr "V databáze neboli nájdené žiadne objekty %s."
+
 msgid "Process tags..."
-msgstr "Spracovať štítky..."
+msgstr "Spracovanie štítkov..."
 
 msgid "added"
 msgstr "pridané"
@@ -57,8 +80,11 @@ msgstr "pridané"
 msgid "removed"
 msgstr "odstránené"
 
+msgid "Tag '{}' was {} to {} {} objects.\n"
+msgstr "Štítok '{}' bol {} k {} {} objektom.\n"
+
 msgid "INFO"
 msgstr "INFO"
 
 msgid "Add or remove a tag from groups of people, events, etc."
-msgstr "Pridajte alebo odstráňte značku zo skupín ľudí, udalostí atď."
+msgstr "Pridajte alebo odstráňte štítok zo skupín ľudí, udalostí atď."

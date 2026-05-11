@@ -1,0 +1,45 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:57-0800\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "DE Web Connect Pack"
+msgstr "Paquete de conexión web DE"
+
+msgid "Collection of Web sites for the DE (requires libwebconnect)"
+msgstr "Colección de sitios Web para la DE (requiere libwebconnect)"
+
+msgid "Bielefeld Academic Search"
+msgstr "Búsqueda académica de Bielefeld"
+
+msgid "FamilySearch.org"
+msgstr "FamilySearch.org"
+
+msgid "Google Archives"
+msgstr "Archivadores de Google"
+
+msgid "DE Google"
+msgstr "Google DE"
+
+msgid "Open Library"
+msgstr "Abrir Biblioteca"
+
+msgid "Surname map (1890-1996)"
+msgstr "Mapa de apellidos (1890‐1996)"
+
+msgid "GenWiki"
+msgstr "GenWiki"
+
+msgid "German digital library"
+msgstr "Biblioteca digital de Alemania"

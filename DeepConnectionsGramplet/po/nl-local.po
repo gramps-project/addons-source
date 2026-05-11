@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-11-08 17:51+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "Deep Connections Gramplet"
 msgstr "Verre verwanten gramplet"
@@ -24,11 +24,40 @@ msgstr ""
 msgid "Deep Connections"
 msgstr "Verre relaties"
 
-msgid "Pause"
-msgstr "Pauze"
+msgid "⏸ Pause"
+msgstr "⏸ Pauze"
 
-msgid "Copy"
-msgstr "Kopieer"
+msgid "Pause the current search"
+msgstr "Huidige zoekopdracht pauzeren"
+
+msgid "▶ Continue"
+msgstr "▶ Doorgaan"
+
+msgid "Continue searching for more relations"
+msgstr "Verder zoeken naar meer relaties"
+
+msgid "📋 Copy"
+msgstr "📋 Kopiëren"
+
+msgid "Copy selected people to clipboard"
+msgstr "Geselecteerde personen naar klembord kopiëren"
+
+msgid "🗑 Clear"
+msgstr "🗑 Wissen"
+
+msgid "Clear all results and reset"
+msgstr "Alle resultaten wissen en herstellen"
+
+msgid "Ready to search"
+msgstr "Klaar om te zoeken"
+
+#, python-brace-format
+msgid ""
+"Search Depth: {depth} | People Processed: {processed} | Queue Size: "
+"{queue_size}"
+msgstr ""
+"Zoekdiepte: {depth} | Verwerkte personen: {processed} | Wachtrij: "
+"{queue_size}"
 
 msgid "mentioned in note"
 msgstr "vermeld in opmerking"
@@ -37,7 +66,7 @@ msgid "Note on Family"
 msgstr "Opmerking over familie"
 
 msgid "sibling"
-msgstr "broer of zus"
+msgstr "broer/zus"
 
 msgid "Note on Parent Family"
 msgstr "Opmerking over ouders"
@@ -57,8 +86,17 @@ msgstr ""
 "\n"
 "   %s van "
 
+msgid "Error: No Home Person set"
+msgstr "Fout: Geen centrale persoon ingesteld"
+
 msgid "No Active Person set."
 msgstr "Geen actieve persoon ingesteld."
+
+msgid "Error: No Active Person set"
+msgstr "Fout: Geen actieve persoon ingesteld"
+
+msgid "Initializing search..."
+msgstr "Zoekopdracht initialiseren…"
 
 msgid "Looking for relationship between\n"
 msgstr "Gezocht naar de relatie tussen\n"
@@ -70,6 +108,9 @@ msgstr "  <b>%s</b> (centrale persoon) en\n"
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (actieve persoon)...\n"
+
+msgid "Searching for connections..."
+msgstr "Zoeken naar connecties..."
 
 #, python-format
 msgid ""
@@ -86,10 +127,25 @@ msgstr ""
 "Gepauzeerd.\n"
 "Druk op Doorgaan om naar aanvullende relaties te zoeken.\n"
 
+msgid "Paused - Press Continue to search for more relations"
+msgstr "Gepauzeerd - Druk Doorgaan om meer relaties te zoeken"
+
 #, python-format
 msgid ""
 "\n"
-"Search completed. %d relations found."
+"Search completed. %d relation paths found."
 msgstr ""
 "\n"
-"Zoeken voltooid. %d relaties gevonden."
+"Zoeken voltooid. %d connecties gevonden."
+
+msgid "Search completed - {} relation paths found"
+msgstr "Zoeken voltooid. {} connecties gevonden."
+
+msgid "Error during search: {}"
+msgstr "Fout bij het zoeken: {}"
+
+msgid "Resuming search..."
+msgstr "Zoeken hervatten..."
+
+msgid "Search interrupted by user"
+msgstr "Zoekopdracht onderbroken door gebruiker"

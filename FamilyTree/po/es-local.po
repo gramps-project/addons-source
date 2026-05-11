@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+#, python-format
+msgid "Family Tree for %s"
+msgstr "Árbol de familia para %s"
 
 msgid "Paper too small"
 msgstr "El papel es demasiado pequeño"
@@ -44,12 +48,145 @@ msgstr "matrimonio"
 msgid "divorced"
 msgstr "divorcio"
 
+msgid "resident"
+msgstr "residente"
+
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "el %(ymd_date)s"
+
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "en %(ym_date)s"
+
+#, python-format
+msgid "in %(y_date)s"
+msgstr "en %(y_date)s"
+
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "sobre %(placeholder)s"
+
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "sobre %(placeholder)s %(partial)s"
+
+#, python-format
+msgid "in %(place)s"
+msgstr "interno a %(place)s"
+
 #, python-format
 msgid "(%(description)s)"
 msgstr "(%(description)s)"
 
+msgid "The center family for the tree"
+msgstr "La familia de centro para el árbol"
+
+msgid "Ancestor Generations"
+msgstr "Generaciones de ancestros"
+
+msgid "The number of ancestor generations to include in the tree"
+msgstr "El número de generaciones de ancestros para incluir en el árbol"
+
+msgid "Descendant Generations"
+msgstr "Generaciones descendentes"
+
+msgid "The number of descendant generations to include in the tree"
+msgstr "El número de generaciones descendientes para incluir en el árbol"
+
+msgid "Kekule number of husband"
+msgstr "Número de marido Kekule"
+
+msgid ""
+"The Kekule number of the husband (central family). Set 0 to not show Kekule "
+"numbers"
+msgstr ""
+"El número del marido Kekule (familia central). Establezca 0 para no mostrar "
+"números de Kekule"
+
+msgid "Scale to fit on a single page"
+msgstr "Escala para caber en una sola página"
+
+msgid "Whether to scale to fit on a single page."
+msgstr "Si o no escalar para caber en una única página."
+
+msgid "No color"
+msgstr "Sin color"
+
+msgid "First generation"
+msgstr "Generación primera"
+
+msgid "Second generation"
+msgstr "Generación segunda"
+
+msgid "Third generation"
+msgstr "Generación tercera"
+
+msgid "Male line"
+msgstr "Línea masculina"
+
+msgid "Male line and illegitimate children"
+msgstr "Línea masculina e hijos ilegítimos"
+
+msgid "Female line"
+msgstr "Línea femenina"
+
+msgid "Shuffle colors"
+msgstr "Arrastrar colores"
+
+msgid "Whether to shuffle colors or order them in rainbow fashion."
+msgstr "Si arrastra colores u ordenarles en modelo de arco iris."
+
 msgid "Replace first name with call name"
 msgstr "Reemplazar nombre de pila por apelativo"
+
+msgid "Underline call name in first name / add call name to first name"
+msgstr ""
+"Subrayar nombre de llamada interna al nombre de pila / agregar nombre de "
+"llamada al nombre de pila"
+
+msgid "Include Occupation"
+msgstr "Incluir Ocupación"
+
+msgid "Include Residence"
+msgstr "Incluir Residencia"
+
+msgid "Print event data (dead person)"
+msgstr "Declarar fecha de evento (persona fallecida)"
+
+msgid "Year only"
+msgstr "Solo año"
+
+msgid "Full date"
+msgstr "Fecha completa"
+
+msgid "Full date and place"
+msgstr "Fecha y lugar completos"
+
+msgid "Print event data (living person)"
+msgstr "Declara datos de evento (persona viva)"
+
+msgid "Fall back to baptism if birth event missing"
+msgstr "Regresar al bautismo si falta el evento de nacimiento"
+
+msgid "Fall back to burial or cremation if death event missing"
+msgstr "Retrocede al entierro o cremación si falta el evento de defunción"
+
+msgid "Protect private items"
+msgstr "Protege los elementos privados"
+
+msgid "Include event description"
+msgstr "Incluye descripción de evento"
+
+msgid "Text Options"
+msgstr "Opciones de Texto"
+
+msgid "The style used for names."
+msgstr "El estilo utilizado para nombres."
+
+msgid "The style used for data (birth, death, marriage, divorce)."
+msgstr ""
+"El estilo utilizado para datos (nacimiento, defunción, matrimonio, divorcio)."
 
 msgid "Produces a graphical family tree."
 msgstr "Produce un árbol genealógico gráfico."

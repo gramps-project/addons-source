@@ -1,0 +1,58 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "short for born|b."
+msgstr "n."
+
+msgid "short for died|d."
+msgstr "f."
+
+msgid "short for baptized|bap."
+msgstr "bau."
+
+msgid "short for christened|chr."
+msgstr "con."
+
+msgid "short for buried|bur."
+msgstr "ent."
+
+msgid "short for cremated|crem."
+msgstr "crem."
+
+msgid "Order by timeline"
+msgstr "Orden por cronograma"
+
+msgid "Show lifespan"
+msgstr "Mostrar vida útil"
+
+msgid "Descendant Generations"
+msgstr "Generaciones descendentes"
+
+#, python-format
+msgid "%d generation"
+msgid_plural "%d generations"
+msgstr[0] "%d generación"
+msgstr[1] "%d generaciones"
+
+msgid "Ancestor Generations"
+msgstr "Generaciones de ancestros"
+
+msgid ""
+"The view shows a timeline pedigree with ancestors and descendants of the "
+"selected person"
+msgstr ""
+"La vista muestra una línea de tiempo pedigrí con antepasados y descendientes "
+"de la persona seleccionada"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2026-04-08 15:09+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-05-11 10:35+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "Data Entry Gramplet"
 msgstr "Unos podataka – Gramplet"
@@ -78,9 +78,18 @@ msgstr "Kopiraj aktivne podatke"
 msgid "in"
 msgstr "u"
 
+msgid "No Family Tree is open."
+msgstr "Nijedan rodoslov nije otvoren."
+
+msgid "Please open a Family Tree to edit data."
+msgstr "Otvori jedan rodoslov za uređivanje podataka."
+
 #, python-format
 msgid "Gramplet Data Edit: %s"
 msgstr "Gramplet za uređivanje podataka: %s"
+
+msgid "Please open a Family Tree before adding a person."
+msgstr "Otvori jedan rodoslov prije dodavanje osobe."
 
 msgid "Please provide a name."
 msgstr "Upiši ime."

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-06-21 17:01+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,31 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+#, python-format
+msgid "sp. see  %(reference)s : %(spouse)s"
+msgstr "sp. consulte %(reference)s : %(spouse)s"
+
+#, python-format
+msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
+msgstr ""
+"consulte informe: %(report)s, ref: %(reference)s : %(person)s y %(spouse)s"
+
+msgid "Descendants Report"
+msgstr "Informe de Descendientes"
+
+#, python-format
+msgid "Writing %s reports..."
+msgstr "Escribiendo %s informes…"
+
+#, python-brace-format
+msgid "{report_count}. Descendants of {name}"
+msgstr "{report_count}. Descendientes de {name}"
+
+#, python-brace-format
+msgid "{report_count:d}. {name}"
+msgstr "{report_count:d}. {name}"
 
 msgid "Select filter to restrict people that appear in the report"
 msgstr ""
@@ -21,6 +45,110 @@ msgstr ""
 msgid "Whether to show duplicate family trees in the report."
 msgstr ""
 "Indica si se deben mostrar los árboles genealógicos duplicados en el informe."
+
+msgid "The style used for the title of the page."
+msgstr "El estilo utilizado para el título de la página."
+
+msgid "The style used for the table of contents header."
+msgstr "El estilo utilizado para el encabezado de la tabla de contenido."
+
+msgid "The style used for the table of contents detail."
+msgstr "El estilo utilizado para el detalle de la tabla de contenido."
+
+msgid "Detailed Descendants Report"
+msgstr "Informe Detallado de Descendientes"
+
+#, python-format
+msgid "Generating %s report references..."
+msgstr "Genera %s referencias del informe…"
+
+#, python-format
+msgid "%(report_count)s. Descendant Report for %(person_name)s"
+msgstr "%(report_count)s. Informe de Descendientes para %(person_name)s"
+
+msgid "Index of Places"
+msgstr "Índice de Lugares"
+
+msgid "Index of Dates"
+msgstr "Índice de Fechas"
+
+msgid "Index of Names"
+msgstr "Índice de Nombres"
+
+msgid "Report, Generation, Person, Name"
+msgstr "Informe, Generación, Persona, Nombre"
+
+#, python-brace-format
+msgid "See Report : {report}, Generation : {generation}, Person : {person}"
+msgstr ""
+"Consulte informe : {report}, Generación : {generation}, Persona : {person}"
+
+#, python-format
+msgid "Report appearances for %s"
+msgstr "Apariencias del informe para %s"
+
+#, python-brace-format
+msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
+msgstr ""
+"Cónyuge de: Informe: {report}, Generación: {generation}, Persona: {person}"
+
+#, python-brace-format
+msgid "Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "Informe: {report}, Generación: {generation}, Persona: {person}"
+
+#, python-format
+msgid "%(event_name)s of %(name)s "
+msgstr "%(event_name)s de %(name)s "
+
+#, python-format
+msgid "%(event_name)s of %(name)s and %(mate)s "
+msgstr "%(event_name)s de %(name)s y %(mate)s "
+
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#, python-format
+msgid ". Ref: %(repno)s %(gen)s %(per)s "
+msgstr ". Ref: %(repno)s %(gen)s %(per)s "
+
+#, python-format
+msgid "%(event_name)s:"
+msgstr "%(event_name)s:"
+
+#, python-format
+msgid " %(event_text)s"
+msgstr " %(event_text)s"
+
+#, python-brace-format
+msgid "Ref: {number}. {name}"
+msgstr "Ref: {number}. {name}"
+
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
+#, python-format
+msgid "%(type)s:"
+msgstr "%(type)s:"
+
+#, python-format
+msgid " %(value)s%(endnotes)s"
+msgstr " %(value)s%(endnotes)s"
+
+msgid "List children"
+msgstr "Listado descendiente"
+
+msgid "Add descendant reference in child list"
+msgstr "Agrega referencia descendiente en listado de hijos"
 
 msgid "Include Index of Names"
 msgstr "Incluir índice de nombres"
@@ -40,6 +168,35 @@ msgstr "Incluir índice de lugares"
 msgid "Whether to include the index of Places at the end of the report."
 msgstr "Indica si se debe incluir el índice de lugares al final del informe."
 
+msgid "Include the 'Report appearances' section with each person"
+msgstr "Incluya la sección 'Informar sobre apariciones' con cada persona"
+
+msgid ""
+"The 'Report appearances' section shows other places in the report where the "
+"person is mentioned."
+msgstr ""
+"La sección ‘Apariciones en el informe’ muestra otros lugares del informe "
+"donde se menciona a la persona."
+
+msgid "The style used for the children list."
+msgstr "El estilo utilizado para el listado de herederos."
+
+msgid "The basic style used for Note header."
+msgstr "El estilo básico utilizado para cabecera de Nota."
+
+msgid "The style used for the first personal entry."
+msgstr "El estilo utilizado para el primer apunte personal."
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr ""
+"El estilo utilizado para la cabecera Más Sobre y para cabeceras de mates."
+
+msgid "The style used for additional detail data."
+msgstr "El estilo utilizado para datos detallados adicionales."
+
+msgid "The style used for note detail data."
+msgstr "El estilo usado para nota de datos detallados."
+
 msgid "The style used for the date in the Index of Dates."
 msgstr "El estilo usado para la fecha en el índice de fechas."
 
@@ -57,3 +214,48 @@ msgstr "El estilo usado para la cabecera en el índice de lugares."
 
 msgid "The style used for the references in the Index of Places."
 msgstr "El estilo usado para las referencias en el índice de lugares."
+
+msgid "Descendant Book"
+msgstr "Libro Descendiente"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Genera uno o más informes descendientes a partir de una consulta "
+"proporcionada."
+
+msgid "Detailed Descendant Book"
+msgstr "Libro Descendente Detallado"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Produce uno o más informes descendientes detallados basados en una consulta "
+"dada."
+
+#, python-format
+msgid "Deep pruning ascendants from %s people..."
+msgstr "Poda profunda de ancestros de %s personas…"
+
+#, python-format
+msgid "Pruning ascendants from %s people..."
+msgstr "Podar los ancestros desde %s personas…"
+
+#, python-format
+msgid "Getting ascendants from %s people..."
+msgstr "Obtener ancestros desde %s personas…"
+
+#, python-format
+msgid "Verifying descendants from %s people..."
+msgstr "Verificando la descendencia de %s personas…"
+
+#, python-format
+msgid "Getting missing descendants from %s people..."
+msgstr "Encontrar a los descendientes desaparecidos de %s personas…"
+
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr "Verificación de descendientes de %s personas tras poda…"
+
+#, python-format
+msgid "Getting missing descendants from %s people ..."
+msgstr "Obtiene descendientes desaparecidos desde %s personas…"

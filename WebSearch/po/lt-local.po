@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-09-14 11:02+0000\n"
-"Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-01-04 20:01+0000\n"
+"Last-Translator: openSUSE Lietuviškai <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
 "project/addons/lt/>\n"
 "Language: lt\n"
@@ -13,10 +13,86 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Poedit-Language: Lithuanian\n"
 "X-Poedit-Country: LITHUANIA\n"
+
+msgid "No title"
+msgstr "Be pavadinimo"
+
+msgid "No data available."
+msgstr "Duomenų nėra."
+
+msgid "Foundation date:"
+msgstr "Įkūrimo data:"
+
+msgid "Note:"
+msgstr "Pastaba:"
+
+msgid "Coordinates:"
+msgstr "Koordinatės:"
+
+msgid "Full hierarchy"
+msgstr "Visa hierarchija"
+
+msgid "Place Type:"
+msgstr "Vietovės rūšis:"
+
+msgid "⏳ Generating historical place data, please wait..."
+msgstr "⏳ Kuriami istorinių vietų duomenys, palaukite..."
+
+msgid "Keys"
+msgstr "Raktai"
+
+msgid "Show QR-code"
+msgstr "Rodyti QR kodą"
+
+msgid "Copy link to clipboard"
+msgstr "Kopijuoti nuorodą į iškarpinę"
+
+msgid "Hide link for selected item"
+msgstr "Paslėpti nuorodą pasirinktam elementui"
+
+msgid "Hide link for all items"
+msgstr "Paslėpti nuorodą visiems elementams"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 AI pasiūlymai"
+
+msgid "Error creating note"
+msgstr "Klaida sukuriant pastabą"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Antraštė: {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "Pakeistas: {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "Tuščia: {keys}"
+
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "Komentaras: {comment}"
+
+msgid "QR-code"
+msgstr "QR kodas"
+
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Sistemos informacija"
+
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Trūksta:** `qrcode`"
+
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Ši Python biblioteka jūsų sistemoje nepasiekiama."
+
+msgid "Without it, QR code generation will not work."
+msgstr "Be jo QR kodo kūrimas neveiks."
 
 msgid "AI Provider"
 msgstr "AI teikėjas"
@@ -101,79 +177,3 @@ msgstr "Požymis atnaujintas"
 
 msgid "Note updated"
 msgstr "Pastaba atnaujinta"
-
-msgid "No title"
-msgstr "Be pavadinimo"
-
-msgid "## ⚙️ System Information"
-msgstr "## ⚙️ Sistemos informacija"
-
-msgid "🔻 **Missing:** `qrcode`"
-msgstr "🔻 **Trūksta:** `qrcode`"
-
-msgid "ℹ️ This Python library is not available in your system."
-msgstr "ℹ️ Ši Python biblioteka jūsų sistemoje nepasiekiama."
-
-msgid "Without it, QR code generation will not work."
-msgstr "Be jo QR kodo kūrimas neveiks."
-
-msgid "No data available."
-msgstr "Duomenų nėra."
-
-msgid "Foundation date:"
-msgstr "Įkūrimo data:"
-
-msgid "Note:"
-msgstr "Pastaba:"
-
-msgid "Coordinates:"
-msgstr "Koordinatės:"
-
-msgid "Full hierarchy"
-msgstr "Visa hierarchija"
-
-msgid "Place Type:"
-msgstr "Vietovės rūšis:"
-
-msgid "QR-code"
-msgstr "QR kodas"
-
-msgid "⏳ Generating historical place data, please wait..."
-msgstr "⏳ Kuriami istorinių vietų duomenys, palaukite..."
-
-msgid "Keys"
-msgstr "Raktai"
-
-msgid "Show QR-code"
-msgstr "Rodyti QR kodą"
-
-msgid "Copy link to clipboard"
-msgstr "Kopijuoti nuorodą į iškarpinę"
-
-msgid "Hide link for selected item"
-msgstr "Paslėpti nuorodą pasirinktam elementui"
-
-msgid "Hide link for all items"
-msgstr "Paslėpti nuorodą visiems elementams"
-
-msgid "🔍 AI Suggestions"
-msgstr "🔍 AI pasiūlymai"
-
-msgid "Error creating note"
-msgstr "Klaida sukuriant pastabą"
-
-#, python-brace-format
-msgid "Title: {title}"
-msgstr "Antraštė: {title}"
-
-#, python-brace-format
-msgid "Replaced: {keys}"
-msgstr "Pakeistas: {keys}"
-
-#, python-brace-format
-msgid "Empty: {keys}"
-msgstr "Tuščia: {keys}"
-
-#, python-brace-format
-msgid "Comment: {comment}"
-msgstr "Komentaras: {comment}"

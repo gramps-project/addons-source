@@ -1,0 +1,43 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-13 22:17+0000\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Query Gramplet"
+msgstr "Consulta de Gramplet"
+
+msgid "Gramplet for running SQL-like queries"
+msgstr "Gramplet para ejecutar consultas similares a SQL"
+
+msgid "Query"
+msgstr "Consultar"
+
+msgid "Query Quickview"
+msgstr "Consulta Quickview"
+
+msgid "Quick view for SQL-like running queries"
+msgstr "Vista rápida para consultas de ejecutando a SQL similares"
+
+msgid "Enter Python expressions"
+msgstr "Introduzca expresiones de Python"
+
+msgid "Enter SQL query"
+msgstr "Introducir consulta de SQL"
+
+#, python-brace-format
+msgid "{rows:d} rows processed in {secs} seconds.\n"
+msgstr "{rows:d} filas procesadas en {secs} segundos.\n"
+
+msgid "Today"
+msgstr "Hoy"

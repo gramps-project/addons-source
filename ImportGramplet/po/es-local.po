@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Gramplet for importing text"
+msgstr "Gramplete para importar texto"
+
+msgid "VCard import"
+msgstr "Importar VCard"
+
+#, python-format
+msgid ""
+"The opened file has media path %s, which conflicts with the media path of "
+"the family tree you import into. The original media path has been retained. "
+"Copy the files to a correct directory or change the media path in the "
+"Preferences."
+msgstr ""
+"El archivo abierto tiene la ruta %s, la cual entra en conflicto con la ruta "
+"del árbol genealógico que está importando. Se ha conservado la ruta "
+"original. Copie los archivos a un directorio correcto o cambie la ruta en "
+"las Preferencias."
+
+msgid ""
+"Enter text to import and then click\n"
+"the Import button at bottom"
+msgstr ""
+"Introduzca texto para importar y después\n"
+"pulse el botón Importar al final"
+
+msgid "_Import"
+msgstr "_Importar"
+
+msgid "Import done"
+msgstr "Importación hecha"
+
+msgid "Importing Text..."
+msgstr "Importar texto…"
+
+msgid "Can't determine type of import"
+msgstr "No puede determinar el tipo de importación"

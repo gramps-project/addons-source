@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:17+0000\n"
-"PO-Revision-Date: 2025-09-05 10:02+0000\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,13 +12,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "Query Gramplet"
-msgstr "Gramplet Dotaz"
+msgstr "Gramplet dopytov"
+
+msgid "Gramplet for running SQL-like queries"
+msgstr "Gramplet na spúšťanie SQL-zhodných dopytov"
+
+msgid "Query"
+msgstr "Dopyt"
+
+msgid "Query Quickview"
+msgstr "Rýchly náhľad dopytu"
+
+msgid "Quick view for SQL-like running queries"
+msgstr "Rýchly pohľad na SQL-zhodné dopyty"
 
 msgid "Enter Python expressions"
-msgstr "Zadajte výrazy jazyka Python"
+msgstr "Zadajte v výrazy jazyku Python"
+
+msgid "Enter SQL query"
+msgstr "Zadajte SQL dopyt"
+
+#, python-brace-format
+msgid "{rows:d} rows processed in {secs} seconds.\n"
+msgstr "{rows:d} riadkov spracovaných za {secs} sekúnd.\n"
 
 msgid "Today"
 msgstr "Dnes"

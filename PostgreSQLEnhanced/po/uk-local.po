@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 19:09+0300\n"
-"PO-Revision-Date: 2025-08-16 05:47+0000\n"
-"Last-Translator: Максим Горпиніч <gorpinicmaksim0@gmail.com>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2025-11-17 06:51+0000\n"
+"Last-Translator: Fedir Zinchuk <fedikw@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -13,55 +13,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.15-dev\n"
 
 #, python-brace-format
 msgid "Object {obj_type}:{handle} was modified by another user"
 msgstr "Об'єкт {obj_type}:{handle} було змінено іншим користувачем"
 
-msgid "Starting migration..."
-msgstr "Розпочато міграцію..."
-
-#, python-format
-msgid "Migrating %s objects..."
-msgstr "Міграція %s об'єктів..."
-
-#, python-format, python-brace-format
-msgid "Migrated %s {obj_type} objects"
-msgstr "Перенесено %s об'єктів {obj_type}"
-
-msgid "Migration completed!"
-msgstr "Міграцію завершено!"
-
-msgid "Starting upgrade..."
-msgstr "Розпочато оновлення..."
-
-#, python-format
-msgid "Upgrading %s objects..."
-msgstr "Оновлення %s об'єктів..."
-
-msgid "Creating indexes..."
-msgstr "Створення індексів..."
-
-msgid "Upgrade completed!"
-msgstr "Оновлення завершено!"
-
-msgid "PostgreSQL Enhanced"
-msgstr "Покращений PostgreSQL"
-
-msgid "PostgreSQL _Enhanced Database"
-msgstr "Розширена база даних PostgreSQL"
-
-msgid ""
-"Advanced PostgreSQL backend with JSONB storage, graph database support "
-"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
-"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
-"compatible."
-msgstr ""
-"Розширений сервер PostgreSQL зі сховищем JSONB, підтримкою графових баз "
-"даних (Apache AGE), векторною подібністю (pgvector) та можливостями штучного "
-"інтелекту/машинного навчання. Для досвідчених користувачів. Потрібен "
-"PostgreSQL 15+ з розширеннями. Сумісний з Gramps Web."
+msgid "pg_trgm extension required for duplicate detection"
+msgstr "Розширення pg_trgm, необхідне для виявлення дублікатів"
 
 msgid ""
 "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
@@ -114,5 +73,46 @@ msgid "Full-text search requires JSONB support or search capabilities"
 msgstr ""
 "Для повнотекстового пошуку потрібна підтримка JSONB або можливості пошуку"
 
-msgid "pg_trgm extension required for duplicate detection"
-msgstr "Розширення pg_trgm, необхідне для виявлення дублікатів"
+msgid "Starting migration..."
+msgstr "Розпочато міграцію..."
+
+#, python-format
+msgid "Migrating %s objects..."
+msgstr "Міграція %s об'єктів..."
+
+#, python-format, python-brace-format
+msgid "Migrated %s {obj_type} objects"
+msgstr "Перенесено %s об'єктів {obj_type}"
+
+msgid "Migration completed!"
+msgstr "Міграцію завершено!"
+
+msgid "Starting upgrade..."
+msgstr "Розпочато оновлення..."
+
+#, python-format
+msgid "Upgrading %s objects..."
+msgstr "Оновлення %s об'єктів..."
+
+msgid "Creating indexes..."
+msgstr "Створення індексів..."
+
+msgid "Upgrade completed!"
+msgstr "Оновлення завершено!"
+
+msgid "PostgreSQL Enhanced"
+msgstr "Покращений PostgreSQL"
+
+msgid "PostgreSQL _Enhanced Database"
+msgstr "Розширена база даних PostgreSQL"
+
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
+msgstr ""
+"Розширений сервер PostgreSQL зі сховищем JSONB, підтримкою графових баз "
+"даних (Apache AGE), векторною подібністю (pgvector) та можливостями штучного "
+"інтелекту/машинного навчання. Для досвідчених користувачів. Потрібен "
+"PostgreSQL 15+ з розширеннями. Сумісний з Gramps Web."

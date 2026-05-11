@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:29+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
 "PO-Revision-Date: 2025-09-03 03:01+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
@@ -62,12 +62,6 @@ msgstr "El camí de destinació per als fitxers generats."
 msgid "The destination file name for html content."
 msgstr "El nom del fitxer de destinació per al contingut HTML."
 
-msgid "Ancestral Collapsible Tree"
-msgstr "Arbre ancestral colapsable"
-
-msgid "Descendant Indented Tree"
-msgstr "Arbre de descendents amb sagnat"
-
 msgid "Ancestral Fan Chart"
 msgstr "Diagrama en ventall d'avantpassats"
 
@@ -78,12 +72,11 @@ msgstr ""
 "Genera una pàgina web amb una representació gràfica dels avantpassats (SVG) "
 "en forma de diagrama en ventall, utilitzant la biblioteca JavaScript D3.js."
 
-#, python-format
-msgid "See %(reference)s : %(spouse)s"
-msgstr "Vegeu %(reference)s : %(spouse)s"
-
 msgid "Generating report..."
 msgstr "Generant informe…"
+
+msgid "Descendant Indented Tree"
+msgstr "Arbre de descendents amb sagnat"
 
 msgid "Invalid Destination Directory"
 msgstr "Directori de destinació no vàlid"
@@ -135,3 +128,6 @@ msgstr ".cgi"
 
 msgid "Exclude Spouses"
 msgstr "Exclou els cònjuges"
+
+msgid "Ancestral Collapsible Tree"
+msgstr "Arbre ancestral colapsable"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-03-24 17:49+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,24 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
-
-msgid "Descendant Book"
-msgstr "Livro Descendentes"
-
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-"Produz um ou mais relatórios de descendência baseados numa consulta "
-"fornecida."
-
-msgid "Detailed Descendant Book"
-msgstr "Livro Descendência detalhada"
-
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Produz um ou mais relatórios de descendência detalhada baseados numa "
-"consulta fornecida."
+"X-Generator: Weblate 2026.5-dev\n"
 
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
@@ -228,6 +211,23 @@ msgstr "O estilo usado para o cabeçalho no índice de locais."
 
 msgid "The style used for the references in the Index of Places."
 msgstr "O estilo usado para as referências no índice de locais."
+
+msgid "Descendant Book"
+msgstr "Livro Descendentes"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Produz um ou mais relatórios de descendência baseados numa consulta "
+"fornecida."
+
+msgid "Detailed Descendant Book"
+msgstr "Livro Descendência detalhada"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Produz um ou mais relatórios de descendência detalhada baseados numa "
+"consulta fornecida."
 
 #, python-format
 msgid "Deep pruning ascendants from %s people..."

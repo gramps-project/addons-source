@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "lxml"
 msgstr "lxml"
@@ -27,23 +27,16 @@ msgid "Gramplet for testing etree with Gramps XML"
 msgstr "Gramplet na testovanie etree s Gramps XML"
 
 msgid "Invalid timestamp"
-msgstr "Neplatná časová známka"
+msgstr "Neplatná časová pečiatka"
 
-msgid "No file parsed..."
-msgstr "Nebol analyzovaný žiadny súbor..."
+msgid "No file loaded..."
+msgstr "Žiadny súbor nebol načítaný..."
 
-msgid "Number of editions back"
-msgstr "Počet predchádzajúcich vydaní"
+msgid "Number of additions and modifications back"
+msgstr "Počet spätných pridaní a modifikácií"
 
-msgid "Space character on filename"
-msgstr "Medzera v názve súboru"
-
-#, python-format
-msgid "Please fix space on \"%s\""
-msgstr "Opravte medzeru v názve \"%s\""
-
-msgid "Sorry, no support for your OS yet!"
-msgstr "Prepáčte, váš OS zatiaľ nie je podporovaný!"
+msgid "Print more informations on console"
+msgstr "Vypísať viac informácií do konzoly"
 
 msgid "Is it a compressed .gramps?"
 msgstr "Je to komprimovaný .gramps?"
@@ -52,25 +45,26 @@ msgstr "Je to komprimovaný .gramps?"
 msgid "Cannot uncompress \"%s\""
 msgstr "Nemožno dekomprimovať \"%s\""
 
-#, python-format
-msgid ""
-"From:\n"
-" \"%(file1)s\"\n"
-" to:\n"
-" \"%(file2)s\".\n"
-msgstr ""
-"Zo:\n"
-" \"%(file1)s\"\n"
-" do:\n"
-" \"%(file2)s\".\n"
+msgid "Is it a .gramps?"
+msgstr "Je to súbor .gramps?"
 
 #, python-format
 msgid "Cannot copy \"%s\""
 msgstr "Nemožno kopírovať \"%s\""
 
+msgid "Sorry, no support for your OS yet!"
+msgstr "Prepáčte, váš OS zatiaľ nie je podporovaný!"
+
+msgid "Parsing issue"
+msgstr "Problém s analýzou"
+
 #, python-format
-msgid "XML: Last %s editions since %s, were at/on :\n"
-msgstr "XML: Posledné %s vydania od %s, boli v/na: :\n"
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "Nemožno analyzovať obsah \"%(file)s\""
+
+#, python-format
+msgid "XML: Last %s additions and modifications since %s, were on :\n"
+msgstr "XML: Posledné pridania a modifikácie %s od %s boli dňa:\n"
 
 #, python-format
 msgid ""
@@ -85,98 +79,98 @@ msgstr ""
 #, python-format
 msgid ""
 "Number of tags : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Počet značiek : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"Počet štítkov : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of tags : \n"
-"\t\t\t%s\n"
+"\t\t\t%06s\n"
 msgstr ""
-"Počet značiek : \n"
-"\t\t\t%s\n"
+"Počet štítkov : \n"
+"\t\t\t%06s\n"
 
 #, python-format
 msgid ""
 "Number of  events : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Počet  udalostí : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"Počet udalostí : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of persons : \n"
-"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+"\t\t\t%06s\t|\t(%06s) and (%06s)* surnames\n"
 msgstr ""
 "Počet osôb : \n"
-"\t\t\t%s\t|\t(%s) a (%s)* priezvisk\n"
+"\t\t\t%06s\t|\t(%06s) a (%06s)* priezvisk\n"
 
 #, python-format
 msgid ""
 "Number of persons : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Počet osôb : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of families : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Počet rodín : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of sources : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Počet zdrojov : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of citations : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Počet citácií : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of places : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Počet miest : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of media objects : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Počet mediálnych objektov : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of repositories : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Počet archívov : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"Počet repozitárov : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of notes : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Počet poznámok : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
@@ -206,48 +200,38 @@ msgstr "Chýba python3 lxml"
 msgid "Please, try to install \"python3 lxml\" package."
 msgstr "Skúste nainštalovať balík \"python3 lxml\"."
 
-msgid "No file loaded..."
-msgstr "Žiadny súbor nebol načítaný..."
+msgid "xmllint options"
+msgstr "voľby xmllint"
+
+msgid "debug places"
+msgstr "ladenie miest"
+
+msgid "debug xml"
+msgstr "ladenie xml"
 
 msgid "XSD validation (lxml)"
-msgstr "Overovanie XSD (lxml)"
-
-#, python-format
-msgid "Cannot validate \"%(file)s\" !"
-msgstr "Nemožno overiť \"%(file)s\" !"
+msgstr "XSD validácia (lxml)"
 
 #, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
-msgstr "xmllint: preskočiť overovanie DTD pre \"%(file)s\""
+msgstr "xmllint: vynechanie validácie DTD pre \"%(file)s\""
 
 #, python-format
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
-msgstr "xmllint: preskočiť overovanie RelaxNG pre \"%(file)s\""
+msgstr "xmllint: vynechanie validácie RelaxNG pre \"%(file)s\""
 
-msgid "Parsing issue"
-msgstr "Problém s analýzou"
+msgid "Custom \"test.xml\" file"
+msgstr "Vlastný súbor \"test.xml\""
 
-#, python-format
-msgid "Cannot parse content of \"%(file)s\""
-msgstr "Nemožno analyzovať obsah \"%(file)s\""
-
-msgid "Gramps version"
-msgstr "Gramps verzia"
-
-#, python-format
-msgid ""
-"Wrong namespace\n"
-"Need: %s"
-msgstr ""
-"Nesprávny priestor mien\n"
-"Potrebné: %s"
+msgid "Please try to fix \"test.xml\""
+msgstr "Prosím, skúste opraviť súbor \"test.xml\""
 
 msgid "RelaxNG validation"
-msgstr "Overovanie RelaxNG"
+msgstr "Validácia RelaxNG"
 
 #, python-format
 msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
-msgstr "Nemožno overiť \"%(file)s\" prostredníctvom schémy RelaxNG"
+msgstr "Nemožno validovať \"%(file)s\" prostredníctvom schémy RelaxNG"
 
 msgid "File issue"
 msgstr "Problém so súborom"
@@ -259,19 +243,27 @@ msgstr "Nemožno analyzovať \"%(file)s\" pomocou etree"
 msgid "Parsing file..."
 msgstr "Analyzovanie súboru..."
 
+#, python-format
+msgid " - (%(lang)s)"
+msgstr " - (%(lang)s)"
+
+#, python-format
+msgid " - (? or %(lang)s)"
+msgstr " - (? alebo %(lang)s)"
+
 msgid "Missing header"
-msgstr "Chýba záhlavie"
+msgstr "Chýbajúce záhlavie"
 
 msgid ""
 "Not a valid .gramps.\n"
 "Cannot run the gramplet...\n"
 "Please, try to use a .gramps\n"
-"generated by Gramps 4.x."
+"generated by Gramps 6.x."
 msgstr ""
-"Nie je platný .gramps.\n"
-"Nie je možné spustiť gramplet...\n"
+"Nie je platný súbor .gramps.\n"
+"Gramplet sa nedá spustiť...\n"
 "Prosím, skúste použiť súbor .gramps\n"
-"vygenerovaný programom Gramps 4.x."
+"vygenerovaný programom Gramps 6.x."
 
 msgid "0"
 msgstr "0"
@@ -288,31 +280,50 @@ msgstr " v Gramps "
 msgid "Period: "
 msgstr "Obdobie: "
 
-msgid " entries for surname(s); no frequency yet"
-msgstr " záznamy pre priezvisko(a); zatiaľ žiadna frekvencia"
+#, python-brace-format
+msgid "\t{number} surname"
+msgid_plural "\t{number} surnames; no frequency yet\n"
+msgstr[0] "\t{number} priezvisko"
+msgstr[1] "\t{number} priezviská; zatiaľ žiadna frekvencia"
+msgstr[2] "\t{number} priezvisk; zatiaľ žiadna frekvencia"
 
-msgid " entries for place(s)"
-msgstr " záznamy pre miesto(a)"
+#, python-brace-format
+msgid "\t{number} surname; no frequency yet"
+msgstr "\tPriezvisko: {number} ; zatiaľ žiadna frekvencia"
 
-msgid " note(s)"
-msgstr " poznámka(y)"
+#, python-brace-format
+msgid "\t{number} place"
+msgid_plural "\t{number} places\n"
+msgstr[0] "\t{number} miesto"
+msgstr[1] "\t{number} miesta"
+msgstr[2] "\t{number} miest"
 
-msgid " source(s)"
-msgstr " zdroj(e)"
+#, python-brace-format
+msgid "\t{number} note"
+msgid_plural "\t{number} notes\n"
+msgstr[0] "\t{number} poznámka"
+msgstr[1] "\t{number} poznámky"
+msgstr[2] "\t{number} poznámok"
+
+#, python-brace-format
+msgid "\t{number} source"
+msgid_plural "\t{number} sources\n"
+msgstr[0] "\t{number} zdroj"
+msgstr[1] "\t{number} zdroje"
+msgstr[2] "\t{number} zdrojov"
 
 msgid "Gallery.html"
 msgstr "Gallery.html"
 
 #, python-format
-msgid "2. Has generated a media index on \"%(file)s\".\n"
-msgstr "2. Vygeneroval register médií v \"%(file)s\".\n"
+msgid "1. Has generated a media index on \"%(file)s\".\n"
+msgstr "1. Bol vygenerovaný register médií v \"%(file)s\".\n"
 
-#, python-format
-msgid "3. Has written entries into \"%(file)s\".\n"
-msgstr "3. Zapísal záznamy do \"%(file)s\".\n"
+msgid "XML SyntaxError"
+msgstr "Chyba syntaxe XML"
 
 msgid "Matches XSD schema."
-msgstr "Porovnáva XSD schému."
+msgstr "Zodpovedá XSD schéme."
 
 msgid "xmllint: skip DTD validation"
 msgstr "xmllint: preskočiť overovanie DTD"
@@ -342,14 +353,14 @@ msgid "Portugal"
 msgstr "Portugalsko"
 
 #, python-format
-msgid "1. Has generated \"%s\".\n"
-msgstr "1. Vygeneroval \"%s\"\n"
+msgid "2. Has generated \"%s\".\n"
+msgstr "2. Bol vygenerovaný \"%s\".\n"
 
 #, python-format
 msgid ""
 "Try to open\n"
 " \"%s\"\n"
-" into your prefered web navigator ..."
+" into your preferred web navigator ..."
 msgstr ""
 "Skúste otvoriť \n"
 " \"%s\" \n"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,10 +12,72 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "TR-Title"
+msgstr "TR-Título"
+
+#, python-format
+msgid "Report on Notes Tagged '%s'"
+msgstr "Informe sobre Notas '%s' Etiquetadas"
+
+msgid "TR-Heading"
+msgstr "TR‐Encabezado"
+
+msgid "NoteTable"
+msgstr "NotaTabla"
+
+msgid "TR-Table"
+msgstr "TR-Table"
+
+msgid "TR-TableCell"
+msgstr "TR-TableCell"
+
+msgid "TR-Normal-Bold"
+msgstr "TR‐Normal‐Bold"
+
+msgid "TR-Normal"
+msgstr "TR‐Normal"
+
+msgid "TR-Note"
+msgstr "TR‐Note"
+
+msgid "TR-BorderCell"
+msgstr "TR‐BorderCell"
 
 msgid "date: "
 msgstr "fecha: "
 
 msgid "place: "
 msgstr "lugar: "
+
+msgid "Note Type"
+msgstr "Tipo de Nota"
+
+msgid "Group by reference type"
+msgstr "Grupo por tipo referencial"
+
+msgid "Group notes by Family, Person, Place, etc."
+msgstr "Notas de grupo por Familia, Persona, Lugar, etc."
+
+msgid "The style used for the title of the page."
+msgstr "El estilo utilizado para el título de la página."
+
+msgid "The basic style used for the table cell display."
+msgstr "El estilo básico utilizado para la pantalla de la celda de tabla."
+
+msgid "The basic style used for the table border cell display."
+msgstr "El estilo básico utilizado para la pantalla de la celda de la tabla."
+
+msgid "The basic style used for the table display."
+msgstr "El estilo básico utilizada para la exhibición de tabla."
+
+msgid "Todo Report"
+msgstr "Informe por hacer"
+
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"Produce un listado de todas las notas con una etiqueta determinada junto con "
+"los registros que hace referencia, la Persona, Familia, Evento, etc."

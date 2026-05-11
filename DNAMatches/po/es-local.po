@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-23 14:28+0000\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,10 +12,58 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "DNA Matches"
+msgstr "ADN Coincidente"
+
+msgid "Gramplet to display a list of DNA matches"
+msgstr "Gramplet para representar un listado de coincidencias de ADN"
+
+msgid "Pers."
+msgstr "Pers."
+
+msgid "Rel."
+msgstr "Rel."
+
+msgid "S. DNA"
+msgstr "ADN C."
+
+msgid "S. Seg."
+msgstr "Seg. C."
+
+msgid "L. Seg"
+msgstr "L. Seg"
+
+msgid "Src(s)"
+msgstr "Ori(s)"
+
+msgid "Shared DNA"
+msgstr "ADN Compartido"
+
+msgid "Shared Segments"
+msgstr "Segmentos Compartidos"
+
+msgid "Largest Segment"
+msgstr "Segmento más grande"
 
 msgid "Source(s)"
 msgstr "Fuente(s)"
 
+msgid "Double-click on a row to navigate to the matched person."
+msgstr "Pulsación doble en una fila para navegar a la persona coincidente."
+
+msgid "Right click to edit selected association."
+msgstr "Pulsación secundaria para editar asociación seleccionada."
+
 msgid "LEGEND"
 msgstr "LEYENDA"
+
+msgid "="
+msgstr "="
+
+msgid "Not specified"
+msgstr "No especificado"
+
+msgid "cM"
+msgstr "cM"

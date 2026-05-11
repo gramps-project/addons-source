@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-03-14 07:11+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,25 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
-
-msgid "Select Form"
-msgstr "Seleccionar formulário"
-
-msgid "Form Gramplet"
-msgstr "Gramplet Formulário"
-
-msgid "Gramplet interface for Forms"
-msgstr "Ambiente do Gramplet para formulários"
-
-msgid "Forms"
-msgstr "Formulários"
-
-msgid "Order"
-msgstr "Ordem"
-
-msgid "Form"
-msgstr "Formulário"
+"X-Generator: Weblate 2026.5-dev\n"
 
 #, python-format
 msgid "Form: %s"
@@ -47,6 +29,1732 @@ msgstr "Referência:"
 
 msgid "Headings"
 msgstr "Títulos"
+
+#, python-format
+msgid "Census Check for %s"
+msgstr "Verificar censos de %s"
+
+msgid "Form Gramplet"
+msgstr "Gramplet Formulário"
+
+msgid "Gramplet interface for Forms"
+msgstr "Ambiente do Gramplet para formulários"
+
+msgid "Forms"
+msgstr "Formulários"
+
+msgid "Order"
+msgstr "Ordem"
+
+msgid "Form"
+msgstr "Formulário"
+
+msgid "XML syntax error in Form definition file"
+msgstr "Erro de sintaxe XML no ficheiro de definição do formulário"
+
+msgid "Failed to read Form definition file"
+msgstr "Falha ao ler o ficheiro de definição do formulário"
+
+msgid "Invalid Form definition file"
+msgstr "Ficheiro de definição de formulário inválido"
+
+msgid "Select Form"
+msgstr "Seleccionar formulário"
+
+msgid "CensusCheck"
+msgstr "Verificar censos"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"descendents"
+msgstr ""
+"Verifica se faltam registos do censo relativos a um indivíduo e alguns dos "
+"seus descendentes"
+
+msgid "CensusCheckUp"
+msgstr "Verificar censos"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"ancestors"
+msgstr ""
+"Verifica se faltam eventos do censo relativos a um indivíduo e alguns dos "
+"seus descendentes"
+
+msgid "Schedule"
+msgstr "Horário"
+
+msgid "EnumDistrict"
+msgstr "EnumDistrict"
+
+msgid "Township"
+msgstr "Município"
+
+msgid "Comprising"
+msgstr "Compreendendo"
+
+msgid "OfTheSaid"
+msgstr "OfTheSaid"
+
+msgid "Enumerator"
+msgstr "Recenseador"
+
+msgid "1. Names of Inmates"
+msgstr "1. Nomes de prisioneiros"
+
+msgid "2. Profession, Trade or Occupation"
+msgstr "2. Profissão ou negócio"
+
+msgid "BirthPlace"
+msgstr "Local de nascimento"
+
+msgid "3. Place of Birth"
+msgstr "3. Local de nascimento"
+
+msgid "4. Religion"
+msgstr "4. Religião"
+
+msgid "5. Residence if Outside of Limits"
+msgstr "5. Residência, se fora dos limites"
+
+msgid "6. Age at Next Birthday"
+msgstr "6. Idade no próximo aniversário"
+
+msgid "SexMale"
+msgstr "SexoMasculino"
+
+msgid "7. Sex: Male"
+msgstr "7. Sexo: masculino"
+
+msgid "SexFemale"
+msgstr "SexoFeminino"
+
+msgid "8. Sex: Female"
+msgstr "8. Sexo: feminino"
+
+msgid "MaritalStatus"
+msgstr "SituaçãoConjugal"
+
+msgid "9. Married or Single"
+msgstr "Casado ou solteiro"
+
+msgid "Coloured"
+msgstr "Colorido"
+
+msgid "10. Coloured Persons - Negroes"
+msgstr "10. Indivíduos de cor - origem africana"
+
+msgid "Indians"
+msgstr "Indianos"
+
+msgid "11. Indians, if any"
+msgstr "11. Indianos, se existirem"
+
+msgid "ResidentsMale"
+msgstr "ResidentesHomens"
+
+msgid "12. Residents: Members, Male"
+msgstr "12. Residentes: membros, masculino"
+
+msgid "ResidentsFemale"
+msgstr "ResidentesMulheres"
+
+msgid "13. Residents: Members, Female"
+msgstr "13. Residentes: membros, feminino"
+
+msgid "NonMembersMale"
+msgstr "NãoMembrosMasculino"
+
+msgid "14. Residents: Not Members: Male"
+msgstr "14. Residentes: não membros, homem"
+
+msgid "NonMembersFemale"
+msgstr "NãoMembrosFeminino"
+
+msgid "15. Residents: Not Members: Female"
+msgstr "15. Residentes: não membros, mulher"
+
+msgid "AbsentMembersMale"
+msgstr "MembrosAusentesMasculino"
+
+msgid "16. Members Absent: Male"
+msgstr "16. Membros ausentes: masculino"
+
+msgid "AbsentMembersFemale"
+msgstr "MembrosAusentesFeminino"
+
+msgid "17. Members Absent: Female"
+msgstr "17. Membros ausentes, feminino"
+
+msgid "DeafDumbMale"
+msgstr "SurdoMudoMasculino"
+
+msgid "18. Deaf and Dumb: Male"
+msgstr "18. Surdos/mudos: masculino"
+
+msgid "DeafDumbFemale"
+msgstr "SurdoMudoFeminino"
+
+msgid "19. Deaf and Dumb: Female"
+msgstr "19. Surdos e mudos: feminino"
+
+msgid "BlindMale"
+msgstr "CegoMasculino"
+
+msgid "20. Blind: Male"
+msgstr "20. Cegos: masculino"
+
+msgid "BlindFemale"
+msgstr "CegoFeminino"
+
+msgid "21. Blind: Female"
+msgstr "21. Cegos: feminino"
+
+msgid "LunaticMale"
+msgstr "MalucoMasculino"
+
+msgid "22. Lunatics: Male"
+msgstr "22. Lunáticos: masculino"
+
+msgid "LunaticFemale"
+msgstr "MalucoFeminino"
+
+msgid "23. Lunatics: Female"
+msgstr "23. Lunáticos: feminino"
+
+msgid "ScholarMale"
+msgstr "EstudiosoMasculino"
+
+msgid "24. Attending School: Male"
+msgstr "24. A estudar: masculino"
+
+msgid "ScholarFemale"
+msgstr "EstudiosoFeminino"
+
+msgid "25. Attending School: Female"
+msgstr "25. A estudar: feminino"
+
+msgid "Birth1851Male"
+msgstr "Nascimento1851Masculino"
+
+msgid "26. Births During the Year 1851: Male"
+msgstr "26. Nascidos em 1851: masculino"
+
+msgid "Birth1851Female"
+msgstr "Nascimento1851Feminino"
+
+msgid "27. Births During the Year 1851: Female"
+msgstr "27. Nascidos em 1851: feminino"
+
+msgid "Death1851Male"
+msgstr "Óbito1851Masculino"
+
+msgid "28. Deaths During the Year 1851: Male"
+msgstr "28. Falecidos em 1851: masculino"
+
+msgid "Death1851Female"
+msgstr "Óbito1851Feminino"
+
+msgid "29. Deaths During the Year 1851: Female"
+msgstr "29. Falecidos em 1851: feminino"
+
+msgid "DeathAgeCause"
+msgstr "IdadeCausaÓbito"
+
+msgid "30. Age and Cause of Deaths"
+msgstr "30. Idade e causa de óbito"
+
+msgid "Houses"
+msgstr "Casas"
+
+msgid ""
+"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
+msgstr ""
+"31. Casas: tijolo, pedra, estrutura, madeira, lata ou outros tipos de "
+"residência"
+
+msgid "HousesStories"
+msgstr "HistóriasCasas"
+
+msgid "32. Houses: No. of Stories"
+msgstr "32. Casas: n.º de histórias"
+
+msgid "HousesFamilies"
+msgstr "CasasFamílias"
+
+msgid "33. No. of Families Occupying"
+msgstr "33. N.º de famílias ocupantes"
+
+msgid "HousesVacant"
+msgstr "CasasVazias"
+
+msgid "34. Houses: Vacant"
+msgstr "34. Casas: vazias"
+
+msgid "HousesBuilding"
+msgstr "CasasEdifício"
+
+msgid "35. Houses: Building"
+msgstr "35. Casas: edifício"
+
+msgid "Shops"
+msgstr "Lojas"
+
+msgid "36. Shops, Stores, Inns, Taverns etc."
+msgstr "36. Lojas, armazéns, pousadas, tabernas, etc."
+
+msgid "PublicBuildings"
+msgstr "EdifíciosPúblicos"
+
+msgid "37. Public Buildings"
+msgstr "37. Edifícios públicos"
+
+msgid "WorshipPlaces"
+msgstr "TemplosAdoração"
+
+msgid "38. Places of Worship"
+msgstr "38. Locais de culto"
+
+msgid "BuisnessInfo"
+msgstr "InformaçãoNegócio"
+
+msgid ""
+"39. Information on Mills, Factories etc., their cost, power, produce, etc."
+msgstr ""
+"39. Informação sobre moagens, fábricas, etc., seus custos, energia, "
+"produtos, etc."
+
+msgid "NumEmployees"
+msgstr "NúmEmpregados"
+
+msgid "40. Number of Persons Usually Employed Therein"
+msgstr "40. Número de empregados habituais"
+
+msgid "41. General Remarks of the Enumerator"
+msgstr "41. Observações gerais do recenseador"
+
+msgid "1. Name of Occupier"
+msgstr "1. Nome do ocupante"
+
+msgid "Concession"
+msgstr "Concessão"
+
+msgid "2. Concession or Range"
+msgstr "2. Concessão ou sector"
+
+msgid "Lot"
+msgstr "Lote"
+
+msgid "3. Lot or part of Lot"
+msgstr "3. Lote ou parte do lote"
+
+msgid "AcresHeld"
+msgstr "HectaresMetros2"
+
+msgid "4. Number of Acres of Land: Held by each person or family"
+msgstr "4. N.º de hectares de terra: detidos por cada membro da família"
+
+msgid "AcresCultivation"
+msgstr "HectaresCultivo"
+
+msgid "5. Number of Acres of Land: Under Cultivation"
+msgstr "5. N.º de hectares de terra: cultivados"
+
+msgid "AcresCrops"
+msgstr "HectaresCulturas"
+
+msgid "6. Number of Acres of Land: Under Crops in 1851"
+msgstr "6. N.º de hectares de terra: sob cultivo em 1851"
+
+msgid "AcresPasture"
+msgstr "HectaresPastagem"
+
+msgid "7. Number of Acres of Land: Under Pasture in 1851"
+msgstr "7. N.º de hectares de terra: pastagens em 1851"
+
+msgid "AcresGardens"
+msgstr "HectaresJardins"
+
+msgid "8. Number of Acres of Land: Gardens or Orchards"
+msgstr "8. N.º de hectares de terra: jardins e pomares"
+
+msgid "AcresWood"
+msgstr "HectaresMadeira"
+
+msgid "9. Number of Acres of Land: Under Wood or Wild"
+msgstr "9. N.º de hectares de terra: para madeira ou bravios"
+
+msgid "WheatAcres"
+msgstr "HectaresTrigo"
+
+msgid "10. Wheat: Acres"
+msgstr "10. N.º de hectares de terra: trigo"
+
+msgid "WheatBsh"
+msgstr "TrigoAlq"
+
+msgid "11. Wheat: Produce Bsh."
+msgstr "11. Trigo: produção"
+
+msgid "BarleyAcres"
+msgstr "HectaresCevada"
+
+msgid "12. Barley: Acres"
+msgstr "12. N.º de hectares de terra: cevada"
+
+msgid "BarleyBsh"
+msgstr "CevadaAlq"
+
+msgid "13. Barley: Produce Bsh."
+msgstr "13. Cevada: produção"
+
+msgid "RyeAcres"
+msgstr "HectaresCenteio"
+
+msgid "14. Rye: Acres"
+msgstr "14. N.º de hectares de terra: centeio"
+
+msgid "RyeBsh"
+msgstr "Centeio"
+
+msgid "15. Rye: Produce Bsh."
+msgstr "15. Centeio: produção"
+
+msgid "PeasAcres"
+msgstr "HectaresErvilha"
+
+msgid "16. Peas: Acres"
+msgstr "16. N.º de hectares de terra: ervilha"
+
+msgid "PeasBush"
+msgstr "Ervilha"
+
+msgid "17. Peas: Produce Bsh."
+msgstr "17. Ervilha: produção"
+
+msgid "OatsAcres"
+msgstr "HectaresAveia"
+
+msgid "18. Oats: Acres"
+msgstr "18. N.º de hectares de terra: aveia"
+
+msgid "OatsBush"
+msgstr "AveiaAlq"
+
+msgid "19. Oats: Produce Bsh."
+msgstr "19. Aveia: produção"
+
+msgid "BWheatAcres"
+msgstr "HectaresTrigoMourisco"
+
+msgid "20. B.Wheat: Acres"
+msgstr "20. N.º de hectares de terra: trigo mourisco"
+
+msgid "BWheatBush"
+msgstr "Trigo Mourisco"
+
+msgid "21. B.Wheat: Produce Bsh."
+msgstr "21. Trigo mourisco: produção"
+
+msgid "CornAcres"
+msgstr "HectaresMilho"
+
+msgid "22. Corn: Acres"
+msgstr "22. N.º de hectares de terra: milho"
+
+msgid "CornBush"
+msgstr "Milho"
+
+msgid "23. Corn: Produce Bsh."
+msgstr "23. Milho: produção"
+
+msgid "PotatoesAcres"
+msgstr "HectaresBatata"
+
+msgid "24. Potatoes: Acres"
+msgstr "24. N.º de hectares de terra: batata"
+
+msgid "PotatoesBush"
+msgstr "Batata"
+
+msgid "25. Potatoes: Produce Bsh."
+msgstr "25. Batata: produção"
+
+msgid "TurnipsAcres"
+msgstr "HectaresNabo"
+
+msgid "26. Turnips: Acres"
+msgstr "26. N.º de hectares de terra: nabo"
+
+msgid "TurnipsBush"
+msgstr "Nabo"
+
+msgid "27. Turnips: Produce Bsh."
+msgstr "27. Nabo: produção"
+
+msgid "CloverBush"
+msgstr "Trevo"
+
+msgid "28. Clover, Timothy or other grass seed - Bsh."
+msgstr "28. Trevo, timóteo ou outra semente de ervas"
+
+msgid "CarrotsBush"
+msgstr "Cenoura"
+
+msgid "29. Carrots - Bsh."
+msgstr "29. Cenoura: produção"
+
+msgid "MangleWurtzel"
+msgstr "Beterraba"
+
+msgid "30. Mangle Wurtzel"
+msgstr "30. Beterraba"
+
+msgid "BeansBush"
+msgstr "Feijão"
+
+msgid "31. Beans Bush"
+msgstr "31. Feijão: produção"
+
+msgid "HopsLbs"
+msgstr "LúpuloLbs"
+
+msgid "32. Hops Lbs."
+msgstr "32. Lúpulo: produção"
+
+msgid "HayQty"
+msgstr "FenoQuantidade"
+
+msgid "33. Hay, Bundles or Tons"
+msgstr "33. Feno: fardos, ou toneladas"
+
+msgid "FlaxLbs"
+msgstr "LinhoLbs"
+
+msgid "34. Flax or Hemp, Lbs."
+msgstr "34. Linho ou cânhamo: produção"
+
+msgid "TobaccoLbs"
+msgstr "TabacoLbs"
+
+msgid "35. Tobacco Lbs."
+msgstr "35. Tabaco: produção"
+
+msgid "WoolLbs."
+msgstr "LãLbs"
+
+msgid "36. Wool Lbs."
+msgstr "36. Lã: produção"
+
+msgid "Column37"
+msgstr "Coluna37"
+
+msgid "37."
+msgstr "37."
+
+msgid "Column38"
+msgstr "Coluna38"
+
+msgid "38."
+msgstr "38."
+
+msgid "Column39"
+msgstr "Coluna39"
+
+msgid "39."
+msgstr "39."
+
+msgid "MapleSugarLbs"
+msgstr "AçucarÁcer"
+
+msgid "40. Maple Sugar Lbs."
+msgstr "40. Açucar de ácer: produção"
+
+msgid "CiderGalls"
+msgstr "Cidra"
+
+msgid "41. Cider Galls."
+msgstr "41. Cidra: produção"
+
+msgid "ClothYards"
+msgstr "Tecido"
+
+msgid "42. Fulled Cloth Yards"
+msgstr "42. Tecido integral: produção"
+
+msgid "LinnenYards"
+msgstr "Linho (tecido)"
+
+msgid "43. Linnen - Yds."
+msgstr "43. Linho (tecido): produção"
+
+msgid "FlannelYds"
+msgstr "Flanela"
+
+msgid "44. Flannel - Yds."
+msgstr "44. Flanela: produção"
+
+msgid "Bulls"
+msgstr "Touros"
+
+msgid "45. Bulls, Oxen or Steers"
+msgstr "45. Touros, bois ou novilhos"
+
+msgid "Milch Cows"
+msgstr "Vacas leiteiras"
+
+msgid "46. Milch Cows"
+msgstr "46. Vacas leiteiras"
+
+msgid "Calves"
+msgstr "Vitelos"
+
+msgid "47. Calves or Heifers"
+msgstr "47. Vitelos ou novilhas"
+
+msgid "Horses"
+msgstr "Cavalos"
+
+msgid "48. Horses of all ages"
+msgstr "48. Cavalos de qualquer idade"
+
+msgid "Sheep"
+msgstr "Ovelhas"
+
+msgid "49. Sheep"
+msgstr "49. Ovelhas"
+
+msgid "Pigs"
+msgstr "Porcos"
+
+msgid "50. Pigs"
+msgstr "50. Porcos"
+
+msgid "ButterLbs"
+msgstr "ManteigaLbs"
+
+msgid "51. Butter - Lbs."
+msgstr "51. Manteiga: produção"
+
+msgid "CheeseLbs"
+msgstr "QueijoLbs"
+
+msgid "52. Cheese - Lbs."
+msgstr "52. Queijo: produção"
+
+msgid "Beef"
+msgstr "Carne de vaca"
+
+msgid "53. Beef - Barrels or Cwts."
+msgstr "53. Carne de vaca: produção"
+
+msgid "Pork"
+msgstr "Carne de porco"
+
+msgid "54. Pork - Barrels or Cwts."
+msgstr "54. Carne de porco: produção"
+
+msgid "Fish"
+msgstr "Peixe"
+
+msgid "55. Quantity of Fish Cured"
+msgstr "55. Peixe curado: produção"
+
+msgid "56. Remarks"
+msgstr "56. Comentários"
+
+msgid "2. Profession, trade or occupation"
+msgstr "2. Profissão ou negócio"
+
+msgid "Married1851"
+msgstr "Casados1851"
+
+msgid "4. Married during the year"
+msgstr "4. Casados em 1851"
+
+msgid "5. Religion"
+msgstr "5. Religião"
+
+msgid "6. Residence, if out of limits"
+msgstr "6. Residência, se fora dos limites"
+
+msgid "7. Age next Birthday"
+msgstr "7. Idade no próximo aniversário"
+
+msgid "8. Sex: Male"
+msgstr "8. Sexo: masculino"
+
+msgid "SexFemail"
+msgstr "SexoFeminino"
+
+msgid "9. Sex:Female"
+msgstr "9. Sexo: feminino"
+
+msgid "10. Married or Single"
+msgstr "10. Casado ou solteiro"
+
+msgid "Widowers"
+msgstr "Viúvos"
+
+msgid "11. Widowers"
+msgstr "11. Viúvos"
+
+msgid "Widows"
+msgstr "Viúvas"
+
+msgid "12. Widows"
+msgstr "12. Viúvas"
+
+msgid "13. Coloured Persons, Mulato or Indians"
+msgstr "13. Indivíduos de cor: mulatos ou indianos"
+
+msgid "MemberMale"
+msgstr "MembroMasculino"
+
+msgid "14. Members: Male"
+msgstr "14. Membros: masculino"
+
+msgid "MemberFemale"
+msgstr "MembroFeminino"
+
+msgid "15. Members: Female"
+msgstr "15. Membros:feminino"
+
+msgid "NotMemberMale"
+msgstr "NãoMembroMasculino"
+
+msgid "16. Not Members: Male"
+msgstr "16. Não membros: masculino"
+
+msgid "NotMemberFemale"
+msgstr "NãoMembroFeminino"
+
+msgid "17. Not Members: Female"
+msgstr "17. Não membro: feminino"
+
+msgid "MemberAbsentMale"
+msgstr "MembroAusenteMasculino"
+
+msgid "18. Members Absent: Male"
+msgstr "18. Membros ausentes: masculino"
+
+msgid "MemberAbsentFemale"
+msgstr "MembroAusenteFeminino"
+
+msgid "19. Members Absent: Female"
+msgstr "19. Membros ausentes: feminino"
+
+msgid "DeafDumb"
+msgstr "SurdoMudo"
+
+msgid "20. Deaf and Dumb"
+msgstr "20. Surdos e mudos"
+
+msgid "Blind"
+msgstr "Cego"
+
+msgid "21. Blind"
+msgstr "21. Cegos"
+
+msgid "Lunatic"
+msgstr "Lunáticos"
+
+msgid "22. Lunatics or Idiots"
+msgstr "22. Lunáticos"
+
+msgid "23. Attending School within the year: Male"
+msgstr "23. A estudar no ano: masculino"
+
+msgid "24. Attending School within the year: Female"
+msgstr "24. A estudar no ano: feminino"
+
+msgid "CantReadMale"
+msgstr "AnalfabetoMasculino"
+
+msgid "25. Persons over 20, who cannot read or write: Male"
+msgstr "25. Mais de 20 anos, analfabetos: masculino"
+
+msgid "CantReadFemale"
+msgstr "AnalfabetoFeminino"
+
+msgid "26. Persons over 20, who cannot read or write: Female"
+msgstr "26. Mais de 20 anos, analfabetos: feminino"
+
+msgid "Birth1860Male"
+msgstr "Nascidos1860Masculino"
+
+msgid "27. Births in 1860: Male"
+msgstr "27. Nascidos em 1860: masculino"
+
+msgid "Birth1860Female"
+msgstr "Nascidos 1860Feminino"
+
+msgid "28. Births in 1860: Female"
+msgstr "28. Nascidos em 1860: feminino"
+
+msgid "Death1860Male"
+msgstr "Falecidos1860Masculino"
+
+msgid "29. Deaths in 1860: Male"
+msgstr "29. Falecidos em 1860: masculino"
+
+msgid "Death1860Female"
+msgstr "Falecidos1860Feminino"
+
+msgid "30. Deaths in 1860: Female"
+msgstr "30. Falecidos em 1860: feminino"
+
+msgid "31. Age and cause of death"
+msgstr "31. Idade e causa de óbito"
+
+msgid "32. Houses: Brick, Stone, Frame, Log, etc."
+msgstr "32. Casas: tijolo, pedra, estrutura, madeira, etc."
+
+msgid "33. Houses: No. of Stories"
+msgstr "33. Casas: n.º de histórias"
+
+msgid "34. Houses: No. of families living in the house"
+msgstr "34. Casas: n.º de famílias ocupantes"
+
+msgid "35. Houses: Vacant"
+msgstr "35. Casas: vazias"
+
+msgid "HouseBeingBuilt"
+msgstr "CasaEmConstrução"
+
+msgid "36. Houses: Being built"
+msgstr "36. Casas: em construção"
+
+msgid "SubDistrict"
+msgstr "SubDistrito"
+
+msgid "Vessels"
+msgstr "Vasos"
+
+msgid "1. Vessels"
+msgstr "1. Vasos"
+
+msgid "Shanties"
+msgstr "Choupanas"
+
+msgid "2. Shanties"
+msgstr "2. Choupanas"
+
+msgid "HousesBeingBuilt"
+msgstr "CasasEmConstrução"
+
+msgid "3. Dwelling houses in construction"
+msgstr "3. Casas de habitação em construção"
+
+msgid "4. Dwelling houses unoccupied"
+msgstr "4. Casas de habitação vazias"
+
+msgid "HousesInhabited"
+msgstr "CasasVazias"
+
+msgid "5. Dwelling houses inhabited"
+msgstr "5. Casas de habitação desabitadas"
+
+msgid "6.Families"
+msgstr "6. Famílias"
+
+msgid "7. Names"
+msgstr "7. Nomes"
+
+msgid "Sex"
+msgstr "Sexo"
+
+msgid "8. Sex"
+msgstr "8. Sexo"
+
+msgid "9. Age"
+msgstr "9. Idade"
+
+msgid "Birth1871"
+msgstr "Nascidos1871"
+
+msgid "10. Born within last twelve months"
+msgstr "10. Nascidos nos últimos 12 meses"
+
+msgid "11. Country or Province of Birth"
+msgstr "11. País ou província de nascimento"
+
+msgid "12. Religion"
+msgstr "12. Religião"
+
+msgid "13. Origin"
+msgstr "13. Origem"
+
+msgid "14. Profession, Occupation or Trade"
+msgstr "143. Profissão ou negócio"
+
+msgid "15. Married or Widowed"
+msgstr "15. Casados ou viǘvos"
+
+msgid "Maried1871"
+msgstr "Casados1871"
+
+msgid "16. Married within last twelve months"
+msgstr "16. Casados nos últimos 12 meses"
+
+msgid "Scholar"
+msgstr "Estudioso"
+
+msgid "17. Going to school"
+msgstr "17. Na escola"
+
+msgid "CantRead"
+msgstr "SemLer"
+
+msgid "18. Over 20 unable to read"
+msgstr "18. Mais de 20 anos e sem saber ler"
+
+msgid "CantWrite"
+msgstr "NãoEscreve"
+
+msgid "19. Over 20 unable to write"
+msgstr "19. Mais de 20 anos sem saber escrever"
+
+msgid "22. Unsound mind"
+msgstr "22. Mente perturbada"
+
+msgid "23. Date of Operations and Remarks"
+msgstr "23. Data das operações e observações"
+
+msgid "3. Houses in construction"
+msgstr "3. Casas em construção"
+
+msgid "4. Houses unoccupied"
+msgstr "4. Casas desocupadas"
+
+msgid "5. Houses inhabited"
+msgstr "5. Casas desabitadas"
+
+msgid "6. Families"
+msgstr "6. Famílias"
+
+msgid "Birth1881"
+msgstr "Nascidos1881"
+
+msgid "16. Going to school"
+msgstr "16. Na escola"
+
+msgid "17. Deaf and Dumb"
+msgstr "17. Surdos e mudos"
+
+msgid "18. Blind"
+msgstr "18. Cegos"
+
+msgid "19. Unsound mind"
+msgstr "19. Mentes perturbadas"
+
+msgid "20. Date of Operations and Remarks"
+msgstr "20. Datas de operações e observações"
+
+msgid "1. Vessels and Shanties"
+msgstr "1. Vasos e choupanas"
+
+msgid "2. Houses in construction"
+msgstr "2. Casas em construção"
+
+msgid "3. Houses unoccupied"
+msgstr "3. Casas desocupadas"
+
+msgid "4. Houses inhabited"
+msgstr "4. Casas desabitadas"
+
+msgid "5. Families"
+msgstr "5. Famílias"
+
+msgid "6. Names"
+msgstr "6. Nomes"
+
+msgid "7. Sex"
+msgstr "7. Sexo"
+
+msgid "8. Age"
+msgstr "8. Idade"
+
+msgid "9. Married or Widowed"
+msgstr "9. Casados ou viúvos"
+
+msgid "Relation"
+msgstr "Relação"
+
+msgid "10. Relationship to Head of Family"
+msgstr "10. Parentesco com o chefe de família"
+
+msgid "12. FrenchCanadian"
+msgstr "12. Canadiano-francês"
+
+msgid "BirthPlaceFather"
+msgstr "LocalNascimentoPai"
+
+msgid "13. Birth Place of Father"
+msgstr "13. Local de nascimento do pai"
+
+msgid "BirthPlaceMother"
+msgstr "LocalNascimentoMãe"
+
+msgid "14. Birth Place of Mother"
+msgstr "14. Local de nascimento da mãe"
+
+msgid "15. Religion"
+msgstr "15. Religião"
+
+msgid "16. Profession, Occupation or Trade"
+msgstr "16. Profissão ou negócio"
+
+msgid "Employer"
+msgstr "Empregador"
+
+msgid "17. Employers"
+msgstr "17. Empregadores"
+
+msgid "Employee"
+msgstr "Empregado"
+
+msgid "18. Wage Earner"
+msgstr "18. Empregado"
+
+msgid "Unemployed"
+msgstr "Desempregado"
+
+msgid "19. Unemployed during week preceding Census"
+msgstr "19. Desempregados na semana anterior ao censo"
+
+msgid "Employees"
+msgstr "Empregados"
+
+msgid "20. Employer to state average number of hands employed during year"
+msgstr ""
+"20. Empregador para declarar o número médio de trabalhadores empregados "
+"durante o ano"
+
+msgid "CanRead"
+msgstr "SabeLer"
+
+msgid "21. Instruction: Read"
+msgstr "21. Instrução: lê"
+
+msgid "CanWrite"
+msgstr "SabeEscrever"
+
+msgid "22. Instruction: Write"
+msgstr "22. Instrução: escreve"
+
+msgid "23. Deaf and Dumb"
+msgstr "23. Surdos e mudos"
+
+msgid "24. Blind"
+msgstr "24. Cegos"
+
+msgid "25. Unsound mind"
+msgstr "25. Mentes perturbadas"
+
+msgid "SubTitle"
+msgstr "Subtítulo"
+
+msgid "PollSub"
+msgstr "SubSond"
+
+msgid "House"
+msgstr "Casa"
+
+msgid "1. Dwelling house"
+msgstr "1. Casa de habitação"
+
+msgid "2. Family or household"
+msgstr "2. Família ou agregado"
+
+msgid "3. Name of each person in family"
+msgstr "3. Nome de cada indivíduo na família"
+
+msgid "4. Sex"
+msgstr "4. Sexo"
+
+msgid "Colour"
+msgstr "Cor"
+
+msgid "5. Colour"
+msgstr "5. Cor"
+
+msgid "6. Relation to head of family"
+msgstr "6. Parentesco com o chefe de família"
+
+msgid "7. Single, married, widowed, divorced or legally separated"
+msgstr "7. Solteiros, casados, viúvos, divorciados ou separados judicialmente"
+
+msgid "BirthMonth"
+msgstr "MêsNascimento"
+
+msgid "8. Month and Date of Birth"
+msgstr "8. Mês e data de nascimento"
+
+msgid "BirthYear"
+msgstr "AnoNascimento"
+
+msgid "9. Year of birth"
+msgstr "9. Ano de nascimento"
+
+msgid "10. Age at last birthday"
+msgstr "10. Idade ao último aniversário"
+
+msgid "11. Country or place of birth"
+msgstr "11. País ou local de nascimento"
+
+msgid "12. Year of immigration to Canada, if an immigrant"
+msgstr "12. Ano de imigração para o Canadá, se imigrou"
+
+msgid "13. Year of naturalization, if formerly an alien"
+msgstr "13. Ano de naturalização, se era estrangeiro"
+
+msgid "Race"
+msgstr "Raça"
+
+msgid "14. Racial or tribal origin"
+msgstr "14. Origem racial ou tribal"
+
+msgid "Nationality"
+msgstr "Nacionalidade"
+
+msgid "15. Nationality"
+msgstr "15. Nacionalidade"
+
+msgid "16. Religion"
+msgstr "16. Religião"
+
+msgid "17. Profession, occupation, trade or means of living of each person"
+msgstr "17. Profissão, negócio ou meios de subsistência"
+
+msgid "OwnMeans"
+msgstr "MeiosPróprios"
+
+msgid "18. Living on own means"
+msgstr "18. Vivem por conta própria"
+
+msgid "19. Employer"
+msgstr "19. Empregador"
+
+msgid "20. Employee"
+msgstr "20. Empregado"
+
+msgid "SelfEmployed"
+msgstr "Empresário"
+
+msgid "21. Working on own account"
+msgstr "21. Trabalha por conta pŕopria"
+
+msgid "WhereEmployed"
+msgstr "OndeTrabalha"
+
+msgid "22. Working at trade in factory or in home"
+msgstr "22. Trabalha na empresa, fábrica, ou em casa"
+
+msgid "MonthsFactory"
+msgstr "MesesFábrica"
+
+msgid "23. Months employed at trade in factory"
+msgstr "23. Meses de trabalho na empresa ou fábrica"
+
+msgid "MonthsHome"
+msgstr "Meses casa"
+
+msgid "24. Months employed at trade in home"
+msgstr "24. Meses de trabalho em casa"
+
+msgid "MonthsOther"
+msgstr "MesesOutros"
+
+msgid "25. Months employed in other occupation than trace in factory or home"
+msgstr "25. Meses de trabalho noutra profissão"
+
+msgid "EarningsOccupation"
+msgstr "GanhosProfissionais"
+
+msgid "26. Earnings from occupation or trade"
+msgstr "26. Ganhos profissionais ou empresariais"
+
+msgid "EarningsOther"
+msgstr "GanhosOutros"
+
+msgid "27. Extra earning (From other than chief occupation or trade)"
+msgstr "27. Ganhos extra (outras fontes de rendimento)"
+
+msgid "SchoolMonths"
+msgstr "MesesEscola"
+
+msgid "28. Months at school in 1910"
+msgstr "28. Meses na escola em 1910"
+
+msgid "Read"
+msgstr "Ler"
+
+msgid "29. Can read"
+msgstr "29. Sabe ler"
+
+msgid "Write"
+msgstr "Escrever"
+
+msgid "30. Can write"
+msgstr "30. Sabe escrever"
+
+msgid "SpeakEnglish"
+msgstr "FalaInglês"
+
+msgid "31. Can speak English"
+msgstr "31. Sabe falar inglês"
+
+msgid "SpeakFrench"
+msgstr "FalaFrancês"
+
+msgid "32. Can speak French"
+msgstr "32. Sabe falar francês"
+
+msgid "33. Mother tongue (If spoken)"
+msgstr "33. Língua-mãe (se falada)"
+
+msgid "Infirmities"
+msgstr "Doenças"
+
+msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
+msgstr "34. Doenças: a. surdo e mudo; b. cego; c. mente perturbada"
+
+msgid "Name from Schedule 1"
+msgstr "Nome da agenda 1"
+
+msgid "Line on Schedule 2"
+msgstr "Linha na agenda 2"
+
+msgid "PageRef"
+msgstr "RefPágina"
+
+msgid "2. Page from Schedule 1"
+msgstr "2. Página da agenda 1"
+
+msgid "LineRef"
+msgstr "RefLinha"
+
+msgid "3. Line from Schedule 1"
+msgstr "3. Linha da agenda 1"
+
+msgid "3. Place of Habitation"
+msgstr "3. Local de habitação"
+
+msgid "HousesConst"
+msgstr "CasasEmConstrução"
+
+msgid "4. Houses: In construction"
+msgstr "4. Casas: em construção"
+
+msgid "5. Houses: Vacant"
+msgstr "5. Casas: vazias"
+
+msgid "6. Houses: Inhabited"
+msgstr "6. Casas: desabitadas"
+
+msgid "Institution"
+msgstr "Instituição"
+
+msgid "7. Institution: Special or legal name"
+msgstr "7. Instituição: nome especial ou legal"
+
+msgid "Buildings"
+msgstr "Imóveis"
+
+msgid "8. Institution: Number of buildings"
+msgstr "8. Instituição: número de imóveis"
+
+msgid "9. Number of families in house or institution"
+msgstr "9. N.º de famílias na casa ou instituição"
+
+msgid "Rooms"
+msgstr "Divisões"
+
+msgid "10. Number of rooms in house or institution for each famiy"
+msgstr "10. N.º de divisões para cada família na casa ou instituição"
+
+msgid "Inmates"
+msgstr "Prisioneiros"
+
+msgid "11. Number of inmates in institution"
+msgstr "11. N.º de prisioneiros na instituição"
+
+msgid "OwnedAcres"
+msgstr "HectaresPossuídos"
+
+msgid "12. Real Estate Owned: Grand total of acres"
+msgstr "12. Imobiliário próprio: total de hectares"
+
+msgid "OwnedLots"
+msgstr "LotesPróprios"
+
+msgid "13. Real Estate Owned: Number of town or village lots"
+msgstr "13. Imobiliário próprio: n.º de lotes na localidade"
+
+msgid "OwnedHouses"
+msgstr "CasasPróprias"
+
+msgid "14. Real Estate Owned: Number of dwelling houses"
+msgstr "14. Imobiliário próprio: n.º de casas de habitação"
+
+msgid "OwnedStores"
+msgstr "LojasPróprias"
+
+msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
+msgstr "15. Imobiliário próprio: n.º de lojas, armazéns, etc."
+
+msgid "OwnedBars"
+msgstr "CeleirosPróprios"
+
+msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
+msgstr "16. Imobiliário próprio: n.º de celeiros, estábulos, etc."
+
+msgid "OwnedSilos"
+msgstr "SilosPróprios"
+
+msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
+msgstr "17. Imobiliário próprio: n.º de silos e capacidade em pés cúbicos"
+
+msgid "OwnedFactories"
+msgstr "FábricasPróprias"
+
+msgid "18. Real Estate Owned: Number of manufacturing establishments"
+msgstr "18. Imobiliário próprio: n.º de fábricas"
+
+msgid "LeasedAcres"
+msgstr "HectaresArrendados"
+
+msgid "19. Real Estate Leased: Grand total of acres"
+msgstr "19. Imobiliário próprio: total de hectares"
+
+msgid "LeasedLots"
+msgstr "LotesArrendados"
+
+msgid "20. Real Estate Leased: Number of town or village lots"
+msgstr "20. Imobiliário arrendado: n.º de lotes na localidade"
+
+msgid "LeasedHouses"
+msgstr "CasasArrendadas"
+
+msgid "21. Real Estate Leased: Number of dwelling houses"
+msgstr "21. Imobiliário arrendado: n.º de casas de habitação"
+
+msgid "LeasedStores"
+msgstr "LojasArrendadas"
+
+msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
+msgstr "22. Imobiliário arrendado: n.º de lojas, armazéns, etc."
+
+msgid "LeasedBarns"
+msgstr "CeleirosArrendados"
+
+msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
+msgstr "23. Imobiliário arrendado: n.º de celeiros, estábulos, e outros anexos"
+
+msgid "LeasedSilos"
+msgstr "SilosArrendados"
+
+msgid "24. Real Estate Leased: Number of silos and capacity in cubic feet"
+msgstr "24. Imobiliário arrencado: n.º de silos e capacidade em pés cúbicos"
+
+msgid "LeasedFactories"
+msgstr "Fábricas arrendadas"
+
+msgid "25. Real Estate Leased: Number of manufacturing establishments"
+msgstr "25.Imobiliário arrendado: n.º de fábricas"
+
+msgid "Denomination"
+msgstr "Denominação"
+
+msgid "26. Church or place of worship: Religious denomination"
+msgstr "26. Igreja ou local de culto: denominação religiosa"
+
+msgid "Communicants"
+msgstr "Comunicantes"
+
+msgid "27. Church or place of worship: Number of communicants"
+msgstr "27. Igreja ou local de culto: n.º de comunicantes"
+
+msgid "Seating"
+msgstr "Sentados"
+
+msgid "28. Church or place of worship: Seating capacity"
+msgstr "28. Igreja ou local de culto: lugares sentados"
+
+msgid "SSDenomination"
+msgstr "DenominaçãoCatequese"
+
+msgid "29. Sunday School: Religious Denomination"
+msgstr "29. Catequese: denominação religiosa"
+
+msgid "SSTeachers"
+msgstr "CatequeseProfessores"
+
+msgid "30. Sunday School: Number of officers and teachers"
+msgstr "30. Catequese: n.º de oficiantes e professores"
+
+msgid "SSScholars"
+msgstr "CatequeseEstudiosos"
+
+msgid "31. Sunday School: Number of Scholars"
+msgstr "31. Catequese: n.º de estudiosos"
+
+msgid "SchoolRooms"
+msgstr "SalasAula"
+
+msgid "32. School: Number of rooms"
+msgstr "32. Escola: n.º de salas"
+
+msgid "SchoolTeachers"
+msgstr "Professores"
+
+msgid "33. School: Number of teachers"
+msgstr "33. Escola: n.º de professores"
+
+msgid "SchoolStudents"
+msgstr "Alunos"
+
+msgid "34. School: Number of Scholars"
+msgstr "34. Escola: n.º de alunos"
+
+msgid "DateVisit"
+msgstr "DataVisita"
+
+msgid "35. Date of visit"
+msgstr "35. Data da visita"
+
+msgid "Reason"
+msgstr "Motivo"
+
+msgid "36. The reason, if not enumerated on first visit"
+msgstr "36. O motivo, se não descrito na 1ª visita"
+
+msgid "DateEnum"
+msgstr "DataDesc"
+
+msgid "37. Date when enumerated"
+msgstr "37. Data de descrição"
+
+msgid "1. No. of family in order of visitation"
+msgstr "1. N.º da família por ordem de visita"
+
+msgid "2. Name of each person in the family"
+msgstr "2. Nome de cada indivíduo na família"
+
+msgid "3.Relation to head of family"
+msgstr "3. Parentesco com o chefe de família"
+
+msgid "5. Married, single, widowed or divorced"
+msgstr "5. Casado, solteiro, viúvo, ou divorciado"
+
+msgid "6. Age"
+msgstr "6. Idade"
+
+msgid "7. Country or place of birth"
+msgstr "7. País ou local de nascimento"
+
+msgid "8. Year of immigration to Canada"
+msgstr "8. Ano de imigração para o Canadá"
+
+msgid "PostOffice"
+msgstr "PostoCorreios"
+
+msgid "9. Post office address"
+msgstr "9. Endereço do posto de correios"
+
+msgid "Section"
+msgstr "Secção"
+
+msgid "10. Location: Section"
+msgstr "10. Local: secção"
+
+msgid "11. Location: Township"
+msgstr "11. Local: localidade"
+
+msgid "12. Location: Range"
+msgstr "12. Local: sector"
+
+msgid "Meridian"
+msgstr "Meridiano"
+
+msgid "13. Location: Meridian"
+msgstr "13. Local: meridiano"
+
+msgid "14. Livestock: Horses, all ages"
+msgstr "14. Gado: cavalos, todas as idades"
+
+msgid "Cows"
+msgstr "Vacas"
+
+msgid "15. Livestock: Milch cows"
+msgstr "15. Gado: vacas leiteiras"
+
+msgid "16. Other horned or meat cattle, all ages"
+msgstr "16. Outro gado bovino, todas as idades"
+
+msgid "17. Sheep and lambs, all ages"
+msgstr "17. Ovelhas e borregos, todas as idades"
+
+msgid "18. Hogs and pigs, all ages"
+msgstr "18. Porcos, todas as idades"
+
+msgid "4. Place of habitation"
+msgstr "4. Local de habitação"
+
+msgid "5. Sex"
+msgstr "5. Sexo"
+
+msgid "8. Month of birth"
+msgstr "8. Mês de nascimento"
+
+msgid "16. Chief occupation or trade"
+msgstr "16. Profissão ou negócio principais"
+
+msgid "OtherEmployment"
+msgstr "OutroEmprego"
+
+msgid "18. Employment other than at chief trade or occupation, if any"
+msgstr "18. Outro emprego além do principal, se existir"
+
+msgid "22. State where person employed"
+msgstr "22. estado onde está empregado"
+
+msgid "WeeksOccupation"
+msgstr "SemanasProfissão"
+
+msgid "23. Weeks employed in 1910 at chief occupation or trade"
+msgstr "23. Semanas no emprego principal em 1910"
+
+msgid "WeeksOther"
+msgstr "SemanasOutro"
+
+msgid "24. Weeks employed in 1910 at other than chief occupation or trade"
+msgstr "24. Semanas noutro emprego em 1910"
+
+msgid "HoursOccupation"
+msgstr "HorasProfissão"
+
+msgid "25. Hours of working time per week at chief occupation"
+msgstr "25. Horas semanais de trabalho no emprego principal"
+
+msgid "HoursOther"
+msgstr "HorasOutro"
+
+msgid "26. Hours of working time per week at other occupation, if any"
+msgstr "26. Horas semanais de trabalho noutro emprego, se existir"
+
+msgid "27. Total earnings in 1910 from chief occupation or trade"
+msgstr "27. Ganhos totais do emprego principal em 1910"
+
+msgid "28. Total earnings in 1910 from other than chief occupation or trade"
+msgstr "28. Ganhos totais com outros empregos em 1910"
+
+msgid "Wages"
+msgstr "Salários"
+
+msgid "29. Rate of earnings per hour when employed by the hour-Cents"
+msgstr "29. Taxa de ganhos por hora quando empregado por hour-Cents"
+
+msgid "InsuranceLife"
+msgstr "SeguroVida"
+
+msgid "30. Insurance: Upon life"
+msgstr "30. Seguro: vida"
+
+msgid "InsuranceAccident"
+msgstr "SeguroAcidente"
+
+msgid "31. Insurance: Against accident or illness"
+msgstr "31. Seguro: acidentes ou doença"
+
+msgid "InsuranceCost"
+msgstr "SeguroCusto"
+
+msgid "32. Insurance: Cost of insurance in census year"
+msgstr "32. Seguro: custo dos seguros no ano do censo"
+
+msgid "33. Months at school in 1910"
+msgstr "33. Meses na escola em 1910"
+
+msgid "34. Can Read"
+msgstr "34. Sabe ler"
+
+msgid "35. Can Write"
+msgstr "35. Sabe escrever"
+
+msgid "36. Language commonly spoken"
+msgstr "36. Linguagem falada habitual"
+
+msgid "SchoolCost"
+msgstr "CustoEscola"
+
+msgid ""
+"37. Cost of education in 1910 for persons over 16 years of age at College, "
+"Convent or University"
+msgstr ""
+"37. Custo da educação em 1910 para indivíduos acima de 16 anos em "
+"Faculdades, Conventos ou Universidades"
+
+msgid "38. Blind"
+msgstr "39. Cegos"
+
+msgid "39. Deaf and dumb"
+msgstr "39. Surdos e mudos"
+
+msgid "40. Crazy or lunatic"
+msgstr "40. Lunáticos"
+
+msgid "Idiotic"
+msgstr "Idiota"
+
+msgid "41. Idiotic or silly"
+msgstr "40. Idiotas ou patetas"
+
+msgid "1. House"
+msgstr "1. Casa"
+
+msgid "Dwelling house"
+msgstr "Casa de habitação"
+
+msgid "2. Family"
+msgstr "2. Família"
+
+msgid "Family or household"
+msgstr "Família ou agregado familiar"
+
+msgid "3. Name"
+msgstr "3. Nome"
+
+msgid "Name of each person in family"
+msgstr "Nome de cada indivíduo na família"
+
+msgid "5. Relation to head of family"
+msgstr "5. Parentesco com o chefe de família"
+
+msgid "6. Single, married, widowed, divorced or legally separated"
+msgstr "6. Solteiros, casados, viúvos, divorciados ou separados judicialmente"
+
+msgid "7. Month of birth"
+msgstr "7. Mês de nascimento"
+
+msgid "8. Age at last birthday"
+msgstr "8. Idade ao último aniversário"
+
+msgid "9. Country or place of birth"
+msgstr "9. País ou local de nascimento"
+
+msgid "10. Racial or tribal origin"
+msgstr "10. Origem racial ou tribal"
+
+msgid "11. Religion"
+msgstr "11. Religião"
+
+msgid "12. Months at school in 1910"
+msgstr "12. Meses na escola em 1910"
+
+msgid "13. Can Read"
+msgstr "13. Sabe ler"
+
+msgid "14. Can Write"
+msgstr "14. Sabe escrever"
+
+msgid "15. Language commonly spoken"
+msgstr "15. Linguagem falada habitual"
+
+msgid ""
+"16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or "
+"lunatic"
+msgstr ""
+"16. Enfermidades: a. cegos; b. surdos e mudos; c. idiotas ou patetas; d. "
+"lunáticos"
+
+msgid "1. Dwelling House"
+msgstr "1. Casa de habitação"
+
+msgid "2. Family, Household or Institution"
+msgstr "2. Família, agregado ou instituição"
+
+msgid "3. Name of each person in family, household or institution"
+msgstr "3. Nome de cada indivíduo na família, agregado ou instituição"
+
+msgid "MilitaryService"
+msgstr "ServiçoMilitar"
+
+msgid "4. Military Service"
+msgstr "4. Serviço militar"
+
+msgid "5. Place of Habitation: Township"
+msgstr "5. Local de habitação: localidade"
+
+msgid "6. Place of Habitation: Range"
+msgstr "6. Local de habitação: sector"
+
+msgid "7. Place of Habitation: Meridian"
+msgstr "7. Local de habitação: meridiano"
+
+msgid "8. Place of Habitation: Municipality"
+msgstr "8. Local de habitação: município"
+
+msgid "9. Relationship to head of family or household"
+msgstr "9. Parentesco com o chefe de família ou agregado"
+
+msgid "10. Sex"
+msgstr "10. Sexo"
+
+msgid "11. Single, married, widowed, divorced or legally separated"
+msgstr "11. Solteiros, casados, viúvos, divorciados ou separados judicialmente"
+
+msgid "12. Age at last birthday"
+msgstr "12. Idade ao último nascimento"
+
+msgid "13. Country or place of birth"
+msgstr "13. País ou local de nascimento"
+
+msgid "14. Religion"
+msgstr "14. Religião"
+
+msgid "15. Year of immigration to Canada"
+msgstr "15. Ano de imigração para o Canadá"
+
+msgid "16. Year of naturalization"
+msgstr "16. Ano de naturalização"
+
+msgid "17. Nationality"
+msgstr "17. Nacionalidade"
+
+msgid "18. Race or tribal origin"
+msgstr "18. Origem racial ou tribal"
+
+msgid "19. Can speak English"
+msgstr "19. Sabe falar inglês"
+
+msgid "20. Can speak French"
+msgstr "20. Sabe falar francês"
+
+msgid "OtherLanguage"
+msgstr "OutroIdioma"
+
+msgid "21. Other language spoken as mother tongue"
+msgstr "21. Outro idioma falado como língua-mãe"
+
+msgid "22. Can Read"
+msgstr "22. Sabe ler"
+
+msgid "23. Can Write"
+msgstr "23. Sabe escrever"
+
+msgid "24. Chief occupation or trade"
+msgstr "24. Emprego ou negócio principal"
+
+msgid "25. Employer, \"E\", Employee, \"W\""
+msgstr "25. Empregador, \"E\", Empregado, \"G\""
+
+msgid "EmploymentPlace"
+msgstr "LocalEmprego"
+
+msgid "26. State where person is employed"
+msgstr "26. Estado onde está empregado"
 
 msgid "NARA publication"
 msgstr "Publicação NARA"
@@ -432,9 +2140,6 @@ msgstr "N.º de linha"
 msgid "Family No."
 msgstr "N.º de família"
 
-msgid "Sex"
-msgstr "Sexo"
-
 msgid "Value of real estate"
 msgstr "Valor dos imóveis"
 
@@ -474,23 +2179,14 @@ msgstr "Valor monetário da quinta"
 msgid "Value of Farming Implements and Machinery"
 msgstr "Valor de máquinas e alfaias"
 
-msgid "Horses"
-msgstr "Cavalos"
-
 msgid "Asses and Mules"
 msgstr "Burros e mulas"
-
-msgid "Milch Cows"
-msgstr "Vacas leiteiras"
 
 msgid "Working Oxen"
 msgstr "Bois de trabalho"
 
 msgid "Other Cattle"
 msgstr "Outro gado"
-
-msgid "Sheep"
-msgstr "Ovelhas"
 
 msgid "Swine"
 msgstr "Suíno"
@@ -781,14 +2477,8 @@ msgstr "Número de meses de desemprego no ano do censo"
 msgid "Illness on day of enumeration"
 msgstr "Doença no dia da contagem"
 
-msgid "Blind"
-msgstr "Cego"
-
 msgid "Deaf and dumb"
 msgstr "Surdos e mudos"
-
-msgid "Idiotic"
-msgstr "Idiota"
 
 msgid "Insane"
 msgstr "Louco"
@@ -1296,9 +2986,6 @@ msgstr "Local incorporado"
 msgid "Unincorporated place"
 msgstr "Local não incorporado"
 
-msgid "Institution"
-msgstr "Instituição"
-
 msgid "Value of home or monthly rental"
 msgstr "Valor da casa ou da renda mensal"
 
@@ -1459,9 +3146,6 @@ msgstr "Esta casa está situada num terreno com três ou mais hectares?"
 
 msgid "Agricultural Questionnaire Number"
 msgstr "Número do questionário agrícola"
-
-msgid "Race"
-msgstr "Raça"
 
 msgid "Age at last birthday"
 msgstr "Idade ao último aniversário"
@@ -2155,12 +3839,6 @@ msgstr "Cidade de"
 msgid "Township of"
 msgstr "Município de"
 
-msgid "Township"
-msgstr "Município"
-
-msgid "Section"
-msgstr "Secção"
-
 msgid "Street and Number"
 msgstr "Rua e n.º"
 
@@ -2507,12 +4185,6 @@ msgstr "Meses na escola em 1914 - Privada"
 msgid "Months in School 1914: College"
 msgstr "Meses na escola em 1914 - Superior"
 
-msgid "Read"
-msgstr "Ler"
-
-msgid "Write"
-msgstr "Escrever"
-
 msgid "Deaf"
 msgstr "Surdos"
 
@@ -2524,9 +4196,6 @@ msgstr "Naturalizado se nasceu estrangeiro?"
 
 msgid "House Number"
 msgstr "Número da casa"
-
-msgid "Relation"
-msgstr "Relação"
 
 msgid "Color or Race"
 msgstr "Cor ou raça"
@@ -2809,9 +4478,6 @@ msgstr "Natividade da mãe"
 
 msgid "Condition"
 msgstr "Condição"
-
-msgid "Schedule"
-msgstr "Horário"
 
 msgid "Inhabitants in"
 msgstr "Habitantes em"
@@ -3618,9 +5284,6 @@ msgstr "Idade em anos"
 msgid "Home Address"
 msgstr "Morada de casa"
 
-msgid "Citizenship"
-msgstr "Cidadania"
-
 msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
 msgstr ""
 "Natural, cidadão naturalizado, estrangeiro, não-cidadão ou cidadão índio"
@@ -3677,32 +5340,216 @@ msgstr "Número de série"
 msgid "Order Number"
 msgstr "N.º de ordem"
 
+msgid "Registration Card"
+msgstr "Cartão de registo"
+
+msgid ""
+"Found in lower left corner\n"
+"      D.S.S. Form 1\n"
+"        (Men 21 - 31)\n"
+"      D.S.S. Form 1 (Rev. 6-9-41)\n"
+"        (Men who turned 21 since 1st registration)\n"
+"      D.S.S. Form 1 (Rev. 1/1/42)\n"
+"        (Men born Feb 17, 1897 to Dec 31 1921)\n"
+"      D.S.S. Form 1 (Rev. 4/1/42)\n"
+"        (Men 45-64)\n"
+"      D.S.S. Form 1 (Rev. 6/1/42)\n"
+"        (Men 18-20)\n"
+"      D.S.S. Form 1 (Rev. 11/16/42)\n"
+"        (Men who turned 18 since\n"
+"         previous registration)"
+msgstr ""
+"Canto inferior esquerdo\n"
+"      D.S.S. Form 1\n"
+"        (Homens 21 - 31)\n"
+"      D.S.S. Form 1 (Rev. 6-9-41)\n"
+"        (Homens que completaram 21 anos desde o primeiro registo)\n"
+"      D.S.S. Form 1 (Rev. 1/1/42)\n"
+"        (Homens nascidos entre 17 de fevereiro de 1897 e 31 de dezembro de "
+"1921)\n"
+"      D.S.S. Form 1 (Rev. 4/1/42)\n"
+"        (Homens 45-64)\n"
+"      D.S.S. Form 1 (Rev. 6/1/42)\n"
+"        (Homens 18-20)\n"
+"      D.S.S. Form 1 (Rev. 11/16/42)\n"
+"        (Homens que completaram 18 anos desde o registo anterior)"
+
+msgid "(1) First, Middle, Last"
+msgstr "(1) Primeiro, Meio, Último"
+
 msgid "Place of Residence"
 msgstr "Local de residência"
+
+msgid ""
+"(2) Address or Place of Residence\n"
+" No. and street or R.F.D. No., Town, County, State"
+msgstr ""
+"(2) Endereço ou local de residência\n"
+"N.º e rua ou n.º R.F.D., cidade, concelho, estado"
 
 msgid "Mailing Address"
 msgstr "Endereço de correio"
 
+msgid ""
+" Not used on D.S.S. Form 1\n"
+" (3) Used on all other forms"
+msgstr ""
+" Não utilizado no Formulário 1 do D.S.S.\n"
+" (3) Utilizado em todos os outros formulários"
+
 msgid "Telephone"
 msgstr "Telefone"
+
+msgid ""
+"(3) On D.S.S. Form 1\n"
+"(4) On all other forms"
+msgstr ""
+"(3) No formulário D.S.S. 1\n"
+"(4) Em todos os outros formulários"
 
 msgid "Age in years"
 msgstr "Idade em anos"
 
+msgid ""
+"(4) On D.S.S. Form 1\n"
+"(5) On all other forms"
+msgstr ""
+"(4) No formulário D.S.S. 1\n"
+"(5) Em todos os outros formulários"
+
+msgid "(Below Age in Years)"
+msgstr "(abaixo da idade em anos)"
+
+msgid ""
+"(5) On D.S.S. Form 1\n"
+"(6) On all other forms"
+msgstr ""
+"(5) No formulário D.S.S. 1\n"
+"(6) Em todos os outros formulários"
+
+msgid "Country of Citizenship"
+msgstr "País de cidadania"
+
+msgid ""
+"(6) On D.S.S. Form 1\n"
+"Not used on other forms"
+msgstr ""
+"(6) No formulário D.S.S. 1\n"
+"Não utilizado noutros formulários"
+
 msgid "Who will always know your address (Name & Address)"
 msgstr "Quem saberá sempre o seu endereço (nome e endereço)"
+
+msgid ""
+"(7 & 9) On D.S.S. Form 1\n"
+"(7) On all but D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) On D.S.S. Form 1 (Rev. 6-9-41)"
+msgstr ""
+"(7 & 9) No Formulário D.S.S. 1\n"
+"(7) Em todos os formulários, excepto no Formulário D.S.S. 1 (Rev. 6-9-41)\n"
+"(8) No Formulário D.S.S. 1 (Rev. 6-9-41)"
+
+msgid "Relationship "
+msgstr "Parentesco "
+
+msgid "(8) Only on D.S.S. Form 1"
+msgstr "(8) Apenas no Formulário D.S.S. 1"
+
+msgid "Occupation "
+msgstr "Profissão "
+
+msgid "(7) Only on D.S.S. Form 1 (Rev. 6-9-41)"
+msgstr "(7) Apenas no formulário D.S.S. 1 (Rev. 6-9-41)"
+
+msgid ""
+"(10) On D.S.S. Form 1\n"
+"(9) On D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) on all others forms"
+msgstr ""
+"(10) No Formulário 1 do D.S.S.\n"
+"(9) No Formulário 1 do D.S.S. (Rev. 6-9-41)\n"
+"(8) em todos os outros formulários"
 
 msgid "Place of employment or business"
 msgstr "Local de trabalho ou empresa"
 
+msgid ""
+"(11) On D.S.S. Form 1\n"
+"(10) On D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(9) on all others forms"
+msgstr ""
+"(11) No Formulário 1 do D.S.S.\n"
+"(10) No Formulário 1 do D.S.S. (Rev. 6-9-41)\n"
+"(9) em todos os outros formulários"
+
+msgid ""
+"White\n"
+"Negro\n"
+"Oriental\n"
+"Indian\n"
+"Filipino"
+msgstr ""
+"Branco\n"
+"Negro\n"
+"Oriental\n"
+"Indiano\n"
+"Filipino"
+
 msgid "Complexion"
 msgstr "Constituição física"
+
+msgid ""
+"Sallow\n"
+"Light\n"
+"Ruddy\n"
+"Dark\n"
+"Freckled\n"
+"Light brown\n"
+"Dark brown\n"
+"Black"
+msgstr ""
+"Pálido\n"
+"Claro\n"
+"Avermelhado\n"
+"Escuro\n"
+"Com sardas\n"
+"Castanho claro\n"
+"Castanho escuro\n"
+"Preto"
 
 msgid "Eyes"
 msgstr "Olhos"
 
+msgid ""
+"Blue\n"
+"Gray\n"
+"Hazel\n"
+"Brown\n"
+"Black"
+msgstr ""
+"Azul\n"
+"Cinzento\n"
+"Castanho-claro\n"
+"Castanho\n"
+"Preto"
+
 msgid "Hair"
 msgstr "Cabelo"
+
+msgid ""
+"Blonde\n"
+"Red\n"
+"Brown\n"
+"Black\n"
+"Gray\n"
+"Bald"
+msgstr ""
+"Loiro\n"
+"Ruivo\n"
+"Castanho\n"
+"Preto\n"
+"Cinzento\n"
+"Careca"
 
 msgid "Other characteristics"
 msgstr "Outras características"
@@ -3751,39 +5598,6 @@ msgstr "Indústria/Empregador"
 
 msgid "Residents Status"
 msgstr "Estado dos residentes"
-
-msgid "Event Place (Original)"
-msgstr "Local de evento (original)"
-
-msgid "Birth Year (Estimated)"
-msgstr "Ano de nascimento (estimado)"
-
-msgid "Spouse's Gender"
-msgstr "Sexo do cônjuge"
-
-msgid "Spouse's Age"
-msgstr "Idade do cônjuge"
-
-msgid "Spouse's Birth Year (Estimated)"
-msgstr "Ano de nascimento do cônjuge (estimado)"
-
-msgid "Spouse's Father's Name"
-msgstr "Nome do pai do cônjuge"
-
-msgid "Spouse's Mother's Name"
-msgstr "Nome da mãe do cônjuge"
-
-msgid "Record Number"
-msgstr "Número de registo"
-
-msgid "Volume"
-msgstr "Volume"
-
-msgid "Volume Beginning Year"
-msgstr "Volume Ano de início"
-
-msgid "Volume Ending Year"
-msgstr "Volume Ano de fim"
 
 msgid "Amt"
 msgstr "Qtd"
@@ -3931,6 +5745,54 @@ msgstr "Data de casamento"
 
 msgid "Dato gift"
 msgstr "Data de casamento"
+
+msgid "Event Place (Original)"
+msgstr "Local de evento (original)"
+
+msgid "Birth Year (Estimated)"
+msgstr "Ano de nascimento (estimado)"
+
+msgid "Spouse's Gender"
+msgstr "Sexo do cônjuge"
+
+msgid "Spouse's Age"
+msgstr "Idade do cônjuge"
+
+msgid "Spouse's Birth Year (Estimated)"
+msgstr "Ano de nascimento do cônjuge (estimado)"
+
+msgid "Spouse's Father's Name"
+msgstr "Nome do pai do cônjuge"
+
+msgid "Spouse's Mother's Name"
+msgstr "Nome da mãe do cônjuge"
+
+msgid "Record Number"
+msgstr "Número de registo"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "Volume Beginning Year"
+msgstr "Volume Ano de início"
+
+msgid "Volume Ending Year"
+msgstr "Volume Ano de fim"
+
+msgid "Can read and write"
+msgstr "Sabe ler e escrever"
+
+msgid "Military"
+msgstr "Militares"
+
+msgid "Taxes"
+msgstr "Impostos"
+
+msgid "Type of roof"
+msgstr "Tipo de telhado"
+
+msgid "Arrived since"
+msgstr "Chegado desde"
 
 msgid "Registration District"
 msgstr "Distrito de registo"
@@ -4104,9 +5966,6 @@ msgstr "Bairro ou divisão parlamentar"
 msgid "PROFESSION or OCCUPATION"
 msgstr "PROFISSÃO"
 
-msgid "Employer"
-msgstr "Empregador"
-
 msgid "Neither"
 msgstr "Nenhum"
 
@@ -4232,9 +6091,6 @@ msgstr "Se deve trabalha em casa"
 
 msgid "BIRTHPLACE of every Person."
 msgstr "LOCAL DE NASCIMENTO de cada um."
-
-msgid "Nationality"
-msgstr "Nacionalidade"
 
 msgid "NATIONALITY of every Person born in a Foreign Country."
 msgstr "NACIONALIDADE de cada estrangeiro."
@@ -4469,1645 +6325,3 @@ msgstr "Total de filhos"
 
 msgid "Children born alive to present Marriage"
 msgstr "Filhos nascidos vivos até ao presente casamento"
-
-msgid "EnumDistrict"
-msgstr "EnumDistrict"
-
-msgid "Comprising"
-msgstr "Compreendendo"
-
-msgid "OfTheSaid"
-msgstr "OfTheSaid"
-
-msgid "Enumerator"
-msgstr "Recenseador"
-
-msgid "1. Names of Inmates"
-msgstr "1. Nomes de prisioneiros"
-
-msgid "2. Profession, Trade or Occupation"
-msgstr "2. Profissão ou negócio"
-
-msgid "BirthPlace"
-msgstr "Local de nascimento"
-
-msgid "3. Place of Birth"
-msgstr "3. Local de nascimento"
-
-msgid "4. Religion"
-msgstr "4. Religião"
-
-msgid "5. Residence if Outside of Limits"
-msgstr "5. Residência, se fora dos limites"
-
-msgid "6. Age at Next Birthday"
-msgstr "6. Idade no próximo aniversário"
-
-msgid "SexMale"
-msgstr "SexoMasculino"
-
-msgid "7. Sex: Male"
-msgstr "7. Sexo: masculino"
-
-msgid "SexFemale"
-msgstr "SexoFeminino"
-
-msgid "8. Sex: Female"
-msgstr "8. Sexo: feminino"
-
-msgid "MaritalStatus"
-msgstr "SituaçãoConjugal"
-
-msgid "9. Married or Single"
-msgstr "Casado ou solteiro"
-
-msgid "Coloured"
-msgstr "Colorido"
-
-msgid "10. Coloured Persons - Negroes"
-msgstr "10. Indivíduos de cor - origem africana"
-
-msgid "Indians"
-msgstr "Indianos"
-
-msgid "11. Indians, if any"
-msgstr "11. Indianos, se existirem"
-
-msgid "ResidentsMale"
-msgstr "ResidentesHomens"
-
-msgid "12. Residents: Members, Male"
-msgstr "12. Residentes: membros, masculino"
-
-msgid "ResidentsFemale"
-msgstr "ResidentesMulheres"
-
-msgid "13. Residents: Members, Female"
-msgstr "13. Residentes: membros, feminino"
-
-msgid "NonMembersMale"
-msgstr "NãoMembrosMasculino"
-
-msgid "14. Residents: Not Members: Male"
-msgstr "14. Residentes: não membros, homem"
-
-msgid "NonMembersFemale"
-msgstr "NãoMembrosFeminino"
-
-msgid "15. Residents: Not Members: Female"
-msgstr "15. Residentes: não membros, mulher"
-
-msgid "AbsentMembersMale"
-msgstr "MembrosAusentesMasculino"
-
-msgid "16. Members Absent: Male"
-msgstr "16. Membros ausentes: masculino"
-
-msgid "AbsentMembersFemale"
-msgstr "MembrosAusentesFeminino"
-
-msgid "17. Members Absent: Female"
-msgstr "17. Membros ausentes, feminino"
-
-msgid "DeafDumbMale"
-msgstr "SurdoMudoMasculino"
-
-msgid "18. Deaf and Dumb: Male"
-msgstr "18. Surdos/mudos: masculino"
-
-msgid "DeafDumbFemale"
-msgstr "SurdoMudoFeminino"
-
-msgid "19. Deaf and Dumb: Female"
-msgstr "19. Surdos e mudos: feminino"
-
-msgid "BlindMale"
-msgstr "CegoMasculino"
-
-msgid "20. Blind: Male"
-msgstr "20. Cegos: masculino"
-
-msgid "BlindFemale"
-msgstr "CegoFeminino"
-
-msgid "21. Blind: Female"
-msgstr "21. Cegos: feminino"
-
-msgid "LunaticMale"
-msgstr "MalucoMasculino"
-
-msgid "22. Lunatics: Male"
-msgstr "22. Lunáticos: masculino"
-
-msgid "LunaticFemale"
-msgstr "MalucoFeminino"
-
-msgid "23. Lunatics: Female"
-msgstr "23. Lunáticos: feminino"
-
-msgid "ScholarMale"
-msgstr "EstudiosoMasculino"
-
-msgid "24. Attending School: Male"
-msgstr "24. A estudar: masculino"
-
-msgid "ScholarFemale"
-msgstr "EstudiosoFeminino"
-
-msgid "25. Attending School: Female"
-msgstr "25. A estudar: feminino"
-
-msgid "Birth1851Male"
-msgstr "Nascimento1851Masculino"
-
-msgid "26. Births During the Year 1851: Male"
-msgstr "26. Nascidos em 1851: masculino"
-
-msgid "Birth1851Female"
-msgstr "Nascimento1851Feminino"
-
-msgid "27. Births During the Year 1851: Female"
-msgstr "27. Nascidos em 1851: feminino"
-
-msgid "Death1851Male"
-msgstr "Óbito1851Masculino"
-
-msgid "28. Deaths During the Year 1851: Male"
-msgstr "28. Falecidos em 1851: masculino"
-
-msgid "Death1851Female"
-msgstr "Óbito1851Feminino"
-
-msgid "29. Deaths During the Year 1851: Female"
-msgstr "29. Falecidos em 1851: feminino"
-
-msgid "DeathAgeCause"
-msgstr "IdadeCausaÓbito"
-
-msgid "30. Age and Cause of Deaths"
-msgstr "30. Idade e causa de óbito"
-
-msgid "Houses"
-msgstr "Casas"
-
-msgid ""
-"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
-msgstr ""
-"31. Casas: tijolo, pedra, estrutura, madeira, lata ou outros tipos de "
-"residência"
-
-msgid "HousesStories"
-msgstr "HistóriasCasas"
-
-msgid "32. Houses: No. of Stories"
-msgstr "32. Casas: n.º de histórias"
-
-msgid "HousesFamilies"
-msgstr "CasasFamílias"
-
-msgid "33. No. of Families Occupying"
-msgstr "33. N.º de famílias ocupantes"
-
-msgid "HousesVacant"
-msgstr "CasasVazias"
-
-msgid "34. Houses: Vacant"
-msgstr "34. Casas: vazias"
-
-msgid "HousesBuilding"
-msgstr "CasasEdifício"
-
-msgid "35. Houses: Building"
-msgstr "35. Casas: edifício"
-
-msgid "Shops"
-msgstr "Lojas"
-
-msgid "36. Shops, Stores, Inns, Taverns etc."
-msgstr "36. Lojas, armazéns, pousadas, tabernas, etc."
-
-msgid "PublicBuildings"
-msgstr "EdifíciosPúblicos"
-
-msgid "37. Public Buildings"
-msgstr "37. Edifícios públicos"
-
-msgid "WorshipPlaces"
-msgstr "TemplosAdoração"
-
-msgid "38. Places of Worship"
-msgstr "38. Locais de culto"
-
-msgid "BuisnessInfo"
-msgstr "InformaçãoNegócio"
-
-msgid ""
-"39. Information on Mills, Factories etc., their cost, power, produce, etc."
-msgstr ""
-"39. Informação sobre moagens, fábricas, etc., seus custos, energia, "
-"produtos, etc."
-
-msgid "NumEmployees"
-msgstr "NúmEmpregados"
-
-msgid "40. Number of Persons Usually Employed Therein"
-msgstr "40. Número de empregados habituais"
-
-msgid "41. General Remarks of the Enumerator"
-msgstr "41. Observações gerais do recenseador"
-
-msgid "1. Name of Occupier"
-msgstr "1. Nome do ocupante"
-
-msgid "Concession"
-msgstr "Concessão"
-
-msgid "2. Concession or Range"
-msgstr "2. Concessão ou sector"
-
-msgid "Lot"
-msgstr "Lote"
-
-msgid "3. Lot or part of Lot"
-msgstr "3. Lote ou parte do lote"
-
-msgid "AcresHeld"
-msgstr "HectaresMetros2"
-
-msgid "4. Number of Acres of Land: Held by each person or family"
-msgstr "4. N.º de hectares de terra: detidos por cada membro da família"
-
-msgid "AcresCultivation"
-msgstr "HectaresCultivo"
-
-msgid "5. Number of Acres of Land: Under Cultivation"
-msgstr "5. N.º de hectares de terra: cultivados"
-
-msgid "AcresCrops"
-msgstr "HectaresCulturas"
-
-msgid "6. Number of Acres of Land: Under Crops in 1851"
-msgstr "6. N.º de hectares de terra: sob cultivo em 1851"
-
-msgid "AcresPasture"
-msgstr "HectaresPastagem"
-
-msgid "7. Number of Acres of Land: Under Pasture in 1851"
-msgstr "7. N.º de hectares de terra: pastagens em 1851"
-
-msgid "AcresGardens"
-msgstr "HectaresJardins"
-
-msgid "8. Number of Acres of Land: Gardens or Orchards"
-msgstr "8. N.º de hectares de terra: jardins e pomares"
-
-msgid "AcresWood"
-msgstr "HectaresMadeira"
-
-msgid "9. Number of Acres of Land: Under Wood or Wild"
-msgstr "9. N.º de hectares de terra: para madeira ou bravios"
-
-msgid "WheatAcres"
-msgstr "HectaresTrigo"
-
-msgid "10. Wheat: Acres"
-msgstr "10. N.º de hectares de terra: trigo"
-
-msgid "WheatBsh"
-msgstr "TrigoAlq"
-
-msgid "11. Wheat: Produce Bsh."
-msgstr "11. Trigo: produção"
-
-msgid "BarleyAcres"
-msgstr "HectaresCevada"
-
-msgid "12. Barley: Acres"
-msgstr "12. N.º de hectares de terra: cevada"
-
-msgid "BarleyBsh"
-msgstr "CevadaAlq"
-
-msgid "13. Barley: Produce Bsh."
-msgstr "13. Cevada: produção"
-
-msgid "RyeAcres"
-msgstr "HectaresCenteio"
-
-msgid "14. Rye: Acres"
-msgstr "14. N.º de hectares de terra: centeio"
-
-msgid "RyeBsh"
-msgstr "Centeio"
-
-msgid "15. Rye: Produce Bsh."
-msgstr "15. Centeio: produção"
-
-msgid "PeasAcres"
-msgstr "HectaresErvilha"
-
-msgid "16. Peas: Acres"
-msgstr "16. N.º de hectares de terra: ervilha"
-
-msgid "PeasBush"
-msgstr "Ervilha"
-
-msgid "17. Peas: Produce Bsh."
-msgstr "17. Ervilha: produção"
-
-msgid "OatsAcres"
-msgstr "HectaresAveia"
-
-msgid "18. Oats: Acres"
-msgstr "18. N.º de hectares de terra: aveia"
-
-msgid "OatsBush"
-msgstr "AveiaAlq"
-
-msgid "19. Oats: Produce Bsh."
-msgstr "19. Aveia: produção"
-
-msgid "BWheatAcres"
-msgstr "HectaresTrigoMourisco"
-
-msgid "20. B.Wheat: Acres"
-msgstr "20. N.º de hectares de terra: trigo mourisco"
-
-msgid "BWheatBush"
-msgstr "Trigo Mourisco"
-
-msgid "21. B.Wheat: Produce Bsh."
-msgstr "21. Trigo mourisco: produção"
-
-msgid "CornAcres"
-msgstr "HectaresMilho"
-
-msgid "22. Corn: Acres"
-msgstr "22. N.º de hectares de terra: milho"
-
-msgid "CornBush"
-msgstr "Milho"
-
-msgid "23. Corn: Produce Bsh."
-msgstr "23. Milho: produção"
-
-msgid "PotatoesAcres"
-msgstr "HectaresBatata"
-
-msgid "24. Potatoes: Acres"
-msgstr "24. N.º de hectares de terra: batata"
-
-msgid "PotatoesBush"
-msgstr "Batata"
-
-msgid "25. Potatoes: Produce Bsh."
-msgstr "25. Batata: produção"
-
-msgid "TurnipsAcres"
-msgstr "HectaresNabo"
-
-msgid "26. Turnips: Acres"
-msgstr "26. N.º de hectares de terra: nabo"
-
-msgid "TurnipsBush"
-msgstr "Nabo"
-
-msgid "27. Turnips: Produce Bsh."
-msgstr "27. Nabo: produção"
-
-msgid "CloverBush"
-msgstr "Trevo"
-
-msgid "28. Clover, Timothy or other grass seed - Bsh."
-msgstr "28. Trevo, timóteo ou outra semente de ervas"
-
-msgid "CarrotsBush"
-msgstr "Cenoura"
-
-msgid "29. Carrots - Bsh."
-msgstr "29. Cenoura: produção"
-
-msgid "MangleWurtzel"
-msgstr "Beterraba"
-
-msgid "30. Mangle Wurtzel"
-msgstr "30. Beterraba"
-
-msgid "BeansBush"
-msgstr "Feijão"
-
-msgid "31. Beans Bush"
-msgstr "31. Feijão: produção"
-
-msgid "HopsLbs"
-msgstr "LúpuloLbs"
-
-msgid "32. Hops Lbs."
-msgstr "32. Lúpulo: produção"
-
-msgid "HayQty"
-msgstr "FenoQuantidade"
-
-msgid "33. Hay, Bundles or Tons"
-msgstr "33. Feno: fardos, ou toneladas"
-
-msgid "FlaxLbs"
-msgstr "LinhoLbs"
-
-msgid "34. Flax or Hemp, Lbs."
-msgstr "34. Linho ou cânhamo: produção"
-
-msgid "TobaccoLbs"
-msgstr "TabacoLbs"
-
-msgid "35. Tobacco Lbs."
-msgstr "35. Tabaco: produção"
-
-msgid "WoolLbs."
-msgstr "LãLbs"
-
-msgid "36. Wool Lbs."
-msgstr "36. Lã: produção"
-
-msgid "Column37"
-msgstr "Coluna37"
-
-msgid "37."
-msgstr "37."
-
-msgid "Column38"
-msgstr "Coluna38"
-
-msgid "38."
-msgstr "38."
-
-msgid "Column39"
-msgstr "Coluna39"
-
-msgid "39."
-msgstr "39."
-
-msgid "MapleSugarLbs"
-msgstr "AçucarÁcer"
-
-msgid "40. Maple Sugar Lbs."
-msgstr "40. Açucar de ácer: produção"
-
-msgid "CiderGalls"
-msgstr "Cidra"
-
-msgid "41. Cider Galls."
-msgstr "41. Cidra: produção"
-
-msgid "ClothYards"
-msgstr "Tecido"
-
-msgid "42. Fulled Cloth Yards"
-msgstr "42. Tecido integral: produção"
-
-msgid "LinnenYards"
-msgstr "Linho (tecido)"
-
-msgid "43. Linnen - Yds."
-msgstr "43. Linho (tecido): produção"
-
-msgid "FlannelYds"
-msgstr "Flanela"
-
-msgid "44. Flannel - Yds."
-msgstr "44. Flanela: produção"
-
-msgid "Bulls"
-msgstr "Touros"
-
-msgid "45. Bulls, Oxen or Steers"
-msgstr "45. Touros, bois ou novilhos"
-
-msgid "46. Milch Cows"
-msgstr "46. Vacas leiteiras"
-
-msgid "Calves"
-msgstr "Vitelos"
-
-msgid "47. Calves or Heifers"
-msgstr "47. Vitelos ou novilhas"
-
-msgid "48. Horses of all ages"
-msgstr "48. Cavalos de qualquer idade"
-
-msgid "49. Sheep"
-msgstr "49. Ovelhas"
-
-msgid "Pigs"
-msgstr "Porcos"
-
-msgid "50. Pigs"
-msgstr "50. Porcos"
-
-msgid "ButterLbs"
-msgstr "ManteigaLbs"
-
-msgid "51. Butter - Lbs."
-msgstr "51. Manteiga: produção"
-
-msgid "CheeseLbs"
-msgstr "QueijoLbs"
-
-msgid "52. Cheese - Lbs."
-msgstr "52. Queijo: produção"
-
-msgid "Beef"
-msgstr "Carne de vaca"
-
-msgid "53. Beef - Barrels or Cwts."
-msgstr "53. Carne de vaca: produção"
-
-msgid "Pork"
-msgstr "Carne de porco"
-
-msgid "54. Pork - Barrels or Cwts."
-msgstr "54. Carne de porco: produção"
-
-msgid "Fish"
-msgstr "Peixe"
-
-msgid "55. Quantity of Fish Cured"
-msgstr "55. Peixe curado: produção"
-
-msgid "56. Remarks"
-msgstr "56. Comentários"
-
-msgid "2. Profession, trade or occupation"
-msgstr "2. Profissão ou negócio"
-
-msgid "Married1851"
-msgstr "Casados1851"
-
-msgid "4. Married during the year"
-msgstr "4. Casados em 1851"
-
-msgid "5. Religion"
-msgstr "5. Religião"
-
-msgid "6. Residence, if out of limits"
-msgstr "6. Residência, se fora dos limites"
-
-msgid "7. Age next Birthday"
-msgstr "7. Idade no próximo aniversário"
-
-msgid "8. Sex: Male"
-msgstr "8. Sexo: masculino"
-
-msgid "SexFemail"
-msgstr "SexoFeminino"
-
-msgid "9. Sex:Female"
-msgstr "9. Sexo: feminino"
-
-msgid "10. Married or Single"
-msgstr "10. Casado ou solteiro"
-
-msgid "Widowers"
-msgstr "Viúvos"
-
-msgid "11. Widowers"
-msgstr "11. Viúvos"
-
-msgid "Widows"
-msgstr "Viúvas"
-
-msgid "12. Widows"
-msgstr "12. Viúvas"
-
-msgid "13. Coloured Persons, Mulato or Indians"
-msgstr "13. Indivíduos de cor: mulatos ou indianos"
-
-msgid "MemberMale"
-msgstr "MembroMasculino"
-
-msgid "14. Members: Male"
-msgstr "14. Membros: masculino"
-
-msgid "MemberFemale"
-msgstr "MembroFeminino"
-
-msgid "15. Members: Female"
-msgstr "15. Membros:feminino"
-
-msgid "NotMemberMale"
-msgstr "NãoMembroMasculino"
-
-msgid "16. Not Members: Male"
-msgstr "16. Não membros: masculino"
-
-msgid "NotMemberFemale"
-msgstr "NãoMembroFeminino"
-
-msgid "17. Not Members: Female"
-msgstr "17. Não membro: feminino"
-
-msgid "MemberAbsentMale"
-msgstr "MembroAusenteMasculino"
-
-msgid "18. Members Absent: Male"
-msgstr "18. Membros ausentes: masculino"
-
-msgid "MemberAbsentFemale"
-msgstr "MembroAusenteFeminino"
-
-msgid "19. Members Absent: Female"
-msgstr "19. Membros ausentes: feminino"
-
-msgid "DeafDumb"
-msgstr "SurdoMudo"
-
-msgid "20. Deaf and Dumb"
-msgstr "20. Surdos e mudos"
-
-msgid "21. Blind"
-msgstr "21. Cegos"
-
-msgid "Lunatic"
-msgstr "Lunáticos"
-
-msgid "22. Lunatics or Idiots"
-msgstr "22. Lunáticos"
-
-msgid "23. Attending School within the year: Male"
-msgstr "23. A estudar no ano: masculino"
-
-msgid "24. Attending School within the year: Female"
-msgstr "24. A estudar no ano: feminino"
-
-msgid "CantReadMale"
-msgstr "AnalfabetoMasculino"
-
-msgid "25. Persons over 20, who cannot read or write: Male"
-msgstr "25. Mais de 20 anos, analfabetos: masculino"
-
-msgid "CantReadFemale"
-msgstr "AnalfabetoFeminino"
-
-msgid "26. Persons over 20, who cannot read or write: Female"
-msgstr "26. Mais de 20 anos, analfabetos: feminino"
-
-msgid "Birth1860Male"
-msgstr "Nascidos1860Masculino"
-
-msgid "27. Births in 1860: Male"
-msgstr "27. Nascidos em 1860: masculino"
-
-msgid "Birth1860Female"
-msgstr "Nascidos 1860Feminino"
-
-msgid "28. Births in 1860: Female"
-msgstr "28. Nascidos em 1860: feminino"
-
-msgid "Death1860Male"
-msgstr "Falecidos1860Masculino"
-
-msgid "29. Deaths in 1860: Male"
-msgstr "29. Falecidos em 1860: masculino"
-
-msgid "Death1860Female"
-msgstr "Falecidos1860Feminino"
-
-msgid "30. Deaths in 1860: Female"
-msgstr "30. Falecidos em 1860: feminino"
-
-msgid "31. Age and cause of death"
-msgstr "31. Idade e causa de óbito"
-
-msgid "32. Houses: Brick, Stone, Frame, Log, etc."
-msgstr "32. Casas: tijolo, pedra, estrutura, madeira, etc."
-
-msgid "33. Houses: No. of Stories"
-msgstr "33. Casas: n.º de histórias"
-
-msgid "34. Houses: No. of families living in the house"
-msgstr "34. Casas: n.º de famílias ocupantes"
-
-msgid "35. Houses: Vacant"
-msgstr "35. Casas: vazias"
-
-msgid "HouseBeingBuilt"
-msgstr "CasaEmConstrução"
-
-msgid "36. Houses: Being built"
-msgstr "36. Casas: em construção"
-
-msgid "SubDistrict"
-msgstr "SubDistrito"
-
-msgid "Vessels"
-msgstr "Vasos"
-
-msgid "1. Vessels"
-msgstr "1. Vasos"
-
-msgid "Shanties"
-msgstr "Choupanas"
-
-msgid "2. Shanties"
-msgstr "2. Choupanas"
-
-msgid "HousesBeingBuilt"
-msgstr "CasasEmConstrução"
-
-msgid "3. Dwelling houses in construction"
-msgstr "3. Casas de habitação em construção"
-
-msgid "4. Dwelling houses unoccupied"
-msgstr "4. Casas de habitação vazias"
-
-msgid "HousesInhabited"
-msgstr "CasasVazias"
-
-msgid "5. Dwelling houses inhabited"
-msgstr "5. Casas de habitação desabitadas"
-
-msgid "6.Families"
-msgstr "6. Famílias"
-
-msgid "7. Names"
-msgstr "7. Nomes"
-
-msgid "8. Sex"
-msgstr "8. Sexo"
-
-msgid "9. Age"
-msgstr "9. Idade"
-
-msgid "Birth1871"
-msgstr "Nascidos1871"
-
-msgid "10. Born within last twelve months"
-msgstr "10. Nascidos nos últimos 12 meses"
-
-msgid "11. Country or Province of Birth"
-msgstr "11. País ou província de nascimento"
-
-msgid "12. Religion"
-msgstr "12. Religião"
-
-msgid "13. Origin"
-msgstr "13. Origem"
-
-msgid "14. Profession, Occupation or Trade"
-msgstr "143. Profissão ou negócio"
-
-msgid "15. Married or Widowed"
-msgstr "15. Casados ou viǘvos"
-
-msgid "Maried1871"
-msgstr "Casados1871"
-
-msgid "16. Married within last twelve months"
-msgstr "16. Casados nos últimos 12 meses"
-
-msgid "Scholar"
-msgstr "Estudioso"
-
-msgid "17. Going to school"
-msgstr "17. Na escola"
-
-msgid "CantRead"
-msgstr "SemLer"
-
-msgid "18. Over 20 unable to read"
-msgstr "18. Mais de 20 anos e sem saber ler"
-
-msgid "CantWrite"
-msgstr "NãoEscreve"
-
-msgid "19. Over 20 unable to write"
-msgstr "19. Mais de 20 anos sem saber escrever"
-
-msgid "22. Unsound mind"
-msgstr "22. Mente perturbada"
-
-msgid "23. Date of Operations and Remarks"
-msgstr "23. Data das operações e observações"
-
-msgid "3. Houses in construction"
-msgstr "3. Casas em construção"
-
-msgid "4. Houses unoccupied"
-msgstr "4. Casas desocupadas"
-
-msgid "5. Houses inhabited"
-msgstr "5. Casas desabitadas"
-
-msgid "6. Families"
-msgstr "6. Famílias"
-
-msgid "Birth1881"
-msgstr "Nascidos1881"
-
-msgid "16. Going to school"
-msgstr "16. Na escola"
-
-msgid "17. Deaf and Dumb"
-msgstr "17. Surdos e mudos"
-
-msgid "18. Blind"
-msgstr "18. Cegos"
-
-msgid "19. Unsound mind"
-msgstr "19. Mentes perturbadas"
-
-msgid "20. Date of Operations and Remarks"
-msgstr "20. Datas de operações e observações"
-
-msgid "1. Vessels and Shanties"
-msgstr "1. Vasos e choupanas"
-
-msgid "2. Houses in construction"
-msgstr "2. Casas em construção"
-
-msgid "3. Houses unoccupied"
-msgstr "3. Casas desocupadas"
-
-msgid "4. Houses inhabited"
-msgstr "4. Casas desabitadas"
-
-msgid "5. Families"
-msgstr "5. Famílias"
-
-msgid "6. Names"
-msgstr "6. Nomes"
-
-msgid "7. Sex"
-msgstr "7. Sexo"
-
-msgid "8. Age"
-msgstr "8. Idade"
-
-msgid "9. Married or Widowed"
-msgstr "9. Casados ou viúvos"
-
-msgid "10. Relationship to Head of Family"
-msgstr "10. Parentesco com o chefe de família"
-
-msgid "12. FrenchCanadian"
-msgstr "12. Canadiano-francês"
-
-msgid "BirthPlaceFather"
-msgstr "LocalNascimentoPai"
-
-msgid "13. Birth Place of Father"
-msgstr "13. Local de nascimento do pai"
-
-msgid "BirthPlaceMother"
-msgstr "LocalNascimentoMãe"
-
-msgid "14. Birth Place of Mother"
-msgstr "14. Local de nascimento da mãe"
-
-msgid "15. Religion"
-msgstr "15. Religião"
-
-msgid "16. Profession, Occupation or Trade"
-msgstr "16. Profissão ou negócio"
-
-msgid "17. Employers"
-msgstr "17. Empregadores"
-
-msgid "Employee"
-msgstr "Empregado"
-
-msgid "18. Wage Earner"
-msgstr "18. Empregado"
-
-msgid "Unemployed"
-msgstr "Desempregado"
-
-msgid "19. Unemployed during week preceding Census"
-msgstr "19. Desempregados na semana anterior ao censo"
-
-msgid "Employees"
-msgstr "Empregados"
-
-msgid "20. Employer to state average number of hands employed during year"
-msgstr ""
-"20. Empregador para declarar o número médio de trabalhadores empregados "
-"durante o ano"
-
-msgid "CanRead"
-msgstr "SabeLer"
-
-msgid "21. Instruction: Read"
-msgstr "21. Instrução: lê"
-
-msgid "CanWrite"
-msgstr "SabeEscrever"
-
-msgid "22. Instruction: Write"
-msgstr "22. Instrução: escreve"
-
-msgid "23. Deaf and Dumb"
-msgstr "23. Surdos e mudos"
-
-msgid "24. Blind"
-msgstr "24. Cegos"
-
-msgid "25. Unsound mind"
-msgstr "25. Mentes perturbadas"
-
-msgid "SubTitle"
-msgstr "Subtítulo"
-
-msgid "PollSub"
-msgstr "SubSond"
-
-msgid "House"
-msgstr "Casa"
-
-msgid "1. Dwelling house"
-msgstr "1. Casa de habitação"
-
-msgid "2. Family or household"
-msgstr "2. Família ou agregado"
-
-msgid "3. Name of each person in family"
-msgstr "3. Nome de cada indivíduo na família"
-
-msgid "4. Sex"
-msgstr "4. Sexo"
-
-msgid "Colour"
-msgstr "Cor"
-
-msgid "5. Colour"
-msgstr "5. Cor"
-
-msgid "6. Relation to head of family"
-msgstr "6. Parentesco com o chefe de família"
-
-msgid "7. Single, married, widowed, divorced or legally separated"
-msgstr "7. Solteiros, casados, viúvos, divorciados ou separados judicialmente"
-
-msgid "BirthMonth"
-msgstr "MêsNascimento"
-
-msgid "8. Month and Date of Birth"
-msgstr "8. Mês e data de nascimento"
-
-msgid "BirthYear"
-msgstr "AnoNascimento"
-
-msgid "9. Year of birth"
-msgstr "9. Ano de nascimento"
-
-msgid "10. Age at last birthday"
-msgstr "10. Idade ao último aniversário"
-
-msgid "11. Country or place of birth"
-msgstr "11. País ou local de nascimento"
-
-msgid "12. Year of immigration to Canada, if an immigrant"
-msgstr "12. Ano de imigração para o Canadá, se imigrou"
-
-msgid "13. Year of naturalization, if formerly an alien"
-msgstr "13. Ano de naturalização, se era estrangeiro"
-
-msgid "14. Racial or tribal origin"
-msgstr "14. Origem racial ou tribal"
-
-msgid "15. Nationality"
-msgstr "15. Nacionalidade"
-
-msgid "16. Religion"
-msgstr "16. Religião"
-
-msgid "17. Profession, occupation, trade or means of living of each person"
-msgstr "17. Profissão, negócio ou meios de subsistência"
-
-msgid "OwnMeans"
-msgstr "MeiosPróprios"
-
-msgid "18. Living on own means"
-msgstr "18. Vivem por conta própria"
-
-msgid "19. Employer"
-msgstr "19. Empregador"
-
-msgid "20. Employee"
-msgstr "20. Empregado"
-
-msgid "SelfEmployed"
-msgstr "Empresário"
-
-msgid "21. Working on own account"
-msgstr "21. Trabalha por conta pŕopria"
-
-msgid "WhereEmployed"
-msgstr "OndeTrabalha"
-
-msgid "22. Working at trade in factory or in home"
-msgstr "22. Trabalha na empresa, fábrica, ou em casa"
-
-msgid "MonthsFactory"
-msgstr "MesesFábrica"
-
-msgid "23. Months employed at trade in factory"
-msgstr "23. Meses de trabalho na empresa ou fábrica"
-
-msgid "MonthsHome"
-msgstr "Meses casa"
-
-msgid "24. Months employed at trade in home"
-msgstr "24. Meses de trabalho em casa"
-
-msgid "MonthsOther"
-msgstr "MesesOutros"
-
-msgid "25. Months employed in other occupation than trace in factory or home"
-msgstr "25. Meses de trabalho noutra profissão"
-
-msgid "EarningsOccupation"
-msgstr "GanhosProfissionais"
-
-msgid "26. Earnings from occupation or trade"
-msgstr "26. Ganhos profissionais ou empresariais"
-
-msgid "EarningsOther"
-msgstr "GanhosOutros"
-
-msgid "27. Extra earning (From other than chief occupation or trade)"
-msgstr "27. Ganhos extra (outras fontes de rendimento)"
-
-msgid "SchoolMonths"
-msgstr "MesesEscola"
-
-msgid "28. Months at school in 1910"
-msgstr "28. Meses na escola em 1910"
-
-msgid "29. Can read"
-msgstr "29. Sabe ler"
-
-msgid "30. Can write"
-msgstr "30. Sabe escrever"
-
-msgid "SpeakEnglish"
-msgstr "FalaInglês"
-
-msgid "31. Can speak English"
-msgstr "31. Sabe falar inglês"
-
-msgid "SpeakFrench"
-msgstr "FalaFrancês"
-
-msgid "32. Can speak French"
-msgstr "32. Sabe falar francês"
-
-msgid "33. Mother tongue (If spoken)"
-msgstr "33. Língua-mãe (se falada)"
-
-msgid "Infirmities"
-msgstr "Doenças"
-
-msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
-msgstr "34. Doenças: a. surdo e mudo; b. cego; c. mente perturbada"
-
-msgid "Name from Schedule 1"
-msgstr "Nome da agenda 1"
-
-msgid "Line on Schedule 2"
-msgstr "Linha na agenda 2"
-
-msgid "PageRef"
-msgstr "RefPágina"
-
-msgid "2. Page from Schedule 1"
-msgstr "2. Página da agenda 1"
-
-msgid "LineRef"
-msgstr "RefLinha"
-
-msgid "3. Line from Schedule 1"
-msgstr "3. Linha da agenda 1"
-
-msgid "3. Place of Habitation"
-msgstr "3. Local de habitação"
-
-msgid "HousesConst"
-msgstr "CasasEmConstrução"
-
-msgid "4. Houses: In construction"
-msgstr "4. Casas: em construção"
-
-msgid "5. Houses: Vacant"
-msgstr "5. Casas: vazias"
-
-msgid "6. Houses: Inhabited"
-msgstr "6. Casas: desabitadas"
-
-msgid "7. Institution: Special or legal name"
-msgstr "7. Instituição: nome especial ou legal"
-
-msgid "Buildings"
-msgstr "Imóveis"
-
-msgid "8. Institution: Number of buildings"
-msgstr "8. Instituição: número de imóveis"
-
-msgid "9. Number of families in house or institution"
-msgstr "9. N.º de famílias na casa ou instituição"
-
-msgid "Rooms"
-msgstr "Divisões"
-
-msgid "10. Number of rooms in house or institution for each famiy"
-msgstr "10. N.º de divisões para cada família na casa ou instituição"
-
-msgid "Inmates"
-msgstr "Prisioneiros"
-
-msgid "11. Number of inmates in institution"
-msgstr "11. N.º de prisioneiros na instituição"
-
-msgid "OwnedAcres"
-msgstr "HectaresPossuídos"
-
-msgid "12. Real Estate Owned: Grand total of acres"
-msgstr "12. Imobiliário próprio: total de hectares"
-
-msgid "OwnedLots"
-msgstr "LotesPróprios"
-
-msgid "13. Real Estate Owned: Number of town or village lots"
-msgstr "13. Imobiliário próprio: n.º de lotes na localidade"
-
-msgid "OwnedHouses"
-msgstr "CasasPróprias"
-
-msgid "14. Real Estate Owned: Number of dwelling houses"
-msgstr "14. Imobiliário próprio: n.º de casas de habitação"
-
-msgid "OwnedStores"
-msgstr "LojasPróprias"
-
-msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
-msgstr "15. Imobiliário próprio: n.º de lojas, armazéns, etc."
-
-msgid "OwnedBars"
-msgstr "CeleirosPróprios"
-
-msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
-msgstr "16. Imobiliário próprio: n.º de celeiros, estábulos, etc."
-
-msgid "OwnedSilos"
-msgstr "SilosPróprios"
-
-msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
-msgstr "17. Imobiliário próprio: n.º de silos e capacidade em pés cúbicos"
-
-msgid "OwnedFactories"
-msgstr "FábricasPróprias"
-
-msgid "18. Real Estate Owned: Number of manufacturing establishments"
-msgstr "18. Imobiliário próprio: n.º de fábricas"
-
-msgid "LeasedAcres"
-msgstr "HectaresArrendados"
-
-msgid "19. Real Estate Leased: Grand total of acres"
-msgstr "19. Imobiliário próprio: total de hectares"
-
-msgid "LeasedLots"
-msgstr "LotesArrendados"
-
-msgid "20. Real Estate Leased: Number of town or village lots"
-msgstr "20. Imobiliário arrendado: n.º de lotes na localidade"
-
-msgid "LeasedHouses"
-msgstr "CasasArrendadas"
-
-msgid "21. Real Estate Leased: Number of dwelling houses"
-msgstr "21. Imobiliário arrendado: n.º de casas de habitação"
-
-msgid "LeasedStores"
-msgstr "LojasArrendadas"
-
-msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
-msgstr "22. Imobiliário arrendado: n.º de lojas, armazéns, etc."
-
-msgid "LeasedBarns"
-msgstr "CeleirosArrendados"
-
-msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
-msgstr "23. Imobiliário arrendado: n.º de celeiros, estábulos, e outros anexos"
-
-msgid "LeasedSilos"
-msgstr "SilosArrendados"
-
-msgid "24. Real Estate Leased: Number of silos and capacity in cubic feet"
-msgstr "24. Imobiliário arrencado: n.º de silos e capacidade em pés cúbicos"
-
-msgid "LeasedFactories"
-msgstr "Fábricas arrendadas"
-
-msgid "25. Real Estate Leased: Number of manufacturing establishments"
-msgstr "25.Imobiliário arrendado: n.º de fábricas"
-
-msgid "Denomination"
-msgstr "Denominação"
-
-msgid "26. Church or place of worship: Religious denomination"
-msgstr "26. Igreja ou local de culto: denominação religiosa"
-
-msgid "Communicants"
-msgstr "Comunicantes"
-
-msgid "27. Church or place of worship: Number of communicants"
-msgstr "27. Igreja ou local de culto: n.º de comunicantes"
-
-msgid "Seating"
-msgstr "Sentados"
-
-msgid "28. Church or place of worship: Seating capacity"
-msgstr "28. Igreja ou local de culto: lugares sentados"
-
-msgid "SSDenomination"
-msgstr "DenominaçãoCatequese"
-
-msgid "29. Sunday School: Religious Denomination"
-msgstr "29. Catequese: denominação religiosa"
-
-msgid "SSTeachers"
-msgstr "CatequeseProfessores"
-
-msgid "30. Sunday School: Number of officers and teachers"
-msgstr "30. Catequese: n.º de oficiantes e professores"
-
-msgid "SSScholars"
-msgstr "CatequeseEstudiosos"
-
-msgid "31. Sunday School: Number of Scholars"
-msgstr "31. Catequese: n.º de estudiosos"
-
-msgid "SchoolRooms"
-msgstr "SalasAula"
-
-msgid "32. School: Number of rooms"
-msgstr "32. Escola: n.º de salas"
-
-msgid "SchoolTeachers"
-msgstr "Professores"
-
-msgid "33. School: Number of teachers"
-msgstr "33. Escola: n.º de professores"
-
-msgid "SchoolStudents"
-msgstr "Alunos"
-
-msgid "34. School: Number of Scholars"
-msgstr "34. Escola: n.º de alunos"
-
-msgid "DateVisit"
-msgstr "DataVisita"
-
-msgid "35. Date of visit"
-msgstr "35. Data da visita"
-
-msgid "Reason"
-msgstr "Motivo"
-
-msgid "36. The reason, if not enumerated on first visit"
-msgstr "36. O motivo, se não descrito na 1ª visita"
-
-msgid "DateEnum"
-msgstr "DataDesc"
-
-msgid "37. Date when enumerated"
-msgstr "37. Data de descrição"
-
-msgid "1. No. of family in order of visitation"
-msgstr "1. N.º da família por ordem de visita"
-
-msgid "2. Name of each person in the family"
-msgstr "2. Nome de cada indivíduo na família"
-
-msgid "3.Relation to head of family"
-msgstr "3. Parentesco com o chefe de família"
-
-msgid "5. Married, single, widowed or divorced"
-msgstr "5. Casado, solteiro, viúvo, ou divorciado"
-
-msgid "6. Age"
-msgstr "6. Idade"
-
-msgid "7. Country or place of birth"
-msgstr "7. País ou local de nascimento"
-
-msgid "8. Year of immigration to Canada"
-msgstr "8. Ano de imigração para o Canadá"
-
-msgid "PostOffice"
-msgstr "PostoCorreios"
-
-msgid "9. Post office address"
-msgstr "9. Endereço do posto de correios"
-
-msgid "10. Location: Section"
-msgstr "10. Local: secção"
-
-msgid "11. Location: Township"
-msgstr "11. Local: localidade"
-
-msgid "12. Location: Range"
-msgstr "12. Local: sector"
-
-msgid "Meridian"
-msgstr "Meridiano"
-
-msgid "13. Location: Meridian"
-msgstr "13. Local: meridiano"
-
-msgid "14. Livestock: Horses, all ages"
-msgstr "14. Gado: cavalos, todas as idades"
-
-msgid "Cows"
-msgstr "Vacas"
-
-msgid "15. Livestock: Milch cows"
-msgstr "15. Gado: vacas leiteiras"
-
-msgid "16. Other horned or meat cattle, all ages"
-msgstr "16. Outro gado bovino, todas as idades"
-
-msgid "17. Sheep and lambs, all ages"
-msgstr "17. Ovelhas e borregos, todas as idades"
-
-msgid "18. Hogs and pigs, all ages"
-msgstr "18. Porcos, todas as idades"
-
-msgid "4. Place of habitation"
-msgstr "4. Local de habitação"
-
-msgid "5. Sex"
-msgstr "5. Sexo"
-
-msgid "8. Month of birth"
-msgstr "8. Mês de nascimento"
-
-msgid "16. Chief occupation or trade"
-msgstr "16. Profissão ou negócio principais"
-
-msgid "OtherEmployment"
-msgstr "OutroEmprego"
-
-msgid "18. Employment other than at chief trade or occupation, if any"
-msgstr "18. Outro emprego além do principal, se existir"
-
-msgid "22. State where person employed"
-msgstr "22. estado onde está empregado"
-
-msgid "WeeksOccupation"
-msgstr "SemanasProfissão"
-
-msgid "23. Weeks employed in 1910 at chief occupation or trade"
-msgstr "23. Semanas no emprego principal em 1910"
-
-msgid "WeeksOther"
-msgstr "SemanasOutro"
-
-msgid "24. Weeks employed in 1910 at other than chief occupation or trade"
-msgstr "24. Semanas noutro emprego em 1910"
-
-msgid "HoursOccupation"
-msgstr "HorasProfissão"
-
-msgid "25. Hours of working time per week at chief occupation"
-msgstr "25. Horas semanais de trabalho no emprego principal"
-
-msgid "HoursOther"
-msgstr "HorasOutro"
-
-msgid "26. Hours of working time per week at other occupation, if any"
-msgstr "26. Horas semanais de trabalho noutro emprego, se existir"
-
-msgid "27. Total earnings in 1910 from chief occupation or trade"
-msgstr "27. Ganhos totais do emprego principal em 1910"
-
-msgid "28. Total earnings in 1910 from other than chief occupation or trade"
-msgstr "28. Ganhos totais com outros empregos em 1910"
-
-msgid "Wages"
-msgstr "Salários"
-
-msgid "29. Rate of earnings per hour when employed by the hour-Cents"
-msgstr "29. Taxa de ganhos por hora quando empregado por hour-Cents"
-
-msgid "InsuranceLife"
-msgstr "SeguroVida"
-
-msgid "30. Insurance: Upon life"
-msgstr "30. Seguro: vida"
-
-msgid "InsuranceAccident"
-msgstr "SeguroAcidente"
-
-msgid "31. Insurance: Against accident or illness"
-msgstr "31. Seguro: acidentes ou doença"
-
-msgid "InsuranceCost"
-msgstr "SeguroCusto"
-
-msgid "32. Insurance: Cost of insurance in census year"
-msgstr "32. Seguro: custo dos seguros no ano do censo"
-
-msgid "33. Months at school in 1910"
-msgstr "33. Meses na escola em 1910"
-
-msgid "34. Can Read"
-msgstr "34. Sabe ler"
-
-msgid "35. Can Write"
-msgstr "35. Sabe escrever"
-
-msgid "36. Language commonly spoken"
-msgstr "36. Linguagem falada habitual"
-
-msgid "SchoolCost"
-msgstr "CustoEscola"
-
-msgid ""
-"37. Cost of education in 1910 for persons over 16 years of age at College, "
-"Convent or University"
-msgstr ""
-"37. Custo da educação em 1910 para indivíduos acima de 16 anos em "
-"Faculdades, Conventos ou Universidades"
-
-msgid "38. Blind"
-msgstr "39. Cegos"
-
-msgid "39. Deaf and dumb"
-msgstr "39. Surdos e mudos"
-
-msgid "40. Crazy or lunatic"
-msgstr "40. Lunáticos"
-
-msgid "41. Idiotic or silly"
-msgstr "40. Idiotas ou patetas"
-
-msgid "1. House"
-msgstr "1. Casa"
-
-msgid "Dwelling house"
-msgstr "Casa de habitação"
-
-msgid "2. Family"
-msgstr "2. Família"
-
-msgid "Family or household"
-msgstr "Família ou agregado familiar"
-
-msgid "3. Name"
-msgstr "3. Nome"
-
-msgid "Name of each person in family"
-msgstr "Nome de cada indivíduo na família"
-
-msgid "5. Relation to head of family"
-msgstr "5. Parentesco com o chefe de família"
-
-msgid "6. Single, married, widowed, divorced or legally separated"
-msgstr "6. Solteiros, casados, viúvos, divorciados ou separados judicialmente"
-
-msgid "7. Month of birth"
-msgstr "7. Mês de nascimento"
-
-msgid "8. Age at last birthday"
-msgstr "8. Idade ao último aniversário"
-
-msgid "9. Country or place of birth"
-msgstr "9. País ou local de nascimento"
-
-msgid "10. Racial or tribal origin"
-msgstr "10. Origem racial ou tribal"
-
-msgid "11. Religion"
-msgstr "11. Religião"
-
-msgid "12. Months at school in 1910"
-msgstr "12. Meses na escola em 1910"
-
-msgid "13. Can Read"
-msgstr "13. Sabe ler"
-
-msgid "14. Can Write"
-msgstr "14. Sabe escrever"
-
-msgid "15. Language commonly spoken"
-msgstr "15. Linguagem falada habitual"
-
-msgid ""
-"16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or "
-"lunatic"
-msgstr ""
-"16. Enfermidades: a. cegos; b. surdos e mudos; c. idiotas ou patetas; d. "
-"lunáticos"
-
-msgid "1. Dwelling House"
-msgstr "1. Casa de habitação"
-
-msgid "2. Family, Household or Institution"
-msgstr "2. Família, agregado ou instituição"
-
-msgid "3. Name of each person in family, household or institution"
-msgstr "3. Nome de cada indivíduo na família, agregado ou instituição"
-
-msgid "MilitaryService"
-msgstr "ServiçoMilitar"
-
-msgid "4. Military Service"
-msgstr "4. Serviço militar"
-
-msgid "5. Place of Habitation: Township"
-msgstr "5. Local de habitação: localidade"
-
-msgid "6. Place of Habitation: Range"
-msgstr "6. Local de habitação: sector"
-
-msgid "7. Place of Habitation: Meridian"
-msgstr "7. Local de habitação: meridiano"
-
-msgid "8. Place of Habitation: Municipality"
-msgstr "8. Local de habitação: município"
-
-msgid "9. Relationship to head of family or household"
-msgstr "9. Parentesco com o chefe de família ou agregado"
-
-msgid "10. Sex"
-msgstr "10. Sexo"
-
-msgid "11. Single, married, widowed, divorced or legally separated"
-msgstr "11. Solteiros, casados, viúvos, divorciados ou separados judicialmente"
-
-msgid "12. Age at last birthday"
-msgstr "12. Idade ao último nascimento"
-
-msgid "13. Country or place of birth"
-msgstr "13. País ou local de nascimento"
-
-msgid "14. Religion"
-msgstr "14. Religião"
-
-msgid "15. Year of immigration to Canada"
-msgstr "15. Ano de imigração para o Canadá"
-
-msgid "16. Year of naturalization"
-msgstr "16. Ano de naturalização"
-
-msgid "17. Nationality"
-msgstr "17. Nacionalidade"
-
-msgid "18. Race or tribal origin"
-msgstr "18. Origem racial ou tribal"
-
-msgid "19. Can speak English"
-msgstr "19. Sabe falar inglês"
-
-msgid "20. Can speak French"
-msgstr "20. Sabe falar francês"
-
-msgid "OtherLanguage"
-msgstr "OutroIdioma"
-
-msgid "21. Other language spoken as mother tongue"
-msgstr "21. Outro idioma falado como língua-mãe"
-
-msgid "22. Can Read"
-msgstr "22. Sabe ler"
-
-msgid "23. Can Write"
-msgstr "23. Sabe escrever"
-
-msgid "24. Chief occupation or trade"
-msgstr "24. Emprego ou negócio principal"
-
-msgid "25. Employer, \"E\", Employee, \"W\""
-msgstr "25. Empregador, \"E\", Empregado, \"G\""
-
-msgid "EmploymentPlace"
-msgstr "LocalEmprego"
-
-msgid "26. State where person is employed"
-msgstr "26. Estado onde está empregado"
-
-msgid "Can read and write"
-msgstr "Sabe ler e escrever"
-
-msgid "Military"
-msgstr "Militares"
-
-msgid "Taxes"
-msgstr "Impostos"
-
-msgid "Type of roof"
-msgstr "Tipo de telhado"
-
-msgid "Arrived since"
-msgstr "Chegado desde"

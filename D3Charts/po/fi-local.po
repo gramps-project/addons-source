@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-04-20 04:09+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #, python-brace-format
@@ -63,42 +63,6 @@ msgstr "Kohdehakemisto uusille tiedostoille."
 msgid "The destination file name for html content."
 msgstr "HTML-tiedoston nimi."
 
-msgid "Ancestral Collapsible Tree"
-msgstr "Esivanhempien tiivistettävä puu"
-
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"Luo verkkosivun, jossa on esivanhempien graafinen esitys (SVG) "
-"tiivistettävänä puuna käyttäen D3.js JavaScript-kirjastoa."
-
-msgid "Descendant Indented Tree"
-msgstr "Jälkeläisten sisennetty sukupuu"
-
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-"Luo verkkosivun, jossa on jälkeläisten graafinen esitys (SVG) "
-"tiivistettävänä puuna käyttäen D3.js JavaScript-kirjastoa."
-
-msgid "Ancestral Fan Chart Options"
-msgstr "Esivanhempien viuhkakaavion valinnat"
-
-msgid "Paternal Background Color"
-msgstr "Isän taustaväri"
-
-msgid "RGB-color for paternal box background."
-msgstr "RGB-taustaväri isän laatikolle."
-
-msgid "Maternal Background"
-msgstr "Äidin taustaväri"
-
-msgid "RGB-color for maternal box background."
-msgstr "RGB-taustaväri äidin laatikolle."
-
 msgid "Ancestral Fan Chart"
 msgstr "Esivanhempien viuhkakaavio"
 
@@ -109,12 +73,11 @@ msgstr ""
 "Luo verkkosivun, jossa on graafinen esitys esi-isistä (SVG) viuhkakaaviona "
 "käyttäen D3.js JavaScript -kirjastoja."
 
-#, python-format
-msgid "See %(reference)s : %(spouse)s"
-msgstr "Katso %(reference)s : %(spouse)s"
-
 msgid "Generating report..."
 msgstr "Raporttia luodaan..."
+
+msgid "Descendant Indented Tree"
+msgstr "Jälkeläisten sisennetty sukupuu"
 
 msgid "Invalid Destination Directory"
 msgstr "Virheellinen kohdehakemisto"
@@ -318,3 +281,36 @@ msgstr "Tekstin kirjainkoko"
 
 msgid "The font size in pixels for biography body text."
 msgstr "Elämäkerran kirjainkoko pikseleinä."
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Luo verkkosivun, jossa on jälkeläisten graafinen esitys (SVG) "
+"tiivistettävänä puuna käyttäen D3.js JavaScript-kirjastoa."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Esivanhempien viuhkakaavion valinnat"
+
+msgid "Paternal Background Color"
+msgstr "Isän taustaväri"
+
+msgid "RGB-color for paternal box background."
+msgstr "RGB-taustaväri isän laatikolle."
+
+msgid "Maternal Background"
+msgstr "Äidin taustaväri"
+
+msgid "RGB-color for maternal box background."
+msgstr "RGB-taustaväri äidin laatikolle."
+
+msgid "Ancestral Collapsible Tree"
+msgstr "Esivanhempien tiivistettävä puu"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Luo verkkosivun, jossa on esivanhempien graafinen esitys (SVG) "
+"tiivistettävänä puuna käyttäen D3.js JavaScript-kirjastoa."

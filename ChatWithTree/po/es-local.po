@@ -1,0 +1,36 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Tree: '{}'"
+msgstr "Árbol: '{}'"
+
+msgid "Chat With Tree Interactive Addon"
+msgstr "Charla con extensión de árbol interactivo"
+
+msgid ""
+"Chat With Tree with the help of AI Large Language Model, needs litellm module"
+msgstr ""
+"Charla con árbol con la ayuda de AI Large Language Model, necesita módulo "
+"litellm"
+
+msgid "Chat With Tree"
+msgstr "Charlar con Árbol"
+
+msgid "Type a message..."
+msgstr "Teclee un mensaje…"
+
+msgid "Send"
+msgstr "Enviar"

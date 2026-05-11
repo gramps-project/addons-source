@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 17:04+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
 "PO-Revision-Date: 2026-01-04 20:01+0000\n"
 "Last-Translator: openSUSE Lietuviškai <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
@@ -18,18 +18,6 @@ msgstr ""
 "X-Poedit-Language: Lithuanian\n"
 "X-Poedit-Country: LITHUANIA\n"
 
-msgid "Select Form"
-msgstr "Pasirinkite formą"
-
-msgid "Form Gramplet"
-msgstr "Forma Gramplet"
-
-msgid "Forms"
-msgstr "Formos"
-
-msgid "Form"
-msgstr "Forma"
-
 msgid "New Form"
 msgstr "Nauja forma"
 
@@ -41,6 +29,21 @@ msgstr "Nuoroda:"
 
 msgid "Headings"
 msgstr "Antraštės"
+
+msgid "Form Gramplet"
+msgstr "Forma Gramplet"
+
+msgid "Forms"
+msgstr "Formos"
+
+msgid "Form"
+msgstr "Forma"
+
+msgid "Select Form"
+msgstr "Pasirinkite formą"
+
+msgid "SubTitle"
+msgstr "Paantraštė"
 
 msgid "Birthplace"
 msgstr "Gimimovieta"
@@ -170,6 +173,3 @@ msgstr "Šeimos galva"
 
 msgid "Total Children"
 msgstr "Iš viso vaikų"
-
-msgid "SubTitle"
-msgstr "Paantraštė"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,13 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 
 msgid "Avatar Generator Tool"
 msgstr "Herramienta de generación de avatares"
 
 msgid "A tool to add avatar pictures to your family tree"
-msgstr "Una herramienta para añadir avatares a su árbol genealógico"
+msgstr "Una herramienta para agregar avatares a su árbol genealógico"
 
 msgid "single image mode"
 msgstr "modo de imagen única"
@@ -28,6 +28,12 @@ msgstr "Elija cuantas imágenes desee usar."
 
 msgid "Image for people with unknown gender."
 msgstr "Imagen para personas de género desconocido."
+
+msgid "Image for males."
+msgstr "Imagen para masculinos."
+
+msgid "Image for females"
+msgstr "Imagen para femeninos"
 
 msgid "Select filter to restrict people"
 msgstr "Seleccione filtro para restringir las personas"
@@ -46,6 +52,28 @@ msgstr "Quitar imágenes de avatar…"
 
 msgid "INFO"
 msgstr "INF."
+
+msgid "No media was removed."
+msgstr "No se expulsó ningún medio."
+
+msgid "{} media references were removed from {} persons."
+msgstr "las referencias del medio {} fueron extraídas desde {} personas."
+
+msgid ""
+"\n"
+"{} HandleError occured, but were ignored."
+msgstr ""
+"\n"
+"{} HandleError ha sucedido, pero fue descartado."
+
+msgid "Add avatar images..."
+msgstr "Agrega imágenes de avatar…"
+
+msgid "{} avatar images were sucessfully added."
+msgstr "{} imágenes de avatar fue añadido correctamente."
+
+msgid "There was no avatar image to add. "
+msgstr "No hubo ninguna imagen de avatar para agregar. "
 
 msgid "All persons already had one."
 msgstr "Todas las personas ya tenían uno."

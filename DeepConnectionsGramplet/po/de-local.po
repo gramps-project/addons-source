@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-06-05 06:02+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "Deep Connections Gramplet"
 msgstr "Tiefe Verbindungen Gramplet"
@@ -24,11 +24,40 @@ msgstr ""
 msgid "Deep Connections"
 msgstr "Tiefe Verbindungen"
 
-msgid "Pause"
-msgstr "Pause"
+msgid "⏸ Pause"
+msgstr "⏸ Pause"
 
-msgid "Copy"
-msgstr "Kopieren"
+msgid "Pause the current search"
+msgstr "Aktuelle Suche pausieren"
+
+msgid "▶ Continue"
+msgstr "▶ Fortsetzen"
+
+msgid "Continue searching for more relations"
+msgstr "Weiter nach weiteren Beziehungen suchen"
+
+msgid "📋 Copy"
+msgstr "📋 Kopieren"
+
+msgid "Copy selected people to clipboard"
+msgstr "Ausgewählte Personen in die Zwischenablage kopieren"
+
+msgid "🗑 Clear"
+msgstr "🗑 Löschen"
+
+msgid "Clear all results and reset"
+msgstr "Alle Ergebnisse löschen und zurücksetzen"
+
+msgid "Ready to search"
+msgstr "Bereit für die Suche"
+
+#, python-brace-format
+msgid ""
+"Search Depth: {depth} | People Processed: {processed} | Queue Size: "
+"{queue_size}"
+msgstr ""
+"Suchtiefe: {depth} | Verarbeitete Personen: {processed} | "
+"Warteschlangengröße: {queue_size}"
 
 msgid "mentioned in note"
 msgstr "In Notiz erwähnt"
@@ -57,8 +86,17 @@ msgstr ""
 "\n"
 "   %s von "
 
+msgid "Error: No Home Person set"
+msgstr "Fehler: Keine Hauptperson festgelegt"
+
 msgid "No Active Person set."
 msgstr "Keine aktive Person festgelegt."
+
+msgid "Error: No Active Person set"
+msgstr "Fehler: Keine aktive Person festgelegt"
+
+msgid "Initializing search..."
+msgstr "Suche wird initialisiert..."
 
 msgid "Looking for relationship between\n"
 msgstr "Suche nach Beziehung zwischen\n"
@@ -70,6 +108,9 @@ msgstr "  <b>%s</b> (Hauptperson) und\n"
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (Aktive Person)...\n"
+
+msgid "Searching for connections..."
+msgstr "Nach Verbindungen suchen..."
 
 #, python-format
 msgid ""
@@ -86,10 +127,25 @@ msgstr ""
 "Angehalten.\n"
 "Klicke auf Weiter, um nach weiteren Beziehungen zu suchen.\n"
 
+msgid "Paused - Press Continue to search for more relations"
+msgstr "Angehalten – Klicke auf Weiter, um nach weiteren Beziehungen zu suchen"
+
 #, python-format
 msgid ""
 "\n"
-"Search completed. %d relations found."
+"Search completed. %d relation paths found."
 msgstr ""
 "\n"
-"Suche abgeschlossen. %d Beziehungen gefunden."
+"Suche abgeschlossen. %d Beziehungspfade gefunden."
+
+msgid "Search completed - {} relation paths found"
+msgstr "Suche abgeschlossen – {} Beziehungspfade gefunden"
+
+msgid "Error during search: {}"
+msgstr "Fehler bei der Suche: {}"
+
+msgid "Resuming search..."
+msgstr "Suche wird fortgesetzt..."
+
+msgid "Search interrupted by user"
+msgstr "Suche vom Benutzer unterbrochen"

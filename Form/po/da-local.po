@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-09-30 08:02+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-04-28 18:11+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -12,25 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
-
-msgid "Select Form"
-msgstr "Vælg formular"
-
-msgid "Form Gramplet"
-msgstr "Form Gramplet"
-
-msgid "Gramplet interface for Forms"
-msgstr "Gramplet interface til formular"
-
-msgid "Forms"
-msgstr "Formularer"
-
-msgid "Order"
-msgstr "Rækkefølge"
-
-msgid "Form"
-msgstr "Formular"
+"X-Generator: Weblate 5.17.1-dev\n"
 
 #, python-format
 msgid "Form: %s"
@@ -48,74 +30,32 @@ msgstr "Henvisning:"
 msgid "Headings"
 msgstr "Overskrifter"
 
-msgid "Sex"
-msgstr "Køn"
+msgid "Form Gramplet"
+msgstr "Form Gramplet"
 
-msgid "Horses"
-msgstr "Heste"
+msgid "Gramplet interface for Forms"
+msgstr "Gramplet interface til formular"
 
-msgid "Milch Cows"
-msgstr "MalkeKvæg"
+msgid "Forms"
+msgstr "Formularer"
 
-msgid "Sheep"
-msgstr "Får"
+msgid "Order"
+msgstr "Rækkefølge"
 
-msgid "Blind"
-msgstr "Blind"
+msgid "Form"
+msgstr "Formular"
 
-msgid "Idiotic"
-msgstr "Idiotisk"
-
-msgid "Rank"
-msgstr "Rang"
-
-msgid "Institution"
-msgstr "Institution"
-
-msgid "Race"
-msgstr "Race"
-
-msgid "Township"
-msgstr "Byområde"
-
-msgid "Section"
-msgstr "Sektion"
-
-msgid "Read"
-msgstr "Læs"
-
-msgid "Write"
-msgstr "Skrive"
-
-msgid "Relation"
-msgstr "Slægtskab"
-
-msgid "Condition"
-msgstr "Kondition"
+msgid "Select Form"
+msgstr "Vælg formular"
 
 msgid "Schedule"
 msgstr "Skedulering"
 
-msgid "Ancestry"
-msgstr "Aner"
-
-msgid "in"
-msgstr "i"
-
-msgid "of"
-msgstr "af"
-
-msgid "Where Born"
-msgstr "Hvor født"
-
-msgid "Employer"
-msgstr "Arbejdsgiver"
-
-msgid "Nationality"
-msgstr "Nationalitet"
-
 msgid "EnumDistrict"
 msgstr "Optællingsområde"
+
+msgid "Township"
+msgstr "Byområde"
 
 msgid "Comprising"
 msgstr "Indeholder"
@@ -625,6 +565,9 @@ msgstr "Tyre"
 msgid "45. Bulls, Oxen or Steers"
 msgstr "45. Tyre, Okser eller Steers"
 
+msgid "Milch Cows"
+msgstr "MalkeKvæg"
+
 msgid "46. Milch Cows"
 msgstr "46. Malkekvæg"
 
@@ -634,8 +577,14 @@ msgstr "Kalve"
 msgid "47. Calves or Heifers"
 msgstr "47. Kalve eller Kvier"
 
+msgid "Horses"
+msgstr "Heste"
+
 msgid "48. Horses of all ages"
 msgstr "48. Heste i alle aldre"
+
+msgid "Sheep"
+msgstr "Får"
 
 msgid "49. Sheep"
 msgstr "49. Får"
@@ -766,6 +715,9 @@ msgstr "DøvStum"
 msgid "20. Deaf and Dumb"
 msgstr "20. Døv og Stum"
 
+msgid "Blind"
+msgstr "Blind"
+
 msgid "21. Blind"
 msgstr "21. Blind"
 
@@ -873,6 +825,9 @@ msgstr "6. Familier"
 
 msgid "7. Names"
 msgstr "7. Navne"
+
+msgid "Sex"
+msgstr "Køn"
 
 msgid "8. Sex"
 msgstr "8. Køn"
@@ -985,6 +940,9 @@ msgstr "8. Alder"
 msgid "9. Married or Widowed"
 msgstr "9. Gift eller enke"
 
+msgid "Relation"
+msgstr "Slægtskab"
+
 msgid "10. Relationship to Head of Family"
 msgstr "10. Slægtskab med familieoverhovedet"
 
@@ -1008,6 +966,9 @@ msgstr "15. Trosretning"
 
 msgid "16. Profession, Occupation or Trade"
 msgstr "16. Profession eller beskæftigelse"
+
+msgid "Employer"
+msgstr "Arbejdsgiver"
 
 msgid "17. Employers"
 msgstr "17. Ansatte"
@@ -1108,8 +1069,14 @@ msgstr "12. År for emigrering til Canada, hvis immigrant"
 msgid "13. Year of naturalization, if formerly an alien"
 msgstr "14. År for statsborger, hvis tidligere udlænding"
 
+msgid "Race"
+msgstr "Race"
+
 msgid "14. Racial or tribal origin"
 msgstr "14. Race eller stammeoprindelse"
+
+msgid "Nationality"
+msgstr "Nationalitet"
 
 msgid "15. Nationality"
 msgstr "15. Nationalitet"
@@ -1181,8 +1148,14 @@ msgstr "SkoleMåneder"
 msgid "28. Months at school in 1910"
 msgstr "28. Måneder i skole i 1910"
 
+msgid "Read"
+msgstr "Læs"
+
 msgid "29. Can read"
 msgstr "29. Kan læse"
+
+msgid "Write"
+msgstr "Skrive"
 
 msgid "30. Can write"
 msgstr "30. Kan skrive"
@@ -1240,6 +1213,9 @@ msgstr "6. Huse: Ledige"
 
 msgid "6. Houses: Inhabited"
 msgstr "6. Huse: Ubeboede"
+
+msgid "Institution"
+msgstr "Institution"
 
 msgid "7. Institution: Special or legal name"
 msgstr "7. Institution: Særligt eller lovligt navn"
@@ -1448,6 +1424,9 @@ msgstr "PostKontor"
 msgid "9. Post office address"
 msgstr "9. Postkontor adresse"
 
+msgid "Section"
+msgstr "Sektion"
+
 msgid "10. Location: Section"
 msgstr "10. Lokation: Sektion"
 
@@ -1587,6 +1566,9 @@ msgstr "39. Døv og stum"
 msgid "40. Crazy or lunatic"
 msgstr "40. Tosset eller sindsyg"
 
+msgid "Idiotic"
+msgstr "Idiotisk"
+
 msgid "41. Idiotic or silly"
 msgstr "41. Idiot eller dum"
 
@@ -1604,3 +1586,21 @@ msgstr "Familie eller hushold"
 
 msgid "3. Name"
 msgstr "3. Navn"
+
+msgid "Rank"
+msgstr "Rang"
+
+msgid "Condition"
+msgstr "Kondition"
+
+msgid "Ancestry"
+msgstr "Aner"
+
+msgid "in"
+msgstr "i"
+
+msgid "of"
+msgstr "af"
+
+msgid "Where Born"
+msgstr "Hvor født"

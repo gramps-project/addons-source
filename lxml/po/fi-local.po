@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-04-20 04:09+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "lxml"
@@ -30,21 +30,8 @@ msgstr "Gramplet etreen testaamiseen Gramps XML:n kanssa"
 msgid "Invalid timestamp"
 msgstr "Virheellinen aikaleima"
 
-msgid "No file parsed..."
-msgstr "Tiedostoa ei jäsennetty..."
-
-msgid "Number of editions back"
-msgstr "Palautettujen painosten määrä"
-
-msgid "Space character on filename"
-msgstr "Tiedostonimessä välilyönti"
-
-#, python-format
-msgid "Please fix space on \"%s\""
-msgstr "Korjaa väli kohdassa ”%s”"
-
-msgid "Sorry, no support for your OS yet!"
-msgstr "Valitettavasti käyttöjärjestelmällesi ei ole vielä tukea!"
+msgid "No file loaded..."
+msgstr "Tiedostoa ei ole ladattu..."
 
 msgid "Is it a compressed .gramps?"
 msgstr "Onko se pakattu .gramps?"
@@ -54,24 +41,18 @@ msgid "Cannot uncompress \"%s\""
 msgstr "Pakkausta ”%s” ei voi purkaa"
 
 #, python-format
-msgid ""
-"From:\n"
-" \"%(file1)s\"\n"
-" to:\n"
-" \"%(file2)s\".\n"
-msgstr ""
-"Tiedostosta:\n"
-" ”%(file1)s”\n"
-" tiedostoon:\n"
-" ”%(file2)s”.\n"
-
-#, python-format
 msgid "Cannot copy \"%s\""
 msgstr "\"%s\" ei voi kopioida"
 
+msgid "Sorry, no support for your OS yet!"
+msgstr "Valitettavasti käyttöjärjestelmällesi ei ole vielä tukea!"
+
+msgid "Parsing issue"
+msgstr "Jäsennysongelma"
+
 #, python-format
-msgid "XML: Last %s editions since %s, were at/on :\n"
-msgstr "XML: Viimeiset %s versiot %s:n jälkeen, olivat/on :\n"
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "Tiedoston \"%(file)s\" sisältöä ei voi jäsentää"
 
 #, python-format
 msgid ""
@@ -82,102 +63,6 @@ msgstr ""
 "\n"
 "XML: Tietueiden ja suhteiden lukumäärä:\t%s\n"
 "\n"
-
-#, python-format
-msgid ""
-"Number of tags : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Tagien määrä : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of tags : \n"
-"\t\t\t%s\n"
-msgstr ""
-"Tagit : \n"
-"\t\t\t%s\n"
-
-#, python-format
-msgid ""
-"Number of  events : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Tapahtumien määrä : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of persons : \n"
-"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
-msgstr ""
-"Henkilömäärä : \n"
-"\t\t\t%s\t|\t(%s) ja (%s)* sukunimeä\n"
-
-#, python-format
-msgid ""
-"Number of persons : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Henkilömäärä : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of families : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Perheitä : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of sources : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Lähteitä : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of citations : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Lainauksia : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of places : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Paikkoja : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of media objects : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Mediatiedostoja : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of repositories : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Arkistoja : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of notes : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Lisätietoja : \n"
-"\t\t\t%s\t|\t(%s)*\n"
 
 #, python-format
 msgid ""
@@ -207,15 +92,8 @@ msgstr "Python3 lxml puuttuu"
 msgid "Please, try to install \"python3 lxml\" package."
 msgstr "Yritä asentaa ”python3 lxml” -paketti."
 
-msgid "No file loaded..."
-msgstr "Tiedostoa ei ole ladattu..."
-
 msgid "XSD validation (lxml)"
 msgstr "XSD-tarkistus (lxml)"
-
-#, python-format
-msgid "Cannot validate \"%(file)s\" !"
-msgstr "\"%(file)s\" ei voi tarkistaa!"
 
 #, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
@@ -224,24 +102,6 @@ msgstr "xmllint: ohita DTD-tarkistus kohteelle \"%(file)s\""
 #, python-format
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
 msgstr "xmllint: ohita RelaxNG-tarkistus kohteelle \"%(file)s\""
-
-msgid "Parsing issue"
-msgstr "Jäsennysongelma"
-
-#, python-format
-msgid "Cannot parse content of \"%(file)s\""
-msgstr "Tiedoston \"%(file)s\" sisältöä ei voi jäsentää"
-
-msgid "Gramps version"
-msgstr "Gramps versio"
-
-#, python-format
-msgid ""
-"Wrong namespace\n"
-"Need: %s"
-msgstr ""
-"Virheellinen nimitila\n"
-"Tarvitaan: %s"
 
 msgid "RelaxNG validation"
 msgstr "RelaxNG tarkistus"
@@ -263,17 +123,6 @@ msgstr "Tiedoston jäsentäminen ..."
 msgid "Missing header"
 msgstr "Otsikko puuttuu"
 
-msgid ""
-"Not a valid .gramps.\n"
-"Cannot run the gramplet...\n"
-"Please, try to use a .gramps\n"
-"generated by Gramps 4.x."
-msgstr ""
-"Ei kelvollinen .gramps.\n"
-"Grampletia ei voi ajaa...\n"
-"Yritä käyttää .gramps\n"
-"joka on luotu Gramps 4.x:llä."
-
 msgid "0"
 msgstr "0"
 
@@ -289,28 +138,8 @@ msgstr " Grampsilla "
 msgid "Period: "
 msgstr "Jakso: "
 
-msgid " entries for surname(s); no frequency yet"
-msgstr " merkinnät sukunimille; ei vielä frekvenssiä"
-
-msgid " entries for place(s)"
-msgstr " paikan (paikkojen) merkinnät"
-
-msgid " note(s)"
-msgstr " lisätietodot"
-
-msgid " source(s)"
-msgstr " lähteet"
-
 msgid "Gallery.html"
 msgstr "Galleria.html"
-
-#, python-format
-msgid "2. Has generated a media index on \"%(file)s\".\n"
-msgstr "2. On luonut mediahakemiston kohteelle \"%(file)s\".\n"
-
-#, python-format
-msgid "3. Has written entries into \"%(file)s\".\n"
-msgstr "3. On kirjoitettu merkintöjä kohtaan \"%(file)s\".\n"
 
 msgid "Matches XSD schema."
 msgstr "Vastaa XSD-skeemaa."
@@ -341,17 +170,3 @@ msgstr "Norja"
 
 msgid "Portugal"
 msgstr "Portugali"
-
-#, python-format
-msgid "1. Has generated \"%s\".\n"
-msgstr "1. Tuottanut \"%s\".\n"
-
-#, python-format
-msgid ""
-"Try to open\n"
-" \"%s\"\n"
-" into your prefered web navigator ..."
-msgstr ""
-"Yritä avata\n"
-" \"%s\"\n"
-" suosikkiselaimessasi ..."

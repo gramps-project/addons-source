@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2026-04-17 07:09+0000\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "Display relations and distances with the home person"
 msgstr "Zobraziť vzťahy a vzdialenosti s domácou osobou"
@@ -27,13 +27,19 @@ msgid "Select filter to restrict people"
 msgstr "Vyberte filter na obmedzenie osôb"
 
 msgid "Filter rule"
-msgstr "Pravidlo filtra"
+msgstr "Pravidlo filtrovania"
 
 msgid "Select the filter rule"
-msgstr "Výber pravidla filtra"
+msgstr "Vyberte pravidlo filtrovania"
 
 msgid "Deep generations"
-msgstr "Ďaleké generácie"
+msgstr "Hĺbka generácií"
+
+msgid "How deep should we go?"
+msgstr "Ako hlboko by sme mali ísť?"
+
+msgid "Rel_id"
+msgstr "ID_vzťahu"
 
 msgid "Relation"
 msgstr "Vzťah"
@@ -45,10 +51,10 @@ msgid "down"
 msgstr "dole"
 
 msgid "Common MRA"
-msgstr "Spoločný MRA"
+msgstr "Spoločný najbližší predok"
 
 msgid "Rank"
-msgstr "Úroveň"
+msgstr "Poradie"
 
 msgid "Period"
 msgstr "Obdobie"
@@ -68,11 +74,17 @@ msgstr "Rozmanitosť priezvisk"
 msgid "Save"
 msgstr "Uložiť"
 
+msgid "Quit"
+msgstr "Ukončiť"
+
 msgid "No default person set."
 msgstr "Nie je nastavená žiadna východzia osoba."
 
 msgid "Please wait, filtering..."
-msgstr "Prosím, počkajte, filtrujem..."
+msgstr "Počkajte prosím, prebieha filtrovanie..."
+
+msgid "Network Metrics"
+msgstr "Metriky siete"
 
 msgid "Enabled"
 msgstr "Zapnuté"
@@ -86,6 +98,20 @@ msgstr "Zapnúť alebo vypnúť metriky rodinnej siete"
 msgid "Generating relation map..."
 msgstr "Generovanie mapy vzťahov..."
 
+msgid ""
+"\n"
+"Filtering\tCurrent match\t\tTime of pass\n"
+msgstr ""
+"\n"
+"Filtrovanie\tAktuálna zhoda\t\tČas prechodu\n"
+
+#, python-format
+msgid "%d/%d \t\t %d/%d \t\t%f"
+msgstr "%d/%d \t\t %d/%d \t\t%f"
+
+msgid "Total of handled entries : {len(self.stats_list)}\n"
+msgstr "Celkový počet spracovaných záznamov : {len(self.stats_list)}\n"
+
 msgid "Folder Chooser"
 msgstr "Výber priečinka"
 
@@ -96,10 +122,20 @@ msgid "Please, select a folder"
 msgstr "Prosím, vyberte priečinok"
 
 msgid "Foldername need"
-msgstr "Názov priečinka je potrebný"
+msgstr "Je potrebné zadať názov priečinka"
 
 msgid "Foldername will be used for saving the content."
 msgstr "Názov priečinka bude použitý pre ukladanie obsahu."
+
+msgid "Did you set a foldername?"
+msgstr "Nastavili ste názov priečinka?"
+
+msgid "Cannot set a valid location."
+msgstr "Nie je možné nastaviť platné umiestnenie."
+
+#, python-brace-format
+msgid "Data saved to : {filename}"
+msgstr "Údaje uložené do : {filename}"
 
 msgid "Failed to save data."
 msgstr "Údaje sa nepodarilo uložiť."
@@ -109,3 +145,6 @@ msgstr "Mapa vzťahov a záložka"
 
 msgid "Enable family network metrics"
 msgstr "Zapnúť metriky rodinnej siete"
+
+msgid "Whether to calculate and display family network metrics."
+msgstr "Či sa majú vypočítať a zobraziť metriky rodinnej siete."

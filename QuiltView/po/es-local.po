@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,81 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Quilt Chart"
+msgstr "Salir de Mapa"
+
+msgid "The view shows a quilt chart visualisation of a family tree"
+msgstr ""
+"La vista muestra un mapa acolchado de visualización de un árbol de familia"
+
+msgid "Quilt chart"
+msgstr "Diagrama de la colcha"
+
+msgid "Select the name for which you want to see."
+msgstr "Seleccione el nombre para el cual desea ver."
+
+msgid "Clear the entry field in the name selection box."
+msgstr "Purgar el campo de apunte dentro de la caja de selección del nombre."
+
+msgid "Nothing is selected"
+msgstr "No hay nada seleccionado"
+
+#, python-format
+msgid ""
+"You have %(filter)d filtered people, %(count)d people shown on the tree and "
+"%(total)d people in your database."
+msgstr ""
+"Has filtrado %(filter)d personas, las %(count)d personas mostradas en el "
+"árbol y %(total)d personas en su base de datos."
+
+msgid "Loading individuals"
+msgstr "Cargando individuales"
+
+msgid "Loading the data"
+msgstr "Cargando los datos"
+
+msgid "About Quilt View"
+msgstr "Acerca de Quilt View"
+
+msgid "Edit tags"
+msgstr "Editar lengüetas"
+
+msgid "Set as home person"
+msgstr "Establece como persona inicial"
+
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Añadir Etiquetas a persona (%s)"
+
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Añadir Etiquetas a familia (%s)"
+
+msgid "Printing the tree"
+msgstr "Impresión del árbol"
+
+#, python-format
+msgid "Need to print %(pages)s pages (%(format)s format)"
+msgstr "Se necesita imprimir %(pages)s páginas en formato (%(format)s)"
+
+msgid ""
+"Center on the selected person.\n"
+"The new position of the person will be near the top left corner."
+msgstr ""
+"Centro en la persona seleccionada.\n"
+"La posición nueva de la persona estará cerca de la esquina superior "
+"izquierda."
+
+msgid "The path color"
+msgstr "El color de la ruta"
+
+msgid "The selected person color"
+msgstr "El color de la persona seleccionada"
+
+msgid "The path transparency"
+msgstr "La transparencia de ruta"
 
 msgid "General options"
 msgstr "Opciones generales"

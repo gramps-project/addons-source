@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,16 +12,98 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
+msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
+
+msgid "Replace existing references to the person being assigned without asking"
+msgstr ""
+"Reemplaza referencias existentes a la persona que es asignada sin solicitar"
 
 msgid "Face detection"
 msgstr "Detección de rostro"
 
+msgid "Minimum face width (px)"
+msgstr "Ancho facial mínimo (px)"
+
+msgid "Minimum face height (px)"
+msgstr "Altura mínima del rostro (px)"
+
+msgid "Detect faces inside existing boxes"
+msgstr "Detectar rostros dentro de las cajas existentes"
+
+msgid "Sensitivity (1 min .. 20 max)"
+msgstr "Sensibilidad (1 min .. 20 max)"
+
+msgid "Add Person"
+msgstr "Agregar Persona"
+
+msgid "Clear Reference"
+msgstr "Vaciar Referencia"
+
 msgid "Remove Selection"
 msgstr "Quitar selección"
+
+msgid "Edit referenced Person"
+msgstr "Editar Persona referenciada"
+
+msgid "Zoom In"
+msgstr "Ampliar"
+
+msgid "Zoom Out"
+msgstr "Reducir"
+
+msgid "Detect faces"
+msgstr "Rostros detectados"
+
+msgid "Detect faces (OpenCV module required)"
+msgstr "Detecta rostros (Módulo OpenCV requerido)"
+
+msgid "XMP Region Name"
+msgstr "Nombre de Región XMP"
+
+msgid "Set as active person"
+msgstr "Establecer como persona activa"
 
 msgid "_Select"
 msgstr "_Seleccionar"
 
+#, python-brace-format
+msgid "Replace to {0}"
+msgstr "Reemplaza a {0}"
+
 msgid "Detecting faces..."
 msgstr "Detectando rostros…"
+
+msgid "Detection finished"
+msgstr "Detección finalizada"
+
+#, python-brace-format
+msgid "Another region of this image is associated with {name}. Remove it?"
+msgstr "Otra región de esta imagen está asociada con {name}. ¿Lo retiro?"
+
+#, python-brace-format
+msgid ""
+"{count} other regions of this image are associated with {name}. Remove them?"
+msgstr ""
+"{count} otras regiones de esta imagen están asociadas con {name}. ¿Las "
+"retiro?"
+
+#, python-format
+msgid "Male person|Dead at %s"
+msgstr "Fallecido el %s"
+
+#, python-format
+msgid "Female person|Dead at %s"
+msgstr "Fallecida el %s"
+
+#, python-format
+msgid "Unknown gender person|Dead at %s"
+msgstr "Fallecido/a en %s"
+
+msgid "Photo Tagging"
+msgstr "Etiquetado fotográfico"
+
+msgid "Gramplet for tagging people in photos"
+msgstr "Gramplet para etiquetar a la gente en fotos"

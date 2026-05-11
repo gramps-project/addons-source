@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2026-04-17 07:09+0000\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
+
+msgid ""
+"LifeLineChartView dependencies are missing. It is not possible to use this "
+"plugin without them."
+msgstr ""
+"Chýbajú závislosti pre LifeLineChartView. Bez nich nie je možné tento plugin "
+"používať."
+
+#, python-brace-format
+msgid "cursor position at {date}"
+msgstr "pozícia kurzora na {date}"
 
 msgid "Hide person"
 msgstr "Skryť osobu"
@@ -26,11 +37,20 @@ msgstr "Zobraziť súrodencov"
 msgid "Hide siblings"
 msgstr "Skryť súrodencov"
 
+msgid "Show ancestors above "
+msgstr "Zobraziť predkov nad "
+
 msgid "General Layout"
 msgstr "Všeobecné rozloženie"
 
+msgid "Life Line Chart"
+msgstr "Graf Life Line"
+
 msgid "Zoom in"
 msgstr "Priblížiť"
+
+msgid "Ctrl"
+msgstr "Ctrl"
 
 msgid "Mouse wheel"
 msgstr "Koliesko myši"
@@ -44,136 +64,277 @@ msgstr "Zväčšiť na originálnu veľkosť"
 msgid "Zoom to best fit"
 msgstr "Zväčšiť na optimálnu veľkosť"
 
+msgid "Rebuild data cache"
+msgstr "Obnoviť vyrovnávaciu pamäť údajov"
+
+msgid "Revert the placement and person selection"
+msgstr "Vrátiť umiestnenie a výber osoby"
+
+msgid "Open Life Line Chart help"
+msgstr "Otvoriť pomoc ku grafu Life Line"
+
 msgid "Export View as SVG"
 msgstr "Exportovať zobrazenie ako SVG"
 
 msgid "Label Configuration"
-msgstr "Konfigurácia značiek"
+msgstr "Konfigurácia štítkov"
 
 msgid "Reset all settings"
 msgstr "Obnoviť všetky nastavenia"
 
+msgid "Life Line Ancestor Chart"
+msgstr "Graf predkov Life Line"
+
+msgid "Persons and their relation in a time based chart"
+msgstr "Osoby a ich vzťahy v časovo orientovanom grafe"
+
+msgid "Life Line Descendant Chart"
+msgstr "Graf potomkov Life Line"
+
+msgid "Warp the chart shape"
+msgstr "Deformovať tvar grafu"
+
+msgid "The overall shape of the chart can be warped."
+msgstr "Celkový tvar grafu je možné deformovať."
+
+msgid "Normal grid shape"
+msgstr "Normálny tvar mriežky"
+
+msgid "Sine shape"
+msgstr "Sínusový tvar"
+
+msgid "Triangular shape"
+msgstr "Trojuholníkový tvar"
+
 msgid "Show photos"
 msgstr "Zobraziť fotografie"
 
+msgid "Photos of the individual are shown."
+msgstr "Fotografie jednotlivcov sú zobrazené."
+
+msgid "Photo size"
+msgstr "Veľkosť fotografie"
+
+msgid ""
+"Photos which are shown are fitted into a square of this extent. The size is "
+"given relative to the line thickness."
+msgstr ""
+"Fotografie, ktoré sú zobrazené, sú prispôsobené do štvorca tohto rozsahu. "
+"Veľkosť je udávaná relatívne k hrúbke čiary."
+
+msgid "Total height"
+msgstr "Celková výška"
+
+msgid "Total height of the whole chart."
+msgstr "Celková výška celého grafu."
+
+msgid "Relative line thickness"
+msgstr "Relatívna hrúbka čiary"
+
+msgid ""
+"The line thickness of an individual is given relatively to the horizontal "
+"step size."
+msgstr ""
+"Hrúbka čiary jednotlivca je udávaná relatívne k veľkosti horizontálneho "
+"kroku."
+
+msgid "Horizontal step size"
+msgstr "Veľkosť horizontálneho kroku"
+
+msgid ""
+"This is the distance from one line to another. This value is also used for "
+"scaling of other items."
+msgstr ""
+"Toto je vzdialenosť medzi jednotlivými čiarami. Táto hodnota sa používa aj "
+"na škálovanie ostatných prvkov."
+
 msgid "Show birth label"
-msgstr "Zobraziť značku narodenia"
+msgstr "Zobraziť štítok narodenia"
 
 msgid "Activate the birth label."
-msgstr "Aktivovať značku narodenia."
+msgstr "Aktivuje štítok narodenia."
+
+msgid "Birth label along path"
+msgstr "Štítok narodenia pozdĺž trajektórie"
+
+msgid "The birth label is aligned to the individual line."
+msgstr "Štítok narodenia je zarovnaný k čiare jednotlivca."
 
 msgid "Birth label rotation"
-msgstr "Otočenie značky narodenia"
+msgstr "Otočenie štítku narodenia"
 
 msgid "The birth label is written in a text frame rotated by this value."
 msgstr ""
-"Značka narodenia je napísaná v textovom rámčeku otočenom o túto hodnotu."
+"Štítok narodenia je napísaný v textovom rámčeku otočenom o túto hodnotu."
 
 msgid "Horizontal offset of birth label"
-msgstr "Vodorovný posun značky narodenia"
+msgstr "Vodorovný posun štítku narodenia"
 
 msgid ""
 "The birth label is moved horizontally by this value, which is given "
 "relatively to the font size."
 msgstr ""
-"Značka narodenia je posunutá vodorovne o túto hodnotu, ktorá je uvedená "
+"Štítok narodenia je posunutý vodorovne o túto hodnotu, ktorá je uvedená "
 "relatívne k veľkosti písma."
 
 msgid "Vertical offset of birth label"
-msgstr "Zvislý posun značky narodenia"
+msgstr "Zvislý posun štítku narodenia"
 
 msgid ""
 "The birth label is moved vertically by this value, which is given relatively "
 "to the font size."
 msgstr ""
-"Značka narodenia je posunutá zvislo o túto hodnotu, ktorá je uvedená "
+"Štítok narodenia je posunutý zvislo o túto hodnotu, ktorá je uvedená "
 "relatívne k veľkosti písma."
 
 msgid "Wrap words in birth label"
-msgstr "Zalamovať slová v značke narodenia"
+msgstr "Zalamovať slová v štítku narodenia"
 
 msgid "The birth label content is wrapped where possible."
-msgstr "Obsah značky narodenia je zalamovaný, kde je to možné."
+msgstr "Obsah štítku narodenia je zalamovaný, kde je to možné."
 
 msgid "Birth label anchor"
 msgstr "Kotva značky narodenia"
 
 msgid "Text alignment of the birth label."
-msgstr "Zarovnanie textu na značke narodenia."
+msgstr "Zarovnanie textu štítku narodenia."
 
 msgid "Center"
 msgstr "Na stred"
 
 msgid "Show death label"
-msgstr "Zobraziť značku úmrtia"
+msgstr "Zobraziť štítok úmrtia"
 
 msgid "Activate the death label."
-msgstr "Aktivovať značku úmrtia."
+msgstr "Aktivuje štítok úmrtia."
 
 msgid "Death label rotation"
-msgstr "Otočenie značky úmrtia"
+msgstr "Otočenie štítku úmrtia"
 
 msgid "The death label is written in a text frame rotated by this value."
-msgstr "Značka úmrtia je napísaná v textovom rámčeku otočenom o túto hodnotu."
+msgstr "Štítok úmrtia je napísaný v textovom rámčeku otočenom o túto hodnotu."
 
 msgid "Horizontal offset of death label"
-msgstr "Vodorovný posun značky úmrtia"
+msgstr "Vodorovný posun štítku úmrtia"
 
 msgid ""
 "The death label is moved horizontally by this value, which is given "
 "relatively to the font size."
 msgstr ""
-"Značka úmrtia je posunutá vodorovne o túto hodnotu, ktorá je uvedená "
+"Štítok úmrtia je posunutý vodorovne o túto hodnotu, ktorá je uvedená "
 "relatívne k veľkosti písma."
 
 msgid "Vertical offset of death label"
-msgstr "Zvislý posun značky úmrtia"
+msgstr "Zvislý posun štítku úmrtia"
 
 msgid ""
 "The death label is moved vertically by this value, which is given relatively "
 "to the font size."
 msgstr ""
-"Značka úmrtia je posunutá zvislo o túto hodnotu, ktorá je uvedená relatívne "
+"Štítok úmrtia je posunutý zvislo o túto hodnotu, ktorá je uvedená relatívne "
 "k veľkosti písma."
 
 msgid "Wrap words in death label"
-msgstr "Zalomiť slová v značke úmrtia"
+msgstr "Zalomiť slová v štítku úmrtia"
 
 msgid "The death label content is wrapped where possible."
-msgstr "Obsah značky úmrtia je zalamovaný, kde je to možné."
+msgstr "Obsah štítku úmrtia je zalamovaný, kde je to možné."
 
 msgid "Death label anchor"
-msgstr "Kotva značky úmrtia"
+msgstr "Kotva štítku úmrtia"
 
 msgid "Text alignment of the death label."
-msgstr "Zarovnanie textu značky narodenia."
+msgstr "Zarovnanie textu štítku úmrtia."
 
 msgid "Show marriage label"
-msgstr "Zobraziť značku sobáša"
+msgstr "Zobraziť štítok sobáša"
 
 msgid "Activate the marriage label."
-msgstr "Aktivovať značku sobáša."
+msgstr "Aktivuje štítok sobáša."
+
+msgid "Fade individual color"
+msgstr "Stmaviť farbu jednotlivcov"
+
+msgid "The color of the individuals is faded to black with increasing age."
+msgstr "Farba jednotlivcov sa s pribúdajúcim vekom stmavuje do čierna."
 
 msgid "Font name"
 msgstr "Názov písma"
 
 msgid "Name of the font family used for labels."
-msgstr "Názov typu písma použitého pre značky."
+msgstr "Názov typu písma použitého pre štítky."
 
 msgid "Relative font size"
 msgstr "Relatívna veľkosť písma"
 
+msgid "The font size is given relatively to the line thickness."
+msgstr "Veľkosť písma je uvedená relatívne k hrúbke čiary."
+
 msgid "Family shape"
 msgstr "Tvar rodiny"
+
+msgid "The shape of the families can be varied."
+msgstr "Tvar rodín môže byť rôzny."
+
+msgid "Rectangular"
+msgstr "Pravouhlý"
+
+msgid "Softer"
+msgstr "Jemný"
+
+msgid "Upper year minimum margin"
+msgstr "Minimálne horné rozpätie rokov"
+
+msgid ""
+"The upper bound of the chart is extended by at least this number of years."
+msgstr "Horné obmedzenie grafu je rozšírené minimálne o tento počet rokov."
+
+msgid "Lower year minimum margin"
+msgstr "Minimálne spodné rozpätie rokov"
+
+msgid ""
+"The lower bound of the chart is extended by at least this number of years."
+msgstr "Spodné obmedzenie grafu je rozšírené minimálne o tento počet rokov."
 
 msgid "Visualize connections"
 msgstr "Vizualizovať prepojenia"
 
+msgid ""
+"Visualize the connections between families and individuals. This is for "
+"debugging purposes."
+msgstr ""
+"Vizualizuje prepojenia medzi rodinami a jednotlivcami. Toto slúži na účely "
+"ladenia."
+
+msgid "Visualize ambiguous placement"
+msgstr "Vizualizovať nejednoznačné umiestnenie"
+
 msgid "Visualize automatically detected errors in the placement algorithm."
-msgstr "Vizualizovať automaticky zistené chyby v algoritme umiestnenia."
+msgstr "Vizualizuje automaticky zistené chyby v algoritme umiestnenia."
+
+msgid "Coloring of individuals"
+msgstr "Zafarbenie jednotlicov"
+
+msgid "There are different ways to determine the color of an individual."
+msgstr "Existujú rôzne spôsoby ako stanoviť farbu jednotlivca."
+
+msgid "Unique"
+msgstr "Jedinečný"
 
 msgid "Based on surname"
 msgstr "Na základe priezviska"
+
+msgid "Flip vertically"
+msgstr "Prevrátiť vertikálne"
+
+msgid "If active, the chart is flipped vertically."
+msgstr "Ak je aktívne, graf sa prevráti vertikálne."
+
+msgid "Line weighting"
+msgstr "Odstupňovanie čiar"
+
+msgid "The line width can be configured."
+msgstr "Šírku čiar je možné konfigurovať."
 
 msgid "none"
 msgstr "žiadne"
@@ -193,11 +354,35 @@ msgstr ""
 msgid "Maximum number of generations"
 msgstr "Maximálny počet generácií"
 
+msgid ""
+"if this number of generations has been reached, the algorithm doesn't go any "
+"deeper"
+msgstr "Ak sa dosiahne tento počet generácií, algoritmus už nepokračuje hlbšie"
+
+msgid "Fathers have the same color"
+msgstr "Otcovia majú rovnakú farbu"
+
+msgid ""
+"Starting from the root person, each father of an added individual has the "
+"same color as that individual."
+msgstr ""
+"Počnúc koreňovou osobou má každý otec pridaného jedinca rovnakú farbu ako "
+"tento jedinec."
+
 msgid "Maximum number of compression steps"
 msgstr "Maximálny počet krokov kompresie"
 
+msgid "Debugging of the compression algorithm. Abort after x steps."
+msgstr "Ladenie kompresného algoritmu. Prerušiť po x krokoch."
+
 msgid "Maximum number of flipping steps"
 msgstr "Maximálny počet krokov prevrátenia"
+
+msgid "Debugging of the flipping algorithm. Abort after x steps."
+msgstr "Ladenie algoritmu prevracania. Prerušiť po x krokoch."
+
+msgid "Compress the chart horizontally"
+msgstr "Komprimovať graf horizontálne"
 
 msgid ""
 "By default every individual has a unique horizontal slot. This can be "
@@ -208,21 +393,39 @@ msgstr ""
 "Pri mnohých generáciách to môže byť neefektívne. Tento algoritmus umožňuje "
 "viacerým ľuďom zdieľať horizontálny slot, ak sa neprekrývajú."
 
+msgid "Flip families to reduce horizontal connections"
+msgstr "Prehodiť rodiny na zníženie horizontálnych prepojení"
+
 msgid ""
 "Switch the position of mother and father in a family, to reduce the overall "
 "horizontal cross connections in larger graphs. This is happens if one person "
 "is shown in more than one family or it is caused by pedigree collapse."
 msgstr ""
-"Zameniť pozíciu matky a otca v rodine, aby sa znížil celkový počet "
+"Prepnite pozíciu matky a otca v rodine, aby sa znížil celkový počet "
 "horizontálnych krížových spojení vo väčších grafoch. K tomu dochádza, keď sa "
 "jedna osoba zobrazuje vo viac ako jednej rodine, alebo je to spôsobené "
 "kolapsom rodokmeňa."
 
+msgid "Highlight descandants"
+msgstr "Zvýrazniť potomkov"
+
 msgid "Highlight the persons which are descendants."
-msgstr "Zvýrazniť osoby, ktoré sú potomkami."
+msgstr "Zvýrazní osoby, ktoré sú potomkami."
 
 msgid "Number of descendants"
 msgstr "Počet potomkov"
 
+msgid "Very soft"
+msgstr "Veľmi jemné"
+
 msgid "General chart layout"
 msgstr "Všeobecné rozloženie grafu"
+
+msgid "There are different layouts for descendant charts."
+msgstr "Existujú rôzne rozloženia pre grafy potomkov."
+
+msgid "Parents enclose children"
+msgstr "Rodičia obklopujú deti"
+
+msgid "Cactus"
+msgstr "Kaktus"

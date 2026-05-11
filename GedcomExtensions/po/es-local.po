@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,40 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Include witnesses"
+msgstr "Incluir testigos"
+
+msgid "Include media"
+msgstr "Incluir medios"
+
+msgid "Patronymic names:"
+msgstr "Nombres patronímicos:"
+
+msgid "Don't change"
+msgstr "No cambiar"
 
 msgid "Add Patronymic name after Given name"
-msgstr "Añadir patronímico después del nombre de pila"
+msgstr "Agregar patronímico después del nombre de pila"
+
+msgid "Ignore Patronymic name"
+msgstr "Ignora nombre Patronímico"
+
+msgid "Type of surname:"
+msgstr "Tipo de apellido:"
+
+msgid "Export failed"
+msgstr "Exportación incorrecta"
+
+msgid "Export GEDCOM Extensions (GED2)"
+msgstr "Exportar Extensiones de GEDCOM (GED2)"
+
+msgid "GEDCOM Extensions (GED2)"
+msgstr "Extensiones GEDCOM (GED2)"
+
+msgid "Extensions to the common GEDCOM format."
+msgstr "Extensiones al formato GEDCOM común."
+
+msgid "GEDCOM Extensions options"
+msgstr "Opciones de Extensiones GEDCOM"

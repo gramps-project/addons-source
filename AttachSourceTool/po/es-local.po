@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-10-31 18:02+0000\n"
-"Last-Translator: Alejandro Moctezuma <moctezumaalejandro25@gmail.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 
 msgid "Select filter to restrict people"
 msgstr "Seleccione filtro para restringir las personas"
@@ -26,14 +26,32 @@ msgstr "Fuente nueva"
 msgid "Existing source"
 msgstr "Fuente existente"
 
+msgid "Select the type of source to attach"
+msgstr "Seleccione tipo de fuente para adjuntar"
+
 msgid "New Source Title"
 msgstr "Título de la fuente nueva"
+
+msgid "Text of source to attach"
+msgstr "Texto de fuente a adjuntar"
+
+msgid "Existing Source ID"
+msgstr "ID de fuente existente"
+
+msgid "ID of source to attach"
+msgstr "ID de fuente para adjuntar"
 
 msgid "Attach Source"
 msgstr "Adjuntar fuente"
 
 msgid "Processing...\n"
 msgstr "Procesando...\n"
+
+msgid "Attaching sources...\n"
+msgstr "Adjuntando fuentes…\n"
+
+msgid "Attaching sources..."
+msgstr "Adjuntando fuentes…"
 
 msgid "Done!\n"
 msgstr "¡Hecho!\n"

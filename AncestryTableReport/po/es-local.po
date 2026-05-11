@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-03-11 20:51+0100\n"
-"PO-Revision-Date: 2026-04-13 09:10+0000\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
 "Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
@@ -12,7 +12,89 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Ancestry Table"
+msgstr "Tabla de Ancestros"
+
+msgid "Produces a table of ancestry about a person"
+msgstr "Produce una tabla de ancestros acerca de una persona"
+
+#, python-format
+msgid "Person %(name)s is not in the Database"
+msgstr "La persona %(name)s no está dentro de la base de datos"
+
+#, python-format
+msgid "Ancestry Table Report for %(name)s"
+msgstr "Informe de la tabla de ancestro para %(name)s"
+
+#, python-format
+msgid "Generation %(gen_number)d"
+msgstr "Generación %(gen_number)d"
+
+#, python-format
+msgid "Number of Ancestors for %(name)s"
+msgstr "Número de ancestros para %(name)s"
 
 msgid "Generation"
 msgstr "Generación"
+
+msgid "To start a new page after each generation."
+msgstr "Para comenzar una página nueva tras cada generación."
+
+msgid "Number of ancestors per generation"
+msgstr "Número de ancestros por generación"
+
+msgid "Add a page with tne number of ancestors per generation."
+msgstr "Añade una página con el número de ancestros por generación."
+
+msgid "Mask the name of the calendar in the dates"
+msgstr "Enmascara el nombre del calendario en las fechas"
+
+msgid ""
+"By default, except for gregorian dates, Gramps shows the name of the "
+"calendar in the dates."
+msgstr ""
+"Por defecto, excepto para fechas gregorianas, Gramps muestra el nombre del "
+"calendario dentro de las fechas."
+
+msgid "The style used for the title of the report."
+msgstr "El estilo utilizado para el título del informe."
+
+msgid "The style used for the Sosa number of the paternal branch."
+msgstr "El estilo usado para el número Sosa de la rama parental."
+
+msgid "The style used for the Sosa number of the maternal branch."
+msgstr "El estilo usado para la numeración Sosa de la rama materna."
+
+msgid "The style used for the data of the males."
+msgstr "El estilo usado para los datos de los masculinos."
+
+msgid "The style used for the data of the females."
+msgstr "El estilo usado para los datos de los femeninos."
+
+msgid "The style used for the marriage."
+msgstr "El estilo usado para el matrimonio."
+
+msgid ""
+"The style used for an empty row.\n"
+"To enlarge the height of the empty row, just increase the size of the font."
+msgstr ""
+"El estilo utilizado para una fila vacía.\n"
+"Para ampliar la altura de la fila vacía, tan solo incremente el tamaño de la "
+"fuente."
+
+msgid ""
+"The style used for the header table of the number of ancestors per "
+"generation."
+msgstr ""
+"El estilo usado para la cabecera de la tabla del número de ancestros por "
+"generación."
+
+msgid "The style used for the number of ancestors per generation."
+msgstr "El estilo usado para el número de ancestros por generación."
+
+msgid ""
+"The style used for the total line of the number of ancestors per generation."
+msgstr ""
+"El estilo usado para la línea total del número de ancestros por generación."

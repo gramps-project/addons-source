@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-06-05 06:02+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-10 14:47+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,77 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
+
+msgid "No title"
+msgstr "Ingen titel"
+
+msgid "No data available."
+msgstr "Ingen data tillgänglig."
+
+msgid "Foundation date:"
+msgstr "Grunddatum:"
+
+msgid "Note:"
+msgstr "Notis:"
+
+msgid "Coordinates:"
+msgstr "Koordinater:"
+
+msgid "Full hierarchy"
+msgstr "Fullständig hierarki"
+
+msgid "Place Type:"
+msgstr "Platstyp:"
+
+msgid "Last Retrieved At:"
+msgstr "Senast hämtad vid:"
+
+msgid "Save Coordinates to the Place"
+msgstr "Spara koordinater för platsen"
+
+msgid "Website URL"
+msgstr "Webbplatsens URL"
+
+msgid "Add link to note"
+msgstr "Lägg till länk till anteckning"
+
+msgid "Add link to attribute"
+msgstr "Lägg till länk till attribut"
+
+msgid "Show QR-code"
+msgstr "Visa QR-kod"
+
+msgid "Copy link to clipboard"
+msgstr "Kopiera länken till urklipp"
+
+#, python-format
+msgid "Note #%(id)s has been successfully added"
+msgstr "Notisen #%(id)s lades framgångsrikt till"
+
+msgid "Error creating note"
+msgstr "Fel vid skapande av notis"
+
+msgid "WebSearch Link"
+msgstr "Webbsöklänk"
+
+msgid "Attribute has been successfully added"
+msgstr "Attributet lades framgångsrikt till"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Titel: {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "Utbytt: {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "Tom: {keys}"
+
+msgid "Note Link (parsed)"
+msgstr "Anteckningslänk (tolkades)"
 
 msgid "Leave alone"
 msgstr "Lämna ifred"
@@ -81,73 +151,3 @@ msgstr "Attribut uppdaterat"
 
 msgid "Note updated"
 msgstr "Anteckning uppdaterad"
-
-msgid "Note Link (parsed)"
-msgstr "Anteckningslänk (tolkades)"
-
-msgid "No title"
-msgstr "Ingen titel"
-
-msgid "No data available."
-msgstr "Ingen data tillgänglig."
-
-msgid "Foundation date:"
-msgstr "Grunddatum:"
-
-msgid "Note:"
-msgstr "Notis:"
-
-msgid "Coordinates:"
-msgstr "Koordinater:"
-
-msgid "Full hierarchy"
-msgstr "Fullständig hierarki"
-
-msgid "Place Type:"
-msgstr "Platstyp:"
-
-msgid "Last Retrieved At:"
-msgstr "Senast hämtad vid:"
-
-msgid "Save Coordinates to the Place"
-msgstr "Spara koordinater för platsen"
-
-msgid "Website URL"
-msgstr "Webbplatsens URL"
-
-msgid "Add link to note"
-msgstr "Lägg till länk till anteckning"
-
-msgid "Add link to attribute"
-msgstr "Lägg till länk till attribut"
-
-msgid "Show QR-code"
-msgstr "Visa QR-kod"
-
-msgid "Copy link to clipboard"
-msgstr "Kopiera länken till urklipp"
-
-#, python-format
-msgid "Note #%(id)s has been successfully added"
-msgstr "Notisen #%(id)s lades framgångsrikt till"
-
-msgid "Error creating note"
-msgstr "Fel vid skapande av notis"
-
-msgid "WebSearch Link"
-msgstr "Webbsöklänk"
-
-msgid "Attribute has been successfully added"
-msgstr "Attributet lades framgångsrikt till"
-
-#, python-brace-format
-msgid "Title: {title}"
-msgstr "Titel: {title}"
-
-#, python-brace-format
-msgid "Replaced: {keys}"
-msgstr "Utbytt: {keys}"
-
-#, python-brace-format
-msgid "Empty: {keys}"
-msgstr "Tom: {keys}"

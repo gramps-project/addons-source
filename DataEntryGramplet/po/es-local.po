@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Data Entry Gramplet"
+msgstr "Apunte de datos Gramplet"
+
+msgid "Gramplet for quick data entry"
+msgstr "Gramplet para apunte de datos rápidos"
+
+msgid "Active person"
+msgstr "Persona activa"
 
 msgid "Family:"
 msgstr "Familia:"
@@ -20,8 +29,105 @@ msgstr "Familia:"
 msgid "Sources?"
 msgstr "¿Fuentes?"
 
+msgid "Surname, Given"
+msgstr "Apellido, dado"
+
 msgid "Save"
 msgstr "Guardar"
 
 msgid "Abandon"
 msgstr "Abandonar"
+
+msgid "New person"
+msgstr "Persona nueva"
+
+msgid "Add relation"
+msgstr "Agregar relación"
+
+msgid "No relation to active person"
+msgstr "Ninguna relación para persona activa"
+
+msgid "Add as a Parent"
+msgstr "Agregar como un antecesor"
+
+msgid "Add as a Mother"
+msgstr "Agregar como una madre"
+
+msgid "Add as a Father"
+msgstr "Agregar como un padre"
+
+msgid "Add as a Spouse"
+msgstr "Agregar como esposo"
+
+msgid "Add as a Wife"
+msgstr "Agregar como madre"
+
+msgid "Add as a Husband"
+msgstr "Agregar como padre"
+
+msgid "Add as a Sibling"
+msgstr "Agregar como hermano"
+
+msgid "Add as a Child"
+msgstr "Agregar como hijo"
+
+msgid "Copy Active Data"
+msgstr "Copiar datos activos"
+
+msgid "in"
+msgstr "en"
+
+#, python-format
+msgid "Gramplet Data Edit: %s"
+msgstr "Editar datos abuelo: %s"
+
+msgid "Please provide a name."
+msgstr "Proporcione un nombre."
+
+msgid "Can't add new person."
+msgstr "No puede agregar persona."
+
+msgid "Please set an active person."
+msgstr "Establezca una persona activa."
+
+msgid "Can't add new person as a parent."
+msgstr "No puede agregar persona nueva como un pariente."
+
+msgid "Please set the new person's gender."
+msgstr "Establezca el abuelo de la persona nueva."
+
+msgid "Can't add new person as a mother."
+msgstr "No puede agregar persona nueva como una madre."
+
+msgid "Can't add new person as a father."
+msgstr "No puede agregar persona nueva como un padre."
+
+msgid "Can't add new person as a spouse."
+msgstr "No puede agregar persona nueva como un esposo."
+
+msgid "Can't add new person as a wife."
+msgstr "No puede agregar persona nueva como una esposa."
+
+msgid "Can't add new person as a husband."
+msgstr "No puede agregar persona nueva como un marido."
+
+msgid "Can't add new person as a sibling."
+msgstr "No puede agregar persona nueva como un hermano."
+
+msgid "Can't add new person as a child."
+msgstr "No puede agregar persona nueva como un hijo."
+
+msgid "Please set Active person."
+msgstr "Establezca persona Activa."
+
+msgid "Can't add new person as a spouse to no one."
+msgstr "No puede agregar persona nueva como una esposa para nadie."
+
+msgid "Please set gender on Active or new person."
+msgstr "Establezca género en Activo o persona nueva."
+
+msgid "Same genders on Active and new person."
+msgstr "Mismo género en Activo y persona nueva."
+
+msgid "Please set gender on Active person."
+msgstr "Establezca género en persona Activa."

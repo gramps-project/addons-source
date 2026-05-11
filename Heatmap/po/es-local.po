@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,10 +12,99 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Map tiles"
+msgstr "Mosaicos de mapa"
+
+msgid ""
+"Set the size of the heatmap points.\n"
+"Default: 15"
+msgstr ""
+"Establezca el tamaño de los puntos de heatmap.\n"
+"Por defecto: 15"
+
+msgid "File path"
+msgstr "Ruta de archivo"
+
+msgid ""
+"For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
+"the characters space, underline and hypen are allowed. The file name also "
+"has to start and end with an alphanumeric character.The file extention "
+"'.html' is added by the report."
+msgstr ""
+"Para el nombre del archivo solo se permiten letras del alfabeto inglés (A-Z, "
+"a-z), números del 0 al 9, espacios, guiones bajos y guiones. El nombre del "
+"archivo también debe comenzar y terminar con un carácter alfanumérico. La "
+"extensión de archivo '.html' se añade por el informe."
+
+msgid "File name"
+msgstr "Nombre de archivo"
+
+msgid "Enable custom start position"
+msgstr "Habilitar posición inicial adaptada"
+
+msgid ""
+"Enabling will force the map open at your custom start position and zoom."
+msgstr ""
+"Habilitar forzará el mapa abierto en su posición y zoon de inicio personal."
+
+msgid "Start latitude"
+msgstr "Latitud inicial"
+
+msgid ""
+"Set custom start position latitude\n"
+"Default: 50.0"
+msgstr ""
+"Establecer latitud de posición inicial personalizada\n"
+"Valor predeterminado: 50.0"
 
 msgid "Start longitude"
 msgstr "Longitud inicial"
 
+msgid ""
+"Set custom start position longitude\n"
+"Default: 10.0"
+msgstr ""
+"Establecer longitud de posición inicial personalizada\n"
+"Valor predeterminado: 10.0"
+
+msgid "Start zoom"
+msgstr "Iniciar zoom"
+
+msgid ""
+"Set the value for the starting zoom\n"
+"Default: 5"
+msgstr ""
+"Establece el valor para el zoom inicial\n"
+"Por defecto: 5"
+
+msgid "Path does not exist."
+msgstr "La ruta no existe."
+
+msgid "Invalid filename."
+msgstr "Nombre del archivo no válido."
+
 msgid "INFO"
 msgstr "INF."
+
+msgid "Create a heatmap web report."
+msgstr "Crea un informe de web heatmap."
+
+msgid "Stamen Terrain"
+msgstr "Terreno de Estambre"
+
+msgid "Stamen Terrain (Background only)"
+msgstr "Terreno de Estambre (solo fondo)"
+
+msgid "Stamen Toner"
+msgstr "Toner Estambre"
+
+msgid "Stamen Watercolor"
+msgstr "Colo acuoso Stamen"
+
+msgid "CartoDB Positron"
+msgstr "Posición CartoDB"
+
+msgid "CartoDB DarkMatter"
+msgstr "MateriaOscura CartoDB"

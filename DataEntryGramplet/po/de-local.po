@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "Data Entry Gramplet"
 msgstr "Dateneingabe Gramplet"
@@ -77,9 +77,18 @@ msgstr "Aktive Daten kopieren"
 msgid "in"
 msgstr "in"
 
+msgid "No Family Tree is open."
+msgstr "Es ist kein Stammbaum geöffnet."
+
+msgid "Please open a Family Tree to edit data."
+msgstr "Bitte öffne einen Stammbaum, um Daten zu bearbeiten."
+
 #, python-format
 msgid "Gramplet Data Edit: %s"
 msgstr "Gramplet-Daten bearbeiten: %s"
+
+msgid "Please open a Family Tree before adding a person."
+msgstr "Bitte öffne einen Stammbaum, bevor du eine Person hinzufügst."
 
 msgid "Please provide a name."
 msgstr "Bitte gib einen Namen an."

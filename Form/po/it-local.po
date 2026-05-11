@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-09-12 17:22+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-04-14 18:01+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,13 +12,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
+
+msgid "Headings"
+msgstr "Intestazioni"
 
 msgid "Order"
 msgstr "Ordine"
 
-msgid "Headings"
-msgstr "Intestazioni"
+msgid "SexFemale"
+msgstr "Sesso femminile"
+
+msgid "Coloured"
+msgstr "Di colore"
+
+msgid "10. Coloured Persons - Negroes"
+msgstr "10. Persone di colore - origini africane"
+
+msgid "13. Coloured Persons, Mulato or Indians"
+msgstr "13. Persone di colore, mulatte o indiane (native)"
+
+msgid "Seating"
+msgstr "Posti a sedere"
+
+msgid "PostOffice"
+msgstr "Ufficio postale"
+
+msgid "2. Family"
+msgstr "2. Famiglia"
 
 msgid "Sheet No."
 msgstr "Foglio n."
@@ -188,9 +209,6 @@ msgstr "Età in anni"
 msgid "Home Address"
 msgstr "Indirizzo di casa"
 
-msgid "Citizenship"
-msgstr "Cittadinanza"
-
 msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
 msgstr ""
 "Cittadino per nascita, Cittadino naturalizzato, Straniero, Non cittadino o "
@@ -313,39 +331,6 @@ msgstr "Grado al congedo"
 msgid "Industry/Employer"
 msgstr "Settore/Datore di lavoro"
 
-msgid "Event Place (Original)"
-msgstr "Luogo dell'evento (originale)"
-
-msgid "Birth Year (Estimated)"
-msgstr "Anno di nascita (stimato)"
-
-msgid "Spouse's Gender"
-msgstr "Genere del coniuge"
-
-msgid "Spouse's Age"
-msgstr "Età del coniuge"
-
-msgid "Spouse's Birth Year (Estimated)"
-msgstr "Anno di nascita del coniuge (stimato)"
-
-msgid "Spouse's Father's Name"
-msgstr "Nome del padre del coniuge"
-
-msgid "Spouse's Mother's Name"
-msgstr "Nome della madre del coniuge"
-
-msgid "Record Number"
-msgstr "Numero dell'informazione di registro"
-
-msgid "Volume"
-msgstr "Volume"
-
-msgid "Volume Beginning Year"
-msgstr "Anno iniziale del volume"
-
-msgid "Volume Ending Year"
-msgstr "Anno finale del volume"
-
 msgid "Town or City"
 msgstr "Città"
 
@@ -381,6 +366,51 @@ msgstr "Residenza il 5 novembre 1924"
 
 msgid "Date Married"
 msgstr "Data del matrimonio"
+
+msgid "Event Place (Original)"
+msgstr "Luogo dell'evento (originale)"
+
+msgid "Birth Year (Estimated)"
+msgstr "Anno di nascita (stimato)"
+
+msgid "Spouse's Gender"
+msgstr "Genere del coniuge"
+
+msgid "Spouse's Age"
+msgstr "Età del coniuge"
+
+msgid "Spouse's Birth Year (Estimated)"
+msgstr "Anno di nascita del coniuge (stimato)"
+
+msgid "Spouse's Father's Name"
+msgstr "Nome del padre del coniuge"
+
+msgid "Spouse's Mother's Name"
+msgstr "Nome della madre del coniuge"
+
+msgid "Record Number"
+msgstr "Numero dell'informazione di registro"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "Volume Beginning Year"
+msgstr "Anno iniziale del volume"
+
+msgid "Volume Ending Year"
+msgstr "Anno finale del volume"
+
+msgid "Can read and write"
+msgstr "Sa leggere e scrivere"
+
+msgid "Military"
+msgstr "Militare"
+
+msgid "Taxes"
+msgstr "Tasse"
+
+msgid "Arrived since"
+msgstr "Arrivato dal"
 
 msgid "Registration District"
 msgstr "Distretto di registrazione"
@@ -454,36 +484,3 @@ msgstr "Anni di matrimonio"
 
 msgid "Parish Ward"
 msgstr "Distretto (ward) della parrocchia"
-
-msgid "SexFemale"
-msgstr "Sesso femminile"
-
-msgid "Coloured"
-msgstr "Di colore"
-
-msgid "10. Coloured Persons - Negroes"
-msgstr "10. Persone di colore - origini africane"
-
-msgid "13. Coloured Persons, Mulato or Indians"
-msgstr "13. Persone di colore, mulatte o indiane (native)"
-
-msgid "Seating"
-msgstr "Posti a sedere"
-
-msgid "PostOffice"
-msgstr "Ufficio postale"
-
-msgid "2. Family"
-msgstr "2. Famiglia"
-
-msgid "Can read and write"
-msgstr "Sa leggere e scrivere"
-
-msgid "Military"
-msgstr "Militare"
-
-msgid "Taxes"
-msgstr "Tasse"
-
-msgid "Arrived since"
-msgstr "Arrivato dal"
