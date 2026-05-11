@@ -4,14 +4,14 @@
 # Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
 # Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
 # FIRST AUTHOR <kmi@vgdata.dk>, 2024.
-# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025.
+# Kaj Arne Mikkelsen <kmi@vgdata.dk>, 2025, 2026.
 # Rasmus Cornelius Nielsen <rcn70@outlook.dk>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-11 17:13-0700\n"
-"PO-Revision-Date: 2025-09-30 08:02+0000\n"
+"PO-Revision-Date: 2026-04-28 18:11+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -36,7 +36,7 @@ msgstr "Navn type"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
-msgstr "Primære navn"
+msgstr "Primært navn"
 
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
@@ -914,7 +914,7 @@ msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
-msgstr "Vælg alt"
+msgstr "Vælg alle"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Select None"
@@ -2519,7 +2519,7 @@ msgstr "Hvorvidt en persons attributter skal medtages"
 
 #: DenominoViso/DenominoViso.py:2638
 msgid "Include Addresses"
-msgstr "Medtag Adresser"
+msgstr "Medtag adresser"
 
 #: DenominoViso/DenominoViso.py:2639
 msgid "Whether to include a person's addresses."
@@ -14518,7 +14518,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2529
 msgid "Citizenship"
-msgstr ""
+msgstr "Medborgerskab"
 
 #: Form/form_us.xml.h:2530
 msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
@@ -15577,11 +15577,11 @@ msgstr "Andre bogmærker"
 
 #: GraphView/graphview.py:1164
 msgid "Ancestor generations"
-msgstr "Ane generationer"
+msgstr "Anegenerationer"
 
 #: GraphView/graphview.py:1168
 msgid "Descendant generations"
-msgstr "Efterkommer generationer"
+msgstr "Efterkommergenerationer"
 
 #: GraphView/graphview.py:1179
 msgid "Vertical spacing between generations"
@@ -16358,7 +16358,7 @@ msgstr "Mangler"
 
 #: ImportMerge/importmerge.py:94
 msgid "Different"
-msgstr "Forskelle"
+msgstr "Anden"
 
 #: ImportMerge/importmerge.py:109
 msgid "Delete original"
@@ -17376,7 +17376,7 @@ msgstr ""
 
 #: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
 msgid "Export"
-msgstr "Eksportér"
+msgstr "Eksporter"
 
 #: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
 msgid "Export the results to a text file"
