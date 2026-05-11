@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-08 10:05-0700\n"
-"PO-Revision-Date: 2026-05-07 17:11+0000\n"
+"PO-Revision-Date: 2026-05-10 17:40+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -247,40 +247,32 @@ msgstr "Štýl použitý pre súhrnný riadok počtu predkov podľa generácie."
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:24
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:32
-#, fuzzy
-#| msgid "Inverse"
 msgid "Anniversaries"
-msgstr "Inverzné"
+msgstr "Výročia"
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:25
-#, fuzzy
-#| msgid "a gramplet that displays the birthdays of the living people"
 msgid "A gramplet that displays the anniversaries of events"
-msgstr "Gramplet, ktorý zobrazuje narodeniny žijúcich ľudí"
+msgstr "Gramplet, ktorý zobrazuje výročia udalostí"
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:51
-#, fuzzy
-#| msgid "Double-click on a row to edit the selected participant."
 msgid "Double-click on a row to edit the event."
-msgstr "Dvojitým kliknutím na riadok upravíte vybraného účastníka."
+msgstr "Dvojklikom na riadok upravíte udalosť."
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:58
-#, fuzzy
-#| msgid "Other participants"
 msgid "Participant"
-msgstr "Iní účastníci"
+msgstr "Účastník"
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:22
 msgid ""
 "Parses strings from Riksarkivet and ArkivDigital to create sources and "
 "citations."
 msgstr ""
+"Spracúva reťazce z Riksarkivet a ArkivDigital a vytvára z nich zdroje a "
+"citácie."
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:26
-#, fuzzy
-#| msgid "Archive file"
 msgid "Archive Assist"
-msgstr "Archívny súbor"
+msgstr "Archívny asistent"
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -992,7 +984,7 @@ msgstr "hotovo!\n"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:432
 #, python-format
 msgid "Skipped %d people due to errors (see log).\n"
-msgstr ""
+msgstr "Vynechaní %d ľudia kvôli chybám (pozrite log).\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:347
 msgid ""
@@ -1067,7 +1059,7 @@ msgstr "Počet pridaných udalostí: %d."
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:562
 #, python-format
 msgid " (Skipped %d rows due to errors; see log.)"
-msgstr ""
+msgstr " (Vynechané riadky: %d, kvôli chybám (pozrite log.)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:589
 msgid "Estimated date"
@@ -1140,30 +1132,24 @@ msgid "Send"
 msgstr "Poslať"
 
 #: ChatWithTree/ChatWithTree.py:163
-#, fuzzy
-#| msgid "Chat with Tree initialized. Type /help for help."
 msgid "Chat with Tree initialized.                 Type /help for help."
-msgstr "Chat so stromom bol spustený. Napíšte /help pre pomoc."
+msgstr "Chat so stromom bol spustený.                  Napíšte /help pre pomoc."
 
 #: ChatWithTree/ChatWithTree.py:449
-#, fuzzy
-#| msgid ""
-#| "The ChatWithTree addon is not yet initialized. Please reload Gramps or "
-#| "select a database."
 msgid ""
 "The ChatWithTree addon is not yet initialized.                     Please "
 "reload Gramps or select a database."
 msgstr ""
-"Doplnok ChatWithTree ešte nie je inicializovaný. Prosím, reštartujte Gramps "
-"alebo vyberte databázu."
+"Doplnok ChatWithTree ešte nie je inicializovaný.                     Prosím, "
+"reštartujte Gramps alebo vyberte databázu."
 
 #: ChatWithTree/ChatWithTree.py:458
 msgid "The chatbot is currently processing a query. Please wait."
-msgstr ""
+msgstr "Chatbot práve spracováva vašu požiadavku. Prosím, počkajte."
 
 #: ChatWithTree/ChatWithTree.py:485
 msgid "An error occurred while processing your query."
-msgstr ""
+msgstr "Pri spracovávaní vašej požiadavky došlo k chybe."
 
 #: ChatWithTree/chatwithllm.py:119
 msgid "Tree: '{}'"
@@ -1478,8 +1464,7 @@ msgstr ""
 "D3.js."
 
 #: D3Charts/DescendantIndentedTree.py:678
-#, fuzzy, python-format
-#| msgid "See %(reference)s : %(spouse)s"
+#, python-format
 msgctxt "spouse"
 msgid "See %(reference)s : %(spouse)s"
 msgstr "Pozri %(reference)s : %(spouse)s"
@@ -2049,14 +2034,12 @@ msgstr "na"
 
 #: DataEntryGramplet/DataEntryGramplet.py:428
 #: DataEntryGramplet/DataEntryGramplet.py:507
-#, fuzzy
-#| msgid "Family Tree file"
 msgid "No Family Tree is open."
-msgstr "Súbor Family Tree"
+msgstr "Nie je otvorený žiadny rodinný strom."
 
 #: DataEntryGramplet/DataEntryGramplet.py:429
 msgid "Please open a Family Tree to edit data."
-msgstr ""
+msgstr "Prosím, na úpravu údajov otvorte rodinný strom."
 
 #: DataEntryGramplet/DataEntryGramplet.py:446
 #: DataEntryGramplet/DataEntryGramplet.py:578
@@ -2066,7 +2049,7 @@ msgstr "Gramplet Editovanie údajov: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:508
 msgid "Please open a Family Tree before adding a person."
-msgstr ""
+msgstr "Prosím, otvorte pred pridávaním osoby rodinný strom."
 
 #: DataEntryGramplet/DataEntryGramplet.py:524
 msgid "Can't add new person."
@@ -2225,54 +2208,40 @@ msgid "Deep Connections"
 msgstr "Hlbšie vzťahy"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
-#, fuzzy
-#| msgid "Pause"
 msgid "⏸ Pause"
-msgstr "Pauza"
+msgstr "⏸ Pozastaviť"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:108
 msgid "Pause the current search"
-msgstr ""
+msgstr "Pozastavte aktuálne vyhľadávanie"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:111
 msgid "▶ Continue"
-msgstr ""
+msgstr "▶ Pokračovať"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:114
-#, fuzzy
-#| msgid ""
-#| "Paused.\n"
-#| "Press Continue to search for additional relations.\n"
 msgid "Continue searching for more relations"
-msgstr ""
-"Prerušené.\n"
-"Pre hľadanie ďalšich vzťahov stlačte Pokračovať.\n"
+msgstr "Pokračujte vo vyhľadávaní ďalších vzťahov"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:118
-#, fuzzy
-#| msgid "Copy"
 msgid "📋 Copy"
-msgstr "Kopírovať"
+msgstr "📋 Kopírovať"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:120
-#, fuzzy
-#| msgid "Copy link to clipboard"
 msgid "Copy selected people to clipboard"
-msgstr "Kopírovať odkaz do schránky"
+msgstr "Kopírujte vybraných ľudí do schránky"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:128
 msgid "🗑 Clear"
-msgstr ""
+msgstr "🗑 Vyčistiť"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
 msgid "Clear all results and reset"
-msgstr ""
+msgstr "Vyčistí všetky výsledky a resetuje"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
-#, fuzzy
-#| msgid "Start type to search"
 msgid "Ready to search"
-msgstr "Začnite typom čo vyhľadať"
+msgstr "Pripravený na vyhľadávanie"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:185
 #, python-brace-format
@@ -2280,14 +2249,16 @@ msgid ""
 "Search Depth: {depth} | People Processed: {processed} | Queue Size: "
 "{queue_size}"
 msgstr ""
+"Hĺbka vyhľadávania: {depth} | Spracovaných osôb: {processed} | Veľkosť "
+"fronty: {queue_size}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 msgid "mentioned in note"
-msgstr "spomenutá v poznámke"
+msgstr "spomenutý/á v poznámke"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:245
 msgid "Note on Family"
-msgstr "Poznámka pre rodinu"
+msgstr "Poznámka k rodine"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:258
 msgid "sibling"
@@ -2295,7 +2266,7 @@ msgstr "súrodenec"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:268
 msgid "Note on Parent Family"
-msgstr "Poznámka pre rodinu rodiča"
+msgstr "Poznámka k rodičovskej rodine"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:272
 #, python-format
@@ -2304,7 +2275,7 @@ msgstr "%s (asociácia)"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:277
 msgid "Note on Person"
-msgstr "Poznámka pre osobu"
+msgstr "Poznámka k osobe"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:308
 #, python-format
@@ -2316,24 +2287,20 @@ msgstr ""
 "   %s osoby "
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:336
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "Error: No Home Person set"
-msgstr "Nie je nastavená aktívna osoba."
+msgstr "Chyba: Nie je nastavená domovská osoba"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:341
 msgid "No Active Person set."
 msgstr "Nie je nastavená aktívna osoba."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:342
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "Error: No Active Person set"
-msgstr "Nie je nastavená aktívna osoba."
+msgstr "Chyba: Nie je nastavená aktívna osoba"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:347
 msgid "Initializing search..."
-msgstr ""
+msgstr "Inicializácia vyhľadávania..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:366
 msgid "Looking for relationship between\n"
@@ -2342,18 +2309,16 @@ msgstr "Vyhľadávanie vzťahu medzi\n"
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:367
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
-msgstr "  <b>%s</b> (Východzia osoba) a\n"
+msgstr "  <b>%s</b> (Domovská osoba) a\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:368
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
-msgstr "  <b>%s</b> (aktívna osoba)...\n"
+msgstr "  <b>%s</b> (Aktívna osoba)...\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:382
-#, fuzzy
-#| msgid "Fetching records..."
 msgid "Searching for connections..."
-msgstr "Načítavanie záznamov..."
+msgstr "Vyhľadávanie prepojení..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:402
 #, python-format
@@ -2361,7 +2326,7 @@ msgid ""
 "Found relation #%d: \n"
 "   "
 msgstr ""
-"zistený vzťah #%d: \n"
+"Nájdený vzťah #%d: \n"
 "   "
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:423
@@ -2369,54 +2334,37 @@ msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
 msgstr ""
-"Prerušené.\n"
-"Pre hľadanie ďalšich vzťahov stlačte Pokračovať.\n"
+"Pozastavené.\n"
+"Pre hľadanie dodatočných vzťahov stlačte Pokračovať.\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:427
-#, fuzzy
-#| msgid ""
-#| "Paused.\n"
-#| "Press Continue to search for additional relations.\n"
 msgid "Paused - Press Continue to search for more relations"
-msgstr ""
-"Prerušené.\n"
-"Pre hľadanie ďalšich vzťahov stlačte Pokračovať.\n"
+msgstr "Pozastavené - Pre hľadanie ďalšich vzťahov stlačte Pokračovať."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:456
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "Search completed. %d relations found."
+#, python-format
 msgid ""
 "\n"
 "Search completed. %d relation paths found."
 msgstr ""
 "\n"
-"Hľadanie ukončené. Zistené vzťahy v počte %d."
+"Hľadanie ukončené. Nájdené vzťahové cesty v počte %d."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:460
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "Search completed. %d relations found."
 msgid "Search completed - {} relation paths found"
-msgstr ""
-"\n"
-"Hľadanie ukončené. Zistené vzťahy v počte %d."
+msgstr "Hľadanie ukončené - nájdené vzťahové cesty {}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:471
 msgid "Error during search: {}"
-msgstr ""
+msgstr "Chyba počas vyhľadávania: {}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:481
-#, fuzzy
-#| msgid "Removing '%s'..."
 msgid "Resuming search..."
-msgstr "Odstraňuje sa '%s'..."
+msgstr "Pokračovanie vo vyhľadávaní..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:489
 msgid "Search interrupted by user"
-msgstr ""
+msgstr "Vyhľadávanie prerušené používateľom"
 
 #: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
@@ -2437,11 +2385,11 @@ msgstr "Žiadny zdroj"
 
 #: DenominoViso/DenominoViso.py:203 DenominoViso/DenominoViso.py:3020
 msgid "onclick"
-msgstr "onclick"
+msgstr "kliknutím"
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
 msgid "onmouseover"
-msgstr "onmouseover"
+msgstr "prejdením myšou"
 
 #: DenominoViso/DenominoViso.py:208
 #: LinesOfDescendency/lines-of-descendency.py:55
@@ -3307,9 +3255,8 @@ msgid "Continue Descendant Tree"
 msgstr "Pokračovať v strome potomkov"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:427
-#, fuzzy
 msgid "Alternate Descendant Tree"
-msgstr "Striedať strom potomkov"
+msgstr "Alternatívny strom potomkov"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:455
 msgid "Descendant SpaceTree"
@@ -3613,6 +3560,10 @@ msgid ""
 "   Divorce (annulment, div_filing),\n"
 "   Death (burial, cremation, probate)."
 msgstr ""
+"Pre narodenie (krst - BAPM, CHR),\n"
+"    pre manželstvo (povolenie k sobášu, zasnúbenie),\n"
+"   pre rozvod (zrušenie manželstva, podanie žiadosti o rozvod),\n"
+"   pre úmrtie (pochovanie, kremácia, dedičské konanie)."
 
 #: DescendantsLines/DescendantsLines.py:1601
 msgid "Sort Events by Date"
@@ -3653,8 +3604,6 @@ msgstr ""
 " 0=bez obmedzenia "
 
 #: DescendantsLines/DescendantsLines.py:1618
-#, fuzzy
-#| msgid "Font name"
 msgid "Font Name"
 msgstr "Názov písma"
 
@@ -3663,12 +3612,12 @@ msgid ""
 "Name of the Font to use. On Windows enter the file name of the .ttf at /"
 "Windows/Fonts"
 msgstr ""
+"Názov písma, ktoré sa má použiť. Na Windows zadajte názov súboru .ttf v "
+"priečinku /Windows/Fonts"
 
 #: DescendantsLines/DescendantsLines.py:1623
-#, fuzzy
-#| msgid "Database size"
 msgid "Font base size"
-msgstr "Veľkosť databázy"
+msgstr "Základná veľkosť písma"
 
 #: DescendantsLines/DescendantsLines.py:1629
 msgid "Box around Person's block"
@@ -3843,7 +3792,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Number of pages"
 msgid "The number of ??? pad"
-msgstr "Počet stránok"
+msgstr "Počet ??? medzier"
 
 #: DescendantsLines/DescendantsLines.py:1756
 msgid "Vertical edge spouse-bar to child-bar"
@@ -5648,7 +5597,7 @@ msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:70
 msgid "Relationship Type"
-msgstr "Druh vzťahu"
+msgstr "Typ vzťahu"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:71
 msgid ""
@@ -6269,17 +6218,15 @@ msgstr ""
 
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
-msgstr ""
+msgstr "Udalosti ľudí s rolou"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:8
-#, fuzzy
-#| msgid "Matches people with an event with a selected role"
 msgid "Matches event of people filter with role"
-msgstr "Nájde ľudí s udalosťou s vybranou rolou"
+msgstr "Zodpovedá udalostam podľa filtra osôb a ich role"
 
 #: FilterRules/matchpersonfilterrole.py:69
 msgid "Role:"
-msgstr ""
+msgstr "Rola:"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
@@ -6427,33 +6374,33 @@ msgid "Fix coords"
 msgstr "Opraviť súradnice"
 
 #: Form/CensusCheckQuickview.gpr.py:9
-#, fuzzy
-#| msgid "Censuses"
 msgid "CensusCheck"
-msgstr "Sčítania ľudu"
+msgstr "Kontrola sčítania"
 
 #: Form/CensusCheckQuickview.gpr.py:10
 msgid ""
 "Check whether any Census events are missing for a person and some of their "
 "descendents"
 msgstr ""
+"Skontroluje, či chýbajú udalosti sčítania ľudu pre osobu a niektorých jej "
+"potomkov"
 
 #: Form/CensusCheckQuickview.gpr.py:23
-#, fuzzy
-#| msgid "Censuses"
 msgid "CensusCheckUp"
-msgstr "Sčítania ľudu"
+msgstr "Kontrola sčítania⬆️"
 
 #: Form/CensusCheckQuickview.gpr.py:24
 msgid ""
 "Check whether any Census events are missing for a person and some of their "
 "ancestors"
 msgstr ""
+"Skontroluje, či chýbajú udalosti sčítania ľudu pre osobu a niektorých jej "
+"predkov"
 
 #: Form/CensusCheckQuickview.py:122 Form/CensusCheckUpQuickview.py:122
 #, python-format
 msgid "Census Check for %s"
-msgstr ""
+msgstr "Kontrola sčítania pre osobu %s"
 
 #: Form/editform.py:191
 #, python-format
@@ -6484,19 +6431,15 @@ msgstr "Formulár"
 
 #: Form/form.py:173
 msgid "XML syntax error in Form definition file"
-msgstr ""
+msgstr "Chyba syntaxe XML v súbore s definíciou formulára"
 
 #: Form/form.py:184
-#, fuzzy
-#| msgid "Failed to read proto file %s: %s"
 msgid "Failed to read Form definition file"
-msgstr "Nepodarilo sa načítať proto súbor %s: %s"
+msgstr "Nepodarilo sa načítať súbor s definíciou formulára"
 
 #: Form/form.py:193
-#, fuzzy
-#| msgid "Invalid Destination Directory"
 msgid "Invalid Form definition file"
-msgstr "Neplatný cieľový adresár"
+msgstr "Neplatný súbor s definíciou formulára"
 
 #: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
 #: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
@@ -14778,7 +14721,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2547 Form/form_us.xml.h:2591
 msgid "Place of Registration"
-msgstr ""
+msgstr "Miesto registrácie"
 
 #: Form/form_us.xml.h:2548 Form/form_us.xml.h:2590
 msgid "Date of Registration"
@@ -14793,10 +14736,8 @@ msgid "Order Number"
 msgstr ""
 
 #: Form/form_us.xml.h:2551
-#, fuzzy
-#| msgid "Registration No."
 msgid "Registration Card"
-msgstr "Registračné č."
+msgstr "Registračné karta"
 
 #: Form/form_us.xml.h:2552
 msgid ""
@@ -14873,10 +14814,8 @@ msgid ""
 msgstr ""
 
 #: Form/form_us.xml.h:2567
-#, fuzzy
-#| msgid "Citizenship"
 msgid "Country of Citizenship"
-msgstr "Občianstvo"
+msgstr "Krajina občianstva"
 
 #: Form/form_us.xml.h:2568
 msgid ""
@@ -14896,20 +14835,16 @@ msgid ""
 msgstr ""
 
 #: Form/form_us.xml.h:2571
-#, fuzzy
-#| msgid "Relationship Type"
 msgid "Relationship "
-msgstr "Druh vzťahu"
+msgstr "Vzťah "
 
 #: Form/form_us.xml.h:2572
 msgid "(8) Only on D.S.S. Form 1"
 msgstr ""
 
 #: Form/form_us.xml.h:2573
-#, fuzzy
-#| msgid "Occupation:"
 msgid "Occupation "
-msgstr "Povolanie:"
+msgstr "Povolanie "
 
 #: Form/form_us.xml.h:2574
 msgid "(7) Only on D.S.S. Form 1 (Rev. 6-9-41)"
@@ -15388,11 +15323,10 @@ msgid "GOV error on id %s with code: "
 msgstr "Chyba GOV na ID %s s kódom: "
 
 #: GetGOV/getgov.py:555
-#, fuzzy, python-format
-#| msgid "from %s to %s"
+#, python-format
 msgctxt "end"
 msgid "from %(begin)s to %(end)s"
-msgstr "od %s do %s"
+msgstr "od %(begin)s do %(end)s"
 
 #: GetGOV/getgov.py:557
 #, python-format
@@ -15741,51 +15675,36 @@ msgid "Run a special Gramps Python script"
 msgstr ""
 
 #: GrampyScript/GrampyScript.py:91
-#, fuzzy
-#| msgid "Loaded from file: %s"
 msgid "Load query from a .script file"
-msgstr "Načítané zo súboru: %s"
+msgstr "Načítať dopyt zo .script súboru"
 
 #: GrampyScript/GrampyScript.py:121
-#, fuzzy
-#| msgid "Save tree as file"
 msgid "Save query to a .script file"
-msgstr "Uložiť strom ako súbor"
+msgstr "Uložiť dopyt do .script súboru"
 
 #: GrampyScript/GrampyScript.py:141
-#, fuzzy
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
 msgid "Download results as a CSV file"
-msgstr "Sťahovanie %s mediálneho súboru"
+msgstr "Stiahnuť výsledky ako CSV súbor"
 
 #: GrampyScript/GrampyScript.py:303
-#, fuzzy
-#| msgid "OpenAI"
 msgid "Open..."
-msgstr "OpenAI"
+msgstr "Otvoriť..."
 
 #: GrampyScript/GrampyScript.py:305
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Save as..."
-msgstr "Uložiť obrázky do ..."
+msgstr "Uložiť ako..."
 
 #: GrampyScript/GrampyScript.py:319
 msgid "Save as CSV"
 msgstr ""
 
 #: GrampyScript/GrampyScript.py:320
-#, fuzzy
-#| msgid "Copy link to clipboard"
 msgid "Copy to clipboard"
-msgstr "Kopírovať odkaz do schránky"
+msgstr "Kopírovať do schránky"
 
 #: GrampyScript/GrampyScript.py:395
-#, fuzzy
-#| msgid "Quilt Chart"
 msgid "Chart"
-msgstr "Quilt Chart"
+msgstr "Graf"
 
 #: GrampyScript/GrampyScript.py:400
 msgid "Execute <Alt+Enter>"
@@ -15796,10 +15715,8 @@ msgid "Execute the script"
 msgstr ""
 
 #: GrampyScript/GrampyScript.py:416
-#, fuzzy
-#| msgid "Read"
 msgid "Ready..."
-msgstr "Čítanie"
+msgstr "Pripravený..."
 
 #: GrampyScript/GrampyScript.py:1028
 msgid "Gram.py Script Edited Data"
@@ -18692,10 +18609,8 @@ msgid "Style used for names (only for PDF document and PostScript)."
 msgstr ""
 
 #: PedigreeChart/PedigreeChart.py:758
-#, fuzzy
-#| msgid "Style used for labels and captions"
 msgid "Style used for labels and captions."
-msgstr "Štýl použitý pre značky a popisky"
+msgstr "Štýl použitý pre značky a popisky."
 
 #: PersonEverything/PersonEverything.gpr.py:32
 msgid "PersonEverything Report"
@@ -22436,13 +22351,7 @@ msgstr ""
 "%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:105
-#, fuzzy, python-format
-#| msgid ""
-#| "Directly importing from TMG files is not supportedby the TMG Importer "
-#| "Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that "
-#| "your TMG project was created by:TMG version 5.x or greater.Your "
-#| "file:*.TMG - Version Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
-#| "%(gramps_wiki_import_pjc_direct_url)s"
+#, python-format
 msgid ""
 "Directly importing from TMG files is not supported\n"
 "by the TMG Importer Addon.\n"
@@ -22458,20 +22367,22 @@ msgid ""
 "Please refer to:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
-"Priamy import zo súborov TMG nie je podporovaný doplnkom TMG Importer. "
-"Musíte použiť záložnú kópiu projektu TMG (*.sqz) Uistite sa, že váš projekt "
-"TMG bol vytvorený pomocou: TMG verzie 5.x alebo vyššej. Váš súbor: *.TMG - "
-"Version Control File for TMG 2.0 to TMG 4.0d Pozrite si: "
+"Priame importovanie zo súborov TMG\n"
+"nie je podporované\n"
+"doplnkom TMG Importer.\n"
+"\n"
+"Musíte použiť záložnú kópiu projektu TMG (*.sqz)\n"
+"\n"
+"Uistite sa, že váš projekt TMG bol vytvorený pomocou:\n"
+"TMG verzie 5.x alebo vyššej.\n"
+"\n"
+"Váš súbor:\n"
+"*.TMG - Version Control File for TMG 2.0 to TMG 4.0d\n"
+"Ďalšie informácie nájdete na:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:126
-#, fuzzy, python-format
-#| msgid ""
-#| "Directly importing from TMG files is not supportedby the TMG Importer "
-#| "Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that "
-#| "your TMG project was created by:TMG version 5.x or greater.Your "
-#| "file:*.VER - Version Control File for TMG 1.2 and earlierPlease refer to:"
-#| "%(gramps_wiki_import_pjc_direct_url)s"
+#, python-format
 msgid ""
 "Directly importing from TMG files is not supported\n"
 "by the TMG Importer Addon.\n"
@@ -22487,10 +22398,14 @@ msgid ""
 "Please refer to:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
-"Priamy import zo súborov TMG nie je podporovaný doplnkom TMG Importer. "
-"Musíte použiť záložnú kópiu projektu TMG (*.sqz) Uistite sa, že váš projekt "
-"TMG bol vytvorený pomocou: TMG verzie 5.x alebo vyššej. Váš súbor:*.VER - "
-"Version Control File for TMG 1.2 and earlier Pozrite si: "
+"Priame importovanie zo súborov TMG nie je podporované\n"
+"doplnkom TMG Importer.\n"
+"Musíte použiť záložnú kópiu projektu TMG (*.sqz)\n"
+"Uistite sa, že váš projekt TMG bol vytvorený pomocou:\n"
+"TMG verzie 5.x alebo vyššej.\n"
+"Váš súbor:\n"
+"*.VER - Version Control File for TMG 1.2 and earlier\n"
+"Ďalšie informácie nájdete na:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/libtmg.glade:15
@@ -24235,10 +24150,8 @@ msgid "✅ Bug reports and feature requests are completely **free of charge**."
 msgstr "✅ Hlásenia chýb a požiadavky na nové funkcie sú úplne **bezplatné**."
 
 #: WebSearch/info_panel.py:249
-#, fuzzy
-#| msgid "Issues"
 msgid "GitHub Issues"
-msgstr "Problémy"
+msgstr "Problémy GitHub"
 
 #: WebSearch/info_panel.py:252
 msgid "Gramps Bug Tracker"
@@ -24477,16 +24390,12 @@ msgid "No file loaded..."
 msgstr "Žiadny súbor nebol načítaný..."
 
 #: lxml/etreeGramplet.py:203 lxml/etreeGramplet.py:209
-#, fuzzy
-#| msgid "Number of editions back"
 msgid "Number of additions and modifications back"
-msgstr "Počet predchádzajúcich vydaní"
+msgstr "Počet spätných pridaní a modifikácií"
 
 #: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
-#, fuzzy
-#| msgid "No source information found"
 msgid "Print more informations on console"
-msgstr "Neboli nájdené žiadne informácie o zdroji"
+msgstr "Vypísať viac informácií do konzoly"
 
 #: lxml/etreeGramplet.py:254
 #, python-format
@@ -24503,10 +24412,8 @@ msgid "Cannot copy \"%s\""
 msgstr "Nemožno kopírovať \"%s\""
 
 #: lxml/etreeGramplet.py:265 lxml/lxmlGramplet.py:348
-#, fuzzy
-#| msgid "Is it a compressed .gramps?"
 msgid "Is it a .gramps?"
-msgstr "Je to komprimovaný .gramps?"
+msgstr "Je to súbor .gramps?"
 
 #: lxml/etreeGramplet.py:282
 msgid "Sorry, no support for your OS yet!"
@@ -24522,10 +24429,9 @@ msgid "Parsing issue"
 msgstr "Problém s analýzou"
 
 #: lxml/etreeGramplet.py:498
-#, fuzzy, python-format
-#| msgid "XML: Last %s editions since %s, were at/on :\n"
+#, python-format
 msgid "XML: Last %s additions and modifications since %s, were on :\n"
-msgstr "XML: Posledné %s vydania od %s, boli v/na: :\n"
+msgstr "XML: Posledné pridania a modifikácie %s od %s boli dňa:\n"
 
 #: lxml/etreeGramplet.py:554
 #, python-format
@@ -24539,148 +24445,112 @@ msgstr ""
 "\n"
 
 #: lxml/etreeGramplet.py:557
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Počet štítkov : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:559
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\n"
+#, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%06s\n"
 msgstr ""
 "Počet štítkov : \n"
-"\t\t\t%s\n"
+"\t\t\t%06s\n"
 
 #: lxml/etreeGramplet.py:561
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of  events : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of  events : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Počet  udalostí : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"Počet udalostí : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:564
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of persons : \n"
-#| "\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+#, python-format
 msgid ""
 "Number of persons : \n"
 "\t\t\t%06s\t|\t(%06s) and (%06s)* surnames\n"
 msgstr ""
 "Počet osôb : \n"
-"\t\t\t%s\t|\t(%s) a (%s)* priezvisk\n"
+"\t\t\t%06s\t|\t(%06s) a (%06s)* priezvisk\n"
 
 #: lxml/etreeGramplet.py:566
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of persons : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of persons : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Počet osôb : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:567
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of families : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of families : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Počet rodín : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:568
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of sources : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of sources : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Počet zdrojov : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:570
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of citations : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of citations : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Počet citácií : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:573
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of places : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of places : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Počet miest : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:574
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of media objects : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of media objects : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Počet mediálnych objektov : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:575
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of repositories : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of repositories : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Počet repozitárov : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:576
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of notes : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of notes : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Počet poznámok : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:581
 #, python-format
@@ -24725,51 +24595,47 @@ msgid "Please, try to install \"python3 lxml\" package."
 msgstr "Skúste nainštalovať balík \"python3 lxml\"."
 
 #: lxml/lxmlGramplet.py:255 lxml/lxmlGramplet.py:273 lxml/lxmlGramplet.py:749
-#, fuzzy
-#| msgid "Filter options"
 msgid "xmllint options"
-msgstr "Voľby filtra"
+msgstr "voľby xmllint"
 
 #: lxml/lxmlGramplet.py:264 lxml/lxmlGramplet.py:282
-#, fuzzy
-#| msgid "Legacy place"
 msgid "debug places"
-msgstr "Pôvodné miesto"
+msgstr "ladenie miest"
 
 #: lxml/lxmlGramplet.py:265 lxml/lxmlGramplet.py:283
 msgid "debug xml"
-msgstr ""
+msgstr "ladenie xml"
 
 #: lxml/lxmlGramplet.py:382
 msgid "XSD validation (lxml)"
-msgstr "Overovanie XSD (lxml)"
+msgstr "XSD validácia (lxml)"
 
 #: lxml/lxmlGramplet.py:390
 #, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
-msgstr "xmllint: preskočiť overovanie DTD pre \"%(file)s\""
+msgstr "xmllint: vynechanie validácie DTD pre \"%(file)s\""
 
 #: lxml/lxmlGramplet.py:407
 #, python-format
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
-msgstr "xmllint: preskočiť overovanie RelaxNG pre \"%(file)s\""
+msgstr "xmllint: vynechanie validácie RelaxNG pre \"%(file)s\""
 
 #: lxml/lxmlGramplet.py:423
 msgid "Custom \"test.xml\" file"
-msgstr ""
+msgstr "Vlastný súbor \"test.xml\""
 
 #: lxml/lxmlGramplet.py:423
 msgid "Please try to fix \"test.xml\""
-msgstr ""
+msgstr "Prosím, skúste opraviť súbor \"test.xml\""
 
 #: lxml/lxmlGramplet.py:432
 #, python-format
 msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
-msgstr "Nemožno overiť \"%(file)s\" prostredníctvom schémy RelaxNG"
+msgstr "Nemožno validovať \"%(file)s\" prostredníctvom schémy RelaxNG"
 
 #: lxml/lxmlGramplet.py:432
 msgid "RelaxNG validation"
-msgstr "Overovanie RelaxNG"
+msgstr "Validácia RelaxNG"
 
 #: lxml/lxmlGramplet.py:445
 #, python-format
@@ -24787,34 +24653,28 @@ msgstr "Analyzovanie súboru..."
 #: lxml/lxmlGramplet.py:569
 #, python-format
 msgid " - (%(lang)s)"
-msgstr ""
+msgstr " - (%(lang)s)"
 
 #: lxml/lxmlGramplet.py:572
 #, python-format
 msgid " - (? or %(lang)s)"
-msgstr ""
+msgstr " - (? alebo %(lang)s)"
 
 #: lxml/lxmlGramplet.py:609
 msgid "Missing header"
-msgstr "Chýba záhlavie"
+msgstr "Chýbajúce záhlavie"
 
 #: lxml/lxmlGramplet.py:609 lxml/lxmlGramplet.py:719
-#, fuzzy
-#| msgid ""
-#| "Not a valid .gramps.\n"
-#| "Cannot run the gramplet...\n"
-#| "Please, try to use a .gramps\n"
-#| "generated by Gramps 4.x."
 msgid ""
 "Not a valid .gramps.\n"
 "Cannot run the gramplet...\n"
 "Please, try to use a .gramps\n"
 "generated by Gramps 6.x."
 msgstr ""
-"Nie je platný .gramps.\n"
-"Nie je možné spustiť gramplet...\n"
+"Nie je platný súbor .gramps.\n"
+"Gramplet sa nedá spustiť...\n"
 "Prosím, skúste použiť súbor .gramps\n"
-"vygenerovaný programom Gramps 4.x."
+"vygenerovaný programom Gramps 6.x."
 
 #: lxml/lxmlGramplet.py:622 lxml/lxmlGramplet.py:627 lxml/lxmlGramplet.py:632
 #: lxml/lxmlGramplet.py:637
@@ -24838,64 +24698,58 @@ msgid "Period: "
 msgstr "Obdobie: "
 
 #: lxml/lxmlGramplet.py:659 lxml/lxmlGramplet.py:663
-#, fuzzy, python-brace-format
-#| msgid "Ref: {number}. {name}"
+#, python-brace-format
 msgid "\t{number} surname"
 msgid_plural "\t{number} surnames; no frequency yet\n"
-msgstr[0] "Ref: {number}. {name}"
-msgstr[1] "Ref: {number}. {name}"
-msgstr[2] "Ref: {number}. {name}"
+msgstr[0] "\t{number} priezvisko"
+msgstr[1] "\t{number} priezviská; zatiaľ žiadna frekvencia"
+msgstr[2] "\t{number} priezvisk; zatiaľ žiadna frekvencia"
 
 #: lxml/lxmlGramplet.py:659
-#, fuzzy, python-brace-format
-#| msgid " entries for surname(s); no frequency yet"
+#, python-brace-format
 msgid "\t{number} surname; no frequency yet"
-msgstr " záznamy pre priezvisko(a); zatiaľ žiadna frekvencia"
+msgstr "\tPriezvisko: {number} ; zatiaľ žiadna frekvencia"
 
 #: lxml/lxmlGramplet.py:660 lxml/lxmlGramplet.py:667
-#, fuzzy, python-brace-format
-#| msgid "Ref: {number}. {name}"
+#, python-brace-format
 msgid "\t{number} place"
 msgid_plural "\t{number} places\n"
-msgstr[0] "Ref: {number}. {name}"
-msgstr[1] "Ref: {number}. {name}"
-msgstr[2] "Ref: {number}. {name}"
+msgstr[0] "\t{number} miesto"
+msgstr[1] "\t{number} miesta"
+msgstr[2] "\t{number} miest"
 
 #: lxml/lxmlGramplet.py:661 lxml/lxmlGramplet.py:671
-#, fuzzy, python-brace-format
-#| msgid "Ref: {number}. {name}"
+#, python-brace-format
 msgid "\t{number} note"
 msgid_plural "\t{number} notes\n"
-msgstr[0] "Ref: {number}. {name}"
-msgstr[1] "Ref: {number}. {name}"
-msgstr[2] "Ref: {number}. {name}"
+msgstr[0] "\t{number} poznámka"
+msgstr[1] "\t{number} poznámky"
+msgstr[2] "\t{number} poznámok"
 
 #: lxml/lxmlGramplet.py:675
-#, fuzzy, python-brace-format
-#| msgid "New source"
+#, python-brace-format
 msgid "\t{number} source"
 msgid_plural "\t{number} sources\n"
-msgstr[0] "Nový zdroj"
-msgstr[1] "Nový zdroj"
-msgstr[2] "Nový zdroj"
+msgstr[0] "\t{number} zdroj"
+msgstr[1] "\t{number} zdroje"
+msgstr[2] "\t{number} zdrojov"
 
 #: lxml/lxmlGramplet.py:694 lxml/lxmlGramplet.py:919
 msgid "Gallery.html"
 msgstr "Gallery.html"
 
 #: lxml/lxmlGramplet.py:695
-#, fuzzy, python-format
-#| msgid "2. Has generated a media index on \"%(file)s\".\n"
+#, python-format
 msgid "1. Has generated a media index on \"%(file)s\".\n"
-msgstr "2. Vygeneroval register médií v \"%(file)s\".\n"
+msgstr "1. Bol vygenerovaný register médií v \"%(file)s\".\n"
 
 #: lxml/lxmlGramplet.py:719
 msgid "XML SyntaxError"
-msgstr ""
+msgstr "Chyba syntaxe XML"
 
 #: lxml/lxmlGramplet.py:723
 msgid "Matches XSD schema."
-msgstr "Porovnáva XSD schému."
+msgstr "Zodpovedá XSD schéme."
 
 #: lxml/lxmlGramplet.py:763
 msgid "xmllint: skip DTD validation"
@@ -24934,17 +24788,12 @@ msgid "Portugal"
 msgstr "Portugalsko"
 
 #: lxml/lxmlGramplet.py:896
-#, fuzzy, python-format
-#| msgid "1. Has generated \"%s\".\n"
+#, python-format
 msgid "2. Has generated \"%s\".\n"
-msgstr "1. Vygeneroval \"%s\"\n"
+msgstr "2. Bol vygenerovaný \"%s\".\n"
 
 #: lxml/lxmlGramplet.py:898
-#, fuzzy, python-format
-#| msgid ""
-#| "Try to open\n"
-#| " \"%s\"\n"
-#| " into your prefered web navigator ..."
+#, python-format
 msgid ""
 "Try to open\n"
 " \"%s\"\n"
