@@ -460,7 +460,7 @@ class TodoReport(Report):
             self.doc.end_paragraph()
             self.doc.end_cell()
             self.doc.end_row()
-            
+
 
         for (class_name, r_handle) in self.database.find_backlink_handles(event_handle, include_classes=['Family']):
             family = self.database.get_family_from_handle(r_handle)
@@ -621,7 +621,7 @@ class TodoReport(Report):
         self.doc.write_text(citation.get_page())
         self.doc.end_paragraph()
         self.doc.end_cell()
-        
+
         self.doc.end_row()
 
 
@@ -660,7 +660,7 @@ class TodoReport(Report):
         self.doc.end_cell()
 
         self.doc.end_row()
-        
+
 
     def _output_events(self, event_base):
         """Write out all events for an object that subclasses EventBase"""
@@ -881,7 +881,7 @@ class TodoOptions(MenuReportOptions):
         for note_type in self.__db.get_note_types():
             type_option.add_item(note_type, note_type)
         menu.add_option(category_name, _NOTE_TYPE_OPTION_NAME, type_option)
-        
+
         can_group = BooleanOption(_("Group by reference type"), False)
         can_group.set_help( _("Group notes by Family, Person, Place, etc."))
         menu.add_option(category_name, "can_group", can_group)
