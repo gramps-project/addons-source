@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-08 10:05-0700\n"
+"POT-Creation-Date: 2026-05-10 10:43-0700\n"
 "PO-Revision-Date: 2026-05-10 07:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
@@ -1093,7 +1093,8 @@ msgstr "%d Ereignisse hinzugefügt."
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:562
 #, python-format
 msgid " (Skipped %d rows due to errors; see log.)"
-msgstr " (%d Zeilen wurden aufgrund von Fehlern übersprungen; siehe Protokoll.)"
+msgstr ""
+" (%d Zeilen wurden aufgrund von Fehlern übersprungen; siehe Protokoll.)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:589
 msgid "Estimated date"
@@ -20512,7 +20513,7 @@ msgstr "Voraussetzungen-Prüfer"
 msgid "Prerequisites Checker Gramplet"
 msgstr "Voraussetzungen-Prüfer Gramplet"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:143
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:144
 msgid ""
 "Diagnostic Gramplet to help evaluate if <a href=\"https://gramps-project.org/"
 "\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
@@ -20522,7 +20523,7 @@ msgstr ""
 "\">Gramps</a> alle <a href=\"https://github.com/gramps-project/gramps/blob/"
 "master/README.md\">Voraussetzungen</a> installiert hat.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:153
 msgid ""
 "Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
 "installed."
@@ -20530,7 +20531,7 @@ msgstr ""
 "Diagnose Gramplet, um zu überprüfen, ob Gramps alle Voraussetzungen "
 "installiert hat."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:181
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:186
 msgid ""
 "\n"
 "<u><b>REQUIRED</b></u>\n"
@@ -20538,7 +20539,7 @@ msgstr ""
 "\n"
 "<u><b>ERFORDERLICH</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:183
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:189
 msgid ""
 "<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
 " (Requires the minimum version or greater.)</i>:\n"
@@ -20546,7 +20547,7 @@ msgstr ""
 "<i>Installation der folgenden Pakete ist <b>UNBEDINGT ERFORDERLICH</b>\n"
 " (Benötigt die Mindestversion oder höher.)</i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:208
 msgid ""
 "\n"
 "<u><b>RECOMMENDED</b></u>\n"
@@ -20554,7 +20555,7 @@ msgstr ""
 "\n"
 "<u><b>EMPFOHLEN</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:202
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:211
 msgid ""
 "<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
 "as necessary for Geography and Charts</i>:\n"
@@ -20562,7 +20563,7 @@ msgstr ""
 "<i>Die Installation der folgenden Pakete wird <b>DRINGEND EMPFOHLEN</b>, da "
 "sie für Geographie und Diagramme notwendig sind</i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:215
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:226
 msgid ""
 "\n"
 "<u><b>Optional</b></u>\n"
@@ -20570,22 +20571,22 @@ msgstr ""
 "\n"
 "<u><b>Optional</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:217
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:229
 msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
 msgstr "<i>Die Installation der folgenden Pakete ist <b>optional</b></i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:220
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:234
 msgid "Gtkspell enables spell checking in the notes.\n"
 msgstr "Gtkspell ermöglicht die Rechtschreibprüfung in den Notizen.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:225
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:240
 msgid ""
 "Python Image Library (PIL) is needed for cropping images and LaTeX output."
 msgstr ""
 "Die Python Image Library (PIL) wird für das Zuschneiden von Bildern und die "
 "LaTeX-Ausgabe benötigt."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:238
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:256
 msgid ""
 "\n"
 "<u><b>Development & Translation Requirements</b></u>\n"
@@ -20593,7 +20594,7 @@ msgstr ""
 "\n"
 "<u><b>Entwicklungs- und Übersetzungsanforderungen</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:241
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:260
 msgid ""
 "<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
 "intend to translate or do any development (addons etc.)</i>:\n"
@@ -20601,7 +20602,7 @@ msgstr ""
 "<i>Die Installation der folgenden Pakete wird <b>EMPFOHLEN</b>, wenn du "
 "beabsichtigst, zu übersetzen oder zu entwickeln (Erweiterungen usw.)</i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:272
 msgid ""
 "\n"
 "<u><b>Optional packages required by Third-party Addons</b></u>\n"
@@ -20610,7 +20611,7 @@ msgstr ""
 "<u><b>Optionale Pakete, die von Erweiterungen von Drittanbietern benötigt "
 "werden</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:253
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:276
 msgid ""
 "<i>Prerequistes required for the following <a href=\"https://gramps-"
 "project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
@@ -20620,7 +20621,7 @@ msgstr ""
 "title=Third-party_Addons\">Drittanbieter-Erweiterungen</a> sind "
 "Voraussetzungen erforderlich, damit sie funktionieren</i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:300
 msgid ""
 "\n"
 "<u><b>Diagnostic checks</b></u>\n"
@@ -20628,11 +20629,11 @@ msgstr ""
 "\n"
 "<u><b>Diagnoseprüfungen</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:276
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:301
 msgid "Check for potential issues.\n"
 msgstr "Prüfung auf mögliche Probleme.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:277
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:302
 msgid ""
 "\n"
 "Environment settings:\n"
@@ -20640,7 +20641,7 @@ msgstr ""
 "\n"
 "Umgebungseinstellungen:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:282
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:307
 msgid ""
 "\n"
 "\n"
@@ -20650,7 +20651,7 @@ msgstr ""
 "\n"
 "<u><b>Verfügbare Sprachversionen:</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:287
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:311
 msgid ""
 "\n"
 "<u><b>Back Up Your Genealogy Files.</b></u>\n"
@@ -20658,7 +20659,7 @@ msgstr ""
 "\n"
 "<u><b>Sichere deine Genealogiedateien.</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:288
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:314
 msgid ""
 "If you have a reason to be checking Prerequisites, it is the right time to "
 "back up your genealogy files, and then test your backups!\n"
@@ -20669,7 +20670,7 @@ msgstr ""
 "Sicherungen zu testen!\n"
 "\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:292
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:321
 msgid ""
 "<i><a href=\"https://gramps-project.org/wiki/index.php?"
 "title=How_to_make_a_backup\">Backup to Gramps XML</a> You will find \"Make "
@@ -20686,7 +20687,7 @@ msgstr ""
 "i>\n"
 "\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:298
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:331
 msgid ""
 " • Backups can be made at any time and, at a minimum, on the first day of "
 "every month. But preferrably more often.\n"
@@ -20694,7 +20695,7 @@ msgstr ""
 " • Sicherungen können jederzeit, mindestens aber am ersten Tag eines jeden "
 "Monats, durchgeführt werden. Vorzugsweise aber öfter.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:300
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:337
 msgid ""
 " • It is strongly recommended to backup each of your Family Trees before any "
 "upgrade.\n"
@@ -20702,7 +20703,7 @@ msgstr ""
 " • Es wird dringend empfohlen, vor jedem Upgrade eine Sicherungskopie deiner "
 "Stammbäume zu erstellen.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:302
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:343
 msgid ""
 " • Test your backups by creating a new Family Tree and then importing the "
 "backup."
@@ -20710,11 +20711,11 @@ msgstr ""
 " • Teste deine Sicherungen, indem du einen neuen Stammbaum erstellst und "
 "dann die Sicherung importierst."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:321
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:365
 msgid ", is the most current version.\n"
 msgstr ", ist die aktuellste Version.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:339
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:387
 #, python-format
 msgid ""
 "You have Gramps %s. Please make a backup and then upgrade.\n"
@@ -20723,7 +20724,7 @@ msgstr ""
 "Du hast Gramps %s. Bitte erstelle eine Sicherung und aktualisiere dann.\n"
 "%s"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:343
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:392
 #, python-format
 msgid ""
 "You have Gramps %s installed; an unreleased development version. Thank you "
@@ -20734,90 +20735,94 @@ msgstr ""
 "Vielen Dank für deine Mithilfe und das Testen; bitte melde alle Probleme. "
 "Sicherungen sind dein Freund.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:351
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:402
 #, python-format
 msgid "You have Gramps %s. Congratulations, you have the current version.\n"
 msgstr ""
 "Du hast Gramps %s. Herzlichen Glückwunsch, du hast die aktuelle Version.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:378
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:452
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:504
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:548
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:597
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:748
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:953
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1160
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:430
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:460
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:541
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:603
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:656
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:724
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:908
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1128
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1349
 msgid " (Requires version "
 msgstr " (Benötigt Version "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:379
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:387
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:457
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:511
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:554
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:566
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:602
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:431
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:439
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:461
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:469
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:552
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:614
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:667
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:688
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:735
 msgid " or greater installed.)\n"
 msgstr " oder höher installiert.)\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:386
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:456
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:509
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:552
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:564
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:601
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:744
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:948
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1156
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:438
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:468
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:550
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:612
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:665
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:686
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:733
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:900
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1118
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1341
 msgid " (Passed: version "
 msgstr " (Bestanden: Version "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:414
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:479
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:538
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:539
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:587
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:735
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:797
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:798
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1107
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:500
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:576
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:643
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:644
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:711
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:889
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:961
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:962
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1290
 msgid "unknown version"
 msgstr "unbekannte Version"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:422
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:508
 msgid "DISPLAY not set"
 msgstr "ANZEIGE nicht eingestellt"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:453
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:505
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:549
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:561
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:598
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:543
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:605
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:658
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:679
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:726
 msgid " or greater.)\n"
 msgstr " oder höher.)\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:560
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:677
 msgid " (Requires "
 msgstr " (Benötigt "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:650
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:791
 msgid " • Berkeley Database library (bsddb3: "
 msgstr " • Berkeley-Datenbank-Bibliothek (bsddb3: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:675
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:822
 msgid " • SQLite Database library (sqlite3: "
 msgstr " • SQLite-Datenbankbibliothek (sqlite3: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:689
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:839
 msgid " • xdg-utils (Manual check see instructions link)"
 msgstr " • xdg-utils (Manuelle Prüfung siehe Anleitungslink)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:702
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:852
 msgid " • librsvg2 (Manual check see instructions link)"
 msgstr " • librsvg2 (Manuelle Prüfung siehe Anleitungslink)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:713
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:864
 msgid ""
 " • language-pack-gnome-xx (Manual check see instructions link) for your "
 "Language <show locale here TBD>"
@@ -20825,49 +20830,49 @@ msgstr ""
 " • language-pack-gnome-xx (manuelle Prüfung siehe Anleitungslink) für deine "
 "Sprache <hier Gebietsschema anzeigen TBD>"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:745
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1157
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1161
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1560
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1565
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1759
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:902
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1343
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1351
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1793
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1802
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2016
 msgid " or greater installed.)"
 msgstr " oder höher installiert.)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:749
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:910
 msgid " or greater)"
 msgstr " oder höher)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:780
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:943
 msgid "Graphviz not in system PATH"
 msgstr "Graphviz nicht im Systempfad (PATH)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:848
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1009
 msgid "Ghostscript not in system PATH"
 msgstr "Ghostscript nicht im Systempfad (PATH)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:863
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1027
 msgid " (Passed: version 0.5.x is installed.)"
 msgstr " (Bestanden: Version 0.5.x ist installiert.)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:866
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1030
 msgid " (Requires version 0.5.x)"
 msgstr " (Benötigt Version 0.5.x)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:869
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1032
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
 msgstr " • python-fontconfig nicht gefunden, (Benötigt Version 0.5.x)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:871
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1034
 msgid " • python-fontconfig installed, version unavailable"
 msgstr " • python-fontconfig installiert, Version nicht verfügbar"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:950
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:955
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1120
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
 msgid " or greater installed.) (enchant module: "
 msgstr " oder höher installiert.) (enchant Modul: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1011
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1189
 #, python-format
 msgid ""
 " • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
@@ -20876,7 +20881,7 @@ msgstr ""
 " • rcs %s TBD (Bestanden: Version %s oder höher installiert. Wenn nicht "
 "unter Microsoft Windows)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1015
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1194
 #, python-format
 msgid ""
 " • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
@@ -20885,20 +20890,20 @@ msgstr ""
 " • rcs %s TBD (Erfordert die Installation von Version %s oder höher. Wenn "
 "nicht unter Microsoft Windows)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1129
-msgid "can't found it because exiv2 not installed"
-msgstr "kann es nicht finden, weil exiv2 nicht installiert ist"
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1311
+msgid "exiv2 executable not installed, can't retrieve libexiv2 version."
+msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1312
 #, python-format
 msgid "GExiv2 : %s (Exiv2 library : %s)"
 msgstr "GExiv2 : %s (Exiv2-Bibliothek: %s)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1197
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1389
 msgid "found another font"
 msgstr "eine andere Schriftart gefunden"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1205
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1398
 msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
@@ -20907,85 +20912,81 @@ msgstr ""
 "href=\"https://www.fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> "
 "ein äußerst lesbares Ergebnis.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
-msgid "Why, when same code works in Graphview"
-msgstr "Warum, wenn derselbe Code in Graphview funktioniert"
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1246
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1298
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1308
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1318
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1442
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1500
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1511
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1522
 msgid "not installed"
 msgstr "nicht installiert"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1325
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1530
 msgid "     and one of either: (pydotplus: "
 msgstr "     und einer der folgenden Optionen: (pydotplus: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1327
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1532
 msgid ") or (pygraphviz: "
 msgstr ") oder (pygraphviz: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1351
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1561
 msgid "Installed(MS-Windows)"
 msgstr "Installiert(MS-Windows)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1355
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1565
 msgid "Installed(Linux/Mac)"
 msgstr "Installiert(Linux/Mac)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1389
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1602
 msgid "not installed "
 msgstr "nicht installiert "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1444
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1614
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1616
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1617
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1702
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1708
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1659
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1855
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1857
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1858
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1947
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1954
 msgid "not found."
 msgstr "nicht gefunden."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1466
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1685
 msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
 msgstr "Standard. Bestanden: Programm installiert - 32Bit auf 64Bit Win OS."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1518
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1744
 msgid ") (Requires the gramps addon listed under 'Plugin lib')"
 msgstr ") (Benötigt die unter 'Plugin lib' aufgeführte Gramps-Erweiterung)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1551
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1780
 msgid "DBF installed"
 msgstr "DBF installiert"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1559
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1791
 msgid ".)(Requires version "
 msgstr ".) (Benötigt Version "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1564
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1800
 msgid " installed.)(Passed: version "
 msgstr " installiert.) (Bestanden: Version "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1711
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1957
 #, python-format
 msgid "(OpenCV facedetection: %s)"
 msgstr "(OpenCV-Gesichtserkennung: %s)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1758
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2014
 msgid " (lxml: not found. Requires version "
 msgstr " (lxml: nicht gefunden. Benötigt Version "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1776
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2036
 msgid " • Requires: MongoDB TBD / pymongo TBD"
 msgstr " • Benötigt: MongoDB TBD / pymongo TBD"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1790
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2050
 #, python-format
 msgid " • Operating System: %s"
 msgstr " • Betriebssystem: %s"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1811
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2073
 msgid ""
 "<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
 "title=Gramps_5.0_Wiki_Manual_-"
@@ -20997,29 +20998,29 @@ msgstr ""
 "_Kommandozeilen_Referenz#LANG.2C_LANGUAGE.2C_LC_MESSAGES.2C_LC_TIME\">Gebietsschemaeinstellungen:"
 "</a></b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1817
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1818
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1819
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1820
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1870
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1871
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1872
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1874
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2081
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2082
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2083
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2084
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2145
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2146
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2147
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2148
 msgid "not set"
 msgstr "nicht gesetzt"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1822
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1823
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1824
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1825
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1876
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1877
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1878
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1879
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2086
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2087
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2088
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2089
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2150
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2151
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2152
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2153
 msgid "not tested"
 msgstr "nicht getestet"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1845
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2118
 msgid ""
 "\n"
 "Installed Locales\\Translations (If only English is listed please re-install "
@@ -21032,7 +21033,7 @@ msgstr ""
 "Übersetzungen und Wörterbücher ausgewählt sind)\n"
 "\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1882
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2156
 msgid ""
 "\n"
 "Gramps Environment variables:\n"
@@ -21040,13 +21041,13 @@ msgstr ""
 "\n"
 "Gramps Umgebungsvariablen:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1921
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1983
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2019
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2195
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2258
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2295
 msgid "found"
 msgstr "gefunden"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2026
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2304
 msgid ""
 "Sphinx is a tool that builds the Gramps development documentation and man "
 "pages\n"
@@ -25204,6 +25205,12 @@ msgstr ""
 "Versuche \n"
 " „%s“\n"
 " in deinem bevorzugten Web- Browser zu öffnen ..."
+
+#~ msgid "can't found it because exiv2 not installed"
+#~ msgstr "kann es nicht finden, weil exiv2 nicht installiert ist"
+
+#~ msgid "Why, when same code works in Graphview"
+#~ msgstr "Warum, wenn derselbe Code in Graphview funktioniert"
 
 #~ msgid "Primary Name"
 #~ msgstr "Primärer Name"
