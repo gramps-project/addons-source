@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-11 17:13-0700\n"
-"PO-Revision-Date: 2026-04-20 04:09+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"PO-Revision-Date: 2026-04-26 15:09+0000\n"
+"Last-Translator: Jiri Svanda <svanda.jiri@gmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -5310,10 +5310,8 @@ msgid "GEXF is used in many network graph applications."
 msgstr ""
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:40
-#, fuzzy
-#| msgid "Export notes"
 msgid "GEXF export options"
-msgstr "Exportovat poznámky"
+msgstr "Možnosti exportu GEXF"
 
 #: ExportProlog/ExportProlog.gpr.py:4
 msgid "Prolog Export"
@@ -5374,10 +5372,8 @@ msgid "Attempts to extract city and state/province from a place title"
 msgstr ""
 
 #: ExtractCity/extractcity.py:402
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Place title"
-msgstr "Kontrolují se názvy míst"
+msgstr "Název místa"
 
 #: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
 msgid "Extract Place data"
@@ -5434,10 +5430,8 @@ msgid "Belgium's Archives"
 msgstr ""
 
 #: FaceDetection/FaceDetection.gpr.py:4
-#, fuzzy
-#| msgid "Pages selection"
 msgid "Face Detection"
-msgstr "Výběr stránek"
+msgstr "Detekce tváře"
 
 #: FaceDetection/FaceDetection.gpr.py:5
 msgid "Gramplet for detecting and assigning faces"
@@ -5461,17 +5455,15 @@ msgstr ""
 #, fuzzy
 #| msgid "Relationship to Mother"
 msgid "Family Relationship Tool"
-msgstr "Vztah k matce"
+msgstr "Family Relationship Tool"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:26
 msgid "Mass-edit the family relationship type for a group of families."
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:53
-#, fuzzy
-#| msgid "Families Index"
 msgid "All Families"
-msgstr "Rejstřík rodin"
+msgstr "Všechny rodiny"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:64
 msgid ""
@@ -5483,7 +5475,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Relationship to Father"
 msgid "Relationship Type"
-msgstr "Vztah k otci"
+msgstr "Relationship Type"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:71
 msgid ""
@@ -5497,7 +5489,7 @@ msgstr "Zpracovat vztahy..."
 
 #: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.py:126
 msgid "Family Sheet"
-msgstr "Family Sheet"
+msgstr "Rodinný list"
 
 #: FamilySheet/FamilySheet.gpr.py:6
 msgid ""
@@ -5522,10 +5514,9 @@ msgid "Address: %(location)s"
 msgstr "Adresa: %(location)s"
 
 #: FamilySheet/FamilySheet.py:469
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "; %(type)s: %(value)s"
-msgstr "%(type)s: %(value)s"
+msgstr ";%(type)s: %(value)s"
 
 #: FamilySheet/FamilySheet.py:557
 msgid "Source references:"
@@ -5610,8 +5601,9 @@ msgstr ""
 "jménu"
 
 #: FamilySheet/FamilySheet.py:882
+#, fuzzy
 msgid "Whether to include call name, and how."
-msgstr "Zda zahrnout volací jméno a jak."
+msgstr "Zda zahrnout sloupec úmrtí"
 
 #: FamilySheet/FamilySheet.py:885
 msgid "Print placeholders for missing information"
@@ -5802,7 +5794,7 @@ msgstr "Celé datum"
 
 #: FamilyTree/FamilyTree.py:1105 FamilyTree/FamilyTree.py:1113
 msgid "Full date and place"
-msgstr "Celá datum i místo"
+msgstr "Celé datum i místo"
 
 #: FamilyTree/FamilyTree.py:1108
 msgid "Print event data (living person)"
@@ -5810,7 +5802,7 @@ msgstr "Zobrazit údaje o události (žijící osoba)"
 
 #: FamilyTree/FamilyTree.py:1116
 msgid "Fall back to baptism if birth event missing"
-msgstr "Pokud chybí narození, použít křest"
+msgstr "Použít křest, pokud chybí narození"
 
 #: FamilyTree/FamilyTree.py:1119
 msgid "Fall back to burial or cremation if death event missing"
