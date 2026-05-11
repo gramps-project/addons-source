@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-08 10:05-0700\n"
-"PO-Revision-Date: 2026-04-23 05:09+0000\n"
+"PO-Revision-Date: 2026-05-09 13:09+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -254,41 +254,32 @@ msgstr ""
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:24
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:32
-#, fuzzy
-#| msgid "Inverse"
 msgid "Anniversaries"
-msgstr "Omgekeerd"
+msgstr "Herdenkingsdagen"
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:25
-#, fuzzy
-#| msgid "a gramplet that displays the birthdays of the living people"
 msgid "A gramplet that displays the anniversaries of events"
-msgstr ""
-"een gramplet dat de verjaardagen van de nog in leven zijnde personen toont"
+msgstr "Een gramplet die de herdenkingsdagen van gebeurtenissen weergeeft"
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:51
-#, fuzzy
-#| msgid "Double-click on a row to edit the selected participant."
 msgid "Double-click on a row to edit the event."
-msgstr "Dubbelklik op een rij om de geselecteerde deelnemer te bewerken."
+msgstr "Dubbelklik op een rij om de gebeurtenis te bewerken."
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:58
-#, fuzzy
-#| msgid "Other participants"
 msgid "Participant"
-msgstr "Andere deelnemers"
+msgstr "Deelnemer"
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:22
 msgid ""
 "Parses strings from Riksarkivet and ArkivDigital to create sources and "
 "citations."
 msgstr ""
+"Verwerkt tekenreeksen van Riksarkivet en ArkivDigital om bronnen en citaten "
+"te creëren."
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:26
-#, fuzzy
-#| msgid "Archive file"
 msgid "Archive Assist"
-msgstr "Archiefbestand"
+msgstr "Archief-assistent"
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -1012,7 +1003,7 @@ msgstr "Klaar!\n"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:432
 #, python-format
 msgid "Skipped %d people due to errors (see log).\n"
-msgstr ""
+msgstr "%d personen overgeslagen i.v.m. fouten (zie logboek).\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:347
 msgid ""
@@ -1088,7 +1079,7 @@ msgstr "%d gebeurtenissen toegevoegd."
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:562
 #, python-format
 msgid " (Skipped %d rows due to errors; see log.)"
-msgstr ""
+msgstr " (%d regels overgeslagen i.v.m. fouten; zie logboek.)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:589
 msgid "Estimated date"
@@ -1159,30 +1150,24 @@ msgid "Send"
 msgstr "Versturen"
 
 #: ChatWithTree/ChatWithTree.py:163
-#, fuzzy
-#| msgid "Chat with Tree initialized. Type /help for help."
 msgid "Chat with Tree initialized.                 Type /help for help."
-msgstr "Chatten met Tree geïnitialiseerd. Typ /help voor hulp."
+msgstr "Chat met Tree geïnitialiseerd.                 Typ /help voor hulp."
 
 #: ChatWithTree/ChatWithTree.py:449
-#, fuzzy
-#| msgid ""
-#| "The ChatWithTree addon is not yet initialized. Please reload Gramps or "
-#| "select a database."
 msgid ""
 "The ChatWithTree addon is not yet initialized.                     Please "
 "reload Gramps or select a database."
 msgstr ""
-"De toevoeging ChatWithTree is nog niet geïnitialiseerd. Laad Gramps opnieuw "
-"of kies een database."
+"De toevoeging ChatWithTree is nog niet geïnitialiseerd.                     "
+"Laad Gramps opnieuw of kies een database."
 
 #: ChatWithTree/ChatWithTree.py:458
 msgid "The chatbot is currently processing a query. Please wait."
-msgstr ""
+msgstr "De chatbot verwerkt momenteel een zoekopdracht. Even geduld."
 
 #: ChatWithTree/ChatWithTree.py:485
 msgid "An error occurred while processing your query."
-msgstr ""
+msgstr "Er is een fout opgetreden tijdens het verwerken van de zoekopdracht."
 
 #: ChatWithTree/chatwithllm.py:119
 msgid "Tree: '{}'"
@@ -1499,8 +1484,7 @@ msgstr ""
 "bibliotheek."
 
 #: D3Charts/DescendantIndentedTree.py:678
-#, fuzzy, python-format
-#| msgid "See %(reference)s : %(spouse)s"
+#, python-format
 msgctxt "spouse"
 msgid "See %(reference)s : %(spouse)s"
 msgstr "Zie %(reference)s : %(spouse)s"
@@ -2081,14 +2065,12 @@ msgstr "in"
 
 #: DataEntryGramplet/DataEntryGramplet.py:428
 #: DataEntryGramplet/DataEntryGramplet.py:507
-#, fuzzy
-#| msgid "Family Tree file"
 msgid "No Family Tree is open."
-msgstr "Stamboombestand"
+msgstr "Geen stamboom geopend."
 
 #: DataEntryGramplet/DataEntryGramplet.py:429
 msgid "Please open a Family Tree to edit data."
-msgstr ""
+msgstr "Open een stamboom om gegevens te bewerken."
 
 #: DataEntryGramplet/DataEntryGramplet.py:446
 #: DataEntryGramplet/DataEntryGramplet.py:578
@@ -2098,7 +2080,7 @@ msgstr "Gramplet-gegevens bewerken: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:508
 msgid "Please open a Family Tree before adding a person."
-msgstr ""
+msgstr "Open een stamboom voordat u een persoon toevoegt."
 
 #: DataEntryGramplet/DataEntryGramplet.py:524
 msgid "Can't add new person."
@@ -2259,56 +2241,40 @@ msgid "Deep Connections"
 msgstr "Verre relaties"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
-#, fuzzy
-#| msgid "Pause"
 msgid "⏸ Pause"
-msgstr "Pauze"
+msgstr "⏸ Pauze"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:108
-#, fuzzy
-#| msgid "Years at current residence"
 msgid "Pause the current search"
-msgstr "Jaren in huidige woonlpaats"
+msgstr "Huidige zoekopdracht pauzeren"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:111
 msgid "▶ Continue"
-msgstr ""
+msgstr "▶ Doorgaan"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:114
-#, fuzzy
-#| msgid ""
-#| "Paused.\n"
-#| "Press Continue to search for additional relations.\n"
 msgid "Continue searching for more relations"
-msgstr ""
-"Gepauzeerd.\n"
-"Druk op Doorgaan om naar aanvullende relaties te zoeken.\n"
+msgstr "Verder zoeken naar meer relaties"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:118
-#, fuzzy
-#| msgid "Copy"
 msgid "📋 Copy"
-msgstr "Kopieer"
+msgstr "📋 Kopiëren"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:120
-#, fuzzy
-#| msgid "Copy link to clipboard"
 msgid "Copy selected people to clipboard"
-msgstr "Koppeling naar klembord kopiëren"
+msgstr "Geselecteerde personen naar klembord kopiëren"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:128
 msgid "🗑 Clear"
-msgstr ""
+msgstr "🗑 Wissen"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
 msgid "Clear all results and reset"
-msgstr ""
+msgstr "Alle resultaten wissen en herstellen"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
-#, fuzzy
-#| msgid "Start type to search"
 msgid "Ready to search"
-msgstr "Begin met typen om te zoeken"
+msgstr "Klaar om te zoeken"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:185
 #, python-brace-format
@@ -2316,6 +2282,8 @@ msgid ""
 "Search Depth: {depth} | People Processed: {processed} | Queue Size: "
 "{queue_size}"
 msgstr ""
+"Zoekdiepte: {depth} | Verwerkte personen: {processed} | Wachtrij: "
+"{queue_size}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 msgid "mentioned in note"
@@ -2352,24 +2320,20 @@ msgstr ""
 "   %s van "
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:336
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "Error: No Home Person set"
-msgstr "Geen actieve persoon ingesteld."
+msgstr "Fout: Geen centrale persoon ingesteld"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:341
 msgid "No Active Person set."
 msgstr "Geen actieve persoon ingesteld."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:342
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "Error: No Active Person set"
-msgstr "Geen actieve persoon ingesteld."
+msgstr "Fout: Geen actieve persoon ingesteld"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:347
 msgid "Initializing search..."
-msgstr ""
+msgstr "Zoekopdracht initialiseren…"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:366
 msgid "Looking for relationship between\n"
@@ -2386,10 +2350,8 @@ msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (actieve persoon)...\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:382
-#, fuzzy
-#| msgid "Fetching records..."
 msgid "Searching for connections..."
-msgstr "Gegevens ophalen..."
+msgstr "Zoeken naar connecties..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:402
 #, python-format
@@ -2409,50 +2371,33 @@ msgstr ""
 "Druk op Doorgaan om naar aanvullende relaties te zoeken.\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:427
-#, fuzzy
-#| msgid ""
-#| "Paused.\n"
-#| "Press Continue to search for additional relations.\n"
 msgid "Paused - Press Continue to search for more relations"
-msgstr ""
-"Gepauzeerd.\n"
-"Druk op Doorgaan om naar aanvullende relaties te zoeken.\n"
+msgstr "Gepauzeerd - Druk Doorgaan om meer relaties te zoeken"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:456
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "Search completed. %d relations found."
+#, python-format
 msgid ""
 "\n"
 "Search completed. %d relation paths found."
 msgstr ""
 "\n"
-"Zoeken voltooid. %d relaties gevonden."
+"Zoeken voltooid. %d connecties gevonden."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:460
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "Search completed. %d relations found."
 msgid "Search completed - {} relation paths found"
-msgstr ""
-"\n"
-"Zoeken voltooid. %d relaties gevonden."
+msgstr "Zoeken voltooid. {} connecties gevonden."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:471
 msgid "Error during search: {}"
-msgstr ""
+msgstr "Fout bij het zoeken: {}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:481
-#, fuzzy
-#| msgid "Removing '%s'..."
 msgid "Resuming search..."
-msgstr "'%s' verwijderen…"
+msgstr "Zoeken hervatten..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:489
 msgid "Search interrupted by user"
-msgstr ""
+msgstr "Zoekopdracht onderbroken door gebruiker"
 
 #: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
@@ -3716,22 +3661,20 @@ msgstr ""
 " 0 = geen begrenzing "
 
 #: DescendantsLines/DescendantsLines.py:1618
-#, fuzzy
-#| msgid "Font name"
 msgid "Font Name"
-msgstr "Lettertypenaam"
+msgstr "Lettertype"
 
 #: DescendantsLines/DescendantsLines.py:1620
 msgid ""
 "Name of the Font to use. On Windows enter the file name of the .ttf at /"
 "Windows/Fonts"
 msgstr ""
+"Naam van het te gebruiken lettertype. Voer op Windows de bestandsnaam in van "
+"het .ttf -bestand in /Windows/Fonts"
 
 #: DescendantsLines/DescendantsLines.py:1623
-#, fuzzy
-#| msgid "Database size"
 msgid "Font base size"
-msgstr "Databasegrootte"
+msgstr "Standaard lettergrootte"
 
 #: DescendantsLines/DescendantsLines.py:1629
 msgid "Box around Person's block"
@@ -6397,19 +6340,15 @@ msgstr ""
 
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
-msgstr ""
+msgstr "Gebeurtenissen van mensen met rol"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:8
-#, fuzzy
-#| msgid "Matches people with an event with a selected role"
 msgid "Matches event of people filter with role"
-msgstr ""
-"Komt overeen met personen die een gebeurtenis met een geselecteerde rol "
-"hebben"
+msgstr "Overeenkomst met gefilterde personen met rol"
 
 #: FilterRules/matchpersonfilterrole.py:69
 msgid "Role:"
-msgstr ""
+msgstr "Rol:"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
@@ -6564,33 +6503,33 @@ msgid "Fix coords"
 msgstr "Repareer coörds"
 
 #: Form/CensusCheckQuickview.gpr.py:9
-#, fuzzy
-#| msgid "Censuses"
 msgid "CensusCheck"
-msgstr "Volkstellingen"
+msgstr "Volkstellingscontrole"
 
 #: Form/CensusCheckQuickview.gpr.py:10
 msgid ""
 "Check whether any Census events are missing for a person and some of their "
 "descendents"
 msgstr ""
+"Controleer of er volkstellingen ontbreken voor een persoon en sommige "
+"nakomelingen"
 
 #: Form/CensusCheckQuickview.gpr.py:23
-#, fuzzy
-#| msgid "Censuses"
 msgid "CensusCheckUp"
-msgstr "Volkstellingen"
+msgstr "Volkstellingcontrole"
 
 #: Form/CensusCheckQuickview.gpr.py:24
 msgid ""
 "Check whether any Census events are missing for a person and some of their "
 "ancestors"
 msgstr ""
+"Controleer of er volkstellingen ontbreken voor een persoon en sommige "
+"voorouders"
 
 #: Form/CensusCheckQuickview.py:122 Form/CensusCheckUpQuickview.py:122
 #, python-format
 msgid "Census Check for %s"
-msgstr ""
+msgstr "Volkstellingscontrole voor %s"
 
 #: Form/editform.py:191
 #, python-format
@@ -6621,19 +6560,15 @@ msgstr "Formulier"
 
 #: Form/form.py:173
 msgid "XML syntax error in Form definition file"
-msgstr ""
+msgstr "XML-syntaxisfout in formulierdefinitiebestand"
 
 #: Form/form.py:184
-#, fuzzy
-#| msgid "Failed to read proto file %s: %s"
 msgid "Failed to read Form definition file"
-msgstr "Kan proto-bestand %s:%s niet lezen"
+msgstr "Kan formulierdefinitiebestand niet lezen"
 
 #: Form/form.py:193
-#, fuzzy
-#| msgid "Invalid Destination Directory"
 msgid "Invalid Form definition file"
-msgstr "Ongeldige bestemmingsdirectory"
+msgstr "Ongeldig formulierdefinitiebestand"
 
 #: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
 #: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
@@ -15008,10 +14943,8 @@ msgid "Order Number"
 msgstr "Bestelnummer"
 
 #: Form/form_us.xml.h:2551
-#, fuzzy
-#| msgid "Registration No."
 msgid "Registration Card"
-msgstr "Registratie nr."
+msgstr "Registratiekaart"
 
 #: Form/form_us.xml.h:2552
 msgid ""
@@ -15030,10 +14963,24 @@ msgid ""
 "        (Men who turned 18 since\n"
 "         previous registration)"
 msgstr ""
+"Vanaf de hoek linksonder\n"
+"      D.S.S. Formulier 1\n"
+"        (Mannen 21 - 31)\n"
+"      D.S.S. Formulier 1 (Rev. 6-9-41)\n"
+"        (Mannen die 21 zijn geworden na 1e registratie)\n"
+"      D.S.S. Formulier 1 (Rev. 1/1/42)\n"
+"        (Mannen geboren van 17/2/1897 t/m 31/12/1921)\n"
+"      D.S.S. Formulier 1 (Rev. 4/1/42)\n"
+"        (Mannen 45-64)\n"
+"      D.S.S. Formulier 1 (Rev. 6/1/42)\n"
+"        (Mannen 18-20)\n"
+"      D.S.S. Formulier 1 (Rev. 11/16/42)\n"
+"        (Mannen die 18 zijn geworden na\n"
+"         vorige registratie)"
 
 #: Form/form_us.xml.h:2554
 msgid "(1) First, Middle, Last"
-msgstr ""
+msgstr "(1) Voornaam, 2e voornaam, Achternaam"
 
 #: Form/form_us.xml.h:2555
 msgid "Place of Residence"
@@ -15044,6 +14991,8 @@ msgid ""
 "(2) Address or Place of Residence\n"
 " No. and street or R.F.D. No., Town, County, State"
 msgstr ""
+"(2) Adres of woonplaats\n"
+" Huisnummer en straat of R.F.D.-nummer, Plaats, County, Staat"
 
 #: Form/form_us.xml.h:2557
 msgid "Mailing Address"
@@ -15054,6 +15003,8 @@ msgid ""
 " Not used on D.S.S. Form 1\n"
 " (3) Used on all other forms"
 msgstr ""
+" Niet gebruikt op D.S.S. Formulier 1\n"
+" (3) Gebruikt op alle andere formulieren"
 
 #: Form/form_us.xml.h:2559
 msgid "Telephone"
@@ -15064,6 +15015,8 @@ msgid ""
 "(3) On D.S.S. Form 1\n"
 "(4) On all other forms"
 msgstr ""
+"(3) Op D.S.S. Formulier 1\n"
+"(4) Op all andere formulieren"
 
 #: Form/form_us.xml.h:2561
 msgid "Age in years"
@@ -15074,30 +15027,32 @@ msgid ""
 "(4) On D.S.S. Form 1\n"
 "(5) On all other forms"
 msgstr ""
+"(4) Op D.S.S. Formulier 1\n"
+"(5) Op alle andere formulieren"
 
 #: Form/form_us.xml.h:2564
-#, fuzzy
-#| msgid "Age in years"
 msgid "(Below Age in Years)"
-msgstr "Leeftijd in jaren"
+msgstr "(Onder de leeftijd in jaren)"
 
 #: Form/form_us.xml.h:2566
 msgid ""
 "(5) On D.S.S. Form 1\n"
 "(6) On all other forms"
 msgstr ""
+"(5) Op D.S.S. Formulier 1\n"
+"(6) Op alle andere formulieren"
 
 #: Form/form_us.xml.h:2567
-#, fuzzy
-#| msgid "Citizenship"
 msgid "Country of Citizenship"
-msgstr "Burgerschap"
+msgstr "Land van burgerschap"
 
 #: Form/form_us.xml.h:2568
 msgid ""
 "(6) On D.S.S. Form 1\n"
 "Not used on other forms"
 msgstr ""
+"(6) Op D.S.S. Formulier 1\n"
+"Niet gebruikt op andere formulieren"
 
 #: Form/form_us.xml.h:2569
 msgid "Who will always know your address (Name & Address)"
@@ -15109,26 +15064,25 @@ msgid ""
 "(7) On all but D.S.S. Form 1 (Rev. 6-9-41)\n"
 "(8) On D.S.S. Form 1 (Rev. 6-9-41)"
 msgstr ""
+"(7 & 9) Op D.S.S. Formulier 1\n"
+"(7) Op alle behalve D.S.S. Formulier 1 (Rev. 6-9-41)\n"
+"(8) Op D.S.S. Formulier 1 (Rev. 6-9-41)"
 
 #: Form/form_us.xml.h:2571
-#, fuzzy
-#| msgid "Relationship Type"
 msgid "Relationship "
-msgstr "Soort relatie"
+msgstr "Relatie "
 
 #: Form/form_us.xml.h:2572
 msgid "(8) Only on D.S.S. Form 1"
-msgstr ""
+msgstr "(8) Alleen op D.S.S. Formulier 1"
 
 #: Form/form_us.xml.h:2573
-#, fuzzy
-#| msgid "Occupation:"
 msgid "Occupation "
-msgstr "Beroep:"
+msgstr "Beroep "
 
 #: Form/form_us.xml.h:2574
 msgid "(7) Only on D.S.S. Form 1 (Rev. 6-9-41)"
-msgstr ""
+msgstr "(7) Alleen op D.S.S. Formulier 1 (Rev. 6-9-41)"
 
 #: Form/form_us.xml.h:2576
 msgid ""
@@ -15136,6 +15090,9 @@ msgid ""
 "(9) On D.S.S. Form 1 (Rev. 6-9-41)\n"
 "(8) on all others forms"
 msgstr ""
+"(10) Opn D.S.S. Formulier 1\n"
+"(9) Op D.S.S. Formulier 1 (Rev. 6-9-41)\n"
+"(8) op alle andere formulieren"
 
 #: Form/form_us.xml.h:2577
 msgid "Place of employment or business"
@@ -15147,6 +15104,9 @@ msgid ""
 "(10) On D.S.S. Form 1 (Rev. 6-9-41)\n"
 "(9) on all others forms"
 msgstr ""
+"(11) Op D.S.S. Formulier 1\n"
+"(10) Op D.S.S. Formulier 1 (Rev. 6-9-41)\n"
+"(9) op alle andere forumlieren"
 
 #: Form/form_us.xml.h:2580
 msgid ""
@@ -15156,6 +15116,11 @@ msgid ""
 "Indian\n"
 "Filipino"
 msgstr ""
+"Blank\n"
+"Zwart\n"
+"Aziatisch\n"
+"Indiaans\n"
+"Filipijns"
 
 #: Form/form_us.xml.h:2583 Form/form_us.xml.h:2604
 msgid "Complexion"
@@ -15172,6 +15137,14 @@ msgid ""
 "Dark brown\n"
 "Black"
 msgstr ""
+"Bleek\n"
+"Licht\n"
+"Blossend\n"
+"Donker\n"
+"Gesproet\n"
+"Lichtbruin\n"
+"Donkerbruin\n"
+"Zwart"
 
 #: Form/form_us.xml.h:2585
 msgid "Eyes"
@@ -15185,6 +15158,11 @@ msgid ""
 "Brown\n"
 "Black"
 msgstr ""
+"Blauw\n"
+"Grijs\n"
+"Roodbruin\n"
+"Bruin\n"
+"Zwart"
 
 #: Form/form_us.xml.h:2587
 msgid "Hair"
@@ -15199,6 +15177,12 @@ msgid ""
 "Gray\n"
 "Bald"
 msgstr ""
+"Blond\n"
+"Rood\n"
+"Bruin\n"
+"Zwart\n"
+"Grijs\n"
+"Kaal"
 
 #: Form/form_us.xml.h:2589
 msgid "Other characteristics"
@@ -15605,11 +15589,10 @@ msgid "GOV error on id %s with code: "
 msgstr "GOV-fout op id %s met code: "
 
 #: GetGOV/getgov.py:555
-#, fuzzy, python-format
-#| msgid "from %s to %s"
+#, python-format
 msgctxt "end"
 msgid "from %(begin)s to %(end)s"
-msgstr "van %s tot %s"
+msgstr "van %(begin)s tot %(end)s"
 
 #: GetGOV/getgov.py:557
 #, python-format
@@ -15670,11 +15653,11 @@ msgstr ""
 
 #: GrampsChat/GrampsChat.gpr.py:4 GrampsChat/GrampsChat.gpr.py:9
 msgid "GrampsChat"
-msgstr ""
+msgstr "GrampsChat"
 
 #: GrampsChat/GrampsChat.gpr.py:5
 msgid "AI Chatbot Gramplet (requires connecting to an LLM service)"
-msgstr ""
+msgstr "AI Chatbot Gramplet (vereist verbinding maken met een LLM-dienst)"
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:116
 #: GrampsWebSync/grampswebsync.py:209
@@ -15948,76 +15931,59 @@ msgstr[1] "%s mediabestanden uploaden"
 
 #: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
 msgid "Gram.py Script"
-msgstr ""
+msgstr "Gram.py Script"
 
 #: GrampyScript/GrampyScript.gpr.py:24
 msgid "Run a special Gramps Python script"
-msgstr ""
+msgstr "Een speciaal Gramps Python script uitvoeren"
 
 #: GrampyScript/GrampyScript.py:91
-#, fuzzy
-#| msgid "Loaded from file: %s"
 msgid "Load query from a .script file"
-msgstr "Geladen vanuit bestand: %s"
+msgstr "Zoekopdracht laden vanuit een .script-bestand"
 
 #: GrampyScript/GrampyScript.py:121
-#, fuzzy
-#| msgid "Save tree as file"
 msgid "Save query to a .script file"
-msgstr "Boom opslaan als bestand"
+msgstr "Zoekopdracht opslaan in een .script-bestand"
 
 #: GrampyScript/GrampyScript.py:141
-#, fuzzy
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
 msgid "Download results as a CSV file"
-msgstr "%s mediabestand downloaden"
+msgstr "Download resultaten als CSV-bestand"
 
 #: GrampyScript/GrampyScript.py:303
-#, fuzzy
-#| msgid "OpenAI"
 msgid "Open..."
-msgstr "OpenAI"
+msgstr "Openen..."
 
 #: GrampyScript/GrampyScript.py:305
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Save as..."
-msgstr "Afbeeldingen opslaan in ..."
+msgstr "Opslaan als…"
 
 #: GrampyScript/GrampyScript.py:319
 msgid "Save as CSV"
-msgstr ""
+msgstr "Opslaan als CSV"
 
 #: GrampyScript/GrampyScript.py:320
-#, fuzzy
-#| msgid "Copy link to clipboard"
 msgid "Copy to clipboard"
-msgstr "Koppeling naar klembord kopiëren"
+msgstr "Kopiëren naar klembord"
 
 #: GrampyScript/GrampyScript.py:395
-#, fuzzy
-#| msgid "Quilt Chart"
 msgid "Chart"
-msgstr "Quilt-grafiek"
+msgstr "Grafiek"
 
 #: GrampyScript/GrampyScript.py:400
 msgid "Execute <Alt+Enter>"
-msgstr ""
+msgstr "Uitvoeren <Alt+Enter>"
 
 #: GrampyScript/GrampyScript.py:402
 msgid "Execute the script"
-msgstr ""
+msgstr "Voer het script uit"
 
 #: GrampyScript/GrampyScript.py:416
-#, fuzzy
-#| msgid "Read"
 msgid "Ready..."
-msgstr "Lezen"
+msgstr "Klaar…"
 
 #: GrampyScript/GrampyScript.py:1028
 msgid "Gram.py Script Edited Data"
-msgstr ""
+msgstr "Gram.py-script heeft gegevens bewerkt"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -16037,15 +16003,15 @@ msgstr "Modern"
 
 #: GraphView/avatars.py:65
 msgid "Generic (dark)"
-msgstr ""
+msgstr "Generiek (donker)"
 
 #: GraphView/avatars.py:66
 msgid "Generic (gray)"
-msgstr ""
+msgstr "Generiek (grijs)"
 
 #: GraphView/avatars.py:67
 msgid "Generic (light)"
-msgstr ""
+msgstr "Generiek (licht)"
 
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
 #: GraphView/graphview.py:189
@@ -18929,13 +18895,11 @@ msgstr "De basisstijl die wordt gebruikt voor de titelweergave."
 
 #: PedigreeChart/PedigreeChart.py:749
 msgid "Style used for names (only for PDF document and PostScript)."
-msgstr ""
+msgstr "Stijl gebruikt voor namen (alleen voor PDF-document en PostScript)."
 
 #: PedigreeChart/PedigreeChart.py:758
-#, fuzzy
-#| msgid "Style used for labels and captions"
 msgid "Style used for labels and captions."
-msgstr "Stijl gebruikt voor labels en bijschriften"
+msgstr "Stijl gebruikt voor labels en bijschriften."
 
 #: PersonEverything/PersonEverything.gpr.py:32
 msgid "PersonEverything Report"
@@ -22695,13 +22659,7 @@ msgstr ""
 "%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:105
-#, fuzzy, python-format
-#| msgid ""
-#| "Directly importing from TMG files is not supportedby the TMG Importer "
-#| "Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that "
-#| "your TMG project was created by:TMG version 5.x or greater.Your "
-#| "file:*.TMG - Version Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
-#| "%(gramps_wiki_import_pjc_direct_url)s"
+#, python-format
 msgid ""
 "Directly importing from TMG files is not supported\n"
 "by the TMG Importer Addon.\n"
@@ -22717,20 +22675,22 @@ msgid ""
 "Please refer to:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
-"Direct importeren vanuit TMG-bestanden wordt niet ondersteund door de TMG-"
-"importeur toevoeging. U moet een reservekopie van TMG-project (*. Sqz) "
-"gebruiken Zorg ervoor dat uw TMG-project is gemaakt door: TMG versie 5.x of "
-"hoger. Uw bestand: *. TMG - Versiecontrolebestand voor TMG 2.0 tot TMG 4.0d "
-"Raadpleeg: %(gramps_wiki_import_pjc_direct_url)s"
+"Direct importeren vanuit TMG-bestanden wordt niet ondersteund\n"
+"door de TMG-importeur toevoeging.\n"
+"\n"
+"U moet een reservekopie van TMG-project (*. sqz) gebruiken\n"
+"\n"
+"Zorg ervoor dat uw TMG-project is gemaakt door: \n"
+"TMG versie 5.x of hoger.\n"
+"\n"
+"Uw bestand:\n"
+"*. TMG - Versiecontrolebestand voor TMG 2.0 tot TMG 4.0d\n"
+"\n"
+"Raadpleeg:\n"
+"%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:126
-#, fuzzy, python-format
-#| msgid ""
-#| "Directly importing from TMG files is not supportedby the TMG Importer "
-#| "Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that "
-#| "your TMG project was created by:TMG version 5.x or greater.Your "
-#| "file:*.VER - Version Control File for TMG 1.2 and earlierPlease refer to:"
-#| "%(gramps_wiki_import_pjc_direct_url)s"
+#, python-format
 msgid ""
 "Directly importing from TMG files is not supported\n"
 "by the TMG Importer Addon.\n"
@@ -22746,11 +22706,19 @@ msgid ""
 "Please refer to:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
-"Direct importeren vanuit TMG-bestanden wordt niet ondersteund door de TMG-"
-"importeur toevoeging. U moet een reservekopie van TMG-project (*. Sqz) "
-"gebruiken Zorg ervoor dat uw TMG-project is gemaakt door: TMG versie 5.x of "
-"hoger. Uw bestand: *. VER - Versiecontrolebestand voor TMG 1.2 en eerder "
-"Raadpleeg: %(gramps_wiki_import_pjc_direct_url)s"
+"Direct importeren vanuit TMG-bestanden wordt\n"
+"niet ondersteund door de TMG-importeur toevoeging.\n"
+"\n"
+"U moet een reservekopie van TMG-project (*. sqz) gebruiken\n"
+"\n"
+"Zorg ervoor dat uw TMG-project is gemaakt door:\n"
+"TMG versie 5.x of hoger.\n"
+"\n"
+"Uw bestand:\n"
+"*. VER - Versiecontrolebestand voor TMG 1.2 en eerder\n"
+"\n"
+"Raadpleeg:\n"
+"%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/libtmg.glade:15
 msgid "TMG Importer"
@@ -24471,21 +24439,19 @@ msgstr ""
 
 #: WebSearch/info_panel.py:241
 msgid "Gramps Forum (Discourse)"
-msgstr ""
+msgstr "Gramps Forum (Discourse)"
 
 #: WebSearch/info_panel.py:245
 msgid "✅ Bug reports and feature requests are completely **free of charge**."
 msgstr "✅ Foutmeldingen en functieverzoeken zijn volledig **gratis**."
 
 #: WebSearch/info_panel.py:249
-#, fuzzy
-#| msgid "Issues"
 msgid "GitHub Issues"
-msgstr "Problemen"
+msgstr "GitHub Issues"
 
 #: WebSearch/info_panel.py:252
 msgid "Gramps Bug Tracker"
-msgstr ""
+msgstr "Gramps Bug Tracker"
 
 #: WebSearch/info_panel.py:255
 #, python-format
@@ -24715,22 +24681,20 @@ msgid ""
 "Select a Gramps XML file and\n"
 " click on the Run button."
 msgstr ""
+"Kies een Gramps XML-bestand en\n"
+" klik op de knop Uitvoeren."
 
 #: lxml/etreeGramplet.py:155 lxml/lxmlGramplet.py:197
 msgid "No file loaded..."
 msgstr "Geen bestand geladen..."
 
 #: lxml/etreeGramplet.py:203 lxml/etreeGramplet.py:209
-#, fuzzy
-#| msgid "Number of editions back"
 msgid "Number of additions and modifications back"
-msgstr "Aantal edities terug"
+msgstr "Aantal toevoegingen en aanpassingen terug"
 
 #: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
-#, fuzzy
-#| msgid "No source information found"
 msgid "Print more informations on console"
-msgstr "Geen broninformatie gevonden"
+msgstr "Meer informatie afdrukken op console"
 
 #: lxml/etreeGramplet.py:254
 #, python-format
@@ -24747,10 +24711,8 @@ msgid "Cannot copy \"%s\""
 msgstr "Kan \"%s\" niet kopiëren"
 
 #: lxml/etreeGramplet.py:265 lxml/lxmlGramplet.py:348
-#, fuzzy
-#| msgid "Is it a compressed .gramps?"
 msgid "Is it a .gramps?"
-msgstr "Is het een gecomprimeerde .gramps?"
+msgstr "Is het een .gramps?"
 
 #: lxml/etreeGramplet.py:282
 msgid "Sorry, no support for your OS yet!"
@@ -24766,10 +24728,9 @@ msgid "Parsing issue"
 msgstr "Parseringsprobleem"
 
 #: lxml/etreeGramplet.py:498
-#, fuzzy, python-format
-#| msgid "XML: Last %s editions since %s, were at/on :\n"
+#, python-format
 msgid "XML: Last %s additions and modifications since %s, were on :\n"
-msgstr "XML: laatste %s edities sinds %s, waren te/op :\n"
+msgstr "XML: laatste %s toevoegingen en aanpassingen sinds %s, waren op :\n"
 
 #: lxml/etreeGramplet.py:554
 #, python-format
@@ -24783,148 +24744,112 @@ msgstr ""
 "\n"
 
 #: lxml/etreeGramplet.py:557
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal labels : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:559
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\n"
+#, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%06s\n"
 msgstr ""
 "Aantal labels : \n"
-"\t\t\t%s\n"
+"\t\t\t%06s\n"
 
 #: lxml/etreeGramplet.py:561
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of  events : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of  events : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal gebeurtenissen : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:564
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of persons : \n"
-#| "\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+#, python-format
 msgid ""
 "Number of persons : \n"
 "\t\t\t%06s\t|\t(%06s) and (%06s)* surnames\n"
 msgstr ""
 "Aantal personen : \n"
-"\t\t\t%s\t|\t(%s) en (%s)* achternamen\n"
+"\t\t\t%06s\t|\t(%06s) en (%06s)* achternamen\n"
 
 #: lxml/etreeGramplet.py:566
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of persons : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of persons : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal personen : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:567
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of families : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of families : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal gezinnen : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:568
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of sources : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of sources : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal bronnen : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:570
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of citations : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of citations : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal citaten : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:573
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of places : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of places : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal locaties : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:574
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of media objects : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of media objects : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal media-objecten : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:575
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of repositories : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of repositories : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal bibliotheken : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:576
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of notes : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of notes : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Aantal notities : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"Number of notities: \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:581
 #, python-format
@@ -24969,20 +24894,16 @@ msgid "Please, try to install \"python3 lxml\" package."
 msgstr "Probeer het pakket \"python3 lxml\" te installeren."
 
 #: lxml/lxmlGramplet.py:255 lxml/lxmlGramplet.py:273 lxml/lxmlGramplet.py:749
-#, fuzzy
-#| msgid "Filter options"
 msgid "xmllint options"
-msgstr "Filteropties"
+msgstr "xmllint-opties"
 
 #: lxml/lxmlGramplet.py:264 lxml/lxmlGramplet.py:282
-#, fuzzy
-#| msgid "Legacy place"
 msgid "debug places"
-msgstr "Oude locatie"
+msgstr "debug plaatsen"
 
 #: lxml/lxmlGramplet.py:265 lxml/lxmlGramplet.py:283
 msgid "debug xml"
-msgstr ""
+msgstr "debug xml"
 
 #: lxml/lxmlGramplet.py:382
 msgid "XSD validation (lxml)"
@@ -25000,11 +24921,11 @@ msgstr "xmllint: sla RelaxNG-validatie over voor \"%(file)s\""
 
 #: lxml/lxmlGramplet.py:423
 msgid "Custom \"test.xml\" file"
-msgstr ""
+msgstr "Aangepast \"test.xml\" bestand"
 
 #: lxml/lxmlGramplet.py:423
 msgid "Please try to fix \"test.xml\""
-msgstr ""
+msgstr "Probeer \"test.xml\" te repareren"
 
 #: lxml/lxmlGramplet.py:432
 #, python-format
@@ -25031,24 +24952,18 @@ msgstr "Bestand parseren..."
 #: lxml/lxmlGramplet.py:569
 #, python-format
 msgid " - (%(lang)s)"
-msgstr ""
+msgstr " - (%(lang)s)"
 
 #: lxml/lxmlGramplet.py:572
 #, python-format
 msgid " - (? or %(lang)s)"
-msgstr ""
+msgstr " - (? of %(lang)s)"
 
 #: lxml/lxmlGramplet.py:609
 msgid "Missing header"
 msgstr "Ontbrekende koptekst"
 
 #: lxml/lxmlGramplet.py:609 lxml/lxmlGramplet.py:719
-#, fuzzy
-#| msgid ""
-#| "Not a valid .gramps.\n"
-#| "Cannot run the gramplet...\n"
-#| "Please, try to use a .gramps\n"
-#| "generated by Gramps 4.x."
 msgid ""
 "Not a valid .gramps.\n"
 "Cannot run the gramplet...\n"
@@ -25058,7 +24973,7 @@ msgstr ""
 "Geen geldige .gramps.\n"
 "Kan gramplet niet uitvoeren...\n"
 "Probeer alstublieft een .gramps te gebruiken\n"
-"gegenereerd door Gramps 4.x."
+"gegenereerd door Gramps 6.x."
 
 #: lxml/lxmlGramplet.py:622 lxml/lxmlGramplet.py:627 lxml/lxmlGramplet.py:632
 #: lxml/lxmlGramplet.py:637
@@ -25082,56 +24997,50 @@ msgid "Period: "
 msgstr "Periode: "
 
 #: lxml/lxmlGramplet.py:659 lxml/lxmlGramplet.py:663
-#, fuzzy, python-brace-format
-#| msgid "Ref: {number}. {name}"
+#, python-brace-format
 msgid "\t{number} surname"
 msgid_plural "\t{number} surnames; no frequency yet\n"
-msgstr[0] "Ref: {number}. {name}"
-msgstr[1] "Ref: {number}. {name}"
+msgstr[0] "\t{number} achternaam"
+msgstr[1] "\t{number} achternamen; nog geen frequentie\n"
 
 #: lxml/lxmlGramplet.py:659
-#, fuzzy, python-brace-format
-#| msgid " entries for surname(s); no frequency yet"
+#, python-brace-format
 msgid "\t{number} surname; no frequency yet"
-msgstr " vermeldingen voor achterna(a)m(en); nog geen frequentie"
+msgstr "\t{number} achternaam; nog geen frequentie"
 
 #: lxml/lxmlGramplet.py:660 lxml/lxmlGramplet.py:667
-#, fuzzy, python-brace-format
-#| msgid "Ref: {number}. {name}"
+#, python-brace-format
 msgid "\t{number} place"
 msgid_plural "\t{number} places\n"
-msgstr[0] "Ref: {number}. {name}"
-msgstr[1] "Ref: {number}. {name}"
+msgstr[0] "\t{number} plaats"
+msgstr[1] "\t{number} plaatsen\n"
 
 #: lxml/lxmlGramplet.py:661 lxml/lxmlGramplet.py:671
-#, fuzzy, python-brace-format
-#| msgid "Ref: {number}. {name}"
+#, python-brace-format
 msgid "\t{number} note"
 msgid_plural "\t{number} notes\n"
-msgstr[0] "Ref: {number}. {name}"
-msgstr[1] "Ref: {number}. {name}"
+msgstr[0] "\t{number} notitie"
+msgstr[1] "\t{number} notities\n"
 
 #: lxml/lxmlGramplet.py:675
-#, fuzzy, python-brace-format
-#| msgid "New source"
+#, python-brace-format
 msgid "\t{number} source"
 msgid_plural "\t{number} sources\n"
-msgstr[0] "Nieuwe bron"
-msgstr[1] "Nieuwe bron"
+msgstr[0] "\t{number} bron"
+msgstr[1] "\t{number} bronnen\n"
 
 #: lxml/lxmlGramplet.py:694 lxml/lxmlGramplet.py:919
 msgid "Gallery.html"
 msgstr "Gallery.html"
 
 #: lxml/lxmlGramplet.py:695
-#, fuzzy, python-format
-#| msgid "2. Has generated a media index on \"%(file)s\".\n"
+#, python-format
 msgid "1. Has generated a media index on \"%(file)s\".\n"
-msgstr "2. Heeft een media-index gegenereerd op \"%(file)s\".\n"
+msgstr "1. Heeft een media-index gegenereerd op \"%(file)s\".\n"
 
 #: lxml/lxmlGramplet.py:719
 msgid "XML SyntaxError"
-msgstr ""
+msgstr "XML SyntaxError"
 
 #: lxml/lxmlGramplet.py:723
 msgid "Matches XSD schema."
@@ -25174,17 +25083,12 @@ msgid "Portugal"
 msgstr "Portugal"
 
 #: lxml/lxmlGramplet.py:896
-#, fuzzy, python-format
-#| msgid "1. Has generated \"%s\".\n"
+#, python-format
 msgid "2. Has generated \"%s\".\n"
-msgstr "1. Heeft \"%s\" gegenereerd.\n"
+msgstr "2. Heeft \"%s\" gegenereerd.\n"
 
 #: lxml/lxmlGramplet.py:898
-#, fuzzy, python-format
-#| msgid ""
-#| "Try to open\n"
-#| " \"%s\"\n"
-#| " into your prefered web navigator ..."
+#, python-format
 msgid ""
 "Try to open\n"
 " \"%s\"\n"
