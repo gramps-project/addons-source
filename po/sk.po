@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-10 10:43-0700\n"
-"PO-Revision-Date: 2026-05-10 17:40+0000\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -519,8 +519,7 @@ msgstr ""
 #: Betawhatsnext/Betawhatsnext.py:70
 msgid ""
 "Use the \"Configure\" in the \"View\" menu to change the Gramplet options."
-msgstr ""
-"Použite \"Konfigurovať\" v menu \"Pohľad\" na zmenu možností Grampletu."
+msgstr "Použite \"Konfigurovať\" v menu \"Pohľad\" na zmenu volieb Grampletu."
 
 #: Betawhatsnext/Betawhatsnext.py:86
 msgid "Search Quota "
@@ -903,10 +902,10 @@ msgstr ""
 "chýbajú.\n"
 "\n"
 "Použitie:\n"
-"1. Prejdite na kartu Možnosti\n"
+"1. Prejdite na kartu Voľby \n"
 "2. Začiarknite možnosť [ ] Odstrániť, ak chcete odstrániť predchádzajúce "
 "odhady\n"
-"3. Vyberte možnosti Pridať dátum, ak chcete datovať udalosti s dátumom alebo "
+"3. Vyberte voľbu Pridať dátum, ak chcete datovať udalosti s dátumom alebo "
 "bez dátumu\n"
 "4. Kliknite na položku Vykonať\n"
 "5. Vyberte osoby, ku ktorým chcete pridať udalosti\n"
@@ -1365,7 +1364,7 @@ msgstr "Nepodarilo sa skopírovať webové súbory: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:817
 msgid "Ancestral Collapsible Tree Options"
-msgstr "Možnosti zbaliteľného stromu predkov"
+msgstr "Voľby zbaliteľného stromu predkov"
 
 #: D3Charts/AncestralCollapsibleTree.py:841 D3Charts/AncestralFanChart.py:724
 #: D3Charts/DescendantIndentedTree.py:1808
@@ -1431,7 +1430,7 @@ msgstr ""
 
 #: D3Charts/AncestralFanChart.py:708
 msgid "Ancestral Fan Chart Options"
-msgstr "Možnosti vejárového grafu predkov"
+msgstr "Voľby vejárového grafu predkov"
 
 #: D3Charts/AncestralFanChart.py:730
 msgid "Paternal Background Color"
@@ -2492,7 +2491,7 @@ msgstr "Hľadanie"
 
 #: DenominoViso/DenominoViso.py:2552
 msgid "DenominoViso Options"
-msgstr "Možnosti DenominoViso"
+msgstr "Voľby DenominoViso"
 
 #: DenominoViso/DenominoViso.py:2556
 msgid "The destination file for the html-content."
@@ -2568,7 +2567,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2604
 msgid "Include Options"
-msgstr "Možnosti zahrnutia"
+msgstr "Voľby zahrnutia"
 
 #: DenominoViso/DenominoViso.py:2607
 #: RepositoriesReport/RepositoriesReportAlt.py:467
@@ -2657,7 +2656,7 @@ msgstr "Či zahrnúť zdroje osoby."
 
 #: DenominoViso/DenominoViso.py:2660
 msgid "Image Options"
-msgstr "Možnosti obrázka"
+msgstr "Voľby obrázka"
 
 #: DenominoViso/DenominoViso.py:2662
 msgid "Include Photos/Images from Gallery"
@@ -2701,7 +2700,7 @@ msgstr "Atribút obrázka, ktorý by mal byť použitý ako zdrojová referencia
 
 #: DenominoViso/DenominoViso.py:2689
 msgid "Style Options"
-msgstr "Možnosti štýlu"
+msgstr "Voľby štýlu"
 
 #: DenominoViso/DenominoViso.py:2691
 msgid "Color of active person:"
@@ -5431,7 +5430,7 @@ msgstr "GEXF sa používa v mnohých aplikáciách sieťových grafov."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:40
 msgid "GEXF export options"
-msgstr "Možnosti exportu GEXF"
+msgstr "Voľby exportu GEXF"
 
 #: ExportProlog/ExportProlog.gpr.py:4
 msgid "Prolog Export"
@@ -5451,7 +5450,7 @@ msgstr "Toto je surový výpis objektov v jazyku Python"
 
 #: ExportRaw/ExportRaw.gpr.py:13
 msgid "Raw options"
-msgstr "Možnosti Raw"
+msgstr "Voľby Raw"
 
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:32
 msgid "Extended Person Attributes"
@@ -5488,7 +5487,7 @@ msgstr ""
 
 #: ExtractCity/extractcity.gpr.py:34
 msgid "Extract Place Data from a Place Title"
-msgstr "Extrakcia údajov o mieste z názvu miesta"
+msgstr "Extrahovať údaje o mieste z názvu miesta"
 
 #: ExtractCity/extractcity.gpr.py:35
 msgid "Attempts to extract city and state/province from a place title"
@@ -5936,7 +5935,7 @@ msgstr "Zahrnúť popis udalosti"
 
 #: FamilyTree/FamilyTree.py:1134
 msgid "Text Options"
-msgstr "Možnosti textu"
+msgstr "Voľby textu"
 
 #: FamilyTree/FamilyTree.py:1162
 msgid "The style used for names."
@@ -15290,7 +15289,7 @@ msgstr "Pri spustení zobraziť časové značky na navigačnom paneli"
 
 #: GeoTimeLines/GeoTimeLines.py:1974
 msgid "TimeLines Map options"
-msgstr "Možnosti mapy časových osí"
+msgstr "Voľby mapy časových osí"
 
 #: GetGOV/getgov.gpr.py:32 GetGOV/getgov.gpr.py:44
 msgid "GetGOV"
@@ -16836,7 +16835,7 @@ msgstr "Toto je export vo formáte JSON"
 
 #: JSON/JSON.gpr.py:12
 msgid "JSON options"
-msgstr "Možnosti JSON"
+msgstr "Voľby JSON"
 
 #: JSON/JSON.gpr.py:20
 msgid "JSON Import"
@@ -19760,7 +19759,7 @@ msgid ""
 "from Geography map"
 msgstr ""
 "Použiť poslednú kliknutú pozíciu\n"
-"z geografickej mapy"
+"z mapy Zemepis"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:218
 msgid "Search location from DB"
@@ -20154,7 +20153,7 @@ msgid ""
 "as necessary for Geography and Charts</i>:\n"
 msgstr ""
 "<i>Inštalácie nasledujúcich balíkov sú <b>VEĽMI ODPORÚČANÉ</b> ako "
-"nevyhnutné pre geografiu a grafy</i>:\n"
+"nevyhnutné pre Zemepis a Grafy</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:226
 msgid ""
@@ -20271,11 +20270,11 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
-"<i><a href=\"https://gramps-project.org/wiki/index.php?"
-"title=How_to_make_a_backup\">Zálohovanie do Gramps XML</a> V posledných "
-"verziách programu Gramps nájdete v ponuke Rodinný strom možnosť \"Vytvoriť "
-"zálohu...\", v opačnom prípade použite v tej istej ponuke možnosť "
-"\"Exportovať...\", ale zrušte označenie možnosti ochrany osobných údajov v "
+"<i><a href=\"https://gramps-project.org/wiki/"
+"index.php?title=How_to_make_a_backup\">Zálohovanie do Gramps XML</a> V "
+"posledných verziách programu Gramps nájdete v ponuke Rodinný strom možnosť "
+"\"Vytvoriť zálohu...\", v opačnom prípade použite v tej istej ponuke možnosť "
+"\"Exportovať...\", ale zrušte označenie volieb ochrany osobných údajov v "
 "Asistentovi exportéra, aby ste exportovali všetky údaje.</i>\n"
 "\n"
 
@@ -20775,7 +20774,7 @@ msgstr "Priehľadnosť cesty"
 #: QuiltView/QuiltView.py:1939 RemoveTagTool/RemoveTagTool.py:89
 #: RemoveTagTool/RemoveTagTool.py:97 RemoveTagTool/RemoveTagTool.py:105
 msgid "General options"
-msgstr "Všeobecné možnosti"
+msgstr "Všeobecné voľby"
 
 #: RUWebConnectPack/RUWebPack.gpr.py:11
 msgid "RU Web Connect Pack"
