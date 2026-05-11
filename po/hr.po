@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-10 10:43-0700\n"
-"PO-Revision-Date: 2026-05-10 14:47+0000\n"
+"PO-Revision-Date: 2026-05-11 10:35+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -572,8 +572,8 @@ msgstr ""
 " 👣 Sljedeći koraci:\n"
 " Dodaj obitelj i osobu u toj obitelji:\n"
 "  • Obitelj se može dodati putem izbornika „Dodaj”\n"
-"  • Osoba se može dodati pritiskom na „+” (plus) u panelima supružnika "
-"(„Otac/partner1” ili „Majka/partner2”) ili u kartici „Djeca”\n"
+"  • Osoba se može dodati pritiskom na „+” (plus) u panelima supružnika („"
+"Otac/partner1” ili „Majka/partner2”) ili u kartici „Djeca”\n"
 "\n"
 " Ili uvezi osobe iz eksterne datoteke:\n"
 "  • Vanjska datoteka se može koristiti za popunjavanje rodoslova putem "
@@ -1127,16 +1127,10 @@ msgid "Send"
 msgstr "Pošalji"
 
 #: ChatWithTree/ChatWithTree.py:163
-#, fuzzy
-#| msgid "Chat with Tree initialized. Type /help for help."
 msgid "Chat with Tree initialized.                 Type /help for help."
 msgstr "Chat s rodoslovom je inicijaliziran. Upiši /help za pomoć."
 
 #: ChatWithTree/ChatWithTree.py:449
-#, fuzzy
-#| msgid ""
-#| "The ChatWithTree addon is not yet initialized. Please reload Gramps or "
-#| "select a database."
 msgid ""
 "The ChatWithTree addon is not yet initialized.                     Please "
 "reload Gramps or select a database."
@@ -1294,9 +1288,9 @@ msgid ""
 "the person you want as 'Home Person', then confirm your choice via the menu "
 "Edit -> Set Home Person."
 msgstr ""
-"Moraš postaviti jednu „zadanu osobu” do koje želiš ići. Odaberi prikaz "
-"„Osobe”, odaberi osobu koju želiš imati kao „početnu osobu”, zatim potvrdi "
-"tvoj izbor putem izbornika „Uredi > Postavi početnu osobu”."
+"Moraš postaviti jednu „zadanu osobu” do koje želiš ići. Odaberi prikaz „Osobe"
+"”, odaberi osobu koju želiš imati kao „početnu osobu”, zatim potvrdi tvoj "
+"izbor putem izbornika „Uredi > Postavi početnu osobu”."
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -1464,8 +1458,7 @@ msgstr ""
 "stablastom obliku s uvlakama pomoću D3.js JavaScript biblioteke."
 
 #: D3Charts/DescendantIndentedTree.py:678
-#, fuzzy, python-format
-#| msgid "See %(reference)s : %(spouse)s"
+#, python-format
 msgctxt "spouse"
 msgid "See %(reference)s : %(spouse)s"
 msgstr "Pogledaj %(reference)s : %(spouse)s"
@@ -2045,7 +2038,7 @@ msgstr "Nijedan rodoslov nije otvoren."
 
 #: DataEntryGramplet/DataEntryGramplet.py:429
 msgid "Please open a Family Tree to edit data."
-msgstr ""
+msgstr "Otvori jedan rodoslov za uređivanje podataka."
 
 #: DataEntryGramplet/DataEntryGramplet.py:446
 #: DataEntryGramplet/DataEntryGramplet.py:578
@@ -2055,7 +2048,7 @@ msgstr "Gramplet za uređivanje podataka: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:508
 msgid "Please open a Family Tree before adding a person."
-msgstr ""
+msgstr "Otvori jedan rodoslov prije dodavanje osobe."
 
 #: DataEntryGramplet/DataEntryGramplet.py:524
 msgid "Can't add new person."
@@ -2215,50 +2208,40 @@ msgid "Deep Connections"
 msgstr "Duboke veze"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
-#, fuzzy
-#| msgid "Pause"
 msgid "⏸ Pause"
-msgstr "Zaustavi"
+msgstr "⏸ Zaustavi"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:108
-#, fuzzy
-#| msgid "Years at current residence"
 msgid "Pause the current search"
-msgstr "Godine na trenutačnom prebivalištu"
+msgstr "Zaustavi trenutačnu pretragu"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:111
 msgid "▶ Continue"
-msgstr ""
+msgstr "▶ Nastavi"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:114
 msgid "Continue searching for more relations"
 msgstr "Nastavi tražiti još veza"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:118
-#, fuzzy
-#| msgid "Copy"
 msgid "📋 Copy"
-msgstr "Kopiraj"
+msgstr "📋 Kopiraj"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:120
-#, fuzzy
-#| msgid "Copy link to clipboard"
 msgid "Copy selected people to clipboard"
-msgstr "Kopiraj poveznicu u međuspremnik"
+msgstr "Kopiraj odabrane osobe u međuspremnik"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:128
 msgid "🗑 Clear"
-msgstr ""
+msgstr "🗑 Izbriši"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
 msgid "Clear all results and reset"
-msgstr ""
+msgstr "Izbriši sve rezultate i resetiraj"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
-#, fuzzy
-#| msgid "Start type to search"
 msgid "Ready to search"
-msgstr "Počni tipkati za pokretanje pretrage"
+msgstr "Spremno za pretragu"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:185
 #, python-brace-format
@@ -2315,7 +2298,7 @@ msgstr "Greška: Nije postavljena aktivna osoba"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:347
 msgid "Initializing search..."
-msgstr ""
+msgstr "Inicijaliziranje pretrage …"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:366
 msgid "Looking for relationship between\n"
@@ -2332,10 +2315,8 @@ msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (aktivna osoba) …\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:382
-#, fuzzy
-#| msgid "Fetching records..."
 msgid "Searching for connections..."
-msgstr "Dohvaćanje zapisa …"
+msgstr "Traženje veza …"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:402
 #, python-format
@@ -2359,16 +2340,13 @@ msgid "Paused - Press Continue to search for more relations"
 msgstr "Zaustavljeno – Za traženje dodatnih srodstva pritisni gumb „Nastavi”"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:456
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "Search completed. %d relations found."
+#, python-format
 msgid ""
 "\n"
 "Search completed. %d relation paths found."
 msgstr ""
 "\n"
-"Pretraga je završena. Broj pronađenih veza: %d."
+"Pretraga je završena. Broj pronađenih staza veza: %d."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:460
 msgid "Search completed - {} relation paths found"
@@ -2376,17 +2354,15 @@ msgstr "Pretraga je završena – broj pronađenih srodstva: %d"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:471
 msgid "Error during search: {}"
-msgstr ""
+msgstr "Greška tijekom pretraživanja: {}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:481
-#, fuzzy
-#| msgid "Removing '%s'..."
 msgid "Resuming search..."
-msgstr "Uklanjanje „%s” …"
+msgstr "Nastavljanje pretrage …"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:489
 msgid "Search interrupted by user"
-msgstr ""
+msgstr "Korisnik je prikinuo pretragu"
 
 #: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
@@ -3628,8 +3604,6 @@ msgstr ""
 " 0 = neograničeno "
 
 #: DescendantsLines/DescendantsLines.py:1618
-#, fuzzy
-#| msgid "Font name"
 msgid "Font Name"
 msgstr "Ime fonta"
 
@@ -3638,12 +3612,12 @@ msgid ""
 "Name of the Font to use. On Windows enter the file name of the .ttf at /"
 "Windows/Fonts"
 msgstr ""
+"Ime fonta koji se koristi. Na Windowsu unesi ime .ttf datoteke na /Windows/"
+"Fonts"
 
 #: DescendantsLines/DescendantsLines.py:1623
-#, fuzzy
-#| msgid "Database size"
 msgid "Font base size"
-msgstr "Veličina baze podataka"
+msgstr "Osnovna veličina fonta"
 
 #: DescendantsLines/DescendantsLines.py:1629
 msgid "Box around Person's block"
@@ -3963,8 +3937,7 @@ msgstr "Alat za deterministički ID"
 #: DetId/DetId.py:80
 msgid ""
 "The ID and handles now start at 0x00000000, and increment by 0x100000001"
-msgstr ""
-"ID i ručke sada započinju sa 0x00000000, i povećavaju se za 0x100000001"
+msgstr "ID i ručke sada započinju sa 0x00000000, i povećavaju se za 0x100000001"
 
 #: Differences/differences.gpr.py:4 Differences/differences.py:95
 msgid "Database Differences Report"
@@ -5123,8 +5096,8 @@ msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
 msgstr ""
-"Prikazuje Grampsovu Wiki pomoć sa stranicom „Uredi slikovne Exif "
-"metapodatke” u tvom web pregledniku."
+"Prikazuje Grampsovu Wiki pomoć sa stranicom „Uredi slikovne Exif metapodatke"
+"” u tvom web pregledniku."
 
 #: EditExifMetadata/editexifmetadata.py:194
 msgid ""
@@ -5351,14 +5324,14 @@ msgstr "Neispravan datum/vrijeme"
 #: EditExifMetadata/editexifmetadata.py:1122
 msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
 msgstr ""
-"Neispravna geografska širina (sintaksa: 18°9′48.21″S, -18.2412 ili "
-"-18:9:48.21)"
+"Neispravna geografska širina (sintaksa: 18°9′48.21″S, -18.2412 ili -"
+"18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
 msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
 msgstr ""
-"Neispravna zemljopisna dužina (sintaksa: 18°9′48.21″E, -18.2412 ili "
-"-18:9:48.21)"
+"Neispravna zemljopisna dužina (sintaksa: 18°9′48.21″E, -18.2412 ili -"
+"18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
@@ -6240,17 +6213,15 @@ msgstr ""
 
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
-msgstr ""
+msgstr "Događaji osoba s ulogom"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:8
-#, fuzzy
-#| msgid "Matches people with an event with a selected role"
 msgid "Matches event of people filter with role"
-msgstr "Pronalazi osobe s događajima s odabranom ulogom"
+msgstr "Uspoređuje filtar događaja osoba s ulogom"
 
 #: FilterRules/matchpersonfilterrole.py:69
 msgid "Role:"
-msgstr ""
+msgstr "Uloga:"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
@@ -6335,8 +6306,7 @@ msgstr "X-kromosomski potomak od <osoba>"
 msgid ""
 "Matches descendants of <person> following a X-chromosomal inheritance "
 "pattern."
-msgstr ""
-"Pronalazi potomke od <osoba>, prateći mustru nasljeđivanja X-kromosoma."
+msgstr "Pronalazi potomke od <osoba>, prateći mustru nasljeđivanja X-kromosoma."
 
 #: FilterRules2/xchromdescendants.py:50
 msgid ""
@@ -15692,49 +15662,36 @@ msgid "Run a special Gramps Python script"
 msgstr ""
 
 #: GrampyScript/GrampyScript.py:91
-#, fuzzy
-#| msgid "Loaded from file: %s"
 msgid "Load query from a .script file"
-msgstr "Učitano iz datoteke: %s"
+msgstr "Učitaj upit iz .script datoteke"
 
 #: GrampyScript/GrampyScript.py:121
-#, fuzzy
-#| msgid "Save tree as file"
 msgid "Save query to a .script file"
-msgstr "Spremi stablo kao"
+msgstr "Spremi upit u .script datoteku"
 
 #: GrampyScript/GrampyScript.py:141
-#, fuzzy
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
 msgid "Download results as a CSV file"
-msgstr "Preuzima se %s medijska datoteka"
+msgstr "Preuzmi rezultate kao CSV datoteku"
 
 #: GrampyScript/GrampyScript.py:303
 msgid "Open..."
 msgstr "Otvori …"
 
 #: GrampyScript/GrampyScript.py:305
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Save as..."
-msgstr "Spremi slike u …"
+msgstr "Spremi kao …"
 
 #: GrampyScript/GrampyScript.py:319
 msgid "Save as CSV"
 msgstr ""
 
 #: GrampyScript/GrampyScript.py:320
-#, fuzzy
-#| msgid "Copy link to clipboard"
 msgid "Copy to clipboard"
-msgstr "Kopiraj poveznicu u međuspremnik"
+msgstr "Kopiraj u međuspremnik"
 
 #: GrampyScript/GrampyScript.py:395
-#, fuzzy
-#| msgid "Quilt Chart"
 msgid "Chart"
-msgstr "Poplunasti dijagram"
+msgstr "Dijagram"
 
 #: GrampyScript/GrampyScript.py:400
 msgid "Execute <Alt+Enter>"
@@ -17132,8 +17089,7 @@ msgstr "Rotacija etikete smrti"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:51
 msgid "The death label is written in a text frame rotated by this value."
-msgstr ""
-"Oznaka smrti se ispisuje u tekstualnom okviru rotiran ovom vrijednosti."
+msgstr "Oznaka smrti se ispisuje u tekstualnom okviru rotiran ovom vrijednosti."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:53
 msgid "Horizontal offset of death label"
@@ -17792,8 +17748,8 @@ msgid ""
 "Media path not set.  You must set the \"Base path for relative media paths\" "
 "in the Preferences."
 msgstr ""
-"Nije postavljena staza za medije. Moraš je postaviti u postavkama pod "
-"„Osnovna relativna staza do medija”."
+"Nije postavljena staza za medije. Moraš je postaviti u postavkama pod „"
+"Osnovna relativna staza do medija”."
 
 #: MediaVerify/MediaVerify.py:307
 msgid "Finding files"
@@ -19025,8 +18981,8 @@ msgid ""
 "place' status ."
 msgstr ""
 "Alternativna imena\n"
-"Odaberi jedan ili više redaka i pritisni „Zadrži” za promjenu stanja "
-"„uključi u mjesto”."
+"Odaberi jedan ili više redaka i pritisni „Zadrži” za promjenu stanja „"
+"uključi u mjesto”."
 
 #: PlaceCleanup/placecleanup.glade:406
 msgid "Inc"
@@ -19554,8 +19510,7 @@ msgstr "GeoNames datoteka zemalja, traženje grada"
 
 #: PlaceCompletion/PlaceCompletion.py:1185
 msgid "GeoNames country file, city localized variants search"
-msgstr ""
-"GeoNames datoteka zemalja, traženje lokaliziranih varijanti imena grada"
+msgstr "GeoNames datoteka zemalja, traženje lokaliziranih varijanti imena grada"
 
 #: PlaceCompletion/PlaceCompletion.py:1190
 msgid "GeoNames country file, county/city search"
@@ -19727,8 +19682,7 @@ msgstr "Koordinate mjesta"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
-msgstr ""
-"Mjesto nije pronađeno. Možeš pojasniti ključne riječi za pretraživanje."
+msgstr "Mjesto nije pronađeno. Možeš pojasniti ključne riječi za pretraživanje."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:219
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:247
@@ -20074,8 +20028,8 @@ msgid ""
 "psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
 "required."
 msgstr ""
-"psycopg3 verzija %(installed)s je pre stara. Potrebna je verzija "
-"%(required)s ili novija."
+"psycopg3 verzija %(installed)s je pre stara. Potrebna je verzija %(required)"
+"s ili novija."
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:211
 msgid "Database Backend"
@@ -20306,12 +20260,12 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
-"<i><a href=\"https://gramps-project.org/wiki/index.php?"
-"title=How_to_make_a_backup\">Sigurnosna kopija u Gramps XML</a>U novijim "
-"verzijama Gramps-a u izborniku odaberi „Rodoslov”, zatim „Izradi zaštitnu "
-"kopiju ...”., inače koristi opciju „Izvezi …” u istom izborniku, ali "
-"deaktiviraj opcije privatnosti u „Pomoćniku za izvoz” kako bi se izvezli svi "
-"podaci.</i>\n"
+"<i><a href=\"https://gramps-project.org/wiki/"
+"index.php?title=How_to_make_a_backup\">Sigurnosna kopija u Gramps XML</a>U "
+"novijim verzijama Gramps-a u izborniku odaberi „Rodoslov”, zatim „Izradi "
+"zaštitnu kopiju ...”., inače koristi opciju „Izvezi …” u istom izborniku, "
+"ali deaktiviraj opcije privatnosti u „Pomoćniku za izvoz” kako bi se izvezli "
+"svi podaci.</i>\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:331
@@ -20618,8 +20572,8 @@ msgid ""
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
 "a></b></u>\n"
 msgstr ""
-"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
-"title=Gramps_5.0_Wiki_Manual_-"
+"<u><b><a href=\"https://gramps-project.org/wiki/"
+"index.php?title=Gramps_5.0_Wiki_Manual_-"
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Postavke jezika:</"
 "a></b></u>\n"
 
@@ -20755,8 +20709,8 @@ msgid ""
 "You have %(filter)d filtered people, %(count)d people shown on the tree and "
 "%(total)d people in your database."
 msgstr ""
-"Imaš %(filter)d filtriranih osoba, %(count)d osoba prikazanih u stablu i "
-"%(total)d osoba u tvojoj bazi podataka."
+"Imaš %(filter)d filtriranih osoba, %(count)d osoba prikazanih u stablu i %"
+"(total)d osoba u tvojoj bazi podataka."
 
 #: QuiltView/QuiltView.py:662
 msgid "Loading individuals"
@@ -22507,8 +22461,8 @@ msgid ""
 "See: https://gramps-project.org/wiki/index.php/"
 "Addon:TMGimporter#Before_Import_From_TMG_Backup_file"
 msgstr ""
-"Ova je sigurnosna kopija stvorena sa starijom verzijom TMG-a (PjcVersion "
-"%(ver)s, ekvivalentno TMG 9.01 ili starijoj).\n"
+"Ova je sigurnosna kopija stvorena sa starijom verzijom TMG-a (PjcVersion %"
+"(ver)s, ekvivalentno TMG 9.01 ili starijoj).\n"
 "\n"
 "Aktualizirajsvoj TMG projekt na verziju 9.05 i stvori novu sigurnosnu "
 "kopiju, zatim ponovo uvezi.\n"
@@ -22758,8 +22712,8 @@ msgstr ""
 #, python-format
 msgid "%(female_name)s became a bar mitzvah in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s je postala punoljetna (bat mizva) %(year)s u mjestu "
-"%(place)s."
+"%(female_name)s je postala punoljetna (bat mizva) %(year)s u mjestu %(place)"
+"s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:512
 #, python-format
@@ -22771,8 +22725,8 @@ msgstr ""
 #, python-format
 msgid "%(female_name)s became a bat mitzvah in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s je postala punoljetna (bat mizva) %(year)s u mjestu "
-"%(place)s."
+"%(female_name)s je postala punoljetna (bat mizva) %(year)s u mjestu %(place)"
+"s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:517
 #, python-format
@@ -22808,15 +22762,15 @@ msgstr "%(female_name)s je pokopana %(year)s u mjestu %(place)s."
 #, python-format
 msgid "%(male_name)s participated in a census in %(year)s at %(place)s."
 msgstr ""
-"%(male_name)s je sudjelovao u popisu stanovništva %(year)s u mjestu "
-"%(place)s."
+"%(male_name)s je sudjelovao u popisu stanovništva %(year)s u mjestu %(place)"
+"s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:535
 #, python-format
 msgid "%(female_name)s participated in a census in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s je sudjelovala u popisu stanovništva %(year)s u mjestu "
-"%(place)s."
+"%(female_name)s je sudjelovala u popisu stanovništva %(year)s u mjestu %"
+"(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:544
 #, python-format
@@ -22868,8 +22822,8 @@ msgstr ""
 #, python-format
 msgid "%(female_name)s was granted a divorce in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s je dobila dozvolu za razvod braka %(year)s. u mjestu "
-"%(place)s."
+"%(female_name)s je dobila dozvolu za razvod braka %(year)s. u mjestu %(place)"
+"s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:571
 #, python-format
@@ -22978,8 +22932,7 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:632
 #, python-format
 msgid "%(male_name)s had a custom marriage in %(year)s at %(place)s."
-msgstr ""
-"%(male_name)s je pristupio običajnom braku %(year)s u mjestu %(place)s."
+msgstr "%(male_name)s je pristupio običajnom braku %(year)s u mjestu %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:634
 #, python-format
@@ -23000,8 +22953,7 @@ msgstr "%(female_name)s je najavila vjenčanje %(year)s u mjestu %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:645
 #, python-format
 msgid "%(male_name)s entered a marriage contract in %(year)s at %(place)s."
-msgstr ""
-"%(male_name)s je pristupio bračnom ugovoru %(year)s u mjestu %(place)s."
+msgstr "%(male_name)s je pristupio bračnom ugovoru %(year)s u mjestu %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:648
 #, python-format
@@ -23080,8 +23032,8 @@ msgstr ""
 #, python-format
 msgid "%(female_name)s was granted probate in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s je imenovana izvršiteljicom oporuke %(year)s u mjestu "
-"%(place)s."
+"%(female_name)s je imenovana izvršiteljicom oporuke %(year)s u mjestu %"
+"(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:693
 #, python-format
@@ -23270,8 +23222,7 @@ msgstr "Vremenska crta porijekla"
 msgid ""
 "The view shows a timeline pedigree with ancestors and descendants of the "
 "selected person"
-msgstr ""
-"Prikazuje vremensku crtu porijekla s precima i potomcima odabrane osobe"
+msgstr "Prikazuje vremensku crtu porijekla s precima i potomcima odabrane osobe"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:339
 msgid "Timeline pedigree"
@@ -23659,8 +23610,7 @@ msgstr "UK Web Connect zbirka"
 
 #: UKWebConnectPack/UKWebPack.gpr.py:12
 msgid "Collection of Web sites for the UK (requires libwebconnect)"
-msgstr ""
-"Zbirka web-stranica za Ujedinjeno Kraljevstvo (zahtijeva libwebconnect)"
+msgstr "Zbirka web-stranica za Ujedinjeno Kraljevstvo (zahtijeva libwebconnect)"
 
 #: UKWebConnectPack/UKWebPack.py:33
 msgid "UK Google"
@@ -24164,14 +24114,11 @@ msgstr ""
 
 #: WebSearch/info_panel.py:245
 msgid "✅ Bug reports and feature requests are completely **free of charge**."
-msgstr ""
-"✅ Prijave grešaka i zahtjevi za nove funkcije su potpuno **besplatni**."
+msgstr "✅ Prijave grešaka i zahtjevi za nove funkcije su potpuno **besplatni**."
 
 #: WebSearch/info_panel.py:249
-#, fuzzy
-#| msgid "Issues"
 msgid "GitHub Issues"
-msgstr "Problemi"
+msgstr "GitHub problemi"
 
 #: WebSearch/info_panel.py:252
 msgid "Gramps Bug Tracker"
@@ -24410,16 +24357,12 @@ msgid "No file loaded..."
 msgstr "Nijedna datoteka nije učitana …"
 
 #: lxml/etreeGramplet.py:203 lxml/etreeGramplet.py:209
-#, fuzzy
-#| msgid "Number of editions back"
 msgid "Number of additions and modifications back"
-msgstr "Broj promjena unatrag"
+msgstr "Broj dodavanja i promjena unatrag"
 
 #: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
-#, fuzzy
-#| msgid "No source information found"
 msgid "Print more informations on console"
-msgstr "Podaci o izvoru nisu pronađeni"
+msgstr "Ispiši više informacija na konzoli"
 
 #: lxml/etreeGramplet.py:254
 #, python-format
@@ -24436,10 +24379,8 @@ msgid "Cannot copy \"%s\""
 msgstr "Nije moguće kopirati „%s”"
 
 #: lxml/etreeGramplet.py:265 lxml/lxmlGramplet.py:348
-#, fuzzy
-#| msgid "Is it a compressed .gramps?"
 msgid "Is it a .gramps?"
-msgstr "Je li to komprimirana .gramps datoteka?"
+msgstr "Je li to .gramps?"
 
 #: lxml/etreeGramplet.py:282
 msgid "Sorry, no support for your OS yet!"
@@ -24455,10 +24396,9 @@ msgid "Parsing issue"
 msgstr "Problem prilikom analiziranja"
 
 #: lxml/etreeGramplet.py:498
-#, fuzzy, python-format
-#| msgid "XML: Last %s editions since %s, were at/on :\n"
+#, python-format
 msgid "XML: Last %s additions and modifications since %s, were on :\n"
-msgstr "XML: Zadnje %s promjene od %s, bile su u/na:\n"
+msgstr "XML: Datum zadnjih %s dodavanja i promjena od %s:\n"
 
 #: lxml/etreeGramplet.py:554
 #, python-format
@@ -24622,16 +24562,12 @@ msgid "Please, try to install \"python3 lxml\" package."
 msgstr "Pokušaj instalirati „python3 lxml” paket."
 
 #: lxml/lxmlGramplet.py:255 lxml/lxmlGramplet.py:273 lxml/lxmlGramplet.py:749
-#, fuzzy
-#| msgid "Filter options"
 msgid "xmllint options"
-msgstr "Opcije filtra"
+msgstr "xmllint opcije"
 
 #: lxml/lxmlGramplet.py:264 lxml/lxmlGramplet.py:282
-#, fuzzy
-#| msgid "Legacy place"
 msgid "debug places"
-msgstr "Staro mjesto"
+msgstr "mjesta za otklanjanje grešaka"
 
 #: lxml/lxmlGramplet.py:265 lxml/lxmlGramplet.py:283
 msgid "debug xml"
@@ -24696,12 +24632,6 @@ msgid "Missing header"
 msgstr "Nedostaje zaglavlje"
 
 #: lxml/lxmlGramplet.py:609 lxml/lxmlGramplet.py:719
-#, fuzzy
-#| msgid ""
-#| "Not a valid .gramps.\n"
-#| "Cannot run the gramplet...\n"
-#| "Please, try to use a .gramps\n"
-#| "generated by Gramps 4.x."
 msgid ""
 "Not a valid .gramps.\n"
 "Cannot run the gramplet...\n"
@@ -24711,7 +24641,7 @@ msgstr ""
 "Nije važeći .gramps.\n"
 "Nije moguće polkrenuti gramplet …\n"
 "Pokušaj upotrijebiti .gramps\n"
-"koji je generiran s Gramps 4.x."
+"koji je generiran s Gramps 6.x."
 
 #: lxml/lxmlGramplet.py:622 lxml/lxmlGramplet.py:627 lxml/lxmlGramplet.py:632
 #: lxml/lxmlGramplet.py:637
@@ -24776,14 +24706,13 @@ msgid "Gallery.html"
 msgstr "Galerija.html"
 
 #: lxml/lxmlGramplet.py:695
-#, fuzzy, python-format
-#| msgid "2. Has generated a media index on \"%(file)s\".\n"
+#, python-format
 msgid "1. Has generated a media index on \"%(file)s\".\n"
-msgstr "2. Generirao je indeks medija za „%(file)s”.\n"
+msgstr "1. Stvorio/la je indeks medija za „%(file)s”.\n"
 
 #: lxml/lxmlGramplet.py:719
 msgid "XML SyntaxError"
-msgstr ""
+msgstr "Greška XML sintakse"
 
 #: lxml/lxmlGramplet.py:723
 msgid "Matches XSD schema."
@@ -24826,17 +24755,12 @@ msgid "Portugal"
 msgstr "Portugal"
 
 #: lxml/lxmlGramplet.py:896
-#, fuzzy, python-format
-#| msgid "1. Has generated \"%s\".\n"
+#, python-format
 msgid "2. Has generated \"%s\".\n"
-msgstr "1. Generirao je „%s”.\n"
+msgstr "2. Generirao/la je „%s”.\n"
 
 #: lxml/lxmlGramplet.py:898
-#, fuzzy, python-format
-#| msgid ""
-#| "Try to open\n"
-#| " \"%s\"\n"
-#| " into your prefered web navigator ..."
+#, python-format
 msgid ""
 "Try to open\n"
 " \"%s\"\n"
