@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-11 17:13-0700\n"
-"PO-Revision-Date: 2026-04-13 09:10+0000\n"
+"PO-Revision-Date: 2026-04-26 15:09+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -49,7 +49,7 @@ msgstr "Namensart"
 
 #: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
-msgstr "Hauptname"
+msgstr "Primärer Name"
 
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
@@ -928,7 +928,7 @@ msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
-msgstr "Alle auswählen"
+msgstr "Alle Auswählen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Select None"
@@ -2556,7 +2556,7 @@ msgstr "Ob die Attribute einer Person aufgenommen werden sollen"
 
 #: DenominoViso/DenominoViso.py:2638
 msgid "Include Addresses"
-msgstr "Adressen aufnehmen"
+msgstr "Adressen Einbeziehen"
 
 #: DenominoViso/DenominoViso.py:2639
 msgid "Whether to include a person's addresses."
