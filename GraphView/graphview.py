@@ -553,7 +553,7 @@ class GraphView(NavigationView):
         """
         self.ancestor_generations = entry
         self.graph_widget.populate(self.get_active())
-    
+
     def cb_update_people_limit(self, _client, _cnxd_id, entry, _data):
         self.people_limit = entry
         self.graph_widget.populate(self.get_active())
