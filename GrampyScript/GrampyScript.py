@@ -419,7 +419,7 @@ for person in people():
         css = b"""
         .bordered-label {
             border: 1px solid gray;
-            padding: 1px; 
+            padding: 1px;
         }
         """
         provider = Gtk.CssProvider()
@@ -652,7 +652,7 @@ for person in people():
 
             column_type = type(args[i])
             self.liststore.set_sort_func(i, self.get_sort_column(column_type), i)
-        
+
         self.page1.add(self.treeview)
         self.page1.show_all()
 
