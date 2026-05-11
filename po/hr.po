@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-08 10:05-0700\n"
-"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"PO-Revision-Date: 2026-05-10 14:47+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -248,40 +248,32 @@ msgstr "Stil za ukupnu liniju broja predaka po generacijama."
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:24
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:32
-#, fuzzy
-#| msgid "Inverse"
 msgid "Anniversaries"
-msgstr "Inverzno"
+msgstr "Godišnjice"
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:25
-#, fuzzy
-#| msgid "a gramplet that displays the birthdays of the living people"
 msgid "A gramplet that displays the anniversaries of events"
-msgstr "gramplet prikazuje rođendane živih osoba"
+msgstr "Gramplet za prikaz godišnjica događaja"
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:51
-#, fuzzy
-#| msgid "Double-click on a row to edit the selected participant."
 msgid "Double-click on a row to edit the event."
-msgstr "Dvoklik na redak za uređivanje odabranog sudionika."
+msgstr "Dvoklik na redak za uređivanje događaja."
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:58
-#, fuzzy
-#| msgid "Other participants"
 msgid "Participant"
-msgstr "Drugi sudionici"
+msgstr "Sudionik"
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:22
 msgid ""
 "Parses strings from Riksarkivet and ArkivDigital to create sources and "
 "citations."
 msgstr ""
+"Analizira nizove znakova iz Riksarkivet i ArkivDigital arhiva za stvaranje "
+"izvora i citata."
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:26
-#, fuzzy
-#| msgid "Archive file"
 msgid "Archive Assist"
-msgstr "Arhivna datoteka"
+msgstr "Arhivni asistent"
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -2048,10 +2040,8 @@ msgstr "u"
 
 #: DataEntryGramplet/DataEntryGramplet.py:428
 #: DataEntryGramplet/DataEntryGramplet.py:507
-#, fuzzy
-#| msgid "Family Tree file"
 msgid "No Family Tree is open."
-msgstr "Datoteka rodoslova"
+msgstr "Nijedan rodoslov nije otvoren."
 
 #: DataEntryGramplet/DataEntryGramplet.py:429
 msgid "Please open a Family Tree to edit data."
@@ -2241,14 +2231,8 @@ msgid "▶ Continue"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:114
-#, fuzzy
-#| msgid ""
-#| "Paused.\n"
-#| "Press Continue to search for additional relations.\n"
 msgid "Continue searching for more relations"
-msgstr ""
-"Zaustavljeno.\n"
-"Za traženje dodatnih veza pritisni gumb „Nastavi”.\n"
+msgstr "Nastavi tražiti još veza"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:118
 #, fuzzy
@@ -2318,20 +2302,16 @@ msgstr ""
 "   %s od "
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:336
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "Error: No Home Person set"
-msgstr "Aktivna osoba nije postavljena."
+msgstr "Greška: Nije postavljena početna osoba"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:341
 msgid "No Active Person set."
 msgstr "Aktivna osoba nije postavljena."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:342
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "Error: No Active Person set"
-msgstr "Aktivna osoba nije postavljena."
+msgstr "Greška: Nije postavljena aktivna osoba"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:347
 msgid "Initializing search..."
@@ -2375,14 +2355,8 @@ msgstr ""
 "Za traženje dodatnih veza pritisni gumb „Nastavi”.\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:427
-#, fuzzy
-#| msgid ""
-#| "Paused.\n"
-#| "Press Continue to search for additional relations.\n"
 msgid "Paused - Press Continue to search for more relations"
-msgstr ""
-"Zaustavljeno.\n"
-"Za traženje dodatnih veza pritisni gumb „Nastavi”.\n"
+msgstr "Zaustavljeno – Za traženje dodatnih srodstva pritisni gumb „Nastavi”"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:456
 #, fuzzy, python-format
@@ -2397,14 +2371,8 @@ msgstr ""
 "Pretraga je završena. Broj pronađenih veza: %d."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:460
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "Search completed. %d relations found."
 msgid "Search completed - {} relation paths found"
-msgstr ""
-"\n"
-"Pretraga je završena. Broj pronađenih veza: %d."
+msgstr "Pretraga je završena – broj pronađenih srodstva: %d"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:471
 msgid "Error during search: {}"
@@ -6425,33 +6393,33 @@ msgid "Fix coords"
 msgstr "Ispravi koordinate"
 
 #: Form/CensusCheckQuickview.gpr.py:9
-#, fuzzy
-#| msgid "Censuses"
 msgid "CensusCheck"
-msgstr "Popisi stanovništva"
+msgstr "Provjera popisa stanovništva"
 
 #: Form/CensusCheckQuickview.gpr.py:10
 msgid ""
 "Check whether any Census events are missing for a person and some of their "
 "descendents"
 msgstr ""
+"Provjeri nedostaju li neki događaji popisa stanovništva za osobu i neke od "
+"njezinih potomaka"
 
 #: Form/CensusCheckQuickview.gpr.py:23
-#, fuzzy
-#| msgid "Censuses"
 msgid "CensusCheckUp"
-msgstr "Popisi stanovništva"
+msgstr "Provjera popisa stanovništva"
 
 #: Form/CensusCheckQuickview.gpr.py:24
 msgid ""
 "Check whether any Census events are missing for a person and some of their "
 "ancestors"
 msgstr ""
+"Provjeri nedostaju li neki događaji popisa stanovništva za osobu i neke od "
+"njezinih predaka"
 
 #: Form/CensusCheckQuickview.py:122 Form/CensusCheckUpQuickview.py:122
 #, python-format
 msgid "Census Check for %s"
-msgstr ""
+msgstr "Provjera popisa stanovništva za %s"
 
 #: Form/editform.py:191
 #, python-format
@@ -6485,16 +6453,12 @@ msgid "XML syntax error in Form definition file"
 msgstr ""
 
 #: Form/form.py:184
-#, fuzzy
-#| msgid "Failed to read proto file %s: %s"
 msgid "Failed to read Form definition file"
-msgstr "Greška u čitanju proto datoteke %s: %s"
+msgstr "Greška u čitanju datoteke s definicijama za obrazac"
 
 #: Form/form.py:193
-#, fuzzy
-#| msgid "Invalid Destination Directory"
 msgid "Invalid Form definition file"
-msgstr "Nevažeća odredišna mapa"
+msgstr "Neispravna datoteka s definicijama za obrazac"
 
 #: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
 #: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
@@ -14793,10 +14757,8 @@ msgid "Order Number"
 msgstr ""
 
 #: Form/form_us.xml.h:2551
-#, fuzzy
-#| msgid "Registration District"
 msgid "Registration Card"
-msgstr "Kotar registracije"
+msgstr "Registracijska kartica"
 
 #: Form/form_us.xml.h:2552
 msgid ""
@@ -14871,10 +14833,8 @@ msgid ""
 msgstr ""
 
 #: Form/form_us.xml.h:2567
-#, fuzzy
-#| msgid "Citizenship"
 msgid "Country of Citizenship"
-msgstr "Državljanstvo"
+msgstr "Zemlja državljanstva"
 
 #: Form/form_us.xml.h:2568
 msgid ""
@@ -14894,20 +14854,16 @@ msgid ""
 msgstr ""
 
 #: Form/form_us.xml.h:2571
-#, fuzzy
-#| msgid "Relationship Type"
 msgid "Relationship "
-msgstr "Vrsta veze"
+msgstr "Srodstvo "
 
 #: Form/form_us.xml.h:2572
 msgid "(8) Only on D.S.S. Form 1"
 msgstr ""
 
 #: Form/form_us.xml.h:2573
-#, fuzzy
-#| msgid "Occupation:"
 msgid "Occupation "
-msgstr "Zanimanje:"
+msgstr "Zanimanje "
 
 #: Form/form_us.xml.h:2574
 msgid "(7) Only on D.S.S. Form 1 (Rev. 6-9-41)"
@@ -15387,11 +15343,10 @@ msgid "GOV error on id %s with code: "
 msgstr "GOV greška pri id-u %s s kodom: "
 
 #: GetGOV/getgov.py:555
-#, fuzzy, python-format
-#| msgid "from %s to %s"
+#, python-format
 msgctxt "end"
 msgid "from %(begin)s to %(end)s"
-msgstr "od %s do %s"
+msgstr "od %(begin)s do %(end)s"
 
 #: GetGOV/getgov.py:557
 #, python-format
@@ -15756,10 +15711,8 @@ msgid "Download results as a CSV file"
 msgstr "Preuzima se %s medijska datoteka"
 
 #: GrampyScript/GrampyScript.py:303
-#, fuzzy
-#| msgid "OpenAI"
 msgid "Open..."
-msgstr "OpenAI"
+msgstr "Otvori …"
 
 #: GrampyScript/GrampyScript.py:305
 #, fuzzy
@@ -15817,15 +15770,15 @@ msgstr "Moderno"
 
 #: GraphView/avatars.py:65
 msgid "Generic (dark)"
-msgstr ""
+msgstr "Generički (tamni)"
 
 #: GraphView/avatars.py:66
 msgid "Generic (gray)"
-msgstr ""
+msgstr "Generički (sivi)"
 
 #: GraphView/avatars.py:67
 msgid "Generic (light)"
-msgstr ""
+msgstr "Generički (svijetli)"
 
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
 #: GraphView/graphview.py:189
@@ -18680,13 +18633,11 @@ msgstr "Osnovni stil za prikaz naslova."
 
 #: PedigreeChart/PedigreeChart.py:749
 msgid "Style used for names (only for PDF document and PostScript)."
-msgstr ""
+msgstr "Sitl korišten za imena (samo za PDF i PostScript datoteke)."
 
 #: PedigreeChart/PedigreeChart.py:758
-#, fuzzy
-#| msgid "Style used for labels and captions"
 msgid "Style used for labels and captions."
-msgstr "Sitl korišten za etikete i opise"
+msgstr "Sitl korišten za etikete i opise."
 
 #: PersonEverything/PersonEverything.gpr.py:32
 msgid "PersonEverything Report"
@@ -24521,148 +24472,112 @@ msgstr ""
 "\n"
 
 #: lxml/etreeGramplet.py:557
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Broj oznaka: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:559
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\n"
+#, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%06s\n"
 msgstr ""
 "Broj oznaka: \n"
-"\t\t\t%s\n"
+"\t\t\t%06s\n"
 
 #: lxml/etreeGramplet.py:561
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of  events : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of  events : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Broj događaja: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:564
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of persons : \n"
-#| "\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+#, python-format
 msgid ""
 "Number of persons : \n"
 "\t\t\t%06s\t|\t(%06s) and (%06s)* surnames\n"
 msgstr ""
 "Broj osoba: \n"
-"\t\t\t%s\t|\t(%s) i (%s)* prezimena\n"
+"\t\t\t%06s\t|\t(%06s) i (%06s)* prezimena\n"
 
 #: lxml/etreeGramplet.py:566
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of persons : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of persons : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Broj osoba: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:567
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of families : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of families : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Broj obitelji: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:568
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of sources : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of sources : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Broj izvora: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:570
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of citations : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of citations : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Broj citata: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:573
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of places : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of places : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Broj mjesta: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:574
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of media objects : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of media objects : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Broj mediskih objekata: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:575
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of repositories : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of repositories : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Broj spremišta: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:576
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of notes : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of notes : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Broj zabilješki: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:581
 #, python-format
@@ -24820,46 +24735,41 @@ msgid "Period: "
 msgstr "Razdoblje: "
 
 #: lxml/lxmlGramplet.py:659 lxml/lxmlGramplet.py:663
-#, fuzzy, python-brace-format
-#| msgid "Ref: {number}. {name}"
+#, python-brace-format
 msgid "\t{number} surname"
 msgid_plural "\t{number} surnames; no frequency yet\n"
-msgstr[0] "Referenca: {number}. {name}"
-msgstr[1] "Referenca: {number}. {name}"
-msgstr[2] "Referenca: {number}. {name}"
+msgstr[0] "\t{number} prezime"
+msgstr[1] "\t{number} prezimena; još nema učestalosti"
+msgstr[2] "\t{number} prezimena; još nema učestalosti"
 
 #: lxml/lxmlGramplet.py:659
-#, fuzzy, python-brace-format
-#| msgid " entries for surname(s); no frequency yet"
+#, python-brace-format
 msgid "\t{number} surname; no frequency yet"
-msgstr " unosi za prezimena; još bez učestalosti"
+msgstr "\t{number} prezimena; još nema učestalosti"
 
 #: lxml/lxmlGramplet.py:660 lxml/lxmlGramplet.py:667
-#, fuzzy, python-brace-format
-#| msgid "Ref: {number}. {name}"
+#, python-brace-format
 msgid "\t{number} place"
 msgid_plural "\t{number} places\n"
-msgstr[0] "Referenca: {number}. {name}"
-msgstr[1] "Referenca: {number}. {name}"
-msgstr[2] "Referenca: {number}. {name}"
+msgstr[0] "\t{number} mjesto"
+msgstr[1] "\t{number} mjesta"
+msgstr[2] "\t{number} mjesta"
 
 #: lxml/lxmlGramplet.py:661 lxml/lxmlGramplet.py:671
-#, fuzzy, python-brace-format
-#| msgid "Ref: {number}. {name}"
+#, python-brace-format
 msgid "\t{number} note"
 msgid_plural "\t{number} notes\n"
-msgstr[0] "Referenca: {number}. {name}"
-msgstr[1] "Referenca: {number}. {name}"
-msgstr[2] "Referenca: {number}. {name}"
+msgstr[0] "\t{number} zabilješka"
+msgstr[1] "\t{number} zabilješke"
+msgstr[2] "\t{number} zabilješki"
 
 #: lxml/lxmlGramplet.py:675
-#, fuzzy, python-brace-format
-#| msgid "New source"
+#, python-brace-format
 msgid "\t{number} source"
 msgid_plural "\t{number} sources\n"
-msgstr[0] "Novi izvor"
-msgstr[1] "Novi izvor"
-msgstr[2] "Novi izvor"
+msgstr[0] "\t{number} izvor"
+msgstr[1] "\t{number} izvora"
+msgstr[2] "\t{number} izvora"
 
 #: lxml/lxmlGramplet.py:694 lxml/lxmlGramplet.py:919
 msgid "Gallery.html"
