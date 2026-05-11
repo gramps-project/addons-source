@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-11 17:13-0700\n"
-"PO-Revision-Date: 2026-02-10 21:09+0000\n"
+"PO-Revision-Date: 2026-04-30 20:09+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <https://hosted.weblate.org/projects/gramps-project/"
 "addons/is/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -682,10 +682,8 @@ msgid "Edit Families"
 msgstr ""
 
 #: BirthOrder/birthorder.py:275
-#, fuzzy
-#| msgid "Looking for place fields"
 msgid "Looking for children birth order"
-msgstr "Leita að sviðum staða"
+msgstr "Leita að fæðingaröð barna"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
@@ -2216,10 +2214,8 @@ msgid "abbreviation"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:1562
-#, fuzzy
-#| msgid "column"
 msgid "volume"
-msgstr "dálkur"
+msgstr "bindi"
 
 #: DenominoViso/DenominoViso.py:1754 Form/form_us.xml.h:2270
 #: Form/form_us.xml.h:2288 Form/form_us.xml.h:2299 Form/form_us.xml.h:2317
@@ -3603,10 +3599,8 @@ msgid "Differences between Database and File"
 msgstr ""
 
 #: Differences/differences.py:161
-#, fuzzy
-#| msgid "Differences"
 msgid "No differences"
-msgstr "Mismunur"
+msgstr "Enginn mismunur"
 
 #: Differences/differences.py:168
 msgid "Missing items in File that are added in Database"
@@ -4002,10 +3996,8 @@ msgid "Restore default settings"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3068 DynamicWeb/dynamicweb.py:4978
-#, fuzzy
-#| msgid "No need modifications"
 msgid "Show last modification time"
-msgstr "Engin þörf á breytingum"
+msgstr "Sýna síðasta breytingtíma"
 
 #: DynamicWeb/dynamicweb.py:3069 DynamicWeb/dynamicweb.py:5133
 msgid "SVG tree children distribution"
@@ -5051,10 +5043,8 @@ msgid "Attempts to extract city and state/province from a place title"
 msgstr ""
 
 #: ExtractCity/extractcity.py:402
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place title"
-msgstr "Staðaheiti"
+msgstr "Staðartitill"
 
 #: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
 msgid "Extract Place data"
@@ -5868,10 +5858,8 @@ msgid ""
 msgstr ""
 
 #: FixCoords/fixcoords.gpr.py:31
-#, fuzzy
-#| msgid "Place titles"
 msgid "Fix Place Coordinates"
-msgstr "Staðaheiti"
+msgstr "Lagfæra hnit staðar"
 
 #: FixCoords/fixcoords.gpr.py:33
 msgid ""
@@ -6549,30 +6537,24 @@ msgid "36. Wool Lbs."
 msgstr ""
 
 #: Form/form_ca.xml.h:170
-#, fuzzy
-#| msgid "column"
 msgid "Column37"
-msgstr "dálkur"
+msgstr "Dálkur37"
 
 #: Form/form_ca.xml.h:171
 msgid "37."
 msgstr ""
 
 #: Form/form_ca.xml.h:172
-#, fuzzy
-#| msgid "column"
 msgid "Column38"
-msgstr "dálkur"
+msgstr "Dálkur38"
 
 #: Form/form_ca.xml.h:173
 msgid "38."
 msgstr ""
 
 #: Form/form_ca.xml.h:174
-#, fuzzy
-#| msgid "column"
 msgid "Column39"
-msgstr "dálkur"
+msgstr "Dálkur39"
 
 #: Form/form_ca.xml.h:175
 msgid "39."
@@ -8651,10 +8633,8 @@ msgstr ""
 #: Form/form_us.xml.h:1141 Form/form_us.xml.h:1155 Form/form_us.xml.h:1452
 #: Form/form_us.xml.h:2375 Form/form_us.xml.h:2488 Form/form_us.xml.h:2513
 #: Form/form_us.xml.h:2557
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place of Birth"
-msgstr "Staðaheiti"
+msgstr "Fæðingarstaður"
 
 #: Form/form_gb.xml.h:53
 msgid "Usual Address"
@@ -9387,10 +9367,8 @@ msgid "Record Number"
 msgstr ""
 
 #: Form/form_pl.xml.h:19
-#, fuzzy
-#| msgid "column"
 msgid "Volume"
-msgstr "dálkur"
+msgstr "Bindi"
 
 #: Form/form_pl.xml.h:24 Form/form_us.xml.h:1426
 msgid "House Number"
@@ -9999,10 +9977,8 @@ msgstr ""
 #: Form/form_us.xml.h:1585 Form/form_us.xml.h:1611 Form/form_us.xml.h:1657
 #: Form/form_us.xml.h:1870 Form/form_us.xml.h:2336 Form/form_us.xml.h:2353
 #: Form/form_us.xml.h:2528 Form/form_us.xml.h:2577
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place of birth"
-msgstr "Staðaheiti"
+msgstr "Fæðingarstaður"
 
 #: Form/form_us.xml.h:268 Form/form_us.xml.h:345
 msgid "Married within the year"
@@ -11852,10 +11828,8 @@ msgid "Date married"
 msgstr ""
 
 #: Form/form_us.xml.h:1043
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place married"
-msgstr "Staðaheiti"
+msgstr "Staður hjónavígslu"
 
 #: Form/form_us.xml.h:1044
 msgid "When, where and circumstances you quit the service"
@@ -15156,7 +15130,7 @@ msgstr ""
 
 #: GraphView/graphview.py:1164
 msgid "Ancestor generations"
-msgstr ""
+msgstr "Kynslóðir forfeðra"
 
 #: GraphView/graphview.py:1168
 msgid "Descendant generations"
@@ -15876,10 +15850,8 @@ msgid "Missing"
 msgstr ""
 
 #: ImportMerge/importmerge.py:94
-#, fuzzy
-#| msgid "Differences"
 msgid "Different"
-msgstr "Mismunur"
+msgstr "Mismunandi"
 
 #: ImportMerge/importmerge.py:109
 msgid "Delete original"
@@ -16846,7 +16818,7 @@ msgstr ""
 
 #: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
 msgid "Export"
-msgstr ""
+msgstr "Flytja út"
 
 #: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
 msgid "Export the results to a text file"
@@ -17720,10 +17692,8 @@ msgid "Street, City, County, State, Postal Code, Country, Phone number"
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:448
-#, fuzzy
-#| msgid "Differences"
 msgid "Media Reference"
-msgstr "Mismunur"
+msgstr "Tilvísun í myndefni"
 
 #: PersonEverything/PersonEverything.py:455
 #: PersonEverything/PersonEverything.py:732
@@ -18171,10 +18141,8 @@ msgid "Find an incomplete place."
 msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:985
-#, fuzzy
-#| msgid "Differences"
 msgid "Set preferences"
-msgstr "Mismunur"
+msgstr "Setja kjörstillingar"
 
 #: PlaceCleanup/placecleanup.glade:1008
 msgid "Select one of these places to continue the cleanup process."
@@ -18222,10 +18190,8 @@ msgid "Spot"
 msgstr ""
 
 #: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:46
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place Cleanup"
-msgstr "Staðaheiti"
+msgstr "Hreinsun staðar"
 
 #: PlaceCleanup/placecleanup.gpr.py:30
 msgid ""
@@ -18371,10 +18337,8 @@ msgid "PlaceCompletion is unable to create %s %s"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:340
-#, fuzzy
-#| msgid "Place titles"
 msgid "Places tool"
-msgstr "Staðaheiti"
+msgstr "Staðaverkfæri"
 
 #: PlaceCompletion/PlaceCompletion.py:408
 msgid "Missing regex groups in match lat/lon"
@@ -18662,20 +18626,16 @@ msgid "View for the place coordinate gramplet."
 msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place and Coordinates"
-msgstr "Staðaheiti"
+msgstr "Staður og hnit"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
 msgid "Gramplet that simplifies setting the coordinates of a place"
 msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place Coordinates"
-msgstr "Staðaheiti"
+msgstr "Hnit staðar"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
@@ -22199,10 +22159,8 @@ msgid "Note Types"
 msgstr ""
 
 #: TypeCleanup/type_cleanup.py:108
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place Types"
-msgstr "Staðaheiti"
+msgstr "Tegundir staða"
 
 #: TypeCleanup/type_cleanup.py:109
 msgid "Repository Types"
@@ -22366,10 +22324,8 @@ msgid ""
 msgstr ""
 
 #: WebSearch.py:468
-#, fuzzy
-#| msgid "Place titles"
 msgid "Save Coordinates to the Place"
-msgstr "Staðaheiti"
+msgstr "Vista hnit í stað"
 
 #: WebSearch.py:609
 msgid "AI provider is disabled"
@@ -22580,10 +22536,8 @@ msgid "Link saved to Attribute"
 msgstr ""
 
 #: activity_row_generator.py:155
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place history loaded"
-msgstr "Staðaheiti"
+msgstr "Saga staðar hlaðin"
 
 #: activity_row_generator.py:156
 msgid "Domain skipped"
@@ -22821,10 +22775,8 @@ msgid "🧩 WebSearch Gramplet version: `%s`"
 msgstr ""
 
 #: internet_links_loader.py:70 internet_links_loader.py:71
-#, fuzzy
-#| msgid "Place titles"
 msgid "No title"
-msgstr "Staðaheiti"
+msgstr "Enginn titill"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
