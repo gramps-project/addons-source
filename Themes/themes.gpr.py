@@ -31,7 +31,7 @@ register(
         "An addition to Preferences for simple Theme and Font"
         " adjustment.  Especially useful for Windows users."
     ),
-    version = '0.0.17',
+    version = '0.0.18',
     gramps_target_version="6.1",
     fname="themes_load.py",
     authors=["Paul Culley"],
