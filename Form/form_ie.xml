@@ -103,4 +103,269 @@
             </column>
         </section>
     </form>
+        <form id='IEBirth' type='Birth' title='Irish Birth Certificate'>
+		<heading>
+            <_attribute>(1.) Entry no.</_attribute>
+        </heading>
+		<heading>
+            <_attribute>Superintendent Registrar's District</_attribute>
+        </heading>
+		<heading>
+            <_attribute>Registrar's District</_attribute>
+        </heading>
+		<heading>
+            <_attribute>District</_attribute>
+        </heading>
+		<heading>
+            <_attribute>Union</_attribute>
+        </heading>
+		<heading>
+            <_attribute>County</_attribute>
+        </heading>
+		<heading>
+            <_attribute> (10.) Signature of Registrar</_attribute>
+        </heading>
+		<heading>
+            <_attribute> (11.) Baptismal Name if added after Registration of Birth, and Date</_attribute>
+        </heading>
+        <section role='Primary' type='person' title='Child'>
+			<column>
+                <_attribute>Name</_attribute>
+				<_longname>(3.) Name (if any)</_longname>
+            </column>
+			<column>
+				<_attribute>Place of Birth</_attribute>
+				<_longname>(2.) Date and Place of Birth</_longname>
+            </column>
+			<column>
+                <_attribute>Date of Birth</_attribute>
+				<_longname>(2.) Date and Place of Birth</_longname>
+			</column>
+            <column>
+                <_attribute>Sex</_attribute>
+				<_longname>(4.) M or F for male or female</_longname>
+				<size>18</size>
+            </column>
+        </section>
+        <section role='Father' type='person' title='Father'>
+            <column>
+                <_attribute>Name</_attribute>
+				<_longname>(5.) Name and Surname and Dwelling-place of Father</_longname>
+            </column>
+			<column>
+                <_attribute>Residence</_attribute>
+				<_longname>(5.) Name and Surname and Dwelling-place of Father</_longname>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+				<_longname>(7.) Rank or Profession of Father</_longname>
+            </column>
+        </section>
+        <section role='Mother' type='person' title='Mother'>
+            <column>
+                <_attribute>Name</_attribute>
+				<_longname>(6.) Name and Surname and Maiden Surname of Mother</_longname>
+            </column>
+            <column>
+                <_attribute>Maiden Surname</_attribute>
+				<_longname>(6.) Name and Surname and Maiden Surname of Mother</_longname>
+            </column>
+        </section>
+        <section role='Informant' type='person' title='Informant'>
+            <column>
+                <_attribute>Name</_attribute>
+				<_longname>(8.) Signature, Qualification, and Residence of Informant</_longname>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+				<_longname>(8.) Signature, Qualification, and Residence of Informant</_longname>
+            </column>
+			<column>
+                <_attribute>When Registered</_attribute>
+				<_longname>(9.) Date when birth was registered</_longname>
+            </column>
+        </section>
+    </form>
+    <form id='IEMarriage' type='Marriage' title='Irish Marriage Certificate'>
+		<heading>
+            <_attribute>Year</_attribute>
+        </heading>
+		<heading>
+            <_attribute>Solemnized at the Catholic</_attribute>
+        </heading>
+		<heading>
+            <_attribute>Registrar&apos;s District</_attribute>
+        </heading>
+		<heading>
+            <_attribute>Superintendent Registrar&apos;s District</_attribute>
+        </heading>
+		<heading>
+            <_attribute>County</_attribute>
+        </heading>
+		<heading>
+            <_attribute>Certificate number</_attribute>
+        </heading>
+		<heading>
+            <_attribute>Page number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>(1.) Entry No.</_attribute>
+        </heading>
+		<heading>
+            <_attribute>(2.) When Married</_attribute>
+        </heading>
+        <section role='Family' type='family' title='Groom/Bride'>
+            <column>
+                <_attribute>Name</_attribute>
+				<_longname>(3.) Name and Surname</_longname>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+				<_longname>(4.) Full or Minor</_longname>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+				<_longname>(5.) Bachelor or Spinster</_longname>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+				<_longname>(6.) Rank or Profession</_longname>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+			<_longname>Residence at the Time of Marriage</_longname>
+            </column>
+        </section>
+        <section role='Groom Father' type='person' title='Groom&apos;s Father'>
+            <column>
+                <_attribute>Name</_attribute>
+				<_longname>(8.) Father&apos;s Name and Surname</_longname>
+            </column>
+           <!-- <column>
+                <_attribute>Deceased</_attribute>
+            </column>  -->
+            <column>
+                <_attribute>Occupation</_attribute>
+				<_longname>(9.) Rank or Profession of Father</_longname>
+            </column>
+        </section>
+        <section role='Bride Father' type='person' title='Bride&apos;s Father'>
+            <column>
+                <_attribute>Name</_attribute>
+				<_longname>(8.) Father&apos;s Name and Surname</_longname>
+            </column>
+            <!-- <column>
+                <_attribute>Deceased</_attribute>
+            </column>  -->
+            <column>
+                <_attribute>Occupation</_attribute>
+				<_longname>(9.) Rank or Profession of Father</_longname>
+            </column>
+        </section>
+        <section role='Witness' type='multi' title='Witnesses'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Signed</_attribute>
+            </column>
+        </section>
+		        <section role='Celebrant' type='person' title='Priest or Celebrant'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Signed</_attribute>
+            </column>
+        </section>
+    </form>
+    <form id='IEDeath' type='Death' title='Irish Death Certificate'>
+		<heading>
+            <_attribute>Superintendent Registrar&apos;s District</_attribute>
+        </heading>
+		<heading>
+            <_attribute>Registrar&apos;s District</_attribute>
+        </heading>
+		<heading>
+            <_attribute>District</_attribute>
+        </heading>
+		<heading>
+            <_attribute>Union</_attribute>
+        </heading>
+		<heading>
+            <_attribute>County</_attribute>
+        </heading>
+		<heading>
+            <_attribute>Certificate number</_attribute>
+        </heading>
+		<heading>
+            <_attribute>Page number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>(1.) Entry No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>(10.) When Registered</_attribute>
+        </heading>
+		<heading>
+            <_attribute>(11.) Signature of Registrar</_attribute>
+        </heading>
+        <section role='Primary' type='person' title='Deceased'>
+            <column>
+                <_attribute>Name</_attribute>
+				<_longname>Name and Surname</_longname>
+            </column>
+			<column>
+                <_attribute>Date of Death</_attribute>
+				<_longname>(2.) Date and Place of Death</_longname>
+            </column>
+			<column>
+                <_attribute>Place of Death</_attribute>
+				<_longname>(2.) Date and Place of Death</_longname>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+				<_longname>(4.) M or F for Male or Female</_longname>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <_longname>(5.) Widowed or Married</_longname>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+				<_longname>(6.) Age last Birthday</_longname>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+				<_longname>(7.) Rank, Profession, or Occupation</_longname>
+            </column>
+            <column>
+                <_attribute>Cause of Death</_attribute>
+				<_longname>(8.) Certified Cause of Death and Duration of Illness</_longname>
+            </column>
+			<column>
+                <_attribute>Duration of Illness</_attribute>
+				<_longname>(8.) Certified Cause of Death and Duration of Illness</_longname>
+            </column>
+        </section>
+        <section role='Informant' type='person' title='Informant'>
+            <column>
+                <_attribute>Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Signed</_attribute>
+            </column>
+			<column>
+                <_attribute>Relation to deceased</_attribute>
+				<_longname>(9.) e.g. Son, Daughter</_longname>
+            </column>
+            <column>
+                <_attribute>Description</_attribute>
+				<_longname>(9.) e.g. Present at death</_longname>
+            </column>
+            <column>
+                <_attribute>Residence</_attribute>
+            </column>
+        </section>
+    </form>
 </forms>
