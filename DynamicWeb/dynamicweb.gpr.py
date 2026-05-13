@@ -15,7 +15,7 @@ register(
     id="DynamicWeb",
     name=_("Dynamic Web Report"),
     description=_("Produces dynamic web pages for the database"),
-    version = '0.0.101',
+    version = '0.0.102',
     gramps_target_version="6.1",
     status=STABLE,
     fname="dynamicweb.py",
