@@ -14,7 +14,7 @@
             <_attribute>Urban Dist. Town or Village</_attribute>
         </heading>
         <heading>
-            <_attribute>Street etc with No of House</_attribute>
+            <_attribute>Street etc with No. of House</_attribute>
         </heading>
         <heading>
             <_attribute>No. of Schedule</_attribute>
@@ -98,7 +98,7 @@
                 <_longname>Children born alive to present marriage</_longname>
             </column>
             <column>
-                <_attribute>Total Children Under 18 Living</_attribute>
+                <_attribute>Total Children Under 16 Living</_attribute>
                 <size>4</size>
             </column>
         </section>
