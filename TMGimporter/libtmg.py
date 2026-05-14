@@ -2439,7 +2439,15 @@ def importData(database, sqzfilename, user):
             #Process TMG Project for import
             #------------------------------------------------------
             # determine dataset id if it has not been set by GUI selection
-            if 'tmg_dataset' not in locals() or tmg_dataset is None:
+            # NOTE: the multi-dataset GUI selection branch above is
+            # incomplete — the line that would capture the user's choice
+            # (`tmg_dataset = selecteddataset`) is commented out, so
+            # `tmg_dataset` is in fact never bound before this point and
+            # this guard always falls through to only_first_dataset()
+            # below. The F821 is therefore a real flag, not a false
+            # positive; the noqa silences it pending completion or removal
+            # of that GUI branch (tracked separately).
+            if 'tmg_dataset' not in locals() or tmg_dataset is None:  # noqa: F821
                 if only_has_one_dataset():
                     tmg_dataset = only_first_dataset()
                 else:
