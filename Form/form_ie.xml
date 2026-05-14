@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <forms>
     <form id='IE1926' type='Census' title='Form A. Census of the Irish Free State, 1926' date='1926-04-18'>
+		<heading>
+    		<_attribute>Total Area in Statute Acres</_attribute>
+		</heading>
+		<heading>
+    		<_attribute>Signature of Head of Household</_attribute>
+		</heading>
+		<heading>
+    		<_attribute>Signature of Enumerator</_attribute>
+		</heading>
+		<heading>
+            <_attribute>Persons</_attribute>
+        </heading>
         <heading>
+            <_attribute>Males</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Females</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Rooms</_attribute>
+        </heading>
+		<heading>
             <_attribute>County or Co. Borough</_attribute>
         </heading>
         <heading>
@@ -19,18 +40,9 @@
         <heading>
             <_attribute>No. of Schedule</_attribute>
         </heading>
-        <heading>
-            <_attribute>Persons</_attribute>
-        </heading>
-        <heading>
-            <_attribute>Males</_attribute>
-        </heading>
-        <heading>
-            <_attribute>Females</_attribute>
-        </heading>
-        <heading>
-            <_attribute>Rooms</_attribute>
-        </heading>
+		<heading>
+    		<_attribute>Name of Public Institution</_attribute>
+		</heading>
         <section role='Primary' type='multi'>
             <column>
                 <_attribute>Name</_attribute>
