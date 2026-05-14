@@ -97,11 +97,13 @@ class LinesOfDescendency(Report):
         menu = options.menu
         pid  = menu.get_option_by_name('pid').get_value()
         self.descendent = database.get_person_from_gramps_id(pid)
+        if (self.descendent == None) :
+            raise ReportError(_("Person %s is not in the Database") % pid )
         self.descendent_handle = self.descendent.get_handle()
         ancestor = menu.get_option_by_name('ancestor').get_value()
         self.ancestor = database.get_person_from_gramps_id(ancestor)
-        if (self.descendent == None) :
-            raise ReportError(_("Person %s is not in the Database") % pid )
+        if (self.ancestor == None) :
+            raise ReportError(_("Person %s is not in the Database") % ancestor )
 
     def write_path(self, path):
         gen = 1
