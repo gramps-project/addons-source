@@ -241,16 +241,6 @@ class PlaceUpdate(Gramplet):
         #self.enclosing_place.set_text(self.selected_name)
         self.but_set_enclosing.set_label(self.selected_name)
 
-    def cb_set_enclosing_dates(self, obj):
-        #SelectDate = SelectorFactory('Date')
-        sel = EditDate(None, self.gui.uistate, None)
-        date = sel.run()
-        print("date=", date)
-        if not date:
-            return
-        pass
-
-
     def cb_select_generate_hierarchy(self, obj):
         checked = self.generate_hierarchy.get_active()
         self.spaces.set_sensitive(checked)
