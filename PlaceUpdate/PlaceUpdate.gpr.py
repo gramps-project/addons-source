@@ -4,7 +4,7 @@ register(
     name=_("PlaceUpdate"),
     description=_("Gramplet to manipulate multiple places"),
     status=STABLE,
-    version = '1.0.13',
+    version = '1.0.14',
     gramps_target_version="6.1",
     fname="PlaceUpdate.py",
     gramplet="PlaceUpdate",
