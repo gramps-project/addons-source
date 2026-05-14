@@ -31,7 +31,7 @@ register(
     name=_("Form Gramplet"),
     description=_("Gramplet interface for Forms"),
     status=STABLE,
-    version = '2.0.53',
+    version = '2.0.54',
     gramps_target_version="6.1",
     navtypes=["Person"],
     fname="formgramplet.py",
