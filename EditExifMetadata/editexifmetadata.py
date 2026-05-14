@@ -578,7 +578,7 @@ class EditExifMetadata(Gramplet):
         """
         button = Gtk.Button(label=_(text))
 
-        if callback is not []:
+        if callback:
             for call_ in callback:
                 button.connect("clicked", call_)
 
