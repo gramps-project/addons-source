@@ -425,7 +425,7 @@ def importData(dbase, filename, user):
         except ImportError:
             user.notify_error(
                 _("Form importer unavailable"),
-                _("importformpdf.py is missing from the ImportPDF addon directory.")
+                _("importformpdf.py is missing from the ImportPDFForm addon directory.")
             )
             return
         _import_form_data(dbase, fields, user)
