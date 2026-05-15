@@ -199,6 +199,58 @@ jobs:
             echo "no requires_mod declarations found"
           fi
 
+      - name: Validate requires_mod names against Gramps' dep gate
+        # Cross-check: every requires_mod entry that pip successfully
+        # installed in the previous step must also resolve via
+        # find_spec(), since that is what Gramps' Addon Manager calls
+        # (gramps/gen/utils/requirements.py:check_mod). A name that
+        # pip-installs but does not import is a declaration bug — e.g.
+        # requires_mod=["Pillow"] when the importable name is "PIL".
+        # Pip-install failures upstream are skipped: those are
+        # system-dep / image gaps, not PR-caused.
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import ast, glob, re, subprocess, sys
+          from importlib.util import find_spec
+
+          pat = re.compile(r"requires_mod\s*=\s*(\[[^\]]*\])")
+          names = set()
+          for f in glob.glob("*/*.gpr.py"):
+              try:
+                  text = open(f, encoding="utf-8").read()
+              except OSError:
+                  continue
+              for m in pat.finditer(text):
+                  try:
+                      names.update(ast.literal_eval(m.group(1)))
+                  except (ValueError, SyntaxError):
+                      pass
+
+          bad = []
+          for name in sorted(names):
+              installed = subprocess.run(
+                  [sys.executable, "-m", "pip", "show", name],
+                  capture_output=True,
+              ).returncode == 0
+              if not installed:
+                  print(f"~  {name} (pip-install failed earlier, skipping)")
+                  continue
+              if find_spec(name) is None:
+                  bad.append(name)
+                  print(f"x  {name} (pip-installed but find_spec returned None)")
+              else:
+                  print(f"ok {name}")
+
+          if bad:
+              print()
+              print(f"::error::Wrong requires_mod names: {bad}")
+              print("These pip-install but are not importable. requires_mod is")
+              print("consumed by gramps' check_mod() via find_spec(), so the")
+              print("importable module name is required (e.g. 'PIL', not 'Pillow').")
+              sys.exit(1)
+          PY
+
       - name: Run per-addon unit tests
         # Filename convention (all OSes):
         #   test_*.py              — general (any OS)
@@ -306,6 +358,51 @@ jobs:
             echo "no requires_mod declarations found"
           fi
 
+      - name: Validate requires_mod names against Gramps' dep gate
+        # See unit-test-linux for rationale. Uses `python` (conda-forge
+        # env) to match the surrounding Windows job style.
+        run: |
+          python - <<'PY'
+          import ast, glob, re, subprocess, sys
+          from importlib.util import find_spec
+
+          pat = re.compile(r"requires_mod\s*=\s*(\[[^\]]*\])")
+          names = set()
+          for f in glob.glob("*/*.gpr.py"):
+              try:
+                  text = open(f, encoding="utf-8").read()
+              except OSError:
+                  continue
+              for m in pat.finditer(text):
+                  try:
+                      names.update(ast.literal_eval(m.group(1)))
+                  except (ValueError, SyntaxError):
+                      pass
+
+          bad = []
+          for name in sorted(names):
+              installed = subprocess.run(
+                  [sys.executable, "-m", "pip", "show", name],
+                  capture_output=True,
+              ).returncode == 0
+              if not installed:
+                  print(f"~  {name} (pip-install failed earlier, skipping)")
+                  continue
+              if find_spec(name) is None:
+                  bad.append(name)
+                  print(f"x  {name} (pip-installed but find_spec returned None)")
+              else:
+                  print(f"ok {name}")
+
+          if bad:
+              print()
+              print(f"::error::Wrong requires_mod names: {bad}")
+              print("These pip-install but are not importable. requires_mod is")
+              print("consumed by gramps' check_mod() via find_spec(), so the")
+              print("importable module name is required (e.g. 'PIL', not 'Pillow').")
+              sys.exit(1)
+          PY
+
       - name: Run per-addon unit tests
         # See filename-convention note in unit-test-linux. The Windows
         # job runs test_*.py except test_linux_* and test_integration_*.
@@ -388,6 +485,53 @@ jobs:
           else
             echo "no requires_mod declarations found"
           fi
+
+      - name: Validate requires_mod names against Gramps' dep gate
+        # See unit-test-linux for rationale. This is the blocking copy:
+        # integration-test does not set continue-on-error, so a wrong
+        # requires_mod name surfaces as a CI failure here.
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import ast, glob, re, subprocess, sys
+          from importlib.util import find_spec
+
+          pat = re.compile(r"requires_mod\s*=\s*(\[[^\]]*\])")
+          names = set()
+          for f in glob.glob("*/*.gpr.py"):
+              try:
+                  text = open(f, encoding="utf-8").read()
+              except OSError:
+                  continue
+              for m in pat.finditer(text):
+                  try:
+                      names.update(ast.literal_eval(m.group(1)))
+                  except (ValueError, SyntaxError):
+                      pass
+
+          bad = []
+          for name in sorted(names):
+              installed = subprocess.run(
+                  [sys.executable, "-m", "pip", "show", name],
+                  capture_output=True,
+              ).returncode == 0
+              if not installed:
+                  print(f"~  {name} (pip-install failed earlier, skipping)")
+                  continue
+              if find_spec(name) is None:
+                  bad.append(name)
+                  print(f"x  {name} (pip-installed but find_spec returned None)")
+              else:
+                  print(f"ok {name}")
+
+          if bad:
+              print()
+              print(f"::error::Wrong requires_mod names: {bad}")
+              print("These pip-install but are not importable. requires_mod is")
+              print("consumed by gramps' check_mod() via find_spec(), so the")
+              print("importable module name is required (e.g. 'PIL', not 'Pillow').")
+              sys.exit(1)
+          PY
 
       - name: Run plugin registration tests
         # shell: bash for consistency with the surrounding steps; the
