@@ -1200,61 +1200,6 @@ class QuiltView(NavigationView):
         self.menu.popup(None, None, None, None,
                         event.get_button()[1], event.time)
 
-    def add_children_submenu(self, menu, person, family=None):
-        """
-        Go over children and build their menu.
-        """
-        item = Gtk.MenuItem(label=_("Children"))
-        item.set_submenu(Gtk.Menu())
-        child_menu = item.get_submenu()
-        child_menu.set_reserve_toggle_size(False)
-
-        no_child = 1
-
-        if family:
-            childlist = []
-            for child_ref in family.get_child_ref_list():
-                childlist.append(child_ref.ref)
-            # allow to add a child to this family
-            add_child_item = Gtk.MenuItem()
-            add_child_item.set_label(_("Add child to family"))
-            add_child_item.connect("activate", self.add_child_to_family,
-                                   family.get_handle())
-            add_child_item.show()
-            child_menu.append(add_child_item)
-            no_child = 0
-        else:
-            childlist = find_children(self.dbstate.db, person)
-
-        for child_handle in childlist:
-            child = self.dbstate.db.get_person_from_handle(child_handle)
-            if not child:
-                continue
-
-            if no_child:
-                no_child = 0
-
-            if find_children(self.dbstate.db, child):
-                label = Gtk.Label(label='<b><i>%s</i></b>'
-                                  % escape(displayer.display(child)))
-            else:
-                label = Gtk.Label(label=escape(displayer.display(child)))
-
-            child_item = Gtk.MenuItem()
-            label.set_use_markup(True)
-            label.show()
-            label.set_halign(Gtk.Align.START)
-            child_item.add(label)
-            child_item.connect("activate", self.move_to_person,
-                               child_handle, True)
-            child_item.show()
-            child_menu.append(child_item)
-
-        if no_child:
-            item.set_sensitive(0)
-        item.show()
-        menu.append(item)
-
     def add_child_to_family(self, obj, family_handle):
         """
         Open person editor to create and add child to family.
