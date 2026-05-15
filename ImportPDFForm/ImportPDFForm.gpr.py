@@ -27,7 +27,7 @@ register(
         "Send the bundled template to relatives to fill out and return."
     ),
     version="1.0.0",
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="importpdf.py",
     import_function="importData",
