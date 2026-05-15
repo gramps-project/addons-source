@@ -44,5 +44,5 @@ register(
     authors=["Rob G. Healey", "Paul Culley"],
     authors_email=["robhealey1@gmail.com", "paulr2787@gmail.com"],
     navtypes=["Media"],
-    requires_mod=["Pillow"],
+    requires_mod=["PIL"],
 )
