@@ -54,16 +54,26 @@ from tests.gramps_test_env import ADDONS_ROOT, GrampsTestCase
 LOG = logging.getLogger(__name__)
 
 
-def _get_addon_plugins(registry: Any) -> list[Any]:
+def _get_addon_plugins(registry: Any, include_unlisted: bool = False) -> list[Any]:
     """Return all :class:`PluginData` objects whose ``fpath`` is inside the addons tree.
 
+    By default, plugins whose ``.gpr.py`` declares ``include_in_listing=False``
+    are filtered out: those addons are not built or released by ``make.py``,
+    so this CI does not gate on their state (per Gary Griffin's discussion on
+    PR #820). Pass ``include_unlisted=True`` to inspect them anyway.
+
     :param registry: A :class:`PluginRegister` instance.
+    :param include_unlisted: If ``True``, also return plugins whose
+                             ``include_in_listing`` field is ``False``.
+    :type include_unlisted: bool
     :returns: List of :class:`PluginData` entries belonging to this repository.
     """
     return [
         pdata
         for pdata in registry._PluginRegister__plugindata
-        if pdata.fpath and ADDONS_ROOT in pdata.fpath
+        if pdata.fpath
+        and ADDONS_ROOT in pdata.fpath
+        and (include_unlisted or pdata.include_in_listing)
     ]
 
 
@@ -118,12 +128,11 @@ class TestPluginRegistration(GrampsTestCase):
             self.assertTrue(pdata.version, f"Plugin {pdata.id} missing version")
 
     def test_target_version_is_6_0(self) -> None:
-        """All addons on this branch should target Gramps 6.0."""
+        """All listed addons on this branch should target Gramps 6.0."""
         issues: list[str] = []
-        for pdata in self.plugin_registry._PluginRegister__plugindata:
-            if pdata.fpath and ADDONS_ROOT in pdata.fpath:
-                if not pdata.gramps_target_version.startswith("6.0"):
-                    issues.append(f"{pdata.id}: targets {pdata.gramps_target_version}")
+        for pdata in _get_addon_plugins(self.plugin_registry):
+            if not pdata.gramps_target_version.startswith("6.0"):
+                issues.append(f"{pdata.id}: targets {pdata.gramps_target_version}")
         if issues:
             self.fail("Addons not targeting Gramps 6.0:\n" + "\n".join(issues))
 
@@ -218,11 +227,11 @@ class TestImportPluginSmoke(GrampsTestCase):
     """Verify import plugins have a callable ``import_function`` attribute."""
 
     def test_import_plugins_have_callable(self) -> None:
-        """Each IMPORT plugin must reference a callable import function."""
+        """Each listed IMPORT plugin must reference a callable import function."""
         import_plugins = [
             p
             for p in self.plugin_registry.type_plugins(IMPORT)
-            if p.fpath and ADDONS_ROOT in p.fpath
+            if p.fpath and ADDONS_ROOT in p.fpath and p.include_in_listing
         ]
         issues: list[str] = []
         for pdata in import_plugins:
@@ -250,11 +259,11 @@ class TestExportPluginSmoke(GrampsTestCase):
     """Verify export plugins have a callable ``export_function`` attribute."""
 
     def test_export_plugins_have_callable(self) -> None:
-        """Each EXPORT plugin must reference a callable export function."""
+        """Each listed EXPORT plugin must reference a callable export function."""
         export_plugins = [
             p
             for p in self.plugin_registry.type_plugins(EXPORT)
-            if p.fpath and ADDONS_ROOT in p.fpath
+            if p.fpath and ADDONS_ROOT in p.fpath and p.include_in_listing
         ]
         issues: list[str] = []
         for pdata in export_plugins:
