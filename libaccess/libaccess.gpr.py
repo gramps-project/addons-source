@@ -33,7 +33,7 @@ register(
     description=_(
         "Provides a library for generic access to " "the database and gen.lib."
     ),
-    version = '1.0.37',
+    version = '1.0.38',
     gramps_target_version="6.1",
     status=STABLE,
     audience=DEVELOPER,
