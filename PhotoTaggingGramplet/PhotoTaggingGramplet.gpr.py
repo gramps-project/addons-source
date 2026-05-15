@@ -39,5 +39,5 @@ register(
     navtypes=["Media"],
     help_url="Addon:Photo_Tagging_Gramplet",
     include_in_listing=True,
-    requires_gi=[("GExiv2", "0.10,0.12,0.14")],
+    requires_gi=[("GExiv2", "0.10,0.12,0.14,0.16")],
 )
