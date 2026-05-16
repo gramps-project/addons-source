@@ -84,18 +84,18 @@ class WebApiSyncDiffHandler:
             (obj.handle, obj_type): obj for (obj_type, obj) in self._diff_dbs[2]
         }
         self._latest_common_timestamp = self.get_latest_common_timestamp()
-        LOG.debug("Last synced timestamp from config: %s (%s)", 
-                 last_synced, 
+        LOG.debug("Last synced timestamp from config: %s (%s)",
+                 last_synced,
                  datetime.fromtimestamp(last_synced).strftime('%Y-%m-%d %H:%M:%S %Z') if last_synced else "None")
-        LOG.debug("Latest common timestamp calculated: %s (%s)", 
-                 self._latest_common_timestamp, 
+        LOG.debug("Latest common timestamp calculated: %s (%s)",
+                 self._latest_common_timestamp,
                  datetime.fromtimestamp(self._latest_common_timestamp).strftime('%Y-%m-%d %H:%M:%S %Z'))
         if last_synced and last_synced > self._latest_common_timestamp:
             # if the last sync timestamp in the config is later than
             # the latest common timestamp, use it
             self._latest_common_timestamp = int(last_synced)
-            LOG.debug("Using last synced timestamp as cutoff: %s (%s)", 
-                     self._latest_common_timestamp, 
+            LOG.debug("Using last synced timestamp as cutoff: %s (%s)",
+                     self._latest_common_timestamp,
                      datetime.fromtimestamp(self._latest_common_timestamp).strftime('%Y-%m-%d %H:%M:%S %Z'))
 
     def get_diff_dbs(
@@ -231,11 +231,11 @@ class WebApiSyncDiffHandler:
             lst.append((C_UPD_LOC, handle, obj_type, obj1, obj2))
         for (handle, obj_type), (obj1, obj2) in self.modified_in_db2.items():
             lst.append((C_UPD_REM, handle, obj_type, obj1, obj2))
-        
+
         # Log summary of sync decisions
         LOG.debug("=== SYNC DECISION SUMMARY ===")
-        LOG.debug("Cutoff timestamp used: %s (%s)", 
-                 self._latest_common_timestamp, 
+        LOG.debug("Cutoff timestamp used: %s (%s)",
+                 self._latest_common_timestamp,
                  datetime.fromtimestamp(self._latest_common_timestamp).strftime('%Y-%m-%d %H:%M:%S %Z'))
         LOG.debug("Added to local (remote objects): %d", len(self.added_to_db1))
         LOG.debug("Added to remote (local objects): %d", len(self.added_to_db2))
