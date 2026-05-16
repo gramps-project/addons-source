@@ -409,7 +409,7 @@ class DescendantsLinesReport(Report):
         # increase text pad to allow for box's line
         if STROKE_RECTANGLE:
             TEXT_PAD += RECTANGLE_TEXT_PAD
-            
+
         global FONT_NAME
         global BASE_FONT_SIZE
         FONT_NAME = self.options['FONT_NAME']
@@ -1614,12 +1614,12 @@ class DescendantsLinesOptions(MenuReportOptions):
         max_note_len.set_help(_("Maximum length of an event's note field in"
                                 " a text block, '$e(n)'\n 0=no limit "))
         menu.add_option(category_name, "max_note_len", max_note_len)
-        
+
         text_font_name = StringOption(_("Font Name"),
                                 r"sans-serif")
         text_font_name.set_help(_("Name of the Font to use. On Windows enter the file name of the .ttf at /Windows/Fonts"))
         menu.add_option(category_name, "FONT_NAME", text_font_name)
-        
+
         text_font_size = NumberOption(_("Font base size"), 12, 10, 250)
         menu.add_option(category_name, "BASE_FONT_SIZE", text_font_size)
 
