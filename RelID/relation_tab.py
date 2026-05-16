@@ -736,7 +736,7 @@ class TableReport:
                     % self.path,
                     parent=None,
                 )
-            else: 
+            else:
                 return
 
     def write_table_data(self, data):
