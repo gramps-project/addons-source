@@ -4,7 +4,7 @@
 #
 #------------------------------------------------------------------------
 
-register(QUICKREPORT, 
+register(QUICKREPORT,
          id    = 'censuscheckquickview',
          name  = _("CensusCheck"),
          description= _("Check whether any Census events are missing for a person and some of their descendents"),
@@ -18,7 +18,7 @@ register(QUICKREPORT,
          runfunc = 'run',
          help_url = "Addon:Census_Check"
   )
-register(QUICKREPORT, 
+register(QUICKREPORT,
          id    = 'censuscheckupquickview',
          name  = _("CensusCheckUp"),
          description= _("Check whether any Census events are missing for a person and some of their ancestors"),
