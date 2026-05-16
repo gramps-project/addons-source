@@ -65,7 +65,7 @@ class ConcurrencyError(Exception):
 class PostgreSQLConcurrency:
     """
     PostgreSQL concurrency control features with graceful fallbacks.
-    
+
     Provides advanced concurrency features that are safe to use
     regardless of PostgreSQL version or capabilities.
     """
@@ -79,18 +79,18 @@ class PostgreSQLConcurrency:
         """
         self.conn = connection
         self.log = logging.getLogger(".PostgreSQLEnhanced.Concurrency")
-        
+
         # Track capabilities
         self._listen_notify_available = None
         self._advisory_locks_available = None
         self._isolation_levels_available = None
-        
+
         # Track active listeners and locks
         self._active_listeners: Dict[str, Callable] = {}
         self._active_locks: Dict[str, int] = {}
         self._notification_thread: Optional[threading.Thread] = None
         self._stop_notifications = threading.Event()
-        
+
         # Initialize capabilities
         self._check_capabilities()
 
@@ -100,19 +100,19 @@ class PostgreSQLConcurrency:
             # Check PostgreSQL version
             self.conn.execute("SELECT version()")
             version_str = self.conn.fetchone()[0]
-            
+
             # LISTEN/NOTIFY available in all modern PostgreSQL versions
             self._listen_notify_available = True
-            
+
             # Advisory locks available in PostgreSQL 8.2+
             self._advisory_locks_available = True
-            
+
             # Isolation levels available in all PostgreSQL versions
             self._isolation_levels_available = True
-            
+
             self.log.debug("Concurrency capabilities: LISTEN/NOTIFY=%s, Advisory Locks=%s, Isolation Levels=%s",
                           self._listen_notify_available, self._advisory_locks_available, self._isolation_levels_available)
-            
+
         except Exception as e:
             self.log.warning(f"Could not check concurrency capabilities: {e}")
             self._listen_notify_available = False
@@ -143,11 +143,11 @@ class PostgreSQLConcurrency:
             for channel in channels:
                 self.conn.execute(f"LISTEN {channel}")
                 self.log.debug(f"Listening on channel: {channel}")
-            
+
             # Start notification processing thread if not already running
             if not self._notification_thread or not self._notification_thread.is_alive():
                 self._start_notification_thread()
-            
+
             return True
         except Exception as e:
             self.log.warning(f"Failed to set up LISTEN/NOTIFY: {e}")
@@ -172,7 +172,7 @@ class PostgreSQLConcurrency:
             return False
 
         channel = f"{obj_type}_changes"
-        
+
         # Create notification message
         message_data = {
             'change_type': change_type,
@@ -185,7 +185,7 @@ class PostgreSQLConcurrency:
         try:
             # PostgreSQL NOTIFY payload is limited to 8000 bytes
             message = str(message_data)[:7900]  # Leave room for safety
-            
+
             self.conn.execute("NOTIFY %s, %s", (channel, message))
             self.log.debug(f"Sent notification: {channel} - {change_type}:{handle}")
             return True
@@ -243,18 +243,18 @@ class PostgreSQLConcurrency:
                     # Check for notifications (non-blocking)
                     if hasattr(self.conn.connection, 'notifies'):
                         self.conn.connection.poll()
-                        
+
                         while self.conn.connection.notifies:
                             notify = self.conn.connection.notifies.popleft()
                             self._handle_notification(notify)
-                    
+
                     # Sleep briefly to avoid busy waiting
                     time.sleep(0.1)
-                    
+
                 except Exception as e:
                     self.log.warning(f"Error processing notifications: {e}")
                     time.sleep(1)  # Wait longer after error
-                    
+
         except Exception as e:
             self.log.error(f"Notification thread crashed: {e}")
 
@@ -263,10 +263,10 @@ class PostgreSQLConcurrency:
         try:
             channel = notify.channel
             payload = notify.payload
-            
+
             if channel in self._active_listeners:
                 callback = self._active_listeners[channel]
-                
+
                 # Parse payload back to dict
                 import ast
                 try:
@@ -274,13 +274,13 @@ class PostgreSQLConcurrency:
                 except (ValueError, SyntaxError):
                     # Fallback to string payload
                     data = {'message': payload}
-                
+
                 # Call listener in thread-safe way
                 try:
                     callback(data)
                 except Exception as e:
                     self.log.error(f"Error in change listener callback: {e}")
-                    
+
         except Exception as e:
             self.log.warning(f"Error handling notification: {e}")
 
@@ -316,29 +316,29 @@ class PostgreSQLConcurrency:
         # Generate consistent lock ID from object type and handle
         lock_key = f"{obj_type}:{handle}"
         lock_id = abs(hash(lock_key)) % (2**31)  # 32-bit signed int
-        
+
         try:
             if exclusive:
                 query = "SELECT pg_try_advisory_lock(%s)"
             else:
                 query = "SELECT pg_try_advisory_lock_shared(%s)"
-            
+
             start_time = time.time()
             while time.time() - start_time < timeout:
                 self.conn.execute(query, (lock_id,))
                 result = self.conn.fetchone()
-                
+
                 if result and result[0]:
                     self._active_locks[lock_key] = lock_id
                     self.log.debug(f"Acquired {'exclusive' if exclusive else 'shared'} lock on {lock_key}")
                     return True
-                
+
                 # Wait briefly before retrying
                 time.sleep(0.1)
-            
+
             self.log.warning(f"Failed to acquire lock on {lock_key} within {timeout}s")
             return False
-            
+
         except Exception as e:
             self.log.warning(f"Error acquiring lock on {lock_key}: {e}")
             return False  # Fail safe - allow access
@@ -358,7 +358,7 @@ class PostgreSQLConcurrency:
             return True
 
         lock_key = f"{obj_type}:{handle}"
-        
+
         if lock_key not in self._active_locks:
             self.log.debug(f"No active lock found for {lock_key}")
             return True
@@ -366,11 +366,11 @@ class PostgreSQLConcurrency:
         try:
             lock_id = self._active_locks[lock_key]
             self.conn.execute("SELECT pg_advisory_unlock(%s)", (lock_id,))
-            
+
             del self._active_locks[lock_key]
             self.log.debug(f"Released lock on {lock_key}")
             return True
-            
+
         except Exception as e:
             self.log.warning(f"Error releasing lock on {lock_key}: {e}")
             return False
@@ -445,13 +445,13 @@ class PostgreSQLConcurrency:
         try:
             # Try to get change_time from object data
             table_name = obj_type  # Assuming table name matches object type
-            
+
             query = f"SELECT change_time FROM {table_name} WHERE handle = %s"
             self.conn.execute(query, (handle,))
             result = self.conn.fetchone()
-            
+
             return float(result[0]) if result else None
-            
+
         except Exception as e:
             self.log.debug(f"Could not get version for {obj_type}:{handle}: {e}")
             return None
@@ -469,11 +469,11 @@ class PostgreSQLConcurrency:
         :raises ConcurrencyError: If object was modified by another user
         """
         current_version = self.get_object_version(obj_type, handle)
-        
+
         if current_version is None:
             # Object doesn't exist or version check not available
             return
-        
+
         if abs(current_version - expected_version) > 0.001:  # Allow small floating point differences
             raise ConcurrencyError(
                 _("Object {obj_type}:{handle} was modified by another user")
@@ -486,7 +486,7 @@ class PostgreSQLConcurrency:
 
     class ObjectLock:
         """Context manager for object locks."""
-        
+
         def __init__(self, concurrency, obj_type: str, handle: str, exclusive: bool = True, timeout: float = 5.0):
             self.concurrency = concurrency
             self.obj_type = obj_type
@@ -512,7 +512,7 @@ class PostgreSQLConcurrency:
         Create a context manager for object locking.
 
         :param obj_type: Type of object
-        :param handle: Object handle  
+        :param handle: Object handle
         :param exclusive: Whether to acquire exclusive lock
         :param timeout: Lock acquisition timeout
         :returns: Context manager for the lock
