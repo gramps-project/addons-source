@@ -602,7 +602,7 @@ class TimelinePedigreeView(NavigationView):
         if self.active:
             self.bookmarks.redraw()
         # clear the caches on loading a different tree
-        self._birth_cache = {}              
+        self._birth_cache = {}
         self.format_helper.clear_cache()
         self.build_tree()
 
