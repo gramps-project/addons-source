@@ -26,7 +26,7 @@ export GRAMPS_AI_MODEL_NAME="<ENTER MODEL NAME HERE>"
 This is always needed. Examples: "ollama/deepseek-r1:1.5b", "openai/gpt-4o-mini"
 
 ```
-export GRAMPS_AI_MODEL_URL="<ENTER URL HERE>" 
+export GRAMPS_AI_MODEL_URL="<ENTER URL HERE>"
 ```
 
 This is needed if running your own LLM server. Example: "http://127.0.0.1:8000"
