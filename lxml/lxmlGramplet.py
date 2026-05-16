@@ -676,7 +676,7 @@ class lxmlGramplet(Gramplet):
                     '\t{number} sources\n',
                     nb_sources).format(number=nb_sources)
 
-        counters = surnames_string + places_string + notes_string + sources_string 
+        counters = surnames_string + places_string + notes_string + sources_string
 
         libs = '\nLIBXML' + str(LIBXML_VERSION) + '\tLIBXSLT' + str(LIBXSLT_VERSION)
 
