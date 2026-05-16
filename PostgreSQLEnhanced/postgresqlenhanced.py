@@ -193,7 +193,7 @@ class PostgreSQLEnhanced(DBAPI):
         if DEBUG_ENABLED and DEBUG_AVAILABLE:
             self._debug_context = DebugContext(LOG)
             LOG.debug("Debug context initialized")
-        
+
         # Detect Gramps Web environment
         self.grampsweb_active = self._detect_grampsweb_environment()
         if self.grampsweb_active:
@@ -310,12 +310,12 @@ class PostgreSQLEnhanced(DBAPI):
         :raises DbConnectionError: If configuration cannot be loaded or connection fails
         """
         LOG.info(f"_initialize called with directory='{directory}', POSTGRESQL_ENHANCED_MODE='{os.environ.get('POSTGRESQL_ENHANCED_MODE')}'")
-        
+
         # Check for monolithic mode first
         # Also detect if directory looks like a tree ID (8 hex chars)
         # OR if it's a filesystem path ending with a tree ID
         actual_tree_id = None
-        
+
         # Extract tree ID from filesystem path if present
         if directory and '/' in directory:
             # Path like /root/.gramps/grampsdb/6894f36d
@@ -327,24 +327,24 @@ class PostgreSQLEnhanced(DBAPI):
                 if len(last_part) <= 20:  # Reasonable limit for tree ID
                     actual_tree_id = last_part
                     LOG.info(f"Extracted tree ID '{actual_tree_id}' from path '{directory}'")
-        
+
         # Check if directory itself is a tree ID
         is_tree_id = (
-            directory and 
-            len(directory) == 8 and 
+            directory and
+            len(directory) == 8 and
             all(c in '0123456789abcdef' for c in directory.lower())
         )
-        
+
         if os.environ.get('POSTGRESQL_ENHANCED_MODE') == 'monolithic' or is_tree_id or actual_tree_id:
             # In monolithic mode, build connection from environment variables
             config = self._build_config_from_env()
             self.directory = directory  # Store original path
             # Use extracted tree ID if available, otherwise use directory
             tree_id_to_use = actual_tree_id or directory
-            self.tree_id = tree_id_to_use  # Tree ID 
+            self.tree_id = tree_id_to_use  # Tree ID
             self.table_prefix = f"tree_{tree_id_to_use}_"
             self.shared_db_mode = True
-            
+
             # Build connection string
             connection_string = (
                 "postgresql://{}:{}@{}:{}/{}".format(
@@ -355,7 +355,7 @@ class PostgreSQLEnhanced(DBAPI):
                     config['database']
                 )
             )
-            
+
             LOG.info(
                 "Monolithic mode - Tree ID: '%s', Table prefix: '%s', Database: '%s'",
                 self.tree_id,
@@ -463,7 +463,7 @@ class PostgreSQLEnhanced(DBAPI):
         # Initialize enhanced queries if JSONB is enabled
         if self._use_jsonb:
             self.enhanced_queries = EnhancedQueries(self.dbapi)
-        
+
         # Initialize search capabilities
         try:
             # TODO: Re-enable when search_capabilities module is available
@@ -472,7 +472,7 @@ class PostgreSQLEnhanced(DBAPI):
             # mode = 'monolithic' if self.table_prefix else 'separate'
             # self.search_capabilities.setup_search_infrastructure(mode)
             self.search_api = None  # Temporarily disabled
-            
+
             LOG.info("Search capabilities temporarily disabled")
         except Exception as e:
             LOG.warning(f"Could not initialize search capabilities: {e}")
@@ -561,80 +561,80 @@ class PostgreSQLEnhanced(DBAPI):
         :param kwargs: Additional keyword arguments (unused)
         :returns: Always returns True
         :rtype: bool
-        
+
         .. versionchanged:: 1.4
             Added full DBAPI compatibility attributes for Gramps Web.
         """
         # Handle both 'user' and 'username' parameters
         actual_username = username or user or None
         actual_password = password or None
-        
+
         # Store original directory for later use
         self._original_directory = directory
 
         # Call our initialize method
         self._initialize(directory, actual_username, actual_password)
-        
+
         # ===== BLOCK 1: TRIVIAL FLAGS AND ATTRIBUTES =====
         # CRITICAL: This flag is required for Gramps Web to work
         self.db_is_open = True
-        
+
         # Support read-only mode
         from gramps.gen.db.dbconst import DBMODE_R
         self.readonly = mode == DBMODE_R if mode else False
-        
+
         # Initialize change tracking counter
         self.has_changed = 0
-        
+
         # Set minimal directory attributes for compatibility
         self._directory = directory
         self.path = directory  # Some Gramps code expects this
-        
+
         # Set serializer (always JSON for PostgreSQL Enhanced)
         self.set_serializer("json")
-        
+
         # ===== END BLOCK 1 =====
-        
+
         # ===== BLOCK 2: BOOKMARKS AND BASIC METADATA =====
         # Initialize all bookmark collections (required for Gramps Web)
         self._initialize_bookmarks()
-        
+
         # Load name formats and researcher info
         from gramps.gen.lib import Researcher
         self.name_formats = self._get_metadata("name_formats", [])
         self.owner = self._get_metadata("researcher", default=Researcher())
-        
+
         # Initialize all custom type attributes
         self._initialize_custom_types()
-        
+
         # Load gender statistics
         from gramps.gen.lib import GenderStats
         gstats = self._get_metadata("gender_stats", {})
         self.genderStats = GenderStats(gstats)
-        
+
         # ===== END BLOCK 2 =====
-        
+
         # ===== BLOCK 3: MODE-AWARE METADATA (ID COUNTERS & SURNAME LIST) =====
         # Initialize ID counters with mode awareness (critical for monolithic mode)
         self._initialize_id_counters()
-        
+
         # Load surname list with mode awareness (must be isolated per tree)
         self.surname_list = self._get_mode_aware_surname_list()
-        
+
         # ===== END BLOCK 3 =====
-        
+
         # ===== BLOCK 4: RECENT FILES TRACKING =====
         # Update recent files to fix "Last Accessed: NEVER" issue
         self._update_recent_files()
-        
+
         # ===== END BLOCK 4 =====
 
         # Set up the undo manager without calling parent's full load
         # which tries to run upgrades on non-existent files
-        
+
         # Detect if we're running under GrampsWeb
         grampsweb_mode = self._detect_grampsweb_mode()
-        
+
         if grampsweb_mode:
             # Use our PostgreSQL undo that has get_transactions
             try:
@@ -651,18 +651,18 @@ class PostgreSQLEnhanced(DBAPI):
             from gramps.gen.db.generic import DbGenericUndo
             self.undolog = None
             self.undodb = DbGenericUndo(self, self.undolog)
-            
+
         self.undodb.open()
 
         # Set proper version to avoid upgrade prompts
         self._set_metadata("version", "21")
-        
+
         return True
-    
+
     def _initialize_bookmarks(self):
         """
         Initialize all bookmark collections.
-        
+
         .. versionadded:: 1.4
             Required for Gramps Web compatibility.
         """
@@ -678,7 +678,7 @@ class PostgreSQLEnhanced(DBAPI):
             self.media_bookmarks = Bookmarks()
             self.place_bookmarks = Bookmarks()
             self.note_bookmarks = Bookmarks()
-        
+
         # Load bookmark data from metadata
         self.bookmarks.load(self._get_metadata("bookmarks", []))
         self.family_bookmarks.load(self._get_metadata("family_bookmarks", []))
@@ -689,13 +689,13 @@ class PostgreSQLEnhanced(DBAPI):
         self.media_bookmarks.load(self._get_metadata("media_bookmarks", []))
         self.place_bookmarks.load(self._get_metadata("place_bookmarks", []))
         self.note_bookmarks.load(self._get_metadata("note_bookmarks", []))
-    
+
     def _initialize_custom_types(self):
         """
         Initialize all custom type attributes.
-        
+
         These populate UI dropdowns in Gramps.
-        
+
         .. versionadded:: 1.4
             Required for Gramps Web UI functionality.
         """
@@ -717,14 +717,14 @@ class PostgreSQLEnhanced(DBAPI):
         self.media_attributes = self._get_metadata("mattr_names", set())
         self.event_attributes = self._get_metadata("eattr_names", set())
         self.place_types = self._get_metadata("place_types", set())
-    
+
     def _initialize_id_counters(self):
         """
         Initialize ID generation counters with mode awareness.
-        
+
         In monolithic mode, each tree must have its own counters to prevent
         ID collisions between trees.
-        
+
         .. versionadded:: 1.4
             Mode-aware ID counter initialization.
         """
@@ -751,14 +751,14 @@ class PostgreSQLEnhanced(DBAPI):
             self.omap_index = self._get_metadata("omap_index", 0)
             self.rmap_index = self._get_metadata("rmap_index", 0)
             self.nmap_index = self._get_metadata("nmap_index", 0)
-    
+
     def _get_mode_aware_surname_list(self):
         """
         Get surname list with mode awareness.
-        
+
         In monolithic mode, returns surnames only from the current tree's table.
         In separate mode, returns surnames from the single person table.
-        
+
         .. versionadded:: 1.4
             Mode-aware surname list retrieval.
         """
@@ -769,60 +769,60 @@ class PostgreSQLEnhanced(DBAPI):
             else:
                 # Separate mode: standard person table
                 table_name = "person"
-            
+
             query = f"""
-                SELECT DISTINCT 
+                SELECT DISTINCT
                     json_data->'primary_name'->>'surname' as surname
                 FROM {table_name}
-                WHERE json_data IS NOT NULL 
+                WHERE json_data IS NOT NULL
                 AND json_data->'primary_name'->>'surname' IS NOT NULL
                 AND json_data->'primary_name'->>'surname' != ''
                 ORDER BY surname
             """
-            
+
             result = self.dbapi.execute(query)
             return [row[0] for row in result.fetchall()]
         except Exception as e:
             LOG.warning(f"Failed to load surname list: {e}")
             return []
-    
+
     def _detect_grampsweb_mode(self):
         """
         Detect if running under GrampsWeb without importing it.
-        
+
         :returns: True if running under GrampsWeb, False otherwise
         :rtype: bool
         """
         # Check for GrampsWeb-specific environment variables
         if os.environ.get('GRAMPSWEB_TREE'):
             return True
-        
+
         # Check if gramps_webapi is in sys.modules (already imported)
         import sys
         if 'gramps_webapi' in sys.modules:
             return True
-            
+
         # Check call stack for GrampsWeb
         import inspect
         for frame_info in inspect.stack():
             if 'gramps_webapi' in frame_info.filename:
                 return True
-                
+
         return False
-    
+
     def _update_recent_files(self):
         """
         Update Gramps' recent files tracking with current timestamp.
-        
+
         Creates meaningful virtual PostgreSQL paths instead of filesystem paths.
         Fixes the "Last Accessed: NEVER" issue.
-        
+
         .. versionadded:: 1.4
             Recent files tracking for PostgreSQL databases.
         """
         try:
             from gramps.gen.recentfiles import recent_files
-            
+
             # Create a meaningful virtual path for PostgreSQL
             if hasattr(self, 'table_prefix') and self.table_prefix:
                 # Monolithic mode: use tree identifier
@@ -840,15 +840,15 @@ class PostgreSQLEnhanced(DBAPI):
                     db_name = "postgresql_db"
                 virtual_path = f"postgresql://separate/{db_name}"
                 display_name = f"PostgreSQL: {db_name}"
-            
+
             # Get the tree name from metadata if available
             tree_name = self._get_metadata("name", display_name)
-            
+
             # Update recent files with current timestamp
             recent_files(virtual_path, tree_name)
-            
+
             LOG.debug(f"Updated recent files: {virtual_path} -> {tree_name}")
-            
+
         except Exception as e:
             # Don't fail the entire load if recent files update fails
             LOG.warning(f"Could not update recent files tracking: {e}")
@@ -999,7 +999,7 @@ class PostgreSQLEnhanced(DBAPI):
     def _build_config_from_env(self):
         """
         Build configuration from environment variables for monolithic mode.
-        
+
         :return: Configuration dictionary
         :rtype: dict
         """
@@ -1011,7 +1011,7 @@ class PostgreSQLEnhanced(DBAPI):
             'password': os.environ.get('GRAMPSWEB_POSTGRES_PASSWORD', 'GenealogyData2025'),
             'database_mode': 'monolithic'
         }
-    
+
     def _parse_connection_options(self, connection_string):
         """
         Parse connection options from the connection string.
@@ -1193,15 +1193,15 @@ class PostgreSQLEnhanced(DBAPI):
         # Use modern SearchAPI with tsvector if available
         if self.search_api:
             return self.search_api.fulltext_search(
-                search_term, 
+                search_term,
                 limit=limit,
                 obj_types=['person', 'family', 'event', 'place', 'source', 'note', 'citation', 'media', 'repository', 'tag']
             )
-        
+
         # Fallback to enhanced queries ILIKE search if JSONB enabled
         elif self.enhanced_queries:
             return self.enhanced_queries.search_all_text(search_term, limit)
-        
+
         else:
             raise RuntimeError(_("Full-text search requires JSONB support or search capabilities"))
 
@@ -1498,7 +1498,7 @@ class PostgreSQLEnhanced(DBAPI):
         """
         Return unique database identifier.
         Required by Gramps Web for tree identification.
-        
+
         :returns: Unique database identifier (UUID)
         :rtype: str
         """
@@ -1509,7 +1509,7 @@ class PostgreSQLEnhanced(DBAPI):
                 return dbid
         except Exception:
             pass
-        
+
         # Generate new UUID and store it
         import uuid
         dbid = str(uuid.uuid4())
@@ -1517,13 +1517,13 @@ class PostgreSQLEnhanced(DBAPI):
             self.set_metadata('dbid', dbid)
         except Exception as e:
             LOG.warning("Could not store database ID in metadata: %s", e)
-        
+
         return dbid
-    
+
     def _detect_grampsweb_environment(self):
         """
         Detect if running under Gramps Web.
-        
+
         :returns: True if Gramps Web environment variables are present
         :rtype: bool
         """
@@ -1533,29 +1533,29 @@ class PostgreSQLEnhanced(DBAPI):
             'GRAMPSWEB_NEW_DB_BACKEND', # Backend specification
             'GRAMPSWEB_POSTGRES_HOST',  # PostgreSQL configuration
         ]
-        
+
         for indicator in grampsweb_indicators:
             if os.environ.get(indicator):
                 LOG.debug("Gramps Web detected via %s", indicator)
                 return True
-        
+
         return False
-    
+
     def is_read_only(self):
         """
         Check if database is read-only.
         Used by Gramps Web for UI permission handling.
-        
+
         :returns: True if database is read-only
         :rtype: bool
         """
         return getattr(self, 'readonly', False)
-    
+
     def get_mediapath(self):
         """
         Get media directory path.
         Used by Gramps Web for media file handling.
-        
+
         :returns: Path to media directory or None
         :rtype: str or None
         """
@@ -1566,17 +1566,17 @@ class PostgreSQLEnhanced(DBAPI):
                 return path
         except Exception:
             pass
-        
+
         # Default to subdirectory of tree directory
         if hasattr(self, 'directory') and self.directory:
             return os.path.join(self.directory, 'media')
-        
+
         return None
-    
+
     def set_mediapath(self, path):
         """
         Set media directory path.
-        
+
         :param path: Path to media directory
         :type path: str
         """
@@ -1584,15 +1584,15 @@ class PostgreSQLEnhanced(DBAPI):
             self.set_metadata('mediapath', path)
         except Exception as e:
             LOG.warning("Could not store media path in metadata: %s", e)
-    
+
     # ========================================================================
     # Search API for Gramps Web and other consumers
     # ========================================================================
-    
+
     def search(self, query, search_type='auto', limit=100, **kwargs):
         """
         Unified search interface for Gramps Web compatibility.
-        
+
         :param query: Search query string
         :type query: str
         :param search_type: Type of search ('auto', 'exact', 'fuzzy', 'phonetic', 'semantic')
@@ -1605,73 +1605,73 @@ class PostgreSQLEnhanced(DBAPI):
         if not self.search_api:
             # Fallback to basic search if capabilities not initialized
             return self._basic_search_fallback(query, limit, **kwargs)
-        
+
         return self.search_api.search(query, search_type, limit=limit, **kwargs)
-    
+
     def setup_fulltext_search(self):
         """
         Set up PostgreSQL native full-text search.
         This replaces the need for sifts entirely.
         """
         LOG.info("Setting up PostgreSQL native full-text search")
-        
+
         # Add search vectors to all object tables
-        for obj_type in ['person', 'family', 'event', 'place', 'source', 'citation', 
+        for obj_type in ['person', 'family', 'event', 'place', 'source', 'citation',
                         'repository', 'media', 'note', 'tag']:
             table = self.schema._table_name(obj_type)
-            
+
             try:
                 # Add search column if not exists
                 with self.dbapi.execute(f"""
-                    ALTER TABLE {table} 
+                    ALTER TABLE {table}
                     ADD COLUMN IF NOT EXISTS search_vector tsvector
                 """):
                     pass
-                
+
                 # Create GIN index for fast searching
                 with self.dbapi.execute(f"""
-                    CREATE INDEX IF NOT EXISTS idx_{table}_search 
+                    CREATE INDEX IF NOT EXISTS idx_{table}_search
                     ON {table} USING GIN(search_vector)
                 """):
                     pass
-                
+
                 # Create trigger to auto-update search vector
                 with self.dbapi.execute(f"""
-                    CREATE OR REPLACE FUNCTION {table}_search_trigger() 
+                    CREATE OR REPLACE FUNCTION {table}_search_trigger()
                     RETURNS trigger AS $$
                     BEGIN
-                        NEW.search_vector := to_tsvector('simple', 
+                        NEW.search_vector := to_tsvector('simple',
                             coalesce(NEW.json_data::text, ''));
                         RETURN NEW;
                     END;
                     $$ LANGUAGE plpgsql;
-                    
+
                     DROP TRIGGER IF EXISTS {table}_search_update ON {table};
-                    
-                    CREATE TRIGGER {table}_search_update 
+
+                    CREATE TRIGGER {table}_search_update
                     BEFORE INSERT OR UPDATE ON {table}
-                    FOR EACH ROW 
+                    FOR EACH ROW
                     EXECUTE FUNCTION {table}_search_trigger();
                 """):
                     pass
-                
+
                 # Update existing rows
                 with self.dbapi.execute(f"""
-                    UPDATE {table} 
+                    UPDATE {table}
                     SET search_vector = to_tsvector('simple', coalesce(json_data::text, ''))
                     WHERE search_vector IS NULL
                 """):
                     pass
-                    
+
                 LOG.debug(f"Full-text search enabled for {table}")
-                
+
             except Exception as e:
                 LOG.warning(f"Could not setup full-text search for {table}: {e}")
-    
+
     def get_search_capabilities(self):
         """
         Get available search capabilities for Gramps Web.
-        
+
         :returns: Dictionary of available search features
         :rtype: dict
         """
@@ -1681,17 +1681,17 @@ class PostgreSQLEnhanced(DBAPI):
                 'features': ['basic_search'],
                 'extensions': {}
             }
-        
+
         return {
             'level': self.search_capabilities.search_level,
             'features': self.search_capabilities.get_available_features(),
             'extensions': self.search_capabilities.capabilities
         }
-    
+
     def enable_search_extension(self, extension):
         """
         Try to enable a search extension if available.
-        
+
         :param extension: Extension name (pg_trgm, fuzzystrmatch, etc.)
         :type extension: str
         :returns: True if successful
@@ -1699,9 +1699,9 @@ class PostgreSQLEnhanced(DBAPI):
         """
         if not self.search_capabilities:
             return False
-        
+
         return self.search_capabilities.enable_extension(extension)
-    
+
     def _basic_search_fallback(self, query, limit=100, **kwargs):
         """
         Basic search fallback when advanced features unavailable.
@@ -1709,7 +1709,7 @@ class PostgreSQLEnhanced(DBAPI):
         """
         results = []
         query_pattern = f"%{query}%"
-        
+
         # Search persons
         table = self.schema._table_name('person')
         with self.dbapi.execute(f"""
@@ -1726,7 +1726,7 @@ class PostgreSQLEnhanced(DBAPI):
                     'data': row[2],
                     'relevance': 1.0
                 })
-        
+
         return results
 
     def get_event_from_handle(self, handle):
@@ -1963,28 +1963,28 @@ class PostgreSQLEnhanced(DBAPI):
                     continue
                 else:
                     raise
-    
+
     # ========================================================================
     # Public Metadata Methods for GrampsWeb Compatibility
     # ========================================================================
-    
+
     def set_metadata(self, key, value):
         """
         Public wrapper for _set_metadata.
         Required by GrampsWeb for metadata storage.
-        
+
         :param key: Metadata key
         :type key: str
         :param value: Metadata value
         :type value: Any
         """
         return self._set_metadata(key, value)
-    
+
     def get_metadata(self, key, default=None):
         """
         Public wrapper for _get_metadata.
         Required by GrampsWeb for metadata retrieval.
-        
+
         :param key: Metadata key
         :type key: str
         :param default: Default value if key not found
@@ -1994,17 +1994,17 @@ class PostgreSQLEnhanced(DBAPI):
         """
         result = self._get_metadata(key, "_")
         return default if result == "_" else result
-    
+
     # ========================================================================
     # Transaction History Support for GrampsWeb
     # ========================================================================
-    
+
     def get_transactions(self, page=1, pagesize=20, old_data=False, new_data=False,
                         ascending=False, before=None, after=None):
         """
         Get transaction history with pagination.
         Required by GrampsWeb API for /api/transactions/history/
-        
+
         :param page: Page number (1-based)
         :type page: int
         :param pagesize: Number of transactions per page
@@ -2026,22 +2026,22 @@ class PostgreSQLEnhanced(DBAPI):
         # TODO: Implement actual transaction history from undo table
         transactions = []
         total_count = 0
-        
+
         # If we have undo data, we could query it here
         # This would require querying the undo table with proper filtering
-        
+
         return transactions, total_count
-    
+
     # ========================================================================
     # Gramps Web Multi-Tree Support (Class Methods)
     # ========================================================================
-    
+
     @classmethod
     def create_tree(cls, tree_id=None, name=None):
         """
         Create a new family tree.
         Required by Gramps Web API for POST /api/trees/
-        
+
         :param tree_id: Optional tree identifier (UUID if not provided)
         :type tree_id: str or None
         :param name: Optional human-readable tree name
@@ -2051,19 +2051,19 @@ class PostgreSQLEnhanced(DBAPI):
         """
         import uuid
         import tempfile
-        
+
         # Generate tree ID if not provided
         if not tree_id:
             tree_id = str(uuid.uuid4())
-        
+
         # Determine tree directory
         gramps_home = os.environ.get('GRAMPS_HOME', tempfile.gettempdir())
         tree_dir = os.path.join(gramps_home, 'gramps_tree_%s' % tree_id)
         os.makedirs(tree_dir, exist_ok=True)
-        
+
         # Determine database mode from environment
         database_mode = os.environ.get('POSTGRESQL_ENHANCED_MODE', 'separate')
-        
+
         # Create connection_info.txt
         config_path = os.path.join(tree_dir, 'connection_info.txt')
         with open(config_path, 'w') as f:
@@ -2076,50 +2076,50 @@ class PostgreSQLEnhanced(DBAPI):
             f.write("password = %s\n" % os.environ.get('GRAMPSWEB_POSTGRES_PASSWORD', 'GenealogyData2025'))
             f.write("\n# Database mode\n")
             f.write("database_mode = %s\n" % database_mode)
-            
+
             if database_mode == 'monolithic':
                 f.write("\n# Monolithic mode configuration\n")
-                f.write("monolithic_database = %s\n" % 
+                f.write("monolithic_database = %s\n" %
                        os.environ.get('GRAMPSWEB_POSTGRES_DB', 'henderson_unified'))
                 f.write("tree_prefix = tree_%s_\n" % tree_id[:8])
-        
+
         # Write database.txt
         with open(os.path.join(tree_dir, 'database.txt'), 'w') as f:
             f.write('postgresqlenhanced')
-        
+
         # Write name.txt
         with open(os.path.join(tree_dir, 'name.txt'), 'w') as f:
             f.write(name or 'Tree %s' % tree_id[:8])
-        
+
         # Initialize the database
         try:
             db = cls()
             db._initialize(tree_dir, None, None)
-            
+
             # Set initial metadata
             db.set_metadata('dbid', tree_id)
             db.set_metadata('name', name or 'Tree %s' % tree_id[:8])
             db.set_metadata('created', str(time.time()))
-            
+
             LOG.info("Created tree %s in %s mode", tree_id, database_mode)
-            
+
         except Exception as e:
             LOG.error("Failed to create tree %s: %s", tree_id, e)
             raise
-        
+
         return tree_id
-    
+
     @classmethod
     def list_trees(cls):
         """
         List available family trees.
         Optional for Gramps Web multi-tree mode.
-        
+
         :returns: List of tree dictionaries with id, name, and path
         :rtype: list
         """
         trees = []
-        
+
         # For monolithic mode, query the database
         if os.environ.get('POSTGRESQL_ENHANCED_MODE') == 'monolithic':
             try:
@@ -2131,17 +2131,17 @@ class PostgreSQLEnhanced(DBAPI):
                     'user': os.environ.get('GRAMPSWEB_POSTGRES_USER', 'genealogy_user'),
                     'password': os.environ.get('GRAMPSWEB_POSTGRES_PASSWORD', 'GenealogyData2025'),
                 }
-                
+
                 with psycopg.connect(**conn_params) as conn:
                     with conn.cursor() as cur:
                         # Query for all tree prefixes
                         cur.execute("""
-                            SELECT DISTINCT 
+                            SELECT DISTINCT
                                 substring(tablename from 'tree_(.*)_metadata') as tree_id
-                            FROM pg_tables 
+                            FROM pg_tables
                             WHERE tablename LIKE 'tree_%_metadata'
                         """)
-                        
+
                         for row in cur.fetchall():
                             tree_id = row[0]
                             trees.append({
@@ -2149,10 +2149,10 @@ class PostgreSQLEnhanced(DBAPI):
                                 'name': 'Tree %s' % tree_id,
                                 'mode': 'monolithic'
                             })
-                            
+
             except Exception as e:
                 LOG.error("Failed to list trees from database: %s", e)
-        
+
         # Also check file system
         gramps_home = os.environ.get('GRAMPS_HOME', '/tmp')
         if os.path.exists(gramps_home):
@@ -2160,7 +2160,7 @@ class PostgreSQLEnhanced(DBAPI):
                 if entry.startswith('gramps_tree_'):
                     tree_dir = os.path.join(gramps_home, entry)
                     tree_id = entry.replace('gramps_tree_', '')
-                    
+
                     # Read name if available
                     name_file = os.path.join(tree_dir, 'name.txt')
                     name = 'Tree %s' % tree_id[:8]
@@ -2170,7 +2170,7 @@ class PostgreSQLEnhanced(DBAPI):
                                 name = f.read().strip()
                         except:
                             pass
-                    
+
                     # Check database mode
                     mode = 'separate'
                     config_file = os.path.join(tree_dir, 'connection_info.txt')
@@ -2178,14 +2178,14 @@ class PostgreSQLEnhanced(DBAPI):
                         with open(config_file) as f:
                             if 'database_mode = monolithic' in f.read():
                                 mode = 'monolithic'
-                    
+
                     trees.append({
                         'id': tree_id,
                         'name': name,
                         'path': tree_dir,
                         'mode': mode
                     })
-        
+
         return trees
 
 
