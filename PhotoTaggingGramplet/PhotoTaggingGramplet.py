@@ -616,7 +616,7 @@ class PhotoTaggingGramplet(Gramplet):
 
             rtype = metadata.get(region_type % i)
             unit = metadata.get(region_unit % i)
-            
+
             # ensure region does not exceed bounds of image
             rect_p1 = x - (w / 2)
             if rect_p1 < 0:
