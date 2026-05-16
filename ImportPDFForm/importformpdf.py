@@ -43,6 +43,7 @@ when Gramps is running in English (since the PDF generator does not translate).
 """
 
 import logging
+import os
 import re
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -57,6 +58,8 @@ from gramps.gen.lib import (
     EventType,
     Family,
     FamilyRelType,
+    Media,
+    MediaRef,
     Name,
     NameType,
     Person,
@@ -65,6 +68,7 @@ from gramps.gen.lib import (
     SrcAttributeType,
     Surname,
 )
+from gramps.gen.mime import get_type
 
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -207,7 +211,26 @@ def _import_form_data(dbase, fields, user):
 
     name_col = _("Name")
 
+    pdf_filename = fields.get("_pdf_filename", "")
+    if pdf_filename:
+        from importpdf import _copy_to_media_dir
+        _stored_path = _copy_to_media_dir(dbase, pdf_filename)
+
     with DbTxn(_("Import Form PDF: %s") % form_title, dbase) as trans:
+
+        # ── Media ────────────────────────────────────────────────────────────
+        _media = None
+        if pdf_filename:
+            _media = Media()
+            _media.set_path(_stored_path)
+            _media.set_mime_type(get_type(pdf_filename))
+            _media.set_description(os.path.basename(pdf_filename))
+            dbase.add_media(_media, trans)
+
+        def _media_ref():
+            ref = MediaRef()
+            ref.set_reference_handle(_media.handle)
+            return ref
 
         # ── Source ──────────────────────────────────────────────────────────
         source = Source()
@@ -248,6 +271,8 @@ def _import_form_data(dbase, fields, user):
                 attr.add_citation(citation.handle)
                 event.add_attribute(attr)
 
+        if _media:
+            event.add_media_reference(_media_ref())
         dbase.add_event(event, trans)
 
         # ── Sections ─────────────────────────────────────────────────────────
@@ -298,6 +323,8 @@ def _import_form_data(dbase, fields, user):
                         )
 
                         person.add_event_ref(event_ref)
+                        if _media:
+                            person.add_media_reference(_media_ref())
                         dbase.commit_person(person, trans)
 
                     row_num += 1
@@ -326,6 +353,8 @@ def _import_form_data(dbase, fields, user):
                 )
 
                 person.add_event_ref(event_ref)
+                if _media:
+                    person.add_media_reference(_media_ref())
                 dbase.commit_person(person, trans)
 
             # ── family: one Family with Groom + Bride sub-groups ──────────
@@ -356,6 +385,8 @@ def _import_form_data(dbase, fields, user):
                     )
                     husband.add_family_handle(family.handle)
                     family.set_father_handle(husband.handle)
+                    if _media:
+                        husband.add_media_reference(_media_ref())
                     dbase.commit_person(husband, trans)
 
                 if any(bride_fields.values()):
@@ -364,6 +395,8 @@ def _import_form_data(dbase, fields, user):
                     )
                     wife.add_family_handle(family.handle)
                     family.set_mother_handle(wife.handle)
+                    if _media:
+                        wife.add_media_reference(_media_ref())
                     dbase.commit_person(wife, trans)
 
                 # Attributes use GROOM/BRIDE prefixes (matches editform.py).

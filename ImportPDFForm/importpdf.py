@@ -27,7 +27,10 @@
 # -------------------------------------------------------------------------
 import csv
 import logging
+import os
 import re
+import shutil
+from datetime import datetime
 from io import StringIO
 
 # -------------------------------------------------------------------------
@@ -37,7 +40,10 @@ from io import StringIO
 # -------------------------------------------------------------------------
 from gramps.gen.config import config
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.gen.db import DbTxn
 from gramps.gen.errors import GrampsImportError
+from gramps.gen.lib import Media, MediaRef
+from gramps.gen.mime import get_type
 from gramps.plugins.importer.importcsv import CSVParser
 
 try:
@@ -353,6 +359,60 @@ def _build_csv(fields: dict, max_person: int = 31) -> tuple[str, int]:
 
 # -------------------------------------------------------------------------
 #
+# Media helpers
+#
+# -------------------------------------------------------------------------
+
+
+def _copy_to_media_dir(dbase, src_path):
+    """Copy *src_path* into the database media directory; return stored path.
+
+    The destination filename has a timestamp suffix so that multiple imports
+    of the same form template produce distinct files.  If no media directory
+    is configured, *src_path* is returned unchanged.
+    """
+    from gramps.gen.utils.file import media_path, relative_path
+
+    base = media_path(dbase)
+    if not base:
+        return src_path
+
+    os.makedirs(base, exist_ok=True)
+    name, ext = os.path.splitext(os.path.basename(src_path))
+    stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    dest = os.path.join(base, f"{name}_{stamp}{ext}")
+    shutil.copy2(src_path, dest)
+    return relative_path(dest, base)
+
+
+def _add_media_refs(dbase, filename, person_handles, event_handles):
+    """Copy the PDF to the media dir, create a Media record, and add MediaRefs."""
+    stored_path = _copy_to_media_dir(dbase, filename)
+
+    with DbTxn(_("Add media reference: PDF import"), dbase) as trans:
+        media = Media()
+        media.set_path(stored_path)
+        media.set_mime_type(get_type(filename))
+        media.set_description(os.path.basename(filename))
+        dbase.add_media(media, trans)
+
+        for handle in person_handles:
+            person = dbase.get_person_from_handle(handle)
+            ref = MediaRef()
+            ref.set_reference_handle(media.handle)
+            person.add_media_reference(ref)
+            dbase.commit_person(person, trans)
+
+        for handle in event_handles:
+            event = dbase.get_event_from_handle(handle)
+            ref = MediaRef()
+            ref.set_reference_handle(media.handle)
+            event.add_media_reference(ref)
+            dbase.commit_event(event, trans)
+
+
+# -------------------------------------------------------------------------
+#
 # Pedigree form importer
 #
 # -------------------------------------------------------------------------
@@ -394,10 +454,20 @@ def _import_pedigree_data(dbase, fields, user):
         )
         parser = CSVParser(dbase, user, tag_format)
 
+    filename = fields.get("_pdf_filename", "")
+    persons_before = set(dbase.get_person_handles()) if filename else set()
+    events_before = set(dbase.get_event_handles()) if filename else set()
+
     filehandle = StringIO(csv_text)
     msg = parser.parse(filehandle)
     if msg:
         user.notify_error(_("Bad references in PDF import"), msg)
+
+    if filename:
+        new_persons = set(dbase.get_person_handles()) - persons_before
+        new_events = set(dbase.get_event_handles()) - events_before
+        if new_persons or new_events:
+            _add_media_refs(dbase, filename, new_persons, new_events)
 
 
 # -------------------------------------------------------------------------
@@ -415,6 +485,7 @@ def importData(dbase, filename, user):
         user.notify_error(_("PDF import error"), str(err))
         return
 
+    fields["_pdf_filename"] = filename
     form_id = fields.get("_form_id", "").strip()
 
     if form_id.startswith("pedigree"):
