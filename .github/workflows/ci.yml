@@ -14,6 +14,9 @@ name: CI
 # failed jobs") and they will pull the now-existing image. This race
 # happens only on initial branch creation — every subsequent push to
 # that branch finds the image already in GHCR.
+#
+# Full operational runbook (GHCR visibility, PyPI-release transitions,
+# diagnostic log markers, etc.): .github/CI-MAINTAINER.md
 
 on:
   push:
