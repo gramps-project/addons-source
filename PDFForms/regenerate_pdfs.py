@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Regenerate all fillable PDFs into ImportPDFForm/pdfs/.
+Regenerate all fillable PDFs into PDFForms/pdfs/.
 
 Usage::
 
-    python3 ImportPDFForm/regenerate_pdfs.py           # all forms + pedigrees
-    python3 ImportPDFForm/regenerate_pdfs.py --rows 20 # override row count
-    python3 ImportPDFForm/regenerate_pdfs.py --forms-only
-    python3 ImportPDFForm/regenerate_pdfs.py --pedigrees-only
+    python3 PDFForms/regenerate_pdfs.py           # all forms + pedigrees
+    python3 PDFForms/regenerate_pdfs.py --rows 20 # override row count
+    python3 PDFForms/regenerate_pdfs.py --forms-only
+    python3 PDFForms/regenerate_pdfs.py --pedigrees-only
 """
 
 import argparse
