@@ -1,5 +1,20 @@
 name: CI
 
+# Branch-neutral workflow: the image tag, make.py argument, and Gramps
+# series pin are all derived from the branch ref at runtime, so the same
+# file runs unchanged on maintenance/gramps60, maintenance/gramps61, and
+# any future maintenance/grampsNN branch.
+#
+# NOTE for maintainers — first push to a new maintenance branch: the
+# corresponding gramps-ci:<suffix> image does not exist in GHCR yet, so
+# the container jobs in this workflow will fail at "Initialize containers"
+# on the very first run. The companion docker-build.yml workflow fires
+# on the same push and builds/pushes the image (~5 min cold). After it
+# finishes, re-run the failed CI jobs (Actions tab → this run → "Re-run
+# failed jobs") and they will pull the now-existing image. This race
+# happens only on initial branch creation — every subsequent push to
+# that branch finds the image already in GHCR.
+
 on:
   push:
     branches: [maintenance/gramps**]

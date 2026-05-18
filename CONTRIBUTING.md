@@ -1094,6 +1094,18 @@ With the PR created, it's now a matter of working with the ```addons-source```
 maintainers.  Suggestions and corrections will be made and it may be mecessary
 to modify the original submission to get the addon accepted.
 
+Your PR will also run automated CI checks (lint, compile, unit and
+integration tests, plus an addon build); results appear on the PR page.
+**Note:** on ```maintenance/grampsNN``` branches whose corresponding
+Gramps release is not yet on PyPI (e.g. ```maintenance/gramps61``` while
+6.1 is in development), the CI image is built from a SHA-pinned snapshot
+of upstream ```gramps-project/gramps@maintenance/grampsNN``` rather than
+a tagged release — a green check on such a PR means the addon works
+against that *branch tip*, not against a released version.  The exact
+SHA used is logged as a ```::warning::``` line in the ```Build Docker
+Images``` workflow output.
+
+
 The key thing is to monitor progress and comments.  Your PR will have an
 ID number -- 1234, for example -- so you can always go to the github web
 page for it:
