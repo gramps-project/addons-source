@@ -142,10 +142,12 @@ class GeneratePDFForm(Tool.Tool, ManagedWindow):
             self._radio_pedigree.set_active(True)
         else:
             self._radio_census.set_active(True)
-        self._sync_stack()
-        self._update_default_path()
 
         window.show_all()
+        # Must come after show_all() — show_all() recursively shows all stack
+        # children, overriding the stack's hidden-child state.
+        self._sync_stack()
+        self._update_default_path()
 
     def _build_census_panel(self):
         grid = Gtk.Grid(column_spacing=8, row_spacing=6)
