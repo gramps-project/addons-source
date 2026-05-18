@@ -721,6 +721,8 @@ elif command == "as-needed":
                             plugin["h"] = p["help_url"]
                         if "audience" in p:
                             plugin["a"] = p["audience"]
+                        if "depends_on" in p:
+                            plugin["do"] = p["depends_on"]
                         listings[lang].append(plugin)
                         if lang == "en":
                             print("Listed:          %s" % p["name"])
@@ -968,6 +970,8 @@ elif command == "listing":
                             plugin["h"] = p["help_url"]
                         if "audience" in p:
                             plugin["a"] = p["audience"]
+                        if "depends_on" in p:
+                            plugin["do"] = p["depends_on"]
                         listings.append(plugin)
                     else:
                         print("   ignoring '%s'" % (p["name"]))
