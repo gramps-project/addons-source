@@ -1,6 +1,9 @@
 # .github/docker/gramps-ci/Dockerfile
 #
-# Unified Gramps 6.0 CI image. Includes everything jobs need:
+# Gramps CI image. The Gramps minor series (6.0, 6.1, …) is picked at
+# build time via the GRAMPS_SERIES build arg, so the same Dockerfile
+# produces gramps-ci:gramps60, gramps-ci:gramps61, … without per-branch
+# edits. Includes everything jobs need:
 #   - Python + pip-installed Gramps, PyGObject, pycairo
 #   - GTK typelibs (so addon modules that `from gi.repository import Gtk`
 #     at module load time are importable — widgets still need xvfb to render)
@@ -13,11 +16,21 @@
 # `--init` (or use a container runtime that injects tini) because xvfb-run
 # hangs if it inherits PID 1.
 #
+# Local build:
+#   docker build --build-arg GRAMPS_SERIES=6.0 .github/docker/gramps-ci
+#
 ARG PYTHON_VERSION=3.12
 FROM python:${PYTHON_VERSION}-slim
 
+# Gramps minor series to install (e.g. 6.0, 6.1). No default — must be
+# passed explicitly so a wrong default cannot silently produce an image
+# for the wrong Gramps series. docker-build.yml derives this from the
+# branch ref.
+ARG GRAMPS_SERIES
+RUN [ -n "$GRAMPS_SERIES" ] || { echo "GRAMPS_SERIES is required (e.g. 6.0)"; exit 1; }
+
 LABEL org.opencontainers.image.source="https://github.com/gramps-project/addons-source"
-LABEL org.opencontainers.image.description="Unified Gramps 6.0 CI image (Python, Gramps, GTK typelibs, xvfb)"
+LABEL org.opencontainers.image.description="Gramps ${GRAMPS_SERIES} CI image (Python, Gramps, GTK typelibs, xvfb)"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
         libgirepository-2.0-dev \
@@ -46,7 +59,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip install --no-cache-dir \
         PyGObject \
         pycairo \
-        "gramps>=6.0,<6.1" \
+        "gramps==${GRAMPS_SERIES}.*" \
         orjson \
         ruff
 
