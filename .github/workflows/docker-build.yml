@@ -2,9 +2,11 @@ name: Build Docker Images
 
 on:
   push:
-    branches: [maintenance/gramps60]
-    paths:
-      - '.github/docker/**'
+    # No paths filter on purpose. Buildx layer cache makes the rebuild
+    # a ~20-30 s no-op when nothing under .github/docker/ has changed,
+    # in exchange for guaranteeing gramps-ci:<suffix> exists on the
+    # first push to any newly-created maintenance branch.
+    branches: [maintenance/gramps**]
   workflow_dispatch:
 
 env:
@@ -32,14 +34,32 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      - name: Compute branch parameters
+        # Derive the image-tag suffix and Gramps minor series from the
+        # branch ref. Same validation as ci.yml's setup job: anything
+        # outside maintenance/grampsNN fails fast.
+        id: params
+        shell: bash
+        run: |
+          ref="${{ github.ref_name }}"
+          suffix="${ref#maintenance/}"
+          case "$suffix" in
+            gramps[0-9][0-9]) ;;
+            *) echo "::error::unexpected ref '$ref' (suffix '$suffix')"; exit 1 ;;
+          esac
+          # gramps60 → 6.0, gramps61 → 6.1, gramps62 → 6.2, …
+          series="${suffix:6:1}.${suffix:7}"
+          echo "suffix=$suffix" >> "$GITHUB_OUTPUT"
+          echo "series=$series" >> "$GITHUB_OUTPUT"
+
       - name: Docker metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.REPO }}/gramps-ci
           tags: |
-            type=raw,value=gramps60
-            type=sha,prefix=gramps60-
+            type=raw,value=${{ steps.params.outputs.suffix }}
+            type=sha,prefix=${{ steps.params.outputs.suffix }}-
 
       - name: Build and push gramps-ci
         uses: docker/build-push-action@v6
@@ -48,5 +68,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          build-args: |
+            GRAMPS_SERIES=${{ steps.params.outputs.series }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
