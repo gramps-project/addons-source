@@ -52,6 +52,12 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
+try:
+    from importformpdf import _import_form_data as _import_form_data
+    _IMPORTFORMPDF_AVAILABLE = True
+except ImportError:
+    _IMPORTFORMPDF_AVAILABLE = False
+
 LOG = logging.getLogger(__name__)
 
 _GRAMPS_ID_RE = re.compile(r"\[([^\]]+)\]")
@@ -492,12 +498,10 @@ def importData(dbase, filename, user):
     if form_id.startswith("pedigree"):
         _import_pedigree_data(dbase, fields, user)
     elif form_id:
-        try:
-            from importformpdf import _import_form_data
-        except ImportError:
+        if not _IMPORTFORMPDF_AVAILABLE:
             user.notify_error(
                 _("Form importer unavailable"),
-                _("importformpdf.py is missing from the ImportPDFForm addon directory.")
+                _("importformpdf.py is missing from the PDFForms addon directory.")
             )
             return
         _import_form_data(dbase, fields, user)
