@@ -214,6 +214,7 @@ def _import_form_data(dbase, fields, user):
     name_col = _("Name")
 
     pdf_filename = fields.get("_pdf_filename", "")
+    _stored_path = None
     if pdf_filename and _copy_to_media_dir:
         _stored_path = _copy_to_media_dir(dbase, pdf_filename)
 
@@ -221,7 +222,7 @@ def _import_form_data(dbase, fields, user):
 
         # ── Media ────────────────────────────────────────────────────────────
         _media = None
-        if pdf_filename:
+        if pdf_filename and _stored_path:
             _media = Media()
             _media.set_path(_stored_path)
             _media.set_mime_type(get_type(pdf_filename))
