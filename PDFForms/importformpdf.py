@@ -78,9 +78,6 @@ _ = _trans.gettext
 
 LOG = logging.getLogger(__name__)
 
-# ---------------------------------------------------------------------------
-# Optional Form addon import — required at runtime, not at module load time
-# ---------------------------------------------------------------------------
 try:
     from form import (  # noqa: E402
         BRIDE,
@@ -99,6 +96,11 @@ try:
     _FORM_AVAILABLE = True
 except ImportError:
     _FORM_AVAILABLE = False
+
+try:
+    from importpdf import _copy_to_media_dir
+except ImportError:
+    _copy_to_media_dir = None
 
 
 # ---------------------------------------------------------------------------
@@ -212,8 +214,7 @@ def _import_form_data(dbase, fields, user):
     name_col = _("Name")
 
     pdf_filename = fields.get("_pdf_filename", "")
-    if pdf_filename:
-        from importpdf import _copy_to_media_dir
+    if pdf_filename and _copy_to_media_dir:
         _stored_path = _copy_to_media_dir(dbase, pdf_filename)
 
     with DbTxn(_("Import Form PDF: %s") % form_title, dbase) as trans:
