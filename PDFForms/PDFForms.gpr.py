@@ -19,12 +19,34 @@
 #
 
 register(
+    TOOL,
+    id="generate_pdf_forms",
+    name=_("Generate PDF Forms"),
+    description=_(
+        "Generate blank fillable PDF forms: census/event forms or "
+        "Ahnentafel pedigree charts."
+    ),
+    version="1.0.0",
+    gramps_target_version="6.1",
+    status=STABLE,
+    fname="generatepdfform.py",
+    authors=["Douglas S. Blank"],
+    authors_email=["doug.blank@gmail.com"],
+    category=TOOL_UTILS,
+    toolclass="GeneratePDFForm",
+    optionclass="GeneratePDFFormOptions",
+    tool_modes=[TOOL_MODE_GUI],
+    requires_mod=["reportlab"],
+    depends_on=["Form Gramplet"],
+)
+
+register(
     IMPORT,
-    id="im_pdf",
+    id="import_pdf",
     name=_("Import Fillable PDF Forms"),
     description=_(
-        "Import genealogy data from a filled-in Ahnentafel pedigree PDF form. "
-        "Send the bundled template to relatives to fill out and return."
+        "Import genealogy data from a PDF form. " 
+        "Send the PDF template to others to fill out and return."
     ),
     version="1.0.0",
     gramps_target_version="6.1",
@@ -33,4 +55,5 @@ register(
     import_function="importData",
     extension="pdf",
     requires_mod=["pypdf"],
+    depends_on=["Form Gramplet"],
 )
