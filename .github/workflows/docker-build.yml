@@ -35,9 +35,16 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Compute branch parameters
-        # Derive the image-tag suffix and Gramps minor series from the
-        # branch ref. Same validation as ci.yml's setup job: anything
-        # outside maintenance/grampsNN fails fast.
+        # Derive the image-tag suffix, Gramps minor series, and upstream
+        # fallback SHA from the branch ref. Same validation as ci.yml's
+        # setup job: anything outside maintenance/grampsNN fails fast.
+        # The fallback SHA is the current tip of gramps-project/gramps
+        # at the matching maintenance branch; the Dockerfile only uses
+        # it when no gramps==${series}.* release exists on PyPI. The
+        # SHA is part of the buildx cache key so a moved upstream tip
+        # actually re-runs the install layer (otherwise gramps61 CI
+        # would stay on the same stale gramps revision build after
+        # build).
         id: params
         shell: bash
         run: |
@@ -49,8 +56,13 @@ jobs:
           esac
           # gramps60 → 6.0, gramps61 → 6.1, gramps62 → 6.2, …
           series="${suffix:6:1}.${suffix:7}"
-          echo "suffix=$suffix" >> "$GITHUB_OUTPUT"
-          echo "series=$series" >> "$GITHUB_OUTPUT"
+          fallback_sha=$(git ls-remote https://github.com/gramps-project/gramps.git "refs/heads/maintenance/${suffix}" | awk '{print $1}')
+          if [ -z "$fallback_sha" ]; then
+            echo "::warning::upstream gramps-project/gramps has no maintenance/${suffix} branch; fallback path will fail if PyPI lacks gramps==${series}.*"
+          fi
+          echo "suffix=$suffix"            >> "$GITHUB_OUTPUT"
+          echo "series=$series"            >> "$GITHUB_OUTPUT"
+          echo "fallback_sha=$fallback_sha" >> "$GITHUB_OUTPUT"
 
       - name: Docker metadata
         id: meta
@@ -70,5 +82,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             GRAMPS_SERIES=${{ steps.params.outputs.series }}
+            GRAMPS_FALLBACK_SHA=${{ steps.params.outputs.fallback_sha }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
