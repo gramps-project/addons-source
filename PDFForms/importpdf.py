@@ -54,7 +54,7 @@ _ = _trans.gettext
 
 LOG = logging.getLogger(__name__)
 
-_GRAMPS_ID_RE = re.compile(r"^\[I\d+\]$")
+_GRAMPS_ID_RE = re.compile(r"\[([^\]]+)\]")
 
 # -------------------------------------------------------------------------
 #
@@ -278,8 +278,9 @@ def _build_csv(fields: dict, max_person: int = 31) -> tuple[str, int]:
         if not full_name:
             continue
 
-        if _GRAMPS_ID_RE.match(full_name):
-            ref = full_name
+        id_match = _GRAMPS_ID_RE.search(full_name)
+        if id_match:
+            ref = f"[{id_match.group(1)}]"
             firstname, surname = "", ""
         else:
             ref = _pid(n)
