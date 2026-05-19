@@ -16,9 +16,6 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
-    # Non-blocking until the existing ruff E9/F63/F7/F82 errors across the
-    # addon set are cleaned up in a follow-up PR. Flip this off in that PR.
-    continue-on-error: true
     container:
       image: ghcr.io/${{ github.repository }}/gramps-ci:gramps60
     steps:
