@@ -26,7 +26,7 @@ register(
         "Generate blank fillable PDF forms: census/event forms or "
         "Ahnentafel pedigree charts."
     ),
-    version="1.0.0",
+    version = '1.0.1',
     gramps_target_version="6.1",
     status=STABLE,
     fname="generatepdfform.py",
@@ -48,7 +48,7 @@ register(
         "Import genealogy data from a PDF form. " 
         "Send the PDF template to others to fill out and return."
     ),
-    version="1.0.0",
+    version = '1.0.1',
     gramps_target_version="6.1",
     status=STABLE,
     fname="importpdf.py",
