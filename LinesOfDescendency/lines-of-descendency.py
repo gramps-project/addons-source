@@ -126,7 +126,14 @@ class LinesOfDescendency(Report):
                 mother if mother != handle \
                     else family.get_father_handle()
             handle = next_handle
-            spouse = self.database.get_person_from_handle(spouse_handle)
+            # Bug 12913: a family may have only one parent defined,
+            # in which case spouse_handle is None and
+            # get_person_from_handle raises HandleError. Guard the
+            # lookup so the existing "N.N." fallback still applies.
+            if spouse_handle:
+                spouse = self.database.get_person_from_handle(spouse_handle)
+            else:
+                spouse = None
             if spouse:
                 spouse_name = _nd.display(spouse)
             else:
