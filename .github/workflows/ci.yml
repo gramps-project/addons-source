@@ -150,9 +150,6 @@ jobs:
   unit-test-linux:
     name: Unit Tests (Linux)
     runs-on: ubuntu-latest
-    # Non-blocking until the currently-broken addon unit modules (import
-    # failures, stale API usage) are sorted out in follow-up PRs.
-    continue-on-error: true
     container:
       image: ghcr.io/${{ github.repository }}/gramps-ci:gramps60
     steps:
@@ -260,7 +257,7 @@ jobs:
         # shell: bash — the container's default shell is /bin/sh
         # (dash on python:3.12-slim), which does not support the
         # ${var//pattern/repl} and ${var%.py} parameter expansions
-        # used below. Falls silently under continue-on-error.
+        # used below.
         shell: bash
         env:
           PYTHONPATH: .
@@ -303,8 +300,6 @@ jobs:
   unit-test-windows:
     name: Unit Tests (Windows)
     runs-on: windows-latest
-    # Non-blocking for the same reason as unit-test-linux.
-    continue-on-error: true
     defaults:
       run:
         shell: bash -el {0}
@@ -484,9 +479,7 @@ jobs:
           fi
 
       - name: Validate requires_mod names against Gramps' dep gate
-        # See unit-test-linux for rationale. This is the blocking copy:
-        # integration-test does not set continue-on-error, so a wrong
-        # requires_mod name surfaces as a CI failure here.
+        # See unit-test-linux for rationale.
         shell: bash
         run: |
           python3 - <<'PY'
