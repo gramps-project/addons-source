@@ -127,5 +127,100 @@ class TestLinesOfDescendencyGuards(unittest.TestCase):
         self.assertIsNotNone(report.ancestor)
 
 
+class TestWritePathMissingSpouse(unittest.TestCase):
+    """Bug 12913: ``write_path`` raised ``HandleError: Handle is None``
+    when a family in the descent chain had only one parent defined
+    (so ``spouse_handle`` came back as ``None``) and the addon called
+    ``get_person_from_handle(None)`` directly. The guard added in
+    this PR catches the ``None`` before the lookup and falls through
+    to the existing ``'N.N.'`` spouse-name fallback that was already
+    in place for the "spouse object missing" case."""
+
+    @classmethod
+    def setUpClass(cls):
+        try:
+            cls.impl = _load_impl()
+        except ImportError as err:
+            raise unittest.SkipTest("Gramps not importable: %s" % err)
+        cls.LinesOfDescendency = cls.impl.LinesOfDescendency
+
+    @staticmethod
+    def _report_instance(database, doc):
+        """Build a ``LinesOfDescendency`` instance via ``__new__`` so
+        ``Report.__init__`` (which we don't need) doesn't run, and
+        wire up the minimum attributes ``write_path`` touches."""
+        report = TestWritePathMissingSpouse.LinesOfDescendency.__new__(
+            TestWritePathMissingSpouse.LinesOfDescendency
+        )
+        report.database = database
+        report.doc = doc
+        report.line = 1
+        return report
+
+    @staticmethod
+    def _person(handle, gramps_id, parents_family_handle):
+        """Mock person with the minimal API ``write_path`` touches."""
+        person = mock.MagicMock()
+        person.get_handle.return_value = handle
+        person.get_gramps_id.return_value = gramps_id
+        person.get_main_parents_family_handle.return_value = (
+            parents_family_handle
+        )
+        return person
+
+    @staticmethod
+    def _family(mother_handle, father_handle, relationship):
+        family = mock.MagicMock()
+        family.get_mother_handle.return_value = mother_handle
+        family.get_father_handle.return_value = father_handle
+        family.get_relationship.return_value = relationship
+        return family
+
+    def test_single_parent_family_does_not_raise(self):
+        """The reporter's case: a family in the chain has only one
+        parent defined. Pre-fix, ``get_person_from_handle(None)``
+        raised ``HandleError: Handle is None`` and torpedoed the
+        whole report."""
+        # Chain: ancestor (handle "A") -> child (handle "C")
+        # Family F0037 has father "A" and mother = None ("Reeves, Maria"
+        # removed per reporter's repro). When traversing from ancestor
+        # to child, spouse_handle resolves to None.
+        ancestor = self._person("A", "I0001", parents_family_handle=None)
+        child = self._person("C", "I0055", parents_family_handle="F0037")
+        # Family with only the father, no mother:
+        family = self._family(
+            mother_handle=None,
+            father_handle="A",
+            relationship=self.impl.FamilyRelType.MARRIED,
+        )
+
+        database = mock.MagicMock()
+        database.get_person_from_handle.side_effect = lambda h: {
+            "A": ancestor,
+            "C": child,
+        }[h]
+        database.get_family_from_handle.return_value = family
+
+        doc = mock.MagicMock()
+        report = self._report_instance(database, doc)
+
+        # Pre-fix this would raise HandleError; post-fix it must
+        # complete and never call get_person_from_handle with None.
+        report.write_path(["A", "C"])
+
+        # Verify get_person_from_handle was NEVER called with None
+        # -- the whole point of the guard.
+        for call in database.get_person_from_handle.call_args_list:
+            self.assertIsNotNone(call.args[0])
+
+        # Verify the user-visible output still uses the existing
+        # 'N.N.' fallback for the missing-spouse case.
+        written_calls = [str(c) for c in doc.write_text.call_args_list]
+        self.assertTrue(
+            any("N.N." in text for text in written_calls),
+            "Expected 'N.N.' fallback in rendered text; got %r" % written_calls,
+        )
+
+
 if __name__ == "__main__":
     unittest.main()
