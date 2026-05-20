@@ -260,9 +260,21 @@ def _required_avail_w(columns):
     )
 
 
+def _split_camel(text):
+    """Insert spaces at camelCase boundaries: 'WindowRooms' → 'Window Rooms'."""
+    import re
+    return re.sub(r'([a-z])([A-Z])', r'\1 \2', text)
+
+
 def _wrap_text(text, max_width, canv, font, size):
-    """Break *text* into lines that fit within *max_width* points."""
-    words = text.split()
+    """
+    Break *text* into lines that fit within *max_width* points.
+
+    CamelCase tokens are split first so e.g. 'WindowRooms' wraps as
+    two words.  Words wider than *max_width* are kept whole — callers
+    that need overflow clipping should widen their clip rect accordingly.
+    """
+    words = _split_camel(text).split()
     lines, line = [], ""
     for word in words:
         candidate = (line + " " + word).strip()
@@ -330,10 +342,27 @@ def _draw_branding_header(canv, pw, y):
     return y
 
 
+def _fit_col_widths(columns, cws, canv):
+    """
+    Return column widths expanded so each column is at least as wide as its
+    wrapped header text: max(field_width, header_text_width).
+    """
+    result = []
+    for col_info, cw in zip(columns, cws):
+        lines = _wrap_text(col_info["attribute"], cw - 2, canv, "Helvetica-Bold", HEADER_SIZE)
+        display = lines[-HEADER_LINES:]
+        text_w = max(
+            canv.stringWidth(ln, "Helvetica-Bold", HEADER_SIZE) for ln in display
+        )
+        result.append(max(cw, text_w + 4))
+    return result
+
+
 def _draw_column_headers(canv, columns, col_widths, x0, y_top):
     """
     Draw column headers above a data grid, bottom-aligned within each column.
-    Each column is clipped to its own width so text never bleeds into neighbours.
+    Assumes col_widths have already been expanded via _fit_col_widths so no
+    text ever exceeds its column width.
     Returns the y coordinate of the bottom of the header block.
     """
     header_h = HEADER_LINES * (HEADER_SIZE + 1) + 2
@@ -341,7 +370,6 @@ def _draw_column_headers(canv, columns, col_widths, x0, y_top):
         lines = _wrap_text(col_info["attribute"], cw - 2, canv, "Helvetica-Bold", HEADER_SIZE)
         display = lines[-HEADER_LINES:]
 
-        # Clip this column so long words cannot bleed into the next column.
         canv.saveState()
         clip = canv.beginPath()
         clip.rect(x0, y_top - header_h, cw - 1, header_h)
@@ -528,7 +556,7 @@ def generate_form_pdf(form, rows, output_path):
         c.drawString(MARGIN, y - (LABEL_SIZE + 1), title)
         y -= LABEL_SIZE + 1 + 3
 
-        cws = _col_widths(columns, avail_w)
+        cws = _fit_col_widths(columns, _col_widths(columns, avail_w), c)
 
         # ── family: Groom + Bride split ─────────────────────────────────
         if stype == "family":
@@ -539,7 +567,7 @@ def generate_form_pdf(form, rows, output_path):
             side_keys = ["Groom", "Bride"]
 
             for s_label, sx, sk in zip(side_labels, side_x, side_keys):
-                side_cws = _col_widths(columns, half_w)
+                side_cws = _fit_col_widths(columns, _col_widths(columns, half_w), c)
                 # Side sub-title
                 c.setFont("Helvetica-Bold", LABEL_SIZE)
                 c.drawString(sx, y - LABEL_SIZE, s_label or sk)
@@ -549,7 +577,7 @@ def generate_form_pdf(form, rows, output_path):
 
             # One data row per side
             for sx, sk in zip(side_x, side_keys):
-                side_cws = _col_widths(columns, half_w)
+                side_cws = _fit_col_widths(columns, _col_widths(columns, half_w), c)
                 _add_row_fields(c, columns, side_cws, sx, y, f"{role}_{sk}", "1")
             y -= ROW_HEIGHT
 
