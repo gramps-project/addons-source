@@ -213,6 +213,13 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
     def do_close(self, assistant):
         """Close the assistant."""
         LOG.debug("Closing Gramps Web Sync addon.")
+        if self.db2 is not None:
+            LOG.debug("Closing in-memory remote database.")
+            self.db2.close()
+            self.db2 = None
+        # Clear the diff handler which holds references to both db1 and db2
+        self._sync = None
+        self._changes = None
         position = self.window.get_position()  # crock
         self.assistant.hide()
         self.window.move(position[0], position[1])
