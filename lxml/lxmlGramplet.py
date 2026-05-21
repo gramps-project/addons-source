@@ -661,20 +661,20 @@ class lxmlGramplet(Gramplet):
         _('\t{number} note'), _('\t{number} note')
         surnames_string = ngettext(
                     '\t{number} surname',
-                    '\t{number} surnames; no frequency yet\n',
-                    nb_surnames).format(number=nb_surnames)
+                    '\t{number} surnames; no frequency yet',
+                    nb_surnames).format(number=nb_surnames) + '\n'
         places_string = ngettext(
                     '\t{number} place',
-                    '\t{number} places\n',
-                    nb_pnames).format(number=nb_pnames)
+                    '\t{number} places',
+                    nb_pnames).format(number=nb_pnames) + '\n'
         notes_string = ngettext(
                     '\t{number} note',
-                    '\t{number} notes\n',
-                    nb_notes).format(number=nb_notes)
+                    '\t{number} notes',
+                    nb_notes).format(number=nb_notes) + '\n'
         sources_string = ngettext(
                     '\t{number} source',
-                    '\t{number} sources\n',
-                    nb_sources).format(number=nb_sources)
+                    '\t{number} sources',
+                    nb_sources).format(number=nb_sources) + '\n'
 
         counters = surnames_string + places_string + notes_string + sources_string
 
