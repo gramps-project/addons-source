@@ -180,6 +180,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
         self.db1 = dbstate.db
         self.db2 = None
+        self._closing = False
         self._download_timestamp = 0
         self._changes: Actions | None = None
         self._sync: WebApiSyncDiffHandler | None = None
@@ -213,6 +214,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
     def do_close(self, assistant):
         """Close the assistant."""
         LOG.debug("Closing Gramps Web Sync addon.")
+        self._closing = True
         if self.db2 is not None:
             LOG.debug("Closing in-memory remote database.")
             self.db2.close()
@@ -507,6 +509,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def get_diff_actions(self) -> None:
         """Download the remote data, import it and compare it to local."""
+        if self._closing:
+            return
         LOG.info("Downloading Gramps XML file.")
         path = self.handle_server_errors(self.api.download_xml)
         if path is None:
@@ -552,6 +556,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def _async_transfer_media(self):
         """Upload/download media files."""
+        if self._closing:
+            return
         self.handle_server_errors(self.download_files)
         if self.conclusion.error:
             return
@@ -672,6 +678,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self, payload: dict[str, "Any"], force: bool
     ) -> None:
         """Upload/download media files."""
+        if self._closing:
+            return
         LOG.debug("Committing changes to remote database.")
         self.handle_server_errors(
             self.api.commit,
