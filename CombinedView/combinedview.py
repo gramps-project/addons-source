@@ -474,7 +474,8 @@ class CombinedView(NavigationView):
             return
 
     def edit_active(self, *obj):
-        self.active_page.edit_active()
+        if self.active_page is not None:
+            self.active_page.edit_active()
 
     def change_db(self, db):
         #reset the connects
@@ -498,8 +499,17 @@ class CombinedView(NavigationView):
     def change_object(self, obj_tuple):
 
         if obj_tuple is None:
+            # No active object, e.g. the family tree was closed.  Clear the
+            # display instead of leaving people from the closed tree on
+            # screen: their handles no longer resolve, so editing one would
+            # raise HandleError (bug #12572, bug #14226).
+            for page in self.pages.values():
+                page.disable_actions(self.uimanager)
+            self.uimanager.update_menu()
+            list(map(self.header.remove, self.header.get_children()))
+            list(map(self.stack.remove, self.stack.get_children()))
+            self.active_page = None
             return
-
 
         if self.redrawing:
             return False
