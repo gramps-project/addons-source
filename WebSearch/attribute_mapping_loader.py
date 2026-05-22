@@ -118,3 +118,37 @@ class AttributeMappingLoader:
             print(f"❌ Error adding matching keys: {e}", file=sys.stderr)
 
         return filtered_uids_data
+
+    def get_matching_key_values_for_url(self, uids_data, url_pattern):
+        """
+        Return all matching UID values for a URL pattern, grouped by substitution key.
+
+        The existing add_matching_keys_to_data method keeps the historical one-value
+        behavior. This method is used only when the caller needs to decide whether a
+        UID link can be expanded into multiple rows.
+        """
+        grouped_uids_data = {}
+        try:
+            for uid_entry in uids_data:
+                if not re.match(uid_entry["url_regex"], url_pattern, re.IGNORECASE):
+                    continue
+
+                context = uid_entry.get(
+                    "context", UIDAttributeContext.ACTIVE_PERSON.value
+                )
+                key_name = uid_entry["key_name"]
+                value = uid_entry["value"]
+
+                keys = [f"{context}.{key_name}"]
+                if context == UIDAttributeContext.ACTIVE_PERSON.value:
+                    keys.append(key_name)
+
+                for key in keys:
+                    grouped_uids_data.setdefault(key, [])
+                    if value not in grouped_uids_data[key]:
+                        grouped_uids_data[key].append(value)
+
+        except Exception as e:  # pylint: disable=broad-exception-caught
+            print(f"❌ Error grouping matching keys: {e}", file=sys.stderr)
+
+        return grouped_uids_data

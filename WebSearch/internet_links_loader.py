@@ -40,10 +40,11 @@ class InternetLinksLoader:
         """Extracts formatted URLs from an object's 'Internet' tab."""
         links = []
         url_list = obj.get_url_list()
-        for url_obj in url_list:
+        for index, url_obj in enumerate(url_list):
             full_path = url_obj.get_full_path()
             url_type = url_obj.get_type()
             title = self.get_url_title(url_type)
+            description = (url_obj.get_description() or "").strip()
             # pylint: disable=duplicate-code
             url = UrlUtils.extract_url(full_path, self.url_regex)
             if url:
@@ -55,9 +56,16 @@ class InternetLinksLoader:
                         title=(title or "").strip(),
                         is_enabled=True,
                         url_pattern=UrlUtils.clean_url(url),
-                        comment=(url_obj.get_description() or "").strip(),
+                        comment=description,
                         is_custom_file=False,
                         source_file_path=None,
+                        reference_type=SourceTypes.INTERNET.value,
+                        reference_data={
+                            "index": index,
+                            "path": full_path,
+                            "type": title,
+                            "description": description,
+                        },
                     )
                 )
 
