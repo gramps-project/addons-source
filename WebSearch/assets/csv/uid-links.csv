@@ -17,4 +17,5 @@ People,LinkedIn,1,https://www.linkedin.com/in/%(LinkedIn.ID)s,
 People,Instagram,1,https://www.instagram.com/%(Instagram.ID)s,
 People,Gedbas,1,https://gedbas.de/uid/%(Gedbas.ID)s,
 People,WikiTree,1,https://www.wikitree.com/wiki/%(WikiTree.ID)s,
+People,RootsSearch WikiTree,1,https://apps.wikitree.com/apps/roots-search/?profile=%(WikiTree.ID)s,
 People,WikiTree Connection,1,https://www.wikitree.com/index.php?title=Special:Connection&action=connect&person1Name=%(WikiTree.ID)s&person2Name=%(HomePerson.WikiTree.ID)s
