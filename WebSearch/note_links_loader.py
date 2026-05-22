@@ -49,12 +49,15 @@ class NoteLinksLoader:
             for note_handle in obj.get_note_list():
                 note_obj = self.get_note_object(note_handle)
                 if note_obj:
-                    links.extend(self.get_links_from_note_obj(note_obj, nav_type))
+                    links.extend(
+                        self.get_links_from_note_obj(note_obj, nav_type, note_handle)
+                    )
         elif isinstance(obj, Note):
-            links.extend(self.get_links_from_note_obj(obj, nav_type))
+            note_handle = obj.get_handle() if hasattr(obj, "get_handle") else None
+            links.extend(self.get_links_from_note_obj(obj, nav_type, note_handle))
         return links
 
-    def get_links_from_note_obj(self, note_obj, nav_type):
+    def get_links_from_note_obj(self, note_obj, nav_type, note_handle=None):
         """Extract links from a single note object."""
         links = []
         parsed_links = self.parse_links_from_text(note_obj.get())
@@ -72,12 +75,14 @@ class NoteLinksLoader:
                     comment=None,
                     is_custom_file=False,
                     source_file_path=None,
+                    reference_type=SourceTypes.NOTE.value,
+                    reference_data={"note_handle": note_handle},
                 )
                 links.append(link_data)
                 existing_links.add(url)
 
         for link in note_obj.get_links():
-            link_data = self.create_existing_link_data(nav_type, link)
+            link_data = self.create_existing_link_data(nav_type, link, note_handle)
             if link_data:
                 links.append(link_data)
 
@@ -106,7 +111,7 @@ class NoteLinksLoader:
         except Exception:  # pylint: disable=broad-exception-caught
             return None
 
-    def create_existing_link_data(self, nav_type, link):
+    def create_existing_link_data(self, nav_type, link, note_handle=None):
         """Creates structured data for a note's existing link."""
         if len(link) != 4:
             return None
@@ -132,4 +137,6 @@ class NoteLinksLoader:
             comment=None,
             is_custom_file=False,
             source_file_path=None,
+            reference_type=SourceTypes.NOTE.value,
+            reference_data={"note_handle": note_handle},
         )

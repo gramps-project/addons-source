@@ -54,6 +54,8 @@ class WebsiteEntry:
     comment: Optional[str]
     is_custom_file: bool
     source_file_path: Optional[str]
+    reference_type: Optional[str] = None
+    reference_data: Optional[dict] = None
 
 
 @dataclass

@@ -316,5 +316,11 @@
                 <signal name="activate" handler="on_edit_note"/>
             </object>
         </child>
+        <child>
+            <object class="GtkMenuItem" id="edit_internet">
+                <property name="label">Edit Internet link</property>
+                <signal name="activate" handler="on_edit_internet"/>
+            </object>
+        </child>
     </object>  
 </interface>

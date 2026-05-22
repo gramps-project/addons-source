@@ -34,6 +34,7 @@ with customizable URL templates.
 # Standard Python libraries
 # --------------------------
 from functools import partial
+import hashlib
 import json
 import random
 import os
@@ -62,6 +63,7 @@ from gramps.gen.lib import Attribute, Note, NoteType, SrcAttribute
 from gramps.gen.plug import Gramplet
 from gramps.gui.display import display_url
 from gramps.gui.editors import EditObject
+from gramps.gui.editors.editurl import EditUrl
 from gramps.gen.errors import HandleError
 
 # --------------------------
@@ -188,6 +190,8 @@ MODEL_SCHEMA = [
     ("saved_attribute_value", str),
     ("saved_to", str),
     ("visited_record_id", int),
+    ("reference_type", str),
+    ("reference_data_json", str),
 ]
 
 ModelColumns = IntEnum(
@@ -248,6 +252,8 @@ class WebSearch(Gramplet):
             source=None,
             active_url=None,
             active_tree_path=None,
+            active_link_data=None,
+            database_id=None,
             last_active_entity_handle=None,
             last_active_entity_type=None,
             previous_ai_site_provider=None,
@@ -285,6 +291,7 @@ class WebSearch(Gramplet):
                         hide_all=self.builder.get_object("hide_all"),
                         edit_attribute=self.builder.get_object("edit_attribute"),
                         edit_note=self.builder.get_object("edit_note"),
+                        edit_internet=self.builder.get_object("edit_internet"),
                     ),
                 ),
             ),
@@ -356,7 +363,9 @@ class WebSearch(Gramplet):
         self.website_loader = WebsiteLoader()
         self.url_formatter = UrlFormatter(self.config_ini_manager)
         Gramplet.__init__(self, gui)
-        self.activity_row_generator = ActivityRowGenerator(self.activities_model)
+        self.activity_row_generator = ActivityRowGenerator(
+            self.activities_model, self._context.database_id
+        )
         self.refresh_activities_tab()
 
     def init_database_models(self):
@@ -587,8 +596,8 @@ class WebSearch(Gramplet):
     def refresh_place_history_section(self, place_history_request_data):
         """Refreshes the section displaying the historical administrative data for a place."""
 
-        place_history_record = self.place_history_model.first_by_field(
-            "event_handle", place_history_request_data.handle
+        place_history_record = self.get_current_or_legacy_place_history_record(
+            place_history_request_data.handle
         )
         if place_history_record:
             results = PlaceHistoryStorage().load_results_from_file(place_history_record)
@@ -642,6 +651,14 @@ class WebSearch(Gramplet):
             args=(place_history_request_data,),
             daemon=True,
         ).start()
+
+    def get_current_or_legacy_place_history_record(self, event_handle):
+        """Return a place history record from legacy data or the current database."""
+        records = self.place_history_model.get_by_field("event_handle", event_handle)
+        for record in records:
+            if self.is_current_or_legacy_record(record, self._context.database_id):
+                return record
+        return None
 
     def show_loading_message_in_notes(self):
         """Displays a loading message in the notes text view."""
@@ -769,6 +786,7 @@ class WebSearch(Gramplet):
                         "place_type": results.get("place_type", None),
                         "latitude": self._context.active_place_latitude,
                         "longitude": self._context.active_place_longitude,
+                        **self.get_database_id_record_part(),
                     }
                 )
 
@@ -780,6 +798,7 @@ class WebSearch(Gramplet):
                             ADMINISTRATIVE_DIVISIONS_DIR, filename
                         ),
                         "activity_type": ActivityType.PLACE_HISTORY_LOAD.value,
+                        **self.get_database_id_record_part(),
                     }
                 )
                 self.refresh_activities_tab()
@@ -858,6 +877,7 @@ class WebSearch(Gramplet):
 
     def db_changed(self):
         """Responds to changes in the database and updates the active context accordingly."""
+        self._context.database_id = self.get_current_database_id()
         self.attribute_editor_manager = AttributeEditorManager(
             self.dbstate, self.gui.uistate, self.activities_model
         )
@@ -877,7 +897,11 @@ class WebSearch(Gramplet):
                 saves_model=self.saves_model,
                 hidden_links_model=self.hidden_links_model,
                 activities_model=self.activities_model,
+                database_id=self._context.database_id,
             )
+        )
+        self.activity_row_generator = ActivityRowGenerator(
+            self.activities_model, self._context.database_id
         )
         self.note_links_loader = NoteLinksLoader(self.dbstate.db)
 
@@ -918,6 +942,20 @@ class WebSearch(Gramplet):
         notebook = self.gui.uistate.viewmanager.notebook
         if notebook:
             notebook.connect("switch-page", self.on_category_changed)
+
+    def get_current_database_id(self):
+        """Return a stable, privacy-preserving ID for the current Gramps database."""
+        try:
+            save_path = self.dbstate.db.get_save_path()
+        except Exception:  # pylint: disable=broad-exception-caught
+            return None
+
+        if not save_path:
+            return None
+
+        return hashlib.sha256(os.path.abspath(save_path).encode("utf-8")).hexdigest()[
+            :16
+        ]
 
     def refresh_main_treeview_tab(self, nav_type, obj_handle):
         """Dispatch refresh logic depending on entity type."""
@@ -1011,8 +1049,9 @@ class WebSearch(Gramplet):
     def insert_websites_into_model(self, websites, link_context: LinkContext):
         """Formats each website entry and appends it to the Gtk model."""
         for website_data in websites:
-            model_row = self.model_row_generator.generate(link_context, website_data)
-            if model_row:
+            for model_row in self.model_row_generator.generate_many(
+                link_context, website_data
+            ):
                 self.model.append([model_row[name] for name, _ in MODEL_SCHEMA])
 
     def on_link_clicked(self, unused_tree_view, path, unused_column):
@@ -1063,13 +1102,9 @@ class WebSearch(Gramplet):
         source_file_path = self.model.get_value(
             tree_iter, ModelColumns.SOURCE_FILE_PATH.value
         )
+        database_id = self._context.database_id
 
-        if (
-            not model.query()
-            .where("link", url)
-            .where("obj_handle", obj_handle)
-            .exists()
-        ):
+        if not self.has_link_record(model, url, obj_handle, database_id):
 
             data = {
                 "link": url,
@@ -1078,6 +1113,8 @@ class WebSearch(Gramplet):
                 "obj_gramps_id": obj_gramps_id,
                 "source_file_path": source_file_path,
             }
+            if database_id:
+                data["database_id"] = database_id
 
             if saved_to:
 
@@ -1125,6 +1162,79 @@ class WebSearch(Gramplet):
                 self.ui.columns.icons.queue_resize()
             except Exception as e:  # pylint: disable=broad-exception-caught
                 print(f"❌ Error loading icon: {e}", file=sys.stderr)
+
+    def add_saved_link_from_snapshot(self, link_data, settings):
+        """Records a saved link using row data captured before any DB refresh."""
+        if not link_data:
+            print("❌ Error: No saved link data!", file=sys.stderr)
+            return
+
+        database_id = self._context.database_id
+        if self.has_link_record(
+            self.saves_model, link_data["link"], link_data["obj_handle"], database_id
+        ):
+            return
+
+        data = {
+            "link": link_data["link"],
+            "nav_type": link_data["nav_type"],
+            "obj_handle": link_data["obj_handle"],
+            "obj_gramps_id": link_data["obj_gramps_id"],
+            "source_file_path": link_data["source_file_path"],
+            "saved_to": settings.saved_to,
+        }
+        if database_id:
+            data["database_id"] = database_id
+
+        activity_data = {
+            "link": link_data["link"],
+            "nav_type": link_data["nav_type"],
+            "obj_handle": link_data["obj_handle"],
+            "obj_gramps_id": link_data["obj_gramps_id"],
+            "source_file_path": link_data["source_file_path"],
+        }
+        if database_id:
+            activity_data["database_id"] = database_id
+
+        if settings.saved_to == SavedTo.NOTE.value:
+            data["note_gramps_id"] = settings.note_gramps_id
+            data["note_handle"] = settings.note_handle
+            activity_data["activity_type"] = ActivityType.LINK_SAVE_TO_NOTE.value
+            activity_data["note_gramps_id"] = settings.note_gramps_id
+            activity_data["note_handle"] = settings.note_handle
+        elif settings.saved_to == SavedTo.ATTRIBUTE.value:
+            data["attribute_type"] = settings.attribute_type
+            data["attribute_value"] = settings.attribute_value
+            activity_data["activity_type"] = ActivityType.LINK_SAVE_TO_ATTRIBUTE.value
+            activity_data["attribute_type"] = settings.attribute_type
+            activity_data["attribute_value"] = settings.attribute_value
+        else:
+            return
+
+        record = self.saves_model.create(data)
+        activity_data["saves_record_id"] = record.get("id")
+        self.activities_model.create(activity_data)
+        self.refresh_activities_tab()
+
+    def has_link_record(self, model, link, obj_handle, database_id):
+        """Return True for legacy records or records from the current database."""
+        records = model.query().where("link", link).where("obj_handle", obj_handle).get()
+        return any(
+            self.is_current_or_legacy_record(record, database_id)
+            for record in records
+        )
+
+    @staticmethod
+    def is_current_or_legacy_record(record, database_id):
+        """A legacy record has no database_id and remains visible in every database."""
+        record_database_id = record.get("database_id")
+        return not record_database_id or record_database_id == database_id
+
+    def get_database_id_record_part(self):
+        """Return database_id field for new local records when a database is open."""
+        if not self._context.database_id:
+            return {}
+        return {"database_id": self._context.database_id}
 
     def active_person_changed(self, handle):
         """Handles updates when the active person changes in the GUI."""
@@ -1544,6 +1654,9 @@ class WebSearch(Gramplet):
         self.ui.context_menus.main.items.edit_note.set_label(
             _("Edit Note with the Link")
         )
+        self.ui.context_menus.main.items.edit_internet.set_label(
+            _("Edit Internet link")
+        )
 
         self.ui.ai_recommendations_label.set_text(_("🔍 AI Suggestions"))
 
@@ -1670,12 +1783,29 @@ class WebSearch(Gramplet):
                 source_type = self.model.get_value(
                     tree_iter, ModelColumns.SOURCE_TYPE.value
                 )
+                reference_type = self.model.get_value(
+                    tree_iter, ModelColumns.REFERENCE_TYPE.value
+                )
                 saved_icon_visible = self.model.get_value(
                     tree_iter, ModelColumns.SAVED_ICON_VISIBLE.value
                 )
 
                 self._context.active_tree_path = path
                 self._context.active_url = url
+                self._context.active_link_data = {
+                    "title": self.model.get_value(tree_iter, ModelColumns.TITLE.value),
+                    "link": url,
+                    "nav_type": nav_type,
+                    "obj_handle": self.model.get_value(
+                        tree_iter, ModelColumns.OBJ_HANDLE.value
+                    ),
+                    "obj_gramps_id": self.model.get_value(
+                        tree_iter, ModelColumns.OBJ_GRAMPS_ID.value
+                    ),
+                    "source_file_path": self.model.get_value(
+                        tree_iter, ModelColumns.SOURCE_FILE_PATH.value
+                    ),
+                }
                 self.ui.context_menus.main.menu.show_all()
 
                 if (
@@ -1721,17 +1851,36 @@ class WebSearch(Gramplet):
                 saved_value = self.model.get_value(
                     tree_iter, ModelColumns.SAVED_ATTRIBUTE_VALUE.value
                 )
-                if saved_type and saved_value:
+                if (
+                    saved_type
+                    and saved_value
+                    or (
+                        reference_type == SourceTypes.ATTRIBUTE.value
+                        and nav_type
+                        not in [
+                            SupportedNavTypes.SOURCES.value,
+                            SupportedNavTypes.CITATIONS.value,
+                        ]
+                    )
+                ):
                     self.ui.context_menus.main.items.edit_attribute.show()
                 else:
                     self.ui.context_menus.main.items.edit_attribute.hide()
 
                 # notes
                 saved_to = self.model.get_value(tree_iter, ModelColumns.SAVED_TO.value)
-                if saved_to == SavedTo.NOTE.value:
+                if (
+                    saved_to == SavedTo.NOTE.value
+                    or reference_type == SourceTypes.NOTE.value
+                ):
                     self.ui.context_menus.main.items.edit_note.show()
                 else:
                     self.ui.context_menus.main.items.edit_note.hide()
+
+                if reference_type == SourceTypes.INTERNET.value:
+                    self.ui.context_menus.main.items.edit_internet.show()
+                else:
+                    self.ui.context_menus.main.items.edit_internet.hide()
 
                 self.ui.context_menus.main.menu.popup_at_pointer(event)
 
@@ -1741,6 +1890,32 @@ class WebSearch(Gramplet):
         tree_iter = self.get_active_tree_iter(path)
         nav_type = self.model.get_value(tree_iter, ModelColumns.NAV_TYPE.value)
         obj_handle = self.model.get_value(tree_iter, ModelColumns.OBJ_HANDLE.value)
+        reference_type, reference_data = self.get_source_reference_data(tree_iter)
+        if reference_type == SourceTypes.ATTRIBUTE.value:
+            if nav_type in [
+                SupportedNavTypes.SOURCES.value,
+                SupportedNavTypes.CITATIONS.value,
+            ]:
+                return
+            try:
+                self.attribute_editor_manager.edit_by_obj_handle_and_attr_reference(
+                    SimpleNamespace(
+                        nav_type=nav_type,
+                        obj_handle=obj_handle,
+                        attr_index=reference_data.get("index"),
+                        attr_type=reference_data.get("attribute_type"),
+                        attr_value=reference_data.get("attribute_value"),
+                        callback=partial(
+                            self.on_source_reference_updated, nav_type, obj_handle
+                        ),
+                    )
+                )
+            except AttributeNotFoundError:
+                self.show_notification(
+                    _("Attribute no longer matches this WebSearch row")
+                )
+            return
+
         saved_record_id = self.model.get_value(
             tree_iter, ModelColumns.SAVED_RECORD_ID.value
         )
@@ -1791,6 +1966,23 @@ class WebSearch(Gramplet):
         tree_iter = self.get_active_tree_iter(path)
         nav_type = self.model.get_value(tree_iter, ModelColumns.NAV_TYPE.value)
         obj_handle = self.model.get_value(tree_iter, ModelColumns.OBJ_HANDLE.value)
+        reference_type, reference_data = self.get_source_reference_data(tree_iter)
+        if reference_type == SourceTypes.NOTE.value:
+            try:
+                self.note_editor_manager.edit_by_obj_handle_and_note_handle(
+                    SimpleNamespace(
+                        nav_type=nav_type,
+                        obj_handle=obj_handle,
+                        note_handle=reference_data.get("note_handle", ""),
+                        callback=partial(
+                            self.on_source_reference_updated, nav_type, obj_handle
+                        ),
+                    )
+                )
+            except NoteNotFoundError:
+                self.show_notification(_("Note no longer exists"))
+            return
+
         saved_record_id = self.model.get_value(
             tree_iter, ModelColumns.SAVED_RECORD_ID.value
         )
@@ -1825,14 +2017,132 @@ class WebSearch(Gramplet):
             self.saves_model.update(saved_record_id, record)
             self.refresh_activities_tab()
 
+    def on_source_reference_updated(self, nav_type, obj_handle, unused_result=None):
+        """Refresh WebSearch after editing a source Attribute, Note, or Internet item."""
+        self.refresh_main_treeview_tab(nav_type, obj_handle)
+        self.refresh_activities_tab()
+
+    def get_source_reference_data(self, tree_iter):
+        """Return source reference type and JSON data stored in hidden row columns."""
+        reference_type = self.model.get_value(
+            tree_iter, ModelColumns.REFERENCE_TYPE.value
+        )
+        reference_data_json = self.model.get_value(
+            tree_iter, ModelColumns.REFERENCE_DATA_JSON.value
+        )
+        try:
+            reference_data = json.loads(reference_data_json or "{}")
+        except json.JSONDecodeError:
+            reference_data = {}
+        return reference_type, reference_data
+
+    def on_edit_internet(self, unused_widget):
+        """Open the Internet Address editor for a URL found in the Internet tab."""
+        path = self._context.active_tree_path
+        tree_iter = self.get_active_tree_iter(path)
+        nav_type = self.model.get_value(tree_iter, ModelColumns.NAV_TYPE.value)
+        obj_handle = self.model.get_value(tree_iter, ModelColumns.OBJ_HANDLE.value)
+        reference_type, reference_data = self.get_source_reference_data(tree_iter)
+        if reference_type != SourceTypes.INTERNET.value:
+            return
+
+        obj = self.get_internet_parent_object(nav_type, obj_handle)
+        if obj is None:
+            return
+
+        try:
+            url_index, url_obj = self.find_url_by_reference(obj, reference_data)
+        except ValueError:
+            self.show_notification(
+                _("Internet link no longer matches this WebSearch row")
+            )
+            return
+
+        EditUrl(
+            self.dbstate,
+            self.gui.uistate,
+            [],
+            "",
+            url_obj,
+            callback=partial(self.on_internet_url_edited, nav_type, obj, url_index),
+        )
+
+    def find_url_by_reference(self, obj, reference_data):
+        """Find one URL by saved index first, then by unique path/type/description match."""
+        url_list = obj.get_url_list()
+        index = reference_data.get("index")
+        if isinstance(index, int) and 0 <= index < len(url_list):
+            url_obj = url_list[index]
+            if self.url_matches_reference(url_obj, reference_data):
+                return index, url_obj
+
+        matches = [
+            (i, url_obj)
+            for i, url_obj in enumerate(url_list)
+            if self.url_matches_reference(url_obj, reference_data)
+        ]
+        if len(matches) != 1:
+            raise ValueError("URL reference no longer matches uniquely")
+        return matches[0]
+
+    @staticmethod
+    def url_matches_reference(url_obj, reference_data):
+        """Return whether a Gramps Url object still matches stored row metadata."""
+        return (
+            url_obj.get_full_path() == reference_data.get("path")
+            and (url_obj.get_type().xml_str() or "").strip()
+            == (reference_data.get("type") or "").strip()
+            and (url_obj.get_description() or "").strip()
+            == (reference_data.get("description") or "").strip()
+        )
+
+    def on_internet_url_edited(self, nav_type, obj, url_index, updated_url):
+        """Save an edited Internet URL back to the parent object."""
+        if not updated_url:
+            return
+
+        url_list = obj.get_url_list()
+        if not (0 <= url_index < len(url_list)):
+            return
+        url_list[url_index] = updated_url
+
+        with DbTxn("Edit Internet Link", self.dbstate.db) as trans:
+            obj.set_url_list(url_list)
+            self.commit_internet_parent_object(nav_type, obj, trans)
+
+        self.refresh_main_treeview_tab(nav_type, obj.get_handle())
+
+    def get_internet_parent_object(self, nav_type, obj_handle):
+        """Resolve an object that can own Internet links."""
+        lookup = {
+            SupportedNavTypes.PEOPLE.value: self.dbstate.db.get_person_from_handle,
+            SupportedNavTypes.PLACES.value: self.dbstate.db.get_place_from_handle,
+            SupportedNavTypes.REPOSITORIES.value: (
+                self.dbstate.db.get_repository_from_handle
+            ),
+        }
+        getter = lookup.get(nav_type)
+        return getter(obj_handle) if getter else None
+
+    def commit_internet_parent_object(self, nav_type, obj, trans):
+        """Commit an object that owns Internet links."""
+        lookup = {
+            SupportedNavTypes.PEOPLE.value: self.dbstate.db.commit_person,
+            SupportedNavTypes.PLACES.value: self.dbstate.db.commit_place,
+            SupportedNavTypes.REPOSITORIES.value: self.dbstate.db.commit_repository,
+        }
+        commit = lookup.get(nav_type)
+        if commit:
+            commit(obj, trans)
+
     def on_add_note(self, unused_widget):
         """Adds the current selected URL as a note to the person record."""
-        if not self._context.active_tree_path:
-            print("❌ Error: No saved path to the iterator!", file=sys.stderr)
+        link_data = self._context.active_link_data
+        if not link_data:
+            print("❌ Error: No saved link data!", file=sys.stderr)
             return
 
         note = Note()
-        tree_iter = self.get_active_tree_iter(self._context.active_tree_path)
         note.set(
             _(
                 "📌 This '{title}' web link was archived for future reference by the "
@@ -1841,14 +2151,14 @@ class WebSearch(Gramplet):
                 "You can use this link to revisit the source and verify the information "
                 "related to this entity."
             ).format(
-                title=self.model.get_value(tree_iter, ModelColumns.TITLE.value),
+                title=link_data["title"],
                 version=self.version,
-                url=self._context.active_url,
+                url=link_data["link"],
             )
         )
 
         note.set_privacy(True)
-        nav_type = self.model.get_value(tree_iter, ModelColumns.NAV_TYPE.value)
+        nav_type = link_data["nav_type"]
         note_handle = None
 
         with DbTxn("Add Web Link Note", self.dbstate.db) as trans:
@@ -1900,21 +2210,16 @@ class WebSearch(Gramplet):
                 self._context.media.add_note(note_handle)
                 self.dbstate.db.commit_media(self._context.media, trans)
 
-        tree_iter = self.get_active_tree_iter(self._context.active_tree_path)
-        self.add_icon_event(
+        self.add_saved_link_from_snapshot(
+            link_data,
             SimpleNamespace(
-                icon_path=ICON_SAVED_PATH,
-                tree_iter=tree_iter,
-                model_icon_pos=ModelColumns.SAVED_ICON.value,
-                model_visibility_pos=ModelColumns.SAVED_ICON_VISIBLE.value,
-                model=self.saves_model,
                 note_handle=note_handle,
                 note_gramps_id=note.get_gramps_id(),
                 saved_to=SavedTo.NOTE.value,
-            )
+            ),
         )
 
-        handle = self.model.get_value(tree_iter, ModelColumns.OBJ_HANDLE.value)
+        handle = link_data["obj_handle"]
         self.refresh_main_treeview_tab(nav_type, handle)
 
         try:
@@ -1952,33 +2257,45 @@ class WebSearch(Gramplet):
         model, tree_iter = selection.get_selected()
         if tree_iter is not None:
             url_pattern = model[tree_iter][ModelColumns.URL_PATTERN.value]
+            final_url = model[tree_iter][ModelColumns.FINAL_URL.value]
             obj_handle = model[tree_iter][ModelColumns.OBJ_HANDLE.value]
             obj_gramps_id = model[tree_iter][ModelColumns.OBJ_GRAMPS_ID.value]
             nav_type = model[tree_iter][ModelColumns.NAV_TYPE.value]
-            if not (  # pylint: disable=duplicate-code
+            existing_records = (
                 self.hidden_links_model.query()
                 .where("url_pattern", url_pattern)
+                .where("final_url", final_url)
                 .where("obj_handle", obj_handle)
                 .where("nav_type", nav_type)
                 .where("scope", HiddenLinksScope.OBJECT.value)
-                .exists()
+                .get()
+            )
+            if not any(
+                self.is_current_or_legacy_record(
+                    record, self._context.database_id
+                )
+                for record in existing_records
             ):
                 self.hidden_links_model.create(
                     {
                         "url_pattern": url_pattern,
+                        "final_url": final_url,
                         "obj_handle": obj_handle,
                         "obj_gramps_id": obj_gramps_id,
                         "nav_type": nav_type,
                         "scope": HiddenLinksScope.OBJECT.value,
+                        **self.get_database_id_record_part(),
                     }
                 )
                 self.activities_model.create(
                     {
                         "url_pattern": url_pattern,
+                        "final_url": final_url,
                         "nav_type": nav_type,
                         "obj_handle": obj_handle,
                         "obj_gramps_id": obj_gramps_id,
                         "activity_type": ActivityType.HIDE_LINK_FOR_OBJECT.value,
+                        **self.get_database_id_record_part(),
                     }
                 )
                 self.refresh_activities_tab()
@@ -1991,12 +2308,18 @@ class WebSearch(Gramplet):
         if tree_iter is not None:
             url_pattern = model[tree_iter][ModelColumns.URL_PATTERN.value]
             nav_type = model[tree_iter][ModelColumns.NAV_TYPE.value]
-            if not (  # pylint: disable=duplicate-code
+            existing_records = (
                 self.hidden_links_model.query()
                 .where("url_pattern", url_pattern)
                 .where("nav_type", nav_type)
                 .where("scope", HiddenLinksScope.ALL.value)
-                .exists()
+                .get()
+            )
+            if not any(
+                self.is_current_or_legacy_record(
+                    record, self._context.database_id
+                )
+                for record in existing_records
             ):
                 self.hidden_links_model.create(
                     {
@@ -2004,6 +2327,7 @@ class WebSearch(Gramplet):
                         "obj_handle": None,
                         "nav_type": nav_type,
                         "scope": HiddenLinksScope.ALL.value,
+                        **self.get_database_id_record_part(),
                     }
                 )
                 self.activities_model.create(
@@ -2011,6 +2335,7 @@ class WebSearch(Gramplet):
                         "url_pattern": url_pattern,
                         "nav_type": nav_type,
                         "activity_type": ActivityType.HIDE_LINK_FOR_ALL.value,
+                        **self.get_database_id_record_part(),
                     }
                 )
                 self.refresh_activities_tab()
@@ -2037,12 +2362,12 @@ class WebSearch(Gramplet):
 
     def on_add_attribute(self, unused_widget):
         """(Unused) Adds the selected URL as an attribute to the person."""
-        if not self._context.active_tree_path:
-            print("❌ Error. No saved path to the iterator!", file=sys.stderr)
+        link_data = self._context.active_link_data
+        if not link_data:
+            print("❌ Error: No saved link data!", file=sys.stderr)
             return
 
-        tree_iter = self.get_active_tree_iter(self._context.active_tree_path)
-        nav_type = self.model.get_value(tree_iter, ModelColumns.NAV_TYPE.value)
+        nav_type = link_data["nav_type"]
 
         attribute = None
 
@@ -2064,7 +2389,7 @@ class WebSearch(Gramplet):
             return
 
         attribute_type = _("WebSearch Link")
-        attribute_value = self._context.active_url
+        attribute_value = link_data["link"]
         attribute.set_type(attribute_type)
         attribute.set_value(attribute_value)
         attribute.set_privacy(True)
@@ -2091,23 +2416,18 @@ class WebSearch(Gramplet):
             else:
                 return
 
-        tree_iter = self.get_active_tree_iter(self._context.active_tree_path)
-        self.add_icon_event(
+        self.add_saved_link_from_snapshot(
+            link_data,
             SimpleNamespace(
-                icon_path=ICON_SAVED_PATH,
-                tree_iter=tree_iter,
-                model_icon_pos=ModelColumns.SAVED_ICON.value,
-                model_visibility_pos=ModelColumns.SAVED_ICON_VISIBLE.value,
-                model=self.saves_model,
                 saved_to=SavedTo.ATTRIBUTE.value,
                 attribute_type=attribute_type,
                 attribute_value=attribute_value,
-            )
+            ),
         )
 
         self.show_notification(_("Attribute has been successfully added"))
 
-        handle = self.model.get_value(tree_iter, ModelColumns.OBJ_HANDLE.value)
+        handle = link_data["obj_handle"]
         self.refresh_main_treeview_tab(nav_type, handle)
 
     def on_query_tooltip(self, widget, x, y, unused_keyboard_mode, tooltip):
