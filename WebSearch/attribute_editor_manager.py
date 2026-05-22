@@ -43,7 +43,8 @@ from functools import partial
 from gettext import gettext as _
 from types import SimpleNamespace
 
-from gramps.gui.editors.editattribute import EditAttribute
+from gramps.gui.editors.editattribute import EditAttribute, EditSrcAttribute
+from gramps.gen.lib import SrcAttribute
 from gramps.gen.db import DbTxn
 from constants import ActivityType
 from helpers import get_attribute_name, get_handle_lookup
@@ -74,6 +75,18 @@ class AttributeEditorManager:
         matches = self._find_attributes_by_name(obj, ctx.attr_type, ctx.attr_value)
         for index, attr_obj in matches:
             self._edit(ctx, obj, attr_obj, index)
+        return True
+
+    def edit_by_obj_handle_and_attr_reference(self, ctx: SimpleNamespace):
+        """Edit attribute using the source row reference captured from the parent object."""
+        obj = self._get_object_by_handle(ctx.nav_type, ctx.obj_handle)
+        if obj is None:
+            print(f"❌ Error. Object by handle '{ctx.obj_handle}' not found")
+            return False
+        index, attr_obj = self._find_attribute_by_reference(
+            obj, ctx.attr_index, ctx.attr_type, ctx.attr_value
+        )
+        self._edit(ctx, obj, attr_obj, index)
         return True
 
     def edit_by_obj_handle_and_attr_obj(self, ctx: SimpleNamespace, attr_obj):
@@ -129,11 +142,38 @@ class AttributeEditorManager:
 
         return matches
 
+    def _find_attribute_by_reference(self, obj, attr_index, attr_name, attr_value):
+        """Find one attribute by saved index first, then by unique type/value match."""
+        attr_list = obj.get_attribute_list()
+        if isinstance(attr_index, int) and 0 <= attr_index < len(attr_list):
+            attr = attr_list[attr_index]
+            if (
+                get_attribute_name(attr.get_type()) == attr_name
+                and attr.get_value() == attr_value
+            ):
+                return attr_index, attr
+
+        matches = [
+            (i, attr)
+            for i, attr in enumerate(attr_list)
+            if get_attribute_name(attr.get_type()) == attr_name
+            and attr.get_value() == attr_value
+        ]
+
+        if len(matches) != 1:
+            raise AttributeNotFoundError(
+                f"Attribute {attr_name} with value {attr_value} no longer matches uniquely"
+            )
+
+        return matches[0]
+
     def _edit(self, ctx: SimpleNamespace, obj, attr, index):
         old_attr_name = get_attribute_name(attr.get_type())
         old_attr_value = attr.get_value()
 
-        EditAttribute(
+        editor_class = EditSrcAttribute if isinstance(attr, SrcAttribute) else EditAttribute
+
+        editor_class(
             self.dbstate,
             self.uistate,
             [],
@@ -143,7 +183,7 @@ class AttributeEditorManager:
                 if hasattr(obj, "get_primary_name")
                 else ""
             ),
-            self.dbstate.db.get_person_attribute_types(),
+            self._get_attribute_types(ctx.nav_type),
             callback=partial(
                 self._on_attribute_edited,
                 ctx,
@@ -201,6 +241,25 @@ class AttributeEditorManager:
 
         if ctx.callback:
             ctx.callback((refreshed_attr, name, value))
+
+    def _get_attribute_types(self, nav_type):
+        """Return custom attribute type names for the edited parent object type."""
+        db = self.dbstate.db
+        lookup = {
+            "People": db.get_person_attribute_types,
+            "Families": db.get_family_attribute_types,
+            "Events": db.get_event_attribute_types,
+            "Media": db.get_media_attribute_types,
+            "Sources": db.get_source_attribute_types,
+            "Citations": db.get_source_attribute_types,
+            "Person": db.get_person_attribute_types,
+            "Family": db.get_family_attribute_types,
+            "Event": db.get_event_attribute_types,
+            "Source": db.get_source_attribute_types,
+            "Citation": db.get_source_attribute_types,
+        }
+        getter = lookup.get(nav_type)
+        return getter() if getter else []
 
 
 class AttributeNotFoundError(Exception):

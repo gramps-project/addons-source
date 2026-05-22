@@ -63,7 +63,7 @@ class Notification(Gtk.Window):
 
         self.set_decorated(False)
         self.set_accept_focus(False)
-        self.set_size_request(200, -1)
+        self.set_size_request(600, -1)
         self.set_keep_above(True)
 
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
@@ -73,9 +73,11 @@ class Notification(Gtk.Window):
         box.set_margin_end(10)
 
         label = Gtk.Label(label=message)
+        label.set_name("NotificationLabel")
         label.set_line_wrap(True)
-        label.set_max_width_chars(10)
-        label.set_ellipsize(Pango.EllipsizeMode.NONE)
+        label.set_max_width_chars(42)
+        label.set_lines(4)
+        label.set_ellipsize(Pango.EllipsizeMode.END)
         label.set_line_wrap_mode(Pango.WrapMode.WORD_CHAR)
 
         box.pack_start(label, True, True, 0)
@@ -92,7 +94,7 @@ class Notification(Gtk.Window):
         y = 10
         self.move(x, y)
 
-        GObject.timeout_add(2000, self.close_window)
+        GObject.timeout_add(4000, self.close_window)
 
     def close_window(self):
         """Close the notification window after a timeout."""
@@ -108,6 +110,10 @@ class Notification(Gtk.Window):
                 background-color: rgba(0, 0, 0, 0.9);
                 border-radius: 10px;
                 padding: 10px;
+            }
+            #NotificationLabel {
+                color: #ffffff;
+                font-weight: 600;
             }
         """
         )

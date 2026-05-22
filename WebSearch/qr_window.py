@@ -34,7 +34,6 @@ from gi.repository import GdkPixbuf, Gtk
 
 try:
     import qrcode
-
     QR_AVAILABLE = True
 except ImportError:
     QR_AVAILABLE = False

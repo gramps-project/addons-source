@@ -49,7 +49,7 @@ class AttributeLinksLoader:
         if not hasattr(obj, "get_attribute_list"):
             return links
 
-        for attr in obj.get_attribute_list():
+        for index, attr in enumerate(obj.get_attribute_list()):
 
             attr_name = get_attribute_name(attr.get_type())
             if not attr_name:
@@ -72,6 +72,12 @@ class AttributeLinksLoader:
                         comment=None,
                         is_custom_file=False,
                         source_file_path=None,
+                        reference_type=SourceTypes.ATTRIBUTE.value,
+                        reference_data={
+                            "index": index,
+                            "attribute_type": attr_name,
+                            "attribute_value": attr_value,
+                        },
                     )
                 )
 
