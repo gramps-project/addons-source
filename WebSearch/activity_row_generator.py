@@ -50,9 +50,10 @@ class ActivityRowGenerator:
     This class processes activity log entries and returns data rows for display in the tree view.
     """
 
-    def __init__(self, activities_model):
+    def __init__(self, activities_model, database_id=None):
         """Initialize the ActivityRowGenerator with the activities DB model."""
         self.activities_model = activities_model
+        self.database_id = database_id
         self._detail_builders = {
             ActivityType.LINK_VISIT.value: self._build_link_visit_details,
             ActivityType.LINK_SAVE_TO_NOTE.value: self._build_link_save_details,
@@ -70,7 +71,11 @@ class ActivityRowGenerator:
         Generates up to 1000 recent activity rows.
         Each row contains: activity_type, created_at, and a details string.
         """
-        records = self.activities_model.order_by("id", reverse=True)[:1000]
+        records = [
+            record
+            for record in self.activities_model.order_by("id", reverse=True)
+            if self._is_current_or_legacy_record(record)
+        ][:1000]
         rows = []
 
         for record in records:
@@ -92,6 +97,11 @@ class ActivityRowGenerator:
             #    print(f"❌ Error generating activity row: {e}", file=sys.stderr)
 
         return rows
+
+    def _is_current_or_legacy_record(self, record):
+        """Legacy activity records have no database_id and remain visible."""
+        record_database_id = record.get("database_id")
+        return not record_database_id or record_database_id == self.database_id
 
     def _format_activity_type(self, activity_type: str) -> str:
         """Convert snake_case activity type to title case."""
