@@ -168,7 +168,12 @@ class PrerequisitesCheckerGramplet(Gramplet):
         the web, we just yield again if not ready.
         """
         self.count += 1
-        if self.uistate.viewmanager.active_page.bottombar:
+        active_page = self.uistate.viewmanager.active_page
+        if active_page is None:
+            # Closing the family tree clears active_page before the
+            # gramplet framework stops pumping this generator (bug 13966).
+            return
+        if active_page.bottombar:
             # The dashboard has no sidebar and bottombar.
             # For all other views, the database must be opened
             if not self.dbstate.db.is_open():
