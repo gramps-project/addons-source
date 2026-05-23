@@ -788,7 +788,32 @@ class DetailedDescendantBookReport(Report):
 
     def append_event(self, event_ref, family = False):
 
-        (repno, gen, per, mate, name) = self.report_app_ref[self.phandle][0] # get first reference to the person
+        # The pre-pass under `if self.dubperson:` in write_report() is the
+        # only path that fills report_app_ref. When "Omit duplicate
+        # ancestors" is unselected but an index option (Index of Dates /
+        # Places / Names) is enabled, the indexes still call append_event
+        # for every event — and a missing handle here raised KeyError
+        # (bug 14051) or AttributeError (bug 12857, before the partial
+        # fix). Fall back to the current writing-pass coordinates, which
+        # are the natural Ref for an index entry: the location where the
+        # event is being narrated.
+        if (self.phandle in self.report_app_ref
+                and self.report_app_ref[self.phandle]):
+            (repno, gen, per, mate, name) = \
+                self.report_app_ref[self.phandle][0]
+        else:
+            repno = self.report_count
+            gen = self.generation + 1
+            if self.phandle in self.dnumber:
+                per = self.dnumber[self.phandle]
+            elif self.phandle in self.dmates \
+                    and self.dmates[self.phandle] in self.dnumber:
+                per = self.dnumber[self.dmates[self.phandle]]
+            else:
+                per = "?"
+            person = self.database.get_person_from_handle(self.phandle)
+            name = person.get_primary_name().get_name()
+            mate = False
 
         text = ""
         event = self.database.get_event_from_handle(event_ref.ref)
