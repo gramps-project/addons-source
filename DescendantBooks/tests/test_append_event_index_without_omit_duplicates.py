@@ -141,20 +141,20 @@ class TestAppendEventWithoutOmitDuplicates(unittest.TestCase):
         report.append_event(event_ref)
 
         # The indexes should have been populated with an entry tagged
-        # with the current writing-pass coordinates (report_count,
-        # generation+1, dnumber[phandle]) — i.e. "3 2 1" — not with a
-        # tuple sourced from a stale / missing report_app_ref entry.
+        # with the writing-pass coordinates at the FIRST encounter of
+        # this handle — (report_count=3, generation+1=2,
+        # dnumber[phandle]=1) — matching the `[0]` semantic the
+        # omit-duplicates path emits (see
+        # TestRefSemanticsParityWithOmitDuplicates below).
         self.assertIn(1850, report.index_of_dates,
                       "Year 1850 should be indexed")
         self.assertIn("Dublin", report.index_of_places,
                       "Place 'Dublin' should be indexed")
 
-        # Spot-check the Ref text uses current state.
         date_entries = list(report.index_of_dates[1850].values())
         self.assertTrue(any("Ref: 3 2 1" in entry for entry in date_entries),
-                        "Index entry should reference current report context "
-                        "(report_count=3, generation+1=2, dnumber[phandle]=1); "
-                        "got %r" % date_entries)
+                        "Index entry should reference first-encounter "
+                        "coordinates (3 2 1); got %r" % date_entries)
 
     def test_append_event_for_mate_without_dnumber(self):
         """A mate's event where the mate is not in dnumber must not crash.
@@ -177,6 +177,119 @@ class TestAppendEventWithoutOmitDuplicates(unittest.TestCase):
         # The index should still receive an entry; the Ref's "per" field
         # falls back gracefully when the mate's dnumber isn't known.
         self.assertIn(1860, report.index_of_dates)
+
+
+class TestRefSemanticsParityWithOmitDuplicates(unittest.TestCase):
+    """When the same person/event is processed in multiple per-ascendant
+    reports (the dubperson=False case with multi-ascendant trees), the
+    index entry for that event must resolve to the SAME (repno, gen,
+    per) coordinates that the omit-duplicates path would emit — i.e.
+    the FIRST encounter's coordinates. Otherwise the dubperson-on and
+    dubperson-off documents' index entries point to different sections
+    of their respective documents for the same event.
+
+    This test simulates two encounters of person P in reports 1 and 2
+    against append_event, and compares the resulting index Ref to what
+    the dubperson-on path's `[0]` read of report_app_ref would have
+    produced (the first encounter).
+    """
+
+    def _make_report(self):
+        report = ddbr.DetailedDescendantBookReport.__new__(
+            ddbr.DetailedDescendantBookReport
+        )
+        report.report_app_ref = {}
+        report.index_of_dates = {}
+        report.index_of_places = {}
+        report.dnumber = {}
+        report.dmates = {}
+        report.inc_index_of_dates = True
+        report.inc_index_of_places = True
+        report._ = lambda s: s
+        report._get_date = lambda d: "1850-01-15"
+        report._get_type = lambda t: str(t)
+        place = mock.MagicMock()
+        place.get_title.return_value = "Dublin"
+        db = mock.MagicMock()
+        db.get_place_from_handle.return_value = place
+        db.get_person_from_handle.return_value = mock.MagicMock(
+            get_primary_name=lambda: mock.MagicMock(get_name=lambda: "John Doe")
+        )
+        report.database = db
+        return report
+
+    def _make_event(self, year=1850, place_handle="PLACE-DUBLIN"):
+        date_obj = mock.MagicMock()
+        date_obj.get_year.return_value = year
+        event = mock.MagicMock()
+        event.get_date_object.return_value = date_obj
+        event.get_place_handle.return_value = place_handle
+        event.get_type.return_value = "Birth"
+        event_ref = mock.MagicMock()
+        event_ref.ref = "EVENT-HANDLE"
+        return event_ref, event
+
+    def test_dubperson_on_baseline_ref_is_first_encounter(self):
+        """Baseline: with the pre-pass populated as it is when
+        omit-duplicates is on, append_event reads `[0]` — the first
+        encounter — and writes that Ref into the index."""
+        report = self._make_report()
+        # Simulate the dubperson-on pre-pass having populated
+        # report_app_ref for person P with the first encounter
+        # (report=1, generation+1=2, dnumber["P"]="3").
+        report.report_app_ref["P"] = [(1, 2, "3", False, "John Doe")]
+        report.report_count = 1
+        report.generation = 1
+        report.dnumber = {"P": "3"}
+        report.phandle = "P"
+        event_ref, event = self._make_event()
+        report.database.get_event_from_handle.return_value = event
+        report.append_event(event_ref)
+
+        # The index Ref should reference the first encounter (1, 2, 3).
+        entries = list(report.index_of_places["Dublin"].values())
+        self.assertTrue(any("Ref: 1 2 3" in e for e in entries),
+                        "dubperson-on baseline must yield Ref '1 2 3'; "
+                        "got %r" % entries)
+
+    def test_dubperson_off_multi_encounter_matches_first_encounter(self):
+        """The fallback path (omit-duplicates OFF; report_app_ref
+        un-pre-populated) must produce the SAME Ref as the
+        omit-duplicates-on baseline above — i.e. the FIRST encounter's
+        coordinates — even when the same person/event is processed
+        again in a later report."""
+        report = self._make_report()
+        event_ref, event = self._make_event()
+        report.database.get_event_from_handle.return_value = event
+
+        # First encounter in report 1 (P is generation 1 → gen+1=2,
+        # dnumber 3 within report 1).
+        report.report_count = 1
+        report.generation = 1
+        report.dnumber = {"P": "3"}
+        report.phandle = "P"
+        report.append_event(event_ref)
+
+        # Second encounter in report 2 (DIFFERENT coordinates: P is
+        # generation 3 → gen+1=4, dnumber 5 within report 2).
+        report.report_count = 2
+        report.generation = 3
+        report.dnumber = {"P": "5"}
+        report.phandle = "P"
+        report.append_event(event_ref)
+
+        # The index entry overwrites on each call. The surviving Ref
+        # must point at the FIRST encounter (1, 2, 3) — matching the
+        # dubperson-on baseline — NOT the second (2, 4, 5).
+        entries = list(report.index_of_places["Dublin"].values())
+        self.assertTrue(any("Ref: 1 2 3" in e for e in entries),
+                        "Multi-encounter index Ref must match the "
+                        "first-encounter coordinates the dubperson-on "
+                        "path would emit; got %r" % entries)
+        self.assertFalse(any("Ref: 2 4 5" in e for e in entries),
+                         "Multi-encounter index Ref must NOT have "
+                         "drifted to the last encounter's coordinates; "
+                         "got %r" % entries)
 
 
 if __name__ == "__main__":

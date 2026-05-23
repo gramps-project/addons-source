@@ -794,16 +794,15 @@ class DetailedDescendantBookReport(Report):
         # Places / Names) is enabled, the indexes still call append_event
         # for every event — and a missing handle here raised KeyError
         # (bug 14051) or AttributeError (bug 12857, before the partial
-        # fix). Fall back to the current writing-pass coordinates, which
-        # are the natural Ref for an index entry: the location where the
-        # event is being narrated.
-        if (self.phandle in self.report_app_ref
-                and self.report_app_ref[self.phandle]):
-            (repno, gen, per, mate, name) = \
-                self.report_app_ref[self.phandle][0]
-        else:
-            repno = self.report_count
-            gen = self.generation + 1
+        # fix). Populate the entry on first encounter so subsequent
+        # encounters (which happen when omit-duplicates is off and the
+        # same person appears in more than one per-ascendant report)
+        # keep using the first encounter's coordinates — matching the
+        # `[0]` semantic the omit-duplicates path emits, so an index
+        # entry resolves to the same canonical document position
+        # regardless of the omit-duplicates setting.
+        if (self.phandle not in self.report_app_ref
+                or not self.report_app_ref[self.phandle]):
             if self.phandle in self.dnumber:
                 per = self.dnumber[self.phandle]
             elif self.phandle in self.dmates \
@@ -813,7 +812,11 @@ class DetailedDescendantBookReport(Report):
                 per = "?"
             person = self.database.get_person_from_handle(self.phandle)
             name = person.get_primary_name().get_name()
-            mate = False
+            self.report_app_ref[self.phandle] = [
+                (self.report_count, self.generation + 1, per, False, name)
+            ]
+        (repno, gen, per, mate, name) = \
+            self.report_app_ref[self.phandle][0]
 
         text = ""
         event = self.database.get_event_from_handle(event_ref.ref)
