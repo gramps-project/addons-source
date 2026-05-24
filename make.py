@@ -973,13 +973,26 @@ elif command == "listing":
                         print("   ignoring '%s'" % (p["name"]))
         # Write out new listing:
         output = []
+        listings_path = (
+            f"../addons/{gramps_version}/listings/" + ("addons-%s.json" % lang)
+        )
+        if cmd_arg != "all" and not listings and os.path.isfile(listings_path):
+            # Bug 13694: a single-addon `listing <Addon>` whose source yields
+            # no eligible plugin (include_in_listing=False, or no .tgz built
+            # yet) used to overwrite the listings file with [], wiping every
+            # previously listed addon. Leave the file untouched and tell the
+            # user how to remove an existing entry on purpose.
+            print(
+                "   '%s' produced no listing entry; leaving %s untouched. "
+                "Use 'make.py %s unlist %s' to remove an existing entry."
+                % (cmd_arg, os.path.basename(listings_path), gramps_version, cmd_arg)
+            )
+            continue
         if cmd_arg == "all":
             # Replace it!
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 output.append(plugin)
-        elif not os.path.isfile(
-            f"../addons/{gramps_version}/listings/" + ("addons-%s.json" % lang)
-        ):
+        elif not os.path.isfile(listings_path):
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 output.append(plugin)
         else:
@@ -987,7 +1000,7 @@ elif command == "listing":
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 already_added = []
                 fp_in = open(
-                    f"../addons/{gramps_version}/listings/" + ("addons-%s.json" % lang),
+                    listings_path,
                     "r",
                     encoding="utf-8",
                 )
@@ -1021,7 +1034,7 @@ elif command == "listing":
                         output.append(plugin)
         mkdir(f"../addons/{gramps_version}/listings")
         fp_out = open(
-            f"../addons/{gramps_version}/listings/" + ("addons-%s.json" % lang),
+            listings_path,
             "w",
             encoding="utf-8",
             newline="",
