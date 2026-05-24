@@ -45,6 +45,7 @@ from typing import Any
 # Gramps modules
 # ------------------------
 from gramps.gen.plug._pluginreg import EXPORT, GRAMPLET, IMPORT, REPORT, TOOL
+from gramps.version import VERSION_TUPLE
 
 # ------------------------
 # Gramps specific
@@ -127,14 +128,24 @@ class TestPluginRegistration(GrampsTestCase):
             self.assertTrue(pdata.name, f"Plugin {pdata.id} missing name")
             self.assertTrue(pdata.version, f"Plugin {pdata.id} missing version")
 
-    def test_target_version_is_6_0(self) -> None:
-        """All listed addons on this branch should target Gramps 6.0."""
+    def test_target_version_matches_gramps_install(self) -> None:
+        """All listed addons must target the Gramps series they're running against.
+
+        The expected prefix is derived from the installed Gramps' version
+        (``gramps.version.VERSION_TUPLE``), so the same assertion works on
+        every maintenance branch — gramps60 expects "6.0", gramps61 expects
+        "6.1", etc.
+        """
+        expected_prefix = f"{VERSION_TUPLE[0]}.{VERSION_TUPLE[1]}"
         issues: list[str] = []
         for pdata in _get_addon_plugins(self.plugin_registry):
-            if not pdata.gramps_target_version.startswith("6.0"):
+            if not pdata.gramps_target_version.startswith(expected_prefix):
                 issues.append(f"{pdata.id}: targets {pdata.gramps_target_version}")
         if issues:
-            self.fail("Addons not targeting Gramps 6.0:\n" + "\n".join(issues))
+            self.fail(
+                f"Addons not targeting Gramps {expected_prefix}:\n"
+                + "\n".join(issues)
+            )
 
 
 # ------------------------------------------------------------
