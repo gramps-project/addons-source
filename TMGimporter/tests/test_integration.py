@@ -11,6 +11,13 @@ it defaults to the RELPH backup used during development.  Tests are skipped
 automatically when the file is not present.
 """
 
+import os
+import sys
+import shutil
+import tempfile
+import unittest
+import zipfile
+
 # The TMGimporter module imports Gtk at module load — skip the whole file if
 # gi/Gtk aren't available (headless-without-GTK environments). On systems
 # where both GTK3 and GTK4 are present, pin Gtk to 3.0 before any gramps
@@ -25,13 +32,6 @@ try:
 except (ImportError, ValueError, AttributeError) as err:
     raise unittest.SkipTest("GTK 3.0 / PyGObject not available: %s" % err)
 
-
-import os
-import sys
-import shutil
-import tempfile
-import unittest
-import zipfile
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
