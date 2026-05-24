@@ -650,8 +650,16 @@ class PluginStatus(tool.Tool, ManagedWindow):
                     reqs = []
                     info = Requirements().info(addon)
                     for i in range(0, len(info), 2):
-                        label = "    " + info[i]
                         req_lst = info[i + 1]
+                        if not req_lst:
+                            # Bug 13979: Requirements.info emits a label +
+                            # empty table when the addon listing has e.g.
+                            # "re": [] (PostgreSQL Enhanced declares
+                            # requires_exe=[]). Skip cleanly - indexing
+                            # req_lst[0] below would raise IndexError, and
+                            # there is nothing meaningful to show.
+                            continue
+                        label = "    " + info[i]
                         txt = " ".join(req_lst[0])
                         for j in range(1, len(req_lst)):
                             txt += ", " + " ".join(req_lst[j])
