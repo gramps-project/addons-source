@@ -42,7 +42,7 @@ WEBSITES = [
     ["Person", "Geneabank", _("Genealogical bank"), "https://gbkcouples.geneabank.org/nom/?name=%(surname)s&place=&start=&end=&source=gbk*"],
     #["Person", "Centre Départemental d'Histoire des Familles (CDHF)", _("Historical Families Center Departement (CDHF)"), "http://www.cdhf.net/fr/index.php?t=bases&d=bases%2Fmoteurpat&c=moteurpat&f=selection&p=&order=&order2=&motcle=&patronyme=%(surname)s"],
     ["Person", "Fichier Origine", _("OrigineFile (Quebec)"), "https://www.fichierorigine.com/recherche?nom=%(surname)s"],
-    ["Person", "Geneanet", "Geneanet", "https://search.geneanet.org/result.php?lang=fr&name=%(surname)s"],
+    ["Person", "Geneanet", "Geneanet", "https://www.geneanet.org/fonds/individus/?go=1&nom=%(surname)s&prenom=%(given)s"],
     ["Person", "Filae", "Filae", "https://www.filae.com/v4/genealogie/Search.mvc/SearchForm?ln=%(surname)s&fn=%(given)s"],
     #["Person", "Geneanet-Favrejhas", "Geneanet, Favrejhas", "http://gw1.geneanet.org/index.php3?b=favrejhas&m=NG&n=%(surname)s&t=N&x=0&y=0"],
     ["Person", "Roglo", "Roglo", "http://roglo.eu/roglo?m=NG&n=%(given)s+%(surname)s&t=PN"],
