@@ -537,6 +537,12 @@ def generate_form_pdf(form, rows, output_path):
         c.line(MARGIN, y, pw - MARGIN, y)
         y -= 5
 
+    # ── Page-break helper ──────────────────────────────────────────────────
+    def new_page():
+        """Flush the current page and return a fresh y cursor at the top margin."""
+        c.showPage()
+        return ph - MARGIN
+
     # ── Sections ───────────────────────────────────────────────────────────
     for sec_idx, section in enumerate(sections):
         role    = section["role"]
