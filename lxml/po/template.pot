@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"POT-Creation-Date: 2026-05-26 09:37-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -328,7 +328,7 @@ msgstr ""
 #: lxml/lxmlGramplet.py:659 lxml/lxmlGramplet.py:663
 #, python-brace-format
 msgid "\t{number} surname"
-msgid_plural "\t{number} surnames; no frequency yet\n"
+msgid_plural "\t{number} surnames; no frequency yet"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -340,21 +340,21 @@ msgstr ""
 #: lxml/lxmlGramplet.py:660 lxml/lxmlGramplet.py:667
 #, python-brace-format
 msgid "\t{number} place"
-msgid_plural "\t{number} places\n"
+msgid_plural "\t{number} places"
 msgstr[0] ""
 msgstr[1] ""
 
 #: lxml/lxmlGramplet.py:661 lxml/lxmlGramplet.py:671
 #, python-brace-format
 msgid "\t{number} note"
-msgid_plural "\t{number} notes\n"
+msgid_plural "\t{number} notes"
 msgstr[0] ""
 msgstr[1] ""
 
 #: lxml/lxmlGramplet.py:675
 #, python-brace-format
 msgid "\t{number} source"
-msgid_plural "\t{number} sources\n"
+msgid_plural "\t{number} sources"
 msgstr[0] ""
 msgstr[1] ""
 
