@@ -63,6 +63,7 @@ from gramps.gen.lib import (
     Person,
     Family,
     Attribute,
+    Source,
 )
 from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
@@ -379,6 +380,20 @@ class EditForm(ManagedWindow):
         with DbTxn(self.get_menu_title(), self.db) as trans:
             if not self.event.get_handle():
                 self.db.add_event(self.event, trans)
+
+            # Mantis 11054 (nick_h's narrow guard): if the source the
+            # citation references was deleted while this form was open,
+            # write a replacement source rather than committing a
+            # dangling-reference citation. No behaviour change when the
+            # reference is intact.
+            source_handle = self.citation.get_reference_handle()
+            if source_handle and self.db.get_source_from_handle(source_handle) is None:
+                replacement = Source()
+                replacement.set_title(
+                    _("[Source recreated after deletion mid-form-edit]")
+                )
+                self.db.add_source(replacement, trans)
+                self.citation.set_reference_handle(replacement.get_handle())
 
             citation_handle = self.citation.get_handle()
             if not self.citation.get_handle():
@@ -891,6 +906,12 @@ class MultiSection(Gtk.Box):
         for order, row in enumerate(self.model):
             all_people.append(row[0])
             person = self.db.get_person_from_handle(row[0])
+            # Mantis 11054 (nick_h's narrow guard): if the person was
+            # deleted while this form was open, drop the row rather than
+            # commit a None-target reference. No behaviour change when
+            # the reference is intact.
+            if person is None:
+                continue
             event_ref = get_event_ref(self.event, person, self.role)
 
             # Write attributes
@@ -903,6 +924,10 @@ class MultiSection(Gtk.Box):
         # Remove links to people no longer on form
         for handle in set(self.initial_people) - set(all_people):
             person = self.db.get_person_from_handle(handle)
+            # Mantis 11054: same narrow guard — the person we tried to
+            # detach is already gone, nothing to commit.
+            if person is None:
+                continue
             ref_list = [
                 event_ref
                 for event_ref in person.get_event_ref_list()
@@ -1061,6 +1086,11 @@ class PersonSection(Gtk.Box):
             return
 
         obj = self.dbstate.db.get_person_from_handle(self.handle)
+        # Mantis 11054 (nick_h's narrow guard): the person the form is
+        # attached to was deleted while the form was open — skip this
+        # section entirely rather than commit a None-target reference.
+        if obj is None:
+            return
         event_ref = get_event_ref(self.event, obj, self.role)
 
         row = []
@@ -1072,6 +1102,10 @@ class PersonSection(Gtk.Box):
         # Remove link to person no longer on form
         if self.initial_handle and self.handle != self.initial_handle:
             person = self.db.get_person_from_handle(self.initial_handle)
+            # Mantis 11054: the previously-attached person is already
+            # gone, nothing to detach.
+            if person is None:
+                return
             ref_list = [
                 event_ref
                 for event_ref in obj.get_event_ref_list()
@@ -1259,6 +1293,11 @@ class FamilySection(Gtk.Box):
             return
 
         obj = self.dbstate.db.get_family_from_handle(self.handle)
+        # Mantis 11054 (nick_h's narrow guard): the family the form is
+        # attached to was deleted while the form was open — skip this
+        # section entirely rather than commit a None-target reference.
+        if obj is None:
+            return
         event_ref = get_event_ref(self.event, obj, self.role)
 
         row = []
@@ -1274,6 +1313,10 @@ class FamilySection(Gtk.Box):
         # Remove link to family no longer on form
         if self.initial_handle and self.handle != self.initial_handle:
             family = self.db.get_family_from_handle(self.initial_handle)
+            # Mantis 11054: the previously-attached family is already
+            # gone, nothing to detach.
+            if family is None:
+                return
             ref_list = [
                 event_ref
                 for event_ref in obj.get_event_ref_list()
