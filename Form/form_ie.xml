@@ -115,7 +115,7 @@
             </column>
         </section>
     </form>
-        <form id='IEBirth' type='Birth' title='Irish Birth Certificate'>
+    <form id='IEBirth' type='Birth' title='Irish Birth Certificate'>
 		<heading>
             <_attribute>(1.) Entry no.</_attribute>
         </heading>
@@ -135,10 +135,10 @@
             <_attribute>County</_attribute>
         </heading>
 		<heading>
-            <_attribute> (10.) Signature of Registrar</_attribute>
+            <_attribute>(10.) Signature of Registrar</_attribute>
         </heading>
 		<heading>
-            <_attribute> (11.) Baptismal Name if added after Registration of Birth, and Date</_attribute>
+            <_attribute>(11.) Baptismal Name if added after Registration of Birth, and Date</_attribute>
         </heading>
         <section role='Primary' type='person' title='Child'>
 			<column>
