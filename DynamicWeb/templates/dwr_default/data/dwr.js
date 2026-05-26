@@ -3601,7 +3601,15 @@ function mapUpdate()
 	{
 		var OsmPointStyle = function(feature, resolution)
 		{
-			var x_marker = parseInt(feature.values_.name.replace('OsmPopup', ''));
+			// Mantis 12544: use the documented OpenLayers feature.get(prop)
+			// API rather than reaching into the private feature.values_
+			// state. OpenLayers renamed/restructured the internal property
+			// store, so feature.values_.name became undefined and the
+			// .replace() call below raised "Cannot read properties of
+			// undefined (reading 'name')" -- breaking OSM markers entirely.
+			// The OsmClick handler below already uses feature.get('name')
+			// for the same property; this aligns the style callback with it.
+			var x_marker = parseInt(feature.get('name').replace('OsmPopup', ''));
 			var ip = GetIconProps(x_marker);
 			var iconStyle = new ol.style.Style({
 				image: new ol.style.Icon(({
