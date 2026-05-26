@@ -24,7 +24,7 @@ register(
     id="PersonHasTagSubstr",
     name=_("People with a tag containing <substring>"),
     description=_("Matches people with a tag whose name contains the given substring"),
-    version="1.0.0",
+    version = '1.0.1',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
     gramps_target_version="6.1",
@@ -41,7 +41,7 @@ register(
     description=_(
         "Matches families with a tag whose name contains the given substring"
     ),
-    version="1.0.0",
+    version = '1.0.1',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
     gramps_target_version="6.1",
@@ -58,7 +58,7 @@ register(
     description=_(
         "Matches events with a tag whose name contains the given substring"
     ),
-    version="1.0.0",
+    version = '1.0.1',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
     gramps_target_version="6.1",
@@ -75,7 +75,7 @@ register(
     description=_(
         "Matches places with a tag whose name contains the given substring"
     ),
-    version="1.0.0",
+    version = '1.0.1',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
     gramps_target_version="6.1",
@@ -92,7 +92,7 @@ register(
     description=_(
         "Matches sources with a tag whose name contains the given substring"
     ),
-    version="1.0.0",
+    version = '1.0.1',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
     gramps_target_version="6.1",
@@ -109,7 +109,7 @@ register(
     description=_(
         "Matches citations with a tag whose name contains the given substring"
     ),
-    version="1.0.0",
+    version = '1.0.1',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
     gramps_target_version="6.1",
@@ -126,7 +126,7 @@ register(
     description=_(
         "Matches repositories with a tag whose name contains the given substring"
     ),
-    version="1.0.0",
+    version = '1.0.1',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
     gramps_target_version="6.1",
@@ -143,7 +143,7 @@ register(
     description=_(
         "Matches media objects with a tag whose name contains the given substring"
     ),
-    version="1.0.0",
+    version = '1.0.1',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
     gramps_target_version="6.1",
@@ -160,7 +160,7 @@ register(
     description=_(
         "Matches notes with a tag whose name contains the given substring"
     ),
-    version="1.0.0",
+    version = '1.0.1',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
     gramps_target_version="6.1",
