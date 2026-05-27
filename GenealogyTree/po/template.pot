@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2026-05-27 09:12-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,70 +57,81 @@ msgstr ""
 msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr ""
 
-#: GenealogyTree/gt_sandclock.py:103 GenealogyTree/gt_descendant.py:96
+#: GenealogyTree/gt_sandclock.py:104 GenealogyTree/gt_descendant.py:96
 #: GenealogyTree/gt_ancestor.py:95
 #, python-format
 msgid "Person %s is not in the Database"
 msgstr ""
 
-#: GenealogyTree/gt_sandclock.py:108
+#: GenealogyTree/gt_sandclock.py:109
 #, python-format
 msgid "Family %s is not in the Database"
 msgstr ""
 
-#: GenealogyTree/gt_sandclock.py:227 GenealogyTree/gt_grandparent.py:217
+#: GenealogyTree/gt_sandclock.py:246 GenealogyTree/gt_grandparent.py:217
 #: GenealogyTree/gt_descendant.py:177 GenealogyTree/gt_ancestor.py:160
 msgid "Report Options"
 msgstr ""
 
-#: GenealogyTree/gt_sandclock.py:230 GenealogyTree/gt_grandparent.py:219
+#: GenealogyTree/gt_sandclock.py:249 GenealogyTree/gt_grandparent.py:219
 #: GenealogyTree/gt_descendant.py:179 GenealogyTree/gt_ancestor.py:162
 msgid "Center Person"
 msgstr ""
 
-#: GenealogyTree/gt_sandclock.py:231 GenealogyTree/gt_grandparent.py:220
+#: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:220
 #: GenealogyTree/gt_descendant.py:180 GenealogyTree/gt_ancestor.py:163
 msgid "The center person for the report"
 msgstr ""
 
-#: GenealogyTree/gt_sandclock.py:234
+#: GenealogyTree/gt_sandclock.py:253
 msgid "Center Family"
 msgstr ""
 
-#: GenealogyTree/gt_sandclock.py:235
+#: GenealogyTree/gt_sandclock.py:254
 msgid "The center family for the report"
 msgstr ""
 
-#: GenealogyTree/gt_sandclock.py:238
+#: GenealogyTree/gt_sandclock.py:257
 msgid "Generations up"
 msgstr ""
 
-#: GenealogyTree/gt_sandclock.py:239 GenealogyTree/gt_sandclock.py:243
+#: GenealogyTree/gt_sandclock.py:258 GenealogyTree/gt_sandclock.py:262
 #: GenealogyTree/gt_grandparent.py:224 GenealogyTree/gt_descendant.py:184
 #: GenealogyTree/gt_ancestor.py:167
 msgid "The number of generations to include in the tree"
 msgstr ""
 
-#: GenealogyTree/gt_sandclock.py:242
+#: GenealogyTree/gt_sandclock.py:261
 msgid "Generations down"
 msgstr ""
 
-#: GenealogyTree/gt_sandclock.py:246
+#: GenealogyTree/gt_sandclock.py:265
 msgid "Include siblings"
 msgstr ""
 
-#: GenealogyTree/gt_sandclock.py:247
+#: GenealogyTree/gt_sandclock.py:266
 msgid "Include siblings of ancestors."
 msgstr ""
 
-#: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
+#: GenealogyTree/gt_sandclock.py:269 GenealogyTree/gt_grandparent.py:231
 #: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
 msgid "Include images"
 msgstr ""
 
-#: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
+#: GenealogyTree/gt_sandclock.py:270 GenealogyTree/gt_grandparent.py:232
 #: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
 msgid "Include images of people in the nodes."
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:273
+msgid "Compact tree layout"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:275
+msgid ""
+"Use the genealogytree 'database pole reduced' template, which packs more "
+"generations per page. Useful for large sandclock trees that otherwise clip "
+"off the rendered page."
 msgstr ""
 
 #: GenealogyTree/gt_grandparent.py:119
