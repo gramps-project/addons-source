@@ -413,8 +413,15 @@ class GetGOV(Gramplet):
         gov_url = "https://gov.genealogy.net/semanticWeb/about/" + urllib.parse.quote(
             gov_id
         )
+        Internet_url = Url()
+        place_url = "https://gov.genealogy.net/item/show/" + urllib.parse.quote(
+	        gov_id
+        )
+        Internet_url.set_path(place_url)
+        Internet_url.set_type(_("GOV link"))
         place = Place()
         place.gramps_id = gov_id
+        place.add_url(Internet_url)
         try:
             response = urllib.request.urlopen(url=gov_url, context=self._scontext)
         except urllib.error.URLError as e:
