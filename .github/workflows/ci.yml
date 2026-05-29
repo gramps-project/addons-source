@@ -198,6 +198,35 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install addon system deps (derived from requires_gi / requires_exe)
+        # System deps (GI typelibs, executables) are not pip-installable and
+        # gramps only *checks* them, so the image cannot bake them generically
+        # (its build context excludes addons-source). Derive the apt set from
+        # every .gpr.py via the single-source map and install it — the container
+        # runs as root. Mirrors the requires_mod derivation below.
+        shell: bash
+        run: |
+          pkgs=$(python3 .github/scripts/addon_system_deps.py --platform apt)
+          if [ -n "$pkgs" ]; then
+            echo "→ addon system deps (apt): $pkgs"
+            apt-get update
+            apt-get install -y --no-install-recommends $pkgs
+          else
+            echo "no requires_gi / requires_exe declarations found"
+          fi
+
+      - name: Validate addon system deps are mapped
+        # Every requires_gi / requires_exe an addon declares must have an entry
+        # in addon_system_deps.py, so the install list never silently drifts
+        # from what addons declare (the system-dep analogue of the requires_mod
+        # find_spec gate below).
+        shell: bash
+        run: |
+          python3 .github/scripts/addon_system_deps.py --unmapped . || {
+            echo "::error::Addon(s) declare requires_gi/requires_exe with no entry in .github/scripts/addon_system_deps.py — add a mapping row."
+            exit 1
+          }
+
       - name: Install addon runtime deps (derived from requires_mod)
         # Auto-derive the union of requires_mod across every .gpr.py in
         # the repo. Mirrors Gramps' Addon Manager install path
@@ -332,7 +361,14 @@ jobs:
           done
           if [ -n "$modules" ]; then
             echo "Running unit tests:$modules"
-            python3 -m unittest -v $modules
+            # xvfb-run: some addons create a Gtk style context at import and
+            #   need a display (else a hard Gtk-ERROR abort, not a clean skip).
+            # run_addon_tests.py: pins the GI versions like gramps' launcher
+            #   (so gramps.gui imports load GTK 3, no PyGIWarning) and fails a
+            #   wholly-skipped module unless the addon's deps are unavailable on
+            #   this platform.
+            xvfb-run -a --server-args="-screen 0 1920x1080x24" \
+              python3 .github/scripts/run_addon_tests.py --platform apt --root . $modules
           else
             echo "No per-addon unit test modules found"
           fi
@@ -362,6 +398,21 @@ jobs:
           mamba info
           mamba list | head -30
           python -c "import gramps, gi; print('deps OK')"
+
+      - name: Install addon system deps (derived, conda-available subset)
+        # Only the conda-forge-available subset (e.g. graphviz). The GTK 3 addon
+        # GI libs (goocanvas/osm-gps-map/gexiv2) are NOT on conda-forge, so the
+        # map returns None for them on conda and they are not installed; addons
+        # needing them skip on Windows by necessity, which run_addon_tests
+        # tolerates (--platform conda).
+        run: |
+          pkgs=$(python .github/scripts/addon_system_deps.py --platform conda)
+          if [ -n "$pkgs" ]; then
+            echo "→ addon system deps (conda): $pkgs"
+            mamba install -y -c conda-forge $pkgs
+          else
+            echo "no conda-available addon system deps to install"
+          fi
 
       - name: Install addon runtime deps (derived from requires_mod)
         # See unit-test-linux for rationale. Uses `python` (conda-forge
@@ -471,7 +522,10 @@ jobs:
           done
           if [ -n "$modules" ]; then
             echo "Running unit tests:$modules"
-            python -m unittest -v $modules
+            # No xvfb on Windows (GTK renders natively). run_addon_tests pins
+            # the GI versions and tolerates addons whose GI deps are not on
+            # conda-forge (they skip here by platform necessity).
+            python .github/scripts/run_addon_tests.py --platform conda --root . $modules
           else
             echo "No per-addon unit test modules found"
           fi
@@ -488,6 +542,21 @@ jobs:
       options: --init
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install addon system deps (derived from requires_gi / requires_exe)
+        # Same as unit-test-linux: derive the apt set from the single-source
+        # map and install it (container runs as root). The plugin registration
+        # test subprocess-loads each addon module, so the GI typelibs those
+        # modules import must be present here too. (Mapping is drift-guarded in
+        # unit-test-linux, which this job needs:, so no duplicate gate here.)
+        shell: bash
+        run: |
+          pkgs=$(python3 .github/scripts/addon_system_deps.py --platform apt)
+          if [ -n "$pkgs" ]; then
+            echo "→ addon system deps (apt): $pkgs"
+            apt-get update
+            apt-get install -y --no-install-recommends $pkgs
+          fi
 
       - name: Install addon runtime deps (derived from requires_mod)
         # See unit-test-linux for rationale. The plugin registration test
@@ -570,10 +639,21 @@ jobs:
         # shell: bash for consistency with the surrounding steps; the
         # current command uses no bashisms, but keeps this block safe
         # against future edits. Container default is /bin/sh → dash.
+        #
+        # gi_bootstrap on PYTHONPATH pins the GI versions (like the gramps GUI
+        # launcher) for this process AND the addon-module subprocesses this test
+        # spawns, so gramps.gui imports load GTK 3 without a PyGIWarning.
+        #
+        # NOT run under xvfb: this test only *loads* (imports) addon modules in
+        # subprocesses and tolerates load failures; it does not render. Giving it
+        # a display made an addon load hang on the (absent) AT-SPI accessibility
+        # bus until the per-load timeout. Imports that build a Gtk style context
+        # are exercised under xvfb in the unit/integration test runs instead.
         shell: bash
         env:
-          PYTHONPATH: .
-        run: python3 -m unittest discover -s tests -p "test_*.py" -t . -v
+          PYTHONPATH: .github/scripts/gi_bootstrap:.
+        run: |
+          python3 -m unittest discover -s tests -p "test_*.py" -t . -v
 
       - name: Run per-addon integration tests
         # shell: bash — see unit-test-linux for rationale; the
@@ -603,7 +683,8 @@ jobs:
           done
           if [ -n "$modules" ]; then
             echo "Running per-addon integration tests:$modules"
-            python3 -m unittest -v $modules
+            xvfb-run -a --server-args="-screen 0 1920x1080x24" \
+              python3 .github/scripts/run_addon_tests.py --platform apt --root . $modules
           else
             echo "No per-addon integration test modules found"
           fi
