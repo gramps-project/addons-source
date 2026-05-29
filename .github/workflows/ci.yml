@@ -378,6 +378,7 @@ jobs:
   # -----------------------------------------------------------------
   unit-test-windows:
     name: Unit Tests (Windows)
+    needs: setup
     runs-on: windows-latest
     defaults:
       run:
@@ -398,6 +399,32 @@ jobs:
           mamba info
           mamba list | head -30
           python -c "import gramps, gi; print('deps OK')"
+
+      - name: Report gramps-vs-branch series (Windows lane caveat)
+        # The Linux lane git-builds the branch's exact gramps in its CI image
+        # (.github/docker/gramps-ci/Dockerfile, PyPI-first/git-fallback). The
+        # conda-forge Windows lane CANNOT match that: conda-forge has no gramps
+        # 6.1 yet, and gramps' own Windows build targets MSYS2 UCRT64, not conda
+        # — building 6.1 from git here fails in gramps' build hook (build_intl's
+        # `msgfmt --xml` cannot locate the shared-mime-info/appstream ITS rules,
+        # which are absent in the conda env). So on a maintenance/gramps61 (or
+        # later) branch this lane validates addons against conda-forge's newest
+        # in-range gramps (6.0.x today) rather than the branch's series. This
+        # step surfaces that honestly; it does NOT fail. Addon tests that depend
+        # on series-exact gramps behaviour skip themselves on Windows (e.g.
+        # TMGimporter's real-DB import tests) and run on the Linux lane instead.
+        # When gramps 6.1 reaches conda-forge, environment.yml's pin picks it up
+        # and this caveat disappears on its own.
+        run: |
+          suffix="${{ needs.setup.outputs.branch_suffix }}"   # e.g. gramps61
+          digits="${suffix#gramps}"                            # e.g. 61
+          want="${digits:0:1}.${digits:1}"                     # e.g. 6.1
+          have="$(python -c 'from gramps.version import major_version; print(major_version)')"
+          if [ "$want" = "$have" ]; then
+            echo "conda-forge gramps $have matches branch series $want — addons tested against the branch's gramps"
+          else
+            echo "::warning::Windows lane: branch targets gramps $want but conda-forge ships $have; addons here are validated against $have. Full $want coverage is on the Linux lane (its CI image git-builds $want). See step comment for why conda-Windows cannot build $want."
+          fi
 
       - name: Install addon system deps (derived, conda-available subset)
         # Only the conda-forge-available subset (e.g. graphviz). The GTK 3 addon

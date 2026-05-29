@@ -10,6 +10,13 @@ dependencies:
   # installed at CI runtime by ci.yml's auto-derive step from .gpr.py
   # requires_mod — single source of truth. Keep only the stable base
   # here (Gramps + orjson for plugin registration).
+  #
+  # conda-forge has no gramps 6.1 yet, so on a maintenance/gramps61 (or later)
+  # branch this resolves to 6.0.x — i.e. the Windows lane validates addons
+  # against conda-forge's newest in-range gramps, not the branch's exact series
+  # (the Linux CI image git-builds the exact series; conda-Windows cannot — see
+  # ci.yml's "Report gramps-vs-branch series" step). When 6.1 reaches
+  # conda-forge the pin picks it up automatically.
   - pip:
       - "gramps>=6.0,<6.1"
       - orjson
