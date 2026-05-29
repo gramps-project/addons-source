@@ -24,9 +24,12 @@ Unit tests for Graphviz node-id quoting in the GraphView addon (bug 13832).
 import unittest
 from io import StringIO
 
-# GraphView imports Gtk/GooCanvas at module load; on a host without those
-# typelibs (or a display) the import raises. Skip cleanly there rather than
-# erroring, so the suite stays runnable without the addon's requires_gi deps.
+# GraphView imports gi/GooCanvas at module load. Skip ONLY when those Python
+# modules are genuinely absent (ImportError, e.g. PyGObject not installed). A
+# wrong/unavailable GI version (ValueError from require_version) or a missing
+# system dep (GraphView raises if GooCanvas/dot are absent) must NOT be laundered
+# into a skip that reads as success — let it surface as a hard error. The testbed
+# image / CI provide these deps and the system-deps drift-guard enforces them.
 try:
     import gi
 
@@ -34,7 +37,7 @@ try:
     from GraphView.graphview import DotSvgGenerator
 
     _IMPORT_ERROR = None
-except Exception as err:  # pragma: no cover - depends on host gi stack
+except ImportError as err:  # genuine absence of gi / the addon's Python modules
     DotSvgGenerator = None
     _IMPORT_ERROR = err
 
