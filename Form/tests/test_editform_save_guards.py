@@ -54,9 +54,15 @@ from unittest.mock import MagicMock, patch
 try:
     import gi
 
+    # editform.py imports Gdk (module top) before Gtk, both unpinned. Pin
+    # the GTK 3 stack here — mirroring gramps/gen/constfunc.py, which pins
+    # Gtk 3.0 AND Gdk 3.0 together — so the bare imports resolve to GTK 3
+    # rather than the host's default (GTK 4 where both typelibs are present,
+    # which otherwise warns and skips the suite).
     gi.require_version("Gtk", "3.0")
+    gi.require_version("Gdk", "3.0")
     import gramps  # noqa: F401
-except ImportError as exc:
+except (ImportError, ValueError) as exc:
     raise unittest.SkipTest("Form editform tests require 'gi' and 'gramps': %s" % exc)
 
 if "GRAMPS_RESOURCES" not in os.environ:
