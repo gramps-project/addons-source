@@ -66,7 +66,23 @@ def _table(records):
 
 
 def _make_db():
-    """Return a fresh in-memory Gramps database."""
+    """Return a fresh in-memory Gramps database.
+
+    Skips on Windows: these import tests drive a real in-memory Gramps
+    database, and on the Windows CI lane the only available Gramps comes
+    from conda-forge, which has no 6.1 yet (and Gramps 6.1 does not build
+    in the conda env -- its Windows build targets MSYS2 UCRT64, not conda).
+    Run against that mismatched Gramps the real-DB import path hangs, so
+    these tests are exercised on the Linux lane (which runs the Gramps
+    matching this branch) instead. The pure-function tests in this module
+    do not call this helper and still run on Windows.
+    """
+    if sys.platform == "win32":
+        raise unittest.SkipTest(
+            "real-DB TMG import tests run on Linux; the Windows CI lane has no "
+            "Gramps matching this branch (6.1 is not on conda-forge), and the "
+            "import path hangs against a mismatched Gramps"
+        )
     db = make_database("sqlite")
     db.load(":memory:", None)
     return db
