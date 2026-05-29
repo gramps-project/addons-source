@@ -154,11 +154,16 @@ class TestImportGrampletDeathFallback(unittest.TestCase):
         ifile = BytesIO(CLEAN_XML.encode("utf-8"))
         parser.parse(ifile)
 
-        person = self.database.get_person_from_gramps_id("I00001")
-        self.assertIsNotNone(
-            person,
-            "Person I00001 must exist after XML import",
+        # Look the person up by handle, not by gramps_id: core's importer
+        # normalises gramps_ids to the database's configured width (the XML
+        # "I00001" becomes "I0001" under the default "I%04d"), so a literal
+        # gramps_id lookup is brittle and fails on any default-config tree.
+        # Exactly one person was imported, so fetch it directly.
+        handles = list(self.database.get_person_handles())
+        self.assertEqual(
+            len(handles), 1, "exactly one person must be imported"
         )
+        person = self.database.get_person_from_handle(handles[0])
 
         death_ref = person.get_death_ref()
         self.assertIsNotNone(
