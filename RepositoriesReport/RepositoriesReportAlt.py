@@ -182,8 +182,9 @@ class RepositoryReportAlt(Report):
 
                 # on tuple : [0] = classname ; [1] = handle
 
-                note_handle = note_handle[1]
-                self.__write_referenced_notes(note_handle)
+                if note_handle[0] == 'Note':  # We can have 'Tag' here.
+                    note_handle = note_handle[1]
+                    self.__write_referenced_notes(note_handle)
 
         # additional repository informations
 
@@ -299,7 +300,8 @@ class RepositoryReportAlt(Report):
                                 self.__write_referenced_media(photos, media_handle)
                             self.black_list.append(media_handle)
 
-            for (object_type, citationref) in self.database.find_backlink_handles(source_handle):
+            for (object_type, citationref) in \
+                    self.database.find_backlink_handles(source_handle, ['Citation']):
                 if self.incl_citat:
                     self.__write_referenced_citations(citationref)
 
