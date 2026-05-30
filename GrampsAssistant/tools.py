@@ -912,25 +912,295 @@ def register_gramps_tools(dbstate, uistate):
 
         return {"total": total, "page": page_number, "total_pages": total_pages, "items": items}
 
+    def is_person_alive(gramps_id: str) -> dict:
+        """
+        Check whether a person is probably alive, using Gramps' built-in heuristic.
+
+        Uses birth, death, and family dates to estimate whether the person is
+        still living. Returns a best-guess boolean and a plain-English explanation
+        of the reasoning.
+        gramps_id: The Gramps ID of the person (e.g. I0001).
+        """
+        if not dbstate.is_open():
+            return {"error": "No database is currently open."}
+        db = dbstate.db
+        person = db.get_person_from_gramps_id(gramps_id)
+        if person is None:
+            return {"error": f"No person found with ID '{gramps_id}'."}
+        from gramps.gen.utils.alive import probably_alive
+        alive, birth, death, explanation, _relative = probably_alive(
+            person, db, return_range=True
+        )
+        from gramps.gen.datehandler import displayer as date_displayer
+        result = {"gramps_id": gramps_id, "probably_alive": alive, "explanation": explanation}
+        if birth and birth.is_valid():
+            result["estimated_birth"] = date_displayer.display(birth)
+        if death and death.is_valid():
+            result["estimated_death"] = date_displayer.display(death)
+        return result
+
+    def find_relationship(gramps_id_a: str, gramps_id_b: str) -> dict:
+        """
+        Find the relationship between two people in the database.
+
+        Returns a human-readable relationship string such as
+        'second cousin twice removed' or 'great-grandmother'.
+        gramps_id_a: Gramps ID of the first person (e.g. I0001).
+        gramps_id_b: Gramps ID of the second person (e.g. I0042).
+        """
+        if not dbstate.is_open():
+            return {"error": "No database is currently open."}
+        db = dbstate.db
+        person_a = db.get_person_from_gramps_id(gramps_id_a)
+        if person_a is None:
+            return {"error": f"No person found with ID '{gramps_id_a}'."}
+        person_b = db.get_person_from_gramps_id(gramps_id_b)
+        if person_b is None:
+            return {"error": f"No person found with ID '{gramps_id_b}'."}
+        from gramps.gen.relationship import get_relationship_calculator
+        from gramps.gen.display.name import displayer as name_displayer
+        calc = get_relationship_calculator()
+        rel_str, dist_a, dist_b = calc.get_one_relationship(
+            db, person_a, person_b, extra_info=True
+        )
+        return {
+            "person_a": {"gramps_id": gramps_id_a, "name": name_displayer.display(person_a)},
+            "person_b": {"gramps_id": gramps_id_b, "name": name_displayer.display(person_b)},
+            "relationship": rel_str if rel_str else "no relationship found",
+            "distance_from_a": dist_a,
+            "distance_from_b": dist_b,
+        }
+
+    def get_database_statistics() -> dict:
+        """
+        Return a summary of how many records are in the currently open database.
+
+        Counts people, families, events, places, sources, citations, media
+        objects, notes, repositories, and tags.
+        """
+        if not dbstate.is_open():
+            return {"error": "No database is currently open."}
+        db = dbstate.db
+        return {
+            "people":       db.get_number_of_people(),
+            "families":     db.get_number_of_families(),
+            "events":       db.get_number_of_events(),
+            "places":       db.get_number_of_places(),
+            "sources":      db.get_number_of_sources(),
+            "citations":    db.get_number_of_citations(),
+            "media":        db.get_number_of_media(),
+            "notes":        db.get_number_of_notes(),
+            "repositories": db.get_number_of_repositories(),
+            "tags":         db.get_number_of_tags(),
+        }
+
+    def get_person_events(gramps_id: str) -> dict:
+        """
+        Get all recorded events for a person, not just birth and death.
+
+        Returns each event's type, date, place, and description.
+        Useful for seeing a full life timeline including baptism, marriage,
+        census, immigration, military service, occupation, and more.
+        gramps_id: The Gramps ID of the person (e.g. I0001).
+        """
+        if not dbstate.is_open():
+            return {"error": "No database is currently open."}
+        db = dbstate.db
+        person = db.get_person_from_gramps_id(gramps_id)
+        if person is None:
+            return {"error": f"No person found with ID '{gramps_id}'."}
+        from gramps.gen.display.name import displayer as name_displayer
+        from gramps.gen.datehandler import displayer as date_displayer
+        events = []
+        for event_ref in person.get_event_ref_list():
+            event = db.get_event_from_handle(event_ref.ref)
+            if event is None:
+                continue
+            entry = {
+                "type": str(event.get_type()),
+                "role": str(event_ref.get_role()),
+                "date": date_displayer.display(event.get_date_object()),
+                "description": event.get_description(),
+            }
+            place_handle = event.get_place_handle()
+            if place_handle:
+                place = db.get_place_from_handle(place_handle)
+                if place:
+                    entry["place"] = place.get_name().get_value()
+            events.append(entry)
+        from gramps.gen.display.name import displayer as name_displayer
+        return {
+            "gramps_id": gramps_id,
+            "name": name_displayer.display(person),
+            "events": events,
+        }
+
+    def get_children(gramps_id: str) -> dict:
+        """
+        Get all children of a person.
+
+        Returns a list of children with their names and Gramps IDs,
+        grouped by family (spouse).
+        gramps_id: The Gramps ID of the person (e.g. I0001).
+        """
+        if not dbstate.is_open():
+            return {"error": "No database is currently open."}
+        db = dbstate.db
+        person = db.get_person_from_gramps_id(gramps_id)
+        if person is None:
+            return {"error": f"No person found with ID '{gramps_id}'."}
+        from gramps.gen.display.name import displayer as name_displayer
+        families = []
+        for family_handle in person.get_family_handle_list():
+            family = db.get_family_from_handle(family_handle)
+            if not family:
+                continue
+            father_h = family.get_father_handle()
+            mother_h = family.get_mother_handle()
+            spouse_h = mother_h if father_h == person.get_handle() else father_h
+            family_entry = {"family_id": family.get_gramps_id(), "children": []}
+            if spouse_h:
+                spouse = db.get_person_from_handle(spouse_h)
+                if spouse:
+                    family_entry["spouse"] = {
+                        "name": name_displayer.display(spouse),
+                        "gramps_id": spouse.get_gramps_id(),
+                    }
+            for child_ref in family.get_child_ref_list():
+                child = db.get_person_from_handle(child_ref.ref)
+                if child:
+                    family_entry["children"].append({
+                        "name": name_displayer.display(child),
+                        "gramps_id": child.get_gramps_id(),
+                    })
+            families.append(family_entry)
+        return {
+            "gramps_id": gramps_id,
+            "name": name_displayer.display(person),
+            "families": families,
+        }
+
+    def get_siblings(gramps_id: str) -> dict:
+        """
+        Get all siblings of a person.
+
+        Returns a list of siblings with their names and Gramps IDs.
+        Half-siblings (from different parents) are included and labelled.
+        gramps_id: The Gramps ID of the person (e.g. I0001).
+        """
+        if not dbstate.is_open():
+            return {"error": "No database is currently open."}
+        db = dbstate.db
+        person = db.get_person_from_gramps_id(gramps_id)
+        if person is None:
+            return {"error": f"No person found with ID '{gramps_id}'."}
+        from gramps.gen.display.name import displayer as name_displayer
+        seen = set()
+        seen.add(person.get_handle())
+        siblings = []
+        for family_handle in person.get_parent_family_handle_list():
+            family = db.get_family_from_handle(family_handle)
+            if not family:
+                continue
+            for child_ref in family.get_child_ref_list():
+                handle = child_ref.ref
+                if handle in seen:
+                    continue
+                seen.add(handle)
+                sibling = db.get_person_from_handle(handle)
+                if sibling:
+                    siblings.append({
+                        "name": name_displayer.display(sibling),
+                        "gramps_id": sibling.get_gramps_id(),
+                    })
+        return {
+            "gramps_id": gramps_id,
+            "name": name_displayer.display(person),
+            "siblings": siblings,
+        }
+
+    def get_ancestors(gramps_id: str, max_generations: int = 4) -> dict:
+        """
+        Get ancestors of a person up to a given number of generations.
+
+        Returns a flat list of ancestors with their names, Gramps IDs, and
+        generation number (1 = parents, 2 = grandparents, etc.).
+        gramps_id: The Gramps ID of the person (e.g. I0001).
+        max_generations: How many generations back to search (default 4, max 10).
+        """
+        if not dbstate.is_open():
+            return {"error": "No database is currently open."}
+        db = dbstate.db
+        person = db.get_person_from_gramps_id(gramps_id)
+        if person is None:
+            return {"error": f"No person found with ID '{gramps_id}'."}
+        from gramps.gen.display.name import displayer as name_displayer
+        max_generations = max(1, min(10, max_generations))
+        ancestors = []
+        seen = set()
+        queue = [(person.get_handle(), 0)]
+        while queue:
+            handle, gen = queue.pop(0)
+            if gen == 0:
+                for family_handle in db.get_person_from_handle(handle).get_parent_family_handle_list():
+                    family = db.get_family_from_handle(family_handle)
+                    if not family:
+                        continue
+                    for parent_h in [family.get_father_handle(), family.get_mother_handle()]:
+                        if parent_h and parent_h not in seen:
+                            seen.add(parent_h)
+                            queue.append((parent_h, 1))
+                continue
+            ancestor = db.get_person_from_handle(handle)
+            if not ancestor:
+                continue
+            ancestors.append({
+                "name": name_displayer.display(ancestor),
+                "gramps_id": ancestor.get_gramps_id(),
+                "generation": gen,
+            })
+            if gen < max_generations:
+                for family_handle in ancestor.get_parent_family_handle_list():
+                    family = db.get_family_from_handle(family_handle)
+                    if not family:
+                        continue
+                    for parent_h in [family.get_father_handle(), family.get_mother_handle()]:
+                        if parent_h and parent_h not in seen:
+                            seen.add(parent_h)
+                            queue.append((parent_h, gen + 1))
+        return {
+            "gramps_id": gramps_id,
+            "name": name_displayer.display(person),
+            "max_generations": max_generations,
+            "ancestors": ancestors,
+        }
+
     _tool_tags = {
-        "get_active_person":    {"always"},
-        "get_home_person":      {"always"},
-        "get_view_results":     {"always"},
-        "switch_to_view":       {"always"},
-        "get_person_details":   {"people"},
-        "set_active_person":    {"people"},
-        "edit_active_person":   {"people"},
-        "filter_people":        {"people"},
-        "filter_families":      {"families"},
-        "filter_events":        {"events"},
-        "filter_places":        {"places"},
-        "filter_sources":       {"sources"},
-        "filter_citations":     {"sources"},
-        "filter_media":         {"media"},
-        "filter_repositories":  {"repositories"},
-        "filter_notes":         {"notes"},
-        "search_in_view":       {"people", "families", "events", "places",
-                                 "sources", "media", "repositories", "notes"},
+        "get_active_person":      {"always"},
+        "get_home_person":        {"always"},
+        "get_view_results":       {"always"},
+        "switch_to_view":         {"always"},
+        "get_database_statistics": {"always"},
+        "get_person_details":     {"people"},
+        "set_active_person":      {"people"},
+        "edit_active_person":     {"people"},
+        "filter_people":          {"people"},
+        "is_person_alive":        {"people"},
+        "find_relationship":      {"people"},
+        "get_person_events":      {"people"},
+        "get_children":           {"people", "families"},
+        "get_siblings":           {"people"},
+        "get_ancestors":          {"people"},
+        "filter_families":        {"families"},
+        "filter_events":          {"events"},
+        "filter_places":          {"places"},
+        "filter_sources":         {"sources"},
+        "filter_citations":       {"sources"},
+        "filter_media":           {"media"},
+        "filter_repositories":    {"repositories"},
+        "filter_notes":           {"notes"},
+        "search_in_view":         {"people", "families", "events", "places",
+                                   "sources", "media", "repositories", "notes"},
     }
 
     for func in [get_person_details, get_active_person, get_home_person, set_active_person,
@@ -939,7 +1209,9 @@ def register_gramps_tools(dbstate, uistate):
                  filter_people, filter_families, filter_events, filter_places,
                  filter_sources, filter_citations, filter_media,
                  filter_repositories, filter_notes,
-                 edit_active_person]:
+                 edit_active_person,
+                 is_person_alive, find_relationship, get_database_statistics,
+                 get_person_events, get_children, get_siblings, get_ancestors]:
         if func.__name__ not in existing_names:
             tool = Tool.from_function(func)
             tool.tags = _tool_tags.get(func.__name__, set())
