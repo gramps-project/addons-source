@@ -57,7 +57,9 @@ _cfg.register(
     "chat.system_prompt",
     _("You are a helpful genealogy assistant with access to the user's Gramps database. "
       "Answer questions about people, families, events, and relationships. "
-      "Use the available tools to look up information when needed."),
+      "When you need information from the database, call the provided tools — "
+      "never write code, simulate results, or make up data. "
+      "If no tool exists for the requested information, say so plainly."),
 )
 _cfg.register("chat.include_context", True)
 _cfg.register("chat.simplify_tools", False)
@@ -92,6 +94,7 @@ class GrampsAssistant(BaseSidePanel):
         self._current_context = ""
         self._full_response = ""        # full text of current turn (for history)
         self._tools_called_this_turn = 0
+        self._thinking_mark = None      # TextMark before "Thinking..." placeholder
         # Line-by-line streaming markdown state
         self._line_buffer = ""          # partial (uncommitted) current line
         self._line_start_mark = None    # TextMark at start of _line_buffer in buffer
@@ -251,6 +254,11 @@ class GrampsAssistant(BaseSidePanel):
             "assistant_body",
             foreground="#1a1a1a",
             left_margin=12,
+        )
+        buf.create_tag(
+            "thinking",
+            foreground="#999999",
+            style=Pango.Style.ITALIC,
         )
         buf.create_tag(
             "tool_call",
@@ -617,6 +625,7 @@ class GrampsAssistant(BaseSidePanel):
         (formatted and written permanently); new characters for the partial
         line are appended directly to avoid mark-gravity issues.
         """
+        self._clear_thinking()
         if self._line_start_mark is None:
             return False  # panel was deactivated; discard
         combined = self._line_buffer + text
@@ -689,7 +698,7 @@ class GrampsAssistant(BaseSidePanel):
         if self._streaming:
             return
 
-        if not _cfg.get("backend.model"):
+        if not _cfg.get("backend.use_local_url") and not _cfg.get("backend.model"):
             self._append_text(
                 _("\nNo model configured. Please click the Settings button "
                   "to choose a backend and model before chatting.\n"),
@@ -721,6 +730,12 @@ class GrampsAssistant(BaseSidePanel):
 
         # Show assistant label; streaming tokens land on the next line
         self._append_text("\n" + _("Gramps Assistant:") + "\n", "assistant_label")
+
+        # Insert a "Thinking..." placeholder that is removed on first chunk
+        buf = self._chat_buffer
+        end_iter = buf.get_end_iter()
+        self._thinking_mark = buf.create_mark(None, end_iter, left_gravity=True)
+        buf.insert_with_tags_by_name(end_iter, _("Thinking..."), "thinking")
 
         # Initialise per-turn streaming state
         self._full_response = ""
@@ -804,6 +819,18 @@ class GrampsAssistant(BaseSidePanel):
     # GTK-thread streaming helpers
     # ------------------------------------------------------------------
 
+    def _clear_thinking(self):
+        """Remove the 'Thinking...' placeholder if it is still present."""
+        if self._thinking_mark is None:
+            return
+        buf = self._chat_buffer
+        start = buf.get_iter_at_mark(self._thinking_mark)
+        end = buf.get_end_iter()
+        if start.compare(end) < 0:
+            buf.delete(start, end)
+        buf.delete_mark(self._thinking_mark)
+        self._thinking_mark = None
+
     def _on_chat_button_press(self, widget, event):
         """Open URLs when the user clicks on a link in the chat view."""
         if event.button != 1:
@@ -845,6 +872,7 @@ class GrampsAssistant(BaseSidePanel):
         return False  # remove idle source
 
     def _finish_stream(self):
+        self._clear_thinking()
         # Commit any remaining partial line
         if self._line_buffer:
             self._commit_line()
@@ -873,6 +901,7 @@ class GrampsAssistant(BaseSidePanel):
         return False
 
     def _show_error(self, msg: str):
+        self._clear_thinking()
         if self._line_start_mark:
             self._chat_buffer.delete_mark(self._line_start_mark)
             self._line_start_mark = None

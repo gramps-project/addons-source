@@ -45,11 +45,26 @@ from abc import ABC, abstractmethod
 _LOG = logging.getLogger(__name__)
 
 try:
-    import opik
-    _OPIK_CLIENT = opik.Opik(project_name="gramps-assistant")
-    _LOG.debug("Opik tracing enabled (project: gramps-assistant)")
+    import opik as _opik_module
+    _OPIK_AVAILABLE = True
 except Exception:
-    _OPIK_CLIENT = None
+    _opik_module = None
+    _OPIK_AVAILABLE = False
+
+_OPIK_CLIENT = None
+
+
+def _get_opik_client():
+    global _OPIK_CLIENT
+    if not _OPIK_AVAILABLE:
+        return None
+    if _OPIK_CLIENT is None:
+        try:
+            _OPIK_CLIENT = _opik_module.Opik(project_name="gramps-assistant")
+            _LOG.debug("Opik tracing enabled (project: gramps-assistant)")
+        except Exception:
+            pass
+    return _OPIK_CLIENT
 
 
 # ---------------------------------------------------------------------------
@@ -152,6 +167,12 @@ def _execute_tool_calls(tool_call_accum, messages, on_tool_call, _trace=None):
         )
 
     if not tool_calls_list:
+        _LOG.warning(
+            "tool_call_accum had %d entries but all had empty names — "
+            "model may be using a non-standard tool-call format. accum=%r",
+            len(tool_call_accum),
+            tool_call_accum,
+        )
         return messages  # no valid tool calls; caller will invoke on_done()
 
     # Append the assistant message that triggered the tool calls
@@ -261,9 +282,10 @@ class OpenAICompatibleBackend(ChatBackend):
 
     def _worker(self, messages, tools, on_chunk, on_tool_call, on_done, on_error, thread_id=None):
         trace = None
-        if _OPIK_CLIENT:
+        opik_client = _get_opik_client()
+        if opik_client:
             try:
-                trace = _OPIK_CLIENT.trace(
+                trace = opik_client.trace(
                     name="gramps-chat",
                     input={"messages": messages},
                     project_name="gramps-assistant",
@@ -418,6 +440,7 @@ class OpenAICompatibleBackend(ChatBackend):
                 pass
 
         if tool_call_accum:
+            _LOG.debug("tool_call_accum after SSE loop: %r", tool_call_accum)
             if span:
                 try:
                     span.end(output={"text": "".join(_response_parts), "finish_reason": finish_reason})
@@ -571,9 +594,10 @@ class AnthropicBackend(ChatBackend):
 
     def _worker(self, messages, tools, on_chunk, on_tool_call, on_done, on_error, thread_id=None):
         trace = None
-        if _OPIK_CLIENT:
+        opik_client = _get_opik_client()
+        if opik_client:
             try:
-                trace = _OPIK_CLIENT.trace(
+                trace = opik_client.trace(
                     name="gramps-chat",
                     input={"messages": messages},
                     project_name="gramps-assistant",

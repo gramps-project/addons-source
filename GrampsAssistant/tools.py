@@ -387,6 +387,21 @@ def register_gramps_tools(dbstate, uistate):
         person = dbstate.db.get_person_from_handle(handle)
         return _format_person_details(dbstate.db, person)
 
+    def get_home_person() -> dict:
+        """
+        Get information about the home person (default person) of the Gramps database.
+
+        The home person is the default person set in Gramps preferences,
+        distinct from whoever is currently selected.
+        Returns full details including name, birth, death, parents, spouses, and children.
+        """
+        if not dbstate.is_open():
+            return {"error": "No database is currently open."}
+        person = dbstate.db.get_default_person()
+        if person is None:
+            return {"error": "No home person is set in this database."}
+        return _format_person_details(dbstate.db, person)
+
     def switch_to_view(category_name: str) -> dict:
         """
         Switch the main Gramps window to a named view category.
@@ -899,6 +914,7 @@ def register_gramps_tools(dbstate, uistate):
 
     _tool_tags = {
         "get_active_person":    {"always"},
+        "get_home_person":      {"always"},
         "get_view_results":     {"always"},
         "switch_to_view":       {"always"},
         "get_person_details":   {"people"},
@@ -917,7 +933,7 @@ def register_gramps_tools(dbstate, uistate):
                                  "sources", "media", "repositories", "notes"},
     }
 
-    for func in [get_person_details, get_active_person, set_active_person,
+    for func in [get_person_details, get_active_person, get_home_person, set_active_person,
                  get_view_results,
                  switch_to_view, search_in_view,
                  filter_people, filter_families, filter_events, filter_places,
