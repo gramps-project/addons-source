@@ -1145,9 +1145,8 @@ class GrampsAssistant(BaseSidePanel):
         content.add(Gtk.Separator(orientation=Gtk.Orientation.HORIZONTAL))
 
         # ── Local model frame ───────────────────────────────────────────
+        is_local = bool(_cfg.get("backend.use_local_url"))
         local_radio = Gtk.RadioButton(label=_("Use Local Model"))
-        local_radio.set_active(_cfg.get("backend.use_local_url"))
-        is_local = local_radio.get_active()
 
         local_frame = Gtk.Frame()
         local_frame.set_label_widget(local_radio)
@@ -1191,6 +1190,9 @@ class GrampsAssistant(BaseSidePanel):
 
         # ── Foundational model frame ────────────────────────────────────
         cloud_radio = Gtk.RadioButton(group=local_radio, label=_("Use Foundational Model"))
+        # Set active states after both buttons are in the same group so the
+        # mutual-exclusion logic works correctly.
+        local_radio.set_active(is_local)
         cloud_radio.set_active(not is_local)
 
         cloud_frame = Gtk.Frame()
