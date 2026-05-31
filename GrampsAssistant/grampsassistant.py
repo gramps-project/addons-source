@@ -42,7 +42,7 @@ from tools import call_tool, get_tools_schema, register_gramps_tools, tool_regis
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 
 _ = glocale.translation.gettext
-_LOG = logging.getLogger(__name__)
+_LOG = logging.getLogger("gramps-assistant")
 
 # ---------------------------------------------------------------------------
 # Plugin-local configuration
@@ -562,11 +562,17 @@ class GrampsAssistant(BaseSidePanel):
         """
         buf = self._chat_buffer
 
-        # Code fence toggle
-        if line.startswith("```"):
+        # Code fence toggle — handle both "```" at start of line (standard)
+        # and embedded at end of a sentence (e.g. "...genders```python")
+        # which local models sometimes emit without a preceding newline.
+        fence_pos = line.find("```")
+        if fence_pos != -1:
+            before = line[:fence_pos].rstrip()
+            if before:
+                # Render any text that came before the fence on the same line
+                self._insert_inline(before + "\n", "assistant_body")
             self._in_code_block = not self._in_code_block
             if not self._in_code_block:
-                # closing fence — insert a blank line for spacing
                 end = buf.get_end_iter()
                 buf.insert(end, "\n")
             return
@@ -755,6 +761,8 @@ class GrampsAssistant(BaseSidePanel):
 
         # Start streaming in background
         tools_schema = self._select_tools(text)
+        _LOG.debug("sending %d tools: %r", len(tools_schema),
+                   [t.get("function", t).get("name") for t in tools_schema])
         self._backend.stream_chat(
             messages=send_messages,
             tools=tools_schema,

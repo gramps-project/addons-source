@@ -42,7 +42,7 @@ import threading
 import urllib.parse
 from abc import ABC, abstractmethod
 
-_LOG = logging.getLogger(__name__)
+_LOG = logging.getLogger("gramps-assistant.backend")
 
 try:
     import opik as _opik_module
@@ -139,7 +139,142 @@ def _make_connection(parsed_url):
     return http.client.HTTPConnection(host, port or 80, timeout=120)
 
 
-def _execute_tool_calls(tool_call_accum, messages, on_tool_call, _trace=None):
+def _infer_tool_name(arguments_str, tools):
+    """
+    Infer a tool name from argument content when the model omits it.
+
+    Tries json.loads first for reliable key extraction, then falls back to
+    regex for partially malformed JSON.  Handles both OpenAI format
+    (function.parameters.properties) and Anthropic format (input_schema.properties).
+    Returns the tool name only when exactly one tool matches.
+    """
+    import re
+    if not arguments_str or not tools:
+        return None
+
+    # Extract argument keys — try valid JSON first, then regex fallback
+    try:
+        parsed = json.loads(arguments_str)
+        arg_keys = set(parsed.keys()) if isinstance(parsed, dict) else set()
+    except json.JSONDecodeError:
+        arg_keys = set()
+
+    if not arg_keys:
+        m = re.search(r'\{\s*"(\w+)', arguments_str)
+        arg_keys = {m.group(1)} if m else set()
+
+    if not arg_keys:
+        return None
+
+    _LOG.debug("_infer_tool_name: arg_keys=%r, num_tools=%d", arg_keys, len(tools))
+    candidates = []
+    for tool in tools:
+        # OpenAI format: tool["function"]["parameters"]["properties"]
+        # Anthropic format: tool["input_schema"]["properties"]
+        func_def = tool.get("function", tool)
+        params = (
+            func_def.get("parameters")
+            or func_def.get("input_schema")
+            or {}
+        )
+        props = params.get("properties", {})
+        tool_name = func_def.get("name") or tool.get("name")
+        _LOG.debug("  checking tool %r, props keys=%r", tool_name, list(props.keys()))
+        # Match exactly, or by prefix — the model may fuse key+value into one
+        # word (e.g. "code" + "columns(...)" → "codecolumns").
+        matched = any(
+            k == fk or fk.startswith(k)
+            for fk in arg_keys
+            for k in props
+        )
+        if arg_keys and matched:
+            candidates.append(tool_name)
+
+    _LOG.debug("_infer_tool_name: candidates=%r", candidates)
+    return candidates[0] if len(candidates) == 1 else None
+
+
+def _decode_json_string(s):
+    """
+    Decode JSON string escape sequences in *s*.
+
+    When arguments are extracted via regex rather than ``json.loads``, escape
+    sequences like ``\\n`` remain as the two raw characters backslash + n.
+    This restores them to their intended values.
+    """
+    # Process double-backslash first so it doesn't interfere with other escapes
+    result = []
+    i = 0
+    while i < len(s):
+        if s[i] == '\\' and i + 1 < len(s):
+            nxt = s[i + 1]
+            if nxt == 'n':
+                result.append('\n'); i += 2
+            elif nxt == 't':
+                result.append('\t'); i += 2
+            elif nxt == 'r':
+                result.append('\r'); i += 2
+            elif nxt == '"':
+                result.append('"'); i += 2
+            elif nxt == "'":
+                result.append("'"); i += 2
+            elif nxt == '\\':
+                result.append('\\'); i += 2
+            else:
+                # Unknown escape (e.g. \c, \p) — drop the backslash, keep the char
+                result.append(nxt); i += 2
+        else:
+            result.append(s[i]); i += 1
+    return ''.join(result)
+
+
+def _recover_args(arguments_str, tool_name, tools):
+    """
+    Try to recover a usable args dict from malformed JSON.
+
+    Falls back to extracting the rest of the string as the value for the
+    tool's first required parameter (handles the common case where a local
+    model emits ``{"code<broken>`` for execute_script).
+    """
+    import re
+    try:
+        return json.loads(arguments_str)
+    except json.JSONDecodeError:
+        pass
+    # Find the first required parameter name for this tool
+    param_name = None
+    for tool in (tools or []):
+        func_def = tool.get("function", tool)
+        if func_def.get("name") != tool_name:
+            continue
+        required = func_def.get("parameters", {}).get("required", [])
+        if required:
+            param_name = required[0]
+        break
+    if param_name is None:
+        return {}
+    # Anchor on the known parameter name so greedy \w+ doesn't swallow the
+    # start of the value (e.g. "code" + "columns(...)" → "codecolumns(...)").
+    # The optional closing quote and separator handle both valid JSON
+    # ({"code": "value"}) and broken output ({"codecolumns(...)}).
+    pname = re.escape(param_name)
+    m = re.search(
+        r'\{\s*"' + pname + r'"?\s*(?::\s*"?)?(.*)',
+        arguments_str,
+        re.DOTALL,
+    )
+    if m:
+        raw = m.group(1).rstrip('}"').strip()
+        # The value was inside a JSON string but extracted via regex, so JSON
+        # escape sequences are still raw bytes — decode them now.
+        raw = _decode_json_string(raw)
+        _LOG.debug("_recover_args: recovered %r from malformed JSON (first 80 chars): %r",
+                   param_name, raw[:80])
+        return {param_name: raw}
+    return {}
+
+
+def _execute_tool_calls(tool_call_accum, messages, on_tool_call, _trace=None, tools=None):
     """
     Synchronously execute all accumulated tool calls.
 
@@ -148,16 +283,25 @@ def _execute_tool_calls(tool_call_accum, messages, on_tool_call, _trace=None):
 
     Returns the updated *messages* list with tool results appended.
     """
-    # Build the canonical tool_calls list from accumulator, skipping
-    # any entries with an empty name (malformed model output).
+    # Build the canonical tool_calls list from accumulator.
+    # When the model omits the name, try to infer it from argument keys.
     tool_calls_list = []
     for idx in sorted(tool_call_accum.keys()):
         acc = tool_call_accum[idx]
         if not acc.get("name"):
-            continue
+            inferred = _infer_tool_name(acc.get("arguments", ""), tools)
+            if inferred:
+                _LOG.debug("Inferred tool name %r from arguments", inferred)
+                acc["name"] = inferred
+            else:
+                _LOG.warning(
+                    "tool_call_accum entry %d has empty name and could not be "
+                    "inferred — skipping. accum=%r", idx, acc,
+                )
+                continue
         tool_calls_list.append(
             {
-                "id": acc["id"],
+                "id": acc["id"] or f"local-{idx}",
                 "type": "function",
                 "function": {
                     "name": acc["name"],
@@ -187,10 +331,13 @@ def _execute_tool_calls(tool_call_accum, messages, on_tool_call, _trace=None):
     # Execute each tool call, blocking until result arrives from main thread
     for tc in tool_calls_list:
         tc_name = tc["function"]["name"]
+        raw_args = tc["function"]["arguments"]
         try:
-            tc_args = json.loads(tc["function"]["arguments"])
+            tc_args = json.loads(raw_args)
         except json.JSONDecodeError:
-            tc_args = {}
+            _LOG.debug("tool %r: JSON decode failed on %r, attempting recovery", tc_name, raw_args[:120])
+            tc_args = _recover_args(raw_args, tc_name, tools)
+        _LOG.debug("tool call: name=%r  args=%r", tc_name, tc_args)
 
         tool_span = None
         if _trace:
@@ -214,6 +361,7 @@ def _execute_tool_calls(tool_call_accum, messages, on_tool_call, _trace=None):
         if not event.wait(timeout=60):  # block until GTK thread executes tool
             _LOG.warning("Tool call %r timed out after 60 s", tc_name)
         result_str = str(result_holder[0]) if result_holder[0] is not None else ""
+        _LOG.debug("tool result: name=%r  result=%r", tc_name, result_str[:200])
 
         if tool_span:
             try:
@@ -405,6 +553,7 @@ class OpenAICompatibleBackend(ChatBackend):
 
                 # Tool call delta accumulation
                 for tc_delta in delta.get("tool_calls") or []:
+                    _LOG.debug("tool_call delta: %r", tc_delta)
                     idx = tc_delta.get("index", 0)
                     if idx not in tool_call_accum:
                         tool_call_accum[idx] = {"id": "", "name": "", "arguments": ""}
@@ -412,12 +561,17 @@ class OpenAICompatibleBackend(ChatBackend):
                     if tc_delta.get("id"):
                         acc["id"] = tc_delta["id"]
                     func = tc_delta.get("function", {})
-                    if func.get("name"):
-                        acc["name"] = func["name"]
-                    if func.get("arguments"):
-                        acc["arguments"] += func["arguments"]
+                    # name may be under function.name (OpenAI) or at top level (some local models)
+                    name = func.get("name") or tc_delta.get("name", "")
+                    if name:
+                        acc["name"] = name
+                    # arguments may be under function.arguments or at top level
+                    args = func.get("arguments") or tc_delta.get("arguments", "")
+                    if args:
+                        acc["arguments"] += args
 
                 if finish_reason in ("stop", "end_turn", "tool_calls"):
+                    _LOG.debug("finish_reason=%r, tool_call_accum=%r", finish_reason, tool_call_accum)
                     break
         finally:
             conn.close()
@@ -447,7 +601,7 @@ class OpenAICompatibleBackend(ChatBackend):
                 except Exception:
                     pass
             updated_messages = _execute_tool_calls(
-                tool_call_accum, messages, on_tool_call, _trace
+                tool_call_accum, messages, on_tool_call, _trace, tools=tools
             )
             if updated_messages is messages:
                 # All tool calls had empty names; nothing was executed.
@@ -759,7 +913,7 @@ class AnthropicBackend(ChatBackend):
                     "arguments": tu["partial_json"],
                 }
             updated_messages = _execute_tool_calls(
-                openai_style_accum, messages, on_tool_call, _trace
+                openai_style_accum, messages, on_tool_call, _trace, tools=tools
             )
             if updated_messages is messages:
                 on_done()

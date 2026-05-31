@@ -39,7 +39,7 @@ import typing
 from dataclasses import dataclass, field
 from typing import Any, Callable, Dict, List, Optional
 
-_LOG = logging.getLogger(__name__)
+_LOG = logging.getLogger("gramps-assistant.tools")
 
 # ---------------------------------------------------------------------------
 # Python type → JSON Schema type mapping
@@ -1181,6 +1181,7 @@ def register_gramps_tools(dbstate, uistate):
         "get_view_results":       {"always"},
         "switch_to_view":         {"always"},
         "get_database_statistics": {"always"},
+        "execute_script":         {"always"},
         "get_person_details":     {"people"},
         "set_active_person":      {"people"},
         "edit_active_person":     {"people"},
@@ -1203,6 +1204,93 @@ def register_gramps_tools(dbstate, uistate):
                                    "sources", "media", "repositories", "notes"},
     }
 
+    def execute_script(code: str) -> str:
+        """
+        Write and execute a GrampyScript to query or analyze the Gramps database.
+
+        The script runs in the GrampyScript panel (opened automatically if needed),
+        so the user can see the results and any errors there.
+
+        Available API:
+          people(), families(), events(), places(), sources(), citations(),
+          media(), notes(), repositories()  -- iterate all objects of that type
+          active_person, active_family, active_event, active_place,
+          active_source, active_citation, active_media, active_note  -- active object
+          row(*values)    -- emit a table row (columns auto-detected from code)
+          columns(*names) -- explicitly name the output table columns
+          print(...)      -- write text to the output area
+          today           -- a Date object for today
+          counter()       -- returns a defaultdict(int) for tallying
+
+        Example -- list people born before 1800:
+            for p in people():
+                if p.birth_year and int(p.birth_year) < 1800:
+                    row(p.gramps_id, p.name, p.birth_year)
+
+        Write clean, readable code -- it will be shown to the user so they can
+        learn the GrampyScript API and re-run it themselves.
+
+        If the output contains "Traceback" or "Error", the script failed.
+        Read the error, fix the code, and call execute_script again with the
+        corrected code.
+        code: Valid GrampyScript Python code to execute.
+        """
+        import sys
+
+        # Locate the active page's sidebar — the module may not be in
+        # sys.modules yet because gramplet plugins load on first instantiation.
+        vm = uistate.viewmanager
+        page = getattr(vm, "active_page", None)
+        if page is None:
+            for p in getattr(vm, "pages", []):
+                if getattr(p, "sidebar", None) is not None:
+                    page = p
+                    break
+
+        sidebar = getattr(page, "sidebar", None) if page is not None else None
+
+        if sidebar is None:
+            return "Could not find a view with a sidebar to open GrampyScript in."
+
+        if not sidebar.is_visible():
+            sidebar.show()
+
+        if not sidebar.has_gramplet("Grampy Script"):
+            # add_gramplet imports and instantiates the class, setting _instance
+            sidebar.add_gramplet("Grampy Script")
+        else:
+            # Already present — make sure it is the selected tab
+            for i in range(sidebar.get_n_pages()):
+                tab = sidebar.get_nth_page(i)
+                if tab and hasattr(getattr(tab, "pui", None), "execute_code"):
+                    sidebar.set_current_page(i)
+                    break
+
+        # Module is now loaded (either it was before, or add_gramplet just loaded it)
+        grampy_module = sys.modules.get("GrampyScript")
+        if grampy_module is None:
+            return "GrampyScript addon is not installed. Please install it first."
+
+        instance = grampy_module._instance
+        if instance is None:
+            return "GrampyScript was added to the sidebar but could not be initialised."
+
+        import ast
+        try:
+            ast.parse(code)
+        except SyntaxError as e:
+            return (
+                f"Syntax error in script at line {e.lineno}: {e.msg}\n"
+                f"  {e.text}"
+                f"Please fix the code and call execute_script again."
+            )
+
+        instance.ebuf.set_text(code)
+        output = instance.execute_code(code) or "Script executed with no output."
+        if "Traceback (most recent call last)" in output:
+            return "Script error — fix and retry:\n" + output
+        return output
+
     for func in [get_person_details, get_active_person, get_home_person, set_active_person,
                  get_view_results,
                  switch_to_view, search_in_view,
@@ -1211,7 +1299,8 @@ def register_gramps_tools(dbstate, uistate):
                  filter_repositories, filter_notes,
                  edit_active_person,
                  is_person_alive, find_relationship, get_database_statistics,
-                 get_person_events, get_children, get_siblings, get_ancestors]:
+                 get_person_events, get_children, get_siblings, get_ancestors,
+                 execute_script]:
         if func.__name__ not in existing_names:
             tool = Tool.from_function(func)
             tool.tags = _tool_tags.get(func.__name__, set())

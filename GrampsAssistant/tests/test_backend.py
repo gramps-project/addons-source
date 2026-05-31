@@ -32,8 +32,11 @@ import pytest
 from backend import (
     AnthropicBackend,
     OpenAICompatibleBackend,
+    _decode_json_string,
     _execute_tool_calls,
+    _infer_tool_name,
     _read_sse_lines,
+    _recover_args,
 )
 
 
@@ -335,6 +338,244 @@ class TestExecuteToolCalls:
         updated = _execute_tool_calls(accum, messages, on_tool_call)
         assert updated is not messages
         assert invocations == ["real_tool"]
+
+    def test_empty_name_inferred_from_arguments(self):
+        """Local models that omit the name: infer it from argument keys."""
+        invocations = []
+
+        def on_tool_call(name, args, result_cb):
+            invocations.append(name)
+            result_cb("{}")
+
+        tools = [
+            {
+                "type": "function",
+                "function": {
+                    "name": "execute_script",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {"code": {"type": "string"}},
+                        "required": ["code"],
+                    },
+                },
+            }
+        ]
+        accum = {0: {"id": "", "name": "", "arguments": '{"code": "print(1)"}'}}
+        messages = [{"role": "user", "content": "run"}]
+        updated = _execute_tool_calls(accum, messages, on_tool_call, tools=tools)
+        assert updated is not messages
+        assert invocations == ["execute_script"]
+
+    def test_empty_name_inferred_from_malformed_arguments(self):
+        """Inference works even when the model emits broken JSON like {"code# ..."""
+        invocations = []
+
+        def on_tool_call(name, args, result_cb):
+            invocations.append(name)
+            result_cb("{}")
+
+        tools = [
+            {
+                "type": "function",
+                "function": {
+                    "name": "execute_script",
+                    "parameters": {
+                        "type": "object",
+                        "properties": {"code": {"type": "string"}},
+                        "required": ["code"],
+                    },
+                },
+            }
+        ]
+        # Malformed JSON as produced by low-quality local models
+        accum = {0: {"id": "", "name": "", "arguments": '{"code# list all people'}}
+        messages = [{"role": "user", "content": "run"}]
+        updated = _execute_tool_calls(accum, messages, on_tool_call, tools=tools)
+        assert updated is not messages
+        assert invocations == ["execute_script"]
+
+    def test_missing_id_gets_fallback(self):
+        """Empty id should be replaced so the tool result can be correlated."""
+        ids_seen = []
+
+        def on_tool_call(name, args, result_cb):
+            result_cb("{}")
+
+        accum = {0: {"id": "", "name": "my_tool", "arguments": "{}"}}
+        messages = [{"role": "user", "content": "hi"}]
+        updated = _execute_tool_calls(accum, messages, on_tool_call)
+        assistant_msg = next(m for m in updated if m["role"] == "assistant")
+        tc_id = assistant_msg["tool_calls"][0]["id"]
+        assert tc_id  # must not be empty
+
+
+# ---------------------------------------------------------------------------
+# _infer_tool_name
+# ---------------------------------------------------------------------------
+
+
+_EXECUTE_SCRIPT_TOOL = {
+    "type": "function",
+    "function": {
+        "name": "execute_script",
+        "parameters": {
+            "type": "object",
+            "properties": {"code": {"type": "string"}},
+            "required": ["code"],
+        },
+    },
+}
+
+_GET_PERSON_TOOL = {
+    "type": "function",
+    "function": {
+        "name": "get_person_details",
+        "parameters": {
+            "type": "object",
+            "properties": {"gramps_id": {"type": "string"}},
+            "required": ["gramps_id"],
+        },
+    },
+}
+
+
+_EXECUTE_SCRIPT_TOOL_ANTHROPIC = {
+    "name": "execute_script",
+    "description": "Run a GrampyScript.",
+    "input_schema": {
+        "type": "object",
+        "properties": {"code": {"type": "string"}},
+        "required": ["code"],
+    },
+}
+
+
+class TestInferToolName:
+    def test_infers_from_valid_json(self):
+        tools = [_EXECUTE_SCRIPT_TOOL]
+        assert _infer_tool_name('{"code": "print(1)"}', tools) == "execute_script"
+
+    def test_infers_from_malformed_json_missing_closing_quote(self):
+        # Matches the real broken output observed: {"code# list all people...
+        tools = [_EXECUTE_SCRIPT_TOOL]
+        assert _infer_tool_name('{"code# list all people', tools) == "execute_script"
+
+    def test_infers_when_key_and_value_fused(self):
+        # Model emits {"code" + "columns(...)" with no separator → "{"codecolumns(..."
+        tools = [_EXECUTE_SCRIPT_TOOL]
+        assert _infer_tool_name('{"codecolumns(\'ID\', \'Name\')', tools) == "execute_script"
+
+    def test_infers_correct_tool_from_two_tools(self):
+        tools = [_EXECUTE_SCRIPT_TOOL, _GET_PERSON_TOOL]
+        assert _infer_tool_name('{"gramps_id": "I001"}', tools) == "get_person_details"
+        assert _infer_tool_name('{"code": "for p in people(): row(p)"}', tools) == "execute_script"
+
+    def test_infers_from_anthropic_format_tools(self):
+        # Anthropic tools use input_schema instead of parameters
+        tools = [_EXECUTE_SCRIPT_TOOL_ANTHROPIC]
+        assert _infer_tool_name('{"code": "print(1)"}', tools) == "execute_script"
+
+    def test_infers_from_anthropic_format_malformed(self):
+        tools = [_EXECUTE_SCRIPT_TOOL_ANTHROPIC]
+        assert _infer_tool_name('{"code# broken', tools) == "execute_script"
+
+    def test_returns_none_when_no_match(self):
+        tools = [_EXECUTE_SCRIPT_TOOL]
+        assert _infer_tool_name('{"unknown_param": "x"}', tools) is None
+
+    def test_returns_none_when_tools_empty(self):
+        assert _infer_tool_name('{"code": "x"}', []) is None
+
+    def test_returns_none_when_arguments_empty(self):
+        assert _infer_tool_name("", [_EXECUTE_SCRIPT_TOOL]) is None
+
+    def test_returns_none_when_ambiguous(self):
+        # Two tools both have a "name" parameter → ambiguous
+        tool_a = {"type": "function", "function": {
+            "name": "tool_a",
+            "parameters": {"type": "object", "properties": {"name": {"type": "string"}}},
+        }}
+        tool_b = {"type": "function", "function": {
+            "name": "tool_b",
+            "parameters": {"type": "object", "properties": {"name": {"type": "string"}}},
+        }}
+        assert _infer_tool_name('{"name": "foo"}', [tool_a, tool_b]) is None
+
+
+# ---------------------------------------------------------------------------
+# _recover_args
+# ---------------------------------------------------------------------------
+
+
+class TestDecodeJsonString:
+    def test_newline_escape(self):
+        assert _decode_json_string("line1\\nline2") == "line1\nline2"
+
+    def test_tab_escape(self):
+        assert _decode_json_string("col1\\tcol2") == "col1\tcol2"
+
+    def test_quote_escape(self):
+        assert _decode_json_string('\\"hello\\"') == '"hello"'
+
+    def test_backslash_escape(self):
+        assert _decode_json_string("a\\\\b") == "a\\b"
+
+    def test_backslash_not_swallowed_by_n_replacement(self):
+        # \\n should become \n (literal backslash + n), not a newline
+        assert _decode_json_string("\\\\n") == "\\n"
+
+    def test_no_escapes_unchanged(self):
+        assert _decode_json_string("plain text") == "plain text"
+
+    def test_unknown_escape_drops_backslash(self):
+        # \c is not a JSON escape — drop the backslash so \columns → columns
+        assert _decode_json_string("\\columns(x)") == "columns(x)"
+
+    def test_unknown_escape_mid_string(self):
+        assert _decode_json_string("abc\\def") == "abcdef"
+
+    def test_real_grampy_script(self):
+        raw = "for p in people():\\n    row(p.gramps_id, p.name)"
+        decoded = _decode_json_string(raw)
+        assert "\n" in decoded
+        assert "\\n" not in decoded
+
+
+class TestRecoverArgs:
+    def test_valid_json_returned_unchanged(self):
+        tools = [_EXECUTE_SCRIPT_TOOL]
+        result = _recover_args('{"code": "print(1)"}', "execute_script", tools)
+        assert result == {"code": "print(1)"}
+
+    def test_recovers_code_from_malformed_json(self):
+        tools = [_EXECUTE_SCRIPT_TOOL]
+        raw = '{"code# for p in people(): print(p.name)'
+        result = _recover_args(raw, "execute_script", tools)
+        assert "code" in result
+        assert "people" in result["code"]
+
+    def test_recovers_code_when_key_and_value_fused(self):
+        # {"code" + "columns(...)" merged → "{"codecolumns(..."
+        tools = [_EXECUTE_SCRIPT_TOOL]
+        raw = '{"codecolumns(\'Gramps ID\', \'Name\')\\nfor p in people():\\n    row(p.gramps_id)'
+        result = _recover_args(raw, "execute_script", tools)
+        assert "code" in result
+        assert "columns" in result["code"]
+        assert "\n" in result["code"]  # JSON escape sequences decoded
+
+    def test_returns_empty_dict_when_no_tool_matches(self):
+        result = _recover_args('{"code# broken', "nonexistent_tool", [_EXECUTE_SCRIPT_TOOL])
+        assert result == {}
+
+    def test_returns_empty_dict_when_tools_none(self):
+        result = _recover_args('{"code# broken', "execute_script", None)
+        assert result == {}
+
+    def test_returns_empty_dict_for_completely_garbled_input(self):
+        tools = [_EXECUTE_SCRIPT_TOOL]
+        result = _recover_args("not json at all", "execute_script", tools)
+        # May or may not recover — just must not raise
+        assert isinstance(result, dict)
 
 
 # ---------------------------------------------------------------------------

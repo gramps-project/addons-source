@@ -20,45 +20,20 @@ from gramps.gen.const import GRAMPS_LOCALE as glocale
 
 _ = glocale.translation.gettext
 
-MODULE_VERSION = "6.0"
-
-# SIDEPANEL is added by gramps-project/gramps PR #2220; use it when available,
-# otherwise fall back to a TOOL that opens a persistent floating window.
-try:
-    _has_sidepanel = SIDEPANEL is not None
-except NameError:
-    _has_sidepanel = False
-
-if _has_sidepanel:
-    register(
-        SIDEPANEL,
-        id="grampsassistant",
-        name=_("Gramps Assistant"),
-        description=_("AI assistant panel for querying your Gramps family tree"),
-        version="1.0.0",
-        gramps_target_version=MODULE_VERSION,
-        status=STABLE,
-        fname="grampsassistant.py",
-        authors=["Douglas S. Blank"],
-        authors_email=["dsblank@gmail.com"],
-        sidepanelclass="GrampsAssistant",
-        panel_label=_("Gramps Assistant"),
-        order=END,
-    )
-else:
-    register(
-        TOOL,
-        id="grampsassistant",
-        name=_("Gramps Assistant"),
-        description=_("AI assistant for querying your Gramps family tree"),
-        version="1.0.0",
-        gramps_target_version=MODULE_VERSION,
-        status=STABLE,
-        fname="grampsassistant.py",
-        authors=["Douglas S. Blank"],
-        authors_email=["dsblank@gmail.com"],
-        category=TOOL_UTILS,
-        toolclass="GrampsAssistantTool",
-        optionclass="GrampsAssistantOptions",
-        tool_modes=[TOOL_MODE_GUI],
-    )
+register(
+    TOOL,
+    id="grampsassistant",
+    name=_("Gramps Assistant"),
+    description=_("AI assistant for querying your Gramps family tree"),
+    version="1.0.0",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="grampsassistant.py",
+    authors=["Douglas S. Blank"],
+    authors_email=["dsblank@gmail.com"],
+    category=TOOL_UTILS,
+    toolclass="GrampsAssistantTool",
+    optionclass="GrampsAssistantOptions",
+    tool_modes=[TOOL_MODE_GUI],
+    depends_on=["Grampy Script"],
+)
