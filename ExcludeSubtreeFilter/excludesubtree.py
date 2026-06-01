@@ -48,6 +48,7 @@ class GUICheckBox(MyBoolean):
 
 
 class ExcludeSubtree(Rule):
+    selected_handles: Set[PrimaryObjectHandle] = set([])
     labels = [
         # see gramps.gui.editors.filtereditor.EditRule.__init__
         # must be (label, widget class) or special string as label
@@ -79,28 +80,28 @@ class ExcludeSubtree(Rule):
                 if user:
                     user.step_progress()
                 current_h = search_list.pop()
-                if current_h in self.matched_relatives:
+                if current_h in self.selected_handles:
                     continue  # already got them
                 current = db.get_person_from_handle(current_h)
                 LOG.debug("tree walk arrived at id %s", current.gramps_id)
                 if self.filt.apply_to_one(db, current):
                     LOG.debug("Stopping at filter match %s", current.gramps_id)
                     if include_matched:
-                        self.matched_relatives.add(current_h)
+                        self.selected_handles.add(current_h)
                     continue  # stop at filter matches
-                self.matched_relatives.add(current_h)
+                self.selected_handles.add(current_h)
                 # add their relatives to the search
                 search_list.extend((h
                                     for h in get_relatives(db, current)
                                     if h))
-            LOG.debug("Found %d relatives", len(self.matched_relatives))
+            LOG.debug("Found %d relatives", len(self.selected_handles))
 
         finally:
             if user:
                 user.end_progress()
 
     def reset(self):
-        self.matched_relatives = set()  # set of person handles
+        self.selected_handles = set()  # set of person handles
 
     def apply_to_one(self, db: Database, person: Person) -> bool:
-        return person.handle in self.matched_relatives
+        return person.handle in self.selected_handles
