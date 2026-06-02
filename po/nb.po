@@ -9,13 +9,14 @@
 # Espen Berg <espenbe@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016.
 # Harald H. <haarektrans@gmail.com>, 2017.
 # Harald Herreros <h.herreros@proton.me>, 2025.
+# Harald Herreros <haraldh@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-10 10:43-0700\n"
-"PO-Revision-Date: 2025-03-23 20:35+0000\n"
-"Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
+"PO-Revision-Date: 2026-05-15 19:53+0000\n"
+"Last-Translator: Harald Herreros <haraldh@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
 "Language: nb\n"
@@ -23,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
@@ -32,7 +33,7 @@ msgstr "Alle navn på alle personer"
 
 #: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
-msgstr ""
+msgstr "Vis alle navn på alle personer"
 
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
@@ -44,53 +45,49 @@ msgid "Total names %d"
 msgstr "Antall navn %d"
 
 #: AncestorFill/AncestorFill.gpr.py:9
-#, fuzzy
-#| msgid "Ancestor"
 msgid "AncestorFill"
-msgstr "Ane"
+msgstr "Aneutfylling"
 
 #: AncestorFill/AncestorFill.gpr.py:10
 msgid "Report on the filling of the tree"
-msgstr ""
+msgstr "Rapport om utfyllingsgraden i slektstreet"
 
 #: AncestorFill/AncestorFill.py:189
 #, python-format
 msgid "AncestorFill for %s"
-msgstr ""
+msgstr "Aneutfylling for %s"
 
 #: AncestorFill/AncestorFill.py:205
-#, fuzzy
-#| msgid "General Data"
 msgid "Generation "
-msgstr "Generelle data"
+msgstr "Generasjon "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
-msgstr ""
+msgstr "Antall aner funnet "
 
 #: AncestorFill/AncestorFill.py:207
 msgid "Percent of Ancestors found "
-msgstr ""
+msgstr "Prosent av aner funnet "
 
 #: AncestorFill/AncestorFill.py:208
 msgid "Number of unique Ancestors found "
-msgstr ""
+msgstr "Antall unike aner funnet "
 
 #: AncestorFill/AncestorFill.py:209
 msgid "Number of theoretical Ancestors "
-msgstr ""
+msgstr "Antall teoretiske aner "
 
 #: AncestorFill/AncestorFill.py:210
 msgid "Pedigree Collapse "
-msgstr ""
+msgstr "Anesammenfall "
 
 #: AncestorFill/AncestorFill.py:253
 msgid "Total Number of Ancestors found "
-msgstr ""
+msgstr "Totalt antall aner funnet "
 
 #: AncestorFill/AncestorFill.py:255
 msgid "Total Number of unique Ancestors found "
-msgstr ""
+msgstr "Totalt antall unike aner funnet "
 
 #: AncestorFill/AncestorFill.py:259
 msgid ""
@@ -99,36 +96,40 @@ msgid ""
 "Note: This report only counts ancestors with a parent-child relationship of "
 "birth."
 msgstr ""
+"\n"
+"\n"
+"Merk: Denne rapporten teller bare aner der slektskapet mellom foreldre og "
+"barn er biologisk."
 
 #: AncestorFill/AncestorFill.py:305
 msgid "Filled digit"
-msgstr ""
+msgstr "Antall desimaler"
 
 #: AncestorFill/AncestorFill.py:307
 msgid ""
 "The number of digits after comma to include in the report for the percentage "
 "of ancestor found at a given generation"
 msgstr ""
+"Antall sifre etter komma som skal vises i rapporten for prosentandelen av "
+"aner som er funnet i en gitt generasjon"
 
 #: AncestorFill/AncestorFill.py:311
 msgid "Collapsed digit"
-msgstr ""
+msgstr "Antall desimaler"
 
 #: AncestorFill/AncestorFill.py:313
 msgid ""
 "The number of digits after comma to include in the report for the pedigree "
 "Collapse"
-msgstr ""
+msgstr "Antall sifre etter komma som skal tas med i rapporten for anesammenfall"
 
 #: AncestorFill/AncestorFill.py:317
-#, fuzzy
-#| msgid "Display type"
 msgid "Display theoretical"
-msgstr "Visningstype"
+msgstr "Vis teoretisk"
 
 #: AncestorFill/AncestorFill.py:319
 msgid "Whether to display the theoretical number of ancestor by generation"
-msgstr ""
+msgstr "Om det teoretiske antallet aner per generasjon skal vises"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
 #: DescendantBooks/DetailedDescendantBookReport.py:1538
@@ -140,63 +141,55 @@ msgid "The style used for the title of the page."
 msgstr "Stilen som brukes på sidens tittel."
 
 #: AncestryTableReport.gpr.py:3
-#, fuzzy
-#| msgid "Ancestor"
 msgid "Ancestry Table"
-msgstr "Ane"
+msgstr "Anetabell"
 
 #: AncestryTableReport.gpr.py:4
 msgid "Produces a table of ancestry about a person"
-msgstr ""
+msgstr "Lager en tabell over aner for en person"
 
 #: AncestryTableReport.py:133
 #, python-format
 msgid "Person %(name)s is not in the Database"
-msgstr ""
+msgstr "Personen %(name)s finnes ikke i databasen"
 
 #: AncestryTableReport.py:277
-#, fuzzy, python-format
-#| msgid "The style used for each section."
+#, python-format
 msgid "Ancestry Table Report for %(name)s"
-msgstr "Stilen som brukes til kapitteloverskriften."
+msgstr "Anetabell-rapport for %(name)s"
 
 #: AncestryTableReport.py:311
-#, fuzzy, python-format
-#| msgid "General Data"
+#, python-format
 msgid "Generation %(gen_number)d"
-msgstr "Generelle data"
+msgstr "Generasjon %(gen_number)d"
 
 #: AncestryTableReport.py:360
 #, python-format
 msgid "Number of Ancestors for %(name)s"
-msgstr ""
+msgstr "Antall aner for %(name)s"
 
 #: AncestryTableReport.py:370
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
-#, fuzzy
-#| msgid "General Data"
 msgid "Generation"
-msgstr "Generelle data"
+msgstr "Generasjon"
 
 #: AncestryTableReport.py:472
 msgid "To start a new page after each generation."
-msgstr ""
+msgstr "Begynn på ny side etter hver generasjon."
 
 #: AncestryTableReport.py:475
 msgid "Number of ancestors per generation"
-msgstr ""
+msgstr "Antall aner per generasjon"
 
 #: AncestryTableReport.py:476
 msgid "Add a page with tne number of ancestors per generation."
-msgstr ""
+msgstr "Legg til en side med antall aner per generasjon."
 
 #: AncestryTableReport.py:495
-#, fuzzy
-#| msgid "Whether to include a person's internet address."
 msgid "Mask the name of the calendar in the dates"
-msgstr "Om en persons Internettadresse skal tas med."
+msgstr "Skjul navnet på kalenderen i datoene"
 
 #: AncestryTableReport.py:496
 msgid ""
@@ -211,34 +204,24 @@ msgid "The style used for the title of the report."
 msgstr "Stilen som brukes på rapportens tittel."
 
 #: AncestryTableReport.py:541
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid "The style used for the Sosa number of the paternal branch."
-msgstr "Stilen som brukes på rapportens tittel."
+msgstr "Stilen som brukes for Sosa-numrene i farslinjen."
 
 #: AncestryTableReport.py:552
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid "The style used for the Sosa number of the maternal branch."
-msgstr "Stilen som brukes på rapportens tittel."
+msgstr "Stilen som brukes for Sosa-numrene i morslinjen."
 
 #: AncestryTableReport.py:562
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the data of the males."
-msgstr "Stilen som brukes på sidens tittel."
+msgstr "Stilen som brukes for opplysninger om menn."
 
 #: AncestryTableReport.py:572
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the data of the females."
-msgstr "Stilen som brukes på sidens tittel."
+msgstr "Stilen som brukes for opplysninger om kvinner."
 
 #: AncestryTableReport.py:583
-#, fuzzy
-#| msgid "The style used for each section."
 msgid "The style used for the marriage."
-msgstr "Stilen som brukes til kapitteloverskriften."
+msgstr "Stilen som brukes for ekteskapet."
 
 #: AncestryTableReport.py:593
 msgid ""
@@ -247,25 +230,20 @@ msgid ""
 msgstr ""
 
 #: AncestryTableReport.py:632
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid ""
 "The style used for the header table of the number of ancestors per "
 "generation."
-msgstr "Stilen som brukes på sidens tittel."
+msgstr ""
+"Stilen som brukes for tabelloverskriften for antall aner per generasjon."
 
 #: AncestryTableReport.py:643
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the number of ancestors per generation."
-msgstr "Stilen som brukes på sidens tittel."
+msgstr "Stilen som brukes for antall aner per generasjon."
 
 #: AncestryTableReport.py:654
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid ""
 "The style used for the total line of the number of ancestors per generation."
-msgstr "Stilen som brukes på rapportens tittel."
+msgstr "Stilen som brukes for den totale linjen med antall aner per generasjon."
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:24
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:32
@@ -273,22 +251,16 @@ msgid "Anniversaries"
 msgstr ""
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:25
-#, fuzzy
-#| msgid "a gramplet that displays the birthdays of the living people"
 msgid "A gramplet that displays the anniversaries of events"
-msgstr "en gramplet som viser bursdager for levende personer"
+msgstr "En gramplet som viser jubileer for hendelser"
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:51
-#, fuzzy
-#| msgid "Double-click color text to edit details"
 msgid "Double-click on a row to edit the event."
-msgstr "Dobbeltklikk på farget tekst for å redigere detaljer"
+msgstr "Dobbeltklikk på en rad for å redigere hendelsen."
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:58
-#, fuzzy
-#| msgid "unknown participant"
 msgid "Participant"
-msgstr "ukjent deltaker"
+msgstr "Deltaker"
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:22
 msgid ""
@@ -448,10 +420,8 @@ msgid "INFO"
 msgstr ""
 
 #: AvatarGenerator/AvatarGenerator.py:211
-#, fuzzy
-#| msgid "No place record was modified."
 msgid "No media was removed."
-msgstr "Ingen steder ble endret."
+msgstr "Ingen medier ble fjernet."
 
 #: AvatarGenerator/AvatarGenerator.py:213
 msgid "{} media references were removed from {} persons."
@@ -465,10 +435,8 @@ msgstr ""
 
 #: AvatarGenerator/AvatarGenerator.py:263
 #: AvatarGenerator/AvatarGenerator.py:280
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Add avatar images..."
-msgstr "Lagre bilder i ..."
+msgstr "Legg til avatarbilder…"
 
 #: AvatarGenerator/AvatarGenerator.py:314
 msgid "{} avatar images were sucessfully added."
@@ -786,10 +754,8 @@ msgid "Edit Families"
 msgstr "Rediger familier"
 
 #: BirthOrder/birthorder.py:275
-#, fuzzy
-#| msgid "Looking for place fields"
 msgid "Looking for children birth order"
-msgstr "Ser etter stedsfelt"
+msgstr "Ser etter barns fødselsrekkefølge"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
@@ -1099,10 +1065,8 @@ msgid "manual|Fix_Capitalization_of_Given_Names..."
 msgstr ""
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
-#, fuzzy
-#| msgid "Checking Place Titles"
 msgid "Checking Given Names"
-msgstr "Sjekker stedstitler"
+msgstr "Kontrollerer fornavn"
 
 #: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
@@ -1120,10 +1084,8 @@ msgid ""
 msgstr ""
 
 #: ChangeGivenNames/changenames.glade:107
-#, fuzzy
-#| msgid "Add relation"
 msgid "Edit selection"
-msgstr "Legg til relasjon"
+msgstr "Rediger utvalg"
 
 #: ChatWithTree/ChatWithTree.gpr.py:9
 msgid "Chat With Tree Interactive Addon"
@@ -1356,10 +1318,9 @@ msgstr ""
 #: D3Charts/DescendantIndentedTree.py:1681
 #: D3Charts/DescendantIndentedTree.py:1701 DenominoViso/DenominoViso.py:394
 #: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
-#, fuzzy, python-brace-format
-#| msgid "Failure writing %s"
+#, python-brace-format
 msgid "Failure writing {target_path}: {message}"
-msgstr "Det oppsto en feil under skrivingen av %s"
+msgstr "Feil ved skriving til {target_path}: {message}"
 
 #: D3Charts/AncestralCollapsibleTree.py:346 D3Charts/AncestralFanChart.py:421
 #: D3Charts/DescendantIndentedTree.py:1523
@@ -1380,10 +1341,8 @@ msgstr ""
 #: D3Charts/AncestralCollapsibleTree.py:841 D3Charts/AncestralFanChart.py:724
 #: D3Charts/DescendantIndentedTree.py:1808
 #: DescendantSpaceTree/DescendantSpaceTree.py:1082
-#, fuzzy
-#| msgid "Include Options"
 msgid "Include Generations"
-msgstr "Ta med opsjoner"
+msgstr "Ta med generasjoner"
 
 #: D3Charts/AncestralCollapsibleTree.py:847
 msgid "Male Background Color"
@@ -1514,10 +1473,8 @@ msgid "Expand All"
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1815
-#, fuzzy
-#| msgid "Include death relatives"
 msgid "Include contraction level"
-msgstr "Ta med døde slektninger"
+msgstr "Ta med sammentrekningsnivå"
 
 #: D3Charts/DescendantIndentedTree.py:1817
 msgid "The number of descendant levels to contract on initial display."
@@ -1561,10 +1518,8 @@ msgid "Include records marked private"
 msgstr "Inkluder oppføringer som er merket privat"
 
 #: D3Charts/DescendantIndentedTree.py:1873
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether to include private objects."
-msgstr "Om bilder skal tas med"
+msgstr "Om private objekter skal tas med."
 
 #: D3Charts/DescendantIndentedTree.py:1881 DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
@@ -1701,10 +1656,8 @@ msgid "Whether or not to generate links for center person."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1975
-#, fuzzy
-#| msgid "Include Sources"
 msgid "Exclude Spouses"
-msgstr "Ta med kilder"
+msgstr "Utelat ektefeller"
 
 #: D3Charts/DescendantIndentedTree.py:1976
 msgid "Whether or not to generate links for spouses."
@@ -1723,10 +1676,8 @@ msgid "Whether to show biography tooltips when hovering over a node."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:2030
-#, fuzzy
-#| msgid "Colors"
 msgid "Text Color"
-msgstr "Farger"
+msgstr "Tekstfarge"
 
 #: D3Charts/DescendantIndentedTree.py:2032
 msgid "RGB-color for biography text."
@@ -1962,10 +1913,8 @@ msgid "Family:"
 msgstr "Familie:"
 
 #: DataEntryGramplet/DataEntryGramplet.py:74
-#, fuzzy
-#| msgid "No Source"
 msgid "Sources?"
-msgstr "Ingen kilde"
+msgstr "Kilder?"
 
 #: DataEntryGramplet/DataEntryGramplet.py:76
 #: DataEntryGramplet/DataEntryGramplet.py:109
@@ -1999,32 +1948,24 @@ msgid "Add as a Parent"
 msgstr "Legg til som foreldre"
 
 #: DataEntryGramplet/DataEntryGramplet.py:101
-#, fuzzy
-#| msgid "Add as a Spouse"
 msgid "Add as a Mother"
-msgstr "Legg til som ektefelle"
+msgstr "Legg til som mor"
 
 #: DataEntryGramplet/DataEntryGramplet.py:102
-#, fuzzy
-#| msgid "Add as a Parent"
 msgid "Add as a Father"
-msgstr "Legg til som foreldre"
+msgstr "Legg til som far"
 
 #: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
 msgstr "Legg til som ektefelle"
 
 #: DataEntryGramplet/DataEntryGramplet.py:104
-#, fuzzy
-#| msgid "Add as a Child"
 msgid "Add as a Wife"
-msgstr "Legg til som barn"
+msgstr "Legg til som hustru"
 
 #: DataEntryGramplet/DataEntryGramplet.py:105
-#, fuzzy
-#| msgid "Add as a Parent"
 msgid "Add as a Husband"
-msgstr "Legg til som foreldre"
+msgstr "Legg til som ektemann"
 
 #: DataEntryGramplet/DataEntryGramplet.py:106
 msgid "Add as a Sibling"
@@ -2098,10 +2039,8 @@ msgid "Can't add new person as a mother."
 msgstr "Kan ikke legge til ny person som mor."
 
 #: DataEntryGramplet/DataEntryGramplet.py:545
-#, fuzzy
-#| msgid "Can't add new person as a parent."
 msgid "Can't add new person as a father."
-msgstr "Kan ikke legge til ny person som foreldre."
+msgstr "Kan ikke legge til ny person som far."
 
 #: DataEntryGramplet/DataEntryGramplet.py:550
 #: DataEntryGramplet/DataEntryGramplet.py:554
@@ -2112,16 +2051,12 @@ msgid "Can't add new person as a spouse."
 msgstr "Kan ikke legge til ny person som mor."
 
 #: DataEntryGramplet/DataEntryGramplet.py:559
-#, fuzzy
-#| msgid "Can't add new person as a child."
 msgid "Can't add new person as a wife."
-msgstr "Kan ikke legge til ny person som barn."
+msgstr "Kan ikke legge til ny person som hustru."
 
 #: DataEntryGramplet/DataEntryGramplet.py:564
-#, fuzzy
-#| msgid "Can't add new person as a sibling."
 msgid "Can't add new person as a husband."
-msgstr "Kan ikke legge til ny person som søsken."
+msgstr "Kan ikke legge til ny person som ektemann."
 
 #: DataEntryGramplet/DataEntryGramplet.py:569
 msgid "Can't add new person as a sibling."
@@ -2133,16 +2068,12 @@ msgid "Can't add new person as a child."
 msgstr "Kan ikke legge til ny person som barn."
 
 #: DataEntryGramplet/DataEntryGramplet.py:772
-#, fuzzy
-#| msgid "Please set an active person."
 msgid "Please set Active person."
 msgstr "Angi aktiv person."
 
 #: DataEntryGramplet/DataEntryGramplet.py:773
-#, fuzzy
-#| msgid "Can't add new person as a spouse."
 msgid "Can't add new person as a spouse to no one."
-msgstr "Kan ikke legge til ny person som mor."
+msgstr "Kan ikke legge til ny person som ektefelle til ingen."
 
 #: DataEntryGramplet/DataEntryGramplet.py:776
 msgid "Please set gender on Active or new person."
@@ -2228,10 +2159,8 @@ msgid "Deep Connections"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
-#, fuzzy
-#| msgid "Pause"
 msgid "⏸ Pause"
-msgstr "Pause"
+msgstr "⏸ Pause"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:108
 msgid "Pause the current search"
@@ -2242,14 +2171,8 @@ msgid "▶ Continue"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:114
-#, fuzzy
-#| msgid ""
-#| "Paused.\n"
-#| "Press Continue to search for additional relations.\n"
 msgid "Continue searching for more relations"
-msgstr ""
-"Pauset.\n"
-"Klikk Fortsett for å søke etter flere slektsforhold.\n"
+msgstr "Fortsett å søke etter flere slektsforhold"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:118
 msgid "📋 Copy"
@@ -2268,10 +2191,8 @@ msgid "Clear all results and reset"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
-#, fuzzy
-#| msgid "Don't search"
 msgid "Ready to search"
-msgstr "Ikke søk"
+msgstr "Klar til å søke"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:185
 #, python-brace-format
@@ -2289,10 +2210,8 @@ msgid "Note on Family"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:258
-#, fuzzy
-#| msgid "Add as a Sibling"
 msgid "sibling"
-msgstr "Legg til et søsken"
+msgstr "søsken"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:268
 msgid "Note on Parent Family"
@@ -2304,10 +2223,8 @@ msgid "%s (association)"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:277
-#, fuzzy
-#| msgid "New person"
 msgid "Note on Person"
-msgstr "Ny person"
+msgstr "Notat for person"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:308
 #, python-format
@@ -2317,20 +2234,16 @@ msgid ""
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:336
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "Error: No Home Person set"
-msgstr "Ingen aktiv person valgt."
+msgstr "Feil: Ingen startperson er valgt"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:341
 msgid "No Active Person set."
 msgstr "Ingen aktiv person valgt."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:342
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "Error: No Active Person set"
-msgstr "Ingen aktiv person valgt."
+msgstr "Feil: Ingen aktiv person er valgt"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:347
 msgid "Initializing search..."
@@ -2372,46 +2285,29 @@ msgstr ""
 "Klikk Fortsett for å søke etter flere slektsforhold.\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:427
-#, fuzzy
-#| msgid ""
-#| "Paused.\n"
-#| "Press Continue to search for additional relations.\n"
 msgid "Paused - Press Continue to search for more relations"
-msgstr ""
-"Pauset.\n"
-"Klikk Fortsett for å søke etter flere slektsforhold.\n"
+msgstr "Pauset – Klikk på Fortsett for å søke etter flere slektsforhold"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:456
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "Search completed. %d relations found."
+#, python-format
 msgid ""
 "\n"
 "Search completed. %d relation paths found."
 msgstr ""
 "\n"
-"Søk gjennomført. %d slektskap funnet."
+"Søk fullført. %d slektskapslinjer funnet."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:460
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "Search completed. %d relations found."
 msgid "Search completed - {} relation paths found"
-msgstr ""
-"\n"
-"Søk gjennomført. %d slektskap funnet."
+msgstr "Søk fullført – {} slektskapsstier funnet"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:471
 msgid "Error during search: {}"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:481
-#, fuzzy
-#| msgid "Removing '%s'..."
 msgid "Resuming search..."
-msgstr "Fjerner «%s»..."
+msgstr "Fortsetter søk…"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:489
 msgid "Search interrupted by user"
@@ -2566,10 +2462,8 @@ msgid "Any string you wish."
 msgstr "En tekst du selv velger."
 
 #: DenominoViso/DenominoViso.py:2567
-#, fuzzy
-#| msgid "Display type"
 msgid "Display mode"
-msgstr "Visningstype"
+msgstr "Visningsmodus"
 
 #: DenominoViso/DenominoViso.py:2568
 msgid "Either plot ancestor or descendants graph."
@@ -2629,10 +2523,8 @@ msgid "Include private records"
 msgstr "Ta med private poster"
 
 #: DenominoViso/DenominoViso.py:2608
-#, fuzzy
-#| msgid "Whether to include author."
 msgid "Whether to leave out private data."
-msgstr "Om forfatter skal tas med."
+msgstr "Om private opplysninger skal utelates."
 
 #: DenominoViso/DenominoViso.py:2611
 msgid "Include Events"
@@ -2737,7 +2629,7 @@ msgstr "Bilder med egenskap"
 
 #: DenominoViso/DenominoViso.py:2675
 msgid "Determine images with which attributes to in/exclude"
-msgstr ""
+msgstr "Velg hvilke attributter som skal tas med eller utelates"
 
 #: DenominoViso/DenominoViso.py:2678
 msgid "Include Image source references"
@@ -2984,10 +2876,8 @@ msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
 msgstr ""
 
 #: DescendantBooks/DescendantBookReport.py:374
-#, fuzzy
-#| msgid "Descendant"
 msgid "Descendants Report"
-msgstr "Etterkommer"
+msgstr "Etterkommerrapport"
 
 #: DescendantBooks/DescendantBookReport.py:423
 #: DescendantBooks/DetailedDescendantBookReport.py:423
@@ -3008,28 +2898,20 @@ msgstr ""
 
 #: DescendantBooks/DescendantBookReport.py:510
 #: DescendantBooks/DetailedDescendantBookReport.py:1343
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict people that appear in the report"
-msgstr "Velg filter for å begrense antall personer"
+msgstr "Velg filter for å begrense hvilke personer som skal tas med i rapporten"
 
 #: DescendantBooks/DescendantBookReport.py:585
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the table of contents header."
-msgstr "Stilen som brukes på sidens tittel."
+msgstr "Stilen som brukes for overskriften i innholdsfortegnelsen."
 
 #: DescendantBooks/DescendantBookReport.py:595
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid "The style used for the table of contents detail."
-msgstr "Stilen som brukes på rapportens tittel."
+msgstr "Stilen som brukes for detaljene i innholdsfortegnelsen."
 
 #: DescendantBooks/DescendantBooks.gpr.py:22
-#, fuzzy
-#| msgid "Descendant"
 msgid "Descendant Book"
-msgstr "Etterkommer"
+msgstr "Etterkommerbok"
 
 #: DescendantBooks/DescendantBooks.gpr.py:23
 msgid "Produces one or more descendant reports based on a supplied query."
@@ -3060,15 +2942,15 @@ msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:521
 msgid "Index of Places"
-msgstr ""
+msgstr "Stedsregister"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:544
 msgid "Index of Dates"
-msgstr ""
+msgstr "Datoregister"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:567
 msgid "Index of Names"
-msgstr ""
+msgstr "Navneregister"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:573
 msgid "Report, Generation, Person, Name"
@@ -3122,10 +3004,9 @@ msgstr ""
 #: DescendantBooks/DetailedDescendantBookReport.py:821
 #: DescendantBooks/DetailedDescendantBookReport.py:865
 #: DetDescendantReport-images/detdescendantreporti.py:459
-#, fuzzy, python-format
-#| msgid "place: "
+#, python-format
 msgid "%(place)s"
-msgstr "sted: "
+msgstr "%(place)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:823
 #, python-format
@@ -3174,43 +3055,28 @@ msgid "Add descendant reference in child list"
 msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1484
-#, fuzzy
-#| msgid "Include death relatives"
 msgid "Include Index of Names"
-msgstr "Ta med døde slektninger"
+msgstr "Ta med navneregister"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1485
-#, fuzzy
-#| msgid ""
-#| "Whether to include the death of relatives during the lifetime of person."
 msgid "Whether to include the index of Names at the end of the report."
-msgstr "Om dødsdata om slektninger skal tas med i tidslinjen for en person."
+msgstr "Om navneregisteret skal tas med til slutt i rapporten."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1489
-#, fuzzy
-#| msgid "Include witness note"
 msgid "Include index of Dates"
-msgstr "Ta med vitnenotat"
+msgstr "Ta med datoregister"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1490
-#, fuzzy
-#| msgid ""
-#| "Whether to include the death of relatives during the lifetime of person."
 msgid "Whether to include the index of Dates at the end of the report."
-msgstr "Om dødsdata om slektninger skal tas med i tidslinjen for en person."
+msgstr "Om datoregisteret skal tas med til slutt i rapporten."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1494
-#, fuzzy
-#| msgid "Include death relatives"
 msgid "Include index of Places"
-msgstr "Ta med døde slektninger"
+msgstr "Ta med stedsregister"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1495
-#, fuzzy
-#| msgid ""
-#| "Whether to include the death of relatives during the lifetime of person."
 msgid "Whether to include the index of Places at the end of the report."
-msgstr "Om dødsdata om slektninger skal tas med i tidslinjen for en person."
+msgstr "Om stedsregisteret skal tas med til slutt i rapporten."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1499
 msgid "Include the 'Report appearances' section with each person"
@@ -3224,95 +3090,71 @@ msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1568
 #: DetDescendantReport-images/detdescendantreporti.py:1282
-#, fuzzy
-#| msgid "The style used for child section."
 msgid "The style used for the children list."
-msgstr "Stilen som brukes til delkapittel."
+msgstr "Stilen som brukes for barnelisten."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1578
-#, fuzzy
-#| msgid "The basic style used for the table display."
 msgid "The basic style used for Note header."
-msgstr "Den grunnleggende stilen som brukes for bordvisningen."
+msgstr "Den grunnleggende stilen som brukes for notatoverskriften."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1595
 #: DetDescendantReport-images/detdescendantreporti.py:1305
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid "The style used for the first personal entry."
-msgstr "Stilen som brukes på rapportens tittel."
+msgstr "Stilen som brukes for den første personoppføringen."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1605
 #: DetDescendantReport-images/detdescendantreporti.py:1315
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid "The style used for the More About header and for headers of mates."
-msgstr "Stilen som brukes på rapportens tittel."
+msgstr ""
+"Stilen som brukes for overskriften «Mer om» og for overskriftene til "
+"ektefeller."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1616
 #: DetDescendantReport-images/detdescendantreporti.py:1326
-#, fuzzy
-#| msgid "The style used for child section."
 msgid "The style used for additional detail data."
-msgstr "Stilen som brukes til delkapittel."
+msgstr "Stilen som brukes for ytterligere detaljopplysninger."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1626
 #: DescendantBooks/DetailedDescendantBookReport.py:1636
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for note detail data."
-msgstr "Stilen som brukes på sidens tittel."
+msgstr "Stilen som brukes for detaljopplysninger i notater."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1646
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid "The style used for the date in the Index of Dates."
-msgstr "Stilen som brukes på rapportens tittel."
+msgstr "Stilen som brukes for datoene i datoregisteret."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1656
 msgid "The style used for the events in the Index of Dates."
-msgstr "Stilen som brukes for hendelser i indeksen over datoer."
+msgstr "Stilen som brukes for hendelsene i datoregisteret."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1666
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the header in the Index of Names."
-msgstr "Stilen som brukes på sidens tittel."
+msgstr "Stilen som brukes for overskriften i navneregisteret."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1676
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the references in the Index of Names."
-msgstr "Stilen som brukes på sidens tittel."
+msgstr "Stilen som brukes for referansene i navneregisteret."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1686
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the header in the Index of Places."
-msgstr "Stilen som brukes på sidens tittel."
+msgstr "Stilen som brukes for overskriften i stedsregisteret."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1697
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the references in the Index of Places."
-msgstr "Stilen som brukes på sidens tittel."
+msgstr "Stilen som brukes for referansene i stedsregisteret."
 
 #: DescendantCount/DescendantCount.gpr.py:23
 #: DescendantCount/DescendantCount.gpr.py:32
-#, fuzzy
-#| msgid "Descendant"
 msgid "Descendant Count"
-msgstr "Etterkommer"
+msgstr "Antall etterkommere"
 
 #: DescendantCount/DescendantCount.gpr.py:24
 msgid "Gramplet for showing people and descendant counts"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:26
-#, fuzzy
-#| msgid "Descendant"
 msgid "Descendant Space Tree"
-msgstr "Etterkommer"
+msgstr "Romlig etterkommertre"
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:36
 msgid ""
@@ -3334,34 +3176,24 @@ msgid "Dark theme"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:107
-#, fuzzy
-#| msgid "Height:"
 msgid "Light theme"
-msgstr "Høyde:"
+msgstr "Lyst tema"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:426
-#, fuzzy
-#| msgid "Descendant"
 msgid "Continue Descendant Tree"
-msgstr "Etterkommer"
+msgstr "Fortsett etterkommertre"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:427
-#, fuzzy
-#| msgid "All in degree notation"
 msgid "Alternate Descendant Tree"
-msgstr "Alle med gradernotasjon"
+msgstr "Alternativt etterkommertre"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:455
-#, fuzzy
-#| msgid "Descendant"
 msgid "Descendant SpaceTree"
-msgstr "Etterkommer"
+msgstr "Romlig etterkommertre"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:635
-#, fuzzy
-#| msgid "Descendant"
 msgid "Total descendants"
-msgstr "Etterkommer"
+msgstr "Totalt antall etterkommere"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:659
 msgid "Marriages/Families:<ul>"
@@ -3375,16 +3207,14 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:787
-#, fuzzy, python-format
-#| msgid "Failed writing %s: %s"
+#, python-format
 msgid "Failed to create %s: %s"
-msgstr "Feil ved skriving av %s: %s"
+msgstr "Kunne ikke opprette %s: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:816
-#, fuzzy, python-format
-#| msgid "Failed writing %s: %s"
+#, python-format
 msgid "Failed to read proto file %s: %s"
-msgstr "Feil ved skriving av %s: %s"
+msgstr "Kunne ikke lese protofilen %s: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:827
 #, python-format
@@ -3394,16 +3224,12 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:854
-#, fuzzy
-#| msgid "Failure writing %s"
 msgid "Failed writing file: "
-msgstr "Det oppsto en feil under skrivingen av %s"
+msgstr "Feil ved skriving av fil: "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:875
-#, fuzzy
-#| msgid "Descendant"
 msgid "Descendants of"
-msgstr "Etterkommer"
+msgstr "Etterkommere av"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:879
 msgid "How to Use the DescendantSpaceTree Viewer"
@@ -3480,10 +3306,8 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1016
-#, fuzzy
-#| msgid "Search"
 msgid "Search. . ."
-msgstr "Søk"
+msgstr "Søk. . ."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1091
 msgid "Branch to expand when duplicated"
@@ -3504,38 +3328,28 @@ msgid "Birth/death dates will not be displayed after this year"
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1118
-#, fuzzy
-#| msgid "Theme preferences"
 msgid "Theme preference"
-msgstr "Temainnstillinger"
+msgstr "Temainnstilling"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1125
-#, fuzzy
-#| msgid "The central person for the tree"
 msgid "Theme color preference for Space Tree"
-msgstr "Fokusperson for treet"
+msgstr "Innstillinger for temafarge for romlig etterkommertre"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1138
-#, fuzzy
-#| msgid "to directory:"
 msgid "Destination File"
-msgstr "til katalog:"
+msgstr "Målfil"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1140
-#, fuzzy
-#| msgid "The center family for the report"
 msgid "The destination file name for the report."
-msgstr "Fokusfamilien for rapporten"
+msgstr "Navnet på målfilen for rapporten."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1146
 msgid "Open generated HTML file with default browser."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
-#, fuzzy
-#| msgid "Descendant"
 msgid "Descendants Lines"
-msgstr "Etterkommer"
+msgstr "Etterkommerlinjer"
 
 #: DescendantsLines/DescendantsLines.gpr.py:28
 msgid "Produces descendants lines of a person"
@@ -3546,34 +3360,24 @@ msgid "Using SVG type for supplemental document is not supported!"
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1540
-#, fuzzy
-#| msgid "Event format"
 msgid "Output format"
-msgstr "Hendelsesformat"
+msgstr "Utdataformat"
 
 #: DescendantsLines/DescendantsLines.py:1541
-#, fuzzy
-#| msgid "Event format"
 msgid "PNG format"
-msgstr "Hendelsesformat"
+msgstr "PNG-format"
 
 #: DescendantsLines/DescendantsLines.py:1542
-#, fuzzy
-#| msgid "Source format"
 msgid "SVG format"
-msgstr "Kildeformat"
+msgstr "SVG-format"
 
 #: DescendantsLines/DescendantsLines.py:1543
-#, fuzzy
-#| msgid "Event format"
 msgid "PDF format"
-msgstr "Hendelsesformat"
+msgstr "PDF-format"
 
 #: DescendantsLines/DescendantsLines.py:1544
-#, fuzzy
-#| msgid "Source format"
 msgid "PS format"
-msgstr "Kildeformat"
+msgstr "PS-format"
 
 #: DescendantsLines/DescendantsLines.py:1545
 msgid "The output format to be used"
@@ -3596,42 +3400,32 @@ msgid "Prepend name with d'Aboville descendant number in the chart."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1564
-#, fuzzy
-#| msgid "Include media"
 msgid "Include an image"
-msgstr "Ta med media"
+msgstr "Ta med et bilde"
 
 #: DescendantsLines/DescendantsLines.py:1565
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether to include an image if one is available."
-msgstr "Om bilder skal tas med"
+msgstr "Om et bilde skal tas med dersom det er tilgjengelig."
 
 #: DescendantsLines/DescendantsLines.py:1569
-#, fuzzy
-#| msgid "Max chart height (px)"
 msgid "Max Image height"
-msgstr "Største tavlehøyde (pt)"
+msgstr "Maksimal bildehøyde"
 
 #: DescendantsLines/DescendantsLines.py:1570
 msgid "Maximum image height in pixels, 0=don't scale for height."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1574
-#, fuzzy
-#| msgid "Max chart width (%)"
 msgid "Max Image width"
-msgstr "Største tavlebredde (%)"
+msgstr "Maksimal bildebredde"
 
 #: DescendantsLines/DescendantsLines.py:1575
 msgid "Maximum image width in pixels, 0=don't scale for width."
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1579
-#, fuzzy
-#| msgid "Image Options"
 msgid "Image Location"
-msgstr "Bildevalg"
+msgstr "Bildeplassering"
 
 #: DescendantsLines/DescendantsLines.py:1580
 msgid "Above text"
@@ -3650,10 +3444,8 @@ msgid "Colour Name by Gender"
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1590
-#, fuzzy
-#| msgid "Whether to include a person's internet address."
 msgid "Color the name to indicate a person's gender in the chart."
-msgstr "Om en persons Internettadresse skal tas med."
+msgstr "Fargelegg navnet for å indikere personens kjønn i diagrammet."
 
 #: DescendantsLines/DescendantsLines.py:1594
 msgid "Use alternate events, if Primary event is not found"
@@ -3706,10 +3498,8 @@ msgstr ""
 " 0=ubegrenset "
 
 #: DescendantsLines/DescendantsLines.py:1618
-#, fuzzy
-#| msgid "Font"
 msgid "Font Name"
-msgstr "Skrifttype"
+msgstr "Skriftnavn"
 
 #: DescendantsLines/DescendantsLines.py:1620
 msgid ""
@@ -3718,10 +3508,8 @@ msgid ""
 msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1623
-#, fuzzy
-#| msgid "Font"
 msgid "Font base size"
-msgstr "Skrifttype"
+msgstr "Grunnstørrelse for skrift"
 
 #: DescendantsLines/DescendantsLines.py:1629
 msgid "Box around Person's block"
@@ -3784,7 +3572,7 @@ msgstr "Visningsformat"
 
 #: DescendantsLines/DescendantsLines.py:1664
 msgid "Name Display Format"
-msgstr ""
+msgstr "Visningsformat for navn"
 
 #: DescendantsLines/DescendantsLines.py:1667
 msgid ""
@@ -3804,10 +3592,8 @@ msgstr ""
 #: DescendantsLines/DescendantsLines.py:1705
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
 #: ImportMerge/importmerge.glade:407 ImportMerge/importmerge.py:911
-#, fuzzy
-#| msgid "place: "
 msgid "Replace"
-msgstr "sted: "
+msgstr "Erstatt"
 
 #: DescendantsLines/DescendantsLines.py:1710
 msgid ""
@@ -3980,6 +3766,8 @@ msgstr ""
 msgid ""
 "Produces a detailed descendant report with all images and optional todo list."
 msgstr ""
+"Lager en detaljert etterkommerrapport med alle bilder og en valgfri "
+"oppgaveliste."
 
 #: DetDescendantReport-images/detdescendantreporti.py:471
 #, python-format
@@ -3993,28 +3781,20 @@ msgid "%(type)s: %(value)s"
 msgstr ""
 
 #: DetDescendantReport-images/detdescendantreporti.py:1177
-#, fuzzy
-#| msgid "Include Note"
 msgid "Include TODO notes"
-msgstr "Ta med notat"
+msgstr "Inkluder oppgavenotater"
 
 #: DetDescendantReport-images/detdescendantreporti.py:1178
-#, fuzzy
-#| msgid "Whether to include a person's note."
 msgid "Whether to include TODO notes."
-msgstr "Om en persons notat skal tas med."
+msgstr "Om oppgavenotater skal tas med."
 
 #: DetDescendantReport-images/detdescendantreporti.py:1351
-#, fuzzy
-#| msgid "The style used for each section."
 msgid "The style used for image labels."
-msgstr "Stilen som brukes til kapitteloverskriften."
+msgstr "Stilen som brukes for bildeetiketter."
 
 #: DetDescendantReport-images/detdescendantreporti.py:1364
-#, fuzzy
-#| msgid "The style used for each section."
 msgid "A style used for image captions."
-msgstr "Stilen som brukes til kapitteloverskriften."
+msgstr "En stil som brukes for bildetekster."
 
 #: DetId/DetId.gpr.py:31
 msgid "Deterministic ID"
@@ -4046,10 +3826,8 @@ msgid "Differences between Database and File"
 msgstr ""
 
 #: Differences/differences.py:161
-#, fuzzy
-#| msgid "Differences"
 msgid "No differences"
-msgstr "Forskjeller"
+msgstr "Ingen forskjeller"
 
 #: Differences/differences.py:168
 msgid "Missing items in File that are added in Database"
@@ -4090,10 +3868,8 @@ msgid "Show items that are different"
 msgstr ""
 
 #: Differences/differences.py:314
-#, fuzzy
-#| msgid "Include Image source references"
 msgid "Include items that are different"
-msgstr "Ta med kildehenvisninger for bilde"
+msgstr "Ta med elementer som er forskjellige"
 
 #: Differences/differences.py:317
 msgid "Show items missing from file"
@@ -4120,10 +3896,8 @@ msgid "A text report listing double cousins."
 msgstr ""
 
 #: DoubleCousins/double_cousins.py:112
-#, fuzzy
-#| msgid "Repositories Report"
 msgid "Double Cousins Report"
-msgstr "Oppbevaringsstedsrapport"
+msgstr "Rapport over doble søskenbarn"
 
 #: DoubleCousins/double_cousins.py:120
 #, no-python-format
@@ -4153,10 +3927,8 @@ msgid "This tool downloads media files from the internet"
 msgstr ""
 
 #: DownloadMedia/DownloadMedia.py:71
-#, fuzzy
-#| msgid "Include media"
 msgid "Download media"
-msgstr "Ta med media"
+msgstr "Last ned medier"
 
 #: DownloadMedia/DownloadMedia.py:87
 msgid "Media downloaded"
@@ -4176,10 +3948,8 @@ msgid "Make sure you are connected to the internet before starting this tool."
 msgstr ""
 
 #: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
-#, fuzzy
-#| msgid "Problem reading file"
 msgid "Downloading files"
-msgstr "Feil ved lesing av fil"
+msgstr "Laster ned filer"
 
 #: DownloadMedia/DownloadMedia.py:207
 msgid "Media download errors detected"
@@ -4199,7 +3969,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:337
 msgid "Indexes pages"
-msgstr ""
+msgstr "Registersider"
 
 #: DynamicWeb/dynamicweb.py:341 DynamicWeb/dynamicweb.py:5214
 #, python-format
@@ -4208,13 +3978,11 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:358
 msgid "Ascending tree"
-msgstr ""
+msgstr "Stigende tre"
 
 #: DynamicWeb/dynamicweb.py:359
-#, fuzzy
-#| msgid "Descendant"
 msgid "Descending tree"
-msgstr "Etterkommer"
+msgstr "Synkende tre"
 
 #: DynamicWeb/dynamicweb.py:360
 msgid "Descending tree with spouses"
@@ -4277,15 +4045,13 @@ msgid "Tree"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:2435
-#, fuzzy
-#| msgid "Search"
 msgid "Search results"
-msgstr "Søk"
+msgstr "Søkeresultater"
 
 #: DynamicWeb/dynamicweb.py:2595 DynamicWeb/dynamicweb.py:3014
 #: DynamicWeb/dynamicweb.py:4997
 msgid "Indexes"
-msgstr ""
+msgstr "Registre"
 
 #: DynamicWeb/dynamicweb.py:2918
 msgid "(filtered from _MAX_ total entries)"
@@ -4336,10 +4102,8 @@ msgid "DynamicWeb_report#Help"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:2977
-#, fuzzy
-#| msgid "Examining places"
 msgid "Examples"
-msgstr "Undersøker steder"
+msgstr "Eksempler"
 
 #: DynamicWeb/dynamicweb.py:2978
 msgid "F"
@@ -4347,7 +4111,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:2979
 msgid "Families Index"
-msgstr ""
+msgstr "Familieregister"
 
 #: DynamicWeb/dynamicweb.py:2981
 msgid "Family Nick Name"
@@ -4359,11 +4123,11 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:2991 DynamicWeb/dynamicweb.py:5042
 msgid "Include dates columns on the index pages"
-msgstr ""
+msgstr "Ta med datokolonner på registersidene"
 
 #: DynamicWeb/dynamicweb.py:2999 DynamicWeb/dynamicweb.py:5071
 msgid "Include a column for media path on the index pages"
-msgstr ""
+msgstr "Ta med en kolonne for mediesti på registersidene"
 
 #: DynamicWeb/dynamicweb.py:3007 DynamicWeb/dynamicweb.py:4903
 msgid "Include a map in the individuals and family pages"
@@ -4374,10 +4138,8 @@ msgid "Include half and/ or step-siblings on the individual pages"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3013 DynamicWeb/dynamicweb.py:5076
-#, fuzzy
-#| msgid "Whether to include references for images"
 msgid "Include references in indexes"
-msgstr "Om bildereferanser skal tas med"
+msgstr "Ta med referanser i registrene"
 
 #: DynamicWeb/dynamicweb.py:3018 DynamicWeb/dynamicweb.py:4985
 msgid "Insert sources author in the sources title"
@@ -4388,20 +4150,16 @@ msgid "M"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3030
-#, fuzzy
-#| msgid "Maximum age"
 msgid "Maximize"
-msgstr "Høyeste alder"
+msgstr "Maksimer"
 
 #: DynamicWeb/dynamicweb.py:3031
 msgid "Media Index"
-msgstr ""
+msgstr "Medieregister"
 
 #: DynamicWeb/dynamicweb.py:3032
-#, fuzzy
-#| msgid "Media Title Update"
 msgid "Media Type"
-msgstr "Oppdatering av Mediatittel"
+msgstr "Medietype"
 
 #: DynamicWeb/dynamicweb.py:3037
 msgid "No data available in table"
@@ -4424,14 +4182,12 @@ msgid "Person page"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3049
-#, fuzzy
-#| msgid "Don't search"
 msgid "Person to search for"
-msgstr "Ikke søk"
+msgstr "Person det skal søkes etter"
 
 #: DynamicWeb/dynamicweb.py:3051
 msgid "Persons Index"
-msgstr ""
+msgstr "Personregister"
 
 #: DynamicWeb/dynamicweb.py:3052 RemoveTagTool/RemoveTagTool.py:124
 #: SearchGramplet/SearchGramplet.py:109 SetPrivacyTool/SetPrivacyTool.py:320
@@ -4439,38 +4195,28 @@ msgid "Persons"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3054
-#, fuzzy
-#| msgid "Places tool"
 msgid "Places Index"
-msgstr "Verktøy for stedsnavn"
+msgstr "Stedsregister"
 
 #: DynamicWeb/dynamicweb.py:3056
-#, fuzzy
-#| msgid "Problem reading file"
 msgid "Preparing file ..."
-msgstr "Feil ved lesing av fil"
+msgstr "Forbereder fil…"
 
 #: DynamicWeb/dynamicweb.py:3060 PersonEverything/PersonEverything.py:220
-#, fuzzy
-#| msgid "Relation type"
 msgid "Relationship to Father"
-msgstr "Relasjonstype"
+msgstr "Slektskap til far"
 
 #: DynamicWeb/dynamicweb.py:3061 PersonEverything/PersonEverything.py:225
-#, fuzzy
-#| msgid "Relation type"
 msgid "Relationship to Mother"
-msgstr "Relasjonstype"
+msgstr "Slektskap til mor"
 
 #: DynamicWeb/dynamicweb.py:3063
 msgid "Repositories Index"
-msgstr "Arkivindeks"
+msgstr "Arkivregister"
 
 #: DynamicWeb/dynamicweb.py:3066
-#, fuzzy
-#| msgid "Ancestor"
 msgid "Restore"
-msgstr "Ane"
+msgstr "Gjenopprett"
 
 #: DynamicWeb/dynamicweb.py:3067
 msgid "Restore default settings"
@@ -4505,10 +4251,8 @@ msgid "Save tree as file"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3075
-#, fuzzy
-#| msgid "Search"
 msgid "Search:"
-msgstr "Søk"
+msgstr "Søk:"
 
 #: DynamicWeb/dynamicweb.py:3078
 msgid "Select the background color scheme"
@@ -4535,10 +4279,8 @@ msgid "Select the shape of graph"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3097
-#, fuzzy
-#| msgid "The type of graph to create."
 msgid "Select the type of graph"
-msgstr "Graftypen som skal lages."
+msgstr "Velg graftype"
 
 #: DynamicWeb/dynamicweb.py:3101
 msgid "Several matches.<br>Precise your search or choose in the lists below."
@@ -4568,17 +4310,15 @@ msgstr ""
 #: SourceIndex/census.py:82 SourceIndex/death.py:87 SourceIndex/index.py:92
 #: SourceIndex/marriage.py:87 SourceIndex/witness.py:64
 msgid "Sources Index"
-msgstr ""
+msgstr "Kilderegister"
 
 #: DynamicWeb/dynamicweb.py:3117 DynamicWeb/dynamicweb.py:4992
 msgid "Suppress Gramps ID"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3119
-#, fuzzy
-#| msgid "Surname, Given"
 msgid "Surnames Index"
-msgstr "Etternavn, Fornavn"
+msgstr "Etternavnsregister"
 
 #: DynamicWeb/dynamicweb.py:3123
 msgid "U"
@@ -4594,23 +4334,23 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3135
 msgid "Use a table format for the surnames index"
-msgstr ""
+msgstr "Bruk tabellformat for etternavnsregisteret"
 
 #: DynamicWeb/dynamicweb.py:3139
 msgid "Use a table format for the persons index"
-msgstr ""
+msgstr "Bruk tabellformat for personregisteret"
 
 #: DynamicWeb/dynamicweb.py:3143
 msgid "Use a table format for the families index"
-msgstr ""
+msgstr "Bruk tabellformat for familieregisteret"
 
 #: DynamicWeb/dynamicweb.py:3147
 msgid "Use a table format for the sources index"
-msgstr ""
+msgstr "Bruk tabellformat for kilderegisteret"
 
 #: DynamicWeb/dynamicweb.py:3151
 msgid "Use a table format for the places index"
-msgstr ""
+msgstr "Bruk tabellformat for stedsregisteret"
 
 #: DynamicWeb/dynamicweb.py:3153
 msgid "Used for family"
@@ -4621,20 +4361,16 @@ msgid "Used for media"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3155
-#, fuzzy
-#| msgid "New person"
 msgid "Used for person"
-msgstr "Ny person"
+msgstr "Brukes for person"
 
 #: DynamicWeb/dynamicweb.py:3156
 msgid "Used for place"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3157
-#, fuzzy
-#| msgid "New source"
 msgid "Used for source"
-msgstr "Ny kilde"
+msgstr "Brukes for kilde"
 
 #: DynamicWeb/dynamicweb.py:3159
 msgid "Web Link"
@@ -4765,16 +4501,12 @@ msgid "Web site title"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4736
-#, fuzzy
-#| msgid "Title of the webpage"
 msgid "The title of the web site"
-msgstr "Tittel på nettsiden"
+msgstr "Tittel på nettstedet"
 
 #: DynamicWeb/dynamicweb.py:4741
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict people that appear on web site"
-msgstr "Velg filter for å begrense antall personer"
+msgstr "Velg filter for å begrense hvilke personer som vises på nettstedet"
 
 #: DynamicWeb/dynamicweb.py:4755 DynamicWeb/dynamicweb.py:4778
 msgid "Name format (short)"
@@ -4793,10 +4525,8 @@ msgid "Select the template of the web site"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4812
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether to include private objects"
-msgstr "Om bilder skal tas med"
+msgstr "Om private objekter skal tas med"
 
 #: DynamicWeb/dynamicweb.py:4833
 msgid ""
@@ -4833,16 +4563,12 @@ msgid "Whether or not to include the Repository Pages."
 msgstr "Om arkivsidene skal inkluderes."
 
 #: DynamicWeb/dynamicweb.py:4861
-#, fuzzy
-#| msgid "Include media"
 msgid "Include images and media"
-msgstr "Ta med media"
+msgstr "Ta med bilder og medier"
 
 #: DynamicWeb/dynamicweb.py:4862
-#, fuzzy
-#| msgid "Whether to include keys and values."
 msgid "Whether to include images and media in the web pages"
-msgstr "Om nøkler og verdier skal tas med."
+msgstr "Om bilder og mediefiler skal tas med på nettsidene"
 
 #: DynamicWeb/dynamicweb.py:4867
 msgid "Copy, rename files with an internal Gramps identifier"
@@ -4857,10 +4583,8 @@ msgid "Do not copy, reference existing files"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4873
-#, fuzzy
-#| msgid "Include media"
 msgid "Images and media"
-msgstr "Ta med media"
+msgstr "Bilder og medier"
 
 #: DynamicWeb/dynamicweb.py:4876
 msgid "Whether to make a copy of the media"
@@ -4871,16 +4595,12 @@ msgid "Print the notes type"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4881
-#, fuzzy
-#| msgid "Whether to include the description of the first URL"
 msgid "Whether to print the notes type in the notes text"
-msgstr "Om beskrivelse av den første URLen skal tas med"
+msgstr "Om notattypen skal skrives ut i notatteksten"
 
 #: DynamicWeb/dynamicweb.py:4885
-#, fuzzy
-#| msgid "Doing Place changes"
 msgid "Print place pages"
-msgstr "Endrer steder"
+msgstr "Skriv ut stedssider"
 
 #: DynamicWeb/dynamicweb.py:4886
 msgid "Whether to show pages for the places"
@@ -4899,33 +4619,27 @@ msgid "The API key used for the Google map"
 msgstr "API-nøkkelen som brukes for Google Maps"
 
 #: DynamicWeb/dynamicweb.py:4945
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether or not to include family pages"
-msgstr "Om bilder skal tas med"
+msgstr "Om familiesider skal tas med"
 
 #: DynamicWeb/dynamicweb.py:4959
-#, fuzzy
-#| msgid "Whether to include a person's internet address."
 msgid ""
 "Whether to include half and/ or step-siblings with the parents and siblings"
-msgstr "Om en persons Internettadresse skal tas med."
+msgstr ""
+"Om halvsøsken og/eller stesøsken skal tas med sammen med foreldre og søsken"
 
 #: DynamicWeb/dynamicweb.py:4968
 msgid "Enable page configuration"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4969
-#, fuzzy
-#| msgid "Whether to include abbreviation."
 msgid "Whether to enable page configuration"
-msgstr "Om kortnavn skal tas med."
+msgstr "Om sideoppsett skal aktiveres"
 
 #: DynamicWeb/dynamicweb.py:4974
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "Whether to use tabbed panels for the different sections of the pages."
-msgstr "Stilen som brukes på sidens tittel."
+msgstr ""
+"Om det skal brukes fanebaserte paneler for de ulike seksjonene på sidene."
 
 #: DynamicWeb/dynamicweb.py:4980
 msgid "Whether to show the last modification time in the pages footer"
@@ -4936,81 +4650,73 @@ msgid "Whether to insert sources author in the sources title"
 msgstr "Om kildens forfatter skal inkluderes i kildetittelen"
 
 #: DynamicWeb/dynamicweb.py:4993
-#, fuzzy
-#| msgid "Whether to include author."
 msgid "Whether to hide the Gramps ID"
-msgstr "Om forfatter skal tas med."
+msgstr "Om Gramps-IDen skal skjules"
 
 #: DynamicWeb/dynamicweb.py:5001
 msgid "List"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5002 GrampyScript/GrampyScript.py:382
-#, fuzzy
-#| msgid "TR-Table"
 msgid "Table"
-msgstr "TR-Bord"
+msgstr "Tabell"
 
 #: DynamicWeb/dynamicweb.py:5008
 msgid "Default format for the surnames index"
-msgstr ""
+msgstr "Standardformat for etternavnsregisteret"
 
 #: DynamicWeb/dynamicweb.py:5009
 msgid "The default format for the surnames index"
-msgstr ""
+msgstr "Standardformatet for etternavnsregisteret"
 
 #: DynamicWeb/dynamicweb.py:5014
 msgid "Default format for the persons index"
-msgstr ""
+msgstr "Standardformat for personregisteret"
 
 #: DynamicWeb/dynamicweb.py:5015
 msgid "The default format for the persons index"
-msgstr ""
+msgstr "Standardformatet for personregisteret"
 
 #: DynamicWeb/dynamicweb.py:5020
 msgid "Default format for the families index"
-msgstr ""
+msgstr "Standardformat for familieregisteret"
 
 #: DynamicWeb/dynamicweb.py:5021
 msgid "The default format for the families index"
-msgstr ""
+msgstr "Standardformatet for familieregisteret"
 
 #: DynamicWeb/dynamicweb.py:5026
 msgid "Default format for the sources index"
-msgstr ""
+msgstr "Standardformat for kilderegisteret"
 
 #: DynamicWeb/dynamicweb.py:5027
 msgid "The default format for the sources index"
-msgstr ""
+msgstr "Standardformatet for kilderegisteret"
 
 #: DynamicWeb/dynamicweb.py:5032
 msgid "Default format for the places index"
-msgstr ""
+msgstr "Standardformat for stedsregisteret"
 
 #: DynamicWeb/dynamicweb.py:5033
 msgid "The default format for the places index"
-msgstr ""
+msgstr "Standardformatet for stedsregisteret"
 
 #: DynamicWeb/dynamicweb.py:5045
-#, fuzzy
-#| msgid "Whether to include the birth of children in the list of events."
 msgid ""
 "Whether to include dates columns (birth, death, marriage) on the index pages"
-msgstr "Om barnas fødselsdato skal tas med i lista over hendelser."
+msgstr "Om datokolonner (fødsel, død, ekteskap) skal tas med på registersidene"
 
 #: DynamicWeb/dynamicweb.py:5063
 msgid "Generate a families index page"
-msgstr ""
+msgstr "Lag en familieregisterside"
 
 #: DynamicWeb/dynamicweb.py:5066
 msgid "Whether to generate an index page for families"
-msgstr ""
+msgstr "Om det skal lages en registerside for familier"
 
 #: DynamicWeb/dynamicweb.py:5073
-#, fuzzy
-#| msgid "Whether to include a person's internet address."
 msgid "Whether to include a column showing the media path"
-msgstr "Om en persons Internettadresse skal tas med."
+msgstr "Om en kolonne som viser mediestien skal tas med"
 
 #: DynamicWeb/dynamicweb.py:5079
 msgid ""
@@ -5018,14 +4724,17 @@ msgid ""
 "example, in the media index page, the names of the individuals, families, "
 "places, sources that reference the media."
 msgstr ""
+"Om henvisningene til elementene skal tas med på registersidene. For eksempel "
+"i medieregisteret: navnene på personene, familiene, stedene og kildene som "
+"henviser til mediet."
 
 #: DynamicWeb/dynamicweb.py:5085
 msgid "Default number of entries in the indexes"
-msgstr ""
+msgstr "Standard antall oppføringer i registrene"
 
 #: DynamicWeb/dynamicweb.py:5090
 msgid "The default number of entries shown in one index page"
-msgstr ""
+msgstr "Standard antall oppføringer som vises på en registerside"
 
 #: DynamicWeb/dynamicweb.py:5098
 #: LifeLineChartView/_dummy_translation_string_po.py:101
@@ -5108,16 +4817,12 @@ msgid "Menu for the custom page %(index)i"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5232
-#, fuzzy
-#| msgid "Whether to include references for images"
 msgid "Whether to print a menu for the custom page"
-msgstr "Om bildereferanser skal tas med"
+msgstr "Om det skal skrives ut en meny for den tilpassede siden"
 
 #: DynamicWeb/dynamicweb.py:5236
-#, fuzzy
-#| msgid "Toggle Selection"
 msgid "Pages selection"
-msgstr "Markere valget"
+msgstr "Sidevalg"
 
 #: DynamicWeb/dynamicweb.py:5240
 msgid "Number of pages"
@@ -5133,10 +4838,8 @@ msgid "Contents of page %(index)i"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5266
-#, fuzzy
-#| msgid "Title of the webpage"
 msgid "Contents of the page"
-msgstr "Tittel på nettsiden"
+msgstr "Innhold på siden"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:30
 #: EditExifMetadata/editexifmetadata.py:723
@@ -5166,7 +4869,6 @@ msgstr ""
 "Gramps, ikke Exiv2-metadata."
 
 #: EditExifMetadata/editexifmetadata.py:161
-#, fuzzy
 msgid "Provide a short description for this image."
 msgstr "Gi en kort beskrivelse av dette bildet."
 
@@ -5374,10 +5076,8 @@ msgid "This button will clear all of the data fields shown here."
 msgstr "Denne knappen vil fjerne alle datafeltene som vises her."
 
 #: EditExifMetadata/editexifmetadata.py:936
-#, fuzzy
-#| msgid "This button will clear all of the data fields shown here."
 msgid "This button will clear all of the GPS fields shown here."
-msgstr "Denne knappen vil fjerne alle datafeltene som vises her."
+msgstr "Denne knappen vil tømme alle GPS-feltene som vises her."
 
 #: EditExifMetadata/editexifmetadata.py:940
 msgid ""
@@ -5443,27 +5143,20 @@ msgid "Bad Date/Time"
 msgstr "Ugyldig Dato/Tid"
 
 #: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
-#| msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
-msgstr "48.21\"S, -18.2412 eller -18:9:48.21)"
+msgstr "Ugyldig breddegrad (syntaks: 18°9′48.21″S, -18.2412 eller -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
 msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
-msgstr "Ugyldig lengdegrad (syntaks: 18°9')"
+msgstr "Ugyldig lengdegrad (syntaks: 18°9′48.21″E, -18.2412 eller -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1136
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image."
 msgstr ""
-"ADVARSEL!  Du er i ferd med å fullstendig slette Exif-metadata fra dette "
-"bildet?"
+"ADVARSEL!   Du er i ferd med å permanent slette Exif-metadataene fra dette "
+"bildet."
 
 #: EditExifMetadata/editexifmetadata.py:1138
 #: EditExifMetadata/editexifmetadata.py:1150
@@ -5471,16 +5164,12 @@ msgid "Delete?"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1148
-#, fuzzy
-#| msgid ""
-#| "WARNING!  You are about to completely delete the Exif metadata from this "
-#| "image?"
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image."
 msgstr ""
-"ADVARSEL!  Du er i ferd med å fullstendig slette Exif-metadata fra dette "
-"bildet?"
+"ADVARSEL!   Du er i ferd med å permanent slette GPS-metadataene fra dette "
+"bildet."
 
 #: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"
@@ -5505,10 +5194,8 @@ msgstr "Det var en feil da Exif-metadata for bildet ble fjernet..."
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 #: EventDescriptionEditor/EventDescriptionEditor.py:52
 #: EventDescriptionEditor/EventDescriptionEditor.py:64
-#, fuzzy
-#| msgid "Description: "
 msgid "Event Description Editor"
-msgstr "Beskrivelse: "
+msgstr "Redigering av hendelsesbeskrivelser"
 
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
 msgid ""
@@ -5518,10 +5205,8 @@ msgstr ""
 "flere hendelser."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:75
-#, fuzzy
-#| msgid "Selecting... "
 msgid "Search substring..."
-msgstr "Velger... "
+msgstr "Søk etter delstreng…"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:106
 #, python-format
@@ -5588,19 +5273,17 @@ msgid "Raw options"
 msgstr ""
 
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:32
-#, fuzzy
-#| msgid "Whether to include a person's attributes"
 msgid "Extended Person Attributes"
-msgstr "Om en persons attributter skal tas med"
+msgstr "Utvidede personattributter"
 
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:40
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:56
 msgid "Extended Attributes"
-msgstr ""
+msgstr "Utvidede attributter"
 
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:48
 msgid "Extended Family Attributes"
-msgstr ""
+msgstr "Utvidede familieattributter"
 
 #: ExtendedAttributes/ExtendedAttributes.py:54
 msgid ""
@@ -5608,10 +5291,8 @@ msgid ""
 msgstr ""
 
 #: ExtractCity/changenames.glade:94
-#, fuzzy
-#| msgid "Toggle Selection"
 msgid "_Toggle Selected"
-msgstr "Markere valget"
+msgstr "Veksle valgte"
 
 #: ExtractCity/changenames.glade:98
 msgid ""
@@ -5629,10 +5310,8 @@ msgid "Attempts to extract city and state/province from a place title"
 msgstr ""
 
 #: ExtractCity/extractcity.py:402
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place title"
-msgstr "Stedstitler"
+msgstr "Stedstittel"
 
 #: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
 msgid "Extract Place data"
@@ -5689,10 +5368,8 @@ msgid "Belgium's Archives"
 msgstr ""
 
 #: FaceDetection/FaceDetection.gpr.py:4
-#, fuzzy
-#| msgid "Toggle Selection"
 msgid "Face Detection"
-msgstr "Markere valget"
+msgstr "Ansiktsgjenkjenning"
 
 #: FaceDetection/FaceDetection.gpr.py:5
 msgid "Gramplet for detecting and assigning faces"
@@ -5721,10 +5398,8 @@ msgid "Mass-edit the family relationship type for a group of families."
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:53
-#, fuzzy
-#| msgid "All Places"
 msgid "All Families"
-msgstr "Alle steder"
+msgstr "Alle familier"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:64
 msgid ""
@@ -5733,10 +5408,8 @@ msgid ""
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:70
-#, fuzzy
-#| msgid "Relation type"
 msgid "Relationship Type"
-msgstr "Relasjonstype"
+msgstr "Slektskapstype"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:71
 msgid ""
@@ -5745,16 +5418,12 @@ msgid ""
 msgstr ""
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:107
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Process relationships..."
-msgstr "Prosesserer...\n"
+msgstr "Behandler slektsforhold…"
 
 #: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.py:126
-#, fuzzy
-#| msgid "Family:"
 msgid "Family Sheet"
-msgstr "Familie:"
+msgstr "Familieskjema"
 
 #: FamilySheet/FamilySheet.gpr.py:6
 msgid ""
@@ -5783,10 +5452,8 @@ msgid "; %(type)s: %(value)s"
 msgstr ""
 
 #: FamilySheet/FamilySheet.py:557
-#, fuzzy
-#| msgid "Source reference attribute"
 msgid "Source references:"
-msgstr "Egenskap for kildehenvisning"
+msgstr "Kildehenvisninger:"
 
 #: FamilySheet/FamilySheet.py:575
 #, python-format
@@ -5794,10 +5461,8 @@ msgid ", page %s"
 msgstr ""
 
 #: FamilySheet/FamilySheet.py:588
-#, fuzzy
-#| msgid "TR-Note"
 msgid "Notes:"
-msgstr "TR-Merk"
+msgstr "Notater:"
 
 #: FamilySheet/FamilySheet.py:769 FamilyTree/FamilyTree.py:932
 #, python-format
@@ -5855,58 +5520,44 @@ msgid "Center person and all descendants"
 msgstr ""
 
 #: FamilySheet/FamilySheet.py:874
-#, fuzzy
-#| msgid "Whether to include keys and values."
 msgid "Whether to include descendants, and which ones."
-msgstr "Om nøkler og verdier skal tas med."
+msgstr "Om etterkommere skal tas med, og hvilke."
 
 #: FamilySheet/FamilySheet.py:880 FamilyTree/FamilyTree.py:1084
 msgid "Replace first name with call name"
-msgstr ""
+msgstr "Erstatt fornavn med tiltalsnavn"
 
 #: FamilySheet/FamilySheet.py:881 FamilyTree/FamilyTree.py:1085
 msgid "Underline call name in first name / add call name to first name"
-msgstr ""
+msgstr "Understrek tiltalsnavn i fornavn / legg tiltalsnavn til i fornavn"
 
 #: FamilySheet/FamilySheet.py:882
-#, fuzzy
-#| msgid "Whether to include author."
 msgid "Whether to include call name, and how."
-msgstr "Om forfatter skal tas med."
+msgstr "Om tiltalsnavn skal inkluderes, og hvordan."
 
 #: FamilySheet/FamilySheet.py:885
 msgid "Print placeholders for missing information"
 msgstr ""
 
 #: FamilySheet/FamilySheet.py:909
-#, fuzzy
-#| msgid "The basic style used for the table display."
 msgid "The basic style used for the text display"
-msgstr "Den grunnleggende stilen som brukes for bordvisningen."
+msgstr "Den grunnleggende stilen som brukes for tekstvisningen"
 
 #: FamilySheet/FamilySheet.py:919
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the page key on the top"
-msgstr "Stilen som brukes på sidens tittel."
+msgstr "Stilen som brukes for sideoverskriften øverst"
 
 #: FamilySheet/FamilySheet.py:928
-#, fuzzy
-#| msgid "The style used for each section."
 msgid "The style used for names"
-msgstr "Stilen som brukes til kapitteloverskriften."
+msgstr "Stilen som brukes for navn"
 
 #: FamilySheet/FamilySheet.py:938
-#, fuzzy
-#| msgid "The style used for each section."
 msgid "The style used for numbers"
-msgstr "Stilen som brukes til kapitteloverskriften."
+msgstr "Stilen som brukes for tall"
 
 #: FamilySheet/FamilySheet.py:948
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid "The style used for footnotes (notes and source references)"
-msgstr "Stilen som brukes på rapportens tittel."
+msgstr "Stilen som brukes for fotnoter (notater og kildehenvisninger)"
 
 #: FamilyTree/FamilyTree.gpr.py:5
 msgid "Produces a graphical family tree."
@@ -5918,10 +5569,8 @@ msgid "Family Tree for %s"
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:152
-#, fuzzy
-#| msgid "Places tool"
 msgid "Paper too small"
-msgstr "Verktøy for stedsnavn"
+msgstr "Papiret er for lite"
 
 #: FamilyTree/FamilyTree.py:153
 msgid "Some elements may not appear or be badly rendered."
@@ -5983,10 +5632,8 @@ msgstr ""
 
 #: FamilyTree/FamilyTree.py:1051
 #: TimelinePedigreeView/TimelinePedigreeView.py:1465
-#, fuzzy
-#| msgid "Descendant"
 msgid "Descendant Generations"
-msgstr "Etterkommer"
+msgstr "Etterkommergenerasjoner"
 
 #: FamilyTree/FamilyTree.py:1052
 msgid "The number of descendant generations to include in the tree"
@@ -6049,16 +5696,12 @@ msgid "Whether to shuffle colors or order them in rainbow fashion."
 msgstr ""
 
 #: FamilyTree/FamilyTree.py:1091
-#, fuzzy
-#| msgid "Include Options"
 msgid "Include Occupation"
-msgstr "Ta med opsjoner"
+msgstr "Ta med yrke"
 
 #: FamilyTree/FamilyTree.py:1097
-#, fuzzy
-#| msgid "Include media"
 msgid "Include Residence"
-msgstr "Ta med media"
+msgstr "Ta med bosted"
 
 #: FamilyTree/FamilyTree.py:1100
 msgid "Print event data (dead person)"
@@ -6097,22 +5740,16 @@ msgid "Include event description"
 msgstr "Inkluder hendelsesbeskrivelse"
 
 #: FamilyTree/FamilyTree.py:1134
-#, fuzzy
-#| msgid "Image Options"
 msgid "Text Options"
-msgstr "Bildevalg"
+msgstr "Tekstvalg"
 
 #: FamilyTree/FamilyTree.py:1162
-#, fuzzy
-#| msgid "The style used for each section."
 msgid "The style used for names."
-msgstr "Stilen som brukes til kapitteloverskriften."
+msgstr "Stilen som brukes for navn."
 
 #: FamilyTree/FamilyTree.py:1170
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid "The style used for data (birth, death, marriage, divorce)."
-msgstr "Stilen som brukes på rapportens tittel."
+msgstr "Stilen som brukes for data (fødsel, død, ekteskap, skilsmisse)."
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:4
 msgid "FamilyTree DNA"
@@ -6147,10 +5784,8 @@ msgid "Shared Citation ID :"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:151
-#, fuzzy
-#| msgid "Active person"
 msgid "Active Person : "
-msgstr "Aktiv person"
+msgstr "Aktiv person : "
 
 #: FamilyTreeDNA/ftdna_import.py:165
 msgid "Import data from Family Finder files"
@@ -6173,6 +5808,8 @@ msgstr ""
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
 msgstr ""
+"{} koblinger til DNA-data opprettet. {} attributter for haplogrupper "
+"opprettet. \n"
 
 #: FamilyTreeDNA/ftdna_import.py:228
 msgid "No Family Finder File specified"
@@ -6185,6 +5822,8 @@ msgstr ""
 #: FamilyTreeDNA/ftdna_import.py:236
 msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
 msgstr ""
+"Ingen koblinger funnet i FTDNA-notater. Ingen attributter for haplogrupper "
+"opprettet."
 
 #: FamilyTreeDNA/ftdna_import.py:307
 #, python-format
@@ -6223,16 +5862,12 @@ msgstr ""
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
-#, fuzzy
-#| msgid "Active person"
 msgid "The active Person"
-msgstr "Aktiv person"
+msgstr "Den aktive personen"
 
 #: FilterRules/activepersonrule.py:58
-#, fuzzy
-#| msgid "No relation to active person"
 msgid "Matches the active person"
-msgstr "Ingen slektskap til aktiv person"
+msgstr "Matcher aktiv person"
 
 #: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:90
 #: FilterRules/ageatdeath.py:92
@@ -6349,10 +5984,8 @@ msgid "People who are part of families matching <filter>"
 msgstr ""
 
 #: FilterRules/infamilyrule.py:67 FilterRules/infamilyrule.py:142
-#, fuzzy
-#| msgid "Include Events"
 msgid "Include Children"
-msgstr "Ta med hendelser"
+msgstr "Inkluder barn"
 
 #: FilterRules/infamilyrule.py:68
 #, fuzzy
@@ -6577,10 +6210,8 @@ msgstr "Rediger skjema"
 #: Form/editform.py:235 SourceIndex/birth.glade:113
 #: SourceIndex/census.glade:873 SourceIndex/death.glade:182
 #: SourceIndex/marriage.glade:1263
-#, fuzzy
-#| msgid "Differences"
 msgid "Reference:"
-msgstr "Forskjeller"
+msgstr "Referanse:"
 
 #: Form/editform.py:431
 msgid "Headings"
@@ -7723,10 +7354,8 @@ msgid "12. Religion"
 msgstr ""
 
 #: Form/form_ca.xml.h:321 Form/form_ca.xml.h:375
-#, fuzzy
-#| msgid "Original: "
 msgid "13. Origin"
-msgstr "Opprinnelig: "
+msgstr "13. Opprinnelse"
 
 #: Form/form_ca.xml.h:323 Form/form_ca.xml.h:377
 msgid "14. Profession, Occupation or Trade"
@@ -7975,10 +7604,8 @@ msgstr ""
 
 #: Form/form_ca.xml.h:449 Form/form_ca.xml.h:528 Form/form_ca.xml.h:660
 #: Form/form_ca.xml.h:753 Form/form_ca.xml.h:793
-#, fuzzy
-#| msgid "TR-Title"
 msgid "SubTitle"
-msgstr "TR-Tittel"
+msgstr "Undertittel"
 
 #: Form/form_ca.xml.h:454 Form/form_ca.xml.h:533 Form/form_ca.xml.h:665
 msgid "PollSub"
@@ -8430,10 +8057,8 @@ msgid "27. Church or place of worship: Number of communicants"
 msgstr ""
 
 #: Form/form_ca.xml.h:595
-#, fuzzy
-#| msgid "Selecting... "
 msgid "Seating"
-msgstr "Velger... "
+msgstr "Plassering"
 
 #: Form/form_ca.xml.h:596
 msgid "28. Church or place of worship: Seating capacity"
@@ -8756,10 +8381,8 @@ msgid "Dwelling house"
 msgstr ""
 
 #: Form/form_ca.xml.h:763
-#, fuzzy
-#| msgid "Family:"
 msgid "2. Family"
-msgstr "Familie:"
+msgstr "2. Familie"
 
 #: Form/form_ca.xml.h:764
 msgid "Family or household"
@@ -9186,7 +8809,7 @@ msgstr ""
 
 #: Form/form_dk.xml.h:327
 msgid "Year stayed in parish"
-msgstr ""
+msgstr "År bosatt i sognet"
 
 #: Form/form_dk.xml.h:328
 msgid "Hvilket aar taget ophold i sognet"
@@ -9362,10 +8985,8 @@ msgstr ""
 #: Form/form_us.xml.h:1141 Form/form_us.xml.h:1155 Form/form_us.xml.h:1452
 #: Form/form_us.xml.h:2375 Form/form_us.xml.h:2488 Form/form_us.xml.h:2513
 #: Form/form_us.xml.h:2565
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of Birth"
-msgstr "Steds_filter:"
+msgstr "Fødested"
 
 #: Form/form_gb.xml.h:53
 #, fuzzy
@@ -9379,7 +9000,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:60 Form/form_gb.xml.h:69 Form/form_gb.xml.h:85
 msgid "Parish or Township"
-msgstr ""
+msgstr "Sogn eller Township"
 
 #: Form/form_gb.xml.h:62
 msgid "NAMES of each Person who abode therein the preceding Night."
@@ -9431,7 +9052,7 @@ msgstr ""
 #: Form/form_gb.xml.h:87 Form/form_gb.xml.h:105 Form/form_gb.xml.h:126
 #: Form/form_gb.xml.h:148 Form/form_gb.xml.h:277
 msgid "Municipal Ward"
-msgstr ""
+msgstr "Kommunekrets"
 
 #: Form/form_gb.xml.h:88 Form/form_gb.xml.h:106 Form/form_gb.xml.h:127
 #: Form/form_gb.xml.h:601
@@ -9456,7 +9077,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:103 Form/form_gb.xml.h:124
 msgid "Civil Parish or Township"
-msgstr ""
+msgstr "Sivilt sogn eller Township"
 
 #: Form/form_gb.xml.h:108 Form/form_gb.xml.h:451 Form/form_gb.xml.h:479
 #: Form/form_gb.xml.h:510 Form/form_gb.xml.h:549
@@ -9512,7 +9133,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:131 Form/form_gb.xml.h:153 Form/form_gb.xml.h:282
 msgid "Ecclesiastical Parish or District"
-msgstr ""
+msgstr "Kirkesogn eller distrikt"
 
 #: Form/form_gb.xml.h:137 Form/form_gb.xml.h:159 Form/form_gb.xml.h:288
 msgid "CONDITION as to Marriage"
@@ -9539,10 +9160,8 @@ msgstr "Administrativt fylke"
 #: Form/form_gb.xml.h:146 Form/form_gb.xml.h:172 Form/form_gb.xml.h:275
 #: Form/form_gb.xml.h:303 Form/form_gb.xml.h:445 Form/form_gb.xml.h:472
 #: Form/form_gb.xml.h:500 Form/form_gb.xml.h:537
-#, fuzzy
-#| msgid "Parish:"
 msgid "Civil Parish"
-msgstr "Prestegjeld:"
+msgstr "Sivilt sogn"
 
 #: Form/form_gb.xml.h:147 Form/form_gb.xml.h:276
 msgid "Municipal Borough"
@@ -9580,7 +9199,7 @@ msgstr ""
 
 #: Form/form_gb.xml.h:173 Form/form_gb.xml.h:304 Form/form_gb.xml.h:539
 msgid "Ecclesiastical Parish"
-msgstr ""
+msgstr "Kirkesogn"
 
 #: Form/form_gb.xml.h:174 Form/form_gb.xml.h:305
 msgid "County Borough, Municipal Borough, or Urban District"
@@ -9716,10 +9335,8 @@ msgid "Whether Employer, Worker or Working on Own Account"
 msgstr ""
 
 #: Form/form_gb.xml.h:223 Form/form_gb.xml.h:356
-#, fuzzy
-#| msgid "Whether to include author."
 msgid "Whether Working at Home"
-msgstr "Om forfatter skal tas med."
+msgstr "Om arbeider hjemme"
 
 #: Form/form_gb.xml.h:225 Form/form_gb.xml.h:358
 msgid "BIRTHPLACE of every Person."
@@ -9867,17 +9484,17 @@ msgstr ""
 #: Form/form_gb.xml.h:404 Form/form_gb.xml.h:419 Form/form_gb.xml.h:446
 #: Form/form_gb.xml.h:473 Form/form_gb.xml.h:501 Form/form_gb.xml.h:540
 msgid "Quoad Sacra Parish"
-msgstr ""
+msgstr "Kirkesogn"
 
 #: Form/form_gb.xml.h:405 Form/form_gb.xml.h:420 Form/form_gb.xml.h:447
 #: Form/form_gb.xml.h:475 Form/form_gb.xml.h:503 Form/form_gb.xml.h:542
 msgid "Parliamentary Burgh"
-msgstr ""
+msgstr "Parlamentarisk burgh"
 
 #: Form/form_gb.xml.h:406 Form/form_gb.xml.h:421 Form/form_gb.xml.h:448
 #: Form/form_gb.xml.h:476 Form/form_gb.xml.h:505 Form/form_gb.xml.h:544
 msgid "Royal Burgh"
-msgstr ""
+msgstr "Kongelig burgh"
 
 #: Form/form_gb.xml.h:407 Form/form_gb.xml.h:604
 msgid "Town or Village"
@@ -9971,11 +9588,11 @@ msgstr ""
 
 #: Form/form_gb.xml.h:506 Form/form_gb.xml.h:545
 msgid "Municipal Burgh"
-msgstr ""
+msgstr "Kommunal burgh"
 
 #: Form/form_gb.xml.h:508 Form/form_gb.xml.h:547
 msgid "Burgh Ward"
-msgstr ""
+msgstr "Burgh-krets"
 
 #: Form/form_gb.xml.h:511 Form/form_gb.xml.h:550
 msgid "Island"
@@ -9986,10 +9603,8 @@ msgid "Gaellic or G. & E."
 msgstr ""
 
 #: Form/form_gb.xml.h:538
-#, fuzzy
-#| msgid "Parish:"
 msgid "Parish Ward"
-msgstr "Prestegjeld:"
+msgstr "Sognekrets"
 
 #: Form/form_gb.xml.h:563
 msgid "Profession or Occupation"
@@ -10174,10 +9789,8 @@ msgstr ""
 #: Form/form_us.xml.h:665 Form/form_us.xml.h:707 Form/form_us.xml.h:793
 #: Form/form_us.xml.h:836 Form/form_us.xml.h:894 Form/form_us.xml.h:1095
 #: Form/form_us.xml.h:1678
-#, fuzzy
-#| msgid "Select None"
 msgid "Sheet No."
-msgstr "Velg Ingen"
+msgstr "Arknr."
 
 #: Form/form_us.xml.h:5 Form/form_us.xml.h:18 Form/form_us.xml.h:39
 #: Form/form_us.xml.h:60 Form/form_us.xml.h:100 Form/form_us.xml.h:169
@@ -10199,10 +9812,8 @@ msgstr ""
 #: Form/form_us.xml.h:1650 Form/form_us.xml.h:1667 Form/form_us.xml.h:1845
 #: Form/form_us.xml.h:1877 Form/form_us.xml.h:1898 Form/form_us.xml.h:1927
 #: Form/form_us.xml.h:1981 Form/form_us.xml.h:2289 Form/form_us.xml.h:2318
-#, fuzzy
-#| msgid "Country:"
 msgid "County of"
-msgstr "Land:"
+msgstr "Fylke i"
 
 #: Form/form_us.xml.h:7 Form/form_us.xml.h:20 Form/form_us.xml.h:41
 #: Form/form_us.xml.h:62 Form/form_us.xml.h:102 Form/form_us.xml.h:171
@@ -10222,10 +9833,8 @@ msgid "Free white females"
 msgstr ""
 
 #: Form/form_us.xml.h:12 Form/form_us.xml.h:33 Form/form_us.xml.h:54
-#, fuzzy
-#| msgid "Colour of female persons:"
 msgid "All other free persons"
-msgstr "Farge til kvinner:"
+msgstr "Alle andre frie personer"
 
 #: Form/form_us.xml.h:13 Form/form_us.xml.h:34 Form/form_us.xml.h:55
 msgid "Slaves"
@@ -10306,10 +9915,8 @@ msgid "Persons engaged in Manufactures"
 msgstr ""
 
 #: Form/form_us.xml.h:80
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Slave males under 14"
-msgstr "Lagre bilder i ..."
+msgstr "Mannlige slaver under 14 år"
 
 #: Form/form_us.xml.h:81
 msgid "Slave males 14-25"
@@ -10324,10 +9931,8 @@ msgid "Slave males 45 and over"
 msgstr ""
 
 #: Form/form_us.xml.h:84
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Slave females under 14"
-msgstr "Lagre bilder i ..."
+msgstr "Kvinnelige slaver under 14 år"
 
 #: Form/form_us.xml.h:85
 msgid "Slave females 14-25"
@@ -10478,10 +10083,8 @@ msgid "Free white females 100 and over"
 msgstr ""
 
 #: Form/form_us.xml.h:131 Form/form_us.xml.h:212
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Slave males under 10"
-msgstr "Lagre bilder i ..."
+msgstr "Mannlige slaver under 10 år"
 
 #: Form/form_us.xml.h:132 Form/form_us.xml.h:213
 msgid "Slave males 10-23"
@@ -10504,10 +10107,8 @@ msgid "Slave males 100 and over"
 msgstr ""
 
 #: Form/form_us.xml.h:137 Form/form_us.xml.h:218
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Slave females under 10"
-msgstr "Lagre bilder i ..."
+msgstr "Kvinnelige slaver under 10 år"
 
 #: Form/form_us.xml.h:138 Form/form_us.xml.h:219
 msgid "Slave females 10-23"
@@ -10662,10 +10263,8 @@ msgid "Colored persons deaf/dumb"
 msgstr ""
 
 #: Form/form_us.xml.h:241
-#, fuzzy
-#| msgid "Color of male persons:"
 msgid "Colored persons blind"
-msgstr "Farge til menn:"
+msgstr "Blinde fargede personer"
 
 #: Form/form_us.xml.h:242
 msgid "Colored persons insane and idiots at private charge"
@@ -10723,10 +10322,8 @@ msgstr ""
 #: Form/form_us.xml.h:260 Form/form_us.xml.h:336 Form/form_us.xml.h:435
 #: Form/form_us.xml.h:465 Form/form_us.xml.h:615 Form/form_us.xml.h:1105
 #: Form/form_us.xml.h:1848
-#, fuzzy
-#| msgid "Family:"
 msgid "Family No."
-msgstr "Familie:"
+msgstr "Familienr."
 
 #: Form/form_us.xml.h:266 Form/form_us.xml.h:342 Form/form_us.xml.h:441
 msgid "Value of real estate"
@@ -10742,10 +10339,8 @@ msgstr ""
 #: Form/form_us.xml.h:1585 Form/form_us.xml.h:1611 Form/form_us.xml.h:1657
 #: Form/form_us.xml.h:1870 Form/form_us.xml.h:2336 Form/form_us.xml.h:2353
 #: Form/form_us.xml.h:2528 Form/form_us.xml.h:2599
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of birth"
-msgstr "Steds_filter:"
+msgstr "Fødested"
 
 #: Form/form_us.xml.h:268 Form/form_us.xml.h:345
 msgid "Married within the year"
@@ -12399,10 +11994,8 @@ msgid "Census Date"
 msgstr ""
 
 #: Form/form_us.xml.h:974
-#, fuzzy
-#| msgid "restricted to:"
 msgid "District of"
-msgstr "begrenset til:"
+msgstr "Distrikt i"
 
 #: Form/form_us.xml.h:977
 msgid "Married Y/N"
@@ -12429,10 +12022,8 @@ msgid "Date Entered"
 msgstr ""
 
 #: Form/form_us.xml.h:989 Form/form_us.xml.h:1010
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of Enlistment"
-msgstr "Steds_filter:"
+msgstr "Innrulleringssted"
 
 #: Form/form_us.xml.h:990
 msgid "Name, Letter of Co., Number of Regiment"
@@ -12447,10 +12038,8 @@ msgid "Re-enlisted as"
 msgstr ""
 
 #: Form/form_us.xml.h:993
-#, fuzzy
-#| msgid "date: "
 msgid "On date"
-msgstr "dato: "
+msgstr "På dato"
 
 #: Form/form_us.xml.h:995
 msgid "and continued until"
@@ -13015,10 +12604,8 @@ msgstr ""
 
 #: Form/form_us.xml.h:1246 Form/form_us.xml.h:1273 Form/form_us.xml.h:1874
 #: Form/form_us.xml.h:1961
-#, fuzzy
-#| msgid "City:"
 msgid "City of"
-msgstr "By/Kommune:"
+msgstr "By i"
 
 #: Form/form_us.xml.h:1247 Form/form_us.xml.h:1275 Form/form_us.xml.h:1876
 msgid "Township of"
@@ -13203,38 +12790,28 @@ msgid "Color, White-Black-Yellow-Red"
 msgstr ""
 
 #: Form/form_us.xml.h:1328
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of Birth-Self"
-msgstr "Steds_filter:"
+msgstr "Eget fødested"
 
 #: Form/form_us.xml.h:1329
 msgid "Place of birth, Self"
 msgstr ""
 
 #: Form/form_us.xml.h:1330
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of Birth-Mother"
-msgstr "Steds_filter:"
+msgstr "Fødested – mor"
 
 #: Form/form_us.xml.h:1331
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of birth, Mother"
-msgstr "Steds_filter:"
+msgstr "Fødested, mor"
 
 #: Form/form_us.xml.h:1332
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of Birth-Father"
-msgstr "Steds_filter:"
+msgstr "Fødested – far"
 
 #: Form/form_us.xml.h:1333
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of birth, Father"
-msgstr "Steds_filter:"
+msgstr "Fødested, far"
 
 #: Form/form_us.xml.h:1334
 msgid "Own home or farm"
@@ -13510,10 +13087,8 @@ msgid "Naturalized if foreign born?"
 msgstr ""
 
 #: Form/form_us.xml.h:1429 Form/form_us.xml.h:2332
-#, fuzzy
-#| msgid "Color of active person:"
 msgid "Color or Race"
-msgstr "Farge for aktiv person:"
+msgstr "Farge eller rase"
 
 #: Form/form_us.xml.h:1432
 msgid "Home Owned or Rented"
@@ -14064,10 +13639,8 @@ msgid "Total Colored Males"
 msgstr ""
 
 #: Form/form_us.xml.h:1718 Form/form_us.xml.h:1791
-#, fuzzy
-#| msgid "Colour of female persons:"
 msgid "Colored females under 10"
-msgstr "Farge til kvinner:"
+msgstr "Kvinnelige fargede under 10 år"
 
 #: Form/form_us.xml.h:1719 Form/form_us.xml.h:1792
 msgid "Colored females 10-17"
@@ -14366,10 +13939,8 @@ msgid "the County of"
 msgstr ""
 
 #: Form/form_us.xml.h:1956
-#, fuzzy
-#| msgid "Country:"
 msgid "Birth Country"
-msgstr "Land:"
+msgstr "Fødeland"
 
 #: Form/form_us.xml.h:1957 Form/form_us.xml.h:1971 Form/form_us.xml.h:1990
 #: Form/form_us.xml.h:2010
@@ -14382,7 +13953,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:1960
 msgid "Election District, Ward"
-msgstr ""
+msgstr "Valgdistrikt, krets"
 
 #: Form/form_us.xml.h:1970 Form/form_us.xml.h:1989 Form/form_us.xml.h:2009
 msgid "Number of years in the US"
@@ -14673,10 +14244,8 @@ msgstr "Farger"
 
 #: Form/form_us.xml.h:2240 Form/form_us.xml.h:2252 Form/form_us.xml.h:2264
 #: Form/form_us.xml.h:2276 Form/form_us.xml.h:2305
-#, fuzzy
-#| msgid "Colour of female persons:"
 msgid "Colored females"
-msgstr "Farge til kvinner:"
+msgstr "Fargede kvinner"
 
 #: Form/form_us.xml.h:2241 Form/form_us.xml.h:2253 Form/form_us.xml.h:2265
 msgid "Deaf & Dumb"
@@ -14772,10 +14341,8 @@ msgstr ""
 
 #: Form/form_us.xml.h:2369 Form/form_us.xml.h:2390 Form/form_us.xml.h:2483
 #: Form/form_us.xml.h:2592
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of Record"
-msgstr "Steds_filter:"
+msgstr "Registreringssted"
 
 #: Form/form_us.xml.h:2370 Form/form_us.xml.h:2391 Form/form_us.xml.h:2484
 #: Form/form_us.xml.h:2593
@@ -14822,10 +14389,8 @@ msgid "Married by"
 msgstr ""
 
 #: Form/form_us.xml.h:2398
-#, fuzzy
-#| msgid "Places in a rectangle:"
 msgid "Place of Marriage"
-msgstr "Steder i et rektangel:"
+msgstr "Vielsessted"
 
 #: Form/form_us.xml.h:2400
 msgid "Consent given by"
@@ -14882,10 +14447,8 @@ msgid "Date of Death"
 msgstr ""
 
 #: Form/form_us.xml.h:2457
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place of Burial"
-msgstr "Steds_filter:"
+msgstr "Gravsted"
 
 #: Form/form_us.xml.h:2458
 msgid "Date of Burial"
@@ -15135,20 +14698,16 @@ msgid ""
 msgstr ""
 
 #: Form/form_us.xml.h:2571
-#, fuzzy
-#| msgid "Relation type"
 msgid "Relationship "
-msgstr "Relasjonstype"
+msgstr "Slektskap "
 
 #: Form/form_us.xml.h:2572
 msgid "(8) Only on D.S.S. Form 1"
 msgstr ""
 
 #: Form/form_us.xml.h:2573
-#, fuzzy
-#| msgid "description"
 msgid "Occupation "
-msgstr "beskrivelse"
+msgstr "Yrke "
 
 #: Form/form_us.xml.h:2574
 msgid "(7) Only on D.S.S. Form 1 (Rev. 6-9-41)"
@@ -15233,10 +14792,8 @@ msgid "Date entered"
 msgstr ""
 
 #: Form/form_us.xml.h:2597
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place entered"
-msgstr "Steds_filter:"
+msgstr "Sted angitt"
 
 #: Form/form_us.xml.h:2598
 msgid "Term of enlistment"
@@ -15690,10 +15247,8 @@ msgid "Failure writing to %s"
 msgstr "Det oppsto en feil under skrivingen av %s"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:164
-#, fuzzy
-#| msgid "The file does not exist."
 msgid "Directory does not exist"
-msgstr "Fila eksisterer ikke."
+msgstr "Mappen finnes ikke"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:173
 msgid "GoogleEarth file exists!"
@@ -15955,20 +15510,18 @@ msgid "Missing remotely"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:1076
-#, fuzzy, python-format
-#| msgid "Problem reading file"
+#, python-format
 msgid "Downloading %s media file"
 msgid_plural "Downloading %s media files"
-msgstr[0] "Feil ved lesing av fil"
-msgstr[1] "Feil ved lesing av fil"
+msgstr[0] "Laster ned %s mediefil"
+msgstr[1] "Laster ned %s mediefiler"
 
 #: GrampsWebSync/grampswebsync.py:1084
-#, fuzzy, python-format
-#| msgid "Problem reading file"
+#, python-format
 msgid "Uploading %s media file"
 msgid_plural "Uploading %s media files"
-msgstr[0] "Feil ved lesing av fil"
-msgstr[1] "Feil ved lesing av fil"
+msgstr[0] "Laster opp %s mediefil"
+msgstr[1] "Laster opp %s mediefiler"
 
 #: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
 msgid "Gram.py Script"
@@ -16037,10 +15590,8 @@ msgid "Dark (default)"
 msgstr ""
 
 #: GraphView/avatars.py:61
-#, fuzzy
-#| msgid "Height:"
 msgid "Light"
-msgstr "Høyde:"
+msgstr "Lys"
 
 #: GraphView/avatars.py:62
 msgid "Cartoon"
@@ -16132,16 +15683,12 @@ msgid "Person theme"
 msgstr ""
 
 #: GraphView/graphview.py:817
-#, fuzzy
-#| msgid "Color of male persons:"
 msgid "Path color to home person"
-msgstr "Farge til menn:"
+msgstr "Farge på sti til startperson"
 
 #: GraphView/graphview.py:821
-#, fuzzy
-#| msgid "Font"
 msgid "Font:"
-msgstr "Skrifttype"
+msgstr "Skrifttype:"
 
 #: GraphView/graphview.py:835
 msgid "Avatars style"
@@ -16254,10 +15801,8 @@ msgid "Zoom to best fit"
 msgstr ""
 
 #: GraphView/graphview.py:1123
-#, fuzzy
-#| msgid "Color of active person:"
 msgid "Go to active person"
-msgstr "Farge for aktiv person:"
+msgstr "Gå til aktiv person"
 
 #: GraphView/graphview.py:1128
 #, fuzzy
@@ -16349,10 +15894,8 @@ msgid ""
 msgstr ""
 
 #: GraphView/graphview.py:1519
-#, fuzzy
-#| msgid "Active person"
 msgid "Change active person?"
-msgstr "Aktiv person"
+msgstr "Endre aktiv person?"
 
 #: GraphView/graphview.py:2668
 #, python-brace-format
@@ -16424,10 +15967,8 @@ msgid "Add parents"
 msgstr "Legg til som foreldre"
 
 #: GraphView/graphview.py:4048 QuiltView/QuiltView.py:1500
-#, fuzzy
-#| msgid "Can't add new person."
 msgid "Set as home person"
-msgstr "Kan ikke legge til ny person."
+msgstr "Angi som startperson"
 
 #: GraphView/graphview.py:4051
 #, fuzzy
@@ -16522,10 +16063,8 @@ msgstr ""
 
 #: GraphView/search_widget.py:400 PluginManager\PluginManager.py:169
 #: SearchGramplet/SearchGramplet.py:391
-#, fuzzy
-#| msgid "Search"
 msgid "Search..."
-msgstr "Søk"
+msgstr "Søk…"
 
 #: GraphView/search_widget.py:592
 #, python-format
@@ -16599,10 +16138,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:129
-#, fuzzy
-#| msgid "Longitude :"
 msgid "Start longitude"
-msgstr "Lengdegrad :"
+msgstr "Startlengdegrad"
 
 #: Heatmap/heatmap.py:131
 msgid ""
@@ -16669,10 +16206,8 @@ msgid "Rows starting with this in the text column will be hidden "
 msgstr ""
 
 #: HistContext/HistContext.py:126
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Use filter "
-msgstr "Steds_filter:"
+msgstr "Bruk filter "
 
 #: HistContext/HistContext.py:129
 msgid "Show outside life span "
@@ -16886,10 +16421,8 @@ msgid ""
 msgstr ""
 
 #: ImportGramplet/ImportGramplet.py:198
-#, fuzzy
-#| msgid "SQLite Import"
 msgid "_Import"
-msgstr "SQLite Import"
+msgstr "_Importer"
 
 #: ImportGramplet/ImportGramplet.py:218
 msgid "Import done"
@@ -16918,10 +16451,8 @@ msgid "Select the difference you wish to examine."
 msgstr ""
 
 #: ImportMerge/importmerge.glade:180
-#, fuzzy
-#| msgid "Description: "
 msgid "Object Name/Description"
-msgstr "Beskrivelse: "
+msgstr "Objektnavn/-beskrivelse"
 
 #: ImportMerge/importmerge.glade:227
 msgid ""
@@ -16964,10 +16495,8 @@ msgid ""
 msgstr ""
 
 #: ImportMerge/importmerge.glade:392
-#, fuzzy
-#| msgid "Original: "
 msgid "Merge Original"
-msgstr "Opprinnelig: "
+msgstr "Flett opprinnelig"
 
 #: ImportMerge/importmerge.glade:396
 msgid ""
@@ -16982,10 +16511,8 @@ msgid "This button will replace your tree data with the imported data."
 msgstr "Denne knappen vil fjerne alle datafeltene som vises her."
 
 #: ImportMerge/importmerge.glade:422
-#, fuzzy
-#| msgid "SQLite Import"
 msgid "Merge Import"
-msgstr "SQLite Import"
+msgstr "Flett importering"
 
 #: ImportMerge/importmerge.glade:426
 msgid ""
@@ -16994,10 +16521,8 @@ msgid ""
 msgstr ""
 
 #: ImportMerge/importmerge.glade:437
-#, fuzzy
-#| msgid "SQLite Import"
 msgid "Edit Import"
-msgstr "SQLite Import"
+msgstr "Rediger importering"
 
 #: ImportMerge/importmerge.glade:441
 msgid ""
@@ -17059,10 +16584,8 @@ msgid "Replace with import"
 msgstr ""
 
 #: ImportMerge/importmerge.py:115
-#, fuzzy
-#| msgid "Original: "
 msgid "Keep original"
-msgstr "Opprinnelig: "
+msgstr "Behold opprinnelig"
 
 #: ImportMerge/importmerge.py:119
 msgid ""
@@ -17126,10 +16649,8 @@ msgstr ""
 
 #: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
 #: ImportMerge/importmerge.py:982
-#, fuzzy
-#| msgid "Original: "
 msgid "Original"
-msgstr "Opprinnelig: "
+msgstr "Opprinnelig"
 
 #: ImportMerge/importmerge.py:483 ImportMerge/importmerge.py:962
 #: ImportMerge/importmerge.py:983
@@ -17191,10 +16712,8 @@ msgid "Report of the last records that have been changed"
 msgstr ""
 
 #: LastChange/LastChangeGramplet.py:82
-#, fuzzy
-#| msgid "No changes need."
 msgid "changed on"
-msgstr "Ingen endring nødvendig."
+msgstr "endret den"
 
 #: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
@@ -17263,10 +16782,8 @@ msgid "Select From"
 msgstr "Velg Ingen"
 
 #: LastChange/LastChangeReport.py:403
-#, fuzzy
-#| msgid "The style used for each section."
 msgid "The style used for normal text"
-msgstr "Stilen som brukes til kapitteloverskriften."
+msgstr "Stilen som brukes for vanlig tekst"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:10
 msgid "Warp the chart shape"
@@ -17339,10 +16856,8 @@ msgid "Show birth label"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:26
-#, fuzzy
-#| msgid "Estimated birth date"
 msgid "Activate the birth label."
-msgstr "Estimerer fødselsdato"
+msgstr "Aktiver fødselsteksten."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:27
 msgid "Birth label along path"
@@ -17423,10 +16938,8 @@ msgid "Show death label"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:49
-#, fuzzy
-#| msgid "Estimated death date"
 msgid "Activate the death label."
-msgstr "Estimerer dødsdato"
+msgstr "Aktiver dødsfallsteksten."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:50
 msgid "Death label rotation"
@@ -17509,10 +17022,8 @@ msgid "The font size is given relatively to the line thickness."
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:78
-#, fuzzy
-#| msgid "Family:"
 msgid "Family shape"
-msgstr "Familie:"
+msgstr "Familieform"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:79
 msgid "The shape of the families can be varied."
@@ -17600,7 +17111,7 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 msgid "Show pedigree collapse"
-msgstr ""
+msgstr "Vis anesammenfall"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:100
 msgid ""
@@ -17608,6 +17119,8 @@ msgid ""
 "simple ancestor chart. If this is active, then every individual only appears "
 "once."
 msgstr ""
+"På grunn av anesammenfall kan én person forekomme flere ganger i en enkel "
+"anetavle. Hvis dette er aktivert, vises hver person bare én gang."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:102
 msgid ""
@@ -17662,6 +17175,9 @@ msgid ""
 "horizontal cross connections in larger graphs. This is happens if one person "
 "is shown in more than one family or it is caused by pedigree collapse."
 msgstr ""
+"Bytt plass på mor og far i en familie for å redusere antallet horisontale "
+"krysskoblinger i store grafer. Dette kan skje når en person vises i mer enn "
+"en familie, eller som følge av anesammenfall."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:113
 msgid "Highlight descandants"
@@ -17792,10 +17308,8 @@ msgid "Export View as SVG"
 msgstr "Eksporter visning som SVG"
 
 #: LifeLineChartView/lifelinechartview.py:946
-#, fuzzy
-#| msgid "Extra style settings:"
 msgid "Reset all settings"
-msgstr "Ekstra stilinnstillinger:"
+msgstr "Tilbakestill alle innstillinger"
 
 #: LinesOfDescendency/lines-of-descendency.gpr.py:31
 msgid "Lines of Descendency Report"
@@ -17863,10 +17377,8 @@ msgid "Type de liste"
 msgstr ""
 
 #: ListeEclair/ListeEclair.py:284
-#, fuzzy
-#| msgid "Include private records"
 msgid "Include private data"
-msgstr "Ta med private poster"
+msgstr "Ta med private opplysninger"
 
 #: ListeEclair/ListeEclair.py:301
 #, fuzzy
@@ -17884,7 +17396,7 @@ msgstr ""
 
 #: MediaBrowser/MediaBrowser.gpr.py:39
 msgid "Browser"
-msgstr ""
+msgstr "Nettleser"
 
 #: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
@@ -17934,22 +17446,16 @@ msgid "This report only supports PDF as output file format."
 msgstr ""
 
 #: MediaReport/media_report.py:229
-#, fuzzy
-#| msgid "General Data"
 msgid "General:"
-msgstr "Generelle data"
+msgstr "Generelt:"
 
 #: MediaReport/media_report.py:250
-#, fuzzy
-#| msgid "<-- Image Types -->"
 msgid "Image type:"
-msgstr "<-- Bildetyper -->"
+msgstr "Bildetype:"
 
 #: MediaReport/media_report.py:426
-#, fuzzy
-#| msgid "TR-Heading"
 msgid "Heading"
-msgstr "TR-Overskrift"
+msgstr "Overskrift"
 
 #: MediaReport/media_report.py:430
 msgid "Select a media file for this report"
@@ -17991,7 +17497,7 @@ msgstr "Ta med media"
 
 #: MediaReport/media_report.py:447
 msgid "Tags, notes and attributes will be included"
-msgstr ""
+msgstr "Etiketter, notater og attributter tas med"
 
 #: MediaReport/media_report.py:450
 #, fuzzy
@@ -18251,10 +17757,8 @@ msgid "URL Style"
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:941
-#, fuzzy
-#| msgid "Include source's data"
 msgid "Include URLs from database."
-msgstr "Ta med kildens data"
+msgstr "Ta med nettadresser fra databasen."
 
 #: NetworkChart/NetworkChart.py:942
 msgid "Dynamic URL = Prefix + GrampID + Suffix"
@@ -18275,10 +17779,8 @@ msgid "Default (include)"
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:948
-#, fuzzy
-#| msgid "Select A File"
 msgid "Select URL style."
-msgstr "Velg en fil"
+msgstr "Velg stil for nettadresser."
 
 #: NetworkChart/NetworkChart.py:951
 msgid "URL Prefix,Suffix"
@@ -18825,6 +18327,8 @@ msgid ""
 "Only individual ancestors were counted. Duplicates caused by pedigree "
 "collapse were ignored."
 msgstr ""
+"Det ble funnet {} av {} aner ({}).\n"
+"Bare unike aner ble telt. Duplikater som skyldtes anesammenfall ble ignorert."
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
 msgid "Shows the number of descendants of the current person"
@@ -19003,10 +18507,8 @@ msgstr "Temainnstillinger"
 
 #: PersonEverything/PersonEverything.py:455
 #: PersonEverything/PersonEverything.py:732
-#, fuzzy
-#| msgid "Description: "
 msgid "Description and Path"
-msgstr "Beskrivelse: "
+msgstr "Beskrivelse og sti"
 
 #: PersonEverything/PersonEverything.py:484
 msgid "Referenced Region"
@@ -19020,6 +18522,7 @@ msgstr ""
 msgid ""
 "Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
 msgstr ""
+"Fornavn: Tittel, fornavn, suffiks, tiltalsnavn, kallenavn, familiekallenavn"
 
 #: PersonEverything/PersonEverything.py:542
 msgid "Note type"
@@ -19059,10 +18562,8 @@ msgid "Media type"
 msgstr "Oppdatere filbane for media"
 
 #: PersonEverything/PersonEverything.py:679
-#, fuzzy
-#| msgid "Original: "
 msgid "Origin type"
-msgstr "Opprinnelig: "
+msgstr "Opprinnelsestype"
 
 #: PersonEverything/PersonEverything.py:686
 msgid "Prefix, surname, connector"
@@ -19172,10 +18673,8 @@ msgid "XMP Region Name"
 msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
-#, fuzzy
-#| msgid "Please set an active person."
 msgid "Set as active person"
-msgstr "Angi aktiv person."
+msgstr "Angi som aktiv person"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:498 RelID/relation_tab.py:633
 #, fuzzy
@@ -19189,10 +18688,8 @@ msgid "Replace to {0}"
 msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:880
-#, fuzzy
-#| msgid "Selecting... "
 msgid "Detecting faces..."
-msgstr "Velger... "
+msgstr "Oppdager ansikter…"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:905
 #, fuzzy
@@ -19256,7 +18753,7 @@ msgstr ""
 
 #: PhpGedView/phpgedviewconnector.py:204 PhpGedView/phpgedviewconnector.py:215
 msgid "Fetching index list..."
-msgstr ""
+msgstr "Henter registerliste…"
 
 #: PhpGedView/phpgedviewconnector.py:218 PhpGedView/phpgedviewconnector.py:222
 msgid "Fetching records..."
@@ -19283,10 +18780,8 @@ msgid "done."
 msgstr "utført."
 
 #: PhpGedView/phpgedviewconnector.py:347
-#, fuzzy
-#| msgid "Selecting... "
 msgid "Connecting..."
-msgstr "Velger... "
+msgstr "Kobler til…"
 
 #: PhpGedView/phpgedviewconnector.py:349
 msgid "Get version..."
@@ -19686,6 +19181,8 @@ msgid ""
 "Place Completion by parsing, file lookup and batch setting of place "
 "attributes"
 msgstr ""
+"Utfylling av steder ved hjelp av tolking, filoppslag og satsvis oppdatering "
+"av stedsattributter"
 
 #: PlaceCompletion/PlaceCompletion.py:258
 msgid "Error in PlaceCompletion.py"
@@ -19815,7 +19312,7 @@ msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1147
 msgid "City[(Street;Locality;Parish)],PostalCode,Country"
-msgstr ""
+msgstr "By[(Gate;Sted;Sogn)],Postnummer,Land"
 
 #: PlaceCompletion/PlaceCompletion.py:1149
 msgid "TitleStart [, City] [, State]"
@@ -19891,7 +19388,7 @@ msgstr ""
 
 #: PlaceCompletion/placecompletion.glade:195
 msgid "Parish:"
-msgstr "Prestegjeld:"
+msgstr "Sogn:"
 
 #: PlaceCompletion/placecompletion.glade:271
 msgid "Place _filter:"
@@ -19956,6 +19453,8 @@ msgid ""
 "Available variables: city, street, locality, parish, county, state, country, "
 "postal_code"
 msgstr ""
+"Tilgjengelige variabler: by, gate, sted, sogn, fylke, delstat, land, "
+"postnummer"
 
 #: PlaceCompletion/placecompletion.glade:820
 msgid ""
@@ -20057,10 +19556,8 @@ msgid "Search for:"
 msgstr "Søk i:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:26
-#, fuzzy
-#| msgid "place: "
 msgid "Found place:"
-msgstr "sted: "
+msgstr "Fant sted:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:53
 msgid "No DB entry is selected"
@@ -20150,10 +19647,8 @@ msgid "reverse hierarchy"
 msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:181
-#, fuzzy
-#| msgid "place: "
 msgid "Replace text"
-msgstr "sted: "
+msgstr "Erstatt tekst"
 
 #: PlaceUpdate/PlaceUpdate.py:184
 msgid "Use regex"
@@ -20318,10 +19813,8 @@ msgid "Upgrading %s objects..."
 msgstr ""
 
 #: PostgreSQLEnhanced/migration.py:478
-#, fuzzy
-#| msgid "Problem reading file"
 msgid "Creating indexes..."
-msgstr "Feil ved lesing av fil"
+msgstr "Oppretter registre…"
 
 #: PostgreSQLEnhanced/migration.py:489
 msgid "Upgrade completed!"
@@ -20903,7 +20396,7 @@ msgstr "Skriv inn Python-uttrykk"
 
 #: Query/Query.gpr.py:10
 msgid "Query Gramplet"
-msgstr "Query Gramplet"
+msgstr "Spørringsgramplet"
 
 #: Query/Query.gpr.py:11
 msgid "Gramplet for running SQL-like queries"
@@ -21062,10 +20555,8 @@ msgid "RIA Officers"
 msgstr ""
 
 #: RUWebConnectPack/RUWebPack.py:50
-#, fuzzy
-#| msgid "Family:"
 msgid "FamilySpace"
-msgstr "Familie:"
+msgstr "FamilySpace"
 
 #: RebuildTypes/RebuildTypes.gpr.py:26
 msgid "Rebuild Gramps Types"
@@ -21167,10 +20658,8 @@ msgid "Quit"
 msgstr ""
 
 #: RelID/relation_tab.py:376
-#, fuzzy
-#| msgid "No central person selected"
 msgid "No default person set."
-msgstr "Ingen fokusperson valgt"
+msgstr "Ingen standardperson er valgt."
 
 #: RelID/relation_tab.py:387
 msgid "Please wait, filtering..."
@@ -21181,10 +20670,8 @@ msgid "Network Metrics"
 msgstr ""
 
 #: RelID/relation_tab.py:447
-#, fuzzy
-#| msgid "TR-Table"
 msgid "Enabled"
-msgstr "TR-Bord"
+msgstr "Aktivert"
 
 #: RelID/relation_tab.py:449
 msgid "Enable or disable family network metrics"
@@ -21239,10 +20726,8 @@ msgid "Data saved to : {filename}"
 msgstr ""
 
 #: RelID/relation_tab.py:676
-#, fuzzy
-#| msgid "Failed writing %s: %s"
 msgid "Failed to save data."
-msgstr "Feil ved skriving av %s: %s"
+msgstr "Kunne ikke lagre data."
 
 #: RelID/relation_tab.py:689
 #, fuzzy
@@ -21366,10 +20851,8 @@ msgid "No %s objects were found in database."
 msgstr ""
 
 #: RemoveTagTool/RemoveTagTool.py:249
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Process tags..."
-msgstr "Prosesserer...\n"
+msgstr "Behandler etiketter…"
 
 #: RemoveTagTool/RemoveTagTool.py:266
 msgid "added"
@@ -21429,7 +20912,7 @@ msgstr "Velg en fil"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
-msgstr "Inkluder arkivenes URL"
+msgstr "Inkluder arkivenes nettadresser"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:432
 msgid "Whether to include urls on repository."
@@ -21480,10 +20963,8 @@ msgid "Whether to include notes on repositories and sources."
 msgstr "Om notater for arkiver og kilder skal inkluderes."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:460
-#, fuzzy
-#| msgid "Whether to include images"
 msgid "Whether to include media."
-msgstr "Om bilder skal tas med"
+msgstr "Om mediefiler skal tas med."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:463
 #, fuzzy
@@ -21637,28 +21118,22 @@ msgid ""
 msgstr ""
 
 #: SearchGramplet/SearchGramplet.py:743
-#, fuzzy, python-format
-#| msgid "Birthdays"
+#, python-format
 msgid "Birth: %s"
-msgstr "Bursdager"
+msgstr "Født: %s"
 
 #: SearchGramplet/SearchGramplet.py:747
-#, fuzzy, python-format
-#| msgid "Media Path Update"
+#, python-format
 msgid "Death: %s"
-msgstr "Oppdatere filbane for media"
+msgstr "Død: %s"
 
 #: SearchGramplet/SearchGramplet.py:918
-#, fuzzy
-#| msgid "Please set an active person."
 msgid "Set as Active person"
-msgstr "Angi aktiv person."
+msgstr "Angi som aktiv person"
 
 #: SearchGramplet/SearchGramplet.py:920
-#, fuzzy
-#| msgid "Can't add new person."
 msgid "Set as Home person"
-msgstr "Kan ikke legge til ny person."
+msgstr "Angi som startperson"
 
 #: SetAttributeTool/SetAttributeTool.gpr.py:26
 #: SetAttributeTool/SetAttributeTool.py:122
@@ -21808,25 +21283,23 @@ msgstr ""
 
 #: SourceIndex/SourceIndex.gpr.py:24 SourceIndex/SourceIndex.gpr.py:25
 msgid "BirthIndex"
-msgstr ""
+msgstr "Fødselsregister"
 
 #: SourceIndex/SourceIndex.gpr.py:40 SourceIndex/SourceIndex.gpr.py:41
 msgid "MarriageIndex"
-msgstr ""
+msgstr "Vielsesregister"
 
 #: SourceIndex/SourceIndex.gpr.py:56 SourceIndex/SourceIndex.gpr.py:57
 msgid "DeathIndex"
-msgstr ""
+msgstr "Dødsregister"
 
 #: SourceIndex/SourceIndex.gpr.py:72 SourceIndex/SourceIndex.gpr.py:73
 msgid "CensusIndex"
-msgstr ""
+msgstr "Folketellingsregister"
 
 #: SourceIndex/SourceIndex.gpr.py:104 SourceIndex/SourceIndex.gpr.py:105
-#, fuzzy
-#| msgid "No Source"
 msgid "SourceIndex"
-msgstr "Ingen kilde"
+msgstr "Kilderegister"
 
 #: SourceIndex/birth.glade:7 SourceIndex/index.glade:585
 msgid "birth"
@@ -21978,26 +21451,24 @@ msgid ""
 msgstr ""
 
 #: SourceIndex/birth.glade:1568
-#, fuzzy
-#| msgid "place: "
 msgid ""
 "Death\n"
 "place:"
-msgstr "sted: "
+msgstr ""
+"Døds-\n"
+"sted:"
 
 #: SourceIndex/birth.glade:1588
-#, fuzzy
-#| msgid "place: "
 msgid ""
 "Birth\n"
 "place:"
-msgstr "sted: "
+msgstr ""
+"Føde-\n"
+"sted:"
 
 #: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
-#, fuzzy
-#| msgid "Original: "
 msgid "Origine:"
-msgstr "Opprinnelig: "
+msgstr "Opprinnelse:"
 
 #: SourceIndex/birth.glade:2272
 msgid "<b><i>Citation</i></b>"
@@ -22033,22 +21504,16 @@ msgid "Birth date:"
 msgstr ""
 
 #: SourceIndex/census.glade:364
-#, fuzzy
-#| msgid "Media Path Update"
 msgid "Death date:"
-msgstr "Oppdatere filbane for media"
+msgstr "Dødsdato:"
 
 #: SourceIndex/census.glade:381 SourceIndex/death.glade:1035
-#, fuzzy
-#| msgid "place: "
 msgid "Birth place:"
-msgstr "sted: "
+msgstr "Fødested:"
 
 #: SourceIndex/census.glade:414
-#, fuzzy
-#| msgid "place: "
 msgid "Death place:"
-msgstr "sted: "
+msgstr "Dødssted:"
 
 #: SourceIndex/census.glade:447
 #, fuzzy
@@ -22065,17 +21530,13 @@ msgstr ""
 #: SourceIndex/marriage.glade:846 SourceIndex/marriage.glade:865
 #: SourceIndex/marriage.glade:884 SourceIndex/marriage.glade:1526
 #: SourceIndex/marriage.glade:1654 SourceIndex/witness.glade:124
-#, fuzzy
-#| msgid "Original: "
 msgid "Origin:"
-msgstr "Opprinnelig: "
+msgstr "Opprinnelse:"
 
 #: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
 #: WebSearch/markdown_place_history_formatter.py:59
-#, fuzzy
-#| msgid "TR-Note"
 msgid "Note:"
-msgstr "TR-Merk"
+msgstr "Notat:"
 
 #: SourceIndex/census.glade:712 SourceIndex/death.glade:621
 msgid "<b>Data person</b>"
@@ -22083,10 +21544,8 @@ msgstr ""
 
 #: SourceIndex/census.glade:904 SourceIndex/death.glade:217
 #: SourceIndex/marriage.glade:1296
-#, fuzzy
-#| msgid "volume"
 msgid "Volume:"
-msgstr "volum"
+msgstr "Volum:"
 
 #: SourceIndex/census.glade:1046
 msgid "order, person, surname, given, age, status, occupation, etc ..."
@@ -22109,10 +21568,8 @@ msgid "Marriage date:"
 msgstr ""
 
 #: SourceIndex/death.glade:1163
-#, fuzzy
-#| msgid "Change places"
 msgid "Marriage place:"
-msgstr "Endre steder"
+msgstr "Vielsessted:"
 
 #: SourceIndex/death.glade:1195
 msgid "<b>Data mother</b>"
@@ -22141,7 +21598,7 @@ msgstr ""
 
 #: SourceIndex/index.glade:7
 msgid "index"
-msgstr ""
+msgstr "register"
 
 #: SourceIndex/index.glade:50
 msgid "_File"
@@ -22244,10 +21701,8 @@ msgid "Select a birth source"
 msgstr ""
 
 #: SourceIndex/index.glade:617
-#, fuzzy
-#| msgid "Select an image to begin..."
 msgid "Select a marriage source"
-msgstr "Velg et bilde for å begynne..."
+msgstr "Velg en kilde for vielsen"
 
 #: SourceIndex/index.glade:678
 msgid "Select a death source"
@@ -22277,7 +21732,7 @@ msgid ""
 "fields: id, repository, person name, birth date and place, parents."
 msgstr ""
 "Registrerer transkripsjoner … fødsler/dødsfall/ekteskap/folketellinger med "
-"vanlige felter: ID, arkiv, personnavn, fødselsdato og -sted, foreldre."
+"vanlige felter: id, arkiv, personnavn, fødselsdato og fødested, foreldre."
 
 #: SourceIndex/index.py:407
 msgid "*** Error: Must install either ElementTree or lxml."
@@ -22292,16 +21747,12 @@ msgid "Marriage act:"
 msgstr ""
 
 #: SourceIndex/marriage.glade:81
-#, fuzzy
-#| msgid "date: "
 msgid "m. date:"
-msgstr "dato: "
+msgstr "v. dato:"
 
 #: SourceIndex/marriage.glade:97
-#, fuzzy
-#| msgid "place: "
 msgid "m. place:"
-msgstr "sted: "
+msgstr "v. sted:"
 
 #: SourceIndex/marriage.glade:113
 msgid "d.contract:"
@@ -22316,10 +21767,8 @@ msgid "p.contract:"
 msgstr ""
 
 #: SourceIndex/marriage.glade:167
-#, fuzzy
-#| msgid "place: "
 msgid "places banns:"
-msgstr "sted: "
+msgstr "Lysningssteder:"
 
 #: SourceIndex/marriage.glade:198
 msgid "<b>Data union</b>"
@@ -22519,7 +21968,7 @@ msgstr "Stilen som brukes til kapitteloverskriften."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:563
 msgid "The style used for citation title."
-msgstr "Stilen som brukes for sitattittel."
+msgstr "Stilen som brukes for siteringstittel."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:575
 msgid "The style used for a column title."
@@ -22537,11 +21986,11 @@ msgstr[0] "Eksport fullført: %d sekund"
 msgstr[1] "Eksport fullført: %d sekunder"
 
 #: Sqlite/ImportSql.py:893
-#, fuzzy, python-format
+#, python-format
 msgid "Import Complete: %d second"
 msgid_plural "Import Complete: %d seconds"
 msgstr[0] "Importen er fullført: %d sekund"
-msgstr[1] ""
+msgstr[1] "Importen er fullført: %d sekunder"
 
 #: Sqlite/Sqlite.gpr.py:4
 msgid "SQLite Import"
@@ -23352,10 +22801,8 @@ msgid ""
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:168
-#, fuzzy
-#| msgid "Failure writing %s"
 msgid "Failed writing "
-msgstr "Det oppsto en feil under skrivingen av %s"
+msgstr "Feil ved skriving "
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:849
 msgid "Year of Birth of Center Person"
@@ -23366,10 +22813,8 @@ msgid "The year of birth of the center person. Estimate a year if unknown"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:857
-#, fuzzy
-#| msgid "to directory:"
 msgid "Destination directory"
-msgstr "til katalog:"
+msgstr "Målmappe"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:860
 msgid "Path for generated files"
@@ -23408,20 +22853,16 @@ msgid "Male Box Color"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:894
-#, fuzzy
-#| msgid "Color of male persons:"
 msgid "Box background color for male person"
-msgstr "Farge til menn:"
+msgstr "Bakgrunnsfarge for boksen til menn"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:897
 msgid "Female Box Color"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:898
-#, fuzzy
-#| msgid "Colour of female persons:"
 msgid "Box background color for female person"
-msgstr "Farge til kvinner:"
+msgstr "Bakgrunnsfarge for boksen til kvinner"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:904
 msgid "Number of pixel per year"
@@ -23448,16 +22889,12 @@ msgid "How many pixel are unused above first box?"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:921
-#, fuzzy
-#| msgid "Height of the tree in pixels."
 msgid "Width of a box in pixel"
-msgstr "Hlyde for treet i antall punkt."
+msgstr "Bredden på en boks i piksler"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:922
-#, fuzzy
-#| msgid "Height of the tree in pixels."
 msgid "Width of the box of a person in pixel"
-msgstr "Hlyde for treet i antall punkt."
+msgstr "Bredden på personboksen i piksler"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:925
 msgid "Horizontal space between boxes in pixel"
@@ -23574,7 +23011,7 @@ msgstr ""
 
 #: ToDoReport/TodoReport.gpr.py:25
 msgid "Todo Report"
-msgstr "Å gjøre Rapporter"
+msgstr "Oppgaverapport"
 
 #: ToDoReport/TodoReport.gpr.py:27
 msgid ""
@@ -23873,10 +23310,8 @@ msgid "Search: google.com.ua"
 msgstr ""
 
 #: UAWebConnectPack/UAWebPack.py:60
-#, fuzzy
-#| msgid "Search Quota "
 msgid "Search: roots.in.ua"
-msgstr "Søkegrense "
+msgstr "Søk: roots.in.ua"
 
 #: UKWebConnectPack/UKWebPack.gpr.py:11
 msgid "UK Web Connect Pack"
@@ -24036,32 +23471,27 @@ msgid "URL is copied to the Clipboard"
 msgstr ""
 
 #: WebSearch/WebSearch.py:2066
-#, fuzzy
-#| msgid "Search in:"
 msgid "WebSearch Link"
-msgstr "Søk i:"
+msgstr "Nettsøklenke"
 
 #: WebSearch/WebSearch.py:2108
 msgid "Attribute has been successfully added"
 msgstr ""
 
 #: WebSearch/WebSearch.py:2140
-#, fuzzy, python-brace-format
-#| msgid "Place titles"
+#, python-brace-format
 msgid "Title: {title}"
-msgstr "Stedstitler"
+msgstr "Tittel: {title}"
 
 #: WebSearch/WebSearch.py:2144
-#, fuzzy, python-brace-format
-#| msgid "place: "
+#, python-brace-format
 msgid "Replaced: {keys}"
-msgstr "sted: "
+msgstr "Erstattet: {keys}"
 
 #: WebSearch/WebSearch.py:2147
-#, fuzzy, python-brace-format
-#| msgid "place: "
+#, python-brace-format
 msgid "Empty: {keys}"
-msgstr "sted: "
+msgstr "Tom: {keys}"
 
 #: WebSearch/WebSearch.py:2149
 #, python-brace-format
@@ -24069,10 +23499,9 @@ msgid "Comment: {comment}"
 msgstr ""
 
 #: WebSearch/activity_row_generator.py:110
-#, fuzzy, python-format
-#| msgid "Birthdays"
+#, python-format
 msgid "Visited: %s"
-msgstr "Bursdager"
+msgstr "Besøkt: %s"
 
 #: WebSearch/activity_row_generator.py:114
 #: WebSearch/activity_row_generator.py:129
@@ -24081,10 +23510,9 @@ msgid "Link: %s"
 msgstr ""
 
 #: WebSearch/activity_row_generator.py:116
-#, fuzzy, python-format
-#| msgid "Images with Attribute"
+#, python-format
 msgid "Attribute: %s"
-msgstr "Bilder med egenskap"
+msgstr "Egenskap: %s"
 
 #: WebSearch/activity_row_generator.py:118
 #, python-format
@@ -24092,10 +23520,9 @@ msgid "Value: %s"
 msgstr ""
 
 #: WebSearch/activity_row_generator.py:123
-#, fuzzy, python-format
-#| msgid "Select A File"
+#, python-format
 msgid "Loaded from file: %s"
-msgstr "Velg en fil"
+msgstr "Lastet inn fra fil: %s"
 
 #: WebSearch/activity_row_generator.py:126
 #, fuzzy, python-format
@@ -24104,16 +23531,14 @@ msgid "Domain: %s"
 msgstr "Skjema: %s"
 
 #: WebSearch/activity_row_generator.py:131
-#, fuzzy, python-format
-#| msgid "Media Path Update"
+#, python-format
 msgid "Object: %s"
-msgstr "Oppdatere filbane for media"
+msgstr "Objekt: %s"
 
 #: WebSearch/activity_row_generator.py:135
-#, fuzzy, python-format
-#| msgid "Media Path Update"
+#, python-format
 msgid "Pattern: %s"
-msgstr "Oppdatere filbane for media"
+msgstr "Mønster: %s"
 
 #: WebSearch/activity_row_generator.py:138
 #, python-format
@@ -24412,20 +23837,12 @@ msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
 msgstr ""
 
 #: WebSearch/markdown_place_history_formatter.py:58
-#, fuzzy
-#| msgid ""
-#| "Found relation #%d: \n"
-#| "   "
 msgid "Foundation date:"
-msgstr ""
-"Fant slektskap #%d: \n"
-"   "
+msgstr "Stiftelsesdato:"
 
 #: WebSearch/markdown_place_history_formatter.py:60
-#, fuzzy
-#| msgid "Place titles"
 msgid "Coordinates:"
-msgstr "Stedstitler"
+msgstr "Koordinater:"
 
 #: WebSearch/markdown_place_history_formatter.py:61
 #, fuzzy
@@ -24442,10 +23859,8 @@ msgid "Full hierarchy"
 msgstr ""
 
 #: WebSearch/markdown_place_history_formatter.py:68
-#, fuzzy
-#| msgid "Name Type"
 msgid "Place Type:"
-msgstr "Navnetype"
+msgstr "Stedstype:"
 
 #: WebSearch/markdown_place_history_formatter.py:69
 msgid "Last Retrieved At:"
@@ -24647,14 +24062,8 @@ msgid "No file loaded..."
 msgstr "Ingen fil åpnet..."
 
 #: lxml/etreeGramplet.py:203 lxml/etreeGramplet.py:209
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "XML: Number of additional records and relations: \t%s\n"
 msgid "Number of additions and modifications back"
-msgstr ""
-"\n"
-"XML: Antall ytterligere oppføringer og slektskap: \t%s\n"
+msgstr "Antall tillegg og endringer tilbake"
 
 #: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
 #, fuzzy
@@ -24713,148 +24122,112 @@ msgstr ""
 "\n"
 
 #: lxml/etreeGramplet.py:557
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Antall etiketter : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:559
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\n"
+#, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%06s\n"
 msgstr ""
 "Antall etiketter : \n"
-"\t\t\t%s\n"
+"\t\t\t%06s\n"
 
 #: lxml/etreeGramplet.py:561
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of  events : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of  events : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Antall  hendelser : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:564
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of persons : \n"
-#| "\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+#, python-format
 msgid ""
 "Number of persons : \n"
 "\t\t\t%06s\t|\t(%06s) and (%06s)* surnames\n"
 msgstr ""
 "Antall personer : \n"
-"\t\t\t%s\t|\t(%s) og (%s)* etternavn\n"
+"\t\t\t%06s\t|\t(%06s) og (%06s)* etternavn\n"
 
 #: lxml/etreeGramplet.py:566
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of persons : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of persons : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Antall personer : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:567
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of families : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of families : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Antall familier : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:568
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of sources : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of sources : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Antall kilder : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:570
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of citations : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of citations : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Antall siteringer : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:573
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of places : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of places : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Antall steder : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:574
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of media objects : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of media objects : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Antall medieobjekter : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:575
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of repositories : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of repositories : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Antall arkiver : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:576
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of notes : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of notes : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Antall notater : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:581
 #, python-format
@@ -25019,10 +24392,9 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: lxml/lxmlGramplet.py:659
-#, fuzzy, python-brace-format
-#| msgid " entries for surname(s); no frequency yet"
+#, python-brace-format
 msgid "\t{number} surname; no frequency yet"
-msgstr " oppføringer for etternavn; ingen frekvens ennå"
+msgstr "\t{number} etternavn; ingen frekvens ennå"
 
 #: lxml/lxmlGramplet.py:660 lxml/lxmlGramplet.py:667
 #, python-brace-format
@@ -25039,22 +24411,20 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: lxml/lxmlGramplet.py:675
-#, fuzzy, python-brace-format
-#| msgid "New source"
+#, python-brace-format
 msgid "\t{number} source"
 msgid_plural "\t{number} sources\n"
-msgstr[0] "Ny kilde"
-msgstr[1] "Ny kilde"
+msgstr[0] "\t{number} kilde"
+msgstr[1] "\t{number} kilder\n"
 
 #: lxml/lxmlGramplet.py:694 lxml/lxmlGramplet.py:919
 msgid "Gallery.html"
 msgstr "Gallery.html"
 
 #: lxml/lxmlGramplet.py:695
-#, fuzzy, python-format
-#| msgid "2. Has generated a media index on \"%(file)s\".\n"
+#, python-format
 msgid "1. Has generated a media index on \"%(file)s\".\n"
-msgstr "2. Har laget en medieindeks for «%(file)s».\n"
+msgstr "1. Har opprettet et medieregister i «%(file)s».\n"
 
 #: lxml/lxmlGramplet.py:719
 msgid "XML SyntaxError"
@@ -25101,10 +24471,9 @@ msgid "Portugal"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:896
-#, fuzzy, python-format
-#| msgid "2. Has generated a media index on \"%(file)s\".\n"
+#, python-format
 msgid "2. Has generated \"%s\".\n"
-msgstr "2. Har laget en medieindeks for «%(file)s».\n"
+msgstr "2. Har generert «%s».\n"
 
 #: lxml/lxmlGramplet.py:898
 #, python-format
