@@ -34,13 +34,14 @@
 # Baptiste de Coulon <baptiste.decoulon@ik.me>, 2025.
 # Maël Chiotti <maelchiotti@users.noreply.hosted.weblate.org>, 2026.
 # Bruno FORESTIER <bforest76@gmail.com>, 2026.
+# "David D." <dadu042@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-10 10:43-0700\n"
-"PO-Revision-Date: 2026-03-26 16:09+0000\n"
-"Last-Translator: Bruno FORESTIER <bforest76@gmail.com>\n"
+"PO-Revision-Date: 2026-05-14 19:17+0000\n"
+"Last-Translator: \"David D.\" <dadu042@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -48,7 +49,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.5.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -282,40 +283,32 @@ msgstr ""
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:24
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:32
-#, fuzzy
-#| msgid "Inverse"
 msgid "Anniversaries"
-msgstr "Inverse"
+msgstr "Anniversaires"
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:25
-#, fuzzy
-#| msgid "a gramplet that displays the birthdays of the living people"
 msgid "A gramplet that displays the anniversaries of events"
-msgstr "Ce Gramplet affiche les anniversaires des personnes en vie"
+msgstr "Un Gramplet qui affiche les anniversaires des événements"
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:51
-#, fuzzy
-#| msgid "Double-click on a row to edit the selected participant."
 msgid "Double-click on a row to edit the event."
-msgstr "Double-cliquez sur une ligne pour modifier le participant sélectionné."
+msgstr "Double-cliquez sur une ligne pour modifier l'événement."
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:58
-#, fuzzy
-#| msgid "Other participants"
 msgid "Participant"
-msgstr "Autres participants"
+msgstr "Participant"
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:22
 msgid ""
 "Parses strings from Riksarkivet and ArkivDigital to create sources and "
 "citations."
 msgstr ""
+"Analyse les chaînes de Riksarkivet et ArkivDigital afin de créer des sources "
+"et des citations."
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:26
-#, fuzzy
-#| msgid "Archive file"
 msgid "Archive Assist"
-msgstr "Fichier d'archive"
+msgstr "Archive Assist"
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -822,7 +815,7 @@ msgstr "À la recherche d'un ordre de naissance pour les enfants"
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
 msgid "Birthdays"
-msgstr "Anniversaires"
+msgstr "Jours de naissance"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
 msgid "a gramplet that displays the birthdays of the living people"
@@ -1036,7 +1029,7 @@ msgstr "terminé !\n"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:432
 #, python-format
 msgid "Skipped %d people due to errors (see log).\n"
-msgstr ""
+msgstr "%d personnes ignorées en raison d’erreurs (voir log).\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:347
 msgid ""
@@ -1111,7 +1104,7 @@ msgstr "%d événements ajoutés."
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:562
 #, python-format
 msgid " (Skipped %d rows due to errors; see log.)"
-msgstr ""
+msgstr " (%d rangées ignorées à cause d'erreurs ; voir log.)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:589
 msgid "Estimated date"
@@ -1178,12 +1171,10 @@ msgid "Chat With Tree"
 msgstr "Chat avec l'arbre généalogique"
 
 #: ChatWithTree/ChatWithTree.py:149
-#, fuzzy
 msgid "Type a message..."
-msgstr "Écrivez un message..."
+msgstr "Tapez un message ..."
 
 #: ChatWithTree/ChatWithTree.py:153
-#, fuzzy
 msgid "Send"
 msgstr "Envoyer"
 
@@ -1203,11 +1194,11 @@ msgstr ""
 
 #: ChatWithTree/ChatWithTree.py:458
 msgid "The chatbot is currently processing a query. Please wait."
-msgstr ""
+msgstr "Le chatbot traite actuellement une requête. Veuillez patienter."
 
 #: ChatWithTree/ChatWithTree.py:485
 msgid "An error occurred while processing your query."
-msgstr ""
+msgstr "Une erreur s’est produite lors du traitement de votre requête."
 
 #: ChatWithTree/chatwithllm.py:119
 msgid "Tree: '{}'"
@@ -1473,7 +1464,7 @@ msgstr "Le chemin de destination pour les fichiers générés."
 #: D3Charts/DescendantIndentedTree.py:1835
 #: TimePedigreeHTML/TimePedigreeHtml.py:865
 msgid "The destination file name for html content."
-msgstr "Le fichier de destination pour le contenu HTML."
+msgstr "Le nom du fichier de destination pour le contenu HTML."
 
 #: D3Charts/AncestralFanChart.gpr.py:23
 msgid "Ancestral Fan Chart"
@@ -1551,7 +1542,7 @@ msgstr ""
 #: D3Charts/DescendantIndentedTree.py:1379
 #, python-brace-format
 msgid "Failed to create {target_path}: {message}"
-msgstr "Échec à la création de {target_path}: {message}"
+msgstr "Échec à la création de {target_path} : {message}"
 
 #: D3Charts/DescendantIndentedTree.py:1395
 #, python-format
@@ -2106,14 +2097,12 @@ msgstr "dans"
 
 #: DataEntryGramplet/DataEntryGramplet.py:428
 #: DataEntryGramplet/DataEntryGramplet.py:507
-#, fuzzy
-#| msgid "Family Tree file"
 msgid "No Family Tree is open."
-msgstr "Fichier arbre familial"
+msgstr "Aucun arbre familial n’est ouvert."
 
 #: DataEntryGramplet/DataEntryGramplet.py:429
 msgid "Please open a Family Tree to edit data."
-msgstr ""
+msgstr "Veuillez ouvrir un arbre familial pour modifier les données."
 
 #: DataEntryGramplet/DataEntryGramplet.py:446
 #: DataEntryGramplet/DataEntryGramplet.py:578
@@ -2123,7 +2112,7 @@ msgstr "Gramplet formulaire : %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:508
 msgid "Please open a Family Tree before adding a person."
-msgstr ""
+msgstr "Veuillez ouvrir un arbre familial avant d'ajouter une personne."
 
 #: DataEntryGramplet/DataEntryGramplet.py:524
 msgid "Can't add new person."
@@ -2287,54 +2276,40 @@ msgid "Deep Connections"
 msgstr "Connexions approfondies"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
-#, fuzzy
-#| msgid "Pause"
 msgid "⏸ Pause"
-msgstr "Pause"
+msgstr "⏸ Pause"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:108
 msgid "Pause the current search"
-msgstr ""
+msgstr "Met en pause la recherche actuelle"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:111
 msgid "▶ Continue"
-msgstr ""
+msgstr "▶ Continuer"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:114
-#, fuzzy
-#| msgid ""
-#| "Paused.\n"
-#| "Press Continue to search for additional relations.\n"
 msgid "Continue searching for more relations"
-msgstr ""
-"Pause.\n"
-"Appuyez sur Continuer pour rechercher d'autres relations.\n"
+msgstr "Continuer à rechercher d’autres relations"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:118
-#, fuzzy
-#| msgid "Copy"
 msgid "📋 Copy"
-msgstr "Copie"
+msgstr "📋 Copier"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:120
-#, fuzzy
-#| msgid "Copy link to clipboard"
 msgid "Copy selected people to clipboard"
-msgstr "Copier le lien vers le presse-papiers"
+msgstr "Copier les personnes sélectionnées dans le presse-papiers"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:128
 msgid "🗑 Clear"
-msgstr ""
+msgstr "🗑 Vider"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
 msgid "Clear all results and reset"
-msgstr ""
+msgstr "Vide tous les résultats et réinitialise"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
-#, fuzzy
-#| msgid "Person to search for"
 msgid "Ready to search"
-msgstr "Individu à rechercher"
+msgstr "Prêt à rechercher"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:185
 #, python-brace-format
@@ -2342,6 +2317,8 @@ msgid ""
 "Search Depth: {depth} | People Processed: {processed} | Queue Size: "
 "{queue_size}"
 msgstr ""
+"Profondeur de recherche : {depth} | Personnes traitées : {processed} | "
+"Taille file d’attente : {queue_size}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 msgid "mentioned in note"
@@ -2395,7 +2372,7 @@ msgstr "Aucun individu actif défini."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:347
 msgid "Initializing search..."
-msgstr ""
+msgstr "Initialisation recherche ..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:366
 msgid "Looking for relationship between\n"
@@ -2412,10 +2389,8 @@ msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (l'individu actif)…\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:382
-#, fuzzy
-#| msgid "Fetching records..."
 msgid "Searching for connections..."
-msgstr "Récupération des enregistrements…"
+msgstr "Recherche de connexions ..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:402
 #, python-format
@@ -2435,52 +2410,35 @@ msgstr ""
 "Appuyez sur Continuer pour rechercher d'autres relations.\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:427
-#, fuzzy
-#| msgid ""
-#| "Paused.\n"
-#| "Press Continue to search for additional relations.\n"
 msgid "Paused - Press Continue to search for more relations"
-msgstr ""
-"Pause.\n"
-"Appuyez sur Continuer pour rechercher d'autres relations.\n"
+msgstr "En pause - Appuyez sur Continuer pour rechercher davantage de relations"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:456
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "Search completed. %d relations found."
+#, python-format
 msgid ""
 "\n"
 "Search completed. %d relation paths found."
 msgstr ""
 "\n"
-"Recherche terminée. %d relations trouvées."
+"Recherche accomplie. %d chemins relation trouvés."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:460
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "Search completed. %d relations found."
 msgid "Search completed - {} relation paths found"
-msgstr ""
-"\n"
-"Recherche terminée. %d relations trouvées."
+msgstr "Recherche accomplie. %d chemins relation trouvés"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:471
 msgid "Error during search: {}"
-msgstr ""
+msgstr "Erreur lors de la recherche : {}"
 
 # Substantif (GNOME fr)
 # enlever car utilisé pour un calcul
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:481
-#, fuzzy
-#| msgid "Removing '%s'..."
 msgid "Resuming search..."
-msgstr "Enlève '%s'..."
+msgstr "Reprise recherche ..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:489
 msgid "Search interrupted by user"
-msgstr ""
+msgstr "Recherche interrompue par l’utilisateur"
 
 #: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
@@ -3747,22 +3705,20 @@ msgstr ""
 " 0 = pas de limite "
 
 #: DescendantsLines/DescendantsLines.py:1618
-#, fuzzy
-#| msgid "Font name"
 msgid "Font Name"
-msgstr "Nom de la police"
+msgstr "Nom police"
 
 #: DescendantsLines/DescendantsLines.py:1620
 msgid ""
 "Name of the Font to use. On Windows enter the file name of the .ttf at /"
 "Windows/Fonts"
 msgstr ""
+"Nom de la police à utiliser. Sous Windows, saisissez le nom du fichier . ttf "
+"dans /Windows/Fonts"
 
 #: DescendantsLines/DescendantsLines.py:1623
-#, fuzzy
-#| msgid "Horizontal step size"
 msgid "Font base size"
-msgstr "Taille de l'étape horizontale"
+msgstr "Taille base police"
 
 #: DescendantsLines/DescendantsLines.py:1629
 msgid "Box around Person's block"
@@ -4126,7 +4082,7 @@ msgstr ""
 #: Differences/differences.py:174
 #, python-format
 msgid "Missing %s: %s"
-msgstr "Disparu %s: %s"
+msgstr "Disparu %s : %s"
 
 #: Differences/differences.py:178
 msgid "Nothing missing"
@@ -4139,7 +4095,7 @@ msgstr "Ajout d'éléments dans le fichier qui manquent dans la base de données
 #: Differences/differences.py:191
 #, python-format
 msgid "Added %s: %s "
-msgstr "Ajoutée %s: %s "
+msgstr "Ajoutée %s : %s "
 
 #: Differences/differences.py:195
 msgid "Nothing added"
@@ -6476,7 +6432,7 @@ msgstr ""
 
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
-msgstr ""
+msgstr "Événements provenant de personnes ayant un rôle"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:8
 #, fuzzy
@@ -6648,6 +6604,8 @@ msgid ""
 "Check whether any Census events are missing for a person and some of their "
 "descendents"
 msgstr ""
+"Vérifie si des événements de recensement sont manquants pour une personne et "
+"certains de ses descendants"
 
 #: Form/CensusCheckQuickview.gpr.py:23
 #, fuzzy
@@ -6660,11 +6618,13 @@ msgid ""
 "Check whether any Census events are missing for a person and some of their "
 "ancestors"
 msgstr ""
+"Vérifie si des événements de recensement sont manquants pour une personne et "
+"certains de ses ancêtres"
 
 #: Form/CensusCheckQuickview.py:122 Form/CensusCheckUpQuickview.py:122
 #, python-format
 msgid "Census Check for %s"
-msgstr ""
+msgstr "Vérification recensement pour %s"
 
 #: Form/editform.py:191
 #, python-format
@@ -6695,7 +6655,7 @@ msgstr "Formulaire"
 
 #: Form/form.py:173
 msgid "XML syntax error in Form definition file"
-msgstr ""
+msgstr "Erreur de syntaxe XML dans le fichier de définition du formulaire"
 
 #: Form/form.py:184
 #, fuzzy
@@ -8222,7 +8182,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:505
 msgid "23. Months employed at trade in factory"
-msgstr ""
+msgstr "23. Mois d’emploi dans le commerce en usine"
 
 #: Form/form_ca.xml.h:506
 msgid "MonthsHome"
@@ -8239,6 +8199,8 @@ msgstr "Mois autres"
 #: Form/form_ca.xml.h:509
 msgid "25. Months employed in other occupation than trace in factory or home"
 msgstr ""
+"25. Mois d’emploi dans une autre profession que la trace en usine ou à "
+"domicile"
 
 #: Form/form_ca.xml.h:510 Form/form_ca.xml.h:723
 msgid "EarningsOccupation"
@@ -8246,7 +8208,7 @@ msgstr "Revenus professionels"
 
 #: Form/form_ca.xml.h:511
 msgid "26. Earnings from occupation or trade"
-msgstr ""
+msgstr "26. Revenus depuis l’occupation ou le commerce"
 
 #: Form/form_ca.xml.h:512 Form/form_ca.xml.h:725
 msgid "EarningsOther"
@@ -8255,6 +8217,8 @@ msgstr "Autres revenus"
 #: Form/form_ca.xml.h:513
 msgid "27. Extra earning (From other than chief occupation or trade)"
 msgstr ""
+"27. Revenus supplémentaires (provenant d’une occupation ou d’un métier autre "
+"que le principal)"
 
 #: Form/form_ca.xml.h:514 Form/form_ca.xml.h:735 Form/form_ca.xml.h:783
 msgid "SchoolMonths"
@@ -8310,7 +8274,7 @@ msgstr "Infirmités"
 
 #: Form/form_ca.xml.h:527
 msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
-msgstr ""
+msgstr "34. Infirmités : a. sourd et muet ; b. Aveugle ; c. Esprits malades"
 
 #: Form/form_ca.xml.h:538
 msgid "Name from Schedule 1"
@@ -8363,7 +8327,7 @@ msgstr "Institution"
 
 #: Form/form_ca.xml.h:554
 msgid "7. Institution: Special or legal name"
-msgstr ""
+msgstr "7. Institution : Nom spécial ou légal"
 
 #: Form/form_ca.xml.h:555
 msgid "Buildings"
@@ -8399,7 +8363,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:564
 msgid "12. Real Estate Owned: Grand total of acres"
-msgstr ""
+msgstr "12. Biens immobiliers possédés : total général d’acres"
 
 #: Form/form_ca.xml.h:565
 msgid "OwnedLots"
@@ -8407,7 +8371,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:566
 msgid "13. Real Estate Owned: Number of town or village lots"
-msgstr ""
+msgstr "13. Biens immobiliers possédés : nombre de lots de ville ou de village"
 
 #: Form/form_ca.xml.h:567
 msgid "OwnedHouses"
@@ -8415,7 +8379,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:568
 msgid "14. Real Estate Owned: Number of dwelling houses"
-msgstr ""
+msgstr "14. Biens immobiliers possédés : nombre de maisons d’habitation"
 
 #: Form/form_ca.xml.h:569
 msgid "OwnedStores"
@@ -8423,7 +8387,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:570
 msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
-msgstr ""
+msgstr "15. Biens immobiliers possédés : nombre de magasins, d’entrepôts, etc."
 
 #: Form/form_ca.xml.h:571
 msgid "OwnedBars"
@@ -8432,6 +8396,8 @@ msgstr ""
 #: Form/form_ca.xml.h:572
 msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
 msgstr ""
+"16. Biens immobiliers possédés : nombre de granges, d’écuries et autres "
+"dépendances"
 
 #: Form/form_ca.xml.h:573
 msgid "OwnedSilos"
@@ -8440,6 +8406,7 @@ msgstr ""
 #: Form/form_ca.xml.h:574
 msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
 msgstr ""
+"17. Biens immobiliers possédés : nombre de silos et capacité en pieds cubes"
 
 #: Form/form_ca.xml.h:575
 msgid "OwnedFactories"
@@ -8447,7 +8414,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:576
 msgid "18. Real Estate Owned: Number of manufacturing establishments"
-msgstr ""
+msgstr "18. Biens immobiliers possédés : nombre d’établissements de fabrication"
 
 #: Form/form_ca.xml.h:577
 msgid "LeasedAcres"
@@ -8588,11 +8555,12 @@ msgstr "35. Date de la visite"
 
 #: Form/form_ca.xml.h:611
 msgid "Reason"
-msgstr ""
+msgstr "Raison"
 
 #: Form/form_ca.xml.h:612
 msgid "36. The reason, if not enumerated on first visit"
 msgstr ""
+"36. La raison, si elle n’a pas été mentionnée lors de la première visite"
 
 #: Form/form_ca.xml.h:613
 msgid "DateEnum"
@@ -8664,7 +8632,7 @@ msgstr "13. Emplacement : méridien"
 
 #: Form/form_ca.xml.h:651
 msgid "14. Livestock: Horses, all ages"
-msgstr ""
+msgstr "14. Élevage : chevaux, tous âges"
 
 #: Form/form_ca.xml.h:652
 msgid "Cows"
@@ -8672,19 +8640,19 @@ msgstr "Vaches"
 
 #: Form/form_ca.xml.h:653
 msgid "15. Livestock: Milch cows"
-msgstr ""
+msgstr "15. Bétail : vaches laitières"
 
 #: Form/form_ca.xml.h:655
 msgid "16. Other horned or meat cattle, all ages"
-msgstr ""
+msgstr "16. Autres bovins à cornes ou à viande, de tous âges"
 
 #: Form/form_ca.xml.h:657
 msgid "17. Sheep and lambs, all ages"
-msgstr ""
+msgstr "17. Brebis et agneaux, tous âges"
 
 #: Form/form_ca.xml.h:659
 msgid "18. Hogs and pigs, all ages"
-msgstr ""
+msgstr "18. Porcs et cochons, tous âges"
 
 #: Form/form_ca.xml.h:678
 msgid "4. Place of habitation"
@@ -8709,10 +8677,11 @@ msgstr "Autres emplois"
 #: Form/form_ca.xml.h:706
 msgid "18. Employment other than at chief trade or occupation, if any"
 msgstr ""
+"18. Emploi autre que dans le métier ou la profession de chef, s’il y a lieu"
 
 #: Form/form_ca.xml.h:714
 msgid "22. State where person employed"
-msgstr ""
+msgstr "22. État où la personne est employée"
 
 #: Form/form_ca.xml.h:715
 msgid "WeeksOccupation"
@@ -8720,7 +8689,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:716
 msgid "23. Weeks employed in 1910 at chief occupation or trade"
-msgstr ""
+msgstr "23. Semaines employées en 1910 dans le métier ou le commerce principal"
 
 #: Form/form_ca.xml.h:717
 msgid "WeeksOther"
@@ -11144,7 +11113,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:418
 msgid "Free or slave"
-msgstr ""
+msgstr "Libre ou esclave"
 
 #: Form/form_us.xml.h:419
 msgid "Married or widowed"
@@ -11152,15 +11121,15 @@ msgstr ""
 
 #: Form/form_us.xml.h:421
 msgid "Month in which person died"
-msgstr ""
+msgstr "Mois au cours duquel la personne est décédée"
 
 #: Form/form_us.xml.h:423
 msgid "Cause of death"
-msgstr ""
+msgstr "Cause du décès"
 
 #: Form/form_us.xml.h:424
 msgid "Number of days ill"
-msgstr ""
+msgstr "Nombre de jours de maladie"
 
 #: Form/form_us.xml.h:444 Form/form_us.xml.h:1643
 msgid "Father of foreign birth"
@@ -11190,7 +11159,7 @@ msgstr "Ne sait pas écrire"
 
 #: Form/form_us.xml.h:451
 msgid "Deaf, dumb, blind, insane or idiotic"
-msgstr ""
+msgstr "Sourd, muet, aveugle, fou ou idiot"
 
 #: Form/form_us.xml.h:452
 msgid "Male citizen 21 and over"
@@ -11288,7 +11257,7 @@ msgstr "Lieu de naissance de la mère"
 
 #: Form/form_us.xml.h:502
 msgid "Owner"
-msgstr ""
+msgstr "Propriétaire"
 
 #: Form/form_us.xml.h:503
 msgid "Rents for fixed money"
@@ -13426,15 +13395,15 @@ msgstr ""
 
 #: Form/form_us.xml.h:1391
 msgid "Own house or farm"
-msgstr ""
+msgstr "Possède maison ou ferme"
 
 #: Form/form_us.xml.h:1392
 msgid "Incumbrance on farm or home"
-msgstr ""
+msgstr "Activité à la ferme ou à domicile"
 
 #: Form/form_us.xml.h:1393
 msgid "Value of farm or home"
-msgstr ""
+msgstr "Valeur de la ferme ou du domicile"
 
 #: Form/form_us.xml.h:1394
 msgid "Military Service: Civil War"
@@ -13516,15 +13485,15 @@ msgstr ""
 
 #: Form/form_us.xml.h:1420
 msgid "Naturalized if foreign born?"
-msgstr ""
+msgstr "Naturalisé si né à l’étranger ?"
 
 #: Form/form_us.xml.h:1429 Form/form_us.xml.h:2332
 msgid "Color or Race"
-msgstr ""
+msgstr "Couleur ou race"
 
 #: Form/form_us.xml.h:1432
 msgid "Home Owned or Rented"
-msgstr ""
+msgstr "Domicile possédé ou loué"
 
 #: Form/form_us.xml.h:1433
 msgid "Home Owned Free or Mortgaged"
@@ -13532,19 +13501,19 @@ msgstr ""
 
 #: Form/form_us.xml.h:1434
 msgid "Home Value"
-msgstr ""
+msgstr "Valeur domicile"
 
 #: Form/form_us.xml.h:1435
 msgid "Mortgage Debt"
-msgstr ""
+msgstr "Dette hypothécaire"
 
 #: Form/form_us.xml.h:1436
 msgid "Monthly Rent"
-msgstr ""
+msgstr "Loyer mensuel"
 
 #: Form/form_us.xml.h:1437
 msgid "Insurance on Home"
-msgstr ""
+msgstr "Assurance habitation"
 
 #: Form/form_us.xml.h:1439
 msgid "Years in US"
@@ -13552,23 +13521,23 @@ msgstr ""
 
 #: Form/form_us.xml.h:1441
 msgid "Attended Rural School"
-msgstr ""
+msgstr "Fréquenté école rurale"
 
 #: Form/form_us.xml.h:1442
 msgid "Attended Grade School"
-msgstr ""
+msgstr "Fréquenté école primaire"
 
 #: Form/form_us.xml.h:1443
 msgid "Attended High School"
-msgstr ""
+msgstr "Fréquenté école secondaire"
 
 #: Form/form_us.xml.h:1444
 msgid "Attended College"
-msgstr ""
+msgstr "Lycée fréquenté"
 
 #: Form/form_us.xml.h:1445
 msgid "Highest Grade Rural School"
-msgstr ""
+msgstr "École rurale du niveau le plus élevé"
 
 #: Form/form_us.xml.h:1446
 msgid "Highest Grade Grammar School"
@@ -13588,27 +13557,27 @@ msgstr ""
 
 #: Form/form_us.xml.h:1450
 msgid "Able to Read"
-msgstr ""
+msgstr "Capable de lire"
 
 #: Form/form_us.xml.h:1451
 msgid "Able to Write"
-msgstr ""
+msgstr "Capable d'écrire"
 
 #: Form/form_us.xml.h:1454
 msgid "Father's Place of Birth"
-msgstr ""
+msgstr "Lieu de naissance du père"
 
 #: Form/form_us.xml.h:1457
 msgid "Mother's Place of Birth"
-msgstr ""
+msgstr "Lieu de naissance de la mère"
 
 #: Form/form_us.xml.h:1459
 msgid "Parents Place of Marriage"
-msgstr ""
+msgstr "Lieu de mariage des parents"
 
 #: Form/form_us.xml.h:1460
 msgid "Civil War Veteran"
-msgstr ""
+msgstr "Vétéran de la guerre civile"
 
 #: Form/form_us.xml.h:1461
 msgid "Civil War Service Branch"
@@ -13656,27 +13625,27 @@ msgstr ""
 
 #: Form/form_us.xml.h:1472
 msgid "Trade and Transportation"
-msgstr ""
+msgstr "Commerce et transport"
 
 #: Form/form_us.xml.h:1473
 msgid "Manufacturing and Mechanical"
-msgstr ""
+msgstr "Fabrication et mécanique"
 
 #: Form/form_us.xml.h:1474
 msgid "Unclassified Laborer"
-msgstr ""
+msgstr "Ouvrier non classé"
 
 #: Form/form_us.xml.h:1475
 msgid "Months unemployed due to illness"
-msgstr ""
+msgstr "Mois de chômage pour cause de maladie"
 
 #: Form/form_us.xml.h:1476
 msgid "Income lost due to illness"
-msgstr ""
+msgstr "Revenu perdu en raison de la maladie"
 
 #: Form/form_us.xml.h:1477
 msgid "Months unemployed"
-msgstr ""
+msgstr "Mois de chômage"
 
 #: Form/form_us.xml.h:1479
 msgid "Free Inhabitants in"
@@ -13713,7 +13682,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:1507 Form/form_us.xml.h:1528
 msgid "School"
-msgstr ""
+msgstr "École"
 
 #: Form/form_us.xml.h:1508
 msgid "Cannot Read 10-15"
@@ -13914,11 +13883,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:1665
 msgid "Foreign father"
-msgstr ""
+msgstr "Père étranger"
 
 #: Form/form_us.xml.h:1666
 msgid "Foreign mother"
-msgstr ""
+msgstr "Mère étrangère"
 
 #: Form/form_us.xml.h:1669
 msgid "Organized Township"
@@ -13930,15 +13899,15 @@ msgstr ""
 
 #: Form/form_us.xml.h:1671
 msgid "Name of Village"
-msgstr ""
+msgstr "Nom de village"
 
 #: Form/form_us.xml.h:1672
 msgid "Name of City"
-msgstr ""
+msgstr "Nom de ville"
 
 #: Form/form_us.xml.h:1674
 msgid "Sub-division"
-msgstr ""
+msgstr "Sous-division"
 
 #: Form/form_us.xml.h:1675
 msgid "Precincts"
@@ -13958,7 +13927,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:1687
 msgid "Fathers birthplace"
-msgstr ""
+msgstr "Lieu de naissance du père"
 
 #: Form/form_us.xml.h:1688
 msgid "Mothers birthplace"
@@ -13974,19 +13943,19 @@ msgstr ""
 
 #: Form/form_us.xml.h:1694
 msgid "Army service"
-msgstr ""
+msgstr "Service militaire"
 
 #: Form/form_us.xml.h:1695
 msgid "Wars"
-msgstr ""
+msgstr "Guerres"
 
 #: Form/form_us.xml.h:1697 Form/form_us.xml.h:1770
 msgid "White males under 10"
-msgstr ""
+msgstr "Hommes blancs de moins de 10 ans"
 
 #: Form/form_us.xml.h:1698 Form/form_us.xml.h:1771
 msgid "White males 10-17"
-msgstr ""
+msgstr "Hommes blancs 10-17 ans"
 
 #: Form/form_us.xml.h:1699 Form/form_us.xml.h:1772
 msgid "White males 18-20"
@@ -14266,15 +14235,15 @@ msgstr ""
 
 #: Form/form_us.xml.h:1768 Form/form_us.xml.h:1841
 msgid "Total Population"
-msgstr ""
+msgstr "Population totale"
 
 #: Form/form_us.xml.h:1879 Form/form_us.xml.h:1901 Form/form_us.xml.h:1930
 msgid "Building Material"
-msgstr ""
+msgstr "Matériau de construction"
 
 #: Form/form_us.xml.h:1880 Form/form_us.xml.h:1902 Form/form_us.xml.h:1931
 msgid "Dwelling Value"
-msgstr ""
+msgstr "Valeur d’habitation"
 
 #: Form/form_us.xml.h:1885 Form/form_us.xml.h:1907 Form/form_us.xml.h:1936
 msgid "Birthplace (NY County or other)"
@@ -14282,15 +14251,15 @@ msgstr ""
 
 #: Form/form_us.xml.h:1888
 msgid "Years resident in this city or town"
-msgstr ""
+msgstr "Années de résidence dans cette ville ou commune"
 
 #: Form/form_us.xml.h:1890 Form/form_us.xml.h:1915 Form/form_us.xml.h:1942
 msgid "Native Voter"
-msgstr ""
+msgstr "Électeur natif"
 
 #: Form/form_us.xml.h:1891 Form/form_us.xml.h:1916 Form/form_us.xml.h:1943
 msgid "Naturalized Voter"
-msgstr ""
+msgstr "Électeur naturalisé"
 
 #: Form/form_us.xml.h:1892 Form/form_us.xml.h:1917 Form/form_us.xml.h:1944
 msgid "Alien"
@@ -14298,7 +14267,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:1893 Form/form_us.xml.h:1918
 msgid "Persons of color not taxed"
-msgstr ""
+msgstr "Personnes de couleur non imposées"
 
 #: Form/form_us.xml.h:1894 Form/form_us.xml.h:1920 Form/form_us.xml.h:1946
 msgid "Over 21/Illiterate"
@@ -14310,20 +14279,20 @@ msgstr ""
 
 #: Form/form_us.xml.h:1896 Form/form_us.xml.h:1921 Form/form_us.xml.h:1947
 msgid "Deaf, Dumb, Blind, Insane, Idiotic"
-msgstr ""
+msgstr "Sourd, muet, aveugle, fou, idiot"
 
 #: Form/form_us.xml.h:1897 Form/form_us.xml.h:1926 Form/form_us.xml.h:1948
 #: Form/form_us.xml.h:2269 Form/form_us.xml.h:2298 Form/form_us.xml.h:2326
 msgid "Inhabitants in the"
-msgstr ""
+msgstr "Habitants dans le/la"
 
 #: Form/form_us.xml.h:1908
 msgid "Parent of how many children"
-msgstr ""
+msgstr "Parent de combien d’enfants"
 
 #: Form/form_us.xml.h:1909
 msgid "Number of times married"
-msgstr ""
+msgstr "Nombre de mariages"
 
 #: Form/form_us.xml.h:1914
 msgid "Place of Occupation"
@@ -14335,19 +14304,19 @@ msgstr ""
 
 #: Form/form_us.xml.h:1922
 msgid "Now in army"
-msgstr ""
+msgstr "Maintenant dans l’armée"
 
 #: Form/form_us.xml.h:1923
 msgid "Now in navy"
-msgstr ""
+msgstr "Maintenant dans la marine militaire"
 
 #: Form/form_us.xml.h:1924
 msgid "Formerly in army"
-msgstr ""
+msgstr "Anciennement dans l’armée"
 
 #: Form/form_us.xml.h:1925
 msgid "Formerly in navy"
-msgstr ""
+msgstr "Anciennement dans la marine militaire"
 
 #: Form/form_us.xml.h:1941
 msgid "Usual place of employment (if not same city/town)"
@@ -14360,11 +14329,11 @@ msgstr ""
 #: Form/form_us.xml.h:1950 Form/form_us.xml.h:1962 Form/form_us.xml.h:2271
 #: Form/form_us.xml.h:2300 Form/form_us.xml.h:2328
 msgid "the County of"
-msgstr ""
+msgstr "le comté de"
 
 #: Form/form_us.xml.h:1956
 msgid "Birth Country"
-msgstr ""
+msgstr "Pays de naissance"
 
 #: Form/form_us.xml.h:1957 Form/form_us.xml.h:1971 Form/form_us.xml.h:1990
 #: Form/form_us.xml.h:2010
@@ -14373,7 +14342,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:1959
 msgid "Inhabitants living in"
-msgstr ""
+msgstr "Habitants vivant dans"
 
 #: Form/form_us.xml.h:1960
 msgid "Election District, Ward"
@@ -14405,7 +14374,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:1978 Form/form_us.xml.h:1999
 msgid "City or Village"
-msgstr ""
+msgstr "Ville ou village"
 
 #: Form/form_us.xml.h:1980 Form/form_us.xml.h:2001
 msgid "Assembly District No."
@@ -14413,7 +14382,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2011
 msgid "Where and When Naturalized"
-msgstr ""
+msgstr "Où et quand a lieu la naturalisation"
 
 #: Form/form_us.xml.h:2017
 msgid "WM 21-60"
@@ -14530,7 +14499,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2055
 msgid "Birthplace of Father"
-msgstr ""
+msgstr "Lieu de naissance du père"
 
 #: Form/form_us.xml.h:2056
 msgid "Birthplace of Mother"
@@ -14551,28 +14520,28 @@ msgstr ""
 #: Form/form_us.xml.h:2066 Form/form_us.xml.h:2102 Form/form_us.xml.h:2140
 #: Form/form_us.xml.h:2178 Form/form_us.xml.h:2216
 msgid "Divorced"
-msgstr ""
+msgstr "Divorcé(e)"
 
 #: Form/form_us.xml.h:2067
 msgid "Can Read"
-msgstr ""
+msgstr "Peut lire"
 
 #: Form/form_us.xml.h:2068
 msgid "Can't Read"
-msgstr ""
+msgstr "Ne peut pas lire"
 
 #: Form/form_us.xml.h:2069
 msgid "Can Write"
-msgstr ""
+msgstr "Peut écrire"
 
 #: Form/form_us.xml.h:2070
 msgid "Can't Write"
-msgstr ""
+msgstr "Ne peut pas écrire"
 
 #: Form/form_us.xml.h:2083 Form/form_us.xml.h:2120 Form/form_us.xml.h:2158
 #: Form/form_us.xml.h:2196
 msgid "Do you own your home or farm"
-msgstr ""
+msgstr "Êtes-vous propriétaire de votre maison ou ferme ?"
 
 # Ancêtres, Aïeux ?
 #: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
@@ -14598,22 +14567,22 @@ msgstr ""
 #: Form/form_us.xml.h:2089 Form/form_us.xml.h:2126 Form/form_us.xml.h:2164
 #: Form/form_us.xml.h:2202
 msgid "Graduate of"
-msgstr ""
+msgstr "Diplômé de"
 
 #: Form/form_us.xml.h:2094 Form/form_us.xml.h:2132 Form/form_us.xml.h:2170
 #: Form/form_us.xml.h:2208
 msgid "Maiden name of wife"
-msgstr ""
+msgstr "Nom de jeune fille de l’épouse"
 
 #: Form/form_us.xml.h:2096 Form/form_us.xml.h:2134 Form/form_us.xml.h:2172
 #: Form/form_us.xml.h:2210
 msgid "Church affiliation"
-msgstr ""
+msgstr "Affiliation à une église"
 
 #: Form/form_us.xml.h:2109 Form/form_us.xml.h:2147 Form/form_us.xml.h:2185
 #: Form/form_us.xml.h:2223
 msgid "If Foreign Born, are you Naturalized"
-msgstr ""
+msgstr "Si vous êtes né à l’étranger, êtes-vous naturalisé ?"
 
 #: Form/form_us.xml.h:2111 Form/form_us.xml.h:2149 Form/form_us.xml.h:2187
 #: Form/form_us.xml.h:2225
@@ -14674,15 +14643,15 @@ msgstr ""
 
 #: Form/form_us.xml.h:2244 Form/form_us.xml.h:2256
 msgid "Foreign Birth"
-msgstr ""
+msgstr "Naissance à l'étranger"
 
 #: Form/form_us.xml.h:2258
 msgid "Inhabitants of"
-msgstr ""
+msgstr "Habitants de"
 
 #: Form/form_us.xml.h:2277 Form/form_us.xml.h:2306
 msgid "Nativity - United States"
-msgstr ""
+msgstr "Nativité - États-Unis"
 
 #: Form/form_us.xml.h:2278 Form/form_us.xml.h:2307
 msgid "Nativity - Germany"
@@ -14698,7 +14667,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2281 Form/form_us.xml.h:2310
 msgid "Nativity - France"
-msgstr ""
+msgstr "Nativité - France"
 
 #: Form/form_us.xml.h:2282 Form/form_us.xml.h:2311
 msgid "Nativity - British America"
@@ -14714,11 +14683,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:2285 Form/form_us.xml.h:2314
 msgid "Nativity - All other countries"
-msgstr ""
+msgstr "Nativité - Tous les autres pays"
 
 #: Form/form_us.xml.h:2287 Form/form_us.xml.h:2316
 msgid "Residing in the"
-msgstr ""
+msgstr "Résidant dans le"
 
 #: Form/form_us.xml.h:2292 Form/form_us.xml.h:2321
 msgid "Co."
@@ -14789,7 +14758,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2383
 msgid "By Whom Reported"
-msgstr ""
+msgstr "Signalé par qui"
 
 #: Form/form_us.xml.h:2384 Form/form_us.xml.h:2501
 msgid "Date Recorded"
@@ -14801,7 +14770,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2395
 msgid "Date of Marriage"
-msgstr ""
+msgstr "Date de mariage"
 
 #: Form/form_us.xml.h:2396
 msgid "Married by"
@@ -14809,11 +14778,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:2398
 msgid "Place of Marriage"
-msgstr ""
+msgstr "Lieu de mariage"
 
 #: Form/form_us.xml.h:2400
 msgid "Consent given by"
-msgstr ""
+msgstr "Consentement donné par"
 
 #: Form/form_us.xml.h:2403
 msgid "Bond/Licence"
@@ -14821,27 +14790,27 @@ msgstr ""
 
 #: Form/form_us.xml.h:2432 Form/form_us.xml.h:2495
 msgid "Place of Death"
-msgstr ""
+msgstr "Lieu de décès"
 
 #: Form/form_us.xml.h:2434
 msgid "Length of Residence"
-msgstr ""
+msgstr "Durée de résidence"
 
 #: Form/form_us.xml.h:2435
 msgid "Served in U.S. Military"
-msgstr ""
+msgstr "Servi dans l’armée américaine"
 
 #: Form/form_us.xml.h:2440
 msgid "Birth date of deceased"
-msgstr ""
+msgstr "Date de naissance du défunt"
 
 #: Form/form_us.xml.h:2443
 msgid "Industry or Business"
-msgstr ""
+msgstr "Industrie ou entreprise"
 
 #: Form/form_us.xml.h:2444
 msgid "Name of employer"
-msgstr ""
+msgstr "Nom de l'employeur"
 
 #: Form/form_us.xml.h:2445
 msgid "Date last worked"
@@ -14849,7 +14818,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2446
 msgid "Years in this occupation"
-msgstr ""
+msgstr "Années dans cette profession"
 
 #: Form/form_us.xml.h:2447
 msgid "Education Level"
@@ -14857,19 +14826,19 @@ msgstr ""
 
 #: Form/form_us.xml.h:2453
 msgid "Social Security No."
-msgstr ""
+msgstr "N° sécurité sociale."
 
 #: Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
 msgid "Date of Death"
-msgstr ""
+msgstr "Date de décès"
 
 #: Form/form_us.xml.h:2457
 msgid "Place of Burial"
-msgstr ""
+msgstr "Lieu d'inhumation"
 
 #: Form/form_us.xml.h:2458
 msgid "Date of Burial"
-msgstr ""
+msgstr "Date d'inhumation"
 
 #: Form/form_us.xml.h:2478
 msgid "Residence Place"
@@ -14893,7 +14862,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2506
 msgid "in the month of"
-msgstr ""
+msgstr "dans le mois de"
 
 #: Form/form_us.xml.h:2510
 msgid "Age 1 July 1863"
@@ -14933,11 +14902,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:2525
 msgid "Age in yrs."
-msgstr ""
+msgstr "Âge en années."
 
 #: Form/form_us.xml.h:2526
 msgid "Home Address"
-msgstr ""
+msgstr "Adresse domicile"
 
 #: Form/form_us.xml.h:2530
 msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
@@ -14953,11 +14922,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:2534
 msgid "Nearest Relative"
-msgstr ""
+msgstr "Parent le plus proche"
 
 #: Form/form_us.xml.h:2535
 msgid "Dependants & Address"
-msgstr ""
+msgstr "Personnes à charge et adresse"
 
 #: Form/form_us.xml.h:2536
 msgid ""
@@ -14968,6 +14937,7 @@ msgstr ""
 #: Form/form_us.xml.h:2538
 msgid "What military service have you had? (Branch, Years, Nation or State)"
 msgstr ""
+"Quel service militaire avez-vous effectué ? (branche, années, nation ou État)"
 
 #: Form/form_us.xml.h:2539
 msgid "Do you claim exemption from draft (specify grounds)"
@@ -14983,11 +14953,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:2544
 msgid "Hair Color"
-msgstr ""
+msgstr "Couleur cheveux"
 
 #: Form/form_us.xml.h:2545
 msgid "Bald"
-msgstr ""
+msgstr "Chauve"
 
 #: Form/form_us.xml.h:2547 Form/form_us.xml.h:2591
 msgid "Place of Registration"
@@ -14999,11 +14969,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:2549
 msgid "Serial Number"
-msgstr ""
+msgstr "Numéro de série"
 
 #: Form/form_us.xml.h:2550
 msgid "Order Number"
-msgstr ""
+msgstr "Numéro de commande"
 
 #: Form/form_us.xml.h:2551
 #, fuzzy
@@ -15035,7 +15005,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2555
 msgid "Place of Residence"
-msgstr ""
+msgstr "Lieu de résidence"
 
 #: Form/form_us.xml.h:2556
 msgid ""
@@ -15045,7 +15015,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2557
 msgid "Mailing Address"
-msgstr ""
+msgstr "Adresse postale"
 
 #: Form/form_us.xml.h:2558
 msgid ""
@@ -15055,7 +15025,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2559
 msgid "Telephone"
-msgstr ""
+msgstr "Téléphone"
 
 #: Form/form_us.xml.h:2560
 msgid ""
@@ -15065,7 +15035,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2561
 msgid "Age in years"
-msgstr ""
+msgstr "Âge en années"
 
 #: Form/form_us.xml.h:2562
 msgid ""
@@ -15085,7 +15055,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2567
 msgid "Country of Citizenship"
-msgstr ""
+msgstr "Pays de citoyenneté"
 
 #: Form/form_us.xml.h:2568
 msgid ""
@@ -15095,7 +15065,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2569
 msgid "Who will always know your address (Name & Address)"
-msgstr ""
+msgstr "Qui connaîtra toujours votre adresse (nom et adresse)"
 
 #: Form/form_us.xml.h:2570
 msgid ""
@@ -15150,10 +15120,15 @@ msgid ""
 "Indian\n"
 "Filipino"
 msgstr ""
+"Blanc\n"
+"Noir (\"negro\")\n"
+"Oriental\n"
+"Indien\n"
+"Philippin"
 
 #: Form/form_us.xml.h:2583 Form/form_us.xml.h:2604
 msgid "Complexion"
-msgstr ""
+msgstr "Teint"
 
 #: Form/form_us.xml.h:2584
 msgid ""
@@ -15166,10 +15141,18 @@ msgid ""
 "Dark brown\n"
 "Black"
 msgstr ""
+"Jaunâtre\n"
+"Clair\n"
+"Rougeâtre\n"
+"Sombre\n"
+"Tacheté de rousseur\n"
+"Brun clair\n"
+"Brun foncé\n"
+"Noir"
 
 #: Form/form_us.xml.h:2585
 msgid "Eyes"
-msgstr ""
+msgstr "Yeux"
 
 #: Form/form_us.xml.h:2586
 msgid ""
@@ -15179,10 +15162,15 @@ msgid ""
 "Brown\n"
 "Black"
 msgstr ""
+"Bleu\n"
+"Gris\n"
+"Hazel\n"
+"Marron\n"
+"Noir"
 
 #: Form/form_us.xml.h:2587
 msgid "Hair"
-msgstr ""
+msgstr "Cheveux"
 
 #: Form/form_us.xml.h:2588
 msgid ""
@@ -15193,10 +15181,16 @@ msgid ""
 "Gray\n"
 "Bald"
 msgstr ""
+"Blond\n"
+"Roux\n"
+"Chatain\n"
+"Brun\n"
+"Gris\n"
+"Chauve"
 
 #: Form/form_us.xml.h:2589
 msgid "Other characteristics"
-msgstr ""
+msgstr "Autres caractéristiques"
 
 #: Form/form_us.xml.h:2596
 msgid "Date entered"
@@ -15212,7 +15206,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2602
 msgid "Eye color"
-msgstr ""
+msgstr "Couleur des yeux"
 
 #: Form/form_us.xml.h:2603
 msgid "Hair color"
@@ -15252,7 +15246,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2619
 msgid "Industry/Employer"
-msgstr ""
+msgstr "Industrie/Employeur"
 
 #: Form/form_us.xml.h:2622
 msgid "Residents Status"
@@ -15601,11 +15595,10 @@ msgid "GOV error on id %s with code: "
 msgstr "Erreur GOV sur l'id %s avec le code : "
 
 #: GetGOV/getgov.py:555
-#, fuzzy, python-format
-#| msgid "from %s to %s"
+#, python-format
 msgctxt "end"
 msgid "from %(begin)s to %(end)s"
-msgstr "de %s à %s"
+msgstr "depuis %%(begin)s vers %(end)s"
 
 #: GetGOV/getgov.py:557
 #, python-format
@@ -15670,7 +15663,7 @@ msgstr ""
 
 #: GrampsChat/GrampsChat.gpr.py:5
 msgid "AI Chatbot Gramplet (requires connecting to an LLM service)"
-msgstr ""
+msgstr "Gramplet IA Chatbot (nécessite une connexion à un service LLM)"
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:116
 #: GrampsWebSync/grampswebsync.py:209
@@ -15948,11 +15941,11 @@ msgstr[1] "Téléchargement de %s fichiers media"
 
 #: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
 msgid "Gram.py Script"
-msgstr ""
+msgstr "Script Gram.py"
 
 #: GrampyScript/GrampyScript.gpr.py:24
 msgid "Run a special Gramps Python script"
-msgstr ""
+msgstr "Exécute un script Python spécial de Gramps"
 
 #: GrampyScript/GrampyScript.py:91
 #, fuzzy
@@ -15987,7 +15980,7 @@ msgstr "Sauver les images dans ..."
 
 #: GrampyScript/GrampyScript.py:319
 msgid "Save as CSV"
-msgstr ""
+msgstr "Enregistrer au format CSV"
 
 #: GrampyScript/GrampyScript.py:320
 #, fuzzy
@@ -16003,11 +15996,11 @@ msgstr "Vue Patchwork"
 
 #: GrampyScript/GrampyScript.py:400
 msgid "Execute <Alt+Enter>"
-msgstr ""
+msgstr "Exécuter <Alt+Entrée>"
 
 #: GrampyScript/GrampyScript.py:402
 msgid "Execute the script"
-msgstr ""
+msgstr "Exécuter le script"
 
 #: GrampyScript/GrampyScript.py:416
 #, fuzzy
@@ -16037,15 +16030,15 @@ msgstr "Moderne"
 
 #: GraphView/avatars.py:65
 msgid "Generic (dark)"
-msgstr ""
+msgstr "Générique (foncé)"
 
 #: GraphView/avatars.py:66
 msgid "Generic (gray)"
-msgstr ""
+msgstr "Générique (gris)"
 
 #: GraphView/avatars.py:67
 msgid "Generic (light)"
-msgstr ""
+msgstr "Générique (clair)"
 
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
 #: GraphView/graphview.py:189
@@ -16507,7 +16500,7 @@ msgstr "Gramplet qui montre les dernières nouvelles de Gramps"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.py:113
 msgid "Read Gramps headline news"
-msgstr "Lire les nouvelles depuis le wiki de GRAMPS"
+msgstr "Lire les nouvelles de Gramps"
 
 #: Heatmap/heatmap.gpr.py:26
 msgid "Create a heatmap web report."
@@ -16645,7 +16638,7 @@ msgstr "Utiliser le filtre "
 
 #: HistContext/HistContext.py:129
 msgid "Show outside life span "
-msgstr ""
+msgstr "Afficher en dehors de la durée de vie "
 
 #: HistContext/HistContext.py:132
 msgid "Use full dates"
@@ -17484,7 +17477,7 @@ msgstr "Activez l'étiquette du mariage."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:70
 msgid "Fade individual color"
-msgstr ""
+msgstr "Estomper couleur individuelle"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:71
 msgid "The color of the individuals is faded to black with increasing age."
@@ -17513,7 +17506,7 @@ msgstr "Forme de la famille"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:79
 msgid "The shape of the families can be varied."
-msgstr ""
+msgstr "La forme des familles peut varier."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:80
 msgid "Rectangular"
@@ -17531,6 +17524,8 @@ msgstr "Marge minimale de l'année supérieure"
 msgid ""
 "The upper bound of the chart is extended by at least this number of years."
 msgstr ""
+"La limite supérieure du graphique est prolongée d’au moins ce nombre "
+"d’années."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:84
 msgid "Lower year minimum margin"
@@ -17644,15 +17639,15 @@ msgstr "Déboguage de l'algorithme de compression. Avorter après x étapes."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:107
 msgid "Maximum number of flipping steps"
-msgstr ""
+msgstr "Nombre maximal d’étapes de basculement"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:108
 msgid "Debugging of the flipping algorithm. Abort after x steps."
-msgstr ""
+msgstr "Débogage de l’algorithme de retournement. Abandonner après x étapes."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:109
 msgid "Compress the chart horizontally"
-msgstr ""
+msgstr "Compresser le graphique horizontalement"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:110
 msgid ""
@@ -17660,10 +17655,14 @@ msgid ""
 "inefficient with many generations. This algorithm lets several people share "
 "a horizontal slot, if they do not overlap."
 msgstr ""
+"Par défaut, chaque individu a une fente horizontale unique. Cela peut être "
+"inefficace avec de nombreuses générations. Cet algorithme permet à plusieurs "
+"personnes de partager un emplacement horizontal, si elles ne se chevauchent "
+"pas."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:111
 msgid "Flip families to reduce horizontal connections"
-msgstr ""
+msgstr "Retourner les familles pour réduire les connexions horizontales"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:112
 msgid ""
@@ -17700,11 +17699,11 @@ msgstr "Disposition générale"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:118
 msgid "There are different layouts for descendant charts."
-msgstr ""
+msgstr "Il existe différentes présentations pour les graphiques descendants."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:119
 msgid "Parents enclose children"
-msgstr ""
+msgstr "Parents incluent enfants"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:120
 msgid "Cactus"
@@ -18579,6 +18578,8 @@ msgid ""
 "Enter the minimum size group to display.\n"
 "Value may be 2 or greater."
 msgstr ""
+"Saisir la taille minimale du groupe à afficher.\n"
+"La valeur peut être égale ou supérieure à 2."
 
 #: NetworkChart/NetworkChart.py:1164
 msgid ""
@@ -18631,6 +18632,7 @@ msgstr ""
 #: NetworkChart/NetworkChart.py:1200
 msgid "Select person at center of selection radius in graph."
 msgstr ""
+"Sélectionnez la personne au centre du rayon de sélection dans le graphique."
 
 #: NetworkChart/NetworkChart.py:1203
 msgid ""
@@ -18667,12 +18669,18 @@ msgstr "Ajouter la couleur jaune en arrière-plan de l'individu central."
 #: NetworkChart/NetworkChart.py:1234
 msgid "Use database handle instead of GrampID id in URLs."
 msgstr ""
+"Utiliser le descripteur de base de données au lieu de GrampID ID dans les "
+"URL."
 
 #: NetworkChart/NetworkChart.py:1236
 msgid ""
 "Use database handle instead of the gramps id for URLs.\n"
 "The handle should never change whereas gramps ids can."
 msgstr ""
+"Utiliser le descripteur de base de données à la place du Gramps ID pour les "
+"URL.\n"
+"La poignée ne devrait jamais changer alors que les identifiants de Gramps le "
+"peuvent."
 
 #: NetworkChart/NetworkChart.py:1240
 msgid "Confirm overwrite file."
@@ -18840,7 +18848,7 @@ msgstr "Théorique"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:57
 msgid "Percent"
-msgstr ""
+msgstr "Pourcent"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:65
 msgid ""
@@ -18848,6 +18856,9 @@ msgid ""
 "Only individual ancestors were counted. Duplicates caused by pedigree "
 "collapse were ignored."
 msgstr ""
+"Il y avait {} des {} ancêtres ({}) trouvés.\n"
+"Seuls les ancêtres individuels ont été pris en compte. Les doublons causés "
+"par l’effondrement du pedigree ont été ignorés."
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
 msgid "Shows the number of descendants of the current person"
@@ -18944,6 +18955,8 @@ msgstr "Afficher les lieux"
 #: PedigreeChart/PedigreeChart.py:719
 msgid "Add a footer on every page with the page number and date printed."
 msgstr ""
+"Ajoute un pied de page à chaque page avec le numéro et la date de la page "
+"imprimés."
 
 #: PedigreeChart/PedigreeChart.py:740
 msgid "The basic style used for the title display."
@@ -18952,6 +18965,8 @@ msgstr "Le style de base pour afficher le titre."
 #: PedigreeChart/PedigreeChart.py:749
 msgid "Style used for names (only for PDF document and PostScript)."
 msgstr ""
+"Style utilisé pour les noms (uniquement pour les documents PDF et PostScript)"
+"."
 
 #: PedigreeChart/PedigreeChart.py:758
 #, fuzzy
@@ -19111,6 +19126,7 @@ msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
 msgid "Replace existing references to the person being assigned without asking"
 msgstr ""
+"Remplacer les références existantes à la personne affectée sans demander"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:141
 msgid "Face detection"
@@ -19118,7 +19134,7 @@ msgstr "Détection de visage"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:144
 msgid "Minimum face width (px)"
-msgstr ""
+msgstr "Largeur minimale visage (px)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:146
 msgid "Minimum face height (px)"
@@ -19126,7 +19142,7 @@ msgstr "Hauteur minimale du visage (px)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:149
 msgid "Detect faces inside existing boxes"
-msgstr ""
+msgstr "Détecter visages dans boîtes existantes"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:151
 msgid "Sensitivity (1 min .. 20 max)"
@@ -20082,7 +20098,7 @@ msgstr "Impossible d'interpréter le format d'entrée."
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
 #, python-brace-format
 msgid "DB entry [{id}] {name}:"
-msgstr "entrée BD [{id}] {name}:"
+msgstr "entrée BD [{id}] {name} :"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
 #: PlaceCoordinateGramplet/placecoordinate.glade:132
@@ -20334,7 +20350,7 @@ msgstr "Base de données PostgreSQL"
 #: PostgreSQLEnhanced/concurrency.py:479
 #, python-brace-format
 msgid "Object {obj_type}:{handle} was modified by another user"
-msgstr "L'objet {obj_type}:{handle} a été modifié par un autre utilisateur"
+msgstr "L'objet {obj_type} :{handle} a été modifié par un autre utilisateur"
 
 #: PostgreSQLEnhanced/migration.py:168
 msgid "Starting migration..."
@@ -20427,7 +20443,7 @@ msgstr "Extensions"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:273
 msgid "Database size"
-msgstr ""
+msgstr "Taille base de données"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:276
 #, python-format
@@ -20681,9 +20697,9 @@ msgid ""
 "for contributing and testing; please report any issues. Backups are your "
 "friend.\n"
 msgstr ""
-"Vous avez installé Gramps %s; une version de développement. Merci de "
+"Vous avez installé Gramps %s ; une version de développement. Merci de "
 "contribuer et tester ; veuillez signaler tout problème. Les sauvegardes sont "
-"ton ami.\n"
+"vos amies.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:402
 #, python-format
@@ -21228,7 +21244,7 @@ msgstr "Générations profondes"
 
 #: RelID/relation_tab.py:322
 msgid "How deep should we go?"
-msgstr ""
+msgstr "À quelle profondeur devrions-nous aller ?"
 
 #: RelID/relation_tab.py:339
 msgid "Rel_id"
@@ -21268,7 +21284,7 @@ msgstr "Diversité du nom de famille"
 
 #: RelID/relation_tab.py:367
 msgid "Quit"
-msgstr ""
+msgstr "Quitter"
 
 #: RelID/relation_tab.py:376
 msgid "No default person set."
@@ -21322,23 +21338,21 @@ msgid "Foldername need"
 msgstr "Nom du dossier nécessaire"
 
 #: RelID/relation_tab.py:643
-#, fuzzy
-#| msgid "A note to be used for the custom page content.\n"
 msgid "Foldername will be used for saving the content."
-msgstr "Une note à utiliser pour le contenu de la page personnalisée.\n"
+msgstr "Foldername (nom de dossier) sera utilisé pour enregistrer le contenu."
 
 #: RelID/relation_tab.py:655
 msgid "Cannot set a valid location."
-msgstr ""
+msgstr "Impossible de définir un emplacement valide."
 
 #: RelID/relation_tab.py:655
 msgid "Did you set a foldername?"
-msgstr ""
+msgstr "As-tu défini un nom de dossier ?"
 
 #: RelID/relation_tab.py:672
 #, python-brace-format
 msgid "Data saved to : {filename}"
-msgstr ""
+msgstr "Données sauvegardées dans : {filename}"
 
 #: RelID/relation_tab.py:676
 #, fuzzy
@@ -21361,6 +21375,7 @@ msgstr "Génère un graphique du réseau familial."
 #: RelID/relation_tab.py:774
 msgid "Whether to calculate and display family network metrics."
 msgstr ""
+"Indique s’il faut calculer et afficher les métriques du réseau familial."
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
@@ -21711,13 +21726,15 @@ msgstr "Aucune correspondance…"
 
 #: SearchGramplet/SearchGramplet.py:353
 msgid "Start type to search"
-msgstr ""
+msgstr "Commencez à taper pour chercher"
 
 #: SearchGramplet/SearchGramplet.py:389
 msgid ""
 "Start type to search objects.\n"
 "To show all objects enter only «*» symbol."
 msgstr ""
+"Démarrer la frappe pour rechercher des objets.\n"
+"Pour afficher tous les objets, saisissez uniquement le symbole « * »."
 
 #: SearchGramplet/SearchGramplet.py:743
 #, python-format
@@ -22818,6 +22835,10 @@ msgid ""
 "\n"
 "Please create a new empty Family Tree before importing a TMG backup file."
 msgstr ""
+"L’arbre familial actuel n’est pas vide.\n"
+"\n"
+"Veuillez créer un nouvel arbre familial vide avant d’importer un fichier de "
+"sauvegarde TMG."
 
 #: TMGimporter/libtmg.py:2353
 msgid ""
@@ -22853,6 +22874,9 @@ msgid ""
 "\n"
 "The backup may be corrupt or empty."
 msgstr ""
+"Aucun jeu de données n’a été trouvé dans ce fichier de sauvegarde TMG.\n"
+"\n"
+"La sauvegarde peut être corrompue ou vide."
 
 #: TMGimporter/libtmg.py:2462
 #, python-format
@@ -22896,26 +22920,30 @@ msgstr "Barre de défilement fixe (redémarrage requis)"
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:7
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:16
 msgid "This Day in Family History"
-msgstr ""
+msgstr "Cette journée dans l’histoire familiale"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:9
 msgid ""
 "A configurable program that shows you the connected events from your family "
 "tree that match today's day and month."
 msgstr ""
+"Un programme configurable qui affiche les événements connectés de votre "
+"arbre généalogique correspondant au jour et au mois d’aujourd’hui."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:105
 msgid "Database is not open, can't check history right now."
 msgstr ""
+"La base de données n’est pas ouverte, impossible de vérifier l’historique "
+"pour le moment."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:106
 #, python-format
 msgid "On %(date)s in family history ...\n"
-msgstr ""
+msgstr "Le %(date)s dans l'histoire familiale ...\n"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:107
 msgid "... nothing happened!  Check again tomorrow!"
-msgstr ""
+msgstr "... rien ne s’est passé !  Vérifiez à nouveau demain !"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:111
 msgid "Report only living tree members"
@@ -23491,7 +23519,7 @@ msgstr "Optimiser"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:885
 msgid "Use as little space in horizontal direction as possible"
-msgstr ""
+msgstr "Utilise aussi peu d’espace dans la direction horizontale que possible"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:893
 msgid "Male Box Color"
@@ -23515,7 +23543,7 @@ msgstr "Nombre de pixel par année"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:905
 msgid "How many pixel height is one year?"
-msgstr ""
+msgstr "Quelle est la hauteur en pixels d’une année ?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:910
 msgid "Offset X Coordinate"
@@ -23524,6 +23552,8 @@ msgstr ""
 #: TimePedigreeHTML/TimePedigreeHtml.py:912
 msgid "How many pixel are unused besides the most left and most right boxes?"
 msgstr ""
+"Combien de pixels sont inutilisés en dehors des cases la plus à gauche et la "
+"plus à droite ?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:917
 msgid "Offset Y Coordinate"
@@ -23934,7 +23964,7 @@ msgstr "Wikipédia : uk.wikipedia.org"
 
 #: UAWebConnectPack/UAWebPack.py:47
 msgid "Repressed DB: reabit.org.ua"
-msgstr ""
+msgstr "BD réprimée : reabit.org.ua"
 
 #: UAWebConnectPack/UAWebPack.py:50
 msgid "Genealogy DB: familysearch.org"
@@ -24018,7 +24048,7 @@ msgstr "Enregistrer les coordonnées de localisation"
 
 #: WebSearch/WebSearch.py:609
 msgid "AI provider is disabled"
-msgstr ""
+msgstr "Fournisseur d’IA est désactivé"
 
 #: WebSearch/WebSearch.py:613
 msgid "No AI API key provided"
@@ -24027,14 +24057,17 @@ msgstr "Pas de clé IA-API fournie"
 #: WebSearch/WebSearch.py:619
 msgid "AI-generated historical place data is currently disabled"
 msgstr ""
+"Les données historiques de lieux générées par l’IA sont actuellement "
+"désactivées."
 
 #: WebSearch/WebSearch.py:629
 msgid "AI provider is unknown. Please check your AI provider settings."
-msgstr ""
+msgstr "Le fournisseur d’IA est inconnu. Veuillez vérifier ses paramètres."
 
 #: WebSearch/WebSearch.py:649
 msgid "⏳ Generating historical place data, please wait..."
 msgstr ""
+"⏳ Génération des données historiques sur les lieux, veuillez patienter..."
 
 #: WebSearch/WebSearch.py:1520
 msgid "Keys"
@@ -24070,11 +24103,11 @@ msgstr "Masquer le lien pour tous les éléments"
 
 #: WebSearch/WebSearch.py:1541
 msgid "Edit Attribute with the Link"
-msgstr ""
+msgstr "Modifier l’attribut avec le lien"
 
 #: WebSearch/WebSearch.py:1545
 msgid "Edit Note with the Link"
-msgstr ""
+msgstr "Modifier la note avec le lien"
 
 #: WebSearch/WebSearch.py:1548
 msgid "🔍 AI Suggestions"
@@ -24082,11 +24115,11 @@ msgstr "Suggestions d'IA"
 
 #: WebSearch/WebSearch.py:1767
 msgid "Attribute no longer exists. The extra icon is removed"
-msgstr ""
+msgstr "L’attribut n’existe plus. L’icône supplémentaire est supprimée"
 
 #: WebSearch/WebSearch.py:1813
 msgid "Note no longer exists. The extra icon is removed"
-msgstr ""
+msgstr "La note n’existe plus. L’icône supplémentaire est supprimée"
 
 #: WebSearch/WebSearch.py:1838
 #, python-brace-format
@@ -24157,7 +24190,7 @@ msgstr "Visité : %s"
 #: WebSearch/activity_row_generator.py:129
 #, python-format
 msgid "Link: %s"
-msgstr ""
+msgstr "Lien : %s"
 
 #: WebSearch/activity_row_generator.py:116
 #, python-format
@@ -24197,15 +24230,15 @@ msgstr "ID d'objet Gramps : %s"
 #: WebSearch/activity_row_generator.py:142
 #, python-format
 msgid "%s: %s → %s: %s"
-msgstr ""
+msgstr "%s : %s → %s : %s"
 
 #: WebSearch/activity_row_generator.py:152
 msgid "Link visited"
-msgstr ""
+msgstr "Lien visité"
 
 #: WebSearch/activity_row_generator.py:153
 msgid "Link saved to Note"
-msgstr ""
+msgstr "Lien enregistré dans note"
 
 #: WebSearch/activity_row_generator.py:154
 msgid "Link saved to Attribute"
@@ -24217,11 +24250,11 @@ msgstr "Historique du lieu chargé"
 
 #: WebSearch/activity_row_generator.py:156
 msgid "Domain skipped"
-msgstr ""
+msgstr "Domaine ignoré"
 
 #: WebSearch/activity_row_generator.py:157
 msgid "Link hidden for object"
-msgstr ""
+msgstr "Lien caché pour l’objet"
 
 #: WebSearch/activity_row_generator.py:158
 msgid "Link hidden for all objects"
@@ -24305,39 +24338,43 @@ msgstr "Icône - URLs de l'onglet «Notes» (icône «N»)"
 
 #: WebSearch/info_panel.py:108
 msgid "## 🧩 About WebSearch"
-msgstr ""
+msgstr "## 🧩 À propos de WebSearch"
 
 #: WebSearch/info_panel.py:111
 msgid ""
 "WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
 "websites."
 msgstr ""
+"WebSearch est un Gramplet pour Gramps qui vous aide à rechercher des sites "
+"web liés à la généalogie."
 
 #: WebSearch/info_panel.py:117
 msgid ""
 "It supports CSV-based link templates, AI-assisted site discovery, and direct "
 "integration with notes and attributes."
 msgstr ""
+"Il prend en charge les modèles de lien basés sur CSV, la découverte de sites "
+"assistée par l’IA et l’intégration directe avec des notes et des attributs."
 
 #: WebSearch/info_panel.py:125
 msgid "## ⚙️ System Information"
-msgstr ""
+msgstr "## ⚙️ Informations système"
 
 #: WebSearch/info_panel.py:128
 msgid "🔻 **Missing:** `qrcode`"
-msgstr ""
+msgstr "🔻 *Manquant :** `qrcode`"
 
 #: WebSearch/info_panel.py:130
 msgid "ℹ️ This Python library is not available in your system."
-msgstr ""
+msgstr "ℹ️ Cette bibliothèque Python n’est pas disponible dans votre système."
 
 #: WebSearch/info_panel.py:133
 msgid "Without it, QR code generation will not work."
-msgstr ""
+msgstr "Sans cela, la génération de codes QR ne fonctionnera pas."
 
 #: WebSearch/info_panel.py:136
 msgid "💡 Usually installed with: `pip install qrcode[pil]`"
-msgstr ""
+msgstr "💡 Habituellement installé avec : `pip install qrcode[pil]`"
 
 #: WebSearch/info_panel.py:140 WebSearch/info_panel.py:162
 #: WebSearch/info_panel.py:181
@@ -24345,23 +24382,29 @@ msgid ""
 "*Note: Some operating systems or environments may require alternative "
 "installation methods.*"
 msgstr ""
+"*Remarque : certains systèmes d’exploitation ou environnements peuvent "
+"nécessiter des méthodes d’installation alternatives.*"
 
 #: WebSearch/info_panel.py:147
 msgid "🔻 **Missing:** `openai`"
-msgstr ""
+msgstr "🔻 *Manquant :** `openai`"
 
 #: WebSearch/info_panel.py:149
 msgid "ℹ️ This library is required for accessing OpenAI-based features."
 msgstr ""
+"ℹ️ Cette bibliothèque est requise pour accéder aux fonctionnalités basées "
+"sur OpenAI."
 
 #: WebSearch/info_panel.py:153
 msgid ""
 "Without it, AI-generated site suggestions and place history will be disabled."
 msgstr ""
+"Sans cela, les suggestions de sites et l’historique des emplacements générés "
+"par l’IA seront désactivés."
 
 #: WebSearch/info_panel.py:158
 msgid "💡 Usually installed with: `pip install openai`"
-msgstr ""
+msgstr "💡 Habituellement installé avec : `pip install openai`"
 
 #: WebSearch/info_panel.py:169
 msgid "🔻 **Missing:** `requests`"
@@ -24429,10 +24472,12 @@ msgstr ""
 #: WebSearch/info_panel.py:221
 msgid "  💡 *Tip: click any path above to open it in your file manager.*"
 msgstr ""
+"  💡 *Astuce : cliquez sur n’importe quel chemin ci-dessus pour l’ouvrir "
+"dans votre gestionnaire de fichiers.*"
 
 #: WebSearch/info_panel.py:224
 msgid "📖 View detailed usage in: "
-msgstr ""
+msgstr "📖 Vue utilisation détaillée dans : "
 
 #: WebSearch/info_panel.py:233
 msgid "## 💬 Support"
@@ -24440,21 +24485,25 @@ msgstr ""
 
 #: WebSearch/info_panel.py:234
 msgid "👤 Created and maintained by Yurii Liubymyi"
-msgstr ""
+msgstr "👤 Créé et maintenu par Yurii Liubymyi"
 
 #: WebSearch/info_panel.py:237
 msgid ""
 "💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
 "forum:"
 msgstr ""
+"💬 Pour de l’aide ou des retours, n’hésitez pas à mentionner `@Urchello` sur "
+"le forum de Gramps :"
 
 #: WebSearch/info_panel.py:241
 msgid "Gramps Forum (Discourse)"
-msgstr ""
+msgstr "Forum Gramps (Discourse)"
 
 #: WebSearch/info_panel.py:245
 msgid "✅ Bug reports and feature requests are completely **free of charge**."
 msgstr ""
+"✅ Les rapports de bogues et les demandes de fonctionnalités sont "
+"entièrement **gratuits**."
 
 #: WebSearch/info_panel.py:249
 #, fuzzy
@@ -24464,7 +24513,7 @@ msgstr "Problèmes"
 
 #: WebSearch/info_panel.py:252
 msgid "Gramps Bug Tracker"
-msgstr ""
+msgstr "Traqueur de bogues Gramps"
 
 #: WebSearch/info_panel.py:255
 #, python-format
@@ -24481,7 +24530,7 @@ msgstr "Pas de données disponible."
 
 #: WebSearch/markdown_place_history_formatter.py:57
 msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
-msgstr ""
+msgstr "DIVISIONS ADMINISTRATIVES HISTORIQUES DE"
 
 #: WebSearch/markdown_place_history_formatter.py:58
 msgid "Foundation date:"
@@ -24494,11 +24543,11 @@ msgstr "Coordonnées :"
 
 #: WebSearch/markdown_place_history_formatter.py:61
 msgid "Administrative history"
-msgstr ""
+msgstr "Histoire administrative"
 
 #: WebSearch/markdown_place_history_formatter.py:62
 msgid "Data provided to AI:"
-msgstr ""
+msgstr "Données fournies à l’IA :"
 
 #: WebSearch/markdown_place_history_formatter.py:64
 msgid "Full hierarchy"
@@ -24518,7 +24567,7 @@ msgstr "Lien de note (analysé)"
 
 #: WebSearch/note_links_loader.py:120
 msgid "Note Link (internal)"
-msgstr ""
+msgstr "Lien de note (interne)"
 
 #: WebSearch/note_links_loader.py:123
 msgid "Note Link (external)"
@@ -24764,82 +24813,61 @@ msgstr ""
 "\n"
 
 #: lxml/etreeGramplet.py:557
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Nombre d'étiquettes : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:559
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%s\n"
+#, python-format
 msgid ""
 "Number of tags : \n"
 "\t\t\t%06s\n"
 msgstr ""
 "Nombre d'étiquettes : \n"
-"\t\t\t%s\n"
+"\t\t\t%06s\n"
 
 #: lxml/etreeGramplet.py:561
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of  events : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of  events : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Nombre d'évènements : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:564
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of persons : \n"
-#| "\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+#, python-format
 msgid ""
 "Number of persons : \n"
 "\t\t\t%06s\t|\t(%06s) and (%06s)* surnames\n"
 msgstr ""
-"Nombre d’individus : \n"
-"\t\t\t%s\t|\t(%s) et (%s)* noms\n"
+"Nombre de personnes : \n"
+"\t\t\t%06s\t|\t(%06s) et (%06s)* noms\n"
 
 #: lxml/etreeGramplet.py:566
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of persons : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of persons : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Nombre d’individus : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"Nombre de personnes : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:567
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of families : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of families : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Nombre de familles : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:568
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of sources : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of sources : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
@@ -24848,64 +24876,49 @@ msgstr ""
 "\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:570
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of citations : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of citations : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Nombre de citations : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:573
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of places : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of places : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Nombre de lieux : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:574
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of media objects : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of media objects : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Nombre de media : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"Nombre d'objets média : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:575
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of repositories : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of repositories : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Nombre de dépôts : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:576
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of notes : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid ""
 "Number of notes : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Nombre de notes : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:581
 #, python-format
@@ -24981,11 +24994,11 @@ msgstr "xmllint : ignore la validation RelaxNG pour \"%(file)s\""
 
 #: lxml/lxmlGramplet.py:423
 msgid "Custom \"test.xml\" file"
-msgstr ""
+msgstr "Fichier « test.xml » personnalisé"
 
 #: lxml/lxmlGramplet.py:423
 msgid "Please try to fix \"test.xml\""
-msgstr ""
+msgstr "Veuillez essayer de corriger « test.xml »"
 
 #: lxml/lxmlGramplet.py:432
 #, python-format
@@ -25017,7 +25030,7 @@ msgstr ""
 #: lxml/lxmlGramplet.py:572
 #, python-format
 msgid " - (? or %(lang)s)"
-msgstr ""
+msgstr " - (? ou %(lang)s)"
 
 #: lxml/lxmlGramplet.py:609
 msgid "Missing header"
@@ -25094,12 +25107,11 @@ msgstr[0] "Réf : {number}. {name}"
 msgstr[1] "Réf : {number}. {name}"
 
 #: lxml/lxmlGramplet.py:675
-#, fuzzy, python-brace-format
-#| msgid "New source"
+#, python-brace-format
 msgid "\t{number} source"
 msgid_plural "\t{number} sources\n"
-msgstr[0] "Nouvelle source"
-msgstr[1] "Nouvelle source"
+msgstr[0] "\t{number} source"
+msgstr[1] "\t{number} sources\n"
 
 #: lxml/lxmlGramplet.py:694 lxml/lxmlGramplet.py:919
 msgid "Gallery.html"
