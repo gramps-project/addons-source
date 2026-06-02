@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-29 09:23-0700\n"
-"PO-Revision-Date: 2026-05-22 18:11+0000\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.6\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -15448,7 +15448,7 @@ msgstr "Geschwister der Vorfahren einbeziehen."
 
 #: GenealogyTree/gt_sandclock.py:273
 msgid "Compact tree layout"
-msgstr ""
+msgstr "Kompakte Baumstruktur"
 
 #: GenealogyTree/gt_sandclock.py:275
 msgid ""
@@ -15456,6 +15456,9 @@ msgid ""
 "generations per page. Useful for large sandclock trees that otherwise clip "
 "off the rendered page."
 msgstr ""
+"Verwende die Vorlage „database pole reduced“ für den Stammbaum, die mehr "
+"Generationen pro Seite anzeigt. Dies ist nützlich für große Sanduhr-"
+"Stammbäume, die sonst über den Rand der angezeigten Seite hinausragen würden."
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
@@ -16550,80 +16553,93 @@ msgstr "Partner"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:25 HasTagSubstr/hastagsubstr.py:93
 msgid "People with a tag containing <substring>"
-msgstr ""
+msgstr "Personen mit einem Etikett, das <Teilzeichenfolge> enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:26 HasTagSubstr/hastagsubstr.py:94
 msgid "Matches people with a tag whose name contains the given substring"
 msgstr ""
+"Entspricht Personen mit einem Etikett, dessen Name die angegebene "
+"Teilzeichenfolge enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:40 HasTagSubstr/hastagsubstr.py:102
 msgid "Families with a tag containing <substring>"
-msgstr ""
+msgstr "Familien mit einem Etikett, das <Teilzeichenfolge> enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:42 HasTagSubstr/hastagsubstr.py:104
-#, fuzzy
-#| msgid "Matches families that are matched by an event filter"
 msgid "Matches families with a tag whose name contains the given substring"
-msgstr "Entspricht Familien, auf die ein Ereignisfilter zutrifft"
+msgstr ""
+"Entspricht Familien mit einem Etikett, dessen Name die angegebene "
+"Teilzeichenfolge enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:57 HasTagSubstr/hastagsubstr.py:113
 msgid "Events with a tag containing <substring>"
-msgstr ""
+msgstr "Ereignisse mit einem Etikett, das <Teilzeichenfolge> enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:59 HasTagSubstr/hastagsubstr.py:115
 msgid "Matches events with a tag whose name contains the given substring"
 msgstr ""
+"Entspricht Ereignissen mit einem Etikett, dessen Name die angegebene "
+"Teilzeichenfolge enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:74 HasTagSubstr/hastagsubstr.py:124
 msgid "Places with a tag containing <substring>"
-msgstr ""
+msgstr "Orte mit einem Etikett, das <Teilzeichenfolge> enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:76 HasTagSubstr/hastagsubstr.py:126
 msgid "Matches places with a tag whose name contains the given substring"
 msgstr ""
+"Entspricht Orten, deren Bezeichnung die angegebene Teilzeichenfolge enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:91 HasTagSubstr/hastagsubstr.py:135
 msgid "Sources with a tag containing <substring>"
-msgstr ""
+msgstr "Quellen mit einem Etikett, das <Teilzeichenfolge> enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:93 HasTagSubstr/hastagsubstr.py:137
-#, fuzzy
-#| msgid "Matches Sources with values containing the chosen parameters"
 msgid "Matches sources with a tag whose name contains the given substring"
-msgstr "Entspricht Quellen mit Werten, die die gewählten Parameter enthalten"
+msgstr ""
+"Entspricht Quellen mit einem Etikett, deren Name die angegebene "
+"Teilzeichenfolge enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:108 HasTagSubstr/hastagsubstr.py:146
 msgid "Citations with a tag containing <substring>"
-msgstr ""
+msgstr "Fundstellen mit einem Etikett, das <Teilzeichenfolge> enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:110 HasTagSubstr/hastagsubstr.py:148
 msgid "Matches citations with a tag whose name contains the given substring"
 msgstr ""
+"Entspricht Fundstellen mit einem Etikett, dessen Name die angegebene "
+"Teilzeichenfolge enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:125 HasTagSubstr/hastagsubstr.py:157
 msgid "Repositories with a tag containing <substring>"
-msgstr ""
+msgstr "Aufbewahrungsorte mit einem Etikett, das <Teilzeichenfolge> enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:127 HasTagSubstr/hastagsubstr.py:159
 msgid "Matches repositories with a tag whose name contains the given substring"
 msgstr ""
+"Entspricht Aufbewahrungsorte mit einem Etikett, dessen Name die angegebene "
+"Teilzeichenfolge enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:142 HasTagSubstr/hastagsubstr.py:168
 msgid "Media objects with a tag containing <substring>"
-msgstr ""
+msgstr "Medienobjekte mit einem Etikett, das <Teilzeichenfolge> enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:144 HasTagSubstr/hastagsubstr.py:170
 msgid ""
 "Matches media objects with a tag whose name contains the given substring"
 msgstr ""
+"Entspricht Medienobjekten, mit einem Etikett, dessen Name die angegebene "
+"Teilzeichenfolge enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:159 HasTagSubstr/hastagsubstr.py:179
 msgid "Notes with a tag containing <substring>"
-msgstr ""
+msgstr "Notizen mit einem Etikett, das <Teilzeichenfolge> enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:161 HasTagSubstr/hastagsubstr.py:181
 msgid "Matches notes with a tag whose name contains the given substring"
 msgstr ""
+"Entspricht Notizen, mit einem Etikett, dessen Name die angegebene "
+"Teilzeichenfolge enthält"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
@@ -19030,152 +19046,133 @@ msgstr "Gramplet zeigt eine Übersicht über Ereignisse für eine Familie"
 
 #: PDFForms/PDFForms.gpr.py:24 PDFForms/generatepdfform.py:57
 #: PDFForms/generatepdfform.py:63
-#, fuzzy
-#| msgid "Generate Test Notes"
 msgid "Generate PDF Forms"
-msgstr "Testnotizen erstellen"
+msgstr "PDF-Formulare erstellen"
 
 #: PDFForms/PDFForms.gpr.py:26
 msgid ""
 "Generate blank fillable PDF forms: census/event forms or Ahnentafel pedigree "
 "charts."
 msgstr ""
+"Erstellt leere, ausfüllbare PDF-Formulare: Volkszählungs-/"
+"Ereignisseformulare oder Ahnentafeln."
 
 #: PDFForms/PDFForms.gpr.py:46
 msgid "Import Fillable PDF Forms"
-msgstr ""
+msgstr "Ausfüllbare PDF-Formulare importieren"
 
 #: PDFForms/PDFForms.gpr.py:48
 msgid ""
 "Import genealogy data from a PDF form. Send the PDF template to others to "
 "fill out and return."
 msgstr ""
+"Importe von Genealogie-Daten aus einem PDF-Formular. Sende die PDF-Vorlage "
+"an andere, damit diese sie ausfüllen und zurücksenden können."
 
 #: PDFForms/generatepdfform.py:77
 msgid "Census / Event Form"
-msgstr ""
+msgstr "Formular für Volkszählung / Ereignis"
 
 #: PDFForms/generatepdfform.py:79
-#, fuzzy
-#| msgid "Pedigree Chart"
 msgid "Ahnentafel Pedigree Chart"
-msgstr "Ahnentafeldiagramm"
+msgstr "Ahnentafel Stammbaum"
 
 #: PDFForms/generatepdfform.py:99
-#, fuzzy
-#| msgid "Output format"
 msgid "Output file:"
-msgstr "Ausgabeformat"
+msgstr "Ausgabedatei:"
 
 #: PDFForms/generatepdfform.py:107
-#, fuzzy
-#| msgid "Browser"
 msgid "Browse…"
-msgstr "Browser"
+msgstr "Durchsuchen…"
 
 #: PDFForms/generatepdfform.py:116
 msgid "Open PDF after generating"
-msgstr ""
+msgstr "PDF nach der Erstellung öffnen"
 
 #: PDFForms/generatepdfform.py:157
-#, fuzzy
-#| msgid "Form"
 msgid "Form:"
-msgstr "Formular"
+msgstr "Formular:"
 
 #: PDFForms/generatepdfform.py:174
 msgid "Rows:"
-msgstr ""
+msgstr "Zeilen:"
 
 #: PDFForms/generatepdfform.py:186
 msgid "(Rows only affect multi-row sections such as census household lists.)"
 msgstr ""
+"(Zeilen betreffen nur mehrzeilige Abschnitte wie beispielsweise "
+"Volkszählungslisten.)"
 
 #: PDFForms/generatepdfform.py:200
-#, fuzzy
-#| msgid "Generation"
 msgid "Generations:"
-msgstr "Generation"
+msgstr "Generationen:"
 
 #: PDFForms/generatepdfform.py:213
 msgid "Includes subject plus up to 5 ancestor generations (2–32 people)."
 msgstr ""
+"Umfasst die betreffende Person sowie bis zu fünf Vorfahren-Generationen (2–"
+"32 Personen)."
 
 #: PDFForms/generatepdfform.py:252
 msgid "Save PDF as…"
-msgstr ""
+msgstr "PDF speichern unter…"
 
 #: PDFForms/generatepdfform.py:263
-#, fuzzy
-#| msgid "PNG files"
 msgid "PDF files"
-msgstr "PNG-Dateien"
+msgstr "PDF-Dateien"
 
 #: PDFForms/generatepdfform.py:283
 msgid "No output file"
-msgstr ""
+msgstr "Keine Ausgabedatei"
 
 #: PDFForms/generatepdfform.py:283
-#, fuzzy
-#| msgid "Please set an active person."
 msgid "Please specify an output file path."
-msgstr "Bitte setz eine aktive Person."
+msgstr "Bitte gib einen Pfad für die Ausgabedatei an."
 
 #: PDFForms/generatepdfform.py:293
-#, fuzzy
-#| msgid "Nothing is selected"
 msgid "No form selected"
-msgstr "Nichts ist ausgewählt"
+msgstr "Es wurde kein Formular ausgewählt"
 
 #: PDFForms/generatepdfform.py:293
-#, fuzzy
-#| msgid "Please, select a folder"
 msgid "Please select a census form."
-msgstr "Bitte wähle einen Ordner"
+msgstr "Bitte wähle ein Volkszählungsformular aus."
 
 #: PDFForms/generatepdfform.py:299
-#, fuzzy
-#| msgid "not found."
 msgid "Form not found"
-msgstr "nicht gefunden."
+msgstr "Formular nicht gefunden"
 
 #: PDFForms/generatepdfform.py:306
-#, fuzzy
-#| msgid "Generation "
 msgid "Generation failed"
-msgstr "Generation "
+msgstr "Die Generierung ist fehlgeschlagen"
 
 #: PDFForms/generatepdfform.py:317
-#, fuzzy
-#| msgid "Generate"
 msgid "PDF generated"
-msgstr "Generieren"
+msgstr "PDF erstellt"
 
 #: PDFForms/importformpdf.py:180
 msgid "Form addon required"
-msgstr ""
+msgstr "Formularerweiterung erforderlich"
 
 #: PDFForms/importformpdf.py:181
 msgid ""
 "The Form addon must be installed to import Form PDF files.\n"
 "Please install the Form addon and restart Gramps."
 msgstr ""
+"Zum Importieren von Formular-PDF-Dateien muss die Formular-Erweiterung "
+"installiert sein.\n"
+"Bitte installiere die Formular-Erweiterung und starte Gramps neu."
 
 #: PDFForms/importformpdf.py:189
-#, fuzzy
-#| msgid "No. on Form B"
 msgid "Not a Form PDF"
-msgstr "Nummer auf Formular B"
+msgstr "Kein PDF-Formular"
 
 #: PDFForms/importformpdf.py:190
 msgid "The _form_id field is missing or empty."
-msgstr ""
+msgstr "Das Feld „_form_id“ fehlt oder ist leer."
 
 #: PDFForms/importformpdf.py:197
-#, fuzzy
-#| msgid "Unknown avatar:"
 msgid "Unknown form ID"
-msgstr "Unbekannter Avatar:"
+msgstr "Unbekannte Formular-ID"
 
 #: PDFForms/importformpdf.py:198
 #, python-format
@@ -19183,39 +19180,35 @@ msgid ""
 "Form ID '%(id)s' is not recognised by the Form addon.\n"
 "Known IDs: %(known)s"
 msgstr ""
+"Die Formular-ID „%(id)s“ wird von der Formular-Erweiterung nicht erkannt.\n"
+"Bekannte IDs: %(known)s"
 
 #: PDFForms/importformpdf.py:221
 #, python-format
 msgid "Import Form PDF: %s"
-msgstr ""
+msgstr "PDF-Formular importieren: %s"
 
 #: PDFForms/importpdf.py:187
-#, fuzzy
-#| msgid ""
-#| "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
-#| "install 'psycopg[binary]'"
 msgid ""
 "The pypdf package is required to import PDF pedigree forms.\n"
 "Install it with:  pip install pypdf"
 msgstr ""
-"psycopg3 ist für die erweiterte PostgreSQL-Unterstützung erforderlich. "
-"Installiere es mit: pip install 'psycopg[binary]'"
+"Zum Importieren von PDF-Stammbaumformularen ist das pypdf-Paket "
+"erforderlich.\n"
+"Installiere es mit:  pip install pypdf"
 
 #: PDFForms/importpdf.py:195
-#, fuzzy, python-format
-#| msgid "Failed to copy web files : %s"
+#, python-format
 msgid "Could not open PDF file: %s"
-msgstr "Fehler beim Kopieren von Webdateien : %s"
+msgstr "PDF-Datei konnte nicht geöffnet werden: %s"
 
 #: PDFForms/importpdf.py:399
-#, fuzzy
-#| msgid "Add descendant reference in child list"
 msgid "Add media reference: PDF import"
-msgstr "Nachkommenreferenz in Kinderliste hinzufügen"
+msgstr "Medienreferenz hinzufügen: PDF-Import"
 
 #: PDFForms/importpdf.py:448
 msgid "PDF import: no data found"
-msgstr ""
+msgstr "PDF-Import: Keine Daten gefunden"
 
 #: PDFForms/importpdf.py:449
 msgid ""
@@ -19223,28 +19216,30 @@ msgid ""
 "\n"
 "Fill in the form fields and try again."
 msgstr ""
+"Im Stammbaumformular wurden keine Namen gefunden.\n"
+"\n"
+"Fülle die Formularfelder aus und versuche es erneut."
 
 #: PDFForms/importpdf.py:471
 msgid "Bad references in PDF import"
-msgstr ""
+msgstr "Fehlerhafte Verweise im PDF-Import"
 
 #: PDFForms/importpdf.py:492
 msgid "PDF import error"
-msgstr ""
+msgstr "Fehler beim PDF-Import"
 
 #: PDFForms/importpdf.py:503
-#, fuzzy
-#| msgid "No data available."
 msgid "Form importer unavailable"
-msgstr "Keine Daten verfügbar."
+msgstr "Formularimporteur nicht verfügbar"
 
 #: PDFForms/importpdf.py:504
 msgid "importformpdf.py is missing from the PDFForms addon directory."
 msgstr ""
+"Die Datei „importformpdf.py“ fehlt im Verzeichnis der PDFForms-Erweiterung."
 
 #: PDFForms/importpdf.py:510
 msgid "PDF import: unrecognized format"
-msgstr ""
+msgstr "PDF-Import: Unbekanntes Format"
 
 #: PDFForms/importpdf.py:511
 #, python-format
@@ -19253,6 +19248,10 @@ msgid ""
 "\n"
 "Only PDFs generated by Gramps (pedigree or form templates) can be imported."
 msgstr ""
+"In „%s“ wurde keine Gramps-Formular-ID gefunden.\n"
+"\n"
+"Es können nur von Gramps erstellte PDF-Dateien (Stammbaum- oder "
+"Formularvorlagen) importiert werden."
 
 #: Participants/Participants.gpr.py:32
 msgid "Gramplet showing the participants in an event"
@@ -24452,21 +24451,16 @@ msgid "Edit Note with the Link"
 msgstr "Notiz mit dem Link bearbeiten"
 
 #: WebSearch.py:1658
-#, fuzzy
-#| msgid "Edit selection"
 msgid "Edit Internet link"
-msgstr "Auswahl bearbeiten"
+msgstr "Internetlink bearbeiten"
 
 #: WebSearch.py:1661
 msgid "🔍 AI Suggestions"
 msgstr "🔍 KI-Vorschläge"
 
 #: WebSearch.py:1915
-#, fuzzy
-#| msgid "Attribute no longer exists. The extra icon is removed"
 msgid "Attribute no longer matches this WebSearch row"
-msgstr ""
-"Das Attribut existiert nicht mehr. Das zusätzliche Symbol wird entfernt"
+msgstr "Das Attribut stimmt nicht mehr mit dieser WebSearch-Zeile überein"
 
 #: WebSearch.py:1942
 msgid "Attribute no longer exists. The extra icon is removed"
@@ -24474,10 +24468,8 @@ msgstr ""
 "Das Attribut existiert nicht mehr. Das zusätzliche Symbol wird entfernt"
 
 #: WebSearch.py:1983
-#, fuzzy
-#| msgid "Note no longer exists. The extra icon is removed"
 msgid "Note no longer exists"
-msgstr "Die Notiz existiert nicht mehr. Das zusätzliche Symbol wird entfernt"
+msgstr "Die Notiz existiert nicht mehr"
 
 #: WebSearch.py:2005
 msgid "Note no longer exists. The extra icon is removed"
@@ -24485,7 +24477,7 @@ msgstr "Die Notiz existiert nicht mehr. Das zusätzliche Symbol wird entfernt"
 
 #: WebSearch.py:2057
 msgid "Internet link no longer matches this WebSearch row"
-msgstr ""
+msgstr "Der Internetlink stimmt nicht mehr mit dieser WebSearch-Zeile überein"
 
 #: WebSearch.py:2148
 #, python-brace-format
@@ -25250,13 +25242,11 @@ msgid "Period: "
 msgstr "Zeitraum: "
 
 #: lxml/lxmlGramplet.py:659 lxml/lxmlGramplet.py:663
-#, fuzzy, python-brace-format
-#| msgid "\t{number} surname"
-#| msgid_plural "\t{number} surnames; no frequency yet\n"
+#, python-brace-format
 msgid "\t{number} surname"
 msgid_plural "\t{number} surnames; no frequency yet"
 msgstr[0] "\t{number} Nachname"
-msgstr[1] "\t{number} Nachnamen; noch keine Häufigkeit\n"
+msgstr[1] "\t{number} Nachnamen; noch keine Häufigkeit"
 
 #: lxml/lxmlGramplet.py:659
 #, python-brace-format
@@ -25264,31 +25254,25 @@ msgid "\t{number} surname; no frequency yet"
 msgstr "\t{number} Nachname; noch keine Häufigkeit"
 
 #: lxml/lxmlGramplet.py:660 lxml/lxmlGramplet.py:667
-#, fuzzy, python-brace-format
-#| msgid "\t{number} place"
-#| msgid_plural "\t{number} places\n"
+#, python-brace-format
 msgid "\t{number} place"
 msgid_plural "\t{number} places"
 msgstr[0] "\t{number} Ort"
-msgstr[1] "\t{number} Orte\n"
+msgstr[1] "\t{number} Orte"
 
 #: lxml/lxmlGramplet.py:661 lxml/lxmlGramplet.py:671
-#, fuzzy, python-brace-format
-#| msgid "\t{number} note"
-#| msgid_plural "\t{number} notes\n"
+#, python-brace-format
 msgid "\t{number} note"
 msgid_plural "\t{number} notes"
 msgstr[0] "\t{number} Notit"
-msgstr[1] "\t{number} Notizen\n"
+msgstr[1] "\t{number} Notizen"
 
 #: lxml/lxmlGramplet.py:675
-#, fuzzy, python-brace-format
-#| msgid "\t{number} source"
-#| msgid_plural "\t{number} sources\n"
+#, python-brace-format
 msgid "\t{number} source"
 msgid_plural "\t{number} sources"
 msgstr[0] "\t{number} Quelle"
-msgstr[1] "\t{number} Quellen\n"
+msgstr[1] "\t{number} Quellen"
 
 #: lxml/lxmlGramplet.py:694 lxml/lxmlGramplet.py:919
 msgid "Gallery.html"
