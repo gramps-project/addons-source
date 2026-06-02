@@ -25,7 +25,7 @@ register(
     id="Repositories Report Options",
     name=_("Repositories Report Options"),
     description=_("Produces a textual repositories report"),
-    version = '0.3.36',
+    version = '0.3.37',
     gramps_target_version="6.1",
     status=STABLE,  # not yet tested with python 3
     fname="RepositoriesReportAlt.py",
@@ -44,7 +44,7 @@ register(
     id="Repositories Report",
     name=_("Repositories Report"),
     description=_("Produces a textual repositories report"),
-    version = '1.1.36',
+    version = '1.1.37',
     gramps_target_version="6.1",
     status=STABLE,  # not yet tested with python 3
     fname="RepositoriesReport.py",
