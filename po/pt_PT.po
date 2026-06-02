@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-10 10:43-0700\n"
+"POT-Creation-Date: 2026-05-29 09:23-0700\n"
 "PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
@@ -1962,7 +1962,8 @@ msgstr "Apelido, nome"
 
 #: DataEntryGramplet/DataEntryGramplet.py:89 GrampyScript/GrampyScript.py:127
 #: GrampyScript/GrampyScript.py:147 GrampyScript/GrampyScript.py:304
-#: NoteGramplet/NoteGramplet.py:111 RelID/relation_tab.py:363
+#: NoteGramplet/NoteGramplet.py:111 PDFForms/generatepdfform.py:258
+#: RelID/relation_tab.py:363
 msgid "Save"
 msgstr "Gravar"
 
@@ -15178,12 +15179,12 @@ msgid "Export failed"
 msgstr "A exportação falhou"
 
 #: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
-#: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
+#: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:269
 msgid "Include images"
 msgstr "Incluir imagens"
 
 #: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
-#: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
+#: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:270
 msgid "Include images of people in the nodes."
 msgstr "Incluir imagens dos indivíduos nos nós."
 
@@ -15212,25 +15213,36 @@ msgstr "Espaço dos avós"
 msgid "Extra spacing of grandparent families (mm)"
 msgstr "Espaço extra para as famílias dos avós (mm)"
 
-#: GenealogyTree/gt_sandclock.py:235
+#: GenealogyTree/gt_sandclock.py:254
 msgid "The center family for the report"
 msgstr "Família central para o relatório"
 
-#: GenealogyTree/gt_sandclock.py:238
+#: GenealogyTree/gt_sandclock.py:257
 msgid "Generations up"
 msgstr "Gerações acima"
 
-#: GenealogyTree/gt_sandclock.py:242
+#: GenealogyTree/gt_sandclock.py:261
 msgid "Generations down"
 msgstr "Gerações abaixo"
 
-#: GenealogyTree/gt_sandclock.py:246
+#: GenealogyTree/gt_sandclock.py:265
 msgid "Include siblings"
 msgstr "Incluir irmãos"
 
-#: GenealogyTree/gt_sandclock.py:247
+#: GenealogyTree/gt_sandclock.py:266
 msgid "Include siblings of ancestors."
 msgstr "Incluir irmãos de ascendentes."
+
+#: GenealogyTree/gt_sandclock.py:273
+msgid "Compact tree layout"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:275
+msgid ""
+"Use the genealogytree 'database pole reduced' template, which packs more "
+"generations per page. Useful for large sandclock trees that otherwise clip "
+"off the rendered page."
+msgstr ""
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
@@ -16313,6 +16325,83 @@ msgstr "<b>%s:</b>"
 #: GraphView/search_widget.py:783
 msgid "Partners"
 msgstr "Companheiros"
+
+#: HasTagSubstr/hastagsubstr.gpr.py:25 HasTagSubstr/hastagsubstr.py:93
+msgid "People with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:26 HasTagSubstr/hastagsubstr.py:94
+msgid "Matches people with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:40 HasTagSubstr/hastagsubstr.py:102
+msgid "Families with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:42 HasTagSubstr/hastagsubstr.py:104
+#, fuzzy
+#| msgid "Matches families that are matched by an event filter"
+msgid "Matches families with a tag whose name contains the given substring"
+msgstr "Compara famílias que cumprem um filtro de eventos"
+
+#: HasTagSubstr/hastagsubstr.gpr.py:57 HasTagSubstr/hastagsubstr.py:113
+msgid "Events with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:59 HasTagSubstr/hastagsubstr.py:115
+msgid "Matches events with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:74 HasTagSubstr/hastagsubstr.py:124
+msgid "Places with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:76 HasTagSubstr/hastagsubstr.py:126
+msgid "Matches places with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:91 HasTagSubstr/hastagsubstr.py:135
+msgid "Sources with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:93 HasTagSubstr/hastagsubstr.py:137
+#, fuzzy
+#| msgid "Matches Sources with values containing the chosen parameters"
+msgid "Matches sources with a tag whose name contains the given substring"
+msgstr "Compara fontes com valores contendo os parâmetros escolhidos"
+
+#: HasTagSubstr/hastagsubstr.gpr.py:108 HasTagSubstr/hastagsubstr.py:146
+msgid "Citations with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:110 HasTagSubstr/hastagsubstr.py:148
+msgid "Matches citations with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:125 HasTagSubstr/hastagsubstr.py:157
+msgid "Repositories with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:127 HasTagSubstr/hastagsubstr.py:159
+msgid "Matches repositories with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:142 HasTagSubstr/hastagsubstr.py:168
+msgid "Media objects with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:144 HasTagSubstr/hastagsubstr.py:170
+msgid ""
+"Matches media objects with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:159 HasTagSubstr/hastagsubstr.py:179
+msgid "Notes with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:161 HasTagSubstr/hastagsubstr.py:181
+msgid "Matches notes with a tag whose name contains the given substring"
+msgstr ""
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
@@ -17836,7 +17925,7 @@ msgstr "Sem md5 gerado"
 msgid "Close the Media Verify Tool"
 msgstr "Fechar a ferramenta de verificação de multimédia"
 
-#: MediaVerify/MediaVerify.py:103
+#: MediaVerify/MediaVerify.py:103 PDFForms/generatepdfform.py:129
 msgid "Generate"
 msgstr "Gerar"
 
@@ -18689,6 +18778,232 @@ msgstr "Visão geral da família"
 #: Overview/Overview.gpr.py:46
 msgid "Gramplet showing an overview of events for a family"
 msgstr "Gramplet que mostra uma visão geral dos eventos de uma dada família"
+
+#: PDFForms/PDFForms.gpr.py:24 PDFForms/generatepdfform.py:57
+#: PDFForms/generatepdfform.py:63
+#, fuzzy
+#| msgid "Generate Test Notes"
+msgid "Generate PDF Forms"
+msgstr "Gerar notas de teste"
+
+#: PDFForms/PDFForms.gpr.py:26
+msgid ""
+"Generate blank fillable PDF forms: census/event forms or Ahnentafel pedigree "
+"charts."
+msgstr ""
+
+#: PDFForms/PDFForms.gpr.py:46
+msgid "Import Fillable PDF Forms"
+msgstr ""
+
+#: PDFForms/PDFForms.gpr.py:48
+msgid ""
+"Import genealogy data from a PDF form. Send the PDF template to others to "
+"fill out and return."
+msgstr ""
+
+#: PDFForms/generatepdfform.py:77
+msgid "Census / Event Form"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:79
+#, fuzzy
+#| msgid "Pedigree Chart"
+msgid "Ahnentafel Pedigree Chart"
+msgstr "Árvore de costados"
+
+#: PDFForms/generatepdfform.py:99
+#, fuzzy
+#| msgid "Output format"
+msgid "Output file:"
+msgstr "Formato de saída"
+
+#: PDFForms/generatepdfform.py:107
+#, fuzzy
+#| msgid "Browser"
+msgid "Browse…"
+msgstr "Navegador"
+
+#: PDFForms/generatepdfform.py:116
+msgid "Open PDF after generating"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:157
+#, fuzzy
+#| msgid "Form"
+msgid "Form:"
+msgstr "Formulário"
+
+#: PDFForms/generatepdfform.py:174
+msgid "Rows:"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:186
+msgid "(Rows only affect multi-row sections such as census household lists.)"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:200
+#, fuzzy
+#| msgid "Generation"
+msgid "Generations:"
+msgstr "Geração"
+
+#: PDFForms/generatepdfform.py:213
+msgid "Includes subject plus up to 5 ancestor generations (2–32 people)."
+msgstr ""
+
+#: PDFForms/generatepdfform.py:252
+msgid "Save PDF as…"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:263
+#, fuzzy
+#| msgid "PNG files"
+msgid "PDF files"
+msgstr "Ficheiros PNG"
+
+#: PDFForms/generatepdfform.py:283
+msgid "No output file"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:283
+#, fuzzy
+#| msgid "Please set an active person."
+msgid "Please specify an output file path."
+msgstr "Por favor, defina o indivíduo activo."
+
+#: PDFForms/generatepdfform.py:293
+#, fuzzy
+#| msgid "Nothing is selected"
+msgid "No form selected"
+msgstr "Nada seleccionado"
+
+#: PDFForms/generatepdfform.py:293
+#, fuzzy
+#| msgid "Please, select a folder"
+msgid "Please select a census form."
+msgstr "Por favor, seleccione uma pasta"
+
+#: PDFForms/generatepdfform.py:299
+#, fuzzy
+#| msgid "not found."
+msgid "Form not found"
+msgstr "não encontrado."
+
+#: PDFForms/generatepdfform.py:306
+#, fuzzy
+#| msgid "Generation "
+msgid "Generation failed"
+msgstr "Geração "
+
+#: PDFForms/generatepdfform.py:317
+#, fuzzy
+#| msgid "Generate"
+msgid "PDF generated"
+msgstr "Gerar"
+
+#: PDFForms/importformpdf.py:180
+msgid "Form addon required"
+msgstr ""
+
+#: PDFForms/importformpdf.py:181
+msgid ""
+"The Form addon must be installed to import Form PDF files.\n"
+"Please install the Form addon and restart Gramps."
+msgstr ""
+
+#: PDFForms/importformpdf.py:189
+#, fuzzy
+#| msgid "No. on Form B"
+msgid "Not a Form PDF"
+msgstr "N.º no formulário B"
+
+#: PDFForms/importformpdf.py:190
+msgid "The _form_id field is missing or empty."
+msgstr ""
+
+#: PDFForms/importformpdf.py:197
+#, fuzzy
+#| msgid "Unknown avatar:"
+msgid "Unknown form ID"
+msgstr "Avatar desconhecido:"
+
+#: PDFForms/importformpdf.py:198
+#, python-format
+msgid ""
+"Form ID '%(id)s' is not recognised by the Form addon.\n"
+"Known IDs: %(known)s"
+msgstr ""
+
+#: PDFForms/importformpdf.py:221
+#, python-format
+msgid "Import Form PDF: %s"
+msgstr ""
+
+#: PDFForms/importpdf.py:187
+#, fuzzy
+#| msgid ""
+#| "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+#| "install 'psycopg[binary]'"
+msgid ""
+"The pypdf package is required to import PDF pedigree forms.\n"
+"Install it with:  pip install pypdf"
+msgstr ""
+"psycopg3 é necessário para supoete a PostgreSQL Enhance. Instale com: pip "
+"install 'psycopg[binary]'"
+
+#: PDFForms/importpdf.py:195
+#, fuzzy, python-format
+#| msgid "Failed to copy web files : %s"
+msgid "Could not open PDF file: %s"
+msgstr "Falha ao copiar os ficheiros “web”: %s"
+
+#: PDFForms/importpdf.py:399
+#, fuzzy
+#| msgid "Add descendant reference in child list"
+msgid "Add media reference: PDF import"
+msgstr "Adicionar referência a descendentes na lista de filhos"
+
+#: PDFForms/importpdf.py:448
+msgid "PDF import: no data found"
+msgstr ""
+
+#: PDFForms/importpdf.py:449
+msgid ""
+"No names were found in the pedigree form.\n"
+"\n"
+"Fill in the form fields and try again."
+msgstr ""
+
+#: PDFForms/importpdf.py:471
+msgid "Bad references in PDF import"
+msgstr ""
+
+#: PDFForms/importpdf.py:492
+msgid "PDF import error"
+msgstr ""
+
+#: PDFForms/importpdf.py:503
+#, fuzzy
+#| msgid "No data available."
+msgid "Form importer unavailable"
+msgstr "Sem dados disponíveis."
+
+#: PDFForms/importpdf.py:504
+msgid "importformpdf.py is missing from the PDFForms addon directory."
+msgstr ""
+
+#: PDFForms/importpdf.py:510
+msgid "PDF import: unrecognized format"
+msgstr ""
+
+#: PDFForms/importpdf.py:511
+#, python-format
+msgid ""
+"No Gramps form ID found in '%s'.\n"
+"\n"
+"Only PDFs generated by Gramps (pedigree or form templates) can be imported."
+msgstr ""
 
 #: Participants/Participants.gpr.py:32
 msgid "Gramplet showing the participants in an event"
@@ -20950,23 +21265,6 @@ msgstr "Oficiais RIA"
 msgid "FamilySpace"
 msgstr "FamilySpace"
 
-#: RebuildTypes/RebuildTypes.gpr.py:26
-msgid "Rebuild Gramps Types"
-msgstr "Reconstruir tipos do Gramps"
-
-#: RebuildTypes/RebuildTypes.gpr.py:27
-msgid "Rebuilds Gramps Types"
-msgstr "Reconstrói tipos do Gramps"
-
-#: RebuildTypes/RebuildTypes.py:75
-msgid "Gramps Types rebuilt"
-msgstr "Tipos do Gramps reconstruídos"
-
-#: RebuildTypes/RebuildTypes.py:76
-#, python-format
-msgid "Found %d custom event types"
-msgstr "Encontrados %d tipos de eventos personalizados"
-
 #: RelID/relation_tab.gpr.py:35
 msgid "Display relations and distances with the home person"
 msgstr "Mostrar relações e distâncias com o indivíduo inicial"
@@ -21909,7 +22207,7 @@ msgid "Origin:"
 msgstr "Origem:"
 
 #: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
-#: WebSearch/markdown_place_history_formatter.py:59
+#: markdown_place_history_formatter.py:59
 msgid "Note:"
 msgstr "Nota:"
 
@@ -23786,11 +24084,11 @@ msgstr "Colecção de páginas web para US (requer libwebconnect)"
 msgid "US Google"
 msgstr "Google US"
 
-#: WebSearch/WebSearch.gpr.py:34 WebSearch/WebSearch.gpr.py:47
+#: WebSearch.gpr.py:34 WebSearch.gpr.py:47
 msgid "WebSearch"
 msgstr "Procurar na web"
 
-#: WebSearch/WebSearch.gpr.py:36
+#: WebSearch.gpr.py:36
 msgid ""
 "Customized queries for online services based on the active Person, Place, "
 "Family, or Source record"
@@ -23798,84 +24096,106 @@ msgstr ""
 "Consultas personalizadas para serviços em rede com base no registo activo de "
 "Indivíduo, Local, Família ou Fonte"
 
-#: WebSearch/WebSearch.py:468
+#: WebSearch.py:477
 msgid "Save Coordinates to the Place"
 msgstr "Gravar coordenadas do local"
 
-#: WebSearch/WebSearch.py:609
+#: WebSearch.py:618
 msgid "AI provider is disabled"
 msgstr "Fornecedor de IA desactivado"
 
-#: WebSearch/WebSearch.py:613
+#: WebSearch.py:622
 msgid "No AI API key provided"
 msgstr "Sem chave API de IA"
 
-#: WebSearch/WebSearch.py:619
+#: WebSearch.py:628
 msgid "AI-generated historical place data is currently disabled"
 msgstr "Dados históricos de local gerados por IA desactivados"
 
-#: WebSearch/WebSearch.py:629
+#: WebSearch.py:638
 msgid "AI provider is unknown. Please check your AI provider settings."
 msgstr ""
 "Fornecedor de IA desconhecido, por favor, verifique as suas definições."
 
-#: WebSearch/WebSearch.py:649
+#: WebSearch.py:666
 msgid "⏳ Generating historical place data, please wait..."
 msgstr "⏳ A gerar dados históricos do local, por favor aguarde..."
 
-#: WebSearch/WebSearch.py:1520
+#: WebSearch.py:1630
 msgid "Keys"
 msgstr "Chaves"
 
-#: WebSearch/WebSearch.py:1522
+#: WebSearch.py:1632
 msgid "Website URL"
 msgstr "URL do sítio web"
 
-#: WebSearch/WebSearch.py:1525
+#: WebSearch.py:1635
 msgid "Add link to note"
 msgstr "Adicionar ligação à nota"
 
-#: WebSearch/WebSearch.py:1527
+#: WebSearch.py:1637
 msgid "Add link to attribute"
 msgstr "Adicionar ligação ao atributo"
 
-#: WebSearch/WebSearch.py:1529
+#: WebSearch.py:1639
 msgid "Show QR-code"
 msgstr "Mostrar código QR"
 
-#: WebSearch/WebSearch.py:1531
+#: WebSearch.py:1641
 msgid "Copy link to clipboard"
 msgstr "Copiar ligação para a memória"
 
-#: WebSearch/WebSearch.py:1534
+#: WebSearch.py:1644
 msgid "Hide link for selected item"
 msgstr "Ocultar ligação para o item seleccionado"
 
-#: WebSearch/WebSearch.py:1537
+#: WebSearch.py:1647
 msgid "Hide link for all items"
 msgstr "Ocultar ligação para todos os itens"
 
-#: WebSearch/WebSearch.py:1541
+#: WebSearch.py:1651
 msgid "Edit Attribute with the Link"
 msgstr "Editar atributo com a ligação"
 
-#: WebSearch/WebSearch.py:1545
+#: WebSearch.py:1655
 msgid "Edit Note with the Link"
 msgstr "Editar nota com a ligação"
 
-#: WebSearch/WebSearch.py:1548
+#: WebSearch.py:1658
+#, fuzzy
+#| msgid "Edit selection"
+msgid "Edit Internet link"
+msgstr "Editar selecção"
+
+#: WebSearch.py:1661
 msgid "🔍 AI Suggestions"
 msgstr "🔍 Sugestões IA"
 
-#: WebSearch/WebSearch.py:1767
+#: WebSearch.py:1915
+#, fuzzy
+#| msgid "Attribute no longer exists. The extra icon is removed"
+msgid "Attribute no longer matches this WebSearch row"
+msgstr "O atributo já não existe. O ícone extra foi removido"
+
+#: WebSearch.py:1942
 msgid "Attribute no longer exists. The extra icon is removed"
 msgstr "O atributo já não existe. O ícone extra foi removido"
 
-#: WebSearch/WebSearch.py:1813
+#: WebSearch.py:1983
+#, fuzzy
+#| msgid "Note no longer exists. The extra icon is removed"
+msgid "Note no longer exists"
+msgstr "O nó já não existe. O ícone extra foi removido"
+
+#: WebSearch.py:2005
 msgid "Note no longer exists. The extra icon is removed"
 msgstr "O nó já não existe. O ícone extra foi removido"
 
-#: WebSearch/WebSearch.py:1838
+#: WebSearch.py:2057
+msgid "Internet link no longer matches this WebSearch row"
+msgstr ""
+
+#: WebSearch.py:2148
 #, python-brace-format
 msgid ""
 "📌 This '{title}' web link was archived for future reference by the "
@@ -23894,552 +24214,46 @@ msgstr ""
 "Pode utilizá-la para voltar à fonte e verificar a informação relacionada com "
 "esta entidade."
 
-#: WebSearch/WebSearch.py:1924
+#: WebSearch.py:2229
 #, python-format
 msgid "Note #%(id)s has been successfully added"
 msgstr "Nota n.º %(id)s adicionada com sucesso"
 
-#: WebSearch/WebSearch.py:1927
+#: WebSearch.py:2232
 msgid "Error creating note"
 msgstr "Erro ao criar a nota"
 
-#: WebSearch/WebSearch.py:1947
+#: WebSearch.py:2252
 msgid "URL is copied to the Clipboard"
 msgstr "URL copiado para a memória"
 
-#: WebSearch/WebSearch.py:2066
+#: WebSearch.py:2391
 msgid "WebSearch Link"
 msgstr "Ligação WebSearch"
 
-#: WebSearch/WebSearch.py:2108
+#: WebSearch.py:2428
 msgid "Attribute has been successfully added"
 msgstr "Atributo adicionado com sucesso"
 
-#: WebSearch/WebSearch.py:2140
+#: WebSearch.py:2460
 #, python-brace-format
 msgid "Title: {title}"
 msgstr "Título: {title}"
 
-#: WebSearch/WebSearch.py:2144
+#: WebSearch.py:2464
 #, python-brace-format
 msgid "Replaced: {keys}"
 msgstr "Substituído: {keys}"
 
-#: WebSearch/WebSearch.py:2147
+#: WebSearch.py:2467
 #, python-brace-format
 msgid "Empty: {keys}"
 msgstr "Vazio: {keys}"
 
-#: WebSearch/WebSearch.py:2149
+#: WebSearch.py:2469
 #, python-brace-format
 msgid "Comment: {comment}"
 msgstr "Comentário: {comment}"
-
-#: WebSearch/activity_row_generator.py:110
-#, python-format
-msgid "Visited: %s"
-msgstr "Visitada: %s"
-
-#: WebSearch/activity_row_generator.py:114
-#: WebSearch/activity_row_generator.py:129
-#, python-format
-msgid "Link: %s"
-msgstr "Ligação: %s"
-
-#: WebSearch/activity_row_generator.py:116
-#, python-format
-msgid "Attribute: %s"
-msgstr "Atributo: %s"
-
-#: WebSearch/activity_row_generator.py:118
-#, python-format
-msgid "Value: %s"
-msgstr "Valor: %s"
-
-#: WebSearch/activity_row_generator.py:123
-#, python-format
-msgid "Loaded from file: %s"
-msgstr "Carregado de ficheiro: %s"
-
-#: WebSearch/activity_row_generator.py:126
-#, python-format
-msgid "Domain: %s"
-msgstr "Domínio: %s"
-
-#: WebSearch/activity_row_generator.py:131
-#, python-format
-msgid "Object: %s"
-msgstr "Objecto: %s"
-
-#: WebSearch/activity_row_generator.py:135
-#, python-format
-msgid "Pattern: %s"
-msgstr "Padrão: %s"
-
-#: WebSearch/activity_row_generator.py:138
-#, python-format
-msgid "Object Gramps ID: %s"
-msgstr "ID Gramps do objecto: %s"
-
-#: WebSearch/activity_row_generator.py:142
-#, python-format
-msgid "%s: %s → %s: %s"
-msgstr "%s: %s → %s: %s"
-
-#: WebSearch/activity_row_generator.py:152
-msgid "Link visited"
-msgstr "Ligação visitada"
-
-#: WebSearch/activity_row_generator.py:153
-msgid "Link saved to Note"
-msgstr "Ligação gravada em nota"
-
-#: WebSearch/activity_row_generator.py:154
-msgid "Link saved to Attribute"
-msgstr "Ligação gravada em atributo"
-
-#: WebSearch/activity_row_generator.py:155
-msgid "Place history loaded"
-msgstr "Histórico do local carregado"
-
-#: WebSearch/activity_row_generator.py:156
-msgid "Domain skipped"
-msgstr "Domínio saltado"
-
-#: WebSearch/activity_row_generator.py:157
-msgid "Link hidden for object"
-msgstr "Ligação oculta para objecto"
-
-#: WebSearch/activity_row_generator.py:158
-msgid "Link hidden for all objects"
-msgstr "Ligação oculta para todos os objectos"
-
-#: WebSearch/activity_row_generator.py:159
-msgid "Attribute updated"
-msgstr "Atributo actualizado"
-
-#: WebSearch/activity_row_generator.py:160
-msgid "Note updated"
-msgstr "Nota actualizada"
-
-#: WebSearch/constants.py:390
-msgid "Column - Icons"
-msgstr "Coluna - Ícones"
-
-#: WebSearch/constants.py:391
-msgid "Column - Source Types (flags)"
-msgstr "Coluna - Tipos de fonte (bandeiras)"
-
-#: WebSearch/constants.py:392
-msgid "Column - Keys"
-msgstr "Coluna - Chaves"
-
-#: WebSearch/constants.py:393
-msgid "Column - Title"
-msgstr "Coluna - Título"
-
-#: WebSearch/constants.py:394
-msgid "Column - Website Url"
-msgstr "Coluna - Url da página web"
-
-#: WebSearch/constants.py:395
-msgid "Column - Comment"
-msgstr "Coluna - Comentário"
-
-#: WebSearch/constants.py:424
-msgid "Icon - Visited URLs (checkmark)"
-msgstr "Ícone - Urls visitados (visto)"
-
-#: WebSearch/constants.py:425
-msgid "Icon - Saved URLs (floppy disk)"
-msgstr "Ícone - Urls gravados (disquete)"
-
-#: WebSearch/constants.py:426
-msgid "Icon - URLs linked to UID attributes (UID badge)"
-msgstr "Ícone - Urls ligados a atributos de UID (distintivo)"
-
-#: WebSearch/constants.py:427
-msgid "Icon - URLs from regional CSV files (flag)"
-msgstr "Ícone - Urls de ficheiros CSV regionais (bandeira)"
-
-#: WebSearch/constants.py:428
-msgid "Icon - URLs from static CSV files (red pin)"
-msgstr "Ícone - Urls de ficheiros CSV estáticos (pino vermelho)"
-
-#: WebSearch/constants.py:429
-msgid "Icon - URLs from common CSV files (earth)"
-msgstr "Ícone - Urls de ficheiros CSV comuns"
-
-#: WebSearch/constants.py:430
-msgid "Icon - URLs from cross CSV files (shuffle arrows)"
-msgstr "Ícone - Urls de ficheiros CSV cruzados (baralhar)"
-
-#: WebSearch/constants.py:431
-msgid "Icon - URLs from custom user directory (spreadsheet icon)"
-msgstr "Ícone - Urls da pasta de utilizador personalizada (folha de cálculo)"
-
-#: WebSearch/constants.py:432
-msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr "Ícone - Urls do separador Atributos (ícone \"A\")"
-
-#: WebSearch/constants.py:433
-msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr "Ícone - Urls do separador Internet (ícone \"I\")"
-
-#: WebSearch/constants.py:434
-msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr "Ícone - Urls do separador Notas (ícone \"N\")"
-
-#: WebSearch/info_panel.py:108
-msgid "## 🧩 About WebSearch"
-msgstr "## 🧩 Acerca da WebSearch"
-
-#: WebSearch/info_panel.py:111
-msgid ""
-"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
-"websites."
-msgstr ""
-"WebSearch é um gramplet que ajuda na procura em sítios de genealogia em rede."
-
-#: WebSearch/info_panel.py:117
-msgid ""
-"It supports CSV-based link templates, AI-assisted site discovery, and direct "
-"integration with notes and attributes."
-msgstr ""
-"Suporta modelos de ligação baseados em CSV, descoberta de sítios assistida "
-"por IA e integração directa com notas e atributos."
-
-#: WebSearch/info_panel.py:125
-msgid "## ⚙️ System Information"
-msgstr "## ⚙️ Informação do sistema"
-
-#: WebSearch/info_panel.py:128
-msgid "🔻 **Missing:** `qrcode`"
-msgstr "🔻 **Em falta:** \"qrcode\""
-
-#: WebSearch/info_panel.py:130
-msgid "ℹ️ This Python library is not available in your system."
-msgstr "ℹ️ Esta biblioteca Python não está disponível no seu sistema."
-
-#: WebSearch/info_panel.py:133
-msgid "Without it, QR code generation will not work."
-msgstr "Sem ele, a geração do código QR não funcionará."
-
-#: WebSearch/info_panel.py:136
-msgid "💡 Usually installed with: `pip install qrcode[pil]`"
-msgstr "💡 Normalmente instalada com: `pip install qrcode[pil]`"
-
-#: WebSearch/info_panel.py:140 WebSearch/info_panel.py:162
-#: WebSearch/info_panel.py:181
-msgid ""
-"*Note: Some operating systems or environments may require alternative "
-"installation methods.*"
-msgstr ""
-"*Nota: alguns sistemas operativos ou ambientes podem exigir métodos de "
-"instalação alternativos.*"
-
-#: WebSearch/info_panel.py:147
-msgid "🔻 **Missing:** `openai`"
-msgstr "🔻 **Em falta:** `openai`"
-
-#: WebSearch/info_panel.py:149
-msgid "ℹ️ This library is required for accessing OpenAI-based features."
-msgstr ""
-"ℹ️ Esta biblioteca é necessária para aceder a funcionalidades baseadas na "
-"OpenAI."
-
-#: WebSearch/info_panel.py:153
-msgid ""
-"Without it, AI-generated site suggestions and place history will be disabled."
-msgstr ""
-"Sem ela, as sugestões de sítios geradas por IA e o histórico de locais "
-"estarão desactivados."
-
-#: WebSearch/info_panel.py:158
-msgid "💡 Usually installed with: `pip install openai`"
-msgstr "💡 Normalmente instalado com: `pip install openai`"
-
-#: WebSearch/info_panel.py:169
-msgid "🔻 **Missing:** `requests`"
-msgstr "🔻 **Em falta:** `requests`"
-
-#: WebSearch/info_panel.py:171
-msgid "ℹ️ This library is used to communicate with web APIs."
-msgstr "ℹ️ Esta biblioteca é utilizada para comunicar com as API da Web."
-
-#: WebSearch/info_panel.py:174
-msgid "Without it, external data sources may not be accessible."
-msgstr "Sem ela, as fontes de dados externas podem não estar acessíveis."
-
-#: WebSearch/info_panel.py:177
-msgid "💡 Usually installed with: `pip install requests`"
-msgstr "💡 Normalmente instalado com: `pip install requests`"
-
-#: WebSearch/info_panel.py:188
-msgid "## 📂 Data File Locations"
-msgstr "## 📂 Localizações dos ficheiros de dados"
-
-#: WebSearch/info_panel.py:191
-msgid ""
-"Below are the paths to system and user-defined data files used by WebSearch."
-msgstr ""
-"Abaixo estão os caminhos para os ficheiros de dados do sistema e definidos "
-"pelo utilizador utilizados pelo WebSearch."
-
-#: WebSearch/info_panel.py:195
-msgid "#### CSV File Paths"
-msgstr "#### Caminhos de ficheiros CSV"
-
-#: WebSearch/info_panel.py:197
-#, python-format
-msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
-msgstr ""
-"- **Caminho do sistema:** `{dir|%s}` - contém os ficheiros CSV internos"
-
-#: WebSearch/info_panel.py:201
-#, python-format
-msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
-msgstr ""
-"- **Caminho definido pelo utilizador:** `{dir|%s}` - para ficheiros CSV "
-"personalizados definidos pelo utilizador"
-
-#: WebSearch/info_panel.py:205
-msgid "#### JSON File Paths"
-msgstr "#### Caminhos de ficheiros JSON"
-
-#: WebSearch/info_panel.py:208
-#, python-format
-msgid ""
-"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
-"file"
-msgstr ""
-"- **Caminho do sistema:** `{dir|%s}` - contém o ficheiro "
-"attribute_mapping.json interno"
-
-#: WebSearch/info_panel.py:214
-#, python-format
-msgid ""
-"- **User-defined path:** `{dir|%s}` – for custom user-defined "
-"attribute_mapping.json file"
-msgstr ""
-"- **Caminho definido pelo utilizador:** `{dir|%s}` - para ficheiro "
-"attribute_mapping.json personalizado definido pelo utilizador"
-
-#: WebSearch/info_panel.py:221
-msgid "  💡 *Tip: click any path above to open it in your file manager.*"
-msgstr ""
-"  💡 *Dica: clique em qualquer caminho acima para o abrir no seu gestor de "
-"ficheiros.*"
-
-#: WebSearch/info_panel.py:224
-msgid "📖 View detailed usage in: "
-msgstr "📖 Ver utilização pormenorizada em: "
-
-#: WebSearch/info_panel.py:233
-msgid "## 💬 Support"
-msgstr "## 💬 Suporte"
-
-#: WebSearch/info_panel.py:234
-msgid "👤 Created and maintained by Yurii Liubymyi"
-msgstr "👤 Criado e mantido por Yurii Liubymyi"
-
-#: WebSearch/info_panel.py:237
-msgid ""
-"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
-"forum:"
-msgstr ""
-"💬 Para ajuda ou comentários, mencione \"@Urchello\" no fórum do Gramps:"
-
-#: WebSearch/info_panel.py:241
-msgid "Gramps Forum (Discourse)"
-msgstr "Fórum Gramps (Discourse)"
-
-#: WebSearch/info_panel.py:245
-msgid "✅ Bug reports and feature requests are completely **free of charge**."
-msgstr ""
-"✅ Os relatórios de erros e os pedidos de funcionalidades são completamente "
-"**gratuitos**."
-
-#: WebSearch/info_panel.py:249
-msgid "GitHub Issues"
-msgstr "Problemas no GitHub"
-
-#: WebSearch/info_panel.py:252
-msgid "Gramps Bug Tracker"
-msgstr "Rastreio de erros do Gramps"
-
-#: WebSearch/info_panel.py:255
-#, python-format
-msgid "🧩 WebSearch Gramplet version: `%s`"
-msgstr "🧩 Versão do Gramplet do WebSearch: \"%s\""
-
-#: WebSearch/internet_links_loader.py:70 WebSearch/internet_links_loader.py:71
-msgid "No title"
-msgstr "Sem título"
-
-#: WebSearch/markdown_place_history_formatter.py:52
-msgid "No data available."
-msgstr "Sem dados disponíveis."
-
-#: WebSearch/markdown_place_history_formatter.py:57
-msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
-msgstr "DIVISÕES ADMINISTRATIVAS HISTÓRICAS DE"
-
-#: WebSearch/markdown_place_history_formatter.py:58
-msgid "Foundation date:"
-msgstr "Data de fundação:"
-
-#: WebSearch/markdown_place_history_formatter.py:60
-msgid "Coordinates:"
-msgstr "Coordenadas:"
-
-#: WebSearch/markdown_place_history_formatter.py:61
-msgid "Administrative history"
-msgstr "Histórico administrativo"
-
-#: WebSearch/markdown_place_history_formatter.py:62
-msgid "Data provided to AI:"
-msgstr "Dados fornecidos à IA:"
-
-#: WebSearch/markdown_place_history_formatter.py:64
-msgid "Full hierarchy"
-msgstr "Hierarquia completa"
-
-#: WebSearch/markdown_place_history_formatter.py:68
-msgid "Place Type:"
-msgstr "Tipo de local:"
-
-#: WebSearch/markdown_place_history_formatter.py:69
-msgid "Last Retrieved At:"
-msgstr "Última actualização em:"
-
-#: WebSearch/note_links_loader.py:69
-msgid "Note Link (parsed)"
-msgstr "Ligação de nota(analisada)"
-
-#: WebSearch/note_links_loader.py:120
-msgid "Note Link (internal)"
-msgstr "Ligação de nota (interna)"
-
-#: WebSearch/note_links_loader.py:123
-msgid "Note Link (external)"
-msgstr "Ligação de nota (externa)"
-
-#: WebSearch/qr_window.py:76
-msgid "QR-code"
-msgstr "Código QR"
-
-#: WebSearch/qr_window.py:107 WebSearch/qr_window.py:110
-msgid "⚠ Missing dependency \"qrcode\""
-msgstr "⚠ Dependência \"qrcode\" em falta"
-
-#: WebSearch/qr_window.py:121
-msgid ""
-"⚠ Error generating QR code:\n"
-"Original error: “{}”"
-msgstr ""
-"⚠ Erro ao gerar código QR:\n"
-"Erro original: “{}”"
-
-#: WebSearch/settings_ui_manager.py:112
-msgid "Middle Name Handling"
-msgstr "Gestão de nomes do meio"
-
-#: WebSearch/settings_ui_manager.py:117
-msgid "Leave alone"
-msgstr "Deixar em paz"
-
-#: WebSearch/settings_ui_manager.py:118
-msgid "Separate"
-msgstr "Separar"
-
-#: WebSearch/settings_ui_manager.py:128
-msgid "URL Compactness Level"
-msgstr "Nível de compressão do URL"
-
-#: WebSearch/settings_ui_manager.py:134
-msgid "Shortest - No Prefix, No Keys"
-msgstr "Curto - sem prefixo nem chaves"
-
-#: WebSearch/settings_ui_manager.py:137
-msgid "Compact - No Prefix, Keys Without Attributes"
-msgstr "Compacto - sem prefixo, chaves sem atributos"
-
-#: WebSearch/settings_ui_manager.py:140
-msgid "Compact - No Prefix, Keys With Attributes"
-msgstr "Compacto - sem prefixo, chaves com atributos"
-
-#: WebSearch/settings_ui_manager.py:143
-msgid "Long - Without Prefix on the Left"
-msgstr "Longo - sem prefixo à esquerda"
-
-#: WebSearch/settings_ui_manager.py:150
-msgid "URL Prefix Replacement"
-msgstr "Substituição do prefixo do URL"
-
-#: WebSearch/settings_ui_manager.py:157
-msgid "AI Provider"
-msgstr "Fornecedor de IA"
-
-#: WebSearch/settings_ui_manager.py:162
-msgid "(Disabled)"
-msgstr "(desactivado)"
-
-#: WebSearch/settings_ui_manager.py:163
-msgid "OpenAI"
-msgstr "OpenAI"
-
-#: WebSearch/settings_ui_manager.py:164
-msgid "Mistral AI"
-msgstr "Mistral AI"
-
-#: WebSearch/settings_ui_manager.py:171
-msgid "OpenAI API Key"
-msgstr "Chave OpenAI API"
-
-#: WebSearch/settings_ui_manager.py:176
-msgid "OpenAI Model"
-msgstr "Modelo OpenAI API"
-
-#: WebSearch/settings_ui_manager.py:181
-msgid "Mistral API Key"
-msgstr "Chave API Mistral"
-
-#: WebSearch/settings_ui_manager.py:186
-msgid "Mistral Model"
-msgstr "Modelo Mistral"
-
-#: WebSearch/settings_ui_manager.py:191
-msgid "Show Links From the 'Attributes' tab"
-msgstr "Mostrar ligações do separador Atributos"
-
-#: WebSearch/settings_ui_manager.py:196
-msgid "Show Links From the 'Internet' tab"
-msgstr "Mostrar ligações do separador Internet"
-
-#: WebSearch/settings_ui_manager.py:201
-msgid "Show Links From the Notes"
-msgstr "Mostrar ligações de notas"
-
-#: WebSearch/settings_ui_manager.py:209
-msgid "Enable AI-generated historical place data"
-msgstr "Permitir dados históricos de locais gerados por IA"
-
-#: WebSearch/settings_ui_manager.py:215
-msgid "Custom country code for AI notes (optional)"
-msgstr "Código de país personalizado para notas de IA (opcional)"
-
-#: WebSearch/settings_ui_manager.py:244
-msgid "Enable CSV Files"
-msgstr "Permitir ficheiros CSV"
-
-#: WebSearch/settings_ui_manager.py:251
-msgid "Display Columns"
-msgstr "Mostrar colunas"
-
-#: WebSearch/settings_ui_manager.py:265
-msgid "Display Icons"
-msgstr "Ícones de exibição"
 
 #: WordleGramplet/WordleGramplet.gpr.py:4
 #: WordleGramplet/WordleGramplet.gpr.py:10
@@ -24461,6 +24275,334 @@ msgstr "Número de tamanhos de letra"
 #: WordleGramplet/WordleGramplet.py:144
 msgid "Select filter to restrict list"
 msgstr "Seleccione um filtro para limitar a lista"
+
+#: activity_row_generator.py:120
+#, python-format
+msgid "Visited: %s"
+msgstr "Visitada: %s"
+
+#: activity_row_generator.py:124 activity_row_generator.py:139
+#, python-format
+msgid "Link: %s"
+msgstr "Ligação: %s"
+
+#: activity_row_generator.py:126
+#, python-format
+msgid "Attribute: %s"
+msgstr "Atributo: %s"
+
+#: activity_row_generator.py:128
+#, python-format
+msgid "Value: %s"
+msgstr "Valor: %s"
+
+#: activity_row_generator.py:133
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "Carregado de ficheiro: %s"
+
+#: activity_row_generator.py:136
+#, python-format
+msgid "Domain: %s"
+msgstr "Domínio: %s"
+
+#: activity_row_generator.py:141
+#, python-format
+msgid "Object: %s"
+msgstr "Objecto: %s"
+
+#: activity_row_generator.py:145
+#, python-format
+msgid "Pattern: %s"
+msgstr "Padrão: %s"
+
+#: activity_row_generator.py:148
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "ID Gramps do objecto: %s"
+
+#: activity_row_generator.py:152
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s: %s → %s: %s"
+
+#: activity_row_generator.py:162
+msgid "Link visited"
+msgstr "Ligação visitada"
+
+#: activity_row_generator.py:163
+msgid "Link saved to Note"
+msgstr "Ligação gravada em nota"
+
+#: activity_row_generator.py:164
+msgid "Link saved to Attribute"
+msgstr "Ligação gravada em atributo"
+
+#: activity_row_generator.py:165
+msgid "Place history loaded"
+msgstr "Histórico do local carregado"
+
+#: activity_row_generator.py:166
+msgid "Domain skipped"
+msgstr "Domínio saltado"
+
+#: activity_row_generator.py:167
+msgid "Link hidden for object"
+msgstr "Ligação oculta para objecto"
+
+#: activity_row_generator.py:168
+msgid "Link hidden for all objects"
+msgstr "Ligação oculta para todos os objectos"
+
+#: activity_row_generator.py:169
+msgid "Attribute updated"
+msgstr "Atributo actualizado"
+
+#: activity_row_generator.py:170
+msgid "Note updated"
+msgstr "Nota actualizada"
+
+#: constants.py:392
+msgid "Column - Icons"
+msgstr "Coluna - Ícones"
+
+#: constants.py:393
+msgid "Column - Source Types (flags)"
+msgstr "Coluna - Tipos de fonte (bandeiras)"
+
+#: constants.py:394
+msgid "Column - Keys"
+msgstr "Coluna - Chaves"
+
+#: constants.py:395
+msgid "Column - Title"
+msgstr "Coluna - Título"
+
+#: constants.py:396
+msgid "Column - Website Url"
+msgstr "Coluna - Url da página web"
+
+#: constants.py:397
+msgid "Column - Comment"
+msgstr "Coluna - Comentário"
+
+#: constants.py:426
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "Ícone - Urls visitados (visto)"
+
+#: constants.py:427
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "Ícone - Urls gravados (disquete)"
+
+#: constants.py:428
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "Ícone - Urls ligados a atributos de UID (distintivo)"
+
+#: constants.py:429
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "Ícone - Urls de ficheiros CSV regionais (bandeira)"
+
+#: constants.py:430
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "Ícone - Urls de ficheiros CSV estáticos (pino vermelho)"
+
+#: constants.py:431
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "Ícone - Urls de ficheiros CSV comuns"
+
+#: constants.py:432
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "Ícone - Urls de ficheiros CSV cruzados (baralhar)"
+
+#: constants.py:433
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr "Ícone - Urls da pasta de utilizador personalizada (folha de cálculo)"
+
+#: constants.py:434
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Ícone - Urls do separador Atributos (ícone \"A\")"
+
+#: constants.py:435
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Ícone - Urls do separador Internet (ícone \"I\")"
+
+#: constants.py:436
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Ícone - Urls do separador Notas (ícone \"N\")"
+
+#: info_panel.py:108
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 Acerca da WebSearch"
+
+#: info_panel.py:111
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"WebSearch é um gramplet que ajuda na procura em sítios de genealogia em rede."
+
+#: info_panel.py:117
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"Suporta modelos de ligação baseados em CSV, descoberta de sítios assistida "
+"por IA e integração directa com notas e atributos."
+
+#: info_panel.py:125
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Informação do sistema"
+
+#: info_panel.py:128
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Em falta:** \"qrcode\""
+
+#: info_panel.py:130
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Esta biblioteca Python não está disponível no seu sistema."
+
+#: info_panel.py:133
+msgid "Without it, QR code generation will not work."
+msgstr "Sem ele, a geração do código QR não funcionará."
+
+#: info_panel.py:136
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Normalmente instalada com: `pip install qrcode[pil]`"
+
+#: info_panel.py:140 info_panel.py:162 info_panel.py:181
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Nota: alguns sistemas operativos ou ambientes podem exigir métodos de "
+"instalação alternativos.*"
+
+#: info_panel.py:147
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **Em falta:** `openai`"
+
+#: info_panel.py:149
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr ""
+"ℹ️ Esta biblioteca é necessária para aceder a funcionalidades baseadas na "
+"OpenAI."
+
+#: info_panel.py:153
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Sem ela, as sugestões de sítios geradas por IA e o histórico de locais "
+"estarão desactivados."
+
+#: info_panel.py:158
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 Normalmente instalado com: `pip install openai`"
+
+#: info_panel.py:169
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Em falta:** `requests`"
+
+#: info_panel.py:171
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Esta biblioteca é utilizada para comunicar com as API da Web."
+
+#: info_panel.py:174
+msgid "Without it, external data sources may not be accessible."
+msgstr "Sem ela, as fontes de dados externas podem não estar acessíveis."
+
+#: info_panel.py:177
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 Normalmente instalado com: `pip install requests`"
+
+#: info_panel.py:188
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Localizações dos ficheiros de dados"
+
+#: info_panel.py:191
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"Abaixo estão os caminhos para os ficheiros de dados do sistema e definidos "
+"pelo utilizador utilizados pelo WebSearch."
+
+#: info_panel.py:195
+msgid "#### CSV File Paths"
+msgstr "#### Caminhos de ficheiros CSV"
+
+#: info_panel.py:197
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr ""
+"- **Caminho do sistema:** `{dir|%s}` - contém os ficheiros CSV internos"
+
+#: info_panel.py:201
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **Caminho definido pelo utilizador:** `{dir|%s}` - para ficheiros CSV "
+"personalizados definidos pelo utilizador"
+
+#: info_panel.py:205
+msgid "#### JSON File Paths"
+msgstr "#### Caminhos de ficheiros JSON"
+
+#: info_panel.py:208
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **Caminho do sistema:** `{dir|%s}` - contém o ficheiro "
+"attribute_mapping.json interno"
+
+#: info_panel.py:214
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **Caminho definido pelo utilizador:** `{dir|%s}` - para ficheiro "
+"attribute_mapping.json personalizado definido pelo utilizador"
+
+#: info_panel.py:221
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *Dica: clique em qualquer caminho acima para o abrir no seu gestor de "
+"ficheiros.*"
+
+#: info_panel.py:224
+msgid "📖 View detailed usage in: "
+msgstr "📖 Ver utilização pormenorizada em: "
+
+#: info_panel.py:233
+msgid "## 💬 Support"
+msgstr "## 💬 Suporte"
+
+#: info_panel.py:234
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 Criado e mantido por Yurii Liubymyi"
+
+#: info_panel.py:237
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 Para ajuda ou comentários, mencione \"@Urchello\" no fórum do Gramps:"
+
+#: info_panel.py:245
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr ""
+"✅ Os relatórios de erros e os pedidos de funcionalidades são completamente "
+"**gratuitos**."
+
+#: info_panel.py:255
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 Versão do Gramplet do WebSearch: \"%s\""
+
+#: internet_links_loader.py:78 internet_links_loader.py:79
+msgid "No title"
+msgstr "Sem título"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -24811,9 +24953,11 @@ msgid "Period: "
 msgstr "Período: "
 
 #: lxml/lxmlGramplet.py:659 lxml/lxmlGramplet.py:663
-#, python-brace-format
+#, fuzzy, python-brace-format
+#| msgid "\t{number} surname"
+#| msgid_plural "\t{number} surnames; no frequency yet\n"
 msgid "\t{number} surname"
-msgid_plural "\t{number} surnames; no frequency yet\n"
+msgid_plural "\t{number} surnames; no frequency yet"
 msgstr[0] "\t{number} apelido"
 msgstr[1] "\t{number} apelidos; ainda sem frequência\n"
 
@@ -24823,23 +24967,29 @@ msgid "\t{number} surname; no frequency yet"
 msgstr "\t{number} apelido; ainda sem frequência"
 
 #: lxml/lxmlGramplet.py:660 lxml/lxmlGramplet.py:667
-#, python-brace-format
+#, fuzzy, python-brace-format
+#| msgid "\t{number} place"
+#| msgid_plural "\t{number} places\n"
 msgid "\t{number} place"
-msgid_plural "\t{number} places\n"
+msgid_plural "\t{number} places"
 msgstr[0] "\t{number} local"
 msgstr[1] "\t{number} locais\n"
 
 #: lxml/lxmlGramplet.py:661 lxml/lxmlGramplet.py:671
-#, python-brace-format
+#, fuzzy, python-brace-format
+#| msgid "\t{number} note"
+#| msgid_plural "\t{number} notes\n"
 msgid "\t{number} note"
-msgid_plural "\t{number} notes\n"
+msgid_plural "\t{number} notes"
 msgstr[0] "\t{number} nota"
 msgstr[1] "\t{number} notas\n"
 
 #: lxml/lxmlGramplet.py:675
-#, python-brace-format
+#, fuzzy, python-brace-format
+#| msgid "\t{number} source"
+#| msgid_plural "\t{number} sources\n"
 msgid "\t{number} source"
-msgid_plural "\t{number} sources\n"
+msgid_plural "\t{number} sources"
 msgstr[0] "\t{number} fonte"
 msgstr[1] "\t{number} fontes\n"
 
@@ -24911,6 +25061,192 @@ msgstr ""
 "Tente abrir\n"
 " \"%s\"\n"
 " no seu navegador web favorito..."
+
+#: markdown_place_history_formatter.py:52
+msgid "No data available."
+msgstr "Sem dados disponíveis."
+
+#: markdown_place_history_formatter.py:57
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "DIVISÕES ADMINISTRATIVAS HISTÓRICAS DE"
+
+#: markdown_place_history_formatter.py:58
+msgid "Foundation date:"
+msgstr "Data de fundação:"
+
+#: markdown_place_history_formatter.py:60
+msgid "Coordinates:"
+msgstr "Coordenadas:"
+
+#: markdown_place_history_formatter.py:61
+msgid "Administrative history"
+msgstr "Histórico administrativo"
+
+#: markdown_place_history_formatter.py:62
+msgid "Data provided to AI:"
+msgstr "Dados fornecidos à IA:"
+
+#: markdown_place_history_formatter.py:64
+msgid "Full hierarchy"
+msgstr "Hierarquia completa"
+
+#: markdown_place_history_formatter.py:68
+msgid "Place Type:"
+msgstr "Tipo de local:"
+
+#: markdown_place_history_formatter.py:69
+msgid "Last Retrieved At:"
+msgstr "Última actualização em:"
+
+#: note_links_loader.py:72
+msgid "Note Link (parsed)"
+msgstr "Ligação de nota(analisada)"
+
+#: note_links_loader.py:125
+msgid "Note Link (internal)"
+msgstr "Ligação de nota (interna)"
+
+#: note_links_loader.py:128
+msgid "Note Link (external)"
+msgstr "Ligação de nota (externa)"
+
+#: qr_window.py:75
+msgid "QR-code"
+msgstr "Código QR"
+
+#: qr_window.py:106 qr_window.py:109
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Dependência \"qrcode\" em falta"
+
+#: qr_window.py:120
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Erro ao gerar código QR:\n"
+"Erro original: “{}”"
+
+#: settings_ui_manager.py:112
+msgid "Middle Name Handling"
+msgstr "Gestão de nomes do meio"
+
+#: settings_ui_manager.py:117
+msgid "Leave alone"
+msgstr "Deixar em paz"
+
+#: settings_ui_manager.py:118
+msgid "Separate"
+msgstr "Separar"
+
+#: settings_ui_manager.py:128
+msgid "URL Compactness Level"
+msgstr "Nível de compressão do URL"
+
+#: settings_ui_manager.py:134
+msgid "Shortest - No Prefix, No Keys"
+msgstr "Curto - sem prefixo nem chaves"
+
+#: settings_ui_manager.py:137
+msgid "Compact - No Prefix, Keys Without Attributes"
+msgstr "Compacto - sem prefixo, chaves sem atributos"
+
+#: settings_ui_manager.py:140
+msgid "Compact - No Prefix, Keys With Attributes"
+msgstr "Compacto - sem prefixo, chaves com atributos"
+
+#: settings_ui_manager.py:143
+msgid "Long - Without Prefix on the Left"
+msgstr "Longo - sem prefixo à esquerda"
+
+#: settings_ui_manager.py:150
+msgid "URL Prefix Replacement"
+msgstr "Substituição do prefixo do URL"
+
+#: settings_ui_manager.py:157
+msgid "AI Provider"
+msgstr "Fornecedor de IA"
+
+#: settings_ui_manager.py:162
+msgid "(Disabled)"
+msgstr "(desactivado)"
+
+#: settings_ui_manager.py:163
+msgid "OpenAI"
+msgstr "OpenAI"
+
+#: settings_ui_manager.py:164
+msgid "Mistral AI"
+msgstr "Mistral AI"
+
+#: settings_ui_manager.py:171
+msgid "OpenAI API Key"
+msgstr "Chave OpenAI API"
+
+#: settings_ui_manager.py:176
+msgid "OpenAI Model"
+msgstr "Modelo OpenAI API"
+
+#: settings_ui_manager.py:181
+msgid "Mistral API Key"
+msgstr "Chave API Mistral"
+
+#: settings_ui_manager.py:186
+msgid "Mistral Model"
+msgstr "Modelo Mistral"
+
+#: settings_ui_manager.py:191
+msgid "Show Links From the 'Attributes' tab"
+msgstr "Mostrar ligações do separador Atributos"
+
+#: settings_ui_manager.py:196
+msgid "Show Links From the 'Internet' tab"
+msgstr "Mostrar ligações do separador Internet"
+
+#: settings_ui_manager.py:201
+msgid "Show Links From the Notes"
+msgstr "Mostrar ligações de notas"
+
+#: settings_ui_manager.py:209
+msgid "Enable AI-generated historical place data"
+msgstr "Permitir dados históricos de locais gerados por IA"
+
+#: settings_ui_manager.py:215
+msgid "Custom country code for AI notes (optional)"
+msgstr "Código de país personalizado para notas de IA (opcional)"
+
+#: settings_ui_manager.py:244
+msgid "Enable CSV Files"
+msgstr "Permitir ficheiros CSV"
+
+#: settings_ui_manager.py:251
+msgid "Display Columns"
+msgstr "Mostrar colunas"
+
+#: settings_ui_manager.py:265
+msgid "Display Icons"
+msgstr "Ícones de exibição"
+
+#~ msgid "Rebuild Gramps Types"
+#~ msgstr "Reconstruir tipos do Gramps"
+
+#~ msgid "Rebuilds Gramps Types"
+#~ msgstr "Reconstrói tipos do Gramps"
+
+#~ msgid "Gramps Types rebuilt"
+#~ msgstr "Tipos do Gramps reconstruídos"
+
+#, python-format
+#~ msgid "Found %d custom event types"
+#~ msgstr "Encontrados %d tipos de eventos personalizados"
+
+#~ msgid "Gramps Forum (Discourse)"
+#~ msgstr "Fórum Gramps (Discourse)"
+
+#~ msgid "GitHub Issues"
+#~ msgstr "Problemas no GitHub"
+
+#~ msgid "Gramps Bug Tracker"
+#~ msgstr "Rastreio de erros do Gramps"
 
 #~ msgid "can't found it because exiv2 not installed"
 #~ msgstr "impossível encontrar, exiv2 não instalado"
