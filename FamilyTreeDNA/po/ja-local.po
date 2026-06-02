@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: 2025-03-24 10:31+0000\n"
 "Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
@@ -16,12 +16,6 @@ msgstr ""
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
-
-msgid "FamilyTree DNA"
-msgstr "家系図 DNA"
-
-msgid "Tool to import FamilyFinder DNA data from Family Tree"
-msgstr "家系図からFamilyFinder DNAデータをインポートするツール"
 
 msgid "Family Finder Tool"
 msgstr "Family Finder ツール"
@@ -100,3 +94,9 @@ msgstr "%s DNA 関連付けの引用を作成"
 #, python-format
 msgid "Add Citation to %s DNA Association"
 msgstr "%s DNA 関連付けへの引用を追加"
+
+msgid "FamilyTree DNA"
+msgstr "家系図 DNA"
+
+msgid "Tool to import FamilyFinder DNA data from Family Tree"
+msgstr "家系図からFamilyFinder DNAデータをインポートするツール"

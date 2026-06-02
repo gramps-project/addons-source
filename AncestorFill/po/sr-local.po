@@ -1,0 +1,29 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-12 12:11+0000\n"
+"Last-Translator: Ранко Николић <nikolic.ranko.95@gmail.com>\n"
+"Language-Team: Serbian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sr/>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.5-dev\n"
+
+msgid "Report on the filling of the tree"
+msgstr "Извештај о допуњавању дрвета"
+
+#, python-format
+msgid "AncestorFill for %s"
+msgstr "AncestorFill за %s"
+
+msgid "Generation "
+msgstr "Генерација "
+
+msgid "Number of Ancestors found "
+msgstr "Број пронађених предака "

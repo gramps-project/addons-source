@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
-"PO-Revision-Date: 2026-05-10 14:47+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Deep Connections Gramplet"
 msgstr "Gramplet för långa släktskap"
@@ -22,6 +22,40 @@ msgstr "Gramplet visande ett lång släktskap mellan aktiv och hem person"
 
 msgid "Deep Connections"
 msgstr "Långa släktskap"
+
+msgid "⏸ Pause"
+msgstr "⏸ Paus"
+
+msgid "Pause the current search"
+msgstr "Pausa den aktuella sökningen"
+
+msgid "▶ Continue"
+msgstr "▶ Fortsätt"
+
+msgid "Continue searching for more relations"
+msgstr "Fortsätt söka efter fler relationer"
+
+msgid "📋 Copy"
+msgstr "📋 Kopiera"
+
+msgid "Copy selected people to clipboard"
+msgstr "Kopiera valda personer till urklipp"
+
+msgid "🗑 Clear"
+msgstr "🗑 Rensa"
+
+msgid "Clear all results and reset"
+msgstr "Rensa alla resultat och återställ"
+
+msgid "Ready to search"
+msgstr "Klar för att söka"
+
+#, python-brace-format
+msgid ""
+"Search Depth: {depth} | People Processed: {processed} | Queue Size: "
+"{queue_size}"
+msgstr ""
+"Sökdjup: {depth} | Bearbetade personer: {processed} | Köstorlek: {queue_size}"
 
 msgid "mentioned in note"
 msgstr "nämns i anteckningen"
@@ -50,8 +84,17 @@ msgstr ""
 "\n"
 "   %s till "
 
+msgid "Error: No Home Person set"
+msgstr "Fel: Ingen hemperson angiven"
+
 msgid "No Active Person set."
 msgstr "Ingen aktiv person angiven."
+
+msgid "Error: No Active Person set"
+msgstr "Fel: Ingen aktiv person angiven"
+
+msgid "Initializing search..."
+msgstr "Initierar sökning..."
 
 msgid "Looking for relationship between\n"
 msgstr "Letar efter släktskap mellan\n"
@@ -63,6 +106,9 @@ msgstr "  <b>%s</b> (huvudperson) och\n"
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (Aktiv person)...\n"
+
+msgid "Searching for connections..."
+msgstr "Söker efter kopplingar..."
 
 #, python-format
 msgid ""
@@ -78,3 +124,26 @@ msgid ""
 msgstr ""
 "Paus.\n"
 "Tryck Fortsätt för att leta efter ytterligare släktsakp.\n"
+
+msgid "Paused - Press Continue to search for more relations"
+msgstr "Pausad - Tryck på Fortsätt för att söka efter fler relationer"
+
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relation paths found."
+msgstr ""
+"\n"
+"Sökning avslutad. %d släktskaps-linjer hittade."
+
+msgid "Search completed - {} relation paths found"
+msgstr "Sökning avslutad - {} släktskaps-linjer hittade"
+
+msgid "Error during search: {}"
+msgstr "Fel under sökning: {}"
+
+msgid "Resuming search..."
+msgstr "Återupptar sökningen..."
+
+msgid "Search interrupted by user"
+msgstr "Sökningen avbröts av användaren"

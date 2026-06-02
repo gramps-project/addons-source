@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: 2026-04-30 20:09+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <https://hosted.weblate.org/projects/gramps-project/"
@@ -17,6 +17,9 @@ msgstr ""
 msgid "Reference:"
 msgstr "Tilvísun:"
 
+msgid "Place of Birth"
+msgstr "Fæðingarstaður"
+
 msgid "Column37"
 msgstr "Dálkur37"
 
@@ -27,9 +30,6 @@ msgid "Column39"
 msgstr "Dálkur39"
 
 msgid "Place of birth"
-msgstr "Fæðingarstaður"
-
-msgid "Place of Birth"
 msgstr "Fæðingarstaður"
 
 msgid "Place married"

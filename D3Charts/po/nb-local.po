@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-03-23 20:35+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,8 +12,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Feil ved skriving til {target_path}: {message}"
+
+msgid "Include Generations"
+msgstr "Inkluder generasjoner"
+
+msgid "Include contraction level"
+msgstr "Inkluder sammentrekningsnivå"
 
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Om dupliserte slektstrær skal vises i rapporten."
@@ -21,5 +31,14 @@ msgstr "Om dupliserte slektstrær skal vises i rapporten."
 msgid "Include records marked private"
 msgstr "Inkluder oppføringer som er merket privat"
 
+msgid "Whether to include private objects."
+msgstr "Om private objekter skal tas med."
+
 msgid "Navigation"
 msgstr "Navigasjon"
+
+msgid "Exclude Spouses"
+msgstr "Utelat ektefeller"
+
+msgid "Text Color"
+msgstr "Tekstfarge"

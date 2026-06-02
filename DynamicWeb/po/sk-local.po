@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2026-05-11 10:34+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Dynamic Web Report"
 msgstr "Dynamická webová správa"
@@ -24,11 +24,11 @@ msgid "SVG graphical tree"
 msgstr "SVG grafický strom"
 
 msgid "Indexes pages"
-msgstr "Indexové stránky"
+msgstr "Strany registrov"
 
 #, python-format
 msgid "Custom page %(index)i"
-msgstr "Vlastná stránka %(index)i"
+msgstr "Vlastná strana %(index)i"
 
 msgid "Ascending tree"
 msgstr "Stúpajúci strom"
@@ -90,7 +90,7 @@ msgid "Search results"
 msgstr "Výsledky vyhľadávania"
 
 msgid "Indexes"
-msgstr "Indexy"
+msgstr "Registre"
 
 msgid "(filtered from _MAX_ total entries)"
 msgstr "(filterované z _MAX_ celkových záznamov)"
@@ -139,7 +139,7 @@ msgid "F"
 msgstr "Ž"
 
 msgid "Families Index"
-msgstr "Index rodín"
+msgstr "Register rodín"
 
 msgid "Family Nick Name"
 msgstr "Prezývka rodiny"
@@ -148,10 +148,10 @@ msgid "File ready"
 msgstr "Súbor pripravený"
 
 msgid "Include dates columns on the index pages"
-msgstr "Zahrnúť stĺpce s dátumami na indexových stránkach"
+msgstr "Zahrnúť stĺpce s dátumami na stranách registra"
 
 msgid "Include a column for media path on the index pages"
-msgstr "Zahrnúť stĺpec pre cestu k médiám na indexových stránkach"
+msgstr "Zahrnúť stĺpec pre cestu k médiám na stranách registra"
 
 msgid "Include a map in the individuals and family pages"
 msgstr "Zahrnúť mapu na osobných a rodinných stránkach"
@@ -161,7 +161,7 @@ msgstr ""
 "Zahrnúť polorodných a/alebo nevlastných súrodencov na osobných stránkach"
 
 msgid "Include references in indexes"
-msgstr "Zahrnúť referencie v indexoch"
+msgstr "Zahrnúť odkazy do registrov"
 
 msgid "Insert sources author in the sources title"
 msgstr "Vložiť autora zdrojov v názve zdrojov"
@@ -173,7 +173,7 @@ msgid "Maximize"
 msgstr "Maximalizovať"
 
 msgid "Media Index"
-msgstr "Index médií"
+msgstr "Register médií"
 
 msgid "Media Type"
 msgstr "Typ médií"
@@ -197,13 +197,13 @@ msgid "Person to search for"
 msgstr "Osoba, ktorú hľadáte"
 
 msgid "Persons Index"
-msgstr "Index osôb"
+msgstr "Register osôb"
 
 msgid "Persons"
 msgstr "Osoby"
 
 msgid "Places Index"
-msgstr "Index miest"
+msgstr "Register miest"
 
 msgid "Preparing file ..."
 msgstr "Súbor sa pripravuje ..."
@@ -215,7 +215,7 @@ msgid "Relationship to Mother"
 msgstr "Vzťah k matke"
 
 msgid "Repositories Index"
-msgstr "Index repozitárov"
+msgstr "Register repozitárov"
 
 msgid "Restore"
 msgstr "Obnoviť"
@@ -289,13 +289,13 @@ msgid "Sort by:"
 msgstr "Triediť podľa:"
 
 msgid "Sources Index"
-msgstr "Index zdrojov"
+msgstr "Register zdrojov"
 
 msgid "Suppress Gramps ID"
 msgstr "Potlačiť Gramps ID"
 
 msgid "Surnames Index"
-msgstr "Index priezvisk"
+msgstr "Register priezvisk"
 
 msgid "U"
 msgstr "N"
@@ -307,19 +307,19 @@ msgid "Use the search box above in order to find a person."
 msgstr "Použite vyhľadávacie pole vyššie na nájdenie osoby."
 
 msgid "Use a table format for the surnames index"
-msgstr "Použiť formát tabuľky pre index priezvisk"
+msgstr "Použiť tabuľkový formát pre register priezvisk"
 
 msgid "Use a table format for the persons index"
-msgstr "Použiť formát tabuľky pre index osôb"
+msgstr "Použiť tabuľkový formát pre register osôb"
 
 msgid "Use a table format for the families index"
-msgstr "Použiť formát tabuľky pre index rodín"
+msgstr "Použiť tabuľkový formát pre register rodín"
 
 msgid "Use a table format for the sources index"
-msgstr "Použiť formát tabuľky pre index zdrojov"
+msgstr "Použiť tabuľkový formát pre register zdrojov"
 
 msgid "Use a table format for the places index"
-msgstr "Použiť formát tabuľky pre index miest"
+msgstr "Použiť tabuľkový formát pre register miest"
 
 msgid "Used for family"
 msgstr "Používa sa pre rodinu"
@@ -588,45 +588,45 @@ msgid "Table"
 msgstr "Tabuľka"
 
 msgid "Default format for the surnames index"
-msgstr "Východzí formát pre index priezvisk"
+msgstr "Východzí formát pre register priezvisk"
 
 msgid "The default format for the surnames index"
-msgstr "Predvolený formát pre index priezvisk"
+msgstr "Predvolený formát pre register priezvisk"
 
 msgid "Default format for the persons index"
-msgstr "Východzí formát pre index osôb"
+msgstr "Východzí formát pre register osôb"
 
 msgid "The default format for the persons index"
-msgstr "Predvolený formát pre index osôb"
+msgstr "Predvolený formát pre register osôb"
 
 msgid "Default format for the families index"
-msgstr "Východzí formát pre index rodín"
+msgstr "Východzí formát pre register rodín"
 
 msgid "The default format for the families index"
-msgstr "Predvolený formát pre index rodín"
+msgstr "Predvolený formát pre register rodín"
 
 msgid "Default format for the sources index"
-msgstr "Východzí formát pre index zdrojov"
+msgstr "Východzí formát pre register zdrojov"
 
 msgid "The default format for the sources index"
-msgstr "Predvolený formát pre index zdrojov"
+msgstr "Predvolený formát pre register zdrojov"
 
 msgid "Default format for the places index"
-msgstr "Východzí formát pre index miest"
+msgstr "Východzí formát pre register miest"
 
 msgid "The default format for the places index"
-msgstr "Predvolený formát pre index miest"
+msgstr "Predvolený formát pre register miest"
 
 msgid ""
 "Whether to include dates columns (birth, death, marriage) on the index pages"
 msgstr ""
-"Či zahrnúť stĺpce s dátumami (narodenie, smrť, sobáš) na indexových stránkach"
+"Či zahrnúť stĺpce s dátumami (narodenie, smrť, sobáš) na stranách registra"
 
 msgid "Generate a families index page"
-msgstr "Generovať stránku s indexom rodín"
+msgstr "Generovať stranu s registrom rodín"
 
 msgid "Whether to generate an index page for families"
-msgstr "Či generovať indexovú stránku pre rodiny"
+msgstr "Či generovať indexovú stranu pre rodiny"
 
 msgid "Whether to include a column showing the media path"
 msgstr "Či zahrnúť stĺpec zobrazujúci cestu k médiám"
@@ -636,15 +636,15 @@ msgid ""
 "example, in the media index page, the names of the individuals, families, "
 "places, sources that reference the media."
 msgstr ""
-"Či zahrnúť referencie na položky na stránkach s indexom. Napríklad na "
-"stránke s indexom médií mená jednotlivcov, rodín, miest a zdrojov "
-"odkazujúcich na médiá."
+"Či zahrnúť referencie na položky na stranách registra. Napríklad na strane "
+"registra médií mená jednotlivcov, rodín, miest a zdrojov odkazujúcich na "
+"médiá."
 
 msgid "Default number of entries in the indexes"
-msgstr "Východzí počet položiek v indexoch"
+msgstr "Východzí počet položiek v registroch"
 
 msgid "The default number of entries shown in one index page"
-msgstr "Predvolený počet položiek zobrazených na jednej indexovej stránke"
+msgstr "Predvolený počet položiek zobrazených na jednej strane registra"
 
 msgid "Maximum number of generations"
 msgstr "Maximálny počet generácií"
@@ -680,7 +680,7 @@ msgid "Pages"
 msgstr "Stránky"
 
 msgid "A note to be used as the page header"
-msgstr "Poznámka použitá ako záhlavie stránky"
+msgstr "Poznámka použitá ako záhlavie strany"
 
 msgid "HTML user brand name / icon"
 msgstr "HTML názov značky používateľa / ikona"

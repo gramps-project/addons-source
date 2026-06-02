@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Produces a textual repositories report"
@@ -27,8 +27,11 @@ msgstr "Publiseringsinformasjon:"
 msgid "Data:"
 msgstr "Data:"
 
+msgid "Selection with a filter"
+msgstr "Utvalg med et filter"
+
 msgid "Include repository's urls"
-msgstr "Inkluder arkivenes URL"
+msgstr "Inkluder arkivenes nettadresser"
 
 msgid "Whether to include urls on repository."
 msgstr "Om lenker til arkiv skal inkluderes."
@@ -40,25 +43,25 @@ msgid "Whether to include addresses on repository."
 msgstr "Om adresser til arkiv skal inkluderes."
 
 msgid "Include source's author"
-msgstr "Ta med kildens forfatter"
+msgstr "Inkluder kildens forfatter"
 
 msgid "Whether to include author."
 msgstr "Om forfatter skal tas med."
 
 msgid "Include source's abbreviation"
-msgstr "Ta med kildens kortnavn"
+msgstr "Inkluder kildens forkortelse"
 
 msgid "Whether to include abbreviation."
 msgstr "Om kortnavn skal tas med."
 
 msgid "Include source's publication information"
-msgstr "Ta med kildens publiseringsinformasjon"
+msgstr "Inkluder kildens publiseringsinformasjon"
 
 msgid "Whether to include publication information."
 msgstr "Om publiseringsinformasjon skal tas med."
 
 msgid "Include source's data"
-msgstr "Ta med kildens data"
+msgstr "Inkluder kildens data"
 
 msgid "Whether to include keys and values."
 msgstr "Om nøkler og verdier skal tas med."
@@ -67,13 +70,28 @@ msgid "Whether to include notes on repositories and sources."
 msgstr "Om notater for arkiver og kilder skal inkluderes."
 
 msgid "Include media"
-msgstr "Ta med media"
+msgstr "Inkluder medier"
+
+msgid "Whether to include media."
+msgstr "Om mediefiler skal tas med."
+
+msgid "Include citations"
+msgstr "Inkluder siteringer"
+
+msgid "Whether to include citations on sources."
+msgstr "Om siteringer skal inkluderes i kilder."
 
 msgid "Include private records"
-msgstr "Ta med private poster"
+msgstr "Inkluder private poster"
 
 msgid "Whether to include repositories and sources marked as private."
 msgstr "Om arkiver og kilder merket som private skal inkluderes."
+
+msgid "Display empty values"
+msgstr "Vis tomme verdier"
+
+msgid "Whether to include key records with empty values."
+msgstr "Om nøkkeloppføringer med tomme verdier skal inkluderes."
 
 msgid "The style used for the title of the report."
 msgstr "Stilen som brukes på rapportens tittel."

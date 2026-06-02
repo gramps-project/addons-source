@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-23 20:35+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,11 +12,41 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Add Import"
+msgstr "Legg til importering"
+
+msgid "Keep original"
+msgstr "Behold opprinnelig"
+
+msgid "Original"
+msgstr "Opprinnelig"
+
+msgid "Replace"
+msgstr "Erstatt"
+
+msgid "Object Name/Description"
+msgstr "Objektnavn/-beskrivelse"
+
+msgid "Object and item"
+msgstr "Objekt og element"
 
 msgid "Differences"
 msgstr "Forskjeller"
 
 msgid "Done"
 msgstr "Fullført"
+
+msgid "Merge Original"
+msgstr "Flett opprinnelig"
+
+msgid "This button will replace your tree data with the imported data."
+msgstr "Denne knappen vil erstatte tredataene dine med de importerte dataene."
+
+msgid "Merge Import"
+msgstr "Flett importering"
+
+msgid "Edit Import"
+msgstr "Rediger importering"

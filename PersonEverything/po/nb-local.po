@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,14 +12,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Primary name"
+msgstr "Primærnavn"
 
 msgid " This is the primary birth event."
 msgstr " Dette er den primære fødselshendelsen."
 
 msgid " This is the primary death event."
 msgstr " Dette er den primære dødshendelsen."
+
+msgid "Relationship to Father"
+msgstr "Slektskap til far"
+
+msgid "Relationship to Mother"
+msgstr "Slektskap til mor"
+
+msgid "Parent Family"
+msgstr "Foreldrefamilie"
 
 msgid ""
 "Details of any children and events etc. would be in a similar report for the "
@@ -28,20 +40,46 @@ msgstr ""
 "Detaljer om eventuelle barn og hendelser vil være i en lignende rapport for "
 "faren eller moren."
 
+msgid "Media Reference"
+msgstr "Mediareferanse"
+
+msgid "Description and Path"
+msgstr "Beskrivelse og sti"
+
+msgid ""
+"Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
+msgstr ""
+"Fornavn: Tittel, fornavn, suffiks, tiltalsnavn, kallenavn, familiekallenavn"
+
 msgid "Note type"
 msgstr "Notattype"
 
+msgid "Alternate Location"
+msgstr "Alternativ plassering"
+
 msgid "Alternative Name"
-msgstr "Alternative navn"
+msgstr "Alternativt navn"
 
 msgid "Latitude, Longitude"
-msgstr "Breddegrad, Lengdegrad"
+msgstr "Breddegrad, lengdegrad"
 
 msgid "Repository type"
 msgstr "Arkivtype"
 
 msgid "Repository reference"
 msgstr "Arkivreferanse"
+
+msgid "Media type"
+msgstr "Medietype"
+
+msgid "Origin type"
+msgstr "Opprinnelsestype"
+
+msgid "Tag name"
+msgstr "Etikettnavn"
+
+msgid "No source information found"
+msgstr "Ingen kildeinformasjon funnet"
 
 msgid "The style used for the title of the page."
 msgstr "Stilen som brukes på sidens tittel."

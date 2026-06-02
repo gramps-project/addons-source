@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: 2026-04-28 18:11+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
@@ -47,6 +47,21 @@ msgstr "Formular"
 
 msgid "Select Form"
 msgstr "Vælg formular"
+
+msgid "Persons"
+msgstr "Personer"
+
+msgid "Rooms"
+msgstr "Værelser"
+
+msgid "Relation"
+msgstr "Slægtskab"
+
+msgid "Sex"
+msgstr "Køn"
+
+msgid "Condition"
+msgstr "Kondition"
 
 msgid "Schedule"
 msgstr "Skedulering"
@@ -826,9 +841,6 @@ msgstr "6. Familier"
 msgid "7. Names"
 msgstr "7. Navne"
 
-msgid "Sex"
-msgstr "Køn"
-
 msgid "8. Sex"
 msgstr "8. Køn"
 
@@ -939,9 +951,6 @@ msgstr "8. Alder"
 
 msgid "9. Married or Widowed"
 msgstr "9. Gift eller enke"
-
-msgid "Relation"
-msgstr "Slægtskab"
 
 msgid "10. Relationship to Head of Family"
 msgstr "10. Slægtskab med familieoverhovedet"
@@ -1228,9 +1237,6 @@ msgstr "8. Institution: Antal bygninger"
 
 msgid "9. Number of families in house or institution"
 msgstr "10. Antal familier i hus eller institution"
-
-msgid "Rooms"
-msgstr "Værelser"
 
 msgid "10. Number of rooms in house or institution for each famiy"
 msgstr "10. Antal værelser i hus eller institution for hver familie"
@@ -1589,9 +1595,6 @@ msgstr "3. Navn"
 
 msgid "Rank"
 msgstr "Rang"
-
-msgid "Condition"
-msgstr "Kondition"
 
 msgid "Ancestry"
 msgstr "Aner"

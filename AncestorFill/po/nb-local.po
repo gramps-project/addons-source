@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,8 +12,78 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "AncestorFill"
+msgstr "Aneutfylling"
+
+msgid "Report on the filling of the tree"
+msgstr "Rapport om utfyllingsgraden i slektstreet"
+
+#, python-format
+msgid "AncestorFill for %s"
+msgstr "Aneutfylling for %s"
+
+msgid "Generation "
+msgstr "Generasjon "
+
+msgid "Number of Ancestors found "
+msgstr "Antall aner funnet "
+
+msgid "Percent of Ancestors found "
+msgstr "Prosent av aner funnet "
+
+msgid "Number of unique Ancestors found "
+msgstr "Antall unike aner funnet "
+
+msgid "Number of theoretical Ancestors "
+msgstr "Antall teoretiske aner "
+
+msgid "Pedigree Collapse "
+msgstr "Anesammenfall "
+
+msgid "Total Number of Ancestors found "
+msgstr "Totalt antall aner funnet "
+
+msgid "Total Number of unique Ancestors found "
+msgstr "Totalt antall unike aner funnet "
+
+msgid ""
+"\n"
+"\n"
+"Note: This report only counts ancestors with a parent-child relationship of "
+"birth."
+msgstr ""
+"\n"
+"\n"
+"Merk: Denne rapporten teller bare aner der slektskapet mellom foreldre og "
+"barn er biologisk."
+
+msgid "Filled digit"
+msgstr "Antall desimaler"
+
+msgid ""
+"The number of digits after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr ""
+"Antall sifre etter komma som skal vises i rapporten for prosentandelen av "
+"aner som er funnet i en gitt generasjon"
+
+msgid "Collapsed digit"
+msgstr "Antall desimaler"
+
+msgid ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+msgstr ""
+"Antall sifre etter komma som skal tas med i rapporten for anesammenfall"
+
+msgid "Display theoretical"
+msgstr "Vis teoretisk"
+
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr "Om det teoretiske antallet aner per generasjon skal vises"
 
 msgid "The style used for the title of the page."
 msgstr "Stilen som brukes på sidens tittel."

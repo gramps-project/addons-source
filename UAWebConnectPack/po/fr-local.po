@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-06 20:38+0200\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
-"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-14 19:17+0000\n"
+"Last-Translator: \"David D.\" <dadu042@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -12,13 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.12-dev\n"
-
-msgid "UA Web Connect Pack"
-msgstr "Ensemble de liens internet ukrainiens"
-
-msgid "Collection of Web sites for the UA (requires libwebconnect)"
-msgstr "Collection de sites internet pour l'Ukraine (nécessite libwebconnect)"
+"X-Generator: Weblate 2026.5.dev0\n"
 
 msgid "Forum: ukrgenealogy.com.ua"
 msgstr "Forum : ukrgenealogy.com.ua"
@@ -31,6 +25,9 @@ msgstr "Encyclopédie : esu.com.ua"
 
 msgid "Wikipedia: uk.wikipedia.org"
 msgstr "Wikipédia : uk.wikipedia.org"
+
+msgid "Repressed DB: reabit.org.ua"
+msgstr "BD réprimée : reabit.org.ua"
 
 msgid "Genealogy DB: familysearch.org"
 msgstr "Base de données généalogique : familysearch.org"
@@ -49,3 +46,9 @@ msgstr "Recherche : google.com.ua"
 
 msgid "Search: roots.in.ua"
 msgstr "Recherche : roots.in.ua"
+
+msgid "UA Web Connect Pack"
+msgstr "Ensemble de liens internet ukrainiens"
+
+msgid "Collection of Web sites for the UA (requires libwebconnect)"
+msgstr "Collection de sites internet pour l'Ukraine (nécessite libwebconnect)"

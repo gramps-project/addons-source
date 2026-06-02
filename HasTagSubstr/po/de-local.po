@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "People with a tag containing <substring>"
+msgstr "Personen mit einem Etikett, das <Teilzeichenfolge> enthält"
+
+msgid "Matches people with a tag whose name contains the given substring"
+msgstr ""
+"Entspricht Personen mit einem Etikett, dessen Name die angegebene "
+"Teilzeichenfolge enthält"
+
+msgid "Families with a tag containing <substring>"
+msgstr "Familien mit einem Etikett, das <Teilzeichenfolge> enthält"
+
+msgid "Matches families with a tag whose name contains the given substring"
+msgstr ""
+"Entspricht Familien mit einem Etikett, dessen Name die angegebene "
+"Teilzeichenfolge enthält"
+
+msgid "Events with a tag containing <substring>"
+msgstr "Ereignisse mit einem Etikett, das <Teilzeichenfolge> enthält"
+
+msgid "Matches events with a tag whose name contains the given substring"
+msgstr ""
+"Entspricht Ereignissen mit einem Etikett, dessen Name die angegebene "
+"Teilzeichenfolge enthält"
+
+msgid "Places with a tag containing <substring>"
+msgstr "Orte mit einem Etikett, das <Teilzeichenfolge> enthält"
+
+msgid "Matches places with a tag whose name contains the given substring"
+msgstr ""
+"Entspricht Orten, deren Bezeichnung die angegebene Teilzeichenfolge enthält"
+
+msgid "Sources with a tag containing <substring>"
+msgstr "Quellen mit einem Etikett, das <Teilzeichenfolge> enthält"
+
+msgid "Matches sources with a tag whose name contains the given substring"
+msgstr ""
+"Entspricht Quellen mit einem Etikett, deren Name die angegebene "
+"Teilzeichenfolge enthält"
+
+msgid "Citations with a tag containing <substring>"
+msgstr "Fundstellen mit einem Etikett, das <Teilzeichenfolge> enthält"
+
+msgid "Matches citations with a tag whose name contains the given substring"
+msgstr ""
+"Entspricht Fundstellen mit einem Etikett, dessen Name die angegebene "
+"Teilzeichenfolge enthält"
+
+msgid "Repositories with a tag containing <substring>"
+msgstr "Aufbewahrungsorte mit einem Etikett, das <Teilzeichenfolge> enthält"
+
+msgid "Matches repositories with a tag whose name contains the given substring"
+msgstr ""
+"Entspricht Aufbewahrungsorte mit einem Etikett, dessen Name die angegebene "
+"Teilzeichenfolge enthält"
+
+msgid "Media objects with a tag containing <substring>"
+msgstr "Medienobjekte mit einem Etikett, das <Teilzeichenfolge> enthält"
+
+msgid ""
+"Matches media objects with a tag whose name contains the given substring"
+msgstr ""
+"Entspricht Medienobjekten, mit einem Etikett, dessen Name die angegebene "
+"Teilzeichenfolge enthält"
+
+msgid "Notes with a tag containing <substring>"
+msgstr "Notizen mit einem Etikett, das <Teilzeichenfolge> enthält"
+
+msgid "Matches notes with a tag whose name contains the given substring"
+msgstr ""
+"Entspricht Notizen, mit einem Etikett, dessen Name die angegebene "
+"Teilzeichenfolge enthält"

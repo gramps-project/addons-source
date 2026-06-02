@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-11 21:37+0200\n"
-"PO-Revision-Date: 2025-11-11 10:51+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Webb-synkronisering"
@@ -33,30 +33,6 @@ msgstr "Oväntat fel vid tillämpning av ändringar."
 
 msgid "Media files are in sync."
 msgstr "Mediefiler är synkroniserade."
-
-#, python-format
-msgid "Successfully downloaded %s media file."
-msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "Laddar ner %s mediefil med lyckat resultat."
-msgstr[1] "Laddar ner %s mediefiler med lyckat resultat."
-
-#, python-format
-msgid "Encountered %s error during download."
-msgid_plural "Encountered %s errors during download."
-msgstr[0] "Mötte %s fel vid nedladdning."
-msgstr[1] "Mötte %s fel vid nedladdning."
-
-#, python-format
-msgid "Successfully uploaded %s media file."
-msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "Laddar upp %s mediefil med lyckat resultat."
-msgstr[1] "Laddar upp %s mediefiler med lyckat resultat."
-
-#, python-format
-msgid "Encountered %s error during upload."
-msgid_plural "Encountered %s errors during upload."
-msgstr[0] "Mötte %s fel vid uppladdning."
-msgstr[1] "Mötte %s fel vid uppladdning."
 
 msgid "Authentication failed. Please check your username and password."
 msgstr ""
@@ -218,15 +194,3 @@ msgstr "Saknas lokalt"
 
 msgid "Missing remotely"
 msgstr "Saknas på distans"
-
-#, python-format
-msgid "Downloading %s media file"
-msgid_plural "Downloading %s media files"
-msgstr[0] "Laddar ner %s mediefil"
-msgstr[1] "Laddar ner %s mediefiler"
-
-#, python-format
-msgid "Uploading %s media file"
-msgid_plural "Uploading %s media files"
-msgstr[0] "Laddar upp %s mediefil"
-msgstr[1] "Laddar upp %s mediefiler"

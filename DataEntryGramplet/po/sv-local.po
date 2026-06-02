@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-03-06 17:38+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Data Entry Gramplet"
 msgstr "Gramplet för datainmatning"
@@ -77,9 +77,18 @@ msgstr "Kopiera aktiva data"
 msgid "in"
 msgstr "i"
 
+msgid "No Family Tree is open."
+msgstr "Inget släktträd är öppet."
+
+msgid "Please open a Family Tree to edit data."
+msgstr "Öppna ett släktträd för att redigera data."
+
 #, python-format
 msgid "Gramplet Data Edit: %s"
 msgstr "Grampletdataredigering: %s"
+
+msgid "Please open a Family Tree before adding a person."
+msgstr "Vänligen öppna ett släktträd innan du lägger till en person."
 
 msgid "Please provide a name."
 msgstr "Ange ett namn."

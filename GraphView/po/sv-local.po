@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-05-10 14:47+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Graph View"
 msgstr "Diagramvy"
@@ -189,12 +189,63 @@ msgstr ""
 msgid "Add active person"
 msgstr "Lägg till aktiv person"
 
+msgid "Call the bookmark editor"
+msgstr "Anropa bokmärkesredigeraren"
+
+msgid ""
+"You don't have any bookmarks yet...\n"
+"Try to add some frequently used persons to speedup navigation."
+msgstr ""
+"Du har inga bokmärken ännu...\n"
+"Försök att lägga till några ofta använda personer för att snabba upp "
+"navigering."
+
+msgid "No bookmarks for this graph..."
+msgstr "Inga bokmärken för den här grafen..."
+
+msgid "No other bookmarks..."
+msgstr "Inga andra bokmärken..."
+
 #, python-format
 msgid "found: %s"
 msgstr "hittade: %s"
 
+#, python-format
+msgid ""
+"Add active person to bookmarks\n"
+"%s"
+msgstr ""
+"Lägg till aktiv person i bokmärken\n"
+"%s"
+
+#, python-format
+msgid ""
+"Person <b><i>%s</i></b> is not in the current view.\n"
+"Do you want to set it active and rebuild view?"
+msgstr ""
+"Personen <b><i>%s</i></b> finns inte i den aktuella vyn.\n"
+"Vill du aktivera den och återskapa vyn?"
+
 msgid "Change active person?"
 msgstr "Ändra den aktiva personen?"
+
+#, python-brace-format
+msgid ""
+"This graph would contain at least {people_count} people, which exceeds the "
+"limit of {people_limit} people. For performance reasons, at least "
+"{people_missing} people won't be shown. You can change this limit in the "
+"view configuration."
+msgstr ""
+"Denna graf skulle innehålla minst {people_count} personer, vilket "
+"överskrider gränsen på {people_limit} personer. Av prestandaskäl kommer "
+"minst {people_missing} personer inte att visas. Du kan ändra denna gräns i "
+"vykonfigurationen."
+
+msgid "Incomplete graph"
+msgstr "Ofullständig graf"
+
+msgid "Image on right side"
+msgstr "Bild på höger sida"
 
 msgid "Image on left side"
 msgstr "Bild på vänstra sidan"
@@ -211,6 +262,12 @@ msgstr "Linjetyp"
 
 msgid "Direct"
 msgstr "Direkt"
+
+msgid "Curves"
+msgstr "Kurvor"
+
+msgid "Ortho"
+msgstr "Orto"
 
 msgid "Copy"
 msgstr "Kopiera"
@@ -232,6 +289,12 @@ msgstr "Ställ in som huvudperson"
 
 msgid "Show path to home person"
 msgstr "Visa mål till hemperson"
+
+msgid "Remove from bookmarks"
+msgstr "Ta bort från bokmärken"
+
+msgid "Add to bookmarks"
+msgstr "Lägg till i bokmärken"
 
 msgid "No Events for this family"
 msgstr "Inga händelser för denna familj"
@@ -256,6 +319,21 @@ msgstr "Lägger till taggar till person (%s)"
 msgid "Adding Tags to family (%s)"
 msgstr "Lägger till taggar till familjen (%s)"
 
+#, python-format
+msgid "Deleting the person [%s] will remove it from the database."
+msgstr "Om du tar bort personen [%s] tas den bort från databasen."
+
+#, python-format
+msgid "Delete family [%s]?"
+msgstr "Ta bort familjen [%s]?"
+
+msgid "Deleting the family will remove it from the database."
+msgstr "Om du tar bort familjen tas den bort från databasen."
+
+#, python-format
+msgid "Delete Family [%s]"
+msgstr "Ta bort familjen [%s]"
+
 msgid "Dynamic and interactive graph of relations"
 msgstr "Dynamisk och interaktiv graf över relationer"
 
@@ -271,8 +349,30 @@ msgstr "Tecknad film"
 msgid "Modern"
 msgstr "Modern"
 
+msgid "Generic (dark)"
+msgstr "Generisk (mörk)"
+
+msgid "Generic (gray)"
+msgstr "Generisk (grå)"
+
+msgid "Generic (light)"
+msgstr "Generisk (ljus)"
+
+msgid "Persons from current graph"
+msgstr "Personer från aktuell graf"
+
 msgid "Other persons from database"
 msgstr "Andra personer från databasen"
+
+msgid "No persons found..."
+msgstr "Inga personer funna..."
+
+msgid ""
+"Search people in the current visible graph and database.\n"
+"Use <Ctrl+F> to make search entry active."
+msgstr ""
+"Sök personer i den aktuella synliga grafen och databasen.\n"
+"Använd <Ctrl+F> för att aktivera sökposten."
 
 msgid "Search..."
 msgstr "Sök..."

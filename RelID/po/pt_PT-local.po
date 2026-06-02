@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2025-11-04 06:51+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-30 20:01+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 msgid "Display relations and distances with the home person"
 msgstr "Mostrar relações e distâncias com o indivíduo inicial"
@@ -109,9 +109,6 @@ msgstr ""
 msgid "%d/%d \t\t %d/%d \t\t%f"
 msgstr "%d/%d \t\t %d/%d \t\t%f"
 
-msgid "Total of handled entries : {len(self.stats_list)}\n"
-msgstr "Total de entradas geridas: {len(self.stats_list)}\n"
-
 msgid "Folder Chooser"
 msgstr "Selector de pasta"
 
@@ -132,10 +129,6 @@ msgstr "Definiu um nome de pasta?"
 
 msgid "Cannot set a valid location."
 msgstr "Impossível definir uma localização válida."
-
-#, python-brace-format
-msgid "Data saved to : {filename}"
-msgstr "Dados gravados em: {filename}"
 
 msgid "Failed to save data."
 msgstr "Falha ao gravar os dados."

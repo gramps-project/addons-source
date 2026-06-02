@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
-"PO-Revision-Date: 2026-05-11 10:34+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-30 20:01+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 #, python-format
 msgid "Form: %s"
@@ -80,6 +80,57 @@ msgid ""
 msgstr ""
 "Controleer of er volkstellingen ontbreken voor een persoon en sommige "
 "voorouders"
+
+msgid "Persons"
+msgstr "Personen"
+
+msgid "Rooms"
+msgstr "Kamers"
+
+msgid "Townland"
+msgstr "Townland"
+
+msgid "Relation"
+msgstr "Relatie"
+
+msgid "Age in years"
+msgstr "Leeftijd in jaren"
+
+msgid "Sex"
+msgstr "Geslacht"
+
+msgid "Birthplace"
+msgstr "Geboorteplaats"
+
+msgid "Irish Language"
+msgstr "Ierse taal"
+
+msgid "Personal Occupation"
+msgstr "Persoonlijk beroep"
+
+msgid "Years Married"
+msgstr "Jaren getrouwd"
+
+msgid "Place of Birth"
+msgstr "Geboorteplaats"
+
+msgid "Date of Birth"
+msgstr "Geboortedatum"
+
+msgid "Maiden Surname"
+msgstr "Meisjesnaam"
+
+msgid "Condition"
+msgstr "Conditie"
+
+msgid "Signed"
+msgstr "Ondertekend"
+
+msgid "Date of Death"
+msgstr "Overlijdensdatum"
+
+msgid "Place of Death"
+msgstr "Overlijdenslocatie"
 
 msgid "Schedule"
 msgstr "Schema"
@@ -863,9 +914,6 @@ msgstr "6. Gezinnen"
 msgid "7. Names"
 msgstr "7. Namen"
 
-msgid "Sex"
-msgstr "Geslacht"
-
 msgid "8. Sex"
 msgstr "8. Geslacht"
 
@@ -979,9 +1027,6 @@ msgstr "8. Leeftijd"
 
 msgid "9. Married or Widowed"
 msgstr "9. Gehuwd of weduwe"
-
-msgid "Relation"
-msgstr "Relatie"
 
 msgid "10. Relationship to Head of Family"
 msgstr "10. Relatie met het gezinshoofd"
@@ -1267,9 +1312,6 @@ msgstr "8. Instelling: aantal gebouwen"
 
 msgid "9. Number of families in house or institution"
 msgstr "9. Aantal gezinnen in huis of instelling"
-
-msgid "Rooms"
-msgstr "Kamers"
 
 msgid "10. Number of rooms in house or institution for each famiy"
 msgstr "10. Aantal kamers in huis of instelling voor elk gezin"
@@ -1576,7 +1618,7 @@ msgid "InsuranceCost"
 msgstr "VerzekeringKosten"
 
 msgid "32. Insurance: Cost of insurance in census year"
-msgstr "32. Verzekering: verzekeringskosten in het jaar van telling"
+msgstr "32. Verzekering: verzekeringskosten in jaar van volkstelling"
 
 msgid "33. Months at school in 1910"
 msgstr "33. Maanden op school in 1910"
@@ -2461,7 +2503,7 @@ msgid "Enumeration Dist. No."
 msgstr "Opsomming distr. nr."
 
 msgid "Month, if born within the census year"
-msgstr "Maand, indien geboren in het jaar van de volkstelling"
+msgstr "Maand, indien geboren in jaar van volkstelling"
 
 msgid "Relationship to head"
 msgstr "Relatie met het hoofd"
@@ -2473,10 +2515,10 @@ msgid "Widowed, divorced"
 msgstr "Weduwnaar, gescheiden"
 
 msgid "Married during the census year"
-msgstr "Getrouwd tijdens het volkstellingjaar"
+msgstr "Getrouwd gedurende het jaar van volkstelling"
 
 msgid "Number of months unemployed during the census year"
-msgstr "Aantal maanden werkloos tijdens het volkstellingsjaar"
+msgstr "Aantal maanden werkloos gedurende het jaar van volkstelling"
 
 msgid "Illness on day of enumeration"
 msgstr "Ziekte op de dag van opsomming"
@@ -2491,7 +2533,7 @@ msgid "Maimed, crippled, bedridden, or otherwise disabled"
 msgstr "Verminkt, kreupel, bedlegerig of anderszins gehandicapt"
 
 msgid "Attended school within the census year"
-msgstr "Binnen het jaar van de volkstelling naar school geweest"
+msgstr "Naar school geweest gedurende het jaar van volkstelling"
 
 msgid "Place of birth of father"
 msgstr "Geboorteplaats van vader"
@@ -3400,12 +3442,6 @@ msgstr "Bestand nr."
 msgid "Post Office Address"
 msgstr "Postkantoor adres"
 
-msgid "Date of Birth"
-msgstr "Geboortedatum"
-
-msgid "Place of Birth"
-msgstr "Geboorteplaats"
-
 msgid "Entered service as (rank)"
 msgstr "Kwam in dienst als (rang)"
 
@@ -3577,9 +3613,6 @@ msgstr "Regelmatig uw pensioengarantie ontvangen"
 msgid "If No give information regarding the same"
 msgstr "Indien Nee, geef informatie over hetzelfde"
 
-msgid "Signed"
-msgstr "Ondertekend"
-
 msgid "Witness name and P.O Address"
 msgstr "Getuigenaam en postadres"
 
@@ -3596,13 +3629,13 @@ msgid "Date of marriage"
 msgstr "Huwelijksdatum"
 
 msgid "Born within census year"
-msgstr "Geboren in volkstellingjaar"
+msgstr "Geboren in jaar van volkstelling"
 
 msgid "Married during census year"
-msgstr "Getrouwd tijdens volkstellingjaar"
+msgstr "Getrouwd in jaar van volkstelling"
 
 msgid "Months unemployed during census year"
-msgstr "Maanden werkloos tijdens volkstellingjaar"
+msgstr "Maanden werkloos in jaar van volkstelling"
 
 msgid "(Day of the Enumerator's visit) sick or temporarily disabled"
 msgstr "(Dag van het bezoek van de Enumerator) ziek of tijdelijk uitgeschakeld"
@@ -4132,9 +4165,6 @@ msgstr "Omvang van opleiding middelbare school"
 msgid "Extent of Education College"
 msgstr "Omvang van opleiding hogeschool"
 
-msgid "Birthplace"
-msgstr "Geboorteplaats"
-
 msgid "Own house or farm"
 msgstr "Eigen huis of boerderij"
 
@@ -4485,9 +4515,6 @@ msgstr "Vader's geboorte"
 
 msgid "Mother's Nativity"
 msgstr "Moeder's geboorte"
-
-msgid "Condition"
-msgstr "Conditie"
 
 msgid "Inhabitants in"
 msgstr "Inwoners in"
@@ -5203,9 +5230,6 @@ msgstr "Toestemming gegeven door"
 msgid "Bond/Licence"
 msgstr "Contract/licentie"
 
-msgid "Place of Death"
-msgstr "Overlijdenslocatie"
-
 msgid "Length of Residence"
 msgstr "Verblijfsduur"
 
@@ -5235,9 +5259,6 @@ msgstr "Opleidingsniveau"
 
 msgid "Social Security No."
 msgstr "Sociale zekerheid nr."
-
-msgid "Date of Death"
-msgstr "Overlijdensdatum"
 
 msgid "Place of Burial"
 msgstr "Begraafplaats"
@@ -5421,9 +5442,6 @@ msgid ""
 msgstr ""
 "(3) Op D.S.S. Formulier 1\n"
 "(4) Op all andere formulieren"
-
-msgid "Age in years"
-msgstr "Leeftijd in jaren"
 
 msgid ""
 "(4) On D.S.S. Form 1\n"
@@ -5818,9 +5836,6 @@ msgstr "Administratief gebied"
 msgid "County/Administrative Area"
 msgstr "Graafschap/Administratief gebied"
 
-msgid "Maiden Surname"
-msgstr "Meisjesnaam"
-
 msgid "Banns/Licence"
 msgstr "Aankondiging/Licentie"
 
@@ -6072,9 +6087,6 @@ msgstr ""
 "'Single', 'Getrouwd', 'Weduwnaar' of 'Weduwe' voor alle personen van 15 jaar "
 "en ouder."
 
-msgid "Years Married"
-msgstr "Jaren getrouwd"
-
 msgid "Completed Years the present Marriage has lasted."
 msgstr "Volledige jaren die het huidige huwelijk heeft geduurd."
 
@@ -6092,9 +6104,6 @@ msgstr "Overleden kinderen"
 
 msgid "Children who have Died."
 msgstr "Kinderen die zijn overleden."
-
-msgid "Personal Occupation"
-msgstr "Persoonlijk beroep"
 
 msgid "Industry or Service with which worker is connected."
 msgstr "Industrie of dienst waaraan de werknemer is verbonden."
@@ -6297,17 +6306,11 @@ msgstr "Thuiswerken"
 msgid "District Electoral Division"
 msgstr "Districts verkiezingsafdeling"
 
-msgid "Townland"
-msgstr "Townland"
-
 msgid "No. on Form B"
 msgstr "Nr. op formulier B"
 
 msgid "\"Read and Write\", \"Read\" or \"Cannot Read\""
 msgstr "'Lezen en schrijven', 'Lezen' of 'Kan niet lezen'"
-
-msgid "Irish Language"
-msgstr "Ierse taal"
 
 msgid ""
 "\"Irish\" or \"Irish & English\", in other cases no entry should be made"

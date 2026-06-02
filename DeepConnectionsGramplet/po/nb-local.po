@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
-"PO-Revision-Date: 2025-03-23 20:35+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,11 +12,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "⏸ Pause"
+msgstr "⏸ Pause"
+
+msgid "Continue searching for more relations"
+msgstr "Fortsett å søke etter flere slektsforhold"
+
+msgid "Ready to search"
+msgstr "Klar til å søke"
+
+msgid "sibling"
+msgstr "søsken"
+
+msgid "Note on Person"
+msgstr "Notat for person"
+
+msgid "Error: No Home Person set"
+msgstr "Feil: Ingen startperson er valgt"
 
 msgid "No Active Person set."
 msgstr "Ingen aktiv person valgt."
+
+msgid "Error: No Active Person set"
+msgstr "Feil: Ingen aktiv person er valgt"
 
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
@@ -36,3 +57,20 @@ msgid ""
 msgstr ""
 "Pauset.\n"
 "Klikk Fortsett for å søke etter flere slektsforhold.\n"
+
+msgid "Paused - Press Continue to search for more relations"
+msgstr "Pauset – Klikk på Fortsett for å søke etter flere slektsforhold"
+
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relation paths found."
+msgstr ""
+"\n"
+"Søk fullført. %d slektskapslinjer funnet."
+
+msgid "Search completed - {} relation paths found"
+msgstr "Søk fullført – {} slektskapsstier funnet"
+
+msgid "Resuming search..."
+msgstr "Fortsetter søk…"

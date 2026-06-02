@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-11 21:37+0200\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: 2026-05-04 21:37+0000\n"
 "Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
@@ -34,30 +34,6 @@ msgstr "Error inesperado al aplicar cambios."
 
 msgid "Media files are in sync."
 msgstr "Archivos de medio sincronizados."
-
-#, python-format
-msgid "Successfully downloaded %s media file."
-msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "Archivo %s del medio descargado correctamente."
-msgstr[1] "Archivos %s del medio descargados correctamente."
-
-#, python-format
-msgid "Encountered %s error during download."
-msgid_plural "Encountered %s errors during download."
-msgstr[0] "Error %s encontrado durante descarga."
-msgstr[1] "Errores %s encontrados durante descarga."
-
-#, python-format
-msgid "Successfully uploaded %s media file."
-msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "Correctamente subido %s archivo del medio."
-msgstr[1] "Correctamente subidos %s archivos del medio."
-
-#, python-format
-msgid "Encountered %s error during upload."
-msgid_plural "Encountered %s errors during upload."
-msgstr[0] "Encontrado %s error durante la subida."
-msgstr[1] "Encontrados %s errores durante la subida."
 
 msgid "Authentication failed. Please check your username and password."
 msgstr "Autenticación incorrecta. Compruebe su nombre de usuario y contraseña."
@@ -220,15 +196,3 @@ msgstr "Ausente localmente"
 
 msgid "Missing remotely"
 msgstr "Ausente remotamente"
-
-#, python-format
-msgid "Downloading %s media file"
-msgid_plural "Downloading %s media files"
-msgstr[0] "Descargando %s archivo de medio"
-msgstr[1] "Descargando %s archivos de medio"
-
-#, python-format
-msgid "Uploading %s media file"
-msgid_plural "Uploading %s media files"
-msgstr[0] "Subiendo %s archivos de medio"
-msgstr[1] "Subiendo %s archivo de medio"

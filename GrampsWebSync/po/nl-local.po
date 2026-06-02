@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-11 21:37+0200\n"
-"PO-Revision-Date: 2026-05-11 10:34+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-30 20:01+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Web-synchronisatie"
@@ -34,30 +34,6 @@ msgstr "Onverwachte fout bij het verwerken van wijzigingen."
 
 msgid "Media files are in sync."
 msgstr "Mediabestanden zijn gesynchroniseerd."
-
-#, python-format
-msgid "Successfully downloaded %s media file."
-msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "%s mediabestand succesvol gedownload."
-msgstr[1] "%s mediabestanden succesvol gedownload."
-
-#, python-format
-msgid "Encountered %s error during download."
-msgid_plural "Encountered %s errors during download."
-msgstr[0] "%s fout opgetreden tijdens het downloaden."
-msgstr[1] "%s fouten opgetreden tijdens het downloaden."
-
-#, python-format
-msgid "Successfully uploaded %s media file."
-msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "%s mediabestand met succes geüploadet."
-msgstr[1] "%s mediabestanden met succes geüploadet."
-
-#, python-format
-msgid "Encountered %s error during upload."
-msgid_plural "Encountered %s errors during upload."
-msgstr[0] "%s fout opgetreden tijdens het uploaden."
-msgstr[1] "%s fouten opgetreden tijdens het uploaden."
 
 msgid "Authentication failed. Please check your username and password."
 msgstr "Authenticatie mislukt. Controleer uw gebruikersnaam en wachtwoord."
@@ -220,15 +196,3 @@ msgstr "Lokaal vermist"
 
 msgid "Missing remotely"
 msgstr "Extern vermist"
-
-#, python-format
-msgid "Downloading %s media file"
-msgid_plural "Downloading %s media files"
-msgstr[0] "%s mediabestand downloaden"
-msgstr[1] "%s mediabestanden downloaden"
-
-#, python-format
-msgid "Uploading %s media file"
-msgid_plural "Uploading %s media files"
-msgstr[0] "%s mediabestand uploaden"
-msgstr[1] "%s mediabestanden uploaden"

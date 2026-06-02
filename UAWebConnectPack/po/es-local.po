@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-06 20:38+0200\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: 2026-05-04 21:37+0000\n"
 "Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
@@ -13,12 +13,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.17.1\n"
-
-msgid "UA Web Connect Pack"
-msgstr "Paquete de Conexión Web en AU"
-
-msgid "Collection of Web sites for the UA (requires libwebconnect)"
-msgstr "Colección de sitios Web para la AU (requiere libwebconnect)"
 
 msgid "Forum: ukrgenealogy.com.ua"
 msgstr "Foro: ukrgenealogy.com.ua"
@@ -52,3 +46,9 @@ msgstr "Búsqueda: google.com.ua"
 
 msgid "Search: roots.in.ua"
 msgstr "Búsqueda: roots.in.ua"
+
+msgid "UA Web Connect Pack"
+msgstr "Paquete de Conexión Web en AU"
+
+msgid "Collection of Web sites for the UA (requires libwebconnect)"
+msgstr "Colección de sitios Web para la AU (requiere libwebconnect)"

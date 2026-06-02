@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,18 +12,120 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
 
+msgid "Indexes pages"
+msgstr "Registersider"
+
+msgid "Ascending tree"
+msgstr "Stigende tre"
+
+msgid "Descending tree"
+msgstr "Synkende tre"
+
+msgid "Search results"
+msgstr "Søkeresultater"
+
+msgid "Indexes"
+msgstr "Registre"
+
+msgid "Examples"
+msgstr "Eksempler"
+
+msgid "Families Index"
+msgstr "Familieregister"
+
+msgid "Include dates columns on the index pages"
+msgstr "Inkluder datokolonner på registersidene"
+
+msgid "Include a column for media path on the index pages"
+msgstr "Inkluder en kolonne for mediesti på registersidene"
+
+msgid "Include references in indexes"
+msgstr "Inkluder referanser i registrene"
+
+msgid "Maximize"
+msgstr "Maksimer"
+
+msgid "Media Index"
+msgstr "Medieregister"
+
+msgid "Media Type"
+msgstr "Medietype"
+
+msgid "Person to search for"
+msgstr "Person det skal søkes etter"
+
+msgid "Persons Index"
+msgstr "Personregister"
+
+msgid "Places Index"
+msgstr "Stedsregister"
+
+msgid "Preparing file ..."
+msgstr "Forbereder fil…"
+
+msgid "Relationship to Father"
+msgstr "Slektskap til far"
+
+msgid "Relationship to Mother"
+msgstr "Slektskap til mor"
+
 msgid "Repositories Index"
-msgstr "Arkivindeks"
+msgstr "Arkivregister"
+
+msgid "Restore"
+msgstr "Gjenopprett"
+
+msgid "Search:"
+msgstr "Søk:"
+
+msgid "Select the type of graph"
+msgstr "Velg graftype"
+
+msgid "Sources Index"
+msgstr "Kilderegister"
+
+msgid "Surnames Index"
+msgstr "Etternavnsregister"
+
+msgid "Use a table format for the surnames index"
+msgstr "Bruk tabellformat for etternavnsregisteret"
+
+msgid "Use a table format for the persons index"
+msgstr "Bruk tabellformat for personregisteret"
+
+msgid "Use a table format for the families index"
+msgstr "Bruk tabellformat for familieregisteret"
+
+msgid "Use a table format for the sources index"
+msgstr "Bruk tabellformat for kilderegisteret"
+
+msgid "Use a table format for the places index"
+msgstr "Bruk tabellformat for stedsregisteret"
+
+msgid "Used for person"
+msgstr "Brukes for person"
+
+msgid "Used for source"
+msgstr "Brukes for kilde"
 
 #, python-format
 msgid "DynamicWebReport ignoring link type '%(class)s'"
 msgstr "DynamicWebReport ignorerer lenketypen «%(class)s»"
 
+msgid "The title of the web site"
+msgstr "Tittel på nettstedet"
+
+msgid "Select filter to restrict people that appear on web site"
+msgstr "Velg filter for å begrense hvilke personer som vises på nettstedet"
+
 msgid "Include records marked private"
 msgstr "Inkluder oppføringer som er merket privat"
+
+msgid "Whether to include private objects"
+msgstr "Om private objekter skal tas med"
 
 msgid "Export sources"
 msgstr "Eksporter kilder"
@@ -37,14 +139,117 @@ msgstr "Om adresser skal eksporteres på nettsidene"
 msgid "Whether or not to include the Repository Pages."
 msgstr "Om arkivsidene skal inkluderes."
 
+msgid "Include images and media"
+msgstr "Inkluder bilder og medier"
+
+msgid "Whether to include images and media in the web pages"
+msgstr "Om bilder og mediefiler skal tas med på nettsidene"
+
+msgid "Images and media"
+msgstr "Bilder og medier"
+
+msgid "Whether to print the notes type in the notes text"
+msgstr "Om notattypen skal skrives ut i notatteksten"
+
+msgid "Print place pages"
+msgstr "Skriv ut stedssider"
+
 msgid "Google map API key"
 msgstr "Google Maps API-nøkkel"
 
 msgid "The API key used for the Google map"
 msgstr "API-nøkkelen som brukes for Google Maps"
 
+msgid "Whether or not to include family pages"
+msgstr "Om familiesider skal tas med"
+
+msgid ""
+"Whether to include half and/ or step-siblings with the parents and siblings"
+msgstr ""
+"Om halvsøsken og/eller stesøsken skal tas med sammen med foreldre og søsken"
+
+msgid "Whether to enable page configuration"
+msgstr "Om sideoppsett skal aktiveres"
+
+msgid "Whether to use tabbed panels for the different sections of the pages."
+msgstr ""
+"Om det skal brukes fanebaserte paneler for de ulike seksjonene på sidene."
+
 msgid "Whether to insert sources author in the sources title"
 msgstr "Om kildens forfatter skal inkluderes i kildetittelen"
 
+msgid "Whether to hide the Gramps ID"
+msgstr "Om Gramps-IDen skal skjules"
+
+msgid "Table"
+msgstr "Tabell"
+
+msgid "Default format for the surnames index"
+msgstr "Standardformat for etternavnsregisteret"
+
+msgid "The default format for the surnames index"
+msgstr "Standardformatet for etternavnsregisteret"
+
+msgid "Default format for the persons index"
+msgstr "Standardformat for personregisteret"
+
+msgid "The default format for the persons index"
+msgstr "Standardformatet for personregisteret"
+
+msgid "Default format for the families index"
+msgstr "Standardformat for familieregisteret"
+
+msgid "The default format for the families index"
+msgstr "Standardformatet for familieregisteret"
+
+msgid "Default format for the sources index"
+msgstr "Standardformat for kilderegisteret"
+
+msgid "The default format for the sources index"
+msgstr "Standardformatet for kilderegisteret"
+
+msgid "Default format for the places index"
+msgstr "Standardformat for stedsregisteret"
+
+msgid "The default format for the places index"
+msgstr "Standardformatet for stedsregisteret"
+
+msgid ""
+"Whether to include dates columns (birth, death, marriage) on the index pages"
+msgstr "Om datokolonner (fødsel, død, ekteskap) skal tas med på registersidene"
+
+msgid "Generate a families index page"
+msgstr "Lag en familieregisterside"
+
+msgid "Whether to generate an index page for families"
+msgstr "Om det skal lages en registerside for familier"
+
+msgid "Whether to include a column showing the media path"
+msgstr "Om en kolonne som viser mediestien skal tas med"
+
+msgid ""
+"Whether to include the references to the items in the index pages. For "
+"example, in the media index page, the names of the individuals, families, "
+"places, sources that reference the media."
+msgstr ""
+"Om henvisningene til elementene skal tas med på registersidene. For eksempel "
+"i medieregisteret: navnene på personene, familiene, stedene og kildene som "
+"henviser til mediet."
+
+msgid "Default number of entries in the indexes"
+msgstr "Standard antall oppføringer i registrene"
+
+msgid "The default number of entries shown in one index page"
+msgstr "Standard antall oppføringer som vises på en registerside"
+
 msgid "Theme"
 msgstr "Tema"
+
+msgid "Whether to print a menu for the custom page"
+msgstr "Om det skal skrives ut en meny for den tilpassede siden"
+
+msgid "Pages selection"
+msgstr "Sidevalg"
+
+msgid "Contents of the page"
+msgstr "Innhold på siden"

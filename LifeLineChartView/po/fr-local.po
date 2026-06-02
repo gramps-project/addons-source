@@ -2,10 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2026-01-03 18:01+0000\n"
-"Last-Translator: Maël Chiotti "
-"<maelchiotti@users.noreply.hosted.weblate.org>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-14 19:17+0000\n"
+"Last-Translator: \"David D.\" <dadu042@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -13,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 2026.5.dev0\n"
 
 msgid ""
 "LifeLineChartView dependencies are missing. It is not possible to use this "
@@ -253,6 +252,9 @@ msgstr "Afficher l'étiquette du mariage"
 msgid "Activate the marriage label."
 msgstr "Activez l'étiquette du mariage."
 
+msgid "Fade individual color"
+msgstr "Estomper couleur individuelle"
+
 msgid "The color of the individuals is faded to black with increasing age."
 msgstr "La couleur des individus s'estompe vers le noir avec l'âge."
 
@@ -272,6 +274,9 @@ msgstr ""
 msgid "Family shape"
 msgstr "Forme de la famille"
 
+msgid "The shape of the families can be varied."
+msgstr "La forme des familles peut varier."
+
 msgid "Rectangular"
 msgstr "Rectangulaire"
 
@@ -280,6 +285,12 @@ msgstr "Plus doux"
 
 msgid "Upper year minimum margin"
 msgstr "Marge minimale de l'année supérieure"
+
+msgid ""
+"The upper bound of the chart is extended by at least this number of years."
+msgstr ""
+"La limite supérieure du graphique est prolongée d’au moins ce nombre "
+"d’années."
 
 msgid "Lower year minimum margin"
 msgstr "Marge minimale de l ' année inférieure"
@@ -372,6 +383,28 @@ msgstr "Nombre maximal de pas de compression"
 msgid "Debugging of the compression algorithm. Abort after x steps."
 msgstr "Déboguage de l'algorithme de compression. Avorter après x étapes."
 
+msgid "Maximum number of flipping steps"
+msgstr "Nombre maximal d’étapes de basculement"
+
+msgid "Debugging of the flipping algorithm. Abort after x steps."
+msgstr "Débogage de l’algorithme de retournement. Abandonner après x étapes."
+
+msgid "Compress the chart horizontally"
+msgstr "Compresser le graphique horizontalement"
+
+msgid ""
+"By default every individual has a unique horizontal slot. This can be "
+"inefficient with many generations. This algorithm lets several people share "
+"a horizontal slot, if they do not overlap."
+msgstr ""
+"Par défaut, chaque individu a une fente horizontale unique. Cela peut être "
+"inefficace avec de nombreuses générations. Cet algorithme permet à plusieurs "
+"personnes de partager un emplacement horizontal, si elles ne se chevauchent "
+"pas."
+
+msgid "Flip families to reduce horizontal connections"
+msgstr "Retourner les familles pour réduire les connexions horizontales"
+
 msgid ""
 "Switch the position of mother and father in a family, to reduce the overall "
 "horizontal cross connections in larger graphs. This is happens if one person "
@@ -393,6 +426,12 @@ msgstr "Nombre de descendants"
 
 msgid "General chart layout"
 msgstr "Disposition générale"
+
+msgid "There are different layouts for descendant charts."
+msgstr "Il existe différentes présentations pour les graphiques descendants."
+
+msgid "Parents enclose children"
+msgstr "Parents incluent enfants"
 
 msgid "Cactus"
 msgstr "Cactus"

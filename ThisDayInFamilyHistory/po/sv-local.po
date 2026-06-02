@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-04-29 17:58+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "This Day in Family History"
 msgstr "Denna dag i släkthistorien"
@@ -299,12 +299,28 @@ msgid "%(female_name)s got married in %(year)s at %(place)s."
 msgstr "gifte sig %(year)s %(female_name)s i %(place)s."
 
 #, python-format
+msgid "%(male_name)s joined as a family in %(year)s at %(place)s."
+msgstr "%(male_name)s blev en familj året %(year)s på/i %(place)s."
+
+#, python-format
+msgid "%(female_name)s joined as a family in %(year)s at %(place)s."
+msgstr "%(female_name)s blev en familj året %(year)s på/i %(place)s."
+
+#, python-format
 msgid "%(male_name)s entered a civil union in %(year)s at %(place)s."
 msgstr "ingick %(year)s %(male_name)s partnerskap i %(place)s."
 
 #, python-format
 msgid "%(female_name)s entered a civil union in %(year)s at %(place)s."
 msgstr "ingick %(year)s %(female_name)s partnerskap i %(place)s."
+
+#, python-format
+msgid "%(male_name)s had a custom marriage in %(year)s at %(place)s."
+msgstr "%(male_name)s hade ett specialäktenskap %(year)s på %(place)s."
+
+#, python-format
+msgid "%(female_name)s had a custom marriage in %(year)s at %(place)s."
+msgstr "%(female_name)s hade ett specialäktenskap %(year)s på %(place)s."
 
 #, python-format
 msgid "%(male_name)s announced a marriage banns in %(year)s at %(place)s."

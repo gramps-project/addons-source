@@ -1,0 +1,87 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.6.dev0\n"
+
+msgid "People with a tag containing <substring>"
+msgstr "Indivíduos com etiqueta incluindo <subcadeia>"
+
+msgid "Matches people with a tag whose name contains the given substring"
+msgstr ""
+"Identifica indivíduos com uma etiqueta cujo nome contenha a subcadeia de "
+"caracteres indicada"
+
+msgid "Families with a tag containing <substring>"
+msgstr "Famílias com etiqueta incluindo <subcadeia>"
+
+msgid "Matches families with a tag whose name contains the given substring"
+msgstr ""
+"Corresponde às famílias cuja etiqueta contém a subcadeia de caracteres "
+"indicada"
+
+msgid "Events with a tag containing <substring>"
+msgstr "Eventos com etiqueta incluindo <subcadeia>"
+
+msgid "Matches events with a tag whose name contains the given substring"
+msgstr ""
+"Identifica eventos com uma etiqueta cujo nome contenha a subcadeia de "
+"caracteres indicada"
+
+msgid "Places with a tag containing <substring>"
+msgstr "Locais com etiqueta incluindo <subcadeia>"
+
+msgid "Matches places with a tag whose name contains the given substring"
+msgstr ""
+"Identifica locais com uma etiqueta cujo nome contenha a subcadeia de "
+"caracteres indicada"
+
+msgid "Sources with a tag containing <substring>"
+msgstr "Fontes com etiqueta incluindo <subcadeia>"
+
+msgid "Matches sources with a tag whose name contains the given substring"
+msgstr ""
+"Identifica fontes com uma etiqueta cujo nome contenha a subcadeia de "
+"caracteres indicada"
+
+msgid "Citations with a tag containing <substring>"
+msgstr "Citações com etiqueta incluindo <subcadeia>"
+
+msgid "Matches citations with a tag whose name contains the given substring"
+msgstr ""
+"Identifica citações com uma etiqueta cujo nome contenha a subcadeia de "
+"caracteres indicada"
+
+msgid "Repositories with a tag containing <substring>"
+msgstr "Repositórios com etiqueta incluindo <subcadeia>"
+
+msgid "Matches repositories with a tag whose name contains the given substring"
+msgstr ""
+"Identifica repositórios com uma etiqueta cujo nome contenha a subcadeia de "
+"caracteres indicada"
+
+msgid "Media objects with a tag containing <substring>"
+msgstr "Multimédia com etiqueta incluindo <subcadeia>"
+
+msgid ""
+"Matches media objects with a tag whose name contains the given substring"
+msgstr ""
+"Identifica multimédia cuja etiqueta contenha a subcadeia de caracteres "
+"indicada"
+
+msgid "Notes with a tag containing <substring>"
+msgstr "Notas com etiqueta incluindo <subcadeia>"
+
+msgid "Matches notes with a tag whose name contains the given substring"
+msgstr ""
+"Identifica notas cuja etiqueta contenha a subcadeia de caracteres indicada"

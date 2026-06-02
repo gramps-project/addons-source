@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-05-11 10:34+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
@@ -64,13 +64,13 @@ msgid "%(report_count)s. Descendant Report for %(person_name)s"
 msgstr "%(report_count)s. Správa o potomkoch pre %(person_name)s"
 
 msgid "Index of Places"
-msgstr "Index miest"
+msgstr "Register miest"
 
 msgid "Index of Dates"
-msgstr "Index dátumov"
+msgstr "Register dátumov"
 
 msgid "Index of Names"
-msgstr "Index mien"
+msgstr "Register mien"
 
 msgid "Report, Generation, Person, Name"
 msgstr "Správa, Generácia, Osoba, Meno"
@@ -148,22 +148,22 @@ msgid "Add descendant reference in child list"
 msgstr "Pridať odkaz na potomka do zoznamu detí"
 
 msgid "Include Index of Names"
-msgstr "Zahrnúť index mien"
+msgstr "Zahrnúť register mien"
 
 msgid "Whether to include the index of Names at the end of the report."
-msgstr "Či zahrnúť index mien na konci správy."
+msgstr "Či zahrnúť register mien na konci správy."
 
 msgid "Include index of Dates"
-msgstr "Zahrnúť index dátumov"
+msgstr "Zahrnúť register dátumov"
 
 msgid "Whether to include the index of Dates at the end of the report."
-msgstr "Či zahrnúť index dátumov na konci správy."
+msgstr "Či zahrnúť register dátumov na konci správy."
 
 msgid "Include index of Places"
-msgstr "Zahrnúť index miest"
+msgstr "Zahrnúť register miest"
 
 msgid "Whether to include the index of Places at the end of the report."
-msgstr "Či zahrnúť index miest na konci správy."
+msgstr "Či zahrnúť register miest na konci správy."
 
 msgid "Include the 'Report appearances' section with each person"
 msgstr "Zahrnúť sekciu 'Zobrazenia v správe' pre každú osobu"
@@ -194,22 +194,22 @@ msgid "The style used for note detail data."
 msgstr "Štýl použitý pre detailné údaje poznámky."
 
 msgid "The style used for the date in the Index of Dates."
-msgstr "Štýl použitý pre dátum v indexe dátumov."
+msgstr "Štýl použitý pre dátum v registri dátumov."
 
 msgid "The style used for the events in the Index of Dates."
-msgstr "Štýl použitý pre udalosti v indexe dátumov."
+msgstr "Štýl použitý pre udalosti v registri dátumov."
 
 msgid "The style used for the header in the Index of Names."
-msgstr "Štýl použitý pre záhlavie v indexe mien."
+msgstr "Štýl použitý pre záhlavie v registri mien."
 
 msgid "The style used for the references in the Index of Names."
-msgstr "Štýl použitý pre referencie v indexe mien."
+msgstr "Štýl použitý pre odkazy v registri mien."
 
 msgid "The style used for the header in the Index of Places."
-msgstr "Štýl použitý pre záhlavie v indexe miest."
+msgstr "Štýl použitý pre záhlavie v registri miest."
 
 msgid "The style used for the references in the Index of Places."
-msgstr "Štýl použitý pre referencie v indexe miest."
+msgstr "Štýl použitý pre odkazy v registri miest."
 
 msgid "Descendant Book"
 msgstr "Kniha potomkov"

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2025-11-04 06:51+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Display relations and distances with the home person"
@@ -104,9 +104,6 @@ msgstr ""
 msgid "%d/%d \t\t %d/%d \t\t%f"
 msgstr "%d/%d \t\t %d/%d \t\t%f"
 
-msgid "Total of handled entries : {len(self.stats_list)}\n"
-msgstr "Käsitellyt tapahtumat: {len(self.stats_list)}\n"
-
 msgid "Folder Chooser"
 msgstr "Kansion valinta"
 
@@ -127,10 +124,6 @@ msgstr "Asetitko kansion nimen?"
 
 msgid "Cannot set a valid location."
 msgstr "Kelvollista sijaintia ei voida asettaa."
-
-#, python-brace-format
-msgid "Data saved to : {filename}"
-msgstr "Talletettu tiedostoon: {filename}"
 
 msgid "Failed to save data."
 msgstr "Tietojen tallennus ei onnistunut."

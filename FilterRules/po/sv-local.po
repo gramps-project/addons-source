@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-06 17:38+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "People related to <filter>"
 msgstr "Personer relaterade till <filter>"
@@ -111,6 +111,9 @@ msgstr "Filtrera personer efter deras ålder vid döden"
 msgid "Filter rule that matches people by their age at death"
 msgstr "Filterregel som matchar personer efter deras ålder vid döden"
 
+msgid "Role:"
+msgstr "Roll:"
+
 msgid "Multiple Parents Filter"
 msgstr "Filter för flera föräldrar"
 
@@ -125,6 +128,12 @@ msgstr "Den aktiva personen"
 
 msgid "Matches sources with a particular value"
 msgstr "Matchar källor med ett visst värde"
+
+msgid "Events from people with role"
+msgstr "Händelser från personer med roll"
+
+msgid "Matches event of people filter with role"
+msgstr "Matchar personer med en händelse filtrerad med roll"
 
 msgid "Active person"
 msgstr "Aktiv person"

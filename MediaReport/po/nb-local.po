@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 16:41+0000\n"
-"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,8 +12,38 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "INFO"
+msgstr "INFO"
+
+msgid "General:"
+msgstr "Generelt:"
+
+msgid "Image type:"
+msgstr "Bildetype:"
+
+msgid "Heading"
+msgstr "Overskrift"
+
+msgid "Include custom note"
+msgstr "Inkluder et tilpasset notat"
+
+msgid "Include referenced people"
+msgstr "Inkluder refererte personer"
+
+msgid "Include media data"
+msgstr "Inkluder mediedata"
+
+msgid "Tags, notes and attributes will be included"
+msgstr "Etiketter, notater og attributter tas med"
+
+msgid "Media width"
+msgstr "Mediebredde"
+
+msgid "Media height"
+msgstr "Mediehøyde"
 
 msgid "Media Report"
 msgstr "Medierapport"

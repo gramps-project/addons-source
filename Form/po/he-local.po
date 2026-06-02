@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: 2026-02-20 09:09+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
@@ -30,6 +30,18 @@ msgstr "סדר"
 msgid "Select Form"
 msgstr "בחירת טופס"
 
+msgid "Persons"
+msgstr "אנשים"
+
+msgid "Relation"
+msgstr "יוחסה"
+
+msgid "Birthplace"
+msgstr "מקום לידה"
+
+msgid "Place of Birth"
+msgstr "מקום הלידה"
+
 msgid "BirthPlace"
 msgstr "מקום לידה"
 
@@ -47,9 +59,6 @@ msgstr "AcresCultivation"
 
 msgid "13. Origin"
 msgstr "13. מוצא"
-
-msgid "Relation"
-msgstr "יוחסה"
 
 msgid "BirthPlaceFather"
 msgstr "מקום לידת אב"
@@ -135,9 +144,6 @@ msgstr "סוג עבודה"
 msgid "File No."
 msgstr "מספר קובץ"
 
-msgid "Place of Birth"
-msgstr "מקום הלידה"
-
 msgid "Place of Enlistment"
 msgstr "מקום הגיוס"
 
@@ -170,9 +176,6 @@ msgstr "מקום לידה – אבי האדם"
 
 msgid "Place of birth, Father"
 msgstr "מקום לידת האב"
-
-msgid "Birthplace"
-msgstr "מקום לידה"
 
 msgid "Enumerated date from"
 msgstr "מתאריך משוער"

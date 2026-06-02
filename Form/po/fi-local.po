@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
-"PO-Revision-Date: 2026-04-20 04:09+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #, python-format
@@ -48,6 +48,33 @@ msgstr "Lomake"
 
 msgid "Select Form"
 msgstr "Valintalomake"
+
+msgid "Persons"
+msgstr "Henkilöt"
+
+msgid "Relation"
+msgstr "Suhde"
+
+msgid "Birthplace"
+msgstr "Syntymäpaikka"
+
+msgid "Personal Occupation"
+msgstr "Henkilön ammatti"
+
+msgid "Place of Birth"
+msgstr "Syntymäpaikka"
+
+msgid "Date of Birth"
+msgstr "Syntymäpäivä"
+
+msgid "Maiden Surname"
+msgstr "Tyttönimi"
+
+msgid "Condition"
+msgstr "Ehto"
+
+msgid "Date of Death"
+msgstr "Kuolinpävä"
 
 msgid "Schedule"
 msgstr "Ajoitus"
@@ -141,9 +168,6 @@ msgstr "6. Perheet"
 
 msgid "5. Families"
 msgstr "5. Perheet"
-
-msgid "Relation"
-msgstr "Suhde"
 
 msgid "10. Relationship to Head of Family"
 msgstr "10. Suhde perheenpäähän"
@@ -247,12 +271,6 @@ msgstr "Maatilasuunnitelmien määrä"
 msgid "Type of work"
 msgstr "Työn tyyppi"
 
-msgid "Date of Birth"
-msgstr "Syntymäpäivä"
-
-msgid "Place of Birth"
-msgstr "Syntymäpaikka"
-
 msgid "Enlistment Place"
 msgstr "Värväytyspaikka"
 
@@ -283,9 +301,6 @@ msgstr "Oppilaiden määrä"
 msgid "Number of cattle sold"
 msgstr "Myydyn karjan määrä"
 
-msgid "Birthplace"
-msgstr "Syntymäpaikka"
-
 msgid "Parents Place of Marriage"
 msgstr "Vanhempien vihkipaikka"
 
@@ -297,9 +312,6 @@ msgstr "Henkilökohtainen omaisuus"
 
 msgid "Number of house"
 msgstr "Talon numero"
-
-msgid "Condition"
-msgstr "Ehto"
 
 msgid "Name of Village"
 msgstr "Kylän nimi"
@@ -333,9 +345,6 @@ msgstr "Asuinpaikka"
 
 msgid "Date of birth"
 msgstr "Syntymäpäivä"
-
-msgid "Date of Death"
-msgstr "Kuolinpävä"
 
 msgid "Date of Burial"
 msgstr "Hautauspäivä"
@@ -445,9 +454,6 @@ msgstr "Hallintoalue"
 msgid "County/Administrative Area"
 msgstr "Maakunta/hallintoalue"
 
-msgid "Maiden Surname"
-msgstr "Tyttönimi"
-
 msgid "Banns/Licence"
 msgstr "Kuulutukset/Luvat"
 
@@ -477,9 +483,6 @@ msgstr "Kylä tai taajama"
 
 msgid "Number of Rooms"
 msgstr "Huoneiden määrä"
-
-msgid "Personal Occupation"
-msgstr "Henkilön ammatti"
 
 msgid "Number of living children"
 msgstr "Elossa olevien lasten määrä"

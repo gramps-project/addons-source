@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,8 +12,63 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Avatar Generator Tool"
+msgstr "Avatargenerator"
+
+msgid "Choose how many images you'd like to use."
+msgstr "Velg hvor mange bilder du vil bruke."
+
+msgid "Image for people with unknown gender."
+msgstr "Bilde for personer med ukjent kjønn."
+
+msgid "Image for males."
+msgstr "Bilde for menn."
+
+msgid "Image for females"
+msgstr "Bilde for kvinner"
 
 msgid "Select filter to restrict people"
 msgstr "Velg filter for å begrense antall personer"
+
+msgid "Remove images from people"
+msgstr "Fjern bilder fra personer"
+
+msgid "Remove selected image(s)."
+msgstr "Fjern valgte bilde(r)."
+
+msgid "Avatar Generator"
+msgstr "Avatargenerator"
+
+msgid "Remove avatar images..."
+msgstr "Fjern avatarbilder…"
+
+msgid "INFO"
+msgstr "INFO"
+
+msgid "No media was removed."
+msgstr "Ingen medier ble fjernet."
+
+msgid "{} media references were removed from {} persons."
+msgstr "{} mediereferanser ble fjernet fra {} personer."
+
+msgid ""
+"\n"
+"{} HandleError occured, but were ignored."
+msgstr ""
+"\n"
+"{} HandleError oppstod, men ble ignorert."
+
+msgid "Add avatar images..."
+msgstr "Legg til avatarbilder…"
+
+msgid "{} avatar images were sucessfully added."
+msgstr "{} avatarbilder ble lagt til."
+
+msgid "There was no avatar image to add. "
+msgstr "Det var ingen avatarbilder å legge til. "
+
+msgid "All persons already had one."
+msgstr "Alle personer hadde allerede et."

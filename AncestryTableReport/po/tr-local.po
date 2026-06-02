@@ -1,0 +1,92 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.6.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+msgid "Ancestry Table"
+msgstr "Soy Ağacı Tablosu"
+
+msgid "Produces a table of ancestry about a person"
+msgstr "Bir kişi hakkında soy ağacı tablosu oluşturur"
+
+#, python-format
+msgid "Person %(name)s is not in the Database"
+msgstr "%(name)s adlı kişi veri tabanında yok"
+
+#, python-format
+msgid "Ancestry Table Report for %(name)s"
+msgstr "%(name)s için soy ağacı tablosu raporu"
+
+#, python-format
+msgid "Generation %(gen_number)d"
+msgstr "Nesil %(gen_number)d"
+
+#, python-format
+msgid "Number of Ancestors for %(name)s"
+msgstr "%(name)s için ata sayısı"
+
+msgid "Generation"
+msgstr "Nesil"
+
+msgid "To start a new page after each generation."
+msgstr "Her nesilden sonra yeni bir sayfa başlatmak için."
+
+msgid "Number of ancestors per generation"
+msgstr "Nesil başına ata sayısı"
+
+msgid "Add a page with tne number of ancestors per generation."
+msgstr "Nesil başına ata sayısını içeren bir sayfa ekleyin."
+
+msgid "Mask the name of the calendar in the dates"
+msgstr "Tarihlerde takvim adını gizle"
+
+msgid ""
+"By default, except for gregorian dates, Gramps shows the name of the "
+"calendar in the dates."
+msgstr ""
+"Varsayılan olarak, Miladi tarihler hariç, Gramps tarihlerde takvimin adını "
+"gösterir."
+
+msgid "The style used for the title of the report."
+msgstr "Rapor başlığı için kullanılan stil."
+
+msgid "The style used for the Sosa number of the paternal branch."
+msgstr "Baba soyundan gelen Sosa numarası için kullanılan stil."
+
+msgid "The style used for the Sosa number of the maternal branch."
+msgstr "Anne soyundan gelen Sosa numarası için kullanılan stil."
+
+msgid "The style used for the data of the males."
+msgstr "Erkeklerin verileri için kullanılan stil."
+
+msgid "The style used for the data of the females."
+msgstr "Kadınların verileri için kullanılan stil."
+
+msgid "The style used for the marriage."
+msgstr "Evlilik için kullanılan stil."
+
+msgid ""
+"The style used for the header table of the number of ancestors per "
+"generation."
+msgstr "Nesil başına ata sayısının başlık tablosu için kullanılan stil."
+
+msgid "The style used for the number of ancestors per generation."
+msgstr "Nesil başına ata sayısı için kullanılan stil."
+
+msgid ""
+"The style used for the total line of the number of ancestors per generation."
+msgstr "Nesil başına ata sayısının toplam satırı için kullanılan stil."

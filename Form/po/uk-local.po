@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: 2025-11-17 06:51+0000\n"
 "Last-Translator: Fedir Zinchuk <fedikw@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -48,6 +48,57 @@ msgstr "Форма"
 
 msgid "Select Form"
 msgstr "Вибрати форму"
+
+msgid "Persons"
+msgstr "Особи"
+
+msgid "Rooms"
+msgstr "Кімнати"
+
+msgid "Townland"
+msgstr "Таунленд"
+
+msgid "Relation"
+msgstr "Зв’язок"
+
+msgid "Age in years"
+msgstr "Вік у роках"
+
+msgid "Sex"
+msgstr "Стать"
+
+msgid "Birthplace"
+msgstr "Місце народження"
+
+msgid "Irish Language"
+msgstr "Ірландська мова"
+
+msgid "Personal Occupation"
+msgstr "Особиста зайнятість"
+
+msgid "Years Married"
+msgstr "Роки шлюбу"
+
+msgid "Place of Birth"
+msgstr "Місце народження"
+
+msgid "Date of Birth"
+msgstr "Дата народження"
+
+msgid "Maiden Surname"
+msgstr "Дівоче прізвище"
+
+msgid "Condition"
+msgstr "Стан"
+
+msgid "Signed"
+msgstr "Підписано"
+
+msgid "Date of Death"
+msgstr "Дата смерті"
+
+msgid "Place of Death"
+msgstr "Місце смерті"
 
 msgid "Schedule"
 msgstr "Розклад"
@@ -828,9 +879,6 @@ msgstr "6. Сім'ї"
 msgid "7. Names"
 msgstr "7. Імена"
 
-msgid "Sex"
-msgstr "Стать"
-
 msgid "8. Sex"
 msgstr "8. Стать"
 
@@ -944,9 +992,6 @@ msgstr "8. Вік"
 
 msgid "9. Married or Widowed"
 msgstr "9. Одружений або вдівець/вдова"
-
-msgid "Relation"
-msgstr "Зв’язок"
 
 msgid "10. Relationship to Head of Family"
 msgstr "10. Відношення до голови сім'ї"
@@ -1232,9 +1277,6 @@ msgstr "8. Установа: Кількість будівель"
 
 msgid "9. Number of families in house or institution"
 msgstr "9. Кількість сімей у будинку або установі"
-
-msgid "Rooms"
-msgstr "Кімнати"
 
 msgid "10. Number of rooms in house or institution for each famiy"
 msgstr "10. Кількість кімнат у будинку або установі на сім'ю"
@@ -3373,12 +3415,6 @@ msgstr "Номер файлу"
 msgid "Post Office Address"
 msgstr "Поштова адреса"
 
-msgid "Date of Birth"
-msgstr "Дата народження"
-
-msgid "Place of Birth"
-msgstr "Місце народження"
-
 msgid "Entered service as (rank)"
 msgstr "Вступив на службу у званні"
 
@@ -3549,9 +3585,6 @@ msgstr "Чи регулярно ви отримували пенсійне св�
 
 msgid "If No give information regarding the same"
 msgstr "Якщо ні, надайте відповідну інформацію"
-
-msgid "Signed"
-msgstr "Підписано"
 
 msgid "Witness name and P.O Address"
 msgstr "Ім'я свідка та поштова адреса"
@@ -4106,9 +4139,6 @@ msgstr "Рівень освіти: середня школа"
 msgid "Extent of Education College"
 msgstr "Рівень освіти: коледж"
 
-msgid "Birthplace"
-msgstr "Місце народження"
-
 msgid "Own house or farm"
 msgstr "Власний будинок або ферма"
 
@@ -4459,9 +4489,6 @@ msgstr "Походження батька"
 
 msgid "Mother's Nativity"
 msgstr "Походження матері"
-
-msgid "Condition"
-msgstr "Стан"
 
 msgid "Inhabitants in"
 msgstr "Жителі у"
@@ -5176,9 +5203,6 @@ msgstr "Згода надана"
 msgid "Bond/Licence"
 msgstr "Застава/Ліцензія"
 
-msgid "Place of Death"
-msgstr "Місце смерті"
-
 msgid "Length of Residence"
 msgstr "Тривалість проживання"
 
@@ -5208,9 +5232,6 @@ msgstr "Рівень освіти"
 
 msgid "Social Security No."
 msgstr "Номер соціального страхування"
-
-msgid "Date of Death"
-msgstr "Дата смерті"
 
 msgid "Place of Burial"
 msgstr "Місце поховання"
@@ -5334,9 +5355,6 @@ msgstr "Поштова адреса"
 
 msgid "Telephone"
 msgstr "Телефон"
-
-msgid "Age in years"
-msgstr "Вік у роках"
 
 msgid "Who will always know your address (Name & Address)"
 msgstr "Хто завжди знатиме вашу адресу (ім'я та адреса)"
@@ -5605,9 +5623,6 @@ msgstr "Адміністративний район"
 msgid "County/Administrative Area"
 msgstr "Округ/Адміністративний район"
 
-msgid "Maiden Surname"
-msgstr "Дівоче прізвище"
-
 msgid "Banns/Licence"
 msgstr "Оголошення шлюбу/Ліцензія"
 
@@ -5857,9 +5872,6 @@ msgstr ""
 "«Самотній», «Одружений», «Вдівець» або «Вдова» для всіх осіб віком від 15 "
 "років і старше."
 
-msgid "Years Married"
-msgstr "Роки шлюбу"
-
 msgid "Completed Years the present Marriage has lasted."
 msgstr "Кількість років, які тривав поточний шлюб."
 
@@ -5877,9 +5889,6 @@ msgstr "Діти, які померли"
 
 msgid "Children who have Died."
 msgstr "Діти, які померли."
-
-msgid "Personal Occupation"
-msgstr "Особиста зайнятість"
 
 msgid "Industry or Service with which worker is connected."
 msgstr "Промисловість або сфера послуг, з якою пов’язаний працівник."
@@ -6082,17 +6091,11 @@ msgstr "Працює вдома"
 msgid "District Electoral Division"
 msgstr "Район виборчого округу"
 
-msgid "Townland"
-msgstr "Таунленд"
-
 msgid "No. on Form B"
 msgstr "Номер у Формі B"
 
 msgid "\"Read and Write\", \"Read\" or \"Cannot Read\""
 msgstr "«Читає і пише», «Читає» або «Не вміє читати»"
-
-msgid "Irish Language"
-msgstr "Ірландська мова"
 
 msgid ""
 "\"Irish\" or \"Irish & English\", in other cases no entry should be made"

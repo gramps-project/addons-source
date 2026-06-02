@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-03-26 16:09+0000\n"
-"Last-Translator: Bruno FORESTIER <bforest76@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-14 19:17+0000\n"
+"Last-Translator: \"David D.\" <dadu042@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -12,13 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.5.dev0\n"
 
 msgid "No title"
 msgstr "Pas de titre"
 
 msgid "No data available."
 msgstr "Pas de données disponible."
+
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "DIVISIONS ADMINISTRATIVES HISTORIQUES DE"
 
 msgid "Foundation date:"
 msgstr "Date de fondation :"
@@ -28,6 +31,12 @@ msgstr "Note :"
 
 msgid "Coordinates:"
 msgstr "Coordonnées :"
+
+msgid "Administrative history"
+msgstr "Histoire administrative"
+
+msgid "Data provided to AI:"
+msgstr "Données fournies à l’IA :"
 
 msgid "Full hierarchy"
 msgstr "Hiérarchie complète"
@@ -41,8 +50,23 @@ msgstr "Dernière récupération À :"
 msgid "Save Coordinates to the Place"
 msgstr "Enregistrer les coordonnées de localisation"
 
+msgid "AI provider is disabled"
+msgstr "Fournisseur d’IA est désactivé"
+
 msgid "No AI API key provided"
 msgstr "Pas de clé IA-API fournie"
+
+msgid "AI-generated historical place data is currently disabled"
+msgstr ""
+"Les données historiques de lieux générées par l’IA sont actuellement "
+"désactivées."
+
+msgid "AI provider is unknown. Please check your AI provider settings."
+msgstr "Le fournisseur d’IA est inconnu. Veuillez vérifier ses paramètres."
+
+msgid "⏳ Generating historical place data, please wait..."
+msgstr ""
+"⏳ Génération des données historiques sur les lieux, veuillez patienter..."
 
 msgid "Keys"
 msgstr "Clés"
@@ -68,8 +92,20 @@ msgstr "Masquer le lien pour l'élément sélectionné"
 msgid "Hide link for all items"
 msgstr "Masquer le lien pour tous les éléments"
 
+msgid "Edit Attribute with the Link"
+msgstr "Modifier l’attribut avec le lien"
+
+msgid "Edit Note with the Link"
+msgstr "Modifier la note avec le lien"
+
 msgid "🔍 AI Suggestions"
 msgstr "Suggestions d'IA"
+
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr "L’attribut n’existe plus. L’icône supplémentaire est supprimée"
+
+msgid "Note no longer exists. The extra icon is removed"
+msgstr "La note n’existe plus. L’icône supplémentaire est supprimée"
 
 #, python-brace-format
 msgid ""
@@ -188,8 +224,67 @@ msgstr ""
 msgid "Note Link (parsed)"
 msgstr "Lien de note (analysé)"
 
+msgid "Note Link (internal)"
+msgstr "Lien de note (interne)"
+
 msgid "Note Link (external)"
 msgstr "Lien de note (externe)"
+
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 À propos de WebSearch"
+
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"WebSearch est un Gramplet pour Gramps qui vous aide à rechercher des sites "
+"web liés à la généalogie."
+
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"Il prend en charge les modèles de lien basés sur CSV, la découverte de sites "
+"assistée par l’IA et l’intégration directe avec des notes et des attributs."
+
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Informations système"
+
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 *Manquant :** `qrcode`"
+
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Cette bibliothèque Python n’est pas disponible dans votre système."
+
+msgid "Without it, QR code generation will not work."
+msgstr "Sans cela, la génération de codes QR ne fonctionnera pas."
+
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Habituellement installé avec : `pip install qrcode[pil]`"
+
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Remarque : certains systèmes d’exploitation ou environnements peuvent "
+"nécessiter des méthodes d’installation alternatives.*"
+
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 *Manquant :** `openai`"
+
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr ""
+"ℹ️ Cette bibliothèque est requise pour accéder aux fonctionnalités basées sur "
+"OpenAI."
+
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Sans cela, les suggestions de sites et l’historique des emplacements générés "
+"par l’IA seront désactivés."
+
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 Habituellement installé avec : `pip install openai`"
 
 msgid "🔻 **Missing:** `requests`"
 msgstr "🔻 **Manquant :** `requests`"
@@ -229,6 +324,35 @@ msgstr ""
 
 msgid "#### JSON File Paths"
 msgstr "#### Dossier des fichieres JSON"
+
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *Astuce : cliquez sur n’importe quel chemin ci-dessus pour l’ouvrir "
+"dans votre gestionnaire de fichiers.*"
+
+msgid "📖 View detailed usage in: "
+msgstr "📖 Vue utilisation détaillée dans : "
+
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 Créé et maintenu par Yurii Liubymyi"
+
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 Pour de l’aide ou des retours, n’hésitez pas à mentionner `@Urchello` sur "
+"le forum de Gramps :"
+
+msgid "Gramps Forum (Discourse)"
+msgstr "Forum Gramps (Discourse)"
+
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr ""
+"✅ Les rapports de bogues et les demandes de fonctionnalités sont "
+"entièrement **gratuits**."
+
+msgid "Gramps Bug Tracker"
+msgstr "Traqueur de bogues Gramps"
 
 msgid "Middle Name Handling"
 msgstr "Gestion du deuxième prénom"
@@ -320,6 +444,10 @@ msgid "Visited: %s"
 msgstr "Visité : %s"
 
 #, python-format
+msgid "Link: %s"
+msgstr "Lien : %s"
+
+#, python-format
 msgid "Attribute: %s"
 msgstr "Attribut : %s"
 
@@ -347,11 +475,27 @@ msgstr "Motif : %s"
 msgid "Object Gramps ID: %s"
 msgstr "ID d'objet Gramps : %s"
 
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s : %s → %s : %s"
+
+msgid "Link visited"
+msgstr "Lien visité"
+
+msgid "Link saved to Note"
+msgstr "Lien enregistré dans note"
+
 msgid "Link saved to Attribute"
 msgstr "Lien enregistré dans l'Attribut"
 
 msgid "Place history loaded"
 msgstr "Historique du lieu chargé"
+
+msgid "Domain skipped"
+msgstr "Domaine ignoré"
+
+msgid "Link hidden for object"
+msgstr "Lien caché pour l’objet"
 
 msgid "Link hidden for all objects"
 msgstr "Lien masqué pour tous les objets"

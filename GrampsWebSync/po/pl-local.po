@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-11 21:37+0200\n"
-"PO-Revision-Date: 2025-11-01 19:51+0000\n"
-"Last-Translator: Marcin Stefański <m_stefanski@icloud.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2025-12-14 21:00+0000\n"
+"Last-Translator: WaldiS <sto@tutanota.de>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
 "Language: pl\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.15-dev\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
@@ -38,34 +38,6 @@ msgstr "Nieoczekiwany błąd podczas stosowania zmian."
 
 msgid "Media files are in sync."
 msgstr "Pliki multimedialne są zsynchronizowane."
-
-#, python-format
-msgid "Successfully downloaded %s media file."
-msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "Pomyślnie pobrano %s plik multimedialny."
-msgstr[1] "Pomyślnie pobrano %s plików multimedialnych."
-msgstr[2] "Pomyślnie pobrano %s plików multimedialnych."
-
-#, python-format
-msgid "Encountered %s error during download."
-msgid_plural "Encountered %s errors during download."
-msgstr[0] "Napotkano %s błąd podczas pobierania."
-msgstr[1] "Napotkano %s błędów podczas pobierania."
-msgstr[2] "Napotkano %s błędów podczas pobierania."
-
-#, python-format
-msgid "Successfully uploaded %s media file."
-msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "Pomyślnie przesłano %s plik multimedialny."
-msgstr[1] "Pomyślnie przesłano %s plików multimedialnych."
-msgstr[2] "Pomyślnie przesłano %s plików multimedialnych."
-
-#, python-format
-msgid "Encountered %s error during upload."
-msgid_plural "Encountered %s errors during upload."
-msgstr[0] "Napotkano %s błąd podczas przesyłania."
-msgstr[1] "Napotkano %s błędów podczas przesyłania."
-msgstr[2] "Napotkano %s błędów podczas przesyłania."
 
 msgid "Authentication failed. Please check your username and password."
 msgstr ""
@@ -208,17 +180,3 @@ msgstr "Brakuje lokalnie"
 
 msgid "Missing remotely"
 msgstr "Brakuje zdalnie"
-
-#, python-format
-msgid "Downloading %s media file"
-msgid_plural "Downloading %s media files"
-msgstr[0] "Pobieranie %s plików multimedialnych"
-msgstr[1] "Pobieranie %s plików multimedialnych"
-msgstr[2] "Pobieranie %s plików multimedialnych"
-
-#, python-format
-msgid "Uploading %s media file"
-msgid_plural "Uploading %s media files"
-msgstr[0] "Przesyłanie %s plików multimedialnych"
-msgstr[1] "Przesyłanie %s plików multimedialnych"
-msgstr[2] "Przesyłanie %s plików multimedialnych"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-05-10 14:47+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "No title"
 msgstr "Ingen titel"
@@ -41,6 +41,25 @@ msgstr "Senast hämtad vid:"
 msgid "Save Coordinates to the Place"
 msgstr "Spara koordinater för platsen"
 
+msgid "AI provider is disabled"
+msgstr "AI-leverantören är inaktiverad"
+
+msgid "No AI API key provided"
+msgstr "Ingen AI API-nyckel tillhandahålls"
+
+msgid "AI-generated historical place data is currently disabled"
+msgstr "AI-genererad historisk platsdata är för närvarande inaktiverad"
+
+msgid "AI provider is unknown. Please check your AI provider settings."
+msgstr ""
+"AI-leverantören är okänd. Kontrollera dina AI-leverantörsinställningar."
+
+msgid "⏳ Generating historical place data, please wait..."
+msgstr "⏳ Genererar historisk platsdata, vänligen vänta..."
+
+msgid "Keys"
+msgstr "Nycklar"
+
 msgid "Website URL"
 msgstr "Webbplatsens URL"
 
@@ -56,12 +75,54 @@ msgstr "Visa QR-kod"
 msgid "Copy link to clipboard"
 msgstr "Kopiera länken till urklipp"
 
+msgid "Hide link for selected item"
+msgstr "Dölj länk för valt objekt"
+
+msgid "Hide link for all items"
+msgstr "Dölj länk för alla objekt"
+
+msgid "Edit Attribute with the Link"
+msgstr "Redigera attribut för länken"
+
+msgid "Edit Note with the Link"
+msgstr "Redigera anteckning med länken"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 AI-förslag"
+
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr "Attributet finns inte längre. Den extra ikonen har tagits bort"
+
+msgid "Note no longer exists. The extra icon is removed"
+msgstr "Anteckningen finns inte längre. Den extra ikonen har tagits bort"
+
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+"📌 Denna webblänk '{title}' arkiverades för framtida referens av WebSearch-"
+"grampleten (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Du kan använda den här länken för att återvända till källan och verifiera "
+"informationen relaterad till denna enhet."
+
 #, python-format
 msgid "Note #%(id)s has been successfully added"
 msgstr "Notisen #%(id)s lades framgångsrikt till"
 
 msgid "Error creating note"
 msgstr "Fel vid skapande av notis"
+
+msgid "URL is copied to the Clipboard"
+msgstr "URL:en kopieras till Urklipp"
 
 msgid "WebSearch Link"
 msgstr "Webbsöklänk"
@@ -80,6 +141,10 @@ msgstr "Utbytt: {keys}"
 #, python-brace-format
 msgid "Empty: {keys}"
 msgstr "Tom: {keys}"
+
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "Kommentar: {comment}"
 
 msgid "Note Link (parsed)"
 msgstr "Anteckningslänk (tolkades)"
@@ -108,9 +173,20 @@ msgstr "Visa ikoner"
 msgid "WebSearch"
 msgstr "Webbsökning"
 
+msgid ""
+"Customized queries for online services based on the active Person, Place, "
+"Family, or Source record"
+msgstr ""
+"Anpassade frågor för onlinetjänster baserade på den aktiva personen, "
+"platsen, familjen eller källposten"
+
 #, python-format
 msgid "Visited: %s"
 msgstr "Besökt: %s"
+
+#, python-format
+msgid "Link: %s"
+msgstr "Länk: %s"
 
 #, python-format
 msgid "Attribute: %s"
@@ -139,6 +215,10 @@ msgstr "Mönster: %s"
 #, python-format
 msgid "Object Gramps ID: %s"
 msgstr "Objektets Gramps-ID: %s"
+
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s: %s → %s: %s"
 
 msgid "Link saved to Attribute"
 msgstr "Länk sparad till attribut"

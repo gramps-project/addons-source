@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-05-11 10:34+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-30 20:01+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 msgid "No title"
 msgstr "Geen titel"
@@ -98,14 +98,26 @@ msgstr "Kenmerk met de link bewerken"
 msgid "Edit Note with the Link"
 msgstr "Notitie met de link bewerken"
 
+msgid "Edit Internet link"
+msgstr "Internetlink bewerken"
+
 msgid "🔍 AI Suggestions"
 msgstr "🔍 AI-suggesties"
+
+msgid "Attribute no longer matches this WebSearch row"
+msgstr "Kenmerk komt niet meer overeen met deze WebSearch rij"
 
 msgid "Attribute no longer exists. The extra icon is removed"
 msgstr "Kenmerk bestaat niet meer. Extra pictogram wordt verwijderd"
 
+msgid "Note no longer exists"
+msgstr "Notitie bestaat niet meer"
+
 msgid "Note no longer exists. The extra icon is removed"
 msgstr "Notitie bestaat niet meer. Exptra pictogram wordt verwijderd"
+
+msgid "Internet link no longer matches this WebSearch row"
+msgstr "Internetlink komt niet meer overeen met deze WebSearch rij"
 
 #, python-brace-format
 msgid ""

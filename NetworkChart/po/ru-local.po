@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-09 18:33+0100\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: 2025-10-31 18:03+0000\n"
 "Last-Translator: Mikhail Burkasov <mburkasov@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/gramps-project/"
@@ -16,12 +16,6 @@ msgstr ""
 "X-Generator: Weblate 5.14.1-dev\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-
-msgid "Network Chart"
-msgstr "Сетевой график"
-
-msgid "Generates a family network chart."
-msgstr "Создаёт семейный график в виде сети."
 
 msgid "File exists. Overwrite?"
 msgstr "Файл существует. Перезаписать?"
@@ -433,3 +427,9 @@ msgstr "Подтверждение замены файла."
 
 msgid "Enable/disable confirmation of file overwrite."
 msgstr "Включение/отключение подтверждения замены файла."
+
+msgid "Network Chart"
+msgstr "Сетевой график"
+
+msgid "Generates a family network chart."
+msgstr "Создаёт семейный график в виде сети."

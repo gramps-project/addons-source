@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
-"PO-Revision-Date: 2025-03-23 20:35+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #, python-format
@@ -24,6 +24,9 @@ msgstr "Nytt skjema"
 
 msgid "Edit Form"
 msgstr "Rediger skjema"
+
+msgid "Reference:"
+msgstr "Referanse:"
 
 msgid "Headings"
 msgstr "Overskrifter"
@@ -37,26 +40,147 @@ msgstr "Skjemaer"
 msgid "Form"
 msgstr "Skjema"
 
+msgid "Failed to read Form definition file"
+msgstr "Feil ved lesing av skjemadefinisjonsfil"
+
 msgid "Select Form"
 msgstr "Velg skjema"
+
+msgid "Relation"
+msgstr "Relasjon"
+
+msgid "Place of Birth"
+msgstr "Fødested"
+
+msgid "Condition"
+msgstr "Tilstand"
 
 msgid "6. Age at Next Birthday"
 msgstr "6. Alder ved neste bursdag"
 
+msgid "Coloured"
+msgstr "Farget"
+
+msgid "AcresCultivation"
+msgstr "AkreDyrking"
+
 msgid "7. Age next Birthday"
 msgstr "7. Alder neste bursdag"
+
+msgid "Vessels"
+msgstr "Fartøy"
+
+msgid "13. Origin"
+msgstr "13. Opprinnelse"
+
+msgid "10. Relationship to Head of Family"
+msgstr "10. Slektskap til familiens hovedperson"
+
+msgid "SubTitle"
+msgstr "Undertittel"
+
+msgid "Colour"
+msgstr "Farge"
+
+msgid "5. Colour"
+msgstr "5. Farge"
+
+msgid "6. Relation to head of family"
+msgstr "6. Relasjon til familiens hovedperson"
 
 msgid "10. Age at last birthday"
 msgstr "10. Alder ved forrige bursdag"
 
+msgid "Race"
+msgstr "Rase"
+
+msgid "25. Months employed in other occupation than trace in factory or home"
+msgstr ""
+"25. Måneder sysselsatt i annet yrke enn hovedyrket i fabrikk eller hjem"
+
+msgid "Seating"
+msgstr "Plassering"
+
+msgid "3.Relation to head of family"
+msgstr "3. Relasjon til familiens hovedperson"
+
+msgid "Section"
+msgstr "Seksjon"
+
+msgid "WeeksOccupation"
+msgstr "Uker i arbeid"
+
+msgid "2. Family"
+msgstr "2. Familie"
+
+msgid "5. Relation to head of family"
+msgstr "5. Relasjon til familiens hovedperson"
+
 msgid "8. Age at last birthday"
 msgstr "8. Alder ved forrige bursdag"
+
+msgid "9. Relationship to head of family or household"
+msgstr "9. Slektskap til hovedperson i familien eller husholdet"
 
 msgid "12. Age at last birthday"
 msgstr "12. Alder ved forrige bursdag"
 
+msgid "NARA publication"
+msgstr "NARA-publikasjon"
+
+msgid "Sheet No."
+msgstr "Arknr."
+
+msgid "County of"
+msgstr "Fylke i"
+
+msgid "All other free persons"
+msgstr "Alle andre frie personer"
+
+msgid "Enumeration Date"
+msgstr "Registreringsdato"
+
+msgid "Slave males under 14"
+msgstr "Mannlige slaver under 14 år"
+
+msgid "Slave females under 14"
+msgstr "Kvinnelige slaver under 14 år"
+
+msgid "Slave males under 10"
+msgstr "Mannlige slaver under 10 år"
+
+msgid "Slave females under 10"
+msgstr "Kvinnelige slaver under 10 år"
+
+msgid "Colored persons blind"
+msgstr "Blinde fargede personer"
+
+msgid "Family No."
+msgstr "Familienr."
+
+msgid "Place of birth"
+msgstr "Fødested"
+
+msgid "Relationship to head"
+msgstr "Slektskap til hovedperson"
+
 msgid "Owner"
 msgstr "Eier"
+
+msgid "Horses on hand"
+msgstr "Antall hester"
+
+msgid "Able to write"
+msgstr "Kan skrive"
+
+msgid "Date Enlisted"
+msgstr "Innrulleringsdato"
+
+msgid "Relation to head"
+msgstr "Relasjon til hovedperson"
+
+msgid "Color/Race"
+msgstr "Hudfarge/rase"
 
 msgid "Age at Last Birthday"
 msgstr "Alder ved forrige bursdag"
@@ -64,14 +188,161 @@ msgstr "Alder ved forrige bursdag"
 msgid "Age at last birthday"
 msgstr "Alder ved forrige bursdag"
 
+msgid "District of"
+msgstr "Distrikt i"
+
+msgid "Place of Enlistment"
+msgstr "Innrulleringssted"
+
+msgid "On date"
+msgstr "På dato"
+
+msgid "Date married"
+msgstr "Vielsesdato"
+
+msgid "Place married"
+msgstr "Vielsessted"
+
+msgid "Relation to Family"
+msgstr "Relasjon til familien"
+
+msgid "Total number"
+msgstr "Totalt antall"
+
+msgid "Native voters"
+msgstr "Innfødte velgere"
+
+msgid "City of"
+msgstr "By i"
+
+msgid "Place of Birth-Self"
+msgstr "Eget fødested"
+
+msgid "Place of Birth-Mother"
+msgstr "Fødested – mor"
+
+msgid "Place of birth, Mother"
+msgstr "Fødested, mor"
+
+msgid "Place of Birth-Father"
+msgstr "Fødested – far"
+
+msgid "Place of birth, Father"
+msgstr "Fødested, far"
+
+msgid "House Number"
+msgstr "Husnummer"
+
+msgid "Color or Race"
+msgstr "Hudfarge eller rase"
+
+msgid "Able to Write"
+msgstr "Kan skrive"
+
+msgid "Enumerated date from"
+msgstr "Registreringsdato fra"
+
+msgid "Enumerated date to"
+msgstr "Registreringsdato til"
+
+msgid "Colored females under 10"
+msgstr "Kvinnelige fargede under 10 år"
+
+msgid "Landowner"
+msgstr "Grunneier"
+
+msgid "Birth Country"
+msgstr "Fødeland"
+
+msgid "Election District, Ward"
+msgstr "Valgdistrikt, krets"
+
+msgid "Ancestry"
+msgstr "Aner"
+
+msgid "Heads of Families"
+msgstr "Familienes hovedpersoner"
+
+msgid "Colored males"
+msgstr "Fargede menn"
+
+msgid "Colored females"
+msgstr "Fargede kvinner"
+
 msgid "in"
 msgstr "i"
 
 msgid "of"
 msgstr "av"
 
+msgid "Place of Record"
+msgstr "Registreringssted"
+
+msgid "Race/Color"
+msgstr "Rase/Hudfarge"
+
+msgid "Place of Marriage"
+msgstr "Vielsessted"
+
+msgid "Name of employer"
+msgstr "Arbeidsgivers navn"
+
+msgid "Place of Burial"
+msgstr "Gravsted"
+
+msgid "Burial Date"
+msgstr "Gravleggingsdato"
+
+msgid "Burial Place"
+msgstr "Gravsted"
+
+msgid "Home Address"
+msgstr "Hjemmeadresse"
+
+msgid "Nearest Relative"
+msgstr "Nærmeste slektning"
+
+msgid "Race "
+msgstr "Rase "
+
+msgid "Hair Color"
+msgstr "Hårfarge"
+
+msgid "Registration Card"
+msgstr "Registreringskort"
+
+msgid "Relationship "
+msgstr "Slektskap "
+
+msgid "Occupation "
+msgstr "Yrke "
+
+msgid "Place entered"
+msgstr "Sted angitt"
+
+msgid "Place discharged"
+msgstr "Dimitteringssted"
+
+msgid "Place of Work"
+msgstr "Arbeidssted"
+
+msgid "Year stayed in parish"
+msgstr "År bosatt i sognet"
+
+msgid "Date Married"
+msgstr "Vielsesdato"
+
 msgid "Event Place (Original)"
 msgstr "Hendelsessted (Original)"
+
+msgid "Volume"
+msgstr "Bind"
+
+msgid "Volume Beginning Year"
+msgstr "Bindets startår"
+
+msgid "Volume Ending Year"
+msgstr "Bindets sluttår"
 
 msgid "Administrative Area"
 msgstr "Administrativt område"
@@ -79,5 +350,65 @@ msgstr "Administrativt område"
 msgid "County/Administrative Area"
 msgstr "Fylke/Administrativt område"
 
+msgid "Usual Address"
+msgstr "Vanlig adresse"
+
+msgid "Parish or Township"
+msgstr "Sogn eller Township"
+
+msgid "Relation to Head of Family"
+msgstr "Relasjon til familiens hovedperson"
+
+msgid "Municipal Ward"
+msgstr "Kommunekrets"
+
+msgid "Civil Parish or Township"
+msgstr "Sivilt sogn eller Township"
+
+msgid "RELATION to Head of Family"
+msgstr "Relasjon til familiens hovedperson"
+
+msgid "Ecclesiastical Parish or District"
+msgstr "Kirkesogn eller distrikt"
+
 msgid "Administrative County"
 msgstr "Administrativt fylke"
+
+msgid "Civil Parish"
+msgstr "Sivilt sogn"
+
+msgid "Ecclesiastical Parish"
+msgstr "Kirkesogn"
+
+msgid "RELATIONSHIP to Head of Family"
+msgstr "Slektskap til familiens hovedperson"
+
+msgid "Whether Working at Home"
+msgstr "Om arbeider hjemme"
+
+msgid "RELATIONSHIP to Head of Household"
+msgstr "Slektskap til husholdets hovedperson"
+
+msgid "Quoad Sacra Parish"
+msgstr "Kirkesogn"
+
+msgid "Parliamentary Burgh"
+msgstr "Parlamentarisk burgh"
+
+msgid "Royal Burgh"
+msgstr "Kongelig burgh"
+
+msgid "Relation to Head"
+msgstr "Relasjon til hovedperson"
+
+msgid "Municipal Burgh"
+msgstr "Kommunal burgh"
+
+msgid "Burgh Ward"
+msgstr "Burgh-krets"
+
+msgid "Parish Ward"
+msgstr "Sognekrets"
+
+msgid "Head of Family"
+msgstr "Familiens hovedperson"

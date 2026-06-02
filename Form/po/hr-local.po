@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
-"PO-Revision-Date: 2026-05-11 10:35+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-17 15:49+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 #, python-format
 msgid "Form: %s"
@@ -78,6 +78,33 @@ msgid ""
 msgstr ""
 "Provjeri nedostaju li neki događaji popisa stanovništva za osobu i neke od "
 "njezinih predaka"
+
+msgid "Persons"
+msgstr "Osobe"
+
+msgid "Relation"
+msgstr "Srodstvo"
+
+msgid "Sex"
+msgstr "Spol"
+
+msgid "Years Married"
+msgstr "Broj godina braka"
+
+msgid "Maiden Surname"
+msgstr "Djevojačko prezime"
+
+msgid "Condition"
+msgstr "Stanje"
+
+msgid "Signed"
+msgstr "Potpisano"
+
+msgid "Date of Death"
+msgstr "Datum smrti"
+
+msgid "Place of Death"
+msgstr "Mjesto smrti"
 
 msgid "Schedule"
 msgstr "Raspored"
@@ -282,9 +309,6 @@ msgstr "6. Obitelji"
 msgid "7. Names"
 msgstr "7. Imena"
 
-msgid "Sex"
-msgstr "Spol"
-
 msgid "8. Sex"
 msgstr "8. Spol"
 
@@ -338,9 +362,6 @@ msgstr "8. Starost"
 
 msgid "9. Married or Widowed"
 msgstr "9. Vjenčani ili obudovjeli"
-
-msgid "Relation"
-msgstr "Srodstvo"
 
 msgid "10. Relationship to Head of Family"
 msgstr "10. Veza prema glavi obitelji"
@@ -862,9 +883,6 @@ msgstr "Ako jesi, navedi satniju i pukovniju"
 msgid "When, where and circumstances you quit the service"
 msgstr "Kada, gdje i pod kojim okolnostima si napustii/la službu"
 
-msgid "Signed"
-msgstr "Potpisano"
-
 msgid "Widow of"
 msgstr "Udovica od"
 
@@ -1144,9 +1162,6 @@ msgstr "Nepismeni i 15 do 21 godina stari"
 msgid "Year of immigration to the United States"
 msgstr "Godina imigracije u SAD"
 
-msgid "Condition"
-msgstr "Stanje"
-
 msgid "Residence in State - Years"
 msgstr "Prebivalište u državi – godine"
 
@@ -1381,9 +1396,6 @@ msgstr "Mjesto sklapanja braka"
 msgid "Consent given by"
 msgstr "Odobrenje od"
 
-msgid "Place of Death"
-msgstr "Mjesto smrti"
-
 msgid "Length of Residence"
 msgstr "Trajanje prebivališta"
 
@@ -1413,9 +1425,6 @@ msgstr "Razina obrazovanja"
 
 msgid "Social Security No."
 msgstr "Broj socijalnog osiguranja"
-
-msgid "Date of Death"
-msgstr "Datum smrti"
 
 msgid "Place of Burial"
 msgstr "Mjesto pokopa"
@@ -1564,9 +1573,6 @@ msgstr "Vrsta krova"
 msgid "Registration District"
 msgstr "Kotar registracije"
 
-msgid "Maiden Surname"
-msgstr "Djevojačko prezime"
-
 msgid "Banns/Licence"
 msgstr "Najave vjenčanja/Vjenčani list"
 
@@ -1645,9 +1651,6 @@ msgid ""
 msgstr ""
 "„Singl”, „Vjenčani”, „Udovac” ili „Udovica” za sve osobe s 15 godina i "
 "starije."
-
-msgid "Years Married"
-msgstr "Broj godina braka"
 
 msgid "Children Total"
 msgstr "Ukupno djece"

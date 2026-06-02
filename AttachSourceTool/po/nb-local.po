@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,17 +12,50 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Select filter to restrict people"
 msgstr "Velg filter for å begrense antall personer"
 
+msgid "Source type"
+msgstr "Kildetype"
+
 msgid "New source"
 msgstr "Ny kilde"
+
+msgid "Existing source"
+msgstr "Eksisterende kilde"
+
+msgid "Select the type of source to attach"
+msgstr "Velg hvilken kildetype som skal legges ved"
+
+msgid "New Source Title"
+msgstr "Ny kildetittel"
+
+msgid "Text of source to attach"
+msgstr "Tekst for kilden som skal legges ved"
+
+msgid "Existing Source ID"
+msgstr "ID for eksisterende kilde"
+
+msgid "ID of source to attach"
+msgstr "ID for kilden som skal legges ved"
+
+msgid "Attach Source"
+msgstr "Legg ved kilde"
 
 msgid "Processing...\n"
 msgstr "Prosesserer...\n"
 
+msgid "Attaching sources...\n"
+msgstr "Legger ved kilder…\n"
+
+msgid "Attaching sources..."
+msgstr "Legger ved kilder…"
+
 msgid "Done!\n"
 msgstr "Gjort!\n"
+
+msgid "Attaches a shared source to multiple objects."
+msgstr "Legger ved en delt kilde til flere objekter."

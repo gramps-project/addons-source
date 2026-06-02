@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-05-11 10:35+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-17 15:49+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 msgid "lxml"
 msgstr "lxml"
@@ -265,36 +265,8 @@ msgid "Period: "
 msgstr "Razdoblje: "
 
 #, python-brace-format
-msgid "\t{number} surname"
-msgid_plural "\t{number} surnames; no frequency yet\n"
-msgstr[0] "\t{number} prezime"
-msgstr[1] "\t{number} prezimena; još nema učestalosti"
-msgstr[2] "\t{number} prezimena; još nema učestalosti"
-
-#, python-brace-format
 msgid "\t{number} surname; no frequency yet"
 msgstr "\t{number} prezimena; još nema učestalosti"
-
-#, python-brace-format
-msgid "\t{number} place"
-msgid_plural "\t{number} places\n"
-msgstr[0] "\t{number} mjesto"
-msgstr[1] "\t{number} mjesta"
-msgstr[2] "\t{number} mjesta"
-
-#, python-brace-format
-msgid "\t{number} note"
-msgid_plural "\t{number} notes\n"
-msgstr[0] "\t{number} zabilješka"
-msgstr[1] "\t{number} zabilješke"
-msgstr[2] "\t{number} zabilješki"
-
-#, python-brace-format
-msgid "\t{number} source"
-msgid_plural "\t{number} sources\n"
-msgstr[0] "\t{number} izvor"
-msgstr[1] "\t{number} izvora"
-msgstr[2] "\t{number} izvora"
 
 msgid "Gallery.html"
 msgstr "Galerija.html"

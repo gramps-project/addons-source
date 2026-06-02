@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:40+0000\n"
-"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,8 +12,53 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Sources Index"
+msgstr "Kilderegister"
+
+msgid "BirthIndex"
+msgstr "Fødselsregister"
+
+msgid "MarriageIndex"
+msgstr "Vielsesregister"
+
+msgid "DeathIndex"
+msgstr "Dødsregister"
+
+msgid "CensusIndex"
+msgstr "Folketellingsregister"
+
+msgid "SourceIndex"
+msgstr "Kilderegister"
+
+msgid "index"
+msgstr "register"
+
+msgid "_File"
+msgstr "_Fil"
+
+msgid "Display all"
+msgstr "Vis alle"
+
+msgid "Display only deaths"
+msgstr "Vis kun dødsfall"
+
+msgid "Display only censuses"
+msgstr "Vis kun folketellinger"
+
+msgid "add birth act"
+msgstr "legg til fødselsattest"
+
+msgid "add death act"
+msgstr "legg til dødsattest"
+
+msgid "New census"
+msgstr "Ny folketelling"
+
+msgid "Select a marriage source"
+msgstr "Velg en kilde for vielsen"
 
 msgid "Select a repository storing a source"
 msgstr "Velg et arkiv som lagrer en kilde"
@@ -21,15 +66,51 @@ msgstr "Velg et arkiv som lagrer en kilde"
 msgid "repositories"
 msgstr "arkiver"
 
+msgid "Selected view"
+msgstr "Valgt visning"
+
 msgid ""
 "Records transcriptions ... births/deaths/marriages/censuses with common "
 "fields: id, repository, person name, birth date and place, parents."
 msgstr ""
 "Registrerer transkripsjoner … fødsler/dødsfall/ekteskap/folketellinger med "
-"vanlige felter: ID, arkiv, personnavn, fødselsdato og -sted, foreldre."
+"vanlige felter: id, arkiv, personnavn, fødselsdato og fødested, foreldre."
+
+msgid "Reference:"
+msgstr "Referanse:"
+
+msgid "Volume:"
+msgstr "Volum:"
 
 msgid "<b>Repository</b>"
 msgstr "<b>Arkiv</b>"
+
+msgid "Origin:"
+msgstr "Opprinnelse:"
+
+msgid "Birth place:"
+msgstr "Fødested:"
+
+msgid "Note:"
+msgstr "Notat:"
+
+msgid "Marriage place:"
+msgstr "Vielsessted:"
+
+msgid "witness"
+msgstr "vitne"
+
+msgid "Death date:"
+msgstr "Dødsdato:"
+
+msgid "Death place:"
+msgstr "Dødssted:"
+
+msgid "Family status:"
+msgstr "Familiestatus:"
+
+msgid "The source title"
+msgstr "Kildetittel"
 
 msgid "Repository title"
 msgstr "Arkivtittel"
@@ -39,3 +120,29 @@ msgstr "<b><i>Arkiv</i></b>"
 
 msgid "The call number into the repository"
 msgstr "Arkivsignatur i arkivet"
+
+msgid ""
+"Death\n"
+"place:"
+msgstr ""
+"Døds-\n"
+"sted:"
+
+msgid ""
+"Birth\n"
+"place:"
+msgstr ""
+"Føde-\n"
+"sted:"
+
+msgid "Origine:"
+msgstr "Opprinnelse:"
+
+msgid "m. date:"
+msgstr "v. dato:"
+
+msgid "m. place:"
+msgstr "v. sted:"
+
+msgid "places banns:"
+msgstr "Lysningssteder:"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: 2025-10-31 18:03+0000\n"
 "Last-Translator: Mikhail Burkasov <mburkasov@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/gramps-project/"
@@ -50,6 +50,18 @@ msgstr "Форма"
 
 msgid "Select Form"
 msgstr "Выбрать форму"
+
+msgid "Persons"
+msgstr "Лица"
+
+msgid "Relation"
+msgstr "Отношения"
+
+msgid "Sex"
+msgstr "Пол"
+
+msgid "Condition"
+msgstr "Достоверность"
 
 msgid "Township"
 msgstr "Район"
@@ -193,9 +205,6 @@ msgstr "6.Семьи"
 msgid "7. Names"
 msgstr "7. Имена"
 
-msgid "Sex"
-msgstr "Пол"
-
 msgid "8. Sex"
 msgstr "8. Пол"
 
@@ -216,9 +225,6 @@ msgstr "7. Пол"
 
 msgid "8. Age"
 msgstr "8. Возраст"
-
-msgid "Relation"
-msgstr "Отношения"
 
 msgid "13. Birth Place of Father"
 msgstr "13. Место рождения отца"
@@ -294,9 +300,6 @@ msgstr "Имя отца"
 
 msgid "Mother's Name"
 msgstr "Имя матери"
-
-msgid "Condition"
-msgstr "Достоверность"
 
 msgid "Ancestry"
 msgstr "Родословная"

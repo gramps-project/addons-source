@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-05-11 10:34+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Gram.py Script"
+msgstr "Skript Gram.py"
+
+msgid "Run a special Gramps Python script"
+msgstr "Spustite špeciálny skript programu Python pre Gramps"
 
 msgid "Load query from a .script file"
 msgstr "Načítať dopyt zo .script súboru"
@@ -32,6 +38,9 @@ msgstr "Otvoriť..."
 msgid "Save as..."
 msgstr "Uložiť ako..."
 
+msgid "Save as CSV"
+msgstr "Uložiť ako CSV"
+
 msgid "Copy to clipboard"
 msgstr "Kopírovať do schránky"
 
@@ -41,5 +50,14 @@ msgstr "Tabuľka"
 msgid "Chart"
 msgstr "Graf"
 
+msgid "Execute <Alt+Enter>"
+msgstr "Stlačte <Alt+Enter>"
+
+msgid "Execute the script"
+msgstr "Spustíte skript"
+
 msgid "Ready..."
 msgstr "Pripravený..."
+
+msgid "Gram.py Script Edited Data"
+msgstr "Údaje upravené skriptom Gram.py"

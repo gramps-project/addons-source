@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,14 +12,89 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Show places"
+msgstr "Vis steder"
+
+msgid "Vertical: Top to Bottom"
+msgstr "Loddrett: topp til bunn"
+
+msgid "Vertical: Bottom to Top"
+msgstr "Loddrett: bunn til topp"
+
+msgid "Horizontal: Left to Right"
+msgstr "Vannrett: venstre til høyre"
+
+msgid "Horizontal: Right to Left"
+msgstr "Vannrett: høyre til venstre"
+
+msgid "Time Direction"
+msgstr "Tidsretning"
+
+msgid "Path color to home person"
+msgstr "Farge på sti til startperson"
+
+msgid "Font:"
+msgstr "Skrifttype:"
+
+msgid "Active person border size"
+msgstr "Kantlinjestørrelse for aktiv person"
+
+msgid "Themes"
+msgstr "Temaer"
 
 msgid "Search"
 msgstr "Søk"
 
+msgid "Select a dot file name"
+msgstr "Velg et filnavn med filtype"
+
+msgid "Go to active person"
+msgstr "Gå til aktiv person"
+
+msgid "Go to bookmark"
+msgstr "Gå til bokmerke"
+
+msgid "Vertical spacing between generations"
+msgstr "Loddrett avstand mellom generasjoner"
+
+msgid "Horizontal spacing between generations"
+msgstr "Vannrett avstand mellom generasjoner"
+
+msgid "Add active person"
+msgstr "Legg til aktiv person"
+
+msgid "Change active person?"
+msgstr "Endre aktiv person?"
+
+msgid "Lines type"
+msgstr "Linjetype"
+
 msgid "No Events for this person"
 msgstr "Ingen hendelser for denne personen"
 
+msgid "Add parents"
+msgstr "Legg til foreldre"
+
+msgid "Set as home person"
+msgstr "Angi som startperson"
+
+msgid "Show path to home person"
+msgstr "Vis sti til startperson"
+
 msgid "No Events for this family"
 msgstr "Ingen hendelser for denne familien"
+
+msgid "Add father"
+msgstr "Legg til far"
+
+msgid "Add mother"
+msgstr "Legg til mor"
+
+msgid "Light"
+msgstr "Lys"
+
+msgid "Search..."
+msgstr "Søk…"

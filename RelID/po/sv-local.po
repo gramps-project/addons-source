@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2026-02-08 09:09+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Display relations and distances with the home person"
 msgstr "Visa relationer och avstånd till hempersonen"
@@ -34,6 +34,9 @@ msgstr "Välj filterregeln"
 
 msgid "Deep generations"
 msgstr "Avlägsna generationer"
+
+msgid "How deep should we go?"
+msgstr "Hur djupt ska vi gå?"
 
 msgid "Rel_id"
 msgstr "Rel_id"
@@ -71,6 +74,9 @@ msgstr "Efternamnsmångfald"
 msgid "Save"
 msgstr "Spara"
 
+msgid "Quit"
+msgstr "Sluta"
+
 msgid "No default person set."
 msgstr "Ingen standardperson inställd."
 
@@ -92,6 +98,17 @@ msgstr "Aktivera eller inaktivera mätvärden för familjenätverk"
 msgid "Generating relation map..."
 msgstr "Skapar relationskarta..."
 
+msgid ""
+"\n"
+"Filtering\tCurrent match\t\tTime of pass\n"
+msgstr ""
+"\n"
+"Filtrering\tNuvarande matchning\t\tTidsförlopp\n"
+
+#, python-format
+msgid "%d/%d \t\t %d/%d \t\t%f"
+msgstr "%d/%d \t\t %d/%d \t\t%f"
+
 msgid "Folder Chooser"
 msgstr "Mappväljare"
 
@@ -107,6 +124,12 @@ msgstr "Mappnamn behövs"
 msgid "Foldername will be used for saving the content."
 msgstr "Mappnamn kommer att användas för att spara innehållet."
 
+msgid "Did you set a foldername?"
+msgstr "Har du angett ett mappnamn?"
+
+msgid "Cannot set a valid location."
+msgstr "Det går inte att ange en giltig plats."
+
 msgid "Failed to save data."
 msgstr "Det gick inte att spara data."
 
@@ -115,3 +138,6 @@ msgstr "Relationskarta och flik"
 
 msgid "Enable family network metrics"
 msgstr "Aktivera mätvärden för familjenätverk"
+
+msgid "Whether to calculate and display family network metrics."
+msgstr "Huruvida familjens nätverksstatistik ska beräknas och visas."

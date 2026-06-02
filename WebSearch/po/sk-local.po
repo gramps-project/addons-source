@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-05-11 10:34+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "No title"
 msgstr "Žiadny názov"
@@ -97,14 +97,26 @@ msgstr "Upraviť atribút s odkazom"
 msgid "Edit Note with the Link"
 msgstr "Upraviť poznámku s odkazom"
 
+msgid "Edit Internet link"
+msgstr "Upraviť internetový odkaz"
+
 msgid "🔍 AI Suggestions"
 msgstr "🔍 Návrhy AI"
+
+msgid "Attribute no longer matches this WebSearch row"
+msgstr "Atribút už nezodpovedá tomuto riadku vo WebSearch"
 
 msgid "Attribute no longer exists. The extra icon is removed"
 msgstr "Atribút už neexistuje. Dodatočná ikona bola odstránená"
 
+msgid "Note no longer exists"
+msgstr "Poznámka už neexistuje"
+
 msgid "Note no longer exists. The extra icon is removed"
 msgstr "Poznámka už neexistuje. Dodatočná ikona bola odstránená"
+
+msgid "Internet link no longer matches this WebSearch row"
+msgstr "Internetový odkaz už nezodpovedá tomuto riadku vo WebSearch"
 
 #, python-brace-format
 msgid ""

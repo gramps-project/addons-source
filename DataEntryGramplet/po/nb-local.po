@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Active person"
@@ -20,6 +20,9 @@ msgstr "Aktiv person"
 
 msgid "Family:"
 msgstr "Familie:"
+
+msgid "Sources?"
+msgstr "Kilder?"
 
 msgid "Surname, Given"
 msgstr "Etternavn, Fornavn"
@@ -40,19 +43,31 @@ msgid "No relation to active person"
 msgstr "Ingen slektskap til aktiv person"
 
 msgid "Add as a Parent"
-msgstr "Legg til som foreldre"
+msgstr "Legg til som forelder"
+
+msgid "Add as a Mother"
+msgstr "Legg til som mor"
+
+msgid "Add as a Father"
+msgstr "Legg til som far"
 
 msgid "Add as a Spouse"
 msgstr "Legg til som ektefelle"
 
+msgid "Add as a Wife"
+msgstr "Legg til som hustru"
+
+msgid "Add as a Husband"
+msgstr "Legg til som ektemann"
+
 msgid "Add as a Sibling"
-msgstr "Legg til et søsken"
+msgstr "Legg til som søsken"
 
 msgid "Add as a Child"
 msgstr "Legg til som barn"
 
 msgid "Copy Active Data"
-msgstr "Kopiere aktive data"
+msgstr "Kopier aktive data"
 
 msgid "in"
 msgstr "i"
@@ -67,7 +82,7 @@ msgid "Please set an active person."
 msgstr "Angi aktiv person."
 
 msgid "Can't add new person as a parent."
-msgstr "Kan ikke legge til ny person som foreldre."
+msgstr "Kan ikke legge til ny person som forelder."
 
 msgid "Please set the new person's gender."
 msgstr "Velg kjønn på den nye personen."
@@ -75,8 +90,17 @@ msgstr "Velg kjønn på den nye personen."
 msgid "Can't add new person as a mother."
 msgstr "Kan ikke legge til ny person som mor."
 
+msgid "Can't add new person as a father."
+msgstr "Kan ikke legge til ny person som far."
+
 msgid "Can't add new person as a spouse."
-msgstr "Kan ikke legge til ny person som mor."
+msgstr "Kan ikke legge til ny person som ektefelle."
+
+msgid "Can't add new person as a wife."
+msgstr "Kan ikke legge til ny person som hustru."
+
+msgid "Can't add new person as a husband."
+msgstr "Kan ikke legge til ny person som ektemann."
 
 msgid "Can't add new person as a sibling."
 msgstr "Kan ikke legge til ny person som søsken."
@@ -84,11 +108,17 @@ msgstr "Kan ikke legge til ny person som søsken."
 msgid "Can't add new person as a child."
 msgstr "Kan ikke legge til ny person som barn."
 
+msgid "Please set Active person."
+msgstr "Angi aktiv person."
+
+msgid "Can't add new person as a spouse to no one."
+msgstr "Kan ikke legge til ny person som ektefelle til ingen."
+
 msgid "Please set gender on Active or new person."
 msgstr "Velg kjønn på aktiv eller ny person."
 
 msgid "Same genders on Active and new person."
-msgstr "Samme kjønn på aktiv og ny person."
+msgstr "Aktiv og ny person har samme kjønn."
 
 msgid "Please set gender on Active person."
 msgstr "Velg kjønn på aktiv person."

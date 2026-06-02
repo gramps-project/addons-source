@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
-"PO-Revision-Date: 2026-05-11 10:34+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-30 20:01+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 #, python-format
 msgid "Form: %s"
@@ -80,6 +80,57 @@ msgid ""
 msgstr ""
 "Verifica se faltam eventos do censo relativos a um indivíduo e alguns dos "
 "seus descendentes"
+
+msgid "Persons"
+msgstr "Indivíduos"
+
+msgid "Rooms"
+msgstr "Divisões"
+
+msgid "Townland"
+msgstr "Concelho"
+
+msgid "Relation"
+msgstr "Relação"
+
+msgid "Age in years"
+msgstr "Idade em anos"
+
+msgid "Sex"
+msgstr "Sexo"
+
+msgid "Birthplace"
+msgstr "Local de nascimento"
+
+msgid "Irish Language"
+msgstr "Língua irlandesa"
+
+msgid "Personal Occupation"
+msgstr "Profissão pessoal"
+
+msgid "Years Married"
+msgstr "Anos de casamento"
+
+msgid "Place of Birth"
+msgstr "Local de nascimento"
+
+msgid "Date of Birth"
+msgstr "Data de nascimento"
+
+msgid "Maiden Surname"
+msgstr "Nome de solteira"
+
+msgid "Condition"
+msgstr "Condição"
+
+msgid "Signed"
+msgstr "Assinado"
+
+msgid "Date of Death"
+msgstr "Data de óbito"
+
+msgid "Place of Death"
+msgstr "Local de óbito"
 
 msgid "Schedule"
 msgstr "Horário"
@@ -861,9 +912,6 @@ msgstr "6. Famílias"
 msgid "7. Names"
 msgstr "7. Nomes"
 
-msgid "Sex"
-msgstr "Sexo"
-
 msgid "8. Sex"
 msgstr "8. Sexo"
 
@@ -977,9 +1025,6 @@ msgstr "8. Idade"
 
 msgid "9. Married or Widowed"
 msgstr "9. Casados ou viúvos"
-
-msgid "Relation"
-msgstr "Relação"
 
 msgid "10. Relationship to Head of Family"
 msgstr "10. Parentesco com o chefe de família"
@@ -1267,9 +1312,6 @@ msgstr "8. Instituição: número de imóveis"
 
 msgid "9. Number of families in house or institution"
 msgstr "9. N.º de famílias na casa ou instituição"
-
-msgid "Rooms"
-msgstr "Divisões"
 
 msgid "10. Number of rooms in house or institution for each famiy"
 msgstr "10. N.º de divisões para cada família na casa ou instituição"
@@ -3392,12 +3434,6 @@ msgstr "Ficheiro n.º"
 msgid "Post Office Address"
 msgstr "Endereço do posto de correios"
 
-msgid "Date of Birth"
-msgstr "Data de nascimento"
-
-msgid "Place of Birth"
-msgstr "Local de nascimento"
-
 msgid "Entered service as (rank)"
 msgstr "Entrou ao serviço como (posto)"
 
@@ -3568,9 +3604,6 @@ msgstr "Recebeu regularmente o seu mandado de pensão"
 
 msgid "If No give information regarding the same"
 msgstr "Se não, forneça informação sobre o mesmo"
-
-msgid "Signed"
-msgstr "Assinado"
 
 msgid "Witness name and P.O Address"
 msgstr "Nome da testemunha e posto de correios"
@@ -4122,9 +4155,6 @@ msgstr "Grau de instrução liceal"
 msgid "Extent of Education College"
 msgstr "Grau de instrução superior"
 
-msgid "Birthplace"
-msgstr "Local de nascimento"
-
 msgid "Own house or farm"
 msgstr "Casa ou quinta próprias"
 
@@ -4475,9 +4505,6 @@ msgstr "Natividade do pai"
 
 msgid "Mother's Nativity"
 msgstr "Natividade da mãe"
-
-msgid "Condition"
-msgstr "Condição"
 
 msgid "Inhabitants in"
 msgstr "Habitantes em"
@@ -5191,9 +5218,6 @@ msgstr "Consentimento dado por"
 msgid "Bond/Licence"
 msgstr "Ligação/Licença"
 
-msgid "Place of Death"
-msgstr "Local de óbito"
-
 msgid "Length of Residence"
 msgstr "Tamanho da residência"
 
@@ -5223,9 +5247,6 @@ msgstr "Nível de escolaridade"
 
 msgid "Social Security No."
 msgstr "N.º de segurança social"
-
-msgid "Date of Death"
-msgstr "Data de óbito"
 
 msgid "Place of Burial"
 msgstr "Local de inumação"
@@ -5406,9 +5427,6 @@ msgid ""
 msgstr ""
 "(3) No formulário D.S.S. 1\n"
 "(4) Em todos os outros formulários"
-
-msgid "Age in years"
-msgstr "Idade em anos"
 
 msgid ""
 "(4) On D.S.S. Form 1\n"
@@ -5803,9 +5821,6 @@ msgstr "Área administrativa"
 msgid "County/Administrative Area"
 msgstr "Condado/Área administrativa"
 
-msgid "Maiden Surname"
-msgstr "Nome de solteira"
-
 msgid "Banns/Licence"
 msgstr "Banhos/Licença"
 
@@ -6056,9 +6071,6 @@ msgid ""
 msgstr ""
 "\"Solteiro\", \"Casado\", ou \"Viúvo\", para todos com 15 anos ou mais."
 
-msgid "Years Married"
-msgstr "Anos de casamento"
-
 msgid "Completed Years the present Marriage has lasted."
 msgstr "Anos completos que o actual casamento durou."
 
@@ -6076,9 +6088,6 @@ msgstr "Filhos falecidos"
 
 msgid "Children who have Died."
 msgstr "Filhos falecidos."
-
-msgid "Personal Occupation"
-msgstr "Profissão pessoal"
 
 msgid "Industry or Service with which worker is connected."
 msgstr "Indústria ou serviço com o qual o trabalhador está ligado."
@@ -6283,17 +6292,11 @@ msgstr "A trabalhar em casa"
 msgid "District Electoral Division"
 msgstr "Divisão eleitoral distrital"
 
-msgid "Townland"
-msgstr "Concelho"
-
 msgid "No. on Form B"
 msgstr "N.º no formulário B"
 
 msgid "\"Read and Write\", \"Read\" or \"Cannot Read\""
 msgstr "\"Sabe ler e escrever\", \"Sabe ler\" ou \"Não sabe ler\""
-
-msgid "Irish Language"
-msgstr "Língua irlandesa"
 
 msgid ""
 "\"Irish\" or \"Irish & English\", in other cases no entry should be made"

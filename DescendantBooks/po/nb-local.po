@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,14 +12,36 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Descendants Report"
+msgstr "Etterkommerrapport"
+
+msgid "Select filter to restrict people that appear in the report"
+msgstr ""
+"Velg filter for å begrense hvilke personer som skal tas med i rapporten"
 
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Om dupliserte slektstrær skal vises i rapporten."
 
 msgid "The style used for the title of the page."
 msgstr "Stilen som brukes på sidens tittel."
+
+msgid "The style used for the table of contents header."
+msgstr "Stilen som brukes for overskriften i innholdsfortegnelsen."
+
+msgid "The style used for the table of contents detail."
+msgstr "Stilen som brukes for detaljene i innholdsfortegnelsen."
+
+msgid "Index of Places"
+msgstr "Stedsregister"
+
+msgid "Index of Dates"
+msgstr "Datoregister"
+
+msgid "Index of Names"
+msgstr "Navneregister"
 
 #, python-format
 msgid "%(event_name)s of %(name)s "
@@ -30,6 +52,10 @@ msgid "%(event_name)s of %(name)s and %(mate)s "
 msgstr "%(event_name)s for %(name)s og %(mate)s "
 
 #, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#, python-format
 msgid "%(event_name)s:"
 msgstr "%(event_name)s:"
 
@@ -37,5 +63,61 @@ msgstr "%(event_name)s:"
 msgid " %(event_text)s"
 msgstr " %(event_text)s"
 
+msgid "Include Index of Names"
+msgstr "Inkluder navneregister"
+
+msgid "Whether to include the index of Names at the end of the report."
+msgstr "Om navneregisteret skal tas med til slutt i rapporten."
+
+msgid "Include index of Dates"
+msgstr "Inkluder datoregister"
+
+msgid "Whether to include the index of Dates at the end of the report."
+msgstr "Om datoregisteret skal tas med til slutt i rapporten."
+
+msgid "Include index of Places"
+msgstr "Inkluder stedsregister"
+
+msgid "Whether to include the index of Places at the end of the report."
+msgstr "Om stedsregisteret skal tas med til slutt i rapporten."
+
+msgid "The style used for the children list."
+msgstr "Stilen som brukes for barnelisten."
+
+msgid "The basic style used for Note header."
+msgstr "Den grunnleggende stilen som brukes for notatoverskriften."
+
+msgid "The style used for the first personal entry."
+msgstr "Stilen som brukes for den første personoppføringen."
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr ""
+"Stilen som brukes for overskriften «Mer om» og for overskriftene til "
+"ektefeller."
+
+msgid "The style used for additional detail data."
+msgstr "Stilen som brukes for ytterligere detaljopplysninger."
+
+msgid "The style used for note detail data."
+msgstr "Stilen som brukes for detaljopplysninger i notater."
+
+msgid "The style used for the date in the Index of Dates."
+msgstr "Stilen som brukes for datoene i datoregisteret."
+
 msgid "The style used for the events in the Index of Dates."
-msgstr "Stilen som brukes for hendelser i indeksen over datoer."
+msgstr "Stilen som brukes for hendelsene i datoregisteret."
+
+msgid "The style used for the header in the Index of Names."
+msgstr "Stilen som brukes for overskriften i navneregisteret."
+
+msgid "The style used for the references in the Index of Names."
+msgstr "Stilen som brukes for referansene i navneregisteret."
+
+msgid "The style used for the header in the Index of Places."
+msgstr "Stilen som brukes for overskriften i stedsregisteret."
+
+msgid "The style used for the references in the Index of Places."
+msgstr "Stilen som brukes for referansene i stedsregisteret."
+
+msgid "Descendant Book"
+msgstr "Etterkommerbok"

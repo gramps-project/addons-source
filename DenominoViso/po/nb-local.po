@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "No Source"
@@ -53,6 +53,10 @@ msgstr "beskrivelse"
 
 msgid "witnesses"
 msgstr "vitner"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Feil ved skriving til {target_path}: {message}"
 
 msgid "No central person selected"
 msgstr "Ingen fokusperson valgt"
@@ -96,8 +100,11 @@ msgstr "Tittel på nettsiden"
 msgid "Any string you wish."
 msgstr "En tekst du selv velger."
 
+msgid "Display mode"
+msgstr "Visningsmodus"
+
 msgid "Either plot ancestor or descendants graph."
-msgstr "Plott graf for enten forfedre eller etterkommere."
+msgstr "Plott graf for enten aner eller etterkommere."
 
 msgid "Display type"
 msgstr "Visningstype"
@@ -112,16 +119,16 @@ msgid "Direction in which time increases."
 msgstr "Retning for økende tid."
 
 msgid "Max chart width (%)"
-msgstr "Største tavlebredde (%)"
+msgstr "Maksimal diagrambredde (%)"
 
 msgid "Width of the tree as fraction of the browser window"
 msgstr "Bredde på treet i forhold til vinduet"
 
 msgid "Max chart height (px)"
-msgstr "Største tavlehøyde (pt)"
+msgstr "Maksimal diagramhøyde (px)"
 
 msgid "Height of the tree in pixels."
-msgstr "Hlyde for treet i antall punkt."
+msgstr "Høyden på treet i piksler."
 
 msgid "Closing remarks"
 msgstr "Avsluttende kommentarer"
@@ -134,10 +141,13 @@ msgstr ""
 "om opphavsrett."
 
 msgid "Include Options"
-msgstr "Ta med opsjoner"
+msgstr "Inkluder alternativer"
 
 msgid "Include private records"
-msgstr "Ta med private poster"
+msgstr "Inkluder private poster"
+
+msgid "Whether to leave out private data."
+msgstr "Om private opplysninger skal utelates."
 
 msgid "Include Events"
 msgstr "Inkluder hendelser"
@@ -149,14 +159,14 @@ msgid "Whether to include the birth of children in the list of events."
 msgstr "Om barnefødsler skal inkluderes i listen over hendelser."
 
 msgid "Include death relatives"
-msgstr "Ta med døde slektninger"
+msgstr "Inkluder slektningers dødsfall"
 
 msgid ""
 "Whether to include the death of relatives during the lifetime of person."
 msgstr "Om dødsdata om slektninger skal tas med i tidslinjen for en person."
 
 msgid "Include witness note"
-msgstr "Ta med vitnenotat"
+msgstr "Inkluder vitnenotat"
 
 msgid ""
 "Whether to include the note belonging to a witness (if the event_format "
@@ -175,25 +185,25 @@ msgid "Whether to include a person's addresses."
 msgstr "Om en persons adresser skal tas med."
 
 msgid "Include Note"
-msgstr "Ta med notat"
+msgstr "Inkluder notat"
 
 msgid "Whether to include a person's note."
 msgstr "Om en persons notat skal tas med."
 
 msgid "Include URL"
-msgstr "Ta med URL"
+msgstr "Inkluder nettadresse"
 
 msgid "Whether to include a person's internet address."
 msgstr "Om en persons Internettadresse skal tas med."
 
 msgid "Include URL description"
-msgstr "Ta med URL-beskrivelse"
+msgstr "Inkluder beskrivelse av nettadresse"
 
 msgid "Whether to include the description of the first URL"
 msgstr "Om beskrivelse av den første URLen skal tas med"
 
 msgid "Include Sources"
-msgstr "Ta med kilder"
+msgstr "Inkluder kilder"
 
 msgid "Whether to include a person's sources."
 msgstr "Om en persons kilder skal tas med."
@@ -202,22 +212,25 @@ msgid "Image Options"
 msgstr "Bildevalg"
 
 msgid "Include Photos/Images from Gallery"
-msgstr "Ta med foto/bilder fra galleriet"
+msgstr "Inkluder bilder fra galleriet"
 
 msgid "Whether to include images"
 msgstr "Om bilder skal tas med"
 
 msgid "Copy Image"
-msgstr "Kopiere bilde"
+msgstr "Kopier bilde"
 
 msgid "Copy the images to a designated directory."
-msgstr "Kopiere bildet til en valgt katalog."
+msgstr "Kopier bildene til en valgt mappe."
 
 msgid "Images with Attribute"
 msgstr "Bilder med egenskap"
 
+msgid "Determine images with which attributes to in/exclude"
+msgstr "Velg hvilke attributter som skal tas med eller utelates"
+
 msgid "Include Image source references"
-msgstr "Ta med kildehenvisninger for bilde"
+msgstr "Inkluder kildehenvisninger for bilder"
 
 msgid "Whether to include references for images"
 msgstr "Om bildereferanser skal tas med"
@@ -229,7 +242,7 @@ msgid "Image attribute that should be used as source reference"
 msgstr "Bildeegenskap som skal brukes som kildereferanse"
 
 msgid "Style Options"
-msgstr "Stilopsjoner"
+msgstr "Stilvalg"
 
 msgid "Color of active person:"
 msgstr "Farge for aktiv person:"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-05-10 14:47+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,10 +12,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Gram.py Script"
+msgstr "Gram.py-skript"
+
+msgid "Run a special Gramps Python script"
+msgstr "Kör ett speciellt Gramps Python-skript"
+
+msgid "Load query from a .script file"
+msgstr "Läs in fråga från en .script-fil"
+
+msgid "Save query to a .script file"
+msgstr "Spara frågan till en .script-fil"
 
 msgid "Save"
 msgstr "Spara"
 
+msgid "Download results as a CSV file"
+msgstr "Ladda ner resultaten som en CSV-fil"
+
+msgid "Open..."
+msgstr "Öppna..."
+
+msgid "Save as..."
+msgstr "Spara som..."
+
+msgid "Save as CSV"
+msgstr "Spara som CSV"
+
+msgid "Copy to clipboard"
+msgstr "Kopiera till urklipp"
+
 msgid "Table"
 msgstr "Tabell"
+
+msgid "Chart"
+msgstr "Diagram"
+
+msgid "Execute <Alt+Enter>"
+msgstr "Kör <Alt+Enter>"
+
+msgid "Execute the script"
+msgstr "Kör skriptet"
+
+msgid "Ready..."
+msgstr "Redo..."
+
+msgid "Gram.py Script Edited Data"
+msgstr "Gram.py-skript redigerade data"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-05-11 10:34+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "No title"
 msgstr "Kein Titel"
@@ -97,15 +97,27 @@ msgstr "Attribut mit dem Link bearbeiten"
 msgid "Edit Note with the Link"
 msgstr "Notiz mit dem Link bearbeiten"
 
+msgid "Edit Internet link"
+msgstr "Internetlink bearbeiten"
+
 msgid "🔍 AI Suggestions"
 msgstr "🔍 KI-Vorschläge"
+
+msgid "Attribute no longer matches this WebSearch row"
+msgstr "Das Attribut stimmt nicht mehr mit dieser WebSearch-Zeile überein"
 
 msgid "Attribute no longer exists. The extra icon is removed"
 msgstr ""
 "Das Attribut existiert nicht mehr. Das zusätzliche Symbol wird entfernt"
 
+msgid "Note no longer exists"
+msgstr "Die Notiz existiert nicht mehr"
+
 msgid "Note no longer exists. The extra icon is removed"
 msgstr "Die Notiz existiert nicht mehr. Das zusätzliche Symbol wird entfernt"
+
+msgid "Internet link no longer matches this WebSearch row"
+msgstr "Der Internetlink stimmt nicht mehr mit dieser WebSearch-Zeile überein"
 
 #, python-brace-format
 msgid ""

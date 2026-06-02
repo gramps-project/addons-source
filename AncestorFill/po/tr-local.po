@@ -1,0 +1,90 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.6.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+msgid "AncestorFill"
+msgstr "AtalarDoldurma"
+
+msgid "Report on the filling of the tree"
+msgstr "Ağacın doldurulmasına ilişkin rapor"
+
+#, python-format
+msgid "AncestorFill for %s"
+msgstr "%s için ata doldurması"
+
+msgid "Generation "
+msgstr "Nesil "
+
+msgid "Number of Ancestors found "
+msgstr "Bulunan ataların sayısı "
+
+msgid "Percent of Ancestors found "
+msgstr "Bulunan ataların yüzdesi "
+
+msgid "Number of unique Ancestors found "
+msgstr "Bulunan benzersiz ataların sayısı "
+
+msgid "Number of theoretical Ancestors "
+msgstr "Teorik ataların sayısı "
+
+msgid "Pedigree Collapse "
+msgstr "Soy Ağacı Çöküşü "
+
+msgid "Total Number of Ancestors found "
+msgstr "Bulunan ataların toplam sayısı "
+
+msgid "Total Number of unique Ancestors found "
+msgstr "Bulunan benzersiz atanın toplam sayısı "
+
+msgid ""
+"\n"
+"\n"
+"Note: This report only counts ancestors with a parent-child relationship of "
+"birth."
+msgstr ""
+"\n"
+"\n"
+"Not: Bu raporda yalnızca doğum yoluyla ebeveyn-çocuk ilişkisi bulunan atalar "
+"dikkate alınmıştır."
+
+msgid "Filled digit"
+msgstr "Doldurulmuş rakam"
+
+msgid ""
+"The number of digits after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr ""
+"Belirli bir nesilde bulunan atanın yüzdesini gösteren raporda virgülden "
+"sonra yer alacak basamak sayısı"
+
+msgid "Collapsed digit"
+msgstr "Daraltılmış rakam"
+
+msgid ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+msgstr "Soy ağacı raporuna dahil edilecek virgülden sonraki basamak sayısı"
+
+msgid "Display theoretical"
+msgstr "Teorik sayıyı göster"
+
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr "Nesil bazında teorik ata sayısının görüntülenip görüntülenmeyeceği"
+
+msgid "The style used for the title of the page."
+msgstr "Sayfa başlığı için kullanılan stil."

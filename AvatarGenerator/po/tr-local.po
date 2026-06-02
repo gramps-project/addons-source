@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-03-25 10:12+0000\n"
-"Last-Translator: Muhammed YILMAZ <yilmazmu15@itu.edu.tr>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
 "Language: tr\n"
@@ -12,10 +12,71 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "Avatar Generator Tool"
+msgstr "Avatar Oluşturma Aracı"
+
+msgid "A tool to add avatar pictures to your family tree"
+msgstr "Soy ağacınıza avatar resimleri eklemek için bir araç"
+
+msgid "single image mode"
+msgstr "tek resim modu"
+
+msgid "Choose how many images you'd like to use."
+msgstr "Kullanmak istediğiniz resim sayısını seçin."
+
+msgid "Image for people with unknown gender."
+msgstr "Cinsiyeti bilinmeyen kişiler için resim."
+
+msgid "Image for males."
+msgstr "Erkekler için resim."
+
+msgid "Image for females"
+msgstr "Kadınlar için resim"
+
 msgid "Select filter to restrict people"
 msgstr "İnsanları listelemek için filtreyi seçin"
+
+msgid "Remove images from people"
+msgstr "Kişilerden resimleri kaldır"
+
+msgid "Remove selected image(s)."
+msgstr "Seçilen resim(ler)i kaldır."
+
+msgid "Avatar Generator"
+msgstr "Avatar Oluşturucu"
+
+msgid "Remove avatar images..."
+msgstr "Avatar resimlerini kaldır..."
+
+msgid "INFO"
+msgstr "BİLGİ"
+
+msgid "No media was removed."
+msgstr "Hiçbir medya kaldırılmadı."
+
+msgid "{} media references were removed from {} persons."
+msgstr "{} kişiden {} medya referansı kaldırıldı."
+
+msgid ""
+"\n"
+"{} HandleError occured, but were ignored."
+msgstr ""
+"\n"
+"{} HandleError hatası oluştu, ancak göz ardı edildi."
+
+msgid "Add avatar images..."
+msgstr "Avatar resimleri ekle..."
+
+msgid "{} avatar images were sucessfully added."
+msgstr "{} avatar resmi başarıyla eklendi."
+
+msgid "There was no avatar image to add. "
+msgstr "Eklenecek avatar resmi yoktu. "
+
+msgid "All persons already had one."
+msgstr "Tüm kişilerin zaten bir avatarı vardı."

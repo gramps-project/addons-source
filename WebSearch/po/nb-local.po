@@ -1,0 +1,131 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nb\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
+"Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
+"project/addons/nb_NO/>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.6\n"
+"Generated-By: pygettext.py 1.4\n"
+
+msgid "No title"
+msgstr "Ingen tittel"
+
+msgid "Foundation date:"
+msgstr "Stiftelsesdato:"
+
+msgid "Note:"
+msgstr "Notat:"
+
+msgid "Coordinates:"
+msgstr "Koordinater:"
+
+msgid "Administrative history"
+msgstr "Administrativ historikk"
+
+msgid "Place Type:"
+msgstr "Stedstype:"
+
+msgid "Save Coordinates to the Place"
+msgstr "Lagre koordinater for stedet"
+
+msgid "Add link to note"
+msgstr "Legg til lenke til notat"
+
+msgid "Add link to attribute"
+msgstr "Legg til lenke til attributt"
+
+msgid "Show QR-code"
+msgstr "Vis QR-kode"
+
+msgid "Edit Internet link"
+msgstr "Rediger nettadresse"
+
+msgid "WebSearch Link"
+msgstr "Nettsøklenke"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Tittel: {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "Erstattet: {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "Tom: {keys}"
+
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **Systemsti:** «{dir|%s}» – inneholder den innebygde filen "
+"attribute_mapping.json"
+
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **Selvvalgt sti:** «{dir|%s}» – for tilpasset selvvalgt "
+"attribute_mapping.json"
+
+msgid "Leave alone"
+msgstr "La være"
+
+msgid "Separate"
+msgstr "Skill"
+
+msgid "Display Columns"
+msgstr "Vis kolonner"
+
+msgid "Display Icons"
+msgstr "Vis ikoner"
+
+msgid "WebSearch"
+msgstr "Nettsøk"
+
+#, python-format
+msgid "Visited: %s"
+msgstr "Besøkt: %s"
+
+#, python-format
+msgid "Attribute: %s"
+msgstr "Egenskap: %s"
+
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "Lastet inn fra fil: %s"
+
+#, python-format
+msgid "Domain: %s"
+msgstr "Domene: %s"
+
+#, python-format
+msgid "Object: %s"
+msgstr "Objekt: %s"
+
+#, python-format
+msgid "Pattern: %s"
+msgstr "Mønster: %s"
+
+msgid "Link saved to Attribute"
+msgstr "Lenke lagret til attributt"
+
+msgid "Place history loaded"
+msgstr "Stedshistorikk innlastet"
+
+msgid "Attribute updated"
+msgstr "Attributt oppdatert"
+
+msgid "Note updated"
+msgstr "Notat oppdatert"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-23 20:35+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,11 +12,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Place Cleanup"
+msgstr "Stedsrydding"
+
+msgid "Problem getting data from web"
+msgstr "Problem med å hente data fra nettet"
 
 msgid "Primary Name"
 msgstr "Primærnavn"
+
+msgid "The postal code for the place, if any."
+msgstr "Postnummeret for stedet, hvis det finnes."
 
 msgid "What type of place this is. Eg 'Country', 'City', ... ."
 msgstr "Hvilken type sted dette er, for eksempel «Land», «By» osv."
@@ -54,6 +63,12 @@ msgstr "Behold gjeldende omslutning"
 
 msgid "Replace with GeoNames Enclosure"
 msgstr "Erstatt med GeoNames-omslutning"
+
+msgid "Next Place"
+msgstr "Neste sted"
+
+msgid "Set preferences"
+msgstr "Angi innstillinger"
 
 msgid ""
 "Checking the 'Populated' checkbox causes the GeoNames search to include "

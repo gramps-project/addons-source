@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-11 21:37+0200\n"
-"PO-Revision-Date: 2026-05-11 10:34+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Web Sync"
@@ -33,34 +33,6 @@ msgstr "Neočakávaná chyba pri aplikovaní zmien."
 
 msgid "Media files are in sync."
 msgstr "Mediálne súbory sú synchronizované."
-
-#, python-format
-msgid "Successfully downloaded %s media file."
-msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "Úspešne stiahnutý %s mediálny súbor."
-msgstr[1] "Úspešne stiahnuté %s mediálne súbory."
-msgstr[2] "Úspešne stiahnutých %s mediálnych súborov."
-
-#, python-format
-msgid "Encountered %s error during download."
-msgid_plural "Encountered %s errors during download."
-msgstr[0] "Počas sťahovania sa vyskytla %s chyba."
-msgstr[1] "Počas sťahovania sa vyskytly %s chyby."
-msgstr[2] "Počas sťahovania sa vyskytlo %s chýb."
-
-#, python-format
-msgid "Successfully uploaded %s media file."
-msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "Úspešne nahratý %s mediálny súbor."
-msgstr[1] "Úspešne nahraté %s mediálne súbory."
-msgstr[2] "Úspešne nahratých %s mediálnych súborov."
-
-#, python-format
-msgid "Encountered %s error during upload."
-msgid_plural "Encountered %s errors during upload."
-msgstr[0] "Počas nahrávania sa vyskytla %s chyba."
-msgstr[1] "Počas nahrávania sa vyskytly %s chyby."
-msgstr[2] "Počas nahrávania sa vyskytlo %s chýb."
 
 msgid "Authentication failed. Please check your username and password."
 msgstr "Autorizácia zlyhala. Skontrolujte svoje používateľské meno a heslo."
@@ -221,17 +193,3 @@ msgstr "Chýbajúce lokálne"
 
 msgid "Missing remotely"
 msgstr "Chýbajúce vzdialene"
-
-#, python-format
-msgid "Downloading %s media file"
-msgid_plural "Downloading %s media files"
-msgstr[0] "Sťahovanie %s mediálneho súboru"
-msgstr[1] "Sťahovanie %s mediálnych súborov"
-msgstr[2] "Sťahovanie %s mediálnych súborov"
-
-#, python-format
-msgid "Uploading %s media file"
-msgid_plural "Uploading %s media files"
-msgstr[0] "Nahrávanie %s mediálneho súboru"
-msgstr[1] "Nahrávanie %s mediálnych súborov"
-msgstr[2] "Nahrávanie %s mediálnych súborov"

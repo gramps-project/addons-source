@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-05-11 10:34+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-30 20:01+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 msgid "lxml"
 msgstr "lxml"
@@ -289,9 +289,9 @@ msgstr "Período: "
 
 #, python-brace-format
 msgid "\t{number} surname"
-msgid_plural "\t{number} surnames; no frequency yet\n"
+msgid_plural "\t{number} surnames; no frequency yet"
 msgstr[0] "\t{number} apelido"
-msgstr[1] "\t{number} apelidos; ainda sem frequência\n"
+msgstr[1] "\t{number} apelidos; ainda sem frequência"
 
 #, python-brace-format
 msgid "\t{number} surname; no frequency yet"
@@ -299,21 +299,21 @@ msgstr "\t{number} apelido; ainda sem frequência"
 
 #, python-brace-format
 msgid "\t{number} place"
-msgid_plural "\t{number} places\n"
+msgid_plural "\t{number} places"
 msgstr[0] "\t{number} local"
-msgstr[1] "\t{number} locais\n"
+msgstr[1] "\t{number} locais"
 
 #, python-brace-format
 msgid "\t{number} note"
-msgid_plural "\t{number} notes\n"
+msgid_plural "\t{number} notes"
 msgstr[0] "\t{number} nota"
-msgstr[1] "\t{number} notas\n"
+msgstr[1] "\t{number} notas"
 
 #, python-brace-format
 msgid "\t{number} source"
-msgid_plural "\t{number} sources\n"
+msgid_plural "\t{number} sources"
 msgstr[0] "\t{number} fonte"
-msgstr[1] "\t{number} fontes\n"
+msgstr[1] "\t{number} fontes"
 
 msgid "Gallery.html"
 msgstr "Galeria.html"

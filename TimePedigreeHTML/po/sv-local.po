@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-29 17:58+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,10 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Failed writing "
 msgstr "Fel vid skrivning av "
+
+msgid "Year of Birth of Center Person"
+msgstr "Födelseår för centerpersonen"
+
+msgid "The year of birth of the center person. Estimate a year if unknown"
+msgstr "Födelseår för centerpersonen. Uppskatta ett år om det är okänt"
 
 msgid "Destination directory"
 msgstr "Målkatalog"
@@ -29,11 +35,23 @@ msgstr "Målfilnamn för html-innehåll."
 msgid "Default Age"
 msgstr "Standardålder"
 
+msgid "Default age of parent when child is born with unknown year of birth"
+msgstr "Förälderns standardålder när barnet föds med okänt födelseår"
+
+msgid "What to show"
+msgstr "Vad som ska visas"
+
 msgid "Show GrampsID"
 msgstr "Visa Gramps-ID"
 
+msgid "Show GrampsID on top right of the box"
+msgstr "Visa GrampsID längst upp till höger i rutan"
+
 msgid "Optimize"
 msgstr "Optimera"
+
+msgid "Use as little space in horizontal direction as possible"
+msgstr "Använd så lite utrymme som möjligt i horisontell riktning"
 
 msgid "Male Box Color"
 msgstr "Färg i rutan för män"
@@ -50,11 +68,22 @@ msgstr "Bakgrundsfärg för rutan på kvinnor"
 msgid "Number of pixel per year"
 msgstr "Antal pixlar per år"
 
+msgid "How many pixel height is one year?"
+msgstr "Hur många pixlar i höjd är ett år?"
+
 msgid "Offset X Coordinate"
 msgstr "Kompensera X-koordinat"
 
+msgid "How many pixel are unused besides the most left and most right boxes?"
+msgstr ""
+"Hur många pixlar är oanvända förutom rutorna längst till vänster och längst "
+"till höger?"
+
 msgid "Offset Y Coordinate"
 msgstr "Kompensera Y-koordinat"
+
+msgid "How many pixel are unused above first box?"
+msgstr "Hur många pixlar är oanvända ovanför den första rutan?"
 
 msgid "Width of a box in pixel"
 msgstr "Bredden på en ruta i pixel"
@@ -65,5 +94,28 @@ msgstr "Bredden på rutan för en person i pixel"
 msgid "Horizontal space between boxes in pixel"
 msgstr "Horisontellt mellanrum mellan rutor i pixel"
 
+msgid "Minimum horizontal space between 2 boxes in pixel"
+msgstr "Minsta horisontella avstånd mellan två rutor i pixlar"
+
+msgid "Length of vertical part of a line in pixel"
+msgstr "Längden på den vertikala delen av en linje i pixlar"
+
+msgid ""
+"Parent and child boxes are connected with lines. This is the length of the "
+"vertical part of the lines in pixel"
+msgstr ""
+"Föräldra- och barn-rutor är sammankopplade med linjer. Detta är längden på "
+"den vertikala delen av linjerna i pixlar"
+
+msgid "Number of pixel between left border and scale"
+msgstr "Antal pixlar mellan vänster kant och skala"
+
 msgid "Timeline Pedigree Report"
 msgstr "Stamtavlerapport med tidslinje"
+
+msgid ""
+"Creates an HTML webpage that uses JavaScript to show a pedigree block "
+"diagram arranged vertically by birth date"
+msgstr ""
+"Skapar en HTML-webbsida som använder JavaScript för att visa ett "
+"blockdiagram för stamtavla ordnat vertikalt efter födelsedatum"

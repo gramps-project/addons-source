@@ -1,0 +1,96 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.6.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+msgid "Sort Children in Birth order"
+msgstr "Çocukları Doğum Sırasına Göre Sırala"
+
+msgid ""
+"Looks through families, looking for children that are not in birth order.  "
+"User can accept individual suggestions to correct, edit the birth order "
+"manually, accept all those families that have all children with proper birth "
+"dates, or accept all."
+msgstr ""
+"Aileler arasında arama yapar ve doğum sırasına göre olmayan çocukları arar.  "
+"Kullanıcı, düzeltme önerilerini tek tek kabul edebilir, doğum sırasını "
+"manuel olarak düzenleyebilir, tüm çocuklarının doğum tarihleri doğru olan "
+"aileleri kabul edebilir veya tümünü kabul edebilir."
+
+msgid "No families need sorting"
+msgstr "Sıralamaya ihtiyaç duyan aile yok"
+
+msgid "No children were out of birth order."
+msgstr "Doğum sırası bozuk çocuk yok."
+
+msgid "Edit Families"
+msgstr "Aileleri Düzenle"
+
+msgid "Looking for children birth order"
+msgstr "Çocuk doğum sırası aranıyor"
+
+msgid "Select the family you wish to examine."
+msgstr "İncelemek istediğiniz aileyi seçin."
+
+msgid "Accept All"
+msgstr "Tümünü Kabul Et"
+
+msgid "This button will sort all of the families listed."
+msgstr "Bu düğme, listelenen tüm aileleri sıralayacaktır."
+
+msgid "Accept All *"
+msgstr "Tümünü Kabul Et *"
+
+msgid ""
+"This button will sort all the families with '*'.  In these families, all the "
+"children have valid dates, so the sort is unambiguous."
+msgstr ""
+"Bu düğme, '*' ile işaretlenmiş tüm aileleri sıralayacaktır.  Bu ailelerde, "
+"tüm çocukların geçerli tarihleri vardır, bu nedenle sıralama belirsiz "
+"değildir."
+
+msgid "Accept"
+msgstr "Kabul Et"
+
+msgid ""
+"This button will accept only the family selected and save it as shown in "
+"lower right pane."
+msgstr ""
+"Bu düğme, yalnızca seçilen aileyi kabul edecek ve sağ alt bölmede "
+"gösterildiği gibi kaydedecektir."
+
+msgid "Done"
+msgstr "Bitti"
+
+msgid "This button will exit, with remaining families unchanged."
+msgstr "Bu düğme, kalan aileler değiştirilmeden çıkış yapacaktır."
+
+msgid "Current sort"
+msgstr "Mevcut sıralama"
+
+msgid "Proposed sort"
+msgstr "Önerilen sıralama"
+
+msgid ""
+"When satisfied with the sort, use 'Accept' button below to accept the "
+"changes.  If you wish to adjust the order, select the child you wish to "
+"move, and use 'Up' or 'Down' buttons below to move them."
+msgstr ""
+"Sıralamadan memnun kaldığınızda, değişiklikleri kabul etmek için aşağıdaki "
+"'Kabul Et' düğmesini kullanın.  Sırayı ayarlamak isterseniz, taşımak "
+"istediğiniz çocuğu seçin ve taşımak için aşağıdaki 'Yukarı' veya 'Aşağı' "
+"düğmelerini kullanın."

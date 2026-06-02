@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-06 20:38+0200\n"
-"PO-Revision-Date: 2025-05-12 06:01+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,16 +12,43 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Forum: ukrgenealogy.com.ua"
+msgstr "Forum: ukrgenealogy.com.ua"
+
+msgid "Forum: genoua.name"
+msgstr "Forum: genoua.name"
+
+msgid "Encyclopedia: esu.com.ua"
+msgstr "Uppslagsverk: esu.com.ua"
+
+msgid "Wikipedia: uk.wikipedia.org"
+msgstr "Wikipedia: uk.wikipedia.org"
+
+msgid "Repressed DB: reabit.org.ua"
+msgstr "Undertryckt databas: reabit.org.ua"
+
+msgid "Genealogy DB: familysearch.org"
+msgstr "Genealogy DB: familysearch.org"
+
+msgid "Genealogy DB: myheritage.com.ua"
+msgstr "Släktforskningsdatabas: myheritage.com.ua"
+
+msgid "Genealogy DB: pra.in.ua"
+msgstr "Släktforskningsdatabas: pra.in.ua"
+
+msgid "Map: Ridni.org"
+msgstr "Karta: Ridni.org"
+
+msgid "Search: google.com.ua"
+msgstr "Sök: google.com.ua"
+
+msgid "Search: roots.in.ua"
+msgstr "Sök: rötter.i.ua"
 
 msgid "UA Web Connect Pack"
 msgstr "UA Web Connect Pack"
 
 msgid "Collection of Web sites for the UA (requires libwebconnect)"
 msgstr "Samling av webbplatser för UA (kräver libwebconnect)"
-
-msgid "Genealogy DB: familysearch.org"
-msgstr "Genealogy DB: familysearch.org"
-
-msgid "Search: roots.in.ua"
-msgstr "Sök: rötter.i.ua"

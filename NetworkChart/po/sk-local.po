@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-09 18:33+0100\n"
-"PO-Revision-Date: 2026-05-11 10:34+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,13 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.5-dev\n"
-
-msgid "Network Chart"
-msgstr "Sieťový diagram"
-
-msgid "Generates a family network chart."
-msgstr "Vygeneruje sieťový rodinný diagram."
+"X-Generator: Weblate 2026.6\n"
 
 msgid "File exists. Overwrite?"
 msgstr "Súbor existuje. Prepísať ho?"
@@ -112,6 +106,9 @@ msgstr ""
 "White Rabbit je možné stiahnuť z\n"
 "https://www.fontsquirrel.com/fonts/white-rabbit"
 
+msgid "Spacing (inch)"
+msgstr "Rozostup (palce)"
+
 msgid ""
 "Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
 msgstr "Zadajte vzdialenosť medzi „generáciami“ v palcoch (0,1–5,0)."
@@ -156,6 +153,9 @@ msgstr "RGB-farba pre pozadie rámika pre mužov."
 msgid "Male Background Alpha"
 msgstr "Priehľadnosť pozadia muža"
 
+msgid "Alpha for Male box background (transparent=0, solid=255)."
+msgstr "Priehľadnosť pre pozadie rámika muža (priehľadné=0, plné=255)."
+
 msgid "Male Box Edge"
 msgstr "Okraj rámika muža"
 
@@ -170,6 +170,9 @@ msgstr "RGB-farba pre pozadie rámika ženy."
 
 msgid "Female Background Alpha"
 msgstr "Priehľadnosť pozadia ženy"
+
+msgid "Alpha for Female box background (transparent=0, solid=255)."
+msgstr "Priehľadnosť pre pozadie rámika ženy (priehľadné=0, plné=255)."
 
 msgid "Female Box Edge"
 msgstr "Okraj rámika ženy"
@@ -430,3 +433,9 @@ msgstr "Potvrdiť prepísanie súboru."
 
 msgid "Enable/disable confirmation of file overwrite."
 msgstr "Zapnúť/vypnúť potvrdzovanie prepísania súboru."
+
+msgid "Network Chart"
+msgstr "Sieťový diagram"
+
+msgid "Generates a family network chart."
+msgstr "Vygeneruje sieťový rodinný diagram."

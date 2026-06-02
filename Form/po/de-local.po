@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
-"PO-Revision-Date: 2026-05-11 10:34+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 #, python-format
 msgid "Form: %s"
@@ -86,6 +86,57 @@ msgid ""
 msgstr ""
 "Prüfe, ob für eine Person und einige ihrer Vorfahren Volkszählungsdaten "
 "fehlen"
+
+msgid "Persons"
+msgstr "Personen"
+
+msgid "Rooms"
+msgstr "Räume"
+
+msgid "Townland"
+msgstr "Gemeindegebiet"
+
+msgid "Relation"
+msgstr "Beziehung"
+
+msgid "Age in years"
+msgstr "Alter in Jahren"
+
+msgid "Sex"
+msgstr "Geschlecht"
+
+msgid "Birthplace"
+msgstr "Geburtsort"
+
+msgid "Irish Language"
+msgstr "Irische Sprache"
+
+msgid "Personal Occupation"
+msgstr "Persönliche Beschäftigung"
+
+msgid "Years Married"
+msgstr "Jahre Verheiratet"
+
+msgid "Place of Birth"
+msgstr "Geburtsort"
+
+msgid "Date of Birth"
+msgstr "Geburtsdatum"
+
+msgid "Maiden Surname"
+msgstr "Mädchenname"
+
+msgid "Condition"
+msgstr "Zustand"
+
+msgid "Signed"
+msgstr "Unterzeichnet"
+
+msgid "Date of Death"
+msgstr "Sterbedatum"
+
+msgid "Place of Death"
+msgstr "Sterbeort"
 
 msgid "Schedule"
 msgstr "Zeitplan"
@@ -868,9 +919,6 @@ msgstr "6. Familien"
 msgid "7. Names"
 msgstr "7. Namen"
 
-msgid "Sex"
-msgstr "Geschlecht"
-
 msgid "8. Sex"
 msgstr "8. Geschlecht"
 
@@ -984,9 +1032,6 @@ msgstr "8. Alter"
 
 msgid "9. Married or Widowed"
 msgstr "9. Verheiratet oder verwitwet"
-
-msgid "Relation"
-msgstr "Beziehung"
 
 msgid "10. Relationship to Head of Family"
 msgstr "10. Beziehung zum Familienoberhaupt"
@@ -1281,9 +1326,6 @@ msgstr "8. Einrichtung: Anzahl der Gebäude"
 
 msgid "9. Number of families in house or institution"
 msgstr "9. Anzahl der Familien im Haus oder in der Einrichtung"
-
-msgid "Rooms"
-msgstr "Räume"
 
 msgid "10. Number of rooms in house or institution for each famiy"
 msgstr "10. Anzahl der Zimmer im Haus oder in der Einrichtung für jede Familie"
@@ -3443,12 +3485,6 @@ msgstr "Aktennr."
 msgid "Post Office Address"
 msgstr "Postanschrift"
 
-msgid "Date of Birth"
-msgstr "Geburtsdatum"
-
-msgid "Place of Birth"
-msgstr "Geburtsort"
-
 msgid "Entered service as (rank)"
 msgstr "Dienstantritt als (Rang)"
 
@@ -3620,9 +3656,6 @@ msgstr "Regelmäßig Ihre Pensionsberechtigung erhalten"
 
 msgid "If No give information regarding the same"
 msgstr "Wenn nein, geben Sie diesbezüglich Informationen an"
-
-msgid "Signed"
-msgstr "Unterzeichnet"
 
 msgid "Witness name and P.O Address"
 msgstr "Name des Zeugen und Postanschrift"
@@ -4173,9 +4206,6 @@ msgstr "Umfang der Bildung High School"
 msgid "Extent of Education College"
 msgstr "Umfang der Bildung Hochschule"
 
-msgid "Birthplace"
-msgstr "Geburtsort"
-
 msgid "Own house or farm"
 msgstr "Eigenheim oder Farm"
 
@@ -4526,9 +4556,6 @@ msgstr "Herkunft des Vaters"
 
 msgid "Mother's Nativity"
 msgstr "Herkunft der Mutter"
-
-msgid "Condition"
-msgstr "Zustand"
 
 msgid "Inhabitants in"
 msgstr "Einwohner in"
@@ -5244,9 +5271,6 @@ msgstr "Zustimmung erteilt von"
 msgid "Bond/Licence"
 msgstr "Bindung/Lizenz"
 
-msgid "Place of Death"
-msgstr "Sterbeort"
-
 msgid "Length of Residence"
 msgstr "Aufenthaltsdauer"
 
@@ -5276,9 +5300,6 @@ msgstr "Bildungsstand"
 
 msgid "Social Security No."
 msgstr "Sozialversicherungsnr."
-
-msgid "Date of Death"
-msgstr "Sterbedatum"
 
 msgid "Place of Burial"
 msgstr "Begräbnisort"
@@ -5464,9 +5485,6 @@ msgid ""
 msgstr ""
 "(3) Auf dem D.S.S.-Formular 1\n"
 "(4) Auf allen anderen Formularen"
-
-msgid "Age in years"
-msgstr "Alter in Jahren"
 
 msgid ""
 "(4) On D.S.S. Form 1\n"
@@ -5861,9 +5879,6 @@ msgstr "Verwaltungsgebiet"
 msgid "County/Administrative Area"
 msgstr "Landkreis/Verwaltungsgebiet"
 
-msgid "Maiden Surname"
-msgstr "Mädchenname"
-
 msgid "Banns/Licence"
 msgstr "Aufgebot/Heiratsurkunde"
 
@@ -6115,9 +6130,6 @@ msgid ""
 msgstr ""
 "„Ledig“, „Verheiratet“, Witwer“ oder „Witwe“ für alle Personen ab 15 Jahren."
 
-msgid "Years Married"
-msgstr "Jahre Verheiratet"
-
 msgid "Completed Years the present Marriage has lasted."
 msgstr "Die Dauer der bestehenden Ehe in Jahren."
 
@@ -6135,9 +6147,6 @@ msgstr "Kinder starben"
 
 msgid "Children who have Died."
 msgstr "Kinder, die gestorben sind."
-
-msgid "Personal Occupation"
-msgstr "Persönliche Beschäftigung"
 
 msgid "Industry or Service with which worker is connected."
 msgstr "Industrie oder Dienstleistung, mit der der Arbeitnehmer verbunden ist."
@@ -6343,17 +6352,11 @@ msgstr "Arbeitet Zuhause"
 msgid "District Electoral Division"
 msgstr "Wahlkreisbezirk"
 
-msgid "Townland"
-msgstr "Gemeindegebiet"
-
 msgid "No. on Form B"
 msgstr "Nummer auf Formular B"
 
 msgid "\"Read and Write\", \"Read\" or \"Cannot Read\""
 msgstr "\"Lesen und Schreiben\", \"Lesen\" oder \"Kann nicht lesen\""
-
-msgid "Irish Language"
-msgstr "Irische Sprache"
 
 msgid ""
 "\"Irish\" or \"Irish & English\", in other cases no entry should be made"

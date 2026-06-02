@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-11 20:51+0100\n"
-"PO-Revision-Date: 2025-03-23 20:35+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,8 +12,81 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Ancestry Table"
+msgstr "Anetabell"
+
+msgid "Produces a table of ancestry about a person"
+msgstr "Lager en tabell over aner for en person"
+
+#, python-format
+msgid "Person %(name)s is not in the Database"
+msgstr "Personen %(name)s finnes ikke i databasen"
+
+#, python-format
+msgid "Ancestry Table Report for %(name)s"
+msgstr "Anetabell-rapport for %(name)s"
+
+#, python-format
+msgid "Generation %(gen_number)d"
+msgstr "Generasjon %(gen_number)d"
+
+#, python-format
+msgid "Number of Ancestors for %(name)s"
+msgstr "Antall aner for %(name)s"
+
+msgid "Generation"
+msgstr "Generasjon"
+
+msgid "To start a new page after each generation."
+msgstr "Begynn på ny side etter hver generasjon."
+
+msgid "Number of ancestors per generation"
+msgstr "Antall aner per generasjon"
+
+msgid "Add a page with tne number of ancestors per generation."
+msgstr "Legg til en side med antall aner per generasjon."
+
+msgid "Mask the name of the calendar in the dates"
+msgstr "Skjul navnet på kalenderen i datoene"
+
+msgid ""
+"By default, except for gregorian dates, Gramps shows the name of the "
+"calendar in the dates."
+msgstr ""
+"Som standard viser Gramps navnet på kalenderen i datoene, unntatt for "
+"gregorianske datoer."
 
 msgid "The style used for the title of the report."
 msgstr "Stilen som brukes på rapportens tittel."
+
+msgid "The style used for the Sosa number of the paternal branch."
+msgstr "Stilen som brukes for Sosa-numrene i farslinjen."
+
+msgid "The style used for the Sosa number of the maternal branch."
+msgstr "Stilen som brukes for Sosa-numrene i morslinjen."
+
+msgid "The style used for the data of the males."
+msgstr "Stilen som brukes for opplysninger om menn."
+
+msgid "The style used for the data of the females."
+msgstr "Stilen som brukes for opplysninger om kvinner."
+
+msgid "The style used for the marriage."
+msgstr "Stilen som brukes for ekteskapet."
+
+msgid ""
+"The style used for the header table of the number of ancestors per "
+"generation."
+msgstr ""
+"Stilen som brukes for tabelloverskriften for antall aner per generasjon."
+
+msgid "The style used for the number of ancestors per generation."
+msgstr "Stilen som brukes for antall aner per generasjon."
+
+msgid ""
+"The style used for the total line of the number of ancestors per generation."
+msgstr ""
+"Stilen som brukes for den totale linjen med antall aner per generasjon."

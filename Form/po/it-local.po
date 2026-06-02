@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: 2026-04-14 18:01+0000\n"
 "Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
@@ -19,6 +19,21 @@ msgstr "Intestazioni"
 
 msgid "Order"
 msgstr "Ordine"
+
+msgid "Age in years"
+msgstr "Età in anni"
+
+msgid "Years Married"
+msgstr "Anni di matrimonio"
+
+msgid "Maiden Surname"
+msgstr "Cognome da nubile"
+
+msgid "Date of Death"
+msgstr "Data di morte"
+
+msgid "Place of Death"
+msgstr "Luogo di morte"
 
 msgid "SexFemale"
 msgstr "Sesso femminile"
@@ -122,9 +137,6 @@ msgstr "Luogo di matrimonio"
 msgid "Consent given by"
 msgstr "Consenso prestato da"
 
-msgid "Place of Death"
-msgstr "Luogo di morte"
-
 msgid "Length of Residence"
 msgstr "Durata della residenza"
 
@@ -151,9 +163,6 @@ msgstr "Livello di istruzione"
 
 msgid "Social Security No."
 msgstr "Numero di previdenza sociale"
-
-msgid "Date of Death"
-msgstr "Data di morte"
 
 msgid "Place of Burial"
 msgstr "Luogo di sepoltura"
@@ -270,9 +279,6 @@ msgstr "Luogo di residenza"
 
 msgid "Telephone"
 msgstr "Telefono"
-
-msgid "Age in years"
-msgstr "Età in anni"
 
 msgid "Who will always know your address (Name & Address)"
 msgstr "Chi potrà sempre conoscere il tuo indirizzo (nome e indirizzo)"
@@ -418,9 +424,6 @@ msgstr "Distretto di registrazione"
 msgid "Administrative Area"
 msgstr "Area amministrativa"
 
-msgid "Maiden Surname"
-msgstr "Cognome da nubile"
-
 msgid "Deceased"
 msgstr "Deceduto"
 
@@ -478,9 +481,6 @@ msgstr "Villaggio o frazione"
 
 msgid "Civil Parish"
 msgstr "Parrocchia civile"
-
-msgid "Years Married"
-msgstr "Anni di matrimonio"
 
 msgid "Parish Ward"
 msgstr "Distretto (ward) della parrocchia"

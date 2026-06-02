@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-05-11 10:34+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "lxml"
 msgstr "lxml"
@@ -28,6 +28,13 @@ msgstr "Gramplet na testovanie etree s Gramps XML"
 
 msgid "Invalid timestamp"
 msgstr "Neplatná časová pečiatka"
+
+msgid ""
+"Select a Gramps XML file and\n"
+" click on the Run button."
+msgstr ""
+"Vyberte súbor Gramps XML a\n"
+" kliknite na tlačidlo Spustiť."
 
 msgid "No file loaded..."
 msgstr "Žiadny súbor nebol načítaný..."
@@ -282,7 +289,7 @@ msgstr "Obdobie: "
 
 #, python-brace-format
 msgid "\t{number} surname"
-msgid_plural "\t{number} surnames; no frequency yet\n"
+msgid_plural "\t{number} surnames; no frequency yet"
 msgstr[0] "\t{number} priezvisko"
 msgstr[1] "\t{number} priezviská; zatiaľ žiadna frekvencia"
 msgstr[2] "\t{number} priezvisk; zatiaľ žiadna frekvencia"
@@ -293,27 +300,27 @@ msgstr "\tPriezvisko: {number} ; zatiaľ žiadna frekvencia"
 
 #, python-brace-format
 msgid "\t{number} place"
-msgid_plural "\t{number} places\n"
+msgid_plural "\t{number} places"
 msgstr[0] "\t{number} miesto"
 msgstr[1] "\t{number} miesta"
 msgstr[2] "\t{number} miest"
 
 #, python-brace-format
 msgid "\t{number} note"
-msgid_plural "\t{number} notes\n"
+msgid_plural "\t{number} notes"
 msgstr[0] "\t{number} poznámka"
 msgstr[1] "\t{number} poznámky"
 msgstr[2] "\t{number} poznámok"
 
 #, python-brace-format
 msgid "\t{number} source"
-msgid_plural "\t{number} sources\n"
+msgid_plural "\t{number} sources"
 msgstr[0] "\t{number} zdroj"
 msgstr[1] "\t{number} zdroje"
 msgstr[2] "\t{number} zdrojov"
 
 msgid "Gallery.html"
-msgstr "Gallery.html"
+msgstr "Galéria.html"
 
 #, python-format
 msgid "1. Has generated a media index on \"%(file)s\".\n"

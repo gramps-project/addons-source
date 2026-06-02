@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: 2025-12-14 21:00+0000\n"
 "Last-Translator: WaldiS <sto@tutanota.de>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
@@ -46,6 +46,30 @@ msgstr "Formularz"
 
 msgid "Select Form"
 msgstr "Wybierz notatkę"
+
+msgid "Persons"
+msgstr "Osoby"
+
+msgid "Relation"
+msgstr "Typ relacji"
+
+msgid "Birthplace"
+msgstr "Miejsce urodzenia"
+
+msgid "Place of Birth"
+msgstr "_Filtr miejsc:"
+
+msgid "Date of Birth"
+msgstr "Date of Urodzenia"
+
+msgid "Condition"
+msgstr "Animacja"
+
+msgid "Date of Death"
+msgstr "Date of Śmierci"
+
+msgid "Place of Death"
+msgstr "Place of Śmierci"
 
 msgid "Schedule"
 msgstr "Spis"
@@ -567,9 +591,6 @@ msgstr "7. Płeć"
 msgid "8. Age"
 msgstr "8. Wiek"
 
-msgid "Relation"
-msgstr "Typ relacji"
-
 msgid "BirthPlaceFather"
 msgstr "UrodzeniaPlaceFather"
 
@@ -813,12 +834,6 @@ msgstr "ograniczony do:"
 msgid "Spouses Age"
 msgstr "Spouses Wiek"
 
-msgid "Date of Birth"
-msgstr "Date of Urodzenia"
-
-msgid "Place of Birth"
-msgstr "_Filtr miejsc:"
-
 msgid "Place of Enlistment"
 msgstr "_Filtr miejsc:"
 
@@ -960,9 +975,6 @@ msgstr "_Filtr miejsc:"
 msgid "Extent of Education High School"
 msgstr "Extent of Education High Szkoły"
 
-msgid "Birthplace"
-msgstr "Miejsce urodzenia"
-
 msgid "Father's Birthplace"
 msgstr "Father's Urodzeniaplace"
 
@@ -1034,9 +1046,6 @@ msgstr "Niepiśmienny"
 
 msgid "School"
 msgstr "Szkoła"
-
-msgid "Condition"
-msgstr "Animacja"
 
 msgid "Enumerated date from"
 msgstr "Szacowana data"
@@ -1203,14 +1212,8 @@ msgstr "Date of Małżeństwa"
 msgid "Place of Marriage"
 msgstr "Miejsca w danym prostokącie:"
 
-msgid "Place of Death"
-msgstr "Place of Śmierci"
-
 msgid "Name of employer"
 msgstr "Wszystkie imiona wszystkich osób"
-
-msgid "Date of Death"
-msgstr "Date of Śmierci"
 
 msgid "Place of Burial"
 msgstr "_Filtr miejsc:"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,11 +12,73 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Hide person"
+msgstr "Skjul person"
+
+msgid "Show person"
+msgstr "Vis person"
+
+msgid "Hide siblings"
+msgstr "Skjul søskener"
+
+msgid "General Layout"
+msgstr "Generell layout"
+
+msgid "Mouse wheel"
+msgstr "Musehjul"
 
 msgid "Export View as SVG"
 msgstr "Eksporter visning som SVG"
 
+msgid "Reset all settings"
+msgstr "Tilbakestill alle innstillinger"
+
+msgid "Show birth label"
+msgstr "Vis fødselsetiketter"
+
+msgid "Activate the birth label."
+msgstr "Aktiver fødselsetiketten."
+
+msgid "Birth label along path"
+msgstr "Fødselsetikett langs sti"
+
 msgid "Center"
 msgstr "Midten"
+
+msgid "Activate the death label."
+msgstr "Aktiver dødsfallsteksten."
+
+msgid "Font name"
+msgstr "Skriftnavn"
+
+msgid "Relative font size"
+msgstr "Relativ skriftstørrelse"
+
+msgid "Family shape"
+msgstr "Familieform"
+
+msgid "Show pedigree collapse"
+msgstr "Vis anesammenfall"
+
+msgid ""
+"Due to pedigree collapse one individual might appear several times in a "
+"simple ancestor chart. If this is active, then every individual only appears "
+"once."
+msgstr ""
+"På grunn av anesammenfall kan én person forekomme flere ganger i en enkel "
+"anetavle. Hvis dette er aktivert, vises hver person bare én gang."
+
+msgid ""
+"Switch the position of mother and father in a family, to reduce the overall "
+"horizontal cross connections in larger graphs. This is happens if one person "
+"is shown in more than one family or it is caused by pedigree collapse."
+msgstr ""
+"Bytt plass på mor og far i en familie for å redusere antallet horisontale "
+"krysskoblinger i store grafer. Dette kan skje når en person vises i mer enn "
+"en familie, eller som følge av anesammenfall."
+
+msgid "General chart layout"
+msgstr "Generell diagramlayout"

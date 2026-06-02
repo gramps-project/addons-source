@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2025-11-28 18:00+0000\n"
-"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-05-14 19:17+0000\n"
+"Last-Translator: \"David D.\" <dadu042@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.5.dev0\n"
 
 msgid "Display relations and distances with the home person"
 msgstr "Afficher les relations et distances avec la souche"
@@ -34,6 +34,9 @@ msgstr "Sélectionner la règle de filtre"
 
 msgid "Deep generations"
 msgstr "Générations profondes"
+
+msgid "How deep should we go?"
+msgstr "À quelle profondeur devrions-nous aller ?"
 
 msgid "Rel_id"
 msgstr "Id_Rel"
@@ -71,6 +74,9 @@ msgstr "Diversité du nom de famille"
 msgid "Save"
 msgstr "Enregistrer"
 
+msgid "Quit"
+msgstr "Quitter"
+
 msgid "No default person set."
 msgstr "Aucune personne par défaut n'est définie."
 
@@ -103,3 +109,16 @@ msgstr "S'il vous plaît, sélectionnez un répertoire"
 
 msgid "Foldername need"
 msgstr "Nom du dossier nécessaire"
+
+msgid "Foldername will be used for saving the content."
+msgstr "Foldername (nom de dossier) sera utilisé pour enregistrer le contenu."
+
+msgid "Did you set a foldername?"
+msgstr "As-tu défini un nom de dossier ?"
+
+msgid "Cannot set a valid location."
+msgstr "Impossible de définir un emplacement valide."
+
+msgid "Whether to calculate and display family network metrics."
+msgstr ""
+"Indique s’il faut calculer et afficher les métriques du réseau familial."

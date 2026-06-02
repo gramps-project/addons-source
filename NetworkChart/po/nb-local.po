@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,8 +12,38 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Top to Bottom"
+msgstr "Topp til bunn"
+
+msgid "Left to Right"
+msgstr "Venstre til høyre"
+
+msgid "Bottom to Top"
+msgstr "Bunn til topp"
+
+msgid "Right to Left"
+msgstr "Høyre til venstre"
+
+msgid "Default (Top to Bottom)"
+msgstr "Standard (topp til bunn)"
+
+msgid "Include URLs from database."
+msgstr "Inkluder nettadresser fra databasen."
+
+msgid "Don't include URLs"
+msgstr "Ikke inkluder nettadresser"
+
+msgid "Select URL style."
+msgstr "Velg stil for nettadresser."
+
+msgid "Set the title of the chart."
+msgstr "Angi tittelen på diagrammet."
+
+msgid "RGB-color for other box background."
+msgstr "RGB-farge for bakgrunnen til andre bokser."
 
 msgid ""
 "Enter year to start\n"
@@ -26,6 +56,15 @@ msgstr ""
 
 msgid "Round birthday to year after year entered (above)."
 msgstr "Avrund bursdager til år etter angitt år (ovenfor)."
+
+msgid "Trim descendants"
+msgstr "Beskjær etterkommere"
+
+msgid "Trim ancestors"
+msgstr "Beskjær aner"
+
+msgid "Default (None)"
+msgstr "Standard (ingen)"
 
 msgid "Display up to max connections from central person."
 msgstr "Vis opptil maks forbindelser fra fokusperson."

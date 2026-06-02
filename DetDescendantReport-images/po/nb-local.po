@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,12 +12,48 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid ""
+"Produces a detailed descendant report with all images and optional todo list."
+msgstr ""
+"Lager en detaljert etterkommerrapport med alle bilder og en valgfri "
+"oppgaveliste."
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
 
 #, python-format
 msgid "%(event_name)s: %(event_text)s"
 msgstr "%(event_name)s: %(event_text)s"
 
+msgid "Include TODO notes"
+msgstr "Inkluder oppgavenotater"
+
+msgid "Whether to include TODO notes."
+msgstr "Om oppgavenotater skal tas med."
+
 msgid "The style used for the title of the page."
 msgstr "Stilen som brukes på sidens tittel."
+
+msgid "The style used for the children list."
+msgstr "Stilen som brukes for barnelisten."
+
+msgid "The style used for the first personal entry."
+msgstr "Stilen som brukes for den første personoppføringen."
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr ""
+"Stilen som brukes for overskriften «Mer om» og for overskriftene til "
+"ektefeller."
+
+msgid "The style used for additional detail data."
+msgstr "Stilen som brukes for ytterligere detaljopplysninger."
+
+msgid "The style used for image labels."
+msgstr "Stilen som brukes for bildeetiketter."
+
+msgid "A style used for image captions."
+msgstr "En stil som brukes for bildetekster."

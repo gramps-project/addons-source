@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: 2026-05-04 21:37+0000\n"
 "Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
@@ -47,6 +47,15 @@ msgstr "Formulario"
 
 msgid "Select Form"
 msgstr "Seleccionar formulario"
+
+msgid "Persons"
+msgstr "Personas"
+
+msgid "Relation"
+msgstr "Relación"
+
+msgid "Sex"
+msgstr "Sexo"
 
 msgid "Schedule"
 msgstr "Planificación"
@@ -591,9 +600,6 @@ msgstr "6. Familias"
 msgid "7. Names"
 msgstr "7. Nombres"
 
-msgid "Sex"
-msgstr "Sexo"
-
 msgid "8. Sex"
 msgstr "8. Sexo"
 
@@ -656,9 +662,6 @@ msgstr "4. Viviendas desocupadas"
 
 msgid "2. Houses in construction"
 msgstr "2. Inmuebles en construcción"
-
-msgid "Relation"
-msgstr "Relación"
 
 msgid "House"
 msgstr "Inmueble"

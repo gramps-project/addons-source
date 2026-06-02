@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-04-29 17:58+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "RU Web Connect Pack"
+msgstr "RU Web Connect-paket"
+
+msgid "Collection of Web sites for the RU (requires libwebconnect)"
+msgstr "Samling av webbplatser för RU (kräver libwebconnect)"
+
+msgid "OBD \"Memorial\""
+msgstr "OBD-\"Minnesmärke\""
+
+msgid "People memory"
+msgstr "Människors minne"
+
+msgid "Winners"
+msgstr "Vinnare"
 
 msgid "Lived"
 msgstr "Levde"
@@ -20,8 +35,17 @@ msgstr "Levde"
 msgid "Open list"
 msgstr "Öppna lista"
 
+msgid "Wait for me"
+msgstr "Vänta på mig"
+
 msgid "All Russia Family Tree (forum)"
 msgstr "All Russia Family Tree (forum)"
+
+msgid "Yandex people"
+msgstr "Yandex-personer"
+
+msgid "RIA Officers"
+msgstr "RIA-tjänstemän"
 
 msgid "FamilySpace"
 msgstr "FamilySpace"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
-"PO-Revision-Date: 2026-05-11 10:34+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Descendants Lines"
 msgstr "Línie potomkov"
@@ -231,22 +231,67 @@ msgstr ""
 msgid "Spouse and Family"
 msgstr "Manžel/ka a rodina"
 
+msgid "Vertical edge descendant to spouse-bar"
+msgstr "Vertikálna čiara od lišty potomka k lište manžela/manželky"
+
+msgid "The length of the vertical edge from descendant to spouse-bar."
+msgstr "Dĺžka vertikálnej čiary od lišty potomka k lište manžela/manželky."
+
+msgid "Vertical edge spouse-bar to spouse"
+msgstr "Vertikálna čiara od lišty manžela/-lky k lište manželského partnera"
+
+msgid "The length of the vertical edge from spouse-bar to spouse."
+msgstr ""
+"Dĺžka vertikálnej čiary od lišty manžela/-lky k lište manželského partnera."
+
+msgid "Vertical space spouse-bar to other spouse"
+msgstr ""
+"Vertikálna medzera medzi lištou manžela/-lky a lištou druhého manželského "
+"partnera"
+
+msgid ""
+"The space to add between one spouse-bar and another spouse in case of "
+"multiple families with the same descendant."
+msgstr ""
+"Medzera, ktorá sa má pridať medzi jednu lištu manžela/-lky a lištou druhého "
+"manželského partnera v prípade viacerých rodín s rovnakým potomkom."
+
 msgid "Horizontal space descendant to spouse"
-msgstr "Horizontálny priestor potomka k manželskému partnerovi"
+msgstr "Horizontálna medzera od potomka k manželovi/-lke"
 
 msgid "The space to add between the descendant and the spouse."
-msgstr "Medzera, ktorá sa má pridať medzi potomka a manželského partnera."
+msgstr "Medzera, ktorá sa má pridať medzi potomka a manžela/-lku."
 
 msgid "Horizonal space family to family"
-msgstr "Horizontálny priestor rodiny k rodine"
+msgstr "Horizontálna medzera od rodiny k rodine"
 
 msgid ""
 "The space to add between the more extern descendant (or spouse) of a family "
 "and the more extern descendant (or spouse) of the next family."
 msgstr ""
 "Medzera, ktorú je potrebné pridať medzi najvzdialenejším potomkom (alebo "
-"manželom/manželkou) jednej rodiny a najvzdialenejším potomkom (alebo "
-"manželom/manželkou) ďalšej rodiny."
+"manželom/-lkou) jednej rodiny a najvzdialenejším potomkom (alebo manželom/-"
+"lkou) ďalšej rodiny."
+
+msgid "Horizontal distance spouse to family edge"
+msgstr "Horizontálna vzdialenosť medzi manželom/-lkou a okrajom rodiny"
+
+msgid ""
+"If this value is 0, the children bar is centered under the spouse. The "
+"bigger the value, more the center is moved to the left towards the "
+"descendant."
+msgstr ""
+"Ak je táto hodnota 0, lišta detí je vycentrovaná pod manželom/-lkou. Čím je "
+"hodnota väčšia, tým viac sa stred posúva doľava smerom k potomkovi."
+
+msgid "OL_PAD"
+msgstr "OL_PAD"
+
+msgid "Vertical edge spouse-bar to child-bar"
+msgstr "Vertikálna čiara od lišty manželov k lište detí"
+
+msgid "The length of the vertical edge from spouse-bar to child-bar."
+msgstr "Dĺžka vertikálnej čiary od lišty manželov k lište detí."
 
 msgid "Children distance"
 msgstr "Vzdialenosť medzi deťmi"
@@ -254,8 +299,17 @@ msgstr "Vzdialenosť medzi deťmi"
 msgid "The horizontal distance between two children of the same family."
 msgstr "Horizontálna vzdialenosť medzi dvoma deťmi tej istej rodiny."
 
+msgid "Vertical edge child to child-bar"
+msgstr "Vertikálna čiara od lišty dieťaťa k lište dieťaťa"
+
+msgid "The length of the vertical edge from child to child-bar."
+msgstr "Dĺžka vertikálnej čiary od lišty dieťaťa k lište dieťaťa."
+
 msgid "MIN_C_WIDTH"
-msgstr "MIN_K_ŠÍRKA"
+msgstr "MIN_C_WIDTH"
+
+msgid "The number of ??? min width"
+msgstr "Minimálna šírka ???"
 
 msgid "Space around text"
 msgstr "Medzera okolo textu"

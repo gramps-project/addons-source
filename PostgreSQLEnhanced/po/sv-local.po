@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-05-10 14:47+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+#, python-brace-format
+msgid "Object {obj_type}:{handle} was modified by another user"
+msgstr "Objektet {obj_type}:{handle} modifierades av en annan användare"
+
+msgid "pg_trgm extension required for duplicate detection"
+msgstr "Tillägget pg_trgm krävs för duplikatdetektering"
+
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+"psycopg3 krävs för PostgreSQL Enhanced-stöd. Installera med: pip install "
+"'psycopg[binary]'"
+
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+"psycopg3 version %(installed)s är för gammal. Version %(required)s eller "
+"nyare krävs."
+
+msgid "Database Backend"
+msgstr "Databasbackend"
+
+msgid "Database module"
+msgstr "Databasmodul"
 
 msgid "JSONB support"
 msgstr "JSONB-stöd"
@@ -20,8 +48,30 @@ msgstr "JSONB-stöd"
 msgid "Version warning"
 msgstr "Versionsvarning"
 
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr ""
+"PostgreSQL %(version)s är lägre än den rekommenderade versionen "
+"%(recommended)s"
+
 msgid "Extensions"
 msgstr "Tilläggsprogram"
+
+msgid "Database size"
+msgstr "Databasstorlek"
+
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr "%(persons)d personer, %(families)d familjer, %(events)d händelser"
+
+msgid "Migration manager not initialized"
+msgstr "Migreringshanteraren har inte initialiserats"
+
+msgid "Enhanced queries require JSONB support"
+msgstr "Utökade anrop kräver JSONB-stöd"
+
+msgid "Full-text search requires JSONB support or search capabilities"
+msgstr "Fulltextsökning kräver stöd eller sökfunktioner för JSONB"
 
 msgid "Starting migration..."
 msgstr "Startar migrering..."
@@ -34,6 +84,9 @@ msgstr "Migrerar %s objekt..."
 msgid "Migrated %s {obj_type} objects"
 msgstr "Migrerade %s {obj_type} objekt"
 
+msgid "Migration completed!"
+msgstr "Migreringen är klar!"
+
 msgid "Starting upgrade..."
 msgstr "Startar uppgradering..."
 
@@ -44,8 +97,21 @@ msgstr "Uppgraderar %s objekt..."
 msgid "Creating indexes..."
 msgstr "Skapar index..."
 
+msgid "Upgrade completed!"
+msgstr "Uppgraderingen är klar!"
+
 msgid "PostgreSQL Enhanced"
 msgstr "PostgreSQL enhanced"
 
 msgid "PostgreSQL _Enhanced Database"
 msgstr "PostgreSQL _Enhanced-databas"
+
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
+msgstr ""
+"Avancerad PostgreSQL-backend med JSONB-lagring, stöd för grafdatabas (Apache "
+"AGE), vektorlikhet (pgvector) och AI/ML-funktioner. För avancerade "
+"användare. Kräver PostgreSQL 15+ med tillägg. Kompatibel med Gramps Web."

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-11 21:37+0200\n"
-"PO-Revision-Date: 2026-02-03 09:01+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-02-20 09:09+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,23 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16-dev\n"
-
-#, python-format
-msgid "Successfully downloaded %s media file."
-msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "ירד בהצלחה קובץ מדיה %s."
-msgstr[1] "ירדו בהצלחה %s קבצי מדיה."
-msgstr[2] "ירדו בהצלחה %s קבצי מדיה."
-msgstr[3] "ירדו בהצלחה %s קבצי מדיה."
-
-#, python-format
-msgid "Successfully uploaded %s media file."
-msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "מתבצעת האלעת קובץ מדיה %s."
-msgstr[1] "מתבצעת האלעת %s קבצי מדיה."
-msgstr[2] "מתבצעת האלעת %s קבצי מדיה."
-msgstr[3] "מתבצעת האלעת %s קבצי מדיה."
+"X-Generator: Weblate 5.16.1-dev\n"
 
 #, python-format
 msgid "Server error %s. Please check your connection."
@@ -73,19 +57,3 @@ msgstr "חסרים באופן מקומי"
 
 msgid "Missing remotely"
 msgstr "חסרים באופן מרוחק"
-
-#, python-format
-msgid "Downloading %s media file"
-msgid_plural "Downloading %s media files"
-msgstr[0] "מתבצעת הורדת קבץ מדיה %s"
-msgstr[1] "מתבצעת הורדת %s קבצי מדיה"
-msgstr[2] "מתבצעת הורדת %s קבצי מדיה"
-msgstr[3] "מתבצעת הורדת %s קבצי מדיה"
-
-#, python-format
-msgid "Uploading %s media file"
-msgid_plural "Uploading %s media files"
-msgstr[0] "מתבצעת האלעת קובץ מדיה %s"
-msgstr[1] "מתבצעת האלעת %s קבצי מדיה"
-msgstr[2] "מתבצעת האלעת %s קבצי מדיה"
-msgstr[3] "מתבצעת האלעת %s קבצי מדיה"

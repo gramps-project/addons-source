@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-26 20:54+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,11 +12,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "short for born|b."
+msgstr "forkortelse for født|f."
+
+msgid "short for died|d."
+msgstr "forkortelse for død|d."
+
+msgid "short for baptized|bap."
+msgstr "døpt."
+
+msgid "short for buried|bur."
+msgstr "forkortelse for gravlagt|gravl."
+
+msgid "short for cremated|crem."
+msgstr "forkortelse for kremert|krem."
+
+msgid "Descendant Generations"
+msgstr "Etterkommergenerasjoner"
 
 #, python-format
 msgid "%d generation"
 msgid_plural "%d generations"
 msgstr[0] "%d generasjon"
 msgstr[1] "%d generasjoner"
+
+msgid "Ancestry"
+msgstr "Aner"

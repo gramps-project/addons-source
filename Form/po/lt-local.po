@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: 2026-01-04 20:01+0000\n"
 "Last-Translator: openSUSE Lietuviškai <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
@@ -42,11 +42,20 @@ msgstr "Forma"
 msgid "Select Form"
 msgstr "Pasirinkite formą"
 
-msgid "SubTitle"
-msgstr "Paantraštė"
+msgid "Persons"
+msgstr "Asmenys"
 
 msgid "Birthplace"
 msgstr "Gimimovieta"
+
+msgid "Date of Death"
+msgstr "Mirimo data"
+
+msgid "Place of Death"
+msgstr "Mirimo vieta"
+
+msgid "SubTitle"
+msgstr "Paantraštė"
 
 msgid "Father's Name"
 msgstr "Tėvo vardas"
@@ -87,14 +96,8 @@ msgstr "Santuokos data"
 msgid "Place of Marriage"
 msgstr "Santuokos vieta"
 
-msgid "Place of Death"
-msgstr "Mirimo vieta"
-
 msgid "Spouse's Name"
 msgstr "Sutuoktinio vardas"
-
-msgid "Date of Death"
-msgstr "Mirimo data"
 
 msgid "Place of Burial"
 msgstr "Palaidojimo vieta"

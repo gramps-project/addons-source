@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-26 15:11-0500\n"
-"PO-Revision-Date: 2025-03-23 20:35+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Provides a source and Citations Report with notes"
@@ -21,11 +21,29 @@ msgstr "Gir en kilde- og siteringsrapport med notater"
 msgid "   Spouses: "
 msgstr "   Ektefeller: "
 
+msgid "Title of the Report"
+msgstr "Rapporttittel"
+
+msgid "Title string for the report."
+msgstr "Titteltekst for rapporten."
+
+msgid "Subtitle of the Report"
+msgstr "Undertittel for rapporten"
+
+msgid "Show persons"
+msgstr "Vis personer"
+
 msgid "Whether to show events and persons mentioned in the note"
 msgstr "Om hendelser og personer nevnt i notatet skal vises"
 
 msgid "The style used for the title of the report."
 msgstr "Stilen som brukes på rapportens tittel."
+
+msgid "The style used for the subtitle of the report."
+msgstr "Stilen som brukes for rapportens undertittel."
+
+msgid "The style used for the footer of the report."
+msgstr "Stilen som brukes for rapportens bunntekst."
 
 msgid "The style used for source title."
 msgstr "Stilen som brukes for kildetittel."
@@ -33,8 +51,11 @@ msgstr "Stilen som brukes for kildetittel."
 msgid "The style used for source subtitle."
 msgstr "Stilen som brukes for kildens undertittel."
 
+msgid "The style used for Source details."
+msgstr "Stilen som brukes for kildedetaljer."
+
 msgid "The style used for citation title."
-msgstr "Stilen som brukes for sitattittel."
+msgstr "Stilen som brukes for siteringstittel."
 
 msgid "The style used for a column title."
 msgstr "Stilen som brukes for kolonnetittel."
