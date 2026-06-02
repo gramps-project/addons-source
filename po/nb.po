@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-29 09:23-0700\n"
-"PO-Revision-Date: 2026-05-23 19:11+0000\n"
+"PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.6\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
@@ -1101,7 +1101,7 @@ msgid ""
 "Gramps can convert to correct capitalization. \n"
 "Select the names you wish Gramps to convert. "
 msgstr ""
-"Nedenfor er en liste over fornavn som  \n"
+"Nedenfor er en liste over fornavn som \n"
 "Gramps kan endre til riktig bruk av store og små bokstaver. \n"
 "Velg navnene du vil at Gramps skal endre. "
 
@@ -15957,10 +15957,9 @@ msgid "Families with a tag containing <substring>"
 msgstr ""
 
 #: HasTagSubstr/hastagsubstr.gpr.py:42 HasTagSubstr/hastagsubstr.py:104
-#, fuzzy
-#| msgid "Matches families that are matched by an event filter"
 msgid "Matches families with a tag whose name contains the given substring"
-msgstr "Matcher familier som matcher et hendelsesfilter"
+msgstr ""
+"Matcher familier med en etikett der navnet inneholder den angitte delstrengen"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:57 HasTagSubstr/hastagsubstr.py:113
 msgid "Events with a tag containing <substring>"
@@ -18232,10 +18231,8 @@ msgstr "Gramplet som viser en oversikt over hendelser for en familie"
 
 #: PDFForms/PDFForms.gpr.py:24 PDFForms/generatepdfform.py:57
 #: PDFForms/generatepdfform.py:63
-#, fuzzy
-#| msgid "Generate"
 msgid "Generate PDF Forms"
-msgstr "Generer"
+msgstr "Generer PDF-skjemaer"
 
 #: PDFForms/PDFForms.gpr.py:26
 msgid ""
@@ -18262,26 +18259,20 @@ msgid "Ahnentafel Pedigree Chart"
 msgstr ""
 
 #: PDFForms/generatepdfform.py:99
-#, fuzzy
-#| msgid "Output format"
 msgid "Output file:"
-msgstr "Utdataformat"
+msgstr "Utdatafil:"
 
 #: PDFForms/generatepdfform.py:107
-#, fuzzy
-#| msgid "Browser"
 msgid "Browse…"
-msgstr "Nettleser"
+msgstr "Bla gjennom …"
 
 #: PDFForms/generatepdfform.py:116
 msgid "Open PDF after generating"
 msgstr ""
 
 #: PDFForms/generatepdfform.py:157
-#, fuzzy
-#| msgid "Form"
 msgid "Form:"
-msgstr "Skjema"
+msgstr "Skjema:"
 
 #: PDFForms/generatepdfform.py:174
 msgid "Rows:"
@@ -18292,10 +18283,8 @@ msgid "(Rows only affect multi-row sections such as census household lists.)"
 msgstr ""
 
 #: PDFForms/generatepdfform.py:200
-#, fuzzy
-#| msgid "Generation"
 msgid "Generations:"
-msgstr "Generasjon"
+msgstr "Generasjoner:"
 
 #: PDFForms/generatepdfform.py:213
 msgid "Includes subject plus up to 5 ancestor generations (2–32 people)."
@@ -18306,48 +18295,36 @@ msgid "Save PDF as…"
 msgstr ""
 
 #: PDFForms/generatepdfform.py:263
-#, fuzzy
-#| msgid "Finding files"
 msgid "PDF files"
-msgstr "Finner filer"
+msgstr "PDF-filer"
 
 #: PDFForms/generatepdfform.py:283
 msgid "No output file"
 msgstr ""
 
 #: PDFForms/generatepdfform.py:283
-#, fuzzy
-#| msgid "Please set an active person."
 msgid "Please specify an output file path."
-msgstr "Angi aktiv person."
+msgstr "Angi stien til utdatafilen."
 
 #: PDFForms/generatepdfform.py:293
-#, fuzzy
-#| msgid "No central person selected"
 msgid "No form selected"
-msgstr "Ingen fokusperson valgt"
+msgstr "Ingen skjema valgt"
 
 #: PDFForms/generatepdfform.py:293
-#, fuzzy
-#| msgid "Please set an active person."
 msgid "Please select a census form."
-msgstr "Angi aktiv person."
+msgstr "Velg et folketellingsskjema."
 
 #: PDFForms/generatepdfform.py:299
 msgid "Form not found"
 msgstr ""
 
 #: PDFForms/generatepdfform.py:306
-#, fuzzy
-#| msgid "Generation "
 msgid "Generation failed"
-msgstr "Generasjon "
+msgstr "Generering mislyktes"
 
 #: PDFForms/generatepdfform.py:317
-#, fuzzy
-#| msgid "Generate"
 msgid "PDF generated"
-msgstr "Generer"
+msgstr "PDF generert"
 
 #: PDFForms/importformpdf.py:180
 msgid "Form addon required"
@@ -23287,10 +23264,8 @@ msgid "Edit Note with the Link"
 msgstr ""
 
 #: WebSearch.py:1658
-#, fuzzy
-#| msgid "Edit selection"
 msgid "Edit Internet link"
-msgstr "Rediger utvalg"
+msgstr "Rediger nettadresse"
 
 #: WebSearch.py:1661
 msgid "🔍 AI Suggestions"
@@ -24072,13 +24047,11 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: lxml/lxmlGramplet.py:675
-#, fuzzy, python-brace-format
-#| msgid "\t{number} source"
-#| msgid_plural "\t{number} sources\n"
+#, python-brace-format
 msgid "\t{number} source"
 msgid_plural "\t{number} sources"
 msgstr[0] "\t{number} kilde"
-msgstr[1] "\t{number} kilder\n"
+msgstr[1] "\t{number} kilder"
 
 #: lxml/lxmlGramplet.py:694 lxml/lxmlGramplet.py:919
 msgid "Gallery.html"
