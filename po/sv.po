@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-10 10:43-0700\n"
-"PO-Revision-Date: 2026-05-10 14:47+0000\n"
+"PO-Revision-Date: 2026-05-27 16:15+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -347,11 +347,11 @@ msgstr "Källtext att koppla"
 
 #: AttachSourceTool/AttachSourceTool.py:94
 msgid "Existing Source ID"
-msgstr "Befintlig käll-ID"
+msgstr "Befintligt käll-ID"
 
 #: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
-msgstr "ID hos källa som skall kopplas"
+msgstr "ID på källa som ska kopplas"
 
 #: AttachSourceTool/AttachSourceTool.py:157
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:241
@@ -453,7 +453,7 @@ msgstr "Lägg till avatarbilder..."
 
 #: AvatarGenerator/AvatarGenerator.py:314
 msgid "{} avatar images were sucessfully added."
-msgstr "{} avatarbilder lades framgångsrikt till."
+msgstr "{} avatarbilder lades till."
 
 #: AvatarGenerator/AvatarGenerator.py:318
 msgid "There was no avatar image to add. "
@@ -461,7 +461,7 @@ msgstr "Det fanns inga avatarbilder att lägga till. "
 
 #: AvatarGenerator/AvatarGenerator.py:319
 msgid "All persons already had one."
-msgstr "Alla personer har redan en."
+msgstr "Alla personer hade redan en."
 
 #: Betawhatsnext/Betawhatsnext.gpr.py:48
 msgid "Beta What's Next"
@@ -679,7 +679,7 @@ msgstr "Biografi"
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:11
 msgid "Display a text biography"
-msgstr "Visar en biografitext"
+msgstr "Visa en biografitext"
 
 #: BiographyQuickview/BiographyQuickview.py:48
 #, python-format
@@ -1140,24 +1140,20 @@ msgid "Chat with Tree initialized.                 Type /help for help."
 msgstr "Chatt med träd har initierats.                 Skriv /help för hjälp."
 
 #: ChatWithTree/ChatWithTree.py:449
-#, fuzzy
-#| msgid ""
-#| "The ChatWithTree addon is not yet initialized. Please reload Gramps or "
-#| "select a database."
 msgid ""
 "The ChatWithTree addon is not yet initialized.                     Please "
 "reload Gramps or select a database."
 msgstr ""
-"ChatWithTree-tillägget har ännu inte initialiserats. Vänligen ladda om "
-"Gramps eller välj en databas."
+"ChatWithTree-tillägget har ännu inte initialiserats.                      "
+"Vänligen ladda om Gramps eller välj en databas."
 
 #: ChatWithTree/ChatWithTree.py:458
 msgid "The chatbot is currently processing a query. Please wait."
-msgstr ""
+msgstr "Chatboten bearbetar för närvarande en fråga. Vänta."
 
 #: ChatWithTree/ChatWithTree.py:485
 msgid "An error occurred while processing your query."
-msgstr ""
+msgstr "Ett fel uppstod när din fråga bearbetades."
 
 #: ChatWithTree/chatwithllm.py:119
 msgid "Tree: '{}'"
@@ -1472,8 +1468,7 @@ msgstr ""
 "indraget träd med hjälp av D3,js javaskript-bibliotek."
 
 #: D3Charts/DescendantIndentedTree.py:678
-#, fuzzy, python-format
-#| msgid "See %(reference)s : %(spouse)s"
+#, python-format
 msgctxt "spouse"
 msgid "See %(reference)s : %(spouse)s"
 msgstr "Se %(reference)s : %(spouse)s"
@@ -2043,14 +2038,12 @@ msgstr "i"
 
 #: DataEntryGramplet/DataEntryGramplet.py:428
 #: DataEntryGramplet/DataEntryGramplet.py:507
-#, fuzzy
-#| msgid "Family Tree file"
 msgid "No Family Tree is open."
-msgstr "Familjeträdsfil"
+msgstr "Inget släktträd är öppet."
 
 #: DataEntryGramplet/DataEntryGramplet.py:429
 msgid "Please open a Family Tree to edit data."
-msgstr ""
+msgstr "Öppna ett släktträd för att redigera data."
 
 #: DataEntryGramplet/DataEntryGramplet.py:446
 #: DataEntryGramplet/DataEntryGramplet.py:578
@@ -2060,7 +2053,7 @@ msgstr "Grampletdataredigering: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:508
 msgid "Please open a Family Tree before adding a person."
-msgstr ""
+msgstr "Vänligen öppna ett släktträd innan du lägger till en person."
 
 #: DataEntryGramplet/DataEntryGramplet.py:524
 msgid "Can't add new person."
@@ -2220,54 +2213,40 @@ msgid "Deep Connections"
 msgstr "Långa släktskap"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
-#, fuzzy
-#| msgid "Pause"
 msgid "⏸ Pause"
-msgstr "Paus"
+msgstr "⏸ Paus"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:108
 msgid "Pause the current search"
-msgstr ""
+msgstr "Pausa den aktuella sökningen"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:111
 msgid "▶ Continue"
-msgstr ""
+msgstr "▶ Fortsätt"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:114
-#, fuzzy
-#| msgid ""
-#| "Paused.\n"
-#| "Press Continue to search for additional relations.\n"
 msgid "Continue searching for more relations"
-msgstr ""
-"Paus.\n"
-"Tryck Fortsätt för att leta efter ytterligare släktsakp.\n"
+msgstr "Fortsätt söka efter fler relationer"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:118
-#, fuzzy
-#| msgid "Copy"
 msgid "📋 Copy"
-msgstr "Kopiera"
+msgstr "📋 Kopiera"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:120
-#, fuzzy
-#| msgid "Copy link to clipboard"
 msgid "Copy selected people to clipboard"
-msgstr "Kopiera länken till urklipp"
+msgstr "Kopiera valda personer till urklipp"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:128
 msgid "🗑 Clear"
-msgstr ""
+msgstr "🗑 Rensa"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
 msgid "Clear all results and reset"
-msgstr ""
+msgstr "Rensa alla resultat och återställ"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
-#, fuzzy
-#| msgid "Start type to search"
 msgid "Ready to search"
-msgstr "Börja skriva för att söka"
+msgstr "Klar för att söka"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:185
 #, python-brace-format
@@ -2275,6 +2254,7 @@ msgid ""
 "Search Depth: {depth} | People Processed: {processed} | Queue Size: "
 "{queue_size}"
 msgstr ""
+"Sökdjup: {depth} | Bearbetade personer: {processed} | Köstorlek: {queue_size}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 msgid "mentioned in note"
@@ -2311,24 +2291,20 @@ msgstr ""
 "   %s till "
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:336
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "Error: No Home Person set"
-msgstr "Ingen aktiv person angiven."
+msgstr "Fel: Ingen hemperson angiven"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:341
 msgid "No Active Person set."
 msgstr "Ingen aktiv person angiven."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:342
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "Error: No Active Person set"
-msgstr "Ingen aktiv person angiven."
+msgstr "Fel: Ingen aktiv person angiven"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:347
 msgid "Initializing search..."
-msgstr ""
+msgstr "Initierar sökning..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:366
 msgid "Looking for relationship between\n"
@@ -2345,10 +2321,8 @@ msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (Aktiv person)...\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:382
-#, fuzzy
-#| msgid "Fetching records..."
 msgid "Searching for connections..."
-msgstr "Hämtar uppgifter..."
+msgstr "Söker efter kopplingar..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:402
 #, python-format
@@ -2368,50 +2342,33 @@ msgstr ""
 "Tryck Fortsätt för att leta efter ytterligare släktsakp.\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:427
-#, fuzzy
-#| msgid ""
-#| "Paused.\n"
-#| "Press Continue to search for additional relations.\n"
 msgid "Paused - Press Continue to search for more relations"
-msgstr ""
-"Paus.\n"
-"Tryck Fortsätt för att leta efter ytterligare släktsakp.\n"
+msgstr "Pausad - Tryck på Fortsätt för att söka efter fler relationer"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:456
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "Search completed. %d relations found."
+#, python-format
 msgid ""
 "\n"
 "Search completed. %d relation paths found."
 msgstr ""
 "\n"
-"Sökning avslutad. %d släktskap hittade."
+"Sökning avslutad. %d släktskaps-linjer hittade."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:460
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "Search completed. %d relations found."
 msgid "Search completed - {} relation paths found"
-msgstr ""
-"\n"
-"Sökning avslutad. %d släktskap hittade."
+msgstr "Sökning avslutad - {} släktskaps-linjer hittade"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:471
 msgid "Error during search: {}"
-msgstr ""
+msgstr "Fel under sökning: {}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:481
-#, fuzzy
-#| msgid "Removing '%s'..."
 msgid "Resuming search..."
-msgstr "Tar bort '%s'..."
+msgstr "Återupptar sökningen..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:489
 msgid "Search interrupted by user"
-msgstr ""
+msgstr "Sökningen avbröts av användaren"
 
 #: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
@@ -3652,8 +3609,6 @@ msgstr ""
 "0=ingen gräns "
 
 #: DescendantsLines/DescendantsLines.py:1618
-#, fuzzy
-#| msgid "Font name"
 msgid "Font Name"
 msgstr "Typsnittsnamn"
 
@@ -3662,12 +3617,12 @@ msgid ""
 "Name of the Font to use. On Windows enter the file name of the .ttf at /"
 "Windows/Fonts"
 msgstr ""
+"Namn på teckensnittet som ska användas. I Windows anger du filnamnet för "
+".ttf-filen i /Windows/Fonts"
 
 #: DescendantsLines/DescendantsLines.py:1623
-#, fuzzy
-#| msgid "Horizontal step size"
 msgid "Font base size"
-msgstr "Horisontell stegstorlek"
+msgstr "Teckenstorlek"
 
 #: DescendantsLines/DescendantsLines.py:1629
 msgid "Box around Person's block"
@@ -6258,17 +6213,15 @@ msgstr ""
 
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
-msgstr ""
+msgstr "Händelser från personer med roll"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:8
-#, fuzzy
-#| msgid "Matches people with an event with a selected role"
 msgid "Matches event of people filter with role"
-msgstr "Matchar personer med en händelse med en vald roll"
+msgstr "Matchar personer med en händelse filtrerad med roll"
 
 #: FilterRules/matchpersonfilterrole.py:69
 msgid "Role:"
-msgstr ""
+msgstr "Roll:"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
@@ -6414,33 +6367,33 @@ msgid "Fix coords"
 msgstr "Laga koordinater"
 
 #: Form/CensusCheckQuickview.gpr.py:9
-#, fuzzy
-#| msgid "Censuses"
 msgid "CensusCheck"
-msgstr "Folkräkningar"
+msgstr "Folkräkningskontroll"
 
 #: Form/CensusCheckQuickview.gpr.py:10
 msgid ""
 "Check whether any Census events are missing for a person and some of their "
 "descendents"
 msgstr ""
+"Kontrollera om några folkräkningshändelser saknas för en person och några av "
+"deras ättlingar"
 
 #: Form/CensusCheckQuickview.gpr.py:23
-#, fuzzy
-#| msgid "Censuses"
 msgid "CensusCheckUp"
-msgstr "Folkräkningar"
+msgstr "Folkräkningskontroll"
 
 #: Form/CensusCheckQuickview.gpr.py:24
 msgid ""
 "Check whether any Census events are missing for a person and some of their "
 "ancestors"
 msgstr ""
+"Kontrollera om några folkräkningshändelser saknas för en person och några av "
+"deras förfäder"
 
 #: Form/CensusCheckQuickview.py:122 Form/CensusCheckUpQuickview.py:122
 #, python-format
 msgid "Census Check for %s"
-msgstr ""
+msgstr "Folkräkningskontroll för %s"
 
 #: Form/editform.py:191
 #, python-format
@@ -6471,19 +6424,15 @@ msgstr "Form"
 
 #: Form/form.py:173
 msgid "XML syntax error in Form definition file"
-msgstr ""
+msgstr "XML-syntaxfel i formulärdefinitionsfilen"
 
 #: Form/form.py:184
-#, fuzzy
-#| msgid "Failed to read proto file %s: %s"
 msgid "Failed to read Form definition file"
-msgstr "Fel vid läsning av proto-fil %s: %s"
+msgstr "Fel vid läsning av formulärdefinitionsfilen"
 
 #: Form/form.py:193
-#, fuzzy
-#| msgid "Invalid Destination Directory"
 msgid "Invalid Form definition file"
-msgstr "Felaktig målkatalog"
+msgstr "Felaktig formulärdefinitionsfil"
 
 #: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
 #: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
@@ -14772,10 +14721,8 @@ msgid "Order Number"
 msgstr ""
 
 #: Form/form_us.xml.h:2551
-#, fuzzy
-#| msgid "Date of Registration"
 msgid "Registration Card"
-msgstr "Datum för registrering"
+msgstr "Registreringskort"
 
 #: Form/form_us.xml.h:2552
 msgid ""
@@ -14794,10 +14741,24 @@ msgid ""
 "        (Men who turned 18 since\n"
 "         previous registration)"
 msgstr ""
+"Finns i nedre vänstra hörnet\n"
+"      D.S.S. Formulär 1\n"
+"        (Män 21 - 31)\n"
+"      D.S.S. Formulär 1 (Rev. 6-9-41)\n"
+"        (Män som fyllt 21 år sedan första registreringen)\n"
+"      D.S.S. Formulär 1 (Rev. 1/1/42)\n"
+"        (Män födda 17 februari 1897 till 31 december 1921)\n"
+"      D.S.S. Formulär 1 (Rev. 4/1/42)\n"
+"        (Män 45-64)\n"
+"      D.S.S. Formulär 1 (Rev. 6/1/42)\n"
+"        (Män 18-20)\n"
+"      D.S.S. Formulär 1 (Rev. 11/16/42)\n"
+"        (Män som fyllt 18 år sedan\n"
+" föregående registrering)"
 
 #: Form/form_us.xml.h:2554
 msgid "(1) First, Middle, Last"
-msgstr ""
+msgstr "(1) Förnamn, Mellannamn, Efternamn"
 
 #: Form/form_us.xml.h:2555
 msgid "Place of Residence"
@@ -14808,6 +14769,8 @@ msgid ""
 "(2) Address or Place of Residence\n"
 " No. and street or R.F.D. No., Town, County, State"
 msgstr ""
+"(2) Adress eller bostadsort \n"
+" Gata eller RFD-nummer, ort, län, delstat"
 
 #: Form/form_us.xml.h:2557
 msgid "Mailing Address"
@@ -14818,6 +14781,8 @@ msgid ""
 " Not used on D.S.S. Form 1\n"
 " (3) Used on all other forms"
 msgstr ""
+" Används inte i D.S.S.-formulär 1 \n"
+" (3) Används i alla andra formulär"
 
 #: Form/form_us.xml.h:2559
 msgid "Telephone"
@@ -14828,6 +14793,8 @@ msgid ""
 "(3) On D.S.S. Form 1\n"
 "(4) On all other forms"
 msgstr ""
+"(3) I D.S.S.-formulär 1 \n"
+"(4) I alla andra formulär"
 
 #: Form/form_us.xml.h:2561
 msgid "Age in years"
@@ -14838,28 +14805,32 @@ msgid ""
 "(4) On D.S.S. Form 1\n"
 "(5) On all other forms"
 msgstr ""
+"(4) I D.S.S-formulär1 \n"
+"(5) I alla andra formulär"
 
 #: Form/form_us.xml.h:2564
 msgid "(Below Age in Years)"
-msgstr ""
+msgstr "(Nedanstående ålder i år)"
 
 #: Form/form_us.xml.h:2566
 msgid ""
 "(5) On D.S.S. Form 1\n"
 "(6) On all other forms"
 msgstr ""
+"(5) I D.S.S-formulär 1 \n"
+"(6) I alla andra formulär"
 
 #: Form/form_us.xml.h:2567
-#, fuzzy
-#| msgid "Citizenship"
 msgid "Country of Citizenship"
-msgstr "Medborgarskap"
+msgstr "Medborgarskapsland"
 
 #: Form/form_us.xml.h:2568
 msgid ""
 "(6) On D.S.S. Form 1\n"
 "Not used on other forms"
 msgstr ""
+"(6) I D.S.S.-formulär 1 \n"
+"Inte använt i andra formulär"
 
 #: Form/form_us.xml.h:2569
 msgid "Who will always know your address (Name & Address)"
@@ -14871,26 +14842,25 @@ msgid ""
 "(7) On all but D.S.S. Form 1 (Rev. 6-9-41)\n"
 "(8) On D.S.S. Form 1 (Rev. 6-9-41)"
 msgstr ""
+"(7 & 9) I D.S.S-formulär 1 \n"
+"(7) I alla utom D.S.S.-formulär (Rev. 6-9-41) \n"
+"(8) I D.S.S.-formulär (Rev. 6-9-41)"
 
 #: Form/form_us.xml.h:2571
-#, fuzzy
-#| msgid "Relationship Type"
 msgid "Relationship "
-msgstr "Relationstyp"
+msgstr "Relation "
 
 #: Form/form_us.xml.h:2572
 msgid "(8) Only on D.S.S. Form 1"
-msgstr ""
+msgstr "(8) Endast i D.S.S.-formulär 1"
 
 #: Form/form_us.xml.h:2573
-#, fuzzy
-#| msgid "Occupation:"
 msgid "Occupation "
-msgstr "Yrke:"
+msgstr "Yrke "
 
 #: Form/form_us.xml.h:2574
 msgid "(7) Only on D.S.S. Form 1 (Rev. 6-9-41)"
-msgstr ""
+msgstr "(7) Endast i D.S.S.-formulär 1 (Rev. 6-9-41)"
 
 #: Form/form_us.xml.h:2576
 msgid ""
@@ -14898,6 +14868,9 @@ msgid ""
 "(9) On D.S.S. Form 1 (Rev. 6-9-41)\n"
 "(8) on all others forms"
 msgstr ""
+"(10) I D.S.S.-formulär 1\n"
+"(9) I D.S.S.-formulär 1 (Rev. 6-9-41)\n"
+"(8) i alla andra formulär"
 
 #: Form/form_us.xml.h:2577
 msgid "Place of employment or business"
@@ -14909,6 +14882,9 @@ msgid ""
 "(10) On D.S.S. Form 1 (Rev. 6-9-41)\n"
 "(9) on all others forms"
 msgstr ""
+"(11) I D.S.S.-formulär 1\n"
+"(10) I D.S.S.-formulär 1 (Rev. 6-9-41)\n"
+"(9) i alla andra formulär"
 
 #: Form/form_us.xml.h:2580
 msgid ""
@@ -14918,6 +14894,11 @@ msgid ""
 "Indian\n"
 "Filipino"
 msgstr ""
+"Vit\n"
+"Svart\n"
+"Orientalisk\n"
+"Indisk\n"
+"Filippinsk"
 
 #: Form/form_us.xml.h:2583 Form/form_us.xml.h:2604
 msgid "Complexion"
@@ -14934,6 +14915,14 @@ msgid ""
 "Dark brown\n"
 "Black"
 msgstr ""
+"Gulaktig\n"
+"Ljus\n"
+"Rödaktig\n"
+"Mörk\n"
+"Fräknig\n"
+"Ljust brun\n"
+"Mörkt brun\n"
+"Svart"
 
 #: Form/form_us.xml.h:2585
 msgid "Eyes"
@@ -14947,6 +14936,11 @@ msgid ""
 "Brown\n"
 "Black"
 msgstr ""
+"Blå\n"
+"Grå\n"
+"Hassel\n"
+"Brun\n"
+"Svart"
 
 #: Form/form_us.xml.h:2587
 msgid "Hair"
@@ -14961,6 +14955,12 @@ msgid ""
 "Gray\n"
 "Bald"
 msgstr ""
+"Blond\n"
+"Röd\n"
+"Brun\n"
+"Svart\n"
+"Grå\n"
+"Skallig"
 
 #: Form/form_us.xml.h:2589
 msgid "Other characteristics"
@@ -15365,11 +15365,10 @@ msgid "GOV error on id %s with code: "
 msgstr "GOV-fel med id %s med koden: "
 
 #: GetGOV/getgov.py:555
-#, fuzzy, python-format
-#| msgid "from %s to %s"
+#, python-format
 msgctxt "end"
 msgid "from %(begin)s to %(end)s"
-msgstr "från %s till %s"
+msgstr "från %(begin)s till %(end)s"
 
 #: GetGOV/getgov.py:557
 #, python-format
@@ -15430,11 +15429,11 @@ msgstr ""
 
 #: GrampsChat/GrampsChat.gpr.py:4 GrampsChat/GrampsChat.gpr.py:9
 msgid "GrampsChat"
-msgstr ""
+msgstr "Grampschatt"
 
 #: GrampsChat/GrampsChat.gpr.py:5
 msgid "AI Chatbot Gramplet (requires connecting to an LLM service)"
-msgstr ""
+msgstr "AI Chatbot Gramplet (kräver anslutning till en LLM-tjänst)"
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:116
 #: GrampsWebSync/grampswebsync.py:209
@@ -15706,72 +15705,59 @@ msgstr[1] "Laddar upp %s mediefiler"
 
 #: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
 msgid "Gram.py Script"
-msgstr ""
+msgstr "Gram.py-skript"
 
 #: GrampyScript/GrampyScript.gpr.py:24
 msgid "Run a special Gramps Python script"
-msgstr ""
+msgstr "Kör ett speciellt Gramps Python-skript"
 
 #: GrampyScript/GrampyScript.py:91
-#, fuzzy
-#| msgid "Loaded from file: %s"
 msgid "Load query from a .script file"
-msgstr "Laddad från fil: %s"
+msgstr "Läs in fråga från en .script-fil"
 
 #: GrampyScript/GrampyScript.py:121
-#, fuzzy
-#| msgid "Save tree as file"
 msgid "Save query to a .script file"
-msgstr "Spara trädet som fil"
+msgstr "Spara frågan till en .script-fil"
 
 #: GrampyScript/GrampyScript.py:141
-#, fuzzy
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
 msgid "Download results as a CSV file"
-msgstr "Laddar ner %s mediefil"
+msgstr "Ladda ner resultaten som en CSV-fil"
 
 #: GrampyScript/GrampyScript.py:303
 msgid "Open..."
-msgstr ""
+msgstr "Öppna..."
 
 #: GrampyScript/GrampyScript.py:305
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Save as..."
-msgstr "Spara bilder i ..."
+msgstr "Spara som..."
 
 #: GrampyScript/GrampyScript.py:319
 msgid "Save as CSV"
-msgstr ""
+msgstr "Spara som CSV"
 
 #: GrampyScript/GrampyScript.py:320
-#, fuzzy
-#| msgid "Copy link to clipboard"
 msgid "Copy to clipboard"
-msgstr "Kopiera länken till urklipp"
+msgstr "Kopiera till urklipp"
 
 #: GrampyScript/GrampyScript.py:395
-#, fuzzy
-#| msgid "Quilt Chart"
 msgid "Chart"
-msgstr "Quiltat diagram"
+msgstr "Diagram"
 
 #: GrampyScript/GrampyScript.py:400
 msgid "Execute <Alt+Enter>"
-msgstr ""
+msgstr "Kör <Alt+Enter>"
 
 #: GrampyScript/GrampyScript.py:402
 msgid "Execute the script"
-msgstr ""
+msgstr "Kör skriptet"
 
 #: GrampyScript/GrampyScript.py:416
 msgid "Ready..."
-msgstr ""
+msgstr "Redo..."
 
 #: GrampyScript/GrampyScript.py:1028
 msgid "Gram.py Script Edited Data"
-msgstr ""
+msgstr "Gram.py-skript redigerade data"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -15791,15 +15777,15 @@ msgstr "Modern"
 
 #: GraphView/avatars.py:65
 msgid "Generic (dark)"
-msgstr ""
+msgstr "Generisk (mörk)"
 
 #: GraphView/avatars.py:66
 msgid "Generic (gray)"
-msgstr ""
+msgstr "Generisk (grå)"
 
 #: GraphView/avatars.py:67
 msgid "Generic (light)"
-msgstr ""
+msgstr "Generisk (ljus)"
 
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
 #: GraphView/graphview.py:189
@@ -16020,21 +16006,24 @@ msgstr "Lägg till aktiv person"
 
 #: GraphView/graphview.py:1342
 msgid "Call the bookmark editor"
-msgstr ""
+msgstr "Anropa bokmärkesredigeraren"
 
 #: GraphView/graphview.py:1399
 msgid ""
 "You don't have any bookmarks yet...\n"
 "Try to add some frequently used persons to speedup navigation."
 msgstr ""
+"Du har inga bokmärken ännu...\n"
+"Försök att lägga till några ofta använda personer för att snabba upp "
+"navigering."
 
 #: GraphView/graphview.py:1407
 msgid "No bookmarks for this graph..."
-msgstr ""
+msgstr "Inga bokmärken för den här grafen..."
 
 #: GraphView/graphview.py:1412
 msgid "No other bookmarks..."
-msgstr ""
+msgstr "Inga andra bokmärken..."
 
 #: GraphView/graphview.py:1417 GraphView/graphview.py:1419
 #: GraphView/search_widget.py:233 GraphView/search_widget.py:252
@@ -16049,6 +16038,8 @@ msgid ""
 "Add active person to bookmarks\n"
 "%s"
 msgstr ""
+"Lägg till aktiv person i bokmärken\n"
+"%s"
 
 #: GraphView/graphview.py:1516
 #, python-format
@@ -16056,6 +16047,8 @@ msgid ""
 "Person <b><i>%s</i></b> is not in the current view.\n"
 "Do you want to set it active and rebuild view?"
 msgstr ""
+"Personen <b><i>%s</i></b> finns inte i den aktuella vyn.\n"
+"Vill du aktivera den och återskapa vyn?"
 
 #: GraphView/graphview.py:1519
 msgid "Change active person?"
@@ -16069,14 +16062,18 @@ msgid ""
 "{people_missing} people won't be shown. You can change this limit in the "
 "view configuration."
 msgstr ""
+"Denna graf skulle innehålla minst {people_count} personer, vilket "
+"överskrider gränsen på {people_limit} personer. Av prestandaskäl kommer "
+"minst {people_missing} personer inte att visas. Du kan ändra denna gräns i "
+"vykonfigurationen."
 
 #: GraphView/graphview.py:2678
 msgid "Incomplete graph"
-msgstr ""
+msgstr "Ofullständig graf"
 
 #: GraphView/graphview.py:3047
 msgid "Image on right side"
-msgstr ""
+msgstr "Bild på höger sida"
 
 #: GraphView/graphview.py:3068
 msgid "Image on left side"
@@ -16104,11 +16101,11 @@ msgstr "Direkt"
 
 #: GraphView/graphview.py:3791
 msgid "Curves"
-msgstr ""
+msgstr "Kurvor"
 
 #: GraphView/graphview.py:3799
 msgid "Ortho"
-msgstr ""
+msgstr "Orto"
 
 #: GraphView/graphview.py:3875
 msgid "No Events for this person"
@@ -16138,13 +16135,13 @@ msgstr "Visa mål till hemperson"
 #: GraphView/search_widget.py:364 SearchGramplet/SearchGramplet.py:637
 #: SearchGramplet/SearchGramplet.py:769
 msgid "Remove from bookmarks"
-msgstr ""
+msgstr "Ta bort från bokmärken"
 
 #: GraphView/graphview.py:4060 GraphView/search_widget.py:294
 #: GraphView/search_widget.py:377 SearchGramplet/SearchGramplet.py:645
 #: SearchGramplet/SearchGramplet.py:782
 msgid "Add to bookmarks"
-msgstr ""
+msgstr "Lägg till i bokmärken"
 
 #: GraphView/graphview.py:4161
 msgid "No Events for this family"
@@ -16181,25 +16178,25 @@ msgstr "Lägger till taggar till familjen (%s)"
 #: GraphView/graphview.py:4669
 #, python-format
 msgid "Deleting the person [%s] will remove it from the database."
-msgstr ""
+msgstr "Om du tar bort personen [%s] tas den bort från databasen."
 
 #: GraphView/graphview.py:4698
 #, python-format
 msgid "Delete family [%s]?"
-msgstr ""
+msgstr "Ta bort familjen [%s]?"
 
 #: GraphView/graphview.py:4699
 msgid "Deleting the family will remove it from the database."
-msgstr ""
+msgstr "Om du tar bort familjen tas den bort från databasen."
 
 #: GraphView/graphview.py:4710
 #, python-format
 msgid "Delete Family [%s]"
-msgstr ""
+msgstr "Ta bort familjen [%s]"
 
 #: GraphView/search_widget.py:82
 msgid "Persons from current graph"
-msgstr ""
+msgstr "Personer från aktuell graf"
 
 #: GraphView/search_widget.py:83
 msgid "Other persons from database"
@@ -16207,13 +16204,15 @@ msgstr "Andra personer från databasen"
 
 #: GraphView/search_widget.py:235
 msgid "No persons found..."
-msgstr ""
+msgstr "Inga personer funna..."
 
 #: GraphView/search_widget.py:398
 msgid ""
 "Search people in the current visible graph and database.\n"
 "Use <Ctrl+F> to make search entry active."
 msgstr ""
+"Sök personer i den aktuella synliga grafen och databasen.\n"
+"Använd <Ctrl+F> för att aktivera sökposten."
 
 #: GraphView/search_widget.py:400 PluginManager\PluginManager.py:169
 #: SearchGramplet/SearchGramplet.py:391
@@ -16236,7 +16235,7 @@ msgstr "Nyhetsrubriker"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:5
 msgid "Gramplet that shows the latest Gramps news"
-msgstr ""
+msgstr "Gramplet som visar de senaste nyheterna från Gramps"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.py:113
 msgid "Read Gramps headline news"
@@ -16367,7 +16366,7 @@ msgstr "Listar relevanta historiska händelser under en persons livstid"
 
 #: HistContext/HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
-msgstr ""
+msgstr "Rader som börjar med detta i textkolumnen kommer att döljas "
 
 #: HistContext/HistContext.py:126
 msgid "Use filter "
@@ -16383,19 +16382,19 @@ msgstr "Använd kompletta datum"
 
 #: HistContext/HistContext.py:135
 msgid "Foreground color items in lifespan"
-msgstr ""
+msgstr "Förgrundsfärgade objekt under livslängden"
 
 #: HistContext/HistContext.py:138
 msgid "Background color items in lifespan"
-msgstr ""
+msgstr "Bakgrundsfärgade objekt under livslängden"
 
 #: HistContext/HistContext.py:141
 msgid "Foreground color items outside lifespan"
-msgstr ""
+msgstr "Förgrundsfärgade objekt utanför livslängden"
 
 #: HistContext/HistContext.py:144
 msgid "Background color items outside lifespan"
-msgstr ""
+msgstr "Bakgrundsfärgobjekt utanför livslängden"
 
 #: HistContext/HistContext.py:149
 msgid "Select from files"
@@ -16416,7 +16415,7 @@ msgstr "Fel:"
 
 #: HistContext/HistContext.py:327
 msgid ": line does not contain four sections separated by semicolons in : \""
-msgstr ""
+msgstr ": raden innehåller inte fyra sektioner separerade med semikolon i : \""
 
 #: HistContext/HistContext.py:419
 msgid "Cannot open URL: "
@@ -16424,7 +16423,7 @@ msgstr "Kan inte öppna URL: "
 
 #: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
-msgstr ""
+msgstr "Dubbelklicka på raden för att följa länken"
 
 #: HouseTimelineGramplet/housetimeline.gpr.py:4
 #: HouseTimelineGramplet/housetimeline.gpr.py:15
@@ -17835,23 +17834,23 @@ msgstr "MongoDB-databas"
 
 #: NLWebConnectPack/NLWebPack.gpr.py:13
 msgid "Collection of Web sites for the Netherlands (requires libwebconnect)"
-msgstr ""
+msgstr "Samling av webbplatser för Nederländerna (kräver libwebconnect)"
 
 #: NLWebConnectPack/NLWebPack.py:34
 msgid "Open Archives"
-msgstr ""
+msgstr "Öppna arkiv"
 
 #: NLWebConnectPack/NLWebPack.py:35
 msgid "Genealogy Online"
-msgstr ""
+msgstr "Släktforskning online"
 
 #: NLWebConnectPack/NLWebPack.py:36
 msgid "National Archive"
-msgstr ""
+msgstr "Nationella arkivet"
 
 #: NLWebConnectPack/NLWebPack.py:38
 msgid "Who (re)searches who?"
-msgstr ""
+msgstr "Vem (åter)forskar vem?"
 
 #: NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
@@ -18633,7 +18632,7 @@ msgstr "Visa sidnummer"
 
 #: PedigreeChart/PedigreeChart.py:719
 msgid "Add a footer on every page with the page number and date printed."
-msgstr ""
+msgstr "Lägg till en sidfot på varje sida med sidnummer och datum tryckt."
 
 #: PedigreeChart/PedigreeChart.py:740
 msgid "The basic style used for the title display."
@@ -18641,13 +18640,11 @@ msgstr "Den grundläggande stilen som används för titelvisningen."
 
 #: PedigreeChart/PedigreeChart.py:749
 msgid "Style used for names (only for PDF document and PostScript)."
-msgstr ""
+msgstr "Stil som används för namn (endast för PDF-dokument och PostScript)."
 
 #: PedigreeChart/PedigreeChart.py:758
-#, fuzzy
-#| msgid "Style used for labels and captions"
 msgid "Style used for labels and captions."
-msgstr "Mall för etiketter och ledtexter"
+msgstr "Mall för etiketter och ledtexter."
 
 #: PersonEverything/PersonEverything.gpr.py:32
 msgid "PersonEverything Report"
@@ -18858,7 +18855,7 @@ msgstr "Upptäck ansikten (OpenCV-modul behövs)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:356
 msgid "XMP Region Name"
-msgstr ""
+msgstr "XMP-regionens namn"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
 msgid "Set as active person"
@@ -19536,7 +19533,7 @@ msgstr "Stad,Postnummer,Land"
 
 #: PlaceCompletion/PlaceCompletion.py:1147
 msgid "City[(Street;Locality;Parish)],PostalCode,Country"
-msgstr ""
+msgstr "Stad[(Gata;Område;Församling)],Postnummer,Land"
 
 #: PlaceCompletion/PlaceCompletion.py:1149
 msgid "TitleStart [, City] [, State]"
@@ -19656,7 +19653,7 @@ msgstr "Avsök som:"
 
 #: PlaceCompletion/placecompletion.glade:619
 msgid "2. Conversion of existing title or position:"
-msgstr ""
+msgstr "2. Omvandling av befintlig titel eller position:"
 
 #: PlaceCompletion/placecompletion.glade:649
 msgid "Change title into:"
@@ -19671,12 +19668,16 @@ msgid ""
 "Or define a simple\n"
 "title format:"
 msgstr ""
+"Eller definiera ett enkelt \n"
+"titelformat:"
 
 #: PlaceCompletion/placecompletion.glade:730
 msgid ""
 "Available variables: city, street, locality, parish, county, state, country, "
 "postal_code"
 msgstr ""
+"Tillgängliga variabler: stad, gata, ort, församling, län, delstat, land, "
+"postnummer"
 
 #: PlaceCompletion/placecompletion.glade:820
 msgid ""
@@ -19685,6 +19686,10 @@ msgid ""
 "Press Tab on a row or Google Maps button to see place on a map. Press Apply "
 "to do all changes automatically"
 msgstr ""
+"Ta bort för att ta bort en rad, dubbelklicka på raden för att redigera "
+"platsen med förinställda ändringar,  \n"
+"Tryck på Tab på en rad eller Google Maps-knappen för att se platsen på en "
+"karta. tryck på Verkställ för att göra alla ändringar automatiskt"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
 msgid "Place Coordinate Gramplet"
@@ -19997,7 +20002,7 @@ msgstr "PostgreSQL-databas"
 #: PostgreSQLEnhanced/concurrency.py:479
 #, python-brace-format
 msgid "Object {obj_type}:{handle} was modified by another user"
-msgstr ""
+msgstr "Objektet {obj_type}:{handle} modifierades av en annan användare"
 
 #: PostgreSQLEnhanced/migration.py:168
 msgid "Starting migration..."
@@ -20015,7 +20020,7 @@ msgstr "Migrerade %s {obj_type} objekt"
 
 #: PostgreSQLEnhanced/migration.py:209
 msgid "Migration completed!"
-msgstr ""
+msgstr "Migreringen är klar!"
 
 #: PostgreSQLEnhanced/migration.py:438
 msgid "Starting upgrade..."
@@ -20032,7 +20037,7 @@ msgstr "Skapar index..."
 
 #: PostgreSQLEnhanced/migration.py:489
 msgid "Upgrade completed!"
-msgstr ""
+msgstr "Uppgraderingen är klar!"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:28
 msgid "PostgreSQL Enhanced"
@@ -20049,12 +20054,17 @@ msgid ""
 "advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
 "compatible."
 msgstr ""
+"Avancerad PostgreSQL-backend med JSONB-lagring, stöd för grafdatabas (Apache "
+"AGE), vektorlikhet (pgvector) och AI/ML-funktioner. För avancerade "
+"användare. Kräver PostgreSQL 15+ med tillägg. Kompatibel med Gramps Web."
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:154
 msgid ""
 "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
 "install 'psycopg[binary]'"
 msgstr ""
+"psycopg3 krävs för PostgreSQL Enhanced-stöd. Installera med: pip install "
+"'psycopg[binary]'"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:163
 #, python-format
@@ -20062,14 +20072,16 @@ msgid ""
 "psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
 "required."
 msgstr ""
+"psycopg3 version %(installed)s är för gammal. Version %(required)s eller "
+"nyare krävs."
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:211
 msgid "Database Backend"
-msgstr ""
+msgstr "Databasbackend"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:212
 msgid "Database module"
-msgstr ""
+msgstr "Databasmodul"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:214
 msgid "JSONB support"
@@ -20083,6 +20095,8 @@ msgstr "Versionsvarning"
 #, python-format
 msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
 msgstr ""
+"PostgreSQL %(version)s är lägre än den rekommenderade versionen %"
+"(recommended)s"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:252
 msgid "Extensions"
@@ -20090,32 +20104,32 @@ msgstr "Tilläggsprogram"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:273
 msgid "Database size"
-msgstr ""
+msgstr "Databasstorlek"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:276
 #, python-format
 msgid "%(persons)d persons, %(families)d families, %(events)d events"
-msgstr ""
+msgstr "%(persons)d personer, %(families)d familjer, %(events)d händelser"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1126
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1141
 msgid "Migration manager not initialized"
-msgstr ""
+msgstr "Migreringshanteraren har inte initialiserats"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1159
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1177
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1239
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1255
 msgid "Enhanced queries require JSONB support"
-msgstr ""
+msgstr "Utökade anrop kräver JSONB-stöd"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:1206
 msgid "Full-text search requires JSONB support or search capabilities"
-msgstr ""
+msgstr "Fulltextsökning kräver stöd eller sökfunktioner för JSONB"
 
 #: PostgreSQLEnhanced/queries.py:364
 msgid "pg_trgm extension required for duplicate detection"
-msgstr ""
+msgstr "Tillägget pg_trgm krävs för duplikatdetektering"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:37
@@ -20158,6 +20172,8 @@ msgid ""
 "<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
 " (Requires the minimum version or greater.)</i>:\n"
 msgstr ""
+"<i>Installationer av följande paket är <b>ABSOLUT NÖDVÄNDIGA</b>\n"
+" (Kräver minimiversionen eller senare.)</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:208
 msgid ""
@@ -20172,6 +20188,8 @@ msgid ""
 "<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
 "as necessary for Geography and Charts</i>:\n"
 msgstr ""
+"<i>Installationer av följande paket <b>REKOMMENDERAS STARKT</b> vid behov "
+"för geografi och diagram</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:226
 msgid ""
@@ -20183,7 +20201,7 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:229
 msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
-msgstr ""
+msgstr "<i>Installationer av följande paket är <b>valfria</b></i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:234
 msgid "Gtkspell enables spell checking in the notes.\n"
@@ -20209,6 +20227,8 @@ msgid ""
 "<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
 "intend to translate or do any development (addons etc.)</i>:\n"
 msgstr ""
+"<i>Installationer av följande paket <b>REKOMMENDERAS</b> om du avser att "
+"översätta eller göra någon utveckling (tillägg etc.)</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:272
 msgid ""
@@ -20224,6 +20244,9 @@ msgid ""
 "project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
 "to work</i>:\n"
 msgstr ""
+"<i>Förutsättningar krävs för att följande <a href=\"https://gramps-"
+"project.org/wiki/index.php?title=Third-party_Addons\">Tredjepartstillägg</a> "
+"ska fungera</i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:300
 msgid ""
@@ -20269,6 +20292,10 @@ msgid ""
 "back up your genealogy files, and then test your backups!\n"
 "\n"
 msgstr ""
+"Om du har en anledning att kontrollera förutsättningarna är det rätt tid att "
+"säkerhetskopiera dina släktforskningsfiler och sedan testa dina "
+"säkerhetskopior!\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:321
 msgid ""
@@ -20279,24 +20306,36 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
+"<i><a href=\"https://gramps-project.org/wiki/"
+"index.php?title=How_to_make_a_backup\">Säkerhetskopiera till Gramps XML</a> "
+"Du hittar \"Säkerhetskopiera...\" i släktträdsmenyn i de senaste Gramps-"
+"versionerna, annars använd \"Exportera...\" i samma meny men avmarkera "
+"sekretessalternativen i exportörassistenten för att exportera all data.</i>\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:331
 msgid ""
 " • Backups can be made at any time and, at a minimum, on the first day of "
 "every month. But preferrably more often.\n"
 msgstr ""
+" • Säkerhetskopieringar kan göras när som helst och som minst den första "
+"dagen i varje månad. Men helst oftare.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:337
 msgid ""
 " • It is strongly recommended to backup each of your Family Trees before any "
 "upgrade.\n"
 msgstr ""
+" • Det rekommenderas starkt att säkerhetskopiera vart och ett av dina "
+"släktträd innan du uppgraderar.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:343
 msgid ""
 " • Test your backups by creating a new Family Tree and then importing the "
 "backup."
 msgstr ""
+" • Testa dina säkerhetskopior genom att skapa ett nytt släktträd och sedan "
+"importera säkerhetskopian."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:365
 msgid ", is the most current version.\n"
@@ -20394,25 +20433,27 @@ msgstr " (Kräver "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:791
 msgid " • Berkeley Database library (bsddb3: "
-msgstr ""
+msgstr " • Berkeley databasbibliotek (bsddb3: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:822
 msgid " • SQLite Database library (sqlite3: "
-msgstr ""
+msgstr " • SQLite-databasbibliotek (sqlite3: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:839
 msgid " • xdg-utils (Manual check see instructions link)"
-msgstr ""
+msgstr " • xdg-utils (Manuell kontroll se instruktionslänk)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:852
 msgid " • librsvg2 (Manual check see instructions link)"
-msgstr ""
+msgstr " • librsvg2 (Manuell kontroll se instruktionslänk)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:864
 msgid ""
 " • language-pack-gnome-xx (Manual check see instructions link) for your "
 "Language <show locale here TBD>"
 msgstr ""
+" • language-pack-gnome-xx (Manuell kontroll se instruktionslänk) för ditt "
+"språk <visa språkinställningar här TBD>"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:902
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1343
@@ -20449,7 +20490,7 @@ msgstr " • python-fontconfig inte hittad, (Kräver version 0.5.x)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1034
 msgid " • python-fontconfig installed, version unavailable"
-msgstr ""
+msgstr " • python-fontconfig installerad, versionen är inte tillgänglig"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1120
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
@@ -20462,6 +20503,8 @@ msgid ""
 " • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
+" • rcs %s TBD (Godkänd: version %s eller senare installerad. Om inte på "
+"Microsoft Windows)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1194
 #, python-format
@@ -20469,10 +20512,13 @@ msgid ""
 " • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
+" • rcs %s TBD (Kräver version %s eller senare installerad. Om inte på "
+"Microsoft Windows)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1311
 msgid "exiv2 executable not installed, can't retrieve libexiv2 version."
 msgstr ""
+"exiv2-körbar fil är inte installerad, kan inte hämta libexiv2-versionen."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1312
 #, python-format
@@ -20500,7 +20546,7 @@ msgstr "inte installerad"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1530
 msgid "     and one of either: (pydotplus: "
-msgstr ""
+msgstr "     och en av antingen: (pydotplus: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1532
 msgid ") or (pygraphviz: "
@@ -20558,12 +20604,12 @@ msgstr " (lxml: inte hittad. Kräver version "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2036
 msgid " • Requires: MongoDB TBD / pymongo TBD"
-msgstr ""
+msgstr " • Kräver: MongoDB TBD / pymongo TBD"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2050
 #, python-format
 msgid " • Operating System: %s"
-msgstr ""
+msgstr " • Operativsystem: %s"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2073
 msgid ""
@@ -20765,23 +20811,23 @@ msgstr "Allmänna alternativ"
 
 #: RUWebConnectPack/RUWebPack.gpr.py:11
 msgid "RU Web Connect Pack"
-msgstr ""
+msgstr "RU Web Connect-paket"
 
 #: RUWebConnectPack/RUWebPack.gpr.py:12
 msgid "Collection of Web sites for the RU (requires libwebconnect)"
-msgstr ""
+msgstr "Samling av webbplatser för RU (kräver libwebconnect)"
 
 #: RUWebConnectPack/RUWebPack.py:40
 msgid "OBD \"Memorial\""
-msgstr ""
+msgstr "OBD-\"Minnesmärke\""
 
 #: RUWebConnectPack/RUWebPack.py:41
 msgid "People memory"
-msgstr ""
+msgstr "Människors minne"
 
 #: RUWebConnectPack/RUWebPack.py:42
 msgid "Winners"
-msgstr ""
+msgstr "Vinnare"
 
 #: RUWebConnectPack/RUWebPack.py:43
 msgid "Lived"
@@ -20793,7 +20839,7 @@ msgstr "Öppna lista"
 
 #: RUWebConnectPack/RUWebPack.py:45
 msgid "Wait for me"
-msgstr ""
+msgstr "Vänta på mig"
 
 #: RUWebConnectPack/RUWebPack.py:46
 msgid "All Russia Family Tree (forum)"
@@ -20801,11 +20847,11 @@ msgstr "All Russia Family Tree (forum)"
 
 #: RUWebConnectPack/RUWebPack.py:47
 msgid "Yandex people"
-msgstr ""
+msgstr "Yandex-personer"
 
 #: RUWebConnectPack/RUWebPack.py:49
 msgid "RIA Officers"
-msgstr ""
+msgstr "RIA-tjänstemän"
 
 #: RUWebConnectPack/RUWebPack.py:50
 msgid "FamilySpace"
@@ -20854,7 +20900,7 @@ msgstr "Avlägsna generationer"
 
 #: RelID/relation_tab.py:322
 msgid "How deep should we go?"
-msgstr ""
+msgstr "Hur djupt ska vi gå?"
 
 #: RelID/relation_tab.py:339
 msgid "Rel_id"
@@ -20894,7 +20940,7 @@ msgstr "Efternamnsmångfald"
 
 #: RelID/relation_tab.py:367
 msgid "Quit"
-msgstr ""
+msgstr "Sluta"
 
 #: RelID/relation_tab.py:376
 msgid "No default person set."
@@ -20925,15 +20971,17 @@ msgid ""
 "\n"
 "Filtering\tCurrent match\t\tTime of pass\n"
 msgstr ""
+"\n"
+"Filtrering\tNuvarande matchning\t\tTidsförlopp\n"
 
 #: RelID/relation_tab.py:498
 #, python-format
 msgid "%d/%d \t\t %d/%d \t\t%f"
-msgstr ""
+msgstr "%d/%d \t\t %d/%d \t\t%f"
 
 #: RelID/relation_tab.py:615
 msgid "Total of handled entries : {len(self.stats_list)}\n"
-msgstr ""
+msgstr "Totalt antal hanterade poster: {len(self.stats_list)}\n"
 
 #: RelID/relation_tab.py:628
 msgid "Folder Chooser"
@@ -20953,16 +21001,16 @@ msgstr "Mappnamn kommer att användas för att spara innehållet."
 
 #: RelID/relation_tab.py:655
 msgid "Cannot set a valid location."
-msgstr ""
+msgstr "Det går inte att ange en giltig plats."
 
 #: RelID/relation_tab.py:655
 msgid "Did you set a foldername?"
-msgstr ""
+msgstr "Har du angett ett mappnamn?"
 
 #: RelID/relation_tab.py:672
 #, python-brace-format
 msgid "Data saved to : {filename}"
-msgstr ""
+msgstr "Data sparad till : {filename}"
 
 #: RelID/relation_tab.py:676
 msgid "Failed to save data."
@@ -20978,7 +21026,7 @@ msgstr "Aktivera mätvärden för familjenätverk"
 
 #: RelID/relation_tab.py:774
 msgid "Whether to calculate and display family network metrics."
-msgstr ""
+msgstr "Huruvida familjens nätverksstatistik ska beräknas och visas."
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
@@ -21242,6 +21290,8 @@ msgid ""
 "Upload media files to S3 (or compatible) object-based storage via the "
 "command line."
 msgstr ""
+"Ladda upp mediefiler till S3 (eller kompatibel) objektbaserad lagring via "
+"kommandoraden."
 
 #: SVWebconnectPack/SVWebPack.gpr.py:11
 msgid "SV Web Connect Pack"
@@ -21332,6 +21382,8 @@ msgid ""
 "Start type to search objects.\n"
 "To show all objects enter only «*» symbol."
 msgstr ""
+"Börja skriva för att söka efter objekt.\n"
+"För att visa alla objekt, skriv endast in symbolen «*»."
 
 #: SearchGramplet/SearchGramplet.py:743
 #, python-format
@@ -21484,7 +21536,7 @@ msgstr "Internettypsfilter"
 
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"
-msgstr ""
+msgstr "Epost"
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:24
 msgid "SharedPostgreSQL"
@@ -22327,13 +22379,7 @@ msgstr ""
 "%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:105
-#, fuzzy, python-format
-#| msgid ""
-#| "Directly importing from TMG files is not supportedby the TMG Importer "
-#| "Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that "
-#| "your TMG project was created by:TMG version 5.x or greater.Your "
-#| "file:*.TMG - Version Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
-#| "%(gramps_wiki_import_pjc_direct_url)s"
+#, python-format
 msgid ""
 "Directly importing from TMG files is not supported\n"
 "by the TMG Importer Addon.\n"
@@ -22349,20 +22395,22 @@ msgid ""
 "Please refer to:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
-"Direkt import från TMG-filer stöds inteav TMG-import-tillägget.Du behöver "
-"använda en säkerhetskopia av TMG-projektet(*.sqz)Säkerställ att ditt TMG-"
-"projekt skapades av:TMG version 5.x eller högre.Din fil:*.TMG - "
-"versionskontrollfil för TMG 2.0 till TMG 4.0dVänligen hänvisa till:"
+"Direkt import från TMG-filer stöds inte\n"
+"av TMG-import-tillägget.\n"
+"\n"
+"Du behöver använda en säkerhetskopia av TMG-projektet(*.sqz)\n"
+"\n"
+"Säkerställ att ditt TMG-projekt skapades av:\n"
+"TMG version 5.x eller högre.\n"
+"\n"
+"Din fil:\n"
+"*.TMG - versionskontrollfil för TMG 2.0 till TMG 4.0d\n"
+"\n"
+"Vänligen hänvisa till:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:126
-#, fuzzy, python-format
-#| msgid ""
-#| "Directly importing from TMG files is not supportedby the TMG Importer "
-#| "Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that "
-#| "your TMG project was created by:TMG version 5.x or greater.Your "
-#| "file:*.VER - Version Control File for TMG 1.2 and earlierPlease refer to:"
-#| "%(gramps_wiki_import_pjc_direct_url)s"
+#, python-format
 msgid ""
 "Directly importing from TMG files is not supported\n"
 "by the TMG Importer Addon.\n"
@@ -22378,10 +22426,18 @@ msgid ""
 "Please refer to:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
-"Direkt import från TMG-filer stöds inteav TMG-import-tillägget.Du behöver "
-"använda en säkerhetskopia av TMG-projektet(*.sqz)Säkerställ att ditt TMG-"
-"projekt skapades av:TMG version 5.x eller högre.Din fil:*.VER - "
-"versionskontrollfil för TMG 1.2 och tidigareVänligen hänvisa till:"
+"Direkt import från TMG-filer stöds inte\n"
+"av TMG-import-tillägget.\n"
+"\n"
+"Du behöver använda en säkerhetskopia av TMG-projektet(*.sqz)\n"
+"\n"
+"Säkerställ att ditt TMG-projekt skapades av:\n"
+"TMG version 5.x eller högre.\n"
+"\n"
+"Din fil:\n"
+"*.VER - versionskontrollfil för TMG 1.2 och tidigare\n"
+"\n"
+"Vänligen hänvisa till:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/libtmg.glade:15
@@ -22421,6 +22477,9 @@ msgid ""
 "\n"
 "Please create a new empty Family Tree before importing a TMG backup file."
 msgstr ""
+"Det aktuella släktträdet är inte tomt.\n"
+"\n"
+"Skapa ett nytt tomt släktträd innan du importerar en TMG-säkerhetskopia."
 
 #: TMGimporter/libtmg.py:2353
 msgid ""
@@ -22430,6 +22489,11 @@ msgid ""
 "Please ensure you are using a backup created by TMG 9.02 or later "
 "(PjcVersion >= 11.0)."
 msgstr ""
+"TMG-säkerhetskopifilen kunde inte läsas: PJC-versionsinformation saknas "
+"eller är oläslig.\n"
+"\n"
+"Se till att du använder en säkerhetskopia som skapats av TMG 9.02 eller "
+"senare (PjcVersion >= 11.0)."
 
 #: TMGimporter/libtmg.py:2365
 msgid "TMG version not supported"
@@ -22447,6 +22511,14 @@ msgid ""
 "See: https://gramps-project.org/wiki/index.php/"
 "Addon:TMGimporter#Before_Import_From_TMG_Backup_file"
 msgstr ""
+"Denna säkerhetskopia skapades med en äldre version av TMG (PjcVersion %(ver)"
+"s, motsvarande TMG 9.01 eller tidigare).\n"
+"\n"
+"Uppgradera ditt TMG-projekt till version 9.05 och skapa en ny "
+"säkerhetskopia, importera sedan igen.\n"
+"\n"
+"Se: https://gramps-project.org/wiki/index.php/"
+"Addon:TMGimporter#Before_Import_From_TMG_Backup_file"
 
 #: TMGimporter/libtmg.py:2435
 msgid ""
@@ -22454,6 +22526,9 @@ msgid ""
 "\n"
 "The backup may be corrupt or empty."
 msgstr ""
+"Inga dataset hittades i denna TMG-säkerhetskopia.\n"
+"\n"
+"Säkerhetskopian kan vara skadad eller tom."
 
 #: TMGimporter/libtmg.py:2462
 #, python-format
@@ -22465,6 +22540,12 @@ msgid ""
 "\n"
 "Ensure the file was created by TMG version 5.x or later."
 msgstr ""
+"%(filename)s verkar inte vara en giltig TMG-säkerhetskopia.\n"
+"\n"
+"Filen måste vara ett TMG-säkerhetskopiaarkiv (*.SQZ) som innehåller en "
+"projektkonfigurationsfil (.PJC).\n"
+"\n"
+"Se till att filen skapades med TMG version 5.x eller senare."
 
 #: Themes/themes.gpr.py:29
 msgid "Theme preferences"
@@ -22863,13 +22944,13 @@ msgstr "gifte sig %(year)s %(female_name)s i %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:627
 #, python-format
 msgid "%(male_name)s joined as a family in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s blev en familj året %(year)s på/i %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:618
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:629
 #, python-format
 msgid "%(female_name)s joined as a family in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s blev en familj året %(year)s på/i %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:621
 #, python-format
@@ -22884,12 +22965,12 @@ msgstr "ingick %(year)s %(female_name)s partnerskap i %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:632
 #, python-format
 msgid "%(male_name)s had a custom marriage in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s hade ett specialäktenskap %(year)s på %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:634
 #, python-format
 msgid "%(female_name)s had a custom marriage in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s hade ett specialäktenskap %(year)s på %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:638
 #, python-format
@@ -23034,6 +23115,8 @@ msgid ""
 "Creates an HTML webpage that uses JavaScript to show a pedigree block "
 "diagram arranged vertically by birth date"
 msgstr ""
+"Skapar en HTML-webbsida som använder JavaScript för att visa ett "
+"blockdiagram för stamtavla ordnat vertikalt efter födelsedatum"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:168
 msgid "Failed writing "
@@ -23041,11 +23124,11 @@ msgstr "Fel vid skrivning av "
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:849
 msgid "Year of Birth of Center Person"
-msgstr ""
+msgstr "Födelseår för centerpersonen"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:852
 msgid "The year of birth of the center person. Estimate a year if unknown"
-msgstr ""
+msgstr "Födelseår för centerpersonen. Uppskatta ett år om det är okänt"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:857
 msgid "Destination directory"
@@ -23061,11 +23144,11 @@ msgstr "Standardålder"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:869
 msgid "Default age of parent when child is born with unknown year of birth"
-msgstr ""
+msgstr "Förälderns standardålder när barnet föds med okänt födelseår"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:878
 msgid "What to show"
-msgstr ""
+msgstr "Vad som ska visas"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:880
 msgid "Show GrampsID"
@@ -23073,7 +23156,7 @@ msgstr "Visa Gramps-ID"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:881
 msgid "Show GrampsID on top right of the box"
-msgstr ""
+msgstr "Visa GrampsID längst upp till höger i rutan"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:884
 msgid "Optimize"
@@ -23081,7 +23164,7 @@ msgstr "Optimera"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:885
 msgid "Use as little space in horizontal direction as possible"
-msgstr ""
+msgstr "Använd så lite utrymme som möjligt i horisontell riktning"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:893
 msgid "Male Box Color"
@@ -23105,7 +23188,7 @@ msgstr "Antal pixlar per år"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:905
 msgid "How many pixel height is one year?"
-msgstr ""
+msgstr "Hur många pixlar i höjd är ett år?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:910
 msgid "Offset X Coordinate"
@@ -23114,6 +23197,8 @@ msgstr "Kompensera X-koordinat"
 #: TimePedigreeHTML/TimePedigreeHtml.py:912
 msgid "How many pixel are unused besides the most left and most right boxes?"
 msgstr ""
+"Hur många pixlar är oanvända förutom rutorna längst till vänster och längst "
+"till höger?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:917
 msgid "Offset Y Coordinate"
@@ -23121,7 +23206,7 @@ msgstr "Kompensera Y-koordinat"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:918
 msgid "How many pixel are unused above first box?"
-msgstr ""
+msgstr "Hur många pixlar är oanvända ovanför den första rutan?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:921
 msgid "Width of a box in pixel"
@@ -23137,22 +23222,24 @@ msgstr "Horisontellt mellanrum mellan rutor i pixel"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:928
 msgid "Minimum horizontal space between 2 boxes in pixel"
-msgstr ""
+msgstr "Minsta horisontella avstånd mellan två rutor i pixlar"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:934
 msgid "Length of vertical part of a line in pixel"
-msgstr ""
+msgstr "Längden på den vertikala delen av en linje i pixlar"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:936
 msgid ""
 "Parent and child boxes are connected with lines. This is the length of the "
 "vertical part of the lines in pixel"
 msgstr ""
+"Föräldra- och barn-rutor är sammankopplade med linjer. Detta är längden på "
+"den vertikala delen av linjerna i pixlar"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:943
 #: TimePedigreeHTML/TimePedigreeHtml.py:945
 msgid "Number of pixel between left border and scale"
-msgstr ""
+msgstr "Antal pixlar mellan vänster kant och skala"
 
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
@@ -23440,12 +23527,16 @@ msgid ""
 "Remove the selected type from the db.\n"
 "This does not change any referenced objects."
 msgstr ""
+"Ta bort den valda typen från databasen.\n"
+"Detta ändrar inga refererade objekt."
 
 #: TypeCleanup/type_cleanup.py:174
 msgid ""
 "Select a new name for the current type, prior to renaming the type in the "
 "referenced objects."
 msgstr ""
+"Välj ett nytt namn för den aktuella typen innan du byter namn på typen i de "
+"refererade objekten."
 
 #: TypeCleanup/type_cleanup.py:182
 msgid "Rename"
@@ -23453,7 +23544,7 @@ msgstr "Namnändra"
 
 #: TypeCleanup/type_cleanup.py:185
 msgid "Rename the selected type in all referenced objects."
-msgstr ""
+msgstr "Byt namn på den valda typen i alla refererade objekt."
 
 #: TypeCleanup/type_cleanup.py:189
 msgid "Close the Type Cleanup Tool"
@@ -23470,7 +23561,7 @@ msgstr "Verktyg för typrensning"
 #: TypeCleanup/type_cleanup.py:387
 #, python-format
 msgid "Changing type from %(old_type)s to %(new_type)s."
-msgstr ""
+msgstr "Ändrar typ från %(old_type)s till %(new_type)s."
 
 #: TypeCleanup/type_cleanup.py:432
 msgid ""
@@ -23481,6 +23572,12 @@ msgid ""
 "However, it will not remove it from the referenced items in the database.\n"
 "If you want to change it in referenced items, use 'Rename'."
 msgstr ""
+"Om du tar bort den här anpassade typen tas den bort från rullgardinsmenyn "
+"för typval\n"
+"och från framtida körningar av verktyget.\n"
+"\n"
+"Den tas dock inte bort från de refererade objekten i databasen.\n"
+"Om du vill ändra den i refererade objekt använder du \"Byt namn\"."
 
 #: UAWebConnectPack/UAWebPack.gpr.py:11
 msgid "UA Web Connect Pack"
@@ -23492,23 +23589,23 @@ msgstr "Samling av webbplatser för UA (kräver libwebconnect)"
 
 #: UAWebConnectPack/UAWebPack.py:39
 msgid "Forum: ukrgenealogy.com.ua"
-msgstr ""
+msgstr "Forum: ukrgenealogy.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:40
 msgid "Forum: genoua.name"
-msgstr ""
+msgstr "Forum: genoua.name"
 
 #: UAWebConnectPack/UAWebPack.py:43
 msgid "Encyclopedia: esu.com.ua"
-msgstr ""
+msgstr "Uppslagsverk: esu.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:44
 msgid "Wikipedia: uk.wikipedia.org"
-msgstr ""
+msgstr "Wikipedia: uk.wikipedia.org"
 
 #: UAWebConnectPack/UAWebPack.py:47
 msgid "Repressed DB: reabit.org.ua"
-msgstr ""
+msgstr "Undertryckt databas: reabit.org.ua"
 
 #: UAWebConnectPack/UAWebPack.py:50
 msgid "Genealogy DB: familysearch.org"
@@ -23516,19 +23613,19 @@ msgstr "Genealogy DB: familysearch.org"
 
 #: UAWebConnectPack/UAWebPack.py:51
 msgid "Genealogy DB: myheritage.com.ua"
-msgstr ""
+msgstr "Släktforskningsdatabas: myheritage.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:53
 msgid "Genealogy DB: pra.in.ua"
-msgstr ""
+msgstr "Släktforskningsdatabas: pra.in.ua"
 
 #: UAWebConnectPack/UAWebPack.py:56
 msgid "Map: Ridni.org"
-msgstr ""
+msgstr "Karta: Ridni.org"
 
 #: UAWebConnectPack/UAWebPack.py:59
 msgid "Search: google.com.ua"
-msgstr ""
+msgstr "Sök: google.com.ua"
 
 #: UAWebConnectPack/UAWebPack.py:60
 msgid "Search: roots.in.ua"
@@ -23536,11 +23633,11 @@ msgstr "Sök: rötter.i.ua"
 
 #: UKWebConnectPack/UKWebPack.gpr.py:11
 msgid "UK Web Connect Pack"
-msgstr ""
+msgstr "UK Web Connect-paket"
 
 #: UKWebConnectPack/UKWebPack.gpr.py:12
 msgid "Collection of Web sites for the UK (requires libwebconnect)"
-msgstr ""
+msgstr "Samling av webbplatser för Storbritannien (kräver libwebconnect)"
 
 #: UKWebConnectPack/UKWebPack.py:33
 msgid "UK Google"
@@ -23548,23 +23645,23 @@ msgstr "Google UK"
 
 #: UKWebConnectPack/UKWebPack.py:34
 msgid "British, UK, and Ireland"
-msgstr ""
+msgstr "Brittisk, Storbritannien och Irland"
 
 #: UKWebConnectPack/UKWebPack.py:37
 msgid "National Archives"
-msgstr ""
+msgstr "Riksarkivet"
 
 #: UKWebConnectPack/UKWebPack.py:38 USWebConnectPack/USWebPack.py:41
 msgid "Hathi Trust Digital Library"
-msgstr ""
+msgstr "Hathitrust digitala bibliotek"
 
 #: USWebConnectPack/USWebPack.gpr.py:11
 msgid "US Web Connect Pack"
-msgstr ""
+msgstr "US Web Connect-paket"
 
 #: USWebConnectPack/USWebPack.gpr.py:12
 msgid "Collection of Web sites for the US (requires libwebconnect)"
-msgstr ""
+msgstr "Samling av webbplatser för USA (kräver libwebconnect)"
 
 #: USWebConnectPack/USWebPack.py:35
 msgid "US Google"
@@ -23579,6 +23676,8 @@ msgid ""
 "Customized queries for online services based on the active Person, Place, "
 "Family, or Source record"
 msgstr ""
+"Anpassade frågor för onlinetjänster baserade på den aktiva personen, "
+"platsen, familjen eller källposten"
 
 #: WebSearch/WebSearch.py:468
 msgid "Save Coordinates to the Place"
@@ -23586,27 +23685,27 @@ msgstr "Spara koordinater för platsen"
 
 #: WebSearch/WebSearch.py:609
 msgid "AI provider is disabled"
-msgstr ""
+msgstr "AI-leverantören är inaktiverad"
 
 #: WebSearch/WebSearch.py:613
 msgid "No AI API key provided"
-msgstr ""
+msgstr "Ingen AI API-nyckel tillhandahålls"
 
 #: WebSearch/WebSearch.py:619
 msgid "AI-generated historical place data is currently disabled"
-msgstr ""
+msgstr "AI-genererad historisk platsdata är för närvarande inaktiverad"
 
 #: WebSearch/WebSearch.py:629
 msgid "AI provider is unknown. Please check your AI provider settings."
-msgstr ""
+msgstr "AI-leverantören är okänd. Kontrollera dina AI-leverantörsinställningar."
 
 #: WebSearch/WebSearch.py:649
 msgid "⏳ Generating historical place data, please wait..."
-msgstr ""
+msgstr "⏳ Genererar historisk platsdata, vänligen vänta..."
 
 #: WebSearch/WebSearch.py:1520
 msgid "Keys"
-msgstr ""
+msgstr "Nycklar"
 
 #: WebSearch/WebSearch.py:1522
 msgid "Website URL"
@@ -23630,31 +23729,31 @@ msgstr "Kopiera länken till urklipp"
 
 #: WebSearch/WebSearch.py:1534
 msgid "Hide link for selected item"
-msgstr ""
+msgstr "Dölj länk för valt objekt"
 
 #: WebSearch/WebSearch.py:1537
 msgid "Hide link for all items"
-msgstr ""
+msgstr "Dölj länk för alla objekt"
 
 #: WebSearch/WebSearch.py:1541
 msgid "Edit Attribute with the Link"
-msgstr ""
+msgstr "Redigera attribut för länken"
 
 #: WebSearch/WebSearch.py:1545
 msgid "Edit Note with the Link"
-msgstr ""
+msgstr "Redigera anteckning med länken"
 
 #: WebSearch/WebSearch.py:1548
 msgid "🔍 AI Suggestions"
-msgstr ""
+msgstr "🔍 AI-förslag"
 
 #: WebSearch/WebSearch.py:1767
 msgid "Attribute no longer exists. The extra icon is removed"
-msgstr ""
+msgstr "Attributet finns inte längre. Den extra ikonen har tagits bort"
 
 #: WebSearch/WebSearch.py:1813
 msgid "Note no longer exists. The extra icon is removed"
-msgstr ""
+msgstr "Anteckningen finns inte längre. Den extra ikonen har tagits bort"
 
 #: WebSearch/WebSearch.py:1838
 #, python-brace-format
@@ -23667,6 +23766,13 @@ msgid ""
 "You can use this link to revisit the source and verify the information "
 "related to this entity."
 msgstr ""
+"📌 Denna webblänk '{title}' arkiverades för framtida referens av WebSearch-"
+"grampleten (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Du kan använda den här länken för att återvända till källan och verifiera "
+"informationen relaterad till denna enhet."
 
 #: WebSearch/WebSearch.py:1924
 #, python-format
@@ -23679,7 +23785,7 @@ msgstr "Fel vid skapande av notis"
 
 #: WebSearch/WebSearch.py:1947
 msgid "URL is copied to the Clipboard"
-msgstr ""
+msgstr "URL:en kopieras till Urklipp"
 
 #: WebSearch/WebSearch.py:2066
 msgid "WebSearch Link"
@@ -23707,7 +23813,7 @@ msgstr "Tom: {keys}"
 #: WebSearch/WebSearch.py:2149
 #, python-brace-format
 msgid "Comment: {comment}"
-msgstr ""
+msgstr "Kommentar: {comment}"
 
 #: WebSearch/activity_row_generator.py:110
 #, python-format
@@ -23718,7 +23824,7 @@ msgstr "Besökt: %s"
 #: WebSearch/activity_row_generator.py:129
 #, python-format
 msgid "Link: %s"
-msgstr ""
+msgstr "Länk: %s"
 
 #: WebSearch/activity_row_generator.py:116
 #, python-format
@@ -23758,7 +23864,7 @@ msgstr "Objektets Gramps-ID: %s"
 #: WebSearch/activity_row_generator.py:142
 #, python-format
 msgid "%s: %s → %s: %s"
-msgstr ""
+msgstr "%s: %s → %s: %s"
 
 #: WebSearch/activity_row_generator.py:152
 msgid "Link visited"
