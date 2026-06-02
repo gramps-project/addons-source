@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-10 10:43-0700\n"
-"PO-Revision-Date: 2026-05-11 10:34+0000\n"
+"PO-Revision-Date: 2026-05-18 13:46+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -1109,7 +1109,7 @@ msgstr "Upraviť výber"
 
 #: ChatWithTree/ChatWithTree.gpr.py:9
 msgid "Chat With Tree Interactive Addon"
-msgstr "Chatujte s doplnkom Tree Interactive"
+msgstr "Chat so stromom - interaktívny doplnok"
 
 #: ChatWithTree/ChatWithTree.gpr.py:10
 msgid ""
@@ -1133,7 +1133,7 @@ msgstr "Poslať"
 #: ChatWithTree/ChatWithTree.py:163
 msgid "Chat with Tree initialized.                 Type /help for help."
 msgstr ""
-"Chat so stromom bol spustený.                  Napíšte /help pre pomoc."
+"Chat so stromom bol inicializovaný.                  Napíšte /help pre pomoc."
 
 #: ChatWithTree/ChatWithTree.py:449
 msgid ""
@@ -1157,15 +1157,15 @@ msgstr "Strom: '{}'"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
-msgstr "Odstrániť obsah poľa názvu miesta, ak sa nezhoduje"
+msgstr "Odstráňte obsah poľa názvu miesta, ak sa nezhoduje"
 
 #: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
-msgstr "Skopírovať obsah poľa názvu miesta do novej poznámky."
+msgstr "Skopírujte obsah poľa názvu miesta do novej poznámky."
 
 #: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
-msgstr "Pripojiť štítok na vybrané miesta."
+msgstr "Pripojte štítok k vybraným miestam."
 
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
@@ -1177,7 +1177,7 @@ msgstr "Kontrola názvov miest"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
-msgstr "Skontrolovať názvy miest"
+msgstr "Skontroluje názvy miest"
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
@@ -1233,7 +1233,7 @@ msgstr "Zlúčenie pomocou príkazového riadku"
 
 #: CliMerge/CliMerge.gpr.py:19
 msgid "Merge primary objects via the command line."
-msgstr "Zlúčiť primárne objekty cez príkazový riadok."
+msgstr "Zlúči primárne objekty cez príkazový riadok."
 
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:10
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:18
@@ -3008,15 +3008,15 @@ msgstr "%(report_count)s. Správa o potomkoch pre %(person_name)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:521
 msgid "Index of Places"
-msgstr "Index miest"
+msgstr "Register miest"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:544
 msgid "Index of Dates"
-msgstr "Index dátumov"
+msgstr "Register dátumov"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:567
 msgid "Index of Names"
-msgstr "Index mien"
+msgstr "Register mien"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:573
 msgid "Report, Generation, Person, Name"
@@ -3124,27 +3124,27 @@ msgstr "Pridať odkaz na potomka do zoznamu detí"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1484
 msgid "Include Index of Names"
-msgstr "Zahrnúť index mien"
+msgstr "Zahrnúť register mien"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1485
 msgid "Whether to include the index of Names at the end of the report."
-msgstr "Či zahrnúť index mien na konci správy."
+msgstr "Či zahrnúť register mien na konci správy."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1489
 msgid "Include index of Dates"
-msgstr "Zahrnúť index dátumov"
+msgstr "Zahrnúť register dátumov"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1490
 msgid "Whether to include the index of Dates at the end of the report."
-msgstr "Či zahrnúť index dátumov na konci správy."
+msgstr "Či zahrnúť register dátumov na konci správy."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1494
 msgid "Include index of Places"
-msgstr "Zahrnúť index miest"
+msgstr "Zahrnúť register miest"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1495
 msgid "Whether to include the index of Places at the end of the report."
-msgstr "Či zahrnúť index miest na konci správy."
+msgstr "Či zahrnúť register miest na konci správy."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1499
 msgid "Include the 'Report appearances' section with each person"
@@ -3189,27 +3189,27 @@ msgstr "Štýl použitý pre detailné údaje poznámky."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1646
 msgid "The style used for the date in the Index of Dates."
-msgstr "Štýl použitý pre dátum v indexe dátumov."
+msgstr "Štýl použitý pre dátum v registri dátumov."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1656
 msgid "The style used for the events in the Index of Dates."
-msgstr "Štýl použitý pre udalosti v indexe dátumov."
+msgstr "Štýl použitý pre udalosti v registri dátumov."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1666
 msgid "The style used for the header in the Index of Names."
-msgstr "Štýl použitý pre záhlavie v indexe mien."
+msgstr "Štýl použitý pre záhlavie v registri mien."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1676
 msgid "The style used for the references in the Index of Names."
-msgstr "Štýl použitý pre referencie v indexe mien."
+msgstr "Štýl použitý pre odkazy v registri mien."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1686
 msgid "The style used for the header in the Index of Places."
-msgstr "Štýl použitý pre záhlavie v indexe miest."
+msgstr "Štýl použitý pre záhlavie v registri miest."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1697
 msgid "The style used for the references in the Index of Places."
-msgstr "Štýl použitý pre referencie v indexe miest."
+msgstr "Štýl použitý pre odkazy v registri miest."
 
 #: DescendantCount/DescendantCount.gpr.py:23
 #: DescendantCount/DescendantCount.gpr.py:32
@@ -3728,41 +3728,46 @@ msgstr "Manžel/ka a rodina"
 
 #: DescendantsLines/DescendantsLines.py:1716
 msgid "Vertical edge descendant to spouse-bar"
-msgstr ""
+msgstr "Vertikálna čiara od lišty potomka k lište manžela/manželky"
 
 #: DescendantsLines/DescendantsLines.py:1717
 msgid "The length of the vertical edge from descendant to spouse-bar."
-msgstr ""
+msgstr "Dĺžka vertikálnej čiary od lišty potomka k lište manžela/manželky."
 
 #: DescendantsLines/DescendantsLines.py:1721
 msgid "Vertical edge spouse-bar to spouse"
-msgstr ""
+msgstr "Vertikálna čiara od lišty manžela/-lky k lište manželského partnera"
 
 #: DescendantsLines/DescendantsLines.py:1722
 msgid "The length of the vertical edge from spouse-bar to spouse."
 msgstr ""
+"Dĺžka vertikálnej čiary od lišty manžela/-lky k lište manželského partnera."
 
 #: DescendantsLines/DescendantsLines.py:1726
 msgid "Vertical space spouse-bar to other spouse"
 msgstr ""
+"Vertikálna medzera medzi lištou manžela/-lky a lištou druhého manželského "
+"partnera"
 
 #: DescendantsLines/DescendantsLines.py:1727
 msgid ""
 "The space to add between one spouse-bar and another spouse in case of "
 "multiple families with the same descendant."
 msgstr ""
+"Medzera, ktorá sa má pridať medzi jednu lištu manžela/-lky a lištou druhého "
+"manželského partnera v prípade viacerých rodín s rovnakým potomkom."
 
 #: DescendantsLines/DescendantsLines.py:1732
 msgid "Horizontal space descendant to spouse"
-msgstr "Horizontálny priestor potomka k manželskému partnerovi"
+msgstr "Horizontálna medzera od potomka k manželovi/-lke"
 
 #: DescendantsLines/DescendantsLines.py:1733
 msgid "The space to add between the descendant and the spouse."
-msgstr "Medzera, ktorá sa má pridať medzi potomka a manželského partnera."
+msgstr "Medzera, ktorá sa má pridať medzi potomka a manžela/-lku."
 
 #: DescendantsLines/DescendantsLines.py:1738
 msgid "Horizonal space family to family"
-msgstr "Horizontálny priestor rodiny k rodine"
+msgstr "Horizontálna medzera od rodiny k rodine"
 
 #: DescendantsLines/DescendantsLines.py:1739
 msgid ""
@@ -3770,12 +3775,12 @@ msgid ""
 "and the more extern descendant (or spouse) of the next family."
 msgstr ""
 "Medzera, ktorú je potrebné pridať medzi najvzdialenejším potomkom (alebo "
-"manželom/manželkou) jednej rodiny a najvzdialenejším potomkom (alebo "
-"manželom/manželkou) ďalšej rodiny."
+"manželom/-lkou) jednej rodiny a najvzdialenejším potomkom (alebo manželom/-"
+"lkou) ďalšej rodiny."
 
 #: DescendantsLines/DescendantsLines.py:1744
 msgid "Horizontal distance spouse to family edge"
-msgstr ""
+msgstr "Horizontálna vzdialenosť medzi manželom/-lkou a okrajom rodiny"
 
 #: DescendantsLines/DescendantsLines.py:1745
 msgid ""
@@ -3783,10 +3788,12 @@ msgid ""
 "bigger the value, more the center is moved to the left towards the "
 "descendant."
 msgstr ""
+"Ak je táto hodnota 0, lišta detí je vycentrovaná pod manželom/-lkou. Čím je "
+"hodnota väčšia, tým viac sa stred posúva doľava smerom k potomkovi."
 
 #: DescendantsLines/DescendantsLines.py:1752
 msgid "OL_PAD"
-msgstr ""
+msgstr "OL_PAD"
 
 #: DescendantsLines/DescendantsLines.py:1753
 #, fuzzy
@@ -3796,11 +3803,11 @@ msgstr "Počet ??? medzier"
 
 #: DescendantsLines/DescendantsLines.py:1756
 msgid "Vertical edge spouse-bar to child-bar"
-msgstr ""
+msgstr "Vertikálna čiara od lišty manželov k lište detí"
 
 #: DescendantsLines/DescendantsLines.py:1757
 msgid "The length of the vertical edge from spouse-bar to child-bar."
-msgstr ""
+msgstr "Dĺžka vertikálnej čiary od lišty manželov k lište detí."
 
 #: DescendantsLines/DescendantsLines.py:1763
 msgid "Children distance"
@@ -3812,19 +3819,19 @@ msgstr "Horizontálna vzdialenosť medzi dvoma deťmi tej istej rodiny."
 
 #: DescendantsLines/DescendantsLines.py:1768
 msgid "Vertical edge child to child-bar"
-msgstr ""
+msgstr "Vertikálna čiara od lišty dieťaťa k lište dieťaťa"
 
 #: DescendantsLines/DescendantsLines.py:1770
 msgid "The length of the vertical edge from child to child-bar."
-msgstr ""
+msgstr "Dĺžka vertikálnej čiary od lišty dieťaťa k lište dieťaťa."
 
 #: DescendantsLines/DescendantsLines.py:1773
 msgid "MIN_C_WIDTH"
-msgstr "MIN_K_ŠÍRKA"
+msgstr "MIN_C_WIDTH"
 
 #: DescendantsLines/DescendantsLines.py:1774
 msgid "The number of ??? min width"
-msgstr ""
+msgstr "Minimálna šírka ???"
 
 #: DescendantsLines/DescendantsLines.py:1779
 msgid "Space around text"
@@ -4105,12 +4112,12 @@ msgstr "SVG grafický strom"
 
 #: DynamicWeb/dynamicweb.py:337
 msgid "Indexes pages"
-msgstr "Indexové stránky"
+msgstr "Strany registrov"
 
 #: DynamicWeb/dynamicweb.py:341 DynamicWeb/dynamicweb.py:5214
 #, python-format
 msgid "Custom page %(index)i"
-msgstr "Vlastná stránka %(index)i"
+msgstr "Vlastná strana %(index)i"
 
 #: DynamicWeb/dynamicweb.py:358
 msgid "Ascending tree"
@@ -4188,7 +4195,7 @@ msgstr "Výsledky vyhľadávania"
 #: DynamicWeb/dynamicweb.py:2595 DynamicWeb/dynamicweb.py:3014
 #: DynamicWeb/dynamicweb.py:4997
 msgid "Indexes"
-msgstr "Indexy"
+msgstr "Registre"
 
 #: DynamicWeb/dynamicweb.py:2918
 msgid "(filtered from _MAX_ total entries)"
@@ -4251,7 +4258,7 @@ msgstr "Ž"
 
 #: DynamicWeb/dynamicweb.py:2979
 msgid "Families Index"
-msgstr "Index rodín"
+msgstr "Register rodín"
 
 #: DynamicWeb/dynamicweb.py:2981
 msgid "Family Nick Name"
@@ -4263,11 +4270,11 @@ msgstr "Súbor pripravený"
 
 #: DynamicWeb/dynamicweb.py:2991 DynamicWeb/dynamicweb.py:5042
 msgid "Include dates columns on the index pages"
-msgstr "Zahrnúť stĺpce s dátumami na indexových stránkach"
+msgstr "Zahrnúť stĺpce s dátumami na stranách registra"
 
 #: DynamicWeb/dynamicweb.py:2999 DynamicWeb/dynamicweb.py:5071
 msgid "Include a column for media path on the index pages"
-msgstr "Zahrnúť stĺpec pre cestu k médiám na indexových stránkach"
+msgstr "Zahrnúť stĺpec pre cestu k médiám na stranách registra"
 
 #: DynamicWeb/dynamicweb.py:3007 DynamicWeb/dynamicweb.py:4903
 msgid "Include a map in the individuals and family pages"
@@ -4280,7 +4287,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3013 DynamicWeb/dynamicweb.py:5076
 msgid "Include references in indexes"
-msgstr "Zahrnúť referencie v indexoch"
+msgstr "Zahrnúť odkazy do registrov"
 
 #: DynamicWeb/dynamicweb.py:3018 DynamicWeb/dynamicweb.py:4985
 msgid "Insert sources author in the sources title"
@@ -4296,7 +4303,7 @@ msgstr "Maximalizovať"
 
 #: DynamicWeb/dynamicweb.py:3031
 msgid "Media Index"
-msgstr "Index médií"
+msgstr "Register médií"
 
 #: DynamicWeb/dynamicweb.py:3032
 msgid "Media Type"
@@ -4328,7 +4335,7 @@ msgstr "Osoba, ktorú hľadáte"
 
 #: DynamicWeb/dynamicweb.py:3051
 msgid "Persons Index"
-msgstr "Index osôb"
+msgstr "Register osôb"
 
 #: DynamicWeb/dynamicweb.py:3052 RemoveTagTool/RemoveTagTool.py:124
 #: SearchGramplet/SearchGramplet.py:109 SetPrivacyTool/SetPrivacyTool.py:320
@@ -4337,7 +4344,7 @@ msgstr "Osoby"
 
 #: DynamicWeb/dynamicweb.py:3054
 msgid "Places Index"
-msgstr "Index miest"
+msgstr "Register miest"
 
 #: DynamicWeb/dynamicweb.py:3056
 msgid "Preparing file ..."
@@ -4353,7 +4360,7 @@ msgstr "Vzťah k matke"
 
 #: DynamicWeb/dynamicweb.py:3063
 msgid "Repositories Index"
-msgstr "Index repozitárov"
+msgstr "Register repozitárov"
 
 #: DynamicWeb/dynamicweb.py:3066
 msgid "Restore"
@@ -4453,7 +4460,7 @@ msgstr "Triediť podľa:"
 #: SourceIndex/census.py:82 SourceIndex/death.py:87 SourceIndex/index.py:92
 #: SourceIndex/marriage.py:87 SourceIndex/witness.py:64
 msgid "Sources Index"
-msgstr "Index zdrojov"
+msgstr "Register zdrojov"
 
 #: DynamicWeb/dynamicweb.py:3117 DynamicWeb/dynamicweb.py:4992
 msgid "Suppress Gramps ID"
@@ -4461,7 +4468,7 @@ msgstr "Potlačiť Gramps ID"
 
 #: DynamicWeb/dynamicweb.py:3119
 msgid "Surnames Index"
-msgstr "Index priezvisk"
+msgstr "Register priezvisk"
 
 #: DynamicWeb/dynamicweb.py:3123
 msgid "U"
@@ -4477,23 +4484,23 @@ msgstr "Použite vyhľadávacie pole vyššie na nájdenie osoby."
 
 #: DynamicWeb/dynamicweb.py:3135
 msgid "Use a table format for the surnames index"
-msgstr "Použiť formát tabuľky pre index priezvisk"
+msgstr "Použiť tabuľkový formát pre register priezvisk"
 
 #: DynamicWeb/dynamicweb.py:3139
 msgid "Use a table format for the persons index"
-msgstr "Použiť formát tabuľky pre index osôb"
+msgstr "Použiť tabuľkový formát pre register osôb"
 
 #: DynamicWeb/dynamicweb.py:3143
 msgid "Use a table format for the families index"
-msgstr "Použiť formát tabuľky pre index rodín"
+msgstr "Použiť tabuľkový formát pre register rodín"
 
 #: DynamicWeb/dynamicweb.py:3147
 msgid "Use a table format for the sources index"
-msgstr "Použiť formát tabuľky pre index zdrojov"
+msgstr "Použiť tabuľkový formát pre register zdrojov"
 
 #: DynamicWeb/dynamicweb.py:3151
 msgid "Use a table format for the places index"
-msgstr "Použiť formát tabuľky pre index miest"
+msgstr "Použiť tabuľkový formát pre register miest"
 
 #: DynamicWeb/dynamicweb.py:3153
 msgid "Used for family"
@@ -4824,57 +4831,57 @@ msgstr "Tabuľka"
 
 #: DynamicWeb/dynamicweb.py:5008
 msgid "Default format for the surnames index"
-msgstr "Východzí formát pre index priezvisk"
+msgstr "Východzí formát pre register priezvisk"
 
 #: DynamicWeb/dynamicweb.py:5009
 msgid "The default format for the surnames index"
-msgstr "Predvolený formát pre index priezvisk"
+msgstr "Predvolený formát pre register priezvisk"
 
 #: DynamicWeb/dynamicweb.py:5014
 msgid "Default format for the persons index"
-msgstr "Východzí formát pre index osôb"
+msgstr "Východzí formát pre register osôb"
 
 #: DynamicWeb/dynamicweb.py:5015
 msgid "The default format for the persons index"
-msgstr "Predvolený formát pre index osôb"
+msgstr "Predvolený formát pre register osôb"
 
 #: DynamicWeb/dynamicweb.py:5020
 msgid "Default format for the families index"
-msgstr "Východzí formát pre index rodín"
+msgstr "Východzí formát pre register rodín"
 
 #: DynamicWeb/dynamicweb.py:5021
 msgid "The default format for the families index"
-msgstr "Predvolený formát pre index rodín"
+msgstr "Predvolený formát pre register rodín"
 
 #: DynamicWeb/dynamicweb.py:5026
 msgid "Default format for the sources index"
-msgstr "Východzí formát pre index zdrojov"
+msgstr "Východzí formát pre register zdrojov"
 
 #: DynamicWeb/dynamicweb.py:5027
 msgid "The default format for the sources index"
-msgstr "Predvolený formát pre index zdrojov"
+msgstr "Predvolený formát pre register zdrojov"
 
 #: DynamicWeb/dynamicweb.py:5032
 msgid "Default format for the places index"
-msgstr "Východzí formát pre index miest"
+msgstr "Východzí formát pre register miest"
 
 #: DynamicWeb/dynamicweb.py:5033
 msgid "The default format for the places index"
-msgstr "Predvolený formát pre index miest"
+msgstr "Predvolený formát pre register miest"
 
 #: DynamicWeb/dynamicweb.py:5045
 msgid ""
 "Whether to include dates columns (birth, death, marriage) on the index pages"
 msgstr ""
-"Či zahrnúť stĺpce s dátumami (narodenie, smrť, sobáš) na indexových stránkach"
+"Či zahrnúť stĺpce s dátumami (narodenie, smrť, sobáš) na stranách registra"
 
 #: DynamicWeb/dynamicweb.py:5063
 msgid "Generate a families index page"
-msgstr "Generovať stránku s indexom rodín"
+msgstr "Generovať stranu s registrom rodín"
 
 #: DynamicWeb/dynamicweb.py:5066
 msgid "Whether to generate an index page for families"
-msgstr "Či generovať indexovú stránku pre rodiny"
+msgstr "Či generovať indexovú stranu pre rodiny"
 
 #: DynamicWeb/dynamicweb.py:5073
 msgid "Whether to include a column showing the media path"
@@ -4886,17 +4893,17 @@ msgid ""
 "example, in the media index page, the names of the individuals, families, "
 "places, sources that reference the media."
 msgstr ""
-"Či zahrnúť referencie na položky na stránkach s indexom. Napríklad na "
-"stránke s indexom médií mená jednotlivcov, rodín, miest a zdrojov "
-"odkazujúcich na médiá."
+"Či zahrnúť referencie na položky na stranách registra. Napríklad na strane "
+"registra médií mená jednotlivcov, rodín, miest a zdrojov odkazujúcich na "
+"médiá."
 
 #: DynamicWeb/dynamicweb.py:5085
 msgid "Default number of entries in the indexes"
-msgstr "Východzí počet položiek v indexoch"
+msgstr "Východzí počet položiek v registroch"
 
 #: DynamicWeb/dynamicweb.py:5090
 msgid "The default number of entries shown in one index page"
-msgstr "Predvolený počet položiek zobrazených na jednej indexovej stránke"
+msgstr "Predvolený počet položiek zobrazených na jednej strane registra"
 
 #: DynamicWeb/dynamicweb.py:5098
 #: LifeLineChartView/_dummy_translation_string_po.py:101
@@ -4943,7 +4950,7 @@ msgstr "Stránky"
 
 #: DynamicWeb/dynamicweb.py:5194
 msgid "A note to be used as the page header"
-msgstr "Poznámka použitá ako záhlavie stránky"
+msgstr "Poznámka použitá ako záhlavie strany"
 
 #: DynamicWeb/dynamicweb.py:5197
 msgid "HTML user brand name / icon"
@@ -15387,11 +15394,11 @@ msgstr ""
 
 #: GrampsChat/GrampsChat.gpr.py:4 GrampsChat/GrampsChat.gpr.py:9
 msgid "GrampsChat"
-msgstr ""
+msgstr "GrampsChat"
 
 #: GrampsChat/GrampsChat.gpr.py:5
 msgid "AI Chatbot Gramplet (requires connecting to an LLM service)"
-msgstr ""
+msgstr "Gramplet AI Chatbot (vyžaduje pripojenie k službe LLM)"
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:116
 #: GrampsWebSync/grampswebsync.py:209
@@ -15668,11 +15675,11 @@ msgstr[2] "Nahrávanie %s mediálnych súborov"
 
 #: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
 msgid "Gram.py Script"
-msgstr ""
+msgstr "Skript Gram.py"
 
 #: GrampyScript/GrampyScript.gpr.py:24
 msgid "Run a special Gramps Python script"
-msgstr ""
+msgstr "Spustite špeciálny skript programu Python pre Gramps"
 
 #: GrampyScript/GrampyScript.py:91
 msgid "Load query from a .script file"
@@ -15696,7 +15703,7 @@ msgstr "Uložiť ako..."
 
 #: GrampyScript/GrampyScript.py:319
 msgid "Save as CSV"
-msgstr ""
+msgstr "Uložiť ako CSV"
 
 #: GrampyScript/GrampyScript.py:320
 msgid "Copy to clipboard"
@@ -15708,11 +15715,11 @@ msgstr "Graf"
 
 #: GrampyScript/GrampyScript.py:400
 msgid "Execute <Alt+Enter>"
-msgstr ""
+msgstr "Stlačte <Alt+Enter>"
 
 #: GrampyScript/GrampyScript.py:402
 msgid "Execute the script"
-msgstr ""
+msgstr "Spustíte skript"
 
 #: GrampyScript/GrampyScript.py:416
 msgid "Ready..."
@@ -15720,35 +15727,35 @@ msgstr "Pripravený..."
 
 #: GrampyScript/GrampyScript.py:1028
 msgid "Gram.py Script Edited Data"
-msgstr ""
+msgstr "Údaje upravené skriptom Gram.py"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
-msgstr "Tmavá (predvolená)"
+msgstr "Tmavý (predvolený)"
 
 #: GraphView/avatars.py:61
 msgid "Light"
-msgstr "Svetlá"
+msgstr "Svetlý"
 
 #: GraphView/avatars.py:62
 msgid "Cartoon"
-msgstr "Kreslená"
+msgstr "Kreslený"
 
 #: GraphView/avatars.py:63
 msgid "Modern"
-msgstr "Moderná"
+msgstr "Moderný"
 
 #: GraphView/avatars.py:65
 msgid "Generic (dark)"
-msgstr ""
+msgstr "Generický (tmavý)"
 
 #: GraphView/avatars.py:66
 msgid "Generic (gray)"
-msgstr ""
+msgstr "Generický (šedý)"
 
 #: GraphView/avatars.py:67
 msgid "Generic (light)"
-msgstr ""
+msgstr "Generický (svetlý)"
 
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
 #: GraphView/graphview.py:189
@@ -15769,7 +15776,7 @@ msgstr "Zobraziť avatary"
 
 #: GraphView/graphview.py:760 GraphView/graphview.py:3736
 msgid "Highlight the home person"
-msgstr "Zvýrazniť východziu osobu"
+msgstr "Zvýrazniť domovskú osobu"
 
 #: GraphView/graphview.py:764 GraphView/graphview.py:3744
 msgid "Show full dates"
@@ -17945,7 +17952,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:964
 msgid "Spacing (inch)"
-msgstr ""
+msgstr "Rozostup (palce)"
 
 #: NetworkChart/NetworkChart.py:965
 msgid ""
@@ -18003,7 +18010,7 @@ msgstr "Priehľadnosť pozadia muža"
 
 #: NetworkChart/NetworkChart.py:1014
 msgid "Alpha for Male box background (transparent=0, solid=255)."
-msgstr ""
+msgstr "Priehľadnosť pre pozadie rámika muža (priehľadné=0, plné=255)."
 
 #: NetworkChart/NetworkChart.py:1018
 msgid "Male Box Edge"
@@ -18024,7 +18031,7 @@ msgstr "Priehľadnosť pozadia ženy"
 
 #: NetworkChart/NetworkChart.py:1028
 msgid "Alpha for Female box background (transparent=0, solid=255)."
-msgstr ""
+msgstr "Priehľadnosť pre pozadie rámika ženy (priehľadné=0, plné=255)."
 
 #: NetworkChart/NetworkChart.py:1033
 msgid "Female Box Edge"
@@ -18606,7 +18613,7 @@ msgstr "Základný štýl používaný pre zobrazenie názvu."
 
 #: PedigreeChart/PedigreeChart.py:749
 msgid "Style used for names (only for PDF document and PostScript)."
-msgstr ""
+msgstr "Štýl použitý pre názvy (len pre dokumenty PDF a PostScript)."
 
 #: PedigreeChart/PedigreeChart.py:758
 msgid "Style used for labels and captions."
@@ -20483,6 +20490,8 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1311
 msgid "exiv2 executable not installed, can't retrieve libexiv2 version."
 msgstr ""
+"Spustiteľný súbor exiv2 nie je nainštalovaný, nie je možné zistiť verziu "
+"knižnice libexiv2."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1312
 #, python-format
@@ -21533,7 +21542,7 @@ msgstr "Register úmrtí"
 
 #: SourceIndex/SourceIndex.gpr.py:72 SourceIndex/SourceIndex.gpr.py:73
 msgid "CensusIndex"
-msgstr "Register sčítania ľudu"
+msgstr "Register sčítaní ľudu"
 
 #: SourceIndex/SourceIndex.gpr.py:104 SourceIndex/SourceIndex.gpr.py:105
 msgid "SourceIndex"
@@ -24357,11 +24366,11 @@ msgstr "Poskytuje knižnicu pre všeobecný prístup k databáze a gen.kniž."
 
 #: libaccess/libaccess.py:218
 msgid "libaccess edit name"
-msgstr ""
+msgstr "libaccess úprava mena"
 
 #: libaccess/libaccess.py:260
 msgid "libaccess edit person"
-msgstr ""
+msgstr "libaccess úprava osoby"
 
 #: libwebconnect/libwebconnect.gpr.py:11
 msgid "Library for web site collections"
@@ -24384,6 +24393,8 @@ msgid ""
 "Select a Gramps XML file and\n"
 " click on the Run button."
 msgstr ""
+"Vyberte súbor Gramps XML a\n"
+" kliknite na tlačidlo Spustiť."
 
 #: lxml/etreeGramplet.py:155 lxml/lxmlGramplet.py:197
 msgid "No file loaded..."
