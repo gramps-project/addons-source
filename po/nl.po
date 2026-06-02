@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-29 09:23-0700\n"
-"PO-Revision-Date: 2026-05-21 14:54+0000\n"
+"PO-Revision-Date: 2026-05-30 20:01+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -8652,7 +8652,7 @@ msgstr "VerzekeringKosten"
 
 #: Form/form_ca.xml.h:734
 msgid "32. Insurance: Cost of insurance in census year"
-msgstr "32. Verzekering: verzekeringskosten in het jaar van telling"
+msgstr "32. Verzekering: verzekeringskosten in jaar van volkstelling"
 
 #: Form/form_ca.xml.h:736
 msgid "33. Months at school in 1910"
@@ -11119,7 +11119,7 @@ msgstr "Opsomming distr. nr."
 
 #: Form/form_us.xml.h:470 Form/form_us.xml.h:1110 Form/form_us.xml.h:1853
 msgid "Month, if born within the census year"
-msgstr "Maand, indien geboren in het jaar van de volkstelling"
+msgstr "Maand, indien geboren in jaar van volkstelling"
 
 #: Form/form_us.xml.h:471 Form/form_us.xml.h:618 Form/form_us.xml.h:714
 #: Form/form_us.xml.h:757 Form/form_us.xml.h:797 Form/form_us.xml.h:1075
@@ -11142,12 +11142,12 @@ msgstr "Weduwnaar, gescheiden"
 #: Form/form_us.xml.h:475 Form/form_us.xml.h:623 Form/form_us.xml.h:1115
 #: Form/form_us.xml.h:1858
 msgid "Married during the census year"
-msgstr "Getrouwd tijdens het volkstellingjaar"
+msgstr "Getrouwd gedurende het jaar van volkstelling"
 
 #: Form/form_us.xml.h:477 Form/form_us.xml.h:632 Form/form_us.xml.h:1117
 #: Form/form_us.xml.h:1860
 msgid "Number of months unemployed during the census year"
-msgstr "Aantal maanden werkloos tijdens het volkstellingsjaar"
+msgstr "Aantal maanden werkloos gedurende het jaar van volkstelling"
 
 #: Form/form_us.xml.h:478 Form/form_us.xml.h:1118 Form/form_us.xml.h:1861
 msgid "Illness on day of enumeration"
@@ -11172,7 +11172,7 @@ msgstr "Verminkt, kreupel, bedlegerig of anderszins gehandicapt"
 
 #: Form/form_us.xml.h:484 Form/form_us.xml.h:1124 Form/form_us.xml.h:1867
 msgid "Attended school within the census year"
-msgstr "Binnen het jaar van de volkstelling naar school geweest"
+msgstr "Naar school geweest gedurende het jaar van volkstelling"
 
 #: Form/form_us.xml.h:488 Form/form_us.xml.h:626 Form/form_us.xml.h:684
 #: Form/form_us.xml.h:723 Form/form_us.xml.h:772 Form/form_us.xml.h:810
@@ -12633,15 +12633,15 @@ msgstr "Huwelijksdatum"
 
 #: Form/form_us.xml.h:1074
 msgid "Born within census year"
-msgstr "Geboren in volkstellingjaar"
+msgstr "Geboren in jaar van volkstelling"
 
 #: Form/form_us.xml.h:1077
 msgid "Married during census year"
-msgstr "Getrouwd tijdens volkstellingjaar"
+msgstr "Getrouwd in jaar van volkstelling"
 
 #: Form/form_us.xml.h:1079
 msgid "Months unemployed during census year"
-msgstr "Maanden werkloos tijdens volkstellingjaar"
+msgstr "Maanden werkloos in jaar van volkstelling"
 
 #: Form/form_us.xml.h:1080
 msgid "(Day of the Enumerator's visit) sick or temporarily disabled"
@@ -15373,7 +15373,7 @@ msgstr "Inclusief broers/zussen van voorouders."
 
 #: GenealogyTree/gt_sandclock.py:273
 msgid "Compact tree layout"
-msgstr ""
+msgstr "Compacte stamboom"
 
 #: GenealogyTree/gt_sandclock.py:275
 msgid ""
@@ -15381,6 +15381,9 @@ msgid ""
 "generations per page. Useful for large sandclock trees that otherwise clip "
 "off the rendered page."
 msgstr ""
+"Gebruik het genealogytree-sjabloon 'database pole reduced', die meer "
+"generaties per pagina verpakt. Handig voor grote verdelingen die anders van "
+"de pagina afvallen."
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
@@ -16470,81 +16473,94 @@ msgstr "Partners"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:25 HasTagSubstr/hastagsubstr.py:93
 msgid "People with a tag containing <substring>"
-msgstr ""
+msgstr "Personen met een label met <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:26 HasTagSubstr/hastagsubstr.py:94
 msgid "Matches people with a tag whose name contains the given substring"
 msgstr ""
+"Komt overeen met personen met een label waarvan de naam de gegeven "
+"tekenreeks bevat"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:40 HasTagSubstr/hastagsubstr.py:102
 msgid "Families with a tag containing <substring>"
-msgstr ""
+msgstr "Gezinnen met een label met <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:42 HasTagSubstr/hastagsubstr.py:104
-#, fuzzy
-#| msgid "Matches families that are matched by an event filter"
 msgid "Matches families with a tag whose name contains the given substring"
-msgstr "Komt overeen met gezinnen die gevonden zijn door een gebeurtenisfilter"
+msgstr ""
+"Komt overeen met gezinnen met een label waarvan de naam de gegeven "
+"tekenreeks bevat"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:57 HasTagSubstr/hastagsubstr.py:113
 msgid "Events with a tag containing <substring>"
-msgstr ""
+msgstr "Gebeurtenissen met een label met <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:59 HasTagSubstr/hastagsubstr.py:115
 msgid "Matches events with a tag whose name contains the given substring"
 msgstr ""
+"Komt overeen met gebeurtenissen met een label waarvan de naam de gegeven "
+"tekenreeks bevat"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:74 HasTagSubstr/hastagsubstr.py:124
 msgid "Places with a tag containing <substring>"
-msgstr ""
+msgstr "Plaatsen met een label met <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:76 HasTagSubstr/hastagsubstr.py:126
 msgid "Matches places with a tag whose name contains the given substring"
 msgstr ""
+"Komt overeen met plaatsen met een label waarvan de naam de gegeven "
+"tekenreeks bevat"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:91 HasTagSubstr/hastagsubstr.py:135
 msgid "Sources with a tag containing <substring>"
-msgstr ""
+msgstr "Bronnen met een label met <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:93 HasTagSubstr/hastagsubstr.py:137
-#, fuzzy
-#| msgid "Matches Sources with values containing the chosen parameters"
 msgid "Matches sources with a tag whose name contains the given substring"
 msgstr ""
-"Komt overeen met bronnen met waarden die de gekozen parameters bevatten"
+"Komt overeen met bronnen met een label waarvan de naam de gegeven tekenreeks "
+"bevat"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:108 HasTagSubstr/hastagsubstr.py:146
 msgid "Citations with a tag containing <substring>"
-msgstr ""
+msgstr "Citaten met een label met <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:110 HasTagSubstr/hastagsubstr.py:148
 msgid "Matches citations with a tag whose name contains the given substring"
 msgstr ""
+"Komt overeen met citaten met een label waarvan de naam de gegeven tekenreeks "
+"bevat"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:125 HasTagSubstr/hastagsubstr.py:157
 msgid "Repositories with a tag containing <substring>"
-msgstr ""
+msgstr "Opslagplaatsen met een label met <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:127 HasTagSubstr/hastagsubstr.py:159
 msgid "Matches repositories with a tag whose name contains the given substring"
 msgstr ""
+"Komt overeen met opslagplaatsen met een label waarvan de naam de gegeven "
+"tekenreeks bevat"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:142 HasTagSubstr/hastagsubstr.py:168
 msgid "Media objects with a tag containing <substring>"
-msgstr ""
+msgstr "Mediaobjecten met een label met <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:144 HasTagSubstr/hastagsubstr.py:170
 msgid ""
 "Matches media objects with a tag whose name contains the given substring"
 msgstr ""
+"Komt overeen met mediaobjecten met een label waarvan de naam de gegeven "
+"tekenreeks bevat"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:159 HasTagSubstr/hastagsubstr.py:179
 msgid "Notes with a tag containing <substring>"
-msgstr ""
+msgstr "Notities met een label met <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:161 HasTagSubstr/hastagsubstr.py:181
 msgid "Matches notes with a tag whose name contains the given substring"
 msgstr ""
+"Komt overeen met notities met een label waarvan de naam de gegeven "
+"tekenreeks bevat"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
@@ -17754,7 +17770,7 @@ msgid ""
 "plugin without them."
 msgstr ""
 "LifeLineChartView-afhankelijkheden ontbreken. Het is niet mogelijk om deze "
-"plug-in zonder hen te gebruiken."
+"uitbreiding zonder hen te gebruiken."
 
 #: LifeLineChartView/lifelinechart.py:1183
 #, python-brace-format
@@ -18938,152 +18954,131 @@ msgstr "Gramplet met een overzicht van gebeurtenissen voor een gezin"
 
 #: PDFForms/PDFForms.gpr.py:24 PDFForms/generatepdfform.py:57
 #: PDFForms/generatepdfform.py:63
-#, fuzzy
-#| msgid "Generate Test Notes"
 msgid "Generate PDF Forms"
-msgstr "Genereer testopmerkingen"
+msgstr "PDF-formulieren genereren"
 
 #: PDFForms/PDFForms.gpr.py:26
 msgid ""
 "Generate blank fillable PDF forms: census/event forms or Ahnentafel pedigree "
 "charts."
 msgstr ""
+"Lege invulbare PDF-formulieren aanmaken: volkstelling-/evenementformulieren "
+"of Ahnentafel-stamboomkaarten."
 
 #: PDFForms/PDFForms.gpr.py:46
 msgid "Import Fillable PDF Forms"
-msgstr ""
+msgstr "Ingevulde PDF-formulieren importeren"
 
 #: PDFForms/PDFForms.gpr.py:48
 msgid ""
 "Import genealogy data from a PDF form. Send the PDF template to others to "
 "fill out and return."
 msgstr ""
+"Genealogische gegevens uit een PDF-formulier importeren. Stuur anderen het "
+"PDF-formulier om in te vullen en terug te sturen."
 
 #: PDFForms/generatepdfform.py:77
 msgid "Census / Event Form"
-msgstr ""
+msgstr "Volkstelling- / Gebeurtenisformulier"
 
 #: PDFForms/generatepdfform.py:79
-#, fuzzy
-#| msgid "Pedigree Chart"
 msgid "Ahnentafel Pedigree Chart"
-msgstr "Kwartierstaatdiagram"
+msgstr "Ahnentafel Kwartierstaatdiagram"
 
 #: PDFForms/generatepdfform.py:99
-#, fuzzy
-#| msgid "Output format"
 msgid "Output file:"
-msgstr "Uitvoeropmaak"
+msgstr "Uitvoerbestand:"
 
 #: PDFForms/generatepdfform.py:107
-#, fuzzy
-#| msgid "Browser"
 msgid "Browse…"
-msgstr "Browser"
+msgstr "Bladeren…"
 
 #: PDFForms/generatepdfform.py:116
 msgid "Open PDF after generating"
-msgstr ""
+msgstr "Gegenereerde PDF openen"
 
 #: PDFForms/generatepdfform.py:157
-#, fuzzy
-#| msgid "Form"
 msgid "Form:"
-msgstr "Formulier"
+msgstr "Formulier:"
 
 #: PDFForms/generatepdfform.py:174
 msgid "Rows:"
-msgstr ""
+msgstr "Rijen:"
 
 #: PDFForms/generatepdfform.py:186
 msgid "(Rows only affect multi-row sections such as census household lists.)"
 msgstr ""
+"(Rijen hebben alleen invloed op secties met meerdere rijen, zoals "
+"volkstellingen.)"
 
 #: PDFForms/generatepdfform.py:200
-#, fuzzy
-#| msgid "Generation"
 msgid "Generations:"
-msgstr "Generatie"
+msgstr "Generaties:"
 
 #: PDFForms/generatepdfform.py:213
 msgid "Includes subject plus up to 5 ancestor generations (2–32 people)."
-msgstr ""
+msgstr "Inclusief onderwerp plus max. 5 vooroudergeneraties (2–32 personen)."
 
 #: PDFForms/generatepdfform.py:252
 msgid "Save PDF as…"
-msgstr ""
+msgstr "PDF opslaan als…"
 
 #: PDFForms/generatepdfform.py:263
-#, fuzzy
-#| msgid "PNG files"
 msgid "PDF files"
-msgstr "PNG-bestanden"
+msgstr "PDF-bestanden"
 
 #: PDFForms/generatepdfform.py:283
 msgid "No output file"
-msgstr ""
+msgstr "Geen uitvoerbestand"
 
 #: PDFForms/generatepdfform.py:283
-#, fuzzy
-#| msgid "Please set an active person."
 msgid "Please specify an output file path."
-msgstr "Stel een actieve persoon in."
+msgstr "Geef een pad op voor het uitvoerbestand."
 
 #: PDFForms/generatepdfform.py:293
-#, fuzzy
-#| msgid "Nothing is selected"
 msgid "No form selected"
-msgstr "Er is niets geselecteerd"
+msgstr "Geen formulier geselecteerd"
 
 #: PDFForms/generatepdfform.py:293
-#, fuzzy
-#| msgid "Please, select a folder"
 msgid "Please select a census form."
-msgstr "Selecteer een map"
+msgstr "Selecteer een volkstellingsformulier."
 
 #: PDFForms/generatepdfform.py:299
-#, fuzzy
-#| msgid "not found."
 msgid "Form not found"
-msgstr "niet gevonden."
+msgstr "Formulier niet gevonden"
 
 #: PDFForms/generatepdfform.py:306
-#, fuzzy
-#| msgid "Generation "
 msgid "Generation failed"
-msgstr "Generatie "
+msgstr "Genereren is mislukt"
 
 #: PDFForms/generatepdfform.py:317
-#, fuzzy
-#| msgid "Generate"
 msgid "PDF generated"
-msgstr "Genereer"
+msgstr "PDF gegenereerd"
 
 #: PDFForms/importformpdf.py:180
 msgid "Form addon required"
-msgstr ""
+msgstr "Formulier-toevoeging vereist"
 
 #: PDFForms/importformpdf.py:181
 msgid ""
 "The Form addon must be installed to import Form PDF files.\n"
 "Please install the Form addon and restart Gramps."
 msgstr ""
+"De Formulier-toevoeging moet worden geïnstalleerd om PDF-formulierbestanden "
+"te importeren.\n"
+"Installeer de Formulier-toevoeging en start Gramps opnieuw."
 
 #: PDFForms/importformpdf.py:189
-#, fuzzy
-#| msgid "No. on Form B"
 msgid "Not a Form PDF"
-msgstr "Nr. op formulier B"
+msgstr "Geen PDF-formulier"
 
 #: PDFForms/importformpdf.py:190
 msgid "The _form_id field is missing or empty."
-msgstr ""
+msgstr "Het veld _form_id ontbreekt of is leeg."
 
 #: PDFForms/importformpdf.py:197
-#, fuzzy
-#| msgid "Unknown avatar:"
 msgid "Unknown form ID"
-msgstr "Onbekende avatar:"
+msgstr "Onbekend Formulier-ID"
 
 #: PDFForms/importformpdf.py:198
 #, python-format
@@ -19091,39 +19086,34 @@ msgid ""
 "Form ID '%(id)s' is not recognised by the Form addon.\n"
 "Known IDs: %(known)s"
 msgstr ""
+"Formulier-ID '%(id)s' wordt niet herkend door de Formulier-toevoeging.\n"
+"Bekende ID's: %(known)s"
 
 #: PDFForms/importformpdf.py:221
 #, python-format
 msgid "Import Form PDF: %s"
-msgstr ""
+msgstr "PDF-formulier importeren: %s"
 
 #: PDFForms/importpdf.py:187
-#, fuzzy
-#| msgid ""
-#| "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
-#| "install 'psycopg[binary]'"
 msgid ""
 "The pypdf package is required to import PDF pedigree forms.\n"
 "Install it with:  pip install pypdf"
 msgstr ""
-"psycopg3 is vereist voor PostgreSQL Enhanced-ondersteuning. Installeren met: "
-"pip install 'psycopg[binary]'"
+"Het pypdf-pakket is vereist om PDF-stamboomformulieren te importeren.\n"
+"Installeer het met:  pip install pypdf"
 
 #: PDFForms/importpdf.py:195
-#, fuzzy, python-format
-#| msgid "Failed to copy web files : %s"
+#, python-format
 msgid "Could not open PDF file: %s"
-msgstr "Kan webbestand %s niet kopiëren"
+msgstr "Kan PDF-bestand niet openen: %s"
 
 #: PDFForms/importpdf.py:399
-#, fuzzy
-#| msgid "Add descendant reference in child list"
 msgid "Add media reference: PDF import"
-msgstr "Afstammingsreferentie toevoegen aan de onderliggende lijst"
+msgstr "Media referentie toevoegen: PDF-import"
 
 #: PDFForms/importpdf.py:448
 msgid "PDF import: no data found"
-msgstr ""
+msgstr "PDF-import: geen gegevens gevonden"
 
 #: PDFForms/importpdf.py:449
 msgid ""
@@ -19131,28 +19121,29 @@ msgid ""
 "\n"
 "Fill in the form fields and try again."
 msgstr ""
+"In de stamboomvorm zijn geen namen aangetroffen.\n"
+"\n"
+"Vul de formuliervelden in en probeer het opnieuw."
 
 #: PDFForms/importpdf.py:471
 msgid "Bad references in PDF import"
-msgstr ""
+msgstr "Onjuiste verwijzingen in PDF-import"
 
 #: PDFForms/importpdf.py:492
 msgid "PDF import error"
-msgstr ""
+msgstr "Fout bij PDF-import"
 
 #: PDFForms/importpdf.py:503
-#, fuzzy
-#| msgid "No data available."
 msgid "Form importer unavailable"
-msgstr "Geen gegevens beschikbaar."
+msgstr "Geen importeur beschikbaar"
 
 #: PDFForms/importpdf.py:504
 msgid "importformpdf.py is missing from the PDFForms addon directory."
-msgstr ""
+msgstr "importformpdf.py ontbreekt in de toevoegingenmap van PDFForms."
 
 #: PDFForms/importpdf.py:510
 msgid "PDF import: unrecognized format"
-msgstr ""
+msgstr "PDF-import: niet-herkend formaat"
 
 #: PDFForms/importpdf.py:511
 #, python-format
@@ -19161,6 +19152,10 @@ msgid ""
 "\n"
 "Only PDFs generated by Gramps (pedigree or form templates) can be imported."
 msgstr ""
+"Geen Gramps-formulier-ID gevonden in '%s'.\n"
+"\n"
+"Alleen PDF's gegenereerd door Gramps (stamboom- of formuliersjablonen) "
+"kunnen worden geïmporteerd."
 
 #: Participants/Participants.gpr.py:32
 msgid "Gramplet showing the participants in an event"
@@ -22545,7 +22540,7 @@ msgstr "Nieuwe volkstelling"
 
 #: SourceIndex/index.glade:524
 msgid "add census"
-msgstr "voeg volkstelling toe"
+msgstr "volkstelling toevoegen"
 
 #: SourceIndex/index.glade:556
 msgid "Select a birth source"
@@ -24354,30 +24349,24 @@ msgid "Edit Note with the Link"
 msgstr "Notitie met de link bewerken"
 
 #: WebSearch.py:1658
-#, fuzzy
-#| msgid "Edit selection"
 msgid "Edit Internet link"
-msgstr "Selectie bewerken"
+msgstr "Internetlink bewerken"
 
 #: WebSearch.py:1661
 msgid "🔍 AI Suggestions"
 msgstr "🔍 AI-suggesties"
 
 #: WebSearch.py:1915
-#, fuzzy
-#| msgid "Attribute no longer exists. The extra icon is removed"
 msgid "Attribute no longer matches this WebSearch row"
-msgstr "Kenmerk bestaat niet meer. Extra pictogram wordt verwijderd"
+msgstr "Kenmerk komt niet meer overeen met deze WebSearch rij"
 
 #: WebSearch.py:1942
 msgid "Attribute no longer exists. The extra icon is removed"
 msgstr "Kenmerk bestaat niet meer. Extra pictogram wordt verwijderd"
 
 #: WebSearch.py:1983
-#, fuzzy
-#| msgid "Note no longer exists. The extra icon is removed"
 msgid "Note no longer exists"
-msgstr "Notitie bestaat niet meer. Exptra pictogram wordt verwijderd"
+msgstr "Notitie bestaat niet meer"
 
 #: WebSearch.py:2005
 msgid "Note no longer exists. The extra icon is removed"
@@ -24385,7 +24374,7 @@ msgstr "Notitie bestaat niet meer. Exptra pictogram wordt verwijderd"
 
 #: WebSearch.py:2057
 msgid "Internet link no longer matches this WebSearch row"
-msgstr ""
+msgstr "Internetlink komt niet meer overeen met deze WebSearch rij"
 
 #: WebSearch.py:2148
 #, python-brace-format
@@ -25142,13 +25131,11 @@ msgid "Period: "
 msgstr "Periode: "
 
 #: lxml/lxmlGramplet.py:659 lxml/lxmlGramplet.py:663
-#, fuzzy, python-brace-format
-#| msgid "\t{number} surname"
-#| msgid_plural "\t{number} surnames; no frequency yet\n"
+#, python-brace-format
 msgid "\t{number} surname"
 msgid_plural "\t{number} surnames; no frequency yet"
 msgstr[0] "\t{number} achternaam"
-msgstr[1] "\t{number} achternamen; nog geen frequentie\n"
+msgstr[1] "\t{number} achternamen; nog geen frequentie"
 
 #: lxml/lxmlGramplet.py:659
 #, python-brace-format
@@ -25156,31 +25143,25 @@ msgid "\t{number} surname; no frequency yet"
 msgstr "\t{number} achternaam; nog geen frequentie"
 
 #: lxml/lxmlGramplet.py:660 lxml/lxmlGramplet.py:667
-#, fuzzy, python-brace-format
-#| msgid "\t{number} place"
-#| msgid_plural "\t{number} places\n"
+#, python-brace-format
 msgid "\t{number} place"
 msgid_plural "\t{number} places"
 msgstr[0] "\t{number} plaats"
-msgstr[1] "\t{number} plaatsen\n"
+msgstr[1] "\t{number} plaatsen"
 
 #: lxml/lxmlGramplet.py:661 lxml/lxmlGramplet.py:671
-#, fuzzy, python-brace-format
-#| msgid "\t{number} note"
-#| msgid_plural "\t{number} notes\n"
+#, python-brace-format
 msgid "\t{number} note"
 msgid_plural "\t{number} notes"
 msgstr[0] "\t{number} notitie"
-msgstr[1] "\t{number} notities\n"
+msgstr[1] "\t{number} notities"
 
 #: lxml/lxmlGramplet.py:675
-#, fuzzy, python-brace-format
-#| msgid "\t{number} source"
-#| msgid_plural "\t{number} sources\n"
+#, python-brace-format
 msgid "\t{number} source"
 msgid_plural "\t{number} sources"
 msgstr[0] "\t{number} bron"
-msgstr[1] "\t{number} bronnen\n"
+msgstr[1] "\t{number} bronnen"
 
 #: lxml/lxmlGramplet.py:694 lxml/lxmlGramplet.py:919
 msgid "Gallery.html"
