@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,22 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: ExportPersonGexf/exportpersongexf.gpr.py:30
-msgid "Person GEXF"
-msgstr ""
-
-#: ExportPersonGexf/exportpersongexf.gpr.py:31
-msgid "_Person GEXF"
-msgstr ""
-
-#: ExportPersonGexf/exportpersongexf.gpr.py:32
-msgid "GEXF is used in many network graph applications."
-msgstr ""
-
-#: ExportPersonGexf/exportpersongexf.gpr.py:40
-msgid "GEXF export options"
-msgstr ""
 
 #: ExportPersonGexf/exportpersongexf.py:58
 #: ExportPersonGexf/exportpersongexf.py:62
@@ -65,4 +49,20 @@ msgstr ""
 
 #: ExportPersonGexf/exportpersongexf.py:150
 msgid "Spouse"
+msgstr ""
+
+#: ExportPersonGexf/exportpersongexf.gpr.py:30
+msgid "Person GEXF"
+msgstr ""
+
+#: ExportPersonGexf/exportpersongexf.gpr.py:31
+msgid "_Person GEXF"
+msgstr ""
+
+#: ExportPersonGexf/exportpersongexf.gpr.py:32
+msgid "GEXF is used in many network graph applications."
+msgstr ""
+
+#: ExportPersonGexf/exportpersongexf.gpr.py:40
+msgid "GEXF export options"
 msgstr ""

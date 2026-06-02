@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -190,18 +190,18 @@ msgstr ""
 msgid "imported "
 msgstr ""
 
-#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
-#: ImportMerge/importmerge.py:982
+#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:962
+#: ImportMerge/importmerge.py:983
 msgid "Original"
 msgstr ""
 
-#: ImportMerge/importmerge.py:483 ImportMerge/importmerge.py:962
-#: ImportMerge/importmerge.py:983
+#: ImportMerge/importmerge.py:483 ImportMerge/importmerge.py:963
+#: ImportMerge/importmerge.py:984
 msgid "Imported"
 msgstr ""
 
-#: ImportMerge/importmerge.py:485 ImportMerge/importmerge.py:964
-#: ImportMerge/importmerge.py:985
+#: ImportMerge/importmerge.py:485 ImportMerge/importmerge.py:965
+#: ImportMerge/importmerge.py:986
 msgid "Result  "
 msgstr ""
 
@@ -213,15 +213,15 @@ msgstr ""
 msgid "Import and Merge"
 msgstr ""
 
-#: ImportMerge/importmerge.py:911 ImportMerge/importmerge.glade:407
+#: ImportMerge/importmerge.py:912 ImportMerge/importmerge.glade:407
 msgid "Replace"
 msgstr ""
 
-#: ImportMerge/importmerge.py:916
+#: ImportMerge/importmerge.py:917
 msgid "Add"
 msgstr ""
 
-#: ImportMerge/importmerge.py:921
+#: ImportMerge/importmerge.py:922
 msgid "Delete"
 msgstr ""
 

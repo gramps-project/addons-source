@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -98,11 +98,11 @@ msgstr ""
 msgid "Apply to selected places"
 msgstr ""
 
-#: PlaceUpdate/PlaceUpdate.py:266
+#: PlaceUpdate/PlaceUpdate.py:256
 msgid "Setting place properties"
 msgstr ""
 
-#: PlaceUpdate/PlaceUpdate.py:304
+#: PlaceUpdate/PlaceUpdate.py:294
 msgid "Regex operation failed: {}"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,136 +17,145 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: Form/editform.py:191
+#: Form/editform.py:192
 #, python-format
 msgid "Form: %s"
 msgstr ""
 
-#: Form/editform.py:193
+#: Form/editform.py:194
 msgid "New Form"
 msgstr ""
 
-#: Form/editform.py:200
+#: Form/editform.py:201
 msgid "Edit Form"
 msgstr ""
 
-#: Form/editform.py:223
+#: Form/editform.py:224
 msgid "Source:"
 msgstr ""
 
-#: Form/editform.py:235
+#: Form/editform.py:236
 msgid "Reference:"
 msgstr ""
 
-#: Form/editform.py:245
+#: Form/editform.py:246
 msgid "Date:"
 msgstr ""
 
-#: Form/editform.py:259
+#: Form/editform.py:260
 msgid "Place:"
 msgstr ""
 
-#: Form/editform.py:294
+#: Form/editform.py:295
 msgid "_Help"
 msgstr ""
 
-#: Form/editform.py:299 Form/selectform.py:101
+#: Form/editform.py:300 Form/selectform.py:101
 msgid "_Cancel"
 msgstr ""
 
-#: Form/editform.py:303 Form/selectform.py:102
+#: Form/editform.py:304 Form/selectform.py:102
 msgid "_OK"
 msgstr ""
 
-#: Form/editform.py:431
+#: Form/editform.py:393
+msgid "[Source recreated after deletion mid-form-edit]"
+msgstr ""
+
+#: Form/editform.py:446
 msgid "Headings"
 msgstr ""
 
-#: Form/editform.py:452
+#: Form/editform.py:467
 msgid "Key"
 msgstr ""
 
-#: Form/editform.py:458
+#: Form/editform.py:473
 msgid "Value"
 msgstr ""
 
-#: Form/editform.py:534
+#: Form/editform.py:549
 msgid "Details"
 msgstr ""
 
-#: Form/editform.py:771 Form/editform.py:788 Form/editform.py:1018
+#: Form/editform.py:786 Form/editform.py:803 Form/editform.py:1043
 msgid "Select Person"
 msgstr ""
 
-#: Form/editform.py:805 Form/editform.py:807 Form/editform.py:879
-#: Form/editform.py:1028 Form/editform.py:1217 Form/CensusCheckQuickview.py:126
-#: Form/CensusCheckUpQuickview.py:126 Form/form_be.xml.h:1 Form/form_be.xml.h:2
-#: Form/form_be.xml.h:3 Form/form_be.xml.h:4 Form/form_be.xml.h:5
-#: Form/form_be.xml.h:6 Form/form_be.xml.h:7 Form/form_ca.xml.h:10
-#: Form/form_ca.xml.h:98 Form/form_ca.xml.h:216 Form/form_ca.xml.h:308
-#: Form/form_ca.xml.h:362 Form/form_ca.xml.h:409 Form/form_ca.xml.h:464
-#: Form/form_ca.xml.h:537 Form/form_ca.xml.h:626 Form/form_ca.xml.h:675
-#: Form/form_ca.xml.h:808 Form/form_us.xml.h:8 Form/form_us.xml.h:22
-#: Form/form_us.xml.h:43 Form/form_us.xml.h:64 Form/form_us.xml.h:104
-#: Form/form_us.xml.h:173 Form/form_us.xml.h:261 Form/form_us.xml.h:337
-#: Form/form_us.xml.h:414 Form/form_us.xml.h:436 Form/form_us.xml.h:466
-#: Form/form_us.xml.h:501 Form/form_us.xml.h:616 Form/form_us.xml.h:648
-#: Form/form_us.xml.h:672 Form/form_us.xml.h:713 Form/form_us.xml.h:756
-#: Form/form_us.xml.h:796 Form/form_us.xml.h:839 Form/form_us.xml.h:897
-#: Form/form_us.xml.h:975 Form/form_us.xml.h:983 Form/form_us.xml.h:1002
-#: Form/form_us.xml.h:1057 Form/form_us.xml.h:1060 Form/form_us.xml.h:1070
-#: Form/form_us.xml.h:1106 Form/form_us.xml.h:1134 Form/form_us.xml.h:1150
-#: Form/form_us.xml.h:1158 Form/form_us.xml.h:1193 Form/form_us.xml.h:1198
-#: Form/form_us.xml.h:1200 Form/form_us.xml.h:1249 Form/form_us.xml.h:1277
-#: Form/form_us.xml.h:1314 Form/form_us.xml.h:1315 Form/form_us.xml.h:1377
-#: Form/form_us.xml.h:1424 Form/form_us.xml.h:1484 Form/form_us.xml.h:1498
-#: Form/form_us.xml.h:1517 Form/form_us.xml.h:1538 Form/form_us.xml.h:1556
-#: Form/form_us.xml.h:1578 Form/form_us.xml.h:1601 Form/form_us.xml.h:1624
-#: Form/form_us.xml.h:1638 Form/form_us.xml.h:1653 Form/form_us.xml.h:1679
-#: Form/form_us.xml.h:1696 Form/form_us.xml.h:1769 Form/form_us.xml.h:1849
-#: Form/form_us.xml.h:1878 Form/form_us.xml.h:1900 Form/form_us.xml.h:1929
-#: Form/form_us.xml.h:1952 Form/form_us.xml.h:1964 Form/form_us.xml.h:1983
-#: Form/form_us.xml.h:2003 Form/form_us.xml.h:2016 Form/form_us.xml.h:2022
-#: Form/form_us.xml.h:2037 Form/form_us.xml.h:2076 Form/form_us.xml.h:2113
-#: Form/form_us.xml.h:2151 Form/form_us.xml.h:2189 Form/form_us.xml.h:2227
-#: Form/form_us.xml.h:2272 Form/form_us.xml.h:2290 Form/form_us.xml.h:2301
-#: Form/form_us.xml.h:2319 Form/form_us.xml.h:2330 Form/form_us.xml.h:2347
-#: Form/form_us.xml.h:2354 Form/form_us.xml.h:2360 Form/form_us.xml.h:2366
-#: Form/form_us.xml.h:2373 Form/form_us.xml.h:2385 Form/form_us.xml.h:2387
-#: Form/form_us.xml.h:2389 Form/form_us.xml.h:2397 Form/form_us.xml.h:2404
-#: Form/form_us.xml.h:2410 Form/form_us.xml.h:2414 Form/form_us.xml.h:2418
-#: Form/form_us.xml.h:2422 Form/form_us.xml.h:2426 Form/form_us.xml.h:2431
-#: Form/form_us.xml.h:2463 Form/form_us.xml.h:2487 Form/form_us.xml.h:2509
-#: Form/form_us.xml.h:2524 Form/form_us.xml.h:2553 Form/form_us.xml.h:2595
-#: Form/form_us.xml.h:2617 Form/form_dk.xml.h:9 Form/form_dk.xml.h:26
-#: Form/form_dk.xml.h:43 Form/form_dk.xml.h:58 Form/form_dk.xml.h:75
-#: Form/form_dk.xml.h:92 Form/form_dk.xml.h:109 Form/form_dk.xml.h:128
-#: Form/form_dk.xml.h:147 Form/form_dk.xml.h:168 Form/form_dk.xml.h:191
-#: Form/form_dk.xml.h:212 Form/form_dk.xml.h:233 Form/form_dk.xml.h:257
-#: Form/form_dk.xml.h:291 Form/form_dk.xml.h:320 Form/form_dk.xml.h:344
-#: Form/form_dk.xml.h:370 Form/form_dk.xml.h:394 Form/form_dk.xml.h:414
-#: Form/form_dk.xml.h:434 Form/form_pl.xml.h:1 Form/form_pl.xml.h:20
-#: Form/form_pl.xml.h:30 Form/form_fr.xml.h:1 Form/form_fr.xml.h:9
-#: Form/form_fr.xml.h:17 Form/form_fr.xml.h:25 Form/form_fr.xml.h:33
-#: Form/form_fr.xml.h:40 Form/form_fr.xml.h:45 Form/form_fr.xml.h:50
-#: Form/form_fr.xml.h:59 Form/form_fr.xml.h:64 Form/form_fr.xml.h:69
-#: Form/form_fr.xml.h:74 Form/form_fr.xml.h:83 Form/form_fr.xml.h:89
-#: Form/form_fr.xml.h:95 Form/form_fr.xml.h:101 Form/form_fr.xml.h:109
-#: Form/form_fr.xml.h:117 Form/form_fr.xml.h:123 Form/form_fr.xml.h:130
-#: Form/form_fr.xml.h:137 Form/form_fr.xml.h:147 Form/form_fr.xml.h:155
-#: Form/form_fr.xml.h:164 Form/form_fr.xml.h:172 Form/form_fr.xml.h:181
-#: Form/form_fr.xml.h:190 Form/form_fr.xml.h:199 Form/form_fr.xml.h:208
-#: Form/form_gb.xml.h:8 Form/form_gb.xml.h:10 Form/form_gb.xml.h:12
-#: Form/form_gb.xml.h:15 Form/form_gb.xml.h:24 Form/form_gb.xml.h:30
-#: Form/form_gb.xml.h:33 Form/form_gb.xml.h:36 Form/form_gb.xml.h:45
-#: Form/form_gb.xml.h:55 Form/form_gb.xml.h:61 Form/form_gb.xml.h:74
-#: Form/form_gb.xml.h:92 Form/form_gb.xml.h:111 Form/form_gb.xml.h:132
-#: Form/form_gb.xml.h:154 Form/form_gb.xml.h:179 Form/form_gb.xml.h:200
-#: Form/form_gb.xml.h:234 Form/form_gb.xml.h:261 Form/form_gb.xml.h:283
-#: Form/form_gb.xml.h:310 Form/form_gb.xml.h:333 Form/form_gb.xml.h:369
-#: Form/form_gb.xml.h:398 Form/form_gb.xml.h:409 Form/form_gb.xml.h:426
-#: Form/form_gb.xml.h:453 Form/form_gb.xml.h:481 Form/form_gb.xml.h:513
-#: Form/form_gb.xml.h:552 Form/form_gb.xml.h:579 Form/form_gb.xml.h:608
+#: Form/editform.py:820 Form/editform.py:822 Form/editform.py:894
+#: Form/editform.py:1053 Form/editform.py:1251 Form/CensusCheckQuickview.py:126
+#: Form/CensusCheckUpQuickview.py:126 Form/form_ie.xml.h:15
+#: Form/form_ie.xml.h:47 Form/form_ie.xml.h:55 Form/form_ie.xml.h:61
+#: Form/form_ie.xml.h:65 Form/form_ie.xml.h:80 Form/form_ie.xml.h:90
+#: Form/form_ie.xml.h:94 Form/form_ie.xml.h:98 Form/form_ie.xml.h:100
+#: Form/form_ie.xml.h:112 Form/form_ie.xml.h:130 Form/form_be.xml.h:1
+#: Form/form_be.xml.h:2 Form/form_be.xml.h:3 Form/form_be.xml.h:4
+#: Form/form_be.xml.h:5 Form/form_be.xml.h:6 Form/form_be.xml.h:7
+#: Form/form_ca.xml.h:10 Form/form_ca.xml.h:98 Form/form_ca.xml.h:216
+#: Form/form_ca.xml.h:308 Form/form_ca.xml.h:362 Form/form_ca.xml.h:409
+#: Form/form_ca.xml.h:464 Form/form_ca.xml.h:537 Form/form_ca.xml.h:626
+#: Form/form_ca.xml.h:675 Form/form_ca.xml.h:808 Form/form_us.xml.h:8
+#: Form/form_us.xml.h:22 Form/form_us.xml.h:43 Form/form_us.xml.h:64
+#: Form/form_us.xml.h:104 Form/form_us.xml.h:173 Form/form_us.xml.h:261
+#: Form/form_us.xml.h:337 Form/form_us.xml.h:414 Form/form_us.xml.h:436
+#: Form/form_us.xml.h:466 Form/form_us.xml.h:501 Form/form_us.xml.h:616
+#: Form/form_us.xml.h:648 Form/form_us.xml.h:672 Form/form_us.xml.h:713
+#: Form/form_us.xml.h:756 Form/form_us.xml.h:796 Form/form_us.xml.h:839
+#: Form/form_us.xml.h:897 Form/form_us.xml.h:975 Form/form_us.xml.h:983
+#: Form/form_us.xml.h:1002 Form/form_us.xml.h:1057 Form/form_us.xml.h:1060
+#: Form/form_us.xml.h:1070 Form/form_us.xml.h:1106 Form/form_us.xml.h:1134
+#: Form/form_us.xml.h:1150 Form/form_us.xml.h:1158 Form/form_us.xml.h:1193
+#: Form/form_us.xml.h:1198 Form/form_us.xml.h:1200 Form/form_us.xml.h:1249
+#: Form/form_us.xml.h:1277 Form/form_us.xml.h:1314 Form/form_us.xml.h:1315
+#: Form/form_us.xml.h:1377 Form/form_us.xml.h:1424 Form/form_us.xml.h:1484
+#: Form/form_us.xml.h:1498 Form/form_us.xml.h:1517 Form/form_us.xml.h:1538
+#: Form/form_us.xml.h:1556 Form/form_us.xml.h:1578 Form/form_us.xml.h:1601
+#: Form/form_us.xml.h:1624 Form/form_us.xml.h:1638 Form/form_us.xml.h:1653
+#: Form/form_us.xml.h:1679 Form/form_us.xml.h:1696 Form/form_us.xml.h:1769
+#: Form/form_us.xml.h:1849 Form/form_us.xml.h:1878 Form/form_us.xml.h:1900
+#: Form/form_us.xml.h:1929 Form/form_us.xml.h:1952 Form/form_us.xml.h:1964
+#: Form/form_us.xml.h:1983 Form/form_us.xml.h:2003 Form/form_us.xml.h:2016
+#: Form/form_us.xml.h:2022 Form/form_us.xml.h:2037 Form/form_us.xml.h:2076
+#: Form/form_us.xml.h:2113 Form/form_us.xml.h:2151 Form/form_us.xml.h:2189
+#: Form/form_us.xml.h:2227 Form/form_us.xml.h:2272 Form/form_us.xml.h:2290
+#: Form/form_us.xml.h:2301 Form/form_us.xml.h:2319 Form/form_us.xml.h:2330
+#: Form/form_us.xml.h:2347 Form/form_us.xml.h:2354 Form/form_us.xml.h:2360
+#: Form/form_us.xml.h:2366 Form/form_us.xml.h:2373 Form/form_us.xml.h:2385
+#: Form/form_us.xml.h:2387 Form/form_us.xml.h:2389 Form/form_us.xml.h:2397
+#: Form/form_us.xml.h:2404 Form/form_us.xml.h:2410 Form/form_us.xml.h:2414
+#: Form/form_us.xml.h:2418 Form/form_us.xml.h:2422 Form/form_us.xml.h:2426
+#: Form/form_us.xml.h:2431 Form/form_us.xml.h:2463 Form/form_us.xml.h:2487
+#: Form/form_us.xml.h:2509 Form/form_us.xml.h:2524 Form/form_us.xml.h:2553
+#: Form/form_us.xml.h:2595 Form/form_us.xml.h:2617 Form/form_dk.xml.h:9
+#: Form/form_dk.xml.h:26 Form/form_dk.xml.h:43 Form/form_dk.xml.h:58
+#: Form/form_dk.xml.h:75 Form/form_dk.xml.h:92 Form/form_dk.xml.h:109
+#: Form/form_dk.xml.h:128 Form/form_dk.xml.h:147 Form/form_dk.xml.h:168
+#: Form/form_dk.xml.h:191 Form/form_dk.xml.h:212 Form/form_dk.xml.h:233
+#: Form/form_dk.xml.h:257 Form/form_dk.xml.h:291 Form/form_dk.xml.h:320
+#: Form/form_dk.xml.h:344 Form/form_dk.xml.h:370 Form/form_dk.xml.h:394
+#: Form/form_dk.xml.h:414 Form/form_dk.xml.h:434 Form/form_pl.xml.h:1
+#: Form/form_pl.xml.h:20 Form/form_pl.xml.h:30 Form/form_fr.xml.h:1
+#: Form/form_fr.xml.h:9 Form/form_fr.xml.h:17 Form/form_fr.xml.h:25
+#: Form/form_fr.xml.h:33 Form/form_fr.xml.h:40 Form/form_fr.xml.h:45
+#: Form/form_fr.xml.h:50 Form/form_fr.xml.h:59 Form/form_fr.xml.h:64
+#: Form/form_fr.xml.h:69 Form/form_fr.xml.h:74 Form/form_fr.xml.h:83
+#: Form/form_fr.xml.h:89 Form/form_fr.xml.h:95 Form/form_fr.xml.h:101
+#: Form/form_fr.xml.h:109 Form/form_fr.xml.h:117 Form/form_fr.xml.h:123
+#: Form/form_fr.xml.h:130 Form/form_fr.xml.h:137 Form/form_fr.xml.h:147
+#: Form/form_fr.xml.h:155 Form/form_fr.xml.h:164 Form/form_fr.xml.h:172
+#: Form/form_fr.xml.h:181 Form/form_fr.xml.h:190 Form/form_fr.xml.h:199
+#: Form/form_fr.xml.h:208 Form/form_gb.xml.h:8 Form/form_gb.xml.h:10
+#: Form/form_gb.xml.h:12 Form/form_gb.xml.h:15 Form/form_gb.xml.h:24
+#: Form/form_gb.xml.h:30 Form/form_gb.xml.h:33 Form/form_gb.xml.h:36
+#: Form/form_gb.xml.h:45 Form/form_gb.xml.h:55 Form/form_gb.xml.h:61
+#: Form/form_gb.xml.h:74 Form/form_gb.xml.h:92 Form/form_gb.xml.h:111
+#: Form/form_gb.xml.h:132 Form/form_gb.xml.h:154 Form/form_gb.xml.h:179
+#: Form/form_gb.xml.h:200 Form/form_gb.xml.h:234 Form/form_gb.xml.h:261
+#: Form/form_gb.xml.h:283 Form/form_gb.xml.h:310 Form/form_gb.xml.h:333
+#: Form/form_gb.xml.h:369 Form/form_gb.xml.h:398 Form/form_gb.xml.h:409
+#: Form/form_gb.xml.h:426 Form/form_gb.xml.h:453 Form/form_gb.xml.h:481
+#: Form/form_gb.xml.h:513 Form/form_gb.xml.h:552 Form/form_gb.xml.h:579
+#: Form/form_gb.xml.h:608
 msgid "Name"
 msgstr ""
 
@@ -219,15 +228,15 @@ msgstr ""
 msgid "Bride"
 msgstr ""
 
-#: Form/form.py:173
+#: Form/form.py:174
 msgid "XML syntax error in Form definition file"
 msgstr ""
 
-#: Form/form.py:184
+#: Form/form.py:185
 msgid "Failed to read Form definition file"
 msgstr ""
 
-#: Form/form.py:193
+#: Form/form.py:194
 msgid "Invalid Form definition file"
 msgstr ""
 
@@ -260,6 +269,570 @@ msgid ""
 "ancestors"
 msgstr ""
 
+#: Form/form_ie.xml.h:1
+msgid "Total Area in Statute Acres"
+msgstr ""
+
+#: Form/form_ie.xml.h:2
+msgid "Signature of Head of Household"
+msgstr ""
+
+#: Form/form_ie.xml.h:3
+msgid "Signature of Enumerator"
+msgstr ""
+
+#: Form/form_ie.xml.h:4
+msgid "Persons"
+msgstr ""
+
+#: Form/form_ie.xml.h:5
+msgid "Males"
+msgstr ""
+
+#: Form/form_ie.xml.h:6 Form/form_us.xml.h:1196
+msgid "Females"
+msgstr ""
+
+#: Form/form_ie.xml.h:7 Form/form_ca.xml.h:559
+msgid "Rooms"
+msgstr ""
+
+#: Form/form_ie.xml.h:8
+msgid "County or Co. Borough"
+msgstr ""
+
+#: Form/form_ie.xml.h:9
+msgid "District Electoral Division or Ward"
+msgstr ""
+
+#: Form/form_ie.xml.h:10 Form/form_gb.xml.h:576 Form/form_gb.xml.h:599
+msgid "Townland"
+msgstr ""
+
+#: Form/form_ie.xml.h:11
+msgid "Urban Dist. Town or Village"
+msgstr ""
+
+#: Form/form_ie.xml.h:12
+msgid "Street etc with No. of House"
+msgstr ""
+
+#: Form/form_ie.xml.h:13
+msgid "No. of Schedule"
+msgstr ""
+
+#: Form/form_ie.xml.h:14
+msgid "Name of Public Institution"
+msgstr ""
+
+#: Form/form_ie.xml.h:16 Form/form_ie.xml.h:113
+msgid "Name and Surname"
+msgstr ""
+
+#: Form/form_ie.xml.h:17 Form/form_ca.xml.h:417 Form/form_ca.xml.h:470
+#: Form/form_ca.xml.h:628 Form/form_ca.xml.h:681 Form/form_ca.xml.h:769
+#: Form/form_ca.xml.h:820 Form/form_us.xml.h:1427 Form/form_us.xml.h:1965
+#: Form/form_us.xml.h:1984 Form/form_us.xml.h:2004 Form/form_dk.xml.h:14
+#: Form/form_dk.xml.h:31 Form/form_dk.xml.h:48 Form/form_dk.xml.h:65
+#: Form/form_dk.xml.h:82 Form/form_dk.xml.h:99 Form/form_dk.xml.h:118
+#: Form/form_dk.xml.h:137 Form/form_dk.xml.h:156 Form/form_dk.xml.h:177
+#: Form/form_dk.xml.h:200 Form/form_dk.xml.h:221 Form/form_dk.xml.h:242
+#: Form/form_dk.xml.h:270 Form/form_dk.xml.h:305 Form/form_dk.xml.h:331
+#: Form/form_dk.xml.h:347 Form/form_dk.xml.h:379 Form/form_dk.xml.h:399
+#: Form/form_dk.xml.h:421 Form/form_dk.xml.h:441 Form/form_fr.xml.h:5
+#: Form/form_fr.xml.h:13 Form/form_fr.xml.h:21 Form/form_fr.xml.h:29
+#: Form/form_fr.xml.h:36 Form/form_fr.xml.h:121 Form/form_fr.xml.h:128
+#: Form/form_fr.xml.h:135 Form/form_fr.xml.h:142 Form/form_fr.xml.h:152
+#: Form/form_fr.xml.h:161 Form/form_fr.xml.h:169 Form/form_fr.xml.h:178
+#: Form/form_fr.xml.h:187 Form/form_fr.xml.h:196 Form/form_fr.xml.h:205
+#: Form/form_fr.xml.h:216 Form/form_gb.xml.h:76 Form/form_gb.xml.h:94
+#: Form/form_gb.xml.h:113 Form/form_gb.xml.h:134 Form/form_gb.xml.h:156
+#: Form/form_gb.xml.h:181 Form/form_gb.xml.h:202 Form/form_gb.xml.h:236
+#: Form/form_gb.xml.h:285 Form/form_gb.xml.h:312 Form/form_gb.xml.h:335
+#: Form/form_gb.xml.h:371 Form/form_gb.xml.h:432 Form/form_gb.xml.h:459
+#: Form/form_gb.xml.h:487 Form/form_gb.xml.h:519 Form/form_gb.xml.h:558
+#: Form/form_gb.xml.h:580 Form/form_gb.xml.h:609
+msgid "Relation"
+msgstr ""
+
+#: Form/form_ie.xml.h:18
+msgid "Relationship to Head of Household"
+msgstr ""
+
+#: Form/form_ie.xml.h:19
+msgid "Year Age"
+msgstr ""
+
+#: Form/form_ie.xml.h:20 Form/form_us.xml.h:2561
+msgid "Age in years"
+msgstr ""
+
+#: Form/form_ie.xml.h:21
+msgid "Month Age"
+msgstr ""
+
+#: Form/form_ie.xml.h:22
+msgid "Age in months"
+msgstr ""
+
+#: Form/form_ie.xml.h:23 Form/form_ie.xml.h:53 Form/form_ie.xml.h:118
+#: Form/form_ca.xml.h:310 Form/form_ca.xml.h:364 Form/form_ca.xml.h:411
+#: Form/form_ca.xml.h:466 Form/form_ca.xml.h:630 Form/form_ca.xml.h:679
+#: Form/form_ca.xml.h:767 Form/form_ca.xml.h:822 Form/form_us.xml.h:263
+#: Form/form_us.xml.h:339 Form/form_us.xml.h:416 Form/form_us.xml.h:438
+#: Form/form_us.xml.h:468 Form/form_us.xml.h:620 Form/form_us.xml.h:675
+#: Form/form_us.xml.h:715 Form/form_us.xml.h:760 Form/form_us.xml.h:802
+#: Form/form_us.xml.h:844 Form/form_us.xml.h:905 Form/form_us.xml.h:1072
+#: Form/form_us.xml.h:1108 Form/form_us.xml.h:1202 Form/form_us.xml.h:1255
+#: Form/form_us.xml.h:1318 Form/form_us.xml.h:1319 Form/form_us.xml.h:1407
+#: Form/form_us.xml.h:1428 Form/form_us.xml.h:1486 Form/form_us.xml.h:1500
+#: Form/form_us.xml.h:1519 Form/form_us.xml.h:1540 Form/form_us.xml.h:1561
+#: Form/form_us.xml.h:1583 Form/form_us.xml.h:1607 Form/form_us.xml.h:1626
+#: Form/form_us.xml.h:1640 Form/form_us.xml.h:1655 Form/form_us.xml.h:1683
+#: Form/form_us.xml.h:1851 Form/form_us.xml.h:1882 Form/form_us.xml.h:1904
+#: Form/form_us.xml.h:1933 Form/form_us.xml.h:1953 Form/form_us.xml.h:1967
+#: Form/form_us.xml.h:1986 Form/form_us.xml.h:2006 Form/form_us.xml.h:2097
+#: Form/form_us.xml.h:2135 Form/form_us.xml.h:2173 Form/form_us.xml.h:2211
+#: Form/form_us.xml.h:2333 Form/form_us.xml.h:2348 Form/form_us.xml.h:2376
+#: Form/form_us.xml.h:2436 Form/form_us.xml.h:2466 Form/form_us.xml.h:2490
+#: Form/form_gb.xml.h:9 Form/form_gb.xml.h:46 Form/form_gb.xml.h:242
+#: Form/form_gb.xml.h:265 Form/form_gb.xml.h:377 Form/form_gb.xml.h:586
+msgid "Sex"
+msgstr ""
+
+#: Form/form_ie.xml.h:24 Form/form_us.xml.h:473 Form/form_us.xml.h:1113
+#: Form/form_us.xml.h:1204 Form/form_us.xml.h:1285 Form/form_us.xml.h:1521
+#: Form/form_us.xml.h:1856 Form/form_us.xml.h:1886 Form/form_us.xml.h:1910
+#: Form/form_us.xml.h:1937 Form/form_us.xml.h:2063 Form/form_us.xml.h:2099
+#: Form/form_us.xml.h:2137 Form/form_us.xml.h:2175 Form/form_us.xml.h:2213
+msgid "Married"
+msgstr ""
+
+#: Form/form_ie.xml.h:25
+msgid "Marriage or Orphanhood"
+msgstr ""
+
+#: Form/form_ie.xml.h:26 Form/form_us.xml.h:1390 Form/form_us.xml.h:1642
+#: Form/form_us.xml.h:1686 Form/form_us.xml.h:2052 Form/form_us.xml.h:2084
+#: Form/form_us.xml.h:2121 Form/form_us.xml.h:2159 Form/form_us.xml.h:2197
+#: Form/form_us.xml.h:2356 Form/form_us.xml.h:2362 Form/form_us.xml.h:2409
+#: Form/form_us.xml.h:2411 Form/form_us.xml.h:2415 Form/form_us.xml.h:2419
+#: Form/form_us.xml.h:2423 Form/form_us.xml.h:2448 Form/form_us.xml.h:2470
+#: Form/form_gb.xml.h:246 Form/form_gb.xml.h:381
+msgid "Birthplace"
+msgstr ""
+
+#: Form/form_ie.xml.h:27 Form/form_gb.xml.h:590 Form/form_gb.xml.h:622
+msgid "Irish Language"
+msgstr ""
+
+#: Form/form_ie.xml.h:28
+msgid ""
+"\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
+"cannot speak Irish\""
+msgstr ""
+
+#: Form/form_ie.xml.h:29 Form/form_ca.xml.h:16 Form/form_ca.xml.h:224
+#: Form/form_ca.xml.h:318 Form/form_ca.xml.h:372 Form/form_ca.xml.h:427
+#: Form/form_ca.xml.h:490 Form/form_ca.xml.h:701 Form/form_ca.xml.h:781
+#: Form/form_ca.xml.h:830 Form/form_dk.xml.h:154 Form/form_dk.xml.h:175
+#: Form/form_dk.xml.h:198 Form/form_dk.xml.h:219 Form/form_dk.xml.h:240
+#: Form/form_dk.xml.h:268 Form/form_dk.xml.h:303 Form/form_dk.xml.h:325
+#: Form/form_fr.xml.h:80 Form/form_fr.xml.h:218 Form/form_gb.xml.h:582
+#: Form/form_gb.xml.h:611
+msgid "Religion"
+msgstr ""
+
+#: Form/form_ie.xml.h:30 Form/form_gb.xml.h:217 Form/form_gb.xml.h:350
+msgid "Personal Occupation"
+msgstr ""
+
+#: Form/form_ie.xml.h:31 Form/form_ca.xml.h:852 Form/form_gb.xml.h:252
+#: Form/form_gb.xml.h:387
+msgid "Employment"
+msgstr ""
+
+#: Form/form_ie.xml.h:32 Form/form_gb.xml.h:208 Form/form_gb.xml.h:341
+#: Form/form_gb.xml.h:617
+msgid "Years Married"
+msgstr ""
+
+#: Form/form_ie.xml.h:33
+msgid "Years married in present Marriage"
+msgstr ""
+
+#: Form/form_ie.xml.h:34
+msgid "Months Married"
+msgstr ""
+
+#: Form/form_ie.xml.h:35
+msgid "Months married in present Marriage"
+msgstr ""
+
+#: Form/form_ie.xml.h:36
+msgid "Present Marriage Children"
+msgstr ""
+
+#: Form/form_ie.xml.h:37
+msgid "Children born alive to present marriage"
+msgstr ""
+
+#: Form/form_ie.xml.h:38
+msgid "Total Children Under 16 Living"
+msgstr ""
+
+#: Form/form_ie.xml.h:39
+msgid "(1.) Entry no."
+msgstr ""
+
+#: Form/form_ie.xml.h:40 Form/form_ie.xml.h:74 Form/form_ie.xml.h:102
+msgid "Superintendent Registrar's District"
+msgstr ""
+
+#: Form/form_ie.xml.h:41 Form/form_ie.xml.h:73 Form/form_ie.xml.h:103
+msgid "Registrar's District"
+msgstr ""
+
+#: Form/form_ie.xml.h:42 Form/form_ie.xml.h:104 Form/form_ca.xml.h:290
+#: Form/form_ca.xml.h:344 Form/form_ca.xml.h:392 Form/form_ca.xml.h:452
+#: Form/form_ca.xml.h:531 Form/form_ca.xml.h:617 Form/form_ca.xml.h:663
+#: Form/form_ca.xml.h:796
+msgid "District"
+msgstr ""
+
+#: Form/form_ie.xml.h:43 Form/form_ie.xml.h:105
+msgid "Union"
+msgstr ""
+
+#: Form/form_ie.xml.h:44 Form/form_ie.xml.h:75 Form/form_ie.xml.h:106
+#: Form/form_ca.xml.h:4 Form/form_ca.xml.h:95 Form/form_us.xml.h:853
+#: Form/form_us.xml.h:888 Form/form_us.xml.h:934 Form/form_us.xml.h:980
+#: Form/form_us.xml.h:1310 Form/form_us.xml.h:1379 Form/form_us.xml.h:1995
+#: Form/form_us.xml.h:2015 Form/form_us.xml.h:2039 Form/form_us.xml.h:2078
+#: Form/form_us.xml.h:2115 Form/form_us.xml.h:2153 Form/form_us.xml.h:2191
+#: Form/form_us.xml.h:2226 Form/form_us.xml.h:2235 Form/form_us.xml.h:2247
+#: Form/form_dk.xml.h:1 Form/form_dk.xml.h:18 Form/form_dk.xml.h:35
+#: Form/form_dk.xml.h:50 Form/form_dk.xml.h:67 Form/form_dk.xml.h:84
+#: Form/form_dk.xml.h:101 Form/form_dk.xml.h:120 Form/form_dk.xml.h:139
+#: Form/form_dk.xml.h:158 Form/form_dk.xml.h:181 Form/form_dk.xml.h:204
+#: Form/form_dk.xml.h:225 Form/form_dk.xml.h:249 Form/form_dk.xml.h:283
+#: Form/form_dk.xml.h:312 Form/form_dk.xml.h:336 Form/form_dk.xml.h:362
+#: Form/form_dk.xml.h:386 Form/form_dk.xml.h:406 Form/form_dk.xml.h:426
+#: Form/form_gb.xml.h:574 Form/form_gb.xml.h:594
+msgid "County"
+msgstr ""
+
+#: Form/form_ie.xml.h:45
+msgid "(10.) Signature of Registrar"
+msgstr ""
+
+#: Form/form_ie.xml.h:46
+msgid "(11.) Baptismal Name if added after Registration of Birth, and Date"
+msgstr ""
+
+#: Form/form_ie.xml.h:48
+msgid "(3.) Name (if any)"
+msgstr ""
+
+#: Form/form_ie.xml.h:49 Form/form_us.xml.h:986 Form/form_us.xml.h:1008
+#: Form/form_us.xml.h:1141 Form/form_us.xml.h:1155 Form/form_us.xml.h:1452
+#: Form/form_us.xml.h:2375 Form/form_us.xml.h:2488 Form/form_us.xml.h:2513
+#: Form/form_us.xml.h:2565 Form/form_gb.xml.h:51
+msgid "Place of Birth"
+msgstr ""
+
+#: Form/form_ie.xml.h:50 Form/form_ie.xml.h:52
+msgid "(2.) Date and Place of Birth"
+msgstr ""
+
+#: Form/form_ie.xml.h:51 Form/form_us.xml.h:985 Form/form_us.xml.h:1009
+#: Form/form_us.xml.h:2374 Form/form_us.xml.h:2563 Form/form_dk.xml.h:260
+#: Form/form_dk.xml.h:295 Form/form_dk.xml.h:321 Form/form_dk.xml.h:345
+#: Form/form_dk.xml.h:371 Form/form_dk.xml.h:395 Form/form_dk.xml.h:417
+#: Form/form_dk.xml.h:435 Form/form_gb.xml.h:50
+msgid "Date of Birth"
+msgstr ""
+
+#: Form/form_ie.xml.h:54
+msgid "(4.) M or F for male or female"
+msgstr ""
+
+#: Form/form_ie.xml.h:56 Form/form_ie.xml.h:58
+msgid "(5.) Name and Surname and Dwelling-place of Father"
+msgstr ""
+
+#: Form/form_ie.xml.h:57 Form/form_ie.xml.h:67 Form/form_ie.xml.h:88
+#: Form/form_ie.xml.h:136 Form/form_ca.xml.h:18 Form/form_ca.xml.h:226
+#: Form/form_us.xml.h:2355 Form/form_us.xml.h:2361 Form/form_us.xml.h:2368
+#: Form/form_us.xml.h:2386 Form/form_us.xml.h:2388 Form/form_us.xml.h:2408
+#: Form/form_us.xml.h:2413 Form/form_us.xml.h:2417 Form/form_us.xml.h:2421
+#: Form/form_us.xml.h:2425 Form/form_us.xml.h:2433 Form/form_us.xml.h:2497
+#: Form/form_us.xml.h:2508 Form/form_gb.xml.h:18 Form/form_gb.xml.h:29
+#: Form/form_gb.xml.h:58
+msgid "Residence"
+msgstr ""
+
+#: Form/form_ie.xml.h:59 Form/form_ie.xml.h:86 Form/form_ie.xml.h:92
+#: Form/form_ie.xml.h:96 Form/form_ie.xml.h:124 Form/form_ca.xml.h:12
+#: Form/form_ca.xml.h:218 Form/form_ca.xml.h:322 Form/form_ca.xml.h:376
+#: Form/form_ca.xml.h:429 Form/form_ca.xml.h:492 Form/form_ca.xml.h:703
+#: Form/form_ca.xml.h:850 Form/form_us.xml.h:265 Form/form_us.xml.h:341
+#: Form/form_us.xml.h:422 Form/form_us.xml.h:440 Form/form_us.xml.h:476
+#: Form/form_us.xml.h:631 Form/form_us.xml.h:690 Form/form_us.xml.h:728
+#: Form/form_us.xml.h:777 Form/form_us.xml.h:816 Form/form_us.xml.h:863
+#: Form/form_us.xml.h:1050 Form/form_us.xml.h:1059 Form/form_us.xml.h:1078
+#: Form/form_us.xml.h:1116 Form/form_us.xml.h:1144 Form/form_us.xml.h:1157
+#: Form/form_us.xml.h:1208 Form/form_us.xml.h:1258 Form/form_us.xml.h:1290
+#: Form/form_us.xml.h:1356 Form/form_us.xml.h:1357 Form/form_us.xml.h:1383
+#: Form/form_us.xml.h:1490 Form/form_us.xml.h:1502 Form/form_us.xml.h:1524
+#: Form/form_us.xml.h:1544 Form/form_us.xml.h:1565 Form/form_us.xml.h:1587
+#: Form/form_us.xml.h:1616 Form/form_us.xml.h:1662 Form/form_us.xml.h:1693
+#: Form/form_us.xml.h:1859 Form/form_us.xml.h:1889 Form/form_us.xml.h:1913
+#: Form/form_us.xml.h:1940 Form/form_us.xml.h:1958 Form/form_us.xml.h:1972
+#: Form/form_us.xml.h:1991 Form/form_us.xml.h:2012 Form/form_us.xml.h:2051
+#: Form/form_us.xml.h:2082 Form/form_us.xml.h:2119 Form/form_us.xml.h:2157
+#: Form/form_us.xml.h:2195 Form/form_us.xml.h:2338 Form/form_us.xml.h:2359
+#: Form/form_us.xml.h:2365 Form/form_us.xml.h:2407 Form/form_us.xml.h:2412
+#: Form/form_us.xml.h:2416 Form/form_us.xml.h:2420 Form/form_us.xml.h:2424
+#: Form/form_us.xml.h:2442 Form/form_us.xml.h:2476 Form/form_us.xml.h:2491
+#: Form/form_us.xml.h:2512 Form/form_us.xml.h:2532 Form/form_us.xml.h:2601
+#: Form/form_us.xml.h:2618 Form/form_dk.xml.h:16 Form/form_dk.xml.h:33
+#: Form/form_dk.xml.h:114 Form/form_dk.xml.h:133 Form/form_dk.xml.h:244
+#: Form/form_dk.xml.h:272 Form/form_dk.xml.h:307 Form/form_dk.xml.h:333
+#: Form/form_dk.xml.h:349 Form/form_dk.xml.h:381 Form/form_dk.xml.h:401
+#: Form/form_dk.xml.h:423 Form/form_dk.xml.h:443 Form/form_fr.xml.h:4
+#: Form/form_fr.xml.h:12 Form/form_fr.xml.h:20 Form/form_fr.xml.h:28
+#: Form/form_fr.xml.h:35 Form/form_fr.xml.h:53 Form/form_fr.xml.h:62
+#: Form/form_fr.xml.h:66 Form/form_fr.xml.h:72 Form/form_fr.xml.h:77
+#: Form/form_fr.xml.h:86 Form/form_fr.xml.h:92 Form/form_fr.xml.h:98
+#: Form/form_fr.xml.h:105 Form/form_fr.xml.h:113 Form/form_fr.xml.h:119
+#: Form/form_fr.xml.h:125 Form/form_fr.xml.h:132 Form/form_fr.xml.h:143
+#: Form/form_fr.xml.h:149 Form/form_fr.xml.h:158 Form/form_fr.xml.h:166
+#: Form/form_fr.xml.h:175 Form/form_fr.xml.h:184 Form/form_fr.xml.h:193
+#: Form/form_fr.xml.h:202 Form/form_fr.xml.h:213 Form/form_gb.xml.h:11
+#: Form/form_gb.xml.h:14 Form/form_gb.xml.h:28 Form/form_gb.xml.h:32
+#: Form/form_gb.xml.h:35 Form/form_gb.xml.h:52 Form/form_gb.xml.h:65
+#: Form/form_gb.xml.h:80 Form/form_gb.xml.h:98 Form/form_gb.xml.h:119
+#: Form/form_gb.xml.h:140 Form/form_gb.xml.h:162 Form/form_gb.xml.h:187
+#: Form/form_gb.xml.h:216 Form/form_gb.xml.h:250 Form/form_gb.xml.h:270
+#: Form/form_gb.xml.h:291 Form/form_gb.xml.h:318 Form/form_gb.xml.h:349
+#: Form/form_gb.xml.h:385 Form/form_gb.xml.h:400 Form/form_gb.xml.h:415
+#: Form/form_gb.xml.h:436 Form/form_gb.xml.h:463 Form/form_gb.xml.h:491
+#: Form/form_gb.xml.h:523 Form/form_gb.xml.h:587 Form/form_gb.xml.h:615
+msgid "Occupation"
+msgstr ""
+
+#: Form/form_ie.xml.h:60
+msgid "(7.) Rank or Profession of Father"
+msgstr ""
+
+#: Form/form_ie.xml.h:62 Form/form_ie.xml.h:64
+msgid "(6.) Name and Surname and Maiden Surname of Mother"
+msgstr ""
+
+#: Form/form_ie.xml.h:63 Form/form_gb.xml.h:13 Form/form_gb.xml.h:47
+msgid "Maiden Surname"
+msgstr ""
+
+#: Form/form_ie.xml.h:66 Form/form_ie.xml.h:68
+msgid "(8.) Signature, Qualification, and Residence of Informant"
+msgstr ""
+
+#: Form/form_ie.xml.h:69
+msgid "When Registered"
+msgstr ""
+
+#: Form/form_ie.xml.h:70
+msgid "(9.) Date when birth was registered"
+msgstr ""
+
+#: Form/form_ie.xml.h:71
+msgid "Year"
+msgstr ""
+
+#: Form/form_ie.xml.h:72
+msgid "Solemnized at the Catholic"
+msgstr ""
+
+#: Form/form_ie.xml.h:76 Form/form_ie.xml.h:107
+msgid "Certificate number"
+msgstr ""
+
+#: Form/form_ie.xml.h:77 Form/form_ie.xml.h:108
+msgid "Page number"
+msgstr ""
+
+#: Form/form_ie.xml.h:78 Form/form_ie.xml.h:109
+msgid "(1.) Entry No."
+msgstr ""
+
+#: Form/form_ie.xml.h:79
+msgid "(2.) When Married"
+msgstr ""
+
+#: Form/form_ie.xml.h:81
+msgid "(3.) Name and Surname"
+msgstr ""
+
+#: Form/form_ie.xml.h:82 Form/form_ie.xml.h:122 Form/form_ca.xml.h:20
+#: Form/form_ca.xml.h:228 Form/form_ca.xml.h:312 Form/form_ca.xml.h:366
+#: Form/form_ca.xml.h:413 Form/form_ca.xml.h:478 Form/form_ca.xml.h:634
+#: Form/form_ca.xml.h:689 Form/form_ca.xml.h:775 Form/form_ca.xml.h:826
+#: Form/form_us.xml.h:262 Form/form_us.xml.h:338 Form/form_us.xml.h:415
+#: Form/form_us.xml.h:437 Form/form_us.xml.h:469 Form/form_us.xml.h:621
+#: Form/form_us.xml.h:678 Form/form_us.xml.h:717 Form/form_us.xml.h:762
+#: Form/form_us.xml.h:804 Form/form_us.xml.h:976 Form/form_us.xml.h:1073
+#: Form/form_us.xml.h:1109 Form/form_us.xml.h:1201 Form/form_us.xml.h:1254
+#: Form/form_us.xml.h:1326 Form/form_us.xml.h:1327 Form/form_us.xml.h:1378
+#: Form/form_us.xml.h:1430 Form/form_us.xml.h:1485 Form/form_us.xml.h:1499
+#: Form/form_us.xml.h:1518 Form/form_us.xml.h:1539 Form/form_us.xml.h:1560
+#: Form/form_us.xml.h:1582 Form/form_us.xml.h:1609 Form/form_us.xml.h:1625
+#: Form/form_us.xml.h:1639 Form/form_us.xml.h:1654 Form/form_us.xml.h:1684
+#: Form/form_us.xml.h:1852 Form/form_us.xml.h:1881 Form/form_us.xml.h:1903
+#: Form/form_us.xml.h:1932 Form/form_us.xml.h:1954 Form/form_us.xml.h:1968
+#: Form/form_us.xml.h:1987 Form/form_us.xml.h:2007 Form/form_us.xml.h:2050
+#: Form/form_us.xml.h:2077 Form/form_us.xml.h:2114 Form/form_us.xml.h:2152
+#: Form/form_us.xml.h:2190 Form/form_us.xml.h:2334 Form/form_us.xml.h:2357
+#: Form/form_us.xml.h:2363 Form/form_us.xml.h:2399 Form/form_us.xml.h:2405
+#: Form/form_us.xml.h:2441 Form/form_us.xml.h:2468 Form/form_us.xml.h:2489
+#: Form/form_us.xml.h:2600 Form/form_dk.xml.h:12 Form/form_dk.xml.h:29
+#: Form/form_dk.xml.h:46 Form/form_dk.xml.h:61 Form/form_dk.xml.h:78
+#: Form/form_dk.xml.h:95 Form/form_dk.xml.h:112 Form/form_dk.xml.h:131
+#: Form/form_dk.xml.h:150 Form/form_dk.xml.h:171 Form/form_dk.xml.h:194
+#: Form/form_dk.xml.h:215 Form/form_dk.xml.h:236 Form/form_pl.xml.h:7
+#: Form/form_pl.xml.h:35 Form/form_fr.xml.h:34 Form/form_fr.xml.h:60
+#: Form/form_fr.xml.h:70 Form/form_fr.xml.h:75 Form/form_fr.xml.h:84
+#: Form/form_fr.xml.h:90 Form/form_fr.xml.h:96 Form/form_fr.xml.h:102
+#: Form/form_fr.xml.h:110 Form/form_fr.xml.h:118 Form/form_fr.xml.h:124
+#: Form/form_fr.xml.h:131 Form/form_fr.xml.h:141 Form/form_fr.xml.h:148
+#: Form/form_fr.xml.h:165 Form/form_fr.xml.h:209 Form/form_gb.xml.h:26
+#: Form/form_gb.xml.h:49 Form/form_gb.xml.h:63 Form/form_gb.xml.h:79
+#: Form/form_gb.xml.h:97 Form/form_gb.xml.h:117 Form/form_gb.xml.h:138
+#: Form/form_gb.xml.h:160 Form/form_gb.xml.h:185 Form/form_gb.xml.h:204
+#: Form/form_gb.xml.h:238 Form/form_gb.xml.h:289 Form/form_gb.xml.h:316
+#: Form/form_gb.xml.h:337 Form/form_gb.xml.h:373 Form/form_gb.xml.h:399
+#: Form/form_gb.xml.h:414 Form/form_gb.xml.h:435 Form/form_gb.xml.h:462
+#: Form/form_gb.xml.h:490 Form/form_gb.xml.h:522 Form/form_gb.xml.h:562
+#: Form/form_gb.xml.h:585 Form/form_gb.xml.h:614
+msgid "Age"
+msgstr ""
+
+#: Form/form_ie.xml.h:83
+msgid "(4.) Full or Minor"
+msgstr ""
+
+#: Form/form_ie.xml.h:84 Form/form_ie.xml.h:120 Form/form_us.xml.h:1631
+#: Form/form_us.xml.h:1645 Form/form_us.xml.h:2406 Form/form_dk.xml.h:10
+#: Form/form_dk.xml.h:27 Form/form_dk.xml.h:44 Form/form_dk.xml.h:59
+#: Form/form_dk.xml.h:76 Form/form_dk.xml.h:93 Form/form_dk.xml.h:110
+#: Form/form_dk.xml.h:129 Form/form_dk.xml.h:148 Form/form_dk.xml.h:169
+#: Form/form_dk.xml.h:192 Form/form_dk.xml.h:213 Form/form_dk.xml.h:234
+#: Form/form_dk.xml.h:258 Form/form_dk.xml.h:293 Form/form_fr.xml.h:153
+#: Form/form_fr.xml.h:162 Form/form_fr.xml.h:170 Form/form_fr.xml.h:179
+#: Form/form_fr.xml.h:188 Form/form_fr.xml.h:197 Form/form_fr.xml.h:206
+#: Form/form_fr.xml.h:217 Form/form_gb.xml.h:27 Form/form_gb.xml.h:78
+#: Form/form_gb.xml.h:96 Form/form_gb.xml.h:115 Form/form_gb.xml.h:136
+#: Form/form_gb.xml.h:158 Form/form_gb.xml.h:183 Form/form_gb.xml.h:206
+#: Form/form_gb.xml.h:244 Form/form_gb.xml.h:268 Form/form_gb.xml.h:287
+#: Form/form_gb.xml.h:314 Form/form_gb.xml.h:339 Form/form_gb.xml.h:379
+#: Form/form_gb.xml.h:413 Form/form_gb.xml.h:434 Form/form_gb.xml.h:461
+#: Form/form_gb.xml.h:489 Form/form_gb.xml.h:521 Form/form_gb.xml.h:560
+#: Form/form_gb.xml.h:588 Form/form_gb.xml.h:616
+msgid "Condition"
+msgstr ""
+
+#: Form/form_ie.xml.h:85
+msgid "(5.) Bachelor or Spinster"
+msgstr ""
+
+#: Form/form_ie.xml.h:87
+msgid "(6.) Rank or Profession"
+msgstr ""
+
+#: Form/form_ie.xml.h:89
+msgid "Residence at the Time of Marriage"
+msgstr ""
+
+#: Form/form_ie.xml.h:91 Form/form_ie.xml.h:95
+msgid "(8.) Father's Name and Surname"
+msgstr ""
+
+#: Form/form_ie.xml.h:93 Form/form_ie.xml.h:97
+msgid "(9.) Rank or Profession of Father"
+msgstr ""
+
+#: Form/form_ie.xml.h:99 Form/form_ie.xml.h:101 Form/form_ie.xml.h:131
+#: Form/form_us.xml.h:1055 Form/form_gb.xml.h:16 Form/form_gb.xml.h:25
+#: Form/form_gb.xml.h:37 Form/form_gb.xml.h:56
+msgid "Signed"
+msgstr ""
+
+#: Form/form_ie.xml.h:110
+msgid "(10.) When Registered"
+msgstr ""
+
+#: Form/form_ie.xml.h:111
+msgid "(11.) Signature of Registrar"
+msgstr ""
+
+#: Form/form_ie.xml.h:114 Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
+msgid "Date of Death"
+msgstr ""
+
+#: Form/form_ie.xml.h:115 Form/form_ie.xml.h:117
+msgid "(2.) Date and Place of Death"
+msgstr ""
+
+#: Form/form_ie.xml.h:116 Form/form_us.xml.h:2432 Form/form_us.xml.h:2495
+msgid "Place of Death"
+msgstr ""
+
+#: Form/form_ie.xml.h:119
+msgid "(4.) M or F for Male or Female"
+msgstr ""
+
+#: Form/form_ie.xml.h:121
+msgid "(5.) Widowed or Married"
+msgstr ""
+
+#: Form/form_ie.xml.h:123
+msgid "(6.) Age last Birthday"
+msgstr ""
+
+#: Form/form_ie.xml.h:125
+msgid "(7.) Rank, Profession, or Occupation"
+msgstr ""
+
+#: Form/form_ie.xml.h:126 Form/form_us.xml.h:2456 Form/form_us.xml.h:2496
+#: Form/form_gb.xml.h:54
+msgid "Cause of Death"
+msgstr ""
+
+#: Form/form_ie.xml.h:127 Form/form_ie.xml.h:129
+msgid "(8.) Certified Cause of Death and Duration of Illness"
+msgstr ""
+
+#: Form/form_ie.xml.h:128
+msgid "Duration of Illness"
+msgstr ""
+
+#: Form/form_ie.xml.h:132
+msgid "Relation to deceased"
+msgstr ""
+
+#: Form/form_ie.xml.h:133
+msgid "(9.) e.g. Son, Daughter"
+msgstr ""
+
+#: Form/form_ie.xml.h:134 Form/form_us.xml.h:2367 Form/form_gb.xml.h:17
+#: Form/form_gb.xml.h:57
+msgid "Description"
+msgstr ""
+
+#: Form/form_ie.xml.h:135
+msgid "(9.) e.g. Present at death"
+msgstr ""
+
 #: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
 #: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
 #: Form/form_ca.xml.h:450 Form/form_ca.xml.h:529 Form/form_ca.xml.h:615
@@ -277,23 +850,6 @@ msgstr ""
 #: Form/form_ca.xml.h:644 Form/form_ca.xml.h:812 Form/form_us.xml.h:1250
 #: Form/form_us.xml.h:1311 Form/form_us.xml.h:2041
 msgid "Township"
-msgstr ""
-
-#: Form/form_ca.xml.h:4 Form/form_ca.xml.h:95 Form/form_us.xml.h:853
-#: Form/form_us.xml.h:888 Form/form_us.xml.h:934 Form/form_us.xml.h:980
-#: Form/form_us.xml.h:1310 Form/form_us.xml.h:1379 Form/form_us.xml.h:1995
-#: Form/form_us.xml.h:2015 Form/form_us.xml.h:2039 Form/form_us.xml.h:2078
-#: Form/form_us.xml.h:2115 Form/form_us.xml.h:2153 Form/form_us.xml.h:2191
-#: Form/form_us.xml.h:2226 Form/form_us.xml.h:2235 Form/form_us.xml.h:2247
-#: Form/form_dk.xml.h:1 Form/form_dk.xml.h:18 Form/form_dk.xml.h:35
-#: Form/form_dk.xml.h:50 Form/form_dk.xml.h:67 Form/form_dk.xml.h:84
-#: Form/form_dk.xml.h:101 Form/form_dk.xml.h:120 Form/form_dk.xml.h:139
-#: Form/form_dk.xml.h:158 Form/form_dk.xml.h:181 Form/form_dk.xml.h:204
-#: Form/form_dk.xml.h:225 Form/form_dk.xml.h:249 Form/form_dk.xml.h:283
-#: Form/form_dk.xml.h:312 Form/form_dk.xml.h:336 Form/form_dk.xml.h:362
-#: Form/form_dk.xml.h:386 Form/form_dk.xml.h:406 Form/form_dk.xml.h:426
-#: Form/form_gb.xml.h:574 Form/form_gb.xml.h:594
-msgid "County"
 msgstr ""
 
 #: Form/form_ca.xml.h:5
@@ -326,55 +882,6 @@ msgstr ""
 msgid "1. Names of Inmates"
 msgstr ""
 
-#: Form/form_ca.xml.h:12 Form/form_ca.xml.h:218 Form/form_ca.xml.h:322
-#: Form/form_ca.xml.h:376 Form/form_ca.xml.h:429 Form/form_ca.xml.h:492
-#: Form/form_ca.xml.h:703 Form/form_ca.xml.h:850 Form/form_us.xml.h:265
-#: Form/form_us.xml.h:341 Form/form_us.xml.h:422 Form/form_us.xml.h:440
-#: Form/form_us.xml.h:476 Form/form_us.xml.h:631 Form/form_us.xml.h:690
-#: Form/form_us.xml.h:728 Form/form_us.xml.h:777 Form/form_us.xml.h:816
-#: Form/form_us.xml.h:863 Form/form_us.xml.h:1050 Form/form_us.xml.h:1059
-#: Form/form_us.xml.h:1078 Form/form_us.xml.h:1116 Form/form_us.xml.h:1144
-#: Form/form_us.xml.h:1157 Form/form_us.xml.h:1208 Form/form_us.xml.h:1258
-#: Form/form_us.xml.h:1290 Form/form_us.xml.h:1356 Form/form_us.xml.h:1357
-#: Form/form_us.xml.h:1383 Form/form_us.xml.h:1490 Form/form_us.xml.h:1502
-#: Form/form_us.xml.h:1524 Form/form_us.xml.h:1544 Form/form_us.xml.h:1565
-#: Form/form_us.xml.h:1587 Form/form_us.xml.h:1616 Form/form_us.xml.h:1662
-#: Form/form_us.xml.h:1693 Form/form_us.xml.h:1859 Form/form_us.xml.h:1889
-#: Form/form_us.xml.h:1913 Form/form_us.xml.h:1940 Form/form_us.xml.h:1958
-#: Form/form_us.xml.h:1972 Form/form_us.xml.h:1991 Form/form_us.xml.h:2012
-#: Form/form_us.xml.h:2051 Form/form_us.xml.h:2082 Form/form_us.xml.h:2119
-#: Form/form_us.xml.h:2157 Form/form_us.xml.h:2195 Form/form_us.xml.h:2338
-#: Form/form_us.xml.h:2359 Form/form_us.xml.h:2365 Form/form_us.xml.h:2407
-#: Form/form_us.xml.h:2412 Form/form_us.xml.h:2416 Form/form_us.xml.h:2420
-#: Form/form_us.xml.h:2424 Form/form_us.xml.h:2442 Form/form_us.xml.h:2476
-#: Form/form_us.xml.h:2491 Form/form_us.xml.h:2512 Form/form_us.xml.h:2532
-#: Form/form_us.xml.h:2601 Form/form_us.xml.h:2618 Form/form_dk.xml.h:16
-#: Form/form_dk.xml.h:33 Form/form_dk.xml.h:114 Form/form_dk.xml.h:133
-#: Form/form_dk.xml.h:244 Form/form_dk.xml.h:272 Form/form_dk.xml.h:307
-#: Form/form_dk.xml.h:333 Form/form_dk.xml.h:349 Form/form_dk.xml.h:381
-#: Form/form_dk.xml.h:401 Form/form_dk.xml.h:423 Form/form_dk.xml.h:443
-#: Form/form_fr.xml.h:4 Form/form_fr.xml.h:12 Form/form_fr.xml.h:20
-#: Form/form_fr.xml.h:28 Form/form_fr.xml.h:35 Form/form_fr.xml.h:53
-#: Form/form_fr.xml.h:62 Form/form_fr.xml.h:66 Form/form_fr.xml.h:72
-#: Form/form_fr.xml.h:77 Form/form_fr.xml.h:86 Form/form_fr.xml.h:92
-#: Form/form_fr.xml.h:98 Form/form_fr.xml.h:105 Form/form_fr.xml.h:113
-#: Form/form_fr.xml.h:119 Form/form_fr.xml.h:125 Form/form_fr.xml.h:132
-#: Form/form_fr.xml.h:143 Form/form_fr.xml.h:149 Form/form_fr.xml.h:158
-#: Form/form_fr.xml.h:166 Form/form_fr.xml.h:175 Form/form_fr.xml.h:184
-#: Form/form_fr.xml.h:193 Form/form_fr.xml.h:202 Form/form_fr.xml.h:213
-#: Form/form_gb.xml.h:11 Form/form_gb.xml.h:14 Form/form_gb.xml.h:28
-#: Form/form_gb.xml.h:32 Form/form_gb.xml.h:35 Form/form_gb.xml.h:52
-#: Form/form_gb.xml.h:65 Form/form_gb.xml.h:80 Form/form_gb.xml.h:98
-#: Form/form_gb.xml.h:119 Form/form_gb.xml.h:140 Form/form_gb.xml.h:162
-#: Form/form_gb.xml.h:187 Form/form_gb.xml.h:216 Form/form_gb.xml.h:250
-#: Form/form_gb.xml.h:270 Form/form_gb.xml.h:291 Form/form_gb.xml.h:318
-#: Form/form_gb.xml.h:349 Form/form_gb.xml.h:385 Form/form_gb.xml.h:400
-#: Form/form_gb.xml.h:415 Form/form_gb.xml.h:436 Form/form_gb.xml.h:463
-#: Form/form_gb.xml.h:491 Form/form_gb.xml.h:523 Form/form_gb.xml.h:587
-#: Form/form_gb.xml.h:615
-msgid "Occupation"
-msgstr ""
-
 #: Form/form_ca.xml.h:13
 msgid "2. Profession, Trade or Occupation"
 msgstr ""
@@ -390,73 +897,12 @@ msgstr ""
 msgid "3. Place of Birth"
 msgstr ""
 
-#: Form/form_ca.xml.h:16 Form/form_ca.xml.h:224 Form/form_ca.xml.h:318
-#: Form/form_ca.xml.h:372 Form/form_ca.xml.h:427 Form/form_ca.xml.h:490
-#: Form/form_ca.xml.h:701 Form/form_ca.xml.h:781 Form/form_ca.xml.h:830
-#: Form/form_dk.xml.h:154 Form/form_dk.xml.h:175 Form/form_dk.xml.h:198
-#: Form/form_dk.xml.h:219 Form/form_dk.xml.h:240 Form/form_dk.xml.h:268
-#: Form/form_dk.xml.h:303 Form/form_dk.xml.h:325 Form/form_fr.xml.h:80
-#: Form/form_fr.xml.h:218 Form/form_gb.xml.h:582 Form/form_gb.xml.h:611
-msgid "Religion"
-msgstr ""
-
 #: Form/form_ca.xml.h:17
 msgid "4. Religion"
 msgstr ""
 
-#: Form/form_ca.xml.h:18 Form/form_ca.xml.h:226 Form/form_us.xml.h:2355
-#: Form/form_us.xml.h:2361 Form/form_us.xml.h:2368 Form/form_us.xml.h:2386
-#: Form/form_us.xml.h:2388 Form/form_us.xml.h:2408 Form/form_us.xml.h:2413
-#: Form/form_us.xml.h:2417 Form/form_us.xml.h:2421 Form/form_us.xml.h:2425
-#: Form/form_us.xml.h:2433 Form/form_us.xml.h:2497 Form/form_us.xml.h:2508
-#: Form/form_gb.xml.h:18 Form/form_gb.xml.h:29 Form/form_gb.xml.h:58
-msgid "Residence"
-msgstr ""
-
 #: Form/form_ca.xml.h:19
 msgid "5. Residence if Outside of Limits"
-msgstr ""
-
-#: Form/form_ca.xml.h:20 Form/form_ca.xml.h:228 Form/form_ca.xml.h:312
-#: Form/form_ca.xml.h:366 Form/form_ca.xml.h:413 Form/form_ca.xml.h:478
-#: Form/form_ca.xml.h:634 Form/form_ca.xml.h:689 Form/form_ca.xml.h:775
-#: Form/form_ca.xml.h:826 Form/form_us.xml.h:262 Form/form_us.xml.h:338
-#: Form/form_us.xml.h:415 Form/form_us.xml.h:437 Form/form_us.xml.h:469
-#: Form/form_us.xml.h:621 Form/form_us.xml.h:678 Form/form_us.xml.h:717
-#: Form/form_us.xml.h:762 Form/form_us.xml.h:804 Form/form_us.xml.h:976
-#: Form/form_us.xml.h:1073 Form/form_us.xml.h:1109 Form/form_us.xml.h:1201
-#: Form/form_us.xml.h:1254 Form/form_us.xml.h:1326 Form/form_us.xml.h:1327
-#: Form/form_us.xml.h:1378 Form/form_us.xml.h:1430 Form/form_us.xml.h:1485
-#: Form/form_us.xml.h:1499 Form/form_us.xml.h:1518 Form/form_us.xml.h:1539
-#: Form/form_us.xml.h:1560 Form/form_us.xml.h:1582 Form/form_us.xml.h:1609
-#: Form/form_us.xml.h:1625 Form/form_us.xml.h:1639 Form/form_us.xml.h:1654
-#: Form/form_us.xml.h:1684 Form/form_us.xml.h:1852 Form/form_us.xml.h:1881
-#: Form/form_us.xml.h:1903 Form/form_us.xml.h:1932 Form/form_us.xml.h:1954
-#: Form/form_us.xml.h:1968 Form/form_us.xml.h:1987 Form/form_us.xml.h:2007
-#: Form/form_us.xml.h:2050 Form/form_us.xml.h:2077 Form/form_us.xml.h:2114
-#: Form/form_us.xml.h:2152 Form/form_us.xml.h:2190 Form/form_us.xml.h:2334
-#: Form/form_us.xml.h:2357 Form/form_us.xml.h:2363 Form/form_us.xml.h:2399
-#: Form/form_us.xml.h:2405 Form/form_us.xml.h:2441 Form/form_us.xml.h:2468
-#: Form/form_us.xml.h:2489 Form/form_us.xml.h:2600 Form/form_dk.xml.h:12
-#: Form/form_dk.xml.h:29 Form/form_dk.xml.h:46 Form/form_dk.xml.h:61
-#: Form/form_dk.xml.h:78 Form/form_dk.xml.h:95 Form/form_dk.xml.h:112
-#: Form/form_dk.xml.h:131 Form/form_dk.xml.h:150 Form/form_dk.xml.h:171
-#: Form/form_dk.xml.h:194 Form/form_dk.xml.h:215 Form/form_dk.xml.h:236
-#: Form/form_pl.xml.h:7 Form/form_pl.xml.h:35 Form/form_fr.xml.h:34
-#: Form/form_fr.xml.h:60 Form/form_fr.xml.h:70 Form/form_fr.xml.h:75
-#: Form/form_fr.xml.h:84 Form/form_fr.xml.h:90 Form/form_fr.xml.h:96
-#: Form/form_fr.xml.h:102 Form/form_fr.xml.h:110 Form/form_fr.xml.h:118
-#: Form/form_fr.xml.h:124 Form/form_fr.xml.h:131 Form/form_fr.xml.h:141
-#: Form/form_fr.xml.h:148 Form/form_fr.xml.h:165 Form/form_fr.xml.h:209
-#: Form/form_gb.xml.h:26 Form/form_gb.xml.h:49 Form/form_gb.xml.h:63
-#: Form/form_gb.xml.h:79 Form/form_gb.xml.h:97 Form/form_gb.xml.h:117
-#: Form/form_gb.xml.h:138 Form/form_gb.xml.h:160 Form/form_gb.xml.h:185
-#: Form/form_gb.xml.h:204 Form/form_gb.xml.h:238 Form/form_gb.xml.h:289
-#: Form/form_gb.xml.h:316 Form/form_gb.xml.h:337 Form/form_gb.xml.h:373
-#: Form/form_gb.xml.h:399 Form/form_gb.xml.h:414 Form/form_gb.xml.h:435
-#: Form/form_gb.xml.h:462 Form/form_gb.xml.h:490 Form/form_gb.xml.h:522
-#: Form/form_gb.xml.h:562 Form/form_gb.xml.h:585 Form/form_gb.xml.h:614
-msgid "Age"
 msgstr ""
 
 #: Form/form_ca.xml.h:21
@@ -1432,12 +1878,6 @@ msgstr ""
 msgid "Province"
 msgstr ""
 
-#: Form/form_ca.xml.h:290 Form/form_ca.xml.h:344 Form/form_ca.xml.h:392
-#: Form/form_ca.xml.h:452 Form/form_ca.xml.h:531 Form/form_ca.xml.h:617
-#: Form/form_ca.xml.h:663 Form/form_ca.xml.h:796
-msgid "District"
-msgstr ""
-
 #: Form/form_ca.xml.h:291 Form/form_ca.xml.h:345 Form/form_ca.xml.h:393
 #: Form/form_ca.xml.h:453 Form/form_ca.xml.h:532 Form/form_ca.xml.h:618
 #: Form/form_ca.xml.h:664 Form/form_ca.xml.h:797
@@ -1492,30 +1932,6 @@ msgstr ""
 
 #: Form/form_ca.xml.h:309 Form/form_ca.xml.h:363
 msgid "7. Names"
-msgstr ""
-
-#: Form/form_ca.xml.h:310 Form/form_ca.xml.h:364 Form/form_ca.xml.h:411
-#: Form/form_ca.xml.h:466 Form/form_ca.xml.h:630 Form/form_ca.xml.h:679
-#: Form/form_ca.xml.h:767 Form/form_ca.xml.h:822 Form/form_us.xml.h:263
-#: Form/form_us.xml.h:339 Form/form_us.xml.h:416 Form/form_us.xml.h:438
-#: Form/form_us.xml.h:468 Form/form_us.xml.h:620 Form/form_us.xml.h:675
-#: Form/form_us.xml.h:715 Form/form_us.xml.h:760 Form/form_us.xml.h:802
-#: Form/form_us.xml.h:844 Form/form_us.xml.h:905 Form/form_us.xml.h:1072
-#: Form/form_us.xml.h:1108 Form/form_us.xml.h:1202 Form/form_us.xml.h:1255
-#: Form/form_us.xml.h:1318 Form/form_us.xml.h:1319 Form/form_us.xml.h:1407
-#: Form/form_us.xml.h:1428 Form/form_us.xml.h:1486 Form/form_us.xml.h:1500
-#: Form/form_us.xml.h:1519 Form/form_us.xml.h:1540 Form/form_us.xml.h:1561
-#: Form/form_us.xml.h:1583 Form/form_us.xml.h:1607 Form/form_us.xml.h:1626
-#: Form/form_us.xml.h:1640 Form/form_us.xml.h:1655 Form/form_us.xml.h:1683
-#: Form/form_us.xml.h:1851 Form/form_us.xml.h:1882 Form/form_us.xml.h:1904
-#: Form/form_us.xml.h:1933 Form/form_us.xml.h:1953 Form/form_us.xml.h:1967
-#: Form/form_us.xml.h:1986 Form/form_us.xml.h:2006 Form/form_us.xml.h:2097
-#: Form/form_us.xml.h:2135 Form/form_us.xml.h:2173 Form/form_us.xml.h:2211
-#: Form/form_us.xml.h:2333 Form/form_us.xml.h:2348 Form/form_us.xml.h:2376
-#: Form/form_us.xml.h:2436 Form/form_us.xml.h:2466 Form/form_us.xml.h:2490
-#: Form/form_gb.xml.h:9 Form/form_gb.xml.h:46 Form/form_gb.xml.h:242
-#: Form/form_gb.xml.h:265 Form/form_gb.xml.h:377 Form/form_gb.xml.h:586
-msgid "Sex"
 msgstr ""
 
 #: Form/form_ca.xml.h:311 Form/form_ca.xml.h:365
@@ -1672,32 +2088,6 @@ msgstr ""
 
 #: Form/form_ca.xml.h:416
 msgid "9. Married or Widowed"
-msgstr ""
-
-#: Form/form_ca.xml.h:417 Form/form_ca.xml.h:470 Form/form_ca.xml.h:628
-#: Form/form_ca.xml.h:681 Form/form_ca.xml.h:769 Form/form_ca.xml.h:820
-#: Form/form_us.xml.h:1427 Form/form_us.xml.h:1965 Form/form_us.xml.h:1984
-#: Form/form_us.xml.h:2004 Form/form_dk.xml.h:14 Form/form_dk.xml.h:31
-#: Form/form_dk.xml.h:48 Form/form_dk.xml.h:65 Form/form_dk.xml.h:82
-#: Form/form_dk.xml.h:99 Form/form_dk.xml.h:118 Form/form_dk.xml.h:137
-#: Form/form_dk.xml.h:156 Form/form_dk.xml.h:177 Form/form_dk.xml.h:200
-#: Form/form_dk.xml.h:221 Form/form_dk.xml.h:242 Form/form_dk.xml.h:270
-#: Form/form_dk.xml.h:305 Form/form_dk.xml.h:331 Form/form_dk.xml.h:347
-#: Form/form_dk.xml.h:379 Form/form_dk.xml.h:399 Form/form_dk.xml.h:421
-#: Form/form_dk.xml.h:441 Form/form_fr.xml.h:5 Form/form_fr.xml.h:13
-#: Form/form_fr.xml.h:21 Form/form_fr.xml.h:29 Form/form_fr.xml.h:36
-#: Form/form_fr.xml.h:121 Form/form_fr.xml.h:128 Form/form_fr.xml.h:135
-#: Form/form_fr.xml.h:142 Form/form_fr.xml.h:152 Form/form_fr.xml.h:161
-#: Form/form_fr.xml.h:169 Form/form_fr.xml.h:178 Form/form_fr.xml.h:187
-#: Form/form_fr.xml.h:196 Form/form_fr.xml.h:205 Form/form_fr.xml.h:216
-#: Form/form_gb.xml.h:76 Form/form_gb.xml.h:94 Form/form_gb.xml.h:113
-#: Form/form_gb.xml.h:134 Form/form_gb.xml.h:156 Form/form_gb.xml.h:181
-#: Form/form_gb.xml.h:202 Form/form_gb.xml.h:236 Form/form_gb.xml.h:285
-#: Form/form_gb.xml.h:312 Form/form_gb.xml.h:335 Form/form_gb.xml.h:371
-#: Form/form_gb.xml.h:432 Form/form_gb.xml.h:459 Form/form_gb.xml.h:487
-#: Form/form_gb.xml.h:519 Form/form_gb.xml.h:558 Form/form_gb.xml.h:580
-#: Form/form_gb.xml.h:609
-msgid "Relation"
 msgstr ""
 
 #: Form/form_ca.xml.h:418
@@ -2127,10 +2517,6 @@ msgstr ""
 
 #: Form/form_ca.xml.h:558
 msgid "9. Number of families in house or institution"
-msgstr ""
-
-#: Form/form_ca.xml.h:559
-msgid "Rooms"
 msgstr ""
 
 #: Form/form_ca.xml.h:560
@@ -2773,10 +3159,6 @@ msgstr ""
 
 #: Form/form_ca.xml.h:851
 msgid "24. Chief occupation or trade"
-msgstr ""
-
-#: Form/form_ca.xml.h:852 Form/form_gb.xml.h:252 Form/form_gb.xml.h:387
-msgid "Employment"
 msgstr ""
 
 #: Form/form_ca.xml.h:853
@@ -3848,14 +4230,6 @@ msgstr ""
 #: Form/form_us.xml.h:2064 Form/form_us.xml.h:2100 Form/form_us.xml.h:2138
 #: Form/form_us.xml.h:2176 Form/form_us.xml.h:2214
 msgid "Single"
-msgstr ""
-
-#: Form/form_us.xml.h:473 Form/form_us.xml.h:1113 Form/form_us.xml.h:1204
-#: Form/form_us.xml.h:1285 Form/form_us.xml.h:1521 Form/form_us.xml.h:1856
-#: Form/form_us.xml.h:1886 Form/form_us.xml.h:1910 Form/form_us.xml.h:1937
-#: Form/form_us.xml.h:2063 Form/form_us.xml.h:2099 Form/form_us.xml.h:2137
-#: Form/form_us.xml.h:2175 Form/form_us.xml.h:2213
-msgid "Married"
 msgstr ""
 
 #: Form/form_us.xml.h:474 Form/form_us.xml.h:1114 Form/form_us.xml.h:1857
@@ -5102,21 +5476,6 @@ msgstr ""
 msgid "Post Office Address"
 msgstr ""
 
-#: Form/form_us.xml.h:985 Form/form_us.xml.h:1009 Form/form_us.xml.h:2374
-#: Form/form_us.xml.h:2563 Form/form_dk.xml.h:260 Form/form_dk.xml.h:295
-#: Form/form_dk.xml.h:321 Form/form_dk.xml.h:345 Form/form_dk.xml.h:371
-#: Form/form_dk.xml.h:395 Form/form_dk.xml.h:417 Form/form_dk.xml.h:435
-#: Form/form_gb.xml.h:50
-msgid "Date of Birth"
-msgstr ""
-
-#: Form/form_us.xml.h:986 Form/form_us.xml.h:1008 Form/form_us.xml.h:1141
-#: Form/form_us.xml.h:1155 Form/form_us.xml.h:1452 Form/form_us.xml.h:2375
-#: Form/form_us.xml.h:2488 Form/form_us.xml.h:2513 Form/form_us.xml.h:2565
-#: Form/form_gb.xml.h:51
-msgid "Place of Birth"
-msgstr ""
-
 #: Form/form_us.xml.h:987
 msgid "Entered service as (rank)"
 msgstr ""
@@ -5349,11 +5708,6 @@ msgstr ""
 msgid "If No give information regarding the same"
 msgstr ""
 
-#: Form/form_us.xml.h:1055 Form/form_gb.xml.h:16 Form/form_gb.xml.h:25
-#: Form/form_gb.xml.h:37 Form/form_gb.xml.h:56
-msgid "Signed"
-msgstr ""
-
 #: Form/form_us.xml.h:1056
 msgid "Witness name and P.O Address"
 msgstr ""
@@ -5584,10 +5938,6 @@ msgstr ""
 
 #: Form/form_us.xml.h:1195
 msgid "Males under 21 years"
-msgstr ""
-
-#: Form/form_us.xml.h:1196
-msgid "Females"
 msgstr ""
 
 #: Form/form_us.xml.h:1197 Form/form_us.xml.h:1199
@@ -6115,16 +6465,6 @@ msgstr ""
 msgid "Extent of Education College"
 msgstr ""
 
-#: Form/form_us.xml.h:1390 Form/form_us.xml.h:1642 Form/form_us.xml.h:1686
-#: Form/form_us.xml.h:2052 Form/form_us.xml.h:2084 Form/form_us.xml.h:2121
-#: Form/form_us.xml.h:2159 Form/form_us.xml.h:2197 Form/form_us.xml.h:2356
-#: Form/form_us.xml.h:2362 Form/form_us.xml.h:2409 Form/form_us.xml.h:2411
-#: Form/form_us.xml.h:2415 Form/form_us.xml.h:2419 Form/form_us.xml.h:2423
-#: Form/form_us.xml.h:2448 Form/form_us.xml.h:2470 Form/form_gb.xml.h:246
-#: Form/form_gb.xml.h:381
-msgid "Birthplace"
-msgstr ""
-
 #: Form/form_us.xml.h:1391
 msgid "Own house or farm"
 msgstr ""
@@ -6624,25 +6964,6 @@ msgstr ""
 
 #: Form/form_us.xml.h:1630
 msgid "Mother's Nativity"
-msgstr ""
-
-#: Form/form_us.xml.h:1631 Form/form_us.xml.h:1645 Form/form_us.xml.h:2406
-#: Form/form_dk.xml.h:10 Form/form_dk.xml.h:27 Form/form_dk.xml.h:44
-#: Form/form_dk.xml.h:59 Form/form_dk.xml.h:76 Form/form_dk.xml.h:93
-#: Form/form_dk.xml.h:110 Form/form_dk.xml.h:129 Form/form_dk.xml.h:148
-#: Form/form_dk.xml.h:169 Form/form_dk.xml.h:192 Form/form_dk.xml.h:213
-#: Form/form_dk.xml.h:234 Form/form_dk.xml.h:258 Form/form_dk.xml.h:293
-#: Form/form_fr.xml.h:153 Form/form_fr.xml.h:162 Form/form_fr.xml.h:170
-#: Form/form_fr.xml.h:179 Form/form_fr.xml.h:188 Form/form_fr.xml.h:197
-#: Form/form_fr.xml.h:206 Form/form_fr.xml.h:217 Form/form_gb.xml.h:27
-#: Form/form_gb.xml.h:78 Form/form_gb.xml.h:96 Form/form_gb.xml.h:115
-#: Form/form_gb.xml.h:136 Form/form_gb.xml.h:158 Form/form_gb.xml.h:183
-#: Form/form_gb.xml.h:206 Form/form_gb.xml.h:244 Form/form_gb.xml.h:268
-#: Form/form_gb.xml.h:287 Form/form_gb.xml.h:314 Form/form_gb.xml.h:339
-#: Form/form_gb.xml.h:379 Form/form_gb.xml.h:413 Form/form_gb.xml.h:434
-#: Form/form_gb.xml.h:461 Form/form_gb.xml.h:489 Form/form_gb.xml.h:521
-#: Form/form_gb.xml.h:560 Form/form_gb.xml.h:588 Form/form_gb.xml.h:616
-msgid "Condition"
 msgstr ""
 
 #: Form/form_us.xml.h:1634 Form/form_us.xml.h:1649
@@ -7594,10 +7915,6 @@ msgstr ""
 msgid "Date of birth"
 msgstr ""
 
-#: Form/form_us.xml.h:2367 Form/form_gb.xml.h:17 Form/form_gb.xml.h:57
-msgid "Description"
-msgstr ""
-
 #: Form/form_us.xml.h:2369 Form/form_us.xml.h:2390 Form/form_us.xml.h:2483
 #: Form/form_us.xml.h:2592
 msgid "Place of Record"
@@ -7665,10 +7982,6 @@ msgstr ""
 msgid "Bond/Licence"
 msgstr ""
 
-#: Form/form_us.xml.h:2432 Form/form_us.xml.h:2495
-msgid "Place of Death"
-msgstr ""
-
 #: Form/form_us.xml.h:2434
 msgid "Length of Residence"
 msgstr ""
@@ -7712,14 +8025,6 @@ msgstr ""
 
 #: Form/form_us.xml.h:2454
 msgid "Informant"
-msgstr ""
-
-#: Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
-msgid "Date of Death"
-msgstr ""
-
-#: Form/form_us.xml.h:2456 Form/form_us.xml.h:2496 Form/form_gb.xml.h:54
-msgid "Cause of Death"
 msgstr ""
 
 #: Form/form_us.xml.h:2457
@@ -7960,10 +8265,6 @@ msgstr ""
 msgid ""
 "(3) On D.S.S. Form 1\n"
 "(4) On all other forms"
-msgstr ""
-
-#: Form/form_us.xml.h:2561
-msgid "Age in years"
 msgstr ""
 
 #: Form/form_us.xml.h:2562
@@ -8553,10 +8854,6 @@ msgstr ""
 msgid "County/Administrative Area"
 msgstr ""
 
-#: Form/form_gb.xml.h:13 Form/form_gb.xml.h:47
-msgid "Maiden Surname"
-msgstr ""
-
 #: Form/form_gb.xml.h:23
 msgid "Banns/Licence"
 msgstr ""
@@ -8867,10 +9164,6 @@ msgid ""
 "years and upwards."
 msgstr ""
 
-#: Form/form_gb.xml.h:208 Form/form_gb.xml.h:341 Form/form_gb.xml.h:617
-msgid "Years Married"
-msgstr ""
-
 #: Form/form_gb.xml.h:209 Form/form_gb.xml.h:342
 msgid "Completed Years the present Marriage has lasted."
 msgstr ""
@@ -8893,10 +9186,6 @@ msgstr ""
 
 #: Form/form_gb.xml.h:215 Form/form_gb.xml.h:348
 msgid "Children who have Died."
-msgstr ""
-
-#: Form/form_gb.xml.h:217 Form/form_gb.xml.h:350
-msgid "Personal Occupation"
 msgstr ""
 
 #: Form/form_gb.xml.h:219 Form/form_gb.xml.h:352
@@ -9187,20 +9476,12 @@ msgstr ""
 msgid "District Electoral Division"
 msgstr ""
 
-#: Form/form_gb.xml.h:576 Form/form_gb.xml.h:599
-msgid "Townland"
-msgstr ""
-
 #: Form/form_gb.xml.h:578 Form/form_gb.xml.h:607
 msgid "No. on Form B"
 msgstr ""
 
 #: Form/form_gb.xml.h:584 Form/form_gb.xml.h:613
 msgid "\"Read and Write\", \"Read\" or \"Cannot Read\""
-msgstr ""
-
-#: Form/form_gb.xml.h:590 Form/form_gb.xml.h:622
-msgid "Irish Language"
 msgstr ""
 
 #: Form/form_gb.xml.h:591 Form/form_gb.xml.h:623

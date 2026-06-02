@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 10:11+0100\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: RelID/relation_tab.gpr.py:35
+#: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
 msgstr ""
 
-#: RelID/relation_tab.gpr.py:36
+#: RelID/relation_tab.gpr.py:37
 msgid "Will display relational informations with the home person"
 msgstr ""
 
@@ -29,7 +29,8 @@ msgstr ""
 msgid "Relation and distances with root"
 msgstr ""
 
-#: RelID/relation_tab.py:308 relation_tab.py:434 relation_tab.py:692
+#: RelID/relation_tab.py:308 RelID/relation_tab.py:434
+#: RelID/relation_tab.py:692
 msgid "Options"
 msgstr ""
 
@@ -77,15 +78,15 @@ msgstr ""
 msgid "How deep should we go?"
 msgstr ""
 
-#: RelID/relation_tab.py:339
+#: RelID/relation_tab.py:339 RelID/relation_tab.py:601
 msgid "Rel_id"
 msgstr ""
 
-#: RelID/relation_tab.py:340
+#: RelID/relation_tab.py:340 RelID/relation_tab.py:601
 msgid "Relation"
 msgstr ""
 
-#: RelID/relation_tab.py:341
+#: RelID/relation_tab.py:341 RelID/relation_tab.py:601
 msgid "Name"
 msgstr ""
 
@@ -101,27 +102,27 @@ msgstr ""
 msgid "Common MRA"
 msgstr ""
 
-#: RelID/relation_tab.py:345
+#: RelID/relation_tab.py:345 RelID/relation_tab.py:601
 msgid "Rank"
 msgstr ""
 
-#: RelID/relation_tab.py:346
+#: RelID/relation_tab.py:346 RelID/relation_tab.py:601
 msgid "Period"
 msgstr ""
 
-#: RelID/relation_tab.py:350
+#: RelID/relation_tab.py:350 RelID/relation_tab.py:603
 msgid "Shared Subtree"
 msgstr ""
 
-#: RelID/relation_tab.py:351
+#: RelID/relation_tab.py:351 RelID/relation_tab.py:603
 msgid "Centrality"
 msgstr ""
 
-#: RelID/relation_tab.py:352
+#: RelID/relation_tab.py:352 RelID/relation_tab.py:603
 msgid "Unique Ancestors"
 msgstr ""
 
-#: RelID/relation_tab.py:353
+#: RelID/relation_tab.py:353 RelID/relation_tab.py:603
 msgid "Surname Diversity"
 msgstr ""
 
@@ -172,10 +173,6 @@ msgstr ""
 msgid "%d/%d \t\t %d/%d \t\t%f"
 msgstr ""
 
-#: RelID/relation_tab.py:615
-msgid "Total of handled entries : {len(self.stats_list)}\n"
-msgstr ""
-
 #: RelID/relation_tab.py:628
 msgid "Folder Chooser"
 msgstr ""
@@ -206,11 +203,6 @@ msgstr ""
 
 #: RelID/relation_tab.py:655
 msgid "Cannot set a valid location."
-msgstr ""
-
-#: RelID/relation_tab.py:672
-#, python-brace-format
-msgid "Data saved to : {filename}"
 msgstr ""
 
 #: RelID/relation_tab.py:676

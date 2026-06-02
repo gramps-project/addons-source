@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,14 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: FamilyTreeDNA/ftdna_import.gpr.py:4
-msgid "FamilyTree DNA"
-msgstr ""
-
-#: FamilyTreeDNA/ftdna_import.gpr.py:5
-msgid "Tool to import FamilyFinder DNA data from Family Tree"
-msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:75
 msgid "Family Finder Tool"
@@ -132,4 +124,12 @@ msgstr ""
 #: FamilyTreeDNA/ftdna_import.py:394
 #, python-format
 msgid "Add Citation to %s DNA Association"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.gpr.py:4
+msgid "FamilyTree DNA"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.gpr.py:5
+msgid "Tool to import FamilyFinder DNA data from Family Tree"
 msgstr ""

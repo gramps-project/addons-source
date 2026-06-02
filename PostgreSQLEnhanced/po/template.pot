@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,86 +26,86 @@ msgstr ""
 msgid "pg_trgm extension required for duplicate detection"
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:154
+#: PostgreSQLEnhanced/postgresqlenhanced.py:155
 msgid ""
 "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
 "install 'psycopg[binary]'"
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:163
+#: PostgreSQLEnhanced/postgresqlenhanced.py:164
 #, python-format
 msgid ""
 "psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
 "required."
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:211
+#: PostgreSQLEnhanced/postgresqlenhanced.py:212
 msgid "Database Backend"
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:212
+#: PostgreSQLEnhanced/postgresqlenhanced.py:213
 msgid "Database module"
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:213
+#: PostgreSQLEnhanced/postgresqlenhanced.py:214
 msgid "Database module location"
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:214
+#: PostgreSQLEnhanced/postgresqlenhanced.py:215
 msgid "JSONB support"
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:214
+#: PostgreSQLEnhanced/postgresqlenhanced.py:215
 msgid "Yes"
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:214
+#: PostgreSQLEnhanced/postgresqlenhanced.py:215
 msgid "No"
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:232
+#: PostgreSQLEnhanced/postgresqlenhanced.py:233
 msgid "Database version"
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:236
+#: PostgreSQLEnhanced/postgresqlenhanced.py:237
 msgid "Version warning"
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:237
+#: PostgreSQLEnhanced/postgresqlenhanced.py:238
 #, python-format
 msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:252
+#: PostgreSQLEnhanced/postgresqlenhanced.py:253
 msgid "Extensions"
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:273
+#: PostgreSQLEnhanced/postgresqlenhanced.py:274
 msgid "Database size"
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:275
+#: PostgreSQLEnhanced/postgresqlenhanced.py:276
 msgid "Statistics"
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:276
+#: PostgreSQLEnhanced/postgresqlenhanced.py:277
 #, python-format
 msgid "%(persons)d persons, %(families)d families, %(events)d events"
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:1126
-#: PostgreSQLEnhanced/postgresqlenhanced.py:1141
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1127
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1142
 msgid "Migration manager not initialized"
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:1159
-#: PostgreSQLEnhanced/postgresqlenhanced.py:1177
-#: PostgreSQLEnhanced/postgresqlenhanced.py:1239
-#: PostgreSQLEnhanced/postgresqlenhanced.py:1255
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1160
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1178
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1240
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1256
 msgid "Enhanced queries require JSONB support"
 msgstr ""
 
-#: PostgreSQLEnhanced/postgresqlenhanced.py:1206
+#: PostgreSQLEnhanced/postgresqlenhanced.py:1207
 msgid "Full-text search requires JSONB support or search capabilities"
 msgstr ""
 

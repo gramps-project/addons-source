@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: AnniversariesGramplet/AnniversariesGramplet.py:51
+#: AnniversariesGramplet/AnniversariesGramplet.py:52
 msgid "Double-click on a row to edit the event."
 msgstr ""
 
-#: AnniversariesGramplet/AnniversariesGramplet.py:56
+#: AnniversariesGramplet/AnniversariesGramplet.py:57
 msgid "Date"
 msgstr ""
 
-#: AnniversariesGramplet/AnniversariesGramplet.py:58
+#: AnniversariesGramplet/AnniversariesGramplet.py:59
 msgid "Participant"
 msgstr ""
 
-#: AnniversariesGramplet/AnniversariesGramplet.py:59
+#: AnniversariesGramplet/AnniversariesGramplet.py:60
 msgid "Age"
 msgstr ""
 
-#: AnniversariesGramplet/AnniversariesGramplet.py:61
+#: AnniversariesGramplet/AnniversariesGramplet.py:62
 msgid "Event Type"
 msgstr ""
 

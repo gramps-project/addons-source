@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgid ""
 "places from the GeoNames web database"
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade:1088
+#: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade:1085
 msgid ""
 "No\n"
 "Matches"
@@ -185,7 +185,7 @@ msgstr ""
 msgid "Postal Code"
 msgstr ""
 
-#: PlaceCleanup/placecleanup.glade:78 PlaceCleanup/placecleanup.glade:1055
+#: PlaceCleanup/placecleanup.glade:78 PlaceCleanup/placecleanup.glade:1053
 msgid "Type"
 msgstr ""
 
@@ -418,37 +418,37 @@ msgstr ""
 msgid "Select one of these places to continue the cleanup process."
 msgstr ""
 
-#: PlaceCleanup/placecleanup.glade:1035
+#: PlaceCleanup/placecleanup.glade:1034
 msgid "Search result places"
 msgstr ""
 
-#: PlaceCleanup/placecleanup.glade:1102
+#: PlaceCleanup/placecleanup.glade:1099
 msgid ""
 "Checking the 'Populated' checkbox causes the GeoNames search to include "
 "'Populted places', places where people live and work."
 msgstr ""
 
-#: PlaceCleanup/placecleanup.glade:1119
+#: PlaceCleanup/placecleanup.glade:1116
 msgid "Populated"
 msgstr ""
 
-#: PlaceCleanup/placecleanup.glade:1131
+#: PlaceCleanup/placecleanup.glade:1128
 msgid ""
 "Checking the 'Admin' checkbox cause the GeoNames search to include "
 "adminstrative subdivisions in the search (countries, states, counties etc.)."
 msgstr ""
 
-#: PlaceCleanup/placecleanup.glade:1148
+#: PlaceCleanup/placecleanup.glade:1145
 msgid ""
 "Checking the 'Spot' checkbox cause the GeoNames search to include a wide "
 "variety of other places in the search (churches, burial grounds, buildings "
 "etc.)."
 msgstr ""
 
-#: PlaceCleanup/placecleanup.glade:1163
+#: PlaceCleanup/placecleanup.glade:1160
 msgid "Admin"
 msgstr ""
 
-#: PlaceCleanup/placecleanup.glade:1174
+#: PlaceCleanup/placecleanup.glade:1171
 msgid "Spot"
 msgstr ""

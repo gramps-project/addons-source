@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: TMGimporter/libtmg.py:2319 TMGimporter/libtmg.py:2352
-#: TMGimporter/libtmg.py:2434 TMGimporter/libtmg.py:2461
+#: TMGimporter/libtmg.py:2434 TMGimporter/libtmg.py:2469
 msgid "TMG import failed"
 msgstr ""
 
@@ -62,7 +62,7 @@ msgid ""
 "The backup may be corrupt or empty."
 msgstr ""
 
-#: TMGimporter/libtmg.py:2462
+#: TMGimporter/libtmg.py:2470
 #, python-format
 msgid ""
 "%(filename)s does not appear to be a valid TMG backup file.\n"
@@ -73,32 +73,32 @@ msgid ""
 "Ensure the file was created by TMG version 5.x or later."
 msgstr ""
 
-#: TMGimporter/libtmg.py:2635
+#: TMGimporter/libtmg.py:2643
 #, python-format
 msgid "Could not create media directory %s"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2639
+#: TMGimporter/libtmg.py:2647
 #, python-format
 msgid "Media directory %s is not writable"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2645
+#: TMGimporter/libtmg.py:2653
 #, python-format
 msgid ""
 "Media directory %s exists. Delete it first, then restart the import process"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2661
+#: TMGimporter/libtmg.py:2669
 #, python-format
 msgid "Error extracting into %s"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2672
+#: TMGimporter/libtmg.py:2680
 msgid "Base path for relative media set"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2673
+#: TMGimporter/libtmg.py:2681
 #, python-format
 msgid ""
 "The base media path of this Family Tree has been set to %s. Consider taking "
@@ -107,11 +107,11 @@ msgid ""
 "'Replace substring in the path' to set correct paths in your media objects."
 msgstr ""
 
-#: TMGimporter/libtmg.py:2681
+#: TMGimporter/libtmg.py:2689
 msgid "Cannot set base media path"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2682
+#: TMGimporter/libtmg.py:2690
 #, python-format
 msgid ""
 "The Family Tree you imported into already has a base media path: "
@@ -123,19 +123,19 @@ msgid ""
 "media objects."
 msgstr ""
 
-#: TMGimporter/libtmg.py:2708 TMGimporter/libtmg.py:2733
+#: TMGimporter/libtmg.py:2716 TMGimporter/libtmg.py:2741
 msgid "Database Information"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2710
+#: TMGimporter/libtmg.py:2718
 msgid "_OK"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2716
+#: TMGimporter/libtmg.py:2724
 msgid "Setting"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2717
+#: TMGimporter/libtmg.py:2725
 msgid "Value"
 msgstr ""
 

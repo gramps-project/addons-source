@@ -1,29 +1,14 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# Gramps - a GTK+/GNOME based genealogy program
-#
-# Copyright (C) 2021  Manuela Kugel (gramps@ur-ahn.de)
-#
-# This program is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful, 
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
-#
-# TimePedigreeHtml - a plugin for GRAMPS - version 0.1
-# Outcome is an HTML file showing a pedigree with time scale
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,162 +17,162 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:168
+#: TimePedigreeHTML/TimePedigreeHtml.py:167
 msgid "Failed writing "
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:795
+#: TimePedigreeHTML/TimePedigreeHtml.py:806
 msgid "Marriage"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:843
+#: TimePedigreeHTML/TimePedigreeHtml.py:854
 msgid "General"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:845
+#: TimePedigreeHTML/TimePedigreeHtml.py:856
 msgid "Center Person"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:846
+#: TimePedigreeHTML/TimePedigreeHtml.py:857
 msgid "The center person for the report"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:849
+#: TimePedigreeHTML/TimePedigreeHtml.py:860
 msgid "Year of Birth of Center Person"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:852
+#: TimePedigreeHTML/TimePedigreeHtml.py:863
 msgid "The year of birth of the center person. Estimate a year if unknown"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:857
+#: TimePedigreeHTML/TimePedigreeHtml.py:868
 msgid "Destination directory"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:860
+#: TimePedigreeHTML/TimePedigreeHtml.py:871
 msgid "Path for generated files"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:864
+#: TimePedigreeHTML/TimePedigreeHtml.py:875
 msgid "Filename"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:865
+#: TimePedigreeHTML/TimePedigreeHtml.py:876
 msgid "The destination file name for html content."
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:868
+#: TimePedigreeHTML/TimePedigreeHtml.py:879
 msgid "Default Age"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:869
+#: TimePedigreeHTML/TimePedigreeHtml.py:880
 msgid "Default age of parent when child is born with unknown year of birth"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:878
+#: TimePedigreeHTML/TimePedigreeHtml.py:889
 msgid "What to show"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:880
+#: TimePedigreeHTML/TimePedigreeHtml.py:891
 msgid "Show GrampsID"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:881
+#: TimePedigreeHTML/TimePedigreeHtml.py:892
 msgid "Show GrampsID on top right of the box"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:884
+#: TimePedigreeHTML/TimePedigreeHtml.py:895
 msgid "Optimize"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:885
+#: TimePedigreeHTML/TimePedigreeHtml.py:896
 msgid "Use as little space in horizontal direction as possible"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:891
+#: TimePedigreeHTML/TimePedigreeHtml.py:902
 msgid "Color"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:893
+#: TimePedigreeHTML/TimePedigreeHtml.py:904
 msgid "Male Box Color"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:894
+#: TimePedigreeHTML/TimePedigreeHtml.py:905
 msgid "Box background color for male person"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:897
+#: TimePedigreeHTML/TimePedigreeHtml.py:908
 msgid "Female Box Color"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:898
+#: TimePedigreeHTML/TimePedigreeHtml.py:909
 msgid "Box background color for female person"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:902
+#: TimePedigreeHTML/TimePedigreeHtml.py:913
 msgid "Size"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:904
+#: TimePedigreeHTML/TimePedigreeHtml.py:915
 msgid "Number of pixel per year"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:905
+#: TimePedigreeHTML/TimePedigreeHtml.py:916
 msgid "How many pixel height is one year?"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:910
+#: TimePedigreeHTML/TimePedigreeHtml.py:921
 msgid "Offset X Coordinate"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:912
+#: TimePedigreeHTML/TimePedigreeHtml.py:923
 msgid "How many pixel are unused besides the most left and most right boxes?"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:917
+#: TimePedigreeHTML/TimePedigreeHtml.py:928
 msgid "Offset Y Coordinate"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:918
+#: TimePedigreeHTML/TimePedigreeHtml.py:929
 msgid "How many pixel are unused above first box?"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:921
+#: TimePedigreeHTML/TimePedigreeHtml.py:932
 msgid "Width of a box in pixel"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:922
+#: TimePedigreeHTML/TimePedigreeHtml.py:933
 msgid "Width of the box of a person in pixel"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:925
+#: TimePedigreeHTML/TimePedigreeHtml.py:936
 msgid "Horizontal space between boxes in pixel"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:928
+#: TimePedigreeHTML/TimePedigreeHtml.py:939
 msgid "Minimum horizontal space between 2 boxes in pixel"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:934
+#: TimePedigreeHTML/TimePedigreeHtml.py:945
 msgid "Length of vertical part of a line in pixel"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:936
+#: TimePedigreeHTML/TimePedigreeHtml.py:947
 msgid ""
 "Parent and child boxes are connected with lines. This is the length of the "
 "vertical part of the lines in pixel"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:943
-#: TimePedigreeHTML/TimePedigreeHtml.py:945
+#: TimePedigreeHTML/TimePedigreeHtml.py:954
+#: TimePedigreeHTML/TimePedigreeHtml.py:956
 msgid "Number of pixel between left border and scale"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:48
+#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:47
 msgid "Timeline Pedigree Report"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:50
+#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:49
 msgid ""
 "Creates an HTML webpage that uses JavaScript to show a pedigree block "
 "diagram arranged vertically by birth date"

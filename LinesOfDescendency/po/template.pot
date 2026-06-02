@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,49 +17,50 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: LinesOfDescendency/lines-of-descendency.py:53
+#: LinesOfDescendency/lines-of-descendency.py:54
 msgid "People"
 msgstr ""
 
-#: LinesOfDescendency/lines-of-descendency.py:55
+#: LinesOfDescendency/lines-of-descendency.py:56
 msgid "Ancestor"
 msgstr ""
 
-#: LinesOfDescendency/lines-of-descendency.py:56
+#: LinesOfDescendency/lines-of-descendency.py:57
 msgid "The ancestor from which to start the line"
 msgstr ""
 
-#: LinesOfDescendency/lines-of-descendency.py:59
+#: LinesOfDescendency/lines-of-descendency.py:60
 msgid "Descendent"
 msgstr ""
 
-#: LinesOfDescendency/lines-of-descendency.py:60
+#: LinesOfDescendency/lines-of-descendency.py:61
 msgid "The descendent to which to build the line"
 msgstr ""
 
-#: LinesOfDescendency/lines-of-descendency.py:72
+#: LinesOfDescendency/lines-of-descendency.py:73
 msgid "The style used for the title of the page."
 msgstr ""
 
-#: LinesOfDescendency/lines-of-descendency.py:82
+#: LinesOfDescendency/lines-of-descendency.py:83
 msgid "The style used for the title of a line."
 msgstr ""
 
-#: LinesOfDescendency/lines-of-descendency.py:89
+#: LinesOfDescendency/lines-of-descendency.py:90
 msgid "The basic style used for the text display."
 msgstr ""
 
-#: LinesOfDescendency/lines-of-descendency.py:103
+#: LinesOfDescendency/lines-of-descendency.py:101
+#: LinesOfDescendency/lines-of-descendency.py:106
 #, python-format
 msgid "Person %s is not in the Database"
 msgstr ""
 
-#: LinesOfDescendency/lines-of-descendency.py:111
+#: LinesOfDescendency/lines-of-descendency.py:114
 #, python-format
 msgid "%(line)s. line:"
 msgstr ""
 
-#: LinesOfDescendency/lines-of-descendency.py:176
+#: LinesOfDescendency/lines-of-descendency.py:186
 #, python-format
 msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,16 +46,16 @@ msgstr ""
 msgid "Chat with Tree initialized.                 Type /help for help."
 msgstr ""
 
-#: ChatWithTree/ChatWithTree.py:449
+#: ChatWithTree/ChatWithTree.py:463
 msgid ""
 "The ChatWithTree addon is not yet initialized.                     Please "
 "reload Gramps or select a database."
 msgstr ""
 
-#: ChatWithTree/ChatWithTree.py:458
+#: ChatWithTree/ChatWithTree.py:472
 msgid "The chatbot is currently processing a query. Please wait."
 msgstr ""
 
-#: ChatWithTree/ChatWithTree.py:485
+#: ChatWithTree/ChatWithTree.py:499
 msgid "An error occurred while processing your query."
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,7 +74,7 @@ msgid "unknown"
 msgstr ""
 
 #: CombinedView/personpage.py:244 CombinedView/combinedview.gpr.py:32
-#: CombinedView/combinedview.py:650
+#: CombinedView/combinedview.py:615
 msgid "Relationships"
 msgstr ""
 
@@ -214,7 +214,7 @@ msgstr ""
 msgid "Relationship"
 msgstr ""
 
-#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
+#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:86
 msgid "Combined"
 msgstr ""
 
@@ -284,60 +284,50 @@ msgstr ""
 msgid "Citations"
 msgstr ""
 
-#: CombinedView/combinedview.py:325
+#: CombinedView/combinedview.py:324
 msgid "Organize Bookmarks"
 msgstr ""
 
-#: CombinedView/combinedview.py:526
+#: CombinedView/combinedview.py:535
 msgid "Edit the active person"
 msgstr ""
 
-#: CombinedView/combinedview.py:528
+#: CombinedView/combinedview.py:537
 msgid "Edit the active event"
 msgstr ""
 
-#: CombinedView/combinedview.py:577
-#, python-format
-msgid "%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s"
-msgstr ""
-
-#: CombinedView/combinedview.py:584 CombinedView/combinedview.py:586
-#, python-format
-msgid "%(event)s %(date)s"
-msgstr ""
-
-#: CombinedView/combinedview.py:624
+#: CombinedView/combinedview.py:589
 msgid "Use shading"
 msgstr ""
 
-#: CombinedView/combinedview.py:627
+#: CombinedView/combinedview.py:592
 msgid "Display edit buttons"
 msgstr ""
 
-#: CombinedView/combinedview.py:630
+#: CombinedView/combinedview.py:595
 msgid "Show Tags"
 msgstr ""
 
-#: CombinedView/combinedview.py:632
+#: CombinedView/combinedview.py:597
 msgid "View links as website links"
 msgstr ""
 
-#: CombinedView/combinedview.py:638
+#: CombinedView/combinedview.py:603
 msgid "Layout"
 msgstr ""
 
-#: CombinedView/combinedview.py:653
+#: CombinedView/combinedview.py:618
 msgid "Show Details"
 msgstr ""
 
-#: CombinedView/combinedview.py:656
+#: CombinedView/combinedview.py:621
 msgid "Vertical Details"
 msgstr ""
 
-#: CombinedView/combinedview.py:659
+#: CombinedView/combinedview.py:624
 msgid "Show Siblings"
 msgstr ""
 
-#: CombinedView/combinedview.py:662
+#: CombinedView/combinedview.py:627
 msgid "Person"
 msgstr ""

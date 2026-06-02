@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-13 18:19+0100\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,17 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: DescendantSpaceTree/DescendantSpaceTree.gpr.py:26
-msgid "Descendant Space Tree"
-msgstr ""
-
-#: DescendantSpaceTree/DescendantSpaceTree.gpr.py:36
-msgid ""
-"Generates a web page with an interactive graph of descendants represented as "
-"a Space Tree for efficient viewing, even with many descendants or "
-"generations."
-msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:102
 msgid "Patriarchal Line (Male ancestor)"
@@ -298,4 +287,15 @@ msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1146
 msgid "Open generated HTML file with default browser."
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.gpr.py:26
+msgid "Descendant Space Tree"
+msgstr ""
+
+#: DescendantSpaceTree/DescendantSpaceTree.gpr.py:36
+msgid ""
+"Generates a web page with an interactive graph of descendants represented as "
+"a Space Tree for efficient viewing, even with many descendants or "
+"generations."
 msgstr ""

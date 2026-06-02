@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -106,41 +106,41 @@ msgstr[1] ""
 msgid "Ancestor Generations"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1505
+#: TimelinePedigreeView/TimelinePedigreeView.py:1504
 msgid "About Timeline Pedigree View"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1524
+#: TimelinePedigreeView/TimelinePedigreeView.py:1523
 msgid "_Add"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1554
-#: TimelinePedigreeView/TimelinePedigreeView.py:1771
+#: TimelinePedigreeView/TimelinePedigreeView.py:1553
+#: TimelinePedigreeView/TimelinePedigreeView.py:1770
 msgid "_Edit"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1559
-#: TimelinePedigreeView/TimelinePedigreeView.py:1776
+#: TimelinePedigreeView/TimelinePedigreeView.py:1558
+#: TimelinePedigreeView/TimelinePedigreeView.py:1775
 msgid "_Copy"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1569
+#: TimelinePedigreeView/TimelinePedigreeView.py:1568
 msgid "Spouses"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1602
+#: TimelinePedigreeView/TimelinePedigreeView.py:1601
 msgid "Siblings"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1644
+#: TimelinePedigreeView/TimelinePedigreeView.py:1643
 msgid "Children"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1681
+#: TimelinePedigreeView/TimelinePedigreeView.py:1680
 msgid "Parents"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1719
+#: TimelinePedigreeView/TimelinePedigreeView.py:1718
 msgid "Related"
 msgstr ""
 
