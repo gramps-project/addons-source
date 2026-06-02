@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-10 10:43-0700\n"
+"POT-Creation-Date: 2026-05-29 09:23-0700\n"
 "PO-Revision-Date: 2026-05-18 13:46+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
@@ -1969,7 +1969,8 @@ msgstr "Priezvisko, Meno"
 
 #: DataEntryGramplet/DataEntryGramplet.py:89 GrampyScript/GrampyScript.py:127
 #: GrampyScript/GrampyScript.py:147 GrampyScript/GrampyScript.py:304
-#: NoteGramplet/NoteGramplet.py:111 RelID/relation_tab.py:363
+#: NoteGramplet/NoteGramplet.py:111 PDFForms/generatepdfform.py:258
+#: RelID/relation_tab.py:363
 msgid "Save"
 msgstr "Uložiť"
 
@@ -15058,12 +15059,12 @@ msgid "Export failed"
 msgstr "Export neúspešný"
 
 #: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
-#: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
+#: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:269
 msgid "Include images"
 msgstr "Zahrnúť obrázky"
 
 #: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
-#: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
+#: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:270
 msgid "Include images of people in the nodes."
 msgstr "Zahrnúť obrázky ľudí v uzloch."
 
@@ -15092,25 +15093,36 @@ msgstr "Medzery medzi rodinami starých rodičov"
 msgid "Extra spacing of grandparent families (mm)"
 msgstr "Dodatočné medzery medzi rodinami starých rodičov (mm)\""
 
-#: GenealogyTree/gt_sandclock.py:235
+#: GenealogyTree/gt_sandclock.py:254
 msgid "The center family for the report"
 msgstr "Hlavná rodina pre správu"
 
-#: GenealogyTree/gt_sandclock.py:238
+#: GenealogyTree/gt_sandclock.py:257
 msgid "Generations up"
 msgstr "Generácie nahor"
 
-#: GenealogyTree/gt_sandclock.py:242
+#: GenealogyTree/gt_sandclock.py:261
 msgid "Generations down"
 msgstr "Generácie nadol"
 
-#: GenealogyTree/gt_sandclock.py:246
+#: GenealogyTree/gt_sandclock.py:265
 msgid "Include siblings"
 msgstr "Zahrnúť súrodencov"
 
-#: GenealogyTree/gt_sandclock.py:247
+#: GenealogyTree/gt_sandclock.py:266
 msgid "Include siblings of ancestors."
 msgstr "Zahrnie súrodencov predkov."
+
+#: GenealogyTree/gt_sandclock.py:273
+msgid "Compact tree layout"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:275
+msgid ""
+"Use the genealogytree 'database pole reduced' template, which packs more "
+"generations per page. Useful for large sandclock trees that otherwise clip "
+"off the rendered page."
+msgstr ""
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
@@ -16195,6 +16207,83 @@ msgstr "<b>%s:</b>"
 #: GraphView/search_widget.py:783
 msgid "Partners"
 msgstr "Partneri"
+
+#: HasTagSubstr/hastagsubstr.gpr.py:25 HasTagSubstr/hastagsubstr.py:93
+msgid "People with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:26 HasTagSubstr/hastagsubstr.py:94
+msgid "Matches people with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:40 HasTagSubstr/hastagsubstr.py:102
+msgid "Families with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:42 HasTagSubstr/hastagsubstr.py:104
+#, fuzzy
+#| msgid "Matches families that are matched by an event filter"
+msgid "Matches families with a tag whose name contains the given substring"
+msgstr "Nájde rodiny, ktoré vyhovujú filtru udalostí"
+
+#: HasTagSubstr/hastagsubstr.gpr.py:57 HasTagSubstr/hastagsubstr.py:113
+msgid "Events with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:59 HasTagSubstr/hastagsubstr.py:115
+msgid "Matches events with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:74 HasTagSubstr/hastagsubstr.py:124
+msgid "Places with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:76 HasTagSubstr/hastagsubstr.py:126
+msgid "Matches places with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:91 HasTagSubstr/hastagsubstr.py:135
+msgid "Sources with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:93 HasTagSubstr/hastagsubstr.py:137
+#, fuzzy
+#| msgid "Matches Sources with values containing the chosen parameters"
+msgid "Matches sources with a tag whose name contains the given substring"
+msgstr "Nájde zdroje, ktorých hodnoty obsahujú zvolené parametre"
+
+#: HasTagSubstr/hastagsubstr.gpr.py:108 HasTagSubstr/hastagsubstr.py:146
+msgid "Citations with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:110 HasTagSubstr/hastagsubstr.py:148
+msgid "Matches citations with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:125 HasTagSubstr/hastagsubstr.py:157
+msgid "Repositories with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:127 HasTagSubstr/hastagsubstr.py:159
+msgid "Matches repositories with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:142 HasTagSubstr/hastagsubstr.py:168
+msgid "Media objects with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:144 HasTagSubstr/hastagsubstr.py:170
+msgid ""
+"Matches media objects with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:159 HasTagSubstr/hastagsubstr.py:179
+msgid "Notes with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:161 HasTagSubstr/hastagsubstr.py:181
+msgid "Matches notes with a tag whose name contains the given substring"
+msgstr ""
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
@@ -17713,7 +17802,7 @@ msgstr "Nevygenerovaný md5"
 msgid "Close the Media Verify Tool"
 msgstr "Zavrieť nástroj na overenie médií"
 
-#: MediaVerify/MediaVerify.py:103
+#: MediaVerify/MediaVerify.py:103 PDFForms/generatepdfform.py:129
 msgid "Generate"
 msgstr "Generovať"
 
@@ -18564,6 +18653,230 @@ msgstr "Rodinný prehľad"
 #: Overview/Overview.gpr.py:46
 msgid "Gramplet showing an overview of events for a family"
 msgstr "Gramplet zobrazujúci prehľad udalostí pre rodinu"
+
+#: PDFForms/PDFForms.gpr.py:24 PDFForms/generatepdfform.py:57
+#: PDFForms/generatepdfform.py:63
+#, fuzzy
+#| msgid "Generate Test Notes"
+msgid "Generate PDF Forms"
+msgstr "Vygenerovať testovacie poznámky"
+
+#: PDFForms/PDFForms.gpr.py:26
+msgid ""
+"Generate blank fillable PDF forms: census/event forms or Ahnentafel pedigree "
+"charts."
+msgstr ""
+
+#: PDFForms/PDFForms.gpr.py:46
+msgid "Import Fillable PDF Forms"
+msgstr ""
+
+#: PDFForms/PDFForms.gpr.py:48
+msgid ""
+"Import genealogy data from a PDF form. Send the PDF template to others to "
+"fill out and return."
+msgstr ""
+
+#: PDFForms/generatepdfform.py:77
+msgid "Census / Event Form"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:79
+#, fuzzy
+#| msgid "Pedigree Chart"
+msgid "Ahnentafel Pedigree Chart"
+msgstr "Diagram rodokmeňa"
+
+#: PDFForms/generatepdfform.py:99
+#, fuzzy
+#| msgid "Output format"
+msgid "Output file:"
+msgstr "Formát výstupu"
+
+#: PDFForms/generatepdfform.py:107
+#, fuzzy
+#| msgid "Browser"
+msgid "Browse…"
+msgstr "Prehliadač"
+
+#: PDFForms/generatepdfform.py:116
+msgid "Open PDF after generating"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:157
+#, fuzzy
+#| msgid "Form"
+msgid "Form:"
+msgstr "Formulár"
+
+#: PDFForms/generatepdfform.py:174
+msgid "Rows:"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:186
+msgid "(Rows only affect multi-row sections such as census household lists.)"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:200
+#, fuzzy
+#| msgid "Generation"
+msgid "Generations:"
+msgstr "Generácia"
+
+#: PDFForms/generatepdfform.py:213
+msgid "Includes subject plus up to 5 ancestor generations (2–32 people)."
+msgstr ""
+
+#: PDFForms/generatepdfform.py:252
+msgid "Save PDF as…"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:263
+#, fuzzy
+#| msgid "PNG files"
+msgid "PDF files"
+msgstr "Súbory PNG"
+
+#: PDFForms/generatepdfform.py:283
+msgid "No output file"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:283
+#, fuzzy
+#| msgid "Please set an active person."
+msgid "Please specify an output file path."
+msgstr "Prosím, zadajte aktívnu osobu."
+
+#: PDFForms/generatepdfform.py:293
+#, fuzzy
+#| msgid "Nothing is selected"
+msgid "No form selected"
+msgstr "Nič nie je vybrané"
+
+#: PDFForms/generatepdfform.py:293
+#, fuzzy
+#| msgid "Please, select a folder"
+msgid "Please select a census form."
+msgstr "Prosím, vyberte priečinok"
+
+#: PDFForms/generatepdfform.py:299
+#, fuzzy
+#| msgid "not found."
+msgid "Form not found"
+msgstr "nenájdený."
+
+#: PDFForms/generatepdfform.py:306
+#, fuzzy
+#| msgid "Generation "
+msgid "Generation failed"
+msgstr "Generácia "
+
+#: PDFForms/generatepdfform.py:317
+#, fuzzy
+#| msgid "Generate"
+msgid "PDF generated"
+msgstr "Generovať"
+
+#: PDFForms/importformpdf.py:180
+msgid "Form addon required"
+msgstr ""
+
+#: PDFForms/importformpdf.py:181
+msgid ""
+"The Form addon must be installed to import Form PDF files.\n"
+"Please install the Form addon and restart Gramps."
+msgstr ""
+
+#: PDFForms/importformpdf.py:189
+msgid "Not a Form PDF"
+msgstr ""
+
+#: PDFForms/importformpdf.py:190
+msgid "The _form_id field is missing or empty."
+msgstr ""
+
+#: PDFForms/importformpdf.py:197
+#, fuzzy
+#| msgid "Unknown avatar:"
+msgid "Unknown form ID"
+msgstr "Avatar neznámej osoby:"
+
+#: PDFForms/importformpdf.py:198
+#, python-format
+msgid ""
+"Form ID '%(id)s' is not recognised by the Form addon.\n"
+"Known IDs: %(known)s"
+msgstr ""
+
+#: PDFForms/importformpdf.py:221
+#, python-format
+msgid "Import Form PDF: %s"
+msgstr ""
+
+#: PDFForms/importpdf.py:187
+#, fuzzy
+#| msgid ""
+#| "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+#| "install 'psycopg[binary]'"
+msgid ""
+"The pypdf package is required to import PDF pedigree forms.\n"
+"Install it with:  pip install pypdf"
+msgstr ""
+"psycopg3 je potrebný pre podporu PostgreSQL Enhanced. Inštalujte pomocou: "
+"pip install 'psycopg[binary]'"
+
+#: PDFForms/importpdf.py:195
+#, fuzzy, python-format
+#| msgid "Failed to copy web files : %s"
+msgid "Could not open PDF file: %s"
+msgstr "Nepodarilo sa skopírovať webové súbory: %s"
+
+#: PDFForms/importpdf.py:399
+#, fuzzy
+#| msgid "Add descendant reference in child list"
+msgid "Add media reference: PDF import"
+msgstr "Pridať odkaz na potomka do zoznamu detí"
+
+#: PDFForms/importpdf.py:448
+msgid "PDF import: no data found"
+msgstr ""
+
+#: PDFForms/importpdf.py:449
+msgid ""
+"No names were found in the pedigree form.\n"
+"\n"
+"Fill in the form fields and try again."
+msgstr ""
+
+#: PDFForms/importpdf.py:471
+msgid "Bad references in PDF import"
+msgstr ""
+
+#: PDFForms/importpdf.py:492
+msgid "PDF import error"
+msgstr ""
+
+#: PDFForms/importpdf.py:503
+#, fuzzy
+#| msgid "No data available."
+msgid "Form importer unavailable"
+msgstr "Žiadne údaje nie sú k dispozícii."
+
+#: PDFForms/importpdf.py:504
+msgid "importformpdf.py is missing from the PDFForms addon directory."
+msgstr ""
+
+#: PDFForms/importpdf.py:510
+msgid "PDF import: unrecognized format"
+msgstr ""
+
+#: PDFForms/importpdf.py:511
+#, python-format
+msgid ""
+"No Gramps form ID found in '%s'.\n"
+"\n"
+"Only PDFs generated by Gramps (pedigree or form templates) can be imported."
+msgstr ""
 
 #: Participants/Participants.gpr.py:32
 msgid "Gramplet showing the participants in an event"
@@ -20277,10 +20590,10 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
-"<i><a href=\"https://gramps-project.org/wiki/"
-"index.php?title=How_to_make_a_backup\">Zálohovanie do Gramps XML</a> V "
-"posledných verziách programu Gramps nájdete v ponuke Rodinný strom možnosť "
-"\"Vytvoriť zálohu...\", v opačnom prípade použite v tej istej ponuke možnosť "
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Zálohovanie do Gramps XML</a> V posledných "
+"verziách programu Gramps nájdete v ponuke Rodinný strom možnosť \"Vytvoriť "
+"zálohu...\", v opačnom prípade použite v tej istej ponuke možnosť "
 "\"Exportovať...\", ale zrušte označenie volieb ochrany osobných údajov v "
 "Asistentovi exportéra, aby ste exportovali všetky údaje.</i>\n"
 "\n"
@@ -20832,23 +21145,6 @@ msgstr "Dôstojníci RIA"
 #: RUWebConnectPack/RUWebPack.py:50
 msgid "FamilySpace"
 msgstr "FamilySpace"
-
-#: RebuildTypes/RebuildTypes.gpr.py:26
-msgid "Rebuild Gramps Types"
-msgstr "Obnovenie typov Gramps"
-
-#: RebuildTypes/RebuildTypes.gpr.py:27
-msgid "Rebuilds Gramps Types"
-msgstr "Obnovuje typy v Gramps"
-
-#: RebuildTypes/RebuildTypes.py:75
-msgid "Gramps Types rebuilt"
-msgstr "Typy v Gramps boli obnovené"
-
-#: RebuildTypes/RebuildTypes.py:76
-#, python-format
-msgid "Found %d custom event types"
-msgstr "Nájdených %d vlastných typov udalostí"
 
 #: RelID/relation_tab.gpr.py:35
 msgid "Display relations and distances with the home person"
@@ -21794,7 +22090,7 @@ msgid "Origin:"
 msgstr "Pôvod:"
 
 #: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
-#: WebSearch/markdown_place_history_formatter.py:59
+#: markdown_place_history_formatter.py:59
 msgid "Note:"
 msgstr "Poznámka:"
 
@@ -23686,11 +23982,11 @@ msgstr "Zbierka webových stránok pre Spojené štáty (vyžaduje libwebconnect
 msgid "US Google"
 msgstr "US Google"
 
-#: WebSearch/WebSearch.gpr.py:34 WebSearch/WebSearch.gpr.py:47
+#: WebSearch.gpr.py:34 WebSearch.gpr.py:47
 msgid "WebSearch"
 msgstr "Vyhľadávanie na webe"
 
-#: WebSearch/WebSearch.gpr.py:36
+#: WebSearch.gpr.py:36
 msgid ""
 "Customized queries for online services based on the active Person, Place, "
 "Family, or Source record"
@@ -23698,85 +23994,107 @@ msgstr ""
 "Prispôsobené dopyty pre online služby na základe aktívneho záznamu osoby, "
 "miesta, rodiny alebo zdroja"
 
-#: WebSearch/WebSearch.py:468
+#: WebSearch.py:477
 msgid "Save Coordinates to the Place"
 msgstr "Uložiť súradnice k miestu"
 
-#: WebSearch/WebSearch.py:609
+#: WebSearch.py:618
 msgid "AI provider is disabled"
 msgstr "Poskytovateľ AI je deaktivovaný"
 
-#: WebSearch/WebSearch.py:613
+#: WebSearch.py:622
 msgid "No AI API key provided"
 msgstr "Kľúč API AI nie je k dispozícii"
 
-#: WebSearch/WebSearch.py:619
+#: WebSearch.py:628
 msgid "AI-generated historical place data is currently disabled"
 msgstr "Historické údaje o mieste generované AI sú momentálne deaktivované"
 
-#: WebSearch/WebSearch.py:629
+#: WebSearch.py:638
 msgid "AI provider is unknown. Please check your AI provider settings."
 msgstr ""
 "Poskytovateľ AI je neznámy. Skontrolujte prosím vaše nastavenia "
 "poskytovateľa AI."
 
-#: WebSearch/WebSearch.py:649
+#: WebSearch.py:666
 msgid "⏳ Generating historical place data, please wait..."
 msgstr "⏳ Generovanie historických údajov o mieste, čakajte prosím..."
 
-#: WebSearch/WebSearch.py:1520
+#: WebSearch.py:1630
 msgid "Keys"
 msgstr "Kľúče"
 
-#: WebSearch/WebSearch.py:1522
+#: WebSearch.py:1632
 msgid "Website URL"
 msgstr "URL webového sídla"
 
-#: WebSearch/WebSearch.py:1525
+#: WebSearch.py:1635
 msgid "Add link to note"
 msgstr "Pridať odkaz na poznámku"
 
-#: WebSearch/WebSearch.py:1527
+#: WebSearch.py:1637
 msgid "Add link to attribute"
 msgstr "Pridať odkaz na atribút"
 
-#: WebSearch/WebSearch.py:1529
+#: WebSearch.py:1639
 msgid "Show QR-code"
 msgstr "Zobraziť QR kód"
 
-#: WebSearch/WebSearch.py:1531
+#: WebSearch.py:1641
 msgid "Copy link to clipboard"
 msgstr "Kopírovať odkaz do schránky"
 
-#: WebSearch/WebSearch.py:1534
+#: WebSearch.py:1644
 msgid "Hide link for selected item"
 msgstr "Skryť odkaz pre vybranú položku"
 
-#: WebSearch/WebSearch.py:1537
+#: WebSearch.py:1647
 msgid "Hide link for all items"
 msgstr "Skryť odkaz pre všetky položky"
 
-#: WebSearch/WebSearch.py:1541
+#: WebSearch.py:1651
 msgid "Edit Attribute with the Link"
 msgstr "Upraviť atribút s odkazom"
 
-#: WebSearch/WebSearch.py:1545
+#: WebSearch.py:1655
 msgid "Edit Note with the Link"
 msgstr "Upraviť poznámku s odkazom"
 
-#: WebSearch/WebSearch.py:1548
+#: WebSearch.py:1658
+#, fuzzy
+#| msgid "Edit selection"
+msgid "Edit Internet link"
+msgstr "Upraviť výber"
+
+#: WebSearch.py:1661
 msgid "🔍 AI Suggestions"
 msgstr "🔍 Návrhy AI"
 
-#: WebSearch/WebSearch.py:1767
+#: WebSearch.py:1915
+#, fuzzy
+#| msgid "Attribute no longer exists. The extra icon is removed"
+msgid "Attribute no longer matches this WebSearch row"
+msgstr "Atribút už neexistuje. Dodatočná ikona bola odstránená"
+
+#: WebSearch.py:1942
 msgid "Attribute no longer exists. The extra icon is removed"
 msgstr "Atribút už neexistuje. Dodatočná ikona bola odstránená"
 
-#: WebSearch/WebSearch.py:1813
+#: WebSearch.py:1983
+#, fuzzy
+#| msgid "Note no longer exists. The extra icon is removed"
+msgid "Note no longer exists"
+msgstr "Poznámka už neexistuje. Dodatočná ikona bola odstránená"
+
+#: WebSearch.py:2005
 msgid "Note no longer exists. The extra icon is removed"
 msgstr "Poznámka už neexistuje. Dodatočná ikona bola odstránená"
 
-#: WebSearch/WebSearch.py:1838
+#: WebSearch.py:2057
+msgid "Internet link no longer matches this WebSearch row"
+msgstr ""
+
+#: WebSearch.py:2148
 #, python-brace-format
 msgid ""
 "📌 This '{title}' web link was archived for future reference by the "
@@ -23795,549 +24113,46 @@ msgstr ""
 "Tento odkaz môžete použiť na opätovné navštívenie zdroja a overenie "
 "informácií týkajúcich sa tejto entity."
 
-#: WebSearch/WebSearch.py:1924
+#: WebSearch.py:2229
 #, python-format
 msgid "Note #%(id)s has been successfully added"
 msgstr "Poznámka #%(id)s bola úspešne pridaná"
 
-#: WebSearch/WebSearch.py:1927
+#: WebSearch.py:2232
 msgid "Error creating note"
 msgstr "Chyba pri vytváraní poznámky"
 
-#: WebSearch/WebSearch.py:1947
+#: WebSearch.py:2252
 msgid "URL is copied to the Clipboard"
 msgstr "URL je skopírovaná do schránky"
 
-#: WebSearch/WebSearch.py:2066
+#: WebSearch.py:2391
 msgid "WebSearch Link"
 msgstr "Odkaz na vyhľadávanie na webe"
 
-#: WebSearch/WebSearch.py:2108
+#: WebSearch.py:2428
 msgid "Attribute has been successfully added"
 msgstr "Atribút bol úspešne pridaný"
 
-#: WebSearch/WebSearch.py:2140
+#: WebSearch.py:2460
 #, python-brace-format
 msgid "Title: {title}"
 msgstr "Názov: {title}"
 
-#: WebSearch/WebSearch.py:2144
+#: WebSearch.py:2464
 #, python-brace-format
 msgid "Replaced: {keys}"
 msgstr "Nahradené: {keys}"
 
-#: WebSearch/WebSearch.py:2147
+#: WebSearch.py:2467
 #, python-brace-format
 msgid "Empty: {keys}"
 msgstr "Prázdne: {keys}"
 
-#: WebSearch/WebSearch.py:2149
+#: WebSearch.py:2469
 #, python-brace-format
 msgid "Comment: {comment}"
 msgstr "Komentár: {comment}"
-
-#: WebSearch/activity_row_generator.py:110
-#, python-format
-msgid "Visited: %s"
-msgstr "Navštívené: %s"
-
-#: WebSearch/activity_row_generator.py:114
-#: WebSearch/activity_row_generator.py:129
-#, python-format
-msgid "Link: %s"
-msgstr "Odkaz: %s"
-
-#: WebSearch/activity_row_generator.py:116
-#, python-format
-msgid "Attribute: %s"
-msgstr "Atribút: %s"
-
-#: WebSearch/activity_row_generator.py:118
-#, python-format
-msgid "Value: %s"
-msgstr "Hodnota: %s"
-
-#: WebSearch/activity_row_generator.py:123
-#, python-format
-msgid "Loaded from file: %s"
-msgstr "Načítané zo súboru: %s"
-
-#: WebSearch/activity_row_generator.py:126
-#, python-format
-msgid "Domain: %s"
-msgstr "Doména: %s"
-
-#: WebSearch/activity_row_generator.py:131
-#, python-format
-msgid "Object: %s"
-msgstr "Objekt: %s"
-
-#: WebSearch/activity_row_generator.py:135
-#, python-format
-msgid "Pattern: %s"
-msgstr "Vzor: %s"
-
-#: WebSearch/activity_row_generator.py:138
-#, python-format
-msgid "Object Gramps ID: %s"
-msgstr "Objekt Gramps ID: %s"
-
-#: WebSearch/activity_row_generator.py:142
-#, python-format
-msgid "%s: %s → %s: %s"
-msgstr "%s: %s → %s: %s"
-
-#: WebSearch/activity_row_generator.py:152
-msgid "Link visited"
-msgstr "Odkaz navštívený"
-
-#: WebSearch/activity_row_generator.py:153
-msgid "Link saved to Note"
-msgstr "Odkaz uložený do poznámky"
-
-#: WebSearch/activity_row_generator.py:154
-msgid "Link saved to Attribute"
-msgstr "Odkaz uložený do atribútu"
-
-#: WebSearch/activity_row_generator.py:155
-msgid "Place history loaded"
-msgstr "História miesta načítaná"
-
-#: WebSearch/activity_row_generator.py:156
-msgid "Domain skipped"
-msgstr "Doména vynechaná"
-
-#: WebSearch/activity_row_generator.py:157
-msgid "Link hidden for object"
-msgstr "Odkaz skrytý pre objekt"
-
-#: WebSearch/activity_row_generator.py:158
-msgid "Link hidden for all objects"
-msgstr "Odkaz skrytý pre všetky objekty"
-
-#: WebSearch/activity_row_generator.py:159
-msgid "Attribute updated"
-msgstr "Atribút aktualizovaný"
-
-#: WebSearch/activity_row_generator.py:160
-msgid "Note updated"
-msgstr "Poznámka aktualizovaná"
-
-#: WebSearch/constants.py:390
-msgid "Column - Icons"
-msgstr "Stĺpec - Ikony"
-
-#: WebSearch/constants.py:391
-msgid "Column - Source Types (flags)"
-msgstr "Stĺpec - Typy zdrojov (vlajky)"
-
-#: WebSearch/constants.py:392
-msgid "Column - Keys"
-msgstr "Stĺpec - Kľúče"
-
-#: WebSearch/constants.py:393
-msgid "Column - Title"
-msgstr "Stĺpec - Názov"
-
-#: WebSearch/constants.py:394
-msgid "Column - Website Url"
-msgstr "Stĺpec - URL webového sídla"
-
-#: WebSearch/constants.py:395
-msgid "Column - Comment"
-msgstr "Stĺpec - Komentár"
-
-#: WebSearch/constants.py:424
-msgid "Icon - Visited URLs (checkmark)"
-msgstr "Ikona - Navštívené URL (začiarknutie)"
-
-#: WebSearch/constants.py:425
-msgid "Icon - Saved URLs (floppy disk)"
-msgstr "Ikona - Uložené URL (disketa)"
-
-#: WebSearch/constants.py:426
-msgid "Icon - URLs linked to UID attributes (UID badge)"
-msgstr "Ikona - URL adresy prepojené s atribútmi UID (odznak UID)"
-
-#: WebSearch/constants.py:427
-msgid "Icon - URLs from regional CSV files (flag)"
-msgstr "Ikona - URL adresy z regionálnych CSV súborov (vlajka)"
-
-#: WebSearch/constants.py:428
-msgid "Icon - URLs from static CSV files (red pin)"
-msgstr "Ikona - URL adresy zo statických CSV súborov (červený špendlík)"
-
-#: WebSearch/constants.py:429
-msgid "Icon - URLs from common CSV files (earth)"
-msgstr "Ikona - URL adresy zo spoločných CSV súborov (zemeguľa)"
-
-#: WebSearch/constants.py:430
-msgid "Icon - URLs from cross CSV files (shuffle arrows)"
-msgstr "Ikona - URL adresy z krížových CSV súborov (šipky pre miešanie)"
-
-#: WebSearch/constants.py:431
-msgid "Icon - URLs from custom user directory (spreadsheet icon)"
-msgstr "Ikona - URL adresy z vlastného adresára používateľa (ikona tabuľky)"
-
-#: WebSearch/constants.py:432
-msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr "Ikona - URL adresy z karty 'Atribúty' (ikona 'A')"
-
-#: WebSearch/constants.py:433
-msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr "Ikona - URL adresy z karty 'Internet' (ikona 'I')"
-
-#: WebSearch/constants.py:434
-msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr "Ikona - URL adresy z karty 'Poznámky' (ikona 'P')"
-
-#: WebSearch/info_panel.py:108
-msgid "## 🧩 About WebSearch"
-msgstr "## 🧩 O WebSearch"
-
-#: WebSearch/info_panel.py:111
-msgid ""
-"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
-"websites."
-msgstr ""
-"WebSearch je gramplet pre Gramps, ktorý vám pomáha vyhľadávať webové sídla "
-"súvisiace s genealógiou."
-
-#: WebSearch/info_panel.py:117
-msgid ""
-"It supports CSV-based link templates, AI-assisted site discovery, and direct "
-"integration with notes and attributes."
-msgstr ""
-"Podporuje šablóny odkazov založené na CSV, vyhľadávanie webových stránok s "
-"pomocou umelej inteligencie a priamu integráciu s poznámkami a atribútmi."
-
-#: WebSearch/info_panel.py:125
-msgid "## ⚙️ System Information"
-msgstr "## ⚙️ Informácie o systéme"
-
-#: WebSearch/info_panel.py:128
-msgid "🔻 **Missing:** `qrcode`"
-msgstr "🔻 **Chýba:** `qrcode`"
-
-#: WebSearch/info_panel.py:130
-msgid "ℹ️ This Python library is not available in your system."
-msgstr "ℹ️ Táto knižnica Python nie je vo vašom systéme k dispozícii."
-
-#: WebSearch/info_panel.py:133
-msgid "Without it, QR code generation will not work."
-msgstr "Bez nej nebude fungovať generovanie QR kódov."
-
-#: WebSearch/info_panel.py:136
-msgid "💡 Usually installed with: `pip install qrcode[pil]`"
-msgstr "💡 Zvyčajne sa inštaluje pomocou: `pip install qrcode[pil]`"
-
-#: WebSearch/info_panel.py:140 WebSearch/info_panel.py:162
-#: WebSearch/info_panel.py:181
-msgid ""
-"*Note: Some operating systems or environments may require alternative "
-"installation methods.*"
-msgstr ""
-"*Poznámka: Niektoré operačné systémy alebo prostredia môžu vyžadovať "
-"alternatívne metódy inštalácie.*"
-
-#: WebSearch/info_panel.py:147
-msgid "🔻 **Missing:** `openai`"
-msgstr "🔻 **Chýba:** `openai`"
-
-#: WebSearch/info_panel.py:149
-msgid "ℹ️ This library is required for accessing OpenAI-based features."
-msgstr "ℹ️ Táto knižnica je potrebná na prístup k funkciám založeným na OpenAI."
-
-#: WebSearch/info_panel.py:153
-msgid ""
-"Without it, AI-generated site suggestions and place history will be disabled."
-msgstr ""
-"Bez nej budú návrhy stránok generované umelou inteligenciou a história "
-"miesta deaktivované."
-
-#: WebSearch/info_panel.py:158
-msgid "💡 Usually installed with: `pip install openai`"
-msgstr "💡 Zvyčajne sa inštaluje pomocou: `pip install openai`"
-
-#: WebSearch/info_panel.py:169
-msgid "🔻 **Missing:** `requests`"
-msgstr "🔻 **Chýba:** `requests`"
-
-#: WebSearch/info_panel.py:171
-msgid "ℹ️ This library is used to communicate with web APIs."
-msgstr "ℹ️ Táto knižnica sa používa na komunikáciu s webovými API."
-
-#: WebSearch/info_panel.py:174
-msgid "Without it, external data sources may not be accessible."
-msgstr "Bez nej môžu byť externé zdroje údajov nedostupné."
-
-#: WebSearch/info_panel.py:177
-msgid "💡 Usually installed with: `pip install requests`"
-msgstr "💡 Zvyčajne sa inštaluje pomocou: `pip install requests`"
-
-#: WebSearch/info_panel.py:188
-msgid "## 📂 Data File Locations"
-msgstr "## 📂 Umiestnenie dátových súborov"
-
-#: WebSearch/info_panel.py:191
-msgid ""
-"Below are the paths to system and user-defined data files used by WebSearch."
-msgstr ""
-"Nižšie sú uvedené cesty k systémovým a používateľsky definovaným dátovým "
-"súborom, ktoré používa WebSearch."
-
-#: WebSearch/info_panel.py:195
-msgid "#### CSV File Paths"
-msgstr "#### Cesty k súborom CSV"
-
-#: WebSearch/info_panel.py:197
-#, python-format
-msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
-msgstr "**Systémová cesta:** `{dir|%s}` - obsahuje vstavané súbory CSV"
-
-#: WebSearch/info_panel.py:201
-#, python-format
-msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
-msgstr ""
-"- **Cesta definovaná používateľom:** `{dir|%s}` – pre vlastné súbory CSV "
-"definované používateľom"
-
-#: WebSearch/info_panel.py:205
-msgid "#### JSON File Paths"
-msgstr "#### Cesty k súborom JSON"
-
-#: WebSearch/info_panel.py:208
-#, python-format
-msgid ""
-"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
-"file"
-msgstr ""
-"- **Systémová cesta:** `{dir|%s}` – obsahuje vstavaný súbor "
-"attribute_mapping.json"
-
-#: WebSearch/info_panel.py:214
-#, python-format
-msgid ""
-"- **User-defined path:** `{dir|%s}` – for custom user-defined "
-"attribute_mapping.json file"
-msgstr ""
-"- **Cesta definovaná používateľom:** `{dir|%s}` – pre vlastný súbor "
-"attribute_mapping.json definovaný používateľom"
-
-#: WebSearch/info_panel.py:221
-msgid "  💡 *Tip: click any path above to open it in your file manager.*"
-msgstr ""
-"  💡 *Tip: kliknutím na ľubovoľnú cestu vyššie ju otvoríte vo svojom "
-"správcovi súborov.*"
-
-#: WebSearch/info_panel.py:224
-msgid "📖 View detailed usage in: "
-msgstr "📖 Podrobné informácie o používaní nájdete v: "
-
-#: WebSearch/info_panel.py:233
-msgid "## 💬 Support"
-msgstr "## 💬 Podpora"
-
-#: WebSearch/info_panel.py:234
-msgid "👤 Created and maintained by Yurii Liubymyi"
-msgstr "👤 Vytvoril a spravuje Yurii Liubymyi"
-
-#: WebSearch/info_panel.py:237
-msgid ""
-"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
-"forum:"
-msgstr ""
-"💬 Ak potrebujete pomoc alebo máte pripomienky, neváhajte kontaktovať "
-"`@Urchello` na fóre Gramps:"
-
-#: WebSearch/info_panel.py:241
-msgid "Gramps Forum (Discourse)"
-msgstr ""
-
-#: WebSearch/info_panel.py:245
-msgid "✅ Bug reports and feature requests are completely **free of charge**."
-msgstr "✅ Hlásenia chýb a požiadavky na nové funkcie sú úplne **bezplatné**."
-
-#: WebSearch/info_panel.py:249
-msgid "GitHub Issues"
-msgstr "Problémy GitHub"
-
-#: WebSearch/info_panel.py:252
-msgid "Gramps Bug Tracker"
-msgstr ""
-
-#: WebSearch/info_panel.py:255
-#, python-format
-msgid "🧩 WebSearch Gramplet version: `%s`"
-msgstr "🧩 Verzia grampletu WebSearch: `%s`"
-
-#: WebSearch/internet_links_loader.py:70 WebSearch/internet_links_loader.py:71
-msgid "No title"
-msgstr "Žiadny názov"
-
-#: WebSearch/markdown_place_history_formatter.py:52
-msgid "No data available."
-msgstr "Žiadne údaje nie sú k dispozícii."
-
-#: WebSearch/markdown_place_history_formatter.py:57
-msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
-msgstr "HISTORICKÉ SPRÁVNE ČLENENIE"
-
-#: WebSearch/markdown_place_history_formatter.py:58
-msgid "Foundation date:"
-msgstr "Dátum založenia:"
-
-#: WebSearch/markdown_place_history_formatter.py:60
-msgid "Coordinates:"
-msgstr "Súradnice:"
-
-#: WebSearch/markdown_place_history_formatter.py:61
-msgid "Administrative history"
-msgstr "Správna história"
-
-#: WebSearch/markdown_place_history_formatter.py:62
-msgid "Data provided to AI:"
-msgstr "Údaje poskytnuté AI:"
-
-#: WebSearch/markdown_place_history_formatter.py:64
-msgid "Full hierarchy"
-msgstr "Úplná hierarchia"
-
-#: WebSearch/markdown_place_history_formatter.py:68
-msgid "Place Type:"
-msgstr "Typ miesta:"
-
-#: WebSearch/markdown_place_history_formatter.py:69
-msgid "Last Retrieved At:"
-msgstr "Posledné načítanie:"
-
-#: WebSearch/note_links_loader.py:69
-msgid "Note Link (parsed)"
-msgstr "Odkaz na poznámku (analyzovaný)"
-
-#: WebSearch/note_links_loader.py:120
-msgid "Note Link (internal)"
-msgstr "Odkaz poznámky (interný)"
-
-#: WebSearch/note_links_loader.py:123
-msgid "Note Link (external)"
-msgstr "Odkaz poznámky (externý)"
-
-#: WebSearch/qr_window.py:76
-msgid "QR-code"
-msgstr "QR kód"
-
-#: WebSearch/qr_window.py:107 WebSearch/qr_window.py:110
-msgid "⚠ Missing dependency \"qrcode\""
-msgstr "⚠ Chýbajúca závislosť \"qrcode\""
-
-#: WebSearch/qr_window.py:121
-msgid ""
-"⚠ Error generating QR code:\n"
-"Original error: “{}”"
-msgstr ""
-"⚠ Chyba pri generovaní QR kódu:\n"
-"Pôvodná chyba: \"{}\""
-
-#: WebSearch/settings_ui_manager.py:112
-msgid "Middle Name Handling"
-msgstr "Spracovanie stredného mena"
-
-#: WebSearch/settings_ui_manager.py:117
-msgid "Leave alone"
-msgstr "Nechať tak"
-
-#: WebSearch/settings_ui_manager.py:118
-msgid "Separate"
-msgstr "Oddeliť"
-
-#: WebSearch/settings_ui_manager.py:128
-msgid "URL Compactness Level"
-msgstr "Úroveň kompaktnosti URL"
-
-#: WebSearch/settings_ui_manager.py:134
-msgid "Shortest - No Prefix, No Keys"
-msgstr "Najkratšia - bez predpony, bez kľúčov"
-
-#: WebSearch/settings_ui_manager.py:137
-msgid "Compact - No Prefix, Keys Without Attributes"
-msgstr "Kompaktná - bez predpony, kľúče bez atribútov"
-
-#: WebSearch/settings_ui_manager.py:140
-msgid "Compact - No Prefix, Keys With Attributes"
-msgstr "Kompaktná - bez predpony, kľúče s atribútmi"
-
-#: WebSearch/settings_ui_manager.py:143
-msgid "Long - Without Prefix on the Left"
-msgstr "Dlhá - bez predpony vľavo"
-
-#: WebSearch/settings_ui_manager.py:150
-msgid "URL Prefix Replacement"
-msgstr "Nahradenie predpony URL"
-
-#: WebSearch/settings_ui_manager.py:157
-msgid "AI Provider"
-msgstr "Poskytovateľ AI"
-
-#: WebSearch/settings_ui_manager.py:162
-msgid "(Disabled)"
-msgstr "(Vypnuté)"
-
-#: WebSearch/settings_ui_manager.py:163
-msgid "OpenAI"
-msgstr "OpenAI"
-
-#: WebSearch/settings_ui_manager.py:164
-msgid "Mistral AI"
-msgstr "Mistral AI"
-
-#: WebSearch/settings_ui_manager.py:171
-msgid "OpenAI API Key"
-msgstr "Kľúč API OpenAI"
-
-#: WebSearch/settings_ui_manager.py:176
-msgid "OpenAI Model"
-msgstr "Model OpenAI"
-
-#: WebSearch/settings_ui_manager.py:181
-msgid "Mistral API Key"
-msgstr "Kľúč API Mistral"
-
-#: WebSearch/settings_ui_manager.py:186
-msgid "Mistral Model"
-msgstr "Model Mistral"
-
-#: WebSearch/settings_ui_manager.py:191
-msgid "Show Links From the 'Attributes' tab"
-msgstr "Zobraziť odkazy z karty 'Atribúty'"
-
-#: WebSearch/settings_ui_manager.py:196
-msgid "Show Links From the 'Internet' tab"
-msgstr "Zobraziť odkazy z karty 'Internet'"
-
-#: WebSearch/settings_ui_manager.py:201
-msgid "Show Links From the Notes"
-msgstr "Zobraziť odkazy z poznámok"
-
-#: WebSearch/settings_ui_manager.py:209
-msgid "Enable AI-generated historical place data"
-msgstr "Povoliť historické údaje o miestach generované umelou inteligenciou"
-
-#: WebSearch/settings_ui_manager.py:215
-msgid "Custom country code for AI notes (optional)"
-msgstr "Vlastný kód krajiny pre poznámky umelej inteligencie (voliteľné)"
-
-#: WebSearch/settings_ui_manager.py:244
-msgid "Enable CSV Files"
-msgstr "Povoliť súbory CSV"
-
-#: WebSearch/settings_ui_manager.py:251
-msgid "Display Columns"
-msgstr "Zobraziť stĺpce"
-
-#: WebSearch/settings_ui_manager.py:265
-msgid "Display Icons"
-msgstr "Zobraziť ikony"
 
 #: WordleGramplet/WordleGramplet.gpr.py:4
 #: WordleGramplet/WordleGramplet.gpr.py:10
@@ -24359,6 +24174,331 @@ msgstr "Počet veľkostí písma"
 #: WordleGramplet/WordleGramplet.py:144
 msgid "Select filter to restrict list"
 msgstr "Vyberte filter na vymedzenie zoznamu"
+
+#: activity_row_generator.py:120
+#, python-format
+msgid "Visited: %s"
+msgstr "Navštívené: %s"
+
+#: activity_row_generator.py:124 activity_row_generator.py:139
+#, python-format
+msgid "Link: %s"
+msgstr "Odkaz: %s"
+
+#: activity_row_generator.py:126
+#, python-format
+msgid "Attribute: %s"
+msgstr "Atribút: %s"
+
+#: activity_row_generator.py:128
+#, python-format
+msgid "Value: %s"
+msgstr "Hodnota: %s"
+
+#: activity_row_generator.py:133
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "Načítané zo súboru: %s"
+
+#: activity_row_generator.py:136
+#, python-format
+msgid "Domain: %s"
+msgstr "Doména: %s"
+
+#: activity_row_generator.py:141
+#, python-format
+msgid "Object: %s"
+msgstr "Objekt: %s"
+
+#: activity_row_generator.py:145
+#, python-format
+msgid "Pattern: %s"
+msgstr "Vzor: %s"
+
+#: activity_row_generator.py:148
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "Objekt Gramps ID: %s"
+
+#: activity_row_generator.py:152
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s: %s → %s: %s"
+
+#: activity_row_generator.py:162
+msgid "Link visited"
+msgstr "Odkaz navštívený"
+
+#: activity_row_generator.py:163
+msgid "Link saved to Note"
+msgstr "Odkaz uložený do poznámky"
+
+#: activity_row_generator.py:164
+msgid "Link saved to Attribute"
+msgstr "Odkaz uložený do atribútu"
+
+#: activity_row_generator.py:165
+msgid "Place history loaded"
+msgstr "História miesta načítaná"
+
+#: activity_row_generator.py:166
+msgid "Domain skipped"
+msgstr "Doména vynechaná"
+
+#: activity_row_generator.py:167
+msgid "Link hidden for object"
+msgstr "Odkaz skrytý pre objekt"
+
+#: activity_row_generator.py:168
+msgid "Link hidden for all objects"
+msgstr "Odkaz skrytý pre všetky objekty"
+
+#: activity_row_generator.py:169
+msgid "Attribute updated"
+msgstr "Atribút aktualizovaný"
+
+#: activity_row_generator.py:170
+msgid "Note updated"
+msgstr "Poznámka aktualizovaná"
+
+#: constants.py:392
+msgid "Column - Icons"
+msgstr "Stĺpec - Ikony"
+
+#: constants.py:393
+msgid "Column - Source Types (flags)"
+msgstr "Stĺpec - Typy zdrojov (vlajky)"
+
+#: constants.py:394
+msgid "Column - Keys"
+msgstr "Stĺpec - Kľúče"
+
+#: constants.py:395
+msgid "Column - Title"
+msgstr "Stĺpec - Názov"
+
+#: constants.py:396
+msgid "Column - Website Url"
+msgstr "Stĺpec - URL webového sídla"
+
+#: constants.py:397
+msgid "Column - Comment"
+msgstr "Stĺpec - Komentár"
+
+#: constants.py:426
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "Ikona - Navštívené URL (začiarknutie)"
+
+#: constants.py:427
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "Ikona - Uložené URL (disketa)"
+
+#: constants.py:428
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "Ikona - URL adresy prepojené s atribútmi UID (odznak UID)"
+
+#: constants.py:429
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "Ikona - URL adresy z regionálnych CSV súborov (vlajka)"
+
+#: constants.py:430
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "Ikona - URL adresy zo statických CSV súborov (červený špendlík)"
+
+#: constants.py:431
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "Ikona - URL adresy zo spoločných CSV súborov (zemeguľa)"
+
+#: constants.py:432
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "Ikona - URL adresy z krížových CSV súborov (šipky pre miešanie)"
+
+#: constants.py:433
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr "Ikona - URL adresy z vlastného adresára používateľa (ikona tabuľky)"
+
+#: constants.py:434
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Ikona - URL adresy z karty 'Atribúty' (ikona 'A')"
+
+#: constants.py:435
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Ikona - URL adresy z karty 'Internet' (ikona 'I')"
+
+#: constants.py:436
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Ikona - URL adresy z karty 'Poznámky' (ikona 'P')"
+
+#: info_panel.py:108
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 O WebSearch"
+
+#: info_panel.py:111
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"WebSearch je gramplet pre Gramps, ktorý vám pomáha vyhľadávať webové sídla "
+"súvisiace s genealógiou."
+
+#: info_panel.py:117
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"Podporuje šablóny odkazov založené na CSV, vyhľadávanie webových stránok s "
+"pomocou umelej inteligencie a priamu integráciu s poznámkami a atribútmi."
+
+#: info_panel.py:125
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Informácie o systéme"
+
+#: info_panel.py:128
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Chýba:** `qrcode`"
+
+#: info_panel.py:130
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Táto knižnica Python nie je vo vašom systéme k dispozícii."
+
+#: info_panel.py:133
+msgid "Without it, QR code generation will not work."
+msgstr "Bez nej nebude fungovať generovanie QR kódov."
+
+#: info_panel.py:136
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Zvyčajne sa inštaluje pomocou: `pip install qrcode[pil]`"
+
+#: info_panel.py:140 info_panel.py:162 info_panel.py:181
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Poznámka: Niektoré operačné systémy alebo prostredia môžu vyžadovať "
+"alternatívne metódy inštalácie.*"
+
+#: info_panel.py:147
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **Chýba:** `openai`"
+
+#: info_panel.py:149
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr "ℹ️ Táto knižnica je potrebná na prístup k funkciám založeným na OpenAI."
+
+#: info_panel.py:153
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Bez nej budú návrhy stránok generované umelou inteligenciou a história "
+"miesta deaktivované."
+
+#: info_panel.py:158
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 Zvyčajne sa inštaluje pomocou: `pip install openai`"
+
+#: info_panel.py:169
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Chýba:** `requests`"
+
+#: info_panel.py:171
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Táto knižnica sa používa na komunikáciu s webovými API."
+
+#: info_panel.py:174
+msgid "Without it, external data sources may not be accessible."
+msgstr "Bez nej môžu byť externé zdroje údajov nedostupné."
+
+#: info_panel.py:177
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 Zvyčajne sa inštaluje pomocou: `pip install requests`"
+
+#: info_panel.py:188
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Umiestnenie dátových súborov"
+
+#: info_panel.py:191
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"Nižšie sú uvedené cesty k systémovým a používateľsky definovaným dátovým "
+"súborom, ktoré používa WebSearch."
+
+#: info_panel.py:195
+msgid "#### CSV File Paths"
+msgstr "#### Cesty k súborom CSV"
+
+#: info_panel.py:197
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr "**Systémová cesta:** `{dir|%s}` - obsahuje vstavané súbory CSV"
+
+#: info_panel.py:201
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **Cesta definovaná používateľom:** `{dir|%s}` – pre vlastné súbory CSV "
+"definované používateľom"
+
+#: info_panel.py:205
+msgid "#### JSON File Paths"
+msgstr "#### Cesty k súborom JSON"
+
+#: info_panel.py:208
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **Systémová cesta:** `{dir|%s}` – obsahuje vstavaný súbor "
+"attribute_mapping.json"
+
+#: info_panel.py:214
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **Cesta definovaná používateľom:** `{dir|%s}` – pre vlastný súbor "
+"attribute_mapping.json definovaný používateľom"
+
+#: info_panel.py:221
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *Tip: kliknutím na ľubovoľnú cestu vyššie ju otvoríte vo svojom "
+"správcovi súborov.*"
+
+#: info_panel.py:224
+msgid "📖 View detailed usage in: "
+msgstr "📖 Podrobné informácie o používaní nájdete v: "
+
+#: info_panel.py:233
+msgid "## 💬 Support"
+msgstr "## 💬 Podpora"
+
+#: info_panel.py:234
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 Vytvoril a spravuje Yurii Liubymyi"
+
+#: info_panel.py:237
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 Ak potrebujete pomoc alebo máte pripomienky, neváhajte kontaktovať "
+"`@Urchello` na fóre Gramps:"
+
+#: info_panel.py:245
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr "✅ Hlásenia chýb a požiadavky na nové funkcie sú úplne **bezplatné**."
+
+#: info_panel.py:255
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 Verzia grampletu WebSearch: `%s`"
+
+#: internet_links_loader.py:78 internet_links_loader.py:79
+msgid "No title"
+msgstr "Žiadny názov"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -24709,9 +24849,11 @@ msgid "Period: "
 msgstr "Obdobie: "
 
 #: lxml/lxmlGramplet.py:659 lxml/lxmlGramplet.py:663
-#, python-brace-format
+#, fuzzy, python-brace-format
+#| msgid "\t{number} surname"
+#| msgid_plural "\t{number} surnames; no frequency yet\n"
 msgid "\t{number} surname"
-msgid_plural "\t{number} surnames; no frequency yet\n"
+msgid_plural "\t{number} surnames; no frequency yet"
 msgstr[0] "\t{number} priezvisko"
 msgstr[1] "\t{number} priezviská; zatiaľ žiadna frekvencia"
 msgstr[2] "\t{number} priezvisk; zatiaľ žiadna frekvencia"
@@ -24722,25 +24864,31 @@ msgid "\t{number} surname; no frequency yet"
 msgstr "\tPriezvisko: {number} ; zatiaľ žiadna frekvencia"
 
 #: lxml/lxmlGramplet.py:660 lxml/lxmlGramplet.py:667
-#, python-brace-format
+#, fuzzy, python-brace-format
+#| msgid "\t{number} place"
+#| msgid_plural "\t{number} places\n"
 msgid "\t{number} place"
-msgid_plural "\t{number} places\n"
+msgid_plural "\t{number} places"
 msgstr[0] "\t{number} miesto"
 msgstr[1] "\t{number} miesta"
 msgstr[2] "\t{number} miest"
 
 #: lxml/lxmlGramplet.py:661 lxml/lxmlGramplet.py:671
-#, python-brace-format
+#, fuzzy, python-brace-format
+#| msgid "\t{number} note"
+#| msgid_plural "\t{number} notes\n"
 msgid "\t{number} note"
-msgid_plural "\t{number} notes\n"
+msgid_plural "\t{number} notes"
 msgstr[0] "\t{number} poznámka"
 msgstr[1] "\t{number} poznámky"
 msgstr[2] "\t{number} poznámok"
 
 #: lxml/lxmlGramplet.py:675
-#, python-brace-format
+#, fuzzy, python-brace-format
+#| msgid "\t{number} source"
+#| msgid_plural "\t{number} sources\n"
 msgid "\t{number} source"
-msgid_plural "\t{number} sources\n"
+msgid_plural "\t{number} sources"
 msgstr[0] "\t{number} zdroj"
 msgstr[1] "\t{number} zdroje"
 msgstr[2] "\t{number} zdrojov"
@@ -24813,6 +24961,186 @@ msgstr ""
 "Skúste otvoriť \n"
 " \"%s\" \n"
 " do svojho preferovaného webového prehliadača ..."
+
+#: markdown_place_history_formatter.py:52
+msgid "No data available."
+msgstr "Žiadne údaje nie sú k dispozícii."
+
+#: markdown_place_history_formatter.py:57
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "HISTORICKÉ SPRÁVNE ČLENENIE"
+
+#: markdown_place_history_formatter.py:58
+msgid "Foundation date:"
+msgstr "Dátum založenia:"
+
+#: markdown_place_history_formatter.py:60
+msgid "Coordinates:"
+msgstr "Súradnice:"
+
+#: markdown_place_history_formatter.py:61
+msgid "Administrative history"
+msgstr "Správna história"
+
+#: markdown_place_history_formatter.py:62
+msgid "Data provided to AI:"
+msgstr "Údaje poskytnuté AI:"
+
+#: markdown_place_history_formatter.py:64
+msgid "Full hierarchy"
+msgstr "Úplná hierarchia"
+
+#: markdown_place_history_formatter.py:68
+msgid "Place Type:"
+msgstr "Typ miesta:"
+
+#: markdown_place_history_formatter.py:69
+msgid "Last Retrieved At:"
+msgstr "Posledné načítanie:"
+
+#: note_links_loader.py:72
+msgid "Note Link (parsed)"
+msgstr "Odkaz na poznámku (analyzovaný)"
+
+#: note_links_loader.py:125
+msgid "Note Link (internal)"
+msgstr "Odkaz poznámky (interný)"
+
+#: note_links_loader.py:128
+msgid "Note Link (external)"
+msgstr "Odkaz poznámky (externý)"
+
+#: qr_window.py:75
+msgid "QR-code"
+msgstr "QR kód"
+
+#: qr_window.py:106 qr_window.py:109
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Chýbajúca závislosť \"qrcode\""
+
+#: qr_window.py:120
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Chyba pri generovaní QR kódu:\n"
+"Pôvodná chyba: \"{}\""
+
+#: settings_ui_manager.py:112
+msgid "Middle Name Handling"
+msgstr "Spracovanie stredného mena"
+
+#: settings_ui_manager.py:117
+msgid "Leave alone"
+msgstr "Nechať tak"
+
+#: settings_ui_manager.py:118
+msgid "Separate"
+msgstr "Oddeliť"
+
+#: settings_ui_manager.py:128
+msgid "URL Compactness Level"
+msgstr "Úroveň kompaktnosti URL"
+
+#: settings_ui_manager.py:134
+msgid "Shortest - No Prefix, No Keys"
+msgstr "Najkratšia - bez predpony, bez kľúčov"
+
+#: settings_ui_manager.py:137
+msgid "Compact - No Prefix, Keys Without Attributes"
+msgstr "Kompaktná - bez predpony, kľúče bez atribútov"
+
+#: settings_ui_manager.py:140
+msgid "Compact - No Prefix, Keys With Attributes"
+msgstr "Kompaktná - bez predpony, kľúče s atribútmi"
+
+#: settings_ui_manager.py:143
+msgid "Long - Without Prefix on the Left"
+msgstr "Dlhá - bez predpony vľavo"
+
+#: settings_ui_manager.py:150
+msgid "URL Prefix Replacement"
+msgstr "Nahradenie predpony URL"
+
+#: settings_ui_manager.py:157
+msgid "AI Provider"
+msgstr "Poskytovateľ AI"
+
+#: settings_ui_manager.py:162
+msgid "(Disabled)"
+msgstr "(Vypnuté)"
+
+#: settings_ui_manager.py:163
+msgid "OpenAI"
+msgstr "OpenAI"
+
+#: settings_ui_manager.py:164
+msgid "Mistral AI"
+msgstr "Mistral AI"
+
+#: settings_ui_manager.py:171
+msgid "OpenAI API Key"
+msgstr "Kľúč API OpenAI"
+
+#: settings_ui_manager.py:176
+msgid "OpenAI Model"
+msgstr "Model OpenAI"
+
+#: settings_ui_manager.py:181
+msgid "Mistral API Key"
+msgstr "Kľúč API Mistral"
+
+#: settings_ui_manager.py:186
+msgid "Mistral Model"
+msgstr "Model Mistral"
+
+#: settings_ui_manager.py:191
+msgid "Show Links From the 'Attributes' tab"
+msgstr "Zobraziť odkazy z karty 'Atribúty'"
+
+#: settings_ui_manager.py:196
+msgid "Show Links From the 'Internet' tab"
+msgstr "Zobraziť odkazy z karty 'Internet'"
+
+#: settings_ui_manager.py:201
+msgid "Show Links From the Notes"
+msgstr "Zobraziť odkazy z poznámok"
+
+#: settings_ui_manager.py:209
+msgid "Enable AI-generated historical place data"
+msgstr "Povoliť historické údaje o miestach generované umelou inteligenciou"
+
+#: settings_ui_manager.py:215
+msgid "Custom country code for AI notes (optional)"
+msgstr "Vlastný kód krajiny pre poznámky umelej inteligencie (voliteľné)"
+
+#: settings_ui_manager.py:244
+msgid "Enable CSV Files"
+msgstr "Povoliť súbory CSV"
+
+#: settings_ui_manager.py:251
+msgid "Display Columns"
+msgstr "Zobraziť stĺpce"
+
+#: settings_ui_manager.py:265
+msgid "Display Icons"
+msgstr "Zobraziť ikony"
+
+#~ msgid "Rebuild Gramps Types"
+#~ msgstr "Obnovenie typov Gramps"
+
+#~ msgid "Rebuilds Gramps Types"
+#~ msgstr "Obnovuje typy v Gramps"
+
+#~ msgid "Gramps Types rebuilt"
+#~ msgstr "Typy v Gramps boli obnovené"
+
+#, python-format
+#~ msgid "Found %d custom event types"
+#~ msgstr "Nájdených %d vlastných typov udalostí"
+
+#~ msgid "GitHub Issues"
+#~ msgstr "Problémy GitHub"
 
 #~ msgid "can't found it because exiv2 not installed"
 #~ msgstr "nedá sa nájsť, pretože exiv2 nie je nainštalovaný"

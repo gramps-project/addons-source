@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-10 10:43-0700\n"
+"POT-Creation-Date: 2026-05-29 09:23-0700\n"
 "PO-Revision-Date: 2026-04-20 04:09+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
@@ -2015,7 +2015,8 @@ msgstr "Sukunimi, Etunimi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:89 GrampyScript/GrampyScript.py:127
 #: GrampyScript/GrampyScript.py:147 GrampyScript/GrampyScript.py:304
-#: NoteGramplet/NoteGramplet.py:111 RelID/relation_tab.py:363
+#: NoteGramplet/NoteGramplet.py:111 PDFForms/generatepdfform.py:258
+#: RelID/relation_tab.py:363
 msgid "Save"
 msgstr "Tallenna"
 
@@ -15121,12 +15122,12 @@ msgid "Export failed"
 msgstr "Vienti epäonnistui"
 
 #: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
-#: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
+#: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:269
 msgid "Include images"
 msgstr "Näytä kuvat"
 
 #: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
-#: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
+#: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:270
 msgid "Include images of people in the nodes."
 msgstr "Näytä solmuissa henkilökuvat."
 
@@ -15155,25 +15156,36 @@ msgstr "Isovanhempien perheiden väli"
 msgid "Extra spacing of grandparent families (mm)"
 msgstr "Isovanhempien perheiden ylimääräinen väli (mm)"
 
-#: GenealogyTree/gt_sandclock.py:235
+#: GenealogyTree/gt_sandclock.py:254
 msgid "The center family for the report"
 msgstr "Raportin keskusperhe"
 
-#: GenealogyTree/gt_sandclock.py:238
+#: GenealogyTree/gt_sandclock.py:257
 msgid "Generations up"
 msgstr "Jälkipolvet"
 
-#: GenealogyTree/gt_sandclock.py:242
+#: GenealogyTree/gt_sandclock.py:261
 msgid "Generations down"
 msgstr "Esipolvet"
 
-#: GenealogyTree/gt_sandclock.py:246
+#: GenealogyTree/gt_sandclock.py:265
 msgid "Include siblings"
 msgstr "Sisällytä sisarukset"
 
-#: GenealogyTree/gt_sandclock.py:247
+#: GenealogyTree/gt_sandclock.py:266
 msgid "Include siblings of ancestors."
 msgstr "Sisällytä esivanhempien sisarukset."
+
+#: GenealogyTree/gt_sandclock.py:273
+msgid "Compact tree layout"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:275
+msgid ""
+"Use the genealogytree 'database pole reduced' template, which packs more "
+"generations per page. Useful for large sandclock trees that otherwise clip "
+"off the rendered page."
+msgstr ""
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
@@ -16262,6 +16274,83 @@ msgstr "<b>%s:</b>"
 #: GraphView/search_widget.py:783
 msgid "Partners"
 msgstr "Kumppanit"
+
+#: HasTagSubstr/hastagsubstr.gpr.py:25 HasTagSubstr/hastagsubstr.py:93
+msgid "People with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:26 HasTagSubstr/hastagsubstr.py:94
+msgid "Matches people with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:40 HasTagSubstr/hastagsubstr.py:102
+msgid "Families with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:42 HasTagSubstr/hastagsubstr.py:104
+#, fuzzy
+#| msgid "Matches families that are matched by an event filter"
+msgid "Matches families with a tag whose name contains the given substring"
+msgstr "Poimii perheet, joilla on suotimen mukainen tapahtuma"
+
+#: HasTagSubstr/hastagsubstr.gpr.py:57 HasTagSubstr/hastagsubstr.py:113
+msgid "Events with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:59 HasTagSubstr/hastagsubstr.py:115
+msgid "Matches events with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:74 HasTagSubstr/hastagsubstr.py:124
+msgid "Places with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:76 HasTagSubstr/hastagsubstr.py:126
+msgid "Matches places with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:91 HasTagSubstr/hastagsubstr.py:135
+msgid "Sources with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:93 HasTagSubstr/hastagsubstr.py:137
+#, fuzzy
+#| msgid "Matches Sources with values containing the chosen parameters"
+msgid "Matches sources with a tag whose name contains the given substring"
+msgstr "Poimii lähteet, jotka sisältävät valitun arvon"
+
+#: HasTagSubstr/hastagsubstr.gpr.py:108 HasTagSubstr/hastagsubstr.py:146
+msgid "Citations with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:110 HasTagSubstr/hastagsubstr.py:148
+msgid "Matches citations with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:125 HasTagSubstr/hastagsubstr.py:157
+msgid "Repositories with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:127 HasTagSubstr/hastagsubstr.py:159
+msgid "Matches repositories with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:142 HasTagSubstr/hastagsubstr.py:168
+msgid "Media objects with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:144 HasTagSubstr/hastagsubstr.py:170
+msgid ""
+"Matches media objects with a tag whose name contains the given substring"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:159 HasTagSubstr/hastagsubstr.py:179
+msgid "Notes with a tag containing <substring>"
+msgstr ""
+
+#: HasTagSubstr/hastagsubstr.gpr.py:161 HasTagSubstr/hastagsubstr.py:181
+msgid "Matches notes with a tag whose name contains the given substring"
+msgstr ""
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
@@ -17772,7 +17861,7 @@ msgstr "Ei luotu md5:tä"
 msgid "Close the Media Verify Tool"
 msgstr "Sulje mediatietojen tarkastustyökalu"
 
-#: MediaVerify/MediaVerify.py:103
+#: MediaVerify/MediaVerify.py:103 PDFForms/generatepdfform.py:129
 msgid "Generate"
 msgstr "Muodosta"
 
@@ -18620,6 +18709,230 @@ msgstr "Perheen yleiskatsaus"
 #: Overview/Overview.gpr.py:46
 msgid "Gramplet showing an overview of events for a family"
 msgstr "Gramplet näyttää yleiskatsauksen perheen tapahtumista"
+
+#: PDFForms/PDFForms.gpr.py:24 PDFForms/generatepdfform.py:57
+#: PDFForms/generatepdfform.py:63
+#, fuzzy
+#| msgid "Generate Test Notes"
+msgid "Generate PDF Forms"
+msgstr "Luo testilisätietoja"
+
+#: PDFForms/PDFForms.gpr.py:26
+msgid ""
+"Generate blank fillable PDF forms: census/event forms or Ahnentafel pedigree "
+"charts."
+msgstr ""
+
+#: PDFForms/PDFForms.gpr.py:46
+msgid "Import Fillable PDF Forms"
+msgstr ""
+
+#: PDFForms/PDFForms.gpr.py:48
+msgid ""
+"Import genealogy data from a PDF form. Send the PDF template to others to "
+"fill out and return."
+msgstr ""
+
+#: PDFForms/generatepdfform.py:77
+msgid "Census / Event Form"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:79
+#, fuzzy
+#| msgid "Pedigree Chart"
+msgid "Ahnentafel Pedigree Chart"
+msgstr "Sukutaulu"
+
+#: PDFForms/generatepdfform.py:99
+#, fuzzy
+#| msgid "Output format"
+msgid "Output file:"
+msgstr "Tulostusmuoto"
+
+#: PDFForms/generatepdfform.py:107
+#, fuzzy
+#| msgid "Browser"
+msgid "Browse…"
+msgstr "Selain"
+
+#: PDFForms/generatepdfform.py:116
+msgid "Open PDF after generating"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:157
+#, fuzzy
+#| msgid "Form"
+msgid "Form:"
+msgstr "Lomake"
+
+#: PDFForms/generatepdfform.py:174
+msgid "Rows:"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:186
+msgid "(Rows only affect multi-row sections such as census household lists.)"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:200
+#, fuzzy
+#| msgid "Generation"
+msgid "Generations:"
+msgstr "Sukupolvi"
+
+#: PDFForms/generatepdfform.py:213
+msgid "Includes subject plus up to 5 ancestor generations (2–32 people)."
+msgstr ""
+
+#: PDFForms/generatepdfform.py:252
+msgid "Save PDF as…"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:263
+#, fuzzy
+#| msgid "PNG files"
+msgid "PDF files"
+msgstr "PNG tiedosto"
+
+#: PDFForms/generatepdfform.py:283
+msgid "No output file"
+msgstr ""
+
+#: PDFForms/generatepdfform.py:283
+#, fuzzy
+#| msgid "Please set an active person."
+msgid "Please specify an output file path."
+msgstr "Valise ensin aktiivihenkilö."
+
+#: PDFForms/generatepdfform.py:293
+#, fuzzy
+#| msgid "Nothing is selected"
+msgid "No form selected"
+msgstr "Mitään ei ole valittu"
+
+#: PDFForms/generatepdfform.py:293
+#, fuzzy
+#| msgid "Please, select a folder"
+msgid "Please select a census form."
+msgstr "Valitsepa kansio"
+
+#: PDFForms/generatepdfform.py:299
+#, fuzzy
+#| msgid "not found."
+msgid "Form not found"
+msgstr "ei löytynyt."
+
+#: PDFForms/generatepdfform.py:306
+#, fuzzy
+#| msgid "Generation "
+msgid "Generation failed"
+msgstr "Sukupolvi "
+
+#: PDFForms/generatepdfform.py:317
+#, fuzzy
+#| msgid "Generate"
+msgid "PDF generated"
+msgstr "Muodosta"
+
+#: PDFForms/importformpdf.py:180
+msgid "Form addon required"
+msgstr ""
+
+#: PDFForms/importformpdf.py:181
+msgid ""
+"The Form addon must be installed to import Form PDF files.\n"
+"Please install the Form addon and restart Gramps."
+msgstr ""
+
+#: PDFForms/importformpdf.py:189
+msgid "Not a Form PDF"
+msgstr ""
+
+#: PDFForms/importformpdf.py:190
+msgid "The _form_id field is missing or empty."
+msgstr ""
+
+#: PDFForms/importformpdf.py:197
+#, fuzzy
+#| msgid "Unknown avatar:"
+msgid "Unknown form ID"
+msgstr "Tuntematon avatar:"
+
+#: PDFForms/importformpdf.py:198
+#, python-format
+msgid ""
+"Form ID '%(id)s' is not recognised by the Form addon.\n"
+"Known IDs: %(known)s"
+msgstr ""
+
+#: PDFForms/importformpdf.py:221
+#, python-format
+msgid "Import Form PDF: %s"
+msgstr ""
+
+#: PDFForms/importpdf.py:187
+#, fuzzy
+#| msgid ""
+#| "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+#| "install 'psycopg[binary]'"
+msgid ""
+"The pypdf package is required to import PDF pedigree forms.\n"
+"Install it with:  pip install pypdf"
+msgstr ""
+"psycopg3 vaaditaan PostgreSQL Enhanced -tukea varten. Asenna komennolla: pip "
+"install 'psycopg[binary]'"
+
+#: PDFForms/importpdf.py:195
+#, fuzzy, python-format
+#| msgid "Failed to copy web files : %s"
+msgid "Could not open PDF file: %s"
+msgstr "Web-tiedostojen kopiointi epäonnistui: %s"
+
+#: PDFForms/importpdf.py:399
+#, fuzzy
+#| msgid "Add descendant reference in child list"
+msgid "Add media reference: PDF import"
+msgstr "Lisää jälkeläisviittaus lasten luetteloon"
+
+#: PDFForms/importpdf.py:448
+msgid "PDF import: no data found"
+msgstr ""
+
+#: PDFForms/importpdf.py:449
+msgid ""
+"No names were found in the pedigree form.\n"
+"\n"
+"Fill in the form fields and try again."
+msgstr ""
+
+#: PDFForms/importpdf.py:471
+msgid "Bad references in PDF import"
+msgstr ""
+
+#: PDFForms/importpdf.py:492
+msgid "PDF import error"
+msgstr ""
+
+#: PDFForms/importpdf.py:503
+#, fuzzy
+#| msgid "No data available."
+msgid "Form importer unavailable"
+msgstr "Ei tietoja saatavilla."
+
+#: PDFForms/importpdf.py:504
+msgid "importformpdf.py is missing from the PDFForms addon directory."
+msgstr ""
+
+#: PDFForms/importpdf.py:510
+msgid "PDF import: unrecognized format"
+msgstr ""
+
+#: PDFForms/importpdf.py:511
+#, python-format
+msgid ""
+"No Gramps form ID found in '%s'.\n"
+"\n"
+"Only PDFs generated by Gramps (pedigree or form templates) can be imported."
+msgstr ""
 
 #: Participants/Participants.gpr.py:32
 msgid "Gramplet showing the participants in an event"
@@ -20887,23 +21200,6 @@ msgstr "RIA-virkailijat"
 msgid "FamilySpace"
 msgstr "FamilySpace"
 
-#: RebuildTypes/RebuildTypes.gpr.py:26
-msgid "Rebuild Gramps Types"
-msgstr "Rakenetaan Gramps-tyypit uudelleen"
-
-#: RebuildTypes/RebuildTypes.gpr.py:27
-msgid "Rebuilds Gramps Types"
-msgstr "Rakenna Gramps-tyypit uudelleen"
-
-#: RebuildTypes/RebuildTypes.py:75
-msgid "Gramps Types rebuilt"
-msgstr "Gramps-tyypit rakennettu uudelleen"
-
-#: RebuildTypes/RebuildTypes.py:76
-#, python-format
-msgid "Found %d custom event types"
-msgstr "Löytyi %d mukautettua tapahtumatyyppiä"
-
 #: RelID/relation_tab.gpr.py:35
 msgid "Display relations and distances with the home person"
 msgstr "Näyttää suhdetiedot kotihenkilöön"
@@ -21847,7 +22143,7 @@ msgid "Origin:"
 msgstr "Alkuperä:"
 
 #: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
-#: WebSearch/markdown_place_history_formatter.py:59
+#: markdown_place_history_formatter.py:59
 msgid "Note:"
 msgstr "Lisätieto:"
 
@@ -23698,11 +23994,11 @@ msgstr "Nettisivustojen kokoelma US (vaatii libwebconnectin)"
 msgid "US Google"
 msgstr "Google US"
 
-#: WebSearch/WebSearch.gpr.py:34 WebSearch/WebSearch.gpr.py:47
+#: WebSearch.gpr.py:34 WebSearch.gpr.py:47
 msgid "WebSearch"
 msgstr "Nettihaku"
 
-#: WebSearch/WebSearch.gpr.py:36
+#: WebSearch.gpr.py:36
 msgid ""
 "Customized queries for online services based on the active Person, Place, "
 "Family, or Source record"
@@ -23710,86 +24006,108 @@ msgstr ""
 "Mukautetut kyselyt verkkopalveluille perustuen aktiivisen henkilö-, paikka-, "
 "perhe- tai lähdetietoihin"
 
-#: WebSearch/WebSearch.py:468
+#: WebSearch.py:477
 msgid "Save Coordinates to the Place"
 msgstr "Tallenna paikan koordinaatit"
 
-#: WebSearch/WebSearch.py:609
+#: WebSearch.py:618
 msgid "AI provider is disabled"
 msgstr "Tekoälypalvelua ei ole tarjolla"
 
-#: WebSearch/WebSearch.py:613
+#: WebSearch.py:622
 msgid "No AI API key provided"
 msgstr "Yhtään AI API :n avainta ei ole annettu"
 
-#: WebSearch/WebSearch.py:619
+#: WebSearch.py:628
 msgid "AI-generated historical place data is currently disabled"
 msgstr ""
 "Tekoälyn luomat historialliset paikkatiedot eivät ole tällä hetkellä käytössä"
 
-#: WebSearch/WebSearch.py:629
+#: WebSearch.py:638
 msgid "AI provider is unknown. Please check your AI provider settings."
 msgstr ""
 "Tekoälypalveluntarjoaja ei ole tiedossa. Tarkista tekoälypalveluntarjoajasi "
 "asetukset."
 
-#: WebSearch/WebSearch.py:649
+#: WebSearch.py:666
 msgid "⏳ Generating historical place data, please wait..."
 msgstr "⏳ Luodaan historiallista paikkatietoa, odota hetki..."
 
-#: WebSearch/WebSearch.py:1520
+#: WebSearch.py:1630
 msgid "Keys"
 msgstr "Avaimet"
 
-#: WebSearch/WebSearch.py:1522
+#: WebSearch.py:1632
 msgid "Website URL"
 msgstr "Nettisivuston URL"
 
-#: WebSearch/WebSearch.py:1525
+#: WebSearch.py:1635
 msgid "Add link to note"
 msgstr "Lisää linkki lisätietoon"
 
-#: WebSearch/WebSearch.py:1527
+#: WebSearch.py:1637
 msgid "Add link to attribute"
 msgstr "Lisää linkki ominaisuuteen"
 
-#: WebSearch/WebSearch.py:1529
+#: WebSearch.py:1639
 msgid "Show QR-code"
 msgstr "Näytä QR-koodi"
 
-#: WebSearch/WebSearch.py:1531
+#: WebSearch.py:1641
 msgid "Copy link to clipboard"
 msgstr "Kopioi linkki leikepöydälle"
 
-#: WebSearch/WebSearch.py:1534
+#: WebSearch.py:1644
 msgid "Hide link for selected item"
 msgstr "Piilota linkki valitusta kohteesta"
 
-#: WebSearch/WebSearch.py:1537
+#: WebSearch.py:1647
 msgid "Hide link for all items"
 msgstr "Piilota linkki kaikista kohteista"
 
-#: WebSearch/WebSearch.py:1541
+#: WebSearch.py:1651
 msgid "Edit Attribute with the Link"
 msgstr "Muokkaa ominaisuutta linkin avulla"
 
-#: WebSearch/WebSearch.py:1545
+#: WebSearch.py:1655
 msgid "Edit Note with the Link"
 msgstr "Muokkaa lisätietoa linkin avulla"
 
-#: WebSearch/WebSearch.py:1548
+#: WebSearch.py:1658
+#, fuzzy
+#| msgid "Edit selection"
+msgid "Edit Internet link"
+msgstr "Muokkaa valintaa"
+
+#: WebSearch.py:1661
 msgid "🔍 AI Suggestions"
 msgstr "🔍 Tekoälyn ehdotukset"
 
-#: WebSearch/WebSearch.py:1767
+#: WebSearch.py:1915
+#, fuzzy
+#| msgid "Attribute no longer exists. The extra icon is removed"
+msgid "Attribute no longer matches this WebSearch row"
+msgstr "Ominaisuutta ei enää ole. Ylimääräinen kuvake on poistettu"
+
+#: WebSearch.py:1942
 msgid "Attribute no longer exists. The extra icon is removed"
 msgstr "Ominaisuutta ei enää ole. Ylimääräinen kuvake on poistettu"
 
-#: WebSearch/WebSearch.py:1813
+#: WebSearch.py:1983
+#, fuzzy
+#| msgid "Note no longer exists. The extra icon is removed"
+msgid "Note no longer exists"
+msgstr "Lisätietoa ei enää ole. Ylimääräinen kuvake on poistettu"
+
+#: WebSearch.py:2005
 msgid "Note no longer exists. The extra icon is removed"
 msgstr "Lisätietoa ei enää ole. Ylimääräinen kuvake on poistettu"
 
-#: WebSearch/WebSearch.py:1838
+#: WebSearch.py:2057
+msgid "Internet link no longer matches this WebSearch row"
+msgstr ""
+
+#: WebSearch.py:2148
 #, python-brace-format
 msgid ""
 "📌 This '{title}' web link was archived for future reference by the "
@@ -23807,554 +24125,46 @@ msgstr ""
 "\n"
 "Voit palata lähteeseen tällä linkillä tarkistaaksesi liittyvät tiedot."
 
-#: WebSearch/WebSearch.py:1924
+#: WebSearch.py:2229
 #, python-format
 msgid "Note #%(id)s has been successfully added"
 msgstr "Lisätieto #%(id)s on onnistuneesti lisätty"
 
-#: WebSearch/WebSearch.py:1927
+#: WebSearch.py:2232
 msgid "Error creating note"
 msgstr "Virhe luotaessa lisätietoa"
 
-#: WebSearch/WebSearch.py:1947
+#: WebSearch.py:2252
 msgid "URL is copied to the Clipboard"
 msgstr "URL-osoite kopioidaan leikepöydälle"
 
-#: WebSearch/WebSearch.py:2066
+#: WebSearch.py:2391
 msgid "WebSearch Link"
 msgstr "Verkkohaku Linkki"
 
-#: WebSearch/WebSearch.py:2108
+#: WebSearch.py:2428
 msgid "Attribute has been successfully added"
 msgstr "Ominaisuus on lisätty onnistuneesti"
 
-#: WebSearch/WebSearch.py:2140
+#: WebSearch.py:2460
 #, python-brace-format
 msgid "Title: {title}"
 msgstr "Otsikko: {title}"
 
-#: WebSearch/WebSearch.py:2144
+#: WebSearch.py:2464
 #, python-brace-format
 msgid "Replaced: {keys}"
 msgstr "Korvattu: {keys}"
 
-#: WebSearch/WebSearch.py:2147
+#: WebSearch.py:2467
 #, python-brace-format
 msgid "Empty: {keys}"
 msgstr "Tyhjä: {keys}"
 
-#: WebSearch/WebSearch.py:2149
+#: WebSearch.py:2469
 #, python-brace-format
 msgid "Comment: {comment}"
 msgstr "Kommentti: {comment}"
-
-#: WebSearch/activity_row_generator.py:110
-#, python-format
-msgid "Visited: %s"
-msgstr "Katsottu: %s"
-
-#: WebSearch/activity_row_generator.py:114
-#: WebSearch/activity_row_generator.py:129
-#, python-format
-msgid "Link: %s"
-msgstr "Linkki: %s"
-
-#: WebSearch/activity_row_generator.py:116
-#, python-format
-msgid "Attribute: %s"
-msgstr "Ominaisuus: %s"
-
-#: WebSearch/activity_row_generator.py:118
-#, python-format
-msgid "Value: %s"
-msgstr "Arvo: %s"
-
-#: WebSearch/activity_row_generator.py:123
-#, python-format
-msgid "Loaded from file: %s"
-msgstr "Ladattu tiedostosta: %s"
-
-#: WebSearch/activity_row_generator.py:126
-#, python-format
-msgid "Domain: %s"
-msgstr "Domain: %s"
-
-#: WebSearch/activity_row_generator.py:131
-#, python-format
-msgid "Object: %s"
-msgstr "Kohde: %s"
-
-#: WebSearch/activity_row_generator.py:135
-#, python-format
-msgid "Pattern: %s"
-msgstr "Kuvio: %s"
-
-#: WebSearch/activity_row_generator.py:138
-#, python-format
-msgid "Object Gramps ID: %s"
-msgstr "Kohteen Gramps ID: %s"
-
-#: WebSearch/activity_row_generator.py:142
-#, python-format
-msgid "%s: %s → %s: %s"
-msgstr "%s: %s → %s: %s"
-
-#: WebSearch/activity_row_generator.py:152
-msgid "Link visited"
-msgstr "Vierailtu linkki"
-
-#: WebSearch/activity_row_generator.py:153
-msgid "Link saved to Note"
-msgstr "Linkki tallennettu lisätietoihin"
-
-#: WebSearch/activity_row_generator.py:154
-msgid "Link saved to Attribute"
-msgstr "Linkki tallennettu ominaisuutena"
-
-#: WebSearch/activity_row_generator.py:155
-msgid "Place history loaded"
-msgstr "Paikkahistoria ladattu"
-
-#: WebSearch/activity_row_generator.py:156
-msgid "Domain skipped"
-msgstr "Verkkotunnus ohitettu"
-
-#: WebSearch/activity_row_generator.py:157
-msgid "Link hidden for object"
-msgstr "Linkki piilotettu kohteelta"
-
-#: WebSearch/activity_row_generator.py:158
-msgid "Link hidden for all objects"
-msgstr "Linkki piilotettu kaikilta kohteilta"
-
-#: WebSearch/activity_row_generator.py:159
-msgid "Attribute updated"
-msgstr "Ominaisuus päivitetty"
-
-#: WebSearch/activity_row_generator.py:160
-msgid "Note updated"
-msgstr "Lisätieto päivitetty"
-
-#: WebSearch/constants.py:390
-msgid "Column - Icons"
-msgstr "Sarake - Kuvakkeet"
-
-#: WebSearch/constants.py:391
-msgid "Column - Source Types (flags)"
-msgstr "Sarake - Lähdetyypit (liput)"
-
-#: WebSearch/constants.py:392
-msgid "Column - Keys"
-msgstr "Sarake - Avaimet"
-
-#: WebSearch/constants.py:393
-msgid "Column - Title"
-msgstr "Sarake - Otsikko"
-
-#: WebSearch/constants.py:394
-msgid "Column - Website Url"
-msgstr "Sarake - Verkkosivuston URL-osoite"
-
-#: WebSearch/constants.py:395
-msgid "Column - Comment"
-msgstr "Sarake - Kommentti"
-
-#: WebSearch/constants.py:424
-msgid "Icon - Visited URLs (checkmark)"
-msgstr "Kuvake - Vieraillut URL-osoitteet (valintamerkki)"
-
-#: WebSearch/constants.py:425
-msgid "Icon - Saved URLs (floppy disk)"
-msgstr "Kuvake - Tallennetut URL-osoitteet (levyke)"
-
-#: WebSearch/constants.py:426
-msgid "Icon - URLs linked to UID attributes (UID badge)"
-msgstr "Kuvake - UID-attribuutteihin (UID-merkki) linkitetyt URL-osoitteet"
-
-#: WebSearch/constants.py:427
-msgid "Icon - URLs from regional CSV files (flag)"
-msgstr "Kuvake - URL-osoitteet alueen CSV-tiedostoista (lippu)"
-
-#: WebSearch/constants.py:428
-msgid "Icon - URLs from static CSV files (red pin)"
-msgstr "Kuvake - URL-osoitteet kiinteistä CSV-tiedostoista (punainen neula)"
-
-#: WebSearch/constants.py:429
-msgid "Icon - URLs from common CSV files (earth)"
-msgstr "Kuvake - URL-osoitteet yleisistä CSV-tiedostoista (maapallo)"
-
-#: WebSearch/constants.py:430
-msgid "Icon - URLs from cross CSV files (shuffle arrows)"
-msgstr "Kuvake - URL-osoitteet CSV-tiedostojen kesken (sekoitusnuolet)"
-
-#: WebSearch/constants.py:431
-msgid "Icon - URLs from custom user directory (spreadsheet icon)"
-msgstr ""
-"Kuvake - URL-osoitteet käyttäjän mukautetusta hakemistosta (laskentataulukon "
-"kuvake)"
-
-#: WebSearch/constants.py:432
-msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr "Kuvake – Ominaisuudet-välilehden URL-osoitteet ('A'-kuvake)"
-
-#: WebSearch/constants.py:433
-msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr "Kuvake – Internet-välilehden URL-osoitteet ('I'-kuvake)"
-
-#: WebSearch/constants.py:434
-msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr "Kuvake – Lisätiedot-välilehden URL-osoitteet ('N'-kuvake)"
-
-#: WebSearch/info_panel.py:108
-msgid "## 🧩 About WebSearch"
-msgstr "## 🧩 Tietoja WebSearchistä"
-
-#: WebSearch/info_panel.py:111
-msgid ""
-"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
-"websites."
-msgstr ""
-"WebSearch on Grampsin Gramplet, joka auttaa sinua hakemaan sukututkimukseen "
-"liittyviä verkkosivustoja."
-
-#: WebSearch/info_panel.py:117
-msgid ""
-"It supports CSV-based link templates, AI-assisted site discovery, and direct "
-"integration with notes and attributes."
-msgstr ""
-"Se tukee CSV-pohjaisia linkkipohjia, tekoälyavusteista sivustojen etsintää "
-"ja suoraa integrointia muistiinpanoihin ja ominaisuuksiin."
-
-#: WebSearch/info_panel.py:125
-msgid "## ⚙️ System Information"
-msgstr "## ⚙️ Järjestelmätiedot"
-
-#: WebSearch/info_panel.py:128
-msgid "🔻 **Missing:** `qrcode`"
-msgstr "🔻 **Puuttuu:** `qrcode`"
-
-#: WebSearch/info_panel.py:130
-msgid "ℹ️ This Python library is not available in your system."
-msgstr "ℹ️ Tätä Python-kirjastoa ei ole saatavilla järjestelmässäsi."
-
-#: WebSearch/info_panel.py:133
-msgid "Without it, QR code generation will not work."
-msgstr "QR-koodien luonti ei toimi ilman sitä."
-
-#: WebSearch/info_panel.py:136
-msgid "💡 Usually installed with: `pip install qrcode[pil]`"
-msgstr "💡 Yleensä asennetaan komennolla: `pip install qrcode[pil]`"
-
-#: WebSearch/info_panel.py:140 WebSearch/info_panel.py:162
-#: WebSearch/info_panel.py:181
-msgid ""
-"*Note: Some operating systems or environments may require alternative "
-"installation methods.*"
-msgstr ""
-"*Huomaa: Joissakin käyttöjärjestelmissä tai ympäristössä on käytetävä "
-"vaihtoehtoisia asennustapoja.*"
-
-#: WebSearch/info_panel.py:147
-msgid "🔻 **Missing:** `openai`"
-msgstr "🔻 **Puuttuu:** `openai`"
-
-#: WebSearch/info_panel.py:149
-msgid "ℹ️ This library is required for accessing OpenAI-based features."
-msgstr ""
-"ℹ️ Tämä kirjasto on tarpeen OpenAI-pohjaisten ominaisuuksien käyttämiseksi."
-
-#: WebSearch/info_panel.py:153
-msgid ""
-"Without it, AI-generated site suggestions and place history will be disabled."
-msgstr ""
-"Ilman sitä ei tekoälyn luomat sivustoehdotukset ja paikkahistoria ole "
-"käytettävissä."
-
-#: WebSearch/info_panel.py:158
-msgid "💡 Usually installed with: `pip install openai`"
-msgstr "💡 Asennetaan yleensä komennolla: `pip install openai`"
-
-#: WebSearch/info_panel.py:169
-msgid "🔻 **Missing:** `requests`"
-msgstr "🔻 **Puuttuu:** `pyynnöt`"
-
-#: WebSearch/info_panel.py:171
-msgid "ℹ️ This library is used to communicate with web APIs."
-msgstr "ℹ️ Tätä kirjastoa käytetään kommunikointiin web-rajapintojen kanssa."
-
-#: WebSearch/info_panel.py:174
-msgid "Without it, external data sources may not be accessible."
-msgstr "Ilman sitä ulkoiset tietolähteet eivät välttämättä ole käytettävissä."
-
-#: WebSearch/info_panel.py:177
-msgid "💡 Usually installed with: `pip install requests`"
-msgstr "💡 Tavallisesti asennetaan komennolla: `pip install requests`"
-
-#: WebSearch/info_panel.py:188
-msgid "## 📂 Data File Locations"
-msgstr "## 📂 Tiedostojen sijainnit"
-
-#: WebSearch/info_panel.py:191
-msgid ""
-"Below are the paths to system and user-defined data files used by WebSearch."
-msgstr ""
-"Alla on polut WebSearchin käyttämiin järjestelmän ja käyttäjän määrittämiin "
-"datatiedostoihin."
-
-#: WebSearch/info_panel.py:195
-msgid "#### CSV File Paths"
-msgstr "#### CSV-tiedostopolut"
-
-#: WebSearch/info_panel.py:197
-#, python-format
-msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
-msgstr ""
-"- **Järjestelmäpolku:** `{dir|%s}` – sisältää sisäänrakennetut CSV-tiedostot"
-
-#: WebSearch/info_panel.py:201
-#, python-format
-msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
-msgstr ""
-"- **Käyttäjän määrittämä polku:** `{dir|%s}` – käyttäjän mukautettuja CSV-"
-"tiedostoja varten"
-
-#: WebSearch/info_panel.py:205
-msgid "#### JSON File Paths"
-msgstr "#### JSON tiedostopolut"
-
-#: WebSearch/info_panel.py:208
-#, python-format
-msgid ""
-"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
-"file"
-msgstr ""
-"- **Järjestelmäpolku:** `{dir|%s}` – sisältää sisäänrakennetun "
-"attribute_mapping.json-tiedoston"
-
-#: WebSearch/info_panel.py:214
-#, python-format
-msgid ""
-"- **User-defined path:** `{dir|%s}` – for custom user-defined "
-"attribute_mapping.json file"
-msgstr ""
-"- **Käyttäjän määrittämä polku:** `{dir|%s}` – käyttäjän mukauttamille "
-"attribute_mapping.json-tiedostolle"
-
-#: WebSearch/info_panel.py:221
-msgid "  💡 *Tip: click any path above to open it in your file manager.*"
-msgstr ""
-"  💡 *Vinkki: avaa tiedostonhallinnassa napsauttamalla valitsemaasi polkua "
-"yllä*"
-
-#: WebSearch/info_panel.py:224
-msgid "📖 View detailed usage in: "
-msgstr "📖 Katso yksityiskohtainen ohje: "
-
-#: WebSearch/info_panel.py:233
-msgid "## 💬 Support"
-msgstr "## 💬 Tuki"
-
-#: WebSearch/info_panel.py:234
-msgid "👤 Created and maintained by Yurii Liubymyi"
-msgstr "👤 Luonut ja ylläpitänyt Yurii Liubymyi"
-
-#: WebSearch/info_panel.py:237
-msgid ""
-"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
-"forum:"
-msgstr ""
-"💬 Jos tarvitset apua tai palautetta, mainitse `@Urchello` Gramps-foorumilla:"
-
-#: WebSearch/info_panel.py:241
-msgid "Gramps Forum (Discourse)"
-msgstr ""
-
-#: WebSearch/info_panel.py:245
-msgid "✅ Bug reports and feature requests are completely **free of charge**."
-msgstr "✅ Virheilmoitukset ja ominaisuuspyynnöt ovat täysin **ilmaisia**."
-
-#: WebSearch/info_panel.py:249
-#, fuzzy
-#| msgid "Issues"
-msgid "GitHub Issues"
-msgstr "Ongelmat"
-
-#: WebSearch/info_panel.py:252
-msgid "Gramps Bug Tracker"
-msgstr ""
-
-#: WebSearch/info_panel.py:255
-#, python-format
-msgid "🧩 WebSearch Gramplet version: `%s`"
-msgstr "🧩 WebSearch Gramplet versio: `%s`"
-
-#: WebSearch/internet_links_loader.py:70 WebSearch/internet_links_loader.py:71
-msgid "No title"
-msgstr "Ei nimeä"
-
-#: WebSearch/markdown_place_history_formatter.py:52
-msgid "No data available."
-msgstr "Ei tietoja saatavilla."
-
-#: WebSearch/markdown_place_history_formatter.py:57
-msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
-msgstr "HISTORIALLISET HALLINNOLLISET OSAT"
-
-#: WebSearch/markdown_place_history_formatter.py:58
-msgid "Foundation date:"
-msgstr "Perustamispäivä:"
-
-#: WebSearch/markdown_place_history_formatter.py:60
-msgid "Coordinates:"
-msgstr "Koordinaatit:"
-
-#: WebSearch/markdown_place_history_formatter.py:61
-msgid "Administrative history"
-msgstr "Hallinnollinen historia"
-
-#: WebSearch/markdown_place_history_formatter.py:62
-msgid "Data provided to AI:"
-msgstr "Tekoälylle toimitetut tiedot:"
-
-#: WebSearch/markdown_place_history_formatter.py:64
-msgid "Full hierarchy"
-msgstr "Koko hierarkia"
-
-#: WebSearch/markdown_place_history_formatter.py:68
-msgid "Place Type:"
-msgstr "Paikan tyyppi:"
-
-#: WebSearch/markdown_place_history_formatter.py:69
-msgid "Last Retrieved At:"
-msgstr "Viimeksi noudettu:"
-
-#: WebSearch/note_links_loader.py:69
-msgid "Note Link (parsed)"
-msgstr "Linkki lisätietoihin (jäsennetty)"
-
-#: WebSearch/note_links_loader.py:120
-msgid "Note Link (internal)"
-msgstr "Linkki lisätietoihin (sisäinen)"
-
-#: WebSearch/note_links_loader.py:123
-msgid "Note Link (external)"
-msgstr "Linkki lisätietoihin (ulkoinen)"
-
-#: WebSearch/qr_window.py:76
-msgid "QR-code"
-msgstr "QR-koodi"
-
-#: WebSearch/qr_window.py:107 WebSearch/qr_window.py:110
-msgid "⚠ Missing dependency \"qrcode\""
-msgstr "⚠ Riippuvuus \"qrcode\" puuttuu"
-
-#: WebSearch/qr_window.py:121
-msgid ""
-"⚠ Error generating QR code:\n"
-"Original error: “{}”"
-msgstr ""
-"⚠ Virhe QR-koodissa:\n"
-"Alkuperäinen virhe: “{}”"
-
-#: WebSearch/settings_ui_manager.py:112
-msgid "Middle Name Handling"
-msgstr "Toisen nimen käsittely"
-
-#: WebSearch/settings_ui_manager.py:117
-msgid "Leave alone"
-msgstr "Jätä rauhaan"
-
-#: WebSearch/settings_ui_manager.py:118
-msgid "Separate"
-msgstr "Erilliset"
-
-#: WebSearch/settings_ui_manager.py:128
-msgid "URL Compactness Level"
-msgstr "URL-osoitteen tiiviystaso"
-
-#: WebSearch/settings_ui_manager.py:134
-msgid "Shortest - No Prefix, No Keys"
-msgstr "Lyhin - ei etuliitettä eikä avaimia"
-
-#: WebSearch/settings_ui_manager.py:137
-msgid "Compact - No Prefix, Keys Without Attributes"
-msgstr "Kompakti - Ei etuliitettä, avaimet ilman ominaisuuksia"
-
-#: WebSearch/settings_ui_manager.py:140
-msgid "Compact - No Prefix, Keys With Attributes"
-msgstr "Kompakti - Ei etuliitettä, avaimet ominaisuuksilla"
-
-#: WebSearch/settings_ui_manager.py:143
-msgid "Long - Without Prefix on the Left"
-msgstr "Pitkä - ilman etuliitettä vasemmalla"
-
-#: WebSearch/settings_ui_manager.py:150
-msgid "URL Prefix Replacement"
-msgstr "URL-etuliitteen korvaaminen"
-
-#: WebSearch/settings_ui_manager.py:157
-msgid "AI Provider"
-msgstr "AI Provider"
-
-#: WebSearch/settings_ui_manager.py:162
-msgid "(Disabled)"
-msgstr "(Pois käytöstä)"
-
-#: WebSearch/settings_ui_manager.py:163
-msgid "OpenAI"
-msgstr "OpenAI"
-
-#: WebSearch/settings_ui_manager.py:164
-msgid "Mistral AI"
-msgstr "Mistral AI"
-
-#: WebSearch/settings_ui_manager.py:171
-msgid "OpenAI API Key"
-msgstr "OpenAI API avain"
-
-#: WebSearch/settings_ui_manager.py:176
-msgid "OpenAI Model"
-msgstr "OpenAI malli"
-
-#: WebSearch/settings_ui_manager.py:181
-msgid "Mistral API Key"
-msgstr "Mistral API avain"
-
-#: WebSearch/settings_ui_manager.py:186
-msgid "Mistral Model"
-msgstr "Mistral malli"
-
-#: WebSearch/settings_ui_manager.py:191
-msgid "Show Links From the 'Attributes' tab"
-msgstr "Näytä linkit ominaisuus välilehdeltä"
-
-#: WebSearch/settings_ui_manager.py:196
-msgid "Show Links From the 'Internet' tab"
-msgstr "Näytä linkit välilehdeltä 'Internet'"
-
-#: WebSearch/settings_ui_manager.py:201
-msgid "Show Links From the Notes"
-msgstr "Näytä lisätietojen linkit"
-
-#: WebSearch/settings_ui_manager.py:209
-msgid "Enable AI-generated historical place data"
-msgstr "Hyödynnä tekoälyn luomia historiallisia paikkatietoja"
-
-#: WebSearch/settings_ui_manager.py:215
-msgid "Custom country code for AI notes (optional)"
-msgstr "Mukautettu maakoodi tekoälylisätietoja verten (valinnainen)"
-
-#: WebSearch/settings_ui_manager.py:244
-msgid "Enable CSV Files"
-msgstr "Hyödynnä CSV-tiedostoja"
-
-#: WebSearch/settings_ui_manager.py:251
-msgid "Display Columns"
-msgstr "Näytä sarakkeet"
-
-#: WebSearch/settings_ui_manager.py:265
-msgid "Display Icons"
-msgstr "Näytä kuvakkeet"
 
 #: WordleGramplet/WordleGramplet.gpr.py:4
 #: WordleGramplet/WordleGramplet.gpr.py:10
@@ -24377,6 +24187,334 @@ msgstr "Kirjainkokojen määrä"
 #: WordleGramplet/WordleGramplet.py:144
 msgid "Select filter to restrict list"
 msgstr "Valitse suodatin luettelon rajaamiseksi"
+
+#: activity_row_generator.py:120
+#, python-format
+msgid "Visited: %s"
+msgstr "Katsottu: %s"
+
+#: activity_row_generator.py:124 activity_row_generator.py:139
+#, python-format
+msgid "Link: %s"
+msgstr "Linkki: %s"
+
+#: activity_row_generator.py:126
+#, python-format
+msgid "Attribute: %s"
+msgstr "Ominaisuus: %s"
+
+#: activity_row_generator.py:128
+#, python-format
+msgid "Value: %s"
+msgstr "Arvo: %s"
+
+#: activity_row_generator.py:133
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "Ladattu tiedostosta: %s"
+
+#: activity_row_generator.py:136
+#, python-format
+msgid "Domain: %s"
+msgstr "Domain: %s"
+
+#: activity_row_generator.py:141
+#, python-format
+msgid "Object: %s"
+msgstr "Kohde: %s"
+
+#: activity_row_generator.py:145
+#, python-format
+msgid "Pattern: %s"
+msgstr "Kuvio: %s"
+
+#: activity_row_generator.py:148
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "Kohteen Gramps ID: %s"
+
+#: activity_row_generator.py:152
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s: %s → %s: %s"
+
+#: activity_row_generator.py:162
+msgid "Link visited"
+msgstr "Vierailtu linkki"
+
+#: activity_row_generator.py:163
+msgid "Link saved to Note"
+msgstr "Linkki tallennettu lisätietoihin"
+
+#: activity_row_generator.py:164
+msgid "Link saved to Attribute"
+msgstr "Linkki tallennettu ominaisuutena"
+
+#: activity_row_generator.py:165
+msgid "Place history loaded"
+msgstr "Paikkahistoria ladattu"
+
+#: activity_row_generator.py:166
+msgid "Domain skipped"
+msgstr "Verkkotunnus ohitettu"
+
+#: activity_row_generator.py:167
+msgid "Link hidden for object"
+msgstr "Linkki piilotettu kohteelta"
+
+#: activity_row_generator.py:168
+msgid "Link hidden for all objects"
+msgstr "Linkki piilotettu kaikilta kohteilta"
+
+#: activity_row_generator.py:169
+msgid "Attribute updated"
+msgstr "Ominaisuus päivitetty"
+
+#: activity_row_generator.py:170
+msgid "Note updated"
+msgstr "Lisätieto päivitetty"
+
+#: constants.py:392
+msgid "Column - Icons"
+msgstr "Sarake - Kuvakkeet"
+
+#: constants.py:393
+msgid "Column - Source Types (flags)"
+msgstr "Sarake - Lähdetyypit (liput)"
+
+#: constants.py:394
+msgid "Column - Keys"
+msgstr "Sarake - Avaimet"
+
+#: constants.py:395
+msgid "Column - Title"
+msgstr "Sarake - Otsikko"
+
+#: constants.py:396
+msgid "Column - Website Url"
+msgstr "Sarake - Verkkosivuston URL-osoite"
+
+#: constants.py:397
+msgid "Column - Comment"
+msgstr "Sarake - Kommentti"
+
+#: constants.py:426
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "Kuvake - Vieraillut URL-osoitteet (valintamerkki)"
+
+#: constants.py:427
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "Kuvake - Tallennetut URL-osoitteet (levyke)"
+
+#: constants.py:428
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "Kuvake - UID-attribuutteihin (UID-merkki) linkitetyt URL-osoitteet"
+
+#: constants.py:429
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "Kuvake - URL-osoitteet alueen CSV-tiedostoista (lippu)"
+
+#: constants.py:430
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "Kuvake - URL-osoitteet kiinteistä CSV-tiedostoista (punainen neula)"
+
+#: constants.py:431
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "Kuvake - URL-osoitteet yleisistä CSV-tiedostoista (maapallo)"
+
+#: constants.py:432
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "Kuvake - URL-osoitteet CSV-tiedostojen kesken (sekoitusnuolet)"
+
+#: constants.py:433
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr ""
+"Kuvake - URL-osoitteet käyttäjän mukautetusta hakemistosta (laskentataulukon "
+"kuvake)"
+
+#: constants.py:434
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Kuvake – Ominaisuudet-välilehden URL-osoitteet ('A'-kuvake)"
+
+#: constants.py:435
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Kuvake – Internet-välilehden URL-osoitteet ('I'-kuvake)"
+
+#: constants.py:436
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Kuvake – Lisätiedot-välilehden URL-osoitteet ('N'-kuvake)"
+
+#: info_panel.py:108
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 Tietoja WebSearchistä"
+
+#: info_panel.py:111
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"WebSearch on Grampsin Gramplet, joka auttaa sinua hakemaan sukututkimukseen "
+"liittyviä verkkosivustoja."
+
+#: info_panel.py:117
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"Se tukee CSV-pohjaisia linkkipohjia, tekoälyavusteista sivustojen etsintää "
+"ja suoraa integrointia muistiinpanoihin ja ominaisuuksiin."
+
+#: info_panel.py:125
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Järjestelmätiedot"
+
+#: info_panel.py:128
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Puuttuu:** `qrcode`"
+
+#: info_panel.py:130
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Tätä Python-kirjastoa ei ole saatavilla järjestelmässäsi."
+
+#: info_panel.py:133
+msgid "Without it, QR code generation will not work."
+msgstr "QR-koodien luonti ei toimi ilman sitä."
+
+#: info_panel.py:136
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Yleensä asennetaan komennolla: `pip install qrcode[pil]`"
+
+#: info_panel.py:140 info_panel.py:162 info_panel.py:181
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Huomaa: Joissakin käyttöjärjestelmissä tai ympäristössä on käytetävä "
+"vaihtoehtoisia asennustapoja.*"
+
+#: info_panel.py:147
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **Puuttuu:** `openai`"
+
+#: info_panel.py:149
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr ""
+"ℹ️ Tämä kirjasto on tarpeen OpenAI-pohjaisten ominaisuuksien käyttämiseksi."
+
+#: info_panel.py:153
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Ilman sitä ei tekoälyn luomat sivustoehdotukset ja paikkahistoria ole "
+"käytettävissä."
+
+#: info_panel.py:158
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 Asennetaan yleensä komennolla: `pip install openai`"
+
+#: info_panel.py:169
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Puuttuu:** `pyynnöt`"
+
+#: info_panel.py:171
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Tätä kirjastoa käytetään kommunikointiin web-rajapintojen kanssa."
+
+#: info_panel.py:174
+msgid "Without it, external data sources may not be accessible."
+msgstr "Ilman sitä ulkoiset tietolähteet eivät välttämättä ole käytettävissä."
+
+#: info_panel.py:177
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 Tavallisesti asennetaan komennolla: `pip install requests`"
+
+#: info_panel.py:188
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Tiedostojen sijainnit"
+
+#: info_panel.py:191
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"Alla on polut WebSearchin käyttämiin järjestelmän ja käyttäjän määrittämiin "
+"datatiedostoihin."
+
+#: info_panel.py:195
+msgid "#### CSV File Paths"
+msgstr "#### CSV-tiedostopolut"
+
+#: info_panel.py:197
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr ""
+"- **Järjestelmäpolku:** `{dir|%s}` – sisältää sisäänrakennetut CSV-tiedostot"
+
+#: info_panel.py:201
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **Käyttäjän määrittämä polku:** `{dir|%s}` – käyttäjän mukautettuja CSV-"
+"tiedostoja varten"
+
+#: info_panel.py:205
+msgid "#### JSON File Paths"
+msgstr "#### JSON tiedostopolut"
+
+#: info_panel.py:208
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **Järjestelmäpolku:** `{dir|%s}` – sisältää sisäänrakennetun "
+"attribute_mapping.json-tiedoston"
+
+#: info_panel.py:214
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **Käyttäjän määrittämä polku:** `{dir|%s}` – käyttäjän mukauttamille "
+"attribute_mapping.json-tiedostolle"
+
+#: info_panel.py:221
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *Vinkki: avaa tiedostonhallinnassa napsauttamalla valitsemaasi polkua "
+"yllä*"
+
+#: info_panel.py:224
+msgid "📖 View detailed usage in: "
+msgstr "📖 Katso yksityiskohtainen ohje: "
+
+#: info_panel.py:233
+msgid "## 💬 Support"
+msgstr "## 💬 Tuki"
+
+#: info_panel.py:234
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 Luonut ja ylläpitänyt Yurii Liubymyi"
+
+#: info_panel.py:237
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 Jos tarvitset apua tai palautetta, mainitse `@Urchello` Gramps-foorumilla:"
+
+#: info_panel.py:245
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr "✅ Virheilmoitukset ja ominaisuuspyynnöt ovat täysin **ilmaisia**."
+
+#: info_panel.py:255
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 WebSearch Gramplet versio: `%s`"
+
+#: internet_links_loader.py:78 internet_links_loader.py:79
+msgid "No title"
+msgstr "Ei nimeä"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -24781,7 +24919,7 @@ msgstr "Jakso: "
 #, fuzzy, python-brace-format
 #| msgid "Ref: {number}. {name}"
 msgid "\t{number} surname"
-msgid_plural "\t{number} surnames; no frequency yet\n"
+msgid_plural "\t{number} surnames; no frequency yet"
 msgstr[0] "Ref: {number}. {name}"
 msgstr[1] "Ref: {number}. {name}"
 
@@ -24795,7 +24933,7 @@ msgstr " merkinnät sukunimille; ei vielä frekvenssiä"
 #, fuzzy, python-brace-format
 #| msgid "Ref: {number}. {name}"
 msgid "\t{number} place"
-msgid_plural "\t{number} places\n"
+msgid_plural "\t{number} places"
 msgstr[0] "Ref: {number}. {name}"
 msgstr[1] "Ref: {number}. {name}"
 
@@ -24803,7 +24941,7 @@ msgstr[1] "Ref: {number}. {name}"
 #, fuzzy, python-brace-format
 #| msgid "Ref: {number}. {name}"
 msgid "\t{number} note"
-msgid_plural "\t{number} notes\n"
+msgid_plural "\t{number} notes"
 msgstr[0] "Ref: {number}. {name}"
 msgstr[1] "Ref: {number}. {name}"
 
@@ -24811,7 +24949,7 @@ msgstr[1] "Ref: {number}. {name}"
 #, fuzzy, python-brace-format
 #| msgid "New source"
 msgid "\t{number} source"
-msgid_plural "\t{number} sources\n"
+msgid_plural "\t{number} sources"
 msgstr[0] "Uusi lähde"
 msgstr[1] "Uusi lähde"
 
@@ -24889,6 +25027,188 @@ msgstr ""
 "Yritä avata\n"
 " \"%s\"\n"
 " suosikkiselaimessasi ..."
+
+#: markdown_place_history_formatter.py:52
+msgid "No data available."
+msgstr "Ei tietoja saatavilla."
+
+#: markdown_place_history_formatter.py:57
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "HISTORIALLISET HALLINNOLLISET OSAT"
+
+#: markdown_place_history_formatter.py:58
+msgid "Foundation date:"
+msgstr "Perustamispäivä:"
+
+#: markdown_place_history_formatter.py:60
+msgid "Coordinates:"
+msgstr "Koordinaatit:"
+
+#: markdown_place_history_formatter.py:61
+msgid "Administrative history"
+msgstr "Hallinnollinen historia"
+
+#: markdown_place_history_formatter.py:62
+msgid "Data provided to AI:"
+msgstr "Tekoälylle toimitetut tiedot:"
+
+#: markdown_place_history_formatter.py:64
+msgid "Full hierarchy"
+msgstr "Koko hierarkia"
+
+#: markdown_place_history_formatter.py:68
+msgid "Place Type:"
+msgstr "Paikan tyyppi:"
+
+#: markdown_place_history_formatter.py:69
+msgid "Last Retrieved At:"
+msgstr "Viimeksi noudettu:"
+
+#: note_links_loader.py:72
+msgid "Note Link (parsed)"
+msgstr "Linkki lisätietoihin (jäsennetty)"
+
+#: note_links_loader.py:125
+msgid "Note Link (internal)"
+msgstr "Linkki lisätietoihin (sisäinen)"
+
+#: note_links_loader.py:128
+msgid "Note Link (external)"
+msgstr "Linkki lisätietoihin (ulkoinen)"
+
+#: qr_window.py:75
+msgid "QR-code"
+msgstr "QR-koodi"
+
+#: qr_window.py:106 qr_window.py:109
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Riippuvuus \"qrcode\" puuttuu"
+
+#: qr_window.py:120
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Virhe QR-koodissa:\n"
+"Alkuperäinen virhe: “{}”"
+
+#: settings_ui_manager.py:112
+msgid "Middle Name Handling"
+msgstr "Toisen nimen käsittely"
+
+#: settings_ui_manager.py:117
+msgid "Leave alone"
+msgstr "Jätä rauhaan"
+
+#: settings_ui_manager.py:118
+msgid "Separate"
+msgstr "Erilliset"
+
+#: settings_ui_manager.py:128
+msgid "URL Compactness Level"
+msgstr "URL-osoitteen tiiviystaso"
+
+#: settings_ui_manager.py:134
+msgid "Shortest - No Prefix, No Keys"
+msgstr "Lyhin - ei etuliitettä eikä avaimia"
+
+#: settings_ui_manager.py:137
+msgid "Compact - No Prefix, Keys Without Attributes"
+msgstr "Kompakti - Ei etuliitettä, avaimet ilman ominaisuuksia"
+
+#: settings_ui_manager.py:140
+msgid "Compact - No Prefix, Keys With Attributes"
+msgstr "Kompakti - Ei etuliitettä, avaimet ominaisuuksilla"
+
+#: settings_ui_manager.py:143
+msgid "Long - Without Prefix on the Left"
+msgstr "Pitkä - ilman etuliitettä vasemmalla"
+
+#: settings_ui_manager.py:150
+msgid "URL Prefix Replacement"
+msgstr "URL-etuliitteen korvaaminen"
+
+#: settings_ui_manager.py:157
+msgid "AI Provider"
+msgstr "AI Provider"
+
+#: settings_ui_manager.py:162
+msgid "(Disabled)"
+msgstr "(Pois käytöstä)"
+
+#: settings_ui_manager.py:163
+msgid "OpenAI"
+msgstr "OpenAI"
+
+#: settings_ui_manager.py:164
+msgid "Mistral AI"
+msgstr "Mistral AI"
+
+#: settings_ui_manager.py:171
+msgid "OpenAI API Key"
+msgstr "OpenAI API avain"
+
+#: settings_ui_manager.py:176
+msgid "OpenAI Model"
+msgstr "OpenAI malli"
+
+#: settings_ui_manager.py:181
+msgid "Mistral API Key"
+msgstr "Mistral API avain"
+
+#: settings_ui_manager.py:186
+msgid "Mistral Model"
+msgstr "Mistral malli"
+
+#: settings_ui_manager.py:191
+msgid "Show Links From the 'Attributes' tab"
+msgstr "Näytä linkit ominaisuus välilehdeltä"
+
+#: settings_ui_manager.py:196
+msgid "Show Links From the 'Internet' tab"
+msgstr "Näytä linkit välilehdeltä 'Internet'"
+
+#: settings_ui_manager.py:201
+msgid "Show Links From the Notes"
+msgstr "Näytä lisätietojen linkit"
+
+#: settings_ui_manager.py:209
+msgid "Enable AI-generated historical place data"
+msgstr "Hyödynnä tekoälyn luomia historiallisia paikkatietoja"
+
+#: settings_ui_manager.py:215
+msgid "Custom country code for AI notes (optional)"
+msgstr "Mukautettu maakoodi tekoälylisätietoja verten (valinnainen)"
+
+#: settings_ui_manager.py:244
+msgid "Enable CSV Files"
+msgstr "Hyödynnä CSV-tiedostoja"
+
+#: settings_ui_manager.py:251
+msgid "Display Columns"
+msgstr "Näytä sarakkeet"
+
+#: settings_ui_manager.py:265
+msgid "Display Icons"
+msgstr "Näytä kuvakkeet"
+
+#~ msgid "Rebuild Gramps Types"
+#~ msgstr "Rakenetaan Gramps-tyypit uudelleen"
+
+#~ msgid "Rebuilds Gramps Types"
+#~ msgstr "Rakenna Gramps-tyypit uudelleen"
+
+#~ msgid "Gramps Types rebuilt"
+#~ msgstr "Gramps-tyypit rakennettu uudelleen"
+
+#, python-format
+#~ msgid "Found %d custom event types"
+#~ msgstr "Löytyi %d mukautettua tapahtumatyyppiä"
+
+#, fuzzy
+#~| msgid "Issues"
+#~ msgid "GitHub Issues"
+#~ msgstr "Ongelmat"
 
 #~ msgid "can't found it because exiv2 not installed"
 #~ msgstr "ei löydy, koska exiv2:ta ei ole asennettu"
