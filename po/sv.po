@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-29 09:23-0700\n"
-"PO-Revision-Date: 2026-05-27 16:15+0000\n"
+"PO-Revision-Date: 2026-06-02 18:04+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.6\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -15150,7 +15150,7 @@ msgstr "Ta med syskon för anor."
 
 #: GenealogyTree/gt_sandclock.py:273
 msgid "Compact tree layout"
-msgstr ""
+msgstr "Kompakt trädlayout"
 
 #: GenealogyTree/gt_sandclock.py:275
 msgid ""
@@ -15158,6 +15158,9 @@ msgid ""
 "generations per page. Useful for large sandclock trees that otherwise clip "
 "off the rendered page."
 msgstr ""
+"Använd genealogytree-mallen 'database pole reduced', som innehåller fler "
+"generationer per sida. Användbart för stora timglasträd som annars klipper "
+"av den renderade sidan."
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
@@ -16242,15 +16245,16 @@ msgstr "Partners"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:25 HasTagSubstr/hastagsubstr.py:93
 msgid "People with a tag containing <substring>"
-msgstr ""
+msgstr "Personer med en tagg som innehåller <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:26 HasTagSubstr/hastagsubstr.py:94
 msgid "Matches people with a tag whose name contains the given substring"
 msgstr ""
+"Matchar personer med en tagg vars namn innehåller den angivna delsträngen"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:40 HasTagSubstr/hastagsubstr.py:102
 msgid "Families with a tag containing <substring>"
-msgstr ""
+msgstr "Familjer med en tagg som innehåller <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:42 HasTagSubstr/hastagsubstr.py:104
 #, fuzzy
