@@ -21,7 +21,7 @@ register(
         "where details about individuals become visible "
         "upon mouse-events."
     ),
-    version = '2.3.52',
+    version = '2.3.53',
     gramps_target_version="6.1",
     help_url="Addon:DenominoViso",
 )

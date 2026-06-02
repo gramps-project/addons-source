@@ -24,7 +24,7 @@ register(
     name=_("Anniversaries"),
     description=_("A gramplet that displays the anniversaries of events"),
     status=STABLE,
-    version = '1.0.5',
+    version = '1.0.6',
     fname="AnniversariesGramplet.py",
     height=200,
     gramplet="AnniversariesGramplet",

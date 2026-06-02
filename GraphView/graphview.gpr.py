@@ -4,7 +4,7 @@ register(
     name=_("Graph View"),
     category=("Ancestry", _("Charts")),
     description=_("Dynamic and interactive graph of relations"),
-    version = '1.0.147',
+    version = '1.0.148',
     gramps_target_version="6.1",
     status=STABLE,
     fname="graphview.py",

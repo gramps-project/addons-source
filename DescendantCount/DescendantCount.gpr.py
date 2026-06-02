@@ -32,7 +32,7 @@ register(
     gramplet_title=_("Descendant Count"),
     detached_width=600,
     detached_height=400,
-    version = '2.0.17',
+    version = '2.0.18',
     gramps_target_version="6.1",
     help_url="Descendant_Count_Gramplet",
 )

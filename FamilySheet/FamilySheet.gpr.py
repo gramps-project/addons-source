@@ -6,7 +6,7 @@ register(
         "Produces a family sheet showing full information "
         "about a person and his/her partners and children."
     ),
-    version = '3.4.52',
+    version = '3.4.53',
     gramps_target_version="6.1",
     status=STABLE,
     fname="FamilySheet.py",

@@ -38,7 +38,7 @@ register(
         "as a Space Tree for efficient viewing, even "
         "with many descendants or generations."
     ),
-    version = '1.1.3',
+    version = '1.1.4',
     gramps_target_version="6.1",
     help_url="Addon:DescendantSpaceTree",
 )

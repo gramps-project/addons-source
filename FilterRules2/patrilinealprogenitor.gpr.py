@@ -24,7 +24,7 @@ register(
     id="PatrilinealProgenitor",
     name=_("Patrilineal progenitor of <person>"),
     description=_("Matches the earliest recorded patrilineal ancestor father."),
-    version = '1.0.14',
+    version = '1.0.15',
     authors=["Matthias Kemmer"],
     authors_email=["matt.familienforschung@gmail.com"],
     gramps_target_version="6.1",

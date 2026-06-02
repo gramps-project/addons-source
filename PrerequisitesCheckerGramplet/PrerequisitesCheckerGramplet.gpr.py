@@ -28,7 +28,7 @@ register(
     id="Prerequisites Checker Gramplet",
     name=_("Prerequisites Checker"),
     description=_("Prerequisites Checker Gramplet"),
-    version = '1.2.13',
+    version = '1.2.14',
     gramps_target_version="6.1",
     status=STABLE,
     fname="PrerequisitesCheckerGramplet.py",

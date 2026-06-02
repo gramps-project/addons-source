@@ -22,7 +22,7 @@ register(
     name=_("Date Calculator"),
     description=_("Perform date math calculations"),
     status=STABLE,
-    version = '0.0.24',
+    version = '0.0.25',
     fname="DateCalculator.py",
     authors=["Doug Blank", "Steve Youngs"],
     authors_email=["doug.blank@gmail.com", "steve@youngs.cc"],

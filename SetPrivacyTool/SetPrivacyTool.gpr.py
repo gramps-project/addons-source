@@ -23,7 +23,7 @@ register(
     id="SetPrivacyTool",
     name=_("Set Privacy Tool"),
     description=_("Set all objects of the last <number> of years private."),
-    version = '1.0.20',
+    version = '1.0.21',
     gramps_target_version="6.1",
     status=STABLE,
     fname="SetPrivacyTool.py",

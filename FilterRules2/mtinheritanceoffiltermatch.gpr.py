@@ -27,7 +27,7 @@ register(
         "Matches recorded descendants of a filter result "
         "following mitochondrial inheritance patterns."
     ),
-    version = '1.0.14',
+    version = '1.0.15',
     authors=["Matthias Kemmer"],
     authors_email=["matt.familienforschung@gmail.com"],
     gramps_target_version="6.1",

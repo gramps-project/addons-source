@@ -15,7 +15,7 @@ register(
         "families that have all children with proper birth dates, or "
         "accept all."
     ),
-    version = '0.0.20',
+    version = '0.0.21',
     gramps_target_version="6.1",
     status=STABLE,
     fname="birthorder.py",

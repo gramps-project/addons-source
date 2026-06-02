@@ -49,7 +49,7 @@ register(
         "Creates an HTML webpage that uses JavaScript to "
         "show a pedigree block diagram arranged vertically by birth date"
     ),
-    version = '0.0.13',
+    version = '0.0.14',
     gramps_target_version="6.1",
     status=STABLE,
     fname="TimePedigreeHtml.py",

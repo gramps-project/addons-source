@@ -23,7 +23,7 @@ register(
     name=_("Quilt Chart"),
     category=("Ancestry", _("Charts")),
     description=_("The view shows a quilt chart visualisation of a family tree"),
-    version = '1.0.28',
+    version = '1.0.29',
     gramps_target_version="6.1",
     status=STABLE,
     audience=EXPERT,

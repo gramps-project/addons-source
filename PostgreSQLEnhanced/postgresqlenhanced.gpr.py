@@ -33,7 +33,7 @@ register(
         "and AI/ML capabilities. For advanced users. "
         "Requires PostgreSQL 15+ with extensions. Gramps Web compatible."
     ),
-    version = '1.5.4',
+    version = '1.5.5',
     gramps_target_version="6.1",
     status=STABLE,
     audience=EXPERT,  # For advanced users who can configure PostgreSQL

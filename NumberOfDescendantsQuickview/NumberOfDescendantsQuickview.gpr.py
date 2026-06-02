@@ -3,7 +3,7 @@ register(
     id="NumberOfDescendantsQuickview",
     name=_("Number of descendants"),
     description=_("Shows the number of descendants of the current person"),
-    version = '3.4.35',
+    version = '3.4.36',
     gramps_target_version="6.1",
     status=STABLE,
     fname="NumberOfDescendantsQuickview.py",

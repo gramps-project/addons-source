@@ -5,7 +5,7 @@ register(
     description=_("Tool to import FamilyFinder DNA data from Family Tree"),
     status=STABLE,
     audience=EXPERT,
-    version = '1.0.35',
+    version = '1.0.36',
     gramps_target_version="6.1",
     fname="ftdna_import.py",
     category=TOOL_UTILS,
