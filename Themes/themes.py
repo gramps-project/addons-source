@@ -102,6 +102,7 @@ class MyPrefs(GrampsPreferences):
                 self.add_text_panel,
                 self.add_warnings_panel,
                 self.add_researcher_panel,
+                self.add_integrations_panel,
                 self.add_ptypes_panel,
                 self.add_themes_panel)
             ConfigureDialog.__init__(self, uistate, dbstate, page_funcs,
@@ -120,6 +121,7 @@ class MyPrefs(GrampsPreferences):
                 self.add_text_panel,
                 self.add_warnings_panel,
                 self.add_researcher_panel,
+                self.add_integrations_panel,
                 self.add_themes_panel)
             ConfigureDialog.__init__(self, uistate, dbstate, page_funcs,
                                      GrampsPreferences, config,
