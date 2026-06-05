@@ -1,0 +1,1852 @@
+#
+# Gramps - a GTK+/GNOME based genealogy program
+#
+# Copyright (C) 2025 Douglas S. Blank <doug.blank@gmail.com>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+
+"""
+SQL Generator
+
+Converts query model objects to SQL strings.
+Handles dialect differences (SQLite vs PostgreSQL).
+"""
+
+from typing import List, Optional
+
+from query_model import (
+    Expression,
+    ConstantExpression,
+    AttributeExpression,
+    ArrayAccessExpression,
+    BinaryOpExpression,
+    UnaryOpExpression,
+    CompareExpression,
+    BoolOpExpression,
+    CallExpression,
+    IfExpression,
+    ListComprehensionExpression,
+    AnyExpression,
+    ArrayExpansionExpression,
+    TupleExpression,
+    Join,
+    OrderBy,
+    SelectExpression,
+    ArrayExpansion,
+    SelectQuery,
+)
+
+
+class SQLGenerator:
+    """Converts query model objects to SQL strings."""
+
+    def __init__(self, dialect: str = "sqlite", type_inference=None):
+        """
+        Initialize the SQL generator.
+
+        Args:
+            dialect: SQL dialect ("sqlite" or "postgres")
+            type_inference: Optional TypeInferenceVisitor for type-aware SQL generation
+        """
+        self.dialect = dialect.lower()
+        self.type_inference = type_inference
+        self._json_each_counter = 0  # For generating unique json_each aliases
+        self._in_select_clause = (
+            False  # Track if we're generating SELECT clause expressions
+        )
+        self._json_each_alias = (
+            "json_each"  # Default json_each alias for attribute resolution
+        )
+
+    def _get_next_json_each_alias(self) -> str:
+        """
+        Generate unique alias for json_each tables.
+
+        Returns:
+            Unique alias name for json_each (e.g., "outer_each", "inner_each", "each_3")
+        """
+        self._json_each_counter += 1
+        if self._json_each_counter == 1:
+            return "outer_each"
+        elif self._json_each_counter == 2:
+            return "inner_each"
+        else:
+            return f"each_{self._json_each_counter}"
+
+    def _reset_json_each_counter(self):
+        """Reset the json_each alias counter (call at the start of each query generation)."""
+        self._json_each_counter = 0
+
+    def _is_list_or_tuple_type(self, type_hint) -> bool:
+        """
+        Check if a type hint represents a list or tuple type.
+
+        Handles both plain types (list, tuple) and parameterized generics (List[T], Tuple[T]).
+
+        Args:
+            type_hint: Type to check
+
+        Returns:
+            True if the type is list, tuple, or a parameterized version
+        """
+        if type_hint is None:
+            return False
+
+        # Check for plain list or tuple
+        if type_hint is list or type_hint is tuple:
+            return True
+
+        # Check for parameterized generics like List[str], Tuple[int, str]
+        from typing import get_origin, List, Tuple
+
+        origin = get_origin(type_hint)
+        return origin is list or origin is List or origin is tuple or origin is Tuple
+
+    def generate(self, query: SelectQuery) -> str:
+        """
+        Generate SQL from a SelectQuery object.
+
+        Args:
+            query: SelectQuery object
+
+        Returns:
+            SQL query string
+        """
+        # Handle UNION queries
+        if query.union_queries:
+            return self._generate_union(query)
+
+        # Generate standard SELECT query
+        return self._generate_select(query)
+
+    def _generate_select(self, query: SelectQuery) -> str:
+        """Generate a SELECT statement."""
+        # Reset counter for each query
+        self._reset_json_each_counter()
+
+        # Store base table for use in expressions
+        self.base_table = query.base_table
+
+        # SELECT clause
+        select_parts = []
+        for sel_expr in query.select_expressions:
+            # Set SELECT context flag for all SELECT expressions
+            old_in_select = self._in_select_clause
+            self._in_select_clause = True
+
+            try:
+                # Handle list comprehensions specially
+                if isinstance(sel_expr.expression, ListComprehensionExpression):
+                    # List comprehension needs special FROM clause handling
+                    # For now, generate placeholder
+                    expr_sql = self._generate_listcomp_in_select(
+                        sel_expr.expression, query
+                    )
+                else:
+                    expr_sql = self.generate_expression(sel_expr.expression)
+                if sel_expr.alias:
+                    select_parts.append(f"{expr_sql} AS {sel_expr.alias}")
+                else:
+                    select_parts.append(expr_sql)
+            finally:
+                # Restore SELECT context flag
+                self._in_select_clause = old_in_select
+
+        select_clause = ", ".join(select_parts) if select_parts else "json_data"
+
+        # FROM clause
+        from_parts = [query.base_table]
+
+        # Check for list comprehensions that need array expansion
+        for sel_expr in query.select_expressions:
+            if isinstance(sel_expr.expression, ListComprehensionExpression):
+                listcomp = sel_expr.expression
+                if listcomp.array_info.get("type") == "single":
+                    # Single array - add json_each
+                    array_path = listcomp.array_info["path"]
+                    from query_model import AttributeExpression
+
+                    array_attr = AttributeExpression(
+                        table_name=query.base_table,
+                        attribute_path=array_path,
+                        is_database_column=False,
+                    )
+                    array_sql = self.generate_expression(array_attr)
+                    json_each_expr = self._format_json_each(array_sql)
+                    from_parts.append(json_each_expr)
+                    break  # Only add once
+                elif listcomp.array_info.get("type") == "nested_listcomp":
+                    # Nested list comprehension - add chained json_each calls
+                    json_each_chain = self._generate_nested_listcomp_from_clause(
+                        listcomp, query.base_table
+                    )
+                    from_parts.extend(json_each_chain)
+                    break  # Only add once
+
+        # Add array expansion if present (for WHERE clause array expansion)
+        if query.array_expansion:
+            array_sql = self.generate_expression(query.array_expansion.array_expression)
+            # If it's a CallExpression for json_array, we need to handle it specially
+            if isinstance(query.array_expansion.array_expression, CallExpression):
+                # For concatenated arrays, the left side is wrapped in json_array()
+                # Generate the json_array call
+                array_sql = self.generate_expression(
+                    query.array_expansion.array_expression
+                )
+            json_each_expr = self._format_json_each(array_sql)
+            if json_each_expr not in from_parts:
+                from_parts.append(json_each_expr)
+
+        # Add JOINs - JOINs should not be comma-separated
+        # Build FROM clause: base_table, json_each (if any), then JOINs
+        from_clause_parts = []
+        # Add base table and json_each (comma-separated)
+        from_clause_parts.append(", ".join(from_parts))
+        # Add JOINs (space-separated, not comma-separated)
+        for join in query.joins:
+            join_sql = self._generate_join(join)
+            from_clause_parts.append(join_sql)
+
+        from_clause = " ".join(from_clause_parts)
+
+        # WHERE clause
+        # Collect all conditions: query WHERE condition + list comprehension conditions
+        where_conditions = []
+
+        # Add query-level WHERE condition (excluding ArrayExpansionExpression)
+        if query.where_condition:
+            where_sql = self._generate_where_condition(query.where_condition)
+            if where_sql:
+                where_conditions.append(where_sql)
+
+        # Add list comprehension conditions from SELECT expressions
+        # These need to be evaluated in the context of json_each
+        for sel_expr in query.select_expressions:
+            if isinstance(sel_expr.expression, ListComprehensionExpression):
+                listcomp = sel_expr.expression
+                if listcomp.condition:
+                    # Set the correct json_each alias context for nested listcomps
+                    if listcomp.array_info.get("type") == "nested_listcomp":
+                        depth = self._get_listcomp_nesting_depth(listcomp)
+                        if depth == 2:
+                            self._json_each_alias = "inner_each"
+                        elif depth == 1:
+                            self._json_each_alias = "outer_each"
+                        else:
+                            self._json_each_alias = f"each_{depth}"
+                    else:
+                        self._json_each_alias = "json_each"
+
+                    # Push list comprehension item type onto type inference stack
+                    # so that type inference can resolve json_each attributes correctly
+                    if self.type_inference:
+                        self.type_inference._listcomp_item_type_stack.append(
+                            listcomp.item_type
+                        )
+
+                    try:
+                        # Generate the condition SQL with item_var context
+                        # The condition references the item variable (e.g., eref.role.value)
+                        condition_sql = self.generate_expression(listcomp.condition)
+                    finally:
+                        # Always pop the item type when done
+                        if self.type_inference:
+                            self.type_inference._listcomp_item_type_stack.pop()
+                        # Reset to default
+                        self._json_each_alias = "json_each"
+
+                    if condition_sql:
+                        where_conditions.append(condition_sql)
+
+        # Combine all conditions with AND
+        where_clause = ""
+        if where_conditions:
+            combined_where = " AND ".join(f"({cond})" for cond in where_conditions)
+            where_clause = f" WHERE {combined_where}"
+
+        # ORDER BY clause
+        order_by_clause = ""
+        if query.order_by:
+            order_parts = []
+            for order in query.order_by:
+                expr_sql = self.generate_expression(order.expression)
+                order_parts.append(f"{expr_sql} {order.direction}")
+            order_by_clause = f" ORDER BY {', '.join(order_parts)}"
+
+        # LIMIT/OFFSET clause
+        limit_clause = ""
+        if query.limit is not None:
+            limit_clause = f" LIMIT {query.limit}"
+            if query.offset is not None:
+                limit_clause += f" OFFSET {query.offset}"
+
+        return f"SELECT {select_clause} FROM {from_clause}{where_clause}{order_by_clause}{limit_clause};"
+
+    def _generate_where_condition(self, expr: Expression) -> str:
+        """Generate SQL for WHERE condition, filtering out ArrayExpansionExpression."""
+        from query_model import ArrayExpansionExpression, BoolOpExpression
+
+        # If it's an ArrayExpansionExpression, return empty (handled in FROM clause)
+        if isinstance(expr, ArrayExpansionExpression):
+            return ""
+
+        # If it's a BoolOp, recursively process and filter out empty conditions
+        if isinstance(expr, BoolOpExpression):
+            condition_parts = []
+            for value in expr.values:
+                part = self._generate_where_condition(value)
+                if part:
+                    condition_parts.append(f"({part})")
+
+            if not condition_parts:
+                return ""
+            elif len(condition_parts) == 1:
+                return condition_parts[0]
+            else:
+                operator = " AND " if expr.operator == "and" else " OR "
+                return operator.join(condition_parts)
+
+        # For other expressions, generate normally
+        return self.generate_expression(expr)
+
+    def _generate_union(self, query: SelectQuery) -> str:
+        """Generate a UNION query with proper ORDER BY handling."""
+        queries = [query] + query.union_queries
+
+        # Save the ORDER BY, LIMIT, and OFFSET clauses from the first query
+        order_by = query.order_by
+        limit = query.limit
+        offset = query.offset
+
+        # Generate each query WITHOUT ORDER BY, LIMIT, or OFFSET
+        # (we'll add them at the end after UNION ALL)
+        query_strings = []
+        for q in queries:
+            # Temporarily remove ORDER BY, LIMIT, and OFFSET
+            original_order_by = q.order_by
+            original_limit = q.limit
+            original_offset = q.offset
+            q.order_by = []
+            q.limit = None
+            q.offset = None
+
+            query_strings.append(self._generate_select(q))
+
+            # Restore original values
+            q.order_by = original_order_by
+            q.limit = original_limit
+            q.offset = original_offset
+
+        # Remove semicolons from individual queries
+        query_strings = [q.rstrip(";") for q in query_strings]
+
+        # Combine with UNION ALL for concatenated arrays
+        union_sql = " UNION ALL ".join(query_strings)
+
+        # Check if we need to wrap in a subquery for ORDER BY
+        # When ORDER BY columns are not in the SELECT list, we need a subquery
+        needs_subquery = False
+        if order_by:
+            # Check if ORDER BY expressions reference columns not in SELECT
+            # For UNION queries with list comprehensions, we need a subquery if
+            # ORDER BY references base table columns (like person.handle)
+            for order in order_by:
+                order_sql = self.generate_expression(order.expression)
+                # If ORDER BY references the base table (not json_each), we need a subquery
+                if (
+                    f"{self.base_table}." in order_sql
+                    or f"{self.base_table}.json_data" in order_sql
+                ):
+                    needs_subquery = True
+                    break
+
+        if needs_subquery:
+            # Wrap the UNION in a subquery and add ORDER BY columns to SELECT for sorting
+            # Then in the outer query, select only the original columns
+
+            # First, determine how many SQL columns the original SELECT expressions produce
+            # (tuples expand to multiple columns)
+            num_original_cols = self._count_select_columns(query.select_expressions)
+
+            # Regenerate queries with proper column aliasing
+            query_strings_aliased = []
+            for q in queries:
+                original_order_by = q.order_by
+                original_limit = q.limit
+                original_offset = q.offset
+                original_select = q.select_expressions[:]
+
+                q.order_by = []
+                q.limit = None
+                q.offset = None
+
+                # Add ORDER BY expressions
+                for order in order_by:
+                    already_in_select = False
+                    for sel_expr in q.select_expressions:
+                        if self._expressions_equal(
+                            sel_expr.expression, order.expression
+                        ):
+                            already_in_select = True
+                            break
+
+                    if not already_in_select:
+                        q.select_expressions.append(
+                            SelectExpression(expression=order.expression)
+                        )
+
+                # Now generate the SELECT clause with manual aliases
+                select_parts_with_aliases = []
+                col_num = 1
+                for sel_expr in q.select_expressions:
+                    # Check if this is a tuple expression
+                    from query_model import TupleExpression
+
+                    if isinstance(sel_expr.expression, TupleExpression):
+                        # Tuple - generates multiple columns
+                        old_in_select = self._in_select_clause
+                        self._in_select_clause = True
+                        try:
+                            # Generate each element separately with its own alias
+                            for element in sel_expr.expression.elements:
+                                elem_sql = self.generate_expression(element)
+                                select_parts_with_aliases.append(
+                                    f"{elem_sql} AS col{col_num}"
+                                )
+                                col_num += 1
+                        finally:
+                            self._in_select_clause = old_in_select
+                    else:
+                        # Single column
+                        old_in_select = self._in_select_clause
+                        self._in_select_clause = True
+                        try:
+                            expr_sql = self.generate_expression(sel_expr.expression)
+                            select_parts_with_aliases.append(
+                                f"{expr_sql} AS col{col_num}"
+                            )
+                            col_num += 1
+                        finally:
+                            self._in_select_clause = old_in_select
+
+                # Build the full query with custom SELECT clause
+                select_clause = ", ".join(select_parts_with_aliases)
+                full_sql = self._generate_select_with_custom_select_clause(
+                    q, select_clause
+                )
+
+                query_strings_aliased.append(full_sql.rstrip(";"))
+
+                # Restore original values
+                q.order_by = original_order_by
+                q.limit = original_limit
+                q.offset = original_offset
+                q.select_expressions = original_select
+
+            # Build the UNION
+            union_aliased = " UNION ALL ".join(query_strings_aliased)
+
+            # Build outer SELECT - only the original columns
+            outer_select_cols = ", ".join(
+                [f"col{i+1}" for i in range(num_original_cols)]
+            )
+
+            # Build ORDER BY with columns starting after the original columns
+            order_parts = []
+            for i, order in enumerate(order_by):
+                col_num = num_original_cols + i + 1
+                order_parts.append(f"col{col_num} {order.direction}")
+
+            order_by_clause = f" ORDER BY {', '.join(order_parts)}"
+
+            # Build final query
+            final_sql = f"SELECT {outer_select_cols} FROM ({union_aliased}) AS sub {order_by_clause}"
+
+            # Add LIMIT/OFFSET
+            if limit is not None:
+                final_sql += f" LIMIT {limit}"
+                if offset is not None:
+                    final_sql += f" OFFSET {offset}"
+
+            return final_sql + ";"
+        else:
+            # ORDER BY columns are in SELECT or no ORDER BY - use simple approach
+            if order_by:
+                order_parts = []
+                for order in order_by:
+                    expr_sql = self.generate_expression(order.expression)
+                    order_parts.append(f"{expr_sql} {order.direction}")
+                union_sql += f" ORDER BY {', '.join(order_parts)}"
+
+            # Add LIMIT/OFFSET clause AFTER ORDER BY (if present)
+            if limit is not None:
+                union_sql += f" LIMIT {limit}"
+                if offset is not None:
+                    union_sql += f" OFFSET {offset}"
+
+            return union_sql + ";"
+
+    def _expressions_equal(self, expr1: Expression, expr2: Expression) -> bool:
+        """Check if two expressions are equal."""
+        # Simple equality check - compare repr or use a visitor for deep comparison
+        return repr(expr1) == repr(expr2)
+
+    def _count_select_columns(self, select_expressions: list) -> int:
+        """
+        Count the number of SQL columns that will be generated by select expressions.
+        Tuples expand to multiple columns, so we need to count their elements.
+        """
+        from query_model import TupleExpression
+
+        count = 0
+        for sel_expr in select_expressions:
+            if isinstance(sel_expr.expression, TupleExpression):
+                count += len(sel_expr.expression.elements)
+            else:
+                count += 1
+        return count
+
+    def _generate_select_with_custom_select_clause(
+        self, query: SelectQuery, select_clause: str
+    ) -> str:
+        """
+        Generate a SELECT statement with a custom SELECT clause.
+        Reuses the logic from _generate_select but with a provided SELECT clause.
+        """
+        # Reset counter for each query
+        self._reset_json_each_counter()
+
+        # Store base table for use in expressions
+        self.base_table = query.base_table
+
+        # Use the provided select_clause instead of generating one
+
+        # FROM clause
+        from_parts = [query.base_table]
+
+        # Check for list comprehensions that need array expansion
+        for sel_expr in query.select_expressions:
+            if isinstance(sel_expr.expression, ListComprehensionExpression):
+                listcomp = sel_expr.expression
+                if listcomp.array_info.get("type") == "single":
+                    # Single array - add json_each
+                    array_path = listcomp.array_info["path"]
+                    from query_model import AttributeExpression
+
+                    array_attr = AttributeExpression(
+                        table_name=query.base_table,
+                        attribute_path=array_path,
+                        is_database_column=False,
+                    )
+                    array_sql = self.generate_expression(array_attr)
+                    json_each_expr = self._format_json_each(array_sql)
+                    from_parts.append(json_each_expr)
+                    break  # Only add once
+                elif listcomp.array_info.get("type") == "nested_listcomp":
+                    # Nested list comprehension - add chained json_each calls
+                    json_each_chain = self._generate_nested_listcomp_from_clause(
+                        listcomp, query.base_table
+                    )
+                    from_parts.extend(json_each_chain)
+                    break  # Only add once
+
+        # Add array expansion if present (for WHERE clause array expansion)
+        if query.array_expansion:
+            array_sql = self.generate_expression(query.array_expansion.array_expression)
+            # If it's a CallExpression for json_array, we need to handle it specially
+            if isinstance(query.array_expansion.array_expression, CallExpression):
+                # For concatenated arrays, the left side is wrapped in json_array()
+                # Generate the json_array call
+                array_sql = self.generate_expression(
+                    query.array_expansion.array_expression
+                )
+            json_each_expr = self._format_json_each(array_sql)
+            if json_each_expr not in from_parts:
+                from_parts.append(json_each_expr)
+
+        # Add JOINs
+        from_clause_parts = []
+        from_clause_parts.append(", ".join(from_parts))
+        for join in query.joins:
+            join_sql = self._generate_join(join)
+            from_clause_parts.append(join_sql)
+
+        from_clause = " ".join(from_clause_parts)
+
+        # WHERE clause (reuse existing logic)
+        where_conditions = []
+
+        if query.where_condition:
+            where_sql = self._generate_where_condition(query.where_condition)
+            if where_sql:
+                where_conditions.append(where_sql)
+
+        # Add list comprehension conditions from SELECT expressions
+        for sel_expr in query.select_expressions:
+            if isinstance(sel_expr.expression, ListComprehensionExpression):
+                listcomp = sel_expr.expression
+                if listcomp.condition:
+                    if listcomp.array_info.get("type") == "nested_listcomp":
+                        depth = self._get_listcomp_nesting_depth(listcomp)
+                        if depth == 2:
+                            self._json_each_alias = "inner_each"
+                        elif depth == 1:
+                            self._json_each_alias = "outer_each"
+                        else:
+                            self._json_each_alias = f"each_{depth}"
+                    else:
+                        self._json_each_alias = "json_each"
+
+                    if self.type_inference:
+                        self.type_inference._listcomp_item_type_stack.append(
+                            listcomp.item_type
+                        )
+
+                    try:
+                        condition_sql = self.generate_expression(listcomp.condition)
+                    finally:
+                        if self.type_inference:
+                            self.type_inference._listcomp_item_type_stack.pop()
+                        self._json_each_alias = "json_each"
+
+                    if condition_sql:
+                        where_conditions.append(condition_sql)
+
+        where_clause = ""
+        if where_conditions:
+            combined_where = " AND ".join(f"({cond})" for cond in where_conditions)
+            where_clause = f" WHERE {combined_where}"
+
+        # No ORDER BY or LIMIT in this version (handled by caller)
+
+        return f"SELECT {select_clause} FROM {from_clause}{where_clause};"
+
+    def _generate_join(self, join: Join) -> str:
+        """Generate a JOIN clause."""
+        from query_model import CompareExpression, BoolOpExpression
+
+        # The condition can be a single equality or a BoolOp (OR) combining multiple conditions
+        if (
+            isinstance(join.condition, BoolOpExpression)
+            and join.condition.operator == "or"
+        ):
+            # Multiple conditions combined with OR - generate each and combine
+            condition_parts = []
+            for condition in join.condition.values:
+                if isinstance(condition, CompareExpression):
+                    if len(condition.operators) == 1 and condition.operators[0] == "==":
+                        left_sql = self.generate_expression(condition.left)
+                        right_sql = self.generate_expression(condition.comparators[0])
+                        condition_parts.append(f"{left_sql} = {right_sql}")
+                    else:
+                        condition_parts.append(self.generate_expression(condition))
+                else:
+                    condition_parts.append(self.generate_expression(condition))
+
+            combined_condition = " OR ".join(f"({part})" for part in condition_parts)
+            return f"{join.join_type} JOIN {join.table_name} ON {combined_condition}"
+
+        # Single condition
+        if isinstance(join.condition, CompareExpression):
+            if (
+                len(join.condition.operators) == 1
+                and join.condition.operators[0] == "=="
+            ):
+                left_sql = self.generate_expression(join.condition.left)
+                right_sql = self.generate_expression(join.condition.comparators[0])
+                return f"{join.join_type} JOIN {join.table_name} ON {left_sql} = {right_sql}"
+
+        # Fallback: use the condition as-is
+        condition_sql = self.generate_expression(join.condition)
+        return f"{join.join_type} JOIN {join.table_name} ON {condition_sql}"
+
+    def generate_expression(self, expr: Expression) -> str:
+        """
+        Generate SQL from an Expression object.
+
+        Args:
+            expr: Expression object
+
+        Returns:
+            SQL expression string
+        """
+        if isinstance(expr, ConstantExpression):
+            return self._generate_constant(expr)
+        elif isinstance(expr, AttributeExpression):
+            return self._generate_attribute(expr)
+        elif isinstance(expr, ArrayAccessExpression):
+            return self._generate_array_access(expr)
+        elif isinstance(expr, BinaryOpExpression):
+            return self._generate_binaryop(expr)
+        elif isinstance(expr, UnaryOpExpression):
+            return self._generate_unaryop(expr)
+        elif isinstance(expr, CompareExpression):
+            return self._generate_compare(expr)
+        elif isinstance(expr, BoolOpExpression):
+            return self._generate_boolop(expr)
+        elif isinstance(expr, CallExpression):
+            return self._generate_call(expr)
+        elif isinstance(expr, IfExpression):
+            return self._generate_if(expr)
+        elif isinstance(expr, ListComprehensionExpression):
+            return self._generate_listcomp(expr)
+        elif isinstance(expr, AnyExpression):
+            return self._generate_any(expr)
+        elif isinstance(expr, ArrayExpansionExpression):
+            # Array expansion is handled in FROM clause, not as a WHERE condition
+            # Return empty string - will be filtered out in _generate_where_condition
+            return ""
+        elif isinstance(expr, TupleExpression):
+            return self._generate_tuple(expr)
+        else:
+            raise ValueError(f"Unsupported expression type: {type(expr)}")
+
+    def _generate_constant(self, expr: ConstantExpression) -> str:
+        """Generate SQL for a constant."""
+        if expr.value is None:
+            return "null"
+        elif isinstance(expr.value, str):
+            return repr(expr.value)
+        elif isinstance(expr.value, bool):
+            return "1" if expr.value else "0"
+        else:
+            return str(expr.value)
+
+    def _generate_attribute(self, expr: AttributeExpression) -> str:
+        """Generate SQL for an attribute access."""
+        if expr.is_database_column:
+            # Direct database column reference
+            return f"{expr.table_name}.{expr.attribute_path}"
+
+        # If base is provided, this is attribute access on the result of another expression
+        # Generate SQL for the base expression first, then extract the attribute
+        if expr.base is not None:
+            # Generate SQL for the base expression (e.g., array access subquery)
+            base_sql = self.generate_expression(expr.base)
+
+            # Now extract the attribute from the base result with type awareness
+            if expr.attribute_path:
+                if expr.inferred_type is not None and self.type_inference:
+                    if expr.inferred_type is str:
+                        if self.dialect == "sqlite":
+                            return (
+                                f"json_extract({base_sql}, '$.{expr.attribute_path}')"
+                            )
+                        elif self.dialect == "postgres":
+                            return f"JSON_EXTRACT_PATH_TEXT({base_sql}, '{expr.attribute_path}')"
+                    elif expr.inferred_type in (int, float):
+                        if self.dialect == "sqlite":
+                            return f"CAST(json_extract({base_sql}, '$.{expr.attribute_path}') AS REAL)"
+                        elif self.dialect == "postgres":
+                            return f"CAST(JSON_EXTRACT_PATH({base_sql}, '{expr.attribute_path}') AS NUMERIC)"
+
+                # Default JSON extraction
+                if self.dialect == "sqlite":
+                    return f"json_extract({base_sql}, '$.{expr.attribute_path}')"
+                elif self.dialect == "postgres":
+                    return f"JSON_EXTRACT_PATH({base_sql}, '{expr.attribute_path}')"
+                else:
+                    return f"json_extract({base_sql}, '$.{expr.attribute_path}')"
+            else:
+                # No attribute path - just return the base
+                return base_sql
+
+        # JSON field - use json_extract
+        if expr.table_name == "json_each":
+            # Array expansion context - use the current alias
+            json_each_alias = getattr(self, "_json_each_alias", "json_each")
+            base_expr = f"{json_each_alias}.value"
+        else:
+            # Regular table
+            base_expr = f"{expr.table_name}.json_data"
+
+        if not expr.attribute_path:
+            # Just the base (e.g., person or json_each)
+            if expr.table_name == "json_each":
+                json_each_alias = getattr(self, "_json_each_alias", "json_each")
+                return f"{json_each_alias}.value"
+            else:
+                return f"{expr.table_name}.json_data"
+
+        # Build JSON extract with type awareness
+        if expr.inferred_type is not None and self.type_inference:
+            if expr.inferred_type is str:
+                # String type - use text extraction for PostgreSQL
+                if self.dialect == "sqlite":
+                    return f"json_extract({base_expr}, '$.{expr.attribute_path}')"
+                elif self.dialect == "postgres":
+                    return (
+                        f"JSON_EXTRACT_PATH_TEXT({base_expr}, '{expr.attribute_path}')"
+                    )
+            elif expr.inferred_type in (int, float):
+                # Numeric type - cast appropriately
+                if self.dialect == "sqlite":
+                    return f"CAST(json_extract({base_expr}, '$.{expr.attribute_path}') AS REAL)"
+                elif self.dialect == "postgres":
+                    return f"CAST(JSON_EXTRACT_PATH({base_expr}, '{expr.attribute_path}') AS NUMERIC)"
+            elif expr.inferred_type is bool:
+                # Boolean type - ensure proper boolean handling
+                if self.dialect == "sqlite":
+                    return f"CAST(json_extract({base_expr}, '$.{expr.attribute_path}') AS INTEGER)"
+                elif self.dialect == "postgres":
+                    return f"CAST(JSON_EXTRACT_PATH({base_expr}, '{expr.attribute_path}') AS BOOLEAN)"
+
+        # Default JSON extraction
+        if self.dialect == "sqlite":
+            return f"json_extract({base_expr}, '$.{expr.attribute_path}')"
+        elif self.dialect == "postgres":
+            return f"JSON_EXTRACT_PATH({base_expr}, '{expr.attribute_path}')"
+        else:
+            return f"json_extract({base_expr}, '$.{expr.attribute_path}')"
+
+    def _generate_array_access(self, expr: ArrayAccessExpression) -> str:
+        """Generate SQL for array access."""
+        base_sql = self.generate_expression(expr.base)
+
+        if expr.is_constant_index:
+            # Constant index: add to JSON path
+            index_sql = self.generate_expression(expr.index)
+            # Remove quotes if it's a string constant
+            if isinstance(expr.index, ConstantExpression) and isinstance(
+                expr.index.value, str
+            ):
+                try:
+                    index_val = int(expr.index.value)
+                    index_sql = str(index_val)
+                except ValueError:
+                    pass
+
+            # Check if base is an AttributeExpression
+            if isinstance(expr.base, AttributeExpression):
+                # Add index to attribute path
+                new_path = f"{expr.base.attribute_path}[{index_sql}]"
+                if expr.base.is_database_column:
+                    return f"{expr.base.table_name}.{new_path}"
+                base_expr = (
+                    "json_each.value"
+                    if expr.base.table_name == "json_each"
+                    else f"{expr.base.table_name}.json_data"
+                )
+                if self.dialect == "sqlite":
+                    return f"json_extract({base_expr}, '$.{new_path}')"
+                elif self.dialect == "postgres":
+                    return f"JSON_EXTRACT_PATH({base_expr}, '{new_path}')"
+                else:
+                    return f"json_extract({base_expr}, '$.{new_path}')"
+            else:
+                # Base is already a SQL expression - can't modify path
+                # This shouldn't happen in normal cases
+                return f"{base_sql}[{index_sql}]"
+        else:
+            # Variable index: use subquery with json_each
+            index_sql = self.generate_expression(expr.index)
+
+            # Extract array path from base
+            if isinstance(expr.base, AttributeExpression):
+                array_path = expr.base.attribute_path.split("[")[0]
+                base_expr = (
+                    "json_each.value"
+                    if expr.base.table_name == "json_each"
+                    else f"{expr.base.table_name}.json_data"
+                )
+
+                if self.dialect == "sqlite":
+                    array_expr = f"json_extract({base_expr}, '$.{array_path}')"
+                    json_each_expr = f"json_each({array_expr}, '$')"
+                    return f"(SELECT json_each.value FROM {json_each_expr} WHERE CAST(json_each.key AS INTEGER) = CAST({index_sql} AS INTEGER) LIMIT 1)"
+                elif self.dialect == "postgres":
+                    array_expr = f"JSON_EXTRACT_PATH({base_expr}, '{array_path}')"
+                    json_each_expr = f"LATERAL json_array_elements({array_expr}) WITH ORDINALITY AS json_each(value, ordinality)"
+                    return f"(SELECT json_each.value FROM {json_each_expr} WHERE json_each.ordinality - 1 = CAST({index_sql} AS INTEGER) LIMIT 1)"
+                else:
+                    array_expr = f"json_extract({base_expr}, '$.{array_path}')"
+                    json_each_expr = f"json_each({array_expr}, '$')"
+                    return f"(SELECT json_each.value FROM {json_each_expr} WHERE CAST(json_each.key AS INTEGER) = CAST({index_sql} AS INTEGER) LIMIT 1)"
+            else:
+                # Can't handle variable index on non-attribute base
+                raise ValueError(f"Cannot handle variable index on: {expr.base}")
+
+    def _generate_binaryop(self, expr: BinaryOpExpression) -> str:
+        """Generate SQL for binary operation."""
+        left_sql = self.generate_expression(expr.left)
+        right_sql = self.generate_expression(expr.right)
+
+        op_map = {
+            "+": "+",
+            "-": "-",
+            "*": "*",
+            "/": "/",
+            "%": "%",
+            "**": "POW",
+            "//": "CAST (({left} / {right}) AS INT)",
+        }
+
+        if expr.operator == "**":
+            return f"POW({left_sql}, {right_sql})"
+        elif expr.operator == "//":
+            return f"(CAST (({left_sql} / {right_sql}) AS INT))"
+        elif expr.operator == "+":
+            # Check if this is string concatenation using type inference
+            left_type = None
+            right_type = None
+            if self.type_inference:
+                left_type = self.type_inference.visit(expr.left)
+                right_type = self.type_inference.visit(expr.right)
+
+            # Determine if this should be string concatenation
+            use_concat = False
+
+            # Case 1: Both types are known and are strings
+            if left_type == str and right_type == str:
+                use_concat = True
+            # Case 2: One is a string constant, assume string concatenation
+            elif isinstance(expr.left, ConstantExpression) and isinstance(
+                expr.left.value, str
+            ):
+                use_concat = True
+            elif isinstance(expr.right, ConstantExpression) and isinstance(
+                expr.right.value, str
+            ):
+                use_concat = True
+            # Case 3: One type is known to be string, and the other is unknown (not a number)
+            elif left_type == str and right_type not in (int, float, bool):
+                use_concat = True
+            elif right_type == str and left_type not in (int, float, bool):
+                use_concat = True
+            # Case 4: One operand is itself a string concatenation (recursive case)
+            # Check if either operand is a BinOp with + operator (chained concatenation)
+            elif (
+                isinstance(expr.left, BinaryOpExpression) and expr.left.operator == "+"
+            ):
+                # Left is a + operation - if we can infer it's a string concat, this should be too
+                # Recursively check if the left expression is string concatenation
+                left_result_type = None
+                if self.type_inference:
+                    left_result_type = self.type_inference.visit(expr.left)
+                # If left side results in a string, or we can't determine but it has string operands
+                if left_result_type == str:
+                    use_concat = True
+                else:
+                    # Check if left side has any string constants
+                    if self._has_string_constant(expr.left):
+                        use_concat = True
+            elif (
+                isinstance(expr.right, BinaryOpExpression)
+                and expr.right.operator == "+"
+            ):
+                # Right is a + operation - similar check
+                right_result_type = None
+                if self.type_inference:
+                    right_result_type = self.type_inference.visit(expr.right)
+                if right_result_type == str:
+                    use_concat = True
+                else:
+                    if self._has_string_constant(expr.right):
+                        use_concat = True
+
+            if use_concat:
+                if self.dialect == "sqlite":
+                    return f"({left_sql} || {right_sql})"
+                elif self.dialect == "postgres":
+                    return f"({left_sql} || {right_sql})"
+
+            # Default to numeric addition
+            return f"({left_sql} + {right_sql})"
+        else:
+            return f"({left_sql} {expr.operator} {right_sql})"
+
+    def _has_string_constant(self, expr: Expression) -> bool:
+        """
+        Recursively check if an expression contains any string constants.
+        Used to detect chained string concatenations.
+        """
+        if isinstance(expr, ConstantExpression):
+            return isinstance(expr.value, str)
+        elif isinstance(expr, BinaryOpExpression):
+            # Recursively check both sides
+            return self._has_string_constant(expr.left) or self._has_string_constant(
+                expr.right
+            )
+        else:
+            return False
+
+    def _generate_unaryop(self, expr: UnaryOpExpression) -> str:
+        """Generate SQL for unary operation."""
+        operand_sql = self.generate_expression(expr.operand)
+
+        if expr.operator == "-":
+            return f"-{operand_sql}"
+        elif expr.operator == "not":
+            # Type-aware handling for "not" operator
+            from query_model import AttributeExpression
+
+            operand_type = None
+            if self.type_inference:
+                operand_type = self.type_inference.visit(expr.operand)
+
+            if (
+                isinstance(expr.operand, AttributeExpression)
+                and not expr.operand.is_database_column
+            ):
+                # This is a JSON field - use type-aware falsy checking
+                if operand_type is bool:
+                    # Boolean - check for NULL or false
+                    if self.dialect == "sqlite":
+                        return f"({operand_sql} IS NULL OR CAST({operand_sql} AS INTEGER) = 0)"
+                    elif self.dialect == "postgres":
+                        return f"({operand_sql} IS NULL OR CAST({operand_sql} AS BOOLEAN) = false)"
+                    else:
+                        # Default to SQLite format
+                        return f"({operand_sql} IS NULL OR CAST({operand_sql} AS INTEGER) = 0)"
+                elif operand_type is str:
+                    # String - check for empty string and NULL
+                    if self.dialect == "sqlite":
+                        return f"({operand_sql} IS NULL OR {operand_sql} = '')"
+                    elif self.dialect == "postgres":
+                        return f"({operand_sql} IS NULL OR {operand_sql} = '')"
+                    else:
+                        # Default to SQLite format
+                        return f"({operand_sql} IS NULL OR {operand_sql} = '')"
+                elif operand_type in (int, float):
+                    # Number - check for 0 and NULL
+                    if self.dialect == "sqlite":
+                        return f"({operand_sql} IS NULL OR CAST({operand_sql} AS REAL) = 0)"
+                    elif self.dialect == "postgres":
+                        return f"({operand_sql} IS NULL OR CAST({operand_sql} AS NUMERIC) = 0)"
+                    else:
+                        # Default to SQLite format
+                        return f"({operand_sql} IS NULL OR CAST({operand_sql} AS REAL) = 0)"
+                else:
+                    # Generic JSON falsy check
+                    empty_obj = "'{}'"
+                    if self.dialect == "sqlite":
+                        return f"({operand_sql} IS NULL OR {operand_sql} = '' OR {operand_sql} = '[]' OR {operand_sql} = {empty_obj} OR {operand_sql} = 0 OR {operand_sql} = false)"
+                    elif self.dialect == "postgres":
+                        return f"({operand_sql} IS NULL OR {operand_sql} = '' OR {operand_sql} = '[]' OR {operand_sql} = {empty_obj} OR {operand_sql} = 0 OR {operand_sql} = false)"
+                    else:
+                        return f"({operand_sql} IS NULL OR {operand_sql} = '' OR {operand_sql} = '[]' OR {operand_sql} = {empty_obj} OR {operand_sql} = 0 OR {operand_sql} = false)"
+            else:
+                # For non-JSON fields or database columns, use standard NOT
+                return f"NOT ({operand_sql})"
+        else:
+            # Other unary operators (shouldn't happen in practice, but handle gracefully)
+            return f"{expr.operator} {operand_sql}"
+
+    def _generate_compare(self, expr: CompareExpression) -> str:
+        """Generate SQL for comparison with type-aware handling."""
+        left_sql = self.generate_expression(expr.left)
+        parts = []
+
+        # Infer types for better SQL generation
+        left_type = None
+        if self.type_inference:
+            left_type = self.type_inference.visit(expr.left)
+
+        current_left = left_sql
+        for op, right in zip(expr.operators, expr.comparators):
+            right_sql = self.generate_expression(right)
+            right_type = None
+            if self.type_inference:
+                right_type = self.type_inference.visit(right)
+
+            # Handle special cases for IN/NOT IN with type awareness
+            if op == "in":
+                # Use type information to determine if it's a list/tuple or string pattern
+                if isinstance(right, TupleExpression):
+                    # Explicit tuple - use IN
+                    parts.append(f"{current_left} IN {right_sql}")
+                elif (
+                    isinstance(right, AttributeExpression)
+                    and not right.is_database_column
+                    and self._is_list_or_tuple_type(right_type)
+                ):
+                    # JSON array attribute - use json_each with EXISTS to check membership
+                    array_sql = right_sql
+                    json_each_expr = self._format_json_each(array_sql)
+                    # Compare the left value with each element in the array
+                    parts.append(
+                        f"EXISTS (SELECT 1 FROM {json_each_expr} WHERE json_each.value = {current_left})"
+                    )
+                elif self._is_list_or_tuple_type(right_type):
+                    # Type hint says it's a list/tuple - use IN
+                    parts.append(f"{current_left} IN {right_sql}")
+                elif isinstance(expr.left, ConstantExpression) and isinstance(
+                    expr.left.value, str
+                ):
+                    # String constant on left - check if right is attribute for LIKE pattern
+                    # Pattern: 'string' in attribute -> attribute LIKE '%string%'
+                    if left_type is str:
+                        # String IN attribute - convert to LIKE pattern
+                        # left is the pattern string, right is the attribute
+                        pattern_val = (
+                            expr.left.value
+                        )  # Extract the string value (without quotes)
+                        attribute_sql = right_sql  # The attribute (right side)
+                        like_op = self._format_like_operator(case_sensitive=False)
+                        parts.append(f"{attribute_sql} {like_op} '%{pattern_val}%'")
+                    else:
+                        # String in non-string - use IN (might be a list of strings)
+                        parts.append(f"{current_left} IN {right_sql}")
+                else:
+                    # Default to IN
+                    parts.append(f"{current_left} IN {right_sql}")
+            elif op == "not in":
+                if isinstance(right, TupleExpression):
+                    parts.append(f"{current_left} NOT IN {right_sql}")
+                elif (
+                    isinstance(right, AttributeExpression)
+                    and not right.is_database_column
+                    and self._is_list_or_tuple_type(right_type)
+                ):
+                    # JSON array attribute - use json_each with NOT EXISTS to check non-membership
+                    array_sql = right_sql
+                    json_each_expr = self._format_json_each(array_sql)
+                    # Check that the left value does NOT exist in the array
+                    parts.append(
+                        f"NOT EXISTS (SELECT 1 FROM {json_each_expr} WHERE json_each.value = {current_left})"
+                    )
+                elif self._is_list_or_tuple_type(right_type):
+                    parts.append(f"{current_left} NOT IN {right_sql}")
+                elif isinstance(expr.left, ConstantExpression) and isinstance(
+                    expr.left.value, str
+                ):
+                    # String constant on left - check if right is attribute for LIKE pattern
+                    # Pattern: 'string' not in attribute -> attribute NOT LIKE '%string%'
+                    if left_type is str:
+                        pattern_val = (
+                            expr.left.value
+                        )  # Extract the string value (without quotes)
+                        attribute_sql = right_sql  # The attribute (right side)
+                        like_op = self._format_like_operator(case_sensitive=False)
+                        parts.append(f"{attribute_sql} NOT {like_op} '%{pattern_val}%'")
+                    else:
+                        parts.append(f"{current_left} NOT IN {right_sql}")
+                else:
+                    parts.append(f"{current_left} NOT IN {right_sql}")
+            else:
+                # Standard comparison operator with type-aware casting
+                op_map = {
+                    "==": "=",
+                    "!=": "!=",
+                    "<": "<",
+                    ">": ">",
+                    "<=": "<=",
+                    ">=": ">=",
+                    "is": "IS",
+                    "is not": "IS NOT",
+                }
+                sql_op = op_map.get(op, op)
+
+                # Add type casting if types don't match (e.g., string vs number)
+                if left_type is not None and right_type is not None:
+                    if left_type != right_type and op not in ("is", "is not"):
+                        # Need type casting - determine which side to cast
+                        if left_type is str and right_type in (int, float):
+                            # Cast right to text for comparison
+                            if self.dialect == "sqlite":
+                                current_left = f"CAST({current_left} AS TEXT)"
+                            elif self.dialect == "postgres":
+                                current_left = f"CAST({current_left} AS TEXT)"
+                        elif left_type in (int, float) and right_type is str:
+                            # Cast left to numeric
+                            if self.dialect == "sqlite":
+                                right_sql = f"CAST({right_sql} AS REAL)"
+                            elif self.dialect == "postgres":
+                                right_sql = f"CAST({right_sql} AS NUMERIC)"
+
+                parts.append(f"({current_left} {sql_op} {right_sql})")
+
+            current_left = right_sql
+
+        if len(parts) == 1:
+            return parts[0]
+        else:
+            return " AND ".join([f"({p})" for p in parts])
+
+    def _generate_boolop(self, expr: BoolOpExpression) -> str:
+        """Generate SQL for boolean operation."""
+        value_sqls = [self.generate_expression(v) for v in expr.values]
+        op = expr.operator.upper()
+        return f"({f' {op} '.join([f'({v})' for v in value_sqls])})"
+
+    def _generate_call(self, expr: CallExpression) -> str:
+        """Generate SQL for function call."""
+        func = expr.function
+        args = [self.generate_expression(arg) for arg in expr.arguments]
+
+        # Handle special functions
+        if isinstance(func, ConstantExpression):
+            func_name = func.value
+            if func_name == "len" and len(args) == 1:
+                # len() - get array or string length
+                # The argument should be an AttributeExpression or ArrayAccessExpression
+                arg = expr.arguments[0]
+                if isinstance(arg, AttributeExpression):
+                    # Use type inference to determine if it's a string or array
+                    arg_type = None
+                    if self.type_inference:
+                        arg_type = self.type_inference.visit(arg)
+
+                    base_expr = (
+                        f"{self._json_each_alias}.value"
+                        if arg.table_name == "json_each"
+                        else f"{arg.table_name}.json_data"
+                    )
+
+                    # If type inference tells us it's a string, use LENGTH
+                    if arg_type is str:
+                        json_value = (
+                            f"json_extract({base_expr}, '$.{arg.attribute_path}')"
+                        )
+                        return f"LENGTH({json_value})"
+                    else:
+                        # Default to array length for arrays/lists or unknown types
+                        if self.dialect == "sqlite":
+                            return f"json_array_length(json_extract({base_expr}, '$.{arg.attribute_path}'))"
+                        elif self.dialect == "postgres":
+                            return f"JSON_ARRAY_LENGTH(JSON_EXTRACT_PATH({base_expr}, '{arg.attribute_path}'))"
+                        else:
+                            return f"json_array_length(json_extract({base_expr}, '$.{arg.attribute_path}'))"
+                else:
+                    # Fallback
+                    return f"LENGTH({args[0]})"
+            elif func_name == "json_array":
+                # json_array() function call
+                if self.dialect == "sqlite":
+                    if len(args) == 0:
+                        return "json_array()"
+                    return f"json_array({', '.join(args)})"
+                elif self.dialect == "postgres":
+                    if len(args) == 0:
+                        return "json_build_array()"
+                    return f"json_build_array({', '.join(args)})"
+                else:
+                    if len(args) == 0:
+                        return "json_array()"
+                    return f"json_array({', '.join(args)})"
+
+        # Handle method calls like .startswith() and .endswith()
+        if isinstance(func, AttributeExpression):
+            attr_path = func.attribute_path
+            if attr_path.endswith(".startswith"):
+                if len(args) != 1:
+                    raise ValueError("startswith() requires exactly one argument")
+                base_attr = AttributeExpression(
+                    table_name=func.table_name,
+                    attribute_path=attr_path.rsplit(".", 1)[0],
+                    is_database_column=func.is_database_column,
+                )
+                base_sql = self.generate_expression(base_attr)
+                pattern = args[0]
+                # Remove quotes from pattern
+                if pattern.startswith("'") and pattern.endswith("'"):
+                    pattern = pattern[1:-1]
+                elif pattern.startswith('"') and pattern.endswith('"'):
+                    pattern = pattern[1:-1]
+                return f"LIKE('{pattern}%', {base_sql})"
+            elif attr_path.endswith(".endswith"):
+                if len(args) != 1:
+                    raise ValueError("endswith() requires exactly one argument")
+                base_attr = AttributeExpression(
+                    table_name=func.table_name,
+                    attribute_path=attr_path.rsplit(".", 1)[0],
+                    is_database_column=func.is_database_column,
+                )
+                base_sql = self.generate_expression(base_attr)
+                pattern = args[0]
+                if pattern.startswith("'") and pattern.endswith("'"):
+                    pattern = pattern[1:-1]
+                elif pattern.startswith('"') and pattern.endswith('"'):
+                    pattern = pattern[1:-1]
+                return f"LIKE('%{pattern}', {base_sql})"
+            elif attr_path.endswith(".matches"):
+                # Regex matching with optional case sensitivity
+                if len(args) < 1 or len(args) > 2:
+                    raise ValueError(
+                        "matches() requires 1 or 2 arguments: "
+                        "matches(pattern, case_sensitive=True)"
+                    )
+
+                # Get base attribute
+                base_attr = AttributeExpression(
+                    table_name=func.table_name,
+                    attribute_path=attr_path.rsplit(".", 1)[0],
+                    is_database_column=func.is_database_column,
+                )
+                base_sql = self.generate_expression(base_attr)
+
+                # Extract pattern from the first argument
+                pattern_arg = expr.arguments[0]
+                if isinstance(pattern_arg, ConstantExpression):
+                    pattern = str(pattern_arg.value)
+                else:
+                    # Generate the SQL for the pattern (shouldn't normally happen)
+                    pattern = args[0]
+                    # Remove quotes if present
+                    if pattern.startswith("'") and pattern.endswith("'"):
+                        pattern = pattern[1:-1]
+                    elif pattern.startswith('"') and pattern.endswith('"'):
+                        pattern = pattern[1:-1]
+
+                # Extract case_sensitive flag (default True)
+                case_sensitive = True
+                if len(expr.arguments) == 2:
+                    case_arg = expr.arguments[1]
+                    if isinstance(case_arg, ConstantExpression):
+                        # Handle boolean values
+                        if isinstance(case_arg.value, bool):
+                            case_sensitive = case_arg.value
+                        elif isinstance(case_arg.value, str):
+                            case_str = case_arg.value.lower()
+                            if case_str == "true":
+                                case_sensitive = True
+                            elif case_str == "false":
+                                case_sensitive = False
+                            else:
+                                raise ValueError(
+                                    f"case_sensitive must be True or False, got {case_arg.value}"
+                                )
+                        elif isinstance(case_arg.value, int):
+                            # 0 = False, anything else = True
+                            case_sensitive = bool(case_arg.value)
+                        else:
+                            raise ValueError(
+                                f"case_sensitive must be True or False, got {case_arg.value}"
+                            )
+                    else:
+                        raise ValueError(
+                            "case_sensitive must be a constant (True or False)"
+                        )
+
+                # Convert pattern and generate SQL
+                from regex_converter import RegexConverter
+
+                converter = RegexConverter()
+
+                if self.dialect == "postgres":
+                    converted_pattern = converter.convert_python_to_postgres(pattern)
+                    # Escape single quotes in pattern for SQL
+                    converted_pattern = converted_pattern.replace("'", "''")
+                    if case_sensitive:
+                        return f"({base_sql} ~ '{converted_pattern}')"
+                    else:
+                        return f"({base_sql} ~* '{converted_pattern}')"
+                else:  # sqlite
+                    converted_pattern = converter.convert_python_to_sqlite(pattern)
+                    # Escape single quotes in pattern for SQL
+                    converted_pattern = converted_pattern.replace("'", "''")
+                    if case_sensitive:
+                        return f"REGEXP('{converted_pattern}', {base_sql})"
+                    else:
+                        # For case-insensitive, use inline flag
+                        return f"REGEXP('(?i){converted_pattern}', {base_sql})"
+
+        # Generic function call
+        func_sql = self.generate_expression(func)
+        return f"{func_sql}({', '.join(args)})"
+
+    def _generate_if(self, expr: IfExpression) -> str:
+        """Generate SQL for ternary expression."""
+        test_sql = self.generate_expression(expr.test)
+        body_sql = self.generate_expression(expr.body)
+        orelse_sql = self.generate_expression(expr.orelse)
+        return f"(CASE WHEN {test_sql} THEN {body_sql} ELSE {orelse_sql} END)"
+
+    def _generate_listcomp(self, expr: ListComprehensionExpression) -> str:
+        """Generate SQL for list comprehension."""
+        # This is handled at the query level, not expression level
+        # Return placeholder - actual generation happens in query builder
+        return f"[{expr.item_var} for {expr.item_var} in {expr.array_info}]"
+
+    def _generate_listcomp_in_select(
+        self, expr: ListComprehensionExpression, query: SelectQuery
+    ) -> str:
+        """Generate SQL for list comprehension in SELECT clause."""
+        # Note: _in_select_clause flag is already set by _generate_select()
+
+        # For nested list comprehensions, we need to set the correct json_each alias
+        # The expression should reference the innermost json_each alias
+
+        # Determine the correct alias based on nesting depth
+        if expr.array_info.get("type") == "nested_listcomp":
+            # For nested list comps, the expression references the innermost alias
+            # Count the nesting depth to determine which alias to use
+            depth = self._get_listcomp_nesting_depth(expr)
+            # The innermost alias is what we want for the expression
+            # After generating the FROM clause, we should have depth aliases
+            # We want the last one (innermost)
+            if depth == 2:
+                self._json_each_alias = "inner_each"
+            elif depth == 1:
+                self._json_each_alias = "outer_each"
+            else:
+                self._json_each_alias = f"each_{depth}"
+        else:
+            # Single level - use json_each (default)
+            self._json_each_alias = "json_each"
+
+        expr_sql = self.generate_expression(expr.expression)
+
+        # Reset to default
+        self._json_each_alias = "json_each"
+
+        # The FROM clause should already have json_each added
+        # Return the expression SQL
+        return expr_sql
+
+    def _get_listcomp_nesting_depth(self, listcomp: ListComprehensionExpression) -> int:
+        """Calculate the nesting depth of a list comprehension."""
+        depth = 1
+        current = listcomp
+        while current.array_info.get("type") == "nested_listcomp":
+            depth += 1
+            current = current.array_info["inner_listcomp"]
+        return depth
+
+    def _generate_nested_listcomp_from_clause(
+        self, listcomp: ListComprehensionExpression, base_table: str
+    ) -> List[str]:
+        """
+        Generate chained json_each calls for nested list comprehensions.
+
+        Args:
+            listcomp: The outer list comprehension with nested_listcomp type
+            base_table: The base table name
+
+        Returns:
+            List of json_each expressions to add to FROM clause
+        """
+        from query_model import AttributeExpression, CallExpression, ConstantExpression
+
+        json_each_list = []
+        inner_listcomp = listcomp.array_info["inner_listcomp"]
+
+        # Process the inner list comprehension recursively
+        inner_array_info = inner_listcomp.array_info
+        inner_type = inner_array_info.get("type")
+
+        if inner_type == "single":
+            # Inner is a single array path
+            array_path = inner_array_info["path"]
+            array_attr = AttributeExpression(
+                table_name=base_table,
+                attribute_path=array_path,
+                is_database_column=False,
+            )
+            array_sql = self.generate_expression(array_attr)
+
+            # Check if we need to wrap in json_array (for primary_name in concatenated arrays)
+            if inner_array_info.get("wrap_in_json_array"):
+                # Wrap the single object in json_array to make it iterable
+                array_sql = f"json_array({array_sql})"
+
+            outer_alias = self._get_next_json_each_alias()
+            json_each_list.append(self._format_json_each(array_sql, "$", outer_alias))
+
+            # Now add the outer listcomp's iteration over inner items
+            # The outer listcomp iterates over the inner listcomp's expression
+            # which should be an attribute of the inner item
+            inner_expr = inner_listcomp.expression
+            if isinstance(inner_expr, AttributeExpression):
+                # Extract the attribute path from the inner expression
+                inner_path = inner_expr.attribute_path
+                # Generate json_each for extracting from the outer_each results
+                inner_alias = self._get_next_json_each_alias()
+                inner_extract = f"json_extract({outer_alias}.value, '$.{inner_path}')"
+                json_each_list.append(
+                    self._format_json_each(inner_extract, "$", inner_alias)
+                )
+            else:
+                raise ValueError(
+                    f"Unsupported inner expression type in nested list comprehension: {type(inner_expr)}"
+                )
+
+        elif inner_type == "concatenated":
+            # Inner is a concatenated array: [primary_name] + alternate_names
+            # This should have been handled by query builder to create UNION queries
+            # If we get here, something went wrong in the query builder
+            raise ValueError(
+                "Concatenated arrays in nested list comprehensions should be handled "
+                "by query builder before reaching SQL generator. This is likely a bug."
+            )
+
+        elif inner_type == "nested_listcomp":
+            # Triple+ nesting - recursive call
+            inner_json_each_chain = self._generate_nested_listcomp_from_clause(
+                inner_listcomp, base_table
+            )
+            json_each_list.extend(inner_json_each_chain)
+
+            # Add the current level's iteration
+            inner_expr = inner_listcomp.expression
+            if isinstance(inner_expr, AttributeExpression):
+                inner_path = inner_expr.attribute_path
+                # Get the last alias from the chain to reference
+                last_alias = inner_json_each_chain[-1].split(" AS ")[-1]
+                if "(" in last_alias:
+                    # PostgreSQL format: "alias(value)" -> extract "alias"
+                    last_alias = last_alias.split("(")[0]
+                inner_alias = self._get_next_json_each_alias()
+                inner_extract = f"json_extract({last_alias}.value, '$.{inner_path}')"
+                json_each_list.append(
+                    self._format_json_each(inner_extract, "$", inner_alias)
+                )
+            else:
+                raise ValueError(
+                    f"Unsupported inner expression type in nested list comprehension: {type(inner_expr)}"
+                )
+
+        return json_each_list
+
+    def _build_nested_json_each_from_clauses(
+        self,
+        inner_listcomp: ListComprehensionExpression,
+        include_base_table: bool = True,
+    ) -> tuple:
+        """
+        Build FROM clauses for nested list comprehensions.
+
+        This method is shared between:
+        - _generate_nested_listcomp_from_clause() for what clauses
+        - _generate_any() for where clauses with any()
+
+        Args:
+            inner_listcomp: The inner list comprehension
+            include_base_table: Whether to include base table in FROM clause (True for SELECT, False for EXISTS)
+
+        Returns:
+            Tuple of (from_clauses, inner_path, inner_alias) where:
+            - from_clauses: List of FROM clause strings (one for concatenated left, one for right)
+            - inner_path: The attribute path being extracted (e.g., "surname_list")
+            - inner_alias: The alias to use for the innermost json_each (e.g., "inner_each")
+        """
+        from query_model import AttributeExpression
+
+        inner_array_info = inner_listcomp.array_info
+        inner_array_type = inner_array_info.get("type") if inner_array_info else None
+
+        # Get what the inner list comprehension extracts (e.g., name.surname_list)
+        inner_expr = inner_listcomp.expression
+        if not isinstance(inner_expr, AttributeExpression):
+            raise ValueError(
+                f"Unsupported inner expression type in nested list comprehension: {type(inner_expr)}"
+            )
+        inner_path = inner_expr.attribute_path  # e.g., "surname_list"
+
+        from_clauses = []
+        inner_alias = "inner_each"
+
+        if inner_array_type == "concatenated":
+            # Inner is concatenated: [person.primary_name] + person.alternate_names
+            # Build two nested json_each structures with UNION
+            left_attr = inner_array_info["left"]
+            left_sql = self.generate_expression(left_attr)
+            left_array_sql = f"json_array({left_sql})"  # Wrap single object in array
+
+            right_path = inner_array_info["right_path"]
+            right_attr = AttributeExpression(
+                table_name=self.base_table,
+                attribute_path=right_path,
+                is_database_column=False,
+            )
+            right_array_sql = self.generate_expression(right_attr)
+
+            # Build nested FROM clauses
+            base_table_prefix = f"{self.base_table}, " if include_base_table else ""
+            left_from = f"{base_table_prefix}json_each({left_array_sql}, '$') AS outer_each, json_each(json_extract(outer_each.value, '$.{inner_path}'), '$') AS {inner_alias}"
+            right_from = f"{base_table_prefix}json_each({right_array_sql}, '$') AS outer_each, json_each(json_extract(outer_each.value, '$.{inner_path}'), '$') AS {inner_alias}"
+
+            from_clauses = [left_from, right_from]
+
+        elif inner_array_type == "single":
+            # Inner is a single array
+            array_path = inner_array_info["path"]
+            array_attr = AttributeExpression(
+                table_name=self.base_table,
+                attribute_path=array_path,
+                is_database_column=False,
+            )
+            array_sql = self.generate_expression(array_attr)
+
+            # Check if we need to wrap in json_array
+            if inner_array_info.get("wrap_in_json_array"):
+                array_sql = f"json_array({array_sql})"
+
+            # Build nested FROM clause
+            base_table_prefix = f"{self.base_table}, " if include_base_table else ""
+            from_clause = f"{base_table_prefix}json_each({array_sql}, '$') AS outer_each, json_each(json_extract(outer_each.value, '$.{inner_path}'), '$') AS {inner_alias}"
+
+            from_clauses = [from_clause]
+
+        else:
+            raise ValueError(
+                f"Unsupported nested listcomp array type: {inner_array_type}"
+            )
+
+        return from_clauses, inner_path, inner_alias
+
+    def _generate_any(self, expr: AnyExpression) -> str:
+        """Generate SQL for any() pattern."""
+        # Generate EXISTS subquery
+        # Build array expression
+        from query_model import AttributeExpression, CallExpression, ConstantExpression
+
+        # Check if this is a concatenated array
+        if expr.array_info and expr.array_info.get("type") == "concatenated":
+            # For concatenated arrays: [person.primary_name] + person.alternate_names
+            # Left side: wrap primary_name in json_array() since it's a single object
+            left_attr = expr.array_info["left"]
+            left_sql = self.generate_expression(left_attr)
+            # Wrap left side in json_array() to make it an array
+            left_array = CallExpression(
+                function=ConstantExpression(value="json_array"),
+                arguments=[left_attr],
+            )
+            left_array_sql = self.generate_expression(left_array)
+
+            # Right side: alternate_names is already an array
+            right_path = expr.array_info["right_path"]
+            right_attr = AttributeExpression(
+                table_name=self.base_table,
+                attribute_path=right_path,
+                is_database_column=False,
+            )
+            right_array_sql = self.generate_expression(right_attr)
+
+            # Combine arrays: in SQLite, we can use json_array() with multiple args
+            # or concatenate using json_each on both and UNION
+            # For simplicity, use json_array() to combine them
+            if self.dialect == "sqlite":
+                # SQLite: json_array() can take multiple arguments
+                # But we need to concatenate two arrays, not create an array of two arrays
+                # Use json_each on both arrays with UNION
+                # IMPORTANT: When any() can contain nested any(), we need explicit aliases
+                left_json_each = f"json_each({left_array_sql}, '$') AS outer_each"
+                right_json_each = f"json_each({right_array_sql}, '$') AS outer_each"
+                # Use UNION to combine results from both arrays
+                if expr.condition:
+                    # Save context for nested json_each
+                    old_json_each_alias = getattr(self, "_json_each_alias", "json_each")
+                    self._json_each_alias = "outer_each"
+
+                    condition_sql = self.generate_expression(expr.condition)
+
+                    # Restore context
+                    self._json_each_alias = old_json_each_alias
+
+                    return f"EXISTS (SELECT 1 FROM {left_json_each} WHERE {condition_sql} UNION SELECT 1 FROM {right_json_each} WHERE {condition_sql})"
+                else:
+                    return f"EXISTS (SELECT 1 FROM {left_json_each} UNION SELECT 1 FROM {right_json_each})"
+            elif self.dialect == "postgres":
+                # PostgreSQL: similar approach
+                left_json_each = self._format_json_each(left_array_sql)
+                right_json_each = self._format_json_each(right_array_sql)
+                if expr.condition:
+                    condition_sql = self.generate_expression(expr.condition)
+                    return f"EXISTS (SELECT 1 FROM {left_json_each} WHERE {condition_sql} UNION SELECT 1 FROM {right_json_each} WHERE {condition_sql})"
+                else:
+                    return f"EXISTS (SELECT 1 FROM {left_json_each} UNION SELECT 1 FROM {right_json_each})"
+            else:
+                # Default to SQLite behavior
+                left_json_each = self._format_json_each(left_array_sql)
+                right_json_each = self._format_json_each(right_array_sql)
+                if expr.condition:
+                    condition_sql = self.generate_expression(expr.condition)
+                    return f"EXISTS (SELECT 1 FROM {left_json_each} WHERE {condition_sql} UNION SELECT 1 FROM {right_json_each} WHERE {condition_sql})"
+                else:
+                    return f"EXISTS (SELECT 1 FROM {left_json_each} UNION SELECT 1 FROM {right_json_each})"
+        elif expr.array_info and expr.array_info.get("type") == "nested":
+            # Nested array: iterating over an attribute of the outer item variable
+            # e.g., "for surname in name.surname_list" where "name" is the outer item_var
+            # The array is accessed via json_extract(json_each.value, '$.array_path')
+            #
+            # IMPORTANT: We need to use explicit aliases to avoid name collision
+            # between outer and inner json_each tables
+            array_path = expr.array_info["path"]
+            # Use explicit alias for the inner json_each to avoid shadowing the outer one
+            # We'll use "inner_each" as the alias name
+            nested_array_expr = f"json_extract(outer_each.value, '$.{array_path}')"
+
+            if self.dialect == "sqlite":
+                json_each_expr = f"json_each({nested_array_expr}, '$') AS inner_each"
+            elif self.dialect == "postgres":
+                json_each_expr = f"LATERAL json_array_elements({nested_array_expr}) AS inner_each(value)"
+            else:
+                json_each_expr = f"json_each({nested_array_expr}, '$') AS inner_each"
+
+            if expr.condition:
+                # Need to temporarily change json_each references to inner_each in condition
+                # Save the current table name context
+                old_json_each_alias = getattr(self, "_json_each_alias", "json_each")
+                self._json_each_alias = "inner_each"
+
+                condition_sql = self.generate_expression(expr.condition)
+
+                # Restore the old context
+                self._json_each_alias = old_json_each_alias
+
+                return f"EXISTS (SELECT 1 FROM {json_each_expr} WHERE {condition_sql})"
+            else:
+                return f"EXISTS (SELECT 1 FROM {json_each_expr})"
+        elif expr.array_info and expr.array_info.get("type") == "nested_listcomp":
+            # Nested list comprehension: the array is itself a list comprehension
+            # e.g., any([surname for surname in [name.surname_list for name in [person.primary_name] + person.alternate_names] ...])
+            # Use the shared method to build FROM clauses
+            inner_listcomp = expr.array_info["inner_listcomp"]
+
+            from query_model import ListComprehensionExpression
+
+            if isinstance(inner_listcomp, ListComprehensionExpression):
+                # Build FROM clauses using shared method
+                # IMPORTANT: include_base_table=False for EXISTS subqueries to avoid cross-joins
+                from_clauses, inner_path, inner_alias = (
+                    self._build_nested_json_each_from_clauses(
+                        inner_listcomp, include_base_table=False
+                    )
+                )
+
+                if expr.condition:
+                    # Save context
+                    old_json_each_alias = getattr(self, "_json_each_alias", "json_each")
+                    self._json_each_alias = inner_alias
+
+                    condition_sql = self.generate_expression(expr.condition)
+
+                    # Restore context
+                    self._json_each_alias = old_json_each_alias
+
+                    # Build EXISTS with FROM clauses
+                    if len(from_clauses) == 1:
+                        return f"EXISTS (SELECT 1 FROM {from_clauses[0]} WHERE {condition_sql})"
+                    else:
+                        # Multiple FROM clauses (concatenated arrays) - UNION them
+                        union_parts = [
+                            f"SELECT 1 FROM {fc} WHERE {condition_sql}"
+                            for fc in from_clauses
+                        ]
+                        return f"EXISTS ({' UNION ALL '.join(union_parts)})"
+                else:
+                    # No condition, just check existence
+                    if len(from_clauses) == 1:
+                        return f"EXISTS (SELECT 1 FROM {from_clauses[0]})"
+                    else:
+                        union_parts = [f"SELECT 1 FROM {fc}" for fc in from_clauses]
+                        return f"EXISTS ({' UNION ALL '.join(union_parts)})"
+            else:
+                raise ValueError(
+                    f"Unexpected inner_listcomp type: {type(inner_listcomp)}"
+                )
+        else:
+            # Single array
+            array_attr = AttributeExpression(
+                table_name=self.base_table,
+                attribute_path=expr.array_path,
+                is_database_column=False,
+            )
+            array_sql = self.generate_expression(array_attr)
+            json_each_expr = self._format_json_each(array_sql)
+
+            if expr.condition:
+                # Generate SQL for the condition expression
+                # The condition should already have json_each table references
+                # because it was parsed in the context of the list comprehension
+                condition_sql = self.generate_expression(expr.condition)
+                return f"EXISTS (SELECT 1 FROM {json_each_expr} WHERE {condition_sql})"
+            else:
+                return f"EXISTS (SELECT 1 FROM {json_each_expr})"
+
+    def _generate_array_expansion_expr(self, expr: ArrayExpansionExpression) -> str:
+        """Generate SQL for array expansion expression."""
+        # This is typically handled at the query level (FROM clause)
+        # Return TRUE for now
+        return "1=1"
+
+    def _generate_tuple(self, expr: TupleExpression) -> str:
+        """
+        Generate SQL for tuple.
+
+        Context-aware: In SELECT clause of list comprehensions, generates comma-separated
+        columns (no parentheses) so Python receives proper multi-column result as tuple.
+        In WHERE and other contexts, uses standard row constructor format.
+        """
+        if len(expr.elements) == 0:
+            return "()"
+
+        element_sqls = [self.generate_expression(e) for e in expr.elements]
+
+        # In SELECT clause, generate comma-separated columns (no parentheses)
+        # This returns a proper multi-column result that Python converts to tuple
+        if self._in_select_clause:
+            return ", ".join(element_sqls)
+
+        # In WHERE/other contexts, use row constructor format
+        return f"({', '.join(element_sqls)})"
+
+    def _format_json_each(
+        self, array_expr: str, path: str = "$", alias: Optional[str] = None
+    ) -> str:
+        """
+        Format json_each expression based on dialect.
+
+        Args:
+            array_expr: SQL expression that evaluates to a JSON array
+            path: JSON path (default "$", mainly used for SQLite)
+            alias: Optional alias for the json_each table (e.g., "outer_each", "inner_each")
+
+        Returns:
+            Formatted json_each expression for the current dialect
+        """
+        if self.dialect == "sqlite":
+            if alias:
+                return f"json_each({array_expr}, '{path}') AS {alias}"
+            else:
+                return f"json_each({array_expr}, '{path}')"
+        elif self.dialect == "postgres":
+            if alias:
+                return f"LATERAL json_array_elements({array_expr}) AS {alias}(value)"
+            else:
+                return f"LATERAL json_array_elements({array_expr}) AS json_each(value)"
+        else:
+            if alias:
+                return f"json_each({array_expr}, '{path}') AS {alias}"
+            else:
+                return f"json_each({array_expr}, '{path}')"
+
+    def _format_like_operator(self, case_sensitive: bool = False) -> str:
+        """
+        Format LIKE operator based on dialect for consistent case sensitivity.
+
+        Args:
+            case_sensitive: If True, use case-sensitive matching. Default False for case-insensitive.
+
+        Returns:
+            The appropriate LIKE operator string for the current dialect
+        """
+        if case_sensitive:
+            # Case-sensitive: Use LIKE for both
+            return "LIKE"
+        else:
+            # Case-insensitive: SQLite LIKE is already case-insensitive, PostgreSQL needs ILIKE
+            if self.dialect == "postgres":
+                return "ILIKE"
+            else:
+                # SQLite and others: LIKE is case-insensitive by default for ASCII
+                return "LIKE"
+
+    def _get_base_table(self) -> str:
+        """Get base table name - placeholder for now."""
+        # This should be passed from the query context
+        return getattr(self, "base_table", "person")
