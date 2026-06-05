@@ -68,7 +68,7 @@ class PostgreSQL(DBAPI):
     def _quote_column(self, col):
         # Remove this method when gramps PR #2178 (dbapi _quote_column) is merged.
         _RESERVED = {"desc", "order", "where", "select"}
-        return f'"{col}"' if col in _RESERVED else col
+        return f"{col}_" if col in _RESERVED else col
 
     def get_summary(self):
         """
