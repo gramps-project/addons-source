@@ -1,0 +1,5 @@
+[tool.mypy]
+
+[[tool.mypy.overrides]]
+module = "gramps.*,gi.*"
+ignore_missing_imports = true
