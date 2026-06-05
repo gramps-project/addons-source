@@ -30,7 +30,6 @@ Backend for PostgreSQL database.
 # -------------------------------------------------------------------------
 import psycopg2
 import os
-import re
 
 # -------------------------------------------------------------------------
 #
@@ -59,6 +58,17 @@ psycopg2.paramstyle = "format"
 #
 # -------------------------------------------------------------------------
 class PostgreSQL(DBAPI):
+
+    dialect = "postgresql"
+
+    def _sql_type(self, schema_type, max_length):
+        result = super()._sql_type(schema_type, max_length)
+        return "bytea" if result == "BLOB" else result
+
+    def _quote_column(self, col):
+        # Remove this method when gramps PR #2178 (dbapi _quote_column) is merged.
+        _RESERVED = {"desc", "order", "where", "select"}
+        return f'"{col}"' if col in _RESERVED else col
 
     def get_summary(self):
         """
@@ -141,30 +151,9 @@ class Connection:
                 % (collation, locale.collation)
             )
 
-    def _hack_query(self, query):
-        query = query.replace("?", "%s")
-        query = query.replace("REGEXP", "~")
-        query = query.replace("desc", "desc_")
-        query = query.replace("BLOB", "bytea")
-        ## LIMIT offset, count
-        ## count can be -1, for all
-        ## LIMIT -1
-        ## LIMIT offset, -1
-        query = query.replace("LIMIT -1", "LIMIT all")  ##
-        match = re.match(".* LIMIT (.*), (.*) ", query)
-        if match and match.groups():
-            offset, count = match.groups()
-            if count == "-1":
-                count = "all"
-            query = re.sub(
-                "(.*) LIMIT (.*), (.*) ",
-                "\\1 LIMIT %s OFFSET %s " % (count, offset),
-                query,
-            )
-        return query
-
     def execute(self, *args, **kwargs):
-        sql = self._hack_query(args[0])
+        sql = args[0].replace("?", "%s")      # qmark → format paramstyle
+        sql = sql.replace(" REGEXP ", " ~ ")  # SQLite REGEXP → PostgreSQL ~
         if len(args) > 1:
             args = args[1]
         else:
