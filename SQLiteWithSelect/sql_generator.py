@@ -63,6 +63,7 @@ class SQLGenerator:
         """
         self.dialect = dialect.lower()
         self.type_inference = type_inference
+        self.base_table: Optional[str] = None
         self._json_each_counter = 0  # For generating unique json_each aliases
         self._in_select_clause = (
             False  # Track if we're generating SELECT clause expressions
@@ -367,8 +368,8 @@ class SQLGenerator:
                 order_sql = self.generate_expression(order.expression)
                 # If ORDER BY references the base table (not json_each), we need a subquery
                 if (
-                    f"{self.base_table}." in order_sql
-                    or f"{self.base_table}.json_data" in order_sql
+                    f"{self._get_base_table()}." in order_sql
+                    or f"{self._get_base_table()}.json_data" in order_sql
                 ):
                     needs_subquery = True
                     break
@@ -1558,14 +1559,14 @@ class SQLGenerator:
 
             right_path = inner_array_info["right_path"]
             right_attr = AttributeExpression(
-                table_name=self.base_table,
+                table_name=self._get_base_table(),
                 attribute_path=right_path,
                 is_database_column=False,
             )
             right_array_sql = self.generate_expression(right_attr)
 
             # Build nested FROM clauses
-            base_table_prefix = f"{self.base_table}, " if include_base_table else ""
+            base_table_prefix = f"{self._get_base_table()}, " if include_base_table else ""
             left_from = f"{base_table_prefix}json_each({left_array_sql}, '$') AS outer_each, json_each(json_extract(outer_each.value, '$.{inner_path}'), '$') AS {inner_alias}"
             right_from = f"{base_table_prefix}json_each({right_array_sql}, '$') AS outer_each, json_each(json_extract(outer_each.value, '$.{inner_path}'), '$') AS {inner_alias}"
 
@@ -1575,7 +1576,7 @@ class SQLGenerator:
             # Inner is a single array
             array_path = inner_array_info["path"]
             array_attr = AttributeExpression(
-                table_name=self.base_table,
+                table_name=self._get_base_table(),
                 attribute_path=array_path,
                 is_database_column=False,
             )
@@ -1586,7 +1587,7 @@ class SQLGenerator:
                 array_sql = f"json_array({array_sql})"
 
             # Build nested FROM clause
-            base_table_prefix = f"{self.base_table}, " if include_base_table else ""
+            base_table_prefix = f"{self._get_base_table()}, " if include_base_table else ""
             from_clause = f"{base_table_prefix}json_each({array_sql}, '$') AS outer_each, json_each(json_extract(outer_each.value, '$.{inner_path}'), '$') AS {inner_alias}"
 
             from_clauses = [from_clause]
@@ -1620,7 +1621,7 @@ class SQLGenerator:
             # Right side: alternate_names is already an array
             right_path = expr.array_info["right_path"]
             right_attr = AttributeExpression(
-                table_name=self.base_table,
+                table_name=self._get_base_table(),
                 attribute_path=right_path,
                 is_database_column=False,
             )
@@ -1752,7 +1753,7 @@ class SQLGenerator:
         else:
             # Single array
             array_attr = AttributeExpression(
-                table_name=self.base_table,
+                table_name=self._get_base_table(),
                 attribute_path=expr.array_path,
                 is_database_column=False,
             )
@@ -1847,6 +1848,5 @@ class SQLGenerator:
                 return "LIKE"
 
     def _get_base_table(self) -> str:
-        """Get base table name - placeholder for now."""
-        # This should be passed from the query context
-        return getattr(self, "base_table", "person")
+        """Get base table name, defaulting to 'person' when not set."""
+        return self.base_table if self.base_table is not None else "person"
