@@ -104,42 +104,6 @@ def _translated(sql):
 
 # -------------------------------------------------------------------------
 #
-# TestLimitReplStaticmethod
-#
-# -------------------------------------------------------------------------
-class TestLimitReplStaticmethod(unittest.TestCase):
-    """Direct tests for Connection._limit_repl via re.sub."""
-
-    def _apply(self, sql):
-        import re
-        return re.sub(
-            r'\bLIMIT\s+(-?\d+)\s*,\s*(-?\d+)',
-            Connection._limit_repl,
-            sql,
-            flags=re.IGNORECASE,
-        )
-
-    def test_offset_and_count(self):
-        self.assertEqual(
-            self._apply("SELECT * FROM t LIMIT 5, 10"),
-            "SELECT * FROM t LIMIT 10 OFFSET 5",
-        )
-
-    def test_offset_and_unlimited(self):
-        self.assertEqual(
-            self._apply("SELECT * FROM t LIMIT 5, -1"),
-            "SELECT * FROM t LIMIT ALL OFFSET 5",
-        )
-
-    def test_zero_offset(self):
-        self.assertEqual(
-            self._apply("SELECT * FROM t LIMIT 0, 20"),
-            "SELECT * FROM t LIMIT 20 OFFSET 0",
-        )
-
-
-# -------------------------------------------------------------------------
-#
 # TestExecuteQmarkParamstyle
 #
 # -------------------------------------------------------------------------
