@@ -30,6 +30,7 @@ Backend for PostgreSQL database.
 # -------------------------------------------------------------------------
 import psycopg2
 import os
+import re
 
 # -------------------------------------------------------------------------
 #
@@ -151,9 +152,17 @@ class Connection:
                 % (collation, locale.collation)
             )
 
+    @staticmethod
+    def _limit_repl(m):
+        offset, count = m.group(1), m.group(2)
+        count = 'ALL' if count == '-1' else count
+        return f'LIMIT {count} OFFSET {offset}'
+
     def execute(self, *args, **kwargs):
         sql = args[0].replace("?", "%s")      # qmark → format paramstyle
         sql = sql.replace(" REGEXP ", " ~ ")  # SQLite REGEXP → PostgreSQL ~
+        sql = re.sub(r'\bLIMIT\s+(-?\d+)\s*,\s*(-?\d+)', self._limit_repl, sql, flags=re.IGNORECASE)  # LIMIT offset, count → LIMIT count OFFSET offset
+        sql = re.sub(r'\bLIMIT\s+-1\b', 'LIMIT ALL', sql, flags=re.IGNORECASE)  # LIMIT -1 → LIMIT ALL
         if len(args) > 1:
             args = args[1]
         else:
