@@ -218,9 +218,15 @@ class DeepConnectionsGramplet(Gramplet):
                             retval += [(link[3], (path, (relation, person_handle)))]
         return retval
 
-    def get_relatives(self, person_handle, path):
+    def get_relatives(self, person_handle, path, start_handle=None):
         """
         Gets all of the relations of person_handle.
+
+        ``start_handle`` is the Home/start person's handle, passed in by the
+        caller (:meth:`main`) *after* its "No Home Person set" guard so this
+        method never has to re-dereference ``self.default_person``.  When it is
+        given, the Home person is kept out of the body of every produced path
+        (issue 8653) -- see the post-processing at the end of this method.
         """
         retval = []
         person = self.dbstate.db.get_person_from_handle(person_handle)
@@ -276,6 +282,22 @@ class DeepConnectionsGramplet(Gramplet):
         retval += self.get_links_from_notes(
             person, path, _("Note on Person"), person_handle
         )
+
+        # Issue 8653: the Home (start) person is the search origin, so it may
+        # appear in a produced path only as its terminal "self" root -- never
+        # as, nor as the anchor of, an intermediate relationship step.  Two
+        # cases, applied only once the caller has supplied the start handle:
+        #   * drop a relative that *is* the start person, so the origin is never
+        #     re-entered as an interior node of a path; and
+        #   * when the start person itself is being expanded, attach its
+        #     relatives straight to the root node (``path`` is that root here)
+        #     instead of through a redundant "(relation, start)" step that would
+        #     render the Home person mid-path (the reporter's
+        #     "... / sibling of <Home>" chain).
+        if start_handle is not None:
+            retval = [item for item in retval if item[0] != start_handle]
+            if person_handle == start_handle:
+                retval = [(item[0], path) for item in retval]
         return retval
 
     def active_changed(self, handle):
@@ -436,7 +458,9 @@ class DeepConnectionsGramplet(Gramplet):
                     continue
 
                 self.cache.add(current_handle)
-                relatives = self.get_relatives(current_handle, current_path)
+                relatives = self.get_relatives(
+                    current_handle, current_path, self.default_person.handle
+                )
 
                 # Track search depth
                 if current_path[0] is not None:
