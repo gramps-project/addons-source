@@ -43,7 +43,9 @@ from gramps.gen.config import config
 from gramps.gen.db.dbconst import ARRAYSIZE
 from gramps.gen.db.exceptions import DbConnectionError
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-
+from gramps.gen.lib import (
+    Citation, Event, Family, Media, Note, Person, Place, Repository, Source, Tag
+)
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -70,6 +72,58 @@ class PostgreSQL(DBAPI):
         # Remove this method when gramps PR #2178 (dbapi _quote_column) is merged.
         _RESERVED = {"desc", "order", "where", "select"}
         return f"{col}_" if col in _RESERVED else col
+
+    def _create_secondary_columns(self):
+        # Remove override when gramps PR #2178 (_quote_column) is merged into core.
+        for cls in (Person, Family, Event, Place, Repository, Source, Citation, Media, Note, Tag):
+            table_name = cls.__name__.lower()
+            for field, schema_type, max_length in cls.get_secondary_fields():
+                if field != "handle":
+                    sql_type = self._sql_type(schema_type, max_length)
+                    self.dbapi.execute(
+                        f"ALTER TABLE {table_name} ADD COLUMN"
+                        f" {self._quote_column(field)} {sql_type}"
+                    )
+
+    def _update_secondary_values(self, obj):
+        # Remove override when gramps PR #2178 (_quote_column) is merged into core.
+        table = obj.__class__.__name__
+        fields = [field[0] for field in obj.get_secondary_fields()]
+        sets = []
+        values = []
+        for field in fields:
+            sets.append(f"{self._quote_column(field)} = ?")
+            values.append(getattr(obj, field))
+
+        if table == "Person":
+            given_name, surname = self._get_person_data(obj)
+            sets.append("given_name = ?")
+            values.append(given_name)
+            sets.append("surname = ?")
+            values.append(surname)
+        if table == "Place":
+            handle = self._get_place_data(obj)
+            sets.append("enclosed_by = ?")
+            values.append(handle)
+
+        if len(values) > 0:
+            table_name = table.lower()
+            self.dbapi.execute(
+                f'UPDATE {table_name} SET {", ".join(sets)} where handle = ?',
+                self._sql_cast_list(values) + [obj.handle],
+            )
+
+    def get_media_handles(self, sort_handles=False, locale=glocale):
+        # Remove override when gramps PR #2178 (_quote_column) is merged into core.
+        if sort_handles:
+            self.dbapi.execute(
+                "SELECT handle FROM media "
+                f"ORDER BY {self._quote_column('desc')} "
+                f'COLLATE "{self._collation(locale)}"'
+            )
+        else:
+            self.dbapi.execute("SELECT handle FROM media")
+        return [row[0] for row in self.dbapi.fetchall()]
 
     def get_summary(self):
         """
@@ -152,16 +206,14 @@ class Connection:
                 % (collation, locale.collation)
             )
 
-    @staticmethod
-    def _limit_repl(m):
-        offset, count = m.group(1), m.group(2)
-        count = 'ALL' if count == '-1' else count
-        return f'LIMIT {count} OFFSET {offset}'
-
     def execute(self, *args, **kwargs):
         sql = args[0].replace("?", "%s")      # qmark → format paramstyle
         sql = sql.replace(" REGEXP ", " ~ ")  # SQLite REGEXP → PostgreSQL ~
-        sql = re.sub(r'\bLIMIT\s+(-?\d+)\s*,\s*(-?\d+)', self._limit_repl, sql, flags=re.IGNORECASE)  # LIMIT offset, count → LIMIT count OFFSET offset
+        # TODO: remove when gramps PR #2178 (_quote_column) is merged into core
+        sql = sql.replace("ON media(desc)", "ON media(desc_)")
+        sql = re.sub(r'\bLIMIT\s+(-?\d+)\s*,\s*(-?\d+)',
+                     lambda m: f'LIMIT {"ALL" if m.group(2) == "-1" else m.group(2)} OFFSET {m.group(1)}',
+                     sql, flags=re.IGNORECASE)  # LIMIT offset, count → LIMIT count OFFSET offset
         sql = re.sub(r'\bLIMIT\s+-1\b', 'LIMIT ALL', sql, flags=re.IGNORECASE)  # LIMIT -1 → LIMIT ALL
         if len(args) > 1:
             args = args[1]
