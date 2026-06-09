@@ -24,10 +24,10 @@ register(
     id="PersonHasTagSubstr",
     name=_("People with a tag containing <substring>"),
     description=_("Matches people with a tag whose name contains the given substring"),
-    version = '1.0.1',
+    version = '1.0.2',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
-    gramps_target_version="6.1",
+    gramps_target_version="6.0",
     status=STABLE,
     fname="hastagsubstr.py",
     ruleclass="PersonHasTagSubstr",
@@ -41,10 +41,10 @@ register(
     description=_(
         "Matches families with a tag whose name contains the given substring"
     ),
-    version = '1.0.1',
+    version = '1.0.2',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
-    gramps_target_version="6.1",
+    gramps_target_version="6.0",
     status=STABLE,
     fname="hastagsubstr.py",
     ruleclass="FamilyHasTagSubstr",
@@ -58,10 +58,10 @@ register(
     description=_(
         "Matches events with a tag whose name contains the given substring"
     ),
-    version = '1.0.1',
+    version = '1.0.2',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
-    gramps_target_version="6.1",
+    gramps_target_version="6.0",
     status=STABLE,
     fname="hastagsubstr.py",
     ruleclass="EventHasTagSubstr",
@@ -75,10 +75,10 @@ register(
     description=_(
         "Matches places with a tag whose name contains the given substring"
     ),
-    version = '1.0.1',
+    version = '1.0.2',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
-    gramps_target_version="6.1",
+    gramps_target_version="6.0",
     status=STABLE,
     fname="hastagsubstr.py",
     ruleclass="PlaceHasTagSubstr",
@@ -92,10 +92,10 @@ register(
     description=_(
         "Matches sources with a tag whose name contains the given substring"
     ),
-    version = '1.0.1',
+    version = '1.0.2',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
-    gramps_target_version="6.1",
+    gramps_target_version="6.0",
     status=STABLE,
     fname="hastagsubstr.py",
     ruleclass="SourceHasTagSubstr",
@@ -109,10 +109,10 @@ register(
     description=_(
         "Matches citations with a tag whose name contains the given substring"
     ),
-    version = '1.0.1',
+    version = '1.0.2',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
-    gramps_target_version="6.1",
+    gramps_target_version="6.0",
     status=STABLE,
     fname="hastagsubstr.py",
     ruleclass="CitationHasTagSubstr",
@@ -126,10 +126,10 @@ register(
     description=_(
         "Matches repositories with a tag whose name contains the given substring"
     ),
-    version = '1.0.1',
+    version = '1.0.2',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
-    gramps_target_version="6.1",
+    gramps_target_version="6.0",
     status=STABLE,
     fname="hastagsubstr.py",
     ruleclass="RepositoryHasTagSubstr",
@@ -143,10 +143,10 @@ register(
     description=_(
         "Matches media objects with a tag whose name contains the given substring"
     ),
-    version = '1.0.1',
+    version = '1.0.2',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
-    gramps_target_version="6.1",
+    gramps_target_version="6.0",
     status=STABLE,
     fname="hastagsubstr.py",
     ruleclass="MediaHasTagSubstr",
@@ -160,10 +160,10 @@ register(
     description=_(
         "Matches notes with a tag whose name contains the given substring"
     ),
-    version = '1.0.1',
+    version = '1.0.2',
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
-    gramps_target_version="6.1",
+    gramps_target_version="6.0",
     status=STABLE,
     fname="hastagsubstr.py",
     ruleclass="NoteHasTagSubstr",
