@@ -1,4 +1,4 @@
-from name_processor.models.person import Person, Gender
+from NameSuite.name_processor.models.person import Person, Gender
 
 
 def test_gender_enum():

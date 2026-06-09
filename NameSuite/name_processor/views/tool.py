@@ -15,13 +15,13 @@ from gramps.gui.dialog import OkDialog
 from gramps.gui.editors import EditPerson
 from gramps.gen.errors import WindowActiveError
 
-from name_processor.models.audit import AuditScope
-from name_processor.models.renamer import MatchMode
+from NameSuite.name_processor.models.audit import AuditScope
+from NameSuite.name_processor.models.renamer import MatchMode
 
 if TYPE_CHECKING:
-    from name_processor.controllers.tool import ToolController
-    from name_processor.models.audit import AuditIssue
-    from name_processor.models.renamer import ProposedRename
+    from NameSuite.name_processor.controllers.tool import ToolController
+    from NameSuite.name_processor.models.audit import AuditIssue
+    from NameSuite.name_processor.models.renamer import ProposedRename
 
 logger = logging.getLogger(__name__)
 

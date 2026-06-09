@@ -2,7 +2,7 @@ from gramps.gen.display.name import displayer
 from gramps.gen.lib import Person as GrampsPerson
 from gramps.gen.lib.nameorigintype import NameOriginType
 
-from name_processor.models.person import Gender
+from NameSuite.name_processor.models.person import Gender
 
 
 class GrampsPersonProxy:

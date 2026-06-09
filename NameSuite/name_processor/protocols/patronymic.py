@@ -1,6 +1,6 @@
 from typing import Protocol
 
-from name_processor.models.person import Gender
+from NameSuite.name_processor.models.person import Gender
 
 
 class PatronymicSubject(Protocol):

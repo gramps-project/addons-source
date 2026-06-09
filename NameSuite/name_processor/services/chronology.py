@@ -1,5 +1,5 @@
 from collections import deque
-from name_processor.protocols.chronology import ChronologySubject, ChronologyRepository
+from NameSuite.name_processor.protocols.chronology import ChronologySubject, ChronologyRepository
 
 
 class ChronologyService:

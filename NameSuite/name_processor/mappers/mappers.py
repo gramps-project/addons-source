@@ -7,7 +7,7 @@ and the domain entities defined in name_processor.entities.
 
 from gramps.gen.lib import Person as GrampsPerson
 
-from name_processor.models.person import Gender
+from NameSuite.name_processor.models.person import Gender
 
 
 def map_gramps_gender_to_person(gramps_gender_int: int) -> Gender:

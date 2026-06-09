@@ -1,17 +1,17 @@
 from typing import TYPE_CHECKING
 
-from name_processor.models.infer import (
+from NameSuite.name_processor.models.infer import (
     PatronymicInferenceStatus,
     ProposedPatronymic,
 )
-from name_processor.models.person import Gender
-from name_processor.protocols.patronymic import PatronymicSubject
-from name_processor.services.morphology import MorphologyService
+from NameSuite.name_processor.models.person import Gender
+from NameSuite.name_processor.protocols.patronymic import PatronymicSubject
+from NameSuite.name_processor.services.morphology import MorphologyService
 
 if TYPE_CHECKING:
-    from name_processor.repositories.gramps_read import GrampsReadRepository
-    from name_processor.services.confidence import ConfidenceService
-    from name_processor.services.chronology import ChronologyService
+    from NameSuite.name_processor.repositories.gramps_read import GrampsReadRepository
+    from NameSuite.name_processor.services.confidence import ConfidenceService
+    from NameSuite.name_processor.services.chronology import ChronologyService
 
 
 class PatronymicInferenceService:

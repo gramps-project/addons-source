@@ -7,11 +7,11 @@ Encapsulates heuristics used to determine reliability of inference results.
 import re
 from typing import TYPE_CHECKING
 
-from name_processor.services.morphology import SLAVIC_SURNAME_PATTERN
+from NameSuite.name_processor.services.morphology import SLAVIC_SURNAME_PATTERN
 
 if TYPE_CHECKING:
-    from name_processor.repositories.gramps_read import GrampsReadRepository
-    from name_processor.protocols.confidence import ConfidenceSubject
+    from NameSuite.name_processor.repositories.gramps_read import GrampsReadRepository
+    from NameSuite.name_processor.protocols.confidence import ConfidenceSubject
 
 # Confidence score thresholds
 CONFIDENCE_BASE_SCORE = 0.40

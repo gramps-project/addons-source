@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
-from name_processor.models.audit import RuleContext, ProposedChange
+
+from NameSuite.name_processor.models.audit import RuleContext, ProposedChange
 
 
 class BaseRule(ABC):
