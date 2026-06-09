@@ -1,8 +1,8 @@
-from name_processor.services.audit_rules.base import BaseRule
-from name_processor.models.audit import RuleContext, ProposedChange
-from name_processor.models.person import Gender
-from name_processor.models.constants import LOCALE_EAST_SLAVIC, SEVERITY_ERROR
-from name_processor.services.morphology import MorphologyService
+from NameSuite.name_processor.services.audit_rules.base import BaseRule
+from NameSuite.name_processor.models.audit import RuleContext, ProposedChange
+from NameSuite.name_processor.models.person import Gender
+from NameSuite.name_processor.models.constants import LOCALE_EAST_SLAVIC, SEVERITY_ERROR
+from NameSuite.name_processor.services.morphology import MorphologyService
 
 
 class ErrGenderMismatch(BaseRule):

@@ -1,7 +1,7 @@
 from unittest.mock import Mock, patch, MagicMock
 import pytest
 
-from name_processor.repositories.gramps_write import (
+from NameSuite.name_processor.repositories.gramps_write import (
     is_patronymic_origin,
     update_or_add_patronymic,
     GrampsWriteRepository,

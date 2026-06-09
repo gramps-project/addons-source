@@ -1,4 +1,4 @@
-from name_processor.models.infer import PatronymicInferenceStatus, ProposedPatronymic
+from NameSuite.name_processor.models.infer import PatronymicInferenceStatus, ProposedPatronymic
 
 
 def test_patronymic_inference_status_enum():

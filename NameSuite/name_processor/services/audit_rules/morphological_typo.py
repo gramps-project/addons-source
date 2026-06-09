@@ -6,14 +6,14 @@ Detects invalid consecutive duplicate characters at joint boundaries (e.g. Ан�
 
 import re
 
-from name_processor.services.audit_rules.base import BaseRule
-from name_processor.models.audit import RuleContext, ProposedChange
-from name_processor.models.audit import Gender
-from name_processor.models.constants import (
+from NameSuite.name_processor.services.audit_rules.base import BaseRule
+from NameSuite.name_processor.models.audit import RuleContext, ProposedChange
+from NameSuite.name_processor.models.audit import Gender
+from NameSuite.name_processor.models.constants import (
     SEVERITY_WARNING,
     LOCALE_EAST_SLAVIC,
 )
-from name_processor.services.morphology import MorphologyService
+from NameSuite.name_processor.services.morphology import MorphologyService
 
 
 class WarnMorphologicalTypo(BaseRule):

@@ -1,10 +1,10 @@
 import re
 from typing import TYPE_CHECKING
 
-from name_processor.models.renamer import MatchMode, RenameConfig, ProposedRename
+from NameSuite.name_processor.models.renamer import MatchMode, RenameConfig, ProposedRename
 
 if TYPE_CHECKING:
-    from name_processor.repositories.person import GrampsPersonProxy
+    from NameSuite.name_processor.repositories.person import GrampsPersonProxy
 
 
 class RenamerService:

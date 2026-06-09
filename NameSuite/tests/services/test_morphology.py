@@ -3,11 +3,11 @@
 import unittest
 from unittest.mock import Mock
 
-from name_processor.services.morphology import (
+from NameSuite.name_processor.services.morphology import (
     MorphologyService,
     SLAVIC_SURNAME_PATTERN,
 )
-from name_processor.models.constants import LOCALE_RU, REFORM_YEAR
+from NameSuite.name_processor.models.constants import LOCALE_RU, REFORM_YEAR
 
 
 class TestEastSlavicMorphology(unittest.TestCase):

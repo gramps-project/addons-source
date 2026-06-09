@@ -6,9 +6,9 @@ Detects and corrects mixed Cyrillic and Latin homoglyphs in patronymic strings.
 
 import re
 
-from name_processor.services.audit_rules.base import BaseRule
-from name_processor.models.audit import RuleContext, ProposedChange
-from name_processor.models.constants import LOCALE_EAST_SLAVIC, SEVERITY_ERROR
+from NameSuite.name_processor.services.audit_rules.base import BaseRule
+from NameSuite.name_processor.models.audit import RuleContext, ProposedChange
+from NameSuite.name_processor.models.constants import LOCALE_EAST_SLAVIC, SEVERITY_ERROR
 
 # Cyrillic and Latin Unicode blocks to detect homoglyph mixing
 CYRILLIC_PATTERN = re.compile(r"[\u0400-\u04FF]")

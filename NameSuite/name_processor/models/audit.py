@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from enum import Enum
 
-from name_processor.models.person import Gender
+from NameSuite.name_processor.models.person import Gender
 
 
 class AuditScope(Enum):

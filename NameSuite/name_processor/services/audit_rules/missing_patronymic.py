@@ -4,11 +4,11 @@ Rule: InfoMissingPatronymic
 Flags if a person is missing a patronymic but one can be inferred from the father's name.
 """
 
-from name_processor.services.audit_rules.base import BaseRule
-from name_processor.models.audit import ProposedChange, RuleContext
-from name_processor.models.person import Gender
-from name_processor.models.constants import LOCALE_EAST_SLAVIC, SEVERITY_INFO
-from name_processor.services.morphology import MorphologyService
+from NameSuite.name_processor.services.audit_rules.base import BaseRule
+from NameSuite.name_processor.models.audit import ProposedChange, RuleContext
+from NameSuite.name_processor.models.person import Gender
+from NameSuite.name_processor.models.constants import LOCALE_EAST_SLAVIC, SEVERITY_INFO
+from NameSuite.name_processor.services.morphology import MorphologyService
 
 
 class InfoMissingPatronymic(BaseRule):
