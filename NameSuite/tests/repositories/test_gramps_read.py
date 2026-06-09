@@ -1,7 +1,7 @@
 from unittest.mock import Mock, patch
 import pytest
 
-from name_processor.repositories.gramps_read import GrampsReadRepository
+from NameSuite.name_processor.repositories.gramps_read import GrampsReadRepository
 
 
 @pytest.fixture

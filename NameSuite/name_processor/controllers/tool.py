@@ -1,21 +1,21 @@
 from typing import TYPE_CHECKING, Any
 
-from name_processor.models.audit import AuditScope
-from name_processor.models.renamer import MatchMode, ProposedRename, AltAction
-from name_processor.utils.gtk_runner import run_in_idle_loop
+from NameSuite.name_processor.models.audit import AuditScope
+from NameSuite.name_processor.models.renamer import MatchMode, ProposedRename, AltAction
+from NameSuite.name_processor.utils.gtk_runner import run_in_idle_loop
 
 if TYPE_CHECKING:
     from names_tool import NamesTool
-    from name_processor.models.audit import AuditIssue
-    from name_processor.models.renamer import MatchMode
-    from name_processor.repositories.gramps_read import GrampsReadRepository
-    from name_processor.repositories.gramps_write import GrampsWriteRepository
-    from name_processor.services.alt_names import AltNamesService
-    from name_processor.services.audit import AuditService
-    from name_processor.services.chronology import ChronologyService
-    from name_processor.services.patronymic import PatronymicInferenceService
-    from name_processor.services.renamer import RenamerService
-    from name_processor.views.tool import ToolWindow
+    from NameSuite.name_processor.models.audit import AuditIssue
+    from NameSuite.name_processor.models.renamer import MatchMode
+    from NameSuite.name_processor.repositories.gramps_read import GrampsReadRepository
+    from NameSuite.name_processor.repositories.gramps_write import GrampsWriteRepository
+    from NameSuite.name_processor.services.alt_names import AltNamesService
+    from NameSuite.name_processor.services.audit import AuditService
+    from NameSuite.name_processor.services.chronology import ChronologyService
+    from NameSuite.name_processor.services.patronymic import PatronymicInferenceService
+    from NameSuite.name_processor.services.renamer import RenamerService
+    from NameSuite.name_processor.views.tool import ToolWindow
 
 
 class ToolController:

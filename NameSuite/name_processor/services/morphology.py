@@ -8,10 +8,10 @@ orthographic script preferences.
 import re
 from typing import TYPE_CHECKING
 
-from name_processor.models.constants import LOCALE_RU, REFORM_YEAR
+from NameSuite.name_processor.models.constants import LOCALE_RU, REFORM_YEAR
 
 if TYPE_CHECKING:
-    from name_processor.models.audit import RuleContext
+    from NameSuite.name_processor.models.audit import RuleContext
 
 # Sibilant characters that trigger -evich/-evna instead of -ovich/-ovna
 SIBILANTS = set("жшчщцЖШЧЩЦ")

@@ -1,8 +1,8 @@
 from unittest.mock import Mock
 import pytest
 
-from name_processor.repositories.person import GrampsPersonProxy
-from name_processor.models.person import Gender
+from NameSuite.name_processor.repositories.person import GrampsPersonProxy
+from NameSuite.name_processor.models.person import Gender
 
 
 # Mocking Gramps constants used in the proxy

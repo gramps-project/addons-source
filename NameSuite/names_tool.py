@@ -1,18 +1,19 @@
 from gramps.gui.plug import tool
-from name_processor.controllers.tool import ToolController
-from name_processor.repositories.gramps_read import GrampsReadRepository
-from name_processor.repositories.gramps_write import GrampsWriteRepository
-from name_processor.views.tool import ToolWindow
+
+from NameSuite.name_processor.controllers.tool import ToolController
+from NameSuite.name_processor.repositories.gramps_read import GrampsReadRepository
+from NameSuite.name_processor.repositories.gramps_write import GrampsWriteRepository
+from NameSuite.name_processor.views.tool import ToolWindow
 
 # Domain Services
-from name_processor.services.chronology import ChronologyService
-from name_processor.services.confidence import ConfidenceService
-from name_processor.services.patronymic import PatronymicInferenceService
-from name_processor.services.renamer import RenamerService
-from name_processor.services.alt_names import AltNamesService
+from NameSuite.name_processor.services.chronology import ChronologyService
+from NameSuite.name_processor.services.confidence import ConfidenceService
+from NameSuite.name_processor.services.patronymic import PatronymicInferenceService
+from NameSuite.name_processor.services.renamer import RenamerService
+from NameSuite.name_processor.services.alt_names import AltNamesService
 
 # Ensure you have an AuditService stub or class created
-from name_processor.services.audit import AuditService
+from NameSuite.name_processor.services.audit import AuditService
 
 
 class NamesTool(tool.Tool):

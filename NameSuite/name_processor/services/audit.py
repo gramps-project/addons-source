@@ -1,27 +1,27 @@
 import logging
 from typing import TYPE_CHECKING
 
-from name_processor.models.audit import AuditIssue, RuleContext
-from name_processor.models.constants import LOCALE_RU
-from name_processor.services.audit_rules.gender_mismatch import ErrGenderMismatch
-from name_processor.services.audit_rules.lineage_mismatch import ErrLineageMismatch
-from name_processor.services.audit_rules.modern_suffix_archaic_era import (
+from NameSuite.name_processor.models.audit import AuditIssue, RuleContext
+from NameSuite.name_processor.models.constants import LOCALE_RU
+from NameSuite.name_processor.services.audit_rules.gender_mismatch import ErrGenderMismatch
+from NameSuite.name_processor.services.audit_rules.lineage_mismatch import ErrLineageMismatch
+from NameSuite.name_processor.services.audit_rules.modern_suffix_archaic_era import (
     WarnModernSuffixArchaicEra,
 )
-from name_processor.services.audit_rules.archaic_suffix_modern_era import (
+from NameSuite.name_processor.services.audit_rules.archaic_suffix_modern_era import (
     WarnArchaicSuffixModernEra,
 )
-from name_processor.services.audit_rules.mixed_scripts import ErrMixedScripts
-from name_processor.services.audit_rules.morphological_typo import WarnMorphologicalTypo
-from name_processor.services.audit_rules.missing_hard_sign import WarnMissingHardSign
-from name_processor.services.audit_rules.missing_patronymic import InfoMissingPatronymic
-from name_processor.services.audit_rules.base import BaseRule
+from NameSuite.name_processor.services.audit_rules.mixed_scripts import ErrMixedScripts
+from NameSuite.name_processor.services.audit_rules.morphological_typo import WarnMorphologicalTypo
+from NameSuite.name_processor.services.audit_rules.missing_hard_sign import WarnMissingHardSign
+from NameSuite.name_processor.services.audit_rules.missing_patronymic import InfoMissingPatronymic
+from NameSuite.name_processor.services.audit_rules.base import BaseRule
 
 if TYPE_CHECKING:
-    from name_processor.repositories.gramps_read import GrampsReadRepository
-    from name_processor.services.chronology import ChronologyService
-    from name_processor.repositories.person import GrampsPersonProxy
-    from name_processor.services.confidence import ConfidenceService
+    from NameSuite.name_processor.repositories.gramps_read import GrampsReadRepository
+    from NameSuite.name_processor.services.chronology import ChronologyService
+    from NameSuite.name_processor.repositories.person import GrampsPersonProxy
+    from NameSuite.name_processor.services.confidence import ConfidenceService
 
 logger = logging.getLogger(__name__)
 

@@ -1,12 +1,12 @@
 from typing import TYPE_CHECKING
 
-from name_processor.models.infer import PatronymicInferenceStatus
+from NameSuite.name_processor.models.infer import PatronymicInferenceStatus
 
 if TYPE_CHECKING:
-    from name_processor.repositories.gramps_read import GrampsReadRepository
-    from name_processor.repositories.gramps_write import GrampsWriteRepository
-    from name_processor.services.patronymic import PatronymicInferenceService
-    from name_processor.views.gramplet import GrampletView
+    from NameSuite.name_processor.repositories.gramps_read import GrampsReadRepository
+    from NameSuite.name_processor.repositories.gramps_write import GrampsWriteRepository
+    from NameSuite.name_processor.services.patronymic import PatronymicInferenceService
+    from NameSuite.name_processor.views.gramplet import GrampletView
 
 
 class GrampletController:

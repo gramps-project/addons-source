@@ -1,8 +1,8 @@
 from collections.abc import Generator
 import itertools
 
-from name_processor.repositories.person import GrampsPersonProxy
-from name_processor.protocols.chronology import ChronologySubject
+from NameSuite.name_processor.repositories.person import GrampsPersonProxy
+from NameSuite.name_processor.protocols.chronology import ChronologySubject
 
 
 class GrampsReadRepository:

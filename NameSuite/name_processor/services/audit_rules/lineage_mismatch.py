@@ -4,16 +4,16 @@ Rule: ErrLineageMismatch
 Flags if the patronymic base/root does not match the linked biological father's name.
 """
 
-from name_processor.services.audit_rules.base import BaseRule
-from name_processor.models.audit import RuleContext, ProposedChange
-from name_processor.models.constants import SEVERITY_ERROR
-from name_processor.models.person import Gender
-from name_processor.models.constants import (
+from NameSuite.name_processor.services.audit_rules.base import BaseRule
+from NameSuite.name_processor.models.audit import RuleContext, ProposedChange
+from NameSuite.name_processor.models.constants import SEVERITY_ERROR
+from NameSuite.name_processor.models.person import Gender
+from NameSuite.name_processor.models.constants import (
     LOCALE_EAST_SLAVIC,
     LOCALE_RU,
     REFORM_YEAR,
 )
-from name_processor.services.morphology import MorphologyService
+from NameSuite.name_processor.services.morphology import MorphologyService
 
 
 class ErrLineageMismatch(BaseRule):

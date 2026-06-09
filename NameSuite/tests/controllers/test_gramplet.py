@@ -1,8 +1,8 @@
 from unittest.mock import Mock, MagicMock
 import pytest
 
-from name_processor.controllers.gramplet import GrampletController
-from name_processor.models.infer import PatronymicInferenceStatus
+from NameSuite.name_processor.controllers.gramplet import GrampletController
+from NameSuite.name_processor.models.infer import PatronymicInferenceStatus
 
 
 @pytest.fixture
