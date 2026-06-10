@@ -23,7 +23,7 @@ register(
     name=_("PostgreSQL"),
     name_accell=_("_PostgreSQL Database"),
     description=_("PostgreSQL Database"),
-    version = '1.0.22',
+    version = '1.0.23',
     gramps_target_version="6.1",
     status=STABLE,
     audience=EXPERT,
