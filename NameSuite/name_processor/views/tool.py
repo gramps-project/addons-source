@@ -1,4 +1,23 @@
-# -*- coding: utf-8 -*-
+#
+# Gramps - a GTK+/GNOME based genealogy program
+#
+# Copyright (C) 2026  Dmitry Bryndin
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+
 """
 GTK Window layout for the Names Tool batch processing interface.
 Contains all GTK widgets, layout structures, and column definitions.
@@ -15,13 +34,13 @@ from gramps.gui.dialog import OkDialog
 from gramps.gui.editors import EditPerson
 from gramps.gen.errors import WindowActiveError
 
-from NameSuite.name_processor.models.audit import AuditScope
-from NameSuite.name_processor.models.renamer import MatchMode
+from name_processor.models.audit import AuditScope
+from name_processor.models.renamer import MatchMode
 
 if TYPE_CHECKING:
-    from NameSuite.name_processor.controllers.tool import ToolController
-    from NameSuite.name_processor.models.audit import AuditIssue
-    from NameSuite.name_processor.models.renamer import ProposedRename
+    from name_processor.controllers.tool import ToolController
+    from name_processor.models.audit import AuditIssue
+    from name_processor.models.renamer import ProposedRename
 
 logger = logging.getLogger(__name__)
 

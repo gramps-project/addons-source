@@ -1,15 +1,35 @@
+#
+# Gramps - a GTK+/GNOME based genealogy program
+#
+# Copyright (C) 2026  Dmitry Bryndin
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+
 from gramps.gen.plug import Gramplet
 from gramps.gen.types import PersonHandle
 
-from NameSuite.name_processor.controllers.gramplet import GrampletController
-from NameSuite.name_processor.models.infer import PatronymicInferenceStatus
-from NameSuite.name_processor.repositories.gramps_read import GrampsReadRepository
-from NameSuite.name_processor.repositories.gramps_write import GrampsWriteRepository
-from NameSuite.name_processor.services.patronymic import PatronymicInferenceService
-from NameSuite.name_processor.services.confidence import ConfidenceService
-from NameSuite.name_processor.services.chronology import ChronologyService
-from NameSuite.name_processor.utils.gtk_runner import run_in_idle_loop
-from NameSuite.name_processor.views.gramplet import GrampletView
+from name_processor.controllers.gramplet import GrampletController
+from name_processor.models.infer import PatronymicInferenceStatus
+from name_processor.repositories.gramps_read import GrampsReadRepository
+from name_processor.repositories.gramps_write import GrampsWriteRepository
+from name_processor.services.patronymic import PatronymicInferenceService
+from name_processor.services.confidence import ConfidenceService
+from name_processor.services.chronology import ChronologyService
+from name_processor.utils.gtk_runner import run_in_idle_loop
+from name_processor.views.gramplet import GrampletView
 
 
 class PatronymicSuggestionGramplet(Gramplet):
