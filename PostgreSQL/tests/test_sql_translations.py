@@ -176,6 +176,78 @@ class TestExecuteLimitTranslations(unittest.TestCase):
 
 # -------------------------------------------------------------------------
 #
+# TestExecuteMediaDescIndex
+#
+# -------------------------------------------------------------------------
+class TestExecuteMediaDescIndex(unittest.TestCase):
+    """ON media(desc) → ON media(desc_) substitution.
+
+    PostgreSQL reserves DESC as a keyword; the column was renamed desc_
+    by _quote_column, so any index referencing it needs the same rename.
+    This literal replacement is a temporary workaround until gramps PR #2178
+    (_quote_column) is merged into core.
+    """
+
+    def test_media_desc_index_renamed(self):
+        result = _translated("CREATE INDEX ON media(desc)")
+        self.assertIn("ON media(desc_)", result)
+        self.assertNotIn("ON media(desc)", result.replace("ON media(desc_)", ""))
+
+    def test_other_table_desc_unchanged(self):
+        sql = "CREATE INDEX ON person(desc)"
+        self.assertEqual(_translated(sql), sql)
+
+    def test_non_index_sql_unchanged(self):
+        sql = "SELECT * FROM media WHERE desc_ = %s"
+        self.assertEqual(_translated(sql), sql)
+
+
+# -------------------------------------------------------------------------
+#
+# TestExecuteBlobType
+#
+# -------------------------------------------------------------------------
+class TestExecuteBlobType(unittest.TestCase):
+    """BLOB → BYTEA substitution in execute()."""
+
+    def test_metadata_table_blob_replaced(self):
+        """Reproduces the schema creation error: metadata value BLOB."""
+        result = _translated(
+            "CREATE TABLE metadata "
+            "(setting VARCHAR(50) PRIMARY KEY NOT NULL, json_data TEXT, value BLOB)"
+        )
+        self.assertIn("BYTEA", result)
+        self.assertNotIn("BLOB", result)
+
+    def test_blob_data_column_replaced(self):
+        """Schema tables using blob_data BLOB column."""
+        result = _translated(
+            "CREATE TABLE person "
+            "(handle VARCHAR(50) PRIMARY KEY NOT NULL, blob_data BLOB)"
+        )
+        self.assertIn("BYTEA", result)
+        self.assertNotIn("BLOB", result)
+
+    def test_blob_word_boundary_not_in_identifier(self):
+        """BLOB as part of a longer identifier is not replaced."""
+        result = _translated("SELECT blobfield FROM person")
+        self.assertNotIn("BYTEA", result)
+        self.assertEqual(result, "SELECT blobfield FROM person")
+
+    def test_multiple_blob_columns_all_replaced(self):
+        result = _translated(
+            "CREATE TABLE t (a BLOB, b TEXT, c BLOB)"
+        )
+        self.assertEqual(result.count("BYTEA"), 2)
+        self.assertNotIn("BLOB", result)
+
+    def test_non_blob_sql_unchanged(self):
+        sql = "SELECT * FROM person WHERE handle = %s"
+        self.assertEqual(_translated(sql), sql)
+
+
+# -------------------------------------------------------------------------
+#
 # TestPostgreSQLSqlType
 #
 # -------------------------------------------------------------------------
