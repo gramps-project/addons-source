@@ -1,4 +1,23 @@
-# -*- coding: utf-8 -*-
+#
+# Gramps - a GTK+/GNOME based genealogy program
+#
+# Copyright (C) 2026  Dmitry Bryndin
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+
 """
 Provides morphological generation of East Slavic patronymics (Russian, Ukrainian,
 Belarusian) based on the father's given name, gender, reference year, and
@@ -8,10 +27,10 @@ orthographic script preferences.
 import re
 from typing import TYPE_CHECKING
 
-from NameSuite.name_processor.models.constants import LOCALE_RU, REFORM_YEAR
+from name_processor.models.constants import LOCALE_RU, REFORM_YEAR
 
 if TYPE_CHECKING:
-    from NameSuite.name_processor.models.audit import RuleContext
+    from name_processor.models.audit import RuleContext
 
 # Sibilant characters that trigger -evich/-evna instead of -ovich/-ovna
 SIBILANTS = set("жшчщцЖШЧЩЦ")

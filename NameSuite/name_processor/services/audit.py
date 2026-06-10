@@ -1,27 +1,47 @@
+#
+# Gramps - a GTK+/GNOME based genealogy program
+#
+# Copyright (C) 2026  Dmitry Bryndin
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+
 import logging
 from typing import TYPE_CHECKING
 
-from NameSuite.name_processor.models.audit import AuditIssue, RuleContext
-from NameSuite.name_processor.models.constants import LOCALE_RU
-from NameSuite.name_processor.services.audit_rules.gender_mismatch import ErrGenderMismatch
-from NameSuite.name_processor.services.audit_rules.lineage_mismatch import ErrLineageMismatch
-from NameSuite.name_processor.services.audit_rules.modern_suffix_archaic_era import (
+from name_processor.models.audit import AuditIssue, RuleContext
+from name_processor.models.constants import LOCALE_RU
+from name_processor.services.audit_rules.gender_mismatch import ErrGenderMismatch
+from name_processor.services.audit_rules.lineage_mismatch import ErrLineageMismatch
+from name_processor.services.audit_rules.modern_suffix_archaic_era import (
     WarnModernSuffixArchaicEra,
 )
-from NameSuite.name_processor.services.audit_rules.archaic_suffix_modern_era import (
+from name_processor.services.audit_rules.archaic_suffix_modern_era import (
     WarnArchaicSuffixModernEra,
 )
-from NameSuite.name_processor.services.audit_rules.mixed_scripts import ErrMixedScripts
-from NameSuite.name_processor.services.audit_rules.morphological_typo import WarnMorphologicalTypo
-from NameSuite.name_processor.services.audit_rules.missing_hard_sign import WarnMissingHardSign
-from NameSuite.name_processor.services.audit_rules.missing_patronymic import InfoMissingPatronymic
-from NameSuite.name_processor.services.audit_rules.base import BaseRule
+from name_processor.services.audit_rules.mixed_scripts import ErrMixedScripts
+from name_processor.services.audit_rules.morphological_typo import WarnMorphologicalTypo
+from name_processor.services.audit_rules.missing_hard_sign import WarnMissingHardSign
+from name_processor.services.audit_rules.missing_patronymic import InfoMissingPatronymic
+from name_processor.services.audit_rules.base import BaseRule
 
 if TYPE_CHECKING:
-    from NameSuite.name_processor.repositories.gramps_read import GrampsReadRepository
-    from NameSuite.name_processor.services.chronology import ChronologyService
-    from NameSuite.name_processor.repositories.person import GrampsPersonProxy
-    from NameSuite.name_processor.services.confidence import ConfidenceService
+    from name_processor.repositories.gramps_read import GrampsReadRepository
+    from name_processor.services.chronology import ChronologyService
+    from name_processor.repositories.person import GrampsPersonProxy
+    from name_processor.services.confidence import ConfidenceService
 
 logger = logging.getLogger(__name__)
 
