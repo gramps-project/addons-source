@@ -211,6 +211,7 @@ class Connection:
         sql = sql.replace(" REGEXP ", " ~ ")  # SQLite REGEXP → PostgreSQL ~
         # TODO: remove when gramps PR #2178 (_quote_column) is merged into core
         sql = sql.replace("ON media(desc)", "ON media(desc_)")
+        sql = re.sub(r'\bBLOB\b', 'BYTEA', sql)  # SQLite BLOB → PostgreSQL BYTEA
         sql = re.sub(r'\bLIMIT\s+(-?\d+)\s*,\s*(-?\d+)',
                      lambda m: f'LIMIT {"ALL" if m.group(2) == "-1" else m.group(2)} OFFSET {m.group(1)}',
                      sql, flags=re.IGNORECASE)  # LIMIT offset, count → LIMIT count OFFSET offset
