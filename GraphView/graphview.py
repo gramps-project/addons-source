@@ -108,18 +108,11 @@ for goo_ver in ('3.0', '2.0'):
         break
     except (ImportError, ValueError):
         _GOO = False
-if not _GOO:
-    raise Exception("Goocanvas 2 or 3 (http://live.gnome.org/GooCanvas) is "
-                    "required for this view to work")
 
 if os.sys.platform == "win32":
     _DOT_FOUND = search_for("dot.exe")
 else:
     _DOT_FOUND = search_for("dot")
-
-if not _DOT_FOUND:
-    raise Exception("GraphViz (http://www.graphviz.org) is "
-                    "required for this view to work")
 
 SPLINE = {0: 'false', 1: 'true', 2: 'ortho'}
 
