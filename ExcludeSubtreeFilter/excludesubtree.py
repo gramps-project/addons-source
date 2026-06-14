@@ -48,6 +48,7 @@ _ = _trans.gettext
 from typing import List, Set
 from gramps.gen.lib import Person
 from gramps.gen.db import Database
+from gramps.gen.types import PersonHandle
 
 LOG = logging.getLogger(__name__)
 
@@ -90,7 +91,7 @@ class ExcludeSubtree(Rule):
     """
 
     # filter rule operation
-    selected_handles: Set[PrimaryObjectHandle] = None
+    selected_handles: Set[PersonHandle] = set()
     filt = None  # "stop" person filter
 
     # external interface
@@ -130,7 +131,7 @@ class ExcludeSubtree(Rule):
             self.filt.requestprepare(db, user)
 
             # walk the db using a queue
-            search_list: List[PrimaryObjectHandle] = [start_person.handle]
+            search_list: List[PersonHandle] = [start_person.handle]
             while search_list:
                 current_h = search_list.pop()
                 if current_h in self.selected_handles:
