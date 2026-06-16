@@ -1,21 +1,19 @@
-#
-# Gramps - a GTK+/GNOME based genealogy program
-#
-# Copyright (C) 2026  Eduard Ralph
-#
-# This program is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-#
+"""Pin the GTK / GDK introspection versions for the repo-root test suite.
 
-"""Package marker for the repo-wide Gramps addon test suite."""
+``python3 -m unittest discover -s tests`` imports this package before any test
+module under ``tests/``, so requiring the versions here pins the whole suite to
+the GTK 3 / GDK 3 stack a real Gramps GUI session uses. A test that imports a
+``gramps.gui.*`` module directly never runs the launcher's own
+``require_version``; without this the GI stack can resolve to GTK 4 on a host
+where that is the default — emitting ``PyGIWarning`` and risking the wrong stack.
+"""
+
+try:
+    import gi
+
+    gi.require_version("Gdk", "3.0")
+    gi.require_version("Gtk", "3.0")
+except Exception:
+    # No PyGObject, or the 3.0 typelibs are unavailable — leave the environment
+    # untouched; this only fixes the version when it can.
+    pass
