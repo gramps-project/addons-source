@@ -702,6 +702,7 @@ def export_person(db, person):
      tag_list,            # 18
      private,             # 19
      person_ref_list,     # 20
+     *_,                  # 21+ familysearch_sync (core 6.1); absent on core 6.0
      ) = person
     db.query("""INSERT INTO person (
                   handle,

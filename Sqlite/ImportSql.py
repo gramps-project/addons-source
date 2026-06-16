@@ -724,6 +724,12 @@ class SQLReader(object):
                 tags,
                 bool(private),      # 19
                 person_ref_list,)   # 20
+            # Core 6.1 added a 22nd Person field (familysearch_sync, index 21)
+            # to Person.serialize()/unserialize(); the addon schema does not
+            # persist it, so pad the tuple with the core default for whatever
+            # fields the targeted core version added beyond index 20. No-op on
+            # core 6.0 (21-field Person).
+            data += Person().serialize()[len(data):]
 
             g_pers = Person()
             g_pers.unserialize(data)
