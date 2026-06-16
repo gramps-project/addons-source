@@ -161,7 +161,16 @@ class TestPluginLoading(GrampsTestCase):
     """
 
     def test_load_all_addon_modules(self) -> None:
-        """Try to load every addon plugin; collect failures rather than fail fast."""
+        """Load every addon plugin; gate on non-dependency load failures.
+
+        Failures are collected rather than failing fast, then classified:
+        dependency skips and subprocess crashes (typically a missing display
+        server in CI) are advisory and only logged, while a non-dependency
+        *hard* load failure fails the test (``self.fail``). This makes
+        the check a real gate — like the sibling smoke tests
+        (:class:`TestImportPluginSmoke`, :class:`TestExportPluginSmoke`) — not
+        an always-pass that merely warns on the failure class it names.
+        """
         plugins = _get_addon_plugins(self.plugin_registry)
         self.assertGreater(len(plugins), 0, "No addon plugins found to test")
 
@@ -222,10 +231,9 @@ class TestPluginLoading(GrampsTestCase):
             )
 
         if hard_failures:
-            LOG.warning(
-                "%d addon(s) failed to load:\n  %s",
-                len(hard_failures),
-                "\n  ".join(hard_failures),
+            self.fail(
+                f"{len(hard_failures)} addon(s) failed to load:\n  "
+                + "\n  ".join(hard_failures)
             )
 
 
