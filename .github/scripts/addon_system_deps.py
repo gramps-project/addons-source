@@ -3,16 +3,23 @@
 
 Addons declare three dependency kinds in their ``.gpr.py``:
 
-* ``requires_mod`` — importable Python modules. pip-installable; ci.yml already
-  auto-derives these from the ``.gpr.py`` files. Nothing to do here.
+* ``requires_mod`` — importable Python modules. pip-installable; ci.yml
+  auto-derives these from the ``.gpr.py`` files. Most ship a plain wheel and need
+  nothing more, but a few have no wheel on a CI platform and build from / link
+  against a system library — ``pygraphviz`` (graphviz), ``psycopg2`` / ``psycopg``
+  (libpq). Those need a system package before the pip step can satisfy them,
+  mapped in ``MOD_BUILD_PACKAGES`` below.
 * ``requires_gi`` — GObject-introspection typelibs (e.g. ``GooCanvas``).
 * ``requires_exe`` — system executables (e.g. ``dot`` from graphviz).
 
-The latter two are *system* packages: not pip-installable, named differently per
-platform, and Gramps' own ``Requirements`` only *checks* them (never installs).
-This module maps each declared ``requires_gi`` namespace / ``requires_exe`` name
-to its package on each CI platform and scans the addons for what they declare,
-so ci.yml derives the install list from one place instead of a hand-kept list.
+All three system kinds above (the GI typelibs, the executables, and the
+source-built ``requires_mod`` system packages) are not pip-installable as named,
+are named differently per platform, and Gramps' own ``Requirements`` only
+*checks* ``requires_mod`` (never installs its system side). This module maps each
+declared ``requires_gi`` namespace / ``requires_exe`` name / source-built
+``requires_mod`` to its package on each CI platform and scans the addons for what
+they declare, so ci.yml derives the install list from one place instead of a
+hand-kept list.
 
 Platform availability is asymmetric and encoded here: the GTK 3 addon libs
 (goocanvas, osm-gps-map, gexiv2) exist on Debian/apt but **not on conda-forge**,
@@ -25,7 +32,7 @@ CLI::
 
     addon_system_deps.py --platform apt          # space-separated install list
     addon_system_deps.py --platform conda        #   (only packages available there)
-    addon_system_deps.py --unmapped .            # declared deps with no map entry; exit 1 if any
+    addon_system_deps.py --unmapped .            # declared GI/exe/mod with no map entry; exit 1 if any
 """
 
 # ------------------------
@@ -62,6 +69,49 @@ EXE_PACKAGES: dict[str, dict[str, str | None]] = {
     "dot": {"apt": "graphviz", "conda": "graphviz"},
 }
 
+# Source-built / system-library requires_mod -> the package that makes the
+# module installable+importable, per platform. A requires_mod belongs here ONLY
+# when a plain ``pip install <mod>`` cannot satisfy it by itself on a CI platform:
+#   * apt — no wheel, so pip compiles the C extension from source against a -dev
+#     header (``pygraphviz`` -> libgraphviz-dev; ``psycopg2`` -> libpq-dev), or the
+#     pure-Python build links a system shared library at import time (``psycopg`` /
+#     psycopg3 -> libpq, provided by libpq-dev). The generic compiler toolchain
+#     (gcc, python3-dev, pkg-config) those source builds need stays in the CI
+#     image (.github/docker/gramps-ci/Dockerfile no longer purges it).
+#   * conda — conda-forge ships the whole binding prebuilt, so the value is the
+#     module's own conda-forge package; the conda lane ``mamba install``s it and
+#     the later pip step finds it already satisfied. Verified present on
+#     conda-forge win-64: pygraphviz, psycopg2, psycopg.
+# Both platforms must PROVISION the dep or fail the install step honestly — a
+# value the platform cannot resolve aborts the job (apt-get install / mamba
+# install) rather than letting ci.yml's "|| echo … (continuing)" swallow a failed
+# build into a silently-degraded green. A genuinely unprovisionable module would
+# be a None, but pygraphviz/psycopg2/psycopg are available on both apt and
+# conda-forge.
+MOD_BUILD_PACKAGES: dict[str, dict[str, str | None]] = {
+    "pygraphviz": {"apt": "libgraphviz-dev", "conda": "pygraphviz"},
+    "psycopg2": {"apt": "libpq-dev", "conda": "psycopg2"},
+    "psycopg": {"apt": "libpq-dev", "conda": "psycopg"},  # psycopg3
+}
+
+# requires_mod that ship a plain pip wheel needing no system package on any CI
+# platform. Listed explicitly so the drift guard can tell a wheel-only module
+# (nothing to map) from a source-built one that was forgotten: every declared
+# requires_mod must be classified as exactly one of WHEEL_ONLY_MODS or
+# MOD_BUILD_PACKAGES, else a newly-added source-built dep could silently lose
+# coverage again (the build-toolchain gap this module closes). ``--unmapped``
+# fails CI on any requires_mod that is in neither set.
+WHEEL_ONLY_MODS: frozenset[str] = frozenset(
+    {
+        "boto3",  # S3MediaUploader — pure-Python AWS SDK wheel
+        "dbf",  # TMGimporter — pure-Python wheel
+        "life_line_chart",  # LifeLineChartView — pure-Python wheel
+        "litellm",  # ChatWithTree / GrampsChat — pure-Python wheel
+        "networkx",  # NetworkChart — pure-Python wheel
+        "svgwrite",  # LifeLineChartView — pure-Python wheel
+    }
+)
+
 PLATFORMS = ("apt", "conda")
 
 
@@ -72,6 +122,7 @@ PLATFORMS = ("apt", "conda")
 # ------------------------------------------------------------
 _GI_RE = re.compile(r"requires_gi\s*=\s*(\[[^\]]*\])")
 _EXE_RE = re.compile(r"requires_exe\s*=\s*(\[[^\]]*\])")
+_MOD_RE = re.compile(r"requires_mod\s*=\s*(\[[^\]]*\])")
 
 
 def _gpr_files(root: str) -> list[str]:
@@ -109,6 +160,10 @@ def scan_executables(root: str) -> set[str]:
     return _scan(root, _EXE_RE, first_of_tuple=False)
 
 
+def scan_modules(root: str) -> set[str]:
+    return _scan(root, _MOD_RE, first_of_tuple=False)
+
+
 def addon_requirements(addon_dir: str) -> tuple[set[str], set[str]]:
     """Return (gi_namespaces, executables) declared by a single addon dir."""
     gi: set[str] = set()
@@ -138,7 +193,7 @@ def addon_requirements(addon_dir: str) -> tuple[set[str], set[str]]:
 def packages(platform: str) -> list[str]:
     """All install-by-name packages available for a platform (full mapped set)."""
     pkgs: list[str] = []
-    for table in (GI_PACKAGES, EXE_PACKAGES):
+    for table in (GI_PACKAGES, EXE_PACKAGES, MOD_BUILD_PACKAGES):
         for entry in table.values():
             pkg = entry.get(platform)
             if pkg:
@@ -146,11 +201,19 @@ def packages(platform: str) -> list[str]:
     return sorted(set(pkgs))
 
 
-def unmapped(root: str) -> tuple[set[str], set[str]]:
-    """Declared deps with no entry in the maps at all (drift)."""
+def unmapped(root: str) -> tuple[set[str], set[str], set[str]]:
+    """Declared deps with no entry in the maps at all (drift).
+
+    The third element is every declared ``requires_mod`` classified as *neither*
+    a wheel-only module nor a source-built one — an unclassified module that, if
+    it turns out to need a system package, would silently lose coverage. CI fails
+    on it so a human must classify it (add to ``WHEEL_ONLY_MODS`` or
+    ``MOD_BUILD_PACKAGES``).
+    """
     return (
         scan_gi_namespaces(root) - set(GI_PACKAGES),
         scan_executables(root) - set(EXE_PACKAGES),
+        scan_modules(root) - WHEEL_ONLY_MODS - set(MOD_BUILD_PACKAGES),
     )
 
 
@@ -185,17 +248,19 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--unmapped",
         metavar="ROOT",
-        help="print declared GI/exe deps with no map entry; exit 1 if any",
+        help="print declared GI/exe/mod deps with no map entry; exit 1 if any",
     )
     args = parser.parse_args(argv)
 
     if args.unmapped is not None:
-        gi, exe = unmapped(args.unmapped)
+        gi, exe, mod = unmapped(args.unmapped)
         for ns in sorted(gi):
             print(f"gi:{ns}")
         for name in sorted(exe):
             print(f"exe:{name}")
-        return 1 if (gi or exe) else 0
+        for name in sorted(mod):
+            print(f"mod:{name}")
+        return 1 if (gi or exe or mod) else 0
 
     if args.platform:
         print(" ".join(packages(args.platform)))

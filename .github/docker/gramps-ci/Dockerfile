@@ -108,7 +108,18 @@ else
 fi
 BASH
 
-RUN apt-get purge -y gcc python3-dev pkg-config && apt-get autoremove -y
+# NOTE: the build toolchain (gcc, python3-dev, pkg-config) is deliberately KEPT
+# in the image — it is not purged here. Addon requires_mod are pip-installed at CI
+# runtime (ci.yml "Install addon runtime deps"), and the source-built ones with no
+# wheel on the apt lane (pygraphviz, psycopg2) compile a C extension during that
+# step. Purging gcc/pkg-config left those builds with no compiler, so they failed
+# and were swallowed by the install step's "|| echo … (continuing)" — silently
+# degrading the affected addon's coverage while the job stayed green. The per-
+# package system headers those builds link against (libgraphviz-dev, libpq-dev on
+# apt) are derived from the addons' .gpr.py and installed at CI runtime by the same
+# single-source map as requires_gi/requires_exe — see .github/scripts/
+# addon_system_deps.py (MOD_BUILD_PACKAGES) and ci.yml's "Install addon system
+# deps" step — so .gpr.py stays the single source of truth.
 
 RUN python -c "from gramps.gen.const import VERSION; print('Gramps', VERSION)" \
  && python -c "import gi; gi.require_version('Gtk', '3.0'); from gi.repository import Gtk; print('GTK OK')"

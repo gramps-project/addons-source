@@ -198,12 +198,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install addon system deps (derived from requires_gi / requires_exe)
-        # System deps (GI typelibs, executables) are not pip-installable and
-        # gramps only *checks* them, so the image cannot bake them generically
-        # (its build context excludes addons-source). Derive the apt set from
-        # every .gpr.py via the single-source map and install it — the container
-        # runs as root. Mirrors the requires_mod derivation below.
+      - name: Install addon system deps (requires_gi / requires_exe / source-built requires_mod)
+        # System deps (GI typelibs, executables, and the -dev headers / libpq that
+        # source-built requires_mod link against — pygraphviz→libgraphviz-dev,
+        # psycopg2/psycopg→libpq-dev) are not pip-installable as named and gramps
+        # only *checks* requires_mod, so the image cannot bake them generically
+        # (its build context excludes addons-source). Derive the apt set from every
+        # .gpr.py via the single-source map and install it — the container runs as
+        # root. MUST run before "Install addon runtime deps" so the headers are
+        # present when pip compiles the source-built modules; the compiler toolchain
+        # those builds need lives in the CI image (no longer purged there).
         shell: bash
         run: |
           pkgs=$(python3 .github/scripts/addon_system_deps.py --platform apt)
@@ -212,18 +216,21 @@ jobs:
             apt-get update
             apt-get install -y --no-install-recommends $pkgs
           else
-            echo "no requires_gi / requires_exe declarations found"
+            echo "no requires_gi / requires_exe / source-built requires_mod declarations found"
           fi
 
       - name: Validate addon system deps are mapped
-        # Every requires_gi / requires_exe an addon declares must have an entry
-        # in addon_system_deps.py, so the install list never silently drifts
-        # from what addons declare (the system-dep analogue of the requires_mod
-        # find_spec gate below).
+        # Every requires_gi / requires_exe an addon declares must have an entry in
+        # addon_system_deps.py, and every requires_mod must be classified as either
+        # wheel-only or source-built (with a system package), so the install list
+        # never silently drifts from what addons declare — the build-toolchain
+        # coverage gap returns the moment a new source-built requires_mod is added
+        # without a mapping. (The system-dep analogue of the requires_mod find_spec
+        # gate below.)
         shell: bash
         run: |
           python3 .github/scripts/addon_system_deps.py --unmapped . || {
-            echo "::error::Addon(s) declare requires_gi/requires_exe with no entry in .github/scripts/addon_system_deps.py — add a mapping row."
+            echo "::error::Addon(s) declare requires_gi/requires_exe/requires_mod with no entry in .github/scripts/addon_system_deps.py — add a mapping row (or, for a wheel-only module, list it in WHEEL_ONLY_MODS)."
             exit 1
           }
 
@@ -426,12 +433,19 @@ jobs:
             echo "::warning::Windows lane: branch targets gramps $want but conda-forge ships $have; addons here are validated against $have. Full $want coverage is on the Linux lane (its CI image git-builds $want). See step comment for why conda-Windows cannot build $want."
           fi
 
-      - name: Install addon system deps (derived, conda-available subset)
-        # Only the conda-forge-available subset (e.g. graphviz). The GTK 3 addon
-        # GI libs (goocanvas/osm-gps-map/gexiv2) are NOT on conda-forge, so the
-        # map returns None for them on conda and they are not installed; addons
-        # needing them skip on Windows by necessity, which run_addon_tests
-        # tolerates (--platform conda).
+      - name: Install addon system deps (requires_gi / requires_exe / source-built requires_mod)
+        # The conda-forge-available subset of the single-source map. This lane
+        # provisions its OWN deps and must mirror the apt lane: source-built
+        # requires_mod that conda-forge ships prebuilt — pygraphviz, psycopg2,
+        # psycopg — are installed here as full conda-forge packages
+        # (MOD_BUILD_PACKAGES' conda side), so the later pip step finds them already
+        # satisfied and the affected addons' suites RUN on Windows instead of
+        # silently skipping. `mamba install` fails the job if a mapped package
+        # cannot be resolved, so a provisioning gap aborts honestly — never a silent
+        # green. The GTK 3 addon GI libs (goocanvas/osm-gps-map/gexiv2) are
+        # genuinely NOT on conda-forge, so the map keeps them at None and they are
+        # not installed; addons needing only those skip on Windows by necessity,
+        # which run_addon_tests tolerates for declared GI deps (--platform conda).
         run: |
           pkgs=$(python .github/scripts/addon_system_deps.py --platform conda)
           if [ -n "$pkgs" ]; then
@@ -570,12 +584,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install addon system deps (derived from requires_gi / requires_exe)
+      - name: Install addon system deps (requires_gi / requires_exe / source-built requires_mod)
         # Same as unit-test-linux: derive the apt set from the single-source
         # map and install it (container runs as root). The plugin registration
         # test subprocess-loads each addon module, so the GI typelibs those
-        # modules import must be present here too. (Mapping is drift-guarded in
-        # unit-test-linux, which this job needs:, so no duplicate gate here.)
+        # modules import — and the -dev headers / libpq their source-built
+        # requires_mod compile/link against — must be present here too. (Mapping is
+        # drift-guarded in unit-test-linux, which this job needs:, so no duplicate
+        # gate here.)
         shell: bash
         run: |
           pkgs=$(python3 .github/scripts/addon_system_deps.py --platform apt)
