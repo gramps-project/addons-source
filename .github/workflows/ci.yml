@@ -73,15 +73,7 @@ jobs:
         # step stays self-contained.
         shell: bash
         run: |
-          is_active() {
-            local addon="$1" g
-            for g in "$addon"/*.gpr.py; do
-              [ -f "$g" ] || continue
-              grep -qE 'include_in_listing[[:space:]]*=[[:space:]]*True' "$g" && return 0
-              grep -qE 'include_in_listing[[:space:]]*=' "$g" || return 0
-            done
-            return 1
-          }
+          source .github/scripts/active_addons.sh
           excludes=""
           for d in */; do
             d="${d%/}"
@@ -116,15 +108,7 @@ jobs:
         # Skip include_in_listing=False addons (see lint job for rationale).
         shell: bash
         run: |
-          is_active() {
-            local addon="$1" g
-            for g in "$addon"/*.gpr.py; do
-              [ -f "$g" ] || continue
-              grep -qE 'include_in_listing[[:space:]]*=[[:space:]]*True' "$g" && return 0
-              grep -qE 'include_in_listing[[:space:]]*=' "$g" || return 0
-            done
-            return 1
-          }
+          source .github/scripts/active_addons.sh
           failed=0
           for gpr in */*.gpr.py; do
             addon_dir="$(dirname "$gpr")"
@@ -158,15 +142,7 @@ jobs:
         # Skip include_in_listing=False addons (see lint job for rationale).
         shell: bash
         run: |
-          is_active() {
-            local addon="$1" g
-            for g in "$addon"/*.gpr.py; do
-              [ -f "$g" ] || continue
-              grep -qE 'include_in_listing[[:space:]]*=[[:space:]]*True' "$g" && return 0
-              grep -qE 'include_in_listing[[:space:]]*=' "$g" || return 0
-            done
-            return 1
-          }
+          source .github/scripts/active_addons.sh
           skipped=""
           for d in */; do
             d="${d%/}"
@@ -246,23 +222,7 @@ jobs:
         # isolation without blocking the rest.
         shell: bash
         run: |
-          addon_mods=$(python3 - <<'PY'
-          import ast, glob, re
-          pat = re.compile(r"requires_mod\s*=\s*(\[[^\]]*\])")
-          mods = set()
-          for f in glob.glob("*/*.gpr.py"):
-              try:
-                  text = open(f, encoding="utf-8").read()
-              except OSError:
-                  continue
-              for m in pat.finditer(text):
-                  try:
-                      mods.update(ast.literal_eval(m.group(1)))
-                  except (ValueError, SyntaxError):
-                      pass
-          print(" ".join(sorted(mods)))
-          PY
-          )
+          addon_mods=$(python3 .github/scripts/addon_python_deps.py --install-list .)
           if [ -n "$addon_mods" ]; then
             echo "→ addon deps: $addon_mods"
             for mod in $addon_mods; do
@@ -283,46 +243,7 @@ jobs:
         # system-dep / image gaps, not PR-caused.
         shell: bash
         run: |
-          python3 - <<'PY'
-          import ast, glob, re, subprocess, sys
-          from importlib.util import find_spec
-
-          pat = re.compile(r"requires_mod\s*=\s*(\[[^\]]*\])")
-          names = set()
-          for f in glob.glob("*/*.gpr.py"):
-              try:
-                  text = open(f, encoding="utf-8").read()
-              except OSError:
-                  continue
-              for m in pat.finditer(text):
-                  try:
-                      names.update(ast.literal_eval(m.group(1)))
-                  except (ValueError, SyntaxError):
-                      pass
-
-          bad = []
-          for name in sorted(names):
-              installed = subprocess.run(
-                  [sys.executable, "-m", "pip", "show", name],
-                  capture_output=True,
-              ).returncode == 0
-              if not installed:
-                  print(f"~  {name} (pip-install failed earlier, skipping)")
-                  continue
-              if find_spec(name) is None:
-                  bad.append(name)
-                  print(f"x  {name} (pip-installed but find_spec returned None)")
-              else:
-                  print(f"ok {name}")
-
-          if bad:
-              print()
-              print(f"::error::Wrong requires_mod names: {bad}")
-              print("These pip-install but are not importable. requires_mod is")
-              print("consumed by gramps' check_mod() via find_spec(), so the")
-              print("importable module name is required (e.g. 'PIL', not 'Pillow').")
-              sys.exit(1)
-          PY
+          python3 .github/scripts/addon_python_deps.py --check-resolves .
 
       - name: Run per-addon unit tests
         # Filename convention (all OSes):
@@ -341,15 +262,7 @@ jobs:
         env:
           PYTHONPATH: .
         run: |
-          is_active() {
-            local addon="$1" g
-            for g in "$addon"/*.gpr.py; do
-              [ -f "$g" ] || continue
-              grep -qE 'include_in_listing[[:space:]]*=[[:space:]]*True' "$g" && return 0
-              grep -qE 'include_in_listing[[:space:]]*=' "$g" || return 0
-            done
-            return 1
-          }
+          source .github/scripts/active_addons.sh
           modules=""
           for f in */tests/test_*.py; do
             [ -f "$f" ] || continue
@@ -459,23 +372,7 @@ jobs:
         # See unit-test-linux for rationale. Uses `python` (conda-forge
         # env) to match the surrounding Windows job style.
         run: |
-          addon_mods=$(python - <<'PY'
-          import ast, glob, re
-          pat = re.compile(r"requires_mod\s*=\s*(\[[^\]]*\])")
-          mods = set()
-          for f in glob.glob("*/*.gpr.py"):
-              try:
-                  text = open(f, encoding="utf-8").read()
-              except OSError:
-                  continue
-              for m in pat.finditer(text):
-                  try:
-                      mods.update(ast.literal_eval(m.group(1)))
-                  except (ValueError, SyntaxError):
-                      pass
-          print(" ".join(sorted(mods)))
-          PY
-          )
+          addon_mods=$(python .github/scripts/addon_python_deps.py --install-list .)
           if [ -n "$addon_mods" ]; then
             echo "→ addon deps: $addon_mods"
             for mod in $addon_mods; do
@@ -489,46 +386,7 @@ jobs:
         # See unit-test-linux for rationale. Uses `python` (conda-forge
         # env) to match the surrounding Windows job style.
         run: |
-          python - <<'PY'
-          import ast, glob, re, subprocess, sys
-          from importlib.util import find_spec
-
-          pat = re.compile(r"requires_mod\s*=\s*(\[[^\]]*\])")
-          names = set()
-          for f in glob.glob("*/*.gpr.py"):
-              try:
-                  text = open(f, encoding="utf-8").read()
-              except OSError:
-                  continue
-              for m in pat.finditer(text):
-                  try:
-                      names.update(ast.literal_eval(m.group(1)))
-                  except (ValueError, SyntaxError):
-                      pass
-
-          bad = []
-          for name in sorted(names):
-              installed = subprocess.run(
-                  [sys.executable, "-m", "pip", "show", name],
-                  capture_output=True,
-              ).returncode == 0
-              if not installed:
-                  print(f"~  {name} (pip-install failed earlier, skipping)")
-                  continue
-              if find_spec(name) is None:
-                  bad.append(name)
-                  print(f"x  {name} (pip-installed but find_spec returned None)")
-              else:
-                  print(f"ok {name}")
-
-          if bad:
-              print()
-              print(f"::error::Wrong requires_mod names: {bad}")
-              print("These pip-install but are not importable. requires_mod is")
-              print("consumed by gramps' check_mod() via find_spec(), so the")
-              print("importable module name is required (e.g. 'PIL', not 'Pillow').")
-              sys.exit(1)
-          PY
+          python .github/scripts/addon_python_deps.py --check-resolves .
 
       - name: Run per-addon unit tests
         # See filename-convention note in unit-test-linux. The Windows
@@ -536,15 +394,7 @@ jobs:
         env:
           PYTHONPATH: .
         run: |
-          is_active() {
-            local addon="$1" g
-            for g in "$addon"/*.gpr.py; do
-              [ -f "$g" ] || continue
-              grep -qE 'include_in_listing[[:space:]]*=[[:space:]]*True' "$g" && return 0
-              grep -qE 'include_in_listing[[:space:]]*=' "$g" || return 0
-            done
-            return 1
-          }
+          source .github/scripts/active_addons.sh
           modules=""
           for f in */tests/test_*.py; do
             [ -f "$f" ] || continue
@@ -607,23 +457,7 @@ jobs:
         # requires_mod packages.
         shell: bash
         run: |
-          addon_mods=$(python3 - <<'PY'
-          import ast, glob, re
-          pat = re.compile(r"requires_mod\s*=\s*(\[[^\]]*\])")
-          mods = set()
-          for f in glob.glob("*/*.gpr.py"):
-              try:
-                  text = open(f, encoding="utf-8").read()
-              except OSError:
-                  continue
-              for m in pat.finditer(text):
-                  try:
-                      mods.update(ast.literal_eval(m.group(1)))
-                  except (ValueError, SyntaxError):
-                      pass
-          print(" ".join(sorted(mods)))
-          PY
-          )
+          addon_mods=$(python3 .github/scripts/addon_python_deps.py --install-list .)
           if [ -n "$addon_mods" ]; then
             echo "→ addon deps: $addon_mods"
             for mod in $addon_mods; do
@@ -637,46 +471,7 @@ jobs:
         # See unit-test-linux for rationale.
         shell: bash
         run: |
-          python3 - <<'PY'
-          import ast, glob, re, subprocess, sys
-          from importlib.util import find_spec
-
-          pat = re.compile(r"requires_mod\s*=\s*(\[[^\]]*\])")
-          names = set()
-          for f in glob.glob("*/*.gpr.py"):
-              try:
-                  text = open(f, encoding="utf-8").read()
-              except OSError:
-                  continue
-              for m in pat.finditer(text):
-                  try:
-                      names.update(ast.literal_eval(m.group(1)))
-                  except (ValueError, SyntaxError):
-                      pass
-
-          bad = []
-          for name in sorted(names):
-              installed = subprocess.run(
-                  [sys.executable, "-m", "pip", "show", name],
-                  capture_output=True,
-              ).returncode == 0
-              if not installed:
-                  print(f"~  {name} (pip-install failed earlier, skipping)")
-                  continue
-              if find_spec(name) is None:
-                  bad.append(name)
-                  print(f"x  {name} (pip-installed but find_spec returned None)")
-              else:
-                  print(f"ok {name}")
-
-          if bad:
-              print()
-              print(f"::error::Wrong requires_mod names: {bad}")
-              print("These pip-install but are not importable. requires_mod is")
-              print("consumed by gramps' check_mod() via find_spec(), so the")
-              print("importable module name is required (e.g. 'PIL', not 'Pillow').")
-              sys.exit(1)
-          PY
+          python3 .github/scripts/addon_python_deps.py --check-resolves .
 
       - name: Run plugin registration tests
         # shell: bash for consistency with the surrounding steps; the
@@ -706,15 +501,7 @@ jobs:
         env:
           PYTHONPATH: .
         run: |
-          is_active() {
-            local addon="$1" g
-            for g in "$addon"/*.gpr.py; do
-              [ -f "$g" ] || continue
-              grep -qE 'include_in_listing[[:space:]]*=[[:space:]]*True' "$g" && return 0
-              grep -qE 'include_in_listing[[:space:]]*=' "$g" || return 0
-            done
-            return 1
-          }
+          source .github/scripts/active_addons.sh
           modules=""
           for f in */tests/test_integration*.py; do
             [ -f "$f" ] || continue
