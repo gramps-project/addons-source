@@ -17,7 +17,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-# $Id: ImportSql.py 189 2010-02-13 07:08:48Z dsblank $
 
 "Import from SQLite Database"
 
@@ -45,28 +44,8 @@ LOG = logging.getLogger(__name__)
 # Gramps modules
 #
 # -------------------------------------------------------------------------
-from gramps.gen.lib import (
-    Address,
-    Attribute,
-    Citation,
-    Event,
-    EventRef,
-    Family,
-    LdsOrd,
-    Media,
-    MediaRef,
-    Name,
-    Note,
-    Person,
-    PersonRef,
-    Place,
-    PlaceName,
-    Repository,
-    Source,
-    Tag,
-    Url,
-)
 from gramps.gen.db import DbTxn
+from gramps.gen.lib.json_utils import data_to_object
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 
 try:
@@ -79,21 +58,23 @@ ngettext = trans.ngettext
 
 # -------------------------------------------------------------------------
 #
-# Helper lookup
+# Helper
 #
 # -------------------------------------------------------------------------
-def lookup(handle: str | None, event_ref_list) -> int:
+def _gtype(class_name: str, value: int, string: str) -> dict:
+    """Return a GrampsType DataDict."""
+    return {"_class": class_name, "value": value, "string": string}
+
+
+def lookup(handle: str | None, event_ref_list: list) -> int:
     """
-    Find the handle in an unserialized event_ref_list and return its index.
+    Find the handle in a DataDict event_ref_list and return its index, or -1.
     """
     if handle is None:
         return -1
-    count = 0
-    for event_ref in event_ref_list:
-        (_private, _citation_list, _note_list, _attribute_list, ref, _role) = event_ref
-        if handle == ref:
+    for count, event_ref in enumerate(event_ref_list):
+        if handle == event_ref["ref"]:
             return count
-        count += 1
     return -1
 
 
@@ -145,18 +126,22 @@ class Database(object):
 class SQLReader(object):
     """
     Reads a Gramps SQLite export file and populates a Gramps database.
+
+    All sub-object helpers return DataDicts (named-key dicts) compatible with
+    ``data_to_object()`` from ``gramps.gen.lib.json_utils``.  This avoids
+    positional tuple unpacking, making the import forward-compatible with
+    any future schema additions in Gramps core.
     """
 
     def __init__(self, db, filename: str, user) -> None:
         """Initialise the reader with a target database and source file."""
-        if isinstance(user.callback, abc.Callable):  # is really callable
+        if isinstance(user.callback, abc.Callable):
             callback = user.callback
         else:
-            callback = self.dummy_callback  # dummy
+            callback = self.dummy_callback
         self.db = db
         self.filename = filename
         self.callback = callback
-        self.debug = 0
 
     def dummy_callback(self, *args) -> None:
         """No-op progress callback."""
@@ -177,545 +162,386 @@ class SQLReader(object):
         return sql
 
     # -----------------------------------------------
-    # Get methods to retrieve data from the tables
+    # Link helpers
     # -----------------------------------------------
 
-    def get_address_list(self, sql, from_type: str, from_handle: str, with_parish: bool):
-        """Return a list of serialized address tuples for a parent object."""
-        results = self.get_links(sql, from_type, from_handle, "address")
-        retval = []
-        for handle in results:
-            result = sql.query("select * from address where handle = ?;", handle)
-            retval.append(self.pack_address(sql, result[0], with_parish))
-        return retval
-
-    def get_attribute_list(self, sql, from_type: str, from_handle: str):
-        """Return a list of serialized attribute tuples for a parent object."""
-        handles = self.get_links(sql, from_type, from_handle, "attribute")
-        retval = []
-        for handle in handles:
-            rows = sql.query("select * from attribute where handle = ?;", handle)
-            for row in rows:
-                (handle, the_type0, the_type1, value, private) = row
-                citation_list = self.get_citation_list(sql, "attribute", handle)
-                note_list = self.get_note_list(sql, "attribute", handle)
-                retval.append(
-                    (bool(private), citation_list, note_list, (the_type0, the_type1), value)
-                )
-        return retval
-
-    def get_child_ref_list(self, sql, from_type: str, from_handle: str):
-        """Return a list of serialized child-ref tuples for a family."""
-        results = self.get_links(sql, from_type, from_handle, "child_ref")
-        retval = []
-        for handle in results:
-            rows = sql.query("select * from child_ref where handle = ?;", handle)
-            for row in rows:
-                (handle, ref, frel0, frel1, mrel0, mrel1, private) = row
-                citation_list = self.get_citation_list(sql, "child_ref", handle)
-                note_list = self.get_note_list(sql, "child_ref", handle)
-                retval.append(
-                    (
-                        bool(private),
-                        citation_list,
-                        note_list,
-                        ref,
-                        (frel0, frel1),
-                        (mrel0, mrel1),
-                    )
-                )
-        return retval
-
-    def get_datamap_list(self, sql, from_type: str, from_handle: str):
-        """Return a list of datamap tuples for a source or citation."""
-        datamap = []
-        rows = sql.query("select * from datamap where from_handle = ?;", from_handle)
-        for row in rows:
-            (
-                from_handle,
-                the_type0,
-                the_type1,
-                value_field,
-                private,
-            ) = row
-            datamap.append((private, (the_type0, the_type1), value_field))
-        return datamap
-
-    def get_event_ref_list(self, sql, from_type: str, from_handle: str):
-        """Return a list of serialized event-ref tuples for a parent object."""
-        results = self.get_links(sql, from_type, from_handle, "event_ref")
-        retval = []
-        for handle in results:
-            result = sql.query("select * from event_ref where handle = ?;", handle)
-            retval.append(self.pack_event_ref(sql, result[0]))
-        return retval
-
-    def get_family_list(self, sql, from_type: str, from_handle: str):
-        """Return a list of family handles for a person."""
-        return self.get_links(sql, from_type, from_handle, "family")
-
-    def get_parent_family_list(self, sql, from_type: str, from_handle: str):
-        """Return a list of parent-family handles for a person."""
-        return self.get_links(sql, from_type, from_handle, "parent_family")
-
-    def get_person_ref_list(self, sql, from_type: str, from_handle: str):
-        """Return a list of serialized person-ref tuples for a parent object."""
-        handles = self.get_links(sql, from_type, from_handle, "person_ref")
-        retval = []
-        for ref_handle in handles:
-            rows = sql.query(
-                "select * from person_ref where handle = ?;", ref_handle
-            )
-            for row in rows:
-                (
-                    handle,
-                    ref,
-                    description,
-                    private,
-                ) = row
-                citation_list = self.get_citation_list(sql, "person_ref", handle)
-                note_list = self.get_note_list(sql, "person_ref", handle)
-                retval.append(
-                    (bool(private), citation_list, note_list, ref, description)
-                )
-        return retval
-
-    def get_location_list(self, sql, from_type: str, from_handle: str, with_parish: bool):
-        """Return a list of serialized location tuples for a parent object."""
-        handles = self.get_links(sql, from_type, from_handle, "location")
-        results = []
-        for handle in handles:
-            results += sql.query("select * from location where handle = ?;", handle)
-        return [self.pack_location(sql, result, with_parish) for result in results]
-
-    def get_lds_list(self, sql, from_type: str, from_handle: str):
-        """Return a list of serialized LDS ordinance tuples for a parent object."""
-        handles = self.get_links(sql, from_type, from_handle, "lds")
-        results = []
-        for handle in handles:
-            results += sql.query("""select * from lds where handle = ?;""", handle)
-        return [self.pack_lds(sql, result) for result in results]
-
-    def get_media_list(self, sql, from_type: str, from_handle: str):
-        """Return a list of serialized media-ref tuples for a parent object."""
-        handles = self.get_links(sql, from_type, from_handle, "media_ref")
-        results = []
-        for handle in handles:
-            results += sql.query(
-                "select * from media_ref where handle = ?;", handle
-            )
-        return [self.pack_media_ref(sql, result) for result in results]
-
-    def get_surname_list(self, sql, handle: str):
-        """Return a list of serialized surname tuples for a name."""
-        results = sql.query(
-            "select s.* from surname s inner join link l ON l.to_handle = "
-            "s.handle where l.from_handle = ?;",
-            handle,
-        )
-        return [self.pack_surnames(sql, result) for result in results]
-
-    def get_note_list(self, sql, from_type: str, from_handle: str):
-        """Return a list of note handles for a parent object."""
-        return self.get_links(sql, from_type, from_handle, "note")
-
-    def get_repository_ref_list(self, sql, from_type: str, from_handle: str):
-        """Return a list of serialized repository-ref tuples for a source."""
-        handles = self.get_links(sql, from_type, from_handle, "repository_ref")
-        results = []
-        for handle in handles:
-            results += sql.query(
-                """select * from repository_ref where handle = ?;""", handle
-            )
-        return [self.pack_repository_ref(sql, result) for result in results]
-
-    def get_citation_list(self, sql, from_type: str, from_handle: str):
-        """Return a list of citation handles for a parent object."""
-        handles = self.get_links(sql, from_type, from_handle, "citation")
-        return handles
-
-    def get_url_list(self, sql, from_type: str, from_handle: str):
-        """Return a list of serialized URL tuples for a parent object."""
-        handles = self.get_links(sql, from_type, from_handle, "url")
-        results = []
-        for handle in handles:
-            results += sql.query("""select * from url where handle = ?;""", handle)
-        return [self.pack_url(sql, result) for result in results]
-
-    # ---------------------------------
-    # Helpers
-    # ---------------------------------
-
-    def pack_address(self, sql, data, with_parish: bool):
-        """Pack raw address row data into a serialized address tuple."""
-        (handle, private) = data
-        citation_list = self.get_citation_list(sql, "address", handle)
-        date_handle = self.get_link(sql, "address", handle, "date")
-        date = self.get_date(sql, date_handle)
-        note_list = self.get_note_list(sql, "address", handle)
-        location = self.get_location(sql, "address", handle, with_parish)
-        return (bool(private), citation_list, note_list, date, location)
-
-    def pack_lds(self, sql, data):
-        """Pack raw LDS ordinance row data into a serialized tuple."""
-        (handle, type_, place, famc, temple, status, private) = data
-        citation_list = self.get_citation_list(sql, "lds", handle)
-        note_list = self.get_note_list(sql, "lds", handle)
-        date_handle = self.get_link(sql, "lds", handle, "date")
-        date = self.get_date(sql, date_handle)
-        return (citation_list, note_list, date, type_, place, famc, temple, status, bool(private))
-
-    def pack_surnames(self, sql, data):
-        """Pack raw surname row data into a serialized tuple."""
-        (
-            _handle,
-            surname,
-            prefix,
-            primary_surname,
-            origin_type0,
-            origin_type1,
-            connector,
-        ) = data
-        return (
-            surname,
-            prefix,
-            bool(primary_surname),
-            (origin_type0, origin_type1),
-            connector,
-        )
-
-    def pack_media_ref(self, sql, data):
-        """Pack raw media_ref row data into a serialized tuple."""
-        (
-            handle,
-            ref,
-            role0,
-            role1,
-            role2,
-            role3,
-            private,
-        ) = data
-        citation_list = self.get_citation_list(sql, "media_ref", handle)
-        note_list = self.get_note_list(sql, "media_ref", handle)
-        attribute_list = self.get_attribute_list(sql, "media_ref", handle)
-        if role0 == role1 == role2 == role3 == -1:
-            role = None
-        else:
-            role = (role0, role1, role2, role3)
-        return (bool(private), citation_list, note_list, attribute_list, ref, role)
-
-    def pack_repository_ref(self, sql, data):
-        """Pack raw repository_ref row data into a serialized tuple."""
-        (
-            handle,
-            ref,
-            call_number,
-            source_media_type0,
-            source_media_type1,
-            private,
-        ) = data
-        note_list = self.get_note_list(sql, "repository_ref", handle)
-        return (
-            note_list,
-            ref,
-            call_number,
-            (source_media_type0, source_media_type1),
-            bool(private),
-        )
-
-    def pack_url(self, sql, data):
-        """Pack raw url row data into a serialized tuple."""
-        (
-            _handle,
-            path,
-            desc,
-            type0,
-            type1,
-            private,
-        ) = data
-        return (bool(private), path, desc, (type0, type1))
-
-    def pack_event_ref(self, sql, data):
-        """Pack raw event_ref row data into a serialized tuple."""
-        (
-            handle,
-            ref,
-            role0,
-            role1,
-            private,
-        ) = data
-        note_list = self.get_note_list(sql, "event_ref", handle)
-        attribute_list = self.get_attribute_list(sql, "event_ref", handle)
-        citation_list = self.get_citation_list(sql, "event_ref", handle)
-        role = (role0, role1)
-        return (bool(private), citation_list, note_list, attribute_list, ref, role)
-
-    def pack_citation(self, sql, data):
-        """Pack raw citation row data into a serialized tuple."""
-        (
-            handle,
-            ref,
-            confidence,
-            page,
-            private,
-        ) = data
-        date_handle = self.get_link(sql, "citation", handle, "date")
-        date = self.get_date(sql, date_handle)
-        note_list = self.get_note_list(sql, "citation", handle)
-        return (date, bool(private), note_list, confidence, ref, page)
-
-    def pack_source(self, sql, data):
-        """Pack raw source row data into a serialized tuple."""
-        (
-            handle,
-            gid,
-            title,
-            author,
-            pubinfo,
-            abbrev,
-            change,
-            private,
-        ) = data
-        note_list = self.get_note_list(sql, "source", handle)
-        media_list = self.get_media_list(sql, "source", handle)
-        reporef_list = self.get_repository_ref_list(sql, "source", handle)
-        datamap = self.get_datamap_list(sql, "source", handle)
-        return (
-            handle,
-            gid,
-            title,
-            author,
-            pubinfo,
-            note_list,
-            media_list,
-            abbrev,
-            change,
-            datamap,
-            reporef_list,
-            bool(private),
-        )
-
-    def get_location(self, sql, from_type: str, from_handle: str, with_parish: bool):
-        """Return a single serialized location tuple for a parent object."""
-        handle = self.get_link(sql, from_type, from_handle, "location")
-        if handle:
-            results = sql.query(
-                """select * from location where handle = ?;""", handle
-            )
-            if len(results) == 1:
-                return self.pack_location(sql, results[0], with_parish)
-        return None
-
-    def get_names(self, sql, from_type: str, from_handle: str, primary: bool):
-        """
-        Return the primary Name object or a list of alternate Name objects.
-
-        When primary is True, a single serialized name tuple is returned.
-        When primary is False, a list of serialized name tuples is returned.
-        """
-        handles = self.get_links(sql, from_type, from_handle, "name")
-        names = []
-        for handle in handles:
-            results = sql.query(
-                "select * from name where handle = ? and primary_name = ?;",
-                handle,
-                primary,
-            )
-            if len(results) > 0:
-                names += results
-        result = [self.pack_name(sql, name) for name in names]
-        if primary:
-            if len(result) == 1:
-                return result[0]
-            elif len(result) == 0:
-                return Name().serialize()
-            else:
-                raise Exception("too many primary names")
-        else:
-            return result
-
-    def pack_name(self, sql, data):
-        """Pack raw name row data into a serialized tuple."""
-        # unpack name from SQL table:
-        (
-            handle,
-            _primary_name,
-            private,
-            first_name,
-            suffix,
-            title,
-            name_type0,
-            name_type1,
-            group_as,
-            sort_as,
-            display_as,
-            call,
-            nick,
-            famnick,
-        ) = data
-        # build up a GRAMPS object:
-        surname_list = self.get_surname_list(sql, handle)
-        citation_list = self.get_citation_list(sql, "name", handle)
-        note_list = self.get_note_list(sql, "name", handle)
-        date_handle = self.get_link(sql, "name", handle, "date")
-        date = self.get_date(sql, date_handle)
-        return (
-            bool(private),
-            citation_list,
-            note_list,
-            date,
-            first_name,
-            surname_list,
-            suffix,
-            title,
-            (name_type0, name_type1),
-            group_as,
-            sort_as,
-            display_as,
-            call,
-            nick,
-            famnick,
-        )
-
-    def pack_location(self, sql, data, with_parish: bool):
-        """Pack raw location row data into a serialized tuple."""
-        (_handle, street, locality, city, county, state, country, postal, phone, parish) = (
-            data
-        )
-        if with_parish:
-            return (
-                (street, locality, city, county, state, country, postal, phone),
-                parish,
-            )
-        else:
-            return (street, locality, city, county, state, country, postal, phone)
-
-    def get_place_from_handle(self, sql, ref_handle: str | None) -> str:
-        """Return the place handle for a given place row handle, or ''."""
-        if ref_handle:
-            place_row = sql.query(
-                "select * from place where handle = ?;", ref_handle
-            )
-            if len(place_row) == 1:
-                # return just the handle here:
-                return place_row[0][0]
-            elif len(place_row) == 0:
-                LOG.error(
-                    "get_place_from_handle('%s'), no such handle.", ref_handle
-                )
-            else:
-                LOG.error(
-                    "get_place_from_handle('%s') should be unique; returned %d records.",
-                    ref_handle,
-                    len(place_row),
-                )
-        return ""
-
-    def get_alt_place_name_list(self, sql, handle: str):
-        """Return a list of alternate place name tuples for a place."""
-        place_name_list = sql.query(
-            """select * from place_name where from_handle = ?;""", handle
-        )
-        retval = []
-        for place_name_data in place_name_list:
-            ref_handle, handle, value, lang = place_name_data
-            date_handle = self.get_link(sql, "place_name", ref_handle, "date")
-            date = self.get_date(sql, date_handle)
-            retval.append((value, date, lang))
-        return retval
-
-    def get_place_ref_list(self, sql, handle: str):
-        """Return a list of place-ref tuples for a place."""
-        # place_ref_list = Enclosed by:  [('4ECKQCWCLO5YIHXEXC', None)]
-        # [(handle, date)...]
-        place_ref_list = sql.query(
-            """select * from place_ref where from_place_handle = ?;""", handle
-        )
-        retval = []
-        for place_ref_data in place_ref_list:
-            ref_handle, handle, to_place_handle = place_ref_data
-            date_handle = self.get_link(sql, "place_ref", ref_handle, "date")
-            date = self.get_date(sql, date_handle)
-            retval.append((to_place_handle, date))
-        return retval
-
     def get_link(self, sql, from_type: str, from_handle: str, to_link: str) -> str | None:
-        """
-        Return a single link handle from the link table, or None.
-        """
+        """Return a single linked handle, or None."""
         if from_handle is None:
             return None
-        assert type(from_handle) == str, "from_handle is wrong type: %s is %s" % (
-            from_handle,
-            type(from_handle),
-        )
         rows = self.get_links(sql, from_type, from_handle, to_link)
         if len(rows) == 1:
             return rows[0]
         elif len(rows) > 1:
             LOG.error(
                 "too many links %s:%s -> %s (%d)",
-                from_type,
-                from_handle,
-                to_link,
-                len(rows),
+                from_type, from_handle, to_link, len(rows),
             )
         return None
 
-    def get_links(self, sql, from_type: str, from_handle: str, to_link: str):
-        """
-        Return a list of handles from the link table (possibly empty).
-        """
+    def get_links(self, sql, from_type: str, from_handle: str, to_link: str) -> list:
+        """Return all linked handles (possibly empty)."""
         results = sql.query(
-            """select to_handle from link where from_type = ? and """
-            """from_handle = ? and to_type = ?;""",
-            from_type,
-            from_handle,
-            to_link,
+            "select to_handle from link where from_type = ? "
+            "and from_handle = ? and to_type = ?;",
+            from_type, from_handle, to_link,
         )
-        return [result[0] for result in results]
+        return [r[0] for r in results]
 
-    def get_date(self, sql, handle: str | None):
-        """Return a serialized date tuple for a given date handle, or None."""
-        assert type(handle) in [str, type(None)], "handle is wrong type: %s" % handle
-        if handle:
-            rows = sql.query("select * from date where handle = ?;", handle)
-            if len(rows) == 1:
+    # -----------------------------------------------
+    # DataDict builders for sub-objects
+    # -----------------------------------------------
+
+    def get_date(self, sql, handle: str | None) -> dict | None:
+        """Return a Date DataDict for *handle*, or None."""
+        if not handle:
+            return None
+        rows = sql.query("select * from date where handle = ?;", handle)
+        if not rows:
+            return None
+        (
+            _handle, calendar, modifier, quality,
+            day1, month1, year1, slash1,
+            day2, month2, year2, slash2,
+            text, sortval, newyear,
+        ) = rows[0]
+        if day2 == month2 == year2 == 0 and not slash2:
+            dateval = [day1, month1, year1, bool(slash1)]
+        else:
+            dateval = [day1, month1, year1, bool(slash1),
+                       day2, month2, year2, bool(slash2)]
+        return {
+            "_class": "Date",
+            "calendar": calendar,
+            "modifier": modifier,
+            "quality": quality,
+            "dateval": dateval,
+            "text": text,
+            "sortval": sortval,
+            "newyear": newyear,
+        }
+
+    def get_attribute_list(self, sql, from_type: str, from_handle: str) -> list:
+        """Return a list of Attribute DataDicts for *from_handle*."""
+        result = []
+        for handle in self.get_links(sql, from_type, from_handle, "attribute"):
+            rows = sql.query("select * from attribute where handle = ?;", handle)
+            for row in rows:
+                (handle, the_type0, the_type1, value, private) = row
+                result.append({
+                    "_class": "Attribute",
+                    "private": bool(private),
+                    "citation_list": self.get_links(sql, "attribute", handle, "citation"),
+                    "note_list": self.get_links(sql, "attribute", handle, "note"),
+                    "type": _gtype("AttributeType", the_type0, the_type1),
+                    "value": value,
+                })
+        return result
+
+    def get_src_attribute_list(self, sql, from_handle: str) -> list:
+        """Return a list of SrcAttribute DataDicts from the datamap table."""
+        result = []
+        rows = sql.query(
+            "select from_handle, the_type0, the_type1, value_field, private "
+            "from datamap where from_handle = ?;", from_handle
+        )
+        for (_fh, the_type0, the_type1, value_field, private) in (rows or []):
+            result.append({
+                "_class": "SrcAttribute",
+                "private": bool(private),
+                "type": _gtype("SrcAttributeType", the_type0, the_type1),
+                "value": value_field,
+            })
+        return result
+
+    def get_child_ref_list(self, sql, from_type: str, from_handle: str) -> list:
+        """Return a list of ChildRef DataDicts for *from_handle*."""
+        result = []
+        for handle in self.get_links(sql, from_type, from_handle, "child_ref"):
+            rows = sql.query("select * from child_ref where handle = ?;", handle)
+            for row in rows:
+                (handle, ref, frel0, frel1, mrel0, mrel1, private) = row
+                result.append({
+                    "_class": "ChildRef",
+                    "private": bool(private),
+                    "citation_list": self.get_links(sql, "child_ref", handle, "citation"),
+                    "note_list": self.get_links(sql, "child_ref", handle, "note"),
+                    "ref": ref,
+                    "frel": _gtype("ChildRefType", frel0, frel1),
+                    "mrel": _gtype("ChildRefType", mrel0, mrel1),
+                })
+        return result
+
+    def get_event_ref_list(self, sql, from_type: str, from_handle: str) -> list:
+        """Return a list of EventRef DataDicts for *from_handle*."""
+        result = []
+        for handle in self.get_links(sql, from_type, from_handle, "event_ref"):
+            rows = sql.query("select * from event_ref where handle = ?;", handle)
+            for row in rows:
+                (handle, ref, role0, role1, private) = row
+                result.append({
+                    "_class": "EventRef",
+                    "private": bool(private),
+                    "citation_list": self.get_links(sql, "event_ref", handle, "citation"),
+                    "note_list": self.get_links(sql, "event_ref", handle, "note"),
+                    "attribute_list": self.get_attribute_list(sql, "event_ref", handle),
+                    "ref": ref,
+                    "role": _gtype("EventRoleType", role0, role1),
+                })
+        return result
+
+    def get_person_ref_list(self, sql, from_type: str, from_handle: str) -> list:
+        """Return a list of PersonRef DataDicts for *from_handle*."""
+        result = []
+        for handle in self.get_links(sql, from_type, from_handle, "person_ref"):
+            rows = sql.query("select * from person_ref where handle = ?;", handle)
+            for row in rows:
+                (handle, ref, description, private) = row
+                result.append({
+                    "_class": "PersonRef",
+                    "private": bool(private),
+                    "citation_list": self.get_links(sql, "person_ref", handle, "citation"),
+                    "note_list": self.get_links(sql, "person_ref", handle, "note"),
+                    "ref": ref,
+                    "rel": description,
+                })
+        return result
+
+    def get_media_list(self, sql, from_type: str, from_handle: str) -> list:
+        """Return a list of MediaRef DataDicts for *from_handle*."""
+        result = []
+        for handle in self.get_links(sql, from_type, from_handle, "media_ref"):
+            rows = sql.query("select * from media_ref where handle = ?;", handle)
+            for row in rows:
+                (handle, ref, role0, role1, role2, role3, private) = row
+                rect = None if role0 == role1 == role2 == role3 == -1 \
+                    else [role0, role1, role2, role3]
+                result.append({
+                    "_class": "MediaRef",
+                    "private": bool(private),
+                    "citation_list": self.get_links(sql, "media_ref", handle, "citation"),
+                    "note_list": self.get_links(sql, "media_ref", handle, "note"),
+                    "attribute_list": self.get_attribute_list(sql, "media_ref", handle),
+                    "ref": ref,
+                    "rect": rect,
+                })
+        return result
+
+    def get_url_list(self, sql, from_type: str, from_handle: str) -> list:
+        """Return a list of Url DataDicts for *from_handle*."""
+        result = []
+        for handle in self.get_links(sql, from_type, from_handle, "url"):
+            rows = sql.query("select * from url where handle = ?;", handle)
+            for row in rows:
+                (_handle, path, desc, type0, type1, private) = row
+                result.append({
+                    "_class": "Url",
+                    "private": bool(private),
+                    "path": path,
+                    "desc": desc,
+                    "type": _gtype("UrlType", type0, type1),
+                })
+        return result
+
+    def get_repository_ref_list(self, sql, from_type: str, from_handle: str) -> list:
+        """Return a list of RepoRef DataDicts for *from_handle*."""
+        result = []
+        for handle in self.get_links(sql, from_type, from_handle, "repository_ref"):
+            rows = sql.query(
+                "select * from repository_ref where handle = ?;", handle
+            )
+            for row in rows:
+                (handle, ref, call_number, smt0, smt1, private) = row
+                result.append({
+                    "_class": "RepoRef",
+                    "private": bool(private),
+                    "note_list": self.get_links(sql, "repository_ref", handle, "note"),
+                    "ref": ref,
+                    "call_number": call_number,
+                    "media_type": _gtype("SourceMediaType", smt0, smt1),
+                })
+        return result
+
+    def get_lds_list(self, sql, from_type: str, from_handle: str) -> list:
+        """Return a list of LdsOrd DataDicts for *from_handle*."""
+        result = []
+        for handle in self.get_links(sql, from_type, from_handle, "lds"):
+            rows = sql.query("select * from lds where handle = ?;", handle)
+            for row in rows:
+                (handle, type_, place, famc, temple, status, private) = row
+                date_handle = self.get_link(sql, "lds", handle, "date")
+                result.append({
+                    "_class": "LdsOrd",
+                    "citation_list": self.get_links(sql, "lds", handle, "citation"),
+                    "note_list": self.get_links(sql, "lds", handle, "note"),
+                    "date": self.get_date(sql, date_handle),
+                    # type_ is stored as a plain int in the SQLite schema
+                    "type": type_,
+                    "place": place,
+                    "famc": famc,
+                    "temple": temple,
+                    "status": status,
+                    "private": bool(private),
+                })
+        return result
+
+    def get_location(self, sql, handle: str) -> dict | None:
+        """Return a Location DataDict for *handle*, or None."""
+        rows = sql.query("select * from location where handle = ?;", handle)
+        if not rows:
+            return None
+        (_handle, street, locality, city, county, state, country, postal, phone, parish) = rows[0]
+        return {
+            "_class": "Location",
+            "street": street or "",
+            "locality": locality or "",
+            "city": city or "",
+            "county": county or "",
+            "state": state or "",
+            "country": country or "",
+            "postal": postal or "",
+            "phone": phone or "",
+            "parish": parish or "",
+        }
+
+    def get_address_list(self, sql, from_type: str, from_handle: str) -> list:
+        """Return a list of Address DataDicts for *from_handle*.
+
+        In Gramps 6.1, Address carries location fields directly.  These are
+        stored in the linked location row and merged back into the Address dict
+        on import.
+        """
+        result = []
+        for handle in self.get_links(sql, from_type, from_handle, "address"):
+            rows = sql.query("select * from address where handle = ?;", handle)
+            for row in rows:
+                (handle, private) = row
+                date_handle = self.get_link(sql, "address", handle, "date")
+                loc_handle = self.get_link(sql, "address", handle, "location")
+                loc = self.get_location(sql, loc_handle) if loc_handle else {}
+                addr = {
+                    "_class": "Address",
+                    "private": bool(private),
+                    "citation_list": self.get_links(sql, "address", handle, "citation"),
+                    "note_list": self.get_links(sql, "address", handle, "note"),
+                    "date": self.get_date(sql, date_handle),
+                    "street": (loc or {}).get("street", ""),
+                    "locality": (loc or {}).get("locality", ""),
+                    "city": (loc or {}).get("city", ""),
+                    "county": (loc or {}).get("county", ""),
+                    "state": (loc or {}).get("state", ""),
+                    "country": (loc or {}).get("country", ""),
+                    "postal": (loc or {}).get("postal", ""),
+                    "phone": (loc or {}).get("phone", ""),
+                }
+                result.append(addr)
+        return result
+
+    def get_alt_location_list(self, sql, from_type: str, from_handle: str) -> list:
+        """Return a list of Location DataDicts for Place alt_loc."""
+        result = []
+        for handle in self.get_links(sql, from_type, from_handle, "location"):
+            loc = self.get_location(sql, handle)
+            if loc:
+                result.append(loc)
+        return result
+
+    def get_surname_list(self, sql, name_handle: str) -> list:
+        """Return a list of Surname DataDicts for *name_handle*."""
+        rows = sql.query(
+            "select s.* from surname s inner join link l "
+            "ON l.to_handle = s.handle where l.from_handle = ?;",
+            name_handle,
+        )
+        result = []
+        for row in rows:
+            (_handle, surname, prefix, primary_surname, ot0, ot1, connector) = row
+            result.append({
+                "_class": "Surname",
+                "surname": surname,
+                "prefix": prefix,
+                "primary": bool(primary_surname),
+                "origintype": _gtype("NameOriginType", ot0, ot1),
+                "connector": connector,
+            })
+        return result
+
+    def get_names(self, sql, from_type: str, from_handle: str, primary: bool):
+        """
+        Return the primary Name DataDict or a list of alternate Name DataDicts.
+        """
+        handles = self.get_links(sql, from_type, from_handle, "name")
+        result = []
+        for handle in handles:
+            rows = sql.query(
+                "select * from name where handle = ? and primary_name = ?;",
+                handle, primary,
+            )
+            for row in rows:
                 (
-                    handle,
-                    calendar,
-                    modifier,
-                    quality,
-                    day1,
-                    month1,
-                    year1,
-                    slash1,
-                    day2,
-                    month2,
-                    year2,
-                    slash2,
-                    text,
-                    sortval,
-                    newyear,
-                ) = rows[0]
-                dateval = (
-                    day1,
-                    month1,
-                    year1,
-                    bool(slash1),
-                    day2,
-                    month2,
-                    year2,
-                    bool(slash2),
-                )
-                if day2 == month2 == year2 == 0 and not slash2:
-                    dateval = day1, month1, year1, bool(slash1)
-                return (calendar, modifier, quality, dateval, text, sortval, newyear)
-            elif len(rows) == 0:
-                return None
-            else:
-                LOG.error("wrong number of dates: %s", rows)
-        return None
+                    handle, _primary_flag, priv, first_name, suffix, title,
+                    name_type0, name_type1, group_as, sort_as, display_as,
+                    call, nick, famnick,
+                ) = row
+                date_handle = self.get_link(sql, "name", handle, "date")
+                result.append({
+                    "_class": "Name",
+                    "private": bool(priv),
+                    "citation_list": self.get_links(sql, "name", handle, "citation"),
+                    "note_list": self.get_links(sql, "name", handle, "note"),
+                    "date": self.get_date(sql, date_handle),
+                    "first_name": first_name,
+                    "surname_list": self.get_surname_list(sql, handle),
+                    "suffix": suffix,
+                    "title": title,
+                    "type": _gtype("NameType", name_type0, name_type1),
+                    "group_as": group_as,
+                    "sort_as": sort_as,
+                    "display_as": display_as,
+                    "call": call,
+                    "nick": nick,
+                    "famnick": famnick,
+                })
+        if primary:
+            return result[0] if result else data_to_object({"_class": "Name"})
+        return result
+
+    def get_alt_place_name_list(self, sql, handle: str) -> list:
+        """Return a list of PlaceName DataDicts for alternate place names."""
+        rows = sql.query(
+            "select * from place_name where from_handle = ?;", handle
+        )
+        result = []
+        for row in rows:
+            (ref_handle, _from_handle, value, lang) = row
+            date_handle = self.get_link(sql, "place_name", ref_handle, "date")
+            result.append({
+                "_class": "PlaceName",
+                "value": value,
+                "date": self.get_date(sql, date_handle),
+                "lang": lang,
+            })
+        return result
+
+    def get_place_ref_list(self, sql, handle: str) -> list:
+        """Return a list of PlaceRef DataDicts for a place."""
+        rows = sql.query(
+            "select * from place_ref where from_place_handle = ?;", handle
+        )
+        result = []
+        for row in rows:
+            (ref_handle, _from_handle, to_place_handle) = row
+            date_handle = self.get_link(sql, "place_ref", ref_handle, "date")
+            result.append({
+                "_class": "PlaceRef",
+                "ref": to_place_handle,
+                "date": self.get_date(sql, date_handle),
+            })
+        return result
+
+    # -----------------------------------------------
+    # Main import loop
+    # -----------------------------------------------
 
     def process(self) -> None:
         """Process the SQL file and import all objects into the Gramps database."""
@@ -734,431 +560,328 @@ class SQLReader(object):
         )
         with DbTxn(_("CSV import"), self.db, batch=True) as self.trans:
             self.db.disable_signals()
-            count = 0.0
             self.t = time.time()
-            self._process(count, total, sql)
+            self._process(0.0, total, sql)
         sql.db.commit()
         sql.db.close()
-        return None
 
     def _process(self, count: float, total: int, sql) -> None:
         """Import all object types from the SQL database into Gramps."""
+
         # ---------------------------------
-        # Process note
+        # Notes
         # ---------------------------------
-        notes = sql.query("""select * from note;""")
-        for note in notes:
-            (
-                handle,
-                gid,
-                text,
-                _format,
-                note_type1,
-                note_type2,
-                change,
-                private,
-            ) = note
-            styled_text = [text, []]
-            markups = sql.query(
-                """select * from link where from_handle = ? """
-                """and to_type = 'markup';""",
-                handle,
+        for note in sql.query("select * from note;"):
+            (handle, gid, text, format_, note_type1, note_type2, change, private) = note
+
+            markup_rows = sql.query(
+                "select to_handle from link where from_handle = ? "
+                "and to_type = 'markup';", handle,
             )
-            for markup_link in markups:
-                _from_type, _from_handle, _to_type, to_handle = markup_link
+            tags_list = []
+            for (to_handle,) in (markup_rows or []):
                 markup_detail = sql.query(
-                    """select * from markup where handle = ?;""", to_handle
+                    "select * from markup where handle = ?;", to_handle
                 )
-                for markup in markup_detail:
-                    (
-                        _mhandle,
-                        markup0,
-                        markup1,
-                        value,
-                        start_stop_list,
-                    ) = markup
+                for (_mh, markup0, markup1, value, start_stop_list) in (markup_detail or []):
                     ss_list = eval(start_stop_list)
-                    styled_text[1] += [((markup0, markup1), value, ss_list)]
+                    tags_list.append({
+                        "_class": "StyledTextTag",
+                        "name": _gtype("StyledTextTagType", markup0, markup1),
+                        "value": value,
+                        "ranges": ss_list,
+                    })
 
-            tags = self.get_links(sql, "note", handle, "tag")
-
-            g_note = Note()
-            g_note.unserialize(
-                (
-                    handle,
-                    gid,
-                    styled_text,
-                    _format,
-                    (note_type1, note_type2),
-                    change,
-                    tags,
-                    bool(private),
-                )
-            )
-            self.db.add_note(g_note, self.trans)
+            raw = {
+                "_class": "Note",
+                "handle": handle,
+                "gramps_id": gid,
+                "text": {
+                    "_class": "StyledText",
+                    "string": text,
+                    "tags": tags_list,
+                },
+                "format": format_,
+                "type": _gtype("NoteType", note_type1, note_type2),
+                "change": change,
+                "tag_list": self.get_links(sql, "note", handle, "tag"),
+                "private": bool(private),
+            }
+            self.db.add_note(data_to_object(raw), self.trans)
             count += 1
             self.callback(100 * count / total)
 
         # ---------------------------------
-        # Process event
+        # Events
         # ---------------------------------
-        events = sql.query("""select * from event;""")
-        for event in events:
+        for event in sql.query("select * from event;"):
             (handle, gid, the_type0, the_type1, description, change, private) = event
-
-            note_list = self.get_note_list(sql, "event", handle)
-            citation_list = self.get_citation_list(sql, "event", handle)
-            media_list = self.get_media_list(sql, "event", handle)
-            attribute_list = self.get_attribute_list(sql, "event", handle)
-
             date_handle = self.get_link(sql, "event", handle, "date")
-            date = self.get_date(sql, date_handle)
-
             place_handle = self.get_link(sql, "event", handle, "place")
-            place = self.get_place_from_handle(sql, place_handle)
 
-            tags = self.get_links(sql, "event", handle, "tag")
-            data = (
-                handle,
-                gid,
-                (the_type0, the_type1),
-                date,
-                description,
-                place,
-                citation_list,
-                note_list,
-                media_list,
-                attribute_list,
-                change,
-                tags,
-                bool(private),
-            )
-
-            g_event = Event()
-            g_event.unserialize(data)
-            self.db.add_event(g_event, self.trans)
-
+            raw = {
+                "_class": "Event",
+                "handle": handle,
+                "gramps_id": gid,
+                "type": _gtype("EventType", the_type0, the_type1),
+                "date": self.get_date(sql, date_handle),
+                "description": description,
+                "place": place_handle or "",
+                "citation_list": self.get_links(sql, "event", handle, "citation"),
+                "note_list": self.get_links(sql, "event", handle, "note"),
+                "media_list": self.get_media_list(sql, "event", handle),
+                "attribute_list": self.get_attribute_list(sql, "event", handle),
+                "change": change,
+                "tag_list": self.get_links(sql, "event", handle, "tag"),
+                "private": bool(private),
+            }
+            self.db.add_event(data_to_object(raw), self.trans)
             count += 1
             self.callback(100 * count / total)
 
         # ---------------------------------
-        # Process person
+        # Persons
         # ---------------------------------
         people = sql.query(
-            """select handle, gid, gender, death_ref_handle, birth_ref_handle,
-                      change, private, familysearch_sync from person;"""
+            "select handle, gid, gender, death_ref_handle, birth_ref_handle, "
+            "change, private, familysearch_sync from person;"
         )
-        for person_row in people:
+        for person_row in (people or []):
             if person_row is None:
                 continue
-            # Column order matches the SELECT above
             if len(person_row) == 8:
-                (
-                    handle,
-                    gid,
-                    gender,
-                    death_ref_handle,
-                    birth_ref_handle,
-                    change,
-                    private,
-                    familysearch_sync_json,
-                ) = person_row
+                (handle, gid, gender, death_ref_handle, birth_ref_handle,
+                 change, private, familysearch_sync_json) = person_row
             else:
-                # Older schema without familysearch_sync column
-                (
-                    handle,
-                    gid,
-                    gender,
-                    death_ref_handle,
-                    birth_ref_handle,
-                    change,
-                    private,
-                ) = person_row
+                (handle, gid, gender, death_ref_handle, birth_ref_handle,
+                 change, private) = person_row
                 familysearch_sync_json = None
 
-            primary_name_data = self.get_names(sql, "person", handle, True)  # one
-            alternate_names_data = self.get_names(sql, "person", handle, False)
             event_ref_list = self.get_event_ref_list(sql, "person", handle)
-            family_list = self.get_family_list(sql, "person", handle)
-            parent_family_list = self.get_parent_family_list(sql, "person", handle)
-            media_list = self.get_media_list(sql, "person", handle)
-            address_list = self.get_address_list(sql, "person", handle, with_parish=False)
-            attribute_list = self.get_attribute_list(sql, "person", handle)
-            urls = self.get_url_list(sql, "person", handle)
-            lds_ord_list = self.get_lds_list(sql, "person", handle)
-            pcitation_list = self.get_citation_list(sql, "person", handle)
-            pnote_list = self.get_note_list(sql, "person", handle)
-            person_ref_list = self.get_person_ref_list(sql, "person", handle)
-            death_ref_index = lookup(death_ref_handle, event_ref_list)
-            birth_ref_index = lookup(birth_ref_handle, event_ref_list)
-            tags = self.get_links(sql, "person", handle, "tag")
 
-            # Build the Person object directly by attribute assignment,
-            # avoiding positional tuple unpacking of serialize() output.
-            g_pers = Person()
-            g_pers.handle = handle
-            g_pers.gramps_id = gid
-            g_pers.gender = int(gender)
-            g_pers.primary_name.unserialize(primary_name_data)
-            g_pers.alternate_names = [
-                Name().unserialize(n) for n in alternate_names_data
-            ]
-            g_pers.death_ref_index = death_ref_index
-            g_pers.birth_ref_index = birth_ref_index
-            g_pers.event_ref_list = [EventRef().unserialize(er) for er in event_ref_list]
-            g_pers.family_list = list(family_list)
-            g_pers.parent_family_list = list(parent_family_list)
-            g_pers.media_list = [MediaRef().unserialize(m) for m in media_list]
-            g_pers.address_list = [Address().unserialize(a) for a in address_list]
-            g_pers.attribute_list = [Attribute().unserialize(a) for a in attribute_list]
-            g_pers.urls = [Url().unserialize(u) for u in urls]
-            g_pers.lds_ord_list = [LdsOrd().unserialize(lo) for lo in lds_ord_list]
-            g_pers.citation_list = list(pcitation_list)
-            g_pers.note_list = list(pnote_list)
-            g_pers.change = int(change)
-            g_pers.tag_list = list(tags)
-            g_pers.private = bool(private)
-            g_pers.person_ref_list = [PersonRef().unserialize(pr) for pr in person_ref_list]
-
-            # familysearch_sync (Gramps 6.1+): restore from JSON if present
-            if familysearch_sync_json:
-                g_pers.familysearch_sync.unserialize(json.loads(familysearch_sync_json))
+            raw = {
+                "_class": "Person",
+                "handle": handle,
+                "gramps_id": gid,
+                "gender": int(gender),
+                "primary_name": self.get_names(sql, "person", handle, True),
+                "alternate_names": self.get_names(sql, "person", handle, False),
+                "death_ref_index": lookup(death_ref_handle, event_ref_list),
+                "birth_ref_index": lookup(birth_ref_handle, event_ref_list),
+                "event_ref_list": event_ref_list,
+                "family_list": self.get_links(sql, "person", handle, "family"),
+                "parent_family_list": self.get_links(sql, "person", handle, "parent_family"),
+                "media_list": self.get_media_list(sql, "person", handle),
+                "address_list": self.get_address_list(sql, "person", handle),
+                "attribute_list": self.get_attribute_list(sql, "person", handle),
+                "urls": self.get_url_list(sql, "person", handle),
+                "lds_ord_list": self.get_lds_list(sql, "person", handle),
+                "citation_list": self.get_links(sql, "person", handle, "citation"),
+                "note_list": self.get_links(sql, "person", handle, "note"),
+                "change": int(change),
+                "tag_list": self.get_links(sql, "person", handle, "tag"),
+                "private": bool(private),
+                "person_ref_list": self.get_person_ref_list(sql, "person", handle),
+                # familysearch_sync: use stored JSON or default empty state
+                "familysearch_sync": (
+                    json.loads(familysearch_sync_json) if familysearch_sync_json
+                    else {
+                        "_class": "FamilySearchSync",
+                        "fsid": None, "is_root": False,
+                        "status_ts": None, "confirmed_ts": None,
+                        "gramps_modified_ts": None, "fs_modified_ts": None,
+                        "essential_conflict": False, "conflict": False,
+                    }
+                ),
+            }
+            g_pers = data_to_object(raw)
 
             self.db.add_person(g_pers, self.trans)
             count += 1
             self.callback(100 * count / total)
 
         # ---------------------------------
-        # Process family
+        # Families
         # ---------------------------------
-        families = sql.query("""select * from family;""")
-        for family in families:
-            (handle, gid, father_handle, mother_handle, the_type0, the_type1, change, private) = (
-                family
-            )
+        for family in sql.query("select * from family;"):
+            (handle, gid, father_handle, mother_handle,
+             the_type0, the_type1, change, private) = family
 
-            child_ref_list = self.get_child_ref_list(sql, "family", handle)
-            event_ref_list = self.get_event_ref_list(sql, "family", handle)
-            media_list = self.get_media_list(sql, "family", handle)
-            attribute_list = self.get_attribute_list(sql, "family", handle)
-            lds_seal_list = self.get_lds_list(sql, "family", handle)
-            citation_list = self.get_citation_list(sql, "family", handle)
-            note_list = self.get_note_list(sql, "family", handle)
-            tags = self.get_links(sql, "family", handle, "tag")
-
-            data = (
-                handle,
-                gid,
-                father_handle,
-                mother_handle,
-                child_ref_list,
-                (the_type0, the_type1),
-                event_ref_list,
-                media_list,
-                attribute_list,
-                lds_seal_list,
-                citation_list,
-                note_list,
-                change,
-                tags,
-                private,
-            )
-            g_fam = Family()
-            g_fam.unserialize(data)
-            self.db.add_family(g_fam, self.trans)
-
+            raw = {
+                "_class": "Family",
+                "handle": handle,
+                "gramps_id": gid,
+                "father_handle": father_handle,
+                "mother_handle": mother_handle,
+                "child_ref_list": self.get_child_ref_list(sql, "family", handle),
+                "type": _gtype("FamilyRelType", the_type0, the_type1),
+                "event_ref_list": self.get_event_ref_list(sql, "family", handle),
+                "media_list": self.get_media_list(sql, "family", handle),
+                "attribute_list": self.get_attribute_list(sql, "family", handle),
+                "lds_ord_list": self.get_lds_list(sql, "family", handle),
+                "citation_list": self.get_links(sql, "family", handle, "citation"),
+                "note_list": self.get_links(sql, "family", handle, "note"),
+                "change": change,
+                "tag_list": self.get_links(sql, "family", handle, "tag"),
+                "private": bool(private),
+            }
+            self.db.add_family(data_to_object(raw), self.trans)
             count += 1
             self.callback(100 * count / total)
 
         # ---------------------------------
-        # Process repository
+        # Repositories
         # ---------------------------------
-        repositories = sql.query("""select * from repository;""")
-        for repo in repositories:
+        for repo in sql.query("select * from repository;"):
             (handle, gid, the_type0, the_type1, name, change, private) = repo
 
-            note_list = self.get_note_list(sql, "repository", handle)
-            address_list = self.get_address_list(
-                sql, "repository", handle, with_parish=False
-            )
-            urls = self.get_url_list(sql, "repository", handle)
-            tags = self.get_links(sql, "repository", handle, "tag")
-            data = (
-                handle,
-                gid,
-                (the_type0, the_type1),
-                name,
-                note_list,
-                address_list,
-                urls,
-                change,
-                tags,
-                private,
-            )
-            g_rep = Repository()
-            g_rep.unserialize(data)
-            self.db.add_repository(g_rep, self.trans)
+            raw = {
+                "_class": "Repository",
+                "handle": handle,
+                "gramps_id": gid,
+                "type": _gtype("RepositoryType", the_type0, the_type1),
+                "name": name,
+                "note_list": self.get_links(sql, "repository", handle, "note"),
+                "address_list": self.get_address_list(sql, "repository", handle),
+                "urls": self.get_url_list(sql, "repository", handle),
+                "change": change,
+                "tag_list": self.get_links(sql, "repository", handle, "tag"),
+                "private": bool(private),
+            }
+            self.db.add_repository(data_to_object(raw), self.trans)
             count += 1
             self.callback(100 * count / total)
 
         # ---------------------------------
-        # Process place
+        # Places
         # ---------------------------------
-        places = sql.query("""select * from place;""")
-        for place in places:
+        for place in sql.query("select * from place;"):
             count += 1
-            (handle, gid, title, value, the_type0, the_type1, code, long, lat, lang, change, private) = (
-                place
-            )
+            (handle, gid, title, value, the_type0, the_type1,
+             code, long_, lat, lang, change, private) = place
 
-            alt_loc_list = self.get_location_list(
-                sql, "place_alt", handle, with_parish=True
-            )
-            urls = self.get_url_list(sql, "place", handle)
-            media_list = self.get_media_list(sql, "place", handle)
-            citation_list = self.get_citation_list(sql, "place", handle)
-            note_list = self.get_note_list(sql, "place", handle)
-            tags = self.get_links(sql, "place", handle, "tag")
-            place_type = (the_type0, the_type1)
-            alt_place_name_list = self.get_alt_place_name_list(sql, handle)
-            place_ref_list = self.get_place_ref_list(sql, handle)
-            data = (
-                handle,
-                gid,
-                title,
-                long,
-                lat,
-                place_ref_list,
-                PlaceName(value=value, lang=lang).serialize(),
-                alt_place_name_list,
-                place_type,
-                code,
-                alt_loc_list,
-                urls,
-                media_list,
-                citation_list,
-                note_list,
-                change,
-                tags,
-                private,
-            )
-            g_plac = Place()
-            g_plac.unserialize(data)
-            self.db.commit_place(g_plac, self.trans)
+            raw = {
+                "_class": "Place",
+                "handle": handle,
+                "gramps_id": gid,
+                "title": title,
+                "long": long_,
+                "lat": lat,
+                "placeref_list": self.get_place_ref_list(sql, handle),
+                "name": {
+                    "_class": "PlaceName",
+                    "value": value,
+                    "date": None,
+                    "lang": lang,
+                },
+                "alt_names": self.get_alt_place_name_list(sql, handle),
+                "place_type": _gtype("PlaceType", the_type0, the_type1),
+                "code": code,
+                "alt_loc": self.get_alt_location_list(sql, "place_alt", handle),
+                "urls": self.get_url_list(sql, "place", handle),
+                "media_list": self.get_media_list(sql, "place", handle),
+                "citation_list": self.get_links(sql, "place", handle, "citation"),
+                "note_list": self.get_links(sql, "place", handle, "note"),
+                "change": change,
+                "tag_list": self.get_links(sql, "place", handle, "tag"),
+                "private": bool(private),
+            }
+            self.db.commit_place(data_to_object(raw), self.trans)
             self.callback(100 * count / total)
 
         # ---------------------------------
-        # Process citation
+        # Citations
         # ---------------------------------
-        citations = sql.query("""select * from citation;""")
-        for citation in citations:
+        for citation in sql.query("select * from citation;"):
             (handle, gid, confidence, page, source_handle, change, private) = citation
             date_handle = self.get_link(sql, "citation", handle, "date")
-            date = self.get_date(sql, date_handle)
-            note_list = self.get_note_list(sql, "citation", handle)
-            media_list = self.get_media_list(sql, "citation", handle)
-            datamap = self.get_datamap_list(sql, "citation", handle)
-            tags = self.get_links(sql, "citation", handle, "tag")
-            data = (
-                handle,
-                gid,
-                date,
-                page,
-                confidence,
-                source_handle,
-                note_list,
-                media_list,
-                datamap,
-                change,
-                tags,
-                private,
-            )
-            g_cit = Citation()
-            g_cit.unserialize(data)
-            self.db.commit_citation(g_cit, self.trans)
+
+            raw = {
+                "_class": "Citation",
+                "handle": handle,
+                "gramps_id": gid,
+                "date": self.get_date(sql, date_handle),
+                "page": page,
+                "confidence": confidence,
+                "source_handle": source_handle,
+                "note_list": self.get_links(sql, "citation", handle, "note"),
+                "media_list": self.get_media_list(sql, "citation", handle),
+                "attribute_list": self.get_src_attribute_list(sql, handle),
+                "change": change,
+                "tag_list": self.get_links(sql, "citation", handle, "tag"),
+                "private": bool(private),
+            }
+            self.db.commit_citation(data_to_object(raw), self.trans)
             count += 1
             self.callback(100 * count / total)
 
         # ---------------------------------
-        # Process source
+        # Sources
         # ---------------------------------
-        sources = sql.query("""select * from source;""")
-        for source in sources:
+        for source in sql.query("select * from source;"):
             (handle, gid, title, author, pubinfo, abbrev, change, private) = source
-            note_list = self.get_note_list(sql, "source", handle)
-            media_list = self.get_media_list(sql, "source", handle)
-            datamap = self.get_datamap_list(sql, "source", handle)
-            reporef_list = self.get_repository_ref_list(sql, "source", handle)
-            tags = self.get_links(sql, "source", handle, "tag")
 
-            data = (
-                handle,
-                gid,
-                title,
-                author,
-                pubinfo,
-                note_list,
-                media_list,
-                abbrev,
-                change,
-                datamap,
-                reporef_list,
-                tags,
-                private,
-            )
-            g_src = Source()
-            g_src.unserialize(data)
-            self.db.commit_source(g_src, self.trans)
+            raw = {
+                "_class": "Source",
+                "handle": handle,
+                "gramps_id": gid,
+                "title": title,
+                "author": author,
+                "pubinfo": pubinfo,
+                "note_list": self.get_links(sql, "source", handle, "note"),
+                "media_list": self.get_media_list(sql, "source", handle),
+                "abbrev": abbrev,
+                "change": change,
+                "attribute_list": self.get_src_attribute_list(sql, handle),
+                "reporef_list": self.get_repository_ref_list(sql, "source", handle),
+                "tag_list": self.get_links(sql, "source", handle, "tag"),
+                "private": bool(private),
+            }
+            self.db.commit_source(data_to_object(raw), self.trans)
             count += 1
             self.callback(100 * count / total)
 
         # ---------------------------------
-        # Process media
+        # Media
         # ---------------------------------
-        media = sql.query("""select * from media;""")
-        for med in media:
+        for med in sql.query("select * from media;"):
             (handle, gid, path, mime, desc, checksum, change, private) = med
-
-            attribute_list = self.get_attribute_list(sql, "media", handle)
-            citation_list = self.get_citation_list(sql, "media", handle)
-            note_list = self.get_note_list(sql, "media", handle)
-
             date_handle = self.get_link(sql, "media", handle, "date")
-            date = self.get_date(sql, date_handle)
-            tags = self.get_links(sql, "media", handle, "tag")
 
-            data = (
-                handle,
-                gid,
-                path,
-                mime,
-                desc,
-                checksum,
-                attribute_list,
-                citation_list,
-                note_list,
-                change,
-                date,
-                tags,
-                private,
-            )
-            g_med = Media()
-            g_med.unserialize(data)
-            self.db.commit_media(g_med, self.trans)
+            raw = {
+                "_class": "Media",
+                "handle": handle,
+                "gramps_id": gid,
+                "path": path,
+                "mime": mime,
+                "desc": desc,
+                "checksum": checksum,
+                "attribute_list": self.get_attribute_list(sql, "media", handle),
+                "citation_list": self.get_links(sql, "media", handle, "citation"),
+                "note_list": self.get_links(sql, "media", handle, "note"),
+                "change": change,
+                "date": self.get_date(sql, date_handle),
+                "tag_list": self.get_links(sql, "media", handle, "tag"),
+                "private": bool(private),
+            }
+            self.db.commit_media(data_to_object(raw), self.trans)
             count += 1
             self.callback(100 * count / total)
 
         # ---------------------------------
-        # Process tag
+        # Tags
         # ---------------------------------
-        tags = sql.query("""select * from tag;""")
-        for tag in tags:
+        for tag in sql.query("select * from tag;"):
             (handle, name, color, priority, change) = tag
-
-            data = (handle, name, color, priority, change)
-            g_tag = Tag()
-            g_tag.unserialize(data)
-            self.db.commit_tag(g_tag, self.trans)
+            raw = {
+                "_class": "Tag",
+                "handle": handle,
+                "name": name,
+                "color": color,
+                "priority": priority,
+                "change": change,
+            }
+            self.db.commit_tag(data_to_object(raw), self.trans)
             count += 1
             self.callback(100 * count / total)
 
