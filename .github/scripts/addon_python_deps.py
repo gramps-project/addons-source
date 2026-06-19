@@ -65,8 +65,26 @@ _MOD_RE = re.compile(r"requires_mod\s*=\s*(\[[^\]]*\])")
 # (``pip install PIL`` → no such distribution; the package is ``Pillow``). Map
 # the known import→distribution cases so the derived install list resolves on
 # PyPI. Addons stay correct (import name); only the install side translates.
+#
+# Kept in step with Gramps' own install-time table, ``_IMPORT_TO_PYPI`` in
+# ``gramps/gen/utils/pypi.py`` (gramps PR #2308) — the authority Gramps will use
+# to install ``requires_mod`` deps in frozen/Flatpak/pip-less environments. The
+# entries below mirror that table so an addon declaring any of these import names
+# installs the same distribution in CI as Gramps does at runtime. Once #2308
+# merges, single-source this from that module rather than hand-mirroring it.
 _IMPORT_TO_DISTRIBUTION = {
     "PIL": "Pillow",
+    "cv2": "opencv-python",
+    "sklearn": "scikit-learn",
+    "yaml": "PyYAML",
+    "dateutil": "python-dateutil",
+    "bs4": "beautifulsoup4",
+    "serial": "pyserial",
+    "usb": "pyusb",
+    "nacl": "PyNaCl",
+    "Crypto": "pycryptodome",
+    "OpenSSL": "pyOpenSSL",
+    "wx": "wxPython",
 }
 
 
