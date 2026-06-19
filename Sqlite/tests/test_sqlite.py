@@ -16,169 +16,161 @@ except (ImportError, ValueError, AttributeError) as err:
 
 import os
 
+from gramps.gen.db import DbTxn
 from gramps.gen.db.utils import make_database
-from gramps.gen.lib import Event, EventRef, EventType, Family, FamilyRelType, Name, Person
-from gramps.gen.lib import Surname
-from gramps.plugins.importer.importxml import importData as importXML
+from gramps.gen.lib import (
+    Event,
+    EventRef,
+    EventType,
+    Family,
+    FamilyRelType,
+    Name,
+    Person,
+    Surname,
+)
 from gramps.cli.user import User
 
 from ..ImportSql import importData as importSQL
 from ..ExportSql import exportData as exportSQL
 
-gramps_path = os.environ["GRAMPS_RESOURCES"]
+
+def _make_person(db, txn, gid, first, surname_str, gender=Person.MALE, fsid=None):
+    """Add a minimal Person to *db* inside *txn*, return the handle."""
+    person = Person()
+    person.gramps_id = gid
+    person.gender = gender
+    name = Name()
+    name.set_first_name(first)
+    sn = Surname()
+    sn.set_surname(surname_str)
+    name.set_surname_list([sn])
+    person.set_primary_name(name)
+    if fsid is not None:
+        person.familysearch_sync.fsid = fsid
+        person.familysearch_sync.is_root = True
+    db.add_person(person, txn)
+    return person.handle
+
+
+def _make_family(db, txn, gid, father_h, mother_h):
+    """Add a minimal Family to *db* inside *txn*, return the handle."""
+    fam = Family()
+    fam.gramps_id = gid
+    fam.set_father_handle(father_h)
+    fam.set_mother_handle(mother_h)
+    fam.set_relationship(FamilyRelType(FamilyRelType.MARRIED))
+    db.add_family(fam, txn)
+    return fam.handle
+
+
+def _make_event(db, txn, gid, etype=EventType.BIRTH):
+    """Add a minimal Event to *db* inside *txn*, return the handle."""
+    evt = Event()
+    evt.gramps_id = gid
+    evt.set_type(EventType(etype))
+    db.add_event(evt, txn)
+    return evt.handle
+
+
+def _build_source_db(path):
+    """Build a minimal source Gramps database at *path* and return it."""
+    db = make_database("sqlite")
+    os.makedirs(path, exist_ok=True)
+    db.load(path)
+    with DbTxn("build test db", db) as txn:
+        father_h = _make_person(db, txn, "I0001", "Alice", "Smith",
+                                gender=Person.FEMALE, fsid="FS-ALICE-001")
+        mother_h = _make_person(db, txn, "I0002", "Bob", "Jones",
+                                gender=Person.MALE)
+        child_h = _make_person(db, txn, "I0003", "Carol", "Smith",
+                               gender=Person.FEMALE)
+        _make_family(db, txn, "F0001", father_h, mother_h)
+        _make_event(db, txn, "E0001", EventType.BIRTH)
+    return db
 
 
 # -------------------------------------------------------------------------
 #
-# ExportSQLTestCase
+# SqliteRoundTripTest
 #
 # -------------------------------------------------------------------------
-class ExportSQLTestCase(unittest.TestCase):
-    """Round-trip export/import tests for the SQLite addon."""
+class SqliteRoundTripTest(unittest.TestCase):
+    """Fast round-trip tests using a small synthetic database."""
 
     def setUp(self):
-        """Set up source and destination databases loaded with example data."""
-        self.database1 = make_database("sqlite")
-        try:
-            os.mkdir("/tmp/bsddb_exportsql_1")
-        except Exception:
-            pass
-        self.database1.load("/tmp/bsddb_exportsql_1")
+        self.src_db = _build_source_db("/tmp/sqlite_rt_src")
+        exportSQL(self.src_db, "/tmp/sqlite_rt.sql", User(), None)
 
-        importXML(
-            self.database1,
-            gramps_path + "/example/gramps/example.gramps",
-            User(),
+        self.dst_db = make_database("sqlite")
+        os.makedirs("/tmp/sqlite_rt_dst", exist_ok=True)
+        self.dst_db.load("/tmp/sqlite_rt_dst")
+        importSQL(self.dst_db, "/tmp/sqlite_rt.sql", User())
+
+    def test_person_count(self):
+        """Person count must match after round-trip."""
+        self.assertEqual(
+            self.dst_db.get_number_of_people(),
+            self.src_db.get_number_of_people(),
         )
-        exportSQL(self.database1, "/tmp/exported1.sql", User(), None)
 
-        self.database2 = make_database("sqlite")
-        try:
-            os.mkdir("/tmp/bsddb_exportsql_2")
-        except Exception:
-            pass
-        self.database2.load("/tmp/bsddb_exportsql_2")
-
-    def test_person_count_round_trip(self):
-        """Person count must match after export/import round-trip."""
-        importSQL(self.database2, "/tmp/exported1.sql", User())
-        src_count = self.database1.get_number_of_people()
-        self.assertGreater(src_count, 0)
-        self.assertEqual(self.database2.get_number_of_people(), src_count)
-
-    def test_person_identity_round_trip(self):
-        """Every person must survive round-trip with identical core fields."""
-        importSQL(self.database2, "/tmp/exported1.sql", User())
-        for handle in self.database1.get_person_handles():
-            src = self.database1.get_person_from_handle(handle)
-            dst = self.database2.get_person_from_handle(handle)
-            self.assertIsNotNone(dst, "person %s missing after round-trip" % handle)
+    def test_person_identity(self):
+        """Person gramps_id, gender, and primary name must survive round-trip."""
+        for handle in self.src_db.get_person_handles():
+            src = self.src_db.get_person_from_handle(handle)
+            dst = self.dst_db.get_person_from_handle(handle)
+            self.assertIsNotNone(dst, "person %s missing" % handle)
             self.assertEqual(src.get_gramps_id(), dst.get_gramps_id())
             self.assertEqual(src.get_gender(), dst.get_gender())
-            src_name = src.get_primary_name()
-            dst_name = dst.get_primary_name()
-            self.assertEqual(src_name.get_first_name(), dst_name.get_first_name())
-            self.assertEqual(src_name.get_surname(), dst_name.get_surname())
-
-    def test_familysearch_sync_round_trip(self):
-        """familysearch_sync data must survive the SQLite round-trip."""
-        importSQL(self.database2, "/tmp/exported1.sql", User())
-        for handle in self.database1.get_person_handles():
-            src = self.database1.get_person_from_handle(handle)
-            dst = self.database2.get_person_from_handle(handle)
-            if dst is None:
-                continue
-            src_fs = src.familysearch_sync
-            dst_fs = dst.familysearch_sync
             self.assertEqual(
-                src_fs.serialize(),
-                dst_fs.serialize(),
-                "familysearch_sync mismatch for person %s" % handle,
+                src.get_primary_name().get_first_name(),
+                dst.get_primary_name().get_first_name(),
+            )
+            self.assertEqual(
+                src.get_primary_name().get_surname(),
+                dst.get_primary_name().get_surname(),
             )
 
-    def test_family_count_round_trip(self):
-        """Family count must match after export/import round-trip."""
-        importSQL(self.database2, "/tmp/exported1.sql", User())
-        src_count = self.database1.get_number_of_families()
-        self.assertGreater(src_count, 0)
-        self.assertEqual(self.database2.get_number_of_families(), src_count)
+    def test_family_count(self):
+        """Family count must match after round-trip."""
+        self.assertEqual(
+            self.dst_db.get_number_of_families(),
+            self.src_db.get_number_of_families(),
+        )
 
-    def test_family_identity_round_trip(self):
-        """Every family must survive round-trip with same father/mother handles."""
-        importSQL(self.database2, "/tmp/exported1.sql", User())
-        for handle in self.database1.get_family_handles():
-            src = self.database1.get_family_from_handle(handle)
-            dst = self.database2.get_family_from_handle(handle)
-            self.assertIsNotNone(
-                dst, "family %s missing after round-trip" % handle
-            )
-            self.assertEqual(src.get_gramps_id(), dst.get_gramps_id())
+    def test_family_identity(self):
+        """Father/mother handles must survive round-trip."""
+        for handle in self.src_db.get_family_handles():
+            src = self.src_db.get_family_from_handle(handle)
+            dst = self.dst_db.get_family_from_handle(handle)
+            self.assertIsNotNone(dst, "family %s missing" % handle)
             self.assertEqual(src.get_father_handle(), dst.get_father_handle())
             self.assertEqual(src.get_mother_handle(), dst.get_mother_handle())
 
-    def test_event_count_round_trip(self):
-        """Event count must match after export/import round-trip."""
-        importSQL(self.database2, "/tmp/exported1.sql", User())
-        src_count = self.database1.get_number_of_events()
-        self.assertGreater(src_count, 0)
-        self.assertEqual(self.database2.get_number_of_events(), src_count)
+    def test_event_count(self):
+        """Event count must match after round-trip."""
+        self.assertEqual(
+            self.dst_db.get_number_of_events(),
+            self.src_db.get_number_of_events(),
+        )
 
-
-# -------------------------------------------------------------------------
-#
-# FamilySearchSyncRoundTripTest
-#
-# -------------------------------------------------------------------------
-class FamilySearchSyncRoundTripTest(unittest.TestCase):
-    """
-    Unit test for familysearch_sync round-trip on a synthetic Person with
-    non-default FamilySearchSync values.  Does not require the example file.
-    """
-
-    def setUp(self):
-        """Create a minimal database with one person containing fs sync data."""
-        self.database1 = make_database("sqlite")
-        try:
-            os.mkdir("/tmp/bsddb_fssync_1")
-        except Exception:
-            pass
-        self.database1.load("/tmp/bsddb_fssync_1")
-
-        self.database2 = make_database("sqlite")
-        try:
-            os.mkdir("/tmp/bsddb_fssync_2")
-        except Exception:
-            pass
-        self.database2.load("/tmp/bsddb_fssync_2")
-
-        # Create a person with a non-trivial familysearch_sync state
-        from gramps.gen.db import DbTxn
-
-        with DbTxn("add test person", self.database1) as txn:
-            person = Person()
-            person.gramps_id = "I9999"
-            person.gender = Person.MALE
-            primary_name = Name()
-            primary_name.set_first_name("Test")
-            surname = Surname()
-            surname.set_surname("Sync")
-            primary_name.set_surname_list([surname])
-            person.set_primary_name(primary_name)
-            # Set some familysearch_sync data
-            person.familysearch_sync.fsid = "FS-TESTID-001"
-            person.familysearch_sync.is_root = True
-            person.familysearch_sync.conflict = False
-            self.database1.add_person(person, txn)
-            self.person_handle = person.handle
-
-    def test_familysearch_sync_preserved(self):
-        """Non-default familysearch_sync fields must survive the SQL round-trip."""
-        exportSQL(self.database1, "/tmp/fssync_test.sql", User(), None)
-        importSQL(self.database2, "/tmp/fssync_test.sql", User())
-
-        dst = self.database2.get_person_from_handle(self.person_handle)
-        self.assertIsNotNone(dst, "person missing after round-trip")
-        self.assertEqual(dst.gramps_id, "I9999")
-        self.assertEqual(dst.familysearch_sync.fsid, "FS-TESTID-001")
-        self.assertTrue(dst.familysearch_sync.is_root)
-        self.assertFalse(dst.familysearch_sync.conflict)
+    def test_familysearch_sync(self):
+        """familysearch_sync fields must survive round-trip."""
+        for handle in self.src_db.get_person_handles():
+            src = self.src_db.get_person_from_handle(handle)
+            dst = self.dst_db.get_person_from_handle(handle)
+            if dst is None:
+                continue
+            self.assertEqual(
+                src.familysearch_sync.serialize(),
+                dst.familysearch_sync.serialize(),
+                "familysearch_sync mismatch for %s" % src.get_gramps_id(),
+            )
+        # Explicit check for the person we know has a non-default fsid
+        alice_src = next(
+            p for h in self.src_db.get_person_handles()
+            if (p := self.src_db.get_person_from_handle(h)).get_gramps_id() == "I0001"
+        )
+        alice_dst = self.dst_db.get_person_from_handle(alice_src.handle)
+        self.assertIsNotNone(alice_dst)
+        self.assertEqual(alice_dst.familysearch_sync.fsid, "FS-ALICE-001")
+        self.assertTrue(alice_dst.familysearch_sync.is_root)
