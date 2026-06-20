@@ -18,6 +18,8 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
+from __future__ import annotations
+
 import unittest
 from unittest.mock import Mock, patch, MagicMock
 
@@ -112,9 +114,7 @@ class TestGrampsWriteRepository(unittest.TestCase):
         self.mock_db = MagicMock()
         self.write_repo = GrampsWriteRepository(self.mock_db)
 
-    @patch(
-        "name_processor.repositories.gramps_write.update_or_add_patronymic"
-    )
+    @patch("name_processor.repositories.gramps_write.update_or_add_patronymic")
     @patch("name_processor.repositories.gramps_write.DbTxn")
     def test_update_patronymic_names(self, mock_dbtxn, mock_update_func):
         mock_txn_instance = MagicMock()
@@ -133,6 +133,95 @@ class TestGrampsWriteRepository(unittest.TestCase):
         self.mock_db.commit_person.assert_called_once_with(
             mock_person, mock_txn_instance
         )
+
+    @patch("name_processor.repositories.gramps_write.Name", create=True)
+    @patch("name_processor.repositories.gramps_write.NameType")
+    def test_preserve_primary_name_copies_to_alternate_names(
+        self, mock_name_type, mock_name_class
+    ):
+        """Test that preserve_primary_name copies primary name to alternate names."""
+        mock_person = Mock()
+        mock_primary_name = Mock()
+        mock_person.get_primary_name.return_value = mock_primary_name
+
+        # Configure mock to accept source keyword argument in constructor
+        mock_name_instance = Mock()
+        mock_name_class.side_effect = lambda **kwargs: mock_name_instance
+
+        self.write_repo.preserve_primary_name(mock_person)
+
+        mock_name_class.assert_called_once_with(source=mock_primary_name)
+        mock_name_type.assert_called_once_with(mock_name_type.AKA)
+        mock_person.add_alternate_name.assert_called_once()
+
+    def test_preserve_primary_name_does_nothing_when_no_primary_name(self):
+        """Test that preserve_primary_name does nothing when person has no primary name."""
+        mock_person = Mock()
+        mock_person.get_primary_name.return_value = None
+
+        self.write_repo.preserve_primary_name(mock_person)
+
+        mock_person.add_alternate_name.assert_not_called()
+
+    @patch("name_processor.repositories.gramps_write.DbTxn")
+    def test_apply_first_name_correction_without_preserve(self, mock_dbtxn):
+        """Test apply_first_name_correction without preserving alt name."""
+        mock_txn = MagicMock()
+        mock_dbtxn.return_value.__enter__.return_value = mock_txn
+
+        mock_person = Mock()
+        mock_primary_name = Mock()
+        mock_person.get_primary_name.return_value = mock_primary_name
+        self.mock_db.get_person_from_handle.return_value = mock_person
+
+        self.write_repo.apply_first_name_correction(
+            mock_txn, "handle123", "NewName", preserve_alt=False
+        )
+
+        self.mock_db.get_person_from_handle.assert_called_once_with("handle123")
+        mock_primary_name.set_first_name.assert_called_once_with("NewName")
+        self.mock_db.commit_person.assert_called_once_with(mock_person, mock_txn)
+        mock_person.add_alternate_name.assert_not_called()
+
+    @patch("name_processor.repositories.gramps_write.Name")
+    @patch("name_processor.repositories.gramps_write.NameType")
+    @patch("name_processor.repositories.gramps_write.DbTxn")
+    def test_apply_first_name_correction_with_preserve(
+        self, mock_dbtxn, mock_name_type, mock_name_class
+    ):
+        """Test apply_first_name_correction with preserving alt name."""
+        mock_txn = MagicMock()
+        mock_dbtxn.return_value.__enter__.return_value = mock_txn
+
+        mock_person = Mock()
+        mock_primary_name = Mock()
+        mock_person.get_primary_name.return_value = mock_primary_name
+        self.mock_db.get_person_from_handle.return_value = mock_person
+
+        self.write_repo.apply_first_name_correction(
+            mock_txn, "handle123", "NewName", preserve_alt=True
+        )
+
+        self.mock_db.get_person_from_handle.assert_called_once_with("handle123")
+        mock_name_class.assert_called_once_with(source=mock_primary_name)
+        mock_name_type.assert_called_once_with(mock_name_type.AKA)
+        mock_person.add_alternate_name.assert_called_once()
+        mock_primary_name.set_first_name.assert_called_once_with("NewName")
+        self.mock_db.commit_person.assert_called_once_with(mock_person, mock_txn)
+
+    @patch("name_processor.repositories.gramps_write.DbTxn")
+    def test_apply_first_name_correction_raises_when_person_not_found(self, mock_dbtxn):
+        """Test apply_first_name_correction raises ValueError when person not found."""
+        mock_txn = MagicMock()
+        mock_dbtxn.return_value.__enter__.return_value = mock_txn
+        self.mock_db.get_person_from_handle.return_value = None
+
+        with self.assertRaises(ValueError) as context:
+            self.write_repo.apply_first_name_correction(
+                mock_txn, "bad_handle", "NewName"
+            )
+
+        self.assertIn("bad_handle", str(context.exception))
 
 
 if __name__ == "__main__":

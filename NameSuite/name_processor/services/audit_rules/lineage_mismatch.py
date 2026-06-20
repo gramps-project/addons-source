@@ -23,6 +23,8 @@ Rule: ErrLineageMismatch
 Flags if the patronymic base/root does not match the linked biological father's name.
 """
 
+from __future__ import annotations
+
 from name_processor.services.audit_rules.base import BaseRule
 from name_processor.models.audit import RuleContext, ProposedChange
 from name_processor.models.constants import SEVERITY_ERROR

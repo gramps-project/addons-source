@@ -22,6 +22,8 @@
 Constants for the services layer (business logic).
 """
 
+from __future__ import annotations
+
 # Severity level constants
 SEVERITY_ERROR = "ERROR"
 SEVERITY_WARNING = "WARNING"
@@ -35,6 +37,7 @@ LOCALE_UNIVERSAL = "*"
 LOCALE_EAST_SLAVIC = {LOCALE_RU, LOCALE_UK, LOCALE_BE}
 
 # Historical year constants
+MEDIEVAL_YEAR_THRESHOLD = 1500
 REFORM_YEAR = 1918
 DEFAULT_DB_MEDIAN_YEAR = 1920
 

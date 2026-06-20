@@ -23,6 +23,8 @@ Rule: WarnArchaicSuffixModernEra
 Flags post-1918 records using archaic/informal possessive endings.
 """
 
+from __future__ import annotations
+
 from name_processor.services.audit_rules.base import BaseRule
 from name_processor.models.audit import RuleContext, ProposedChange
 from name_processor.models.audit import Gender

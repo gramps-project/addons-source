@@ -18,34 +18,41 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-from collections.abc import Generator, Callable
+from __future__ import annotations
 
-from gi.repository import GLib
+from collections.abc import Callable, Generator
+from typing import TypeVar
 
 
-def run_in_idle_loop(
-    generator: Generator[None, None, object | None],
-    on_complete: Callable[[object | None], None] | None = None,
-) -> GLib.Source:
-    """
-    Executes a chunked generator in the GTK idle loop to prevent UI freezing.
+T = TypeVar("T")
 
-    :param generator: A generator yielding control periodically.
-    :param on_complete: Callback executed with the generator's final return value.
-    """
 
-    def process_chunk() -> bool:
+class SynchronousTaskRunner:
+    """Synchronous implementation of BackgroundTaskRunner for testing."""
+
+    def run_chunked(
+        self,
+        generator: Generator[None, None, T],
+        on_complete: Callable[[T | None], None] | None = None,
+    ) -> None:
+        """
+        Execute a generator synchronously to completion.
+
+        This is intended for use in tests where we want deterministic
+        behavior without the GTK main loop.
+
+        Args:
+            generator: A generator yielding control periodically.
+            on_complete: Callback executed with the generator's final return value.
+        """
         try:
-            next(generator)
-            return True  # Tell GTK to keep calling this when idle
+            # Consume the entire generator
+            while True:
+                next(generator)
         except StopIteration as e:
             # Generator finished naturally
             if on_complete:
                 on_complete(e.value)
-            return False  # Stop the idle loop
         except Exception as e:
-            # Log or handle unexpected DB/Processing errors
-            print(f"Background task failed: {e}")
-            return False
-
-    return GLib.idle_add(process_chunk)
+            # Propagate exceptions in tests (don't swallow them)
+            raise RuntimeError(f"Synchronous task failed: {e}") from e

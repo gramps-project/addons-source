@@ -23,6 +23,8 @@ Rule: WarnModernSuffixArchaicEra
 Flags pre-1918 records using modern formal endings and suggests possessive genitives.
 """
 
+from __future__ import annotations
+
 from name_processor.services.audit_rules.base import BaseRule
 from name_processor.models.audit import RuleContext, ProposedChange
 from name_processor.models.audit import Gender

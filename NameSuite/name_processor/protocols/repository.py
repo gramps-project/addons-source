@@ -18,14 +18,19 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-"""
-Constants for the View layer.
-"""
+from __future__ import annotations
 
-# Idle loop chunk sizes
-IDLE_CHUNK_AUDIT = 50
+from typing import Protocol
 
-# Rename proposal action constants
-ALT_ACTION_NONE = "None"
-ALT_ACTION_ADD_AKA = "Add as AKA"
-ALT_ACTION_MERGE_EXISTING = "Merge Existing Alt Name"
+from name_processor.protocols.gramps import Person
+
+
+class ReadRepository(Protocol):
+    """Protocol for read repository operations used by services."""
+
+    def is_protected_by_alias(self, person: Person, search_str: str) -> bool:
+        """
+        Checks if a specific string exists within the alternative names.
+        Used to skip renaming if the string is a known historical alias or maiden name.
+        """
+        ...
