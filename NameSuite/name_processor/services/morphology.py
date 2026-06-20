@@ -24,6 +24,8 @@ Belarusian) based on the father's given name, gender, reference year, and
 orthographic script preferences.
 """
 
+from __future__ import annotations
+
 import re
 from typing import TYPE_CHECKING
 
@@ -279,7 +281,7 @@ class MorphologyService:
         return result
 
     @classmethod
-    def is_pre_reform(cls, ctx: "RuleContext", use_pre_reform: bool) -> bool:
+    def is_pre_reform(cls, ctx: RuleContext, use_pre_reform: bool) -> bool:
         """Check if the context satisfies the pre-reform conditions."""
         return (
             ctx.locale == LOCALE_RU

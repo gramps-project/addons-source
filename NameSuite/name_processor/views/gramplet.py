@@ -18,14 +18,15 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-# name_processor/ui/gramplet_view.py
 """
 GTK View for the Patronymic Suggestion Gramplet.
 Contains all GTK components and i18n message handling.
 """
 
+from __future__ import annotations
+
 from gi.repository import Gtk
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gui.dialog import ErrorDialog
@@ -99,6 +100,23 @@ class GrampletView:
         """Returns the root GTK widget for Gramps to embed."""
         return self._box
 
+    def embed(self, container_gui: Any) -> None:
+        """
+        Embed the view's root widget into the Gramplet container.
+
+        This method replaces the default Gramplet textview with our custom layout.
+        Should be called once during Gramplet initialization.
+
+        Args:
+            container_gui: The Gramplet GUI object providing access to the container widget.
+                           Type is gramps.gen.plug.Gramplet but not imported to avoid Gramps dependency.
+        """
+        # Swap default textview with custom layout
+        container_gui.get_container_widget().remove(container_gui.textview)
+        container_gui.WIDGET = self.get_root_widget()
+        container_gui.get_container_widget().add(container_gui.WIDGET)
+        container_gui.WIDGET.show()
+
     def _on_apply_clicked(self, widget: Gtk.Button) -> None:
         """Handle apply button click event."""
         if self._controller:
@@ -106,18 +124,22 @@ class GrampletView:
 
     def show_status_message(
         self, message_key: PatronymicInferenceStatus, apply_sensitive: bool = False
-    ):
+    ) -> None:
         """Display a status message from the MESSAGES dictionary."""
+        assert self._label is not None
+        assert self._apply_btn is not None
         self._label.set_text(self.MESSAGES.get(message_key, ""))
         self._apply_btn.set_sensitive(apply_sensitive)
 
-    def show_suggestion(self, patronymic: str, father_name: str):
+    def show_suggestion(self, patronymic: str, father_name: str) -> None:
         """Display a patronymic suggestion with the father's name."""
+        assert self._label is not None
+        assert self._apply_btn is not None
         self._label.set_text(
             self.MESSAGES["SUGGESTION_TEMPLATE"].format(patronymic, father_name)
         )
         self._apply_btn.set_sensitive(True)
 
-    def display_error(self, title_key: str, message: str):
+    def display_error(self, title_key: str, message: str) -> None:
         """Display an error dialog."""
         ErrorDialog(_(title_key), message, self.gramplet.gui.get_window())

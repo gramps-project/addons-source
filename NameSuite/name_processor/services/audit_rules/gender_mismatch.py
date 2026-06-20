@@ -18,6 +18,8 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
+from __future__ import annotations
+
 from name_processor.services.audit_rules.base import BaseRule
 from name_processor.models.audit import RuleContext, ProposedChange
 from name_processor.models.person import Gender

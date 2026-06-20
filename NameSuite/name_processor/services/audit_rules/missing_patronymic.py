@@ -23,6 +23,8 @@ Rule: InfoMissingPatronymic
 Flags if a person is missing a patronymic but one can be inferred from the father's name.
 """
 
+from __future__ import annotations
+
 from name_processor.services.audit_rules.base import BaseRule
 from name_processor.models.audit import ProposedChange, RuleContext
 from name_processor.models.person import Gender

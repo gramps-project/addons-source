@@ -18,6 +18,8 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
+from __future__ import annotations
+
 from typing import TYPE_CHECKING
 
 from name_processor.models.infer import (
@@ -25,11 +27,10 @@ from name_processor.models.infer import (
     ProposedPatronymic,
 )
 from name_processor.models.person import Gender
-from name_processor.protocols.patronymic import PatronymicSubject
 from name_processor.services.morphology import MorphologyService
 
 if TYPE_CHECKING:
-    from name_processor.repositories.gramps_read import GrampsReadRepository
+    from name_processor.protocols.patronymic import PatronymicRepository
     from name_processor.services.confidence import ConfidenceService
     from name_processor.services.chronology import ChronologyService
 
@@ -37,21 +38,20 @@ if TYPE_CHECKING:
 class PatronymicInferenceService:
     def __init__(
         self,
-        read_repo: "GrampsReadRepository",
-        confidence: "ConfidenceService",
-        chronology_service: "ChronologyService",
+        read_repo: PatronymicRepository,
+        confidence: ConfidenceService,
+        chronology_service: ChronologyService,
     ):
         self._read_repo = read_repo
         self._confidence_service = confidence
         self._chronology_service = chronology_service
 
-    def infer_patronymic(
-        self, person: PatronymicSubject, father: PatronymicSubject | None
-    ) -> ProposedPatronymic:
+    def infer_patronymic(self, handle: str) -> ProposedPatronymic:
         """
         Generate a patronymic candidate for a single person.
         Handles DB lookups, validation, and morphology generation.
         """
+        person = self._read_repo.get_person(handle)
         if not person:
             return ProposedPatronymic(status=PatronymicInferenceStatus.NO_ACTIVE_PERSON)
 
@@ -63,6 +63,8 @@ class PatronymicInferenceService:
                 status=PatronymicInferenceStatus.ALREADY_HAS_PATRONYMIC
             )
 
+        father_handle = self._read_repo.get_father_handle(person.handle)
+        father = self._read_repo.get_person(father_handle) if father_handle else None
         if not father:
             return ProposedPatronymic(status=PatronymicInferenceStatus.NO_FATHER)
 
@@ -79,7 +81,11 @@ class PatronymicInferenceService:
         )
 
         if patronymic:
-            confidence = self._confidence_service.calculate(person, father, ref_year)
+            confidence = self._confidence_service.calculate(
+                person.handle,
+                father.handle,
+                ref_year,
+            )
 
             return ProposedPatronymic(
                 status=PatronymicInferenceStatus.SUCCESS,
