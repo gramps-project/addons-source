@@ -18,11 +18,14 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
+from __future__ import annotations
+
 import unittest
 from unittest.mock import Mock, MagicMock
 
 from name_processor.controllers.gramplet import GrampletController
 from name_processor.models.infer import PatronymicInferenceStatus
+from tests.fakes.sync_task_runner import SynchronousTaskRunner
 
 
 class TestGrampletController(unittest.TestCase):
@@ -31,14 +34,18 @@ class TestGrampletController(unittest.TestCase):
         self.mocks = {
             "view": Mock(),
             "patronymic_service": Mock(),
+            "chronology_service": Mock(),  # Added missing mock
             "read_repo": Mock(),
             "write_repo": Mock(),
         }
+        self.sync_runner = SynchronousTaskRunner()
         self.controller = GrampletController(
             view=self.mocks["view"],
             patronymic_service=self.mocks["patronymic_service"],
+            chronology_service=self.mocks["chronology_service"],  # Injected here
             read_repo=self.mocks["read_repo"],
             write_repo=self.mocks["write_repo"],
+            task_runner=self.sync_runner,
         )
 
     def test_on_active_changed_with_none_handle(self):
@@ -46,42 +53,38 @@ class TestGrampletController(unittest.TestCase):
         self.controller.on_active_changed(None)
 
         # Assert
-        self.assertIsNone(self.controller.current_handle)
+        self.assertIsNone(self.controller._current_handle)
         self.mocks["view"].show_status_message.assert_called_once_with(
             PatronymicInferenceStatus.NO_ACTIVE_PERSON, apply_sensitive=False
         )
-        self.mocks["read_repo"].get_person_proxy.assert_not_called()
+        self.mocks["read_repo"].get_person.assert_not_called()
 
     def test_on_active_changed_person_not_found(self):
         # Arrange
-        self.mocks["read_repo"].get_person_proxy.return_value = None
+        mock_result = MagicMock()
+        mock_result.status = PatronymicInferenceStatus.NO_ACTIVE_PERSON
+
+        self.mocks["patronymic_service"].infer_patronymic.return_value = mock_result
 
         # Act
         self.controller.on_active_changed("h123")
 
         # Assert
-        self.assertEqual(self.controller.current_handle, "h123")
-        self.mocks["read_repo"].get_person_proxy.assert_called_once_with("h123")
+        self.assertEqual(self.controller._current_handle, "h123")
+        self.mocks["patronymic_service"].infer_patronymic.assert_called_once_with(
+            "h123"
+        )
         self.mocks["view"].show_status_message.assert_called_once_with(
             PatronymicInferenceStatus.NO_ACTIVE_PERSON, apply_sensitive=False
         )
 
     def test_on_active_changed_success(self):
         # Arrange
-        mock_person = Mock()
-        mock_person.father_handle = "f456"
-        mock_father = Mock()
-
         mock_result = MagicMock()
         mock_result.status = PatronymicInferenceStatus.SUCCESS
         mock_result.patronymic = "Ivanovich"
         mock_result.father_name = "Ivan"
 
-        # Setup read_repo to return the person, then the father
-        self.mocks["read_repo"].get_person_proxy.side_effect = [
-            mock_person,
-            mock_father,
-        ]
         self.mocks["patronymic_service"].infer_patronymic.return_value = mock_result
 
         # Act
@@ -89,14 +92,14 @@ class TestGrampletController(unittest.TestCase):
 
         # Assert
         self.mocks["patronymic_service"].infer_patronymic.assert_called_once_with(
-            mock_person, mock_father
+            "h123"
         )
         self.assertEqual(self.controller._suggested_patronymic, "Ivanovich")
         self.mocks["view"].show_suggestion.assert_called_once_with("Ivanovich", "Ivan")
 
     def test_on_apply_clicked_does_nothing_if_no_suggestion(self):
         # Arrange
-        self.controller.current_handle = "h123"
+        self.controller._current_handle = "h123"
         self.controller._suggested_patronymic = None
 
         # Act
@@ -107,7 +110,7 @@ class TestGrampletController(unittest.TestCase):
 
     def test_on_apply_clicked_success(self):
         # Arrange
-        self.controller.current_handle = "h123"
+        self.controller._current_handle = "h123"
         self.controller._suggested_patronymic = "Ivanovich"
 
         # Act
@@ -119,6 +122,25 @@ class TestGrampletController(unittest.TestCase):
         )
         self.mocks["view"].show_status_message.assert_called_once_with(
             PatronymicInferenceStatus.SUCCESS, apply_sensitive=False
+        )
+
+    def test_initialize_background_tasks_calls_update_median_year(self):
+        # Arrange
+        years = [1900, 1910, 1920]
+
+        # Mock the generator to return years
+        def year_generator():
+            yield None
+            return years
+
+        self.mocks["chronology_service"].generate_years.return_value = year_generator()
+
+        # Act
+        self.controller.initialize_background_tasks()
+
+        # Assert
+        self.mocks["chronology_service"].update_median_year.assert_called_once_with(
+            years
         )
 
 

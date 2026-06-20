@@ -23,6 +23,8 @@ Rule: WarnMorphologicalTypo
 Detects invalid consecutive duplicate characters at joint boundaries (e.g. Андрееевич).
 """
 
+from __future__ import annotations
+
 import re
 
 from name_processor.services.audit_rules.base import BaseRule

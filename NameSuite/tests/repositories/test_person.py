@@ -18,6 +18,8 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
+from __future__ import annotations
+
 import unittest
 from unittest.mock import Mock
 
@@ -38,7 +40,6 @@ class MockNameOriginType:
 
 class TestGrampsPersonProxy(unittest.TestCase):
     def setUp(self):
-        self.mock_db = Mock()
         self.mock_gramps_person = Mock()
         self.mock_gramps_person.get_handle.return_value = "p123"
 
@@ -48,7 +49,7 @@ class TestGrampsPersonProxy(unittest.TestCase):
         repo_module.GrampsPerson = MockGrampsPerson
         repo_module.NameOriginType = MockNameOriginType
 
-        self.proxy = GrampsPersonProxy(self.mock_gramps_person, self.mock_db)
+        self.proxy = GrampsPersonProxy(self.mock_gramps_person)
 
     def test_handle(self):
         self.assertEqual(self.proxy.handle, "p123")
@@ -82,69 +83,6 @@ class TestGrampsPersonProxy(unittest.TestCase):
         self.mock_gramps_person.get_primary_name.return_value = mock_primary_name
 
         self.assertFalse(self.proxy.has_patronymic)
-
-    def test_father_handle_found(self):
-        self.mock_gramps_person.get_parent_family_handle_list.return_value = ["fam1"]
-        mock_family = Mock()
-        mock_family.get_father_handle.return_value = "father123"
-        self.mock_db.get_family_from_handle.return_value = mock_family
-
-        self.assertEqual(self.proxy.father_handle, "father123")
-
-    def test_mother_handle_not_found(self):
-        self.mock_gramps_person.get_parent_family_handle_list.return_value = []
-        self.assertIsNone(self.proxy.mother_handle)
-
-    def test_children_handles(self):
-        self.mock_gramps_person.get_family_handle_list.return_value = ["fam1", "fam2"]
-
-        mock_fam1 = Mock()
-        mock_child1 = Mock(ref="child1")
-        mock_child2 = Mock(ref="child2")
-        mock_fam1.get_child_ref_list.return_value = [mock_child1, mock_child2]
-
-        mock_fam2 = Mock()
-        mock_child3 = Mock(ref="child3")
-        mock_fam2.get_child_ref_list.return_value = [mock_child3]
-
-        self.mock_db.get_family_from_handle.side_effect = [mock_fam1, mock_fam2]
-
-        self.assertEqual(self.proxy.children_handles, ["child1", "child2", "child3"])
-
-    def test_siblings_handles_excludes_self(self):
-        # Proxy's own handle is "p123"
-        self.mock_gramps_person.get_parent_family_handle_list.return_value = [
-            "parent_fam"
-        ]
-
-        mock_fam = Mock()
-        mock_self = Mock(ref="p123")
-        mock_sibling = Mock(ref="sib456")
-        mock_fam.get_child_ref_list.return_value = [mock_self, mock_sibling]
-
-        self.mock_db.get_family_from_handle.return_value = mock_fam
-
-        self.assertEqual(self.proxy.siblings_handles, ["sib456"])
-
-    def test_event_years(self):
-        mock_ref1 = Mock(ref="e1")
-        mock_ref2 = Mock(ref="e2")
-        self.mock_gramps_person.get_event_ref_list.return_value = [mock_ref1, mock_ref2]
-
-        mock_event1 = Mock()
-        mock_date1 = Mock()
-        mock_date1.is_empty.return_value = False
-        mock_date1.get_year.return_value = 1850
-        mock_event1.get_date_object.return_value = mock_date1
-
-        mock_event2 = Mock()
-        mock_date2 = Mock()
-        mock_date2.is_empty.return_value = True  # Empty date should be skipped
-        mock_event2.get_date_object.return_value = mock_date2
-
-        self.mock_db.get_event_from_handle.side_effect = [mock_event1, mock_event2]
-
-        self.assertEqual(self.proxy.event_years, [1850])
 
     def test_given_name(self):
         mock_primary_name = Mock()

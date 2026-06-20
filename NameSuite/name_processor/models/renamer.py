@@ -18,6 +18,8 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
+from __future__ import annotations
+
 from dataclasses import dataclass
 from enum import Enum
 import re
@@ -30,30 +32,15 @@ class MatchMode(Enum):
 
 
 class AltAction(Enum):
-    PRESERVE = "Preserve"
-    OVERWRITE = "Overwrite"
+    PRESERVE = "preserve"
+    OVERWRITE = "overwrite"
 
 
 @dataclass
 class RenameConfig:
-    """Stores and validates user-defined replacement rules."""
+    """Stores user-defined replacement rules."""
 
     mode: MatchMode
     source: str
     target: str
     pattern: re.Pattern | None = None
-    is_valid: bool = True
-    error_msg: str = ""
-
-
-@dataclass
-class ProposedRename:
-    """DTO representing a single proposed name change for the UI grid."""
-
-    handle: str
-    gramps_id: str
-    display_name: str
-    original_given_name: str
-    proposed_given_name: str
-    alt_action: str = AltAction.OVERWRITE.value
-    matched_text: str = ""  # Text that was matched and replaced (for highlighting)

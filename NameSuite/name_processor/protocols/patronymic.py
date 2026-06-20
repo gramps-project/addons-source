@@ -18,6 +18,8 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
+from __future__ import annotations
+
 from typing import Protocol
 
 from name_processor.models.person import Gender
@@ -36,7 +38,12 @@ class PatronymicSubject(Protocol):
     def has_patronymic(self) -> bool: ...
 
     @property
-    def father_handle(self) -> str | None: ...
-
-    @property
     def given_name(self) -> str | None: ...
+
+
+class PatronymicRepository(Protocol):
+    """The repository interface required by PatronymicInferenceService."""
+
+    def get_person(self, handle: str) -> PatronymicSubject | None: ...
+
+    def get_father_handle(self, person_handle: str) -> str | None: ...
