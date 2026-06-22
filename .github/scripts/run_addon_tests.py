@@ -76,7 +76,7 @@ def _bootstrap_gi() -> None:
 # worker: runs ONE module in this (sub)process
 #
 # ------------------------------------------------------------
-def _run_worker(modname: str) -> int:
+def _run_worker(modname: str, root: str = ".") -> int:
     """Run a single module; print a machine-readable result line; exit 0.
 
     The parent classifies pass/fail from the printed counts and its own platform
@@ -84,6 +84,18 @@ def _run_worker(modname: str) -> int:
     indistinguishable from an interpreter crash).
     """
     _bootstrap_gi()
+    # Put the addon's own directory on sys.path, mirroring how Gramps' plugin
+    # loader (gramps/gen/plug/_manager.py) inserts the addon dir before importing
+    # a plugin. APPEND (not prepend) so the repo-root shared `tests` environment
+    # still takes precedence: this lets a nested-package addon's top-level
+    # imports (e.g. ``from name_processor… import``) resolve without shadowing
+    # the shared Gramps-emulation test env. The module is still loaded by its
+    # full dotted name from the repo root, so package-relative imports keep
+    # working too.
+    addon = modname.split(".", 1)[0]
+    addon_dir = os.path.join(root, addon)
+    if addon_dir not in sys.path:
+        sys.path.append(addon_dir)
     try:
         suite = unittest.defaultTestLoader.loadTestsFromName(modname)
     except Exception as exc:  # import-time failure
@@ -109,7 +121,7 @@ def _classify(modname: str, platform: str, root: str) -> tuple[bool, str]:
     satisfiable = deps.addon_satisfiable_on(os.path.join(root, addon), platform)
 
     proc = subprocess.Popen(
-        [sys.executable, os.path.abspath(__file__), "--worker", modname],
+        [sys.executable, os.path.abspath(__file__), "--worker", modname, "--root", root],
         stdout=subprocess.PIPE,
         stderr=None,  # stream the test output straight to the CI log
         text=True,
@@ -180,7 +192,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     if args.worker:
-        return _run_worker(args.worker)
+        return _run_worker(args.worker, args.root)
 
     if not args.platform:
         parser.error("--platform is required in parent mode")

@@ -264,7 +264,8 @@ jobs:
         run: |
           source .github/scripts/active_addons.sh
           modules=""
-          for f in */tests/test_*.py; do
+          shopt -s globstar  # also match nested-package tests/<subpkg>/test_*.py
+          for f in */tests/**/test_*.py; do
             [ -f "$f" ] || continue
             addon="${f%%/*}"
             is_active "$addon" || continue
@@ -396,7 +397,8 @@ jobs:
         run: |
           source .github/scripts/active_addons.sh
           modules=""
-          for f in */tests/test_*.py; do
+          shopt -s globstar  # also match nested-package tests/<subpkg>/test_*.py
+          for f in */tests/**/test_*.py; do
             [ -f "$f" ] || continue
             addon="${f%%/*}"
             is_active "$addon" || continue
@@ -503,7 +505,8 @@ jobs:
         run: |
           source .github/scripts/active_addons.sh
           modules=""
-          for f in */tests/test_integration*.py; do
+          shopt -s globstar  # also match nested-package tests/<subpkg>/test_integration*.py
+          for f in */tests/**/test_integration*.py; do
             [ -f "$f" ] || continue
             addon="${f%%/*}"
             is_active "$addon" || continue
