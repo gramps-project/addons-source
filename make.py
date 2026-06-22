@@ -189,6 +189,28 @@ def cleanup(addon_dir):
     shutil.rmtree("%s/locale" % addon_dir, ignore_errors=True)
 
 
+def addon_py_files(addon):
+    """Return the addon's .py files for xgettext string extraction.
+
+    Top-level files come first, in the exact order ``glob.glob("{addon}/*.py")``
+    yields them, so a flat addon's template.pot is unchanged. Nested-package
+    modules follow (sorted, for deterministic output), excluding the addon's own
+    tests/ tree at any depth (test strings are not shipped or translated).
+    """
+    top = glob.glob(f"{addon}/*.py")
+    top_set = set(top)
+    nested = []
+    for dirpath, dirnames, filenames in os.walk(addon):
+        if "tests" in dirnames:
+            dirnames.remove("tests")  # don't descend into tests/ at any depth
+        for fname in filenames:
+            if fname.endswith(".py"):
+                path = os.path.join(dirpath, fname)
+                if path not in top_set:
+                    nested.append(path)
+    return top + sorted(nested)
+
+
 def do_tar(inc_files):
     """
     An OS agnostic tar creation that uses only Python libs
@@ -401,7 +423,7 @@ elif command == "init":
                 continue  # skip this one if not listed
 
             mkdir(f"{addon}/po")
-            fnames = " ".join(glob.glob(f"{addon}/*.py"))
+            fnames = " ".join(addon_py_files(addon))
             system(
                 f"xgettext --language=Python --keyword=_ --keyword=_:1,2c --keyword=N_"
                 f" --from-code=UTF-8 --add-comments=Translators"
@@ -731,7 +753,7 @@ elif command == "as-needed":
         cleanup(addon)
         if todo:  # make an updated pot file
             mkdir("%(addon)s/po")
-            fnames = " ".join(glob.glob(f"{addon}/*.py"))
+            fnames = " ".join(addon_py_files(addon))
             system(
                 "xgettext --language=Python --keyword=_ --keyword=_:1,2c --keyword=N_"
                 " --from-code=UTF-8 --add-comments=Translators"
