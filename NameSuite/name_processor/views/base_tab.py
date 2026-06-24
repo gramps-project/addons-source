@@ -38,7 +38,11 @@ if TYPE_CHECKING:
     from name_processor.controllers.tool import ToolController
 
 
-_ = glocale.translation.gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 
 class BaseTab:
