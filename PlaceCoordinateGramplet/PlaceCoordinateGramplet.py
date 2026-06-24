@@ -202,14 +202,30 @@ class PlaceCoordinateGramplet(Gramplet):
         # lat = config.get("geography.center-lat")
         # lon = config.get("geography.center-lon")
         # self.osm.grab_focus()
+        query = self.entry_name.get_text().strip()
+        # Cache forward-geocode results for this session so re-searching the same
+        # place name is instant and does not query the geocoding service again
+        # (faster, and kinder to the Nominatim usage policy).
+        cache = getattr(self, "_geocode_cache", None)
+        if cache is None:
+            cache = self._geocode_cache = {}
+        if query in cache:
+            lat, lon, found = cache[query]
+            self.entry_lat.set_text(lat)
+            self.entry_long.set_text(lon)
+            self.entry_foundName.set_text(found)
+            return
         if use_geopy:
             geolocator = Nominatim(user_agent="GrampsPlaceCoordinateGramplet")
             try :
-                location = geolocator.geocode(self.entry_name.get_text())
+                location = geolocator.geocode(query)
                 if location:
-                    self.entry_lat.set_text("%.10f" % location.latitude)
-                    self.entry_long.set_text("%.10f" % location.longitude)
+                    lat = "%.10f" % location.latitude
+                    lon = "%.10f" % location.longitude
+                    self.entry_lat.set_text(lat)
+                    self.entry_long.set_text(lon)
                     self.entry_foundName.set_text(location.address)
+                    cache[query] = (lat, lon, location.address)
                 else:
                     self.entry_foundName.set_text(
                         _("The place was not found. "
@@ -220,8 +236,7 @@ class PlaceCoordinateGramplet(Gramplet):
                     "some unexpected error.") + ' ' + str(e))
         else:
             try:
-                location_ = GeocodeGlib.Forward.new_for_string(
-                    self.entry_name.get_text())
+                location_ = GeocodeGlib.Forward.new_for_string(query)
                 try:
                     result = location_.search()
                     error_message = "You may clarify the search keywords."
@@ -235,10 +250,14 @@ class PlaceCoordinateGramplet(Gramplet):
                         if result.get_property(p.name))
                     geo_loc = location_information['location']
 
-                    self.entry_lat.set_text("%.10f" % geo_loc.get_latitude())
-                    self.entry_long.set_text("%.10f" % geo_loc.get_longitude())
-                    self.entry_foundName.set_text(
-                        generate_address_string(location_information, STR_ADDRESS_CONFIG))
+                    lat = "%.10f" % geo_loc.get_latitude()
+                    lon = "%.10f" % geo_loc.get_longitude()
+                    found = generate_address_string(
+                        location_information, STR_ADDRESS_CONFIG)
+                    self.entry_lat.set_text(lat)
+                    self.entry_long.set_text(lon)
+                    self.entry_foundName.set_text(found)
+                    cache[query] = (lat, lon, found)
                 else:
                     self.entry_foundName.set_text(
                         _("The place was not found.") + ' ' + error_message)
