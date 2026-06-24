@@ -37,7 +37,11 @@ from name_processor.models.infer import PatronymicInferenceStatus
 if TYPE_CHECKING:
     from name_processor.controllers.gramplet import GrampletController
 
-_ = glocale.translation.gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 
 class GrampletView:
