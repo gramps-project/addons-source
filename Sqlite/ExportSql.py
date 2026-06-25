@@ -85,11 +85,8 @@ class Database(object):
         """Execute a query and return all results."""
         args = list(args)
         if q.strip().upper().startswith("DROP"):
-            try:
-                self.cursor.execute(q, args)
-                self.db.commit()
-            except Exception:
-                LOG.warning("no such table to drop: '%s'", q)
+            self.cursor.execute(q, args)
+            self.db.commit()
         else:
             try:
                 self.cursor.execute(q, args)
@@ -117,7 +114,7 @@ def makeDB(db: Database, callback) -> None:
     count = 0
     total = 28
 
-    db.query("""drop table note;""")
+    db.query("""drop table if exists note;""")
     db.query(
         """CREATE TABLE note (
                   handle CHARACTER(25) PRIMARY KEY,
@@ -132,7 +129,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table name;""")
+    db.query("""drop table if exists name;""")
     db.query(
         """CREATE TABLE name (
                   handle CHARACTER(25) PRIMARY KEY,
@@ -153,7 +150,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table surname;""")
+    db.query("""drop table if exists surname;""")
     db.query(
         """CREATE TABLE surname (
                   handle CHARACTER(25),
@@ -174,7 +171,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table date;""")
+    db.query("""drop table if exists date;""")
     db.query(
         """CREATE TABLE date (
                   handle CHARACTER(25) PRIMARY KEY,
@@ -196,7 +193,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table person;""")
+    db.query("""drop table if exists person;""")
     db.query(
         """CREATE TABLE person (
                   handle CHARACTER(25) PRIMARY KEY,
@@ -211,7 +208,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table family;""")
+    db.query("""drop table if exists family;""")
     db.query(
         """CREATE TABLE family (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -226,7 +223,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table place;""")
+    db.query("""drop table if exists place;""")
     db.query(
         """CREATE TABLE place (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -245,7 +242,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table place_ref;""")
+    db.query("""drop table if exists place_ref;""")
     db.query(
         """CREATE TABLE place_ref (
                    handle             CHARACTER(25) PRIMARY KEY,
@@ -255,7 +252,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table place_name;""")
+    db.query("""drop table if exists place_name;""")
     db.query(
         """CREATE TABLE place_name (
                   handle        CHARACTER(25) PRIMARY KEY,
@@ -266,7 +263,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table event;""")
+    db.query("""drop table if exists event;""")
     db.query(
         """CREATE TABLE event (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -280,7 +277,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table citation;""")
+    db.query("""drop table if exists citation;""")
     db.query(
         """CREATE TABLE citation (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -294,7 +291,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table source;""")
+    db.query("""drop table if exists source;""")
     db.query(
         """CREATE TABLE source (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -309,7 +306,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table media;""")
+    db.query("""drop table if exists media;""")
     db.query(
         """CREATE TABLE media (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -324,7 +321,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table repository_ref;""")
+    db.query("""drop table if exists repository_ref;""")
     db.query(
         """CREATE TABLE repository_ref (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -337,7 +334,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table repository;""")
+    db.query("""drop table if exists repository;""")
     db.query(
         """CREATE TABLE repository (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -352,7 +349,7 @@ def makeDB(db: Database, callback) -> None:
     callback(100 * count / total)
 
     # One link to link them all
-    db.query("""drop table link;""")
+    db.query("""drop table if exists link;""")
     db.query(
         """CREATE TABLE link (
                  from_type CHARACTER(25),
@@ -370,7 +367,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table markup;""")
+    db.query("""drop table if exists markup;""")
     db.query(
         """CREATE TABLE markup (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -382,7 +379,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table event_ref;""")
+    db.query("""drop table if exists event_ref;""")
     db.query(
         """CREATE TABLE event_ref (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -394,7 +391,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table person_ref;""")
+    db.query("""drop table if exists person_ref;""")
     db.query(
         """CREATE TABLE person_ref (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -405,7 +402,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table child_ref;""")
+    db.query("""drop table if exists child_ref;""")
     db.query(
         """CREATE TABLE child_ref (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -419,7 +416,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table lds;""")
+    db.query("""drop table if exists lds;""")
     db.query(
         """CREATE TABLE lds (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -433,7 +430,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table media_ref;""")
+    db.query("""drop table if exists media_ref;""")
     db.query(
         """CREATE TABLE media_ref (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -447,7 +444,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table address;""")
+    db.query("""drop table if exists address;""")
     db.query(
         """CREATE TABLE address (
                 handle CHARACTER(25) PRIMARY KEY,
@@ -456,7 +453,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table location;""")
+    db.query("""drop table if exists location;""")
     db.query(
         """CREATE TABLE location (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -473,7 +470,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table attribute;""")
+    db.query("""drop table if exists attribute;""")
     db.query(
         """CREATE TABLE attribute (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -485,7 +482,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table url;""")
+    db.query("""drop table if exists url;""")
     db.query(
         """CREATE TABLE url (
                  handle CHARACTER(25) PRIMARY KEY,
@@ -499,7 +496,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table datamap;""")
+    db.query("""drop table if exists datamap;""")
     db.query(
         """CREATE TABLE datamap (
                  from_handle CHARACTER(25),
@@ -512,7 +509,7 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
-    db.query("""drop table tag;""")
+    db.query("""drop table if exists tag;""")
     db.query(
         """CREATE TABLE tag (
                  handle CHARACTER(25) PRIMARY KEY,
