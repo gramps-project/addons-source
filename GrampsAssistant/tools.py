@@ -243,16 +243,31 @@ def get_tools_schema(backend_type: str = "openai", tags=None) -> List[Dict]:
     return [t.to_openai_schema() for t in tools]
 
 
-def call_tool(name: str, args: Dict) -> str:
+class _AwaitUserExecution:
     """
-    Find the tool named *name*, call it with *args*, and return the result
-    as a JSON string.
+    Sentinel returned by execute_script when code has been staged in the
+    GrampyScript buffer and the model is waiting for the user to press Execute.
+    Detected by _execute_tool_on_main, which connects a one-shot button handler
+    instead of immediately returning a result to the backend.
+    """
+    def __init__(self, instance):
+        self.instance = instance
+
+
+def call_tool(name: str, args: Dict):
+    """
+    Find the tool named *name*, call it with *args*, and return the result.
+
+    Normally returns a JSON string.  For execute_script, may return an
+    ``_AwaitUserExecution`` sentinel — the caller must handle that case.
 
     Raises ``KeyError`` if no such tool is registered.
     """
     for tool in tool_registry:
         if tool.name == name:
             result = tool.func(**args)
+            if isinstance(result, _AwaitUserExecution):
+                return result
             return json.dumps(result, ensure_ascii=False, default=str)
     raise KeyError(f"No tool named {name!r}")
 
@@ -1286,10 +1301,7 @@ def register_gramps_tools(dbstate, uistate):
             )
 
         instance.ebuf.set_text(code)
-        output = instance.execute_code(code) or "Script executed with no output."
-        if "Traceback (most recent call last)" in output:
-            return "Script error — fix and retry:\n" + output
-        return output
+        return _AwaitUserExecution(instance)
 
     for func in [get_person_details, get_active_person, get_home_person, set_active_person,
                  get_view_results,

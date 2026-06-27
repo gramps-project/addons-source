@@ -358,8 +358,8 @@ def _execute_tool_calls(tool_call_accum, messages, on_tool_call, _trace=None, to
             _ev.set()
 
         on_tool_call(tc_name, tc_args, _result_callback)
-        if not event.wait(timeout=60):  # block until GTK thread executes tool
-            _LOG.warning("Tool call %r timed out after 60 s", tc_name)
+        if not event.wait(timeout=300):  # block until GTK thread executes tool
+            _LOG.warning("Tool call %r timed out after 300 s", tc_name)
         result_str = str(result_holder[0]) if result_holder[0] is not None else ""
         _LOG.debug("tool result: name=%r  result=%r", tc_name, result_str[:200])
 
@@ -472,151 +472,157 @@ class OpenAICompatibleBackend(ChatBackend):
             on_error(exc)
 
     def _do_stream(self, messages, tools, on_chunk, on_tool_call, on_done, on_error, _trace=None):
-        """Core streaming loop — may recurse after tool calls."""
-        span = None
-        _response_parts = []
+        """Core streaming loop — iterates through tool-call rounds without recursion."""
         _orig_on_chunk = on_chunk
-        if _trace:
-            try:
-                span = _trace.span(
-                    name="llm",
-                    type="llm",
-                    input={"messages": messages},
-                    model=self.model,
-                )
+        max_rounds = 20
 
-                def on_chunk(text):
-                    _response_parts.append(text)
-                    _orig_on_chunk(text)
-            except Exception:
-                _LOG.debug("Opik span creation failed", exc_info=True)
+        for _round in range(max_rounds):
+            span = None
+            _response_parts = []
 
-        base_path = self._parsed.path.rstrip("/")
-        path = base_path + "/v1/chat/completions"
+            def on_chunk(text):
+                _response_parts.append(text)
+                _orig_on_chunk(text)
 
-        payload = {
-            "model": self.model,
-            "messages": messages,
-            "stream": True,
-        }
-        if tools:
-            payload["tools"] = tools
-            payload["tool_choice"] = "auto"
-
-        body = json.dumps(payload).encode("utf-8")
-        headers = {
-            "Content-Type": "application/json",
-            "Accept": "text/event-stream",
-        }
-        if self.api_key:
-            headers["Authorization"] = f"Bearer {self.api_key}"
-
-        conn = _make_connection(self._parsed)
-        try:
-            conn.request("POST", path, body=body, headers=headers)
-            response = conn.getresponse()
-
-            if response.status != 200:
-                raw = response.read().decode("utf-8", errors="replace")
+            if _trace:
                 try:
-                    msg = json.loads(raw).get("error", {}).get("message") or raw[:500]
+                    span = _trace.span(
+                        name="llm",
+                        type="llm",
+                        input={"messages": messages},
+                        model=self.model,
+                    )
                 except Exception:
-                    msg = raw[:500]
-                raise RuntimeError(f"HTTP {response.status}: {msg}")
+                    _LOG.debug("Opik span creation failed", exc_info=True)
 
-            tool_call_accum = {}  # index → {"id","name","arguments"}
-            finish_reason = None
+            base_path = self._parsed.path.rstrip("/")
+            path = base_path + "/v1/chat/completions"
 
-            for line in _read_sse_lines(response):
-                if not line.startswith("data: "):
-                    continue
-                data_str = line[len("data: "):]
-                if data_str.strip() == "[DONE]":
-                    break
-                try:
-                    chunk = json.loads(data_str)
-                except json.JSONDecodeError:
-                    continue
+            payload = {
+                "model": self.model,
+                "messages": messages,
+                "stream": True,
+            }
+            if tools:
+                payload["tools"] = tools
+                payload["tool_choice"] = "auto"
 
-                choices = chunk.get("choices", [])
-                if not choices:
-                    continue
+            body = json.dumps(payload).encode("utf-8")
+            headers = {
+                "Content-Type": "application/json",
+                "Accept": "text/event-stream",
+            }
+            if self.api_key:
+                headers["Authorization"] = f"Bearer {self.api_key}"
 
-                choice = choices[0]
-                delta = choice.get("delta", {})
-                finish_reason = choice.get("finish_reason") or finish_reason
-
-                # Text delta
-                content = delta.get("content")
-                if content:
-                    on_chunk(content)
-
-                # Tool call delta accumulation
-                for tc_delta in delta.get("tool_calls") or []:
-                    _LOG.debug("tool_call delta: %r", tc_delta)
-                    idx = tc_delta.get("index", 0)
-                    if idx not in tool_call_accum:
-                        tool_call_accum[idx] = {"id": "", "name": "", "arguments": ""}
-                    acc = tool_call_accum[idx]
-                    if tc_delta.get("id"):
-                        acc["id"] = tc_delta["id"]
-                    func = tc_delta.get("function", {})
-                    # name may be under function.name (OpenAI) or at top level (some local models)
-                    name = func.get("name") or tc_delta.get("name", "")
-                    if name:
-                        acc["name"] = name
-                    # arguments may be under function.arguments or at top level
-                    args = func.get("arguments") or tc_delta.get("arguments", "")
-                    if args:
-                        acc["arguments"] += args
-
-                if finish_reason in ("stop", "end_turn", "tool_calls"):
-                    _LOG.debug("finish_reason=%r, tool_call_accum=%r", finish_reason, tool_call_accum)
-                    break
-        finally:
-            conn.close()
-
-        # Fallback: some smaller models emit the tool call as plain-text JSON
-        # e.g. {"function":"get_main_person"} instead of using tool_calls.
-        if not tool_call_accum and _response_parts and tools:
-            plain = "".join(_response_parts).strip()
+            conn = _make_connection(self._parsed)
             try:
-                obj = json.loads(plain)
-                if isinstance(obj, dict) and "function" in obj:
-                    tool_call_accum[0] = {
-                        "id": "plain-0",
-                        "name": obj["function"],
-                        "arguments": json.dumps(obj.get("arguments") or obj.get("parameters") or {}),
-                    }
-                    finish_reason = "tool_calls"
-                    _response_parts.clear()
-            except (json.JSONDecodeError, TypeError):
-                pass
+                conn.request("POST", path, body=body, headers=headers)
+                response = conn.getresponse()
 
-        if tool_call_accum:
-            _LOG.debug("tool_call_accum after SSE loop: %r", tool_call_accum)
-            if span:
+                if response.status != 200:
+                    raw = response.read().decode("utf-8", errors="replace")
+                    try:
+                        msg = json.loads(raw).get("error", {}).get("message") or raw[:500]
+                    except Exception:
+                        msg = raw[:500]
+                    raise RuntimeError(f"HTTP {response.status}: {msg}")
+
+                tool_call_accum = {}  # index → {"id","name","arguments"}
+                finish_reason = None
+
+                for line in _read_sse_lines(response):
+                    if not line.startswith("data: "):
+                        continue
+                    data_str = line[len("data: "):]
+                    if data_str.strip() == "[DONE]":
+                        break
+                    try:
+                        chunk = json.loads(data_str)
+                    except json.JSONDecodeError:
+                        continue
+
+                    choices = chunk.get("choices", [])
+                    if not choices:
+                        continue
+
+                    choice = choices[0]
+                    delta = choice.get("delta", {})
+                    finish_reason = choice.get("finish_reason") or finish_reason
+
+                    # Text delta
+                    content = delta.get("content")
+                    if content:
+                        on_chunk(content)
+
+                    # Tool call delta accumulation
+                    for tc_delta in delta.get("tool_calls") or []:
+                        _LOG.debug("tool_call delta: %r", tc_delta)
+                        idx = tc_delta.get("index", 0)
+                        if idx not in tool_call_accum:
+                            tool_call_accum[idx] = {"id": "", "name": "", "arguments": ""}
+                        acc = tool_call_accum[idx]
+                        if tc_delta.get("id"):
+                            acc["id"] = tc_delta["id"]
+                        func = tc_delta.get("function", {})
+                        # name may be under function.name (OpenAI) or at top level (some local models)
+                        name = func.get("name") or tc_delta.get("name", "")
+                        if name:
+                            acc["name"] = name
+                        # arguments may be under function.arguments or at top level
+                        args = func.get("arguments") or tc_delta.get("arguments", "")
+                        if args:
+                            acc["arguments"] += args
+
+                    if finish_reason in ("stop", "end_turn", "tool_calls"):
+                        _LOG.debug("finish_reason=%r, tool_call_accum=%r", finish_reason, tool_call_accum)
+                        break
+            finally:
+                conn.close()
+
+            # Fallback: some smaller models emit the tool call as plain-text JSON
+            # e.g. {"function":"get_main_person"} instead of using tool_calls.
+            if not tool_call_accum and _response_parts and tools:
+                plain = "".join(_response_parts).strip()
                 try:
-                    span.end(output={"text": "".join(_response_parts), "finish_reason": finish_reason})
-                except Exception:
+                    obj = json.loads(plain)
+                    if isinstance(obj, dict) and "function" in obj:
+                        tool_call_accum[0] = {
+                            "id": "plain-0",
+                            "name": obj["function"],
+                            "arguments": json.dumps(obj.get("arguments") or obj.get("parameters") or {}),
+                        }
+                        finish_reason = "tool_calls"
+                        _response_parts.clear()
+                except (json.JSONDecodeError, TypeError):
                     pass
-            updated_messages = _execute_tool_calls(
-                tool_call_accum, messages, on_tool_call, _trace, tools=tools
-            )
-            if updated_messages is messages:
-                # All tool calls had empty names; nothing was executed.
+
+            if tool_call_accum:
+                _LOG.debug("tool_call_accum after SSE loop: %r", tool_call_accum)
+                if span:
+                    try:
+                        span.end(output={"text": "".join(_response_parts), "finish_reason": finish_reason})
+                    except Exception:
+                        pass
+                updated_messages = _execute_tool_calls(
+                    tool_call_accum, messages, on_tool_call, _trace, tools=tools
+                )
+                if updated_messages is messages:
+                    # All tool calls had empty names; nothing was executed.
+                    on_done()
+                    return
+                messages = updated_messages  # advance to next round
+            else:
+                if span:
+                    try:
+                        span.end(output={"text": "".join(_response_parts)})
+                    except Exception:
+                        pass
                 on_done()
                 return
-            self._do_stream(
-                updated_messages, tools, _orig_on_chunk, on_tool_call, on_done, on_error, _trace
-            )
-        else:
-            if span:
-                try:
-                    span.end(output={"text": "".join(_response_parts)})
-                except Exception:
-                    pass
-            on_done()
+
+        _LOG.warning("Maximum tool-call rounds (%d) reached; stopping.", max_rounds)
+        on_done()
 
 
 # ---------------------------------------------------------------------------
@@ -790,141 +796,147 @@ class AnthropicBackend(ChatBackend):
             on_error(exc)
 
     def _do_stream(self, messages, tools, on_chunk, on_tool_call, on_done, on_error, _trace=None):
-        """Core streaming loop for the Anthropic API."""
-        span = None
-        _response_parts = []
+        """Core streaming loop for the Anthropic API — iterates through tool-call rounds without recursion."""
         _orig_on_chunk = on_chunk
-        if _trace:
+        max_rounds = 20
+
+        for _round in range(max_rounds):
+            span = None
+            _response_parts = []
+
+            def on_chunk(text):
+                _response_parts.append(text)
+                _orig_on_chunk(text)
+
+            if _trace:
+                try:
+                    span = _trace.span(
+                        name="llm",
+                        type="llm",
+                        input={"messages": messages},
+                        model=self.model,
+                    )
+                except Exception:
+                    _LOG.debug("Opik span creation failed", exc_info=True)
+
+            system_str, anthropic_messages = self._convert_messages(messages)
+
+            base_path = self._parsed.path.rstrip("/")
+            path = base_path + "/v1/messages"
+
+            payload = {
+                "model": self.model,
+                "max_tokens": 4096,
+                "messages": anthropic_messages,
+                "stream": True,
+            }
+            if system_str:
+                payload["system"] = system_str
+            if tools:
+                payload["tools"] = tools
+
+            body = json.dumps(payload).encode("utf-8")
+            headers = {
+                "Content-Type": "application/json",
+                "Accept": "text/event-stream",
+                "anthropic-version": self.ANTHROPIC_VERSION,
+            }
+            if self.api_key:
+                headers["x-api-key"] = self.api_key
+
+            conn = _make_connection(self._parsed)
             try:
-                span = _trace.span(
-                    name="llm",
-                    type="llm",
-                    input={"messages": messages},
-                    model=self.model,
+                conn.request("POST", path, body=body, headers=headers)
+                response = conn.getresponse()
+
+                if response.status != 200:
+                    raw = response.read().decode("utf-8", errors="replace")
+                    try:
+                        msg = json.loads(raw).get("error", {}).get("message") or raw[:500]
+                    except Exception:
+                        msg = raw[:500]
+                    raise RuntimeError(f"HTTP {response.status}: {msg}")
+
+                # Accumulate tool-use blocks indexed by content-block index
+                # Each entry: {"id","name","partial_json"}
+                tool_use_accum = {}
+                stop_reason = None
+
+                for line in _read_sse_lines(response):
+                    if not line.startswith("data: "):
+                        continue
+                    data_str = line[len("data: "):]
+                    try:
+                        event = json.loads(data_str)
+                    except json.JSONDecodeError:
+                        continue
+
+                    etype = event.get("type", "")
+
+                    if etype == "content_block_start":
+                        block = event.get("content_block", {})
+                        idx = event.get("index", 0)
+                        if block.get("type") == "tool_use":
+                            tool_use_accum[idx] = {
+                                "id": block.get("id", ""),
+                                "name": block.get("name", ""),
+                                "partial_json": "",
+                            }
+
+                    elif etype == "content_block_delta":
+                        idx = event.get("index", 0)
+                        delta = event.get("delta", {})
+                        dtype = delta.get("type", "")
+
+                        if dtype == "text_delta":
+                            text = delta.get("text", "")
+                            if text:
+                                on_chunk(text)
+
+                        elif dtype == "input_json_delta":
+                            if idx in tool_use_accum:
+                                tool_use_accum[idx]["partial_json"] += delta.get(
+                                    "partial_json", ""
+                                )
+
+                    elif etype == "message_delta":
+                        stop_reason = event.get("delta", {}).get("stop_reason")
+
+                    elif etype == "message_stop":
+                        break
+
+            finally:
+                conn.close()
+
+            if stop_reason == "tool_use" and tool_use_accum:
+                if span:
+                    try:
+                        span.end(output={"text": "".join(_response_parts), "finish_reason": "tool_use"})
+                    except Exception:
+                        pass
+                # Convert Anthropic accumulator format → OpenAI tool_call_accum format
+                openai_style_accum = {}
+                for idx, tu in tool_use_accum.items():
+                    openai_style_accum[idx] = {
+                        "id": tu["id"],
+                        "name": tu["name"],
+                        "arguments": tu["partial_json"],
+                    }
+                updated_messages = _execute_tool_calls(
+                    openai_style_accum, messages, on_tool_call, _trace, tools=tools
                 )
-
-                def on_chunk(text):
-                    _response_parts.append(text)
-                    _orig_on_chunk(text)
-            except Exception:
-                _LOG.debug("Opik span creation failed", exc_info=True)
-
-        system_str, anthropic_messages = self._convert_messages(messages)
-
-        base_path = self._parsed.path.rstrip("/")
-        path = base_path + "/v1/messages"
-
-        payload = {
-            "model": self.model,
-            "max_tokens": 4096,
-            "messages": anthropic_messages,
-            "stream": True,
-        }
-        if system_str:
-            payload["system"] = system_str
-        if tools:
-            payload["tools"] = tools
-
-        body = json.dumps(payload).encode("utf-8")
-        headers = {
-            "Content-Type": "application/json",
-            "Accept": "text/event-stream",
-            "anthropic-version": self.ANTHROPIC_VERSION,
-        }
-        if self.api_key:
-            headers["x-api-key"] = self.api_key
-
-        conn = _make_connection(self._parsed)
-        try:
-            conn.request("POST", path, body=body, headers=headers)
-            response = conn.getresponse()
-
-            if response.status != 200:
-                raw = response.read().decode("utf-8", errors="replace")
-                try:
-                    msg = json.loads(raw).get("error", {}).get("message") or raw[:500]
-                except Exception:
-                    msg = raw[:500]
-                raise RuntimeError(f"HTTP {response.status}: {msg}")
-
-            # Accumulate tool-use blocks indexed by content-block index
-            # Each entry: {"id","name","partial_json"}
-            tool_use_accum = {}
-            stop_reason = None
-
-            for line in _read_sse_lines(response):
-                if not line.startswith("data: "):
-                    continue
-                data_str = line[len("data: "):]
-                try:
-                    event = json.loads(data_str)
-                except json.JSONDecodeError:
-                    continue
-
-                etype = event.get("type", "")
-
-                if etype == "content_block_start":
-                    block = event.get("content_block", {})
-                    idx = event.get("index", 0)
-                    if block.get("type") == "tool_use":
-                        tool_use_accum[idx] = {
-                            "id": block.get("id", ""),
-                            "name": block.get("name", ""),
-                            "partial_json": "",
-                        }
-
-                elif etype == "content_block_delta":
-                    idx = event.get("index", 0)
-                    delta = event.get("delta", {})
-                    dtype = delta.get("type", "")
-
-                    if dtype == "text_delta":
-                        text = delta.get("text", "")
-                        if text:
-                            on_chunk(text)
-
-                    elif dtype == "input_json_delta":
-                        if idx in tool_use_accum:
-                            tool_use_accum[idx]["partial_json"] += delta.get(
-                                "partial_json", ""
-                            )
-
-                elif etype == "message_delta":
-                    stop_reason = event.get("delta", {}).get("stop_reason")
-
-                elif etype == "message_stop":
-                    break
-
-        finally:
-            conn.close()
-
-        if stop_reason == "tool_use" and tool_use_accum:
-            if span:
-                try:
-                    span.end(output={"text": "".join(_response_parts), "finish_reason": "tool_use"})
-                except Exception:
-                    pass
-            # Convert Anthropic accumulator format → OpenAI tool_call_accum format
-            openai_style_accum = {}
-            for idx, tu in tool_use_accum.items():
-                openai_style_accum[idx] = {
-                    "id": tu["id"],
-                    "name": tu["name"],
-                    "arguments": tu["partial_json"],
-                }
-            updated_messages = _execute_tool_calls(
-                openai_style_accum, messages, on_tool_call, _trace, tools=tools
-            )
-            if updated_messages is messages:
+                if updated_messages is messages:
+                    on_done()
+                    return
+                messages = updated_messages  # advance to next round
+            else:
+                if span:
+                    try:
+                        span.end(output={"text": "".join(_response_parts)})
+                    except Exception:
+                        pass
                 on_done()
                 return
-            self._do_stream(
-                updated_messages, tools, _orig_on_chunk, on_tool_call, on_done, on_error, _trace
-            )
-        else:
-            if span:
-                try:
-                    span.end(output={"text": "".join(_response_parts)})
-                except Exception:
-                    pass
-            on_done()
+
+        _LOG.warning("Maximum tool-call rounds (%d) reached; stopping.", max_rounds)
+        on_done()

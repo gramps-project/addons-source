@@ -38,7 +38,7 @@ except ImportError:
     BaseSidePanel = object  # neutral base when SIDEPANEL unavailable
 
 from backend import AnthropicBackend, OpenAICompatibleBackend
-from tools import call_tool, get_tools_schema, register_gramps_tools, tool_registry
+from tools import _AwaitUserExecution, call_tool, get_tools_schema, register_gramps_tools, tool_registry
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 
 _ = glocale.translation.gettext
@@ -91,6 +91,7 @@ class GrampsAssistant(BaseSidePanel):
         self._thread_id = str(uuid.uuid4())  # Opik thread; rotated on Clear
         self._streaming = False         # True while a request is in flight
         self._cancelled = False         # set True when panel is hidden/destroyed
+        self._pending_execute_handler = None  # (instance, handler_id, result_callback) for staged execute_script
         self._current_context = ""
         self._full_response = ""        # full text of current turn (for history)
         self._tools_called_this_turn = 0
@@ -136,6 +137,7 @@ class GrampsAssistant(BaseSidePanel):
 
     def inactive(self):
         self._cancelled = True
+        self._cancel_pending_execute()
         if self._line_start_mark is not None:
             try:
                 self._chat_buffer.delete_mark(self._line_start_mark)
@@ -631,6 +633,7 @@ class GrampsAssistant(BaseSidePanel):
         (formatted and written permanently); new characters for the partial
         line are appended directly to avoid mark-gravity issues.
         """
+        self._full_response += text
         self._clear_thinking()
         if self._line_start_mark is None:
             return False  # panel was deactivated; discard
@@ -685,7 +688,15 @@ class GrampsAssistant(BaseSidePanel):
         return False
 
     def _on_send_clicked(self, button):
-        self._submit_message()
+        if self._streaming:
+            self._on_cancel_clicked()
+        else:
+            self._submit_message()
+
+    def _on_cancel_clicked(self):
+        self._cancelled = True
+        self._cancel_pending_execute(cancelled=True)
+        self._reset_streaming_ui()
 
     def _on_clear_clicked(self, button):
         self._messages.clear()
@@ -753,10 +764,10 @@ class GrampsAssistant(BaseSidePanel):
             None, end_iter, left_gravity=True
         )
 
-        # Disable input while streaming
+        # Switch Send → Cancel while streaming; keep input locked
         self._streaming = True
         self._cancelled = False
-        self._send_btn.set_sensitive(False)
+        self._send_btn.set_label(_("Cancel"))
         self._input_view.set_sensitive(False)
 
         # Start streaming in background
@@ -790,7 +801,6 @@ class GrampsAssistant(BaseSidePanel):
         if self._cancelled:
             _LOG.warning("_on_stream_chunk: chunk dropped because _cancelled=True")
             return
-        self._full_response += text
         GLib.idle_add(self._process_chunk, text)
 
     def _on_tool_call(self, name: str, args: dict, result_callback):
@@ -869,15 +879,81 @@ class GrampsAssistant(BaseSidePanel):
 
         try:
             result = call_tool(name, args)
-            result_str = str(result)
         except Exception as exc:
             result_str = f"Error calling {name}: {exc}"
+            GLib.idle_add(result_callback, result_str, priority=GLib.PRIORITY_LOW)
+            return False
+
+        if isinstance(result, _AwaitUserExecution):
+            self._stage_execute_script(result.instance, result_callback)
+            return False
 
         # Resume background thread with the full result.
         # Use PRIORITY_LOW so any UI updates queued by the tool (e.g. set_active
         # scheduling its own idle callbacks) have a chance to run first.
-        GLib.idle_add(result_callback, result_str, priority=GLib.PRIORITY_LOW)
+        GLib.idle_add(result_callback, str(result), priority=GLib.PRIORITY_LOW)
         return False  # remove idle source
+
+    def _cancel_pending_execute(self, cancelled=False):
+        """Disconnect the staged execute_script button handler, if any.
+
+        When *cancelled* is True, also calls result_callback with a cancellation
+        message so the backend thread unblocks immediately instead of timing out.
+        """
+        if self._pending_execute_handler is not None:
+            instance, handler_id, result_callback = self._pending_execute_handler
+            try:
+                instance.apply_button.disconnect(handler_id)
+            except Exception:
+                pass
+            self._pending_execute_handler = None
+            if cancelled:
+                GLib.idle_add(
+                    result_callback,
+                    "Script execution cancelled by user.",
+                    priority=GLib.PRIORITY_LOW,
+                )
+
+    def _reset_streaming_ui(self):
+        """Restore the UI to its idle state after streaming ends or is cancelled."""
+        self._streaming = False
+        self._send_btn.set_label(_("Send"))
+        self._send_btn.set_sensitive(True)
+        self._input_view.set_sensitive(True)
+        self._input_view.grab_focus()
+
+    def _stage_execute_script(self, instance, result_callback):
+        """
+        Code is already in the GrampyScript buffer. Connect a one-shot handler
+        to the Execute button; when the user clicks it, apply_clicked runs first
+        (executing the code and populating output_buffer), then our handler reads
+        the output and resumes the backend thread.
+        """
+        self._cancel_pending_execute()  # drop any previous handler that was never clicked
+        self._append_text(
+            "\n⏳ Review the script in the GrampyScript panel and press Execute to continue.\n",
+            "tool_call",
+        )
+
+        # handler_id is set on self so _cancel_pending_execute can disconnect it.
+        # The closure reads self._pending_execute_handler to get the id, which is
+        # guaranteed to be set before GTK can dispatch a click (same thread).
+        def on_execute_clicked(button):
+            if self._pending_execute_handler is None:
+                return  # already cancelled
+            _, hid, cb = self._pending_execute_handler
+            self._pending_execute_handler = None
+            button.disconnect(hid)
+            buf = instance.output_buffer
+            output = buf.get_text(buf.get_start_iter(), buf.get_end_iter(), False)
+            GLib.idle_add(
+                cb,
+                output or "Script executed with no output.",
+                priority=GLib.PRIORITY_LOW,
+            )
+
+        handler_id = instance.apply_button.connect("clicked", on_execute_clicked)
+        self._pending_execute_handler = (instance, handler_id, result_callback)
 
     def _finish_stream(self):
         self._clear_thinking()
@@ -891,20 +967,19 @@ class GrampsAssistant(BaseSidePanel):
             self._chat_buffer.delete_mark(self._line_start_mark)
             self._line_start_mark = None
         self._append_text("\n", None)
-        # If tools ran but the model produced no text, show a brief acknowledgment.
-        if not self._full_response and self._tools_called_this_turn:
-            self._append_text(_("Done.\n"), "assistant_body")
-        # Persist the assistant turn in history
-        if self._full_response:
-            _LOG.debug("full response: %r", self._full_response)
-            self._messages.append(
-                {"role": "assistant", "content": self._full_response}
-            )
+        if not self._cancelled:
+            # If tools ran but the model produced no text, show a brief acknowledgment.
+            if not self._full_response and self._tools_called_this_turn:
+                self._append_text(_("Done.\n"), "assistant_body")
+            # Persist the assistant turn in history
+            if self._full_response:
+                _LOG.debug("full response: %r", self._full_response)
+                self._messages.append(
+                    {"role": "assistant", "content": self._full_response}
+                )
         self._full_response = ""
-        self._streaming = False
-        self._send_btn.set_sensitive(True)
-        self._input_view.set_sensitive(True)
-        self._input_view.grab_focus()
+        if self._streaming:  # not already reset by _on_cancel_clicked
+            self._reset_streaming_ui()
         self._update_context_label()
         return False
 
@@ -916,10 +991,8 @@ class GrampsAssistant(BaseSidePanel):
         self._line_buffer = ""
         self._append_text(f"\n[Error: {msg}]\n", "error")
         self._full_response = ""
-        self._streaming = False
-        self._send_btn.set_sensitive(True)
-        self._input_view.set_sensitive(True)
-        self._input_view.grab_focus()
+        if self._streaming:  # not already reset by _on_cancel_clicked
+            self._reset_streaming_ui()
         return False
 
     # ------------------------------------------------------------------
