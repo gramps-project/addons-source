@@ -161,8 +161,6 @@ def get_all_languages():
     languages = set(["en"])
     for addon in [file for file in glob.glob("*") if os.path.isdir(file)]:
         for po in glob.glob(f"{addon}/po/*-local.po"):
-            length = len(po)
-            locale = po[length - 11 : length - 9]
             locale_path, locale = po.rsplit(os.sep, 1)
             languages.add(locale[:-9])
     return languages
