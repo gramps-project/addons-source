@@ -452,6 +452,17 @@ class DeepConnectionsGramplet(Gramplet):
                         self.pause_button.set_sensitive(False)
                         self.pause()
                         yield False
+                        # The active person is the search *target*, not a
+                        # waypoint: expanding it (the fall-through below) feeds
+                        # its own relatives back into the queue, which then
+                        # re-reach the target and re-emit the connection just
+                        # reported -- the "same path returned every time you
+                        # press Continue" of issue 10628.  Skip straight to the
+                        # next queued candidate so each Continue advances to a
+                        # genuinely different connection; the distinct paths
+                        # other relatives already queued before the target was
+                        # found are still reported.
+                        continue
                     else:
                         break
                 elif current_handle in self.cache:
