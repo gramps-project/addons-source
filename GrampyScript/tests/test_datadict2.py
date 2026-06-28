@@ -4,28 +4,17 @@ Tests for datadict2.py — DataDict2, DataList2, and NoneData.
 Uses real Gramps gen-lib objects (no GTK required).
 """
 
-import pytest
+import os
+import sys
+import unittest
 from unittest.mock import MagicMock
 
-from gramps.gen.lib import Person, Name, Surname, Family, Event, EventRef, EventType
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from gramps.gen.lib import Person, Name, Surname, Family
 from gramps.gen.simple import SimpleAccess
 
 from datadict2 import DataDict2, DataList2, NoneData, set_sa
-
-
-# ---------------------------------------------------------------------------
-# Fixture: minimal SimpleAccess so property methods don't crash
-# ---------------------------------------------------------------------------
-
-@pytest.fixture(autouse=True)
-def mock_sa():
-    db = MagicMock()
-    db.get_event_from_handle.return_value = None   # no birth/death events
-    db.get_place_from_handle.return_value = None
-    db.get_source_from_handle.return_value = None
-    sa = SimpleAccess(db)
-    set_sa(sa)
-    yield sa
 
 
 # ---------------------------------------------------------------------------
@@ -50,184 +39,188 @@ def _make_family(gramps_id="F0001"):
     return f
 
 
+class _MockSaBase(unittest.TestCase):
+    """Base class that sets up a minimal SimpleAccess mock before each test."""
+
+    def setUp(self):
+        db = MagicMock()
+        db.get_event_from_handle.return_value = None
+        db.get_place_from_handle.return_value = None
+        db.get_source_from_handle.return_value = None
+        sa = SimpleAccess(db)
+        set_sa(sa)
+
+
 # ---------------------------------------------------------------------------
 # NoneData
 # ---------------------------------------------------------------------------
 
-class TestNoneData:
+class TestNoneData(unittest.TestCase):
     def test_is_falsy(self):
-        assert not NoneData()
+        self.assertFalse(NoneData())
 
     def test_str_is_empty(self):
-        assert str(NoneData()) == ""
+        self.assertEqual(str(NoneData()), "")
 
     def test_attribute_chain_returns_none_data(self):
         result = NoneData().foo.bar.baz
-        assert isinstance(result, NoneData)
+        self.assertIsInstance(result, NoneData)
 
     def test_callable_returns_empty_string(self):
-        assert NoneData()() == ""
+        self.assertEqual(NoneData()(), "")
 
     def test_iter_yields_nothing(self):
-        assert list(NoneData()) == []
+        self.assertEqual(list(NoneData()), [])
 
 
 # ---------------------------------------------------------------------------
 # DataDict2 — basic attribute access
 # ---------------------------------------------------------------------------
 
-class TestDataDict2BasicAccess:
+class TestDataDict2BasicAccess(_MockSaBase):
     def test_gramps_id_via_attribute(self):
         dd = DataDict2(_make_person(gramps_id="I0042"))
-        assert dd.gramps_id == "I0042"
+        self.assertEqual(dd.gramps_id, "I0042")
 
     def test_class_key(self):
         dd = DataDict2(_make_person())
-        assert dd["_class"] == "Person"
+        self.assertEqual(dd["_class"], "Person")
 
     def test_missing_key_returns_none_data(self):
         dd = DataDict2(_make_person())
-        result = dd.nonexistent_field
-        assert isinstance(result, NoneData)
+        self.assertIsInstance(dd.nonexistent_field, NoneData)
 
     def test_nested_dict_wraps_as_datadict2(self):
         dd = DataDict2(_make_person())
-        # primary_name is a dict in the serialised form
-        assert isinstance(dd.primary_name, DataDict2)
+        self.assertIsInstance(dd.primary_name, DataDict2)
 
     def test_nested_list_wraps_as_datalist2(self):
         dd = DataDict2(_make_person())
-        assert isinstance(dd.primary_name.surname_list, DataList2)
+        self.assertIsInstance(dd.primary_name.surname_list, DataList2)
 
     def test_scalar_returned_directly(self):
         dd = DataDict2(_make_person(gramps_id="I0001"))
-        assert isinstance(dd.gramps_id, str)
+        self.assertIsInstance(dd.gramps_id, str)
 
 
 # ---------------------------------------------------------------------------
 # DataDict2 — genealogy properties
 # ---------------------------------------------------------------------------
 
-class TestDataDict2GenealogyProperties:
+class TestDataDict2GenealogyProperties(_MockSaBase):
     def test_name_property_returns_primary_name_for_person(self):
         dd = DataDict2(_make_person())
-        assert dd.name == dd.primary_name
+        self.assertEqual(dd.name, dd.primary_name)
 
     def test_name_first_name(self):
         dd = DataDict2(_make_person(first="Alice"))
-        assert dd.name.first_name == "Alice"
+        self.assertEqual(dd.name.first_name, "Alice")
 
     def test_surname_via_surname_list(self):
         dd = DataDict2(_make_person(surname="Jones"))
-        assert dd.name.surname_list[0].surname == "Jones"
+        self.assertEqual(dd.name.surname_list[0].surname, "Jones")
 
     def test_birth_returns_none_data_when_absent(self):
         dd = DataDict2(_make_person())
-        assert not dd.birth
+        self.assertFalse(dd.birth)
 
     def test_death_returns_none_data_when_absent(self):
         dd = DataDict2(_make_person())
-        assert not dd.death
+        self.assertFalse(dd.death)
 
     def test_birth_chain_attribute_access_is_safe(self):
         # Attribute chaining on NoneData is safe — returns falsy NoneData each step.
         dd = DataDict2(_make_person())
-        assert not dd.birth          # NoneData
-        assert not dd.birth.date     # still NoneData
+        self.assertFalse(dd.birth)
+        self.assertFalse(dd.birth.date)
 
     def test_birth_guard_before_method_call(self):
-        # NoneData().__call__ returns "", not NoneData, so calling methods on the
-        # result of a method call is not safe. Always guard with `if birth:` first.
+        # Always guard with `if birth:` before calling methods on it.
         dd = DataDict2(_make_person())
         birth = dd.birth
         year = birth.get_date_object().get_year() if birth else 0
-        assert year == 0
+        self.assertEqual(year, 0)
 
     def test_notes_is_list(self):
         dd = DataDict2(_make_person())
-        assert isinstance(dd.notes, (list, DataList2))
+        self.assertIsInstance(dd.notes, (list, DataList2))
 
     def test_tags_is_list(self):
         dd = DataDict2(_make_person())
-        assert isinstance(dd.tags, (list, DataList2))
+        self.assertIsInstance(dd.tags, (list, DataList2))
 
     def test_citations_is_list(self):
         dd = DataDict2(_make_person())
-        assert isinstance(dd.citations, (list, DataList2))
+        self.assertIsInstance(dd.citations, (list, DataList2))
 
     def test_private_default_false(self):
         dd = DataDict2(_make_person())
-        assert dd.private == False
+        self.assertEqual(dd.private, False)
 
     def test_family_gramps_id(self):
         dd = DataDict2(_make_family(gramps_id="F0007"))
-        assert dd.gramps_id == "F0007"
-        assert dd["_class"] == "Family"
+        self.assertEqual(dd.gramps_id, "F0007")
+        self.assertEqual(dd["_class"], "Family")
 
 
 # ---------------------------------------------------------------------------
 # DataDict2 — null-safe chaining
 # ---------------------------------------------------------------------------
 
-class TestDataDict2NullSafeChaining:
+class TestDataDict2NullSafeChaining(_MockSaBase):
     def test_missing_birth_place_title_is_safe(self):
         dd = DataDict2(_make_person())
         result = dd.birth.place.title
-        # Must not raise; returns "" or NoneData
-        assert not result or isinstance(result, (str, NoneData))
+        self.assertTrue(not result or isinstance(result, (str, NoneData)))
 
     def test_none_data_in_chain_stays_falsy(self):
         dd = DataDict2(_make_person())
-        assert not dd.birth
-        assert not dd.birth.date
-        assert not dd.birth.date.dateval
+        self.assertFalse(dd.birth)
+        self.assertFalse(dd.birth.date)
+        self.assertFalse(dd.birth.date.dateval)
 
     def test_non_existent_deeply_nested(self):
         dd = DataDict2(_make_person())
-        result = dd.a.b.c.d.e
-        assert not result
+        self.assertFalse(dd.a.b.c.d.e)
 
 
 # ---------------------------------------------------------------------------
 # DataList2
 # ---------------------------------------------------------------------------
 
-class TestDataList2:
+class TestDataList2(_MockSaBase):
     def _make_list(self):
         p1 = DataDict2(_make_person(gramps_id="I0001", first="Alice"))
         p2 = DataDict2(_make_person(gramps_id="I0002", first="Bob"))
         return DataList2([p1, p2])
 
     def test_len(self):
-        dl = self._make_list()
-        assert len(dl) == 2
+        self.assertEqual(len(self._make_list()), 2)
 
     def test_getitem_wraps_dict(self):
-        dl = self._make_list()
-        assert isinstance(dl[0], DataDict2)
+        self.assertIsInstance(self._make_list()[0], DataDict2)
 
     def test_getitem_out_of_range_returns_none_data(self):
-        dl = self._make_list()
-        assert isinstance(dl[99], NoneData)
+        self.assertIsInstance(self._make_list()[99], NoneData)
 
     def test_iter_yields_all_items(self):
-        dl = self._make_list()
-        items = list(dl)
-        assert len(items) == 2
+        self.assertEqual(len(list(self._make_list())), 2)
 
     def test_getattr_fans_out_across_items(self):
-        dl = self._make_list()
-        ids = dl.gramps_id
-        assert "I0001" in ids
-        assert "I0002" in ids
+        ids = self._make_list().gramps_id
+        self.assertIn("I0001", ids)
+        self.assertIn("I0002", ids)
 
     def test_add_concatenates(self):
         dl1 = DataList2([DataDict2(_make_person(gramps_id="I0001"))])
         dl2 = DataList2([DataDict2(_make_person(gramps_id="I0002"))])
-        combined = dl1 + dl2
-        assert len(combined) == 2
+        self.assertEqual(len(dl1 + dl2), 2)
 
     def test_empty_list(self):
         dl = DataList2([])
-        assert len(dl) == 0
-        assert list(dl) == []
+        self.assertEqual(len(dl), 0)
+        self.assertEqual(list(dl), [])
+
+
+if __name__ == "__main__":
+    unittest.main()
