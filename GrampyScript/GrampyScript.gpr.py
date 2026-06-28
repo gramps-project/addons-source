@@ -23,7 +23,7 @@ register(
     name=_("Gram.py Script"),
     description=_("Run a special Gramps Python script"),
     status=STABLE,
-    version = '0.0.5',
+    version = '0.0.3',
     fname="GrampyScript.py",
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
