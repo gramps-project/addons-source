@@ -65,9 +65,6 @@ config.register("defaults.encoding", "utf-8")
 config.register("defaults.delimiter", "comma")
 config.register("defaults.last_filename", "")
 
-_instance = None
-
-
 def contains_any_none_data(args):
     if isinstance(args, list):
         return any(contains_any_none_data(arg) for arg in args)
@@ -196,8 +193,6 @@ class CsvFileChooserDialog(Gtk.FileChooserDialog):
 
 class GrampyScript(Gramplet):
     def init(self):
-        global _instance
-        _instance = self
         self.keywords = [
             "_",
             "and",
@@ -1192,5 +1187,3 @@ for person in people():
         else:
             self.notebook.set_current_page(1)
             self.statusmsg.set_text("Completed")
-
-        return STDOUT
