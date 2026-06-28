@@ -25,9 +25,11 @@ and live integration tests against the configured OpenAI-compatible backend.
 import io
 import json
 import os
+import sys
 import threading
+import unittest
 
-import pytest
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from backend import (
     AnthropicBackend,
@@ -109,17 +111,17 @@ def _collect(backend, messages, tools=None, timeout=30):
 # ---------------------------------------------------------------------------
 
 
-class TestConvertMessages:
+class TestConvertMessages(unittest.TestCase):
     def test_system_extracted_from_messages(self):
         msgs = [{"role": "system", "content": "You are helpful."}]
         system, result = AnthropicBackend._convert_messages(msgs)
-        assert system == "You are helpful."
-        assert result == []
+        self.assertEqual(system, "You are helpful.")
+        self.assertEqual(result, [])
 
     def test_no_system_returns_none(self):
         msgs = [{"role": "user", "content": "Hi"}]
         system, _ = AnthropicBackend._convert_messages(msgs)
-        assert system is None
+        self.assertIsNone(system)
 
     def test_multiple_systems_joined(self):
         msgs = [
@@ -127,18 +129,19 @@ class TestConvertMessages:
             {"role": "system", "content": "Part 2."},
         ]
         system, _ = AnthropicBackend._convert_messages(msgs)
-        assert "Part 1." in system and "Part 2." in system
+        self.assertIn("Part 1.", system)
+        self.assertIn("Part 2.", system)
 
     def test_user_message_preserved(self):
         msgs = [{"role": "user", "content": "Hello"}]
         _, result = AnthropicBackend._convert_messages(msgs)
-        assert result[0] == {"role": "user", "content": "Hello"}
+        self.assertEqual(result[0], {"role": "user", "content": "Hello"})
 
     def test_assistant_message_preserved(self):
         msgs = [{"role": "assistant", "content": "Hi there"}]
         _, result = AnthropicBackend._convert_messages(msgs)
-        assert result[0]["role"] == "assistant"
-        assert result[0]["content"] == "Hi there"
+        self.assertEqual(result[0]["role"], "assistant")
+        self.assertEqual(result[0]["content"], "Hi there")
 
     def test_assistant_with_tool_calls_produces_tool_use_blocks(self):
         msgs = [
@@ -158,12 +161,12 @@ class TestConvertMessages:
             }
         ]
         _, result = AnthropicBackend._convert_messages(msgs)
-        assert result[0]["role"] == "assistant"
+        self.assertEqual(result[0]["role"], "assistant")
         blocks = result[0]["content"]
         tool_blocks = [b for b in blocks if b.get("type") == "tool_use"]
-        assert len(tool_blocks) == 1
-        assert tool_blocks[0]["name"] == "get_person"
-        assert tool_blocks[0]["input"] == {"gramps_id": "I001"}
+        self.assertEqual(len(tool_blocks), 1)
+        self.assertEqual(tool_blocks[0]["name"], "get_person")
+        self.assertEqual(tool_blocks[0]["input"], {"gramps_id": "I001"})
 
     def test_assistant_text_plus_tool_call_includes_text_block(self):
         msgs = [
@@ -182,17 +185,17 @@ class TestConvertMessages:
         _, result = AnthropicBackend._convert_messages(msgs)
         blocks = result[0]["content"]
         types = [b["type"] for b in blocks]
-        assert "text" in types
-        assert "tool_use" in types
+        self.assertIn("text", types)
+        self.assertIn("tool_use", types)
 
     def test_single_tool_result_becomes_user_message(self):
         msgs = [{"role": "tool", "tool_call_id": "c1", "content": "Smith, John"}]
         _, result = AnthropicBackend._convert_messages(msgs)
-        assert result[0]["role"] == "user"
+        self.assertEqual(result[0]["role"], "user")
         blocks = result[0]["content"]
-        assert blocks[0]["type"] == "tool_result"
-        assert blocks[0]["tool_use_id"] == "c1"
-        assert blocks[0]["content"] == "Smith, John"
+        self.assertEqual(blocks[0]["type"], "tool_result")
+        self.assertEqual(blocks[0]["tool_use_id"], "c1")
+        self.assertEqual(blocks[0]["content"], "Smith, John")
 
     def test_consecutive_tool_results_merged_into_one_user_message(self):
         msgs = [
@@ -200,9 +203,9 @@ class TestConvertMessages:
             {"role": "tool", "tool_call_id": "c2", "content": "result2"},
         ]
         _, result = AnthropicBackend._convert_messages(msgs)
-        assert len(result) == 1
-        assert result[0]["role"] == "user"
-        assert len(result[0]["content"]) == 2
+        self.assertEqual(len(result), 1)
+        self.assertEqual(result[0]["role"], "user")
+        self.assertEqual(len(result[0]["content"]), 2)
 
     def test_tool_results_not_merged_across_assistant_turns(self):
         msgs = [
@@ -212,7 +215,7 @@ class TestConvertMessages:
         ]
         _, result = AnthropicBackend._convert_messages(msgs)
         user_msgs = [m for m in result if m["role"] == "user"]
-        assert len(user_msgs) == 2
+        self.assertEqual(len(user_msgs), 2)
 
     def test_invalid_tool_call_json_yields_empty_input(self):
         msgs = [
@@ -231,7 +234,7 @@ class TestConvertMessages:
         _, result = AnthropicBackend._convert_messages(msgs)
         blocks = result[0]["content"]
         tool_block = next(b for b in blocks if b["type"] == "tool_use")
-        assert tool_block["input"] == {}
+        self.assertEqual(tool_block["input"], {})
 
 
 # ---------------------------------------------------------------------------
@@ -239,12 +242,12 @@ class TestConvertMessages:
 # ---------------------------------------------------------------------------
 
 
-class TestReadSseLines:
+class TestReadSseLines(unittest.TestCase):
     def test_fp_readline_used_when_available(self):
         resp = _make_fake_fp_response(["data: hello", "data: world"])
         lines = [l for l in _read_sse_lines(resp) if l]
-        assert "data: hello" in lines
-        assert "data: world" in lines
+        self.assertIn("data: hello", lines)
+        self.assertIn("data: world", lines)
 
     def test_fallback_when_no_fp(self):
         class _NoFPResp:
@@ -254,18 +257,18 @@ class TestReadSseLines:
                 return b"data: one\r\ndata: two\r\n"
 
         lines = [l for l in _read_sse_lines(_NoFPResp()) if l]
-        assert "data: one" in lines
-        assert "data: two" in lines
+        self.assertIn("data: one", lines)
+        self.assertIn("data: two", lines)
 
     def test_done_sentinel_yields_as_line(self):
         resp = _make_fake_fp_response(["data: [DONE]"])
         lines = list(_read_sse_lines(resp))
-        assert any("[DONE]" in l for l in lines)
+        self.assertTrue(any("[DONE]" in l for l in lines))
 
     def test_empty_body_yields_nothing_meaningful(self):
         resp = _make_fake_fp_response([])
         non_empty = [l for l in _read_sse_lines(resp) if l]
-        assert non_empty == []
+        self.assertEqual(non_empty, [])
 
 
 # ---------------------------------------------------------------------------
@@ -273,14 +276,13 @@ class TestReadSseLines:
 # ---------------------------------------------------------------------------
 
 
-class TestExecuteToolCalls:
+class TestExecuteToolCalls(unittest.TestCase):
     def _make_accum(self, **overrides):
         base = {"id": "call_1", "name": "my_tool", "arguments": '{"x": 1}'}
         base.update(overrides)
         return {0: base}
 
     def _sync_on_tool_call(self, name, args, result_cb):
-        """Immediately return a canned result."""
         result_cb(json.dumps({"done": True}))
 
     def test_returns_updated_messages(self):
@@ -288,10 +290,10 @@ class TestExecuteToolCalls:
         updated = _execute_tool_calls(
             self._make_accum(), messages, self._sync_on_tool_call
         )
-        assert updated is not messages
+        self.assertIsNot(updated, messages)
         roles = [m["role"] for m in updated]
-        assert "assistant" in roles
-        assert "tool" in roles
+        self.assertIn("assistant", roles)
+        self.assertIn("tool", roles)
 
     def test_tool_result_appended(self):
         messages = [{"role": "user", "content": "Hi"}]
@@ -299,13 +301,13 @@ class TestExecuteToolCalls:
             self._make_accum(), messages, self._sync_on_tool_call
         )
         tool_msg = next(m for m in updated if m["role"] == "tool")
-        assert tool_msg["tool_call_id"] == "call_1"
+        self.assertEqual(tool_msg["tool_call_id"], "call_1")
 
     def test_empty_name_skipped_returns_original(self):
         messages = [{"role": "user", "content": "Hi"}]
         accum = {0: {"id": "bad", "name": "", "arguments": "{}"}}
         updated = _execute_tool_calls(accum, messages, self._sync_on_tool_call)
-        assert updated is messages  # identity check — nothing was executed
+        self.assertIs(updated, messages)
 
     def test_multiple_tool_calls_all_executed(self):
         invocations = []
@@ -320,8 +322,8 @@ class TestExecuteToolCalls:
         }
         messages = [{"role": "user", "content": "run both"}]
         _execute_tool_calls(accum, messages, on_tool_call)
-        assert "tool_a" in invocations
-        assert "tool_b" in invocations
+        self.assertIn("tool_a", invocations)
+        self.assertIn("tool_b", invocations)
 
     def test_mixed_empty_and_valid_names(self):
         invocations = []
@@ -331,16 +333,15 @@ class TestExecuteToolCalls:
             result_cb("{}")
 
         accum = {
-            0: {"id": "c0", "name": "",        "arguments": "{}"},
-            1: {"id": "c1", "name": "real_tool","arguments": "{}"},
+            0: {"id": "c0", "name": "",         "arguments": "{}"},
+            1: {"id": "c1", "name": "real_tool", "arguments": "{}"},
         }
         messages = [{"role": "user", "content": "hi"}]
         updated = _execute_tool_calls(accum, messages, on_tool_call)
-        assert updated is not messages
-        assert invocations == ["real_tool"]
+        self.assertIsNot(updated, messages)
+        self.assertEqual(invocations, ["real_tool"])
 
     def test_empty_name_inferred_from_arguments(self):
-        """Local models that omit the name: infer it from argument keys."""
         invocations = []
 
         def on_tool_call(name, args, result_cb):
@@ -363,11 +364,10 @@ class TestExecuteToolCalls:
         accum = {0: {"id": "", "name": "", "arguments": '{"code": "print(1)"}'}}
         messages = [{"role": "user", "content": "run"}]
         updated = _execute_tool_calls(accum, messages, on_tool_call, tools=tools)
-        assert updated is not messages
-        assert invocations == ["execute_script"]
+        self.assertIsNot(updated, messages)
+        self.assertEqual(invocations, ["execute_script"])
 
     def test_empty_name_inferred_from_malformed_arguments(self):
-        """Inference works even when the model emits broken JSON like {"code# ..."""
         invocations = []
 
         def on_tool_call(name, args, result_cb):
@@ -387,17 +387,13 @@ class TestExecuteToolCalls:
                 },
             }
         ]
-        # Malformed JSON as produced by low-quality local models
         accum = {0: {"id": "", "name": "", "arguments": '{"code# list all people'}}
         messages = [{"role": "user", "content": "run"}]
         updated = _execute_tool_calls(accum, messages, on_tool_call, tools=tools)
-        assert updated is not messages
-        assert invocations == ["execute_script"]
+        self.assertIsNot(updated, messages)
+        self.assertEqual(invocations, ["execute_script"])
 
     def test_missing_id_gets_fallback(self):
-        """Empty id should be replaced so the tool result can be correlated."""
-        ids_seen = []
-
         def on_tool_call(name, args, result_cb):
             result_cb("{}")
 
@@ -406,7 +402,7 @@ class TestExecuteToolCalls:
         updated = _execute_tool_calls(accum, messages, on_tool_call)
         assistant_msg = next(m for m in updated if m["role"] == "assistant")
         tc_id = assistant_msg["tool_calls"][0]["id"]
-        assert tc_id  # must not be empty
+        self.assertTrue(tc_id)
 
 
 # ---------------------------------------------------------------------------
@@ -450,47 +446,54 @@ _EXECUTE_SCRIPT_TOOL_ANTHROPIC = {
 }
 
 
-class TestInferToolName:
+class TestInferToolName(unittest.TestCase):
     def test_infers_from_valid_json(self):
-        tools = [_EXECUTE_SCRIPT_TOOL]
-        assert _infer_tool_name('{"code": "print(1)"}', tools) == "execute_script"
+        self.assertEqual(
+            _infer_tool_name('{"code": "print(1)"}', [_EXECUTE_SCRIPT_TOOL]),
+            "execute_script",
+        )
 
     def test_infers_from_malformed_json_missing_closing_quote(self):
-        # Matches the real broken output observed: {"code# list all people...
-        tools = [_EXECUTE_SCRIPT_TOOL]
-        assert _infer_tool_name('{"code# list all people', tools) == "execute_script"
+        self.assertEqual(
+            _infer_tool_name('{"code# list all people', [_EXECUTE_SCRIPT_TOOL]),
+            "execute_script",
+        )
 
     def test_infers_when_key_and_value_fused(self):
-        # Model emits {"code" + "columns(...)" with no separator → "{"codecolumns(..."
-        tools = [_EXECUTE_SCRIPT_TOOL]
-        assert _infer_tool_name('{"codecolumns(\'ID\', \'Name\')', tools) == "execute_script"
+        self.assertEqual(
+            _infer_tool_name('{"codecolumns(\'ID\', \'Name\')', [_EXECUTE_SCRIPT_TOOL]),
+            "execute_script",
+        )
 
     def test_infers_correct_tool_from_two_tools(self):
         tools = [_EXECUTE_SCRIPT_TOOL, _GET_PERSON_TOOL]
-        assert _infer_tool_name('{"gramps_id": "I001"}', tools) == "get_person_details"
-        assert _infer_tool_name('{"code": "for p in people(): row(p)"}', tools) == "execute_script"
+        self.assertEqual(_infer_tool_name('{"gramps_id": "I001"}', tools), "get_person_details")
+        self.assertEqual(
+            _infer_tool_name('{"code": "for p in people(): row(p)"}', tools), "execute_script"
+        )
 
     def test_infers_from_anthropic_format_tools(self):
-        # Anthropic tools use input_schema instead of parameters
-        tools = [_EXECUTE_SCRIPT_TOOL_ANTHROPIC]
-        assert _infer_tool_name('{"code": "print(1)"}', tools) == "execute_script"
+        self.assertEqual(
+            _infer_tool_name('{"code": "print(1)"}', [_EXECUTE_SCRIPT_TOOL_ANTHROPIC]),
+            "execute_script",
+        )
 
     def test_infers_from_anthropic_format_malformed(self):
-        tools = [_EXECUTE_SCRIPT_TOOL_ANTHROPIC]
-        assert _infer_tool_name('{"code# broken', tools) == "execute_script"
+        self.assertEqual(
+            _infer_tool_name('{"code# broken', [_EXECUTE_SCRIPT_TOOL_ANTHROPIC]),
+            "execute_script",
+        )
 
     def test_returns_none_when_no_match(self):
-        tools = [_EXECUTE_SCRIPT_TOOL]
-        assert _infer_tool_name('{"unknown_param": "x"}', tools) is None
+        self.assertIsNone(_infer_tool_name('{"unknown_param": "x"}', [_EXECUTE_SCRIPT_TOOL]))
 
     def test_returns_none_when_tools_empty(self):
-        assert _infer_tool_name('{"code": "x"}', []) is None
+        self.assertIsNone(_infer_tool_name('{"code": "x"}', []))
 
     def test_returns_none_when_arguments_empty(self):
-        assert _infer_tool_name("", [_EXECUTE_SCRIPT_TOOL]) is None
+        self.assertIsNone(_infer_tool_name("", [_EXECUTE_SCRIPT_TOOL]))
 
     def test_returns_none_when_ambiguous(self):
-        # Two tools both have a "name" parameter → ambiguous
         tool_a = {"type": "function", "function": {
             "name": "tool_a",
             "parameters": {"type": "object", "properties": {"name": {"type": "string"}}},
@@ -499,7 +502,7 @@ class TestInferToolName:
             "name": "tool_b",
             "parameters": {"type": "object", "properties": {"name": {"type": "string"}}},
         }}
-        assert _infer_tool_name('{"name": "foo"}', [tool_a, tool_b]) is None
+        self.assertIsNone(_infer_tool_name('{"name": "foo"}', [tool_a, tool_b]))
 
 
 # ---------------------------------------------------------------------------
@@ -507,75 +510,67 @@ class TestInferToolName:
 # ---------------------------------------------------------------------------
 
 
-class TestDecodeJsonString:
+class TestDecodeJsonString(unittest.TestCase):
     def test_newline_escape(self):
-        assert _decode_json_string("line1\\nline2") == "line1\nline2"
+        self.assertEqual(_decode_json_string("line1\\nline2"), "line1\nline2")
 
     def test_tab_escape(self):
-        assert _decode_json_string("col1\\tcol2") == "col1\tcol2"
+        self.assertEqual(_decode_json_string("col1\\tcol2"), "col1\tcol2")
 
     def test_quote_escape(self):
-        assert _decode_json_string('\\"hello\\"') == '"hello"'
+        self.assertEqual(_decode_json_string('\\"hello\\"'), '"hello"')
 
     def test_backslash_escape(self):
-        assert _decode_json_string("a\\\\b") == "a\\b"
+        self.assertEqual(_decode_json_string("a\\\\b"), "a\\b")
 
     def test_backslash_not_swallowed_by_n_replacement(self):
-        # \\n should become \n (literal backslash + n), not a newline
-        assert _decode_json_string("\\\\n") == "\\n"
+        self.assertEqual(_decode_json_string("\\\\n"), "\\n")
 
     def test_no_escapes_unchanged(self):
-        assert _decode_json_string("plain text") == "plain text"
+        self.assertEqual(_decode_json_string("plain text"), "plain text")
 
     def test_unknown_escape_drops_backslash(self):
-        # \c is not a JSON escape — drop the backslash so \columns → columns
-        assert _decode_json_string("\\columns(x)") == "columns(x)"
+        self.assertEqual(_decode_json_string("\\columns(x)"), "columns(x)")
 
     def test_unknown_escape_mid_string(self):
-        assert _decode_json_string("abc\\def") == "abcdef"
+        self.assertEqual(_decode_json_string("abc\\def"), "abcdef")
 
     def test_real_grampy_script(self):
         raw = "for p in people():\\n    row(p.gramps_id, p.name)"
         decoded = _decode_json_string(raw)
-        assert "\n" in decoded
-        assert "\\n" not in decoded
+        self.assertIn("\n", decoded)
+        self.assertNotIn("\\n", decoded)
 
 
-class TestRecoverArgs:
+class TestRecoverArgs(unittest.TestCase):
     def test_valid_json_returned_unchanged(self):
-        tools = [_EXECUTE_SCRIPT_TOOL]
-        result = _recover_args('{"code": "print(1)"}', "execute_script", tools)
-        assert result == {"code": "print(1)"}
+        result = _recover_args('{"code": "print(1)"}', "execute_script", [_EXECUTE_SCRIPT_TOOL])
+        self.assertEqual(result, {"code": "print(1)"})
 
     def test_recovers_code_from_malformed_json(self):
-        tools = [_EXECUTE_SCRIPT_TOOL]
         raw = '{"code# for p in people(): print(p.name)'
-        result = _recover_args(raw, "execute_script", tools)
-        assert "code" in result
-        assert "people" in result["code"]
+        result = _recover_args(raw, "execute_script", [_EXECUTE_SCRIPT_TOOL])
+        self.assertIn("code", result)
+        self.assertIn("people", result["code"])
 
     def test_recovers_code_when_key_and_value_fused(self):
-        # {"code" + "columns(...)" merged → "{"codecolumns(..."
-        tools = [_EXECUTE_SCRIPT_TOOL]
         raw = '{"codecolumns(\'Gramps ID\', \'Name\')\\nfor p in people():\\n    row(p.gramps_id)'
-        result = _recover_args(raw, "execute_script", tools)
-        assert "code" in result
-        assert "columns" in result["code"]
-        assert "\n" in result["code"]  # JSON escape sequences decoded
+        result = _recover_args(raw, "execute_script", [_EXECUTE_SCRIPT_TOOL])
+        self.assertIn("code", result)
+        self.assertIn("columns", result["code"])
+        self.assertIn("\n", result["code"])
 
     def test_returns_empty_dict_when_no_tool_matches(self):
         result = _recover_args('{"code# broken', "nonexistent_tool", [_EXECUTE_SCRIPT_TOOL])
-        assert result == {}
+        self.assertEqual(result, {})
 
     def test_returns_empty_dict_when_tools_none(self):
         result = _recover_args('{"code# broken', "execute_script", None)
-        assert result == {}
+        self.assertEqual(result, {})
 
     def test_returns_empty_dict_for_completely_garbled_input(self):
-        tools = [_EXECUTE_SCRIPT_TOOL]
-        result = _recover_args("not json at all", "execute_script", tools)
-        # May or may not recover — just must not raise
-        assert isinstance(result, dict)
+        result = _recover_args("not json at all", "execute_script", [_EXECUTE_SCRIPT_TOOL])
+        self.assertIsInstance(result, dict)
 
 
 # ---------------------------------------------------------------------------
@@ -583,24 +578,9 @@ class TestRecoverArgs:
 # ---------------------------------------------------------------------------
 
 
-class TestProcessChunkLogic:
-    """
-    Verify the increment / line-buffer logic that mirrors _process_chunk.
-
-    This is extracted from grampsassistant.py as a pure function so it can run
-    without GTK.  A regression test for the 'May24' / 'Johnjalmar' space-loss
-    investigation: if spaces dropped here, the display would be wrong.
-    """
-
+class TestProcessChunkLogic(unittest.TestCase):
     @staticmethod
     def _simulate(chunks):
-        """
-        Simulate the core text-assembly of _process_chunk.
-
-        Returns ``(committed_lines, final_partial)`` where committed_lines are
-        the completed (newline-terminated) lines and final_partial is the
-        unfinished partial line still in the buffer.
-        """
         line_buffer = ""
         committed = []
 
@@ -614,60 +594,59 @@ class TestProcessChunkLogic:
                 line_buffer = ""
 
             new_partial = parts[-1]
-            # Only the increment (characters not yet in the buffer) gets inserted
-            increment = new_partial[len(line_buffer):]  # noqa: F841 — mirrors real code
+            increment = new_partial[len(line_buffer):]  # noqa: F841
             line_buffer = new_partial
 
         return committed, line_buffer
 
     def test_single_chunk_no_newline(self):
         _, partial = self._simulate(["Hello world"])
-        assert partial == "Hello world"
+        self.assertEqual(partial, "Hello world")
 
     def test_space_preserved_as_own_chunk(self):
         _, partial = self._simulate(["May", " ", "24"])
-        assert partial == "May 24"
+        self.assertEqual(partial, "May 24")
 
     def test_space_at_end_of_chunk(self):
         _, partial = self._simulate(["May ", "24"])
-        assert partial == "May 24"
+        self.assertEqual(partial, "May 24")
 
     def test_space_at_start_of_next_chunk(self):
         _, partial = self._simulate(["May", " 24"])
-        assert partial == "May 24"
+        self.assertEqual(partial, "May 24")
 
     def test_words_not_merged(self):
         _, partial = self._simulate(["John", " ", "Hjalmar"])
-        assert partial == "John Hjalmar"
-        assert "JohnHjalmar" not in partial
+        self.assertEqual(partial, "John Hjalmar")
+        self.assertNotIn("JohnHjalmar", partial)
 
     def test_newline_commits_line(self):
         committed, partial = self._simulate(["Hello\n", "world"])
-        assert committed == ["Hello"]
-        assert partial == "world"
+        self.assertEqual(committed, ["Hello"])
+        self.assertEqual(partial, "world")
 
     def test_multiple_lines_in_one_chunk(self):
         committed, partial = self._simulate(["line1\nline2\npar"])
-        assert committed == ["line1", "line2"]
-        assert partial == "par"
+        self.assertEqual(committed, ["line1", "line2"])
+        self.assertEqual(partial, "par")
 
     def test_partial_then_newline_commits(self):
         committed, partial = self._simulate(["Hel", "lo\n", "nex"])
-        assert committed == ["Hello"]
-        assert partial == "nex"
+        self.assertEqual(committed, ["Hello"])
+        self.assertEqual(partial, "nex")
 
     def test_empty_chunk_ignored(self):
         _, partial = self._simulate(["Hello", "", " world"])
-        assert partial == "Hello world"
+        self.assertEqual(partial, "Hello world")
 
     def test_multiple_spaces_preserved(self):
         _, partial = self._simulate(["a ", " b"])
-        assert partial == "a  b"
+        self.assertEqual(partial, "a  b")
 
     def test_final_empty_line_after_newline(self):
         committed, partial = self._simulate(["done\n"])
-        assert committed == ["done"]
-        assert partial == ""
+        self.assertEqual(committed, ["done"])
+        self.assertEqual(partial, "")
 
 
 # ---------------------------------------------------------------------------
@@ -675,8 +654,8 @@ class TestProcessChunkLogic:
 # ---------------------------------------------------------------------------
 
 
-@pytest.mark.skipif(not HAVE_OPENAI_KEY, reason="OPENAI_API_KEY not set")
-class TestOpenAIBackendLive:
+@unittest.skipUnless(HAVE_OPENAI_KEY, "OPENAI_API_KEY not set")
+class TestOpenAIBackendLive(unittest.TestCase):
     """End-to-end tests against the real OpenAI API (gpt-4.1-mini for speed/cost)."""
 
     def _backend(self):
@@ -689,14 +668,13 @@ class TestOpenAIBackendLive:
     def test_basic_response_streamed(self):
         messages = [{"role": "user", "content": "Reply with exactly the word: PONG"}]
         text, _ = _collect(self._backend(), messages)
-        assert "PONG" in text
+        self.assertIn("PONG", text)
 
     def test_response_is_non_empty_text(self):
-        """Streamed chunks assemble into a non-empty string."""
         messages = [{"role": "user", "content": "Say exactly: hello world"}]
         text, _ = _collect(self._backend(), messages)
-        assert len(text) > 0
-        assert " " in text  # at minimum "hello world" has a space
+        self.assertGreater(len(text), 0)
+        self.assertIn(" ", text)
 
     def test_multiline_response_has_newlines(self):
         messages = [
@@ -706,7 +684,7 @@ class TestOpenAIBackendLive:
             }
         ]
         text, _ = _collect(self._backend(), messages)
-        assert text.count("\n") >= 2
+        self.assertGreaterEqual(text.count("\n"), 2)
 
     def test_tool_call_is_invoked(self):
         tools = [
@@ -729,10 +707,9 @@ class TestOpenAIBackendLive:
             }
         ]
         _, tool_calls = _collect(self._backend(), messages, tools=tools)
-        assert any(tc["name"] == "get_temperature" for tc in tool_calls)
+        self.assertTrue(any(tc["name"] == "get_temperature" for tc in tool_calls))
 
     def test_tool_result_used_in_response(self):
-        """Model should incorporate the tool result into its reply."""
         tool_result_value = "42 degrees Celsius"
         chunks = []
         done_ev = threading.Event()
@@ -781,7 +758,7 @@ class TestOpenAIBackendLive:
             raise error_holder[0]
 
         full = "".join(chunks)
-        assert "42" in full
+        self.assertIn("42", full)
 
     def test_bad_api_key_raises_runtime_error(self):
         backend = OpenAICompatibleBackend(
@@ -789,5 +766,9 @@ class TestOpenAIBackendLive:
             model="gpt-4.1-mini",
             api_key="sk-bad-key",
         )
-        with pytest.raises(RuntimeError, match="HTTP 401"):
+        with self.assertRaisesRegex(RuntimeError, "HTTP 401"):
             _collect(backend, [{"role": "user", "content": "hi"}])
+
+
+if __name__ == "__main__":
+    unittest.main()
