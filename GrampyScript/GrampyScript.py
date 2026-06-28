@@ -65,6 +65,9 @@ config.register("defaults.encoding", "utf-8")
 config.register("defaults.delimiter", "comma")
 config.register("defaults.last_filename", "")
 
+_instance = None
+
+
 def contains_any_none_data(args):
     if isinstance(args, list):
         return any(contains_any_none_data(arg) for arg in args)
@@ -80,7 +83,8 @@ def get_columns(source, func_name):
                 if hasattr(node.func, "id") and node.func.id == func_name:
                     return [ast.unparse(arg) for arg in node.args]
     except Exception:
-        return []
+        pass
+    return []
 
 
 class ScriptOpenFileChooserDialog(Gtk.FileChooserDialog):
@@ -193,6 +197,8 @@ class CsvFileChooserDialog(Gtk.FileChooserDialog):
 
 class GrampyScript(Gramplet):
     def init(self):
+        global _instance
+        _instance = self
         self.keywords = [
             "_",
             "and",
@@ -462,6 +468,9 @@ for person in people():
         choose_file_dialog.destroy()
 
     def save_script(self, widget):
+        if not self.last_filename:
+            self.save_as_script(widget)
+            return
         with open(self.last_filename, "w") as fp:
             fp.write(self.get_text())
         self.statusmsg.set_text("Saved %r" % self.last_filename)
@@ -1011,6 +1020,10 @@ for person in people():
             cr.rectangle(0, 0, width, height)
             cr.fill()
 
+    def evaluate_expression(self, code):
+        """Run code in the full GrampyScript scope and return stdout."""
+        return self.execute_code(code)
+
     def execute_filename(self, filename):
         if os.path.exists(filename):
             with open(filename) as file:
@@ -1126,6 +1139,8 @@ for person in people():
                     data = get_data(handle)
                     yield DataDict2(dict(data), callback=self.callback)
 
+        database = self.db
+
         today = Date(
             datetime.datetime.today().year,
             datetime.datetime.today().month,
@@ -1187,3 +1202,5 @@ for person in people():
         else:
             self.notebook.set_current_page(1)
             self.statusmsg.set_text("Completed")
+
+        return STDOUT
