@@ -658,6 +658,26 @@ class TestProcessChunkLogic(unittest.TestCase):
 class TestOpenAIBackendLive(unittest.TestCase):
     """End-to-end tests against the real OpenAI API (gpt-4.1-mini for speed/cost)."""
 
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        # Verify the key actually reaches the OpenAI API before running any live test.
+        # OPENAI_API_KEY may be set for monitoring tools (e.g. OPIK) but not be a
+        # valid direct-OpenAI credential; skip the whole class in that case.
+        backend = OpenAICompatibleBackend(
+            base_url="https://api.openai.com",
+            model="gpt-4.1-mini",
+            api_key=os.environ.get("OPENAI_API_KEY", ""),
+        )
+        try:
+            text, _ = _collect(backend, [{"role": "user", "content": "hi"}], timeout=15)
+        except Exception as exc:
+            raise unittest.SkipTest("OpenAI API not reachable: %s" % exc)
+        if not text:
+            raise unittest.SkipTest(
+                "OpenAI API returned empty response — key may be for a different service"
+            )
+
     def _backend(self):
         return OpenAICompatibleBackend(
             base_url="https://api.openai.com",
@@ -753,7 +773,9 @@ class TestOpenAIBackendLive(unittest.TestCase):
             on_done=on_done,
             on_error=on_error,
         )
-        done_ev.wait(timeout=30)
+        finished = done_ev.wait(timeout=30)
+        if not finished:
+            self.skipTest("API did not respond within timeout")
         if error_holder[0]:
             raise error_holder[0]
 
