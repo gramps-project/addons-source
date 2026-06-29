@@ -16,7 +16,7 @@
 register(
     GRAMPLET,
     gramps_target_version = '6.1',
-    version = '1.0.3',
+    version = '1.0.4',
     id="ArchiveAssist",
     name="Archive Assist",
     description=_("Parses strings from Riksarkivet and ArkivDigital to create sources and citations."),
