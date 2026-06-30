@@ -28,20 +28,13 @@ from __future__ import annotations
 from gi.repository import Gtk
 from typing import TYPE_CHECKING, Any
 
-from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gui.dialog import ErrorDialog
 
 from name_processor.models.infer import PatronymicInferenceStatus
-
+from name_processor.views.i18n import _
 
 if TYPE_CHECKING:
     from name_processor.controllers.gramplet import GrampletController
-
-try:
-    _trans = glocale.get_addon_translator(__file__)
-except ValueError:
-    _trans = glocale.translation
-_ = _trans.gettext
 
 
 class GrampletView:
