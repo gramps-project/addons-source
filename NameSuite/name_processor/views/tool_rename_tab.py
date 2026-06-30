@@ -29,22 +29,14 @@ from typing import TYPE_CHECKING, Any
 
 from gi.repository import Gtk
 
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-
 from name_processor.models.renamer import AltAction, MatchMode
 from name_processor.presentation.row_schemas import GivenRowData
 from name_processor.views.base_tab import BaseTab
+from name_processor.views.i18n import _
 
 if TYPE_CHECKING:
     from gi.repository.Gtk import Window
     from name_processor.controllers.tool import ToolController
-
-
-try:
-    _trans = glocale.get_addon_translator(__file__)
-except ValueError:
-    _trans = glocale.translation
-_ = _trans.gettext
 
 
 class RenameTab(BaseTab):

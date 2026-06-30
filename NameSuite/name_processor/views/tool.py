@@ -30,13 +30,12 @@ from typing import Any, Callable, TYPE_CHECKING
 
 from gi.repository import Gtk
 
-from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gui.dialog import OkDialog
 
 from name_processor.models.audit import AuditIssue
 from name_processor.models.renamer import AltAction
 from name_processor.presentation.row_schemas import GivenRowData
-
+from name_processor.views.i18n import _
 from name_processor.views.tool_audit_tab import AuditTab
 from name_processor.views.tool_rename_tab import RenameTab
 
@@ -45,12 +44,6 @@ if TYPE_CHECKING:
 
 
 logger = logging.getLogger(__name__)
-
-try:
-    _trans = glocale.get_addon_translator(__file__)
-except ValueError:
-    _trans = glocale.translation
-_ = _trans.gettext
 
 
 class ToolWindow:
