@@ -67,7 +67,10 @@ from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.plug import tool
 from typing import Optional, Tuple
 
-_trans = glocale.get_addon_translator(__file__)
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
 _ = _trans.gettext
 
 LOG = logging.getLogger(__name__)
@@ -192,7 +195,7 @@ class AssociationsTool(tool.Tool, ManagedWindow):
                 refs = person.get_person_ref_list()
 
                 if refs:
-                    for ref in person.get_person_ref_list():
+                    for ref in refs:
                         two = ref.ref # Handle of the associated person
                         value = str(ref.relation) # Relationship type (e.g., "Godparent")
                         try:
@@ -300,6 +303,7 @@ class AssociationsTool(tool.Tool, ManagedWindow):
             if refs:
                 for ref in person.get_person_ref_list():
                     two = ref.ref # Handle of the associated person
+                    value = str(ref.relation)
                     try:
                         person2 = self.dbstate.db.get_person_from_handle(two)
                     except Exception:
