@@ -783,8 +783,6 @@ def is_listing(LANG):
     for addon in [file for file in glob.glob('*')
                   if os.path.isdir(file)]:
         for po in glob.glob('%(addon)s/po/*-local.po' % {'addon': addon}):
-            length = len(po)
-            locale = po[length - 11:length - 9]
             (locale_path, locale) = po.rsplit('/', 1)
             languages.add(locale[:-9])
 
