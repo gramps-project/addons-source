@@ -92,7 +92,7 @@ class ExcludeSubtree(Rule):
     """
 
     # filter rule operation
-    selected_handles: Set[PersonHandle] = set()
+    selected_handles: Set[PersonHandle]
     filt = None  # "stop" person filter
 
     # external interface
