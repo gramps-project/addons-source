@@ -32,85 +32,94 @@ from unittest.mock import MagicMock
 class Person:
     """Fallback stub for gramps.gen.lib.Person."""
 
-    MALE = 0
-    FEMALE = 1
-    UNKNOWN = 2
-    OTHER = 3
+    MALE: int = 0
+    FEMALE: int = 1
+    UNKNOWN: int = 2
+    OTHER: int = 3
 
 
 class NameType:
-    UNKNOWN = -1
-    CUSTOM = 0
-    AKA = 1
-    BIRTH = 2
-    MARRIED = 3
+    UNKNOWN: int = -1
+    CUSTOM: int = 0
+    AKA: int = 1
+    BIRTH: int = 2
+    MARRIED: int = 3
 
 
 class NameOriginType:
-    UNKNOWN = 0
-    CUSTOM = 1
-    PATRONYMIC = 5
+    UNKNOWN: int = 0
+    CUSTOM: int = 1
+    PATRONYMIC: int = 5
 
 
 class Surname:
-    def __init__(self, surname_str="", origin=NameOriginType.UNKNOWN):
+    _surname: str
+    _origin: int
+
+    def __init__(
+        self, surname_str: str = "", origin: int = NameOriginType.UNKNOWN
+    ) -> None:
         self._surname = surname_str
         self._origin = origin
 
     def get_surname(self) -> str:
         return self._surname
 
-    def get_origintype(self):
+    def get_origintype(self) -> int:
         return self._origin
 
-    def set_surname(self, val):
+    def set_surname(self, val: str) -> None:
         self._surname = val
 
-    def set_origintype(self, val):
+    def set_origintype(self, val: int) -> None:
         self._origin = val
 
-    def set_primary(self, val):
+    def set_primary(self, val: bool) -> None:
         pass
 
 
 class Name:
-    def __init__(self):
+    _first_name: str
+    _type: int | None
+    _surnames: list[Surname]
+
+    def __init__(self) -> None:
         self._first_name = ""
         self._type = None
         self._surnames = []
 
-    def get_first_name(self):
+    def get_first_name(self) -> str:
         return self._first_name
 
-    def set_first_name(self, name_str):
+    def set_first_name(self, name_str: str) -> None:
         self._first_name = name_str
 
-    def get_regular_name(self):
+    def get_regular_name(self) -> str:
         return self._first_name
 
-    def get_type(self):
+    def get_type(self) -> int | None:
         return self._type
 
-    def set_type(self, val):
+    def set_type(self, val: int) -> None:
         self._type = val
 
-    def get_surname_list(self):
+    def get_surname_list(self) -> list[Surname]:
         return self._surnames
 
-    def add_surname(self, surname):
+    def add_surname(self, surname: Surname) -> None:
         self._surnames.append(surname)
 
-    def set_surname_list(self, list_):
+    def set_surname_list(self, list_: list[Surname]) -> None:
         self._surnames = list_
 
-    def serialize(self):
+    def serialize(self) -> dict:
         return {}
 
-    def unserialize(self, data):
+    def unserialize(self, data: dict) -> None:
         pass
 
 
-def mock_gramps():
+def mock_gramps() -> MagicMock:
     """Injects Gramps and GTK mocks into sys.modules."""
     # GTK Mocks
     gi_mock = MagicMock()
@@ -151,11 +160,11 @@ def mock_gramps():
 
     # Configure tool mock
     class MockTool:
-        def __init__(self, *args, **kwargs):
+        def __init__(self, *args: object, **kwargs: object) -> None:
             pass
 
     class MockToolOptions:
-        def __init__(self, *args, **kwargs):
+        def __init__(self, *args: object, **kwargs: object) -> None:
             pass
 
     gramps_gui_plug_mock.tool.Tool = MockTool

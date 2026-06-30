@@ -29,20 +29,14 @@ from typing import TYPE_CHECKING, Any, NamedTuple
 
 from gi.repository import Gtk
 
-from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.errors import WindowActiveError
 from gramps.gui.editors import EditPerson
+
+from name_processor.views.i18n import _
 
 if TYPE_CHECKING:
     from gi.repository.Gtk import Window
     from name_processor.controllers.tool import ToolController
-
-
-try:
-    _trans = glocale.get_addon_translator(__file__)
-except ValueError:
-    _trans = glocale.translation
-_ = _trans.gettext
 
 
 class BaseTab:
