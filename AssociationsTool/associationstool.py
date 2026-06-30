@@ -301,7 +301,7 @@ class AssociationsTool(tool.Tool, ManagedWindow):
             refs = person.get_person_ref_list()
 
             if refs:
-                for ref in person.get_person_ref_list():
+                for ref in refs:
                     two = ref.ref # Handle of the associated person
                     value = str(ref.relation)
                     try:
