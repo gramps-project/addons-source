@@ -66,12 +66,23 @@ from gramps.gui.listmodel import ListModel, NOSORT
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.plug import tool
 from typing import Optional, Tuple
+from gramps.version import VERSION_TUPLE
 
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
+
+# Helper function for Gramps 5.2/6.x compatibility
+def get_ref_relation(ref):
+    """Get the relation string from a PersonRef object (Gramps 5.2/6.x compatible)."""
+    if VERSION_TUPLE < (6, 0, 0):
+        # Gramps 5.2: use get_relation() method
+        return str(ref.get_relation()) if hasattr(ref, 'get_relation') else ""
+    else:
+        # Gramps 6.x: use .relation attribute
+        return str(ref.relation) if hasattr(ref, 'relation') else ""
 
 LOG = logging.getLogger(__name__)
 
@@ -197,7 +208,7 @@ class AssociationsTool(tool.Tool, ManagedWindow):
                 if refs:
                     for ref in refs:
                         two = ref.ref # Handle of the associated person
-                        value = str(ref.relation) # Relationship type (e.g., "Godparent")
+                        value = get_ref_relation(ref) # Relationship type (e.g., "Godparent")
                         try:
                             person2 = self.dbstate.db.get_person_from_handle(two)
                         except Exception:
@@ -303,7 +314,7 @@ class AssociationsTool(tool.Tool, ManagedWindow):
             if refs:
                 for ref in refs:
                     two = ref.ref # Handle of the associated person
-                    value = str(ref.relation)
+                    value = get_ref_relation(ref)
                     try:
                         person2 = self.dbstate.db.get_person_from_handle(two)
                     except Exception:
