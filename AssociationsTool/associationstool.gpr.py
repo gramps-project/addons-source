@@ -29,11 +29,7 @@ Gramps registration file
 # Gramps modules
 #
 # -------------------------------------------------------------------------
-from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.version import major_version, VERSION_TUPLE
-
-_trans = glocale.get_addon_translator(__file__)
-_ = _trans.gettext
 # -------------------------------------------------------------------------
 #
 # Check Associations Data
