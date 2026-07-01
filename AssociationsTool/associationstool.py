@@ -77,12 +77,7 @@ _ = _trans.gettext
 # Helper function for Gramps 5.2/6.x compatibility
 def get_ref_relation(ref):
     """Get the relation string from a PersonRef object (Gramps 5.2/6.x compatible)."""
-    if VERSION_TUPLE < (6, 0, 99):
-        # Gramps 5.2 and 6.0: use get_relation() method
-        return str(ref.get_relation()) if hasattr(ref, 'get_relation') else ""
-    else:
-        # Gramps 6.1 and +: use .relation attribute
-        return str(ref.relation) if hasattr(ref, 'relation') else ""
+    return str(ref.get_relation()) if hasattr(ref, 'get_relation') else ""
 
 LOG = logging.getLogger(__name__)
 
