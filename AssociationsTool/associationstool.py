@@ -44,7 +44,7 @@ Refactored v1.2.1:
 #
 # -------------------------------------------------------------------------
 import logging
-
+import sys
 # -------------------------------------------------------------------------
 #
 # GTK/Gnome modules
@@ -452,12 +452,12 @@ class AssociationsTool(tool.Tool, ManagedWindow):
             _("Associate"),
             _("Link Type"),
         )
-        print("\t%s" * 5 % header)
-        print()
+        sys.stdout.write("\t%s" * 5 % header)
+        sys.stdout.write("\n")
         for entry in stats_list:
-            print("\t%s" * 5 % entry[:5])
-        print()
-        print(_("Total associations found: %d") % len(stats_list))
+            sys.stdout.write("\t%s" * 5 % entry[:5])
+        sys.stdout.write("\n")
+        sys.stdout.write(_("Total associations found: %d") % len(stats_list))
 
     # ---------------------------------------------------------------------
     #
