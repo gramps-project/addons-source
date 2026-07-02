@@ -32,7 +32,9 @@ _ADDON_ROOT = os.path.dirname(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 )
 try:
-    _trans = glocale.get_addon_translator(os.path.join(_ADDON_ROOT, ""))
+    _trans = glocale.get_addon_translator(
+        os.path.join(_ADDON_ROOT, "name_processor.gpr.py")
+    )
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
