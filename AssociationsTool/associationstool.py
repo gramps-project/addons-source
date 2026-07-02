@@ -381,6 +381,10 @@ class AssociationsTool(tool.Tool, ManagedWindow):
             titles,
             right_click=self.cb_right_click,
         )
+        for col in self.treeview.get_columns():
+            col.set_resizable(True)
+            col.set_min_width(10)
+
         for entry in stats_list:
             self.model.add(list(entry), entry[COL_NAME1])
 
