@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 13:20-0700\n"
+"POT-Creation-Date: 2026-07-03 07:42-0700\n"
 "PO-Revision-Date: 2026-06-27 05:51+0000\n"
 "Last-Translator: Libre <6n0n1m0s@proton.me>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
@@ -18433,6 +18433,274 @@ msgstr "Archivador Nacional"
 #: NLWebConnectPack/NLWebPack.py:38
 msgid "Who (re)searches who?"
 msgstr "¿Quién (re)busca quién?"
+
+#: NameSuite/.venv/lib/python3.12/site-packages/mypy/main.py:450
+#, python-format
+msgid "%(prog)s: error: %(message)s\n"
+msgstr ""
+
+#: NameSuite/name_processor.gpr.py:6
+#, fuzzy
+#| msgid "Patronymic names:"
+msgid "Audit Given and Patronymic Names"
+msgstr "Nombres patronímicos:"
+
+#: NameSuite/name_processor.gpr.py:9
+msgid ""
+"Tools to rename given name, audit and infer patronymic (East Slavic) names."
+msgstr ""
+
+#: NameSuite/name_processor.gpr.py:25 NameSuite/name_processor.gpr.py:37
+#, fuzzy
+#| msgid "Patronymic names:"
+msgid "Patronymic Suggestion"
+msgstr "Nombres patronímicos:"
+
+#: NameSuite/name_processor.gpr.py:27
+msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
+msgstr ""
+
+#: NameSuite/name_processor/views/base_tab.py:150
+msgid "Use"
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:32
+#, python-brace-format
+msgid ""
+"Missing Patronymic Detected.\n"
+"Suggested: {0}\n"
+"Based on father: {1}"
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:34
+msgid "Navigate to an individual to check patronymic status."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:35
+#, fuzzy
+#| msgid "No Active Person set."
+msgid "No active person selected."
+msgstr "Ninguna Persona Activa fijada."
+
+#: NameSuite/name_processor/views/gramplet.py:37
+msgid ""
+"Patronymic inference can't be inferred for non-binary or unknown genders."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:40
+msgid "Individual already has a recorded patronymic."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:43
+msgid "No attached father found in database family records."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:46
+msgid "Father lacks a recorded first name."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:49
+msgid "Could not generate valid morphology patterns."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:51
+msgid "Patronymic applied successfully!"
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:77
+#, fuzzy
+#| msgid "🔍 AI Suggestions"
+msgid "Apply Suggestion"
+msgstr "🔍 Sugerencias de IA"
+
+#: NameSuite/name_processor/views/tool.py:92
+msgid "Infer East Slavic Patronymics"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool.py:112
+#, fuzzy
+#| msgid "Checking Given Names"
+msgid "Rename Given Names"
+msgstr "Comprobando nombres de pila"
+
+#: NameSuite/name_processor/views/tool.py:115
+#, fuzzy
+#| msgid "Patronymic names:"
+msgid "Audit Patronymics"
+msgstr "Nombres patronímicos:"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:68
+msgid "Auditing Settings"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:76
+msgid "All Records"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:77
+#, fuzzy
+#| msgid "Male line"
+msgid "Males Only"
+msgstr "Línea masculina"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:78
+#, fuzzy
+#| msgid "Female line"
+msgid "Females Only"
+msgstr "Línea femenina"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:82
+#, fuzzy
+#| msgid "Configure"
+msgid "Configure Rules..."
+msgstr "Configurar"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:87
+msgid "Match Pre-Revolutionary Orthography"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:95
+#, fuzzy
+#| msgid "Edit tags"
+msgid "Audit Database"
+msgstr "Editar lengüetas"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:117
+#, fuzzy
+#| msgid "Select the graph direction."
+msgid "Select All Safe Corrections"
+msgstr "Seleccione la dirección del gráfico."
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:122
+#: NameSuite/name_processor/views/tool_rename_tab.py:116
+#, fuzzy
+#| msgid "Apply to selected places"
+msgid "Apply Selected Corrections"
+msgstr "Aplicar a lugares seleccionados"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:162
+#, fuzzy
+#| msgid "Configure"
+msgid "Configure Rules"
+msgstr "Configurar"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:186
+#: NameSuite/name_processor/views/tool_rename_tab.py:156
+#, fuzzy
+#| msgid "India"
+msgid "Individual"
+msgstr "India"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:190
+#: NameSuite/name_processor/views/tool_rename_tab.py:158
+#, fuzzy
+#| msgid "Current sort"
+msgid "Current"
+msgstr "Orden actual"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:193
+#, fuzzy
+#| msgid "Section"
+msgid "Correction"
+msgstr "Sección"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:200
+#, fuzzy
+#| msgid "Configure"
+msgid "Conf"
+msgstr "Configurar"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:201
+#, fuzzy
+#| msgid "Event Year"
+msgid "Ref Year"
+msgstr "Año de Evento"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:204
+#, fuzzy
+#| msgid "Relation"
+msgid "Explanation"
+msgstr "Relación"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:243
+#, fuzzy
+#| msgid "Migration completed!"
+msgid "Audit Complete!"
+msgstr "Migración completada."
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:248
+#, fuzzy
+#| msgid "Result"
+msgid "No Results"
+msgstr "Resultado"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:248
+#, fuzzy
+#| msgid "No persons found..."
+msgid "No issues found."
+msgstr "No se ha encontrado ninguna persona…"
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:63
+#, fuzzy
+#| msgid "Search result places"
+msgid "Search and Replace Options"
+msgstr "Buscar resultado de lugares"
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:70
+#, fuzzy
+#| msgid "Spouse name:"
+msgid "Source Name:"
+msgstr "Nombre esposa:"
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:72
+msgid "e.g. Иоанн"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:75
+#, fuzzy
+#| msgid "Street Name"
+msgid "Target Name:"
+msgstr "Nombre de calle"
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:77
+msgid "e.g. Иван"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:80
+msgid "Match Mode:"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:82
+msgid "Exact Match"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:83
+#, fuzzy
+#| msgid "SubDistrict"
+msgid "Substring"
+msgstr "SubDistrict"
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:84
+#, fuzzy
+#| msgid "Allow regular expressions."
+msgid "Regular Expression"
+msgstr "Concede expresiones regulares."
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:88
+#, fuzzy
+#| msgid "Index of Names"
+msgid "Scan for Names"
+msgstr "Índice de Nombres"
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:93
+msgid "Preserve original name as alternative"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:160
+#, fuzzy
+#| msgid "Proposed sort"
+msgid "Proposed"
+msgstr "Orden propuesto"
 
 #: NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
