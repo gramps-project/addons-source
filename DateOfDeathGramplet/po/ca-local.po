@@ -1,0 +1,28 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ca\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: 2025-09-03 03:01+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ca/>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.13.1-dev\n"
+
+msgid "Date of Death"
+msgstr "Data de defunció"
+
+msgid "a gramplet that displays dates of death sorted by month and day"
+msgstr "un gramplet que mostra les dates de defunció ordenades per mes i dia"
+
+msgid "No Family Tree loaded."
+msgstr "No hi ha cap arbre familiar carregat."
+
+msgid "Processing..."
+msgstr "Processant…"
+
