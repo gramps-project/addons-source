@@ -25,7 +25,7 @@ register(
     id="grampsassistant",
     name=_("Gramps Assistant"),
     description=_("AI assistant for querying your Gramps family tree"),
-    version="1.0.0",
+    version = '1.0.1',
     gramps_target_version="6.1",
     status=STABLE,
     fname="grampsassistant.py",
