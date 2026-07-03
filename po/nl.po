@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 13:20-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-06-04 05:01+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.6\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -227,11 +227,6 @@ msgid "The style used for the marriage."
 msgstr "De stijl die wordt gebruikt voor het huwelijk."
 
 #: AncestryTableReport/AncestryTableReport.py:593
-#, fuzzy
-#| msgid ""
-#| "The style used for an empty row.\n"
-#| "To enlarge the height of the empty row, just increase the size of the "
-#| "font."
 msgid ""
 "The style used for an empty row.\n"
 "To enlarge the height of the empty row, just increse the size of the police."
@@ -5741,7 +5736,7 @@ msgstr ""
 #: FamilySheet/FamilySheet.py:232 FamilySheet/FamilySheet.py:275
 #, python-format
 msgid "→ %s"
-msgstr ""
+msgstr "→ %s"
 
 #: FamilySheet/FamilySheet.py:397
 #, python-format
@@ -6560,7 +6555,7 @@ msgstr "Referentie:"
 
 #: Form/editform.py:393
 msgid "[Source recreated after deletion mid-form-edit]"
-msgstr ""
+msgstr "[Bron opnieuw aangemaakt na verwijdering bij formulierbewerking]"
 
 #: Form/editform.py:446
 msgid "Headings"
@@ -10048,299 +10043,229 @@ msgstr "Levend geboren kinderen in huidig huwelijk"
 
 #: Form/form_ie.xml.h:1
 msgid "Total Area in Statute Acres"
-msgstr ""
+msgstr "Totale oppervlakte in Statutaire Acres"
 
 #: Form/form_ie.xml.h:2
-#, fuzzy
-#| msgid "RELATIONSHIP to Head of Household"
 msgid "Signature of Head of Household"
-msgstr "RELATIE met hoofd van huishouden"
+msgstr "Handtekening van het gezinshoofd"
 
 #: Form/form_ie.xml.h:3
-#, fuzzy
-#| msgid "Nature of industry"
 msgid "Signature of Enumerator"
-msgstr "Aard van de industrie"
+msgstr "Handtekening van Enumerator"
 
 #: Form/form_ie.xml.h:8
-#, fuzzy
-#| msgid "City or Borough"
 msgid "County or Co. Borough"
-msgstr "Stad of stadsdeel"
+msgstr "County of Co. Borough"
 
 #: Form/form_ie.xml.h:9
-#, fuzzy
-#| msgid "District Electoral Division"
 msgid "District Electoral Division or Ward"
-msgstr "Districts verkiezingsafdeling"
+msgstr "Districtsverkiezingsafdeling of wijk"
 
 #: Form/form_ie.xml.h:11
-#, fuzzy
-#| msgid "Town or Village"
 msgid "Urban Dist. Town or Village"
-msgstr "Stad of dorp"
+msgstr "Urban district stad of dorp"
 
 #: Form/form_ie.xml.h:12
-#, fuzzy
-#| msgid "Road, Street, etc, and No. or Name of House"
 msgid "Street etc with No. of House"
-msgstr "Weg, straat, enz. En nr. Of naam van huis"
+msgstr "Straat, enz. met huisnr."
 
 #: Form/form_ie.xml.h:13
-#, fuzzy
-#| msgid "No. Of Schedule"
 msgid "No. of Schedule"
-msgstr "Nr. Van schema"
+msgstr "Nr. van schema"
 
 #: Form/form_ie.xml.h:14
-#, fuzzy
-#| msgid "Name of Institution"
 msgid "Name of Public Institution"
-msgstr "Naam van de instelling"
+msgstr "Naam van de openbare instelling"
 
 #: Form/form_ie.xml.h:16 Form/form_ie.xml.h:113
-#, fuzzy
-#| msgid "Maiden Surname"
 msgid "Name and Surname"
-msgstr "Meisjesnaam"
+msgstr "Naam en achternaam"
 
 #: Form/form_ie.xml.h:18
-#, fuzzy
-#| msgid "9. Relationship to head of family or household"
 msgid "Relationship to Head of Household"
-msgstr "9. Relatie met gezinshoofd of huishouden"
+msgstr "Relatie tot gezinshoofd"
 
 #: Form/form_ie.xml.h:19
-#, fuzzy
-#| msgid "Default Age"
 msgid "Year Age"
-msgstr "Standaardleeftijd"
+msgstr "Jaarleeftijd"
 
 #: Form/form_ie.xml.h:20 Form/form_us.xml.h:2561
 msgid "Age in years"
 msgstr "Leeftijd in jaren"
 
 #: Form/form_ie.xml.h:21
-#, fuzzy
-#| msgid "Monthly Rent"
 msgid "Month Age"
-msgstr "Maandelijkse rente"
+msgstr "Maandleeftijd"
 
 #: Form/form_ie.xml.h:22
-#, fuzzy
-#| msgid "Age Months"
 msgid "Age in months"
-msgstr "Leeftijd Maanden"
+msgstr "Leeftijd in maanden"
 
 #: Form/form_ie.xml.h:25
-#, fuzzy
-#| msgid "Married or widowed"
 msgid "Marriage or Orphanhood"
-msgstr "Gehuwd of weduwe"
+msgstr "Huwelijk of wezenstatus"
 
 #: Form/form_ie.xml.h:28
 msgid ""
 "\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
 "cannot speak Irish\""
 msgstr ""
+"\"Alleen Iers\", \"Iers en Engels\", \"Engels en Iers\", \"Iers lezen maar "
+"niet spreken\""
 
 #: Form/form_ie.xml.h:33
-#, fuzzy
-#| msgid "Years of present marriage"
 msgid "Years married in present Marriage"
-msgstr "Jaren van huidig huwelijk"
+msgstr "Jaren getrouwd in het huidige huwelijk"
 
 #: Form/form_ie.xml.h:34
-#, fuzzy
-#| msgid "Date Married"
 msgid "Months Married"
-msgstr "Datum getrouwd"
+msgstr "Maanden getrouwd"
 
 #: Form/form_ie.xml.h:35
-#, fuzzy
-#| msgid "Children born alive to present Marriage"
 msgid "Months married in present Marriage"
-msgstr "Levend geboren kinderen in huidig huwelijk"
+msgstr "Maanden getrouwd in huidige huwelijk"
 
 #: Form/form_ie.xml.h:36
-#, fuzzy
-#| msgid "Parents enclose children"
 msgid "Present Marriage Children"
-msgstr "Ouders omsluiten kinderen"
+msgstr "Kinderen uit huidige huwelijk"
 
 #: Form/form_ie.xml.h:37
-#, fuzzy
-#| msgid "Children born alive to present Marriage"
 msgid "Children born alive to present marriage"
-msgstr "Levend geboren kinderen in huidig huwelijk"
+msgstr "Levend geboren kinderen uit huidige huwelijk"
 
 #: Form/form_ie.xml.h:38
-#, fuzzy
-#| msgid "Total Children Born Alive."
 msgid "Total Children Under 16 Living"
-msgstr "Totaal levendgeboren kinderen."
+msgstr "Aantal levende kinderen onder 16"
 
 #: Form/form_ie.xml.h:39
 msgid "(1.) Entry no."
-msgstr ""
+msgstr "(1.) Item-nr."
 
 #: Form/form_ie.xml.h:40 Form/form_ie.xml.h:74 Form/form_ie.xml.h:102
-#, fuzzy
-#| msgid "Supervisor's District No."
 msgid "Superintendent Registrar's District"
-msgstr "Supervisor's district nr."
+msgstr "Superintendent Registrar's District"
 
 #: Form/form_ie.xml.h:41 Form/form_ie.xml.h:73 Form/form_ie.xml.h:103
-#, fuzzy
-#| msgid "Registration District"
 msgid "Registrar's District"
-msgstr "Registratiedistrict"
+msgstr "Registrar's District"
 
 #: Form/form_ie.xml.h:43 Form/form_ie.xml.h:105
 msgid "Union"
-msgstr ""
+msgstr "Vakbond"
 
 #: Form/form_ie.xml.h:45
-#, fuzzy
-#| msgid "Date of Registration"
 msgid "(10.) Signature of Registrar"
-msgstr "Registratiedatum"
+msgstr "(10.) Handtekening van griffier"
 
 #: Form/form_ie.xml.h:46
 msgid "(11.) Baptismal Name if added after Registration of Birth, and Date"
 msgstr ""
+"(11.) Doopnaam indien toegevoegd na inschrijving van de geboorte en datum"
 
 #: Form/form_ie.xml.h:48
 msgid "(3.) Name (if any)"
-msgstr ""
+msgstr "(3.) Naam (indien aanwezig)"
 
 #: Form/form_ie.xml.h:50 Form/form_ie.xml.h:52
-#, fuzzy
-#| msgid "3. Place of Birth"
 msgid "(2.) Date and Place of Birth"
-msgstr "3. Geboorteplaats"
+msgstr "(2.) Datum en geboorteplaats"
 
 #: Form/form_ie.xml.h:54
 msgid "(4.) M or F for male or female"
-msgstr ""
+msgstr "(4.) M of V voor man of vrouw"
 
 #: Form/form_ie.xml.h:56 Form/form_ie.xml.h:58
 msgid "(5.) Name and Surname and Dwelling-place of Father"
-msgstr ""
+msgstr "(5.) Naam, achternaam en verblijfplaats van vader"
 
 #: Form/form_ie.xml.h:60
-#, fuzzy
-#| msgid "Rank, Profession of Occupation"
 msgid "(7.) Rank or Profession of Father"
-msgstr "Rang, beroep of werk"
+msgstr "(7.) Rang of beroep van vader"
 
 #: Form/form_ie.xml.h:62 Form/form_ie.xml.h:64
 msgid "(6.) Name and Surname and Maiden Surname of Mother"
-msgstr ""
+msgstr "(6.) Voor- en achternaam en meisjesnaam van moeder"
 
 #: Form/form_ie.xml.h:66 Form/form_ie.xml.h:68
 msgid "(8.) Signature, Qualification, and Residence of Informant"
 msgstr ""
+"(8.) Handtekening, kwalificatie en woonplaats van inlichtingenverstrekker"
 
 #: Form/form_ie.xml.h:69
-#, fuzzy
-#| msgid "Date Registered"
 msgid "When Registered"
-msgstr "Datum geregistreerd"
+msgstr "Wanneer geregistreerd"
 
 #: Form/form_ie.xml.h:70
 msgid "(9.) Date when birth was registered"
-msgstr ""
+msgstr "(9.) Datum waarop de geboorte is geregistreerd"
 
 #: Form/form_ie.xml.h:71
-#, fuzzy
-#| msgid "Year only"
 msgid "Year"
-msgstr "Alleen jaar"
+msgstr "Jaar"
 
 #: Form/form_ie.xml.h:72
 msgid "Solemnized at the Catholic"
-msgstr ""
+msgstr "Gevolgd door een plechtigheid in de Katholieke kerk"
 
 #: Form/form_ie.xml.h:76 Form/form_ie.xml.h:107
-#, fuzzy
-#| msgid "Certificate Number"
 msgid "Certificate number"
 msgstr "Certificaatnummer"
 
 #: Form/form_ie.xml.h:77 Form/form_ie.xml.h:108
-#, fuzzy
-#| msgid "Show page numbers"
 msgid "Page number"
-msgstr "Paginanummers weergeven"
+msgstr "Paginanummer"
 
 #: Form/form_ie.xml.h:78 Form/form_ie.xml.h:109
 msgid "(1.) Entry No."
-msgstr ""
+msgstr "(1.) Item-nr."
 
 #: Form/form_ie.xml.h:79
-#, fuzzy
-#| msgid "Date Married"
 msgid "(2.) When Married"
-msgstr "Datum getrouwd"
+msgstr "(2.) Wanneer getrouwd"
 
 #: Form/form_ie.xml.h:81
-#, fuzzy
-#| msgid "Maiden Surname"
 msgid "(3.) Name and Surname"
-msgstr "Meisjesnaam"
+msgstr "(3.) Naam en achternaam"
 
 #: Form/form_ie.xml.h:83
 msgid "(4.) Full or Minor"
-msgstr ""
+msgstr "(4.) Volwassen of minderjarig"
 
 #: Form/form_ie.xml.h:85
 msgid "(5.) Bachelor or Spinster"
-msgstr ""
+msgstr "(5.) Vrijgezel"
 
 #: Form/form_ie.xml.h:87
 msgid "(6.) Rank or Profession"
-msgstr ""
+msgstr "(6.) Rang of beroep"
 
 #: Form/form_ie.xml.h:89
-#, fuzzy
-#| msgid "Date of Marriage"
 msgid "Residence at the Time of Marriage"
-msgstr "Huwelijksdatum"
+msgstr "Woonplaats ten tijde van huwelijk"
 
 #: Form/form_ie.xml.h:91 Form/form_ie.xml.h:95
-#, fuzzy
-#| msgid "Father's Name"
 msgid "(8.) Father's Name and Surname"
-msgstr "Naam van de vader"
+msgstr "(8.) Naam en achernaam van vader"
 
 #: Form/form_ie.xml.h:93 Form/form_ie.xml.h:97
-#, fuzzy
-#| msgid "Rank, Profession of Occupation"
 msgid "(9.) Rank or Profession of Father"
-msgstr "Rang, beroep of werk"
+msgstr "(9.) Rang of beroep van vader"
 
 #: Form/form_ie.xml.h:110
-#, fuzzy
-#| msgid "Date Registered"
 msgid "(10.) When Registered"
-msgstr "Datum geregistreerd"
+msgstr "(10.) Wanneer geregistreerd"
 
 #: Form/form_ie.xml.h:111
-#, fuzzy
-#| msgid "Date of Registration"
 msgid "(11.) Signature of Registrar"
-msgstr "Registratiedatum"
+msgstr "(11.) Handtekening van griffier"
 
 #: Form/form_ie.xml.h:114 Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
 msgid "Date of Death"
 msgstr "Overlijdensdatum"
 
 #: Form/form_ie.xml.h:115 Form/form_ie.xml.h:117
-#, fuzzy
-#| msgid "30. Age and Cause of Deaths"
 msgid "(2.) Date and Place of Death"
-msgstr "30. Leeftijd en overlijdensoorzaak"
+msgstr "(2.) Datum en plaats van overlijden"
 
 #: Form/form_ie.xml.h:116 Form/form_us.xml.h:2432 Form/form_us.xml.h:2495
 msgid "Place of Death"
@@ -10348,49 +10273,39 @@ msgstr "Overlijdenslocatie"
 
 #: Form/form_ie.xml.h:119
 msgid "(4.) M or F for Male or Female"
-msgstr ""
+msgstr "(4.) M of V voor Man of Vrouw"
 
 #: Form/form_ie.xml.h:121
-#, fuzzy
-#| msgid "Widowed, divorced"
 msgid "(5.) Widowed or Married"
-msgstr "Weduwnaar, gescheiden"
+msgstr "(5.) Weduwe/Weduwnaar of Getrouwd"
 
 #: Form/form_ie.xml.h:123
-#, fuzzy
-#| msgid "Age last Birthday of"
 msgid "(6.) Age last Birthday"
-msgstr "Leeftijd laatste verjaardag van"
+msgstr "(6.) Leeftijd laatste verjaardag"
 
 #: Form/form_ie.xml.h:125
-#, fuzzy
-#| msgid "Rank, Profession, or Occupation"
 msgid "(7.) Rank, Profession, or Occupation"
-msgstr "Rang, beroep of werk"
+msgstr "(7.) Rang, beroep of vak"
 
 #: Form/form_ie.xml.h:127 Form/form_ie.xml.h:129
 msgid "(8.) Certified Cause of Death and Duration of Illness"
-msgstr ""
+msgstr "(8.) Gecertificeerde doodsoorzaak en duur van de ziekte"
 
 #: Form/form_ie.xml.h:128
-#, fuzzy
-#| msgid "Direction of time"
 msgid "Duration of Illness"
-msgstr "Tijdsrichting"
+msgstr "Duur van de ziekte"
 
 #: Form/form_ie.xml.h:132
-#, fuzzy
-#| msgid "Relation to Head"
 msgid "Relation to deceased"
-msgstr "Relatie met hoofd"
+msgstr "Relatie tot overledene"
 
 #: Form/form_ie.xml.h:133
 msgid "(9.) e.g. Son, Daughter"
-msgstr ""
+msgstr "(9.) bijv. zoon, dochter"
 
 #: Form/form_ie.xml.h:135
 msgid "(9.) e.g. Present at death"
-msgstr ""
+msgstr "(9.) bijv. Aanwezig bij overlijden"
 
 #: Form/form_pl.xml.h:5
 msgid "Event Place (Original)"
@@ -16053,32 +15968,24 @@ msgid "Media files are in sync."
 msgstr "Mediabestanden zijn gesynchroniseerd."
 
 #: GrampsWebSync/grampswebsync.py:345
-#, fuzzy, python-format
-#| msgid "Successfully downloaded %s media file."
-#| msgid_plural "Successfully downloaded %s media files."
+#, python-format
 msgid "Successfully downloaded %s media files."
-msgstr "%s mediabestand succesvol gedownload."
+msgstr "%s mediabestanden succesvol gedownload."
 
 #: GrampsWebSync/grampswebsync.py:348
-#, fuzzy, python-format
-#| msgid "Encountered %s error during download."
-#| msgid_plural "Encountered %s errors during download."
+#, python-format
 msgid "Encountered %s errors during download."
-msgstr "%s fout opgetreden tijdens het downloaden."
+msgstr "%s fouten opgetreden bij het downloaden."
 
 #: GrampsWebSync/grampswebsync.py:354
-#, fuzzy, python-format
-#| msgid "Successfully uploaded %s media file."
-#| msgid_plural "Successfully uploaded %s media files."
+#, python-format
 msgid "Successfully uploaded %s media files."
-msgstr "%s mediabestand met succes geüploadet."
+msgstr "%s mediabestanden met succes geüploadet."
 
 #: GrampsWebSync/grampswebsync.py:357
-#, fuzzy, python-format
-#| msgid "Encountered %s error during upload."
-#| msgid_plural "Encountered %s errors during upload."
+#, python-format
 msgid "Encountered %s errors during upload."
-msgstr "%s fout opgetreden tijdens het uploaden."
+msgstr "%s fouten opgetreden bij het uploaden."
 
 #: GrampsWebSync/grampswebsync.py:375
 msgid "Authentication failed. Please check your username and password."
@@ -16281,18 +16188,14 @@ msgid "Missing remotely"
 msgstr "Extern vermist"
 
 #: GrampsWebSync/grampswebsync.py:1130
-#, fuzzy, python-format
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
+#, python-format
 msgid "Downloading %s media file(s)"
-msgstr "%s mediabestand downloaden"
+msgstr "%s mediabestand(en) downloaden"
 
 #: GrampsWebSync/grampswebsync.py:1138
-#, fuzzy, python-format
-#| msgid "Uploading %s media file"
-#| msgid_plural "Uploading %s media files"
+#, python-format
 msgid "Uploading %s media file(s)"
-msgstr "%s mediabestand uploaden"
+msgstr "%s mediabestand(en) uploaden"
 
 #: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
 msgid "Gram.py Script"
@@ -22082,7 +21985,7 @@ msgstr "De stijl die voor elke sectie wordt gebruikt."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:197
 msgid "Internet:"
-msgstr ""
+msgstr "Internet:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:277
 msgid "Publication information:"
