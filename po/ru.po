@@ -15,13 +15,14 @@
 # Stanislav <bsv999@mail.ru>, 2025.
 # Petr Fedorov <petr.e.fedorov@yandex.ru>, 2025.
 # Mikhail Burkasov <mburkasov@gmail.com>, 2025.
+# Vadim Barsukov <vadbars@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 13:20-0700\n"
-"PO-Revision-Date: 2025-10-31 18:03+0000\n"
-"Last-Translator: Mikhail Burkasov <mburkasov@gmail.com>\n"
+"PO-Revision-Date: 2026-06-09 08:01+0000\n"
+"Last-Translator: Vadim Barsukov <vadbars@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ru/>\n"
 "Language: ru\n"
@@ -30,7 +31,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
 
@@ -412,7 +413,7 @@ msgstr "Создание аватар"
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:25
 msgid "A tool to add avatar pictures to your family tree"
-msgstr "Иструмент для создания изображений (аватар) для семейного древа"
+msgstr "Инструмент для создания изображений (аватар) для семейного древа"
 
 #: AvatarGenerator/AvatarGenerator.py:59
 msgid "single image mode"
@@ -922,7 +923,7 @@ msgid ""
 "to add all of the events possible."
 msgstr ""
 "Инструмент расчёта дат используется для добавления и удаления событий о "
-"рождении и смерти для лиц у которых отсутствуют данные события.\n"
+"рождении и смерти для лиц, у которых отсутствуют данные события.\n"
 "\n"
 "Использование:\n"
 "1. Перейдите в раздел настроек\n"
@@ -936,7 +937,7 @@ msgstr ""
 "Источника. Иначе оно будет удалено при следующем автоматическом удалении "
 "событий.\n"
 "\n"
-"Возможно потребуется запустить иструмент повторно (без удаления предыдущих "
+"Возможно потребуется запустить инструмент повторно (без удаления предыдущих "
 "событий) для добавления всех возможных событий."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:204
@@ -1261,7 +1262,7 @@ msgstr "Часы"
 
 #: ClockGramplet/ClockGramplet.gpr.py:5
 msgid "Gramplet for demonstrating Cairo graphics"
-msgstr "Грампет демонстрирующий применение Cairo"
+msgstr "Грамплет демонстрирующий применение Cairo"
 
 #: CombinedView/basepage.py:493
 #, fuzzy, python-format
@@ -1346,7 +1347,7 @@ msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Collapsible Tree Layout from the D3.js JavaScript library."
 msgstr ""
-"Создаёт веб-станицу с графическим отображением предков (SVG) представленном "
+"Создаёт веб-страницу с графическим отображением предков (SVG) представленном "
 "в виде сворачиваемого древа при помощи D3.js JavaScript библиотеки."
 
 #: D3Charts/AncestralCollapsibleTree.py:327
@@ -5515,7 +5516,7 @@ msgstr "Редактор описания событий"
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
 msgid ""
 "A tool to find and replace a string in event description of multiple events."
-msgstr "Иструмент для поиска и замены строк в описании нескольких событий."
+msgstr "Инструмент для поиска и замены строк в описании нескольких событий."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:75
 msgid "Search substring..."
@@ -19133,9 +19134,9 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Выбранные заметки на панеле слева, показыны здесь ПОСЛЕ очистки.\n"
+"Выбранные заметки на панели слева, показаны здесь ПОСЛЕ очистки.\n"
 "Если хотите внести изменения, можете сделать это здесь. Используйте "
-"управление стулем из панели сверху при необходимости."
+"управление стилем из панели сверху при необходимости."
 
 #: NoteCleanup/NoteCleanup.py:404
 msgid "Saving Notes"
@@ -21560,7 +21561,7 @@ msgstr "Python Shell"
 
 #: PythonGramplet/PythonGramplet.gpr.py:5
 msgid "Interactive Python interpreter"
-msgstr "Интерактивный интерпритатор Python"
+msgstr "Интерактивный интерпретатор Python"
 
 #: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
 msgid "Enter Python expressions"
@@ -22330,7 +22331,7 @@ msgstr "Установка атрибутов"
 
 #: SetAttributeTool/SetAttributeTool.gpr.py:27
 msgid "Set an attribute to a given value."
-msgstr "Установливает значения атрибутов."
+msgstr "Устанавливает значения атрибутов."
 
 #: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
