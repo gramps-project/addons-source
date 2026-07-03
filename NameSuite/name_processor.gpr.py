@@ -28,7 +28,7 @@ register(
     description=_(
         "Tools to rename given name, audit and infer patronymic (East Slavic) names."
     ),
-    version="1.0",
+    version = '1.0.1',
     gramps_target_version="6.0",
     status=STABLE,
     fname="names_tool.py",
@@ -46,7 +46,7 @@ register(
     description=_(
         "Suggests (East Slavic) patronymic names in real-time as you navigate."
     ),
-    version="1.0",
+    version = '1.0.1',
     gramps_target_version="6.0",
     status=STABLE,
     fname="patronymics_gramplet.py",
