@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 13:20-0700\n"
+"POT-Creation-Date: 2026-07-03 07:42-0700\n"
 "PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
@@ -2789,8 +2789,8 @@ msgid ""
 "<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
 "<attribute-value>."
 msgstr ""
-"רשימת מחרוזות שומרי מקום לאירועים. שומרי מקום ידועים: <type>, <role>, <date>"
-", <place>, <description>, <witnesses>, <source> וכל <attribute-value>."
+"רשימת מחרוזות שומרי מקום לאירועים. שומרי מקום ידועים: <type>, <role>, "
+"<date>, <place>, <description>, <witnesses>, <source> וכל <attribute-value>."
 
 #: DenominoViso/DenominoViso.py:2758
 msgid "Source format"
@@ -5000,8 +5000,8 @@ msgid ""
 "This is the measurement of Above or Below Sea Level.  It is measured in "
 "meters.  Example: 200.558, -200.558"
 msgstr ""
-"זו מדידה של גובה מעל או מתחת לפני הים. היא נמדדת במטרים. דוגמה: 200.558, -"
-"200.558"
+"זו מדידה של גובה מעל או מתחת לפני הים. היא נמדדת במטרים. דוגמה: 200.558, "
+"-200.558"
 
 #: EditExifMetadata/editexifmetadata.py:195
 msgid ""
@@ -18032,6 +18032,276 @@ msgstr "ארכיון לאומי"
 msgid "Who (re)searches who?"
 msgstr "מי חוקר את מי?"
 
+#: NameSuite/.venv/lib/python3.12/site-packages/mypy/main.py:450
+#, python-format
+msgid "%(prog)s: error: %(message)s\n"
+msgstr ""
+
+#: NameSuite/name_processor.gpr.py:6
+#, fuzzy
+#| msgid "Patronymic names:"
+msgid "Audit Given and Patronymic Names"
+msgstr "שמות פטרוניים:"
+
+#: NameSuite/name_processor.gpr.py:9
+msgid ""
+"Tools to rename given name, audit and infer patronymic (East Slavic) names."
+msgstr ""
+
+#: NameSuite/name_processor.gpr.py:25 NameSuite/name_processor.gpr.py:37
+#, fuzzy
+#| msgid "Patronymic names:"
+msgid "Patronymic Suggestion"
+msgstr "שמות פטרוניים:"
+
+#: NameSuite/name_processor.gpr.py:27
+msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
+msgstr ""
+
+#: NameSuite/name_processor/views/base_tab.py:150
+msgid "Use"
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:32
+#, python-brace-format
+msgid ""
+"Missing Patronymic Detected.\n"
+"Suggested: {0}\n"
+"Based on father: {1}"
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:34
+msgid "Navigate to an individual to check patronymic status."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:35
+#, fuzzy
+#| msgid "No Active Person set."
+msgid "No active person selected."
+msgstr "לא הוגדר 'אדם פעיל'."
+
+#: NameSuite/name_processor/views/gramplet.py:37
+msgid ""
+"Patronymic inference can't be inferred for non-binary or unknown genders."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:40
+msgid "Individual already has a recorded patronymic."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:43
+msgid "No attached father found in database family records."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:46
+msgid "Father lacks a recorded first name."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:49
+msgid "Could not generate valid morphology patterns."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:51
+msgid "Patronymic applied successfully!"
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:77
+#, fuzzy
+#| msgid "🔍 AI Suggestions"
+msgid "Apply Suggestion"
+msgstr "🔍 הצעות בינה מלאכותית"
+
+#: NameSuite/name_processor/views/tool.py:92
+msgid "Infer East Slavic Patronymics"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool.py:112
+#, fuzzy
+#| msgid "Checking Given Names"
+msgid "Rename Given Names"
+msgstr "בדיקת שמות פרטיים"
+
+#: NameSuite/name_processor/views/tool.py:115
+#, fuzzy
+#| msgid "Patronymic names:"
+msgid "Audit Patronymics"
+msgstr "שמות פטרוניים:"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:68
+msgid "Auditing Settings"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:76
+#, fuzzy
+#| msgid "Place of Record"
+msgid "All Records"
+msgstr "מקום רישום"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:77
+#, fuzzy
+#| msgid "Male line"
+msgid "Males Only"
+msgstr "קו זכרי"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:78
+#, fuzzy
+#| msgid "Female line"
+msgid "Females Only"
+msgstr "קו נקבי"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:82
+#, fuzzy
+#| msgid "Configure"
+msgid "Configure Rules..."
+msgstr "הגדרה"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:87
+msgid "Match Pre-Revolutionary Orthography"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:95
+#, fuzzy
+#| msgid "Edit tags"
+msgid "Audit Database"
+msgstr "עריכה תגים"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:117
+#, fuzzy
+#| msgid "Select the graph direction."
+msgid "Select All Safe Corrections"
+msgstr "בחירת גרף כיוון."
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:122
+#: NameSuite/name_processor/views/tool_rename_tab.py:116
+#, fuzzy
+#| msgid "Apply to selected places"
+msgid "Apply Selected Corrections"
+msgstr "החלה על המקום שנבחר"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:162
+#, fuzzy
+#| msgid "Configure"
+msgid "Configure Rules"
+msgstr "הגדרה"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:186
+#: NameSuite/name_processor/views/tool_rename_tab.py:156
+#, fuzzy
+#| msgid "India"
+msgid "Individual"
+msgstr "הודו"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:190
+#: NameSuite/name_processor/views/tool_rename_tab.py:158
+#, fuzzy
+#| msgid "Current sort"
+msgid "Current"
+msgstr "מיון נוכחי"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:193
+#, fuzzy
+#| msgid "Section"
+msgid "Correction"
+msgstr "מקטע"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:200
+#, fuzzy
+#| msgid "Configure"
+msgid "Conf"
+msgstr "הגדרה"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:201
+#, fuzzy
+#| msgid "Event Year"
+msgid "Ref Year"
+msgstr "שנת האירוע"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:204
+#, fuzzy
+#| msgid "Relation"
+msgid "Explanation"
+msgstr "יוחסה"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:243
+#, fuzzy
+#| msgid "Completed?"
+msgid "Audit Complete!"
+msgstr "הושלם?"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:248
+#, fuzzy
+#| msgid "Result"
+msgid "No Results"
+msgstr "תוצאה"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:248
+#, fuzzy
+#| msgid "No persons found..."
+msgid "No issues found."
+msgstr "אין אנשים נמצא..."
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:63
+#, fuzzy
+#| msgid "Search result places"
+msgid "Search and Replace Options"
+msgstr "תוצאות חיפוש מקומות"
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:70
+#, fuzzy
+#| msgid "Spouse name:"
+msgid "Source Name:"
+msgstr "זוגאי שם:"
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:72
+msgid "e.g. Иоанн"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:75
+#, fuzzy
+#| msgid "Street Name"
+msgid "Target Name:"
+msgstr "רחוב שם"
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:77
+msgid "e.g. Иван"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:80
+msgid "Match Mode:"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:82
+msgid "Exact Match"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:83
+#, fuzzy
+#| msgid "SubDistrict"
+msgid "Substring"
+msgstr "תת מחוז"
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:84
+#, fuzzy
+#| msgid "Allow regular expressions."
+msgid "Regular Expression"
+msgstr "לאפשר ביטויים סדירים."
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:88
+#, fuzzy
+#| msgid "Index of Names"
+msgid "Scan for Names"
+msgstr "מפתח שמות"
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:93
+msgid "Preserve original name as alternative"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:160
+#, fuzzy
+#| msgid "Proposed sort"
+msgid "Proposed"
+msgstr "מיון מוצע"
+
 #: NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
 msgstr "תרשים רשת"
@@ -20638,11 +20908,11 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
-"<i><a href=\"https://gramps-project.org/wiki/"
-"index.php?title=How_to_make_a_backup\">גיבוי ל־Gramps XML</a> בגרסאות גרמפס "
-"האחרונות, 'יצירת גיבוי...' נמצא בתפריט אילן־יוחסין. אחרת יש להשתמש ב"
-"־'ייצוא...' באותו תפריט, אך להסיר את סימון אפשרויות הפרטיות במסייע הייצוא "
-"כדי לייצא את כל הנתונים.</i>\n"
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">גיבוי ל־Gramps XML</a> בגרסאות גרמפס האחרונות, "
+"'יצירת גיבוי...' נמצא בתפריט אילן־יוחסין. אחרת יש להשתמש ב־'ייצוא...' באותו "
+"תפריט, אך להסיר את סימון אפשרויות הפרטיות במסייע הייצוא כדי לייצא את כל "
+"הנתונים.</i>\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:336
@@ -20663,7 +20933,8 @@ msgstr " • מומלץ מאוד לגבות כל אילן־יוחסין לפני
 msgid ""
 " • Test your backups by creating a new Family Tree and then importing the "
 "backup."
-msgstr " • בדיקת הגיבויים באמצעות יצירת אילן־יוחסין חדש ולאחר מכן ייבוא הגיבוי."
+msgstr ""
+" • בדיקת הגיבויים באמצעות יצירת אילן־יוחסין חדש ולאחר מכן ייבוא הגיבוי."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:370
 msgid ", is the most current version.\n"
@@ -20941,8 +21212,8 @@ msgid ""
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
 "a></b></u>\n"
 msgstr ""
-"<u><b><a href=\"https://gramps-project.org/wiki/"
-"index.php?title=Gramps_5.0_Wiki_Manual_-_Command_Line/"
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-_Command_Line/"
 "he#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">הגדרות המקמה:</a></b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2086
@@ -24314,7 +24585,8 @@ msgstr "💡 בדרך כלל מותקן עם: `pip install qrcode[pil]`"
 msgid ""
 "*Note: Some operating systems or environments may require alternative "
 "installation methods.*"
-msgstr "*הערה: ייתכן שחלק ממערכות ההפעלה או הסביבות ידרשו שיטות התקנה חלופיות.*"
+msgstr ""
+"*הערה: ייתכן שחלק ממערכות ההפעלה או הסביבות ידרשו שיטות התקנה חלופיות.*"
 
 #: WebSearch/info_panel.py:147
 msgid "🔻 **Missing:** `openai`"
@@ -24356,7 +24628,8 @@ msgstr "## 📂 נתונים קובץ מיקום"
 #: WebSearch/info_panel.py:191
 msgid ""
 "Below are the paths to system and user-defined data files used by WebSearch."
-msgstr "להלן הנתיבים לקובצי נתונים מערכתיים ומוגדרי־משתמש שמשמשים את WebSearch."
+msgstr ""
+"להלן הנתיבים לקובצי נתונים מערכתיים ומוגדרי־משתמש שמשמשים את WebSearch."
 
 #: WebSearch/info_panel.py:195
 msgid "#### CSV File Paths"

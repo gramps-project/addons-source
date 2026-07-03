@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 13:20-0700\n"
+"POT-Creation-Date: 2026-07-03 07:42-0700\n"
 "PO-Revision-Date: 2026-07-01 19:34+0000\n"
 "Last-Translator: FarmYard Gaming <farmyardgaming@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://hosted.weblate.org/projects/"
@@ -17795,6 +17795,228 @@ msgstr ""
 
 #: NLWebConnectPack/NLWebPack.py:38
 msgid "Who (re)searches who?"
+msgstr ""
+
+#: NameSuite/.venv/lib/python3.12/site-packages/mypy/main.py:450
+#, python-format
+msgid "%(prog)s: error: %(message)s\n"
+msgstr ""
+
+#: NameSuite/name_processor.gpr.py:6
+msgid "Audit Given and Patronymic Names"
+msgstr ""
+
+#: NameSuite/name_processor.gpr.py:9
+msgid ""
+"Tools to rename given name, audit and infer patronymic (East Slavic) names."
+msgstr ""
+
+#: NameSuite/name_processor.gpr.py:25 NameSuite/name_processor.gpr.py:37
+msgid "Patronymic Suggestion"
+msgstr ""
+
+#: NameSuite/name_processor.gpr.py:27
+msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
+msgstr ""
+
+#: NameSuite/name_processor/views/base_tab.py:150
+msgid "Use"
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:32
+#, python-brace-format
+msgid ""
+"Missing Patronymic Detected.\n"
+"Suggested: {0}\n"
+"Based on father: {1}"
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:34
+msgid "Navigate to an individual to check patronymic status."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:35
+msgid "No active person selected."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:37
+msgid ""
+"Patronymic inference can't be inferred for non-binary or unknown genders."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:40
+msgid "Individual already has a recorded patronymic."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:43
+msgid "No attached father found in database family records."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:46
+msgid "Father lacks a recorded first name."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:49
+msgid "Could not generate valid morphology patterns."
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:51
+msgid "Patronymic applied successfully!"
+msgstr ""
+
+#: NameSuite/name_processor/views/gramplet.py:77
+msgid "Apply Suggestion"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool.py:92
+msgid "Infer East Slavic Patronymics"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool.py:112
+#, fuzzy
+#| msgid "Checking Place Titles"
+msgid "Rename Given Names"
+msgstr "Checking Place Titles"
+
+#: NameSuite/name_processor/views/tool.py:115
+msgid "Audit Patronymics"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:68
+msgid "Auditing Settings"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:76
+msgid "All Records"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:77
+msgid "Males Only"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:78
+msgid "Females Only"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:82
+msgid "Configure Rules..."
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:87
+msgid "Match Pre-Revolutionary Orthography"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:95
+msgid "Audit Database"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:117
+msgid "Select All Safe Corrections"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:122
+#: NameSuite/name_processor/views/tool_rename_tab.py:116
+#, fuzzy
+#| msgid "Apply to selected places"
+msgid "Apply Selected Corrections"
+msgstr "Apply to selected places"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:162
+msgid "Configure Rules"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:186
+#: NameSuite/name_processor/views/tool_rename_tab.py:156
+msgid "Individual"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:190
+#: NameSuite/name_processor/views/tool_rename_tab.py:158
+msgid "Current"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:193
+#, fuzzy
+#| msgid "Section"
+msgid "Correction"
+msgstr "Section"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:200
+msgid "Conf"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:201
+#, fuzzy
+#| msgid "Event Year"
+msgid "Ref Year"
+msgstr "Event Year"
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:204
+msgid "Explanation"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:243
+msgid "Audit Complete!"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:248
+msgid "No Results"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_audit_tab.py:248
+msgid "No issues found."
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:63
+msgid "Search and Replace Options"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:70
+#, fuzzy
+#| msgid "Source type"
+msgid "Source Name:"
+msgstr "Source type"
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:72
+msgid "e.g. Иоанн"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:75
+msgid "Target Name:"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:77
+msgid "e.g. Иван"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:80
+msgid "Match Mode:"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:82
+msgid "Exact Match"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:83
+msgid "Substring"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:84
+msgid "Regular Expression"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:88
+#, fuzzy
+#| msgid "Image for males."
+msgid "Scan for Names"
+msgstr "Image for males."
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:93
+msgid "Preserve original name as alternative"
+msgstr ""
+
+#: NameSuite/name_processor/views/tool_rename_tab.py:160
+msgid "Proposed"
 msgstr ""
 
 #: NetworkChart/NetworkChart.gpr.py:24
