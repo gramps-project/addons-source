@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 13:20-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-07-01 15:01+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
@@ -382,7 +382,7 @@ msgstr "Avatar Oluşturma Aracı"
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:25
 msgid "A tool to add avatar pictures to your family tree"
-msgstr "Soy ağacınıza avatar resimleri eklemek için bir araç"
+msgstr "Aile ağacınıza avatar resimleri eklemek için bir araç"
 
 #: AvatarGenerator/AvatarGenerator.py:59
 msgid "single image mode"
@@ -506,7 +506,7 @@ msgstr " yeni bir Ağaç veritabanı oluşturun (veya mevcut bir ağacı seçin)
 
 #: Betawhatsnext/Betawhatsnext.py:53
 msgid "  •  Click the \"Load Family Tree\" button to begin"
-msgstr "  •  Seçilen soyağacı ile çalışmaya başlamak için"
+msgstr "  •  Başlamak için \"Aile Ağacını Yükle\" düğmesine tıklayın"
 
 #: Betawhatsnext/Betawhatsnext.py:54
 msgid ""
@@ -518,7 +518,7 @@ msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:55
 msgid "Create and load an empty new tree to import a backup (or"
-msgstr "Başka bir soyağacı aracından yedekleme (veya"
+msgstr "Başka bir soy ağacı aracından yedekleme (veya"
 
 #: Betawhatsnext/Betawhatsnext.py:56
 msgid ""
@@ -942,151 +942,156 @@ msgstr "Seçimi Değiştir"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:206
 msgid "Add Selected Events"
-msgstr ""
+msgstr "Seçilen Etkinlikleri Ekle"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:212
 msgid "Remove Events, Notes, and Source and Reselect Data"
-msgstr ""
+msgstr "Etkinlikleri, Notları ve Kaynağı Kaldır ve Verileri Yeniden Seç"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:213
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
 msgstr ""
+"Önceki etkinlikleri, notları ve kaynağı kaldırıp verileri yeniden seçmek "
+"istediğinizden emin misiniz?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:214
 msgid "Remove and Run Select Again"
-msgstr ""
+msgstr "Kaldır ve Tekrar Seç öğesini çalıştır"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:218
 msgid "Reselect Data"
-msgstr ""
+msgstr "Verileri Yeniden Seç"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:219
 msgid "Are you sure you want to reselect data?"
-msgstr ""
+msgstr "Verileri yeniden seçmek istediğinizden emin misiniz?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:220
 msgid "Run Select Again"
-msgstr ""
+msgstr "Tekrar Seç Öğesini Çalıştır"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:240
 msgid "Evidence"
-msgstr ""
+msgstr "Kanıt"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:240
 msgid "Relative"
-msgstr ""
+msgstr "Göreli"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:261
 msgid "Removing old estimations... "
-msgstr ""
+msgstr "Eski tahminler kaldırılıyor... "
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:262
 #, python-format
 msgid "Removing '%s'..."
-msgstr ""
+msgstr "'%s' kaldırılıyor..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:338
 msgid "done!\n"
-msgstr ""
+msgstr "tamamlandı!\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:341
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:432
 #, python-format
 msgid "Skipped %d people due to errors (see log).\n"
-msgstr ""
+msgstr "Hatalar nedeniyle %d kişi atlandı (günlüğe bakın).\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:347
 msgid ""
 "Selecting... \n"
 "\n"
 msgstr ""
+"Seçiliyor... \n"
+"\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:395
 msgid "Add birth and death events"
-msgstr ""
+msgstr "Doğum ve ölüm olaylarını ekleyin"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:397
 msgid "Add birth event"
-msgstr ""
+msgstr "Doğum olayı ekle"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:399
 msgid "Add death event"
-msgstr ""
+msgstr "Ölüm olayı ekle"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:445
 msgid "No events to be added."
-msgstr ""
+msgstr "Eklenecek etkinlik yok."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:489
 msgid "Selecting... "
-msgstr ""
+msgstr "Seçiliyor... "
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:491
 #, python-format
 msgid "Adding events '%s'..."
-msgstr ""
+msgstr "'%s' etkinlikleri ekleniyor..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:516
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
-msgstr ""
+msgstr "%(evidence)s öğesine göre, %(name)s tarafından doğum olayı eklendi"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:519
 #, python-format
 msgid "Added birth event based on %s"
-msgstr ""
+msgstr "%s öğesine göre doğum olayı eklendi"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:521
 msgid "Estimated birth date"
-msgstr ""
+msgstr "Tahmini doğum tarihi"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:531
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
-msgstr ""
+msgstr "%(evidence)s öğesine göre, %(person)s tarafından ölüm olayı eklendi"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:534
 #, python-format
 msgid "Added death event based on %s"
-msgstr ""
+msgstr "%s öğesine göre ölüm olayı eklendi"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:536
 msgid "Estimated death date"
-msgstr ""
+msgstr "Tahmini ölüm tarihi"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:553
 msgid " Done! Committing..."
-msgstr ""
+msgstr " Tamamlandı! Kaydediliyor..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:559
 #, python-format
 msgid "Added %d events."
-msgstr ""
+msgstr "%d adet olay eklendi."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:562
 #, python-format
 msgid " (Skipped %d rows due to errors; see log.)"
-msgstr ""
+msgstr " (Hatalar nedeniyle %d satır atlandı; günlüğe bakın.)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:589
 msgid "Estimated date"
-msgstr ""
+msgstr "Tahmini tarih"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:37
 msgid "Fix Capitalization of Given Names"
-msgstr ""
+msgstr "Adların Büyük Harfle Yazılmasını Düzelt"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:39
 msgid ""
 "Searches the entire database and attempts to fix capitalization of the given "
 "names."
 msgstr ""
+"Tüm veritabanını arar ve adların büyük harfle yazılmasını düzeltmeye çalışır."
 
 #: ChangeGivenNames/ChangeGivenNames.py:66
 msgid "manual|Fix_Capitalization_of_Given_Names..."
-msgstr ""
+msgstr "kılavuz|Adların_Büyük_Harfle_Yazılmasını_Düzelt..."
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
 msgid "Checking Given Names"
@@ -1094,11 +1099,11 @@ msgstr "Adlar kontrol ediliyor"
 
 #: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
-msgstr ""
+msgstr "Verilen adları arama"
 
 #: ChangeGivenNames/ChangeGivenNames.py:204
 msgid "Affected Names"
-msgstr ""
+msgstr "Etkilenen Adlar"
 
 #: ChangeGivenNames/changenames.glade:32
 msgid ""
@@ -1106,53 +1111,61 @@ msgid ""
 "Gramps can convert to correct capitalization. \n"
 "Select the names you wish Gramps to convert. "
 msgstr ""
+"Aşağıda, Gramps yazılımının doğru büyük harf kullanımına \n"
+"dönüştürebileceği adların listesi bulunmaktadır. \n"
+"Gramps yazılımının dönüştürmesini istediğiniz adları seçin. "
 
 #: ChangeGivenNames/changenames.glade:107
 msgid "Edit selection"
-msgstr ""
+msgstr "Seçimi düzenle"
 
 #: ChatWithTree/ChatWithTree.gpr.py:9
 msgid "Chat With Tree Interactive Addon"
-msgstr ""
+msgstr "Chat With Tree Etkileşimli Eklentisi"
 
 #: ChatWithTree/ChatWithTree.gpr.py:10
 msgid ""
 "Chat With Tree with the help of AI Large Language Model, needs litellm module"
 msgstr ""
+"Chat With Tree, Yapay Zeka Büyük Dil Modeli yardımıyla çalışır ve litellm "
+"modülü gerektirir"
 
 #: ChatWithTree/ChatWithTree.gpr.py:18
+#, fuzzy
 msgid "Chat With Tree"
-msgstr ""
+msgstr "Chat With Tree"
 
 #: ChatWithTree/ChatWithTree.py:149
 msgid "Type a message..."
-msgstr ""
+msgstr "Bir mesaj yazın..."
 
 #: ChatWithTree/ChatWithTree.py:153
 msgid "Send"
-msgstr ""
+msgstr "Gönder"
 
 #: ChatWithTree/ChatWithTree.py:163
 msgid "Chat with Tree initialized.                 Type /help for help."
-msgstr ""
+msgstr "Tree ile sohbet başlatıldı.                 Yardım için /help yazın."
 
 #: ChatWithTree/ChatWithTree.py:463
 msgid ""
 "The ChatWithTree addon is not yet initialized.                     Please "
 "reload Gramps or select a database."
 msgstr ""
+"ChatWithTree eklentisi henüz başlatılmadı.                     Lütfen Gramps "
+"uygulamasını yeniden yükleyin veya bir veritabanı seçin."
 
 #: ChatWithTree/ChatWithTree.py:472
 msgid "The chatbot is currently processing a query. Please wait."
-msgstr ""
+msgstr "Sohbet botu şu anda bir sorguyu işliyor. Lütfen bekleyin."
 
 #: ChatWithTree/ChatWithTree.py:499
 msgid "An error occurred while processing your query."
-msgstr ""
+msgstr "Sorgunuz işlenirken bir hata oluştu."
 
 #: ChatWithTree/chatwithllm.py:119
 msgid "Tree: '{}'"
-msgstr ""
+msgstr "Ağaç: '{}'"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
@@ -1216,72 +1229,76 @@ msgstr "Yer başlıkları"
 
 #: CiteEnhanced/citeenhanced.gpr.py:33
 msgid "Enhanced"
-msgstr ""
+msgstr "Geliştirilmiş"
 
 #: CiteEnhanced/citeenhanced.gpr.py:35
 msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
 msgstr ""
+"Standart işlevlere ek olarak depo ve katalog numarası bilgisi de ekleyen "
+"gelişmiş bir alıntı biçimlendirme aracı."
 
 #: CliMerge/CliMerge.gpr.py:9
 msgid "Command Line Merge"
-msgstr ""
+msgstr "Komut Satırı Birleştirme"
 
 #: CliMerge/CliMerge.gpr.py:19
 msgid "Merge primary objects via the command line."
-msgstr ""
+msgstr "Birincil nesneleri komut satırı üzerinden birleştirin."
 
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:10
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:18
 msgid "Collections Clipboard"
-msgstr ""
+msgstr "Koleksiyonlar Panosu"
 
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:11
 msgid "Gramplet for grouping collections of items to aid in data entry."
 msgstr ""
+"Gramplet, veri girişini kolaylaştırmak için öğe koleksiyonlarını "
+"gruplandırmaya yarayan bir araçtır."
 
 #: ClockGramplet/ClockGramplet.gpr.py:4 ClockGramplet/ClockGramplet.gpr.py:9
 msgid "Clock"
-msgstr ""
+msgstr "Saat"
 
 #: ClockGramplet/ClockGramplet.gpr.py:5
 msgid "Gramplet for demonstrating Cairo graphics"
-msgstr ""
+msgstr "Kahire grafiklerini göstermek için Gramplet"
 
 #: CombinedView/basepage.py:493
 #, python-format
 msgid "%(abbrev)s %(date)s in %(place)s"
-msgstr ""
+msgstr "%(abbrev)s %(date)s > %(place)s"
 
 #: CombinedView/basepage.py:495
-#, python-format
+#, fuzzy, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
-msgstr ""
+msgstr "%(abbrev)s %(date)s%(place)s"
 
 #: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:86
 msgid "Combined"
-msgstr ""
+msgstr "Birleştirilmiş"
 
 #: CombinedView/combinedview.gpr.py:25
 msgid "A view showing relationships and events for a person"
-msgstr ""
+msgstr "Bir kişi için ilişkileri ve olayları gösteren görünüm"
 
 #: CombinedView/combinedview.py:537
 msgid "Edit the active event"
-msgstr ""
+msgstr "Aktif olayı düzenle"
 
 #: CombinedView/combinedview.py:595
 msgid "Show Tags"
-msgstr ""
+msgstr "Etiketleri göster"
 
 #: CombinedView/combinedview.py:621
 msgid "Vertical Details"
-msgstr ""
+msgstr "Dikey Ayrıntılar"
 
 #: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:79
 msgid "Order"
-msgstr ""
+msgstr "Sıralama"
 
 #: CombinedView/navigationview.py:346
 msgid ""
@@ -1289,43 +1306,49 @@ msgid ""
 "the person you want as 'Home Person', then confirm your choice via the menu "
 "Edit -> Set Home Person."
 msgstr ""
+"Gitmek için bir 'varsayılan kişiyi' ayarlamanız gerekiyor. Kişiler "
+"Görünümünü seçin, 'Ana Kişi' olarak istediğiniz kişiyi seçin, ardından "
+"Düzenle -> Ana Kişiyi Ayarla menüsü aracılığıyla seçiminizi onaylayın."
 
 #: CombinedView/personpage.py:597
 #, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
-msgstr ""
+msgstr "%(event_type)s: %(date)s > %(place)s"
 
 #: CombinedView/personpage.py:601
-#, python-format
+#, fuzzy, python-format
 msgid "%(event_type)s: %(date)s"
-msgstr ""
+msgstr "%(event_type)s: %(date)s"
 
 #: CombinedView/personpage.py:604
-#, python-format
+#, fuzzy, python-format
 msgid "%(event_type)s: %(place)s"
-msgstr ""
+msgstr "%(event_type)s: %(place)s"
 
 #: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
-msgstr ""
+msgstr "Bu etkinliği etkinleştirmek için tıklayın"
 
 #: CombinedView/personpage.py:743
 msgid "Click to visit this link"
-msgstr ""
+msgstr "Bu bağlantıyı ziyaret etmek için tıklayın"
 
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
+#, fuzzy
 msgid ": "
-msgstr ""
+msgstr ": "
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
-msgstr ""
+msgstr "Soy Ağacı Katlanabilir Şablonu"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Collapsible Tree Layout from the D3.js JavaScript library."
 msgstr ""
+"D3.js JavaScript kütüphanesinden Katlanabilir Şablon olarak temsil edilen "
+"soy ağacının grafiksel gösterimini (SVG) içeren bir web sayfası oluşturur."
 
 #: D3Charts/AncestralCollapsibleTree.py:327
 #: D3Charts/AncestralCollapsibleTree.py:772
@@ -1339,108 +1362,110 @@ msgstr ""
 #: DenominoViso/DenominoViso.py:412 DenominoViso/DenominoViso.py:2504
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
-msgstr ""
+msgstr "{target_path} yazılırken hata oluştu: {message}"
 
 #: D3Charts/AncestralCollapsibleTree.py:346 D3Charts/AncestralFanChart.py:421
 #: D3Charts/DescendantIndentedTree.py:1523
 #, python-format
 msgid "Failed to create directory structure : %s"
-msgstr ""
+msgstr "Dizin yapısı oluşturulamadı : %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:369 D3Charts/AncestralFanChart.py:444
 #: D3Charts/DescendantIndentedTree.py:1559
 #, python-format
 msgid "Failed to copy web files : %s"
-msgstr ""
+msgstr "Web dosyaları kopyalanamadı : %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:817
 msgid "Ancestral Collapsible Tree Options"
-msgstr ""
+msgstr "Soy Ağacı Katlanabilir Şablonu Seçenekleri"
 
 #: D3Charts/AncestralCollapsibleTree.py:841 D3Charts/AncestralFanChart.py:724
 #: D3Charts/DescendantIndentedTree.py:1808
 #: DescendantSpaceTree/DescendantSpaceTree.py:1082
 msgid "Include Generations"
-msgstr ""
+msgstr "Nesilleri Dahil Et"
 
 #: D3Charts/AncestralCollapsibleTree.py:847
 msgid "Male Background Color"
-msgstr ""
+msgstr "Erkek Arka Plan Rengi"
 
 #: D3Charts/AncestralCollapsibleTree.py:848 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
-msgstr ""
+msgstr "Erkek kutusu arka planı için RGB rengi."
 
 #: D3Charts/AncestralCollapsibleTree.py:851
 msgid "Male Expandable Background Color"
-msgstr ""
+msgstr "Erkek Genişletilebilir Arka Plan Rengi"
 
 #: D3Charts/AncestralCollapsibleTree.py:853
 msgid "RGB-color for male expandable box background."
-msgstr ""
+msgstr "Erkek genişletilebilir kutusu arka planı için RGB rengi."
 
 #: D3Charts/AncestralCollapsibleTree.py:856 NetworkChart/NetworkChart.py:1022
 msgid "Female Background"
-msgstr ""
+msgstr "Kadın Arka Planı"
 
 #: D3Charts/AncestralCollapsibleTree.py:857
 msgid "RGB-color for female box background."
-msgstr ""
+msgstr "Kadın kutusu arka planı için RGB rengi."
 
 #: D3Charts/AncestralCollapsibleTree.py:860
 msgid "Female Expandable Background"
-msgstr ""
+msgstr "Kadın Genişletilebilir Arka Planı"
 
 #: D3Charts/AncestralCollapsibleTree.py:862
 msgid "RGB-color for female expandable box background."
-msgstr ""
+msgstr "Kadın genişletilebilir kutusu arka planı için RGB rengi."
 
 #: D3Charts/AncestralCollapsibleTree.py:868 D3Charts/AncestralFanChart.py:740
 #: D3Charts/DescendantIndentedTree.py:1830
 #: DescendantSpaceTree/DescendantSpaceTree.py:1132
 msgid "The destination path for generated files."
-msgstr ""
+msgstr "Oluşturulan dosyalar için hedef yol."
 
 #: D3Charts/AncestralCollapsibleTree.py:873 D3Charts/AncestralFanChart.py:745
 #: D3Charts/DescendantIndentedTree.py:1835
 #: TimePedigreeHTML/TimePedigreeHtml.py:876
 msgid "The destination file name for html content."
-msgstr ""
+msgstr "Html içeriği için hedef dosya adı."
 
 #: D3Charts/AncestralFanChart.gpr.py:23
 msgid "Ancestral Fan Chart"
-msgstr ""
+msgstr "Soy Ağacı Yelpaze Şeması"
 
 #: D3Charts/AncestralFanChart.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Fan Chart from the D3.js JavaScript library."
 msgstr ""
+"D3.js JavaScript kütüphanesinden bir Yelpaze Şeması olarak temsil edilen "
+"soyların grafiksel gösterimini (SVG) içeren bir web sayfası oluşturur."
 
 #: D3Charts/AncestralFanChart.py:708
 msgid "Ancestral Fan Chart Options"
-msgstr ""
+msgstr "Soy Ağacı Yelpaze Şeması Seçenekleri"
 
 #: D3Charts/AncestralFanChart.py:730
 msgid "Paternal Background Color"
-msgstr ""
+msgstr "Baba Tarafı Arka Plan Rengi"
 
 #: D3Charts/AncestralFanChart.py:731
 msgid "RGB-color for paternal box background."
-msgstr ""
+msgstr "Baba tarafı kutusu arka planı için RGB rengi."
 
 #: D3Charts/AncestralFanChart.py:734
 msgid "Maternal Background"
-msgstr ""
+msgstr "Anne Tarafı Arka Planı"
 
 #: D3Charts/AncestralFanChart.py:735
 msgid "RGB-color for maternal box background."
-msgstr ""
+msgstr "Anne tarafı kutusu arka planı için RGB rengi."
 
 #: D3Charts/DescendantIndentedTree.gpr.py:23
 #: D3Charts/DescendantIndentedTree.py:914
 msgid "Descendant Indented Tree"
-msgstr ""
+msgstr "Torunların Girintili Ağacı"
 
 #: D3Charts/DescendantIndentedTree.gpr.py:33
 msgid ""
@@ -1448,21 +1473,24 @@ msgid ""
 "representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
 "library."
 msgstr ""
+"D3.js JavaScript kütüphanesinden bir Katlanabilir Girintili Soy Ağacı Düzeni "
+"olarak temsil edilen soyların grafiksel gösterimini (SVG) içeren bir web "
+"sayfası oluşturur."
 
 #: D3Charts/DescendantIndentedTree.py:678
 #, python-format
 msgctxt "spouse"
 msgid "See %(reference)s : %(spouse)s"
-msgstr ""
+msgstr "Bakınız %(reference)s : %(spouse)s"
 
 #: D3Charts/DescendantIndentedTree.py:769
 msgid "Generating report..."
-msgstr ""
+msgstr "Rapor oluşturuluyor..."
 
 #: D3Charts/DescendantIndentedTree.py:1369
 #: DescendantSpaceTree/DescendantSpaceTree.py:771
 msgid "Invalid Destination Directory"
-msgstr ""
+msgstr "Geçersiz Hedef Dizin"
 
 #: D3Charts/DescendantIndentedTree.py:1370
 #, python-format
@@ -1470,11 +1498,13 @@ msgid ""
 "Destinaton diretory %s does not exist\n"
 "Do you want to attempt to create it?"
 msgstr ""
+"%s hedef dizini mevcut değil\n"
+"Oluşturmayı denemek ister misiniz?"
 
 #: D3Charts/DescendantIndentedTree.py:1379
 #, python-brace-format
 msgid "Failed to create {target_path}: {message}"
-msgstr ""
+msgstr "{target_path} oluşturulamadı: {message}"
 
 #: D3Charts/DescendantIndentedTree.py:1395
 #, python-format
@@ -1482,316 +1512,331 @@ msgid ""
 "Destination file %s already exists.\n"
 "Do you want to overwrite it?"
 msgstr ""
+"Hedef dosya %s zaten mevcut.\n"
+"Üzerine yazmak istiyor musunuz?"
 
 #: D3Charts/DescendantIndentedTree.py:1450
 msgid "Default View"
-msgstr ""
+msgstr "Varsayılan Görünüm"
 
 #: D3Charts/DescendantIndentedTree.py:1453
 msgid "Expand All"
-msgstr ""
+msgstr "Tümünü Genişlet"
 
 #: D3Charts/DescendantIndentedTree.py:1815
 msgid "Include contraction level"
-msgstr ""
+msgstr "Daralma seviyesini dahil et"
 
 #: D3Charts/DescendantIndentedTree.py:1817
 msgid "The number of descendant levels to contract on initial display."
-msgstr ""
+msgstr "İlk görüntülemede daraltılacak alt seviye sayısı."
 
 #: D3Charts/DescendantIndentedTree.py:1824
 msgid "The font size in pixels for each node."
-msgstr ""
+msgstr "Her düğüm için piksel cinsinden yazı tipi boyutu."
 
 #: D3Charts/DescendantIndentedTree.py:1852
 #: DescendantBooks/DescendantBookReport.py:552
 msgid "Whether to show duplicate family trees in the report."
-msgstr ""
+msgstr "Raporda yinelenen aile ağaçlarının gösterilip gösterilmeyeceği."
 
 #: D3Charts/DescendantIndentedTree.py:1856
 msgid "Expanded Row Background Color"
-msgstr ""
+msgstr "Genişletilmiş Satır Arka Plan Rengi"
 
 #: D3Charts/DescendantIndentedTree.py:1857
 msgid "RGB-color for expanded row background."
-msgstr ""
+msgstr "Genişletilmiş satır arka planı için RGB rengi."
 
 #: D3Charts/DescendantIndentedTree.py:1860
 msgid "Expandable Background Color"
-msgstr ""
+msgstr "Genişletilebilir Arka Plan Rengi"
 
 #: D3Charts/DescendantIndentedTree.py:1862
 msgid "RGB-color for expandable row background."
-msgstr ""
+msgstr "Genişletilebilir satır arka planı için RGB rengi."
 
 #: D3Charts/DescendantIndentedTree.py:1865
 msgid "Non-Expandable Background Color"
-msgstr ""
+msgstr "Genişletilemez Arka Plan Rengi"
 
 #: D3Charts/DescendantIndentedTree.py:1867
 msgid "RGB-color for non-expandable row background."
-msgstr ""
+msgstr "Genişletilemez satır arka planı için RGB rengi."
 
 #: D3Charts/DescendantIndentedTree.py:1871 DynamicWeb/dynamicweb.py:4806
 msgid "Include records marked private"
-msgstr ""
+msgstr "Özel olarak işaretlenmiş kayıtları dahil et"
 
 #: D3Charts/DescendantIndentedTree.py:1873
 msgid "Whether to include private objects."
-msgstr ""
+msgstr "Özel nesnelerin dahil edilip edilmeyeceği seçeneği."
 
 #: D3Charts/DescendantIndentedTree.py:1881 DynamicWeb/dynamicweb.py:4814
 msgid "Include Last Name Only"
-msgstr ""
+msgstr "Sadece Soyadını Dahil Et"
 
 #: D3Charts/DescendantIndentedTree.py:1883 DynamicWeb/dynamicweb.py:4817
 msgid "Include Full Name Only"
-msgstr ""
+msgstr "Sadece Tam Adı Dahil Et"
 
 #: D3Charts/DescendantIndentedTree.py:1885
 msgid "How to handle living people."
-msgstr ""
+msgstr "Yaşayan kişilerin nasıl ele alınacağı."
 
 #: D3Charts/DescendantIndentedTree.py:1892
 msgid "Whether or not to include people who may have recently died."
-msgstr ""
+msgstr "Yakın zamanda ölmüş kişilerin dahil edilip edilmeyeceği."
 
 #: D3Charts/DescendantIndentedTree.py:1900
 msgid "Navigation"
-msgstr ""
+msgstr "Navigasyon"
 
 #: D3Charts/DescendantIndentedTree.py:1902
 msgid "Contraction/Expansion mechanism"
-msgstr ""
+msgstr "Daraltma/Genişletme mekanizması"
 
 #: D3Charts/DescendantIndentedTree.py:1905
 msgid "Entire node."
-msgstr ""
+msgstr "Tüm düğüm."
 
 #: D3Charts/DescendantIndentedTree.py:1906
 msgid "Arrow images at start of node."
-msgstr ""
+msgstr "Düğümün başında ok resimleri."
 
 #: D3Charts/DescendantIndentedTree.py:1907
 msgid "Plus/Minus images at start of node."
-msgstr ""
+msgstr "Düğümün başında artı/eksi resimleri."
 
 #: D3Charts/DescendantIndentedTree.py:1908
 #: D3Charts/DescendantIndentedTree.py:1937
 msgid "Where to click to expand/contract nodes."
-msgstr ""
+msgstr "Düğümleri genişletmek/daraltmak için nereye tıklanacağı."
 
 #: D3Charts/DescendantIndentedTree.py:1912
 msgid "Auto-generate HREF links for nodes"
-msgstr ""
+msgstr "Düğümler için otomatik HREF bağlantıları oluşturma"
 
 #: D3Charts/DescendantIndentedTree.py:1914
 msgid "Whether to auto-generate HTML links for each node on the report."
 msgstr ""
+"Rapordaki her düğüm için otomatik HTML bağlantıları oluşturulup "
+"oluşturulmayacağı."
 
 #: D3Charts/DescendantIndentedTree.py:1920
 msgid "URL prefix path."
-msgstr ""
+msgstr "URL önek yolu."
 
 #: D3Charts/DescendantIndentedTree.py:1922
 msgid "URL prefix to apply to each auto-generated HREF link."
 msgstr ""
+"Otomatik olarak oluşturulan her HREF bağlantısına uygulanacak URL öneki."
 
 #: D3Charts/DescendantIndentedTree.py:1928
 msgid "URL file extension"
-msgstr ""
+msgstr "URL dosya uzantısı"
 
 #: D3Charts/DescendantIndentedTree.py:1930
 msgid "No file extension."
-msgstr ""
+msgstr "Dosya uzantısı yok."
 
 #: D3Charts/DescendantIndentedTree.py:1931
+#, fuzzy
 msgid ".html"
-msgstr ""
+msgstr ".html"
 
 #: D3Charts/DescendantIndentedTree.py:1932
 msgid ".htm"
-msgstr ""
+msgstr ".htm"
 
 #: D3Charts/DescendantIndentedTree.py:1933
+#, fuzzy
 msgid ".shtml"
-msgstr ""
+msgstr ".shtml"
 
 #: D3Charts/DescendantIndentedTree.py:1934
+#, fuzzy
 msgid ".php"
-msgstr ""
+msgstr ".php"
 
 #: D3Charts/DescendantIndentedTree.py:1935
+#, fuzzy
 msgid ".php3"
-msgstr ""
+msgstr ".php3"
 
 #: D3Charts/DescendantIndentedTree.py:1936
 msgid ".cgi"
-msgstr ""
+msgstr ".cgi"
 
 #: D3Charts/DescendantIndentedTree.py:1942
 msgid "URL file name delimeter"
-msgstr ""
+msgstr "URL dosya adı ayırıcı"
 
 #: D3Charts/DescendantIndentedTree.py:1944
 msgid "Remove all whitespace."
-msgstr ""
+msgstr "Tüm boşlukları kaldır."
 
 #: D3Charts/DescendantIndentedTree.py:1945
 msgid "Replace whitespace with dash(-)."
-msgstr ""
+msgstr "Boşlukları tire (-) ile değiştir."
 
 #: D3Charts/DescendantIndentedTree.py:1946
 msgid "Replace whitespace with underscore(_)"
-msgstr ""
+msgstr "Boşlukları alt çizgi (_) ile değiştir"
 
 #: D3Charts/DescendantIndentedTree.py:1947
 msgid "What to use as file name delimiter replacing whitespace."
-msgstr ""
+msgstr "Boşlukların yerine dosya adı ayırıcı olarak ne kullanılacağı."
 
 #: D3Charts/DescendantIndentedTree.py:1952
 msgid "Generations to generate HREF links"
-msgstr ""
+msgstr "HREF bağlantıları oluşturmak için nesil sayısı"
 
 #: D3Charts/DescendantIndentedTree.py:1954
 msgid "The number of generations to generate HREF links."
-msgstr ""
+msgstr "HREF bağlantıları oluşturmak için nesil sayısı."
 
 #: D3Charts/DescendantIndentedTree.py:1960
 msgid "Exclude persons who died before (years)"
-msgstr ""
+msgstr "(Yıl) öncesinde ölen kişileri hariç tut"
 
 #: D3Charts/DescendantIndentedTree.py:1963
 msgid ""
 "Whether to generate links for people who died in infancy, -1 excludes nobody."
 msgstr ""
+"Bebeklik döneminde ölen kişiler için bağlantı oluşturulup "
+"oluşturulmayacağı, -1 hiç kimseyi hariç tutmaz."
 
 #: D3Charts/DescendantIndentedTree.py:1969
 msgid "Exclude center person"
-msgstr ""
+msgstr "Merkezdeki kişiyi hariç tut"
 
 #: D3Charts/DescendantIndentedTree.py:1970
 msgid "Whether or not to generate links for center person."
-msgstr ""
+msgstr "Merkezdeki kişi için bağlantı oluşturulup oluşturulmayacağı."
 
 #: D3Charts/DescendantIndentedTree.py:1975
 msgid "Exclude Spouses"
-msgstr ""
+msgstr "Eşleri hariç tut"
 
 #: D3Charts/DescendantIndentedTree.py:1976
 msgid "Whether or not to generate links for spouses."
-msgstr ""
+msgstr "Eşler için bağlantı oluşturulup oluşturulmayacağı."
 
 #: D3Charts/DescendantIndentedTree.py:1983
 msgid "Biography Content"
-msgstr ""
+msgstr "Biyografi İçeriği"
 
 #: D3Charts/DescendantIndentedTree.py:1985
 msgid "Show biography tooltips"
-msgstr ""
+msgstr "Biyografi araç ipuçlarını göster"
 
 #: D3Charts/DescendantIndentedTree.py:1986
 msgid "Whether to show biography tooltips when hovering over a node."
 msgstr ""
+"Bir düğümün üzerine gelindiğinde biyografi araç ipuçlarının gösterilip "
+"gösterilmeyeceği."
 
 #: D3Charts/DescendantIndentedTree.py:2030
 msgid "Text Color"
-msgstr ""
+msgstr "Metin Rengi"
 
 #: D3Charts/DescendantIndentedTree.py:2032
 msgid "RGB-color for biography text."
-msgstr ""
+msgstr "Biyografi metni için RGB rengi."
 
 #: D3Charts/DescendantIndentedTree.py:2037
 msgid "RGB-color for biography tooltip."
-msgstr ""
+msgstr "Biyografi araç ipucu için RGB rengi."
 
 #: D3Charts/DescendantIndentedTree.py:2040
 msgid "Header Font size"
-msgstr ""
+msgstr "Başlık Yazı Tipi Boyutu"
 
 #: D3Charts/DescendantIndentedTree.py:2042
 msgid "The font size in pixels for biography header text."
-msgstr ""
+msgstr "Biyografi başlık metni için piksel cinsinden yazı tipi boyutu."
 
 #: D3Charts/DescendantIndentedTree.py:2048
 msgid "Body Font size"
-msgstr ""
+msgstr "Gövde Yazı Tipi Boyutu"
 
 #: D3Charts/DescendantIndentedTree.py:2050
 msgid "The font size in pixels for biography body text."
-msgstr ""
+msgstr "Biyografi gövde metni için piksel cinsinden yazı tipi boyutu."
 
 #: DEWebConnectPack/DEWebPack.gpr.py:11
 msgid "DE Web Connect Pack"
-msgstr ""
+msgstr "DE Web Bağlantı Paketi"
 
 #: DEWebConnectPack/DEWebPack.gpr.py:12
 msgid "Collection of Web sites for the DE (requires libwebconnect)"
-msgstr ""
+msgstr "DE için web siteleri koleksiyonu (libwebconnect gerektirir)"
 
 #: DEWebConnectPack/DEWebPack.py:37
 msgid "Bielefeld Academic Search"
-msgstr ""
+msgstr "Bielefeld Akademik Arama"
 
 #: DEWebConnectPack/DEWebPack.py:39 SVWebconnectPack/SVWebPack.py:34
 #: UKWebConnectPack/UKWebPack.py:35 USWebConnectPack/USWebPack.py:34
 #: USWebConnectPack/USWebPack.py:46
+#, fuzzy
 msgid "FamilySearch.org"
-msgstr ""
+msgstr "FamilySearch.org"
 
 #: DEWebConnectPack/DEWebPack.py:42
 msgid "Google Archives"
-msgstr ""
+msgstr "Google Arşivleri"
 
 #: DEWebConnectPack/DEWebPack.py:43
+#, fuzzy
 msgid "DE Google"
-msgstr ""
+msgstr "DE Google"
 
 #: DEWebConnectPack/DEWebPack.py:44 UKWebConnectPack/UKWebPack.py:39
 #: USWebConnectPack/USWebPack.py:42
 msgid "Open Library"
-msgstr ""
+msgstr "Open Library"
 
 #: DEWebConnectPack/DEWebPack.py:45
 msgid "Surname map (1890-1996)"
-msgstr ""
+msgstr "Soyadı haritası (1890-1996)"
 
 #: DEWebConnectPack/DEWebPack.py:46
 msgid "GenWiki"
-msgstr ""
+msgstr "GenWiki"
 
 #: DEWebConnectPack/DEWebPack.py:47
 msgid "German digital library"
-msgstr ""
+msgstr "Alman dijital kütüphanesi"
 
 #: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
-msgstr ""
+msgstr "DNA Segment Haritası"
 
 #: DNA/dnasegmentmap.gpr.py:29
 msgid "Gramplet showing a matching DNA segment map"
-msgstr ""
+msgstr "Eşleşen bir DNA segment haritasını gösteren Gramplet"
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
-msgstr ""
+msgstr "Kromozom "
 
 #: DNA/dnasegmentmap.py:552
 msgid " Map for "
-msgstr ""
+msgstr " Harita için "
 
 #: DNA/dnasegmentmap.py:634
 msgid "Chr"
-msgstr ""
+msgstr "Kromozom"
 
 #: DNA/dnasegmentmap.py:759
 msgid "Legend"
-msgstr ""
+msgstr "Kitabe"
 
 #: DNA/dnasegmentmap.py:761
 msgid ": Grandparent"
-msgstr ""
+msgstr ": Büyükanne ve büyükbaba"
 
 #: DNA/dnasegmentmap.py:1056
 #, python-brace-format
@@ -1800,28 +1845,31 @@ msgid ""
 "{0}\n"
 "{1} cMs"
 msgstr ""
+"\n"
+"{0}\n"
+"{1} cM"
 
 #: DNA/dnasegmentmap.py:1060
 msgid " SNPs"
-msgstr ""
+msgstr " SNP'ler"
 
 #: DNA/dnasegmentmap.py:1061
 msgid " : Starts at "
-msgstr ""
+msgstr " : Başlangıç noktası "
 
 #: DNA/dnasegmentmap.py:1063
 msgid " and ends at "
-msgstr ""
+msgstr " ve bitiş noktası "
 
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
-#, python-brace-format
+#, fuzzy, python-brace-format
 msgid "{0}"
-msgstr ""
+msgstr "{0}"
 
 #: DNA/dnasegmentmap.py:1086
 #, python-format
 msgid "%(ancestor1)s and %(ancestor2)s"
-msgstr ""
+msgstr "%(ancestor1)s ve %(ancestor2)s"
 
 #: DNA/dnasegmentmap.py:1090
 #, python-brace-format
@@ -1829,175 +1877,181 @@ msgid ""
 "\n"
 "Relationship: {0} "
 msgstr ""
+"\n"
+"İlişki: {0} "
 
 #: DNA/dnasegmentmap.py:1091
 #, python-brace-format
 msgid " Ancestor: {0}"
-msgstr ""
+msgstr " Ata: {0}"
 
 #: DNA/dnasegmentmap.py:1115
 msgid ""
 "Click to make this person active\n"
 "Right-click to edit this person"
 msgstr ""
+"Bu kişiyi etkinleştirmek için tıklayın\n"
+"Bu kişiyi düzenlemek için sağ tıklayın"
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
 msgid "DNA Matches"
-msgstr ""
+msgstr "DNA Eşleşmeleri"
 
 #: DNAMatches/dnamatches.gpr.py:30
 msgid "Gramplet to display a list of DNA matches"
-msgstr ""
+msgstr "DNA eşleşmelerinin listesini görüntülemek için Gramplet"
 
 #: DNAMatches/dnamatches.py:153
 msgid "L. Seg"
-msgstr ""
+msgstr "En Büyük Segment"
 
 #: DNAMatches/dnamatches.py:153
 msgid "Pers."
-msgstr ""
+msgstr "Birey"
 
 #: DNAMatches/dnamatches.py:153
 msgid "Rel."
-msgstr ""
+msgstr "İlişki"
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. DNA"
-msgstr ""
+msgstr "Ortak DNA"
 
 #: DNAMatches/dnamatches.py:153
 msgid "S. Seg."
-msgstr ""
+msgstr "Paylaşılan Segmentler"
 
 #: DNAMatches/dnamatches.py:153
 msgid "Src(s)"
-msgstr ""
+msgstr "Kaynak(lar)"
 
 #: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
-msgstr ""
+msgstr "Ortak DNA"
 
 #: DNAMatches/dnamatches.py:157
 msgid "Shared Segments"
-msgstr ""
+msgstr "Ortak Segmentler"
 
 #: DNAMatches/dnamatches.py:158
 msgid "Largest Segment"
-msgstr ""
+msgstr "En Büyük Segment"
 
 #: DNAMatches/dnamatches.py:159
 msgid "Source(s)"
-msgstr ""
+msgstr "Kaynak(lar)"
 
 #: DNAMatches/dnamatches.py:194
 msgid "Double-click on a row to navigate to the matched person."
-msgstr ""
+msgstr "Eşleşen kişiye gitmek için bir satıra çift tıklayın."
 
 #: DNAMatches/dnamatches.py:195
 msgid "Right click to edit selected association."
-msgstr ""
+msgstr "Seçilen ilişkiyi düzenlemek için sağ tıklayın."
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
-msgstr ""
+msgstr "KİTABE"
 
 #: DNAMatches/dnamatches.py:228
+#, fuzzy
 msgid "="
-msgstr ""
+msgstr "="
 
 #: DNAMatches/dnamatches.py:310 DNAMatches/dnamatches.py:409
 #: DNAMatches/dnamatches.py:420
 msgid "Not specified"
-msgstr ""
+msgstr "Belirtilmemiş"
 
 #: DNAMatches/dnamatches.py:366 DNAMatches/dnamatches.py:369
+#, fuzzy
 msgid "cM"
-msgstr ""
+msgstr "cM"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
-msgstr ""
+msgstr "Gramplet Veri Girişi"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:10
 msgid "Gramplet for quick data entry"
-msgstr ""
+msgstr "Hızlı veri girişi için Gramplet"
 
 #: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:56
 #: NoteGramplet/NoteGramplet.py:65
 msgid "Active person"
-msgstr ""
+msgstr "Aktif kişi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:73
 msgid "Family:"
-msgstr ""
+msgstr "Aile:"
 
 #: DataEntryGramplet/DataEntryGramplet.py:74
 msgid "Sources?"
-msgstr ""
+msgstr "Kaynaklar mı?"
 
 #: DataEntryGramplet/DataEntryGramplet.py:76
 #: DataEntryGramplet/DataEntryGramplet.py:109
 msgid "Surname, Given"
-msgstr ""
+msgstr "Soyadı, Adı"
 
 #: DataEntryGramplet/DataEntryGramplet.py:89 GrampyScript/GrampyScript.py:127
 #: GrampyScript/GrampyScript.py:147 GrampyScript/GrampyScript.py:304
 #: NoteGramplet/NoteGramplet.py:111 PDFForms/generatepdfform.py:258
 #: RelID/relation_tab.py:363
 msgid "Save"
-msgstr ""
+msgstr "Kaydet"
 
 #: DataEntryGramplet/DataEntryGramplet.py:92 NoteGramplet/NoteGramplet.py:114
 msgid "Abandon"
-msgstr ""
+msgstr "İlişkiyi sonlandır"
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
 msgid "New person"
-msgstr ""
+msgstr "Yeni kişi"
 
 #: DataEntryGramplet/DataEntryGramplet.py:98
 msgid "Add relation"
-msgstr ""
+msgstr "İlişki ekle"
 
 #: DataEntryGramplet/DataEntryGramplet.py:99
 msgid "No relation to active person"
-msgstr ""
+msgstr "Aktif kişiyle ilişkisi yok"
 
 #: DataEntryGramplet/DataEntryGramplet.py:100
 msgid "Add as a Parent"
-msgstr ""
+msgstr "Ebeveyn olarak ekle"
 
 #: DataEntryGramplet/DataEntryGramplet.py:101
 msgid "Add as a Mother"
-msgstr ""
+msgstr "Anne olarak ekle"
 
 #: DataEntryGramplet/DataEntryGramplet.py:102
 msgid "Add as a Father"
-msgstr ""
+msgstr "Baba olarak ekle"
 
 #: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
-msgstr ""
+msgstr "Eş olarak ekle"
 
 #: DataEntryGramplet/DataEntryGramplet.py:104
 msgid "Add as a Wife"
-msgstr ""
+msgstr "Karısı olarak ekle"
 
 #: DataEntryGramplet/DataEntryGramplet.py:105
 msgid "Add as a Husband"
-msgstr ""
+msgstr "Kocası olarak ekle"
 
 #: DataEntryGramplet/DataEntryGramplet.py:106
 msgid "Add as a Sibling"
-msgstr ""
+msgstr "Kardeş olarak ekle"
 
 #: DataEntryGramplet/DataEntryGramplet.py:107
 msgid "Add as a Child"
-msgstr ""
+msgstr "Çocuk olarak ekle"
 
 #: DataEntryGramplet/DataEntryGramplet.py:124
 msgid "Copy Active Data"
-msgstr ""
+msgstr "Aktif Veriyi Kopyala"
 
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178
@@ -2009,34 +2063,34 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:428
 #: DataEntryGramplet/DataEntryGramplet.py:507
 msgid "No Family Tree is open."
-msgstr ""
+msgstr "Açık bir Aile Ağacı yok."
 
 #: DataEntryGramplet/DataEntryGramplet.py:429
 msgid "Please open a Family Tree to edit data."
-msgstr ""
+msgstr "Verileri düzenlemek için lütfen bir Aile Ağacı açın."
 
 #: DataEntryGramplet/DataEntryGramplet.py:446
 #: DataEntryGramplet/DataEntryGramplet.py:578
 #, python-format
 msgid "Gramplet Data Edit: %s"
-msgstr ""
+msgstr "Gramplet Veri Düzenleme: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:508
 msgid "Please open a Family Tree before adding a person."
-msgstr ""
+msgstr "Lütfen kişi eklemeden önce bir Aile Ağacı açın."
 
 #: DataEntryGramplet/DataEntryGramplet.py:524
 msgid "Can't add new person."
-msgstr ""
+msgstr "Yeni kişi eklenemiyor."
 
 #: DataEntryGramplet/DataEntryGramplet.py:524
 msgid "Please provide a name."
-msgstr ""
+msgstr "Lütfen bir ad girin."
 
 #: DataEntryGramplet/DataEntryGramplet.py:532
 #: DataEntryGramplet/DataEntryGramplet.py:535
 msgid "Can't add new person as a parent."
-msgstr ""
+msgstr "Yeni kişiyi ebeveyn olarak ekleyemezsiniz."
 
 #: DataEntryGramplet/DataEntryGramplet.py:532
 #: DataEntryGramplet/DataEntryGramplet.py:540
@@ -2047,20 +2101,20 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:569
 #: DataEntryGramplet/DataEntryGramplet.py:574
 msgid "Please set an active person."
-msgstr ""
+msgstr "Lütfen aktif bir kişi belirleyin."
 
 #: DataEntryGramplet/DataEntryGramplet.py:535
 #: DataEntryGramplet/DataEntryGramplet.py:554
 msgid "Please set the new person's gender."
-msgstr ""
+msgstr "Lütfen yeni kişinin cinsiyetini belirleyin."
 
 #: DataEntryGramplet/DataEntryGramplet.py:540
 msgid "Can't add new person as a mother."
-msgstr ""
+msgstr "Yeni kişiyi anne olarak ekleyemezsiniz."
 
 #: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Can't add new person as a father."
-msgstr ""
+msgstr "Yeni kişiyi baba olarak ekleyemezsiniz."
 
 #: DataEntryGramplet/DataEntryGramplet.py:550
 #: DataEntryGramplet/DataEntryGramplet.py:554
@@ -2068,66 +2122,66 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:814
 #: DataEntryGramplet/DataEntryGramplet.py:847
 msgid "Can't add new person as a spouse."
-msgstr ""
+msgstr "Yeni kişiyi eş olarak ekleyemezsiniz."
 
 #: DataEntryGramplet/DataEntryGramplet.py:559
 msgid "Can't add new person as a wife."
-msgstr ""
+msgstr "Yeni kişiyi karı olarak ekleyemezsiniz."
 
 #: DataEntryGramplet/DataEntryGramplet.py:564
 msgid "Can't add new person as a husband."
-msgstr ""
+msgstr "Yeni kişiyi koca olarak ekleyemezsiniz."
 
 #: DataEntryGramplet/DataEntryGramplet.py:569
 msgid "Can't add new person as a sibling."
-msgstr ""
+msgstr "Yeni kişiyi kardeş olarak ekleyemezsiniz."
 
 #: DataEntryGramplet/DataEntryGramplet.py:574
 #: DataEntryGramplet/DataEntryGramplet.py:947
 msgid "Can't add new person as a child."
-msgstr ""
+msgstr "Yeni kişiyi çocuk olarak ekleyemezsiniz."
 
 #: DataEntryGramplet/DataEntryGramplet.py:772
 msgid "Please set Active person."
-msgstr ""
+msgstr "Lütfen Aktif kişiyi ayarlayın."
 
 #: DataEntryGramplet/DataEntryGramplet.py:773
 msgid "Can't add new person as a spouse to no one."
-msgstr ""
+msgstr "Yeni kişiyi hiç kimsenin eşi olarak ekleyemezsiniz."
 
 #: DataEntryGramplet/DataEntryGramplet.py:776
 msgid "Please set gender on Active or new person."
-msgstr ""
+msgstr "Lütfen Aktif veya yeni kişinin cinsiyetini ayarlayın."
 
 #: DataEntryGramplet/DataEntryGramplet.py:813
 #: DataEntryGramplet/DataEntryGramplet.py:846
 msgid "Same genders on Active and new person."
-msgstr ""
+msgstr "Aktif ve yeni kişinin cinsiyetleri aynı olmalı."
 
 #: DataEntryGramplet/DataEntryGramplet.py:946
 msgid "Please set gender on Active person."
-msgstr ""
+msgstr "Lütfen Aktif kişinin cinsiyetini ayarlayın."
 
 #: DateCalculator/DateCalculator.gpr.py:22
 #: DateCalculator/DateCalculator.gpr.py:32
 msgid "Date Calculator"
-msgstr ""
+msgstr "Tarih Hesaplayıcı"
 
 #: DateCalculator/DateCalculator.gpr.py:23
 msgid "Perform date math calculations"
-msgstr ""
+msgstr "Tarih matematik hesaplamalarını gerçekleştirin"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
-msgstr ""
+msgstr "Referans Tarihi veya Tarih Aralığı"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "a valid Gramps date"
-msgstr ""
+msgstr "geçerli bir Gramps tarihi"
 
 #: DateCalculator/DateCalculator.py:90
 msgid "Date or offset ±y or ±y, m, d"
-msgstr ""
+msgstr "Tarih veya zaman farkı ±y veya ±y, a, g"
 
 #: DateCalculator/DateCalculator.py:92
 msgid ""
@@ -2135,84 +2189,89 @@ msgid ""
 "2. a positive or negative number, representing years\n"
 "3. a positive or negative list of values, representing years, months, days"
 msgstr ""
+"1. Bir Tarih\n"
+"2. Yılları temsil eden pozitif veya negatif bir sayı\n"
+"3. Yılları, ayları ve günleri temsil eden pozitif veya negatif değerler "
+"listesi"
 
 #: DateCalculator/DateCalculator.py:96
 msgid "Result"
-msgstr ""
+msgstr "Sonuç"
 
 #: DateCalculator/DateCalculator.py:104
 msgid "Calculate"
-msgstr ""
+msgstr "Hesapla"
 
 #: DateCalculator/DateCalculator.py:107
 #: EditExifMetadata/editexifmetadata.py:219 GraphView/graphview.py:3873
 msgid "Copy"
-msgstr ""
+msgstr "Kopyala"
 
 #: DateCalculator/DateCalculator.py:159
 msgid "Error: invalid date for first expression"
-msgstr ""
+msgstr "Hata: İlk ifade için geçersiz tarih"
 
 #: DateCalculator/DateCalculator.py:169
 msgid "Error: invalid offset for second expression"
-msgstr ""
+msgstr "Hata: İkinci ifade için geçersiz zaman farkı"
 
 #: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
 #: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
 msgid "Error: at least one expression must be a date"
-msgstr ""
+msgstr "Hata: En az bir ifade tarih olmalıdır"
 
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
-msgstr ""
+msgstr "Yukarıdaki girişlere bir ifade girin ve Hesapla öğesine tıklayın."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
-msgstr ""
+msgstr "Gramplet Derin Bağlantıları"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:6
 msgid "Gramplet showing a deep relationship between active and home people"
 msgstr ""
+"Aktif ve evde yaşayan kişiler arasındaki derin ilişkiyi gösteren Gramplet"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
 msgid "Deep Connections"
-msgstr ""
+msgstr "Derin Bağlantılar"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
 msgid "⏸ Pause"
-msgstr ""
+msgstr "⏸ Duraklat"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:108
 msgid "Pause the current search"
-msgstr ""
+msgstr "Geçerli aramayı duraklatın"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:111
 msgid "▶ Continue"
-msgstr ""
+msgstr "▶ Devam et"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:114
 msgid "Continue searching for more relations"
-msgstr ""
+msgstr "Daha fazla ilişki aramaya devam edin"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:118
 msgid "📋 Copy"
-msgstr ""
+msgstr "📋 Kopyala"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:120
 msgid "Copy selected people to clipboard"
-msgstr ""
+msgstr "Seçilen kişileri panoya kopyalayın"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:128
 msgid "🗑 Clear"
-msgstr ""
+msgstr "🗑 Temizle"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
 msgid "Clear all results and reset"
-msgstr ""
+msgstr "Tüm sonuçları temizleyin ve sıfırlayın"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
 msgid "Ready to search"
-msgstr ""
+msgstr "Aramaya hazır"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:185
 #, python-brace-format
@@ -2220,31 +2279,33 @@ msgid ""
 "Search Depth: {depth} | People Processed: {processed} | Queue Size: "
 "{queue_size}"
 msgstr ""
+"Arama Derinliği: {depth} | İşlenen Kişi Sayısı: {processed} | Kuyruk Boyutu: "
+"{queue_size}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 msgid "mentioned in note"
-msgstr ""
+msgstr "Notta belirtilenler"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:245
 msgid "Note on Family"
-msgstr ""
+msgstr "Aile ile ilgili not"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:258
 msgid "sibling"
-msgstr ""
+msgstr "kardeş"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:268
 msgid "Note on Parent Family"
-msgstr ""
+msgstr "Ebeveyn Ailesi ile ilgili not"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:272
 #, python-format
 msgid "%s (association)"
-msgstr ""
+msgstr "%s (birlik)"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:277
 msgid "Note on Person"
-msgstr ""
+msgstr "Kişi ile ilgili not"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:308
 #, python-format
@@ -2252,40 +2313,42 @@ msgid ""
 "\n"
 "   %s of "
 msgstr ""
+"\n"
+"   %s > "
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:336
 msgid "Error: No Home Person set"
-msgstr ""
+msgstr "Hata: Ana Kişi ayarlanmadı"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:341
 msgid "No Active Person set."
-msgstr ""
+msgstr "Aktif Kişi ayarlanmadı."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:342
 msgid "Error: No Active Person set"
-msgstr ""
+msgstr "Hata: Aktif Kişi Ayarlanmadı"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:347
 msgid "Initializing search..."
-msgstr ""
+msgstr "Arama başlatılıyor..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:366
 msgid "Looking for relationship between\n"
-msgstr ""
+msgstr "Şu kişiler arasında ilişki aranıyor\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:367
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
-msgstr ""
+msgstr "  <b>%s</b> (Ana Kişi) ve\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:368
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
-msgstr ""
+msgstr "  <b>%s</b> (Aktif Kişi)...\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:382
 msgid "Searching for connections..."
-msgstr ""
+msgstr "Bağlantılar aranıyor..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:402
 #, python-format
@@ -2293,16 +2356,20 @@ msgid ""
 "Found relation #%d: \n"
 "   "
 msgstr ""
+"Şu ilişki bulundu #%d: \n"
+"   "
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:423
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
 msgstr ""
+"Duraklatıldı.\n"
+"Ek ilişkiler aramak için Devam et tuşuna basın.\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:427
 msgid "Paused - Press Continue to search for more relations"
-msgstr ""
+msgstr "Duraklatıldı - Daha fazla ilişki aramak için Devam et tuşuna basın"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:456
 #, python-format
@@ -2310,26 +2377,28 @@ msgid ""
 "\n"
 "Search completed. %d relation paths found."
 msgstr ""
+"\n"
+"Arama tamamlandı. %d ilişki yolu bulundu."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:460
 msgid "Search completed - {} relation paths found"
-msgstr ""
+msgstr "Arama tamamlandı - {} ilişki yolu bulundu"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:471
 msgid "Error during search: {}"
-msgstr ""
+msgstr "Arama sırasında hata: {}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:481
 msgid "Resuming search..."
-msgstr ""
+msgstr "Aramaya devam ediliyor..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:489
 msgid "Search interrupted by user"
-msgstr ""
+msgstr "Arama kullanıcı tarafından kesildi"
 
 #: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
-msgstr ""
+msgstr "DenominoViso"
 
 #: DenominoViso/DenominoViso.gpr.py:19
 msgid ""
@@ -2337,432 +2406,453 @@ msgid ""
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
+"Fare hareketleriyle, bireylerle ilgili ayrıntıların görünür hale geldiği "
+"ataların/torunların (SVG) grafiksel temsilini içeren bir web (HTML) sayfası "
+"oluşturur."
 
 #: DenominoViso/DenominoViso.py:180
 msgid "No Source"
-msgstr ""
+msgstr "Kaynak yok"
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
 msgid "onclick"
-msgstr ""
+msgstr "tıkla"
 
 #: DenominoViso/DenominoViso.py:205 DenominoViso/DenominoViso.py:3022
 msgid "onmouseover"
-msgstr ""
+msgstr "fareyle üzerine gelindiğinde"
 
 #: DenominoViso/DenominoViso.py:209
 #: LinesOfDescendency/lines-of-descendency.py:56
 msgid "Ancestor"
-msgstr ""
+msgstr "Atalar"
 
 #: DenominoViso/DenominoViso.py:210
 msgid "Descendant"
-msgstr ""
+msgstr "Torunlar"
 
 #: DenominoViso/DenominoViso.py:215
 msgid "Fan"
-msgstr ""
+msgstr "Yelpaze"
 
 #: DenominoViso/DenominoViso.py:216
 msgid "Growth Spiral"
-msgstr ""
+msgstr "Büyüme Sarmalı"
 
 #: DenominoViso/DenominoViso.py:217
 msgid "Mandelbrot Tree"
-msgstr ""
+msgstr "Mandelbrot Ağacı"
 
 #: DenominoViso/DenominoViso.py:218
 msgid "Pythagoras Tree"
-msgstr ""
+msgstr "Pisagor Ağacı"
 
 #: DenominoViso/DenominoViso.py:222
 msgid "right to left"
-msgstr ""
+msgstr "Sağdan sola"
 
 #: DenominoViso/DenominoViso.py:223
 msgid "left to right"
-msgstr ""
+msgstr "Soldan sağa"
 
 #: DenominoViso/DenominoViso.py:224
 msgid "top to bottom"
-msgstr ""
+msgstr "Yukarıdan aşağıya"
 
 #: DenominoViso/DenominoViso.py:225
 msgid "bottom to top"
-msgstr ""
+msgstr "Aşağıdan yukarıya"
 
 #: DenominoViso/DenominoViso.py:307 DenominoViso/DenominoViso.py:975
 #: DenominoViso/DenominoViso.py:1035 DenominoViso/DenominoViso.py:1260
 #: DenominoViso/DenominoViso.py:2751
 msgid "role"
-msgstr ""
+msgstr "Rol"
 
 #: DenominoViso/DenominoViso.py:310 DenominoViso/DenominoViso.py:976
 #: DenominoViso/DenominoViso.py:1057 DenominoViso/DenominoViso.py:1261
 #: DenominoViso/DenominoViso.py:2753
 msgid "description"
-msgstr ""
+msgstr "Açıklama"
 
 #: DenominoViso/DenominoViso.py:311 DenominoViso/DenominoViso.py:977
 #: DenominoViso/DenominoViso.py:1064 DenominoViso/DenominoViso.py:1262
 msgid "witnesses"
-msgstr ""
+msgstr "Şahitler"
 
 #: DenominoViso/DenominoViso.py:396
 msgid "No central person selected"
-msgstr ""
+msgstr "Seçili merkezi kişi yok"
 
 #: DenominoViso/DenominoViso.py:770
 msgid "Unknown time direction"
-msgstr ""
+msgstr "Zaman yönü bilinmiyor"
 
 #: DenominoViso/DenominoViso.py:1509 DenominoViso/DenominoViso.py:1563
 msgid "author"
-msgstr ""
+msgstr "Yazar"
 
 #: DenominoViso/DenominoViso.py:1514 DenominoViso/DenominoViso.py:1564
 msgid "publication_info"
-msgstr ""
+msgstr "Yayın_bilgisi"
 
 #: DenominoViso/DenominoViso.py:1519 DenominoViso/DenominoViso.py:1565
 msgid "abbreviation"
-msgstr ""
+msgstr "Kısaltma"
 
 #: DenominoViso/DenominoViso.py:1563
 msgid "volume"
-msgstr "cilt"
+msgstr "Cilt"
 
 #: DenominoViso/DenominoViso.py:1755 Form/form_us.xml.h:2270
 #: Form/form_us.xml.h:2288 Form/form_us.xml.h:2299 Form/form_us.xml.h:2317
 #: Form/form_us.xml.h:2327
 msgid "of"
-msgstr ""
+msgstr "<"
 
 #: DenominoViso/DenominoViso.py:1960
 msgid "the chart type runs out of bounds"
-msgstr ""
+msgstr "Grafik türü sınırların dışına çıkıyor"
 
 #: DenominoViso/DenominoViso.py:2002 GraphView/graphview.py:968
 #: NoteCleanup/NoteCleanup.py:126 SearchGramplet/SearchGramplet.gpr.py:9
 #: SearchGramplet/SearchGramplet.gpr.py:19
 msgid "Search"
-msgstr ""
+msgstr "Ara"
 
 #: DenominoViso/DenominoViso.py:2553
 msgid "DenominoViso Options"
-msgstr ""
+msgstr "DenominoViso Seçenekleri"
 
 #: DenominoViso/DenominoViso.py:2557
 msgid "The destination file for the html-content."
-msgstr ""
+msgstr "Html içeriği için hedef dosya."
 
 #: DenominoViso/DenominoViso.py:2560
 msgid "Central Person"
-msgstr ""
+msgstr "Merkezi Kişi"
 
 #: DenominoViso/DenominoViso.py:2561
 msgid "The central person for the tree"
-msgstr ""
+msgstr "Ağaç için merkezi kişi"
 
 #: DenominoViso/DenominoViso.py:2564
 msgid "Title of the webpage"
-msgstr ""
+msgstr "Web sayfasının başlığı"
 
 #: DenominoViso/DenominoViso.py:2565
 msgid "Any string you wish."
-msgstr ""
+msgstr "İstediğiniz herhangi bir metin."
 
 #: DenominoViso/DenominoViso.py:2568
 msgid "Display mode"
-msgstr ""
+msgstr "Görüntüleme modu"
 
 #: DenominoViso/DenominoViso.py:2569
 msgid "Either plot ancestor or descendants graph."
-msgstr ""
+msgstr "Atalar veya torunlar tablosunu çizin."
 
 #: DenominoViso/DenominoViso.py:2574
 msgid "Display type"
-msgstr ""
+msgstr "Görüntüleme türü"
 
 #: DenominoViso/DenominoViso.py:2575
 msgid "The type of graph to create."
-msgstr ""
+msgstr "Oluşturulacak grafik türü."
 
 #: DenominoViso/DenominoViso.py:2583
 msgid "Direction of time"
-msgstr ""
+msgstr "Zaman yönü"
 
 #: DenominoViso/DenominoViso.py:2584
 msgid "Direction in which time increases."
-msgstr ""
+msgstr "Zamanın arttığı yön."
 
 #: DenominoViso/DenominoViso.py:2593
 msgid "Max chart width (%)"
-msgstr ""
+msgstr "Maksimum grafik genişliği (%)"
 
 #: DenominoViso/DenominoViso.py:2594
 msgid "Width of the tree as fraction of the browser window"
-msgstr ""
+msgstr "Ağacın, tarayıcı penceresinin bir kesri olarak genişliği"
 
 #: DenominoViso/DenominoViso.py:2597
 msgid "Max chart height (px)"
-msgstr ""
+msgstr "Maksimum grafik yüksekliği (piksel)"
 
 #: DenominoViso/DenominoViso.py:2598
 msgid "Height of the tree in pixels."
-msgstr ""
+msgstr "Ağacın piksel cinsinden yüksekliği."
 
 #: DenominoViso/DenominoViso.py:2601
 msgid "Closing remarks"
-msgstr ""
+msgstr "Kapanış ifadeleri"
 
 #: DenominoViso/DenominoViso.py:2602
 msgid ""
 "List of strings, free text added at the bottom, for example for a copyright "
 "notice."
 msgstr ""
+"Alt kısma eklenen serbest metin içeren dizeler listesi, örneğin telif hakkı "
+"bildirimi için."
 
 #: DenominoViso/DenominoViso.py:2605
 msgid "Include Options"
-msgstr ""
+msgstr "Seçenekleri dahil et"
 
 #: DenominoViso/DenominoViso.py:2608
 #: RepositoriesReport/RepositoriesReportAlt.py:472
 msgid "Include private records"
-msgstr ""
+msgstr "Özel kayıtları dahil et"
 
 #: DenominoViso/DenominoViso.py:2609
 msgid "Whether to leave out private data."
-msgstr ""
+msgstr "Özel verilerin hariç tutulup tutulmayacağı."
 
 #: DenominoViso/DenominoViso.py:2612
 msgid "Include Events"
-msgstr ""
+msgstr "Etkinlikleri dahil et"
 
 #: DenominoViso/DenominoViso.py:2614
 msgid "Whether to include a person's events."
-msgstr ""
+msgstr "Bir kişinin etkinliklerinin dahil edilip edilmeyeceği."
 
 #: DenominoViso/DenominoViso.py:2622
 msgid "Include birth children"
-msgstr ""
+msgstr "Çocukların doğumunu dahil et"
 
 #: DenominoViso/DenominoViso.py:2623
 msgid "Whether to include the birth of children in the list of events."
-msgstr ""
+msgstr "Çocukların doğumunun olay listesine dahil edilip edilmeyeceği."
 
 #: DenominoViso/DenominoViso.py:2626
 msgid "Include death relatives"
-msgstr ""
+msgstr "Akrabaların ölümünü dahil et"
 
 #: DenominoViso/DenominoViso.py:2627
 msgid ""
 "Whether to include the death of relatives during the lifetime of person."
 msgstr ""
+"Kişinin yaşamı boyunca akrabalarının ölümünün dahil edilip edilmeyeceği."
 
 #: DenominoViso/DenominoViso.py:2630
 msgid "Include witness note"
-msgstr ""
+msgstr "Tanık notunu dahil et"
 
 #: DenominoViso/DenominoViso.py:2631
 msgid ""
 "Whether to include the note belonging to a witness (if the event_format "
 "contains <witnesses>)"
 msgstr ""
+"Bir tanığın notunun dahil edilip edilmeyeceği (eğer event_format <tanıklar> "
+"içeriyorsa)"
 
 #: DenominoViso/DenominoViso.py:2636
 msgid "Whether to include a person's attributes"
-msgstr ""
+msgstr "Bir kişinin özelliklerinin dahil edilip edilmeyeceği"
 
 #: DenominoViso/DenominoViso.py:2640
 msgid "Whether to include a person's addresses."
-msgstr ""
+msgstr "Bir kişinin adreslerinin dahil edilip edilmeyeceği."
 
 #: DenominoViso/DenominoViso.py:2643
 msgid "Include Note"
-msgstr ""
+msgstr "Notu dahil et"
 
 #: DenominoViso/DenominoViso.py:2644
 msgid "Whether to include a person's note."
-msgstr ""
+msgstr "Bir kişinin notunun dahil edilip edilmeyeceği."
 
 #: DenominoViso/DenominoViso.py:2647
 msgid "Include URL"
-msgstr ""
+msgstr "URL dahil et"
 
 #: DenominoViso/DenominoViso.py:2648
 msgid "Whether to include a person's internet address."
-msgstr ""
+msgstr "Bir kişinin internet adresinin dahil edilip edilmeyeceği."
 
 #: DenominoViso/DenominoViso.py:2651
 msgid "Include URL description"
-msgstr ""
+msgstr "URL açıklaması dahil et"
 
 #: DenominoViso/DenominoViso.py:2652
 msgid "Whether to include the description of the first URL"
-msgstr ""
+msgstr "İlk URL adresine ait açıklamanın dahil edilip edilmeyeceği"
 
 #: DenominoViso/DenominoViso.py:2657
 msgid "Include Sources"
-msgstr ""
+msgstr "Kaynakları dahil et"
 
 #: DenominoViso/DenominoViso.py:2658
 msgid "Whether to include a person's sources."
-msgstr ""
+msgstr "Bir kişinin kaynaklarının dahil edilip edilmeyeceği."
 
 #: DenominoViso/DenominoViso.py:2661
 msgid "Image Options"
-msgstr ""
+msgstr "Görüntü Seçenekleri"
 
 #: DenominoViso/DenominoViso.py:2663
 msgid "Include Photos/Images from Gallery"
-msgstr ""
+msgstr "Galeriden Fotoğraf/Görüntü Dahil Et"
 
 #: DenominoViso/DenominoViso.py:2664
 msgid "Whether to include images"
-msgstr ""
+msgstr "Görüntülerin eklenip eklenmeyeceği"
 
 #: DenominoViso/DenominoViso.py:2667
 msgid "Copy Image"
-msgstr ""
+msgstr "Görüntüyü Kopyala"
 
 #: DenominoViso/DenominoViso.py:2668
 msgid "Copy the images to a designated directory."
-msgstr ""
+msgstr "Görüntüleri belirlenmiş bir dizine kopyala."
 
 #: DenominoViso/DenominoViso.py:2675
 msgid "Images with Attribute"
-msgstr ""
+msgstr "Özellikli Görüntüler"
 
 #: DenominoViso/DenominoViso.py:2676
 msgid "Determine images with which attributes to in/exclude"
 msgstr ""
+"Hangi özelliklere sahip görüntülerin dahil edileceğini/hariç tutulacağını "
+"belirleyin"
 
 #: DenominoViso/DenominoViso.py:2679
 msgid "Include Image source references"
-msgstr ""
+msgstr "Görüntü kaynak referanslarını dahil et"
 
 #: DenominoViso/DenominoViso.py:2680
 msgid "Whether to include references for images"
-msgstr ""
+msgstr "Görüntüler için referansların dahil edilip edilmeyeceği"
 
 #: DenominoViso/DenominoViso.py:2683
 msgid "Source reference attribute"
-msgstr ""
+msgstr "Kaynak referans özelliği"
 
 #: DenominoViso/DenominoViso.py:2684
 msgid "Image attribute that should be used as source reference"
-msgstr ""
+msgstr "Kaynak referansı olarak kullanılacak resim özniteliği"
 
 #: DenominoViso/DenominoViso.py:2690
 msgid "Style Options"
-msgstr ""
+msgstr "Stil Seçenekleri"
 
 #: DenominoViso/DenominoViso.py:2692
 msgid "Color of active person:"
-msgstr ""
+msgstr "Etkin kişinin rengi:"
 
 #: DenominoViso/DenominoViso.py:2693
 msgid "RGB-color of geometric shape of the activated person."
-msgstr ""
+msgstr "Etkin hale getirilen kişinin geometrik şeklinin RGB rengi."
 
 #: DenominoViso/DenominoViso.py:2696
 msgid "Color of found persons:"
-msgstr ""
+msgstr "Bulunan kişilerin renkleri:"
 
 #: DenominoViso/DenominoViso.py:2697
 msgid "RGB-color of geometric shape of the persons found."
-msgstr ""
+msgstr "Bulunan kişilerin geometrik şekillerinin RGB renkleri."
 
 #: DenominoViso/DenominoViso.py:2700
 msgid "Color of male persons:"
-msgstr ""
+msgstr "Erkek kişilerin rengi:"
 
 #: DenominoViso/DenominoViso.py:2701
 msgid "RGB-color of geometric shape of the male persons."
-msgstr ""
+msgstr "Erkek kişilerin geometrik şekline ait RGB rengi."
 
 #: DenominoViso/DenominoViso.py:2704
 msgid "Colour of female persons:"
-msgstr ""
+msgstr "Kadın kişilerin rengi:"
 
 #: DenominoViso/DenominoViso.py:2705
 msgid "RGB-color of geometric shape of the female persons."
-msgstr ""
+msgstr "Kadın kişilerin geometrik şeklinin RGB rengi."
 
 #: DenominoViso/DenominoViso.py:2708
 msgid "Width of rectangle (hrd):"
-msgstr ""
+msgstr "Dikdörtgenin genişliği (hrd):"
 
 #: DenominoViso/DenominoViso.py:2709
 msgid ""
 "The width of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
 msgstr ""
+"Standart grafik türündeki bir kişi dikdörtgeninin genişliği, yatay "
+"dikdörtgen mesafesinin bir kesri olarak ifade edilir."
 
 #: DenominoViso/DenominoViso.py:2712
 msgid "Height of rectangle (hrd):"
-msgstr ""
+msgstr "Dikdörtgenin yüksekliği (hrd):"
 
 #: DenominoViso/DenominoViso.py:2713
 msgid ""
 "The height of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
 msgstr ""
+"Normal grafik türündeki bir kişi dikdörtgeninin yüksekliğinin, yatay "
+"dikdörtgen mesafesinin bir kesri olarak ifade edilmesi."
 
 #: DenominoViso/DenominoViso.py:2716
 msgid "Vertical distance of rectangles (hrd):"
-msgstr ""
+msgstr "Dikdörtgenlerin dikey mesafesi (hrd):"
 
 #: DenominoViso/DenominoViso.py:2717
 msgid ""
 "The vertical distance of person rectangles of the regular chart type "
 "expressed as fraction of the horizontal rectangle distance."
 msgstr ""
+"Normal grafik türündeki kişi dikdörtgenlerinin dikey mesafesinin, yatay "
+"dikdörtgen mesafesinin bir kesri olarak ifade edilmesi."
 
 #: DenominoViso/DenominoViso.py:2720
 msgid "Extra style settings:"
-msgstr ""
+msgstr "Ekstra stil ayarları:"
 
 #: DenominoViso/DenominoViso.py:2721
 msgid "Whatever css style settings are needed."
-msgstr ""
+msgstr "İhtiyaç duyulan tüm css stil ayarları."
 
 #: DenominoViso/DenominoViso.py:2731
 msgid "Mouse event handler"
-msgstr ""
+msgstr "Fare olay işleyicisi"
 
 #: DenominoViso/DenominoViso.py:2733
 msgid "Mouse handler used to interact with visitor of webpage."
 msgstr ""
+"Web sayfası ziyaretçisiyle etkileşim kurmak için kullanılan fare işleyicisi."
 
 #: DenominoViso/DenominoViso.py:2737
 msgid "Birth relationship linestyle"
-msgstr ""
+msgstr "Doğum ilişkisi çizgi stili"
 
 #: DenominoViso/DenominoViso.py:2739
 msgid ""
 "List of lists where each sublist is a list with information about the dash "
 "pattern of lines connecting children to parents."
 msgstr ""
+"Çocukları ebeveynlere bağlayan çizgilerin kesik çizgi desenine ilişkin "
+"bilgileri içeren listelerin listesi."
 
 #: DenominoViso/DenominoViso.py:2745
 msgid "Source confidence color"
-msgstr ""
+msgstr "Kaynak güvenilirlik rengi"
 
 #: DenominoViso/DenominoViso.py:2747
 msgid ""
 "List of lists where each sublist is a list with information on the color to "
 "use for a certain confidence level."
 msgstr ""
+"Her alt listenin, belirli bir güven düzeyi için kullanılacak renkle ilgili "
+"bilgileri içeren bir liste olduğu listelerin listesi."
 
 #: DenominoViso/DenominoViso.py:2750
 msgid "Event format"
-msgstr ""
+msgstr "Etkinlik biçimi"
 
 #: DenominoViso/DenominoViso.py:2751
 msgid "at"
-msgstr ""
+msgstr ">"
 
 #: DenominoViso/DenominoViso.py:2755
 msgid ""
@@ -2770,393 +2860,405 @@ msgid ""
 "<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
 "<attribute-value>."
 msgstr ""
+"Olaylar için yer tutucular içeren dizelerin listesi. Bilinen yer tutucular: "
+"<tür>, <rol>, <tarih>, <yer>, <açıklama>, <tanıklar>, <kaynak> ve herhangi "
+"bir <öznitelik değeri>."
 
 #: DenominoViso/DenominoViso.py:2758
 msgid "Source format"
-msgstr ""
+msgstr "Kaynak biçimi"
 
 #: DenominoViso/DenominoViso.py:2759
 msgid ""
 "List of strings with placeholders for sources. Known placeholders: <title>, "
 "<volume>, <author>, <publication_info> and <abbreviation>."
 msgstr ""
+"Kaynak metinleri için yer tutucular içeren metin listesi. Bilinen yer "
+"tutucular: <başlık>, <cilt>, <yazar>, <yayın bilgisi> ve <kısaltma>."
 
 #: DenominoViso/DenominoViso.py:2820
 msgid "restricted to:"
-msgstr ""
+msgstr "şununla sınırlı:"
 
 #: DenominoViso/DenominoViso.py:2860
 msgid "to directory:"
-msgstr ""
+msgstr "dizine:"
 
 #: DenominoViso/DenominoViso.py:2862
 msgid "Save images in ..."
-msgstr ""
+msgstr "Resimleri şu konumda kaydedin..."
 
 #: DenominoViso/DenominoViso.py:2912
 msgid "should be"
-msgstr ""
+msgstr "olmalı"
 
 #: DenominoViso/DenominoViso.py:2914
 msgid "Included"
-msgstr ""
+msgstr "Dahil edildi"
 
 #: DenominoViso/DenominoViso.py:2915
 msgid "Excluded"
-msgstr ""
+msgstr "Hariç tutuldu"
 
 #: DenominoViso/DenominoViso.py:2954
 msgid "Name HTML-wrapper file"
-msgstr ""
+msgstr "HTML sarıcı dosya adı"
 
 #: DenominoViso/DenominoViso.py:2956
 msgid "Save HTML-wrapper file as ..."
-msgstr ""
+msgstr "HTML sarıcı dosyasını şu şekilde kaydet: ..."
 
 #: DenominoViso/DenominoViso.py:2981
 msgid "Give a filename ..."
-msgstr ""
+msgstr "Bir dosya adı verin..."
 
 #: DenominoViso/DenominoViso.py:3115
 msgid "Relation type"
-msgstr ""
+msgstr "İlişki türü"
 
 #: DenominoViso/DenominoViso.py:3120
 msgid "Use dashed linestyle"
-msgstr ""
+msgstr "Kesikli çizgi stili kullan"
 
 #: DenominoViso/DenominoViso.py:3125
 msgid "Dash length"
-msgstr ""
+msgstr "Tire uzunluğu"
 
 #: DenominoViso/DenominoViso.py:3129
 msgid "Inter-dash length"
-msgstr ""
+msgstr "Tireler arası uzunluk"
 
 #: DescendantBooks/CollectAscendants.py:178
 #, python-format
 msgid "Deep pruning ascendants from %s people..."
-msgstr ""
+msgstr "Derin budama, %s kişiden üst soylar ayıklıyor..."
 
 #: DescendantBooks/CollectAscendants.py:182
 #, python-format
 msgid "Pruning ascendants from %s people..."
-msgstr ""
+msgstr "%s kişiden üst soylar budanıyor..."
 
 #: DescendantBooks/CollectAscendants.py:320
 #: DescendantBooks/CollectAscendants.py:413
 #, python-format
 msgid "Getting ascendants from %s people..."
-msgstr ""
+msgstr "%s kişiden üst soylar alınıyor..."
 
 #: DescendantBooks/CollectAscendants.py:331
 #, python-format
 msgid "Verifying descendants from %s people..."
-msgstr ""
+msgstr "%s kişiden soyundan gelenler doğrulanıyor..."
 
 #: DescendantBooks/CollectAscendants.py:348
 #, python-format
 msgid "Getting missing descendants from %s people..."
-msgstr ""
+msgstr "%s kişiden eksik kalan soyundan gelenler alınıyor..."
 
 #: DescendantBooks/CollectAscendants.py:367
 #, python-format
 msgid "Verifying descendants from %s people after pruning..."
-msgstr ""
+msgstr "Budama sonrası %s kişiden soyundan gelenler doğrulanıyor..."
 
 #: DescendantBooks/CollectAscendants.py:383
 #, python-format
 msgid "Getting missing descendants from %s people ..."
-msgstr ""
+msgstr "%s kişiden eksik soyundan gelenler alınıyor..."
 
 #: DescendantBooks/DescendantBookReport.py:238
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
-msgstr ""
+msgstr "sp. bkz  %(reference)s : %(spouse)s"
 
 #: DescendantBooks/DescendantBookReport.py:249
 #, python-format
 msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
 msgstr ""
+"rapora bak: %(report)s, referans: %(reference)s : %(person)s ve %(spouse)s"
 
 #: DescendantBooks/DescendantBookReport.py:374
 msgid "Descendants Report"
-msgstr ""
+msgstr "Soyundan Gelenler Raporu"
 
 #: DescendantBooks/DescendantBookReport.py:423
 #: DescendantBooks/DetailedDescendantBookReport.py:423
 #, python-format
 msgid "Writing %s reports..."
-msgstr ""
+msgstr "%s raporları yazılıyor..."
 
 #: DescendantBooks/DescendantBookReport.py:442
 #, python-brace-format
 msgid "{report_count}. Descendants of {name}"
-msgstr ""
+msgstr "{report_count}. {name} adlı kişinin soyundan gelenler"
 
 #: DescendantBooks/DescendantBookReport.py:481
 #: DescendantBooks/DetailedDescendantBookReport.py:619
 #, python-brace-format
 msgid "{report_count:d}. {name}"
-msgstr ""
+msgstr "{report_count:d}. {name}"
 
 #: DescendantBooks/DescendantBookReport.py:510
 #: DescendantBooks/DetailedDescendantBookReport.py:1371
 msgid "Select filter to restrict people that appear in the report"
-msgstr ""
+msgstr "Raporda görünen kişileri kısıtlamak için filtre seçin"
 
 #: DescendantBooks/DescendantBookReport.py:585
 msgid "The style used for the table of contents header."
-msgstr ""
+msgstr "İçindekiler başlığı için kullanılan stil."
 
 #: DescendantBooks/DescendantBookReport.py:595
 msgid "The style used for the table of contents detail."
-msgstr ""
+msgstr "İçindekilerin detayları için kullanılan stil."
 
 #: DescendantBooks/DescendantBooks.gpr.py:22
 msgid "Descendant Book"
-msgstr ""
+msgstr "Soyundan Gelenler Kitabı"
 
 #: DescendantBooks/DescendantBooks.gpr.py:23
 msgid "Produces one or more descendant reports based on a supplied query."
 msgstr ""
+"Verilen sorguya bağlı olarak bir veya daha fazla soyundan gelen raporu "
+"üretir."
 
 #: DescendantBooks/DescendantBooks.gpr.py:41
 msgid "Detailed Descendant Book"
-msgstr ""
+msgstr "Ayrıntılı Soyundan Gelenler Kitabı"
 
 #: DescendantBooks/DescendantBooks.gpr.py:43
 msgid ""
 "Produces one or more detailed descendant reports based on a supplied query."
 msgstr ""
+"Verilen sorguya dayanarak bir veya daha fazla ayrıntılı soyundan gelen "
+"raporu oluşturur."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:134
 msgid "Detailed Descendants Report"
-msgstr ""
+msgstr "Ayrıntılı Soyundan Gelenler Raporu"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:364
 #, python-format
 msgid "Generating %s report references..."
-msgstr ""
+msgstr "%s rapor referansları oluşturuluyor..."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:455
 #, python-format
 msgid "%(report_count)s. Descendant Report for %(person_name)s"
-msgstr ""
+msgstr "%(report_count)s. %(person_name)s için Soyundan Gelenler Raporu"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:521
 msgid "Index of Places"
-msgstr ""
+msgstr "Yerler Dizini"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:544
 msgid "Index of Dates"
-msgstr ""
+msgstr "Tarihler Dizini"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:567
 msgid "Index of Names"
-msgstr ""
+msgstr "Adlar Dizini"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:573
 msgid "Report, Generation, Person, Name"
-msgstr ""
+msgstr "Rapor, Nesil, Kişi, Ad"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:699
 #, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
-msgstr ""
+msgstr "Raporu Gör : {report}, Nesil : {generation}, Kişi : {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:767
 #: DescendantBooks/DetailedDescendantBookReport.py:779
 #, python-format
 msgid "Report appearances for %s"
-msgstr ""
+msgstr "%s için rapor görünümleri"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:772
 #, python-brace-format
 msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
-msgstr ""
+msgstr "Eşi: Rapor: {report}, Nesil: {generation}, Kişi: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:784
 #, python-brace-format
 msgid "Report: {report}, Generation: {generation}, Person: {person}"
-msgstr ""
+msgstr "Rapor: {report}, Nesil: {generation}, Kişi: {person}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:836
 #, python-format
 msgid "%(event_name)s of %(name)s "
-msgstr ""
+msgstr "%(event_name)s < %(name)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:840
 #, python-format
 msgid "%(event_name)s of %(name)s and %(mate)s "
-msgstr ""
+msgstr "%(event_name)s < %(name)s ve %(mate)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:844
 #: DescendantBooks/DetailedDescendantBookReport.py:888
 #: DetDescendantReport-images/detdescendantreporti.py:455
 #, python-format
 msgid "%(date)s, %(place)s"
-msgstr ""
+msgstr "%(date)s, %(place)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:847
 #: DescendantBooks/DetailedDescendantBookReport.py:891
 #: DetDescendantReport-images/detdescendantreporti.py:458
 #, python-format
 msgid "%(date)s"
-msgstr ""
+msgstr "%(date)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:849
 #: DescendantBooks/DetailedDescendantBookReport.py:893
 #: DetDescendantReport-images/detdescendantreporti.py:460
 #, python-format
 msgid "%(place)s"
-msgstr ""
+msgstr "%(place)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:851
 #, python-format
 msgid ". Ref: %(repno)s %(gen)s %(per)s "
-msgstr ""
+msgstr ". Ref: %(repno)s %(gen)s %(per)s "
 
 #: DescendantBooks/DetailedDescendantBookReport.py:880
 #, python-format
 msgid "%(event_name)s:"
-msgstr ""
+msgstr "%(event_name)s:"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:905
 #, python-format
 msgid " %(event_text)s"
-msgstr ""
+msgstr " %(event_text)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1023
 #, python-brace-format
 msgid "Ref: {number}. {name}"
-msgstr ""
+msgstr "Ref: {number}. {name}"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1263
 #: DetDescendantReport-images/detdescendantreporti.py:812
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
-msgstr ""
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1324
 #, python-format
 msgid "%(type)s:"
-msgstr ""
+msgstr "%(type)s:"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1329
 #, python-format
 msgid " %(value)s%(endnotes)s"
-msgstr ""
+msgstr " %(value)s%(endnotes)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1431
 #: DetDescendantReport-images/detdescendantreporti.py:1208
 msgid "List children"
-msgstr ""
+msgstr "Çocukları listele"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1448
 #: DetDescendantReport-images/detdescendantreporti.py:1225
 msgid "Add descendant reference in child list"
-msgstr ""
+msgstr "Soyundan gelenlere ait referansı çocuk listesine ekleyin"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1512
 msgid "Include Index of Names"
-msgstr ""
+msgstr "Adlar dizinini dahil et"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1513
 msgid "Whether to include the index of Names at the end of the report."
-msgstr ""
+msgstr "Raporun sonuna Ad dizini eklenip eklenmeyeceği."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1517
 msgid "Include index of Dates"
-msgstr ""
+msgstr "Tarih dizinini dahil et"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1518
 msgid "Whether to include the index of Dates at the end of the report."
-msgstr ""
+msgstr "Raporun sonuna Tarih dizini eklenip eklenmeyeceği."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1522
 msgid "Include index of Places"
-msgstr ""
+msgstr "Yerler dizinini dahil et"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1523
 msgid "Whether to include the index of Places at the end of the report."
-msgstr ""
+msgstr "Raporun sonuna Yerler dizininin eklenip eklenmeyeceği."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1527
 msgid "Include the 'Report appearances' section with each person"
-msgstr ""
+msgstr "Her kişi için 'Görünüşleri raporla' bölümünü dahil et"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1529
 msgid ""
 "The 'Report appearances' section shows other places in the report where the "
 "person is mentioned."
 msgstr ""
+"'Rapor içindeki görünümler' bölümü, kişinin raporda adının geçtiği diğer "
+"yerleri gösterir."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1596
 #: DetDescendantReport-images/detdescendantreporti.py:1343
 msgid "The style used for the children list."
-msgstr ""
+msgstr "Çocuk listesi için kullanılan stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1606
 msgid "The basic style used for Note header."
-msgstr ""
+msgstr "Not başlığı için kullanılan temel stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1623
 #: DetDescendantReport-images/detdescendantreporti.py:1366
 msgid "The style used for the first personal entry."
-msgstr ""
+msgstr "İlk kişisel giriş için kullanılan stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1633
 #: DetDescendantReport-images/detdescendantreporti.py:1376
 msgid "The style used for the More About header and for headers of mates."
-msgstr ""
+msgstr "Daha Fazla Bilgi başlığı ve eşlerin başlıkları için kullanılan stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1644
 #: DetDescendantReport-images/detdescendantreporti.py:1387
 msgid "The style used for additional detail data."
-msgstr ""
+msgstr "Ek ayrıntı verileri için kullanılan stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1654
 #: DescendantBooks/DetailedDescendantBookReport.py:1664
 msgid "The style used for note detail data."
-msgstr ""
+msgstr "Not ayrıntısı verileri için kullanılan stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1674
 msgid "The style used for the date in the Index of Dates."
-msgstr ""
+msgstr "Tarihler Dizinindeki tarih için kullanılan stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1684
 msgid "The style used for the events in the Index of Dates."
-msgstr ""
+msgstr "Tarihler Dizinindeki etkinlikler için kullanılan stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1694
 msgid "The style used for the header in the Index of Names."
-msgstr ""
+msgstr "Adlar Dizinindeki başlık için kullanılan stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1704
 msgid "The style used for the references in the Index of Names."
-msgstr ""
+msgstr "Adlar Dizinindeki referanslar için kullanılan stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1714
 msgid "The style used for the header in the Index of Places."
-msgstr ""
+msgstr "Yerler Dizinindeki başlık için kullanılan stil."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1725
 msgid "The style used for the references in the Index of Places."
-msgstr ""
+msgstr "Yerler Dizinindeki referanslar için kullanılan stil."
 
 #: DescendantCount/DescendantCount.gpr.py:23
 #: DescendantCount/DescendantCount.gpr.py:32
 msgid "Descendant Count"
-msgstr ""
+msgstr "Soyundan Gelenler Sayısı"
 
 #: DescendantCount/DescendantCount.gpr.py:24
 msgid "Gramplet for showing people and descendant counts"
-msgstr ""
+msgstr "Kişilerin ve soyundan gelenlerin sayılarını gösteren Gramplet"
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:26
 msgid "Descendant Space Tree"
-msgstr ""
+msgstr "Soyundan Gelen Uzamsal Ağaç"
 
 #: DescendantSpaceTree/DescendantSpaceTree.gpr.py:36
 msgid ""
@@ -3164,42 +3266,45 @@ msgid ""
 "a Space Tree for efficient viewing, even with many descendants or "
 "generations."
 msgstr ""
+"Birçok soyundan gelen kişi veya nesil olsa bile etkili bir görselleştirme "
+"için, uzamsal bir ağaç biçiminde temsil edilen etkileşimli bir soyundan "
+"gelenler grafiği içeren bir web sayfası oluştur."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:102
 msgid "Patriarchal Line (Male ancestor)"
-msgstr ""
+msgstr "Ataerkil Soy Hattı (Erkek atası)"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:103
 msgid "Matriarchal Line (Female ancestor)"
-msgstr ""
+msgstr "Anaerkil Soy Hattı (Kadın atası)"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:106
 msgid "Dark theme"
-msgstr ""
+msgstr "Koyu tema"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:107
 msgid "Light theme"
-msgstr ""
+msgstr "Açık tema"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:426
 msgid "Continue Descendant Tree"
-msgstr ""
+msgstr "Soyundan gelen ağacını devam ettir"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:427
 msgid "Alternate Descendant Tree"
-msgstr ""
+msgstr "Alternatif Soyundan Gelen Ağacı"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:455
 msgid "Descendant SpaceTree"
-msgstr ""
+msgstr "Soyundan Gelen Uzamsal Ağaç"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:635
 msgid "Total descendants"
-msgstr ""
+msgstr "Toplam soyundan gelenler"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:659
 msgid "Marriages/Families:<ul>"
-msgstr ""
+msgstr "Evlilikler/Aileler:<ul>"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:773
 #, python-format
@@ -3207,16 +3312,18 @@ msgid ""
 "Destination Directory %s does not exist\n"
 "Do you want to attempt to create it."
 msgstr ""
+"Hedef dizin %s mevcut değil\n"
+"Oluşturmayı denemek ister misiniz?"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:787
 #, python-format
 msgid "Failed to create %s: %s"
-msgstr ""
+msgstr "%s oluşturulamadı: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:816
 #, python-format
 msgid "Failed to read proto file %s: %s"
-msgstr ""
+msgstr "%s protokol dosyası okunamadı: %s"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:827
 #, python-format
@@ -3224,32 +3331,41 @@ msgid ""
 "Destination file %s already exists.\n"
 "Do you want to overwrite?"
 msgstr ""
+"Hedef dosya %s zaten mevcut.\n"
+"Üzerine yazmak istiyor musunuz?"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:854
 msgid "Failed writing file: "
-msgstr ""
+msgstr "Dosya yazma işlemi başarısız oldu: "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:875
 msgid "Descendants of"
-msgstr ""
+msgstr "Soyundan gelenler"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:879
 msgid "How to Use the DescendantSpaceTree Viewer"
-msgstr ""
+msgstr "Soyundan Gelen Uzamsal Ağacı Görüntüleyici Nasıl Kullanılır?"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:885
 msgid ""
 "For the best viewing experience, maximize your browser window to use the "
 "entire screen.  A resize will reset the graph to the center person."
 msgstr ""
+"En iyi görüntüleme deneyimi için, tarayıcı pencerenizi ekranın tamamını "
+"kullanacak şekilde büyütün. Yeniden boyutlandırma, grafiği ortadaki kişiye "
+"sıfırlayacaktır."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:895
 msgid "Click on a node to focus on a descendant and expand any children."
 msgstr ""
+"Bir çocuğa odaklanmak ve varsa tüm soyundan gelenleri genişletmek için bir "
+"düğüme tıklayın."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:904
 msgid "Click and drag anywhere on the viewer to position the descendant tree."
 msgstr ""
+"Soyundan gelen ağacını konumlandırmak için görüntüleyici üzerinde herhangi "
+"bir yere tıklayıp sürükleyin."
 
 #. Translators: Please do not translate ___HELP_RESET_BUTTON___.
 #: DescendantSpaceTree/DescendantSpaceTree.py:914
@@ -3257,6 +3373,8 @@ msgid ""
 "Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
 "starting descendant."
 msgstr ""
+"Başlangıçtaki soyundan gelene geri sıfırlamak için ___HELP_RESET_BUTTON___ "
+"sıfırlama düğmesine tıklayın."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:923
 msgid ""
@@ -3266,30 +3384,42 @@ msgid ""
 "search, a plus sign (+) after the name indicates that person appears as a "
 "spouse."
 msgstr ""
+"Arama kutusuna yazarak bir kişiyi arayın.   Arama yapmak için en az üç "
+"karakter gereklidir.   O kişiye hızlıca gitmek için önerilerden herhangi "
+"birine tıklayın.   Bir kişi aramada birden fazla kez görünebilir; ismin "
+"ardından gelen artı işareti (+) o kişinin eş olarak göründüğünü gösterir."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:936
 msgid ""
 "A descendant and any spouses are listed in the same node.  Children of all "
 "of the descendant's families are grouped together."
 msgstr ""
+"Bir soyundan gelen kişi ve eşleri aynı düğümde listelenir.   Soyundan gelen "
+"kişinin tüm ailelerinin çocukları birlikte gruplandırılır."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:946
 msgid ""
 "Persons born after a specified date may not display their birth or death "
 "dates."
 msgstr ""
+"Belirtilen bir tarihten sonra doğan kişilerin doğum veya ölüm tarihleri "
+"görüntülenmeyebilir."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:955
 msgid ""
 "Person nodes are colored to indicate the number of children, the deeper tint "
 "of the coloring, the greater number of children."
 msgstr ""
+"Kişi düğümleri, çocuk sayısını gösterecek şekilde renklendirilmiştir; rengin "
+"tonu ne kadar koyuysa, çocuk sayısı o kadar fazladır."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:965
 msgid ""
 "The currently selected descendant and all of the ancestors of that person "
 "are highlighted in yellow."
 msgstr ""
+"Şu anda seçili olan soyundan gelen kişi ve o kişinin tüm ataları sarı renkle "
+"vurgulanmıştır."
 
 #. Translators: Please do not translate ___NAV_BUTTON_CONTINUE___ or ___NAV_BUTTON_ALT___.
 #: DescendantSpaceTree/DescendantSpaceTree.py:975
@@ -3300,34 +3430,44 @@ msgid ""
 "___NAV_BUTTON_ALT___  to navigate the other branch.  Only one branch will "
 "expand descendants of this person. "
 msgstr ""
+"Bir kişi farklı dallarda yer alabilir.   Bu genellikle aile içi evlilikler "
+"(örneğin kuzen evlilikleri) nedeniyle olur.   Bu durumda, o kişi için diğer "
+"dala geçiş yapmak üzere ___NAV_BUTTON_CONTINUE___ veya ___NAV_BUTTON_ALT___ "
+"düğmesi de görünür.   Bu kişinin soyundan gelenler yalnızca bir dalda "
+"genişletilir. "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:989
 msgid ""
 "The following open source projects are used in building this viewer, see "
 "source code LICENSE*.txt files for complete licenses and required notices."
 msgstr ""
+"Bu görüntüleyicinin oluşturulmasında aşağıdaki açık kaynak projeler "
+"kullanılmıştır; tam lisanslar ve gerekli bildirimler için kaynak kodundaki "
+"LICENSE*.txt dosyalarına bakın."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1016
 msgid "Search. . ."
-msgstr ""
+msgstr "Ara. . ."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1091
 msgid "Branch to expand when duplicated"
-msgstr ""
+msgstr "Çoğaltıldığında genişletilecek dal"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1102
 msgid ""
 "When a descendant appears more than once, prefer the selected lineage to "
 "expand descendancy line"
 msgstr ""
+"Bir soyundan gelen kişi birden fazla kez göründüğünde, soy ağacını "
+"genişletmek için seçilen soyundan gelen hattını tercih edin"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1110
 msgid "Maximum display birth year"
-msgstr ""
+msgstr "Maksimum görüntüleme doğum yılı"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1113
 msgid "Birth/death dates will not be displayed after this year"
-msgstr ""
+msgstr "Bu yıldan sonra doğum/ölüm tarihleri gösterilmeyecek"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1118
 msgid "Theme preference"
@@ -3335,123 +3475,127 @@ msgstr "Tema tercihi"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1125
 msgid "Theme color preference for Space Tree"
-msgstr ""
+msgstr "Uzamsal Ağacı için tema rengi tercihi"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1138
 msgid "Destination File"
-msgstr ""
+msgstr "Hedef Dosya"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1140
 msgid "The destination file name for the report."
-msgstr ""
+msgstr "Rapor için hedef dosya adı."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1146
 msgid "Open generated HTML file with default browser."
-msgstr ""
+msgstr "Oluşturulan HTML dosyasını varsayılan tarayıcıyla açın."
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
-msgstr ""
+msgstr "Soyundan Gelen Hatları"
 
 #: DescendantsLines/DescendantsLines.gpr.py:28
 msgid "Produces descendants lines of a person"
-msgstr ""
+msgstr "Bir kişinin soyundan gelen nesilleri üretir"
 
 #: DescendantsLines/DescendantsLines.py:472
 msgid "Using SVG type for supplemental document is not supported!"
-msgstr ""
+msgstr "SVG türü ek belge için desteklenmiyor!"
 
 #: DescendantsLines/DescendantsLines.py:1540
 msgid "Output format"
-msgstr ""
+msgstr "Çıktı biçimi"
 
 #: DescendantsLines/DescendantsLines.py:1541
 msgid "PNG format"
-msgstr ""
+msgstr "PNG biçimi"
 
 #: DescendantsLines/DescendantsLines.py:1542
 msgid "SVG format"
-msgstr ""
+msgstr "SVG biçimi"
 
 #: DescendantsLines/DescendantsLines.py:1543
 msgid "PDF format"
-msgstr ""
+msgstr "PDF biçimi"
 
 #: DescendantsLines/DescendantsLines.py:1544
 msgid "PS format"
-msgstr ""
+msgstr "PS biçimi"
 
 #: DescendantsLines/DescendantsLines.py:1545
 msgid "The output format to be used"
-msgstr ""
+msgstr "Kullanılacak çıktı biçimi"
 
 #: DescendantsLines/DescendantsLines.py:1550
 msgid "The destination file for the content."
-msgstr ""
+msgstr "İçerik için hedef dosya."
 
 #: DescendantsLines/DescendantsLines.py:1554
 msgid "The number of generations to include in the chart. (0 for unlimited)"
-msgstr ""
+msgstr "Grafiğe dahil edilecek nesil sayısı. (Sınırsız için 0)"
 
 #: DescendantsLines/DescendantsLines.py:1559
 msgid "Use d'Aboville descendant numbering system"
-msgstr ""
+msgstr "D'Aboville soyundan gelen numaralandırma sistemini kullanın"
 
 #: DescendantsLines/DescendantsLines.py:1561
 msgid "Prepend name with d'Aboville descendant number in the chart."
-msgstr ""
+msgstr "Adın önüne tablodaki d'Aboville soyundan gelen numarasını ekleyin."
 
 #: DescendantsLines/DescendantsLines.py:1564
 msgid "Include an image"
-msgstr ""
+msgstr "Bir resim ekle"
 
 #: DescendantsLines/DescendantsLines.py:1565
 msgid "Whether to include an image if one is available."
-msgstr ""
+msgstr "Eğer bir görsel mevcutsa, görselin eklenip eklenmeyeceği."
 
 #: DescendantsLines/DescendantsLines.py:1569
 msgid "Max Image height"
-msgstr ""
+msgstr "Maksimum Görüntü yüksekliği"
 
 #: DescendantsLines/DescendantsLines.py:1570
 msgid "Maximum image height in pixels, 0=don't scale for height."
 msgstr ""
+"Piksel cinsinden maksimum görüntü yüksekliği, 0=yükseklik için ölçekleme "
+"yapılmaz."
 
 #: DescendantsLines/DescendantsLines.py:1574
 msgid "Max Image width"
-msgstr ""
+msgstr "Maksimum Görüntü genişliği"
 
 #: DescendantsLines/DescendantsLines.py:1575
 msgid "Maximum image width in pixels, 0=don't scale for width."
 msgstr ""
+"Piksel cinsinden maksimum görüntü genişliği, 0=genişlik için ölçekleme "
+"yapılmaz."
 
 #: DescendantsLines/DescendantsLines.py:1579
 msgid "Image Location"
-msgstr ""
+msgstr "Görüntü Konumu"
 
 #: DescendantsLines/DescendantsLines.py:1580
 msgid "Above text"
-msgstr ""
+msgstr "Metnin üstünde"
 
 #: DescendantsLines/DescendantsLines.py:1581
 msgid "Left of text"
-msgstr ""
+msgstr "Metnin solunda"
 
 #: DescendantsLines/DescendantsLines.py:1582
 msgid "Position of image relative to text"
-msgstr ""
+msgstr "Görüntünün metne göre konumu"
 
 #: DescendantsLines/DescendantsLines.py:1588
 msgid "Colour Name by Gender"
-msgstr ""
+msgstr "Cinsiyete Göre Renk Adı"
 
 #: DescendantsLines/DescendantsLines.py:1590
 msgid "Color the name to indicate a person's gender in the chart."
-msgstr ""
+msgstr "Tabloda kişinin cinsiyetini belirtmek için adını renklendirin."
 
 #: DescendantsLines/DescendantsLines.py:1594
 msgid "Use alternate events, if Primary event is not found"
-msgstr ""
+msgstr "Birincil etkinlik bulunamazsa alternatif etkinlikleri kullanın"
 
 #: DescendantsLines/DescendantsLines.py:1595
 msgid ""
@@ -3460,117 +3604,133 @@ msgid ""
 "   Divorce (annulment, div_filing),\n"
 "   Death (burial, cremation, probate)."
 msgstr ""
+"Doğum (vaftiz, isim koyma)\n"
+"   Evlilik (nikah, nişan)\n"
+"   Boşanma (iptal, boşanma davası),\n"
+"   Ölüm (defin, ölü yakma, miras işlemleri)."
 
 #: DescendantsLines/DescendantsLines.py:1601
 msgid "Sort Events by Date"
-msgstr ""
+msgstr "Etkinlikleri Tarihe Göre Sırala"
 
 #: DescendantsLines/DescendantsLines.py:1602
 msgid "Sort events by date (else use the order of the 'Display Format' above)."
 msgstr ""
+"Etkinlikleri tarihe göre sıralayın (aksi takdirde yukarıdaki 'Görüntüleme "
+"Biçimindeki sıralama düzenini kullanın)."
 
 #: DescendantsLines/DescendantsLines.py:1606
 msgid "Text style"
-msgstr ""
+msgstr "Metin stili"
 
 #: DescendantsLines/DescendantsLines.py:1607
 msgid "Center-aligned text"
-msgstr ""
+msgstr "Merkeze hizalanmış metin"
 
 #: DescendantsLines/DescendantsLines.py:1608
 msgid "Left-aligned text"
-msgstr ""
+msgstr "Sola hizalanmış metin"
 
 #: DescendantsLines/DescendantsLines.py:1609
 msgid "Alignment of the text in the block for each person on the chart"
-msgstr ""
+msgstr "Grafikteki her bir kişi için blok içindeki metnin hizalanması"
 
 #: DescendantsLines/DescendantsLines.py:1613
 msgid "Max Note Length"
-msgstr ""
+msgstr "Maksimum Not Uzunluğu"
 
 #: DescendantsLines/DescendantsLines.py:1614
 msgid ""
 "Maximum length of an event's note field in a text block, '$e(n)'\n"
 " 0=no limit "
 msgstr ""
+"Bir metin bloğundaki etkinlik not alanının maksimum uzunluğu, '$e(n)'\n"
+" 0=sınır yok "
 
 #: DescendantsLines/DescendantsLines.py:1618
 msgid "Font Name"
-msgstr ""
+msgstr "Yazı Tipi Adı"
 
 #: DescendantsLines/DescendantsLines.py:1620
 msgid ""
 "Name of the Font to use. On Windows enter the file name of the .ttf at /"
 "Windows/Fonts"
 msgstr ""
+"Kullanılacak yazı tipinin adı. Windows'ta /Windows/Fonts klasöründeki .ttf "
+"dosyasının adını girin"
 
 #: DescendantsLines/DescendantsLines.py:1623
 msgid "Font base size"
-msgstr ""
+msgstr "Yazı tipi taban boyutu"
 
 #: DescendantsLines/DescendantsLines.py:1629
 msgid "Box around Person's block"
-msgstr ""
+msgstr "Kişinin bloğunun etrafındaki kutu"
 
 #: DescendantsLines/DescendantsLines.py:1630
 msgid "Draw a thin black box around each person' text block."
-msgstr ""
+msgstr "Her kişinin metin bloğunun etrafına ince siyah bir kutu çizin."
 
 #: DescendantsLines/DescendantsLines.py:1634
 msgid "All Person's blocks have the same height"
-msgstr ""
+msgstr "Kişinin tüm blokları aynı yüksekliğe sahiptir"
 
 #: DescendantsLines/DescendantsLines.py:1635
 msgid ""
 "All the blocks of all the person have the same height, which is the height "
 "of the highest block."
 msgstr ""
+"Kişinin tüm bloklarının yüksekliği aynıdır; bu yükseklik, en yüksek bloğun "
+"yüksekliğine eşittir."
 
 #: DescendantsLines/DescendantsLines.py:1640
 msgid "All Person's blocks have the same width"
-msgstr ""
+msgstr "Tüm Kişi blokları aynı genişliğe sahiptir"
 
 #: DescendantsLines/DescendantsLines.py:1641
 msgid ""
 "All the blocks of all the person have the same width, which is the width of "
 "the widthest block."
 msgstr ""
+"Tüm kişilerin tüm blokları aynı genişliğe sahiptir, bu genişlik en geniş "
+"bloğun genişliğidir."
 
 #: DescendantsLines/DescendantsLines.py:1646
 msgid "Colour blocks by Generation"
-msgstr ""
+msgstr "Nesillere Göre renk blokları"
 
 #: DescendantsLines/DescendantsLines.py:1647
 msgid "Colour the background of text blocks by generation."
-msgstr ""
+msgstr "Metin bloklarının arka planını nesillere göre renklendirin."
 
 #: DescendantsLines/DescendantsLines.py:1651
 msgid "Descend block colour intensity"
-msgstr ""
+msgstr "Blok renk yoğunluğunu azalt"
 
 #: DescendantsLines/DescendantsLines.py:1652
 msgid ""
 "Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
 "colour"
 msgstr ""
+"Soyundan gelen ağacı bloğundaki arka plan renginin yoğunluğu, 0=soluk, "
+"255=yoğun renk"
 
 #: DescendantsLines/DescendantsLines.py:1656
 msgid "Spouse block colour intensity"
-msgstr ""
+msgstr "Eşin blok renginin yoğunluğu"
 
 #: DescendantsLines/DescendantsLines.py:1657
 msgid ""
 "Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
-msgstr ""
+msgstr "Eşin Bloğundaki arka plan renginin yoğunluğu, 0=soluk 255=yoğun renk"
 
 #: DescendantsLines/DescendantsLines.py:1662
 msgid "Display Formats"
-msgstr ""
+msgstr "Görüntü Biçimleri"
 
 #: DescendantsLines/DescendantsLines.py:1664
 msgid "Name Display Format"
-msgstr ""
+msgstr "Ad Görüntüleme Biçimi"
 
 #: DescendantsLines/DescendantsLines.py:1667
 msgid ""
@@ -3578,6 +3738,9 @@ msgid ""
 "c=commonly used given name, t=title, s=suffix, g=family nick name\n"
 "See Wiki Manual > Reports > part 2"
 msgstr ""
+"f=ilk ve orta adlar, l=soyadı, n=takma ad,\n"
+"c=yaygın olarak kullanılan ad, t=ünvan, s=ek, g=aile takma adı\n"
+"Bkz. Wiki Kılavuzu > Raporlar > bölüm 2"
 
 #: DescendantsLines/DescendantsLines.py:1679
 #: DescendantsLines/DescendantsLines.py:1698
@@ -3586,6 +3749,10 @@ msgid ""
 "See Wiki Manual > Reports > part 2\n"
 "formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
 msgstr ""
+"[olay, liste]$e(biçimlendirme)\n"
+"Wiki Kılavuzu > Raporlar > bölüm 2'ye bakın\n"
+"biçimlendirme: tarihler=d(ymdMo) yerler=D(elcuspnoitxy) notlar=n "
+"kısaltılmış_tür=t"
 
 #: DescendantsLines/DescendantsLines.py:1705
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
@@ -3598,58 +3765,65 @@ msgid ""
 "i.e.\n"
 "United States of America/USA"
 msgstr ""
+"örneğin\n"
+"Amerika Birleşik Devletleri/ABD"
 
 #: DescendantsLines/DescendantsLines.py:1714
 msgid "Spouse and Family"
-msgstr ""
+msgstr "Eş ve Aile"
 
 #: DescendantsLines/DescendantsLines.py:1716
 msgid "Vertical edge descendant to spouse-bar"
-msgstr ""
+msgstr "Dikey kenar soyundan gelenden eş çubuğuna"
 
 #: DescendantsLines/DescendantsLines.py:1717
 msgid "The length of the vertical edge from descendant to spouse-bar."
 msgstr ""
+"Soyundan gelen ağacındaki daldan eş dalına kadar olan dikey kenarın uzunluğu."
 
 #: DescendantsLines/DescendantsLines.py:1721
 msgid "Vertical edge spouse-bar to spouse"
-msgstr ""
+msgstr "Eşler arası dikey kenar çubuğu"
 
 #: DescendantsLines/DescendantsLines.py:1722
 msgid "The length of the vertical edge from spouse-bar to spouse."
-msgstr ""
+msgstr "Eş çubuğundan eş çubuğuna uzanan dikey kenarın uzunluğu."
 
 #: DescendantsLines/DescendantsLines.py:1726
 msgid "Vertical space spouse-bar to other spouse"
-msgstr ""
+msgstr "Eşler arası dikey boşluk çubuğu"
 
 #: DescendantsLines/DescendantsLines.py:1727
 msgid ""
 "The space to add between one spouse-bar and another spouse in case of "
 "multiple families with the same descendant."
 msgstr ""
+"Aynı soydan gelen birden fazla aile olması durumunda, bir eş ile diğer eş "
+"arasına eklenecek boşluk."
 
 #: DescendantsLines/DescendantsLines.py:1732
 msgid "Horizontal space descendant to spouse"
-msgstr ""
+msgstr "Soyundan gelen kişi ile eşi arasındaki yatay boşluk"
 
 #: DescendantsLines/DescendantsLines.py:1733
 msgid "The space to add between the descendant and the spouse."
-msgstr ""
+msgstr "Soyundan gelen kişi ile eşi arasına eklenecek boşluk."
 
 #: DescendantsLines/DescendantsLines.py:1738
 msgid "Horizonal space family to family"
-msgstr ""
+msgstr "Aileden aileye uzanan yatay boşluk"
 
 #: DescendantsLines/DescendantsLines.py:1739
 msgid ""
 "The space to add between the more extern descendant (or spouse) of a family "
 "and the more extern descendant (or spouse) of the next family."
 msgstr ""
+"Bir ailenin en dıştaki soyundan gelen (veya eşi) ile bir sonraki ailenin en "
+"dıştaki soyundan gelen (veya eşi) arasına eklenecek boşluk."
 
 #: DescendantsLines/DescendantsLines.py:1744
 msgid "Horizontal distance spouse to family edge"
-msgstr ""
+msgstr "Eşten aile sınırına kadar olan yatay mesafe"
 
 #: DescendantsLines/DescendantsLines.py:1745
 msgid ""
@@ -3657,169 +3831,176 @@ msgid ""
 "bigger the value, more the center is moved to the left towards the "
 "descendant."
 msgstr ""
+"Bu değer 0 ise, çocuk çubuğu eşin altına ortalanır. Değer ne kadar büyükse, "
+"merkez o kadar sola, soyundan gelene doğru kayar."
 
 #: DescendantsLines/DescendantsLines.py:1752
 msgid "OL_PAD"
-msgstr ""
+msgstr "OL_PAD"
 
 #: DescendantsLines/DescendantsLines.py:1753
 msgid "The number of ??? pad"
-msgstr ""
+msgstr "??? ped sayısı"
 
 #: DescendantsLines/DescendantsLines.py:1756
 msgid "Vertical edge spouse-bar to child-bar"
-msgstr ""
+msgstr "Eş çubuğundan çocuk çubuğuna dikey çizgi"
 
 #: DescendantsLines/DescendantsLines.py:1757
 msgid "The length of the vertical edge from spouse-bar to child-bar."
-msgstr ""
+msgstr "Eş çubuğundan çocuk çubuğuna kadar olan dikey kenarın uzunluğu."
 
 #: DescendantsLines/DescendantsLines.py:1763
 msgid "Children distance"
-msgstr ""
+msgstr "Çocuk mesafesi"
 
 #: DescendantsLines/DescendantsLines.py:1764
 msgid "The horizontal distance between two children of the same family."
-msgstr ""
+msgstr "Aynı aileden iki çocuk arasındaki yatay mesafe."
 
 #: DescendantsLines/DescendantsLines.py:1768
 msgid "Vertical edge child to child-bar"
-msgstr ""
+msgstr "Dikey kenar çocuktan çocuk çubuğuna"
 
 #: DescendantsLines/DescendantsLines.py:1770
 msgid "The length of the vertical edge from child to child-bar."
-msgstr ""
+msgstr "Çocuk çubuğundan çocuk çubuğuna uzanan dikey kenarın uzunluğu."
 
 #: DescendantsLines/DescendantsLines.py:1773
 msgid "MIN_C_WIDTH"
-msgstr ""
+msgstr "MIN_C_GENİŞLİĞİ"
 
 #: DescendantsLines/DescendantsLines.py:1774
 msgid "The number of ??? min width"
-msgstr ""
+msgstr "Minimum genişlik sayısı ???"
 
 #: DescendantsLines/DescendantsLines.py:1779
 msgid "Space around text"
-msgstr ""
+msgstr "Metnin etrafındaki boşluk"
 
 #: DescendantsLines/DescendantsLines.py:1780
 msgid "The space to add around the text block of a person."
-msgstr ""
+msgstr "Bir kişinin metin bloğunun etrafına eklenebilecek boşluk."
 
 #: DescendantsLines/DescendantsLines.py:1784
 msgid "Space between lines of text"
-msgstr ""
+msgstr "Metin satırları arasındaki boşluk"
 
 #: DescendantsLines/DescendantsLines.py:1785
 msgid "The space to add between a line and the next in a person text block."
 msgstr ""
+"Kişi metin bloğunda bir satır ile bir sonraki satır arasına eklenecek boşluk."
 
 #: DescendantsLines/DescendantsLines.py:1790
 msgid "Header and Footer"
-msgstr ""
+msgstr "Başlık ve Alt Bilgi"
 
 #: DescendantsLines/DescendantsLines.py:1793
 msgid "The text that will be written in the header of the document"
-msgstr ""
+msgstr "Belgenin başlığına yazılacak metin"
 
 #: DescendantsLines/DescendantsLines.py:1798
 msgid "The text that will be written in the footer of the document"
-msgstr ""
+msgstr "Belgenin alt bilgisine yazılacak metin"
 
 #: DescendantsLines/DescendantsLines.py:1802
 msgid "Title and footer coefficient"
-msgstr ""
+msgstr "Başlık ve alt bilgi katsayısı"
 
 #: DescendantsLines/DescendantsLines.py:1803
 msgid ""
 "A number that multiply the base size of the text in the title and in the "
 "footer"
-msgstr ""
+msgstr "Başlık ve alt bilgideki metnin taban boyutunu çarpan bir sayı"
 
 #: DescendantsLines/DescendantsLines.py:1810
 msgid "Protect People, Images or Events that are marked Private"
-msgstr ""
+msgstr "Özel olarak işaretlenmiş kişileri, görselleri veya etkinlikleri koruyun"
 
 #: DescendantsLines/DescendantsLines.py:1812
 msgid "The Privacy setting of only these types of Gramps objects are checked"
-msgstr ""
+msgstr "Yalnızca bu tür Gramps nesnelerinin Gizlilik ayarı işaretlenmiştir"
 
 #: DescendantsLines/DescendantsLines.py:1816
 msgid "Privacy text"
-msgstr ""
+msgstr "Gizlilik metni"
 
 #: DescendantsLines/DescendantsLines.py:1817
 msgid "Text to display in block, when a Person is marked private"
-msgstr ""
+msgstr "Kişi gizli olarak işaretlendiğinde blok halinde görüntülenecek metin"
 
 #: DescendantsLines/DescendantsLines.py:1832
 msgid "The default style."
-msgstr ""
+msgstr "Varsayılan stil."
 
 #: DetDescendantReport-images/detdescendantreport.gpr.py:4
 msgid "Detailed Descendant Report With All Images"
-msgstr ""
+msgstr "Tüm Resimlerle Ayrıntılı Soyundan Gelen Rapor"
 
 #: DetDescendantReport-images/detdescendantreport.gpr.py:6
 msgid ""
 "Produces a detailed descendant report with all images and optional todo list."
 msgstr ""
+"Tüm görselleri ve isteğe bağlı yapılacaklar listesini içeren ayrıntılı bir "
+"soyundan gelen ağacı raporu üretir."
 
 #: DetDescendantReport-images/detdescendantreporti.py:472
 #, python-format
 msgid "%(event_name)s: %(event_text)s"
-msgstr ""
+msgstr "%(event_name)s: %(event_text)s"
 
 #: DetDescendantReport-images/detdescendantreporti.py:941
 #: DynamicWeb/dynamicweb.py:1732
 #, python-format
 msgid "%(type)s: %(value)s"
-msgstr ""
+msgstr "%(type)s: %(value)s"
 
 #: DetDescendantReport-images/detdescendantreporti.py:1238
 msgid "Include TODO notes"
-msgstr ""
+msgstr "YAPILACAKLAR notlarını dahil et"
 
 #: DetDescendantReport-images/detdescendantreporti.py:1239
 msgid "Whether to include TODO notes."
-msgstr ""
+msgstr "YAPILACAKLAR notlarının dahil edilip edilmeyeceği."
 
 #: DetDescendantReport-images/detdescendantreporti.py:1412
 msgid "The style used for image labels."
-msgstr ""
+msgstr "Resim etiketleri için kullanılan stil."
 
 #: DetDescendantReport-images/detdescendantreporti.py:1425
 msgid "A style used for image captions."
-msgstr ""
+msgstr "Resim yazıları için kullanılan bir stil."
 
 #: DetId/DetId.gpr.py:31
 msgid "Deterministic ID"
-msgstr ""
+msgstr "Deterministik Kimlik"
 
 #: DetId/DetId.gpr.py:32
 msgid "Set/reset Gramps to use a Deterministic ID"
-msgstr ""
+msgstr "Gramps'ı Deterministik Kimlik kullanacak şekilde ayarla/sıfırla"
 
 #: DetId/DetId.py:74
 msgid "Deterministic ID Tool"
-msgstr ""
+msgstr "Deterministik Kimlik Aracı"
 
 #: DetId/DetId.py:80
 msgid ""
 "The ID and handles now start at 0x00000000, and increment by 0x100000001"
 msgstr ""
+"Kimlik ve tanıtıcılar artık 0x00000000'dan başlıyor ve 0x100000001'lik "
+"artışlarla ilerliyor"
 
 #: Differences/differences.gpr.py:4 Differences/differences.py:108
 msgid "Database Differences Report"
-msgstr ""
+msgstr "Veritabanı Farklılıkları Raporu"
 
 #: Differences/differences.gpr.py:5
 msgid "Compares an external database with the current one."
-msgstr ""
+msgstr "Harici bir veritabanını mevcut veritabanıyla karşılaştırır."
 
 #: Differences/differences.py:147
 msgid "Differences between Database and File"
-msgstr ""
+msgstr "Veritabanı ve Dosya Arasındaki Farklar"
 
 #: Differences/differences.py:185
 msgid "No differences"
@@ -3827,73 +4008,73 @@ msgstr "Farklılık yok"
 
 #: Differences/differences.py:192
 msgid "Missing items in File that are added in Database"
-msgstr ""
+msgstr "Veritabanında eklenen Dosyadaki eksik öğeler"
 
 #: Differences/differences.py:199
 #, python-format
 msgid "Missing %s: %s"
-msgstr ""
+msgstr "Eksik %s: %s"
 
 #: Differences/differences.py:204
 msgid "Nothing missing"
-msgstr ""
+msgstr "Hiçbir şey eksik değil"
 
 #: Differences/differences.py:211
 msgid "Added items in File that are missing in Database"
-msgstr ""
+msgstr "Veritabanında eksik olan Dosyadaki öğeler eklendi"
 
 #: Differences/differences.py:218
 #, python-format
 msgid "Added %s: %s "
-msgstr ""
+msgstr "%s eklendi: %s "
 
 #: Differences/differences.py:223
 msgid "Nothing added"
-msgstr ""
+msgstr "Hiçbir şey eklenmedi"
 
 #: Differences/differences.py:337
 msgid "Family Tree file"
-msgstr ""
+msgstr "Aile Ağacı dosyası"
 
 #: Differences/differences.py:339
 msgid "Select a .gpkg or .gramps file"
-msgstr ""
+msgstr "Bir .gpkg veya .gramps dosyası seçin"
 
 #: Differences/differences.py:342
 msgid "Show items that are different"
-msgstr ""
+msgstr "Farklı öğeleri göster"
 
 #: Differences/differences.py:343
 msgid "Include items that are different"
-msgstr ""
+msgstr "Farklı öğeleri dahil et"
 
 #: Differences/differences.py:346
 msgid "Show items missing from file"
-msgstr ""
+msgstr "Dosyada eksik öğeleri göster"
 
 #: Differences/differences.py:347
 msgid "Include items not in file but in database"
-msgstr ""
+msgstr "Öğeleri dosyaya değil veritabanına dahil et"
 
 #: Differences/differences.py:350
 msgid "Show items added in file"
-msgstr ""
+msgstr "Dosyaya eklenen öğeleri göster"
 
 #: Differences/differences.py:351
 msgid "Include items in file but not in database"
-msgstr ""
+msgstr "Öğeleri dosyaya dahil et, ancak veritabanına dahil etme"
 
 #: DoubleCousins/double_cousins.gpr.py:25
 msgid "Double Cousins"
-msgstr ""
+msgstr "Çift Kuzenler"
 
 #: DoubleCousins/double_cousins.gpr.py:26
 msgid "A text report listing double cousins."
-msgstr ""
+msgstr "Çift kuzenleri listeleyen bir metin raporu."
 
 #: DoubleCousins/double_cousins.py:112
 msgid "Double Cousins Report"
-msgstr ""
+msgstr "Çift Kuzenler Raporu"
 
 #: DoubleCousins/double_cousins.py:120
 #, no-python-format
@@ -3905,174 +4086,182 @@ msgid ""
 "25% of their DNA similar to half-siblings instead of 12.5% like normal first "
 "cousins.\n"
 msgstr ""
+"Çift (birinci) kuzenler, A ailesinin iki kardeşi, B ailesinin iki kardeşiyle "
+"evlendiğinde ortaya çıkar. Çocukları birbirlerine çift kuzendir ve normal "
+"ilk kuzenler gibi altı yerine aynı dört büyükanne ve büyükbabayı "
+"paylaşırlar. Bu nedenle genetik olarak normal birinci dereceden kuzenlerden "
+"daha yakındırlar ve DNA'larının %25'ini paylaşırlar; bu oran normal birinci "
+"dereceden kuzenlerin %12,5'i yerine üvey kardeşlerle aynıdır.\n"
 
 #: DoubleCousins/double_cousins.py:136
 msgid "No double cousins were found in your database."
-msgstr ""
+msgstr "Veritabanında çift kuzen bulunamadı."
 
 #: DoubleCousins/double_cousins.py:170
 msgid "Show info text"
-msgstr ""
+msgstr "Bilgi metnini göster"
 
 #: DownloadMedia/DownloadMedia.gpr.py:36
 msgid "Download media files from the internet"
-msgstr ""
+msgstr "İnternetten medya dosyalarını indirin"
 
 #: DownloadMedia/DownloadMedia.gpr.py:37
 msgid "This tool downloads media files from the internet"
-msgstr ""
+msgstr "Bu araç, medya dosyalarını internetten indirir"
 
 #: DownloadMedia/DownloadMedia.py:71
 msgid "Download media"
-msgstr ""
+msgstr "Medyayı indir"
 
 #: DownloadMedia/DownloadMedia.py:87
 msgid "Media downloaded"
-msgstr ""
+msgstr "Medya indirildi"
 
 #: DownloadMedia/DownloadMedia.py:88
 #, python-format
 msgid "%d media files downloaded"
-msgstr ""
+msgstr "%d medya dosyası indirildi"
 
 #: DownloadMedia/DownloadMedia.py:100
 msgid "Download media tool"
-msgstr ""
+msgstr "Medya aracını indirin"
 
 #: DownloadMedia/DownloadMedia.py:106
 msgid "Make sure you are connected to the internet before starting this tool."
 msgstr ""
+"Bu aracı kullanmaya başlamadan önce internete bağlı olduğunuzdan emin olun."
 
 #: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
 msgid "Downloading files"
-msgstr ""
+msgstr "Dosyalar indiriliyor"
 
 #: DownloadMedia/DownloadMedia.py:207
 msgid "Media download errors detected"
-msgstr ""
+msgstr "Medya indirme hataları tespit edildi"
 
 #: DynamicWeb/dynamicweb.gpr.py:16
 msgid "Dynamic Web Report"
-msgstr ""
+msgstr "Dinamik Web Raporu"
 
 #: DynamicWeb/dynamicweb.gpr.py:17
 msgid "Produces dynamic web pages for the database"
-msgstr ""
+msgstr "Veritabanı için dinamik web sayfaları üretir"
 
 #: DynamicWeb/dynamicweb.py:329
 msgid "SVG graphical tree"
-msgstr ""
+msgstr "SVG grafik ağacı"
 
 #: DynamicWeb/dynamicweb.py:332
 msgid "Indexes pages"
-msgstr ""
+msgstr "Dizin sayfaları"
 
 #: DynamicWeb/dynamicweb.py:336 DynamicWeb/dynamicweb.py:5209
 #, python-format
 msgid "Custom page %(index)i"
-msgstr ""
+msgstr "Özel sayfa %(index)i"
 
 #: DynamicWeb/dynamicweb.py:353
 msgid "Ascending tree"
-msgstr ""
+msgstr "Yükselen ağaç"
 
 #: DynamicWeb/dynamicweb.py:354
 msgid "Descending tree"
-msgstr ""
+msgstr "İnen ağaç"
 
 #: DynamicWeb/dynamicweb.py:355
 msgid "Descending tree with spouses"
-msgstr ""
+msgstr "Eşlerle birlikte inen ağaç"
 
 #: DynamicWeb/dynamicweb.py:356
 msgid "Ascending and descending tree"
-msgstr ""
+msgstr "Yükselen ve inen ağaç"
 
 #: DynamicWeb/dynamicweb.py:357
 msgid "Ascending and descending tree with spouses"
-msgstr ""
+msgstr "Eşlerle birlikte yükselen ve inen soyağacı"
 
 #: DynamicWeb/dynamicweb.py:389
 msgid "Size proportional to number of ancestors"
-msgstr ""
+msgstr "Ataların sayısıyla orantılı boyut"
 
 #: DynamicWeb/dynamicweb.py:390
 msgid "Homogeneous parents distribution"
-msgstr ""
+msgstr "Homojen ebeveyn dağılımı"
 
 #: DynamicWeb/dynamicweb.py:404
 msgid "Age based gradient"
-msgstr ""
+msgstr "Yaşa dayalı gradyan"
 
 #: DynamicWeb/dynamicweb.py:426
 msgid "Gradient"
-msgstr ""
+msgstr "Gradyan"
 
 #: DynamicWeb/dynamicweb.py:775 DynamicWeb/dynamicweb.py:781
 #, python-format
 msgid "Could not create the directory: %(path)s"
-msgstr ""
+msgstr "Dizin oluşturulamadı: %(path)s"
 
 #: DynamicWeb/dynamicweb.py:811 DynamicWeb/dynamicweb.py:4097
 msgid "Dynamic Web Site Report"
-msgstr ""
+msgstr "Dinamik Web Sitesi Raporu"
 
 #: DynamicWeb/dynamicweb.py:811
 msgid "Exporting family tree data ..."
-msgstr ""
+msgstr "Aile ağacı verileri dışa aktarılıyor..."
 
 #: DynamicWeb/dynamicweb.py:2006
 #, python-format
 msgid "Impossible to convert \"%(path)s\" to a relative path."
-msgstr ""
+msgstr "\"%(path)s\" ifadesini göreli yola dönüştürmek mümkün değil."
 
 #: DynamicWeb/dynamicweb.py:2348
 msgid ""
 "The pages configuration is not valid: several pages have the same content"
 msgstr ""
+"Sayfa yapılandırması geçerli değil: Birden fazla sayfa aynı içeriğe sahip"
 
 #: DynamicWeb/dynamicweb.py:2363
 msgid "DynWeb|Home"
-msgstr ""
+msgstr "DynWeb/Ana Sayfa"
 
 #: DynamicWeb/dynamicweb.py:2370 DynamicWeb/dynamicweb.py:2437
 #: DynamicWeb/dynamicweb.py:2444 DynamicWeb/dynamicweb.py:2451
 msgid "Tree"
-msgstr ""
+msgstr "Ağaç"
 
 #: DynamicWeb/dynamicweb.py:2430
 msgid "Search results"
-msgstr ""
+msgstr "Arama sonuçları"
 
 #: DynamicWeb/dynamicweb.py:2590 DynamicWeb/dynamicweb.py:3009
 #: DynamicWeb/dynamicweb.py:4992
 msgid "Indexes"
-msgstr ""
+msgstr "Dizinler"
 
 #: DynamicWeb/dynamicweb.py:2913
 msgid "(filtered from _MAX_ total entries)"
-msgstr ""
+msgstr "(Toplam _MAX_ girişten filtrelenmiştir)"
 
 #: DynamicWeb/dynamicweb.py:2915
 #, python-format
 msgid "(m. %s)"
-msgstr ""
+msgstr "(m. %s)"
 
 #: DynamicWeb/dynamicweb.py:2916
 msgid "(sort by name)"
-msgstr ""
+msgstr "(ada göre sırala)"
 
 #: DynamicWeb/dynamicweb.py:2917
 msgid "(sort by quantity)"
-msgstr ""
+msgstr "(miktara göre sırala)"
 
 #: DynamicWeb/dynamicweb.py:2920
 msgid ": activate to sort column ascending"
-msgstr ""
+msgstr ": sütunları artan şekilde sıralamak için etkinleştirin"
 
 #: DynamicWeb/dynamicweb.py:2924
 msgid ": activate to sort column descending"
-msgstr ""
+msgstr ": azalan sütunu sıralamak için etkinleştir"
 
 #: DynamicWeb/dynamicweb.py:2929
 msgid ""
@@ -4080,144 +4269,147 @@ msgid ""
 "editor and save as an SVG file.<br>Make sure that the text editor encoding "
 "is UTF-8.</p>"
 msgstr ""
+"<p>Bu sayfa SVG ham kodunu sağlar.İçeriği bir metin düzenleyiciye kopyalayın "
+"ve SVG dosyası olarak kaydedin.<br>Metin düzenleyici kodlamasının UTF-8 "
+"olduğundan emin olun.< / p>"
 
 #: DynamicWeb/dynamicweb.py:2937
 msgid "Alternate Name"
-msgstr ""
+msgstr "Alternatif Ad"
 
 #: DynamicWeb/dynamicweb.py:2956
 msgid "Click on the map to show it full-screen"
-msgstr ""
+msgstr "Haritayı tam ekran görüntülemek için üzerine tıklayın"
 
 #: DynamicWeb/dynamicweb.py:2960
 msgid "Configure"
-msgstr ""
+msgstr "Yapılandır"
 
 #: DynamicWeb/dynamicweb.py:2967
 msgid "DynamicWeb_report#Help"
-msgstr ""
+msgstr "DynamicWeb_report#Yardım"
 
 #: DynamicWeb/dynamicweb.py:2972
 msgid "Examples"
-msgstr ""
+msgstr "Örnekler"
 
 #: DynamicWeb/dynamicweb.py:2973
 msgid "F"
-msgstr ""
+msgstr "A"
 
 #: DynamicWeb/dynamicweb.py:2974
 msgid "Families Index"
-msgstr ""
+msgstr "Aileler Dizini"
 
 #: DynamicWeb/dynamicweb.py:2976
 msgid "Family Nick Name"
-msgstr ""
+msgstr "Aile Takma Adı"
 
 #: DynamicWeb/dynamicweb.py:2979
 msgid "File ready"
-msgstr ""
+msgstr "Dosya hazır"
 
 #: DynamicWeb/dynamicweb.py:2986 DynamicWeb/dynamicweb.py:5037
 msgid "Include dates columns on the index pages"
-msgstr ""
+msgstr "Dizin sayfalarına tarih sütunlarını dahil edin"
 
 #: DynamicWeb/dynamicweb.py:2994 DynamicWeb/dynamicweb.py:5066
 msgid "Include a column for media path on the index pages"
-msgstr ""
+msgstr "Dizin sayfalarında medya yolu için bir sütun dahil edin"
 
 #: DynamicWeb/dynamicweb.py:3002 DynamicWeb/dynamicweb.py:4898
 msgid "Include a map in the individuals and family pages"
-msgstr ""
+msgstr "Bireyler ve aile sayfalarına bir harita dahil edin"
 
 #: DynamicWeb/dynamicweb.py:3006 DynamicWeb/dynamicweb.py:4950
 msgid "Include half and/ or step-siblings on the individual pages"
-msgstr ""
+msgstr "Kişinin sayfasına üvey erkek ve üvey kız kardeşleri dahil edin"
 
 #: DynamicWeb/dynamicweb.py:3008 DynamicWeb/dynamicweb.py:5071
 msgid "Include references in indexes"
-msgstr ""
+msgstr "Dizinlerde referansları dahil edin"
 
 #: DynamicWeb/dynamicweb.py:3013 DynamicWeb/dynamicweb.py:4980
 msgid "Insert sources author in the sources title"
-msgstr ""
+msgstr "Kaynakların başlığına kaynak yazarını ekleyin"
 
 #: DynamicWeb/dynamicweb.py:3021
 msgid "M"
-msgstr ""
+msgstr "B"
 
 #: DynamicWeb/dynamicweb.py:3025
 msgid "Maximize"
-msgstr ""
+msgstr "Büyüt"
 
 #: DynamicWeb/dynamicweb.py:3026
 msgid "Media Index"
-msgstr ""
+msgstr "Medya Dizini"
 
 #: DynamicWeb/dynamicweb.py:3027
 msgid "Media Type"
-msgstr ""
+msgstr "Medya Türü"
 
 #: DynamicWeb/dynamicweb.py:3032
 msgid "No data available in table"
-msgstr ""
+msgstr "Tabloda veri yoktur"
 
 #: DynamicWeb/dynamicweb.py:3034
 msgid "No matching records found"
-msgstr ""
+msgstr "Eşleşen kayıt bulunamadı"
 
 #: DynamicWeb/dynamicweb.py:3035
 msgid "No matching surname."
-msgstr ""
+msgstr "Eşleşen soyadı yok."
 
 #: DynamicWeb/dynamicweb.py:3040
 msgid "Other participants"
-msgstr ""
+msgstr "Diğer katılımcılar"
 
 #: DynamicWeb/dynamicweb.py:3043
 msgid "Person page"
-msgstr ""
+msgstr "Kişi sayfası"
 
 #: DynamicWeb/dynamicweb.py:3044
 msgid "Person to search for"
-msgstr ""
+msgstr "Aranacak kişi"
 
 #: DynamicWeb/dynamicweb.py:3046
 msgid "Persons Index"
-msgstr ""
+msgstr "Kişiler Dizini"
 
 #: DynamicWeb/dynamicweb.py:3047 Form/form_ie.xml.h:4
 #: RemoveTagTool/RemoveTagTool.py:124 SearchGramplet/SearchGramplet.py:109
 #: SetPrivacyTool/SetPrivacyTool.py:320
 msgid "Persons"
-msgstr ""
+msgstr "Kişiler"
 
 #: DynamicWeb/dynamicweb.py:3049
 msgid "Places Index"
-msgstr ""
+msgstr "Yerler Dizini"
 
 #: DynamicWeb/dynamicweb.py:3051
 msgid "Preparing file ..."
-msgstr ""
+msgstr "Dosya hazırlanıyor ..."
 
 #: DynamicWeb/dynamicweb.py:3055 PersonEverything/PersonEverything.py:221
 msgid "Relationship to Father"
-msgstr ""
+msgstr "Baba ile ilişki"
 
 #: DynamicWeb/dynamicweb.py:3056 PersonEverything/PersonEverything.py:226
 msgid "Relationship to Mother"
-msgstr ""
+msgstr "Anne ile ilişki"
 
 #: DynamicWeb/dynamicweb.py:3058
 msgid "Repositories Index"
-msgstr ""
+msgstr "Depolar Dizini"
 
 #: DynamicWeb/dynamicweb.py:3061
 msgid "Restore"
-msgstr ""
+msgstr "Geri yükle"
 
 #: DynamicWeb/dynamicweb.py:3062
 msgid "Restore default settings"
-msgstr ""
+msgstr "Varsayılan ayarları geri yükle"
 
 #: DynamicWeb/dynamicweb.py:3063 DynamicWeb/dynamicweb.py:4973
 msgid "Show last modification time"
@@ -4225,235 +4417,239 @@ msgstr "Son değişiklik süresini göster"
 
 #: DynamicWeb/dynamicweb.py:3064 DynamicWeb/dynamicweb.py:5128
 msgid "SVG tree children distribution"
-msgstr ""
+msgstr "SVG ağaç çocuk dağılımı"
 
 #: DynamicWeb/dynamicweb.py:3065
 msgid "SVG tree configuration"
-msgstr ""
+msgstr "SVG ağaç yapılandırması"
 
 #: DynamicWeb/dynamicweb.py:3066 DynamicWeb/dynamicweb.py:5110
 msgid "SVG tree graph shape"
-msgstr ""
+msgstr "SVG ağaç grafik şekli"
 
 #: DynamicWeb/dynamicweb.py:3067 DynamicWeb/dynamicweb.py:5102
 msgid "SVG tree graph type"
-msgstr ""
+msgstr "SVG ağaç grafiği türü"
 
 #: DynamicWeb/dynamicweb.py:3068 DynamicWeb/dynamicweb.py:5118
 msgid "SVG tree parents distribution"
-msgstr ""
+msgstr "SVG ağaç ebeveyn dağılımı"
 
 #: DynamicWeb/dynamicweb.py:3069
 msgid "Save tree as file"
-msgstr ""
+msgstr "Ağacı dosya olarak kaydet"
 
 #: DynamicWeb/dynamicweb.py:3070
 msgid "Search:"
-msgstr ""
+msgstr "Ara:"
 
 #: DynamicWeb/dynamicweb.py:3073
 msgid "Select the background color scheme"
-msgstr ""
+msgstr "Arka plan renk şemasını seçin"
 
 #: DynamicWeb/dynamicweb.py:3077
 msgid "Select the children distribution (fan charts only)"
-msgstr ""
+msgstr "Çocukların dağılımını seçin (sadece yelpaze grafikleri için)"
 
 #: DynamicWeb/dynamicweb.py:3081
 msgid "Select the number of ascending generations"
-msgstr ""
+msgstr "Artan nesillerin sayısını seçin"
 
 #: DynamicWeb/dynamicweb.py:3085
 msgid "Select the number of descending generations"
-msgstr ""
+msgstr "Azalan nesillerin sayısını seçin"
 
 #: DynamicWeb/dynamicweb.py:3089
 msgid "Select the parents distribution (fan charts only)"
-msgstr ""
+msgstr "Ebeveyn dağılımını seçin (sadece yelpaze grafikleri için)"
 
 #: DynamicWeb/dynamicweb.py:3091
 msgid "Select the shape of graph"
-msgstr ""
+msgstr "Grafiğin şeklini seçin"
 
 #: DynamicWeb/dynamicweb.py:3092
 msgid "Select the type of graph"
-msgstr ""
+msgstr "Grafik türünü seçin"
 
 #: DynamicWeb/dynamicweb.py:3096
 msgid "Several matches.<br>Precise your search or choose in the lists below."
 msgstr ""
+"Birden fazla eşleşme.<br>Aramanızı netleştirin veya aşağıdaki listelerden "
+"birini seçin."
 
 #: DynamicWeb/dynamicweb.py:3099
 msgid "Show _MENU_ entries"
-msgstr ""
+msgstr "_MENÜ_ girişlerini göster"
 
 #: DynamicWeb/dynamicweb.py:3100 DynamicWeb/dynamicweb.py:5165
 msgid "Show duplicates"
-msgstr ""
+msgstr "Yinelenenleri göster"
 
 #: DynamicWeb/dynamicweb.py:3101
 msgid "Showing 0 to 0 of 0 entries"
-msgstr ""
+msgstr "0 ile 0 arası 0 kayıt gösteriliyor"
 
 #: DynamicWeb/dynamicweb.py:3104
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
-msgstr ""
+msgstr "_START_ ile _END_ arasındaki _TOTAL_ giriş gösteriliyor"
 
 #: DynamicWeb/dynamicweb.py:3107
 msgid "Sort by:"
-msgstr ""
+msgstr "Sırala:"
 
 #: DynamicWeb/dynamicweb.py:3109 SourceIndex/birth.py:126
 #: SourceIndex/census.py:82 SourceIndex/death.py:87 SourceIndex/index.py:92
 #: SourceIndex/marriage.py:87 SourceIndex/witness.py:64
 msgid "Sources Index"
-msgstr ""
+msgstr "Kaynaklar Dizini"
 
 #: DynamicWeb/dynamicweb.py:3112 DynamicWeb/dynamicweb.py:4987
 msgid "Suppress Gramps ID"
-msgstr ""
+msgstr "Gramps Kimliğini bastır"
 
 #: DynamicWeb/dynamicweb.py:3114
 msgid "Surnames Index"
-msgstr ""
+msgstr "Soyadlar Dizini"
 
 #: DynamicWeb/dynamicweb.py:3118
 msgid "U"
-msgstr ""
+msgstr "K"
 
 #: DynamicWeb/dynamicweb.py:3122 DynamicWeb/dynamicweb.py:4967
 msgid "Use tabbed panels instead of sections"
-msgstr ""
+msgstr "Bölümler yerine sekmeli paneller kullanın"
 
 #: DynamicWeb/dynamicweb.py:3126
 msgid "Use the search box above in order to find a person."
-msgstr ""
+msgstr "Bir kişiyi bulmak için yukarıdaki arama kutusunu kullanın."
 
 #: DynamicWeb/dynamicweb.py:3130
 msgid "Use a table format for the surnames index"
-msgstr ""
+msgstr "Soyadlar dizini için bir tablo biçimi kullanın"
 
 #: DynamicWeb/dynamicweb.py:3134
 msgid "Use a table format for the persons index"
-msgstr ""
+msgstr "Kişiler dizini için bir tablo biçimi kullanın"
 
 #: DynamicWeb/dynamicweb.py:3138
 msgid "Use a table format for the families index"
-msgstr ""
+msgstr "Aileler dizini için bir tablo biçimi kullanın"
 
 #: DynamicWeb/dynamicweb.py:3142
 msgid "Use a table format for the sources index"
-msgstr ""
+msgstr "Kaynaklar dizini için bir tablo biçimi kullanın"
 
 #: DynamicWeb/dynamicweb.py:3146
 msgid "Use a table format for the places index"
-msgstr ""
+msgstr "Yerler dizini için bir tablo biçimi kullanın"
 
 #: DynamicWeb/dynamicweb.py:3148
 msgid "Used for family"
-msgstr ""
+msgstr "Aile için kullanıldı"
 
 #: DynamicWeb/dynamicweb.py:3149
 msgid "Used for media"
-msgstr ""
+msgstr "Medya için kullanıldı"
 
 #: DynamicWeb/dynamicweb.py:3150
 msgid "Used for person"
-msgstr ""
+msgstr "Kişi için kullanıldı"
 
 #: DynamicWeb/dynamicweb.py:3151
 msgid "Used for place"
-msgstr ""
+msgstr "Yer için kullanıldı"
 
 #: DynamicWeb/dynamicweb.py:3152
 msgid "Used for source"
-msgstr ""
+msgstr "Kaynak için kullanıldı"
 
 #: DynamicWeb/dynamicweb.py:3154
 msgid "Web Link"
-msgstr ""
+msgstr "Web Bağlantısı"
 
 #: DynamicWeb/dynamicweb.py:3159 DynamicWeb/dynamicweb.py:5168
 msgid ""
 "Whether to use a special color for the persons that appear several times in "
 "the SVG tree"
 msgstr ""
+"SVG ağacında birden fazla kez görünen kişiler için özel bir renk kullanılıp "
+"kullanılmayacağı"
 
 #: DynamicWeb/dynamicweb.py:3162
 msgid "Without name"
-msgstr ""
+msgstr "Adı olmadan"
 
 #: DynamicWeb/dynamicweb.py:3163
 msgid "Without surname"
-msgstr ""
+msgstr "Soyadı olmadan"
 
 #: DynamicWeb/dynamicweb.py:3164
 msgid "Without title"
-msgstr ""
+msgstr "Başlık olmadan"
 
 #: DynamicWeb/dynamicweb.py:3165 GraphView/graphview.py:1095
 #: LifeLineChartView/lifelinechartview.py:508
 msgid "Zoom in"
-msgstr ""
+msgstr "Yakınlaştır"
 
 #: DynamicWeb/dynamicweb.py:3166 GraphView/graphview.py:1102
 #: LifeLineChartView/lifelinechartview.py:518
 msgid "Zoom out"
-msgstr ""
+msgstr "Uzaklaştır"
 
 #: DynamicWeb/dynamicweb.py:3167
 msgid "all"
-msgstr ""
+msgstr "Tümü"
 
 #: DynamicWeb/dynamicweb.py:3580
 #, python-format
 msgid "Copying error: %(error)s"
-msgstr ""
+msgstr "Kopyalama hatası: %(error)s"
 
 #: DynamicWeb/dynamicweb.py:3583
 #, python-format
 msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
-msgstr ""
+msgstr "\"%(src)s\" dosyasını \"%(dst)s\" konumuna kopyalamak mümkün değil"
 
 #: DynamicWeb/dynamicweb.py:3627
 #, python-format
 msgid "Unable to copy web site template files from \"%(path)s\""
-msgstr ""
+msgstr "\"%(path)s\" konumundan web sitesi şablon dosyaları kopyalanamıyor"
 
 #: DynamicWeb/dynamicweb.py:3676
 #, python-format
 msgid "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
-msgstr ""
+msgstr "\"%(dst)s\" ( \"%(src)s\"den daha yeni) korunuyor"
 
 #: DynamicWeb/dynamicweb.py:3682
 #, python-format
 msgid "Copying \"%(src)s\" to \"%(dst)s\""
-msgstr ""
+msgstr "\"%(src)s\" \"%(dst)s\" konumuna kopyalanıyor"
 
 #: DynamicWeb/dynamicweb.py:3713 DynamicWeb/dynamicweb.py:3737
 #, python-format
 msgid "Unable to overwrite archive file \"%(path)s\""
-msgstr ""
+msgstr "Arşiv dosyası \"%(path)s\" üzerine yazılamıyor"
 
 #: DynamicWeb/dynamicweb.py:3726 DynamicWeb/dynamicweb.py:3747
 #, python-format
 msgid "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
-msgstr ""
+msgstr "“%(file)s” dosyası “%(archive)s” arşivine eklenemiyor"
 
 #: DynamicWeb/dynamicweb.py:3826
 #, python-format
 msgid "DynamicWebReport ignoring link type '%(class)s'"
-msgstr ""
+msgstr "DynamicWebReport '%(class)s' bağlantı türünü yok sayıyor"
 
 #: DynamicWeb/dynamicweb.py:4257
 #, python-format
 msgid "Family of %(father)s"
-msgstr ""
+msgstr "%(father)s ailesi"
 
 #: DynamicWeb/dynamicweb.py:4261
 #, python-format
 msgid "Family of %(mother)s"
-msgstr ""
+msgstr "%(mother)s ailesi"
 
 #: DynamicWeb/dynamicweb.py:4655
 msgid ""
@@ -4474,244 +4670,275 @@ msgid ""
 "URL starting with \"relative://relative.<link>\" are replaced by the "
 "relative URL \"<link>\".\n"
 msgstr ""
+"Bu notta, aşağıdaki özel kelimeler işlenir:\n"
+"__SEARCH_FORM__ bir arama formuyla değiştirilir.\n"
+"__NB_INDIVIDUALS__ kişi sayısıyla değiştirilir.\n"
+"__NB_FAMILIES__ aile sayısıyla değiştirilir.\n"
+"__NB_MEDIA__ medya sayısıyla değiştirilir.\n"
+"__NB_SOURCES__ kaynak sayısıyla değiştirilir.\n"
+"__NB_REPOSITORIES__ depo sayısıyla değiştirilir.\n"
+"__NB_PLACES__ yer sayısıyla değiştirilir.\n"
+"__MEDIA_<gid>__ <gid> Gramps kimliğine sahip medya ile değiştirilir.\n"
+"__THUMB_<gid>__ <gid> Gramps kimliğine sahip medyanın küçük resmi ile "
+"değiştirilir.\n"
+"__EXPORT_DATE__ mevcut tarih ile değiştirilir.\n"
+"__GRAMPS_VERSION__ Gramps sürümü ile değiştirilir.\n"
+"__GRAMPS_HOMEPAGE__ Gramps ana sayfa bağlantısı ile değiştirilir.\n"
+"\"relative://relative.<link>\" ile başlayan URL adresi \"<link>\" göreli URL "
+"adresi ile değiştirilir.\n"
 
 #: DynamicWeb/dynamicweb.py:4707
 msgid "Store web pages in archive"
-msgstr ""
+msgstr "Web sayfalarını arşivde saklayın"
 
 #: DynamicWeb/dynamicweb.py:4710
 msgid ""
 "Whether to create an archive file (in ZIP or TGZ format) containing the web "
 "site"
 msgstr ""
+"Web sitesini içeren (ZIP veya TGZ biçiminde) bir arşiv dosyası oluşturulup "
+"oluşturulmayacağı"
 
 #: DynamicWeb/dynamicweb.py:4717
 msgid "Archive file"
-msgstr ""
+msgstr "Arşiv dosyası"
 
 #: DynamicWeb/dynamicweb.py:4723
 msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
-msgstr ""
+msgstr "Arşiv dosyasının adı (\".zip\" veya \".tgz\" uzantısıyla)"
 
 #: DynamicWeb/dynamicweb.py:4730
 msgid "Web site title"
-msgstr ""
+msgstr "Web sitesi başlığı"
 
 #: DynamicWeb/dynamicweb.py:4731
 msgid "The title of the web site"
-msgstr ""
+msgstr "Web sitesinin başlığı"
 
 #: DynamicWeb/dynamicweb.py:4736
 msgid "Select filter to restrict people that appear on web site"
-msgstr ""
+msgstr "Web sitesinde görünen kişileri kısıtlamak için filtre seçin"
 
 #: DynamicWeb/dynamicweb.py:4750 DynamicWeb/dynamicweb.py:4773
 msgid "Name format (short)"
-msgstr ""
+msgstr "Ad biçimi (kısa)"
 
 #: DynamicWeb/dynamicweb.py:4752 DynamicWeb/dynamicweb.py:4778
 msgid "Select the format to display a shorter version of the names"
-msgstr ""
+msgstr "Adların daha kısa bir sürümünü görüntülemek için biçimi seçin"
 
 #: DynamicWeb/dynamicweb.py:4782
 msgid "Web site template"
-msgstr ""
+msgstr "Web sitesi şablonu"
 
 #: DynamicWeb/dynamicweb.py:4785
 msgid "Select the template of the web site"
-msgstr ""
+msgstr "Web sitesinin şablonunu seçin"
 
 #: DynamicWeb/dynamicweb.py:4807
 msgid "Whether to include private objects"
-msgstr ""
+msgstr "Özel nesnelerin dahil edilip edilmeyeceği"
 
 #: DynamicWeb/dynamicweb.py:4828
 msgid ""
 "This allows you to restrict information on people who have not been dead for "
 "very long"
 msgstr ""
+"Bu, çok uzun süre önce ölmemiş kişiler hakkındaki bilgileri kısıtlamanıza "
+"olanak tanır"
 
 #: DynamicWeb/dynamicweb.py:4834
 msgid "Export notes"
-msgstr ""
+msgstr "Notları dışa aktar"
 
 #: DynamicWeb/dynamicweb.py:4835
 msgid "Whether to export notes in the web pages"
-msgstr ""
+msgstr "Web sayfalarındaki notların dışa aktarılıp aktarılmayacağı"
 
 #: DynamicWeb/dynamicweb.py:4838
 msgid "Export sources"
-msgstr ""
+msgstr "Kaynakları dışa aktar"
 
 #: DynamicWeb/dynamicweb.py:4840
 msgid "Whether to export sources and citations in the web pages"
-msgstr ""
+msgstr "Web sayfalarındaki kaynakları ve alıntıları dışa aktarıp aktarmama"
 
 #: DynamicWeb/dynamicweb.py:4844
 msgid "Export addresses"
-msgstr ""
+msgstr "Adresleri dışa aktarın"
 
 #: DynamicWeb/dynamicweb.py:4845
 msgid "Whether to export addresses in the web pages"
-msgstr ""
+msgstr "Web sayfalarındaki adreslerin dışa aktarılıp aktarılmayacağı"
 
 #: DynamicWeb/dynamicweb.py:4853
 msgid "Whether or not to include the Repository Pages."
-msgstr ""
+msgstr "Depo Sayfalarının dahil edilip edilmeyeceği."
 
 #: DynamicWeb/dynamicweb.py:4856
 msgid "Include images and media"
-msgstr ""
+msgstr "Resimler ve medya dahil edin"
 
 #: DynamicWeb/dynamicweb.py:4857
 msgid "Whether to include images and media in the web pages"
 msgstr ""
+"Web sayfalarında görüntü ve medya içeriklerinin dahil edilip edilmeyeceği"
 
 #: DynamicWeb/dynamicweb.py:4862
 msgid "Copy, rename files with an internal Gramps identifier"
 msgstr ""
+"Dosyaları dahili bir Gramps tanımlayıcısıyla kopyalayın, yeniden adlandırın"
 
 #: DynamicWeb/dynamicweb.py:4865
 msgid "Copy, keep file names unchanged"
-msgstr ""
+msgstr "Kopyala, dosya adlarını değiştirmeden koru"
 
 #: DynamicWeb/dynamicweb.py:4866
 msgid "Do not copy, reference existing files"
-msgstr ""
+msgstr "Kopyalamayın, mevcut dosyalara referans verin"
 
 #: DynamicWeb/dynamicweb.py:4868
 msgid "Images and media"
-msgstr ""
+msgstr "Resimler ve medya"
 
 #: DynamicWeb/dynamicweb.py:4871
 msgid "Whether to make a copy of the media"
-msgstr ""
+msgstr "Medyanın bir kopyasının yapılıp yapılmayacağı"
 
 #: DynamicWeb/dynamicweb.py:4874
 msgid "Print the notes type"
-msgstr ""
+msgstr "Not türünü yazdırın"
 
 #: DynamicWeb/dynamicweb.py:4876
 msgid "Whether to print the notes type in the notes text"
-msgstr ""
+msgstr "Notlar metninde not türünün yazdırılıp yazdırılmayacağı"
 
 #: DynamicWeb/dynamicweb.py:4880
 msgid "Print place pages"
-msgstr ""
+msgstr "Yer sayfalarını yazdırın"
 
 #: DynamicWeb/dynamicweb.py:4881
 msgid "Whether to show pages for the places"
-msgstr ""
+msgstr "Yerler için sayfaların gösterilip gösterilmeyeceği"
 
 #: DynamicWeb/dynamicweb.py:4916
 msgid "Choose your choice of map service for creating the Place Map Pages"
 msgstr ""
+"Yer Haritası Sayfalarını oluşturmak için tercih ettiğiniz harita hizmetini "
+"seçin"
 
 #: DynamicWeb/dynamicweb.py:4921
 msgid "Google map API key"
-msgstr ""
+msgstr "Google Harita API anahtarı"
 
 #: DynamicWeb/dynamicweb.py:4922
 msgid "The API key used for the Google map"
-msgstr ""
+msgstr "Google haritası için kullanılan API anahtarı"
 
 #: DynamicWeb/dynamicweb.py:4940
 msgid "Whether or not to include family pages"
-msgstr ""
+msgstr "Aile sayfalarının dahil edilip edilmeyeceği"
 
 #: DynamicWeb/dynamicweb.py:4954
 msgid ""
 "Whether to include half and/ or step-siblings with the parents and siblings"
 msgstr ""
+"Üvey ve/veya yarı üvey kardeşlerin ebeveynler ve kardeşlerle birlikte dahil "
+"edilip edilmeyeceği"
 
 #: DynamicWeb/dynamicweb.py:4963
 msgid "Enable page configuration"
-msgstr ""
+msgstr "Sayfa yapılandırmasını etkinleştir"
 
 #: DynamicWeb/dynamicweb.py:4964
 msgid "Whether to enable page configuration"
-msgstr ""
+msgstr "Sayfa yapılandırmasının etkinleştirilip etkinleştirilmeyeceği"
 
 #: DynamicWeb/dynamicweb.py:4969
 msgid "Whether to use tabbed panels for the different sections of the pages."
 msgstr ""
+"Sayfaların farklı bölümleri için sekmeli panellerin kullanılıp "
+"kullanılmayacağı."
 
 #: DynamicWeb/dynamicweb.py:4975
 msgid "Whether to show the last modification time in the pages footer"
 msgstr ""
+"Sayfanın alt bilgisinde son değişiklik zamanının gösterilip gösterilmeyeceği"
 
 #: DynamicWeb/dynamicweb.py:4983
 msgid "Whether to insert sources author in the sources title"
-msgstr ""
+msgstr "Kaynak başlığında kaynak yazarının eklenip eklenmeyeceği"
 
 #: DynamicWeb/dynamicweb.py:4988
 msgid "Whether to hide the Gramps ID"
-msgstr ""
+msgstr "Gramps kimliğinin gizlenip gizlenmeyeceği"
 
 #: DynamicWeb/dynamicweb.py:4996
 msgid "List"
-msgstr ""
+msgstr "Liste"
 
 #: DynamicWeb/dynamicweb.py:4997 GrampyScript/GrampyScript.py:382
 msgid "Table"
-msgstr ""
+msgstr "Tablo"
 
 #: DynamicWeb/dynamicweb.py:5003
 msgid "Default format for the surnames index"
-msgstr ""
+msgstr "Soyadları dizini için varsayılan biçim"
 
 #: DynamicWeb/dynamicweb.py:5004
 msgid "The default format for the surnames index"
-msgstr ""
+msgstr "Soyadları dizini için varsayılan biçim"
 
 #: DynamicWeb/dynamicweb.py:5009
 msgid "Default format for the persons index"
-msgstr ""
+msgstr "Kişiler dizini için varsayılan biçim"
 
 #: DynamicWeb/dynamicweb.py:5010
 msgid "The default format for the persons index"
-msgstr ""
+msgstr "Kişiler dizini için varsayılan biçim"
 
 #: DynamicWeb/dynamicweb.py:5015
 msgid "Default format for the families index"
-msgstr ""
+msgstr "Aileler dizini için varsayılan biçim"
 
 #: DynamicWeb/dynamicweb.py:5016
 msgid "The default format for the families index"
-msgstr ""
+msgstr "Aileler dizini için varsayılan biçim"
 
 #: DynamicWeb/dynamicweb.py:5021
 msgid "Default format for the sources index"
-msgstr ""
+msgstr "Kaynaklar dizini için varsayılan biçim"
 
 #: DynamicWeb/dynamicweb.py:5022
 msgid "The default format for the sources index"
-msgstr ""
+msgstr "Kaynaklar dizini için varsayılan biçim"
 
 #: DynamicWeb/dynamicweb.py:5027
 msgid "Default format for the places index"
-msgstr ""
+msgstr "Yerler dizini için varsayılan biçim"
 
 #: DynamicWeb/dynamicweb.py:5028
 msgid "The default format for the places index"
-msgstr ""
+msgstr "Yerler dizini için varsayılan biçim"
 
 #: DynamicWeb/dynamicweb.py:5040
 msgid ""
 "Whether to include dates columns (birth, death, marriage) on the index pages"
 msgstr ""
+"Dizin sayfalarına tarih sütunlarının (doğum, ölüm, evlilik) dahil edilip "
+"edilmeyeceği"
 
 #: DynamicWeb/dynamicweb.py:5058
 msgid "Generate a families index page"
-msgstr ""
+msgstr "Aileler için bir dizin sayfası oluşturun"
 
 #: DynamicWeb/dynamicweb.py:5061
 msgid "Whether to generate an index page for families"
-msgstr ""
+msgstr "Aileler için bir dizin sayfası oluşturulup oluşturulmayacağı"
 
 #: DynamicWeb/dynamicweb.py:5068
 msgid "Whether to include a column showing the media path"
-msgstr ""
+msgstr "Medya yolunu gösteren bir sütunun dahil edilip edilmeyeceği"
 
 #: DynamicWeb/dynamicweb.py:5074
 msgid ""
@@ -4719,158 +4946,173 @@ msgid ""
 "example, in the media index page, the names of the individuals, families, "
 "places, sources that reference the media."
 msgstr ""
+"Dizin sayfalarında öğelere ilişkin referansların dahil edilip edilmeyeceği. "
+"Örneğin, medya dizin sayfasında, medyaya atıfta bulunan bireylerin, "
+"ailelerin, yerlerin ve kaynakların adları."
 
 #: DynamicWeb/dynamicweb.py:5080
 msgid "Default number of entries in the indexes"
-msgstr ""
+msgstr "Dizinlerdeki varsayılan giriş sayısı"
 
 #: DynamicWeb/dynamicweb.py:5085
 msgid "The default number of entries shown in one index page"
-msgstr ""
+msgstr "Bir dizin sayfasında gösterilen varsayılan giriş sayısı"
 
 #: DynamicWeb/dynamicweb.py:5093
 #: LifeLineChartView/_dummy_translation_string_po.py:101
 msgid "Maximum number of generations"
-msgstr ""
+msgstr "Maksimum nesil sayısı"
 
 #: DynamicWeb/dynamicweb.py:5096
 msgid ""
 "The maximum number of generations to include in the ancestor and descendant "
 "trees and graphs"
 msgstr ""
+"Ata ve soyundan gelen ağaçları ve grafiklerinde dahil edilecek maksimum "
+"nesil sayısı"
 
 #: DynamicWeb/dynamicweb.py:5106
 msgid "Choose the default SVG tree graph type"
-msgstr ""
+msgstr "Varsayılan SVG ağaç grafiği türünü seçin"
 
 #: DynamicWeb/dynamicweb.py:5114
 msgid "Choose the default SVG tree graph shape"
-msgstr ""
+msgstr "Varsayılan SVG ağaç grafiği şeklini seçin"
 
 #: DynamicWeb/dynamicweb.py:5123
 msgid "Choose the default SVG tree parents distribution (for fan charts only)"
 msgstr ""
+"Varsayılan SVG ağaç ebeveynleri dağılımını seçin (yalnızca yelpaze "
+"grafikleri için)"
 
 #: DynamicWeb/dynamicweb.py:5133
 msgid "Choose the default SVG tree children distribution (for fan charts only)"
 msgstr ""
+"Yelpaze grafikler (yalnızca yelpaze grafikler) için varsayılan SVG ağaç "
+"çocuk dağılımını seçin"
 
 #: DynamicWeb/dynamicweb.py:5144
 msgid ""
 "Choose the background color scheme for the persons in the SVG tree graph"
-msgstr ""
+msgstr "SVG ağaç grafiğindeki kişiler için arka plan renk şemasını seçin"
 
 #: DynamicWeb/dynamicweb.py:5152 Themes/themes.py:175 Themes/themes.py:225
 msgid "Theme"
-msgstr ""
+msgstr "Tema"
 
 #: DynamicWeb/dynamicweb.py:5185
 msgid "Pages"
-msgstr ""
+msgstr "Sayfalar"
 
 #: DynamicWeb/dynamicweb.py:5189
 msgid "A note to be used as the page header"
-msgstr ""
+msgstr "Sayfa başlığı olarak kullanılacak bir not"
 
 #: DynamicWeb/dynamicweb.py:5192
 msgid "HTML user brand name / icon"
-msgstr ""
+msgstr "HTML kullanıcı marka adı / simgesi"
 
 #: DynamicWeb/dynamicweb.py:5194
 msgid "A note to be used as the brand name or image in the menu"
-msgstr ""
+msgstr "Menüde marka adı veya resim olarak kullanılmak üzere bir not"
 
 #: DynamicWeb/dynamicweb.py:5203
 msgid "Custom pages"
-msgstr ""
+msgstr "Özel sayfalar"
 
 #: DynamicWeb/dynamicweb.py:5208
 #, python-format
 msgid "Title for the custom page %(index)i"
-msgstr ""
+msgstr "Özel sayfa %(index)i için başlık"
 
 #: DynamicWeb/dynamicweb.py:5212
 #, python-format
 msgid "Name for the custom page %(index)i"
-msgstr ""
+msgstr "Özel sayfa %(index)i için ad"
 
 #: DynamicWeb/dynamicweb.py:5217
 #, python-format
 msgid "Note for custom page %(index)i"
-msgstr ""
+msgstr "Özel sayfa %(index)i için not"
 
 #: DynamicWeb/dynamicweb.py:5220
 msgid "A note to be used for the custom page content.\n"
-msgstr ""
+msgstr "Özel sayfa içeriği için kullanılacak bir not.\n"
 
 #: DynamicWeb/dynamicweb.py:5225
 #, python-format
 msgid "Menu for the custom page %(index)i"
-msgstr ""
+msgstr "Özel sayfa %(index)i için menü"
 
 #: DynamicWeb/dynamicweb.py:5227
 msgid "Whether to print a menu for the custom page"
-msgstr ""
+msgstr "Özel sayfa için bir menünün yazdırılıp yazdırılmayacağı"
 
 #: DynamicWeb/dynamicweb.py:5231
 msgid "Pages selection"
-msgstr ""
+msgstr "Sayfa seçimi"
 
 #: DynamicWeb/dynamicweb.py:5235
 msgid "Number of pages"
-msgstr ""
+msgstr "Sayfa sayısı"
 
 #: DynamicWeb/dynamicweb.py:5237
 msgid "Number pages in the web site menu."
-msgstr ""
+msgstr "Web sitesinin menüsündeki sayfaları numaralandır."
 
 #: DynamicWeb/dynamicweb.py:5257
 #, python-format
 msgid "Contents of page %(index)i"
-msgstr ""
+msgstr "Sayfanın içeriği %(index)i"
 
 #: DynamicWeb/dynamicweb.py:5261
 msgid "Contents of the page"
-msgstr ""
+msgstr "Sayfanın içeriği"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:30
 #: EditExifMetadata/editexifmetadata.py:727
 #: EditExifMetadata/editexifmetadata.py:1139
 #: EditExifMetadata/editexifmetadata.py:1151
 msgid "Edit Image Exif Metadata"
-msgstr ""
+msgstr "Resim Exif Meta Verilerini Düzenle"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
 msgstr ""
+"Gramplet ile görüntü Exif meta verilerini görüntüleyin, düzenleyin ve "
+"kaydedin"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:35
 msgid "Edit Exif Metadata"
-msgstr ""
+msgstr "Exif Meta Verilerini Düzenle"
 
 #: EditExifMetadata/editexifmetadata.py:139
 msgid "<-- Image Types -->"
-msgstr ""
+msgstr "<-- Resim Türleri -->"
 
 #: EditExifMetadata/editexifmetadata.py:162
 msgid ""
 "Warning:  Changing this entry will update the Media object title field in "
 "Gramps not Exiv2 metadata."
 msgstr ""
+"Uyarı:  Bu girdinin değiştirilmesi, Exiv2 meta verilerinde değil, "
+"Gramps'taki Medya nesnesi başlık alanında güncelleme yapacaktır."
 
 #: EditExifMetadata/editexifmetadata.py:165
 msgid "Provide a short description for this image."
-msgstr ""
+msgstr "Bu resim için kısa bir açıklama sağlayın."
 
 #: EditExifMetadata/editexifmetadata.py:167
 msgid ""
 "Enter the Artist/ Author of this image.  The person's name or the company "
 "who is responsible for the creation of this image."
 msgstr ""
+"Bu resmin sanatçısını/yazarını girin. Resmin oluşturulmasından sorumlu "
+"kişinin adı veya şirketin adı."
 
 #: EditExifMetadata/editexifmetadata.py:171
 msgid "Enter the copyright information for this image. \n"
-msgstr ""
+msgstr "Bu resmin telif hakkı bilgilerini girin. \n"
 
 #: EditExifMetadata/editexifmetadata.py:173
 msgid ""
@@ -4878,36 +5120,49 @@ msgid ""
 "photograph.\n"
 "Example: 1830-01-1 09:30:59"
 msgstr ""
+"Fotoğraftaki gibi, görüntünün ilk oluşturulduğu/çekildiği orijinal tarih/"
+"saat.\n"
+"Örnek: 1830-01-01 09:30:59"
 
 #: EditExifMetadata/editexifmetadata.py:177
 msgid ""
 "This is the date/ time that the image was last changed/ modified.\n"
 "Example: 2011-05-24 14:30:00"
 msgstr ""
+"Bu, resmin en son değiştirildiği/düzenlendiği tarih/saattir.\n"
+"Örnek: 2011-05-24 14:30:00"
 
 #: EditExifMetadata/editexifmetadata.py:180
 msgid ""
 "Enter the Latitude GPS coordinates for this image,\n"
 "Example: -43.722965, -43:43:22, 38° 38′ 03″ N"
 msgstr ""
+"Bu resim için enlem GPS koordinatlarını girin,\n"
+"Örnek: -43.722965, -43:43:22, 38° 38′ 03″ N"
 
 #: EditExifMetadata/editexifmetadata.py:183
 msgid ""
 "Enter the Longitude GPS coordinates for this image,\n"
 "Example: -10.396378, -10:23:46, 105° 6′ 6″ W"
 msgstr ""
+"Bu resim için boylam GPS koordinatlarını girin,\n"
+"Örnek: -10.396378, -10:23:46, 105° 6′ 6″ W"
 
 #: EditExifMetadata/editexifmetadata.py:186
 msgid ""
 "This is the measurement of Above or Below Sea Level.  It is measured in "
 "meters.  Example: 200.558, -200.558"
 msgstr ""
+"Bu, deniz seviyesinin üstünde veya altında olma durumunun ölçümüdür. Metre "
+"cinsinden ölçülür. Örnek: 200.558, -200.558"
 
 #: EditExifMetadata/editexifmetadata.py:195
 msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
 msgstr ""
+"'Resim Exif Meta Verilerini Düzenle' için Gramps Wiki Yardım sayfasını web "
+"tarayıcınızda görüntüler."
 
 #: EditExifMetadata/editexifmetadata.py:198
 msgid ""
@@ -4915,55 +5170,67 @@ msgid ""
 "Exif metadata.\n"
 "  It will also allow you to be able to Save the modified metadata."
 msgstr ""
+"Bu işlem, bu resmin Exif meta verilerini düzenlemenize/değiştirmenize olanak "
+"tanıyan yeni bir pencere açacaktır.\n"
+"Ayrıca, değiştirilen meta verileri kaydetmenize de olanak tanıyacaktır."
 
 #: EditExifMetadata/editexifmetadata.py:202
 msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
 msgstr ""
+"Küçük resim görüntüleme alanını gösteren bir açılır pencere oluşturulacaktır"
 
 #: EditExifMetadata/editexifmetadata.py:205
 msgid ""
 "Select from a drop- down box the image file type that you would like to "
 "convert your non- Exiv2 compatible media object to."
 msgstr ""
+"Exiv2 uyumlu olmayan medya nesnenizi dönüştürmek istediğiniz resim dosyası "
+"türünü açılır kutudan seçin."
 
 #: EditExifMetadata/editexifmetadata.py:209
 msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
 msgstr ""
+"Eğer resminiz Exif meta verilerinin okunup yazılabileceği bir resim türünde "
+"değilse, o bu özelliğe sahip bir türe dönüştürülsün mü?"
 
 #: EditExifMetadata/editexifmetadata.py:213
 msgid ""
 "WARNING:  This will completely erase all Exif metadata from this image!  Are "
 "you sure that you want to do this?"
 msgstr ""
+"UYARI: Bu işlem, bu resimdeki tüm Exif meta verilerini tamamen silecektir! "
+"Bunu yapmak istediğinizden emin misiniz?"
 
 #: EditExifMetadata/editexifmetadata.py:217
 msgid "Clear GPS"
-msgstr ""
+msgstr "GPS'i temizle"
 
 #: EditExifMetadata/editexifmetadata.py:218
 msgid "Thumbnail"
-msgstr ""
+msgstr "Küçük resim"
 
 #: EditExifMetadata/editexifmetadata.py:406
 msgid "Select an image to begin..."
-msgstr ""
+msgstr "Başlamak için bir resim seçin..."
 
 #: EditExifMetadata/editexifmetadata.py:425
 msgid ""
 "Image is NOT readable,\n"
 "Please choose a different image..."
 msgstr ""
+"Resim okunamıyor,\n"
+"Lütfen farklı bir resim seçin..."
 
 #: EditExifMetadata/editexifmetadata.py:445
 msgid "Please convert this image to an Exiv2- compatible image type..."
-msgstr ""
+msgstr "Lütfen bu resmi Exiv2 uyumlu bir resim türüne dönüştürün..."
 
 #: EditExifMetadata/editexifmetadata.py:469
 #, python-brace-format
 msgid "Image Size : {width} x {height} pixels"
-msgstr ""
+msgstr "Resim Boyutu: {width} x {height} piksel"
 
 #: EditExifMetadata/editexifmetadata.py:485
 #: EditExifMetadata/editexifmetadata.py:1444
@@ -4971,76 +5238,87 @@ msgid ""
 "Image is NOT writable,\n"
 "You will NOT be able to save Exif metadata...."
 msgstr ""
+"Resim üzerine yazı yazılamıyor,\n"
+"Exif meta verilerini kaydedemezsiniz...."
 
 #: EditExifMetadata/editexifmetadata.py:652
 msgid "Click Close to close this Thumbnail View Area."
 msgstr ""
+"Bu Küçük Resim Görüntüleme Alanını kapatmak için Kapat düğmesine tıklayın."
 
 #: EditExifMetadata/editexifmetadata.py:658
 msgid "Thumbnail View Area"
-msgstr ""
+msgstr "Küçük Resim Görüntüleme Alanı"
 
 #: EditExifMetadata/editexifmetadata.py:728
 msgid ""
 "WARNING: You are about to convert this image into a .jpeg image.  Are you "
 "sure that you want to do this?"
 msgstr ""
+"UYARI: Bu resmi .jpeg biçimine dönüştürmek üzeresiniz. Bunu yapmak "
+"istediğinizden emin misiniz?"
 
 #: EditExifMetadata/editexifmetadata.py:730
 msgid "Convert and Delete"
-msgstr ""
+msgstr "Dönüştür ve Sil"
 
 #: EditExifMetadata/editexifmetadata.py:811
 msgid ""
 "Your image has been converted and the original file has been deleted, and "
 "the full path has been updated!"
 msgstr ""
+"Resminiz dönüştürüldü, orijinal dosya silindi ve tam dosya yolu güncellendi!"
 
 #: EditExifMetadata/editexifmetadata.py:816
 msgid ""
 "There has been an error, Please check your source and destination file "
 "paths..."
 msgstr ""
+"Bir hata oluştu, lütfen kaynak ve hedef dosya yollarınızı kontrol edin..."
 
 #: EditExifMetadata/editexifmetadata.py:820
 msgid ""
 "There was an error in deleting the original file.  You will need to delete "
 "it yourself!"
 msgstr ""
+"Orijinal dosya silinirken bir hata oluştu. Dosyayı kendiniz silmeniz "
+"gerekecek!"
 
 #: EditExifMetadata/editexifmetadata.py:838
 msgid "There was an error in converting your image file."
-msgstr ""
+msgstr "Resim dosyanızı dönüştürürken bir hata oluştu."
 
 #: EditExifMetadata/editexifmetadata.py:848
 msgid "Media Path Update"
-msgstr ""
+msgstr "Medya Yolu Güncellemesi"
 
 #: EditExifMetadata/editexifmetadata.py:857
 msgid "There has been an error in updating the image file's path!"
-msgstr ""
+msgstr "Resim dosyasının yolunu güncellerken bir hata oluştu!"
 
 #: EditExifMetadata/editexifmetadata.py:890
 msgid ""
 "Click the close button when you are finished modifying this image's Exif "
 "metadata."
 msgstr ""
+"Bu resmin Exif meta verilerini düzenlemeyi bitirdiğinizde kapat düğmesine "
+"tıklayın."
 
 #: EditExifMetadata/editexifmetadata.py:928
 msgid "Saves a copy of the data fields into the image's Exif metadata."
-msgstr ""
+msgstr "Veri alanlarının bir kopyasını resmin Exif meta verilerine kaydeder."
 
 #: EditExifMetadata/editexifmetadata.py:932
 msgid "Re -display the data fields that were cleared from the Edit Area."
-msgstr ""
+msgstr "Düzenleme alanından silinen veri alanlarını yeniden görüntüleyin."
 
 #: EditExifMetadata/editexifmetadata.py:936
 msgid "This button will clear all of the data fields shown here."
-msgstr ""
+msgstr "Bu düğme burada gösterilen tüm veri alanlarını temizleyecektir."
 
 #: EditExifMetadata/editexifmetadata.py:940
 msgid "This button will clear all of the GPS fields shown here."
-msgstr ""
+msgstr "Bu düğme burada gösterilen tüm GPS alanlarını temizleyecektir."
 
 #: EditExifMetadata/editexifmetadata.py:944
 msgid ""
@@ -5048,208 +5326,217 @@ msgid ""
 "WARNING: This action will NOT Save any changes/ modification made to this "
 "image's Exif metadata."
 msgstr ""
+"Bu açılır düzenleme penceresini kapatır.\n"
+"UYARI: Bu işlem, bu resmin Exif meta verilerinde yapılan hiçbir değişikliği/"
+"düzenlemeyi KAYDETMEYECEKTİR."
 
 #: EditExifMetadata/editexifmetadata.py:973
 msgid "Media Object Title"
-msgstr ""
+msgstr "Medya Nesnesi Başlığı"
 
 #: EditExifMetadata/editexifmetadata.py:982
 msgid "media Title: "
-msgstr ""
+msgstr "Medya Başlığı: "
 
 #: EditExifMetadata/editexifmetadata.py:997
 msgid "General Data"
-msgstr ""
+msgstr "Genel Veriler"
 
 #: EditExifMetadata/editexifmetadata.py:1007
 msgid "Description: "
-msgstr ""
+msgstr "Açıklama: "
 
 #: EditExifMetadata/editexifmetadata.py:1008
 msgid "Artist: "
-msgstr ""
+msgstr "Sanatçı: "
 
 #: EditExifMetadata/editexifmetadata.py:1009
 msgid "Copyright: "
-msgstr ""
+msgstr "Telif hakkı: "
 
 #: EditExifMetadata/editexifmetadata.py:1023
 msgid "Date/ Time"
-msgstr ""
+msgstr "Tarih/Saat"
 
 #: EditExifMetadata/editexifmetadata.py:1038
 msgid "Original: "
-msgstr ""
+msgstr "Orijinal: "
 
 #: EditExifMetadata/editexifmetadata.py:1039
 msgid "Modified: "
-msgstr ""
+msgstr "Değiştirildi: "
 
 #: EditExifMetadata/editexifmetadata.py:1058
 msgid "Latitude/ Longitude/ Altitude GPS coordinates"
-msgstr ""
+msgstr "Enlem/Boylam/Rakım GPS koordinatları"
 
 #: EditExifMetadata/editexifmetadata.py:1073
 msgid "Latitude :"
-msgstr ""
+msgstr "Enlem:"
 
 #: EditExifMetadata/editexifmetadata.py:1074
 msgid "Longitude :"
-msgstr ""
+msgstr "Boylam:"
 
 #: EditExifMetadata/editexifmetadata.py:1075
 msgid "Altitude :"
-msgstr ""
+msgstr "Rakım:"
 
 #: EditExifMetadata/editexifmetadata.py:1118
 msgid "Bad Date/Time"
-msgstr ""
+msgstr "Yanlış Tarih/Saat"
 
 #: EditExifMetadata/editexifmetadata.py:1126
 msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
-msgstr ""
+msgstr "Geçersiz enlem (sözdizimi: 18°9′48,21″G, -18,2412 veya -18:9:48,21)"
 
 #: EditExifMetadata/editexifmetadata.py:1131
 msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
-msgstr ""
+msgstr "Geçersiz boylam (sözdizimi: 18°9′48.21″E, -18.2412 veya -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1140
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image."
-msgstr ""
+msgstr "UYARI! Bu resmin Exif meta verilerini tamamen silmek üzeresiniz."
 
 #: EditExifMetadata/editexifmetadata.py:1142
 #: EditExifMetadata/editexifmetadata.py:1154
 msgid "Delete?"
-msgstr ""
+msgstr "Silinsin mi?"
 
 #: EditExifMetadata/editexifmetadata.py:1152
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image."
-msgstr ""
+msgstr "UYARI! Bu resimden GPS meta verilerini tamamen silmek üzeresiniz."
 
 #: EditExifMetadata/editexifmetadata.py:1337
 msgid "Media Title Update"
-msgstr ""
+msgstr "Medya Başlığı Güncellemesi"
 
 #: EditExifMetadata/editexifmetadata.py:1361
 msgid "Media Object Date Created"
-msgstr ""
+msgstr "Medya Nesnesi Oluşturulma Tarihi"
 
 #: EditExifMetadata/editexifmetadata.py:1426
 msgid "Saving Exif metadata to this image..."
-msgstr ""
+msgstr "Bu resme Exif meta verileri kaydediliyor..."
 
 #: EditExifMetadata/editexifmetadata.py:1469
 msgid "All Exif metadata has been deleted from this image..."
-msgstr ""
+msgstr "Bu resimden tüm Exif meta verileri silindi..."
 
 #: EditExifMetadata/editexifmetadata.py:1474
 msgid "There was an error in stripping the Exif metadata from this image..."
-msgstr ""
+msgstr "Bu resimden Exif meta verilerini kaldırma işleminde bir hata oluştu..."
 
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 #: EventDescriptionEditor/EventDescriptionEditor.py:52
 #: EventDescriptionEditor/EventDescriptionEditor.py:64
 msgid "Event Description Editor"
-msgstr ""
+msgstr "Etkinlik Açıklaması Düzenleyicisi"
 
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
 msgid ""
 "A tool to find and replace a string in event description of multiple events."
 msgstr ""
+"Birden fazla etkinliğin açıklamasında bir metni bulup değiştirmek için bir "
+"araç."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:75
 msgid "Search substring..."
-msgstr ""
+msgstr "Alt dizeyi ara..."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:106
 #, python-format
 msgid "%s event descriptions of %s events were changed."
-msgstr ""
+msgstr "%s etkinliğin %s etkinlik açıklaması değiştirildi."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:139
 #: PlaceCleanup/placecleanup.glade:895 PlaceCleanup/placecleanup.py:267
 msgid "Find"
-msgstr ""
+msgstr "Bul"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:145
 msgid "Replace substring only"
-msgstr ""
+msgstr "Yalnızca alt dizeyi değiştirin"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:146
 msgid ""
 "If True only the substring will be replaced, otherwise the whole description "
 "will be deleted and replaced by the new one."
 msgstr ""
+"Doğruysa yalnızca alt dize değiştirilecektir; aksi takdirde tüm açıklama "
+"silinecek ve yenisiyle değiştirilecektir."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:151
 msgid "Allow regex"
-msgstr ""
+msgstr "Düzenli ifadelere izin ver"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."
-msgstr ""
+msgstr "Normal ifadelerin kullanılmasına izin verin."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
-msgstr ""
+msgstr "Kişi GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:31
 msgid "_Person GEXF"
-msgstr ""
+msgstr "_Kişi GEXF"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:32
 msgid "GEXF is used in many network graph applications."
-msgstr ""
+msgstr "GEXF birçok ağ grafiği uygulamasında kullanılır."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:40
 msgid "GEXF export options"
-msgstr ""
+msgstr "GEXF dışa aktarma seçenekleri"
 
 #: ExportProlog/ExportProlog.gpr.py:4
 msgid "Prolog Export"
-msgstr ""
+msgstr "Prolog Dışa Aktarma"
 
 #: ExportProlog/ExportProlog.gpr.py:6
 msgid "Exports data into a Prolog fact format.  Data is in Unicode (utf-8)"
 msgstr ""
+"Verileri Prolog olgu biçimine aktarır. Veriler Unicode (utf-8) biçimindedir"
 
 #: ExportRaw/ExportRaw.gpr.py:4
 msgid "Raw Export"
-msgstr ""
+msgstr "Ham Dışa Aktarma"
 
 #: ExportRaw/ExportRaw.gpr.py:5
 msgid "This is a raw python object dump"
-msgstr ""
+msgstr "Bu ham bir Python nesnesi dökümüdür"
 
 #: ExportRaw/ExportRaw.gpr.py:13
 msgid "Raw options"
-msgstr ""
+msgstr "Ham seçenekler"
 
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:32
 msgid "Extended Person Attributes"
-msgstr ""
+msgstr "Genişletilmiş Kişi Öznitelikleri"
 
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:40
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:56
 msgid "Extended Attributes"
-msgstr ""
+msgstr "Genişletilmiş Öznitelikler"
 
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:48
 msgid "Extended Family Attributes"
-msgstr ""
+msgstr "Genişletilmiş Aile Öznitelikleri"
 
 #: ExtendedAttributes/ExtendedAttributes.py:54
 msgid ""
 "Double-click on a row to edit the object containing the selected attribute."
 msgstr ""
+"Seçilen özniteliği içeren nesneyi düzenlemek için bir satıra çift tıklayın."
 
 #: ExtractCity/changenames.glade:94
 msgid "_Toggle Selected"
-msgstr ""
+msgstr "_Seçilenleri Aç/Kapat"
 
 #: ExtractCity/changenames.glade:98
 msgid ""
@@ -5257,14 +5544,18 @@ msgid ""
 "(add to group), or <shift> (extend group) click, or with <ctrl> or <shift> "
 "arrow keys and 'space'.  Or <ctrl>'a' for select all."
 msgstr ""
+"Seçili satırlardaki onay işaretlerini açıp kapatır, Satırlar <ctrl> (gruba "
+"ekle) veya <shift> (grubu genişlet) tıklamasıyla ya da <ctrl> veya <shift> "
+"ok tuşları ve 'boşluk' tuşu ile seçilebilir. Ya da tümünü seçmek için <ctrl>"
+"'a'."
 
 #: ExtractCity/extractcity.gpr.py:34
 msgid "Extract Place Data from a Place Title"
-msgstr ""
+msgstr "Bir Yer Adından Yer Verilerini Çıkarma"
 
 #: ExtractCity/extractcity.gpr.py:35
 msgid "Attempts to extract city and state/province from a place title"
-msgstr ""
+msgstr "Bir yer başlığından şehir ve eyalet/il çıkarma girişimleri"
 
 #: ExtractCity/extractcity.py:402
 msgid "Place title"
@@ -5272,431 +5563,443 @@ msgstr "Yer başlığı"
 
 #: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
 msgid "Extract Place data"
-msgstr ""
+msgstr "Yer verilerini çıkar"
 
 #: ExtractCity/extractcity.py:543
 msgid "No place information could be extracted."
-msgstr ""
+msgstr "Herhangi bir konum bilgisi çıkarılamadı."
 
 #: ExtractCity/extractcity.py:564
 msgid ""
 "Below is a list of Places with the possible data that can be extracted from "
 "the place title. Select the places you wish Gramps to convert."
 msgstr ""
+"Aşağıda, yer başlığından çıkarılabilecek olası verilerle birlikte Yerler "
+"listesi bulunmaktadır. Gramps’in dönüştürmesini istediğiniz yerleri seçin."
 
 #: FRWebConnectPack/FRWebPack.gpr.py:11
 msgid "FR Web Connect Pack"
-msgstr ""
+msgstr "FR Web Bağlantı Paketi"
 
 #: FRWebConnectPack/FRWebPack.gpr.py:12
 msgid "Collection of Web sites for the FR (requires libwebconnect)"
-msgstr ""
+msgstr "FR için web sitelerinin derlemesi (libwebconnect gerektirir)"
 
 #: FRWebConnectPack/FRWebPack.py:41
 msgid "Cultural ministry (France)"
-msgstr ""
+msgstr "Kültür Bakanlığı (Fransa)"
 
 #: FRWebConnectPack/FRWebPack.py:42
 msgid "Genealogical bank"
-msgstr ""
+msgstr "Soybilim bankası"
 
 #: FRWebConnectPack/FRWebPack.py:44
 msgid "OrigineFile (Quebec)"
-msgstr ""
+msgstr "Orijinal Dosya (Quebec)"
 
 #: FRWebConnectPack/FRWebPack.py:50
 msgid "Cyber genealogy"
-msgstr ""
+msgstr "Siber soybilim"
 
 #: FRWebConnectPack/FRWebPack.py:53
 msgid "RetroNews (Bnf)"
-msgstr ""
+msgstr "RetroNews (Bnf)"
 
 #: FRWebConnectPack/FRWebPack.py:58
 msgid "Hathi Trust Digital Library (fr)"
-msgstr ""
+msgstr "HathiTrust Dijital Kütüphanesi (fr)"
 
 #: FRWebConnectPack/FRWebPack.py:59
 msgid "Open Library (fr)"
-msgstr ""
+msgstr "Açık Kütüphane (fr)"
 
 #: FRWebConnectPack/FRWebPack.py:60
 msgid "Belgium's Archives"
-msgstr ""
+msgstr "Belçika Arşivleri"
 
 #: FaceDetection/FaceDetection.gpr.py:4
 msgid "Face Detection"
-msgstr ""
+msgstr "Yüz Algılama"
 
 #: FaceDetection/FaceDetection.gpr.py:5
 msgid "Gramplet for detecting and assigning faces"
-msgstr ""
+msgstr "Yüzleri algılamak ve tanımlamak için kullanılan Gramplet"
 
 #: FaceDetection/FaceDetection.gpr.py:13
 msgid "Faces"
-msgstr ""
+msgstr "Yüzler"
 
 #: FaceDetection/FaceDetection.py:63
 msgid "OpenCV-Python is not installed"
-msgstr ""
+msgstr "OpenCV-Python yüklü değil"
 
 #: FaceDetection/FaceDetection.py:72
 msgid "Detect New Faces"
-msgstr ""
+msgstr "Yeni Yüzleri Algıla"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:88
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:103
 msgid "Family Relationship Tool"
-msgstr ""
+msgstr "Aile İlişkileri Aracı"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:26
 msgid "Mass-edit the family relationship type for a group of families."
-msgstr ""
+msgstr "Bir grup aile için aile ilişkisi türünü toplu olarak düzenleyin."
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:53
 msgid "All Families"
-msgstr ""
+msgstr "Tüm Aileler"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:64
 msgid ""
 "Choose the set of families to process.\n"
 "Create custom filters if empty."
 msgstr ""
+"İşlem yapılacak aile grubunu seçin.\n"
+"Boşsa özel filtreler oluşturun."
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:70
 msgid "Relationship Type"
-msgstr ""
+msgstr "İlişki Türü"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:71
 msgid ""
 "Choose the new family relationship type.\n"
 "Custom relationship types aren't supported."
 msgstr ""
+"Yeni aile ilişkisi türünü seçin.\n"
+"Özel ilişki türleri desteklenmemektedir."
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:107
 msgid "Process relationships..."
-msgstr ""
+msgstr "İlişkileri işleyin..."
 
 #: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.py:126
 msgid "Family Sheet"
-msgstr ""
+msgstr "Aile Formu"
 
 #: FamilySheet/FamilySheet.gpr.py:6
 msgid ""
 "Produces a family sheet showing full information about a person and his/her "
 "partners and children."
 msgstr ""
+"Kişi ve eşleri ile çocukları hakkında eksiksiz bilgi içeren bir aile bilgi "
+"formu oluşturur."
 
 #: FamilySheet/FamilySheet.py:232 FamilySheet/FamilySheet.py:275
 #, python-format
 msgid "→ %s"
-msgstr ""
+msgstr "→ %s"
 
 #: FamilySheet/FamilySheet.py:397
 #, python-format
 msgid "Address (%(date)s): %(location)s"
-msgstr ""
+msgstr "Adres (%(date)s): %(location)s"
 
 #: FamilySheet/FamilySheet.py:401
 #, python-format
 msgid "Address: %(location)s"
-msgstr ""
+msgstr "Adres: %(location)s"
 
 #: FamilySheet/FamilySheet.py:469
 #, python-format
 msgid "; %(type)s: %(value)s"
-msgstr ""
+msgstr "; %(type)s: %(value)s"
 
 #: FamilySheet/FamilySheet.py:557
 msgid "Source references:"
-msgstr ""
+msgstr "Kaynak referansları:"
 
 #: FamilySheet/FamilySheet.py:575
 #, python-format
 msgid ", page %s"
-msgstr ""
+msgstr ", sayfa %s"
 
 #: FamilySheet/FamilySheet.py:588
 msgid "Notes:"
-msgstr ""
+msgstr "Notlar:"
 
 #: FamilySheet/FamilySheet.py:769 FamilyTree/FamilyTree.py:932
 #, python-format
 msgid "on %(ymd_date)s"
-msgstr ""
+msgstr "%(ymd_date)s tarihinde"
 
 #: FamilySheet/FamilySheet.py:771 FamilyTree/FamilyTree.py:934
 #, python-format
 msgid "in %(ym_date)s"
-msgstr ""
+msgstr "%(ym_date)s tarihinde"
 
 #: FamilySheet/FamilySheet.py:773 FamilyTree/FamilyTree.py:936
 #, python-format
 msgid "in %(y_date)s"
-msgstr ""
+msgstr "%(y_date)s tarihinde"
 
 #: FamilySheet/FamilySheet.py:777 FamilyTree/FamilyTree.py:940
 #, python-format
 msgid "on %(placeholder)s"
-msgstr ""
+msgstr "%(placeholder)s üzerinde"
 
 #: FamilySheet/FamilySheet.py:779 FamilyTree/FamilyTree.py:943
 #, python-format
 msgid "on %(placeholder)s (%(partial)s)"
-msgstr ""
+msgstr "%(placeholder)s (%(partial)s) üzerinde"
 
 #: FamilySheet/FamilySheet.py:824 FamilySheet/FamilySheet.py:826
 #: FamilyTree/FamilyTree.py:960
 #, python-format
 msgid "in %(place)s"
-msgstr ""
+msgstr "%(place)s yerinde"
 
 #: FamilySheet/FamilySheet.py:864
 msgid "Center person"
-msgstr ""
+msgstr "Merkezdeki kişi"
 
 #: FamilySheet/FamilySheet.py:866
 msgid "The person whose partners and children are printed"
-msgstr ""
+msgstr "Partnerleri ve çocukları yazdırılmış olan kişi"
 
 #: FamilySheet/FamilySheet.py:869
 msgid "Print sheets for"
-msgstr ""
+msgstr "Yazdırma sayfaları için"
 
 #: FamilySheet/FamilySheet.py:871
 msgid "Center person only"
-msgstr ""
+msgstr "Sadece merkezdeki kişi"
 
 #: FamilySheet/FamilySheet.py:872
 msgid "Center person and descendants in side branches"
-msgstr ""
+msgstr "Yan dallarda merkez kişi ve soyundan gelenler"
 
 #: FamilySheet/FamilySheet.py:873
 msgid "Center person and all descendants"
-msgstr ""
+msgstr "Merkezdeki kişi ve tüm soyundan gelenler"
 
 #: FamilySheet/FamilySheet.py:874
 msgid "Whether to include descendants, and which ones."
 msgstr ""
+"Soyundan gelenlerin dahil edilip edilmeyeceği ve hangilerinin dahil "
+"edileceği."
 
 #: FamilySheet/FamilySheet.py:880 FamilyTree/FamilyTree.py:1084
 msgid "Replace first name with call name"
-msgstr ""
+msgstr "İlk adı çağrı adıyla değiştirin"
 
 #: FamilySheet/FamilySheet.py:881 FamilyTree/FamilyTree.py:1085
 msgid "Underline call name in first name / add call name to first name"
-msgstr ""
+msgstr "İlk addaki çağrı adının altını çiz/çağrı adını ilk ada ekle"
 
 #: FamilySheet/FamilySheet.py:882
 msgid "Whether to include call name, and how."
-msgstr ""
+msgstr "Çağrı adının eklenip eklenmeyeceği ve nasıl ekleneceği."
 
 #: FamilySheet/FamilySheet.py:885
 msgid "Print placeholders for missing information"
-msgstr ""
+msgstr "Eksik bilgiler için yer tutucular yazdırın"
 
 #: FamilySheet/FamilySheet.py:909
 msgid "The basic style used for the text display"
-msgstr ""
+msgstr "Metin görüntüleme için kullanılan temel stil"
 
 #: FamilySheet/FamilySheet.py:919
 msgid "The style used for the page key on the top"
-msgstr ""
+msgstr "Üstteki sayfa anahtarı için kullanılan stil"
 
 #: FamilySheet/FamilySheet.py:928
 msgid "The style used for names"
-msgstr ""
+msgstr "Adlar için kullanılan stil"
 
 #: FamilySheet/FamilySheet.py:938
 msgid "The style used for numbers"
-msgstr ""
+msgstr "Sayılar için kullanılan stil"
 
 #: FamilySheet/FamilySheet.py:948
 msgid "The style used for footnotes (notes and source references)"
-msgstr ""
+msgstr "Dipnotlar (notlar ve kaynak referansları) için kullanılan stil"
 
 #: FamilyTree/FamilyTree.gpr.py:5
 msgid "Produces a graphical family tree."
-msgstr ""
+msgstr "Grafiksel bir aile ağacı oluşturur."
 
 #: FamilyTree/FamilyTree.py:102
 #, python-format
 msgid "Family Tree for %s"
-msgstr ""
+msgstr "%s için Aile Ağacı"
 
 #: FamilyTree/FamilyTree.py:152
 msgid "Paper too small"
-msgstr ""
+msgstr "Kağıt çok küçük"
 
 #: FamilyTree/FamilyTree.py:153
 msgid "Some elements may not appear or be badly rendered."
-msgstr ""
+msgstr "Bazı öğeler görünmeyebilir veya kötü şekilde işlenmiş olabilir."
 
 #: FamilyTree/FamilyTree.py:684
 msgid "Anonymous"
-msgstr ""
+msgstr "Anonim"
 
 #: FamilyTree/FamilyTree.py:911
 msgid "born"
-msgstr ""
+msgstr "Doğdu"
 
 #: FamilyTree/FamilyTree.py:913
 msgid "baptised"
-msgstr ""
+msgstr "Vaftiz edildi"
 
 #: FamilyTree/FamilyTree.py:915
 msgid "died"
-msgstr ""
+msgstr "Öldü"
 
 #: FamilyTree/FamilyTree.py:917
 msgid "buried"
-msgstr ""
+msgstr "Defnedildi"
 
 #: FamilyTree/FamilyTree.py:919
 msgid "cremated"
-msgstr ""
+msgstr "Yakıldı"
 
 #: FamilyTree/FamilyTree.py:921
 msgid "married"
-msgstr ""
+msgstr "Evlendi"
 
 #: FamilyTree/FamilyTree.py:923
 msgid "divorced"
-msgstr ""
+msgstr "Boşandı"
 
 #: FamilyTree/FamilyTree.py:925
 msgid "resident"
-msgstr ""
+msgstr "İkamet eden"
 
 #: FamilyTree/FamilyTree.py:971
 #, python-format
 msgid "(%(description)s)"
-msgstr ""
+msgstr "(%(description)s)"
 
 #: FamilyTree/FamilyTree.py:1044
 msgid "The center family for the tree"
-msgstr ""
+msgstr "Ağacın merkezindeki aile"
 
 #: FamilyTree/FamilyTree.py:1047
 #: TimelinePedigreeView/TimelinePedigreeView.py:1481
 msgid "Ancestor Generations"
-msgstr ""
+msgstr "Ataların Nesilleri"
 
 #: FamilyTree/FamilyTree.py:1048
 msgid "The number of ancestor generations to include in the tree"
-msgstr ""
+msgstr "Ağaca dahil edilecek ata nesillerinin sayısı"
 
 #: FamilyTree/FamilyTree.py:1051
 #: TimelinePedigreeView/TimelinePedigreeView.py:1465
 msgid "Descendant Generations"
-msgstr ""
+msgstr "Soyundan Gelen Nesiller"
 
 #: FamilyTree/FamilyTree.py:1052
 msgid "The number of descendant generations to include in the tree"
-msgstr ""
+msgstr "Ağaca dahil edilecek soyundan gelen nesillerin sayısı"
 
 #: FamilyTree/FamilyTree.py:1055
 msgid "Kekule number of husband"
-msgstr ""
+msgstr "Kekule kocasının numarası"
 
 #: FamilyTree/FamilyTree.py:1056
 msgid ""
 "The Kekule number of the husband (central family). Set 0 to not show Kekule "
 "numbers"
 msgstr ""
+"Kocanın (merkezi ailenin) Kekule numarası. Kekule numaralarını göstermemek "
+"için 0 olarak ayarlayın"
 
 #: FamilyTree/FamilyTree.py:1059
 msgid "Scale to fit on a single page"
-msgstr ""
+msgstr "Tek bir sayfaya sığacak şekilde ölçeklendir"
 
 #: FamilyTree/FamilyTree.py:1060
 msgid "Whether to scale to fit on a single page."
-msgstr ""
+msgstr "Tek bir sayfaya sığacak şekilde ölçeklendirilip ölçeklendirilmeyeceği."
 
 #: FamilyTree/FamilyTree.py:1065
 msgid "No color"
-msgstr ""
+msgstr "Renk yok"
 
 #: FamilyTree/FamilyTree.py:1067
 msgid "First generation"
-msgstr ""
+msgstr "Birinci nesil"
 
 #: FamilyTree/FamilyTree.py:1068
 msgid "Second generation"
-msgstr ""
+msgstr "İkinci nesil"
 
 #: FamilyTree/FamilyTree.py:1069
 msgid "Third generation"
-msgstr ""
+msgstr "Üçüncü nesil"
 
 #: FamilyTree/FamilyTree.py:1070
 msgid "Male line"
-msgstr ""
+msgstr "Erkek hattı"
 
 #: FamilyTree/FamilyTree.py:1071
 msgid "Male line and illegitimate children"
-msgstr ""
+msgstr "Erkek hattı ve gayrimeşru çocuklar"
 
 #: FamilyTree/FamilyTree.py:1072
 msgid "Female line"
-msgstr ""
+msgstr "Kadın hattı"
 
 #: FamilyTree/FamilyTree.py:1075
 msgid "Shuffle colors"
-msgstr ""
+msgstr "Renkleri karıştırın"
 
 #: FamilyTree/FamilyTree.py:1076
 msgid "Whether to shuffle colors or order them in rainbow fashion."
-msgstr ""
+msgstr "Renkleri karıştırmak mı yoksa gökkuşağı düzeninde sıralamak mı."
 
 #: FamilyTree/FamilyTree.py:1091
 msgid "Include Occupation"
-msgstr ""
+msgstr "Mesleği Dahil Et"
 
 #: FamilyTree/FamilyTree.py:1097
 msgid "Include Residence"
-msgstr ""
+msgstr "İkametgahı Dahil Et"
 
 #: FamilyTree/FamilyTree.py:1100
 msgid "Print event data (dead person)"
-msgstr ""
+msgstr "Olay verilerini yazdır (ölü kişi)"
 
 #: FamilyTree/FamilyTree.py:1103 FamilyTree/FamilyTree.py:1111
 msgid "Year only"
-msgstr ""
+msgstr "Sadece yıl"
 
 #: FamilyTree/FamilyTree.py:1104 FamilyTree/FamilyTree.py:1112
 msgid "Full date"
-msgstr ""
+msgstr "Tam tarih"
 
 #: FamilyTree/FamilyTree.py:1105 FamilyTree/FamilyTree.py:1113
 msgid "Full date and place"
-msgstr ""
+msgstr "Tam tarih ve yer"
 
 #: FamilyTree/FamilyTree.py:1108
 msgid "Print event data (living person)"
-msgstr ""
+msgstr "Olay verilerini yazdır (yaşayan kişi)"
 
 #: FamilyTree/FamilyTree.py:1116
 msgid "Fall back to baptism if birth event missing"
-msgstr ""
+msgstr "Doğum olayı bilgisi yoksa vaftiz kaydına geri dönün"
 
 #: FamilyTree/FamilyTree.py:1119
 msgid "Fall back to burial or cremation if death event missing"
-msgstr ""
+msgstr "Ölüm olayı bilgisi yoksa, gömme veya yakma yöntemine geri dönün"
 
 #: FamilyTree/FamilyTree.py:1122
 msgid "Protect private items"
-msgstr ""
+msgstr "Özel eşyaları koruyun"
 
 #: FamilyTree/FamilyTree.py:1131
 msgid "Include event description"
-msgstr ""
+msgstr "Etkinlik açıklamasını dahil edin"
 
 #: FamilyTree/FamilyTree.py:1134
 msgid "Text Options"
-msgstr ""
+msgstr "Metin Seçenekleri"
 
 #: FamilyTree/FamilyTree.py:1162
 msgid "The style used for names."
@@ -5712,7 +6015,7 @@ msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:5
 msgid "Tool to import FamilyFinder DNA data from Family Tree"
-msgstr ""
+msgstr "Aile Ağacından FamilyFinder DNA verilerini içe aktarma aracı"
 
 #: FamilyTreeDNA/ftdna_import.py:75
 msgid "Family Finder Tool"
@@ -9722,10 +10025,8 @@ msgid "(3.) Name (if any)"
 msgstr ""
 
 #: Form/form_ie.xml.h:50 Form/form_ie.xml.h:52
-#, fuzzy
-#| msgid "Place of Birth"
 msgid "(2.) Date and Place of Birth"
-msgstr "Doğum Yeri"
+msgstr "(2.) Doğum Tarihi ve Yeri"
 
 #: Form/form_ie.xml.h:54
 msgid "(4.) M or F for male or female"
@@ -9914,7 +10215,7 @@ msgstr ""
 
 #: Form/form_pl.xml.h:19
 msgid "Volume"
-msgstr "Birim"
+msgstr "Cilt"
 
 #: Form/form_pl.xml.h:24 Form/form_us.xml.h:1426
 msgid "House Number"
@@ -9922,11 +10223,11 @@ msgstr ""
 
 #: Form/form_pl.xml.h:28
 msgid "Volume Beginning Year"
-msgstr ""
+msgstr "Cilt Başlangıç Yılı"
 
 #: Form/form_pl.xml.h:29
 msgid "Volume Ending Year"
-msgstr ""
+msgstr "Cilt Bitiş Yılı"
 
 #: Form/form_us.xml.h:1 Form/form_us.xml.h:14 Form/form_us.xml.h:35
 #: Form/form_us.xml.h:56 Form/form_us.xml.h:96 Form/form_us.xml.h:165
@@ -13579,7 +13880,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:1594
 msgid "Number of volumes in home library"
-msgstr ""
+msgstr "Ev kütüphanesindeki cilt sayısı"
 
 #: Form/form_us.xml.h:1603
 msgid "Number of house"
@@ -14497,7 +14798,7 @@ msgstr ""
 #: Form/form_us.xml.h:2370 Form/form_us.xml.h:2391 Form/form_us.xml.h:2484
 #: Form/form_us.xml.h:2593
 msgid "Book/Volume"
-msgstr ""
+msgstr "Kitap/Cilt"
 
 #: Form/form_us.xml.h:2377 Form/form_us.xml.h:2493
 msgid "Race/Color"
@@ -15522,6 +15823,19 @@ msgid ""
 "If you instead want to merge two significantly different trees with the "
 "option to make manual modifications, use the Import Merge Tool instead."
 msgstr ""
+"Bu araç, şu anda açık olan aile ağacını Gramps Web tarafından sunulan uzak "
+"bir aile ağacıyla senkronize etmenizi sağlar.\n"
+"\n"
+"Araç, iki ağacın birbirinin türevi olduğunu, yani birinin diğerinin Gramps "
+"XML (GEDCOM değil!) dışa aktarımından oluşturulduğunu varsayar.\n"
+"\n"
+"Başarılı senkronizasyondan sonra, iki ağaç özdeş olacaktır. Değişiklikler "
+"zaman damgalarına göre yayılacaktır. Yerel veya uzak ağaçlarda herhangi bir "
+"değişiklik yapılmadan önce onay istenecektir.\n"
+"\n"
+"Bunun yerine, manuel değişiklikler yapma seçeneğiyle önemli ölçüde farklı "
+"iki ağacı birleştirmek istiyorsanız, bunun yerine İçe Aktarma Birleştirme "
+"Aracını kullanın."
 
 #: GrampsWebSync/grampswebsync.py:789
 msgid "Server URL: "
@@ -15541,7 +15855,7 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:923
 msgid "Merge"
-msgstr ""
+msgstr "Birleştir"
 
 #: GrampsWebSync/grampswebsync.py:948
 msgid "Local changes"
@@ -16516,6 +16830,9 @@ msgid ""
 "Copy the files to a correct directory or change the media path in the "
 "Preferences."
 msgstr ""
+"Açılan dosyanın medya yolu %s olup, bu da içe aktardığınız aile ağacının "
+"medya yoluyla çakışmaktadır. Orijinal medya yolu korunmuştur. Dosyaları "
+"doğru bir dizine kopyalayın veya Tercihler üzerinde medya yolunu değiştirin."
 
 #: ImportGramplet/ImportGramplet.py:172
 msgid ""
@@ -20142,6 +20459,13 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
+"<i><a href=\"https://gramps-project.org/wiki/"
+"index.php?title=How_to_make_a_backup\">Gramps XML'e Yedekleme</a> Son Gramps "
+"sürümlerinde \"Yedekleme Yap...\" seçeneğini Aile Ağacı menüsünde "
+"bulabilirsiniz, aksi takdirde aynı menüde \"Dışa Aktar...\" seçeneğini "
+"kullanın ancak tüm verileri dışa aktarmak için Dışa Aktarma Yardımcısındaki "
+"gizlilik seçeneklerinin işaretini kaldırın.</i>\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:336
 msgid ""
@@ -20154,12 +20478,16 @@ msgid ""
 " • It is strongly recommended to backup each of your Family Trees before any "
 "upgrade.\n"
 msgstr ""
+" • Herhangi bir yükseltme işleminden önce Aile Ağaçlarınızın her birini "
+"yedeklemeniz önemle tavsiye edilir.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:348
 msgid ""
 " • Test your backups by creating a new Family Tree and then importing the "
 "backup."
 msgstr ""
+" • Yeni bir Aile Ağacı oluşturarak ve ardından yedeklemeyi içe aktararak "
+"yedeklerinizi test edin."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:370
 msgid ", is the most current version.\n"
@@ -20530,6 +20858,8 @@ msgstr ""
 #: QuiltView/QuiltView.gpr.py:25
 msgid "The view shows a quilt chart visualisation of a family tree"
 msgstr ""
+"Bu görselde bir aile ağacının yorgan deseni şeklinde görselleştirilmiş hali "
+"gösterilmektedir"
 
 #: QuiltView/QuiltView.py:223
 msgid "Quilt chart"
@@ -20636,7 +20966,7 @@ msgstr ""
 
 #: RUWebConnectPack/RUWebPack.py:46
 msgid "All Russia Family Tree (forum)"
-msgstr ""
+msgstr "Tüm Rusya Aile Ağacı (forum)"
 
 #: RUWebConnectPack/RUWebPack.py:47
 msgid "Yandex people"
@@ -21338,6 +21668,8 @@ msgid ""
 "Volume\n"
 "    Page:"
 msgstr ""
+"Cilt\n"
+"    Sayfa:"
 
 #: SourceIndex/birth.glade:149
 msgid "The source title"
@@ -21345,7 +21677,7 @@ msgstr "Kaynak başlığı"
 
 #: SourceIndex/birth.glade:164
 msgid "The volume or page of this source"
-msgstr ""
+msgstr "Bu kaynağın cilt numarası veya sayfası"
 
 #: SourceIndex/birth.glade:195 SourceIndex/birth.glade:297
 #: SourceIndex/birth.glade:644 SourceIndex/witness.glade:73
@@ -22147,6 +22479,10 @@ msgid ""
 "\n"
 "Please create a new empty Family Tree before importing a TMG backup file."
 msgstr ""
+"Mevcut Aile Ağacı boş değil.\n"
+"\n"
+"Lütfen TMG yedekleme dosyasını içe aktarmadan önce yeni ve boş bir Aile "
+"Ağacı oluşturun."
 
 #: TMGimporter/libtmg.py:2353
 msgid ""
@@ -22228,6 +22564,8 @@ msgid ""
 "A configurable program that shows you the connected events from your family "
 "tree that match today's day and month."
 msgstr ""
+"Aile ağacınızdaki bugünün günü ve ayına denk gelen bağlantılı olayları "
+"gösteren, yapılandırılabilir bir program."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:105
 msgid "Database is not open, can't check history right now."
@@ -23092,7 +23430,7 @@ msgstr ""
 
 #: Topola/Topola.gpr.py:4
 msgid "Interactive Family Tree"
-msgstr ""
+msgstr "İnteraktif Aile Ağacı"
 
 #: Topola/Topola.gpr.py:5
 msgid "Opens an interactive tree in the browser"
@@ -24133,6 +24471,8 @@ msgid ""
 "* loaded Family Tree base:\n"
 " \"%s\"\n"
 msgstr ""
+"* Aile Ağacı tabanı yüklendi:\n"
+" \"%s\"\n"
 
 #: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:20
 msgid "lxml"
