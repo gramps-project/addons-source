@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 13:20-0700\n"
-"PO-Revision-Date: 2026-06-01 12:35+0000\n"
+"PO-Revision-Date: 2026-06-20 17:01+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -238,17 +238,12 @@ msgid "The style used for the marriage."
 msgstr "Der für die Hochzeit verwendete Stil."
 
 #: AncestryTableReport/AncestryTableReport.py:593
-#, fuzzy
-#| msgid ""
-#| "The style used for an empty row.\n"
-#| "To enlarge the height of the empty row, just increase the size of the "
-#| "font."
 msgid ""
 "The style used for an empty row.\n"
 "To enlarge the height of the empty row, just increse the size of the police."
 msgstr ""
-"Das für eine leere Zeile verwendete Format.\n"
-"Um die Höhe der leeren Zeile zu vergrößern, vergröße einfach die "
+"Der für eine leere Zeile verwendete Stil.\n"
+"Um die Höhe der leeren Zeile zu vergrößern, vergrößere einfach die "
 "Schriftgröße."
 
 #: AncestryTableReport/AncestryTableReport.py:632
@@ -1267,7 +1262,7 @@ msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
 msgstr ""
-"Ein erweiterter Fundstellenformatierer, der die Standardfunktionalität um "
+"Ein erweiterter Quellenangabeformatierer, der die Standardfunktionalität um "
 "ein Aufbewahrungsort und eine Signatur ergänzt."
 
 #: CliMerge/CliMerge.gpr.py:9
@@ -4835,7 +4830,8 @@ msgstr "Quellen exportieren"
 
 #: DynamicWeb/dynamicweb.py:4840
 msgid "Whether to export sources and citations in the web pages"
-msgstr "Ob Quellen und Funstellen auf die Webseiten exportiert werden sollen"
+msgstr ""
+"Ob Quellen und Quellenangaben auf die Webseiten exportiert werden sollen"
 
 #: DynamicWeb/dynamicweb.py:4844
 msgid "Export addresses"
@@ -5783,7 +5779,7 @@ msgstr ""
 #: FamilySheet/FamilySheet.py:232 FamilySheet/FamilySheet.py:275
 #, python-format
 msgid "→ %s"
-msgstr ""
+msgstr "→ %s"
 
 #: FamilySheet/FamilySheet.py:397
 #, python-format
@@ -5802,7 +5798,7 @@ msgstr "; %(type)s: %(value)s"
 
 #: FamilySheet/FamilySheet.py:557
 msgid "Source references:"
-msgstr "Quellenangaben:"
+msgstr "Quellereferenzen:"
 
 #: FamilySheet/FamilySheet.py:575
 #, python-format
@@ -6139,7 +6135,7 @@ msgstr "FTDNA-Notizenzeichenfolge :"
 
 #: FamilyTreeDNA/ftdna_import.py:137
 msgid "Shared Citation ID :"
-msgstr "Gemeinsame Fundstellen-ID :"
+msgstr "Gemeinsame Quellenangabe-ID :"
 
 #: FamilyTreeDNA/ftdna_import.py:151
 msgid "Active Person : "
@@ -6206,17 +6202,17 @@ msgstr "Notiz zu %s DNA-Assoziation hinzufügen"
 #: FamilyTreeDNA/ftdna_import.py:385
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr "Quellenfundstelle für %s DNA-Verbindung erstellen"
+msgstr "Quellenangabe für die %s-DNA-Assoziation erstellen"
 
 #: FamilyTreeDNA/ftdna_import.py:390
 #, python-format
 msgid "Create Citation for %s DNA Association"
-msgstr "Fundstelle für %s DNA-Verbindung erstellen"
+msgstr "Quellenangabe für %s DNA-Verbindung erstellen"
 
 #: FamilyTreeDNA/ftdna_import.py:394
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr "Fundstelle zu %s DNA-Verbindung hinzufügen"
+msgstr "Quellenangabe zu %s DNA-Verbindung hinzufügen"
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
@@ -6593,6 +6589,8 @@ msgstr "Referenz:"
 #: Form/editform.py:393
 msgid "[Source recreated after deletion mid-form-edit]"
 msgstr ""
+"[Quelle nach Löschung während der Bearbeitung des Formulars "
+"wiederhergestellt]"
 
 #: Form/editform.py:446
 msgid "Headings"
@@ -10105,299 +10103,227 @@ msgstr "Lebend geborene Kinder in gegenwärtiger Ehe"
 
 #: Form/form_ie.xml.h:1
 msgid "Total Area in Statute Acres"
-msgstr ""
+msgstr "Gesamtfläche in Statute Acres"
 
 #: Form/form_ie.xml.h:2
-#, fuzzy
-#| msgid "RELATIONSHIP to Head of Household"
 msgid "Signature of Head of Household"
-msgstr "BEZIEHUNG zum Haushaltsvorstand"
+msgstr "Unterschrift des Haushaltsvorstands"
 
 #: Form/form_ie.xml.h:3
-#, fuzzy
-#| msgid "Nature of industry"
 msgid "Signature of Enumerator"
-msgstr "Art der Branche"
+msgstr "Unterschrift des Erhebungsbeauftragten"
 
 #: Form/form_ie.xml.h:8
-#, fuzzy
-#| msgid "City or Borough"
 msgid "County or Co. Borough"
-msgstr "Stadt oder Stadtteil"
+msgstr "Landkreis oder Stadtkreis"
 
 #: Form/form_ie.xml.h:9
-#, fuzzy
-#| msgid "District Electoral Division"
 msgid "District Electoral Division or Ward"
-msgstr "Wahlkreisbezirk"
+msgstr "Wahlbezirk oder Wahlkreis"
 
 #: Form/form_ie.xml.h:11
-#, fuzzy
-#| msgid "Town or Village"
 msgid "Urban Dist. Town or Village"
-msgstr "Stadt oder Dorf"
+msgstr "Stadtbezirk, Stadt oder Dorf"
 
 #: Form/form_ie.xml.h:12
-#, fuzzy
-#| msgid "Road, Street, etc, and No. or Name of House"
 msgid "Street etc with No. of House"
-msgstr "Straße, Weg usw. und Hausnummer oder Name des Hauses"
+msgstr "Straße usw. mit Hausnummer"
 
 #: Form/form_ie.xml.h:13
-#, fuzzy
-#| msgid "No. Of Schedule"
 msgid "No. of Schedule"
 msgstr "Nr. des Verzeichnisses"
 
 #: Form/form_ie.xml.h:14
-#, fuzzy
-#| msgid "Name of Institution"
 msgid "Name of Public Institution"
-msgstr "Name der Einrichtung"
+msgstr "Name der öffentlichen Einrichtung"
 
 #: Form/form_ie.xml.h:16 Form/form_ie.xml.h:113
-#, fuzzy
-#| msgid "Maiden Surname"
 msgid "Name and Surname"
-msgstr "Mädchenname"
+msgstr "Vorname und Nachname"
 
 #: Form/form_ie.xml.h:18
-#, fuzzy
-#| msgid "9. Relationship to head of family or household"
 msgid "Relationship to Head of Household"
-msgstr "9. Beziehung zum Familien- oder Haushaltsvorstand"
+msgstr "Beziehung zum Haushaltsvorstand"
 
 #: Form/form_ie.xml.h:19
-#, fuzzy
-#| msgid "Default Age"
 msgid "Year Age"
-msgstr "Standardalter"
+msgstr "Jahr Alter"
 
 #: Form/form_ie.xml.h:20 Form/form_us.xml.h:2561
 msgid "Age in years"
 msgstr "Alter in Jahren"
 
 #: Form/form_ie.xml.h:21
-#, fuzzy
-#| msgid "Monthly Rent"
 msgid "Month Age"
-msgstr "Monatliche Miete"
+msgstr "Monat Alter"
 
 #: Form/form_ie.xml.h:22
-#, fuzzy
-#| msgid "Age Months"
 msgid "Age in months"
-msgstr "Alter Monate"
+msgstr "Alter in Monaten"
 
 #: Form/form_ie.xml.h:25
-#, fuzzy
-#| msgid "Marriage place"
 msgid "Marriage or Orphanhood"
-msgstr "Ort der Eheschließung"
+msgstr "Ehe oder Waisenstatus"
 
 #: Form/form_ie.xml.h:28
 msgid ""
 "\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
 "cannot speak Irish\""
 msgstr ""
+"„Nur Irisch“, „Irisch und Englisch“, „Englisch und Irisch“, „Kann Irisch "
+"lesen, aber nicht sprechen“"
 
 #: Form/form_ie.xml.h:33
-#, fuzzy
-#| msgid "Years of present marriage"
 msgid "Years married in present Marriage"
-msgstr "Jahre der gegenwärtigen Ehe"
+msgstr "Ehejahre in der aktuellen Ehe"
 
 #: Form/form_ie.xml.h:34
-#, fuzzy
-#| msgid "Date Married"
 msgid "Months Married"
-msgstr "Heiratsdatum"
+msgstr "Monate verheiratet"
 
 #: Form/form_ie.xml.h:35
-#, fuzzy
-#| msgid "Children born alive to present Marriage"
 msgid "Months married in present Marriage"
-msgstr "Lebend geborene Kinder in gegenwärtiger Ehe"
+msgstr "Monate verheiratet in der aktuellen Ehe"
 
 #: Form/form_ie.xml.h:36
-#, fuzzy
-#| msgid "Parents enclose children"
 msgid "Present Marriage Children"
-msgstr "Eltern umgeben ihre Kinder"
+msgstr "Aktuelle Ehe Kinder"
 
 #: Form/form_ie.xml.h:37
-#, fuzzy
-#| msgid "Children born alive to present Marriage"
 msgid "Children born alive to present marriage"
-msgstr "Lebend geborene Kinder in gegenwärtiger Ehe"
+msgstr "Lebend geborene Kinder aus der aktuellen Ehe"
 
 #: Form/form_ie.xml.h:38
-#, fuzzy
-#| msgid "Total Children Born Alive."
 msgid "Total Children Under 16 Living"
-msgstr "Gesamtzahl der lebend geborenen Kinder."
+msgstr "Gesamtzahl lebender Kinder unter 16 Jahren"
 
 #: Form/form_ie.xml.h:39
 msgid "(1.) Entry no."
-msgstr ""
+msgstr "(1.) Eintragsnr."
 
 #: Form/form_ie.xml.h:40 Form/form_ie.xml.h:74 Form/form_ie.xml.h:102
-#, fuzzy
-#| msgid "Supervisor's District No."
 msgid "Superintendent Registrar's District"
-msgstr "Supervisor's Bezirk Nr."
+msgstr "Bezirk des Hauptregistrars"
 
 #: Form/form_ie.xml.h:41 Form/form_ie.xml.h:73 Form/form_ie.xml.h:103
-#, fuzzy
-#| msgid "Registration District"
 msgid "Registrar's District"
-msgstr "Registrierungsbezirk"
+msgstr "Bezirk des Registrar"
 
 #: Form/form_ie.xml.h:43 Form/form_ie.xml.h:105
 msgid "Union"
-msgstr ""
+msgstr "Union"
 
 #: Form/form_ie.xml.h:45
-#, fuzzy
-#| msgid "Date of Registration"
 msgid "(10.) Signature of Registrar"
-msgstr "Datum der Registrierung"
+msgstr "(10.) Unterschrift des Registrars"
 
 #: Form/form_ie.xml.h:46
 msgid "(11.) Baptismal Name if added after Registration of Birth, and Date"
-msgstr ""
+msgstr "(11.) Taufname, falls nach der Geburtsanzeige hinzugefügt, und Datum"
 
 #: Form/form_ie.xml.h:48
 msgid "(3.) Name (if any)"
-msgstr ""
+msgstr "(3.) Name (falls vorhanden)"
 
 #: Form/form_ie.xml.h:50 Form/form_ie.xml.h:52
-#, fuzzy
-#| msgid "3. Place of Birth"
 msgid "(2.) Date and Place of Birth"
-msgstr "3. Geburtsort"
+msgstr "(2.) Geburtsdatum und -ort"
 
 #: Form/form_ie.xml.h:54
 msgid "(4.) M or F for male or female"
-msgstr ""
+msgstr "(4.) M oder F für männlich oder weiblich"
 
 #: Form/form_ie.xml.h:56 Form/form_ie.xml.h:58
 msgid "(5.) Name and Surname and Dwelling-place of Father"
-msgstr ""
+msgstr "(5.) Vor- und Nachname sowie Wohnort des Vaters"
 
 #: Form/form_ie.xml.h:60
-#, fuzzy
-#| msgid "Rank, Profession of Occupation"
 msgid "(7.) Rank or Profession of Father"
-msgstr "Rang, Beruf oder Tätigkeit"
+msgstr "(7.) Rang oder Beruf des Vaters"
 
 #: Form/form_ie.xml.h:62 Form/form_ie.xml.h:64
 msgid "(6.) Name and Surname and Maiden Surname of Mother"
-msgstr ""
+msgstr "(6.) Vor- und Nachname sowie Mädchenname der Mutter"
 
 #: Form/form_ie.xml.h:66 Form/form_ie.xml.h:68
 msgid "(8.) Signature, Qualification, and Residence of Informant"
-msgstr ""
+msgstr "(8.) Unterschrift, Angaben zur Person und Wohnort des Informanten"
 
 #: Form/form_ie.xml.h:69
-#, fuzzy
-#| msgid "Date Registered"
 msgid "When Registered"
 msgstr "Datum der Registrierung"
 
 #: Form/form_ie.xml.h:70
 msgid "(9.) Date when birth was registered"
-msgstr ""
+msgstr "(9.) Datum der Geburtsanzeige"
 
 #: Form/form_ie.xml.h:71
-#, fuzzy
-#| msgid "Year only"
 msgid "Year"
-msgstr "Nur Jahr"
+msgstr "Jahr"
 
 #: Form/form_ie.xml.h:72
 msgid "Solemnized at the Catholic"
-msgstr ""
+msgstr "Feierlich begangen in der katholischen Kirche"
 
 #: Form/form_ie.xml.h:76 Form/form_ie.xml.h:107
-#, fuzzy
-#| msgid "Certificate Number"
 msgid "Certificate number"
 msgstr "Zertifikatsnummer"
 
 #: Form/form_ie.xml.h:77 Form/form_ie.xml.h:108
-#, fuzzy
-#| msgid "Show page numbers"
 msgid "Page number"
-msgstr "Seitenzahlen anzeigen"
+msgstr "Seitenzahl"
 
 #: Form/form_ie.xml.h:78 Form/form_ie.xml.h:109
 msgid "(1.) Entry No."
-msgstr ""
+msgstr "(1.) Eintrag Nr."
 
 #: Form/form_ie.xml.h:79
-#, fuzzy
-#| msgid "Date Married"
 msgid "(2.) When Married"
-msgstr "Heiratsdatum"
+msgstr "(2.) Heiratsdatum"
 
 #: Form/form_ie.xml.h:81
-#, fuzzy
-#| msgid "Maiden Surname"
 msgid "(3.) Name and Surname"
-msgstr "Mädchenname"
+msgstr "(3.) Vor- und Nachname"
 
 #: Form/form_ie.xml.h:83
 msgid "(4.) Full or Minor"
-msgstr ""
+msgstr "(4.) Volljährig oder minderjährig"
 
 #: Form/form_ie.xml.h:85
 msgid "(5.) Bachelor or Spinster"
-msgstr ""
+msgstr "(5.) Junggeselle oder Jungfer"
 
 #: Form/form_ie.xml.h:87
 msgid "(6.) Rank or Profession"
-msgstr ""
+msgstr "(6.) Rang oder Beruf"
 
 #: Form/form_ie.xml.h:89
-#, fuzzy
-#| msgid "Date of Marriage"
 msgid "Residence at the Time of Marriage"
-msgstr "Hochzeitsdatum"
+msgstr "Wohnort zum Zeitpunkt der Eheschließung"
 
 #: Form/form_ie.xml.h:91 Form/form_ie.xml.h:95
-#, fuzzy
-#| msgid "Father's Name"
 msgid "(8.) Father's Name and Surname"
-msgstr "Name des Vaters"
+msgstr "(8.) Vor- und Nachname des Vaters"
 
 #: Form/form_ie.xml.h:93 Form/form_ie.xml.h:97
-#, fuzzy
-#| msgid "Rank, Profession of Occupation"
 msgid "(9.) Rank or Profession of Father"
-msgstr "Rang, Beruf oder Tätigkeit"
+msgstr "(9.) Rang oder Beruf des Vaters"
 
 #: Form/form_ie.xml.h:110
-#, fuzzy
-#| msgid "Date Registered"
 msgid "(10.) When Registered"
-msgstr "Datum der Registrierung"
+msgstr "(10.) Datum der Registrierung"
 
 #: Form/form_ie.xml.h:111
-#, fuzzy
-#| msgid "Date of Registration"
 msgid "(11.) Signature of Registrar"
-msgstr "Datum der Registrierung"
+msgstr "(11.) Unterschrift des Registrars"
 
 #: Form/form_ie.xml.h:114 Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
 msgid "Date of Death"
 msgstr "Sterbedatum"
 
 #: Form/form_ie.xml.h:115 Form/form_ie.xml.h:117
-#, fuzzy
-#| msgid "30. Age and Cause of Deaths"
 msgid "(2.) Date and Place of Death"
-msgstr "30. Alter und Todesursachen"
+msgstr "(2.) Datum und Ort des Todes"
 
 #: Form/form_ie.xml.h:116 Form/form_us.xml.h:2432 Form/form_us.xml.h:2495
 msgid "Place of Death"
@@ -10405,49 +10331,39 @@ msgstr "Sterbeort"
 
 #: Form/form_ie.xml.h:119
 msgid "(4.) M or F for Male or Female"
-msgstr ""
+msgstr "(4.) M oder F für männlich oder weiblich"
 
 #: Form/form_ie.xml.h:121
-#, fuzzy
-#| msgid "Widowed, divorced"
 msgid "(5.) Widowed or Married"
-msgstr "Verwitwet, geschieden"
+msgstr "(5.) Verwitwet oder verheiratet"
 
 #: Form/form_ie.xml.h:123
-#, fuzzy
-#| msgid "Age last Birthday of"
 msgid "(6.) Age last Birthday"
-msgstr "Alter beim letzten Geburtstag von"
+msgstr "(6.) Alter am letzten Geburtstag"
 
 #: Form/form_ie.xml.h:125
-#, fuzzy
-#| msgid "Rank, Profession, or Occupation"
 msgid "(7.) Rank, Profession, or Occupation"
-msgstr "Rang, Beruf oder Tätigkeit"
+msgstr "(7.) Rang, Beruf oder Tätigkeit"
 
 #: Form/form_ie.xml.h:127 Form/form_ie.xml.h:129
 msgid "(8.) Certified Cause of Death and Duration of Illness"
-msgstr ""
+msgstr "(8.) Beglaubigte Todesursache und Krankheitsdauer"
 
 #: Form/form_ie.xml.h:128
-#, fuzzy
-#| msgid "Direction of time"
 msgid "Duration of Illness"
-msgstr "Richtung der Zeit"
+msgstr "Krankheitsdauer"
 
 #: Form/form_ie.xml.h:132
-#, fuzzy
-#| msgid "Relation to Head"
 msgid "Relation to deceased"
-msgstr "Beziehung zum Oberhaupt"
+msgstr "Beziehung zum Verstorbenen"
 
 #: Form/form_ie.xml.h:133
 msgid "(9.) e.g. Son, Daughter"
-msgstr ""
+msgstr "(9.) z. B. Sohn, Tochter"
 
 #: Form/form_ie.xml.h:135
 msgid "(9.) e.g. Present at death"
-msgstr ""
+msgstr "(9.) z. B. zum Zeitpunkt des Todes anwesend"
 
 #: Form/form_pl.xml.h:5
 msgid "Event Place (Original)"
@@ -16126,32 +16042,24 @@ msgid "Media files are in sync."
 msgstr "Die Mediendateien sind synchronisiert."
 
 #: GrampsWebSync/grampswebsync.py:345
-#, fuzzy, python-format
-#| msgid "Successfully downloaded %s media file."
-#| msgid_plural "Successfully downloaded %s media files."
+#, python-format
 msgid "Successfully downloaded %s media files."
-msgstr "%s Mediendatei erfolgreich heruntergeladen."
+msgstr "%s Mediendateien wurden erfolgreich heruntergeladen."
 
 #: GrampsWebSync/grampswebsync.py:348
-#, fuzzy, python-format
-#| msgid "Encountered %s error during download."
-#| msgid_plural "Encountered %s errors during download."
+#, python-format
 msgid "Encountered %s errors during download."
-msgstr "Beim Herunterladen ist %s Fehler aufgetreten."
+msgstr "Beim Herunterladen sind %s Fehler aufgetreten."
 
 #: GrampsWebSync/grampswebsync.py:354
-#, fuzzy, python-format
-#| msgid "Successfully uploaded %s media file."
-#| msgid_plural "Successfully uploaded %s media files."
+#, python-format
 msgid "Successfully uploaded %s media files."
 msgstr "%s Mediendatei wurden erfolgreich hochgeladen."
 
 #: GrampsWebSync/grampswebsync.py:357
-#, fuzzy, python-format
-#| msgid "Encountered %s error during upload."
-#| msgid_plural "Encountered %s errors during upload."
+#, python-format
 msgid "Encountered %s errors during upload."
-msgstr "Beim Hochladen ist %s Fehler aufgetreten."
+msgstr "Beim Hochladen sind %s Fehler aufgetreten."
 
 #: GrampsWebSync/grampswebsync.py:375
 msgid "Authentication failed. Please check your username and password."
@@ -16361,18 +16269,14 @@ msgid "Missing remotely"
 msgstr "Fehlt entfernt"
 
 #: GrampsWebSync/grampswebsync.py:1130
-#, fuzzy, python-format
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
+#, python-format
 msgid "Downloading %s media file(s)"
-msgstr "Herunterladen von %s Mediendatei"
+msgstr "%s Mediendatei(en) werden heruntergeladen"
 
 #: GrampsWebSync/grampswebsync.py:1138
-#, fuzzy, python-format
-#| msgid "Uploading %s media file"
-#| msgid_plural "Uploading %s media files"
+#, python-format
 msgid "Uploading %s media file(s)"
-msgstr "Hochladen von %s Mediendatei"
+msgstr "%s Mediendatei(en) werden hochgeladen"
 
 #: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
 msgid "Gram.py Script"
@@ -16952,12 +16856,12 @@ msgstr ""
 
 #: HasTagSubstr/hastagsubstr.gpr.py:108 HasTagSubstr/hastagsubstr.py:146
 msgid "Citations with a tag containing <substring>"
-msgstr "Fundstellen mit einem Etikett, das <Teilzeichenfolge> enthält"
+msgstr "Quellenangaben mit einem Etikett, das <Teilzeichenfolge> enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:110 HasTagSubstr/hastagsubstr.py:148
 msgid "Matches citations with a tag whose name contains the given substring"
 msgstr ""
-"Entspricht Fundstellen mit einem Etikett, dessen Name die angegebene "
+"Entspricht Quellenangaben mit einem Etikett, dessen Name die angegebene "
 "Teilzeichenfolge enthält"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:125 HasTagSubstr/hastagsubstr.py:157
@@ -17738,7 +17642,7 @@ msgstr "Notizen geändert"
 
 #: LastChange/LastChangeReport.py:336
 msgid "Citations Changed"
-msgstr "Geänderte Fundstellen"
+msgstr "Quellenangaben geändert"
 
 #: LastChange/LastChangeReport.py:362
 msgid "Select From"
@@ -20105,11 +20009,11 @@ msgstr "Fügt Weblinks (typischerweise Wikipedia) in deinen Ort ein."
 
 #: PlaceCleanup/placecleanup.glade:693
 msgid "Add citation and source to Place"
-msgstr "Fundstelle und Quelle zum Ort hinzufügen"
+msgstr "Quellenangabe und Quelle zum Ort hinzufügen"
 
 #: PlaceCleanup/placecleanup.glade:697
 msgid "This Adds a Citation to your place, citing GeoNames."
-msgstr "Dies fügt deinem Ort eine Fundstelle hinzu, die GeoNames zitiert."
+msgstr "Dies fügt deinem Ort eine Quellenangabe hinzu, die GeoNames zitiert."
 
 #: PlaceCleanup/placecleanup.glade:711
 msgid "GeoNames User ID"
@@ -22189,7 +22093,7 @@ msgstr "Der für jeden Abschnitt verwendete Stil."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:197
 msgid "Internet:"
-msgstr ""
+msgstr "Internet:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:277
 msgid "Publication information:"
@@ -22265,7 +22169,7 @@ msgstr "Ob Medien einbezogen werden sollen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:468
 msgid "Include citations"
-msgstr "Fundstellen einfügen"
+msgstr "Quellenangaben einfügen"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:469
 msgid "Whether to include citations on sources."
@@ -22781,7 +22685,7 @@ msgstr "Herkunft:"
 
 #: SourceIndex/birth.glade:2272
 msgid "<b><i>Citation</i></b>"
-msgstr "<b><i>Fundstelle</i></b>"
+msgstr "<b><i>Quellenangabe</i></b>"
 
 #: SourceIndex/birth.glade:2287
 msgid "<b><i>Source</i></b>"
@@ -23128,11 +23032,11 @@ msgstr "Gramplet zeigt die Referenzen für eine Quelle"
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:32
 msgid "Sources and Citations Report"
-msgstr "Quellen- und Fundstellenbericht"
+msgstr "Quellen- und Quellenangabenbericht"
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:33
 msgid "Provides a source and Citations Report with notes"
-msgstr "Liefert einen Quellen- und Fundstellenbericht mit Notizen"
+msgstr "Liefert einen Quellen- und Quellenangabenbericht mit Notizen"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:272
 #, python-format
@@ -23141,7 +23045,7 @@ msgstr "Schlüssel: %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:277
 msgid "Citations:"
-msgstr "Fundstellen:"
+msgstr "Quellenangaben:"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:286
 #, python-format
@@ -23257,7 +23161,7 @@ msgstr "Der für die Quellendetails verwendete Stil."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:563
 msgid "The style used for citation title."
-msgstr "Der für Fundstellentitel verwendete Stil."
+msgstr "Der für Quellenangabetitel verwendete Stil."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:575
 msgid "The style used for a column title."
@@ -25206,7 +25110,7 @@ msgstr ""
 
 #: WebSearch/info_panel.py:241
 msgid "Gramps Forum (Discourse)"
-msgstr "Gramps Forum (Discourse)"
+msgstr "Gramps-Forum (Discourse)"
 
 #: WebSearch/info_panel.py:245
 msgid "✅ Bug reports and feature requests are completely **free of charge**."
@@ -25580,7 +25484,7 @@ msgid ""
 "Number of citations : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Anzahl der Fundstellen : \n"
+"Anzahl der Quellenangaben : \n"
 "\t\t\t%06s\t|\t(%06s)*\n"
 
 #: lxml/etreeGramplet.py:573
