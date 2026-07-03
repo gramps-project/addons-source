@@ -40,8 +40,8 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 13:20-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
-"Last-Translator: Julien Lepiller <roptat@lepiller.eu>\n"
+"PO-Revision-Date: 2026-07-01 15:01+0000\n"
+"Last-Translator: \"David D.\" <dadu042@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -6424,10 +6424,8 @@ msgid "Events from people with role"
 msgstr "Événements provenant de personnes ayant un rôle"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:8
-#, fuzzy
-#| msgid "Matches people with an event with a selected role"
 msgid "Matches event of people filter with role"
-msgstr "Sélectionne les personnes avec un événement avec un rôle sélectionné"
+msgstr "Correspond au filtre événement de personnes avec rôle"
 
 #: FilterRules/matchpersonfilterrole.py:69
 msgid "Role:"
@@ -10102,13 +10100,11 @@ msgstr ""
 
 #: Form/form_ie.xml.h:2
 msgid "Signature of Head of Household"
-msgstr ""
+msgstr "Signature du chef de famille"
 
 #: Form/form_ie.xml.h:3
-#, fuzzy
-#| msgid "Nature of industry"
 msgid "Signature of Enumerator"
-msgstr "Nature de l'industrie"
+msgstr "Signature du recenseur"
 
 #: Form/form_ie.xml.h:8
 #, fuzzy
@@ -10128,19 +10124,15 @@ msgstr "Petite ville ou village"
 
 #: Form/form_ie.xml.h:12
 msgid "Street etc with No. of House"
-msgstr ""
+msgstr "Rue, etc., avec n° de maison"
 
 #: Form/form_ie.xml.h:13
-#, fuzzy
-#| msgid "Schedule"
 msgid "No. of Schedule"
-msgstr "Calendrier"
+msgstr ""
 
 #: Form/form_ie.xml.h:14
-#, fuzzy
-#| msgid "11. Number of inmates in institution"
 msgid "Name of Public Institution"
-msgstr "11. Nombre de pensionnaires dans l'institution"
+msgstr "Nom d’établissement public"
 
 #: Form/form_ie.xml.h:16 Form/form_ie.xml.h:113
 #, fuzzy
@@ -10155,20 +10147,16 @@ msgid "Relationship to Head of Household"
 msgstr "9. Relation avec le chef de famille ou le ménage"
 
 #: Form/form_ie.xml.h:19
-#, fuzzy
-#| msgid "Default Age"
 msgid "Year Age"
-msgstr "Âge par défaut"
+msgstr "Âge en années"
 
 #: Form/form_ie.xml.h:20 Form/form_us.xml.h:2561
 msgid "Age in years"
 msgstr "Âge en années"
 
 #: Form/form_ie.xml.h:21
-#, fuzzy
-#| msgid "Monthly Rent"
 msgid "Month Age"
-msgstr "Loyer mensuel"
+msgstr ""
 
 #: Form/form_ie.xml.h:22
 #, fuzzy
@@ -10185,18 +10173,16 @@ msgid ""
 "\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
 "cannot speak Irish\""
 msgstr ""
+"\"Irlandais uniquement\", \"Irlandais et anglais\", \"Anglais et "
+"irlandais\", \"Lit mais ne pas parle pas l’irlandais\""
 
 #: Form/form_ie.xml.h:33
-#, fuzzy
-#| msgid "Years of present marriage"
 msgid "Years married in present Marriage"
-msgstr "Années de mariage"
+msgstr "Années de mariage actuel"
 
 #: Form/form_ie.xml.h:34
-#, fuzzy
-#| msgid "Years Married"
 msgid "Months Married"
-msgstr "Années de mariage"
+msgstr "Mois de mariage"
 
 #: Form/form_ie.xml.h:35
 #, fuzzy
@@ -10224,17 +10210,15 @@ msgstr "Nombre d'enfants nés en vie."
 
 #: Form/form_ie.xml.h:39
 msgid "(1.) Entry no."
-msgstr ""
+msgstr "(1.) Numéro d’entrée"
 
 #: Form/form_ie.xml.h:40 Form/form_ie.xml.h:74 Form/form_ie.xml.h:102
 msgid "Superintendent Registrar's District"
-msgstr ""
+msgstr "District du surintendant des registres"
 
 #: Form/form_ie.xml.h:41 Form/form_ie.xml.h:73 Form/form_ie.xml.h:103
-#, fuzzy
-#| msgid "Registration Sub-District"
 msgid "Registrar's District"
-msgstr "Sous-district d'enregistrement"
+msgstr ""
 
 #: Form/form_ie.xml.h:43 Form/form_ie.xml.h:105
 msgid "Union"
@@ -10253,10 +10237,8 @@ msgid "(3.) Name (if any)"
 msgstr ""
 
 #: Form/form_ie.xml.h:50 Form/form_ie.xml.h:52
-#, fuzzy
-#| msgid "3. Place of Birth"
 msgid "(2.) Date and Place of Birth"
-msgstr "3. Lieu de naissance"
+msgstr "(2.) Date et Lieu de naissance"
 
 #: Form/form_ie.xml.h:54
 msgid "(4.) M or F for male or female"
@@ -10267,10 +10249,8 @@ msgid "(5.) Name and Surname and Dwelling-place of Father"
 msgstr ""
 
 #: Form/form_ie.xml.h:60
-#, fuzzy
-#| msgid "Rank, Profession of Occupation"
 msgid "(7.) Rank or Profession of Father"
-msgstr "Rang, profession ou métier"
+msgstr "(7.) Rang ou profession du père"
 
 #: Form/form_ie.xml.h:62 Form/form_ie.xml.h:64
 msgid "(6.) Name and Surname and Maiden Surname of Mother"
@@ -10291,26 +10271,20 @@ msgid "(9.) Date when birth was registered"
 msgstr ""
 
 #: Form/form_ie.xml.h:71
-#, fuzzy
-#| msgid "Year only"
 msgid "Year"
-msgstr "Année seulement"
+msgstr "Année"
 
 #: Form/form_ie.xml.h:72
 msgid "Solemnized at the Catholic"
-msgstr ""
+msgstr "Solennisé à l’église catholique"
 
 #: Form/form_ie.xml.h:76 Form/form_ie.xml.h:107
-#, fuzzy
-#| msgid "Certificate Number"
 msgid "Certificate number"
 msgstr "Numéro de certificat"
 
 #: Form/form_ie.xml.h:77 Form/form_ie.xml.h:108
-#, fuzzy
-#| msgid "Show places"
 msgid "Page number"
-msgstr "Afficher les lieux"
+msgstr "Numéro de page"
 
 #: Form/form_ie.xml.h:78 Form/form_ie.xml.h:109
 msgid "(1.) Entry No."
@@ -10341,10 +10315,8 @@ msgid "(6.) Rank or Profession"
 msgstr ""
 
 #: Form/form_ie.xml.h:89
-#, fuzzy
-#| msgid "Date of Marriage"
 msgid "Residence at the Time of Marriage"
-msgstr "Date de mariage"
+msgstr "Résidence au moment du mariage"
 
 #: Form/form_ie.xml.h:91 Form/form_ie.xml.h:95
 msgid "(8.) Father's Name and Surname"
@@ -10371,10 +10343,8 @@ msgid "Date of Death"
 msgstr "Date de décès"
 
 #: Form/form_ie.xml.h:115 Form/form_ie.xml.h:117
-#, fuzzy
-#| msgid "30. Age and Cause of Deaths"
 msgid "(2.) Date and Place of Death"
-msgstr "30. Âge et cause de décès"
+msgstr "(2.) Date et lieu du décès"
 
 #: Form/form_ie.xml.h:116 Form/form_us.xml.h:2432 Form/form_us.xml.h:2495
 msgid "Place of Death"
@@ -10391,10 +10361,8 @@ msgid "(5.) Widowed or Married"
 msgstr "Veuf(ve), divorcé(e)"
 
 #: Form/form_ie.xml.h:123
-#, fuzzy
-#| msgid "Age last Birthday of"
 msgid "(6.) Age last Birthday"
-msgstr "Âge au dernier anniversaire"
+msgstr "(6.) Âge dernier anniversaire"
 
 #: Form/form_ie.xml.h:125
 #, fuzzy
@@ -10407,10 +10375,8 @@ msgid "(8.) Certified Cause of Death and Duration of Illness"
 msgstr ""
 
 #: Form/form_ie.xml.h:128
-#, fuzzy
-#| msgid "Direction of time"
 msgid "Duration of Illness"
-msgstr "Sens du temps"
+msgstr "Durée de maladie"
 
 #: Form/form_ie.xml.h:132
 #, fuzzy
