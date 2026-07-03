@@ -10,13 +10,14 @@
 # Eren Ekşi <ereneksi2012@gmail.com>, 2025.
 # muhaco <cemusa10@gmail.com>, 2026.
 # Osman Öz <osmanoz05@hotmail.com>, 2026.
+# batuhan Okmen <batuhanokmen@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 13:20-0700\n"
 "PO-Revision-Date: 2026-07-01 15:01+0000\n"
-"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Last-Translator: batuhan Okmen <batuhanokmen@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
 "Language: tr\n"
@@ -2518,7 +2519,7 @@ msgstr "Grafik türü sınırların dışına çıkıyor"
 #: NoteCleanup/NoteCleanup.py:126 SearchGramplet/SearchGramplet.gpr.py:9
 #: SearchGramplet/SearchGramplet.gpr.py:19
 msgid "Search"
-msgstr "Ara"
+msgstr "Arama"
 
 #: DenominoViso/DenominoViso.py:2553
 msgid "DenominoViso Options"
