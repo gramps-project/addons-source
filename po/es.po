@@ -9,6 +9,7 @@
 # Hugo Vidal <69076992+hugoovf@users.noreply.github.com>, 2025.
 # Alejandro Moctezuma <moctezumaalejandro25@gmail.com>, 2025, 2026.
 # Francisco Serrador <fserrador@gmail.com>, 2026.
+# Libre <6n0n1m0s@proton.me>, 2026.
 #
 # $Id: es.po 14573 2010-03-02 11:07:18Z romjerome $
 #
@@ -17,8 +18,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 13:20-0700\n"
-"PO-Revision-Date: 2026-06-24 14:01+0000\n"
-"Last-Translator: Juan Saavedra <jcsaaver@gmail.com>\n"
+"PO-Revision-Date: 2026-06-27 05:51+0000\n"
+"Last-Translator: Libre <6n0n1m0s@proton.me>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -2577,7 +2578,7 @@ msgstr "el tipo de cuadro ejecuta fuera de acotaciones"
 #: NoteCleanup/NoteCleanup.py:126 SearchGramplet/SearchGramplet.gpr.py:9
 #: SearchGramplet/SearchGramplet.gpr.py:19
 msgid "Search"
-msgstr "Buscar"
+msgstr "Búsqueda"
 
 #: DenominoViso/DenominoViso.py:2553
 msgid "DenominoViso Options"
