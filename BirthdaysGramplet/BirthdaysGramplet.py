@@ -3,6 +3,7 @@
 #
 # Copyright (C) 2010  Peter Potrowl <peter017@gmail.com>
 # Copyright (C) 2019  Matthias Kemmer <matt.familienforschung@gmail.com>
+# Copyright (C) 2026  Javad Razavian <javadr@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -114,8 +115,9 @@ class BirthdaysGramplet(Gramplet):
                 # calculate age and days until birthday
                 self.__calculate(database, person)
 
-        # Reverse sort on number of days from now:
-        self.result.sort(key=lambda item: -item[0])
+        # Sort by month then day:
+        self.result.sort(key=lambda item: (item[2].get_month(),
+                                           item[2].get_day()))
         self.clear_text()
 
         # handle text shown in gramplet
