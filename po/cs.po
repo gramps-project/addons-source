@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 13:20-0700\n"
-"PO-Revision-Date: 2026-05-12 12:11+0000\n"
+"PO-Revision-Date: 2026-06-29 14:56+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
@@ -190,10 +190,8 @@ msgid "Number of ancestors per generation"
 msgstr "Počet stránek"
 
 #: AncestryTableReport/AncestryTableReport.py:476
-#, fuzzy
-#| msgid "Select the number of ascending generations"
 msgid "Add a page with tne number of ancestors per generation."
-msgstr "Zvolte počet generací předků"
+msgstr "Přidejte stránku s počtem předků v každé generaci."
 
 #: AncestryTableReport/AncestryTableReport.py:495
 msgid "Mask the name of the calendar in the dates"
@@ -396,10 +394,8 @@ msgid "Attaching sources...\n"
 msgstr ""
 
 #: AttachSourceTool/AttachSourceTool.py:175
-#, fuzzy
-#| msgid "No matching surname."
 msgid "Attaching sources..."
-msgstr "Žádné odpovídající příjmení"
+msgstr "Připojování zdrojů..."
 
 #: AttachSourceTool/AttachSourceTool.py:197
 #: SetAttributeTool/SetAttributeTool.py:226
@@ -1511,10 +1507,8 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1852
 #: DescendantBooks/DescendantBookReport.py:552
-#, fuzzy
-#| msgid "Whether to show the last modification time in the pages footer"
 msgid "Whether to show duplicate family trees in the report."
-msgstr "Zda zobrazit čas poslední změny v patičce stránek"
+msgstr "Zda se mají ve zprávě zobrazovat duplicitní rodinné stromy."
 
 #: D3Charts/DescendantIndentedTree.py:1856
 msgid "Expanded Row Background Color"
@@ -1545,10 +1539,8 @@ msgid "Include records marked private"
 msgstr "Zahrnout záznamy označené jako důvěrné"
 
 #: D3Charts/DescendantIndentedTree.py:1873
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include private objects."
-msgstr "Zda zahrnout soukromé objekty"
+msgstr "Zda zahrnout soukromé objekty."
 
 #: D3Charts/DescendantIndentedTree.py:1881 DynamicWeb/dynamicweb.py:4814
 msgid "Include Last Name Only"
@@ -1666,10 +1658,8 @@ msgid "Generations to generate HREF links"
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1954
-#, fuzzy
-#| msgid "Select the number of ascending generations"
 msgid "The number of generations to generate HREF links."
-msgstr "Zvolte počet generací předků"
+msgstr "Počet generací, pro které se mají vygenerovat odkazy HREF."
 
 #: D3Charts/DescendantIndentedTree.py:1960
 msgid "Exclude persons who died before (years)"
@@ -1874,10 +1864,8 @@ msgid "L. Seg"
 msgstr ""
 
 #: DNAMatches/dnamatches.py:153
-#, fuzzy
-#| msgid "Persons"
 msgid "Pers."
-msgstr "Osoby"
+msgstr "Osob."
 
 #: DNAMatches/dnamatches.py:153
 msgid "Rel."
@@ -2041,10 +2029,8 @@ msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:428
 #: DataEntryGramplet/DataEntryGramplet.py:507
-#, fuzzy
-#| msgid "Save tree as file"
 msgid "No Family Tree is open."
-msgstr "Uložit strom jako soubor"
+msgstr "Není otevřen žádný rodinný strom."
 
 #: DataEntryGramplet/DataEntryGramplet.py:429
 msgid "Please open a Family Tree to edit data."
@@ -2325,10 +2311,8 @@ msgid "  <b>%s</b> (Active Person)...\n"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:382
-#, fuzzy
-#| msgid "No matching records found"
 msgid "Searching for connections..."
-msgstr "Nebyly nalezeny odpovídající záznamy"
+msgstr "Vyhledávání propojení..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:402
 #, python-format
@@ -2496,10 +2480,8 @@ msgstr ""
 #: DenominoViso/DenominoViso.py:2002 GraphView/graphview.py:968
 #: NoteCleanup/NoteCleanup.py:126 SearchGramplet/SearchGramplet.gpr.py:9
 #: SearchGramplet/SearchGramplet.gpr.py:19
-#, fuzzy
-#| msgid "Search:"
 msgid "Search"
-msgstr "Hledat:"
+msgstr "Vyhledávání"
 
 #: DenominoViso/DenominoViso.py:2553
 msgid "DenominoViso Options"
@@ -2540,10 +2522,8 @@ msgid "Display type"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2575
-#, fuzzy
-#| msgid "Select the type of graph"
 msgid "The type of graph to create."
-msgstr "Zvolte typ grafu"
+msgstr "Typ grafu, který se má vytvořit."
 
 #: DenominoViso/DenominoViso.py:2583
 msgid "Direction of time"
@@ -2591,39 +2571,33 @@ msgid "Include private records"
 msgstr "Zda zahrnout soukromé objekty"
 
 #: DenominoViso/DenominoViso.py:2609
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to leave out private data."
-msgstr "Zda zahrnout soukromé objekty"
+msgstr "Zda vynechat soukromá data."
 
 #: DenominoViso/DenominoViso.py:2612
 msgid "Include Events"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2614
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include a person's events."
-msgstr "Zda zahrnout soukromé objekty"
+msgstr "Zda zahrnout události osoby."
 
 #: DenominoViso/DenominoViso.py:2622
 msgid "Include birth children"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2623
-#, fuzzy
 msgid "Whether to include the birth of children in the list of events."
-msgstr "Zahrnout sloupec s daty úmrtí na indexových stránkách"
+msgstr "Zda zahrnout narození dětí do seznamu událostí."
 
 #: DenominoViso/DenominoViso.py:2626
 msgid "Include death relatives"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2627
-#, fuzzy
 msgid ""
 "Whether to include the death of relatives during the lifetime of person."
-msgstr "Zda zahrnout mediální objekty do WWW stránek"
+msgstr "Zda zahrnout úmrtí příbuzných během života osoby."
 
 #: DenominoViso/DenominoViso.py:2630
 #, fuzzy
@@ -2643,30 +2617,24 @@ msgid "Whether to include a person's attributes"
 msgstr "Zda zahrnout soukromé objekty"
 
 #: DenominoViso/DenominoViso.py:2640
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include a person's addresses."
-msgstr "Zda zahrnout soukromé objekty"
+msgstr "Zda zahrnout adresy osoby."
 
 #: DenominoViso/DenominoViso.py:2643
 msgid "Include Note"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2644
-#, fuzzy
-#| msgid "Whether to include a birth column"
 msgid "Whether to include a person's note."
-msgstr "Zda zahrnout sloupec narození"
+msgstr "Zda zahrnout poznámku osoby."
 
 #: DenominoViso/DenominoViso.py:2647
 msgid "Include URL"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2648
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include a person's internet address."
-msgstr "Zda zahrnout soukromé objekty"
+msgstr "Zda zahrnout internetovou adresu osoby."
 
 #: DenominoViso/DenominoViso.py:2651
 msgid "Include URL description"
@@ -2682,10 +2650,8 @@ msgid "Include Sources"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2658
-#, fuzzy
-#| msgid "Whether to include a birth column"
 msgid "Whether to include a person's sources."
-msgstr "Zda zahrnout sloupec narození"
+msgstr "Zda zahrnout zdroje osoby."
 
 #: DenominoViso/DenominoViso.py:2661
 msgid "Image Options"
@@ -3138,10 +3104,9 @@ msgid "%(name_kind)s: %(name)s%(endnotes)s"
 msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1324
-#, fuzzy, python-format
-#| msgid "%(type)s: %(value)s"
+#, python-format
 msgid "%(type)s:"
-msgstr "%(type)s: %(value)s"
+msgstr "%(type)s:"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1329
 #, python-format
@@ -3163,30 +3128,24 @@ msgid "Include Index of Names"
 msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1513
-#, fuzzy
-#| msgid "Whether to print the notes type in the notes text"
 msgid "Whether to include the index of Names at the end of the report."
-msgstr "Zda tisknout typ poznámky v textu poznámky"
+msgstr "Zda zahrnout rejstřík jmen na konec zprávy."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1517
 msgid "Include index of Dates"
 msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1518
-#, fuzzy
-#| msgid "Whether to print the notes type in the notes text"
 msgid "Whether to include the index of Dates at the end of the report."
-msgstr "Zda tisknout typ poznámky v textu poznámky"
+msgstr "Zda zahrnout rejstřík dat na konci zprávy."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1522
 msgid "Include index of Places"
 msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1523
-#, fuzzy
-#| msgid "Whether to print the notes type in the notes text"
 msgid "Whether to include the index of Places at the end of the report."
-msgstr "Zda tisknout typ poznámky v textu poznámky"
+msgstr "Zda zahrnout rejstřík míst na konci zprávy."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1527
 msgid "Include the 'Report appearances' section with each person"
@@ -3228,10 +3187,8 @@ msgid "The style used for note detail data."
 msgstr ""
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1674
-#, fuzzy
-#| msgid "Include a column for birth dates on the index pages"
 msgid "The style used for the date in the Index of Dates."
-msgstr "Zahrnout sloupec s daty narození na indexových stránkách"
+msgstr "Styl použitý pro datum v rejstříku dat."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1684
 msgid "The style used for the events in the Index of Dates."
@@ -3434,10 +3391,8 @@ msgid ""
 msgstr ""
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1016
-#, fuzzy
-#| msgid "Search:"
 msgid "Search. . ."
-msgstr "Hledat:"
+msgstr "Hledat..."
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:1091
 msgid "Branch to expand when duplicated"
@@ -3544,9 +3499,8 @@ msgid "Include an image"
 msgstr "Zahrnout obrázky a mediální objekty"
 
 #: DescendantsLines/DescendantsLines.py:1565
-#, fuzzy
 msgid "Whether to include an image if one is available."
-msgstr "Zda zahrnout mediální objekty do WWW stránek"
+msgstr "Zda zahrnout obrázek, pokud je k dispozici."
 
 #: DescendantsLines/DescendantsLines.py:1569
 msgid "Max Image height"
@@ -3926,10 +3880,8 @@ msgid "Include TODO notes"
 msgstr ""
 
 #: DetDescendantReport-images/detdescendantreporti.py:1239
-#, fuzzy
-#| msgid "Whether to include private objects"
 msgid "Whether to include TODO notes."
-msgstr "Zda zahrnout soukromé objekty"
+msgstr "Zda zahrnout poznámky úkolů."
 
 #: DetDescendantReport-images/detdescendantreporti.py:1412
 msgid "The style used for image labels."
@@ -4328,7 +4280,7 @@ msgstr "Nebyly nalezeny odpovídající záznamy"
 
 #: DynamicWeb/dynamicweb.py:3035
 msgid "No matching surname."
-msgstr "Žádné odpovídající příjmení"
+msgstr "Žádné odpovídající příjmení."
 
 #: DynamicWeb/dynamicweb.py:3040
 msgid "Other participants"
@@ -4490,7 +4442,7 @@ msgstr "Použít tabelované panely místo sekcí"
 
 #: DynamicWeb/dynamicweb.py:3126
 msgid "Use the search box above in order to find a person."
-msgstr "Použijte vyhledávací políčko výše k vyhledání osoby"
+msgstr "Použijte vyhledávací políčko výše k vyhledání osoby."
 
 #: DynamicWeb/dynamicweb.py:3130
 msgid "Use a table format for the surnames index"
@@ -5023,7 +4975,7 @@ msgstr "Počet stránek"
 
 #: DynamicWeb/dynamicweb.py:5237
 msgid "Number pages in the web site menu."
-msgstr "Číslovat stránky v menu WWW stránek"
+msgstr "Počet stránek v menu WWW stránek."
 
 #: DynamicWeb/dynamicweb.py:5257
 #, python-format
@@ -5745,9 +5697,8 @@ msgstr ""
 "jménu"
 
 #: FamilySheet/FamilySheet.py:882
-#, fuzzy
 msgid "Whether to include call name, and how."
-msgstr "Zda zahrnout sloupec úmrtí"
+msgstr "Zda zahrnout volací jméno a jakým způsobem."
 
 #: FamilySheet/FamilySheet.py:885
 msgid "Print placeholders for missing information"
@@ -6210,24 +6161,20 @@ msgid "Include Children"
 msgstr ""
 
 #: FilterRules/infamilyrule.py:68
-#, fuzzy
 msgid "Include the children in the matching families."
-msgstr "Zahrnout sloupec s daty úmrtí na indexových stránkách"
+msgstr "Zahrnout děti do odpovídajících rodin."
 
 #: FilterRules/infamilyrule.py:94 FilterRules/infamilyrule.py:143
 msgid "Include Parents"
 msgstr ""
 
 #: FilterRules/infamilyrule.py:95
-#, fuzzy
 msgid "Include the parents in the matching families."
-msgstr "Zahrnout sloupec s daty úmrtí na indexových stránkách"
+msgstr "Zahrnout rodiče do odpovídajících rodin."
 
 #: FilterRules/infamilyrule.py:141 FilterRules/isfamilyfiltermatchevent.py:81
-#, fuzzy
-#| msgid "Family Nick Name"
 msgid "Family Filter name:"
-msgstr "Přezdívka rodiny"
+msgstr "Název filtru rodin:"
 
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:25
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:26
@@ -9947,19 +9894,15 @@ msgstr "Počet stránek"
 
 #: Form/form_ie.xml.h:14
 msgid "Name of Public Institution"
-msgstr ""
+msgstr "Název veřejné instituce"
 
 #: Form/form_ie.xml.h:16 Form/form_ie.xml.h:113
-#, fuzzy
-#| msgid "Used for source"
 msgid "Name and Surname"
-msgstr "Použito pro pramen"
+msgstr "Jméno a příjmení"
 
 #: Form/form_ie.xml.h:18
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Relationship to Head of Household"
-msgstr "Vztah k otci"
+msgstr "Vztah k hlavě domácnosti"
 
 #: Form/form_ie.xml.h:19
 msgid "Year Age"
@@ -10084,10 +10027,8 @@ msgid "Solemnized at the Catholic"
 msgstr ""
 
 #: Form/form_ie.xml.h:76 Form/form_ie.xml.h:107
-#, fuzzy
-#| msgid "Call number:"
 msgid "Certificate number"
-msgstr "Signatura:"
+msgstr "Číslo osvědčení"
 
 #: Form/form_ie.xml.h:77 Form/form_ie.xml.h:108
 #, fuzzy
@@ -15459,9 +15400,8 @@ msgstr "Zahrnout obrázky a mediální objekty"
 
 #: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
 #: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:270
-#, fuzzy
 msgid "Include images of people in the nodes."
-msgstr "Zahrnout sloupec s daty úmrtí na indexových stránkách"
+msgstr "Zahrnout obrázky osob do uzlů."
 
 #: GenealogyTree/gt_descendant.py:191
 msgid "First spouse left"
@@ -16565,10 +16505,8 @@ msgstr ""
 
 #: GraphView/search_widget.py:400 PluginManager/PluginManager.py:169
 #: SearchGramplet/SearchGramplet.py:391
-#, fuzzy
-#| msgid "Search:"
 msgid "Search..."
-msgstr "Hledat:"
+msgstr "Hledat..."
 
 #: GraphView/search_widget.py:592
 #, python-format
@@ -16719,10 +16657,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:129
-#, fuzzy
-#| msgid "Longitude :"
 msgid "Start longitude"
-msgstr "Zeměpisná délka :"
+msgstr "Počáteční zeměpisná délka"
 
 #: Heatmap/heatmap.py:131
 msgid ""
@@ -17441,10 +17377,8 @@ msgid "Show birth label"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:26
-#, fuzzy
-#| msgid "Estimated birth date"
 msgid "Activate the birth label."
-msgstr "Odhadovaný datum narození"
+msgstr "Aktivovat popisek narození."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:27
 msgid "Birth label along path"
@@ -17527,10 +17461,8 @@ msgid "Show death label"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:49
-#, fuzzy
-#| msgid "Estimated death date"
 msgid "Activate the death label."
-msgstr "Odhadovaný datum úmrtí"
+msgstr "Aktivovat popisek úmrtí"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:50
 msgid "Death label rotation"
@@ -18044,16 +17976,12 @@ msgid "This report only supports PDF as output file format."
 msgstr ""
 
 #: MediaReport/media_report.py:229
-#, fuzzy
-#| msgid "General Data"
 msgid "General:"
-msgstr "Obecná data"
+msgstr "Hlavní"
 
 #: MediaReport/media_report.py:250
-#, fuzzy
-#| msgid "<-- Image Types -->"
 msgid "Image type:"
-msgstr "<-- Typy obrázků -->"
+msgstr "Typ obrázku:"
 
 #: MediaReport/media_report.py:426
 msgid "Heading"
@@ -24117,10 +24045,8 @@ msgid "US Google"
 msgstr ""
 
 #: WebSearch/WebSearch.gpr.py:34 WebSearch/WebSearch.gpr.py:47
-#, fuzzy
-#| msgid "Search:"
 msgid "WebSearch"
-msgstr "Hledat:"
+msgstr "Vyhledávání na webu"
 
 #: WebSearch/WebSearch.gpr.py:36
 msgid ""
@@ -24254,10 +24180,8 @@ msgid "URL is copied to the Clipboard"
 msgstr ""
 
 #: WebSearch/WebSearch.py:2391
-#, fuzzy
-#| msgid "Search:"
 msgid "WebSearch Link"
-msgstr "Hledat:"
+msgstr "Odkaz na vyhledávání na webu"
 
 #: WebSearch/WebSearch.py:2428
 msgid "Attribute has been successfully added"
@@ -24642,10 +24566,8 @@ msgid "Full hierarchy"
 msgstr ""
 
 #: WebSearch/markdown_place_history_formatter.py:68
-#, fuzzy
-#| msgid "Print place pages"
 msgid "Place Type:"
-msgstr "Tisknout stránky míst"
+msgstr "Typ místa:"
 
 #: WebSearch/markdown_place_history_formatter.py:69
 msgid "Last Retrieved At:"
