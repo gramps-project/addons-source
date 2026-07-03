@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2026-02-20 09:09+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,10 +13,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Pedigree Chart"
+msgstr "אילן־יוחסין תרשים"
+
+msgid "Alternate version of the traditional pedigree chart."
+msgstr "גרסה חלופית של תרשים אילן־היוחסין המסורתי."
+
+#, python-format
+msgid "Pedigree Chart for %s"
+msgstr "אילן־יוחסין תרשים עבור %s"
+
+#, python-format
+msgid "Page %d"
+msgstr "עמוד %d"
+
+msgid "Show Mother/Father captions"
+msgstr "הצגת אם/אב כיתובים"
+
+msgid "Show the title of mother or father beside each ancestor's box."
+msgstr "הצגת כותרת של אם או אב לצד כל אב של תיבה."
 
 msgid "Show page numbers"
 msgstr "הצגת מספרי עמוד"
 
+msgid "Add a footer on every page with the page number and date printed."
+msgstr "הוספה סיומת עמוד על כל עמוד עם עמוד מספר ותאריך שהודפס."
+
 msgid "The basic style used for the title display."
 msgstr "הסגנון הבסיסי ששימש למצג כותרת."
+
+msgid "Style used for names (only for PDF document and PostScript)."
+msgstr "סגנון שמשמש לשמות (רק עבור מסמך PDF ו־PostScript)."
+
+msgid "Style used for labels and captions."
+msgstr "סגנון שמשמש עבור תוויות וכיתובים."

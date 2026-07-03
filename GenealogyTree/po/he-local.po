@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Ancestor tree using LaTeX genealogytree"
+msgstr "אילן אבות באמצעות LaTeX genealogytree"
+
+msgid "Descendant tree using LaTeX genealogytree"
+msgstr "אילן צאצאים באמצעות LaTeX genealogytree"
+
+msgid "Grandparent Tree"
+msgstr "אילן סבים/סבתות"
+
+msgid "Grandparent tree using LaTeX genealogytree"
+msgstr "אילן סבים באמצעות LaTeX genealogytree"
+
+msgid "Sandclock Tree"
+msgstr "אילן שעון־חול"
+
+msgid "Sandclock tree using LaTeX genealogytree"
+msgstr "אילן שעון־חול באמצעות LaTeX genealogytree"
+
+msgid "Sandclock Tree for a Family"
+msgstr "אילן שעון־חול למשפחה"
+
+msgid "Sandclock tree for a family using LaTeX genealogytree"
+msgstr "אילן שעון־חול למשפחה באמצעות LaTeX genealogytree"
 
 msgid "The center family for the report"
 msgstr "המשפחה שבמרכז הדוח"
@@ -21,8 +45,48 @@ msgstr "המשפחה שבמרכז הדוח"
 msgid "Generations up"
 msgstr "דורות מעלה"
 
+msgid "Generations down"
+msgstr "דורות למטה"
+
 msgid "Include siblings"
 msgstr "לכלול אחאים"
 
+msgid "Include siblings of ancestors."
+msgstr "לכלול אחאים של אבות."
+
 msgid "Include images"
 msgstr "הכללת תמונות"
+
+msgid "Include images of people in the nodes."
+msgstr "לכלול תמונות אנשים בצמתים."
+
+msgid "Compact tree layout"
+msgstr "פריסת אילן צפופה"
+
+msgid ""
+"Use the genealogytree 'database pole reduced' template, which packs more "
+"generations per page. Useful for large sandclock trees that otherwise clip "
+"off the rendered page."
+msgstr ""
+"שימוש בתבנית genealogytree‏ 'database pole reduced', הדוחסת יותר דורות בכל "
+"עמוד. שימושית לאילנות שעון־חול גדולים שאחרת ייחתכו מהעמוד שנוצר."
+
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr "לאדם %s אין גם הורה־הורה מצד האב וגם הורה־הורה מצד האם"
+
+msgid "Grandparent family spacing"
+msgstr "מרווח משפחת סב/סבתא"
+
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "מרווח נוסף למשפחות סבים/סבתות (מ״מ)"
+
+msgid "First spouse left"
+msgstr "ראשון זוגאי שמאל"
+
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
+msgstr ""
+"הצבת הזוגאי הראשון מבין כמה זוגאים בצד שמאל תמיד. הדבר יכול לסייע בצמצום "
+"חציות קווים בנישואין מרובים."

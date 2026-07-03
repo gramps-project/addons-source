@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2026-02-03 09:01+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
+msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
 
 msgid "Replace existing references to the person being assigned without asking"
 msgstr "החלפת אזכורים קיימות לאדם שהוקצה ללא שאלה מקדימה"
@@ -31,7 +34,7 @@ msgid "Detect faces inside existing boxes"
 msgstr "זיהוי פנים בתוך תיבות קיימות"
 
 msgid "Sensitivity (1 min .. 20 max)"
-msgstr "רגישות (1 מזערי.. 20 מירבי)"
+msgstr "רגישות (1 מזערי.. 20 מרבי)"
 
 msgid "Add Person"
 msgstr "הוספת אדם"
@@ -55,7 +58,10 @@ msgid "Detect faces"
 msgstr "זיהוי פנים"
 
 msgid "Detect faces (OpenCV module required)"
-msgstr "זיהוי פנים (נדרש רכיב של OpenCV)"
+msgstr "זיהוי פנים (נדרש פרקן OpenCV)"
+
+msgid "XMP Region Name"
+msgstr "שם אזור XMP"
 
 msgid "Set as active person"
 msgstr "הגדרה כאדם הפעיל"
@@ -80,10 +86,22 @@ msgstr "אזור אחר של תמונה זו משויכת ל־{name}. האם ל�
 #, python-brace-format
 msgid ""
 "{count} other regions of this image are associated with {name}. Remove them?"
-msgstr "{count} אזורים אחרים של תמונה זו משויכים ל {name}. האם להסירם?"
+msgstr "{count} אזורים אחרים של תמונה זו משויכים ל־{name}. האם להסירם?"
+
+#, python-format
+msgid "Male person|Dead at %s"
+msgstr "זכר אדם|נפטר ב־%s"
+
+#, python-format
+msgid "Female person|Dead at %s"
+msgstr "נקבה אדם|נפטר ב־%s"
+
+#, python-format
+msgid "Unknown gender person|Dead at %s"
+msgstr "לא ידוע מגדר אדם|נפטר ב־%s"
 
 msgid "Photo Tagging"
 msgstr "תיוג תמונה"
 
 msgid "Gramplet for tagging people in photos"
-msgstr "גראמפלט לתיוג אנשים בתמונות"
+msgstr "גרמפלט לתיוג אנשים בתמונות"

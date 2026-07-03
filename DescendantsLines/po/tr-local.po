@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-28 21:42+0000\n"
-"Last-Translator: Bora Atıcı <boratici.acc@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
 "Language: tr\n"
@@ -12,10 +12,356 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "Descendants Lines"
+msgstr "Soyundan Gelen Hatları"
+
+msgid "Produces descendants lines of a person"
+msgstr "Bir kişinin soyundan gelen nesilleri üretir"
+
+msgid "Using SVG type for supplemental document is not supported!"
+msgstr "SVG türü ek belge için desteklenmiyor!"
+
+msgid "Output format"
+msgstr "Çıktı biçimi"
+
+msgid "PNG format"
+msgstr "PNG biçimi"
+
+msgid "SVG format"
+msgstr "SVG biçimi"
+
+msgid "PDF format"
+msgstr "PDF biçimi"
+
+msgid "PS format"
+msgstr "PS biçimi"
+
+msgid "The output format to be used"
+msgstr "Kullanılacak çıktı biçimi"
+
+msgid "The destination file for the content."
+msgstr "İçerik için hedef dosya."
+
+msgid "The number of generations to include in the chart. (0 for unlimited)"
+msgstr "Grafiğe dahil edilecek nesil sayısı. (Sınırsız için 0)"
+
+msgid "Use d'Aboville descendant numbering system"
+msgstr "D'Aboville soyundan gelen numaralandırma sistemini kullanın"
+
+msgid "Prepend name with d'Aboville descendant number in the chart."
+msgstr "Adın önüne tablodaki d'Aboville soyundan gelen numarasını ekleyin."
+
+msgid "Include an image"
+msgstr "Bir resim ekle"
+
+msgid "Whether to include an image if one is available."
+msgstr "Eğer bir görsel mevcutsa, görselin eklenip eklenmeyeceği."
+
+msgid "Max Image height"
+msgstr "Maksimum Görüntü yüksekliği"
+
+msgid "Maximum image height in pixels, 0=don't scale for height."
+msgstr ""
+"Piksel cinsinden maksimum görüntü yüksekliği, 0=yükseklik için ölçekleme "
+"yapılmaz."
+
+msgid "Max Image width"
+msgstr "Maksimum Görüntü genişliği"
+
+msgid "Maximum image width in pixels, 0=don't scale for width."
+msgstr ""
+"Piksel cinsinden maksimum görüntü genişliği, 0=genişlik için ölçekleme "
+"yapılmaz."
+
+msgid "Image Location"
+msgstr "Görüntü Konumu"
+
+msgid "Above text"
+msgstr "Metnin üstünde"
+
+msgid "Left of text"
+msgstr "Metnin solunda"
+
+msgid "Position of image relative to text"
+msgstr "Görüntünün metne göre konumu"
+
+msgid "Colour Name by Gender"
+msgstr "Cinsiyete Göre Renk Adı"
+
+msgid "Color the name to indicate a person's gender in the chart."
+msgstr "Tabloda kişinin cinsiyetini belirtmek için adını renklendirin."
+
+msgid "Use alternate events, if Primary event is not found"
+msgstr "Birincil etkinlik bulunamazsa alternatif etkinlikleri kullanın"
+
+msgid ""
+"For Birth (baptism, christen)\n"
+"   Marriage (marr_lic, engagement)\n"
+"   Divorce (annulment, div_filing),\n"
+"   Death (burial, cremation, probate)."
+msgstr ""
+"Doğum (vaftiz, isim koyma)\n"
+"   Evlilik (nikah, nişan)\n"
+"   Boşanma (iptal, boşanma davası),\n"
+"   Ölüm (defin, ölü yakma, miras işlemleri)."
+
+msgid "Sort Events by Date"
+msgstr "Etkinlikleri Tarihe Göre Sırala"
+
+msgid "Sort events by date (else use the order of the 'Display Format' above)."
+msgstr ""
+"Etkinlikleri tarihe göre sıralayın (aksi takdirde yukarıdaki 'Görüntüleme "
+"Biçimindeki sıralama düzenini kullanın)."
+
+msgid "Text style"
+msgstr "Metin stili"
+
+msgid "Center-aligned text"
+msgstr "Merkeze hizalanmış metin"
+
+msgid "Left-aligned text"
+msgstr "Sola hizalanmış metin"
+
+msgid "Alignment of the text in the block for each person on the chart"
+msgstr "Grafikteki her bir kişi için blok içindeki metnin hizalanması"
+
+msgid "Max Note Length"
+msgstr "Maksimum Not Uzunluğu"
+
+msgid ""
+"Maximum length of an event's note field in a text block, '$e(n)'\n"
+" 0=no limit "
+msgstr ""
+"Bir metin bloğundaki etkinlik not alanının maksimum uzunluğu, '$e(n)'\n"
+" 0=sınır yok "
+
+msgid "Font Name"
+msgstr "Yazı Tipi Adı"
+
+msgid ""
+"Name of the Font to use. On Windows enter the file name of the .ttf at /"
+"Windows/Fonts"
+msgstr ""
+"Kullanılacak yazı tipinin adı. Windows'ta /Windows/Fonts klasöründeki .ttf "
+"dosyasının adını girin"
+
+msgid "Font base size"
+msgstr "Yazı tipi taban boyutu"
+
+msgid "Box around Person's block"
+msgstr "Kişinin bloğunun etrafındaki kutu"
+
+msgid "Draw a thin black box around each person' text block."
+msgstr "Her kişinin metin bloğunun etrafına ince siyah bir kutu çizin."
+
+msgid "All Person's blocks have the same height"
+msgstr "Kişinin tüm blokları aynı yüksekliğe sahiptir"
+
+msgid ""
+"All the blocks of all the person have the same height, which is the height "
+"of the highest block."
+msgstr ""
+"Kişinin tüm bloklarının yüksekliği aynıdır; bu yükseklik, en yüksek bloğun "
+"yüksekliğine eşittir."
+
+msgid "All Person's blocks have the same width"
+msgstr "Tüm Kişi blokları aynı genişliğe sahiptir"
+
+msgid ""
+"All the blocks of all the person have the same width, which is the width of "
+"the widthest block."
+msgstr ""
+"Tüm kişilerin tüm blokları aynı genişliğe sahiptir, bu genişlik en geniş "
+"bloğun genişliğidir."
+
+msgid "Colour blocks by Generation"
+msgstr "Nesillere Göre renk blokları"
+
+msgid "Colour the background of text blocks by generation."
+msgstr "Metin bloklarının arka planını nesillere göre renklendirin."
+
+msgid "Descend block colour intensity"
+msgstr "Blok renk yoğunluğunu azalt"
+
+msgid ""
+"Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
+"colour"
+msgstr ""
+"Soyundan gelen ağacı bloğundaki arka plan renginin yoğunluğu, 0=soluk, "
+"255=yoğun renk"
+
+msgid "Spouse block colour intensity"
+msgstr "Eşin blok renginin yoğunluğu"
+
+msgid ""
+"Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
+msgstr "Eşin Bloğundaki arka plan renginin yoğunluğu, 0=soluk 255=yoğun renk"
+
+msgid "Display Formats"
+msgstr "Görüntü Biçimleri"
+
+msgid "Name Display Format"
+msgstr "Ad Görüntüleme Biçimi"
+
+msgid ""
+"f=first & middle names, l=surname, n=nickname,\n"
+"c=commonly used given name, t=title, s=suffix, g=family nick name\n"
+"See Wiki Manual > Reports > part 2"
+msgstr ""
+"f=ilk ve orta adlar, l=soyadı, n=takma ad,\n"
+"c=yaygın olarak kullanılan ad, t=ünvan, s=ek, g=aile takma adı\n"
+"Bkz. Wiki Kılavuzu > Raporlar > bölüm 2"
+
+msgid ""
+"[event, list]$e(formating)\n"
+"See Wiki Manual > Reports > part 2\n"
+"formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
+msgstr ""
+"[olay, liste]$e(biçimlendirme)\n"
+"Wiki Kılavuzu > Raporlar > bölüm 2'ye bakın\n"
+"biçimlendirme: tarihler=d(ymdMo) yerler=D(elcuspnoitxy) notlar=n "
+"kısaltılmış_tür=t"
+
 msgid "Replace"
 msgstr "Yer değiştir"
+
+msgid ""
+"i.e.\n"
+"United States of America/USA"
+msgstr ""
+"örneğin\n"
+"Amerika Birleşik Devletleri/ABD"
+
+msgid "Spouse and Family"
+msgstr "Eş ve Aile"
+
+msgid "Vertical edge descendant to spouse-bar"
+msgstr "Dikey kenar soyundan gelenden eş çubuğuna"
+
+msgid "The length of the vertical edge from descendant to spouse-bar."
+msgstr ""
+"Soyundan gelen ağacındaki daldan eş dalına kadar olan dikey kenarın uzunluğu."
+
+msgid "Vertical edge spouse-bar to spouse"
+msgstr "Eşler arası dikey kenar çubuğu"
+
+msgid "The length of the vertical edge from spouse-bar to spouse."
+msgstr "Eş çubuğundan eş çubuğuna uzanan dikey kenarın uzunluğu."
+
+msgid "Vertical space spouse-bar to other spouse"
+msgstr "Eşler arası dikey boşluk çubuğu"
+
+msgid ""
+"The space to add between one spouse-bar and another spouse in case of "
+"multiple families with the same descendant."
+msgstr ""
+"Aynı soydan gelen birden fazla aile olması durumunda, bir eş ile diğer eş "
+"arasına eklenecek boşluk."
+
+msgid "Horizontal space descendant to spouse"
+msgstr "Soyundan gelen kişi ile eşi arasındaki yatay boşluk"
+
+msgid "The space to add between the descendant and the spouse."
+msgstr "Soyundan gelen kişi ile eşi arasına eklenecek boşluk."
+
+msgid "Horizonal space family to family"
+msgstr "Aileden aileye uzanan yatay boşluk"
+
+msgid ""
+"The space to add between the more extern descendant (or spouse) of a family "
+"and the more extern descendant (or spouse) of the next family."
+msgstr ""
+"Bir ailenin en dıştaki soyundan gelen (veya eşi) ile bir sonraki ailenin en "
+"dıştaki soyundan gelen (veya eşi) arasına eklenecek boşluk."
+
+msgid "Horizontal distance spouse to family edge"
+msgstr "Eşten aile sınırına kadar olan yatay mesafe"
+
+msgid ""
+"If this value is 0, the children bar is centered under the spouse. The "
+"bigger the value, more the center is moved to the left towards the "
+"descendant."
+msgstr ""
+"Bu değer 0 ise, çocuk çubuğu eşin altına ortalanır. Değer ne kadar büyükse, "
+"merkez o kadar sola, soyundan gelene doğru kayar."
+
+msgid "OL_PAD"
+msgstr "OL_PAD"
+
+msgid "The number of ??? pad"
+msgstr "??? ped sayısı"
+
+msgid "Vertical edge spouse-bar to child-bar"
+msgstr "Eş çubuğundan çocuk çubuğuna dikey çizgi"
+
+msgid "The length of the vertical edge from spouse-bar to child-bar."
+msgstr "Eş çubuğundan çocuk çubuğuna kadar olan dikey kenarın uzunluğu."
+
+msgid "Children distance"
+msgstr "Çocuk mesafesi"
+
+msgid "The horizontal distance between two children of the same family."
+msgstr "Aynı aileden iki çocuk arasındaki yatay mesafe."
+
+msgid "Vertical edge child to child-bar"
+msgstr "Dikey kenar çocuktan çocuk çubuğuna"
+
+msgid "The length of the vertical edge from child to child-bar."
+msgstr "Çocuk çubuğundan çocuk çubuğuna uzanan dikey kenarın uzunluğu."
+
+msgid "MIN_C_WIDTH"
+msgstr "MIN_C_GENİŞLİĞİ"
+
+msgid "The number of ??? min width"
+msgstr "Minimum genişlik sayısı ???"
+
+msgid "Space around text"
+msgstr "Metnin etrafındaki boşluk"
+
+msgid "The space to add around the text block of a person."
+msgstr "Bir kişinin metin bloğunun etrafına eklenebilecek boşluk."
+
+msgid "Space between lines of text"
+msgstr "Metin satırları arasındaki boşluk"
+
+msgid "The space to add between a line and the next in a person text block."
+msgstr ""
+"Kişi metin bloğunda bir satır ile bir sonraki satır arasına eklenecek boşluk."
+
+msgid "Header and Footer"
+msgstr "Başlık ve Alt Bilgi"
+
+msgid "The text that will be written in the header of the document"
+msgstr "Belgenin başlığına yazılacak metin"
+
+msgid "The text that will be written in the footer of the document"
+msgstr "Belgenin alt bilgisine yazılacak metin"
+
+msgid "Title and footer coefficient"
+msgstr "Başlık ve alt bilgi katsayısı"
+
+msgid ""
+"A number that multiply the base size of the text in the title and in the "
+"footer"
+msgstr "Başlık ve alt bilgideki metnin taban boyutunu çarpan bir sayı"
+
+msgid "Protect People, Images or Events that are marked Private"
+msgstr ""
+"Özel olarak işaretlenmiş kişileri, görselleri veya etkinlikleri koruyun"
+
+msgid "The Privacy setting of only these types of Gramps objects are checked"
+msgstr "Yalnızca bu tür Gramps nesnelerinin Gizlilik ayarı işaretlenmiştir"
+
+msgid "Privacy text"
+msgstr "Gizlilik metni"
+
+msgid "Text to display in block, when a Person is marked private"
+msgstr "Kişi gizli olarak işaretlendiğinde blok halinde görüntülenecek metin"
+
+msgid "The default style."
+msgstr "Varsayılan stil."

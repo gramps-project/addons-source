@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-02-20 09:09+0000\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,56 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Gramps Web Sync"
+msgstr "מרשתת גרמפס סנכרון"
+
+msgid "Synchronizes a local database with a Gramps Web instance."
+msgstr "מסנכרן מסד־נתונים מקומי עם מופע מרשתת גרמפס."
+
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr "למשתמש אין הרשאות שרת מספיקות לשימוש בסנכרון."
+
+msgid "Fetching remote data..."
+msgstr "מאחזר נתונים מרוחקים..."
+
+msgid "Unexpected error while applying changes."
+msgstr "שגיאה בלתי צפויה בעת החלת שינויים."
+
+msgid "Media files are in sync."
+msgstr "קובצי המדיה מסונכרנים."
+
+#, python-format
+msgid "Successfully downloaded %s media files."
+msgstr "הורדת %s קובצי מדיה הושלמה בהצלחה."
+
+#, python-format
+msgid "Encountered %s errors during download."
+msgstr "אירעו %s שגיאות במהלך ההורדה."
+
+#, python-format
+msgid "Successfully uploaded %s media files."
+msgstr "העלאת %s קובצי מדיה הושלמה בהצלחה."
+
+#, python-format
+msgid "Encountered %s errors during upload."
+msgstr "אירעו %s שגיאות במהלך ההעלאה."
+
+msgid "Authentication failed. Please check your username and password."
+msgstr "האימות נכשל. יש לבדוק שם משתמש וססמה."
+
+msgid "Access forbidden. Please check username and password."
+msgstr "הגישה אסורה. יש לבדוק שם משתמש וססמה."
+
+msgid "GrampsWeb service not found. Please check the URL."
+msgstr "שירות מרשתת גרמפס לא נמצא. יש לבדוק את כתובת ה־URL."
+
+msgid "Too many requests, please try again in a few seconds."
+msgstr "יותר מדי בקשות; יש לנסות שוב בעוד כמה שניות."
+
+msgid "GrampsWeb tree is disabled."
+msgstr "אילן מרשתת גרמפס מושבת."
 
 #, python-format
 msgid "Server error %s. Please check your connection."
@@ -22,8 +71,91 @@ msgstr "שגיאת שרת %s. נא לבדוק חיבור."
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr "חיבור כשל. נא לבדוק את ה־URL והחיבור למרשתת."
 
+msgid "Invalid server response. Please check the URL."
+msgstr "תגובת שרת לא תקינה. יש לבדוק את כתובת ה־URL."
+
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "שגיאה בלתי צפויה: %s"
+
+msgid "Error accessing media object."
+msgstr "שגיאה גישה מדיה עצם."
+
+msgid "Failed importing downloaded XML file."
+msgstr "ייבוא קובץ XML שהורד נכשל."
+
+msgid "Comparing local and remote data..."
+msgstr "השוואת מקומי ומרוחק נתונים..."
+
+msgid "Server authorization error."
+msgstr "שגיאת הרשאת שרת."
+
+msgid "Server authorization error: insufficient permissions."
+msgstr "שגיאת הרשאת שרת: הרשאות בלתי מספיקות."
+
 msgid "Error: URL not found."
 msgstr "שגיאה: לא נמצא URL."
+
+msgid "Unable to synchronize changes to server: objects have been modified."
+msgstr "לא ניתן לסנכרון שינויים לשרת: עצמים יש היה שונו."
+
+#, python-format
+msgid "Error %s while connecting to server."
+msgstr "שגיאה %s בעת התחברות לשרת."
+
+msgid "URL error while connecting to server."
+msgstr "שגיאת URL בעת חיבור לשרת."
+
+msgid "Unable to synchronize changes to server."
+msgstr "לא ניתן לסנכרון שינויים לשרת."
+
+msgid "Continue without transport encryption?"
+msgstr "להמשיך ללא הצפנת תעבורה?"
+
+msgid ""
+"You have specified a URL with http scheme. If you continue, your password "
+"will be sent in clear text over the network. Use only for local testing!"
+msgstr ""
+"צוינה כתובת URL עם סכמת http. בהמשך, הססמה תישלח כמלל גלוי ברשת. יש להשתמש "
+"בכך לבדיקה מקומית בלבד!"
+
+msgid "Continue with HTTP"
+msgstr "המשך עם HTTP"
+
+msgid "Use HTTPS"
+msgstr "שימוש ב־HTTPS"
+
+msgid ""
+"This tool allows to synchronize the currently opened family tree with a "
+"remote family tree served by Gramps Web.\n"
+"\n"
+"The tool assumes that the two trees are derivatives of each other, i.e. one "
+"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
+"\n"
+"After successful synchronization, the two trees will be identical. "
+"Modifications will be propagated based on timestamps. You will be prompted "
+"for confirmation before any changes are made to the local or remote trees.\n"
+"\n"
+"If you instead want to merge two significantly different trees with the "
+"option to make manual modifications, use the Import Merge Tool instead."
+msgstr ""
+"כלי זה מאפשר לסנכרן את אילן־היוחסין שפתוח כעת עם אילן־יוחסין מרוחק שמוגש על "
+"ידי מרשתת גרמפס.\n"
+"\n"
+"הכלי מניח ששני האילנות נגזרים זה מזה, כלומר אחד מהם נוצר מייצוא Gramps XML "
+"(לא GEDCOM!) של האחר.\n"
+"\n"
+"לאחר סנכרון מוצלח, שני האילנות יהיו זהים. שינויים יופצו על בסיס חותמות זמן. "
+"תוצג בקשת אישור לפני ביצוע שינוי כלשהו באילן המקומי או המרוחק.\n"
+"\n"
+"אם במקום זאת נדרש למזג שני אילנות שונים משמעותית עם אפשרות לבצע שינויים "
+"ידניים, יש להשתמש בכלי מיזוג ייבוא."
+
+msgid "Server URL: "
+msgstr "כתובת URL של השרת: "
+
+msgid "Bidirectional Synchronization"
+msgstr "סנכרון דו־כיווני"
 
 msgid "Reset remote to local"
 msgstr "שיצוב מצב מרוחק למקומי"
@@ -46,14 +178,37 @@ msgstr "שינויים מרחוק"
 msgid "Simultaneous changes"
 msgstr "שינויים בו־זמנית"
 
+msgid "Fetching information about media files..."
+msgstr "שליפת מידע על קובצי מדיה..."
+
+msgid "Both trees are the same."
+msgstr "שני אילנות הם אותו."
+
 msgid "Applying changes to local database ..."
 msgstr "החלת שינויים במסד נתונים מקומי ..."
 
+msgid "No changes to apply to local database."
+msgstr "אין שינויים להחלה על מסד־הנתונים המקומי."
+
 msgid "Applying changes to remote database ..."
 msgstr "החלת שינויים במסד נתונים מרוחק ..."
+
+msgid "No changes to apply to remote database."
+msgstr "אין שינויים להחלה על מסד־הנתונים המרוחק."
+
+msgid "Successfully applied changes to local database."
+msgstr "בהצלחה הוחלו שינויים למקומי מסד־נתונים."
 
 msgid "Missing locally"
 msgstr "חסרים באופן מקומי"
 
 msgid "Missing remotely"
 msgstr "חסרים באופן מרוחק"
+
+#, python-format
+msgid "Downloading %s media file(s)"
+msgstr "הורדת %s מדיה קובץ(s)"
+
+#, python-format
+msgid "Uploading %s media file(s)"
+msgstr "העלאת %s קובצי מדיה"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2026-02-03 09:01+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Detailed Descendant Report With All Images"
+msgstr "דוח צאצאים מפורט עם כל התמונות"
 
 msgid ""
 "Produces a detailed descendant report with all images and optional todo list."
@@ -32,8 +35,16 @@ msgid "%(place)s"
 msgstr "%(place)s"
 
 #, python-format
+msgid "%(event_name)s: %(event_text)s"
+msgstr "%(event_name)s: %(event_text)s"
+
+#, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
 msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
+#, python-format
+msgid "%(type)s: %(value)s"
+msgstr "%(type)s: %(value)s"
 
 msgid "List children"
 msgstr "רשימת צאצאים"
@@ -43,6 +54,9 @@ msgstr "הוספת אזכור צאצא ברשימת צאצאים"
 
 msgid "Include TODO notes"
 msgstr "הכללת הערה משימוש לביצוע"
+
+msgid "Whether to include TODO notes."
+msgstr "האם לכלול הערות TODO."
 
 msgid "The style used for the title of the page."
 msgstr "הסגנון שמשמש בכותרת העמוד."
@@ -58,3 +72,9 @@ msgstr "הסגנון שמשמש ל'עוד על כותרות' ולכותרות ה
 
 msgid "The style used for additional detail data."
 msgstr "הסגנון שמשמש לנתוני פירוט נוסף."
+
+msgid "The style used for image labels."
+msgstr "הסגנון שמשמש עבור תמונה תוויות."
+
+msgid "A style used for image captions."
+msgstr "סגנון שמשמש לכיתובי תמונות."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-02 18:04+0000\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 #, python-format
 msgid "Form: %s"
@@ -26,6 +26,9 @@ msgstr "Redigera formulär"
 
 msgid "Reference:"
 msgstr "Referens:"
+
+msgid "[Source recreated after deletion mid-form-edit]"
+msgstr "[Källa återskapad efter borttagning mitt i formulärredigeringen]"
 
 msgid "Headings"
 msgstr "Rubriker"
@@ -81,8 +84,29 @@ msgstr ""
 "Kontrollera om några folkräkningshändelser saknas för en person och några av "
 "deras förfäder"
 
+msgid "Total Area in Statute Acres"
+msgstr "Total yta i engelska tunnland"
+
+msgid "Signature of Head of Household"
+msgstr "Hushållsöverhuvudets underskrift"
+
+msgid "Signature of Enumerator"
+msgstr "Uppräknarens underskrift"
+
 msgid "Persons"
 msgstr "Personer"
+
+msgid "County or Co. Borough"
+msgstr "Län eller kommun"
+
+msgid "District Electoral Division or Ward"
+msgstr "Valdistrikt eller valkrets"
+
+msgid "Urban Dist. Town or Village"
+msgstr "Stadsdistrikt Stad eller by"
+
+msgid "Street etc with No. of House"
+msgstr "Gata etc. med husnummer"
 
 msgid "Relation"
 msgstr "Relation"

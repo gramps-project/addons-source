@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-01 12:35+0000\n"
+"PO-Revision-Date: 2026-06-20 17:01+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps-Web-Synchronisierung"
@@ -33,6 +33,22 @@ msgstr "Unerwarteter Fehler beim Anwenden der Änderungen."
 
 msgid "Media files are in sync."
 msgstr "Die Mediendateien sind synchronisiert."
+
+#, python-format
+msgid "Successfully downloaded %s media files."
+msgstr "%s Mediendateien wurden erfolgreich heruntergeladen."
+
+#, python-format
+msgid "Encountered %s errors during download."
+msgstr "Beim Herunterladen sind %s Fehler aufgetreten."
+
+#, python-format
+msgid "Successfully uploaded %s media files."
+msgstr "%s Mediendatei wurden erfolgreich hochgeladen."
+
+#, python-format
+msgid "Encountered %s errors during upload."
+msgstr "Beim Hochladen sind %s Fehler aufgetreten."
 
 msgid "Authentication failed. Please check your username and password."
 msgstr ""
@@ -202,3 +218,11 @@ msgstr "Lokal nicht vorhanden"
 
 msgid "Missing remotely"
 msgstr "Fehlt entfernt"
+
+#, python-format
+msgid "Downloading %s media file(s)"
+msgstr "%s Mediendatei(en) werden heruntergeladen"
+
+#, python-format
+msgid "Uploading %s media file(s)"
+msgstr "%s Mediendatei(en) werden hochgeladen"

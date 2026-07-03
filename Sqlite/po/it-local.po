@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,13 +12,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 #, python-format
 msgid "Export Complete: %d second"
 msgid_plural "Export Complete: %d seconds"
 msgstr[0] "Esportazione completata: %d secondo"
 msgstr[1] "Esportazione completata: %d secondi"
+
+msgid "SQLite Import"
+msgstr "Importa SQLite"
+
+msgid "SQLite is a common local database format"
+msgstr "SQLite è un formato di database locale molto diffuso"
+
+msgid "SQLite Export"
+msgstr "Esporta SQLite"
 
 #, python-format
 msgid "Import Complete: %d second"

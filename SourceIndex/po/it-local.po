@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:40+0000\n"
-"PO-Revision-Date: 2025-09-06 11:01+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,19 +12,88 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "Sources Index"
+msgstr "Indice delle fonti"
 
 msgid "MarriageIndex"
 msgstr "indice di matrimonio"
 
+msgid "index"
+msgstr "indice"
+
+msgid "_File"
+msgstr "_File"
+
+msgid "Import CSV"
+msgstr "Importa CSV"
+
+msgid "Display all"
+msgstr "Visualizza tutto"
+
+msgid "Display only births"
+msgstr "Visualizza solo le nascite"
+
+msgid "Births/Baptisms"
+msgstr "Nascite/battesimi"
+
+msgid "Display only marriages"
+msgstr "Visualizza solo i matrimoni"
+
+msgid "Marriages/Families"
+msgstr "Matrimoni/famiglie"
+
+msgid "Display only deaths"
+msgstr "Visualizza solo i decessi"
+
+msgid "Deaths/Burials"
+msgstr "Decessi/sepolture"
+
+msgid "New birth or baptism"
+msgstr "Nuova nascita o battesimo"
+
+msgid "add birth act"
+msgstr "aggiungi atto di nascita"
+
 msgid "New marriage"
 msgstr "Nuovo matrimonio"
+
+msgid "add marriage act"
+msgstr "aggiungi atto di matrimonio"
+
+msgid "New death or burial"
+msgstr "Nuovo decesso o sepoltura"
+
+msgid "add death act"
+msgstr "aggiungi atto di decesso"
+
+msgid "New census"
+msgstr "Nuovo censimento"
+
+msgid "birth"
+msgstr "nascita"
 
 msgid "Select a marriage source"
 msgstr "Selezionare una fonte di matrimonio"
 
+msgid "repositories"
+msgstr "depositi"
+
+msgid "Selected view"
+msgstr "Vista selezionata"
+
 msgid "Info:"
 msgstr "Info:"
+
+msgid "Reference:"
+msgstr "Riferimento:"
+
+msgid "Age:"
+msgstr "Età:"
+
+msgid "<b>Image</b>"
+msgstr "<b>Immagine</b>"
 
 msgid "Origin:"
 msgstr "Origine:"
@@ -38,17 +107,39 @@ msgstr "Luogo di nascita:"
 msgid "Note:"
 msgstr "Nota:"
 
+msgid "witness"
+msgstr "testimone"
+
+msgid "Names:"
+msgstr "Nomi:"
+
 msgid "Death date:"
 msgstr "Data del decesso:"
 
 msgid "Death place:"
 msgstr "Luogo del decesso:"
 
+msgid "Family status:"
+msgstr "Situazione familiare:"
+
 msgid "order, person, surname, given, age, status, occupation, etc ..."
 msgstr "ordine, persona, cognome, nome, età, stato, professione, ecc..."
 
+msgid "Birth act:"
+msgstr "Atto di nascita:"
+
+msgid ""
+"Volume\n"
+"    Page:"
+msgstr ""
+"Volume\n"
+"    Pagina:"
+
 msgid "The source title"
 msgstr "Il titolo della fonte"
+
+msgid "The volume or page of this source"
+msgstr "Il volume o la pagina di questa fonte"
 
 msgid "select the gender/sex"
 msgstr "seleziona genere/sesso"
@@ -58,6 +149,23 @@ msgstr "I nomi della persona principale riportati nella fonte"
 
 msgid "The first names of the main person written into the source"
 msgstr "I nomi propri della persona principale riportati nella fonte"
+
+msgid "<b><i>Repository</i></b>"
+msgstr "<b><i>Deposito</i></b>"
+
+msgid ""
+"Marriage\n"
+"date:"
+msgstr ""
+"Data del\n"
+"matrimonio:"
+
+msgid ""
+"Death\n"
+"date:"
+msgstr ""
+"Data del\n"
+"decesso:"
 
 msgid ""
 "witness1, name, given, age, occupation;\n"
@@ -69,6 +177,13 @@ msgstr ""
 "testimone2,nome,età,professione;\n"
 "padrino,nome,età,professione;\n"
 "ecc..."
+
+msgid ""
+"Marriage\n"
+"place:"
+msgstr ""
+"Luogo del\n"
+"matrimonio:"
 
 msgid ""
 "Death\n"

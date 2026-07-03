@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2025-12-22 14:00+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Display relations and distances with the home person"
+msgstr "הצגת קשרי־קרבה ומרחקים עם אדם הבית"
+
+msgid "Will display relational informations with the home person"
+msgstr "הצגת מידע על קשרי־קרבה עם אדם הבית"
+
+msgid "Relation and distances with root"
+msgstr "יוחסה ומרחקים מהשורש"
 
 msgid "Select filter to restrict people"
 msgstr "בחירת מסנן להגבלת האנשים"
@@ -27,11 +36,35 @@ msgstr "בחירת כלל סינון"
 msgid "Deep generations"
 msgstr "דורות עמוקים"
 
+msgid "How deep should we go?"
+msgstr "לאיזה עומק להגיע?"
+
+msgid "Rel_id"
+msgstr "מזהה_קשר"
+
 msgid "Relation"
 msgstr "יוחסה"
 
+msgid "up"
+msgstr "למעלה"
+
+msgid "down"
+msgstr "למטה"
+
+msgid "Common MRA"
+msgstr "MRA משותף"
+
+msgid "Rank"
+msgstr "Rank"
+
+msgid "Period"
+msgstr "תקופה"
+
 msgid "Shared Subtree"
 msgstr "אילן משנה משותף"
+
+msgid "Centrality"
+msgstr "מרכזיות"
 
 msgid "Unique Ancestors"
 msgstr "אבות קדמונים ייחודיים"
@@ -42,11 +75,23 @@ msgstr "הגוון שמות משפחה"
 msgid "Save"
 msgstr "שמירה"
 
+msgid "Quit"
+msgstr "יציאה"
+
 msgid "No default person set."
 msgstr "לא הוגדא אדם ברירת מחדל."
 
+msgid "Please wait, filtering..."
+msgstr "נא להמתין, מתבצע סינון..."
+
 msgid "Network Metrics"
 msgstr "מדדי רשת"
+
+msgid "Enabled"
+msgstr "מאופשר"
+
+msgid "Disabled"
+msgstr "מושבת"
 
 msgid "Enable or disable family network metrics"
 msgstr "אפשור או השבתת מדדי רשת משפחתית"
@@ -54,8 +99,37 @@ msgstr "אפשור או השבתת מדדי רשת משפחתית"
 msgid "Generating relation map..."
 msgstr "חילול מפת יוחסה..."
 
+msgid ""
+"\n"
+"Filtering\tCurrent match\t\tTime of pass\n"
+msgstr ""
+"\n"
+"סינון\tהתאמה נוכחית\t\tזמן מעבר\n"
+
+#, python-format
+msgid "%d/%d \t\t %d/%d \t\t%f"
+msgstr "%d/%d %d/%d %f"
+
+msgid "Folder Chooser"
+msgstr "בורר מחיצה"
+
 msgid "_Select"
 msgstr "_בחירה"
+
+msgid "Please, select a folder"
+msgstr "נא לבחור מחיצה"
+
+msgid "Foldername need"
+msgstr "נדרש שם מחיצה"
+
+msgid "Foldername will be used for saving the content."
+msgstr "שם המחיצה ישמש לשמירת התוכן."
+
+msgid "Did you set a foldername?"
+msgstr "האם הוגדר שם מחיצה?"
+
+msgid "Cannot set a valid location."
+msgstr "לא ניתן להגדיר מיקום תקין."
 
 msgid "Failed to save data."
 msgstr "שמירת נתונים כשלה."
@@ -65,3 +139,6 @@ msgstr "לשונית ומפת קשרי־קרבה"
 
 msgid "Enable family network metrics"
 msgstr "אפשור מדדי רשת משפחתית"
+
+msgid "Whether to calculate and display family network metrics."
+msgstr "האם לחשב ולהציג מדדי רשת משפחתית."

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2026-03-05 22:10+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 msgid "Descendants Lines"
 msgstr "Linee dei discendenti"
@@ -137,6 +137,16 @@ msgstr ""
 "testo, '$e(n)'\n"
 " 0=illimitato "
 
+msgid "Font Name"
+msgstr "Nome del carattere"
+
+msgid ""
+"Name of the Font to use. On Windows enter the file name of the .ttf at /"
+"Windows/Fonts"
+msgstr ""
+"Nome del carattere da usare. In Windows, inserire il nome del file .ttf in /"
+"Windows/Fonts"
+
 msgid "Box around Person's block"
 msgstr "Riquadro intorno al blocco della persona"
 
@@ -144,6 +154,26 @@ msgid "Draw a thin black box around each person' text block."
 msgstr ""
 "Disegna un rettangolo nero leggero intorno ad ogni blocco di testo di una "
 "persona."
+
+msgid "All Person's blocks have the same height"
+msgstr "Tutti i blocchi delle persone hanno la stessa altezza"
+
+msgid ""
+"All the blocks of all the person have the same height, which is the height "
+"of the highest block."
+msgstr ""
+"Tutti i blocchi delle persone hanno la stessa altezza, cioè quella del "
+"blocco più alto."
+
+msgid "All Person's blocks have the same width"
+msgstr "Tutti i blocchi della persona hanno la stessa larghezza"
+
+msgid ""
+"All the blocks of all the person have the same width, which is the width of "
+"the widthest block."
+msgstr ""
+"Tutti i blocchi delle persone hanno la stessa larghezza, cioè quella del "
+"blocco più largo."
 
 msgid "Colour blocks by Generation"
 msgstr "Colora i blocchi secondo la generazione"
@@ -194,6 +224,49 @@ msgid ""
 msgstr ""
 "per esempio\n"
 "United States of America/USA"
+
+msgid "Spouse and Family"
+msgstr "Coniuge e famiglia"
+
+msgid "The length of the vertical edge from descendant to spouse-bar."
+msgstr ""
+"La lunghezza del bordo verticale, dal discendente alla barra del coniuge."
+
+msgid "The length of the vertical edge from spouse-bar to spouse."
+msgstr "La lunghezza del bordo verticale, dalla barra del coniuge al coniuge."
+
+msgid "Space around text"
+msgstr "Spazio intorno al testo"
+
+msgid "The space to add around the text block of a person."
+msgstr "Lo spazio da aggiungere intorno ai blocchi di testo di una persona."
+
+msgid "Space between lines of text"
+msgstr "Spazio tra le righe di testo"
+
+msgid "The space to add between a line and the next in a person text block."
+msgstr ""
+"Lo spazio da aggiungere tra una riga e la successiva in un blocco di testo "
+"della persona."
+
+msgid "Header and Footer"
+msgstr "Intestazione e piè di pagina"
+
+msgid "The text that will be written in the header of the document"
+msgstr "Il testo che verrà scritto nell'intestazione del documento"
+
+msgid "The text that will be written in the footer of the document"
+msgstr "Il testo che verrà scritto nel piè di pagina del documento"
+
+msgid "Title and footer coefficient"
+msgstr "Coefficiente tra titolo e piè di pagina"
+
+msgid ""
+"A number that multiply the base size of the text in the title and in the "
+"footer"
+msgstr ""
+"Un numero che moltiplica la dimensione di base del testo nel titolo e nel "
+"piè di pagina"
 
 msgid "Protect People, Images or Events that are marked Private"
 msgstr "Proteggi persone, immagini e eventi che sono marcati come privati"

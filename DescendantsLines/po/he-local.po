@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2026-02-20 09:09+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Descendants Lines"
+msgstr "קווי צאצאים"
+
+msgid "Produces descendants lines of a person"
+msgstr "מפיק קווי צאצאים של אדם"
 
 msgid "Using SVG type for supplemental document is not supported!"
 msgstr "שימוש בסוג SVG למסמך משלים לא נתמך!"
@@ -33,8 +39,26 @@ msgstr "פורמט PDF"
 msgid "PS format"
 msgstr "תסדיר PS"
 
+msgid "The output format to be used"
+msgstr "תסדיר הפלט שישמש"
+
+msgid "The destination file for the content."
+msgstr "קובץ היעד עבור התוכן."
+
+msgid "The number of generations to include in the chart. (0 for unlimited)"
+msgstr "מספר הדורות שיש לכלול בתרשים. (0 ללא הגבלה)"
+
+msgid "Use d'Aboville descendant numbering system"
+msgstr "שימוש בשיטת מספור הצאצאים d'Aboville"
+
+msgid "Prepend name with d'Aboville descendant number in the chart."
+msgstr "הוספת מספר צאצא בשיטת d'Aboville לפני השם בתרשים."
+
 msgid "Include an image"
 msgstr "הכללת תמונה"
+
+msgid "Whether to include an image if one is available."
+msgstr "האם לכלול תמונה אם קיימת."
 
 msgid "Max Image height"
 msgstr "גובה תמונ מירבי"
@@ -48,17 +72,276 @@ msgstr "רוחב תמונה מירבי"
 msgid "Maximum image width in pixels, 0=don't scale for width."
 msgstr "רוחב מדיה מרבי בפיקסלים 0=לא לבחור עבור רוחב."
 
+msgid "Image Location"
+msgstr "מיקום תמונה"
+
 msgid "Above text"
 msgstr "מלל מעל"
+
+msgid "Left of text"
+msgstr "משמאל למלל"
+
+msgid "Position of image relative to text"
+msgstr "איות התמונה ביחס למלל"
+
+msgid "Colour Name by Gender"
+msgstr "צביעת שם לפי מגדר"
+
+msgid "Color the name to indicate a person's gender in the chart."
+msgstr "צביעת השם לציון מגדר האדם בתרשים."
+
+msgid "Use alternate events, if Primary event is not found"
+msgstr "שימוש באירועים חלופיים אם האירוע הראשי לא נמצא"
+
+msgid ""
+"For Birth (baptism, christen)\n"
+"   Marriage (marr_lic, engagement)\n"
+"   Divorce (annulment, div_filing),\n"
+"   Death (burial, cremation, probate)."
+msgstr ""
+"עבור לידה (טבילה, הטבלה)\n"
+"   נישואין (רישיון נישואין, אירוסין)\n"
+"   גירושין (ביטול נישואין, הגשת תביעת גירושין),\n"
+"   פטירה (קבורה, שרפה, צו ירושה)."
+
+msgid "Sort Events by Date"
+msgstr "מיון אירועים לפי תאריך"
+
+msgid "Sort events by date (else use the order of the 'Display Format' above)."
+msgstr "מיון אירועים לפי תאריך (אחרת ייעשה שימוש בסדר של 'תסדיר תצוגה' לעיל)."
 
 msgid "Text style"
 msgstr "סגנון מלל"
 
+msgid "Center-aligned text"
+msgstr "מלל ממורכז"
+
+msgid "Left-aligned text"
+msgstr "מלל מיושר לשמאל"
+
+msgid "Alignment of the text in the block for each person on the chart"
+msgstr "יישור המלל בגוש של כל אדם בתרשים"
+
+msgid "Max Note Length"
+msgstr "אורך הערה מרבי"
+
+msgid ""
+"Maximum length of an event's note field in a text block, '$e(n)'\n"
+" 0=no limit "
+msgstr ""
+"האורך המרבי של שדה הערת אירוע בגוש מלל, '$e(n)'\n"
+" 0=ללא הגבלה "
+
+msgid "Font Name"
+msgstr "גופן שם"
+
+msgid ""
+"Name of the Font to use. On Windows enter the file name of the .ttf at /"
+"Windows/Fonts"
+msgstr "שם הגופן לשימוש. ב־Windows יש להזין את שם קובץ ‎.ttf שב־/Windows/Fonts"
+
+msgid "Font base size"
+msgstr "גודל בסיס של הגופן"
+
+msgid "Box around Person's block"
+msgstr "תיבה סביב גוש האדם"
+
+msgid "Draw a thin black box around each person' text block."
+msgstr "ציור תיבה שחורה דקה סביב גוש המלל של כל אדם."
+
+msgid "All Person's blocks have the same height"
+msgstr "לכל גושי האנשים אותו גובה"
+
+msgid ""
+"All the blocks of all the person have the same height, which is the height "
+"of the highest block."
+msgstr "לכל גושי האנשים אותו גובה, לפי גובה הגוש הגבוה ביותר."
+
+msgid "All Person's blocks have the same width"
+msgstr "לכל גושי האנשים אותו רוחב"
+
+msgid ""
+"All the blocks of all the person have the same width, which is the width of "
+"the widthest block."
+msgstr "לכל גושי האנשים אותו רוחב, לפי רוחב הגוש הרחב ביותר."
+
+msgid "Colour blocks by Generation"
+msgstr "צביעת גושים לפי דור"
+
+msgid "Colour the background of text blocks by generation."
+msgstr "צביעת רקע גושי המלל לפי דור."
+
+msgid "Descend block colour intensity"
+msgstr "עוצמת צבע גוש צאצא"
+
+msgid ""
+"Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
+"colour"
+msgstr "עוצמת צבע הרקע בגוש הצאצא, 0=חלש, 255=צבע עז"
+
+msgid "Spouse block colour intensity"
+msgstr "עוצמת צבע גוש זוגאי"
+
+msgid ""
+"Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
+msgstr "עוצמת צבע הרקע בגוש הזוגאי, 0=חלש 255=צבע עז"
+
+msgid "Display Formats"
+msgstr "הצגה תסדירים"
+
+msgid "Name Display Format"
+msgstr "שם הצגה תסדיר"
+
+msgid ""
+"f=first & middle names, l=surname, n=nickname,\n"
+"c=commonly used given name, t=title, s=suffix, g=family nick name\n"
+"See Wiki Manual > Reports > part 2"
+msgstr ""
+"f=שמות פרטיים ואמצעיים, l=שם משפחה, n=כינוי,\n"
+"c=שם פרטי שבשימוש נפוץ, t=תואר, s=סיומת, g=כינוי משפחה\n"
+"למידע נוסף: מדריך הוויקי > דוחות > חלק 2"
+
+msgid ""
+"[event, list]$e(formating)\n"
+"See Wiki Manual > Reports > part 2\n"
+"formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
+msgstr ""
+"[event, list]$e(formating)\n"
+"למידע נוסף: מדריך הוויקי > דוחות > חלק 2\n"
+"תסדיר: תאריכים=d(ymdMo) מקומות=D(elcuspnoitxy) הערות=n abbreviated_type=t"
+
 msgid "Replace"
 msgstr "החלפה"
+
+msgid ""
+"i.e.\n"
+"United States of America/USA"
+msgstr ""
+"כלומר\n"
+"ארצות הברית של אמריקה/USA"
 
 msgid "Spouse and Family"
 msgstr "זוגאי ומשפחה"
 
+msgid "Vertical edge descendant to spouse-bar"
+msgstr "קצה אנכי מצאצא לסרגל זוגאי"
+
+msgid "The length of the vertical edge from descendant to spouse-bar."
+msgstr "אורך הקצה האנכי מהצאצא לסרגל הזוגאי."
+
+msgid "Vertical edge spouse-bar to spouse"
+msgstr "קצה אנכי מסרגל זוגאי לזוגאי"
+
+msgid "The length of the vertical edge from spouse-bar to spouse."
+msgstr "אורך הקצה האנכי מסרגל הזוגאי לזוגאי."
+
+msgid "Vertical space spouse-bar to other spouse"
+msgstr "מרווח אנכי מסרגל זוגאי לזוגאי אחר"
+
+msgid ""
+"The space to add between one spouse-bar and another spouse in case of "
+"multiple families with the same descendant."
+msgstr ""
+"המרווח שיש להוסיף בין פס זוגאי אחד לבין זוגאי אחר במקרה של כמה משפחות עם "
+"אותו צאצא."
+
+msgid "Horizontal space descendant to spouse"
+msgstr "מרווח אופקי מצאצא לזוגאי"
+
+msgid "The space to add between the descendant and the spouse."
+msgstr "המרווח שיש להוסיף בין הצאצא לזוגאי."
+
+msgid "Horizonal space family to family"
+msgstr "מרווח אופקי ממשפחה למשפחה"
+
+msgid ""
+"The space to add between the more extern descendant (or spouse) of a family "
+"and the more extern descendant (or spouse) of the next family."
+msgstr ""
+"המרווח להוספה בין הצאצא החיצוני יותר (או הזוגאי) של משפחה אחת לבין הצאצא "
+"החיצוני יותר (או הזוגאי) של המשפחה הבאה."
+
+msgid "Horizontal distance spouse to family edge"
+msgstr "מרחק אופקי מזוגאי לקצה המשפחה"
+
+msgid ""
+"If this value is 0, the children bar is centered under the spouse. The "
+"bigger the value, more the center is moved to the left towards the "
+"descendant."
+msgstr ""
+"אם ערך זה הוא 0, סרגל הילדים ממורכז מתחת לזוגאי. ככל שהערך גדול יותר, המרכז "
+"מוזז שמאלה לכיוון הצאצא."
+
+msgid "OL_PAD"
+msgstr "OL_PAD"
+
+msgid "The number of ??? pad"
+msgstr "מספר ריפודי ???"
+
+msgid "Vertical edge spouse-bar to child-bar"
+msgstr "קצה אנכי מסרגל זוגאי לסרגל ילדים"
+
+msgid "The length of the vertical edge from spouse-bar to child-bar."
+msgstr "אורך הקצה האנכי מסרגל הזוגאי לסרגל הילדים."
+
+msgid "Children distance"
+msgstr "ילדים מרחק"
+
+msgid "The horizontal distance between two children of the same family."
+msgstr "המרחק האופקי בין שני ילדים של אותה משפחה."
+
+msgid "Vertical edge child to child-bar"
+msgstr "קצה אנכי מילד לסרגל ילדים"
+
+msgid "The length of the vertical edge from child to child-bar."
+msgstr "אורך הקצה האנכי מילד לסרגל הילדים."
+
+msgid "MIN_C_WIDTH"
+msgstr "MIN_C_WIDTH"
+
+msgid "The number of ??? min width"
+msgstr "מספר ??? רוחב מזערי"
+
 msgid "Space around text"
 msgstr "רווח מסביב למלל"
+
+msgid "The space to add around the text block of a person."
+msgstr "המרווח שיש להוסיף סביב גוש המלל של אדם."
+
+msgid "Space between lines of text"
+msgstr "מרווח בין שורות מלל"
+
+msgid "The space to add between a line and the next in a person text block."
+msgstr "המרווח שיש להוסיף בין שורה לשורה הבאה בגוש המלל של אדם."
+
+msgid "Header and Footer"
+msgstr "כותרת עליונה וסיומת עמוד"
+
+msgid "The text that will be written in the header of the document"
+msgstr "המלל שייכתב בכותרת העליונה של המסמך"
+
+msgid "The text that will be written in the footer of the document"
+msgstr "המלל שייכתב בסיומת העמוד של המסמך"
+
+msgid "Title and footer coefficient"
+msgstr "מקדם כותרת וסיומת עמוד"
+
+msgid ""
+"A number that multiply the base size of the text in the title and in the "
+"footer"
+msgstr "מספר שמכפיל את גודל הבסיס של המלל בכותרת ובסיומת העמוד"
+
+msgid "Protect People, Images or Events that are marked Private"
+msgstr "הגנה על אנשים, תמונות או אירועים שמסומנים כפרטיים"
+
+msgid "The Privacy setting of only these types of Gramps objects are checked"
+msgstr "הגדרת הפרטיות נבדקת רק עבור סוגי עצמים אלה של גרמפס"
+
+msgid "Privacy text"
+msgstr "פרטיות מלל"
+
+msgid "Text to display in block, when a Person is marked private"
+msgstr "מלל להצגה בגוש כאשר אדם מסומן כפרטי"
+
+msgid "The default style."
+msgstr "סגנון ברירת המחדל."

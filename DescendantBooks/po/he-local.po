@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-02-20 09:09+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
@@ -220,7 +220,7 @@ msgstr "ספר צאצאים מפורט"
 
 msgid ""
 "Produces one or more detailed descendant reports based on a supplied query."
-msgstr "ייצור דיווח צאצאים מפורט אחד או  יותר בהתבסס על שאילתה שסופקה."
+msgstr "ייצור דיווח צאצאים מפורט אחד או יותר בהתבסס על שאילתה שסופקה."
 
 #, python-format
 msgid "Deep pruning ascendants from %s people..."

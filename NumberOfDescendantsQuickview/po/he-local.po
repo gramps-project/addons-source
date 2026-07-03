@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+#, python-format
+msgid "Number of %s's descendants"
+msgstr "מספר הצאצאים של %s"
 
 msgid "Generation"
 msgstr "דור"
+
+msgid "Seen"
+msgstr "נראה"
+
+msgid "Outlived"
+msgstr "שרד לאחר מותם"
+
+msgid "Now alive"
+msgstr "חי כיום"
+
+#, python-format
+msgid "Seen = number of descendants whose birth %s has lived to see"
+msgstr "נצפו = מספר הצאצאים שאת לידתם %s זכה לראות"
+
+#, python-format
+msgid "Outlived = number of descendants who died while %s was still alive"
+msgstr "שרד לאחר מותם = מספר הצאצאים שנפטרו בעוד %s היה עדיין בחיים"
+
+msgid "Number of descendants"
+msgstr "מספר צאצאים"
+
+msgid "Shows the number of descendants of the current person"
+msgstr "הצגת מספר הצאצאים של האדם הנוכחי"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-09 13:13+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,13 +13,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Last Change Report"
+msgstr "אחרון שינוי דוח"
 
 msgid "You must select at least one type of record."
 msgstr "נדרש לבחורלפחות סוג רשומה אחד."
 
+msgid "People Changed"
+msgstr "אנשים שונה"
+
 msgid "Changed On"
 msgstr "השתנה בתאריך"
+
+msgid "Families Changed"
+msgstr "משפחות שונה"
+
+msgid "Family Surname"
+msgstr "משפחה שם משפחה"
+
+#, python-format
+msgid "%s and %s"
+msgstr "%s ו־%s"
+
+msgid "Events Changed"
+msgstr "אירועים שונה"
 
 msgid "Places Changed"
 msgstr "מקומות השתנו"
@@ -33,11 +52,26 @@ msgstr "מקורות שונו"
 msgid "Notes Changed"
 msgstr "הערות השתנו"
 
+msgid "Citations Changed"
+msgstr "מובאות שונה"
+
 msgid "Select From"
 msgstr "לבחור מתוך"
 
 msgid "The style used for the title of the page."
 msgstr "הסגנון שמשמש בכותרת העמוד."
 
+msgid "The style used for normal text"
+msgstr "הסגנון שמשמש עבור רגילים מלל"
+
 msgid "changed on"
 msgstr "תאריך שינוי"
+
+msgid "List the last ten person records that have been changed"
+msgstr "הצגת עשר רשומות האדם האחרונות ששונו"
+
+msgid "Latest Changes"
+msgstr "אחרונים שינויים"
+
+msgid "Report of the last records that have been changed"
+msgstr "דוח מתוך אחרון רשומות שיש שונה"

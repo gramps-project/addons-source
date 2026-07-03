@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "RU Web Connect Pack"
+msgstr "חבילת חיבור מרשתת RU"
+
+msgid "Collection of Web sites for the RU (requires libwebconnect)"
+msgstr "אוסף אתרי מרשתת עבור RU (דורש libwebconnect)"
+
+msgid "OBD \"Memorial\""
+msgstr "OBD 'Memorial'"
+
+msgid "People memory"
+msgstr "זיכרון אנשים"
+
+msgid "Winners"
+msgstr "זוכים"
+
+msgid "Lived"
+msgstr "חי"
+
+msgid "Open list"
+msgstr "פתיחה רשימה"
+
+msgid "Wait for me"
+msgstr "להמתין לי"
+
+msgid "All Russia Family Tree (forum)"
+msgstr "אילן־יוחסין כל־רוסי (פורום)"
+
+msgid "Yandex people"
+msgstr "אנשי Yandex"
+
+msgid "RIA Officers"
+msgstr "קציני RIA"
 
 msgid "FamilySpace"
 msgstr "FamilySpace"

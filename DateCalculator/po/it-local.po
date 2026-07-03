@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-09-06 11:01+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,50 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "Reference Date or Date Range"
+msgstr "Data di riferimento o intervallo di date"
+
+msgid "a valid Gramps date"
+msgstr "una data di Gramps valida"
+
+msgid "Date or offset ±y or ±y, m, d"
+msgstr "Data o scostamento ±a o ±a, m, g"
+
+msgid ""
+"1. a Date\n"
+"2. a positive or negative number, representing years\n"
+"3. a positive or negative list of values, representing years, months, days"
+msgstr ""
+"1. una data\n"
+"2. un numero positivo o negativo che rappresenta gli anni\n"
+"3. un elenco di valori positivi o negativi, che rappresentano gli anni, i "
+"mesi, i giorni"
+
+msgid "Result"
+msgstr "Risultato"
+
+msgid "Calculate"
+msgstr "Calcola"
+
+msgid "Copy"
+msgstr "Copia"
+
+msgid "Error: invalid date for first expression"
+msgstr "Errore: data non valida per la prima espressione"
+
+msgid "Error: invalid offset for second expression"
+msgstr "Errore: scostamento non valido per la seconda espressione"
+
+msgid "Error: at least one expression must be a date"
+msgstr "Errore: almeno un'espressione deve essere una data"
 
 msgid "Enter an expression in the entries above and click Calculate."
 msgstr "Inserisci un'espressione nel campo sopra e fai clic su Calcola."
+
+msgid "Date Calculator"
+msgstr "Calcolatore di date"
+
+msgid "Perform date math calculations"
+msgstr "Eseguire calcoli matematici con le date"

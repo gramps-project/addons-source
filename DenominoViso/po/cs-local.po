@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:06+0000\n"
-"PO-Revision-Date: 2026-04-26 15:09+0000\n"
-"Last-Translator: Jiri Svanda <svanda.jiri@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-29 14:56+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
 "Language: cs\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
@@ -20,6 +20,12 @@ msgstr ""
 
 msgid "description"
 msgstr "popis"
+
+msgid "Search"
+msgstr "Vyhledávání"
+
+msgid "The type of graph to create."
+msgstr "Typ grafu, který se má vytvořit."
 
 msgid "Direction in which time increases."
 msgstr "Směr, kterým plyne čas."
@@ -38,3 +44,28 @@ msgstr "Výška stromu v pixelech."
 
 msgid "Closing remarks"
 msgstr "Závěrečné poznámky"
+
+msgid "Whether to leave out private data."
+msgstr "Zda vynechat soukromá data."
+
+msgid "Whether to include a person's events."
+msgstr "Zda zahrnout události osoby."
+
+msgid "Whether to include the birth of children in the list of events."
+msgstr "Zda zahrnout narození dětí do seznamu událostí."
+
+msgid ""
+"Whether to include the death of relatives during the lifetime of person."
+msgstr "Zda zahrnout úmrtí příbuzných během života osoby."
+
+msgid "Whether to include a person's addresses."
+msgstr "Zda zahrnout adresy osoby."
+
+msgid "Whether to include a person's note."
+msgstr "Zda zahrnout poznámku osoby."
+
+msgid "Whether to include a person's internet address."
+msgstr "Zda zahrnout internetovou adresu osoby."
+
+msgid "Whether to include a person's sources."
+msgstr "Zda zahrnout zdroje osoby."

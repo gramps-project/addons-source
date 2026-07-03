@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-09 18:33+0100\n"
-"PO-Revision-Date: 2026-03-05 22:10+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,67 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "File exists. Overwrite?"
+msgstr "Il file esiste. Sovrascrivere?"
+
+msgid "created"
+msgstr "creato"
+
+msgid "Main"
+msgstr "Principale"
+
+msgid "Orthogonal (right angles in connectors)"
+msgstr "Ortogonale (angoli retti nei connettori)"
+
+msgid "Straight (no right angles in connectors)"
+msgstr "Dritto (nessun angolo retto nei connettori)"
+
+msgid "Curved (curved and straight connectors)"
+msgstr "Curvo (connettori curvi e dritti)"
+
+msgid "Default (Orthogonal)"
+msgstr "Predefinito (ortogonale)"
+
+msgid "Select the graph line connector format."
+msgstr "Seleziona il formato del connettore delle linee del grafico."
+
+msgid "Top to Bottom"
+msgstr "Dall'alto verso il basso"
+
+msgid "Left to Right"
+msgstr "Da sinistra a destra"
+
+msgid "Bottom to Top"
+msgstr "Dal basso verso l'alto"
+
+msgid "Right to Left"
+msgstr "Da destra a sinistra"
+
+msgid "Default (Top to Bottom)"
+msgstr "Predefinito (dall'alto verso il basso)"
+
+msgid "Select the graph direction."
+msgstr "Seleziona la direzione del grafico."
+
+msgid "URL Style"
+msgstr "Stile dell'URL"
+
+msgid "Include URLs from database."
+msgstr "Includi gli URL del database."
+
+msgid "Dynamic URL = Prefix + GrampID + Suffix"
+msgstr "URL dinamico = prefisso + ID Gramps + suffisso"
+
+msgid "Static URL = Prefix"
+msgstr "URL statico = prefisso"
+
+msgid "Don't include URLs"
+msgstr "Non includere gli URL"
+
+msgid "Default (include)"
+msgstr "Predefinito (includi)"
 
 msgid "Select URL style."
 msgstr "Selezionare lo stile dell'URL."
@@ -31,8 +91,36 @@ msgstr ""
 "\"White Rabbit\" può essere ottenuto da\n"
 "https://www.fontsquirrel.com/fonts/white-rabbit"
 
+msgid "Spacing (inch)"
+msgstr "Spaziatura (pollici)"
+
+msgid ""
+"Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
+msgstr ""
+"Inserisci la distanza di separazione tra le \"generazioni\" in pollici (0,1 "
+"- 5,0)."
+
+msgid "Enter Chart Title"
+msgstr "Inserisci il titolo del grafico"
+
+msgid "Set the title of the chart."
+msgstr "Imposta il titolo del grafico."
+
+msgid "Default (svg)"
+msgstr "Predefinito (svg)"
+
+msgid ""
+"svg - Scalable Vector Graphics file.\n"
+"pdf - Adobe Portable Document Format.\n"
+msgstr ""
+"svg - file Scalable Vector Graphics.\n"
+"pdf - Portable Document Format di Adobe.\n"
+
 msgid "The destination folder for generated files."
 msgstr "La cartella di destinazione per i file generati."
+
+msgid "network"
+msgstr "rete"
 
 msgid "Different node shapes/edges for gender."
 msgstr "Forme/bordi dei nodi diversi in base al genere."
@@ -71,3 +159,54 @@ msgstr "Colore RGB per il bordo del riquadro femminile."
 
 msgid "RGB-color for other box background."
 msgstr "Colore RGB per lo sfondo di altri riquadri."
+
+msgid "Trim Box Edge"
+msgstr "Riduci il bordo del riquadro"
+
+msgid "RGB-color for box edge that has been trimmed."
+msgstr "Colore RGB del bordo del riquadro che deve essere ridotto."
+
+msgid "Remove middle names."
+msgstr "Elimina i secondi nomi."
+
+msgid "Trim"
+msgstr "Riduci"
+
+msgid "Trim descendants"
+msgstr "Riduci i discendenti"
+
+msgid "Enable trimming of descendants."
+msgstr "Abilita la riduzione dei discendenti."
+
+msgid ""
+"You must enter valid person(s) before \n"
+"enabling trimming of descendants from tree."
+msgstr ""
+"Devi selezionare delle persone valide prima \n"
+"di abilitare la riduzione dei discendenti dall'albero."
+
+msgid "Trim ancestors"
+msgstr "Riduci ascendenti"
+
+msgid "All ancestors (parents) of selected individuals will not be shown."
+msgstr ""
+"Tutti gli ascendenti (genitori) degli individui selezionati non verranno "
+"mostrati."
+
+msgid "Enable trimming of ancestors."
+msgstr "Abilita la riduzione degli ascendenti."
+
+msgid "Enable trimming of ancestors from tree."
+msgstr "Abilita la riduzione degli ascendenti dall'albero."
+
+msgid "Enable trim groups."
+msgstr "Abilita la riduzione dei gruppi."
+
+msgid "Direct"
+msgstr "Dirette"
+
+msgid "Any"
+msgstr "Qualsiasi"
+
+msgid "Default (None)"
+msgstr "Predefinito (nessuno)"

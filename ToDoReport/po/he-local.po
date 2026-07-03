@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,13 +13,53 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "TR-Title"
+msgstr "כותרת-TR"
+
+#, python-format
+msgid "Report on Notes Tagged '%s'"
+msgstr "דוח על הערות שתויגו '%s'"
 
 msgid "TR-Heading"
 msgstr "כותרת TR"
 
+msgid "NoteTable"
+msgstr "הערה טבלה"
+
+msgid "TR-Table"
+msgstr "TR-Table"
+
+msgid "TR-TableCell"
+msgstr "תא טבלה-TR"
+
+msgid "TR-Normal-Bold"
+msgstr "TR-Normal-Bold"
+
+msgid "TR-Normal"
+msgstr "TR-Normal"
+
+msgid "TR-Note"
+msgstr "TR-Note"
+
+msgid "TR-BorderCell"
+msgstr "TR-BorderCell"
+
+msgid "date: "
+msgstr "תאריך: "
+
 msgid "place: "
 msgstr "מקום: "
+
+msgid "Note Type"
+msgstr "הערה סוג"
+
+msgid "Group by reference type"
+msgstr "קיבוץ לפי סוג הפניה"
+
+msgid "Group notes by Family, Person, Place, etc."
+msgstr "קיבוץ הערות לפי משפחה, אדם, מקום ועוד."
 
 msgid "The style used for the title of the page."
 msgstr "הסגנון שמשמש בכותרת העמוד."
@@ -27,8 +67,18 @@ msgstr "הסגנון שמשמש בכותרת העמוד."
 msgid "The basic style used for the table cell display."
 msgstr "הסגנון הבסיסי שמשמש את מצג התא בטבלה."
 
+msgid "The basic style used for the table border cell display."
+msgstr "הסגנון הבסיסי שמשמש להצגת תאי גבול הטבלה."
+
 msgid "The basic style used for the table display."
 msgstr "הסגנון הבסיסי שמשמש את מצג הטבלה."
 
 msgid "Todo Report"
 msgstr "דוח משימות לביצוע"
+
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"הפקת רשימה של כל ההערות בעלות תג נתון, יחד עם הרשומות שאליהן הן מפנות: אדם, "
+"משפחה, אירוע ועוד."

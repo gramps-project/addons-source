@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-09-06 11:01+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,17 +12,60 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 msgid "Database Differences Report"
 msgstr "Resoconto sulle differenze tra gli archivi"
+
+msgid "Differences between Database and File"
+msgstr "Differenze tra database e file"
+
+msgid "No differences"
+msgstr "Nessuna differenza"
+
+msgid "Missing items in File that are added in Database"
+msgstr "Elementi mancanti nel file che sono stati aggiunti nel database"
+
+#, python-format
+msgid "Missing %s: %s"
+msgstr "Mancante %s: %s"
+
+msgid "Nothing missing"
+msgstr "Non manca niente"
+
+msgid "Added items in File that are missing in Database"
+msgstr "Elementi aggiunti nel file che non sono presenti nel database"
 
 #, python-format
 msgid "Added %s: %s "
 msgstr "Aggiunto %s: %s "
 
+msgid "Nothing added"
+msgstr "Non è stato aggiunto niente"
+
 msgid "Family Tree file"
 msgstr "File dell'albero genealogico"
 
+msgid "Select a .gpkg or .gramps file"
+msgstr "Seleziona un file .gpkg o .gramps"
+
+msgid "Show items that are different"
+msgstr "Mostra gli elementi che sono diversi"
+
+msgid "Include items that are different"
+msgstr "Includi gli elementi che sono diversi"
+
+msgid "Show items missing from file"
+msgstr "Mostra gli elementi che mancano dal file"
+
+msgid "Include items not in file but in database"
+msgstr "Includi gli elementi che non sono nel file ma che sono nel database"
+
 msgid "Show items added in file"
 msgstr "Mostra gli elementi aggiunti al file"
+
+msgid "Include items in file but not in database"
+msgstr "Includi gli elementi che sono nel file ma che non sono nel database"
+
+msgid "Compares an external database with the current one."
+msgstr "Confronta un database esterno con quello corrente."

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-26 15:11-0500\n"
-"PO-Revision-Date: 2025-03-25 17:26+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,14 +12,85 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "Sources and Citations Report"
+msgstr "Resoconto su fonti e citazioni"
 
 msgid "Provides a source and Citations Report with notes"
 msgstr "Fornire una fonte e un resoconto citazioni con note"
 
 #, python-format
+msgid "Key: %s"
+msgstr "Chiave: %s"
+
+msgid "Citations:"
+msgstr "Citazioni:"
+
+#, python-format
+msgid "%d"
+msgstr "%d"
+
+#, python-format
+msgid "  %s"
+msgstr "  %s"
+
+#, python-format
+msgid " - %s "
+msgstr " - %s "
+
+#, python-format
+msgid "   Type: %s"
+msgstr "   Tipo: %s"
+
+#, python-format
+msgid "   N-ID: %s"
+msgstr "   N-ID: %s"
+
+#, python-format
+msgid "   %s"
+msgstr "   %s"
+
+#, python-format
+msgid "%s"
+msgstr "%s"
+
+#, python-format
+msgid "   ( %s )"
+msgstr "   ( %s )"
+
+#, python-format
+msgid "%s "
+msgstr "%s "
+
+#, python-format
+msgid "and %s "
+msgstr "e %s "
+
+#, python-format
 msgid " %s"
 msgstr " %s"
+
+msgid "Title of the Report"
+msgstr "Titolo del resoconto"
+
+msgid "Title string for the report."
+msgstr "La stringa del titolo del resoconto."
+
+msgid "Subtitle of the Report"
+msgstr "Sottotitolo del resoconto"
+
+msgid "Subtitle string for the report."
+msgstr "La stringa del sottotitolo del resoconto."
+
+msgid "researcher name"
+msgstr "nome del ricercatore"
+
+msgid "Select sources using a filter"
+msgstr "Seleziona le fonti usando un filtro"
+
+msgid "Show persons"
+msgstr "Mostra persone"
 
 msgid "Whether to show events and persons mentioned in the note"
 msgstr ""
@@ -28,5 +99,29 @@ msgstr ""
 msgid "The style used for the title of the report."
 msgstr "Lo stile usato per il titolo del resoconto."
 
+msgid "The style used for the subtitle of the report."
+msgstr "Lo stile usato per il sottotitolo del resoconto."
+
+msgid "The style used for the footer of the report."
+msgstr "Lo stile usato per il piè di pagina del resoconto."
+
+msgid "The style used for source title."
+msgstr "Lo stile usato per il titolo della fonte."
+
+msgid "The style used for source subtitle."
+msgstr "Lo stile usato per il sottotitolo della fonte."
+
+msgid "The style used for Source details."
+msgstr "Lo stile usato per i dettagli della fonte."
+
+msgid "The style used for citation title."
+msgstr "Lo stile usato per il titolo della citazione."
+
+msgid "The style used for a column title."
+msgstr "Lo stile usato per il titolo di una colonna."
+
 msgid "The style used for each section."
 msgstr "Lo stile usato per ogni sezione."
+
+msgid "The style used for event and person details."
+msgstr "Lo stile usato per i dettagli degli eventi e delle persone."

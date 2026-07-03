@@ -1,0 +1,192 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+#, python-format
+msgid "Family Tree for %s"
+msgstr "%s için Aile Ağacı"
+
+msgid "Paper too small"
+msgstr "Kağıt çok küçük"
+
+msgid "Some elements may not appear or be badly rendered."
+msgstr "Bazı öğeler görünmeyebilir veya kötü şekilde işlenmiş olabilir."
+
+msgid "Anonymous"
+msgstr "Anonim"
+
+msgid "born"
+msgstr "Doğdu"
+
+msgid "baptised"
+msgstr "Vaftiz edildi"
+
+msgid "died"
+msgstr "Öldü"
+
+msgid "buried"
+msgstr "Defnedildi"
+
+msgid "cremated"
+msgstr "Yakıldı"
+
+msgid "married"
+msgstr "Evlendi"
+
+msgid "divorced"
+msgstr "Boşandı"
+
+msgid "resident"
+msgstr "İkamet eden"
+
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "%(ymd_date)s tarihinde"
+
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "%(ym_date)s tarihinde"
+
+#, python-format
+msgid "in %(y_date)s"
+msgstr "%(y_date)s tarihinde"
+
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "%(placeholder)s üzerinde"
+
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "%(placeholder)s (%(partial)s) üzerinde"
+
+#, python-format
+msgid "in %(place)s"
+msgstr "%(place)s yerinde"
+
+#, python-format
+msgid "(%(description)s)"
+msgstr "(%(description)s)"
+
+msgid "The center family for the tree"
+msgstr "Ağacın merkezindeki aile"
+
+msgid "Ancestor Generations"
+msgstr "Ataların Nesilleri"
+
+msgid "The number of ancestor generations to include in the tree"
+msgstr "Ağaca dahil edilecek ata nesillerinin sayısı"
+
+msgid "Descendant Generations"
+msgstr "Soyundan Gelen Nesiller"
+
+msgid "The number of descendant generations to include in the tree"
+msgstr "Ağaca dahil edilecek soyundan gelen nesillerin sayısı"
+
+msgid "Kekule number of husband"
+msgstr "Kekule kocasının numarası"
+
+msgid ""
+"The Kekule number of the husband (central family). Set 0 to not show Kekule "
+"numbers"
+msgstr ""
+"Kocanın (merkezi ailenin) Kekule numarası. Kekule numaralarını göstermemek "
+"için 0 olarak ayarlayın"
+
+msgid "Scale to fit on a single page"
+msgstr "Tek bir sayfaya sığacak şekilde ölçeklendir"
+
+msgid "Whether to scale to fit on a single page."
+msgstr "Tek bir sayfaya sığacak şekilde ölçeklendirilip ölçeklendirilmeyeceği."
+
+msgid "No color"
+msgstr "Renk yok"
+
+msgid "First generation"
+msgstr "Birinci nesil"
+
+msgid "Second generation"
+msgstr "İkinci nesil"
+
+msgid "Third generation"
+msgstr "Üçüncü nesil"
+
+msgid "Male line"
+msgstr "Erkek hattı"
+
+msgid "Male line and illegitimate children"
+msgstr "Erkek hattı ve gayrimeşru çocuklar"
+
+msgid "Female line"
+msgstr "Kadın hattı"
+
+msgid "Shuffle colors"
+msgstr "Renkleri karıştırın"
+
+msgid "Whether to shuffle colors or order them in rainbow fashion."
+msgstr "Renkleri karıştırmak mı yoksa gökkuşağı düzeninde sıralamak mı."
+
+msgid "Replace first name with call name"
+msgstr "İlk adı çağrı adıyla değiştirin"
+
+msgid "Underline call name in first name / add call name to first name"
+msgstr "İlk addaki çağrı adının altını çiz/çağrı adını ilk ada ekle"
+
+msgid "Include Occupation"
+msgstr "Mesleği Dahil Et"
+
+msgid "Include Residence"
+msgstr "İkametgahı Dahil Et"
+
+msgid "Print event data (dead person)"
+msgstr "Olay verilerini yazdır (ölü kişi)"
+
+msgid "Year only"
+msgstr "Sadece yıl"
+
+msgid "Full date"
+msgstr "Tam tarih"
+
+msgid "Full date and place"
+msgstr "Tam tarih ve yer"
+
+msgid "Print event data (living person)"
+msgstr "Olay verilerini yazdır (yaşayan kişi)"
+
+msgid "Fall back to baptism if birth event missing"
+msgstr "Doğum olayı bilgisi yoksa vaftiz kaydına geri dönün"
+
+msgid "Fall back to burial or cremation if death event missing"
+msgstr "Ölüm olayı bilgisi yoksa, gömme veya yakma yöntemine geri dönün"
+
+msgid "Protect private items"
+msgstr "Özel eşyaları koruyun"
+
+msgid "Include event description"
+msgstr "Etkinlik açıklamasını dahil edin"
+
+msgid "Text Options"
+msgstr "Metin Seçenekleri"
+
+msgid "The style used for names."
+msgstr "Adlar için kullanılan stil."
+
+msgid "The style used for data (birth, death, marriage, divorce)."
+msgstr "Veriler için kullanılan stil (doğum, ölüm, evlilik, boşanma)."
+
+msgid "Produces a graphical family tree."
+msgstr "Grafiksel bir aile ağacı oluşturur."

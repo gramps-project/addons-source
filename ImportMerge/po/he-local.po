@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-07-26 08:04+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,10 +13,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Import and Merge tool"
+msgstr "כלי ייבוא ומיזוג"
+
+msgid ""
+"Compares a Gramps XML database with the current one, and allows merging of "
+"the differences."
+msgstr "השוואת מסד־נתונים Gramps XML למסד הנוכחי, ומתן אפשרות למזג את ההבדלים."
+
+msgid "Import and merge a Gramps XML"
+msgstr "ייבוא ומיזוג Gramps XML"
 
 msgid "Missing"
 msgstr "חסר"
+
+msgid "Delete original"
+msgstr "מחיקה מקורי"
+
+msgid "Ignore"
+msgstr "התעלמות"
+
+msgid "Add Import"
+msgstr "הוספה ייבוא"
+
+msgid "Merge into original"
+msgstr "מיזוג למקור"
+
+msgid "Merge into import"
+msgstr "מיזוג לייבוא"
 
 msgid "Replace with import"
 msgstr "החלפה עם היבוא"
@@ -24,17 +50,102 @@ msgstr "החלפה עם היבוא"
 msgid "Keep original"
 msgstr "להשאיר את המקורי"
 
+msgid ""
+"Use buttons below to set the 'Action' for each difference.  No changes will "
+"be made to your tree until you press 'Done' and confirm."
+msgstr ""
+"יש להשתמש בלחצנים שלהלן כדי להגדיר את 'פעולה' לכל הבדל. לא יבוצעו שינויים "
+"באילן עד להקשה על 'בוצע' ואישור."
+
+msgid ""
+"This item will be deleted from your tree.  Any referenced items were also "
+"marked for deletion."
+msgstr "פריט זה יימחק מהאילן. כל הפריטים שמפנים אליו סומנו גם הם למחיקה."
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked for Ignore."
+msgstr "פריט זה לא ישתנה באילן. כל הפריטים שמפנים אליו סומנו גם הם להתעלמות."
+
+msgid ""
+"This item will be added to your tree.  Any referenced items were also marked "
+"for adding."
+msgstr "פריט זה יתווסף לאילן. כל הפריטים שמפנים אליו סומנו גם הם להוספה."
+
+msgid ""
+"This item will be merged, saving data from your tree.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"פריט זה ימוזג תוך שמירת נתונים מהאילן. כל הפריטים שמפנים אליו סומנו גם הם "
+"למיזוג או להוספה."
+
+msgid ""
+"This item will be merged, using data from the import.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"פריט זה ימוזג תוך שימוש בנתונים מהייבוא. כל הפריטים שמפנים אליו סומנו גם הם "
+"למיזוג או להוספה."
+
+msgid ""
+"The import data will entirely replace the data in your tree.  Any referenced "
+"items were also marked for replacement or removal."
+msgstr ""
+"נתוני הייבוא יחליפו לחלוטין את הנתונים באילן. כל הפריטים שמפנים אליהם סומנו "
+"גם הם להחלפה או להסרה."
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked to keep."
+msgstr "פריט זה לא ישתנה באילן. כל הפריטים שמפנים אליו סומנו גם הם לשמירה."
+
+msgid "Import Failure"
+msgstr "כשל ייבוא"
+
+msgid "Your Tree and import are the same."
+msgstr "האילן והייבוא זהים."
+
+msgid "your tree "
+msgstr "אילן "
+
+msgid "imported "
+msgstr "יובא "
+
 msgid "Original"
 msgstr "מקורי"
+
+msgid "Imported"
+msgstr "יובא"
 
 msgid "Result  "
 msgstr "תוצאה  "
 
+msgid "Import and Merge"
+msgstr "ייבוא ומיזוג"
+
 msgid "Replace"
 msgstr "החלפה"
 
+msgid ""
+"A '*' indicates that the action was automarked, a '?' indicates a conflict "
+"between automarks."
+msgstr ""
+"'*' מציין שהפעולה סומנה אוטומטית; '?' מציין התנגשות בין סימונים אוטומטיים."
+
+msgid "Import file"
+msgstr "ייבוא קובץ"
+
+msgid "Select the difference you wish to examine."
+msgstr "בחירת הבדל יש רצון ללבחון."
+
 msgid "Object Name/Description"
 msgstr "שם עצם/תיאור"
+
+msgid ""
+"Data item details, showing the current treeitem, imported tree item, and "
+"result (when chosen)."
+msgstr ""
+"פרטי פריט נתונים, המציגים את פריט האילן הנוכחי, פריט האילן שיובא, ואת התוצאה "
+"(כאשר נבחרה)."
 
 msgid "Object and item"
 msgstr "עצם ופריט"
@@ -42,14 +153,59 @@ msgstr "עצם ופריט"
 msgid "Differences"
 msgstr "הבדלים"
 
+msgid "This button will ignore the difference, no changes to your tree."
+msgstr "לחצן זה יתעלם מההבדל; לא יבוצעו שינויים באילן."
+
+msgid "Unmark"
+msgstr "ביטול סימון"
+
+msgid "This button will add the imported data as a new object to your tree."
+msgstr "לחצן זה יוסיף את הנתונים שיובאו כעצם חדש לאילן."
+
 msgid "Done"
 msgstr "הפעולה בוצעה"
+
+msgid ""
+"This button will bring up a dialog allowing you to finalize your changes, or "
+"abandon them."
+msgstr "לחצן זה יפתח דו־שיח שמאפשר לסיים את השינויים או לבטל אותם."
 
 msgid "Merge Original"
 msgstr "מזוג מקור"
 
+msgid ""
+"This button will merge the imported data into your tree with your tree data "
+"as a base."
+msgstr ""
+"לחצן זה ימזג את הנתונים שיובאו לתוך האילן, כאשר נתוני האילן משמשים בסיס."
+
+msgid "This button will replace your tree data with the imported data."
+msgstr "לחצן זה יחליף את נתוני האילן בנתונים שיובאו."
+
+msgid "Merge Import"
+msgstr "מיזוג ייבוא"
+
+msgid ""
+"This button will merge the imported data into your tree with the imported "
+"data as a base."
+msgstr ""
+"לחצן זה ימזג את הנתונים שיובאו לתוך האילן, כאשר הנתונים שיובאו משמשים בסיס."
+
 msgid "Edit Import"
 msgstr "עריכת ייבוא"
+
+msgid ""
+"This button will edit the imported data.  The data will still need to be "
+"merged, added or replaced."
+msgstr ""
+"לחצן זה יערוך את הנתונים שיובאו. עדיין יהיה צורך למזג, להוסיף או להחליף את "
+"הנתונים."
+
+msgid "Show more details"
+msgstr "הצגת פרטים נוספים"
+
+msgid "Automark Families"
+msgstr "סימון משפחות אוטומטי"
 
 msgid "Automark Parent Families"
 msgstr "אטמוט הערת משפחת הורה"

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-09-06 11:01+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "Data Entry Gramplet"
+msgstr "Gramplet per l'inserimento dei dati"
+
+msgid "Gramplet for quick data entry"
+msgstr "Gramplet per l'inserimento rapido dei dati"
 
 msgid "Active person"
 msgstr "Persona attiva"
@@ -59,6 +65,9 @@ msgstr "Aggiungi come moglie"
 msgid "Add as a Husband"
 msgstr "Aggiungi come marito"
 
+msgid "Add as a Sibling"
+msgstr "Aggiungi come fratello o sorella"
+
 msgid "Add as a Child"
 msgstr "Aggiungi come figlio"
 
@@ -68,14 +77,60 @@ msgstr "Copia dati attivi"
 msgid "in"
 msgstr "in"
 
+msgid "No Family Tree is open."
+msgstr "Nessun albero genealogico è aperto."
+
+msgid "Please open a Family Tree to edit data."
+msgstr "Apri un albero genealogico per modificare i dati."
+
+#, python-format
+msgid "Gramplet Data Edit: %s"
+msgstr "Modifica dati Gramplet: %s"
+
+msgid "Please open a Family Tree before adding a person."
+msgstr "Aprire un albero genealogico prima di aggiungere una persona."
+
+msgid "Please provide a name."
+msgstr "Fornire un nome."
+
 msgid "Can't add new person."
-msgstr "Non puoi aggiungere una nuova persona."
+msgstr "Impossibile aggiungere una nuova persona."
+
+msgid "Please set an active person."
+msgstr "Impostare una persona attiva."
+
+msgid "Can't add new person as a parent."
+msgstr "Impossibile aggiungere una nuova persona come genitore."
 
 msgid "Please set the new person's gender."
 msgstr "Impostare il genere della nuova persona."
 
+msgid "Can't add new person as a mother."
+msgstr "Impossibile aggiungere una nuova persona come madre."
+
+msgid "Can't add new person as a father."
+msgstr "Impossibile aggiungere una nuova persona come padre."
+
+msgid "Can't add new person as a spouse."
+msgstr "Impossibile aggiungere una nuova persona come coniuge."
+
+msgid "Can't add new person as a wife."
+msgstr "Impossibile aggiungere una nuova persona come moglie."
+
+msgid "Can't add new person as a husband."
+msgstr "Impossibile aggiungere una nuova persona come marito."
+
+msgid "Can't add new person as a sibling."
+msgstr "Impossibile aggiungere una nuova persona come fratello."
+
+msgid "Can't add new person as a child."
+msgstr "Impossibile aggiungere una nuova persona come figlio."
+
 msgid "Please set Active person."
 msgstr "Impostare la persona attiva."
+
+msgid "Can't add new person as a spouse to no one."
+msgstr "Impossibile aggiungere una nuova persona come coniuge di nessuno."
 
 msgid "Please set gender on Active or new person."
 msgstr "Impostare il genere per la persona attiva o la nuova persona."

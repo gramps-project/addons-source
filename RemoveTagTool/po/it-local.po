@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-07 13:25+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "The Tool requires at least one tag to execute."
+msgstr "Lo strumento ha bisogno di almeno un tag per essere eseguito."
+
+msgid "ERROR"
+msgstr "ERRORE"
+
+msgid "Add/Remove"
+msgstr "Aggiungi o rimuovi"
 
 msgid "Add or remove tags from objects."
 msgstr "Aggiungi o rimuovi etichette dagli oggetti."
@@ -23,9 +32,30 @@ msgstr "Aggiungi etichette"
 msgid "Remove Tags"
 msgstr "Rimuovi etichette"
 
+msgid "General options"
+msgstr "Opzioni generali"
+
+msgid "Choose a category."
+msgstr "Scegli una categoria."
+
+msgid "Choose Tag"
+msgstr "Scegli tag"
+
+msgid "Choose a tag to remove."
+msgstr "Scegli un tag da rimuovere."
+
+msgid "Persons"
+msgstr "Persone"
+
+msgid "Filter options"
+msgstr "Opzioni di filtraggio"
+
 #, python-format
 msgid "All %s"
 msgstr "Tutti i %s"
+
+msgid "Add/Remove Tag Tool"
+msgstr "Strumento Aggiungi o rimuovi tag"
 
 msgid ""
 "Unable to run the tool. Please check if your database contains tags, filters "
@@ -34,8 +64,20 @@ msgstr ""
 "Impossibile eseguire lo strumento. Verificare se il database contiene "
 "etichette, filtri e oggetti."
 
+msgid "WARNING"
+msgstr "AVVISO"
+
 msgid "Process tags..."
 msgstr "Elabora etichette..."
 
+msgid "added"
+msgstr "aggiunto"
+
+msgid "removed"
+msgstr "rimosso"
+
 msgid "INFO"
 msgstr "INFO"
+
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr "Aggiungi o rimuovi un tag da gruppi di persone, eventi, eccetera."

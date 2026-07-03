@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-09 13:13+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,13 +13,393 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "This Day in Family History"
+msgstr "היום הזה בתולדות המשפחה"
+
+msgid ""
+"A configurable program that shows you the connected events from your family "
+"tree that match today's day and month."
+msgstr ""
+"תוכנית הניתנת להגדרה שמציגה את האירועים המקושרים מאילן־היוחסין שתואמים ליום "
+"ולחודש של היום."
+
+msgid "Database is not open, can't check history right now."
+msgstr "מסד־הנתונים אינו פתוח, לא ניתן לבדוק כעת את ההיסטוריה."
+
+#, python-format
+msgid "On %(date)s in family history ...\n"
+msgstr "על %(date)s במשפחה היסטוריה...\n"
+
+msgid "... nothing happened!  Check again tomorrow!"
+msgstr "... דבר לא קרה!  כדאי לבדוק שוב מחר!"
+
+msgid "Report only living tree members"
+msgstr "דיווח רק על חברי אילן חיים"
+
+msgid "Show these events"
+msgstr "הצגת אירועים אלה"
+
+msgid "Sort by "
+msgstr "מיון לפי "
+
+msgid "Sort in ascending order?"
+msgstr "למיין בסדר עולה?"
+
+msgid "January"
+msgstr "ינואר"
+
+msgid "February"
+msgstr "פברואר"
+
+msgid "March"
+msgstr "מרץ"
+
+msgid "April"
+msgstr "אפריל"
+
+msgid "May"
+msgstr "מאי"
+
+msgid "June"
+msgstr "יוני"
+
+msgid "July"
+msgstr "יולי"
+
+msgid "August"
+msgstr "אוגוסט"
+
+msgid "September"
+msgstr "ספטמבר"
+
+msgid "October"
+msgstr "אוקטובר"
+
+msgid "November"
+msgstr "נובמבר"
+
+msgid "December"
+msgstr "דצמבר"
 
 msgid "Person Name"
 msgstr "שם אדם"
+
+msgid "Event Year"
+msgstr "שנת האירוע"
+
+msgid "gregorian"
+msgstr "גרגוריאני"
+
+msgid "Unknown father/partner"
+msgstr "אב/שותף לא ידוע"
+
+msgid "Unknown mother/partner"
+msgstr "אם/שותפה לא ידועה"
+
+msgid " and "
+msgstr " ו "
 
 msgid "unknown participant"
 msgstr "משתתף לא ידוע"
 
 msgid "unknown location"
 msgstr "מיקום לא ידוע"
+
+#, python-format
+msgid "%(male_name)s was adopted in %(year)s at %(place)s."
+msgstr "%(male_name)s אומץ בשנת %(year)s ב%(place)s."
+
+#, python-format
+msgid "%(female_name)s was adopted in %(year)s at %(place)s."
+msgstr "%(female_name)s אומצה בשנת %(year)s ב%(place)s."
+
+#, python-format
+msgid "%(male_name)s was christened in %(year)s at %(place)s."
+msgstr "%(male_name)s הוטבל בשנת %(year)s ב%(place)s."
+
+#, python-format
+msgid "%(female_name)s was christened in %(year)s at %(place)s."
+msgstr "%(female_name)s הוטבלה בשנת %(year)s ב%(place)s."
+
+#, python-format
+msgid "%(male_name)s was married in %(year)s at %(place)s."
+msgstr "%(male_name)s היה נשוי ב־%(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s was married in %(year)s at %(place)s."
+msgstr "%(female_name)s היה נשוי ב־%(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s received an annulment in %(year)s at %(place)s."
+msgstr "נישואי %(male_name)s בוטלו בשנת %(year)s במקום %(place)s."
+
+#, python-format
+msgid "%(female_name)s received an annulment in %(year)s at %(place)s."
+msgstr "נישואי %(female_name)s בוטלו בשנת %(year)s במקום %(place)s."
+
+#, python-format
+msgid "%(male_name)s was baptized in %(year)s at %(place)s."
+msgstr "%(male_name)s נטבל בשנת %(year)s ב%(place)s."
+
+#, python-format
+msgid "%(female_name)s was baptized in %(year)s at %(place)s."
+msgstr "%(female_name)s נטבלה בשנת %(year)s ב%(place)s."
+
+#, python-format
+msgid "%(male_name)s became a bar mitzvah in %(year)s at %(place)s."
+msgstr "%(male_name)s נעשה בר־מצווה בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s became a bar mitzvah in %(year)s at %(place)s."
+msgstr "%(female_name)s נעשה בר־מצווה ב־%(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s became a bat mitzvah in %(year)s at %(place)s."
+msgstr "%(male_name)s חגג בר מצווה בשנת %(year)s במקום %(place)s."
+
+#, python-format
+msgid "%(female_name)s became a bat mitzvah in %(year)s at %(place)s."
+msgstr "%(female_name)s נעשתה בת־מצווה בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s was born in %(year)s at %(place)s."
+msgstr "%(male_name)s נולד בשנת %(year)s ב%(place)s."
+
+#, python-format
+msgid "%(female_name)s was born in %(year)s at %(place)s."
+msgstr "%(female_name)s נולדה בשנת %(year)s ב%(place)s."
+
+#, python-format
+msgid "%(male_name)s was blessed in %(year)s at %(place)s."
+msgstr "%(male_name)s בורך בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s was blessed in %(year)s at %(place)s."
+msgstr "%(female_name)s בורכה בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s was buried in %(year)s at %(place)s."
+msgstr "%(male_name)s נקבר בשנת %(year)s ב%(place)s."
+
+#, python-format
+msgid "%(female_name)s was buried in %(year)s at %(place)s."
+msgstr "%(female_name)s נקברה בשנת %(year)s ב%(place)s."
+
+#, python-format
+msgid "%(male_name)s participated in a census in %(year)s at %(place)s."
+msgstr "%(male_name)s השתתף במפקד אוכלוסין בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s participated in a census in %(year)s at %(place)s."
+msgstr "%(female_name)s השתתפה במפקד אוכלוסין בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s was confirmed in %(year)s at %(place)s."
+msgstr "%(male_name)s עבר אישוש בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s was confirmed in %(year)s at %(place)s."
+msgstr "%(female_name)s עברה אישוש בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s was cremated in %(year)s at %(place)s."
+msgstr "%(male_name)s נשרף בשנת %(year)s ב%(place)s."
+
+#, python-format
+msgid "%(female_name)s was cremated in %(year)s at %(place)s."
+msgstr "%(female_name)s נשרפה בשנת %(year)s ב%(place)s."
+
+#, python-format
+msgid "%(male_name)s died in %(year)s at %(place)s."
+msgstr "%(male_name)s נפטר בשנת %(year)s ב%(place)s."
+
+#, python-format
+msgid "%(female_name)s died in %(year)s at %(place)s."
+msgstr "%(female_name)s נפטרה בשנת %(year)s ב%(place)s."
+
+#, python-format
+msgid "%(male_name)s was awarded a degree in %(year)s at %(place)s."
+msgstr "%(male_name)s קיבל תואר בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s was awarded a degree in %(year)s at %(place)s."
+msgstr "%(female_name)s קיבלה תואר בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s was granted a divorce in %(year)s at %(place)s."
+msgstr "%(male_name)s קיבל גט בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s was granted a divorce in %(year)s at %(place)s."
+msgstr "%(female_name)s קיבלה גט בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s filed for divorce in %(year)s at %(place)s."
+msgstr "%(male_name)s הגיש בקשה לגירושין בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s filed for divorce in %(year)s at %(place)s."
+msgstr "%(female_name)s הגישה בקשה לגירושין בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s was elected in %(year)s at %(place)s."
+msgstr "%(male_name)s נבחר בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s was elected in %(year)s at %(place)s."
+msgstr "%(female_name)s נבחרה בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s emigrated in %(year)s at %(place)s."
+msgstr "%(male_name)s היגר בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s emigrated in %(year)s at %(place)s."
+msgstr "%(female_name)s היגרה בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s became engaged in %(year)s at %(place)s."
+msgstr "%(male_name)s התארס בשנת %(year)s במקום %(place)s."
+
+#, python-format
+msgid "%(female_name)s became engaged in %(year)s at %(place)s."
+msgstr "%(female_name)s התארסה בשנת %(year)s במקום %(place)s."
+
+#, python-format
+msgid "%(male_name)s received first communion in %(year)s at %(place)s."
+msgstr "%(male_name)s קיבל את לחם הקודש הראשון בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s received first communion in %(year)s at %(place)s."
+msgstr "%(female_name)s קיבלה את לחם הקודש הראשון בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s graduated in %(year)s at %(place)s."
+msgstr "%(male_name)s סיים לימודים בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s graduated in %(year)s at %(place)s."
+msgstr "%(female_name)s סיימה לימודים בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s immigrated in %(year)s at %(place)s."
+msgstr "%(male_name)s היגר בשנת %(year)s במקום %(place)s."
+
+#, python-format
+msgid "%(female_name)s immigrated in %(year)s at %(place)s."
+msgstr "%(female_name)s היגרה בשנת %(year)s במקום %(place)s."
+
+#, python-format
+msgid "%(male_name)s got married in %(year)s at %(place)s."
+msgstr "%(male_name)s נישא בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s got married in %(year)s at %(place)s."
+msgstr "%(female_name)s נישאה בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s joined as a family in %(year)s at %(place)s."
+msgstr "%(male_name)s הצטרף כמשפחה בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s joined as a family in %(year)s at %(place)s."
+msgstr "%(female_name)s הצטרפה כמשפחה בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s entered a civil union in %(year)s at %(place)s."
+msgstr "%(male_name)s נכנס לברית אזרחית בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s entered a civil union in %(year)s at %(place)s."
+msgstr "%(female_name)s נכנסה לברית אזרחית בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s had a custom marriage in %(year)s at %(place)s."
+msgstr "%(male_name)s היה מותאם נישואין ב־%(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s had a custom marriage in %(year)s at %(place)s."
+msgstr "%(female_name)s היה מותאם נישואין ב־%(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s announced a marriage banns in %(year)s at %(place)s."
+msgstr "%(male_name)s פרסם הכרזת נישואין בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s announced a marriage banns in %(year)s at %(place)s."
+msgstr "%(female_name)s פרסמה הכרזת נישואין בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s entered a marriage contract in %(year)s at %(place)s."
+msgstr "%(male_name)s חתם על חוזה נישואין בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s entered a marriage contract in %(year)s at %(place)s."
+msgstr "%(female_name)s חתמה על חוזה נישואין בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s obtained a marriage license in %(year)s at %(place)s."
+msgstr "%(male_name)s קיבל רישיון נישואין בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s obtained a marriage license in %(year)s at %(place)s."
+msgstr "%(female_name)s קיבלה רישיון נישואין בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s obtained a marriage settlement in %(year)s at %(place)s."
+msgstr "%(male_name)s קיבל הסכם נישואין בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid ""
+"%(female_name)s obtained a marriage settlement in %(year)s at %(place)s."
+msgstr "%(female_name)s קיבלה הסכם נישואין בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s entered military service in %(year)s at %(place)s."
+msgstr "%(male_name)s נכנס לשירות צבאי בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s entered military service in %(year)s at %(place)s."
+msgstr "%(female_name)s נכנסה לשירות צבאי בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s became naturalized in %(year)s at %(place)s."
+msgstr "%(male_name)s התאזרח בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s became naturalized in %(year)s at %(place)s."
+msgstr "%(female_name)s התאזרחה בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s had a title bestowed in %(year)s at %(place)s."
+msgstr "ל־%(male_name)s הוענק תואר בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s had a title bestowed in %(year)s at %(place)s."
+msgstr "ל־%(female_name)s הוענק תואר בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s was ordained in %(year)s at %(place)s."
+msgstr "%(male_name)s הוסמך בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s was ordained in %(year)s at %(place)s."
+msgstr "%(female_name)s הוסמכה בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s was granted probate in %(year)s at %(place)s."
+msgstr "%(male_name)s קיבל צו קיום צוואה בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s was granted probate in %(year)s at %(place)s."
+msgstr "%(female_name)s קיבלה צו קיום צוואה בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(male_name)s retired in %(year)s at %(place)s."
+msgstr "%(male_name)s פרש לגמלאות בשנת %(year)s ב־%(place)s."
+
+#, python-format
+msgid "%(female_name)s retired in %(year)s at %(place)s."
+msgstr "%(female_name)s פרשה לגמלאות בשנת %(year)s ב־%(place)s."

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-02-20 09:09+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,16 +13,103 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+#, python-brace-format
+msgid "Object {obj_type}:{handle} was modified by another user"
+msgstr "עצם {obj_type}: {handle} היה שונה לפי אחר משתמש"
+
+msgid "pg_trgm extension required for duplicate detection"
+msgstr "הרחבת pg_trgm נדרשת לאיתור כפולים"
+
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+"psycopg3 נדרש לתמיכה משופרת ב־PostgreSQL. התקנה באמצעות: pip install "
+"'psycopg[binary]'"
+
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+"גרסת psycopg3‏ %(installed)s ישנה מדי. נדרשת גרסה %(required)s או חדשה יותר."
+
+msgid "Database Backend"
+msgstr "מנגנון מסד־נתונים"
+
+msgid "Database module"
+msgstr "פרקן מסד־נתונים"
 
 msgid "JSONB support"
 msgstr "תמיכת JSONB"
 
+msgid "Version warning"
+msgstr "אזהרת גרסה"
+
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr "גרסת PostgreSQL %(version)s נמוכה מהגרסה המומלצת %(recommended)s"
+
+msgid "Extensions"
+msgstr "הרחבות"
+
+msgid "Database size"
+msgstr "גודל מסד־נתונים"
+
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr "%(persons)d אנשים, %(families)d משפחות, %(events)d אירועים"
+
+msgid "Migration manager not initialized"
+msgstr "מנהל ההגירה לא אותחל"
+
+msgid "Enhanced queries require JSONB support"
+msgstr "שאילתות משופרות דורשות תמיכה ב־JSONB"
+
+msgid "Full-text search requires JSONB support or search capabilities"
+msgstr "חיפוש מלל מלא דורש תמיכת JSONB או יכולות חיפוש"
+
 msgid "Starting migration..."
 msgstr "התחלת הגירה..."
+
+#, python-format
+msgid "Migrating %s objects..."
+msgstr "מבצע הגירה של %s עצמים..."
+
+#, python-format, python-brace-format
+msgid "Migrated %s {obj_type} objects"
+msgstr "הועברו %s עצמים מסוג {obj_type}"
+
+msgid "Migration completed!"
+msgstr "ההסבה הושלמה!"
 
 msgid "Starting upgrade..."
 msgstr "התחלת עדכון..."
 
+#, python-format
+msgid "Upgrading %s objects..."
+msgstr "משדרג %s עצמים..."
+
 msgid "Creating indexes..."
 msgstr "מתבצע חילול מפתחות..."
+
+msgid "Upgrade completed!"
+msgstr "השדרוג הושלם!"
+
+msgid "PostgreSQL Enhanced"
+msgstr "PostgreSQL מורחב"
+
+msgid "PostgreSQL _Enhanced Database"
+msgstr "PostgreSQL _משופרות מסד־נתונים"
+
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
+msgstr ""
+"עורף PostgreSQL מתקדם עם אחסון JSONB, תמיכה במסד־נתוני גרף (Apache AGE), "
+"דמיון וקטורי (pgvector) ויכולות AI/ML. למשתמשים מתקדמים. דורש PostgreSQL 15+ "
+"עם הרחבות. תואם למרשתת גרמפס."

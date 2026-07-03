@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-06-04 05:01+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Web-synchronisatie"
@@ -34,6 +34,22 @@ msgstr "Onverwachte fout bij het verwerken van wijzigingen."
 
 msgid "Media files are in sync."
 msgstr "Mediabestanden zijn gesynchroniseerd."
+
+#, python-format
+msgid "Successfully downloaded %s media files."
+msgstr "%s mediabestanden succesvol gedownload."
+
+#, python-format
+msgid "Encountered %s errors during download."
+msgstr "%s fouten opgetreden bij het downloaden."
+
+#, python-format
+msgid "Successfully uploaded %s media files."
+msgstr "%s mediabestanden met succes geüploadet."
+
+#, python-format
+msgid "Encountered %s errors during upload."
+msgstr "%s fouten opgetreden bij het uploaden."
 
 msgid "Authentication failed. Please check your username and password."
 msgstr "Authenticatie mislukt. Controleer uw gebruikersnaam en wachtwoord."
@@ -196,3 +212,11 @@ msgstr "Lokaal vermist"
 
 msgid "Missing remotely"
 msgstr "Extern vermist"
+
+#, python-format
+msgid "Downloading %s media file(s)"
+msgstr "%s mediabestand(en) downloaden"
+
+#, python-format
+msgid "Uploading %s media file(s)"
+msgstr "%s mediabestand(en) uploaden"

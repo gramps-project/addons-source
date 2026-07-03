@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-08-11 18:01+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,10 +13,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Family Finder Tool"
+msgstr "כלי איתור משפחה"
+
+msgid "Enter FTDNA Family Finder Filename:"
+msgstr "הזנת שם קובץ FTDNA Family Finder:"
+
+msgid "Enter FTDNA Chromosome Segment Filename:"
+msgstr "הזנת שם קובץ מקטעי כרומוזום FTDNA:"
+
+msgid "Import Haplogroups"
+msgstr "ייבוא קבוצות־אב גנטיות"
+
+msgid "FTDNA Note string :"
+msgstr "FTDNA הערה מחרוזת:"
+
+msgid "Shared Citation ID :"
+msgstr "מזהה מובאה משותפת:"
 
 msgid "Active Person : "
 msgstr "אדם פעיל: "
+
+msgid "Import data from Family Finder files"
+msgstr "ייבוא נתונים מקובצי Family Finder"
 
 msgid "Close the Family Finder Tool"
 msgstr "בחירת הכלי לאיתור משפחות"
@@ -24,6 +45,52 @@ msgstr "בחירת הכלי לאיתור משפחות"
 msgid "Read Help manual"
 msgstr "עיון במדריך העזרה"
 
+msgid "FamilyTree DNA Import"
+msgstr "ייבוא FamilyTree DNA"
+
+msgid ""
+"{} Associations with DNA data created. {} haplogroup Attributes created \n"
+msgstr "{} תסמיכים עם נתוני DNA נוצרו. {} מאפייני קבוצת־אב גנטית נוצרו. \n"
+
+msgid "No Family Finder File specified"
+msgstr "לא צוין קובץ Family Finder"
+
+msgid "No Segment File specified"
+msgstr "לא צוין קובץ מקטעים"
+
+msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
+msgstr "לא נמצאו תסמיכים בהערות FTdna. לא נוצרו מאפייני קבוצת־אב גנטית."
+
+#, python-format
+msgid "Add %s haplogroup attribute"
+msgstr "הוספת מאפיין קבוצת־אב גנטית %s"
+
 #, python-format
 msgid "Add %s DNA Association"
 msgstr "הוספת תסמיך DNA %s"
+
+#, python-format
+msgid "Create Note for %s DNA Association"
+msgstr "יצירת הערה לתסמיך DNA של %s"
+
+#, python-format
+msgid "Add Note to %s DNA Association"
+msgstr "הוספת הערה לתסמיך DNA של %s"
+
+#, python-format
+msgid "Create Source Citation for %s DNA Association"
+msgstr "יצירת מובאת מקור לתסמיך DNA של %s"
+
+#, python-format
+msgid "Create Citation for %s DNA Association"
+msgstr "יצירת מובאה לתסמיך DNA של %s"
+
+#, python-format
+msgid "Add Citation to %s DNA Association"
+msgstr "הוספת מובאה לתסמיך DNA‏ %s"
+
+msgid "FamilyTree DNA"
+msgstr "FamilyTree DNA"
+
+msgid "Tool to import FamilyFinder DNA data from Family Tree"
+msgstr "כלי לייבוא נתוני DNA של Family Finder מאילן־יוחסין"

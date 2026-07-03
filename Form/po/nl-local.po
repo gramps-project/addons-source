@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-06-04 05:01+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.6\n"
 
 #, python-format
 msgid "Form: %s"
@@ -26,6 +26,9 @@ msgstr "Bewerk formulier"
 
 msgid "Reference:"
 msgstr "Referentie:"
+
+msgid "[Source recreated after deletion mid-form-edit]"
+msgstr "[Bron opnieuw aangemaakt na verwijdering bij formulierbewerking]"
 
 msgid "Headings"
 msgstr "Rubrieken"
@@ -81,23 +84,68 @@ msgstr ""
 "Controleer of er volkstellingen ontbreken voor een persoon en sommige "
 "voorouders"
 
+msgid "Total Area in Statute Acres"
+msgstr "Totale oppervlakte in Statutaire Acres"
+
+msgid "Signature of Head of Household"
+msgstr "Handtekening van het gezinshoofd"
+
+msgid "Signature of Enumerator"
+msgstr "Handtekening van Enumerator"
+
 msgid "Persons"
 msgstr "Personen"
 
 msgid "Rooms"
 msgstr "Kamers"
 
+msgid "County or Co. Borough"
+msgstr "County of Co. Borough"
+
+msgid "District Electoral Division or Ward"
+msgstr "Districtsverkiezingsafdeling of wijk"
+
 msgid "Townland"
 msgstr "Townland"
+
+msgid "Urban Dist. Town or Village"
+msgstr "Urban district stad of dorp"
+
+msgid "Street etc with No. of House"
+msgstr "Straat, enz. met huisnr."
+
+msgid "No. of Schedule"
+msgstr "Nr. van schema"
+
+msgid "Name of Public Institution"
+msgstr "Naam van de openbare instelling"
+
+msgid "Name and Surname"
+msgstr "Naam en achternaam"
 
 msgid "Relation"
 msgstr "Relatie"
 
+msgid "Relationship to Head of Household"
+msgstr "Relatie tot gezinshoofd"
+
+msgid "Year Age"
+msgstr "Jaarleeftijd"
+
 msgid "Age in years"
 msgstr "Leeftijd in jaren"
 
+msgid "Month Age"
+msgstr "Maandleeftijd"
+
+msgid "Age in months"
+msgstr "Leeftijd in maanden"
+
 msgid "Sex"
 msgstr "Geslacht"
+
+msgid "Marriage or Orphanhood"
+msgstr "Huwelijk of wezenstatus"
 
 msgid "Birthplace"
 msgstr "Geboorteplaats"
@@ -105,32 +153,179 @@ msgstr "Geboorteplaats"
 msgid "Irish Language"
 msgstr "Ierse taal"
 
+msgid ""
+"\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
+"cannot speak Irish\""
+msgstr ""
+"\"Alleen Iers\", \"Iers en Engels\", \"Engels en Iers\", \"Iers lezen maar "
+"niet spreken\""
+
 msgid "Personal Occupation"
 msgstr "Persoonlijk beroep"
 
 msgid "Years Married"
 msgstr "Jaren getrouwd"
 
+msgid "Years married in present Marriage"
+msgstr "Jaren getrouwd in het huidige huwelijk"
+
+msgid "Months Married"
+msgstr "Maanden getrouwd"
+
+msgid "Months married in present Marriage"
+msgstr "Maanden getrouwd in huidige huwelijk"
+
+msgid "Present Marriage Children"
+msgstr "Kinderen uit huidige huwelijk"
+
+msgid "Children born alive to present marriage"
+msgstr "Levend geboren kinderen uit huidige huwelijk"
+
+msgid "Total Children Under 16 Living"
+msgstr "Aantal levende kinderen onder 16"
+
+msgid "(1.) Entry no."
+msgstr "(1.) Item-nr."
+
+msgid "Superintendent Registrar's District"
+msgstr "Superintendent Registrar's District"
+
+msgid "Registrar's District"
+msgstr "Registrar's District"
+
+msgid "Union"
+msgstr "Vakbond"
+
+msgid "(10.) Signature of Registrar"
+msgstr "(10.) Handtekening van griffier"
+
+msgid "(11.) Baptismal Name if added after Registration of Birth, and Date"
+msgstr ""
+"(11.) Doopnaam indien toegevoegd na inschrijving van de geboorte en datum"
+
+msgid "(3.) Name (if any)"
+msgstr "(3.) Naam (indien aanwezig)"
+
 msgid "Place of Birth"
 msgstr "Geboorteplaats"
+
+msgid "(2.) Date and Place of Birth"
+msgstr "(2.) Datum en geboorteplaats"
 
 msgid "Date of Birth"
 msgstr "Geboortedatum"
 
+msgid "(4.) M or F for male or female"
+msgstr "(4.) M of V voor man of vrouw"
+
+msgid "(5.) Name and Surname and Dwelling-place of Father"
+msgstr "(5.) Naam, achternaam en verblijfplaats van vader"
+
+msgid "(7.) Rank or Profession of Father"
+msgstr "(7.) Rang of beroep van vader"
+
+msgid "(6.) Name and Surname and Maiden Surname of Mother"
+msgstr "(6.) Voor- en achternaam en meisjesnaam van moeder"
+
 msgid "Maiden Surname"
 msgstr "Meisjesnaam"
+
+msgid "(8.) Signature, Qualification, and Residence of Informant"
+msgstr ""
+"(8.) Handtekening, kwalificatie en woonplaats van inlichtingenverstrekker"
+
+msgid "When Registered"
+msgstr "Wanneer geregistreerd"
+
+msgid "(9.) Date when birth was registered"
+msgstr "(9.) Datum waarop de geboorte is geregistreerd"
+
+msgid "Year"
+msgstr "Jaar"
+
+msgid "Solemnized at the Catholic"
+msgstr "Gevolgd door een plechtigheid in de Katholieke kerk"
+
+msgid "Certificate number"
+msgstr "Certificaatnummer"
+
+msgid "Page number"
+msgstr "Paginanummer"
+
+msgid "(1.) Entry No."
+msgstr "(1.) Item-nr."
+
+msgid "(2.) When Married"
+msgstr "(2.) Wanneer getrouwd"
+
+msgid "(3.) Name and Surname"
+msgstr "(3.) Naam en achternaam"
+
+msgid "(4.) Full or Minor"
+msgstr "(4.) Volwassen of minderjarig"
 
 msgid "Condition"
 msgstr "Conditie"
 
+msgid "(5.) Bachelor or Spinster"
+msgstr "(5.) Vrijgezel"
+
+msgid "(6.) Rank or Profession"
+msgstr "(6.) Rang of beroep"
+
+msgid "Residence at the Time of Marriage"
+msgstr "Woonplaats ten tijde van huwelijk"
+
+msgid "(8.) Father's Name and Surname"
+msgstr "(8.) Naam en achernaam van vader"
+
+msgid "(9.) Rank or Profession of Father"
+msgstr "(9.) Rang of beroep van vader"
+
 msgid "Signed"
 msgstr "Ondertekend"
+
+msgid "(10.) When Registered"
+msgstr "(10.) Wanneer geregistreerd"
+
+msgid "(11.) Signature of Registrar"
+msgstr "(11.) Handtekening van griffier"
 
 msgid "Date of Death"
 msgstr "Overlijdensdatum"
 
+msgid "(2.) Date and Place of Death"
+msgstr "(2.) Datum en plaats van overlijden"
+
 msgid "Place of Death"
 msgstr "Overlijdenslocatie"
+
+msgid "(4.) M or F for Male or Female"
+msgstr "(4.) M of V voor Man of Vrouw"
+
+msgid "(5.) Widowed or Married"
+msgstr "(5.) Weduwe/Weduwnaar of Getrouwd"
+
+msgid "(6.) Age last Birthday"
+msgstr "(6.) Leeftijd laatste verjaardag"
+
+msgid "(7.) Rank, Profession, or Occupation"
+msgstr "(7.) Rang, beroep of vak"
+
+msgid "(8.) Certified Cause of Death and Duration of Illness"
+msgstr "(8.) Gecertificeerde doodsoorzaak en duur van de ziekte"
+
+msgid "Duration of Illness"
+msgstr "Duur van de ziekte"
+
+msgid "Relation to deceased"
+msgstr "Relatie tot overledene"
+
+msgid "(9.) e.g. Son, Daughter"
+msgstr "(9.) bijv. zoon, dochter"
+
+msgid "(9.) e.g. Present at death"
+msgstr "(9.) bijv. Aanwezig bij overlijden"
 
 msgid "Schedule"
 msgstr "Schema"

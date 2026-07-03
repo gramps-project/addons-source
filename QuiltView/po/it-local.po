@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-04-07 13:25+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,10 +12,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "Nothing is selected"
+msgstr "Non è stato selezionato nulla"
+
+#, python-format
+msgid ""
+"You have %(filter)d filtered people, %(count)d people shown on the tree and "
+"%(total)d people in your database."
+msgstr ""
+"Hai %(filter)d persone filtrate, %(count)d persone mostrate nell'albero, e "
+"%(total)d persone totali nel database."
+
+msgid "Loading individuals"
+msgstr "Caricamento degli individui"
+
+msgid "Loading the data"
+msgstr "Caricamento dei dati"
 
 msgid "Edit tags"
 msgstr "Modifica etichette"
+
+msgid "Set as home person"
+msgstr "Imposta come persona-casa"
 
 #, python-format
 msgid "Adding Tags to person (%s)"
@@ -24,3 +44,13 @@ msgstr "Aggiunta di etichette alla persona (%s)"
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "Aggiunta di etichette alla famiglia (%s)"
+
+msgid "Printing the tree"
+msgstr "Stampa dell'albero"
+
+#, python-format
+msgid "Need to print %(pages)s pages (%(format)s format)"
+msgstr "È necessario stampare %(pages)s pagine (formato %(format)s)"
+
+msgid "General options"
+msgstr "Opzioni generali"

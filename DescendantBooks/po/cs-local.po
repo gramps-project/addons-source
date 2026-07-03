@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-11-17 06:51+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-29 14:56+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
@@ -12,11 +12,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Whether to show duplicate family trees in the report."
+msgstr "Zda se mají ve zprávě zobrazovat duplicitní rodinné stromy."
 
 msgid "The style used for the table of contents header."
 msgstr "Styl použitý pro záhlaví obsahu."
@@ -24,5 +27,21 @@ msgstr "Styl použitý pro záhlaví obsahu."
 msgid "The style used for the table of contents detail."
 msgstr "Styl použitý pro detaily obsahu."
 
+#, python-format
+msgid "%(type)s:"
+msgstr "%(type)s:"
+
+msgid "Whether to include the index of Names at the end of the report."
+msgstr "Zda zahrnout rejstřík jmen na konec zprávy."
+
+msgid "Whether to include the index of Dates at the end of the report."
+msgstr "Zda zahrnout rejstřík dat na konci zprávy."
+
+msgid "Whether to include the index of Places at the end of the report."
+msgstr "Zda zahrnout rejstřík míst na konci zprávy."
+
 msgid "The style used for the first personal entry."
 msgstr "Styl použitý pro první osobní záznam."
+
+msgid "The style used for the date in the Index of Dates."
+msgstr "Styl použitý pro datum v rejstříku dat."

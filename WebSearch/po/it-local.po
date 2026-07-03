@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-04-14 18:01+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "No title"
+msgstr "Nessun titolo"
 
 msgid "No data available."
 msgstr "Nessun dato disponibile."
@@ -44,6 +47,9 @@ msgstr "Tipo luogo:"
 msgid "Last Retrieved At:"
 msgstr "Ultimo recupero:"
 
+msgid "Save Coordinates to the Place"
+msgstr "Salva le coordinate del luogo"
+
 msgid "AI provider is disabled"
 msgstr "Il fornitore di IA è disabilitato"
 
@@ -58,15 +64,91 @@ msgstr ""
 "Il fornitore di IA è sconosciuto. Verificare le impostazioni del fornitore "
 "di IA."
 
+msgid "⏳ Generating historical place data, please wait..."
+msgstr "⏳ Generazione dei dati storici sul luogo, attendi..."
+
+msgid "Keys"
+msgstr "Chiavi"
+
+msgid "Website URL"
+msgstr "URL del sito web"
+
+msgid "Add link to note"
+msgstr "Aggiungi collegamento alla nota"
+
+msgid "Add link to attribute"
+msgstr "Aggiungi collegamento all'attributo"
+
 msgid "Show QR-code"
 msgstr "Mostra codice QR"
+
+msgid "Copy link to clipboard"
+msgstr "Copia il collegamento negli appunti"
+
+msgid "Hide link for selected item"
+msgstr "Nascondi il collegamento per l'elemento selezionato"
+
+msgid "Hide link for all items"
+msgstr "Nascondi il collegamento per tutti gli elementi"
+
+msgid "Edit Attribute with the Link"
+msgstr "Modifica l'attributo con il collegamento"
+
+msgid "Edit Note with the Link"
+msgstr "Modifica la nota con il collegamento"
+
+msgid "Edit Internet link"
+msgstr "Modifica collegamento Internet"
 
 msgid "🔍 AI Suggestions"
 msgstr "🔍 Suggerimenti tramite IA"
 
+msgid "Attribute no longer matches this WebSearch row"
+msgstr "L'attributo non corrisponde più a questa riga di ricerca web"
+
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr "L'attributo non esiste più. L'icona aggiuntiva è stata rimossa"
+
+msgid "Note no longer exists"
+msgstr "La nota non esiste più"
+
+msgid "Note no longer exists. The extra icon is removed"
+msgstr "La nota non esiste più. L'icona aggiuntiva è stata rimossa"
+
+msgid "Internet link no longer matches this WebSearch row"
+msgstr ""
+"Il collegamento Internet non corrisponde più a questa riga di ricerca web"
+
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+"📌 Questo collegamento Internet '{title}' è stato archiviato dal gramplet "
+"per le ricerche web (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Puoi utilizzare questo collegamento per tornare alla fonte e verificare le "
+"informazioni relative a questa entità."
+
 #, python-format
 msgid "Note #%(id)s has been successfully added"
-msgstr "La nota #%(id)s è stata aggiunta"
+msgstr "La nota #%(id)s è stata aggiunta con successo"
+
+msgid "Error creating note"
+msgstr "Errore nella creazione della nota"
+
+msgid "URL is copied to the Clipboard"
+msgstr "L'URL è stato copiato negli appunti"
+
+msgid "WebSearch Link"
+msgstr "Collegamento a ricerca sul web"
 
 msgid "Attribute has been successfully added"
 msgstr "L'attributo è stato aggiunto"
@@ -83,8 +165,39 @@ msgstr "Sostituito: {keys}"
 msgid "Empty: {keys}"
 msgstr "Vuoto: {keys}"
 
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "Commento: {comment}"
+
+msgid "Column - Icons"
+msgstr "Colonna - Icona"
+
+msgid "Column - Source Types (flags)"
+msgstr "Colonna - Tipo di sorgente (flag)"
+
+msgid "Column - Keys"
+msgstr "Colonna - Chiave"
+
+msgid "Column - Title"
+msgstr "Colonna - Titolo"
+
+msgid "Column - Website Url"
+msgstr "Colonna - Sito web"
+
+msgid "Column - Comment"
+msgstr "Colonna - Commento"
+
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "Icona - URL visitati (segno di spunta)"
+
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "Icona - URL salvati (floppy disk)"
+
 msgid "QR-code"
 msgstr "Codice QR"
+
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Dipendenza mancante \"qrcode\""
 
 msgid ""
 "⚠ Error generating QR code:\n"
@@ -93,8 +206,57 @@ msgstr ""
 "⚠ Errore durante la generazione del codice QR:\n"
 "Errore originale: “{}”"
 
+msgid "Note Link (parsed)"
+msgstr "Collegamento alla nota (analizzato)"
+
+msgid "Note Link (internal)"
+msgstr "Collegamento alla nota (interno)"
+
+msgid "Note Link (external)"
+msgstr "Collegamento alla nota (esterno)"
+
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 Informazioni su Ricerca web"
+
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"Ricerca web è un Gramplet per Gramps che ti aiuta a effettuare ricerche nei "
+"siti web dedicati alla genealogia."
+
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"Supporta modelli di collegamenti in formato CSV, l'individuazione dei siti "
+"assistita dall'intelligenza artificiale, e l'integrazione diretta con note e "
+"attributi."
+
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Informazioni sul sistema"
+
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Mancante:** `qrcode`"
+
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Questa libreria Python non è disponibile nel sistema."
+
 msgid "Without it, QR code generation will not work."
 msgstr "Senza di essa, la generazione del codice QR non funziona."
+
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Di solito si installa con: `pip install qrcode[pil]`"
+
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Nota: qualche sistema o ambiente operativo potrebbe richiedere dei metodi "
+"di installazione alternativi.*"
+
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **Mancante:** `openai`"
 
 msgid "ℹ️ This library is required for accessing OpenAI-based features."
 msgstr ""
@@ -107,16 +269,105 @@ msgstr ""
 "Senza di essa, i suggerimenti del sito e la storia dei luoghi generati "
 "tramite IA saranno disabilitati."
 
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡Di solito si installa con: `pip install openai`"
+
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Mancante:** `requests`"
+
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Questa libreria è richiesta per comunicare con le API web."
+
+msgid "Without it, external data sources may not be accessible."
+msgstr ""
+"Senza di essa, le fonti di dati esterne potrebbero non essere accessibili."
+
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 Di solito si installa con: `pip install requests`"
+
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Posizioni dei file di dati"
+
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"Di seguito sono riportati i percorsi dei file di dati di sistema e di quelli "
+"definiti dall'utente utilizzati da Ricerca web."
+
+msgid "#### CSV File Paths"
+msgstr "#### Percorsi del file CSV"
+
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr "- **Percorso di sistema:** `{dir|%s}` – contiene i file CSV integrati"
+
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **Percorso definito dall'utente:** `{dir|%s}` – per file CSV "
+"personalizzati definiti dall'utente"
+
+msgid "#### JSON File Paths"
+msgstr "#### Percorsi dei file JSON"
+
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **Percorso di sistema:** `{dir|%s}` – contiene il file integrato "
+"attribute_mapping.json"
+
 msgid "  💡 *Tip: click any path above to open it in your file manager.*"
 msgstr ""
 "  💡 *Suggerimento: clic su un qualsiasi percorso qui sopra per aprirlo nel "
 "gestore di file.*"
 
+msgid "📖 View detailed usage in: "
+msgstr "📖 Visualizza uso dettagliato in: "
+
+msgid "## 💬 Support"
+msgstr "## 💬 Supporto"
+
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 Creato e mantenuto da Yurii Liubymyi"
+
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 Per aiuti o riscontri, sentiti libero di menzionare `@Urchello` nel forum "
+"di Gramps:"
+
+msgid "Gramps Forum (Discourse)"
+msgstr "Forum di Gramps (Discourse)"
+
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr ""
+"✅ La segnalazione di bug e le richieste di nuove funzionalità sono "
+"completamente **gratuite**."
+
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 Versione del Gramplet Ricerca web: `%s`"
+
 msgid "Separate"
 msgstr "Separato"
 
+msgid "URL Compactness Level"
+msgstr "Livello di compattezza URL"
+
+msgid "Shortest - No Prefix, No Keys"
+msgstr "Più breve: nessun prefisso, nessuna chiave"
+
+msgid "Compact - No Prefix, Keys Without Attributes"
+msgstr "Compatto: nessun prefisso, chiavi senza attributi"
+
+msgid "Compact - No Prefix, Keys With Attributes"
+msgstr "Compatto: nessun prefisso, chiavi con attributi"
+
 msgid "Long - Without Prefix on the Left"
-msgstr "Lungo - Senza prefisso a sinistra"
+msgstr "Lungo: senza prefisso a sinistra"
 
 msgid "URL Prefix Replacement"
 msgstr "Sostituzione prefisso URL"
@@ -145,6 +396,12 @@ msgstr "Chiave API Mistral"
 msgid "Mistral Model"
 msgstr "Modello Mistral"
 
+msgid "Show Links From the 'Attributes' tab"
+msgstr "Mostra i collegamenti dalla scheda \"Attributi\""
+
+msgid "Show Links From the 'Internet' tab"
+msgstr "Mostra i collegamenti dalla scheda \"Internet\""
+
 msgid "Show Links From the Notes"
 msgstr "Mostra collegamenti dalle note"
 
@@ -166,6 +423,76 @@ msgstr "Mostra icone"
 msgid "WebSearch"
 msgstr "Ricerca web"
 
+msgid ""
+"Customized queries for online services based on the active Person, Place, "
+"Family, or Source record"
+msgstr ""
+"Ricerche personalizzate per i servizi online basate sul record attivo "
+"relativo a una persona, un luogo, una famiglia o una fonte"
+
+#, python-format
+msgid "Visited: %s"
+msgstr "Visitato: %s"
+
+#, python-format
+msgid "Link: %s"
+msgstr "Collegamento: %s"
+
+#, python-format
+msgid "Attribute: %s"
+msgstr "Attributo: %s"
+
+#, python-format
+msgid "Value: %s"
+msgstr "Valore: %s"
+
 #, python-format
 msgid "Loaded from file: %s"
 msgstr "Caricato dal file: %s"
+
+#, python-format
+msgid "Domain: %s"
+msgstr "Dominio: %s"
+
+#, python-format
+msgid "Object: %s"
+msgstr "Oggetto: %s"
+
+#, python-format
+msgid "Pattern: %s"
+msgstr "Modello: %s"
+
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "ID oggetto di Gramps: %s"
+
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s: %s → %s: %s"
+
+msgid "Link visited"
+msgstr "Collegamento visitato"
+
+msgid "Link saved to Note"
+msgstr "Collegamento salvato nelle note"
+
+msgid "Link saved to Attribute"
+msgstr "Collegamento salvato negli attributi"
+
+msgid "Place history loaded"
+msgstr "Cronologia dei luoghi caricata"
+
+msgid "Domain skipped"
+msgstr "Dominio saltato"
+
+msgid "Link hidden for object"
+msgstr "Collegamento nascosto per l'oggetto"
+
+msgid "Link hidden for all objects"
+msgstr "Collegamento nascosto per tutti gli oggetti"
+
+msgid "Attribute updated"
+msgstr "Attributo aggiornato"
+
+msgid "Note updated"
+msgstr "Nota aggiornata"

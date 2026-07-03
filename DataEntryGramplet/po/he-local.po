@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-05-02 08:01+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Data Entry Gramplet"
 msgstr "גראמפלט הזנת נתונים"
@@ -78,9 +78,18 @@ msgstr "העתקת נתונים פעילים"
 msgid "in"
 msgstr "ב"
 
+msgid "No Family Tree is open."
+msgstr "לא פתוח אילן־יוחסין."
+
+msgid "Please open a Family Tree to edit data."
+msgstr "יש לפתוח אילן־יוחסין כדי לערוך נתונים."
+
 #, python-format
 msgid "Gramplet Data Edit: %s"
 msgstr "גראמפלט עריכת נתונים: %s"
+
+msgid "Please open a Family Tree before adding a person."
+msgstr "יש לפתוח אילן־יוחסין לפני הוספת אדם."
 
 msgid "Please provide a name."
 msgstr "נא להזין שם."

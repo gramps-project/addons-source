@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-26 15:11-0500\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,10 +13,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Sources and Citations Report"
+msgstr "מקורות ומובאות דוח"
 
 msgid "Provides a source and Citations Report with notes"
 msgstr "מספק דוח מקור ומבואות עם הערות"
+
+#, python-format
+msgid "Key: %s"
+msgstr "מפתח: %s"
+
+msgid "Citations:"
+msgstr "מובאות:"
 
 #, python-format
 msgid "%d"
@@ -58,6 +68,10 @@ msgid "%s "
 msgstr "%s "
 
 #, python-format
+msgid "and %s "
+msgstr "ו־%s "
+
+#, python-format
 msgid " %s"
 msgstr " %s"
 
@@ -73,11 +87,44 @@ msgstr "כותרת משנה של הדוח"
 msgid "Subtitle string for the report."
 msgstr "מחרוזת כותרת משנה לדוח זה."
 
+msgid "researcher name"
+msgstr "שם החוקר"
+
+msgid "Select sources using a filter"
+msgstr "בחירה מקורות באמצעות מסנן"
+
 msgid "Show persons"
 msgstr "להציג אנשים"
+
+msgid "Whether to show events and persons mentioned in the note"
+msgstr "האם להציג אירועים ואנשים שמוזכרים בהערה"
+
+msgid "The style used for the title of the report."
+msgstr "הסגנון שמשמש לכותרת הדוח."
+
+msgid "The style used for the subtitle of the report."
+msgstr "סגנון שמשמש עבור כותרת משנה של דוח."
 
 msgid "The style used for the footer of the report."
 msgstr "הסגנון שישש לסיומת עמוד בדוח."
 
+msgid "The style used for source title."
+msgstr "הסגנון שמשמש עבור מקור כותרת."
+
+msgid "The style used for source subtitle."
+msgstr "סגנון שמשמש עבור מקור כותרת משנה."
+
+msgid "The style used for Source details."
+msgstr "הסגנון שמשמש לפרטי מקור."
+
+msgid "The style used for citation title."
+msgstr "הסגנון שמשמש עבור מובאה כותרת."
+
+msgid "The style used for a column title."
+msgstr "הסגנון שמשמש עבור עמודה כותרת."
+
 msgid "The style used for each section."
 msgstr "הסיגנון שישמש בכל מקטע."
+
+msgid "The style used for event and person details."
+msgstr "הסגנון שמשמש לפרטי אירוע ואדם."

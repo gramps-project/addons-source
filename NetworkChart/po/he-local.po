@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-02-20 09:09+0000\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,25 +13,379 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "File exists. Overwrite?"
+msgstr "הקובץ קיים. לדרוס?"
+
+msgid "created"
+msgstr "נוצר"
+
+msgid "last_written"
+msgstr "נכתב_לאחרונה"
+
+msgid "Main"
+msgstr "ראשי"
+
+msgid "Orthogonal (right angles in connectors)"
+msgstr "אורתוגונלי (זוויות ישרות במחברים)"
+
+msgid "Straight (no right angles in connectors)"
+msgstr "ישר (אין ימין זוויות במחברים)"
+
+msgid "Curved (curved and straight connectors)"
+msgstr "מעוקל (מחברים מעוקלים וישרים)"
+
+msgid "Default (Orthogonal)"
+msgstr "ברירת מחדל (אורתוגונלי)"
+
+msgid "Select the graph line connector format."
+msgstr "בחירת תסדיר מחבר קווי התרשים."
+
+msgid "Top to Bottom"
+msgstr "מלמעלה למטה"
+
+msgid "Left to Right"
+msgstr "משמאל לימין"
+
+msgid "Bottom to Top"
+msgstr "מלמטה למעלה"
+
+msgid "Right to Left"
+msgstr "מימין לשמאל"
+
+msgid "Default (Top to Bottom)"
+msgstr "ברירת מחדל (מלמעלה למטה)"
+
+msgid "Select the graph direction."
+msgstr "בחירת גרף כיוון."
+
+msgid "URL Style"
+msgstr "סגנון URL"
 
 msgid "Include URLs from database."
 msgstr "הכללת כתובות URL ממסד הנתונים."
 
+msgid "Dynamic URL = Prefix + GrampID + Suffix"
+msgstr "URL דינמי = תחילית + מזהה Gramps + סיומת"
+
+msgid "Static URL = Prefix"
+msgstr "URL סטטי = תחילית"
+
+msgid "Don't include URLs"
+msgstr "לא לכלול כתובות URL"
+
+msgid "Default (include)"
+msgstr "ברירת מחדל (לכלול)"
+
 msgid "Select URL style."
 msgstr "בחירת סגנון כתובת URL."
+
+msgid "URL Prefix,Suffix"
+msgstr "תחילית,סיומת URL"
+
+msgid ""
+"Enter the Prefix,Suffix (use comma)\n"
+"for dynamically generated URLs.\n"
+"URL = Prefix + GrampsID + Suffix."
+msgstr ""
+"הזנת תחילית וסיומת (מופרדות בפסיק)\n"
+"עבור כתובות URL שנוצרות באופן דינמי.\n"
+"URL = תחילית + מזהה Gramps + סיומת."
+
+msgid "Enter Font Name"
+msgstr "הזנת שם גופן"
+
+msgid ""
+"Enter the primary font style for the chart.\n"
+"Must already be installed.\n"
+"White Rabbit can be obtained from\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+msgstr ""
+"הזנת סגנון הגופן הראשי לתרשים.\n"
+"הגופן חייב להיות מותקן מראש.\n"
+"ניתן להשיג את White Rabbit מ־\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+
+msgid "Spacing (inch)"
+msgstr "מרווח (אינץ')"
+
+msgid ""
+"Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
+msgstr "הזנה הפרדה מרחק בין 'דורות' באינצ׳ים (0.1–5.0)."
+
+msgid "Enter Chart Title"
+msgstr "הזנת כותרת תרשים"
+
+msgid "Set the title of the chart."
+msgstr "הגדרת כותרת התרשים."
+
+msgid "Default (svg)"
+msgstr "ברירת מחדל (svg)"
+
+msgid ""
+"svg - Scalable Vector Graphics file.\n"
+"pdf - Adobe Portable Document Format.\n"
+msgstr ""
+"svg – קובץ גרפיקה וקטורית מדרגית.\n"
+"pdf – תסדיר מסמך נייד של Adobe.\n"
+
+msgid "The destination folder for generated files."
+msgstr "תיקיית היעד לקבצים שנוצרים."
+
+msgid "network"
+msgstr "רשת"
+
+msgid "The filename for the generated svg network chart."
+msgstr "שם הקובץ עבור תרשים רשת svg שנוצר."
+
+msgid "Different node shapes/edges for gender."
+msgstr "שונה צומת צורות/קצוות עבור מגדר."
+
+msgid "Node differences for gender."
+msgstr "הבדלי צמתים לפי מגדר."
+
+msgid "Male Background"
+msgstr "זכר רקע"
 
 msgid "RGB-color for male box background."
 msgstr "צבעי RGB לרקע תיבת מגדר זכר."
 
+msgid "Male Background Alpha"
+msgstr "אטימות רקע זכר"
+
+msgid "Alpha for Male box background (transparent=0, solid=255)."
+msgstr "אטימות רקע תיבת זכר (שקוף=0, מלא=255)."
+
+msgid "Male Box Edge"
+msgstr "זכר תיבה קצה"
+
+msgid "RGB-color for Male box edge."
+msgstr "צבע RGB לגבול תיבת זכר."
+
 msgid "Female Background"
 msgstr "רקע מגדר נקבה"
+
+msgid "RGB-color for Female box background."
+msgstr "צבע RGB לרקע תיבת נקבה."
+
+msgid "Female Background Alpha"
+msgstr "אטימות רקע נקבה"
+
+msgid "Alpha for Female box background (transparent=0, solid=255)."
+msgstr "אטימות רקע תיבת נקבה (שקוף=0, מלא=255)."
+
+msgid "Female Box Edge"
+msgstr "נקבה תיבה קצה"
+
+msgid "RGB-color for Female box edge."
+msgstr "צבע RGB לגבול תיבת נקבה."
+
+msgid "Other Background"
+msgstr "אחר רקע"
+
+msgid "RGB-color for other box background."
+msgstr "צבע RGB לרקע תיבה אחרת."
+
+msgid "Other Background Alpha"
+msgstr "אחר אטימות רקע"
+
+msgid "Alpha for Other box background (transparent=0, solid=255)."
+msgstr "אטימות רקע תיבה אחרת (שקוף=0, מלא=255)."
+
+msgid "Family Connector Line"
+msgstr "קו מחבר משפחה"
+
+msgid "RGB-color for family connector line."
+msgstr "צבע RGB לקו מחבר משפחה."
+
+msgid "Marriage Connector Line"
+msgstr "קו מחבר נישואין"
+
+msgid "RGB-color for marriage connector line."
+msgstr "צבע RGB לקו מחבר נישואין."
+
+msgid "Highlight Connector Line"
+msgstr "קו מחבר הדגשה"
+
+msgid ""
+"RGB-color for the highlighted path between two individuals.  If the "
+"graph.inverts, reverse the order to change."
+msgstr ""
+"צבע RGB לנתיב המודגש בין שני אנשים. אם graph.inverts פעיל, יש להפוך את הסדר "
+"לשינוי."
+
+msgid "Trim Box Edge"
+msgstr "קיטום תיבה קצה"
+
+msgid "RGB-color for box edge that has been trimmed."
+msgstr "צבע RGB לגבול תיבה שקוצצה."
+
+msgid "Remove color background on all nodes."
+msgstr "הסרת צבע רקע מכל הצמתים."
+
+msgid "Removes color background for individuals (nodes) on chart."
+msgstr "הסרת צבע רקע לאנשים (צמתים) בתרשים."
+
+msgid ""
+"Enter year to start\n"
+"rounding birthday\n"
+"to year only"
+msgstr ""
+"הזנה שנה להתחלה\n"
+"עיגול יום הולדת\n"
+"לשנה בלבד"
+
+msgid ""
+"Birthdays after this year are represented by the year only.  Invalid entries "
+"will be ignored."
+msgstr ""
+"ימי הולדת אחרי זה שנה הם מיוצגים לפי שנה בלבד. לא תקין רשומות להיות יוזנחו."
+
+msgid "Round birthday to year after year entered (above)."
+msgstr "עיגול יום הולדת לשנה שלאחר השנה שהוזנה לעיל."
+
+msgid "Represent birthday by year only."
+msgstr "ייצוג יום הולדת לפי שנה בלבד."
+
+msgid ""
+"Enter year to start\n"
+"rounding marriage\n"
+"date to year only"
+msgstr ""
+"הזנה שנה להתחלה\n"
+"עיגול נישואין\n"
+"תאריך לשנה בלבד"
+
+msgid ""
+"Marriages after this year are represented bythe year only. Invalid entries "
+"will be ignored."
+msgstr "נישואין לאחר שנה זו מיוצגים על ידי השנה בלבד. רשומות לא תקינות יושמטו."
+
+msgid "Round marriage to year after year entered (above)."
+msgstr "עיגול נישואין לשנה שלאחר השנה שהוזנה לעיל."
+
+msgid "Represent marriage by year only."
+msgstr "ייצוג נישואין לפי שנה בלבד."
+
+msgid ""
+"Attempts to remove middle names.  Only works for entries with birth year in "
+"the record."
+msgstr "ניסיונות להסיר שמות אמצעיים. פועל רק עבור רשומות שיש בהן שנת לידה."
+
+msgid "Remove middle names."
+msgstr "הסרה אמצעי שמות."
+
+msgid "Allow inclusion of private records in chart."
+msgstr "לאפשר הכללת רשומות פרטיות בתרשים."
+
+msgid "Trim"
+msgstr "קיטום"
+
+msgid "Trim descendants"
+msgstr "קיטום צאצאים"
+
+msgid "All descendants (children) of selected individuals will not be shown."
+msgstr "כל הצאצאים (ילדים) של האנשים שנבחרו לא יוצגו."
+
+msgid "Enable trimming of descendants."
+msgstr "אפשור קיטום צאצאים."
+
+msgid ""
+"You must enter valid person(s) before \n"
+"enabling trimming of descendants from tree."
+msgstr ""
+"יש להזין אדם/אנשים תקפים לפני \n"
+"אפשור קיטום צאצאים מהאילן."
 
 msgid "Trim ancestors"
 msgstr "קיטום אבות קדמונים"
 
+msgid "All ancestors (parents) of selected individuals will not be shown."
+msgstr "כל האבות (הורים) של האנשים שנבחרו לא יוצגו."
+
+msgid "Enable trimming of ancestors."
+msgstr "אפשור קיטום אבות."
+
+msgid "Enable trimming of ancestors from tree."
+msgstr "לאפשר קיטום אבות מהאילן."
+
+msgid "Enable trim groups."
+msgstr "אפשור קיטום קבוצות."
+
+msgid ""
+"Remove groups less than Min Group Size.  Automatic\n"
+"for databases with more than 1500 individuals."
+msgstr ""
+"הסרת קבוצות שגודלן קטן מגודל הקבוצה המזערי. אוטומטי\n"
+"למסדי־נתונים עם יותר מ־1500 אנשים."
+
+msgid "Min Group Size"
+msgstr "גודל קבוצה מזערי"
+
+msgid ""
+"Enter the minimum size group to display.\n"
+"Value may be 2 or greater."
+msgstr ""
+"יש להזין את גודל הקבוצה המזערי להצגה.\n"
+"הערך יכול להיות 2 ומעלה."
+
+msgid ""
+"Select Start and\n"
+"End Individuals in\n"
+"displayed path(s).\n"
+"Select two"
+msgstr ""
+"בחירת אנשי התחלה\n"
+"וסיום בנתיב(ים)\n"
+"שמוצגים.\n"
+"יש לבחור שניים"
+
+msgid ""
+"Starting and ending person for displayed path(s).\n"
+"Select two people"
+msgstr ""
+"אדם התחלה ואדם סיום לנתיב(ים) שמוצגים.\n"
+"יש לבחור שני אנשים"
+
+msgid "Highlight path(s)"
+msgstr "הדגשת נתיב/ים"
+
+msgid "Direct"
+msgstr "ישיר"
+
+msgid "Any"
+msgstr "כלשהו"
+
 msgid "Default (None)"
 msgstr "בררת מחדל (ללא)"
+
+msgid ""
+"None - Don't highlight paths.\n"
+"Direct - Highlight direct descendant/ancestor paths.\n"
+"Any - Highlight any path(s) including direct or indirect."
+msgstr ""
+"ללא - לא להדגיש נתיבים.\n"
+"ישיר - הדגשת נתיבי צאצאים/אבות ישירים.\n"
+"כלשהו - הדגשת כל נתיב, לרבות ישיר או עקיף."
+
+msgid "Show only path(s)"
+msgstr "הצגת נתיב/ים בלבד"
+
+msgid "Default (none)"
+msgstr "ברירת מחדל (ללא)"
+
+msgid ""
+"None - Don't show paths only.\n"
+"Direct - Show only direct descendant/ancestor paths.\n"
+"Any - Show only path(s) direct or indirect."
+msgstr ""
+"ללא - לא להציג נתיבים בלבד.\n"
+"ישיר - הצגת נתיבי צאצאים/אבות ישירים בלבד.\n"
+"כלשהו - הצגת נתיבים ישירים או עקיפים בלבד."
+
+msgid "Select person at center of selection radius in graph."
+msgstr "בחירת אדם במרכוז של בחירה רדיוס בגרף."
 
 msgid ""
 "Max connections\n"
@@ -52,6 +406,28 @@ msgstr "הגבלת תרשים למספר חיבורים מרבי מהמרכז."
 
 msgid "Display up to max connections from central person."
 msgstr "להציג עד מספר חיבורים מרבי מאדם מרכזי."
+
+msgid "Highlight central person in graph."
+msgstr "הדגשת האדם המרכזי בתרשים."
+
+msgid "Add yellow color background to central person."
+msgstr "הוספת צבע רקע צהוב לאדם המרכזי."
+
+msgid "Use database handle instead of GrampID id in URLs."
+msgstr "שימוש במזהה הפנימי של מסד־הנתונים במקום במזהה Gramps בכתובות URL."
+
+msgid ""
+"Use database handle instead of the gramps id for URLs.\n"
+"The handle should never change whereas gramps ids can."
+msgstr ""
+"שימוש במזהה הפנימי של מסד־הנתונים במקום במזהה Gramps בכתובות URL.\n"
+"המזהה הפנימי אינו אמור להשתנות, בעוד שמזהי Gramps עשויים להשתנות."
+
+msgid "Confirm overwrite file."
+msgstr "אישור דריסת הקובץ."
+
+msgid "Enable/disable confirmation of file overwrite."
+msgstr "לאפשר/להשבית אישור לשכתוב קובץ."
 
 msgid "Network Chart"
 msgstr "תרשים רשת"

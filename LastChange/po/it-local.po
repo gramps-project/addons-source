@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-07 13:25+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,10 +12,65 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "Last Change Report"
+msgstr "Resoconto sulle ultime modifiche"
+
+msgid "You must select at least one type of record."
+msgstr "Devi selezionare almeno un tipo di record."
+
+msgid "People Changed"
+msgstr "Persone modificate"
+
+msgid "Changed On"
+msgstr "Modificate il"
+
+msgid "Families Changed"
+msgstr "Famiglie modificate"
+
+msgid "Family Surname"
+msgstr "Cognome della famiglia"
+
+#, python-format
+msgid "%s and %s"
+msgstr "%s e %s"
+
+msgid "Events Changed"
+msgstr "Eventi modificati"
+
+msgid "Places Changed"
+msgstr "Luoghi modificati"
+
+msgid "Media Changed"
+msgstr "File multimediali modificati"
+
+msgid "Sources Changed"
+msgstr "Fonti modificate"
+
+msgid "Notes Changed"
+msgstr "Note modificate"
+
+msgid "Citations Changed"
+msgstr "Citazioni modificate"
+
+msgid "Select From"
+msgstr "Seleziona da"
 
 msgid "The style used for the title of the page."
 msgstr "Lo stile usato per il titolo della pagina."
 
 msgid "The style used for normal text"
 msgstr "Lo stile usato per il testo normale"
+
+msgid "changed on"
+msgstr "modificato il"
+
+msgid "List the last ten person records that have been changed"
+msgstr "Elenca gli ultimi dieci record di persone che sono stati modificati"
+
+msgid "Latest Changes"
+msgstr "Ultime modifiche"
+
+msgid "Report of the last records that have been changed"
+msgstr "Resoconto sugli ultimi record che sono stati modificati"

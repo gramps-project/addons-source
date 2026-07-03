@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-10 10:42-0700\n"
-"PO-Revision-Date: 2026-02-20 09:09+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Prerequisites Checker"
 msgstr "בודק דרישות־קדם"
@@ -44,11 +44,24 @@ msgstr ""
 "<u><b>חבילות נדרשות</b></u>\n"
 
 msgid ""
+"<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
+" (Requires the minimum version or greater.)</i>:\n"
+msgstr ""
+"<i>התקנת החבילות הבאות <b>נדרשת בהחלט</b>\n"
+" (נדרשת הגרסה המזערית או גרסה חדשה יותר.)</i>:\n"
+
+msgid ""
 "\n"
 "<u><b>RECOMMENDED</b></u>\n"
 msgstr ""
 "\n"
 "<u><b>חבילות מומלצות</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
+"as necessary for Geography and Charts</i>:\n"
+msgstr ""
+"<i>התקנת החבילות הבאות <b>מומלצת מאוד</b>, כנדרש לגאוגרפיה ולתרשימים</i>:\n"
 
 msgid ""
 "\n"
@@ -58,7 +71,7 @@ msgstr ""
 "<u><b>חלופי</b></u>\n"
 
 msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
-msgstr "<i>התקנת החבילות הבאות היא<b>חלופית</b></i>:\n"
+msgstr "<i>התקנת החבילות הבאות היא <b>חלופית</b></i>:\n"
 
 msgid "Gtkspell enables spell checking in the notes.\n"
 msgstr "חבילת Gtkspell מאפשרת בדיקת־איות בשדות 'הערה'.\n"
@@ -75,11 +88,26 @@ msgstr ""
 "<u><b>דרישות פתוח ותרגום</b></u>\n"
 
 msgid ""
+"<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
+"intend to translate or do any development (addons etc.)</i>:\n"
+msgstr ""
+"<i>התקנת החבילות הבאות <b>מומלצת</b> אם מתוכננים תרגום או פיתוח כלשהו "
+"(תוספים ועוד)</i>:\n"
+
+msgid ""
 "\n"
 "<u><b>Optional packages required by Third-party Addons</b></u>\n"
 msgstr ""
 "\n"
 "<u><b>חבילות חלופיות שדרושות לתוספי צד־שלישי</b></u>\n"
+
+msgid ""
+"<i>Prerequistes required for the following <a href=\"https://gramps-"
+"project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
+"to work</i>:\n"
+msgstr ""
+"<i>דרישות־קדם שנדרשות להפעלת <a href=\"https://gramps-project.org/wiki/"
+"index.php?title=Third-party_Addons\">תוספי צד־שלישי</a> אלה</i>:\n"
 
 msgid ""
 "\n"
@@ -113,6 +141,48 @@ msgid ""
 msgstr ""
 "\n"
 "<u><b>נא לגבות את קובצי אילן־היוחסין.</b></u>\n"
+
+msgid ""
+"If you have a reason to be checking Prerequisites, it is the right time to "
+"back up your genealogy files, and then test your backups!\n"
+"\n"
+msgstr ""
+"אם קיימת סיבה לבדוק את דרישות הקדם, זה הזמן המתאים לגבות את קובצי היוחסין, "
+"ולאחר מכן לבדוק את הגיבויים!\n"
+"\n"
+
+msgid ""
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Backup to Gramps XML</a> You will find \"Make "
+"Backup...\" in the Family Tree menu of recent Gramps versions, otherwise use "
+"\"Export...\" in the same menu but uncheck privacy options in the Exporter "
+"Assistant in order to export all data.</i>\n"
+"\n"
+msgstr ""
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">גיבוי ל־Gramps XML</a> בגרסאות גרמפס האחרונות, "
+"'יצירת גיבוי...' נמצא בתפריט אילן־יוחסין. אחרת יש להשתמש ב־'ייצוא...' באותו "
+"תפריט, אך להסיר את סימון אפשרויות הפרטיות במסייע הייצוא כדי לייצא את כל "
+"הנתונים.</i>\n"
+"\n"
+
+msgid ""
+" • Backups can be made at any time and, at a minimum, on the first day of "
+"every month. But preferrably more often.\n"
+msgstr ""
+" • אפשר לבצע גיבויים בכל עת, ולכל הפחות ביום הראשון של כל חודש. רצוי לגבות "
+"לעיתים קרובות יותר.\n"
+
+msgid ""
+" • It is strongly recommended to backup each of your Family Trees before any "
+"upgrade.\n"
+msgstr " • מומלץ מאוד לגבות כל אילן־יוחסין לפני כל שדרוג.\n"
+
+msgid ""
+" • Test your backups by creating a new Family Tree and then importing the "
+"backup."
+msgstr ""
+" • בדיקת הגיבויים באמצעות יצירת אילן־יוחסין חדש ולאחר מכן ייבוא הגיבוי."
 
 msgid ", is the most current version.\n"
 msgstr ",היא הגרסה העדכנית ביותר.\n"
@@ -159,6 +229,25 @@ msgstr " או מאוחר יותר).\n"
 msgid " (Requires "
 msgstr " (נדרש "
 
+msgid " • Berkeley Database library (bsddb3: "
+msgstr " • ספריית מסד־הנתונים Berkeley‏ (bsddb3: "
+
+msgid " • SQLite Database library (sqlite3: "
+msgstr " • ספריית מסד־נתונים SQLite‏ (sqlite3: "
+
+msgid " • xdg-utils (Manual check see instructions link)"
+msgstr " • xdg-utils (בדיקה ידנית – קישור להוראות)"
+
+msgid " • librsvg2 (Manual check see instructions link)"
+msgstr " • librsvg2 (בדיקה ידנית – קישור להוראות)"
+
+msgid ""
+" • language-pack-gnome-xx (Manual check see instructions link) for your "
+"Language <show locale here TBD>"
+msgstr ""
+" • language-pack-gnome-xx (בדיקה ידנית – קישור להוראות) עבור השפה <show "
+"locale here TBD>"
+
 msgid " or greater installed.)"
 msgstr " או מאוחרת יותר מותקנת.)"
 
@@ -169,7 +258,7 @@ msgid "Graphviz not in system PATH"
 msgstr "Graphviz לא כלול בנתיב המערכת"
 
 msgid "Ghostscript not in system PATH"
-msgstr "Ghostscript לא כלול בנתיב המערכת"
+msgstr "Ghostscript אינו נמצא בנתיב המערכת"
 
 msgid " (Passed: version 0.5.x is installed.)"
 msgstr " (עבר: גרסה 0.5.x מותקנת.)"
@@ -180,12 +269,31 @@ msgstr " (נדרשת גרסה 0.5.x)"
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
 msgstr " python-fontconfig לא נמצא, (נדרשת גרסה 0.5.x)"
 
+msgid " • python-fontconfig installed, version unavailable"
+msgstr " • python-fontconfig מותקן, הגרסה אינה זמינה"
+
 msgid " or greater installed.) (enchant module: "
-msgstr " או מאוחרת יותר מותקנת). (פרקן enchant: "
+msgstr " או גרסה חדשה יותר מותקנת.) (פרקן enchant: "
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+" • rcs %s TBD (עבר: גרסה %s או חדשה יותר מותקנת. אם לא על Microsoft Windows)"
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr " • rcs %s TBD (נדרשת גרסה %s או חדשה יותר. אם לא על Microsoft Windows)"
+
+msgid "exiv2 executable not installed, can't retrieve libexiv2 version."
+msgstr "קובץ ההרצה exiv2 אינו מותקן; לא ניתן לקבל את גרסת libexiv2."
 
 #, python-format
 msgid "GExiv2 : %s (Exiv2 library : %s)"
-msgstr "GExiv2 : %s (Exiv2 ספריית : %s)"
+msgstr "GExiv2: %s (ספריית Exiv2: %s)"
 
 msgid "found another font"
 msgstr "נמצא גופן אחר"
@@ -200,11 +308,14 @@ msgstr ""
 msgid "not installed"
 msgstr "לא מותקן"
 
+msgid "     and one of either: (pydotplus: "
+msgstr "     ואחת משתי האפשרויות: (pydotplus: "
+
 msgid ") or (pygraphviz: "
 msgstr ") או (pygraphviz: "
 
 msgid "Installed(MS-Windows)"
-msgstr "תותקן (וינדוס MS)"
+msgstr "מותקן (MS-Windows)"
 
 msgid "Installed(Linux/Mac)"
 msgstr "מותקן (לינוקס/מק)"
@@ -232,10 +343,17 @@ msgstr " מותקן.)(עבר: גרסה "
 
 #, python-format
 msgid "(OpenCV facedetection: %s)"
-msgstr "(זיהוי פנים OpenCV: %s)"
+msgstr "(זיהוי פנים ב־OpenCV: %s)"
 
 msgid " (lxml: not found. Requires version "
-msgstr " (lxml: לא נמצאו. נדרשת גרסה "
+msgstr " (lxml: לא נמצא. נדרשת גרסה "
+
+msgid " • Requires: MongoDB TBD / pymongo TBD"
+msgstr " • דורש: MongoDB TBD/pymongo TBD"
+
+#, python-format
+msgid " • Operating System: %s"
+msgstr " • מערכת הפעלה: %s"
 
 msgid ""
 "<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
@@ -245,7 +363,7 @@ msgid ""
 msgstr ""
 "<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
 "title=Gramps_5.0_Wiki_Manual_-_Command_Line/"
-"he#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">הגדרות מיקמום:</a></b></u>\n"
+"he#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">הגדרות המקמה:</a></b></u>\n"
 
 msgid "not set"
 msgstr "לא מוגדר"

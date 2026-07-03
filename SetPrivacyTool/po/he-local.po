@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,13 +13,46 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Set Privacy Tool"
 msgstr "הגדרת כלי פרטיות"
 
+#, python-format
+msgid "Set private: %d %s\n"
+msgstr "הגדרה פרטי: %d %s\n"
+
+#, python-format
+msgid "Not private: %d %s\n"
+msgstr "לא פרטי: %d %s\n"
+
+msgid "Set persons private.."
+msgstr "הגדרת אנשים כפרטיים..."
+
+msgid "Set events private.."
+msgstr "הגדרת אירועים כפרטיים..."
+
 msgid "Set media private.."
 msgstr "הגדרת מדיה כפרטית..."
+
+msgid "Set adresses private.."
+msgstr "הגדרת כתובות כפרטיות..."
+
+msgid "Set internet objects private.."
+msgstr "הגדרת עצמי מרשתת כפרטיים..."
+
+msgid ""
+"The time range in years from today you want to set objects private.\n"
+"'0 years' = remove privacy from all objects."
+msgstr ""
+"טווח הזמן בשנים מהיום להגדרת עצמים כפרטיים.\n"
+"'0 שנים' = הסרת פרטיות מכל העצמים."
+
+msgid "Always private if no date."
+msgstr "תמיד פרטי אם אין תאריך."
+
+msgid "If checked, all objects without a date will also be set private."
+msgstr "אם סומן, כל העצמים ללא תאריך יוגדרו גם הם כפרטיים."
 
 msgid "Select filter to restrict people"
 msgstr "בחירת מסנן להגבלת האנשים"
@@ -32,3 +65,12 @@ msgstr "בחירת מסנן להגבלת אירועים"
 
 msgid "Select filter to restrict medias"
 msgstr "בחירת מסנן להגבלת מדיה"
+
+msgid "Internet type filter"
+msgstr "מרשתת סוג מסנן"
+
+msgid "E-Mail"
+msgstr "דואר אלקטרוני"
+
+msgid "Set all objects of the last <number> of years private."
+msgstr "הגדרת כל העצמים מ־<number> השנים האחרונות כפרטיים."

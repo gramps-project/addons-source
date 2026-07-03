@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-04-14 18:01+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
@@ -26,6 +26,9 @@ msgstr "Impossibile creare la struttura della directory: %s"
 msgid "Failed to copy web files : %s"
 msgstr "Impossibile copiare i file web: %s"
 
+msgid "Ancestral Collapsible Tree Options"
+msgstr "Opzioni per Albero delle ascendenze contraibile"
+
 msgid "Include Generations"
 msgstr "Includi generazioni"
 
@@ -35,17 +38,38 @@ msgstr "Colore di fondo degli uomini"
 msgid "RGB-color for male box background."
 msgstr "Colore RGB per lo sfondo dei riquadri maschili."
 
+msgid "Male Expandable Background Color"
+msgstr "Colore di sfondo espandibile per i maschi"
+
 msgid "Female Background"
 msgstr "Colore di fondo delle donne"
 
 msgid "RGB-color for female box background."
 msgstr "Colore RGB per lo sfondo dei riquadri femminili."
 
+msgid "Female Expandable Background"
+msgstr "Colore di sfondo espandibile per le femmine"
+
 msgid "The destination path for generated files."
 msgstr "Il percorso di destinazione per i file generati."
 
 msgid "The destination file name for html content."
 msgstr "Il nome di file di destinazione per il contenuto HTML."
+
+msgid "Ancestral Fan Chart"
+msgstr "Grafico a ventaglio ascendenza"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Fan Chart from the D3.js JavaScript library."
+msgstr ""
+"Genera una pagina web con una rappresentazione grafica degli ascendenti "
+"(SVG) rappresentata come grafico a ventaglio dalla libreria JavaScript D3.js."
+
+#, python-format
+msgctxt "spouse"
+msgid "See %(reference)s : %(spouse)s"
+msgstr "Vedi %(reference)s : %(spouse)s"
 
 msgid "Generating report..."
 msgstr "Generazione resoconto..."
@@ -100,6 +124,21 @@ msgstr ""
 msgid "Expanded Row Background Color"
 msgstr "Colore di sfondo della riga espansa"
 
+msgid "RGB-color for expanded row background."
+msgstr "Colore RGB dello sfondo delle righe espanse."
+
+msgid "Expandable Background Color"
+msgstr "Colore dello sfondo espandibile"
+
+msgid "RGB-color for expandable row background."
+msgstr "Colore RGB dello sfondo della riga espandibile."
+
+msgid "Non-Expandable Background Color"
+msgstr "Colore dello sfondo non espandibile"
+
+msgid "RGB-color for non-expandable row background."
+msgstr "Colore RGB dello sfondo della riga non espandibile."
+
 msgid "Include records marked private"
 msgstr "Includere informazioni marcate come private"
 
@@ -108,6 +147,9 @@ msgstr "Indica se includere oggetti privati."
 
 msgid "Include Last Name Only"
 msgstr "Includi solo il cognome"
+
+msgid "Include Full Name Only"
+msgstr "Includere solo il nome completo"
 
 msgid "How to handle living people."
 msgstr "Come trattare persone viventi."
@@ -140,6 +182,9 @@ msgstr ""
 "Prefisso dell'URL da applicare ad ogni collegamento HREF generato "
 "automaticamente."
 
+msgid "URL file extension"
+msgstr "Estensione del file URL"
+
 msgid "No file extension."
 msgstr "Nessuna estensione del file."
 
@@ -161,6 +206,9 @@ msgstr ".php3"
 msgid ".cgi"
 msgstr ".cgi"
 
+msgid "URL file name delimeter"
+msgstr "Nome del delimitatore del file URL"
+
 msgid "Remove all whitespace."
 msgstr "Rimuovi tutti gli spazi vuoti."
 
@@ -170,11 +218,23 @@ msgstr "Sostituisci gli spazi vuoti con il trattino (-)."
 msgid "Replace whitespace with underscore(_)"
 msgstr "Sostituisci gli spazi vuoti con l'underscore (_)"
 
+msgid "What to use as file name delimiter replacing whitespace."
+msgstr "Cosa usare come separatore nei nomi dei file al posto degli spazi."
+
 msgid "Generations to generate HREF links"
 msgstr "Generazioni per cui generare collegamenti HREF"
 
 msgid "The number of generations to generate HREF links."
 msgstr "Il numero di generazioni per cui generare collegamenti HREF."
+
+msgid "Exclude persons who died before (years)"
+msgstr "Escludere le persone che sono decedute prima (anni)"
+
+msgid ""
+"Whether to generate links for people who died in infancy, -1 excludes nobody."
+msgstr ""
+"Se generare collegamenti con le persone che sono morte nell'infanzia, -1 non "
+"esclude nessuno."
 
 msgid "Exclude center person"
 msgstr "Escludi persona centrale"
@@ -191,11 +251,22 @@ msgstr "Generare o non generare collegamenti per i coniugi."
 msgid "Biography Content"
 msgstr "Contenuto della biografia"
 
+msgid "Show biography tooltips"
+msgstr "Mostra i suggerimenti sulla biografia"
+
+msgid "Whether to show biography tooltips when hovering over a node."
+msgstr ""
+"Se mostrare i suggerimenti sulla biografia quando si passa col mouse sopra a "
+"un nodo."
+
 msgid "Text Color"
 msgstr "Colore del testo"
 
 msgid "RGB-color for biography text."
 msgstr "Colore RGB per il testo della biografia."
+
+msgid "RGB-color for biography tooltip."
+msgstr "Colore RGB dei suggerimenti sulla biografia."
 
 msgid "Header Font size"
 msgstr "Grandezza carattere dell'intestazione"
@@ -226,3 +297,14 @@ msgstr "Colore di sfondo materno"
 
 msgid "RGB-color for maternal box background."
 msgstr "Colore RGB per lo sfondo del riquadro materno."
+
+msgid "Ancestral Collapsible Tree"
+msgstr "Albero delle ascendenze contraibile"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Genera una pagina web con una rappresentazione grafica (SVG) degli "
+"ascendenti a forma di albero a struttura espandibile, realizzata con la "
+"libreria JavaScript D3.js."

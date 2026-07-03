@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-24 11:58-0700\n"
-"PO-Revision-Date: 2026-02-20 09:09+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Place ID to import from GOV (Historical Gazetteer):"
+msgstr "מזהה מקום לייבוא מ־GOV (לקסיקון גאוגרפי היסטורי):"
 
 msgid "Get Place"
 msgstr "קבלת מקום"
@@ -21,6 +24,19 @@ msgstr "קבלת מקום"
 #, python-format
 msgid "Add GOV-id place %s"
 msgstr "הוספת מקום GOV-id ‏%s"
+
+#, python-format
+msgid "GetGOV error: %s"
+msgstr "שגיאת GetGOV: %s"
+
+#, python-format
+msgid "GOV error on id %s with code: "
+msgstr "שגיאת GOV במזהה %s עם קוד: "
+
+#, python-format
+msgctxt "end"
+msgid "from %(begin)s to %(end)s"
+msgstr "מ־%(begin)s עד %(end)s"
 
 #, python-format
 msgid "after %s"

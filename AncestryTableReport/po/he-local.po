@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-11 20:51+0100\n"
-"PO-Revision-Date: 2026-02-20 09:09+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,84 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Ancestry Table"
+msgstr "טבלת אבות־קדמונים"
+
+msgid "Produces a table of ancestry about a person"
+msgstr "מפיק טבלת יוחסין על אדם"
+
+#, python-format
+msgid "Person %(name)s is not in the Database"
+msgstr "אדם %(name)s אינו נמצא במסד־הנתונים"
+
+#, python-format
+msgid "Ancestry Table Report for %(name)s"
+msgstr "דוח טבלת יוחסין עבור %(name)s"
+
+#, python-format
+msgid "Generation %(gen_number)d"
+msgstr "דור %(gen_number)d"
+
+#, python-format
+msgid "Number of Ancestors for %(name)s"
+msgstr "מספר אבות־קדמונים של %(name)s"
 
 msgid "Generation"
 msgstr "דור"
+
+msgid "To start a new page after each generation."
+msgstr "להתחלת עמוד חדש לאחר כל דור."
+
+msgid "Number of ancestors per generation"
+msgstr "מספר אבות־קדמונים לדור"
+
+msgid "Add a page with tne number of ancestors per generation."
+msgstr "הוספת עמוד עם מספר אבות־קדמונים לדור."
+
+msgid "Mask the name of the calendar in the dates"
+msgstr "הסתרת שם לוח השנה בתאריכים"
+
+msgid ""
+"By default, except for gregorian dates, Gramps shows the name of the "
+"calendar in the dates."
+msgstr ""
+"כברירת מחדל, למעט תאריכים גרגוריאניים, גרמפס מציג את שם לוח השנה בתאריכים."
+
+msgid "The style used for the title of the report."
+msgstr "הסגנון שמשמש לכותרת הדוח."
+
+msgid "The style used for the Sosa number of the paternal branch."
+msgstr "הסגנון שמשמש למספר סוסה בענף האבהי."
+
+msgid "The style used for the Sosa number of the maternal branch."
+msgstr "הסגנון שמשמש למספר סוסה בענף האמהי."
+
+msgid "The style used for the data of the males."
+msgstr "הסגנון שמשמש לנתוני הזכרים."
+
+msgid "The style used for the data of the females."
+msgstr "הסגנון שמשמש לנתוני הנקבות."
+
+msgid "The style used for the marriage."
+msgstr "הסגנון שמשמש לנישואין."
+
+msgid ""
+"The style used for an empty row.\n"
+"To enlarge the height of the empty row, just increse the size of the police."
+msgstr ""
+"הסגנון שמשמש לשורה ריקה.\n"
+"להגדלת גובה השורה הריקה, יש להגדיל את גודל הגופן."
+
+msgid ""
+"The style used for the header table of the number of ancestors per "
+"generation."
+msgstr "הסגנון שמשמש לטבלת הכותרת של מספר האבות הקדמונים לפי דור."
+
+msgid "The style used for the number of ancestors per generation."
+msgstr "הסגנון שמשמש למספר האבות הקדמונים לפי דור."
+
+msgid ""
+"The style used for the total line of the number of ancestors per generation."
+msgstr "הסגנון שמשמש לשורת הסיכום של מספר האבות הקדמונים לפי דור."

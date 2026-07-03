@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-09-06 11:01+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,16 +12,150 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "Missing"
+msgstr "Mancante"
+
+msgid "Delete original"
+msgstr "Elimina originale"
+
+msgid "Ignore"
+msgstr "Ignora"
+
+msgid "Add Import"
+msgstr "Aggiungi importazione"
+
+msgid "Keep original"
+msgstr "Mantieni originale"
+
+msgid ""
+"This item will be deleted from your tree.  Any referenced items were also "
+"marked for deletion."
+msgstr ""
+"Questo elemento verrà eliminato dal tuo albero.  Anche tutti gli elementi a "
+"cui fa riferimento verranno contrassegnati per l'eliminazione."
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked for Ignore."
+msgstr ""
+"Questo elemento non verrà modificato nel tuo albero.  Anche tutti gli "
+"elementi a cui fa riferimento verranno contrassegnati per essere ignorati."
+
+msgid ""
+"This item will be added to your tree.  Any referenced items were also marked "
+"for adding."
+msgstr ""
+"Questo elemento verrà aggiunto al tuo albero.  Anche tutti gli elementi a "
+"cui fa riferimento verranno contrassegnati per l'aggiunta."
+
+msgid ""
+"This item will be merged, saving data from your tree.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Questo elemento verrà fuso, salvando i dati dal tuo albero.  Anche tutti gli "
+"elementi a cui fa riferimento verranno contrassegnati per la fusione o per "
+"l'aggiunta."
+
+msgid ""
+"This item will be merged, using data from the import.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Questo elemento verrà fuso, usando i dati dell'importazione.  Anche tutti "
+"gli elementi a cui fa riferimento verranno contrassegnati per la fusione o "
+"per l'aggiunta."
+
+msgid ""
+"The import data will entirely replace the data in your tree.  Any referenced "
+"items were also marked for replacement or removal."
+msgstr ""
+"I dati importati verranno completamente sostituiti nel tuo albero.  Anche "
+"tutti gli elementi a cui fanno riferimento verranno contrassegnati per la "
+"sostituzione o per la rimozione."
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked to keep."
+msgstr ""
+"Questo elemento non verrà modificato nel tuo albero.  Anche tutti gli "
+"elementi a cui fa riferimento verranno contrassegnati per essere mantenuti."
+
+msgid "Import Failure"
+msgstr "Errore durante l'importazione"
+
+msgid "Your Tree and import are the same."
+msgstr "L'albvero e l'importazione sono identici."
+
+msgid "your tree "
+msgstr "il tuo albero "
+
+msgid "imported "
+msgstr "importato "
+
+msgid "Original"
+msgstr "Originale"
+
+msgid "Imported"
+msgstr "Importato"
+
+msgid "Result  "
+msgstr "Risultato  "
+
+msgid "Import and Merge"
+msgstr "Importa e fondi"
 
 msgid "Replace"
 msgstr "Sostituzioni"
 
+msgid "Import file"
+msgstr "Importa file"
+
+msgid "Select the difference you wish to examine."
+msgstr "Seleziona le differenze che vuoi esaminare."
+
 msgid "Object Name/Description"
 msgstr "Nome/descrizione oggetto"
+
+msgid "Object and item"
+msgstr "Oggetto ed elemento"
 
 msgid "Differences"
 msgstr "Differenze"
 
+msgid "This button will ignore the difference, no changes to your tree."
+msgstr "Questo pulsante ignora la differenza, nessuna modifica al tuo albero."
+
+msgid "This button will add the imported data as a new object to your tree."
+msgstr ""
+"Questo pulsante aggiunge i dati importati come nuovo oggetto del tuo albero."
+
 msgid "Done"
 msgstr "Fatto"
+
+msgid ""
+"This button will bring up a dialog allowing you to finalize your changes, or "
+"abandon them."
+msgstr ""
+"Questo pulsante apre una finestra che ti consente di confermare le "
+"modifiche, o di annullarle."
+
+msgid "Merge Original"
+msgstr "Fondi originale"
+
+msgid ""
+"This button will merge the imported data into your tree with your tree data "
+"as a base."
+msgstr ""
+"Questo pulsante fonde i dati importati nel tuo albero, con i dati del tuo "
+"albero come base."
+
+msgid "This button will replace your tree data with the imported data."
+msgstr ""
+"Questo pulsante sostituisce i dati del tuo albero con i dati importati."
+
+msgid "Edit Import"
+msgstr "Modifica importazione"
+
+msgid "Show more details"
+msgstr "Mostra altri dettagli"

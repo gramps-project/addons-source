@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "PhpGedView"
+msgstr "PhpGedView"
 
 msgid "Download a GEDCOM file from a phpGedView server."
 msgstr "הורדת קובץ GEDCOM משרת phpGedView."
@@ -24,11 +27,48 @@ msgstr "אחזור רשימת מפתחות..."
 msgid "Fetching records..."
 msgstr "אחזור רשומות..."
 
+msgid "Logging in..."
+msgstr "מתבצעת כניסה..."
+
+msgid "Fetching GEDCOM..."
+msgstr "מאחזר GEDCOM..."
+
+msgid "Importing GEDCOM..."
+msgstr "מייבא GEDCOM..."
+
+msgid "Error: login failed"
+msgstr "שגיאה: הכניסה נכשלה"
+
 msgid "done."
 msgstr "בוצע."
 
 msgid "Connecting..."
 msgstr "התחברות..."
 
+msgid "Get version..."
+msgstr "קבלת גרסה..."
+
+#, python-format
+msgid "Version %s"
+msgstr "גרסה %s"
+
 msgid "Reading file list..."
 msgstr "מתבצעת קריאת רשימת קבצים..."
+
+msgid "Error: Invalid URL"
+msgstr "שגיאה: לא תקין URL"
+
+msgid "- default -"
+msgstr "- ברירת מחדל -"
+
+msgid "phpGedView import"
+msgstr "ייבוא phpGedView"
+
+msgid "http://"
+msgstr "http://"
+
+msgid "Username:"
+msgstr "שם משתמש:"
+
+msgid "Password:"
+msgstr "ססמה:"

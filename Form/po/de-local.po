@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-01 12:35+0000\n"
+"PO-Revision-Date: 2026-06-20 17:01+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 #, python-format
 msgid "Form: %s"
@@ -26,6 +26,11 @@ msgstr "Formular bearbeiten"
 
 msgid "Reference:"
 msgstr "Referenz:"
+
+msgid "[Source recreated after deletion mid-form-edit]"
+msgstr ""
+"[Quelle nach Löschung während der Bearbeitung des Formulars "
+"wiederhergestellt]"
 
 msgid "Headings"
 msgstr "Überschriften"
@@ -87,23 +92,68 @@ msgstr ""
 "Prüfe, ob für eine Person und einige ihrer Vorfahren Volkszählungsdaten "
 "fehlen"
 
+msgid "Total Area in Statute Acres"
+msgstr "Gesamtfläche in Statute Acres"
+
+msgid "Signature of Head of Household"
+msgstr "Unterschrift des Haushaltsvorstands"
+
+msgid "Signature of Enumerator"
+msgstr "Unterschrift des Erhebungsbeauftragten"
+
 msgid "Persons"
 msgstr "Personen"
 
 msgid "Rooms"
 msgstr "Räume"
 
+msgid "County or Co. Borough"
+msgstr "Landkreis oder Stadtkreis"
+
+msgid "District Electoral Division or Ward"
+msgstr "Wahlbezirk oder Wahlkreis"
+
 msgid "Townland"
 msgstr "Gemeindegebiet"
+
+msgid "Urban Dist. Town or Village"
+msgstr "Stadtbezirk, Stadt oder Dorf"
+
+msgid "Street etc with No. of House"
+msgstr "Straße usw. mit Hausnummer"
+
+msgid "No. of Schedule"
+msgstr "Nr. des Verzeichnisses"
+
+msgid "Name of Public Institution"
+msgstr "Name der öffentlichen Einrichtung"
+
+msgid "Name and Surname"
+msgstr "Vorname und Nachname"
 
 msgid "Relation"
 msgstr "Beziehung"
 
+msgid "Relationship to Head of Household"
+msgstr "Beziehung zum Haushaltsvorstand"
+
+msgid "Year Age"
+msgstr "Jahr Alter"
+
 msgid "Age in years"
 msgstr "Alter in Jahren"
 
+msgid "Month Age"
+msgstr "Monat Alter"
+
+msgid "Age in months"
+msgstr "Alter in Monaten"
+
 msgid "Sex"
 msgstr "Geschlecht"
+
+msgid "Marriage or Orphanhood"
+msgstr "Ehe oder Waisenstatus"
 
 msgid "Birthplace"
 msgstr "Geburtsort"
@@ -111,32 +161,177 @@ msgstr "Geburtsort"
 msgid "Irish Language"
 msgstr "Irische Sprache"
 
+msgid ""
+"\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
+"cannot speak Irish\""
+msgstr ""
+"„Nur Irisch“, „Irisch und Englisch“, „Englisch und Irisch“, „Kann Irisch "
+"lesen, aber nicht sprechen“"
+
 msgid "Personal Occupation"
 msgstr "Persönliche Beschäftigung"
 
 msgid "Years Married"
 msgstr "Jahre Verheiratet"
 
+msgid "Years married in present Marriage"
+msgstr "Ehejahre in der aktuellen Ehe"
+
+msgid "Months Married"
+msgstr "Monate verheiratet"
+
+msgid "Months married in present Marriage"
+msgstr "Monate verheiratet in der aktuellen Ehe"
+
+msgid "Present Marriage Children"
+msgstr "Aktuelle Ehe Kinder"
+
+msgid "Children born alive to present marriage"
+msgstr "Lebend geborene Kinder aus der aktuellen Ehe"
+
+msgid "Total Children Under 16 Living"
+msgstr "Gesamtzahl lebender Kinder unter 16 Jahren"
+
+msgid "(1.) Entry no."
+msgstr "(1.) Eintragsnr."
+
+msgid "Superintendent Registrar's District"
+msgstr "Bezirk des Hauptregistrars"
+
+msgid "Registrar's District"
+msgstr "Bezirk des Registrar"
+
+msgid "Union"
+msgstr "Union"
+
+msgid "(10.) Signature of Registrar"
+msgstr "(10.) Unterschrift des Registrars"
+
+msgid "(11.) Baptismal Name if added after Registration of Birth, and Date"
+msgstr "(11.) Taufname, falls nach der Geburtsanzeige hinzugefügt, und Datum"
+
+msgid "(3.) Name (if any)"
+msgstr "(3.) Name (falls vorhanden)"
+
 msgid "Place of Birth"
 msgstr "Geburtsort"
+
+msgid "(2.) Date and Place of Birth"
+msgstr "(2.) Geburtsdatum und -ort"
 
 msgid "Date of Birth"
 msgstr "Geburtsdatum"
 
+msgid "(4.) M or F for male or female"
+msgstr "(4.) M oder F für männlich oder weiblich"
+
+msgid "(5.) Name and Surname and Dwelling-place of Father"
+msgstr "(5.) Vor- und Nachname sowie Wohnort des Vaters"
+
+msgid "(7.) Rank or Profession of Father"
+msgstr "(7.) Rang oder Beruf des Vaters"
+
+msgid "(6.) Name and Surname and Maiden Surname of Mother"
+msgstr "(6.) Vor- und Nachname sowie Mädchenname der Mutter"
+
 msgid "Maiden Surname"
 msgstr "Mädchenname"
+
+msgid "(8.) Signature, Qualification, and Residence of Informant"
+msgstr "(8.) Unterschrift, Angaben zur Person und Wohnort des Informanten"
+
+msgid "When Registered"
+msgstr "Datum der Registrierung"
+
+msgid "(9.) Date when birth was registered"
+msgstr "(9.) Datum der Geburtsanzeige"
+
+msgid "Year"
+msgstr "Jahr"
+
+msgid "Solemnized at the Catholic"
+msgstr "Feierlich begangen in der katholischen Kirche"
+
+msgid "Certificate number"
+msgstr "Zertifikatsnummer"
+
+msgid "Page number"
+msgstr "Seitenzahl"
+
+msgid "(1.) Entry No."
+msgstr "(1.) Eintrag Nr."
+
+msgid "(2.) When Married"
+msgstr "(2.) Heiratsdatum"
+
+msgid "(3.) Name and Surname"
+msgstr "(3.) Vor- und Nachname"
+
+msgid "(4.) Full or Minor"
+msgstr "(4.) Volljährig oder minderjährig"
 
 msgid "Condition"
 msgstr "Zustand"
 
+msgid "(5.) Bachelor or Spinster"
+msgstr "(5.) Junggeselle oder Jungfer"
+
+msgid "(6.) Rank or Profession"
+msgstr "(6.) Rang oder Beruf"
+
+msgid "Residence at the Time of Marriage"
+msgstr "Wohnort zum Zeitpunkt der Eheschließung"
+
+msgid "(8.) Father's Name and Surname"
+msgstr "(8.) Vor- und Nachname des Vaters"
+
+msgid "(9.) Rank or Profession of Father"
+msgstr "(9.) Rang oder Beruf des Vaters"
+
 msgid "Signed"
 msgstr "Unterzeichnet"
+
+msgid "(10.) When Registered"
+msgstr "(10.) Datum der Registrierung"
+
+msgid "(11.) Signature of Registrar"
+msgstr "(11.) Unterschrift des Registrars"
 
 msgid "Date of Death"
 msgstr "Sterbedatum"
 
+msgid "(2.) Date and Place of Death"
+msgstr "(2.) Datum und Ort des Todes"
+
 msgid "Place of Death"
 msgstr "Sterbeort"
+
+msgid "(4.) M or F for Male or Female"
+msgstr "(4.) M oder F für männlich oder weiblich"
+
+msgid "(5.) Widowed or Married"
+msgstr "(5.) Verwitwet oder verheiratet"
+
+msgid "(6.) Age last Birthday"
+msgstr "(6.) Alter am letzten Geburtstag"
+
+msgid "(7.) Rank, Profession, or Occupation"
+msgstr "(7.) Rang, Beruf oder Tätigkeit"
+
+msgid "(8.) Certified Cause of Death and Duration of Illness"
+msgstr "(8.) Beglaubigte Todesursache und Krankheitsdauer"
+
+msgid "Duration of Illness"
+msgstr "Krankheitsdauer"
+
+msgid "Relation to deceased"
+msgstr "Beziehung zum Verstorbenen"
+
+msgid "(9.) e.g. Son, Daughter"
+msgstr "(9.) z. B. Sohn, Tochter"
+
+msgid "(9.) e.g. Present at death"
+msgstr "(9.) z. B. zum Zeitpunkt des Todes anwesend"
 
 msgid "Schedule"
 msgstr "Zeitplan"

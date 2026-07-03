@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
-"PO-Revision-Date: 2026-02-20 09:09+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Deep Connections Gramplet"
 msgstr "גרמפלט חיבורים עמוקים"
@@ -23,6 +23,40 @@ msgstr "גרמפלט שמציג קשר־קרבה עמוקים בין אדם הב
 
 msgid "Deep Connections"
 msgstr "חיבורים עמוקים"
+
+msgid "⏸ Pause"
+msgstr "⏸ השהיה"
+
+msgid "Pause the current search"
+msgstr "השהיית החיפוש הנוכחי"
+
+msgid "▶ Continue"
+msgstr "▶ המשך"
+
+msgid "Continue searching for more relations"
+msgstr "המשך חיפוש קשרי־קרבה נוספים"
+
+msgid "📋 Copy"
+msgstr "📋 העתקה"
+
+msgid "Copy selected people to clipboard"
+msgstr "העתקת האנשים שנבחרו ללוח־גזירים"
+
+msgid "🗑 Clear"
+msgstr "🗑 ניקוי"
+
+msgid "Clear all results and reset"
+msgstr "ניקוי כל התוצאות ושיצוב"
+
+msgid "Ready to search"
+msgstr "מוכן לחיפוש"
+
+#, python-brace-format
+msgid ""
+"Search Depth: {depth} | People Processed: {processed} | Queue Size: "
+"{queue_size}"
+msgstr ""
+"עומק חיפוש: {depth} | אנשים שעובדו: {processed} | גודל תור: {queue_size}"
 
 msgid "mentioned in note"
 msgstr "אזכור בהערה"
@@ -51,8 +85,17 @@ msgstr ""
 "\n"
 "   %s של "
 
+msgid "Error: No Home Person set"
+msgstr "שגיאה: לא הוגדר אדם בית"
+
 msgid "No Active Person set."
 msgstr "לא הוגדר 'אדם פעיל'."
+
+msgid "Error: No Active Person set"
+msgstr "שגיאה: לא הוגדר אדם פעיל"
+
+msgid "Initializing search..."
+msgstr "מאתחל חיפוש..."
 
 msgid "Looking for relationship between\n"
 msgstr "חיפוש קשרי קרבה בין\n"
@@ -64,6 +107,9 @@ msgstr "  <b>%s</b> (אדם הבית) ו\n"
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (האדם הפעיל)...\n"
+
+msgid "Searching for connections..."
+msgstr "מחפש קשרים..."
 
 #, python-format
 msgid ""
@@ -79,3 +125,26 @@ msgid ""
 msgstr ""
 "מושהה.\n"
 "נא ללחוץ על 'להמשיך לחפש' לקשרי־קרבה נוספים.\n"
+
+msgid "Paused - Press Continue to search for more relations"
+msgstr "מושהה - יש להקיש המשך כדי לחפש קשרי־קרבה נוספים"
+
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relation paths found."
+msgstr ""
+"\n"
+"החיפוש הושלם. נמצאו %d נתיבי קשרי־קרבה."
+
+msgid "Search completed - {} relation paths found"
+msgstr "החיפוש הושלם - נמצאו {} נתיבי קשרי־קרבה"
+
+msgid "Error during search: {}"
+msgstr "שגיאה במהלך חיפוש: {}"
+
+msgid "Resuming search..."
+msgstr "מחדש חיפוש..."
+
+msgid "Search interrupted by user"
+msgstr "החיפוש הופסק על ידי המשתמש"

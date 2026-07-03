@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2026-02-20 09:09+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,11 +13,104 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "TimeLines Map"
+msgstr "זמן קווים מפה"
+
+msgid "Choose View Format"
+msgstr "בחירת מצג תסדיר"
+
+msgid "Almost done"
+msgstr "כמעט הסתיים"
+
+msgid "Gathering data"
+msgstr "איסוף נתונים"
 
 #, python-format
 msgid "Number of Persons: %s"
 msgstr "מספר אנשים: %s"
 
+msgid ""
+"Stagger the map markers\n"
+"to differentiate different\n"
+"markers at the same location"
+msgstr ""
+"הסטה מפה סמנים\n"
+"ללהבדיל שונה\n"
+"סמנים באותו מיקום"
+
+msgid ""
+"Stagger Radius (hectometers)\n"
+"as measured along the equator\n"
+"(includes latitude distortion)"
+msgstr ""
+"רדיוס דירוג (הקטומטרים)\n"
+"כפי שנמדד לאורך קו המשווה\n"
+"(כולל עיוות קו רוחב)"
+
+msgid ""
+"Display markers for unknown ancestors\n"
+"based on earliest descendant location"
+msgstr ""
+"הצגה סמנים עבור לא ידוע אבות\n"
+"מבוסס בהמוקדם ביותר צאצא מיקום"
+
+msgid ""
+"Days to keep lines on the map after\n"
+"an event"
+msgstr ""
+"מספר הימים להשארת קווים על המפה לאחר\n"
+"אירוע"
+
+msgid "Use custom map icons"
+msgstr "שימוש מותאם מפה סמלים"
+
+msgid ""
+"If there is no birth event for a person, their age\n"
+"is assumed to be this at their first event"
+msgstr ""
+"אם אין לאדם אירוע לידה, גילו\n"
+"יוערך כך באירוע הראשון שלו"
+
+msgid ""
+"If there is no death event for a person, they will\n"
+"be assumed dead at this age"
+msgstr ""
+"אם אין לאדם אירוע פטירה, הוא\n"
+"יונח כמת בגיל זה"
+
+msgid "Number of steps"
+msgstr "מספר צעדים"
+
 msgid "Type of steps"
 msgstr "סוג שלב"
+
+msgid "Steps per millisecond"
+msgstr "צעדים למילישנייה"
+
+msgid "Initial map view on Gramps startup"
+msgstr "מצג המפה הראשוני באתחול גרמפס"
+
+msgid ""
+"Initial map view after startup and\n"
+"after changing the active person"
+msgstr ""
+"מצג המפה הראשוני לאחר אתחול\n"
+"ולאחר שינוי האדם הפעיל"
+
+msgid "Show map travel lines on startup"
+msgstr "הצגת קווי מסע במפה בעת אתחול"
+
+msgid "Show time ticks on navigation bar on startup"
+msgstr "הצגת סימוני זמן בסרגל הניווט בעת אתחול"
+
+msgid "TimeLines Map options"
+msgstr "זמן קווים מפה אפשרויות"
+
+msgid ""
+"A view showing all the places visited by a person or persons on various date."
+msgstr "מצג שמציג את כל המקומות שאדם או אנשים ביקרו בהם בתאריכים שונים."
+
+msgid "TimeLines map"
+msgstr "זמן קווים מפה"

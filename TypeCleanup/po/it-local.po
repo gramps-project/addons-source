@@ -1,0 +1,99 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/it/>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "Event Roles"
+msgstr "Ruolo dell'evento"
+
+msgid "Event Types"
+msgstr "Tipo di evento"
+
+msgid "Name Types"
+msgstr "Tipi di nome"
+
+msgid "Note Types"
+msgstr "Tipi di note"
+
+msgid "Place Types"
+msgstr "Tipi di luogo"
+
+msgid "Repository Types"
+msgstr "Tipi di deposito"
+
+msgid "Source Media Types"
+msgstr "Tipi di sorgente multimediale"
+
+msgid "URL Types"
+msgstr "Tipi di URL"
+
+msgid "Types Cleanup Tool"
+msgstr "Strumento di pulizia dei tipi"
+
+msgid ""
+"Remove the selected type from the db.\n"
+"This does not change any referenced objects."
+msgstr ""
+"Rimuove il tipo selezionato dal db.\n"
+"Non modifica gli oggetti a cui fa riferimento."
+
+msgid ""
+"Select a new name for the current type, prior to renaming the type in the "
+"referenced objects."
+msgstr ""
+"Seleziona un nuovo nome per il tipo corrente, prima di rinominare il tipo "
+"negli oggetti a cui fa riferimento."
+
+msgid "Rename"
+msgstr "Rinomina"
+
+msgid "Rename the selected type in all referenced objects."
+msgstr ""
+"Rinomina il tipo selezionato in tutti gli oggetti a cui fa riferimento."
+
+msgid "Close the Type Cleanup Tool"
+msgstr "Chiudi lo strumento di pulizia dei tipi"
+
+msgid "Types"
+msgstr "Tipi"
+
+msgid "Type Cleanup Tool"
+msgstr "Strumento di pulizia del tipo"
+
+#, python-format
+msgid "Changing type from %(old_type)s to %(new_type)s."
+msgstr "Modifica del tipo da %(old_type)s a %(new_type)s."
+
+msgid ""
+"Removing this custom type will eliminate it from the type selection drop "
+"down lists\n"
+"and further runs of this tool.\n"
+"\n"
+"However, it will not remove it from the referenced items in the database.\n"
+"If you want to change it in referenced items, use 'Rename'."
+msgstr ""
+"La rimozione di questo tipo personalizzato lo eliminerà dagli elenchi a "
+"discesa di selezione\n"
+"dei tipi, e dalle successive esecuzioni di questo strumento.\n"
+"\n"
+"Tuttavia, questa operazione non lo rimuoverà dagli elementi a cui fa "
+"riferimento nel database.\n"
+"Se vuoi modificarlo negli elementi a cui fa riferimento, utilizza la "
+"funzione 'Rinomina'."
+
+msgid "Type Cleanup"
+msgstr "Pulizia dei tipi"
+
+msgid "Clean up (remove) custom types"
+msgstr "Pulisce (rimuove) i tipi personalizzati"

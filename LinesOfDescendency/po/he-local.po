@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-09 13:13+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,13 +13,38 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Ancestor"
 msgstr "אב קדמון"
+
+msgid "The ancestor from which to start the line"
+msgstr "האב שממנו יש להתחיל את הקו"
+
+msgid "Descendent"
+msgstr "צאצא"
+
+msgid "The descendent to which to build the line"
+msgstr "צאצא לש ללבנות שורה"
 
 msgid "The style used for the title of the page."
 msgstr "הסגנון שמשמש בכותרת העמוד."
 
 msgid "The style used for the title of a line."
 msgstr "הסגנון ששימש לכותרת קו."
+
+#, python-format
+msgid "%(line)s. line:"
+msgstr "%(line)s. קו:"
+
+#, python-format
+msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
+msgstr "קווים של צאצאים מ־%(ancestor)s ל־%(descendent)s"
+
+msgid "Lines of Descendency Report"
+msgstr "קווים של צאצאים דוח"
+
+msgid ""
+"Prints out all descendency lines from a given ancestor to a given descendent "
+"in text."
+msgstr "הדפסת כל קווי הצאצאות מאב נתון לצאצא נתון במלל."

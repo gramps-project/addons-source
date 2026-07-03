@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-02-20 09:09+0000\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,34 +13,337 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+#, python-format
+msgid "Form: %s"
+msgstr "טופס: %s"
+
+msgid "New Form"
+msgstr "טופס חדש"
+
+msgid "Edit Form"
+msgstr "עריכת טופס"
 
 msgid "Reference:"
 msgstr "אזכור:"
 
+msgid "[Source recreated after deletion mid-form-edit]"
+msgstr "[מקור נוצר מחדש לאחר מחיקה במהלך עריכת טופס]"
+
 msgid "Headings"
 msgstr "כותרות"
+
+#, python-format
+msgid "Census Check for %s"
+msgstr "בדיקת מפקד עבור %s"
 
 msgid "Form Gramplet"
 msgstr "גרמפלט טפסים"
 
+msgid "Gramplet interface for Forms"
+msgstr "גרמפלט מנשק עבור טפסים"
+
+msgid "Forms"
+msgstr "טפסים"
+
 msgid "Order"
 msgstr "סדר"
+
+msgid "Form"
+msgstr "טופס"
+
+msgid "XML syntax error in Form definition file"
+msgstr "שגיאת תחביר XML בקובץ הגדרת טופס"
+
+msgid "Failed to read Form definition file"
+msgstr "קריאת קובץ הגדרת הטופס נכשלה"
+
+msgid "Invalid Form definition file"
+msgstr "קובץ הגדרת טופס לא תקין"
 
 msgid "Select Form"
 msgstr "בחירת טופס"
 
+msgid "CensusCheck"
+msgstr "בדיקת מפקדים"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"descendents"
+msgstr "בדיקה אם חסרים אירועי מפקד לאדם ולחלק מצאצאיו"
+
+msgid "CensusCheckUp"
+msgstr "בדיקת מפקדים כלפי מעלה"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"ancestors"
+msgstr "בדיקה אם חסרים אירועי מפקד לאדם ולחלק מאבותיו"
+
+msgid "Total Area in Statute Acres"
+msgstr "שטח כולל באקרים סטטוטוריים"
+
+msgid "Signature of Head of Household"
+msgstr "חתימת ראש משק הבית"
+
+msgid "Signature of Enumerator"
+msgstr "חתימת פוקד"
+
 msgid "Persons"
 msgstr "אנשים"
+
+msgid "Rooms"
+msgstr "חדרים"
+
+msgid "County or Co. Borough"
+msgstr "מחוז או רובע מחוזי"
+
+msgid "District Electoral Division or Ward"
+msgstr "חלוקה מחוזית לבחירות או רובע"
+
+msgid "Townland"
+msgstr "Townland"
+
+msgid "Urban Dist. Town or Village"
+msgstr "מחוז עירוני, עיירה או כפר"
+
+msgid "Street etc with No. of House"
+msgstr "רחוב ועוד עם מס׳ בית"
+
+msgid "No. of Schedule"
+msgstr "מס׳ לוח"
+
+msgid "Name of Public Institution"
+msgstr "שם המוסד הציבורי"
+
+msgid "Name and Surname"
+msgstr "שם ושם משפחה"
 
 msgid "Relation"
 msgstr "יוחסה"
 
+msgid "Relationship to Head of Household"
+msgstr "קשר־קרבה לראש משק הבית"
+
+msgid "Year Age"
+msgstr "שנה גיל"
+
+msgid "Age in years"
+msgstr "גיל בשנים"
+
+msgid "Month Age"
+msgstr "חודש גיל"
+
+msgid "Age in months"
+msgstr "גיל בחודשים"
+
+msgid "Sex"
+msgstr "מין"
+
+msgid "Marriage or Orphanhood"
+msgstr "נישואין או יתמות"
+
 msgid "Birthplace"
 msgstr "מקום לידה"
 
+msgid "Irish Language"
+msgstr "שפה אירית"
+
+msgid ""
+"\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
+"cannot speak Irish\""
+msgstr ""
+"'אירית בלבד', 'אירית ואנגלית', 'אנגלית ואירית', 'קריאה אך לא ניתן לדבר אירית'"
+
+msgid "Personal Occupation"
+msgstr "אישי משלח יד"
+
+msgid "Years Married"
+msgstr "שנים נשוי"
+
+msgid "Years married in present Marriage"
+msgstr "שנות נישואין בנישואין הנוכחיים"
+
+msgid "Months Married"
+msgstr "חודשים נשוי"
+
+msgid "Months married in present Marriage"
+msgstr "חודשי נישואין בנישואין הנוכחיים"
+
+msgid "Present Marriage Children"
+msgstr "ילדים מהנישואין הנוכחיים"
+
+msgid "Children born alive to present marriage"
+msgstr "ילדים שנולדו חיים בנישואין הנוכחיים"
+
+msgid "Total Children Under 16 Living"
+msgstr "סך כל הילדים החיים מתחת לגיל 16"
+
+msgid "(1.) Entry no."
+msgstr "(1.) מס׳ רשומה"
+
+msgid "Superintendent Registrar's District"
+msgstr "מחוז הרשם המפקח"
+
+msgid "Registrar's District"
+msgstr "רשם של מחוז"
+
+msgid "Union"
+msgstr "איחוד"
+
+msgid "(10.) Signature of Registrar"
+msgstr "(10.) חתימת הרשם"
+
+msgid "(11.) Baptismal Name if added after Registration of Birth, and Date"
+msgstr "(11.) שם טבילה שם אם נוספו אחרי רישום של לידה, ותאריך"
+
+msgid "(3.) Name (if any)"
+msgstr "(3.) שם (אם כלשהו)"
+
 msgid "Place of Birth"
 msgstr "מקום הלידה"
+
+msgid "(2.) Date and Place of Birth"
+msgstr "(2.) תאריך ומקום מתוך לידה"
+
+msgid "Date of Birth"
+msgstr "תאריך מתוך לידה"
+
+msgid "(4.) M or F for male or female"
+msgstr "(4.) M או F עבור זכר או נקבה"
+
+msgid "(5.) Name and Surname and Dwelling-place of Father"
+msgstr "(5.) שם ושם משפחה ומקום מגורים של אב"
+
+msgid "(7.) Rank or Profession of Father"
+msgstr "(7.) דרגה או מקצוע מתוך אב"
+
+msgid "(6.) Name and Surname and Maiden Surname of Mother"
+msgstr "(6.) שם ושם משפחה ושם משפחה מלידה של אם"
+
+msgid "Maiden Surname"
+msgstr "שם משפחה מלידה"
+
+msgid "(8.) Signature, Qualification, and Residence of Informant"
+msgstr "(8.) חתימה, כשירות ומגורי המודיע"
+
+msgid "When Registered"
+msgstr "מועד רישום"
+
+msgid "(9.) Date when birth was registered"
+msgstr "(9.) תאריך כאשר לידה היה נרשם"
+
+msgid "Year"
+msgstr "שנה"
+
+msgid "Solemnized at the Catholic"
+msgstr "נערך בכנסייה הקתולית"
+
+msgid "Certificate number"
+msgstr "מספר תעודה"
+
+msgid "Page number"
+msgstr "עמוד מספר"
+
+msgid "(1.) Entry No."
+msgstr "(1.) מס׳ רשומה"
+
+msgid "(2.) When Married"
+msgstr "(2.) כאשר נשוי"
+
+msgid "(3.) Name and Surname"
+msgstr "(3.) שם ושם משפחה"
+
+msgid "(4.) Full or Minor"
+msgstr "(4.) בגיר או קטין"
+
+msgid "Condition"
+msgstr "מצב"
+
+msgid "(5.) Bachelor or Spinster"
+msgstr "(5.) רווק או רווקה"
+
+msgid "(6.) Rank or Profession"
+msgstr "(6.) דרגה או מקצוע"
+
+msgid "Residence at the Time of Marriage"
+msgstr "מגורים בעת הנישואין"
+
+msgid "(8.) Father's Name and Surname"
+msgstr "(8.) שם ושם משפחה של האב"
+
+msgid "(9.) Rank or Profession of Father"
+msgstr "(9.) דרגה או מקצוע מתוך אב"
+
+msgid "Signed"
+msgstr "חתום"
+
+msgid "(10.) When Registered"
+msgstr "(10.) מועד רישום"
+
+msgid "(11.) Signature of Registrar"
+msgstr "(11.) חתימת הרשם"
+
+msgid "Date of Death"
+msgstr "תאריך מתוך פטירה"
+
+msgid "(2.) Date and Place of Death"
+msgstr "(2.) תאריך ומקום מתוך פטירה"
+
+msgid "Place of Death"
+msgstr "מקום מתוך פטירה"
+
+msgid "(4.) M or F for Male or Female"
+msgstr "(4.) M או F עבור זכר או נקבה"
+
+msgid "(5.) Widowed or Married"
+msgstr "(5.) אלמן או נשוי"
+
+msgid "(6.) Age last Birthday"
+msgstr "(6.) גיל אחרון יום הולדת"
+
+msgid "(7.) Rank, Profession, or Occupation"
+msgstr "(7.) דרגה, מקצוע, או משלח יד"
+
+msgid "(8.) Certified Cause of Death and Duration of Illness"
+msgstr "(8.) סיבת פטירה מאושרת ומשך המחלה"
+
+msgid "Duration of Illness"
+msgstr "משך של מחלה"
+
+msgid "Relation to deceased"
+msgstr "יוחסה לנפטר"
+
+msgid "(9.) e.g. Son, Daughter"
+msgstr "(9.) לדוגמה בן, בת"
+
+msgid "(9.) e.g. Present at death"
+msgstr "(9.) לדוגמה נוכח בעת הפטירה"
+
+msgid "Schedule"
+msgstr "לוח"
+
+msgid "EnumDistrict"
+msgstr "מחוז פקידה"
+
+msgid "Township"
+msgstr "עיירה"
+
+msgid "Comprising"
+msgstr "הכולל"
+
+msgid "OfTheSaid"
+msgstr "של האמור"
+
+msgid "Enumerator"
+msgstr "פוקד"
+
+msgid "1. Names of Inmates"
+msgstr "1. שמות מתוך דיירים"
+
+msgid "2. Profession, Trade or Occupation"
+msgstr "2. מקצוע, מסחר או משלח יד"
 
 msgid "BirthPlace"
 msgstr "מקום לידה"
@@ -48,17 +351,871 @@ msgstr "מקום לידה"
 msgid "3. Place of Birth"
 msgstr "3. מקום לידה"
 
+msgid "4. Religion"
+msgstr "4. דת"
+
+msgid "5. Residence if Outside of Limits"
+msgstr "5. מגורים אם מחוץ לגבולות"
+
+msgid "6. Age at Next Birthday"
+msgstr "6. גיל ביום ההולדת הבא"
+
+msgid "SexMale"
+msgstr "מין: זכר"
+
+msgid "7. Sex: Male"
+msgstr "7. מין: זכר"
+
+msgid "SexFemale"
+msgstr "מין: נקבה"
+
+msgid "8. Sex: Female"
+msgstr "8. מין: נקבה"
+
+msgid "MaritalStatus"
+msgstr "מצב משפחתי"
+
+msgid "9. Married or Single"
+msgstr "9. נשוי או רווק"
+
+msgid "Coloured"
+msgstr "צבעוני"
+
+msgid "10. Coloured Persons - Negroes"
+msgstr "10. אנשים צבעוניים - שחורים"
+
+msgid "Indians"
+msgstr "אינדיאנים"
+
+msgid "11. Indians, if any"
+msgstr "11. אינדיאנים, אם יש"
+
+msgid "ResidentsMale"
+msgstr "תושבים: זכרים"
+
+msgid "12. Residents: Members, Male"
+msgstr "12. תושבים: חברים, זכר"
+
+msgid "ResidentsFemale"
+msgstr "תושבים: נקבות"
+
+msgid "13. Residents: Members, Female"
+msgstr "13. תושבים: חברות, נקבה"
+
+msgid "NonMembersMale"
+msgstr "לא חברים: זכרים"
+
+msgid "14. Residents: Not Members: Male"
+msgstr "14. תושבים: לא חברים, זכר"
+
+msgid "NonMembersFemale"
+msgstr "לא חברות: נקבות"
+
+msgid "15. Residents: Not Members: Female"
+msgstr "15. תושבים: לא חברות, נקבה"
+
+msgid "AbsentMembersMale"
+msgstr "חברים נעדרים: זכרים"
+
+msgid "16. Members Absent: Male"
+msgstr "16. חברים נעדרים: זכר"
+
+msgid "AbsentMembersFemale"
+msgstr "חברות נעדרות: נקבות"
+
+msgid "17. Members Absent: Female"
+msgstr "17. חברות נעדרות: נקבה"
+
+msgid "DeafDumbMale"
+msgstr "חירש ואילם: זכר"
+
+msgid "18. Deaf and Dumb: Male"
+msgstr "18. חירש ואילם: זכר"
+
+msgid "DeafDumbFemale"
+msgstr "חירשת ואילמת: נקבה"
+
+msgid "19. Deaf and Dumb: Female"
+msgstr "19. חירשת ואילמת: נקבה"
+
+msgid "BlindMale"
+msgstr "עיוור: זכר"
+
+msgid "20. Blind: Male"
+msgstr "20. עיוור: זכר"
+
+msgid "BlindFemale"
+msgstr "עיוורת: נקבה"
+
+msgid "21. Blind: Female"
+msgstr "21. עיוורת: נקבה"
+
+msgid "LunaticMale"
+msgstr "חולה נפש: זכר"
+
+msgid "22. Lunatics: Male"
+msgstr "22. חולי נפש: זכר"
+
+msgid "LunaticFemale"
+msgstr "חולת נפש: נקבה"
+
+msgid "23. Lunatics: Female"
+msgstr "23. חולות נפש: נקבה"
+
+msgid "ScholarMale"
+msgstr "תלמיד: זכר"
+
+msgid "24. Attending School: Male"
+msgstr "24. לומד בבית־ספר: זכר"
+
+msgid "ScholarFemale"
+msgstr "תלמידה: נקבה"
+
+msgid "25. Attending School: Female"
+msgstr "25. לומדת בבית־ספר: נקבה"
+
+msgid "Birth1851Male"
+msgstr "לידה1851זכר"
+
+msgid "26. Births During the Year 1851: Male"
+msgstr "26. לידות במהלך שנה 1851: זכר"
+
+msgid "Birth1851Female"
+msgstr "לידה1851נקבה"
+
+msgid "27. Births During the Year 1851: Female"
+msgstr "27. לידות במהלך שנה 1851: נקבה"
+
+msgid "Death1851Male"
+msgstr "פטירה1851זכר"
+
+msgid "28. Deaths During the Year 1851: Male"
+msgstr "28. פטירות במהלך שנה 1851: זכר"
+
+msgid "Death1851Female"
+msgstr "פטירה1851נקבה"
+
+msgid "29. Deaths During the Year 1851: Female"
+msgstr "29. פטירות במהלך שנה 1851: נקבה"
+
+msgid "DeathAgeCause"
+msgstr "גיל וסיבת פטירה"
+
+msgid "30. Age and Cause of Deaths"
+msgstr "30. גיל וסיבת הפטירות"
+
+msgid "Houses"
+msgstr "בתים"
+
+msgid ""
+"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
+msgstr "31. בתים: לבנים, אבן, מסגרת עץ, בולי עץ, צריף, או סוג מגורים אחר"
+
+msgid "HousesStories"
+msgstr "בתים: מספר קומות"
+
+msgid "32. Houses: No. of Stories"
+msgstr "32. בתים: מס' קומות"
+
+msgid "HousesFamilies"
+msgstr "בתים: מספר משפחות"
+
+msgid "33. No. of Families Occupying"
+msgstr "33. מס' המשפחות המאכלסות"
+
+msgid "HousesVacant"
+msgstr "בתים ריקים"
+
+msgid "34. Houses: Vacant"
+msgstr "34. בתים: ריקים"
+
+msgid "HousesBuilding"
+msgstr "בתים בבנייה"
+
+msgid "35. Houses: Building"
+msgstr "35. בתים: בבנייה"
+
+msgid "Shops"
+msgstr "חנויות"
+
+msgid "36. Shops, Stores, Inns, Taverns etc."
+msgstr "36. חנויות, בתי מסחר, פונדקים, מסבאות ועוד"
+
+msgid "PublicBuildings"
+msgstr "מבני ציבור"
+
+msgid "37. Public Buildings"
+msgstr "37. מבני ציבור"
+
 msgid "WorshipPlaces"
 msgstr "מקום פולחן"
 
 msgid "38. Places of Worship"
 msgstr "38. מקום פולחן"
 
+msgid "BuisnessInfo"
+msgstr "מידע עסקי"
+
+msgid ""
+"39. Information on Mills, Factories etc., their cost, power, produce, etc."
+msgstr "39. מידע על טחנות, מפעלים ועוד: עלות, כוח, תוצרת ועוד"
+
+msgid "NumEmployees"
+msgstr "מספר מועסקים"
+
+msgid "40. Number of Persons Usually Employed Therein"
+msgstr "40. מספר האנשים שמועסקים שם בדרך כלל"
+
+msgid "41. General Remarks of the Enumerator"
+msgstr "41. הערות כלליות של הפוקד"
+
+msgid "1. Name of Occupier"
+msgstr "1. שם המחזיק"
+
+msgid "Concession"
+msgstr "זיכיון"
+
+msgid "2. Concession or Range"
+msgstr "2. זיכיון או תחום"
+
+msgid "Lot"
+msgstr "Lot"
+
+msgid "3. Lot or part of Lot"
+msgstr "3. חלקה או חלק מחלקה"
+
+msgid "AcresHeld"
+msgstr "אקרים מוחזקים"
+
+msgid "4. Number of Acres of Land: Held by each person or family"
+msgstr "4. מספר אקרים של קרקע: מוחזקים בידי כל אדם או משפחה"
+
 msgid "AcresCultivation"
 msgstr "AcresCultivation"
 
+msgid "5. Number of Acres of Land: Under Cultivation"
+msgstr "5. מספר אקרים של קרקע: בעיבוד"
+
+msgid "AcresCrops"
+msgstr "אקרים ביבולים"
+
+msgid "6. Number of Acres of Land: Under Crops in 1851"
+msgstr "6. מספר אקרי קרקע בגידולים בשנת 1851"
+
+msgid "AcresPasture"
+msgstr "אקרים במרעה"
+
+msgid "7. Number of Acres of Land: Under Pasture in 1851"
+msgstr "7. מספר אקרי קרקע במרעה בשנת 1851"
+
+msgid "AcresGardens"
+msgstr "אקרים בגנים"
+
+msgid "8. Number of Acres of Land: Gardens or Orchards"
+msgstr "8. מספר אקרי קרקע בגנים או בבוסתנים"
+
+msgid "AcresWood"
+msgstr "אקרים ביער או בר"
+
+msgid "9. Number of Acres of Land: Under Wood or Wild"
+msgstr "9. מספר אקרי קרקע ביער או בשטח בר"
+
+msgid "WheatAcres"
+msgstr "חיטה: אקרים"
+
+msgid "10. Wheat: Acres"
+msgstr "10. חיטה: אקרים"
+
+msgid "WheatBsh"
+msgstr "חיטה: בושלים"
+
+msgid "11. Wheat: Produce Bsh."
+msgstr "11. חיטה: תוצרת בבושלים"
+
+msgid "BarleyAcres"
+msgstr "שעורה: אקרים"
+
+msgid "12. Barley: Acres"
+msgstr "12. שעורה: אקרים"
+
+msgid "BarleyBsh"
+msgstr "שעורה: בושלים"
+
+msgid "13. Barley: Produce Bsh."
+msgstr "13. שעורה: תוצרת בושלים."
+
+msgid "RyeAcres"
+msgstr "שיפון: אקרים"
+
+msgid "14. Rye: Acres"
+msgstr "14. שיפון: אקרים"
+
+msgid "RyeBsh"
+msgstr "שיפון: בושלים"
+
+msgid "15. Rye: Produce Bsh."
+msgstr "15. שיפון: תוצרת בושלים."
+
+msgid "PeasAcres"
+msgstr "אפונים: אקרים"
+
+msgid "16. Peas: Acres"
+msgstr "16. אפונים: אקרים"
+
+msgid "PeasBush"
+msgstr "אפונים: בושלים"
+
+msgid "17. Peas: Produce Bsh."
+msgstr "17. אפונה: תוצרת בושלים."
+
+msgid "OatsAcres"
+msgstr "שיבולת שועל: אקרים"
+
+msgid "18. Oats: Acres"
+msgstr "18. שיבולת שועל: אקרים"
+
+msgid "OatsBush"
+msgstr "שיבולת שועל: בושלים"
+
+msgid "19. Oats: Produce Bsh."
+msgstr "19. שיבולת שועל: תוצרת בושלים."
+
+msgid "BWheatAcres"
+msgstr "כוסמת: אקרים"
+
+msgid "20. B.Wheat: Acres"
+msgstr "20. כוסמת: אקרים"
+
+msgid "BWheatBush"
+msgstr "כוסמת: בושלים"
+
+msgid "21. B.Wheat: Produce Bsh."
+msgstr "21. כוסמת: תוצרת בבושלים."
+
+msgid "CornAcres"
+msgstr "תירס: אקרים"
+
+msgid "22. Corn: Acres"
+msgstr "22. תירס: אקרים"
+
+msgid "CornBush"
+msgstr "תירס: בושלים"
+
+msgid "23. Corn: Produce Bsh."
+msgstr "23. תירס: תוצרת בושלים."
+
+msgid "PotatoesAcres"
+msgstr "תפוחי אדמה: אקרים"
+
+msgid "24. Potatoes: Acres"
+msgstr "24. תפוחי אדמה: אקרים"
+
+msgid "PotatoesBush"
+msgstr "תפוחי אדמה: בושלים"
+
+msgid "25. Potatoes: Produce Bsh."
+msgstr "25. תפוחי אדמה: תוצרת בבושלים"
+
+msgid "TurnipsAcres"
+msgstr "לפת: אקרים"
+
+msgid "26. Turnips: Acres"
+msgstr "26. לפת: אקרים"
+
+msgid "TurnipsBush"
+msgstr "לפת: בושלים"
+
+msgid "27. Turnips: Produce Bsh."
+msgstr "27. לפת: תוצרת בושלים."
+
+msgid "CloverBush"
+msgstr "תלתן או זרעי עשב: בושלים"
+
+msgid "28. Clover, Timothy or other grass seed - Bsh."
+msgstr "28. זרעי תלתן, טימותי או עשב אחר – בושלים"
+
+msgid "CarrotsBush"
+msgstr "גזרים: בושלים"
+
+msgid "29. Carrots - Bsh."
+msgstr "29. גזר - בושלים."
+
+msgid "MangleWurtzel"
+msgstr "סלק מספוא"
+
+msgid "30. Mangle Wurtzel"
+msgstr "30. סלק מספוא"
+
+msgid "BeansBush"
+msgstr "שעועית: בושלים"
+
+msgid "31. Beans Bush"
+msgstr "31. שעועית בושלים"
+
+msgid "HopsLbs"
+msgstr "כשות: ליברות"
+
+msgid "32. Hops Lbs."
+msgstr "32. כשות בליברות"
+
+msgid "HayQty"
+msgstr "חציר: כמות"
+
+msgid "33. Hay, Bundles or Tons"
+msgstr "33. חציר, אלומות או טונות"
+
+msgid "FlaxLbs"
+msgstr "פשתן או קנבוס: ליברות"
+
+msgid "34. Flax or Hemp, Lbs."
+msgstr "34. פשתן או קנבוס, ליברות"
+
+msgid "TobaccoLbs"
+msgstr "טבק: ליברות"
+
+msgid "35. Tobacco Lbs."
+msgstr "35. טבק ליברות."
+
+msgid "WoolLbs."
+msgstr "צמר ליברות."
+
+msgid "36. Wool Lbs."
+msgstr "36. צמר ליברות."
+
+msgid "Column37"
+msgstr "עמודה37"
+
+msgid "37."
+msgstr "37."
+
+msgid "Column38"
+msgstr "עמודה38"
+
+msgid "38."
+msgstr "38."
+
+msgid "Column39"
+msgstr "עמודה39"
+
+msgid "39."
+msgstr "39."
+
+msgid "MapleSugarLbs"
+msgstr "סוכר אדר: ליברות"
+
+msgid "40. Maple Sugar Lbs."
+msgstr "40. סוכר מייפל, ליברות"
+
+msgid "CiderGalls"
+msgstr "סיידר: גלונים"
+
+msgid "41. Cider Galls."
+msgstr "41. גלוני סיידר"
+
+msgid "ClothYards"
+msgstr "בד: יארדים"
+
+msgid "42. Fulled Cloth Yards"
+msgstr "42. יארדים של בד שעבר פולינג"
+
+msgid "LinnenYards"
+msgstr "פשתן: יארדים"
+
+msgid "43. Linnen - Yds."
+msgstr "43. פשתן - יארדים"
+
+msgid "FlannelYds"
+msgstr "פלנל: יארדים"
+
+msgid "44. Flannel - Yds."
+msgstr "44. פלנל - יארדים"
+
+msgid "Bulls"
+msgstr "פרים"
+
+msgid "45. Bulls, Oxen or Steers"
+msgstr "45. פרים, שוורים או עגלים מסורסים"
+
+msgid "Milch Cows"
+msgstr "פרות חלב"
+
+msgid "46. Milch Cows"
+msgstr "46. פרות חלב"
+
+msgid "Calves"
+msgstr "עגלים"
+
+msgid "47. Calves or Heifers"
+msgstr "47. עגלים או עגלות"
+
+msgid "Horses"
+msgstr "סוסים"
+
+msgid "48. Horses of all ages"
+msgstr "48. סוסים בכל גיל"
+
+msgid "Sheep"
+msgstr "כבשים"
+
+msgid "49. Sheep"
+msgstr "49. כבשים"
+
+msgid "Pigs"
+msgstr "חזירים"
+
+msgid "50. Pigs"
+msgstr "50. חזירים"
+
+msgid "ButterLbs"
+msgstr "חמאה: ליברות"
+
+msgid "51. Butter - Lbs."
+msgstr "51. חמאה - ליברות."
+
+msgid "CheeseLbs"
+msgstr "גבינה: ליברות"
+
+msgid "52. Cheese - Lbs."
+msgstr "52. גבינה - ליברות."
+
+msgid "Beef"
+msgstr "בקר"
+
+msgid "53. Beef - Barrels or Cwts."
+msgstr "53. בשר בקר – חביות או קווינטלים"
+
+msgid "Pork"
+msgstr "חזיר"
+
+msgid "54. Pork - Barrels or Cwts."
+msgstr "54. בשר חזיר – חביות או קווינטלים"
+
+msgid "Fish"
+msgstr "דגים"
+
+msgid "55. Quantity of Fish Cured"
+msgstr "55. כמות דגים משומרים"
+
+msgid "56. Remarks"
+msgstr "56. הערות"
+
+msgid "2. Profession, trade or occupation"
+msgstr "2. מקצוע, מסחר או משלח יד"
+
+msgid "Married1851"
+msgstr "נשוי1851"
+
+msgid "4. Married during the year"
+msgstr "4. נשוי במהלך שנה"
+
+msgid "5. Religion"
+msgstr "5. דת"
+
+msgid "6. Residence, if out of limits"
+msgstr "6. מגורים, אם מחוץ לתחום"
+
+msgid "7. Age next Birthday"
+msgstr "7. גיל ביום ההולדת הבא"
+
+msgid "8. Sex: Male"
+msgstr "8. מין: זכר"
+
+msgid "SexFemail"
+msgstr "Sex Femail"
+
+msgid "9. Sex:Female"
+msgstr "9. מין: נקבה"
+
+msgid "10. Married or Single"
+msgstr "10. נשוי או רווק"
+
+msgid "Widowers"
+msgstr "אלמנים"
+
+msgid "11. Widowers"
+msgstr "11. אלמנים"
+
+msgid "Widows"
+msgstr "אלמנה"
+
+msgid "12. Widows"
+msgstr "12. אלמנה"
+
+msgid "13. Coloured Persons, Mulato or Indians"
+msgstr "13. צבעוניים אנשים, מולאטים או אינדיאנים"
+
+msgid "MemberMale"
+msgstr "חבר זכר"
+
+msgid "14. Members: Male"
+msgstr "14. חברים: זכר"
+
+msgid "MemberFemale"
+msgstr "חבר נקבה"
+
+msgid "15. Members: Female"
+msgstr "15. חברים: נקבה"
+
+msgid "NotMemberMale"
+msgstr "לא חבר זכר"
+
+msgid "16. Not Members: Male"
+msgstr "16. לא חברים: זכר"
+
+msgid "NotMemberFemale"
+msgstr "לא חבר נקבה"
+
+msgid "17. Not Members: Female"
+msgstr "17. לא חברים: נקבה"
+
+msgid "MemberAbsentMale"
+msgstr "חבר נעדרים זכר"
+
+msgid "18. Members Absent: Male"
+msgstr "18. חברים נעדרים: זכר"
+
+msgid "MemberAbsentFemale"
+msgstr "חבר נעדרים נקבה"
+
+msgid "19. Members Absent: Female"
+msgstr "19. חברות נעדרות: נקבה"
+
+msgid "DeafDumb"
+msgstr "חירש אילם"
+
+msgid "20. Deaf and Dumb"
+msgstr "20. חירש ואילם"
+
+msgid "Blind"
+msgstr "עיוור"
+
+msgid "21. Blind"
+msgstr "21. עיוור"
+
+msgid "Lunatic"
+msgstr "חולה נפש"
+
+msgid "22. Lunatics or Idiots"
+msgstr "22. חולי נפש או שוטה"
+
+msgid "23. Attending School within the year: Male"
+msgstr "23. למד בבית־ספר במהלך השנה: זכר"
+
+msgid "24. Attending School within the year: Female"
+msgstr "24. למדה בבית־ספר במהלך השנה: נקבה"
+
+msgid "CantReadMale"
+msgstr "CantReadMale"
+
+msgid "25. Persons over 20, who cannot read or write: Male"
+msgstr "25. אדם מעל 20, שלא ניתן קריאה או כתיבה: זכר"
+
+msgid "CantReadFemale"
+msgstr "CantReadFemale"
+
+msgid "26. Persons over 20, who cannot read or write: Female"
+msgstr "26. אדם מעל 20, שלא ניתן קריאה או כתיבה: נקבה"
+
+msgid "Birth1860Male"
+msgstr "לידה1860זכר"
+
+msgid "27. Births in 1860: Male"
+msgstr "27. לידות ב־1860: זכר"
+
+msgid "Birth1860Female"
+msgstr "לידה1860נקבה"
+
+msgid "28. Births in 1860: Female"
+msgstr "28. לידות ב־1860: נקבה"
+
+msgid "Death1860Male"
+msgstr "פטירה1860זכר"
+
+msgid "29. Deaths in 1860: Male"
+msgstr "29. פטירות ב־1860: זכר"
+
+msgid "Death1860Female"
+msgstr "פטירה1860נקבה"
+
+msgid "30. Deaths in 1860: Female"
+msgstr "30. פטירות ב־1860: נקבה"
+
+msgid "31. Age and cause of death"
+msgstr "31. גיל וסיבת של פטירה"
+
+msgid "32. Houses: Brick, Stone, Frame, Log, etc."
+msgstr "32. בתים: לבנים, אבן, מסגרת עץ, בולי עץ ועוד."
+
+msgid "33. Houses: No. of Stories"
+msgstr "33. בתים: מס' קומות"
+
+msgid "34. Houses: No. of families living in the house"
+msgstr "34. בתים: מס' משפחות שגרות בבית"
+
+msgid "35. Houses: Vacant"
+msgstr "35. בתים: ריקים"
+
+msgid "HouseBeingBuilt"
+msgstr "בית היות בנבנים"
+
+msgid "36. Houses: Being built"
+msgstr "36. בתים: היות בנבנים"
+
+msgid "SubDistrict"
+msgstr "תת מחוז"
+
+msgid "Vessels"
+msgstr "כלי שיט"
+
+msgid "1. Vessels"
+msgstr "1. כלי שיט"
+
+msgid "Shanties"
+msgstr "צריף"
+
+msgid "2. Shanties"
+msgstr "2. צריף"
+
+msgid "HousesBeingBuilt"
+msgstr "בתים היות בנבנים"
+
+msgid "3. Dwelling houses in construction"
+msgstr "3. מגורים בתים בבנייה"
+
+msgid "4. Dwelling houses unoccupied"
+msgstr "4. מגורים בתים לא מאוכלסים"
+
+msgid "HousesInhabited"
+msgstr "בתים מאוכלסים"
+
+msgid "5. Dwelling houses inhabited"
+msgstr "5. מגורים בתים מאוכלסים"
+
+msgid "6.Families"
+msgstr "6. משפחות"
+
+msgid "7. Names"
+msgstr "7. שמות"
+
+msgid "8. Sex"
+msgstr "8. מין"
+
+msgid "9. Age"
+msgstr "9. גיל"
+
+msgid "Birth1871"
+msgstr "לידה1871"
+
+msgid "10. Born within last twelve months"
+msgstr "10. נולדו בשנים־עשר החודשים האחרונים"
+
+msgid "11. Country or Province of Birth"
+msgstr "11. ארץ או פרובינציה של לידה"
+
+msgid "12. Religion"
+msgstr "12. דת"
+
 msgid "13. Origin"
 msgstr "13. מוצא"
+
+msgid "14. Profession, Occupation or Trade"
+msgstr "14. מקצוע, משלח יד או מסחר"
+
+msgid "15. Married or Widowed"
+msgstr "15. נשוי או אלמן"
+
+msgid "Maried1871"
+msgstr "Maried1871"
+
+msgid "16. Married within last twelve months"
+msgstr "16. נשואים בתוך אחרון שנים־עשר חודשים"
+
+msgid "Scholar"
+msgstr "תלמיד"
+
+msgid "17. Going to school"
+msgstr "17. לימודים בבית־ספר"
+
+msgid "CantRead"
+msgstr "CantRead"
+
+msgid "18. Over 20 unable to read"
+msgstr "18. מעל גיל 20, לא מסוגלים לקרוא"
+
+msgid "CantWrite"
+msgstr "CantWrite"
+
+msgid "19. Over 20 unable to write"
+msgstr "19. מעל גיל 20, לא מסוגלים לכתוב"
+
+msgid "22. Unsound mind"
+msgstr "22. אי־שפיות"
+
+msgid "23. Date of Operations and Remarks"
+msgstr "23. תאריך פעולות והערות"
+
+msgid "3. Houses in construction"
+msgstr "3. בתים בבנייה"
+
+msgid "4. Houses unoccupied"
+msgstr "4. בתים לא מאוכלסים"
+
+msgid "5. Houses inhabited"
+msgstr "5. בתים מאוכלסים"
+
+msgid "6. Families"
+msgstr "6. משפחות"
+
+msgid "Birth1881"
+msgstr "לידה1881"
+
+msgid "16. Going to school"
+msgstr "16. לימודים בבית־ספר"
+
+msgid "17. Deaf and Dumb"
+msgstr "17. חירש ואילם"
+
+msgid "18. Blind"
+msgstr "18. עיוור"
+
+msgid "19. Unsound mind"
+msgstr "19. אי־שפיות"
+
+msgid "20. Date of Operations and Remarks"
+msgstr "20. תאריך פעולות והערות"
+
+msgid "1. Vessels and Shanties"
+msgstr "1. כלי שיט וצריף"
+
+msgid "2. Houses in construction"
+msgstr "2. בתים בבנייה"
+
+msgid "3. Houses unoccupied"
+msgstr "3. בתים לא מאוכלסים"
+
+msgid "4. Houses inhabited"
+msgstr "4. בתים מאוכלסים"
+
+msgid "5. Families"
+msgstr "5. משפחות"
+
+msgid "6. Names"
+msgstr "6. שמות"
+
+msgid "7. Sex"
+msgstr "7. מין"
+
+msgid "8. Age"
+msgstr "8. גיל"
+
+msgid "9. Married or Widowed"
+msgstr "9. נשוי או אלמן"
+
+msgid "10. Relationship to Head of Family"
+msgstr "10. קשר־קרבה לראש המשפחה"
+
+msgid "12. FrenchCanadian"
+msgstr "12. צרפתי־קנדי"
 
 msgid "BirthPlaceFather"
 msgstr "מקום לידת אב"
@@ -66,23 +1223,690 @@ msgstr "מקום לידת אב"
 msgid "13. Birth Place of Father"
 msgstr "13. מקום לידת אב"
 
+msgid "BirthPlaceMother"
+msgstr "לידה מקום אם"
+
+msgid "14. Birth Place of Mother"
+msgstr "14. לידה מקום מתוך אם"
+
+msgid "15. Religion"
+msgstr "15. דת"
+
+msgid "16. Profession, Occupation or Trade"
+msgstr "16. מקצוע, משלח יד או מסחר"
+
+msgid "Employer"
+msgstr "מעסיק"
+
+msgid "17. Employers"
+msgstr "17. מעסיק"
+
+msgid "Employee"
+msgstr "עובד"
+
+msgid "18. Wage Earner"
+msgstr "18. שכיר"
+
+msgid "Unemployed"
+msgstr "מובטל"
+
+msgid "19. Unemployed during week preceding Census"
+msgstr "19. מובטלים במהלך שבוע שקדם מפקד אוכלוסין"
+
+msgid "Employees"
+msgstr "עובדים"
+
+msgid "20. Employer to state average number of hands employed during year"
+msgstr "20. מעסיק למדינה ממוצע מספר של עובדים מועסקים במהלך שנה"
+
+msgid "CanRead"
+msgstr "ניתן קריאה"
+
+msgid "21. Instruction: Read"
+msgstr "21. הוראה: קריאה"
+
+msgid "CanWrite"
+msgstr "ניתן כתיבה"
+
+msgid "22. Instruction: Write"
+msgstr "22. הוראה: כתיבה"
+
+msgid "23. Deaf and Dumb"
+msgstr "23. חירש ואילם"
+
+msgid "24. Blind"
+msgstr "24. עיוור"
+
+msgid "25. Unsound mind"
+msgstr "25. אי־שפיות"
+
+msgid "SubTitle"
+msgstr "תת כותרת"
+
+msgid "PollSub"
+msgstr "סקר משנה"
+
+msgid "House"
+msgstr "בית"
+
+msgid "1. Dwelling house"
+msgstr "1. מגורים בית"
+
+msgid "2. Family or household"
+msgstr "2. משפחה או משק בית"
+
+msgid "3. Name of each person in family"
+msgstr "3. שם כל אדם במשפחה"
+
+msgid "4. Sex"
+msgstr "4. מין"
+
+msgid "Colour"
+msgstr "צבע"
+
+msgid "5. Colour"
+msgstr "5. צבע"
+
+msgid "6. Relation to head of family"
+msgstr "6. יוחסה לראש המשפחה"
+
+msgid "7. Single, married, widowed, divorced or legally separated"
+msgstr "7. רווק, נשוי, אלמן, התגרש או חוקית פרוד"
+
+msgid "BirthMonth"
+msgstr "לידה חודש"
+
+msgid "8. Month and Date of Birth"
+msgstr "8. חודש ותאריך מתוך לידה"
+
+msgid "BirthYear"
+msgstr "לידה שנה"
+
+msgid "9. Year of birth"
+msgstr "9. שנת לידה"
+
+msgid "10. Age at last birthday"
+msgstr "10. גיל ביום ההולדת האחרון"
+
+msgid "11. Country or place of birth"
+msgstr "11. ארץ או מקום מתוך לידה"
+
+msgid "12. Year of immigration to Canada, if an immigrant"
+msgstr "12. שנת הגירה לקנדה, אם מדובר במהגר"
+
+msgid "13. Year of naturalization, if formerly an alien"
+msgstr "13. שנת התאזרחות, אם היה בעבר זר"
+
+msgid "Race"
+msgstr "גזע"
+
+msgid "14. Racial or tribal origin"
+msgstr "14. מוצא גזעי או שבטי"
+
+msgid "Nationality"
+msgstr "לאום"
+
+msgid "15. Nationality"
+msgstr "15. לאום"
+
+msgid "16. Religion"
+msgstr "16. דת"
+
+msgid "17. Profession, occupation, trade or means of living of each person"
+msgstr "17. מקצוע, משלח יד, מסחר או אמצעי מחיה של כל אדם"
+
+msgid "OwnMeans"
+msgstr "עצמי אמצעים"
+
+msgid "18. Living on own means"
+msgstr "18. חי בעצמי אמצעים"
+
+msgid "19. Employer"
+msgstr "19. מעסיק"
+
+msgid "20. Employee"
+msgstr "20. עובד"
+
+msgid "SelfEmployed"
+msgstr "עצמאי מועסקים"
+
+msgid "21. Working on own account"
+msgstr "21. עבודה עצמאית"
+
+msgid "WhereEmployed"
+msgstr "היכן מועסקים"
+
+msgid "22. Working at trade in factory or in home"
+msgstr "22. עובד במקצוע במפעל או בבית"
+
+msgid "MonthsFactory"
+msgstr "MonthsFactory"
+
+msgid "23. Months employed at trade in factory"
+msgstr "23. חודשי עבודה במקצוע במפעל"
+
+msgid "MonthsHome"
+msgstr "חודשים בית"
+
+msgid "24. Months employed at trade in home"
+msgstr "24. חודשי עיסוק במלאכה בבית"
+
+msgid "MonthsOther"
+msgstr "חודשים אחר"
+
+msgid "25. Months employed in other occupation than trace in factory or home"
+msgstr "25. חודשים בעבודה במשלח־יד אחר, שלא במסחר, במפעל או בבית"
+
+msgid "EarningsOccupation"
+msgstr "השתכרות משלח יד"
+
+msgid "26. Earnings from occupation or trade"
+msgstr "26. השתכרות ממשלח יד או מסחר"
+
+msgid "EarningsOther"
+msgstr "השתכרות אחר"
+
+msgid "27. Extra earning (From other than chief occupation or trade)"
+msgstr "27. הכנסה נוספת (שלא ממשלח־היד או המקצוע העיקרי)"
+
+msgid "SchoolMonths"
+msgstr "בית־ספר חודשים"
+
+msgid "28. Months at school in 1910"
+msgstr "28. חודשים בבית־ספר ב־1910"
+
+msgid "Read"
+msgstr "Read"
+
+msgid "29. Can read"
+msgstr "29. ניתן קריאה"
+
+msgid "Write"
+msgstr "כתיבה"
+
+msgid "30. Can write"
+msgstr "30. ניתן כתיבה"
+
+msgid "SpeakEnglish"
+msgstr "לדבר אנגלית"
+
+msgid "31. Can speak English"
+msgstr "31. יודע לדבר אנגלית"
+
+msgid "SpeakFrench"
+msgstr "דיבור צרפתית"
+
+msgid "32. Can speak French"
+msgstr "32. יכול לדבר צרפתית"
+
+msgid "33. Mother tongue (If spoken)"
+msgstr "33. אם שפה (אם מדוברת)"
+
+msgid "Infirmities"
+msgstr "Infirmities"
+
+msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
+msgstr "34. מוגבלויות: א. חירש ואילם; ב. עיוור; ג. אי־שפיות"
+
+msgid "Name from Schedule 1"
+msgstr "שם מלוח 1"
+
+msgid "Line on Schedule 2"
+msgstr "קו בלוח 2"
+
+msgid "PageRef"
+msgstr "עמוד הפניה"
+
+msgid "2. Page from Schedule 1"
+msgstr "2. עמוד מלוח 1"
+
+msgid "LineRef"
+msgstr "שורה הפניה"
+
+msgid "3. Line from Schedule 1"
+msgstr "3. קו מלוח 1"
+
+msgid "3. Place of Habitation"
+msgstr "3. מקום מגורים"
+
+msgid "HousesConst"
+msgstr "בתים בבנייה"
+
+msgid "4. Houses: In construction"
+msgstr "4. בתים: בבנייה"
+
+msgid "5. Houses: Vacant"
+msgstr "5. בתים: ריקים"
+
+msgid "6. Houses: Inhabited"
+msgstr "6. בתים: מאוכלסים"
+
+msgid "Institution"
+msgstr "מוסד"
+
+msgid "7. Institution: Special or legal name"
+msgstr "7. מוסד: מיוחד או רשמי שם"
+
 msgid "Buildings"
 msgstr "מבנים"
+
+msgid "8. Institution: Number of buildings"
+msgstr "8. מוסד: מספר מבנים"
+
+msgid "9. Number of families in house or institution"
+msgstr "9. מספר משפחות בבית או במוסד"
+
+msgid "10. Number of rooms in house or institution for each famiy"
+msgstr "10. מספר חדרים בבית או במוסד לכל משפחה"
+
+msgid "Inmates"
+msgstr "דיירי מוסד"
+
+msgid "11. Number of inmates in institution"
+msgstr "11. מספר דיירים במוסד"
+
+msgid "OwnedAcres"
+msgstr "בבעלות אקרים"
+
+msgid "12. Real Estate Owned: Grand total of acres"
+msgstr "12. נכסי מקרקעין בבעלות: סך כל האקרים"
+
+msgid "OwnedLots"
+msgstr "בבעלות מגרשים"
+
+msgid "13. Real Estate Owned: Number of town or village lots"
+msgstr "13. נכסי מקרקעין בבעלות: מספר מגרשי עיירה או כפר"
+
+msgid "OwnedHouses"
+msgstr "בבעלות בתים"
+
+msgid "14. Real Estate Owned: Number of dwelling houses"
+msgstr "14. מקרקעין בבעלות: מספר בתי מגורים"
+
+msgid "OwnedStores"
+msgstr "בבעלות חנויות"
+
+msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
+msgstr "15. נכסי מקרקעין בבעלות: מספר חנויות, מחסנים ועוד"
+
+msgid "OwnedBars"
+msgstr "בבעלות סרגל"
+
+msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
+msgstr "16. נכסי מקרקעין בבעלות: מספר אסמים, אורוות ומבני־עזר אחרים"
+
+msgid "OwnedSilos"
+msgstr "בבעלות ממגורות"
+
+msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
+msgstr "17. נכסי מקרקעין בבעלות: מספר ממגורות וקיבולת ברגל מעוקבת"
+
+msgid "OwnedFactories"
+msgstr "בבעלות מפעלים"
+
+msgid "18. Real Estate Owned: Number of manufacturing establishments"
+msgstr "18. נכסי מקרקעין בבעלות: מספר מפעלי ייצור"
+
+msgid "LeasedAcres"
+msgstr "אקרים בחכירה"
+
+msgid "19. Real Estate Leased: Grand total of acres"
+msgstr "19. נכסי מקרקעין בחכירה: סך כל האקרים"
+
+msgid "LeasedLots"
+msgstr "חלקות חכורות"
+
+msgid "20. Real Estate Leased: Number of town or village lots"
+msgstr "20. נכסי מקרקעין בחכירה: מספר מגרשי עיירה או כפר"
+
+msgid "LeasedHouses"
+msgstr "חכורים בתים"
+
+msgid "21. Real Estate Leased: Number of dwelling houses"
+msgstr "21. נכסי מקרקעין בחכירה: מספר בתי מגורים"
+
+msgid "LeasedStores"
+msgstr "חכורים חנויות"
+
+msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
+msgstr "22. נכסי מקרקעין בחכירה: מספר חנויות, מחסנים ועוד"
+
+msgid "LeasedBarns"
+msgstr "אסמים חכורים"
+
+msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
+msgstr "23. נכסי מקרקעין בחכירה: מספר אסמים, אורוות ומבני־עזר אחרים"
+
+msgid "LeasedSilos"
+msgstr "ממגורות חכורות"
+
+msgid "24. Real Estate Leased: Number of silos and capacity in cubic feet"
+msgstr "24. מקרקעין חכורים: מספר ממגורות וקיבולת ברגל מעוקב"
+
+msgid "LeasedFactories"
+msgstr "מפעלים חכורים"
+
+msgid "25. Real Estate Leased: Number of manufacturing establishments"
+msgstr "25. נכסי מקרקעין בחכירה: מספר מפעלי ייצור"
+
+msgid "Denomination"
+msgstr "זרם דתי"
+
+msgid "26. Church or place of worship: Religious denomination"
+msgstr "26. כנסייה או מקום פולחן: זרם דתי"
+
+msgid "Communicants"
+msgstr "משתתפים בסעודת האדון"
+
+msgid "27. Church or place of worship: Number of communicants"
+msgstr "27. כנסייה או מקום פולחן: מספר חברי קהילה"
 
 msgid "Seating"
 msgstr "תושבת"
 
+msgid "28. Church or place of worship: Seating capacity"
+msgstr "28. כנסייה או מקום פולחן: קיבולת מקומות ישיבה"
+
+msgid "SSDenomination"
+msgstr "SSDenomination"
+
+msgid "29. Sunday School: Religious Denomination"
+msgstr "29. בית ספר של יום ראשון: זרם דתי"
+
+msgid "SSTeachers"
+msgstr "SSTeachers"
+
+msgid "30. Sunday School: Number of officers and teachers"
+msgstr "30. בית־ספר של יום ראשון: מספר פקידים ומורים"
+
+msgid "SSScholars"
+msgstr "SSScholars"
+
+msgid "31. Sunday School: Number of Scholars"
+msgstr "31. בית־ספר של יום ראשון: מספר תלמידים"
+
+msgid "SchoolRooms"
+msgstr "בית־ספר חדרים"
+
+msgid "32. School: Number of rooms"
+msgstr "32. בית־ספר: מספר חדרים"
+
+msgid "SchoolTeachers"
+msgstr "בית־ספר מורים"
+
+msgid "33. School: Number of teachers"
+msgstr "33. בית־ספר: מספר מורים"
+
+msgid "SchoolStudents"
+msgstr "בית־ספר תלמידים"
+
+msgid "34. School: Number of Scholars"
+msgstr "34. בית־ספר: מספר תלמידים"
+
+msgid "DateVisit"
+msgstr "תאריך ביקור"
+
+msgid "35. Date of visit"
+msgstr "35. תאריך ביקור"
+
+msgid "Reason"
+msgstr "סיבה"
+
+msgid "36. The reason, if not enumerated on first visit"
+msgstr "36. סיבה, אם לא נפקדו על ראשון ביקור"
+
+msgid "DateEnum"
+msgstr "תאריך פקידה"
+
+msgid "37. Date when enumerated"
+msgstr "37. תאריך הפקידה"
+
+msgid "1. No. of family in order of visitation"
+msgstr "1. מס׳ משפחה לפי סדר הביקור"
+
+msgid "2. Name of each person in the family"
+msgstr "2. שם כל אדם במשפחה"
+
+msgid "3.Relation to head of family"
+msgstr "3. יוחסה לראש המשפחה"
+
+msgid "5. Married, single, widowed or divorced"
+msgstr "5. נשוי, רווק, אלמן או התגרש"
+
+msgid "6. Age"
+msgstr "6. גיל"
+
+msgid "7. Country or place of birth"
+msgstr "7. ארץ או מקום מתוך לידה"
+
+msgid "8. Year of immigration to Canada"
+msgstr "8. שנת הגירה לקנדה"
+
+msgid "PostOffice"
+msgstr "דואר"
+
+msgid "9. Post office address"
+msgstr "9. כתובת משרד דואר"
+
 msgid "Section"
 msgstr "מקטע"
+
+msgid "10. Location: Section"
+msgstr "10. מיקום: מקטע"
+
+msgid "11. Location: Township"
+msgstr "11. מיקום: עיירה"
+
+msgid "12. Location: Range"
+msgstr "12. מיקום: טווח"
+
+msgid "Meridian"
+msgstr "מרידיאן"
+
+msgid "13. Location: Meridian"
+msgstr "13. מיקום: מרידיאן"
+
+msgid "14. Livestock: Horses, all ages"
+msgstr "14. משק־חי: סוסים, כל הגילים"
+
+msgid "Cows"
+msgstr "פרות"
+
+msgid "15. Livestock: Milch cows"
+msgstr "15. משק־חי: פרות חלב"
+
+msgid "16. Other horned or meat cattle, all ages"
+msgstr "16. בקר מקרין או בקר לבשר אחר, כל הגילים"
+
+msgid "17. Sheep and lambs, all ages"
+msgstr "17. כבשים וטלאים, כל גיל"
+
+msgid "18. Hogs and pigs, all ages"
+msgstr "18. חזירים וחזרזירים, כל הגילים"
 
 msgid "4. Place of habitation"
 msgstr "4. מקום לידת אם"
 
+msgid "5. Sex"
+msgstr "5. מין"
+
+msgid "8. Month of birth"
+msgstr "8. חודש מתוך לידה"
+
+msgid "16. Chief occupation or trade"
+msgstr "16. משלח־יד או מקצוע עיקרי"
+
+msgid "OtherEmployment"
+msgstr "אחר תעסוקה"
+
+msgid "18. Employment other than at chief trade or occupation, if any"
+msgstr "18. תעסוקה שאינה המקצוע או משלח־היד העיקרי, אם קיימת"
+
+msgid "22. State where person employed"
+msgstr "22. מדינה היכן אדם מועסקים"
+
+msgid "WeeksOccupation"
+msgstr "שבועות משלח יד"
+
+msgid "23. Weeks employed in 1910 at chief occupation or trade"
+msgstr "23. שבועות עבודה בשנת 1910 במשלח־יד או מקצוע עיקרי"
+
+msgid "WeeksOther"
+msgstr "שבועות אחר"
+
+msgid "24. Weeks employed in 1910 at other than chief occupation or trade"
+msgstr "24. שבועות עבודה בשנת 1910 בעבודה שאינה משלח־היד או המקצוע העיקרי"
+
+msgid "HoursOccupation"
+msgstr "שעות משלח יד"
+
+msgid "25. Hours of working time per week at chief occupation"
+msgstr "25. שעות עבודה בשבוע במשלח־יד עיקרי"
+
+msgid "HoursOther"
+msgstr "שעות אחר"
+
+msgid "26. Hours of working time per week at other occupation, if any"
+msgstr "26. שעות עבודה בשבוע במשלח־יד אחר, אם כלשהו"
+
+msgid "27. Total earnings in 1910 from chief occupation or trade"
+msgstr "27. סך ההשתכרות ב־1910 ממשלח־יד עיקרי או מקצוע"
+
+msgid "28. Total earnings in 1910 from other than chief occupation or trade"
+msgstr "28. סך ההשתכרות ב־1910 מאחר ממשלח־יד עיקרי או מקצוע"
+
+msgid "Wages"
+msgstr "שכר"
+
+msgid "29. Rate of earnings per hour when employed by the hour-Cents"
+msgstr "29. שיעור השתכרות לשעה כאשר מועסקים לפי שעה – סנטים"
+
+msgid "InsuranceLife"
+msgstr "ביטוח חיים"
+
+msgid "30. Insurance: Upon life"
+msgstr "30. ביטוח: חיים"
+
+msgid "InsuranceAccident"
+msgstr "ביטוח תאונות"
+
+msgid "31. Insurance: Against accident or illness"
+msgstr "31. ביטוח: מפני תאונה או מחלה"
+
+msgid "InsuranceCost"
+msgstr "ביטוח עלות"
+
+msgid "32. Insurance: Cost of insurance in census year"
+msgstr "32. ביטוח: עלות הביטוח במפקד אוכלוסין שנה"
+
+msgid "33. Months at school in 1910"
+msgstr "33. חודשים בבית־ספר ב־1910"
+
+msgid "34. Can Read"
+msgstr "34. ניתן קריאה"
+
+msgid "35. Can Write"
+msgstr "35. ניתן כתיבה"
+
+msgid "36. Language commonly spoken"
+msgstr "36. שפה נפוץ מדוברת"
+
+msgid "SchoolCost"
+msgstr "בית־ספר עלות"
+
+msgid ""
+"37. Cost of education in 1910 for persons over 16 years of age at College, "
+"Convent or University"
+msgstr ""
+"37. עלות החינוך בשנת 1910 לאנשים מעל גיל 16 במכללה, במנזר או באוניברסיטה"
+
+msgid "38. Blind"
+msgstr "38. עיוור"
+
+msgid "39. Deaf and dumb"
+msgstr "39. חירש ואילם"
+
+msgid "40. Crazy or lunatic"
+msgstr "40. משוגע או חולה נפש"
+
+msgid "Idiotic"
+msgstr "בעל לקות שכלית"
+
+msgid "41. Idiotic or silly"
+msgstr "41. בעל לקות שכלית או שוטה"
+
+msgid "1. House"
+msgstr "1. בית"
+
+msgid "Dwelling house"
+msgstr "מגורים בית"
+
 msgid "2. Family"
 msgstr "2. משפחה"
 
+msgid "Family or household"
+msgstr "משפחה או משק בית"
+
+msgid "3. Name"
+msgstr "3. שם"
+
+msgid "Name of each person in family"
+msgstr "שם כל אדם במשפחה"
+
+msgid "5. Relation to head of family"
+msgstr "5. יוחסה לראש המשפחה"
+
+msgid "6. Single, married, widowed, divorced or legally separated"
+msgstr "6. רווק, נשוי, אלמן, התגרש או חוקית פרוד"
+
+msgid "7. Month of birth"
+msgstr "7. חודש מתוך לידה"
+
+msgid "8. Age at last birthday"
+msgstr "8. גיל ביום ההולדת האחרון"
+
 msgid "9. Country or place of birth"
 msgstr "9. מדינה או מקום לידה"
+
+msgid "10. Racial or tribal origin"
+msgstr "10. מוצא גזעי או שבטי"
+
+msgid "11. Religion"
+msgstr "11. דת"
+
+msgid "12. Months at school in 1910"
+msgstr "12. חודשים בבית־ספר ב־1910"
+
+msgid "13. Can Read"
+msgstr "13. ניתן קריאה"
+
+msgid "14. Can Write"
+msgstr "14. ניתן כתיבה"
+
+msgid "15. Language commonly spoken"
+msgstr "15. שפה נפוץ מדוברת"
+
+msgid ""
+"16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or "
+"lunatic"
+msgstr ""
+"16. מוגבלויות: א. עיוור; ב. חירש ואילם; ג. בעל לקות שכלית או שוטה; ד. חולה "
+"נפש"
+
+msgid "1. Dwelling House"
+msgstr "1. מגורים בית"
+
+msgid "2. Family, Household or Institution"
+msgstr "2. משפחה, משק בית או מוסד"
+
+msgid "3. Name of each person in family, household or institution"
+msgstr "3. שם כל אדם במשפחה, במשק הבית או במוסד"
+
+msgid "MilitaryService"
+msgstr "צבאי שירות"
+
+msgid "4. Military Service"
+msgstr "4. צבאי שירות"
 
 msgid "5. Place of Habitation: Township"
 msgstr "5. מקום מגוקים: עיירה"
@@ -96,23 +1920,797 @@ msgstr "7. מקום מגורים: קו־אורך"
 msgid "8. Place of Habitation: Municipality"
 msgstr "8. מקום מגורים: עירייה"
 
+msgid "9. Relationship to head of family or household"
+msgstr "9. קשר לראש המשפחה או משק הבית"
+
+msgid "10. Sex"
+msgstr "10. מין"
+
+msgid "11. Single, married, widowed, divorced or legally separated"
+msgstr "11. רווק, נשוי, אלמן, התגרש או חוקית פרוד"
+
+msgid "12. Age at last birthday"
+msgstr "12. גיל ביום ההולדת האחרון"
+
 msgid "13. Country or place of birth"
 msgstr "13. מדינה או מקום לידה"
+
+msgid "14. Religion"
+msgstr "14. דת"
+
+msgid "15. Year of immigration to Canada"
+msgstr "15. שנת הגירה לקנדה"
+
+msgid "16. Year of naturalization"
+msgstr "16. שנה של התאזרחות"
+
+msgid "17. Nationality"
+msgstr "17. לאום"
+
+msgid "18. Race or tribal origin"
+msgstr "18. מוצא גזעי או שבטי"
+
+msgid "19. Can speak English"
+msgstr "19. יכול לדבר אנגלית"
+
+msgid "20. Can speak French"
+msgstr "20. יכול לדבר צרפתית"
+
+msgid "OtherLanguage"
+msgstr "אחר שפה"
+
+msgid "21. Other language spoken as mother tongue"
+msgstr "21. אחר שפה מדוברת כאם שפה"
+
+msgid "22. Can Read"
+msgstr "22. ניתן קריאה"
+
+msgid "23. Can Write"
+msgstr "23. ניתן כתיבה"
+
+msgid "24. Chief occupation or trade"
+msgstr "24. משלח־יד או מקצוע עיקרי"
+
+msgid "25. Employer, \"E\", Employee, \"W\""
+msgstr "25. מעסיק, 'E', עובד, 'W'"
 
 msgid "EmploymentPlace"
 msgstr "מקום תעסוקה"
 
+msgid "26. State where person is employed"
+msgstr "26. מדינה היכן אדם מועסקים"
+
+msgid "NARA publication"
+msgstr "NARA פרסום"
+
+msgid "Roll No."
+msgstr "מס' גליל"
+
+msgid "Page No."
+msgstr "מס׳ עמוד"
+
 msgid "Sheet No."
-msgstr "מספר גליון"
+msgstr "מס' גליון"
+
+msgid "Minor Civil Division"
+msgstr "חלוקה אזרחית משנית"
 
 msgid "County of"
 msgstr "מחוז של"
 
+msgid "District (or Territory) of"
+msgstr "מחוז (או טריטוריה) של"
+
+msgid "Free white males 16 & up"
+msgstr "זכרים לבנים חופשיים בני 16 ומעלה"
+
+msgid "Free white males under 16"
+msgstr "זכרים לבנים חופשיים מתחת לגיל 16"
+
+msgid "Free white females"
+msgstr "נקבות לבנות חופשיות"
+
+msgid "All other free persons"
+msgstr "כל אחר חופשי אדם"
+
+msgid "Slaves"
+msgstr "עבד"
+
+msgid "Enumeration Date"
+msgstr "פקידה תאריך"
+
+msgid "Free white males under 10"
+msgstr "זכרים לבנים חופשיים מתחת לגיל 10"
+
+msgid "Free white males 10-15"
+msgstr "זכרים לבנים חופשיים בגילי 10–15"
+
+msgid "Free white males 16-25"
+msgstr "זכרים לבנים חופשיים בגילי 16–25"
+
+msgid "Free white males 26-44"
+msgstr "זכרים לבנים חופשיים בגילי 26–44"
+
+msgid "Free white males 45 and over"
+msgstr "זכרים לבנים חופשיים בני 45 ומעלה"
+
+msgid "Free white females under 10"
+msgstr "נקבות לבנות חופשיות מתחת לגיל 10"
+
+msgid "Free white females 10-15"
+msgstr "נקבות לבנות חופשיות בגילי 10–15"
+
+msgid "Free white females 16-25"
+msgstr "נקבות לבנות חופשיות בגילי 16–25"
+
+msgid "Free white females 26-44"
+msgstr "נקבות לבנות חופשיות בגילי 26–44"
+
+msgid "Free white females 45 and over"
+msgstr "נקבות לבנות חופשיות בני 45 ומעלה"
+
+msgid "Free white males 16-18"
+msgstr "זכרים לבנים חופשיים בגילי 16–18"
+
+msgid "Foreigners not naturalized"
+msgstr "זרים שלא התאזרחו"
+
+msgid "Persons engaged in Agriculture"
+msgstr "אנשים שעוסקים בחקלאות"
+
+msgid "Persons engaged in Commerce"
+msgstr "אנשים עוסקים במסחר"
+
+msgid "Persons engaged in Manufactures"
+msgstr "אנשים שעוסקים בייצור"
+
+msgid "Slave males under 14"
+msgstr "זכרים עבדים מתחת לגיל 14"
+
+msgid "Slave males 14-25"
+msgstr "זכרים עבדים בגילי 14–25"
+
+msgid "Slave males 26-44"
+msgstr "זכרים עבדים בגילי 26–44"
+
+msgid "Slave males 45 and over"
+msgstr "זכרים עבדים בני 45 ומעלה"
+
+msgid "Slave females under 14"
+msgstr "נקבות עבדות מתחת לגיל 14"
+
+msgid "Slave females 14-25"
+msgstr "נקבות עבדות בגילי 14–25"
+
+msgid "Slave females 26-44"
+msgstr "נקבות עבדות בגילי 26–44"
+
+msgid "Slave females 45 and over"
+msgstr "נקבות עבדות בני 45 ומעלה"
+
+msgid "Free colored males under 14"
+msgstr "זכרים צבעוניים חופשיים מתחת לגיל 14"
+
+msgid "Free colored males 14-25"
+msgstr "זכרים צבעוניים חופשיים בגילי 14–25"
+
+msgid "Free colored males 26-44"
+msgstr "זכרים צבעוניים חופשיים בגילי 26–44"
+
+msgid "Free colored males 45 and over"
+msgstr "זכרים צבעוניים חופשיים בני 45 ומעלה"
+
+msgid "Free colored females under 14"
+msgstr "נקבות צבעוניות חופשיות מתחת לגיל 14"
+
+msgid "Free colored females 14-25"
+msgstr "נקבות צבעוניות חופשיות בגילי 14–25"
+
+msgid "Free colored females 26-44"
+msgstr "נקבות צבעוניות חופשיות בגילי 26–44"
+
+msgid "Free colored females 45 and over"
+msgstr "נקבות צבעוניות חופשיות בני 45 ומעלה"
+
+msgid "Free white males under 5"
+msgstr "זכרים לבנים חופשיים מתחת לגיל 5"
+
+msgid "Free white males 5-9"
+msgstr "זכרים לבנים חופשיים בגילי 5–9"
+
+msgid "Free white males 10-14"
+msgstr "זכרים לבנים חופשיים בגילי 10–14"
+
+msgid "Free white males 15-20"
+msgstr "זכרים לבנים חופשיים בגילי 15–20"
+
+msgid "Free white males 20-29"
+msgstr "זכרים לבנים חופשיים בגילי 20–29"
+
+msgid "Free white males 30-39"
+msgstr "זכרים לבנים חופשיים בגילי 30–39"
+
+msgid "Free white males 40-49"
+msgstr "זכרים לבנים חופשיים בגילי 40–49"
+
+msgid "Free white males 50-59"
+msgstr "זכרים לבנים חופשיים בגילי 50–59"
+
+msgid "Free white males 60-69"
+msgstr "זכרים לבנים חופשיים בגילי 60–69"
+
+msgid "Free white males 70-79"
+msgstr "זכרים לבנים חופשיים בגילי 70–79"
+
+msgid "Free white males 80-89"
+msgstr "זכרים לבנים חופשיים בגילי 80–89"
+
+msgid "Free white males 90-99"
+msgstr "זכרים לבנים חופשיים בגילי 90–99"
+
+msgid "Free white males 100 and over"
+msgstr "זכרים לבנים חופשיים בני 100 ומעלה"
+
+msgid "Free white females under 5"
+msgstr "נקבות לבנות חופשיות מתחת לגיל 5"
+
+msgid "Free white females 5-9"
+msgstr "נקבות לבנות חופשיות בגילי 5–9"
+
+msgid "Free white females 10-14"
+msgstr "נקבות לבנות חופשיות בגילי 10–14"
+
+msgid "Free white females 15-20"
+msgstr "נקבות לבנות חופשיות בגילי 15–20"
+
+msgid "Free white females 20-29"
+msgstr "נקבות לבנות חופשיות בגילי 20–29"
+
+msgid "Free white females 30-39"
+msgstr "נקבות לבנות חופשיות בגילי 30–39"
+
+msgid "Free white females 40-49"
+msgstr "נקבות לבנות חופשיות בגילי 40–49"
+
+msgid "Free white females 50-59"
+msgstr "נקבות לבנות חופשיות בגילי 50–59"
+
+msgid "Free white females 60-69"
+msgstr "נקבות לבנות חופשיות בגילי 60–69"
+
+msgid "Free white females 70-79"
+msgstr "נקבות לבנות חופשיות בגילי 70–79"
+
+msgid "Free white females 80-89"
+msgstr "נקבות לבנות חופשיות בגילי 80–89"
+
+msgid "Free white females 90-99"
+msgstr "נקבות לבנות חופשיות בגילי 90–99"
+
+msgid "Free white females 100 and over"
+msgstr "נקבות לבנות חופשיות בני 100 ומעלה"
+
+msgid "Slave males under 10"
+msgstr "זכרים עבדים מתחת לגיל 10"
+
+msgid "Slave males 10-23"
+msgstr "זכרים עבדים בגילי 10–23"
+
+msgid "Slave males 24-35"
+msgstr "זכרים עבדים בגילי 24–35"
+
+msgid "Slave males 36-54"
+msgstr "זכרים עבדים בגילי 36–54"
+
+msgid "Slave males 55-99"
+msgstr "זכרים עבדים בגילי 55–99"
+
+msgid "Slave males 100 and over"
+msgstr "זכרים עבדים בני 100 ומעלה"
+
+msgid "Slave females under 10"
+msgstr "נקבות עבדות מתחת לגיל 10"
+
+msgid "Slave females 10-23"
+msgstr "נקבות עבדות בגילי 10–23"
+
+msgid "Slave females 24-35"
+msgstr "נקבות עבדות בגילי 24–35"
+
+msgid "Slave females 36-54"
+msgstr "נקבות עבדות בגילי 36–54"
+
+msgid "Slave females 55-99"
+msgstr "נקבות עבדות בגילי 55–99"
+
+msgid "Slave females 100 and over"
+msgstr "נקבות עבדות בני 100 ומעלה"
+
+msgid "Free colored males under 10"
+msgstr "זכרים צבעוניים חופשיים מתחת לגיל 10"
+
+msgid "Free colored males 10-23"
+msgstr "זכרים צבעוניים חופשיים בגילי 10–23"
+
+msgid "Free colored males 24-35"
+msgstr "זכרים צבעוניים חופשיים בגילי 24–35"
+
+msgid "Free colored males 36-54"
+msgstr "זכרים צבעוניים חופשיים בגילי 36–54"
+
+msgid "Free colored males 55-99"
+msgstr "זכרים צבעוניים חופשיים בגילי 55–99"
+
+msgid "Free colored males 100 and over"
+msgstr "זכרים צבעוניים חופשיים בני 100 ומעלה"
+
+msgid "Free colored females under 10"
+msgstr "נקבות צבעוניות חופשיות מתחת לגיל 10"
+
+msgid "Free colored females 10-23"
+msgstr "נקבות צבעוניות חופשיות בגילי 10–23"
+
+msgid "Free colored females 24-35"
+msgstr "נקבות צבעוניות חופשיות בגילי 24–35"
+
+msgid "Free colored females 36-54"
+msgstr "נקבות צבעוניות חופשיות בגילי 36–54"
+
+msgid "Free colored females 55-99"
+msgstr "נקבות צבעוניות חופשיות בגילי 55–99"
+
+msgid "Free colored females 100 and over"
+msgstr "נקבות צבעוניות חופשיות בני 100 ומעלה"
+
+msgid "White persons deaf/dumb under 14"
+msgstr "לבנים חירשים/אילמים מתחת לגיל 14"
+
+msgid "White persons deaf/dumb 14-24"
+msgstr "לבנים חירשים/אילמים בגילי 14–24"
+
+msgid "White persons deaf/dumb 25 and over"
+msgstr "לבנים חירשים/אילמים בני 25 ומעלה"
+
+msgid "White persons blind"
+msgstr "לבנים עיוורים"
+
+msgid "Aliens"
+msgstr "זרים"
+
+msgid "Slaves and colored persons deaf/dumb under 14"
+msgstr "עבדים ואנשים צבעוניים חירשים/אילמים מתחת לגיל 14"
+
+msgid "Slaves and colored persons deaf/dumb 14-24"
+msgstr "עבדים ואנשים צבעוניים חירשים/אילמים 14–24"
+
+msgid "Slaves and colored persons deaf/dumb 25 and over"
+msgstr "עבדים ואנשים צבעוניים חירשים/אילמים בני 25 ומעלה"
+
+msgid "Slaves and colored persons blind"
+msgstr "עבדים ואנשים צבעוניים עיוורים"
+
+msgid "Persons employed in Mining"
+msgstr "אנשים מועסקים בכרייה"
+
+msgid "Persons employed in Agriculture"
+msgstr "אדם מועסקים בחקלאות"
+
+msgid "Persons employed in Commerce"
+msgstr "אנשים מועסקים במסחר"
+
+msgid "Persons employed in Manufacture and trade"
+msgstr "אנשים מועסקים בייצור ובמסחר"
+
+msgid "Persons employed in Navigation of the ocean"
+msgstr "אנשים שמועסקים בספנות ימית"
+
+msgid "Persons employed in Navigation of canals, lakes, rivers"
+msgstr "אנשים שמועסקים בשיט בתעלות, אגמים ונהרות"
+
+msgid "Learned professional engineers"
+msgstr "מהנדסים מקצועיים מוסמכים"
+
+msgid "Names of pensioners for Revolutionary or military services"
+msgstr "שמות מקבלי קצבה עבור מהפכני או צבאי שירותים"
+
+msgid "Ages"
+msgstr "גיל"
+
+msgid "White persons insane and idiots at public charge"
+msgstr "לבנים חולי נפש ורפי־שכל שנתמכים מכספי ציבור"
+
+msgid "White persons insane and idiots at private charge"
+msgstr "לבנים חולי נפש ורפי־שכל שנתמכים מכספים פרטיים"
+
+msgid "Colored persons deaf/dumb"
+msgstr "אנשים צבעוניים חירש/אילם"
+
+msgid "Colored persons blind"
+msgstr "אנשים צבעוניים עיוורים"
+
+msgid "Colored persons insane and idiots at private charge"
+msgstr "אנשים צבעוניים חולי נפש ורפי־שכל שנתמכים מכספים פרטיים"
+
+msgid "Colored persons insane and idiots at public charge"
+msgstr "אנשים צבעוניים חולי נפש ורפי־שכל שנתמכים מכספי ציבור"
+
+msgid "Universities or college"
+msgstr "אוניברסיטה או מכללה"
+
+msgid "Number of students"
+msgstr "מספר תלמידים"
+
+msgid "Academies and Grammar Schools"
+msgstr "אקדמיות ובתי־ספר תיכוניים"
+
+msgid "No. of scholars"
+msgstr "מס׳ תלמידים"
+
+msgid "Primary and Common Schools"
+msgstr "בתי־ספר יסודיים ועממיים"
+
+msgid "No. of scholars at public charge"
+msgstr "מס׳ תלמידים במימון ציבורי"
+
+msgid "White persons illiterate over 20"
+msgstr "לבנים אנאלפביתים מעל גיל 20"
+
+msgid "State of"
+msgstr "מדינה מתוך"
+
+msgid "Line No."
+msgstr "מס׳ שורה"
+
 msgid "Family No."
-msgstr "מספר משפחה"
+msgstr "מס' משפחה"
+
+msgid "Value of real estate"
+msgstr "ערך מתוך מקרקעין אחוזה"
 
 msgid "Place of birth"
 msgstr "מקום הלידה"
+
+msgid "Married within the year"
+msgstr "נישא במהלך השנה"
+
+msgid "Attended school within the year"
+msgstr "למד בבית־ספר במהלך השנה"
+
+msgid "Illiterate and over 20"
+msgstr "אנאלפבית ומעל גיל 20"
+
+msgid "Deaf, dumb, blind, insane, idiotic, pauper or convict"
+msgstr "חירש, אילם, עיוור, חולה נפש, רפה־שכל, עני או אסיר מורשע"
+
+msgid "Production of Agriculture in"
+msgstr "תפוקה חקלאית ב"
+
+msgid "in the County of"
+msgstr "במחוז מתוך"
+
+msgid "Owner, Agent, or Manager"
+msgstr "בעלים, סוכן או מנהל"
+
+msgid "Acres Improved"
+msgstr "אקרים מעובדים"
+
+msgid "Acres Unimproved"
+msgstr "אקרים לא מעובדים"
+
+msgid "Cash Value of Farm"
+msgstr "ערך כספי של החווה"
+
+msgid "Value of Farming Implements and Machinery"
+msgstr "ערך כלי חקלאות ומכונות"
+
+msgid "Asses and Mules"
+msgstr "חמורים ופרדים"
+
+msgid "Working Oxen"
+msgstr "עבודה שוורים"
+
+msgid "Other Cattle"
+msgstr "אחר בקר"
+
+msgid "Swine"
+msgstr "חזירים"
+
+msgid "Value of Live Stock"
+msgstr "ערך מקנה חי"
+
+msgid "Wheat"
+msgstr "חיטה"
+
+msgid "Indian Corn"
+msgstr "אינדיאני תירס"
+
+msgid "Oats"
+msgstr "שיבולת שועל"
+
+msgid "Rice"
+msgstr "Rice"
+
+msgid "Tobacco"
+msgstr "טבק"
+
+msgid "Ginned Cotton"
+msgstr "כותנה מנופצת"
+
+msgid "Wool"
+msgstr "צמר"
+
+msgid "Peas and Beans"
+msgstr "אפונים ושעועית"
+
+msgid "Irish Potatoes"
+msgstr "אירית תפוחי אדמה"
+
+msgid "Sweet Potatoes"
+msgstr "בטטות"
+
+msgid "Barley"
+msgstr "שעורה"
+
+msgid "Buckwheat"
+msgstr "כוסמת"
+
+msgid "Value of Orchard Products"
+msgstr "ערך מתוך בוסתן תוצרים"
+
+msgid "Wine"
+msgstr "יין"
+
+msgid "Value of Market Gardens"
+msgstr "ערך גני שוק"
+
+msgid "Butter"
+msgstr "חמאה"
+
+msgid "Cheese"
+msgstr "גבינה"
+
+msgid "Hay"
+msgstr "חציר"
+
+msgid "Clover Seed"
+msgstr "זרעי תלתן"
+
+msgid "Other Grass Seeds"
+msgstr "זרעי עשב אחרים"
+
+msgid "Hops"
+msgstr "כשות"
+
+msgid "Hemp Dew Rotted"
+msgstr "קנבוס שעבר ריכוך בטל"
+
+msgid "Hemp Water Rotted"
+msgstr "קנבוס שהושרה במים"
+
+msgid "Flax"
+msgstr "פשתן"
+
+msgid "Flaxseed"
+msgstr "זרעי פשתן"
+
+msgid "Silk Cocoons"
+msgstr "פקעות משי"
+
+msgid "Maple Sugar"
+msgstr "אדר סוכר"
+
+msgid "Cane Sugar"
+msgstr "סוכר קנים"
+
+msgid "Molasses"
+msgstr "מולסה"
+
+msgid "Beeswax"
+msgstr "דונג דבורים"
+
+msgid "Value of Homemade Manufactures"
+msgstr "ערך מוצרים ביתיים"
+
+msgid "Value of Animals Slaughtered"
+msgstr "ערך בעלי־החיים שנשחטו"
+
+msgid "Post Office"
+msgstr "דואר"
+
+msgid "Value of personal estate"
+msgstr "ערך מתוך אישי אחוזה"
+
+msgid "Live Stock June 1, 1860"
+msgstr "משק־חי יוני 1, 1860"
+
+msgid "Produce during the year ending June 1, 1860"
+msgstr "תוצרת במהלך השנה שמסתיימת ב־1 ביוני 1860"
+
+msgid "Wheat, bushels of"
+msgstr "חיטה, בושלים מתוך"
+
+msgid "Rye, bushels of"
+msgstr "שיפון, בושלים מתוך"
+
+msgid "Indian Corn, bushels of"
+msgstr "אינדיאני תירס, בושלים מתוך"
+
+msgid "Oats, bushels of"
+msgstr "שיבולת שועל, בושלים מתוך"
+
+msgid "Rice, pounds of"
+msgstr "אורז, בליברות"
+
+msgid "Tobacco, pounds of"
+msgstr "טבק, ליברות מתוך"
+
+msgid "Ginned Cotton, bales of 400 lbs."
+msgstr "כותנה מנופצת, חבילות של 400 ליברות."
+
+msgid "Wool, pounds of"
+msgstr "צמר, ליברות מתוך"
+
+msgid "Peas and Beans, bushels of"
+msgstr "אפונים ושעועית, בושלים מתוך"
+
+msgid "Irish Potatoes, bushels of"
+msgstr "אירית תפוחי אדמה, בושלים מתוך"
+
+msgid "Sweet Potatoes, bushels of"
+msgstr "בטטות, בושלים של"
+
+msgid "Barley, bushels of"
+msgstr "שעורה, בושלים מתוך"
+
+msgid "Buckwheat, bushels of"
+msgstr "כוסמת, בבושלים"
+
+msgid "Value of Orchard Products in $"
+msgstr "ערך תוצרי הבוסתן בדולרים"
+
+msgid "Wine, gallons of"
+msgstr "יין, גלונים של"
+
+msgid "Value of products of market gardens"
+msgstr "ערך תוצרת גני שוק"
+
+msgid "Butter, pounds of"
+msgstr "חמאה, ליברות מתוך"
+
+msgid "Cheese, pounds of"
+msgstr "גבינה, ליברות מתוך"
+
+msgid "Hay, tons of"
+msgstr "חציר, טונות מתוך"
+
+msgid "Clover Seed, bushels of"
+msgstr "זרעי תלתן, בבושלים"
+
+msgid "Other Grass Seeds, bushels of"
+msgstr "זרעי עשב אחרים, בבושלים"
+
+msgid "Hops, pounds of"
+msgstr "כשות, ליברות מתוך"
+
+msgid "Hemp Dew Rotted, tons of"
+msgstr "קנבוס שעבר ריכוך בטל, בטונות"
+
+msgid "Hemp Water Rotted, tons of"
+msgstr "קנבוס שעבר ריכוך במים, בטונות"
+
+msgid "Flax, pounds of"
+msgstr "פשתן, ליברות מתוך"
+
+msgid "Flaxseed, bushels of"
+msgstr "זרעי פשתן, בבושלים"
+
+msgid "Silk Cocoons, pounds of"
+msgstr "פקעות משי, בליברות"
+
+msgid "Maple Sugar, pounds of"
+msgstr "אדר סוכר, ליברות מתוך"
+
+msgid "Cane sugar, hogshead of 1,000 pounds"
+msgstr "סוכר קנים, בחבית של 1,000 ליברות"
+
+msgid "Molasses, gallons of"
+msgstr "מולסה, בגלונים"
+
+msgid "Beeswax, pounds of"
+msgstr "שעוות דבורים, בליברות"
+
+msgid "Honey, pounds of"
+msgstr "דבש, בליברות"
+
+msgid "Value of home-made manufactures"
+msgstr "ערך מוצרים ביתיים"
+
+msgid "Persons who Died during the Year ending 1 June 1860 in"
+msgstr "אנשים שמתו במהלך שנה סיום 1 יוני 1860 ב"
+
+msgid "Free or slave"
+msgstr "חופשי או עבד"
+
+msgid "Married or widowed"
+msgstr "נשוי או אלמן"
+
+msgid "Month in which person died"
+msgstr "חודש בש אדם נפטר"
+
+msgid "Cause of death"
+msgstr "סיבת פטירה"
+
+msgid "Number of days ill"
+msgstr "מספר ימי מחלה"
+
+msgid "Father of foreign birth"
+msgstr "אב שנולד בארץ זרה"
+
+msgid "Mother of foreign birth"
+msgstr "אם מתוך זר לידה"
+
+msgid "Month, if born within the year"
+msgstr "חודש, אם נולד במהלך השנה"
+
+msgid "Month, if married within the year"
+msgstr "חודש, אם נישא במהלך השנה"
+
+msgid "Cannot read"
+msgstr "לא ניתן קריאה"
+
+msgid "Cannot write"
+msgstr "לא ניתן כתיבה"
+
+msgid "Deaf, dumb, blind, insane or idiotic"
+msgstr "חירש, אילם, עיוור, חולה נפש או רפה־שכל"
+
+msgid "Male citizen 21 and over"
+msgstr "אזרח זכר בן 21 ומעלה"
+
+msgid ""
+"Male citizen 21 and over where right to vote is denied on grounds other than "
+"rebellion or other crime"
+msgstr ""
+"אזרח זכר בן 21 ומעלה שזכות ההצבעה נשללה ממנו מטעמים שאינם מרד או פשע אחר"
+
+msgid "Supervisor's Dist. No."
+msgstr "מס' מחוז מפקח"
+
+msgid "Enumeration Dist. No."
+msgstr "מס׳ מחוז פקידה"
+
+msgid "Month, if born within the census year"
+msgstr "חודש, אם נולד במהלך שנת המפקד"
+
+msgid "Relationship to head"
+msgstr "קשר־קרבה לראש משק הבית"
+
+msgid "Single"
+msgstr "רווק"
+
+msgid "Widowed, divorced"
+msgstr "אלמן, התגרש"
+
+msgid "Married during the census year"
+msgstr "נשוי במהלך מפקד אוכלוסין שנה"
+
+msgid "Number of months unemployed during the census year"
+msgstr "מספר חודשי אבטלה במהלך שנת המפקד"
+
+msgid "Illness on day of enumeration"
+msgstr "מחלה ביום הפקידה"
+
+msgid "Deaf and dumb"
+msgstr "חירש ואילם"
+
+msgid "Insane"
+msgstr "חולה נפש"
+
+msgid "Maimed, crippled, bedridden, or otherwise disabled"
+msgstr "בעל מום, נכה, מרותק למיטה או מוגבל אחרת"
+
+msgid "Attended school within the census year"
+msgstr "למד בבית־ספר במהלך שנת המפקד"
 
 msgid "Place of birth of father"
 msgstr "מקום לידת אב"
@@ -120,8 +2718,488 @@ msgstr "מקום לידת אב"
 msgid "Place of birth of mother"
 msgstr "מקום לידת אם"
 
+msgid "Owner"
+msgstr "בעלים"
+
+msgid "Rents for fixed money"
+msgstr "דמי שכירות בכסף קבוע"
+
+msgid "Rents for share of products"
+msgstr "שכירות עבור חולקים מתוך תוצרים"
+
+msgid "Acres Tilled"
+msgstr "אקרים מעובדים"
+
+msgid "Acres Permanent Meadows, Pastures, Orchards, Vineyards"
+msgstr "אקרים של כרי־מרעה קבועים, מרעה, בוסתנים וכרמים"
+
+msgid "Acres Woodland and forest"
+msgstr "אקרים של חורש ויער"
+
+msgid "Acres Other unimproved land"
+msgstr "אקרים של קרקע לא מעובדת אחרת"
+
+msgid "Value of Farm"
+msgstr "ערך החווה"
+
+msgid "Value of Implements and Machinery"
+msgstr "ערך כלים ומכונות"
+
+msgid "Cost of building and repairing fences in 1879"
+msgstr "עלות בנייה ותיקון גדרות ב־1879"
+
+msgid "Cost of Fertilizers purchased in 1879"
+msgstr "עלות דשנים שנרכשו ב־1879"
+
+msgid "Farm Labor Hiring 1879"
+msgstr "שכירת כוח עבודה בחווה, 1879"
+
+msgid "Weeks hired labor in 1879"
+msgstr "שבועות עבודה שכירה ב־1879"
+
+msgid "Estimated value of all farm productions for 1879"
+msgstr "ערך משוער של כל תוצרת החווה לשנת 1879"
+
+msgid "Acreage Grass Lands Mown in 1879"
+msgstr "שטח אדמות עשב שנקצרו בשנת 1879"
+
+msgid "Acreage Grass Lands Not Mown in 1879"
+msgstr "שטח אדמות עשב שלא נקצרו בשנת 1879"
+
+msgid "Tons Hay Harvested in 1879"
+msgstr "טונות חציר שנקצרו בשנת 1879"
+
+msgid "Bushels Clover Seed Harvested in 1879"
+msgstr "בושלי זרעי תלתן שנקצרו ב־1879"
+
+msgid "Bushels Grass Seed Harvested in 1879"
+msgstr "בושלים של זרעי עשב שנקצרו בשנת 1879"
+
+msgid "Horses on hand"
+msgstr "סוסים זמינים"
+
+msgid "Mules and Asses on hand"
+msgstr "פרדים וחמורים זמינים"
+
+msgid "Working Oxen on hand"
+msgstr "עבודה שוורים זמינים"
+
+msgid "Milch Cows on hand"
+msgstr "פרות חלב זמינות"
+
+msgid "Other Cattle on hand"
+msgstr "אחר בקר זמינים"
+
+msgid "Calves Dropped in 1879"
+msgstr "עגלים נולדו ב־1879"
+
+msgid "Cattle Purchased in 1879"
+msgstr "בקר שנרכש ב־1879"
+
+msgid "Cattle Sold living in 1879"
+msgstr "בקר נמכרו חי ב־1879"
+
+msgid "Cattle Slaughtered in 1879"
+msgstr "בקר שנשחט ב־1879"
+
+msgid "Cattle Died, strayed, or stolen in 1879"
+msgstr "בקר שמת, תעה או נגנב ב־1879"
+
+msgid "Gallons Milk Sold or sent to butter or cheese factories in 1879"
+msgstr "גלוני חלב שנמכרו או נשלחו למפעלי חמאה או גבינה ב־1879"
+
+msgid "Pounds Butter made on farm in 1879"
+msgstr "ליברות חמאה שיוצרו בחווה בשנת 1879"
+
+msgid "Pounds Cheese made on farm in 1879"
+msgstr "ליברות גבינה שיוצרו בחווה בשנת 1879"
+
+msgid "Sheep on hand"
+msgstr "כבשים זמינים"
+
+msgid "Lambs Dropped in 1879"
+msgstr "טלאים נולדו ב־1879"
+
+msgid "Sheep and Lambs Purchased in 1879"
+msgstr "כבשים וטלאים שנרכשו ב־1879"
+
+msgid "Sheep and Lambs Sold living in 1879"
+msgstr "כבשים וטלאים נמכרו חי ב־1879"
+
+msgid "Sheep and Lambs Slaughtered in 1879"
+msgstr "כבשים וטלאים שנשחטו ב־1879"
+
+msgid "Sheep and Lambs Killed by dogs in 1879"
+msgstr "כבשים וטלאים שנהרגו על ידי כלבים ב־1879"
+
+msgid "Sheep and Lambs Died of Disease in 1879"
+msgstr "כבשים וטלאים שמתו ממחלה ב־1879"
+
+msgid "Sheep and Lambs Died of stress or weather in 1879"
+msgstr "כבשים וטלאים שמתו מעקה או ממזג אוויר ב־1879"
+
+msgid "Number of Fleece, Spring 1880"
+msgstr "מספר גיזות, אביב 1880"
+
+msgid "Pounds Wool, Spring 1880"
+msgstr "ליברות צמר, אביב 1880"
+
+msgid "Swine on hand"
+msgstr "חזירים זמינים"
+
+msgid "Barnyard Poultry on hand"
+msgstr "עופות חצר זמינים"
+
+msgid "Other Poultry on hand"
+msgstr "עופות אחרים זמינים"
+
+msgid "Dozen eggs produced in 1879"
+msgstr "תריסרי ביצים שהופקו ב־1879"
+
+msgid "Acres Barley in 1879"
+msgstr "אקרים שעורה ב־1879"
+
+msgid "Bushels Barley in 1879"
+msgstr "בושלים שעורה ב־1879"
+
+msgid "Acres Buckwheat in 1879"
+msgstr "אקרים של כוסמת ב־1879"
+
+msgid "Bushels Buckwheat in 1879"
+msgstr "בושלים כוסמת ב־1879"
+
+msgid "Acres Indian Corn in 1879"
+msgstr "אקרים אינדיאני תירס ב־1879"
+
+msgid "Bushels Indian Corn in 1879"
+msgstr "בושלים אינדיאני תירס ב־1879"
+
+msgid "Acres Oats in 1879"
+msgstr "אקרים שיבולת שועל ב־1879"
+
+msgid "Bushels Oats in 1879"
+msgstr "בושלים שיבולת שועל ב־1879"
+
+msgid "Acres Rye in 1879"
+msgstr "אקרים שיפון ב־1879"
+
+msgid "Bushels Rye in 1879"
+msgstr "בושלים שיפון ב־1879"
+
+msgid "Acres Wheat in 1879"
+msgstr "אקרים חיטה ב־1879"
+
+msgid "Bushels Wheat in 1879"
+msgstr "בושלים חיטה ב־1879"
+
+msgid "Bushels Canadian Peas in 1879"
+msgstr "בושלי אפונה קנדית ב־1879"
+
+msgid "Bushels Beans in 1879"
+msgstr "בושלים שעועית ב־1879"
+
+msgid "Acres Flax in 1879"
+msgstr "אקרים פשתן ב־1879"
+
+msgid "Bushels Flax Sued in 1879"
+msgstr "בושלי פשתן שנזרע ב־1879"
+
+msgid "Tons Flax Straw in 1879"
+msgstr "טונות קש פשתן ב־1879"
+
+msgid "Pounds Flax Fiber in 1879"
+msgstr "ליברות סיבי פשתן ב־1879"
+
+msgid "Acres Hemp in 1879"
+msgstr "אקרים קנבוס ב־1879"
+
+msgid "Tons Hemp in 1879"
+msgstr "טונות קנבוס ב־1879"
+
+msgid "Acres Sorghum in 1879"
+msgstr "אקרים סורגום ב־1879"
+
+msgid "Pounds Sorghum Sugar in 1879"
+msgstr "ליברות סורגום סוכר ב־1879"
+
+msgid "Gallons Sorghum Molasses in 1879"
+msgstr "גלוני מולסת סורגום ב־1879"
+
+msgid "Pounds Maple Sugar in 1879"
+msgstr "ליברות אדר סוכר ב־1879"
+
+msgid "Gallons Maple Molasses in 1879"
+msgstr "גלוני מולסת מייפל ב־1879"
+
+msgid "Acres Broom Corn in 1879"
+msgstr "אקרים של דוחן מטאטא ב־1879"
+
+msgid "Pounds Broom Corn in 1879"
+msgstr "ליברות דוחן מטאטא ב־1879"
+
+msgid "Acres Hops in 1879"
+msgstr "אקרים כשות ב־1879"
+
+msgid "Pounds Hops in 1879"
+msgstr "ליברות כשות ב־1879"
+
+msgid "Acres Potatoes (Irish) in 1879"
+msgstr "אקרים תפוחי אדמה (אירית) ב־1879"
+
+msgid "Bushels Potatoes (Irish) in 1879"
+msgstr "בושלים תפוחי אדמה (אירית) ב־1879"
+
+msgid "Acres Potatoes (Sweet) in 1879"
+msgstr "אקרים תפוחי אדמה (בטטות) ב־1879"
+
+msgid "Bushels Potatoes (Sweet) in 1879"
+msgstr "בושלים תפוחי אדמה (בטטות) ב־1879"
+
+msgid "Acres Tobacco in 1879"
+msgstr "אקרים טבק ב־1879"
+
+msgid "Pounds Tobacco in 1879"
+msgstr "ליברות טבק ב־1879"
+
+msgid "Acres Apple Orchards in 1879"
+msgstr "אקרים תפוח בוסתנים ב־1879"
+
+msgid "Number of Bearing Apple Trees in 1879"
+msgstr "מספר נושא פרי תפוח אילנות ב־1879"
+
+msgid "Bushels Apples in 1879"
+msgstr "בושלי תפוחים ב־1879"
+
+msgid "Acres Peach Orchards in 1879"
+msgstr "אקרים אפרסק בוסתנים ב־1879"
+
+msgid "Number of Bearing Peach Trees in 1879"
+msgstr "מספר נושא פרי אפרסק אילנות ב־1879"
+
+msgid "Bushels Peaches in 1879"
+msgstr "בושלי אפרסקים ב־1879"
+
+msgid "Total value of Orchard Products Sold or Consumed in 1879"
+msgstr "הערך הכולל של תוצרת בוסתן שנמכרה או נצרכה ב־1879"
+
+msgid "Acres Nurseries"
+msgstr "אקרים של משתלות"
+
+msgid "Value of Nursery Products Sold"
+msgstr "ערך תוצרת משתלות שנמכרה"
+
+msgid "Acres Vineyards"
+msgstr "אקרים כרמים"
+
+msgid "Grapes sold in 1879"
+msgstr "ענבים שנמכרו ב־1879"
+
+msgid "Wine made in 1879"
+msgstr "יין שיוצר ב־1879"
+
+msgid "Value of Market Garden Produce Sold in 1879"
+msgstr "ערך תוצרת גני שוק שנמכרה ב־1879"
+
+msgid "Pounds Honey in 1879"
+msgstr "ליברות דבש ב־1879"
+
+msgid "Pounds Beeswax in 1879"
+msgstr "ליברות שעוות דבורים ב־1879"
+
+msgid "Cords of Wood cut in 1879"
+msgstr "קורדים של עץ שנכרת ב־1879"
+
+msgid "Value of forest products sold or consumed in 1879"
+msgstr "ערך תוצרת יער שנמכרה או נצרכה ב־1879"
+
+msgid "Street and No."
+msgstr "רחוב ומס׳"
+
+msgid "Ward"
+msgstr "Ward"
+
+msgid "Veteran of Civil War or widow of a veteran"
+msgstr "ותיק מלחמת האזרחים או אלמנת ותיק מלחמה"
+
+msgid "Single, married, widowed or divorced"
+msgstr "רווק, נשוי, אלמן או התגרש"
+
+msgid "Mother of how many children and number of children living"
+msgstr "אם לכמה ילדים ומספר הילדים החיים"
+
+msgid "Number of years in US"
+msgstr "מספר שנים בארצות הברית"
+
+msgid "Naturalized"
+msgstr "התאזרח"
+
+msgid "Naturalization papers taken out"
+msgstr "הוצאו מסמכי התאזרחות"
+
+msgid "Able to read"
+msgstr "יכולת קריאה"
+
+msgid "Able to write"
+msgstr "יכולת כתיבה"
+
+msgid "Able to speak English; if not, the language spoken"
+msgstr "יכולת לדבר אנגלית; אם לא – השפה המדוברת"
+
+msgid "Suffering from disease"
+msgstr "סובל ממחלה"
+
+msgid "Whether defective and name of defect"
+msgstr "האם קיים ליקוי ומה שם הליקוי"
+
+msgid "Prisoner, convict, homeless child or pauper"
+msgstr "אסיר, מורשע, ילד חסר בית או עני"
+
+msgid "Supplemental schedule and page"
+msgstr "לוח משלים ועמוד"
+
+msgid "Supervisor's District No."
+msgstr "מס׳ מחוז מפקח"
+
+msgid "Enumeration District No."
+msgstr "מס׳ מחוז פקידה"
+
+msgid "Rank"
+msgstr "Rank"
+
+msgid "Company"
+msgstr "פלוגה"
+
+msgid "Regiment/Vessel"
+msgstr "רגימנט/כלי שיט"
+
+msgid "Date Enlisted"
+msgstr "תאריך התגייס"
+
 msgid "Date Discharged"
 msgstr "תאריך שחרור"
+
+msgid "Length of Service"
+msgstr "משך השירות"
+
+msgid "Disability Incurred"
+msgstr "נכות שנגרמה"
+
+msgid "State (or Territory) of"
+msgstr "מדינה (או טריטוריה) של"
+
+msgid "Division of County"
+msgstr "חלוקה מתוך מחוז"
+
+msgid "Name of Institution"
+msgstr "שם המוסד"
+
+msgid "City, Town, Village"
+msgstr "עיר, עיירה, כפר"
+
+msgid "Ward of city"
+msgstr "רובע מתוך עיר"
+
+msgid "Street Address"
+msgstr "רחוב כתובת"
+
+msgid "Relation to head"
+msgstr "יוחסה לראש משק הבית"
+
+msgid "Month of birth"
+msgstr "חודש מתוך לידה"
+
+msgid "Year of birth"
+msgstr "שנת לידה"
+
+msgid "Years of present marriage"
+msgstr "שנות הנישואין הנוכחיים"
+
+msgid "Mother of how many children"
+msgstr "אם מתוך כיצד רבים ילדים"
+
+msgid "Number of children living"
+msgstr "מספר הילדים החיים"
+
+msgid "Year of immigration"
+msgstr "שנת הגירה"
+
+msgid "Months not employed"
+msgstr "חודשים לא מועסקים"
+
+msgid "Attended school"
+msgstr "למד בבית־ספר"
+
+msgid "Can read"
+msgstr "ניתן קריאה"
+
+msgid "Can write"
+msgstr "ניתן כתיבה"
+
+msgid "Can speak English"
+msgstr "יכול לדבר אנגלית"
+
+msgid "Home owned or rented"
+msgstr "בית בבעלות או שכור"
+
+msgid "Owned free or mortgaged"
+msgstr "בבעלות מלאה או ממושכן"
+
+msgid "Farm or house"
+msgstr "חווה או בית"
+
+msgid "Number of farm schedule"
+msgstr "מספר לוח חווה"
+
+msgid "Naturalized or alien"
+msgstr "התאזרח או זר"
+
+msgid "Able to speak English; if not, language spoken"
+msgstr "יכולת לדבר אנגלית; אם לא – השפה המדוברת"
+
+msgid "Nature of industry"
+msgstr "אופי הענף"
+
+msgid "Employer, employee or working on own account"
+msgstr "מעסיק, עובד או עובד עצמאי"
+
+msgid "Out of work"
+msgstr "חוץ של עבודה"
+
+msgid "Weeks out of work in 1909"
+msgstr "שבועות ללא עבודה בשנת 1909"
+
+msgid "Attended school since Sept. 1, 1909"
+msgstr "למד בבית־ספר מאז 1 בספטמבר 1909"
+
+msgid "Civil War veteran"
+msgstr "אזרחי מלחמה ותיק מלחמה"
+
+msgid "If owned, free or mortgaged"
+msgstr "אם בבעלות, חופשי או משועבד"
+
+msgid "Year of naturalization"
+msgstr "שנה של התאזרחות"
+
+msgid "Attended school since Sept. 1, 1919"
+msgstr "למד בית־ספר מאז ספטמבר. 1, 1919"
+
+msgid "Mother tongue"
+msgstr "אם שפה"
+
+msgid "Father mother tongue"
+msgstr "אב אם שפה"
+
+msgid "Mother's mother tongue"
+msgstr "שפת האם של האם"
+
+msgid "Able to speak English"
+msgstr "יכולת לדבר אנגלית"
+
+msgid "Industry"
+msgstr "ענף"
+
+msgid "Employer, worker or working on own account"
+msgstr "מעסיק, עובד או עובד עצמאי"
 
 msgid "Incorporated place"
 msgstr "מקום משולב"
@@ -129,41 +3207,973 @@ msgstr "מקום משולב"
 msgid "Unincorporated place"
 msgstr "מקום לא מאוגד"
 
+msgid "Value of home or monthly rental"
+msgstr "ערך הבית או דמי שכירות חודשיים"
+
 msgid "Radio set"
 msgstr "מערכת רדיו"
+
+msgid "Farm?"
+msgstr "חווה?"
+
+msgid "Marital condition"
+msgstr "מצב משפחתי"
+
+msgid "Age at first marriage"
+msgstr "גיל בראשון נישואין"
+
+msgid "Attended school since Sept. 1, 1929"
+msgstr "למד בית־ספר מאז ספטמבר. 1, 1929"
+
+msgid "Able to read and write"
+msgstr "יודע לקרוא ולכתוב"
+
+msgid "Language before coming to US"
+msgstr "שפה לפני ההגעה לארצות הברית"
+
+msgid "Class of worker"
+msgstr "סוג מתוך עובד"
+
+msgid "Employed"
+msgstr "מועסק"
+
+msgid "Line number for unemployed"
+msgstr "קו מספר עבור מובטל"
+
+msgid "Veteran"
+msgstr "ותיק צבא"
+
+msgid "What war"
+msgstr "מה מלחמה"
+
+msgid "Home Owned/Rented"
+msgstr "בית בבעלות/בשכירות"
+
+msgid "Home value/monthly rental"
+msgstr "שווי הבית/דמי שכירות חודשיים"
+
+msgid "Color/Race"
+msgstr "צבע/גזע"
+
+msgid "Age at Last Birthday"
+msgstr "גיל ביום ההולדת האחרון"
+
+msgid "Marital Status"
+msgstr "מצב משפחתי"
+
+msgid "Attended school/college since March 1, 1940"
+msgstr "למד בית־ספר/מכללה מאז מרץ 1, 1940"
+
+msgid "Highest grade completed"
+msgstr "הכיתה הגבוהה ביותר שהושלמה"
+
+msgid "Citizenship if foreign born"
+msgstr "אזרחות אם זרות נולדו"
+
+msgid "City (April 1, 1935)"
+msgstr "עיר (אפריל 1, 1935)"
+
+msgid "State (Territory/Country)"
+msgstr "מדינה (טריטוריה/ארץ)"
+
+msgid "On a Farm (Y/N)"
+msgstr "בחווה (Y/N)"
+
+msgid "At Work during week March 24-30"
+msgstr "בעבודה במהלך שבוע מרץ 24-30"
+
+msgid "public Emergency Work?"
+msgstr "עבודה ציבורית לשעת חירום?"
+
+msgid "Seeking work?"
+msgstr "חיפוש עבודה?"
+
+msgid "Have a Job?"
+msgstr "האם יש עבודה?"
+
+msgid "housework (H), school (S), unable to work (U) or other (Ot)"
+msgstr "עבודת בית (H), בית־ספר (S), אי־יכולת לעבוד (U) או אחר (Ot)"
+
+msgid "# hours worked during week March 24-30, 1940"
+msgstr "# שעות עבד במהלך שבוע מרץ 24-30, 1940"
+
+msgid "Weeks unemployed up to March 30, 1940"
+msgstr "שבועות אבטלה עד 30 במרץ 1940"
+
+msgid "# weeks worked in 1939"
+msgstr "# שבועות עבד ב־1939"
+
+msgid "Amount of money, wages, salary in 1939"
+msgstr "סכום כסף, שכר או משכורת בשנת 1939"
+
+msgid "Income of more than $50 from other sources?"
+msgstr "הכנסה של יותר מ־$50 ממקורות אחרים?"
+
+msgid "Number of Farm Schedule"
+msgstr "מספר לוח חווה"
+
+msgid "Veteran?"
+msgstr "ותיק מלחמה?"
+
+msgid "If child, veteran-father dead?"
+msgstr "אם ילד – האם האב הוותיק נפטר?"
+
+msgid "War/Military Service"
+msgstr "מלחמה/שירות צבאי"
+
+msgid "Have Federal SSN?"
+msgstr "האם יש מספר ביטוח לאומי פדרלי?"
+
+msgid "Deductions made in 1939?"
+msgstr "האם בוצעו ניכויים ב־1939?"
+
+msgid "If so, made from all, 1/2 or more, less from wages in 1939?"
+msgstr ""
+"אם כן, האם הגיע מכל השכר, ממחצית או יותר, או מפחות ממחצית השכר בשנת 1939?"
+
+msgid "Usual Occupation"
+msgstr "רגילה משלח־יד"
+
+msgid "Usual Industry"
+msgstr "ענף רגיל"
+
+msgid "Usual Class of Work"
+msgstr "רגילה סוג של עבודה"
+
+msgid "If woman, married more than once?"
+msgstr "אם אישה – האם נישאה יותר מפעם אחת?"
+
+msgid "Number of children ever born"
+msgstr "מספר הילדים שנולדו אי־פעם"
 
 msgid "Incorporated place or township"
 msgstr "מקום משולב או העירייה"
 
+msgid "E. D. Number"
+msgstr "E. D. מספר"
+
+msgid "Hotel, large rooming house, institution, military installation, etc."
+msgstr "מלון, בית חדרים גדול, מוסד, מתקן צבאי ועוד."
+
+msgid "Is this house on a farm (or ranch)?"
+msgstr "האם בית זה נמצא בחווה?"
+
+msgid "On 3+ acres of land?"
+msgstr "ב־3+ אקרים מתוך קרקע?"
+
 msgid "Is this house on a place of three or more acres?"
 msgstr "האם בית זה נמצע על שלושה אקרים או יותר?"
+
+msgid "Agricultural Questionnaire Number"
+msgstr "מספר שאלון חקלאי"
+
+msgid "Age at last birthday"
+msgstr "גיל ביום ההולדת האחרון"
+
+msgid "How old was he on his last birthday?"
+msgstr "בן כמה היה ביום הולדתו האחרון?"
+
+msgid "Marital status"
+msgstr "מצב משפחתי"
+
+msgid "Is he now married, widowed, divorced, separated, or never married?"
+msgstr "האם הוא נשוי כעת, אלמן, גרוש, פרוד או מעולם לא נישא?"
+
+msgid "What State (or foreign country) was he born in?"
+msgstr "באיזו מדינה (או ארץ זרה) הוא נולד?"
+
+msgid "Is he naturalized?"
+msgstr "האם התאזרח?"
+
+msgid "housework (H), work (W), unable to work (U) or other (Ot)"
+msgstr "עבודת בית (H), עבודה (W), אי־יכולת לעבוד (U) או אחר (Ot)"
+
+msgid ""
+"What was this person doing most of last week—working, keeping house, or "
+"something else?"
+msgstr "מה עשה אדם זה ברוב השבוע האחרון – עבד, ניהל משק בית או עסק במשהו אחר?"
+
+msgid "Worked last week? (Y/N)"
+msgstr "עבד אחרון שבוע? (Y/N)"
+
+msgid ""
+"Did this person do any work at all last week, not counting work around the "
+"house?"
+msgstr "האם אדם זה עבד כלל בשבוע שעבר, בלי לכלול עבודות סביב הבית?"
+
+msgid "Looking for work?"
+msgstr "איתור עבור עבודה?"
+
+msgid "Was this person looking for work?"
+msgstr "היה זה אדם איתור עבור עבודה?"
+
+msgid "Has a job or business?"
+msgstr "יש עבודה או עסק?"
+
+msgid "Even though he didn’t work last week, does he have a job or business?"
+msgstr "אף שלא עבד בשבוע שעבר, האם יש לו עבודה או עסק?"
+
+msgid "# hours worked last week"
+msgstr "# שעות עבד אחרון שבוע"
+
+msgid "How many hours did he work last week?"
+msgstr "כמה שעות הוא עבד בשבוע שעבר?"
 
 msgid "Type of work"
 msgstr "סוג עבודה"
 
+msgid "What kind of work was he doing?"
+msgstr "איזה סוג עבודה הוא ביצע?"
+
+msgid "Business or industry"
+msgstr "עסק או ענף"
+
+msgid "What kind of business or industry was he working in?"
+msgstr "באיזה סוג עסק או ענף הוא עבד?"
+
+msgid "Same house in Apr 1949?"
+msgstr "אותו בית באפריל 1949?"
+
+msgid "Was he living in this same house a year ago?"
+msgstr "האם גר באותו בית לפני שנה?"
+
+msgid "Farm in Apr 1949?"
+msgstr "חווה באפריל 1949?"
+
+msgid "Was he living on a farm a year ago?"
+msgstr "האם הוא גר בחווה לפני שנה?"
+
+msgid "Same county in Apr 1949?"
+msgstr "אותו מחוז באפריל 1949?"
+
+msgid "Was he living in this same county a year ago?"
+msgstr "האם הוא גר באותו מחוז לפני שנה?"
+
+msgid "State or foreign country"
+msgstr "מדינה או זר ארץ"
+
+msgid "What country was his father born in?"
+msgstr "מה ארץ היה שלו אב נולד ב?"
+
+msgid "What country was his mother born in?"
+msgstr "מה ארץ היה שלו אם נולד ב?"
+
+msgid "Highest grade attended"
+msgstr "הכיתה הגבוהה ביותר שנלמדה"
+
+msgid "What is the highest grade of school that he has attended?"
+msgstr "מהי הכיתה הגבוהה ביותר שבה למד בבית־ספר?"
+
+msgid "Completed?"
+msgstr "הושלם?"
+
+msgid "Did he finish this grade?"
+msgstr "האם סיים את הכיתה הזאת?"
+
+msgid "Attended school since Feb 1, 1950?"
+msgstr "לימודים בבית־ספר מאז 1 בפברואר 1950?"
+
+msgid "Has he attended school at any time since February 1st?"
+msgstr "האם למד בבית־ספר בזמן כלשהו מאז 1 בפברואר?"
+
+msgid "How many weeks has he been looking for work?"
+msgstr "כמה שבועות הוא חיפש עבודה?"
+
+msgid "# weeks worked in 1949"
+msgstr "# שבועות עבד ב־1949"
+
+msgid ""
+"Last year, in how many weeks did this person do any work at all, not "
+"counting work around the house?"
+msgstr "בשנה שעברה, בכמה שבועות אדם זה עבד בכלל, בלי לכלול עבודות סביב הבית?"
+
+msgid "Amount of wages/salary in 1949"
+msgstr "סכום שכר/משכורת בשנת 1949"
+
+msgid ""
+"Last year, how much money did he earn working as an employee for wages or "
+"salary?"
+msgstr "בשנה שעברה, כמה כסף השתכר מעבודה כשכיר תמורת שכר או משכורת?"
+
+msgid "Amount of money from own business in 1949"
+msgstr "סכום כסף מעסק עצמאי ב־1949"
+
+msgid ""
+"Last year, how much money did he earn working in his own business, "
+"professional practice, or farm?"
+msgstr "בשנה שעברה, כמה כסף הרוויח מעבודה בעסק, בעיסוק מקצועי או בחווה משלו?"
+
+msgid "Amount of other income in 1949"
+msgstr "סכום הכנסה אחרת בשנת 1949"
+
+msgid ""
+"Last year, how much money did he receive from interest, dividends, veteran’s "
+"allowances, pensions, rents, or other income?"
+msgstr ""
+"בשנה שעברה, כמה כסף קיבל מריבית, דיבידנדים, קצבאות ותיקי צבא, פנסיות, דמי "
+"שכירות או הכנסה אחרת?"
+
+msgid "Relatives in household wages/salary in 1949"
+msgstr "שכר/משכורת של קרובים במשק הבית בשנת 1949"
+
+msgid ""
+"Last year, how much money did his relatives in this household earn working "
+"for wages or salary?"
+msgstr ""
+"בשנה שעברה, כמה כסף השתכרו קרוביו במשק בית זה מעבודה תמורת שכר או משכורת?"
+
+msgid "Relatives in household earnings from own business in 1949"
+msgstr "הכנסות קרובים במשק הבית מעסק עצמאי בשנת 1949"
+
+msgid ""
+"Last year, how much money did his relatives in this household earn in own "
+"business, professional practice, or farm?"
+msgstr ""
+"בשנה שעברה, כמה כסף הרוויחו קרוביו במשק בית זה מעסק עצמאי, מעיסוק מקצועי או "
+"מחווה?"
+
+msgid "Relatives in household other income in 1949"
+msgstr "הכנסה אחרת של קרובים במשק הבית בשנת 1949"
+
+msgid ""
+"Last year, how much money did his relatives in this household receive from "
+"interest, dividends, veteran’s allowances, pensions, rents, or other income?"
+msgstr ""
+"בשנה שעברה, כמה כסף קיבלו קרוביו במשק בית זה מריבית, דיבידנדים, קצבאות ותיקי "
+"צבא, פנסיות, דמי שכירות או הכנסה אחרת?"
+
+msgid "WWII Veteran?"
+msgstr "ותיק מלחמת העולם השנייה?"
+
+msgid "Did he ever serve in the U. S. Armed Forces during World War II?"
+msgstr ""
+"האם שירת אי־פעם בכוחות המזוינים של ארצות הברית במהלך מלחמת העולם השנייה?"
+
+msgid "WWI Veteran?"
+msgstr "ותיק מלחמת העולם הראשונה?"
+
+msgid "World War I?"
+msgstr "מלחמת העולם הראשונה?"
+
+msgid "Any other time, including present service?"
+msgstr "כל זמן אחר, כולל שירות נוכחי?"
+
+msgid "What kind of work did this person do in his last job?"
+msgstr "איזה סוג עבודה ביצע אדם זה בעבודתו האחרונה?"
+
+msgid "What kind of business or industry did he work in?"
+msgstr "באיזה סוג עסק או ענף עבד?"
+
+msgid "Class of worker [last job]"
+msgstr "סוג עובד [עבודה אחרונה]"
+
+msgid "Has this person been married more than once?"
+msgstr "האם אדם זה נישא יותר מפעם אחת?"
+
+msgid "# years since marriage ended"
+msgstr "מספר השנים מאז שהנישואין הסתיימו"
+
+msgid ""
+"How many years since this person was married, widowed, divorced, or "
+"separated?"
+msgstr "כיצד רבים שנים מאז זה אדם היה נשוי, אלמן, התגרש, או פרוד?"
+
+msgid "How many children has she ever borne, not counting stillbirths?"
+msgstr "כמה ילדים ילדה אי־פעם, בלי לספור לידות מת?"
+
+msgid "Census Date"
+msgstr "מפקד אוכלוסין תאריך"
+
+msgid "District of"
+msgstr "מחוז מתוך"
+
+msgid "Married Y/N"
+msgstr "נשוי Y/N"
+
+msgid "Spouses Age"
+msgstr "זוגאים גיל"
+
 msgid "File No."
-msgstr "מספר קובץ"
+msgstr "מס' קובץ"
+
+msgid "Post Office Address"
+msgstr "דואר משרד כתובת"
+
+msgid "Entered service as (rank)"
+msgstr "נכנס לשירות כ־(דרגה)"
+
+msgid "Date Entered"
+msgstr "תאריך כניסה"
 
 msgid "Place of Enlistment"
 msgstr "מקום הגיוס"
 
+msgid "Name, Letter of Co., Number of Regiment"
+msgstr "שם, אות הפלוגה ומספר הרגימנט"
+
+msgid "Continued until"
+msgstr "נמשך עד"
+
+msgid "Re-enlisted as"
+msgstr "התגייס מחדש כ"
+
+msgid "On date"
+msgstr "בתאריך"
+
+msgid "and continued until"
+msgstr "ונמשך עד"
+
+msgid "3rd enlistment"
+msgstr "גיוס שלישי"
+
+msgid "Enlisted on"
+msgstr "התגייס ב"
+
 msgid "Enlistment Place"
 msgstr "מקום גיוס"
 
+msgid "in the command of"
+msgstr "בפיקוד של"
+
+msgid "Other service, if any"
+msgstr "אחר שירות, אם כלשהו"
+
 msgid "No. on pension roll"
-msgstr "מספר ברשימת הפנסיה"
+msgstr "מס' ברשימת הפנסיה"
+
+msgid "County lived in when first placed on roll"
+msgstr "מחוז המגורים בעת הרישום הראשון ברשימה"
+
+msgid "Other states lived in and when"
+msgstr "מדינות אחרות שבהן התגורר ומתי"
+
+msgid "Moved to Alabama"
+msgstr "עבר לאלבמה"
+
+msgid "Branch of service"
+msgstr "ענף מתוך שירות"
+
+msgid "Letter of Company"
+msgstr "אות של חברה"
+
+msgid "Number of Regiment"
+msgstr "מספר רגימנט"
+
+msgid "Was it an Alabama Regiment"
+msgstr "האם היה זה רגימנט אלבמה"
+
+msgid "If not, give name of state"
+msgstr "אם לא, יש לציין את שם המדינה"
+
+msgid "Name of your Captain"
+msgstr "שם הקפטן"
+
+msgid "Name of your Colonel"
+msgstr "שם הקולונל"
+
+msgid "By what other name was your Company called"
+msgstr "לפי מה אחר שם היה המערכת חברה נקרא"
+
+msgid "By what other name was your Regiment called"
+msgstr "לפי מה אחר שם היה המערכת רגימנט נקרא"
+
+msgid "Battles in which you took part"
+msgstr "קרבות שבהם השתתף"
+
+msgid "Ever wounded"
+msgstr "נפצע אי־פעם"
+
+msgid "When wounded"
+msgstr "מועד הפציעה"
+
+msgid "In what battles"
+msgstr "באילו קרבות"
+
+msgid "Were you captured"
+msgstr "האם נשבית"
+
+msgid "When captured"
+msgstr "כאשר נשבה"
+
+msgid "Where captured"
+msgstr "היכן נשבה"
+
+msgid "Were you imprisoned"
+msgstr "האם נכלאת"
+
+msgid "When imprisoned"
+msgstr "כאשר נכלא"
+
+msgid "Where imprisoned"
+msgstr "היכן נכלא"
+
+msgid "How were you discharged"
+msgstr "כיצד שוחררת"
+
+msgid "Did you transfer to another Company or Command"
+msgstr "האם הועברת לפלוגה או לפיקוד אחר"
+
+msgid "If so, give Company and Regiment"
+msgstr "אם כן, יש לציין פלוגה ורגימנט"
+
+msgid "What branch of service and date of transfer"
+msgstr "איזו זרוע שירות ותאריך העברה"
+
+msgid "Captains name"
+msgstr "שם הקפטן"
+
+msgid "Colonels name"
+msgstr "שם הקולונל"
+
+msgid "Length of service"
+msgstr "משך השירות"
+
+msgid "Are you married"
+msgstr "ניתן נשוי"
+
+msgid "Age of wife"
+msgstr "גיל מתוך אישה"
+
+msgid "Birthplace of wife"
+msgstr "מקום לידה מתוך אישה"
+
+msgid "Date married"
+msgstr "תאריך נשוי"
 
 msgid "Place married"
 msgstr "מקום נישואין"
 
+msgid "When, where and circumstances you quit the service"
+msgstr "מתי, היכן ובאילו נסיבות הסתיים השירות"
+
+msgid "Paroled at close of war"
+msgstr "שוחרר על־תנאי בסיום המלחמה"
+
+msgid "If so, when"
+msgstr "אם כן, מתי"
+
+msgid "and where"
+msgstr "והיכן"
+
+msgid "Have you your parole"
+msgstr "האם שחרור על תנאי"
+
+msgid "Voting Precinct and County"
+msgstr "הצבעה מתחם ומחוז"
+
+msgid "With whom are you living"
+msgstr "עם מי הם יש בחיים"
+
+msgid "Regularly received your pension warrant"
+msgstr "קבלת המחאת הפנסיה באופן סדיר"
+
+msgid "If No give information regarding the same"
+msgstr "אם לא, יש למסור מידע בנוגע לכך"
+
+msgid "Witness name and P.O Address"
+msgstr "שם העד וכתובת דואר"
+
+msgid "Widow of"
+msgstr "אלמנה מתוך"
+
+msgid "Her age"
+msgstr "שלה גיל"
+
+msgid "Her date of birth"
+msgstr "שלה תאריך מתוך לידה"
+
+msgid "Date of marriage"
+msgstr "תאריך מתוך נישואין"
+
+msgid "Born within census year"
+msgstr "נולדו בתוך מפקד אוכלוסין שנה"
+
+msgid "Married during census year"
+msgstr "נשוי במהלך מפקד אוכלוסין שנה"
+
+msgid "Months unemployed during census year"
+msgstr "חודשי אבטלה במהלך שנת המפקד"
+
+msgid "(Day of the Enumerator's visit) sick or temporarily disabled"
+msgstr "(יום ביקור המונה) חולה או מוגבל זמנית"
+
+msgid "Deaf and Dumb"
+msgstr "חירש ואילם"
+
+msgid "Maimed, Crippled, Bedridden, or otherwise disabled."
+msgstr "בעל מום, נכה, מרותק למיטה או מוגבל אחרת."
+
+msgid "Can not read"
+msgstr "ניתן לא קריאה"
+
+msgid "Can not write"
+msgstr "ניתן לא כתיבה"
+
+msgid "Street Name"
+msgstr "רחוב שם"
+
+msgid "House No."
+msgstr "מס׳ בית"
+
+msgid "Precinct No."
+msgstr "מס' מתחם"
+
+msgid "Inside or Outside City Limits"
+msgstr "בתוך גבולות העיר או מחוצה להם"
+
+msgid "Age Male"
+msgstr "גיל זכר"
+
+msgid "Age Female"
+msgstr "גיל נקבה"
+
 msgid "Relation to Family"
 msgstr "קשר למשפחה"
+
+msgid "Degree of Education"
+msgstr "דרגת מתוך השכלה"
+
+msgid "Owner or Renter"
+msgstr "בעלים או שוכר"
+
+msgid "In or Out"
+msgstr "באו חוץ"
+
+msgid "White Males Under 10"
+msgstr "זכרים לבנים מתחת לגיל 10"
+
+msgid "White Males 10 to 20"
+msgstr "זכרים לבנים בגילי 10–20"
+
+msgid "White Males 20 to 30"
+msgstr "זכרים לבנים בגילי 20–30"
+
+msgid "White Males 30 to 40"
+msgstr "זכרים לבנים בגילי 30–40"
+
+msgid "White Males 40 to 50"
+msgstr "זכרים לבנים בגילי 40–50"
+
+msgid "White Males 50 to 60"
+msgstr "זכרים לבנים בגילי 50–60"
+
+msgid "White Males 60 to 70"
+msgstr "זכרים לבנים בגילי 60–70"
+
+msgid "White Males 70 to 80"
+msgstr "זכרים לבנים בגילי 70–80"
+
+msgid "White Males 80 to 90"
+msgstr "זכרים לבנים בגילי 80–90"
+
+msgid "White Males Over 90"
+msgstr "זכרים לבנים מעל גיל 90"
+
+msgid "White Females Under 10"
+msgstr "נקבות לבנות מתחת לגיל 10"
+
+msgid "White Females 10 to 20"
+msgstr "נקבות לבנות בגילי 10–20"
+
+msgid "White Females 20 to 30"
+msgstr "נקבות לבנות בגילי 20–30"
+
+msgid "White Females 30 to 40"
+msgstr "נקבות לבנות בגילי 30–40"
+
+msgid "White Females 40 to 50"
+msgstr "נקבות לבנות בגילי 40–50"
+
+msgid "White Females 50 to 60"
+msgstr "נקבות לבנות בגילי 50–60"
+
+msgid "White Females 60 to 70"
+msgstr "נקבות לבנות בגילי 60–70"
+
+msgid "White Females 70 to 80"
+msgstr "נקבות לבנות בגילי 70–80"
+
+msgid "White Females 80 to 90"
+msgstr "נקבות לבנות בגילי 80–90"
+
+msgid "White Females Over 90"
+msgstr "נקבות לבנות מעל גיל 90"
+
+msgid "Male Negroes and Mulattoes"
+msgstr "גברים שחורים ומולאטים"
+
+msgid "Female Negroes and Mulattoes"
+msgstr "נקבה שחורים ומולאטים"
+
+msgid "Militia"
+msgstr "מיליציה"
+
+msgid "Manufactories of All Kinds"
+msgstr "בתי חרושת מכל הסוגים"
+
+msgid "Value of products of manufactories"
+msgstr "ערך תוצרים של בתי חרושת"
+
+msgid "Value of products of Coal Mines"
+msgstr "ערך תוצרים של פחם מכרות"
+
+msgid "Pounds of Wool"
+msgstr "ליברות מתוך צמר"
+
+msgid "Number of Colleges"
+msgstr "מספר מכללות"
+
+msgid "Number of Pupils"
+msgstr "מספר תלמידים"
+
+msgid "Number of Common Schools"
+msgstr "מספר נפוץ בתי־ספר"
+
+msgid "Males over 21 years"
+msgstr "זכרים מעל 21 שנים"
+
+msgid "Males under 21 years"
+msgstr "זכרים מתחת לגיל 21"
+
+msgid "Total number"
+msgstr "סך הכול מספר"
+
+msgid "Widowed"
+msgstr "אלמן"
+
+msgid "Years resident in the state"
+msgstr "שנים תושב במדינה"
 
 msgid "Native voters"
 msgstr "מצביעים ילידים"
 
+msgid "Naturalized voters"
+msgstr "התאזרח מצביעים"
+
+msgid "Owners of land"
+msgstr "בעלים מתוך קרקע"
+
+msgid "Paupers"
+msgstr "עניים"
+
+msgid "Acres of improved land"
+msgstr "אקרים של מעובדים קרקע"
+
+msgid "Acres of unimproved land"
+msgstr "אקרים של לא מעובדים קרקע"
+
+msgid "Acres in meadow"
+msgstr "אקרים באחו"
+
+msgid "Tons of hay"
+msgstr "טונות מתוך חציר"
+
+msgid "Bushels of grass seed"
+msgstr "בושלים של זרעי עשב"
+
+msgid "Acres of spring wheat"
+msgstr "אקרים של אביב חיטה"
+
+msgid "Bushels harvested (spring wheat)"
+msgstr "בושלים שנקצרו (חיטת אביב)"
+
+msgid "Acres of winter wheat"
+msgstr "אקרים של חורף חיטה"
+
+msgid "Bushels harvested (winter wheat)"
+msgstr "בושלים נקצרו (חורף חיטה)"
+
+msgid "Acres of oats"
+msgstr "אקרים של שיבולת שועל"
+
+msgid "Bushels harvested (oats)"
+msgstr "בושלים נקצרו (שיבולת שועל)"
+
+msgid "Acres of corn"
+msgstr "אקרים של תירס"
+
+msgid "Bushels harvested (corn)"
+msgstr "בושלים נקצרו (תירס)"
+
+msgid "Acres of potatoes"
+msgstr "אקרים של תפוחי אדמה"
+
+msgid "Bushels harvested (potatoes)"
+msgstr "בושלים נקצרו (תפוחי אדמה)"
+
+msgid "Number of hogs sold"
+msgstr "מספר חזירים נמכרו"
+
+msgid "Value of hogs sold"
+msgstr "ערך חזירים נמכרו"
+
+msgid "Number of cattle sold"
+msgstr "מספר ראשי הבקר שנמכרו"
+
+msgid "Value of cattle sold"
+msgstr "ערך מתוך בקר נמכרו"
+
+msgid "Pounds of butter manufactured"
+msgstr "ליברות של חמאה שיוצרה"
+
+msgid "Pounds of cheese"
+msgstr "ליברות מתוך גבינה"
+
+msgid "Pounds of wool"
+msgstr "ליברות מתוך צמר"
+
+msgid "Value of domestic manufactures"
+msgstr "ערך ביתי ייצור"
+
+msgid "Value of general manufactures"
+msgstr "ערך כללי ייצור"
+
+msgid "Town of"
+msgstr "עיירה מתוך"
+
+msgid "City of"
+msgstr "עיר מתוך"
+
+msgid "Township of"
+msgstr "עיירה מתוך"
+
+msgid "Street and Number"
+msgstr "רחוב ומספר"
+
+msgid "Place of birth, county"
+msgstr "מקום מתוך לידה, מחוז"
+
+msgid "Place of birth, state or territory"
+msgstr "מקום לידה, מדינה או טריטוריה"
+
+msgid "Place of birth, country"
+msgstr "מקום מתוך לידה, ארץ"
+
+msgid "Father (N, Native; F, Foreign)"
+msgstr "אב (N, יליד; F, זר)"
+
+msgid "Mother (N, Native; F, Foreign)"
+msgstr "אם (N, יליד; F, זר)"
+
+msgid "Subject to military duty"
+msgstr "כפוף לצבאי חובה"
+
+msgid "Entitled to vote"
+msgstr "זכאי להצביע"
+
+msgid "Alien who has taken out first papers"
+msgstr "זר שהוציא מסמכים ראשונים"
+
+msgid "Alien who has not taken out first papers"
+msgstr "זר שלא הוציא מסמכים ראשונים"
+
+msgid "Over 10 and cannot read or write"
+msgstr "מעל 10 ולא ניתן קריאה או כתיבה"
+
+msgid "Over 10 and can read but not write"
+msgstr "מעל 10 וניתן קריאה אך לא כתיבה"
+
+msgid "Deaf and dumb, blind, insane, or idiotic"
+msgstr "חירש ואילם, עיוור, חולה נפש או רפה־שכל"
+
+msgid "Age 18 or older"
+msgstr "גיל 18 או ישנה יותר"
+
+msgid "Age 5 to 18"
+msgstr "גיל 5–18"
+
+msgid "Age under 5"
+msgstr "גיל מתחת ל־5"
+
+msgid "White Male"
+msgstr "זכר לבן"
+
+msgid "White Female"
+msgstr "נקבה לבנה"
+
+msgid "Colored Male"
+msgstr "צבעוני זכר"
+
+msgid "Colored Female"
+msgstr "צבעוני נקבה"
+
+msgid "Single, Widowed, or Divorced"
+msgstr "רווק, אלמן, או התגרש"
+
+msgid "Father (N,Native; F,Foreign)"
+msgstr "אב (N,יליד; F,זר)"
+
+msgid "Mother (N,Native; F,Foreign)"
+msgstr "אם (N,יליד; F,זר)"
+
+msgid "Religious belief"
+msgstr "אמונה דתית"
+
+msgid "Can read but not write, over 10 years old"
+msgstr "יודע לקרוא אך לא לכתוב, מעל גיל 10"
+
+msgid "Cannot read or write, over 10 years old"
+msgstr "אי־יכולת לקרוא או לכתוב, מעל גיל 10"
+
+msgid "Children over 6 and under 17 not attending school in 1894"
+msgstr "ילדים מעל גיל 6 ומתחת לגיל 17 שלא למדו בבית־ספר בשנת 1894"
+
+msgid "Births in 1894"
+msgstr "לידות ב־1894"
+
+msgid "Deaths in 1894"
+msgstr "פטירות ב־1894"
+
+msgid "Deaf and dumb not in State School for Deaf"
+msgstr "חירש ואילם לא במדינה בית־ספר עבור חירש"
+
+msgid "Blind not in State College for Blind"
+msgstr "עיוור לא במדינה מכללה עבור עיוור"
+
+msgid "Insane not in State Hospital for Insane"
+msgstr "חולי נפש שאינם בבית־חולים מדינתי לחולי נפש"
+
+msgid "Company if in Civil War"
+msgstr "פלוגה אם באזרחי מלחמה"
+
+msgid "Regiment if in Civil War"
+msgstr "רגימנט אם באזרחי מלחמה"
+
+msgid "State if in Civil War"
+msgstr "מדינה אם באזרחי מלחמה"
+
+msgid "Arm of service and rank if in Civil War"
+msgstr "חיל שירות ודרגה אם השתתף במלחמת האזרחים"
+
+msgid "Regiment if in Mexican War"
+msgstr "רגימנט אם השתתף במלחמת מקסיקו"
+
+msgid "State if in Mexican War"
+msgstr "מדינה אם במלחמת מקסיקו"
+
+msgid "Card No."
+msgstr "מס' כרטיס"
+
+msgid "P.O. Address"
+msgstr "כתובת דואר"
+
+msgid "P. O. Address"
+msgstr "P. O. כתובת"
+
+msgid "Can you read?"
+msgstr "האם מסוגל לקרוא?"
+
+msgid "Can you write?"
+msgstr "האם מסוגל לכתוב?"
+
+msgid "Color, White-Black-Yellow-Red"
+msgstr "צבע, לבן-שחור-צהוב-אדום"
+
 msgid "Place of Birth-Self"
 msgstr "מקום לידה – האדם עצמו"
+
+msgid "Place of birth, Self"
+msgstr "מקום לידה, עצמאי"
 
 msgid "Place of Birth-Mother"
 msgstr "מקום לידה – אמו של האדם"
@@ -177,14 +4187,818 @@ msgstr "מקום לידה – אבי האדם"
 msgid "Place of birth, Father"
 msgstr "מקום לידת האב"
 
+msgid "Own home or farm"
+msgstr "עצמי בית או חווה"
+
+msgid "Do you own your home or farm?"
+msgstr "האם הבית או החווה בבעלותך?"
+
+msgid "Value of home or farm"
+msgstr "ערך הבית או החווה"
+
+msgid "Entire value of home or farm?"
+msgstr "הערך המלא של הבית או החווה?"
+
+msgid "How much incumberance on home or farm"
+msgstr "גובה השעבוד על הבית או החווה"
+
+msgid "How much incumberance on your home or farm?"
+msgstr "כיצד כמה שעבוד על המערכת בית או חווה?"
+
+msgid "If foreign born, are you naturalized"
+msgstr "אם זר נולד, ניתן התאזרח"
+
+msgid "If you are foreign born, are you naturalized?"
+msgstr "אם ניתן זר נולד, ניתן התאזרח?"
+
+msgid "Years in U.S."
+msgstr "שנים בארצות הברית"
+
+msgid "Years in Iowa"
+msgstr "שנים באיווה"
+
+msgid "Years in Iowa>"
+msgstr "שנים באיווה>"
+
+msgid "Conjugal condition; Single-Married-Widowed-Divorced-Separated"
+msgstr "מצב זוגי; רווק/ה-נשוי/אה-אלמן/ה-גרוש/ה-פרוד/ה"
+
+msgid "Months in school in 1904-Public"
+msgstr "חודשים בבית־ספר ב־1904 – ציבורי"
+
+msgid "Months in school in 1904; Public"
+msgstr "חודשים בבית־ספר ב־1904; ציבורי"
+
+msgid "Months in school in 1904-High"
+msgstr "חודשים בבית־ספר ב־1904-גבוה"
+
+msgid "Months in school in 1904; High"
+msgstr "חודשים בבית־ספר ב־1904; גבוה"
+
+msgid "Months in school in 1904-Private"
+msgstr "חודשים בבית־ספר ב־1904 – פרטי"
+
+msgid "Months in school in 1904; Private"
+msgstr "חודשים בבית־ספר ב־1904; פרטי"
+
+msgid "Months in school in 1904-College"
+msgstr "חודשים בבית־ספר ב־1904 – מכללה"
+
+msgid "Months in school in 1904; College"
+msgstr "חודשים בבית־ספר ב־1904; מכללה"
+
+msgid "Months unemployed in 1904"
+msgstr "חודשי אבטלה ב־1904"
+
+msgid "Military-Service in which war"
+msgstr "שירות צבאי – באיזו מלחמה"
+
+msgid "Military Service in; Civil War-Mexican War-Spanish War"
+msgstr "שירות צבאי ב־: מלחמת האזרחים – מלחמת מקסיקו – מלחמת ספרד"
+
+msgid "Military-Company"
+msgstr "צבא-פלוגה"
+
+msgid "Military Service; Company"
+msgstr "צבאי שירות; פלוגה"
+
+msgid "Military-Regiment"
+msgstr "צבא-רגימנט"
+
+msgid "Military Service; Regiment"
+msgstr "צבאי שירות; רגימנט"
+
+msgid "Military-State"
+msgstr "צבא-מדינה"
+
+msgid "Military Service; State"
+msgstr "צבאי שירות; מדינה"
+
+msgid "Military-Class of service"
+msgstr "שירות צבאי – סוג השירות"
+
+msgid "Military Service; Class of service; Cavalry-Infantry-Artillery-Navy"
+msgstr "שירות צבאי; סוג השירות; פרשים – רגלים – ארטילריה – צי"
+
+msgid "Military-Date of enlistment"
+msgstr "צבא-תאריך גיוס"
+
+msgid "Military Service; Date of enlistment"
+msgstr "צבאי שירות; תאריך גיוס"
+
+msgid "Military-Date of discharge"
+msgstr "צבא-תאריך שחרור"
+
+msgid "Military Service; Date of discharge"
+msgstr "צבאי שירות; תאריך שחרור"
+
+msgid "Military-Remarks"
+msgstr "צבא-הערות"
+
+msgid "Military Service; Remarks"
+msgstr "צבאי שירות; הערות"
+
+msgid "Town or Township"
+msgstr "עיירה או עיירה"
+
+msgid "Months in 1914 Unemployed"
+msgstr "חודשים ב־1914 מובטל"
+
+msgid "Earnings for 1914 from occupation"
+msgstr "השתכרות עבור 1914 ממשלח יד"
+
+msgid "Extent of Education Common"
+msgstr "היקף של חינוך נפוץ"
+
+msgid "Extent of Education Grammar"
+msgstr "היקף של חינוך דקדוק"
+
+msgid "Extent of Education High School"
+msgstr "היקף השכלה בבית־ספר תיכון"
+
+msgid "Extent of Education College"
+msgstr "היקף של חינוך מכללה"
+
+msgid "Own house or farm"
+msgstr "עצמי בית או חווה"
+
+msgid "Incumbrance on farm or home"
+msgstr "שעבוד על חווה או בית"
+
+msgid "Value of farm or home"
+msgstr "ערך החווה או הבית"
+
+msgid "Military Service: Civil War"
+msgstr "צבאי שירות: אזרחי מלחמה"
+
+msgid "Military Service: Mexican"
+msgstr "שירות צבאי: מקסיקני"
+
+msgid "Military Service: Spanish"
+msgstr "צבאי שירות: ספרדי"
+
+msgid "Military Service: Infantry"
+msgstr "צבאי שירות: חיל רגלים"
+
+msgid "Military Service: Cavalry"
+msgstr "צבאי שירות: חיל פרשים"
+
+msgid "Military Service: Artillery"
+msgstr "צבאי שירות: ארטילריה"
+
+msgid "Military Service: Navy"
+msgstr "צבאי שירות: צי"
+
+msgid "Military Service: State"
+msgstr "צבאי שירות: מדינה"
+
+msgid "Military Service: Regiment"
+msgstr "צבאי שירות: רגימנט"
+
+msgid "Military Service: Company"
+msgstr "צבאי שירות: פלוגה"
+
+msgid "Church Affiliation"
+msgstr "שיוך כנסייתי"
+
+msgid "Father's Birthplace"
+msgstr "אב של מקום לידה"
+
+msgid "Mother's Birthplace"
+msgstr "אם של מקום לידה"
+
+msgid "Months in School 1914: Public"
+msgstr "חודשים בבית־ספר ב־1914: ציבורי"
+
+msgid "Months in School 1914: High"
+msgstr "חודשים בבית־ספר ב־1914: תיכון"
+
+msgid "Months in School 1914: Private"
+msgstr "חודשים בבית־ספר ב־1914: פרטי"
+
+msgid "Months in School 1914: College"
+msgstr "חודשים בבית־ספר ב־1914: מכללה"
+
+msgid "Deaf"
+msgstr "חירש"
+
+msgid "Idiot"
+msgstr "בעל לקות שכלית"
+
+msgid "Naturalized if foreign born?"
+msgstr "התאזרח אם זר נולד?"
+
+msgid "House Number"
+msgstr "בית מספר"
+
+msgid "Color or Race"
+msgstr "צבע או גזע"
+
+msgid "Home Owned or Rented"
+msgstr "בית בבעלות או שכור"
+
+msgid "Home Owned Free or Mortgaged"
+msgstr "בית בבעלות חופשי או משועבד"
+
+msgid "Home Value"
+msgstr "בית ערך"
+
+msgid "Mortgage Debt"
+msgstr "חוב משכנתה"
+
+msgid "Monthly Rent"
+msgstr "שכר דירה חודשי"
+
+msgid "Insurance on Home"
+msgstr "ביטוח על הבית"
+
+msgid "Years in US"
+msgstr "שנים בארצות הברית"
+
+msgid "Attended Rural School"
+msgstr "למד בבית־ספר כפרי"
+
+msgid "Attended Grade School"
+msgstr "למד בבית־ספר יסודי"
+
+msgid "Attended High School"
+msgstr "למד בבית־ספר תיכון"
+
+msgid "Attended College"
+msgstr "למד מכללה"
+
+msgid "Highest Grade Rural School"
+msgstr "הכיתה הגבוהה ביותר בבית־ספר כפרי"
+
+msgid "Highest Grade Grammar School"
+msgstr "גבוהה ביותר כיתה דקדוק בית־ספר"
+
+msgid "Highest Grade High School"
+msgstr "גבוהה ביותר כיתה תיכון בית־ספר"
+
+msgid "No. Years College"
+msgstr "מס׳ שנות מכללה"
+
+msgid "Months in School 1924"
+msgstr "חודשים בבית־ספר ב־1924"
+
+msgid "Able to Read"
+msgstr "יודע לקרוא"
+
+msgid "Able to Write"
+msgstr "יודע לכתוב"
+
+msgid "Father's Name"
+msgstr "אב של שם"
+
+msgid "Father's Place of Birth"
+msgstr "אב של מקום לידה"
+
+msgid "Mother's Name"
+msgstr "שם האם"
+
+msgid "Mother's Place of Birth"
+msgstr "אם של מקום לידה"
+
+msgid "Parents Place of Marriage"
+msgstr "הורים מקום מתוך נישואין"
+
+msgid "Civil War Veteran"
+msgstr "אזרחי מלחמה ותיק מלחמה"
+
+msgid "Civil War Service Branch"
+msgstr "אזרחי מלחמה שירות ענף"
+
+msgid "Civil War State"
+msgstr "אזרחי מלחמה מדינה"
+
+msgid "Spanish-American War Veteran"
+msgstr "ותיק מלחמת ספרד–ארצות הברית"
+
+msgid "Spanish-American War Service Branch"
+msgstr "זרוע שירות במלחמת ארצות הברית–ספרד"
+
+msgid "Spanish-American War State"
+msgstr "מדינת השירות במלחמת ספרד–ארצות הברית"
+
+msgid "World War Veteran"
+msgstr "ותיק מלחמת העולם"
+
+msgid "World War Service Branch"
+msgstr "זרוע שירות במלחמת העולם"
+
+msgid "World War State"
+msgstr "מדינה במלחמת העולם"
+
+msgid "Agricultural Pursuits"
+msgstr "עיסוקים חקלאיים"
+
+msgid "Professional Services"
+msgstr "מקצועיים שירותים"
+
+msgid "Domestic/Personal Services"
+msgstr "שירותים ביתיים/אישיים"
+
+msgid "Trade and Transportation"
+msgstr "מקצוע ותחבורה"
+
+msgid "Manufacturing and Mechanical"
+msgstr "ייצור ומכניקה"
+
+msgid "Unclassified Laborer"
+msgstr "פועל לא מסווג"
+
+msgid "Months unemployed due to illness"
+msgstr "חודשי אבטלה עקב מחלה"
+
+msgid "Income lost due to illness"
+msgstr "הכנסה שאבדה עקב מחלה"
+
+msgid "Months unemployed"
+msgstr "חודשי אבטלה"
+
+msgid "Free Inhabitants in"
+msgstr "תושבים חופשיים ב־"
+
+msgid "Regiment"
+msgstr "רגימנט"
+
+msgid "Real Estate"
+msgstr "מקרקעין אחוזה"
+
+msgid "Personal Estate"
+msgstr "אישי אחוזה"
+
+msgid "Attended School"
+msgstr "למד בית־ספר"
+
+msgid "Illiterate"
+msgstr "אנאלפבית"
+
+msgid "Disabled"
+msgstr "מושבת"
+
+msgid "Personal Property"
+msgstr "רכוש אישי"
+
+msgid "Where From"
+msgstr "היכן מ"
+
+msgid "School"
+msgstr "בית־ספר"
+
+msgid "Cannot Read 10-15"
+msgstr "לא ניתן קריאה 10-15"
+
+msgid "Cannot Read 15-21"
+msgstr "לא ניתן קריאה 15-21"
+
+msgid "Cannot Read 21+"
+msgstr "לא ניתן קריאה 21+"
+
+msgid "Cannot Write 10-15"
+msgstr "לא ניתן כתיבה 10-15"
+
+msgid "Cannot Write 15-21"
+msgstr "לא ניתן כתיבה 15-21"
+
+msgid "Cannot Write 21+"
+msgstr "לא ניתן כתיבה 21+"
+
+msgid "Cannot Read/Write 10-15"
+msgstr "לא יודע לקרוא/לכתוב 10–15"
+
+msgid "Cannot Read/Write 15-21"
+msgstr "לא ניתן קריאה/כתיבה 15-21"
+
+msgid "Cannot Read/Write 21+"
+msgstr "לא ניתן קריאה/כתיבה 21+"
+
+msgid "Widow(er)"
+msgstr "אלמן או אלמנה"
+
+msgid "Learning"
+msgstr "למידה"
+
+msgid "Illiteracy 10-15"
+msgstr "אי־ידיעת קרוא וכתוב 10–15"
+
+msgid "Illiteracy 15-21"
+msgstr "אי־ידיעת קרוא וכתוב 15–21"
+
+msgid "Illiteracy 21+"
+msgstr "אי־ידיעת קרוא וכתוב 21+"
+
+msgid "Honorably discharged"
+msgstr "שוחרר בכבוד"
+
+msgid "State Enlisted"
+msgstr "מדינה התגייס"
+
+msgid "Arm of Service"
+msgstr "זרוע שירות"
+
+msgid "Prison"
+msgstr "כלא"
+
+msgid "Where from Kansas"
+msgstr "מהיכן בקנזס"
+
+msgid "Trade or profession being learned"
+msgstr "מלאכה או מקצוע שנלמדים"
+
+msgid "Illiterate and 10 to 15 years old"
+msgstr "אנאלפבית ו10 ל־15 שנים ישן"
+
+msgid "Illiterate and 16 to 21 years old"
+msgstr "אנאלפבית ו16 ל־21 שנים ישן"
+
+msgid "Illiterate and over 21"
+msgstr "אנאלפבית ומעל 21"
+
+msgid "Honorably discharged from military service"
+msgstr "שוחרר בכבוד משירות צבאי"
+
+msgid "State in which enlisted"
+msgstr "מדינה בש התגייס"
+
+msgid "Company or command"
+msgstr "חברה או פיקוד"
+
+msgid "Regiment or other organization"
+msgstr "רגימנט או ארגון אחר"
+
+msgid "Arm of service"
+msgstr "חיל שירות"
+
+msgid "Prison in which confined as a prisoner of war"
+msgstr "בית כלא שבו הוחזק כשבוי מלחמה"
+
+msgid "Home owned free or mortgaged"
+msgstr "בית בבעלות חופשי או משועבד"
+
+msgid "Where from to Kansas"
+msgstr "מהיכן לקנזס"
+
+msgid "Number of months unemployed"
+msgstr "מספר חודשי אבטלה"
+
+msgid "Illiterate and 15 to 21 years old"
+msgstr "אנאלפבית ו15 ל־21 שנים ישן"
+
+msgid "Number of volumes in home library"
+msgstr "מספר כרכים בספרייה הביתית"
+
+msgid "Number of house"
+msgstr "מספר בית"
+
+msgid "Year of immigration to the United States"
+msgstr "שנת הגירה לארצות הברית"
+
+msgid "Naturalized, alien or first papers"
+msgstr "התאזרח, זר או מסמכים ראשונים"
+
+msgid "Attended school within year"
+msgstr "למד בבית־ספר בתוך שנה"
+
+msgid "Nativity"
+msgstr "מקום לידה"
+
+msgid "Father's Nativity"
+msgstr "אב של ארץ לידה"
+
+msgid "Mother's Nativity"
+msgstr "אם של ארץ לידה"
+
+msgid "Inhabitants in"
+msgstr "תושבים ב"
+
+msgid "Served in Federal army during rebellion"
+msgstr "שירת בצבא הפדרלי במהלך המרד"
+
+msgid "Residence in State - Years"
+msgstr "מגורים במדינה - שנים"
+
+msgid "Residence in State - Months"
+msgstr "מגורים במדינה - חודשים"
+
+msgid "Residence in District - Years"
+msgstr "מגורים במחוז - שנים"
+
+msgid "Residence in District - Months"
+msgstr "מגורים במחוז - חודשים"
+
+msgid "Months Employed"
+msgstr "חודשים מועסקים"
+
+msgid "Solder/Sailor"
+msgstr "חייל/מלח"
+
+msgid "Foreign father"
+msgstr "זר אב"
+
+msgid "Foreign mother"
+msgstr "זר אם"
+
+msgid "Organized Township"
+msgstr "עיירה מאורגנת"
+
+msgid "Unorganized Township"
+msgstr "עיירה לא מאורגנת"
+
+msgid "Name of Village"
+msgstr "שם הכפר"
+
+msgid "Name of City"
+msgstr "שם העיר"
+
+msgid "Sub-division"
+msgstr "תת מחלקה"
+
+msgid "Precincts"
+msgstr "מתחמים"
+
 msgid "Enumerated date from"
 msgstr "מתאריך משוער"
 
 msgid "Enumerated date to"
 msgstr "עד תאריך משוער"
 
+msgid "Enumeration number"
+msgstr "פקידה מספר"
+
+msgid "Fathers birthplace"
+msgstr "אב מקום לידה"
+
+msgid "Mothers birthplace"
+msgstr "אם מקום לידה"
+
+msgid "Residence in District - years"
+msgstr "מגורים במחוז - שנים"
+
+msgid "Residence in District - months"
+msgstr "מגורים במחוז - חודשים"
+
+msgid "Army service"
+msgstr "שירות בצבא"
+
+msgid "Wars"
+msgstr "מלחמה"
+
+msgid "White males under 10"
+msgstr "זכרים לבנים מתחת לגיל 10"
+
+msgid "White males 10-17"
+msgstr "זכרים לבנים בגילי 10–17"
+
+msgid "White males 18-20"
+msgstr "זכרים לבנים בגילי 18–20"
+
+msgid "White males 21-44"
+msgstr "זכרים לבנים בגילי 21–44"
+
+msgid "White males 45 and over"
+msgstr "זכרים לבנים בני 45 ומעלה"
+
+msgid "Total White Males"
+msgstr "סך הכול זכרים לבנים"
+
+msgid "White females under 10"
+msgstr "נקבות לבנות מתחת לגיל 10"
+
+msgid "White females 10-17"
+msgstr "נקבות לבנות בגילי 10–17"
+
+msgid "White females 18-20"
+msgstr "נקבות לבנות בגילי 18–20"
+
+msgid "White females 21-44"
+msgstr "נקבות לבנות בגילי 21–44"
+
+msgid "White females 45 and over"
+msgstr "נקבות לבנות בני 45 ומעלה"
+
+msgid "Total White Females"
+msgstr "סך הכול נקבות לבנות"
+
+msgid "Total White Population"
+msgstr "סך כל האוכלוסייה הלבנה"
+
+msgid "White persons between 6 and 18"
+msgstr "לבן אדם בין 6 ו־18"
+
+msgid "No. White persons who can read and write"
+msgstr "מס׳ לבנים שיודעים לקרוא ולכתוב"
+
+msgid "Colored males under 10"
+msgstr "זכרים צבעוניים מתחת לגיל 10"
+
+msgid "Colored males 10-17"
+msgstr "זכרים צבעוניים בגילי 10–17"
+
+msgid "Colored males 18-20"
+msgstr "זכרים צבעוניים בגילי 18–20"
+
+msgid "Colored males 21-44"
+msgstr "זכרים צבעוניים בגילי 21–44"
+
+msgid "Colored males 45 and over"
+msgstr "זכרים צבעוניים בני 45 ומעלה"
+
+msgid "Total Colored Males"
+msgstr "סך הכול זכרים צבעוניים"
+
+msgid "Colored females under 10"
+msgstr "נקבות צבעוניות מתחת לגיל 10"
+
+msgid "Colored females 10-17"
+msgstr "נקבות צבעוניות בגילי 10–17"
+
+msgid "Colored females 18-20"
+msgstr "נקבות צבעוניות בגילי 18–20"
+
+msgid "Colored females 21-44"
+msgstr "נקבות צבעוניות בגילי 21–44"
+
+msgid "Colored females 45 and over"
+msgstr "נקבות צבעוניות בני 45 ומעלה"
+
+msgid "Total Colored Females"
+msgstr "סך הכול נקבות צבעוניות"
+
+msgid "Total Colored Population"
+msgstr "סך כל האוכלוסייה הצבעונית"
+
+msgid "Colored persons between 6 and 18"
+msgstr "צבעוני אדם בין 6 ו־18"
+
+msgid "No. Colored persons who can read and write"
+msgstr "מס׳ צבעונים שיודעים לקרוא ולכתוב"
+
+msgid "Deaf and Dumb Males"
+msgstr "חירש ואילם זכרים"
+
+msgid "Deaf and Dumb Males Age"
+msgstr "חירש ואילם זכרים גיל"
+
+msgid "Deaf and Dumb Females"
+msgstr "חירש ואילם נקבות"
+
+msgid "Deaf and Dumb Females Age"
+msgstr "חירש ואילם נקבות גיל"
+
+msgid "Deaf and Dumb White"
+msgstr "חירש ואילם לבן"
+
+msgid "Deaf and Dumb Colored"
+msgstr "חירש ואילם צבעוני"
+
+msgid "No. Deaf and Dumb taught to read and write"
+msgstr "מס׳ חירשים ואילמים שלמדו לקרוא ולכתוב"
+
+msgid "Blind Males"
+msgstr "עיוור זכרים"
+
+msgid "Blind Males Age"
+msgstr "עיוור זכרים גיל"
+
+msgid "Blind Females"
+msgstr "עיוור נקבות"
+
+msgid "Blind Females Age"
+msgstr "עיוור נקבות גיל"
+
+msgid "Blind White"
+msgstr "עיוור לבן"
+
+msgid "Blind Colored"
+msgstr "עיוור צבעוני"
+
+msgid "No. Blind taught to read and write"
+msgstr "מס׳ עיוורים שלמדו לקרוא ולכתוב"
+
+msgid "Insane Males"
+msgstr "זכרים חולי נפש"
+
+msgid "Insane Males Age"
+msgstr "גיל זכרים חולי נפש"
+
+msgid "Insane Females"
+msgstr "נקבות חולות נפש"
+
+msgid "Insane Females Age"
+msgstr "גיל נקבות חולות נפש"
+
+msgid "Insane White"
+msgstr "לבנים חולי נפש"
+
+msgid "Insane Colored"
+msgstr "צבעוניים חולי נפש"
+
+msgid "No. Insane taught to read and write"
+msgstr "מס׳ חולי נפש שלמדו לקרוא ולכתוב"
+
+msgid "Live Stock Horses"
+msgstr "משק־חי סוסים"
+
+msgid "Live Stock Mules"
+msgstr "משק־חי – פרדות"
+
+msgid "Live Stock Jacks"
+msgstr "משק־חי – חמורים זכרים"
+
+msgid "Live Stock Jennies"
+msgstr "משק־חי – אתונות"
+
+msgid "Live Stock Cattle"
+msgstr "משק־חי בקר"
+
+msgid "Live Stock Sheep"
+msgstr "משק־חי כבשים"
+
+msgid "Live Stock Hogs"
+msgstr "משק־חי חזירים"
+
+msgid "Products Bushels Wheat"
+msgstr "תוצרים בושלים חיטה"
+
+msgid "Products Bushels Corn"
+msgstr "תוצרים בושלים תירס"
+
+msgid "Products Bushels Oats"
+msgstr "תוצרים בושלים שיבולת שועל"
+
+msgid "Products Bushels Barley"
+msgstr "תוצרים בושלים שעורה"
+
+msgid "Products Bushels Rye"
+msgstr "תוצרים בושלים שיפון"
+
+msgid "Products Lbs. Tobacco"
+msgstr "תוצרים ליברות. טבק"
+
+msgid "Products Lbs. Wool"
+msgstr "תוצרים ליברות. צמר"
+
+msgid "Products Lbs. Sugar"
+msgstr "תוצרים ליברות. סוכר"
+
+msgid "Products Tons Hay"
+msgstr "תוצרים טונות חציר"
+
+msgid "Products Tons Hemp"
+msgstr "תוצרים טונות קנבוס"
+
+msgid "Products Galls. Whiskey"
+msgstr "תוצרים בגלונים: ויסקי"
+
+msgid "Products Galls. Wine"
+msgstr "תוצרים גלונים. יין"
+
+msgid "Products Galls. Molasses"
+msgstr "תוצרים גלונים. מולסה"
+
+msgid "Total Population"
+msgstr "סך הכול אוכלוסייה"
+
+msgid "Building Material"
+msgstr "חומר בנייה"
+
+msgid "Dwelling Value"
+msgstr "מגורים ערך"
+
+msgid "Birthplace (NY County or other)"
+msgstr "מקום לידה (מחוז NY או אחר)"
+
+msgid "Years resident in this city or town"
+msgstr "שנים תושב בזה עיר או עיירה"
+
+msgid "Native Voter"
+msgstr "בוחר יליד"
+
+msgid "Naturalized Voter"
+msgstr "מצביע שהתאזרח"
+
+msgid "Alien"
+msgstr "זר"
+
+msgid "Persons of color not taxed"
+msgstr "אנשים צבעוניים שאינם חייבים במס"
+
+msgid "Over 21/Illiterate"
+msgstr "מעל גיל 21/אנאלפבית"
+
 msgid "Landowner"
 msgstr "בעלים"
+
+msgid "Deaf, Dumb, Blind, Insane, Idiotic"
+msgstr "חירש, אילם, עיוור, חולה נפש, רפה־שכל"
+
+msgid "Inhabitants in the"
+msgstr "תושבים ב"
+
+msgid "Parent of how many children"
+msgstr "הורה מתוך כיצד רבים ילדים"
 
 msgid "Number of times married"
 msgstr "מספר נישואים"
@@ -192,14 +5006,372 @@ msgstr "מספר נישואים"
 msgid "Place of Occupation"
 msgstr "מקום עיסוק"
 
+msgid "Land owner"
+msgstr "קרקע בעלים"
+
+msgid "Now in army"
+msgstr "כעת בצבא"
+
+msgid "Now in navy"
+msgstr "כעת בצי"
+
+msgid "Formerly in army"
+msgstr "בעבר בצבא"
+
+msgid "Formerly in navy"
+msgstr "בעבר בצי"
+
+msgid "Usual place of employment (if not same city/town)"
+msgstr "רגילה מקום של תעסוקה (אם לא אותו עיר/עיירה)"
+
+msgid "Election District of the Town of"
+msgstr "מחוז בחירה של העיירה"
+
+msgid "the County of"
+msgstr "מחוז מתוך"
+
 msgid "Birth Country"
 msgstr "מקום לידה, מדינה"
+
+msgid "Citizen or Alien"
+msgstr "אזרח או זר"
+
+msgid "Inhabitants living in"
+msgstr "תושבים שגרים ב־"
+
+msgid "Election District, Ward"
+msgstr "מחוז בחירה, רובע משנה"
+
+msgid "Number of years in the US"
+msgstr "מספר שנים בארצות הברית"
+
+msgid "Class"
+msgstr "מחלקה"
+
+msgid "Inmate: Residence given when admitted"
+msgstr "חוסה: מקום מגורים שצוין בעת הקבלה"
+
+msgid "Inhabitants of Block No."
+msgstr "תושבי גוש מס׳"
+
+msgid "Election District No."
+msgstr "מחוז בחירה מס׳"
+
+msgid "Ward No."
+msgstr "מס׳ תת רובע"
+
+msgid "City or Village"
+msgstr "עיר או כפר"
+
+msgid "Assembly District No."
+msgstr "מס׳ מחוז אספה"
+
+msgid "Where and When Naturalized"
+msgstr "היכן וכאשר התאזרח"
+
+msgid "WM 21-60"
+msgstr "WM 21-60"
+
+msgid "WM under 21 above 60 "
+msgstr "גברים לבנים מתחת לגיל 21 ומעל גיל 60 "
+
+msgid "WF all ages"
+msgstr "נשים לבנות בכל הגילים"
+
+msgid "Blacks 12-50"
+msgstr "שחורים בגילי 12–50"
+
+msgid "Blacks under 12 above 50"
+msgstr "שחורים מתחת לגיל 12 ומעל גיל 50"
+
+msgid "Native White Males"
+msgstr "זכרים לבנים ילידים"
+
+msgid "Native White Females"
+msgstr "נקבות לבנות ילידות"
+
+msgid "Native Colored Males"
+msgstr "זכרים צבעוניים ילידים"
+
+msgid "Native Colored Females"
+msgstr "נקבות צבעוניות ילידות"
+
+msgid "Foreign Males"
+msgstr "זר זכרים"
+
+msgid "Foreign Females"
+msgstr "זר נקבות"
+
+msgid "Male Children 5 and Under"
+msgstr "ילדים זכרים בני 5 ומטה"
+
+msgid "Female Children 5 and Under"
+msgstr "ילדות בנות 5 ומטה"
+
+msgid "Males 5 to 20 Years of Age"
+msgstr "זכרים בני 5–20"
+
+msgid "Females 5 to 20 Years of Age"
+msgstr "נקבות בנות 5–20"
+
+msgid "Males 20 to 60 Years of Age"
+msgstr "זכרים בני 20–60"
+
+msgid "Females 20 to 60 Years of Age"
+msgstr "נקבות בנות 20–60"
+
+msgid "Males Over 60 Years of Age"
+msgstr "זכרים מעל 60 שנים מתוך גיל"
+
+msgid "Females Over 60 Years of Age"
+msgstr "נקבות מעל 60 שנים מתוך גיל"
+
+msgid "P.O."
+msgstr "P.O."
+
+msgid "Sec."
+msgstr "Sec."
+
+msgid "T."
+msgstr "T."
+
+msgid "R."
+msgstr "R."
+
+msgid "No."
+msgstr "מס׳"
+
+msgid "St./Ave "
+msgstr "רחוב/שדרה "
+
+msgid "Hotel or Institution"
+msgstr "מלון או מוסד"
+
+msgid "Years in South Dakota"
+msgstr "שנים בדקוטה הדרומית"
+
+msgid "Years in United States"
+msgstr "שנים בארצות הברית"
+
+msgid "Birthplace of Father"
+msgstr "מקום לידה מתוך אב"
+
+msgid "Birthplace of Mother"
+msgstr "מקום לידה מתוך אם"
+
+msgid "Black"
+msgstr "שחור"
+
+msgid "Red"
+msgstr "Red"
+
+msgid "Yellow"
+msgstr "צהוב"
+
+msgid "Divorced"
+msgstr "גרוש/ה"
+
+msgid "Can Read"
+msgstr "ניתן קריאה"
+
+msgid "Can't Read"
+msgstr "לא יודע לקרוא"
+
+msgid "Can Write"
+msgstr "ניתן כתיבה"
+
+msgid "Can't Write"
+msgstr "לא ניתן כתיבה"
+
+msgid "Do you own your home or farm"
+msgstr "האם הבית או החווה בבעלותך"
+
+msgid "Ancestry"
+msgstr "יוחסין"
+
+msgid "Father's birthplace"
+msgstr "אב של מקום לידה"
+
+msgid "Mother's birthplace"
+msgstr "אם של מקום לידה"
+
+msgid "Extent of Education"
+msgstr "היקף של חינוך"
+
+msgid "Graduate of"
+msgstr "בוגר של"
+
+msgid "Maiden name of wife"
+msgstr "שם הנעורים של האישה"
+
+msgid "Year married"
+msgstr "שנה נשוי"
+
+msgid "Church affiliation"
+msgstr "שיוך כנסייתי"
+
+msgid "If Foreign Born, are you Naturalized"
+msgstr "אם זר נולד, ניתן התאזרח"
+
+msgid "Years in S.D."
+msgstr "שנים ב־S.D."
+
+msgid "Division"
+msgstr "חלוקה"
+
+msgid "Male under 21"
+msgstr "זכר מתחת לגיל 21"
+
+msgid "Male over 21"
+msgstr "זכר מעל גיל 21"
+
+msgid "Female under 21"
+msgstr "נקבה מתחת לגיל 21"
+
+msgid "Female over 21"
+msgstr "נקבה מעל גיל 21"
+
+msgid "Town/City"
+msgstr "עיירה/עיר"
+
+msgid "Heads of Families"
+msgstr "ראש מתוך משפחות"
+
+msgid "White males"
+msgstr "זכרים לבנים"
+
+msgid "White females"
+msgstr "נקבות לבנות"
+
+msgid "Colored males"
+msgstr "זכרים צבעוניים"
+
+msgid "Colored females"
+msgstr "נקבות צבעוניות"
+
+msgid "Deaf & Dumb"
+msgstr "חירש & אילם"
+
+msgid "Foreign Birth"
+msgstr "זר לידה"
+
+msgid "Inhabitants of"
+msgstr "תושבי"
 
 msgid "in"
 msgstr "ב"
 
+msgid "of"
+msgstr "מתוך"
+
+msgid "Nativity - United States"
+msgstr "מקום לידה - ארצות הברית"
+
+msgid "Nativity - Germany"
+msgstr "ארץ לידה – גרמניה"
+
+msgid "Nativity - Great Britain"
+msgstr "ארץ לידה – בריטניה הגדולה"
+
+msgid "Nativity - Ireland"
+msgstr "ארץ לידה - אירלנד"
+
+msgid "Nativity - France"
+msgstr "ארץ לידה – צרפת"
+
+msgid "Nativity - British America"
+msgstr "ארץ לידה – אמריקה הבריטית"
+
+msgid "Nativity - Scandinavian"
+msgstr "ארץ לידה – סקנדינביה"
+
+msgid "Nativity - Holland"
+msgstr "ארץ לידה – הולנד"
+
+msgid "Nativity - All other countries"
+msgstr "מקום לידה - כל אחר ארץ"
+
+msgid "Residing in the"
+msgstr "מתגורר ב"
+
+msgid "Co."
+msgstr "Co."
+
+msgid "Reg't."
+msgstr "Reg't."
+
+msgid "State or Vessel"
+msgstr "מדינה או כלי שיט"
+
+msgid "Parents place of birth"
+msgstr "הורים מקום מתוך לידה"
+
+msgid "Owned/Rented"
+msgstr "בבעלות/בשכירות"
+
+msgid "Free/Mortgaged"
+msgstr "חופשי/משועבד"
+
+msgid "Farm/House"
+msgstr "חווה/בית"
+
+msgid "Certificate Number"
+msgstr "מספר תעודה"
+
+msgid "Entry Number"
+msgstr "רשומה מספר"
+
+msgid "Date Registered"
+msgstr "תאריך רישום"
+
+msgid "Registrar"
+msgstr "רשם"
+
+msgid "Twin, triplet or other"
+msgstr "תאום, שלישייה או אחר"
+
+msgid "No. in order of birth"
+msgstr "מס׳ לפי סדר לידה"
+
+msgid "Legitimate"
+msgstr "חוקי"
+
+msgid "Date of birth"
+msgstr "תאריך מתוך לידה"
+
 msgid "Place of Record"
 msgstr "מקום רישום"
+
+msgid "Book/Volume"
+msgstr "Book/Volume"
+
+msgid "Race/Color"
+msgstr "גזע/צבע"
+
+msgid ""
+"STOP! If you want this record to be attached to the Parents move to Father."
+msgstr "עצירה! אם רשומה זו צריכה להיות מצורפת להורים, יש לעבור לאב."
+
+msgid "Mother (Maiden Name)"
+msgstr "אם (נעורים שם)"
+
+msgid "Residence of Parents"
+msgstr "מגורים מתוך הורים"
+
+msgid "By Whom Reported"
+msgstr "לפי מי דווח"
+
+msgid "Date Recorded"
+msgstr "תאריך רישום"
+
+msgid "License No."
+msgstr "מס' רישיון"
+
+msgid "Date of Marriage"
+msgstr "תאריך מתוך נישואין"
+
+msgid "Married by"
+msgstr "נשוי לפי"
 
 msgid "Place of Marriage"
 msgstr "מקום נישואין"
@@ -207,11 +5379,47 @@ msgstr "מקום נישואין"
 msgid "Consent given by"
 msgstr "ניתנה הסכמה מאת"
 
+msgid "Bond/Licence"
+msgstr "שטר/רשיון"
+
+msgid "Length of Residence"
+msgstr "משך המגורים"
+
+msgid "Served in U.S. Military"
+msgstr "שירת בצבא ארצות הברית"
+
+msgid "Spouse's Name"
+msgstr "שם הזוגאי"
+
+msgid "Birth date of deceased"
+msgstr "לידה תאריך של נפטר"
+
+msgid "Industry or Business"
+msgstr "ענף או עסק"
+
+msgid "Name of employer"
+msgstr "שם המעסיק"
+
 msgid "Date last worked"
 msgstr "תאריך עבודה אחרון"
 
+msgid "Years in this occupation"
+msgstr "שנים בזה משלח יד"
+
+msgid "Education Level"
+msgstr "השכלה מפלס"
+
+msgid "Social Security No."
+msgstr "מס' ביטוח לאומי"
+
 msgid "Place of Burial"
 msgstr "מקום קבורה"
+
+msgid "Date of Burial"
+msgstr "תאריך מתוך קבורה"
+
+msgid "Residence Place"
+msgstr "מגורים מקום"
 
 msgid "Burial Date"
 msgstr "תאריך קבורה"
@@ -219,14 +5427,316 @@ msgstr "תאריך קבורה"
 msgid "Burial Place"
 msgstr "מקום קבורה"
 
+msgid "Congressional District"
+msgstr "קונגרסי מחוז"
+
+msgid "in the Counties of"
+msgstr "במחוז מתוך"
+
+msgid "in the month of"
+msgstr "בחודש מתוך"
+
+msgid "Age 1 July 1863"
+msgstr "גיל 1 יולי 1863"
+
+msgid "White or Colored"
+msgstr "לבן או צבעוני"
+
+msgid "Former Military Service"
+msgstr "קודם צבאי שירות"
+
+msgid "Station Headquarters"
+msgstr "מטה התחנה"
+
+msgid "Congr. Dist. of"
+msgstr "מחוז קונגרס של"
+
+msgid "Card (A, B, or C)"
+msgstr "כרטיס (, B, או C)"
+
+msgid "Serial No."
+msgstr "מס' סידורי"
+
+msgid "Registration No."
+msgstr "מס׳ רישום"
+
+msgid "Order No."
+msgstr "מס׳ סודר"
+
+msgid "Age in yrs."
+msgstr "גיל בשנים"
+
+msgid "Home Address"
+msgstr "בית כתובת"
+
+msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
+msgstr "אזרח מלידה, אזרח שהתאזרח, זר, לא־אזרח או אינדיאני אזרח"
+
+msgid "If not a citizen, of what nation are you a citizen or subject?"
+msgstr "אם אינו אזרח, של איזו אומה הוא אזרח או נתין?"
+
+msgid "Employer's Name & address"
+msgstr "שם המעסיק וכתובתו"
+
 msgid "Nearest Relative"
 msgstr "קרוב משפחה הקרוב ביותר"
+
+msgid "Dependants & Address"
+msgstr "תלויים וכתובת"
+
+msgid ""
+"Have you a father, mother, wife, child under 12, or a sister or brother "
+"under 12, solely dependent on your support (specify which)?"
+msgstr ""
+"האם יש אב, אם, אישה, ילד מתחת לגיל 12, או אחות או אח מתחת לגיל 12, שתלויים "
+"לחלוטין בתמיכתך (נא לפרט מי)?"
+
+msgid "What military service have you had? (Branch, Years, Nation or State)"
+msgstr "איזה שירות צבאי היה? (זרוע, שנים, לאום או מדינה)"
+
+msgid "Do you claim exemption from draft (specify grounds)"
+msgstr "האם נטען לפטור מגיוס (נא לפרט נימוקים)"
+
+msgid "Race "
+msgstr "גזע "
+
+msgid "Build / Weight"
+msgstr "מבנה גוף / משקל"
+
+msgid "Hair Color"
+msgstr "צבע שיער"
+
+msgid "Bald"
+msgstr "קירח"
+
+msgid "Disability"
+msgstr "נכות"
 
 msgid "Place of Registration"
 msgstr "מקום הרישום"
 
+msgid "Date of Registration"
+msgstr "תאריך מתוך רישום"
+
+msgid "Serial Number"
+msgstr "סידורי מספר"
+
+msgid "Order Number"
+msgstr "סדר מספר"
+
+msgid "Registration Card"
+msgstr "רישום כרטיס"
+
+msgid ""
+"Found in lower left corner\n"
+"      D.S.S. Form 1\n"
+"        (Men 21 - 31)\n"
+"      D.S.S. Form 1 (Rev. 6-9-41)\n"
+"        (Men who turned 21 since 1st registration)\n"
+"      D.S.S. Form 1 (Rev. 1/1/42)\n"
+"        (Men born Feb 17, 1897 to Dec 31 1921)\n"
+"      D.S.S. Form 1 (Rev. 4/1/42)\n"
+"        (Men 45-64)\n"
+"      D.S.S. Form 1 (Rev. 6/1/42)\n"
+"        (Men 18-20)\n"
+"      D.S.S. Form 1 (Rev. 11/16/42)\n"
+"        (Men who turned 18 since\n"
+"         previous registration)"
+msgstr ""
+"נמצא בפינה השמאלית התחתונה\n"
+"      טופס D.S.S. 1\n"
+"        (גברים 21–31)\n"
+"      טופס D.S.S. 1 (מהדורה 6-9-41)\n"
+"        (גברים שמלאו להם 21 מאז הרישום הראשון)\n"
+"      טופס D.S.S. 1 (מהדורה 1/1/42)\n"
+"        (גברים שנולדו בין 17 בפברואר 1897 ל־31 בדצמבר 1921)\n"
+"      טופס D.S.S. 1 (מהדורה 4/1/42)\n"
+"        (גברים 45–64)\n"
+"      טופס D.S.S. 1 (מהדורה 6/1/42)\n"
+"        (גברים 18–20)\n"
+"      טופס D.S.S. 1 (מהדורה 11/16/42)\n"
+"        (גברים שמלאו להם 18 מאז\n"
+"         הרישום הקודם)"
+
+msgid "(1) First, Middle, Last"
+msgstr "(1) ראשון, אמצעי, אחרון"
+
+msgid "Place of Residence"
+msgstr "מקום מתוך מגורים"
+
+msgid ""
+"(2) Address or Place of Residence\n"
+" No. and street or R.F.D. No., Town, County, State"
+msgstr ""
+"(2) כתובת או מקום מגורים\n"
+" מס׳ ורחוב או מס׳ R.F.D., עיירה, מחוז, מדינה"
+
+msgid "Mailing Address"
+msgstr "דואר כתובת"
+
+msgid ""
+" Not used on D.S.S. Form 1\n"
+" (3) Used on all other forms"
+msgstr ""
+" לא משמש בטופס D.S.S. 1\n"
+" (3) משמש בכל הטפסים האחרים"
+
+msgid "Telephone"
+msgstr "טלפון"
+
+msgid ""
+"(3) On D.S.S. Form 1\n"
+"(4) On all other forms"
+msgstr ""
+"(3) בטופס D.S.S. 1\n"
+"(4) בכל הטפסים האחרים"
+
+msgid ""
+"(4) On D.S.S. Form 1\n"
+"(5) On all other forms"
+msgstr ""
+"(4) בטופס D.S.S. 1\n"
+"(5) בכל הטפסים האחרים"
+
+msgid "(Below Age in Years)"
+msgstr "(להלן גיל בשנים)"
+
+msgid ""
+"(5) On D.S.S. Form 1\n"
+"(6) On all other forms"
+msgstr ""
+"(5) בטופס D.S.S. 1\n"
+"(6) בכל הטפסים האחרים"
+
+msgid "Country of Citizenship"
+msgstr "ארץ של אזרחות"
+
+msgid ""
+"(6) On D.S.S. Form 1\n"
+"Not used on other forms"
+msgstr ""
+"(6) בטופס D.S.S. 1\n"
+"לא משמש בטפסים אחרים"
+
+msgid "Who will always know your address (Name & Address)"
+msgstr "מי תמיד ידע את הכתובת (שם וכתובת)"
+
+msgid ""
+"(7 & 9) On D.S.S. Form 1\n"
+"(7) On all but D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) On D.S.S. Form 1 (Rev. 6-9-41)"
+msgstr ""
+"(7 ו־9) בטופס D.S.S. 1\n"
+"(7) בכל הטפסים למעט טופס D.S.S. 1 (מהדורה 6-9-41)\n"
+"(8) בטופס D.S.S. 1 (מהדורה 6-9-41)"
+
+msgid "Relationship "
+msgstr "קשר־קרבה "
+
+msgid "(8) Only on D.S.S. Form 1"
+msgstr "(8) רק בטופס D.S.S. 1"
+
+msgid "Occupation "
+msgstr "משלח יד "
+
+msgid "(7) Only on D.S.S. Form 1 (Rev. 6-9-41)"
+msgstr "(7) רק בטופס D.S.S. 1 (מהדורה 6-9-41)"
+
+msgid ""
+"(10) On D.S.S. Form 1\n"
+"(9) On D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) on all others forms"
+msgstr ""
+"(10) בטופס D.S.S. 1\n"
+"(9) בטופס D.S.S. 1 (מהדורה 6-9-41)\n"
+"(8) בכל הטפסים האחרים"
+
+msgid "Place of employment or business"
+msgstr "מקום תעסוקה או עסק"
+
+msgid ""
+"(11) On D.S.S. Form 1\n"
+"(10) On D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(9) on all others forms"
+msgstr ""
+"(11) בטופס D.S.S. 1\n"
+"(10) בטופס D.S.S. 1 (מהדורה 6-9-41)\n"
+"(9) בכל הטפסים האחרים"
+
+msgid ""
+"White\n"
+"Negro\n"
+"Oriental\n"
+"Indian\n"
+"Filipino"
+msgstr ""
+"לבן\n"
+"שחור\n"
+"מזרחי\n"
+"אינדיאני\n"
+"פיליפיני"
+
 msgid "Complexion"
 msgstr "גון עור"
+
+msgid ""
+"Sallow\n"
+"Light\n"
+"Ruddy\n"
+"Dark\n"
+"Freckled\n"
+"Light brown\n"
+"Dark brown\n"
+"Black"
+msgstr ""
+"צהבהב\n"
+"קל\n"
+"אדמדם\n"
+"כהה\n"
+"מנומש\n"
+"חום בהיר\n"
+"חום כהה\n"
+"שחור"
+
+msgid "Eyes"
+msgstr "עיניים"
+
+msgid ""
+"Blue\n"
+"Gray\n"
+"Hazel\n"
+"Brown\n"
+"Black"
+msgstr ""
+"כחול\n"
+"אפור\n"
+"אגוז\n"
+"חום\n"
+"שחור"
+
+msgid "Hair"
+msgstr "שיער"
+
+msgid ""
+"Blonde\n"
+"Red\n"
+"Brown\n"
+"Black\n"
+"Gray\n"
+"Bald"
+msgstr ""
+"בלונדיני\n"
+"אדום\n"
+"חום\n"
+"שחור\n"
+"אפור\n"
+"קירח"
+
+msgid "Other characteristics"
+msgstr "מאפיינים אחרים"
+
+msgid "Date entered"
+msgstr "תאריך הזנה"
 
 msgid "Place entered"
 msgstr "מקום שהוזן"
@@ -234,35 +5744,736 @@ msgstr "מקום שהוזן"
 msgid "Term of enlistment"
 msgstr "תקופת שרות צבאי"
 
+msgid "Eye color"
+msgstr "צבע עיניים"
+
+msgid "Hair color"
+msgstr "צבע שיער"
+
+msgid "Rank in"
+msgstr "דרגה ב"
+
+msgid "Branch"
+msgstr "ענף"
+
+msgid "Regiment/Unit/Ship"
+msgstr "רגימנט/יחידה/אונייה"
+
+msgid "Service Number"
+msgstr "שירות מספר"
+
+msgid "No. of enlistment"
+msgstr "מס׳ גיוס"
+
+msgid "Date discharged"
+msgstr "תאריך שוחרר"
+
 msgid "Place discharged"
 msgstr "מקום השחרור"
+
+msgid "Rank out"
+msgstr "דרגה חוץ"
+
+msgid "Industry/Employer"
+msgstr "ענף/מעסיק"
+
+msgid "Residents Status"
+msgstr "תושבים מצב"
+
+msgid "Amt"
+msgstr "Amt"
+
+msgid "Town or City"
+msgstr "עיירה או עיר"
+
+msgid "Herred eller By"
+msgstr "מחוז או עיר"
+
+msgid "Sogn"
+msgstr "Sogn"
+
+msgid "Gade"
+msgstr "Gade"
+
+msgid "Gift"
+msgstr "Gift"
+
+msgid "Alder"
+msgstr "גיל"
+
+msgid "Stilling i familien"
+msgstr "מעמד במשפחה"
+
+msgid "Titel, Embed, Forretning, Håndværk"
+msgstr "תואר, משרה, עסק, מלאכה"
+
+msgid "Stilling, embede eller erhverv"
+msgstr "מעמד, משרה או עיסוק"
+
+msgid "Where Born"
+msgstr "היכן נולד"
+
+msgid "Fødested"
+msgstr "Fødested"
+
+msgid "Erhverv"
+msgstr "עיסוק"
+
+msgid "Trossamfund"
+msgstr "עדה דתית"
+
+msgid "Sted"
+msgstr "Sted"
+
+msgid "Comments"
+msgstr "הערות"
+
+msgid "Bemærkninger"
+msgstr "Bemærkninger"
 
 msgid "Place of Work"
 msgstr "מקום עבודה"
 
+msgid "Arbejdssted"
+msgstr "מקום עבודה"
+
+msgid "Fødselsdato"
+msgstr "Fødselsdato"
+
+msgid "Years at current residence"
+msgstr "שנים בנוכחי מגורים"
+
+msgid "År tilflyttet"
+msgstr "שנת מעבר"
+
+msgid "Previous residence"
+msgstr "קודם מגורים"
+
+msgid "Tilflyttet fra"
+msgstr "עבר מ"
+
+msgid "År gift"
+msgstr "שנת נישואין"
+
+msgid "Children Living"
+msgstr "ילדים חי"
+
+msgid "Levende børn"
+msgstr "ילדים חיים"
+
+msgid "Children Dead"
+msgstr "ילדים נפטר"
+
+msgid "Døde børn"
+msgstr "ילדים שנפטרו"
+
+msgid "Køn"
+msgstr "מין"
+
+msgid "Year stayed in parish"
+msgstr "שנת שהייה בקהילה"
+
+msgid "Hvilket aar taget ophold i sognet"
+msgstr "באיזו שנה התיישב בקהילה"
+
+msgid "Previous Residence"
+msgstr "קודם מגורים"
+
+msgid "Sidste bopæl inden tilflytning"
+msgstr "מקום מגורים אחרון לפני מעבר"
+
+msgid "Bemærkning"
+msgstr "Bemærkning"
+
+msgid "Income"
+msgstr "הכנסה"
+
+msgid "Indkomst"
+msgstr "הכנסה"
+
+msgid "Assets"
+msgstr "נכסים"
+
+msgid "Formue"
+msgstr "רכוש"
+
+msgid "State Tax"
+msgstr "מס מדינה"
+
+msgid "Statsskat"
+msgstr "מס מדינה"
+
+msgid "Council"
+msgstr "מועצה"
+
+msgid "Kommuneskat"
+msgstr "מס עירוני"
+
+msgid "Residence on 5 Nov 1924"
+msgstr "מגורים ב־5 בנובמבר 1924"
+
+msgid "Bopæl 5 nov 1924"
+msgstr "מקום מגורים ב־5 בנובמבר 1924"
+
+msgid "Stay on 5 Nov 1929"
+msgstr "שהות ב־5 בנובמבר 1929"
+
+msgid "Ophold 5 nov 1929"
+msgstr "שהות ב־5 בנובמבר 1929"
+
+msgid "Date Married"
+msgstr "תאריך נשוי"
+
+msgid "Dato gift"
+msgstr "תאריך נישואין"
+
 msgid "Event Place (Original)"
 msgstr "מקום אירוע (מקור)"
+
+msgid "Birth Year (Estimated)"
+msgstr "לידה שנה (משוער)"
+
+msgid "Spouse's Gender"
+msgstr "זוגאי של מגדר"
+
+msgid "Spouse's Age"
+msgstr "זוגאי של גיל"
+
+msgid "Spouse's Birth Year (Estimated)"
+msgstr "שנת לידת הזוגאי (משוערת)"
+
+msgid "Spouse's Father's Name"
+msgstr "שם אבי הזוגאי"
+
+msgid "Spouse's Mother's Name"
+msgstr "שם אם הזוגאי"
+
+msgid "Record Number"
+msgstr "רשומה מספר"
+
+msgid "Volume"
+msgstr "כרך"
+
+msgid "Volume Beginning Year"
+msgstr "שנת תחילת הכרך"
+
+msgid "Volume Ending Year"
+msgstr "שנת סיום הכרך"
+
+msgid "Can read and write"
+msgstr "ניתן קריאה וכתיבה"
+
+msgid "Military"
+msgstr "צבא"
+
+msgid "Taxes"
+msgstr "מיסים"
 
 msgid "Type of roof"
 msgstr "סוג גג"
 
+msgid "Arrived since"
+msgstr "הגיע מאז"
+
+msgid "Registration District"
+msgstr "מחוז רישום"
+
+msgid "Administrative Area"
+msgstr "אזור מנהלי"
+
+msgid "County/Administrative Area"
+msgstr "מחוז/אזור מנהלי"
+
+msgid "Banns/Licence"
+msgstr "הכרזות נישואין/רישיון"
+
+msgid "Deceased"
+msgstr "נפטר"
+
+msgid "Maiden surname of woman who was married"
+msgstr "שם משפחה מלידה של אישה שנישאה"
+
+msgid "Usual Address"
+msgstr "כתובת רגילה"
+
+msgid "City or Borough"
+msgstr "עיר או רובע"
+
+msgid "Parish or Township"
+msgstr "קהילה או עיירה"
+
+msgid "NAMES of each Person who abode therein the preceding Night."
+msgstr "שמות של כל אדם שלנה שם שקדם לילה."
+
+msgid ""
+"AGE, rounded down to the nearest five years for those aged fifteen or over."
+msgstr "גיל, מעוגל מטה לחמש השנים הקרובות עבור בני חמש־עשרה ומעלה."
+
+msgid "PROFESSION, TRADE, EMPLOYMENT or of INDEPENDENT MEANS."
+msgstr "מקצוע, משלוח־יד, תעסוקה או עצמאי."
+
+msgid ""
+"Whether Born in same County (Y or N), Scotland (S), Ireland (I) or Foreign "
+"Parts (P)."
+msgstr ""
+"האם נולד באותו מחוז (Y או N), סקוטלנד (S), אירלנד (I) או ארצות זרות (P)."
+
+msgid "Ecclesiastical District"
+msgstr "מחוז כנסייתי"
+
+msgid ""
+"Name and Surname of each Person who abode in the house, on the Night of the "
+"30th March, 1851"
+msgstr "שם ושם משפחה של כל אדם שלן בבית בליל 30 במרץ 1851"
+
 msgid "Relation to Head of Family"
 msgstr "קרבה לראש המשפחה"
+
+msgid "Rank, Profession or Occupation"
+msgstr "דרגה, מקצוע או משלח יד"
+
+msgid "Whether Blind or Deaf and Dumb"
+msgstr "האם עיוור או חירש ואילם"
+
+msgid "City or Municipal Borough"
+msgstr "עיר או רובע עירוני"
+
+msgid "Municipal Ward"
+msgstr "רובע עירוני"
+
+msgid "Parliamentary Borough"
+msgstr "רובע פרלמנטרי"
+
+msgid "Hamlet or Tything"
+msgstr "כפריר או יחידת מעשר"
+
+msgid "Name and Surname of each Person"
+msgstr "שם ושם משפחה של כל אדם"
+
+msgid "Rank, Profession of Occupation"
+msgstr "דרגה, מקצוע מתוך משלח יד"
+
+msgid "Whether Blind, or Deaf-and-Dumb"
+msgstr "האם עיוור, או חירש־אילם"
+
+msgid "Civil Parish or Township"
+msgstr "קהילה אזרחית או עיירה"
+
+msgid "Village or Hamlet"
+msgstr "כפר או כפריר"
+
+msgid "Local Board or Improvement Commissioners District"
+msgstr "מועצה מקומית או מחוז נציבי שיפורים"
+
+msgid "NAME and Surname of each Person"
+msgstr "שם ושם משפחה של כל אדם"
 
 msgid "RELATION to Head of Family"
 msgstr "קרבה לראש המשפחה"
 
+msgid "CONDITION"
+msgstr "CONDITION"
+
+msgid "AGE of"
+msgstr "AGE מתוך"
+
+msgid "Rank, Profession or OCCUPATION"
+msgstr "דרגה, מקצוע או משלח־יד"
+
+msgid ""
+"Whether\n"
+"1. Deaf-and-Dumb\n"
+"2. Blind\n"
+"3. Imbecile or Idiot\n"
+"4. Lunatic"
+msgstr ""
+"האם\n"
+"1. חירש־אילם\n"
+"2. עיוור\n"
+"3. רפה־שכל או שוטה\n"
+"4. חולה נפש"
+
+msgid "Town, Village or Hamlet"
+msgstr "עיירה, כפר או כפריר"
+
+msgid "Urban Sanitary District"
+msgstr "מחוז תברואה עירוני"
+
+msgid "Rural Sanitary District"
+msgstr "מחוז תברואה כפרי"
+
+msgid "Ecclesiastical Parish or District"
+msgstr "קהילה כנסייתית או מחוז"
+
+msgid "CONDITION as to Marriage"
+msgstr "מצב מבחינת נישואין"
+
+msgid "AGE last Birthday of"
+msgstr "AGE אחרון יום הולדת מתוך"
+
+msgid ""
+"If\n"
+"(1) Deaf-and-Dumb\n"
+"(2) Blind\n"
+"(3) Imbecile or Idiot\n"
+"(4) Lunatic"
+msgstr ""
+"אם\n"
+"(1) חירש־אילם\n"
+"(2) עיוור\n"
+"(3) רפה־שכל או שוטה\n"
+"(4) חולה נפש"
+
+msgid "Administrative County"
+msgstr "מחוז מנהלי"
+
 msgid "Civil Parish"
 msgstr "מועצה מקומית"
+
+msgid "Municipal Borough"
+msgstr "עירוני רובע"
+
+msgid "Parliamentary Borough or Division"
+msgstr "רובע או חלוקה פרלמנטריים"
+
+msgid "PROFESSION or OCCUPATION"
+msgstr "מקצוע או משלח־יד"
+
+msgid "Neither"
+msgstr "לא זה ולא זה"
+
+msgid "Neither Employer nor Employed"
+msgstr "לא מעסיק ולא מועסקים"
+
+msgid ""
+"If\n"
+"(1) Deaf-and-Blind\n"
+"(2) Blind\n"
+"(3) Lunatic, Imbecile or Idiot"
+msgstr ""
+"אם\n"
+"(1) חירש־עיוור\n"
+"(2) עיוור\n"
+"(3) חולה נפש, רפה־שכל או שוטה"
+
+msgid "Ecclesiastical Parish"
+msgstr "קהילה כנסייתית"
+
+msgid "County Borough, Municipal Borough, or Urban District"
+msgstr "רובע מחוזי, רובע עירוני או מחוז עירוני"
+
+msgid "Ward of Municipal Borough or of Urban District"
+msgstr "רובע משנה של רובע עירוני או של מחוז עירוני"
+
+msgid "Rural District"
+msgstr "מחוז כפרי"
+
+msgid "Town or Village or Hamlet"
+msgstr "עיירה או כפר או כפריר"
+
+msgid "Condition as to Marriage"
+msgstr "מצב מבחינת נישואין"
+
+msgid "Age last Birthday of"
+msgstr "גיל אחרון יום הולדת מתוך"
+
+msgid "PROFESSION OR OCCUPATION"
+msgstr "מקצוע או משלח־יד"
+
+msgid "Work Type"
+msgstr "עבודה סוג"
+
+msgid "Employer, Worker or Own Account"
+msgstr "מעסיק, עובד או עצמאי"
+
+msgid "At Home"
+msgstr "בבית"
+
+msgid "If Working at Home"
+msgstr "אם עובד בבית"
+
+msgid ""
+"If\n"
+"(1) Deaf and Dumb\n"
+"(2) Blind\n"
+"(3) Lunatic\n"
+"(4) Imbecile, feeble-minded"
+msgstr ""
+"אם\n"
+"(1) חירש ואילם\n"
+"(2) עיוור\n"
+"(3) חולה נפש\n"
+"(4) רפה־שכל, רפה־שכל"
+
+msgid "Registration Sub-District"
+msgstr "תת־מחוז רישום"
+
+msgid "Enumeration District"
+msgstr "פקידה מחוז"
+
+msgid "Number of Rooms"
+msgstr "מספר חדרים"
+
+msgid "NAME AND SURNAME"
+msgstr "שם ושם משפחה"
+
+msgid "RELATIONSHIP to Head of Family"
+msgstr "קשר לראש המשפחה"
+
+msgid "AGE (last Birthday)"
+msgstr "AGE (אחרון יום הולדת)"
+
+msgid ""
+"\"Single,\" \"Married,\" \"Widower,\" or \"Widow,\" for all persons aged 15 "
+"years and upwards."
+msgstr ""
+"'רווקים,' 'נשואים,' 'אלמן,' או 'אלמנה,' עבור כל אנשים בני 15 שנים וומעלה."
+
+msgid "Completed Years the present Marriage has lasted."
+msgstr "מספר השנים שהנישואין הנוכחיים נמשכו."
+
+msgid "Children Total"
+msgstr "ילדים סך הכול"
+
+msgid "Total Children Born Alive."
+msgstr "סך הכול ילדים נולדו בחיים."
+
+msgid "Children still Living."
+msgstr "ילדים עדיין בחיים."
+
+msgid "Children Died"
+msgstr "ילדים נפטר"
+
+msgid "Children who have Died."
+msgstr "ילדים שיש מתו."
+
+msgid "Industry or Service with which worker is connected."
+msgstr "ענף או שירות שאליו העובד קשור."
+
+msgid "Whether Employer, Worker or Working on Own Account"
+msgstr "האם מעסיק, עובד או עובד עצמאי"
+
+msgid "Whether Working at Home"
+msgstr "האם עובד בבית"
 
 msgid "BIRTHPLACE of every Person."
 msgstr "מקום לידה של כל אדם."
 
+msgid "NATIONALITY of every Person born in a Foreign Country."
+msgstr "לאום של כל אדם שנולד בארץ זרה."
+
+msgid "INFIRMITY"
+msgstr "INFIRMITY"
+
+msgid "NAME and SURNAME"
+msgstr "שם ושם משפחה"
+
+msgid "RELATIONSHIP to Head of Household"
+msgstr "קשר־קרבה לראש משק הבית"
+
+msgid "AGE years"
+msgstr "AGE שנים"
+
+msgid "Age Months"
+msgstr "גיל חודשים"
+
+msgid "AGE months"
+msgstr "AGE חודשים"
+
+msgid "SEX"
+msgstr "SEX"
+
+msgid "MARRIAGE or ORPHANHOOD"
+msgstr "נישואין או יתמות"
+
+msgid ""
+"If attending a School or any kind of Educational Institution for the purpose "
+"of receiving Instruction"
+msgstr "אם לומד בבית ספר או במוסד חינוכי כלשהו לצורך קבלת לימוד"
+
+msgid ""
+"State here the precise branch of Profession, Trade, Manufacture, Service, &c."
+msgstr "יש לציין כאן את הענף המדויק של מקצוע, מסחר, ייצור, שירות ועוד."
+
+msgid "Number of living children"
+msgstr "מספר הילדים החיים"
+
+msgid "Total number under sixteen years of age. If none write \"None.\""
+msgstr "מספר כולל מתחת לגיל שש־עשרה. אם אין, יש לכתוב 'אין'."
+
+msgid "Ages of living children"
+msgstr "גילי הילדים החיים"
+
 msgid "For each child place a X in the column corresponding to its age."
 msgstr "לכל ילד יש סימון X בעמודה בהתאם לגילו."
+
+msgid "E.D. Letter Code"
+msgstr "קוד אותיות E.D."
+
+msgid "Borough, U.D. or R.D."
+msgstr "רובע, U.D. או R.D."
+
+msgid "Registration District and Sub-district"
+msgstr "מחוז רישום ותת־מחוז"
+
+msgid "SURNAMES and OTHER NAMES."
+msgstr "שמות משפחה ואחר שמות."
+
+msgid "OVSPI"
+msgstr "OVSPI"
+
+msgid "O, V, S, P or I"
+msgstr "O, V, S, P או I"
+
+msgid "M or F"
+msgstr "M או F"
+
+msgid "S, M, W or D."
+msgstr "S, M, W או D."
+
+msgid "PERSONAL OCCUPATION"
+msgstr "PERSONAL OCCUPATION"
+
+msgid "Instructions"
+msgstr "הוראות"
+
+msgid "See INSTRUCTIONS"
+msgstr "למידע נוסף הוראות"
+
+msgid "Language Spoken"
+msgstr "שפה מדוברת"
+
+msgid "LANGUAGE SPOKEN."
+msgstr "LANGUAGE SPOKEN."
+
+msgid "GROS Data"
+msgstr "GROS נתונים"
+
+msgid "Born in County"
+msgstr "נולד במחוז"
+
+msgid "Foreigner, Born England or Ireland"
+msgstr "זר, יליד אנגליה או אירלנד"
+
+msgid "Quoad Sacra Parish"
+msgstr "קהילת Quoad Sacra"
+
+msgid "Parliamentary Burgh"
+msgstr "עיירה פרלמנטרית"
+
+msgid "Royal Burgh"
+msgstr "עיירה מלכותית"
+
+msgid "Town or Village"
+msgstr "עיירה או כפר"
+
+msgid "House Schedule No"
+msgstr "בית לוח אין"
+
+msgid "Relation to Head"
+msgstr "יוחסה לראש משק הבית"
+
+msgid "Blind, or Deaf and Dumb"
+msgstr "עיוור, או חירש ואילם"
+
+msgid "No. Of Schedule"
+msgstr "מס' של לוח"
+
+msgid "Road, Street, etc, and No. or Name of House"
+msgstr "דרך, רחוב ועוד, ומס' הבית או שמו"
+
+msgid "House Inhabited"
+msgstr "בית מאוכלסים"
+
+msgid "House U or B"
+msgstr "בית U או B"
+
+msgid "Rank, Profession, or Occupation"
+msgstr "דרגה, מקצוע, או משלח יד"
+
+msgid "Whether Blind, or Deaf and Dumb"
+msgstr "האם עיוור, או חירש ואילם"
+
+msgid "No. of Children from 5 to 13 attending School"
+msgstr "מס׳ ילדים מ־5 ל־13 לומדים בית־ספר"
+
+msgid "WindowRooms"
+msgstr "חדרים עם חלונות"
+
+msgid "No. of Rooms with one or more Windows"
+msgstr "מס׳ חדרים עם אחד או יותר Windows"
+
+msgid "Police Burgh"
+msgstr "רובע משטרתי"
+
+msgid "Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic"
+msgstr "האם 1. חירש ואילם, 2. עיוור, 3. רפה־שכל או שוטה 4. חולה נפש"
+
+msgid "School Board District"
+msgstr "מחוז מועצת בית־ספר"
+
+msgid "School board District"
+msgstr "בית־ספר מועצה מחוז"
+
+msgid "Parliamentary Division"
+msgstr "חלוקה פרלמנטרית"
+
+msgid "Municipal Burgh"
+msgstr "רובע עירוני"
+
+msgid "Burgh Ward"
+msgstr "רובע עירוני רובע"
+
+msgid "Island"
+msgstr "אי"
+
+msgid "Gaellic or G. & E."
+msgstr "גאלית או G. & E."
 
 msgid "Parish Ward"
 msgstr "ועד מועצה מקומית"
 
+msgid "Profession or Occupation"
+msgstr "מקצוע או משלח יד"
+
+msgid "Employer, Worker or on Own Account"
+msgstr "מעסיק, עובד או עצמאי"
+
+msgid "Working at Home"
+msgstr "עבודה בבית"
+
+msgid "District Electoral Division"
+msgstr "חלוקה מחוזית לבחירות"
+
+msgid "No. on Form B"
+msgstr "מס׳ בטופס B"
+
+msgid "\"Read and Write\", \"Read\" or \"Cannot Read\""
+msgstr "'קריאה וכתיבה', 'קריאה' או 'לא ניתן קריאה'"
+
+msgid ""
+"\"Irish\" or \"Irish & English\", in other cases no entry should be made"
+msgstr "'אירית' או 'אירית ואנגלית'; במקרים אחרים אין לרשום דבר"
+
+msgid ""
+"\"Deaf and Dumb\", \"Dumb only\", \"Blind\", \"Imbecile or Idiot\", or "
+"\"Lunatic\""
+msgstr "'חירש ואילם', 'אילם בלבד', 'עיוור', 'רפה־שכל או שוטה', או 'חולה נפש'"
+
+msgid "Poor Law Union"
+msgstr "איגוד חוק העניים"
+
+msgid "Barony"
+msgstr "ברונות"
+
+msgid "Urban District"
+msgstr "מחוז עירוני"
+
 msgid "Head of Family"
 msgstr "ראש משפחה"
+
+msgid "Total Children"
+msgstr "סך הכול ילדים"
+
+msgid "Children born alive to present Marriage"
+msgstr "ילדים שנולדו חיים בנישואין הנוכחיים"

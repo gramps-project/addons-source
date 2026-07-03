@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-09 13:13+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Set properties for multiple places"
 msgstr "נגדרת מאפיינים למספר מקומות"
@@ -25,6 +25,9 @@ msgstr "הגרמפלט מאפשר הגדרת מאפיינים למספר מקו�
 msgid "New enclosing place"
 msgstr "מקום מכיל חדש"
 
+msgid "Timespan:"
+msgstr "טווח זמן:"
+
 msgid "Set timespan for enclosing places"
 msgstr "הגדרת טווח תאריכים למקום המכיל"
 
@@ -35,7 +38,7 @@ msgid "Clear tags"
 msgstr "ניקוי תגים"
 
 msgid "Generate hierarchy"
-msgstr "חילול היררכיה"
+msgstr "יצירת מדרג"
 
 msgid "use spaces as separator"
 msgstr "שימוש ברווח כמפריד"
@@ -47,7 +50,7 @@ msgid "Replace text"
 msgstr "החלפת מלל"
 
 msgid "Use regex"
-msgstr "שימוש בביטוי רגיל (regex)"
+msgstr "שימוש בביטוי סדיר (regex)"
 
 msgid "Old text:"
 msgstr "מלל ישן:"
@@ -63,6 +66,9 @@ msgstr "החלה על המקום שנבחר"
 
 msgid "Setting place properties"
 msgstr "הגדרת מאפייני מקום"
+
+msgid "Regex operation failed: {}"
+msgstr "פעולת Regex נכשלה: {}"
 
 msgid "PlaceUpdate"
 msgstr "כלי-מקום"

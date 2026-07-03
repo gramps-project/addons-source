@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-09-06 11:01+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,13 +12,152 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "Graph View"
+msgstr "Vista grafico"
+
+msgid "Show IDs"
+msgstr "Mostra ID"
+
+msgid "Show avatars"
+msgstr "Mostra avatar"
+
+msgid "Highlight the home person"
+msgstr "Evidenzia il nome della persona"
+
+msgid "Show full dates"
+msgstr "Mostra le date complete"
+
+msgid "Show places"
+msgstr "Mostra i luoghi"
+
+msgid "Vertical: Top to Bottom"
+msgstr "Verticale: dall'alto al basso"
+
+msgid "Vertical: Bottom to Top"
+msgstr "Verticale: dal basso all'alto"
+
+msgid "Horizontal: Left to Right"
+msgstr "Orizzontale: da sinistra a destra"
+
+msgid "Horizontal: Right to Left"
+msgstr "Orizzontale: da destra a sinistra"
+
+msgid "Time Direction"
+msgstr "Direzione del tempo"
+
+msgid "Limit number of people displayed (use 0 for unlimited)"
+msgstr "Limita il numero di persone visualizzate (usa 0 per nessun limite)"
+
+msgid "Person theme"
+msgstr "Tema della persona"
+
+msgid "Path color to home person"
+msgstr "Colore del percorso verso la persona-casa"
 
 msgid "Font:"
 msgstr "Tipo di carattere:"
 
+msgid "Avatars style"
+msgstr "Stile dell'avatar"
+
+msgid "PNG files"
+msgstr "File PNG"
+
+msgid "Male avatar:"
+msgstr "Avatar maschile:"
+
+msgid "Choose male avatar"
+msgstr "Scegli un avatar maschile"
+
+msgid "Female avatar:"
+msgstr "Avatar femminile:"
+
+msgid "Choose female avatar"
+msgstr "Scegli un avatar femminile"
+
+msgid "Unknown avatar:"
+msgstr "Avatar sconosciuto:"
+
+msgid "Choose Unknown avatar"
+msgstr "Scegli un avatar sconosciuto"
+
+msgid "Other avatar:"
+msgstr "Altro avatar:"
+
+msgid "Choose Other avatar"
+msgstr "Scegli un avatar per altro"
+
+msgid "Active person border size"
+msgstr "Dimensione del bordo della persona attiva"
+
+msgid "Person border size"
+msgstr "Dimensione del bordo della persona"
+
+msgid "Themes"
+msgstr "Temi"
+
+msgid "Show animation"
+msgstr "Mostra animazione"
+
+msgid "Animation speed (1..5 and 5 is the slower)"
+msgstr "Velocità animazione (da 1 a 5, e 5 è la più lenta)"
+
+msgid "Animation count (0..8 use 0 to turn off)"
+msgstr "Conteggio animazione (da 0 a 8, utilizza 0 per disattivare)"
+
+msgid "Animation"
+msgstr "Animazione"
+
+msgid "Search in all database"
+msgstr "Cerca in tutti i database"
+
+msgid "Also apply search by all database."
+msgstr "Applica la ricerca anche a tutti i database."
+
 msgid "Show person images"
 msgstr "Mostra le immagini delle persone"
+
+msgid "Show persons thumbnails in search result list."
+msgstr ""
+"Mostra le miniature delle persone nell'elenco dei risultati di ricerca."
+
+msgid "Show bookmarked first"
+msgstr "Mostra prima quelle nei segnalibri"
+
+msgid "Show bookmarked persons first in search result list."
+msgstr "Mostra prima le persone nei segnalibri nei risultati di ricerca."
+
+msgid "Search"
+msgstr "Ricerca"
+
+msgid "Zoom in"
+msgstr "Ingrandisci"
+
+msgid "Zoom out"
+msgstr "Rimpicciolisci"
+
+msgid "Zoom to original"
+msgstr "Ingrandisci all'originale"
+
+msgid "Zoom to best fit"
+msgstr "Ingrandisci per adattare meglio"
+
+msgid "Go to active person"
+msgstr "Vai alla persona attiva"
+
+msgid "Go to bookmark"
+msgstr "Vai ai segnalibri"
+
+msgid "Center view on selected bookmark"
+msgstr "Centra la vista sul segnalibro selezionato"
+
+msgid "Bookmarks for current graph"
+msgstr "Segnalibri per il grafico corrente"
+
+msgid "Other Bookmarks"
+msgstr "Altri segnalibri"
 
 msgid "Vertical spacing between generations"
 msgstr "Spaziatura verticale tra le generazioni"
@@ -26,20 +165,145 @@ msgstr "Spaziatura verticale tra le generazioni"
 msgid "Horizontal spacing between generations"
 msgstr "Spaziatura orizzontale tra le generazioni"
 
+msgid "Spacings"
+msgstr "Spaziature"
+
+msgid "All connected"
+msgstr "Tutte le connesse"
+
+msgid ""
+"Show all connected persons limited by generation restrictions.\n"
+"Works slow, so don't set large generation values."
+msgstr ""
+"Mostra tutte le persone collegate, limitate dalle restrizioni sulle "
+"generazioni.\n"
+"Funziona lentamente, quindi non impostare valori di generazioni troppo "
+"grandi."
+
+msgid "Add active person"
+msgstr "Aggiungi persona attiva"
+
+msgid "Call the bookmark editor"
+msgstr "Chiama l'editor di segnalibri"
+
+msgid ""
+"You don't have any bookmarks yet...\n"
+"Try to add some frequently used persons to speedup navigation."
+msgstr ""
+"Non hai ancora nessun segnalibro...\n"
+"Prova ad aggiungere le persone usate più di frequente per velocizzare la "
+"navigazione."
+
+msgid "No bookmarks for this graph..."
+msgstr "Nessun segnalibro per questo grafico..."
+
+msgid "No other bookmarks..."
+msgstr "Non ci sono altri segnalibri..."
+
+#, python-format
+msgid "found: %s"
+msgstr "trovato: %s"
+
+#, python-format
+msgid ""
+"Add active person to bookmarks\n"
+"%s"
+msgstr ""
+"Aggiungi la persona attiva nei segnalibri\n"
+"%s"
+
+#, python-format
+msgid ""
+"Person <b><i>%s</i></b> is not in the current view.\n"
+"Do you want to set it active and rebuild view?"
+msgstr ""
+"La persona <b><i>%s</i></b> non è nella vista corrente.\n"
+"Vuoi impostarla come attiva e ricostruire la vista?"
+
 msgid "Change active person?"
 msgstr "Modificare la persona attiva?"
+
+#, python-brace-format
+msgid ""
+"This graph would contain at least {people_count} people, which exceeds the "
+"limit of {people_limit} people. For performance reasons, at least "
+"{people_missing} people won't be shown. You can change this limit in the "
+"view configuration."
+msgstr ""
+"Questo grafico dovrebbe almeno {people_count} persone, e ciò eccede il "
+"limite di {people_limit} persone. Per ragioni di prestazioni, non verranno "
+"visualizzate almeno {people_missing} persone. Puoi modificare questo limite "
+"nella configurazione della vista."
+
+msgid "Incomplete graph"
+msgstr "Grafico incompleto"
+
+msgid "Image on right side"
+msgstr "Immagine sulla destra"
 
 msgid "Image on left side"
 msgstr "Immagine sulla sinistra"
 
+#, python-format
+msgid "%s "
+msgstr "%s "
+
 msgid "<b>Tags:</b>"
 msgstr "<b>Etichette:</b>"
+
+msgid "Lines type"
+msgstr "Tipo di linee"
+
+msgid "Direct"
+msgstr "Dirette"
+
+msgid "Curves"
+msgstr "Curve"
+
+msgid "Ortho"
+msgstr "Ortogonali"
+
+msgid "Copy"
+msgstr "Copia"
+
+msgid "No Events for this person"
+msgstr "Nessun evento per questa persona"
 
 msgid "Select tags for person"
 msgstr "Seleziona etichette per persona"
 
+msgid "Add new family"
+msgstr "Aggiungi nuova famiglia"
+
+msgid "Add parents"
+msgstr "Aggiungi genitori"
+
+msgid "Set as home person"
+msgstr "Imposta come persona-casa"
+
+msgid "Show path to home person"
+msgstr "Mostra il percorso alla persona-casa"
+
+msgid "Remove from bookmarks"
+msgstr "Rimuovi dai segnalibri"
+
+msgid "Add to bookmarks"
+msgstr "Aggiungi nei segnalibri"
+
+msgid "No Events for this family"
+msgstr "Nessun evento per questa famiglia"
+
 msgid "Select tags for family"
 msgstr "Seleziona etichette per famiglia"
+
+msgid "Add father"
+msgstr "Aggiungi padre"
+
+msgid "Add mother"
+msgstr "Aggiunge madre"
+
+msgid "About Graph View"
+msgstr "Informazioni su Vista grafico"
 
 #, python-format
 msgid "Adding Tags to person (%s)"
@@ -49,8 +313,67 @@ msgstr "Aggiunta di etichette alla persona (%s)"
 msgid "Adding Tags to family (%s)"
 msgstr "Aggiunta di etichette alla famiglia (%s)"
 
+#, python-format
+msgid "Deleting the person [%s] will remove it from the database."
+msgstr "L'eliminazione della persona [%s] la rimuoverà dal database."
+
+#, python-format
+msgid "Delete family [%s]?"
+msgstr "Eliminare la famiglia [%s]?"
+
+msgid "Deleting the family will remove it from the database."
+msgstr "L'eliminazione della famiglia [%s] la rimuoverà dal database."
+
+#, python-format
+msgid "Delete Family [%s]"
+msgstr "Elimina la famiglia [%s]"
+
+msgid "Dynamic and interactive graph of relations"
+msgstr "Grafico delle relazioni dinamico e interattivo"
+
+msgid "Dark (default)"
+msgstr "Scuro (predefinito)"
+
 msgid "Light"
 msgstr "Chiaro"
 
+msgid "Cartoon"
+msgstr "Cartone animato"
+
+msgid "Modern"
+msgstr "Moderno"
+
+msgid "Generic (dark)"
+msgstr "Generico (scuro)"
+
+msgid "Generic (gray)"
+msgstr "Generico (grigio)"
+
+msgid "Generic (light)"
+msgstr "Generico (chiaro)"
+
+msgid "Persons from current graph"
+msgstr "Persone dal grafico corrente"
+
+msgid "Other persons from database"
+msgstr "Altre persone dal database"
+
+msgid "No persons found..."
+msgstr "Nessuna persona trovata..."
+
+msgid ""
+"Search people in the current visible graph and database.\n"
+"Use <Ctrl+F> to make search entry active."
+msgstr ""
+"Cerca le persone nel grafico attualmente visibile e nel database.\n"
+"Usa <Ctrl+F> per attivare la voce di ricerca."
+
 msgid "Search..."
-msgstr "Ricerca..."
+msgstr "Cerca..."
+
+#, python-format
+msgid "<b>%s:</b>"
+msgstr "<b>%s:</b>"
+
+msgid "Partners"
+msgstr "Partner"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,19 +13,91 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Event Roles"
+msgstr "אירוע תפקיד"
+
+msgid "Event Types"
+msgstr "אירוע סוג"
+
+msgid "Family Relation Types"
+msgstr "משפחה יוחסה סוג"
 
 msgid "Child reference Types"
 msgstr "סוגי אזכור ילדים"
 
+msgid "Name Origin Types"
+msgstr "שם מקור סוגים"
+
+msgid "Name Types"
+msgstr "שם סוג"
+
+msgid "Note Types"
+msgstr "הערה סוג"
+
 msgid "Place Types"
 msgstr "סוגי מקום"
+
+msgid "Repository Types"
+msgstr "מאגר סוג"
+
+msgid "Source Media Types"
+msgstr "מקור מדיה סוג"
+
+msgid "URL Types"
+msgstr "URL סוג"
+
+msgid "Types Cleanup Tool"
+msgstr "כלי ניקוי סוגים"
+
+msgid ""
+"Remove the selected type from the db.\n"
+"This does not change any referenced objects."
+msgstr ""
+"הסרת הסוג שנבחר ממסד־הנתונים.\n"
+"פעולה זו אינה משנה עצמים שמפנים אליו."
+
+msgid ""
+"Select a new name for the current type, prior to renaming the type in the "
+"referenced objects."
+msgstr "בחירת שם חדש לסוג הנוכחי, לפני שינוי שם הסוג בעצמים שמפנים אליו."
+
+msgid "Rename"
+msgstr "שינוי שם"
+
+msgid "Rename the selected type in all referenced objects."
+msgstr "שינוי שם הסוג שנבחר בכל העצמים שמפנים אליו."
 
 msgid "Close the Type Cleanup Tool"
 msgstr "סגירת הכלי לניקוי סוגים"
 
+msgid "Types"
+msgstr "סוג"
+
 msgid "Type Cleanup Tool"
 msgstr "כלי לניקוי סוגים"
 
+#, python-format
+msgid "Changing type from %(old_type)s to %(new_type)s."
+msgstr "שינוי סוג מ־%(old_type)s ל־%(new_type)s."
+
+msgid ""
+"Removing this custom type will eliminate it from the type selection drop "
+"down lists\n"
+"and further runs of this tool.\n"
+"\n"
+"However, it will not remove it from the referenced items in the database.\n"
+"If you want to change it in referenced items, use 'Rename'."
+msgstr ""
+"הסרת הסוג המותאם הזה תסיר אותו מרשימות הבחירה של הסוג\n"
+"ומריצות נוספות של כלי זה.\n"
+"\n"
+"עם זאת, היא לא תסיר אותו מהפריטים שמפנים אליו במסד־הנתונים.\n"
+"כדי לשנות אותו בפריטים שמפנים אליו, יש להשתמש ב־'שינוי שם'."
+
 msgid "Type Cleanup"
 msgstr "ניקוי סוגים"
+
+msgid "Clean up (remove) custom types"
+msgstr "ניקוי (הסרה) של סוגים מותאמים"

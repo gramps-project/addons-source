@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-02-20 09:09+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "No title"
 msgstr "ללא כותרת"
@@ -21,11 +21,23 @@ msgstr "ללא כותרת"
 msgid "No data available."
 msgstr "נתונים לא זמינים."
 
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "חלוקות מנהליות היסטוריות של"
+
 msgid "Foundation date:"
 msgstr "תאריך יסוד:"
 
+msgid "Note:"
+msgstr "הערה:"
+
 msgid "Coordinates:"
 msgstr "נקודות־ציון:"
+
+msgid "Administrative history"
+msgstr "היסטוריה מנהלית"
+
+msgid "Data provided to AI:"
+msgstr "נתונים שנמסרו לבינה מלאכותית:"
 
 msgid "Full hierarchy"
 msgstr "מדרג מלא"
@@ -33,8 +45,32 @@ msgstr "מדרג מלא"
 msgid "Place Type:"
 msgstr "סוג מקום:"
 
+msgid "Last Retrieved At:"
+msgstr "אחרון אוחזר ב:"
+
 msgid "Save Coordinates to the Place"
 msgstr "שמירת נקודות־ציון במקום"
+
+msgid "AI provider is disabled"
+msgstr "ספק הבינה המלאכותית מושבת"
+
+msgid "No AI API key provided"
+msgstr "לא סופק מפתח API לבינה מלאכותית"
+
+msgid "AI-generated historical place data is currently disabled"
+msgstr "נתוני מקום היסטוריים שנוצרים על ידי בינה מלאכותית מושבתים כעת"
+
+msgid "AI provider is unknown. Please check your AI provider settings."
+msgstr "ספק AI אינו ידוע. נא לבדוק את הגדרות ספק ה־AI."
+
+msgid "⏳ Generating historical place data, please wait..."
+msgstr "⏳ יצירת נתוני מקום היסטוריים, נא להמתין..."
+
+msgid "Keys"
+msgstr "מפתחות"
+
+msgid "Website URL"
+msgstr "כתובת URL של אתר מרשתת"
 
 msgid "Add link to note"
 msgstr "הוספת קישור להערה"
@@ -45,8 +81,74 @@ msgstr "הוספת קישור לתכונה"
 msgid "Show QR-code"
 msgstr "הצגת קוד־QR"
 
+msgid "Copy link to clipboard"
+msgstr "העתקת קישור ללוח־גזירים"
+
+msgid "Hide link for selected item"
+msgstr "הסתרת קישור לפריט שנבחר"
+
+msgid "Hide link for all items"
+msgstr "הסתרת קישור לכל הפריטים"
+
+msgid "Edit Attribute with the Link"
+msgstr "עריכת מאפיין עם הקישור"
+
+msgid "Edit Note with the Link"
+msgstr "עריכת הערה עם הקישור"
+
+msgid "Edit Internet link"
+msgstr "עריכת מרשתת קישור"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 הצעות בינה מלאכותית"
+
+msgid "Attribute no longer matches this WebSearch row"
+msgstr "המאפיין אינו תואם עוד לשורת חיפוש מרשתת זו"
+
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr "המאפיין אינו קיים עוד. הסמל הנוסף הוסר"
+
+msgid "Note no longer exists"
+msgstr "ההערה אינה קיימת עוד"
+
+msgid "Note no longer exists. The extra icon is removed"
+msgstr "ההערה אינה קיימת עוד. הסמל הנוסף הוסר"
+
+msgid "Internet link no longer matches this WebSearch row"
+msgstr "קישור המרשתת אינו תואם עוד לשורת חיפוש מרשתת זו"
+
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+"📌 קישור המרשתת '{title}' אוכסן בארכיון לעיון עתידי על ידי גרמפלט WebSearch‏ "
+"(v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"ניתן להשתמש בקישור זה כדי לשוב אל המקור ולאמת את המידע שקשור לישות זו."
+
+#, python-format
+msgid "Note #%(id)s has been successfully added"
+msgstr "הערה מס׳ %(id)s נוספה בהצלחה"
+
+msgid "Error creating note"
+msgstr "שגיאה ביצירת הערה"
+
+msgid "URL is copied to the Clipboard"
+msgstr "כתובת ה־URL הועתקה ללוח־גזירים"
+
 msgid "WebSearch Link"
 msgstr "קישור חיפוש מרשתת"
+
+msgid "Attribute has been successfully added"
+msgstr "המאפיין נוסף בהצלחה"
 
 #, python-brace-format
 msgid "Title: {title}"
@@ -60,8 +162,218 @@ msgstr "חילוף: {keys}"
 msgid "Empty: {keys}"
 msgstr "ריק: {keys}"
 
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "הערה: {comment}"
+
+msgid "Column - Icons"
+msgstr "עמודה - סמלים"
+
+msgid "Column - Source Types (flags)"
+msgstr "עמודה - מקור סוגים (דגלים)"
+
+msgid "Column - Keys"
+msgstr "עמודה - מפתחות"
+
+msgid "Column - Title"
+msgstr "עמודה - כותרת"
+
+msgid "Column - Website Url"
+msgstr "עמודה - אתר מרשתת Url"
+
+msgid "Column - Comment"
+msgstr "עמודה - הערה"
+
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "סמל – כתובות URL שבוקרו (סימן ביקורת)"
+
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "סמל - כתובות URL שמורות (תקליטון)"
+
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "סמל - כתובות URL שמקושרות למאפייני UID (תג UID)"
+
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "סמל - כתובות URL מקובצי CSV אזוריים (דגל)"
+
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "סמל - כתובות URL מקובצי CSV סטטיים (נעץ אדום)"
+
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "סמל - כתובות URL מקובצי CSV משותפים (כדור הארץ)"
+
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "סמל - כתובות URL מקובצי CSV מוצלבים (חיצי ערבוב)"
+
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr "סמל - כתובות URL ממחיצת משתמש מותאמת (סמל גיליון נתונים)"
+
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "סמל - כתובות URL מלשונית 'מאפיינים' (סמל 'A')"
+
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "סמל - כתובות URL מלשונית 'מרשתת' (סמל 'I')"
+
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "סמל - כתובות URL מלשונית 'הערות' (סמל 'N')"
+
+msgid "QR-code"
+msgstr "QR-code"
+
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ חסרה תלות 'qrcode'"
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ שגיאה ביצירת קוד QR:\n"
+"השגיאה המקורית: '{}'"
+
 msgid "Note Link (parsed)"
 msgstr "קישור הערה ( נותח)"
+
+msgid "Note Link (internal)"
+msgstr "הערה קישור (פנימי)"
+
+msgid "Note Link (external)"
+msgstr "הערה קישור (חיצוני)"
+
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 עומד חיפוש מרשתת"
+
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr "חיפוש מרשתת הוא גרמפלט לגרמפס שמסייע בחיפוש באתרי יוחסין."
+
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"הוא תומך בתבניות קישורים מבוססות CSV, גילוי אתרים בסיוע AI, ושילוב ישיר עם "
+"הערות ומאפיינים."
+
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ שיטה מידע"
+
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **חסר:** `qrcode`"
+
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ ספריית Python זו אינה זמינה במערכת."
+
+msgid "Without it, QR code generation will not work."
+msgstr "בלעדיו, יצירת קוד QR לא יעבוד."
+
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 בדרך כלל מותקן עם: `pip install qrcode[pil]`"
+
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*הערה: ייתכן שחלק ממערכות ההפעלה או הסביבות ידרשו שיטות התקנה חלופיות.*"
+
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **חסר:** `openai`"
+
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr "ℹ️ ספרייה זו נדרשת לגישה ליכולות שמבוססות על OpenAI."
+
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr "בלעדיו, הצעות אתרים שמחוללות בבינה מלאכותית והיסטוריית מקומות יושבתו."
+
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 בדרך כלל מותקן עם: `pip install openai`"
+
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **חסר:** `requests`"
+
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ ספרייה זו משמשת לתקשורת עם מנשקי API במרשתת."
+
+msgid "Without it, external data sources may not be accessible."
+msgstr "בלעדיה, ייתכן שמקורות נתונים חיצוניים לא יהיו נגישים."
+
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 בדרך כלל מותקן עם: `pip install requests`"
+
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 נתונים קובץ מיקום"
+
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"להלן הנתיבים לקובצי נתונים מערכתיים ומוגדרי־משתמש שמשמשים את WebSearch."
+
+msgid "#### CSV File Paths"
+msgstr "#### נתיבי קובצי CSV"
+
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr "- **נתיב מערכת:** `{dir|%s}` – מכיל את קובצי CSV המובנים"
+
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **נתיב מוגדר־משתמש:** `{dir|%s}` – עבור קובצי CSV מותאמים שמוגדרים על ידי "
+"המשתמש"
+
+msgid "#### JSON File Paths"
+msgstr "#### נתיבי קובצי JSON"
+
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **נתיב מערכת:** `{dir|%s}` – מכיל את הקובץ attribute_mapping.json המובנה"
+
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **נתיב מוגדר־משתמש:** `{dir|%s}` – עבור קובץ attribute_mapping.json מותאם "
+"שמוגדר על ידי המשתמש"
+
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr "  💡 *עצה: הקשה על נתיב כלשהו לעיל תפתח אותו במנהל הקבצים.*"
+
+msgid "📖 View detailed usage in: "
+msgstr "📖 הצגת הנחיות שימוש מפורטות ב־: "
+
+msgid "## 💬 Support"
+msgstr "## 💬 תמיכה"
+
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 נוצר ומתוחזק על ידי Yurii Liubymyi"
+
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr "💬 לעזרה או משוב, אפשר להזכיר את `@Urchello` בפורום גרמפס:"
+
+msgid "Gramps Forum (Discourse)"
+msgstr "פורום גרמפס (Discourse)"
+
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr "✅ דיווחי תקלים ובקשות תכונה הם **ללא תשלום** לחלוטין."
+
+msgid "GitHub Issues"
+msgstr "סוגיות GitHub"
+
+msgid "Gramps Bug Tracker"
+msgstr "גשש תקלים של גרמפס"
+
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 חיפוש מרשתת גרמפלט גרסה: `%s`"
+
+msgid "Middle Name Handling"
+msgstr "אמצעי שם טיפול"
 
 msgid "Leave alone"
 msgstr "להניח לזה"
@@ -69,8 +381,65 @@ msgstr "להניח לזה"
 msgid "Separate"
 msgstr "הפרדה"
 
+msgid "URL Compactness Level"
+msgstr "רמת דחיסות כתובת URL"
+
+msgid "Shortest - No Prefix, No Keys"
+msgstr "הקצר ביותר - ללא תחילית, ללא מפתחות"
+
+msgid "Compact - No Prefix, Keys Without Attributes"
+msgstr "צפוף – ללא תחילית, מפתחות ללא מאפיינים"
+
+msgid "Compact - No Prefix, Keys With Attributes"
+msgstr "צפוף – ללא תחילית, מפתחות עם מאפיינים"
+
+msgid "Long - Without Prefix on the Left"
+msgstr "ארוך - ללא תחילית על שמאל"
+
+msgid "URL Prefix Replacement"
+msgstr "URL תחילית החלפה"
+
+msgid "AI Provider"
+msgstr "AI ספק"
+
+msgid "(Disabled)"
+msgstr "(מושבת)"
+
+msgid "OpenAI"
+msgstr "פתיחה בינה מלאכותית"
+
+msgid "Mistral AI"
+msgstr "Mistral AI"
+
+msgid "OpenAI API Key"
+msgstr "מפתח API של OpenAI"
+
+msgid "OpenAI Model"
+msgstr "דגם OpenAI"
+
+msgid "Mistral API Key"
+msgstr "מפתח API של Mistral"
+
+msgid "Mistral Model"
+msgstr "דגם Mistral"
+
+msgid "Show Links From the 'Attributes' tab"
+msgstr "הצגת קישורים מלשונית 'מאפיינים'"
+
+msgid "Show Links From the 'Internet' tab"
+msgstr "הצגת קישורים מלשונית 'מרשתת'"
+
 msgid "Show Links From the Notes"
 msgstr "הצגת קישורי הערות"
+
+msgid "Enable AI-generated historical place data"
+msgstr "לאפשר נתוני מקום היסטוריים שנוצרו על ידי בינה מלאכותית"
+
+msgid "Custom country code for AI notes (optional)"
+msgstr "קוד ארץ מותאם להערות בינה מלאכותית (חלופי)"
+
+msgid "Enable CSV Files"
+msgstr "לאפשר קובצי CSV"
 
 msgid "Display Columns"
 msgstr "הצגת עמודות"
@@ -80,6 +449,29 @@ msgstr "הצגת סמלים"
 
 msgid "WebSearch"
 msgstr "חיפוש מרשתת"
+
+msgid ""
+"Customized queries for online services based on the active Person, Place, "
+"Family, or Source record"
+msgstr ""
+"שאילתות מותאמות לשירותים מקוונים לפי רשומת האדם, המקום, המשפחה או המקור "
+"הפעילה"
+
+#, python-format
+msgid "Visited: %s"
+msgstr "ביקור: %s"
+
+#, python-format
+msgid "Link: %s"
+msgstr "קישור: %s"
+
+#, python-format
+msgid "Attribute: %s"
+msgstr "מאפיין: %s"
+
+#, python-format
+msgid "Value: %s"
+msgstr "ערך: %s"
 
 #, python-format
 msgid "Loaded from file: %s"
@@ -101,11 +493,33 @@ msgstr "דגם: %s"
 msgid "Object Gramps ID: %s"
 msgstr "מזהה עצם גרמפס:%s"
 
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s: %s ← %s: %s"
+
+msgid "Link visited"
+msgstr "קישור שבוקרו"
+
+msgid "Link saved to Note"
+msgstr "קישור נשמר להערה"
+
 msgid "Link saved to Attribute"
 msgstr "קישור נשמר לתכונה"
 
 msgid "Place history loaded"
 msgstr "היסטוריית מקום נטענה"
+
+msgid "Domain skipped"
+msgstr "דילוג על תחום"
+
+msgid "Link hidden for object"
+msgstr "קישור מוסתר עבור עצם"
+
+msgid "Link hidden for all objects"
+msgstr "קישור מוסתר עבור כל עצמים"
+
+msgid "Attribute updated"
+msgstr "מאפיין עודכן"
 
 msgid "Note updated"
 msgstr "הערה עודכנה"

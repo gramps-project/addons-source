@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:40+0000\n"
-"PO-Revision-Date: 2025-03-15 15:06+0000\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,22 +13,88 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Sources Index"
 msgstr "מפתח מקורות"
 
+msgid "BirthIndex"
+msgstr "מפתח לידות"
+
+msgid "MarriageIndex"
+msgstr "מפתח נישואין"
+
+msgid "DeathIndex"
+msgstr "מפתח פטירות"
+
+msgid "CensusIndex"
+msgstr "מפתח מפקדים"
+
 msgid "SourceIndex"
 msgstr "מפתח מקורות"
+
+msgid "*** Error: Must install either ElementTree or lxml."
+msgstr "*** שגיאה: חובה להתקין את ElementTree או lxml."
+
+msgid "must install either ElementTree or lxml"
+msgstr "חובה להתקין את ElementTree או lxml"
+
+msgid "index"
+msgstr "מפתח"
 
 msgid "_File"
 msgstr "_קובץ"
 
+msgid "Import CSV"
+msgstr "ייבוא CSV"
+
+msgid "Display all"
+msgstr "הצגה כל"
+
 msgid "Display only births"
 msgstr "הצגת לידה בלבד"
 
+msgid "Births/Baptisms"
+msgstr "לידות/הטבלות"
+
+msgid "Display only marriages"
+msgstr "הצגה בלבד נישואין"
+
+msgid "Marriages/Families"
+msgstr "נישואין/משפחות"
+
+msgid "Display only deaths"
+msgstr "הצגה בלבד פטירות"
+
+msgid "Deaths/Burials"
+msgstr "פטירות/קורה"
+
+msgid "Display only censuses"
+msgstr "הצגה בלבד מפקד אוכלוסין"
+
+msgid "Censuses"
+msgstr "מפקד אוכלוסין"
+
+msgid "About this utility."
+msgstr "על כלי־עזר זה."
+
+msgid "About dialog"
+msgstr "דו־שיח אודות"
+
+msgid "New birth or baptism"
+msgstr "חדש לידה או טבילה"
+
 msgid "add birth act"
 msgstr "הוספת לידה"
+
+msgid "New marriage"
+msgstr "חדש נישואין"
+
+msgid "add marriage act"
+msgstr "הוספת שטר נישואין"
+
+msgid "New death or burial"
+msgstr "חדש פטירה או קבורה"
 
 msgid "add death act"
 msgstr "הוספת פטירה"
@@ -36,8 +102,14 @@ msgstr "הוספת פטירה"
 msgid "New census"
 msgstr "מפקד חדש"
 
+msgid "add census"
+msgstr "הוספה מפקד אוכלוסין"
+
 msgid "Select a birth source"
 msgstr "בחירת מקןר לידה"
+
+msgid "birth"
+msgstr "לידה"
 
 msgid "Select a marriage source"
 msgstr "בחירת מקור נישואין"
@@ -45,23 +117,121 @@ msgstr "בחירת מקור נישואין"
 msgid "Select a death source"
 msgstr "בחירת מקור פטירה"
 
+msgid "Select a census source"
+msgstr "בחירה מפקד אוכלוסין מקור"
+
+msgid "census"
+msgstr "מפקד אוכלוסין"
+
+msgid "Select a repository storing a source"
+msgstr "בחירת מאגר שמאחסן מקור"
+
+msgid "repositories"
+msgstr "מאגרים"
+
 msgid "Selected view"
 msgstr "מצג שנבחר"
+
+msgid ""
+"Records transcriptions ... births/deaths/marriages/censuses with common "
+"fields: id, repository, person name, birth date and place, parents."
+msgstr ""
+"תעתיקי רשומות... לידות/פטירות/נישואין/מפקדי אוכלוסין עם שדות משותפים: מזהה, "
+"מאגר, שם אדם, תאריך ומקום לידה, הורים."
 
 msgid "Info:"
 msgstr "מידע:"
 
+msgid "Death act:"
+msgstr "שטר פטירה:"
+
 msgid "Reference:"
 msgstr "אזכור:"
+
+msgid "Volume:"
+msgstr "כרך:"
+
+msgid "<b>Death act</b>"
+msgstr "<b>שטר פטירה</b>"
+
+msgid "First name:"
+msgstr "ראשון שם:"
 
 msgid "Age:"
 msgstr "גיל:"
 
+msgid "<b>Image</b>"
+msgstr "<b>תמונה</b>"
+
+msgid "<b>Repository</b>"
+msgstr "<b>מאגר</b>"
+
+msgid "<b>Data person</b>"
+msgstr "<b>נתונים אדם</b>"
+
 msgid "Origin:"
 msgstr "מוצא:"
 
+msgid "Occupation:"
+msgstr "משלח יד:"
+
+msgid "Live:"
+msgstr "חיים:"
+
+msgid "<b>Witness:</b>"
+msgstr "<b>עד:</b>"
+
+msgid "Birth date:"
+msgstr "לידה תאריך:"
+
+msgid "Birth place:"
+msgstr "לידה מקום:"
+
+msgid "Note:"
+msgstr "הערה:"
+
+msgid "Spouse name:"
+msgstr "זוגאי שם:"
+
+msgid "Marriage date:"
+msgstr "נישואין תאריך:"
+
 msgid "Marriage place:"
 msgstr "מקום נישואין:"
+
+msgid "<b>Data mother</b>"
+msgstr "<b>נתונים אם</b>"
+
+msgid "<b>Data father</b>"
+msgstr "<b>נתונים אב</b>"
+
+msgid "<b>Spouse</b> "
+msgstr "<b>זוגאי</b> "
+
+msgid "alive"
+msgstr "חי"
+
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"witness1, שם, שם פרטי, גיל, משלח־יד; witness2, שם, שם פרטי, גיל, משלח־יד, "
+"ועוד..."
+
+msgid "witness"
+msgstr "עד"
+
+msgid "<b>Witness</b>"
+msgstr "<b>עד</b>"
+
+msgid "Names:"
+msgstr "שמות:"
+
+msgid "First names:"
+msgstr "שמות פרטיים:"
+
+msgid "<b>Census</b>"
+msgstr "<b>מפקד אוכלוסין</b>"
 
 msgid "Death date:"
 msgstr "תאריך פטירה:"
@@ -72,11 +242,189 @@ msgstr "מקום פטירה:"
 msgid "Family status:"
 msgstr "מצב משפחה:"
 
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr "סדר, אדם, שם משפחה, שם פרטי, גיל, מצב, משלח־יד, ועוד..."
+
+msgid "Birth act:"
+msgstr "תעודת לידה:"
+
+msgid ""
+"Volume\n"
+"    Page:"
+msgstr ""
+"כרך\n"
+"    עמוד:"
+
+msgid "The source title"
+msgstr "כותרת המקור"
+
+msgid "The volume or page of this source"
+msgstr "כרך או עמוד מתוך זה מקור"
+
+msgid "select the gender/sex"
+msgstr "בחירת מגדר/מין"
+
+msgid "The names of the main person written into the source"
+msgstr "שמות האדם הראשי שייכתבו למקור"
+
+msgid "The first names of the main person written into the source"
+msgstr "השמות הפרטיים של האדם הראשי שייכתבו למקור"
+
+msgid "Other:"
+msgstr "אחר:"
+
+msgid "Repository title"
+msgstr "כותרת מאגר"
+
+msgid "<b><i>Repository</i></b>"
+msgstr "<b><i>מאגר</i></b>"
+
+msgid ""
+"Spouse\n"
+"names:"
+msgstr ""
+"זוגאי\n"
+"שמות:"
+
+msgid ""
+"Marriage\n"
+"date:"
+msgstr ""
+"תאריך\n"
+"נישואין:"
+
+msgid ""
+"Death\n"
+"date:"
+msgstr ""
+"תאריך\n"
+"פטירה:"
+
+msgid ""
+"<b>Witness\n"
+"Godfather\n"
+"Godmother:</b>"
+msgstr ""
+"<b>עד\n"
+"סנדק\n"
+"סנדקית:</b>"
+
+msgid "Call number:"
+msgstr "מספר מדף:"
+
+msgid "The call number into the repository"
+msgstr "מספר המדף במאגר"
+
+msgid "<b><i>Data person</i></b>"
+msgstr "<b><i>נתוני אדם</i></b>"
+
+msgid "<b><i>Data margin</i></b>"
+msgstr "<b><i>נתוני שוליים</i></b>"
+
+msgid "<b><i>Data father</i></b>"
+msgstr "<b><i>נתוני אב</i></b>"
+
+msgid "<b><i>Data mother</i></b>"
+msgstr "<b><i>נתוני אם</i></b>"
+
+msgid ""
+"witness1, name, given, age, occupation;\n"
+"witness2, name, given, age, occupation;\n"
+"godfather, name, given, age, occupation;\n"
+"etc ..."
+msgstr ""
+"עד1, שם, שם פרטי, גיל, משלח־יד;\n"
+"עד2, שם, שם פרטי, גיל, משלח־יד;\n"
+"סנדק, שם, שם פרטי, גיל, משלח־יד;\n"
+"ועוד..."
+
+msgid ""
+"Marriage\n"
+"place:"
+msgstr ""
+"נישואין\n"
+"מקום:"
+
+msgid ""
+"Death\n"
+"place:"
+msgstr ""
+"פטירה\n"
+"מקום:"
+
+msgid ""
+"Birth\n"
+"place:"
+msgstr ""
+"לידה\n"
+"מקום:"
+
 msgid "Origine:"
 msgstr "מקור:"
 
 msgid "<b><i>Citation</i></b>"
-msgstr "<b><i>ציטוט</i></b>"
+msgstr "<b><i>מובאה</i></b>"
+
+msgid "<b><i>Source</i></b>"
+msgstr "<b><i>מקור</i></b>"
+
+msgid "Marriage act:"
+msgstr "שטר נישואין:"
+
+msgid "m. date:"
+msgstr "m. תאריך:"
 
 msgid "m. place:"
 msgstr "מקום נישואין:"
+
+msgid "d.contract:"
+msgstr "חוזה נישואין:"
+
+msgid "dates banns:"
+msgstr "תאריכי הכרזות נישואין:"
+
+msgid "p.contract:"
+msgstr "p.חוזה:"
+
+msgid "places banns:"
+msgstr "מקומות הכרזת נישואין:"
+
+msgid "<b>Data union</b>"
+msgstr "<b>נתונים איחוד</b>"
+
+msgid "<b>Marriage act</b>"
+msgstr "<b>שטר נישואין</b>"
+
+msgid ""
+"<b>Data father\n"
+"spouse1</b>"
+msgstr ""
+"<b>נתונים אב\n"
+"זוגאי1</b>"
+
+msgid ""
+"<b>Data mother\n"
+"spouse1</b>"
+msgstr ""
+"<b>נתונים אם\n"
+"זוגאי1</b>"
+
+msgid ""
+"<b>Data mother\n"
+"spouse2</b>"
+msgstr ""
+"<b>נתונים אם\n"
+"זוגאי2</b>"
+
+msgid ""
+"<b>Data father\n"
+"spouse2</b>"
+msgstr ""
+"<b>נתונים אב\n"
+"זוגאי2</b>"
+
+msgid "<b>Data spouse1</b>"
+msgstr "<b>נתונים זוגאי1</b>"
+
+msgid "<b>Data spouse2</b>"
+msgstr "<b>נתונים זוגאי2</b>"

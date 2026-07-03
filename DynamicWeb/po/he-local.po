@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-08-11 18:01+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,10 +13,97 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Dynamic Web Report"
+msgstr "דוח מרשתת דינמי"
+
+msgid "Produces dynamic web pages for the database"
+msgstr "מפיק עמודי מרשתת דינמיים עבור מסד־הנתונים"
+
+msgid "SVG graphical tree"
+msgstr "אילן גרפי מסוג SVG"
+
+msgid "Indexes pages"
+msgstr "עמודי מפתחות"
+
+#, python-format
+msgid "Custom page %(index)i"
+msgstr "עמוד מותאם %(index)i"
+
+msgid "Ascending tree"
+msgstr "אילן עולה"
+
+msgid "Descending tree"
+msgstr "אילן יורד"
+
+msgid "Descending tree with spouses"
+msgstr "אילן יורד עם זוגאים"
+
+msgid "Ascending and descending tree"
+msgstr "אילן עולה ויורד"
+
+msgid "Ascending and descending tree with spouses"
+msgstr "אילן עולה ויורד עם זוגאים"
+
+msgid "Size proportional to number of ancestors"
+msgstr "גודל יחסי למספר האבות הקדמונים"
+
+msgid "Homogeneous parents distribution"
+msgstr "פריסת הורים אחידה"
+
+msgid "Age based gradient"
+msgstr "מדרג צבע לפי גיל"
+
+msgid "Gradient"
+msgstr "מדרג צבע"
+
+#, python-format
+msgid "Could not create the directory: %(path)s"
+msgstr "ניתן היה לא יצירה מחיצה: %(path)s"
+
+msgid "Dynamic Web Site Report"
+msgstr "דוח אתר מרשתת דינמי"
+
+msgid "Exporting family tree data ..."
+msgstr "מייצא נתוני אילן־יוחסין..."
+
+#, python-format
+msgid "%(type)s: %(value)s"
+msgstr "%(type)s: %(value)s"
+
+#, python-format
+msgid "Impossible to convert \"%(path)s\" to a relative path."
+msgstr "לא ניתן להמיר את '%(path)s' לנתיב יחסי."
+
+msgid ""
+"The pages configuration is not valid: several pages have the same content"
+msgstr "תצורת העמודים אינה תקינה: לכמה עמודים יש אותו תוכן"
+
+msgid "DynWeb|Home"
+msgstr "בית"
+
+msgid "Tree"
+msgstr "אילן"
 
 msgid "Search results"
 msgstr "תוצאות חיפוש"
+
+msgid "Indexes"
+msgstr "מפתחות"
+
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(סונן מתוך _MAX_ רשומות בסך הכול)"
+
+#, python-format
+msgid "(m. %s)"
+msgstr "(נ׳ %s)"
+
+msgid "(sort by name)"
+msgstr "(מיון לפי שם)"
+
+msgid "(sort by quantity)"
+msgstr "(מיון לפי כמות)"
 
 msgid ": activate to sort column ascending"
 msgstr ": שפעול למיון עמודות בסדר עולה"
@@ -24,14 +111,61 @@ msgstr ": שפעול למיון עמודות בסדר עולה"
 msgid ": activate to sort column descending"
 msgstr ": שפעול למיון עמודות בסדר יורד"
 
+msgid ""
+"<p>This page provides the SVG raw code.<br>Copy the contents into a text "
+"editor and save as an SVG file.<br>Make sure that the text editor encoding "
+"is UTF-8.</p>"
+msgstr ""
+"<p>עמוד זה מספק את קוד ה־SVG הגולמי.<br>יש להעתיק את התוכן לעורך מלל ולשמור "
+"כקובץ SVG.<br>יש לוודא שקידוד עורך המלל הוא UTF-8.</p>"
+
+msgid "Alternate Name"
+msgstr "שם חלופי"
+
+msgid "Click on the map to show it full-screen"
+msgstr "הקשה על המפה תציג אותה במסך מלא"
+
+msgid "Configure"
+msgstr "הגדרה"
+
 msgid "DynamicWeb_report#Help"
 msgstr "DynamicWeb_report/he#עזרה"
 
 msgid "Examples"
 msgstr "דוגמאות"
 
+msgid "F"
+msgstr "F"
+
+msgid "Families Index"
+msgstr "משפחות מפתח"
+
+msgid "Family Nick Name"
+msgstr "כינוי משפחתי"
+
+msgid "File ready"
+msgstr "קובץ מוכן"
+
+msgid "Include dates columns on the index pages"
+msgstr "לכלול תאריכים עמודות במפתח עמודים"
+
+msgid "Include a column for media path on the index pages"
+msgstr "לכלול עמודה עבור מדיה נתיב במפתח עמודים"
+
+msgid "Include a map in the individuals and family pages"
+msgstr "לכלול מפה בעמודי האנשים והמשפחות"
+
+msgid "Include half and/ or step-siblings on the individual pages"
+msgstr "לכלול אחאים למחצה ו/או אחאים חורגים בעמודי האנשים"
+
 msgid "Include references in indexes"
 msgstr "הכללת אזכורים במפתחות"
+
+msgid "Insert sources author in the sources title"
+msgstr "הוספת מחבר המקור לכותרת המקורות"
+
+msgid "M"
+msgstr "M"
 
 msgid "Maximize"
 msgstr "מירוב"
@@ -42,11 +176,26 @@ msgstr "מפתח מדיה"
 msgid "Media Type"
 msgstr "סוג מדיה"
 
+msgid "No data available in table"
+msgstr "אין נתונים זמין בטבלה"
+
 msgid "No matching records found"
 msgstr "לא נמצאו רשומות התאמות"
 
+msgid "No matching surname."
+msgstr "אין שם משפחה תואם."
+
+msgid "Other participants"
+msgstr "משתתפים אחרים"
+
+msgid "Person page"
+msgstr "אדם עמוד"
+
 msgid "Person to search for"
 msgstr "האדם אותו יש לחפש"
+
+msgid "Persons Index"
+msgstr "מפתח אנשים"
 
 msgid "Persons"
 msgstr "אנשים"
@@ -60,14 +209,80 @@ msgstr "מתבצעת הכנת קובץ ..."
 msgid "Relationship to Father"
 msgstr "יוחסה לאב"
 
+msgid "Relationship to Mother"
+msgstr "קשר־קרבה לאם"
+
+msgid "Repositories Index"
+msgstr "מפתח מאגרים"
+
+msgid "Restore"
+msgstr "שחזור"
+
+msgid "Restore default settings"
+msgstr "שחזור הגדרות ברירת מחדל"
+
+msgid "Show last modification time"
+msgstr "הצגת זמן השינוי האחרון"
+
+msgid "SVG tree children distribution"
+msgstr "פריסת ילדי אילן SVG"
+
+msgid "SVG tree configuration"
+msgstr "תצורת אילן SVG"
+
+msgid "SVG tree graph shape"
+msgstr "צורת גרף אילן SVG"
+
+msgid "SVG tree graph type"
+msgstr "סוג גרף אילן SVG"
+
+msgid "SVG tree parents distribution"
+msgstr "פריסת הורי אילן SVG"
+
+msgid "Save tree as file"
+msgstr "שמירה אילן כקובץ"
+
 msgid "Search:"
 msgstr "חיפוש:"
+
+msgid "Select the background color scheme"
+msgstr "בחירת ערכת צבעי הרקע"
+
+msgid "Select the children distribution (fan charts only)"
+msgstr "בחירת פריסת הילדים (תרשימי מניפה בלבד)"
+
+msgid "Select the number of ascending generations"
+msgstr "בחירת מספר דורות האבות"
+
+msgid "Select the number of descending generations"
+msgstr "בחירת מספר דורות הצאצאים"
+
+msgid "Select the parents distribution (fan charts only)"
+msgstr "בחירת התפלגות ההורים (תרשימי מניפה בלבד)"
+
+msgid "Select the shape of graph"
+msgstr "בחירת צורה של תרשים"
+
+msgid "Select the type of graph"
+msgstr "בחירת סוג התרשים"
 
 msgid "Several matches.<br>Precise your search or choose in the lists below."
 msgstr "איתורים מרובים.<br> נא לדייק את החיפוש או לבחור מהרשימה מטה."
 
+msgid "Show _MENU_ entries"
+msgstr "הצגת רשומות _MENU_"
+
 msgid "Show duplicates"
 msgstr "הצגת רשומות כפולות"
+
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "מוצגות 0 עד 0 מתוך 0 רשומות"
+
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "מוצגות _START_ עד _END_ מתוך _TOTAL_ רשומות"
+
+msgid "Sort by:"
+msgstr "מיון לפי:"
 
 msgid "Sources Index"
 msgstr "מפתח מקורות"
@@ -78,17 +293,61 @@ msgstr "דיכוי מזהה גרמפס"
 msgid "Surnames Index"
 msgstr "מפתח שם משפחה"
 
+msgid "U"
+msgstr "U"
+
+msgid "Use tabbed panels instead of sections"
+msgstr "שימוש בחלוניות בכרטיסיות במקום במקטעים"
+
+msgid "Use the search box above in order to find a person."
+msgstr "יש להשתמש בתיבת החיפוש לעיל כדי למצוא אדם."
+
+msgid "Use a table format for the surnames index"
+msgstr "שימוש טבלה תסדיר עבור שמות משפחה מפתח"
+
+msgid "Use a table format for the persons index"
+msgstr "שימוש טבלה תסדיר עבור אדם מפתח"
+
+msgid "Use a table format for the families index"
+msgstr "שימוש טבלה תסדיר עבור משפחות מפתח"
+
+msgid "Use a table format for the sources index"
+msgstr "שימוש טבלה תסדיר עבור מקורות מפתח"
+
 msgid "Use a table format for the places index"
 msgstr "להשתמש בתסדיר טבלאי למפתח המקומות"
 
 msgid "Used for family"
 msgstr "משמש למשפחות"
 
+msgid "Used for media"
+msgstr "שמשמש עבור מדיה"
+
 msgid "Used for person"
 msgstr "משמש לאדם"
 
+msgid "Used for place"
+msgstr "שמשמש עבור מקום"
+
+msgid "Used for source"
+msgstr "שמשמש עבור מקור"
+
 msgid "Web Link"
 msgstr "קישור רשת"
+
+msgid ""
+"Whether to use a special color for the persons that appear several times in "
+"the SVG tree"
+msgstr "האם להשתמש בצבע מיוחד לאנשים שמופיעים כמה פעמים באילן ה־SVG"
+
+msgid "Without name"
+msgstr "ללא שם"
+
+msgid "Without surname"
+msgstr "ללא שם משפחה"
+
+msgid "Without title"
+msgstr "ללא כותרת"
 
 msgid "Zoom in"
 msgstr "התקרבות"
@@ -96,8 +355,99 @@ msgstr "התקרבות"
 msgid "Zoom out"
 msgstr "התרחקות"
 
+msgid "all"
+msgstr "כל"
+
+#, python-format
+msgid "Copying error: %(error)s"
+msgstr "שגיאת העתקה: %(error)s"
+
+#, python-format
+msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
+msgstr "לא ניתן להעתיק את '%(src)s' אל '%(dst)s'"
+
+#, python-format
+msgid "Unable to copy web site template files from \"%(path)s\""
+msgstr "לא ניתן להעתיק קובצי תבנית אתר מרשתת מ־'%(path)s'"
+
+#, python-format
+msgid "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
+msgstr "שמירת '%(dst)s' (חדש יותר מ־'%(src)s')"
+
+#, python-format
+msgid "Copying \"%(src)s\" to \"%(dst)s\""
+msgstr "מתבצעת העתקה של '%(src)s' אל '%(dst)s'"
+
+#, python-format
+msgid "Unable to overwrite archive file \"%(path)s\""
+msgstr "לא ניתן לשכתב קובץ ארכיון '%(path)s'"
+
+#, python-format
+msgid "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
+msgstr "לא ניתן להוסיף את הקובץ '%(file)s' לארכיון '%(archive)s'"
+
+#, python-format
+msgid "DynamicWebReport ignoring link type '%(class)s'"
+msgstr "DynamicWebReport מתעלם מסוג הקישור '%(class)s'"
+
+#, python-format
+msgid "Family of %(father)s"
+msgstr "משפחה מתוך %(father)s"
+
+#, python-format
+msgid "Family of %(mother)s"
+msgstr "משפחה מתוך %(mother)s"
+
+msgid ""
+"In this note, the following special words are processed:\n"
+"__SEARCH_FORM__ is replaced by a search form.\n"
+"__NB_INDIVIDUALS__ is replaced by the number of persons.\n"
+"__NB_FAMILIES__ is replaced by the number of families.\n"
+"__NB_MEDIA__ is replaced by the number of media.\n"
+"__NB_SOURCES__ is replaced by the number of sources.\n"
+"__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
+"__NB_PLACES__ is replaced by the number of places.\n"
+"__MEDIA_<gid>__ is replaced by the media with Gramps ID <gid>.\n"
+"__THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID "
+"<gid>.\n"
+"__EXPORT_DATE__ is replaced by the current date.\n"
+"__GRAMPS_VERSION__ is replaced by the Gramps version.\n"
+"__GRAMPS_HOMEPAGE__ is replaced by the Gramps homepage link.\n"
+"URL starting with \"relative://relative.<link>\" are replaced by the "
+"relative URL \"<link>\".\n"
+msgstr ""
+"בהערה זו מעובדות המילים המיוחדות הבאות:\n"
+"__SEARCH_FORM__ מוחלף בטופס חיפוש.\n"
+"__NB_INDIVIDUALS__ מוחלף במספר האנשים.\n"
+"__NB_FAMILIES__ מוחלף במספר המשפחות.\n"
+"__NB_MEDIA__ מוחלף במספר פריטי המדיה.\n"
+"__NB_SOURCES__ מוחלף במספר המקורות.\n"
+"__NB_REPOSITORIES__ מוחלף במספר המאגרים.\n"
+"__NB_PLACES__ מוחלף במספר המקומות.\n"
+"__MEDIA_<gid>__ מוחלף בפריט המדיה עם מזהה Gramps‏ <gid>.\n"
+"__THUMB_<gid>__ מוחלף בתמונה הממוזערת של פריט המדיה עם מזהה Gramps‏ <gid>.\n"
+"__EXPORT_DATE__ מוחלף בתאריך הנוכחי.\n"
+"__GRAMPS_VERSION__ מוחלף בגרסת גרמפס.\n"
+"__GRAMPS_HOMEPAGE__ מוחלף בקישור לדף הבית של גרמפס.\n"
+"כתובות URL שמתחילות ב־'relative://relative.<link>' מוחלפות בכתובת URL יחסית "
+"'<link>'.\n"
+
 msgid "Store web pages in archive"
 msgstr "אחסון עמודי מרשתת בארכיון"
+
+msgid ""
+"Whether to create an archive file (in ZIP or TGZ format) containing the web "
+"site"
+msgstr "האם ליצור קובץ ארכיון (בתסדיר ZIP או TGZ) שמכיל את אתר המרשתת"
+
+msgid "Archive file"
+msgstr "ארכיון קובץ"
+
+msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
+msgstr "שם קובץ הארכיון (עם סיומת '.zip' או '.tgz')"
+
+msgid "Web site title"
+msgstr "מרשתת אתר כותרת"
 
 msgid "The title of the web site"
 msgstr "כותרת אתר המרשתת"
@@ -105,8 +455,23 @@ msgstr "כותרת אתר המרשתת"
 msgid "Select filter to restrict people that appear on web site"
 msgstr "בחירת מסנן להגבלת האנשים שמופיעים באתר מרשתת"
 
+msgid "Name format (short)"
+msgstr "שם תסדיר (קצר)"
+
+msgid "Select the format to display a shorter version of the names"
+msgstr "בחירת התסדיר להצגת גרסה מקוצרת של השמות"
+
+msgid "Web site template"
+msgstr "מרשתת אתר תבנית"
+
+msgid "Select the template of the web site"
+msgstr "בחירת תבנית אתר המרשתת"
+
 msgid "Include records marked private"
 msgstr "לכלול רשומות שמסימנות כפרטיות"
+
+msgid "Whether to include private objects"
+msgstr "האם לכלול פרטי עצמים"
 
 msgid "Include Last Name Only"
 msgstr "הכללת שם משפחה בלבד"
@@ -114,14 +479,58 @@ msgstr "הכללת שם משפחה בלבד"
 msgid "Include Full Name Only"
 msgstr "לכלול שם מלא בלבד"
 
+msgid ""
+"This allows you to restrict information on people who have not been dead for "
+"very long"
+msgstr "אפשרות זו מאפשרת להגביל מידע על אנשים שלא נפטרו לפני זמן רב"
+
 msgid "Export notes"
 msgstr "ייצוא הערות"
+
+msgid "Whether to export notes in the web pages"
+msgstr "האם לייצא הערות בעמודי המרשתת"
 
 msgid "Export sources"
 msgstr "ייצוא מקורות"
 
+msgid "Whether to export sources and citations in the web pages"
+msgstr "האם לייצא מקורות ומובאות בעמודי המרשתת"
+
+msgid "Export addresses"
+msgstr "ייצוא כתובת"
+
+msgid "Whether to export addresses in the web pages"
+msgstr "האם לייצא כתובות בעמודי המרשתת"
+
+msgid "Whether or not to include the Repository Pages."
+msgstr "האם לכלול את עמודי המאגרים."
+
 msgid "Include images and media"
 msgstr "הכללת תמונות ומדיה"
+
+msgid "Whether to include images and media in the web pages"
+msgstr "האם לכלול תמונות ומדיה בעמודי המרשתת"
+
+msgid "Copy, rename files with an internal Gramps identifier"
+msgstr "העתקת קבצים ושינוי שמם באמצעות מזהה פנימי של גרמפס"
+
+msgid "Copy, keep file names unchanged"
+msgstr "העתקה תוך שמירה על שמות הקבצים ללא שינוי"
+
+msgid "Do not copy, reference existing files"
+msgstr "לא להעתיק; להפנות לקבצים קיימים"
+
+msgid "Images and media"
+msgstr "תמונות ומדיה"
+
+msgid "Whether to make a copy of the media"
+msgstr "האם ליצור עותק של המדיה"
+
+msgid "Print the notes type"
+msgstr "הדפסת סוג ההערות"
+
+msgid "Whether to print the notes type in the notes text"
+msgstr "האם להדפיס את סוג ההערה במלל ההערה"
 
 msgid "Print place pages"
 msgstr "הדפסת עמודי מקום"
@@ -129,11 +538,69 @@ msgstr "הדפסת עמודי מקום"
 msgid "Whether to show pages for the places"
 msgstr "האם להציג עמודים עבור המקומות"
 
+msgid "Choose your choice of map service for creating the Place Map Pages"
+msgstr "בחירת שירות המפות ליצירת עמודי מפות המקומות"
+
 msgid "Google map API key"
 msgstr "מפתח API של Google Maps"
 
+msgid "The API key used for the Google map"
+msgstr "מפתח ה־API שמשמש למפת Google"
+
+msgid "Whether or not to include family pages"
+msgstr "האם לכלול עמודי משפחה"
+
+msgid ""
+"Whether to include half and/ or step-siblings with the parents and siblings"
+msgstr "האם לכלול אחאים למחצה ו/או אחאים חורגים עם ההורים והאחאים"
+
+msgid "Enable page configuration"
+msgstr "לאפשר תצורת עמוד"
+
+msgid "Whether to enable page configuration"
+msgstr "האם לאפשר תצורת עמוד"
+
+msgid "Whether to use tabbed panels for the different sections of the pages."
+msgstr "האם להשתמש בחלוניות בכרטיסיות עבור מקטעי העמודים השונים."
+
+msgid "Whether to show the last modification time in the pages footer"
+msgstr "האם להציג את שעת השינוי האחרונה בסיומת העמודים"
+
+msgid "Whether to insert sources author in the sources title"
+msgstr "האם להוסיף את מחבר המקור לכותרת המקורות"
+
 msgid "Whether to hide the Gramps ID"
 msgstr "האם להסתיר מזהה גרמפס"
+
+msgid "List"
+msgstr "רשימה"
+
+msgid "Table"
+msgstr "טבלה"
+
+msgid "Default format for the surnames index"
+msgstr "ברירת מחדל תסדיר עבור שמות משפחה מפתח"
+
+msgid "The default format for the surnames index"
+msgstr "ברירת מחדל תסדיר עבור שמות משפחה מפתח"
+
+msgid "Default format for the persons index"
+msgstr "ברירת מחדל תסדיר עבור אדם מפתח"
+
+msgid "The default format for the persons index"
+msgstr "ברירת מחדל תסדיר עבור אדם מפתח"
+
+msgid "Default format for the families index"
+msgstr "ברירת מחדל תסדיר עבור משפחות מפתח"
+
+msgid "The default format for the families index"
+msgstr "ברירת מחדל תסדיר עבור משפחות מפתח"
+
+msgid "Default format for the sources index"
+msgstr "ברירת מחדל תסדיר עבור מקורות מפתח"
+
+msgid "The default format for the sources index"
+msgstr "ברירת מחדל תסדיר עבור מקורות מפתח"
 
 msgid "Default format for the places index"
 msgstr "תסדיר ברירת מחדל למפתח המקומות"
@@ -141,11 +608,109 @@ msgstr "תסדיר ברירת מחדל למפתח המקומות"
 msgid "The default format for the places index"
 msgstr "תסדיר ברירת המחדל של מפתח המקומות"
 
+msgid ""
+"Whether to include dates columns (birth, death, marriage) on the index pages"
+msgstr "האם לכלול עמודות תאריכים (לידה, פטירה, נישואין) בעמודי המפתח"
+
+msgid "Generate a families index page"
+msgstr "יצירת משפחות מפתח עמוד"
+
+msgid "Whether to generate an index page for families"
+msgstr "האם לחולל עמוד מפתח למשפחות"
+
+msgid "Whether to include a column showing the media path"
+msgstr "האם לכלול עמודה שמציגה את נתיב המדיה"
+
+msgid ""
+"Whether to include the references to the items in the index pages. For "
+"example, in the media index page, the names of the individuals, families, "
+"places, sources that reference the media."
+msgstr ""
+"האם לכלול בעמודי המפתח את ההפניות לפריטים. לדוגמה, בעמוד מפתח המדיה מוצגים "
+"שמות האנשים, המשפחות, המקומות והמקורות שמפנים למדיה."
+
+msgid "Default number of entries in the indexes"
+msgstr "מספר רשומות ברירת המחדל במפתחות"
+
+msgid "The default number of entries shown in one index page"
+msgstr "מספר הרשומות שמוצגות כברירת מחדל בעמוד מפתח אחד"
+
+msgid "Maximum number of generations"
+msgstr "מספר הדורות המרבי"
+
+msgid ""
+"The maximum number of generations to include in the ancestor and descendant "
+"trees and graphs"
+msgstr "מספר הדורות המרבי לכלילה באילנות ובתרשימי האבות והצאצאים"
+
+msgid "Choose the default SVG tree graph type"
+msgstr "בחירת סוג גרף אילן SVG כברירת מחדל"
+
+msgid "Choose the default SVG tree graph shape"
+msgstr "בחירת צורת ברירת המחדל של תרשים אילן SVG"
+
+msgid "Choose the default SVG tree parents distribution (for fan charts only)"
+msgstr "בחירת פריסת ההורים כברירת מחדל באילן SVG (לתשרימי מניפה בלבד)"
+
+msgid "Choose the default SVG tree children distribution (for fan charts only)"
+msgstr "בחירת פריסת הילדים כברירת מחדל באילן SVG (לתשרימי מניפה בלבד)"
+
+msgid ""
+"Choose the background color scheme for the persons in the SVG tree graph"
+msgstr "בחירת ערכת צבעי הרקע לאנשים בגרף אילן SVG"
+
 msgid "Theme"
 msgstr "ערכת נושא"
+
+msgid "Pages"
+msgstr "עמודים"
+
+msgid "A note to be used as the page header"
+msgstr "הערה שתשמש ככותרת עליונה לעמוד"
+
+msgid "HTML user brand name / icon"
+msgstr "שם מותג/סמל HTML של המשתמש"
+
+msgid "A note to be used as the brand name or image in the menu"
+msgstr "הערה שתשמש כשם מותג או כתמונה בתפריט"
 
 msgid "Custom pages"
 msgstr "עמודים מותאמים אישית"
 
+#, python-format
+msgid "Title for the custom page %(index)i"
+msgstr "כותרת עבור מותאם עמוד %(index)i"
+
+#, python-format
+msgid "Name for the custom page %(index)i"
+msgstr "שם עבור מותאם עמוד %(index)i"
+
+#, python-format
+msgid "Note for custom page %(index)i"
+msgstr "הערה עבור מותאם עמוד %(index)i"
+
+msgid "A note to be used for the custom page content.\n"
+msgstr "הערה שתשמש לתוכן העמוד המותאם.\n"
+
+#, python-format
+msgid "Menu for the custom page %(index)i"
+msgstr "תפריט עבור מותאם עמוד %(index)i"
+
+msgid "Whether to print a menu for the custom page"
+msgstr "האם להדפיס תפריט לעמוד המותאם"
+
 msgid "Pages selection"
 msgstr "בחירת עמודים"
+
+msgid "Number of pages"
+msgstr "מספר עמודים"
+
+msgid "Number pages in the web site menu."
+msgstr "מספור עמודים בתפריט אתר המרשתת."
+
+#, python-format
+msgid "Contents of page %(index)i"
+msgstr "תוכן מתוך עמוד %(index)i"
+
+msgid "Contents of the page"
+msgstr "תוכן מתוך עמוד"

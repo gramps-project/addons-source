@@ -1,0 +1,154 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+msgid "Deep Connections Gramplet"
+msgstr "Gramplet Derin Bağlantıları"
+
+msgid "Gramplet showing a deep relationship between active and home people"
+msgstr ""
+"Aktif ve evde yaşayan kişiler arasındaki derin ilişkiyi gösteren Gramplet"
+
+msgid "Deep Connections"
+msgstr "Derin Bağlantılar"
+
+msgid "⏸ Pause"
+msgstr "⏸ Duraklat"
+
+msgid "Pause the current search"
+msgstr "Geçerli aramayı duraklatın"
+
+msgid "▶ Continue"
+msgstr "▶ Devam et"
+
+msgid "Continue searching for more relations"
+msgstr "Daha fazla ilişki aramaya devam edin"
+
+msgid "📋 Copy"
+msgstr "📋 Kopyala"
+
+msgid "Copy selected people to clipboard"
+msgstr "Seçilen kişileri panoya kopyalayın"
+
+msgid "🗑 Clear"
+msgstr "🗑 Temizle"
+
+msgid "Clear all results and reset"
+msgstr "Tüm sonuçları temizleyin ve sıfırlayın"
+
+msgid "Ready to search"
+msgstr "Aramaya hazır"
+
+#, python-brace-format
+msgid ""
+"Search Depth: {depth} | People Processed: {processed} | Queue Size: "
+"{queue_size}"
+msgstr ""
+"Arama Derinliği: {depth} | İşlenen Kişi Sayısı: {processed} | Kuyruk Boyutu: "
+"{queue_size}"
+
+msgid "mentioned in note"
+msgstr "Notta belirtilenler"
+
+msgid "Note on Family"
+msgstr "Aile ile ilgili not"
+
+msgid "sibling"
+msgstr "kardeş"
+
+msgid "Note on Parent Family"
+msgstr "Ebeveyn Ailesi ile ilgili not"
+
+#, python-format
+msgid "%s (association)"
+msgstr "%s (birlik)"
+
+msgid "Note on Person"
+msgstr "Kişi ile ilgili not"
+
+#, python-format
+msgid ""
+"\n"
+"   %s of "
+msgstr ""
+"\n"
+"   %s > "
+
+msgid "Error: No Home Person set"
+msgstr "Hata: Ana Kişi ayarlanmadı"
+
+msgid "No Active Person set."
+msgstr "Aktif Kişi ayarlanmadı."
+
+msgid "Error: No Active Person set"
+msgstr "Hata: Aktif Kişi Ayarlanmadı"
+
+msgid "Initializing search..."
+msgstr "Arama başlatılıyor..."
+
+msgid "Looking for relationship between\n"
+msgstr "Şu kişiler arasında ilişki aranıyor\n"
+
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr "  <b>%s</b> (Ana Kişi) ve\n"
+
+#, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "  <b>%s</b> (Aktif Kişi)...\n"
+
+msgid "Searching for connections..."
+msgstr "Bağlantılar aranıyor..."
+
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Şu ilişki bulundu #%d: \n"
+"   "
+
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"Duraklatıldı.\n"
+"Ek ilişkiler aramak için Devam et tuşuna basın.\n"
+
+msgid "Paused - Press Continue to search for more relations"
+msgstr "Duraklatıldı - Daha fazla ilişki aramak için Devam et tuşuna basın"
+
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relation paths found."
+msgstr ""
+"\n"
+"Arama tamamlandı. %d ilişki yolu bulundu."
+
+msgid "Search completed - {} relation paths found"
+msgstr "Arama tamamlandı - {} ilişki yolu bulundu"
+
+msgid "Error during search: {}"
+msgstr "Arama sırasında hata: {}"
+
+msgid "Resuming search..."
+msgstr "Aramaya devam ediliyor..."
+
+msgid "Search interrupted by user"
+msgstr "Arama kullanıcı tarafından kesildi"

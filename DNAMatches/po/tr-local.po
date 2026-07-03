@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+msgid "DNA Matches"
+msgstr "DNA Eşleşmeleri"
+
+msgid "Gramplet to display a list of DNA matches"
+msgstr "DNA eşleşmelerinin listesini görüntülemek için Gramplet"
+
+msgid "Pers."
+msgstr "Birey"
+
+msgid "Rel."
+msgstr "İlişki"
+
+msgid "S. DNA"
+msgstr "Ortak DNA"
+
+msgid "S. Seg."
+msgstr "Paylaşılan Segmentler"
+
+msgid "L. Seg"
+msgstr "En Büyük Segment"
+
+msgid "Src(s)"
+msgstr "Kaynak(lar)"
+
+msgid "Shared DNA"
+msgstr "Ortak DNA"
+
+msgid "Shared Segments"
+msgstr "Ortak Segmentler"
+
+msgid "Largest Segment"
+msgstr "En Büyük Segment"
+
+msgid "Source(s)"
+msgstr "Kaynak(lar)"
+
+msgid "Double-click on a row to navigate to the matched person."
+msgstr "Eşleşen kişiye gitmek için bir satıra çift tıklayın."
+
+msgid "Right click to edit selected association."
+msgstr "Seçilen ilişkiyi düzenlemek için sağ tıklayın."
+
+msgid "LEGEND"
+msgstr "KİTABE"
+
+msgid "Not specified"
+msgstr "Belirtilmemiş"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-04-14 18:01+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,91 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "Generate PDF Forms"
+msgstr "Genera moduli PDF"
+
+msgid "Not a Form PDF"
+msgstr "Non è un modulo PDF"
+
+msgid "The _form_id field is missing or empty."
+msgstr "Il campo _form_id è mancante o vuoto."
+
+msgid "Unknown form ID"
+msgstr "ID modulo sconosciuto"
+
+#, python-format
+msgid "Import Form PDF: %s"
+msgstr "Importa modulo PDF: %s"
+
+msgid "Output file:"
+msgstr "File di output:"
+
+msgid "Browse…"
+msgstr "Sfoglia…"
+
+msgid "Open PDF after generating"
+msgstr "Apri il PDF dopo la generazione"
+
+msgid "Generate"
+msgstr "Genera"
+
+msgid "Form:"
+msgstr "Modulo:"
+
+msgid "Rows:"
+msgstr "Righe:"
+
+msgid "Generations:"
+msgstr "Generazioni:"
+
+msgid "Includes subject plus up to 5 ancestor generations (2–32 people)."
+msgstr ""
+"Includi il soggetto più fino generazioni di ascendenti (da 2 a 32 persone)."
+
+msgid "Save PDF as…"
+msgstr "Salva PDF come…"
 
 msgid "Save"
 msgstr "Salva"
+
+msgid "PDF files"
+msgstr "File PDF"
+
+msgid "No output file"
+msgstr "Nessun file di output"
+
+msgid "Please specify an output file path."
+msgstr "Specificare il percorso di un file di output."
+
+msgid "No form selected"
+msgstr "Nessun modulo selezionato"
+
+msgid "Please select a census form."
+msgstr "Seleziona un modulo di censimento."
+
+msgid "Form not found"
+msgstr "Modulo non trovato"
+
+msgid "Generation failed"
+msgstr "Generazione non riuscita"
+
+msgid "PDF generated"
+msgstr "PDF generato"
+
+#, python-format
+msgid "Could not open PDF file: %s"
+msgstr "Impossibile aprire il file: %s"
+
+msgid "PDF import: no data found"
+msgstr "Importazione PDF: nessun dato trovato"
+
+msgid "PDF import error"
+msgstr "Errore nell'importazione PDF"
+
+msgid "Form importer unavailable"
+msgstr "Importatore di moduli non disponibile"
+
+msgid "PDF import: unrecognized format"
+msgstr "Importazione PDF: formato non riconosciuto"

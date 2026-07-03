@@ -1,0 +1,120 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+msgid "TimeLines Map"
+msgstr "Zaman Çizelgeleri Haritası"
+
+msgid "Choose View Format"
+msgstr "Görünüm Biçimini Seçin"
+
+msgid "Almost done"
+msgstr "Neredeyse bitti"
+
+msgid "Gathering data"
+msgstr "Veri toplama"
+
+#, python-format
+msgid "Number of Persons: %s"
+msgstr "Kişi Sayısı: %s"
+
+msgid ""
+"Stagger the map markers\n"
+"to differentiate different\n"
+"markers at the same location"
+msgstr ""
+"Aynı konumdaki farklı işaretleyicileri \n"
+"ayırt etmek için harita işaretleyicilerini \n"
+"sırayla yerleştirin"
+
+msgid ""
+"Stagger Radius (hectometers)\n"
+"as measured along the equator\n"
+"(includes latitude distortion)"
+msgstr ""
+"Ekvator boyunca ölçülen \n"
+"kayma yarıçapı (hektometre)\n"
+"(enlem bozulmasını içerir)"
+
+msgid ""
+"Display markers for unknown ancestors\n"
+"based on earliest descendant location"
+msgstr ""
+"Bilinmeyen atalar için en erken torun \n"
+"konumuna göre işaretleyicileri görüntüle"
+
+msgid ""
+"Days to keep lines on the map after\n"
+"an event"
+msgstr ""
+"Bir etkinlikten sonra haritadaki çizgilerin \n"
+"kalıcı olacağı günler"
+
+msgid "Use custom map icons"
+msgstr "Özel harita simgeleri kullanın"
+
+msgid ""
+"If there is no birth event for a person, their age\n"
+"is assumed to be this at their first event"
+msgstr ""
+"Bir kişinin doğum olayı yoksa, yaşı\n"
+"ilk doğum olayındaki yaşı olarak kabul edilir"
+
+msgid ""
+"If there is no death event for a person, they will\n"
+"be assumed dead at this age"
+msgstr ""
+"Bir kişi için ölüm olayı yoksa, \n"
+"bu yaşta ölmüş kabul edilir"
+
+msgid "Number of steps"
+msgstr "Adım sayısı"
+
+msgid "Type of steps"
+msgstr "Adım türü"
+
+msgid "Steps per millisecond"
+msgstr "Milisaniye başına adım sayısı"
+
+msgid "Initial map view on Gramps startup"
+msgstr "Gramps'in başlangıç haritasının ilk görünümü"
+
+msgid ""
+"Initial map view after startup and\n"
+"after changing the active person"
+msgstr ""
+"Başlangıçtan sonraki ilk harita görünümü ve\n"
+"etkin kişi değiştirildikten sonraki görünüm"
+
+msgid "Show map travel lines on startup"
+msgstr "Başlangıçta harita üzerindeki seyahat hatlarını göster"
+
+msgid "Show time ticks on navigation bar on startup"
+msgstr "Başlangıçta gezinme çubuğunda zaman işaretlerini göster"
+
+msgid "TimeLines Map options"
+msgstr "Zaman Çizelgeleri Harita seçenekleri"
+
+msgid ""
+"A view showing all the places visited by a person or persons on various date."
+msgstr ""
+"Bir veya birden fazla kişinin çeşitli tarihlerde ziyaret ettiği tüm yerleri "
+"gösteren bir görünüm."
+
+msgid "TimeLines map"
+msgstr "Zaman Çizelgeleri haritası"

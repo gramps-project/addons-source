@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-02-20 09:09+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,52 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Gram.py Script"
+msgstr "Gram.py Script"
+
+msgid "Run a special Gramps Python script"
+msgstr "הרצת תסריט פיתון מיוחד של גרמפס"
+
+msgid "Load query from a .script file"
+msgstr "טעינת שאילתה מ.תסריט קובץ"
+
+msgid "Save query to a .script file"
+msgstr "שמירה שאילתה ל.תסריט קובץ"
 
 msgid "Save"
 msgstr "שמירה"
+
+msgid "Download results as a CSV file"
+msgstr "הורדת תוצאות כקובץ CSV"
+
+msgid "Open..."
+msgstr "פתיחה..."
+
+msgid "Save as..."
+msgstr "שמירה כ..."
+
+msgid "Save as CSV"
+msgstr "שמירה כ־CSV"
+
+msgid "Copy to clipboard"
+msgstr "העתקה ללוח־הגזירים"
+
+msgid "Table"
+msgstr "טבלה"
+
+msgid "Chart"
+msgstr "תרשים"
+
+msgid "Execute <Alt+Enter>"
+msgstr "הרצה <Alt+Enter>"
+
+msgid "Execute the script"
+msgstr "הרצת התסריט"
+
+msgid "Ready..."
+msgstr "מוכן..."
+
+msgid "Gram.py Script Edited Data"
+msgstr "Gram.py תסריט ערוכים נתונים"

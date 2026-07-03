@@ -1,0 +1,184 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-24 01:13-0700\n"
+"PO-Revision-Date: 2026-07-03 15:58+0000\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
+
+msgid "Audit Given and Patronymic Names"
+msgstr "Auditar nomes próprios e patronímicos"
+
+msgid ""
+"Tools to rename given name, audit and infer patronymic (East Slavic) names."
+msgstr ""
+"Ferramentas para renomear nomes próprios, verificar e deduzir patronímicos "
+"(eslavos orientais)."
+
+msgid "Patronymic Suggestion"
+msgstr "Sugestão de patronímico"
+
+msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
+msgstr ""
+"Sugere nomes patronímicos (eslavos orientais) em tempo real à medida que "
+"navega."
+
+msgid "Auditing Settings"
+msgstr "Definições de auditoria"
+
+msgid "All Records"
+msgstr "Todos os registos"
+
+msgid "Males Only"
+msgstr "Só homens"
+
+msgid "Females Only"
+msgstr "Só mulheres"
+
+msgid "Configure Rules..."
+msgstr "Configurar regras..."
+
+msgid "Match Pre-Revolutionary Orthography"
+msgstr "Corresponder à ortografia pré-revolucionária"
+
+msgid "Audit Database"
+msgstr "Auditar base de dados"
+
+msgid "Select All Safe Corrections"
+msgstr "Selecionar todas as correcções seguras"
+
+msgid "Apply Selected Corrections"
+msgstr "Aplicar correcções seleccionadas"
+
+msgid "Configure Rules"
+msgstr "Configurar regras"
+
+msgid "Individual"
+msgstr "Indivíduo"
+
+msgid "Current"
+msgstr "Actual"
+
+msgid "Correction"
+msgstr "Correcção"
+
+msgid "Conf"
+msgstr "Configurar"
+
+msgid "Ref Year"
+msgstr "Ano de referência"
+
+msgid "Explanation"
+msgstr "Explicação"
+
+msgid "Audit Complete!"
+msgstr "Auditoria concluída!"
+
+msgid "No Results"
+msgstr "Sem resultados"
+
+msgid "No issues found."
+msgstr "Nenhum problema encontrado."
+
+msgid "Use"
+msgstr "Usar"
+
+msgid "Search and Replace Options"
+msgstr "Opções da procura e substituição"
+
+msgid "Source Name:"
+msgstr "Nome da fonte:"
+
+msgid "e.g. Иоанн"
+msgstr "e.g. Иоанн"
+
+msgid "Target Name:"
+msgstr "Nome do destino:"
+
+msgid "e.g. Иван"
+msgstr "e.g. Иван"
+
+msgid "Match Mode:"
+msgstr "Modo de comparação:"
+
+msgid "Exact Match"
+msgstr "Correspondência exacta"
+
+msgid "Substring"
+msgstr "Subcadeia"
+
+msgid "Regular Expression"
+msgstr "Expressão regular"
+
+msgid "Scan for Names"
+msgstr "Procurar nomes"
+
+msgid "Preserve original name as alternative"
+msgstr "Manter o nome original como alternativa"
+
+msgid "Select All"
+msgstr "Seleccionar tudo"
+
+msgid "Proposed"
+msgstr "Proposta"
+
+msgid "Infer East Slavic Patronymics"
+msgstr "Inferir os patronímicos eslavos orientais"
+
+msgid "Rename Given Names"
+msgstr "Renomear nomes próprios"
+
+msgid "Audit Patronymics"
+msgstr "Auditar patronímicos"
+
+#, python-brace-format
+msgid ""
+"Missing Patronymic Detected.\n"
+"Suggested: {0}\n"
+"Based on father: {1}"
+msgstr ""
+"Patronímico em falta detectado.\n"
+"Sugerido: {0}\n"
+"Baseado no pai: {1}"
+
+msgid "Navigate to an individual to check patronymic status."
+msgstr "Aceda a um perfil individual para verificar o seu estado patronímico."
+
+msgid "No active person selected."
+msgstr "Sem indivíduo activo seleccionado."
+
+msgid ""
+"Patronymic inference can't be inferred for non-binary or unknown genders."
+msgstr ""
+"Impossível inferir o patronímico no caso de sexos não binários ou "
+"desconhecidos."
+
+msgid "Individual already has a recorded patronymic."
+msgstr "O indivíduo já tem um patronímico registado."
+
+msgid "No attached father found in database family records."
+msgstr "Nenhum pai associado nos registos familiares da base de dados."
+
+msgid "Father lacks a recorded first name."
+msgstr "Não há registo do nome próprio do pai."
+
+msgid "Could not generate valid morphology patterns."
+msgstr "Impossível gerar padrões morfológicos válidos."
+
+msgid "Patronymic applied successfully!"
+msgstr "O patronímico foi aplicado com sucesso!"
+
+msgid "Apply Suggestion"
+msgstr "Aplicar sugestão"
+
+#, python-format
+msgid "%(prog)s: error: %(message)s\n"
+msgstr "%(prog)s: erro: %(message)s\n"

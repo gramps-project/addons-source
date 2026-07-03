@@ -1,0 +1,73 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/it/>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "Note Cleanup"
+msgstr "Pulizia delle note"
+
+msgid "Clean up Notes that contain HTML markup"
+msgstr "Ripulisce le note che contengono marcatori HTML"
+
+msgid "Note Cleanup Tool"
+msgstr "Strumento per la pulizia delle note"
+
+msgid "Cleaned Notes"
+msgstr "Note ripulite"
+
+msgid "Links Only"
+msgstr "Solo i collegamenti"
+
+msgid "Issues"
+msgstr "Problemi"
+
+msgid "Close the Note Cleanup Tool"
+msgstr "Chiudi lo strumento per la pulizia delle note"
+
+msgid "Save All"
+msgstr "Salva tutto"
+
+msgid "Save All Changes"
+msgstr "Salva tutte le modifiche"
+
+msgid "Search"
+msgstr "Ricerca"
+
+msgid "Generate Test Notes"
+msgstr "Genera note di testo"
+
+msgid "Export the results to a text file"
+msgstr "Esporta i risultati in un file di testo"
+
+msgid "Clean up Notes"
+msgstr "Ripulisci le note"
+
+msgid "Add Test Note"
+msgstr "Aggiunge nota di testo"
+
+msgid "Export results to a text file"
+msgstr "Esporta i risultati in un file di testo"
+
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Errore nella scrittura del resoconto: %s"
+
+msgid "Saving Notes"
+msgstr "Salvataggio delle note"
+
+msgid "Saving Cleaned Notes"
+msgstr "Salvataggio delle note ripulite"
+
+msgid "Scanning Notes"
+msgstr "Scansione delle note"

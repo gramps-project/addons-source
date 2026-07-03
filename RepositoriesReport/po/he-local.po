@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-10-31 18:02+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,22 +13,103 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Repositories Report Options"
+msgstr "אפשרויות דוח מאגרים"
+
+msgid "Produces a textual repositories report"
+msgstr "מפיק דוח מאגרים מללי"
+
+msgid "Repositories Report"
+msgstr "דוח מאגרים"
+
+msgid "Internet:"
+msgstr "מרשתת:"
+
+msgid "Publication information:"
+msgstr "פרטי פרסום:"
+
+msgid "Data:"
+msgstr "נתונים:"
+
+msgid "Page:"
+msgstr "עמוד:"
 
 msgid "Selection with a filter"
 msgstr "בחירה באמצעות מסנן"
 
+msgid "Include repository's urls"
+msgstr "לכלול כתובות url של מאגר"
+
+msgid "Whether to include urls on repository."
+msgstr "האם לכלול כתובות url במאגר."
+
+msgid "Include repository's address"
+msgstr "לכלול כתובת מאגר"
+
+msgid "Whether to include addresses on repository."
+msgstr "האם לכלול כתובת במאגר."
+
+msgid "Include source's author"
+msgstr "לכלול מקור של מחבר"
+
+msgid "Whether to include author."
+msgstr "האם לכלול נוצר על ידי."
+
+msgid "Include source's abbreviation"
+msgstr "לכלול קיצור מקור"
+
+msgid "Whether to include abbreviation."
+msgstr "האם לכלול קיצור."
+
+msgid "Include source's publication information"
+msgstr "לכלול מידע פרסום של מקור"
+
+msgid "Whether to include publication information."
+msgstr "האם לכלול פרסום מידע."
+
 msgid "Include source's data"
 msgstr "הכללת נתונים על מקורות"
+
+msgid "Whether to include keys and values."
+msgstr "האם לכלול מפתחות וערך."
+
+msgid "Whether to include notes on repositories and sources."
+msgstr "האם לכלול הערות במאגרים ומקורות."
 
 msgid "Include media"
 msgstr "הכללת מדיה"
 
+msgid "Whether to include media."
+msgstr "האם ללכלול מדיה."
+
 msgid "Include citations"
 msgstr "הכללת מובאות"
+
+msgid "Whether to include citations on sources."
+msgstr "האם לכלול מובאות במקורות."
 
 msgid "Include private records"
 msgstr "לכלול רשומות פרטיות"
 
+msgid "Whether to include repositories and sources marked as private."
+msgstr "האם לכלול מאגרים ומקורות מסומן כפרטי."
+
+msgid "Display empty values"
+msgstr "הצגת ערכים ריקים"
+
+msgid "Whether to include key records with empty values."
+msgstr "האם לכלול מפתח רשומות עם ריקה ערך."
+
+msgid "The style used for the title of the report."
+msgstr "הסגנון שמשמש לכותרת הדוח."
+
+msgid "The style used for repository title."
+msgstr "הסגנון שמשמש עבור מאגר כותרת."
+
 msgid "The style used for each section."
 msgstr "הסיגנון שישמש בכל מקטע."
+
+msgid "The style used for child section."
+msgstr "הסגנון שמשמש עבור ילד מקטע."

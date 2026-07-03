@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-09-06 11:01+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,54 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "⏸ Pause"
+msgstr "⏸ Pausa"
+
+msgid "Pause the current search"
+msgstr "Metti in pausa la ricerca attuale"
+
+msgid "▶ Continue"
+msgstr "▶ Continua"
+
+msgid "Continue searching for more relations"
+msgstr "Continua a cercare altre relazioni"
+
+msgid "📋 Copy"
+msgstr "📋 Copia"
+
+msgid "Copy selected people to clipboard"
+msgstr "Copiare la persona selezionata negli appunti"
+
+msgid "🗑 Clear"
+msgstr "🗑 Pulisci"
+
+msgid "Clear all results and reset"
+msgstr "Pulisce tutti i risultati e reimposta"
+
+msgid "Ready to search"
+msgstr "Pronto per cercare"
+
+#, python-brace-format
+msgid ""
+"Search Depth: {depth} | People Processed: {processed} | Queue Size: "
+"{queue_size}"
+msgstr ""
+"Profondità della ricerca: {depth} | Persone elaborate: {processed} | "
+"Dimensione della coda: {queue_size}"
+
+msgid "mentioned in note"
+msgstr "menzionato nelle note"
+
+msgid "Note on Family"
+msgstr "Nota sulla famiglia"
+
+msgid "sibling"
+msgstr "fratello o sorella"
+
+msgid "Note on Parent Family"
+msgstr "Nota sulla famiglia dei genitori"
 
 #, python-format
 msgid "%s (association)"
@@ -21,9 +68,67 @@ msgstr "%s (associazione)"
 msgid "Note on Person"
 msgstr "Note sulla persona"
 
+#, python-format
+msgid ""
+"\n"
+"   %s of "
+msgstr ""
+"\n"
+"   %s di "
+
 msgid "No Active Person set."
 msgstr "Nessuna persona attiva impostata."
+
+msgid "Error: No Active Person set"
+msgstr "Nessuna persona attiva impostata"
+
+msgid "Initializing search..."
+msgstr "Inizializzazione della ricerca..."
+
+msgid "Looking for relationship between\n"
+msgstr "Ricerca di una relazione tra\n"
 
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (persona attiva)...\n"
+
+msgid "Searching for connections..."
+msgstr "Ricerca delle connessioni..."
+
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Trovata relazione num%d: \n"
+"   "
+
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"In pausa.\n"
+"Premi Continua per cercare ulteriori relazioni.\n"
+
+msgid "Paused - Press Continue to search for more relations"
+msgstr "Paused - Premere Continua a cercare ulteriori relazioni"
+
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relation paths found."
+msgstr ""
+"\n"
+"Ricerca completata. %d percorsi di relazione individuati."
+
+msgid "Search completed - {} relation paths found"
+msgstr "Ricerca completata - {} percorsi di relazione trovati"
+
+msgid "Error during search: {}"
+msgstr "Errore nella ricerca: {}"
+
+msgid "Resuming search..."
+msgstr "Riprendi ricerca..."
+
+msgid "Search interrupted by user"
+msgstr "Ricerca interrotta dall'utente"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-06 20:38+0200\n"
-"PO-Revision-Date: 2025-03-09 13:13+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Forum: ukrgenealogy.com.ua"
+msgstr "פורום: ukrgenealogy.com.ua"
+
+msgid "Forum: genoua.name"
+msgstr "פורום: genoua.name"
+
+msgid "Encyclopedia: esu.com.ua"
+msgstr "אנציקלופדיה: esu.com.ua"
+
+msgid "Wikipedia: uk.wikipedia.org"
+msgstr "ויקיפדיה: uk.wikipedia.org"
+
+msgid "Repressed DB: reabit.org.ua"
+msgstr "מסד נתוני מדוכאים: reabit.org.ua"
+
+msgid "Genealogy DB: familysearch.org"
+msgstr "מסד נתוני יוחסין: familysearch.org"
+
+msgid "Genealogy DB: myheritage.com.ua"
+msgstr "מסד נתוני יוחסין: myheritage.com.ua"
+
+msgid "Genealogy DB: pra.in.ua"
+msgstr "Genealogy DB: pra.in.ua"
+
+msgid "Map: Ridni.org"
+msgstr "מפה: Ridni.org"
+
+msgid "Search: google.com.ua"
+msgstr "חיפוש: google.com.ua"
 
 msgid "Search: roots.in.ua"
 msgstr "חיפוש: roots.in.ua"
+
+msgid "UA Web Connect Pack"
+msgstr "חבילת חיבור מרשתת UA"
+
+msgid "Collection of Web sites for the UA (requires libwebconnect)"
+msgstr "אוסף אתרי מרשתת עבור UA (דורש libwebconnect)"

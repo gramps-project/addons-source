@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-01 12:35+0000\n"
+"PO-Revision-Date: 2026-06-20 17:01+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 msgid "Family Finder Tool"
 msgstr "Family Finder-Werkzeug"
@@ -30,7 +30,7 @@ msgid "FTDNA Note string :"
 msgstr "FTDNA-Notizenzeichenfolge :"
 
 msgid "Shared Citation ID :"
-msgstr "Gemeinsame Fundstellen-ID :"
+msgstr "Gemeinsame Quellenangabe-ID :"
 
 msgid "Active Person : "
 msgstr "Aktive Person: "
@@ -82,15 +82,15 @@ msgstr "Notiz zu %s DNA-Assoziation hinzufügen"
 
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr "Quellenfundstelle für %s DNA-Verbindung erstellen"
+msgstr "Quellenangabe für die %s-DNA-Assoziation erstellen"
 
 #, python-format
 msgid "Create Citation for %s DNA Association"
-msgstr "Fundstelle für %s DNA-Verbindung erstellen"
+msgstr "Quellenangabe für %s DNA-Verbindung erstellen"
 
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr "Fundstelle zu %s DNA-Verbindung hinzufügen"
+msgstr "Quellenangabe zu %s DNA-Verbindung hinzufügen"
 
 msgid "FamilyTree DNA"
 msgstr "FamilyTree-DNA"

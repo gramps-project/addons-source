@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-07 13:25+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,10 +12,76 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "Internet:"
+msgstr "Internet:"
+
+msgid "Publication information:"
+msgstr "Informazioni di pubblicazione:"
+
+msgid "Data:"
+msgstr "Dati:"
+
+msgid "Page:"
+msgstr "Pagina:"
+
+msgid "Selection with a filter"
+msgstr "Selezione con un filtro"
+
+msgid "Include repository's urls"
+msgstr "Includi url dei depositi"
+
+msgid "Whether to include urls on repository."
+msgstr "Se includere gli url nel deposito."
+
+msgid "Include repository's address"
+msgstr "Includi l'indirizzo del deposito"
+
+msgid "Whether to include addresses on repository."
+msgstr "Se includere gli indirizzi nel deposito."
+
+msgid "Include source's author"
+msgstr "Includi l'autore della fonte"
+
+msgid "Whether to include author."
+msgstr "Se includere l'autore."
+
+msgid "Include source's abbreviation"
+msgstr "Inserisci l'abbreviazione della fonte"
+
+msgid "Whether to include abbreviation."
+msgstr "Se includere l'abbreviazione."
+
+msgid "Include source's publication information"
+msgstr "Includi le informazioni di pubblicazione della fonte"
+
+msgid "Whether to include publication information."
+msgstr "Se includere le informazioni di pubblicazione."
+
+msgid "Include source's data"
+msgstr "Includi i dati della fonte"
+
+msgid "Whether to include keys and values."
+msgstr "Se includere le chiavi e i valori."
+
+msgid "Whether to include notes on repositories and sources."
+msgstr "Se includere le note sui depositi e sulle fonti."
+
+msgid "Whether to include media."
+msgstr "Indica se includere gli oggetti multimediali."
+
+msgid "Include citations"
+msgstr "Includi citazioni"
+
+msgid "Whether to include citations on sources."
+msgstr "Indica se includere le citazioni nelle fonti."
 
 msgid "Include private records"
 msgstr "Includere informazioni private"
+
+msgid "Display empty values"
+msgstr "Visualizza i valori vuoti"
 
 msgid "Whether to include key records with empty values."
 msgstr ""

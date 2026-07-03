@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,10 +12,93 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 msgid "Failed writing "
 msgstr "Errore durante la scrittura di "
 
+msgid "Destination directory"
+msgstr "Directory di destinazione"
+
+msgid "Path for generated files"
+msgstr "Percorso dei file generati"
+
 msgid "The destination file name for html content."
 msgstr "Il nome di file di destinazione per il contenuto HTML."
+
+msgid "Default Age"
+msgstr "Età predefinita"
+
+msgid "Default age of parent when child is born with unknown year of birth"
+msgstr ""
+"Età predefinita dei genitori quando un figlio nasce con un anno di nascita "
+"sconosciuto"
+
+msgid "What to show"
+msgstr "Cosa mostrare"
+
+msgid "Show GrampsID"
+msgstr "Mostra ID di Gramps"
+
+msgid "Show GrampsID on top right of the box"
+msgstr "Mostra gli ID di Gramps in alto a destra del riquadro"
+
+msgid "Optimize"
+msgstr "Ottimizza"
+
+msgid "Male Box Color"
+msgstr "Colore del riquadro maschile"
+
+msgid "Box background color for male person"
+msgstr "Colore di sfondo del riquadro per i maschi"
+
+msgid "Female Box Color"
+msgstr "Colore del riquadro femminile"
+
+msgid "Box background color for female person"
+msgstr "Colore di sfondo del riquadro per le femmine"
+
+msgid "Number of pixel per year"
+msgstr "Numero di pixel per anno"
+
+msgid "How many pixel height is one year?"
+msgstr "A quanti pixel corrisponde un anno?"
+
+msgid "Offset X Coordinate"
+msgstr "Scostamento della coordinata X"
+
+msgid "How many pixel are unused besides the most left and most right boxes?"
+msgstr ""
+"Quanti pixel sono inutilizzati tra il riquadro più a sinistra e quello più a "
+"destra?"
+
+msgid "Offset Y Coordinate"
+msgstr "Scostamento della coordinata Y"
+
+msgid "How many pixel are unused above first box?"
+msgstr "Quanti pixel sono inutilizzati sopra il primo riquadro?"
+
+msgid "Width of a box in pixel"
+msgstr "Larghezza in pixel di un riquadro"
+
+msgid "Width of the box of a person in pixel"
+msgstr "Larghezza in pixel del riquadro di una persona"
+
+msgid "Horizontal space between boxes in pixel"
+msgstr "Spazio orizzontale, in pixel, tra i riquadri"
+
+msgid "Minimum horizontal space between 2 boxes in pixel"
+msgstr "Spazio orizzontale minimo, in pixel, tra due riquadri"
+
+msgid "Length of vertical part of a line in pixel"
+msgstr "Lunghezza, in pixel, della parte verticale di una linea"
+
+msgid ""
+"Parent and child boxes are connected with lines. This is the length of the "
+"vertical part of the lines in pixel"
+msgstr ""
+"I riquadri di padre e figlio sono collegati da linee. Questa è la lunghezza, "
+"in pixel, della parte verticale delle linee"
+
+msgid "Number of pixel between left border and scale"
+msgstr "Numero di pixel tra il bordo sinistro e la scala"

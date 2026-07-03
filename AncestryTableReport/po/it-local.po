@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-04-14 18:01+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,14 +12,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "Ancestry Table"
+msgstr "Tabella genealogica"
+
+msgid "Produces a table of ancestry about a person"
+msgstr "Produce una tabella degli ascendenti di una persona"
 
 #, python-format
 msgid "Person %(name)s is not in the Database"
 msgstr "Il nome %(name)s della persona non è nel Database"
 
+#, python-format
+msgid "Ancestry Table Report for %(name)s"
+msgstr "Rapporto della tabella degli antenati per %(name)s"
+
+#, python-format
+msgid "Generation %(gen_number)d"
+msgstr "Generazione %(gen_number)d"
+
+#, python-format
+msgid "Number of Ancestors for %(name)s"
+msgstr "Numero di ascendenti di %(name)s"
+
+msgid "Generation"
+msgstr "Generazione"
+
 msgid "To start a new page after each generation."
 msgstr "Iniziare una pagina nuova dopo ogni generazione."
+
+msgid "Number of ancestors per generation"
+msgstr "Numero di ascendenti per generazione"
+
+msgid "Add a page with tne number of ancestors per generation."
+msgstr "Aggiungi una pagina con il numero di ascendenti per generazione."
+
+msgid "Mask the name of the calendar in the dates"
+msgstr "Maschera il nome del calendario nelle date"
 
 msgid ""
 "By default, except for gregorian dates, Gramps shows the name of the "
@@ -31,17 +61,40 @@ msgstr ""
 msgid "The style used for the title of the report."
 msgstr "Lo stile usato per il titolo del resoconto."
 
+msgid "The style used for the Sosa number of the paternal branch."
+msgstr "Lo stile usato per i numeri di Sosa del ramo paterno."
+
+msgid "The style used for the Sosa number of the maternal branch."
+msgstr "Lo stile usato per i numeri di Sosa del ramo materno."
+
+msgid "The style used for the data of the males."
+msgstr "Lo stile usato per i dati dei maschi."
+
+msgid "The style used for the data of the females."
+msgstr "Lo stile usato per i dati delle femmine."
+
+msgid "The style used for the marriage."
+msgstr "Lo stile usato per il matrimonio."
+
+msgid ""
+"The style used for an empty row.\n"
+"To enlarge the height of the empty row, just increse the size of the police."
+msgstr ""
+"Lo stile usato per una riga vuota.\n"
+"Per aumentare l'altezza di una riga vuota, basta aumentare la grandezza del "
+"carattere."
+
 msgid ""
 "The style used for the header table of the number of ancestors per "
 "generation."
 msgstr ""
-"Lo stile usato per le intestazioni del numero di antenati per generazione."
+"Lo stile usato per le intestazioni del numero di ascendenti per generazione."
 
 msgid "The style used for the number of ancestors per generation."
-msgstr "Lo stile usato per il numero di antenati per generazione."
+msgstr "Lo stile usato per il numero di ascendenti per generazione."
 
 msgid ""
 "The style used for the total line of the number of ancestors per generation."
 msgstr ""
-"Lo stile usato per la linea del totale del numero di antenati per "
+"Lo stile usato per la linea del totale del numero di ascendenti per "
 "generazione."

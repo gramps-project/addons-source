@@ -1,0 +1,71 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
+"addons/he/>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "People with a tag containing <substring>"
+msgstr "אנשים עם תג שמכיל <substring>"
+
+msgid "Matches people with a tag whose name contains the given substring"
+msgstr "התאמות אנשים עם תג ששמו שם מכיל פרטי תת־מחרוזת"
+
+msgid "Families with a tag containing <substring>"
+msgstr "משפחות עם תג שמכיל <substring>"
+
+msgid "Matches families with a tag whose name contains the given substring"
+msgstr "התאמות משפחות עם תג ששמו שם מכיל פרטי תת־מחרוזת"
+
+msgid "Events with a tag containing <substring>"
+msgstr "אירועים עם תג שמכיל <substring>"
+
+msgid "Matches events with a tag whose name contains the given substring"
+msgstr "התאמות אירועים עם תג ששמו שם מכיל פרטי תת־מחרוזת"
+
+msgid "Places with a tag containing <substring>"
+msgstr "מקומות עם תג שמכיל <substring>"
+
+msgid "Matches places with a tag whose name contains the given substring"
+msgstr "התאמות מקומות עם תג ששמו שם מכיל פרטי תת־מחרוזת"
+
+msgid "Sources with a tag containing <substring>"
+msgstr "מקורות עם תג שמכיל <substring>"
+
+msgid "Matches sources with a tag whose name contains the given substring"
+msgstr "התאמות מקורות עם תג ששמו שם מכיל פרטי תת־מחרוזת"
+
+msgid "Citations with a tag containing <substring>"
+msgstr "מובאות עם תג שמכיל <substring>"
+
+msgid "Matches citations with a tag whose name contains the given substring"
+msgstr "התאמות מובאות עם תג ששמו שם מכיל פרטי תת־מחרוזת"
+
+msgid "Repositories with a tag containing <substring>"
+msgstr "מאגרים עם תג שמכיל <substring>"
+
+msgid "Matches repositories with a tag whose name contains the given substring"
+msgstr "התאמות מאגרים עם תג ששמו שם מכיל פרטי תת־מחרוזת"
+
+msgid "Media objects with a tag containing <substring>"
+msgstr "מדיה עצמים עם תג שמכיל <substring>"
+
+msgid ""
+"Matches media objects with a tag whose name contains the given substring"
+msgstr "התאמות מדיה עצמים עם תג ששמו שם מכיל פרטי תת־מחרוזת"
+
+msgid "Notes with a tag containing <substring>"
+msgstr "הערות עם תג שמכיל <substring>"
+
+msgid "Matches notes with a tag whose name contains the given substring"
+msgstr "התאמות הערות עם תג ששמו שם מכיל פרטי תת־מחרוזת"

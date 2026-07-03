@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-16 05:37+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Y-chromosomal inheritance of <filter>"
+msgstr "הורשת כרומוזום Y של <filter>"
 
 msgid ""
 "Matches recorded descendants of a filter result following Y-chromosomal "
@@ -21,14 +24,58 @@ msgid ""
 msgstr ""
 "איתור תוצאת סינון של צאצאים שתועדו ועקיבה אחר דפוסי תורשה של כרומוזום Y."
 
+msgid "X-chromosomal ancestors of <person>"
+msgstr "אבות כרומוזום X של <person>"
+
 msgid ""
 "Matches ancestors of <person> following a X-chromosomal inheritance pattern."
 msgstr "איתור אבות קדמונים של <אדם> ועקיבה אחר דפוסי תורשה של כרומוזום X."
+
+msgid "X-chromosomal descendants of <person>"
+msgstr "צאצאי כרומוזום X של <person>"
 
 msgid ""
 "Matches descendants of <person> following a X-chromosomal inheritance "
 "pattern."
 msgstr "איתור דורות ממשיכים של <אדם> ועקיבה אחר דפוסי תורשה של כרומוזום X."
 
+msgid "Patrilineal progenitor of <person>"
+msgstr "אב קדום בקו אב של <person>"
+
 msgid "Matches the earliest recorded patrilineal ancestor father."
 msgstr "איתור האב הקדמון המוקדם ביותר שמתועד מצד משפחת האב."
+
+msgid "Mitochondrial inheritance of <filter>"
+msgstr "מיטועודנדרית הורשה מתוך <filter>"
+
+msgid ""
+"Matches recorded descendants of a filter result following mitochondrial "
+"inheritance patterns."
+msgstr "התאמת צאצאים מתועדים של תוצאת מסנן לפי דפוסי הורשה מיטוכונדרית."
+
+msgid "Matrilineal progenitrix of <person>"
+msgstr "אם קדומה בקו אם של <person>"
+
+msgid "Matches the earliest recorded matrilineal ancestor mother."
+msgstr "התאמה לאם הקדומה ביותר שמתועדת בקו אמהי."
+
+msgid ""
+"Matches all descendants of <person> following a X-chromosomal inheritance "
+"pattern."
+msgstr "התאמת כל צאצאי <person> לפי דפוס הורשה של כרומוזום X."
+
+msgid "Mitochondrial inheritance of <person>"
+msgstr "מיטועודנדרית הורשה מתוך <person>"
+
+msgid ""
+"Matches recorded descendants of person following mitochondrial inheritance "
+"patterns."
+msgstr "התאמת צאצאים מתועדים של אדם לפי דפוסי הורשה מיטוכונדרית."
+
+msgid "Y-chromosomal inheritance of <person>"
+msgstr "הורשת כרומוזום Y של <person>"
+
+msgid ""
+"Matches recorded descendants of person following Y-chromosomal inheritance "
+"patterns."
+msgstr "התאמת צאצאים מתועדים של אדם לפי דפוסי הורשה של כרומוזום Y."

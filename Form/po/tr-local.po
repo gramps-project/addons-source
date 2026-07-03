@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-07-03 03:01+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,16 +12,287 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+#, python-format
+msgid "Form: %s"
+msgstr "Form: %s"
+
+msgid "New Form"
+msgstr "Yeni Form"
+
+msgid "Edit Form"
+msgstr "Formu Düzenle"
+
 msgid "Reference:"
 msgstr "Referans:"
 
+msgid "[Source recreated after deletion mid-form-edit]"
+msgstr ""
+"[Form düzenleme işlemi sırasında silinmesinin ardından yeniden oluşturulan "
+"kaynak]"
+
+msgid "Headings"
+msgstr "Başlıklar"
+
+#, python-format
+msgid "Census Check for %s"
+msgstr "%s İçin Nüfus Sayımı Kontrolü"
+
+msgid "Form Gramplet"
+msgstr "Gramplet Formu"
+
+msgid "Gramplet interface for Forms"
+msgstr "Formlar için Gramplet arayüzü"
+
+msgid "Forms"
+msgstr "Formlar"
+
+msgid "Order"
+msgstr "Sıralama"
+
+msgid "Form"
+msgstr "Form"
+
+msgid "XML syntax error in Form definition file"
+msgstr "Form tanımlama dosyasında XML sözdizimi hatası"
+
+msgid "Failed to read Form definition file"
+msgstr "Form tanım dosyasını okuma başarısız oldu"
+
+msgid "Invalid Form definition file"
+msgstr "Geçersiz Form tanım dosyası"
+
+msgid "Select Form"
+msgstr "Formu Seçin"
+
+msgid "CensusCheck"
+msgstr "Nüfus Sayımı Kontrolü"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"descendents"
+msgstr ""
+"Bir kişi ve onun bazı soyundan gelenler için herhangi bir Nüfus Sayımı "
+"olayının eksik olup olmadığını kontrol edin"
+
+msgid "CensusCheckUp"
+msgstr "Nüfus Sayımı Kontrolü"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"ancestors"
+msgstr ""
+"Bir kişi ve atalarından bazıları için nüfus sayımında herhangi bir kaydın "
+"eksik olup olmadığını kontrol edin"
+
+msgid "Total Area in Statute Acres"
+msgstr "Tüzük Dönümündeki Toplam Alan"
+
+msgid "Signature of Head of Household"
+msgstr "Hane Halkı Başkanının İmzası"
+
+msgid "Signature of Enumerator"
+msgstr "Sayım görevlisinin imzası"
+
+msgid "Persons"
+msgstr "Kişiler"
+
+msgid "County or Co. Borough"
+msgstr "İlçe veya İl Belediyesi"
+
+msgid "District Electoral Division or Ward"
+msgstr "İlçe Seçim Bölgesi veya Mahalle"
+
+msgid "Urban Dist. Town or Village"
+msgstr "Şehir Bölgesi, Kasaba veya Köy"
+
+msgid "Street etc with No. of House"
+msgstr "Sokak vb. ev numarasıyla birlikte"
+
+msgid "No. of Schedule"
+msgstr "Program sayısı"
+
+msgid "Name of Public Institution"
+msgstr "Kamu Kurumunun Adı"
+
+msgid "Name and Surname"
+msgstr "Ad ve Soyad"
+
+msgid "Relationship to Head of Household"
+msgstr "Hane halkı başkanıyla olan ilişki"
+
+msgid "Year Age"
+msgstr "Yaş yılı"
+
+msgid "Age in years"
+msgstr "Yıl cinsinden yaş"
+
+msgid "Month Age"
+msgstr "Yaş ayı"
+
+msgid "Age in months"
+msgstr "Ay cinsinden yaş"
+
+msgid "Marriage or Orphanhood"
+msgstr "Evlilik veya Yetimlik"
+
+msgid ""
+"\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
+"cannot speak Irish\""
+msgstr ""
+"\"Sadece İrlandaca\", \"İrlandaca ve İngilizce\", \"İngilizce ve "
+"İrlandaca\", \"İrlandaca okuyabiliyorum ama konuşamıyorum\""
+
+msgid "Years married in present Marriage"
+msgstr "Mevcut evliliğin yıl cinsinden süresi"
+
+msgid "Months Married"
+msgstr "Evli olduğu aylar"
+
+msgid "Months married in present Marriage"
+msgstr "Mevcut evliliğinde geçen ay sayısı"
+
+msgid "Present Marriage Children"
+msgstr "Mevcut Evlilik Durumu ve Çocuk Sayısı"
+
+msgid "Children born alive to present marriage"
+msgstr "Mevcut evlilikten canlı doğan çocuklar"
+
+msgid "Total Children Under 16 Living"
+msgstr "16 Yaş Altında Yaşayan Toplam Çocuk Sayısı"
+
+msgid "(1.) Entry no."
+msgstr "(1.) Kayıt numarası"
+
+msgid "Superintendent Registrar's District"
+msgstr "Baş Kayıt Memurunun Bölgesi"
+
+msgid "Registrar's District"
+msgstr "Kayıt Memurluğu Bölgesi"
+
+msgid "Union"
+msgstr "Birlik"
+
+msgid "(10.) Signature of Registrar"
+msgstr "(10.) Sicil Memurunun İmzası"
+
+msgid "(11.) Baptismal Name if added after Registration of Birth, and Date"
+msgstr "(11.) Doğum Kaydından Sonra Eklenen Vaftiz Adı ve Tarihi"
+
+msgid "(3.) Name (if any)"
+msgstr "(3.) Ad (varsa)"
+
 msgid "Place of Birth"
 msgstr "Doğum Yeri"
+
+msgid "(2.) Date and Place of Birth"
+msgstr "(2.) Doğum Tarihi ve Yeri"
+
+msgid "(4.) M or F for male or female"
+msgstr "(4.) Erkek veya kadın için E veya K"
+
+msgid "(5.) Name and Surname and Dwelling-place of Father"
+msgstr "(5.) Babanın Adı Soyadı ve Yaşadığı Yer"
+
+msgid "(7.) Rank or Profession of Father"
+msgstr "(7.) Babanın Rütbesi veya Mesleği"
+
+msgid "(6.) Name and Surname and Maiden Surname of Mother"
+msgstr "(6.) Annenin Adı, Soyadı ve Kızlık Soyadı"
+
+msgid "(8.) Signature, Qualification, and Residence of Informant"
+msgstr "(8.) Bilgi Verenin İmzası, Nitelikleri ve İkametgahı"
+
+msgid "When Registered"
+msgstr "Kayıt olunduğunda"
+
+msgid "(9.) Date when birth was registered"
+msgstr "(9.) Doğumun kaydedildiği tarih"
+
+msgid "Year"
+msgstr "Yıl"
+
+msgid "Solemnized at the Catholic"
+msgstr "Katolik Kilisesinde nikah kıyıldı"
+
+msgid "Certificate number"
+msgstr "Sertifika numarası"
+
+msgid "Page number"
+msgstr "Sayfa numarası"
+
+msgid "(1.) Entry No."
+msgstr "(1.) Giriş Numarası"
+
+msgid "(2.) When Married"
+msgstr "(2.) Evli olunduğunda"
+
+msgid "(3.) Name and Surname"
+msgstr "(3.) Ad ve Soyad"
+
+msgid "(4.) Full or Minor"
+msgstr "(4.) Tam veya Kısmi"
+
+msgid "(5.) Bachelor or Spinster"
+msgstr "(5.) Bekar erkek veya bekar kadın"
+
+msgid "(6.) Rank or Profession"
+msgstr "(6.) Rütbe veya Meslek"
+
+msgid "Residence at the Time of Marriage"
+msgstr "Evlilik Anındaki İkamet Yeri"
+
+msgid "(8.) Father's Name and Surname"
+msgstr "(8.) Babanın Adı ve Soyadı"
+
+msgid "(9.) Rank or Profession of Father"
+msgstr "(9.) Babanın Rütbesi veya Mesleği"
+
+msgid "(10.) When Registered"
+msgstr "(10.) Kayıt olunduğunda"
+
+msgid "(11.) Signature of Registrar"
+msgstr "(11.) Sicil Memurunun İmzası"
+
+msgid "Date of Death"
+msgstr "Ölüm Tarihi"
+
+msgid "(2.) Date and Place of Death"
+msgstr "(2.) Ölüm Tarihi ve Yeri"
+
+msgid "Place of Death"
+msgstr "Ölüm Yeri"
+
+msgid "(4.) M or F for Male or Female"
+msgstr "(4.) Erkek veya Kadın için E veya K"
+
+msgid "(5.) Widowed or Married"
+msgstr "(5.) Dul veya Evli"
+
+msgid "(6.) Age last Birthday"
+msgstr "(6.) Son Doğum Günündeki Yaş"
+
+msgid "(7.) Rank, Profession, or Occupation"
+msgstr "(7.) Rütbe, Meslek veya İş"
+
+msgid "(8.) Certified Cause of Death and Duration of Illness"
+msgstr "(8.) Ölümün Belgelenmiş Nedeni ve Hastalığın Süresi"
+
+msgid "Duration of Illness"
+msgstr "Hastalığın Süresi"
+
+msgid "Relation to deceased"
+msgstr "Ölen Kişiyle İlişki"
+
+msgid "(9.) e.g. Son, Daughter"
+msgstr "(9.) Örneğin: Oğlu, Kızı"
+
+msgid "(9.) e.g. Present at death"
+msgstr "(9.) Örneğin: Ölüm anında hazır bulunan"
 
 msgid "Column37"
 msgstr "Sütun37"
@@ -38,8 +309,208 @@ msgstr "Doğum yeri"
 msgid "Place married"
 msgstr "Evlenme yeri"
 
+msgid "Number of volumes in home library"
+msgstr "Ev kütüphanesindeki cilt sayısı"
+
+msgid "of"
+msgstr "<"
+
+msgid "Book/Volume"
+msgstr "Kitap/Cilt"
+
+msgid "Registration Card"
+msgstr "Kayıt Kartı"
+
+msgid ""
+"Found in lower left corner\n"
+"      D.S.S. Form 1\n"
+"        (Men 21 - 31)\n"
+"      D.S.S. Form 1 (Rev. 6-9-41)\n"
+"        (Men who turned 21 since 1st registration)\n"
+"      D.S.S. Form 1 (Rev. 1/1/42)\n"
+"        (Men born Feb 17, 1897 to Dec 31 1921)\n"
+"      D.S.S. Form 1 (Rev. 4/1/42)\n"
+"        (Men 45-64)\n"
+"      D.S.S. Form 1 (Rev. 6/1/42)\n"
+"        (Men 18-20)\n"
+"      D.S.S. Form 1 (Rev. 11/16/42)\n"
+"        (Men who turned 18 since\n"
+"         previous registration)"
+msgstr ""
+"Sol alt köşede yer almaktadır\n"
+"      D.S.S. Formu 1\n"
+"        (21-31 yaş arası erkekler)\n"
+"      D.S.S. Formu 1 (Rev. 6-9-41)\n"
+"        (İlk kayıt tarihinden bu yana 21 yaşını dolduran erkekler)\n"
+"      D.S.S. Formu 1 (Rev. 1/1/42)\n"
+"        (17 Şubat 1897 ile 31 Aralık 1921 tarihleri arasında doğan "
+"erkekler)\n"
+"      D.S.S. Formu 1 (Rev. 4/1/42)\n"
+"        (45-64 yaş arası erkekler)\n"
+"      D.S.S. Formu 1 (Rev. 6/1/42)\n"
+"        (18-20 yaş arası erkekler)\n"
+"      D.S.S. Formu 1 (Rev. 11/16/42)\n"
+"        (Bir önceki kayıttan bu yana\n"
+"         18 yaşını dolduran erkekler)"
+
+msgid "(1) First, Middle, Last"
+msgstr "(1) Ad, İkinci Ad, Soyadı"
+
+msgid ""
+"(2) Address or Place of Residence\n"
+" No. and street or R.F.D. No., Town, County, State"
+msgstr ""
+"(2) Adres veya İkamet Yeri\n"
+" No. ve sokak adı veya R.F.D. No., Kasaba, İlçe, Eyalet"
+
+msgid ""
+" Not used on D.S.S. Form 1\n"
+" (3) Used on all other forms"
+msgstr ""
+" D.S.S. Form 1'de kullanılmaz\n"
+"(3) Diğer tüm formlarda kullanılır"
+
+msgid ""
+"(3) On D.S.S. Form 1\n"
+"(4) On all other forms"
+msgstr ""
+"(3) D.S.S. Form 1'de\n"
+"(4) Diğer tüm formlarda"
+
+msgid ""
+"(4) On D.S.S. Form 1\n"
+"(5) On all other forms"
+msgstr ""
+"(4) D.S.S. Form 1'de\n"
+"(5) Diğer tüm formlarda"
+
+msgid "(Below Age in Years)"
+msgstr "(Aşağıda Yaş, Yıl Cinsinden)"
+
+msgid ""
+"(5) On D.S.S. Form 1\n"
+"(6) On all other forms"
+msgstr ""
+"(5) D.S.S. Form 1'de\n"
+"(6) Diğer tüm formlarda"
+
+msgid "Country of Citizenship"
+msgstr "Uyruğu Olunan Ülke"
+
+msgid ""
+"(6) On D.S.S. Form 1\n"
+"Not used on other forms"
+msgstr ""
+"(6) D.S.S.'de Form 1\n"
+"Diğer formlarda kullanılmaz"
+
+msgid ""
+"(7 & 9) On D.S.S. Form 1\n"
+"(7) On all but D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) On D.S.S. Form 1 (Rev. 6-9-41)"
+msgstr ""
+"(7 ve 9) D.S.S. Form 1'de\n"
+"(7) D.S.S. Form 1 (Rev. 6-9-41) hariç tümünde\n"
+"(8) D.S.S. Form 1'de (Rev. 6-9-41)"
+
+msgid "Relationship "
+msgstr "İlişki "
+
+msgid "(8) Only on D.S.S. Form 1"
+msgstr "(8) Yalnızca D.S.S. Form 1'de"
+
+msgid "Occupation "
+msgstr "Meslek "
+
+msgid "(7) Only on D.S.S. Form 1 (Rev. 6-9-41)"
+msgstr "(7) Yalnızca D.S.S. Form 1'de (Rev. 6-9-41)"
+
+msgid ""
+"(10) On D.S.S. Form 1\n"
+"(9) On D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) on all others forms"
+msgstr ""
+"(10) D.S.S. Form 1'de\n"
+"(9) D.S.S. Form 1'de (Rev. 6-9-41)\n"
+"(8) diğer tüm formlarda"
+
+msgid ""
+"(11) On D.S.S. Form 1\n"
+"(10) On D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(9) on all others forms"
+msgstr ""
+"(11) D.S.S. Form 1'de\n"
+"(10) D.S.S. Form 1'de (Rev. 6-9-41)\n"
+"(9) diğer tüm formlarda"
+
+msgid ""
+"White\n"
+"Negro\n"
+"Oriental\n"
+"Indian\n"
+"Filipino"
+msgstr ""
+"Beyaz\n"
+"Zenci\n"
+"Doğulu\n"
+"Hintli\n"
+"Filipinli"
+
+msgid ""
+"Sallow\n"
+"Light\n"
+"Ruddy\n"
+"Dark\n"
+"Freckled\n"
+"Light brown\n"
+"Dark brown\n"
+"Black"
+msgstr ""
+"Soluk\n"
+"Açık\n"
+"Kızılcık\n"
+"Koyu\n"
+"Çilli\n"
+"Açık kahverengi\n"
+"Koyu kahverengi\n"
+"Siyah"
+
+msgid ""
+"Blue\n"
+"Gray\n"
+"Hazel\n"
+"Brown\n"
+"Black"
+msgstr ""
+"Mavi\n"
+"Gri\n"
+"Ela\n"
+"Kahverengi\n"
+"Siyah"
+
+msgid ""
+"Blonde\n"
+"Red\n"
+"Brown\n"
+"Black\n"
+"Gray\n"
+"Bald"
+msgstr ""
+"Sarışın\n"
+"Kızıl\n"
+"Kahverengi\n"
+"Siyah\n"
+"Gri\n"
+"Sade"
+
 msgid "Place entered"
 msgstr "Girilen yer"
 
 msgid "Volume"
-msgstr "Birim"
+msgstr "Cilt"
+
+msgid "Volume Beginning Year"
+msgstr "Cilt Başlangıç Yılı"
+
+msgid "Volume Ending Year"
+msgstr "Cilt Bitiş Yılı"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-12-22 14:00+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,16 +13,106 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Failed writing "
+msgstr "כתיבה נכשלה "
+
+msgid "Year of Birth of Center Person"
+msgstr "שנת הלידה של האדם המרכזי"
+
+msgid "The year of birth of the center person. Estimate a year if unknown"
+msgstr "שנת הלידה של האדם המרכזי. יש לאמוד שנה אם אינה ידועה"
+
+msgid "Destination directory"
+msgstr "מחיצת יעד"
+
+msgid "Path for generated files"
+msgstr "נתיב לקבצים שנוצרים"
 
 msgid "The destination file name for html content."
-msgstr "שם קובץ היעד לתוכן .html"
+msgstr "שם קובץ היעד לתוכן html."
+
+msgid "Default Age"
+msgstr "גיל ברירת מחדל"
+
+msgid "Default age of parent when child is born with unknown year of birth"
+msgstr "גיל ברירת המחדל של הורה כאשר ילד נולד ושנת הלידה אינה ידועה"
+
+msgid "What to show"
+msgstr "מה להציג"
 
 msgid "Show GrampsID"
 msgstr "הצגת מזהה גרמפס"
 
+msgid "Show GrampsID on top right of the box"
+msgstr "הצגת מזהה Gramps בפינה הימנית העליונה של התיבה"
+
+msgid "Optimize"
+msgstr "מיטוב"
+
+msgid "Use as little space in horizontal direction as possible"
+msgstr "שימוש במרווח אופקי קטן ככל האפשר"
+
+msgid "Male Box Color"
+msgstr "צבע תיבה לזכר"
+
+msgid "Box background color for male person"
+msgstr "תיבה רקע צבע עבור זכר אדם"
+
+msgid "Female Box Color"
+msgstr "צבע תיבה לנקבה"
+
+msgid "Box background color for female person"
+msgstr "תיבה רקע צבע עבור נקבה אדם"
+
+msgid "Number of pixel per year"
+msgstr "מספר פיקסלים לשנה"
+
+msgid "How many pixel height is one year?"
+msgstr "כיצד רבים פיקסל גובה אחד שנה?"
+
 msgid "Offset X Coordinate"
 msgstr "היסט נקודות־ציון X"
 
+msgid "How many pixel are unused besides the most left and most right boxes?"
+msgstr "כמה פיקסלים אינם בשימוש מעבר לתיבות השמאלית והימנית ביותר?"
+
 msgid "Offset Y Coordinate"
 msgstr "היסט נקודות־ציון Y"
+
+msgid "How many pixel are unused above first box?"
+msgstr "כמה פיקסלים אינם בשימוש מעל התיבה הראשונה?"
+
+msgid "Width of a box in pixel"
+msgstr "רוחב תיבה בפיקסלים"
+
+msgid "Width of the box of a person in pixel"
+msgstr "רוחב תיבת האדם בפיקסלים"
+
+msgid "Horizontal space between boxes in pixel"
+msgstr "מרווח אופקי בין תיבות בפיקסלים"
+
+msgid "Minimum horizontal space between 2 boxes in pixel"
+msgstr "מרווח אופקי מזערי בין שתי תיבות בפיקסלים"
+
+msgid "Length of vertical part of a line in pixel"
+msgstr "אורך החלק האנכי של קו בפיקסלים"
+
+msgid ""
+"Parent and child boxes are connected with lines. This is the length of the "
+"vertical part of the lines in pixel"
+msgstr "תיבות הורה וילד מחוברות בקווים. זהו אורך החלק האנכי של הקווים בפיקסלים"
+
+msgid "Number of pixel between left border and scale"
+msgstr "מספר פיקסלים בין הגבול השמאלי לקנה־המידה"
+
+msgid "Timeline Pedigree Report"
+msgstr "דוח אילן־יוחסין בציר זמן"
+
+msgid ""
+"Creates an HTML webpage that uses JavaScript to show a pedigree block "
+"diagram arranged vertically by birth date"
+msgstr ""
+"יצירת עמוד מרשתת HTML שמשתמש ב־JavaScript להצגת תרשים גושי יוחסין שמסודר "
+"אנכית לפי תאריך לידה"

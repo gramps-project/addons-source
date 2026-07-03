@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-03 16:13-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Historical Context"
+msgstr "הקשר היסטורי"
+
+msgid "Lists relevant historical events during the lifetime of a Person"
+msgstr "רישום אירועים היסטוריים רלוונטיים במהלך חיי אדם"
+
+msgid "Rows starting with this in the text column will be hidden "
+msgstr "שורות שמתחילות כך בעמודת המלל יוסתרו "
 
 msgid "Use filter "
 msgstr "שימוש במסנן "
@@ -21,8 +30,38 @@ msgstr "שימוש במסנן "
 msgid "Show outside life span "
 msgstr "הצגה מחוץ למשך חיים "
 
+msgid "Use full dates"
+msgstr "להשתמש מלאים תאריכים"
+
+msgid "Foreground color items in lifespan"
+msgstr "צבע חזית לפריטים במשך החיים"
+
+msgid "Background color items in lifespan"
+msgstr "צבע רקע לפריטים במשך החיים"
+
+msgid "Foreground color items outside lifespan"
+msgstr "צבע חזית לפריטים מחוץ למשך החיים"
+
+msgid "Background color items outside lifespan"
+msgstr "צבע רקע לפריטים מחוץ למשך החיים"
+
 msgid "Select from files"
 msgstr "בחירה מקבצים"
 
+msgid "Invalid date "
+msgstr "לא תקין תאריך "
+
+msgid " in line: "
+msgstr " בקו: "
+
 msgid "Error:"
 msgstr "שגיאה:"
+
+msgid ": line does not contain four sections separated by semicolons in : \""
+msgstr ": השורה אינה מכילה ארבעה מקטעים שמופרדים בנקודה־פסיק ב־: '"
+
+msgid "Cannot open URL: "
+msgstr "לא ניתן לפתוח כתובת URL: "
+
+msgid "Double click row to follow link"
+msgstr "הקשה כפולה על שורה למעקב אחר הקישור"

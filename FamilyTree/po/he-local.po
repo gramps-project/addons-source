@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-07-26 08:04+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,10 +13,64 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+#, python-format
+msgid "Family Tree for %s"
+msgstr "אילן־יוחסין עבור %s"
 
 msgid "Paper too small"
 msgstr "דף קטן מדי"
+
+msgid "Some elements may not appear or be badly rendered."
+msgstr "ייתכן שחלק מהרכיבים לא יופיעו או יוצגו באופן לקוי."
+
+msgid "Anonymous"
+msgstr "אלמוני"
+
+msgid "born"
+msgstr "נולד"
+
+msgid "baptised"
+msgstr "נטבל"
+
+msgid "died"
+msgstr "נפטר"
+
+msgid "buried"
+msgstr "נקבר"
+
+msgid "cremated"
+msgstr "נשרף"
+
+msgid "married"
+msgstr "נישא"
+
+msgid "divorced"
+msgstr "התגרש"
+
+msgid "resident"
+msgstr "תושב"
+
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "ב־%(ymd_date)s"
+
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "ב־%(ym_date)s"
+
+#, python-format
+msgid "in %(y_date)s"
+msgstr "ב־%(y_date)s"
+
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "ב־%(placeholder)s"
+
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "ב־%(placeholder)s (%(partial)s)"
 
 #, python-format
 msgid "in %(place)s"
@@ -26,8 +80,67 @@ msgstr "בתוך %(place)s"
 msgid "(%(description)s)"
 msgstr "%(description)s"
 
+msgid "The center family for the tree"
+msgstr "המשפחה המרכזית עבור האילן"
+
+msgid "Ancestor Generations"
+msgstr "דורות אבות"
+
+msgid "The number of ancestor generations to include in the tree"
+msgstr "מספר אב דורות שיש לכלול באילן"
+
+msgid "Descendant Generations"
+msgstr "דורות צאצאים"
+
+msgid "The number of descendant generations to include in the tree"
+msgstr "מספר צאצא דורות שיש לכלול באילן"
+
+msgid "Kekule number of husband"
+msgstr "מספר קקולה של הבעל"
+
+msgid ""
+"The Kekule number of the husband (central family). Set 0 to not show Kekule "
+"numbers"
+msgstr "מספר קקולה של הבעל (המשפחה המרכזית). הגדרת 0 לאי־הצגת מספרי קקולה"
+
+msgid "Scale to fit on a single page"
+msgstr "שינוי קנה מידה להתאמה לעמוד יחיד"
+
+msgid "Whether to scale to fit on a single page."
+msgstr "האם לשנות קנה מידה כדי להתאים לעמוד יחיד."
+
+msgid "No color"
+msgstr "ללא צבע"
+
+msgid "First generation"
+msgstr "דור ראשון"
+
+msgid "Second generation"
+msgstr "דור שני"
+
+msgid "Third generation"
+msgstr "דור שלישי"
+
+msgid "Male line"
+msgstr "קו זכרי"
+
+msgid "Male line and illegitimate children"
+msgstr "קו זכרי וילדים שנולדו מחוץ לנישואין"
+
+msgid "Female line"
+msgstr "קו נקבי"
+
+msgid "Shuffle colors"
+msgstr "ערבוב צבעים"
+
+msgid "Whether to shuffle colors or order them in rainbow fashion."
+msgstr "האם לערבב צבעים או לסדר אותם בסגנון קשת."
+
 msgid "Replace first name with call name"
 msgstr "החלפת שם פרטי בשם מקובל"
+
+msgid "Underline call name in first name / add call name to first name"
+msgstr "הדגשת שם קריאה בשם הפרטי / הוספת שם קריאה לשם הפרטי"
 
 msgid "Include Occupation"
 msgstr "הכללת עיסוק"
@@ -35,5 +148,41 @@ msgstr "הכללת עיסוק"
 msgid "Include Residence"
 msgstr "הכללת מגורים"
 
+msgid "Print event data (dead person)"
+msgstr "הדפסת נתוני אירוע (אדם שנפטר)"
+
+msgid "Year only"
+msgstr "שנה בלבד"
+
+msgid "Full date"
+msgstr "תאריך מלא"
+
 msgid "Full date and place"
 msgstr "תאריך מלא ומקום"
+
+msgid "Print event data (living person)"
+msgstr "הדפסת נתוני אירוע (אדם בחיים)"
+
+msgid "Fall back to baptism if birth event missing"
+msgstr "חזרה לאירוע טבילה אם אירוע לידה חסר"
+
+msgid "Fall back to burial or cremation if death event missing"
+msgstr "חזרה לאירוע קבורה או שרפה אם אירוע פטירה חסר"
+
+msgid "Protect private items"
+msgstr "הגנה על פריטים פרטיים"
+
+msgid "Include event description"
+msgstr "לכלול אירוע תיאור"
+
+msgid "Text Options"
+msgstr "מלל אפשרויות"
+
+msgid "The style used for names."
+msgstr "הסגנון שמשמש לשמות."
+
+msgid "The style used for data (birth, death, marriage, divorce)."
+msgstr "הסגנון שמשמש עבור נתונים (לידה, פטירה, נישואין, גירושין)."
+
+msgid "Produces a graphical family tree."
+msgstr "מפיק אילן־יוחסין גרפי."

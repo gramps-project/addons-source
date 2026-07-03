@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-23 09:41-0800\n"
-"PO-Revision-Date: 2025-03-09 13:13+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,13 +13,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Search"
 msgstr "חיפוש"
 
 msgid "Gramplet for search objects in database."
 msgstr "גראמפלט לחיפוש עצמים מבמסד הנתונים."
+
+msgid "Show bookmarked first"
+msgstr "הצגת מסומן בסימנייה ראשון"
 
 msgid "Sort by object type"
 msgstr "מיון לפי סוג עצם"
@@ -33,6 +36,9 @@ msgstr "תפריט להגדרת עצמים לחיפוש"
 msgid "Select objects to search"
 msgstr "בחירת עצמים לחיפוש"
 
+msgid "SearchGramplet configuration menu"
+msgstr "תפריט תצורת גרמפלט החיפוש"
+
 #, python-format
 msgid "found: %s"
 msgstr "נמצא: %s"
@@ -40,8 +46,28 @@ msgstr "נמצא: %s"
 msgid "No matches..."
 msgstr "אין התאמות..."
 
+msgid "Start type to search"
+msgstr "סוג התחלתי לחיפוש"
+
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+"יש להתחיל להקליד כדי לחפש עצמים.\n"
+"להצגת כל העצמים יש להזין רק את הסימן «*»."
+
 msgid "Search..."
 msgstr "חיפוש..."
+
+msgid "Remove from bookmarks"
+msgstr "הסרת מסימניות"
+
+msgid "Add to bookmarks"
+msgstr "הוספה לסימניות"
+
+#, python-format
+msgid "Birth: %s"
+msgstr "לידה: %s"
 
 #, python-format
 msgid "Death: %s"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,16 +13,79 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Quilt Chart"
+msgstr "תרשים טלאים"
+
+msgid "The view shows a quilt chart visualisation of a family tree"
+msgstr "המצג מציג המחשת תרשים טלאים של אילן־יוחסין"
+
+msgid "Quilt chart"
+msgstr "תרשים טלאים"
 
 msgid "Select the name for which you want to see."
 msgstr "בחירת השם בו רוצים לצפות."
 
+msgid "Clear the entry field in the name selection box."
+msgstr "ניקוי שדה הרשומה בתיבת בחירת השם."
+
 msgid "Nothing is selected"
 msgstr "לא נבחר דבר"
 
+#, python-format
+msgid ""
+"You have %(filter)d filtered people, %(count)d people shown on the tree and "
+"%(total)d people in your database."
+msgstr ""
+"יש %(filter)d אנשים מסוננים, %(count)d אנשים שמוצגים באילן ו־%(total)d אנשים "
+"במסד־הנתונים."
+
+msgid "Loading individuals"
+msgstr "טעינת אנשים"
+
+msgid "Loading the data"
+msgstr "טעינת הנתונים"
+
+msgid "About Quilt View"
+msgstr "על מצג טלאים"
+
+msgid "Edit tags"
+msgstr "עריכה תגים"
+
 msgid "Set as home person"
 msgstr "הגדרה כאדם הבית"
+
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "הוספה תגים לאדם (%s)"
+
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "הוספה תגים למשפחה (%s)"
+
+msgid "Printing the tree"
+msgstr "הדפסת האילן"
+
+#, python-format
+msgid "Need to print %(pages)s pages (%(format)s format)"
+msgstr "נדרשת הדפסת %(pages)s עמודים (תסדיר %(format)s)"
+
+msgid ""
+"Center on the selected person.\n"
+"The new position of the person will be near the top left corner."
+msgstr ""
+"מרכוז על האדם שנבחר.\n"
+"האיות החדש של האדם יהיה סמוך לפינה השמאלית העליונה."
+
+msgid "The path color"
+msgstr "נתיב צבע"
+
+msgid "The selected person color"
+msgstr "שנבחר אדם צבע"
+
+msgid "The path transparency"
+msgstr "שקיפות הנתיב"
 
 msgid "General options"
 msgstr "אפשרויות כלליות"

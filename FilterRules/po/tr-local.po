@@ -1,0 +1,152 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+msgid "People related to <filter>"
+msgstr "<Filtre> ile ilgili kişiler"
+
+msgid "Matches people who are related to anybody matched by a person filter"
+msgstr ""
+"Kişi filtresiyle eşleşen herhangi bir kişiyle akrabalık bağı olan kişileri "
+"eşleştirir"
+
+msgid "People separated less than <N> degrees of <person>"
+msgstr "<Kişi> ile arasında <N> dereceden az mesafe olan kişiler"
+
+msgid "Filter rule that matches relatives by degrees of separation"
+msgstr "Akrabalarla eşleşen kuralı ayırma derecelerine göre filtrele"
+
+msgid "Source matching parameters"
+msgstr "Kaynak eşleştirme parametreleri"
+
+msgid "Matches Sources with values containing the chosen parameters"
+msgstr "Kaynakları seçilen parametreleri içeren değerlerle eşleştirir"
+
+msgid "People with multiple parent records"
+msgstr "Birden fazla ebeveyn kaydı olan kişiler"
+
+msgid "Matches people who have more than one set of parents"
+msgstr "Birden fazla ebeveyn çiftine sahip kişileri eşleştirir"
+
+msgid "Match associations of <person filter>"
+msgstr "<Kişi filtresi> eşleşmelerini ilişkilendirin"
+
+msgid "Does NOT match with selected Role"
+msgstr "Seçilen Rol ile eşleşmiyor"
+
+msgid "Finds the items that don't have event Roles of the selected type."
+msgstr "Seçilen türde etkinlik rolü bulunmayan öğeleri bulur."
+
+msgid "Inverse"
+msgstr "Ters"
+
+msgid "People with events with the <role>"
+msgstr "<Rolü> olan etkinliklere sahip kişiler"
+
+msgid "Matches people with an event with a selected role"
+msgstr "Kişileri seçilen rolle bir etkinlikle eşleştirir"
+
+msgid "Families with events with the <role>"
+msgstr "<Rol> ile ilgili etkinlikleri olan aileler"
+
+msgid "Matches families with an event with a selected role"
+msgstr "Aileleri, seçilen role uygun bir etkinlikle eşleştirir"
+
+msgid "Events of families matching a <family filter>"
+msgstr "<Aile filtresi> ile eşleşen ailelerin etkinlikleri"
+
+msgid "Families matching <event filter>"
+msgstr "<Etkinlik filtresi> ile eşleşen aileler"
+
+msgid "Matches families that are matched by an event filter"
+msgstr "Etkinlik filtresiyle eşleştirilen aileleri eşleştirir"
+
+msgid "Matches families matched by an event filter"
+msgstr "Etkinlik filtresine göre eşleştirilen aileleri eşleştirir"
+
+msgid "Number of degrees of separation from person."
+msgstr "Kişiden ayrılma derecelerinin sayısı."
+
+msgid "Degrees:"
+msgstr "Dereceler:"
+
+msgid "People with <count> of <event>"
+msgstr "<Etkinlik> <sayı>sına sahip kişiler"
+
+msgid "Matches persons which have events of given type and number."
+msgstr "Belirli türde ve sayıda etkinliğe sahip kişileri eşleştirir."
+
+msgid "Include Children"
+msgstr "Çocukları Dahil Edin"
+
+msgid "Include the children in the matching families."
+msgstr "Çocukları eşleşen ailelere dahil edin."
+
+msgid "Include Parents"
+msgstr "Ebeveynleri Dahil Edin"
+
+msgid "Include the parents in the matching families."
+msgstr "Eşleştirilen ailelere ebeveynleri de dahil edin."
+
+msgid "Family Filter name:"
+msgstr "Aile Filtresi adı:"
+
+msgid "People who are part of families matching <filter>"
+msgstr "<Filtre> ile eşleşen ailelerin parçası olan kişiler"
+
+msgid "Filter people by their age at death"
+msgstr "İnsanları ölüm yaşlarına göre filtreleyin"
+
+msgid "Filter rule that matches people by their age at death"
+msgstr "İnsanları ölüm anındaki yaşlarına göre eşleştiren filtre kuralı"
+
+msgid "Role:"
+msgstr "Rol:"
+
+msgid "Multiple Parents Filter"
+msgstr "Birden Çok Ebeveyn Filtresi"
+
+msgid "People with events with a selected role"
+msgstr "Seçilen role sahip etkinliklere katılan kişiler"
+
+msgid "Families with events with a selected role"
+msgstr "Seçilmiş bir role sahip etkinliklere katılan aileler"
+
+msgid "The active Person"
+msgstr "Etkin Kişi"
+
+msgid "Matches sources with a particular value"
+msgstr "Belirli bir değere sahip kaynakları eşleştirir"
+
+msgid "Events from people with role"
+msgstr "Rol sahibi kişilerden gelen etkinlikler"
+
+msgid "Matches event of people filter with role"
+msgstr "Kişi filtresinin etkinliğini rolle eşleştirir"
+
+msgid "Active person"
+msgstr "Aktif kişi"
+
+msgid "Matches the active person"
+msgstr "Etkin kişiyle eşleşir"
+
+msgid "Age in years at person's death."
+msgstr "Kişinin ölüm yıllarındaki yaşı."
+
+msgid "Age:"
+msgstr "Yaş:"

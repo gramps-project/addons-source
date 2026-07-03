@@ -1,0 +1,44 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/it/>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+msgid "Download media"
+msgstr "Scarica file multimediale"
+
+msgid "Media downloaded"
+msgstr "File multimediale scaricato"
+
+#, python-format
+msgid "%d media files downloaded"
+msgstr "%d file multimediali scaricati"
+
+msgid "Download media tool"
+msgstr "Strumento scarica file multimediali"
+
+msgid "Make sure you are connected to the internet before starting this tool."
+msgstr ""
+"Assicurati di essere connesso a Internet prima di avviare questo strumento."
+
+msgid "Downloading files"
+msgstr "Scaricamento dei file"
+
+msgid "Media download errors detected"
+msgstr "Sono stati rilevati errori nello scaricamento dei file multimediali"
+
+msgid "Download media files from the internet"
+msgstr "Scarica file multimediali da Internet"
+
+msgid "This tool downloads media files from the internet"
+msgstr "Questo strumento scarica file multimediali da Internet"

@@ -1,0 +1,312 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+msgid "Edit Image Exif Metadata"
+msgstr "Resim Exif Meta Verilerini Düzenle"
+
+msgid "Gramplet to view, edit, and save image Exif metadata"
+msgstr ""
+"Gramplet ile görüntü Exif meta verilerini görüntüleyin, düzenleyin ve "
+"kaydedin"
+
+msgid "Edit Exif Metadata"
+msgstr "Exif Meta Verilerini Düzenle"
+
+msgid "<-- Image Types -->"
+msgstr "<-- Resim Türleri -->"
+
+msgid ""
+"Warning:  Changing this entry will update the Media object title field in "
+"Gramps not Exiv2 metadata."
+msgstr ""
+"Uyarı:  Bu girdinin değiştirilmesi, Exiv2 meta verilerinde değil, "
+"Gramps'taki Medya nesnesi başlık alanında güncelleme yapacaktır."
+
+msgid "Provide a short description for this image."
+msgstr "Bu resim için kısa bir açıklama sağlayın."
+
+msgid ""
+"Enter the Artist/ Author of this image.  The person's name or the company "
+"who is responsible for the creation of this image."
+msgstr ""
+"Bu resmin sanatçısını/yazarını girin. Resmin oluşturulmasından sorumlu "
+"kişinin adı veya şirketin adı."
+
+msgid "Enter the copyright information for this image. \n"
+msgstr "Bu resmin telif hakkı bilgilerini girin. \n"
+
+msgid ""
+"The original date/ time when the image was first created/ taken as in a "
+"photograph.\n"
+"Example: 1830-01-1 09:30:59"
+msgstr ""
+"Fotoğraftaki gibi, görüntünün ilk oluşturulduğu/çekildiği orijinal tarih/"
+"saat.\n"
+"Örnek: 1830-01-01 09:30:59"
+
+msgid ""
+"This is the date/ time that the image was last changed/ modified.\n"
+"Example: 2011-05-24 14:30:00"
+msgstr ""
+"Bu, resmin en son değiştirildiği/düzenlendiği tarih/saattir.\n"
+"Örnek: 2011-05-24 14:30:00"
+
+msgid ""
+"Enter the Latitude GPS coordinates for this image,\n"
+"Example: -43.722965, -43:43:22, 38° 38′ 03″ N"
+msgstr ""
+"Bu resim için enlem GPS koordinatlarını girin,\n"
+"Örnek: -43.722965, -43:43:22, 38° 38′ 03″ N"
+
+msgid ""
+"Enter the Longitude GPS coordinates for this image,\n"
+"Example: -10.396378, -10:23:46, 105° 6′ 6″ W"
+msgstr ""
+"Bu resim için boylam GPS koordinatlarını girin,\n"
+"Örnek: -10.396378, -10:23:46, 105° 6′ 6″ W"
+
+msgid ""
+"This is the measurement of Above or Below Sea Level.  It is measured in "
+"meters.  Example: 200.558, -200.558"
+msgstr ""
+"Bu, deniz seviyesinin üstünde veya altında olma durumunun ölçümüdür. Metre "
+"cinsinden ölçülür. Örnek: 200.558, -200.558"
+
+msgid ""
+"Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
+"web browser."
+msgstr ""
+"'Resim Exif Meta Verilerini Düzenle' için Gramps Wiki Yardım sayfasını web "
+"tarayıcınızda görüntüler."
+
+msgid ""
+"This will open up a new window to allow you to edit/ modify this image's "
+"Exif metadata.\n"
+"  It will also allow you to be able to Save the modified metadata."
+msgstr ""
+"Bu işlem, bu resmin Exif meta verilerini düzenlemenize/değiştirmenize olanak "
+"tanıyan yeni bir pencere açacaktır.\n"
+"Ayrıca, değiştirilen meta verileri kaydetmenize de olanak tanıyacaktır."
+
+msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
+msgstr ""
+"Küçük resim görüntüleme alanını gösteren bir açılır pencere oluşturulacaktır"
+
+msgid ""
+"Select from a drop- down box the image file type that you would like to "
+"convert your non- Exiv2 compatible media object to."
+msgstr ""
+"Exiv2 uyumlu olmayan medya nesnenizi dönüştürmek istediğiniz resim dosyası "
+"türünü açılır kutudan seçin."
+
+msgid ""
+"If your image is not of an image type that can have Exif metadata read/ "
+"written to/from, convert it to a type that can?"
+msgstr ""
+"Eğer resminiz Exif meta verilerinin okunup yazılabileceği bir resim türünde "
+"değilse, o bu özelliğe sahip bir türe dönüştürülsün mü?"
+
+msgid ""
+"WARNING:  This will completely erase all Exif metadata from this image!  Are "
+"you sure that you want to do this?"
+msgstr ""
+"UYARI: Bu işlem, bu resimdeki tüm Exif meta verilerini tamamen silecektir! "
+"Bunu yapmak istediğinizden emin misiniz?"
+
+msgid "Clear GPS"
+msgstr "GPS'i temizle"
+
+msgid "Thumbnail"
+msgstr "Küçük resim"
+
+msgid "Copy"
+msgstr "Kopyala"
+
+msgid "Select an image to begin..."
+msgstr "Başlamak için bir resim seçin..."
+
+msgid ""
+"Image is NOT readable,\n"
+"Please choose a different image..."
+msgstr ""
+"Resim okunamıyor,\n"
+"Lütfen farklı bir resim seçin..."
+
+msgid "Please convert this image to an Exiv2- compatible image type..."
+msgstr "Lütfen bu resmi Exiv2 uyumlu bir resim türüne dönüştürün..."
+
+#, python-brace-format
+msgid "Image Size : {width} x {height} pixels"
+msgstr "Resim Boyutu: {width} x {height} piksel"
+
+msgid ""
+"Image is NOT writable,\n"
+"You will NOT be able to save Exif metadata...."
+msgstr ""
+"Resim üzerine yazı yazılamıyor,\n"
+"Exif meta verilerini kaydedemezsiniz...."
+
+msgid "Click Close to close this Thumbnail View Area."
+msgstr ""
+"Bu Küçük Resim Görüntüleme Alanını kapatmak için Kapat düğmesine tıklayın."
+
+msgid "Thumbnail View Area"
+msgstr "Küçük Resim Görüntüleme Alanı"
+
+msgid ""
+"WARNING: You are about to convert this image into a .jpeg image.  Are you "
+"sure that you want to do this?"
+msgstr ""
+"UYARI: Bu resmi .jpeg biçimine dönüştürmek üzeresiniz. Bunu yapmak "
+"istediğinizden emin misiniz?"
+
+msgid "Convert and Delete"
+msgstr "Dönüştür ve Sil"
+
+msgid ""
+"Your image has been converted and the original file has been deleted, and "
+"the full path has been updated!"
+msgstr ""
+"Resminiz dönüştürüldü, orijinal dosya silindi ve tam dosya yolu güncellendi!"
+
+msgid ""
+"There has been an error, Please check your source and destination file "
+"paths..."
+msgstr ""
+"Bir hata oluştu, lütfen kaynak ve hedef dosya yollarınızı kontrol edin..."
+
+msgid ""
+"There was an error in deleting the original file.  You will need to delete "
+"it yourself!"
+msgstr ""
+"Orijinal dosya silinirken bir hata oluştu. Dosyayı kendiniz silmeniz "
+"gerekecek!"
+
+msgid "There was an error in converting your image file."
+msgstr "Resim dosyanızı dönüştürürken bir hata oluştu."
+
+msgid "Media Path Update"
+msgstr "Medya Yolu Güncellemesi"
+
+msgid "There has been an error in updating the image file's path!"
+msgstr "Resim dosyasının yolunu güncellerken bir hata oluştu!"
+
+msgid ""
+"Click the close button when you are finished modifying this image's Exif "
+"metadata."
+msgstr ""
+"Bu resmin Exif meta verilerini düzenlemeyi bitirdiğinizde kapat düğmesine "
+"tıklayın."
+
+msgid "Saves a copy of the data fields into the image's Exif metadata."
+msgstr "Veri alanlarının bir kopyasını resmin Exif meta verilerine kaydeder."
+
+msgid "Re -display the data fields that were cleared from the Edit Area."
+msgstr "Düzenleme alanından silinen veri alanlarını yeniden görüntüleyin."
+
+msgid "This button will clear all of the data fields shown here."
+msgstr "Bu düğme burada gösterilen tüm veri alanlarını temizleyecektir."
+
+msgid "This button will clear all of the GPS fields shown here."
+msgstr "Bu düğme burada gösterilen tüm GPS alanlarını temizleyecektir."
+
+msgid ""
+"Closes this popup Edit window.\n"
+"WARNING: This action will NOT Save any changes/ modification made to this "
+"image's Exif metadata."
+msgstr ""
+"Bu açılır düzenleme penceresini kapatır.\n"
+"UYARI: Bu işlem, bu resmin Exif meta verilerinde yapılan hiçbir değişikliği/"
+"düzenlemeyi KAYDETMEYECEKTİR."
+
+msgid "Media Object Title"
+msgstr "Medya Nesnesi Başlığı"
+
+msgid "media Title: "
+msgstr "Medya Başlığı: "
+
+msgid "General Data"
+msgstr "Genel Veriler"
+
+msgid "Description: "
+msgstr "Açıklama: "
+
+msgid "Artist: "
+msgstr "Sanatçı: "
+
+msgid "Copyright: "
+msgstr "Telif hakkı: "
+
+msgid "Date/ Time"
+msgstr "Tarih/Saat"
+
+msgid "Original: "
+msgstr "Orijinal: "
+
+msgid "Modified: "
+msgstr "Değiştirildi: "
+
+msgid "Latitude/ Longitude/ Altitude GPS coordinates"
+msgstr "Enlem/Boylam/Rakım GPS koordinatları"
+
+msgid "Latitude :"
+msgstr "Enlem:"
+
+msgid "Longitude :"
+msgstr "Boylam:"
+
+msgid "Altitude :"
+msgstr "Rakım:"
+
+msgid "Bad Date/Time"
+msgstr "Yanlış Tarih/Saat"
+
+msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
+msgstr "Geçersiz enlem (sözdizimi: 18°9′48,21″G, -18,2412 veya -18:9:48,21)"
+
+msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
+msgstr "Geçersiz boylam (sözdizimi: 18°9′48.21″E, -18.2412 veya -18:9:48.21)"
+
+msgid ""
+"WARNING!  You are about to completely delete the Exif metadata from this "
+"image."
+msgstr "UYARI! Bu resmin Exif meta verilerini tamamen silmek üzeresiniz."
+
+msgid "Delete?"
+msgstr "Silinsin mi?"
+
+msgid ""
+"WARNING!  You are about to completely delete the GPS metadata from this "
+"image."
+msgstr "UYARI! Bu resimden GPS meta verilerini tamamen silmek üzeresiniz."
+
+msgid "Media Title Update"
+msgstr "Medya Başlığı Güncellemesi"
+
+msgid "Media Object Date Created"
+msgstr "Medya Nesnesi Oluşturulma Tarihi"
+
+msgid "Saving Exif metadata to this image..."
+msgstr "Bu resme Exif meta verileri kaydediliyor..."
+
+msgid "All Exif metadata has been deleted from this image..."
+msgstr "Bu resimden tüm Exif meta verileri silindi..."
+
+msgid "There was an error in stripping the Exif metadata from this image..."
+msgstr "Bu resimden Exif meta verilerini kaldırma işleminde bir hata oluştu..."

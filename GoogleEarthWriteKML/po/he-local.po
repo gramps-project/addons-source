@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "No place description"
 msgstr "אין תיאור מקום"
@@ -21,8 +21,34 @@ msgstr "אין תיאור מקום"
 msgid "GoogleEarth not installed!"
 msgstr "GoogleEarth לא מותקן!"
 
+#, python-format
+msgid ""
+"Create kmz/kml file ''%s''\n"
+"in user directory ''%s''?"
+msgstr ""
+"האם ליצור קובץ kmz/kml בשם ''%s''\n"
+"במחיצת המשתמש ''%s''?"
+
+#, python-format
+msgid "Failure writing to %s"
+msgstr "כתיבה ל־%s נכשלה"
+
 msgid "Directory does not exist"
 msgstr "מחיצה לא קיימת"
 
+msgid "GoogleEarth file exists!"
+msgstr "קובץ GoogleEarth קיים!"
+
+#, python-format
+msgid ""
+"Overwrite kmz/kml file ''%s''\n"
+"in user home directory ''%s''?"
+msgstr ""
+"האם לדרוס קובץ kmz/kml בשם ''%s''\n"
+"במחיצת הבית של המשתמש ''%s''?"
+
 msgid "GoogleEarth"
 msgstr "GoogleEarth"
+
+msgid "Creates data file for GoogleEarth and opens it"
+msgstr "יצירת קובץ נתונים עבור GoogleEarth ופתיחתו"

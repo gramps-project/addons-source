@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-09 13:13+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,13 +13,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "The Tool requires at least one tag to execute."
+msgstr "הכלי דורש תג אחד לפחות להפעלה."
+
+msgid "ERROR"
+msgstr "שגיאה"
+
+msgid "Add/Remove"
+msgstr "הוספה/הסרה"
+
+msgid "Add or remove tags from objects."
+msgstr "הוספה או הסרה של תגים מעצמים."
+
+msgid "Add Tags"
+msgstr "הוספה תגים"
+
+msgid "Remove Tags"
+msgstr "הסרה תגים"
 
 msgid "General options"
 msgstr "אפשרויות כלליות"
 
+msgid "Choose a category."
+msgstr "בחירת סוג־אב."
+
 msgid "Choose Tag"
 msgstr "בתירת תג"
+
+msgid "Choose a tag to remove."
+msgstr "בחירת תג להסרה."
 
 msgid "Persons"
 msgstr "אנשים"
@@ -31,8 +55,36 @@ msgstr "אפשרויות סינון"
 msgid "All %s"
 msgstr "כל %s"
 
+msgid "Add/Remove Tag Tool"
+msgstr "כלי הוספה/הסרה של תג"
+
+msgid ""
+"Unable to run the tool. Please check if your database contains tags, filters "
+"and objects."
+msgstr ""
+"לא ניתן להריץ את הכלי. נא לבדוק אם מסד־הנתונים מכיל תגים, מסננים ועצמים."
+
+msgid "WARNING"
+msgstr "אזהרה"
+
+#, python-format
+msgid "No %s objects were found in database."
+msgstr "אין %s עצמים היו נמצאו במסד־נתונים."
+
 msgid "Process tags..."
 msgstr "עיבוד תגים..."
 
+msgid "added"
+msgstr "נוסף"
+
+msgid "removed"
+msgstr "הוסר"
+
+msgid "Tag '{}' was {} to {} {} objects.\n"
+msgstr "התג '{}' היה {} ל־{} {} עצמים.\n"
+
 msgid "INFO"
 msgstr "מידע"
+
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr "הוספה או הסרה של תג מקבוצות אנשים, אירועים ועוד."

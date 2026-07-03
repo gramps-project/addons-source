@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-09 22:38+0000\n"
-"PO-Revision-Date: 2025-04-07 13:25+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,13 +12,56 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 msgid "INFO"
 msgstr "INFO"
 
+msgid "You have to select an image to generate this report."
+msgstr "Devi selezionare un'immagine per generare questo resoconto."
+
+msgid ""
+"You have to select a custom note or uncheck the option 'include custom note' "
+"to generate this report."
+msgstr ""
+"Devi selezionare una nota personalizzata, oppure deselezionare l'opzione "
+"'includi note personalizzate', per generare questo resoconto."
+
+msgid "This report only supports PDF as output file format."
+msgstr "Questo resoconto supporta solo PDF come formato del file di uscita."
+
 msgid "General:"
 msgstr "Generale:"
+
+msgid "Image type:"
+msgstr "Tipo di immagine:"
+
+msgid "Heading"
+msgstr "Titolo"
+
+msgid "Select a media file for this report"
+msgstr "Seleziona un oggetto multimediale per questo resoconto"
+
+msgid "Custom note"
+msgstr "Nota personalizzata"
+
+msgid "Select a note for this report"
+msgstr "Seleziona una nota per questo resoconto"
+
+msgid "Include custom note"
+msgstr "Includi nota personalizzata"
+
+msgid "The custom note will be included"
+msgstr "La nota personalizzata sarà inclusa"
+
+msgid "Include referenced people"
+msgstr "Includi le persone citate"
+
+msgid "Referenced people will be included"
+msgstr "Le persone citate saranno incluse"
+
+msgid "Include media data"
+msgstr "Includi i dati dell'oggetto multimediale"
 
 msgid "Tags, notes and attributes will be included"
 msgstr "Etichette, note e attributi saranno inclusi"
@@ -40,3 +83,10 @@ msgid "Maximum media height in % of available page height."
 msgstr ""
 "Massima altezza dell'oggetto multimediale in percentuale dell'altezza "
 "disponibile della pagina."
+
+msgid "Media Report"
+msgstr "Resoconto file multimediali"
+
+msgid "Generates report including images, image data and notes."
+msgstr ""
+"Genera un resoconto includendo immagini, i dati delle immagini, e le note."

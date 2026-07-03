@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-07-03 03:01+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,10 +12,248 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+#, python-format
+msgid "sp. see  %(reference)s : %(spouse)s"
+msgstr "sp. bkz  %(reference)s : %(spouse)s"
+
+#, python-format
+msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
+msgstr ""
+"rapora bak: %(report)s, referans: %(reference)s : %(person)s ve %(spouse)s"
+
+msgid "Descendants Report"
+msgstr "Soyundan Gelenler Raporu"
+
+#, python-format
+msgid "Writing %s reports..."
+msgstr "%s raporları yazılıyor..."
+
+#, python-brace-format
+msgid "{report_count}. Descendants of {name}"
+msgstr "{report_count}. {name} adlı kişinin soyundan gelenler"
+
+#, python-brace-format
+msgid "{report_count:d}. {name}"
+msgstr "{report_count:d}. {name}"
+
+msgid "Select filter to restrict people that appear in the report"
+msgstr "Raporda görünen kişileri kısıtlamak için filtre seçin"
+
+msgid "Whether to show duplicate family trees in the report."
+msgstr "Raporda yinelenen aile ağaçlarının gösterilip gösterilmeyeceği."
+
 msgid "The style used for the title of the page."
 msgstr "Sayfa başlığı için kullanılan stil."
+
+msgid "The style used for the table of contents header."
+msgstr "İçindekiler başlığı için kullanılan stil."
+
+msgid "The style used for the table of contents detail."
+msgstr "İçindekilerin detayları için kullanılan stil."
+
+msgid "Detailed Descendants Report"
+msgstr "Ayrıntılı Soyundan Gelenler Raporu"
+
+#, python-format
+msgid "Generating %s report references..."
+msgstr "%s rapor referansları oluşturuluyor..."
+
+#, python-format
+msgid "%(report_count)s. Descendant Report for %(person_name)s"
+msgstr "%(report_count)s. %(person_name)s için Soyundan Gelenler Raporu"
+
+msgid "Index of Places"
+msgstr "Yerler Dizini"
+
+msgid "Index of Dates"
+msgstr "Tarihler Dizini"
+
+msgid "Index of Names"
+msgstr "Adlar Dizini"
+
+msgid "Report, Generation, Person, Name"
+msgstr "Rapor, Nesil, Kişi, Ad"
+
+#, python-brace-format
+msgid "See Report : {report}, Generation : {generation}, Person : {person}"
+msgstr "Raporu Gör : {report}, Nesil : {generation}, Kişi : {person}"
+
+#, python-format
+msgid "Report appearances for %s"
+msgstr "%s için rapor görünümleri"
+
+#, python-brace-format
+msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "Eşi: Rapor: {report}, Nesil: {generation}, Kişi: {person}"
+
+#, python-brace-format
+msgid "Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "Rapor: {report}, Nesil: {generation}, Kişi: {person}"
+
+#, python-format
+msgid "%(event_name)s of %(name)s "
+msgstr "%(event_name)s < %(name)s "
+
+#, python-format
+msgid "%(event_name)s of %(name)s and %(mate)s "
+msgstr "%(event_name)s < %(name)s ve %(mate)s "
+
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#, python-format
+msgid ". Ref: %(repno)s %(gen)s %(per)s "
+msgstr ". Ref: %(repno)s %(gen)s %(per)s "
+
+#, python-format
+msgid "%(event_name)s:"
+msgstr "%(event_name)s:"
+
+#, python-format
+msgid " %(event_text)s"
+msgstr " %(event_text)s"
+
+#, python-brace-format
+msgid "Ref: {number}. {name}"
+msgstr "Ref: {number}. {name}"
+
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
+#, python-format
+msgid "%(type)s:"
+msgstr "%(type)s:"
+
+#, python-format
+msgid " %(value)s%(endnotes)s"
+msgstr " %(value)s%(endnotes)s"
+
+msgid "List children"
+msgstr "Çocukları listele"
+
+msgid "Add descendant reference in child list"
+msgstr "Soyundan gelenlere ait referansı çocuk listesine ekleyin"
+
+msgid "Include Index of Names"
+msgstr "Adlar dizinini dahil et"
+
+msgid "Whether to include the index of Names at the end of the report."
+msgstr "Raporun sonuna Ad dizini eklenip eklenmeyeceği."
+
+msgid "Include index of Dates"
+msgstr "Tarih dizinini dahil et"
+
+msgid "Whether to include the index of Dates at the end of the report."
+msgstr "Raporun sonuna Tarih dizini eklenip eklenmeyeceği."
+
+msgid "Include index of Places"
+msgstr "Yerler dizinini dahil et"
+
+msgid "Whether to include the index of Places at the end of the report."
+msgstr "Raporun sonuna Yerler dizininin eklenip eklenmeyeceği."
+
+msgid "Include the 'Report appearances' section with each person"
+msgstr "Her kişi için 'Görünüşleri raporla' bölümünü dahil et"
+
+msgid ""
+"The 'Report appearances' section shows other places in the report where the "
+"person is mentioned."
+msgstr ""
+"'Rapor içindeki görünümler' bölümü, kişinin raporda adının geçtiği diğer "
+"yerleri gösterir."
+
+msgid "The style used for the children list."
+msgstr "Çocuk listesi için kullanılan stil."
+
+msgid "The basic style used for Note header."
+msgstr "Not başlığı için kullanılan temel stil."
+
+msgid "The style used for the first personal entry."
+msgstr "İlk kişisel giriş için kullanılan stil."
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr "Daha Fazla Bilgi başlığı ve eşlerin başlıkları için kullanılan stil."
+
+msgid "The style used for additional detail data."
+msgstr "Ek ayrıntı verileri için kullanılan stil."
+
+msgid "The style used for note detail data."
+msgstr "Not ayrıntısı verileri için kullanılan stil."
+
+msgid "The style used for the date in the Index of Dates."
+msgstr "Tarihler Dizinindeki tarih için kullanılan stil."
+
+msgid "The style used for the events in the Index of Dates."
+msgstr "Tarihler Dizinindeki etkinlikler için kullanılan stil."
+
+msgid "The style used for the header in the Index of Names."
+msgstr "Adlar Dizinindeki başlık için kullanılan stil."
+
+msgid "The style used for the references in the Index of Names."
+msgstr "Adlar Dizinindeki referanslar için kullanılan stil."
+
+msgid "The style used for the header in the Index of Places."
+msgstr "Yerler Dizinindeki başlık için kullanılan stil."
+
+msgid "The style used for the references in the Index of Places."
+msgstr "Yerler Dizinindeki referanslar için kullanılan stil."
+
+msgid "Descendant Book"
+msgstr "Soyundan Gelenler Kitabı"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Verilen sorguya bağlı olarak bir veya daha fazla soyundan gelen raporu "
+"üretir."
+
+msgid "Detailed Descendant Book"
+msgstr "Ayrıntılı Soyundan Gelenler Kitabı"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Verilen sorguya dayanarak bir veya daha fazla ayrıntılı soyundan gelen "
+"raporu oluşturur."
+
+#, python-format
+msgid "Deep pruning ascendants from %s people..."
+msgstr "Derin budama, %s kişiden üst soylar ayıklıyor..."
+
+#, python-format
+msgid "Pruning ascendants from %s people..."
+msgstr "%s kişiden üst soylar budanıyor..."
+
+#, python-format
+msgid "Getting ascendants from %s people..."
+msgstr "%s kişiden üst soylar alınıyor..."
+
+#, python-format
+msgid "Verifying descendants from %s people..."
+msgstr "%s kişiden soyundan gelenler doğrulanıyor..."
+
+#, python-format
+msgid "Getting missing descendants from %s people..."
+msgstr "%s kişiden eksik kalan soyundan gelenler alınıyor..."
+
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr "Budama sonrası %s kişiden soyundan gelenler doğrulanıyor..."
+
+#, python-format
+msgid "Getting missing descendants from %s people ..."
+msgstr "%s kişiden eksik soyundan gelenler alınıyor..."

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-13 17:12+0100\n"
-"PO-Revision-Date: 2025-10-07 09:02+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Edit Image Exif Metadata"
 msgstr "עריכת נתוני־על Exif לתמונה"
@@ -62,10 +62,42 @@ msgstr ""
 "דוגמה: 2011-05-24 14:30:00"
 
 msgid ""
+"Enter the Latitude GPS coordinates for this image,\n"
+"Example: -43.722965, -43:43:22, 38° 38′ 03″ N"
+msgstr ""
+"הזנת נקודות־ציון GPS של קו הרוחב לתמונה זו,\n"
+"דוגמה: -43.722965, -43:43:22, 38° 38′ 03″ N"
+
+msgid ""
+"Enter the Longitude GPS coordinates for this image,\n"
+"Example: -10.396378, -10:23:46, 105° 6′ 6″ W"
+msgstr ""
+"הזנת נקודות־ציון GPS של קו האורך לתמונה זו,\n"
+"דוגמה: -10.396378, -10:23:46, 105° 6′ 6″ W"
+
+msgid ""
+"This is the measurement of Above or Below Sea Level.  It is measured in "
+"meters.  Example: 200.558, -200.558"
+msgstr ""
+"זו מדידה של גובה מעל או מתחת לפני הים. היא נמדדת במטרים. דוגמה: 200.558, "
+"-200.558"
+
+msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
 msgstr ""
 "הצגת עמוד העזרה בויקי גרמפס עבור \"עריכת נתוני־על Exif\" בדפדפן המרשתת."
+
+msgid ""
+"This will open up a new window to allow you to edit/ modify this image's "
+"Exif metadata.\n"
+"  It will also allow you to be able to Save the modified metadata."
+msgstr ""
+"פעולה זו תפתח חלון חדש לעריכה או שינוי של נתוני־העל Exif של תמונה זו.\n"
+"  היא תאפשר גם לשמור את נתוני־העל ששונו."
+
+msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
+msgstr "יצירת חלון קופץ שמציג אזור צפייה בתמונה ממוזערת"
 
 msgid ""
 "Select from a drop- down box the image file type that you would like to "
@@ -73,6 +105,19 @@ msgid ""
 msgstr ""
 "בחירה מתיבה נפתחת את סוג קובץ התמונה אליו יש להמיר את עצם המדיה שאינו תואם "
 "Exiv2."
+
+msgid ""
+"If your image is not of an image type that can have Exif metadata read/ "
+"written to/from, convert it to a type that can?"
+msgstr ""
+"אם סוג התמונה אינו מאפשר קריאה/כתיבה של נתוני־על Exif, האם להמיר אותה לסוג "
+"שכן מאפשר זאת?"
+
+msgid ""
+"WARNING:  This will completely erase all Exif metadata from this image!  Are "
+"you sure that you want to do this?"
+msgstr ""
+"אזהרה: פעולה זו תמחק לחלוטין את כל מטא־נתוני Exif מתמונה זו! האם להמשיך?"
 
 msgid "Clear GPS"
 msgstr "ניקוי GPS"
@@ -86,8 +131,89 @@ msgstr "העתקה"
 msgid "Select an image to begin..."
 msgstr "לבחור תמונה כדי להתחיל..."
 
+msgid ""
+"Image is NOT readable,\n"
+"Please choose a different image..."
+msgstr ""
+"התמונה אינה ניתנת לקריאה,\n"
+"נא לבחור תמונה אחרת..."
+
+msgid "Please convert this image to an Exiv2- compatible image type..."
+msgstr "נא להמיר תמונה זו לסוג תמונה שתואם ל־Exiv2..."
+
+#, python-brace-format
+msgid "Image Size : {width} x {height} pixels"
+msgstr "גודל תמונה: {width} × {height} פיקסלים"
+
+msgid ""
+"Image is NOT writable,\n"
+"You will NOT be able to save Exif metadata...."
+msgstr ""
+"התמונה אינה ניתנת לכתיבה,\n"
+"לא ניתן יהיה לשמור נתוני־על Exif..."
+
+msgid "Click Close to close this Thumbnail View Area."
+msgstr "הקשה על סגירה תסגור את אזור מצג התמונות הממוזערות."
+
+msgid "Thumbnail View Area"
+msgstr "אזור מצג תמונות ממוזערות"
+
+msgid ""
+"WARNING: You are about to convert this image into a .jpeg image.  Are you "
+"sure that you want to do this?"
+msgstr "אזהרה: פעולה זו עומדת להמיר תמונה זו לתמונת ‎.jpeg. האם להמשיך?"
+
+msgid "Convert and Delete"
+msgstr "המרה ומחיקה"
+
+msgid ""
+"Your image has been converted and the original file has been deleted, and "
+"the full path has been updated!"
+msgstr "התמונה הומרה, הקובץ המקורי נמחק והנתיב המלא עודכן!"
+
+msgid ""
+"There has been an error, Please check your source and destination file "
+"paths..."
+msgstr "אירעה שגיאה, נא לבדוק את נתיבי קובצי המקור והיעד..."
+
+msgid ""
+"There was an error in deleting the original file.  You will need to delete "
+"it yourself!"
+msgstr "אירעה שגיאה במחיקת הקובץ המקורי. יהיה צורך למחוק אותו ידנית!"
+
+msgid "There was an error in converting your image file."
+msgstr "אירעה שגיאה בהמרת קובץ התמונה."
+
 msgid "Media Path Update"
 msgstr "עדכון נתיב מדיה"
+
+msgid "There has been an error in updating the image file's path!"
+msgstr "אירעה שגיאה בעדכון נתיב קובץ התמונה!"
+
+msgid ""
+"Click the close button when you are finished modifying this image's Exif "
+"metadata."
+msgstr "יש להקיש על לחצן הסגירה לאחר סיום שינוי מטא־נתוני Exif של תמונה זו."
+
+msgid "Saves a copy of the data fields into the image's Exif metadata."
+msgstr "שמירת עותק של שדות הנתונים בנתוני־העל Exif של התמונה."
+
+msgid "Re -display the data fields that were cleared from the Edit Area."
+msgstr "הצגה מחדש של שדות הנתונים שנוקו מאזור העריכה."
+
+msgid "This button will clear all of the data fields shown here."
+msgstr "לחצן זה ינקה את כל שדות הנתונים שמוצגים כאן."
+
+msgid "This button will clear all of the GPS fields shown here."
+msgstr "לחצן זה ינקה את כל שדות ה־GPS שמוצגים כאן."
+
+msgid ""
+"Closes this popup Edit window.\n"
+"WARNING: This action will NOT Save any changes/ modification made to this "
+"image's Exif metadata."
+msgstr ""
+"סגירת חלון העריכה הקופץ.\n"
+"אזהרה: פעולה זו לא תשמור שינויים/התאמות שבוצעו במטא־נתוני Exif של תמונה זו."
 
 msgid "Media Object Title"
 msgstr "כותרת עצם מדיה"
@@ -101,14 +227,23 @@ msgstr "נתונים כלליים"
 msgid "Description: "
 msgstr "תיאור: "
 
+msgid "Artist: "
+msgstr "אמן: "
+
 msgid "Copyright: "
 msgstr "זכויות יוצרים: "
+
+msgid "Date/ Time"
+msgstr "תאריך/שעה"
 
 msgid "Original: "
 msgstr "מקור: "
 
 msgid "Modified: "
 msgstr "שונה: "
+
+msgid "Latitude/ Longitude/ Altitude GPS coordinates"
+msgstr "נקודות־ציון GPS של קו רוחב/קו אורך/גובה"
 
 msgid "Latitude :"
 msgstr "קו רוחב:"
@@ -128,8 +263,30 @@ msgstr "קו רוחב לא תקין (תחביר: 18°9′48.21″S, -18.2412 א�
 msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
 msgstr "קו אורך לא תקין (תחביר: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
 
+msgid ""
+"WARNING!  You are about to completely delete the Exif metadata from this "
+"image."
+msgstr "אזהרה! פעולה זו עומדת למחוק לחלוטין את נתוני־העל Exif מתמונה זו."
+
+msgid "Delete?"
+msgstr "מחיקה?"
+
+msgid ""
+"WARNING!  You are about to completely delete the GPS metadata from this "
+"image."
+msgstr "אזהרה! פעולה זו עומדת למחוק לחלוטין את נתוני־העל GPS מתמונה זו."
+
 msgid "Media Title Update"
 msgstr "עדכון כותרת מדיה"
 
 msgid "Media Object Date Created"
 msgstr "תאריך יצירת עצם מדיה"
+
+msgid "Saving Exif metadata to this image..."
+msgstr "שמירת נתוני־על Exif לתמונה זו..."
+
+msgid "All Exif metadata has been deleted from this image..."
+msgstr "כל נתוני־העל Exif נמחקו מתמונה זו..."
+
+msgid "There was an error in stripping the Exif metadata from this image..."
+msgstr "אירעה שגיאה בהסרת נתוני־העל Exif מתמונה זו..."

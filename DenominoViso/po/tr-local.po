@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-28 21:42+0000\n"
-"Last-Translator: Bora Atıcı <boratici.acc@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
 "Language: tr\n"
@@ -12,10 +12,414 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "No Source"
+msgstr "Kaynak yok"
+
+msgid "onclick"
+msgstr "tıkla"
+
+msgid "onmouseover"
+msgstr "fareyle üzerine gelindiğinde"
+
+msgid "Ancestor"
+msgstr "Atalar"
+
+msgid "Descendant"
+msgstr "Torunlar"
+
+msgid "Fan"
+msgstr "Yelpaze"
+
+msgid "Growth Spiral"
+msgstr "Büyüme Sarmalı"
+
+msgid "Mandelbrot Tree"
+msgstr "Mandelbrot Ağacı"
+
+msgid "Pythagoras Tree"
+msgstr "Pisagor Ağacı"
+
+msgid "right to left"
+msgstr "Sağdan sola"
+
+msgid "left to right"
+msgstr "Soldan sağa"
+
+msgid "top to bottom"
+msgstr "Yukarıdan aşağıya"
+
+msgid "bottom to top"
+msgstr "Aşağıdan yukarıya"
+
+msgid "role"
+msgstr "Rol"
+
+msgid "description"
+msgstr "Açıklama"
+
+msgid "witnesses"
+msgstr "Şahitler"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "{target_path} yazılırken hata oluştu: {message}"
+
+msgid "No central person selected"
+msgstr "Seçili merkezi kişi yok"
+
+msgid "Unknown time direction"
+msgstr "Zaman yönü bilinmiyor"
+
+msgid "author"
+msgstr "Yazar"
+
+msgid "publication_info"
+msgstr "Yayın_bilgisi"
+
+msgid "abbreviation"
+msgstr "Kısaltma"
+
 msgid "volume"
-msgstr "cilt"
+msgstr "Cilt"
+
+msgid "of"
+msgstr "<"
+
+msgid "the chart type runs out of bounds"
+msgstr "Grafik türü sınırların dışına çıkıyor"
+
+msgid "Search"
+msgstr "Arama"
+
+msgid "DenominoViso Options"
+msgstr "DenominoViso Seçenekleri"
+
+msgid "The destination file for the html-content."
+msgstr "Html içeriği için hedef dosya."
+
+msgid "Central Person"
+msgstr "Merkezi Kişi"
+
+msgid "The central person for the tree"
+msgstr "Ağaç için merkezi kişi"
+
+msgid "Title of the webpage"
+msgstr "Web sayfasının başlığı"
+
+msgid "Any string you wish."
+msgstr "İstediğiniz herhangi bir metin."
+
+msgid "Display mode"
+msgstr "Görüntüleme modu"
+
+msgid "Either plot ancestor or descendants graph."
+msgstr "Atalar veya torunlar tablosunu çizin."
+
+msgid "Display type"
+msgstr "Görüntüleme türü"
+
+msgid "The type of graph to create."
+msgstr "Oluşturulacak grafik türü."
+
+msgid "Direction of time"
+msgstr "Zaman yönü"
+
+msgid "Direction in which time increases."
+msgstr "Zamanın arttığı yön."
+
+msgid "Max chart width (%)"
+msgstr "Maksimum grafik genişliği (%)"
+
+msgid "Width of the tree as fraction of the browser window"
+msgstr "Ağacın, tarayıcı penceresinin bir kesri olarak genişliği"
+
+msgid "Max chart height (px)"
+msgstr "Maksimum grafik yüksekliği (piksel)"
+
+msgid "Height of the tree in pixels."
+msgstr "Ağacın piksel cinsinden yüksekliği."
+
+msgid "Closing remarks"
+msgstr "Kapanış ifadeleri"
+
+msgid ""
+"List of strings, free text added at the bottom, for example for a copyright "
+"notice."
+msgstr ""
+"Alt kısma eklenen serbest metin içeren dizeler listesi, örneğin telif hakkı "
+"bildirimi için."
+
+msgid "Include Options"
+msgstr "Seçenekleri dahil et"
+
+msgid "Include private records"
+msgstr "Özel kayıtları dahil et"
+
+msgid "Whether to leave out private data."
+msgstr "Özel verilerin hariç tutulup tutulmayacağı."
+
+msgid "Include Events"
+msgstr "Etkinlikleri dahil et"
+
+msgid "Whether to include a person's events."
+msgstr "Bir kişinin etkinliklerinin dahil edilip edilmeyeceği."
+
+msgid "Include birth children"
+msgstr "Çocukların doğumunu dahil et"
+
+msgid "Whether to include the birth of children in the list of events."
+msgstr "Çocukların doğumunun olay listesine dahil edilip edilmeyeceği."
+
+msgid "Include death relatives"
+msgstr "Akrabaların ölümünü dahil et"
+
+msgid ""
+"Whether to include the death of relatives during the lifetime of person."
+msgstr ""
+"Kişinin yaşamı boyunca akrabalarının ölümünün dahil edilip edilmeyeceği."
+
+msgid "Include witness note"
+msgstr "Tanık notunu dahil et"
+
+msgid ""
+"Whether to include the note belonging to a witness (if the event_format "
+"contains <witnesses>)"
+msgstr ""
+"Bir tanığın notunun dahil edilip edilmeyeceği (eğer event_format <tanıklar> "
+"içeriyorsa)"
+
+msgid "Whether to include a person's attributes"
+msgstr "Bir kişinin özelliklerinin dahil edilip edilmeyeceği"
+
+msgid "Whether to include a person's addresses."
+msgstr "Bir kişinin adreslerinin dahil edilip edilmeyeceği."
+
+msgid "Include Note"
+msgstr "Notu dahil et"
+
+msgid "Whether to include a person's note."
+msgstr "Bir kişinin notunun dahil edilip edilmeyeceği."
+
+msgid "Include URL"
+msgstr "URL dahil et"
+
+msgid "Whether to include a person's internet address."
+msgstr "Bir kişinin internet adresinin dahil edilip edilmeyeceği."
+
+msgid "Include URL description"
+msgstr "URL açıklaması dahil et"
+
+msgid "Whether to include the description of the first URL"
+msgstr "İlk URL adresine ait açıklamanın dahil edilip edilmeyeceği"
+
+msgid "Include Sources"
+msgstr "Kaynakları dahil et"
+
+msgid "Whether to include a person's sources."
+msgstr "Bir kişinin kaynaklarının dahil edilip edilmeyeceği."
+
+msgid "Image Options"
+msgstr "Görüntü Seçenekleri"
+
+msgid "Include Photos/Images from Gallery"
+msgstr "Galeriden Fotoğraf/Görüntü Dahil Et"
+
+msgid "Whether to include images"
+msgstr "Görüntülerin eklenip eklenmeyeceği"
+
+msgid "Copy Image"
+msgstr "Görüntüyü Kopyala"
+
+msgid "Copy the images to a designated directory."
+msgstr "Görüntüleri belirlenmiş bir dizine kopyala."
+
+msgid "Images with Attribute"
+msgstr "Özellikli Görüntüler"
+
+msgid "Determine images with which attributes to in/exclude"
+msgstr ""
+"Hangi özelliklere sahip görüntülerin dahil edileceğini/hariç tutulacağını "
+"belirleyin"
+
+msgid "Include Image source references"
+msgstr "Görüntü kaynak referanslarını dahil et"
+
+msgid "Whether to include references for images"
+msgstr "Görüntüler için referansların dahil edilip edilmeyeceği"
+
+msgid "Source reference attribute"
+msgstr "Kaynak referans özelliği"
+
+msgid "Image attribute that should be used as source reference"
+msgstr "Kaynak referansı olarak kullanılacak resim özniteliği"
+
+msgid "Style Options"
+msgstr "Stil Seçenekleri"
+
+msgid "Color of active person:"
+msgstr "Etkin kişinin rengi:"
+
+msgid "RGB-color of geometric shape of the activated person."
+msgstr "Etkin hale getirilen kişinin geometrik şeklinin RGB rengi."
+
+msgid "Color of found persons:"
+msgstr "Bulunan kişilerin renkleri:"
+
+msgid "RGB-color of geometric shape of the persons found."
+msgstr "Bulunan kişilerin geometrik şekillerinin RGB renkleri."
+
+msgid "Color of male persons:"
+msgstr "Erkek kişilerin rengi:"
+
+msgid "RGB-color of geometric shape of the male persons."
+msgstr "Erkek kişilerin geometrik şekline ait RGB rengi."
+
+msgid "Colour of female persons:"
+msgstr "Kadın kişilerin rengi:"
+
+msgid "RGB-color of geometric shape of the female persons."
+msgstr "Kadın kişilerin geometrik şeklinin RGB rengi."
+
+msgid "Width of rectangle (hrd):"
+msgstr "Dikdörtgenin genişliği (hrd):"
+
+msgid ""
+"The width of a person rectangle of the regular chart type expressed as "
+"fraction of the horizontal rectangle distance."
+msgstr ""
+"Standart grafik türündeki bir kişi dikdörtgeninin genişliği, yatay "
+"dikdörtgen mesafesinin bir kesri olarak ifade edilir."
+
+msgid "Height of rectangle (hrd):"
+msgstr "Dikdörtgenin yüksekliği (hrd):"
+
+msgid ""
+"The height of a person rectangle of the regular chart type expressed as "
+"fraction of the horizontal rectangle distance."
+msgstr ""
+"Normal grafik türündeki bir kişi dikdörtgeninin yüksekliğinin, yatay "
+"dikdörtgen mesafesinin bir kesri olarak ifade edilmesi."
+
+msgid "Vertical distance of rectangles (hrd):"
+msgstr "Dikdörtgenlerin dikey mesafesi (hrd):"
+
+msgid ""
+"The vertical distance of person rectangles of the regular chart type "
+"expressed as fraction of the horizontal rectangle distance."
+msgstr ""
+"Normal grafik türündeki kişi dikdörtgenlerinin dikey mesafesinin, yatay "
+"dikdörtgen mesafesinin bir kesri olarak ifade edilmesi."
+
+msgid "Extra style settings:"
+msgstr "Ekstra stil ayarları:"
+
+msgid "Whatever css style settings are needed."
+msgstr "İhtiyaç duyulan tüm css stil ayarları."
+
+msgid "Mouse event handler"
+msgstr "Fare olay işleyicisi"
+
+msgid "Mouse handler used to interact with visitor of webpage."
+msgstr ""
+"Web sayfası ziyaretçisiyle etkileşim kurmak için kullanılan fare işleyicisi."
+
+msgid "Birth relationship linestyle"
+msgstr "Doğum ilişkisi çizgi stili"
+
+msgid ""
+"List of lists where each sublist is a list with information about the dash "
+"pattern of lines connecting children to parents."
+msgstr ""
+"Çocukları ebeveynlere bağlayan çizgilerin kesik çizgi desenine ilişkin "
+"bilgileri içeren listelerin listesi."
+
+msgid "Source confidence color"
+msgstr "Kaynak güvenilirlik rengi"
+
+msgid ""
+"List of lists where each sublist is a list with information on the color to "
+"use for a certain confidence level."
+msgstr ""
+"Her alt listenin, belirli bir güven düzeyi için kullanılacak renkle ilgili "
+"bilgileri içeren bir liste olduğu listelerin listesi."
+
+msgid "Event format"
+msgstr "Etkinlik biçimi"
+
+msgid "at"
+msgstr ">"
+
+msgid ""
+"List os strings with placeholders for events. Known placeholders: <type>, "
+"<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
+"<attribute-value>."
+msgstr ""
+"Olaylar için yer tutucular içeren dizelerin listesi. Bilinen yer tutucular: "
+"<tür>, <rol>, <tarih>, <yer>, <açıklama>, <tanıklar>, <kaynak> ve herhangi "
+"bir <öznitelik değeri>."
+
+msgid "Source format"
+msgstr "Kaynak biçimi"
+
+msgid ""
+"List of strings with placeholders for sources. Known placeholders: <title>, "
+"<volume>, <author>, <publication_info> and <abbreviation>."
+msgstr ""
+"Kaynak metinleri için yer tutucular içeren metin listesi. Bilinen yer "
+"tutucular: <başlık>, <cilt>, <yazar>, <yayın bilgisi> ve <kısaltma>."
+
+msgid "restricted to:"
+msgstr "şununla sınırlı:"
+
+msgid "to directory:"
+msgstr "dizine:"
+
+msgid "Save images in ..."
+msgstr "Resimleri şu konumda kaydedin..."
+
+msgid "should be"
+msgstr "olmalı"
+
+msgid "Included"
+msgstr "Dahil edildi"
+
+msgid "Excluded"
+msgstr "Hariç tutuldu"
+
+msgid "Name HTML-wrapper file"
+msgstr "HTML sarıcı dosya adı"
+
+msgid "Save HTML-wrapper file as ..."
+msgstr "HTML sarıcı dosyasını şu şekilde kaydet: ..."
+
+msgid "Give a filename ..."
+msgstr "Bir dosya adı verin..."
+
+msgid "Relation type"
+msgstr "İlişki türü"
+
+msgid "Use dashed linestyle"
+msgstr "Kesikli çizgi stili kullan"
+
+msgid "Dash length"
+msgstr "Tire uzunluğu"
+
+msgid "Inter-dash length"
+msgstr "Tireler arası uzunluk"
+
+msgid "DenominoViso"
+msgstr "DenominoViso"
+
+msgid ""
+"Generates a web (HTML) page with a graphical representation of ancestors/"
+"descendants (SVG) where details about individuals become visible upon mouse-"
+"events."
+msgstr ""
+"Fare hareketleriyle, bireylerle ilgili ayrıntıların görünür hale geldiği "
+"ataların/torunların (SVG) grafiksel temsilini içeren bir web (HTML) sayfası "
+"oluşturur."

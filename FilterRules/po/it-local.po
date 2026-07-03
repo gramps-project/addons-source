@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-09-06 11:01+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 msgid "People with multiple parent records"
 msgstr "Persone con registri genitore multipli"
@@ -23,11 +23,24 @@ msgstr "Persone con eventi con <ruolo>"
 msgid "Families with events with the <role>"
 msgstr "Famiglie con eventi con <ruolo>"
 
+msgid "Degrees:"
+msgstr "Gradi:"
+
 msgid "Include Children"
 msgstr "Includere figli/e"
 
 msgid "Include Parents"
 msgstr "Includere genitori"
+
+msgid "Filter people by their age at death"
+msgstr "Filtra le persone in base all'età al decesso"
+
+msgid "Filter rule that matches people by their age at death"
+msgstr ""
+"Regola del filtro che associa le persone in base alla loro età al decesso"
+
+msgid "Role:"
+msgstr "Ruolo:"
 
 msgid "People with events with a selected role"
 msgstr "Persone con eventi con un ruolo selezionato"
@@ -37,3 +50,9 @@ msgstr "La persona attiva"
 
 msgid "Active person"
 msgstr "Persona attiva"
+
+msgid "Age in years at person's death."
+msgstr "Età in anni al decesso di una persona."
+
+msgid "Age:"
+msgstr "Età:"

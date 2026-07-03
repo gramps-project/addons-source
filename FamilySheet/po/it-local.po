@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-09-06 11:01+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,10 +12,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 msgid "Family Sheet"
 msgstr "Foglio famiglia"
+
+msgid ""
+"Produces a family sheet showing full information about a person and his/her "
+"partners and children."
+msgstr ""
+"Genera un foglio di famiglia che riporta tutte le informazioni relative a "
+"una persona, ai suoi coniugi, e ai suoi figli."
+
+#, python-format
+msgid "→ %s"
+msgstr "→ %s"
+
+#, python-format
+msgid "Address (%(date)s): %(location)s"
+msgstr "Indirizzo (%(date)s): %(location)s"
+
+#, python-format
+msgid "Address: %(location)s"
+msgstr "Indirizzo: %(location)s"
 
 #, python-format
 msgid "; %(type)s: %(value)s"
@@ -23,6 +42,10 @@ msgstr "; %(type)s: %(value)s"
 
 msgid "Source references:"
 msgstr "Riferimenti fonte:"
+
+#, python-format
+msgid ", page %s"
+msgstr ", pagina %s"
 
 msgid "Notes:"
 msgstr "Note:"
@@ -54,14 +77,35 @@ msgstr "in %(place)s"
 msgid "Center person"
 msgstr "Persona centrale"
 
+msgid "The person whose partners and children are printed"
+msgstr "La persona i cui partner e figli sono stampati"
+
+msgid "Print sheets for"
+msgstr "Stampa foglio per"
+
+msgid "Center person only"
+msgstr "Solo la persona centrale"
+
+msgid "Center person and descendants in side branches"
+msgstr "La persona centrale e i discendenti nei rami collaterali"
+
+msgid "Center person and all descendants"
+msgstr "La persona centrale e tutti i discendenti"
+
 msgid "Whether to include descendants, and which ones."
-msgstr "Indica se includere discendenti e quali includere."
+msgstr "Indica se includere discendenti, e quali includere."
 
 msgid "Replace first name with call name"
 msgstr "Sostituisci il nome con lo pseudonimo"
 
 msgid "Underline call name in first name / add call name to first name"
 msgstr "Sottolinea lo pseudonimo nel nome / aggiungi lo pseudonimo al nome"
+
+msgid "Whether to include call name, and how."
+msgstr "Indica se includere lo pseudonimo, e come."
+
+msgid "Print placeholders for missing information"
+msgstr "Stampa un segnaposto per le informazioni mancanti"
 
 msgid "The basic style used for the text display"
 msgstr "Lo stile di base utilizzato per la visualizzazione del testo"

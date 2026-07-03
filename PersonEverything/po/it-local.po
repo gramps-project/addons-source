@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-09-06 11:01+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,10 +12,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+#, python-format
+msgid "All information about %s"
+msgstr "Tutte le informazioni su %s"
+
+msgid "Primary name"
+msgstr "Nome principale"
+
+msgid "Alternate name"
+msgstr "Nome alternativo"
 
 msgid " This is the primary death event."
 msgstr " Questo è l'evento decesso primario."
+
+msgid "Relationship to Father"
+msgstr "Relazione con il padre"
+
+msgid "Relationship to Mother"
+msgstr "Relazione con la madre"
 
 msgid "Parent Family"
 msgstr "Famiglia genitore"
@@ -28,8 +44,17 @@ msgid ""
 msgstr ""
 "Nome/i: titolo, nome, suffisso, pseudonimo, soprannome, soprannome familiare"
 
+msgid "Note type"
+msgstr "Tipo di nota"
+
 msgid "Latitude, Longitude"
 msgstr "Latitudine, longitudine"
+
+msgid "Media type"
+msgstr "Tipo di oggetto multimediale"
+
+msgid "Origin type"
+msgstr "Tipo di origine"
 
 msgid "The style used for the title of the page."
 msgstr "Lo stile usato per il titolo della pagina."

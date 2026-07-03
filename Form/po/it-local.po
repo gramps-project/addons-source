@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-04-14 18:01+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,31 +12,137 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
+
+#, python-format
+msgid "Form: %s"
+msgstr "Modulo: %s"
+
+msgid "New Form"
+msgstr "Nuovo modulo"
+
+msgid "Edit Form"
+msgstr "Modifica modulo"
+
+msgid "Reference:"
+msgstr "Riferimento:"
 
 msgid "Headings"
 msgstr "Intestazioni"
 
+msgid "Form Gramplet"
+msgstr "Gramplet per i moduli"
+
+msgid "Gramplet interface for Forms"
+msgstr "Interfaccia Gramplet per i moduli"
+
+msgid "Forms"
+msgstr "Moduli"
+
 msgid "Order"
 msgstr "Ordine"
+
+msgid "Form"
+msgstr "Modulo"
+
+msgid "XML syntax error in Form definition file"
+msgstr "Errore di sintassi XML nel file di definizione del modulo"
+
+msgid "Failed to read Form definition file"
+msgstr "Impossibile leggere il file di definizione del modulo"
+
+msgid "Invalid Form definition file"
+msgstr "File di definizione del modulo non valido"
+
+msgid "Select Form"
+msgstr "Seleziona modulo"
+
+msgid "Persons"
+msgstr "Persone"
+
+msgid "Name and Surname"
+msgstr "Nome e cognome"
+
+msgid "Relation"
+msgstr "Relazione"
+
+msgid "Year Age"
+msgstr "Anni di età"
 
 msgid "Age in years"
 msgstr "Età in anni"
 
+msgid "Month Age"
+msgstr "Mesi di età"
+
+msgid "Age in months"
+msgstr "Età in mesi"
+
+msgid "Sex"
+msgstr "Sesso"
+
+msgid "Personal Occupation"
+msgstr "Occupazione"
+
 msgid "Years Married"
 msgstr "Anni di matrimonio"
+
+msgid "Months Married"
+msgstr "Mesi di matrimonio"
+
+msgid "(7.) Rank or Profession of Father"
+msgstr "(7.) Grado o professione del padre"
 
 msgid "Maiden Surname"
 msgstr "Cognome da nubile"
 
+msgid "Year"
+msgstr "Anno"
+
+msgid "Certificate number"
+msgstr "Numero del certificato"
+
+msgid "Page number"
+msgstr "Nuemro pagina"
+
+msgid "Condition"
+msgstr "Condizione"
+
+msgid "Residence at the Time of Marriage"
+msgstr "Residenza al momenti del matrimonio"
+
 msgid "Date of Death"
 msgstr "Data di morte"
+
+msgid "(2.) Date and Place of Death"
+msgstr "(2.) Data e luogo di morte"
 
 msgid "Place of Death"
 msgstr "Luogo di morte"
 
+msgid "(5.) Widowed or Married"
+msgstr "(5.) Vedovo o sposato"
+
+msgid "(7.) Rank, Profession, or Occupation"
+msgstr "(7.) Grado, professione o impiego"
+
+msgid "Relation to deceased"
+msgstr "Relazione con il defunto"
+
+msgid "3. Place of Birth"
+msgstr "3. Luogo di nascita"
+
+msgid "4. Religion"
+msgstr "4. Religione"
+
+msgid "7. Sex: Male"
+msgstr "7. Sesso: maschio"
+
 msgid "SexFemale"
 msgstr "Sesso femminile"
+
+msgid "8. Sex: Female"
+msgstr "8. Sesso: femmina"
 
 msgid "Coloured"
 msgstr "Di colore"
@@ -46,6 +152,75 @@ msgstr "10. Persone di colore - origini africane"
 
 msgid "13. Coloured Persons, Mulato or Indians"
 msgstr "13. Persone di colore, mulatte o indiane (native)"
+
+msgid "6.Families"
+msgstr "6.Famiglie"
+
+msgid "7. Names"
+msgstr "7. Nomi"
+
+msgid "8. Sex"
+msgstr "8. Sesso"
+
+msgid "9. Age"
+msgstr "9. Età"
+
+msgid "12. Religion"
+msgstr "12. Religione"
+
+msgid "13. Origin"
+msgstr "13. Origine"
+
+msgid "15. Married or Widowed"
+msgstr "15.Sposato o vedovo"
+
+msgid "16. Married within last twelve months"
+msgstr "16. Sposato negli ultimi dodici mesi"
+
+msgid "Scholar"
+msgstr "Scolaro"
+
+msgid "18. Over 20 unable to read"
+msgstr "18. Maggiore di 20 anni che non sa leggere"
+
+msgid "19. Over 20 unable to write"
+msgstr "19. Maggiore di 20 anni che non sa scrivere"
+
+msgid "6. Families"
+msgstr "6. Famiglie"
+
+msgid "5. Families"
+msgstr "5. Famiglie"
+
+msgid "6. Names"
+msgstr "6. Nomi"
+
+msgid "7. Sex"
+msgstr "7. Sesso"
+
+msgid "8. Age"
+msgstr "8. Età"
+
+msgid "9. Married or Widowed"
+msgstr "9. Sposato o vedovo"
+
+msgid "13. Birth Place of Father"
+msgstr "13. Luogo di nascita del padre"
+
+msgid "14. Birth Place of Mother"
+msgstr "14. Luogo di nascita della madre"
+
+msgid "15. Religion"
+msgstr "15. Religione"
+
+msgid "SubTitle"
+msgstr "Sottotitolo"
+
+msgid "Colour"
+msgstr "Colore"
+
+msgid "5. Colour"
+msgstr "5. Colore"
 
 msgid "Seating"
 msgstr "Posti a sedere"
@@ -65,6 +240,12 @@ msgstr "Contea/provincia di"
 msgid "Family No."
 msgstr "Famiglia n."
 
+msgid "Widowed, divorced"
+msgstr "Vedovo, divorziato"
+
+msgid "Year of birth"
+msgstr "Anno di nascita"
+
 msgid "Married Y/N"
 msgstr "Sposato/a s/n"
 
@@ -77,8 +258,17 @@ msgstr "Data di matrimonio"
 msgid "Place married"
 msgstr "Luogo del matrimonio"
 
+msgid "Degree of Education"
+msgstr "Livello di istruzione"
+
 msgid "City of"
 msgstr "Città di"
+
+msgid "Years in US"
+msgstr "Anni negli USA"
+
+msgid "Place of Occupation"
+msgstr "Luogo di lavoro"
 
 msgid "Birth Country"
 msgstr "Nazione di nascita"
@@ -86,14 +276,29 @@ msgstr "Nazione di nascita"
 msgid "Year married"
 msgstr "Anno di matrimonio"
 
+msgid "Male under 21"
+msgstr "Maschi sotto i 21 anni"
+
+msgid "Female under 21"
+msgstr "Femmine sotto i 21 anni"
+
+msgid "Female over 21"
+msgstr "Femmine sopra i 21 anni"
+
 msgid "Inhabitants of"
 msgstr "Abitanti di"
 
 msgid "in"
 msgstr "in"
 
+msgid "of"
+msgstr "di"
+
 msgid "Residing in the"
 msgstr "Residente in"
+
+msgid "Certificate Number"
+msgstr "Numero del certificato"
 
 msgid "Place of Record"
 msgstr "Luogo di registrazione dell'informazione"
@@ -126,13 +331,13 @@ msgid "License No."
 msgstr "Licenza n."
 
 msgid "Date of Marriage"
-msgstr "Data di matrimonio"
+msgstr "Data del matrimonio"
 
 msgid "Married by"
 msgstr "Sposato/a da"
 
 msgid "Place of Marriage"
-msgstr "Luogo di matrimonio"
+msgstr "Luogo del matrimonio"
 
 msgid "Consent given by"
 msgstr "Consenso prestato da"
@@ -283,6 +488,12 @@ msgstr "Telefono"
 msgid "Who will always know your address (Name & Address)"
 msgstr "Chi potrà sempre conoscere il tuo indirizzo (nome e indirizzo)"
 
+msgid "Relationship "
+msgstr "Relazione "
+
+msgid "Occupation "
+msgstr "Occupazione "
+
 msgid "Place of employment or business"
 msgstr "Luogo di lavoro o di attività"
 
@@ -321,6 +532,9 @@ msgstr "Arma"
 
 msgid "Regiment/Unit/Ship"
 msgstr "Reggimento/Unità/Nave"
+
+msgid "Service Number"
+msgstr "Numero di servizio"
 
 msgid "No. of enlistment"
 msgstr "Matricola di arruolamento"
@@ -482,5 +696,38 @@ msgstr "Villaggio o frazione"
 msgid "Civil Parish"
 msgstr "Parrocchia civile"
 
+msgid "PROFESSION or OCCUPATION"
+msgstr "PROFESSIONE o OCCUPAZIONE"
+
+msgid "Rural District"
+msgstr "Distretto rurale"
+
+msgid "PROFESSION OR OCCUPATION"
+msgstr "PROFESSIONE O OCCUPAZIONE"
+
+msgid "Work Type"
+msgstr "Tipo di lavoro"
+
+msgid "AGE (last Birthday)"
+msgstr "ETÀ (l'ultimo compleanno)"
+
+msgid "BIRTHPLACE of every Person."
+msgstr "LUOGO DI NASCITA di ogni persona."
+
+msgid "NATIONALITY of every Person born in a Foreign Country."
+msgstr "NAZIONALITÀ di ogni persona nata in uno stato estero."
+
+msgid "NAME and SURNAME"
+msgstr "NOME e COGNOME"
+
+msgid "RELATIONSHIP to Head of Household"
+msgstr "RELAZIONE col capofamiglia"
+
+msgid "SEX"
+msgstr "SESSO"
+
 msgid "Parish Ward"
 msgstr "Distretto (ward) della parrocchia"
+
+msgid "Total Children"
+msgstr "Figli totali"

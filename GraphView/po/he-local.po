@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-10-31 18:02+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "Graph View"
+msgstr "מצג גרף"
+
+msgid "Show IDs"
+msgstr "הצגת מזהים"
+
+msgid "Show avatars"
+msgstr "הצגת יצגנים"
+
+msgid "Highlight the home person"
+msgstr "הדגשת אדם הבית"
 
 msgid "Show full dates"
 msgstr "הצגת תאריכים מלאים"
@@ -21,23 +33,101 @@ msgstr "הצגת תאריכים מלאים"
 msgid "Show places"
 msgstr "הצגת מקומות"
 
+msgid "Vertical: Top to Bottom"
+msgstr "אנכי: מלמעלה למטה"
+
+msgid "Vertical: Bottom to Top"
+msgstr "אנכי: מלמטה למעלה"
+
+msgid "Horizontal: Left to Right"
+msgstr "אופקי: משמאל לימין"
+
+msgid "Horizontal: Right to Left"
+msgstr "אופקי: מימין לשמאל"
+
 msgid "Time Direction"
 msgstr "כיוון ציר זמן"
+
+msgid "Limit number of people displayed (use 0 for unlimited)"
+msgstr "הגבלת מספר האנשים שמוצגים (0 פירושו ללא הגבלה)"
+
+msgid "Person theme"
+msgstr "אדם ערכת נושא"
+
+msgid "Path color to home person"
+msgstr "נתיב צבע אלאדם הבית"
 
 msgid "Font:"
 msgstr "גופן:"
 
+msgid "Avatars style"
+msgstr "אווטרים סגנון"
+
+msgid "PNG files"
+msgstr "קובצי PNG"
+
+msgid "Male avatar:"
+msgstr "יצגן זכר:"
+
+msgid "Choose male avatar"
+msgstr "בחירת אווטאר זכר"
+
+msgid "Female avatar:"
+msgstr "יצגן נקבה:"
+
+msgid "Choose female avatar"
+msgstr "בחירת אווטאר נקבה"
+
 msgid "Unknown avatar:"
 msgstr "יצגן לא ידוע:"
+
+msgid "Choose Unknown avatar"
+msgstr "בחירת אווטאר לא ידוע"
+
+msgid "Other avatar:"
+msgstr "יצגן אחר:"
+
+msgid "Choose Other avatar"
+msgstr "בחירת אחר אווטאר"
 
 msgid "Active person border size"
 msgstr "גודל גבול אדם פעיל"
 
+msgid "Person border size"
+msgstr "אדם גבול גודל"
+
 msgid "Themes"
 msgstr "ערכות נושא"
 
+msgid "Show animation"
+msgstr "הצגת הנפשה"
+
+msgid "Animation speed (1..5 and 5 is the slower)"
+msgstr "מהירות הנפשה (1..5, ו־5 הוא האיטי ביותר)"
+
+msgid "Animation count (0..8 use 0 to turn off)"
+msgstr "מונה הנפשה (0..8; שימוש ב־0 לכיבוי)"
+
+msgid "Animation"
+msgstr "הנפשה"
+
+msgid "Search in all database"
+msgstr "חיפוש בכל מסד־נתונים"
+
+msgid "Also apply search by all database."
+msgstr "החלת החיפוש גם על כל מסד־הנתונים."
+
 msgid "Show person images"
 msgstr "הצגת תמונות אדם"
+
+msgid "Show persons thumbnails in search result list."
+msgstr "הצגת תמונות ממוזערות של אנשים ברשימת תוצאות החיפוש."
+
+msgid "Show bookmarked first"
+msgstr "הצגת מסומן בסימנייה ראשון"
+
+msgid "Show bookmarked persons first in search result list."
+msgstr "הצגת אנשים שסומנו בסימנייה תחילה ברשימת תוצאות החיפוש."
 
 msgid "Search"
 msgstr "חיפוש"
@@ -51,8 +141,26 @@ msgstr "התקרבות"
 msgid "Zoom out"
 msgstr "התרחקות"
 
+msgid "Zoom to original"
+msgstr "תקריב לגודל המקורי"
+
+msgid "Zoom to best fit"
+msgstr "תקריב להתאמה מיטבית"
+
 msgid "Go to active person"
 msgstr "מעבר לאדם הפעיל"
+
+msgid "Go to bookmark"
+msgstr "מעבר לסימנייה"
+
+msgid "Center view on selected bookmark"
+msgstr "מרכוז המצג על הסימנייה שנבחרה"
+
+msgid "Bookmarks for current graph"
+msgstr "סימניות לתרשים הנוכחי"
+
+msgid "Other Bookmarks"
+msgstr "סימניות אחרות"
 
 msgid "Vertical spacing between generations"
 msgstr "רווח אנכי בין דורות"
@@ -60,19 +168,99 @@ msgstr "רווח אנכי בין דורות"
 msgid "Horizontal spacing between generations"
 msgstr "רווח אופקי בין דורות"
 
+msgid "Spacings"
+msgstr "מרווח"
+
+msgid "All connected"
+msgstr "כל מחוברות"
+
+msgid ""
+"Show all connected persons limited by generation restrictions.\n"
+"Works slow, so don't set large generation values."
+msgstr ""
+"הצגת כל האנשים המקושרים, בכפוף להגבלות דור.\n"
+"פעולה זו איטית, לכן אין להגדיר ערכי דור גדולים."
+
 msgid "Add active person"
 msgstr "הוספת אדם פעיל"
+
+msgid "Call the bookmark editor"
+msgstr "קריאה לעורך הסימניות"
+
+msgid ""
+"You don't have any bookmarks yet...\n"
+"Try to add some frequently used persons to speedup navigation."
+msgstr ""
+"עדיין אין סימניות...\n"
+"כדאי להוסיף כמה אנשים שנמצאים בשימוש תכוף כדי להאיץ את הניווט."
+
+msgid "No bookmarks for this graph..."
+msgstr "אין סימניות לתרשים זה..."
+
+msgid "No other bookmarks..."
+msgstr "אין אחר סימניות..."
 
 #, python-format
 msgid "found: %s"
 msgstr "נמצא: %s"
 
+#, python-format
+msgid ""
+"Add active person to bookmarks\n"
+"%s"
+msgstr ""
+"הוספה פעיל אדם לסימניות\n"
+"%s"
+
+#, python-format
+msgid ""
+"Person <b><i>%s</i></b> is not in the current view.\n"
+"Do you want to set it active and rebuild view?"
+msgstr ""
+"האדם <b><i>%s</i></b> אינו במצג הנוכחי.\n"
+"האם להגדירו כפעיל ולבנות את המצג מחדש?"
+
 msgid "Change active person?"
 msgstr "לשנות אדם פעיל?"
+
+#, python-brace-format
+msgid ""
+"This graph would contain at least {people_count} people, which exceeds the "
+"limit of {people_limit} people. For performance reasons, at least "
+"{people_missing} people won't be shown. You can change this limit in the "
+"view configuration."
+msgstr ""
+"תרשים זה יכיל לפחות {people_count} אנשים, מספר שחורג מהמגבלה של "
+"{people_limit} אנשים. מטעמי ביצועים, לפחות {people_missing} אנשים לא יוצגו. "
+"ניתן לשנות מגבלה זו בתצורת המצג."
+
+msgid "Incomplete graph"
+msgstr "לא שלם גרף"
+
+msgid "Image on right side"
+msgstr "תמונה בצד ימין"
+
+msgid "Image on left side"
+msgstr "תמונה בצד שמאל"
 
 #, python-format
 msgid "%s "
 msgstr "%s "
+
+msgid "<b>Tags:</b>"
+msgstr "<b>תגים: </b>"
+
+msgid "Lines type"
+msgstr "קווים סוג"
+
+msgid "Direct"
+msgstr "ישיר"
+
+msgid "Curves"
+msgstr "עקומות"
+
+msgid "Ortho"
+msgstr "אורתוגונלי"
 
 msgid "Copy"
 msgstr "העתקה"
@@ -83,6 +271,9 @@ msgstr "אין אירועים לאדם זה"
 msgid "Select tags for person"
 msgstr "בחירת תגים לאדם"
 
+msgid "Add new family"
+msgstr "הוספה חדש משפחה"
+
 msgid "Add parents"
 msgstr "הוספת שותפים"
 
@@ -92,14 +283,96 @@ msgstr "הגדרה כאדם הבית"
 msgid "Show path to home person"
 msgstr "הצגת נתיב לאדם הבית"
 
+msgid "Remove from bookmarks"
+msgstr "הסרת מסימניות"
+
+msgid "Add to bookmarks"
+msgstr "הוספה לסימניות"
+
+msgid "No Events for this family"
+msgstr "אין אירועים עבור זה משפחה"
+
+msgid "Select tags for family"
+msgstr "בחירה תגים עבור משפחה"
+
 msgid "Add father"
 msgstr "הוספת אב"
 
 msgid "Add mother"
 msgstr "הוספת אם"
 
+msgid "About Graph View"
+msgstr "עומד גרף מצג"
+
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "הוספה תגים לאדם (%s)"
+
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "הוספה תגים למשפחה (%s)"
+
+#, python-format
+msgid "Deleting the person [%s] will remove it from the database."
+msgstr "מחיקה אדם [%s] הסרה היא ממסד־נתונים."
+
+#, python-format
+msgid "Delete family [%s]?"
+msgstr "מחיקה משפחה [%s]?"
+
+msgid "Deleting the family will remove it from the database."
+msgstr "מחיקה משפחה הסרה היא ממסד־נתונים."
+
+#, python-format
+msgid "Delete Family [%s]"
+msgstr "מחיקה משפחה [%s]"
+
+msgid "Dynamic and interactive graph of relations"
+msgstr "גרף דינמי ואינטראקטיבי של קשרי־קרבה"
+
+msgid "Dark (default)"
+msgstr "כהה (ברירת מחדל)"
+
 msgid "Light"
 msgstr "קל"
 
+msgid "Cartoon"
+msgstr "סרטוני"
+
+msgid "Modern"
+msgstr "חדיש"
+
+msgid "Generic (dark)"
+msgstr "כללי (כהה)"
+
+msgid "Generic (gray)"
+msgstr "כללי (אפור)"
+
+msgid "Generic (light)"
+msgstr "כללי (בהיר)"
+
+msgid "Persons from current graph"
+msgstr "אדם מנוכחי גרף"
+
+msgid "Other persons from database"
+msgstr "אחר אדם ממסד־נתונים"
+
+msgid "No persons found..."
+msgstr "אין אנשים נמצא..."
+
+msgid ""
+"Search people in the current visible graph and database.\n"
+"Use <Ctrl+F> to make search entry active."
+msgstr ""
+"חיפוש אנשים בגרף הגלוי הנוכחי ובמסד־הנתונים.\n"
+"יש להשתמש ב־<Ctrl+F> להפעלת רשומת החיפוש."
+
 msgid "Search..."
 msgstr "חיפוש..."
+
+#, python-format
+msgid "<b>%s:</b>"
+msgstr "<b>%s: </b>"
+
+msgid "Partners"
+msgstr "שותפים"

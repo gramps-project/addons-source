@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,22 +13,97 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Map tiles"
 msgstr "אריחי מפה"
 
+msgid ""
+"Set the size of the heatmap points.\n"
+"Default: 15"
+msgstr ""
+"הגדרת גודל נקודות מפת החום.\n"
+"ברירת מחדל: 15"
+
 msgid "File path"
 msgstr "נתיב קובץ"
+
+msgid ""
+"For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
+"the characters space, underline and hypen are allowed. The file name also "
+"has to start and end with an alphanumeric character.The file extention "
+"'.html' is added by the report."
+msgstr ""
+"בשם הקובץ מותרים רק אותיות אנגליות A-Z ו־a-z, ספרות 0–9 וכן התווים רווח, קו "
+"תחתי ומקף. שם הקובץ חייב גם להתחיל ולהסתיים בתו אלפאנומרי. סיומת הקובץ "
+"'.html' מתווספת על ידי הדוח."
+
+msgid "File name"
+msgstr "קובץ שם"
+
+msgid "Enable custom start position"
+msgstr "לאפשר איות התחלה מותאם"
+
+msgid ""
+"Enabling will force the map open at your custom start position and zoom."
+msgstr "אפשור יאלץ את המפה להיפתח באיות ההתחלה ובתקריב המותאמים."
 
 msgid "Start latitude"
 msgstr "קו רוחב – התחלה"
 
+msgid ""
+"Set custom start position latitude\n"
+"Default: 50.0"
+msgstr ""
+"הגדרת מותאם התחלה איות קו־רוחב\n"
+"ברירת מחדל: 50.0"
+
 msgid "Start longitude"
 msgstr "קו אורך – התחלה"
+
+msgid ""
+"Set custom start position longitude\n"
+"Default: 10.0"
+msgstr ""
+"הגדרת מותאם התחלה איות קו־אורך\n"
+"ברירת מחדל: 10.0"
+
+msgid "Start zoom"
+msgstr "התחלה תקריב"
+
+msgid ""
+"Set the value for the starting zoom\n"
+"Default: 5"
+msgstr ""
+"הגדרת ערך עבור התחלה תקריב\n"
+"ברירת מחדל: 5"
 
 msgid "Path does not exist."
 msgstr "נתיב לא קיים."
 
+msgid "Invalid filename."
+msgstr "שם קובץ לא תקין."
+
 msgid "INFO"
 msgstr "מידע"
+
+msgid "Create a heatmap web report."
+msgstr "יצירה מפת חום מרשתת דוח."
+
+msgid "Stamen Terrain"
+msgstr "Stamen Terrain"
+
+msgid "Stamen Terrain (Background only)"
+msgstr "Stamen Terrain (רקע בלבד)"
+
+msgid "Stamen Toner"
+msgstr "Stamen Toner"
+
+msgid "Stamen Watercolor"
+msgstr "Stamen Watercolor"
+
+msgid "CartoDB Positron"
+msgstr "CartoDB Positron"
+
+msgid "CartoDB DarkMatter"
+msgstr "CartoDB DarkMatter"

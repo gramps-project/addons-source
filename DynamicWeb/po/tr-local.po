@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-28 21:42+0000\n"
-"Last-Translator: Bora Atıcı <boratici.acc@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
 "Language: tr\n"
@@ -12,10 +12,736 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "Dynamic Web Report"
+msgstr "Dinamik Web Raporu"
+
+msgid "Produces dynamic web pages for the database"
+msgstr "Veritabanı için dinamik web sayfaları üretir"
+
+msgid "SVG graphical tree"
+msgstr "SVG grafik ağacı"
+
+msgid "Indexes pages"
+msgstr "Dizin sayfaları"
+
+#, python-format
+msgid "Custom page %(index)i"
+msgstr "Özel sayfa %(index)i"
+
+msgid "Ascending tree"
+msgstr "Yükselen ağaç"
+
+msgid "Descending tree"
+msgstr "İnen ağaç"
+
+msgid "Descending tree with spouses"
+msgstr "Eşlerle birlikte inen ağaç"
+
+msgid "Ascending and descending tree"
+msgstr "Yükselen ve inen ağaç"
+
+msgid "Ascending and descending tree with spouses"
+msgstr "Eşlerle birlikte yükselen ve inen soyağacı"
+
+msgid "Size proportional to number of ancestors"
+msgstr "Ataların sayısıyla orantılı boyut"
+
+msgid "Homogeneous parents distribution"
+msgstr "Homojen ebeveyn dağılımı"
+
+msgid "Age based gradient"
+msgstr "Yaşa dayalı gradyan"
+
+msgid "Gradient"
+msgstr "Gradyan"
+
+#, python-format
+msgid "Could not create the directory: %(path)s"
+msgstr "Dizin oluşturulamadı: %(path)s"
+
+msgid "Dynamic Web Site Report"
+msgstr "Dinamik Web Sitesi Raporu"
+
+msgid "Exporting family tree data ..."
+msgstr "Aile ağacı verileri dışa aktarılıyor..."
+
+#, python-format
+msgid "%(type)s: %(value)s"
+msgstr "%(type)s: %(value)s"
+
+#, python-format
+msgid "Impossible to convert \"%(path)s\" to a relative path."
+msgstr "\"%(path)s\" ifadesini göreli yola dönüştürmek mümkün değil."
+
+msgid ""
+"The pages configuration is not valid: several pages have the same content"
+msgstr ""
+"Sayfa yapılandırması geçerli değil: Birden fazla sayfa aynı içeriğe sahip"
+
+msgid "DynWeb|Home"
+msgstr "DynWeb/Ana Sayfa"
+
+msgid "Tree"
+msgstr "Ağaç"
+
+msgid "Search results"
+msgstr "Arama sonuçları"
+
+msgid "Indexes"
+msgstr "Dizinler"
+
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(Toplam _MAX_ girişten filtrelenmiştir)"
+
+#, python-format
+msgid "(m. %s)"
+msgstr "(m. %s)"
+
+msgid "(sort by name)"
+msgstr "(ada göre sırala)"
+
+msgid "(sort by quantity)"
+msgstr "(miktara göre sırala)"
+
+msgid ": activate to sort column ascending"
+msgstr ": sütunları artan şekilde sıralamak için etkinleştirin"
+
+msgid ": activate to sort column descending"
+msgstr ": azalan sütunu sıralamak için etkinleştir"
+
+msgid ""
+"<p>This page provides the SVG raw code.<br>Copy the contents into a text "
+"editor and save as an SVG file.<br>Make sure that the text editor encoding "
+"is UTF-8.</p>"
+msgstr ""
+"<p>Bu sayfa SVG ham kodunu sağlar.İçeriği bir metin düzenleyiciye kopyalayın "
+"ve SVG dosyası olarak kaydedin.<br>Metin düzenleyici kodlamasının UTF-8 "
+"olduğundan emin olun.< / p>"
+
+msgid "Alternate Name"
+msgstr "Alternatif Ad"
+
+msgid "Click on the map to show it full-screen"
+msgstr "Haritayı tam ekran görüntülemek için üzerine tıklayın"
+
+msgid "Configure"
+msgstr "Yapılandır"
+
+msgid "DynamicWeb_report#Help"
+msgstr "DynamicWeb_report#Yardım"
+
+msgid "Examples"
+msgstr "Örnekler"
+
+msgid "F"
+msgstr "A"
+
+msgid "Families Index"
+msgstr "Aileler Dizini"
+
+msgid "Family Nick Name"
+msgstr "Aile Takma Adı"
+
+msgid "File ready"
+msgstr "Dosya hazır"
+
+msgid "Include dates columns on the index pages"
+msgstr "Dizin sayfalarına tarih sütunlarını dahil edin"
+
+msgid "Include a column for media path on the index pages"
+msgstr "Dizin sayfalarında medya yolu için bir sütun dahil edin"
+
+msgid "Include a map in the individuals and family pages"
+msgstr "Bireyler ve aile sayfalarına bir harita dahil edin"
+
+msgid "Include half and/ or step-siblings on the individual pages"
+msgstr "Kişinin sayfasına üvey erkek ve üvey kız kardeşleri dahil edin"
+
+msgid "Include references in indexes"
+msgstr "Dizinlerde referansları dahil edin"
+
+msgid "Insert sources author in the sources title"
+msgstr "Kaynakların başlığına kaynak yazarını ekleyin"
+
+msgid "M"
+msgstr "B"
+
+msgid "Maximize"
+msgstr "Büyüt"
+
+msgid "Media Index"
+msgstr "Medya Dizini"
+
+msgid "Media Type"
+msgstr "Medya Türü"
+
+msgid "No data available in table"
+msgstr "Tabloda veri yoktur"
+
+msgid "No matching records found"
+msgstr "Eşleşen kayıt bulunamadı"
+
+msgid "No matching surname."
+msgstr "Eşleşen soyadı yok."
+
+msgid "Other participants"
+msgstr "Diğer katılımcılar"
+
+msgid "Person page"
+msgstr "Kişi sayfası"
+
+msgid "Person to search for"
+msgstr "Aranacak kişi"
+
+msgid "Persons Index"
+msgstr "Kişiler Dizini"
+
+msgid "Persons"
+msgstr "Kişiler"
+
+msgid "Places Index"
+msgstr "Yerler Dizini"
+
+msgid "Preparing file ..."
+msgstr "Dosya hazırlanıyor ..."
+
+msgid "Relationship to Father"
+msgstr "Baba ile ilişki"
+
+msgid "Relationship to Mother"
+msgstr "Anne ile ilişki"
+
+msgid "Repositories Index"
+msgstr "Depolar Dizini"
+
+msgid "Restore"
+msgstr "Geri yükle"
+
+msgid "Restore default settings"
+msgstr "Varsayılan ayarları geri yükle"
+
 msgid "Show last modification time"
 msgstr "Son değişiklik süresini göster"
+
+msgid "SVG tree children distribution"
+msgstr "SVG ağaç çocuk dağılımı"
+
+msgid "SVG tree configuration"
+msgstr "SVG ağaç yapılandırması"
+
+msgid "SVG tree graph shape"
+msgstr "SVG ağaç grafik şekli"
+
+msgid "SVG tree graph type"
+msgstr "SVG ağaç grafiği türü"
+
+msgid "SVG tree parents distribution"
+msgstr "SVG ağaç ebeveyn dağılımı"
+
+msgid "Save tree as file"
+msgstr "Ağacı dosya olarak kaydet"
+
+msgid "Search:"
+msgstr "Ara:"
+
+msgid "Select the background color scheme"
+msgstr "Arka plan renk şemasını seçin"
+
+msgid "Select the children distribution (fan charts only)"
+msgstr "Çocukların dağılımını seçin (sadece yelpaze grafikleri için)"
+
+msgid "Select the number of ascending generations"
+msgstr "Artan nesillerin sayısını seçin"
+
+msgid "Select the number of descending generations"
+msgstr "Azalan nesillerin sayısını seçin"
+
+msgid "Select the parents distribution (fan charts only)"
+msgstr "Ebeveyn dağılımını seçin (sadece yelpaze grafikleri için)"
+
+msgid "Select the shape of graph"
+msgstr "Grafiğin şeklini seçin"
+
+msgid "Select the type of graph"
+msgstr "Grafik türünü seçin"
+
+msgid "Several matches.<br>Precise your search or choose in the lists below."
+msgstr ""
+"Birden fazla eşleşme.<br>Aramanızı netleştirin veya aşağıdaki listelerden "
+"birini seçin."
+
+msgid "Show _MENU_ entries"
+msgstr "_MENÜ_ girişlerini göster"
+
+msgid "Show duplicates"
+msgstr "Yinelenenleri göster"
+
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "0 ile 0 arası 0 kayıt gösteriliyor"
+
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "_START_ ile _END_ arasındaki _TOTAL_ giriş gösteriliyor"
+
+msgid "Sort by:"
+msgstr "Sırala:"
+
+msgid "Sources Index"
+msgstr "Kaynaklar Dizini"
+
+msgid "Suppress Gramps ID"
+msgstr "Gramps Kimliğini bastır"
+
+msgid "Surnames Index"
+msgstr "Soyadlar Dizini"
+
+msgid "U"
+msgstr "K"
+
+msgid "Use tabbed panels instead of sections"
+msgstr "Bölümler yerine sekmeli paneller kullanın"
+
+msgid "Use the search box above in order to find a person."
+msgstr "Bir kişiyi bulmak için yukarıdaki arama kutusunu kullanın."
+
+msgid "Use a table format for the surnames index"
+msgstr "Soyadlar dizini için bir tablo biçimi kullanın"
+
+msgid "Use a table format for the persons index"
+msgstr "Kişiler dizini için bir tablo biçimi kullanın"
+
+msgid "Use a table format for the families index"
+msgstr "Aileler dizini için bir tablo biçimi kullanın"
+
+msgid "Use a table format for the sources index"
+msgstr "Kaynaklar dizini için bir tablo biçimi kullanın"
+
+msgid "Use a table format for the places index"
+msgstr "Yerler dizini için bir tablo biçimi kullanın"
+
+msgid "Used for family"
+msgstr "Aile için kullanıldı"
+
+msgid "Used for media"
+msgstr "Medya için kullanıldı"
+
+msgid "Used for person"
+msgstr "Kişi için kullanıldı"
+
+msgid "Used for place"
+msgstr "Yer için kullanıldı"
+
+msgid "Used for source"
+msgstr "Kaynak için kullanıldı"
+
+msgid "Web Link"
+msgstr "Web Bağlantısı"
+
+msgid ""
+"Whether to use a special color for the persons that appear several times in "
+"the SVG tree"
+msgstr ""
+"SVG ağacında birden fazla kez görünen kişiler için özel bir renk kullanılıp "
+"kullanılmayacağı"
+
+msgid "Without name"
+msgstr "Adı olmadan"
+
+msgid "Without surname"
+msgstr "Soyadı olmadan"
+
+msgid "Without title"
+msgstr "Başlık olmadan"
+
+msgid "Zoom in"
+msgstr "Yakınlaştır"
+
+msgid "Zoom out"
+msgstr "Uzaklaştır"
+
+msgid "all"
+msgstr "Tümü"
+
+#, python-format
+msgid "Copying error: %(error)s"
+msgstr "Kopyalama hatası: %(error)s"
+
+#, python-format
+msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
+msgstr "\"%(src)s\" dosyasını \"%(dst)s\" konumuna kopyalamak mümkün değil"
+
+#, python-format
+msgid "Unable to copy web site template files from \"%(path)s\""
+msgstr "\"%(path)s\" konumundan web sitesi şablon dosyaları kopyalanamıyor"
+
+#, python-format
+msgid "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
+msgstr "\"%(dst)s\" ( \"%(src)s\"den daha yeni) korunuyor"
+
+#, python-format
+msgid "Copying \"%(src)s\" to \"%(dst)s\""
+msgstr "\"%(src)s\" \"%(dst)s\" konumuna kopyalanıyor"
+
+#, python-format
+msgid "Unable to overwrite archive file \"%(path)s\""
+msgstr "Arşiv dosyası \"%(path)s\" üzerine yazılamıyor"
+
+#, python-format
+msgid "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
+msgstr "“%(file)s” dosyası “%(archive)s” arşivine eklenemiyor"
+
+#, python-format
+msgid "DynamicWebReport ignoring link type '%(class)s'"
+msgstr "DynamicWebReport '%(class)s' bağlantı türünü yok sayıyor"
+
+#, python-format
+msgid "Family of %(father)s"
+msgstr "%(father)s ailesi"
+
+#, python-format
+msgid "Family of %(mother)s"
+msgstr "%(mother)s ailesi"
+
+msgid ""
+"In this note, the following special words are processed:\n"
+"__SEARCH_FORM__ is replaced by a search form.\n"
+"__NB_INDIVIDUALS__ is replaced by the number of persons.\n"
+"__NB_FAMILIES__ is replaced by the number of families.\n"
+"__NB_MEDIA__ is replaced by the number of media.\n"
+"__NB_SOURCES__ is replaced by the number of sources.\n"
+"__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
+"__NB_PLACES__ is replaced by the number of places.\n"
+"__MEDIA_<gid>__ is replaced by the media with Gramps ID <gid>.\n"
+"__THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID "
+"<gid>.\n"
+"__EXPORT_DATE__ is replaced by the current date.\n"
+"__GRAMPS_VERSION__ is replaced by the Gramps version.\n"
+"__GRAMPS_HOMEPAGE__ is replaced by the Gramps homepage link.\n"
+"URL starting with \"relative://relative.<link>\" are replaced by the "
+"relative URL \"<link>\".\n"
+msgstr ""
+"Bu notta, aşağıdaki özel kelimeler işlenir:\n"
+"__SEARCH_FORM__ bir arama formuyla değiştirilir.\n"
+"__NB_INDIVIDUALS__ kişi sayısıyla değiştirilir.\n"
+"__NB_FAMILIES__ aile sayısıyla değiştirilir.\n"
+"__NB_MEDIA__ medya sayısıyla değiştirilir.\n"
+"__NB_SOURCES__ kaynak sayısıyla değiştirilir.\n"
+"__NB_REPOSITORIES__ depo sayısıyla değiştirilir.\n"
+"__NB_PLACES__ yer sayısıyla değiştirilir.\n"
+"__MEDIA_<gid>__ <gid> Gramps kimliğine sahip medya ile değiştirilir.\n"
+"__THUMB_<gid>__ <gid> Gramps kimliğine sahip medyanın küçük resmi ile "
+"değiştirilir.\n"
+"__EXPORT_DATE__ mevcut tarih ile değiştirilir.\n"
+"__GRAMPS_VERSION__ Gramps sürümü ile değiştirilir.\n"
+"__GRAMPS_HOMEPAGE__ Gramps ana sayfa bağlantısı ile değiştirilir.\n"
+"\"relative://relative.<link>\" ile başlayan URL adresi \"<link>\" göreli URL "
+"adresi ile değiştirilir.\n"
+
+msgid "Store web pages in archive"
+msgstr "Web sayfalarını arşivde saklayın"
+
+msgid ""
+"Whether to create an archive file (in ZIP or TGZ format) containing the web "
+"site"
+msgstr ""
+"Web sitesini içeren (ZIP veya TGZ biçiminde) bir arşiv dosyası oluşturulup "
+"oluşturulmayacağı"
+
+msgid "Archive file"
+msgstr "Arşiv dosyası"
+
+msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
+msgstr "Arşiv dosyasının adı (\".zip\" veya \".tgz\" uzantısıyla)"
+
+msgid "Web site title"
+msgstr "Web sitesi başlığı"
+
+msgid "The title of the web site"
+msgstr "Web sitesinin başlığı"
+
+msgid "Select filter to restrict people that appear on web site"
+msgstr "Web sitesinde görünen kişileri kısıtlamak için filtre seçin"
+
+msgid "Name format (short)"
+msgstr "Ad biçimi (kısa)"
+
+msgid "Select the format to display a shorter version of the names"
+msgstr "Adların daha kısa bir sürümünü görüntülemek için biçimi seçin"
+
+msgid "Web site template"
+msgstr "Web sitesi şablonu"
+
+msgid "Select the template of the web site"
+msgstr "Web sitesinin şablonunu seçin"
+
+msgid "Include records marked private"
+msgstr "Özel olarak işaretlenmiş kayıtları dahil et"
+
+msgid "Whether to include private objects"
+msgstr "Özel nesnelerin dahil edilip edilmeyeceği"
+
+msgid "Include Last Name Only"
+msgstr "Sadece Soyadını Dahil Et"
+
+msgid "Include Full Name Only"
+msgstr "Sadece Tam Adı Dahil Et"
+
+msgid ""
+"This allows you to restrict information on people who have not been dead for "
+"very long"
+msgstr ""
+"Bu, çok uzun süre önce ölmemiş kişiler hakkındaki bilgileri kısıtlamanıza "
+"olanak tanır"
+
+msgid "Export notes"
+msgstr "Notları dışa aktar"
+
+msgid "Whether to export notes in the web pages"
+msgstr "Web sayfalarındaki notların dışa aktarılıp aktarılmayacağı"
+
+msgid "Export sources"
+msgstr "Kaynakları dışa aktar"
+
+msgid "Whether to export sources and citations in the web pages"
+msgstr "Web sayfalarındaki kaynakları ve alıntıları dışa aktarıp aktarmama"
+
+msgid "Export addresses"
+msgstr "Adresleri dışa aktarın"
+
+msgid "Whether to export addresses in the web pages"
+msgstr "Web sayfalarındaki adreslerin dışa aktarılıp aktarılmayacağı"
+
+msgid "Whether or not to include the Repository Pages."
+msgstr "Depo Sayfalarının dahil edilip edilmeyeceği."
+
+msgid "Include images and media"
+msgstr "Resimler ve medya dahil edin"
+
+msgid "Whether to include images and media in the web pages"
+msgstr ""
+"Web sayfalarında görüntü ve medya içeriklerinin dahil edilip edilmeyeceği"
+
+msgid "Copy, rename files with an internal Gramps identifier"
+msgstr ""
+"Dosyaları dahili bir Gramps tanımlayıcısıyla kopyalayın, yeniden adlandırın"
+
+msgid "Copy, keep file names unchanged"
+msgstr "Kopyala, dosya adlarını değiştirmeden koru"
+
+msgid "Do not copy, reference existing files"
+msgstr "Kopyalamayın, mevcut dosyalara referans verin"
+
+msgid "Images and media"
+msgstr "Resimler ve medya"
+
+msgid "Whether to make a copy of the media"
+msgstr "Medyanın bir kopyasının yapılıp yapılmayacağı"
+
+msgid "Print the notes type"
+msgstr "Not türünü yazdırın"
+
+msgid "Whether to print the notes type in the notes text"
+msgstr "Notlar metninde not türünün yazdırılıp yazdırılmayacağı"
+
+msgid "Print place pages"
+msgstr "Yer sayfalarını yazdırın"
+
+msgid "Whether to show pages for the places"
+msgstr "Yerler için sayfaların gösterilip gösterilmeyeceği"
+
+msgid "Choose your choice of map service for creating the Place Map Pages"
+msgstr ""
+"Yer Haritası Sayfalarını oluşturmak için tercih ettiğiniz harita hizmetini "
+"seçin"
+
+msgid "Google map API key"
+msgstr "Google Harita API anahtarı"
+
+msgid "The API key used for the Google map"
+msgstr "Google haritası için kullanılan API anahtarı"
+
+msgid "Whether or not to include family pages"
+msgstr "Aile sayfalarının dahil edilip edilmeyeceği"
+
+msgid ""
+"Whether to include half and/ or step-siblings with the parents and siblings"
+msgstr ""
+"Üvey ve/veya yarı üvey kardeşlerin ebeveynler ve kardeşlerle birlikte dahil "
+"edilip edilmeyeceği"
+
+msgid "Enable page configuration"
+msgstr "Sayfa yapılandırmasını etkinleştir"
+
+msgid "Whether to enable page configuration"
+msgstr "Sayfa yapılandırmasının etkinleştirilip etkinleştirilmeyeceği"
+
+msgid "Whether to use tabbed panels for the different sections of the pages."
+msgstr ""
+"Sayfaların farklı bölümleri için sekmeli panellerin kullanılıp "
+"kullanılmayacağı."
+
+msgid "Whether to show the last modification time in the pages footer"
+msgstr ""
+"Sayfanın alt bilgisinde son değişiklik zamanının gösterilip gösterilmeyeceği"
+
+msgid "Whether to insert sources author in the sources title"
+msgstr "Kaynak başlığında kaynak yazarının eklenip eklenmeyeceği"
+
+msgid "Whether to hide the Gramps ID"
+msgstr "Gramps kimliğinin gizlenip gizlenmeyeceği"
+
+msgid "List"
+msgstr "Liste"
+
+msgid "Table"
+msgstr "Tablo"
+
+msgid "Default format for the surnames index"
+msgstr "Soyadları dizini için varsayılan biçim"
+
+msgid "The default format for the surnames index"
+msgstr "Soyadları dizini için varsayılan biçim"
+
+msgid "Default format for the persons index"
+msgstr "Kişiler dizini için varsayılan biçim"
+
+msgid "The default format for the persons index"
+msgstr "Kişiler dizini için varsayılan biçim"
+
+msgid "Default format for the families index"
+msgstr "Aileler dizini için varsayılan biçim"
+
+msgid "The default format for the families index"
+msgstr "Aileler dizini için varsayılan biçim"
+
+msgid "Default format for the sources index"
+msgstr "Kaynaklar dizini için varsayılan biçim"
+
+msgid "The default format for the sources index"
+msgstr "Kaynaklar dizini için varsayılan biçim"
+
+msgid "Default format for the places index"
+msgstr "Yerler dizini için varsayılan biçim"
+
+msgid "The default format for the places index"
+msgstr "Yerler dizini için varsayılan biçim"
+
+msgid ""
+"Whether to include dates columns (birth, death, marriage) on the index pages"
+msgstr ""
+"Dizin sayfalarına tarih sütunlarının (doğum, ölüm, evlilik) dahil edilip "
+"edilmeyeceği"
+
+msgid "Generate a families index page"
+msgstr "Aileler için bir dizin sayfası oluşturun"
+
+msgid "Whether to generate an index page for families"
+msgstr "Aileler için bir dizin sayfası oluşturulup oluşturulmayacağı"
+
+msgid "Whether to include a column showing the media path"
+msgstr "Medya yolunu gösteren bir sütunun dahil edilip edilmeyeceği"
+
+msgid ""
+"Whether to include the references to the items in the index pages. For "
+"example, in the media index page, the names of the individuals, families, "
+"places, sources that reference the media."
+msgstr ""
+"Dizin sayfalarında öğelere ilişkin referansların dahil edilip edilmeyeceği. "
+"Örneğin, medya dizin sayfasında, medyaya atıfta bulunan bireylerin, "
+"ailelerin, yerlerin ve kaynakların adları."
+
+msgid "Default number of entries in the indexes"
+msgstr "Dizinlerdeki varsayılan giriş sayısı"
+
+msgid "The default number of entries shown in one index page"
+msgstr "Bir dizin sayfasında gösterilen varsayılan giriş sayısı"
+
+msgid "Maximum number of generations"
+msgstr "Maksimum nesil sayısı"
+
+msgid ""
+"The maximum number of generations to include in the ancestor and descendant "
+"trees and graphs"
+msgstr ""
+"Ata ve soyundan gelen ağaçları ve grafiklerinde dahil edilecek maksimum "
+"nesil sayısı"
+
+msgid "Choose the default SVG tree graph type"
+msgstr "Varsayılan SVG ağaç grafiği türünü seçin"
+
+msgid "Choose the default SVG tree graph shape"
+msgstr "Varsayılan SVG ağaç grafiği şeklini seçin"
+
+msgid "Choose the default SVG tree parents distribution (for fan charts only)"
+msgstr ""
+"Varsayılan SVG ağaç ebeveynleri dağılımını seçin (yalnızca yelpaze "
+"grafikleri için)"
+
+msgid "Choose the default SVG tree children distribution (for fan charts only)"
+msgstr ""
+"Yelpaze grafikler (yalnızca yelpaze grafikler) için varsayılan SVG ağaç "
+"çocuk dağılımını seçin"
+
+msgid ""
+"Choose the background color scheme for the persons in the SVG tree graph"
+msgstr "SVG ağaç grafiğindeki kişiler için arka plan renk şemasını seçin"
+
+msgid "Theme"
+msgstr "Tema"
+
+msgid "Pages"
+msgstr "Sayfalar"
+
+msgid "A note to be used as the page header"
+msgstr "Sayfa başlığı olarak kullanılacak bir not"
+
+msgid "HTML user brand name / icon"
+msgstr "HTML kullanıcı marka adı / simgesi"
+
+msgid "A note to be used as the brand name or image in the menu"
+msgstr "Menüde marka adı veya resim olarak kullanılmak üzere bir not"
+
+msgid "Custom pages"
+msgstr "Özel sayfalar"
+
+#, python-format
+msgid "Title for the custom page %(index)i"
+msgstr "Özel sayfa %(index)i için başlık"
+
+#, python-format
+msgid "Name for the custom page %(index)i"
+msgstr "Özel sayfa %(index)i için ad"
+
+#, python-format
+msgid "Note for custom page %(index)i"
+msgstr "Özel sayfa %(index)i için not"
+
+msgid "A note to be used for the custom page content.\n"
+msgstr "Özel sayfa içeriği için kullanılacak bir not.\n"
+
+#, python-format
+msgid "Menu for the custom page %(index)i"
+msgstr "Özel sayfa %(index)i için menü"
+
+msgid "Whether to print a menu for the custom page"
+msgstr "Özel sayfa için bir menünün yazdırılıp yazdırılmayacağı"
+
+msgid "Pages selection"
+msgstr "Sayfa seçimi"
+
+msgid "Number of pages"
+msgstr "Sayfa sayısı"
+
+msgid "Number pages in the web site menu."
+msgstr "Web sitesinin menüsündeki sayfaları numaralandır."
+
+#, python-format
+msgid "Contents of page %(index)i"
+msgstr "Sayfanın içeriği %(index)i"
+
+msgid "Contents of the page"
+msgstr "Sayfanın içeriği"

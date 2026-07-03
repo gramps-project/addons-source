@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-14 19:17+0000\n"
+"PO-Revision-Date: 2026-07-01 15:01+0000\n"
 "Last-Translator: \"David D.\" <dadu042@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 2026.5.dev0\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 #, python-format
 msgid "Form: %s"
@@ -55,6 +55,9 @@ msgstr "Erreur de syntaxe XML dans le fichier de définition du formulaire"
 msgid "Select Form"
 msgstr "Sélectionner le formulaire"
 
+msgid "CensusCheck"
+msgstr "RecensementVérif"
+
 msgid ""
 "Check whether any Census events are missing for a person and some of their "
 "descendents"
@@ -69,14 +72,29 @@ msgstr ""
 "Vérifie si des événements de recensement sont manquants pour une personne et "
 "certains de ses ancêtres"
 
+msgid "Signature of Head of Household"
+msgstr "Signature du chef de famille"
+
+msgid "Signature of Enumerator"
+msgstr "Signature du recenseur"
+
 msgid "Persons"
 msgstr "Personnes"
 
 msgid "Rooms"
 msgstr "Pièces"
 
+msgid "Street etc with No. of House"
+msgstr "Rue, etc., avec n° de maison"
+
+msgid "Name of Public Institution"
+msgstr "Nom d’établissement public"
+
 msgid "Relation"
 msgstr "Relation"
+
+msgid "Year Age"
+msgstr "Âge en années"
 
 msgid "Age in years"
 msgstr "Âge en années"
@@ -87,23 +105,72 @@ msgstr "Sexe"
 msgid "Irish Language"
 msgstr "Langue irlandaise"
 
+msgid ""
+"\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
+"cannot speak Irish\""
+msgstr ""
+"\"Irlandais uniquement\", \"Irlandais et anglais\", \"Anglais et "
+"irlandais\", \"Lit mais ne pas parle pas l’irlandais\""
+
 msgid "Personal Occupation"
 msgstr "Profession"
 
 msgid "Years Married"
 msgstr "Années de mariage"
 
+msgid "Years married in present Marriage"
+msgstr "Années de mariage actuel"
+
+msgid "Months Married"
+msgstr "Mois de mariage"
+
+msgid "(1.) Entry no."
+msgstr "(1.) Numéro d’entrée"
+
+msgid "Superintendent Registrar's District"
+msgstr "District du surintendant des registres"
+
+msgid "(2.) Date and Place of Birth"
+msgstr "(2.) Date et Lieu de naissance"
+
+msgid "(7.) Rank or Profession of Father"
+msgstr "(7.) Rang ou profession du père"
+
 msgid "Maiden Surname"
 msgstr "Nom de jeune fille"
+
+msgid "Year"
+msgstr "Année"
+
+msgid "Solemnized at the Catholic"
+msgstr "Solennisé à l’église catholique"
+
+msgid "Certificate number"
+msgstr "Numéro de certificat"
+
+msgid "Page number"
+msgstr "Numéro de page"
 
 msgid "Condition"
 msgstr "Statut familial"
 
+msgid "Residence at the Time of Marriage"
+msgstr "Résidence au moment du mariage"
+
 msgid "Date of Death"
 msgstr "Date de décès"
 
+msgid "(2.) Date and Place of Death"
+msgstr "(2.) Date et lieu du décès"
+
 msgid "Place of Death"
 msgstr "Lieu de décès"
+
+msgid "(6.) Age last Birthday"
+msgstr "(6.) Âge dernier anniversaire"
+
+msgid "Duration of Illness"
+msgstr "Durée de maladie"
 
 msgid "Schedule"
 msgstr "Calendrier"

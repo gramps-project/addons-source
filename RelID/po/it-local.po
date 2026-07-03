@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2025-09-12 17:22+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,10 +12,83 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 msgid "Select filter to restrict people"
 msgstr "Seleziona filtro per restringere le persone"
 
+msgid "Relation"
+msgstr "Relazione"
+
+msgid "Period"
+msgstr "Periodo"
+
+msgid "Shared Subtree"
+msgstr "Sottoalbero condiviso"
+
+msgid "Centrality"
+msgstr "Centralità"
+
+msgid "Unique Ancestors"
+msgstr "Ascendenti unici"
+
+msgid "Surname Diversity"
+msgstr "Diversità dei cognomi"
+
 msgid "Save"
 msgstr "Salva"
+
+msgid "Quit"
+msgstr "Esci"
+
+msgid "No default person set."
+msgstr "Nessuna persona predefinita impostata."
+
+msgid "Please wait, filtering..."
+msgstr "Attendi, filtraggio..."
+
+msgid "Network Metrics"
+msgstr "Metriche di rete"
+
+msgid "Enabled"
+msgstr "Abilitato"
+
+msgid "Enable or disable family network metrics"
+msgstr "Abilita o disabilita le metriche della rete familiare"
+
+msgid "Generating relation map..."
+msgstr "Generazione della mappa delle relazioni..."
+
+#, python-format
+msgid "%d/%d \t\t %d/%d \t\t%f"
+msgstr "%d/%d \t\t %d/%d \t\t%f"
+
+msgid "Folder Chooser"
+msgstr "Selettore di cartelle"
+
+msgid "Please, select a folder"
+msgstr "Seleziona una cartella"
+
+msgid "Foldername need"
+msgstr "Nome della cartella necessario"
+
+msgid "Foldername will be used for saving the content."
+msgstr "Il nome della cartella verrà utilizzato per salvare il contenuto."
+
+msgid "Did you set a foldername?"
+msgstr "Hai impostato il nome della cartella?"
+
+msgid "Cannot set a valid location."
+msgstr "Impossibile impostare una posizione valida."
+
+msgid "Failed to save data."
+msgstr "Impossibile salvare i dati."
+
+msgid "Relationships Map and Tab"
+msgstr "Mappa e scheda delle relazioni"
+
+msgid "Enable family network metrics"
+msgstr "Abilita le metriche della rete familiare"
+
+msgid "Whether to calculate and display family network metrics."
+msgstr "Se calcolare e visualizzare le metriche della rete familiare."

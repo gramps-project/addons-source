@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-10-07 09:02+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-06-10 19:07+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 2026.6\n"
+
+msgid "SV Web Connect Pack"
+msgstr "SV מרשתת חיבור חבילה"
+
+msgid "Collection of Web sites for Sweden (requires libwebconnect)"
+msgstr "אוסף אתרי מרשתת עבור שוודיה (דורש libwebconnect)"
 
 msgid "Find A Grave"
 msgstr "Find A Grave"
@@ -23,3 +29,33 @@ msgstr "FamilySearch.org"
 
 msgid "Google SV"
 msgstr "Google SV"
+
+msgid "FamilySearch.org Tree"
+msgstr "FamilySearch.org אילן"
+
+msgid "National archives of Sweden personsearch"
+msgstr "חיפוש אדם בארכיון הלאומי של שוודיה"
+
+msgid "National archives of Sweden free search"
+msgstr "חיפוש חופשי בארכיון הלאומי של שוודיה"
+
+msgid "Arkiv Digital estate records for Skåne"
+msgstr "רשומות עיזבון של Arkiv Digital עבור סקונה"
+
+msgid "Ancestry Search"
+msgstr "חיפוש Ancestry"
+
+msgid "Find swedish portraits - Rötter.se"
+msgstr "איתור דיוקנאות שוודיים - Rötter.se"
+
+msgid "Gravar.se - find swedish graves"
+msgstr "Gravar.se - איתור קברים שוודיים"
+
+msgid "National archives of Sweden search censuses"
+msgstr "חיפוש מפקדי אוכלוסין בארכיון הלאומי של שוודיה"
+
+msgid "Arkiv Digital released prisoners"
+msgstr "אסירים ששוחררו ב־Arkiv Digital"
+
+msgid "Gravestone inventory - rötter.se"
+msgstr "מצאי מצבות - rötter.se"
