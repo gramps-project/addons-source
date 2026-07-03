@@ -132,6 +132,8 @@ class DegreesOfSeparation(Rule):
         fam_list = person.parent_family_list
         for fam_h in fam_list:
             fam = self.db.get_raw_family_data(fam_h)
+            for child_ref in fam.child_ref_list:
+                self.persons.add(child_ref.ref)
             father_h = fam.father_handle
             if father_h:
                 father = self.db.get_raw_person_data(father_h)
