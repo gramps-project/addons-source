@@ -38,7 +38,7 @@ class BirthdaysGramplet(Gramplet):
     def init(self):
         self.set_text(_("No Family Tree loaded."))
         self.max_age = config.get('behavior.max-age-prob-alive')
-        self.sort_mode = 'month_day'
+        self.sort_mode = 'proximity'
 
     def build_options(self):
         """Build the configuration options"""
