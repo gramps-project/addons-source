@@ -23,7 +23,7 @@
 from gramps.gen.plug import Gramplet
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.display.name import displayer as name_displayer
-from gramps.gen.lib.date import Today, Date
+from gramps.gen.lib.date import Today, Date, gregorian
 import gramps.gen.datehandler
 from gramps.gen.config import config
 from gramps.gen.plug.menu import EnumeratedListOption
@@ -154,9 +154,10 @@ class BirthdaysGramplet(Gramplet):
             birth = database.get_event_from_handle(birth_ref.ref)
             birth_date = birth.get_date_object()
             if birth_date.is_regular():
+                birth_greg = gregorian(birth_date)
                 birthday_this_year = Date(today.get_year(),
-                                          birth_date.get_month(),
-                                          birth_date.get_day())
+                                          birth_greg.get_month(),
+                                          birth_greg.get_day())
                 next_age = birthday_this_year - birth_date
                 # (0 year, months, days) between now and birthday of this
                 # year (positive if passed):
