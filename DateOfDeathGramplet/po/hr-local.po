@@ -19,7 +19,7 @@ msgid "Date of Death"
 msgstr "Datum smrti"
 
 msgid "a gramplet that displays death dates in sorted order"
-msgstr ""
+msgstr "gramplet koji prikazuje datume smrti poredane"
 
 msgid "No Family Tree loaded."
 msgstr "Nije učitano obiteljsko stablo."

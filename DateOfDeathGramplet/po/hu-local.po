@@ -18,7 +18,7 @@ msgid "Date of Death"
 msgstr "Halálozási dátum"
 
 msgid "a gramplet that displays death dates in sorted order"
-msgstr ""
+msgstr "egy gramplet amely a halálozási dátumokat rendezve jeleníti meg"
 "egy gramplet amely a halálozási dátumokat jeleníti meg hónap és nap szerint "
 "rendezve"
 

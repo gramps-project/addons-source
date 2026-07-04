@@ -18,7 +18,7 @@ msgid "Date of Death"
 msgstr "Data de defunció"
 
 msgid "a gramplet that displays death dates in sorted order"
-msgstr ""
+msgstr "un gramplet que mostra les dates de defunció ordenades"
 
 msgid "No Family Tree loaded."
 msgstr "No hi ha cap arbre familiar carregat."
