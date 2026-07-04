@@ -36,7 +36,7 @@ from gramps.version import major_version, VERSION_TUPLE
 #
 # -------------------------------------------------------------------------
 
-if VERSION_TUPLE >= (6, 0, 0):
+if VERSION_TUPLE >= (5, 2, 0):
     register(
         TOOL,
         id="associationstool",
