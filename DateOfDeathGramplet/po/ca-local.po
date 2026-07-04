@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2025-09-03 03:01+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
@@ -17,12 +17,20 @@ msgstr ""
 msgid "Date of Death"
 msgstr "Data de defunció"
 
-msgid "a gramplet that displays dates of death sorted by month and day"
-msgstr "un gramplet que mostra les dates de defunció ordenades per mes i dia"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr ""
 
 msgid "No Family Tree loaded."
 msgstr "No hi ha cap arbre familiar carregat."
 
+msgid "Sort dates of death by"
+msgstr "Ordena les dates de mort per"
+
+msgid "Month and day"
+msgstr "Mes i dia"
+
+msgid "Proximity to current date"
+msgstr "Proximitat a la data actual"
+
 msgid "Processing..."
 msgstr "Processant…"
-

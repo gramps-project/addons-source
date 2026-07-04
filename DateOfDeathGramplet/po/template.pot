@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-04 12:00+0000\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: DateOfDeathGramplet/DateOfDeathGramplet.gpr.py:25
-#: DateOfDeathGramplet/DateOfDeathGramplet.gpr.py:34
 msgid "Date of Death"
 msgstr ""
 
-#: DateOfDeathGramplet/DateOfDeathGramplet.gpr.py:26
-msgid "a gramplet that displays dates of death sorted by month and day"
+msgid "a gramplet that displays death dates in sorted order"
 msgstr ""
 
-#: DateOfDeathGramplet/DateOfDeathGramplet.py:28
 msgid "No Family Tree loaded."
 msgstr ""
 
-#: DateOfDeathGramplet/DateOfDeathGramplet.py:39
+msgid "Sort dates of death by"
+msgstr ""
+
+msgid "Month and day"
+msgstr ""
+
+msgid "Proximity to current date"
+msgstr ""
+
 msgid "Processing..."
 msgstr ""

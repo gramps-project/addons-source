@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
@@ -17,12 +17,20 @@ msgstr ""
 msgid "Date of Death"
 msgstr "Dátum úmrtia"
 
-msgid "a gramplet that displays dates of death sorted by month and day"
-msgstr "gramplet zobrazujúci dátumy úmrtia zoradené podľa mesiaca a dňa"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr ""
 
 msgid "No Family Tree loaded."
 msgstr "Nie je načítaný žiadny rodokmeň."
 
+msgid "Sort dates of death by"
+msgstr "Zoradiť dátumy úmrtia podľa"
+
+msgid "Month and day"
+msgstr "Mesiac a deň"
+
+msgid "Proximity to current date"
+msgstr "Blízkosť k aktuálnemu dátumu"
+
 msgid "Processing..."
 msgstr "Spracúvam…"
-

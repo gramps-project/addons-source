@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -18,12 +18,20 @@ msgstr ""
 msgid "Date of Death"
 msgstr "Dødsdato"
 
-msgid "a gramplet that displays dates of death sorted by month and day"
-msgstr "en gramplet som viser dødsdatoer sortert etter måned og dag"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr ""
 
 msgid "No Family Tree loaded."
 msgstr "Ingen familietre lastet."
 
+msgid "Sort dates of death by"
+msgstr "Sorter dødsdatoene etter"
+
+msgid "Month and day"
+msgstr "Måned og dag"
+
+msgid "Proximity to current date"
+msgstr "Nærhet til gjeldende dato"
+
 msgid "Processing..."
 msgstr "Behandler…"
-

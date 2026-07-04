@@ -21,7 +21,9 @@
 from gramps.gen.plug import Gramplet
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.lib.date import Today, Date, gregorian
 import gramps.gen.datehandler
+from gramps.gen.plug.menu import EnumeratedListOption
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -32,6 +34,29 @@ _ = _trans.gettext
 class DateOfDeathGramplet(Gramplet):
     def init(self):
         self.set_text(_("No Family Tree loaded."))
+        self.sort_mode = 'proximity'
+
+    def build_options(self):
+        name_sort = _("Sort dates of death by")
+        self.opt_sort = EnumeratedListOption(name_sort, self.sort_mode)
+        self.opt_sort.add_item("proximity", _("Proximity to current date"))
+        self.opt_sort.add_item("month_day", _("Month and day"))
+
+        self.add_option(self.opt_sort)
+
+    def save_options(self):
+        self.sort_mode = self.opt_sort.get_value()
+
+    def save_update_options(self, obj):
+        self.save_options()
+        self.gui.data = [self.sort_mode]
+        self.update()
+
+    def on_load(self):
+        if len(self.gui.data) >= 1:
+            self.sort_mode = self.gui.data[0]
+        else:
+            self.sort_mode = 'proximity'
 
     def db_changed(self):
         self.connect(self.dbstate.db, 'person-add', self.update)
@@ -52,28 +77,54 @@ class DateOfDeathGramplet(Gramplet):
             if not date_of_death.is_regular():
                 continue
 
-            age = ""
-            birth_ref = person.get_birth_ref()
-            if birth_ref:
-                birth = database.get_event_from_handle(birth_ref.ref)
-                birth_date = birth.get_date_object()
-                if birth_date.is_regular():
-                    age = date_of_death - birth_date
+            self.__calculate(database, person)
 
-            self.result.append((date_of_death, person, age))
-
-        self.result.sort(key=lambda item: (item[0].get_month(),
-                                           item[0].get_day()))
+        sort_by = self.opt_sort.get_value()
+        if sort_by == "proximity":
+            self.result.sort(key=lambda item: -item[0])
+        else:
+            self.result.sort(key=lambda item: (item[1].get_month(),
+                                               item[1].get_day()))
         self.clear_text()
 
-        for date_of_death, person, age in self.result:
+        for diff_days, date, person, age in self.result:
             name = person.get_primary_name()
             displayer = gramps.gen.datehandler.displayer
-            self.append_text("{}: ".format(displayer.display(date_of_death)))
+            self.append_text("{}: ".format(displayer.display(date)))
             self.link(name_displayer.display_name(name), "Person",
                       person.handle)
             if age:
-                self.append_text(" ({})\n".format(age[0]))
+                self.append_text(" ({})\n".format(age))
             else:
                 self.append_text("\n")
         self.append_text("", scroll_to="begin")
+
+    def __calculate(self, database, person):
+        today = Today()
+        death_ref = person.get_death_ref()
+        if not death_ref:
+            return
+        death_event = database.get_event_from_handle(death_ref.ref)
+        date_of_death = death_event.get_date_object()
+        if not date_of_death.is_regular():
+            return
+
+        death_greg = gregorian(date_of_death)
+        death_this_year = Date(today.get_year(),
+                               death_greg.get_month(),
+                               death_greg.get_day())
+        diff = today - death_this_year
+        diff_days = diff[1] * 30 + diff[2]
+
+        birth_ref = person.get_birth_ref()
+        age = ""
+        if birth_ref:
+            birth = database.get_event_from_handle(birth_ref.ref)
+            birth_date = birth.get_date_object()
+            if birth_date.is_regular():
+                age = date_of_death - birth_date
+
+        if diff_days <= 0:
+            self.result.append((diff_days, date_of_death, person, age))
+        else:
+            self.result.append((diff_days - 365, date_of_death, person, age))

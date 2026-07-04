@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2026-05-30 20:01+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
@@ -20,12 +20,20 @@ msgstr ""
 msgid "Date of Death"
 msgstr "Ölüm tarihi"
 
-msgid "a gramplet that displays dates of death sorted by month and day"
-msgstr "ölüm tarihlerini aya ve güne göre sıralayan bir gramplet"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr ""
 
 msgid "No Family Tree loaded."
 msgstr "Hiçbir aile ağacı yüklenmedi."
 
+msgid "Sort dates of death by"
+msgstr "Ölüm tarihlerini şuna göre sırala:"
+
+msgid "Month and day"
+msgstr "Ay ve gün"
+
+msgid "Proximity to current date"
+msgstr "Güncel tarihe yakınlık"
+
 msgid "Processing..."
 msgstr "İşleniyor…"
-

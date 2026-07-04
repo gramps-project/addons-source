@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2025-03-02 14:58+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
@@ -18,12 +18,20 @@ msgstr ""
 msgid "Date of Death"
 msgstr "Datum smrti"
 
-msgid "a gramplet that displays dates of death sorted by month and day"
-msgstr "gramplet koji prikazuje datume smrti poredane po mjesecu i danu"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr ""
 
 msgid "No Family Tree loaded."
 msgstr "Nije učitano obiteljsko stablo."
 
+msgid "Sort dates of death by"
+msgstr "Poredaj datume smrti prema"
+
+msgid "Month and day"
+msgstr "Mjesec i dan"
+
+msgid "Proximity to current date"
+msgstr "Blizina trenutnog datuma"
+
 msgid "Processing..."
 msgstr "Obrađujem…"
-

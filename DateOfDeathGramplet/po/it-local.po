@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2025-09-06 11:01+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
@@ -17,12 +17,20 @@ msgstr ""
 msgid "Date of Death"
 msgstr "Data di morte"
 
-msgid "a gramplet that displays dates of death sorted by month and day"
-msgstr "un gramplet che mostra le date di morte ordinate per mese e giorno"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr ""
 
 msgid "No Family Tree loaded."
 msgstr "Nessun albero genealogico caricato."
 
+msgid "Sort dates of death by"
+msgstr "Ordina le date di morte per"
+
+msgid "Month and day"
+msgstr "Mese e giorno"
+
+msgid "Proximity to current date"
+msgstr "Prossimità alla data attuale"
+
 msgid "Processing..."
 msgstr "Elaborazione in corso…"
-
