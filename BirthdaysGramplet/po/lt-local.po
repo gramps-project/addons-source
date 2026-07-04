@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2025-08-27 08:02+0000\n"
 "Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
@@ -24,8 +24,23 @@ msgstr "Gimtadieniai"
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "grampletas, rodanti gyvų žmonių gimtadienius"
 
+msgid "No Family Tree loaded."
+msgstr "Šeimos medis neįkeltas."
+
+msgid "Sort birthdays by"
+msgstr "Rūšiuoti gimtadienius pagal"
+
+msgid "Month and day"
+msgstr "Mėnuo ir diena"
+
+msgid "Proximity to current date"
+msgstr "Artumas iki dabartinės datos"
+
 msgid "Ignore birthdays with tag"
 msgstr "Nepaisyti gimtadienių su gairėmis"
 
 msgid "Only show birthdays with tag"
 msgstr "Rodyti tik gimimo datas su gaire"
+
+msgid "Processing..."
+msgstr "Apdorojama..."

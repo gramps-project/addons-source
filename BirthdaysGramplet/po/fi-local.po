@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2025-02-20 13:28+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
@@ -21,8 +21,23 @@ msgstr "Syntymäpäivät"
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "Gramplet, joka näyttää elävien ihmisten syntymä päivät ja iät"
 
+msgid "No Family Tree loaded."
+msgstr "Sukupuuta ei ladattu."
+
+msgid "Sort birthdays by"
+msgstr "Lajittele syntymäpäivät"
+
+msgid "Month and day"
+msgstr "Kuukausi ja päivä"
+
+msgid "Proximity to current date"
+msgstr "Läheisyys nykyiseen päivämäärään"
+
 msgid "Ignore birthdays with tag"
 msgstr "Jätä pois syntymäpäivät, joissa on tagi"
 
 msgid "Only show birthdays with tag"
 msgstr "Näytä vain syntymäpäivät, joissa on tagi"
+
+msgid "Processing..."
+msgstr "Käsitellään..."

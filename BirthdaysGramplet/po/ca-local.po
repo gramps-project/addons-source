@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2025-09-03 03:01+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
@@ -16,3 +16,27 @@ msgstr ""
 
 msgid "Birthdays"
 msgstr "Aniversaris"
+
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "un grample que mostra els aniversaris de les persones vives"
+
+msgid "No Family Tree loaded."
+msgstr "No s'ha carregat cap arbre genealògic."
+
+msgid "Sort birthdays by"
+msgstr "Ordena els aniversaris per"
+
+msgid "Month and day"
+msgstr "Mes i dia"
+
+msgid "Proximity to current date"
+msgstr "Proximitat a la data actual"
+
+msgid "Ignore birthdays with tag"
+msgstr "Ignora els aniversaris amb l'etiqueta"
+
+msgid "Only show birthdays with tag"
+msgstr "Mostra només els aniversaris amb etiqueta"
+
+msgid "Processing..."
+msgstr "S'està processant..."

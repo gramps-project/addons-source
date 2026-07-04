@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2025-05-19 21:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
@@ -20,8 +20,23 @@ msgstr "Geburtstage"
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "ein Gramplet, das die Geburtstage der lebenden Personen anzeigt"
 
+msgid "No Family Tree loaded."
+msgstr "Kein Stammbaum geladen."
+
+msgid "Sort birthdays by"
+msgstr "Geburtstage sortieren nach"
+
+msgid "Month and day"
+msgstr "Monat und Tag"
+
+msgid "Proximity to current date"
+msgstr "Nähe zum aktuellen Datum"
+
 msgid "Ignore birthdays with tag"
 msgstr "Geburtstage mit Etikett ignorieren"
 
 msgid "Only show birthdays with tag"
 msgstr "Nur Geburtstage mit Etikett anzeigen"
+
+msgid "Processing..."
+msgstr "Verarbeitung..."

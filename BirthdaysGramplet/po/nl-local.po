@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2025-04-14 22:32+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
@@ -18,11 +18,26 @@ msgid "Birthdays"
 msgstr "Verjaardagen"
 
 msgid "a gramplet that displays the birthdays of the living people"
-msgstr ""
+msgstr "een gramplet die de verjaardagen van de levende mensen weergeeft"
 "een gramplet dat de verjaardagen van de nog in leven zijnde personen toont"
+
+msgid "No Family Tree loaded."
+msgstr "Geen stamboom geladen."
+
+msgid "Sort birthdays by"
+msgstr "Sorteer verjaardagen op"
+
+msgid "Month and day"
+msgstr "Maand en dag"
+
+msgid "Proximity to current date"
+msgstr "Nabijheid tot de huidige datum"
 
 msgid "Ignore birthdays with tag"
 msgstr "Verjaardagen met label negeren"
 
 msgid "Only show birthdays with tag"
 msgstr "Alleen verjaardagen met label weergeven"
+
+msgid "Processing..."
+msgstr "Verwerken..."

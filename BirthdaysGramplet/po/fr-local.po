@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2026-05-14 19:17+0000\n"
 "Last-Translator: \"David D.\" <dadu042@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
@@ -20,8 +20,23 @@ msgstr "Jours de naissance"
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "Ce Gramplet affiche les anniversaires des personnes en vie"
 
+msgid "No Family Tree loaded."
+msgstr "Aucun arbre généalogique chargé."
+
+msgid "Sort birthdays by"
+msgstr "Trier les anniversaires par"
+
+msgid "Month and day"
+msgstr "Mois et jour"
+
+msgid "Proximity to current date"
+msgstr "Proximité à la date actuelle"
+
 msgid "Ignore birthdays with tag"
 msgstr "Ignorer les anniversaires avec cette étiquette"
 
 msgid "Only show birthdays with tag"
 msgstr "Montrer seulement les anniversaires avec cette étiquette"
+
+msgid "Processing..."
+msgstr "Traitement..."

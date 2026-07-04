@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2026-06-01 12:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -21,8 +21,23 @@ msgstr "Bursdager"
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "en gramplet som viser bursdager for levende personer"
 
+msgid "No Family Tree loaded."
+msgstr "Ingen slektstre lastet."
+
+msgid "Sort birthdays by"
+msgstr "Sorter bursdager etter"
+
+msgid "Month and day"
+msgstr "Måned og dag"
+
+msgid "Proximity to current date"
+msgstr "Nærhet til gjeldende dato"
+
 msgid "Ignore birthdays with tag"
 msgstr "Ignorer bursdager med merke"
 
 msgid "Only show birthdays with tag"
 msgstr "Vis kun bursdager med merke"
+
+msgid "Processing..."
+msgstr "Behandling..."
