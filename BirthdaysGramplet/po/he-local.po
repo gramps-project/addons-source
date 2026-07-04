@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2025-08-11 18:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
@@ -21,8 +21,23 @@ msgstr "ימי הולדת"
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "גרמפלט שמציג את ימי ההולדת של האנשים החיים"
 
+msgid "No Family Tree loaded."
+msgstr "לא נטען אילן יוחסין."
+
+msgid "Sort birthdays by"
+msgstr "מיין ימי הולדת לפי"
+
+msgid "Month and day"
+msgstr "חודש ויום"
+
+msgid "Proximity to current date"
+msgstr "קרבה לתאריך הנוכחי"
+
 msgid "Ignore birthdays with tag"
 msgstr "להתעלם מימי הולדת מתוייגים בתג"
 
 msgid "Only show birthdays with tag"
 msgstr "להציג רק ימי הולדת מתוייגים בתג"
+
+msgid "Processing..."
+msgstr "מעבד..."

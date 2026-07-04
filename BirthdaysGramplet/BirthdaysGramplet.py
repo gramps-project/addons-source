@@ -38,10 +38,17 @@ class BirthdaysGramplet(Gramplet):
     def init(self):
         self.set_text(_("No Family Tree loaded."))
         self.max_age = config.get('behavior.max-age-prob-alive')
+        self.sort_mode = 'month_day'
 
     def build_options(self):
         """Build the configuration options"""
         db = self.dbstate.db
+
+        name_sort = _("Sort birthdays by")
+        self.opt_sort = EnumeratedListOption(name_sort, self.sort_mode)
+        self.opt_sort.add_item("proximity", _("Proximity to current date"))
+        self.opt_sort.add_item("month_day", _("Month and day"))
+
 
         name_ignore = _("Ignore birthdays with tag")
         name_only = _("Only show birthdays with tag")
@@ -57,26 +64,30 @@ class BirthdaysGramplet(Gramplet):
                 self.opt_ignore.add_item(tag_name, tag_name)
                 self.opt_only.add_item(tag_name, tag_name)
 
+        self.add_option(self.opt_sort)
         self.add_option(self.opt_ignore)
         self.add_option(self.opt_only)
 
     def save_options(self):
         """Save gramplet configuration data"""
+        self.sort_mode = self.opt_sort.get_value()
         self.ignore_tag = self.opt_ignore.get_value()
         self.only_tag = self.opt_only.get_value()
 
     def save_update_options(self, obj):
         """Save a gramplet's options to file"""
         self.save_options()
-        self.gui.data = [self.ignore_tag, self.only_tag]
+        self.gui.data = [self.sort_mode, self.ignore_tag, self.only_tag]
         self.update()
 
     def on_load(self):
         """Load stored configuration data"""
-        if len(self.gui.data) == 2:
-            self.ignore_tag = self.gui.data[0]
-            self.only_tag = self.gui.data[1]
+        if len(self.gui.data) == 3:
+            self.sort_mode = self.gui.data[0]
+            self.ignore_tag = self.gui.data[1]
+            self.only_tag = self.gui.data[2]
         else:
+            self.sort_mode = 'proximity'
             self.ignore_tag = ''
             self.only_tag = ''
 
@@ -115,9 +126,13 @@ class BirthdaysGramplet(Gramplet):
                 # calculate age and days until birthday
                 self.__calculate(database, person)
 
-        # Sort by month then day:
-        self.result.sort(key=lambda item: (item[2].get_month(),
-                                           item[2].get_day()))
+        # Sort based on user preference:
+        sort_by = self.opt_sort.get_value()
+        if sort_by == "proximity":
+            self.result.sort(key=lambda item: -item[0])
+        else:
+            self.result.sort(key=lambda item: (item[2].get_month(),
+                                               item[2].get_day()))
         self.clear_text()
 
         # handle text shown in gramplet

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BirthdaysGramplet\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2026-07-03 00:00+0000\n"
 "Last-Translator: Javad Razavian <javadr@gmail.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/gramps-project/"
@@ -22,6 +22,15 @@ msgstr "یک گرمپلت که تولدهای افراد زنده را نمای�
 
 msgid "No Family Tree loaded."
 msgstr "هیچ شجره‌نامه‌ای بارگذاری نشده است."
+
+msgid "Sort birthdays by"
+msgstr "مرتب‌سازی تولدها بر اساس"
+
+msgid "Month and day"
+msgstr "ماه و روز"
+
+msgid "Proximity to current date"
+msgstr "نزدیکی به تاریخ فعلی"
 
 msgid "Ignore birthdays with tag"
 msgstr "نادیده گرفتن تولدهای دارای برچسب"

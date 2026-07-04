@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2026-05-30 20:01+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
@@ -23,8 +23,23 @@ msgstr "Doğum günleri"
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "Yaşayan kişilerin doğum günlerini gösteren bir gramplet"
 
+msgid "No Family Tree loaded."
+msgstr "Soy Ağacı yüklenmedi."
+
+msgid "Sort birthdays by"
+msgstr "Doğum günlerini şuna göre sırala:"
+
+msgid "Month and day"
+msgstr "Ay ve gün"
+
+msgid "Proximity to current date"
+msgstr "Güncel tarihe yakınlık"
+
 msgid "Ignore birthdays with tag"
 msgstr "Etiketli doğum günlerini yok say"
 
 msgid "Only show birthdays with tag"
 msgstr "Sadece etiketli doğum günlerini göster"
+
+msgid "Processing..."
+msgstr "İşleme..."
