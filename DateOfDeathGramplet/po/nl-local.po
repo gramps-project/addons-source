@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2025-04-14 22:32+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
@@ -17,12 +17,20 @@ msgstr ""
 msgid "Date of Death"
 msgstr "Overlijdensdatum"
 
-msgid "a gramplet that displays dates of death sorted by month and day"
-msgstr "een gramplet dat de overlijdensdata toont gesorteerd op maand en dag"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr ""
 
 msgid "No Family Tree loaded."
 msgstr "Geen stamboom geladen."
 
+msgid "Sort dates of death by"
+msgstr "Sorteer data van overlijden op"
+
+msgid "Month and day"
+msgstr "Maand en dag"
+
+msgid "Proximity to current date"
+msgstr "Nabijheid tot de huidige datum"
+
 msgid "Processing..."
 msgstr "Bezig met verwerken…"
-

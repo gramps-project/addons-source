@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2026-02-21 14:09+0000\n"
 "Last-Translator: Daniel Szollosi-Nagy <dsn-weblate@kdconsulting.net>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gramps-project/"
@@ -17,12 +17,22 @@ msgstr ""
 msgid "Date of Death"
 msgstr "Halálozási dátum"
 
-msgid "a gramplet that displays dates of death sorted by month and day"
-msgstr "egy gramplet amely a halálozási dátumokat jeleníti meg hónap és nap szerint rendezve"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr ""
+"egy gramplet amely a halálozási dátumokat jeleníti meg hónap és nap szerint "
+"rendezve"
 
 msgid "No Family Tree loaded."
 msgstr "Nincs családfa betöltve."
 
+msgid "Sort dates of death by"
+msgstr "A halálozás dátumának rendezése szerint"
+
+msgid "Month and day"
+msgstr "Hónap és nap"
+
+msgid "Proximity to current date"
+msgstr "Az aktuális dátum közelsége"
+
 msgid "Processing..."
 msgstr "Feldolgozás…"
-

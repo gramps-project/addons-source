@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -19,12 +19,20 @@ msgstr ""
 msgid "Date of Death"
 msgstr "Дата смерти"
 
-msgid "a gramplet that displays dates of death sorted by month and day"
-msgstr "грамплет, отображающий даты смерти, отсортированные по месяцу и дню"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr ""
 
 msgid "No Family Tree loaded."
 msgstr "Не загружено ни одного семейного древа."
 
+msgid "Sort dates of death by"
+msgstr "Сортировать даты смерти по"
+
+msgid "Month and day"
+msgstr "Месяц и день"
+
+msgid "Proximity to current date"
+msgstr "Близость к текущей дате"
+
 msgid "Processing..."
 msgstr "Обработка…"
-

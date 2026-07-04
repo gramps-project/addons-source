@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2025-08-11 18:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
@@ -18,12 +18,20 @@ msgstr ""
 msgid "Date of Death"
 msgstr "תאריך פטירה"
 
-msgid "a gramplet that displays dates of death sorted by month and day"
-msgstr "גרמפלט המציג תאריכי פטירה ממוינים לפי חודש ויום"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr ""
 
 msgid "No Family Tree loaded."
 msgstr "לא נטען עץ משפחה."
 
+msgid "Sort dates of death by"
+msgstr "מיין תאריכי פטירה לפי"
+
+msgid "Month and day"
+msgstr "חודש ויום"
+
+msgid "Proximity to current date"
+msgstr "קרבה לתאריך הנוכחי"
+
 msgid "Processing..."
 msgstr "מעבד…"
-

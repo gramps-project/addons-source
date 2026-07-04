@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: DateOfDeathGramplet\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-04 12:00+0000\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2026-07-04 12:00+0000\n"
 "Last-Translator: Javad Razavian <javadr@gmail.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/gramps-project/"
@@ -17,11 +17,23 @@ msgstr ""
 msgid "Date of Death"
 msgstr "تاریخ فوت"
 
-msgid "a gramplet that displays death dates sorted by month and day"
-msgstr "یک گرمپلت که تاریخ‌های فوت را مرتب بر اساس ماه و روز نمایش می‌دهد"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr ""
 
 msgid "No Family Tree loaded."
 msgstr "هیچ شجره‌نامه‌ای بارگذاری نشده است."
 
+msgid "Sort dates of death by"
+msgstr "تاریخ های مرگ را بر اساس مرتب کنید"
+
+msgid "Month and day"
+msgstr "ماه و روز"
+
+msgid "Proximity to current date"
+msgstr "نزدیکی به تاریخ فعلی"
+
 msgid "Processing..."
 msgstr "در حال پردازش..."
+
+#~ msgid "a gramplet that displays death dates sorted by month and day"
+#~ msgstr "یک گرمپلت که تاریخ‌های فوت را مرتب بر اساس ماه و روز نمایش می‌دهد"

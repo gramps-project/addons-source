@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2025-08-27 08:02+0000\n"
 "Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
@@ -21,12 +21,20 @@ msgstr ""
 msgid "Date of Death"
 msgstr "Mirties data"
 
-msgid "a gramplet that displays dates of death sorted by month and day"
-msgstr "grampletas, rodantis mirties datas, surūšiuotas pagal mėnesį ir dieną"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr ""
 
 msgid "No Family Tree loaded."
 msgstr "Neįkeltas joks šeimos medis."
 
+msgid "Sort dates of death by"
+msgstr "Rūšiuoti mirties datas pagal"
+
+msgid "Month and day"
+msgstr "Mėnuo ir diena"
+
+msgid "Proximity to current date"
+msgstr "Artumas iki dabartinės datos"
+
 msgid "Processing..."
 msgstr "Apdorojama…"
-

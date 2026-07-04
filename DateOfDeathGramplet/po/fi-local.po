@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2025-02-20 13:28+0000\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
@@ -18,12 +18,21 @@ msgstr ""
 msgid "Date of Death"
 msgstr "Kuolinpäivä"
 
-msgid "a gramplet that displays dates of death sorted by month and day"
-msgstr "gramplet joka näyttää kuolinpäivät järjestettynä kuukauden ja päivän mukaan"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr ""
+"gramplet joka näyttää kuolinpäivät järjestettynä kuukauden ja päivän mukaan"
 
 msgid "No Family Tree loaded."
 msgstr "Ei sukupuuta ladattu."
 
+msgid "Sort dates of death by"
+msgstr "Lajittele kuolinpäivämäärät"
+
+msgid "Month and day"
+msgstr "Kuukausi ja päivä"
+
+msgid "Proximity to current date"
+msgstr "Läheisyys nykyiseen päivämäärään"
+
 msgid "Processing..."
 msgstr "Käsitellään…"
-
