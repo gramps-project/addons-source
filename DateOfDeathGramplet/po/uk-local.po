@@ -19,7 +19,7 @@ msgid "Date of Death"
 msgstr "Дата смерті"
 
 msgid "a gramplet that displays death dates in sorted order"
-msgstr ""
+msgstr "грамплет, який відображає дати смерті у відсортованому порядку"
 
 msgid "No Family Tree loaded."
 msgstr "Не завантажено жодного родинного дерева."
