@@ -1,7 +1,9 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2009 Benny Malengier
+# Copyright (C) 2009  Jerome Rapinat
+# Copyright (C) 2026  Brian McCullough,
+#               with assistance from Anthropic Claude and GitHub Copilot
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -22,29 +24,36 @@
 Gramps registration file
 """
 
-MODULE_VERSION = "6.1"
-
-# ------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 #
-# Association State
+# Gramps modules
 #
-# ------------------------------------------------------------------------
+# -------------------------------------------------------------------------
+from gramps.version import major_version, VERSION_TUPLE
+# -------------------------------------------------------------------------
+#
+# Check Associations Data
+#
+# -------------------------------------------------------------------------
 
-register(
-    TOOL,
-    id="associationstool",
-    name=_("Check Associations data"),
-    description=_("Will check the data on Association for people."),
-    version = '1.1.17',
-    gramps_target_version=MODULE_VERSION,
-    include_in_listing=True,
-    status=STABLE,
-    fname="associationstool.py",
-    authors=["Jerome Rapinat"],
-    authors_email=["romjerome@yahoo.fr"],
-    category=TOOL_UTILS,
-    toolclass="AssociationsTool",
-    optionclass="AssociationsToolOptions",
-    tool_modes=[TOOL_MODE_GUI, TOOL_MODE_CLI],
-    help_url="Addon:Check_Associations",
-)
+if VERSION_TUPLE >= (6, 1, 0):
+    register(
+        TOOL,
+        id="associationstool",
+        name=_("Check Associations data"),
+        description=_("Display all person Associations in a sortable, hotlinked table"),
+        version = '1.2.1',
+        gramps_target_version=major_version,
+        include_in_listing=True,
+        status=STABLE,
+        fname="associationstool.py",
+        authors=["Jerome Rapinat", "Brian McCullough"],
+        authors_email=["romjerome@yahoo.fr","emyoulation@yahoo.com"],
+        maintainers=["Brian McCullough"],
+        maintainers_email=["emyoulation@yahoo.com"],
+        category=TOOL_UTILS,
+        toolclass="AssociationsTool",
+        optionclass="AssociationsToolOptions",
+        tool_modes=[TOOL_MODE_GUI, TOOL_MODE_CLI],
+        help_url="Addon:Check_Associations",
+    )
