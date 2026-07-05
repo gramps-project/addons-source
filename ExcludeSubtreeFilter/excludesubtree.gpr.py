@@ -27,10 +27,10 @@ register(
         "(walking all parents and children of attached families, "
         "recursively) stopping at persons in <Filter>."
     ),
-    version="0.6",
+    version = '0.6.1',
     authors=["Jonathan Biegert"],
     authors_email=["azrdev@gmail.com"],
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=BETA,
     fname="excludesubtree.py",
     ruleclass="ExcludeSubtree",

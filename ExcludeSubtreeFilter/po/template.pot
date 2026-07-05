@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-05 15:49-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ExcludeSubtreeFilter/excludesubtree.gpr.py:24
+#: ExcludeSubtreeFilter/excludesubtree.py:106
+msgid "People reachable from <Person>, stopping at <Filter> matches"
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.gpr.py:26
+#: ExcludeSubtreeFilter/excludesubtree.py:109
+msgid ""
+"Matches people who are reachable starting from <Person> (walking all parents "
+"and children of attached families, recursively) stopping at persons in "
+"<Filter>."
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.py:103
+msgid "ID:"
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.py:104
+msgid "Person filter name:"
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.py:107
+msgid "Relationship filters"
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.py:121
+msgid "Retrieving all sub-filter matches"
+msgstr ""
