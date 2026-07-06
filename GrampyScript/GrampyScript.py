@@ -59,6 +59,8 @@ from gramps.gui.editors import (
 from datadict2 import DataDict2, NoneData, set_sa
 from script_descriptions import SCRIPT_DESCRIPTIONS
 from script_utils import get_columns, extract_header_comment, SCRIPTS_DIR
+from namespace_builder import build_namespace
+from completion_popup import CompletionController
 
 _ = glocale.translation.gettext
 
@@ -367,7 +369,9 @@ for person in people():
 
         self.editor = Gtk.ScrolledWindow()
         self.editor.set_shadow_type(Gtk.ShadowType.IN)
+        self.editor.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         self.editor_textview = Gtk.TextView()
+        self.editor_textview.set_wrap_mode(Gtk.WrapMode.WORD_CHAR)
         self.editor.add(self.editor_textview)
         font_desc = self.editor_textview.get_pango_context().get_font_description()
         font_desc.set_family(
@@ -377,6 +381,7 @@ for person in people():
 
         self.editor_textview.connect("key-press-event", self.on_key_press)
         self.editor_textview.connect("button-press-event", self.on_textview_click)
+        self.editor_textview.connect("focus-out-event", self.on_editor_focus_out)
         key, mods = Gtk.accelerator_parse("<Alt>c")
         self.editor_textview.add_accelerator(
             "copy-clipboard", self.accel_group, key, mods, Gtk.AccelFlags.VISIBLE
@@ -404,6 +409,9 @@ for person in people():
             "comment", foreground="gray", style=Pango.Style.ITALIC
         )
         self.ebuf.connect("changed", self.on_buffer_changed)
+        self.completion = CompletionController(
+            self.editor_textview, get_namespace=lambda: build_namespace(self.dbstate.db)
+        )
 
         widget.pack_start(self.editor, True, True, 0)
 
@@ -663,6 +671,7 @@ for person in people():
 
     def on_buffer_changed(self, buffer):
         self.highlight_syntax()
+        self.completion.on_buffer_changed()
 
     def highlight_syntax(self):
         start_iter = self.ebuf.get_start_iter()
@@ -876,10 +885,18 @@ for person in people():
             return str(item)
 
     def on_textview_click(self, widget, event):
+        self.completion.close()
         if event.button == 1:  # Left mouse button
             widget.grab_focus()
 
+    def on_editor_focus_out(self, widget, event):
+        self.completion.close()
+        return False
+
     def on_key_press(self, textview, event):
+        if self.completion.on_key_press(event):
+            return True
+
         if event.keyval == Gdk.KEY_Tab:
             # buffer = textview.get_buffer()
             iter_ = self.ebuf.get_iter_at_mark(self.ebuf.get_insert())

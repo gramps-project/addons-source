@@ -32,4 +32,5 @@ register(
     gramplet_title=_("Gram.py Script"),
     help_url="Addon:GrampyScript",
     height=800,
+    requires_mod=["jedi"],
 )
