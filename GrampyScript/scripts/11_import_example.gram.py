@@ -1,4 +1,9 @@
 # Births Per Decade (Import Example)
+"""
+Counts births by decade, using a decade() function imported from
+script_helpers.py in this same folder — a template for sharing helper code
+between your own scripts with a plain 'import' statement.
+"""
 
 from script_helpers import decade
 

@@ -411,6 +411,7 @@ for person in people():
         self.comment_tag = self.ebuf.create_tag(
             "comment", foreground="gray", style=Pango.Style.ITALIC
         )
+        self.string_tag = self.ebuf.create_tag("string", foreground="brown")
         self.ebuf.connect("changed", self.on_buffer_changed)
         self.completion = CompletionController(
             self.editor_textview, get_namespace=lambda: build_namespace(self.dbstate.db)
@@ -699,37 +700,56 @@ for person in people():
 
         text = self.ebuf.get_text(start_iter, end_iter, True)
 
+        def inside_span(match, spans):
+            start_offset = match.start()
+            end_offset = match.end()
+            for span_start, span_end in spans:
+                if start_offset >= span_start and end_offset <= span_end:
+                    return True
+            return False
+
+        # Strings are found first so that keywords/comments inside them (eg.
+        # "with" in a docstring, or a "#" in a quoted string) aren't
+        # mistaken for code.
+        string_pattern = (
+            r'"""[\s\S]*?"""'
+            r"|'''[\s\S]*?'''"
+            r'|"(?:[^"\\\n]|\\.)*"'
+            r"|'(?:[^'\\\n]|\\.)*'"
+        )
+        string_matches = []
+        for match in re.finditer(string_pattern, text):
+            start = self.ebuf.get_iter_at_offset(match.start())
+            end = self.ebuf.get_iter_at_offset(match.end())
+            self.ebuf.apply_tag(self.string_tag, start, end)
+            string_matches.append((match.start(), match.end()))
+
         comment_matches = []
         for match in re.finditer(r"#.*", text):
+            if inside_span(match, string_matches):
+                continue
             start = self.ebuf.get_iter_at_offset(match.start())
             end = self.ebuf.get_iter_at_offset(match.end())
             self.ebuf.apply_tag(self.comment_tag, start, end)
             comment_matches.append((match.start(), match.end()))
 
-        def inside_comment(match):
-            start_offset = match.start()
-            end_offset = match.end()
-            # Check if the keyword overlaps with a comment
-            for comment_start, comment_end in comment_matches:
-                if start_offset >= comment_start and end_offset <= comment_end:
-                    return True
-            return False
+        skip_spans = string_matches + comment_matches
 
         for keyword in self.keywords:
             for match in re.finditer(r"\b" + keyword + r"\b", text):
-                if not inside_comment(match):
+                if not inside_span(match, skip_spans):
                     start = self.ebuf.get_iter_at_offset(match.start())
                     end = self.ebuf.get_iter_at_offset(match.end())
                     self.ebuf.apply_tag(self.keyword_tag, start, end)
         for constant in self.constants:
             for match in re.finditer(r"\b" + constant + r"\b", text):
-                if not inside_comment(match):
+                if not inside_span(match, skip_spans):
                     start = self.ebuf.get_iter_at_offset(match.start())
                     end = self.ebuf.get_iter_at_offset(match.end())
                     self.ebuf.apply_tag(self.constant_tag, start, end)
         for function in self.functions:
             for match in re.finditer(r"\b" + function + r"\b", text):
-                if not inside_comment(match):
+                if not inside_span(match, skip_spans):
                     start = self.ebuf.get_iter_at_offset(match.start())
                     end = self.ebuf.get_iter_at_offset(match.end())
                     self.ebuf.apply_tag(self.function_tag, start, end)

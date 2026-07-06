@@ -14,6 +14,12 @@ import unittest
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from script_descriptions import SCRIPT_DESCRIPTIONS
+from update_script_descriptions import (
+    DESCRIPTIONS_PATH,
+    _load_header,
+    build_source,
+    collect_entries,
+)
 
 SCRIPTS_DIR = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "scripts"
@@ -42,6 +48,21 @@ class TestScriptDescriptionsCoverage(unittest.TestCase):
             title, description = entry
             self.assertTrue(title.strip(), "%s has an empty title" % name)
             self.assertTrue(description.strip(), "%s has an empty description" % name)
+
+
+class TestScriptDescriptionsIsGenerated(unittest.TestCase):
+    def test_regenerating_produces_no_changes(self):
+        entries, errors = collect_entries()
+        self.assertEqual(errors, [])
+        header = _load_header(DESCRIPTIONS_PATH)
+        regenerated = build_source(entries, header)
+        on_disk = open(DESCRIPTIONS_PATH, encoding="utf-8").read()
+        self.assertEqual(
+            regenerated,
+            on_disk,
+            "script_descriptions.py is out of sync with scripts/*.gram.py -- "
+            "run `python3 update_script_descriptions.py` to regenerate it.",
+        )
 
 
 class TestScriptsAreValidPython(unittest.TestCase):
