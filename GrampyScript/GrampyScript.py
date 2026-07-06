@@ -369,9 +369,7 @@ for person in people():
 
         self.editor = Gtk.ScrolledWindow()
         self.editor.set_shadow_type(Gtk.ShadowType.IN)
-        self.editor.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         self.editor_textview = Gtk.TextView()
-        self.editor_textview.set_wrap_mode(Gtk.WrapMode.WORD_CHAR)
         self.editor.add(self.editor_textview)
         font_desc = self.editor_textview.get_pango_context().get_font_description()
         font_desc.set_family(
@@ -474,6 +472,15 @@ for person in people():
 
         self.statusmsg = Gtk.Label(_("Ready..."))
         self.statusmsg.set_xalign(0)  # 0.0 for left, 0.5 for center, 1.0 for right
+        # Some status messages embed the full path of the current file
+        # (e.g. "Loaded '/home/.../scripts/some_script.gram.py'"), which
+        # would otherwise force the whole gramplet wider than its
+        # container. Ellipsize and cap the natural width so it truncates
+        # instead -- max_width_chars is what actually bounds the natural
+        # size request; ellipsize alone only takes effect once allocated
+        # space is already smaller than that.
+        self.statusmsg.set_ellipsize(Pango.EllipsizeMode.MIDDLE)
+        self.statusmsg.set_max_width_chars(40)
         self.statusmsg.get_style_context().add_class('bordered-label')  #add a css class
         self.statusmsg.get_style_context().add_provider(
             provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
