@@ -57,6 +57,7 @@ from gramps.gui.editors import (
     EditSource,
 )
 from datadict2 import DataDict2, NoneData, set_sa
+from script_descriptions import SCRIPT_DESCRIPTIONS
 
 _ = glocale.translation.gettext
 
@@ -87,6 +88,27 @@ def get_columns(source, func_name):
     return []
 
 
+def extract_header_comment(source):
+    """
+    Extract the leading '#'-comment block of a script as plain text,
+    for use as a fallback preview when a file has no catalogued
+    description in SCRIPT_DESCRIPTIONS.
+    """
+    lines = []
+    for line in source.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("#"):
+            lines.append(stripped.lstrip("#").strip())
+        elif stripped == "" and not lines:
+            continue
+        else:
+            break
+    return "\n".join(lines).strip()
+
+
+SCRIPTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts")
+
+
 class ScriptOpenFileChooserDialog(Gtk.FileChooserDialog):
     def __init__(self, uistate):
         # type: (DisplayState) -> None
@@ -115,6 +137,37 @@ class ScriptOpenFileChooserDialog(Gtk.FileChooserDialog):
         filter_all.set_name("All files")
         filter_all.add_pattern("*.*")
         self.add_filter(filter_all)
+
+        self.preview_label = Gtk.Label()
+        self.preview_label.set_line_wrap(True)
+        self.preview_label.set_xalign(0)
+        self.preview_label.set_yalign(0)
+        preview_scrolled = Gtk.ScrolledWindow()
+        preview_scrolled.set_size_request(220, -1)
+        preview_scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        preview_scrolled.add(self.preview_label)
+        preview_scrolled.show_all()
+        self.set_preview_widget(preview_scrolled)
+        self.connect("update-preview", self.on_update_preview)
+
+    def on_update_preview(self, dialog):
+        filename = dialog.get_preview_filename()
+        text = ""
+        if filename and filename.endswith(".gram.py") and os.path.isfile(filename):
+            basename = os.path.basename(filename)
+            if basename in SCRIPT_DESCRIPTIONS:
+                title, description = SCRIPT_DESCRIPTIONS[basename]
+                text = "%s\n\n%s" % (title, description)
+            else:
+                try:
+                    text = extract_header_comment(open(filename).read())
+                except Exception:
+                    text = ""
+        if text:
+            self.preview_label.set_text(text)
+            dialog.set_preview_widget_active(True)
+        else:
+            dialog.set_preview_widget_active(False)
 
 
 class ScriptSaveFileChooserDialog(Gtk.FileChooserDialog):
@@ -448,6 +501,8 @@ for person in people():
         choose_file_dialog = ScriptOpenFileChooserDialog(self.uistate)
         if self.last_filename:
             choose_file_dialog.set_filename(self.last_filename)
+        elif os.path.isdir(SCRIPTS_DIR):
+            choose_file_dialog.set_current_folder(SCRIPTS_DIR)
 
         while True:
             response = choose_file_dialog.run()
@@ -483,6 +538,8 @@ for person in people():
         choose_file_dialog.set_do_overwrite_confirmation(True)
         if self.last_filename:
             choose_file_dialog.set_filename(self.last_filename)
+        elif os.path.isdir(SCRIPTS_DIR):
+            choose_file_dialog.set_current_folder(SCRIPTS_DIR)
 
         while True:
             response = choose_file_dialog.run()
