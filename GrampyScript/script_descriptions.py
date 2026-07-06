@@ -110,4 +110,34 @@ SCRIPT_DESCRIPTIONS = {
             "records."
         ),
     ),
+    "11_import_example.gram.py": (
+        _("Births Per Decade (Import Example)"),
+        _(
+            "Counts births by decade, using a decade() function imported "
+            "from script_helpers.py in this same folder — a template for "
+            "sharing helper code between your own scripts with a plain "
+            "'import' statement."
+        ),
+    ),
+    "12_custom_filter_example.gram.py": (
+        _("Custom Filter Example"),
+        _(
+            "Runs one of your own custom filters (from the Filters "
+            "gramplet/editor) by name using custom_filter(). Change "
+            "'example filter' to the name of a filter you've already "
+            "created; if the name doesn't match one, a warning shows up "
+            "in the Output tab instead."
+        ),
+    ),
+    "13_delete_unused_repositories.gram.py": (
+        _("Delete Unused Repositories (Delete Example)"),
+        _(
+            "Demonstrates delete(): removes any Repository record that "
+            "nothing else in the tree refers to. Most trees have no "
+            "unused repositories, so this is unlikely to actually delete "
+            "anything — it's meant to show the pattern, wrapped in "
+            "begin_changes()/end_changes() as a single undoable "
+            "transaction."
+        ),
+    ),
 }

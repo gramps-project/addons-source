@@ -16,9 +16,17 @@ numbered files below are examples; anything else you save here is yours.
 | `08_active_person_summary.gram.py` | Summary of the active person plus their parents, spouse, and children. |
 | `09_selected_people_report.gram.py` | Report on just the rows currently selected in the People view. |
 | `10_find_missing_birth_dates.gram.py` | Data-quality check: people with no recorded birth event. |
+| `11_import_example.gram.py` | Counts births per decade using `decade()`, imported from `script_helpers.py`. |
+| `12_custom_filter_example.gram.py` | Runs one of your own custom filters by name via `custom_filter()`. |
+| `13_delete_unused_repositories.gram.py` | Delete example: removes Repository records nothing refers to (rarely any). |
 
 Each script's title and description are also shown as a preview when you
 highlight it in the Open dialog.
+
+`script_helpers.py` is a plain Python module, not a `.gram.py` script — it
+won't show up in the Open dialog. It exists to be imported (see
+`11_import_example.gram.py`): any `.py` file you place in this folder, or
+alongside a script saved elsewhere, can be imported the same way.
 
 **Note:** addon updates only overwrite files that share a name with
 something in the released package. It's safe to save your own scripts in

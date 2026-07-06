@@ -33,6 +33,7 @@ import os
 from gi.repository import Gtk, Gdk, cairo, Pango
 
 from gramps.gen.db import DbTxn
+from gramps.gen import filters as gramps_filters
 from gramps.gen.plug import Gramplet
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.display.place import displayer as place_displayer
@@ -275,6 +276,8 @@ class GrampyScript(Gramplet):
             "events",
             "selected",
             "filtered",
+            "custom_filter",
+            "delete",
         ]
         self.constants = [
             "True",
@@ -1111,6 +1114,15 @@ for person in people():
         """Run code in the full GrampyScript scope and return stdout."""
         return self.execute_code(code)
 
+    def ensure_import_paths(self):
+        """Make helper .py files next to scripts importable via `import`."""
+        paths = [SCRIPTS_DIR]
+        if self.last_filename:
+            paths.append(os.path.dirname(os.path.abspath(self.last_filename)))
+        for path in paths:
+            if path and path not in sys.path:
+                sys.path.insert(0, path)
+
     def execute_filename(self, filename):
         if os.path.exists(filename):
             with open(filename) as file:
@@ -1196,7 +1208,7 @@ for person in people():
         active_source = self.get_active_data("Source")
         active_citation = self.get_active_data("Citation")
         active_place = self.get_active_data("Place")
-        active_event = self.get_active("Event")
+        active_event = self.get_active_data("Event")
 
         chart = self.chart
 
@@ -1226,6 +1238,24 @@ for person in people():
                     data = get_data(handle)
                     yield DataDict2(dict(data), callback=self.callback)
 
+        def custom_filter(name, namespace="Person"):
+            if gramps_filters.CustomFilters is None:
+                gramps_filters.reload_custom_filters()
+            filt = gramps_filters.CustomFilters.get_filters_dict(namespace).get(name)
+            if filt is None:
+                print(
+                    "Warning: no custom filter named %r for namespace %r"
+                    % (name, namespace)
+                )
+                return
+            get_data = self.db._get_table_func(namespace, "raw_func")
+            for handle in filt.apply(self.db):
+                yield DataDict2(dict(get_data(handle)), callback=self.callback)
+
+        def delete(obj):
+            del_func = self.db._get_table_func(obj["_class"], "del_func")
+            del_func(obj["handle"], self.TRANSACTION)
+
         database = self.db
 
         today = Date(
@@ -1243,6 +1273,7 @@ for person in people():
 
         self.TRANSACTION = None
         self.output_buffer.set_text("")
+        self.ensure_import_paths()
         # -----------------
         # User code
         # FIXME: don't use stdout?
