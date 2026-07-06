@@ -44,7 +44,7 @@ from gramps.gen.simple import SimpleAccess
 from gramps.gui.widgets.undoablebuffer import UndoableBuffer
 from gramps.gui.utils import match_primary_mask
 from gramps.gen.config import config as configman
-from gramps.gui.dialog import OkDialog, ErrorDialog
+from gramps.gui.dialog import OkDialog, ErrorDialog, SaveDialog
 from gramps.gui.editors import (
     EditCitation,
     EditEvent,
@@ -348,6 +348,7 @@ for person in people():
     row(person)
 """
             )
+        self.ebuf.set_modified(False)
 
     def build_gui(self):
         """
@@ -512,13 +513,49 @@ for person in people():
         name = os.path.basename(self.last_filename) if self.last_filename else _("Untitled")
         self.filename_label.set_text(name)
 
+    def check_unsaved_changes(self, proceed):
+        """
+        If the script has unsaved changes, ask the user whether to save,
+        discard, or cancel before calling `proceed`. Otherwise call
+        `proceed` immediately.
+        """
+        if not self.ebuf.get_modified():
+            proceed()
+            return
+
+        def discard():
+            proceed()
+
+        def save_then_proceed():
+            self.save_script(None)
+            if not self.ebuf.get_modified():
+                proceed()
+
+        SaveDialog(
+            _("Save Changes?"),
+            _(
+                "If you continue without saving, the changes you have "
+                "made to this script will be lost."
+            ),
+            discard,
+            save_then_proceed,
+            parent=self.uistate.window,
+        )
+
     def new_script(self, widget):
         # type: (Any) -> None
+        self.check_unsaved_changes(self._do_new_script)
+
+    def _do_new_script(self):
         self.ebuf.set_text("")
+        self.ebuf.set_modified(False)
         self.statusmsg.set_text("Ready...")
 
     def open_script(self, widget):
         # type: (Gtk.Widget) -> None
+        self.check_unsaved_changes(self._do_open_script)
+
+    def _do_open_script(self):
         choose_file_dialog = ScriptOpenFileChooserDialog(self.uistate)
         if self.last_filename:
             choose_file_dialog.set_filename(self.last_filename)
@@ -534,6 +571,7 @@ for person in people():
             elif response == Gtk.ResponseType.OK:
                 filename = choose_file_dialog.get_filename()
                 self.ebuf.set_text(open(filename).read())
+                self.ebuf.set_modified(False)
                 self.statusmsg.set_text("Script loaded")
                 self.last_filename = filename
                 config.set("defaults.last_filename", filename)
@@ -550,6 +588,7 @@ for person in people():
             return
         with open(self.last_filename, "w") as fp:
             fp.write(self.get_text())
+        self.ebuf.set_modified(False)
         self.statusmsg.set_text("Saved %r" % self.last_filename)
 
     def save_as_script(self, widget):
@@ -573,6 +612,7 @@ for person in people():
                 filename = choose_file_dialog.get_filename()
                 with open(filename, "w") as fp:
                     fp.write(self.get_text())
+                self.ebuf.set_modified(False)
                 self.last_filename = filename
                 config.set("defaults.last_filename", filename)
                 config.save()
