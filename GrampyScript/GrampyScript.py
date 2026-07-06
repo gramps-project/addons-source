@@ -335,6 +335,7 @@ class GrampyScript(Gramplet):
         self.gui.WIDGET = self.build_gui()
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add(self.gui.WIDGET)
+        self.update_filename_label()
         if os.path.exists(self.last_filename):
             self.ebuf.set_text(open(self.last_filename).read())
             self.statusmsg.set_text("Loaded %r" % self.last_filename)
@@ -472,9 +473,6 @@ for person in people():
 
         widget.pack_start(self.notebook, True, True, 0)
 
-        self.statusmsg = Gtk.Label(_("Ready..."))
-        self.statusmsg.set_xalign(0)  # 0.0 for left, 0.5 for center, 1.0 for right
-        self.statusmsg.get_style_context().add_class('bordered-label')  #add a css class
         css = b"""
         .bordered-label {
             border: 1px solid gray;
@@ -483,13 +481,32 @@ for person in people():
         """
         provider = Gtk.CssProvider()
         provider.load_from_data(css)
+
+        self.filename_label = Gtk.Label()
+        self.filename_label.set_xalign(0)
+        self.filename_label.get_style_context().add_class('bordered-label')
+        self.filename_label.get_style_context().add_provider(
+            provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        )
+
+        self.statusmsg = Gtk.Label(_("Ready..."))
+        self.statusmsg.set_xalign(0)  # 0.0 for left, 0.5 for center, 1.0 for right
+        self.statusmsg.get_style_context().add_class('bordered-label')  #add a css class
         self.statusmsg.get_style_context().add_provider(
             provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         )
-        widget.pack_start(self.statusmsg, False, False, 1)
+
+        status_box = Gtk.HBox()
+        status_box.pack_start(self.filename_label, False, False, 1)
+        status_box.pack_start(self.statusmsg, True, True, 1)
+        widget.pack_start(status_box, False, False, 1)
 
         widget.show_all()
         return widget
+
+    def update_filename_label(self):
+        name = os.path.basename(self.last_filename) if self.last_filename else _("Untitled")
+        self.filename_label.set_text(name)
 
     def new_script(self, widget):
         # type: (Any) -> None
@@ -517,6 +534,7 @@ for person in people():
                 self.last_filename = filename
                 config.set("defaults.last_filename", filename)
                 config.save()
+                self.update_filename_label()
                 self.statusmsg.set_text("Loaded %r" % self.last_filename)
                 break
 
@@ -554,6 +572,7 @@ for person in people():
                 self.last_filename = filename
                 config.set("defaults.last_filename", filename)
                 config.save()
+                self.update_filename_label()
                 self.statusmsg.set_text("Saved as %r (now current)" % self.last_filename)
                 break
 
