@@ -1,4 +1,8 @@
 # Active Person Summary
+"""
+Show a compact family summary for the currently active person: their record,
+parents, spouse, and children.
+"""
 
 person = active_person
 if person:

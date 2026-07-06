@@ -1,4 +1,9 @@
 # Mark Unsourced People As Private
+"""
+Batch-edit example: find every person who has no citations attached and flag
+them as private, wrapped in begin_changes()/end_changes() so the edits happen
+inside a single, undoable transaction.
+"""
 
 begin_changes("Mark unsourced people as private")
 
