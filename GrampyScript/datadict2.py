@@ -334,6 +334,12 @@ class DataDict2(dict):
     # def __str__(self):
     #    return str(self._object)
 
+    def __dir__(self):
+        # Merge real class attributes with the dynamic dict keys, so that
+        # introspection tools (e.g. jedi-based completion) can see fields
+        # like `primary_name` that only exist via __getattr__.
+        return sorted(set(super().__dir__()) | set(self.keys()))
+
     def __getattr__(self, key):
         if key == "_object":
             if "_object" not in self:
