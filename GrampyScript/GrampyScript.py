@@ -950,7 +950,7 @@ for person in people():
         if action == "set":
             if "_class" in data:
                 if self.db._get_table_func(data["_class"]):
-                    method = self.db._table(data["_class"], "commit_func")
+                    method = self.db._get_table_func(data["_class"], "commit_func")
                     method(data._object, self.TRANSACTION)
                 else:
                     raise Exception("%r class is not a PrimaryObject" % data["_class"])
