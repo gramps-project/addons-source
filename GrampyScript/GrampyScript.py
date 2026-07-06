@@ -435,6 +435,23 @@ for person in people():
 
         widget.pack_start(self.editor, True, True, 0)
 
+        bbox = Gtk.ButtonBox()
+        self.apply_button = Gtk.Button(label=_("Execute <Alt+Enter>"))
+        self.apply_button.connect("clicked", self.apply_clicked)
+        self.apply_button.set_tooltip_text(_("Execute the script"))
+        css = b"* {background: #00aa00; color: white}"
+        provider = Gtk.CssProvider()
+        try:
+            provider.load_from_data(css)
+            self.apply_button.get_style_context().add_provider(
+                provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+            )
+        except:
+            pass
+
+        bbox.pack_start(self.apply_button, False, False, 6)
+        widget.pack_start(bbox, False, False, 6)
+
         self.notebook = Gtk.Notebook()
 
         self.page1 = Gtk.ScrolledWindow()
@@ -454,23 +471,6 @@ for person in people():
         self.notebook.append_page(page3, Gtk.Label(label=_("Chart")))
 
         widget.pack_start(self.notebook, True, True, 0)
-
-        bbox = Gtk.ButtonBox()
-        self.apply_button = Gtk.Button(label=_("Execute <Alt+Enter>"))
-        self.apply_button.connect("clicked", self.apply_clicked)
-        self.apply_button.set_tooltip_text(_("Execute the script"))
-        css = b"* {background: #00aa00; color: white}"
-        provider = Gtk.CssProvider()
-        try:
-            provider.load_from_data(css)
-            self.apply_button.get_style_context().add_provider(
-                provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-            )
-        except:
-            pass
-
-        bbox.pack_start(self.apply_button, False, False, 6)
-        widget.pack_start(bbox, False, False, 6)
 
         self.statusmsg = Gtk.Label(_("Ready..."))
         self.statusmsg.set_xalign(0)  # 0.0 for left, 0.5 for center, 1.0 for right
