@@ -1,40 +1,21 @@
 """
-Tests for the extract_header_comment() utility from GrampyScript.
+Tests for the extract_header_comment() utility in script_utils.
 
 extract_header_comment() pulls the leading '#'-comment block out of a
 script's source, for use as a fallback Open-dialog preview when a file
-has no catalogued entry in SCRIPT_DESCRIPTIONS. It is pure ast/string
-handling -- no GTK or Gramps imports required -- so, like get_columns, it
-is tested here by re-importing it directly from the module source via
-ast, without pulling in the full (GTK-dependent) GrampyScript module.
+has no catalogued entry in SCRIPT_DESCRIPTIONS. It lives in script_utils.py
+(no GTK or Gramps imports required) precisely so it can be imported and
+tested directly, without pulling in the full (GTK-dependent) GrampyScript
+module.
 """
 
-import ast
 import os
 import sys
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-
-_SOURCE = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "GrampyScript.py"
-)
-
-
-def _load_extract_header_comment():
-    src = open(_SOURCE).read()
-    tree = ast.parse(src)
-    for node in ast.walk(tree):
-        if isinstance(node, ast.FunctionDef) and node.name == "extract_header_comment":
-            snippet = ast.unparse(node)
-            ns = {}
-            exec(snippet, ns)
-            return ns["extract_header_comment"]
-    raise RuntimeError("extract_header_comment not found in GrampyScript.py")
-
-
-extract_header_comment = _load_extract_header_comment()
+from script_utils import extract_header_comment
 
 
 class TestExtractHeaderComment(unittest.TestCase):

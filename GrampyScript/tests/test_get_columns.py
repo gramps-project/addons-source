@@ -1,43 +1,20 @@
 """
-Tests for the get_columns() utility from GrampyScript.
+Tests for the get_columns() utility in script_utils.
 
 get_columns parses Python source and extracts argument expressions from all
-calls to a given function name (typically "row").  It is pure ast — no GTK
-or Gramps imports required — so the function is tested here by reimporting
-it directly from the module source via ast/importlib.
+calls to a given function name (typically "row"). It lives in script_utils.py
+(no GTK or Gramps imports required) precisely so it can be imported and
+tested directly, without pulling in the full (GTK-dependent) GrampyScript
+module.
 """
 
-import ast
 import os
 import sys
 import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-
-# ---------------------------------------------------------------------------
-# Load get_columns without importing the full GrampyScript module
-# (which needs GTK). We parse the source and exec just the function.
-# ---------------------------------------------------------------------------
-
-_SOURCE = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "GrampyScript.py"
-)
-
-
-def _load_get_columns():
-    src = open(_SOURCE).read()
-    tree = ast.parse(src)
-    for node in ast.walk(tree):
-        if isinstance(node, ast.FunctionDef) and node.name == "get_columns":
-            snippet = ast.unparse(node)
-            ns = {"ast": ast}
-            exec(snippet, ns)
-            return ns["get_columns"]
-    raise RuntimeError("get_columns not found in GrampyScript.py")
-
-
-get_columns = _load_get_columns()
+from script_utils import get_columns
 
 
 # ---------------------------------------------------------------------------

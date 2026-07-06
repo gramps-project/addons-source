@@ -19,7 +19,6 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 import csv
-import ast
 import keyword
 import datetime
 from collections import defaultdict
@@ -58,6 +57,7 @@ from gramps.gui.editors import (
 )
 from datadict2 import DataDict2, NoneData, set_sa
 from script_descriptions import SCRIPT_DESCRIPTIONS
+from script_utils import get_columns, extract_header_comment, SCRIPTS_DIR
 
 _ = glocale.translation.gettext
 
@@ -74,39 +74,6 @@ def contains_any_none_data(args):
         return any(contains_any_none_data(arg) for arg in args)
     else:
         return not isinstance(args, NoneData)
-
-
-def get_columns(source, func_name):
-    try:
-        tree = ast.parse(source)
-        for node in ast.walk(tree):
-            if isinstance(node, ast.Call):
-                if hasattr(node.func, "id") and node.func.id == func_name:
-                    return [ast.unparse(arg) for arg in node.args]
-    except Exception:
-        pass
-    return []
-
-
-def extract_header_comment(source):
-    """
-    Extract the leading '#'-comment block of a script as plain text,
-    for use as a fallback preview when a file has no catalogued
-    description in SCRIPT_DESCRIPTIONS.
-    """
-    lines = []
-    for line in source.splitlines():
-        stripped = line.strip()
-        if stripped.startswith("#"):
-            lines.append(stripped.lstrip("#").strip())
-        elif stripped == "" and not lines:
-            continue
-        else:
-            break
-    return "\n".join(lines).strip()
-
-
-SCRIPTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts")
 
 
 class ScriptOpenFileChooserDialog(Gtk.FileChooserDialog):
