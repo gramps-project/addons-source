@@ -45,6 +45,7 @@ from gramps.gui.widgets.undoablebuffer import UndoableBuffer
 from gramps.gui.utils import match_primary_mask
 from gramps.gen.config import config as configman
 from gramps.gui.dialog import OkDialog, ErrorDialog, SaveDialog
+from gramps.gui.display import display_help, display_url
 from gramps.gui.editors import (
     EditCitation,
     EditEvent,
@@ -336,15 +337,19 @@ for person in people():
         openitem = Gtk.MenuItem(label=_("Open..."))
         save_item = Gtk.MenuItem(label=_("Save"))
         save_as_item = Gtk.MenuItem(label=_("Save as..."))
+        help_item = Gtk.MenuItem(label=_("Help"))
         filemenu.append(newitem)
         filemenu.append(openitem)
         filemenu.append(save_item)
         filemenu.append(save_as_item)
+        filemenu.append(Gtk.SeparatorMenuItem())
+        filemenu.append(help_item)
         menubar.append(fileitem)
         newitem.connect("activate", self.new_script)
         openitem.connect("activate", self.open_script)
         save_as_item.connect("activate", self.save_as_script)
         save_item.connect("activate", self.save_script)
+        help_item.connect("activate", self.show_help)
 
         datamenu = Gtk.Menu()
         dataitem = Gtk.MenuItem(label=_("Data"))
@@ -606,6 +611,13 @@ for person in people():
                 break
 
         choose_file_dialog.destroy()
+
+    def show_help(self, widget):
+        help_url = self.gui.help_url
+        if help_url and help_url.startswith(("http://", "https://")):
+            display_url(help_url)
+        else:
+            display_help(help_url)
 
     def save_csv(self, widget):
         if self.liststore is None:
