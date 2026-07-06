@@ -478,13 +478,17 @@ for person in people():
             border: 1px solid gray;
             padding: 1px;
         }
+        .bold-label {
+            font-weight: bold;
+            padding: 1px;
+        }
         """
         provider = Gtk.CssProvider()
         provider.load_from_data(css)
 
         self.filename_label = Gtk.Label()
         self.filename_label.set_xalign(0)
-        self.filename_label.get_style_context().add_class('bordered-label')
+        self.filename_label.get_style_context().add_class('bold-label')
         self.filename_label.get_style_context().add_provider(
             provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         )
@@ -498,7 +502,7 @@ for person in people():
 
         status_box = Gtk.HBox()
         status_box.pack_start(self.filename_label, False, False, 1)
-        status_box.pack_start(self.statusmsg, True, True, 1)
+        status_box.pack_start(self.statusmsg, True, True, 10)
         widget.pack_start(status_box, False, False, 1)
 
         widget.show_all()
