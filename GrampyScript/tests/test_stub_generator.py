@@ -41,11 +41,25 @@ class TestBuildRegistry(unittest.TestCase):
         fields = self.registry["Person"]
         self.assertEqual(fields["address_list"], 'list["Address"]')
 
-    def test_computed_properties_layered_on_every_type(self):
-        # DataDict2's @property names apply to every wrapped record, not
-        # just Person, since it is the same class for every nested value.
-        for name in ["Person", "Family", "Name"]:
+    def test_computed_properties_layered_on_matching_root_types(self):
+        # `father` is valid on Person and Family (sa.father accepts both).
+        for name in ["Person", "Family"]:
             self.assertEqual(self.registry[name]["father"], "Person")
+
+    def test_computed_properties_not_layered_on_mismatched_types(self):
+        # `father` shouldn't leak onto nested structural types (Name is
+        # reached only by walking Person.primary_name, not a root row type),
+        # nor onto root types the underlying SimpleAccess call rejects.
+        self.assertNotIn("father", self.registry["Name"])
+        self.assertNotIn("spouse", self.registry["Event"])
+        self.assertNotIn("gender", self.registry["Family"])
+
+    def test_reference_layered_only_on_ref_types(self):
+        # `reference` reads a `ref` handle that only *Ref wrapper types
+        # have -- it shouldn't appear on the root row types themselves.
+        self.assertEqual(self.registry["PersonRef"]["reference"], "Person")
+        self.assertEqual(self.registry["EventReference"]["reference"], "Event")
+        self.assertNotIn("reference", self.registry["Person"])
 
     def test_computed_property_overrides_raw_field(self):
         # `gender` is both a raw int field and a DataDict2 @property;

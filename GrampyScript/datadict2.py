@@ -31,6 +31,17 @@ from gramps.gen.lib import PrimaryObject
 from gramps.gen.config import config
 
 NoneType = type(None)
+
+# *Ref._class -> the table its `ref` handle points into, for the `reference`
+# property below.
+REFERENCE_TABLES = {
+    "ChildRef": "Person",
+    "EventRef": "Event",
+    "MediaRef": "Media",
+    "PersonRef": "Person",
+    "PlaceRef": "Place",
+    "RepoRef": "Repository",
+}
 invalid_date_format = config.get("preferences.invalid-date-format")
 age_precision = config.get("preferences.age-display-precision")
 age_after_death = config.get("preferences.age-after-death")
@@ -260,7 +271,17 @@ class DataDict2(dict):
 
     @property
     def reference(self):
-        return DataDict2(sa.dbase.get_raw_person_data(self.ref), callback=self.callback)
+        # self is one of the *Ref wrapper types (PersonRef, EventRef, ...);
+        # `ref` is a handle into whichever table its own _class points at,
+        # not always Person.
+        table = REFERENCE_TABLES.get(self["_class"])
+        if table is None:
+            return NoneData()
+        getter = sa.dbase.method("get_raw_%s_data", table)
+        data = getter(self.ref) if getter else None
+        if data is None:
+            return NoneData()
+        return DataDict2(data, callback=self.callback)
 
     @property
     def attributes(self):
@@ -298,15 +319,13 @@ class DataDict2(dict):
     def name(self):
         if self["_class"] == "Person":
             return self.primary_name
-        else:
-            return self["name"]
+        return self["name"] if "name" in self else NoneData()
 
     @property
     def surname(self):
         if self["_class"] == "Person":
             return self.primary_name.surname_list[0]
-        else:
-            return self["surname"]
+        return self["surname"] if "surname" in self else NoneData()
 
     @property
     def names(self):

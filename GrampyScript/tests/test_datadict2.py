@@ -47,6 +47,12 @@ class _MockSaBase(unittest.TestCase):
         db.get_event_from_handle.return_value = None
         db.get_place_from_handle.return_value = None
         db.get_source_from_handle.return_value = None
+        # Mirror DbGeneric.method()'s real dispatch (getattr on a formatted,
+        # lowercased method name), since a bare MagicMock doesn't do this.
+        db.method.side_effect = lambda fmt, *args: getattr(
+            db, fmt % tuple(a.lower() for a in args), None
+        )
+        self.db = db
         sa = SimpleAccess(db)
         set_sa(sa)
 
@@ -161,6 +167,44 @@ class TestDataDict2GenealogyProperties(_MockSaBase):
         dd = DataDict2(_make_family(gramps_id="F0007"))
         self.assertEqual(dd.gramps_id, "F0007")
         self.assertEqual(dd["_class"], "Family")
+
+
+# ---------------------------------------------------------------------------
+# DataDict2 — surname/name/reference on non-Person and *Ref wrappers
+# ---------------------------------------------------------------------------
+
+
+class TestDataDict2NonPersonProperties(_MockSaBase):
+    def test_surname_is_none_data_for_non_person(self):
+        # Regression: used to raise KeyError via self["surname"], since no
+        # schema has a top-level "surname" field.
+        dd = DataDict2(_make_family())
+        self.assertIsInstance(dd.surname, NoneData)
+
+    def test_name_is_none_data_when_field_absent(self):
+        # Regression: used to raise KeyError via self["name"] for classes
+        # (like Family) with no "name" schema field.
+        dd = DataDict2(_make_family())
+        self.assertIsInstance(dd.name, NoneData)
+
+    def test_reference_dispatches_by_class(self):
+        # Regression: used to always call get_raw_person_data regardless of
+        # which *Ref type was wrapped.
+        from gramps.gen.lib import PersonRef
+        from gramps.gen.lib.json_utils import object_to_dict
+
+        ref = PersonRef()
+        ref.set_reference_handle("HANDLE1")
+        self.db.get_raw_person_data.return_value = object_to_dict(
+            _make_person(gramps_id="I9999")
+        )
+        dd = DataDict2(ref)
+        self.assertEqual(dd.reference.gramps_id, "I9999")
+        self.db.get_raw_person_data.assert_called_with("HANDLE1")
+
+    def test_reference_none_data_for_unmapped_class(self):
+        dd = DataDict2(_make_family())
+        self.assertIsInstance(dd.reference, NoneData)
 
 
 # ---------------------------------------------------------------------------
