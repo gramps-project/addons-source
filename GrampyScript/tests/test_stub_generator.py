@@ -10,7 +10,13 @@ import unittest
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from stub_generator import ACTIVE_VARIABLES, GENERATOR_ROW_TYPES, build_registry, render_stub_source
+from stub_generator import (
+    ACTIVE_VARIABLES,
+    GENERATOR_ROW_TYPES,
+    VOID_FUNCTIONS,
+    build_registry,
+    render_stub_source,
+)
 from completion import get_completions
 
 
@@ -112,6 +118,21 @@ class TestRenderStubSource(unittest.TestCase):
         source = render_stub_source(build_registry(), active_variables={})
         self.assertNotIn("active_person:", source)
 
+    def test_void_functions_present(self):
+        source = render_stub_source(build_registry())
+        self.assertIn("def columns(*column_names) -> None: ...", source)
+        self.assertIn('def begin_changes(message: str = "") -> None: ...', source)
+        self.assertIn("def end_changes() -> None: ...", source)
+        self.assertIn("def delete(obj) -> None: ...", source)
+        self.assertIn("def row(*args) -> None: ...", source)
+        self.assertIn(
+            "def chart(type, data, count: int = 20, **kwargs) -> None: ...", source
+        )
+
+    def test_no_void_functions_when_omitted(self):
+        source = render_stub_source(build_registry(), void_functions={})
+        self.assertNotIn("def columns", source)
+
 
 class TestActiveVariableCompletion(unittest.TestCase):
     """
@@ -173,6 +194,27 @@ class TestTableFunctionCompletion(unittest.TestCase):
     def test_custom_filter_offers_real_fields_with_explicit_namespace(self):
         names = self._complete('for fam in custom_filter("f", "Family"):\n    fam.')
         self.assertIn("father_handle", names)
+
+
+class TestVoidFunctionCompletion(unittest.TestCase):
+    """
+    columns()/begin_changes()/end_changes()/delete()/row()/chart() are void
+    DSL functions (VOID_FUNCTIONS) -- they don't need row-type inference,
+    just a signature so jedi offers them as completions at all. Before
+    these were added to the stub, jedi had no way to know these names exist
+    since they're bound as local closures inside execute_code(), never
+    passed through the completion namespace.
+    """
+
+    def _complete(self, source):
+        lines = source.splitlines()
+        return get_completions(source, len(lines), len(lines[-1]), {})
+
+    def test_completes_void_function_names(self):
+        for name in VOID_FUNCTIONS:
+            with self.subTest(name=name):
+                names = self._complete(name[:-1])
+                self.assertIn(name + "()", names)
 
 
 if __name__ == "__main__":

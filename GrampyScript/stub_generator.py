@@ -102,6 +102,22 @@ TABLE_FUNCTIONS = {
     "custom_filter": ["name: str", 'namespace: str = "Person"'],
 }
 
+# Other top-level DSL callables bound in execute_code() (GrampyScript.py):
+# real functions/bound methods with side effects (printing a row, opening/
+# closing a transaction, drawing a chart, deleting a record) rather than
+# something whose return value ever gets chained. None of these need row-type
+# inference, just enough of a signature for jedi to offer them as completions
+# and to know their parameters -- hence "-> None" rather than being folded
+# into TABLE_FUNCTIONS.
+VOID_FUNCTIONS = {
+    "row": ["*args"],
+    "columns": ["*column_names"],
+    "begin_changes": ['message: str = ""'],
+    "end_changes": [],
+    "delete": ["obj"],
+    "chart": ["type", "data", "count: int = 20", "**kwargs"],
+}
+
 # back_references(_recursively) can resolve to any primary object type at
 # runtime (datadict2.py looks up the handle's own table), so -- same trick as
 # TABLE_FUNCTIONS above -- type them as the union of every row type rather
@@ -235,6 +251,7 @@ def render_stub_source(
     generator_row_types=GENERATOR_ROW_TYPES,
     table_functions=TABLE_FUNCTIONS,
     active_variables=ACTIVE_VARIABLES,
+    void_functions=VOID_FUNCTIONS,
 ):
     """
     Render `registry` plus DSL generator function signatures and active_*
@@ -266,6 +283,8 @@ def render_stub_source(
             lines.append(
                 "def %s(%s) -> Iterator[%s]: ..." % (func_name, ", ".join(params), row_union)
             )
+    for func_name, params in void_functions.items():
+        lines.append("def %s(%s) -> None: ..." % (func_name, ", ".join(params)))
     lines.append("")
     for var_name, row_type in active_variables.items():
         lines.append("%s: %s" % (var_name, row_type))
