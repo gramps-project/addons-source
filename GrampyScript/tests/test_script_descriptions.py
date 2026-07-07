@@ -56,7 +56,8 @@ class TestScriptDescriptionsIsGenerated(unittest.TestCase):
         self.assertEqual(errors, [])
         header = _load_header(DESCRIPTIONS_PATH)
         regenerated = build_source(entries, header)
-        on_disk = open(DESCRIPTIONS_PATH, encoding="utf-8").read()
+        with open(DESCRIPTIONS_PATH, encoding="utf-8") as f:
+            on_disk = f.read()
         self.assertEqual(
             regenerated,
             on_disk,
@@ -69,7 +70,8 @@ class TestScriptsAreValidPython(unittest.TestCase):
     def test_all_scripts_parse(self):
         for path in glob.glob(os.path.join(SCRIPTS_DIR, "*.gram.py")):
             with self.subTest(path=path):
-                ast.parse(open(path).read())
+                with open(path) as f:
+                    ast.parse(f.read())
 
 
 if __name__ == "__main__":
