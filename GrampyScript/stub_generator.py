@@ -102,13 +102,22 @@ TABLE_FUNCTIONS = {
     "custom_filter": ["name: str", 'namespace: str = "Person"'],
 }
 
+# back_references(_recursively) can resolve to any primary object type at
+# runtime (datadict2.py looks up the handle's own table), so -- same trick as
+# TABLE_FUNCTIONS above -- type them as the union of every row type rather
+# than "object": jedi merges every union member's attributes, which is more
+# useful than no completions at all past a plain "object".
+_BACK_REFERENCE_TYPE = 'list[Union[%s]]' % ", ".join(
+    '"%s"' % name for name in sorted(set(GENERATOR_ROW_TYPES.values()))
+)
+
 # DataDict2's computed @property names (datadict2.py), layered onto every
 # generated type since DataDict2 defines them once for every instance
 # regardless of the wrapped record's real class. Best-effort types; "object"
 # is used where the real return type is ambiguous or data-dependent.
 COMPUTED_PROPERTIES = {
     "gender": "str",
-    "age": "object",
+    "age": "Span",
     "birth": "Event",
     "death": "Event",
     "place": "Place",
@@ -130,8 +139,8 @@ COMPUTED_PROPERTIES = {
     "addresses": 'list["Address"]',
     "lds_ords": 'list["LdsOrdinance"]',
     "references": 'list["PersonRef"]',
-    "back_references": "object",
-    "back_references_recursively": "object",
+    "back_references": _BACK_REFERENCE_TYPE,
+    "back_references_recursively": _BACK_REFERENCE_TYPE,
     "name": "Name",
     "surname": "Surname",
     "names": 'list["Name"]',
@@ -209,6 +218,7 @@ def render_stub_source(
     lines = [
         "from __future__ import annotations",
         "from typing import Iterator, Union",
+        "from gramps.gen.lib.date import Span",
         "",
     ]
     for name in sorted(registry):
