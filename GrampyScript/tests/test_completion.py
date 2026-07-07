@@ -46,8 +46,10 @@ class _MockSaBase(unittest.TestCase):
 
 class TestBareWordCompletion(_MockSaBase):
     def test_completes_python_builtins(self):
+        # print is a function, so it gets "()" appended like any other
+        # callable completion -- see TestCompletionItems below.
         names = self._complete("pri", {})
-        self.assertIn("print", names)
+        self.assertIn("print()", names)
 
     def test_completes_namespace_variable(self):
         names = self._complete("active_per", {"active_person": DataDict2(_make_person())})
@@ -111,6 +113,46 @@ class TestGeneratorRowTypeInference(_MockSaBase):
         self.assertNotIn("primary_name", names)
 
 
+class TestGetCompletionsFunctionParens(_MockSaBase):
+    """
+    Regression: get_completions() used to return bare function names
+    (e.g. "people", "format") while get_completion_items() appended "()"
+    to the same completions -- inconsistent and misleading, since a bare
+    name reads as a field rather than a callable. Both now agree.
+    """
+
+    def test_bare_function_completion_gets_parens(self):
+        names = self._complete("peop", {})
+        self.assertIn("people()", names)
+        self.assertNotIn("people", names)
+
+    def test_non_function_completion_has_no_parens(self):
+        namespace = {"active_person": DataDict2(_make_person())}
+        names = self._complete("active_person.gramps_", namespace)
+        self.assertIn("gramps_id", names)
+
+
+class TestClassCompletionsExcluded(_MockSaBase):
+    """
+    Classes (jedi type "class") are excluded entirely, not just left
+    without "()". The stub preamble injects scaffold classes (Person,
+    Family, ...) purely for jedi's static analysis -- they aren't bound to
+    anything in the namespace a script actually executes in, so offering
+    them as completions would suggest names that raise NameError if
+    accepted. Builtin classes (list, dict, ...) are excluded too, since
+    the DSL has no use for instantiating classes directly.
+    """
+
+    def test_stub_scaffold_class_not_offered(self):
+        names = self._complete("Perso", {})
+        self.assertNotIn("Person", names)
+        self.assertNotIn("PersonRef", names)
+
+    def test_builtin_class_not_offered(self):
+        names = self._complete("li", {})
+        self.assertNotIn("list", names)
+
+
 class TestCompletionItems(_MockSaBase):
     """get_completion_items() is get_completions() plus the jedi
     `.complete` suffix, used by the editor to insert just the missing
@@ -160,7 +202,7 @@ class TestRobustness(_MockSaBase):
         # Completing on an empty buffer legitimately lists every builtin
         # in scope; the point of this test is only that it doesn't raise.
         names = self._complete("", {})
-        self.assertIn("print", names)
+        self.assertIn("print()", names)
 
     def test_incomplete_code_does_not_raise(self):
         # Mid-typing code is often syntactically invalid; must not crash.

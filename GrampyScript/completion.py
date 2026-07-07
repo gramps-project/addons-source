@@ -49,14 +49,32 @@ def _get_stub_preamble():
 
 def _complete(source, line, column, namespace):
     """Shared jedi call underlying both get_completions() and
-    get_completion_items(); returns raw jedi Completion objects."""
+    get_completion_items(); returns raw jedi Completion objects, excluding
+    classes (jedi type "class"). The DSL has no use for instantiating
+    classes directly, and the stub preamble's own scaffold classes
+    (Person, Family, ...) would otherwise leak into the list -- they exist
+    only for jedi's static analysis and aren't bound to anything in the
+    namespace a script actually runs in, so offering them as completions
+    would suggest names that raise NameError if accepted."""
     preamble = _get_stub_preamble()
     full_source = preamble + source
     interpreter = jedi.Interpreter(full_source, [namespace])
     try:
-        return interpreter.complete(line + preamble.count("\n"), column)
+        completions = interpreter.complete(line + preamble.count("\n"), column)
     except Exception:
         return []
+    return [completion for completion in completions if completion.type != "class"]
+
+
+def _display_name(completion):
+    """Completion name for display: function/method completions (jedi type
+    "function", e.g. `people`, `print`) get "()" appended, so both
+    get_completions() and get_completion_items() consistently show a
+    callable as callable rather than as a bare, field-like name."""
+    name = completion.name
+    if completion.type == "function":
+        name += "()"
+    return name
 
 
 def get_completions(source, line, column, namespace):
@@ -74,7 +92,7 @@ def get_completions(source, line, column, namespace):
     to runtime introspection (dir()/getattr()) for anything it can't
     statically analyze.
     """
-    return [completion.name for completion in _complete(source, line, column, namespace)]
+    return [_display_name(completion) for completion in _complete(source, line, column, namespace)]
 
 
 def _takes_arguments(completion):
@@ -100,20 +118,17 @@ def get_completion_items(source, line, column, namespace):
     "rt"), so callers can insert it directly without
     recomputing/re-typing the already-typed prefix.
 
-    Function/method completions (jedi type "function", e.g. `people`,
-    `families`) get "()" appended to both `name` (so the popup reads
-    "people()") and `complete`; `cursor_offset` is then 1 for functions
-    that take arguments, landing the cursor between the parens ready to
-    type them, or 0 for no-argument functions, landing it after the
-    closing paren.
+    Function/method completions also get "()" appended to `complete`;
+    `cursor_offset` is then 1 for functions that take arguments, landing
+    the cursor between the parens ready to type them, or 0 for
+    no-argument functions, landing it after the closing paren.
     """
     items = []
     for completion in _complete(source, line, column, namespace):
-        name = completion.name
+        name = _display_name(completion)
         complete = completion.complete
         cursor_offset = 0
         if completion.type == "function":
-            name += "()"
             complete += "()"
             if _takes_arguments(completion):
                 cursor_offset = 1
