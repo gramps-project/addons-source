@@ -119,13 +119,40 @@ class TestCompletionItems(_MockSaBase):
     def test_complete_is_only_the_missing_suffix(self):
         namespace = {"active_person": DataDict2(_make_person())}
         items = get_completion_items("active_person.primary_", 1, len("active_person.primary_"), namespace)
-        self.assertEqual(items, [{"name": "primary_name", "complete": "name"}])
+        self.assertEqual(
+            items, [{"name": "primary_name", "complete": "name", "cursor_offset": 0}]
+        )
 
     def test_complete_is_full_name_when_nothing_typed_yet(self):
         namespace = {"active_person": DataDict2(_make_person())}
         items = get_completion_items("active_person.", 1, len("active_person."), namespace)
         matching = [i for i in items if i["name"] == "primary_name"]
-        self.assertEqual(matching, [{"name": "primary_name", "complete": "primary_name"}])
+        self.assertEqual(
+            matching, [{"name": "primary_name", "complete": "primary_name", "cursor_offset": 0}]
+        )
+
+    def test_no_arg_function_gets_parens_appended(self):
+        # people() takes no arguments -- cursor lands after "()".
+        items = get_completion_items("peop", 1, len("peop"), {})
+        matching = [i for i in items if i["name"] == "people()"]
+        self.assertEqual(
+            matching, [{"name": "people()", "complete": "le()", "cursor_offset": 0}]
+        )
+
+    def test_function_with_args_lands_cursor_between_parens(self):
+        items = get_completion_items("custom_fil", 1, len("custom_fil"), {})
+        matching = [i for i in items if i["name"] == "custom_filter()"]
+        self.assertEqual(
+            matching, [{"name": "custom_filter()", "complete": "ter()", "cursor_offset": 1}]
+        )
+
+    def test_non_function_completion_has_no_parens(self):
+        namespace = {"active_person": DataDict2(_make_person())}
+        items = get_completion_items("active_person.gramps_", 1, len("active_person.gramps_"), namespace)
+        matching = [i for i in items if i["name"] == "gramps_id"]
+        self.assertEqual(
+            matching, [{"name": "gramps_id", "complete": "id", "cursor_offset": 0}]
+        )
 
 
 class TestRobustness(_MockSaBase):

@@ -217,6 +217,11 @@ class CompletionController:
         if self.items:
             item = self.items[self.selected_index]
             self.buffer.insert(self._cursor_iter(), item["complete"])
+            offset = item.get("cursor_offset", 0)
+            if offset:
+                it = self._cursor_iter()
+                it.backward_chars(offset)
+                self.buffer.place_cursor(it)
         self.close()
 
     def close(self):
