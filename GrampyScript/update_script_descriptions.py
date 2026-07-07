@@ -55,7 +55,8 @@ DESCRIPTION_WIDTH = 65
 
 def _load_header(path):
     """Return the file text up through the "SCRIPT_DESCRIPTIONS = {" line."""
-    source = open(path, encoding="utf-8").read()
+    with open(path, encoding="utf-8") as f:
+        source = f.read()
     tree = ast.parse(source)
     lines = source.splitlines(keepends=True)
 
@@ -103,7 +104,8 @@ def collect_entries():
     errors = []
     for path in sorted(glob.glob(os.path.join(SCRIPTS_DIR, "*.gram.py"))):
         filename = os.path.basename(path)
-        source = open(path, encoding="utf-8").read()
+        with open(path, encoding="utf-8") as f:
+            source = f.read()
         title = extract_header_comment(source)
         description = ast.get_docstring(ast.parse(source), clean=True)
         if description:
