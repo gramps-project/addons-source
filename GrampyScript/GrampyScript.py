@@ -311,9 +311,7 @@ class GrampyScript(Gramplet):
         self.update_filename_label()
         if os.path.exists(self.last_filename):
             self.ebuf.set_text(open(self.last_filename).read())
-            self.statusmsg.set_text("Loaded %r" % self.last_filename)
         else:
-            self.statusmsg.set_text("Current filename: %r" % self.last_filename)
             self.ebuf.set_text(
                 """# This is a sample script
 
@@ -476,7 +474,7 @@ for person in people():
             provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         )
 
-        self.statusmsg = Gtk.Label(_("Ready..."))
+        self.statusmsg = Gtk.Label(_("Ready... (Tab for completions)"))
         self.statusmsg.set_xalign(0)  # 0.0 for left, 0.5 for center, 1.0 for right
         # Some status messages embed the full path of the current file
         # (e.g. "Loaded '/home/.../scripts/some_script.gram.py'"), which
@@ -540,7 +538,9 @@ for person in people():
     def _do_new_script(self):
         self.ebuf.set_text("")
         self.ebuf.set_modified(False)
-        self.statusmsg.set_text("Ready...")
+        self.last_filename = ""
+        self.update_filename_label()
+        self.statusmsg.set_text(_("Ready... (Tab for completions)"))
 
     def open_script(self, widget):
         # type: (Gtk.Widget) -> None
@@ -568,7 +568,6 @@ for person in people():
                 config.set("defaults.last_filename", filename)
                 config.save()
                 self.update_filename_label()
-                self.statusmsg.set_text("Loaded %r" % self.last_filename)
                 break
 
         choose_file_dialog.destroy()
@@ -580,7 +579,7 @@ for person in people():
         with open(self.last_filename, "w") as fp:
             fp.write(self.get_text())
         self.ebuf.set_modified(False)
-        self.statusmsg.set_text("Saved %r" % self.last_filename)
+        self.statusmsg.set_text("Saved")
 
     def save_as_script(self, widget):
         choose_file_dialog = ScriptSaveFileChooserDialog(self.uistate)
@@ -608,7 +607,7 @@ for person in people():
                 config.set("defaults.last_filename", filename)
                 config.save()
                 self.update_filename_label()
-                self.statusmsg.set_text("Saved as %r (now current)" % self.last_filename)
+                self.statusmsg.set_text("Saved as (now current)")
                 break
 
         choose_file_dialog.destroy()
