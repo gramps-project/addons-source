@@ -36,4 +36,5 @@ register(
     optionclass="GrampsAssistantOptions",
     tool_modes=[TOOL_MODE_GUI],
     depends_on=["Grampy Script"],
+    help_url="Addon:GrampsAssistant",
 )

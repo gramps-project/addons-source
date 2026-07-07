@@ -29,6 +29,7 @@ import uuid
 from gi.repository import GLib, Gdk, Gtk, Pango
 
 from gramps.gen.config import config as global_config
+from gramps.gui.display import display_url
 
 try:
     from gramps.gui.sidepanel import BaseSidePanel
@@ -43,6 +44,8 @@ from gramps.gen.const import GRAMPS_LOCALE as glocale
 
 _ = glocale.translation.gettext
 _LOG = logging.getLogger("gramps-assistant")
+
+WIKI_PAGE = "https://gramps-project.org/wiki/index.php?title=Addon:GrampsAssistant"
 
 # ---------------------------------------------------------------------------
 # Plugin-local configuration
@@ -213,6 +216,10 @@ class GrampsAssistant(BaseSidePanel):
         clear_btn.set_tooltip_text(_("Clear conversation and context"))
         clear_btn.connect("clicked", self._on_clear_clicked)
 
+        help_btn = Gtk.Button(label=_("Help"))
+        help_btn.set_tooltip_text(_("Open the Gramps Assistant wiki page"))
+        help_btn.connect("clicked", self._on_help_clicked)
+
         self._send_btn = Gtk.Button(label=_("Send"))
         self._send_btn.connect("clicked", self._on_send_clicked)
 
@@ -221,6 +228,7 @@ class GrampsAssistant(BaseSidePanel):
 
         btn_row.pack_start(settings_btn, False, False, 0)
         btn_row.pack_start(clear_btn, False, False, 0)
+        btn_row.pack_start(help_btn, False, False, 0)
         btn_row.pack_start(self._context_label, True, True, 4)
         btn_row.pack_end(self._send_btn, False, False, 0)
 
@@ -706,6 +714,9 @@ class GrampsAssistant(BaseSidePanel):
         self._chat_buffer.set_text("")
         self._show_welcome()
         self._update_context_label()
+
+    def _on_help_clicked(self, button):
+        display_url(WIKI_PAGE)
 
     # ------------------------------------------------------------------
     # Message submission
