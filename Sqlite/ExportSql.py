@@ -1783,7 +1783,7 @@ def exportData(database, filename: str, user, option_box) -> bool:
     db.db.commit()  # commit all changes
     db.db.close()
 
-    total_time = time.time() - start
+    total_time = round(time.time() - start)
     msg = (
         ngettext(
             "Export Complete: %d second", "Export Complete: %d seconds", total_time

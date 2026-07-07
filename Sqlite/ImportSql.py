@@ -887,7 +887,7 @@ class SQLReader(object):
 
     def cleanup(self) -> None:
         """Finalize import: re-enable signals and report elapsed time."""
-        self.t = time.time() - self.t
+        self.t = round(time.time() - self.t)
         msg = (
             ngettext("Import Complete: %d second", "Import Complete: %d seconds", self.t)
             % self.t
