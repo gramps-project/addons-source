@@ -6,7 +6,7 @@ register(
     id="MatchEventFilterRole",
     name=_("People from event with role"),
     description=_("Matches people of event filter with role"),
-    version = '0.0.1',
+    version = '0.0.2',
     authors=["jjdup"],
     authors_email=["jeremi+gramps@dupin.fdn.fr"],
     gramps_target_version="6.0",
