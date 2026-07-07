@@ -107,43 +107,61 @@ TABLE_FUNCTIONS = {
 # TABLE_FUNCTIONS above -- type them as the union of every row type rather
 # than "object": jedi merges every union member's attributes, which is more
 # useful than no completions at all past a plain "object".
-_BACK_REFERENCE_TYPE = 'list[Union[%s]]' % ", ".join(
-    '"%s"' % name for name in sorted(set(GENERATOR_ROW_TYPES.values()))
-)
+_ALL_ROOT = set(GENERATOR_ROW_TYPES.values())
+_BACK_REFERENCE_TYPE = 'list[Union[%s]]' % ", ".join('"%s"' % name for name in sorted(_ALL_ROOT))
 
-# DataDict2's computed @property names (datadict2.py), layered onto every
-# generated type since DataDict2 defines them once for every instance
-# regardless of the wrapped record's real class. Best-effort types; "object"
-# is used where the real return type is ambiguous or data-dependent.
+_PERSON = {"Person"}
+_PERSON_FAMILY = {"Person", "Family"}
+
+# DataDict2's computed @property names (datadict2.py): type_annotation plus
+# which root row types the property is actually valid on, derived from what
+# each property's own code requires -- a SimpleAccess call that asserts its
+# argument type (e.g. sa.gender, sa.spouse: Person only), or a raw dict field
+# that only some schemas have (e.g. `place` needs Event.place, `source` needs
+# Citation.source_handle). Layering a property onto a type it doesn't apply
+# to would offer a completion that's either silently useless or -- like the
+# old `gender`-on-non-Person -- raises at runtime.
 COMPUTED_PROPERTIES = {
-    "gender": "str",
-    "age": "Span",
-    "birth": "Event",
-    "death": "Event",
-    "place": "Place",
-    "parents": 'list["Person"]',
-    "father": "Person",
-    "mother": "Person",
-    "spouse": "Person",
-    "source": "Source",
-    "families": 'list["Family"]',
-    "parent_families": 'list["Family"]',
-    "children": 'list["Person"]',
-    "notes": 'list["Note"]',
-    "tags": 'list["Tag"]',
-    "citations": 'list["Citation"]',
-    "media": 'list["MediaRef"]',
-    "events": 'list["Event"]',
-    "reference": "Person",
-    "attributes": 'list["Attribute"]',
-    "addresses": 'list["Address"]',
-    "lds_ords": 'list["LdsOrdinance"]',
-    "references": 'list["PersonRef"]',
-    "back_references": _BACK_REFERENCE_TYPE,
-    "back_references_recursively": _BACK_REFERENCE_TYPE,
-    "name": "Name",
-    "surname": "Surname",
-    "names": 'list["Name"]',
+    "gender": ("str", _PERSON),
+    "age": ("Span", _PERSON),
+    "birth": ("Event", _PERSON),
+    "death": ("Event", _PERSON),
+    "place": ("Place", {"Event"}),
+    "parents": ('list["Person"]', _PERSON_FAMILY),
+    "father": ("Person", _PERSON_FAMILY),
+    "mother": ("Person", _PERSON_FAMILY),
+    "spouse": ("Person", _PERSON),
+    "source": ("Source", {"Citation"}),
+    "families": ('list["Family"]', _PERSON),
+    "parent_families": ('list["Family"]', _PERSON),
+    "children": ('list["Person"]', _PERSON_FAMILY),
+    "notes": ('list["Note"]', _ALL_ROOT - {"Note"}),
+    "tags": ('list["Tag"]', _ALL_ROOT),
+    "citations": ('list["Citation"]', {"Person", "Family", "Event", "Place", "Media"}),
+    "media": ('list["MediaRef"]', {"Person", "Family", "Event", "Place", "Source", "Citation"}),
+    "events": ('list["Event"]', _PERSON_FAMILY),
+    "attributes": ('list["Attribute"]', {"Person", "Family", "Event", "Source", "Citation", "Media"}),
+    "addresses": ('list["Address"]', {"Person", "Repository"}),
+    "lds_ords": ('list["LdsOrdinance"]', _PERSON_FAMILY),
+    "references": ('list["PersonRef"]', _PERSON),
+    "back_references": (_BACK_REFERENCE_TYPE, _ALL_ROOT),
+    "back_references_recursively": (_BACK_REFERENCE_TYPE, _ALL_ROOT),
+    "name": ("Name", _PERSON),
+    "surname": ("Surname", _PERSON),
+    "names": ('list["Name"]', _PERSON),
+}
+
+# `reference` (datadict2.py) isn't valid on any root row type -- it reads
+# `self.ref`, a handle that exists only on the nested *Ref wrapper types
+# (mirrors datadict2.REFERENCE_TABLES). Sanitized schema class name -> the
+# row type its `ref` handle points into.
+REFERENCE_TARGET_TYPES = {
+    "ChildReference": "Person",
+    "EventReference": "Event",
+    "MediaRef": "Media",
+    "PersonRef": "Person",
+    "PlaceRef": "Place",
+    "RepositoryRef": "Repository",
 }
 
 _SCALAR_TYPES = {"string": "str", "integer": "int", "boolean": "bool", "number": "float"}
@@ -190,15 +208,25 @@ def _walk(schema, registry):
 def build_registry(root_classes=ROOT_CLASSES):
     """
     Return {sanitized_class_name: {field_name: type_annotation}} for every
-    type reachable from `root_classes` via Gramps' own get_schema(), with
-    DataDict2's computed properties layered on top of each (matching real
-    attribute lookup order: properties shadow raw dict keys).
+    type reachable from `root_classes` via Gramps' own get_schema(). Each
+    entry in COMPUTED_PROPERTIES is layered only onto the root row types it
+    lists as valid (matching real attribute lookup order: properties shadow
+    raw dict keys) -- nested structural types (Name, Attribute, ...) get
+    schema fields only. `reference` is layered separately, onto the nested
+    *Ref types listed in REFERENCE_TARGET_TYPES, since that's what it's
+    actually valid on.
     """
     registry = {}
     for cls in root_classes:
         _walk(cls.get_schema(), registry)
-    for fields in registry.values():
-        fields.update(COMPUTED_PROPERTIES)
+    for class_name, fields in registry.items():
+        if class_name in _ALL_ROOT:
+            for prop_name, (type_, valid_for) in COMPUTED_PROPERTIES.items():
+                if class_name in valid_for:
+                    fields[prop_name] = type_
+        target = REFERENCE_TARGET_TYPES.get(class_name)
+        if target is not None:
+            fields["reference"] = target
     return registry
 
 
