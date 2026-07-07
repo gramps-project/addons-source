@@ -178,8 +178,10 @@ class CompletionController:
         return items
 
     def trigger(self):
-        """Try to open the popover at the cursor. Returns True if it
-        did (there was something completable to show)."""
+        """Try to complete at the cursor. Returns True if there was
+        something completable to show. A single match is inserted
+        directly instead of opening a popover with one row in it;
+        multiple matches open the popover as usual."""
         if not self._is_completable_context():
             return False
         items = self._compute_items()
@@ -188,6 +190,10 @@ class CompletionController:
             return False
         self.items = items
         self.selected_index = 0
+        if len(items) == 1:
+            _LOG.debug("trigger: single match, inserting directly: %s", items[0]["name"])
+            self.accept()
+            return True
         self._open_popover()
         return True
 

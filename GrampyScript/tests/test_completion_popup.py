@@ -79,14 +79,26 @@ class TestTriggerAndClose(unittest.TestCase):
         self.assertEqual(controller.selected_index, 0)
         window.destroy()
 
+    def test_trigger_inserts_directly_when_only_one_match(self):
+        # "primary_" only matches primary_name among active_person's
+        # dynamic keys -- with a single candidate there is nothing to
+        # choose between, so it should be inserted immediately rather
+        # than opening a one-row popover.
+        controller, buffer, window = _make_controller("active_person.primary_")
+        opened = controller.trigger()
+        self.assertTrue(opened)
+        self.assertFalse(controller.is_open())
+        text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), True)
+        self.assertEqual(text, "active_person.primary_name")
+        window.destroy()
+
 
 class TestAccept(unittest.TestCase):
     def test_accept_inserts_missing_suffix_only(self):
-        controller, buffer, window = _make_controller("active_person.primary_")
+        controller, buffer, window = _make_controller("active_person.")
         controller.trigger()
-        # first match should be primary_name (only dynamic key matching)
         names = [item["name"] for item in controller.items]
-        self.assertEqual(names, ["primary_name"])
+        controller.selected_index = names.index("primary_name")
         controller.accept()
         text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), True)
         self.assertEqual(text, "active_person.primary_name")
@@ -102,12 +114,11 @@ class TestAccept(unittest.TestCase):
         window.destroy()
 
     def test_accept_no_arg_function_places_cursor_after_parens(self):
+        # "peop" has only one match (people()), so trigger() inserts it
+        # directly -- exercises the same accept() cursor-placement code
+        # path as a manual popover selection would.
         controller, buffer, window = _make_controller("peop")
         controller.trigger()
-        names = [item["name"] for item in controller.items]
-        self.assertIn("people()", names)
-        controller.selected_index = names.index("people()")
-        controller.accept()
         text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), True)
         self.assertEqual(text, "people()")
         cursor = buffer.get_iter_at_mark(buffer.get_insert()).get_offset()
@@ -117,10 +128,6 @@ class TestAccept(unittest.TestCase):
     def test_accept_function_with_args_places_cursor_between_parens(self):
         controller, buffer, window = _make_controller("custom_fil")
         controller.trigger()
-        names = [item["name"] for item in controller.items]
-        self.assertIn("custom_filter()", names)
-        controller.selected_index = names.index("custom_filter()")
-        controller.accept()
         text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), True)
         self.assertEqual(text, "custom_filter()")
         cursor = buffer.get_iter_at_mark(buffer.get_insert()).get_offset()
@@ -144,8 +151,17 @@ class TestNavigation(unittest.TestCase):
 
 
 class TestOnKeyPress(unittest.TestCase):
-    def test_tab_opens_then_accepts(self):
+    def test_tab_completes_directly_for_single_match(self):
         controller, buffer, window = _make_controller("active_person.primary_")
+        consumed = controller.on_key_press(_FakeEvent(Gdk.KEY_Tab))
+        self.assertTrue(consumed)
+        self.assertFalse(controller.is_open())
+        text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), True)
+        self.assertEqual(text, "active_person.primary_name")
+        window.destroy()
+
+    def test_tab_opens_then_accepts_for_multiple_matches(self):
+        controller, buffer, window = _make_controller("active_person.")
         consumed = controller.on_key_press(_FakeEvent(Gdk.KEY_Tab))
         self.assertTrue(consumed)
         self.assertTrue(controller.is_open())
@@ -154,7 +170,8 @@ class TestOnKeyPress(unittest.TestCase):
         self.assertTrue(consumed)
         self.assertFalse(controller.is_open())
         text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), True)
-        self.assertEqual(text, "active_person.primary_name")
+        self.assertTrue(text.startswith("active_person."))
+        self.assertGreater(len(text), len("active_person."))
         window.destroy()
 
     def test_tab_falls_through_when_nothing_completable(self):
@@ -188,13 +205,16 @@ class TestOnKeyPress(unittest.TestCase):
         window.destroy()
 
     def test_return_accepts_only_while_open(self):
-        controller, buffer, window = _make_controller("active_person.primary_")
+        controller, buffer, window = _make_controller("active_person.")
         # popover not open: Return must not be swallowed (newline/apply-script bindings)
         self.assertFalse(controller.on_key_press(_FakeEvent(Gdk.KEY_Return)))
         controller.trigger()
+        self.assertTrue(controller.is_open())
         self.assertTrue(controller.on_key_press(_FakeEvent(Gdk.KEY_Return)))
+        self.assertFalse(controller.is_open())
         text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), True)
-        self.assertEqual(text, "active_person.primary_name")
+        self.assertTrue(text.startswith("active_person."))
+        self.assertGreater(len(text), len("active_person."))
         window.destroy()
 
 
@@ -212,7 +232,7 @@ class TestLiveRefresh(unittest.TestCase):
         window.destroy()
 
     def test_refresh_closes_when_context_no_longer_completable(self):
-        controller, buffer, window = _make_controller("active_person.primary_")
+        controller, buffer, window = _make_controller("active_person.")
         controller.trigger()
         self.assertTrue(controller.is_open())
 
