@@ -101,6 +101,32 @@ class TestAccept(unittest.TestCase):
         self.assertFalse(controller.is_open())
         window.destroy()
 
+    def test_accept_no_arg_function_places_cursor_after_parens(self):
+        controller, buffer, window = _make_controller("peop")
+        controller.trigger()
+        names = [item["name"] for item in controller.items]
+        self.assertIn("people()", names)
+        controller.selected_index = names.index("people()")
+        controller.accept()
+        text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), True)
+        self.assertEqual(text, "people()")
+        cursor = buffer.get_iter_at_mark(buffer.get_insert()).get_offset()
+        self.assertEqual(cursor, len("people()"))
+        window.destroy()
+
+    def test_accept_function_with_args_places_cursor_between_parens(self):
+        controller, buffer, window = _make_controller("custom_fil")
+        controller.trigger()
+        names = [item["name"] for item in controller.items]
+        self.assertIn("custom_filter()", names)
+        controller.selected_index = names.index("custom_filter()")
+        controller.accept()
+        text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), True)
+        self.assertEqual(text, "custom_filter()")
+        cursor = buffer.get_iter_at_mark(buffer.get_insert()).get_offset()
+        self.assertEqual(cursor, len("custom_filter("))
+        window.destroy()
+
 
 class TestNavigation(unittest.TestCase):
     def test_move_selection_clamped(self):

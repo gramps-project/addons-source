@@ -77,16 +77,45 @@ def get_completions(source, line, column, namespace):
     return [completion.name for completion in _complete(source, line, column, namespace)]
 
 
+def _takes_arguments(completion):
+    """True if a function/method completion has at least one parameter
+    to fill in (jedi's Signature.params already excludes a bound
+    method's `self`), used to decide whether the inserted "()" should
+    land the cursor between the parens instead of after them."""
+    try:
+        signatures = completion.get_signatures()
+    except Exception:
+        return False
+    return any(signature.params for signature in signatures)
+
+
 def get_completion_items(source, line, column, namespace):
     """
     Same as get_completions(), but for UI use: returns a list of
     {"name": full completion name, "complete": text to insert at the
-    cursor} dicts. `name` is for display; `complete` is only the
-    remaining characters jedi says are missing (e.g. typing "impo" and
-    accepting "import" gives complete == "rt"), so callers can insert it
-    directly without recomputing/re-typing the already-typed prefix.
+    cursor, "cursor_offset": how many characters back from the end of
+    the inserted text the cursor should land} dicts. `name` is for
+    display; `complete` is only the remaining characters jedi says are
+    missing (e.g. typing "impo" and accepting "import" gives complete ==
+    "rt"), so callers can insert it directly without
+    recomputing/re-typing the already-typed prefix.
+
+    Function/method completions (jedi type "function", e.g. `people`,
+    `families`) get "()" appended to both `name` (so the popup reads
+    "people()") and `complete`; `cursor_offset` is then 1 for functions
+    that take arguments, landing the cursor between the parens ready to
+    type them, or 0 for no-argument functions, landing it after the
+    closing paren.
     """
-    return [
-        {"name": completion.name, "complete": completion.complete}
-        for completion in _complete(source, line, column, namespace)
-    ]
+    items = []
+    for completion in _complete(source, line, column, namespace):
+        name = completion.name
+        complete = completion.complete
+        cursor_offset = 0
+        if completion.type == "function":
+            name += "()"
+            complete += "()"
+            if _takes_arguments(completion):
+                cursor_offset = 1
+        items.append({"name": name, "complete": complete, "cursor_offset": cursor_offset})
+    return items
