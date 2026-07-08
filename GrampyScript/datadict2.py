@@ -331,19 +331,23 @@ class DataDict2(dict):
     def names(self):
         return DataList2([self.primary_name] + [self.alternate_names])
 
+    def _real_object(self):
+        """Walk from the root's real object down self.path to find the
+        actual (not reconstructed) object that this wrapper represents."""
+        obj = self.root._object
+        for part in self.path:
+            if isinstance(part, int):
+                obj = obj[part]
+            else:
+                obj = getattr(obj, part)
+        return obj
+
     def __setattr__(self, attr, value):
         if attr in ["root", "path", "callback"]:
             return super().__setattr__(attr, value)
         else:
-            # Follow the path:
-            obj = self.root._object
-            for part in self.path:
-                if isinstance(part, int):
-                    obj = obj[part]
-                else:
-                    obj = getattr(obj, part)
             # Set it in the real _object:
-            setattr(obj, attr, value)
+            setattr(self._real_object(), attr, value)
             # Update the top-level dict:
             self.root.update(object_to_dict(self.root._object))
             # Call the callback
@@ -362,7 +366,15 @@ class DataDict2(dict):
     def __getattr__(self, key):
         if key == "_object":
             if "_object" not in self:
-                self["_object"] = data_to_object(self)
+                # A nested wrapper (non-empty path) must resolve to the
+                # actual sub-object inside the root's real object tree,
+                # not a standalone copy reconstructed from its own dict
+                # slice -- otherwise set_*() calls below mutate a clone
+                # that is discarded instead of the real, committed object.
+                if self.path:
+                    self["_object"] = self._real_object()
+                else:
+                    self["_object"] = data_to_object(self)
             return self["_object"]
         elif key.startswith("_"):
             raise AttributeError(
