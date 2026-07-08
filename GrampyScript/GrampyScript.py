@@ -1198,11 +1198,12 @@ for person in people():
 
             self.CHANGING = True
             self.TRANSACTION = DbTxn(message, self.db)
-            self.db._txn_begin()
+            self.db.transaction_begin(self.TRANSACTION)
 
         def end_changes():
             if self.CHANGING:
-                self.db._txn_commit()
+                self.db.transaction_commit(self.TRANSACTION)
+                self.CHANGING = False
 
         def _iter_raw_person_data():
             for handle, data in self.db._iter_raw_person_data():
