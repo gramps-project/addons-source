@@ -100,6 +100,10 @@ class Database(object):
         self.database = database
         self.db = sqlite.connect(self.database)
         self.cursor = self.db.cursor()
+        # Per (from_type, from_handle, to_type) counters, so each link
+        # written to the `link` table records its position within its
+        # list -- preserving any GUI-driven reordering on round trip.
+        self.link_seq: dict[tuple[str, str, str], int] = {}
 
     def query(self, q: str, *args):
         """Execute a query and return all results."""
@@ -375,7 +379,8 @@ def makeDB(db: Database, callback) -> None:
                  from_type CHARACTER(25),
                  from_handle CHARACTER(25),
                  to_type CHARACTER(25),
-                 to_handle CHARACTER(25));"""
+                 to_handle CHARACTER(25),
+                 seq INTEGER);"""
     )
     count += 1
     callback(100 * count / total)
@@ -611,16 +616,21 @@ def export_link(
 ) -> None:
     """Insert a single link record between two objects."""
     if to_handle:
+        key = (from_type, from_handle, to_type)
+        seq = db.link_seq.get(key, 0)
+        db.link_seq[key] = seq + 1
         db.query(
             """insert into link (
                    from_type,
                    from_handle,
                    to_type,
-                   to_handle) values (?, ?, ?, ?)""",
+                   to_handle,
+                   seq) values (?, ?, ?, ?, ?)""",
             from_type,
             from_handle,
             to_type,
             to_handle,
+            seq,
         )
 
 
