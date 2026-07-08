@@ -266,5 +266,45 @@ class TestDataList2(_MockSaBase):
         self.assertEqual(list(dl), [])
 
 
+# ---------------------------------------------------------------------------
+# DataDict2 — mutation (attribute assignment and set_*() methods)
+# ---------------------------------------------------------------------------
+
+class TestDataDict2Mutation(_MockSaBase):
+    def test_top_level_attribute_assignment(self):
+        dd = DataDict2(_make_person(gramps_id="I0001"))
+        dd.gramps_id = "I9999"
+        self.assertEqual(dd._object.get_gramps_id(), "I9999")
+        self.assertEqual(dd.gramps_id, "I9999")
+
+    def test_nested_attribute_assignment_updates_real_object(self):
+        # Regression: assigning through a nested wrapper (primary_name is
+        # not the root) must mutate the real Person's Name object, not a
+        # disconnected copy.
+        dd = DataDict2(_make_person(first="John"))
+        dd.primary_name.first_name = "Zoe"
+        self.assertEqual(dd._object.get_primary_name().get_first_name(), "Zoe")
+        self.assertEqual(dd.primary_name.first_name, "Zoe")
+
+    def test_nested_set_method_updates_real_object(self):
+        # Regression: calling a set_*() method on a nested wrapper (e.g. a
+        # Surname inside primary_name.surname_list) used to run against a
+        # standalone object rebuilt from that wrapper's own dict slice, so
+        # the mutation never reached the real Person and was lost on commit.
+        dd = DataDict2(_make_person(surname="Smith"))
+        surname = dd.primary_name.surname_list[0]
+        surname.set_surname("Jones")
+        real_surname = dd._object.get_primary_name().get_surname_list()[0]
+        self.assertEqual(real_surname.get_surname(), "Jones")
+        self.assertEqual(dd.primary_name.surname_list[0].surname, "Jones")
+
+    def test_nested_set_method_calls_callback_with_root(self):
+        callback = MagicMock()
+        dd = DataDict2(_make_person(surname="Smith"), callback=callback)
+        surname = dd.primary_name.surname_list[0]
+        surname.set_surname("Jones")
+        callback.assert_called_once_with("set", dd)
+
+
 if __name__ == "__main__":
     unittest.main()
