@@ -27,7 +27,7 @@
 from __future__ import annotations
 
 from gramps.gen.lib.json_utils import data_to_object, object_to_dict
-from gramps.gen.lib import PrimaryObject
+from gramps.gen.lib import PrimaryObject, GrampsType
 from gramps.gen.config import config
 
 NoneType = type(None)
@@ -330,6 +330,21 @@ class DataDict2(dict):
     @property
     def names(self):
         return DataList2([self.primary_name] + [self.alternate_names])
+
+    @property
+    def string(self):
+        # The raw "string" field only holds the *custom*-type override text
+        # for GrampsType-based values (NameOriginType, NameType, EventType,
+        # ...); for predefined values (the common case) it is always "".
+        # Route to the real object's `.string` property instead, which
+        # computes the actual (translated) label. Raising AttributeError
+        # for anything without a "string" field falls back to the normal
+        # __getattr__ lookup, so this doesn't change behavior elsewhere.
+        if "string" not in self:
+            raise AttributeError("string")
+        if isinstance(self._object, GrampsType):
+            return str(self._object)
+        return self["string"]
 
     def _real_object(self):
         """Walk from the root's real object down self.path to find the
