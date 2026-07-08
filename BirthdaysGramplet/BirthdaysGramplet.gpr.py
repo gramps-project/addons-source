@@ -26,7 +26,7 @@ register(
     name=_("Birthdays"),
     description=_("a gramplet that displays the birthdays of the living people"),
     status=STABLE,
-    version = '1.1.19',
+    version = '1.1.20',
     fname="BirthdaysGramplet.py",
     height=200,
     gramplet="BirthdaysGramplet",
