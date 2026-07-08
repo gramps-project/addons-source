@@ -271,6 +271,17 @@ class TestDataList2(_MockSaBase):
         self.assertIn("I0001", ids)
         self.assertIn("I0002", ids)
 
+    def test_set_method_fans_out_across_items(self):
+        # Regression: `dl.set_privacy(True)` used to fan out attribute
+        # access first (collecting each item's unevaluated set_*() wrapper
+        # closure into a DataList2), then fail to call because a DataList2
+        # of closures isn't itself callable. It must call set_privacy(True)
+        # on every item instead.
+        dl = self._make_list()
+        dl.set_privacy(True)
+        self.assertTrue(dl[0].private)
+        self.assertTrue(dl[1].private)
+
     def test_add_concatenates(self):
         dl1 = DataList2([DataDict2(_make_person(gramps_id="I0001"))])
         dl2 = DataList2([DataDict2(_make_person(gramps_id="I0002"))])
