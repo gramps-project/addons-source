@@ -443,7 +443,14 @@ class DataList2(list):
         raise Exception("Setting a DataList2 item is not allowed")
 
     def __getattr__(self, attr):
-        # return DataList2(flatten([getattr(x, attr) for x in self]))
+        if attr.startswith("set_"):
+            # Fan the call (same args) out to every item, rather than
+            # collecting each item's set_*() wrapper closure unevaluated
+            # (which isn't callable itself and silently did nothing).
+            def wrapper(*args, **kwargs):
+                return DataList2([getattr(x, attr)(*args, **kwargs) for x in self])
+
+            return wrapper
         return DataList2(flatten([getattr(x, attr) for x in self]))
 
     def __getitem__(self, position, root=None, path=""):
