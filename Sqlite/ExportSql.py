@@ -55,6 +55,24 @@ LOG = logging.getLogger(__name__)
 from gramps.gen.utils.id import create_id
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gui.plug.export import WriterOptionBox  # don't remove, used!!!
+from gramps.gen.lib.attrtype import AttributeType
+from gramps.gen.lib.childreftype import ChildRefType
+from gramps.gen.lib.citation import Citation
+from gramps.gen.lib.date import Date
+from gramps.gen.lib.eventroletype import EventRoleType
+from gramps.gen.lib.eventtype import EventType
+from gramps.gen.lib.familyreltype import FamilyRelType
+from gramps.gen.lib.ldsord import LdsOrd
+from gramps.gen.lib.nameorigintype import NameOriginType
+from gramps.gen.lib.nametype import NameType
+from gramps.gen.lib.notetype import NoteType
+from gramps.gen.lib.person import Person
+from gramps.gen.lib.placetype import PlaceType
+from gramps.gen.lib.repotype import RepositoryType
+from gramps.gen.lib.srcattrtype import SrcAttributeType
+from gramps.gen.lib.srcmediatype import SourceMediaType
+from gramps.gen.lib.styledtexttagtype import StyledTextTagType
+from gramps.gen.lib.urltype import UrlType
 
 try:
     trans = glocale.get_addon_translator(__file__)
@@ -112,7 +130,7 @@ class Database(object):
 def makeDB(db: Database, callback) -> None:
     """Create all SQLite tables needed by the Sqlite export."""
     count = 0
-    total = 28
+    total = 30
 
     db.query("""drop table if exists note;""")
     db.query(
@@ -522,12 +540,49 @@ def makeDB(db: Database, callback) -> None:
     count += 1
     callback(100 * count / total)
 
+    # Lookup table describing integer codes that are not GrampsType
+    # instances (date calendar/modifier/quality, gender, confidence,
+    # LDS ordinance type/status), so a code's meaning can be read
+    # directly from the exported database.
+    db.query("""drop table if exists constants;""")
+    db.query(
+        """CREATE TABLE constants (
+                 table_name CHARACTER(25),
+                 column_name CHARACTER(25),
+                 code INTEGER,
+                 value TEXT);"""
+    )
+    count += 1
+    callback(100 * count / total)
+
+    # Copy of Gramps' name_group table, mapping a surname to the
+    # header it is grouped under (e.g. for accented/variant spellings).
+    db.query("""drop table if exists name_group;""")
+    db.query(
+        """CREATE TABLE name_group (
+                 name CHARACTER(50) PRIMARY KEY,
+                 grouping TEXT);"""
+    )
+    count += 1
+    callback(100 * count / total)
+
 
 # -------------------------------------------------------------------------
 #
 # Helper lookup
 #
 # -------------------------------------------------------------------------
+def type_string(cls: type, type_dict: dict) -> str:
+    """
+    Return the translated display string for a GrampsType DataDict.
+
+    The raw DataDict's "string" key only holds text for CUSTOM types; for
+    standard types it is empty, so it must be resolved through the
+    GrampsType subclass to get the readable name (e.g. "Birth").
+    """
+    return str(cls((type_dict["value"], type_dict["string"])))
+
+
 def lookup(index: int, event_ref_list: list) -> str | None:
     """
     Return the event handle at position index in the event_ref_list DataDicts.
@@ -688,7 +743,7 @@ def export_attribute(
                  private) VALUES (?,?,?,?,?);""",
         handle,
         the_type["value"],
-        the_type["string"],
+        type_string(AttributeType, the_type),
         value,
         private,
     )
@@ -724,7 +779,7 @@ def export_src_attribute_list(db: Database, from_handle: str, src_attr_list: lis
                      private) VALUES (?,?,?,?,?);""",
             from_handle,
             the_type["value"],
-            the_type["string"],
+            type_string(SrcAttributeType, the_type),
             value,
             private,
         )
@@ -753,7 +808,7 @@ def export_url_list(
             path,
             desc,
             the_type["value"],
-            the_type["string"],
+            type_string(UrlType, the_type),
             private,
         )
         export_link(db, from_type, from_handle, "url", handle)
@@ -823,7 +878,7 @@ def export_event_ref(
         handle,
         ref,
         role["value"],
-        role["string"],
+        type_string(EventRoleType, role),
         private,
     )
     export_list(db, "event_ref", handle, "note", note_list)
@@ -878,9 +933,9 @@ def export_child_ref_list(
             handle,
             ref,
             frel["value"],
-            frel["string"],
+            type_string(ChildRefType, frel),
             mrel["value"],
-            mrel["string"],
+            type_string(ChildRefType, mrel),
             private,
         )
         export_citation_list(db, "child_ref", handle, citation_list)
@@ -1005,7 +1060,7 @@ def export_repository_ref_list(
             ref,
             call_number,
             media_type["value"],
-            media_type["string"],
+            type_string(SourceMediaType, media_type),
             private,
         )
         export_list(db, "repository_ref", handle, "note", note_list)
@@ -1031,7 +1086,7 @@ def export_surname(db: Database, name_handle: str, surname_list: list) -> None:
             surname["prefix"],
             surname["primary"],
             origin_type["value"],
-            origin_type["string"],
+            type_string(NameOriginType, origin_type),
             surname["connector"],
         )
         export_link(db, "name", name_handle, "surname", surname_handle)
@@ -1088,7 +1143,7 @@ def export_name(
         suffix,
         title,
         name_type["value"],
-        name_type["string"],
+        type_string(NameType, name_type),
         group_as,
         sort_as,
         display_as,
@@ -1170,7 +1225,7 @@ def export_note(db: Database, raw: dict) -> None:
         text,
         format_,
         note_type["value"],
-        note_type["string"],
+        type_string(NoteType, note_type),
         change,
         private,
     )
@@ -1185,7 +1240,7 @@ def export_note(db: Database, raw: dict) -> None:
             "note",
             handle,
             markup_name["value"],
-            markup_name["string"],
+            type_string(StyledTextTagType, markup_name),
             value,
             str(ranges),
         )
@@ -1220,7 +1275,7 @@ def export_event(db: Database, raw: dict) -> None:
         handle,
         gid,
         the_type["value"],
-        the_type["string"],
+        type_string(EventType, the_type),
         description,
         change,
         private,
@@ -1342,7 +1397,7 @@ def export_family(db: Database, raw: dict) -> None:
         father_handle,
         mother_handle,
         the_type["value"],
-        the_type["string"],
+        type_string(FamilyRelType, the_type),
         change,
         private,
     )
@@ -1386,7 +1441,7 @@ def export_repository(db: Database, raw: dict) -> None:
         handle,
         gid,
         the_type["value"],
-        the_type["string"],
+        type_string(RepositoryType, the_type),
         name,
         change,
         private,
@@ -1444,7 +1499,7 @@ def export_place(db: Database, raw: dict) -> None:
         title,
         value,
         place_type["value"],
-        place_type["string"],
+        type_string(PlaceType, place_type),
         code,
         long,
         lat,
@@ -1614,6 +1669,84 @@ def export_tag(db: Database, raw: dict) -> None:
 
 # -------------------------------------------------------------------------
 #
+# Constants and name_group export
+#
+# -------------------------------------------------------------------------
+def export_constants(db: Database) -> None:
+    """
+    Export the meaning of integer codes that are not GrampsType instances.
+
+    Date calendar/modifier/quality, person gender, citation confidence,
+    and LDS ordinance type/status are plain integer constants defined in
+    Gramps core rather than per-record GrampsType DataDicts, so their
+    names can't be resolved via type_string(). Record them once here
+    instead of leaving bare integers in those columns.
+    """
+    rows = []
+    for code, name in enumerate(Date.ui_calendar_names):
+        rows.append(("date", "calendar", code, name))
+    for code, name in (
+        (Date.MOD_NONE, _("Regular")),
+        (Date.MOD_BEFORE, _("Before")),
+        (Date.MOD_AFTER, _("After")),
+        (Date.MOD_ABOUT, _("About")),
+        (Date.MOD_RANGE, _("Range")),
+        (Date.MOD_FROM, _("From")),
+        (Date.MOD_TO, _("To")),
+        (Date.MOD_SPAN, _("Span")),
+        (Date.MOD_TEXTONLY, _("Text only")),
+    ):
+        rows.append(("date", "modifier", code, name))
+    for code, name in (
+        (Date.QUAL_NONE, _("Regular")),
+        (Date.QUAL_ESTIMATED, _("Estimated")),
+        (Date.QUAL_CALCULATED, _("Calculated")),
+    ):
+        rows.append(("date", "quality", code, name))
+    for code, name in (
+        (Person.FEMALE, _("female")),
+        (Person.MALE, _("male")),
+        (Person.UNKNOWN, _("unknown")),
+        (Person.OTHER, _("other")),
+    ):
+        rows.append(("person", "gender", code, name))
+    for code, name in (
+        (Citation.CONF_VERY_LOW, _("Very Low")),
+        (Citation.CONF_LOW, _("Low")),
+        (Citation.CONF_NORMAL, _("Normal")),
+        (Citation.CONF_HIGH, _("High")),
+        (Citation.CONF_VERY_HIGH, _("Very High")),
+    ):
+        rows.append(("citation", "confidence", code, name))
+    for code, name, _xml in LdsOrd._TYPE_MAP:
+        rows.append(("lds", "type", code, name))
+    for code, name, _xml in LdsOrd._STATUS_MAP:
+        rows.append(("lds", "status", code, name))
+
+    for table_name, column_name, code, value in rows:
+        db.query(
+            """INSERT INTO constants (
+                     table_name, column_name, code, value) VALUES (?,?,?,?);""",
+            table_name,
+            column_name,
+            code,
+            str(value),
+        )
+
+
+def export_name_group(db: Database, database) -> None:
+    """Export Gramps' name_group table, mapping surnames to their grouping."""
+    for name in database.get_name_group_keys():
+        grouping = database.get_name_group_mapping(name)
+        db.query(
+            "INSERT INTO name_group (name, grouping) VALUES (?, ?);",
+            name,
+            grouping,
+        )
+
+
+# -------------------------------------------------------------------------
+#
 # Dummy callback
 #
 # -------------------------------------------------------------------------
@@ -1668,6 +1801,9 @@ def exportData(database, filename: str, user, option_box) -> bool:
     makeDB(db, callback)
 
     db.batch = True  # don't commit till end
+
+    export_constants(db)
+    export_name_group(db, database)
 
     # ---------------------------------
     # Notes
