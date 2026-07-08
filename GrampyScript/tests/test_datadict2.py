@@ -305,6 +305,25 @@ class TestDataDict2Mutation(_MockSaBase):
         surname.set_surname("Jones")
         callback.assert_called_once_with("set", dd)
 
+    def test_concatenated_name_list_assignment_updates_real_object(self):
+        # Regression: `[dd.primary_name] + dd.alternate_names` (the pattern
+        # used to loop over all of a person's names) goes through
+        # DataList2.__radd__, which builds a plain list of already-wrapped
+        # DataDict2 items and re-wraps it in a new DataList2. Iterating that
+        # outer DataList2 used to re-wrap each *already-wrapped* item via
+        # __getitem__, discarding its real root/path and replacing it with
+        # root=self (since the outer list has root=None), producing a
+        # DataDict2 whose root is itself but whose path is non-empty --
+        # an inconsistent state that made attribute assignment recurse
+        # into itself trying to resolve `self.root._object`.
+        dd = DataDict2(_make_person(surname="Smith"))
+        for name in [dd.primary_name] + dd.alternate_names:
+            self.assertIs(name.root, dd)
+            for surname in name.surname_list:
+                surname.set_surname("Jones")
+        real = dd._object.get_primary_name().get_surname_list()[0]
+        self.assertEqual(real.get_surname(), "Jones")
+
 
 if __name__ == "__main__":
     unittest.main()

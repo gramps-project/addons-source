@@ -436,7 +436,14 @@ class DataList2(list):
             value = super().__getitem__(position)
         except Exception:
             return NoneData()
-        if isinstance(value, dict):
+        # Items can already be fully-wrapped (e.g. after `+`/`__radd__`
+        # concatenates lists whose elements are DataDict2/DataList2). Since
+        # both subclass dict/list, re-wrapping them here would discard their
+        # real root/path and replace it with this list's (often unrelated)
+        # root, corrupting later attribute assignment.
+        if isinstance(value, (DataDict2, DataList2)):
+            return value
+        elif isinstance(value, dict):
             return DataDict2(value, root=self.root, path=self.path + [position])
         elif isinstance(value, list):
             return DataList2(value, root=self.root, path=self.path + [position])
