@@ -329,7 +329,7 @@ class DataDict2(dict):
 
     @property
     def names(self):
-        return DataList2([self.primary_name] + [self.alternate_names])
+        return DataList2([self.primary_name] + self.alternate_names)
 
     @property
     def string(self):
@@ -481,7 +481,10 @@ class DataList2(list):
         return DataList2([x for x in self] + [x for x in value])
 
     def __radd__(self, value):
-        return DataList2([x for x in self] + [x for x in value])
+        # self is the right-hand operand here (Python calls b.__radd__(a)
+        # for `a + b`), so the result must be `value + self`, not `self +
+        # value` -- otherwise `plain_list + data_list2` comes out reversed.
+        return DataList2([x for x in value] + [x for x in self])
 
 
 sa = None
