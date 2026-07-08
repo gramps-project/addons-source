@@ -885,6 +885,12 @@ class SQLReader(object):
             count += 1
             self.callback(100 * count / total)
 
+        # ---------------------------------
+        # Name group (surname groupings)
+        # ---------------------------------
+        for name, grouping in sql.query("select * from name_group;") or []:
+            self.db.set_name_group_mapping(name, grouping)
+
     def cleanup(self) -> None:
         """Finalize import: re-enable signals and report elapsed time."""
         self.t = round(time.time() - self.t)
