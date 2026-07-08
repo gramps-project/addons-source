@@ -168,6 +168,22 @@ class TestDataDict2GenealogyProperties(_MockSaBase):
         self.assertEqual(dd.gramps_id, "F0007")
         self.assertEqual(dd["_class"], "Family")
 
+    def test_names_includes_alternate_names_in_order(self):
+        # Regression: `names` was `[self.primary_name] + [self.alternate_names]`
+        # -- the extra brackets nested the whole alternate_names list as one
+        # element instead of spreading it in, and __radd__ used to reverse
+        # the order on top of that.
+        p = _make_person(first="John")
+        alt = Name()
+        alt_sn = Surname()
+        alt_sn.set_surname("Doe")
+        alt.add_surname(alt_sn)
+        alt.set_first_name("Jack")
+        p.add_alternate_name(alt)
+        dd = DataDict2(p)
+        self.assertEqual(len(dd.names), 2)
+        self.assertEqual([n.first_name for n in dd.names], ["John", "Jack"])
+
 
 # ---------------------------------------------------------------------------
 # DataDict2 — surname/name/reference on non-Person and *Ref wrappers
@@ -259,6 +275,14 @@ class TestDataList2(_MockSaBase):
         dl1 = DataList2([DataDict2(_make_person(gramps_id="I0001"))])
         dl2 = DataList2([DataDict2(_make_person(gramps_id="I0002"))])
         self.assertEqual(len(dl1 + dl2), 2)
+
+    def test_radd_preserves_order(self):
+        # Regression: __radd__ used to return `self + value` instead of
+        # `value + self`, so `plain_list + data_list2` (the pattern used to
+        # loop over primary + alternate names) came out reversed.
+        dl = DataList2([DataDict2(_make_person(gramps_id="I0002"))])
+        combined = [DataDict2(_make_person(gramps_id="I0001"))] + dl
+        self.assertEqual([p.gramps_id for p in combined], ["I0001", "I0002"])
 
     def test_empty_list(self):
         dl = DataList2([])
