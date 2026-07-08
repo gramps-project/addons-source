@@ -65,8 +65,10 @@ from gramps.gen.lib.familyreltype import FamilyRelType
 from gramps.gen.lib.ldsord import LdsOrd
 from gramps.gen.lib.nameorigintype import NameOriginType
 from gramps.gen.lib.nametype import NameType
+from gramps.gen.lib.note import Note
 from gramps.gen.lib.notetype import NoteType
 from gramps.gen.lib.person import Person
+from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.lib.placetype import PlaceType
 from gramps.gen.lib.repotype import RepositoryType
 from gramps.gen.lib.srcattrtype import SrcAttributeType
@@ -1676,11 +1678,12 @@ def export_constants(db: Database) -> None:
     """
     Export the meaning of integer codes that are not GrampsType instances.
 
-    Date calendar/modifier/quality, person gender, citation confidence,
-    and LDS ordinance type/status are plain integer constants defined in
-    Gramps core rather than per-record GrampsType DataDicts, so their
-    names can't be resolved via type_string(). Record them once here
-    instead of leaving bare integers in those columns.
+    Date calendar/modifier/quality/newyear, person gender, citation
+    confidence, LDS ordinance type/status, name display_as/sort_as, and
+    note format are plain integer constants defined in Gramps core
+    rather than per-record GrampsType DataDicts, so their names can't be
+    resolved via type_string(). Record them once here, translated into
+    the user's locale, instead of leaving bare integers in those columns.
     """
     rows = []
     for code, name in enumerate(Date.ui_calendar_names):
@@ -1704,6 +1707,13 @@ def export_constants(db: Database) -> None:
     ):
         rows.append(("date", "quality", code, name))
     for code, name in (
+        (Date.NEWYEAR_JAN1, _("January 1")),
+        (Date.NEWYEAR_MAR1, _("March 1")),
+        (Date.NEWYEAR_MAR25, _("March 25")),
+        (Date.NEWYEAR_SEP1, _("September 1")),
+    ):
+        rows.append(("date", "newyear", code, name))
+    for code, name in (
         (Person.FEMALE, _("female")),
         (Person.MALE, _("male")),
         (Person.UNKNOWN, _("unknown")),
@@ -1722,6 +1732,14 @@ def export_constants(db: Database) -> None:
         rows.append(("lds", "type", code, name))
     for code, name, _xml in LdsOrd._STATUS_MAP:
         rows.append(("lds", "status", code, name))
+    for code, name, _format, _active in name_displayer.STANDARD_FORMATS:
+        rows.append(("name", "display_as", code, name))
+        rows.append(("name", "sort_as", code, name))
+    for code, name in (
+        (Note.FLOWED, _("Flowed")),
+        (Note.FORMATTED, _("Preformatted")),
+    ):
+        rows.append(("note", "format", code, name))
 
     for table_name, column_name, code, value in rows:
         db.query(
