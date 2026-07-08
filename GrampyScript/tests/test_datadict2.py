@@ -11,7 +11,7 @@ from unittest.mock import MagicMock
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from gramps.gen.lib import Person, Name, Surname, Family
+from gramps.gen.lib import Person, Name, Surname, Family, NameOriginType
 from gramps.gen.simple import SimpleAccess
 
 from datadict2 import DataDict2, DataList2, NoneData, set_sa
@@ -323,6 +323,33 @@ class TestDataDict2Mutation(_MockSaBase):
                 surname.set_surname("Jones")
         real = dd._object.get_primary_name().get_surname_list()[0]
         self.assertEqual(real.get_surname(), "Jones")
+
+
+# ---------------------------------------------------------------------------
+# DataDict2 — .string for GrampsType-based fields (NameOriginType, ...)
+# ---------------------------------------------------------------------------
+
+class TestDataDict2TypeString(_MockSaBase):
+    def test_origintype_string_reflects_predefined_value(self):
+        # Regression: the raw "string" field only holds the *custom*-type
+        # override text, which is always "" for predefined values like
+        # PATRILINEAL. `.string` must return the real, computed label
+        # instead of that raw (and misleadingly empty) field.
+        dd = DataDict2(_make_person(surname="Smith"))
+        surname = dd.primary_name.surname_list[0]
+        surname.set_origintype(NameOriginType.PATRILINEAL)
+        self.assertEqual(dd.primary_name.surname_list[0].origintype.string, "Patrilineal")
+
+    def test_origintype_string_empty_for_none(self):
+        dd = DataDict2(_make_person())
+        self.assertEqual(dd.primary_name.surname_list[0].origintype.string, "")
+
+    def test_string_missing_field_falls_back_normally(self):
+        # A DataDict2 with no "string" key at all (e.g. a Name) must not be
+        # affected by the .string property -- it should fall through to
+        # ordinary attribute lookup rather than raising or returning "".
+        dd = DataDict2(_make_person())
+        self.assertIsInstance(dd.primary_name.string, NoneData)
 
 
 if __name__ == "__main__":
