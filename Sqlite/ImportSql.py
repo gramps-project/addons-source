@@ -183,7 +183,7 @@ class SQLReader(object):
         """Return all linked handles (possibly empty)."""
         results = sql.query(
             "select to_handle from link where from_type = ? "
-            "and from_handle = ? and to_type = ?;",
+            "and from_handle = ? and to_type = ? order by seq;",
             from_type, from_handle, to_link,
         )
         return [r[0] for r in results]
@@ -450,7 +450,8 @@ class SQLReader(object):
         """Return a list of Surname DataDicts for *name_handle*."""
         rows = sql.query(
             "select s.* from surname s inner join link l "
-            "ON l.to_handle = s.handle where l.from_handle = ?;",
+            "ON l.to_handle = s.handle where l.from_handle = ? "
+            "order by l.seq;",
             name_handle,
         )
         result = []
@@ -576,7 +577,7 @@ class SQLReader(object):
 
             markup_rows = sql.query(
                 "select to_handle from link where from_handle = ? "
-                "and to_type = 'markup';", handle,
+                "and to_type = 'markup' order by seq;", handle,
             )
             tags_list = []
             for (to_handle,) in (markup_rows or []):
