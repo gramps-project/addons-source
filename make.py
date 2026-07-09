@@ -49,6 +49,11 @@ Examples:
    python3 make.py gramps60 extract-po
        Extracts strings from the aggregated `po/{lang}.po` files into the
        `{lang}-local.po` files for each addon.
+
+   GRAMPSPATH=path python3 make.py gramps60 test
+       Runs the repo-root `tests/` suite (unittest discovery for
+       `test_*.py`). GRAMPSPATH must point at a Gramps checkout so the
+       addon plugins are importable. Exits non-zero on any failure.
 """
 import shutil
 import glob
@@ -1072,6 +1077,17 @@ elif command == "extract-po":
     ]:
         print(addon)
         extract_po(addon)
+
+elif command == "test":
+    check_gramps_path(command)
+    import unittest
+
+    suite = unittest.TestLoader().discover(
+        "tests", pattern="test_*.py", top_level_dir="."
+    )
+    result = unittest.TextTestRunner(verbosity=2).run(suite)
+    if not result.wasSuccessful():
+        exit(1)
 
 else:
     raise AttributeError("unknown command")
