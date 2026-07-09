@@ -69,7 +69,6 @@ try:
     GZIP_OK = True
 except ImportError:
     GZIP_OK = False
-    ErrorDialog(_('Where is gzip?'), _('"gzip" is missing'))
     LOG.error('No gzip')
 
 #-------------------------------------------------------------------------
@@ -91,8 +90,7 @@ try:
     LIBXSLT_VERSION = etree.LIBXSLT_VERSION
 except ImportError:
     LXML_OK = False
-    ErrorDialog(_('Missing python3 lxml'), _('Please, try to install "python3 lxml" package.'))
-    LOG.debug('No lxml')
+    LOG.warning('No lxml; XPATH/XSLT features are unavailable')
 
 #-------------------------------------------------------------------------
 #
@@ -137,6 +135,16 @@ class lxmlGramplet(Gramplet):
         Constructs the GUI, consisting of an entry, a text view and
         a Run button.
         """
+
+        # Report a missing optional dependency here — when the gramplet is
+        # actually opened and the GUI is running — rather than as a blocking
+        # modal dialog at module import time (which stalls plugin loading and
+        # can appear with no GUI, e.g. under the CLI or the test harness).
+        if not GZIP_OK:
+            ErrorDialog(_('Where is gzip?'), _('"gzip" is missing'))
+        if not LXML_OK:
+            ErrorDialog(_('Missing python3 lxml'),
+                        _('Please, try to install "python3 lxml" package.'))
 
         self.xmllint = "--nonet " # space at the end for additional options
         self.noout = True
