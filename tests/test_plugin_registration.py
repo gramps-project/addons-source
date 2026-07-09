@@ -54,7 +54,13 @@ from gramps.version import VERSION_TUPLE
 # ------------------------
 # Gramps specific
 # ------------------------
-from tests.gramps_test_env import ADDONS_ROOT, HAS_GTK, GrampsTestCase, strict_mode
+from tests.gramps_test_env import (
+    ADDONS_ROOT,
+    DIALOG_MARKER,
+    HAS_GTK,
+    GrampsTestCase,
+    strict_mode,
+)
 
 LOG = logging.getLogger(__name__)
 
@@ -159,6 +165,22 @@ def _is_env_load_failure(stderr: str) -> bool:
     return False
 
 
+def _dialogs_raised_in(stdout: str) -> list[str]:
+    """Names of the dialogs an isolated load constructed, in order, deduplicated.
+
+    The stubs installed by :func:`~tests.gramps_test_env.neutralize_gui_dialogs`
+    print one :data:`DIALOG_MARKER` line per construction. Matched only at the
+    start of a line, so a traceback quoting the marker cannot forge a hit.
+    """
+    names: list[str] = []
+    for raw in (stdout or "").splitlines():
+        if raw.startswith(DIALOG_MARKER):
+            name = raw[len(DIALOG_MARKER) :].strip()
+            if name and name not in names:
+                names.append(name)
+    return names
+
+
 # Per-plugin isolated-load timeout. Each subprocess re-registers the whole
 # plugin tree before loading one addon, so the wall-clock cost scales with the
 # machine and filesystem. A timeout while still scanning the registry is
@@ -225,8 +247,9 @@ class TestPluginLoading(GrampsTestCase):
 
         Failures are collected rather than failing fast, then classified. A
         non-dependency *hard* load failure always fails the test (``self.fail``)
-        — as does an import that hangs past the timeout — so this is a real gate,
-        like the sibling smoke tests (:class:`TestImportPluginSmoke`,
+        — as does an import that hangs past the timeout, or one that pops a modal
+        dialog (which is what hangs a load that is not stubbed) — so this is a
+        real gate, like the sibling smoke tests (:class:`TestImportPluginSmoke`,
         :class:`TestExportPluginSmoke`), not an always-pass that merely warns.
 
         The remaining categories depend on the mode
@@ -303,6 +326,18 @@ class TestPluginLoading(GrampsTestCase):
                         f"{pdata.id} (registry scan >{_LOAD_TIMEOUT}s)"
                     )
                 continue
+
+            raised = _dialogs_raised_in(result.stdout)
+            if raised:
+                # The stub kept the modal from blocking this load, but the addon
+                # popping it at import time is the bug that would block a real
+                # one. Report it rather than let the neutralisation hide it.
+                hard_failures.append(
+                    f"{pdata.id} (raised {', '.join(raised)} at import — a modal "
+                    "dialog at import time blocks plugin loading; move it into "
+                    "the plugin's own init/run path)"
+                )
+                continue
             if result.returncode < 0:
                 # Killed by a signal — usually GTK aborting with no display.
                 # Advisory by default, since a headless abort often prints no
@@ -369,8 +404,8 @@ class TestPluginLoading(GrampsTestCase):
             # advisory lists stay in the warning log above so the failure isn't
             # a wall of text.
             lines = [
-                f"{len(hard_failures)} of {total} addon(s) failed to load. "
-                "These are real load failures and must be fixed:",
+                f"{len(hard_failures)} of {total} addon(s) failed to load "
+                "cleanly. These are real defects and must be fixed:",
                 "",
                 *(f"  ✗ {x}" for x in hard_failures),
             ]

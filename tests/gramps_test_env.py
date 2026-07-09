@@ -104,23 +104,26 @@ _GUI_DIALOG_NAMES = (
     "RunDatabaseRepair",
 )
 
-def neutralize_gui_dialogs() -> None:
-    """Replace ``gramps.gui.dialog`` dialogs with no-ops for the test process.
+#: Written to stdout by a neutralised dialog, followed by its class name.
+#: Distinctive enough not to collide with an addon's own output. The isolated
+#: load subprocess in ``test_plugin_registration`` greps its captured stdout for
+#: this: neutralising the dialog stops the load from hanging, but the addon
+#: still has a bug, and the suite must say so rather than swallow it.
+DIALOG_MARKER = "__GRAMPS_TEST_DIALOG_AT_IMPORT__"
 
-    Some addons pop a *blocking* modal (``ErrorDialog(...).run()``) at import or
-    load-on-reg time when an optional dependency is missing — e.g.
-    ``lxmlGramplet`` on a host without ``python3-lxml``. Loading such an addon
-    in a test would otherwise hang on the modal (under a display) or scatter
-    dialogs on the developer's screen. Safe to call more than once.
-    """
-    try:
-        import gramps.gui.dialog as gd
-    except Exception:
-        return
+#: Names of the dialog classes constructed since the stub was installed, for
+#: callers that neutralise and load in the same process.
+dialogs_raised: list[str] = []
+
+
+def _make_no_dialog(dialog_name: str) -> type:
+    """Build a no-op stand-in for ``gramps.gui.dialog.<dialog_name>``."""
 
     class _NoDialog:
         def __init__(self, *args: Any, **kwargs: Any) -> None:
             self.response = 0
+            dialogs_raised.append(dialog_name)
+            print(f"{DIALOG_MARKER} {dialog_name}", flush=True)
 
         def run(self, *args: Any, **kwargs: Any) -> int:
             return 0
@@ -128,9 +131,32 @@ def neutralize_gui_dialogs() -> None:
         def __getattr__(self, name: str) -> Any:
             return lambda *a, **k: None
 
+    _NoDialog.__name__ = f"_No{dialog_name}"
+    return _NoDialog
+
+
+def neutralize_gui_dialogs() -> None:
+    """Replace ``gramps.gui.dialog`` dialogs with reporting no-ops.
+
+    Some addons pop a *blocking* modal (``ErrorDialog(...).run()``) at import or
+    load-on-reg time when an optional dependency is missing — e.g.
+    ``lxmlGramplet`` on a host without ``python3-lxml``. Loading such an addon
+    in a test would otherwise hang on the modal (under a display) or scatter
+    dialogs on the developer's screen.
+
+    Each stub *records* its construction — on :data:`dialogs_raised` and as a
+    :data:`DIALOG_MARKER` line on stdout — so neutralising the modal does not
+    hide it: a dialog at import time is an addon bug (it blocks plugin loading),
+    and the load test gates on the marker. Safe to call more than once.
+    """
+    try:
+        import gramps.gui.dialog as gd
+    except Exception:
+        return
+
     for name in _GUI_DIALOG_NAMES:
         if hasattr(gd, name):
-            setattr(gd, name, _NoDialog)
+            setattr(gd, name, _make_no_dialog(name))
 
 
 def get_plugin_manager_and_registry() -> tuple[Any, Any]:
