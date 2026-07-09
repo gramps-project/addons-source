@@ -141,6 +141,7 @@ class TestPluginLoadingGate(unittest.TestCase):
         outcome = self._run_load_test_with(
             SimpleNamespace(
                 returncode=1,
+                stdout="",
                 stderr="ModuleNotFoundError: No module named 'totally_missing_dep'",
             )
         )
@@ -155,10 +156,38 @@ class TestPluginLoadingGate(unittest.TestCase):
 
     def test_clean_load_does_not_gate(self) -> None:
         """A plugin that loads cleanly must not fail the load test."""
-        outcome = self._run_load_test_with(SimpleNamespace(returncode=0, stderr=""))
+        outcome = self._run_load_test_with(
+            SimpleNamespace(returncode=0, stdout="REGISTRY_READY\n", stderr="")
+        )
         self.assertIsNone(
             outcome, f"a clean load must not gate, but raised: {outcome!r}"
         )
+
+    def test_dialog_raised_at_import_gates(self) -> None:
+        """An addon that pops a modal at import must fail the load test.
+
+        ``neutralize_gui_dialogs`` stubs the dialog so the load cannot block, but
+        the addon is still broken: a modal at import time stalls plugin loading
+        (Gramps' ``ErrorDialog.__init__`` calls ``.run()``). The stub reports the
+        construction on stdout; the load test must gate on it rather than let the
+        neutralisation turn a real defect green. The subprocess exits 0 here — the
+        plugin *loaded* — so only the marker can drive the failure.
+        """
+        outcome = self._run_load_test_with(
+            SimpleNamespace(
+                returncode=0,
+                stdout=f"REGISTRY_READY\n{prod.DIALOG_MARKER} ErrorDialog\n",
+                stderr="",
+            )
+        )
+        self.assertIsInstance(
+            outcome,
+            prod.TestPluginLoading.failureException,
+            "a dialog popped at import must gate the run, not be swallowed by "
+            "the stub that neutralises it",
+        )
+        self.assertIn("synthetic_broken_addon", str(outcome))
+        self.assertIn("ErrorDialog", str(outcome))
 
     def test_strict_mode_gates_missing_dependency(self) -> None:
         """In strict mode a declared-but-missing dependency must gate.
@@ -168,7 +197,7 @@ class TestPluginLoadingGate(unittest.TestCase):
         hard failure. ``subprocess.run`` is never reached (the plugin is skipped
         before load), so the outcome is driven purely by the missing dependency.
         """
-        clean = SimpleNamespace(returncode=0, stderr="")
+        clean = SimpleNamespace(returncode=0, stdout="", stderr="")
         missing = ["gi:GExiv2-0.10"]
 
         default = self._run_load_test_with(clean, missing_deps=missing, strict=False)
@@ -193,7 +222,7 @@ class TestPluginLoadingGate(unittest.TestCase):
         since a full runtime should provide the display/GTK stack.
         """
         env_fail = SimpleNamespace(
-            returncode=1, stderr="RuntimeError: Gtk couldn't be initialized"
+            returncode=1, stdout="", stderr="RuntimeError: Gtk couldn't be initialized"
         )
 
         default = self._run_load_test_with(env_fail, strict=False)
