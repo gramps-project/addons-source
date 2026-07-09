@@ -26,7 +26,7 @@ register(
     name=_("Birthdays"),
     description=_("a gramplet that displays the birthdays of the living people"),
     status=STABLE,
-    version = '1.1.20',
+    version = '1.1.21',
     fname="BirthdaysGramplet.py",
     authors = ["Peter Potrowl", "Matthias Kemmer", "Javad Razavian" ],
     authors_email = ["peter017@gmail.com", "matt.familienforschung@gmail.com", "javadr@gmail.com" ],
