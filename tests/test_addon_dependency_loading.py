@@ -56,7 +56,7 @@ from typing import Any
 # ------------------------
 # Gramps specific
 # ------------------------
-from tests.gramps_test_env import GrampsTestCase
+from tests.gramps_test_env import GrampsTestCase, strict_mode
 from tests.test_plugin_registration import _get_addon_plugins
 
 LOG = logging.getLogger(__name__)
@@ -92,6 +92,20 @@ _LOADER = textwrap.dedent(
     # -I so PYTHONPATH is ignored, and a run-from-source Gramps would
     # otherwise be unimportable. addon-from-addon isolation is unaffected.
     sys.path[:0] = [{target_dir!r}] + list({dep_dirs!r}) + list({base_dirs!r})
+    # Neutralise blocking modal dialogs so an addon that pops
+    # ErrorDialog(...).run() at import (missing optional dep) can't hang us.
+    try:
+        import gramps.gui.dialog as _gd
+        class _NoDialog:
+            def __init__(self, *a, **k): self.response = 0
+            def run(self, *a, **k): return 0
+            def __getattr__(self, n): return lambda *a, **k: None
+        for _n in ("ErrorDialog", "WarningDialog", "OkDialog", "InfoDialog",
+                   "QuestionDialog", "QuestionDialog2"):
+            if hasattr(_gd, _n):
+                setattr(_gd, _n, _NoDialog)
+    except Exception:
+        pass
     try:
         importlib.import_module({module!r})
     except BaseException:
@@ -148,6 +162,8 @@ def _gramps_root() -> str:
 def _missing_modules(stderr: str) -> set[str]:
     """Return the top-level module names ``stderr`` reports as unimportable."""
     return {m.split(".")[0] for m in re.findall(r"No module named ['\"]([^'\"]+)", stderr)}
+
+
 
 
 # ------------------------------------------------------------
@@ -267,6 +283,7 @@ class TestAddonDependencyLoading(GrampsTestCase):
         base_dirs = [_gramps_root()]
         addon_modules = self._addon_module_names()
         insufficient: list[str] = []  # declared deps do NOT satisfy a sibling import
+        inconclusive: list[str] = []  # load failed environmentally — unverifiable
         load_bearing = 0  # dependents whose dependency is provably needed at load
         for pdata in dependents:
             dep_dirs: list[str] = []
@@ -292,12 +309,8 @@ class TestAddonDependencyLoading(GrampsTestCase):
                         f"not satisfy sibling import(s) {sorted(unmet)}"
                     )
                 else:
-                    LOG.info(
-                        "%s: isolated load failed for a non-dependency reason "
-                        "(environment); cannot verify its depends_on. Tail: %s",
-                        pdata.id,
-                        (err_with.strip().splitlines() or ["<none>"])[-1],
-                    )
+                    tail = (err_with.strip().splitlines() or ["<none>"])[-1]
+                    inconclusive.append(f"{pdata.id}: {tail}")
                 continue
 
             rc_without, err_without = _isolated_load(
@@ -319,18 +332,47 @@ class TestAddonDependencyLoading(GrampsTestCase):
                     pdata.id,
                 )
 
+        if inconclusive:
+            # The cause is environmental (GI/display/missing pip module), not a
+            # depends_on bug, so by default this is advisory — surfaced loudly
+            # and by count so an unverified dependent is never invisible behind
+            # an overall pass. A CI job that guarantees a full runtime (Xvfb,
+            # all deps) can set GRAMPS_ADDON_TEST_STRICT=1 to make any
+            # unverified dependent a failure instead.
+            LOG.warning(
+                "%d/%d dependent(s) could not be verified — isolated load "
+                "failed for environmental reasons (GI/display/missing pip "
+                "module):\n  %s",
+                len(inconclusive),
+                len(dependents),
+                "\n  ".join(inconclusive),
+            )
+            if strict_mode():
+                self.fail(
+                    f"{len(inconclusive)} of {len(dependents)} dependent(s) "
+                    "could not be verified and strict mode "
+                    "(GRAMPS_ADDON_TEST_STRICT) is on:\n  "
+                    + "\n  ".join(inconclusive)
+                )
+
         if insufficient:
             self.fail(
-                "Addons whose declared depends_on does NOT satisfy their "
-                "sibling imports (the loader would fail to load these):\n  "
+                f"{len(insufficient)} of {len(dependents)} dependent(s) have a "
+                "declared depends_on that does NOT satisfy their sibling "
+                "imports (the loader would fail to load these):\n  "
                 + "\n  ".join(insufficient)
+                + f"\n\nRun summary: {len(dependents)} dependents, "
+                f"{load_bearing} verified load-bearing, "
+                f"{len(inconclusive)} inconclusive (environmental), "
+                f"{len(insufficient)} insufficient."
             )
         self.assertGreater(
             load_bearing,
             0,
             "No addon demonstrated a load-time depends_on: every dependent "
-            "imported fine without its declared dependency, so this test "
-            "verified nothing about the loading mechanism.",
+            "either imported fine without its declared dependency or could "
+            f"not be verified ({len(inconclusive)} inconclusive), so this "
+            "test verified nothing about the loading mechanism.",
         )
 
 

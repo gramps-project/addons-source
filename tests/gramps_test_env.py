@@ -92,6 +92,47 @@ HAS_GTK: bool = _has_gtk()
 _plugin_cache: dict[str, Any] = {}
 
 
+# Dialog classes an addon might instantiate at import / load-on-reg time.
+_GUI_DIALOG_NAMES = (
+    "ErrorDialog",
+    "WarningDialog",
+    "OkDialog",
+    "InfoDialog",
+    "QuestionDialog",
+    "QuestionDialog2",
+    "DBErrorDialog",
+    "RunDatabaseRepair",
+)
+
+def neutralize_gui_dialogs() -> None:
+    """Replace ``gramps.gui.dialog`` dialogs with no-ops for the test process.
+
+    Some addons pop a *blocking* modal (``ErrorDialog(...).run()``) at import or
+    load-on-reg time when an optional dependency is missing — e.g.
+    ``lxmlGramplet`` on a host without ``python3-lxml``. Loading such an addon
+    in a test would otherwise hang on the modal (under a display) or scatter
+    dialogs on the developer's screen. Safe to call more than once.
+    """
+    try:
+        import gramps.gui.dialog as gd
+    except Exception:
+        return
+
+    class _NoDialog:
+        def __init__(self, *args: Any, **kwargs: Any) -> None:
+            self.response = 0
+
+        def run(self, *args: Any, **kwargs: Any) -> int:
+            return 0
+
+        def __getattr__(self, name: str) -> Any:
+            return lambda *a, **k: None
+
+    for name in _GUI_DIALOG_NAMES:
+        if hasattr(gd, name):
+            setattr(gd, name, _NoDialog)
+
+
 def get_plugin_manager_and_registry() -> tuple[Any, Any]:
     """Return the Gramps plugin manager and registry, initialising on first call.
 
@@ -105,6 +146,9 @@ def get_plugin_manager_and_registry() -> tuple[Any, Any]:
         from gramps.gen.const import PLUGINS_DIR
         from gramps.gen.plug import BasePluginManager, PluginRegister
 
+        # reg_plugins(load_on_reg=True) runs addon load-on-reg callbacks in
+        # this process; neutralise dialogs first so none can block or show UI.
+        neutralize_gui_dialogs()
         pmgr = BasePluginManager.get_instance()
         pmgr.reg_plugins(PLUGINS_DIR, None, None)
         pmgr.reg_plugins(ADDONS_ROOT, None, None, load_on_reg=True)
@@ -121,6 +165,24 @@ def make_gramps_user() -> Any:
     from gramps.cli.user import User
 
     return User(auto_accept=True, quiet=True)
+
+
+def strict_mode() -> bool:
+    """Whether ``GRAMPS_ADDON_TEST_STRICT`` opts into gating on advisory results.
+
+    Off by default so a headless developer run is not flaky on failures that
+    are really about the environment (no display, missing GI/typelib, a native
+    GTK abort). A CI lane with a full runtime can set the variable to promote
+    those advisories to hard failures — see the ``make.py test`` docs.
+
+    :returns: ``True`` when the variable is set to a truthy value.
+    """
+    return os.environ.get("GRAMPS_ADDON_TEST_STRICT", "").lower() in (
+        "1",
+        "true",
+        "yes",
+        "on",
+    )
 
 
 # ------------------------------------------------------------

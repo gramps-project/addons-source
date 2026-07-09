@@ -94,21 +94,36 @@ class TestPluginLoadingGate(unittest.TestCase):
             requires_gi=[],
         )
 
-    def _run_load_test_with(self, run_result: SimpleNamespace):
+    def _run_load_test_with(
+        self,
+        run_result: SimpleNamespace,
+        missing_deps: list | None = None,
+        strict: bool = False,
+    ):
         """Drive ``test_load_all_addon_modules`` with one synthetic plugin.
 
-        The synthetic addon has no declared dependencies, so it is not skipped;
         ``subprocess.run`` is stubbed to ``run_result`` to simulate a chosen load
-        outcome. Returns the exception the production method raised, or ``None``
-        if it returned without raising (the silent-pass behaviour).
+        outcome; ``_check_dependencies`` returns ``missing_deps`` (empty by
+        default, so the plugin is not skipped). ``GRAMPS_ADDON_TEST_STRICT`` is
+        pinned — to ``"1"`` when ``strict`` else ``""`` — so the outcome never
+        depends on the ambient environment. Returns the exception the production
+        method raised, or ``None`` if it returned without raising.
         """
         loader = prod.TestPluginLoading("test_load_all_addon_modules")
         with mock.patch.object(
             prod, "_get_addon_plugins", return_value=[self._fake_plugin()]
         ), mock.patch.object(
-            prod, "_check_dependencies", return_value=[]
+            prod, "_check_dependencies", return_value=(missing_deps or [])
         ), mock.patch.object(
             prod.subprocess, "run", return_value=run_result
+        ), mock.patch.dict(
+            os.environ, {"GRAMPS_ADDON_TEST_STRICT": "1" if strict else ""}
+        ), mock.patch.object(
+            # Silence the production advisory logger: every warning here is about
+            # the synthetic fixture, so it must not leak next to the real tree's
+            # warnings in the test output.
+            prod,
+            "LOG",
         ):
             try:
                 loader.test_load_all_addon_modules()
@@ -144,6 +159,56 @@ class TestPluginLoadingGate(unittest.TestCase):
         self.assertIsNone(
             outcome, f"a clean load must not gate, but raised: {outcome!r}"
         )
+
+    def test_strict_mode_gates_missing_dependency(self) -> None:
+        """In strict mode a declared-but-missing dependency must gate.
+
+        By default a dependency skip is advisory; with
+        ``GRAMPS_ADDON_TEST_STRICT=1`` the full-runtime gate must promote it to a
+        hard failure. ``subprocess.run`` is never reached (the plugin is skipped
+        before load), so the outcome is driven purely by the missing dependency.
+        """
+        clean = SimpleNamespace(returncode=0, stderr="")
+        missing = ["gi:GExiv2-0.10"]
+
+        default = self._run_load_test_with(clean, missing_deps=missing, strict=False)
+        self.assertIsNone(
+            default, "a dependency skip must stay advisory in default mode"
+        )
+
+        strict = self._run_load_test_with(clean, missing_deps=missing, strict=True)
+        self.assertIsInstance(
+            strict,
+            prod.TestPluginLoading.failureException,
+            "strict mode must gate on a missing declared dependency",
+        )
+        self.assertIn("synthetic_broken_addon", str(strict))
+        self.assertIn("unmet dependency", str(strict))
+
+    def test_strict_mode_gates_environmental_failure(self) -> None:
+        """In strict mode an environment-classified load failure must gate.
+
+        A GTK/display init failure is advisory by default (it names a known
+        environmental signature); strict mode promotes it to a hard failure,
+        since a full runtime should provide the display/GTK stack.
+        """
+        env_fail = SimpleNamespace(
+            returncode=1, stderr="RuntimeError: Gtk couldn't be initialized"
+        )
+
+        default = self._run_load_test_with(env_fail, strict=False)
+        self.assertIsNone(
+            default, "an environmental failure must stay advisory in default mode"
+        )
+
+        strict = self._run_load_test_with(env_fail, strict=True)
+        self.assertIsInstance(
+            strict,
+            prod.TestPluginLoading.failureException,
+            "strict mode must gate on an environment-classified failure",
+        )
+        self.assertIn("synthetic_broken_addon", str(strict))
+        self.assertIn("environmental", str(strict))
 
 
 if __name__ == "__main__":
