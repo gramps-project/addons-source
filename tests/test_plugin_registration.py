@@ -41,18 +41,20 @@ import os
 import subprocess
 import sys
 import unittest
+from types import SimpleNamespace
 from typing import Any
 
 # ------------------------
 # Gramps modules
 # ------------------------
 from gramps.gen.plug._pluginreg import EXPORT, GRAMPLET, IMPORT, REPORT, TOOL
+from gramps.gen.utils.requirements import Requirements
 from gramps.version import VERSION_TUPLE
 
 # ------------------------
 # Gramps specific
 # ------------------------
-from tests.gramps_test_env import ADDONS_ROOT, GrampsTestCase, strict_mode
+from tests.gramps_test_env import ADDONS_ROOT, HAS_GTK, GrampsTestCase, strict_mode
 
 LOG = logging.getLogger(__name__)
 
@@ -80,29 +82,41 @@ def _get_addon_plugins(registry: Any, include_unlisted: bool = False) -> list[An
     ]
 
 
+# Gramps' own requirement checker, shared for the whole run so its positive
+# caches survive across the ~200 plugins probed. Reused rather than
+# re-implemented so this test agrees with what Gramps does at runtime — in
+# particular a `requires_gi` version may be a comma-separated list of
+# acceptable versions ("0.10,0.12"), any one of which satisfies it.
+_REQUIREMENTS = Requirements()
+
+
 def _check_dependencies(pdata: Any) -> list[str]:
     """Return a list of missing dependency descriptions for a plugin, or empty.
+
+    Only *probes* for each declared requirement — via :func:`find_spec`,
+    ``gi.require_version`` and a ``PATH`` lookup — to decide whether attempting
+    the load is fair. The addon itself is imported later, in the isolated
+    subprocess of :meth:`TestPluginLoading.test_load_all_addon_modules`.
 
     :param pdata: The plugin's :class:`PluginData` record.
     :returns: Human-readable strings describing each unmet requirement.
     """
     missing: list[str] = []
     for mod in pdata.requires_mod or []:
-        try:
-            importlib.import_module(mod)
-        except ImportError:
+        if not _REQUIREMENTS.check_mod(mod):
             missing.append(f"mod:{mod}")
     for exe in pdata.requires_exe or []:
-        if not any(
-            os.access(os.path.join(p, exe), os.X_OK)
-            for p in os.environ.get("PATH", "").split(os.pathsep)
-        ):
+        if not _REQUIREMENTS.check_exe(exe):
             missing.append(f"exe:{exe}")
     for gi_mod, gi_ver in pdata.requires_gi or []:
+        if not _REQUIREMENTS.check_gi((gi_mod, gi_ver)):
+            missing.append(f"gi:{gi_mod}-{gi_ver}")
+            continue
+        # check_gi() resolves the typelib version but does not import it. Probe
+        # the binding too, so a typelib that resolves yet fails to import is a
+        # dependency skip here rather than a hard failure blamed on the addon
+        # (only Gtk/Gdk namespace errors are in _ENV_LOAD_SIGNATURES).
         try:
-            import gi
-
-            gi.require_version(gi_mod, gi_ver)
             importlib.import_module(f"gi.repository.{gi_mod}")
         except (ImportError, ValueError):
             missing.append(f"gi:{gi_mod}-{gi_ver}")
@@ -644,6 +658,75 @@ class TestEnvLoadClassifier(unittest.TestCase):
 
     def test_empty_stderr_is_not_environmental(self) -> None:
         self.assertFalse(_is_env_load_failure(""))
+
+
+# ------------------------------------------------------------
+#
+# TestDependencyCheck
+#
+# ------------------------------------------------------------
+@unittest.skipUnless(HAS_GTK, "needs PyGI with a Gtk 3.0 typelib")
+class TestDependencyCheck(unittest.TestCase):
+    """Unit tests for :func:`_check_dependencies` (no registry boot).
+
+    Guards the false-skip risk. A ``requires_gi`` version may be a *comma-
+    separated list of acceptable versions* — Gramps' ``Requirements.check_gi()``
+    splits on "," and takes the first that resolves — so an addon declaring
+    ``("GExiv2", "0.10,0.12,0.14,0.16")`` must not be reported missing on a host
+    that has GExiv2 0.10. Passing the raw string to ``gi.require_version()``
+    raises :exc:`ValueError` and reports a satisfied dependency as unmet: an
+    advisory skip by default, and a false *failure* under
+    :func:`~tests.gramps_test_env.strict_mode`.
+    """
+
+    @staticmethod
+    def _pdata(**requirements: Any) -> SimpleNamespace:
+        """A :class:`PluginData` stand-in declaring only the given requirements."""
+        spec: dict[str, Any] = {
+            "requires_mod": [],
+            "requires_exe": [],
+            "requires_gi": [],
+        }
+        spec.update(requirements)
+        return SimpleNamespace(**spec)
+
+    def test_comma_separated_gi_version_satisfied_by_any_member(self) -> None:
+        # Gtk stands in for the real cases (GExiv2 "0.10,0.12,0.14,0.16",
+        # GooCanvas "2.0,3.0"): it is the one typelib this suite already needs,
+        # so the assertion holds on any host that can run these tests.
+        self.assertEqual(
+            _check_dependencies(self._pdata(requires_gi=[("Gtk", "3.0,4.0")])), []
+        )
+        # Order must not matter: the resolvable version is not always first.
+        self.assertEqual(
+            _check_dependencies(self._pdata(requires_gi=[("Gtk", "4.0,3.0")])), []
+        )
+
+    def test_single_gi_version_still_resolves(self) -> None:
+        self.assertEqual(
+            _check_dependencies(self._pdata(requires_gi=[("Gtk", "3.0")])), []
+        )
+
+    def test_absent_gi_namespace_is_reported_missing(self) -> None:
+        # No member of the list resolves — the whole spec is unmet, and the
+        # message quotes the spec as declared.
+        self.assertEqual(
+            _check_dependencies(
+                self._pdata(requires_gi=[("NoSuchNamespace", "1.0,2.0")])
+            ),
+            ["gi:NoSuchNamespace-1.0,2.0"],
+        )
+
+    def test_absent_module_and_executable_are_reported_missing(self) -> None:
+        self.assertEqual(
+            _check_dependencies(
+                self._pdata(
+                    requires_mod=["totally_missing_module"],
+                    requires_exe=["totally-missing-executable"],
+                )
+            ),
+            ["mod:totally_missing_module", "exe:totally-missing-executable"],
+        )
 
 
 if __name__ == "__main__":
