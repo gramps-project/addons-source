@@ -28,9 +28,11 @@ register(
     status=STABLE,
     version = '1.1.20',
     fname="BirthdaysGramplet.py",
+    authors = ["Peter Potrowl", "Matthias Kemmer", "Javad Razavian" ],
+    authors_email = ["peter017@gmail.com", "matt.familienforschung@gmail.com", "javadr@gmail.com" ],
     height=200,
     gramplet="BirthdaysGramplet",
     gramps_target_version="6.0",
     gramplet_title=_("Birthdays"),
-    help_url="BirthdaysGramplet",
+    help_url="Addon:BirthdaysGramplet",
 )
