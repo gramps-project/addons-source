@@ -3,6 +3,7 @@
 #
 # Copyright (C) 2010  Peter Potrowl <peter017@gmail.com>
 # Copyright (C) 2019  Matthias Kemmer <matt.familienforschung@gmail.com>
+# Copyright (C) 2026  Javad Razavian <javadr@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -25,7 +26,7 @@ register(
     name=_("Birthdays"),
     description=_("a gramplet that displays the birthdays of the living people"),
     status=STABLE,
-    version = '1.1.16',
+    version = '1.1.20',
     fname="BirthdaysGramplet.py",
     height=200,
     gramplet="BirthdaysGramplet",
