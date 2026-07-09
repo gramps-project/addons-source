@@ -26,9 +26,11 @@ register(
     status=STABLE,
     version = '1.1.0',
     fname="DateOfDeathGramplet.py",
+    authors = ["Javad Razavian"],
+    authors_email = ["javadr@gmail.com"],
     height=200,
     gramplet="DateOfDeathGramplet",
     gramps_target_version="6.1",
     gramplet_title=_("Date of Death"),
-    help_url="DateOfDeathGramplet",
+    help_url="Addon:DateOfDeathGramplet",
 )
