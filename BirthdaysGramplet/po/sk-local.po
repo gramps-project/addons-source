@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
@@ -20,8 +20,23 @@ msgstr "Narodeniny"
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "Gramplet, ktorý zobrazuje narodeniny žijúcich ľudí"
 
+msgid "No Family Tree loaded."
+msgstr "Nebol načítaný žiadny rodokmeň."
+
+msgid "Sort birthdays by"
+msgstr "Zoradiť narodeniny podľa"
+
+msgid "Month and day"
+msgstr "Mesiac a deň"
+
+msgid "Proximity to current date"
+msgstr "Blízkosť k aktuálnemu dátumu"
+
 msgid "Ignore birthdays with tag"
 msgstr "Ignorovať dni narodenia so štítkom"
 
 msgid "Only show birthdays with tag"
 msgstr "Zobraziť iba dni narodenia so štítkom"
+
+msgid "Processing..."
+msgstr "Spracúva sa..."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2025-09-06 11:01+0000\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
@@ -20,8 +20,23 @@ msgstr "Compleanni"
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "un gramplet che mostra i compleanni delle persone in vita"
 
+msgid "No Family Tree loaded."
+msgstr "Nessun albero genealogico caricato."
+
+msgid "Sort birthdays by"
+msgstr "Ordina i compleanni per"
+
+msgid "Month and day"
+msgstr "Mese e giorno"
+
+msgid "Proximity to current date"
+msgstr "Prossimità alla data attuale"
+
 msgid "Ignore birthdays with tag"
 msgstr "Ignora compleanni con etichetta"
 
 msgid "Only show birthdays with tag"
 msgstr "Mostra solo compleanni con etichetta"
+
+msgid "Processing..."
+msgstr "Elaborazione..."

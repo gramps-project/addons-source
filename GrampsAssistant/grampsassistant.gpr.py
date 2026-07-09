@@ -25,7 +25,7 @@ register(
     id="grampsassistant",
     name=_("Gramps Assistant"),
     description=_("AI assistant for querying your Gramps family tree"),
-    version = '1.0.1',
+    version = '1.0.2',
     gramps_target_version="6.1",
     status=STABLE,
     fname="grampsassistant.py",
@@ -36,4 +36,5 @@ register(
     optionclass="GrampsAssistantOptions",
     tool_modes=[TOOL_MODE_GUI],
     depends_on=["Grampy Script"],
+    help_url="Addon:GrampsAssistant",
 )

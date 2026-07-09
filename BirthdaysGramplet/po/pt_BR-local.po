@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
 "Language-Team: Brazilian Portuguese>\n"
@@ -13,5 +13,29 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
+msgid "Birthdays"
+msgstr "Aniversários"
+
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "Gramplet que mostra os aniversários das pessoas vivas"
+
+msgid "No Family Tree loaded."
+msgstr "Nenhuma árvore genealógica carregada."
+
+msgid "Sort birthdays by"
+msgstr "Classificar aniversários por"
+
+msgid "Month and day"
+msgstr "Mês e dia"
+
+msgid "Proximity to current date"
+msgstr "Proximidade da data atual"
+
+msgid "Ignore birthdays with tag"
+msgstr "Ignorar aniversários com tag"
+
+msgid "Only show birthdays with tag"
+msgstr "Mostrar apenas aniversários com tag"
+
+msgid "Processing..."
+msgstr "Processamento..."

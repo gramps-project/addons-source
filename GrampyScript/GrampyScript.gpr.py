@@ -23,7 +23,7 @@ register(
     name=_("Gram.py Script"),
     description=_("Run a special Gramps Python script"),
     status=STABLE,
-    version = '0.0.7',
+    version = '0.0.8',
     fname="GrampyScript.py",
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
@@ -32,4 +32,5 @@ register(
     gramplet_title=_("Gram.py Script"),
     help_url="Addon:GrampyScript",
     height=800,
+    requires_mod=["jedi"],
 )

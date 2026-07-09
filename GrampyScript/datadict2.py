@@ -27,10 +27,21 @@
 from __future__ import annotations
 
 from gramps.gen.lib.json_utils import data_to_object, object_to_dict
-from gramps.gen.lib import PrimaryObject
+from gramps.gen.lib import PrimaryObject, GrampsType
 from gramps.gen.config import config
 
 NoneType = type(None)
+
+# *Ref._class -> the table its `ref` handle points into, for the `reference`
+# property below.
+REFERENCE_TABLES = {
+    "ChildRef": "Person",
+    "EventRef": "Event",
+    "MediaRef": "Media",
+    "PersonRef": "Person",
+    "PlaceRef": "Place",
+    "RepoRef": "Repository",
+}
 invalid_date_format = config.get("preferences.invalid-date-format")
 age_precision = config.get("preferences.age-display-precision")
 age_after_death = config.get("preferences.age-after-death")
@@ -260,7 +271,17 @@ class DataDict2(dict):
 
     @property
     def reference(self):
-        return DataDict2(sa.dbase.get_raw_person_data(self.ref), callback=self.callback)
+        # self is one of the *Ref wrapper types (PersonRef, EventRef, ...);
+        # `ref` is a handle into whichever table its own _class points at,
+        # not always Person.
+        table = REFERENCE_TABLES.get(self["_class"])
+        if table is None:
+            return NoneData()
+        getter = sa.dbase.method("get_raw_%s_data", table)
+        data = getter(self.ref) if getter else None
+        if data is None:
+            return NoneData()
+        return DataDict2(data, callback=self.callback)
 
     @property
     def attributes(self):
@@ -298,33 +319,50 @@ class DataDict2(dict):
     def name(self):
         if self["_class"] == "Person":
             return self.primary_name
-        else:
-            return self["name"]
+        return self["name"] if "name" in self else NoneData()
 
     @property
     def surname(self):
         if self["_class"] == "Person":
             return self.primary_name.surname_list[0]
-        else:
-            return self["surname"]
+        return self["surname"] if "surname" in self else NoneData()
 
     @property
     def names(self):
-        return DataList2([self.primary_name] + [self.alternate_names])
+        return DataList2([self.primary_name] + self.alternate_names)
+
+    @property
+    def string(self):
+        # The raw "string" field only holds the *custom*-type override text
+        # for GrampsType-based values (NameOriginType, NameType, EventType,
+        # ...); for predefined values (the common case) it is always "".
+        # Route to the real object's `.string` property instead, which
+        # computes the actual (translated) label. Raising AttributeError
+        # for anything without a "string" field falls back to the normal
+        # __getattr__ lookup, so this doesn't change behavior elsewhere.
+        if "string" not in self:
+            raise AttributeError("string")
+        if isinstance(self._object, GrampsType):
+            return str(self._object)
+        return self["string"]
+
+    def _real_object(self):
+        """Walk from the root's real object down self.path to find the
+        actual (not reconstructed) object that this wrapper represents."""
+        obj = self.root._object
+        for part in self.path:
+            if isinstance(part, int):
+                obj = obj[part]
+            else:
+                obj = getattr(obj, part)
+        return obj
 
     def __setattr__(self, attr, value):
         if attr in ["root", "path", "callback"]:
             return super().__setattr__(attr, value)
         else:
-            # Follow the path:
-            obj = self.root._object
-            for part in self.path:
-                if isinstance(part, int):
-                    obj = obj[part]
-                else:
-                    obj = getattr(obj, part)
             # Set it in the real _object:
-            setattr(obj, attr, value)
+            setattr(self._real_object(), attr, value)
             # Update the top-level dict:
             self.root.update(object_to_dict(self.root._object))
             # Call the callback
@@ -334,10 +372,24 @@ class DataDict2(dict):
     # def __str__(self):
     #    return str(self._object)
 
+    def __dir__(self):
+        # Merge real class attributes with the dynamic dict keys, so that
+        # introspection tools (e.g. jedi-based completion) can see fields
+        # like `primary_name` that only exist via __getattr__.
+        return sorted(set(super().__dir__()) | set(self.keys()))
+
     def __getattr__(self, key):
         if key == "_object":
             if "_object" not in self:
-                self["_object"] = data_to_object(self)
+                # A nested wrapper (non-empty path) must resolve to the
+                # actual sub-object inside the root's real object tree,
+                # not a standalone copy reconstructed from its own dict
+                # slice -- otherwise set_*() calls below mutate a clone
+                # that is discarded instead of the real, committed object.
+                if self.path:
+                    self["_object"] = self._real_object()
+                else:
+                    self["_object"] = data_to_object(self)
             return self["_object"]
         elif key.startswith("_"):
             raise AttributeError(
@@ -391,7 +443,14 @@ class DataList2(list):
         raise Exception("Setting a DataList2 item is not allowed")
 
     def __getattr__(self, attr):
-        # return DataList2(flatten([getattr(x, attr) for x in self]))
+        if attr.startswith("set_"):
+            # Fan the call (same args) out to every item, rather than
+            # collecting each item's set_*() wrapper closure unevaluated
+            # (which isn't callable itself and silently did nothing).
+            def wrapper(*args, **kwargs):
+                return DataList2([getattr(x, attr)(*args, **kwargs) for x in self])
+
+            return wrapper
         return DataList2(flatten([getattr(x, attr) for x in self]))
 
     def __getitem__(self, position, root=None, path=""):
@@ -399,7 +458,14 @@ class DataList2(list):
             value = super().__getitem__(position)
         except Exception:
             return NoneData()
-        if isinstance(value, dict):
+        # Items can already be fully-wrapped (e.g. after `+`/`__radd__`
+        # concatenates lists whose elements are DataDict2/DataList2). Since
+        # both subclass dict/list, re-wrapping them here would discard their
+        # real root/path and replace it with this list's (often unrelated)
+        # root, corrupting later attribute assignment.
+        if isinstance(value, (DataDict2, DataList2)):
+            return value
+        elif isinstance(value, dict):
             return DataDict2(value, root=self.root, path=self.path + [position])
         elif isinstance(value, list):
             return DataList2(value, root=self.root, path=self.path + [position])
@@ -422,7 +488,10 @@ class DataList2(list):
         return DataList2([x for x in self] + [x for x in value])
 
     def __radd__(self, value):
-        return DataList2([x for x in self] + [x for x in value])
+        # self is the right-hand operand here (Python calls b.__radd__(a)
+        # for `a + b`), so the result must be `value + self`, not `self +
+        # value` -- otherwise `plain_list + data_list2` comes out reversed.
+        return DataList2([x for x in value] + [x for x in self])
 
 
 sa = None

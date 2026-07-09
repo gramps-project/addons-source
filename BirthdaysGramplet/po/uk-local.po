@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"POT-Creation-Date: 2026-07-04 00:00-0000\n"
 "PO-Revision-Date: 2025-03-06 13:57+0000\n"
 "Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -21,8 +21,23 @@ msgstr "Дні народження"
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "грамплет, що відображає дні народження живих людей"
 
+msgid "No Family Tree loaded."
+msgstr "Сімейне дерево не завантажено."
+
+msgid "Sort birthdays by"
+msgstr "Сортувати дні народження за"
+
+msgid "Month and day"
+msgstr "Місяць і день"
+
+msgid "Proximity to current date"
+msgstr "Близькість до поточної дати"
+
 msgid "Ignore birthdays with tag"
 msgstr "Ігнорувати дні народження з тегом"
 
 msgid "Only show birthdays with tag"
 msgstr "Показувати лише дні народження з тегом"
+
+msgid "Processing..."
+msgstr "Обробка..."

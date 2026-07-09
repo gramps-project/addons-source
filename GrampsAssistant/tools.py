@@ -1268,7 +1268,7 @@ def register_gramps_tools(dbstate, uistate):
         The same scope as execute_script is available:
           database, people(), families(), events(), places(), sources(),
           citations(), media(), notes(), repositories(), selected(), filtered(),
-          active_person, active_family, ..., today, counter()
+          custom_filter(), active_person, active_family, ..., today, counter()
 
         In addition, any Gramps lib class can be imported normally:
           from gramps.gen.lib import Person, Event, Date
@@ -1313,6 +1313,9 @@ def register_gramps_tools(dbstate, uistate):
           media(), notes(), repositories()   -- all records of that type
           selected("Person")   -- currently selected rows in the active view
           filtered("Person")   -- currently filtered rows in the active view
+          custom_filter(name, namespace="Person")  -- rows matching an existing
+              Gramps sidebar custom filter; prints a Warning and yields
+              nothing if no filter with that name exists for the namespace
           ("Person","Family","Event","Place","Source","Citation",
            "Media","Note","Repository" are valid table names)
 
@@ -1332,6 +1335,8 @@ def register_gramps_tools(dbstate, uistate):
           counter()          -- defaultdict(int) for tallying
           begin_changes()    -- open a DB transaction for edits
           end_changes()      -- commit the transaction
+          delete(obj)        -- delete a record (person, family, event, ...);
+              must be called between begin_changes() and end_changes()
 
         ## Person properties
           person.gramps_id                          -- "I0001"
@@ -1387,6 +1392,12 @@ def register_gramps_tools(dbstate, uistate):
           for person in people():
               if condition:
                   person.private = True   # triggers auto-commit via callback
+          end_changes()
+
+          begin_changes()
+          for repo in repositories():
+              if not repo.back_references:
+                  delete(repo)   # deletes the record itself
           end_changes()
 
         Example -- people born before 1800:
