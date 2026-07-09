@@ -24,7 +24,7 @@ register(
     name=_("Date of Death"),
     description=_("a gramplet that displays death dates in sorted order"),
     status=STABLE,
-    version = '1.1.0',
+    version = '1.1.1',
     fname="DateOfDeathGramplet.py",
     authors = ["Javad Razavian"],
     authors_email = ["javadr@gmail.com"],
