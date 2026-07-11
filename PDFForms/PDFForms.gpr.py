@@ -38,6 +38,7 @@ register(
     tool_modes=[TOOL_MODE_GUI],
     requires_mod=["reportlab"],
     depends_on=["Form Gramplet"],
+    help_url="Addon:PDFForms",
 )
 
 register(
@@ -56,4 +57,5 @@ register(
     extension="pdf",
     requires_mod=["pypdf"],
     depends_on=["Form Gramplet"],
+    help_url="Addon:PDFForms",
 )
