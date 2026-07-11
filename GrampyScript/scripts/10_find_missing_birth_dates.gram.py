@@ -6,4 +6,4 @@ can prioritize research on those records.
 
 for person in people():
     if not person.birth:
-        row(person.gramps_id, person.name.first_name, person.surname.surname)
+        row(person)
