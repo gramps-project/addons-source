@@ -305,6 +305,7 @@ class GrampyScript(Gramplet):
         self.liststore = None
         self.text_length = 0
         self.chart_data = None
+        self.converting_tabs = False
         self.gui.WIDGET = self.build_gui()
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add(self.gui.WIDGET)
@@ -397,6 +398,8 @@ for person in people():
         )
         self.ebuf = UndoableBuffer()
         self.editor_textview.set_buffer(self.ebuf)
+        self.ebuf.connect_after("insert-text", self.on_insert_text_after)
+        self.ebuf.connect("modified-changed", self.on_modified_changed)
         self.keyword_tag = self.ebuf.create_tag(
             "keyword", foreground="blue", weight=700
         )
@@ -500,7 +503,12 @@ for person in people():
 
     def update_filename_label(self):
         name = os.path.basename(self.last_filename) if self.last_filename else _("Untitled")
+        if self.ebuf.get_modified():
+            name = "*" + name
         self.filename_label.set_text(name)
+
+    def on_modified_changed(self, buffer):
+        self.update_filename_label()
 
     def check_unsaved_changes(self, proceed):
         """
@@ -691,6 +699,21 @@ for person in people():
     def on_buffer_changed(self, buffer):
         self.highlight_syntax()
         self.completion.on_buffer_changed()
+
+    def on_insert_text_after(self, buffer, text_iter, text, length):
+        if "\t" not in text or self.converting_tabs:
+            return
+        self.converting_tabs = True
+        try:
+            end_offset = text_iter.get_offset()
+            start_offset = end_offset - len(text)
+            start = buffer.get_iter_at_offset(start_offset)
+            end = buffer.get_iter_at_offset(end_offset)
+            new_text = text.replace("\t", "    ")
+            buffer.delete(start, end)
+            buffer.insert(buffer.get_iter_at_offset(start_offset), new_text)
+        finally:
+            self.converting_tabs = False
 
     def highlight_syntax(self):
         start_iter = self.ebuf.get_start_iter()
@@ -932,37 +955,146 @@ for person in people():
         return False
 
     def on_key_press(self, textview, event):
+        keyval = event.keyval
+        shift_tab = keyval == Gdk.KEY_ISO_Left_Tab or (
+            keyval == Gdk.KEY_Tab and (event.state & Gdk.ModifierType.SHIFT_MASK)
+        )
+
+        if shift_tab:
+            self.dedent_selection()
+            return True
+
+        if keyval == Gdk.KEY_Tab and self.ebuf.get_has_selection():
+            self.indent_selection()
+            return True
+
         if self.completion.on_key_press(event):
             return True
 
-        if event.keyval == Gdk.KEY_Tab:
+        if keyval == Gdk.KEY_Tab:
             # buffer = textview.get_buffer()
             iter_ = self.ebuf.get_iter_at_mark(self.ebuf.get_insert())
             self.ebuf.insert(iter_, "    ")  # Insert 4 spaces
             return True
 
-        elif event.keyval == Gdk.KEY_Return and (
-            event.state & Gdk.ModifierType.MOD1_MASK
-        ):
+        elif keyval == Gdk.KEY_Return and (event.state & Gdk.ModifierType.MOD1_MASK):
             self.apply_button.emit("clicked")
             return True
 
-        elif event.keyval == Gdk.KEY_c and (event.state & Gdk.ModifierType.MOD1_MASK):
+        elif keyval in (Gdk.KEY_Return, Gdk.KEY_KP_Enter):
+            self.insert_auto_indent_newline()
+            return True
+
+        elif keyval == Gdk.KEY_c and (event.state & Gdk.ModifierType.MOD1_MASK):
             self.copy_selected_text()
             return True
 
-        elif (Gdk.keyval_name(event.keyval) == "Z") and match_primary_mask(
+        elif (Gdk.keyval_name(keyval) == "Z") and match_primary_mask(
             event.get_state(), Gdk.ModifierType.SHIFT_MASK
         ):
             self.redo()
             return True
-        elif (Gdk.keyval_name(event.keyval) == "z") and match_primary_mask(
+        elif (Gdk.keyval_name(keyval) == "z") and match_primary_mask(
             event.get_state()
         ):
             self.undo()
             return True
 
+        elif keyval == Gdk.KEY_slash and match_primary_mask(event.get_state()):
+            self.toggle_comment_selection()
+            return True
+
         return False
+
+    def compute_indent_for_new_line(self, text_before_cursor):
+        stripped = text_before_cursor.rstrip()
+        indent = re.match(r"[ \t]*", text_before_cursor).group(0).replace("\t", "    ")
+        if stripped.endswith(":"):
+            indent += "    "
+        elif re.match(r"^[ \t]*(return|pass|break|continue|raise)\b", stripped):
+            if indent.endswith("    "):
+                indent = indent[:-4]
+        return indent
+
+    def insert_auto_indent_newline(self):
+        buf = self.ebuf
+        it = buf.get_iter_at_mark(buf.get_insert())
+        line_start = it.copy()
+        line_start.set_line_offset(0)
+        text_before_cursor = buf.get_text(line_start, it, True)
+        indent = self.compute_indent_for_new_line(text_before_cursor)
+        buf.insert_at_cursor("\n" + indent)
+
+    def selection_line_bounds(self):
+        buf = self.ebuf
+        if buf.get_has_selection():
+            sel_start, sel_end = buf.get_selection_bounds()
+        else:
+            it = buf.get_iter_at_mark(buf.get_insert())
+            sel_start = sel_end = it
+        start = buf.get_iter_at_line(sel_start.get_line())
+        end_line = sel_end.get_line()
+        if end_line > sel_start.get_line() and sel_end.get_line_offset() == 0:
+            # A drag-selection ending at column 0 of a line usually means
+            # the user didn't mean to touch that line.
+            end_line -= 1
+        end = buf.get_iter_at_line(end_line)
+        end.forward_to_line_end()
+        return start, end
+
+    def reindent_selection(self, transform):
+        buf = self.ebuf
+        start, end = self.selection_line_bounds()
+        start_offset = start.get_offset()
+        text = buf.get_text(start, end, True)
+        new_text = "\n".join(transform(line) for line in text.split("\n"))
+        if new_text == text:
+            return
+        buf.delete(start, end)
+        buf.insert(buf.get_iter_at_offset(start_offset), new_text)
+        new_start = buf.get_iter_at_offset(start_offset)
+        new_end = buf.get_iter_at_offset(start_offset + len(new_text))
+        buf.select_range(new_start, new_end)
+
+    def indent_selection(self):
+        self.reindent_selection(lambda line: "    " + line)
+
+    def dedent_selection(self):
+        def dedent(line):
+            if line.startswith("    "):
+                return line[4:]
+            if line.startswith("\t"):
+                return line[1:]
+            return line.lstrip(" ")
+
+        self.reindent_selection(dedent)
+
+    def toggle_comment_selection(self):
+        buf = self.ebuf
+        start, end = self.selection_line_bounds()
+        text = buf.get_text(start, end, True)
+        code_lines = [line for line in text.split("\n") if line.strip()]
+        all_commented = bool(code_lines) and all(
+            line.lstrip().startswith("#") for line in code_lines
+        )
+
+        def comment(line):
+            if not line.strip():
+                return line
+            stripped = line.lstrip(" ")
+            indent = line[: len(line) - len(stripped)]
+            return indent + "# " + stripped
+
+        def uncomment(line):
+            stripped = line.lstrip(" ")
+            indent = line[: len(line) - len(stripped)]
+            if stripped.startswith("# "):
+                return indent + stripped[2:]
+            if stripped.startswith("#"):
+                return indent + stripped[1:]
+            return line
+
+        self.reindent_selection(uncomment if all_commented else comment)
 
     def undo(self):
         self.ebuf.undo()
@@ -1120,25 +1252,30 @@ for person in people():
                 min_val = min(data)
                 if max_val == min_val:
                     return
-                interval = (max_val - min_val) / self.chart_data[2]
-                buckets = [0] * (int(max_val / interval) + 1)
+                num_buckets = max(1, int(self.chart_data[2]))
+                interval = (max_val - min_val) / num_buckets
+                buckets = [0] * num_buckets
                 for value in data:
-                    if value > max_val:
-                        buckets[int(max_val / interval)] += 1
-                    else:
-                        buckets[int(value / interval)] += 1
+                    # Bucket index is the value's offset from min_val, not
+                    # the raw value -- otherwise negative or non-zero-based
+                    # data lands outside the buckets list. Clamp the top
+                    # edge (value == max_val) into the last bucket rather
+                    # than one past it.
+                    idx = int((value - min_val) / interval)
+                    if idx >= num_buckets:
+                        idx = num_buckets - 1
+                    buckets[idx] += 1
 
                 labels = []
                 decimal_places = self.chart_data[3].get("decimal_places", 0)
                 format = "%0." + str(decimal_places) + "f"
-                for i in range(int(max_val / interval)):
-                    begin = format % (i * interval)
-                    end = format % ((i + 1) * interval)
+                for i in range(num_buckets):
+                    begin = format % (min_val + i * interval)
+                    end = format % (min_val + (i + 1) * interval)
                     if begin != end:
                         labels.append(begin + "-" + end)
                     else:
                         labels.append(begin)
-                labels.append(format % ((i + 1) * interval,))
 
                 # Draw a bar chart with values
                 bar_width = width / (len(buckets) * 1.5)
