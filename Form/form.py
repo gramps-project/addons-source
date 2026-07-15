@@ -48,7 +48,6 @@ from gramps.gui.dialog import ErrorDialog
 #
 # ---------------------------------------------------------------
 from form_validator import (
-    get_form_warnings,
     validate_form_dom,
     validate_form_element,
 )
@@ -199,9 +198,6 @@ class Form:
                 full_path,
                 "\n".join(errors),
             )
-
-        for warning in get_form_warnings(dom):
-            LOG.warning("In %s: %s", full_path, warning)
 
         try:
             self.__load_definitions(dom)
