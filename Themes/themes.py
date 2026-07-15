@@ -65,7 +65,7 @@ class MyPrefs(GrampsPreferences):
     ''' Adds a new line of controls to the 'Colors' preferences panel.
     Theme, dark-theme and Font choices are added. '''
 
-    def __init__(self, uistate, dbstate):
+    def __init__(self, uistate, dbstate, initial_panel=None):
         ''' this replaces the GrampsPreferences __init__
         It includes the patching fixes and calls my version of the Theme panel
         '''
@@ -131,6 +131,8 @@ class MyPrefs(GrampsPreferences):
         help_btn.connect(
             'clicked', lambda x: display_help(WIKI_HELP_PAGE, WIKI_HELP_SEC))
         self.setup_configs('interface.grampspreferences', 700, 450)
+        if initial_panel and hasattr(self, 'select_panel'):
+            self.select_panel(initial_panel)
 
     def add_themes_panel(self, configdialog):
         ''' This adds a Theme panel '''
