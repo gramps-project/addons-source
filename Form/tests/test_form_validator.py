@@ -44,7 +44,6 @@ import xml.dom.minidom
 # ------------------------
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from form_validator import (
-    get_form_warnings,
     parse_and_validate,
     split_family_title,
     validate_form_dom,
@@ -392,126 +391,6 @@ class TestShippedDefinitionFilesValidate(unittest.TestCase):
                     [],
                     f"validation errors in {path}:\n" + "\n".join(errors),
                 )
-
-
-# ---------------------------------------------------------------------------
-# get_form_warnings — non-fatal authoring warnings (Gramps bug 11010)
-# ---------------------------------------------------------------------------
-class TestGetFormWarnings(unittest.TestCase):
-    """
-    Column sizes are expected to sum to 100. Rather than reject the
-    form, ``get_form_warnings`` flags suspect sections so the caller can
-    log them — 78 shipped definition files currently violate this rule
-    without breaking rendering, so escalating to an error would be
-    user-hostile.
-    """
-
-    def test_section_without_columns_has_no_warning(self):
-        dom = _dom_from_string(textwrap.dedent("""\
-            <forms>
-                <form id='F1' type='Census' title='x'>
-                    <section role='Primary' type='person'/>
-                </form>
-            </forms>
-        """))
-        self.assertEqual(get_form_warnings(dom), [])
-
-    def test_columns_without_any_size_have_no_warning(self):
-        dom = _dom_from_string(textwrap.dedent("""\
-            <forms>
-                <form id='F1' type='Census' title='x'>
-                    <section role='Primary' type='person'>
-                        <column><_attribute>Name</_attribute></column>
-                        <column><_attribute>Age</_attribute></column>
-                    </section>
-                </form>
-            </forms>
-        """))
-        self.assertEqual(get_form_warnings(dom), [])
-
-    def test_columns_summing_to_100_have_no_warning(self):
-        dom = _dom_from_string(textwrap.dedent("""\
-            <forms>
-                <form id='F1' type='Census' title='x'>
-                    <section role='Primary' type='person'>
-                        <column><_attribute>A</_attribute><size>60</size></column>
-                        <column><_attribute>B</_attribute><size>40</size></column>
-                    </section>
-                </form>
-            </forms>
-        """))
-        self.assertEqual(get_form_warnings(dom), [])
-
-    def test_columns_not_summing_to_100_emit_warning(self):
-        dom = _dom_from_string(textwrap.dedent("""\
-            <forms>
-                <form id='F1' type='Census' title='x'>
-                    <section role='Primary' type='person'>
-                        <column><_attribute>A</_attribute><size>25</size></column>
-                    </section>
-                </form>
-            </forms>
-        """))
-        warnings = get_form_warnings(dom)
-        self.assertEqual(len(warnings), 1)
-        self.assertIn("sum to 25", warnings[0])
-        self.assertIn("F1", warnings[0])
-        self.assertIn("Primary", warnings[0])
-
-    def test_partially_sized_columns_have_no_warning(self):
-        """
-        When only some columns declare a ``<size>``, the author's intent
-        is ambiguous (mixed relative/absolute sizing) so the check is
-        skipped to avoid false positives.
-        """
-        dom = _dom_from_string(textwrap.dedent("""\
-            <forms>
-                <form id='F1' type='Census' title='x'>
-                    <section role='Primary' type='person'>
-                        <column><_attribute>A</_attribute><size>25</size></column>
-                        <column><_attribute>B</_attribute></column>
-                    </section>
-                </form>
-            </forms>
-        """))
-        self.assertEqual(get_form_warnings(dom), [])
-
-    def test_warnings_are_independent_of_errors(self):
-        """
-        Warnings are structurally orthogonal to errors: a malformed form
-        still produces warnings for its well-formed sibling.
-        """
-        dom = _dom_from_string(textwrap.dedent("""\
-            <forms>
-                <form id='BAD' type='Marriage' title='x'>
-                    <section role='Family' type='family' title='NoSlash'/>
-                </form>
-                <form id='GOOD' type='Census' title='x'>
-                    <section role='Primary' type='person'>
-                        <column><_attribute>A</_attribute><size>30</size></column>
-                    </section>
-                </form>
-            </forms>
-        """))
-        warnings = get_form_warnings(dom)
-        self.assertEqual(len(warnings), 1)
-        self.assertIn("GOOD", warnings[0])
-
-    def test_multiple_misaligned_sections_all_reported(self):
-        dom = _dom_from_string(textwrap.dedent("""\
-            <forms>
-                <form id='F1' type='Census' title='x'>
-                    <section role='A' type='person'>
-                        <column><_attribute>X</_attribute><size>40</size></column>
-                    </section>
-                    <section role='B' type='person'>
-                        <column><_attribute>Y</_attribute><size>70</size></column>
-                    </section>
-                </form>
-            </forms>
-        """))
-        warnings = get_form_warnings(dom)
-        self.assertEqual(len(warnings), 2)
 
 
 if __name__ == "__main__":

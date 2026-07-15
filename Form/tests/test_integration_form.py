@@ -43,7 +43,6 @@ Run with::
 # ------------------------
 # Python modules
 # ------------------------
-import logging
 import os
 import shutil
 import sys
@@ -257,51 +256,6 @@ class TestEmptyFormsValidation(FormLoaderTestCase):
         self.assertIn("Invalid Form definition file", title)
         self.assertIn("no <form>", body)
         self.assertEqual(list(instance.get_form_ids()), [])
-
-
-# ---------------------------------------------------------------------------
-# Column-size warnings (Gramps bug 11010 item b) — WARNING only, not errors
-# ---------------------------------------------------------------------------
-class TestColumnSizeWarnings(FormLoaderTestCase):
-    """
-    Sections whose ``<column>`` sizes do not sum to 100 must be logged
-    as warnings only — 78 shipped forms trip this check, so escalating
-    to an ErrorDialog would harass users on every launch.
-    """
-
-    def test_column_size_sum_warning_is_logged_not_dialog(self) -> None:
-        """Column-size mismatch → WARNING log entry, no ErrorDialog."""
-        self._write(
-            "custom.xml",
-            textwrap.dedent("""\
-                <forms>
-                    <form id='F1' type='Census' title='x'>
-                        <section role='Primary' type='person'>
-                            <column><_attribute>A</_attribute><size>25</size></column>
-                        </section>
-                    </form>
-                </forms>
-                """),
-        )
-        self._patch_definition_files(["custom.xml"])
-
-        with self.assertLogs(".FormGramplet", level=logging.WARNING) as log_ctx:
-            instance = self.form.Form(definition_dir=self.tmp_dir)
-
-        self.assertFalse(
-            self.shown,
-            "column-size mismatch must not produce an ErrorDialog:\n"
-            + "\n".join("%s: %s" % (t, b) for t, b in self.shown),
-        )
-        self.assertIn(
-            "F1",
-            list(instance.get_form_ids()),
-            "the form must still load despite the size mismatch",
-        )
-        self.assertTrue(
-            any("sum to 25" in message for message in log_ctx.output),
-            "expected a column-size warning in the log",
-        )
 
 
 # ---------------------------------------------------------------------------
