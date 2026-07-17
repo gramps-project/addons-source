@@ -34,5 +34,5 @@ register(
     navtypes=["Person"],
     authors=["Paul Womack", "Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
-    help_url="Addon:AdvancedPersonFilter",
+    help_url="Addon:PersonRelationshipFilter",
 )
