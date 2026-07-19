@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 17:04+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
 "PO-Revision-Date: 2025-03-23 20:35+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -14,18 +14,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.11-dev\n"
 "Generated-By: pygettext.py 1.4\n"
-
-msgid "Select Form"
-msgstr "Velg skjema"
-
-msgid "Form Gramplet"
-msgstr "Skjema Gramplet"
-
-msgid "Forms"
-msgstr "Skjemaer"
-
-msgid "Form"
-msgstr "Skjema"
 
 #, python-format
 msgid "Form: %s"
@@ -39,6 +27,33 @@ msgstr "Rediger skjema"
 
 msgid "Headings"
 msgstr "Overskrifter"
+
+msgid "Form Gramplet"
+msgstr "Skjema Gramplet"
+
+msgid "Forms"
+msgstr "Skjemaer"
+
+msgid "Form"
+msgstr "Skjema"
+
+msgid "Select Form"
+msgstr "Velg skjema"
+
+msgid "6. Age at Next Birthday"
+msgstr "6. Alder ved neste bursdag"
+
+msgid "7. Age next Birthday"
+msgstr "7. Alder neste bursdag"
+
+msgid "10. Age at last birthday"
+msgstr "10. Alder ved forrige bursdag"
+
+msgid "8. Age at last birthday"
+msgstr "8. Alder ved forrige bursdag"
+
+msgid "12. Age at last birthday"
+msgstr "12. Alder ved forrige bursdag"
 
 msgid "Owner"
 msgstr "Eier"
@@ -66,18 +81,3 @@ msgstr "Fylke/Administrativt område"
 
 msgid "Administrative County"
 msgstr "Administrativt fylke"
-
-msgid "6. Age at Next Birthday"
-msgstr "6. Alder ved neste bursdag"
-
-msgid "7. Age next Birthday"
-msgstr "7. Alder neste bursdag"
-
-msgid "10. Age at last birthday"
-msgstr "10. Alder ved forrige bursdag"
-
-msgid "8. Age at last birthday"
-msgstr "8. Alder ved forrige bursdag"
-
-msgid "12. Age at last birthday"
-msgstr "12. Alder ved forrige bursdag"

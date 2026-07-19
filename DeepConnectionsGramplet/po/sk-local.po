@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-09-05 10:02+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "Deep Connections Gramplet"
 msgstr "Gramplet Hlboké vzťahy"
@@ -23,30 +23,59 @@ msgstr "Gramplet zobrazujúci hlboký vzťah medzi aktívnymi a domovskými osob
 msgid "Deep Connections"
 msgstr "Hlbšie vzťahy"
 
-msgid "Pause"
-msgstr "Pauza"
+msgid "⏸ Pause"
+msgstr "⏸ Pozastaviť"
 
-msgid "Copy"
-msgstr "Kopírovať"
+msgid "Pause the current search"
+msgstr "Pozastavte aktuálne vyhľadávanie"
+
+msgid "▶ Continue"
+msgstr "▶ Pokračovať"
+
+msgid "Continue searching for more relations"
+msgstr "Pokračujte vo vyhľadávaní ďalších vzťahov"
+
+msgid "📋 Copy"
+msgstr "📋 Kopírovať"
+
+msgid "Copy selected people to clipboard"
+msgstr "Kopírujte vybraných ľudí do schránky"
+
+msgid "🗑 Clear"
+msgstr "🗑 Vyčistiť"
+
+msgid "Clear all results and reset"
+msgstr "Vyčistí všetky výsledky a resetuje"
+
+msgid "Ready to search"
+msgstr "Pripravený na vyhľadávanie"
+
+#, python-brace-format
+msgid ""
+"Search Depth: {depth} | People Processed: {processed} | Queue Size: "
+"{queue_size}"
+msgstr ""
+"Hĺbka vyhľadávania: {depth} | Spracovaných osôb: {processed} | Veľkosť "
+"fronty: {queue_size}"
 
 msgid "mentioned in note"
-msgstr "spomenutá v poznámke"
+msgstr "spomenutý/á v poznámke"
 
 msgid "Note on Family"
-msgstr "Poznámka pre rodinu"
+msgstr "Poznámka k rodine"
 
 msgid "sibling"
 msgstr "súrodenec"
 
 msgid "Note on Parent Family"
-msgstr "Poznámka pre rodinu rodiča"
+msgstr "Poznámka k rodičovskej rodine"
 
 #, python-format
 msgid "%s (association)"
 msgstr "%s (asociácia)"
 
 msgid "Note on Person"
-msgstr "Poznámka pre osobu"
+msgstr "Poznámka k osobe"
 
 #, python-format
 msgid ""
@@ -56,39 +85,66 @@ msgstr ""
 "\n"
 "   %s osoby "
 
+msgid "Error: No Home Person set"
+msgstr "Chyba: Nie je nastavená domovská osoba"
+
 msgid "No Active Person set."
 msgstr "Nie je nastavená aktívna osoba."
+
+msgid "Error: No Active Person set"
+msgstr "Chyba: Nie je nastavená aktívna osoba"
+
+msgid "Initializing search..."
+msgstr "Inicializácia vyhľadávania..."
 
 msgid "Looking for relationship between\n"
 msgstr "Vyhľadávanie vzťahu medzi\n"
 
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
-msgstr "  <b>%s</b> (Východzia osoba) a\n"
+msgstr "  <b>%s</b> (Domovská osoba) a\n"
 
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
-msgstr "  <b>%s</b> (aktívna osoba)...\n"
+msgstr "  <b>%s</b> (Aktívna osoba)...\n"
+
+msgid "Searching for connections..."
+msgstr "Vyhľadávanie prepojení..."
 
 #, python-format
 msgid ""
 "Found relation #%d: \n"
 "   "
 msgstr ""
-"zistený vzťah #%d: \n"
+"Nájdený vzťah #%d: \n"
 "   "
 
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
 msgstr ""
-"Prerušené.\n"
-"Pre hľadanie ďalšich vzťahov stlačte Pokračovať.\n"
+"Pozastavené.\n"
+"Pre hľadanie dodatočných vzťahov stlačte Pokračovať.\n"
+
+msgid "Paused - Press Continue to search for more relations"
+msgstr "Pozastavené - Pre hľadanie ďalšich vzťahov stlačte Pokračovať."
 
 #, python-format
 msgid ""
 "\n"
-"Search completed. %d relations found."
+"Search completed. %d relation paths found."
 msgstr ""
 "\n"
-"Hľadanie ukončené. Zistené vzťahy v počte %d."
+"Hľadanie ukončené. Nájdené vzťahové cesty v počte %d."
+
+msgid "Search completed - {} relation paths found"
+msgstr "Hľadanie ukončené - nájdené vzťahové cesty {}"
+
+msgid "Error during search: {}"
+msgstr "Chyba počas vyhľadávania: {}"
+
+msgid "Resuming search..."
+msgstr "Pokračovanie vo vyhľadávaní..."
+
+msgid "Search interrupted by user"
+msgstr "Vyhľadávanie prerušené používateľom"

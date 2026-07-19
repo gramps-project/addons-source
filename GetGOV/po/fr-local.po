@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-04-11 12:50+0000\n"
-"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"POT-Creation-Date: 2026-04-24 11:58-0700\n"
+"PO-Revision-Date: 2026-03-26 16:09+0000\n"
+"Last-Translator: Bruno FORESTIER <bforest76@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 msgid "Place ID to import from GOV (Historical Gazetteer):"
 msgstr ""
@@ -33,10 +33,6 @@ msgstr "erreur GetGOV : %s"
 #, python-format
 msgid "GOV error on id %s with code: "
 msgstr "Erreur GOV sur l'id %s avec le code : "
-
-#, python-format
-msgid "from %s to %s"
-msgstr "de %s à %s"
 
 #, python-format
 msgid "after %s"

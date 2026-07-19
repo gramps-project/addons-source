@@ -24,9 +24,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-11 17:13-0700\n"
-"PO-Revision-Date: 2026-03-09 14:09+0000\n"
-"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
+"POT-Creation-Date: 2026-05-10 10:43-0700\n"
+"PO-Revision-Date: 2026-04-20 04:09+0000\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -34,7 +34,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
@@ -48,10 +48,6 @@ msgstr "Näytä kaikkien henkilöiden nimet"
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
 msgstr "Nimen tyyppi"
-
-#: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
-msgid "Primary Name"
-msgstr "Ensisijainen nimi"
 
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
@@ -148,7 +144,7 @@ msgid "Whether to display the theoretical number of ancestor by generation"
 msgstr "Näytetäänkö esi-isien teoreettinen lukumäärä sukupolvittain"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
-#: DescendantBooks/DetailedDescendantBookReport.py:1536
+#: DescendantBooks/DetailedDescendantBookReport.py:1538
 #: DetDescendantReport-images/detdescendantreporti.py:1252
 #: LastChange/LastChangeReport.py:378
 #: LinesOfDescendency/lines-of-descendency.py:72
@@ -157,10 +153,8 @@ msgid "The style used for the title of the page."
 msgstr "Sivun otsikossa käytetty tyyli."
 
 #: AncestryTableReport.gpr.py:3
-#, fuzzy
-#| msgid "Ancestry"
 msgid "Ancestry Table"
-msgstr "Esivanhemmat"
+msgstr "Sukutaulu"
 
 #: AncestryTableReport.gpr.py:4
 #, fuzzy
@@ -289,6 +283,43 @@ msgid ""
 "The style used for the total line of the number of ancestors per generation."
 msgstr "Raportin otsikon tyyli."
 
+#: AnniversariesGramplet/AnniversariesGramplet.gpr.py:24
+#: AnniversariesGramplet/AnniversariesGramplet.gpr.py:32
+#, fuzzy
+#| msgid "Inverse"
+msgid "Anniversaries"
+msgstr "Käänteinen"
+
+#: AnniversariesGramplet/AnniversariesGramplet.gpr.py:25
+#, fuzzy
+#| msgid "a gramplet that displays the birthdays of the living people"
+msgid "A gramplet that displays the anniversaries of events"
+msgstr "Gramplet, joka näyttää elävien ihmisten syntymä päivät ja iät"
+
+#: AnniversariesGramplet/AnniversariesGramplet.py:51
+#, fuzzy
+#| msgid "Double-click on a row to edit the selected participant."
+msgid "Double-click on a row to edit the event."
+msgstr "Voit muokata osallistujaa kaksoisnapsauttamalla sen riviä."
+
+#: AnniversariesGramplet/AnniversariesGramplet.py:58
+#, fuzzy
+#| msgid "Other participants"
+msgid "Participant"
+msgstr "Muut osallistujat"
+
+#: ArchiveAssist/ArchiveAssist.gpr.py:22
+msgid ""
+"Parses strings from Riksarkivet and ArkivDigital to create sources and "
+"citations."
+msgstr ""
+
+#: ArchiveAssist/ArchiveAssist.gpr.py:26
+#, fuzzy
+#| msgid "Archive file"
+msgid "Archive Assist"
+msgstr "Arkistotiedosto"
+
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
 msgstr "Tarkasta liitokset"
@@ -321,7 +352,7 @@ msgstr "Liittää jaetun lähteen useisiin kohteisiin."
 
 #: AttachSourceTool/AttachSourceTool.py:70
 #: AvatarGenerator/AvatarGenerator.py:86
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:87
 #: RelID/relation_tab.py:310 SetAttributeTool/SetAttributeTool.py:71
 #: SetPrivacyTool/SetPrivacyTool.py:312
 msgid "Select filter to restrict people"
@@ -360,7 +391,7 @@ msgid "ID of source to attach"
 msgstr "Liitettävän lähteen tunnus"
 
 #: AttachSourceTool/AttachSourceTool.py:157
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:241
 #: SetAttributeTool/SetAttributeTool.py:151
 #: SetAttributeTool/SetAttributeTool.py:193
 msgid "Processing...\n"
@@ -800,7 +831,7 @@ msgid "Only show birthdays with tag"
 msgstr "Näytä vain syntymäpäivät, joissa on tagi"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:194
 msgid "Calculate Estimated Dates"
 msgstr "Laske arvioidut päivämäärät"
 
@@ -808,90 +839,90 @@ msgstr "Laske arvioidut päivämäärät"
 msgid "Calculates estimated dates for birth and death."
 msgstr "Laskee päivämääräarviot syntymälle ja kuolemalle."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Calculated Date Estimates"
 msgstr "Lasketut päivämääräarviot"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid "Source to remove and/or add"
 msgstr "Poistettavat tai lisättävät lähteet"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:103
 msgid "Remove previously added events, notes, and source"
 msgstr "Poista aiemmin lisätyt tapahtumat, listiedot ja lähde"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
 "Poista lasketut tapahtumat, lisätiedot ja lähde; tapahtuu välittömästi "
 "Suorita painikkeesta"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:108
 msgid "Do not add birth events"
 msgstr "Älä lisää syntymätapahtumia"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:109
 msgid "Add birth events without dates"
 msgstr "Lisää syntymätapahtumat ilman päivämääriä"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
 msgid "Add birth events with dates"
 msgstr "Lisää syntymätapahtumat päivämäärineen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 msgid "Add a birth events with or without estimated dates"
 msgstr "Lisää syntymätapahtumat mahdollisen arvioidun päivämäärän kanssa"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:115
 msgid "Do not add death events"
 msgstr "Älä lisää kuolintapahtumia"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:112
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:116
 msgid "Add death events without dates"
 msgstr "Lisää kuolintapahtumat ilman päivämääriä"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:117
 msgid "Add death events with dates"
 msgstr "Lisää kuolintapahtumat päivämäärineen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:114
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Add death events with or without estimated dates"
 msgstr "Lisää kuolintapahtumat mahdollisen arvioidun päivämäärän kanssa"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:122
 msgid "Maximum age"
 msgstr "Suurin mahdollinen ikä"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:121
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:125
 msgid "Maximum age that one can live to"
 msgstr "Suurin mahdollinen elinikä"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:127
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:131
 msgid "Maximum age difference between siblings"
 msgstr "Suurin mahdollinen sisarusten ikäero"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Average years between two generations"
 msgstr "Keskimääräinen vuosimäärä kahden sukupolven välillä"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:136
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:140
 msgid "Estimated Dates"
 msgstr "Arvioidut päivämäärät"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:141
 msgid "Approximate (about)"
 msgstr "Arvioitu (noin)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:138
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:142
 msgid "Extremes (after and before)"
 msgstr "Ääripäät (jälkeen ja ennen)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:139
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:143
 msgid "Dates on events are either about or after/before"
 msgstr "Tapahtumien päivämäärät ovat joko noin tai jälkeen/ennen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:172
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:176
 msgid ""
 "The Calculate Estimated Dates Tool is used to add and remove birth and death "
 "events for people that are missing these events.\n"
@@ -930,27 +961,23 @@ msgstr ""
 "Voit joutua käyttämään työkalua toistuvasti (poistamatta aiempia tapahtumia) "
 "lisätäksesi kaikki mahdolliset tapahtumat."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:199
-msgid "Select All"
-msgstr "Valitse kaikki"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:204
 msgid "Select None"
 msgstr "Valitse ei mitään"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:205
 msgid "Toggle Selection"
 msgstr "Vaihda valinta"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:206
 msgid "Add Selected Events"
 msgstr "Lisää valitut tapahtumat"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:212
 msgid "Remove Events, Notes, and Source and Reselect Data"
 msgstr "Poista tapahtumat, huomautukset ja lähde ja valitse tiedot uudelleen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:213
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
@@ -958,44 +985,50 @@ msgstr ""
 "Haluatko varmasti poistaa aiemmat tapahtumat, huomautukset ja lähteen sekä "
 "valita tiedot uudelleen?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
 msgid "Remove and Run Select Again"
 msgstr "Poista ja suorita valinta uudelleen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:218
 msgid "Reselect Data"
 msgstr "Valitse tiedot uudelleen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:215
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:219
 msgid "Are you sure you want to reselect data?"
 msgstr "Haluatko varmasti valita tiedot uudelleen?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:216
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:220
 msgid "Run Select Again"
 msgstr "Suorita valinta uudelleen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:240
 msgid "Evidence"
 msgstr "Todisteet"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:240
 msgid "Relative"
 msgstr "Sukulainen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:255
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:261
 msgid "Removing old estimations... "
 msgstr "Vanhojen arvioiden poistaminen... "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:256
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:262
 #, python-format
 msgid "Removing '%s'..."
 msgstr "Poistetaan '%s'..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:319
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:338
 msgid "done!\n"
 msgstr "valmis!\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:323
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:341
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:432
+#, python-format
+msgid "Skipped %d people due to errors (see log).\n"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:347
 msgid ""
 "Selecting... \n"
 "\n"
@@ -1003,69 +1036,74 @@ msgstr ""
 "Valitaan... \n"
 "\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:359
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:395
 msgid "Add birth and death events"
 msgstr "Lisää syntymä- ja kuolintapahtuma"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:361
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:397
 msgid "Add birth event"
 msgstr "Lisää syntymätapahtuma"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:363
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:399
 msgid "Add death event"
 msgstr "Lisää kuolintapahtuma"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:398
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:445
 msgid "No events to be added."
 msgstr "Ei lisättäviä tapahtumia."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:439
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:489
 msgid "Selecting... "
 msgstr "Valitaan... "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:440
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:491
 #, python-format
 msgid "Adding events '%s'..."
 msgstr "Lisätään tapahtuma '%s'..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:516
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
 msgstr "Lisätyn syntymätapahtuman peruste on %(evidence)s henkilöltä %(name)s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:519
 #, python-format
 msgid "Added birth event based on %s"
 msgstr "Lisätyn syntymätapahtuman peruste on %s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:521
 msgid "Estimated birth date"
 msgstr "Arvioitu syntymäaika"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:531
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
 msgstr "Lisätyn kuolintapahtuman peruste on %(evidence)s henkilöltä %(person)s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:534
 #, python-format
 msgid "Added death event based on %s"
 msgstr "Lisätyn kuolintapahtuman peruste on %s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:485
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:536
 msgid "Estimated death date"
 msgstr "Arvioitu kuolinaika"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:495
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:553
 msgid " Done! Committing..."
 msgstr " Tehty! Talletetaan ..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:499
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:559
 #, python-format
 msgid "Added %d events."
 msgstr "%d tapahtumaa lisätty."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:527
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:562
+#, python-format
+msgid " (Skipped %d rows due to errors; see log.)"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:589
 msgid "Estimated date"
 msgstr "Arvioitu päivä"
 
@@ -1124,32 +1162,42 @@ msgstr ""
 msgid "Chat With Tree"
 msgstr "Keskustele sukupuun kanssa"
 
-#: ChatWithTree/ChatWithTree.py:103
-msgid "Database change detected"
-msgstr "Tietokannan muutos havaittu"
-
-#: ChatWithTree/ChatWithTree.py:148
+#: ChatWithTree/ChatWithTree.py:149
 msgid "Type a message..."
 msgstr "Kirjoita viesti..."
 
-#: ChatWithTree/ChatWithTree.py:152
+#: ChatWithTree/ChatWithTree.py:153
 msgid "Send"
 msgstr "Lähetä"
 
-#: ChatWithTree/ChatWithTree.py:159
-msgid "Chat with Tree initialized. Type /help for help."
+#: ChatWithTree/ChatWithTree.py:163
+#, fuzzy
+#| msgid "Chat with Tree initialized. Type /help for help."
+msgid "Chat with Tree initialized.                 Type /help for help."
 msgstr ""
 "Keskustelu sukupuun kanssa on aloitettu. Kirjoita /help saadaksesi apua."
 
-#: ChatWithTree/ChatWithTree.py:314
+#: ChatWithTree/ChatWithTree.py:449
+#, fuzzy
+#| msgid ""
+#| "The ChatWithTree addon is not yet initialized. Please reload Gramps or "
+#| "select a database."
 msgid ""
-"The ChatWithTree addon is not yet initialized. Please reload Gramps or "
-"select a database."
+"The ChatWithTree addon is not yet initialized.                     Please "
+"reload Gramps or select a database."
 msgstr ""
 "ChatWithTree-lisäosaa ei ole vielä alustettu. Lataa Gramps uudelleen tai "
 "valitse tietokanta."
 
-#: ChatWithTree/chatwithllm.py:78
+#: ChatWithTree/ChatWithTree.py:458
+msgid "The chatbot is currently processing a query. Please wait."
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:485
+msgid "An error occurred while processing your query."
+msgstr ""
+
+#: ChatWithTree/chatwithllm.py:119
 msgid "Tree: '{}'"
 msgstr "Sukupuu: '{}'"
 
@@ -1243,11 +1291,6 @@ msgid "Gramplet for grouping collections of items to aid in data entry."
 msgstr ""
 "Gramplet kohdekokoelmien ryhmittelyyn tiedon syöttämisen helpottamiseksi."
 
-#: ClipboardGramplet/ClipboardGramplet.py:83
-#, python-format
-msgid "Clipboard Gramplet: %s"
-msgstr "Leikepöytä-Gramplet: %s"
-
 #: ClockGramplet/ClockGramplet.gpr.py:4 ClockGramplet/ClockGramplet.gpr.py:9
 msgid "Clock"
 msgstr "Kello"
@@ -1286,7 +1329,7 @@ msgstr "Näytä tagit"
 msgid "Vertical Details"
 msgstr "Alekkaiset tiedot"
 
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:62
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:79
 msgid "Order"
 msgstr "Järjestys"
 
@@ -1339,82 +1382,82 @@ msgstr ""
 "Luo verkkosivun, jossa on esivanhempien graafinen esitys (SVG) "
 "tiivistettävänä puuna käyttäen D3.js JavaScript-kirjastoa."
 
-#: D3Charts/AncestralCollapsibleTree.py:326
-#: D3Charts/AncestralCollapsibleTree.py:771
-#: D3Charts/AncestralCollapsibleTree.py:785 D3Charts/AncestralFanChart.py:401
-#: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
-#: D3Charts/DescendantIndentedTree.py:1499
-#: D3Charts/DescendantIndentedTree.py:1562
-#: D3Charts/DescendantIndentedTree.py:1569
-#: D3Charts/DescendantIndentedTree.py:1676
-#: D3Charts/DescendantIndentedTree.py:1696 DenominoViso/DenominoViso.py:394
+#: D3Charts/AncestralCollapsibleTree.py:327
+#: D3Charts/AncestralCollapsibleTree.py:772
+#: D3Charts/AncestralCollapsibleTree.py:786 D3Charts/AncestralFanChart.py:402
+#: D3Charts/AncestralFanChart.py:649 D3Charts/AncestralFanChart.py:675
+#: D3Charts/DescendantIndentedTree.py:1504
+#: D3Charts/DescendantIndentedTree.py:1567
+#: D3Charts/DescendantIndentedTree.py:1574
+#: D3Charts/DescendantIndentedTree.py:1681
+#: D3Charts/DescendantIndentedTree.py:1701 DenominoViso/DenominoViso.py:394
 #: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
 msgstr "Kirjoitus epäonnistui {target_path}: {message}"
 
-#: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
-#: D3Charts/DescendantIndentedTree.py:1518
+#: D3Charts/AncestralCollapsibleTree.py:346 D3Charts/AncestralFanChart.py:421
+#: D3Charts/DescendantIndentedTree.py:1523
 #, python-format
 msgid "Failed to create directory structure : %s"
 msgstr "Hakemiston luonti ei onnistunut: %s"
 
-#: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
-#: D3Charts/DescendantIndentedTree.py:1554
+#: D3Charts/AncestralCollapsibleTree.py:369 D3Charts/AncestralFanChart.py:444
+#: D3Charts/DescendantIndentedTree.py:1559
 #, python-format
 msgid "Failed to copy web files : %s"
 msgstr "Web-tiedostojen kopiointi epäonnistui: %s"
 
-#: D3Charts/AncestralCollapsibleTree.py:816
+#: D3Charts/AncestralCollapsibleTree.py:817
 msgid "Ancestral Collapsible Tree Options"
 msgstr "Esivanhempien tiivistettävän puun valinnat"
 
-#: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
-#: D3Charts/DescendantIndentedTree.py:1803
+#: D3Charts/AncestralCollapsibleTree.py:841 D3Charts/AncestralFanChart.py:724
+#: D3Charts/DescendantIndentedTree.py:1808
 #: DescendantSpaceTree/DescendantSpaceTree.py:1082
 msgid "Include Generations"
 msgstr "Näytettävät sukupolvet"
 
-#: D3Charts/AncestralCollapsibleTree.py:846
+#: D3Charts/AncestralCollapsibleTree.py:847
 msgid "Male Background Color"
 msgstr "Miehen taustaväri"
 
-#: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
+#: D3Charts/AncestralCollapsibleTree.py:848 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
 msgstr "Miehen laatikon RGB-taustaväri."
 
-#: D3Charts/AncestralCollapsibleTree.py:850
+#: D3Charts/AncestralCollapsibleTree.py:851
 msgid "Male Expandable Background Color"
 msgstr "Miehen laajennettavan laatikon taustaväri"
 
-#: D3Charts/AncestralCollapsibleTree.py:852
+#: D3Charts/AncestralCollapsibleTree.py:853
 msgid "RGB-color for male expandable box background."
 msgstr "Miehen laajennettavan laatikon RGB-taustaväri."
 
-#: D3Charts/AncestralCollapsibleTree.py:855 NetworkChart/NetworkChart.py:1022
+#: D3Charts/AncestralCollapsibleTree.py:856 NetworkChart/NetworkChart.py:1022
 msgid "Female Background"
 msgstr "Naisen taustaväri"
 
-#: D3Charts/AncestralCollapsibleTree.py:856
+#: D3Charts/AncestralCollapsibleTree.py:857
 msgid "RGB-color for female box background."
 msgstr "Naisen laatikon RGB-taustaväri."
 
-#: D3Charts/AncestralCollapsibleTree.py:859
+#: D3Charts/AncestralCollapsibleTree.py:860
 msgid "Female Expandable Background"
 msgstr "Naisen laajennettavan laatikon taustaväri"
 
-#: D3Charts/AncestralCollapsibleTree.py:861
+#: D3Charts/AncestralCollapsibleTree.py:862
 msgid "RGB-color for female expandable box background."
 msgstr "Naisen laajennettavan laatikon RGB-taustaväri."
 
-#: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
-#: D3Charts/DescendantIndentedTree.py:1825
+#: D3Charts/AncestralCollapsibleTree.py:868 D3Charts/AncestralFanChart.py:740
+#: D3Charts/DescendantIndentedTree.py:1830
 #: DescendantSpaceTree/DescendantSpaceTree.py:1132
 msgid "The destination path for generated files."
 msgstr "Kohdehakemisto uusille tiedostoille."
 
-#: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
-#: D3Charts/DescendantIndentedTree.py:1830
+#: D3Charts/AncestralCollapsibleTree.py:873 D3Charts/AncestralFanChart.py:745
+#: D3Charts/DescendantIndentedTree.py:1835
 #: TimePedigreeHTML/TimePedigreeHtml.py:865
 msgid "The destination file name for html content."
 msgstr "HTML-tiedoston nimi."
@@ -1431,28 +1474,28 @@ msgstr ""
 "Luo verkkosivun, jossa on graafinen esitys esi-isistä (SVG) viuhkakaaviona "
 "käyttäen D3.js JavaScript -kirjastoja."
 
-#: D3Charts/AncestralFanChart.py:707
+#: D3Charts/AncestralFanChart.py:708
 msgid "Ancestral Fan Chart Options"
 msgstr "Esivanhempien viuhkakaavion valinnat"
 
-#: D3Charts/AncestralFanChart.py:729
+#: D3Charts/AncestralFanChart.py:730
 msgid "Paternal Background Color"
 msgstr "Isän taustaväri"
 
-#: D3Charts/AncestralFanChart.py:730
+#: D3Charts/AncestralFanChart.py:731
 msgid "RGB-color for paternal box background."
 msgstr "RGB-taustaväri isän laatikolle."
 
-#: D3Charts/AncestralFanChart.py:733
+#: D3Charts/AncestralFanChart.py:734
 msgid "Maternal Background"
 msgstr "Äidin taustaväri"
 
-#: D3Charts/AncestralFanChart.py:734
+#: D3Charts/AncestralFanChart.py:735
 msgid "RGB-color for maternal box background."
 msgstr "RGB-taustaväri äidin laatikolle."
 
 #: D3Charts/DescendantIndentedTree.gpr.py:23
-#: D3Charts/DescendantIndentedTree.py:909
+#: D3Charts/DescendantIndentedTree.py:914
 msgid "Descendant Indented Tree"
 msgstr "Jälkeläisten sisennetty sukupuu"
 
@@ -1465,21 +1508,23 @@ msgstr ""
 "Luo verkkosivun, jossa on jälkeläisten graafinen esitys (SVG) "
 "tiivistettävänä puuna käyttäen D3.js JavaScript-kirjastoa."
 
-#: D3Charts/DescendantIndentedTree.py:673
-#, python-format
+#: D3Charts/DescendantIndentedTree.py:678
+#, fuzzy, python-format
+#| msgid "See %(reference)s : %(spouse)s"
+msgctxt "spouse"
 msgid "See %(reference)s : %(spouse)s"
 msgstr "Katso %(reference)s : %(spouse)s"
 
-#: D3Charts/DescendantIndentedTree.py:764
+#: D3Charts/DescendantIndentedTree.py:769
 msgid "Generating report..."
 msgstr "Raporttia luodaan..."
 
-#: D3Charts/DescendantIndentedTree.py:1364
+#: D3Charts/DescendantIndentedTree.py:1369
 #: DescendantSpaceTree/DescendantSpaceTree.py:771
 msgid "Invalid Destination Directory"
 msgstr "Virheellinen kohdehakemisto"
 
-#: D3Charts/DescendantIndentedTree.py:1365
+#: D3Charts/DescendantIndentedTree.py:1370
 #, python-format
 msgid ""
 "Destinaton diretory %s does not exist\n"
@@ -1488,12 +1533,12 @@ msgstr ""
 "Kohdehakemistoa %s ei ole olemassa\n"
 "Haluatko yrittää luoda sen?"
 
-#: D3Charts/DescendantIndentedTree.py:1374
+#: D3Charts/DescendantIndentedTree.py:1379
 #, python-brace-format
 msgid "Failed to create {target_path}: {message}"
 msgstr "Luonti ei onnistunut {target_path}: {message}"
 
-#: D3Charts/DescendantIndentedTree.py:1390
+#: D3Charts/DescendantIndentedTree.py:1395
 #, python-format
 msgid ""
 "Destination file %s already exists.\n"
@@ -1502,244 +1547,244 @@ msgstr ""
 "Tiedosto %s on jo olemassa\n"
 "Haluatko korvata sen?"
 
-#: D3Charts/DescendantIndentedTree.py:1445
+#: D3Charts/DescendantIndentedTree.py:1450
 msgid "Default View"
 msgstr "Oletusnäkymä"
 
-#: D3Charts/DescendantIndentedTree.py:1448
+#: D3Charts/DescendantIndentedTree.py:1453
 msgid "Expand All"
 msgstr "Laajenna kaikki"
 
-#: D3Charts/DescendantIndentedTree.py:1810
+#: D3Charts/DescendantIndentedTree.py:1815
 msgid "Include contraction level"
 msgstr "Sisällytä supistuksen taso"
 
-#: D3Charts/DescendantIndentedTree.py:1812
+#: D3Charts/DescendantIndentedTree.py:1817
 msgid "The number of descendant levels to contract on initial display."
 msgstr "Jälkeläisten supistettavien tasojen määrä aloitusnäytöllä."
 
-#: D3Charts/DescendantIndentedTree.py:1819
+#: D3Charts/DescendantIndentedTree.py:1824
 msgid "The font size in pixels for each node."
 msgstr "Kunkin solmun kirjainkoko pikseleinä."
 
-#: D3Charts/DescendantIndentedTree.py:1847
+#: D3Charts/DescendantIndentedTree.py:1852
 #: DescendantBooks/DescendantBookReport.py:552
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Näytetäänkö raportissa toistuvat sukupuut."
 
-#: D3Charts/DescendantIndentedTree.py:1851
+#: D3Charts/DescendantIndentedTree.py:1856
 msgid "Expanded Row Background Color"
 msgstr "Laajennettujen rivien taustaväri"
 
-#: D3Charts/DescendantIndentedTree.py:1852
+#: D3Charts/DescendantIndentedTree.py:1857
 msgid "RGB-color for expanded row background."
 msgstr "RGB-taustaväri laajennetuille riveille."
 
-#: D3Charts/DescendantIndentedTree.py:1855
+#: D3Charts/DescendantIndentedTree.py:1860
 msgid "Expandable Background Color"
 msgstr "Laajennettava taustaväri"
 
-#: D3Charts/DescendantIndentedTree.py:1857
+#: D3Charts/DescendantIndentedTree.py:1862
 msgid "RGB-color for expandable row background."
 msgstr "RGB-taustaväri laajennettavalle riville."
 
-#: D3Charts/DescendantIndentedTree.py:1860
+#: D3Charts/DescendantIndentedTree.py:1865
 msgid "Non-Expandable Background Color"
 msgstr "Laajentumattomien rivien taustaväri"
 
-#: D3Charts/DescendantIndentedTree.py:1862
+#: D3Charts/DescendantIndentedTree.py:1867
 msgid "RGB-color for non-expandable row background."
 msgstr "RGB-taustaväri laajentumattomille riveille."
 
-#: D3Charts/DescendantIndentedTree.py:1866 DynamicWeb/dynamicweb.py:4811
+#: D3Charts/DescendantIndentedTree.py:1871 DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
 msgstr "Näytä yksityisiksi merkityt tiedot"
 
-#: D3Charts/DescendantIndentedTree.py:1868
+#: D3Charts/DescendantIndentedTree.py:1873
 msgid "Whether to include private objects."
 msgstr "Näyetäänkö yksityiset kohteet."
 
-#: D3Charts/DescendantIndentedTree.py:1876 DynamicWeb/dynamicweb.py:4819
+#: D3Charts/DescendantIndentedTree.py:1881 DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
 msgstr "Näytä vain sukunimi"
 
-#: D3Charts/DescendantIndentedTree.py:1878 DynamicWeb/dynamicweb.py:4822
+#: D3Charts/DescendantIndentedTree.py:1883 DynamicWeb/dynamicweb.py:4822
 msgid "Include Full Name Only"
 msgstr "Näytä vain koko nimi"
 
-#: D3Charts/DescendantIndentedTree.py:1880
+#: D3Charts/DescendantIndentedTree.py:1885
 msgid "How to handle living people."
 msgstr "Elävien ihmisten käsittely."
 
-#: D3Charts/DescendantIndentedTree.py:1887
+#: D3Charts/DescendantIndentedTree.py:1892
 msgid "Whether or not to include people who may have recently died."
 msgstr "Lisätäänkö mukaan hiljattain kuolleet henkilöt."
 
-#: D3Charts/DescendantIndentedTree.py:1895
+#: D3Charts/DescendantIndentedTree.py:1900
 msgid "Navigation"
 msgstr "Navigointi"
 
-#: D3Charts/DescendantIndentedTree.py:1897
+#: D3Charts/DescendantIndentedTree.py:1902
 msgid "Contraction/Expansion mechanism"
 msgstr "Supistus-/laajentamismekanismi"
 
-#: D3Charts/DescendantIndentedTree.py:1900
+#: D3Charts/DescendantIndentedTree.py:1905
 msgid "Entire node."
 msgstr "Koko solmu."
 
-#: D3Charts/DescendantIndentedTree.py:1901
+#: D3Charts/DescendantIndentedTree.py:1906
 msgid "Arrow images at start of node."
 msgstr "Nuolikuviot solmun lähtöpisteessä."
 
-#: D3Charts/DescendantIndentedTree.py:1902
+#: D3Charts/DescendantIndentedTree.py:1907
 msgid "Plus/Minus images at start of node."
 msgstr "Plus/miinusmerkit solmun alussa."
 
-#: D3Charts/DescendantIndentedTree.py:1903
-#: D3Charts/DescendantIndentedTree.py:1932
+#: D3Charts/DescendantIndentedTree.py:1908
+#: D3Charts/DescendantIndentedTree.py:1937
 msgid "Where to click to expand/contract nodes."
 msgstr "Mistä napsautetaan solmujen laajentamiseksi/supistamiseksi."
 
-#: D3Charts/DescendantIndentedTree.py:1907
+#: D3Charts/DescendantIndentedTree.py:1912
 msgid "Auto-generate HREF links for nodes"
 msgstr "Luo HREF-linkit automaattisesti solmuille"
 
-#: D3Charts/DescendantIndentedTree.py:1909
+#: D3Charts/DescendantIndentedTree.py:1914
 msgid "Whether to auto-generate HTML links for each node on the report."
 msgstr "Luodaanko HTML-linkit automaattisesti jokaiseen raportin solmuun."
 
-#: D3Charts/DescendantIndentedTree.py:1915
+#: D3Charts/DescendantIndentedTree.py:1920
 msgid "URL prefix path."
 msgstr "URL-osoitteen etuliite."
 
-#: D3Charts/DescendantIndentedTree.py:1917
+#: D3Charts/DescendantIndentedTree.py:1922
 msgid "URL prefix to apply to each auto-generated HREF link."
 msgstr "URL-etuliite, jokaiseen automaattisesti luotuun HREF-linkkiin."
 
-#: D3Charts/DescendantIndentedTree.py:1923
+#: D3Charts/DescendantIndentedTree.py:1928
 msgid "URL file extension"
 msgstr "URL-tiedoston pääte"
 
-#: D3Charts/DescendantIndentedTree.py:1925
+#: D3Charts/DescendantIndentedTree.py:1930
 msgid "No file extension."
 msgstr "Ei tiedostopäätettä."
 
-#: D3Charts/DescendantIndentedTree.py:1926
+#: D3Charts/DescendantIndentedTree.py:1931
 msgid ".html"
 msgstr ".html"
 
-#: D3Charts/DescendantIndentedTree.py:1927
+#: D3Charts/DescendantIndentedTree.py:1932
 msgid ".htm"
 msgstr ".htm"
 
-#: D3Charts/DescendantIndentedTree.py:1928
+#: D3Charts/DescendantIndentedTree.py:1933
 msgid ".shtml"
 msgstr ".shtml"
 
-#: D3Charts/DescendantIndentedTree.py:1929
+#: D3Charts/DescendantIndentedTree.py:1934
 msgid ".php"
 msgstr ".php"
 
-#: D3Charts/DescendantIndentedTree.py:1930
+#: D3Charts/DescendantIndentedTree.py:1935
 msgid ".php3"
 msgstr ".php3"
 
-#: D3Charts/DescendantIndentedTree.py:1931
+#: D3Charts/DescendantIndentedTree.py:1936
 msgid ".cgi"
 msgstr ".cgi"
 
-#: D3Charts/DescendantIndentedTree.py:1937
+#: D3Charts/DescendantIndentedTree.py:1942
 msgid "URL file name delimeter"
 msgstr "URL-tiedoston nimen erotin"
 
-#: D3Charts/DescendantIndentedTree.py:1939
+#: D3Charts/DescendantIndentedTree.py:1944
 msgid "Remove all whitespace."
 msgstr "Poista kaikki välilyönnit."
 
-#: D3Charts/DescendantIndentedTree.py:1940
+#: D3Charts/DescendantIndentedTree.py:1945
 msgid "Replace whitespace with dash(-)."
 msgstr "Korvaa välilyönti yhdysmerkillä '-'."
 
-#: D3Charts/DescendantIndentedTree.py:1941
+#: D3Charts/DescendantIndentedTree.py:1946
 msgid "Replace whitespace with underscore(_)"
 msgstr "Korvaa välilyönti alaviivalla '_'"
 
-#: D3Charts/DescendantIndentedTree.py:1942
+#: D3Charts/DescendantIndentedTree.py:1947
 msgid "What to use as file name delimiter replacing whitespace."
 msgstr "Mitä käytetään tiedostonimen erottimena korvaamaan välilyönnit."
 
-#: D3Charts/DescendantIndentedTree.py:1947
+#: D3Charts/DescendantIndentedTree.py:1952
 msgid "Generations to generate HREF links"
 msgstr "Sukupolvet HREF-linkkien luomiseen"
 
-#: D3Charts/DescendantIndentedTree.py:1949
+#: D3Charts/DescendantIndentedTree.py:1954
 msgid "The number of generations to generate HREF links."
 msgstr "HREF-linkkien luomiseen käytettävien sukupolvien määrä."
 
-#: D3Charts/DescendantIndentedTree.py:1955
+#: D3Charts/DescendantIndentedTree.py:1960
 msgid "Exclude persons who died before (years)"
 msgstr "Ohita persons who died before (years)"
 
-#: D3Charts/DescendantIndentedTree.py:1958
+#: D3Charts/DescendantIndentedTree.py:1963
 msgid ""
 "Whether to generate links for people who died in infancy, -1 excludes nobody."
 msgstr "Luodaanko linkkejä imeväisinä kuolleille, -1 ei ohiteta ketään."
 
-#: D3Charts/DescendantIndentedTree.py:1964
+#: D3Charts/DescendantIndentedTree.py:1969
 msgid "Exclude center person"
 msgstr "Keskushenkilöä lukuun ottamatta"
 
-#: D3Charts/DescendantIndentedTree.py:1965
+#: D3Charts/DescendantIndentedTree.py:1970
 msgid "Whether or not to generate links for center person."
 msgstr "Luodaanko linkkejä keskushenkilölle."
 
-#: D3Charts/DescendantIndentedTree.py:1970
+#: D3Charts/DescendantIndentedTree.py:1975
 msgid "Exclude Spouses"
 msgstr "Ohita puolisot"
 
-#: D3Charts/DescendantIndentedTree.py:1971
+#: D3Charts/DescendantIndentedTree.py:1976
 msgid "Whether or not to generate links for spouses."
 msgstr "Luodaanko linkkejä puolisoille."
 
-#: D3Charts/DescendantIndentedTree.py:1978
+#: D3Charts/DescendantIndentedTree.py:1983
 msgid "Biography Content"
 msgstr "Elämäkerran sisältö"
 
-#: D3Charts/DescendantIndentedTree.py:1980
+#: D3Charts/DescendantIndentedTree.py:1985
 msgid "Show biography tooltips"
 msgstr "Näytä elämäkerran työkaluvinkit"
 
-#: D3Charts/DescendantIndentedTree.py:1981
+#: D3Charts/DescendantIndentedTree.py:1986
 msgid "Whether to show biography tooltips when hovering over a node."
 msgstr ""
 "Näytetäänkö elämäkerran työkaluvihjeitä vietäessä hiiren osoitin solmun "
 "päälle."
 
-#: D3Charts/DescendantIndentedTree.py:2025
+#: D3Charts/DescendantIndentedTree.py:2030
 msgid "Text Color"
 msgstr "Tekstin väri"
 
-#: D3Charts/DescendantIndentedTree.py:2027
+#: D3Charts/DescendantIndentedTree.py:2032
 msgid "RGB-color for biography text."
 msgstr "RGB-väri elämäkertatekstille."
 
-#: D3Charts/DescendantIndentedTree.py:2032
+#: D3Charts/DescendantIndentedTree.py:2037
 msgid "RGB-color for biography tooltip."
 msgstr "RGB-väri elämäkerran työkaluvihjeitä varten."
 
-#: D3Charts/DescendantIndentedTree.py:2035
+#: D3Charts/DescendantIndentedTree.py:2040
 msgid "Header Font size"
 msgstr "Otsikon kirjainkoko"
 
-#: D3Charts/DescendantIndentedTree.py:2037
+#: D3Charts/DescendantIndentedTree.py:2042
 msgid "The font size in pixels for biography header text."
 msgstr "Elämäkerran otsikon kirjainkoko pikseleinä."
 
-#: D3Charts/DescendantIndentedTree.py:2043
+#: D3Charts/DescendantIndentedTree.py:2048
 msgid "Body Font size"
 msgstr "Tekstin kirjainkoko"
 
-#: D3Charts/DescendantIndentedTree.py:2045
+#: D3Charts/DescendantIndentedTree.py:2050
 msgid "The font size in pixels for biography body text."
 msgstr "Elämäkerran kirjainkoko pikseleinä."
 
@@ -1950,7 +1995,7 @@ msgstr "Tiedonsyöttö-gramplet"
 msgid "Gramplet for quick data entry"
 msgstr "Gramplet nopeaan tiedonsyöttöön"
 
-#: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:45
+#: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:56
 #: NoteGramplet/NoteGramplet.py:65
 msgid "Active person"
 msgstr "Aktiivihenkilö"
@@ -1968,8 +2013,9 @@ msgstr "Lähteet?"
 msgid "Surname, Given"
 msgstr "Sukunimi, Etunimi"
 
-#: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:111
-#: RelID/relation_tab.py:363
+#: DataEntryGramplet/DataEntryGramplet.py:89 GrampyScript/GrampyScript.py:127
+#: GrampyScript/GrampyScript.py:147 GrampyScript/GrampyScript.py:304
+#: NoteGramplet/NoteGramplet.py:111 RelID/relation_tab.py:363
 msgid "Save"
 msgstr "Tallenna"
 
@@ -2032,92 +2078,107 @@ msgstr "Kopioi aktiiviset tiedot"
 msgid "in"
 msgstr "paikassa"
 
-#: DataEntryGramplet/DataEntryGramplet.py:441
-#: DataEntryGramplet/DataEntryGramplet.py:569
+#: DataEntryGramplet/DataEntryGramplet.py:428
+#: DataEntryGramplet/DataEntryGramplet.py:507
+#, fuzzy
+#| msgid "Family Tree file"
+msgid "No Family Tree is open."
+msgstr "Sukupuutiedosto"
+
+#: DataEntryGramplet/DataEntryGramplet.py:429
+msgid "Please open a Family Tree to edit data."
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:446
+#: DataEntryGramplet/DataEntryGramplet.py:578
 #, python-format
 msgid "Gramplet Data Edit: %s"
 msgstr "Gramplet-tietojen muokkaus: %s"
 
-#: DataEntryGramplet/DataEntryGramplet.py:515
+#: DataEntryGramplet/DataEntryGramplet.py:508
+msgid "Please open a Family Tree before adding a person."
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:524
 msgid "Can't add new person."
 msgstr "Uutta henkilöa ei voi lisätä."
 
-#: DataEntryGramplet/DataEntryGramplet.py:515
+#: DataEntryGramplet/DataEntryGramplet.py:524
 msgid "Please provide a name."
 msgstr "Anna nimi."
 
-#: DataEntryGramplet/DataEntryGramplet.py:523
-#: DataEntryGramplet/DataEntryGramplet.py:526
+#: DataEntryGramplet/DataEntryGramplet.py:532
+#: DataEntryGramplet/DataEntryGramplet.py:535
 msgid "Can't add new person as a parent."
 msgstr "Uutta henkilöä ei voi lisätä vanhemmaksi."
 
-#: DataEntryGramplet/DataEntryGramplet.py:523
-#: DataEntryGramplet/DataEntryGramplet.py:531
-#: DataEntryGramplet/DataEntryGramplet.py:536
-#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:532
+#: DataEntryGramplet/DataEntryGramplet.py:540
+#: DataEntryGramplet/DataEntryGramplet.py:545
 #: DataEntryGramplet/DataEntryGramplet.py:550
-#: DataEntryGramplet/DataEntryGramplet.py:555
-#: DataEntryGramplet/DataEntryGramplet.py:560
-#: DataEntryGramplet/DataEntryGramplet.py:565
+#: DataEntryGramplet/DataEntryGramplet.py:559
+#: DataEntryGramplet/DataEntryGramplet.py:564
+#: DataEntryGramplet/DataEntryGramplet.py:569
+#: DataEntryGramplet/DataEntryGramplet.py:574
 msgid "Please set an active person."
 msgstr "Valise ensin aktiivihenkilö."
 
-#: DataEntryGramplet/DataEntryGramplet.py:526
-#: DataEntryGramplet/DataEntryGramplet.py:545
+#: DataEntryGramplet/DataEntryGramplet.py:535
+#: DataEntryGramplet/DataEntryGramplet.py:554
 msgid "Please set the new person's gender."
 msgstr "Aseta uuden henkilön sukupuoli."
 
-#: DataEntryGramplet/DataEntryGramplet.py:531
+#: DataEntryGramplet/DataEntryGramplet.py:540
 msgid "Can't add new person as a mother."
 msgstr "Uutta henkilöä ei voi lisätä äidiksi."
 
-#: DataEntryGramplet/DataEntryGramplet.py:536
+#: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Can't add new person as a father."
 msgstr "Uutta henkilöä ei voi lisätä isäksi."
 
-#: DataEntryGramplet/DataEntryGramplet.py:541
-#: DataEntryGramplet/DataEntryGramplet.py:545
-#: DataEntryGramplet/DataEntryGramplet.py:768
-#: DataEntryGramplet/DataEntryGramplet.py:805
-#: DataEntryGramplet/DataEntryGramplet.py:838
+#: DataEntryGramplet/DataEntryGramplet.py:550
+#: DataEntryGramplet/DataEntryGramplet.py:554
+#: DataEntryGramplet/DataEntryGramplet.py:777
+#: DataEntryGramplet/DataEntryGramplet.py:814
+#: DataEntryGramplet/DataEntryGramplet.py:847
 msgid "Can't add new person as a spouse."
 msgstr "Uutta henkilöä ei voi lisätä puolisoksi."
 
-#: DataEntryGramplet/DataEntryGramplet.py:550
+#: DataEntryGramplet/DataEntryGramplet.py:559
 msgid "Can't add new person as a wife."
 msgstr "Uutta henkilöä ei voi lisätä vaimoksi."
 
-#: DataEntryGramplet/DataEntryGramplet.py:555
+#: DataEntryGramplet/DataEntryGramplet.py:564
 msgid "Can't add new person as a husband."
 msgstr "Uutta henkilöä ei voi lisätä aviopuolisoksi."
 
-#: DataEntryGramplet/DataEntryGramplet.py:560
+#: DataEntryGramplet/DataEntryGramplet.py:569
 msgid "Can't add new person as a sibling."
 msgstr "Uutta henkilöä ei voi lisätä sisarukseksi."
 
-#: DataEntryGramplet/DataEntryGramplet.py:565
-#: DataEntryGramplet/DataEntryGramplet.py:938
+#: DataEntryGramplet/DataEntryGramplet.py:574
+#: DataEntryGramplet/DataEntryGramplet.py:947
 msgid "Can't add new person as a child."
 msgstr "Uutta henkilöä ei voi lisätä lapseksi."
 
-#: DataEntryGramplet/DataEntryGramplet.py:763
+#: DataEntryGramplet/DataEntryGramplet.py:772
 msgid "Please set Active person."
 msgstr "Valise ensin aktiivihenkilö."
 
-#: DataEntryGramplet/DataEntryGramplet.py:764
+#: DataEntryGramplet/DataEntryGramplet.py:773
 msgid "Can't add new person as a spouse to no one."
 msgstr "Ei voi lisätä uutta henkilöä puolisoksi kenellekään."
 
-#: DataEntryGramplet/DataEntryGramplet.py:767
+#: DataEntryGramplet/DataEntryGramplet.py:776
 msgid "Please set gender on Active or new person."
 msgstr "Aseta sukupuoli aktiiviselle tai uudelle henkilölle."
 
-#: DataEntryGramplet/DataEntryGramplet.py:804
-#: DataEntryGramplet/DataEntryGramplet.py:837
+#: DataEntryGramplet/DataEntryGramplet.py:813
+#: DataEntryGramplet/DataEntryGramplet.py:846
 msgid "Same genders on Active and new person."
 msgstr "Samat sukupuolet aktiivisella ja uudella henkilöllä."
 
-#: DataEntryGramplet/DataEntryGramplet.py:937
+#: DataEntryGramplet/DataEntryGramplet.py:946
 msgid "Please set gender on Active person."
 msgstr "Aseta sukupuoli aktiivihenkilölle."
 
@@ -2162,7 +2223,6 @@ msgid "Calculate"
 msgstr "Laske"
 
 #: DateCalculator/DateCalculator.py:107
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
 #: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3863
 msgid "Copy"
 msgstr "Kopioi"
@@ -2196,36 +2256,89 @@ msgstr "Gramplet näyttää aktiivi- ja kotihenkilön väliset suhteet syvemmäl
 msgid "Deep Connections"
 msgstr "Syväsuhteet"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
-msgid "Pause"
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
+#, fuzzy
+#| msgid "Pause"
+msgid "⏸ Pause"
 msgstr "Pysäytä"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:107
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:108
+msgid "Pause the current search"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:111
+msgid "▶ Continue"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:114
+#, fuzzy
+#| msgid ""
+#| "Paused.\n"
+#| "Press Continue to search for additional relations.\n"
+msgid "Continue searching for more relations"
+msgstr ""
+"Pysäytetty.\n"
+"Etsi lisää suhteita painamalla Jatka.\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:118
+#, fuzzy
+#| msgid "Copy"
+msgid "📋 Copy"
+msgstr "Kopioi"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:120
+#, fuzzy
+#| msgid "Copy link to clipboard"
+msgid "Copy selected people to clipboard"
+msgstr "Kopioi linkki leikepöydälle"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:128
+msgid "🗑 Clear"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
+msgid "Clear all results and reset"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
+#, fuzzy
+#| msgid "Start type to search"
+msgid "Ready to search"
+msgstr "Ala kirjoittaa hakusanaa"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:185
+#, python-brace-format
+msgid ""
+"Search Depth: {depth} | People Processed: {processed} | Queue Size: "
+"{queue_size}"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 msgid "mentioned in note"
 msgstr "mainitussa huomautuksessa"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:245
 msgid "Note on Family"
 msgstr "Perheen lisätietoja"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:258
 msgid "sibling"
 msgstr "sisarus"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:268
 msgid "Note on Parent Family"
 msgstr "Vanhempien perheen lisätietoja"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:272
 #, python-format
 msgid "%s (association)"
 msgstr "%s (liitoksen lisätietoja)"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:277
 msgid "Note on Person"
 msgstr "Henkilön lisätietoja"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:308
 #, python-format
 msgid ""
 "\n"
@@ -2234,25 +2347,47 @@ msgstr ""
 "\n"
 "   %s henkilölle "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:336
+#, fuzzy
+#| msgid "No Active Person set."
+msgid "Error: No Home Person set"
+msgstr "Aktiivihenkilöä ei ole asetettu."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:341
 msgid "No Active Person set."
 msgstr "Aktiivihenkilöä ei ole asetettu."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:342
+#, fuzzy
+#| msgid "No Active Person set."
+msgid "Error: No Active Person set"
+msgstr "Aktiivihenkilöä ei ole asetettu."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:347
+msgid "Initializing search..."
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:366
 msgid "Looking for relationship between\n"
 msgstr "Etsitään henkilöiden väliset sukulaisuussuhteet\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:367
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
 msgstr "  <b>%s</b> (kotihenkilö) ja\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:368
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (aktiivihenkilö)...\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:382
+#, fuzzy
+#| msgid "Fetching records..."
+msgid "Searching for connections..."
+msgstr "Noudetaan tietueita…"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:402
 #, python-format
 msgid ""
 "Found relation #%d: \n"
@@ -2261,7 +2396,7 @@ msgstr ""
 "Löydetyt suhteet #%d: \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:423
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
@@ -2269,14 +2404,51 @@ msgstr ""
 "Pysäytetty.\n"
 "Etsi lisää suhteita painamalla Jatka.\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
-#, python-format
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:427
+#, fuzzy
+#| msgid ""
+#| "Paused.\n"
+#| "Press Continue to search for additional relations.\n"
+msgid "Paused - Press Continue to search for more relations"
+msgstr ""
+"Pysäytetty.\n"
+"Etsi lisää suhteita painamalla Jatka.\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:456
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "Search completed. %d relations found."
 msgid ""
 "\n"
-"Search completed. %d relations found."
+"Search completed. %d relation paths found."
 msgstr ""
 "\n"
 "Haku valmis. %d suhdetta löytynyt."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:460
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "Search completed. %d relations found."
+msgid "Search completed - {} relation paths found"
+msgstr ""
+"\n"
+"Haku valmis. %d suhdetta löytynyt."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:471
+msgid "Error during search: {}"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:481
+#, fuzzy
+#| msgid "Removing '%s'..."
+msgid "Resuming search..."
+msgstr "Poistetaan '%s'..."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:489
+msgid "Search interrupted by user"
+msgstr ""
 
 #: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
@@ -2530,10 +2702,6 @@ msgstr ""
 #: DenominoViso/DenominoViso.py:2635
 msgid "Whether to include a person's attributes"
 msgstr "Näytetäänkö henkilön ominaisuudet"
-
-#: DenominoViso/DenominoViso.py:2638
-msgid "Include Addresses"
-msgstr "Näytä osoitteet"
 
 #: DenominoViso/DenominoViso.py:2639
 msgid "Whether to include a person's addresses."
@@ -2863,7 +3031,7 @@ msgid "Descendants Report"
 msgstr "Jälkeläisraportti"
 
 #: DescendantBooks/DescendantBookReport.py:423
-#: DescendantBooks/DetailedDescendantBookReport.py:421
+#: DescendantBooks/DetailedDescendantBookReport.py:423
 #, python-format
 msgid "Writing %s reports..."
 msgstr "Kirjoitetaan %s raporttia..."
@@ -2874,13 +3042,13 @@ msgid "{report_count}. Descendants of {name}"
 msgstr "{report_count}. Henkilön {name} jälkeläiset"
 
 #: DescendantBooks/DescendantBookReport.py:481
-#: DescendantBooks/DetailedDescendantBookReport.py:617
+#: DescendantBooks/DetailedDescendantBookReport.py:619
 #, python-brace-format
 msgid "{report_count:d}. {name}"
 msgstr "{report_count:d}. {name}"
 
 #: DescendantBooks/DescendantBookReport.py:510
-#: DescendantBooks/DetailedDescendantBookReport.py:1341
+#: DescendantBooks/DetailedDescendantBookReport.py:1343
 msgid "Select filter to restrict people that appear in the report"
 msgstr "Valitse suodatin rajoittamaan raportin henkilöitä"
 
@@ -2916,160 +3084,160 @@ msgstr ""
 msgid "Detailed Descendants Report"
 msgstr "Yksityiskohtainen jälkeläisten raportti"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:359
+#: DescendantBooks/DetailedDescendantBookReport.py:364
 #, python-format
 msgid "Generating %s report references..."
 msgstr "Luodaan %s raporttiviittausta..."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:453
+#: DescendantBooks/DetailedDescendantBookReport.py:455
 #, python-format
 msgid "%(report_count)s. Descendant Report for %(person_name)s"
 msgstr "%(report_count)s. Jälkeläisraportti henkilölle %(person_name)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:519
+#: DescendantBooks/DetailedDescendantBookReport.py:521
 msgid "Index of Places"
 msgstr "Paikkahakemisto"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:542
+#: DescendantBooks/DetailedDescendantBookReport.py:544
 msgid "Index of Dates"
 msgstr "Päivämäärähakemisto"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:565
+#: DescendantBooks/DetailedDescendantBookReport.py:567
 msgid "Index of Names"
 msgstr "Nimihakemisto"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:571
+#: DescendantBooks/DetailedDescendantBookReport.py:573
 msgid "Report, Generation, Person, Name"
 msgstr "Raportti, sukupolvi, henkilö, nimi"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:697
+#: DescendantBooks/DetailedDescendantBookReport.py:699
 #, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
 msgstr "Katso raportti: {report}, sukupolvi: {generation}, henkilö: {person}"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:765
-#: DescendantBooks/DetailedDescendantBookReport.py:777
+#: DescendantBooks/DetailedDescendantBookReport.py:767
+#: DescendantBooks/DetailedDescendantBookReport.py:779
 #, python-format
 msgid "Report appearances for %s"
 msgstr "Ilmoita esiintymisestä: %s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:770
+#: DescendantBooks/DetailedDescendantBookReport.py:772
 #, python-brace-format
 msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
 msgstr ""
 "Puoliso: Raportti: {report}, sukupolvi: {generation}, henkilö: {person}"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:782
+#: DescendantBooks/DetailedDescendantBookReport.py:784
 #, python-brace-format
 msgid "Report: {report}, Generation: {generation}, Person: {person}"
 msgstr "Raportti: {report}, sukupolvi: {generation}, henkilö: {person}"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:806
+#: DescendantBooks/DetailedDescendantBookReport.py:808
 #, python-format
 msgid "%(event_name)s of %(name)s "
 msgstr "%(event_name)s henkilölle %(name)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:810
+#: DescendantBooks/DetailedDescendantBookReport.py:812
 #, python-format
 msgid "%(event_name)s of %(name)s and %(mate)s "
 msgstr "%(event_name)s henkiöille %(name)s ja %(mate)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:814
-#: DescendantBooks/DetailedDescendantBookReport.py:858
+#: DescendantBooks/DetailedDescendantBookReport.py:816
+#: DescendantBooks/DetailedDescendantBookReport.py:860
 #: DetDescendantReport-images/detdescendantreporti.py:454
 #, python-format
 msgid "%(date)s, %(place)s"
 msgstr "%(date)s, %(place)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:817
-#: DescendantBooks/DetailedDescendantBookReport.py:861
+#: DescendantBooks/DetailedDescendantBookReport.py:819
+#: DescendantBooks/DetailedDescendantBookReport.py:863
 #: DetDescendantReport-images/detdescendantreporti.py:457
 #, python-format
 msgid "%(date)s"
 msgstr "%(date)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:819
-#: DescendantBooks/DetailedDescendantBookReport.py:863
+#: DescendantBooks/DetailedDescendantBookReport.py:821
+#: DescendantBooks/DetailedDescendantBookReport.py:865
 #: DetDescendantReport-images/detdescendantreporti.py:459
 #, python-format
 msgid "%(place)s"
 msgstr "%(place)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:821
+#: DescendantBooks/DetailedDescendantBookReport.py:823
 #, python-format
 msgid ". Ref: %(repno)s %(gen)s %(per)s "
 msgstr ". Ref: %(repno)s %(gen)s %(per)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:850
+#: DescendantBooks/DetailedDescendantBookReport.py:852
 #, python-format
 msgid "%(event_name)s:"
 msgstr "%(event_name)s:"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:875
+#: DescendantBooks/DetailedDescendantBookReport.py:877
 #, python-format
 msgid " %(event_text)s"
 msgstr " %(event_text)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:993
+#: DescendantBooks/DetailedDescendantBookReport.py:995
 #, python-brace-format
 msgid "Ref: {number}. {name}"
 msgstr "Ref: {number}. {name}"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1233
+#: DescendantBooks/DetailedDescendantBookReport.py:1235
 #: DetDescendantReport-images/detdescendantreporti.py:811
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
 msgstr "%(name_kind)s: %(name)s%(endnotes)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1294
+#: DescendantBooks/DetailedDescendantBookReport.py:1296
 #, python-format
 msgid "%(type)s:"
 msgstr "%(type)s:"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1299
+#: DescendantBooks/DetailedDescendantBookReport.py:1301
 #, python-format
 msgid " %(value)s%(endnotes)s"
 msgstr " %(value)s%(endnotes)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1401
+#: DescendantBooks/DetailedDescendantBookReport.py:1403
 #: DetDescendantReport-images/detdescendantreporti.py:1147
 msgid "List children"
 msgstr "Näytetäänkö lapset"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1418
+#: DescendantBooks/DetailedDescendantBookReport.py:1420
 #: DetDescendantReport-images/detdescendantreporti.py:1164
 msgid "Add descendant reference in child list"
 msgstr "Lisää jälkeläisviittaus lasten luetteloon"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1482
+#: DescendantBooks/DetailedDescendantBookReport.py:1484
 msgid "Include Index of Names"
 msgstr "Sisällytä nimihakemisto"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1483
+#: DescendantBooks/DetailedDescendantBookReport.py:1485
 msgid "Whether to include the index of Names at the end of the report."
 msgstr "Sisällytetäänkö nimihakemisto raportin loppuun."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1487
+#: DescendantBooks/DetailedDescendantBookReport.py:1489
 msgid "Include index of Dates"
 msgstr "Sisällytä nimihakemisto"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1488
+#: DescendantBooks/DetailedDescendantBookReport.py:1490
 msgid "Whether to include the index of Dates at the end of the report."
 msgstr "Sisällytetäänkö päivämäärähakemisto raportin loppuun."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1492
+#: DescendantBooks/DetailedDescendantBookReport.py:1494
 msgid "Include index of Places"
 msgstr "Sisällytä paikkahakemisto"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1493
+#: DescendantBooks/DetailedDescendantBookReport.py:1495
 msgid "Whether to include the index of Places at the end of the report."
 msgstr "Sisällytetäänkö paikkahakemisto raportin loppuun."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1497
+#: DescendantBooks/DetailedDescendantBookReport.py:1499
 msgid "Include the 'Report appearances' section with each person"
 msgstr "Sisällytä jokaisen henkilön ilmoituksiin osio ”Ilmoita esiintymisistä”"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1499
+#: DescendantBooks/DetailedDescendantBookReport.py:1501
 msgid ""
 "The 'Report appearances' section shows other places in the report where the "
 "person is mentioned."
@@ -3077,56 +3245,56 @@ msgstr ""
 "”Esiintymiset raportissa” -osio näyttää raportin muut kohdat, joissa henkilö "
 "mainitaan."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1566
+#: DescendantBooks/DetailedDescendantBookReport.py:1568
 #: DetDescendantReport-images/detdescendantreporti.py:1282
 msgid "The style used for the children list."
 msgstr "Lasten luettelossa käytetty tyyli."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1576
+#: DescendantBooks/DetailedDescendantBookReport.py:1578
 msgid "The basic style used for Note header."
 msgstr "Lisätiedon otsikossa käytetty perustyyli."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1593
+#: DescendantBooks/DetailedDescendantBookReport.py:1595
 #: DetDescendantReport-images/detdescendantreporti.py:1305
 msgid "The style used for the first personal entry."
 msgstr "Henkilön ensimmäisen kappaleen tyyli."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1603
+#: DescendantBooks/DetailedDescendantBookReport.py:1605
 #: DetDescendantReport-images/detdescendantreporti.py:1315
 msgid "The style used for the More About header and for headers of mates."
 msgstr "Tyyli, jota käytetään Lisätietojen ja puolisoiden otsikoissa."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1614
+#: DescendantBooks/DetailedDescendantBookReport.py:1616
 #: DetDescendantReport-images/detdescendantreporti.py:1326
 msgid "The style used for additional detail data."
 msgstr "Lisätietojen tyyli."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1624
-#: DescendantBooks/DetailedDescendantBookReport.py:1634
+#: DescendantBooks/DetailedDescendantBookReport.py:1626
+#: DescendantBooks/DetailedDescendantBookReport.py:1636
 msgid "The style used for note detail data."
 msgstr "Lisätietojen tyyli."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1644
+#: DescendantBooks/DetailedDescendantBookReport.py:1646
 msgid "The style used for the date in the Index of Dates."
 msgstr "Päiväyshakemiston päivämäärälle käytetty tyyli."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1654
+#: DescendantBooks/DetailedDescendantBookReport.py:1656
 msgid "The style used for the events in the Index of Dates."
 msgstr "Päiväyshakemiston tapahtumille käytetty tyyli."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1664
+#: DescendantBooks/DetailedDescendantBookReport.py:1666
 msgid "The style used for the header in the Index of Names."
 msgstr "Nimihakemiston otsikossa käytetty tyyli."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1674
+#: DescendantBooks/DetailedDescendantBookReport.py:1676
 msgid "The style used for the references in the Index of Names."
 msgstr "Nimihakemiston viittauksissa käytetty tyyli."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1684
+#: DescendantBooks/DetailedDescendantBookReport.py:1686
 msgid "The style used for the header in the Index of Places."
 msgstr "Paikkahakemiston otsikossa käytetty tyyli."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1695
+#: DescendantBooks/DetailedDescendantBookReport.py:1697
 msgid "The style used for the references in the Index of Places."
 msgstr "Paikkahakemiston viittauksissa käytetty tyyli."
 
@@ -3374,105 +3542,105 @@ msgstr "Jälkeläislinjat"
 msgid "Produces descendants lines of a person"
 msgstr "Tuottaa henkilön jälkeläislinjoja"
 
-#: DescendantsLines/DescendantsLines.py:463
+#: DescendantsLines/DescendantsLines.py:472
 msgid "Using SVG type for supplemental document is not supported!"
 msgstr "SVG-tiedostoja ei tueta lisädokumenteissa!"
 
-#: DescendantsLines/DescendantsLines.py:1531
+#: DescendantsLines/DescendantsLines.py:1540
 msgid "Output format"
 msgstr "Tulostusmuoto"
 
-#: DescendantsLines/DescendantsLines.py:1532
+#: DescendantsLines/DescendantsLines.py:1541
 msgid "PNG format"
 msgstr "PNG-muoto"
 
-#: DescendantsLines/DescendantsLines.py:1533
+#: DescendantsLines/DescendantsLines.py:1542
 msgid "SVG format"
 msgstr "SVG-muoto"
 
-#: DescendantsLines/DescendantsLines.py:1534
+#: DescendantsLines/DescendantsLines.py:1543
 msgid "PDF format"
 msgstr "PDF-muoto"
 
-#: DescendantsLines/DescendantsLines.py:1535
+#: DescendantsLines/DescendantsLines.py:1544
 msgid "PS format"
 msgstr "PS-muoto"
 
-#: DescendantsLines/DescendantsLines.py:1536
+#: DescendantsLines/DescendantsLines.py:1545
 msgid "The output format to be used"
 msgstr "Käytettävä tulostusmuoto"
 
-#: DescendantsLines/DescendantsLines.py:1541
+#: DescendantsLines/DescendantsLines.py:1550
 msgid "The destination file for the content."
 msgstr "Kohdehakemisto uusille tiedostoille."
 
-#: DescendantsLines/DescendantsLines.py:1545
+#: DescendantsLines/DescendantsLines.py:1554
 msgid "The number of generations to include in the chart. (0 for unlimited)"
 msgstr ""
 "Kaavioon sisällytettävien sukupolvien määrä. (0 tarkoittaa rajoittamatonta "
 "määrää)"
 
-#: DescendantsLines/DescendantsLines.py:1550
+#: DescendantsLines/DescendantsLines.py:1559
 msgid "Use d'Aboville descendant numbering system"
 msgstr "Käytä d'Abovillen jälkeläisten numerointijärjestelmää"
 
-#: DescendantsLines/DescendantsLines.py:1552
+#: DescendantsLines/DescendantsLines.py:1561
 msgid "Prepend name with d'Aboville descendant number in the chart."
 msgstr "Lisää kaavioissa nimen eteen d'Abovillen jälkeläisnumero."
 
-#: DescendantsLines/DescendantsLines.py:1555
+#: DescendantsLines/DescendantsLines.py:1564
 msgid "Include an image"
 msgstr "Näytetäänkö kuva"
 
-#: DescendantsLines/DescendantsLines.py:1556
+#: DescendantsLines/DescendantsLines.py:1565
 msgid "Whether to include an image if one is available."
 msgstr "Sisällytetäänkö kuva, jos sellainen on saatavilla."
 
-#: DescendantsLines/DescendantsLines.py:1560
+#: DescendantsLines/DescendantsLines.py:1569
 msgid "Max Image height"
 msgstr "Kuvan enimmäiskorkeus"
 
-#: DescendantsLines/DescendantsLines.py:1561
+#: DescendantsLines/DescendantsLines.py:1570
 msgid "Maximum image height in pixels, 0=don't scale for height."
 msgstr "Kuvan enimmäiskorkeus pikseleinä, 0 = ei skaalata korkeuden mukaan."
 
-#: DescendantsLines/DescendantsLines.py:1565
+#: DescendantsLines/DescendantsLines.py:1574
 msgid "Max Image width"
 msgstr "Kuvan enimmäisleveys"
 
-#: DescendantsLines/DescendantsLines.py:1566
+#: DescendantsLines/DescendantsLines.py:1575
 msgid "Maximum image width in pixels, 0=don't scale for width."
 msgstr "Kuvan enimmäisleveys pikseleinä, 0 = ei skaalata leveyden mukaan."
 
-#: DescendantsLines/DescendantsLines.py:1570
+#: DescendantsLines/DescendantsLines.py:1579
 msgid "Image Location"
 msgstr "Kuvan sijainti"
 
-#: DescendantsLines/DescendantsLines.py:1571
+#: DescendantsLines/DescendantsLines.py:1580
 msgid "Above text"
 msgstr "Tekstin yläpuolella"
 
-#: DescendantsLines/DescendantsLines.py:1572
+#: DescendantsLines/DescendantsLines.py:1581
 msgid "Left of text"
 msgstr "Tekstin vasemmalla puolella"
 
-#: DescendantsLines/DescendantsLines.py:1573
+#: DescendantsLines/DescendantsLines.py:1582
 msgid "Position of image relative to text"
 msgstr "Kuvan sijainti suhteessa tekstiin"
 
-#: DescendantsLines/DescendantsLines.py:1579
+#: DescendantsLines/DescendantsLines.py:1588
 msgid "Colour Name by Gender"
 msgstr "Sukupuolen mukaisen värin nimi"
 
-#: DescendantsLines/DescendantsLines.py:1581
+#: DescendantsLines/DescendantsLines.py:1590
 msgid "Color the name to indicate a person's gender in the chart."
 msgstr "Väritä nimi ilmaisemaan henkilön sukupuoli kaaviossa."
 
-#: DescendantsLines/DescendantsLines.py:1585
+#: DescendantsLines/DescendantsLines.py:1594
 msgid "Use alternate events, if Primary event is not found"
 msgstr "Käytä tarvittaessa vaihtoehtoista tapahtumaa"
 
-#: DescendantsLines/DescendantsLines.py:1586
+#: DescendantsLines/DescendantsLines.py:1595
 msgid ""
 "For Birth (baptism, christen)\n"
 "   Marriage (marr_lic, engagement)\n"
@@ -3484,37 +3652,37 @@ msgstr ""
 "   avioerolle (mitätöinti, ero),\n"
 "   kuolemalle (hautaus, tuhkaaminen, perunkirjoitus)."
 
-#: DescendantsLines/DescendantsLines.py:1592
+#: DescendantsLines/DescendantsLines.py:1601
 msgid "Sort Events by Date"
 msgstr "Järjestä tapahtumat päiväyksen mukaan"
 
-#: DescendantsLines/DescendantsLines.py:1593
+#: DescendantsLines/DescendantsLines.py:1602
 msgid "Sort events by date (else use the order of the 'Display Format' above)."
 msgstr ""
 "Järjestä tapahtumat päiväyksen mukaan (tai käytä yllä olevaa 'Näyttömuoto'-"
 "kohdan järjestystä)."
 
-#: DescendantsLines/DescendantsLines.py:1597
+#: DescendantsLines/DescendantsLines.py:1606
 msgid "Text style"
 msgstr "Tekstityyli"
 
-#: DescendantsLines/DescendantsLines.py:1598
+#: DescendantsLines/DescendantsLines.py:1607
 msgid "Center-aligned text"
 msgstr "Keskitetty teksti"
 
-#: DescendantsLines/DescendantsLines.py:1599
+#: DescendantsLines/DescendantsLines.py:1608
 msgid "Left-aligned text"
 msgstr "Vasemmalle tasattu teksti"
 
-#: DescendantsLines/DescendantsLines.py:1600
+#: DescendantsLines/DescendantsLines.py:1609
 msgid "Alignment of the text in the block for each person on the chart"
 msgstr "Tekstin tasaus lohkossa kullekin kaavion henkilölle"
 
-#: DescendantsLines/DescendantsLines.py:1604
+#: DescendantsLines/DescendantsLines.py:1613
 msgid "Max Note Length"
 msgstr "Suurin lisätiedon pituus"
 
-#: DescendantsLines/DescendantsLines.py:1605
+#: DescendantsLines/DescendantsLines.py:1614
 msgid ""
 "Maximum length of an event's note field in a text block, '$e(n)'\n"
 " 0=no limit "
@@ -3522,70 +3690,88 @@ msgstr ""
 "Tapahtuman lisätiedon enimmäispituus tekstilohkossa, '$e(n)'\n"
 "0 = ei rajoitusta "
 
-#: DescendantsLines/DescendantsLines.py:1612
+#: DescendantsLines/DescendantsLines.py:1618
+#, fuzzy
+#| msgid "Font name"
+msgid "Font Name"
+msgstr "Fontin nimi"
+
+#: DescendantsLines/DescendantsLines.py:1620
+msgid ""
+"Name of the Font to use. On Windows enter the file name of the .ttf at /"
+"Windows/Fonts"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1623
+#, fuzzy
+#| msgid "Database size"
+msgid "Font base size"
+msgstr "Tietokannan koko"
+
+#: DescendantsLines/DescendantsLines.py:1629
 msgid "Box around Person's block"
 msgstr "Henkilölohkoa ympäröivä laatikko"
 
-#: DescendantsLines/DescendantsLines.py:1613
+#: DescendantsLines/DescendantsLines.py:1630
 msgid "Draw a thin black box around each person' text block."
 msgstr "Piirrä ohut musta laatikko henkilöiden tekstilohkojen ympärille."
 
-#: DescendantsLines/DescendantsLines.py:1617
+#: DescendantsLines/DescendantsLines.py:1634
 msgid "All Person's blocks have the same height"
 msgstr "Kaikki henkilön lohkot ovat samankorkuisia"
 
-#: DescendantsLines/DescendantsLines.py:1618
+#: DescendantsLines/DescendantsLines.py:1635
 msgid ""
 "All the blocks of all the person have the same height, which is the height "
 "of the highest block."
 msgstr "Kaikki henkilölohkot on korkeimman lohkon korkuisia."
 
-#: DescendantsLines/DescendantsLines.py:1623
+#: DescendantsLines/DescendantsLines.py:1640
 msgid "All Person's blocks have the same width"
 msgstr "Kaikki henkilölohkot on samanlevyisiä"
 
-#: DescendantsLines/DescendantsLines.py:1624
+#: DescendantsLines/DescendantsLines.py:1641
 msgid ""
 "All the blocks of all the person have the same width, which is the width of "
 "the widthest block."
 msgstr "Kaikki henkilölohkot on leveimmän lohkon levyisiä."
 
-#: DescendantsLines/DescendantsLines.py:1629
+#: DescendantsLines/DescendantsLines.py:1646
 msgid "Colour blocks by Generation"
 msgstr "Lohkojen väri sukupolven mukaan"
 
-#: DescendantsLines/DescendantsLines.py:1630
+#: DescendantsLines/DescendantsLines.py:1647
 msgid "Colour the background of text blocks by generation."
 msgstr "Tekstilohkojen taustaväri sukupolven mukaan."
 
-#: DescendantsLines/DescendantsLines.py:1634
+#: DescendantsLines/DescendantsLines.py:1651
 msgid "Descend block colour intensity"
 msgstr "Vähennä lohkojen värin voimakkuutta"
 
-#: DescendantsLines/DescendantsLines.py:1635
+#: DescendantsLines/DescendantsLines.py:1652
 msgid ""
 "Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
 "colour"
 msgstr "Taustaväri jälkeläislohkoissa, 0 = haalea, 255 = voimakas väri"
 
-#: DescendantsLines/DescendantsLines.py:1639
+#: DescendantsLines/DescendantsLines.py:1656
 msgid "Spouse block colour intensity"
 msgstr "Puolison lohkon väri, 0 = haalea, 255 = voimakas väri"
 
-#: DescendantsLines/DescendantsLines.py:1640
+#: DescendantsLines/DescendantsLines.py:1657
 msgid ""
 "Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
 msgstr "Puolison lohkon taustaväri, 0 = haalea, 255 = voimakas väri"
 
-#: DescendantsLines/DescendantsLines.py:1645
+#: DescendantsLines/DescendantsLines.py:1662
 msgid "Display Formats"
 msgstr "Esitysmuodot"
 
-#: DescendantsLines/DescendantsLines.py:1647
+#: DescendantsLines/DescendantsLines.py:1664
 msgid "Name Display Format"
 msgstr "Nimen näyttömuoto"
 
-#: DescendantsLines/DescendantsLines.py:1650
+#: DescendantsLines/DescendantsLines.py:1667
 msgid ""
 "f=first & middle names, l=surname, n=nickname,\n"
 "c=commonly used given name, t=title, s=suffix, g=family nick name\n"
@@ -3595,8 +3781,8 @@ msgstr ""
 "c=kutsumanimi, t=titteli, s=loppuliite, g=perheen lempinimi\n"
 "Katso Wiki-käyttöohje > Raportit > Osa 2"
 
-#: DescendantsLines/DescendantsLines.py:1662
-#: DescendantsLines/DescendantsLines.py:1681
+#: DescendantsLines/DescendantsLines.py:1679
+#: DescendantsLines/DescendantsLines.py:1698
 msgid ""
 "[event, list]$e(formating)\n"
 "See Wiki Manual > Reports > part 2\n"
@@ -3606,13 +3792,13 @@ msgstr ""
 "Katso Wiki-käyttöopas > Raportit > osa 2\n"
 "muotoilu: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
 
-#: DescendantsLines/DescendantsLines.py:1688
+#: DescendantsLines/DescendantsLines.py:1705
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
 #: ImportMerge/importmerge.glade:407 ImportMerge/importmerge.py:911
 msgid "Replace"
 msgstr "Korvaa"
 
-#: DescendantsLines/DescendantsLines.py:1693
+#: DescendantsLines/DescendantsLines.py:1710
 msgid ""
 "i.e.\n"
 "United States of America/USA"
@@ -3620,31 +3806,31 @@ msgstr ""
 "ts.\n"
 "Yhdysvallat/USA"
 
-#: DescendantsLines/DescendantsLines.py:1697
+#: DescendantsLines/DescendantsLines.py:1714
 msgid "Spouse and Family"
 msgstr "Puoliso ja perhe"
 
-#: DescendantsLines/DescendantsLines.py:1699
+#: DescendantsLines/DescendantsLines.py:1716
 msgid "Vertical edge descendant to spouse-bar"
 msgstr "Pystyviiva jälkeläisen ja puolison välillä"
 
-#: DescendantsLines/DescendantsLines.py:1700
+#: DescendantsLines/DescendantsLines.py:1717
 msgid "The length of the vertical edge from descendant to spouse-bar."
 msgstr "Jälkeläisen ja puolison välisen pystyviivan pituus."
 
-#: DescendantsLines/DescendantsLines.py:1704
+#: DescendantsLines/DescendantsLines.py:1721
 msgid "Vertical edge spouse-bar to spouse"
 msgstr "Pystyreuna puolisopalkista puolisoon"
 
-#: DescendantsLines/DescendantsLines.py:1705
+#: DescendantsLines/DescendantsLines.py:1722
 msgid "The length of the vertical edge from spouse-bar to spouse."
 msgstr "Pystysuoran reunan etäisyys puolisopalkista puolisoon."
 
-#: DescendantsLines/DescendantsLines.py:1709
+#: DescendantsLines/DescendantsLines.py:1726
 msgid "Vertical space spouse-bar to other spouse"
 msgstr "Pystysuora väli toiseen puolisoon"
 
-#: DescendantsLines/DescendantsLines.py:1710
+#: DescendantsLines/DescendantsLines.py:1727
 msgid ""
 "The space to add between one spouse-bar and another spouse in case of "
 "multiple families with the same descendant."
@@ -3652,19 +3838,19 @@ msgstr ""
 "Puolison ja toisen puolison väliin lisättävä väli, jos eri perheillä on sama "
 "jälkeläinen."
 
-#: DescendantsLines/DescendantsLines.py:1715
+#: DescendantsLines/DescendantsLines.py:1732
 msgid "Horizontal space descendant to spouse"
 msgstr "Puolison ja jälkeläisen välinen vaakasuora tila"
 
-#: DescendantsLines/DescendantsLines.py:1716
+#: DescendantsLines/DescendantsLines.py:1733
 msgid "The space to add between the descendant and the spouse."
 msgstr "Jälkeläisen ja puolison väliin lisättävä tila."
 
-#: DescendantsLines/DescendantsLines.py:1721
+#: DescendantsLines/DescendantsLines.py:1738
 msgid "Horizonal space family to family"
 msgstr "Vaakasuora tila perheiden välillä"
 
-#: DescendantsLines/DescendantsLines.py:1722
+#: DescendantsLines/DescendantsLines.py:1739
 msgid ""
 "The space to add between the more extern descendant (or spouse) of a family "
 "and the more extern descendant (or spouse) of the next family."
@@ -3672,11 +3858,11 @@ msgstr ""
 "Väli, joka lisätään perheiden laitimmaisten jälkeläisten (tai puolisojen) "
 "välille."
 
-#: DescendantsLines/DescendantsLines.py:1727
+#: DescendantsLines/DescendantsLines.py:1744
 msgid "Horizontal distance spouse to family edge"
 msgstr "Vaakasuora etäisyys puolisosta perheen reunaan"
 
-#: DescendantsLines/DescendantsLines.py:1728
+#: DescendantsLines/DescendantsLines.py:1745
 msgid ""
 "If this value is 0, the children bar is centered under the spouse. The "
 "bigger the value, more the center is moved to the left towards the "
@@ -3685,101 +3871,101 @@ msgstr ""
 "Jos tämä arvo on 0, lasten palkki on keskitetty puolison alle. Suuremmalla "
 "arvolla keskiosaa siirretään vasemmalle jälkeläistä kohti."
 
-#: DescendantsLines/DescendantsLines.py:1735
+#: DescendantsLines/DescendantsLines.py:1752
 msgid "OL_PAD"
 msgstr "OL_PAD"
 
-#: DescendantsLines/DescendantsLines.py:1736
+#: DescendantsLines/DescendantsLines.py:1753
 msgid "The number of ??? pad"
 msgstr "Montako ??? padia"
 
-#: DescendantsLines/DescendantsLines.py:1739
+#: DescendantsLines/DescendantsLines.py:1756
 msgid "Vertical edge spouse-bar to child-bar"
 msgstr "Pystysuora reuna puolisopalkista lapsipalkkiin"
 
-#: DescendantsLines/DescendantsLines.py:1740
+#: DescendantsLines/DescendantsLines.py:1757
 msgid "The length of the vertical edge from spouse-bar to child-bar."
 msgstr "Puolisosta lapseen kulkevan pystysuoran viivan pituus."
 
-#: DescendantsLines/DescendantsLines.py:1746
+#: DescendantsLines/DescendantsLines.py:1763
 msgid "Children distance"
 msgstr "Lasten etäisyys"
 
-#: DescendantsLines/DescendantsLines.py:1747
+#: DescendantsLines/DescendantsLines.py:1764
 msgid "The horizontal distance between two children of the same family."
 msgstr "Saman perheen lasten välinen vaakaetäisyys."
 
-#: DescendantsLines/DescendantsLines.py:1751
+#: DescendantsLines/DescendantsLines.py:1768
 msgid "Vertical edge child to child-bar"
 msgstr "Vaakaviiva lapsesta lapsipalkkiin"
 
-#: DescendantsLines/DescendantsLines.py:1753
+#: DescendantsLines/DescendantsLines.py:1770
 msgid "The length of the vertical edge from child to child-bar."
 msgstr "Pystyviivan pituus lapsesta lapsipalkkiin."
 
-#: DescendantsLines/DescendantsLines.py:1756
+#: DescendantsLines/DescendantsLines.py:1773
 msgid "MIN_C_WIDTH"
 msgstr "MIN_C_WIDTH"
 
-#: DescendantsLines/DescendantsLines.py:1757
+#: DescendantsLines/DescendantsLines.py:1774
 msgid "The number of ??? min width"
 msgstr "Vähimmäisleveyden määrä ???"
 
-#: DescendantsLines/DescendantsLines.py:1762
+#: DescendantsLines/DescendantsLines.py:1779
 msgid "Space around text"
 msgstr "Tila tekstin ympärillä"
 
-#: DescendantsLines/DescendantsLines.py:1763
+#: DescendantsLines/DescendantsLines.py:1780
 msgid "The space to add around the text block of a person."
 msgstr "Henkilön tekstilohkoa ympäröivä tila."
 
-#: DescendantsLines/DescendantsLines.py:1767
+#: DescendantsLines/DescendantsLines.py:1784
 msgid "Space between lines of text"
 msgstr "Rivien väli"
 
-#: DescendantsLines/DescendantsLines.py:1768
+#: DescendantsLines/DescendantsLines.py:1785
 msgid "The space to add between a line and the next in a person text block."
 msgstr "Henkilötekstilohkossa rivien väliin lisättävä tila."
 
-#: DescendantsLines/DescendantsLines.py:1773
+#: DescendantsLines/DescendantsLines.py:1790
 msgid "Header and Footer"
 msgstr "Ylätunniste ja alatunniste"
 
-#: DescendantsLines/DescendantsLines.py:1776
+#: DescendantsLines/DescendantsLines.py:1793
 msgid "The text that will be written in the header of the document"
 msgstr "Teksti asiakirjan ylätunnisteessa"
 
-#: DescendantsLines/DescendantsLines.py:1781
+#: DescendantsLines/DescendantsLines.py:1798
 msgid "The text that will be written in the footer of the document"
 msgstr "Teksti asiakirjan alatunnisteessa"
 
-#: DescendantsLines/DescendantsLines.py:1785
+#: DescendantsLines/DescendantsLines.py:1802
 msgid "Title and footer coefficient"
 msgstr "Ylä- ja alatunnisteen kerroin"
 
-#: DescendantsLines/DescendantsLines.py:1786
+#: DescendantsLines/DescendantsLines.py:1803
 msgid ""
 "A number that multiply the base size of the text in the title and in the "
 "footer"
 msgstr "Otsikon ja alatunnisteen tekstin kokokerroin"
 
-#: DescendantsLines/DescendantsLines.py:1793
+#: DescendantsLines/DescendantsLines.py:1810
 msgid "Protect People, Images or Events that are marked Private"
 msgstr "Suojaa yksityisiksi merkityt ihmiset, kuvat ja tapahtumat"
 
-#: DescendantsLines/DescendantsLines.py:1795
+#: DescendantsLines/DescendantsLines.py:1812
 msgid "The Privacy setting of only these types of Gramps objects are checked"
 msgstr "Valitaan vain näiden Gramps-kohteidetyyppien yksityisyysasetukset"
 
-#: DescendantsLines/DescendantsLines.py:1799
+#: DescendantsLines/DescendantsLines.py:1816
 msgid "Privacy text"
 msgstr "Yksityisyys-teksti"
 
-#: DescendantsLines/DescendantsLines.py:1800
+#: DescendantsLines/DescendantsLines.py:1817
 msgid "Text to display in block, when a Person is marked private"
 msgstr "Lohkossa näkyvä teksti, kun henkilö on merkitty yksityiseksi"
 
-#: DescendantsLines/DescendantsLines.py:1815
+#: DescendantsLines/DescendantsLines.py:1832
 msgid "The default style."
 msgstr "Oletustyyli."
 
@@ -4712,7 +4898,7 @@ msgstr "Piilotetaanko Gramps ID"
 msgid "List"
 msgstr "Lista"
 
-#: DynamicWeb/dynamicweb.py:5002
+#: DynamicWeb/dynamicweb.py:5002 GrampyScript/GrampyScript.py:382
 msgid "Table"
 msgstr "Taulukko"
 
@@ -5942,12 +6128,12 @@ msgstr "Lisää viittaus DNA-liitokseen %s"
 msgid "The active Person"
 msgstr "Aktiivihenkilö"
 
-#: FilterRules/activepersonrule.py:47
+#: FilterRules/activepersonrule.py:58
 msgid "Matches the active person"
 msgstr "Täsmää aktiivihenkilöön"
 
-#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
-#: FilterRules/ageatdeath.py:74
+#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:90
+#: FilterRules/ageatdeath.py:92
 msgid "Filter people by their age at death"
 msgstr "Poimii henkilöt kuoliniän perusteella"
 
@@ -5955,11 +6141,11 @@ msgstr "Poimii henkilöt kuoliniän perusteella"
 msgid "Filter rule that matches people by their age at death"
 msgstr "Suodatinsääntö ihmisten kuoliniän perusteella"
 
-#: FilterRules/ageatdeath.py:47
+#: FilterRules/ageatdeath.py:65
 msgid "Age in years at person's death."
 msgstr "Henkilön kuolinikä vuosina."
 
-#: FilterRules/ageatdeath.py:71 SourceIndex/birth.glade:544
+#: FilterRules/ageatdeath.py:89 SourceIndex/birth.glade:544
 #: SourceIndex/birth.glade:762 SourceIndex/census.glade:286
 #: SourceIndex/death.glade:521 SourceIndex/death.glade:669
 #: SourceIndex/death.glade:939 SourceIndex/marriage.glade:467
@@ -5971,26 +6157,26 @@ msgstr "Ikä:"
 
 #: FilterRules/associationsofpersonmatch.gpr.py:25
 #: FilterRules/associationsofpersonmatch.gpr.py:26
-#: FilterRules/associationsofpersonmatch.py:46
-#: FilterRules/associationsofpersonmatch.py:47
+#: FilterRules/associationsofpersonmatch.py:65
+#: FilterRules/associationsofpersonmatch.py:66
 msgid "Match associations of <person filter>"
 msgstr "Etsi yhteyksiä kohteelle <person filter>"
 
 #: FilterRules/degreesofseparation.gpr.py:25
-#: FilterRules/degreesofseparation.py:60
+#: FilterRules/degreesofseparation.py:79
 msgid "People separated less than <N> degrees of <person>"
 msgstr "Ihmiset, jotka poikkeavat <N>:llä henkilöstä <person>"
 
 #: FilterRules/degreesofseparation.gpr.py:26
-#: FilterRules/degreesofseparation.py:62
+#: FilterRules/degreesofseparation.py:81
 msgid "Filter rule that matches relatives by degrees of separation"
 msgstr "Suodatussääntö, jolla löydetään sukulaiset sukupolvieron mukaisesti"
 
-#: FilterRules/degreesofseparation.py:47
+#: FilterRules/degreesofseparation.py:66
 msgid "Number of degrees of separation from person."
 msgstr "Sukupolvien ero henkilöön nähden."
 
-#: FilterRules/degreesofseparation.py:59
+#: FilterRules/degreesofseparation.py:78
 msgid "Degrees:"
 msgstr "Tutkinnot:"
 
@@ -6011,7 +6197,7 @@ msgstr "Poimii tapahtumasuotimen mukaiset perheet"
 msgid "People with events with a selected role"
 msgstr "Henkilöt, joiden tapahtumissa on valittu rooli"
 
-#: FilterRules/hasrolerule.gpr.py:28 FilterRules/hasrolerule.py:69
+#: FilterRules/hasrolerule.gpr.py:28 FilterRules/hasrolerule.py:99
 msgid "Matches people with an event with a selected role"
 msgstr "Poimii henkilöt, joiden tapahtumissa on valittu rooli"
 
@@ -6019,27 +6205,27 @@ msgstr "Poimii henkilöt, joiden tapahtumissa on valittu rooli"
 msgid "Families with events with a selected role"
 msgstr "Perheet, joiden tapahtumissa on valittu rooli"
 
-#: FilterRules/hasrolerule.gpr.py:44 FilterRules/hasrolerule.py:93
+#: FilterRules/hasrolerule.gpr.py:44 FilterRules/hasrolerule.py:114
 msgid "Matches families with an event with a selected role"
 msgstr "Poimii perheet, joiden tapahtumissa on valittu rooli"
 
-#: FilterRules/hasrolerule.py:55
+#: FilterRules/hasrolerule.py:71
 msgid "Does NOT match with selected Role"
 msgstr "EI vastaa valittua roolia"
 
-#: FilterRules/hasrolerule.py:56
+#: FilterRules/hasrolerule.py:73
 msgid "Finds the items that don't have event Roles of the selected type."
 msgstr "Poimii tapahtumat, joilla ei ole valittua roolia."
 
-#: FilterRules/hasrolerule.py:67 FilterRules/hasrolerule.py:91
+#: FilterRules/hasrolerule.py:97 FilterRules/hasrolerule.py:112
 msgid "Inverse"
 msgstr "Käänteinen"
 
-#: FilterRules/hasrolerule.py:68
+#: FilterRules/hasrolerule.py:98
 msgid "People with events with the <role>"
 msgstr "Henkilöt, joilla on tapahtumia roolissa <rooli>"
 
-#: FilterRules/hasrolerule.py:92
+#: FilterRules/hasrolerule.py:113
 msgid "Families with events with the <role>"
 msgstr "Perheet, joiden tapahtumissa on rooli <rooli>"
 
@@ -6056,66 +6242,80 @@ msgid "Matches sources with a particular value"
 msgstr "Poimii lähteet, jotka sisältävät valitun arvon"
 
 #: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
-#: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
+#: FilterRules/infamilyrule.py:144 FilterRules/infamilyrule.py:145
 msgid "People who are part of families matching <filter>"
 msgstr "Hakuehdon <filter> mukaisten perheiden jäsenet"
 
-#: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
+#: FilterRules/infamilyrule.py:67 FilterRules/infamilyrule.py:142
 msgid "Include Children"
 msgstr "Lisää lapset"
 
-#: FilterRules/infamilyrule.py:49
+#: FilterRules/infamilyrule.py:68
 msgid "Include the children in the matching families."
 msgstr "Lisää lapset mukaan vastaaviin perheisiin."
 
-#: FilterRules/infamilyrule.py:75 FilterRules/infamilyrule.py:124
+#: FilterRules/infamilyrule.py:94 FilterRules/infamilyrule.py:143
 msgid "Include Parents"
 msgstr "Lisää vanhemmat"
 
-#: FilterRules/infamilyrule.py:76
+#: FilterRules/infamilyrule.py:95
 msgid "Include the parents in the matching families."
 msgstr "Lisää vanhemmat poimittuihin perheisiin."
 
-#: FilterRules/infamilyrule.py:122 FilterRules/isfamilyfiltermatchevent.py:62
+#: FilterRules/infamilyrule.py:141 FilterRules/isfamilyfiltermatchevent.py:81
 msgid "Family Filter name:"
 msgstr "Perhesuotimen nimi:"
 
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:25
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:26
-#: FilterRules/isfamilyfiltermatchevent.py:63
-#: FilterRules/isfamilyfiltermatchevent.py:64
+#: FilterRules/isfamilyfiltermatchevent.py:82
+#: FilterRules/isfamilyfiltermatchevent.py:83
 msgid "Events of families matching a <family filter>"
 msgstr "Suotimen <family filter> mukaisten perheiden tapahtumat"
 
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:27
-#: FilterRules/isrelatedwithfiltermatch.py:53
+#: FilterRules/isrelatedwithfiltermatch.py:65
 msgid "People related to <filter>"
 msgstr "Henkilöt, jotka ovat sukulaisia <filter>"
 
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:29
-#: FilterRules/isrelatedwithfiltermatch.py:55
+#: FilterRules/isrelatedwithfiltermatch.py:68
 msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
 "Poimii ihmisiä, jotka ovat sukua kenelle tahansa henkilösuotimen poimimista "
 "henkilöistä"
 
+#: FilterRules/matchpersonfilterrole.gpr.py:7
+msgid "Events from people with role"
+msgstr ""
+
+#: FilterRules/matchpersonfilterrole.gpr.py:8
+#, fuzzy
+#| msgid "Matches people with an event with a selected role"
+msgid "Matches event of people filter with role"
+msgstr "Poimii henkilöt, joiden tapahtumissa on valittu rooli"
+
+#: FilterRules/matchpersonfilterrole.py:69
+msgid "Role:"
+msgstr ""
+
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
 msgstr "Useiden vanhempien suodatin"
 
-#: FilterRules/multipleparents.py:42
+#: FilterRules/multipleparents.py:55
 msgid "People with multiple parent records"
 msgstr "Henkilöt, joilla on useita vanhempia"
 
-#: FilterRules/multipleparents.py:43
+#: FilterRules/multipleparents.py:56
 msgid "Matches people who have more than one set of parents"
 msgstr "Poimii henkilöt, joilla on useampia vanhempia"
 
-#: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:50
+#: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:71
 msgid "People with <count> of <event>"
 msgstr "Henkilöt, joilla on <lukumäärä> <tapahtumaa>"
 
-#: FilterRules/peopleeventscount.gpr.py:26 FilterRules/peopleeventscount.py:52
+#: FilterRules/peopleeventscount.gpr.py:26 FilterRules/peopleeventscount.py:72
 msgid "Matches persons which have events of given type and number."
 msgstr "Henkilöt, joilla on annetun tyyppisiä tapahtumia pyydetty määrä."
 
@@ -6246,32 +6446,77 @@ msgstr "Etsitään mahdollisesti \",\"-merkkejä sisältäviä koordinaatteja"
 msgid "Fix coords"
 msgstr "Korjaa koordinaatit"
 
-#: Form/editform.py:181
+#: Form/CensusCheckQuickview.gpr.py:9
+#, fuzzy
+#| msgid "Censuses"
+msgid "CensusCheck"
+msgstr "Väestönlaskennat"
+
+#: Form/CensusCheckQuickview.gpr.py:10
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"descendents"
+msgstr ""
+
+#: Form/CensusCheckQuickview.gpr.py:23
+#, fuzzy
+#| msgid "Censuses"
+msgid "CensusCheckUp"
+msgstr "Väestönlaskennat"
+
+#: Form/CensusCheckQuickview.gpr.py:24
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"ancestors"
+msgstr ""
+
+#: Form/CensusCheckQuickview.py:122 Form/CensusCheckUpQuickview.py:122
+#, python-format
+msgid "Census Check for %s"
+msgstr ""
+
+#: Form/editform.py:191
 #, python-format
 msgid "Form: %s"
 msgstr "Lomake: %s"
 
-#: Form/editform.py:183
+#: Form/editform.py:193
 msgid "New Form"
 msgstr "Uusi lomake"
 
-#: Form/editform.py:190
+#: Form/editform.py:200
 msgid "Edit Form"
 msgstr "Muokkaussivu"
 
-#: Form/editform.py:225 SourceIndex/birth.glade:113
+#: Form/editform.py:235 SourceIndex/birth.glade:113
 #: SourceIndex/census.glade:873 SourceIndex/death.glade:182
 #: SourceIndex/marriage.glade:1263
 msgid "Reference:"
 msgstr "Viite:"
 
-#: Form/editform.py:421
+#: Form/editform.py:431
 msgid "Headings"
 msgstr "Otsikot"
 
-#: Form/form.py:65
+#: Form/form.py:82
 msgid "Form"
 msgstr "Lomake"
+
+#: Form/form.py:173
+msgid "XML syntax error in Form definition file"
+msgstr ""
+
+#: Form/form.py:184
+#, fuzzy
+#| msgid "Failed to read proto file %s: %s"
+msgid "Failed to read Form definition file"
+msgstr "Mallitiedoston %s lukeminen epäonnistui: %s"
+
+#: Form/form.py:193
+#, fuzzy
+#| msgid "Invalid Destination Directory"
+msgid "Invalid Form definition file"
+msgstr "Virheellinen kohdehakemisto"
 
 #: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
 #: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
@@ -7713,7 +7958,7 @@ msgstr ""
 #: Form/form_ca.xml.h:838 Form/form_us.xml.h:904 Form/form_us.xml.h:979
 #: Form/form_us.xml.h:1139 Form/form_us.xml.h:1147 Form/form_us.xml.h:2358
 #: Form/form_us.xml.h:2364 Form/form_us.xml.h:2437 Form/form_us.xml.h:2467
-#: Form/form_us.xml.h:2561
+#: Form/form_us.xml.h:2579
 msgid "Race"
 msgstr ""
 
@@ -8769,7 +9014,7 @@ msgstr ""
 #: Form/form_dk.xml.h:345 Form/form_dk.xml.h:371 Form/form_dk.xml.h:395
 #: Form/form_dk.xml.h:417 Form/form_dk.xml.h:435 Form/form_gb.xml.h:50
 #: Form/form_us.xml.h:985 Form/form_us.xml.h:1009 Form/form_us.xml.h:2374
-#: Form/form_us.xml.h:2556
+#: Form/form_us.xml.h:2563
 msgid "Date of Birth"
 msgstr "Syntymäpäivä"
 
@@ -9000,7 +9245,7 @@ msgstr "Naimisissa olleen naisen tyttönimi"
 #: Form/form_gb.xml.h:51 Form/form_us.xml.h:986 Form/form_us.xml.h:1008
 #: Form/form_us.xml.h:1141 Form/form_us.xml.h:1155 Form/form_us.xml.h:1452
 #: Form/form_us.xml.h:2375 Form/form_us.xml.h:2488 Form/form_us.xml.h:2513
-#: Form/form_us.xml.h:2557
+#: Form/form_us.xml.h:2565
 msgid "Place of Birth"
 msgstr "Syntymäpaikka"
 
@@ -10344,7 +10589,7 @@ msgstr ""
 #: Form/form_us.xml.h:1525 Form/form_us.xml.h:1542 Form/form_us.xml.h:1563
 #: Form/form_us.xml.h:1585 Form/form_us.xml.h:1611 Form/form_us.xml.h:1657
 #: Form/form_us.xml.h:1870 Form/form_us.xml.h:2336 Form/form_us.xml.h:2353
-#: Form/form_us.xml.h:2528 Form/form_us.xml.h:2577
+#: Form/form_us.xml.h:2528 Form/form_us.xml.h:2599
 msgid "Place of birth"
 msgstr ""
 
@@ -11315,7 +11560,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:650 Form/form_us.xml.h:1489 Form/form_us.xml.h:1534
 #: Form/form_us.xml.h:2093 Form/form_us.xml.h:2129 Form/form_us.xml.h:2167
-#: Form/form_us.xml.h:2205 Form/form_us.xml.h:2587
+#: Form/form_us.xml.h:2205 Form/form_us.xml.h:2609
 msgid "Company"
 msgstr ""
 
@@ -11363,7 +11608,7 @@ msgid "Ward of city"
 msgstr ""
 
 #: Form/form_us.xml.h:670 Form/form_us.xml.h:755 Form/form_us.xml.h:795
-#: Form/form_us.xml.h:838 Form/form_us.xml.h:1069 Form/form_us.xml.h:2594
+#: Form/form_us.xml.h:838 Form/form_us.xml.h:1069 Form/form_us.xml.h:2616
 msgid "Street Address"
 msgstr "Katuosoite"
 
@@ -12239,7 +12484,7 @@ msgstr ""
 msgid "Witness name and P.O Address"
 msgstr ""
 
-#: Form/form_us.xml.h:1061 Form/form_us.xml.h:2599
+#: Form/form_us.xml.h:1061 Form/form_us.xml.h:2621
 msgid "Widow of"
 msgstr ""
 
@@ -14312,12 +14557,12 @@ msgid "Legitimate"
 msgstr ""
 
 #: Form/form_us.xml.h:2369 Form/form_us.xml.h:2390 Form/form_us.xml.h:2483
-#: Form/form_us.xml.h:2570
+#: Form/form_us.xml.h:2592
 msgid "Place of Record"
 msgstr ""
 
 #: Form/form_us.xml.h:2370 Form/form_us.xml.h:2391 Form/form_us.xml.h:2484
-#: Form/form_us.xml.h:2571
+#: Form/form_us.xml.h:2593
 msgid "Book/Volume"
 msgstr ""
 
@@ -14490,10 +14735,6 @@ msgstr ""
 msgid "Home Address"
 msgstr ""
 
-#: Form/form_us.xml.h:2529
-msgid "Citizenship"
-msgstr ""
-
 #: Form/form_us.xml.h:2530
 msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
 msgstr ""
@@ -14502,7 +14743,7 @@ msgstr ""
 msgid "If not a citizen, of what nation are you a citizen or subject?"
 msgstr ""
 
-#: Form/form_us.xml.h:2533 Form/form_us.xml.h:2559
+#: Form/form_us.xml.h:2533 Form/form_us.xml.h:2575
 msgid "Employer's Name & address"
 msgstr ""
 
@@ -14544,11 +14785,11 @@ msgstr "Hiusten väri"
 msgid "Bald"
 msgstr ""
 
-#: Form/form_us.xml.h:2547 Form/form_us.xml.h:2569
+#: Form/form_us.xml.h:2547 Form/form_us.xml.h:2591
 msgid "Place of Registration"
 msgstr ""
 
-#: Form/form_us.xml.h:2548 Form/form_us.xml.h:2568
+#: Form/form_us.xml.h:2548 Form/form_us.xml.h:2590
 msgid "Date of Registration"
 msgstr ""
 
@@ -14560,103 +14801,256 @@ msgstr ""
 msgid "Order Number"
 msgstr ""
 
-#: Form/form_us.xml.h:2552
-msgid "Place of Residence"
-msgstr ""
+#: Form/form_us.xml.h:2551
+#, fuzzy
+#| msgid "Registration District"
+msgid "Registration Card"
+msgstr "Alue jonne rekisteröity"
 
-#: Form/form_us.xml.h:2553
-msgid "Mailing Address"
+#: Form/form_us.xml.h:2552
+msgid ""
+"Found in lower left corner\n"
+"      D.S.S. Form 1\n"
+"        (Men 21 - 31)\n"
+"      D.S.S. Form 1 (Rev. 6-9-41)\n"
+"        (Men who turned 21 since 1st registration)\n"
+"      D.S.S. Form 1 (Rev. 1/1/42)\n"
+"        (Men born Feb 17, 1897 to Dec 31 1921)\n"
+"      D.S.S. Form 1 (Rev. 4/1/42)\n"
+"        (Men 45-64)\n"
+"      D.S.S. Form 1 (Rev. 6/1/42)\n"
+"        (Men 18-20)\n"
+"      D.S.S. Form 1 (Rev. 11/16/42)\n"
+"        (Men who turned 18 since\n"
+"         previous registration)"
 msgstr ""
 
 #: Form/form_us.xml.h:2554
-msgid "Telephone"
+msgid "(1) First, Middle, Last"
 msgstr ""
 
 #: Form/form_us.xml.h:2555
-msgid "Age in years"
+msgid "Place of Residence"
+msgstr ""
+
+#: Form/form_us.xml.h:2556
+msgid ""
+"(2) Address or Place of Residence\n"
+" No. and street or R.F.D. No., Town, County, State"
+msgstr ""
+
+#: Form/form_us.xml.h:2557
+msgid "Mailing Address"
 msgstr ""
 
 #: Form/form_us.xml.h:2558
-msgid "Who will always know your address (Name & Address)"
+msgid ""
+" Not used on D.S.S. Form 1\n"
+" (3) Used on all other forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2559
+msgid "Telephone"
 msgstr ""
 
 #: Form/form_us.xml.h:2560
-msgid "Place of employment or business"
+msgid ""
+"(3) On D.S.S. Form 1\n"
+"(4) On all other forms"
 msgstr ""
 
-#: Form/form_us.xml.h:2564 Form/form_us.xml.h:2582
-msgid "Complexion"
+#: Form/form_us.xml.h:2561
+msgid "Age in years"
 msgstr ""
 
-#: Form/form_us.xml.h:2565
-msgid "Eyes"
+#: Form/form_us.xml.h:2562
+msgid ""
+"(4) On D.S.S. Form 1\n"
+"(5) On all other forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2564
+msgid "(Below Age in Years)"
 msgstr ""
 
 #: Form/form_us.xml.h:2566
-msgid "Hair"
+msgid ""
+"(5) On D.S.S. Form 1\n"
+"(6) On all other forms"
 msgstr ""
 
 #: Form/form_us.xml.h:2567
-msgid "Other characteristics"
-msgstr "Muut tuntomerkit"
-
-#: Form/form_us.xml.h:2574
-msgid "Date entered"
+msgid "Country of Citizenship"
 msgstr ""
 
-#: Form/form_us.xml.h:2575
-msgid "Place entered"
-msgstr "Annettu paikka"
+#: Form/form_us.xml.h:2568
+msgid ""
+"(6) On D.S.S. Form 1\n"
+"Not used on other forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2569
+msgid "Who will always know your address (Name & Address)"
+msgstr ""
+
+#: Form/form_us.xml.h:2570
+msgid ""
+"(7 & 9) On D.S.S. Form 1\n"
+"(7) On all but D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) On D.S.S. Form 1 (Rev. 6-9-41)"
+msgstr ""
+
+#: Form/form_us.xml.h:2571
+#, fuzzy
+#| msgid "Relationship Type"
+msgid "Relationship "
+msgstr "Perhesuhteen tyyppi"
+
+#: Form/form_us.xml.h:2572
+msgid "(8) Only on D.S.S. Form 1"
+msgstr ""
+
+#: Form/form_us.xml.h:2573
+#, fuzzy
+#| msgid "Occupation:"
+msgid "Occupation "
+msgstr "Ammatti:"
+
+#: Form/form_us.xml.h:2574
+msgid "(7) Only on D.S.S. Form 1 (Rev. 6-9-41)"
+msgstr ""
 
 #: Form/form_us.xml.h:2576
-msgid "Term of enlistment"
+msgid ""
+"(10) On D.S.S. Form 1\n"
+"(9) On D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) on all others forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2577
+msgid "Place of employment or business"
+msgstr ""
+
+#: Form/form_us.xml.h:2578
+msgid ""
+"(11) On D.S.S. Form 1\n"
+"(10) On D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(9) on all others forms"
 msgstr ""
 
 #: Form/form_us.xml.h:2580
-msgid "Eye color"
-msgstr "Silmien väri"
+msgid ""
+"White\n"
+"Negro\n"
+"Oriental\n"
+"Indian\n"
+"Filipino"
+msgstr ""
 
-#: Form/form_us.xml.h:2581
-msgid "Hair color"
-msgstr "Hiusten väri"
+#: Form/form_us.xml.h:2583 Form/form_us.xml.h:2604
+msgid "Complexion"
+msgstr ""
 
 #: Form/form_us.xml.h:2584
-msgid "Rank in"
+msgid ""
+"Sallow\n"
+"Light\n"
+"Ruddy\n"
+"Dark\n"
+"Freckled\n"
+"Light brown\n"
+"Dark brown\n"
+"Black"
 msgstr ""
 
 #: Form/form_us.xml.h:2585
-msgid "Branch"
+msgid "Eyes"
 msgstr ""
 
 #: Form/form_us.xml.h:2586
-msgid "Regiment/Unit/Ship"
+msgid ""
+"Blue\n"
+"Gray\n"
+"Hazel\n"
+"Brown\n"
+"Black"
+msgstr ""
+
+#: Form/form_us.xml.h:2587
+msgid "Hair"
 msgstr ""
 
 #: Form/form_us.xml.h:2588
-msgid "Service Number"
+msgid ""
+"Blonde\n"
+"Red\n"
+"Brown\n"
+"Black\n"
+"Gray\n"
+"Bald"
 msgstr ""
 
 #: Form/form_us.xml.h:2589
-msgid "No. of enlistment"
-msgstr ""
+msgid "Other characteristics"
+msgstr "Muut tuntomerkit"
 
-#: Form/form_us.xml.h:2590
-msgid "Date discharged"
-msgstr ""
-
-#: Form/form_us.xml.h:2591
-msgid "Place discharged"
-msgstr ""
-
-#: Form/form_us.xml.h:2592
-msgid "Rank out"
+#: Form/form_us.xml.h:2596
+msgid "Date entered"
 msgstr ""
 
 #: Form/form_us.xml.h:2597
+msgid "Place entered"
+msgstr "Annettu paikka"
+
+#: Form/form_us.xml.h:2598
+msgid "Term of enlistment"
+msgstr ""
+
+#: Form/form_us.xml.h:2602
+msgid "Eye color"
+msgstr "Silmien väri"
+
+#: Form/form_us.xml.h:2603
+msgid "Hair color"
+msgstr "Hiusten väri"
+
+#: Form/form_us.xml.h:2606
+msgid "Rank in"
+msgstr ""
+
+#: Form/form_us.xml.h:2607
+msgid "Branch"
+msgstr ""
+
+#: Form/form_us.xml.h:2608
+msgid "Regiment/Unit/Ship"
+msgstr ""
+
+#: Form/form_us.xml.h:2610
+msgid "Service Number"
+msgstr ""
+
+#: Form/form_us.xml.h:2611
+msgid "No. of enlistment"
+msgstr ""
+
+#: Form/form_us.xml.h:2612
+msgid "Date discharged"
+msgstr ""
+
+#: Form/form_us.xml.h:2613
+msgid "Place discharged"
+msgstr ""
+
+#: Form/form_us.xml.h:2614
+msgid "Rank out"
+msgstr ""
+
+#: Form/form_us.xml.h:2619
 msgid "Industry/Employer"
 msgstr ""
 
-#: Form/form_us.xml.h:2600
+#: Form/form_us.xml.h:2622
 msgid "Residents Status"
 msgstr "Asukkaiden asema"
 
@@ -14997,8 +15391,10 @@ msgid "GOV error on id %s with code: "
 msgstr "GOV-virhe tunnuksella %s, koodi: "
 
 #: GetGOV/getgov.py:555
-#, python-format
-msgid "from %s to %s"
+#, fuzzy, python-format
+#| msgid "from %s to %s"
+msgctxt "end"
+msgid "from %(begin)s to %(end)s"
 msgstr "välillä %s – %s"
 
 #: GetGOV/getgov.py:557
@@ -15057,6 +15453,14 @@ msgid ""
 msgstr ""
 "Korvaa kmz/kml tiedosto ''%s''\n"
 "käyttäjän hakemistossa ''%s''?"
+
+#: GrampsChat/GrampsChat.gpr.py:4 GrampsChat/GrampsChat.gpr.py:9
+msgid "GrampsChat"
+msgstr ""
+
+#: GrampsChat/GrampsChat.gpr.py:5
+msgid "AI Chatbot Gramplet (requires connecting to an LLM service)"
+msgstr ""
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:116
 #: GrampsWebSync/grampswebsync.py:209
@@ -15263,11 +15667,6 @@ msgstr "Yhdistä"
 msgid "Local changes"
 msgstr "Paikalliset muutokset"
 
-#: GrampsWebSync/grampswebsync.py:900 GrampsWebSync/grampswebsync.py:905
-#: GrampsWebSync/grampswebsync.py:907
-msgid "Modified"
-msgstr "Muutettu"
-
 #: GrampsWebSync/grampswebsync.py:902
 msgid "Remote changes"
 msgstr "Etämuutokset"
@@ -15326,6 +15725,77 @@ msgid_plural "Uploading %s media files"
 msgstr[0] "Viedään Grampsiin %s mediatiedosto"
 msgstr[1] "Viedään Grampsiin %s mediatiedostoa"
 
+#: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
+msgid "Gram.py Script"
+msgstr ""
+
+#: GrampyScript/GrampyScript.gpr.py:24
+msgid "Run a special Gramps Python script"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:91
+#, fuzzy
+#| msgid "Loaded from file: %s"
+msgid "Load query from a .script file"
+msgstr "Ladattu tiedostosta: %s"
+
+#: GrampyScript/GrampyScript.py:121
+#, fuzzy
+#| msgid "Save tree as file"
+msgid "Save query to a .script file"
+msgstr "Tallenna puu tiedostoon"
+
+#: GrampyScript/GrampyScript.py:141
+#, fuzzy
+#| msgid "Downloading %s media file"
+#| msgid_plural "Downloading %s media files"
+msgid "Download results as a CSV file"
+msgstr "Tuodaan Grampsista %s mediatiedosto"
+
+#: GrampyScript/GrampyScript.py:303
+#, fuzzy
+#| msgid "OpenAI"
+msgid "Open..."
+msgstr "OpenAI"
+
+#: GrampyScript/GrampyScript.py:305
+#, fuzzy
+#| msgid "Save images in ..."
+msgid "Save as..."
+msgstr "Tallenna kuvat kansioon..."
+
+#: GrampyScript/GrampyScript.py:319
+msgid "Save as CSV"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:320
+#, fuzzy
+#| msgid "Copy link to clipboard"
+msgid "Copy to clipboard"
+msgstr "Kopioi linkki leikepöydälle"
+
+#: GrampyScript/GrampyScript.py:395
+#, fuzzy
+#| msgid "Quilt Chart"
+msgid "Chart"
+msgstr "Peittokaavio"
+
+#: GrampyScript/GrampyScript.py:400
+msgid "Execute <Alt+Enter>"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:402
+msgid "Execute the script"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:416
+msgid "Ready..."
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:1028
+msgid "Gram.py Script Edited Data"
+msgstr ""
+
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
 msgstr "Tumma (oletus)"
@@ -15341,6 +15811,18 @@ msgstr "Väripiirros"
 #: GraphView/avatars.py:63
 msgid "Modern"
 msgstr "Moderni"
+
+#: GraphView/avatars.py:65
+msgid "Generic (dark)"
+msgstr ""
+
+#: GraphView/avatars.py:66
+msgid "Generic (gray)"
+msgstr ""
+
+#: GraphView/avatars.py:67
+msgid "Generic (light)"
+msgstr ""
 
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
 #: GraphView/graphview.py:189
@@ -15530,14 +16012,6 @@ msgstr "Nykyisen kaavion kirjanmerkit"
 #: GraphView/graphview.py:1133
 msgid "Other Bookmarks"
 msgstr "Muut kirjanmerkit"
-
-#: GraphView/graphview.py:1164
-msgid "Ancestor generations"
-msgstr "Esivanhempien sukupolvien enimmäismäärä"
-
-#: GraphView/graphview.py:1168
-msgid "Descendant generations"
-msgstr "Jälkeläissukupolvien enimmäismäärä"
 
 #: GraphView/graphview.py:1179
 msgid "Vertical spacing between generations"
@@ -16299,10 +16773,6 @@ msgstr "Tuo ja yhdistä Gramps XML"
 msgid "Missing"
 msgstr "Puuttuva"
 
-#: ImportMerge/importmerge.py:94
-msgid "Different"
-msgstr "Erilainen"
-
 #: ImportMerge/importmerge.py:109
 msgid "Delete original"
 msgstr "Poista alkuperäinen"
@@ -16447,7 +16917,7 @@ msgid "This is a JSON import"
 msgstr "Tämä on JSON-tuonti"
 
 # tuotu
-#: JSON/JSONImport.py:56
+#: JSON/JSONImport.py:69
 msgid "JSON import"
 msgstr "JSON tuonti"
 
@@ -17320,10 +17790,6 @@ msgstr ""
 "Tarkista mediapolut ja ilmoita puuttuvista, kaksoiskappaleista ja "
 "ylimääräisistä tiedostoista"
 
-#: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
-msgid "Export"
-msgstr "Vie"
-
 #: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
 msgid "Export the results to a text file"
 msgstr "Vie tulokset tekstitiedostoon"
@@ -18147,10 +18613,6 @@ msgstr "Henkilön yleiskatsaus"
 msgid "Gramplet showing an overview of events for a person"
 msgstr "Gramplet näyttää yleiskatsauksen henkilön tapahtumista"
 
-#: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
-msgid "Overview"
-msgstr "Yleiskatsaus"
-
 #: Overview/Overview.gpr.py:45
 msgid "Family Overview"
 msgstr "Perheen yleiskatsaus"
@@ -18167,48 +18629,54 @@ msgstr "Grampletti näyttää tapahtuman osallistujat"
 msgid "Double-click on a row to edit the selected participant."
 msgstr "Voit muokata osallistujaa kaksoisnapsauttamalla sen riviä."
 
-#: PedigreeChart/PedigreeChart.gpr.py:25
+#: PedigreeChart/PedigreeChart.gpr.py:32
 msgid "Pedigree Chart"
 msgstr "Sukutaulu"
 
-#: PedigreeChart/PedigreeChart.gpr.py:26
+#: PedigreeChart/PedigreeChart.gpr.py:33
 msgid "Alternate version of the traditional pedigree chart."
 msgstr "Vaihtoehtoinen versio perinteisestä sukutaulukosta."
 
-#: PedigreeChart/PedigreeChart.py:379
+#: PedigreeChart/PedigreeChart.py:391
 #, python-format
 msgid "Pedigree Chart for %s"
 msgstr "Sukupuukaavio henkilölle %s"
 
-#: PedigreeChart/PedigreeChart.py:528
+#: PedigreeChart/PedigreeChart.py:585
 #, python-format
 msgid "Page %d"
 msgstr "Sivu %d"
 
-#: PedigreeChart/PedigreeChart.py:640
+#: PedigreeChart/PedigreeChart.py:714
 msgid "Show Mother/Father captions"
 msgstr "Näytä äidin/isän kuvatekstit"
 
-#: PedigreeChart/PedigreeChart.py:641
+#: PedigreeChart/PedigreeChart.py:715
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr "Näytä äidin tai isän nimi kunkin esi-isän laatikon vieressä."
 
-#: PedigreeChart/PedigreeChart.py:657
+#: PedigreeChart/PedigreeChart.py:718
 msgid "Show page numbers"
 msgstr "Näytä sivunumerot"
 
-#: PedigreeChart/PedigreeChart.py:658
+#: PedigreeChart/PedigreeChart.py:719
 msgid "Add a footer on every page with the page number and date printed."
 msgstr ""
 "Lisätään jokaiselle sivulle alatunniste, johon tulostetaan sivunumero ja "
 "päivämäärä."
 
-#: PedigreeChart/PedigreeChart.py:662
+#: PedigreeChart/PedigreeChart.py:740
 msgid "The basic style used for the title display."
 msgstr "Otsikossa käytettävä perustyyli."
 
-#: PedigreeChart/PedigreeChart.py:671
-msgid "Style used for labels and captions"
+#: PedigreeChart/PedigreeChart.py:749
+msgid "Style used for names (only for PDF document and PostScript)."
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:758
+#, fuzzy
+#| msgid "Style used for labels and captions"
+msgid "Style used for labels and captions."
 msgstr "Otsikoissa ja kuvateksteissä käytetty tyyli"
 
 #: PersonEverything/PersonEverything.gpr.py:32
@@ -19604,15 +20072,15 @@ msgstr "Luodaan indeksejä..."
 msgid "Upgrade completed!"
 msgstr "Päivitys valmistunut!"
 
-#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:33
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:28
 msgid "PostgreSQL Enhanced"
 msgstr "PostgreSQL Enhanced"
 
-#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:34
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:29
 msgid "PostgreSQL _Enhanced Database"
 msgstr "PostgreSQL _Enhanced tietokanta"
 
-#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:36
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:31
 msgid ""
 "Advanced PostgreSQL backend with JSONB storage, graph database support "
 "(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
@@ -19705,7 +20173,7 @@ msgstr "Edellytysten tarkistus"
 msgid "Prerequisites Checker Gramplet"
 msgstr "Edellytykset Checker Grampletille"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:143
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:144
 msgid ""
 "Diagnostic Gramplet to help evaluate if <a href=\"https://gramps-project.org/"
 "\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
@@ -19715,7 +20183,7 @@ msgstr ""
 "project.org/\">Grampsissa</a> kaikki <a href=\"https://github.com/gramps-"
 "project/gramps/blob/master/README.md\">tarpeellinen</a> asennettu.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:153
 msgid ""
 "Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
 "installed."
@@ -19723,7 +20191,7 @@ msgstr ""
 "Diagnostinen Gramplet, joka auttaa arvioimaan, onko Grampsissa kaikki "
 "vaaditut asennusvaatimukset asennettu."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:181
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:186
 msgid ""
 "\n"
 "<u><b>REQUIRED</b></u>\n"
@@ -19731,7 +20199,7 @@ msgstr ""
 "\n"
 "<u><b>VAADITAAN</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:183
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:189
 msgid ""
 "<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
 " (Requires the minimum version or greater.)</i>:\n"
@@ -19739,7 +20207,7 @@ msgstr ""
 "<i>Seuraavien pakettien asennukset ovat <b>TÄYSIN PAKOLLISIA</b>\n"
 "(Vaatii vähintään vähimmäisversion.)</i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:208
 msgid ""
 "\n"
 "<u><b>RECOMMENDED</b></u>\n"
@@ -19747,7 +20215,7 @@ msgstr ""
 "\n"
 "<u><b>SUOSITELLAAN</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:202
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:211
 msgid ""
 "<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
 "as necessary for Geography and Charts</i>:\n"
@@ -19755,7 +20223,7 @@ msgstr ""
 "<i>Seuraavien pakettien asentamista <b>SUOSITELLAAN</b> tarvittaessa "
 "karttojen ja kaavioiden käyttöön</i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:215
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:226
 msgid ""
 "\n"
 "<u><b>Optional</b></u>\n"
@@ -19763,22 +20231,22 @@ msgstr ""
 "\n"
 "<u><b>Valinnainen</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:217
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:229
 msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
 msgstr "<i>Seuraavien pakettien asentaminen on <b>valinnaista</b></i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:220
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:234
 msgid "Gtkspell enables spell checking in the notes.\n"
 msgstr "Gtkspell mahdollistaa lisätietojen oikeinkirjoituksen tarkistuksen.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:225
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:240
 msgid ""
 "Python Image Library (PIL) is needed for cropping images and LaTeX output."
 msgstr ""
 "Kuvien rajaamiseen ja LaTeX-tulostukseen tarvitaan Python Image Library "
 "(PIL)."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:238
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:256
 msgid ""
 "\n"
 "<u><b>Development & Translation Requirements</b></u>\n"
@@ -19786,7 +20254,7 @@ msgstr ""
 "\n"
 "<u><b>Kehitys- ja käännösvaatimukset</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:241
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:260
 msgid ""
 "<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
 "intend to translate or do any development (addons etc.)</i>:\n"
@@ -19794,7 +20262,7 @@ msgstr ""
 "<i>Seuraavien pakettien asentamista <b>SUOSITELLAAN</b>, jos aiot kääntää "
 "tai tehdä kehitystyötä (lisäosia jne.)</i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:272
 msgid ""
 "\n"
 "<u><b>Optional packages required by Third-party Addons</b></u>\n"
@@ -19802,7 +20270,7 @@ msgstr ""
 "\n"
 "<u><b>Kolmannen osapuolen lisäosien vaatimat valinnaiset paketit</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:253
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:276
 msgid ""
 "<i>Prerequistes required for the following <a href=\"https://gramps-"
 "project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
@@ -19812,7 +20280,7 @@ msgstr ""
 "title=Third-party_Addons\">kolmannen osapuolen lisäosien</a> toiminnan "
 "edellytykset</i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:300
 msgid ""
 "\n"
 "<u><b>Diagnostic checks</b></u>\n"
@@ -19820,11 +20288,11 @@ msgstr ""
 "\n"
 "<u><b>Diagnostiset tarkastukset</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:276
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:301
 msgid "Check for potential issues.\n"
 msgstr "Tarkista mahdolliset ongelmat.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:277
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:302
 msgid ""
 "\n"
 "Environment settings:\n"
@@ -19832,7 +20300,7 @@ msgstr ""
 "\n"
 "Ympäristöasetukset:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:282
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:307
 msgid ""
 "\n"
 "\n"
@@ -19842,7 +20310,7 @@ msgstr ""
 "\n"
 "<u><b>Saatavilla olevat kielet:</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:287
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:311
 msgid ""
 "\n"
 "<u><b>Back Up Your Genealogy Files.</b></u>\n"
@@ -19850,7 +20318,7 @@ msgstr ""
 "\n"
 "<u><b>Varmuuskopioi sukututkimustiedostosi.</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:288
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:314
 msgid ""
 "If you have a reason to be checking Prerequisites, it is the right time to "
 "back up your genealogy files, and then test your backups!\n"
@@ -19860,7 +20328,7 @@ msgstr ""
 "varmuuskopioida sukututkimustiedostosi ja testata sitten varmuuskopiosi!\n"
 "\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:292
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:321
 msgid ""
 "<i><a href=\"https://gramps-project.org/wiki/index.php?"
 "title=How_to_make_a_backup\">Backup to Gramps XML</a> You will find \"Make "
@@ -19877,7 +20345,7 @@ msgstr ""
 "kaikkien tietojen viemiseksi.</i>\n"
 "\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:298
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:331
 msgid ""
 " • Backups can be made at any time and, at a minimum, on the first day of "
 "every month. But preferrably more often.\n"
@@ -19885,7 +20353,7 @@ msgstr ""
 " • Voit tehdä varmuuskopion milloin tahansa ja vähintään joka kuukauden "
 "ensimmäisenä päivänä. Mieluiten kuitenkin useammin.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:300
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:337
 msgid ""
 " • It is strongly recommended to backup each of your Family Trees before any "
 "upgrade.\n"
@@ -19893,7 +20361,7 @@ msgstr ""
 " • On erittäin suositeltavaa varmuuskopioida jokainen sukupuusi ennen "
 "päivitystä..\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:302
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:343
 msgid ""
 " • Test your backups by creating a new Family Tree and then importing the "
 "backup."
@@ -19901,11 +20369,11 @@ msgstr ""
 " • Testaa varmuuskopiosi luomalla uusi sukupuu ja tuomalla sitten "
 "varmuuskopio."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:321
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:365
 msgid ", is the most current version.\n"
 msgstr ", on uusin versio.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:339
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:387
 #, python-format
 msgid ""
 "You have Gramps %s. Please make a backup and then upgrade.\n"
@@ -19914,7 +20382,7 @@ msgstr ""
 "Sinulla on Gramps %s. Ole hyvä ja tee varmuuskopio ja päivitä sitten.\n"
 "%s"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:343
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:392
 #, python-format
 msgid ""
 "You have Gramps %s installed; an unreleased development version. Thank you "
@@ -19925,89 +20393,93 @@ msgstr ""
 "osallistumisestasi ja testaamisestasi; ilmoita mahdollisista ongelmista. "
 "Varmuuskopiot ovat ystäväsi.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:351
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:402
 #, python-format
 msgid "You have Gramps %s. Congratulations, you have the current version.\n"
 msgstr "Sinulla on Gramps %s. Onnittelut, sinulla on nykyinen versio!\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:378
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:452
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:504
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:548
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:597
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:748
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:953
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1160
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:430
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:460
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:541
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:603
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:656
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:724
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:908
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1128
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1349
 msgid " (Requires version "
 msgstr " (Vaatii version "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:379
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:387
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:457
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:511
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:554
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:566
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:602
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:431
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:439
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:461
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:469
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:552
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:614
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:667
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:688
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:735
 msgid " or greater installed.)\n"
 msgstr " tai uudempi asennettuna.)\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:386
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:456
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:509
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:552
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:564
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:601
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:744
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:948
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1156
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:438
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:468
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:550
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:612
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:665
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:686
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:733
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:900
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1118
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1341
 msgid " (Passed: version "
 msgstr " (Hyväksytty: versio "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:414
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:479
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:538
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:539
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:587
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:735
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:797
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:798
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1107
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:500
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:576
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:643
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:644
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:711
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:889
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:961
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:962
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1290
 msgid "unknown version"
 msgstr "tuntematon versio"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:422
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:508
 msgid "DISPLAY not set"
 msgstr "DISPLAY on asettamatta"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:453
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:505
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:549
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:561
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:598
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:543
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:605
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:658
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:679
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:726
 msgid " or greater.)\n"
 msgstr " tai suurempi.)\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:560
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:677
 msgid " (Requires "
 msgstr " (Vaatii "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:650
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:791
 msgid " • Berkeley Database library (bsddb3: "
 msgstr " • Berkeley tietokantakirjasto (bsddb3: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:675
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:822
 msgid " • SQLite Database library (sqlite3: "
 msgstr " • SQLite tietokantakirjasto (sqlite3: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:689
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:839
 msgid " • xdg-utils (Manual check see instructions link)"
 msgstr " • xdg-utils (tarkasta, katso ohjelinkki)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:702
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:852
 msgid " • librsvg2 (Manual check see instructions link)"
 msgstr " • librsvg2 (tarkasta, katso ohjelinkki)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:713
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:864
 msgid ""
 " • language-pack-gnome-xx (Manual check see instructions link) for your "
 "Language <show locale here TBD>"
@@ -20015,49 +20487,49 @@ msgstr ""
 " • language-pack-gnome-xx (tarkasta, katso ohjelinkki) kielellesi <show "
 "locale here TBD>"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:745
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1157
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1161
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1560
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1565
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1759
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:902
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1343
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1351
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1793
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1802
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2016
 msgid " or greater installed.)"
 msgstr " tai uudempi asennettuna.)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:749
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:910
 msgid " or greater)"
 msgstr " tai suurempi)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:780
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:943
 msgid "Graphviz not in system PATH"
 msgstr "Graphviz puuttuu järjestelmän PATH:ista"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:848
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1009
 msgid "Ghostscript not in system PATH"
 msgstr "Ghostscript puuttuu järjestelmän PATH:ista"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:863
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1027
 msgid " (Passed: version 0.5.x is installed.)"
 msgstr " (Hyväksytty, versio 0.5.x on asennettu.)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:866
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1030
 msgid " (Requires version 0.5.x)"
 msgstr " (Vaatii version 0.5.x)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:869
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1032
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
 msgstr " • python-fontconfig -tiedostoa ei löydy, (Vaatii version 0.5.x)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:871
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1034
 msgid " • python-fontconfig installed, version unavailable"
 msgstr " • python-fontconfig asennettu, versiotietoa ei ole saatavilla"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:950
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:955
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1120
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
 msgid " or greater installed.) (enchant module: "
 msgstr " tai uudempi asennettuna.) (parannusmoduuli: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1011
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1189
 #, python-format
 msgid ""
 " • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
@@ -20066,7 +20538,7 @@ msgstr ""
 " • rcs %s TBD (Hyväksytään, jos versio %s tai uudempi on asennettuna tai jos "
 "sisältyy Microsoft Windowsiin)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1015
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1194
 #, python-format
 msgid ""
 " • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
@@ -20075,20 +20547,20 @@ msgstr ""
 " • rcs %s TBD (Vaatii version %s tai uudemman, ellei jo sisälly Microsoft "
 "Windowsiin)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1129
-msgid "can't found it because exiv2 not installed"
-msgstr "ei löydy, koska exiv2:ta ei ole asennettu"
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1311
+msgid "exiv2 executable not installed, can't retrieve libexiv2 version."
+msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1312
 #, python-format
 msgid "GExiv2 : %s (Exiv2 library : %s)"
 msgstr "GExiv2 : %s (Exiv2-kirjasto : %s)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1197
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1389
 msgid "found another font"
 msgstr "löytyi toinen fontti"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1205
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1398
 msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
@@ -20096,86 +20568,82 @@ msgstr ""
 "Networkchart-lisäosalle <a href=\"https://www.fontsquirrel.com/fonts/white-"
 "rabbit\">White Rabbit</a> -fontti tarjoaa erittäin luettavan tuloksen.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
-msgid "Why, when same code works in Graphview"
-msgstr "Miksi, kun sama koodi toimii Graphview'ssa"
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1246
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1298
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1308
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1318
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1442
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1500
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1511
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1522
 msgid "not installed"
 msgstr "ei asennettu"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1325
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1530
 msgid "     and one of either: (pydotplus: "
 msgstr "     ja yksi seuraavista: (pydotplus: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1327
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1532
 msgid ") or (pygraphviz: "
 msgstr ") tai (pygraphviz: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1351
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1561
 msgid "Installed(MS-Windows)"
 msgstr "Asennettu (MS-Windows)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1355
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1565
 msgid "Installed(Linux/Mac)"
 msgstr "Asennettu(Linux/Mac)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1389
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1602
 msgid "not installed "
 msgstr "ei asennettu "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1444
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1614
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1616
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1617
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1702
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1708
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1659
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1855
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1857
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1858
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1947
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1954
 msgid "not found."
 msgstr "ei löytynyt."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1466
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1685
 msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
 msgstr ""
 "Vakio. Läpäisty, ohjelma asennettu - 32-bittinen 64-bittisessä Windowsissa."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1518
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1744
 msgid ") (Requires the gramps addon listed under 'Plugin lib')"
 msgstr ") (Vaatii 'Plugin lib' -kohdassa luetellun Gramps-lisäosan)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1551
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1780
 msgid "DBF installed"
 msgstr "DBF-kirjasto asennettu"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1559
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1791
 msgid ".)(Requires version "
 msgstr ".)(Vaatii version "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1564
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1800
 msgid " installed.)(Passed: version "
 msgstr " asennettu.)(Hyväksytty versio "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1711
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1957
 #, python-format
 msgid "(OpenCV facedetection: %s)"
 msgstr "(OpenCV kasvojen tunnistus: %s)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1758
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2014
 msgid " (lxml: not found. Requires version "
 msgstr " (lxml: ei löydy. Vaatii version "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1776
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2036
 msgid " • Requires: MongoDB TBD / pymongo TBD"
 msgstr " • Vaaditaan MongoDB TBD / pymongo TBD"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1790
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2050
 #, python-format
 msgid " • Operating System: %s"
 msgstr " • Käyttöjärjestelmä: %s"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1811
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2073
 msgid ""
 "<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
 "title=Gramps_5.0_Wiki_Manual_-"
@@ -20187,29 +20655,29 @@ msgstr ""
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Kieliasetukset:</"
 "a></b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1817
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1818
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1819
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1820
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1870
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1871
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1872
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1874
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2081
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2082
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2083
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2084
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2145
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2146
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2147
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2148
 msgid "not set"
 msgstr "ei asetettu"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1822
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1823
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1824
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1825
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1876
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1877
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1878
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1879
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2086
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2087
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2088
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2089
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2150
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2151
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2152
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2153
 msgid "not tested"
 msgstr "ei testattu"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1845
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2118
 msgid ""
 "\n"
 "Installed Locales\\Translations (If only English is listed please re-install "
@@ -20221,7 +20689,7 @@ msgstr ""
 "Gramps uudelleen ja muista valita kaikki käännökset ja sanakirjat)\n"
 "\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1882
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2156
 msgid ""
 "\n"
 "Gramps Environment variables:\n"
@@ -20229,13 +20697,13 @@ msgstr ""
 "\n"
 "Gramps-ympäristömuuttujat:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1921
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1983
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2019
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2195
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2258
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2295
 msgid "found"
 msgstr "löytyi"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2026
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2304
 msgid ""
 "Sphinx is a tool that builds the Gramps development documentation and man "
 "pages\n"
@@ -21379,7 +21847,7 @@ msgid "Origin:"
 msgstr "Alkuperä:"
 
 #: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
-#: markdown_place_history_formatter.py:59
+#: WebSearch/markdown_place_history_formatter.py:59
 msgid "Note:"
 msgstr "Lisätieto:"
 
@@ -21942,12 +22410,26 @@ msgstr ""
 "%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:105
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "Directly importing from TMG files is not supportedby the TMG Importer "
+#| "Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that "
+#| "your TMG project was created by:TMG version 5.x or greater.Your "
+#| "file:*.TMG - Version Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
+#| "%(gramps_wiki_import_pjc_direct_url)s"
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer "
-"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
-"TMG project was created by:TMG version 5.x or greater.Your file:*.TMG - "
-"Version Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
+"Directly importing from TMG files is not supported\n"
+"by the TMG Importer Addon.\n"
+"\n"
+"You need to use an backup copy of TMG project(*.sqz)\n"
+"\n"
+"Ensure that your TMG project was created by:\n"
+"TMG version 5.x or greater.\n"
+"\n"
+"Your file:\n"
+"*.TMG - Version Control File for TMG 2.0 to TMG 4.0d\n"
+"\n"
+"Please refer to:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "TMG-tiedostojen suora tuonti ei ole tuettu vaan sinun on käytettävä TMG-"
@@ -21956,12 +22438,26 @@ msgstr ""
 "2.0 – 4.0. Katso: %(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:126
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "Directly importing from TMG files is not supportedby the TMG Importer "
+#| "Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that "
+#| "your TMG project was created by:TMG version 5.x or greater.Your "
+#| "file:*.VER - Version Control File for TMG 1.2 and earlierPlease refer to:"
+#| "%(gramps_wiki_import_pjc_direct_url)s"
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer "
-"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
-"TMG project was created by:TMG version 5.x or greater.Your file:*.VER - "
-"Version Control File for TMG 1.2 and earlierPlease refer to:"
+"Directly importing from TMG files is not supported\n"
+"by the TMG Importer Addon.\n"
+"\n"
+"You need to use an backup copy of TMG project(*.sqz)\n"
+"\n"
+"Ensure that your TMG project was created by:\n"
+"TMG version 5.x or greater.\n"
+"\n"
+"Your file:\n"
+"*.VER - Version Control File for TMG 1.2 and earlier\n"
+"\n"
+"Please refer to:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "TMG-tiedostojen suora tuonti ei ole tuettu suoraan TMG-tiedostoista, vaan on "
@@ -21996,21 +22492,21 @@ msgstr "Tietojoukon nimi"
 msgid "_Import TMG Data Set"
 msgstr "_Tuo TMG-tietojoukko"
 
-#: TMGimporter/libtmg.py:2324 TMGimporter/libtmg.py:2357
-#: TMGimporter/libtmg.py:2439 TMGimporter/libtmg.py:2466
+#: TMGimporter/libtmg.py:2319 TMGimporter/libtmg.py:2352
+#: TMGimporter/libtmg.py:2434 TMGimporter/libtmg.py:2461
 #, fuzzy
 #| msgid "Export failed"
 msgid "TMG import failed"
 msgstr "Vienti epäonnistui"
 
-#: TMGimporter/libtmg.py:2325
+#: TMGimporter/libtmg.py:2320
 msgid ""
 "The current Family Tree is not empty.\n"
 "\n"
 "Please create a new empty Family Tree before importing a TMG backup file."
 msgstr ""
 
-#: TMGimporter/libtmg.py:2358
+#: TMGimporter/libtmg.py:2353
 msgid ""
 "The TMG backup file could not be read: PJC version information is missing or "
 "unreadable.\n"
@@ -22019,13 +22515,13 @@ msgid ""
 "(PjcVersion >= 11.0)."
 msgstr ""
 
-#: TMGimporter/libtmg.py:2370
+#: TMGimporter/libtmg.py:2365
 #, fuzzy
 #| msgid "TMG Unsupported"
 msgid "TMG version not supported"
 msgstr "TMG:tä ei tueta"
 
-#: TMGimporter/libtmg.py:2371
+#: TMGimporter/libtmg.py:2366
 #, python-format
 msgid ""
 "This backup was created with an older version of TMG (PjcVersion %(ver)s, "
@@ -22038,14 +22534,14 @@ msgid ""
 "Addon:TMGimporter#Before_Import_From_TMG_Backup_file"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2440
+#: TMGimporter/libtmg.py:2435
 msgid ""
 "No datasets were found in this TMG backup file.\n"
 "\n"
 "The backup may be corrupt or empty."
 msgstr ""
 
-#: TMGimporter/libtmg.py:2467
+#: TMGimporter/libtmg.py:2462
 #, python-format
 msgid ""
 "%(filename)s does not appear to be a valid TMG backup file.\n"
@@ -23202,11 +23698,11 @@ msgstr "Nettisivustojen kokoelma US (vaatii libwebconnectin)"
 msgid "US Google"
 msgstr "Google US"
 
-#: WebSearch.gpr.py:34 WebSearch.gpr.py:47
+#: WebSearch/WebSearch.gpr.py:34 WebSearch/WebSearch.gpr.py:47
 msgid "WebSearch"
 msgstr "Nettihaku"
 
-#: WebSearch.gpr.py:36
+#: WebSearch/WebSearch.gpr.py:36
 msgid ""
 "Customized queries for online services based on the active Person, Place, "
 "Family, or Source record"
@@ -23214,86 +23710,86 @@ msgstr ""
 "Mukautetut kyselyt verkkopalveluille perustuen aktiivisen henkilö-, paikka-, "
 "perhe- tai lähdetietoihin"
 
-#: WebSearch.py:468
+#: WebSearch/WebSearch.py:468
 msgid "Save Coordinates to the Place"
 msgstr "Tallenna paikan koordinaatit"
 
-#: WebSearch.py:609
+#: WebSearch/WebSearch.py:609
 msgid "AI provider is disabled"
 msgstr "Tekoälypalvelua ei ole tarjolla"
 
-#: WebSearch.py:613
+#: WebSearch/WebSearch.py:613
 msgid "No AI API key provided"
 msgstr "Yhtään AI API :n avainta ei ole annettu"
 
-#: WebSearch.py:619
+#: WebSearch/WebSearch.py:619
 msgid "AI-generated historical place data is currently disabled"
 msgstr ""
 "Tekoälyn luomat historialliset paikkatiedot eivät ole tällä hetkellä käytössä"
 
-#: WebSearch.py:629
+#: WebSearch/WebSearch.py:629
 msgid "AI provider is unknown. Please check your AI provider settings."
 msgstr ""
 "Tekoälypalveluntarjoaja ei ole tiedossa. Tarkista tekoälypalveluntarjoajasi "
 "asetukset."
 
-#: WebSearch.py:649
+#: WebSearch/WebSearch.py:649
 msgid "⏳ Generating historical place data, please wait..."
 msgstr "⏳ Luodaan historiallista paikkatietoa, odota hetki..."
 
-#: WebSearch.py:1521
+#: WebSearch/WebSearch.py:1520
 msgid "Keys"
 msgstr "Avaimet"
 
-#: WebSearch.py:1523
+#: WebSearch/WebSearch.py:1522
 msgid "Website URL"
 msgstr "Nettisivuston URL"
 
-#: WebSearch.py:1526
+#: WebSearch/WebSearch.py:1525
 msgid "Add link to note"
 msgstr "Lisää linkki lisätietoon"
 
-#: WebSearch.py:1528
+#: WebSearch/WebSearch.py:1527
 msgid "Add link to attribute"
 msgstr "Lisää linkki ominaisuuteen"
 
-#: WebSearch.py:1530
+#: WebSearch/WebSearch.py:1529
 msgid "Show QR-code"
 msgstr "Näytä QR-koodi"
 
-#: WebSearch.py:1532
+#: WebSearch/WebSearch.py:1531
 msgid "Copy link to clipboard"
 msgstr "Kopioi linkki leikepöydälle"
 
-#: WebSearch.py:1535
+#: WebSearch/WebSearch.py:1534
 msgid "Hide link for selected item"
 msgstr "Piilota linkki valitusta kohteesta"
 
-#: WebSearch.py:1538
+#: WebSearch/WebSearch.py:1537
 msgid "Hide link for all items"
 msgstr "Piilota linkki kaikista kohteista"
 
-#: WebSearch.py:1542
+#: WebSearch/WebSearch.py:1541
 msgid "Edit Attribute with the Link"
 msgstr "Muokkaa ominaisuutta linkin avulla"
 
-#: WebSearch.py:1546
+#: WebSearch/WebSearch.py:1545
 msgid "Edit Note with the Link"
 msgstr "Muokkaa lisätietoa linkin avulla"
 
-#: WebSearch.py:1549
+#: WebSearch/WebSearch.py:1548
 msgid "🔍 AI Suggestions"
 msgstr "🔍 Tekoälyn ehdotukset"
 
-#: WebSearch.py:1769
+#: WebSearch/WebSearch.py:1767
 msgid "Attribute no longer exists. The extra icon is removed"
 msgstr "Ominaisuutta ei enää ole. Ylimääräinen kuvake on poistettu"
 
-#: WebSearch.py:1815
+#: WebSearch/WebSearch.py:1813
 msgid "Note no longer exists. The extra icon is removed"
 msgstr "Lisätietoa ei enää ole. Ylimääräinen kuvake on poistettu"
 
-#: WebSearch.py:1840
+#: WebSearch/WebSearch.py:1838
 #, python-brace-format
 msgid ""
 "📌 This '{title}' web link was archived for future reference by the "
@@ -23311,46 +23807,554 @@ msgstr ""
 "\n"
 "Voit palata lähteeseen tällä linkillä tarkistaaksesi liittyvät tiedot."
 
-#: WebSearch.py:1926
+#: WebSearch/WebSearch.py:1924
 #, python-format
 msgid "Note #%(id)s has been successfully added"
 msgstr "Lisätieto #%(id)s on onnistuneesti lisätty"
 
-#: WebSearch.py:1929
+#: WebSearch/WebSearch.py:1927
 msgid "Error creating note"
 msgstr "Virhe luotaessa lisätietoa"
 
-#: WebSearch.py:1949
+#: WebSearch/WebSearch.py:1947
 msgid "URL is copied to the Clipboard"
 msgstr "URL-osoite kopioidaan leikepöydälle"
 
-#: WebSearch.py:2068
+#: WebSearch/WebSearch.py:2066
 msgid "WebSearch Link"
 msgstr "Verkkohaku Linkki"
 
-#: WebSearch.py:2110
+#: WebSearch/WebSearch.py:2108
 msgid "Attribute has been successfully added"
 msgstr "Ominaisuus on lisätty onnistuneesti"
 
-#: WebSearch.py:2142
+#: WebSearch/WebSearch.py:2140
 #, python-brace-format
 msgid "Title: {title}"
 msgstr "Otsikko: {title}"
 
-#: WebSearch.py:2146
+#: WebSearch/WebSearch.py:2144
 #, python-brace-format
 msgid "Replaced: {keys}"
 msgstr "Korvattu: {keys}"
 
-#: WebSearch.py:2149
+#: WebSearch/WebSearch.py:2147
 #, python-brace-format
 msgid "Empty: {keys}"
 msgstr "Tyhjä: {keys}"
 
-#: WebSearch.py:2151
+#: WebSearch/WebSearch.py:2149
 #, python-brace-format
 msgid "Comment: {comment}"
 msgstr "Kommentti: {comment}"
+
+#: WebSearch/activity_row_generator.py:110
+#, python-format
+msgid "Visited: %s"
+msgstr "Katsottu: %s"
+
+#: WebSearch/activity_row_generator.py:114
+#: WebSearch/activity_row_generator.py:129
+#, python-format
+msgid "Link: %s"
+msgstr "Linkki: %s"
+
+#: WebSearch/activity_row_generator.py:116
+#, python-format
+msgid "Attribute: %s"
+msgstr "Ominaisuus: %s"
+
+#: WebSearch/activity_row_generator.py:118
+#, python-format
+msgid "Value: %s"
+msgstr "Arvo: %s"
+
+#: WebSearch/activity_row_generator.py:123
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "Ladattu tiedostosta: %s"
+
+#: WebSearch/activity_row_generator.py:126
+#, python-format
+msgid "Domain: %s"
+msgstr "Domain: %s"
+
+#: WebSearch/activity_row_generator.py:131
+#, python-format
+msgid "Object: %s"
+msgstr "Kohde: %s"
+
+#: WebSearch/activity_row_generator.py:135
+#, python-format
+msgid "Pattern: %s"
+msgstr "Kuvio: %s"
+
+#: WebSearch/activity_row_generator.py:138
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "Kohteen Gramps ID: %s"
+
+#: WebSearch/activity_row_generator.py:142
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s: %s → %s: %s"
+
+#: WebSearch/activity_row_generator.py:152
+msgid "Link visited"
+msgstr "Vierailtu linkki"
+
+#: WebSearch/activity_row_generator.py:153
+msgid "Link saved to Note"
+msgstr "Linkki tallennettu lisätietoihin"
+
+#: WebSearch/activity_row_generator.py:154
+msgid "Link saved to Attribute"
+msgstr "Linkki tallennettu ominaisuutena"
+
+#: WebSearch/activity_row_generator.py:155
+msgid "Place history loaded"
+msgstr "Paikkahistoria ladattu"
+
+#: WebSearch/activity_row_generator.py:156
+msgid "Domain skipped"
+msgstr "Verkkotunnus ohitettu"
+
+#: WebSearch/activity_row_generator.py:157
+msgid "Link hidden for object"
+msgstr "Linkki piilotettu kohteelta"
+
+#: WebSearch/activity_row_generator.py:158
+msgid "Link hidden for all objects"
+msgstr "Linkki piilotettu kaikilta kohteilta"
+
+#: WebSearch/activity_row_generator.py:159
+msgid "Attribute updated"
+msgstr "Ominaisuus päivitetty"
+
+#: WebSearch/activity_row_generator.py:160
+msgid "Note updated"
+msgstr "Lisätieto päivitetty"
+
+#: WebSearch/constants.py:390
+msgid "Column - Icons"
+msgstr "Sarake - Kuvakkeet"
+
+#: WebSearch/constants.py:391
+msgid "Column - Source Types (flags)"
+msgstr "Sarake - Lähdetyypit (liput)"
+
+#: WebSearch/constants.py:392
+msgid "Column - Keys"
+msgstr "Sarake - Avaimet"
+
+#: WebSearch/constants.py:393
+msgid "Column - Title"
+msgstr "Sarake - Otsikko"
+
+#: WebSearch/constants.py:394
+msgid "Column - Website Url"
+msgstr "Sarake - Verkkosivuston URL-osoite"
+
+#: WebSearch/constants.py:395
+msgid "Column - Comment"
+msgstr "Sarake - Kommentti"
+
+#: WebSearch/constants.py:424
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "Kuvake - Vieraillut URL-osoitteet (valintamerkki)"
+
+#: WebSearch/constants.py:425
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "Kuvake - Tallennetut URL-osoitteet (levyke)"
+
+#: WebSearch/constants.py:426
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "Kuvake - UID-attribuutteihin (UID-merkki) linkitetyt URL-osoitteet"
+
+#: WebSearch/constants.py:427
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "Kuvake - URL-osoitteet alueen CSV-tiedostoista (lippu)"
+
+#: WebSearch/constants.py:428
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "Kuvake - URL-osoitteet kiinteistä CSV-tiedostoista (punainen neula)"
+
+#: WebSearch/constants.py:429
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "Kuvake - URL-osoitteet yleisistä CSV-tiedostoista (maapallo)"
+
+#: WebSearch/constants.py:430
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "Kuvake - URL-osoitteet CSV-tiedostojen kesken (sekoitusnuolet)"
+
+#: WebSearch/constants.py:431
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr ""
+"Kuvake - URL-osoitteet käyttäjän mukautetusta hakemistosta (laskentataulukon "
+"kuvake)"
+
+#: WebSearch/constants.py:432
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Kuvake – Ominaisuudet-välilehden URL-osoitteet ('A'-kuvake)"
+
+#: WebSearch/constants.py:433
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Kuvake – Internet-välilehden URL-osoitteet ('I'-kuvake)"
+
+#: WebSearch/constants.py:434
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Kuvake – Lisätiedot-välilehden URL-osoitteet ('N'-kuvake)"
+
+#: WebSearch/info_panel.py:108
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 Tietoja WebSearchistä"
+
+#: WebSearch/info_panel.py:111
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"WebSearch on Grampsin Gramplet, joka auttaa sinua hakemaan sukututkimukseen "
+"liittyviä verkkosivustoja."
+
+#: WebSearch/info_panel.py:117
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"Se tukee CSV-pohjaisia linkkipohjia, tekoälyavusteista sivustojen etsintää "
+"ja suoraa integrointia muistiinpanoihin ja ominaisuuksiin."
+
+#: WebSearch/info_panel.py:125
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Järjestelmätiedot"
+
+#: WebSearch/info_panel.py:128
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Puuttuu:** `qrcode`"
+
+#: WebSearch/info_panel.py:130
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Tätä Python-kirjastoa ei ole saatavilla järjestelmässäsi."
+
+#: WebSearch/info_panel.py:133
+msgid "Without it, QR code generation will not work."
+msgstr "QR-koodien luonti ei toimi ilman sitä."
+
+#: WebSearch/info_panel.py:136
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Yleensä asennetaan komennolla: `pip install qrcode[pil]`"
+
+#: WebSearch/info_panel.py:140 WebSearch/info_panel.py:162
+#: WebSearch/info_panel.py:181
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Huomaa: Joissakin käyttöjärjestelmissä tai ympäristössä on käytetävä "
+"vaihtoehtoisia asennustapoja.*"
+
+#: WebSearch/info_panel.py:147
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **Puuttuu:** `openai`"
+
+#: WebSearch/info_panel.py:149
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr ""
+"ℹ️ Tämä kirjasto on tarpeen OpenAI-pohjaisten ominaisuuksien käyttämiseksi."
+
+#: WebSearch/info_panel.py:153
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Ilman sitä ei tekoälyn luomat sivustoehdotukset ja paikkahistoria ole "
+"käytettävissä."
+
+#: WebSearch/info_panel.py:158
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 Asennetaan yleensä komennolla: `pip install openai`"
+
+#: WebSearch/info_panel.py:169
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Puuttuu:** `pyynnöt`"
+
+#: WebSearch/info_panel.py:171
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Tätä kirjastoa käytetään kommunikointiin web-rajapintojen kanssa."
+
+#: WebSearch/info_panel.py:174
+msgid "Without it, external data sources may not be accessible."
+msgstr "Ilman sitä ulkoiset tietolähteet eivät välttämättä ole käytettävissä."
+
+#: WebSearch/info_panel.py:177
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 Tavallisesti asennetaan komennolla: `pip install requests`"
+
+#: WebSearch/info_panel.py:188
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Tiedostojen sijainnit"
+
+#: WebSearch/info_panel.py:191
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"Alla on polut WebSearchin käyttämiin järjestelmän ja käyttäjän määrittämiin "
+"datatiedostoihin."
+
+#: WebSearch/info_panel.py:195
+msgid "#### CSV File Paths"
+msgstr "#### CSV-tiedostopolut"
+
+#: WebSearch/info_panel.py:197
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr ""
+"- **Järjestelmäpolku:** `{dir|%s}` – sisältää sisäänrakennetut CSV-tiedostot"
+
+#: WebSearch/info_panel.py:201
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **Käyttäjän määrittämä polku:** `{dir|%s}` – käyttäjän mukautettuja CSV-"
+"tiedostoja varten"
+
+#: WebSearch/info_panel.py:205
+msgid "#### JSON File Paths"
+msgstr "#### JSON tiedostopolut"
+
+#: WebSearch/info_panel.py:208
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **Järjestelmäpolku:** `{dir|%s}` – sisältää sisäänrakennetun "
+"attribute_mapping.json-tiedoston"
+
+#: WebSearch/info_panel.py:214
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **Käyttäjän määrittämä polku:** `{dir|%s}` – käyttäjän mukauttamille "
+"attribute_mapping.json-tiedostolle"
+
+#: WebSearch/info_panel.py:221
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *Vinkki: avaa tiedostonhallinnassa napsauttamalla valitsemaasi polkua "
+"yllä*"
+
+#: WebSearch/info_panel.py:224
+msgid "📖 View detailed usage in: "
+msgstr "📖 Katso yksityiskohtainen ohje: "
+
+#: WebSearch/info_panel.py:233
+msgid "## 💬 Support"
+msgstr "## 💬 Tuki"
+
+#: WebSearch/info_panel.py:234
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 Luonut ja ylläpitänyt Yurii Liubymyi"
+
+#: WebSearch/info_panel.py:237
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 Jos tarvitset apua tai palautetta, mainitse `@Urchello` Gramps-foorumilla:"
+
+#: WebSearch/info_panel.py:241
+msgid "Gramps Forum (Discourse)"
+msgstr ""
+
+#: WebSearch/info_panel.py:245
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr "✅ Virheilmoitukset ja ominaisuuspyynnöt ovat täysin **ilmaisia**."
+
+#: WebSearch/info_panel.py:249
+#, fuzzy
+#| msgid "Issues"
+msgid "GitHub Issues"
+msgstr "Ongelmat"
+
+#: WebSearch/info_panel.py:252
+msgid "Gramps Bug Tracker"
+msgstr ""
+
+#: WebSearch/info_panel.py:255
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 WebSearch Gramplet versio: `%s`"
+
+#: WebSearch/internet_links_loader.py:70 WebSearch/internet_links_loader.py:71
+msgid "No title"
+msgstr "Ei nimeä"
+
+#: WebSearch/markdown_place_history_formatter.py:52
+msgid "No data available."
+msgstr "Ei tietoja saatavilla."
+
+#: WebSearch/markdown_place_history_formatter.py:57
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "HISTORIALLISET HALLINNOLLISET OSAT"
+
+#: WebSearch/markdown_place_history_formatter.py:58
+msgid "Foundation date:"
+msgstr "Perustamispäivä:"
+
+#: WebSearch/markdown_place_history_formatter.py:60
+msgid "Coordinates:"
+msgstr "Koordinaatit:"
+
+#: WebSearch/markdown_place_history_formatter.py:61
+msgid "Administrative history"
+msgstr "Hallinnollinen historia"
+
+#: WebSearch/markdown_place_history_formatter.py:62
+msgid "Data provided to AI:"
+msgstr "Tekoälylle toimitetut tiedot:"
+
+#: WebSearch/markdown_place_history_formatter.py:64
+msgid "Full hierarchy"
+msgstr "Koko hierarkia"
+
+#: WebSearch/markdown_place_history_formatter.py:68
+msgid "Place Type:"
+msgstr "Paikan tyyppi:"
+
+#: WebSearch/markdown_place_history_formatter.py:69
+msgid "Last Retrieved At:"
+msgstr "Viimeksi noudettu:"
+
+#: WebSearch/note_links_loader.py:69
+msgid "Note Link (parsed)"
+msgstr "Linkki lisätietoihin (jäsennetty)"
+
+#: WebSearch/note_links_loader.py:120
+msgid "Note Link (internal)"
+msgstr "Linkki lisätietoihin (sisäinen)"
+
+#: WebSearch/note_links_loader.py:123
+msgid "Note Link (external)"
+msgstr "Linkki lisätietoihin (ulkoinen)"
+
+#: WebSearch/qr_window.py:76
+msgid "QR-code"
+msgstr "QR-koodi"
+
+#: WebSearch/qr_window.py:107 WebSearch/qr_window.py:110
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Riippuvuus \"qrcode\" puuttuu"
+
+#: WebSearch/qr_window.py:121
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Virhe QR-koodissa:\n"
+"Alkuperäinen virhe: “{}”"
+
+#: WebSearch/settings_ui_manager.py:112
+msgid "Middle Name Handling"
+msgstr "Toisen nimen käsittely"
+
+#: WebSearch/settings_ui_manager.py:117
+msgid "Leave alone"
+msgstr "Jätä rauhaan"
+
+#: WebSearch/settings_ui_manager.py:118
+msgid "Separate"
+msgstr "Erilliset"
+
+#: WebSearch/settings_ui_manager.py:128
+msgid "URL Compactness Level"
+msgstr "URL-osoitteen tiiviystaso"
+
+#: WebSearch/settings_ui_manager.py:134
+msgid "Shortest - No Prefix, No Keys"
+msgstr "Lyhin - ei etuliitettä eikä avaimia"
+
+#: WebSearch/settings_ui_manager.py:137
+msgid "Compact - No Prefix, Keys Without Attributes"
+msgstr "Kompakti - Ei etuliitettä, avaimet ilman ominaisuuksia"
+
+#: WebSearch/settings_ui_manager.py:140
+msgid "Compact - No Prefix, Keys With Attributes"
+msgstr "Kompakti - Ei etuliitettä, avaimet ominaisuuksilla"
+
+#: WebSearch/settings_ui_manager.py:143
+msgid "Long - Without Prefix on the Left"
+msgstr "Pitkä - ilman etuliitettä vasemmalla"
+
+#: WebSearch/settings_ui_manager.py:150
+msgid "URL Prefix Replacement"
+msgstr "URL-etuliitteen korvaaminen"
+
+#: WebSearch/settings_ui_manager.py:157
+msgid "AI Provider"
+msgstr "AI Provider"
+
+#: WebSearch/settings_ui_manager.py:162
+msgid "(Disabled)"
+msgstr "(Pois käytöstä)"
+
+#: WebSearch/settings_ui_manager.py:163
+msgid "OpenAI"
+msgstr "OpenAI"
+
+#: WebSearch/settings_ui_manager.py:164
+msgid "Mistral AI"
+msgstr "Mistral AI"
+
+#: WebSearch/settings_ui_manager.py:171
+msgid "OpenAI API Key"
+msgstr "OpenAI API avain"
+
+#: WebSearch/settings_ui_manager.py:176
+msgid "OpenAI Model"
+msgstr "OpenAI malli"
+
+#: WebSearch/settings_ui_manager.py:181
+msgid "Mistral API Key"
+msgstr "Mistral API avain"
+
+#: WebSearch/settings_ui_manager.py:186
+msgid "Mistral Model"
+msgstr "Mistral malli"
+
+#: WebSearch/settings_ui_manager.py:191
+msgid "Show Links From the 'Attributes' tab"
+msgstr "Näytä linkit ominaisuus välilehdeltä"
+
+#: WebSearch/settings_ui_manager.py:196
+msgid "Show Links From the 'Internet' tab"
+msgstr "Näytä linkit välilehdeltä 'Internet'"
+
+#: WebSearch/settings_ui_manager.py:201
+msgid "Show Links From the Notes"
+msgstr "Näytä lisätietojen linkit"
+
+#: WebSearch/settings_ui_manager.py:209
+msgid "Enable AI-generated historical place data"
+msgstr "Hyödynnä tekoälyn luomia historiallisia paikkatietoja"
+
+#: WebSearch/settings_ui_manager.py:215
+msgid "Custom country code for AI notes (optional)"
+msgstr "Mukautettu maakoodi tekoälylisätietoja verten (valinnainen)"
+
+#: WebSearch/settings_ui_manager.py:244
+msgid "Enable CSV Files"
+msgstr "Hyödynnä CSV-tiedostoja"
+
+#: WebSearch/settings_ui_manager.py:251
+msgid "Display Columns"
+msgstr "Näytä sarakkeet"
+
+#: WebSearch/settings_ui_manager.py:265
+msgid "Display Icons"
+msgstr "Näytä kuvakkeet"
 
 #: WordleGramplet/WordleGramplet.gpr.py:4
 #: WordleGramplet/WordleGramplet.gpr.py:10
@@ -23374,334 +24378,6 @@ msgstr "Kirjainkokojen määrä"
 msgid "Select filter to restrict list"
 msgstr "Valitse suodatin luettelon rajaamiseksi"
 
-#: activity_row_generator.py:110
-#, python-format
-msgid "Visited: %s"
-msgstr "Katsottu: %s"
-
-#: activity_row_generator.py:114 activity_row_generator.py:129
-#, python-format
-msgid "Link: %s"
-msgstr "Linkki: %s"
-
-#: activity_row_generator.py:116
-#, python-format
-msgid "Attribute: %s"
-msgstr "Ominaisuus: %s"
-
-#: activity_row_generator.py:118
-#, python-format
-msgid "Value: %s"
-msgstr "Arvo: %s"
-
-#: activity_row_generator.py:123
-#, python-format
-msgid "Loaded from file: %s"
-msgstr "Ladattu tiedostosta: %s"
-
-#: activity_row_generator.py:126
-#, python-format
-msgid "Domain: %s"
-msgstr "Domain: %s"
-
-#: activity_row_generator.py:131
-#, python-format
-msgid "Object: %s"
-msgstr "Kohde: %s"
-
-#: activity_row_generator.py:135
-#, python-format
-msgid "Pattern: %s"
-msgstr "Kuvio: %s"
-
-#: activity_row_generator.py:138
-#, python-format
-msgid "Object Gramps ID: %s"
-msgstr "Kohteen Gramps ID: %s"
-
-#: activity_row_generator.py:142
-#, python-format
-msgid "%s: %s → %s: %s"
-msgstr "%s: %s → %s: %s"
-
-#: activity_row_generator.py:152
-msgid "Link visited"
-msgstr "Vierailtu linkki"
-
-#: activity_row_generator.py:153
-msgid "Link saved to Note"
-msgstr "Linkki tallennettu lisätietoihin"
-
-#: activity_row_generator.py:154
-msgid "Link saved to Attribute"
-msgstr "Linkki tallennettu ominaisuutena"
-
-#: activity_row_generator.py:155
-msgid "Place history loaded"
-msgstr "Paikkahistoria ladattu"
-
-#: activity_row_generator.py:156
-msgid "Domain skipped"
-msgstr "Verkkotunnus ohitettu"
-
-#: activity_row_generator.py:157
-msgid "Link hidden for object"
-msgstr "Linkki piilotettu kohteelta"
-
-#: activity_row_generator.py:158
-msgid "Link hidden for all objects"
-msgstr "Linkki piilotettu kaikilta kohteilta"
-
-#: activity_row_generator.py:159
-msgid "Attribute updated"
-msgstr "Ominaisuus päivitetty"
-
-#: activity_row_generator.py:160
-msgid "Note updated"
-msgstr "Lisätieto päivitetty"
-
-#: constants.py:390
-msgid "Column - Icons"
-msgstr "Sarake - Kuvakkeet"
-
-#: constants.py:391
-msgid "Column - Source Types (flags)"
-msgstr "Sarake - Lähdetyypit (liput)"
-
-#: constants.py:392
-msgid "Column - Keys"
-msgstr "Sarake - Avaimet"
-
-#: constants.py:393
-msgid "Column - Title"
-msgstr "Sarake - Otsikko"
-
-#: constants.py:394
-msgid "Column - Website Url"
-msgstr "Sarake - Verkkosivuston URL-osoite"
-
-#: constants.py:395
-msgid "Column - Comment"
-msgstr "Sarake - Kommentti"
-
-#: constants.py:424
-msgid "Icon - Visited URLs (checkmark)"
-msgstr "Kuvake - Vieraillut URL-osoitteet (valintamerkki)"
-
-#: constants.py:425
-msgid "Icon - Saved URLs (floppy disk)"
-msgstr "Kuvake - Tallennetut URL-osoitteet (levyke)"
-
-#: constants.py:426
-msgid "Icon - URLs linked to UID attributes (UID badge)"
-msgstr "Kuvake - UID-attribuutteihin (UID-merkki) linkitetyt URL-osoitteet"
-
-#: constants.py:427
-msgid "Icon - URLs from regional CSV files (flag)"
-msgstr "Kuvake - URL-osoitteet alueen CSV-tiedostoista (lippu)"
-
-#: constants.py:428
-msgid "Icon - URLs from static CSV files (red pin)"
-msgstr "Kuvake - URL-osoitteet kiinteistä CSV-tiedostoista (punainen neula)"
-
-#: constants.py:429
-msgid "Icon - URLs from common CSV files (earth)"
-msgstr "Kuvake - URL-osoitteet yleisistä CSV-tiedostoista (maapallo)"
-
-#: constants.py:430
-msgid "Icon - URLs from cross CSV files (shuffle arrows)"
-msgstr "Kuvake - URL-osoitteet CSV-tiedostojen kesken (sekoitusnuolet)"
-
-#: constants.py:431
-msgid "Icon - URLs from custom user directory (spreadsheet icon)"
-msgstr ""
-"Kuvake - URL-osoitteet käyttäjän mukautetusta hakemistosta (laskentataulukon "
-"kuvake)"
-
-#: constants.py:432
-msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr "Kuvake – Ominaisuudet-välilehden URL-osoitteet ('A'-kuvake)"
-
-#: constants.py:433
-msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr "Kuvake – Internet-välilehden URL-osoitteet ('I'-kuvake)"
-
-#: constants.py:434
-msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr "Kuvake – Lisätiedot-välilehden URL-osoitteet ('N'-kuvake)"
-
-#: info_panel.py:108
-msgid "## 🧩 About WebSearch"
-msgstr "## 🧩 Tietoja WebSearchistä"
-
-#: info_panel.py:111
-msgid ""
-"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
-"websites."
-msgstr ""
-"WebSearch on Grampsin Gramplet, joka auttaa sinua hakemaan sukututkimukseen "
-"liittyviä verkkosivustoja."
-
-#: info_panel.py:117
-msgid ""
-"It supports CSV-based link templates, AI-assisted site discovery, and direct "
-"integration with notes and attributes."
-msgstr ""
-"Se tukee CSV-pohjaisia linkkipohjia, tekoälyavusteista sivustojen etsintää "
-"ja suoraa integrointia muistiinpanoihin ja ominaisuuksiin."
-
-#: info_panel.py:125
-msgid "## ⚙️ System Information"
-msgstr "## ⚙️ Järjestelmätiedot"
-
-#: info_panel.py:128
-msgid "🔻 **Missing:** `qrcode`"
-msgstr "🔻 **Puuttuu:** `qrcode`"
-
-#: info_panel.py:130
-msgid "ℹ️ This Python library is not available in your system."
-msgstr "ℹ️ Tätä Python-kirjastoa ei ole saatavilla järjestelmässäsi."
-
-#: info_panel.py:133
-msgid "Without it, QR code generation will not work."
-msgstr "QR-koodien luonti ei toimi ilman sitä."
-
-#: info_panel.py:136
-msgid "💡 Usually installed with: `pip install qrcode[pil]`"
-msgstr "💡 Yleensä asennetaan komennolla: `pip install qrcode[pil]`"
-
-#: info_panel.py:140 info_panel.py:162 info_panel.py:181
-msgid ""
-"*Note: Some operating systems or environments may require alternative "
-"installation methods.*"
-msgstr ""
-"*Huomaa: Joissakin käyttöjärjestelmissä tai ympäristössä on käytetävä "
-"vaihtoehtoisia asennustapoja.*"
-
-#: info_panel.py:147
-msgid "🔻 **Missing:** `openai`"
-msgstr "🔻 **Puuttuu:** `openai`"
-
-#: info_panel.py:149
-msgid "ℹ️ This library is required for accessing OpenAI-based features."
-msgstr ""
-"ℹ️ Tämä kirjasto on tarpeen OpenAI-pohjaisten ominaisuuksien käyttämiseksi."
-
-#: info_panel.py:153
-msgid ""
-"Without it, AI-generated site suggestions and place history will be disabled."
-msgstr ""
-"Ilman sitä ei tekoälyn luomat sivustoehdotukset ja paikkahistoria ole "
-"käytettävissä."
-
-#: info_panel.py:158
-msgid "💡 Usually installed with: `pip install openai`"
-msgstr "💡 Asennetaan yleensä komennolla: `pip install openai`"
-
-#: info_panel.py:169
-msgid "🔻 **Missing:** `requests`"
-msgstr "🔻 **Puuttuu:** `pyynnöt`"
-
-#: info_panel.py:171
-msgid "ℹ️ This library is used to communicate with web APIs."
-msgstr "ℹ️ Tätä kirjastoa käytetään kommunikointiin web-rajapintojen kanssa."
-
-#: info_panel.py:174
-msgid "Without it, external data sources may not be accessible."
-msgstr "Ilman sitä ulkoiset tietolähteet eivät välttämättä ole käytettävissä."
-
-#: info_panel.py:177
-msgid "💡 Usually installed with: `pip install requests`"
-msgstr "💡 Tavallisesti asennetaan komennolla: `pip install requests`"
-
-#: info_panel.py:188
-msgid "## 📂 Data File Locations"
-msgstr "## 📂 Tiedostojen sijainnit"
-
-#: info_panel.py:191
-msgid ""
-"Below are the paths to system and user-defined data files used by WebSearch."
-msgstr ""
-"Alla on polut WebSearchin käyttämiin järjestelmän ja käyttäjän määrittämiin "
-"datatiedostoihin."
-
-#: info_panel.py:195
-msgid "#### CSV File Paths"
-msgstr "#### CSV-tiedostopolut"
-
-#: info_panel.py:197
-#, python-format
-msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
-msgstr ""
-"- **Järjestelmäpolku:** `{dir|%s}` – sisältää sisäänrakennetut CSV-tiedostot"
-
-#: info_panel.py:201
-#, python-format
-msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
-msgstr ""
-"- **Käyttäjän määrittämä polku:** `{dir|%s}` – käyttäjän mukautettuja CSV-"
-"tiedostoja varten"
-
-#: info_panel.py:205
-msgid "#### JSON File Paths"
-msgstr "#### JSON tiedostopolut"
-
-#: info_panel.py:208
-#, python-format
-msgid ""
-"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
-"file"
-msgstr ""
-"- **Järjestelmäpolku:** `{dir|%s}` – sisältää sisäänrakennetun "
-"attribute_mapping.json-tiedoston"
-
-#: info_panel.py:214
-#, python-format
-msgid ""
-"- **User-defined path:** `{dir|%s}` – for custom user-defined "
-"attribute_mapping.json file"
-msgstr ""
-"- **Käyttäjän määrittämä polku:** `{dir|%s}` – käyttäjän mukauttamille "
-"attribute_mapping.json-tiedostolle"
-
-#: info_panel.py:221
-msgid "  💡 *Tip: click any path above to open it in your file manager.*"
-msgstr ""
-"  💡 *Vinkki: avaa tiedostonhallinnassa napsauttamalla valitsemaasi polkua "
-"yllä*"
-
-#: info_panel.py:224
-msgid "📖 View detailed usage in: "
-msgstr "📖 Katso yksityiskohtainen ohje: "
-
-#: info_panel.py:233
-msgid "## 💬 Support"
-msgstr "## 💬 Tuki"
-
-#: info_panel.py:234
-msgid "👤 Created and maintained by Yurii Liubymyi"
-msgstr "👤 Luonut ja ylläpitänyt Yurii Liubymyi"
-
-#: info_panel.py:237
-msgid ""
-"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
-"forum:"
-msgstr ""
-"💬 Jos tarvitset apua tai palautetta, mainitse `@Urchello` Gramps-foorumilla:"
-
-#: info_panel.py:245
-msgid "✅ Bug reports and feature requests are completely **free of charge**."
-msgstr "✅ Virheilmoitukset ja ominaisuuspyynnöt ovat täysin **ilmaisia**."
-
-#: info_panel.py:255
-#, python-format
-msgid "🧩 WebSearch Gramplet version: `%s`"
-msgstr "🧩 WebSearch Gramplet versio: `%s`"
-
-#: internet_links_loader.py:70 internet_links_loader.py:71
-msgid "No title"
-msgstr "Ei nimeä"
-
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
 msgstr "Yleiskirjasto tietokannan ja gen.lib-tiedoston käyttämiseksi."
@@ -23718,7 +24394,7 @@ msgstr "libaccess muokkaa henkilöä"
 msgid "Library for web site collections"
 msgstr "Verkkosivustojen kokoelmakirjasto"
 
-#: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
+#: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:20
 msgid "etree"
 msgstr "etree"
 
@@ -23726,65 +24402,72 @@ msgstr "etree"
 msgid "Gramplet for testing etree with Gramps XML"
 msgstr "Gramplet etreen testaamiseen Gramps XML:n kanssa"
 
-#: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
+#: lxml/etreeGramplet.py:83 lxml/lxmlGramplet.py:115
 msgid "Invalid timestamp"
 msgstr "Virheellinen aikaleima"
 
-#: lxml/etreeGramplet.py:139
-msgid "No file parsed..."
-msgstr "Tiedostoa ei jäsennetty..."
+#: lxml/etreeGramplet.py:130 lxml/lxmlGramplet.py:173
+msgid ""
+"Select a Gramps XML file and\n"
+" click on the Run button."
+msgstr ""
 
-#: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
-msgid "Number of editions back"
+#: lxml/etreeGramplet.py:155 lxml/lxmlGramplet.py:197
+msgid "No file loaded..."
+msgstr "Tiedostoa ei ole ladattu..."
+
+#: lxml/etreeGramplet.py:203 lxml/etreeGramplet.py:209
+#, fuzzy
+#| msgid "Number of editions back"
+msgid "Number of additions and modifications back"
 msgstr "Palautettujen painosten määrä"
 
-#: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
-#, python-format
-msgid "Please fix space on \"%s\""
-msgstr "Korjaa väli kohdassa ”%s”"
+#: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
+#, fuzzy
+#| msgid "No source information found"
+msgid "Print more informations on console"
+msgstr "Ei lähdetietoja"
 
-#: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
-msgid "Space character on filename"
-msgstr "Tiedostonimessä välilyönti"
-
-#: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
-msgid "Sorry, no support for your OS yet!"
-msgstr "Valitettavasti käyttöjärjestelmällesi ei ole vielä tukea!"
-
-#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
+#: lxml/etreeGramplet.py:254
 #, python-format
 msgid "Cannot uncompress \"%s\""
 msgstr "Pakkausta ”%s” ei voi purkaa"
 
-#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
+#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:334
 msgid "Is it a compressed .gramps?"
 msgstr "Onko se pakattu .gramps?"
 
-#: lxml/etreeGramplet.py:256 lxml/etreeGramplet.py:263 lxml/lxmlGramplet.py:278
-#: lxml/lxmlGramplet.py:286
-#, python-format
-msgid ""
-"From:\n"
-" \"%(file1)s\"\n"
-" to:\n"
-" \"%(file2)s\".\n"
-msgstr ""
-"Tiedostosta:\n"
-" ”%(file1)s”\n"
-" tiedostoon:\n"
-" ”%(file2)s”.\n"
-
-#: lxml/etreeGramplet.py:261 lxml/lxmlGramplet.py:283
+#: lxml/etreeGramplet.py:265
 #, python-format
 msgid "Cannot copy \"%s\""
 msgstr "\"%s\" ei voi kopioida"
 
-#: lxml/etreeGramplet.py:418
+#: lxml/etreeGramplet.py:265 lxml/lxmlGramplet.py:348
+#, fuzzy
+#| msgid "Is it a compressed .gramps?"
+msgid "Is it a .gramps?"
+msgstr "Onko se pakattu .gramps?"
+
+#: lxml/etreeGramplet.py:282
+msgid "Sorry, no support for your OS yet!"
+msgstr "Valitettavasti käyttöjärjestelmällesi ei ole vielä tukea!"
+
+#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:420
 #, python-format
-msgid "XML: Last %s editions since %s, were at/on :\n"
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "Tiedoston \"%(file)s\" sisältöä ei voi jäsentää"
+
+#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:420
+msgid "Parsing issue"
+msgstr "Jäsennysongelma"
+
+#: lxml/etreeGramplet.py:498
+#, fuzzy, python-format
+#| msgid "XML: Last %s editions since %s, were at/on :\n"
+msgid "XML: Last %s additions and modifications since %s, were on :\n"
 msgstr "XML: Viimeiset %s versiot %s:n jälkeen, olivat/on :\n"
 
-#: lxml/etreeGramplet.py:471
+#: lxml/etreeGramplet.py:554
 #, python-format
 msgid ""
 "\n"
@@ -23795,115 +24478,151 @@ msgstr ""
 "XML: Tietueiden ja suhteiden lukumäärä:\t%s\n"
 "\n"
 
-#: lxml/etreeGramplet.py:474
-#, python-format
+#: lxml/etreeGramplet.py:557
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of tags : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of tags : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Tagien määrä : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:476
-#, python-format
+#: lxml/etreeGramplet.py:559
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of tags : \n"
+#| "\t\t\t%s\n"
 msgid ""
 "Number of tags : \n"
-"\t\t\t%s\n"
+"\t\t\t%06s\n"
 msgstr ""
 "Tagit : \n"
 "\t\t\t%s\n"
 
-#: lxml/etreeGramplet.py:478
-#, python-format
+#: lxml/etreeGramplet.py:561
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of  events : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of  events : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Tapahtumien määrä : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:481
-#, python-format
+#: lxml/etreeGramplet.py:564
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of persons : \n"
+#| "\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
 msgid ""
 "Number of persons : \n"
-"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+"\t\t\t%06s\t|\t(%06s) and (%06s)* surnames\n"
 msgstr ""
 "Henkilömäärä : \n"
 "\t\t\t%s\t|\t(%s) ja (%s)* sukunimeä\n"
 
-#: lxml/etreeGramplet.py:483
-#, python-format
+#: lxml/etreeGramplet.py:566
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of persons : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of persons : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Henkilömäärä : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:484
-#, python-format
+#: lxml/etreeGramplet.py:567
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of families : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of families : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Perheitä : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:485
-#, python-format
+#: lxml/etreeGramplet.py:568
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of sources : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of sources : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Lähteitä : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:487
-#, python-format
+#: lxml/etreeGramplet.py:570
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of citations : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of citations : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Lainauksia : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:490
-#, python-format
+#: lxml/etreeGramplet.py:573
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of places : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of places : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Paikkoja : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:491
-#, python-format
+#: lxml/etreeGramplet.py:574
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of media objects : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of media objects : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Mediatiedostoja : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:492
-#, python-format
+#: lxml/etreeGramplet.py:575
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of repositories : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of repositories : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Arkistoja : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:493
-#, python-format
+#: lxml/etreeGramplet.py:576
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of notes : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of notes : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Lisätietoja : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:498
+#: lxml/etreeGramplet.py:581
 #, python-format
 msgid ""
 "\n"
@@ -23912,7 +24631,7 @@ msgstr ""
 "\n"
 "XML: Lisätietueiden ja -suhteiden määrä: \t%s\n"
 
-#: lxml/etreeGramplet.py:502
+#: lxml/etreeGramplet.py:585
 #, python-format
 msgid ""
 "* loaded Family Tree base:\n"
@@ -23921,7 +24640,7 @@ msgstr ""
 "* ladattu Sukupuu:\n"
 " \"%s\"\n"
 
-#: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
+#: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:20
 msgid "lxml"
 msgstr "lxml"
 
@@ -23929,375 +24648,337 @@ msgstr "lxml"
 msgid "Gramplet for testing lxml and XSLT"
 msgstr "Gramplet lxml- ja XSLT-testaukseen"
 
-#: lxml/lxmlGramplet.py:67
+#: lxml/lxmlGramplet.py:72
 msgid "\"gzip\" is missing"
 msgstr "”gzip” puuttuu"
 
-#: lxml/lxmlGramplet.py:67
+#: lxml/lxmlGramplet.py:72
 msgid "Where is gzip?"
 msgstr "Missä on gzip?"
 
-#: lxml/lxmlGramplet.py:89
+#: lxml/lxmlGramplet.py:94
 msgid "Missing python3 lxml"
 msgstr "Python3 lxml puuttuu"
 
-#: lxml/lxmlGramplet.py:89
+#: lxml/lxmlGramplet.py:94
 msgid "Please, try to install \"python3 lxml\" package."
 msgstr "Yritä asentaa ”python3 lxml” -paketti."
 
-#: lxml/lxmlGramplet.py:164
-msgid "No file loaded..."
-msgstr "Tiedostoa ei ole ladattu..."
+#: lxml/lxmlGramplet.py:255 lxml/lxmlGramplet.py:273 lxml/lxmlGramplet.py:749
+#, fuzzy
+#| msgid "Filter options"
+msgid "xmllint options"
+msgstr "Suodinvalinnat"
 
-#: lxml/lxmlGramplet.py:298
-#, python-format
-msgid "Cannot validate \"%(file)s\" !"
-msgstr "\"%(file)s\" ei voi tarkistaa!"
+#: lxml/lxmlGramplet.py:264 lxml/lxmlGramplet.py:282
+#, fuzzy
+#| msgid "Legacy place"
+msgid "debug places"
+msgstr "Vanhempi paikka"
 
-#: lxml/lxmlGramplet.py:298
+#: lxml/lxmlGramplet.py:265 lxml/lxmlGramplet.py:283
+msgid "debug xml"
+msgstr ""
+
+#: lxml/lxmlGramplet.py:382
 msgid "XSD validation (lxml)"
 msgstr "XSD-tarkistus (lxml)"
 
-#: lxml/lxmlGramplet.py:306
+#: lxml/lxmlGramplet.py:390
 #, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
 msgstr "xmllint: ohita DTD-tarkistus kohteelle \"%(file)s\""
 
-#: lxml/lxmlGramplet.py:318
+#: lxml/lxmlGramplet.py:407
 #, python-format
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
 msgstr "xmllint: ohita RelaxNG-tarkistus kohteelle \"%(file)s\""
 
-#: lxml/lxmlGramplet.py:329
-#, python-format
-msgid "Cannot parse content of \"%(file)s\""
-msgstr "Tiedoston \"%(file)s\" sisältöä ei voi jäsentää"
-
-#: lxml/lxmlGramplet.py:329
-msgid "Parsing issue"
-msgstr "Jäsennysongelma"
-
-#: lxml/lxmlGramplet.py:333
-msgid "Gramps version"
-msgstr "Gramps versio"
-
-#: lxml/lxmlGramplet.py:333
-#, python-format
-msgid ""
-"Wrong namespace\n"
-"Need: %s"
+#: lxml/lxmlGramplet.py:423
+msgid "Custom \"test.xml\" file"
 msgstr ""
-"Virheellinen nimitila\n"
-"Tarvitaan: %s"
 
-#: lxml/lxmlGramplet.py:337
+#: lxml/lxmlGramplet.py:423
+msgid "Please try to fix \"test.xml\""
+msgstr ""
+
+#: lxml/lxmlGramplet.py:432
 #, python-format
 msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
 msgstr "Tiedostoa %(file)s ei voi tarkistaa RelaxNG-skeeman kautta"
 
-#: lxml/lxmlGramplet.py:337
+#: lxml/lxmlGramplet.py:432
 msgid "RelaxNG validation"
 msgstr "RelaxNG tarkistus"
 
-#: lxml/lxmlGramplet.py:341
+#: lxml/lxmlGramplet.py:445
 #, python-format
 msgid "Cannot parse \"%(file)s\" via etree"
 msgstr "\"%(file)s\" ei voi jäsentää etreen kautta"
 
-#: lxml/lxmlGramplet.py:341
+#: lxml/lxmlGramplet.py:445
 msgid "File issue"
 msgstr "Tiedosto-ongelma"
 
-#: lxml/lxmlGramplet.py:359
+#: lxml/lxmlGramplet.py:484
 msgid "Parsing file..."
 msgstr "Tiedoston jäsentäminen ..."
 
-#: lxml/lxmlGramplet.py:456
+#: lxml/lxmlGramplet.py:569
+#, python-format
+msgid " - (%(lang)s)"
+msgstr ""
+
+#: lxml/lxmlGramplet.py:572
+#, python-format
+msgid " - (? or %(lang)s)"
+msgstr ""
+
+#: lxml/lxmlGramplet.py:609
 msgid "Missing header"
 msgstr "Otsikko puuttuu"
 
-#: lxml/lxmlGramplet.py:456
+#: lxml/lxmlGramplet.py:609 lxml/lxmlGramplet.py:719
+#, fuzzy
+#| msgid ""
+#| "Not a valid .gramps.\n"
+#| "Cannot run the gramplet...\n"
+#| "Please, try to use a .gramps\n"
+#| "generated by Gramps 4.x."
 msgid ""
 "Not a valid .gramps.\n"
 "Cannot run the gramplet...\n"
 "Please, try to use a .gramps\n"
-"generated by Gramps 4.x."
+"generated by Gramps 6.x."
 msgstr ""
 "Ei kelvollinen .gramps.\n"
 "Grampletia ei voi ajaa...\n"
 "Yritä käyttää .gramps\n"
 "joka on luotu Gramps 4.x:llä."
 
-#: lxml/lxmlGramplet.py:469 lxml/lxmlGramplet.py:474 lxml/lxmlGramplet.py:479
-#: lxml/lxmlGramplet.py:484
+#: lxml/lxmlGramplet.py:622 lxml/lxmlGramplet.py:627 lxml/lxmlGramplet.py:632
+#: lxml/lxmlGramplet.py:637
 msgid "0"
 msgstr "0"
 
-#: lxml/lxmlGramplet.py:495
+#: lxml/lxmlGramplet.py:652
 msgid "File parsed with"
 msgstr "Tiedosto jäsennetty"
 
-#: lxml/lxmlGramplet.py:498
+#: lxml/lxmlGramplet.py:654
 msgid " by Gramps "
 msgstr " Grampsilla "
 
-#: lxml/lxmlGramplet.py:498
+#: lxml/lxmlGramplet.py:654
 msgid "File was generated on "
 msgstr "Tiedosto luotiin "
 
-#: lxml/lxmlGramplet.py:500
+#: lxml/lxmlGramplet.py:656
 msgid "Period: "
 msgstr "Jakso: "
 
-#: lxml/lxmlGramplet.py:502
-msgid " entries for surname(s); no frequency yet"
+#: lxml/lxmlGramplet.py:659 lxml/lxmlGramplet.py:663
+#, fuzzy, python-brace-format
+#| msgid "Ref: {number}. {name}"
+msgid "\t{number} surname"
+msgid_plural "\t{number} surnames; no frequency yet\n"
+msgstr[0] "Ref: {number}. {name}"
+msgstr[1] "Ref: {number}. {name}"
+
+#: lxml/lxmlGramplet.py:659
+#, fuzzy, python-brace-format
+#| msgid " entries for surname(s); no frequency yet"
+msgid "\t{number} surname; no frequency yet"
 msgstr " merkinnät sukunimille; ei vielä frekvenssiä"
 
-#: lxml/lxmlGramplet.py:503
-msgid " entries for place(s)"
-msgstr " paikan (paikkojen) merkinnät"
+#: lxml/lxmlGramplet.py:660 lxml/lxmlGramplet.py:667
+#, fuzzy, python-brace-format
+#| msgid "Ref: {number}. {name}"
+msgid "\t{number} place"
+msgid_plural "\t{number} places\n"
+msgstr[0] "Ref: {number}. {name}"
+msgstr[1] "Ref: {number}. {name}"
 
-#: lxml/lxmlGramplet.py:504
-msgid " note(s)"
-msgstr " lisätietodot"
+#: lxml/lxmlGramplet.py:661 lxml/lxmlGramplet.py:671
+#, fuzzy, python-brace-format
+#| msgid "Ref: {number}. {name}"
+msgid "\t{number} note"
+msgid_plural "\t{number} notes\n"
+msgstr[0] "Ref: {number}. {name}"
+msgstr[1] "Ref: {number}. {name}"
 
-#: lxml/lxmlGramplet.py:505
-msgid " source(s)"
-msgstr " lähteet"
+#: lxml/lxmlGramplet.py:675
+#, fuzzy, python-brace-format
+#| msgid "New source"
+msgid "\t{number} source"
+msgid_plural "\t{number} sources\n"
+msgstr[0] "Uusi lähde"
+msgstr[1] "Uusi lähde"
 
-#: lxml/lxmlGramplet.py:521 lxml/lxmlGramplet.py:717
+#: lxml/lxmlGramplet.py:694 lxml/lxmlGramplet.py:919
 msgid "Gallery.html"
 msgstr "Galleria.html"
 
-#: lxml/lxmlGramplet.py:522
-#, python-format
-msgid "2. Has generated a media index on \"%(file)s\".\n"
+#: lxml/lxmlGramplet.py:695
+#, fuzzy, python-format
+#| msgid "2. Has generated a media index on \"%(file)s\".\n"
+msgid "1. Has generated a media index on \"%(file)s\".\n"
 msgstr "2. On luonut mediahakemiston kohteelle \"%(file)s\".\n"
 
-#: lxml/lxmlGramplet.py:525
-#, python-format
-msgid "3. Has written entries into \"%(file)s\".\n"
-msgstr "3. On kirjoitettu merkintöjä kohtaan \"%(file)s\".\n"
+#: lxml/lxmlGramplet.py:719
+msgid "XML SyntaxError"
+msgstr ""
 
-#: lxml/lxmlGramplet.py:544
+#: lxml/lxmlGramplet.py:723
 msgid "Matches XSD schema."
 msgstr "Vastaa XSD-skeemaa."
 
-#: lxml/lxmlGramplet.py:565
+#: lxml/lxmlGramplet.py:763
 msgid "xmllint: skip DTD validation"
 msgstr "xmllint: ohita DTD-validointi"
 
-#: lxml/lxmlGramplet.py:589
+#: lxml/lxmlGramplet.py:787
 msgid "I am looking at ..."
 msgstr "Tarkastelen ..."
 
-#: lxml/lxmlGramplet.py:590
+#: lxml/lxmlGramplet.py:788
 msgid "Content generated by Gramps"
 msgstr "Sisältö tuotettu Grampsissa"
 
-#: lxml/lxmlGramplet.py:593
+#: lxml/lxmlGramplet.py:791
 msgid "List of sources"
 msgstr "Lähdeluettelo"
 
-#: lxml/lxmlGramplet.py:611
+#: lxml/lxmlGramplet.py:810
 msgid "Australia"
 msgstr "Australia"
 
-#: lxml/lxmlGramplet.py:612
+#: lxml/lxmlGramplet.py:811
 msgid "Brazil"
 msgstr "Brasilia"
 
-#: lxml/lxmlGramplet.py:623
+#: lxml/lxmlGramplet.py:822
 msgid "India"
 msgstr "Intia"
 
-#: lxml/lxmlGramplet.py:625
+#: lxml/lxmlGramplet.py:824
 msgid "Norway"
 msgstr "Norja"
 
-#: lxml/lxmlGramplet.py:626
+#: lxml/lxmlGramplet.py:825
 msgid "Portugal"
 msgstr "Portugali"
 
-#: lxml/lxmlGramplet.py:695
-#, python-format
-msgid "1. Has generated \"%s\".\n"
+#: lxml/lxmlGramplet.py:896
+#, fuzzy, python-format
+#| msgid "1. Has generated \"%s\".\n"
+msgid "2. Has generated \"%s\".\n"
 msgstr "1. Tuottanut \"%s\".\n"
 
-#: lxml/lxmlGramplet.py:696
-#, python-format
+#: lxml/lxmlGramplet.py:898
+#, fuzzy, python-format
+#| msgid ""
+#| "Try to open\n"
+#| " \"%s\"\n"
+#| " into your prefered web navigator ..."
 msgid ""
 "Try to open\n"
 " \"%s\"\n"
-" into your prefered web navigator ..."
+" into your preferred web navigator ..."
 msgstr ""
 "Yritä avata\n"
 " \"%s\"\n"
 " suosikkiselaimessasi ..."
 
-#: markdown_place_history_formatter.py:52
-msgid "No data available."
-msgstr "Ei tietoja saatavilla."
+#~ msgid "can't found it because exiv2 not installed"
+#~ msgstr "ei löydy, koska exiv2:ta ei ole asennettu"
 
-#: markdown_place_history_formatter.py:57
-msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
-msgstr "HISTORIALLISET HALLINNOLLISET OSAT"
+#~ msgid "Why, when same code works in Graphview"
+#~ msgstr "Miksi, kun sama koodi toimii Graphview'ssa"
 
-#: markdown_place_history_formatter.py:58
-msgid "Foundation date:"
-msgstr "Perustamispäivä:"
+#~ msgid "Primary Name"
+#~ msgstr "Ensisijainen nimi"
 
-#: markdown_place_history_formatter.py:60
-msgid "Coordinates:"
-msgstr "Koordinaatit:"
+#~ msgid "Select All"
+#~ msgstr "Valitse kaikki"
 
-#: markdown_place_history_formatter.py:61
-msgid "Administrative history"
-msgstr "Hallinnollinen historia"
+#~ msgid "Database change detected"
+#~ msgstr "Tietokannan muutos havaittu"
 
-#: markdown_place_history_formatter.py:62
-msgid "Data provided to AI:"
-msgstr "Tekoälylle toimitetut tiedot:"
+#, python-format
+#~ msgid "Clipboard Gramplet: %s"
+#~ msgstr "Leikepöytä-Gramplet: %s"
 
-#: markdown_place_history_formatter.py:64
-msgid "Full hierarchy"
-msgstr "Koko hierarkia"
+#~ msgid "Include Addresses"
+#~ msgstr "Näytä osoitteet"
 
-#: markdown_place_history_formatter.py:68
-msgid "Place Type:"
-msgstr "Paikan tyyppi:"
+#~ msgid "Modified"
+#~ msgstr "Muutettu"
 
-#: markdown_place_history_formatter.py:69
-msgid "Last Retrieved At:"
-msgstr "Viimeksi noudettu:"
+#~ msgid "Ancestor generations"
+#~ msgstr "Esivanhempien sukupolvien enimmäismäärä"
 
-#: note_links_loader.py:69
-msgid "Note Link (parsed)"
-msgstr "Linkki lisätietoihin (jäsennetty)"
+#~ msgid "Descendant generations"
+#~ msgstr "Jälkeläissukupolvien enimmäismäärä"
 
-#: note_links_loader.py:124
-msgid "Note Link (internal)"
-msgstr "Linkki lisätietoihin (sisäinen)"
+#~ msgid "Different"
+#~ msgstr "Erilainen"
 
-#: note_links_loader.py:127
-msgid "Note Link (external)"
-msgstr "Linkki lisätietoihin (ulkoinen)"
+#~ msgid "Export"
+#~ msgstr "Vie"
 
-#: qr_window.py:88
-msgid "QR-code"
-msgstr "QR-koodi"
+#~ msgid "Overview"
+#~ msgstr "Yleiskatsaus"
 
-#: qr_window.py:119 qr_window.py:122
-msgid "⚠ Missing dependency \"qrcode\""
-msgstr "⚠ Riippuvuus \"qrcode\" puuttuu"
+#~ msgid "No file parsed..."
+#~ msgstr "Tiedostoa ei jäsennetty..."
 
-#: qr_window.py:133
-msgid ""
-"⚠ Error generating QR code:\n"
-"Original error: “{}”"
-msgstr ""
-"⚠ Virhe QR-koodissa:\n"
-"Alkuperäinen virhe: “{}”"
+#, python-format
+#~ msgid "Please fix space on \"%s\""
+#~ msgstr "Korjaa väli kohdassa ”%s”"
 
-#: settings_ui_manager.py:112
-msgid "Middle Name Handling"
-msgstr "Toisen nimen käsittely"
+#~ msgid "Space character on filename"
+#~ msgstr "Tiedostonimessä välilyönti"
 
-#: settings_ui_manager.py:117
-msgid "Leave alone"
-msgstr "Jätä rauhaan"
+#, python-format
+#~ msgid ""
+#~ "From:\n"
+#~ " \"%(file1)s\"\n"
+#~ " to:\n"
+#~ " \"%(file2)s\".\n"
+#~ msgstr ""
+#~ "Tiedostosta:\n"
+#~ " ”%(file1)s”\n"
+#~ " tiedostoon:\n"
+#~ " ”%(file2)s”.\n"
 
-#: settings_ui_manager.py:118
-msgid "Separate"
-msgstr "Erilliset"
+#, python-format
+#~ msgid "Cannot validate \"%(file)s\" !"
+#~ msgstr "\"%(file)s\" ei voi tarkistaa!"
 
-#: settings_ui_manager.py:128
-msgid "URL Compactness Level"
-msgstr "URL-osoitteen tiiviystaso"
+#~ msgid "Gramps version"
+#~ msgstr "Gramps versio"
 
-#: settings_ui_manager.py:134
-msgid "Shortest - No Prefix, No Keys"
-msgstr "Lyhin - ei etuliitettä eikä avaimia"
+#, python-format
+#~ msgid ""
+#~ "Wrong namespace\n"
+#~ "Need: %s"
+#~ msgstr ""
+#~ "Virheellinen nimitila\n"
+#~ "Tarvitaan: %s"
 
-#: settings_ui_manager.py:137
-msgid "Compact - No Prefix, Keys Without Attributes"
-msgstr "Kompakti - Ei etuliitettä, avaimet ilman ominaisuuksia"
+#~ msgid " entries for place(s)"
+#~ msgstr " paikan (paikkojen) merkinnät"
 
-#: settings_ui_manager.py:140
-msgid "Compact - No Prefix, Keys With Attributes"
-msgstr "Kompakti - Ei etuliitettä, avaimet ominaisuuksilla"
+#~ msgid " note(s)"
+#~ msgstr " lisätietodot"
 
-#: settings_ui_manager.py:143
-msgid "Long - Without Prefix on the Left"
-msgstr "Pitkä - ilman etuliitettä vasemmalla"
+#~ msgid " source(s)"
+#~ msgstr " lähteet"
 
-#: settings_ui_manager.py:150
-msgid "URL Prefix Replacement"
-msgstr "URL-etuliitteen korvaaminen"
-
-#: settings_ui_manager.py:157
-msgid "AI Provider"
-msgstr "AI Provider"
-
-#: settings_ui_manager.py:162
-msgid "(Disabled)"
-msgstr "(Pois käytöstä)"
-
-#: settings_ui_manager.py:163
-msgid "OpenAI"
-msgstr "OpenAI"
-
-#: settings_ui_manager.py:164
-msgid "Mistral AI"
-msgstr "Mistral AI"
-
-#: settings_ui_manager.py:171
-msgid "OpenAI API Key"
-msgstr "OpenAI API avain"
-
-#: settings_ui_manager.py:176
-msgid "OpenAI Model"
-msgstr "OpenAI malli"
-
-#: settings_ui_manager.py:181
-msgid "Mistral API Key"
-msgstr "Mistral API avain"
-
-#: settings_ui_manager.py:186
-msgid "Mistral Model"
-msgstr "Mistral malli"
-
-#: settings_ui_manager.py:191
-msgid "Show Links From the 'Attributes' tab"
-msgstr "Näytä linkit ominaisuus välilehdeltä"
-
-#: settings_ui_manager.py:196
-msgid "Show Links From the 'Internet' tab"
-msgstr "Näytä linkit välilehdeltä 'Internet'"
-
-#: settings_ui_manager.py:201
-msgid "Show Links From the Notes"
-msgstr "Näytä lisätietojen linkit"
-
-#: settings_ui_manager.py:209
-msgid "Enable AI-generated historical place data"
-msgstr "Hyödynnä tekoälyn luomia historiallisia paikkatietoja"
-
-#: settings_ui_manager.py:215
-msgid "Custom country code for AI notes (optional)"
-msgstr "Mukautettu maakoodi tekoälylisätietoja verten (valinnainen)"
-
-#: settings_ui_manager.py:244
-msgid "Enable CSV Files"
-msgstr "Hyödynnä CSV-tiedostoja"
-
-#: settings_ui_manager.py:251
-msgid "Display Columns"
-msgstr "Näytä sarakkeet"
-
-#: settings_ui_manager.py:265
-msgid "Display Icons"
-msgstr "Näytä kuvakkeet"
+#, python-format
+#~ msgid "3. Has written entries into \"%(file)s\".\n"
+#~ msgstr "3. On kirjoitettu merkintöjä kohtaan \"%(file)s\".\n"
 
 #, python-format
 #~ msgid ""

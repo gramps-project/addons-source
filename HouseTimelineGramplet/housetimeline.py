@@ -190,7 +190,7 @@ class HouseTimelineGramplet(Gramplet):
         elif house_type == "002":
             self.append_text(
                 " .___. \n" +
-                "/ \___\\ \n" +
+                "/ \\___\\ \n" +
                 "|_|_#_| \n" +
                 "                        \n"
             )

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-08-14 13:01+0000\n"
-"Last-Translator: Lajos Nemeséri <nemeseril@gmail.com>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-02-21 14:09+0000\n"
+"Last-Translator: Daniel Szollosi-Nagy <dsn-weblate@kdconsulting.net>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hu/>\n"
 "Language: hu\n"
@@ -12,7 +12,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
+
+msgid "Place Type:"
+msgstr "Hely típus:"
+
+msgid "WebSearch Link"
+msgstr "Web-Kereső hivatkozás"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Cím: {title}"
 
 msgid "WebSearch"
 msgstr "Web-Kereső"
@@ -36,13 +46,3 @@ msgstr "Minta:%s"
 #, python-format
 msgid "Object Gramps ID: %s"
 msgstr "GRAMPS azonosító objektum:%s"
-
-msgid "Place Type:"
-msgstr "Hely típus:"
-
-msgid "WebSearch Link"
-msgstr "Web-Kereső hivatkozás"
-
-#, python-brace-format
-msgid "Title: {title}"
-msgstr "Cím: {title}"

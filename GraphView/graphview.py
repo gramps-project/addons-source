@@ -108,18 +108,11 @@ for goo_ver in ('3.0', '2.0'):
         break
     except (ImportError, ValueError):
         _GOO = False
-if not _GOO:
-    raise Exception("Goocanvas 2 or 3 (http://live.gnome.org/GooCanvas) is "
-                    "required for this view to work")
 
 if os.sys.platform == "win32":
     _DOT_FOUND = search_for("dot.exe")
 else:
     _DOT_FOUND = search_for("dot")
-
-if not _DOT_FOUND:
-    raise Exception("GraphViz (http://www.graphviz.org) is "
-                    "required for this view to work")
 
 SPLINE = {0: 'false', 1: 'true', 2: 'ortho'}
 
@@ -553,7 +546,7 @@ class GraphView(NavigationView):
         """
         self.ancestor_generations = entry
         self.graph_widget.populate(self.get_active())
-    
+
     def cb_update_people_limit(self, _client, _cnxd_id, entry, _data):
         self.people_limit = entry
         self.graph_widget.populate(self.get_active())
@@ -3321,9 +3314,12 @@ class DotSvgGenerator(object):
         Add a link between two nodes.
         Gramps handles are used as nodes but need to be prefixed
         with an underscore because Graphviz does not like IDs
-        that begin with a number.
+        that begin with a number. The id is quoted because handles are
+        arbitrary schema-valid strings: Gramps-Web creates UUIDv4 handles
+        containing hyphens, which an unquoted Graphviz ID would split on
+        (bug 13832).
         """
-        self.write('  _%s -> _%s' % (id1, id2))
+        self.write('  "_%s" -> "_%s"' % (id1, id2))
 
         boldok = False
         if id1 in self.current_list:
@@ -3390,7 +3386,10 @@ class DotSvgGenerator(object):
             text += ' URL="%s"' % url
 
         text += " ]"
-        self.write(' _%s %s;\n' % (node_id, text))
+        # Quote the id: handles are arbitrary schema-valid strings, and
+        # Gramps-Web creates UUIDv4 handles with hyphens that an unquoted
+        # Graphviz ID would split on, blanking the graph (bug 13832).
+        self.write(' "_%s" %s;\n' % (node_id, text))
 
     def add_tags_tooltip(self, handle, tag_list):
         """
@@ -3407,7 +3406,11 @@ class DotSvgGenerator(object):
         Opens a subgraph which is used to keep together related nodes
         on the graph.
         """
-        self.write('\n subgraph cluster_%s\n' % graph_id)
+        # Quote the name: graph_id is a handle (see bug 13832); a UUIDv4
+        # handle with hyphens would break an unquoted subgraph name.
+        # Graphviz still treats a quoted name beginning with "cluster" as
+        # a cluster subgraph.
+        self.write('\n subgraph "cluster_%s"\n' % graph_id)
         self.write(' {\n')
         # no border around subgraph (#0002176)
         self.write('  style="invis";\n')

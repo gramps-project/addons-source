@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-10-31 18:02+0000\n"
-"Last-Translator: Alejandro Moctezuma <moctezumaalejandro25@gmail.com>\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 
 msgid "Select filter to restrict people"
 msgstr "Seleccione filtro para restringir las personas"
@@ -23,29 +23,44 @@ msgstr "Estimaciones de las fechas calculadas"
 msgid "Source to remove and/or add"
 msgstr "Fuente a eliminar y/o agregar"
 
+msgid "Remove previously added events, notes, and source"
+msgstr "Retira eventos, notas y fuente anteriormente agradados"
+
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
-"La eliminación de los eventos, notas y fuentes calculados; sucede "
-"inmediatamente al ejecutar"
+"Retira eventos, notas, y fuentes calculados; sucede inmediatamente al "
+"ejecutar"
 
 msgid "Do not add birth events"
-msgstr "No agregar nacimientos"
+msgstr "No agregar eventos de nacimiento"
+
+msgid "Add birth events without dates"
+msgstr "Agrega eventos de nacimiento sin fechas"
+
+msgid "Add birth events with dates"
+msgstr "Agrega evento de nacimiento con fechas"
 
 msgid "Add a birth events with or without estimated dates"
-msgstr "Agregar evento de nacimiento con o sin fechas estimadas"
+msgstr "Agrega un evento de nacimiento con o sin fechas estimadas"
 
 msgid "Do not add death events"
-msgstr "No agregar defunciones"
+msgstr "No agregar eventos de defunción"
+
+msgid "Add death events without dates"
+msgstr "Agrega eventos de defunción sin fechas"
+
+msgid "Add death events with dates"
+msgstr "Agregar eventos de defunción con fechas"
 
 msgid "Add death events with or without estimated dates"
-msgstr "Agregar eventos de defunción con o sin fechas estimadas"
+msgstr "Agrega eventos de defunción con o sin fechas estimadas"
 
 msgid "Maximum age"
 msgstr "Edad máxima"
 
 msgid "Maximum age that one can live to"
-msgstr "Edad máxima de una persona"
+msgstr "Edad máxima que uno puede vivir a"
 
 msgid "Maximum age difference between siblings"
 msgstr "Diferencia máxima de edad entre hermanos"
@@ -65,11 +80,50 @@ msgstr "Extremos (antes y después)"
 msgid "Dates on events are either about or after/before"
 msgstr "Las fechas de los eventos son anteriores o posteriores a los mismos"
 
+msgid ""
+"The Calculate Estimated Dates Tool is used to add and remove birth and death "
+"events for people that are missing these events.\n"
+"\n"
+"To use:\n"
+"1. Go to the Options tab\n"
+"2. Check the [ ] Remove option to remove previous estimates\n"
+"3. Select the Add date options to date events with or without dates\n"
+"4. Click on Execute\n"
+"5. Select the people with which to add events\n"
+"6. Click on 'Add Selected Events' button to create\n"
+"\n"
+"NOTES: if you decide to make an event permanent, remove it from the Source. "
+"Otherwise, it will get removed the next time you automatically remove these "
+"events.\n"
+"\n"
+"You may have to run the tool repeatedly (without removing previous events) "
+"to add all of the events possible."
+msgstr ""
+"La herramienta Calcular fechas estimadas se utiliza para añadir y eliminar "
+"eventos de nacimiento y defunción de personas que no tienen registrados "
+"estos eventos.\n"
+"\n"
+"Para usarla:\n"
+"1. Vaya a la pestaña Opciones.\n"
+"2. Marque la casilla [ ] Eliminar para borrar las estimaciones anteriores.\n"
+"3. Seleccione la opción Añadir fecha para incluir o no fechas en los "
+"eventos.\n"
+"4. Haga clic en Ejecutar.\n"
+"5. Seleccione las personas a las que desea añadir eventos.\n"
+"6. Haga clic en el botón «Agregar eventos seleccionados» para crearlos.\n"
+"\n"
+"NOTA: Si decide que un evento sea permanente, elimínelo de la fuente. De lo "
+"contrario, se eliminará automáticamente la próxima vez que elimine estos "
+"eventos.\n"
+"\n"
+"Es posible que tenga que ejecutar la herramienta varias veces (sin eliminar "
+"los eventos anteriores) para añadir todos los eventos posibles."
+
 msgid "Calculate Estimated Dates"
 msgstr "Calcular fechas estimadas"
 
 msgid "Select All"
-msgstr "Seleccionar todo"
+msgstr "Seleccionar Todo"
 
 msgid "Select None"
 msgstr "No seleccionar nada"
@@ -78,10 +132,20 @@ msgid "Toggle Selection"
 msgstr "Alternar selección"
 
 msgid "Add Selected Events"
-msgstr "Añadir eventos seleccionados"
+msgstr "Agregar eventos seleccionados"
 
 msgid "Remove Events, Notes, and Source and Reselect Data"
 msgstr "Eliminar eventos, notas y fuentes y volver a seleccionar datos"
+
+msgid ""
+"Are you sure you want to remove previous events, notes, and source and "
+"reselect data?"
+msgstr ""
+"¿Seguro que desea retirar eventos, notas, y fuentes anteriores y "
+"reseleccionar datos?"
+
+msgid "Remove and Run Select Again"
+msgstr "Retira y ejecuta selección de nuevo"
 
 msgid "Reselect Data"
 msgstr "Reseleccionar datos"
@@ -106,10 +170,10 @@ msgstr "Eliminando estimaciones antiguas... "
 
 #, python-format
 msgid "Removing '%s'..."
-msgstr "Quitando «%s»…"
+msgstr "Retira «%s»…"
 
 msgid "done!\n"
-msgstr "¡Hecho!\n"
+msgstr "¡hecho!\n"
 
 msgid ""
 "Selecting... \n"
@@ -118,16 +182,28 @@ msgstr ""
 "Seleccionando… \n"
 "\n"
 
+msgid "Add birth and death events"
+msgstr "Agrega eventos de nacimiento y defunción"
+
+msgid "Add birth event"
+msgstr "Agrega evento de nacimiento"
+
+msgid "Add death event"
+msgstr "Agrega evento de defunción"
+
+msgid "No events to be added."
+msgstr "No se agregó un evento."
+
 msgid "Selecting... "
 msgstr "Seleccionando… "
 
 #, python-format
 msgid "Adding events '%s'..."
-msgstr "Añadiendo eventos «%s»…"
+msgstr "Agregando eventos '%s'…"
 
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
-msgstr "Agregado nacimiento en base a %(evidence)s, de %(name)s"
+msgstr "Agregado evento de nacimiento en base a %(evidence)s, desde %(name)s"
 
 #, python-format
 msgid "Added birth event based on %s"
@@ -146,6 +222,9 @@ msgstr "Agregada defunción en base a %s"
 
 msgid "Estimated death date"
 msgstr "Fecha de defunción estimada"
+
+msgid " Done! Committing..."
+msgstr " ¡Listo! Efectuando cambios…"
 
 #, python-format
 msgid "Added %d events."

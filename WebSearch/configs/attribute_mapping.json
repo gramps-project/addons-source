@@ -31,6 +31,12 @@
   },
   {
     "nav_type": "Person",
+    "attribute_name": "WikiTreeID",
+    "url_regex": ".*apps\\.wikitree\\.com/apps/roots-search/.*",
+    "key_name": "WikiTree.ID"
+  },
+  {
+    "nav_type": "Person",
     "attribute_name": "GeniID",
     "url_regex": ".*geni\\.com/people/.*",
     "key_name": "Geni.ID"

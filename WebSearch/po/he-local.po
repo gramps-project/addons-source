@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-07-26 08:04+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-02-20 09:09+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.16.1-dev\n"
+
+msgid "No title"
+msgstr "ללא כותרת"
+
+msgid "No data available."
+msgstr "נתונים לא זמינים."
+
+msgid "Foundation date:"
+msgstr "תאריך יסוד:"
+
+msgid "Coordinates:"
+msgstr "נקודות־ציון:"
+
+msgid "Full hierarchy"
+msgstr "מדרג מלא"
+
+msgid "Place Type:"
+msgstr "סוג מקום:"
+
+msgid "Save Coordinates to the Place"
+msgstr "שמירת נקודות־ציון במקום"
+
+msgid "Add link to note"
+msgstr "הוספת קישור להערה"
+
+msgid "Add link to attribute"
+msgstr "הוספת קישור לתכונה"
+
+msgid "Show QR-code"
+msgstr "הצגת קוד־QR"
+
+msgid "WebSearch Link"
+msgstr "קישור חיפוש מרשתת"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "כותרת: {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "חילוף: {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "ריק: {keys}"
+
+msgid "Note Link (parsed)"
+msgstr "קישור הערה ( נותח)"
 
 msgid "Leave alone"
 msgstr "להניח לזה"
@@ -61,51 +109,3 @@ msgstr "היסטוריית מקום נטענה"
 
 msgid "Note updated"
 msgstr "הערה עודכנה"
-
-msgid "Note Link (parsed)"
-msgstr "קישור הערה ( נותח)"
-
-msgid "No title"
-msgstr "ללא כותרת"
-
-msgid "No data available."
-msgstr "נתונים לא זמינים."
-
-msgid "Foundation date:"
-msgstr "תאריך יסוד:"
-
-msgid "Coordinates:"
-msgstr "נקודות־ציון:"
-
-msgid "Full hierarchy"
-msgstr "מדרג מלא"
-
-msgid "Place Type:"
-msgstr "סוג מקום:"
-
-msgid "Save Coordinates to the Place"
-msgstr "שמירת נקודות־ציון במקום"
-
-msgid "Add link to note"
-msgstr "הוספת קישור להערה"
-
-msgid "Add link to attribute"
-msgstr "הוספת קישור לתכונה"
-
-msgid "Show QR-code"
-msgstr "הצגת קוד־QR"
-
-msgid "WebSearch Link"
-msgstr "קישור חיפוש מרשתת"
-
-#, python-brace-format
-msgid "Title: {title}"
-msgstr "כותרת: {title}"
-
-#, python-brace-format
-msgid "Replaced: {keys}"
-msgstr "חילוף: {keys}"
-
-#, python-brace-format
-msgid "Empty: {keys}"
-msgstr "ריק: {keys}"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "lxml"
 msgstr "lxml"
@@ -29,21 +29,21 @@ msgstr "Gramplet zum Testen von etree mit Gramps-XML"
 msgid "Invalid timestamp"
 msgstr "Ungültiger Zeitstempel"
 
-msgid "No file parsed..."
-msgstr "Keine Datei analysiert..."
+msgid ""
+"Select a Gramps XML file and\n"
+" click on the Run button."
+msgstr ""
+"Wähle eine Gramps-XML-Datei aus und\n"
+"klicke auf die Schaltfläche „Ausführen“."
 
-msgid "Number of editions back"
-msgstr "Anzahl der zurückliegenden Ausgaben"
+msgid "No file loaded..."
+msgstr "Keine Datei geladen..."
 
-msgid "Space character on filename"
-msgstr "Leerzeichen im Dateinamen"
+msgid "Number of additions and modifications back"
+msgstr "Anzahl der Ergänzungen und Änderungen zurück"
 
-#, python-format
-msgid "Please fix space on \"%s\""
-msgstr "Bitte korrigiere das Leerzeichen in „%s“"
-
-msgid "Sorry, no support for your OS yet!"
-msgstr "Entschuldigung, noch keine Unterstützung für dein Betriebssystem!"
+msgid "Print more informations on console"
+msgstr "Weitere Informationen auf der Konsole anzeigen"
 
 msgid "Is it a compressed .gramps?"
 msgstr "Ist es eine komprimierte .gramps?"
@@ -52,25 +52,26 @@ msgstr "Ist es eine komprimierte .gramps?"
 msgid "Cannot uncompress \"%s\""
 msgstr "Dekomprimierung von „%s“ nicht möglich"
 
-#, python-format
-msgid ""
-"From:\n"
-" \"%(file1)s\"\n"
-" to:\n"
-" \"%(file2)s\".\n"
-msgstr ""
-"Von:\n"
-" „%(file1)s”\n"
-" nach:\n"
-" „%(file2)s”.\n"
+msgid "Is it a .gramps?"
+msgstr "Ist das eine .gramps-Datei?"
 
 #, python-format
 msgid "Cannot copy \"%s\""
 msgstr "Kann „%s” nicht kopieren"
 
+msgid "Sorry, no support for your OS yet!"
+msgstr "Entschuldigung, noch keine Unterstützung für dein Betriebssystem!"
+
+msgid "Parsing issue"
+msgstr "Analyseproblem"
+
 #, python-format
-msgid "XML: Last %s editions since %s, were at/on :\n"
-msgstr "XML: Die letzten %s Ausgaben seit %s, waren am/am :\n"
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "Kann den Inhalt von „%(file)s” nicht analysieren"
+
+#, python-format
+msgid "XML: Last %s additions and modifications since %s, were on :\n"
+msgstr "XML: Die letzten %s Ergänzungen und Änderungen seit %s erfolgten am:\n"
 
 #, python-format
 msgid ""
@@ -85,98 +86,98 @@ msgstr ""
 #, python-format
 msgid ""
 "Number of tags : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Etiketten: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of tags : \n"
-"\t\t\t%s\n"
+"\t\t\t%06s\n"
 msgstr ""
 "Anzahl der Etiketten: \n"
-"\t\t\t%s\n"
+"\t\t\t%06s\n"
 
 #, python-format
 msgid ""
 "Number of  events : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Ereignisse: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of persons : \n"
-"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+"\t\t\t%06s\t|\t(%06s) and (%06s)* surnames\n"
 msgstr ""
 "Anzahl der Personen: \n"
-"\t\t\t%s\t|\t(%s) und (%s)* Nachnamen\n"
+"\t\t\t%06s\t|\t(%06s) und (%06s)* Nachnamen\n"
 
 #, python-format
 msgid ""
 "Number of persons : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Personen : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of families : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Familien : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of sources : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Quellen : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of citations : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Fundstellen : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of places : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Orte : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of media objects : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Medienobjekte : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of repositories : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Aufbewahrungsorte : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of notes : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Anzahl der Notizen: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
@@ -206,15 +207,17 @@ msgstr "Fehlende Python3 lxml"
 msgid "Please, try to install \"python3 lxml\" package."
 msgstr "Bitte versuche das Paket „python3 lxml” zu installieren."
 
-msgid "No file loaded..."
-msgstr "Keine Datei geladen..."
+msgid "xmllint options"
+msgstr "xmllint-Optionen"
+
+msgid "debug places"
+msgstr "Orte Fehlersuche"
+
+msgid "debug xml"
+msgstr "xml Fehlersuche"
 
 msgid "XSD validation (lxml)"
 msgstr "XSD-Prüfung (lxml)"
-
-#, python-format
-msgid "Cannot validate \"%(file)s\" !"
-msgstr "Kann „%(file)s” nicht prüfen!"
 
 #, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
@@ -224,23 +227,11 @@ msgstr "xmllint: überspringe DTD-Validierung für „%(file)s”"
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
 msgstr "xmllint: überspringe RelaxNG-Prüfung für „%(file)s”"
 
-msgid "Parsing issue"
-msgstr "Analyseproblem"
+msgid "Custom \"test.xml\" file"
+msgstr "Benutzerdefinierte „test.xml“-Datei"
 
-#, python-format
-msgid "Cannot parse content of \"%(file)s\""
-msgstr "Kann den Inhalt von „%(file)s” nicht analysieren"
-
-msgid "Gramps version"
-msgstr "Grampsversion"
-
-#, python-format
-msgid ""
-"Wrong namespace\n"
-"Need: %s"
-msgstr ""
-"Falscher Namensraum\n"
-"Benötige: %s"
+msgid "Please try to fix \"test.xml\""
+msgstr "Bitte versuche, „test.xml“ zu korrigieren"
 
 msgid "RelaxNG validation"
 msgstr "RelaxNG-Prüfung"
@@ -259,6 +250,14 @@ msgstr "Kann „%(file)s” nicht mit etree analysieren"
 msgid "Parsing file..."
 msgstr "Analysiere Datei..."
 
+#, python-format
+msgid " - (%(lang)s)"
+msgstr " - (%(lang)s)"
+
+#, python-format
+msgid " - (? or %(lang)s)"
+msgstr " - (? oder %(lang)s)"
+
 msgid "Missing header"
 msgstr "Fehlende Kopfzeile"
 
@@ -266,12 +265,12 @@ msgid ""
 "Not a valid .gramps.\n"
 "Cannot run the gramplet...\n"
 "Please, try to use a .gramps\n"
-"generated by Gramps 4.x."
+"generated by Gramps 6.x."
 msgstr ""
 "Keine gültige .gramps.\n"
 "Kann das Gramplet nicht ausführen...\n"
 "Bitte versuche, eine .gramps zu verwenden\n"
-"die mit Gramps 4.x erzeugt wurde."
+"die mit Gramps 6.x erzeugt wurde."
 
 msgid "0"
 msgstr "0"
@@ -288,28 +287,43 @@ msgstr " von Gramps "
 msgid "Period: "
 msgstr "Zeitraum: "
 
-msgid " entries for surname(s); no frequency yet"
-msgstr " Einträge für Nachname(n); noch keine Häufigkeit"
+#, python-brace-format
+msgid "\t{number} surname"
+msgid_plural "\t{number} surnames; no frequency yet\n"
+msgstr[0] "\t{number} Nachname"
+msgstr[1] "\t{number} Nachnamen; noch keine Häufigkeit\n"
 
-msgid " entries for place(s)"
-msgstr " Einträge für Ort(e)"
+#, python-brace-format
+msgid "\t{number} surname; no frequency yet"
+msgstr "\t{number} Nachname; noch keine Häufigkeit"
 
-msgid " note(s)"
-msgstr " Notiz(en)"
+#, python-brace-format
+msgid "\t{number} place"
+msgid_plural "\t{number} places\n"
+msgstr[0] "\t{number} Ort"
+msgstr[1] "\t{number} Orte\n"
 
-msgid " source(s)"
-msgstr " Quelle(n)"
+#, python-brace-format
+msgid "\t{number} note"
+msgid_plural "\t{number} notes\n"
+msgstr[0] "\t{number} Notit"
+msgstr[1] "\t{number} Notizen\n"
+
+#, python-brace-format
+msgid "\t{number} source"
+msgid_plural "\t{number} sources\n"
+msgstr[0] "\t{number} Quelle"
+msgstr[1] "\t{number} Quellen\n"
 
 msgid "Gallery.html"
 msgstr "Galerie.html"
 
 #, python-format
-msgid "2. Has generated a media index on \"%(file)s\".\n"
-msgstr "2. Hat einen Medienindex in „%(file)s“ erstellt.\n"
+msgid "1. Has generated a media index on \"%(file)s\".\n"
+msgstr "1. Hat einen Medienindex in „%(file)s“ erstellt.\n"
 
-#, python-format
-msgid "3. Has written entries into \"%(file)s\".\n"
-msgstr "3. Hat Einträge in „%(file)s“ geschrieben\n"
+msgid "XML SyntaxError"
+msgstr "XML-Syntaxfehler"
 
 msgid "Matches XSD schema."
 msgstr "Entspricht XSD-Schema."
@@ -342,14 +356,14 @@ msgid "Portugal"
 msgstr "Portugal"
 
 #, python-format
-msgid "1. Has generated \"%s\".\n"
-msgstr "1. Hat „%s“ erstellt.\n"
+msgid "2. Has generated \"%s\".\n"
+msgstr "2. Hat „%s“ erstellt.\n"
 
 #, python-format
 msgid ""
 "Try to open\n"
 " \"%s\"\n"
-" into your prefered web navigator ..."
+" into your preferred web navigator ..."
 msgstr ""
 "Versuche \n"
 " „%s“\n"

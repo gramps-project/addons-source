@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
 "PO-Revision-Date: 2025-09-03 03:01+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/gramps-project/"
@@ -24,12 +24,6 @@ msgstr ""
 
 msgid "Deep Connections"
 msgstr "Connexions profundes"
-
-msgid "Pause"
-msgstr "Pausa"
-
-msgid "Copy"
-msgstr "Copia"
 
 msgid "mentioned in note"
 msgstr "esmentat a la nota"
@@ -86,11 +80,3 @@ msgid ""
 msgstr ""
 "En pausa.\n"
 "Premi Continuar per buscar parentescs addicionals.\n"
-
-#, python-format
-msgid ""
-"\n"
-"Search completed. %d relations found."
-msgstr ""
-"\n"
-"Cerca completada. S'han trobat %d parentescs."

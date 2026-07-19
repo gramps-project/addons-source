@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,13 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Media Verify Tool"
+msgstr "Herramienta de verificación de medios"
 
 msgid "Moved/Renamed Files"
 msgstr "Archivos movidos/con nombre cambiado"
 
 msgid "Missing Files"
-msgstr "Archivos faltantes"
+msgstr "Archivos Ausentes"
 
 msgid "Duplicate Files"
 msgstr "Archivos duplicados"
@@ -27,22 +30,80 @@ msgid "Extra Files"
 msgstr "Archivos adicionales"
 
 msgid "No md5 Generated"
-msgstr "No se generó ningún MD5"
+msgstr "No se generó ningún md5"
 
 msgid "Errors"
 msgstr "Errores"
 
+msgid "Close the Media Verify Tool"
+msgstr "Cerrar la Herramienta de Verificación del Medio"
+
 msgid "Generate"
 msgstr "Generar"
+
+msgid "Generate md5 hashes for media objects"
+msgstr "Genera hashes de md5 para objetos del medio"
 
 msgid "Verify"
 msgstr "Verificar"
 
+msgid "Check media paths and report missing, duplicate and extra files"
+msgstr ""
+"Comprobar rutas del medio e informe ausente, archivos duplicados y "
+"adicionales"
+
 msgid "Export"
 msgstr "Exportar"
+
+msgid "Export the results to a text file"
+msgstr "Exporta los resultados a un archivo de texto"
 
 msgid "Fix"
 msgstr "Corregir"
 
+msgid "Fix media paths of moved and renamed files"
+msgstr "Corregir las rutas de los medios de los archivos movidos y renombrados"
+
+msgid "Verify Gramps media using md5 hashes"
+msgstr "Verifica los archivos multimedia de Gramps usando hashes md5"
+
 msgid "Files"
 msgstr "Archivos"
+
+msgid "Export results to a text file"
+msgstr "Exportar los resultados a un archivo de texto"
+
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Error al escribir el informe: %s"
+
+msgid "Generating media hashes"
+msgstr "Generación de hashes de medios"
+
+msgid "Set media hashes"
+msgstr "Establecer hashes de medios"
+
+msgid ""
+"Media path not set.  You must set the \"Base path for relative media paths\" "
+"in the Preferences."
+msgstr ""
+"Ruta de medios no configurada. Debe configurar la \"Ruta base para rutas de "
+"medios relativas\" en las Preferencias."
+
+msgid "Finding files"
+msgstr "Encontrar archivos"
+
+msgid "Checking paths"
+msgstr "Comprobando rutas"
+
+msgid "Fixing file paths"
+msgstr "Corrección de rutas de archivo"
+
+msgid "Fix media paths"
+msgstr "Corregir rutas de medios"
+
+msgid "Media Verify"
+msgstr "Verificar Medio"
+
+msgid "Verify that media is present in the correct path"
+msgstr "Verificar que los medios están presentes en la ruta correcta"

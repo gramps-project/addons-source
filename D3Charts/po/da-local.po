@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-04-28 18:11+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 
 #, python-format
 msgid "Failed to create directory structure : %s"
@@ -58,44 +58,6 @@ msgstr "Mål stien for dannede filer"
 msgid "The destination file name for html content."
 msgstr "Mål filnavn for html indhold"
 
-msgid "Ancestral Collapsible Tree"
-msgstr "Sammenfolleligt anetræ"
-
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"Danner en web side med en grafisk repræsentation af  aner (SVG) "
-"repræsenteret som et sammenfoldelig træ layout fra  D3.js javascript "
-"bibliotek."
-
-msgid "Descendant Indented Tree"
-msgstr "Indrykket træ for efterkommere"
-
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-"Danner en web side med en grafisk repræsentation af efterkommere (SVG) "
-"repræsenteret som et sammenfoldelig træ layout fra  D3.js javascript "
-"bibliotek."
-
-msgid "Ancestral Fan Chart Options"
-msgstr "Ane viftetavle tilvalg"
-
-msgid "Paternal Background Color"
-msgstr "Fædre baggrundsfarvhe"
-
-msgid "RGB-color for paternal box background."
-msgstr "RGB-farve for fædreboks baggrund."
-
-msgid "Maternal Background"
-msgstr "Mødre baggrund"
-
-msgid "RGB-color for maternal box background."
-msgstr "RGB-farve for mødreboks baggrund."
-
 msgid "Ancestral Fan Chart"
 msgstr "Ane viftetavle"
 
@@ -106,12 +68,11 @@ msgstr ""
 "Danner e web side med en grafisk repræsentation af aner (SVG) repræsenteret "
 "som en viftetavle fra D3.js JavaScript bibliotek."
 
-#, python-format
-msgid "See %(reference)s : %(spouse)s"
-msgstr "Se %(reference)s : %(spouse)s"
-
 msgid "Generating report..."
 msgstr "Danner rapporten..."
+
+msgid "Descendant Indented Tree"
+msgstr "Indrykket træ for efterkommere"
 
 msgid "Invalid Destination Directory"
 msgstr "Ugyldig målfolder"
@@ -315,3 +276,38 @@ msgstr "Body font størrelse"
 
 msgid "The font size in pixels for biography body text."
 msgstr "Font størrelse i pixels for biografi body tekst."
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Danner en web side med en grafisk repræsentation af efterkommere (SVG) "
+"repræsenteret som et sammenfoldelig træ layout fra  D3.js javascript "
+"bibliotek."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Ane viftetavle tilvalg"
+
+msgid "Paternal Background Color"
+msgstr "Fædre baggrundsfarvhe"
+
+msgid "RGB-color for paternal box background."
+msgstr "RGB-farve for fædreboks baggrund."
+
+msgid "Maternal Background"
+msgstr "Mødre baggrund"
+
+msgid "RGB-color for maternal box background."
+msgstr "RGB-farve for mødreboks baggrund."
+
+msgid "Ancestral Collapsible Tree"
+msgstr "Sammenfolleligt anetræ"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Danner en web side med en grafisk repræsentation af  aner (SVG) "
+"repræsenteret som et sammenfoldelig træ layout fra  D3.js javascript "
+"bibliotek."

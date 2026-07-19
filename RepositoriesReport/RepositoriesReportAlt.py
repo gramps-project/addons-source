@@ -182,26 +182,30 @@ class RepositoryReportAlt(Report):
 
                 # on tuple : [0] = classname ; [1] = handle
 
-                note_handle = note_handle[1]
-                self.__write_referenced_notes(note_handle)
+                if note_handle[0] == 'Note':  # We can have 'Tag' here.
+                    note_handle = note_handle[1]
+                    self.__write_referenced_notes(note_handle)
 
         # additional repository informations
 
         child_list = repository.get_text_data_child_list()
+
+        if self.inc_intern:
+            urls = [url.get_path() for url in repository.get_url_list()]
+            if urls or self.incl_empty:
+                self.doc.start_paragraph('REPO-Section2')
+                self.doc.write_text(self._('Internet:') + space)
+                self.doc.write_text("\n".join(urls))
+                self.doc.end_paragraph()
+
         addresses = repository.get_handle_referents()
         for address_handle in addresses:
             address = ReportUtils.get_address_str(address_handle)
 
-            if self.inc_intern or self.inc_addres:
+            if self.inc_addres or self.incl_empty:
                 self.doc.start_paragraph('REPO-Section2')
-
-                #if self.inc_intern:
-                    #self.doc.write_text(self._('Internet:'))
-                    #self.doc.write_text(internet)
-                if self.inc_addres or self.incl_empty:
-                    self.doc.write_text(self._('Address:') + space)
-                    self.doc.write_text(address)
-
+                self.doc.write_text(self._('Address:') + space)
+                self.doc.write_text(address)
                 self.doc.end_paragraph()
 
     def __write_referenced_sources(self, handle):
@@ -299,7 +303,8 @@ class RepositoryReportAlt(Report):
                                 self.__write_referenced_media(photos, media_handle)
                             self.black_list.append(media_handle)
 
-            for (object_type, citationref) in self.database.find_backlink_handles(source_handle):
+            for (object_type, citationref) in \
+                    self.database.find_backlink_handles(source_handle, ['Citation']):
                 if self.incl_citat:
                     self.__write_referenced_citations(citationref)
 

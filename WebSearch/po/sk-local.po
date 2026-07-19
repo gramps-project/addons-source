@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-08-15 16:02+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,360 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 2026.5-dev\n"
+
+msgid "No title"
+msgstr "Žiadny názov"
+
+msgid "No data available."
+msgstr "Žiadne údaje nie sú k dispozícii."
+
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "HISTORICKÉ SPRÁVNE ČLENENIE"
+
+msgid "Foundation date:"
+msgstr "Dátum založenia:"
+
+msgid "Note:"
+msgstr "Poznámka:"
+
+msgid "Coordinates:"
+msgstr "Súradnice:"
+
+msgid "Administrative history"
+msgstr "Správna história"
+
+msgid "Data provided to AI:"
+msgstr "Údaje poskytnuté AI:"
+
+msgid "Full hierarchy"
+msgstr "Úplná hierarchia"
+
+msgid "Place Type:"
+msgstr "Typ miesta:"
+
+msgid "Last Retrieved At:"
+msgstr "Posledné načítanie:"
+
+msgid "Save Coordinates to the Place"
+msgstr "Uložiť súradnice k miestu"
+
+msgid "AI provider is disabled"
+msgstr "Poskytovateľ AI je deaktivovaný"
+
+msgid "No AI API key provided"
+msgstr "Kľúč API AI nie je k dispozícii"
+
+msgid "AI-generated historical place data is currently disabled"
+msgstr "Historické údaje o mieste generované AI sú momentálne deaktivované"
+
+msgid "AI provider is unknown. Please check your AI provider settings."
+msgstr ""
+"Poskytovateľ AI je neznámy. Skontrolujte prosím vaše nastavenia "
+"poskytovateľa AI."
+
+msgid "⏳ Generating historical place data, please wait..."
+msgstr "⏳ Generovanie historických údajov o mieste, čakajte prosím..."
+
+msgid "Keys"
+msgstr "Kľúče"
+
+msgid "Website URL"
+msgstr "URL webového sídla"
+
+msgid "Add link to note"
+msgstr "Pridať odkaz na poznámku"
+
+msgid "Add link to attribute"
+msgstr "Pridať odkaz na atribút"
+
+msgid "Show QR-code"
+msgstr "Zobraziť QR kód"
+
+msgid "Copy link to clipboard"
+msgstr "Kopírovať odkaz do schránky"
+
+msgid "Hide link for selected item"
+msgstr "Skryť odkaz pre vybranú položku"
+
+msgid "Hide link for all items"
+msgstr "Skryť odkaz pre všetky položky"
+
+msgid "Edit Attribute with the Link"
+msgstr "Upraviť atribút s odkazom"
+
+msgid "Edit Note with the Link"
+msgstr "Upraviť poznámku s odkazom"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 Návrhy AI"
+
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr "Atribút už neexistuje. Dodatočná ikona bola odstránená"
+
+msgid "Note no longer exists. The extra icon is removed"
+msgstr "Poznámka už neexistuje. Dodatočná ikona bola odstránená"
+
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+"📌 Tento webový odkaz '{title}' bol archivovaný pre budúce použitie "
+"grampletom WebSearch (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Tento odkaz môžete použiť na opätovné navštívenie zdroja a overenie "
+"informácií týkajúcich sa tejto entity."
+
+#, python-format
+msgid "Note #%(id)s has been successfully added"
+msgstr "Poznámka #%(id)s bola úspešne pridaná"
+
+msgid "Error creating note"
+msgstr "Chyba pri vytváraní poznámky"
+
+msgid "URL is copied to the Clipboard"
+msgstr "URL je skopírovaná do schránky"
+
+msgid "WebSearch Link"
+msgstr "Odkaz na vyhľadávanie na webe"
+
+msgid "Attribute has been successfully added"
+msgstr "Atribút bol úspešne pridaný"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Názov: {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "Nahradené: {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "Prázdne: {keys}"
+
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "Komentár: {comment}"
+
+msgid "Column - Icons"
+msgstr "Stĺpec - Ikony"
+
+msgid "Column - Source Types (flags)"
+msgstr "Stĺpec - Typy zdrojov (vlajky)"
+
+msgid "Column - Keys"
+msgstr "Stĺpec - Kľúče"
+
+msgid "Column - Title"
+msgstr "Stĺpec - Názov"
+
+msgid "Column - Website Url"
+msgstr "Stĺpec - URL webového sídla"
+
+msgid "Column - Comment"
+msgstr "Stĺpec - Komentár"
+
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "Ikona - Navštívené URL (začiarknutie)"
+
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "Ikona - Uložené URL (disketa)"
+
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "Ikona - URL adresy prepojené s atribútmi UID (odznak UID)"
+
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "Ikona - URL adresy z regionálnych CSV súborov (vlajka)"
+
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "Ikona - URL adresy zo statických CSV súborov (červený špendlík)"
+
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "Ikona - URL adresy zo spoločných CSV súborov (zemeguľa)"
+
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "Ikona - URL adresy z krížových CSV súborov (šipky pre miešanie)"
+
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr "Ikona - URL adresy z vlastného adresára používateľa (ikona tabuľky)"
+
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Ikona - URL adresy z karty 'Atribúty' (ikona 'A')"
+
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Ikona - URL adresy z karty 'Internet' (ikona 'I')"
+
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Ikona - URL adresy z karty 'Poznámky' (ikona 'P')"
+
+msgid "QR-code"
+msgstr "QR kód"
+
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Chýbajúca závislosť \"qrcode\""
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Chyba pri generovaní QR kódu:\n"
+"Pôvodná chyba: \"{}\""
+
+msgid "Note Link (parsed)"
+msgstr "Odkaz na poznámku (analyzovaný)"
+
+msgid "Note Link (internal)"
+msgstr "Odkaz poznámky (interný)"
+
+msgid "Note Link (external)"
+msgstr "Odkaz poznámky (externý)"
+
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 O WebSearch"
+
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"WebSearch je gramplet pre Gramps, ktorý vám pomáha vyhľadávať webové sídla "
+"súvisiace s genealógiou."
+
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"Podporuje šablóny odkazov založené na CSV, vyhľadávanie webových stránok s "
+"pomocou umelej inteligencie a priamu integráciu s poznámkami a atribútmi."
+
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Informácie o systéme"
+
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Chýba:** `qrcode`"
+
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Táto knižnica Python nie je vo vašom systéme k dispozícii."
+
+msgid "Without it, QR code generation will not work."
+msgstr "Bez nej nebude fungovať generovanie QR kódov."
+
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Zvyčajne sa inštaluje pomocou: `pip install qrcode[pil]`"
+
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Poznámka: Niektoré operačné systémy alebo prostredia môžu vyžadovať "
+"alternatívne metódy inštalácie.*"
+
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **Chýba:** `openai`"
+
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr "ℹ️ Táto knižnica je potrebná na prístup k funkciám založeným na OpenAI."
+
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Bez nej budú návrhy stránok generované umelou inteligenciou a história "
+"miesta deaktivované."
+
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 Zvyčajne sa inštaluje pomocou: `pip install openai`"
+
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Chýba:** `requests`"
+
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Táto knižnica sa používa na komunikáciu s webovými API."
+
+msgid "Without it, external data sources may not be accessible."
+msgstr "Bez nej môžu byť externé zdroje údajov nedostupné."
+
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 Zvyčajne sa inštaluje pomocou: `pip install requests`"
+
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Umiestnenie dátových súborov"
+
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"Nižšie sú uvedené cesty k systémovým a používateľsky definovaným dátovým "
+"súborom, ktoré používa WebSearch."
+
+msgid "#### CSV File Paths"
+msgstr "#### Cesty k súborom CSV"
+
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr "**Systémová cesta:** `{dir|%s}` - obsahuje vstavané súbory CSV"
+
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **Cesta definovaná používateľom:** `{dir|%s}` – pre vlastné súbory CSV "
+"definované používateľom"
+
+msgid "#### JSON File Paths"
+msgstr "#### Cesty k súborom JSON"
+
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **Systémová cesta:** `{dir|%s}` – obsahuje vstavaný súbor "
+"attribute_mapping.json"
+
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **Cesta definovaná používateľom:** `{dir|%s}` – pre vlastný súbor "
+"attribute_mapping.json definovaný používateľom"
+
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *Tip: kliknutím na ľubovoľnú cestu vyššie ju otvoríte vo svojom "
+"správcovi súborov.*"
+
+msgid "📖 View detailed usage in: "
+msgstr "📖 Podrobné informácie o používaní nájdete v: "
+
+msgid "## 💬 Support"
+msgstr "## 💬 Podpora"
+
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 Vytvoril a spravuje Yurii Liubymyi"
+
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 Ak potrebujete pomoc alebo máte pripomienky, neváhajte kontaktovať "
+"`@Urchello` na fóre Gramps:"
+
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr "✅ Hlásenia chýb a požiadavky na nové funkcie sú úplne **bezplatné**."
+
+msgid "GitHub Issues"
+msgstr "Problémy GitHub"
+
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 Verzia grampletu WebSearch: `%s`"
 
 msgid "Middle Name Handling"
 msgstr "Spracovanie stredného mena"
@@ -165,353 +518,3 @@ msgstr "Atribút aktualizovaný"
 
 msgid "Note updated"
 msgstr "Poznámka aktualizovaná"
-
-msgid "Note Link (parsed)"
-msgstr "Odkaz na poznámku (analyzovaný)"
-
-msgid "Note Link (internal)"
-msgstr "Odkaz poznámky (interný)"
-
-msgid "Note Link (external)"
-msgstr "Odkaz poznámky (externý)"
-
-msgid "No title"
-msgstr "Žiadny názov"
-
-msgid "## 🧩 About WebSearch"
-msgstr "## 🧩 O WebSearch"
-
-msgid ""
-"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
-"websites."
-msgstr ""
-"WebSearch je gramplet pre Gramps, ktorý vám pomáha vyhľadávať webové stránky "
-"súvisiace s genealógiou."
-
-msgid ""
-"It supports CSV-based link templates, AI-assisted site discovery, and direct "
-"integration with notes and attributes."
-msgstr ""
-"Podporuje šablóny odkazov založené na CSV, vyhľadávanie webových stránok s "
-"pomocou umelej inteligencie a priamu integráciu s poznámkami a atribútmi."
-
-msgid "## ⚙️ System Information"
-msgstr "## ⚙️ Informácie o systéme"
-
-msgid "🔻 **Missing:** `qrcode`"
-msgstr "🔻 **Chýba:** `qrcode`"
-
-msgid "ℹ️ This Python library is not available in your system."
-msgstr "ℹ️ Táto knižnica Python nie je vo vašom systéme k dispozícii."
-
-msgid "Without it, QR code generation will not work."
-msgstr "Bez nej nebude fungovať generovanie QR kódov."
-
-msgid "💡 Usually installed with: `pip install qrcode[pil]`"
-msgstr "💡 Zvyčajne sa inštaluje pomocou: `pip install qrcode[pil]`"
-
-msgid ""
-"*Note: Some operating systems or environments may require alternative "
-"installation methods.*"
-msgstr ""
-"*Poznámka: Niektoré operačné systémy alebo prostredia môžu vyžadovať "
-"alternatívne metódy inštalácie.*"
-
-msgid "🔻 **Missing:** `openai`"
-msgstr "🔻 **Chýba:** `openai`"
-
-msgid "ℹ️ This library is required for accessing OpenAI-based features."
-msgstr "ℹ️ Táto knižnica je potrebná na prístup k funkciám založeným na OpenAI."
-
-msgid ""
-"Without it, AI-generated site suggestions and place history will be disabled."
-msgstr ""
-"Bez nej budú návrhy stránok generované umelou inteligenciou a história "
-"miesta deaktivované."
-
-msgid "💡 Usually installed with: `pip install openai`"
-msgstr "💡 Zvyčajne sa inštaluje pomocou: `pip install openai`"
-
-msgid "🔻 **Missing:** `requests`"
-msgstr "🔻 **Chýba:** `requests`"
-
-msgid "ℹ️ This library is used to communicate with web APIs."
-msgstr "ℹ️ Táto knižnica sa používa na komunikáciu s webovými API."
-
-msgid "Without it, external data sources may not be accessible."
-msgstr "Bez nej môžu byť externé zdroje údajov nedostupné."
-
-msgid "💡 Usually installed with: `pip install requests`"
-msgstr "💡 Zvyčajne sa inštaluje pomocou: `pip install requests`"
-
-msgid "## 📂 Data File Locations"
-msgstr "## 📂 Umiestnenie dátových súborov"
-
-msgid ""
-"Below are the paths to system and user-defined data files used by WebSearch."
-msgstr ""
-"Nižšie sú uvedené cesty k systémovým a používateľsky definovaným dátovým "
-"súborom, ktoré používa WebSearch."
-
-msgid "#### CSV File Paths"
-msgstr "#### Cesty k súborom CSV"
-
-#, python-format
-msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
-msgstr "**Systémová cesta:** `{dir|%s}` - obsahuje vstavané súbory CSV"
-
-#, python-format
-msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
-msgstr ""
-"- **Cesta definovaná používateľom:** `{dir|%s}` – pre vlastné súbory CSV "
-"definované používateľom"
-
-msgid "#### JSON File Paths"
-msgstr "#### Cesty k súborom JSON"
-
-#, python-format
-msgid ""
-"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
-"file"
-msgstr ""
-"- **Systémová cesta:** `{dir|%s}` – obsahuje vstavaný súbor "
-"attribute_mapping.json"
-
-#, python-format
-msgid ""
-"- **User-defined path:** `{dir|%s}` – for custom user-defined "
-"attribute_mapping.json file"
-msgstr ""
-"- **Cesta definovaná používateľom:** `{dir|%s}` – pre vlastný súbor "
-"attribute_mapping.json definovaný používateľom"
-
-msgid "  💡 *Tip: click any path above to open it in your file manager.*"
-msgstr ""
-"  💡 *Tip: kliknutím na ľubovoľnú cestu vyššie ju otvoríte vo svojom "
-"správcovi súborov.*"
-
-msgid "📖 View detailed usage in: "
-msgstr "📖 Podrobné informácie o používaní nájdete v: "
-
-msgid "## 💬 Support"
-msgstr "## 💬 Podpora"
-
-msgid "👤 Created and maintained by Yurii Liubymyi"
-msgstr "👤 Vytvoril a spravuje Yurii Liubymyi"
-
-msgid ""
-"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
-"forum:"
-msgstr ""
-"💬 Ak potrebujete pomoc alebo máte pripomienky, neváhajte kontaktovať "
-"`@Urchello` na fóre Gramps:"
-
-msgid "✅ Bug reports and feature requests are completely **free of charge**."
-msgstr "✅ Hlásenia chýb a požiadavky na nové funkcie sú úplne **bezplatné**."
-
-#, python-format
-msgid "🧩 WebSearch Gramplet version: `%s`"
-msgstr "🧩 Verzia grampletu WebSearch: `%s`"
-
-msgid "Column - Icons"
-msgstr "Stĺpec - Ikony"
-
-msgid "Column - Source Types (flags)"
-msgstr "Stĺpec - Typy zdrojov (vlajky)"
-
-msgid "Column - Keys"
-msgstr "Stĺpec - Kľúče"
-
-msgid "Column - Title"
-msgstr "Stĺpec - Názov"
-
-msgid "Column - Website Url"
-msgstr "Stĺpec - URL webového miesta"
-
-msgid "Column - Comment"
-msgstr "Stĺpec - Komentár"
-
-msgid "Icon - Visited URLs (checkmark)"
-msgstr "Ikona - Navštívené URL (začiarknutie)"
-
-msgid "Icon - Saved URLs (floppy disk)"
-msgstr "Ikona - Uložené URL (disketa)"
-
-msgid "Icon - URLs linked to UID attributes (UID badge)"
-msgstr "Ikona - URL adresy prepojené s atribútmi UID (odznak UID)"
-
-msgid "Icon - URLs from regional CSV files (flag)"
-msgstr "Ikona - URL adresy z regionálnych CSV súborov (vlajka)"
-
-msgid "Icon - URLs from static CSV files (red pin)"
-msgstr "Ikona - URL adresy zo statických CSV súborov (červený špendlík)"
-
-msgid "Icon - URLs from common CSV files (earth)"
-msgstr "Ikona - URL adresy zo spoločných CSV súborov (zemeguľa)"
-
-msgid "Icon - URLs from cross CSV files (shuffle arrows)"
-msgstr "Ikona - URL adresy z krížových CSV súborov (šipky pre miešanie)"
-
-msgid "Icon - URLs from custom user directory (spreadsheet icon)"
-msgstr "Ikona - URL adresy z vlastného adresára používateľa (ikona tabuľky)"
-
-msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr "Ikona - URL adresy z karty 'Atribúty' (ikona 'A')"
-
-msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr "Ikona - URL adresy z karty 'Internet' (ikona 'I')"
-
-msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr "Ikona - URL adresy z karty 'Poznámky' (ikona 'P')"
-
-msgid "No data available."
-msgstr "Žiadne údaje nie sú k dispozícii."
-
-msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
-msgstr "HISTORICKÉ SPRÁVNE ČLENENIE"
-
-msgid "Foundation date:"
-msgstr "Dátum založenia:"
-
-msgid "Note:"
-msgstr "Poznámka:"
-
-msgid "Coordinates:"
-msgstr "Súradnice:"
-
-msgid "Administrative history"
-msgstr "Správna história"
-
-msgid "Data provided to AI:"
-msgstr "Údaje poskytnuté AI:"
-
-msgid "Full hierarchy"
-msgstr "Úplná hierarchia"
-
-msgid "Place Type:"
-msgstr "Typ miesta:"
-
-msgid "Last Retrieved At:"
-msgstr "Posledné načítanie:"
-
-msgid "QR-code"
-msgstr "QR kód"
-
-msgid "⚠ Missing dependency \"qrcode\""
-msgstr "⚠ Chýbajúca závislosť \"qrcode\""
-
-msgid ""
-"⚠ Error generating QR code:\n"
-"Original error: “{}”"
-msgstr ""
-"⚠ Chyba pri generovaní QR kódu:\n"
-"Pôvodná chyba: \"{}\""
-
-msgid "Save Coordinates to the Place"
-msgstr "Uložiť súradnice k miestu"
-
-msgid "AI provider is disabled"
-msgstr "Poskytovateľ AI je deaktivovaný"
-
-msgid "No AI API key provided"
-msgstr "Kľúč API AI nie je k dispozícii"
-
-msgid "AI-generated historical place data is currently disabled"
-msgstr "Historické údaje o mieste generované AI sú momentálne deaktivované"
-
-msgid "AI provider is unknown. Please check your AI provider settings."
-msgstr ""
-"Poskytovateľ AI je neznámy. Skontrolujte prosím vaše nastavenia "
-"poskytovateľa AI."
-
-msgid "⏳ Generating historical place data, please wait..."
-msgstr "⏳ Generovanie historických údajov o mieste, čakajte prosím..."
-
-msgid "Keys"
-msgstr "Kľúče"
-
-msgid "Website URL"
-msgstr "URL webového sídla"
-
-msgid "Add link to note"
-msgstr "Pridať odkaz na poznámku"
-
-msgid "Add link to attribute"
-msgstr "Pridať odkaz na atribút"
-
-msgid "Show QR-code"
-msgstr "Zobraziť QR kód"
-
-msgid "Copy link to clipboard"
-msgstr "Kopírovať odkaz do schránky"
-
-msgid "Hide link for selected item"
-msgstr "Skryť odkaz pre vybranú položku"
-
-msgid "Hide link for all items"
-msgstr "Skryť odkaz pre všetky položky"
-
-msgid "Edit Attribute with the Link"
-msgstr "Upraviť atribút s odkazom"
-
-msgid "Edit Note with the Link"
-msgstr "Upraviť poznámku s odkazom"
-
-msgid "🔍 AI Suggestions"
-msgstr "🔍 Návrhy AI"
-
-msgid "Attribute no longer exists. The extra icon is removed"
-msgstr "Atribút už neexistuje. Dodatočná ikona bola odstránená"
-
-msgid "Note no longer exists. The extra icon is removed"
-msgstr "Poznámka už neexistuje. Dodatočná ikona bola odstránená"
-
-#, python-brace-format
-msgid ""
-"📌 This '{title}' web link was archived for future reference by the "
-"WebSearch gramplet (v. {version}):\n"
-"\n"
-"🔗 {url}\n"
-"\n"
-"You can use this link to revisit the source and verify the information "
-"related to this entity."
-msgstr ""
-"📌 Tento webový odkaz '{title}' bol archivovaný pre budúce použitie "
-"grampletom WebSearch (v. {version}):\n"
-"\n"
-"🔗 {url}\n"
-"\n"
-"Tento odkaz môžete použiť na opätovné navštívenie zdroja a overenie "
-"informácií týkajúcich sa tejto entity."
-
-#, python-format
-msgid "Note #%(id)s has been successfully added"
-msgstr "Poznámka #%(id)s bola úspešne pridaná"
-
-msgid "Error creating note"
-msgstr "Chyba pri vytváraní poznámky"
-
-msgid "URL is copied to the Clipboard"
-msgstr "URL je skopírovaná do schránky"
-
-msgid "WebSearch Link"
-msgstr "Odkaz na vyhľadávanie na webe"
-
-msgid "Attribute has been successfully added"
-msgstr "Atribút bol úspešne pridaný"
-
-#, python-brace-format
-msgid "Title: {title}"
-msgstr "Názov: {title}"
-
-#, python-brace-format
-msgid "Replaced: {keys}"
-msgstr "Nahradené: {keys}"
-
-#, python-brace-format
-msgid "Empty: {keys}"
-msgstr "Prázdne: {keys}"
-
-#, python-brace-format
-msgid "Comment: {comment}"
-msgstr "Komentár: {comment}"

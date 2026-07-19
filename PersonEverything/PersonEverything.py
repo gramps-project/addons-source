@@ -37,6 +37,7 @@ Reports/Text Reports/Person Everything Report.
 #
 #------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.gen.errors import ReportError
 import copy
 import string
 

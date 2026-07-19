@@ -171,27 +171,41 @@ class ChatWithTreeClass(Gramplet):
         Defines and applies CSS styles to the Gramplet's widgets.
         """
         css_provider = Gtk.CssProvider()
+        # The message-bubble backgrounds are intentionally light pastels
+        # (Mantis 14143) -- they colour-code message type and were chosen
+        # against a white parent. The foreground was implicitly the GTK
+        # theme's default, which is LIGHT under a dark theme -- so the
+        # result was light-on-light text. Lock the foreground to black
+        # for the bubble classes so the contrast holds regardless of the
+        # active GTK theme. The chat listbox background is also locked
+        # so the empty-chat area doesn't go dark-on-white in dark mode.
         css = """
         #chat-listbox {
             background-color: white;
+            color: black;
         }
         .message-box {
             background-color: #f0f0f0; /* Default background */
+            color: black;
             padding: 10px;
             margin: 5px;
             border-radius: 15px;
         }
         .user-message-box {
             background-color: #dcf8c6; /* Light green for user messages */
+            color: black;
         }
         .tree-reply-box {
             background-color: #d1e2f4; /* Light blue for replies */
+            color: black;
         }
         .error-reply-box {
             background-color: #f4e2d1; /* Light red for errors */
+            color: black;
         }
         .tree-toolcall-box {
             background-color: #fce8b2; /* Light yellow for tool calls */
+            color: black;
         }
 
         """

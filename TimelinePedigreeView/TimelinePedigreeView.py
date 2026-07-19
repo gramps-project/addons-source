@@ -578,7 +578,7 @@ class TimelinePedigreeView(NavigationView):
         """
         try:
             self.Tree_Rebuild()
-        except AttributeError(msg):
+        except AttributeError as msg:
             RunDatabaseRepair(str(msg))
 
     def change_db(self, db):
@@ -602,7 +602,7 @@ class TimelinePedigreeView(NavigationView):
         if self.active:
             self.bookmarks.redraw()
         # clear the caches on loading a different tree
-        self._birth_cache = {}              
+        self._birth_cache = {}
         self.format_helper.clear_cache()
         self.build_tree()
 
@@ -705,7 +705,7 @@ class TimelinePedigreeView(NavigationView):
                 if Tick[1] > 0 and Tick[1] < RequiredWidth:
                     self.gtklayout_lines.append([Tick[1], int(5*TimeLineHeight/8), Tick[1], int(7*TimeLineHeight/8), 1])
                     if Tick[0]:
-                        label = Gtk.Label(label=Tick[0])
+                        label = Gtk.Label(label=str(Tick[0]))
                         label.set_justify(Gtk.Justification.CENTER)
                         label.show()
                         layout_widget.put(label, int(Tick[1]-label.get_preferred_size()[0].width/2), 1*TimeLineHeight/4)
@@ -1501,7 +1501,6 @@ class TimelinePedigreeView(NavigationView):
         menu.append(item)
 
         # Help menu entry
-        menu.append(item)
         item = Gtk.MenuItem(label=_("About Timeline Pedigree View"))
         item.connect("activate", self.on_help_clicked)
         item.show()

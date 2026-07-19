@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-09-06 11:01+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-04-14 18:01+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,23 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
-
-msgid "Descendant Book"
-msgstr "Libro discendenza"
-
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-"Fornisce uno o più resoconti dei discendenti basati sulla richiesta indicata."
-
-msgid "Detailed Descendant Book"
-msgstr "Libro discendenza dettagliato"
-
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Produce uno o più resoconti dettagliati dei discendenti basati sulla "
-"richiesta indicata."
+"X-Generator: Weblate 5.17-dev\n"
 
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
@@ -213,6 +197,22 @@ msgstr "Lo stile usato per le intestazioni nell'indice dei luoghi."
 
 msgid "The style used for the references in the Index of Places."
 msgstr "Lo stile usato per i riferimenti nell'indice dei luoghi."
+
+msgid "Descendant Book"
+msgstr "Libro discendenza"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Fornisce uno o più resoconti dei discendenti basati sulla richiesta indicata."
+
+msgid "Detailed Descendant Book"
+msgstr "Libro discendenza dettagliato"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Produce uno o più resoconti dettagliati dei discendenti basati sulla "
+"richiesta indicata."
 
 #, python-format
 msgid "Deep pruning ascendants from %s people..."

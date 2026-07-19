@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2026-04-08 15:09+0000\n"
+"PO-Revision-Date: 2026-05-11 10:35+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
+
+msgid ""
+"LifeLineChartView dependencies are missing. It is not possible to use this "
+"plugin without them."
+msgstr ""
+"Nedostaju ovisnosti za „Linijski dijagram života”. Bez njih nije moguće "
+"koristiti ovaj dodatak."
+
+#, python-brace-format
+msgid "cursor position at {date}"
+msgstr "pozicija kursora na {date}"
 
 msgid "Hide person"
 msgstr "Sakrij osobu"
@@ -55,7 +66,7 @@ msgid "Zoom to best fit"
 msgstr "Zumiraj na najbolju prilagodbu"
 
 msgid "Rebuild data cache"
-msgstr "Ponovo izgradi predmemoriju"
+msgstr "Ponovo izgradi predmemoriju podataka"
 
 msgid "Revert the placement and person selection"
 msgstr "Preokreni odabir smještaja i osobe"
@@ -81,6 +92,21 @@ msgstr "Osobe i njihova veza u vremenskom dijagramu"
 msgid "Life Line Descendant Chart"
 msgstr "Linijski dijagram života potomaka"
 
+msgid "Warp the chart shape"
+msgstr "Deformiraj oblik dijagrama"
+
+msgid "The overall shape of the chart can be warped."
+msgstr "Ukupni oblik dijagrama se može deformirati."
+
+msgid "Normal grid shape"
+msgstr "Normalni oblik mreže"
+
+msgid "Sine shape"
+msgstr "Sinusni oblik"
+
+msgid "Triangular shape"
+msgstr "Trokutasti oblik"
+
 msgid "Show photos"
 msgstr "Prikaži fotografije"
 
@@ -105,6 +131,22 @@ msgstr "Ukupna visina cijelog dijagrama."
 
 msgid "Relative line thickness"
 msgstr "Relativna debljina linije"
+
+msgid ""
+"The line thickness of an individual is given relatively to the horizontal "
+"step size."
+msgstr ""
+"Debljina linije pojedinca se zadaje u odnosu na veličinu vodoravnog koraka."
+
+msgid "Horizontal step size"
+msgstr "Veličina vodoravnih koraka"
+
+msgid ""
+"This is the distance from one line to another. This value is also used for "
+"scaling of other items."
+msgstr ""
+"Ovo je udaljenost od jedne linije do druge. Ova se vrijednost također "
+"koristi za skaliranje drugih stavki."
 
 msgid "Show birth label"
 msgstr "Prikaži etiketu rođenja"
@@ -170,17 +212,47 @@ msgstr "Aktiviraj etiketu smrti."
 msgid "Death label rotation"
 msgstr "Rotacija etikete smrti"
 
+msgid "The death label is written in a text frame rotated by this value."
+msgstr ""
+"Oznaka smrti se ispisuje u tekstualnom okviru rotiran ovom vrijednosti."
+
+msgid "Horizontal offset of death label"
+msgstr "Vodoravni odmak od oznake smrti"
+
+msgid ""
+"The death label is moved horizontally by this value, which is given "
+"relatively to the font size."
+msgstr ""
+"Oznaka smrti se pomiče vodoravno za ovu vrijednost, koja je dana relativno u "
+"odnosu na veličinu fonta."
+
+msgid "Vertical offset of death label"
+msgstr "Okomiti odmak od oznake smrti"
+
+msgid ""
+"The death label is moved vertically by this value, which is given relatively "
+"to the font size."
+msgstr ""
+"Oznaka smrti se pomiče okomito za ovu vrijednost, koja je dana relativno u "
+"odnosu na veličinu fonta."
+
+msgid "Wrap words in death label"
+msgstr "Prelomi sadržaj etikete smrti po riječima"
+
+msgid "The death label content is wrapped where possible."
+msgstr "Sadržaj etikete smrti se prelama gdje god je to moguće."
+
 msgid "Death label anchor"
-msgstr "Poravnanje etikete smrti"
+msgstr "Sidro etikete smrti"
 
 msgid "Text alignment of the death label."
 msgstr "Poravnanje teksta etikete smrti."
 
 msgid "Show marriage label"
-msgstr "Prikaži etiketu braka"
+msgstr "Prikaži etiketu sklapanja braka"
 
 msgid "Activate the marriage label."
-msgstr "Aktiviraj etiketu braka."
+msgstr "Aktiviraj etiketu sklapanja braka."
 
 msgid "Fade individual color"
 msgstr "Postupno mijenjaj boju osobe"

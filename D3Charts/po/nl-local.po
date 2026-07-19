@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2026-04-12 04:54+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
@@ -62,44 +62,6 @@ msgstr "Het bestemmingspad voor gegenereerde bestanden."
 msgid "The destination file name for html content."
 msgstr "De bestemmingsbestandsnaam voor html-inhoud."
 
-msgid "Ancestral Collapsible Tree"
-msgstr "Inklapbare afkomstboom"
-
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"Genereert een webpagina met een grafische weergave van voorouders (SVG) "
-"weergegeven als een inklapbare boomlay-out uit de D3.js JavaScript-"
-"bibliotheek."
-
-msgid "Descendant Indented Tree"
-msgstr "Afstamming ingesprongen boom"
-
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-"Genereert een webpagina met een grafische weergave van afstammelingen (SVG) "
-"als een inklapbare ingesprongen boomlay-out uit de D3.js JavaScript-"
-"bibliotheek."
-
-msgid "Ancestral Fan Chart Options"
-msgstr "Cirkeldiagram afkomst opties"
-
-msgid "Paternal Background Color"
-msgstr "Vaderlijke achtergrondkleur"
-
-msgid "RGB-color for paternal box background."
-msgstr "RGB-kleur voor vaderlijke kaderachtergrond."
-
-msgid "Maternal Background"
-msgstr "Moederlijke achtergrond"
-
-msgid "RGB-color for maternal box background."
-msgstr "RGB-kleur voor moederlijke kaderachtergrond."
-
 msgid "Ancestral Fan Chart"
 msgstr "Cirkeldiagram van afkomst"
 
@@ -111,11 +73,15 @@ msgstr ""
 "weergegeven als een Cirkeldiagram uit de D3.js JavaScript-bibliotheek."
 
 #, python-format
+msgctxt "spouse"
 msgid "See %(reference)s : %(spouse)s"
 msgstr "Zie %(reference)s : %(spouse)s"
 
 msgid "Generating report..."
 msgstr "Verslag genereren..."
+
+msgid "Descendant Indented Tree"
+msgstr "Afstamming ingesprongen boom"
 
 msgid "Invalid Destination Directory"
 msgstr "Ongeldige bestemmingsdirectory"
@@ -330,3 +296,38 @@ msgstr "Hoofdlettergrootte"
 
 msgid "The font size in pixels for biography body text."
 msgstr "De lettergrootte in pixels voor de hoofdtekst van de biografie."
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Genereert een webpagina met een grafische weergave van afstammelingen (SVG) "
+"als een inklapbare ingesprongen boomlay-out uit de D3.js JavaScript-"
+"bibliotheek."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Cirkeldiagram afkomst opties"
+
+msgid "Paternal Background Color"
+msgstr "Vaderlijke achtergrondkleur"
+
+msgid "RGB-color for paternal box background."
+msgstr "RGB-kleur voor vaderlijke kaderachtergrond."
+
+msgid "Maternal Background"
+msgstr "Moederlijke achtergrond"
+
+msgid "RGB-color for maternal box background."
+msgstr "RGB-kleur voor moederlijke kaderachtergrond."
+
+msgid "Ancestral Collapsible Tree"
+msgstr "Inklapbare afkomstboom"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Genereert een webpagina met een grafische weergave van voorouders (SVG) "
+"weergegeven als een inklapbare boomlay-out uit de D3.js JavaScript-"
+"bibliotheek."

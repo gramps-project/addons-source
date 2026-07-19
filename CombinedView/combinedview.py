@@ -28,7 +28,6 @@ Combined View
 # Python modules
 #
 #-------------------------------------------------------------------------
-from html import escape
 from operator import itemgetter
 import pickle
 import logging
@@ -475,7 +474,8 @@ class CombinedView(NavigationView):
             return
 
     def edit_active(self, *obj):
-        self.active_page.edit_active()
+        if self.active_page is not None:
+            self.active_page.edit_active()
 
     def change_db(self, db):
         #reset the connects
@@ -499,8 +499,17 @@ class CombinedView(NavigationView):
     def change_object(self, obj_tuple):
 
         if obj_tuple is None:
+            # No active object, e.g. the family tree was closed.  Clear the
+            # display instead of leaving people from the closed tree on
+            # screen: their handles no longer resolve, so editing one would
+            # raise HandleError (bug #12572, bug #14226).
+            for page in self.pages.values():
+                page.disable_actions(self.uimanager)
+            self.uimanager.update_menu()
+            list(map(self.header.remove, self.header.get_children()))
+            list(map(self.stack.remove, self.stack.get_children()))
+            self.active_page = None
             return
-
 
         if self.redrawing:
             return False
@@ -543,50 +552,6 @@ class CombinedView(NavigationView):
         self.active_page = page
 
         return True
-
-    def info_string(self, handle):
-        person = self.dbstate.db.get_person_from_handle(handle)
-        if not person:
-            return None
-
-        birth = get_birth_or_fallback(self.dbstate.db, person)
-        if birth and birth.get_type() != EventType.BIRTH:
-            sdate = get_date(birth)
-            if sdate:
-                bdate = "<i>%s</i>" % escape(sdate)
-            else:
-                bdate = ""
-        elif birth:
-            bdate = escape(get_date(birth))
-        else:
-            bdate = ""
-
-        death = get_death_or_fallback(self.dbstate.db, person)
-        if death and death.get_type() != EventType.DEATH:
-            sdate = get_date(death)
-            if sdate:
-                ddate = "<i>%s</i>" % escape(sdate)
-            else:
-                ddate = ""
-        elif death:
-            ddate = escape(get_date(death))
-        else:
-            ddate = ""
-
-        if bdate and ddate:
-            value = _("%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s") % {
-                'birthabbrev': birth.type.get_abbreviation(),
-                'deathabbrev': death.type.get_abbreviation(),
-                'birthdate' : bdate,
-                'deathdate' : ddate
-                }
-        elif bdate:
-            value = _("%(event)s %(date)s") % {'event': birth.type.get_abbreviation(), 'date': bdate}
-        elif ddate:
-            value = _("%(event)s %(date)s") % {'event': death.type.get_abbreviation(), 'date': ddate}
-        else:
-            value = ""
-        return value
 
     def config_connect(self):
         """

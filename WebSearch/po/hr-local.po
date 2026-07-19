@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2026-02-12 19:09+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-11 10:35+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,365 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.16-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
+
+msgid "No title"
+msgstr "Nema naslova"
+
+msgid "No data available."
+msgstr "Nema podataka."
+
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "POVIJESNE ADMINISTRATIVNE JEDINICE OD"
+
+msgid "Foundation date:"
+msgstr "Datum osnutka:"
+
+msgid "Note:"
+msgstr "Zabilješka:"
+
+msgid "Coordinates:"
+msgstr "Koordinate:"
+
+msgid "Administrative history"
+msgstr "Administrativna povijest"
+
+msgid "Data provided to AI:"
+msgstr "UI-u dostavljeni podaci:"
+
+msgid "Full hierarchy"
+msgstr "Potupuna hijerarhija"
+
+msgid "Place Type:"
+msgstr "Vrsta mjesta:"
+
+msgid "Last Retrieved At:"
+msgstr "Zadnje put dohvaćeno:"
+
+msgid "Save Coordinates to the Place"
+msgstr "Spremi koordinate za mjesto"
+
+msgid "AI provider is disabled"
+msgstr "Pružatelj usluge umjetne inteligencije je deaktiviran"
+
+msgid "No AI API key provided"
+msgstr "Nije naveden API ključ umjetne inteligencije"
+
+msgid "AI-generated historical place data is currently disabled"
+msgstr ""
+"Generiranje povijesnih podataka mjesta pomoću umjetne inteligencije je "
+"trenutačno deaktivirano"
+
+msgid "AI provider is unknown. Please check your AI provider settings."
+msgstr ""
+"Pružatelj usluge umjetne inteligencije je nepoznat. Provjeri postavke tvog "
+"prušatelja usluge umjetne inteligencije."
+
+msgid "⏳ Generating historical place data, please wait..."
+msgstr "⏳ Generiraju se povijesni podaci mjesta. Pričekaj …"
+
+msgid "Keys"
+msgstr "Ključevi"
+
+msgid "Website URL"
+msgstr "URL web-stranice"
+
+msgid "Add link to note"
+msgstr "Dodaj poveznicu zabilješci"
+
+msgid "Add link to attribute"
+msgstr "Dodaj poveznicu svojstvu"
+
+msgid "Show QR-code"
+msgstr "Prikaži QR kod"
+
+msgid "Copy link to clipboard"
+msgstr "Kopiraj poveznicu u međuspremnik"
+
+msgid "Hide link for selected item"
+msgstr "Sakrij poveznicu za odabranu stavku"
+
+msgid "Hide link for all items"
+msgstr "Sakrij poveznice za sve odabrane stavke"
+
+msgid "Edit Attribute with the Link"
+msgstr "Uredi svojstvo s poveznicom"
+
+msgid "Edit Note with the Link"
+msgstr "Uredi zabilješku s poveznicom"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 Prijedlozi umjetne inteligencije"
+
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr "Svojstvo više ne postoji. Dodatna ikona je uklonjena"
+
+msgid "Note no longer exists. The extra icon is removed"
+msgstr "Zabilješka više ne postoji. Dodatna ikona je uklonjena"
+
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+"📌 Ovu web poveznicu „{title}” je gramplet „Web pretraga” (v. {version}) "
+"arhivirao za buduće reference:\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Ovu se poveznica može koristiti za ponovno pregledavanje izvora i provjeru "
+"informacija povezanih s ovom entitetom."
+
+#, python-format
+msgid "Note #%(id)s has been successfully added"
+msgstr "Zabilješka #%(id)s je uspješno dodana"
+
+msgid "Error creating note"
+msgstr "Greška pri stvaranju zabilješke"
+
+msgid "URL is copied to the Clipboard"
+msgstr "URL je kopiran u međuspremnik"
+
+msgid "WebSearch Link"
+msgstr "Poveznica za „Web pretraga”"
+
+msgid "Attribute has been successfully added"
+msgstr "Svojstvo je uspješno dodano"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Naslov: {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "Zamijenjeno: {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "Prazno: {keys}"
+
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "Komentar: {comment}"
+
+msgid "Column - Icons"
+msgstr "Stupac – Ikone"
+
+msgid "Column - Source Types (flags)"
+msgstr "Stupac – Vrste izvora (zastavice)"
+
+msgid "Column - Keys"
+msgstr "Stupac – Ključevi"
+
+msgid "Column - Title"
+msgstr "Stupac – Naslov"
+
+msgid "Column - Website Url"
+msgstr "Stupac – URL web-stranice"
+
+msgid "Column - Comment"
+msgstr "Stupac – Komentar"
+
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "Ikona – Posjećeni URL-ovi (kvačica)"
+
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "Ikona – Spremljeni URL-ovi (disketa)"
+
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "Ikona – URL-ovi povezani s UID svojstvima (UID značka)"
+
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "Ikona – URL-ovi iz regionalnih CSV datoteka (zastavica)"
+
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "Ikona – URL-ovi iz statičnih CSV datoteka (crvena pribadača)"
+
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "Ikona – URL-ovi iz uobičajenih CSV datoteka (zemlja)"
+
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "Ikona – URL-ovi iz unakrsnih CSV datoteka (strelice za miješanje)"
+
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr ""
+"Ikona – URL-ovi iz prilagođenog korisničkog direktorija (ikona proračunske "
+"tablice)"
+
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Ikona – URL-ovi iz kartice „Svojstva” (ikona „S”)"
+
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Ikona – URL-ovi iz kartice „Internet” (ikona „I”)"
+
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Ikona – URL-ovi iz kartice „Zabilješke” (ikona „Z”)"
+
+msgid "QR-code"
+msgstr "QR kod"
+
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Nedostaje ovisnost „qrcode”"
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Greška prilikom generiranja QR koda:\n"
+"Izvorna greška: „{}”"
+
+msgid "Note Link (parsed)"
+msgstr "Poveznica zabilješke (obrađena)"
+
+msgid "Note Link (internal)"
+msgstr "Poveznica zabilješke (interna)"
+
+msgid "Note Link (external)"
+msgstr "Poveznica zabilješke (eksterna)"
+
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 Informacije o grampletu „Web pretraga”"
+
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"„Web pretraga” je gramplet za Gramps koji pomaže pri pretraživanju "
+"genealoških web-stranica."
+
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"Podržava predloške poveznica temeljene na CSV-u, otkrivanje web-stranica uz "
+"pomoć umjetne inteligencije i izravnu integraciju sa zabilješkama i "
+"svojstvima."
+
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Podaci sustava"
+
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Nedostaje:** `qrcode`"
+
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Ova Python biblioteka nije dostupna na tvom sustavu."
+
+msgid "Without it, QR code generation will not work."
+msgstr "Bez nje, generiranje QR koda neće raditi."
+
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Obično se instalira s: `pip install qrcode[pil]`"
+
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Napomena: Neki operacijaski sustavi ili okruženja mogu zahtijevati "
+"alternativne metode instalacije.*"
+
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **Nedostaje:** `openai`"
+
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr "ℹ️ Ova je biblioteka potrebna za pristup OpenAI funkcijama."
+
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Bez nje, prijedlozi web-mjesta generirani umjetnom inteligencijom i povijest "
+"mjesta će biti deaktivirani."
+
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 Obično se instalira s: `pip install openai`"
+
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Nedostaje:** `requests`"
+
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Ova se biblioteka koristi za komunikaciju s web API-jima."
+
+msgid "Without it, external data sources may not be accessible."
+msgstr "Bez nje, eksterni izvori podataka možda neće biti dostupni."
+
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 Obično se instalira s: `pip install requests`"
+
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Mjesta podatkovnih datoteka"
+
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"U nastavku su staze do sustavskih i korisnički definiranih podatkovnih "
+"datoteka koje koristi „Web pretraga”."
+
+msgid "#### CSV File Paths"
+msgstr "#### Staze CSV datoteka"
+
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr "- **System path:** `{dir|%s}` – sadrži ugrađene CSV datoteke"
+
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **User-defined path:** `{dir|%s}` – za korisnički definirane CSV datoteke"
+
+msgid "#### JSON File Paths"
+msgstr "#### Staze JSON datoteka"
+
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **System path:** `{dir|%s}` – sadrži ugrađenu datoteku "
+"attribute_mapping.json"
+
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **User-defined path:** `{dir|%s}` – za korisnički defniranu datoteku "
+"attribute_mapping.json"
+
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *Savjet: klikni bilo koju stazu iznad da bi se otvorila u upravljaču "
+"datoteka.*"
+
+msgid "📖 View detailed usage in: "
+msgstr "📖 Pogledaj detaljnu upotrebu u: "
+
+msgid "## 💬 Support"
+msgstr "## 💬 Podrška"
+
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 Stvoreno i održava Yurii Liubymyi"
+
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 Za pomoć ili povratne informacije, slobodno spomeni `@Urchello` u Gramps "
+"forumu:"
+
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr ""
+"✅ Prijave grešaka i zahtjevi za nove funkcije su potpuno **besplatni**."
+
+msgid "GitHub Issues"
+msgstr "GitHub problemi"
+
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 Verzija grampleta „Web pretraga”: `%s`"
 
 msgid "Middle Name Handling"
 msgstr "Baratanje srednjim imenom"
@@ -166,242 +524,3 @@ msgstr "Svojstvo aktualizirano"
 
 msgid "Note updated"
 msgstr "Zabilješka aktualizirana"
-
-msgid "Note Link (parsed)"
-msgstr "Poveznica zabilješke (obrađena)"
-
-msgid "Note Link (internal)"
-msgstr "Poveznica zabilješke (interna)"
-
-msgid "Note Link (external)"
-msgstr "Poveznica zabilješke (eksterna)"
-
-msgid "No title"
-msgstr "Nema naslova"
-
-msgid "## 🧩 About WebSearch"
-msgstr "## 🧩 Informacije o grampletu „Web pretraga”"
-
-msgid ""
-"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
-"websites."
-msgstr ""
-"„Web pretraga” je gramplet za Gramps koji pomaže pri pretraživanju "
-"genealoških web-stranica."
-
-msgid ""
-"Below are the paths to system and user-defined data files used by WebSearch."
-msgstr ""
-"U nastavku su staze do sustavskih i korisnički definiranih podatkovnih "
-"datoteka koje koristi „Web pretraga”."
-
-#, python-format
-msgid "🧩 WebSearch Gramplet version: `%s`"
-msgstr "🧩 Verzija grampleta „Web pretraga”: `%s`"
-
-msgid "Column - Icons"
-msgstr "Stupac – Ikone"
-
-msgid "Column - Source Types (flags)"
-msgstr "Stupac – Vrste izvora (zastavice)"
-
-msgid "Column - Keys"
-msgstr "Stupac – Ključevi"
-
-msgid "Column - Title"
-msgstr "Stupac – Naslov"
-
-msgid "Column - Website Url"
-msgstr "Stupac – URL web-stranice"
-
-msgid "Column - Comment"
-msgstr "Stupac – Komentar"
-
-msgid "Icon - Visited URLs (checkmark)"
-msgstr "Ikona – Posjećeni URL-ovi (kvačica)"
-
-msgid "Icon - Saved URLs (floppy disk)"
-msgstr "Ikona – Spremljeni URL-ovi (disketa)"
-
-msgid "Icon - URLs linked to UID attributes (UID badge)"
-msgstr "Ikona – URL-ovi povezani s UID svojstvima (UID značka)"
-
-msgid "Icon - URLs from regional CSV files (flag)"
-msgstr "Ikona – URL-ovi iz regionalnih CSV datoteka (zastavica)"
-
-msgid "Icon - URLs from static CSV files (red pin)"
-msgstr "Ikona – URL-ovi iz statičnih CSV datoteka (crvena pribadača)"
-
-msgid "Icon - URLs from common CSV files (earth)"
-msgstr "Ikona – URL-ovi iz uobičajenih CSV datoteka (zemlja)"
-
-msgid "Icon - URLs from cross CSV files (shuffle arrows)"
-msgstr "Ikona – URL-ovi iz unakrsnih CSV datoteka (strelice za miješanje)"
-
-msgid "Icon - URLs from custom user directory (spreadsheet icon)"
-msgstr ""
-"Ikona – URL-ovi iz prilagođenog korisničkog direktorija (ikona proračunske "
-"tablice)"
-
-msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr "Ikona – URL-ovi iz kartice „Svojstva” (ikona „S”)"
-
-msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr "Ikona – URL-ovi iz kartice „Internet” (ikona „I”)"
-
-msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr "Ikona – URL-ovi iz kartice „Zabilješke” (ikona „Z”)"
-
-msgid "No data available."
-msgstr "Nema podataka."
-
-msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
-msgstr "POVIJESNE ADMINISTRATIVNE JEDINICE OD"
-
-msgid "Foundation date:"
-msgstr "Datum osnutka:"
-
-msgid "Note:"
-msgstr "Zabilješka:"
-
-msgid "Coordinates:"
-msgstr "Koordinate:"
-
-msgid "Administrative history"
-msgstr "Administrativna povijest"
-
-msgid "Data provided to AI:"
-msgstr "UI-u dostavljeni podaci:"
-
-msgid "Full hierarchy"
-msgstr "Potupuna hijerarhija"
-
-msgid "Place Type:"
-msgstr "Vrsta mjesta:"
-
-msgid "Last Retrieved At:"
-msgstr "Zadnje put dohvaćeno:"
-
-msgid "QR-code"
-msgstr "QR kod"
-
-msgid "⚠ Missing dependency \"qrcode\""
-msgstr "⚠ Nedostaje ovisnost „qrcode”"
-
-msgid ""
-"⚠ Error generating QR code:\n"
-"Original error: “{}”"
-msgstr ""
-"⚠ Greška prilikom generiranja QR koda:\n"
-"Izvorna greška: „{}”"
-
-msgid "Save Coordinates to the Place"
-msgstr "Spremi koordinate za mjesto"
-
-msgid "AI provider is disabled"
-msgstr "Pružatelj usluge umjetne inteligencije je deaktiviran"
-
-msgid "No AI API key provided"
-msgstr "Nije naveden API ključ umjetne inteligencije"
-
-msgid "AI-generated historical place data is currently disabled"
-msgstr ""
-"Generiranje povijesnih podataka mjesta pomoću umjetne inteligencije je "
-"trenutačno deaktivirano"
-
-msgid "AI provider is unknown. Please check your AI provider settings."
-msgstr ""
-"Pružatelj usluge umjetne inteligencije je nepoznat. Provjeri postavke tvog "
-"prušatelja usluge umjetne inteligencije."
-
-msgid "⏳ Generating historical place data, please wait..."
-msgstr "⏳ Generiraju se povijesni podaci mjesta. Pričekaj …"
-
-msgid "Keys"
-msgstr "Ključevi"
-
-msgid "Website URL"
-msgstr "URL web-stranice"
-
-msgid "Add link to note"
-msgstr "Dodaj poveznicu zabilješci"
-
-msgid "Add link to attribute"
-msgstr "Dodaj poveznicu svojstvu"
-
-msgid "Show QR-code"
-msgstr "Prikaži QR kod"
-
-msgid "Copy link to clipboard"
-msgstr "Kopiraj poveznicu u međuspremnik"
-
-msgid "Hide link for selected item"
-msgstr "Sakrij poveznicu za odabranu stavku"
-
-msgid "Hide link for all items"
-msgstr "Sakrij poveznice za sve odabrane stavke"
-
-msgid "Edit Attribute with the Link"
-msgstr "Uredi svojstvo s poveznicom"
-
-msgid "Edit Note with the Link"
-msgstr "Uredi zabilješku s poveznicom"
-
-msgid "🔍 AI Suggestions"
-msgstr "🔍 Prijedlozi umjetne inteligencije"
-
-msgid "Attribute no longer exists. The extra icon is removed"
-msgstr "Svojstvo više ne postoji. Dodatna ikona je uklonjena"
-
-msgid "Note no longer exists. The extra icon is removed"
-msgstr "Zabilješka više ne postoji. Dodatna ikona je uklonjena"
-
-#, python-brace-format
-msgid ""
-"📌 This '{title}' web link was archived for future reference by the "
-"WebSearch gramplet (v. {version}):\n"
-"\n"
-"🔗 {url}\n"
-"\n"
-"You can use this link to revisit the source and verify the information "
-"related to this entity."
-msgstr ""
-"📌 Ovu web poveznicu „{title}” je gramplet „Web pretraga” (v. {version}) "
-"arhivirao za buduće reference:\n"
-"\n"
-"🔗 {url}\n"
-"\n"
-"Ovu se poveznica može koristiti za ponovno pregledavanje izvora i provjeru "
-"informacija povezanih s ovom entitetom."
-
-#, python-format
-msgid "Note #%(id)s has been successfully added"
-msgstr "Zabilješka #%(id)s je uspješno dodana"
-
-msgid "Error creating note"
-msgstr "Greška pri stvaranju zabilješke"
-
-msgid "URL is copied to the Clipboard"
-msgstr "URL je kopiran u međuspremnik"
-
-msgid "WebSearch Link"
-msgstr "Poveznica za „Web pretraga”"
-
-msgid "Attribute has been successfully added"
-msgstr "Svojstvo je uspješno dodano"
-
-#, python-brace-format
-msgid "Title: {title}"
-msgstr "Naslov: {title}"
-
-#, python-brace-format
-msgid "Replaced: {keys}"
-msgstr "Zamijenjeno: {keys}"
-
-#, python-brace-format
-msgid "Empty: {keys}"
-msgstr "Prazno: {keys}"
-
-#, python-brace-format
-msgid "Comment: {comment}"
-msgstr "Komentar: {comment}"

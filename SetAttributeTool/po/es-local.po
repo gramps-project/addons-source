@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-10-31 18:02+0000\n"
-"Last-Translator: Alejandro Moctezuma <moctezumaalejandro25@gmail.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,10 +12,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 
 msgid "Select filter to restrict people"
 msgstr "Seleccione filtro para restringir las personas"
+
+msgid "Attribute type to add or edit"
+msgstr "Teclee atributo para agregar o editar"
+
+msgid "Attribute value to add or edit"
+msgstr "Valor de atributo para agregar o editar"
+
+msgid "Remove attribute type and value set"
+msgstr "Quitar tipo de atributo y conjunto de valor"
 
 msgid "Set Attribute"
 msgstr "Establecer atributo"
@@ -48,5 +57,16 @@ msgstr "Quitar atributo"
 msgid "Removing attributes..."
 msgstr "Quitando atributos…"
 
+#, python-format
+msgid ""
+"\n"
+"Removing %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"Retira %d '%s' atributos a '%s'\n"
+
 msgid "Done!\n"
 msgstr "¡Hecho!\n"
+
+msgid "Set an attribute to a given value."
+msgstr "Establece un atributo a un valor dado."

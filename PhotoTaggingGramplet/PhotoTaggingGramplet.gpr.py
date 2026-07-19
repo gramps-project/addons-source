@@ -29,7 +29,7 @@ register(
     name=_("Photo Tagging"),
     description=_("Gramplet for tagging people in photos"),
     authors=["Artem Glebov", "Nick Hall", "Paul Culley", "Bruce Jackson"],
-    version = '1.0.46',
+    version = '1.0.47',
     gramps_target_version="6.0",
     status=STABLE,
     fname="PhotoTaggingGramplet.py",
@@ -39,4 +39,5 @@ register(
     navtypes=["Media"],
     help_url="Addon:Photo_Tagging_Gramplet",
     include_in_listing=True,
+    requires_gi=[("GExiv2", "0.10,0.12,0.14,0.16")],
 )

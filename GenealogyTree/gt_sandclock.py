@@ -90,6 +90,7 @@ class SandclockTree(Report):
         self.max_down = menu.get_option_by_name('gendown').get_value()
         self.include_siblings = menu.get_option_by_name('siblings').get_value()
         self.include_images = menu.get_option_by_name('images').get_value()
+        self.compact = menu.get_option_by_name('compact').get_value()
         self.set_locale(menu.get_option_by_name('trans').get_value())
 
     def write_report(self):
@@ -108,26 +109,7 @@ class SandclockTree(Report):
                     raise ReportError(_("Family %s is not in the Database") %
                                       self._pid)
 
-            options = ['pref code={\\underline{#1}}',
-                       'list separators hang',
-                       'place text={\\newline}{}']
-
-            if self.include_images:
-                images = ('if image defined={'
-                          'add to width=25mm,right=25mm,\n'
-                          'underlay={\\begin{tcbclipinterior}'
-                          '\\path[fill overzoom image=\\gtrDBimage]\n'
-                          '([xshift=-24mm]interior.south east) '
-                          'rectangle (interior.north east);\n'
-                          '\\end{tcbclipinterior}},\n'
-                          '}{},')
-                box = 'box={halign=left,\\gtrDBsex,%s\n}' % images
-            else:
-                box = 'box={halign=left,\\gtrDBsex}'
-
-            options.append(box)
-
-            self.doc.start_tree(options)
+            self.doc.start_tree(self._build_tree_options())
             if self._person_report:
                 family_handle = person.get_main_parents_family_handle()
                 if family_handle:
@@ -144,6 +126,43 @@ class SandclockTree(Report):
                         self.doc.write_node(self._db, 1, 'c', child, False)
                 self.doc.end_subgraph(0)
             self.doc.end_tree()
+
+    def _build_tree_options(self):
+        """Assemble the option list for ``\\genealogytree[...]``.
+
+        Kept separate from ``write_report`` so the option-construction
+        logic can be unit-tested without driving a full report run.
+        """
+        options = ['pref code={\\underline{#1}}',
+                   'list separators hang',
+                   'place text={\\newline}{}']
+
+        if self.include_images:
+            images = ('if image defined={'
+                      'add to width=25mm,right=25mm,\n'
+                      'underlay={\\begin{tcbclipinterior}'
+                      '\\path[fill overzoom image=\\gtrDBimage]\n'
+                      '([xshift=-24mm]interior.south east) '
+                      'rectangle (interior.north east);\n'
+                      '\\end{tcbclipinterior}},\n'
+                      '}{},')
+            box = 'box={halign=left,\\gtrDBsex,%s\n}' % images
+        else:
+            box = 'box={halign=left,\\gtrDBsex}'
+
+        options.append(box)
+
+        if self.compact:
+            # Mantis 10512 / SNoiraud's 2018-12-20 note: the default
+            # `database` template lays out sandclock trees so widely
+            # that large trees clip off the page.  `database pole
+            # reduced` gives ~4x more space per page at the cost of
+            # denser per-node formatting.  Appended last so it
+            # overrides any node-spacing defaults set by treedoc.py's
+            # built-in keys earlier in the parameter list.
+            options.append('template=database pole reduced')
+
+        return options
 
     def subgraph_up_parents(self, level, family):
         for handle in (family.get_father_handle(), family.get_mother_handle()):
@@ -250,5 +269,13 @@ class SandclockTreeOptions(MenuReportOptions):
         images = BooleanOption(_("Include images"), False)
         images.set_help(_("Include images of people in the nodes."))
         menu.add_option(category_name, "images", images)
+
+        compact = BooleanOption(_("Compact tree layout"), False)
+        compact.set_help(_(
+            "Use the genealogytree 'database pole reduced' template, "
+            "which packs more generations per page. Useful for large "
+            "sandclock trees that otherwise clip off the rendered page."
+        ))
+        menu.add_option(category_name, "compact", compact)
 
         locale_opt = stdoptions.add_localization_option(menu, category_name)

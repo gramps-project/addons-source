@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-03-08 15:16+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "Data Entry Gramplet"
 msgstr "Gramplet Zadávanie údajov"
@@ -77,9 +77,18 @@ msgstr "Kopírovať aktívne údaje"
 msgid "in"
 msgstr "na"
 
+msgid "No Family Tree is open."
+msgstr "Nie je otvorený žiadny rodinný strom."
+
+msgid "Please open a Family Tree to edit data."
+msgstr "Prosím, na úpravu údajov otvorte rodinný strom."
+
 #, python-format
 msgid "Gramplet Data Edit: %s"
 msgstr "Gramplet Editovanie údajov: %s"
+
+msgid "Please open a Family Tree before adding a person."
+msgstr "Prosím, otvorte pred pridávaním osoby rodinný strom."
 
 msgid "Please provide a name."
 msgstr "Prosím, zadajte meno."

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,10 +12,58 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Event Roles"
+msgstr "Roles de Evento"
+
+msgid "Event Types"
+msgstr "Tipos de Evento"
+
+msgid "Family Relation Types"
+msgstr "Tipos de Relación Familiar"
+
+msgid "Child reference Types"
+msgstr "Tipos de referencia de hijo"
+
+msgid "Name Origin Types"
+msgstr "Nombre de Tipos Origen"
+
+msgid "Name Types"
+msgstr "Tipos de nombre"
+
+msgid "Note Types"
+msgstr "Tipos de nota"
+
+msgid "Place Types"
+msgstr "Tipos de lugar"
+
+msgid "Repository Types"
+msgstr "Tipos de repositorio"
+
+msgid "Source Media Types"
+msgstr "Tipos de Medios de fuente"
+
+msgid "URL Types"
+msgstr "Tipos de URL"
+
+msgid "Types Cleanup Tool"
+msgstr "Tipos de herramienta de purga"
 
 msgid "Rename"
-msgstr "Cambiar nombre"
+msgstr "Renombrar"
+
+msgid "Rename the selected type in all referenced objects."
+msgstr "Renombra el tipo seleccionado en todos los objetos referenciados."
 
 msgid "Types"
 msgstr "Tipos"
+
+msgid "Type Cleanup Tool"
+msgstr "Herramienta de Purga de Tipo"
+
+msgid "Type Cleanup"
+msgstr "Tipo de Purga"
+
+msgid "Clean up (remove) custom types"
+msgstr "Purgar (retirar) tipos personales"

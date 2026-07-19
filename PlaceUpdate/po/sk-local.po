@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-09-05 10:02+0000\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,19 +12,65 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "Set properties for multiple places"
-msgstr "Nastaviť vlastnosti pre viaceré miesta"
+msgstr "Nastavenie vlastností pre viaceré miesta"
+
+msgid ""
+"This gramplet allows setting properties for multiple places at the same time"
+msgstr "Tento gramplet umožňuje nastaviť vlastnosti pre viaceré miesta naraz"
+
+msgid "New enclosing place"
+msgstr "Nové nadradené miesto"
+
+msgid "Timespan:"
+msgstr "Časový rozsah:"
+
+msgid "Set timespan for enclosing places"
+msgstr "Nastavte časový rozsah pre nadradené miesta"
+
+msgid "Clear original enclosing places"
+msgstr "Vymazať pôvodné nadradené miesta"
+
+msgid "Clear tags"
+msgstr "Vymazať štítky"
+
+msgid "Generate hierarchy"
+msgstr "Vygenerovať hierarchiu"
+
+msgid "use spaces as separator"
+msgstr "použiť medzery ako oddeľovač"
+
+msgid "reverse hierarchy"
+msgstr "obrátiť hierarchiu"
 
 msgid "Replace text"
 msgstr "Nahradiť text"
 
+msgid "Use regex"
+msgstr "Použiť regulárny výraz (regex)"
+
+msgid "Old text:"
+msgstr "Starý text:"
+
+msgid "New text:"
+msgstr "Nový text:"
+
 msgid "Clear selections"
 msgstr "Vymazať výbery"
+
+msgid "Apply to selected places"
+msgstr "Aplikovať na vybrané miesta"
+
+msgid "Setting place properties"
+msgstr "Nastavovanie vlastností miesta"
+
+msgid "Regex operation failed: {}"
+msgstr "Operácia regex zlyhala: {}"
 
 msgid "PlaceUpdate"
 msgstr "Aktualizácia miesta"
 
 msgid "Gramplet to manipulate multiple places"
-msgstr "Gramplet na manipuláciu s viacerými miestami"
+msgstr "Gramplet na hromadnú úpravu miest"

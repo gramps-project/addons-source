@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2026-04-08 15:09+0000\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2026-05-11 10:35+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,25 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17-dev\n"
-
-msgid "Select Form"
-msgstr "Odaberi obrazac"
-
-msgid "Form Gramplet"
-msgstr "Obrazac – gramplet"
-
-msgid "Gramplet interface for Forms"
-msgstr "Gramplet sučelje za obrasce"
-
-msgid "Forms"
-msgstr "Obrasci"
-
-msgid "Order"
-msgstr "Redoslijed"
-
-msgid "Form"
-msgstr "Obrazac"
+"X-Generator: Weblate 2026.5-dev\n"
 
 #, python-format
 msgid "Form: %s"
@@ -48,6 +30,566 @@ msgstr "Referenca:"
 
 msgid "Headings"
 msgstr "Naslovi"
+
+#, python-format
+msgid "Census Check for %s"
+msgstr "Provjera popisa stanovništva za %s"
+
+msgid "Form Gramplet"
+msgstr "Obrazac – gramplet"
+
+msgid "Gramplet interface for Forms"
+msgstr "Gramplet sučelje za obrasce"
+
+msgid "Forms"
+msgstr "Obrasci"
+
+msgid "Order"
+msgstr "Redoslijed"
+
+msgid "Form"
+msgstr "Obrazac"
+
+msgid "Failed to read Form definition file"
+msgstr "Greška u čitanju datoteke s definicijama za obrazac"
+
+msgid "Invalid Form definition file"
+msgstr "Neispravna datoteka s definicijama za obrazac"
+
+msgid "Select Form"
+msgstr "Odaberi obrazac"
+
+msgid "CensusCheck"
+msgstr "Provjera popisa stanovništva"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"descendents"
+msgstr ""
+"Provjeri nedostaju li neki događaji popisa stanovništva za osobu i neke od "
+"njezinih potomaka"
+
+msgid "CensusCheckUp"
+msgstr "Provjera popisa stanovništva"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"ancestors"
+msgstr ""
+"Provjeri nedostaju li neki događaji popisa stanovništva za osobu i neke od "
+"njezinih predaka"
+
+msgid "Schedule"
+msgstr "Raspored"
+
+msgid "EnumDistrict"
+msgstr "Popisni kotar"
+
+msgid "Township"
+msgstr "Naselje"
+
+msgid "Comprising"
+msgstr "Uključuje"
+
+msgid "Enumerator"
+msgstr "Brojač"
+
+msgid "1. Names of Inmates"
+msgstr "1. Imena zatvorenika"
+
+msgid "2. Profession, Trade or Occupation"
+msgstr "2. Profesija, obrt ili zanimanje"
+
+msgid "BirthPlace"
+msgstr "Mjesto rođenja"
+
+msgid "3. Place of Birth"
+msgstr "3. Mjesto rođenja"
+
+msgid "4. Religion"
+msgstr "4. Vjera"
+
+msgid "5. Residence if Outside of Limits"
+msgstr "5. Prebivalište"
+
+msgid "6. Age at Next Birthday"
+msgstr "6. Starost na sljedeći rođendan"
+
+msgid "SexMale"
+msgstr "Muški spol"
+
+msgid "7. Sex: Male"
+msgstr "7. Spol: muški"
+
+msgid "SexFemale"
+msgstr "Ženski spol"
+
+msgid "8. Sex: Female"
+msgstr "8. Spol: ženski"
+
+msgid "MaritalStatus"
+msgstr "Bračno stanje"
+
+msgid "9. Married or Single"
+msgstr "9. Vjenčan ili samac"
+
+msgid "Houses"
+msgstr "Kuće"
+
+msgid ""
+"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
+msgstr ""
+"31. Kuće: cigla, kamen, drvo, deblo, koliba ili druge vrste prebivališta"
+
+msgid "HousesStories"
+msgstr "Katovi kuće"
+
+msgid "HousesFamilies"
+msgstr "Obitelji kuće"
+
+msgid "HousesVacant"
+msgstr "Nenastanjene kuće"
+
+msgid "HousesBuilding"
+msgstr "Zgrade"
+
+msgid "Shops"
+msgstr "Trgovine"
+
+msgid "PublicBuildings"
+msgstr "Javne ustanova"
+
+msgid "BuisnessInfo"
+msgstr "Informacije o poduzeću"
+
+msgid "NumEmployees"
+msgstr "Broj zaposlenika"
+
+msgid "HayQty"
+msgstr "Količina sjena"
+
+msgid "Bulls"
+msgstr "Bikovi"
+
+msgid "Milch Cows"
+msgstr "Mliječne krave"
+
+msgid "Calves"
+msgstr "Telad"
+
+msgid "Horses"
+msgstr "Konji"
+
+msgid "Sheep"
+msgstr "Ovce"
+
+msgid "Pigs"
+msgstr "Svinje"
+
+msgid "ButterLbs"
+msgstr "Putar"
+
+msgid "CheeseLbs"
+msgstr "Sir"
+
+msgid "Beef"
+msgstr "Govedina"
+
+msgid "Pork"
+msgstr "Svinjetina"
+
+msgid "Fish"
+msgstr "Riba"
+
+msgid "56. Remarks"
+msgstr "56. Napomene"
+
+msgid "2. Profession, trade or occupation"
+msgstr "2. Profesija, obrt ili zanimanje"
+
+msgid "5. Religion"
+msgstr "5. Vjera"
+
+msgid "8. Sex: Male"
+msgstr "8. Spol: Muški"
+
+msgid "9. Sex:Female"
+msgstr "8. Spol: Ženski"
+
+msgid "10. Married or Single"
+msgstr "10. Vjenčani ili nevjenčani"
+
+msgid "Widowers"
+msgstr "Udovci"
+
+msgid "11. Widowers"
+msgstr "11. Udovci"
+
+msgid "Widows"
+msgstr "Udovice"
+
+msgid "12. Widows"
+msgstr "12. Udovice"
+
+msgid "14. Members: Male"
+msgstr "14. Članovi: Muški"
+
+msgid "15. Members: Female"
+msgstr "15. Članovi: Ženski"
+
+msgid "CantReadMale"
+msgstr "Ne zna čitati – muška osoba"
+
+msgid "CantReadFemale"
+msgstr "Ne zna čitati – ženska osoba"
+
+msgid "HouseBeingBuilt"
+msgstr "Kuća u izgradnji"
+
+msgid "SubDistrict"
+msgstr "Pod-kotar"
+
+msgid "Vessels"
+msgstr "Plovila"
+
+msgid "1. Vessels"
+msgstr "1. Plovila"
+
+msgid "Shanties"
+msgstr "Kolibe"
+
+msgid "2. Shanties"
+msgstr "2. Kolibe"
+
+msgid "HousesBeingBuilt"
+msgstr "Zgrade: u izgradnji"
+
+msgid "3. Dwelling houses in construction"
+msgstr "3. Stambene zgrade u izgradnji"
+
+msgid "4. Dwelling houses unoccupied"
+msgstr "4. Stambene zgrade nenastanjene"
+
+msgid "HousesInhabited"
+msgstr "Zgrade: nastanjene"
+
+msgid "5. Dwelling houses inhabited"
+msgstr "5. Stambene zgrade nastanjene"
+
+msgid "6.Families"
+msgstr "6. Obitelji"
+
+msgid "7. Names"
+msgstr "7. Imena"
+
+msgid "Sex"
+msgstr "Spol"
+
+msgid "8. Sex"
+msgstr "8. Spol"
+
+msgid "9. Age"
+msgstr "9. Starost"
+
+msgid "11. Country or Province of Birth"
+msgstr "11. Zemlja ili pokrajina rođenja"
+
+msgid "12. Religion"
+msgstr "12. Vjera"
+
+msgid "14. Profession, Occupation or Trade"
+msgstr "14. Profesija, zanimanje ili obrt"
+
+msgid "15. Married or Widowed"
+msgstr "15. Vjenčani ili obudovjeli"
+
+msgid "CantRead"
+msgstr "Ne zna čitati"
+
+msgid "CantWrite"
+msgstr "Ne zna pisati"
+
+msgid "19. Unsound mind"
+msgstr "19. Nezdrav um"
+
+msgid "1. Vessels and Shanties"
+msgstr "1. Plovila i kolibe"
+
+msgid "2. Houses in construction"
+msgstr "2. Kuće u izgradnji"
+
+msgid "3. Houses unoccupied"
+msgstr "3. Nenastanjene kuće"
+
+msgid "4. Houses inhabited"
+msgstr "4. Nastanjene kuće"
+
+msgid "5. Families"
+msgstr "5. Obitelji"
+
+msgid "6. Names"
+msgstr "6. Imena"
+
+msgid "7. Sex"
+msgstr "7. Spol"
+
+msgid "8. Age"
+msgstr "8. Starost"
+
+msgid "9. Married or Widowed"
+msgstr "9. Vjenčani ili obudovjeli"
+
+msgid "Relation"
+msgstr "Srodstvo"
+
+msgid "10. Relationship to Head of Family"
+msgstr "10. Veza prema glavi obitelji"
+
+msgid "12. FrenchCanadian"
+msgstr "12. Francuski kanađani"
+
+msgid "BirthPlaceFather"
+msgstr "Mjesto rođenja oca"
+
+msgid "13. Birth Place of Father"
+msgstr "13. Mjesto rođenja oca"
+
+msgid "BirthPlaceMother"
+msgstr "Mjesto rođenja majke"
+
+msgid "14. Birth Place of Mother"
+msgstr "14. Mjesto rođenja majke"
+
+msgid "15. Religion"
+msgstr "15. Vjera"
+
+msgid "16. Profession, Occupation or Trade"
+msgstr "16. Profesija, zanimanje ili obrt"
+
+msgid "Employer"
+msgstr "Poslodavac"
+
+msgid "17. Employers"
+msgstr "17. Poslodavci"
+
+msgid "Employee"
+msgstr "Zaposlenik"
+
+msgid "Unemployed"
+msgstr "Nezasposleni"
+
+msgid "Employees"
+msgstr "Zaposlenici"
+
+msgid "CanRead"
+msgstr "Zna čitati"
+
+msgid "CanWrite"
+msgstr "Zna pisati"
+
+msgid "23. Deaf and Dumb"
+msgstr "23. Gluhi i nijemi"
+
+msgid "24. Blind"
+msgstr "24. Slijepi"
+
+msgid "25. Unsound mind"
+msgstr "25. Nezdrav um"
+
+msgid "SubTitle"
+msgstr "Podnaslov"
+
+msgid "House"
+msgstr "Kuća"
+
+msgid "1. Dwelling house"
+msgstr "1. Stambena zgrada"
+
+msgid "2. Family or household"
+msgstr "2. Obitelj ili kućanstvo"
+
+msgid "4. Sex"
+msgstr "4. Spol"
+
+msgid "Colour"
+msgstr "Boja"
+
+msgid "5. Colour"
+msgstr "5. Boja"
+
+msgid "7. Single, married, widowed, divorced or legally separated"
+msgstr "7. Singl, vjenčani, obudovjeli, razvedeni ili zakonski rastavljeni"
+
+msgid "BirthMonth"
+msgstr "Mjesec rođenja"
+
+msgid "8. Month and Date of Birth"
+msgstr "8. Mjesec i datum rođenja"
+
+msgid "BirthYear"
+msgstr "Godina rođenja"
+
+msgid "9. Year of birth"
+msgstr "9. Godina rođenja"
+
+msgid "10. Age at last birthday"
+msgstr "10. Dob pri zadnjem rođendanu"
+
+msgid "11. Country or place of birth"
+msgstr "11. Zemlja ili mjesto rođenja"
+
+msgid "12. Year of immigration to Canada, if an immigrant"
+msgstr "12. Godina imigracije u Kanadu, ako je imigrant"
+
+msgid "13. Year of naturalization, if formerly an alien"
+msgstr "13. Godina dobivanja državljanstva, ako je prethodno bio stranac"
+
+msgid "Nationality"
+msgstr "Nacionalnost"
+
+msgid "15. Nationality"
+msgstr "15. Nacionalnost"
+
+msgid "16. Religion"
+msgstr "16. Vjera"
+
+msgid "17. Profession, occupation, trade or means of living of each person"
+msgstr "17. Profesija, zanimanje, obrt ili izvor prihoda svake osobe"
+
+msgid "19. Employer"
+msgstr "19. Poslodavac"
+
+msgid "20. Employee"
+msgstr "20. Zaposlenik"
+
+msgid "29. Can read"
+msgstr "29. Zna čitati"
+
+msgid "30. Can write"
+msgstr "30. Zna pisati"
+
+msgid "31. Can speak English"
+msgstr "31. Govori engleski"
+
+msgid "32. Can speak French"
+msgstr "32. Govori francuski"
+
+msgid "Institution"
+msgstr "Institucija"
+
+msgid "5. Married, single, widowed or divorced"
+msgstr "5. Vjenčani, singl, obudovjeli ili razvedeni"
+
+msgid "7. Country or place of birth"
+msgstr "7. Zemlja ili mjesto rođenja"
+
+msgid "8. Year of immigration to Canada"
+msgstr "8. Godina imigracije u Kanadu"
+
+msgid "Section"
+msgstr "Odsječak"
+
+msgid "22. State where person employed"
+msgstr "22. Država u kojoj je osoba zaposlena"
+
+msgid "34. Can Read"
+msgstr "34. Zna čitati"
+
+msgid "35. Can Write"
+msgstr "35. Zna pisati"
+
+msgid "Idiotic"
+msgstr "Idiot"
+
+msgid "1. House"
+msgstr "1. Kuća"
+
+msgid "Dwelling house"
+msgstr "Stambena zgrada"
+
+msgid "Family or household"
+msgstr "Obitelj ili kućanstvo"
+
+msgid "6. Single, married, widowed, divorced or legally separated"
+msgstr "6. Singl, vjenčani, obudovjeli, razvedeni ili zakonski rastavljeni"
+
+msgid "8. Age at last birthday"
+msgstr "8. Dob pri zadnjem rođendanu"
+
+msgid "9. Country or place of birth"
+msgstr "9. Zemlja ili mjesto rođenja"
+
+msgid "11. Religion"
+msgstr "11. Vjera"
+
+msgid "13. Can Read"
+msgstr "13. Zna čitati"
+
+msgid "14. Can Write"
+msgstr "14. Zna pisati"
+
+msgid "1. Dwelling House"
+msgstr "1. Stambena zgrada"
+
+msgid "2. Family, Household or Institution"
+msgstr "2. Obitelj, kućanstvo ili institucija"
+
+msgid "3. Name of each person in family, household or institution"
+msgstr "3. Ime svake osobe u obitelji, kućanstvu ili instituciji"
+
+msgid "9. Relationship to head of family or household"
+msgstr "9. Srodstvo s glavi obitelji ili kućanstva"
+
+msgid "10. Sex"
+msgstr "10. Spol"
+
+msgid "11. Single, married, widowed, divorced or legally separated"
+msgstr "11. Singl, vjenčani, obudovjeli, razvedeni ili zakonski rastavljeni"
+
+msgid "12. Age at last birthday"
+msgstr "12. Dob pri zadnjem rođendanu"
+
+msgid "13. Country or place of birth"
+msgstr "13. Zemlja ili mjesto rođenja"
+
+msgid "14. Religion"
+msgstr "14. Vjera"
+
+msgid "15. Year of immigration to Canada"
+msgstr "15. Godina imigracije u Kanadu"
+
+msgid "16. Year of naturalization"
+msgstr "16. Godina dobivanja državljanstva"
+
+msgid "17. Nationality"
+msgstr "17. Nacionalnost"
+
+msgid "19. Can speak English"
+msgstr "19. Govori engleski"
+
+msgid "20. Can speak French"
+msgstr "20. Govori francuski"
+
+msgid "OtherLanguage"
+msgstr "Drugi jezici"
+
+msgid "21. Other language spoken as mother tongue"
+msgstr "21. Govori drugim jezicima kao materinskim jezikom"
+
+msgid "22. Can Read"
+msgstr "22. Zna čitati"
+
+msgid "23. Can Write"
+msgstr "23. Zna pisati"
+
+msgid "24. Chief occupation or trade"
+msgstr "24. Glavno zanimanje ili obrt"
+
+msgid "25. Employer, \"E\", Employee, \"W\""
+msgstr "25. Poslodavac, „E”, Zaposlenik, „W”"
+
+msgid "26. State where person is employed"
+msgstr "26. Država u kojoj je osoba zaposlena"
 
 msgid "NARA publication"
 msgstr "NARA publikacija"
@@ -82,9 +624,6 @@ msgstr "Redak br."
 msgid "Family No."
 msgstr "Obitelj br."
 
-msgid "Sex"
-msgstr "Spol"
-
 msgid "Value of real estate"
 msgstr "Vrijednost nekretnine"
 
@@ -102,15 +641,6 @@ msgstr "Nepismeni i stariji od 20 godina"
 
 msgid "Deaf, dumb, blind, insane, idiotic, pauper or convict"
 msgstr "Gluhi, glupi, slijepi, bezumni, idioti, siromasi ili osuđenici"
-
-msgid "Horses"
-msgstr "Konji"
-
-msgid "Milch Cows"
-msgstr "Mliječne krave"
-
-msgid "Sheep"
-msgstr "Ovce"
 
 msgid "Hay"
 msgstr "Sjeno"
@@ -142,8 +672,8 @@ msgstr "Singl"
 msgid "Widowed, divorced"
 msgstr "Obudovjeli, razvedeni"
 
-msgid "Idiotic"
-msgstr "Idiot"
+msgid "Maimed, crippled, bedridden, or otherwise disabled"
+msgstr "Osakaćen, prikovan za krevet ili na jedan drugi način onesposobljen"
 
 msgid "Street and No."
 msgstr "Ulica i broj"
@@ -154,8 +684,14 @@ msgstr "Veteran građanskog rata ili udovica veterana"
 msgid "Single, married, widowed or divorced"
 msgstr "Singl, vjenčani, obudovjeli ili razvedeni"
 
+msgid "Naturalization papers taken out"
+msgstr "Izdani dokumenti za dobivanje državljanstva"
+
 msgid "Rank"
-msgstr "Položaj"
+msgstr "Čin"
+
+msgid "Company"
+msgstr "Satnija"
 
 msgid "Regiment/Vessel"
 msgstr "Pukovnija/brod"
@@ -170,7 +706,7 @@ msgid "Street Address"
 msgstr "Ulična adresa"
 
 msgid "Relation to head"
-msgstr "Odnos prema glavi"
+msgstr "Odnos prema glavi obitelji"
 
 msgid "Month of birth"
 msgstr "Mjesec rođenja"
@@ -197,16 +733,13 @@ msgid "Employer, employee or working on own account"
 msgstr "Poslodavac, zaposlenik ili radi na vlastiti račun"
 
 msgid "Year of naturalization"
-msgstr "Godina naturalizacije"
+msgstr "Godina dobivanja državljanstva"
 
 msgid "Industry"
 msgstr "Industrija"
 
 msgid "Employer, worker or working on own account"
 msgstr "Zaposlenik, radnik ili radi na vlastiti račun"
-
-msgid "Institution"
-msgstr "Institucija"
 
 msgid "Employed"
 msgstr "Zaposlen"
@@ -308,8 +841,23 @@ msgstr "Datoteka br."
 msgid "Other states lived in and when"
 msgstr "Druge države u kojima je osoba živjela i kada"
 
+msgid "Letter of Company"
+msgstr "Pismo satnije"
+
 msgid "If not, give name of state"
 msgstr "Ako ne, navedi ime države"
+
+msgid "By what other name was your Company called"
+msgstr "Pod kojim se drugim imenom zvala tvoja satnija"
+
+msgid "By what other name was your Regiment called"
+msgstr "Pod kojim se drugim imenom zvala tvoja pukovnija"
+
+msgid "Did you transfer to another Company or Command"
+msgstr "Jesi li prešao u jednu drugu satniju ili zapovjedništvo"
+
+msgid "If so, give Company and Regiment"
+msgstr "Ako jesi, navedi satniju i pukovniju"
 
 msgid "When, where and circumstances you quit the service"
 msgstr "Kada, gdje i pod kojim okolnostima si napustii/la službu"
@@ -326,8 +874,14 @@ msgstr "Njena dob"
 msgid "Her date of birth"
 msgstr "Njen datum rođenja"
 
+msgid "(Day of the Enumerator's visit) sick or temporarily disabled"
+msgstr "(Dan posjeta popisivača) bolestan ili privremeno onesposobljen"
+
 msgid "Deaf and Dumb"
-msgstr "Gluha i nijema"
+msgstr "Gluh i nijem"
+
+msgid "Maimed, Crippled, Bedridden, or otherwise disabled."
+msgstr "Osakaćen, prikovan za krevet ili na jedan drugi način onesposobljen."
 
 msgid "Can not read"
 msgstr "Ne zna čitati"
@@ -395,12 +949,6 @@ msgstr "Grad od"
 msgid "Township of"
 msgstr "Naselje od"
 
-msgid "Township"
-msgstr "Naselje"
-
-msgid "Section"
-msgstr "Odsječak"
-
 msgid "Street and Number"
 msgstr "Ulica i broj"
 
@@ -418,6 +966,9 @@ msgstr "Zna čitati ali ne pisati, osoba starija od 10 godina"
 
 msgid "Cannot read or write, over 10 years old"
 msgstr "Ne zna čitati ili pisati, osoba starija od 10 godina"
+
+msgid "Company if in Civil War"
+msgstr "Satnija ako u građanskom ratu"
 
 msgid "P.O. Address"
 msgstr "Poštanski pretinac"
@@ -470,8 +1021,17 @@ msgstr "Ako si rođen/a u inozemstvu, jesi li naturaliziran/a?"
 msgid "Conjugal condition; Single-Married-Widowed-Divorced-Separated"
 msgstr "Bračno stanje; singl-vjenčani-obudovjeli-razvedeni-rastavljeni"
 
+msgid "Military-Company"
+msgstr "Vojna satnija"
+
+msgid "Military Service; Company"
+msgstr "Vojna služba; satnija"
+
 msgid "Town or Township"
 msgstr "Grad ili naselje"
+
+msgid "Military Service: Company"
+msgstr "Vojna služba: satnija"
 
 msgid "Deaf"
 msgstr "Gluh"
@@ -484,9 +1044,6 @@ msgstr "Naturaliziran/a ako je rođen/a u inozemstvu?"
 
 msgid "House Number"
 msgstr "Kućni broj"
-
-msgid "Relation"
-msgstr "Srodstvo"
 
 msgid "Able to Read"
 msgstr "Ne zna pisati"
@@ -578,6 +1135,9 @@ msgstr "Nepismen i više od 21 godina"
 msgid "Honorably discharged from military service"
 msgstr "Časno otpušten iz vojne službe"
 
+msgid "Company or command"
+msgstr "Satnija ili zapovjedništvo"
+
 msgid "Illiterate and 15 to 21 years old"
 msgstr "Nepismeni i 15 do 21 godina stari"
 
@@ -587,14 +1147,17 @@ msgstr "Godina imigracije u SAD"
 msgid "Condition"
 msgstr "Stanje"
 
-msgid "Schedule"
-msgstr "Raspored"
-
 msgid "Residence in State - Years"
 msgstr "Prebivalište u državi – godine"
 
 msgid "Residence in State - Months"
 msgstr "Prebivalište u državi – mjeseci"
+
+msgid "Residence in District - Years"
+msgstr "Prebivalište u kotaru – godine"
+
+msgid "Residence in District - Months"
+msgstr "Prebivalište u kotaru – mjeseci"
 
 msgid "Organized Township"
 msgstr "Organizirano naselje"
@@ -607,6 +1170,12 @@ msgstr "Ime sela"
 
 msgid "Name of City"
 msgstr "Ime grada"
+
+msgid "Residence in District - years"
+msgstr "Prebivalište u kotaru – godine"
+
+msgid "Residence in District - months"
+msgstr "Prebivalište u kotaru – mjeseci"
 
 msgid "Dwelling Value"
 msgstr "Vrijednost stambene jedinice"
@@ -693,7 +1262,7 @@ msgid "Can't Write"
 msgstr "Ne zna pisati"
 
 msgid "Do you own your home or farm"
-msgstr "Posjeduješ kuću ili gospodarstvo"
+msgstr "Posjeduješ li svoju kuću ili gospodarstvo"
 
 msgid "Ancestry"
 msgstr "Podrijetlo"
@@ -753,7 +1322,7 @@ msgid "Farm/House"
 msgstr "Gospodarstvo/Kuća"
 
 msgid "Certificate Number"
-msgstr "Broj za certifikat"
+msgstr "Broj certifikata"
 
 msgid "Entry Number"
 msgstr "Broj unosa"
@@ -816,7 +1385,7 @@ msgid "Place of Death"
 msgstr "Mjesto smrti"
 
 msgid "Length of Residence"
-msgstr "Duljina prebivanja"
+msgstr "Trajanje prebivališta"
 
 msgid "Served in U.S. Military"
 msgstr "Vojna služba u vojsci SAD-a"
@@ -854,6 +1423,9 @@ msgstr "Mjesto pokopa"
 msgid "Date of Burial"
 msgstr "Datum pokopa"
 
+msgid "Residence Place"
+msgstr "Mjesto prebivališta"
+
 msgid "Former Military Service"
 msgstr "Ranija vojna služba"
 
@@ -871,6 +1443,21 @@ msgstr "Mjesto registracije"
 
 msgid "Date of Registration"
 msgstr "Datum registracije"
+
+msgid "Registration Card"
+msgstr "Registracijska kartica"
+
+msgid "Place of Residence"
+msgstr "Mjesto prebivališta"
+
+msgid "Country of Citizenship"
+msgstr "Zemlja državljanstva"
+
+msgid "Relationship "
+msgstr "Srodstvo "
+
+msgid "Occupation "
+msgstr "Zanimanje "
 
 msgid "Place of employment or business"
 msgstr "Mjesto zaposlenja ili poslovanja"
@@ -901,6 +1488,33 @@ msgstr "Industrija/Poslodavac"
 
 msgid "Residents Status"
 msgstr "Status stanovnika"
+
+msgid "Town or City"
+msgstr "Grad"
+
+msgid "Where Born"
+msgstr "Mjesto rođenja"
+
+msgid "Comments"
+msgstr "Komentari"
+
+msgid "Years at current residence"
+msgstr "Godine na trenutačnom prebivalištu"
+
+msgid "Previous residence"
+msgstr "Prethodno prebivalište"
+
+msgid "Previous Residence"
+msgstr "Prethodno prebivalište"
+
+msgid "State Tax"
+msgstr "Državni porez"
+
+msgid "Kommuneskat"
+msgstr "Porez na dohodak"
+
+msgid "Residence on 5 Nov 1924"
+msgstr "Prebivalište 5. studenoga 1924."
 
 msgid "Event Place (Original)"
 msgstr "Mjesto događaja (izvorno)"
@@ -935,17 +1549,17 @@ msgstr "Početna godina svezaka"
 msgid "Volume Ending Year"
 msgstr "Završna godina svezaka"
 
-msgid "Town or City"
-msgstr "Grad"
+msgid "Can read and write"
+msgstr "Zna čitati i pisati"
 
-msgid "Where Born"
-msgstr "Mjesto rođenja"
+msgid "Military"
+msgstr "Vojna služba"
 
-msgid "Comments"
-msgstr "Komentari"
+msgid "Taxes"
+msgstr "Porezi"
 
-msgid "State Tax"
-msgstr "Državni porez"
+msgid "Type of roof"
+msgstr "Vrsta krova"
 
 msgid "Registration District"
 msgstr "Kotar registracije"
@@ -954,7 +1568,7 @@ msgid "Maiden Surname"
 msgstr "Djevojačko prezime"
 
 msgid "Banns/Licence"
-msgstr "Zapreke/Dozvola"
+msgstr "Najave vjenčanja/Vjenčani list"
 
 msgid "Deceased"
 msgstr "Pokojan/pokojna"
@@ -985,9 +1599,6 @@ msgstr "UVJET za brak"
 
 msgid "PROFESSION or OCCUPATION"
 msgstr "PROFESIJA ili ZANIMANJE"
-
-msgid "Employer"
-msgstr "Poslodavac"
 
 msgid "Neither"
 msgstr "Nijedno"
@@ -1050,9 +1661,6 @@ msgstr "Industrija ili usluga s kojom je radnik povezan."
 msgid "Whether Employer, Worker or Working on Own Account"
 msgstr "Je li zaposlenik, radnik ili je li radi na vlastiti račun"
 
-msgid "Nationality"
-msgstr "Nacionalnost"
-
 msgid "NATIONALITY of every Person born in a Foreign Country."
 msgstr "NACIONALNOST svake osobe rođene u inozemstvu."
 
@@ -1087,7 +1695,7 @@ msgid "Town or Village"
 msgstr "Grad ili selo"
 
 msgid "Relation to Head"
-msgstr "Odnos prema glavi"
+msgstr "Odnos prema glavi obitelji"
 
 msgid "Blind, or Deaf and Dumb"
 msgstr "Slijepa ili gluha i nijema"
@@ -1162,479 +1770,3 @@ msgstr "Glava obitelji"
 
 msgid "Total Children"
 msgstr "Ukupno djece"
-
-msgid "EnumDistrict"
-msgstr "Popisni kotar"
-
-msgid "Comprising"
-msgstr "Uključuje"
-
-msgid "Enumerator"
-msgstr "Brojač"
-
-msgid "1. Names of Inmates"
-msgstr "1. Broj zatvorenika"
-
-msgid "2. Profession, Trade or Occupation"
-msgstr "2. Profesija, obrt ili zanimanje"
-
-msgid "BirthPlace"
-msgstr "Mjesto rođenja"
-
-msgid "3. Place of Birth"
-msgstr "3. Mjesto rođenja"
-
-msgid "4. Religion"
-msgstr "4. Vjera"
-
-msgid "5. Residence if Outside of Limits"
-msgstr "5. Prebivalište"
-
-msgid "6. Age at Next Birthday"
-msgstr "6. Starost na sljedeći rođendan"
-
-msgid "SexMale"
-msgstr "Muški spol"
-
-msgid "7. Sex: Male"
-msgstr "7. Spol: muško"
-
-msgid "SexFemale"
-msgstr "Ženski spol"
-
-msgid "8. Sex: Female"
-msgstr "8. Spol: žensko"
-
-msgid "MaritalStatus"
-msgstr "Bračno stanje"
-
-msgid "9. Married or Single"
-msgstr "9. Vjenčan/a ili nevjenčan/a"
-
-msgid "Houses"
-msgstr "Kuće"
-
-msgid ""
-"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
-msgstr ""
-"31. Kuće: cigla, kamen, drvo, deblo, koliba ili druge vrste prebivališta"
-
-msgid "HousesStories"
-msgstr "Katovi kuće"
-
-msgid "HousesFamilies"
-msgstr "Obitelji kuće"
-
-msgid "HousesVacant"
-msgstr "Nenastanjene kuće"
-
-msgid "HousesBuilding"
-msgstr "Zgrade"
-
-msgid "Shops"
-msgstr "Trgovine"
-
-msgid "PublicBuildings"
-msgstr "Javne ustanova"
-
-msgid "BuisnessInfo"
-msgstr "Informacije o poduzeću"
-
-msgid "NumEmployees"
-msgstr "Broj zaposlenika"
-
-msgid "HayQty"
-msgstr "Količina sjena"
-
-msgid "Bulls"
-msgstr "Bikovi"
-
-msgid "Calves"
-msgstr "Telad"
-
-msgid "Pigs"
-msgstr "Svinje"
-
-msgid "ButterLbs"
-msgstr "Putar"
-
-msgid "CheeseLbs"
-msgstr "Sir"
-
-msgid "Beef"
-msgstr "Govedina"
-
-msgid "Pork"
-msgstr "Svinjetina"
-
-msgid "Fish"
-msgstr "Riba"
-
-msgid "56. Remarks"
-msgstr "56. Napomene"
-
-msgid "2. Profession, trade or occupation"
-msgstr "2. Profesija, obrt ili zanimanje"
-
-msgid "5. Religion"
-msgstr "5. Vjera"
-
-msgid "10. Married or Single"
-msgstr "10. Vjenčani ili nevjenčani"
-
-msgid "Widowers"
-msgstr "Udovci"
-
-msgid "11. Widowers"
-msgstr "11. Udovci"
-
-msgid "Widows"
-msgstr "Udovice"
-
-msgid "12. Widows"
-msgstr "12. Udovice"
-
-msgid "CantReadMale"
-msgstr "Ne zna čitati – muška osoba"
-
-msgid "CantReadFemale"
-msgstr "Ne zna čitati – ženska osoba"
-
-msgid "HouseBeingBuilt"
-msgstr "Kuća u izgradnji"
-
-msgid "SubDistrict"
-msgstr "Pod-kotar"
-
-msgid "Vessels"
-msgstr "Plovila"
-
-msgid "1. Vessels"
-msgstr "1. Plovila"
-
-msgid "Shanties"
-msgstr "Kolibe"
-
-msgid "2. Shanties"
-msgstr "2. Kolibe"
-
-msgid "HousesBeingBuilt"
-msgstr "Zgrade: u izgradnji"
-
-msgid "3. Dwelling houses in construction"
-msgstr "3. Stambene zgrade u izgradnji"
-
-msgid "4. Dwelling houses unoccupied"
-msgstr "4. Stambene zgrade nenastanjene"
-
-msgid "HousesInhabited"
-msgstr "Zgrade: nastanjene"
-
-msgid "5. Dwelling houses inhabited"
-msgstr "5. Stambene zgrade nastanjene"
-
-msgid "6.Families"
-msgstr "6. Obitelji"
-
-msgid "7. Names"
-msgstr "7. Imena"
-
-msgid "8. Sex"
-msgstr "8. Spol"
-
-msgid "9. Age"
-msgstr "9. Starost"
-
-msgid "11. Country or Province of Birth"
-msgstr "11. Zemlja ili pokrajina rođenja"
-
-msgid "12. Religion"
-msgstr "12. Vjera"
-
-msgid "14. Profession, Occupation or Trade"
-msgstr "14. Profesija, zanimanje ili obrt"
-
-msgid "15. Married or Widowed"
-msgstr "15. Vjenčani ili obudovjeli"
-
-msgid "CantRead"
-msgstr "Ne zna čitati"
-
-msgid "CantWrite"
-msgstr "Ne zna pisati"
-
-msgid "19. Unsound mind"
-msgstr "19. Nezdrav um"
-
-msgid "1. Vessels and Shanties"
-msgstr "1. Plovila i kolibe"
-
-msgid "2. Houses in construction"
-msgstr "2. Kuće u izgradnji"
-
-msgid "3. Houses unoccupied"
-msgstr "3. Nenastanjene kuće"
-
-msgid "4. Houses inhabited"
-msgstr "4. Nastanjene kuće"
-
-msgid "5. Families"
-msgstr "5. Obitelji"
-
-msgid "6. Names"
-msgstr "6. Imena"
-
-msgid "7. Sex"
-msgstr "7. Spol"
-
-msgid "8. Age"
-msgstr "8. Starost"
-
-msgid "9. Married or Widowed"
-msgstr "9. Vjenčani ili obudovjeli"
-
-msgid "10. Relationship to Head of Family"
-msgstr "10. Veza prema glavi obitelji"
-
-msgid "12. FrenchCanadian"
-msgstr "12. Francuski kanađani"
-
-msgid "BirthPlaceFather"
-msgstr "Mjesto rođenja oca"
-
-msgid "13. Birth Place of Father"
-msgstr "13. Mjesto rođenja oca"
-
-msgid "BirthPlaceMother"
-msgstr "Mjesto rođenja majke"
-
-msgid "14. Birth Place of Mother"
-msgstr "14. Mjesto rođenja majke"
-
-msgid "15. Religion"
-msgstr "15. Vjera"
-
-msgid "16. Profession, Occupation or Trade"
-msgstr "16. Profesija, zanimanje ili obrt"
-
-msgid "17. Employers"
-msgstr "17. Poslodavci"
-
-msgid "Employee"
-msgstr "Zaposlenik"
-
-msgid "Unemployed"
-msgstr "Nezasposleni"
-
-msgid "Employees"
-msgstr "Zaposlenici"
-
-msgid "CanRead"
-msgstr "Zna čitati"
-
-msgid "CanWrite"
-msgstr "Zna pisati"
-
-msgid "23. Deaf and Dumb"
-msgstr "23. Gluhi i nijemi"
-
-msgid "24. Blind"
-msgstr "24. Slijepi"
-
-msgid "25. Unsound mind"
-msgstr "25. Nezdrav um"
-
-msgid "SubTitle"
-msgstr "Podnaslov"
-
-msgid "House"
-msgstr "Kuća"
-
-msgid "1. Dwelling house"
-msgstr "1. Stambena zgrada"
-
-msgid "2. Family or household"
-msgstr "2. Obitelj ili kućanstvo"
-
-msgid "4. Sex"
-msgstr "4. Spol"
-
-msgid "Colour"
-msgstr "Boja"
-
-msgid "5. Colour"
-msgstr "5. Boja"
-
-msgid "7. Single, married, widowed, divorced or legally separated"
-msgstr "7. Singl, vjenčani, obudovjeli, razvedeni ili zakonski rastavljeni"
-
-msgid "BirthMonth"
-msgstr "Mjesec rođenja"
-
-msgid "8. Month and Date of Birth"
-msgstr "8. Mjesec i datum rođenja"
-
-msgid "BirthYear"
-msgstr "Godina rođenja"
-
-msgid "9. Year of birth"
-msgstr "9. Godina rođenja"
-
-msgid "10. Age at last birthday"
-msgstr "10. Dob pri zadnjem rođendanu"
-
-msgid "11. Country or place of birth"
-msgstr "11. Zemlja ili mjesto rođenja"
-
-msgid "12. Year of immigration to Canada, if an immigrant"
-msgstr "12. Godina imigracije u Kanadu, ako je imigrant"
-
-msgid "13. Year of naturalization, if formerly an alien"
-msgstr "13. Godina naturalizacije, ako je prethodno bio stranac"
-
-msgid "15. Nationality"
-msgstr "15. Nacionalnost"
-
-msgid "16. Religion"
-msgstr "16. Vjera"
-
-msgid "17. Profession, occupation, trade or means of living of each person"
-msgstr "17. Profesija, zanimanje, obrt ili izvor prihoda svake osobe"
-
-msgid "19. Employer"
-msgstr "19. Poslodavac"
-
-msgid "20. Employee"
-msgstr "20. Zaposlenik"
-
-msgid "29. Can read"
-msgstr "29. Zna čitati"
-
-msgid "30. Can write"
-msgstr "30. Zna pisati"
-
-msgid "31. Can speak English"
-msgstr "31. Govori engleski"
-
-msgid "32. Can speak French"
-msgstr "32. Govori francuski"
-
-msgid "5. Married, single, widowed or divorced"
-msgstr "5. Vjenčani, singl, obudovjeli ili razvedeni"
-
-msgid "7. Country or place of birth"
-msgstr "7. Zemlja ili mjesto rođenja"
-
-msgid "8. Year of immigration to Canada"
-msgstr "8. Godina imigracije u Kanadu"
-
-msgid "22. State where person employed"
-msgstr "22. Država u kojoj je osoba zaposlena"
-
-msgid "34. Can Read"
-msgstr "34. Zna čitati"
-
-msgid "35. Can Write"
-msgstr "35. Zna pisati"
-
-msgid "1. House"
-msgstr "1. Kuća"
-
-msgid "Dwelling house"
-msgstr "Stambena zgrada"
-
-msgid "Family or household"
-msgstr "Obitelj ili kućanstvo"
-
-msgid "6. Single, married, widowed, divorced or legally separated"
-msgstr "6. Singl, vjenčani, obudovjeli, razvedeni ili zakonski rastavljeni"
-
-msgid "8. Age at last birthday"
-msgstr "8. Dob pri zadnjem rođendanu"
-
-msgid "9. Country or place of birth"
-msgstr "9. Zemlja ili mjesto rođenja"
-
-msgid "11. Religion"
-msgstr "11. Vjera"
-
-msgid "13. Can Read"
-msgstr "13. Zna čitati"
-
-msgid "14. Can Write"
-msgstr "14. Zna pisati"
-
-msgid "1. Dwelling House"
-msgstr "1. Stambena zgrada"
-
-msgid "2. Family, Household or Institution"
-msgstr "2. Obitelj, kućanstvo ili institucija"
-
-msgid "3. Name of each person in family, household or institution"
-msgstr "3. Ime svake osobe u obitelji, kućanstvu ili instituciji"
-
-msgid "9. Relationship to head of family or household"
-msgstr "9. Srodstvo s glavi obitelji ili kućanstva"
-
-msgid "10. Sex"
-msgstr "10. Spol"
-
-msgid "11. Single, married, widowed, divorced or legally separated"
-msgstr "11. Singl, vjenčani, obudovjeli, razvedeni ili zakonski rastavljeni"
-
-msgid "12. Age at last birthday"
-msgstr "12. Dob pri zadnjem rođendanu"
-
-msgid "13. Country or place of birth"
-msgstr "13. Zemlja ili mjesto rođenja"
-
-msgid "14. Religion"
-msgstr "14. Vjera"
-
-msgid "15. Year of immigration to Canada"
-msgstr "15. Godina imigracije u Kanadu"
-
-msgid "16. Year of naturalization"
-msgstr "16. Godina naturalizacije"
-
-msgid "17. Nationality"
-msgstr "17. Nacionalnost"
-
-msgid "19. Can speak English"
-msgstr "19. Govori engleski"
-
-msgid "20. Can speak French"
-msgstr "20. Govori francuski"
-
-msgid "OtherLanguage"
-msgstr "Drugi jezici"
-
-msgid "21. Other language spoken as mother tongue"
-msgstr "21. Govori drugim jezicima kao materinskim jezikom"
-
-msgid "22. Can Read"
-msgstr "22. Zna čitati"
-
-msgid "23. Can Write"
-msgstr "23. Zna pisati"
-
-msgid "24. Chief occupation or trade"
-msgstr "24. Glavno zanimanje ili obrt"
-
-msgid "25. Employer, \"E\", Employee, \"W\""
-msgstr "25. Poslodavac, „E”, Zaposlenik, „W”"
-
-msgid "26. State where person is employed"
-msgstr "26. Država u kojoj je osoba zaposlena"
-
-msgid "Can read and write"
-msgstr "Zna čitati i pisati"
-
-msgid "Military"
-msgstr "Vojnu služba"
-
-msgid "Taxes"
-msgstr "Porezi"
-
-msgid "Type of roof"
-msgstr "Vrsta krova"

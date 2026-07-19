@@ -32,4 +32,5 @@ register(
     authors=["Nick Hall"],
     authors_email=["nick-h@gramps-project.org"],
     include_in_listing=False,
+    requires_mod=["pymongo"],
 )

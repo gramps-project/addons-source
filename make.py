@@ -49,6 +49,26 @@ Examples:
    python3 make.py gramps60 extract-po
        Extracts strings from the aggregated `po/{lang}.po` files into the
        `{lang}-local.po` files for each addon.
+
+   GRAMPSPATH=path python3 make.py gramps60 test
+       Runs the repo-root `tests/` suite (unittest discovery for
+       `test_*.py`). GRAMPSPATH must point at a Gramps checkout so the
+       addon plugins are importable. Exits non-zero on any failure.
+
+       Default mode is a headless developer SMOKE run, not a full gate:
+         - only listed addons (include_in_listing=True) are load/version/
+           dependency checked; unlisted ones are covered only by the
+           listing-manifest test;
+         - failures that are really about the environment — no display, a
+           missing GI/typelib, a native GTK abort — are advisory, not fatal;
+         - tests needing extra tools skip (e.g. i18n extraction without
+           `xgettext`, GUI loads without a display).
+       For a full gate, run under a complete runtime (Xvfb + gettext + all
+       GI typelibs) with GRAMPS_ADDON_TEST_STRICT=1: unmet dependencies,
+       display/GTK failures and unverified addon dependencies then become
+       hard failures. (Slow registry-scan timeouts stay advisory — they are
+       a performance signal, not a correctness one; a genuine import hang is
+       always a hard failure.)
 """
 import shutil
 import glob
@@ -161,8 +181,6 @@ def get_all_languages():
     languages = set(["en"])
     for addon in [file for file in glob.glob("*") if os.path.isdir(file)]:
         for po in glob.glob(f"{addon}/po/*-local.po"):
-            length = len(po)
-            locale = po[length - 11 : length - 9]
             locale_path, locale = po.rsplit(os.sep, 1)
             languages.add(locale[:-9])
     return languages
@@ -187,6 +205,28 @@ def cleanup(addon_dir):
         for file_ in glob.glob(pat):
             os.remove(file_)
     shutil.rmtree("%s/locale" % addon_dir, ignore_errors=True)
+
+
+def addon_py_files(addon):
+    """Return the addon's .py files for xgettext string extraction.
+
+    Top-level files come first, in the exact order ``glob.glob("{addon}/*.py")``
+    yields them, so a flat addon's template.pot is unchanged. Nested-package
+    modules follow (sorted, for deterministic output), excluding the addon's own
+    tests/ tree at any depth (test strings are not shipped or translated).
+    """
+    top = glob.glob(f"{addon}/*.py")
+    top_set = set(top)
+    nested = []
+    for dirpath, dirnames, filenames in os.walk(addon):
+        if "tests" in dirnames:
+            dirnames.remove("tests")  # don't descend into tests/ at any depth
+        for fname in filenames:
+            if fname.endswith(".py"):
+                path = os.path.join(dirpath, fname)
+                if path not in top_set:
+                    nested.append(path)
+    return top + sorted(nested)
 
 
 def do_tar(inc_files):
@@ -401,7 +441,7 @@ elif command == "init":
                 continue  # skip this one if not listed
 
             mkdir(f"{addon}/po")
-            fnames = " ".join(glob.glob(f"{addon}/*.py"))
+            fnames = " ".join(addon_py_files(addon))
             system(
                 f"xgettext --language=Python --keyword=_ --keyword=_:1,2c --keyword=N_"
                 f" --from-code=UTF-8 --add-comments=Translators"
@@ -731,7 +771,7 @@ elif command == "as-needed":
         cleanup(addon)
         if todo:  # make an updated pot file
             mkdir("%(addon)s/po")
-            fnames = " ".join(glob.glob(f"{addon}/*.py"))
+            fnames = " ".join(addon_py_files(addon))
             system(
                 "xgettext --language=Python --keyword=_ --keyword=_:1,2c --keyword=N_"
                 " --from-code=UTF-8 --add-comments=Translators"
@@ -973,55 +1013,69 @@ elif command == "listing":
                         print("   ignoring '%s'" % (p["name"]))
         # Write out new listing:
         output = []
+        listings_path = (
+            f"../addons/{gramps_version}/listings/" + ("addons-%s.json" % lang)
+        )
+        if cmd_arg != "all" and not listings and os.path.isfile(listings_path):
+            # Bug 13694: a single-addon `listing <Addon>` whose source yields
+            # no eligible plugin (include_in_listing=False, or no .tgz built
+            # yet) used to overwrite the listings file with [], wiping every
+            # previously listed addon. Leave the file untouched and tell the
+            # user how to remove an existing entry on purpose.
+            print(
+                "   '%s' produced no listing entry; leaving %s untouched. "
+                "Use 'make.py %s unlist %s' to remove an existing entry."
+                % (cmd_arg, os.path.basename(listings_path), gramps_version, cmd_arg)
+            )
+            continue
         if cmd_arg == "all":
             # Replace it!
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 output.append(plugin)
-        elif not os.path.isfile(
-            f"../addons/{gramps_version}/listings/" + ("addons-%s.json" % lang)
-        ):
+        elif not os.path.isfile(listings_path):
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 output.append(plugin)
         else:
-            # just update the lines from these addons:
-            for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
-                already_added = []
-                fp_in = open(
-                    f"../addons/{gramps_version}/listings/" + ("addons-%s.json" % lang),
-                    "r",
-                    encoding="utf-8",
-                )
-                added = False
-                for line in json.load(fp_in):
-                    if line["i"] in already_added:
-                        continue
-                    if (
-                        cmd_arg + ".addon.tgz" == line["z"]
-                        and plugin["t"] == line["t"]
-                        and not added
-                    ):
-                        # print("UPDATED")
-                        output.append(plugin)
-                        added = True
-                        already_added.append(line["i"])
-                    elif (
-                        (plugin["t"], plugin["i"]) < (line["t"], line["i"])
-                    ) and not added:
-                        # print("ADDED in middle")
-                        output.append(plugin)
-                        added = True
-                        output.append(line)
-                        already_added.append(line["i"])
-                    else:
-                        output.append(line)
-                        already_added.append(line["i"])
-                if not added:
-                    if plugin["i"] not in already_added:
-                        # print("ADDED at end")
-                        output.append(plugin)
+            # Single-addon update: replace every existing entry that
+            # belongs to cmd_arg with the fresh plugins from `listings`,
+            # then merge the result with the rest of the file. Reading
+            # the existing file ONCE (rather than once per plugin) is
+            # what fixes the multi-gpr corruption flagged on PR 915:
+            # addons like Form ship multiple .gpr.py files / register()
+            # calls in one directory, and the per-plugin restart of the
+            # outer iteration used to append the whole existing file
+            # once per plugin, producing N copies of every other addon.
+            with open(listings_path, "r", encoding="utf-8") as fp_in:
+                existing = json.load(fp_in)
+            cmd_tgz = cmd_arg + ".addon.tgz"
+            new_keys = {(p["t"], p["i"]) for p in listings}
+            # Carry over only entries that do NOT belong to cmd_arg and
+            # whose (t, i) does not collide with one of the fresh
+            # plugins. Dropping all cmd_arg entries also cleans up
+            # stale rows (e.g. a register() removed from a gpr.py since
+            # the last build).
+            kept = [
+                line
+                for line in existing
+                if line.get("z") != cmd_tgz
+                and (line["t"], line["i"]) not in new_keys
+            ]
+            # Merge kept (already sorted by (t, i) - the canonical
+            # listing order) with the fresh plugins (sorted here).
+            new = sorted(listings, key=lambda p: (p["t"], p["i"]))
+            i = j = 0
+            while i < len(kept) and j < len(new):
+                if (kept[i]["t"], kept[i]["i"]) < (new[j]["t"], new[j]["i"]):
+                    output.append(kept[i])
+                    i += 1
+                else:
+                    output.append(new[j])
+                    j += 1
+            output.extend(kept[i:])
+            output.extend(new[j:])
         mkdir(f"../addons/{gramps_version}/listings")
         fp_out = open(
-            f"../addons/{gramps_version}/listings/" + ("addons-%s.json" % lang),
+            listings_path,
             "w",
             encoding="utf-8",
             newline="",
@@ -1038,6 +1092,23 @@ elif command == "extract-po":
     ]:
         print(addon)
         extract_po(addon)
+
+elif command == "test":
+    import logging
+
+    # Quiet the "no compiled locale" warning Gramps logs at import: this
+    # command imports Gramps (via check_gramps_path) before the test package's
+    # own suppression runs, and translations are irrelevant to the tests.
+    logging.getLogger(".gramps.gen.utils.grampslocale").setLevel(logging.ERROR)
+    check_gramps_path(command)
+    import unittest
+
+    suite = unittest.TestLoader().discover(
+        "tests", pattern="test_*.py", top_level_dir="."
+    )
+    result = unittest.TextTestRunner(verbosity=2).run(suite)
+    if not result.wasSuccessful():
+        exit(1)
 
 else:
     raise AttributeError("unknown command")

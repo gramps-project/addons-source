@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-09-20 19:02+0000\n"
-"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-03-26 16:09+0000\n"
+"Last-Translator: Bruno FORESTIER <bforest76@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -12,7 +12,223 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
+
+msgid "No title"
+msgstr "Pas de titre"
+
+msgid "No data available."
+msgstr "Pas de données disponible."
+
+msgid "Foundation date:"
+msgstr "Date de fondation :"
+
+msgid "Note:"
+msgstr "Note :"
+
+msgid "Coordinates:"
+msgstr "Coordonnées :"
+
+msgid "Full hierarchy"
+msgstr "Hiérarchie complète"
+
+msgid "Place Type:"
+msgstr "Type de lieu :"
+
+msgid "Last Retrieved At:"
+msgstr "Dernière récupération À :"
+
+msgid "Save Coordinates to the Place"
+msgstr "Enregistrer les coordonnées de localisation"
+
+msgid "No AI API key provided"
+msgstr "Pas de clé IA-API fournie"
+
+msgid "Keys"
+msgstr "Clés"
+
+msgid "Website URL"
+msgstr "URL du site"
+
+msgid "Add link to note"
+msgstr "Ajouter un lien à la note"
+
+msgid "Add link to attribute"
+msgstr "Ajouter un lien à l'attribut"
+
+msgid "Show QR-code"
+msgstr "Afficher le QR-code"
+
+msgid "Copy link to clipboard"
+msgstr "Copier le lien vers le presse-papiers"
+
+msgid "Hide link for selected item"
+msgstr "Masquer le lien pour l'élément sélectionné"
+
+msgid "Hide link for all items"
+msgstr "Masquer le lien pour tous les éléments"
+
+msgid "🔍 AI Suggestions"
+msgstr "Suggestions d'IA"
+
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+"📌 Ce lien Web '{title}' a été ajouté en utilisant le gramplet WebSearch (v. "
+"{version}) pour référence ultérieure :\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Vous pouvez utiliser ce lien pour revisiter la source et vérifier les "
+"informations relatives à cet individu."
+
+#, python-format
+msgid "Note #%(id)s has been successfully added"
+msgstr "La note #%(id)s a été ajoutée avec succès"
+
+msgid "Error creating note"
+msgstr "Erreur lors de la création de la note"
+
+msgid "URL is copied to the Clipboard"
+msgstr "L'URL est copiée dans le presse-papiers"
+
+msgid "WebSearch Link"
+msgstr "Lien de Recherche Web"
+
+msgid "Attribute has been successfully added"
+msgstr "L'attribut a été ajouté avec succès"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Titre : {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "Remplacé : {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "Vide : {keys}"
+
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "Commentaire : {comment}"
+
+msgid "Column - Icons"
+msgstr "Colonne - Icônes"
+
+msgid "Column - Source Types (flags)"
+msgstr "Colonne - Types de source (drapeau)"
+
+msgid "Column - Keys"
+msgstr "Colonne - Clés"
+
+msgid "Column - Title"
+msgstr "Colonne - Titre"
+
+msgid "Column - Website Url"
+msgstr "Colonne - URL Site web"
+
+msgid "Column - Comment"
+msgstr "Colonne - Commentaire"
+
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "Icône - URL visitée (case à cocher)"
+
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "Icône - URL sauvegardée (disquette)"
+
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "Icône - URL liée à l'attribit UID (badge UID)"
+
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "Icône - URL d'un CSV régional (drapeau)"
+
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "Icône - URL d'un CSV statique (épingle rouge)"
+
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "Icône - URL d'un CSV commun (terre)"
+
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "Icône - URL d'un fichier CSV croisé (flèches croisées)"
+
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr "Icône - URL du répertoire utilisateur (icône de feuille de calcul)"
+
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Icône - URLs de l'onglet «Attributs» (icône «A»)"
+
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Icône - URLs de l'onglet «Internet» (icône «I»)"
+
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Icône - URLs de l'onglet «Notes» (icône «N»)"
+
+msgid "QR-code"
+msgstr "QR-code"
+
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Dépendances manquante \"qrcode\""
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Erreur lors de la génération du code QR :\n"
+"Erreur initiale : \"{}\""
+
+msgid "Note Link (parsed)"
+msgstr "Lien de note (analysé)"
+
+msgid "Note Link (external)"
+msgstr "Lien de note (externe)"
+
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Manquant :** `requests`"
+
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Cette bibliothèque est utilisée pour communiquer avec les API Web."
+
+msgid "Without it, external data sources may not be accessible."
+msgstr ""
+"Sans elle, les sources de données externes peuvent ne pas être accessibles."
+
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 installé habituellement avec : `pip install requests`"
+
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Localisation des fichiers de données"
+
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"Voici les chemins vers les fichiers système et définis par l'utilisateur "
+"utilisés par WebSearch."
+
+msgid "#### CSV File Paths"
+msgstr "#### Chemin des fichiers CSV"
+
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr ""
+"- **Dossier système :** `{dir|%s}` – contient les fichiers CSV internes"
+
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **Dossier choisi par l'utilisateur :** `{dir|%s}` – pour les fichiers CSV "
+"de l'utilisateur"
+
+msgid "#### JSON File Paths"
+msgstr "#### Dossier des fichieres JSON"
 
 msgid "Middle Name Handling"
 msgstr "Gestion du deuxième prénom"
@@ -145,219 +361,3 @@ msgstr "Attribut mis à jour"
 
 msgid "Note updated"
 msgstr "Note mise à jour"
-
-msgid "Note Link (parsed)"
-msgstr "Lien de note (analysé)"
-
-msgid "Note Link (external)"
-msgstr "Lien de note (externe)"
-
-msgid "No title"
-msgstr "Pas de titre"
-
-msgid "🔻 **Missing:** `requests`"
-msgstr "🔻 **Manquant :** `requests`"
-
-msgid "ℹ️ This library is used to communicate with web APIs."
-msgstr "ℹ️ Cette bibliothèque est utilisée pour communiquer avec les API Web."
-
-msgid "Without it, external data sources may not be accessible."
-msgstr ""
-"Sans elle, les sources de données externes peuvent ne pas être accessibles."
-
-msgid "💡 Usually installed with: `pip install requests`"
-msgstr "💡 installé habituellement avec : `pip install requests`"
-
-msgid "## 📂 Data File Locations"
-msgstr "## 📂 Localisation des fichiers de données"
-
-msgid ""
-"Below are the paths to system and user-defined data files used by WebSearch."
-msgstr ""
-"Voici les chemins vers les fichiers système et définis par l'utilisateur "
-"utilisés par WebSearch."
-
-msgid "#### CSV File Paths"
-msgstr "#### Chemin des fichiers CSV"
-
-#, python-format
-msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
-msgstr ""
-"- **Dossier système :** `{dir|%s}` – contient les fichiers CSV internes"
-
-#, python-format
-msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
-msgstr ""
-"- **Dossier choisi par l'utilisateur :** `{dir|%s}` – pour les fichiers CSV "
-"de l'utilisateur"
-
-msgid "#### JSON File Paths"
-msgstr "#### Dossier des fichieres JSON"
-
-msgid "Column - Icons"
-msgstr "Colonne - Icônes"
-
-msgid "Column - Source Types (flags)"
-msgstr "Colonne - Types de source (drapeau)"
-
-msgid "Column - Keys"
-msgstr "Colonne - Clés"
-
-msgid "Column - Title"
-msgstr "Colonne - Titre"
-
-msgid "Column - Website Url"
-msgstr "Colonne - URL Site web"
-
-msgid "Column - Comment"
-msgstr "Colonne - Commentaire"
-
-msgid "Icon - Visited URLs (checkmark)"
-msgstr "Icône - URL visitée (case à cocher)"
-
-msgid "Icon - Saved URLs (floppy disk)"
-msgstr "Icône - URL sauvegardée (disquette)"
-
-msgid "Icon - URLs linked to UID attributes (UID badge)"
-msgstr "Icône - URL liée à l'attribit UID (badge UID)"
-
-msgid "Icon - URLs from regional CSV files (flag)"
-msgstr "Icône - URL d'un CSV régional (drapeau)"
-
-msgid "Icon - URLs from static CSV files (red pin)"
-msgstr "Icône - URL d'un CSV statique (épingle rouge)"
-
-msgid "Icon - URLs from common CSV files (earth)"
-msgstr "Icône - URL d'un CSV commun (terre)"
-
-msgid "Icon - URLs from cross CSV files (shuffle arrows)"
-msgstr "Icône - URL d'un fichier CSV croisé (flèches croisées)"
-
-msgid "Icon - URLs from custom user directory (spreadsheet icon)"
-msgstr "Icône - URL du répertoire utilisateur (icône de feuille de calcul)"
-
-msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr "Icône - URLs de l'onglet «Attributs» (icône «A»)"
-
-msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr "Icône - URLs de l'onglet «Internet» (icône «I»)"
-
-msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr "Icône - URLs de l'onglet «Notes» (icône «N»)"
-
-msgid "No data available."
-msgstr "Pas de données disponible."
-
-msgid "Foundation date:"
-msgstr "Date de fondation :"
-
-msgid "Note:"
-msgstr "Note :"
-
-msgid "Coordinates:"
-msgstr "Coordonnées :"
-
-msgid "Full hierarchy"
-msgstr "Hiérarchie complète"
-
-msgid "Place Type:"
-msgstr "Type de lieu :"
-
-msgid "Last Retrieved At:"
-msgstr "Dernière récupération À :"
-
-msgid "QR-code"
-msgstr "QR-code"
-
-msgid "⚠ Missing dependency \"qrcode\""
-msgstr "⚠ Dépendances manquante \"qrcode\""
-
-msgid ""
-"⚠ Error generating QR code:\n"
-"Original error: “{}”"
-msgstr ""
-"⚠ Erreur lors de la génération du code QR :\n"
-"Erreur initiale : \"{}\""
-
-msgid "Save Coordinates to the Place"
-msgstr "Enregistrer les coordonnées de localisation"
-
-msgid "No AI API key provided"
-msgstr "Pas de clé IA-API fournie"
-
-msgid "Keys"
-msgstr "Clés"
-
-msgid "Website URL"
-msgstr "URL du site"
-
-msgid "Add link to note"
-msgstr "Ajouter un lien à la note"
-
-msgid "Add link to attribute"
-msgstr "Ajouter un lien à l'attribut"
-
-msgid "Show QR-code"
-msgstr "Afficher le QR-code"
-
-msgid "Copy link to clipboard"
-msgstr "Copier le lien vers le presse-papiers"
-
-msgid "Hide link for selected item"
-msgstr "Masquer le lien pour l'élément sélectionné"
-
-msgid "Hide link for all items"
-msgstr "Masquer le lien pour tous les éléments"
-
-msgid "🔍 AI Suggestions"
-msgstr "Suggestions d'IA"
-
-#, python-brace-format
-msgid ""
-"📌 This '{title}' web link was archived for future reference by the "
-"WebSearch gramplet (v. {version}):\n"
-"\n"
-"🔗 {url}\n"
-"\n"
-"You can use this link to revisit the source and verify the information "
-"related to this entity."
-msgstr ""
-"📌 Ce lien Web '{title}' a été ajouté en utilisant le gramplet WebSearch (v. "
-"{version}) pour référence ultérieure :\n"
-"\n"
-"🔗 {url}\n"
-"\n"
-"Vous pouvez utiliser ce lien pour revisiter la source et vérifier les "
-"informations relatives à cet individu."
-
-#, python-format
-msgid "Note #%(id)s has been successfully added"
-msgstr "La note #%(id)s a été ajoutée avec succès"
-
-msgid "Error creating note"
-msgstr "Erreur lors de la création de la note"
-
-msgid "URL is copied to the Clipboard"
-msgstr "L'URL est copiée dans le presse-papiers"
-
-msgid "WebSearch Link"
-msgstr "Lien de Recherche Web"
-
-msgid "Attribute has been successfully added"
-msgstr "L'attribut a été ajouté avec succès"
-
-#, python-brace-format
-msgid "Title: {title}"
-msgstr "Titre : {title}"
-
-#, python-brace-format
-msgid "Replaced: {keys}"
-msgstr "Remplacé : {keys}"
-
-#, python-brace-format
-msgid "Empty: {keys}"
-msgstr "Vide : {keys}"
-
-#, python-brace-format
-msgid "Comment: {comment}"
-msgstr "Commentaire : {comment}"

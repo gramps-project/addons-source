@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-12-22 14:00+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-02-20 09:09+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.15.1\n"
+"X-Generator: Weblate 5.16.1-dev\n"
 
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
@@ -63,42 +63,6 @@ msgstr "נתיב היעד לקבצים שחוללו."
 msgid "The destination file name for html content."
 msgstr "שם קובץ היעד לתוכן .html"
 
-msgid "Ancestral Collapsible Tree"
-msgstr "אילן אבות־קדמונים מתכווץ"
-
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"חילול עמוד מרשתת עם ייצוג חזותי של אבות קדמונים (SVG) המיוצג כפריסת אילן "
-"מתכווץ מספריית ה-JavaScript D3.js."
-
-msgid "Descendant Indented Tree"
-msgstr "אילן צאצאים מוזח"
-
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-"חילול עמוד מרשתת עם ייצוג חזותי של צאצאים (SVG) מיוצגת כאילן מתכווץ מוזח "
-"מספריית D3.js JavaScript."
-
-msgid "Ancestral Fan Chart Options"
-msgstr "אפשרויות תרשים מניפה אבות־קדמונים"
-
-msgid "Paternal Background Color"
-msgstr "צבע רקע לדור אבות"
-
-msgid "RGB-color for paternal box background."
-msgstr "צבעי RBG לרקע תיבת דור אבות."
-
-msgid "Maternal Background"
-msgstr "רקע שושלת אם"
-
-msgid "RGB-color for maternal box background."
-msgstr "צבעי RBG לרקע תיבת שושלת אם."
-
 msgid "Ancestral Fan Chart"
 msgstr "תרשים מניפה אבות־קדמונים"
 
@@ -109,12 +73,11 @@ msgstr ""
 "חילול עמוד מרשתת שמציג ייצוג חזותי של אבות־קדמונים (ב־SVG) כתרשים מניפה, "
 "המבוסס על ספריית JavaScript D3.js."
 
-#, python-format
-msgid "See %(reference)s : %(spouse)s"
-msgstr "למידע נוסף %(reference)s : %(spouse)s"
-
 msgid "Generating report..."
 msgstr "מתבצע חילל דוח..."
+
+msgid "Descendant Indented Tree"
+msgstr "אילן צאצאים מוזח"
 
 msgid "Invalid Destination Directory"
 msgstr "מחיצת יעד לא תקינה"
@@ -316,3 +279,36 @@ msgstr "גודל גופן גוף המלל"
 
 msgid "The font size in pixels for biography body text."
 msgstr "גודל הגופן למלל גוף ביוגרפיה בפיקסלים."
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"חילול עמוד מרשתת עם ייצוג חזותי של צאצאים (SVG) מיוצגת כאילן מתכווץ מוזח "
+"מספריית D3.js JavaScript."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "אפשרויות תרשים מניפה אבות־קדמונים"
+
+msgid "Paternal Background Color"
+msgstr "צבע רקע לדור אבות"
+
+msgid "RGB-color for paternal box background."
+msgstr "צבעי RBG לרקע תיבת דור אבות."
+
+msgid "Maternal Background"
+msgstr "רקע שושלת אם"
+
+msgid "RGB-color for maternal box background."
+msgstr "צבעי RBG לרקע תיבת שושלת אם."
+
+msgid "Ancestral Collapsible Tree"
+msgstr "אילן אבות־קדמונים מתכווץ"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"חילול עמוד מרשתת עם ייצוג חזותי של אבות קדמונים (SVG) המיוצג כפריסת אילן "
+"מתכווץ מספריית ה-JavaScript D3.js."

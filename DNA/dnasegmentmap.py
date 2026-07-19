@@ -84,11 +84,11 @@ CONFIG.init()
 draw_single_chromosome = False
 current_chromosome = '1'
 #
-# draw_grandparent_color is a quick and dirty pass at visual phasing to the grandparent. 
-# The DNA segment will be painted one of 4 colors, depending on the grandparent found in the path of the tree. 
+# draw_grandparent_color is a quick and dirty pass at visual phasing to the grandparent.
+# The DNA segment will be painted one of 4 colors, depending on the grandparent found in the path of the tree.
 # The maternal side has 2 color options (maternal grandfather or maternal grandmother).
 # The paternal side has 2 color options (paternal grandmother or paternal grandfather).
-# first cousins or closer are not displayed. 
+# first cousins or closer are not displayed.
 # If there is no known path based on the tree, the segment is not displayed.
 #
 draw_grandparent_color = False
@@ -224,7 +224,7 @@ class DNASegmentMap(Gramplet):
         seg_comment = ''
         updated_side = side
         if len(field) > 5:
-            if field[5] in { "M", "U"}: 
+            if field[5] in { "M", "U"}:
                 updated_side = field[5].strip()
             elif field[5] in { "P"} :
                 updated_side = "F"
@@ -233,7 +233,7 @@ class DNASegmentMap(Gramplet):
         handle = assoc.ref
         associate = segmap.dbstate.db.get_person_from_handle(assoc.ref)
         id_str = _(_nd.display(associate) )
-        if segmap.show_assoc_id : 
+        if segmap.show_assoc_id :
                 id_str += ' [' + associate.get_gramps_id() + ']'
         segmap.segments.append([chromo, start, stop, updated_side, cms, snp, id_str, rgb_color, associate, handle, note])
 #        print(id_str,"|", chromo, "|",start, "|",stop, "|",side)
@@ -435,7 +435,7 @@ class SegmentMap(Gtk.DrawingArea):
             ('21', 10900000, 13000000),
             ('22', 13700000, 17400000),
             ('X', 58100000, 63800000))
-        if build == 36: 
+        if build == 36:
             self.chromosomes = self.chromosomesThirtySix
             self.centromere = self.centromereThirtySix
         elif build == 38:
@@ -522,9 +522,9 @@ class SegmentMap(Gtk.DrawingArea):
         @param cr: A cairo context.
         @type cr: cairo.Context
         """
-        
+
         global draw_grandparent_color
-        
+
         allocation = self.get_allocation()
         context = self.get_style_context()
         fg_color = context.get_color(context.get_state())
@@ -536,27 +536,27 @@ class SegmentMap(Gtk.DrawingArea):
         match_grandparent = {
 	        "grandfather",
 	        "grandmother"
-        } 
+        }
 # If no active person, return
         if not self.active:
             return
 
 # Title
-       
+
         assoc_label_str = _('Chromosome ' )
         if draw_single_chromosome :
             assoc_label_str += current_chromosome
         else:
             assoc_label_str += 'Segment'
-            
+
         assoc_label_str += _(' Map for '+_nd.display(self.active))
 # Define grandparents and great grandparents for visual phasing. Trap if user changed tree while in this view
-        try: 
+        try:
             mother, father = self.relationship.get_birth_parents(self.dbstate.db,self.active)
         except :
             return
         grand_handle = {}
-        if mother : 
+        if mother :
             grand_handle['mm'], grand_handle['mf'] = self.relationship.get_birth_parents(self.dbstate.db,self.dbstate.db.get_person_from_handle(mother))
             if grand_handle['mm'] :
                 grand_handle['mmm'], grand_handle['mmf'] = self.relationship.get_birth_parents(self.dbstate.db,self.dbstate.db.get_person_from_handle(grand_handle['mm']))
@@ -575,7 +575,7 @@ class SegmentMap(Gtk.DrawingArea):
             grand_handle['mff'] = None
             grand_handle['mmm'] = None
             grand_handle['mmf'] = None
-        if father : 
+        if father :
             grand_handle['fm'], grand_handle['ff'] = self.relationship.get_birth_parents(self.dbstate.db,self.dbstate.db.get_person_from_handle(father))
             if grand_handle['fm'] :
                 grand_handle['fmm'], grand_handle['fmf'] = self.relationship.get_birth_parents(self.dbstate.db,self.dbstate.db.get_person_from_handle(grand_handle['fm']))
@@ -587,7 +587,7 @@ class SegmentMap(Gtk.DrawingArea):
             else :
                 grand_handle['ffm'] = None
                 grand_handle['fff'] = None
-        else : 
+        else :
             grand_handle['fm'] = None
             grand_handle['ff'] = None
             grand_handle['fmm'] = None
@@ -599,7 +599,7 @@ class SegmentMap(Gtk.DrawingArea):
                 self.grandparent[i.upper()] = _nd.display(self.dbstate.db.get_person_from_handle(grand_handle[i]))
             else :
                 self.grandparent[i.upper()] = self.grandparent[i]
-        if self.show_assoc_id : 
+        if self.show_assoc_id :
             assoc_label_str += ' [' + self.active.get_gramps_id() + ']'
         self.set_title(_(assoc_label_str))
 
@@ -683,16 +683,16 @@ class SegmentMap(Gtk.DrawingArea):
                          chart_width * (chromo[1]-centloc) / self.maximum,
                          chr_height)
                 if self.show_centromere:
-                    cr.move_to(label_width + chart_width * self.centromere[i][1] / self.maximum, 
+                    cr.move_to(label_width + chart_width * self.centromere[i][1] / self.maximum,
                         i * 2 * (chr_height + spacing) + offset)
-                    cr.line_to(label_width + chart_width * self.centromere[i][1] / self.maximum, 
+                    cr.line_to(label_width + chart_width * self.centromere[i][1] / self.maximum,
                         i * 2 * (chr_height + spacing) + offset + chr_height)
                     cr.line_to(label_width + chart_width * (self.centromere[i][1] + (self.centromere[i][2] - self.centromere[i][1])/2) / self.maximum,
                         i * 2 * (chr_height + spacing) + offset + chr_height/2)
                     cr.close_path()
-                    cr.move_to(label_width + chart_width * self.centromere[i][2] / self.maximum, 
+                    cr.move_to(label_width + chart_width * self.centromere[i][2] / self.maximum,
                         i * 2 * (chr_height + spacing) + offset)
-                    cr.line_to(label_width + chart_width * self.centromere[i][2] / self.maximum, 
+                    cr.line_to(label_width + chart_width * self.centromere[i][2] / self.maximum,
                         i * 2 * (chr_height + spacing) + offset + chr_height)
                     cr.line_to(label_width + chart_width * (self.centromere[i][1] + (self.centromere[i][2] - self.centromere[i][1])/2) / self.maximum,
                         i * 2 * (chr_height + spacing) + offset + chr_height/2)
@@ -712,16 +712,16 @@ class SegmentMap(Gtk.DrawingArea):
                          chart_width * (chromo[1]-centloc) / self.maximum,
                          chr_height)
                 if self.show_centromere:
-                    cr.move_to(label_width + chart_width * self.centromere[i][1] / self.maximum, 
+                    cr.move_to(label_width + chart_width * self.centromere[i][1] / self.maximum,
                         i * 2 * (chr_height + spacing) + offset + chr_height)
-                    cr.line_to(label_width + chart_width * self.centromere[i][1] / self.maximum, 
+                    cr.line_to(label_width + chart_width * self.centromere[i][1] / self.maximum,
                         i * 2 * (chr_height + spacing) + offset + chr_height + chr_height)
                     cr.line_to(label_width + chart_width * (self.centromere[i][1] + (self.centromere[i][2] - self.centromere[i][1])/2) / self.maximum,
                         i * 2 * (chr_height + spacing) + offset + chr_height + chr_height/2)
                     cr.close_path()
-                    cr.move_to(label_width + chart_width * self.centromere[i][2] / self.maximum, 
+                    cr.move_to(label_width + chart_width * self.centromere[i][2] / self.maximum,
                         i * 2 * (chr_height + spacing) + offset + chr_height)
-                    cr.line_to(label_width + chart_width * self.centromere[i][2] / self.maximum, 
+                    cr.line_to(label_width + chart_width * self.centromere[i][2] / self.maximum,
                         i * 2 * (chr_height + spacing) + offset + chr_height + chr_height)
                     cr.line_to(label_width + chart_width * (self.centromere[i][1] + (self.centromere[i][2] - self.centromere[i][1])/2) / self.maximum,
                         i * 2 * (chr_height + spacing) + offset + chr_height + chr_height/2)
@@ -731,7 +731,7 @@ class SegmentMap(Gtk.DrawingArea):
                 cr.set_source_rgba(*fg_color)
                 cr.stroke()
         # Grey out paternal X background for males
-            if self.gender == 1: 
+            if self.gender == 1:
                 cr.rectangle(label_width, 22 * 2 * (chr_height + spacing) + offset, chart_width * chromo[1] / self.maximum, chr_height)
                 cr.set_source_rgba(0.8, 0.8, 0.8, 1)
                 cr.fill_preserve()
@@ -769,7 +769,7 @@ class SegmentMap(Gtk.DrawingArea):
         row_num = 0
         legend_count = 0
         if draw_single_chromosome:
-          maximum = self.maximum 
+          maximum = self.maximum
           for chromo, start, stop, side, cms, snp, assoc_name, rgb_color, associate, handle, note in self.segments:
             chromo_count += 1
             try:
@@ -777,7 +777,7 @@ class SegmentMap(Gtk.DrawingArea):
             except ValueError:
                 continue
             if chromo == current_chromosome:
-              if last_name != assoc_name: 
+              if last_name != assoc_name:
                 last_name = assoc_name
                 row_num += 1
 # Background
@@ -786,25 +786,25 @@ class SegmentMap(Gtk.DrawingArea):
                 else:
                     centloc = self.centromere[this_chromo][1]
 # draw paternal
-                cr.rectangle(label_width, 
-                        row_num * 2 * (chr_height + spacing) + offset, 
-                        chart_width * self.centromere[this_chromo][1] / maximum, 
+                cr.rectangle(label_width,
+                        row_num * 2 * (chr_height + spacing) + offset,
+                        chart_width * self.centromere[this_chromo][1] / maximum,
                         chr_height)
-                cr.rectangle(label_width + chart_width * centloc / maximum , 
-                        row_num * 2 * (chr_height + spacing) + offset, 
-                        chart_width * (maximum/ self.x_scale - centloc) / maximum, 
+                cr.rectangle(label_width + chart_width * centloc / maximum ,
+                        row_num * 2 * (chr_height + spacing) + offset,
+                        chart_width * (maximum/ self.x_scale - centloc) / maximum,
                         chr_height)
                 if self.show_centromere:
-                    cr.move_to(label_width + chart_width * self.centromere[this_chromo][1] / self.maximum, 
+                    cr.move_to(label_width + chart_width * self.centromere[this_chromo][1] / self.maximum,
                         row_num * 2 * (chr_height + spacing) + offset)
-                    cr.line_to(label_width + chart_width * self.centromere[this_chromo][1] / self.maximum, 
+                    cr.line_to(label_width + chart_width * self.centromere[this_chromo][1] / self.maximum,
                         row_num * 2 * (chr_height + spacing) + offset + chr_height)
                     cr.line_to(label_width + chart_width * (self.centromere[this_chromo][1] + (self.centromere[this_chromo][2] - self.centromere[this_chromo][1])/2) / self.maximum,
                         row_num * 2 * (chr_height + spacing) + offset + chr_height/2)
                     cr.close_path()
-                    cr.move_to(label_width + chart_width * self.centromere[this_chromo][2] / self.maximum, 
+                    cr.move_to(label_width + chart_width * self.centromere[this_chromo][2] / self.maximum,
                         row_num * 2 * (chr_height + spacing) + offset)
-                    cr.line_to(label_width + chart_width * self.centromere[this_chromo][2] / self.maximum, 
+                    cr.line_to(label_width + chart_width * self.centromere[this_chromo][2] / self.maximum,
                         row_num * 2 * (chr_height + spacing) + offset + chr_height)
                     cr.line_to(label_width + chart_width * (self.centromere[this_chromo][1] + (self.centromere[this_chromo][2] - self.centromere[this_chromo][1])/2) / self.maximum,
                         row_num * 2 * (chr_height + spacing) + offset + chr_height/2)
@@ -813,25 +813,25 @@ class SegmentMap(Gtk.DrawingArea):
                 cr.fill_preserve()
                 cr.stroke()
 # draw maternal
-                cr.rectangle(label_width, 
-                        row_num * 2 * (chr_height + spacing) + offset + chr_height, 
-                        chart_width * self.centromere[this_chromo][1] / maximum, 
+                cr.rectangle(label_width,
+                        row_num * 2 * (chr_height + spacing) + offset + chr_height,
+                        chart_width * self.centromere[this_chromo][1] / maximum,
                         chr_height)
-                cr.rectangle(label_width+ chart_width * centloc / maximum, 
-                        row_num * 2 * (chr_height + spacing) + offset + chr_height, 
-                        chart_width* (maximum/ self.x_scale - centloc) / maximum, 
+                cr.rectangle(label_width+ chart_width * centloc / maximum,
+                        row_num * 2 * (chr_height + spacing) + offset + chr_height,
+                        chart_width* (maximum/ self.x_scale - centloc) / maximum,
                         chr_height)
                 if self.show_centromere:
-                    cr.move_to(label_width + chart_width * self.centromere[this_chromo][1] / self.maximum, 
+                    cr.move_to(label_width + chart_width * self.centromere[this_chromo][1] / self.maximum,
                         row_num * 2 * (chr_height + spacing) + offset + chr_height)
-                    cr.line_to(label_width + chart_width * self.centromere[this_chromo][1] / self.maximum, 
+                    cr.line_to(label_width + chart_width * self.centromere[this_chromo][1] / self.maximum,
                         row_num * 2 * (chr_height + spacing) + offset + chr_height + chr_height)
                     cr.line_to(label_width + chart_width * (self.centromere[this_chromo][1] + (self.centromere[this_chromo][2] - self.centromere[this_chromo][1])/2) / self.maximum,
                         row_num * 2 * (chr_height + spacing) + offset + chr_height + chr_height/2)
                     cr.close_path()
-                    cr.move_to(label_width + chart_width * self.centromere[this_chromo][2] / self.maximum, 
+                    cr.move_to(label_width + chart_width * self.centromere[this_chromo][2] / self.maximum,
                         row_num * 2 * (chr_height + spacing) + offset + chr_height)
-                    cr.line_to(label_width + chart_width * self.centromere[this_chromo][2] / self.maximum, 
+                    cr.line_to(label_width + chart_width * self.centromere[this_chromo][2] / self.maximum,
                         row_num * 2 * (chr_height + spacing) + offset + chr_height + chr_height)
                     cr.line_to(label_width + chart_width * (self.centromere[this_chromo][1] + (self.centromere[this_chromo][2] - self.centromere[this_chromo][1])/2) / self.maximum,
                         row_num * 2 * (chr_height + spacing) + offset + chr_height + chr_height/2)
@@ -840,7 +840,7 @@ class SegmentMap(Gtk.DrawingArea):
                 cr.fill_preserve()
                 cr.stroke()
         # Grey out paternal X background for males
-                if (self.gender == 1) and (current_chromosome == 'X'): 
+                if (self.gender == 1) and (current_chromosome == 'X'):
                     cr.rectangle(label_width, row_num * 2 * (chr_height + spacing) + offset, chart_width / self.x_scale, chr_height)
                     cr.set_source_rgba(0.8, 0.8, 0.8, 1)
                     cr.fill_preserve()
@@ -918,7 +918,7 @@ class SegmentMap(Gtk.DrawingArea):
                   homedir = self._config.get("map.output-folder")
                   if not homedir :
                       homedir = os.environ.get('HOMEPATH')
-                      if not homedir : 
+                      if not homedir :
                           homedir = os.environ.get('HOME')
                   dir_fd = os.open(homedir, os.O_RDONLY)
                   def opener(path, flags):
@@ -931,7 +931,7 @@ class SegmentMap(Gtk.DrawingArea):
               except :
                   self.output_segments = False
                   print("Cannot open TSV file. Disabling output segments")
-          maximum = self.maximum 
+          maximum = self.maximum
           for chromo, start, stop, side, cms, snp, assoc_name, rgb_color, associate, handle, note in self.segments:
             chromo_count += 1
             try:
@@ -968,7 +968,7 @@ class SegmentMap(Gtk.DrawingArea):
                             alpha_color = 0
                         elif len(side) == 2 :
 	#
-	#   translate the realtionship in English and compare vs 'grandmother' and 'grandfather'. 
+	#   translate the realtionship in English and compare vs 'grandmother' and 'grandfather'.
 	#
                             rel_string = en_rel_calc.get_one_relationship(self.dbstate.db,self.active,associate)
                             if rel_string in match_grandparent :
@@ -983,7 +983,7 @@ class SegmentMap(Gtk.DrawingArea):
                         else :
                                 sub_side = side[0:self.grandparent_depth+1]
                         local_color = self.colormap.get(sub_side)
-                if draw_grandparent_color and self.output_segments and len(sub_side) > 1 : 
+                if draw_grandparent_color and self.output_segments and len(sub_side) > 1 :
                     visualphasing.writerow([chromo, start, stop, cms, snp,sub_side, self.grandparent.get(sub_side), _nd.display(associate)])
                 if not local_color :
                     local_color = [0,0,0]
@@ -1032,7 +1032,7 @@ class SegmentMap(Gtk.DrawingArea):
                     cr.move_to(legend_offset_x, legend_offset_y)
                     cr.set_source_rgba(*fg_color)
                     legend_offset_y += legend_chr_height + 2 * spacing
-                    PangoCairo.show_layout(cr, layout)        
+                    PangoCairo.show_layout(cr, layout)
         y_scale = max(1,row_num/20, self.y_scale, legend_count / 30 )  # rescale Y to max of user-specified and number of rows
         self.set_size_request(-1, y_scale * bottom + height + 5)
 
@@ -1086,12 +1086,12 @@ class SegmentMap(Gtk.DrawingArea):
                         commontext = " " + _("%(ancestor1)s and %(ancestor2)s") % {
                                   'ancestor1': p1str,
                                   'ancestor2': p2str
-                                  }                            
+                                  }
                     tooltip_text += _("\nRelationship: {0} ".format(rel_string_nn))
                     tooltip_text += _(" Ancestor: {0}".format(commontext))
                     j += 1
                 tooltip_text += "\n"
-        
+
         if active == -1:
             for i, rect in enumerate(self.__chrrects):
                 if (event.x > rect[0] and event.x < rect[0] + rect[2] and

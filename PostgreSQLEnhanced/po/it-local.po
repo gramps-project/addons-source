@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 19:09+0300\n"
-"PO-Revision-Date: 2025-09-06 11:01+0000\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-04-14 18:01+0000\n"
+"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,11 +12,38 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #, python-brace-format
 msgid "Object {obj_type}:{handle} was modified by another user"
 msgstr "L'oggetto {obj_type}:{handle} è stato modificato da un altro utente"
+
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+"La versione psycopg3 %(installed)s è troppo vecchia. E' necessaria la "
+"versione %(required)s o più recente."
+
+msgid "JSONB support"
+msgstr "Supporto JSONB"
+
+msgid "Version warning"
+msgstr "Avviso versione"
+
+msgid "Extensions"
+msgstr "Estensioni"
+
+msgid "Database size"
+msgstr "Grandezza del database"
+
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr "%(persons)d persone, %(families)d famiglie, %(events)d eventi"
+
+msgid "Migration manager not initialized"
+msgstr "Gestore della migrazione non inizializzato"
 
 msgid "Starting migration..."
 msgstr "Inizio della migrazione..."
@@ -50,30 +77,3 @@ msgstr "PostgreSQL migliorato"
 
 msgid "PostgreSQL _Enhanced Database"
 msgstr "Database PostgreSQL _Enhanced"
-
-#, python-format
-msgid ""
-"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
-"required."
-msgstr ""
-"La versione psycopg3 %(installed)s è troppo vecchia. E' necessaria la "
-"versione %(required)s o più recente."
-
-msgid "JSONB support"
-msgstr "Supporto JSONB"
-
-msgid "Version warning"
-msgstr "Avviso versione"
-
-msgid "Extensions"
-msgstr "Estensioni"
-
-msgid "Database size"
-msgstr "Grandezza del database"
-
-#, python-format
-msgid "%(persons)d persons, %(families)d families, %(events)d events"
-msgstr "%(persons)d persone, %(families)d famiglie, %(events)d eventi"
-
-msgid "Migration manager not initialized"
-msgstr "Gestore della migrazione non inizializzato"

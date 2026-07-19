@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-22 21:36+0200\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
 "PO-Revision-Date: 2026-04-14 18:01+0000\n"
 "Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
@@ -14,24 +14,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.17-dev\n"
 
-msgid "Database change detected"
-msgstr "Rilevato un cambiamento del database"
+msgid "Tree: '{}'"
+msgstr "Albero: '{}'"
+
+msgid "Chat With Tree"
+msgstr "Parla con l'albero"
 
 msgid "Type a message..."
 msgstr "Scrivi un messaggio..."
 
 msgid "Send"
 msgstr "Invia"
-
-msgid ""
-"The ChatWithTree addon is not yet initialized. Please reload Gramps or "
-"select a database."
-msgstr ""
-"Il componente aggiuntivo ChatWithTree non è stato ancora inizializzato. "
-"Ricarica Gramps o scegli un database."
-
-msgid "Tree: '{}'"
-msgstr "Albero: '{}'"
-
-msgid "Chat With Tree"
-msgstr "Parla con l'albero"

@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Ancestor tree using LaTeX genealogytree"
+msgstr "Árbol de ancestros usando genealogytree de LaTeX"
+
+msgid "Descendant tree using LaTeX genealogytree"
+msgstr "Árbol descendente usando genealogytree de LaTeX"
+
+msgid "Grandparent Tree"
+msgstr "Árbol del Abuelo"
+
+msgid "Grandparent tree using LaTeX genealogytree"
+msgstr "Árbol del abuelo utilizando genealogytree de LaTeX"
+
+msgid "Sandclock Tree"
+msgstr "Árbol del Reloj de Arena"
+
+msgid "Sandclock tree using LaTeX genealogytree"
+msgstr "Árbol del reloj de arena usando el árbol genealógico en LaTeX"
+
+msgid "Sandclock Tree for a Family"
+msgstr "Árbol del Reloj de Arena para una Familia"
+
+msgid "Sandclock tree for a family using LaTeX genealogytree"
+msgstr ""
+"Árbol del Reloj de Arena para una familia utilizando Árbol Genealógico de "
+"LaTeX"
+
+msgid "The center family for the report"
+msgstr "La familia central para el informe"
+
+msgid "Generations up"
+msgstr "Generaciones arriba"
+
+msgid "Generations down"
+msgstr "Generaciones abajo"
+
+msgid "Include siblings"
+msgstr "Incluir hermanos"
+
+msgid "Include siblings of ancestors."
+msgstr "Incluye hermanos de ancestros."
+
+msgid "Include images"
+msgstr "Incluir imágenes"
+
+msgid "Include images of people in the nodes."
+msgstr "Incluye imágenes de personas en los nodos."
+
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr "La persona %s no tiene un abuelo paterno y materno"
+
+msgid "Grandparent family spacing"
+msgstr "Espaciado de la familia del abuelo"
+
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "Espaciado adicional de las familias abuelos (mm)"
+
+msgid "First spouse left"
+msgstr "Primer cónyuge izquierdo"
+
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
+msgstr ""
+"Poner siempre primero de múltiples cónyuges a la izquierda. Esto puede "
+"ayudar a reducir los cruces de líneas con múltiples matrimonios."

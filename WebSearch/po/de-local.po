@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-01 14:55+0300\n"
-"PO-Revision-Date: 2025-06-05 06:02+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,373 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
+
+msgid "No title"
+msgstr "Kein Titel"
+
+msgid "No data available."
+msgstr "Keine Daten verfügbar."
+
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "HISTORISCHE VERWALTUNGSTEILUNGEN VON"
+
+msgid "Foundation date:"
+msgstr "Gründungsdatum:"
+
+msgid "Note:"
+msgstr "Notiz:"
+
+msgid "Coordinates:"
+msgstr "Koordinaten:"
+
+msgid "Administrative history"
+msgstr "Verwaltungsgeschichte"
+
+msgid "Data provided to AI:"
+msgstr "An die KI übermittelte Daten:"
+
+msgid "Full hierarchy"
+msgstr "Vollständige Hierarchie"
+
+msgid "Place Type:"
+msgstr "Ortstart:"
+
+msgid "Last Retrieved At:"
+msgstr "Zuletzt abgerufen am:"
+
+msgid "Save Coordinates to the Place"
+msgstr "Koordinaten zum Ort speichern"
+
+msgid "AI provider is disabled"
+msgstr "Der KI-Anbieter ist deaktiviert"
+
+msgid "No AI API key provided"
+msgstr "Kein KI-API-Schlüssel angegeben"
+
+msgid "AI-generated historical place data is currently disabled"
+msgstr "KI-generierte historische Ortsdaten sind derzeit deaktiviert"
+
+msgid "AI provider is unknown. Please check your AI provider settings."
+msgstr ""
+"Der KI-Anbieter ist unbekannt. Bitte überprüfe deine KI-"
+"Anbietereinstellungen."
+
+msgid "⏳ Generating historical place data, please wait..."
+msgstr "⏳ Historische Ortsdaten werden generiert, bitte warten..."
+
+msgid "Keys"
+msgstr "Schlüssel"
+
+msgid "Website URL"
+msgstr "Website-URL"
+
+msgid "Add link to note"
+msgstr "Verknüpfung zur Notiz hinzufügen"
+
+msgid "Add link to attribute"
+msgstr "Verknüpfung zum Attribut hinzufügen"
+
+msgid "Show QR-code"
+msgstr "QR-Code anzeigen"
+
+msgid "Copy link to clipboard"
+msgstr "Verknüpfung in die Zwischenablage kopieren"
+
+msgid "Hide link for selected item"
+msgstr "Verknüpfung für ausgewähltes Element ausblenden"
+
+msgid "Hide link for all items"
+msgstr "Verknüpfung für alle Elemente ausblenden"
+
+msgid "Edit Attribute with the Link"
+msgstr "Attribut mit dem Link bearbeiten"
+
+msgid "Edit Note with the Link"
+msgstr "Notiz mit dem Link bearbeiten"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 KI-Vorschläge"
+
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr ""
+"Das Attribut existiert nicht mehr. Das zusätzliche Symbol wird entfernt"
+
+msgid "Note no longer exists. The extra icon is removed"
+msgstr "Die Notiz existiert nicht mehr. Das zusätzliche Symbol wird entfernt"
+
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+"📌 Dieser '{title}'-Weblink wurde vom WebSuche-Gramplet (v. {version}) für "
+"zukünftige Referenzen archiviert:\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Du kannst diesen Link verwenden, um die Quelle zu besuchen und die "
+"Informationen zu dieser Entität zu überprüfen."
+
+#, python-format
+msgid "Note #%(id)s has been successfully added"
+msgstr "Notiz #%(id)s wurde erfolgreich hinzugefügt"
+
+msgid "Error creating note"
+msgstr "Fehler beim Erstellen der Notiz"
+
+msgid "URL is copied to the Clipboard"
+msgstr "URL wird in die Zwischenablage kopiert"
+
+msgid "WebSearch Link"
+msgstr "WebSuche Link"
+
+msgid "Attribute has been successfully added"
+msgstr "Attribut wurde erfolgreich hinzugefügt"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "Titel: {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "Ersetzt: {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "Leer: {keys}"
+
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "Kommentar: {comment}"
+
+msgid "Column - Icons"
+msgstr "Spalte - Symbole"
+
+msgid "Column - Source Types (flags)"
+msgstr "Spalte - Quellentypen (Kennzeichen)"
+
+msgid "Column - Keys"
+msgstr "Spalte - Schlüssel"
+
+msgid "Column - Title"
+msgstr "Spalte - Titel"
+
+msgid "Column - Website Url"
+msgstr "Spalte - Website-Url"
+
+msgid "Column - Comment"
+msgstr "Spalte - Anmerkung"
+
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "Symbol - Besuchte URLs (Häkchen)"
+
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "Symbol - Gespeicherte URLs (Diskette)"
+
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "Symbol - URLs, die mit UID-Attributen verknüpft sind (UID- Ausweis)"
+
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "Symbol - URLs aus regionalen CSV-Dateien ( Kennzeichen)"
+
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "Symbol - URLs aus statischen CSV-Dateien (roter Stift)"
+
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "Symbol - URLs aus gängigen CSV-Dateien (Erde)"
+
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "Symbol - URLs aus Kreuz-CSV-Dateien (Shuffle-Pfeile)"
+
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr ""
+"Symbol - URLs aus dem benutzerdefinierten Benutzerverzeichnis "
+"(Tabellenkalkulationssymbol)"
+
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Symbol - URLs auf der Registerkarte „Attribute“ (Symbol „A“)"
+
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Symbol - URLs aus der Registerkarte „Internet“ (Symbol „I“)"
+
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Symbol - URLs aus der Registerkarte „Notizen“ („N“-Symbol)"
+
+msgid "QR-code"
+msgstr "QR-Code"
+
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Fehlende Abhängigkeit „qrcode“"
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Fehler beim Generieren des QR-Codes:\n"
+"Ursprünglicher Fehler: „{}“"
+
+msgid "Note Link (parsed)"
+msgstr "Notizverknüpfung (analysiert)"
+
+msgid "Note Link (internal)"
+msgstr "Notiz-Link (intern)"
+
+msgid "Note Link (external)"
+msgstr "Notiz-Link (extern)"
+
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 Über WebSearch"
+
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"WebSearch ist ein Gramplet für Gramps, das dir hilft, Websites zu "
+"genealogischen Themen zu durchsuchen."
+
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"Es unterstützt CSV-basierte Linkvorlagen, KI-gestützte Website-Erkennung und "
+"direkte Integration mit Notizen und Attributen."
+
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Systeminformationen"
+
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Fehlt:** `qrcode`"
+
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Diese Python-Bibliothek ist auf deinem System nicht verfügbar."
+
+msgid "Without it, QR code generation will not work."
+msgstr "Ohne diese Funktion funktioniert die QR-Code-Generierung nicht."
+
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Normalerweise installiert mit: `pip install qrcode[pil]`"
+
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Hinweis: Bei einigen Betriebssystemen oder Umgebungen sind möglicherweise "
+"alternative Installationsmethoden erforderlich.*"
+
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **Fehlt:** `openai`"
+
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr ""
+"ℹ️ Diese Bibliothek ist für den Zugriff auf OpenAI-basierte Funktionen "
+"erforderlich."
+
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Ohne sie werden die KI-generierten Seitenvorschläge und Ortegeschichte "
+"deaktiviert."
+
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 Normalerweise installiert mit: `pip install openai`"
+
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Fehlt:** `requests`"
+
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Diese Bibliothek wird für die Kommunikation mit Web-APIs verwendet."
+
+msgid "Without it, external data sources may not be accessible."
+msgstr ""
+"Ohne diese Funktion sind externe Datenquellen möglicherweise nicht "
+"zugänglich."
+
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 Normalerweise installiert mit: `pip install requests`"
+
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Speicherorte der Datendateien"
+
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"Nachfolgend findest du die Pfade zu den System- und benutzerdefinierten "
+"Datendateien, die von WebSearch verwendet werden."
+
+msgid "#### CSV File Paths"
+msgstr "#### CSV-Dateipfade"
+
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr "- **Systempfad:** `{dir|%s}` – enthält die integrierten CSV-Dateien"
+
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **Benutzerdefinierter Pfad:** `{dir|%s}` – für benutzerdefinierte CSV-"
+"Dateien"
+
+msgid "#### JSON File Paths"
+msgstr "#### JSON-Dateipfade"
+
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **Systempfad:** `{dir|%s}` – enthält die integrierte Datei "
+"attribute_mapping.json"
+
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **Benutzerdefinierter Pfad:** `{dir|%s}` – für benutzerdefinierte "
+"attribute_mapping.json-Datei"
+
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *Tipp: Klicke auf einen beliebigen Pfad oben, um ihn in deiner "
+"Dateiverwaltung zu öffnen.*"
+
+msgid "📖 View detailed usage in: "
+msgstr "📖 Detaillierte Verwendung anzeigen in: "
+
+msgid "## 💬 Support"
+msgstr "## 💬 Unterstützung"
+
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 Erstellt und gepflegt von Yurii Liubymyi"
+
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 Wenn du Hilfe oder Feedback brauchst, kannst du gerne `@Urchello` im "
+"Gramps-Forum erwähnen:"
+
+msgid "Gramps Forum (Discourse)"
+msgstr "Gramps Forum (Discourse)"
+
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr "✅ Fehlerberichte und Funktionsanfragen sind völlig **kostenlos**."
+
+msgid "GitHub Issues"
+msgstr "GitHub-Probleme"
+
+msgid "Gramps Bug Tracker"
+msgstr "Gramps-Fehlerverfolgung"
+
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 WebSearch Gramplet-Version: `%s`"
 
 msgid "Middle Name Handling"
 msgstr "Handhabung des mittleren Namens"
@@ -165,360 +531,3 @@ msgstr "Attribut aktualisiert"
 
 msgid "Note updated"
 msgstr "Notiz aktualisiert"
-
-msgid "Note Link (parsed)"
-msgstr "Notizverknüpfung (analysiert)"
-
-msgid "Note Link (internal)"
-msgstr "Notiz-Link (intern)"
-
-msgid "Note Link (external)"
-msgstr "Notiz-Link (extern)"
-
-msgid "No title"
-msgstr "Kein Titel"
-
-msgid "## 🧩 About WebSearch"
-msgstr "## 🧩 Über WebSearch"
-
-msgid ""
-"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
-"websites."
-msgstr ""
-"WebSearch ist ein Gramplet für Gramps, das dir hilft, Websites zu "
-"genealogischen Themen zu durchsuchen."
-
-msgid ""
-"It supports CSV-based link templates, AI-assisted site discovery, and direct "
-"integration with notes and attributes."
-msgstr ""
-"Es unterstützt CSV-basierte Linkvorlagen, KI-gestützte Website-Erkennung und "
-"direkte Integration mit Notizen und Attributen."
-
-msgid "## ⚙️ System Information"
-msgstr "## ⚙️ Systeminformationen"
-
-msgid "🔻 **Missing:** `qrcode`"
-msgstr "🔻 **Fehlt:** `qrcode`"
-
-msgid "ℹ️ This Python library is not available in your system."
-msgstr "ℹ️ Diese Python-Bibliothek ist auf deinem System nicht verfügbar."
-
-msgid "Without it, QR code generation will not work."
-msgstr "Ohne diese Funktion funktioniert die QR-Code-Generierung nicht."
-
-msgid "💡 Usually installed with: `pip install qrcode[pil]`"
-msgstr "💡 Normalerweise installiert mit: `pip install qrcode[pil]`"
-
-msgid ""
-"*Note: Some operating systems or environments may require alternative "
-"installation methods.*"
-msgstr ""
-"*Hinweis: Bei einigen Betriebssystemen oder Umgebungen sind möglicherweise "
-"alternative Installationsmethoden erforderlich.*"
-
-msgid "🔻 **Missing:** `openai`"
-msgstr "🔻 **Fehlt:** `openai`"
-
-msgid "ℹ️ This library is required for accessing OpenAI-based features."
-msgstr ""
-"ℹ️ Diese Bibliothek ist für den Zugriff auf OpenAI-basierte Funktionen "
-"erforderlich."
-
-msgid ""
-"Without it, AI-generated site suggestions and place history will be disabled."
-msgstr ""
-"Ohne sie werden die KI-generierten Seitenvorschläge und Ortegeschichte "
-"deaktiviert."
-
-msgid "💡 Usually installed with: `pip install openai`"
-msgstr "💡 Normalerweise installiert mit: `pip install openai`"
-
-msgid "🔻 **Missing:** `requests`"
-msgstr "🔻 **Fehlt:** `requests`"
-
-msgid "ℹ️ This library is used to communicate with web APIs."
-msgstr "ℹ️ Diese Bibliothek wird für die Kommunikation mit Web-APIs verwendet."
-
-msgid "Without it, external data sources may not be accessible."
-msgstr ""
-"Ohne diese Funktion sind externe Datenquellen möglicherweise nicht "
-"zugänglich."
-
-msgid "💡 Usually installed with: `pip install requests`"
-msgstr "💡 Normalerweise installiert mit: `pip install requests`"
-
-msgid "## 📂 Data File Locations"
-msgstr "## 📂 Speicherorte der Datendateien"
-
-msgid ""
-"Below are the paths to system and user-defined data files used by WebSearch."
-msgstr ""
-"Nachfolgend findest du die Pfade zu den System- und benutzerdefinierten "
-"Datendateien, die von WebSearch verwendet werden."
-
-msgid "#### CSV File Paths"
-msgstr "#### CSV-Dateipfade"
-
-#, python-format
-msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
-msgstr "- **Systempfad:** `{dir|%s}` – enthält die integrierten CSV-Dateien"
-
-#, python-format
-msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
-msgstr ""
-"- **Benutzerdefinierter Pfad:** `{dir|%s}` – für benutzerdefinierte CSV-"
-"Dateien"
-
-msgid "#### JSON File Paths"
-msgstr "#### JSON-Dateipfade"
-
-#, python-format
-msgid ""
-"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
-"file"
-msgstr ""
-"- **Systempfad:** `{dir|%s}` – enthält die integrierte Datei "
-"attribute_mapping.json"
-
-#, python-format
-msgid ""
-"- **User-defined path:** `{dir|%s}` – for custom user-defined "
-"attribute_mapping.json file"
-msgstr ""
-"- **Benutzerdefinierter Pfad:** `{dir|%s}` – für benutzerdefinierte "
-"attribute_mapping.json-Datei"
-
-msgid "  💡 *Tip: click any path above to open it in your file manager.*"
-msgstr ""
-"  💡 *Tipp: Klicke auf einen beliebigen Pfad oben, um ihn in deiner "
-"Dateiverwaltung zu öffnen.*"
-
-msgid "📖 View detailed usage in: "
-msgstr "📖 Detaillierte Verwendung anzeigen in: "
-
-msgid "## 💬 Support"
-msgstr "## 💬 Unterstützung"
-
-msgid "👤 Created and maintained by Yurii Liubymyi"
-msgstr "👤 Erstellt und gepflegt von Yurii Liubymyi"
-
-msgid ""
-"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
-"forum:"
-msgstr ""
-"💬 Wenn du Hilfe oder Feedback brauchst, kannst du gerne `@Urchello` im "
-"Gramps-Forum erwähnen:"
-
-msgid "✅ Bug reports and feature requests are completely **free of charge**."
-msgstr "✅ Fehlerberichte und Funktionsanfragen sind völlig **kostenlos**."
-
-#, python-format
-msgid "🧩 WebSearch Gramplet version: `%s`"
-msgstr "🧩 WebSearch Gramplet-Version: `%s`"
-
-msgid "Column - Icons"
-msgstr "Spalte - Symbole"
-
-msgid "Column - Source Types (flags)"
-msgstr "Spalte - Quellentypen (Kennzeichen)"
-
-msgid "Column - Keys"
-msgstr "Spalte - Schlüssel"
-
-msgid "Column - Title"
-msgstr "Spalte - Titel"
-
-msgid "Column - Website Url"
-msgstr "Spalte - Website-Url"
-
-msgid "Column - Comment"
-msgstr "Spalte - Anmerkung"
-
-msgid "Icon - Visited URLs (checkmark)"
-msgstr "Symbol - Besuchte URLs (Häkchen)"
-
-msgid "Icon - Saved URLs (floppy disk)"
-msgstr "Symbol - Gespeicherte URLs (Diskette)"
-
-msgid "Icon - URLs linked to UID attributes (UID badge)"
-msgstr "Symbol - URLs, die mit UID-Attributen verknüpft sind (UID- Ausweis)"
-
-msgid "Icon - URLs from regional CSV files (flag)"
-msgstr "Symbol - URLs aus regionalen CSV-Dateien ( Kennzeichen)"
-
-msgid "Icon - URLs from static CSV files (red pin)"
-msgstr "Symbol - URLs aus statischen CSV-Dateien (roter Stift)"
-
-msgid "Icon - URLs from common CSV files (earth)"
-msgstr "Symbol - URLs aus gängigen CSV-Dateien (Erde)"
-
-msgid "Icon - URLs from cross CSV files (shuffle arrows)"
-msgstr "Symbol - URLs aus Kreuz-CSV-Dateien (Shuffle-Pfeile)"
-
-msgid "Icon - URLs from custom user directory (spreadsheet icon)"
-msgstr ""
-"Symbol - URLs aus dem benutzerdefinierten Benutzerverzeichnis "
-"(Tabellenkalkulationssymbol)"
-
-msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr "Symbol - URLs auf der Registerkarte „Attribute“ (Symbol „A“)"
-
-msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr "Symbol - URLs aus der Registerkarte „Internet“ (Symbol „I“)"
-
-msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr "Symbol - URLs aus der Registerkarte „Notizen“ („N“-Symbol)"
-
-msgid "No data available."
-msgstr "Keine Daten verfügbar."
-
-msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
-msgstr "HISTORISCHE VERWALTUNGSTEILUNGEN VON"
-
-msgid "Foundation date:"
-msgstr "Gründungsdatum:"
-
-msgid "Note:"
-msgstr "Notiz:"
-
-msgid "Coordinates:"
-msgstr "Koordinaten:"
-
-msgid "Administrative history"
-msgstr "Verwaltungsgeschichte"
-
-msgid "Data provided to AI:"
-msgstr "An die KI übermittelte Daten:"
-
-msgid "Full hierarchy"
-msgstr "Vollständige Hierarchie"
-
-msgid "Place Type:"
-msgstr "Ortstart:"
-
-msgid "Last Retrieved At:"
-msgstr "Zuletzt abgerufen am:"
-
-msgid "QR-code"
-msgstr "QR-Code"
-
-msgid "⚠ Missing dependency \"qrcode\""
-msgstr "⚠ Fehlende Abhängigkeit „qrcode“"
-
-msgid ""
-"⚠ Error generating QR code:\n"
-"Original error: “{}”"
-msgstr ""
-"⚠ Fehler beim Generieren des QR-Codes:\n"
-"Ursprünglicher Fehler: „{}“"
-
-msgid "Save Coordinates to the Place"
-msgstr "Koordinaten zum Ort speichern"
-
-msgid "AI provider is disabled"
-msgstr "Der KI-Anbieter ist deaktiviert"
-
-msgid "No AI API key provided"
-msgstr "Kein KI-API-Schlüssel angegeben"
-
-msgid "AI-generated historical place data is currently disabled"
-msgstr "KI-generierte historische Ortsdaten sind derzeit deaktiviert"
-
-msgid "AI provider is unknown. Please check your AI provider settings."
-msgstr ""
-"Der KI-Anbieter ist unbekannt. Bitte überprüfe deine KI-"
-"Anbietereinstellungen."
-
-msgid "⏳ Generating historical place data, please wait..."
-msgstr "⏳ Historische Ortsdaten werden generiert, bitte warten..."
-
-msgid "Keys"
-msgstr "Schlüssel"
-
-msgid "Website URL"
-msgstr "Website-URL"
-
-msgid "Add link to note"
-msgstr "Verknüpfung zur Notiz hinzufügen"
-
-msgid "Add link to attribute"
-msgstr "Verknüpfung zum Attribut hinzufügen"
-
-msgid "Show QR-code"
-msgstr "QR-Code anzeigen"
-
-msgid "Copy link to clipboard"
-msgstr "Verknüpfung in die Zwischenablage kopieren"
-
-msgid "Hide link for selected item"
-msgstr "Verknüpfung für ausgewähltes Element ausblenden"
-
-msgid "Hide link for all items"
-msgstr "Verknüpfung für alle Elemente ausblenden"
-
-msgid "Edit Attribute with the Link"
-msgstr "Attribut mit dem Link bearbeiten"
-
-msgid "Edit Note with the Link"
-msgstr "Notiz mit dem Link bearbeiten"
-
-msgid "🔍 AI Suggestions"
-msgstr "🔍 KI-Vorschläge"
-
-msgid "Attribute no longer exists. The extra icon is removed"
-msgstr ""
-"Das Attribut existiert nicht mehr. Das zusätzliche Symbol wird entfernt"
-
-msgid "Note no longer exists. The extra icon is removed"
-msgstr "Die Notiz existiert nicht mehr. Das zusätzliche Symbol wird entfernt"
-
-#, python-brace-format
-msgid ""
-"📌 This '{title}' web link was archived for future reference by the "
-"WebSearch gramplet (v. {version}):\n"
-"\n"
-"🔗 {url}\n"
-"\n"
-"You can use this link to revisit the source and verify the information "
-"related to this entity."
-msgstr ""
-"📌 Dieser '{title}'-Weblink wurde vom WebSuche-Gramplet (v. {version}) für "
-"zukünftige Referenzen archiviert:\n"
-"\n"
-"🔗 {url}\n"
-"\n"
-"Du kannst diesen Link verwenden, um die Quelle zu besuchen und die "
-"Informationen zu dieser Entität zu überprüfen."
-
-#, python-format
-msgid "Note #%(id)s has been successfully added"
-msgstr "Notiz #%(id)s wurde erfolgreich hinzugefügt"
-
-msgid "Error creating note"
-msgstr "Fehler beim Erstellen der Notiz"
-
-msgid "URL is copied to the Clipboard"
-msgstr "URL wird in die Zwischenablage kopiert"
-
-msgid "WebSearch Link"
-msgstr "WebSuche Link"
-
-msgid "Attribute has been successfully added"
-msgstr "Attribut wurde erfolgreich hinzugefügt"
-
-#, python-brace-format
-msgid "Title: {title}"
-msgstr "Titel: {title}"
-
-#, python-brace-format
-msgid "Replaced: {keys}"
-msgstr "Ersetzt: {keys}"
-
-#, python-brace-format
-msgid "Empty: {keys}"
-msgstr "Leer: {keys}"
-
-#, python-brace-format
-msgid "Comment: {comment}"
-msgstr "Kommentar: {comment}"

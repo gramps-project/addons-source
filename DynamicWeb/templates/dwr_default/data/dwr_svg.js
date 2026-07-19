@@ -2936,7 +2936,11 @@ function textLine(x, y, a, txt, w, h, x_elt)
 {
 	var idx = svgElts[x_elt][SVGELT_IDX];
 	// Calcul de la taille de police et des lignes
-	var tab = txt.split(/[ \-]+/g);
+	// Split for line-wrapping on spaces only: a hyphen is a valid name
+	// character (e.g. "Jan-Åke", "HAMILTON-SMITH") and must not be treated as
+	// a word separator, or calcTextTab() rejoins the fragments with a space and
+	// the tree silently rewrites the hyphen to a space (Mantis 11437).
+	var tab = txt.split(/ +/g);
 	var fs = 0;
 	var i, fi = 0;
 	for (i = 0; i < tab.length; i++)

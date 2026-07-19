@@ -1,0 +1,76 @@
+#
+# Gramps - a GTK+/GNOME based genealogy program
+#
+# Copyright (C) 2026  Dmitry Bryndin
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+
+"""
+Rule: WarnMissingHardSign
+Flags pre-1918 Russian names missing a terminal orthographic hard sign 'ъ'.
+"""
+
+from __future__ import annotations
+
+from name_processor.services.audit_rules.base import BaseRule
+from name_processor.models.audit import RuleContext, ProposedChange
+from name_processor.models.constants import (
+    SEVERITY_WARNING,
+    LOCALE_RU,
+    REFORM_YEAR,
+)
+from name_processor.services.morphology import MorphologyService
+
+
+class WarnMissingHardSign(BaseRule):
+    """Flags pre-1918 Russian names missing a terminal orthographic hard sign 'ъ'."""
+
+    rule_id = "WARN_MISSING_HARD_SIGN"
+
+    @property
+    def severity(self) -> str:
+        return SEVERITY_WARNING
+
+    @property
+    def supported_locales(self) -> set[str]:
+        return {LOCALE_RU}
+
+    @property
+    def active_era(self) -> tuple[int | None, int | None]:
+        return (None, 1917)
+
+    def evaluate(self, ctx: RuleContext, use_pre_reform: bool) -> ProposedChange | None:
+        # Short-circuit if pre-reform rules are disabled by the user
+        if (
+            not ctx.current_patronymic
+            or not use_pre_reform
+            or (ctx.reference_year is not None and ctx.reference_year >= REFORM_YEAR)
+            or ctx.locale != LOCALE_RU
+        ):
+            return None
+
+        # Re-apply pre-reform orthography mapping on the current value
+        reformed = MorphologyService.apply_pre_reform_orthography(
+            ctx.current_patronymic
+        )
+
+        if reformed != ctx.current_patronymic:
+            return ProposedChange(
+                explanation="Orthographical anomaly: Missing historical pre-revolutionary terminal hard signs (ъ) or decimal (і).",
+                suggested_string=reformed,
+            )
+
+        return None

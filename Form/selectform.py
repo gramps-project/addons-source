@@ -141,13 +141,10 @@ class SelectForm(object):
         self._populate_model()
         source_handle = None
         while True:
-            response = self.top.run()
-            if response == Gtk.ResponseType.HELP:
-                display_help(webpage="Form_Addons")
-            else:
-                model, iter_ = self.tree.get_selection().get_selected()
-                if iter_:
-                    source_handle = model.get_value(iter_, 0)
-                self.top.destroy()
+            self.top.run()
+            model, iter_ = self.tree.get_selection().get_selected()
+            if iter_:
+                source_handle = model.get_value(iter_, 0)
+            self.top.destroy()
 
             return source_handle

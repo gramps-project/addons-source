@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-08 17:04+0000\n"
-"PO-Revision-Date: 2025-03-11 19:37+0000\n"
-"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
+"PO-Revision-Date: 2025-11-17 06:51+0000\n"
+"Last-Translator: Fedir Zinchuk <fedikw@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -13,25 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
-
-msgid "Select Form"
-msgstr "Вибрати форму"
-
-msgid "Form Gramplet"
-msgstr "Грамплет форми"
-
-msgid "Gramplet interface for Forms"
-msgstr "Інтерфейс грамплету для форм"
-
-msgid "Forms"
-msgstr "Форми"
-
-msgid "Order"
-msgstr "Порядок"
-
-msgid "Form"
-msgstr "Форма"
+"X-Generator: Weblate 5.15-dev\n"
 
 #, python-format
 msgid "Form: %s"
@@ -48,6 +30,1703 @@ msgstr "Посилання:"
 
 msgid "Headings"
 msgstr "Заголовки"
+
+msgid "Form Gramplet"
+msgstr "Грамплет форми"
+
+msgid "Gramplet interface for Forms"
+msgstr "Інтерфейс грамплету для форм"
+
+msgid "Forms"
+msgstr "Форми"
+
+msgid "Order"
+msgstr "Порядок"
+
+msgid "Form"
+msgstr "Форма"
+
+msgid "Select Form"
+msgstr "Вибрати форму"
+
+msgid "Schedule"
+msgstr "Розклад"
+
+msgid "EnumDistrict"
+msgstr "Округ перепису"
+
+msgid "Township"
+msgstr "Селище"
+
+msgid "Comprising"
+msgstr "Що включає"
+
+msgid "OfTheSaid"
+msgstr "Вказано"
+
+msgid "Enumerator"
+msgstr "Переписувач"
+
+msgid "1. Names of Inmates"
+msgstr "1. Імена мешканців"
+
+msgid "2. Profession, Trade or Occupation"
+msgstr "2. Професія, ремесло або заняття"
+
+msgid "BirthPlace"
+msgstr "Місце народження"
+
+msgid "3. Place of Birth"
+msgstr "3. Місце народження"
+
+msgid "4. Religion"
+msgstr "4. Релігія"
+
+msgid "5. Residence if Outside of Limits"
+msgstr "5. Місце проживання (якщо за межами)"
+
+msgid "6. Age at Next Birthday"
+msgstr "6. Вік на наступний день народження"
+
+msgid "SexMale"
+msgstr "Чоловіча стать"
+
+msgid "7. Sex: Male"
+msgstr "7. Стать: Чоловіча"
+
+msgid "SexFemale"
+msgstr "Жіноча стать"
+
+msgid "8. Sex: Female"
+msgstr "8. Стать: Жіноча"
+
+msgid "MaritalStatus"
+msgstr "Сімейний стан"
+
+msgid "9. Married or Single"
+msgstr "9. Одружений чи неодружений"
+
+msgid "Coloured"
+msgstr "Кольорові"
+
+msgid "10. Coloured Persons - Negroes"
+msgstr "10. Кольорові особи - негри"
+
+msgid "Indians"
+msgstr "Індіанці"
+
+msgid "11. Indians, if any"
+msgstr "11. Індіанці, якщо є"
+
+msgid "ResidentsMale"
+msgstr "Мешканці: чоловіки"
+
+msgid "12. Residents: Members, Male"
+msgstr "12. Мешканці: члени, чоловіки"
+
+msgid "ResidentsFemale"
+msgstr "Мешканці: жінки"
+
+msgid "13. Residents: Members, Female"
+msgstr "13. Мешканці: члени, жінки"
+
+msgid "NonMembersMale"
+msgstr "Не члени: чоловіки"
+
+msgid "14. Residents: Not Members: Male"
+msgstr "14. Мешканці: не члени: чоловіки"
+
+msgid "NonMembersFemale"
+msgstr "Не члени: жінки"
+
+msgid "15. Residents: Not Members: Female"
+msgstr "15. Мешканці: не члени: жінки"
+
+msgid "AbsentMembersMale"
+msgstr "Чоловіки відсутні"
+
+msgid "16. Members Absent: Male"
+msgstr "16. Члени відсутні: чоловіки"
+
+msgid "AbsentMembersFemale"
+msgstr "Жінки відсутні"
+
+msgid "17. Members Absent: Female"
+msgstr "17. Члени відсутні: жінки"
+
+msgid "DeafDumbMale"
+msgstr "Глухонімі: чоловіки"
+
+msgid "18. Deaf and Dumb: Male"
+msgstr "18. Глухонімі: чоловіки"
+
+msgid "DeafDumbFemale"
+msgstr "Глухонімі: жінки"
+
+msgid "19. Deaf and Dumb: Female"
+msgstr "19. Глухонімі: жінки"
+
+msgid "BlindMale"
+msgstr "Сліпі: чоловіки"
+
+msgid "20. Blind: Male"
+msgstr "20. Сліпі: чоловіки"
+
+msgid "BlindFemale"
+msgstr "Сліпі: жінки"
+
+msgid "21. Blind: Female"
+msgstr "21. Сліпі: жінки"
+
+msgid "LunaticMale"
+msgstr "Душевнохворий чоловік"
+
+msgid "22. Lunatics: Male"
+msgstr "22. Душевнохворі: чоловіки"
+
+msgid "LunaticFemale"
+msgstr "Душевнохвора жінка"
+
+msgid "23. Lunatics: Female"
+msgstr "23. Душевнохворі: жінки"
+
+msgid "ScholarMale"
+msgstr "Учень (чоловіча стать)"
+
+msgid "24. Attending School: Male"
+msgstr "24. Відвідують школу: хлопці"
+
+msgid "ScholarFemale"
+msgstr "Учениця (жіноча стать)"
+
+msgid "25. Attending School: Female"
+msgstr "25. Відвідують школу: дівчата"
+
+msgid "Birth1851Male"
+msgstr "Народження у 1851 році: чоловіча стать"
+
+msgid "26. Births During the Year 1851: Male"
+msgstr "26. Народження у 1851 році: хлопчики"
+
+msgid "Birth1851Female"
+msgstr "Народження у 1851 році: жіноча стать"
+
+msgid "27. Births During the Year 1851: Female"
+msgstr "27. Народження у 1851 році: дівчатка"
+
+msgid "Death1851Male"
+msgstr "Смерті у 1851 році: чоловіча стать"
+
+msgid "28. Deaths During the Year 1851: Male"
+msgstr "28. Смерті у 1851 році: чоловіки"
+
+msgid "Death1851Female"
+msgstr "Смерті у 1851 році: жіноча стать"
+
+msgid "29. Deaths During the Year 1851: Female"
+msgstr "29. Смерті у 1851 році: жінки"
+
+msgid "DeathAgeCause"
+msgstr "Вік і причина смерті"
+
+msgid "30. Age and Cause of Deaths"
+msgstr "30. Вік і причина смерті"
+
+msgid "Houses"
+msgstr "Будинки"
+
+msgid ""
+"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
+msgstr ""
+"31. Будинки: цегляні, кам'яні, дерев'яні, зрубні, бараки або інші види житла"
+
+msgid "HousesStories"
+msgstr "Поверховість будинків"
+
+msgid "32. Houses: No. of Stories"
+msgstr "32. Будинки: кількість поверхів"
+
+msgid "HousesFamilies"
+msgstr "Сім'ї в будинках"
+
+msgid "33. No. of Families Occupying"
+msgstr "33. Кількість сімей, що мешкають"
+
+msgid "HousesVacant"
+msgstr "Порожні будинки"
+
+msgid "34. Houses: Vacant"
+msgstr "34. Будинки: порожні"
+
+msgid "HousesBuilding"
+msgstr "Будинки в будівництві"
+
+msgid "35. Houses: Building"
+msgstr "35. Будинки: у процесі будівництва"
+
+msgid "Shops"
+msgstr "Крамниці"
+
+msgid "36. Shops, Stores, Inns, Taverns etc."
+msgstr "36. Магазини, крамниці, готелі, таверни тощо."
+
+msgid "PublicBuildings"
+msgstr "Громадські будівлі"
+
+msgid "37. Public Buildings"
+msgstr "37. Громадські будівлі"
+
+msgid "WorshipPlaces"
+msgstr "Місця поклоніння"
+
+msgid "38. Places of Worship"
+msgstr "38. Місця релігійного поклоніння"
+
+msgid "BuisnessInfo"
+msgstr "Інформація про підприємства"
+
+msgid ""
+"39. Information on Mills, Factories etc., their cost, power, produce, etc."
+msgstr ""
+"39. Інформація про млини, фабрики тощо, їхню вартість, потужність, продукцію "
+"тощо."
+
+msgid "NumEmployees"
+msgstr "Кількість працівників"
+
+msgid "40. Number of Persons Usually Employed Therein"
+msgstr "40. Кількість осіб, що зазвичай там працюють"
+
+msgid "41. General Remarks of the Enumerator"
+msgstr "41. Загальні примітки переписувача"
+
+msgid "1. Name of Occupier"
+msgstr "1. Ім'я орендаря"
+
+msgid "Concession"
+msgstr "Концесія"
+
+msgid "2. Concession or Range"
+msgstr "2. Концесія або діапазон"
+
+msgid "Lot"
+msgstr "Земельна ділянка"
+
+msgid "3. Lot or part of Lot"
+msgstr "3. Ділянка або частина ділянки"
+
+msgid "AcresHeld"
+msgstr "Орендовані акри"
+
+msgid "4. Number of Acres of Land: Held by each person or family"
+msgstr "4. Кількість акрів землі: у власності кожної особи або сім'ї"
+
+msgid "AcresCultivation"
+msgstr "Оброблювані акри"
+
+msgid "5. Number of Acres of Land: Under Cultivation"
+msgstr "5. Кількість акрів землі: під обробітком"
+
+msgid "AcresCrops"
+msgstr "Акри під посівами"
+
+msgid "6. Number of Acres of Land: Under Crops in 1851"
+msgstr "6. Кількість акрів землі: під посівами у 1851 році"
+
+msgid "AcresPasture"
+msgstr "Акри під пасовищами"
+
+msgid "7. Number of Acres of Land: Under Pasture in 1851"
+msgstr "7. Кількість акрів землі: під пасовищами у 1851 році"
+
+msgid "AcresGardens"
+msgstr "Акри під садами"
+
+msgid "8. Number of Acres of Land: Gardens or Orchards"
+msgstr "8. Кількість акрів землі: під садами або фруктовими садами"
+
+msgid "AcresWood"
+msgstr "Акри лісових угідь"
+
+msgid "9. Number of Acres of Land: Under Wood or Wild"
+msgstr "9. Кількість акрів землі: під лісом або дикою природою"
+
+msgid "WheatAcres"
+msgstr "Пшениця (акри)"
+
+msgid "10. Wheat: Acres"
+msgstr "10. Пшениця: акри"
+
+msgid "WheatBsh"
+msgstr "Пшениця (бушелі)"
+
+msgid "11. Wheat: Produce Bsh."
+msgstr "11. Пшениця: врожай у бушелях."
+
+msgid "BarleyAcres"
+msgstr "Ячмінь (акри)"
+
+msgid "12. Barley: Acres"
+msgstr "12. Ячмінь: акри"
+
+msgid "BarleyBsh"
+msgstr "Ячмінь (бушелі)"
+
+msgid "13. Barley: Produce Bsh."
+msgstr "13. Ячмінь: врожай у бушелях."
+
+msgid "RyeAcres"
+msgstr "Жито (акри)"
+
+msgid "14. Rye: Acres"
+msgstr "14. Жито: акри"
+
+msgid "RyeBsh"
+msgstr "Жито (бушелі)"
+
+msgid "15. Rye: Produce Bsh."
+msgstr "15. Жито: врожай у бушелях"
+
+msgid "PeasAcres"
+msgstr "Горох (акри)"
+
+msgid "16. Peas: Acres"
+msgstr "16. Горох: акри"
+
+msgid "PeasBush"
+msgstr "Горох (бушелі)"
+
+msgid "17. Peas: Produce Bsh."
+msgstr "17. Горох: врожай у бушелях"
+
+msgid "OatsAcres"
+msgstr "Овес (акри)"
+
+msgid "18. Oats: Acres"
+msgstr "18. Овес: акри"
+
+msgid "OatsBush"
+msgstr "Овес (бушелі)"
+
+msgid "19. Oats: Produce Bsh."
+msgstr "19. Овес: врожай у бушелях"
+
+msgid "BWheatAcres"
+msgstr "Гречка (акри)"
+
+msgid "20. B.Wheat: Acres"
+msgstr "20. Гречка: акри"
+
+msgid "BWheatBush"
+msgstr "Гречка (бушелі)"
+
+msgid "21. B.Wheat: Produce Bsh."
+msgstr "21. Гречка: врожай у бушелях"
+
+msgid "CornAcres"
+msgstr "Кукурудза (акри)"
+
+msgid "22. Corn: Acres"
+msgstr "22. Кукурудза: акри"
+
+msgid "CornBush"
+msgstr "Кукурудза (бушелі)"
+
+msgid "23. Corn: Produce Bsh."
+msgstr "23. Кукурудза: врожай у бушелях"
+
+msgid "PotatoesAcres"
+msgstr "Картопля (акри)"
+
+msgid "24. Potatoes: Acres"
+msgstr "24. Картопля: акри"
+
+msgid "PotatoesBush"
+msgstr "Картопля (бушелі)"
+
+msgid "25. Potatoes: Produce Bsh."
+msgstr "25. Картопля: врожай у бушелях"
+
+msgid "TurnipsAcres"
+msgstr "Ріпа (акри)"
+
+msgid "26. Turnips: Acres"
+msgstr "26. Ріпа: акри"
+
+msgid "TurnipsBush"
+msgstr "Ріпа (бушелі)"
+
+msgid "27. Turnips: Produce Bsh."
+msgstr "27. Ріпа: врожай у бушелях"
+
+msgid "CloverBush"
+msgstr "Конюшина (бушелі)"
+
+msgid "28. Clover, Timothy or other grass seed - Bsh."
+msgstr "28. Конюшина, тимофіївка або інше насіння трав - бушелі"
+
+msgid "CarrotsBush"
+msgstr "Морква (бушелі)"
+
+msgid "29. Carrots - Bsh."
+msgstr "29. Морква - бушелі"
+
+msgid "MangleWurtzel"
+msgstr "Буряк Мангольд"
+
+msgid "30. Mangle Wurtzel"
+msgstr "30. Буряк Мангольд"
+
+msgid "BeansBush"
+msgstr "Квасоля (бушелі)"
+
+msgid "31. Beans Bush"
+msgstr "31. Квасоля - бушелі"
+
+msgid "HopsLbs"
+msgstr "Хміль (фунти)"
+
+msgid "32. Hops Lbs."
+msgstr "32. Хміль - фунти"
+
+msgid "HayQty"
+msgstr "Сіно (кількість)"
+
+msgid "33. Hay, Bundles or Tons"
+msgstr "33. Сіно: в'язки або тонни"
+
+msgid "FlaxLbs"
+msgstr "Льон або коноплі (фунти)"
+
+msgid "34. Flax or Hemp, Lbs."
+msgstr "34. Льон або коноплі - фунти"
+
+msgid "TobaccoLbs"
+msgstr "Тютюн (фунти)"
+
+msgid "35. Tobacco Lbs."
+msgstr "35. Тютюн - фунти"
+
+msgid "WoolLbs."
+msgstr "Вовна (фунти)"
+
+msgid "36. Wool Lbs."
+msgstr "36. Вовна - фунти"
+
+msgid "Column37"
+msgstr "Колонка 37"
+
+msgid "37."
+msgstr "37."
+
+msgid "Column38"
+msgstr "Колонка 38"
+
+msgid "38."
+msgstr "38."
+
+msgid "Column39"
+msgstr "Колонка 39"
+
+msgid "39."
+msgstr "39."
+
+msgid "MapleSugarLbs"
+msgstr "Кленовий цукор (фунти)"
+
+msgid "40. Maple Sugar Lbs."
+msgstr "40. Кленовий цукор - фунти"
+
+msgid "CiderGalls"
+msgstr "Сидр (галони)"
+
+msgid "41. Cider Galls."
+msgstr "41. Сидр - галони."
+
+msgid "ClothYards"
+msgstr "Сукно (ярди)"
+
+msgid "42. Fulled Cloth Yards"
+msgstr "42. Вовняне сукно - ярди"
+
+msgid "LinnenYards"
+msgstr "Льон (ярди)"
+
+msgid "43. Linnen - Yds."
+msgstr "43. Льон - ярди"
+
+msgid "FlannelYds"
+msgstr "Фланель (ярди)"
+
+msgid "44. Flannel - Yds."
+msgstr "44. Фланель - ярди"
+
+msgid "Bulls"
+msgstr "Бики"
+
+msgid "45. Bulls, Oxen or Steers"
+msgstr "45. Бики, воли або бички"
+
+msgid "Milch Cows"
+msgstr "Молочні корови"
+
+msgid "46. Milch Cows"
+msgstr "46. Молочні корови"
+
+msgid "Calves"
+msgstr "Телята"
+
+msgid "47. Calves or Heifers"
+msgstr "47. Телята або нетелі"
+
+msgid "Horses"
+msgstr "Коні"
+
+msgid "48. Horses of all ages"
+msgstr "48. Коні всіх вікових груп"
+
+msgid "Sheep"
+msgstr "Вівці"
+
+msgid "49. Sheep"
+msgstr "49. Вівці"
+
+msgid "Pigs"
+msgstr "Свині"
+
+msgid "50. Pigs"
+msgstr "50. Свині"
+
+msgid "ButterLbs"
+msgstr "Масло (фунти)"
+
+msgid "51. Butter - Lbs."
+msgstr "51. Масло - фунти"
+
+msgid "CheeseLbs"
+msgstr "Сир (фунти)"
+
+msgid "52. Cheese - Lbs."
+msgstr "52. Сир - фунти"
+
+msgid "Beef"
+msgstr "Яловичина"
+
+msgid "53. Beef - Barrels or Cwts."
+msgstr "53. Яловичина - барелі або центнери"
+
+msgid "Pork"
+msgstr "Свинина"
+
+msgid "54. Pork - Barrels or Cwts."
+msgstr "54. Свинина - барелі або центнери"
+
+msgid "Fish"
+msgstr "Риба"
+
+msgid "55. Quantity of Fish Cured"
+msgstr "55. Кількість засолених риб"
+
+msgid "56. Remarks"
+msgstr "56. Зауваження"
+
+msgid "2. Profession, trade or occupation"
+msgstr "2. Професія, ремесло або заняття"
+
+msgid "Married1851"
+msgstr "Одружені 1851 року"
+
+msgid "4. Married during the year"
+msgstr "4. Одружені протягом року"
+
+msgid "5. Religion"
+msgstr "5. Релігія"
+
+msgid "6. Residence, if out of limits"
+msgstr "6. Місце проживання, якщо за межами району"
+
+msgid "7. Age next Birthday"
+msgstr "7. Вік на наступний день народження"
+
+msgid "8. Sex: Male"
+msgstr "8. Стать: Чоловіча"
+
+msgid "SexFemail"
+msgstr "Стать: Жіноча"
+
+msgid "9. Sex:Female"
+msgstr "9. Стать: Жіноча"
+
+msgid "10. Married or Single"
+msgstr "10. Одружений або неодружений"
+
+msgid "Widowers"
+msgstr "Вдівці"
+
+msgid "11. Widowers"
+msgstr "11. Вдівці"
+
+msgid "Widows"
+msgstr "Вдови"
+
+msgid "12. Widows"
+msgstr "12. Вдови"
+
+msgid "13. Coloured Persons, Mulato or Indians"
+msgstr "13. Кольорові особи, мулати або індіанці"
+
+msgid "MemberMale"
+msgstr "Члени: чоловіки"
+
+msgid "14. Members: Male"
+msgstr "14. Члени: чоловіки"
+
+msgid "MemberFemale"
+msgstr "Члени: жінки"
+
+msgid "15. Members: Female"
+msgstr "15. Члени: жінки"
+
+msgid "NotMemberMale"
+msgstr "Не члени: чоловіки"
+
+msgid "16. Not Members: Male"
+msgstr "16. Не члени: чоловіки"
+
+msgid "NotMemberFemale"
+msgstr "Не члени: жінки"
+
+msgid "17. Not Members: Female"
+msgstr "17. Не члени: жінки"
+
+msgid "MemberAbsentMale"
+msgstr "Чоловіки, що відсутні"
+
+msgid "18. Members Absent: Male"
+msgstr "18. Члени, що відсутні: чоловіки"
+
+msgid "MemberAbsentFemale"
+msgstr "Жінки, що відсутні"
+
+msgid "19. Members Absent: Female"
+msgstr "19. Члени, що відсутні: жінки"
+
+msgid "DeafDumb"
+msgstr "Глухонімі"
+
+msgid "20. Deaf and Dumb"
+msgstr "20. Глухонімі"
+
+msgid "Blind"
+msgstr "Сліпі"
+
+msgid "21. Blind"
+msgstr "21. Сліпі"
+
+msgid "Lunatic"
+msgstr "Душевнохворі"
+
+msgid "22. Lunatics or Idiots"
+msgstr "22. Душевнохворі або слабоумні"
+
+msgid "23. Attending School within the year: Male"
+msgstr "23. Навчаються в школі протягом року: чоловіки\""
+
+msgid "24. Attending School within the year: Female"
+msgstr "24. Навчаються в школі протягом року: жінки"
+
+msgid "CantReadMale"
+msgstr "Чоловіки, що не вміють читати"
+
+msgid "25. Persons over 20, who cannot read or write: Male"
+msgstr "25. Особи старші 20 років, які не вміють читати і писати: чоловіки"
+
+msgid "CantReadFemale"
+msgstr "Жінки, що не вміють читати"
+
+msgid "26. Persons over 20, who cannot read or write: Female"
+msgstr "26. Особи старші 20 років, які не вміють читати і писати: жінки"
+
+msgid "Birth1860Male"
+msgstr "Народження 1860 року: чоловіки"
+
+msgid "27. Births in 1860: Male"
+msgstr "27. Народжені у 1860 році: чоловіки"
+
+msgid "Birth1860Female"
+msgstr "Народження 1860 року: жінки"
+
+msgid "28. Births in 1860: Female"
+msgstr "28. Народжені у 1860 році: жінки"
+
+msgid "Death1860Male"
+msgstr "Смерті 1860 року: чоловіки"
+
+msgid "29. Deaths in 1860: Male"
+msgstr "29. Померлі у 1860 році: чоловіки"
+
+msgid "Death1860Female"
+msgstr "Смерті 1860 року: жінки"
+
+msgid "30. Deaths in 1860: Female"
+msgstr "30. Померлі у 1860 році: жінки"
+
+msgid "31. Age and cause of death"
+msgstr "31. Вік і причина смерті"
+
+msgid "32. Houses: Brick, Stone, Frame, Log, etc."
+msgstr "32. Будинки: цегляні, кам'яні, дерев'яні, колодяні тощо."
+
+msgid "33. Houses: No. of Stories"
+msgstr "33. Будинки: кількість поверхів"
+
+msgid "34. Houses: No. of families living in the house"
+msgstr "34. Будинки: кількість сімей у будинку"
+
+msgid "35. Houses: Vacant"
+msgstr "35. Будинки: порожні"
+
+msgid "HouseBeingBuilt"
+msgstr "Будинки, що будуються"
+
+msgid "36. Houses: Being built"
+msgstr "36. Будинки: у процесі будівництва"
+
+msgid "SubDistrict"
+msgstr "Підрайон"
+
+msgid "Vessels"
+msgstr "Судна"
+
+msgid "1. Vessels"
+msgstr "1. Судна"
+
+msgid "Shanties"
+msgstr "Халупи"
+
+msgid "2. Shanties"
+msgstr "2. Халупи"
+
+msgid "HousesBeingBuilt"
+msgstr "Будинки, що будуються"
+
+msgid "3. Dwelling houses in construction"
+msgstr "3. Житлові будинки в процесі будівництва"
+
+msgid "4. Dwelling houses unoccupied"
+msgstr "4. Житлові будинки, що не заселені"
+
+msgid "HousesInhabited"
+msgstr "Заселені будинки"
+
+msgid "5. Dwelling houses inhabited"
+msgstr "5. Житлові будинки, що заселені"
+
+msgid "6.Families"
+msgstr "6. Сім'ї"
+
+msgid "7. Names"
+msgstr "7. Імена"
+
+msgid "Sex"
+msgstr "Стать"
+
+msgid "8. Sex"
+msgstr "8. Стать"
+
+msgid "9. Age"
+msgstr "9. Вік"
+
+msgid "Birth1871"
+msgstr "Народження 1871 року"
+
+msgid "10. Born within last twelve months"
+msgstr "10. Народжені протягом останніх дванадцяти місяців"
+
+msgid "11. Country or Province of Birth"
+msgstr "11. Країна або провінція народження"
+
+msgid "12. Religion"
+msgstr "12. Релігія"
+
+msgid "13. Origin"
+msgstr "13. Походження"
+
+msgid "14. Profession, Occupation or Trade"
+msgstr "14. Професія, зайнятість або ремесло"
+
+msgid "15. Married or Widowed"
+msgstr "15. Одружений або вдівець/вдова"
+
+msgid "Maried1871"
+msgstr "Одружені у 1871 році"
+
+msgid "16. Married within last twelve months"
+msgstr "16. Одружені протягом останніх дванадцяти місяців"
+
+msgid "Scholar"
+msgstr "Учень"
+
+msgid "17. Going to school"
+msgstr "17. Відвідує школу"
+
+msgid "CantRead"
+msgstr "Не вміє читати"
+
+msgid "18. Over 20 unable to read"
+msgstr "18. Старші 20 років, які не вміють читати"
+
+msgid "CantWrite"
+msgstr "Не вміє писати"
+
+msgid "19. Over 20 unable to write"
+msgstr "19. Старші 20 років, які не вміють писати"
+
+msgid "22. Unsound mind"
+msgstr "22. Психічно хворий"
+
+msgid "23. Date of Operations and Remarks"
+msgstr "23. Дата операцій і зауваження"
+
+msgid "3. Houses in construction"
+msgstr "3. Будинки у процесі будівництва"
+
+msgid "4. Houses unoccupied"
+msgstr "4. Порожні будинки"
+
+msgid "5. Houses inhabited"
+msgstr "5. Заселені будинки"
+
+msgid "6. Families"
+msgstr "6. Сім'ї"
+
+msgid "Birth1881"
+msgstr "Народження 1881 року"
+
+msgid "16. Going to school"
+msgstr "16. Відвідує школу"
+
+msgid "17. Deaf and Dumb"
+msgstr "17. Глухонімі"
+
+msgid "18. Blind"
+msgstr "18. Сліпі"
+
+msgid "19. Unsound mind"
+msgstr "19. Нездоровий розум"
+
+msgid "20. Date of Operations and Remarks"
+msgstr "20. Дата операцій і зауваження"
+
+msgid "1. Vessels and Shanties"
+msgstr "1. Судна та халупи"
+
+msgid "2. Houses in construction"
+msgstr "2. Будинки у процесі будівництва"
+
+msgid "3. Houses unoccupied"
+msgstr "3. Порожні будинки"
+
+msgid "4. Houses inhabited"
+msgstr "4. Заселені будинки"
+
+msgid "5. Families"
+msgstr "5. Сім'ї"
+
+msgid "6. Names"
+msgstr "6. Імена"
+
+msgid "7. Sex"
+msgstr "7. Стать"
+
+msgid "8. Age"
+msgstr "8. Вік"
+
+msgid "9. Married or Widowed"
+msgstr "9. Одружений або вдівець/вдова"
+
+msgid "Relation"
+msgstr "Зв’язок"
+
+msgid "10. Relationship to Head of Family"
+msgstr "10. Відношення до голови сім'ї"
+
+msgid "12. FrenchCanadian"
+msgstr "12. Франкоканадець"
+
+msgid "BirthPlaceFather"
+msgstr "Місце народження батька"
+
+msgid "13. Birth Place of Father"
+msgstr "13. Місце народження батька"
+
+msgid "BirthPlaceMother"
+msgstr "Місце народження матері"
+
+msgid "14. Birth Place of Mother"
+msgstr "\"14. Місце народження матері"
+
+msgid "15. Religion"
+msgstr "15. Релігія"
+
+msgid "16. Profession, Occupation or Trade"
+msgstr "16. Професія, зайнятість або ремесло"
+
+msgid "Employer"
+msgstr "Роботодавець"
+
+msgid "17. Employers"
+msgstr "17. Роботодавці"
+
+msgid "Employee"
+msgstr "Працівник"
+
+msgid "18. Wage Earner"
+msgstr "18. Найманий працівник"
+
+msgid "Unemployed"
+msgstr "Безробітний"
+
+msgid "19. Unemployed during week preceding Census"
+msgstr "19. Безробітний протягом тижня перед переписом"
+
+msgid "Employees"
+msgstr "Працівники"
+
+msgid "20. Employer to state average number of hands employed during year"
+msgstr "20. Роботодавець має вказати середню кількість працівників за рік"
+
+msgid "CanRead"
+msgstr "Може читати"
+
+msgid "21. Instruction: Read"
+msgstr "21. Освіта: Вміє читати"
+
+msgid "CanWrite"
+msgstr "Може писати"
+
+msgid "22. Instruction: Write"
+msgstr "22. Освіта: Вміє писати"
+
+msgid "23. Deaf and Dumb"
+msgstr "23. Глухонімі"
+
+msgid "24. Blind"
+msgstr "24. Сліпі"
+
+msgid "25. Unsound mind"
+msgstr "25. Психічно хворий"
+
+msgid "SubTitle"
+msgstr "Підзаголовок"
+
+msgid "PollSub"
+msgstr "Округ голосування"
+
+msgid "House"
+msgstr "Будинок"
+
+msgid "1. Dwelling house"
+msgstr "1. Житловий будинок"
+
+msgid "2. Family or household"
+msgstr "2. Сім'я або домогосподарство"
+
+msgid "3. Name of each person in family"
+msgstr "3. Ім'я кожної особи в сім'ї"
+
+msgid "4. Sex"
+msgstr "4. Стать"
+
+msgid "Colour"
+msgstr "Колір"
+
+msgid "5. Colour"
+msgstr "5. Колір"
+
+msgid "6. Relation to head of family"
+msgstr "6. Відношення до голови сім'ї"
+
+msgid "7. Single, married, widowed, divorced or legally separated"
+msgstr "7. Неодружений, одружений, вдівець, розлучений або офіційно розлучений"
+
+msgid "BirthMonth"
+msgstr "Місяць народження"
+
+msgid "8. Month and Date of Birth"
+msgstr "8. Місяць і дата народження"
+
+msgid "BirthYear"
+msgstr "Рік народження"
+
+msgid "9. Year of birth"
+msgstr "9. Рік народження"
+
+msgid "10. Age at last birthday"
+msgstr "10. Вік на останній день народження"
+
+msgid "11. Country or place of birth"
+msgstr "11. Країна або місце народження"
+
+msgid "12. Year of immigration to Canada, if an immigrant"
+msgstr "12. Рік імміграції до Канади, якщо іммігрант"
+
+msgid "13. Year of naturalization, if formerly an alien"
+msgstr "13. Рік натуралізації, якщо раніше був іноземцем"
+
+msgid "Race"
+msgstr "Раса"
+
+msgid "14. Racial or tribal origin"
+msgstr "14. Расове або племінне походження"
+
+msgid "Nationality"
+msgstr "Національність"
+
+msgid "15. Nationality"
+msgstr "15. Національність"
+
+msgid "16. Religion"
+msgstr "16. Релігія"
+
+msgid "17. Profession, occupation, trade or means of living of each person"
+msgstr "17. Професія, заняття, ремесло або засоби існування кожної особи"
+
+msgid "OwnMeans"
+msgstr "Власні засоби"
+
+msgid "18. Living on own means"
+msgstr "18. Живе на власні засоби"
+
+msgid "19. Employer"
+msgstr "19. Роботодавець"
+
+msgid "20. Employee"
+msgstr "20. Працівник"
+
+msgid "SelfEmployed"
+msgstr "Самозайнятий"
+
+msgid "21. Working on own account"
+msgstr "21. Працює на себе"
+
+msgid "WhereEmployed"
+msgstr "Місце працевлаштування"
+
+msgid "22. Working at trade in factory or in home"
+msgstr "22. Працює на виробництві або вдома"
+
+msgid "MonthsFactory"
+msgstr "Місяці на фабриці"
+
+msgid "23. Months employed at trade in factory"
+msgstr "23. Місяці зайнятості на фабриці"
+
+msgid "MonthsHome"
+msgstr "Місяці вдома"
+
+msgid "24. Months employed at trade in home"
+msgstr "24. Місяці зайнятості вдома"
+
+msgid "MonthsOther"
+msgstr "Місяці в іншій зайнятості"
+
+msgid "25. Months employed in other occupation than trace in factory or home"
+msgstr "25. Місяці зайнятості не у виробництві або вдома"
+
+msgid "EarningsOccupation"
+msgstr "Дохід від занять"
+
+msgid "26. Earnings from occupation or trade"
+msgstr "26. Дохід від занять або торгівлі"
+
+msgid "EarningsOther"
+msgstr "Додатковий дохід"
+
+msgid "27. Extra earning (From other than chief occupation or trade)"
+msgstr "27. Додатковий дохід (не з основного заняття або торгівлі)"
+
+msgid "SchoolMonths"
+msgstr "Місяці навчання"
+
+msgid "28. Months at school in 1910"
+msgstr "28. Місяці навчання у 1910 році"
+
+msgid "Read"
+msgstr "Читає"
+
+msgid "29. Can read"
+msgstr "29. Вміє читати"
+
+msgid "Write"
+msgstr "Пише"
+
+msgid "30. Can write"
+msgstr "30. Вміє писати"
+
+msgid "SpeakEnglish"
+msgstr "Говорить англійською"
+
+msgid "31. Can speak English"
+msgstr "31. Вміє говорити англійською"
+
+msgid "SpeakFrench"
+msgstr "Говорить французькою"
+
+msgid "32. Can speak French"
+msgstr "32. Вміє говорити французькою"
+
+msgid "33. Mother tongue (If spoken)"
+msgstr "33. Рідна мова (якщо використовується)"
+
+msgid "Infirmities"
+msgstr "Вади здоров'я"
+
+msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
+msgstr "34. Вади здоров'я: a. Глухонімий; b. Сліпий; c. Психічний розлад"
+
+msgid "Name from Schedule 1"
+msgstr "Ім'я з розкладу 1"
+
+msgid "Line on Schedule 2"
+msgstr "Рядок у розкладі 2"
+
+msgid "PageRef"
+msgstr "Посилання на сторінку"
+
+msgid "2. Page from Schedule 1"
+msgstr "2. Сторінка з розкладу 1"
+
+msgid "LineRef"
+msgstr "Посилання на рядок"
+
+msgid "3. Line from Schedule 1"
+msgstr "3. Рядок з розкладу 1"
+
+msgid "3. Place of Habitation"
+msgstr "3. Місце проживання"
+
+msgid "HousesConst"
+msgstr "Будівництво будинків"
+
+msgid "4. Houses: In construction"
+msgstr "4. Будинки у процесі будівництва"
+
+msgid "5. Houses: Vacant"
+msgstr "5. Порожні будинки"
+
+msgid "6. Houses: Inhabited"
+msgstr "6. Заселені будинки"
+
+msgid "Institution"
+msgstr "Установа"
+
+msgid "7. Institution: Special or legal name"
+msgstr "7. Установа: Спеціальна або офіційна назва"
+
+msgid "Buildings"
+msgstr "Будівлі"
+
+msgid "8. Institution: Number of buildings"
+msgstr "8. Установа: Кількість будівель"
+
+msgid "9. Number of families in house or institution"
+msgstr "9. Кількість сімей у будинку або установі"
+
+msgid "Rooms"
+msgstr "Кімнати"
+
+msgid "10. Number of rooms in house or institution for each famiy"
+msgstr "10. Кількість кімнат у будинку або установі на сім'ю"
+
+msgid "Inmates"
+msgstr "Мешканці"
+
+msgid "11. Number of inmates in institution"
+msgstr "11. Кількість мешканців в установі"
+
+msgid "OwnedAcres"
+msgstr "Власні акри"
+
+msgid "12. Real Estate Owned: Grand total of acres"
+msgstr "12. Нерухомість у власності: Загальна кількість акрів"
+
+msgid "OwnedLots"
+msgstr "Власні ділянки"
+
+msgid "13. Real Estate Owned: Number of town or village lots"
+msgstr "13. Нерухомість у власності: Кількість міських або сільських ділянок"
+
+msgid "OwnedHouses"
+msgstr "Власні будинки"
+
+msgid "14. Real Estate Owned: Number of dwelling houses"
+msgstr "14. Нерухомість у власності: Кількість житлових будинків"
+
+msgid "OwnedStores"
+msgstr "Власні магазини"
+
+msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
+msgstr "15. Нерухомість у власності: Кількість магазинів, складів тощо."
+
+msgid "OwnedBars"
+msgstr "Власні стайні"
+
+msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
+msgstr ""
+"16. Нерухомість у власності: Кількість стодол, стайнь та інших будівель"
+
+msgid "OwnedSilos"
+msgstr "Власні силоси"
+
+msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
+msgstr ""
+"17. Нерухомість у власності: Кількість силосів та їхня ємність у кубічних "
+"футах"
+
+msgid "OwnedFactories"
+msgstr "Власні фабрики"
+
+msgid "18. Real Estate Owned: Number of manufacturing establishments"
+msgstr "18. Нерухомість у власності: Кількість виробничих підприємств"
+
+msgid "LeasedAcres"
+msgstr "Орендовані акри"
+
+msgid "19. Real Estate Leased: Grand total of acres"
+msgstr "19. Орендована нерухомість: Загальна кількість акрів"
+
+msgid "LeasedLots"
+msgstr "Орендовані ділянки"
+
+msgid "20. Real Estate Leased: Number of town or village lots"
+msgstr "20. Орендована нерухомість: Кількість міських або сільських ділянок"
+
+msgid "LeasedHouses"
+msgstr "Орендовані будинки"
+
+msgid "21. Real Estate Leased: Number of dwelling houses"
+msgstr "21. Орендована нерухомість: Кількість житлових будинків"
+
+msgid "LeasedStores"
+msgstr "Орендовані магазини"
+
+msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
+msgstr "22. Орендована нерухомість: Кількість магазинів, складів тощо."
+
+msgid "LeasedBarns"
+msgstr "Орендовані сараї"
+
+msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
+msgstr ""
+"23. Орендована нерухомість: Кількість сараїв, стайнь та інших господарських "
+"будівель"
+
+msgid "LeasedSilos"
+msgstr "Орендовані силоси"
+
+msgid "24. Real Estate Leased: Number of silos and capacity in cubic feet"
+msgstr ""
+"24. Орендована нерухомість: Кількість силосів і їхня місткість у кубічних "
+"футах"
+
+msgid "LeasedFactories"
+msgstr "Орендовані фабрики"
+
+msgid "25. Real Estate Leased: Number of manufacturing establishments"
+msgstr "25. Орендована нерухомість: Кількість виробничих підприємств"
+
+msgid "Denomination"
+msgstr "Конфесія"
+
+msgid "26. Church or place of worship: Religious denomination"
+msgstr "26. Церква або місце поклоніння: Релігійна конфесія"
+
+msgid "Communicants"
+msgstr "Прихожани"
+
+msgid "27. Church or place of worship: Number of communicants"
+msgstr "27. Церква або місце поклоніння: Кількість прихожан"
+
+msgid "Seating"
+msgstr "Місця для сидіння"
+
+msgid "28. Church or place of worship: Seating capacity"
+msgstr "28. Церква або місце поклоніння: Кількість місць для сидіння"
+
+msgid "SSDenomination"
+msgstr "Конфесія недільної школи"
+
+msgid "29. Sunday School: Religious Denomination"
+msgstr "29. Недільна школа: Релігійна конфесія"
+
+msgid "SSTeachers"
+msgstr "Вчителі недільної школи"
+
+msgid "30. Sunday School: Number of officers and teachers"
+msgstr "30. Недільна школа: Кількість керівників і вчителів"
+
+msgid "SSScholars"
+msgstr "Учні недільної школи"
+
+msgid "31. Sunday School: Number of Scholars"
+msgstr "31. Недільна школа: Кількість учнів"
+
+msgid "SchoolRooms"
+msgstr "Класи"
+
+msgid "32. School: Number of rooms"
+msgstr "32. Школа: Кількість класів"
+
+msgid "SchoolTeachers"
+msgstr "Вчителі школи"
+
+msgid "33. School: Number of teachers"
+msgstr "33. Школа: Кількість вчителів"
+
+msgid "SchoolStudents"
+msgstr "Учні школи"
+
+msgid "34. School: Number of Scholars"
+msgstr "34. Школа: Кількість учнів"
+
+msgid "DateVisit"
+msgstr "Дата візиту"
+
+msgid "35. Date of visit"
+msgstr "35. Дата візиту"
+
+msgid "Reason"
+msgstr "Причина"
+
+msgid "36. The reason, if not enumerated on first visit"
+msgstr "36. Причина, якщо не було включено під час першого візиту"
+
+msgid "DateEnum"
+msgstr "Дата перепису"
+
+msgid "37. Date when enumerated"
+msgstr "37. Дата проведення перепису"
+
+msgid "1. No. of family in order of visitation"
+msgstr "1. Номер сім'ї за порядком відвідування"
+
+msgid "2. Name of each person in the family"
+msgstr "2. Ім'я кожної особи в сім'ї"
+
+msgid "3.Relation to head of family"
+msgstr "3. Стосунок до голови сім'ї"
+
+msgid "5. Married, single, widowed or divorced"
+msgstr "5. Одружений, неодружений, вдівець або розлучений"
+
+msgid "6. Age"
+msgstr "6. Вік"
+
+msgid "7. Country or place of birth"
+msgstr "7. Країна або місце народження"
+
+msgid "8. Year of immigration to Canada"
+msgstr "8. Рік імміграції до Канади"
+
+msgid "PostOffice"
+msgstr "Поштова установа"
+
+msgid "9. Post office address"
+msgstr "9. Поштова адреса"
+
+msgid "Section"
+msgstr "Секція"
+
+msgid "10. Location: Section"
+msgstr "10. Розташування: Секція"
+
+msgid "11. Location: Township"
+msgstr "11. Розташування: Селище"
+
+msgid "12. Location: Range"
+msgstr "12. Розташування: Ділянка"
+
+msgid "Meridian"
+msgstr "Меридіан"
+
+msgid "13. Location: Meridian"
+msgstr "13. Розташування: Меридіан"
+
+msgid "14. Livestock: Horses, all ages"
+msgstr "14. Скотарство: Коні, всіх вікових категорій"
+
+msgid "Cows"
+msgstr "Корови"
+
+msgid "15. Livestock: Milch cows"
+msgstr "15. Скотарство: Дійні корови"
+
+msgid "16. Other horned or meat cattle, all ages"
+msgstr "16. Інша рогата або м'ясна худоба, всіх вікових категорій"
+
+msgid "17. Sheep and lambs, all ages"
+msgstr "17. Вівці та ягнята, всіх вікових категорій"
+
+msgid "18. Hogs and pigs, all ages"
+msgstr "18. Свині та поросята, всіх вікових категорій"
+
+msgid "4. Place of habitation"
+msgstr "4. Місце проживання"
+
+msgid "5. Sex"
+msgstr "5. Стать"
+
+msgid "8. Month of birth"
+msgstr "8. Місяць народження"
+
+msgid "16. Chief occupation or trade"
+msgstr "16. Головна професія або заняття"
+
+msgid "OtherEmployment"
+msgstr "Інша зайнятість"
+
+msgid "18. Employment other than at chief trade or occupation, if any"
+msgstr "18. Зайнятість поза основною професією або ремеслом, якщо є"
+
+msgid "22. State where person employed"
+msgstr "22. Штат, у якому працює особа"
+
+msgid "WeeksOccupation"
+msgstr "Тижні зайнятості"
+
+msgid "23. Weeks employed in 1910 at chief occupation or trade"
+msgstr "23. Кількість тижнів зайнятості у 1910 році на основному місці роботи"
+
+msgid "WeeksOther"
+msgstr "Інші тижні зайнятості"
+
+msgid "24. Weeks employed in 1910 at other than chief occupation or trade"
+msgstr "24. Кількість тижнів зайнятості у 1910 році поза основною професією"
+
+msgid "HoursOccupation"
+msgstr "Робочі години"
+
+msgid "25. Hours of working time per week at chief occupation"
+msgstr "25. Години роботи на тиждень на основній роботі"
+
+msgid "HoursOther"
+msgstr "Інші робочі години"
+
+msgid "26. Hours of working time per week at other occupation, if any"
+msgstr "26. Години роботи на тиждень на інших місцях роботи"
+
+msgid "27. Total earnings in 1910 from chief occupation or trade"
+msgstr "27. Загальний дохід у 1910 році від основної роботи або ремесла"
+
+msgid "28. Total earnings in 1910 from other than chief occupation or trade"
+msgstr "28. Загальний дохід у 1910 році від інших занять, крім основної роботи"
+
+msgid "Wages"
+msgstr "Заробітна плата"
+
+msgid "29. Rate of earnings per hour when employed by the hour-Cents"
+msgstr "29. Тариф заробітку за годину у випадку погодинної оплати (у центах)"
+
+msgid "InsuranceLife"
+msgstr "Страхування життя"
+
+msgid "30. Insurance: Upon life"
+msgstr "30. Страхування: На випадок життя"
+
+msgid "InsuranceAccident"
+msgstr "Страхування від нещасних випадків"
+
+msgid "31. Insurance: Against accident or illness"
+msgstr "31. Страхування: Від нещасних випадків або хвороб"
+
+msgid "InsuranceCost"
+msgstr "Вартість страхування"
+
+msgid "32. Insurance: Cost of insurance in census year"
+msgstr "32. Страхування: Вартість страхування у рік перепису"
+
+msgid "33. Months at school in 1910"
+msgstr "33. Місяці навчання у школі в 1910 році"
+
+msgid "34. Can Read"
+msgstr "34. Вміє читати"
+
+msgid "35. Can Write"
+msgstr "35. Вміє писати"
+
+msgid "36. Language commonly spoken"
+msgstr "36. Мова, якою зазвичай розмовляє"
+
+msgid "SchoolCost"
+msgstr "Витрати на освіту"
+
+msgid ""
+"37. Cost of education in 1910 for persons over 16 years of age at College, "
+"Convent or University"
+msgstr ""
+"37. Витрати на освіту у 1910 році для осіб старше 16 років у коледжі, "
+"монастирі або університеті"
+
+msgid "38. Blind"
+msgstr "38. Сліпий"
+
+msgid "39. Deaf and dumb"
+msgstr "39. Глухонімий"
+
+msgid "40. Crazy or lunatic"
+msgstr "40. Божевільний або недоумкуватий"
+
+msgid "Idiotic"
+msgstr "Ідіот"
+
+msgid "41. Idiotic or silly"
+msgstr "41. Ідіот або нерозумний"
+
+msgid "1. House"
+msgstr "1. Будинок"
+
+msgid "Dwelling house"
+msgstr "Житловий будинок"
+
+msgid "2. Family"
+msgstr "2. Сім'я"
+
+msgid "Family or household"
+msgstr "Сім'я або господарство"
+
+msgid "3. Name"
+msgstr "3. Ім'я"
+
+msgid "Name of each person in family"
+msgstr "Ім'я кожної особи у сім'ї"
+
+msgid "5. Relation to head of family"
+msgstr "5. Стосунок до голови сім'ї"
+
+msgid "6. Single, married, widowed, divorced or legally separated"
+msgstr "6. Самотній, одружений, вдівець, розлучений або юридично розділений"
+
+msgid "7. Month of birth"
+msgstr "7. Місяць народження"
+
+msgid "8. Age at last birthday"
+msgstr "8. Вік на останній день народження"
+
+msgid "9. Country or place of birth"
+msgstr "9. Країна або місце народження"
+
+msgid "10. Racial or tribal origin"
+msgstr "10. Расове або племінне походження"
+
+msgid "11. Religion"
+msgstr "11. Релігія"
+
+msgid "12. Months at school in 1910"
+msgstr "12. Місяці навчання у школі в 1910 році"
+
+msgid "13. Can Read"
+msgstr "13. Вміє читати"
+
+msgid "14. Can Write"
+msgstr "14. Вміє писати"
+
+msgid "15. Language commonly spoken"
+msgstr "15. Звична розмовна мова"
+
+msgid ""
+"16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or "
+"lunatic"
+msgstr ""
+"16. Вади здоров'я: a. сліпий; b. глухонімий; c. розумово відсталий або "
+"недоумкуватий; d. божевільний або душевнохворий"
+
+msgid "1. Dwelling House"
+msgstr "1. Житловий будинок"
+
+msgid "2. Family, Household or Institution"
+msgstr "2. Сім'я, домогосподарство або установа"
+
+msgid "3. Name of each person in family, household or institution"
+msgstr "3. Ім'я кожної особи в сім'ї, домогосподарстві або установі"
+
+msgid "MilitaryService"
+msgstr "Військова служба"
+
+msgid "4. Military Service"
+msgstr "4. Військова служба"
+
+msgid "5. Place of Habitation: Township"
+msgstr "5. Місце проживання: Селище"
+
+msgid "6. Place of Habitation: Range"
+msgstr "6. Місце проживання: Ділянка"
+
+msgid "7. Place of Habitation: Meridian"
+msgstr "7. Місце проживання: Меридіан"
+
+msgid "8. Place of Habitation: Municipality"
+msgstr "8. Місце проживання: Муніципалітет"
+
+msgid "9. Relationship to head of family or household"
+msgstr "9. Стосунок до голови сім'ї або домогосподарства"
+
+msgid "10. Sex"
+msgstr "10. Стать"
+
+msgid "11. Single, married, widowed, divorced or legally separated"
+msgstr "11. Самотній, одружений, вдівець, розлучений або юридично розділений"
+
+msgid "12. Age at last birthday"
+msgstr "12. Вік на останній день народження"
+
+msgid "13. Country or place of birth"
+msgstr "13. Країна або місце народження"
+
+msgid "14. Religion"
+msgstr "14. Релігія"
+
+msgid "15. Year of immigration to Canada"
+msgstr "15. Рік імміграції до Канади"
+
+msgid "16. Year of naturalization"
+msgstr "16. Рік натуралізації"
+
+msgid "17. Nationality"
+msgstr "17. Національність"
+
+msgid "18. Race or tribal origin"
+msgstr "18. Расове або племінне походження"
+
+msgid "19. Can speak English"
+msgstr "19. Вміє розмовляти англійською"
+
+msgid "20. Can speak French"
+msgstr "20. Вміє розмовляти французькою"
+
+msgid "OtherLanguage"
+msgstr "Інша мова"
+
+msgid "21. Other language spoken as mother tongue"
+msgstr "21. Інша мова, яка є рідною"
+
+msgid "22. Can Read"
+msgstr "22. Вміє читати"
+
+msgid "23. Can Write"
+msgstr "23. Вміє писати"
+
+msgid "24. Chief occupation or trade"
+msgstr "24. Головна професія або заняття"
+
+msgid "25. Employer, \"E\", Employee, \"W\""
+msgstr "25. Роботодавець \"E\", найманий працівник \"W\""
+
+msgid "EmploymentPlace"
+msgstr "Місце зайнятості"
+
+msgid "26. State where person is employed"
+msgstr "26. Штат, у якому працює особа"
 
 msgid "NARA publication"
 msgstr "Публікація NARA"
@@ -437,9 +2116,6 @@ msgstr "Номер рядка"
 msgid "Family No."
 msgstr "Номер сім'ї"
 
-msgid "Sex"
-msgstr "Стать"
-
 msgid "Value of real estate"
 msgstr "Вартість нерухомості"
 
@@ -481,23 +2157,14 @@ msgstr "Грошова вартість ферми"
 msgid "Value of Farming Implements and Machinery"
 msgstr "Вартість сільськогосподарських знарядь і техніки"
 
-msgid "Horses"
-msgstr "Коні"
-
 msgid "Asses and Mules"
 msgstr "Віслюки та мули"
-
-msgid "Milch Cows"
-msgstr "Молочні корови"
 
 msgid "Working Oxen"
 msgstr "Робочі бики"
 
 msgid "Other Cattle"
 msgstr "Інша велика рогата худоба"
-
-msgid "Sheep"
-msgstr "Вівці"
 
 msgid "Swine"
 msgstr "Свині"
@@ -788,14 +2455,8 @@ msgstr "Кількість місяців безробіття протягом 
 msgid "Illness on day of enumeration"
 msgstr "Хвороба на день перепису"
 
-msgid "Blind"
-msgstr "Сліпі"
-
 msgid "Deaf and dumb"
 msgstr "Глухонімий"
-
-msgid "Idiotic"
-msgstr "Ідіот"
 
 msgid "Insane"
 msgstr "Божевільний"
@@ -1303,9 +2964,6 @@ msgstr "Зареєстроване поселення"
 msgid "Unincorporated place"
 msgstr "Незареєстроване поселення"
 
-msgid "Institution"
-msgstr "Установа"
-
 msgid "Value of home or monthly rental"
 msgstr "Вартість будинку або місячна оренда"
 
@@ -1468,9 +3126,6 @@ msgstr "Чи знаходиться цей будинок на ділянці т
 
 msgid "Agricultural Questionnaire Number"
 msgstr "Номер сільськогосподарського опитувальника"
-
-msgid "Race"
-msgstr "Раса"
 
 msgid "Age at last birthday"
 msgstr "Вік на останній день народження"
@@ -2166,12 +3821,6 @@ msgstr "Місто"
 msgid "Township of"
 msgstr "Поселення"
 
-msgid "Township"
-msgstr "Селище"
-
-msgid "Section"
-msgstr "Секція"
-
 msgid "Street and Number"
 msgstr "Вулиця та номер будинку"
 
@@ -2520,12 +4169,6 @@ msgstr "Місяці навчання у 1914 році (приватна шко�
 msgid "Months in School 1914: College"
 msgstr "Місяці навчання у 1914 році (коледж)"
 
-msgid "Read"
-msgstr "Читає"
-
-msgid "Write"
-msgstr "Пише"
-
 msgid "Deaf"
 msgstr "Глухий"
 
@@ -2537,9 +4180,6 @@ msgstr "Натуралізований, якщо народжений за ко�
 
 msgid "House Number"
 msgstr "Номер будинку"
-
-msgid "Relation"
-msgstr "Зв’язок"
 
 msgid "Color or Race"
 msgstr "Колір або раса"
@@ -2822,9 +4462,6 @@ msgstr "Походження матері"
 
 msgid "Condition"
 msgstr "Стан"
-
-msgid "Schedule"
-msgstr "Розклад"
 
 msgid "Inhabitants in"
 msgstr "Жителі у"
@@ -3632,9 +5269,6 @@ msgstr "Вік у роках"
 msgid "Home Address"
 msgstr "Домашня адреса"
 
-msgid "Citizenship"
-msgstr "Громадянство"
-
 msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
 msgstr ""
 "Народжений громадянин, натуралізований громадянин, іноземець, негромадянин "
@@ -3766,39 +5400,6 @@ msgstr "Промисловість/Роботодавець"
 
 msgid "Residents Status"
 msgstr "Статус мешканця"
-
-msgid "Event Place (Original)"
-msgstr "Місце події (оригінал)"
-
-msgid "Birth Year (Estimated)"
-msgstr "Орієнтовний рік народження"
-
-msgid "Spouse's Gender"
-msgstr "Стать подружжя"
-
-msgid "Spouse's Age"
-msgstr "Вік подружжя"
-
-msgid "Spouse's Birth Year (Estimated)"
-msgstr "Орієнтовний рік народження подружжя"
-
-msgid "Spouse's Father's Name"
-msgstr "Ім'я батька подружжя"
-
-msgid "Spouse's Mother's Name"
-msgstr "Ім'я матері подружжя"
-
-msgid "Record Number"
-msgstr "Номер запису"
-
-msgid "Volume"
-msgstr "Том"
-
-msgid "Volume Beginning Year"
-msgstr "Рік початку тому"
-
-msgid "Volume Ending Year"
-msgstr "Рік закінчення тому"
 
 msgid "Amt"
 msgstr "Сума"
@@ -3946,6 +5547,54 @@ msgstr "Дата шлюбу"
 
 msgid "Dato gift"
 msgstr "Дата шлюбу"
+
+msgid "Event Place (Original)"
+msgstr "Місце події (оригінал)"
+
+msgid "Birth Year (Estimated)"
+msgstr "Орієнтовний рік народження"
+
+msgid "Spouse's Gender"
+msgstr "Стать подружжя"
+
+msgid "Spouse's Age"
+msgstr "Вік подружжя"
+
+msgid "Spouse's Birth Year (Estimated)"
+msgstr "Орієнтовний рік народження подружжя"
+
+msgid "Spouse's Father's Name"
+msgstr "Ім'я батька подружжя"
+
+msgid "Spouse's Mother's Name"
+msgstr "Ім'я матері подружжя"
+
+msgid "Record Number"
+msgstr "Номер запису"
+
+msgid "Volume"
+msgstr "Том"
+
+msgid "Volume Beginning Year"
+msgstr "Рік початку тому"
+
+msgid "Volume Ending Year"
+msgstr "Рік закінчення тому"
+
+msgid "Can read and write"
+msgstr "Може читати та писати"
+
+msgid "Military"
+msgstr "Військова служба"
+
+msgid "Taxes"
+msgstr "Податки"
+
+msgid "Type of roof"
+msgstr "Тип даху"
+
+msgid "Arrived since"
+msgstr "Прибув з"
 
 msgid "Registration District"
 msgstr "Реєстраційний округ"
@@ -4117,9 +5766,6 @@ msgstr "Парламентський округ або район"
 msgid "PROFESSION or OCCUPATION"
 msgstr "ПРОФЕСІЯ або ЗАНЯТІСТЬ"
 
-msgid "Employer"
-msgstr "Роботодавець"
-
 msgid "Neither"
 msgstr "Жодне"
 
@@ -4246,9 +5892,6 @@ msgstr "Чи працює вдома"
 
 msgid "BIRTHPLACE of every Person."
 msgstr "МІСЦЕ НАРОДЖЕННЯ кожної особи."
-
-msgid "Nationality"
-msgstr "Національність"
 
 msgid "NATIONALITY of every Person born in a Foreign Country."
 msgstr "НАЦІОНАЛЬНІСТЬ кожної особи, народженої в іншій країні."
@@ -4480,1649 +6123,3 @@ msgstr "Загальна кількість дітей"
 
 msgid "Children born alive to present Marriage"
 msgstr "Діти, народжені живими в цьому шлюбі"
-
-msgid "EnumDistrict"
-msgstr "Округ перепису"
-
-msgid "Comprising"
-msgstr "Що включає"
-
-msgid "OfTheSaid"
-msgstr "Вказано"
-
-msgid "Enumerator"
-msgstr "Переписувач"
-
-msgid "1. Names of Inmates"
-msgstr "1. Імена мешканців"
-
-msgid "2. Profession, Trade or Occupation"
-msgstr "2. Професія, ремесло або заняття"
-
-msgid "BirthPlace"
-msgstr "Місце народження"
-
-msgid "3. Place of Birth"
-msgstr "3. Місце народження"
-
-msgid "4. Religion"
-msgstr "4. Релігія"
-
-msgid "5. Residence if Outside of Limits"
-msgstr "5. Місце проживання (якщо за межами)"
-
-msgid "6. Age at Next Birthday"
-msgstr "6. Вік на наступний день народження"
-
-msgid "SexMale"
-msgstr "Чоловіча стать"
-
-msgid "7. Sex: Male"
-msgstr "7. Стать: Чоловіча"
-
-msgid "SexFemale"
-msgstr "Жіноча стать"
-
-msgid "8. Sex: Female"
-msgstr "8. Стать: Жіноча"
-
-msgid "MaritalStatus"
-msgstr "Сімейний стан"
-
-msgid "9. Married or Single"
-msgstr "9. Одружений чи неодружений"
-
-msgid "Coloured"
-msgstr "Кольорові"
-
-msgid "10. Coloured Persons - Negroes"
-msgstr "10. Кольорові особи - негри"
-
-msgid "Indians"
-msgstr "Індіанці"
-
-msgid "11. Indians, if any"
-msgstr "11. Індіанці, якщо є"
-
-msgid "ResidentsMale"
-msgstr "Мешканці: чоловіки"
-
-msgid "12. Residents: Members, Male"
-msgstr "12. Мешканці: члени, чоловіки"
-
-msgid "ResidentsFemale"
-msgstr "Мешканці: жінки"
-
-msgid "13. Residents: Members, Female"
-msgstr "13. Мешканці: члени, жінки"
-
-msgid "NonMembersMale"
-msgstr "Не члени: чоловіки"
-
-msgid "14. Residents: Not Members: Male"
-msgstr "14. Мешканці: не члени: чоловіки"
-
-msgid "NonMembersFemale"
-msgstr "Не члени: жінки"
-
-msgid "15. Residents: Not Members: Female"
-msgstr "15. Мешканці: не члени: жінки"
-
-msgid "AbsentMembersMale"
-msgstr "Чоловіки відсутні"
-
-msgid "16. Members Absent: Male"
-msgstr "16. Члени відсутні: чоловіки"
-
-msgid "AbsentMembersFemale"
-msgstr "Жінки відсутні"
-
-msgid "17. Members Absent: Female"
-msgstr "17. Члени відсутні: жінки"
-
-msgid "DeafDumbMale"
-msgstr "Глухонімі: чоловіки"
-
-msgid "18. Deaf and Dumb: Male"
-msgstr "18. Глухонімі: чоловіки"
-
-msgid "DeafDumbFemale"
-msgstr "Глухонімі: жінки"
-
-msgid "19. Deaf and Dumb: Female"
-msgstr "19. Глухонімі: жінки"
-
-msgid "BlindMale"
-msgstr "Сліпі: чоловіки"
-
-msgid "20. Blind: Male"
-msgstr "20. Сліпі: чоловіки"
-
-msgid "BlindFemale"
-msgstr "Сліпі: жінки"
-
-msgid "21. Blind: Female"
-msgstr "21. Сліпі: жінки"
-
-msgid "LunaticMale"
-msgstr "Душевнохворий чоловік"
-
-msgid "22. Lunatics: Male"
-msgstr "22. Душевнохворі: чоловіки"
-
-msgid "LunaticFemale"
-msgstr "Душевнохвора жінка"
-
-msgid "23. Lunatics: Female"
-msgstr "23. Душевнохворі: жінки"
-
-msgid "ScholarMale"
-msgstr "Учень (чоловіча стать)"
-
-msgid "24. Attending School: Male"
-msgstr "24. Відвідують школу: хлопці"
-
-msgid "ScholarFemale"
-msgstr "Учениця (жіноча стать)"
-
-msgid "25. Attending School: Female"
-msgstr "25. Відвідують школу: дівчата"
-
-msgid "Birth1851Male"
-msgstr "Народження у 1851 році: чоловіча стать"
-
-msgid "26. Births During the Year 1851: Male"
-msgstr "26. Народження у 1851 році: хлопчики"
-
-msgid "Birth1851Female"
-msgstr "Народження у 1851 році: жіноча стать"
-
-msgid "27. Births During the Year 1851: Female"
-msgstr "27. Народження у 1851 році: дівчатка"
-
-msgid "Death1851Male"
-msgstr "Смерті у 1851 році: чоловіча стать"
-
-msgid "28. Deaths During the Year 1851: Male"
-msgstr "28. Смерті у 1851 році: чоловіки"
-
-msgid "Death1851Female"
-msgstr "Смерті у 1851 році: жіноча стать"
-
-msgid "29. Deaths During the Year 1851: Female"
-msgstr "29. Смерті у 1851 році: жінки"
-
-msgid "DeathAgeCause"
-msgstr "Вік і причина смерті"
-
-msgid "30. Age and Cause of Deaths"
-msgstr "30. Вік і причина смерті"
-
-msgid "Houses"
-msgstr "Будинки"
-
-msgid ""
-"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
-msgstr ""
-"31. Будинки: цегляні, кам'яні, дерев'яні, зрубні, бараки або інші види житла"
-
-msgid "HousesStories"
-msgstr "Поверховість будинків"
-
-msgid "32. Houses: No. of Stories"
-msgstr "32. Будинки: кількість поверхів"
-
-msgid "HousesFamilies"
-msgstr "Сім'ї в будинках"
-
-msgid "33. No. of Families Occupying"
-msgstr "33. Кількість сімей, що мешкають"
-
-msgid "HousesVacant"
-msgstr "Порожні будинки"
-
-msgid "34. Houses: Vacant"
-msgstr "34. Будинки: порожні"
-
-msgid "HousesBuilding"
-msgstr "Будинки в будівництві"
-
-msgid "35. Houses: Building"
-msgstr "35. Будинки: у процесі будівництва"
-
-msgid "Shops"
-msgstr "Крамниці"
-
-msgid "36. Shops, Stores, Inns, Taverns etc."
-msgstr "36. Магазини, крамниці, готелі, таверни тощо."
-
-msgid "PublicBuildings"
-msgstr "Громадські будівлі"
-
-msgid "37. Public Buildings"
-msgstr "37. Громадські будівлі"
-
-msgid "WorshipPlaces"
-msgstr "Місця поклоніння"
-
-msgid "38. Places of Worship"
-msgstr "38. Місця релігійного поклоніння"
-
-msgid "BuisnessInfo"
-msgstr "Інформація про підприємства"
-
-msgid ""
-"39. Information on Mills, Factories etc., their cost, power, produce, etc."
-msgstr ""
-"39. Інформація про млини, фабрики тощо, їхню вартість, потужність, продукцію "
-"тощо."
-
-msgid "NumEmployees"
-msgstr "Кількість працівників"
-
-msgid "40. Number of Persons Usually Employed Therein"
-msgstr "40. Кількість осіб, що зазвичай там працюють"
-
-msgid "41. General Remarks of the Enumerator"
-msgstr "41. Загальні примітки переписувача"
-
-msgid "1. Name of Occupier"
-msgstr "1. Ім'я орендаря"
-
-msgid "Concession"
-msgstr "Концесія"
-
-msgid "2. Concession or Range"
-msgstr "2. Концесія або діапазон"
-
-msgid "Lot"
-msgstr "Земельна ділянка"
-
-msgid "3. Lot or part of Lot"
-msgstr "3. Ділянка або частина ділянки"
-
-msgid "AcresHeld"
-msgstr "Орендовані акри"
-
-msgid "4. Number of Acres of Land: Held by each person or family"
-msgstr "4. Кількість акрів землі: у власності кожної особи або сім'ї"
-
-msgid "AcresCultivation"
-msgstr "Оброблювані акри"
-
-msgid "5. Number of Acres of Land: Under Cultivation"
-msgstr "5. Кількість акрів землі: під обробітком"
-
-msgid "AcresCrops"
-msgstr "Акри під посівами"
-
-msgid "6. Number of Acres of Land: Under Crops in 1851"
-msgstr "6. Кількість акрів землі: під посівами у 1851 році"
-
-msgid "AcresPasture"
-msgstr "Акри під пасовищами"
-
-msgid "7. Number of Acres of Land: Under Pasture in 1851"
-msgstr "7. Кількість акрів землі: під пасовищами у 1851 році"
-
-msgid "AcresGardens"
-msgstr "Акри під садами"
-
-msgid "8. Number of Acres of Land: Gardens or Orchards"
-msgstr "8. Кількість акрів землі: під садами або фруктовими садами"
-
-msgid "AcresWood"
-msgstr "Акри лісових угідь"
-
-msgid "9. Number of Acres of Land: Under Wood or Wild"
-msgstr "9. Кількість акрів землі: під лісом або дикою природою"
-
-msgid "WheatAcres"
-msgstr "Пшениця (акри)"
-
-msgid "10. Wheat: Acres"
-msgstr "10. Пшениця: акри"
-
-msgid "WheatBsh"
-msgstr "Пшениця (бушелі)"
-
-msgid "11. Wheat: Produce Bsh."
-msgstr "11. Пшениця: врожай у бушелях."
-
-msgid "BarleyAcres"
-msgstr "Ячмінь (акри)"
-
-msgid "12. Barley: Acres"
-msgstr "12. Ячмінь: акри"
-
-msgid "BarleyBsh"
-msgstr "Ячмінь (бушелі)"
-
-msgid "13. Barley: Produce Bsh."
-msgstr "13. Ячмінь: врожай у бушелях."
-
-msgid "RyeAcres"
-msgstr "Жито (акри)"
-
-msgid "14. Rye: Acres"
-msgstr "14. Жито: акри"
-
-msgid "RyeBsh"
-msgstr "Жито (бушелі)"
-
-msgid "15. Rye: Produce Bsh."
-msgstr "15. Жито: врожай у бушелях"
-
-msgid "PeasAcres"
-msgstr "Горох (акри)"
-
-msgid "16. Peas: Acres"
-msgstr "16. Горох: акри"
-
-msgid "PeasBush"
-msgstr "Горох (бушелі)"
-
-msgid "17. Peas: Produce Bsh."
-msgstr "17. Горох: врожай у бушелях"
-
-msgid "OatsAcres"
-msgstr "Овес (акри)"
-
-msgid "18. Oats: Acres"
-msgstr "18. Овес: акри"
-
-msgid "OatsBush"
-msgstr "Овес (бушелі)"
-
-msgid "19. Oats: Produce Bsh."
-msgstr "19. Овес: врожай у бушелях"
-
-msgid "BWheatAcres"
-msgstr "Гречка (акри)"
-
-msgid "20. B.Wheat: Acres"
-msgstr "20. Гречка: акри"
-
-msgid "BWheatBush"
-msgstr "Гречка (бушелі)"
-
-msgid "21. B.Wheat: Produce Bsh."
-msgstr "21. Гречка: врожай у бушелях"
-
-msgid "CornAcres"
-msgstr "Кукурудза (акри)"
-
-msgid "22. Corn: Acres"
-msgstr "22. Кукурудза: акри"
-
-msgid "CornBush"
-msgstr "Кукурудза (бушелі)"
-
-msgid "23. Corn: Produce Bsh."
-msgstr "23. Кукурудза: врожай у бушелях"
-
-msgid "PotatoesAcres"
-msgstr "Картопля (акри)"
-
-msgid "24. Potatoes: Acres"
-msgstr "24. Картопля: акри"
-
-msgid "PotatoesBush"
-msgstr "Картопля (бушелі)"
-
-msgid "25. Potatoes: Produce Bsh."
-msgstr "25. Картопля: врожай у бушелях"
-
-msgid "TurnipsAcres"
-msgstr "Ріпа (акри)"
-
-msgid "26. Turnips: Acres"
-msgstr "26. Ріпа: акри"
-
-msgid "TurnipsBush"
-msgstr "Ріпа (бушелі)"
-
-msgid "27. Turnips: Produce Bsh."
-msgstr "27. Ріпа: врожай у бушелях"
-
-msgid "CloverBush"
-msgstr "Конюшина (бушелі)"
-
-msgid "28. Clover, Timothy or other grass seed - Bsh."
-msgstr "28. Конюшина, тимофіївка або інше насіння трав - бушелі"
-
-msgid "CarrotsBush"
-msgstr "Морква (бушелі)"
-
-msgid "29. Carrots - Bsh."
-msgstr "29. Морква - бушелі"
-
-msgid "MangleWurtzel"
-msgstr "Буряк Мангольд"
-
-msgid "30. Mangle Wurtzel"
-msgstr "30. Буряк Мангольд"
-
-msgid "BeansBush"
-msgstr "Квасоля (бушелі)"
-
-msgid "31. Beans Bush"
-msgstr "31. Квасоля - бушелі"
-
-msgid "HopsLbs"
-msgstr "Хміль (фунти)"
-
-msgid "32. Hops Lbs."
-msgstr "32. Хміль - фунти"
-
-msgid "HayQty"
-msgstr "Сіно (кількість)"
-
-msgid "33. Hay, Bundles or Tons"
-msgstr "33. Сіно: в'язки або тонни"
-
-msgid "FlaxLbs"
-msgstr "Льон або коноплі (фунти)"
-
-msgid "34. Flax or Hemp, Lbs."
-msgstr "34. Льон або коноплі - фунти"
-
-msgid "TobaccoLbs"
-msgstr "Тютюн (фунти)"
-
-msgid "35. Tobacco Lbs."
-msgstr "35. Тютюн - фунти"
-
-msgid "WoolLbs."
-msgstr "Вовна (фунти)"
-
-msgid "36. Wool Lbs."
-msgstr "36. Вовна - фунти"
-
-msgid "Column37"
-msgstr "Колонка 37"
-
-msgid "37."
-msgstr "37."
-
-msgid "Column38"
-msgstr "Колонка 38"
-
-msgid "38."
-msgstr "38."
-
-msgid "Column39"
-msgstr "Колонка 39"
-
-msgid "39."
-msgstr "39."
-
-msgid "MapleSugarLbs"
-msgstr "Кленовий цукор (фунти)"
-
-msgid "40. Maple Sugar Lbs."
-msgstr "40. Кленовий цукор - фунти"
-
-msgid "CiderGalls"
-msgstr "Сидр (галони)"
-
-msgid "41. Cider Galls."
-msgstr "41. Сидр - галони."
-
-msgid "ClothYards"
-msgstr "Сукно (ярди)"
-
-msgid "42. Fulled Cloth Yards"
-msgstr "42. Вовняне сукно - ярди"
-
-msgid "LinnenYards"
-msgstr "Льон (ярди)"
-
-msgid "43. Linnen - Yds."
-msgstr "43. Льон - ярди"
-
-msgid "FlannelYds"
-msgstr "Фланель (ярди)"
-
-msgid "44. Flannel - Yds."
-msgstr "44. Фланель - ярди"
-
-msgid "Bulls"
-msgstr "Бики"
-
-msgid "45. Bulls, Oxen or Steers"
-msgstr "45. Бики, воли або бички"
-
-msgid "46. Milch Cows"
-msgstr "46. Молочні корови"
-
-msgid "Calves"
-msgstr "Телята"
-
-msgid "47. Calves or Heifers"
-msgstr "47. Телята або нетелі"
-
-msgid "48. Horses of all ages"
-msgstr "48. Коні всіх вікових груп"
-
-msgid "49. Sheep"
-msgstr "49. Вівці"
-
-msgid "Pigs"
-msgstr "Свині"
-
-msgid "50. Pigs"
-msgstr "50. Свині"
-
-msgid "ButterLbs"
-msgstr "Масло (фунти)"
-
-msgid "51. Butter - Lbs."
-msgstr "51. Масло - фунти"
-
-msgid "CheeseLbs"
-msgstr "Сир (фунти)"
-
-msgid "52. Cheese - Lbs."
-msgstr "52. Сир - фунти"
-
-msgid "Beef"
-msgstr "Яловичина"
-
-msgid "53. Beef - Barrels or Cwts."
-msgstr "53. Яловичина - барелі або центнери"
-
-msgid "Pork"
-msgstr "Свинина"
-
-msgid "54. Pork - Barrels or Cwts."
-msgstr "54. Свинина - барелі або центнери"
-
-msgid "Fish"
-msgstr "Риба"
-
-msgid "55. Quantity of Fish Cured"
-msgstr "55. Кількість засолених риб"
-
-msgid "56. Remarks"
-msgstr "56. Зауваження"
-
-msgid "2. Profession, trade or occupation"
-msgstr "2. Професія, ремесло або заняття"
-
-msgid "Married1851"
-msgstr "Одружені 1851 року"
-
-msgid "4. Married during the year"
-msgstr "4. Одружені протягом року"
-
-msgid "5. Religion"
-msgstr "5. Релігія"
-
-msgid "6. Residence, if out of limits"
-msgstr "6. Місце проживання, якщо за межами району"
-
-msgid "7. Age next Birthday"
-msgstr "7. Вік на наступний день народження"
-
-msgid "8. Sex: Male"
-msgstr "8. Стать: Чоловіча"
-
-msgid "SexFemail"
-msgstr "Стать: Жіноча"
-
-msgid "9. Sex:Female"
-msgstr "9. Стать: Жіноча"
-
-msgid "10. Married or Single"
-msgstr "10. Одружений або неодружений"
-
-msgid "Widowers"
-msgstr "Вдівці"
-
-msgid "11. Widowers"
-msgstr "11. Вдівці"
-
-msgid "Widows"
-msgstr "Вдови"
-
-msgid "12. Widows"
-msgstr "12. Вдови"
-
-msgid "13. Coloured Persons, Mulato or Indians"
-msgstr "13. Кольорові особи, мулати або індіанці"
-
-msgid "MemberMale"
-msgstr "Члени: чоловіки"
-
-msgid "14. Members: Male"
-msgstr "14. Члени: чоловіки"
-
-msgid "MemberFemale"
-msgstr "Члени: жінки"
-
-msgid "15. Members: Female"
-msgstr "15. Члени: жінки"
-
-msgid "NotMemberMale"
-msgstr "Не члени: чоловіки"
-
-msgid "16. Not Members: Male"
-msgstr "16. Не члени: чоловіки"
-
-msgid "NotMemberFemale"
-msgstr "Не члени: жінки"
-
-msgid "17. Not Members: Female"
-msgstr "17. Не члени: жінки"
-
-msgid "MemberAbsentMale"
-msgstr "Чоловіки, що відсутні"
-
-msgid "18. Members Absent: Male"
-msgstr "18. Члени, що відсутні: чоловіки"
-
-msgid "MemberAbsentFemale"
-msgstr "Жінки, що відсутні"
-
-msgid "19. Members Absent: Female"
-msgstr "19. Члени, що відсутні: жінки"
-
-msgid "DeafDumb"
-msgstr "Глухонімі"
-
-msgid "20. Deaf and Dumb"
-msgstr "20. Глухонімі"
-
-msgid "21. Blind"
-msgstr "21. Сліпі"
-
-msgid "Lunatic"
-msgstr "Душевнохворі"
-
-msgid "22. Lunatics or Idiots"
-msgstr "22. Душевнохворі або слабоумні"
-
-msgid "23. Attending School within the year: Male"
-msgstr "23. Навчаються в школі протягом року: чоловіки\""
-
-msgid "24. Attending School within the year: Female"
-msgstr "24. Навчаються в школі протягом року: жінки"
-
-msgid "CantReadMale"
-msgstr "Чоловіки, що не вміють читати"
-
-msgid "25. Persons over 20, who cannot read or write: Male"
-msgstr "25. Особи старші 20 років, які не вміють читати і писати: чоловіки"
-
-msgid "CantReadFemale"
-msgstr "Жінки, що не вміють читати"
-
-msgid "26. Persons over 20, who cannot read or write: Female"
-msgstr "26. Особи старші 20 років, які не вміють читати і писати: жінки"
-
-msgid "Birth1860Male"
-msgstr "Народження 1860 року: чоловіки"
-
-msgid "27. Births in 1860: Male"
-msgstr "27. Народжені у 1860 році: чоловіки"
-
-msgid "Birth1860Female"
-msgstr "Народження 1860 року: жінки"
-
-msgid "28. Births in 1860: Female"
-msgstr "28. Народжені у 1860 році: жінки"
-
-msgid "Death1860Male"
-msgstr "Смерті 1860 року: чоловіки"
-
-msgid "29. Deaths in 1860: Male"
-msgstr "29. Померлі у 1860 році: чоловіки"
-
-msgid "Death1860Female"
-msgstr "Смерті 1860 року: жінки"
-
-msgid "30. Deaths in 1860: Female"
-msgstr "30. Померлі у 1860 році: жінки"
-
-msgid "31. Age and cause of death"
-msgstr "31. Вік і причина смерті"
-
-msgid "32. Houses: Brick, Stone, Frame, Log, etc."
-msgstr "32. Будинки: цегляні, кам'яні, дерев'яні, колодяні тощо."
-
-msgid "33. Houses: No. of Stories"
-msgstr "33. Будинки: кількість поверхів"
-
-msgid "34. Houses: No. of families living in the house"
-msgstr "34. Будинки: кількість сімей у будинку"
-
-msgid "35. Houses: Vacant"
-msgstr "35. Будинки: порожні"
-
-msgid "HouseBeingBuilt"
-msgstr "Будинки, що будуються"
-
-msgid "36. Houses: Being built"
-msgstr "36. Будинки: у процесі будівництва"
-
-msgid "SubDistrict"
-msgstr "Підрайон"
-
-msgid "Vessels"
-msgstr "Судна"
-
-msgid "1. Vessels"
-msgstr "1. Судна"
-
-msgid "Shanties"
-msgstr "Халупи"
-
-msgid "2. Shanties"
-msgstr "2. Халупи"
-
-msgid "HousesBeingBuilt"
-msgstr "Будинки, що будуються"
-
-msgid "3. Dwelling houses in construction"
-msgstr "3. Житлові будинки в процесі будівництва"
-
-msgid "4. Dwelling houses unoccupied"
-msgstr "4. Житлові будинки, що не заселені"
-
-msgid "HousesInhabited"
-msgstr "Заселені будинки"
-
-msgid "5. Dwelling houses inhabited"
-msgstr "5. Житлові будинки, що заселені"
-
-msgid "6.Families"
-msgstr "6. Сім'ї"
-
-msgid "7. Names"
-msgstr "7. Імена"
-
-msgid "8. Sex"
-msgstr "8. Стать"
-
-msgid "9. Age"
-msgstr "9. Вік"
-
-msgid "Birth1871"
-msgstr "Народження 1871 року"
-
-msgid "10. Born within last twelve months"
-msgstr "10. Народжені протягом останніх дванадцяти місяців"
-
-msgid "11. Country or Province of Birth"
-msgstr "11. Країна або провінція народження"
-
-msgid "12. Religion"
-msgstr "12. Релігія"
-
-msgid "13. Origin"
-msgstr "13. Походження"
-
-msgid "14. Profession, Occupation or Trade"
-msgstr "14. Професія, зайнятість або ремесло"
-
-msgid "15. Married or Widowed"
-msgstr "15. Одружений або вдівець/вдова"
-
-msgid "Maried1871"
-msgstr "Одружені у 1871 році"
-
-msgid "16. Married within last twelve months"
-msgstr "16. Одружені протягом останніх дванадцяти місяців"
-
-msgid "Scholar"
-msgstr "Учень"
-
-msgid "17. Going to school"
-msgstr "17. Відвідує школу"
-
-msgid "CantRead"
-msgstr "Не вміє читати"
-
-msgid "18. Over 20 unable to read"
-msgstr "18. Старші 20 років, які не вміють читати"
-
-msgid "CantWrite"
-msgstr "Не вміє писати"
-
-msgid "19. Over 20 unable to write"
-msgstr "19. Старші 20 років, які не вміють писати"
-
-msgid "22. Unsound mind"
-msgstr "22. Психічно хворий"
-
-msgid "23. Date of Operations and Remarks"
-msgstr "23. Дата операцій і зауваження"
-
-msgid "3. Houses in construction"
-msgstr "3. Будинки у процесі будівництва"
-
-msgid "4. Houses unoccupied"
-msgstr "4. Порожні будинки"
-
-msgid "5. Houses inhabited"
-msgstr "5. Заселені будинки"
-
-msgid "6. Families"
-msgstr "6. Сім'ї"
-
-msgid "Birth1881"
-msgstr "Народження 1881 року"
-
-msgid "16. Going to school"
-msgstr "16. Відвідує школу"
-
-msgid "17. Deaf and Dumb"
-msgstr "17. Глухонімі"
-
-msgid "18. Blind"
-msgstr "18. Сліпі"
-
-msgid "19. Unsound mind"
-msgstr "19. Нездоровий розум"
-
-msgid "20. Date of Operations and Remarks"
-msgstr "20. Дата операцій і зауваження"
-
-msgid "1. Vessels and Shanties"
-msgstr "1. Судна та халупи"
-
-msgid "2. Houses in construction"
-msgstr "2. Будинки у процесі будівництва"
-
-msgid "3. Houses unoccupied"
-msgstr "3. Порожні будинки"
-
-msgid "4. Houses inhabited"
-msgstr "4. Заселені будинки"
-
-msgid "5. Families"
-msgstr "5. Сім'ї"
-
-msgid "6. Names"
-msgstr "6. Імена"
-
-msgid "7. Sex"
-msgstr "7. Стать"
-
-msgid "8. Age"
-msgstr "8. Вік"
-
-msgid "9. Married or Widowed"
-msgstr "9. Одружений або вдівець/вдова"
-
-msgid "10. Relationship to Head of Family"
-msgstr "10. Відношення до голови сім'ї"
-
-msgid "12. FrenchCanadian"
-msgstr "12. Франкоканадець"
-
-msgid "BirthPlaceFather"
-msgstr "Місце народження батька"
-
-msgid "13. Birth Place of Father"
-msgstr "13. Місце народження батька"
-
-msgid "BirthPlaceMother"
-msgstr "Місце народження матері"
-
-msgid "14. Birth Place of Mother"
-msgstr "\"14. Місце народження матері"
-
-msgid "15. Religion"
-msgstr "15. Релігія"
-
-msgid "16. Profession, Occupation or Trade"
-msgstr "16. Професія, зайнятість або ремесло"
-
-msgid "17. Employers"
-msgstr "17. Роботодавці"
-
-msgid "Employee"
-msgstr "Працівник"
-
-msgid "18. Wage Earner"
-msgstr "18. Найманий працівник"
-
-msgid "Unemployed"
-msgstr "Безробітний"
-
-msgid "19. Unemployed during week preceding Census"
-msgstr "19. Безробітний протягом тижня перед переписом"
-
-msgid "Employees"
-msgstr "Працівники"
-
-msgid "20. Employer to state average number of hands employed during year"
-msgstr "20. Роботодавець має вказати середню кількість працівників за рік"
-
-msgid "CanRead"
-msgstr "Може читати"
-
-msgid "21. Instruction: Read"
-msgstr "21. Освіта: Вміє читати"
-
-msgid "CanWrite"
-msgstr "Може писати"
-
-msgid "22. Instruction: Write"
-msgstr "22. Освіта: Вміє писати"
-
-msgid "23. Deaf and Dumb"
-msgstr "23. Глухонімі"
-
-msgid "24. Blind"
-msgstr "24. Сліпі"
-
-msgid "25. Unsound mind"
-msgstr "25. Психічно хворий"
-
-msgid "SubTitle"
-msgstr "Підзаголовок"
-
-msgid "PollSub"
-msgstr "Округ голосування"
-
-msgid "House"
-msgstr "Будинок"
-
-msgid "1. Dwelling house"
-msgstr "1. Житловий будинок"
-
-msgid "2. Family or household"
-msgstr "2. Сім'я або домогосподарство"
-
-msgid "3. Name of each person in family"
-msgstr "3. Ім'я кожної особи в сім'ї"
-
-msgid "4. Sex"
-msgstr "4. Стать"
-
-msgid "Colour"
-msgstr "Колір"
-
-msgid "5. Colour"
-msgstr "5. Колір"
-
-msgid "6. Relation to head of family"
-msgstr "6. Відношення до голови сім'ї"
-
-msgid "7. Single, married, widowed, divorced or legally separated"
-msgstr "7. Неодружений, одружений, вдівець, розлучений або офіційно розлучений"
-
-msgid "BirthMonth"
-msgstr "Місяць народження"
-
-msgid "8. Month and Date of Birth"
-msgstr "8. Місяць і дата народження"
-
-msgid "BirthYear"
-msgstr "Рік народження"
-
-msgid "9. Year of birth"
-msgstr "9. Рік народження"
-
-msgid "10. Age at last birthday"
-msgstr "10. Вік на останній день народження"
-
-msgid "11. Country or place of birth"
-msgstr "11. Країна або місце народження"
-
-msgid "12. Year of immigration to Canada, if an immigrant"
-msgstr "12. Рік імміграції до Канади, якщо іммігрант"
-
-msgid "13. Year of naturalization, if formerly an alien"
-msgstr "13. Рік натуралізації, якщо раніше був іноземцем"
-
-msgid "14. Racial or tribal origin"
-msgstr "14. Расове або племінне походження"
-
-msgid "15. Nationality"
-msgstr "15. Національність"
-
-msgid "16. Religion"
-msgstr "16. Релігія"
-
-msgid "17. Profession, occupation, trade or means of living of each person"
-msgstr "17. Професія, заняття, ремесло або засоби існування кожної особи"
-
-msgid "OwnMeans"
-msgstr "Власні засоби"
-
-msgid "18. Living on own means"
-msgstr "18. Живе на власні засоби"
-
-msgid "19. Employer"
-msgstr "19. Роботодавець"
-
-msgid "20. Employee"
-msgstr "20. Працівник"
-
-msgid "SelfEmployed"
-msgstr "Самозайнятий"
-
-msgid "21. Working on own account"
-msgstr "21. Працює на себе"
-
-msgid "WhereEmployed"
-msgstr "Місце працевлаштування"
-
-msgid "22. Working at trade in factory or in home"
-msgstr "22. Працює на виробництві або вдома"
-
-msgid "MonthsFactory"
-msgstr "Місяці на фабриці"
-
-msgid "23. Months employed at trade in factory"
-msgstr "23. Місяці зайнятості на фабриці"
-
-msgid "MonthsHome"
-msgstr "Місяці вдома"
-
-msgid "24. Months employed at trade in home"
-msgstr "24. Місяці зайнятості вдома"
-
-msgid "MonthsOther"
-msgstr "Місяці в іншій зайнятості"
-
-msgid "25. Months employed in other occupation than trace in factory or home"
-msgstr "25. Місяці зайнятості не у виробництві або вдома"
-
-msgid "EarningsOccupation"
-msgstr "Дохід від занять"
-
-msgid "26. Earnings from occupation or trade"
-msgstr "26. Дохід від занять або торгівлі"
-
-msgid "EarningsOther"
-msgstr "Додатковий дохід"
-
-msgid "27. Extra earning (From other than chief occupation or trade)"
-msgstr "27. Додатковий дохід (не з основного заняття або торгівлі)"
-
-msgid "SchoolMonths"
-msgstr "Місяці навчання"
-
-msgid "28. Months at school in 1910"
-msgstr "28. Місяці навчання у 1910 році"
-
-msgid "29. Can read"
-msgstr "29. Вміє читати"
-
-msgid "30. Can write"
-msgstr "30. Вміє писати"
-
-msgid "SpeakEnglish"
-msgstr "Говорить англійською"
-
-msgid "31. Can speak English"
-msgstr "31. Вміє говорити англійською"
-
-msgid "SpeakFrench"
-msgstr "Говорить французькою"
-
-msgid "32. Can speak French"
-msgstr "32. Вміє говорити французькою"
-
-msgid "33. Mother tongue (If spoken)"
-msgstr "33. Рідна мова (якщо використовується)"
-
-msgid "Infirmities"
-msgstr "Вади здоров'я"
-
-msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
-msgstr "34. Вади здоров'я: a. Глухонімий; b. Сліпий; c. Психічний розлад"
-
-msgid "Name from Schedule 1"
-msgstr "Ім'я з розкладу 1"
-
-msgid "Line on Schedule 2"
-msgstr "Рядок у розкладі 2"
-
-msgid "PageRef"
-msgstr "Посилання на сторінку"
-
-msgid "2. Page from Schedule 1"
-msgstr "2. Сторінка з розкладу 1"
-
-msgid "LineRef"
-msgstr "Посилання на рядок"
-
-msgid "3. Line from Schedule 1"
-msgstr "3. Рядок з розкладу 1"
-
-msgid "3. Place of Habitation"
-msgstr "3. Місце проживання"
-
-msgid "HousesConst"
-msgstr "Будівництво будинків"
-
-msgid "4. Houses: In construction"
-msgstr "4. Будинки у процесі будівництва"
-
-msgid "5. Houses: Vacant"
-msgstr "5. Порожні будинки"
-
-msgid "6. Houses: Inhabited"
-msgstr "6. Заселені будинки"
-
-msgid "7. Institution: Special or legal name"
-msgstr "7. Установа: Спеціальна або офіційна назва"
-
-msgid "Buildings"
-msgstr "Будівлі"
-
-msgid "8. Institution: Number of buildings"
-msgstr "8. Установа: Кількість будівель"
-
-msgid "9. Number of families in house or institution"
-msgstr "9. Кількість сімей у будинку або установі"
-
-msgid "Rooms"
-msgstr "Кімнати"
-
-msgid "10. Number of rooms in house or institution for each famiy"
-msgstr "10. Кількість кімнат у будинку або установі на сім'ю"
-
-msgid "Inmates"
-msgstr "Мешканці"
-
-msgid "11. Number of inmates in institution"
-msgstr "11. Кількість мешканців в установі"
-
-msgid "OwnedAcres"
-msgstr "Власні акри"
-
-msgid "12. Real Estate Owned: Grand total of acres"
-msgstr "12. Нерухомість у власності: Загальна кількість акрів"
-
-msgid "OwnedLots"
-msgstr "Власні ділянки"
-
-msgid "13. Real Estate Owned: Number of town or village lots"
-msgstr "13. Нерухомість у власності: Кількість міських або сільських ділянок"
-
-msgid "OwnedHouses"
-msgstr "Власні будинки"
-
-msgid "14. Real Estate Owned: Number of dwelling houses"
-msgstr "14. Нерухомість у власності: Кількість житлових будинків"
-
-msgid "OwnedStores"
-msgstr "Власні магазини"
-
-msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
-msgstr "15. Нерухомість у власності: Кількість магазинів, складів тощо."
-
-msgid "OwnedBars"
-msgstr "Власні стайні"
-
-msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
-msgstr ""
-"16. Нерухомість у власності: Кількість стодол, стайнь та інших будівель"
-
-msgid "OwnedSilos"
-msgstr "Власні силоси"
-
-msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
-msgstr ""
-"17. Нерухомість у власності: Кількість силосів та їхня ємність у кубічних "
-"футах"
-
-msgid "OwnedFactories"
-msgstr "Власні фабрики"
-
-msgid "18. Real Estate Owned: Number of manufacturing establishments"
-msgstr "18. Нерухомість у власності: Кількість виробничих підприємств"
-
-msgid "LeasedAcres"
-msgstr "Орендовані акри"
-
-msgid "19. Real Estate Leased: Grand total of acres"
-msgstr "19. Орендована нерухомість: Загальна кількість акрів"
-
-msgid "LeasedLots"
-msgstr "Орендовані ділянки"
-
-msgid "20. Real Estate Leased: Number of town or village lots"
-msgstr "20. Орендована нерухомість: Кількість міських або сільських ділянок"
-
-msgid "LeasedHouses"
-msgstr "Орендовані будинки"
-
-msgid "21. Real Estate Leased: Number of dwelling houses"
-msgstr "21. Орендована нерухомість: Кількість житлових будинків"
-
-msgid "LeasedStores"
-msgstr "Орендовані магазини"
-
-msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
-msgstr "22. Орендована нерухомість: Кількість магазинів, складів тощо."
-
-msgid "LeasedBarns"
-msgstr "Орендовані сараї"
-
-msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
-msgstr ""
-"23. Орендована нерухомість: Кількість сараїв, стайнь та інших господарських "
-"будівель"
-
-msgid "LeasedSilos"
-msgstr "Орендовані силоси"
-
-msgid "24. Real Estate Leased: Number of silos and capacity in cubic feet"
-msgstr ""
-"24. Орендована нерухомість: Кількість силосів і їхня місткість у кубічних "
-"футах"
-
-msgid "LeasedFactories"
-msgstr "Орендовані фабрики"
-
-msgid "25. Real Estate Leased: Number of manufacturing establishments"
-msgstr "25. Орендована нерухомість: Кількість виробничих підприємств"
-
-msgid "Denomination"
-msgstr "Конфесія"
-
-msgid "26. Church or place of worship: Religious denomination"
-msgstr "26. Церква або місце поклоніння: Релігійна конфесія"
-
-msgid "Communicants"
-msgstr "Прихожани"
-
-msgid "27. Church or place of worship: Number of communicants"
-msgstr "27. Церква або місце поклоніння: Кількість прихожан"
-
-msgid "Seating"
-msgstr "Місця для сидіння"
-
-msgid "28. Church or place of worship: Seating capacity"
-msgstr "28. Церква або місце поклоніння: Кількість місць для сидіння"
-
-msgid "SSDenomination"
-msgstr "Конфесія недільної школи"
-
-msgid "29. Sunday School: Religious Denomination"
-msgstr "29. Недільна школа: Релігійна конфесія"
-
-msgid "SSTeachers"
-msgstr "Вчителі недільної школи"
-
-msgid "30. Sunday School: Number of officers and teachers"
-msgstr "30. Недільна школа: Кількість керівників і вчителів"
-
-msgid "SSScholars"
-msgstr "Учні недільної школи"
-
-msgid "31. Sunday School: Number of Scholars"
-msgstr "31. Недільна школа: Кількість учнів"
-
-msgid "SchoolRooms"
-msgstr "Класи"
-
-msgid "32. School: Number of rooms"
-msgstr "32. Школа: Кількість класів"
-
-msgid "SchoolTeachers"
-msgstr "Вчителі школи"
-
-msgid "33. School: Number of teachers"
-msgstr "33. Школа: Кількість вчителів"
-
-msgid "SchoolStudents"
-msgstr "Учні школи"
-
-msgid "34. School: Number of Scholars"
-msgstr "34. Школа: Кількість учнів"
-
-msgid "DateVisit"
-msgstr "Дата візиту"
-
-msgid "35. Date of visit"
-msgstr "35. Дата візиту"
-
-msgid "Reason"
-msgstr "Причина"
-
-msgid "36. The reason, if not enumerated on first visit"
-msgstr "36. Причина, якщо не було включено під час першого візиту"
-
-msgid "DateEnum"
-msgstr "Дата перепису"
-
-msgid "37. Date when enumerated"
-msgstr "37. Дата проведення перепису"
-
-msgid "1. No. of family in order of visitation"
-msgstr "1. Номер сім'ї за порядком відвідування"
-
-msgid "2. Name of each person in the family"
-msgstr "2. Ім'я кожної особи в сім'ї"
-
-msgid "3.Relation to head of family"
-msgstr "3. Стосунок до голови сім'ї"
-
-msgid "5. Married, single, widowed or divorced"
-msgstr "5. Одружений, неодружений, вдівець або розлучений"
-
-msgid "6. Age"
-msgstr "6. Вік"
-
-msgid "7. Country or place of birth"
-msgstr "7. Країна або місце народження"
-
-msgid "8. Year of immigration to Canada"
-msgstr "8. Рік імміграції до Канади"
-
-msgid "PostOffice"
-msgstr "Поштова установа"
-
-msgid "9. Post office address"
-msgstr "9. Поштова адреса"
-
-msgid "10. Location: Section"
-msgstr "10. Розташування: Секція"
-
-msgid "11. Location: Township"
-msgstr "11. Розташування: Селище"
-
-msgid "12. Location: Range"
-msgstr "12. Розташування: Ділянка"
-
-msgid "Meridian"
-msgstr "Меридіан"
-
-msgid "13. Location: Meridian"
-msgstr "13. Розташування: Меридіан"
-
-msgid "14. Livestock: Horses, all ages"
-msgstr "14. Скотарство: Коні, всіх вікових категорій"
-
-msgid "Cows"
-msgstr "Корови"
-
-msgid "15. Livestock: Milch cows"
-msgstr "15. Скотарство: Дійні корови"
-
-msgid "16. Other horned or meat cattle, all ages"
-msgstr "16. Інша рогата або м'ясна худоба, всіх вікових категорій"
-
-msgid "17. Sheep and lambs, all ages"
-msgstr "17. Вівці та ягнята, всіх вікових категорій"
-
-msgid "18. Hogs and pigs, all ages"
-msgstr "18. Свині та поросята, всіх вікових категорій"
-
-msgid "4. Place of habitation"
-msgstr "4. Місце проживання"
-
-msgid "5. Sex"
-msgstr "5. Стать"
-
-msgid "8. Month of birth"
-msgstr "8. Місяць народження"
-
-msgid "16. Chief occupation or trade"
-msgstr "16. Головна професія або заняття"
-
-msgid "OtherEmployment"
-msgstr "Інша зайнятість"
-
-msgid "18. Employment other than at chief trade or occupation, if any"
-msgstr "18. Зайнятість поза основною професією або ремеслом, якщо є"
-
-msgid "22. State where person employed"
-msgstr "22. Штат, у якому працює особа"
-
-msgid "WeeksOccupation"
-msgstr "Тижні зайнятості"
-
-msgid "23. Weeks employed in 1910 at chief occupation or trade"
-msgstr "23. Кількість тижнів зайнятості у 1910 році на основному місці роботи"
-
-msgid "WeeksOther"
-msgstr "Інші тижні зайнятості"
-
-msgid "24. Weeks employed in 1910 at other than chief occupation or trade"
-msgstr "24. Кількість тижнів зайнятості у 1910 році поза основною професією"
-
-msgid "HoursOccupation"
-msgstr "Робочі години"
-
-msgid "25. Hours of working time per week at chief occupation"
-msgstr "25. Години роботи на тиждень на основній роботі"
-
-msgid "HoursOther"
-msgstr "Інші робочі години"
-
-msgid "26. Hours of working time per week at other occupation, if any"
-msgstr "26. Години роботи на тиждень на інших місцях роботи"
-
-msgid "27. Total earnings in 1910 from chief occupation or trade"
-msgstr "27. Загальний дохід у 1910 році від основної роботи або ремесла"
-
-msgid "28. Total earnings in 1910 from other than chief occupation or trade"
-msgstr "28. Загальний дохід у 1910 році від інших занять, крім основної роботи"
-
-msgid "Wages"
-msgstr "Заробітна плата"
-
-msgid "29. Rate of earnings per hour when employed by the hour-Cents"
-msgstr "29. Тариф заробітку за годину у випадку погодинної оплати (у центах)"
-
-msgid "InsuranceLife"
-msgstr "Страхування життя"
-
-msgid "30. Insurance: Upon life"
-msgstr "30. Страхування: На випадок життя"
-
-msgid "InsuranceAccident"
-msgstr "Страхування від нещасних випадків"
-
-msgid "31. Insurance: Against accident or illness"
-msgstr "31. Страхування: Від нещасних випадків або хвороб"
-
-msgid "InsuranceCost"
-msgstr "Вартість страхування"
-
-msgid "32. Insurance: Cost of insurance in census year"
-msgstr "32. Страхування: Вартість страхування у рік перепису"
-
-msgid "33. Months at school in 1910"
-msgstr "33. Місяці навчання у школі в 1910 році"
-
-msgid "34. Can Read"
-msgstr "34. Вміє читати"
-
-msgid "35. Can Write"
-msgstr "35. Вміє писати"
-
-msgid "36. Language commonly spoken"
-msgstr "36. Мова, якою зазвичай розмовляє"
-
-msgid "SchoolCost"
-msgstr "Витрати на освіту"
-
-msgid ""
-"37. Cost of education in 1910 for persons over 16 years of age at College, "
-"Convent or University"
-msgstr ""
-"37. Витрати на освіту у 1910 році для осіб старше 16 років у коледжі, "
-"монастирі або університеті"
-
-msgid "38. Blind"
-msgstr "38. Сліпий"
-
-msgid "39. Deaf and dumb"
-msgstr "39. Глухонімий"
-
-msgid "40. Crazy or lunatic"
-msgstr "40. Божевільний або недоумкуватий"
-
-msgid "41. Idiotic or silly"
-msgstr "41. Ідіот або нерозумний"
-
-msgid "1. House"
-msgstr "1. Будинок"
-
-msgid "Dwelling house"
-msgstr "Житловий будинок"
-
-msgid "2. Family"
-msgstr "2. Сім'я"
-
-msgid "Family or household"
-msgstr "Сім'я або господарство"
-
-msgid "3. Name"
-msgstr "3. Ім'я"
-
-msgid "Name of each person in family"
-msgstr "Ім'я кожної особи у сім'ї"
-
-msgid "5. Relation to head of family"
-msgstr "5. Стосунок до голови сім'ї"
-
-msgid "6. Single, married, widowed, divorced or legally separated"
-msgstr "6. Самотній, одружений, вдівець, розлучений або юридично розділений"
-
-msgid "7. Month of birth"
-msgstr "7. Місяць народження"
-
-msgid "8. Age at last birthday"
-msgstr "8. Вік на останній день народження"
-
-msgid "9. Country or place of birth"
-msgstr "9. Країна або місце народження"
-
-msgid "10. Racial or tribal origin"
-msgstr "10. Расове або племінне походження"
-
-msgid "11. Religion"
-msgstr "11. Релігія"
-
-msgid "12. Months at school in 1910"
-msgstr "12. Місяці навчання у школі в 1910 році"
-
-msgid "13. Can Read"
-msgstr "13. Вміє читати"
-
-msgid "14. Can Write"
-msgstr "14. Вміє писати"
-
-msgid "15. Language commonly spoken"
-msgstr "15. Звична розмовна мова"
-
-msgid ""
-"16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or "
-"lunatic"
-msgstr ""
-"16. Вади здоров'я: a. сліпий; b. глухонімий; c. розумово відсталий або "
-"недоумкуватий; d. божевільний або душевнохворий"
-
-msgid "1. Dwelling House"
-msgstr "1. Житловий будинок"
-
-msgid "2. Family, Household or Institution"
-msgstr "2. Сім'я, домогосподарство або установа"
-
-msgid "3. Name of each person in family, household or institution"
-msgstr "3. Ім'я кожної особи в сім'ї, домогосподарстві або установі"
-
-msgid "MilitaryService"
-msgstr "Військова служба"
-
-msgid "4. Military Service"
-msgstr "4. Військова служба"
-
-msgid "5. Place of Habitation: Township"
-msgstr "5. Місце проживання: Селище"
-
-msgid "6. Place of Habitation: Range"
-msgstr "6. Місце проживання: Ділянка"
-
-msgid "7. Place of Habitation: Meridian"
-msgstr "7. Місце проживання: Меридіан"
-
-msgid "8. Place of Habitation: Municipality"
-msgstr "8. Місце проживання: Муніципалітет"
-
-msgid "9. Relationship to head of family or household"
-msgstr "9. Стосунок до голови сім'ї або домогосподарства"
-
-msgid "10. Sex"
-msgstr "10. Стать"
-
-msgid "11. Single, married, widowed, divorced or legally separated"
-msgstr "11. Самотній, одружений, вдівець, розлучений або юридично розділений"
-
-msgid "12. Age at last birthday"
-msgstr "12. Вік на останній день народження"
-
-msgid "13. Country or place of birth"
-msgstr "13. Країна або місце народження"
-
-msgid "14. Religion"
-msgstr "14. Релігія"
-
-msgid "15. Year of immigration to Canada"
-msgstr "15. Рік імміграції до Канади"
-
-msgid "16. Year of naturalization"
-msgstr "16. Рік натуралізації"
-
-msgid "17. Nationality"
-msgstr "17. Національність"
-
-msgid "18. Race or tribal origin"
-msgstr "18. Расове або племінне походження"
-
-msgid "19. Can speak English"
-msgstr "19. Вміє розмовляти англійською"
-
-msgid "20. Can speak French"
-msgstr "20. Вміє розмовляти французькою"
-
-msgid "OtherLanguage"
-msgstr "Інша мова"
-
-msgid "21. Other language spoken as mother tongue"
-msgstr "21. Інша мова, яка є рідною"
-
-msgid "22. Can Read"
-msgstr "22. Вміє читати"
-
-msgid "23. Can Write"
-msgstr "23. Вміє писати"
-
-msgid "24. Chief occupation or trade"
-msgstr "24. Головна професія або заняття"
-
-msgid "25. Employer, \"E\", Employee, \"W\""
-msgstr "25. Роботодавець \"E\", найманий працівник \"W\""
-
-msgid "EmploymentPlace"
-msgstr "Місце зайнятості"
-
-msgid "26. State where person is employed"
-msgstr "26. Штат, у якому працює особа"
-
-msgid "Can read and write"
-msgstr "Може читати та писати"
-
-msgid "Military"
-msgstr "Військова служба"
-
-msgid "Taxes"
-msgstr "Податки"
-
-msgid "Type of roof"
-msgstr "Тип даху"
-
-msgid "Arrived since"
-msgstr "Прибув з"

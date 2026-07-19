@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-11 17:13-0700\n"
+"POT-Creation-Date: 2026-05-10 10:43-0700\n"
 "PO-Revision-Date: 2025-11-17 06:51+0000\n"
 "Last-Translator: Fedir Zinchuk <fedikw@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -38,10 +38,6 @@ msgstr "Відображає всі імена всіх людей"
 #: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
 msgstr "Тип імені"
-
-#: AllNamesQuickview/AllNames.py:54 PlaceCleanup/placecleanup.glade:52
-msgid "Primary Name"
-msgstr "Основна назва"
 
 #: AllNamesQuickview/AllNames.py:71
 #, python-format
@@ -136,7 +132,7 @@ msgid "Whether to display the theoretical number of ancestor by generation"
 msgstr "Чи відображати теоретичну кількість предків за поколіннями"
 
 #: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
-#: DescendantBooks/DetailedDescendantBookReport.py:1536
+#: DescendantBooks/DetailedDescendantBookReport.py:1538
 #: DetDescendantReport-images/detdescendantreporti.py:1252
 #: LastChange/LastChangeReport.py:378
 #: LinesOfDescendency/lines-of-descendency.py:72
@@ -278,6 +274,43 @@ msgid ""
 "The style used for the total line of the number of ancestors per generation."
 msgstr "Стиль, що використовується для заголовка звіту."
 
+#: AnniversariesGramplet/AnniversariesGramplet.gpr.py:24
+#: AnniversariesGramplet/AnniversariesGramplet.gpr.py:32
+#, fuzzy
+#| msgid "Inverse"
+msgid "Anniversaries"
+msgstr "Обернене"
+
+#: AnniversariesGramplet/AnniversariesGramplet.gpr.py:25
+#, fuzzy
+#| msgid "a gramplet that displays the birthdays of the living people"
+msgid "A gramplet that displays the anniversaries of events"
+msgstr "грамплет, що відображає дні народження живих людей"
+
+#: AnniversariesGramplet/AnniversariesGramplet.py:51
+#, fuzzy
+#| msgid "Double-click on a row to edit the selected participant."
+msgid "Double-click on a row to edit the event."
+msgstr "Двічі клацніть на рядок, щоб редагувати вибраного учасника."
+
+#: AnniversariesGramplet/AnniversariesGramplet.py:58
+#, fuzzy
+#| msgid "Other participants"
+msgid "Participant"
+msgstr "Інші учасники"
+
+#: ArchiveAssist/ArchiveAssist.gpr.py:22
+msgid ""
+"Parses strings from Riksarkivet and ArkivDigital to create sources and "
+"citations."
+msgstr ""
+
+#: ArchiveAssist/ArchiveAssist.gpr.py:26
+#, fuzzy
+#| msgid "Archive file"
+msgid "Archive Assist"
+msgstr "Архівний файл"
+
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
 msgstr "Перевірити дані про зв'язки"
@@ -310,7 +343,7 @@ msgstr "Прикріплює спільне джерело до кількох �
 
 #: AttachSourceTool/AttachSourceTool.py:70
 #: AvatarGenerator/AvatarGenerator.py:86
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:87
 #: RelID/relation_tab.py:310 SetAttributeTool/SetAttributeTool.py:71
 #: SetPrivacyTool/SetPrivacyTool.py:312
 msgid "Select filter to restrict people"
@@ -349,7 +382,7 @@ msgid "ID of source to attach"
 msgstr "Ідентифікатор джерела для прикріплення"
 
 #: AttachSourceTool/AttachSourceTool.py:157
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:241
 #: SetAttributeTool/SetAttributeTool.py:151
 #: SetAttributeTool/SetAttributeTool.py:193
 msgid "Processing...\n"
@@ -793,7 +826,7 @@ msgid "Only show birthdays with tag"
 msgstr "Показувати лише дні народження з тегом"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:194
 msgid "Calculate Estimated Dates"
 msgstr "Розрахувати орієнтовні дати"
 
@@ -801,90 +834,90 @@ msgstr "Розрахувати орієнтовні дати"
 msgid "Calculates estimated dates for birth and death."
 msgstr "Розраховує орієнтовні дати народження та смерті."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Calculated Date Estimates"
 msgstr "Орієнтовні розраховані дати"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid "Source to remove and/or add"
 msgstr "Джерело для видалення та/або додавання"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:103
 msgid "Remove previously added events, notes, and source"
 msgstr "Видалити раніше додані події, примітки та джерело"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
 "Видалити розраховані події, примітки та джерело; виконується негайно після "
 "виконання"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:108
 msgid "Do not add birth events"
 msgstr "Не додавати події народження"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:109
 msgid "Add birth events without dates"
 msgstr "Додати події народження без дат"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
 msgid "Add birth events with dates"
 msgstr "Додати події народження з датами"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 msgid "Add a birth events with or without estimated dates"
 msgstr "Додати події народження з або без орієнтовних дат"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:115
 msgid "Do not add death events"
 msgstr "Не додавати події смерті"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:112
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:116
 msgid "Add death events without dates"
 msgstr "Додати події смерті без дат"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:117
 msgid "Add death events with dates"
 msgstr "Додати події смерті з датами"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:114
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Add death events with or without estimated dates"
 msgstr "Додати події смерті з або без орієнтовних дат"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:122
 msgid "Maximum age"
 msgstr "Максимальний вік"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:121
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:125
 msgid "Maximum age that one can live to"
 msgstr "Максимальний вік, до якого можна дожити"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:127
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:131
 msgid "Maximum age difference between siblings"
 msgstr "Максимальна різниця у віці між братами та сестрами"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Average years between two generations"
 msgstr "Середня кількість років між двома поколіннями"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:136
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:140
 msgid "Estimated Dates"
 msgstr "Орієнтовні дати"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:141
 msgid "Approximate (about)"
 msgstr "Приблизно (приблизно)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:138
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:142
 msgid "Extremes (after and before)"
 msgstr "Екстремуми (після і до)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:139
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:143
 msgid "Dates on events are either about or after/before"
 msgstr "Дати на подіях або приблизні, або після/до"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:172
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:176
 msgid ""
 "The Calculate Estimated Dates Tool is used to add and remove birth and death "
 "events for people that are missing these events.\n"
@@ -922,27 +955,23 @@ msgstr ""
 "Можливо, вам доведеться запускати інструмент кілька разів (без видалення "
 "попередніх подій), щоб додати всі можливі події."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:199
-msgid "Select All"
-msgstr "Вибрати все"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:204
 msgid "Select None"
 msgstr "Зняти виділення"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:205
 msgid "Toggle Selection"
 msgstr "Перемкнути вибір"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:206
 msgid "Add Selected Events"
 msgstr "Додати вибрані події"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:212
 msgid "Remove Events, Notes, and Source and Reselect Data"
 msgstr "Видалити події, примітки та джерело і повторно вибрати дані"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:213
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
@@ -950,44 +979,50 @@ msgstr ""
 "Ви впевнені, що хочете видалити попередні події, примітки та джерело і "
 "повторно вибрати дані?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
 msgid "Remove and Run Select Again"
 msgstr "Видалити та знову виконати вибір"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:218
 msgid "Reselect Data"
 msgstr "Повторно вибрати дані"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:215
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:219
 msgid "Are you sure you want to reselect data?"
 msgstr "Ви впевнені, що хочете повторно вибрати дані?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:216
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:220
 msgid "Run Select Again"
 msgstr "Знову виконати вибір"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:240
 msgid "Evidence"
 msgstr "Доказ"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:240
 msgid "Relative"
 msgstr "Родич"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:255
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:261
 msgid "Removing old estimations... "
 msgstr "Видалення старих оцінок... "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:256
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:262
 #, python-format
 msgid "Removing '%s'..."
 msgstr "Видалення '%s'..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:319
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:338
 msgid "done!\n"
 msgstr "готово!\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:323
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:341
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:432
+#, python-format
+msgid "Skipped %d people due to errors (see log).\n"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:347
 msgid ""
 "Selecting... \n"
 "\n"
@@ -995,69 +1030,74 @@ msgstr ""
 "Вибір...\n"
 "\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:359
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:395
 msgid "Add birth and death events"
 msgstr "Додати події народження і смерті"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:361
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:397
 msgid "Add birth event"
 msgstr "Додати подію народження"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:363
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:399
 msgid "Add death event"
 msgstr "Додати подію смерті"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:398
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:445
 msgid "No events to be added."
 msgstr "Немає подій для додавання."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:439
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:489
 msgid "Selecting... "
 msgstr "Вибір... "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:440
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:491
 #, python-format
 msgid "Adding events '%s'..."
 msgstr "Додавання подій '%s'..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:516
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
 msgstr "Додана подія народження на основі %(evidence)s, від %(name)s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:519
 #, python-format
 msgid "Added birth event based on %s"
 msgstr "Додана подія народження на основі %s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:521
 msgid "Estimated birth date"
 msgstr "Орієнтовна дата народження"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:531
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
 msgstr "Додана подія смерті на основі %(evidence)s, від %(person)s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:534
 #, python-format
 msgid "Added death event based on %s"
 msgstr "Додана подія смерті на основі %s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:485
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:536
 msgid "Estimated death date"
 msgstr "Орієнтовна дата смерті"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:495
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:553
 msgid " Done! Committing..."
 msgstr " Готово! Застосування змін..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:499
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:559
 #, python-format
 msgid "Added %d events."
 msgstr "Додано %d подій."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:527
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:562
+#, python-format
+msgid " (Skipped %d rows due to errors; see log.)"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:589
 msgid "Estimated date"
 msgstr "Орієнтовна дата"
 
@@ -1116,31 +1156,41 @@ msgstr ""
 msgid "Chat With Tree"
 msgstr "Спілкування з деревом"
 
-#: ChatWithTree/ChatWithTree.py:103
-msgid "Database change detected"
-msgstr "Виявлено зміну бази даних"
-
-#: ChatWithTree/ChatWithTree.py:148
+#: ChatWithTree/ChatWithTree.py:149
 msgid "Type a message..."
 msgstr "Введіть повідомлення..."
 
-#: ChatWithTree/ChatWithTree.py:152
+#: ChatWithTree/ChatWithTree.py:153
 msgid "Send"
 msgstr "Надіслати"
 
-#: ChatWithTree/ChatWithTree.py:159
-msgid "Chat with Tree initialized. Type /help for help."
+#: ChatWithTree/ChatWithTree.py:163
+#, fuzzy
+#| msgid "Chat with Tree initialized. Type /help for help."
+msgid "Chat with Tree initialized.                 Type /help for help."
 msgstr "Чат з деревом ініціалізовано. Введіть /help для отримання довідки."
 
-#: ChatWithTree/ChatWithTree.py:314
+#: ChatWithTree/ChatWithTree.py:449
+#, fuzzy
+#| msgid ""
+#| "The ChatWithTree addon is not yet initialized. Please reload Gramps or "
+#| "select a database."
 msgid ""
-"The ChatWithTree addon is not yet initialized. Please reload Gramps or "
-"select a database."
+"The ChatWithTree addon is not yet initialized.                     Please "
+"reload Gramps or select a database."
 msgstr ""
 "Додаток ChatWithTree ще не ініціалізовано. Будь ласка, перезавантажте Gramps "
 "або виберіть базу даних."
 
-#: ChatWithTree/chatwithllm.py:78
+#: ChatWithTree/ChatWithTree.py:458
+msgid "The chatbot is currently processing a query. Please wait."
+msgstr ""
+
+#: ChatWithTree/ChatWithTree.py:485
+msgid "An error occurred while processing your query."
+msgstr ""
+
+#: ChatWithTree/chatwithllm.py:119
 msgid "Tree: '{}'"
 msgstr "Дерево: '{}'"
 
@@ -1234,11 +1284,6 @@ msgid "Gramplet for grouping collections of items to aid in data entry."
 msgstr ""
 "Gramplet для групування колекцій елементів для полегшення введення даних."
 
-#: ClipboardGramplet/ClipboardGramplet.py:83
-#, python-format
-msgid "Clipboard Gramplet: %s"
-msgstr "Gramplet Буфер обміну: %s"
-
 #: ClockGramplet/ClockGramplet.gpr.py:4 ClockGramplet/ClockGramplet.gpr.py:9
 msgid "Clock"
 msgstr "Годинник"
@@ -1277,7 +1322,7 @@ msgstr "Показати теги"
 msgid "Vertical Details"
 msgstr "Вертикальні деталі"
 
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:62
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:79
 msgid "Order"
 msgstr "Порядок"
 
@@ -1330,82 +1375,82 @@ msgstr ""
 "Генерує веб-сторінку з графічним зображенням предків (SVG), представленим у "
 "вигляді складного дерева з бібліотеки D3.js JavaScript."
 
-#: D3Charts/AncestralCollapsibleTree.py:326
-#: D3Charts/AncestralCollapsibleTree.py:771
-#: D3Charts/AncestralCollapsibleTree.py:785 D3Charts/AncestralFanChart.py:401
-#: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
-#: D3Charts/DescendantIndentedTree.py:1499
-#: D3Charts/DescendantIndentedTree.py:1562
-#: D3Charts/DescendantIndentedTree.py:1569
-#: D3Charts/DescendantIndentedTree.py:1676
-#: D3Charts/DescendantIndentedTree.py:1696 DenominoViso/DenominoViso.py:394
+#: D3Charts/AncestralCollapsibleTree.py:327
+#: D3Charts/AncestralCollapsibleTree.py:772
+#: D3Charts/AncestralCollapsibleTree.py:786 D3Charts/AncestralFanChart.py:402
+#: D3Charts/AncestralFanChart.py:649 D3Charts/AncestralFanChart.py:675
+#: D3Charts/DescendantIndentedTree.py:1504
+#: D3Charts/DescendantIndentedTree.py:1567
+#: D3Charts/DescendantIndentedTree.py:1574
+#: D3Charts/DescendantIndentedTree.py:1681
+#: D3Charts/DescendantIndentedTree.py:1701 DenominoViso/DenominoViso.py:394
 #: DenominoViso/DenominoViso.py:411 DenominoViso/DenominoViso.py:2503
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
 msgstr "Помилка запису в {target_path}: {message}"
 
-#: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
-#: D3Charts/DescendantIndentedTree.py:1518
+#: D3Charts/AncestralCollapsibleTree.py:346 D3Charts/AncestralFanChart.py:421
+#: D3Charts/DescendantIndentedTree.py:1523
 #, python-format
 msgid "Failed to create directory structure : %s"
 msgstr "Не вдалося створити структуру директорій: %s"
 
-#: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
-#: D3Charts/DescendantIndentedTree.py:1554
+#: D3Charts/AncestralCollapsibleTree.py:369 D3Charts/AncestralFanChart.py:444
+#: D3Charts/DescendantIndentedTree.py:1559
 #, python-format
 msgid "Failed to copy web files : %s"
 msgstr "Не вдалося скопіювати веб-файли: %s"
 
-#: D3Charts/AncestralCollapsibleTree.py:816
+#: D3Charts/AncestralCollapsibleTree.py:817
 msgid "Ancestral Collapsible Tree Options"
 msgstr "Параметри складного дерева предків"
 
-#: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
-#: D3Charts/DescendantIndentedTree.py:1803
+#: D3Charts/AncestralCollapsibleTree.py:841 D3Charts/AncestralFanChart.py:724
+#: D3Charts/DescendantIndentedTree.py:1808
 #: DescendantSpaceTree/DescendantSpaceTree.py:1082
 msgid "Include Generations"
 msgstr "Включити покоління"
 
-#: D3Charts/AncestralCollapsibleTree.py:846
+#: D3Charts/AncestralCollapsibleTree.py:847
 msgid "Male Background Color"
 msgstr "Колір фону для чоловіків"
 
-#: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
+#: D3Charts/AncestralCollapsibleTree.py:848 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
 msgstr "RGB-колір для фону блоку чоловіка."
 
-#: D3Charts/AncestralCollapsibleTree.py:850
+#: D3Charts/AncestralCollapsibleTree.py:851
 msgid "Male Expandable Background Color"
 msgstr "Колір фону розгорнутого блоку чоловіка"
 
-#: D3Charts/AncestralCollapsibleTree.py:852
+#: D3Charts/AncestralCollapsibleTree.py:853
 msgid "RGB-color for male expandable box background."
 msgstr "RGB-колір для фону розгорнутого блоку чоловіка."
 
-#: D3Charts/AncestralCollapsibleTree.py:855 NetworkChart/NetworkChart.py:1022
+#: D3Charts/AncestralCollapsibleTree.py:856 NetworkChart/NetworkChart.py:1022
 msgid "Female Background"
 msgstr "Фон для жінки"
 
-#: D3Charts/AncestralCollapsibleTree.py:856
+#: D3Charts/AncestralCollapsibleTree.py:857
 msgid "RGB-color for female box background."
 msgstr "RGB-колір для фону блоку жінки."
 
-#: D3Charts/AncestralCollapsibleTree.py:859
+#: D3Charts/AncestralCollapsibleTree.py:860
 msgid "Female Expandable Background"
 msgstr "Фон для розгорнутого блоку жінки"
 
-#: D3Charts/AncestralCollapsibleTree.py:861
+#: D3Charts/AncestralCollapsibleTree.py:862
 msgid "RGB-color for female expandable box background."
 msgstr "RGB-колір для фону розгорнутого блоку жінки."
 
-#: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
-#: D3Charts/DescendantIndentedTree.py:1825
+#: D3Charts/AncestralCollapsibleTree.py:868 D3Charts/AncestralFanChart.py:740
+#: D3Charts/DescendantIndentedTree.py:1830
 #: DescendantSpaceTree/DescendantSpaceTree.py:1132
 msgid "The destination path for generated files."
 msgstr "Шлях призначення для згенерованих файлів."
 
-#: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
-#: D3Charts/DescendantIndentedTree.py:1830
+#: D3Charts/AncestralCollapsibleTree.py:873 D3Charts/AncestralFanChart.py:745
+#: D3Charts/DescendantIndentedTree.py:1835
 #: TimePedigreeHTML/TimePedigreeHtml.py:865
 msgid "The destination file name for html content."
 msgstr "Імʼя файлу для HTML вмісту."
@@ -1422,28 +1467,28 @@ msgstr ""
 "Генерує веб-сторінку з графічним зображенням предків (SVG), представленим як "
 "віялова діаграма з бібліотеки D3.js JavaScript."
 
-#: D3Charts/AncestralFanChart.py:707
+#: D3Charts/AncestralFanChart.py:708
 msgid "Ancestral Fan Chart Options"
 msgstr "Параметри віялової діаграми предків"
 
-#: D3Charts/AncestralFanChart.py:729
+#: D3Charts/AncestralFanChart.py:730
 msgid "Paternal Background Color"
 msgstr "Колір фону батьківської лінії"
 
-#: D3Charts/AncestralFanChart.py:730
+#: D3Charts/AncestralFanChart.py:731
 msgid "RGB-color for paternal box background."
 msgstr "RGB-колір для фону блоку по батьківській лінії."
 
-#: D3Charts/AncestralFanChart.py:733
+#: D3Charts/AncestralFanChart.py:734
 msgid "Maternal Background"
 msgstr "Фон для материнської лінії"
 
-#: D3Charts/AncestralFanChart.py:734
+#: D3Charts/AncestralFanChart.py:735
 msgid "RGB-color for maternal box background."
 msgstr "RGB-колір для фону блоку по материнській лінії."
 
 #: D3Charts/DescendantIndentedTree.gpr.py:23
-#: D3Charts/DescendantIndentedTree.py:909
+#: D3Charts/DescendantIndentedTree.py:914
 msgid "Descendant Indented Tree"
 msgstr "Ієрархічне дерево нащадків"
 
@@ -1456,21 +1501,23 @@ msgstr ""
 "Генерує веб-сторінку з графічним зображенням предків (SVG), представленим у "
 "вигляді складного дерева з бібліотеки D3.js JavaScript."
 
-#: D3Charts/DescendantIndentedTree.py:673
-#, python-format
+#: D3Charts/DescendantIndentedTree.py:678
+#, fuzzy, python-format
+#| msgid "See %(reference)s : %(spouse)s"
+msgctxt "spouse"
 msgid "See %(reference)s : %(spouse)s"
 msgstr "Див. %(reference)s : %(spouse)s"
 
-#: D3Charts/DescendantIndentedTree.py:764
+#: D3Charts/DescendantIndentedTree.py:769
 msgid "Generating report..."
 msgstr "Генерується звіт..."
 
-#: D3Charts/DescendantIndentedTree.py:1364
+#: D3Charts/DescendantIndentedTree.py:1369
 #: DescendantSpaceTree/DescendantSpaceTree.py:771
 msgid "Invalid Destination Directory"
 msgstr "Некоректний каталог призначення"
 
-#: D3Charts/DescendantIndentedTree.py:1365
+#: D3Charts/DescendantIndentedTree.py:1370
 #, python-format
 msgid ""
 "Destinaton diretory %s does not exist\n"
@@ -1479,12 +1526,12 @@ msgstr ""
 "Каталог призначення %s не існує\n"
 "Бажаєте спробувати створити його?"
 
-#: D3Charts/DescendantIndentedTree.py:1374
+#: D3Charts/DescendantIndentedTree.py:1379
 #, python-brace-format
 msgid "Failed to create {target_path}: {message}"
 msgstr "Помилка створення {target_path}: {message}"
 
-#: D3Charts/DescendantIndentedTree.py:1390
+#: D3Charts/DescendantIndentedTree.py:1395
 #, python-format
 msgid ""
 "Destination file %s already exists.\n"
@@ -1493,247 +1540,247 @@ msgstr ""
 "Файл призначення %s вже існує.\n"
 "Бажаєте перезаписати його?"
 
-#: D3Charts/DescendantIndentedTree.py:1445
+#: D3Charts/DescendantIndentedTree.py:1450
 msgid "Default View"
 msgstr "Перегляд за замовчуванням"
 
-#: D3Charts/DescendantIndentedTree.py:1448
+#: D3Charts/DescendantIndentedTree.py:1453
 msgid "Expand All"
 msgstr "Розгорнути все"
 
-#: D3Charts/DescendantIndentedTree.py:1810
+#: D3Charts/DescendantIndentedTree.py:1815
 msgid "Include contraction level"
 msgstr "Включити рівень згортання"
 
-#: D3Charts/DescendantIndentedTree.py:1812
+#: D3Charts/DescendantIndentedTree.py:1817
 msgid "The number of descendant levels to contract on initial display."
 msgstr "Кількість рівнів нащадків для згортання при початковому відображенні."
 
-#: D3Charts/DescendantIndentedTree.py:1819
+#: D3Charts/DescendantIndentedTree.py:1824
 msgid "The font size in pixels for each node."
 msgstr "Розмір шрифту у пікселях для кожного вузла."
 
-#: D3Charts/DescendantIndentedTree.py:1847
+#: D3Charts/DescendantIndentedTree.py:1852
 #: DescendantBooks/DescendantBookReport.py:552
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Чи показувати дубльовані сімейні дерева у звіті."
 
-#: D3Charts/DescendantIndentedTree.py:1851
+#: D3Charts/DescendantIndentedTree.py:1856
 msgid "Expanded Row Background Color"
 msgstr "Колір фону розгорнутого рядка"
 
-#: D3Charts/DescendantIndentedTree.py:1852
+#: D3Charts/DescendantIndentedTree.py:1857
 msgid "RGB-color for expanded row background."
 msgstr "RGB-колір для фону розгорнутого рядка."
 
-#: D3Charts/DescendantIndentedTree.py:1855
+#: D3Charts/DescendantIndentedTree.py:1860
 msgid "Expandable Background Color"
 msgstr "Колір фону розширюваного рядка"
 
-#: D3Charts/DescendantIndentedTree.py:1857
+#: D3Charts/DescendantIndentedTree.py:1862
 msgid "RGB-color for expandable row background."
 msgstr "RGB-колір для фону розширюваного рядка."
 
-#: D3Charts/DescendantIndentedTree.py:1860
+#: D3Charts/DescendantIndentedTree.py:1865
 msgid "Non-Expandable Background Color"
 msgstr "Колір фону нерозширюваного рядка"
 
-#: D3Charts/DescendantIndentedTree.py:1862
+#: D3Charts/DescendantIndentedTree.py:1867
 msgid "RGB-color for non-expandable row background."
 msgstr "RGB-колір для фону нерозширюваного рядка."
 
-#: D3Charts/DescendantIndentedTree.py:1866 DynamicWeb/dynamicweb.py:4811
+#: D3Charts/DescendantIndentedTree.py:1871 DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
 msgstr "Включати записи, позначені як приватні"
 
-#: D3Charts/DescendantIndentedTree.py:1868
+#: D3Charts/DescendantIndentedTree.py:1873
 msgid "Whether to include private objects."
 msgstr "Чи включати приватні об'єкти."
 
-#: D3Charts/DescendantIndentedTree.py:1876 DynamicWeb/dynamicweb.py:4819
+#: D3Charts/DescendantIndentedTree.py:1881 DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
 msgstr "Включати лише прізвище"
 
-#: D3Charts/DescendantIndentedTree.py:1878 DynamicWeb/dynamicweb.py:4822
+#: D3Charts/DescendantIndentedTree.py:1883 DynamicWeb/dynamicweb.py:4822
 msgid "Include Full Name Only"
 msgstr "Включати лише повне ім'я"
 
-#: D3Charts/DescendantIndentedTree.py:1880
+#: D3Charts/DescendantIndentedTree.py:1885
 msgid "How to handle living people."
 msgstr "Як обробляти живих осіб."
 
-#: D3Charts/DescendantIndentedTree.py:1887
+#: D3Charts/DescendantIndentedTree.py:1892
 msgid "Whether or not to include people who may have recently died."
 msgstr "Чи включати осіб, які могли нещодавно померти."
 
-#: D3Charts/DescendantIndentedTree.py:1895
+#: D3Charts/DescendantIndentedTree.py:1900
 msgid "Navigation"
 msgstr "Навігація"
 
-#: D3Charts/DescendantIndentedTree.py:1897
+#: D3Charts/DescendantIndentedTree.py:1902
 msgid "Contraction/Expansion mechanism"
 msgstr "Механізм згортання/розгортання"
 
-#: D3Charts/DescendantIndentedTree.py:1900
+#: D3Charts/DescendantIndentedTree.py:1905
 msgid "Entire node."
 msgstr "Увесь вузол."
 
-#: D3Charts/DescendantIndentedTree.py:1901
+#: D3Charts/DescendantIndentedTree.py:1906
 msgid "Arrow images at start of node."
 msgstr "Зображення стрілок на початку вузла."
 
-#: D3Charts/DescendantIndentedTree.py:1902
+#: D3Charts/DescendantIndentedTree.py:1907
 msgid "Plus/Minus images at start of node."
 msgstr "Зображення плюс/мінус на початку вузла."
 
-#: D3Charts/DescendantIndentedTree.py:1903
-#: D3Charts/DescendantIndentedTree.py:1932
+#: D3Charts/DescendantIndentedTree.py:1908
+#: D3Charts/DescendantIndentedTree.py:1937
 msgid "Where to click to expand/contract nodes."
 msgstr "Де натискати для розгортання/згортання вузлів."
 
-#: D3Charts/DescendantIndentedTree.py:1907
+#: D3Charts/DescendantIndentedTree.py:1912
 msgid "Auto-generate HREF links for nodes"
 msgstr "Автоматично генерувати HREF-посилання для вузлів"
 
-#: D3Charts/DescendantIndentedTree.py:1909
+#: D3Charts/DescendantIndentedTree.py:1914
 msgid "Whether to auto-generate HTML links for each node on the report."
 msgstr ""
 "Чи слід автоматично створювати HTML-посилання для кожного вузла у звіті."
 
-#: D3Charts/DescendantIndentedTree.py:1915
+#: D3Charts/DescendantIndentedTree.py:1920
 msgid "URL prefix path."
 msgstr "Префікс шляху URL."
 
-#: D3Charts/DescendantIndentedTree.py:1917
+#: D3Charts/DescendantIndentedTree.py:1922
 msgid "URL prefix to apply to each auto-generated HREF link."
 msgstr ""
 "Префікс URL, що застосовується до кожного автоматично згенерованого HREF-"
 "посилання."
 
-#: D3Charts/DescendantIndentedTree.py:1923
+#: D3Charts/DescendantIndentedTree.py:1928
 msgid "URL file extension"
 msgstr "Розширення файлу URL"
 
-#: D3Charts/DescendantIndentedTree.py:1925
+#: D3Charts/DescendantIndentedTree.py:1930
 msgid "No file extension."
 msgstr "Немає розширення файлу."
 
-#: D3Charts/DescendantIndentedTree.py:1926
+#: D3Charts/DescendantIndentedTree.py:1931
 msgid ".html"
 msgstr ".html"
 
-#: D3Charts/DescendantIndentedTree.py:1927
+#: D3Charts/DescendantIndentedTree.py:1932
 msgid ".htm"
 msgstr ".htm"
 
-#: D3Charts/DescendantIndentedTree.py:1928
+#: D3Charts/DescendantIndentedTree.py:1933
 msgid ".shtml"
 msgstr ".shtml"
 
-#: D3Charts/DescendantIndentedTree.py:1929
+#: D3Charts/DescendantIndentedTree.py:1934
 msgid ".php"
 msgstr ".php"
 
-#: D3Charts/DescendantIndentedTree.py:1930
+#: D3Charts/DescendantIndentedTree.py:1935
 msgid ".php3"
 msgstr ".php3"
 
-#: D3Charts/DescendantIndentedTree.py:1931
+#: D3Charts/DescendantIndentedTree.py:1936
 msgid ".cgi"
 msgstr ".cgi"
 
-#: D3Charts/DescendantIndentedTree.py:1937
+#: D3Charts/DescendantIndentedTree.py:1942
 msgid "URL file name delimeter"
 msgstr "Роздільник імені файлу URL"
 
-#: D3Charts/DescendantIndentedTree.py:1939
+#: D3Charts/DescendantIndentedTree.py:1944
 msgid "Remove all whitespace."
 msgstr "Видалити всі пробіли."
 
-#: D3Charts/DescendantIndentedTree.py:1940
+#: D3Charts/DescendantIndentedTree.py:1945
 msgid "Replace whitespace with dash(-)."
 msgstr "Замінити пробіли на дефіс (-)."
 
-#: D3Charts/DescendantIndentedTree.py:1941
+#: D3Charts/DescendantIndentedTree.py:1946
 msgid "Replace whitespace with underscore(_)"
 msgstr "Замінити пробіли на підкреслення (_)"
 
-#: D3Charts/DescendantIndentedTree.py:1942
+#: D3Charts/DescendantIndentedTree.py:1947
 msgid "What to use as file name delimiter replacing whitespace."
 msgstr "Що використовувати як роздільник імені файлу, замінюючи пробіли."
 
-#: D3Charts/DescendantIndentedTree.py:1947
+#: D3Charts/DescendantIndentedTree.py:1952
 msgid "Generations to generate HREF links"
 msgstr "Покоління для створення HREF-посилань"
 
-#: D3Charts/DescendantIndentedTree.py:1949
+#: D3Charts/DescendantIndentedTree.py:1954
 msgid "The number of generations to generate HREF links."
 msgstr "Кількість поколінь для створення HREF-посилань."
 
-#: D3Charts/DescendantIndentedTree.py:1955
+#: D3Charts/DescendantIndentedTree.py:1960
 msgid "Exclude persons who died before (years)"
 msgstr "Виключити осіб, які померли раніше (років)"
 
-#: D3Charts/DescendantIndentedTree.py:1958
+#: D3Charts/DescendantIndentedTree.py:1963
 msgid ""
 "Whether to generate links for people who died in infancy, -1 excludes nobody."
 msgstr ""
 "Чи генерувати посилання для осіб, які померли в дитинстві; -1 не виключає "
 "нікого."
 
-#: D3Charts/DescendantIndentedTree.py:1964
+#: D3Charts/DescendantIndentedTree.py:1969
 msgid "Exclude center person"
 msgstr "Виключити активну особу"
 
-#: D3Charts/DescendantIndentedTree.py:1965
+#: D3Charts/DescendantIndentedTree.py:1970
 msgid "Whether or not to generate links for center person."
 msgstr "Чи створювати посилання для центральної особи."
 
-#: D3Charts/DescendantIndentedTree.py:1970
+#: D3Charts/DescendantIndentedTree.py:1975
 msgid "Exclude Spouses"
 msgstr "Виключити подружжя"
 
-#: D3Charts/DescendantIndentedTree.py:1971
+#: D3Charts/DescendantIndentedTree.py:1976
 msgid "Whether or not to generate links for spouses."
 msgstr "Чи створювати посилання для подружжя."
 
-#: D3Charts/DescendantIndentedTree.py:1978
+#: D3Charts/DescendantIndentedTree.py:1983
 msgid "Biography Content"
 msgstr "Зміст біографії"
 
-#: D3Charts/DescendantIndentedTree.py:1980
+#: D3Charts/DescendantIndentedTree.py:1985
 msgid "Show biography tooltips"
 msgstr "Показувати підказки біографії"
 
-#: D3Charts/DescendantIndentedTree.py:1981
+#: D3Charts/DescendantIndentedTree.py:1986
 msgid "Whether to show biography tooltips when hovering over a node."
 msgstr "Чи показувати підказки біографії при наведенні на вузол."
 
-#: D3Charts/DescendantIndentedTree.py:2025
+#: D3Charts/DescendantIndentedTree.py:2030
 msgid "Text Color"
 msgstr "Колір тексту"
 
-#: D3Charts/DescendantIndentedTree.py:2027
+#: D3Charts/DescendantIndentedTree.py:2032
 msgid "RGB-color for biography text."
 msgstr "RGB-колір для тексту біографії."
 
-#: D3Charts/DescendantIndentedTree.py:2032
+#: D3Charts/DescendantIndentedTree.py:2037
 msgid "RGB-color for biography tooltip."
 msgstr "RGB-колір для підказки біографії."
 
-#: D3Charts/DescendantIndentedTree.py:2035
+#: D3Charts/DescendantIndentedTree.py:2040
 msgid "Header Font size"
 msgstr "Розмір шрифту заголовка"
 
-#: D3Charts/DescendantIndentedTree.py:2037
+#: D3Charts/DescendantIndentedTree.py:2042
 msgid "The font size in pixels for biography header text."
 msgstr "Розмір шрифту у пікселях для заголовка біографії."
 
-#: D3Charts/DescendantIndentedTree.py:2043
+#: D3Charts/DescendantIndentedTree.py:2048
 msgid "Body Font size"
 msgstr "Розмір шрифту основного тексту"
 
-#: D3Charts/DescendantIndentedTree.py:2045
+#: D3Charts/DescendantIndentedTree.py:2050
 msgid "The font size in pixels for biography body text."
 msgstr "Розмір шрифту у пікселях для основного тексту біографії."
 
@@ -1944,7 +1991,7 @@ msgstr "Грамплет для введення даних"
 msgid "Gramplet for quick data entry"
 msgstr "Грамплет для швидкого введення даних"
 
-#: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:45
+#: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:56
 #: NoteGramplet/NoteGramplet.py:65
 msgid "Active person"
 msgstr "Активна особа"
@@ -1962,8 +2009,9 @@ msgstr "Джерела?"
 msgid "Surname, Given"
 msgstr "Прізвище, Ім'я"
 
-#: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:111
-#: RelID/relation_tab.py:363
+#: DataEntryGramplet/DataEntryGramplet.py:89 GrampyScript/GrampyScript.py:127
+#: GrampyScript/GrampyScript.py:147 GrampyScript/GrampyScript.py:304
+#: NoteGramplet/NoteGramplet.py:111 RelID/relation_tab.py:363
 msgid "Save"
 msgstr "Зберегти"
 
@@ -2026,92 +2074,107 @@ msgstr "Копіювати активні дані"
 msgid "in"
 msgstr "в"
 
-#: DataEntryGramplet/DataEntryGramplet.py:441
-#: DataEntryGramplet/DataEntryGramplet.py:569
+#: DataEntryGramplet/DataEntryGramplet.py:428
+#: DataEntryGramplet/DataEntryGramplet.py:507
+#, fuzzy
+#| msgid "Family Tree file"
+msgid "No Family Tree is open."
+msgstr "Файл генеалогічного дерева"
+
+#: DataEntryGramplet/DataEntryGramplet.py:429
+msgid "Please open a Family Tree to edit data."
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:446
+#: DataEntryGramplet/DataEntryGramplet.py:578
 #, python-format
 msgid "Gramplet Data Edit: %s"
 msgstr "Редагування даних грамплета: %s"
 
-#: DataEntryGramplet/DataEntryGramplet.py:515
+#: DataEntryGramplet/DataEntryGramplet.py:508
+msgid "Please open a Family Tree before adding a person."
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:524
 msgid "Can't add new person."
 msgstr "Неможливо додати нову особу."
 
-#: DataEntryGramplet/DataEntryGramplet.py:515
+#: DataEntryGramplet/DataEntryGramplet.py:524
 msgid "Please provide a name."
 msgstr "Будь ласка, вкажіть ім'я."
 
-#: DataEntryGramplet/DataEntryGramplet.py:523
-#: DataEntryGramplet/DataEntryGramplet.py:526
+#: DataEntryGramplet/DataEntryGramplet.py:532
+#: DataEntryGramplet/DataEntryGramplet.py:535
 msgid "Can't add new person as a parent."
 msgstr "Неможливо додати нову особу як батька."
 
-#: DataEntryGramplet/DataEntryGramplet.py:523
-#: DataEntryGramplet/DataEntryGramplet.py:531
-#: DataEntryGramplet/DataEntryGramplet.py:536
-#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:532
+#: DataEntryGramplet/DataEntryGramplet.py:540
+#: DataEntryGramplet/DataEntryGramplet.py:545
 #: DataEntryGramplet/DataEntryGramplet.py:550
-#: DataEntryGramplet/DataEntryGramplet.py:555
-#: DataEntryGramplet/DataEntryGramplet.py:560
-#: DataEntryGramplet/DataEntryGramplet.py:565
+#: DataEntryGramplet/DataEntryGramplet.py:559
+#: DataEntryGramplet/DataEntryGramplet.py:564
+#: DataEntryGramplet/DataEntryGramplet.py:569
+#: DataEntryGramplet/DataEntryGramplet.py:574
 msgid "Please set an active person."
 msgstr "Будь ласка, виберіть активну особу."
 
-#: DataEntryGramplet/DataEntryGramplet.py:526
-#: DataEntryGramplet/DataEntryGramplet.py:545
+#: DataEntryGramplet/DataEntryGramplet.py:535
+#: DataEntryGramplet/DataEntryGramplet.py:554
 msgid "Please set the new person's gender."
 msgstr "Будь ласка, вкажіть стать нової особи."
 
-#: DataEntryGramplet/DataEntryGramplet.py:531
+#: DataEntryGramplet/DataEntryGramplet.py:540
 msgid "Can't add new person as a mother."
 msgstr "Неможливо додати нову особу як матір."
 
-#: DataEntryGramplet/DataEntryGramplet.py:536
+#: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Can't add new person as a father."
 msgstr "Неможливо додати нову особу як батька."
 
-#: DataEntryGramplet/DataEntryGramplet.py:541
-#: DataEntryGramplet/DataEntryGramplet.py:545
-#: DataEntryGramplet/DataEntryGramplet.py:768
-#: DataEntryGramplet/DataEntryGramplet.py:805
-#: DataEntryGramplet/DataEntryGramplet.py:838
+#: DataEntryGramplet/DataEntryGramplet.py:550
+#: DataEntryGramplet/DataEntryGramplet.py:554
+#: DataEntryGramplet/DataEntryGramplet.py:777
+#: DataEntryGramplet/DataEntryGramplet.py:814
+#: DataEntryGramplet/DataEntryGramplet.py:847
 msgid "Can't add new person as a spouse."
 msgstr "Неможливо додати нову особу як подружжя."
 
-#: DataEntryGramplet/DataEntryGramplet.py:550
+#: DataEntryGramplet/DataEntryGramplet.py:559
 msgid "Can't add new person as a wife."
 msgstr "Неможливо додати нову особу як дружину."
 
-#: DataEntryGramplet/DataEntryGramplet.py:555
+#: DataEntryGramplet/DataEntryGramplet.py:564
 msgid "Can't add new person as a husband."
 msgstr "Неможливо додати нову особу як чоловіка."
 
-#: DataEntryGramplet/DataEntryGramplet.py:560
+#: DataEntryGramplet/DataEntryGramplet.py:569
 msgid "Can't add new person as a sibling."
 msgstr "Неможливо додати нову особу як брата/сестру."
 
-#: DataEntryGramplet/DataEntryGramplet.py:565
-#: DataEntryGramplet/DataEntryGramplet.py:938
+#: DataEntryGramplet/DataEntryGramplet.py:574
+#: DataEntryGramplet/DataEntryGramplet.py:947
 msgid "Can't add new person as a child."
 msgstr "Неможливо додати нову особу як дитину."
 
-#: DataEntryGramplet/DataEntryGramplet.py:763
+#: DataEntryGramplet/DataEntryGramplet.py:772
 msgid "Please set Active person."
 msgstr "Будь ласка, виберіть активну особу."
 
-#: DataEntryGramplet/DataEntryGramplet.py:764
+#: DataEntryGramplet/DataEntryGramplet.py:773
 msgid "Can't add new person as a spouse to no one."
 msgstr "Неможливо додати нову особу як подружжя, якщо ніхто не вибраний."
 
-#: DataEntryGramplet/DataEntryGramplet.py:767
+#: DataEntryGramplet/DataEntryGramplet.py:776
 msgid "Please set gender on Active or new person."
 msgstr "Будь ласка, вкажіть стать для активної або нової особи."
 
-#: DataEntryGramplet/DataEntryGramplet.py:804
-#: DataEntryGramplet/DataEntryGramplet.py:837
+#: DataEntryGramplet/DataEntryGramplet.py:813
+#: DataEntryGramplet/DataEntryGramplet.py:846
 msgid "Same genders on Active and new person."
 msgstr "Однакова стать у активної та нової особи."
 
-#: DataEntryGramplet/DataEntryGramplet.py:937
+#: DataEntryGramplet/DataEntryGramplet.py:946
 msgid "Please set gender on Active person."
 msgstr "Будь ласка, вкажіть стать активної особи."
 
@@ -2155,7 +2218,6 @@ msgid "Calculate"
 msgstr "Обчислити"
 
 #: DateCalculator/DateCalculator.py:107
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
 #: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3863
 msgid "Copy"
 msgstr "Копіювати"
@@ -2189,36 +2251,91 @@ msgstr "Грамплет, що показує глибокий звʼязок м
 msgid "Deep Connections"
 msgstr "Глибокі Звʼязки"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
-msgid "Pause"
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
+#, fuzzy
+#| msgid "Pause"
+msgid "⏸ Pause"
 msgstr "Призупинити"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:107
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:108
+#, fuzzy
+#| msgid "Years at current residence"
+msgid "Pause the current search"
+msgstr "Роки проживання за поточною адресою"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:111
+msgid "▶ Continue"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:114
+#, fuzzy
+#| msgid ""
+#| "Paused.\n"
+#| "Press Continue to search for additional relations.\n"
+msgid "Continue searching for more relations"
+msgstr ""
+"Призупинено.\n"
+"Натисніть «Продовжити» для пошуку додаткових звʼязків.\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:118
+#, fuzzy
+#| msgid "Copy"
+msgid "📋 Copy"
+msgstr "Копіювати"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:120
+#, fuzzy
+#| msgid "Copy link to clipboard"
+msgid "Copy selected people to clipboard"
+msgstr "Скопіювати посилання у буфер обміну"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:128
+msgid "🗑 Clear"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
+msgid "Clear all results and reset"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
+#, fuzzy
+#| msgid "Start type to search"
+msgid "Ready to search"
+msgstr "Почати вводити тип для пошуку"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:185
+#, python-brace-format
+msgid ""
+"Search Depth: {depth} | People Processed: {processed} | Queue Size: "
+"{queue_size}"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 msgid "mentioned in note"
 msgstr "згадується в примітці"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:245
 msgid "Note on Family"
 msgstr "Примітка до родини"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:258
 msgid "sibling"
 msgstr "брат/сестра"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:268
 msgid "Note on Parent Family"
 msgstr "Примітка до батьківської сімʼї"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:272
 #, python-format
 msgid "%s (association)"
 msgstr "%s (асоціація)"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:277
 msgid "Note on Person"
 msgstr "Записка про особу"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:308
 #, python-format
 msgid ""
 "\n"
@@ -2227,25 +2344,47 @@ msgstr ""
 "\n"
 "   %s з "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:336
+#, fuzzy
+#| msgid "No Active Person set."
+msgid "Error: No Home Person set"
+msgstr "Не вибрано активну Особу."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:341
 msgid "No Active Person set."
 msgstr "Не вибрано активну Особу."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:342
+#, fuzzy
+#| msgid "No Active Person set."
+msgid "Error: No Active Person set"
+msgstr "Не вибрано активну Особу."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:347
+msgid "Initializing search..."
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:366
 msgid "Looking for relationship between\n"
 msgstr "Пошук зв'язку між\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:367
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
 msgstr "  <b>%s</b> (Головна Особа) та\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:368
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (Активна Особа)...\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:382
+#, fuzzy
+#| msgid "Fetching records..."
+msgid "Searching for connections..."
+msgstr "Отримання записів..."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:402
 #, python-format
 msgid ""
 "Found relation #%d: \n"
@@ -2254,7 +2393,7 @@ msgstr ""
 "Знайдено зв'язок №%d: \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:423
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
@@ -2262,14 +2401,51 @@ msgstr ""
 "Призупинено.\n"
 "Натисніть «Продовжити» для пошуку додаткових звʼязків.\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
-#, python-format
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:427
+#, fuzzy
+#| msgid ""
+#| "Paused.\n"
+#| "Press Continue to search for additional relations.\n"
+msgid "Paused - Press Continue to search for more relations"
+msgstr ""
+"Призупинено.\n"
+"Натисніть «Продовжити» для пошуку додаткових звʼязків.\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:456
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "Search completed. %d relations found."
 msgid ""
 "\n"
-"Search completed. %d relations found."
+"Search completed. %d relation paths found."
 msgstr ""
 "\n"
 "Пошук завершено. Знайдено %d звʼязків."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:460
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "Search completed. %d relations found."
+msgid "Search completed - {} relation paths found"
+msgstr ""
+"\n"
+"Пошук завершено. Знайдено %d звʼязків."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:471
+msgid "Error during search: {}"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:481
+#, fuzzy
+#| msgid "Removing '%s'..."
+msgid "Resuming search..."
+msgstr "Видалення '%s'..."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:489
+msgid "Search interrupted by user"
+msgstr ""
 
 #: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
@@ -2523,10 +2699,6 @@ msgstr ""
 #: DenominoViso/DenominoViso.py:2635
 msgid "Whether to include a person's attributes"
 msgstr "Чи включати атрибути особи"
-
-#: DenominoViso/DenominoViso.py:2638
-msgid "Include Addresses"
-msgstr "Включити адреси"
 
 #: DenominoViso/DenominoViso.py:2639
 msgid "Whether to include a person's addresses."
@@ -2852,7 +3024,7 @@ msgid "Descendants Report"
 msgstr "Звіт про нащадків"
 
 #: DescendantBooks/DescendantBookReport.py:423
-#: DescendantBooks/DetailedDescendantBookReport.py:421
+#: DescendantBooks/DetailedDescendantBookReport.py:423
 #, python-format
 msgid "Writing %s reports..."
 msgstr "Записування %s звітів..."
@@ -2863,13 +3035,13 @@ msgid "{report_count}. Descendants of {name}"
 msgstr "{report_count}. Нащадки {name}"
 
 #: DescendantBooks/DescendantBookReport.py:481
-#: DescendantBooks/DetailedDescendantBookReport.py:617
+#: DescendantBooks/DetailedDescendantBookReport.py:619
 #, python-brace-format
 msgid "{report_count:d}. {name}"
 msgstr "{report_count:d}. {name}"
 
 #: DescendantBooks/DescendantBookReport.py:510
-#: DescendantBooks/DetailedDescendantBookReport.py:1341
+#: DescendantBooks/DetailedDescendantBookReport.py:1343
 msgid "Select filter to restrict people that appear in the report"
 msgstr "Виберіть фільтр для обмеження людей, що з'являються у звіті"
 
@@ -2904,218 +3076,218 @@ msgstr ""
 msgid "Detailed Descendants Report"
 msgstr "Детальний звіт про нащадків"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:359
+#: DescendantBooks/DetailedDescendantBookReport.py:364
 #, python-format
 msgid "Generating %s report references..."
 msgstr "Генерація %s посилань для звіту..."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:453
+#: DescendantBooks/DetailedDescendantBookReport.py:455
 #, python-format
 msgid "%(report_count)s. Descendant Report for %(person_name)s"
 msgstr "%(report_count)s. Звіт про нащадків для %(person_name)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:519
+#: DescendantBooks/DetailedDescendantBookReport.py:521
 msgid "Index of Places"
 msgstr "Індекс місць"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:542
+#: DescendantBooks/DetailedDescendantBookReport.py:544
 msgid "Index of Dates"
 msgstr "Індекс дат"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:565
+#: DescendantBooks/DetailedDescendantBookReport.py:567
 msgid "Index of Names"
 msgstr "Індекс імен"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:571
+#: DescendantBooks/DetailedDescendantBookReport.py:573
 msgid "Report, Generation, Person, Name"
 msgstr "Звіт, Покоління, Особа, Ім'я"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:697
+#: DescendantBooks/DetailedDescendantBookReport.py:699
 #, python-brace-format
 msgid "See Report : {report}, Generation : {generation}, Person : {person}"
 msgstr "Див. звіт: {report}, Покоління: {generation}, Особа: {person}"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:765
-#: DescendantBooks/DetailedDescendantBookReport.py:777
+#: DescendantBooks/DetailedDescendantBookReport.py:767
+#: DescendantBooks/DetailedDescendantBookReport.py:779
 #, python-format
 msgid "Report appearances for %s"
 msgstr "Згадки у звіті для %s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:770
+#: DescendantBooks/DetailedDescendantBookReport.py:772
 #, python-brace-format
 msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
 msgstr ""
 "Чоловік/дружина: Звіт: {report}, Покоління: {generation}, Особа: {person}"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:782
+#: DescendantBooks/DetailedDescendantBookReport.py:784
 #, python-brace-format
 msgid "Report: {report}, Generation: {generation}, Person: {person}"
 msgstr "Звіт: {report}, Покоління: {generation}, Особа: {person}"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:806
+#: DescendantBooks/DetailedDescendantBookReport.py:808
 #, python-format
 msgid "%(event_name)s of %(name)s "
 msgstr "%(event_name)s у %(name)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:810
+#: DescendantBooks/DetailedDescendantBookReport.py:812
 #, python-format
 msgid "%(event_name)s of %(name)s and %(mate)s "
 msgstr "%(event_name)s у %(name)s та %(mate)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:814
-#: DescendantBooks/DetailedDescendantBookReport.py:858
+#: DescendantBooks/DetailedDescendantBookReport.py:816
+#: DescendantBooks/DetailedDescendantBookReport.py:860
 #: DetDescendantReport-images/detdescendantreporti.py:454
 #, python-format
 msgid "%(date)s, %(place)s"
 msgstr "%(date)s, %(place)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:817
-#: DescendantBooks/DetailedDescendantBookReport.py:861
+#: DescendantBooks/DetailedDescendantBookReport.py:819
+#: DescendantBooks/DetailedDescendantBookReport.py:863
 #: DetDescendantReport-images/detdescendantreporti.py:457
 #, python-format
 msgid "%(date)s"
 msgstr "%(date)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:819
-#: DescendantBooks/DetailedDescendantBookReport.py:863
+#: DescendantBooks/DetailedDescendantBookReport.py:821
+#: DescendantBooks/DetailedDescendantBookReport.py:865
 #: DetDescendantReport-images/detdescendantreporti.py:459
 #, python-format
 msgid "%(place)s"
 msgstr "%(place)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:821
+#: DescendantBooks/DetailedDescendantBookReport.py:823
 #, python-format
 msgid ". Ref: %(repno)s %(gen)s %(per)s "
 msgstr ". Посилання: %(repno)s %(gen)s %(per)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:850
+#: DescendantBooks/DetailedDescendantBookReport.py:852
 #, python-format
 msgid "%(event_name)s:"
 msgstr "%(event_name)s:"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:875
+#: DescendantBooks/DetailedDescendantBookReport.py:877
 #, python-format
 msgid " %(event_text)s"
 msgstr " %(event_text)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:993
+#: DescendantBooks/DetailedDescendantBookReport.py:995
 #, python-brace-format
 msgid "Ref: {number}. {name}"
 msgstr "№ {number}. {name}"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1233
+#: DescendantBooks/DetailedDescendantBookReport.py:1235
 #: DetDescendantReport-images/detdescendantreporti.py:811
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
 msgstr "%(name_kind)s: %(name)s%(endnotes)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1294
+#: DescendantBooks/DetailedDescendantBookReport.py:1296
 #, python-format
 msgid "%(type)s:"
 msgstr "%(type)s:"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1299
+#: DescendantBooks/DetailedDescendantBookReport.py:1301
 #, python-format
 msgid " %(value)s%(endnotes)s"
 msgstr " %(value)s%(endnotes)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1401
+#: DescendantBooks/DetailedDescendantBookReport.py:1403
 #: DetDescendantReport-images/detdescendantreporti.py:1147
 msgid "List children"
 msgstr "Список дітей"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1418
+#: DescendantBooks/DetailedDescendantBookReport.py:1420
 #: DetDescendantReport-images/detdescendantreporti.py:1164
 msgid "Add descendant reference in child list"
 msgstr "Додати посилання на нащадка у списку дітей"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1482
+#: DescendantBooks/DetailedDescendantBookReport.py:1484
 msgid "Include Index of Names"
 msgstr "Включити індекс імен"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1483
+#: DescendantBooks/DetailedDescendantBookReport.py:1485
 msgid "Whether to include the index of Names at the end of the report."
 msgstr "Чи включати індекс імен у кінці звіту."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1487
+#: DescendantBooks/DetailedDescendantBookReport.py:1489
 msgid "Include index of Dates"
 msgstr "Включити індекс дат"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1488
+#: DescendantBooks/DetailedDescendantBookReport.py:1490
 msgid "Whether to include the index of Dates at the end of the report."
 msgstr "Чи включати індекс дат у кінці звіту."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1492
+#: DescendantBooks/DetailedDescendantBookReport.py:1494
 msgid "Include index of Places"
 msgstr "Включити індекс місць"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1493
+#: DescendantBooks/DetailedDescendantBookReport.py:1495
 msgid "Whether to include the index of Places at the end of the report."
 msgstr "Чи включати індекс місць у кінці звіту."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1497
+#: DescendantBooks/DetailedDescendantBookReport.py:1499
 msgid "Include the 'Report appearances' section with each person"
 msgstr "Включити розділ 'Згадки у звіті' для кожної людини"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1499
+#: DescendantBooks/DetailedDescendantBookReport.py:1501
 msgid ""
 "The 'Report appearances' section shows other places in the report where the "
 "person is mentioned."
 msgstr ""
 "Розділ 'Згадки у звіті' показує інші місця у звіті, де згадується ця людина."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1566
+#: DescendantBooks/DetailedDescendantBookReport.py:1568
 #: DetDescendantReport-images/detdescendantreporti.py:1282
 msgid "The style used for the children list."
 msgstr "Стиль, що використовується для списку дітей."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1576
+#: DescendantBooks/DetailedDescendantBookReport.py:1578
 msgid "The basic style used for Note header."
 msgstr "Основний стиль, що використовується для заголовка приміток."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1593
+#: DescendantBooks/DetailedDescendantBookReport.py:1595
 #: DetDescendantReport-images/detdescendantreporti.py:1305
 msgid "The style used for the first personal entry."
 msgstr "Стиль, що використовується для першого запису про особу."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1603
+#: DescendantBooks/DetailedDescendantBookReport.py:1605
 #: DetDescendantReport-images/detdescendantreporti.py:1315
 msgid "The style used for the More About header and for headers of mates."
 msgstr ""
 "Стиль, що використовується для заголовка 'Докладніше' та заголовків чоловіка/"
 "дружини."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1614
+#: DescendantBooks/DetailedDescendantBookReport.py:1616
 #: DetDescendantReport-images/detdescendantreporti.py:1326
 msgid "The style used for additional detail data."
 msgstr "Стиль, що використовується для додаткових деталей."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1624
-#: DescendantBooks/DetailedDescendantBookReport.py:1634
+#: DescendantBooks/DetailedDescendantBookReport.py:1626
+#: DescendantBooks/DetailedDescendantBookReport.py:1636
 msgid "The style used for note detail data."
 msgstr "Стиль, що використовується для деталей приміток."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1644
+#: DescendantBooks/DetailedDescendantBookReport.py:1646
 msgid "The style used for the date in the Index of Dates."
 msgstr "Стиль, що використовується для дати в індексі дат."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1654
+#: DescendantBooks/DetailedDescendantBookReport.py:1656
 msgid "The style used for the events in the Index of Dates."
 msgstr "Стиль, що використовується для подій в індексі дат."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1664
+#: DescendantBooks/DetailedDescendantBookReport.py:1666
 msgid "The style used for the header in the Index of Names."
 msgstr "Стиль, що використовується для заголовка в індексі імен."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1674
+#: DescendantBooks/DetailedDescendantBookReport.py:1676
 msgid "The style used for the references in the Index of Names."
 msgstr "Стиль, що використовується для посилань в індексі імен."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1684
+#: DescendantBooks/DetailedDescendantBookReport.py:1686
 msgid "The style used for the header in the Index of Places."
 msgstr "Стиль, що використовується для заголовка в індексі місць."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1695
+#: DescendantBooks/DetailedDescendantBookReport.py:1697
 msgid "The style used for the references in the Index of Places."
 msgstr "Стиль, що використовується для посилань в індексі місць."
 
@@ -3367,103 +3539,103 @@ msgstr "Лінії нащадків"
 msgid "Produces descendants lines of a person"
 msgstr "Створює лінії нащадків для особи"
 
-#: DescendantsLines/DescendantsLines.py:463
+#: DescendantsLines/DescendantsLines.py:472
 msgid "Using SVG type for supplemental document is not supported!"
 msgstr "Використання типу SVG для додаткового документа не підтримується!"
 
-#: DescendantsLines/DescendantsLines.py:1531
+#: DescendantsLines/DescendantsLines.py:1540
 msgid "Output format"
 msgstr "Формат виводу"
 
-#: DescendantsLines/DescendantsLines.py:1532
+#: DescendantsLines/DescendantsLines.py:1541
 msgid "PNG format"
 msgstr "Формат PNG"
 
-#: DescendantsLines/DescendantsLines.py:1533
+#: DescendantsLines/DescendantsLines.py:1542
 msgid "SVG format"
 msgstr "Формат SVG"
 
-#: DescendantsLines/DescendantsLines.py:1534
+#: DescendantsLines/DescendantsLines.py:1543
 msgid "PDF format"
 msgstr "Формат PDF"
 
-#: DescendantsLines/DescendantsLines.py:1535
+#: DescendantsLines/DescendantsLines.py:1544
 msgid "PS format"
 msgstr "Формат PS"
 
-#: DescendantsLines/DescendantsLines.py:1536
+#: DescendantsLines/DescendantsLines.py:1545
 msgid "The output format to be used"
 msgstr "Формат виводу, що буде використано"
 
-#: DescendantsLines/DescendantsLines.py:1541
+#: DescendantsLines/DescendantsLines.py:1550
 msgid "The destination file for the content."
 msgstr "Файл призначення для вмісту."
 
-#: DescendantsLines/DescendantsLines.py:1545
+#: DescendantsLines/DescendantsLines.py:1554
 msgid "The number of generations to include in the chart. (0 for unlimited)"
 msgstr "Кількість поколінь, які включити в діаграму. (0 - без обмежень)"
 
-#: DescendantsLines/DescendantsLines.py:1550
+#: DescendantsLines/DescendantsLines.py:1559
 msgid "Use d'Aboville descendant numbering system"
 msgstr "Використовувати систему нумерації нащадків d'Aboville"
 
-#: DescendantsLines/DescendantsLines.py:1552
+#: DescendantsLines/DescendantsLines.py:1561
 msgid "Prepend name with d'Aboville descendant number in the chart."
 msgstr "Додавати до імені номер нащадка за системою d'Aboville в діаграмі."
 
-#: DescendantsLines/DescendantsLines.py:1555
+#: DescendantsLines/DescendantsLines.py:1564
 msgid "Include an image"
 msgstr "Включити зображення"
 
-#: DescendantsLines/DescendantsLines.py:1556
+#: DescendantsLines/DescendantsLines.py:1565
 msgid "Whether to include an image if one is available."
 msgstr "Чи включати зображення, якщо воно є."
 
-#: DescendantsLines/DescendantsLines.py:1560
+#: DescendantsLines/DescendantsLines.py:1569
 msgid "Max Image height"
 msgstr "Максимальна висота зображення"
 
-#: DescendantsLines/DescendantsLines.py:1561
+#: DescendantsLines/DescendantsLines.py:1570
 msgid "Maximum image height in pixels, 0=don't scale for height."
 msgstr "Максимальна висота зображення в пікселях, 0 = не змінювати висоту."
 
-#: DescendantsLines/DescendantsLines.py:1565
+#: DescendantsLines/DescendantsLines.py:1574
 msgid "Max Image width"
 msgstr "Максимальна ширина зображення"
 
-#: DescendantsLines/DescendantsLines.py:1566
+#: DescendantsLines/DescendantsLines.py:1575
 msgid "Maximum image width in pixels, 0=don't scale for width."
 msgstr "Максимальна ширина зображення в пікселях, 0 = не змінювати ширину."
 
-#: DescendantsLines/DescendantsLines.py:1570
+#: DescendantsLines/DescendantsLines.py:1579
 msgid "Image Location"
 msgstr "Розташування зображення"
 
-#: DescendantsLines/DescendantsLines.py:1571
+#: DescendantsLines/DescendantsLines.py:1580
 msgid "Above text"
 msgstr "Над текстом"
 
-#: DescendantsLines/DescendantsLines.py:1572
+#: DescendantsLines/DescendantsLines.py:1581
 msgid "Left of text"
 msgstr "Ліворуч від тексту"
 
-#: DescendantsLines/DescendantsLines.py:1573
+#: DescendantsLines/DescendantsLines.py:1582
 msgid "Position of image relative to text"
 msgstr "Позиція зображення відносно тексту"
 
-#: DescendantsLines/DescendantsLines.py:1579
+#: DescendantsLines/DescendantsLines.py:1588
 msgid "Colour Name by Gender"
 msgstr "Розфарбувати імена за статтю"
 
-#: DescendantsLines/DescendantsLines.py:1581
+#: DescendantsLines/DescendantsLines.py:1590
 msgid "Color the name to indicate a person's gender in the chart."
 msgstr "Забарвлювати ім'я, щоб позначати стать особи в діаграмі."
 
-#: DescendantsLines/DescendantsLines.py:1585
+#: DescendantsLines/DescendantsLines.py:1594
 msgid "Use alternate events, if Primary event is not found"
 msgstr "Використовувати альтернативні події, якщо основна подія не знайдена"
 
-#: DescendantsLines/DescendantsLines.py:1586
+#: DescendantsLines/DescendantsLines.py:1595
 msgid ""
 "For Birth (baptism, christen)\n"
 "   Marriage (marr_lic, engagement)\n"
@@ -3475,37 +3647,37 @@ msgstr ""
 "   Розлучення (анулювання, подання на розлучення),\n"
 "   Смерть (поховання, кремація, заповіт)."
 
-#: DescendantsLines/DescendantsLines.py:1592
+#: DescendantsLines/DescendantsLines.py:1601
 msgid "Sort Events by Date"
 msgstr "Сортувати події за датою"
 
-#: DescendantsLines/DescendantsLines.py:1593
+#: DescendantsLines/DescendantsLines.py:1602
 msgid "Sort events by date (else use the order of the 'Display Format' above)."
 msgstr ""
 "Сортувати події за датою (або використовувати порядок 'Формату "
 "відображення')."
 
-#: DescendantsLines/DescendantsLines.py:1597
+#: DescendantsLines/DescendantsLines.py:1606
 msgid "Text style"
 msgstr "Стиль тексту"
 
-#: DescendantsLines/DescendantsLines.py:1598
+#: DescendantsLines/DescendantsLines.py:1607
 msgid "Center-aligned text"
 msgstr "Текст, вирівняний по центру"
 
-#: DescendantsLines/DescendantsLines.py:1599
+#: DescendantsLines/DescendantsLines.py:1608
 msgid "Left-aligned text"
 msgstr "Текст, вирівняний ліворуч"
 
-#: DescendantsLines/DescendantsLines.py:1600
+#: DescendantsLines/DescendantsLines.py:1609
 msgid "Alignment of the text in the block for each person on the chart"
 msgstr "Вирівнювання тексту в блоці для кожної особи на діаграмі"
 
-#: DescendantsLines/DescendantsLines.py:1604
+#: DescendantsLines/DescendantsLines.py:1613
 msgid "Max Note Length"
 msgstr "Максимальна довжина примітки"
 
-#: DescendantsLines/DescendantsLines.py:1605
+#: DescendantsLines/DescendantsLines.py:1614
 msgid ""
 "Maximum length of an event's note field in a text block, '$e(n)'\n"
 " 0=no limit "
@@ -3513,74 +3685,92 @@ msgstr ""
 "Максимальна довжина поля примітки до події у текстовому блоці, '$e(n)'\n"
 " 0 = без обмежень "
 
-#: DescendantsLines/DescendantsLines.py:1612
+#: DescendantsLines/DescendantsLines.py:1618
+#, fuzzy
+#| msgid "Font name"
+msgid "Font Name"
+msgstr "Назва шрифту"
+
+#: DescendantsLines/DescendantsLines.py:1620
+msgid ""
+"Name of the Font to use. On Windows enter the file name of the .ttf at /"
+"Windows/Fonts"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1623
+#, fuzzy
+#| msgid "Database size"
+msgid "Font base size"
+msgstr "Розмір бази даних"
+
+#: DescendantsLines/DescendantsLines.py:1629
 msgid "Box around Person's block"
 msgstr "Рамка навколо блоку особи"
 
-#: DescendantsLines/DescendantsLines.py:1613
+#: DescendantsLines/DescendantsLines.py:1630
 msgid "Draw a thin black box around each person' text block."
 msgstr "Малювати тонку чорну рамку навколо текстового блоку кожної особи."
 
-#: DescendantsLines/DescendantsLines.py:1617
+#: DescendantsLines/DescendantsLines.py:1634
 msgid "All Person's blocks have the same height"
 msgstr "Усі блоки осіб мають однакову висоту"
 
-#: DescendantsLines/DescendantsLines.py:1618
+#: DescendantsLines/DescendantsLines.py:1635
 msgid ""
 "All the blocks of all the person have the same height, which is the height "
 "of the highest block."
 msgstr ""
 "Усі блоки осіб мають однакову висоту, яка дорівнює висоті найвищого блоку."
 
-#: DescendantsLines/DescendantsLines.py:1623
+#: DescendantsLines/DescendantsLines.py:1640
 msgid "All Person's blocks have the same width"
 msgstr "Усі блоки осіб мають однакову ширину"
 
-#: DescendantsLines/DescendantsLines.py:1624
+#: DescendantsLines/DescendantsLines.py:1641
 msgid ""
 "All the blocks of all the person have the same width, which is the width of "
 "the widthest block."
 msgstr ""
 "Усі блоки осіб мають однакову ширину, яка дорівнює ширині найширшого блоку."
 
-#: DescendantsLines/DescendantsLines.py:1629
+#: DescendantsLines/DescendantsLines.py:1646
 msgid "Colour blocks by Generation"
 msgstr "Розфарбувати блоки за поколінням"
 
-#: DescendantsLines/DescendantsLines.py:1630
+#: DescendantsLines/DescendantsLines.py:1647
 msgid "Colour the background of text blocks by generation."
 msgstr "Фарбувати фон текстових блоків за поколінням."
 
-#: DescendantsLines/DescendantsLines.py:1634
+#: DescendantsLines/DescendantsLines.py:1651
 msgid "Descend block colour intensity"
 msgstr "Інтенсивність кольору блоку нащадків"
 
-#: DescendantsLines/DescendantsLines.py:1635
+#: DescendantsLines/DescendantsLines.py:1652
 msgid ""
 "Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
 "colour"
 msgstr ""
 "Інтенсивність кольору фону блоку нащадків, 0 = блідий, 255 = насичений колір"
 
-#: DescendantsLines/DescendantsLines.py:1639
+#: DescendantsLines/DescendantsLines.py:1656
 msgid "Spouse block colour intensity"
 msgstr "Інтенсивність кольору блоку подружжя"
 
-#: DescendantsLines/DescendantsLines.py:1640
+#: DescendantsLines/DescendantsLines.py:1657
 msgid ""
 "Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
 msgstr ""
 "Інтенсивність кольору фону блоку подружжя, 0 = блідий, 255 = насичений колір"
 
-#: DescendantsLines/DescendantsLines.py:1645
+#: DescendantsLines/DescendantsLines.py:1662
 msgid "Display Formats"
 msgstr "Формати відображення"
 
-#: DescendantsLines/DescendantsLines.py:1647
+#: DescendantsLines/DescendantsLines.py:1664
 msgid "Name Display Format"
 msgstr "Формат відображення імені"
 
-#: DescendantsLines/DescendantsLines.py:1650
+#: DescendantsLines/DescendantsLines.py:1667
 msgid ""
 "f=first & middle names, l=surname, n=nickname,\n"
 "c=commonly used given name, t=title, s=suffix, g=family nick name\n"
@@ -3590,8 +3780,8 @@ msgstr ""
 "c = найбільш вживане ім'я, t = титул, s = суфікс, g = родинне прізвисько\n"
 "Див. Wiki Керівництво > Звіти > частина 2"
 
-#: DescendantsLines/DescendantsLines.py:1662
-#: DescendantsLines/DescendantsLines.py:1681
+#: DescendantsLines/DescendantsLines.py:1679
+#: DescendantsLines/DescendantsLines.py:1698
 msgid ""
 "[event, list]$e(formating)\n"
 "See Wiki Manual > Reports > part 2\n"
@@ -3602,13 +3792,13 @@ msgstr ""
 "форматування: дати=d(ymdMo), місця=D(elcuspnoitxy), примітки=n, "
 "скорочений_тип=t"
 
-#: DescendantsLines/DescendantsLines.py:1688
+#: DescendantsLines/DescendantsLines.py:1705
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
 #: ImportMerge/importmerge.glade:407 ImportMerge/importmerge.py:911
 msgid "Replace"
 msgstr "Замінити"
 
-#: DescendantsLines/DescendantsLines.py:1693
+#: DescendantsLines/DescendantsLines.py:1710
 msgid ""
 "i.e.\n"
 "United States of America/USA"
@@ -3616,31 +3806,31 @@ msgstr ""
 "Наприклад:\n"
 "Сполучені Штати Америки/США"
 
-#: DescendantsLines/DescendantsLines.py:1697
+#: DescendantsLines/DescendantsLines.py:1714
 msgid "Spouse and Family"
 msgstr "Подружжя та сім'я"
 
-#: DescendantsLines/DescendantsLines.py:1699
+#: DescendantsLines/DescendantsLines.py:1716
 msgid "Vertical edge descendant to spouse-bar"
 msgstr "Вертикальне ребро від нащадка до шлюбної лінії"
 
-#: DescendantsLines/DescendantsLines.py:1700
+#: DescendantsLines/DescendantsLines.py:1717
 msgid "The length of the vertical edge from descendant to spouse-bar."
 msgstr "Довжина вертикального ребра від нащадка до шлюбної лінії."
 
-#: DescendantsLines/DescendantsLines.py:1704
+#: DescendantsLines/DescendantsLines.py:1721
 msgid "Vertical edge spouse-bar to spouse"
 msgstr "Вертикальне ребро від шлюбної лінії до подружжя"
 
-#: DescendantsLines/DescendantsLines.py:1705
+#: DescendantsLines/DescendantsLines.py:1722
 msgid "The length of the vertical edge from spouse-bar to spouse."
 msgstr "Довжина вертикального ребра від шлюбної лінії до подружжя."
 
-#: DescendantsLines/DescendantsLines.py:1709
+#: DescendantsLines/DescendantsLines.py:1726
 msgid "Vertical space spouse-bar to other spouse"
 msgstr "Вертикальний проміжок між шлюбною лінією та іншим подружжям"
 
-#: DescendantsLines/DescendantsLines.py:1710
+#: DescendantsLines/DescendantsLines.py:1727
 msgid ""
 "The space to add between one spouse-bar and another spouse in case of "
 "multiple families with the same descendant."
@@ -3648,19 +3838,19 @@ msgstr ""
 "Проміжок, який додається між однією шлюбною лінією та іншим подружжям у "
 "випадку кількох родин із тим самим нащадком."
 
-#: DescendantsLines/DescendantsLines.py:1715
+#: DescendantsLines/DescendantsLines.py:1732
 msgid "Horizontal space descendant to spouse"
 msgstr "Горизонтальний проміжок між нащадком і подружжям"
 
-#: DescendantsLines/DescendantsLines.py:1716
+#: DescendantsLines/DescendantsLines.py:1733
 msgid "The space to add between the descendant and the spouse."
 msgstr "Відстань, яку потрібно додати між нащадком і подружжям."
 
-#: DescendantsLines/DescendantsLines.py:1721
+#: DescendantsLines/DescendantsLines.py:1738
 msgid "Horizonal space family to family"
 msgstr "Горизонтальний проміжок між родинами"
 
-#: DescendantsLines/DescendantsLines.py:1722
+#: DescendantsLines/DescendantsLines.py:1739
 msgid ""
 "The space to add between the more extern descendant (or spouse) of a family "
 "and the more extern descendant (or spouse) of the next family."
@@ -3669,11 +3859,11 @@ msgstr ""
 "партнером) однієї родини та найбільш зовнішнім нащадком (або подружнім "
 "партнером) наступної родини."
 
-#: DescendantsLines/DescendantsLines.py:1727
+#: DescendantsLines/DescendantsLines.py:1744
 msgid "Horizontal distance spouse to family edge"
 msgstr "Горизонтальна відстань між подружжям і краєм родини"
 
-#: DescendantsLines/DescendantsLines.py:1728
+#: DescendantsLines/DescendantsLines.py:1745
 msgid ""
 "If this value is 0, the children bar is centered under the spouse. The "
 "bigger the value, more the center is moved to the left towards the "
@@ -3683,105 +3873,105 @@ msgstr ""
 "подружнім партнером. Чим більше значення, тим більше центр зміщується вліво "
 "до нащадка."
 
-#: DescendantsLines/DescendantsLines.py:1735
+#: DescendantsLines/DescendantsLines.py:1752
 msgid "OL_PAD"
 msgstr "OL_PAD"
 
-#: DescendantsLines/DescendantsLines.py:1736
+#: DescendantsLines/DescendantsLines.py:1753
 msgid "The number of ??? pad"
 msgstr "Кількість ??? відступу"
 
-#: DescendantsLines/DescendantsLines.py:1739
+#: DescendantsLines/DescendantsLines.py:1756
 msgid "Vertical edge spouse-bar to child-bar"
 msgstr "Вертикальне ребро від шлюбної лінії до лінії дітей"
 
-#: DescendantsLines/DescendantsLines.py:1740
+#: DescendantsLines/DescendantsLines.py:1757
 msgid "The length of the vertical edge from spouse-bar to child-bar."
 msgstr "Довжина вертикального ребра від шлюбної лінії до лінії дітей."
 
-#: DescendantsLines/DescendantsLines.py:1746
+#: DescendantsLines/DescendantsLines.py:1763
 msgid "Children distance"
 msgstr "Відстань між дітьми"
 
-#: DescendantsLines/DescendantsLines.py:1747
+#: DescendantsLines/DescendantsLines.py:1764
 msgid "The horizontal distance between two children of the same family."
 msgstr "Горизонтальна відстань між двома дітьми в одній родині."
 
-#: DescendantsLines/DescendantsLines.py:1751
+#: DescendantsLines/DescendantsLines.py:1768
 msgid "Vertical edge child to child-bar"
 msgstr "Вертикальне ребро від дитини до лінії дітей"
 
-#: DescendantsLines/DescendantsLines.py:1753
+#: DescendantsLines/DescendantsLines.py:1770
 msgid "The length of the vertical edge from child to child-bar."
 msgstr "Довжина вертикального ребра від дитини до лінії дітей."
 
-#: DescendantsLines/DescendantsLines.py:1756
+#: DescendantsLines/DescendantsLines.py:1773
 msgid "MIN_C_WIDTH"
 msgstr "MIN_C_WIDTH"
 
-#: DescendantsLines/DescendantsLines.py:1757
+#: DescendantsLines/DescendantsLines.py:1774
 msgid "The number of ??? min width"
 msgstr "Кількість ??? мінімальної ширини"
 
-#: DescendantsLines/DescendantsLines.py:1762
+#: DescendantsLines/DescendantsLines.py:1779
 msgid "Space around text"
 msgstr "Відступ навколо тексту"
 
-#: DescendantsLines/DescendantsLines.py:1763
+#: DescendantsLines/DescendantsLines.py:1780
 msgid "The space to add around the text block of a person."
 msgstr "Проміжок, який додається навколо текстового блоку особи."
 
-#: DescendantsLines/DescendantsLines.py:1767
+#: DescendantsLines/DescendantsLines.py:1784
 msgid "Space between lines of text"
 msgstr "Відстань між рядками тексту"
 
-#: DescendantsLines/DescendantsLines.py:1768
+#: DescendantsLines/DescendantsLines.py:1785
 msgid "The space to add between a line and the next in a person text block."
 msgstr "Проміжок, який додається між рядками в текстовому блоці особи."
 
-#: DescendantsLines/DescendantsLines.py:1773
+#: DescendantsLines/DescendantsLines.py:1790
 msgid "Header and Footer"
 msgstr "Заголовок і нижній колонтитул"
 
-#: DescendantsLines/DescendantsLines.py:1776
+#: DescendantsLines/DescendantsLines.py:1793
 msgid "The text that will be written in the header of the document"
 msgstr "Текст, який буде написаний у заголовку документа"
 
-#: DescendantsLines/DescendantsLines.py:1781
+#: DescendantsLines/DescendantsLines.py:1798
 msgid "The text that will be written in the footer of the document"
 msgstr "Текст, який буде написаний у нижньому колонтитулі документа"
 
-#: DescendantsLines/DescendantsLines.py:1785
+#: DescendantsLines/DescendantsLines.py:1802
 msgid "Title and footer coefficient"
 msgstr "Коефіцієнт заголовка та колонтитулу"
 
-#: DescendantsLines/DescendantsLines.py:1786
+#: DescendantsLines/DescendantsLines.py:1803
 msgid ""
 "A number that multiply the base size of the text in the title and in the "
 "footer"
 msgstr ""
 "Число, яке множить базовий розмір тексту в заголовку та нижньому колонтитулі"
 
-#: DescendantsLines/DescendantsLines.py:1793
+#: DescendantsLines/DescendantsLines.py:1810
 msgid "Protect People, Images or Events that are marked Private"
 msgstr "Захистити осіб, зображення або події, позначені як приватні"
 
-#: DescendantsLines/DescendantsLines.py:1795
+#: DescendantsLines/DescendantsLines.py:1812
 msgid "The Privacy setting of only these types of Gramps objects are checked"
 msgstr ""
 "Перевіряються налаштування конфіденційності тільки для цих типів об'єктів "
 "Gramps"
 
-#: DescendantsLines/DescendantsLines.py:1799
+#: DescendantsLines/DescendantsLines.py:1816
 msgid "Privacy text"
 msgstr "Текст конфіденційності"
 
-#: DescendantsLines/DescendantsLines.py:1800
+#: DescendantsLines/DescendantsLines.py:1817
 msgid "Text to display in block, when a Person is marked private"
 msgstr ""
 "Текст, який буде відображатися в блоці, якщо особа позначена як приватна"
 
-#: DescendantsLines/DescendantsLines.py:1815
+#: DescendantsLines/DescendantsLines.py:1832
 msgid "The default style."
 msgstr "Стиль за замовчуванням."
 
@@ -4717,7 +4907,7 @@ msgstr "Чи приховувати Gramps ID"
 msgid "List"
 msgstr "Список"
 
-#: DynamicWeb/dynamicweb.py:5002
+#: DynamicWeb/dynamicweb.py:5002 GrampyScript/GrampyScript.py:382
 msgid "Table"
 msgstr "Таблиця"
 
@@ -5964,12 +6154,12 @@ msgstr "Додати цитування до зв’язку DNA %s"
 msgid "The active Person"
 msgstr "Активна особа"
 
-#: FilterRules/activepersonrule.py:47
+#: FilterRules/activepersonrule.py:58
 msgid "Matches the active person"
 msgstr "Відповідає активній особі"
 
-#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
-#: FilterRules/ageatdeath.py:74
+#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:90
+#: FilterRules/ageatdeath.py:92
 msgid "Filter people by their age at death"
 msgstr "Фільтр осіб за віком на момент смерті"
 
@@ -5977,11 +6167,11 @@ msgstr "Фільтр осіб за віком на момент смерті"
 msgid "Filter rule that matches people by their age at death"
 msgstr "Правило фільтрації, яке знаходить осіб за їхнім віком на момент смерті"
 
-#: FilterRules/ageatdeath.py:47
+#: FilterRules/ageatdeath.py:65
 msgid "Age in years at person's death."
 msgstr "Вік у роках на момент смерті особи."
 
-#: FilterRules/ageatdeath.py:71 SourceIndex/birth.glade:544
+#: FilterRules/ageatdeath.py:89 SourceIndex/birth.glade:544
 #: SourceIndex/birth.glade:762 SourceIndex/census.glade:286
 #: SourceIndex/death.glade:521 SourceIndex/death.glade:669
 #: SourceIndex/death.glade:939 SourceIndex/marriage.glade:467
@@ -5993,26 +6183,26 @@ msgstr "Вік:"
 
 #: FilterRules/associationsofpersonmatch.gpr.py:25
 #: FilterRules/associationsofpersonmatch.gpr.py:26
-#: FilterRules/associationsofpersonmatch.py:46
-#: FilterRules/associationsofpersonmatch.py:47
+#: FilterRules/associationsofpersonmatch.py:65
+#: FilterRules/associationsofpersonmatch.py:66
 msgid "Match associations of <person filter>"
 msgstr "Збігаються з асоціаціями <фільтр осіб>"
 
 #: FilterRules/degreesofseparation.gpr.py:25
-#: FilterRules/degreesofseparation.py:60
+#: FilterRules/degreesofseparation.py:79
 msgid "People separated less than <N> degrees of <person>"
 msgstr "Особи, розділені менш ніж на <N> ступенів від <особи>"
 
 #: FilterRules/degreesofseparation.gpr.py:26
-#: FilterRules/degreesofseparation.py:62
+#: FilterRules/degreesofseparation.py:81
 msgid "Filter rule that matches relatives by degrees of separation"
 msgstr "Правило фільтрації, яке знаходить родичів за ступенями спорідненості"
 
-#: FilterRules/degreesofseparation.py:47
+#: FilterRules/degreesofseparation.py:66
 msgid "Number of degrees of separation from person."
 msgstr "Кількість ступенів спорідненості від особи."
 
-#: FilterRules/degreesofseparation.py:59
+#: FilterRules/degreesofseparation.py:78
 msgid "Degrees:"
 msgstr "Ступені:"
 
@@ -6033,7 +6223,7 @@ msgstr "Збігаються з сім'ями, що відповідають ф�
 msgid "People with events with a selected role"
 msgstr "Люди з подіями із вибраною роллю"
 
-#: FilterRules/hasrolerule.gpr.py:28 FilterRules/hasrolerule.py:69
+#: FilterRules/hasrolerule.gpr.py:28 FilterRules/hasrolerule.py:99
 msgid "Matches people with an event with a selected role"
 msgstr "Збігаються з особами, які мають подію з вибраною роллю"
 
@@ -6041,27 +6231,27 @@ msgstr "Збігаються з особами, які мають подію з 
 msgid "Families with events with a selected role"
 msgstr "Сім'ї з подіями, що мають вибрану роль"
 
-#: FilterRules/hasrolerule.gpr.py:44 FilterRules/hasrolerule.py:93
+#: FilterRules/hasrolerule.gpr.py:44 FilterRules/hasrolerule.py:114
 msgid "Matches families with an event with a selected role"
 msgstr "Збігаються з сім'ями, які мають подію з вибраною роллю"
 
-#: FilterRules/hasrolerule.py:55
+#: FilterRules/hasrolerule.py:71
 msgid "Does NOT match with selected Role"
 msgstr "НЕ відповідає вибраній ролі"
 
-#: FilterRules/hasrolerule.py:56
+#: FilterRules/hasrolerule.py:73
 msgid "Finds the items that don't have event Roles of the selected type."
 msgstr "Знаходить елементи, які не мають ролей подій вибраного типу."
 
-#: FilterRules/hasrolerule.py:67 FilterRules/hasrolerule.py:91
+#: FilterRules/hasrolerule.py:97 FilterRules/hasrolerule.py:112
 msgid "Inverse"
 msgstr "Обернене"
 
-#: FilterRules/hasrolerule.py:68
+#: FilterRules/hasrolerule.py:98
 msgid "People with events with the <role>"
 msgstr "Люди з подіями з роллю <роль>"
 
-#: FilterRules/hasrolerule.py:92
+#: FilterRules/hasrolerule.py:113
 msgid "Families with events with the <role>"
 msgstr "Сім'ї з подіями з роллю <роль>"
 
@@ -6078,65 +6268,79 @@ msgid "Matches sources with a particular value"
 msgstr "Збігаються з джерелами, що містять певне значення"
 
 #: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
-#: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
+#: FilterRules/infamilyrule.py:144 FilterRules/infamilyrule.py:145
 msgid "People who are part of families matching <filter>"
 msgstr "Особи, які є частиною сімей, що відповідають <фільтру>"
 
-#: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
+#: FilterRules/infamilyrule.py:67 FilterRules/infamilyrule.py:142
 msgid "Include Children"
 msgstr "Включити дітей"
 
-#: FilterRules/infamilyrule.py:49
+#: FilterRules/infamilyrule.py:68
 msgid "Include the children in the matching families."
 msgstr "Включити дітей у відповідні сім'ї."
 
-#: FilterRules/infamilyrule.py:75 FilterRules/infamilyrule.py:124
+#: FilterRules/infamilyrule.py:94 FilterRules/infamilyrule.py:143
 msgid "Include Parents"
 msgstr "Включити батьків"
 
-#: FilterRules/infamilyrule.py:76
+#: FilterRules/infamilyrule.py:95
 msgid "Include the parents in the matching families."
 msgstr "Включити батьків у відповідні сім'ї."
 
-#: FilterRules/infamilyrule.py:122 FilterRules/isfamilyfiltermatchevent.py:62
+#: FilterRules/infamilyrule.py:141 FilterRules/isfamilyfiltermatchevent.py:81
 msgid "Family Filter name:"
 msgstr "Назва сімейного фільтра:"
 
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:25
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:26
-#: FilterRules/isfamilyfiltermatchevent.py:63
-#: FilterRules/isfamilyfiltermatchevent.py:64
+#: FilterRules/isfamilyfiltermatchevent.py:82
+#: FilterRules/isfamilyfiltermatchevent.py:83
 msgid "Events of families matching a <family filter>"
 msgstr "Події сімей, які відповідають <фільтру сім'ї>"
 
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:27
-#: FilterRules/isrelatedwithfiltermatch.py:53
+#: FilterRules/isrelatedwithfiltermatch.py:65
 msgid "People related to <filter>"
 msgstr "Особи, пов'язані з <фільтр>"
 
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:29
-#: FilterRules/isrelatedwithfiltermatch.py:55
+#: FilterRules/isrelatedwithfiltermatch.py:68
 msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
 "Збігаються з особами, які пов'язані з будь-ким, кого знайшов фільтр осіб"
+
+#: FilterRules/matchpersonfilterrole.gpr.py:7
+msgid "Events from people with role"
+msgstr ""
+
+#: FilterRules/matchpersonfilterrole.gpr.py:8
+#, fuzzy
+#| msgid "Matches people with an event with a selected role"
+msgid "Matches event of people filter with role"
+msgstr "Збігаються з особами, які мають подію з вибраною роллю"
+
+#: FilterRules/matchpersonfilterrole.py:69
+msgid "Role:"
+msgstr ""
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
 msgstr "Фільтр осіб із кількома батьками"
 
-#: FilterRules/multipleparents.py:42
+#: FilterRules/multipleparents.py:55
 msgid "People with multiple parent records"
 msgstr "Особи з кількома записами батьків"
 
-#: FilterRules/multipleparents.py:43
+#: FilterRules/multipleparents.py:56
 msgid "Matches people who have more than one set of parents"
 msgstr "Збігаються з особами, які мають більше ніж один набір батьків"
 
-#: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:50
+#: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:71
 msgid "People with <count> of <event>"
 msgstr "Особи з <кількістю> подій <подія>"
 
-#: FilterRules/peopleeventscount.gpr.py:26 FilterRules/peopleeventscount.py:52
+#: FilterRules/peopleeventscount.gpr.py:26 FilterRules/peopleeventscount.py:72
 msgid "Matches persons which have events of given type and number."
 msgstr "Збігаються з особами, які мають події заданого типу та кількості."
 
@@ -6268,32 +6472,77 @@ msgstr "Пошук можливих координат із символом \",
 msgid "Fix coords"
 msgstr "Виправити координати"
 
-#: Form/editform.py:181
+#: Form/CensusCheckQuickview.gpr.py:9
+#, fuzzy
+#| msgid "Censuses"
+msgid "CensusCheck"
+msgstr "Переписи"
+
+#: Form/CensusCheckQuickview.gpr.py:10
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"descendents"
+msgstr ""
+
+#: Form/CensusCheckQuickview.gpr.py:23
+#, fuzzy
+#| msgid "Censuses"
+msgid "CensusCheckUp"
+msgstr "Переписи"
+
+#: Form/CensusCheckQuickview.gpr.py:24
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"ancestors"
+msgstr ""
+
+#: Form/CensusCheckQuickview.py:122 Form/CensusCheckUpQuickview.py:122
+#, python-format
+msgid "Census Check for %s"
+msgstr ""
+
+#: Form/editform.py:191
 #, python-format
 msgid "Form: %s"
 msgstr "Форма: %s"
 
-#: Form/editform.py:183
+#: Form/editform.py:193
 msgid "New Form"
 msgstr "Нова форма"
 
-#: Form/editform.py:190
+#: Form/editform.py:200
 msgid "Edit Form"
 msgstr "Редагувати форму"
 
-#: Form/editform.py:225 SourceIndex/birth.glade:113
+#: Form/editform.py:235 SourceIndex/birth.glade:113
 #: SourceIndex/census.glade:873 SourceIndex/death.glade:182
 #: SourceIndex/marriage.glade:1263
 msgid "Reference:"
 msgstr "Посилання:"
 
-#: Form/editform.py:421
+#: Form/editform.py:431
 msgid "Headings"
 msgstr "Заголовки"
 
-#: Form/form.py:65
+#: Form/form.py:82
 msgid "Form"
 msgstr "Форма"
+
+#: Form/form.py:173
+msgid "XML syntax error in Form definition file"
+msgstr ""
+
+#: Form/form.py:184
+#, fuzzy
+#| msgid "Failed to read proto file %s: %s"
+msgid "Failed to read Form definition file"
+msgstr "Не вдалося прочитати файл прототипу %s: %s"
+
+#: Form/form.py:193
+#, fuzzy
+#| msgid "Invalid Destination Directory"
+msgid "Invalid Form definition file"
+msgstr "Некоректний каталог призначення"
 
 #: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
 #: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
@@ -7738,7 +7987,7 @@ msgstr "13. Рік натуралізації, якщо раніше був ін
 #: Form/form_ca.xml.h:838 Form/form_us.xml.h:904 Form/form_us.xml.h:979
 #: Form/form_us.xml.h:1139 Form/form_us.xml.h:1147 Form/form_us.xml.h:2358
 #: Form/form_us.xml.h:2364 Form/form_us.xml.h:2437 Form/form_us.xml.h:2467
-#: Form/form_us.xml.h:2561
+#: Form/form_us.xml.h:2579
 msgid "Race"
 msgstr "Раса"
 
@@ -8805,7 +9054,7 @@ msgstr "Робоче місце"
 #: Form/form_dk.xml.h:345 Form/form_dk.xml.h:371 Form/form_dk.xml.h:395
 #: Form/form_dk.xml.h:417 Form/form_dk.xml.h:435 Form/form_gb.xml.h:50
 #: Form/form_us.xml.h:985 Form/form_us.xml.h:1009 Form/form_us.xml.h:2374
-#: Form/form_us.xml.h:2556
+#: Form/form_us.xml.h:2563
 msgid "Date of Birth"
 msgstr "Дата народження"
 
@@ -9036,7 +9285,7 @@ msgstr "Дівоче прізвище одруженої жінки"
 #: Form/form_gb.xml.h:51 Form/form_us.xml.h:986 Form/form_us.xml.h:1008
 #: Form/form_us.xml.h:1141 Form/form_us.xml.h:1155 Form/form_us.xml.h:1452
 #: Form/form_us.xml.h:2375 Form/form_us.xml.h:2488 Form/form_us.xml.h:2513
-#: Form/form_us.xml.h:2557
+#: Form/form_us.xml.h:2565
 msgid "Place of Birth"
 msgstr "Місце народження"
 
@@ -10415,7 +10664,7 @@ msgstr "Вартість нерухомості"
 #: Form/form_us.xml.h:1525 Form/form_us.xml.h:1542 Form/form_us.xml.h:1563
 #: Form/form_us.xml.h:1585 Form/form_us.xml.h:1611 Form/form_us.xml.h:1657
 #: Form/form_us.xml.h:1870 Form/form_us.xml.h:2336 Form/form_us.xml.h:2353
-#: Form/form_us.xml.h:2528 Form/form_us.xml.h:2577
+#: Form/form_us.xml.h:2528 Form/form_us.xml.h:2599
 msgid "Place of birth"
 msgstr "Місце народження"
 
@@ -11392,7 +11641,7 @@ msgstr "Ранг"
 
 #: Form/form_us.xml.h:650 Form/form_us.xml.h:1489 Form/form_us.xml.h:1534
 #: Form/form_us.xml.h:2093 Form/form_us.xml.h:2129 Form/form_us.xml.h:2167
-#: Form/form_us.xml.h:2205 Form/form_us.xml.h:2587
+#: Form/form_us.xml.h:2205 Form/form_us.xml.h:2609
 msgid "Company"
 msgstr "Компанія"
 
@@ -11440,7 +11689,7 @@ msgid "Ward of city"
 msgstr "Район міста"
 
 #: Form/form_us.xml.h:670 Form/form_us.xml.h:755 Form/form_us.xml.h:795
-#: Form/form_us.xml.h:838 Form/form_us.xml.h:1069 Form/form_us.xml.h:2594
+#: Form/form_us.xml.h:838 Form/form_us.xml.h:1069 Form/form_us.xml.h:2616
 msgid "Street Address"
 msgstr "Адреса вулиці"
 
@@ -12342,7 +12591,7 @@ msgstr "Якщо ні, надайте відповідну інформацію"
 msgid "Witness name and P.O Address"
 msgstr "Ім'я свідка та поштова адреса"
 
-#: Form/form_us.xml.h:1061 Form/form_us.xml.h:2599
+#: Form/form_us.xml.h:1061 Form/form_us.xml.h:2621
 msgid "Widow of"
 msgstr "Вдова"
 
@@ -14419,12 +14668,12 @@ msgid "Legitimate"
 msgstr "Законнонароджений"
 
 #: Form/form_us.xml.h:2369 Form/form_us.xml.h:2390 Form/form_us.xml.h:2483
-#: Form/form_us.xml.h:2570
+#: Form/form_us.xml.h:2592
 msgid "Place of Record"
 msgstr "Місце запису"
 
 #: Form/form_us.xml.h:2370 Form/form_us.xml.h:2391 Form/form_us.xml.h:2484
-#: Form/form_us.xml.h:2571
+#: Form/form_us.xml.h:2593
 msgid "Book/Volume"
 msgstr "Книга/Том"
 
@@ -14598,10 +14847,6 @@ msgstr "Вік у роках"
 msgid "Home Address"
 msgstr "Домашня адреса"
 
-#: Form/form_us.xml.h:2529
-msgid "Citizenship"
-msgstr "Громадянство"
-
 #: Form/form_us.xml.h:2530
 msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
 msgstr ""
@@ -14612,7 +14857,7 @@ msgstr ""
 msgid "If not a citizen, of what nation are you a citizen or subject?"
 msgstr "Якщо не громадянин, то якої нації ви є громадянином або підданим?"
 
-#: Form/form_us.xml.h:2533 Form/form_us.xml.h:2559
+#: Form/form_us.xml.h:2533 Form/form_us.xml.h:2575
 msgid "Employer's Name & address"
 msgstr "Назва та адреса роботодавця"
 
@@ -14656,11 +14901,11 @@ msgstr "Колір волосся"
 msgid "Bald"
 msgstr "Лисий"
 
-#: Form/form_us.xml.h:2547 Form/form_us.xml.h:2569
+#: Form/form_us.xml.h:2547 Form/form_us.xml.h:2591
 msgid "Place of Registration"
 msgstr "Місце реєстрації"
 
-#: Form/form_us.xml.h:2548 Form/form_us.xml.h:2568
+#: Form/form_us.xml.h:2548 Form/form_us.xml.h:2590
 msgid "Date of Registration"
 msgstr "Дата реєстрації"
 
@@ -14672,103 +14917,260 @@ msgstr "Серійний номер"
 msgid "Order Number"
 msgstr "Номер замовлення"
 
+#: Form/form_us.xml.h:2551
+#, fuzzy
+#| msgid "Registration No."
+msgid "Registration Card"
+msgstr "Номер реєстрації"
+
 #: Form/form_us.xml.h:2552
+msgid ""
+"Found in lower left corner\n"
+"      D.S.S. Form 1\n"
+"        (Men 21 - 31)\n"
+"      D.S.S. Form 1 (Rev. 6-9-41)\n"
+"        (Men who turned 21 since 1st registration)\n"
+"      D.S.S. Form 1 (Rev. 1/1/42)\n"
+"        (Men born Feb 17, 1897 to Dec 31 1921)\n"
+"      D.S.S. Form 1 (Rev. 4/1/42)\n"
+"        (Men 45-64)\n"
+"      D.S.S. Form 1 (Rev. 6/1/42)\n"
+"        (Men 18-20)\n"
+"      D.S.S. Form 1 (Rev. 11/16/42)\n"
+"        (Men who turned 18 since\n"
+"         previous registration)"
+msgstr ""
+
+#: Form/form_us.xml.h:2554
+msgid "(1) First, Middle, Last"
+msgstr ""
+
+#: Form/form_us.xml.h:2555
 msgid "Place of Residence"
 msgstr "Місце проживання"
 
-#: Form/form_us.xml.h:2553
+#: Form/form_us.xml.h:2556
+msgid ""
+"(2) Address or Place of Residence\n"
+" No. and street or R.F.D. No., Town, County, State"
+msgstr ""
+
+#: Form/form_us.xml.h:2557
 msgid "Mailing Address"
 msgstr "Поштова адреса"
 
-#: Form/form_us.xml.h:2554
+#: Form/form_us.xml.h:2558
+msgid ""
+" Not used on D.S.S. Form 1\n"
+" (3) Used on all other forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2559
 msgid "Telephone"
 msgstr "Телефон"
 
-#: Form/form_us.xml.h:2555
+#: Form/form_us.xml.h:2560
+msgid ""
+"(3) On D.S.S. Form 1\n"
+"(4) On all other forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2561
 msgid "Age in years"
 msgstr "Вік у роках"
 
-#: Form/form_us.xml.h:2558
+#: Form/form_us.xml.h:2562
+msgid ""
+"(4) On D.S.S. Form 1\n"
+"(5) On all other forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2564
+#, fuzzy
+#| msgid "Age in years"
+msgid "(Below Age in Years)"
+msgstr "Вік у роках"
+
+#: Form/form_us.xml.h:2566
+msgid ""
+"(5) On D.S.S. Form 1\n"
+"(6) On all other forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2567
+#, fuzzy
+#| msgid "Citizenship"
+msgid "Country of Citizenship"
+msgstr "Громадянство"
+
+#: Form/form_us.xml.h:2568
+msgid ""
+"(6) On D.S.S. Form 1\n"
+"Not used on other forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2569
 msgid "Who will always know your address (Name & Address)"
 msgstr "Хто завжди знатиме вашу адресу (ім'я та адреса)"
 
-#: Form/form_us.xml.h:2560
+#: Form/form_us.xml.h:2570
+msgid ""
+"(7 & 9) On D.S.S. Form 1\n"
+"(7) On all but D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) On D.S.S. Form 1 (Rev. 6-9-41)"
+msgstr ""
+
+#: Form/form_us.xml.h:2571
+#, fuzzy
+#| msgid "Relationship Type"
+msgid "Relationship "
+msgstr "Тип відносин"
+
+#: Form/form_us.xml.h:2572
+msgid "(8) Only on D.S.S. Form 1"
+msgstr ""
+
+#: Form/form_us.xml.h:2573
+#, fuzzy
+#| msgid "Occupation:"
+msgid "Occupation "
+msgstr "Професія:"
+
+#: Form/form_us.xml.h:2574
+msgid "(7) Only on D.S.S. Form 1 (Rev. 6-9-41)"
+msgstr ""
+
+#: Form/form_us.xml.h:2576
+msgid ""
+"(10) On D.S.S. Form 1\n"
+"(9) On D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) on all others forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2577
 msgid "Place of employment or business"
 msgstr "Місце роботи або бізнесу"
 
-#: Form/form_us.xml.h:2564 Form/form_us.xml.h:2582
+#: Form/form_us.xml.h:2578
+msgid ""
+"(11) On D.S.S. Form 1\n"
+"(10) On D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(9) on all others forms"
+msgstr ""
+
+#: Form/form_us.xml.h:2580
+msgid ""
+"White\n"
+"Negro\n"
+"Oriental\n"
+"Indian\n"
+"Filipino"
+msgstr ""
+
+#: Form/form_us.xml.h:2583 Form/form_us.xml.h:2604
 msgid "Complexion"
 msgstr "Колір обличчя"
 
-#: Form/form_us.xml.h:2565
+#: Form/form_us.xml.h:2584
+msgid ""
+"Sallow\n"
+"Light\n"
+"Ruddy\n"
+"Dark\n"
+"Freckled\n"
+"Light brown\n"
+"Dark brown\n"
+"Black"
+msgstr ""
+
+#: Form/form_us.xml.h:2585
 msgid "Eyes"
 msgstr "Очі"
 
-#: Form/form_us.xml.h:2566
+#: Form/form_us.xml.h:2586
+msgid ""
+"Blue\n"
+"Gray\n"
+"Hazel\n"
+"Brown\n"
+"Black"
+msgstr ""
+
+#: Form/form_us.xml.h:2587
 msgid "Hair"
 msgstr "Волосся"
 
-#: Form/form_us.xml.h:2567
+#: Form/form_us.xml.h:2588
+msgid ""
+"Blonde\n"
+"Red\n"
+"Brown\n"
+"Black\n"
+"Gray\n"
+"Bald"
+msgstr ""
+
+#: Form/form_us.xml.h:2589
 msgid "Other characteristics"
 msgstr "Інші характеристики"
 
-#: Form/form_us.xml.h:2574
+#: Form/form_us.xml.h:2596
 msgid "Date entered"
 msgstr "Дата вступу"
 
-#: Form/form_us.xml.h:2575
+#: Form/form_us.xml.h:2597
 msgid "Place entered"
 msgstr "Місце вступу"
 
-#: Form/form_us.xml.h:2576
+#: Form/form_us.xml.h:2598
 msgid "Term of enlistment"
 msgstr "Термін служби"
 
-#: Form/form_us.xml.h:2580
+#: Form/form_us.xml.h:2602
 msgid "Eye color"
 msgstr "Колір очей"
 
-#: Form/form_us.xml.h:2581
+#: Form/form_us.xml.h:2603
 msgid "Hair color"
 msgstr "Колір волосся"
 
-#: Form/form_us.xml.h:2584
+#: Form/form_us.xml.h:2606
 msgid "Rank in"
 msgstr "Звання на момент вступу"
 
-#: Form/form_us.xml.h:2585
+#: Form/form_us.xml.h:2607
 msgid "Branch"
 msgstr "Галузь служби"
 
-#: Form/form_us.xml.h:2586
+#: Form/form_us.xml.h:2608
 msgid "Regiment/Unit/Ship"
 msgstr "Полк/Підрозділ/Корабель"
 
-#: Form/form_us.xml.h:2588
+#: Form/form_us.xml.h:2610
 msgid "Service Number"
 msgstr "Службовий номер"
 
-#: Form/form_us.xml.h:2589
+#: Form/form_us.xml.h:2611
 msgid "No. of enlistment"
 msgstr "Номер зарахування"
 
-#: Form/form_us.xml.h:2590
+#: Form/form_us.xml.h:2612
 msgid "Date discharged"
 msgstr "Дата звільнення"
 
-#: Form/form_us.xml.h:2591
+#: Form/form_us.xml.h:2613
 msgid "Place discharged"
 msgstr "Місце звільнення"
 
-#: Form/form_us.xml.h:2592
+#: Form/form_us.xml.h:2614
 msgid "Rank out"
 msgstr "Звання на момент звільнення"
 
-#: Form/form_us.xml.h:2597
+#: Form/form_us.xml.h:2619
 msgid "Industry/Employer"
 msgstr "Промисловість/Роботодавець"
 
-#: Form/form_us.xml.h:2600
+#: Form/form_us.xml.h:2622
 msgid "Residents Status"
 msgstr "Статус мешканця"
 
@@ -15112,8 +15514,10 @@ msgid "GOV error on id %s with code: "
 msgstr "Помилка GOV для ID %s з кодом: "
 
 #: GetGOV/getgov.py:555
-#, python-format
-msgid "from %s to %s"
+#, fuzzy, python-format
+#| msgid "from %s to %s"
+msgctxt "end"
+msgid "from %(begin)s to %(end)s"
 msgstr "з %s до %s"
 
 #: GetGOV/getgov.py:557
@@ -15172,6 +15576,14 @@ msgid ""
 msgstr ""
 "Перезаписати kmz/kml файл ''%s''\n"
 "у домашньому каталозі користувача ''%s''?"
+
+#: GrampsChat/GrampsChat.gpr.py:4 GrampsChat/GrampsChat.gpr.py:9
+msgid "GrampsChat"
+msgstr ""
+
+#: GrampsChat/GrampsChat.gpr.py:5
+msgid "AI Chatbot Gramplet (requires connecting to an LLM service)"
+msgstr ""
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:116
 #: GrampsWebSync/grampswebsync.py:209
@@ -15387,11 +15799,6 @@ msgstr "Об'єднати"
 msgid "Local changes"
 msgstr "Локальні зміни"
 
-#: GrampsWebSync/grampswebsync.py:900 GrampsWebSync/grampswebsync.py:905
-#: GrampsWebSync/grampswebsync.py:907
-msgid "Modified"
-msgstr "Змінено"
-
 #: GrampsWebSync/grampswebsync.py:902
 msgid "Remote changes"
 msgstr "Віддалені зміни"
@@ -15452,6 +15859,79 @@ msgstr[0] "Відвантаження %s медіафайлу"
 msgstr[1] "Відвантаження %s медіафайлів"
 msgstr[2] "Відвантаження %s медіафайлів"
 
+#: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
+msgid "Gram.py Script"
+msgstr ""
+
+#: GrampyScript/GrampyScript.gpr.py:24
+msgid "Run a special Gramps Python script"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:91
+#, fuzzy
+#| msgid "Loaded from file: %s"
+msgid "Load query from a .script file"
+msgstr "Завантажено з файлу: %s"
+
+#: GrampyScript/GrampyScript.py:121
+#, fuzzy
+#| msgid "Save tree as file"
+msgid "Save query to a .script file"
+msgstr "Зберегти дерево як файл"
+
+#: GrampyScript/GrampyScript.py:141
+#, fuzzy
+#| msgid "Downloading %s media file"
+#| msgid_plural "Downloading %s media files"
+msgid "Download results as a CSV file"
+msgstr "Завантаження %s медіафайл"
+
+#: GrampyScript/GrampyScript.py:303
+#, fuzzy
+#| msgid "OpenAI"
+msgid "Open..."
+msgstr "OpenAI"
+
+#: GrampyScript/GrampyScript.py:305
+#, fuzzy
+#| msgid "Save images in ..."
+msgid "Save as..."
+msgstr "Зберегти зображення в ..."
+
+#: GrampyScript/GrampyScript.py:319
+msgid "Save as CSV"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:320
+#, fuzzy
+#| msgid "Copy link to clipboard"
+msgid "Copy to clipboard"
+msgstr "Скопіювати посилання у буфер обміну"
+
+#: GrampyScript/GrampyScript.py:395
+#, fuzzy
+#| msgid "Quilt Chart"
+msgid "Chart"
+msgstr "Діаграма Quilt"
+
+#: GrampyScript/GrampyScript.py:400
+msgid "Execute <Alt+Enter>"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:402
+msgid "Execute the script"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:416
+#, fuzzy
+#| msgid "Read"
+msgid "Ready..."
+msgstr "Читає"
+
+#: GrampyScript/GrampyScript.py:1028
+msgid "Gram.py Script Edited Data"
+msgstr ""
+
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
 msgstr "Темний (за замовчуванням)"
@@ -15467,6 +15947,18 @@ msgstr "Мультфільм"
 #: GraphView/avatars.py:63
 msgid "Modern"
 msgstr "Сучасний"
+
+#: GraphView/avatars.py:65
+msgid "Generic (dark)"
+msgstr ""
+
+#: GraphView/avatars.py:66
+msgid "Generic (gray)"
+msgstr ""
+
+#: GraphView/avatars.py:67
+msgid "Generic (light)"
+msgstr ""
 
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
 #: GraphView/graphview.py:189
@@ -15657,14 +16149,6 @@ msgstr "Закладки для поточного графа"
 #: GraphView/graphview.py:1133
 msgid "Other Bookmarks"
 msgstr "Інші закладки"
-
-#: GraphView/graphview.py:1164
-msgid "Ancestor generations"
-msgstr "Покоління предків"
-
-#: GraphView/graphview.py:1168
-msgid "Descendant generations"
-msgstr "Покоління нащадків"
 
 #: GraphView/graphview.py:1179
 msgid "Vertical spacing between generations"
@@ -16436,10 +16920,6 @@ msgstr "Імпортувати та обʼєднати Gramps XML"
 msgid "Missing"
 msgstr "Відсутнє"
 
-#: ImportMerge/importmerge.py:94
-msgid "Different"
-msgstr "Відрізняється"
-
 #: ImportMerge/importmerge.py:109
 msgid "Delete original"
 msgstr "Видалити оригінал"
@@ -16577,7 +17057,7 @@ msgstr "Імпорт JSON"
 msgid "This is a JSON import"
 msgstr "Це імпорт JSON"
 
-#: JSON/JSONImport.py:56
+#: JSON/JSONImport.py:69
 msgid "JSON import"
 msgstr "Імпорт JSON"
 
@@ -17451,10 +17931,6 @@ msgid "Check media paths and report missing, duplicate and extra files"
 msgstr ""
 "Перевіряє шляхи до медіа та повідомляє про відсутні, дублікати і зайві файли"
 
-#: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
-msgid "Export"
-msgstr "Експорт"
-
 #: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
 msgid "Export the results to a text file"
 msgstr "Експортувати результати у текстовий файл"
@@ -18283,10 +18759,6 @@ msgstr "Огляд особи"
 msgid "Gramplet showing an overview of events for a person"
 msgstr "Грамплет, що показує огляд подій для особи"
 
-#: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
-msgid "Overview"
-msgstr "Огляд"
-
 #: Overview/Overview.gpr.py:45
 msgid "Family Overview"
 msgstr "Огляд родини"
@@ -18303,48 +18775,54 @@ msgstr "Грамплет, що показує учасників у події"
 msgid "Double-click on a row to edit the selected participant."
 msgstr "Двічі клацніть на рядок, щоб редагувати вибраного учасника."
 
-#: PedigreeChart/PedigreeChart.gpr.py:25
+#: PedigreeChart/PedigreeChart.gpr.py:32
 msgid "Pedigree Chart"
 msgstr "Родовідна діаграма"
 
-#: PedigreeChart/PedigreeChart.gpr.py:26
+#: PedigreeChart/PedigreeChart.gpr.py:33
 msgid "Alternate version of the traditional pedigree chart."
 msgstr "Альтернативна версія традиційної родовідної діаграми."
 
-#: PedigreeChart/PedigreeChart.py:379
+#: PedigreeChart/PedigreeChart.py:391
 #, python-format
 msgid "Pedigree Chart for %s"
 msgstr "Родовідна діаграма для %s"
 
-#: PedigreeChart/PedigreeChart.py:528
+#: PedigreeChart/PedigreeChart.py:585
 #, python-format
 msgid "Page %d"
 msgstr "Сторінка %d"
 
-#: PedigreeChart/PedigreeChart.py:640
+#: PedigreeChart/PedigreeChart.py:714
 msgid "Show Mother/Father captions"
 msgstr "Показувати підписи Мати/Батько"
 
-#: PedigreeChart/PedigreeChart.py:641
+#: PedigreeChart/PedigreeChart.py:715
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr "Показувати підпис мати або батько поруч із кожним полем предка."
 
-#: PedigreeChart/PedigreeChart.py:657
+#: PedigreeChart/PedigreeChart.py:718
 #, fuzzy
 #| msgid "Show places"
 msgid "Show page numbers"
 msgstr "Показати місця"
 
-#: PedigreeChart/PedigreeChart.py:658
+#: PedigreeChart/PedigreeChart.py:719
 msgid "Add a footer on every page with the page number and date printed."
 msgstr ""
 
-#: PedigreeChart/PedigreeChart.py:662
+#: PedigreeChart/PedigreeChart.py:740
 msgid "The basic style used for the title display."
 msgstr "Основний стиль, що використовується для відображення заголовків."
 
-#: PedigreeChart/PedigreeChart.py:671
-msgid "Style used for labels and captions"
+#: PedigreeChart/PedigreeChart.py:749
+msgid "Style used for names (only for PDF document and PostScript)."
+msgstr ""
+
+#: PedigreeChart/PedigreeChart.py:758
+#, fuzzy
+#| msgid "Style used for labels and captions"
+msgid "Style used for labels and captions."
 msgstr "Стиль, що використовується для етикеток та підписів"
 
 #: PersonEverything/PersonEverything.gpr.py:32
@@ -19737,15 +20215,15 @@ msgstr "Створення індексів..."
 msgid "Upgrade completed!"
 msgstr "Оновлення завершено!"
 
-#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:33
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:28
 msgid "PostgreSQL Enhanced"
 msgstr "Покращений PostgreSQL"
 
-#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:34
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:29
 msgid "PostgreSQL _Enhanced Database"
 msgstr "Розширена база даних PostgreSQL"
 
-#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:36
+#: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:31
 msgid ""
 "Advanced PostgreSQL backend with JSONB storage, graph database support "
 "(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
@@ -19838,7 +20316,7 @@ msgstr "Перевірка передумов"
 msgid "Prerequisites Checker Gramplet"
 msgstr "Грамплет перевірки передумов"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:143
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:144
 msgid ""
 "Diagnostic Gramplet to help evaluate if <a href=\"https://gramps-project.org/"
 "\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
@@ -19848,7 +20326,7 @@ msgstr ""
 "project.org/\">Gramps</a> усі необхідні <a href=\"https://github.com/gramps-"
 "project/gramps/blob/master/README.md\">залежності</a> встановлені.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:153
 msgid ""
 "Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
 "installed."
@@ -19856,7 +20334,7 @@ msgstr ""
 "Діагностичний грамплет для перевірки, чи всі передумови для Gramps "
 "встановлено."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:181
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:186
 msgid ""
 "\n"
 "<u><b>REQUIRED</b></u>\n"
@@ -19864,7 +20342,7 @@ msgstr ""
 "\n"
 "<u><b>ОБОВ'ЯЗКОВО</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:183
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:189
 msgid ""
 "<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
 " (Requires the minimum version or greater.)</i>:\n"
@@ -19872,7 +20350,7 @@ msgstr ""
 "<i>Встановлення наступних пакетів є <b>ОБОВ’ЯЗКОВИМ</b>\"\n"
 " (Потрібна мінімальна або новіша версія.)</i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:208
 msgid ""
 "\n"
 "<u><b>RECOMMENDED</b></u>\n"
@@ -19880,7 +20358,7 @@ msgstr ""
 "\n"
 "<u><b>РЕКОМЕНДУЄТЬСЯ</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:202
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:211
 msgid ""
 "<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
 "as necessary for Geography and Charts</i>:\n"
@@ -19888,7 +20366,7 @@ msgstr ""
 "<i>Встановлення наступних пакетів <b>НАСТІЙНО РЕКОМЕНДУЄТЬСЯ</b>, оскільки "
 "вони необхідні для географії та діаграм</i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:215
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:226
 msgid ""
 "\n"
 "<u><b>Optional</b></u>\n"
@@ -19896,22 +20374,22 @@ msgstr ""
 "\n"
 "<u><b>Необов'язкові</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:217
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:229
 msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
 msgstr "<i>Встановлення наступних пакетів є <b>необов’язковим</b></i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:220
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:234
 msgid "Gtkspell enables spell checking in the notes.\n"
 msgstr "Gtkspell дозволяє перевірку орфографії в нотатках.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:225
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:240
 msgid ""
 "Python Image Library (PIL) is needed for cropping images and LaTeX output."
 msgstr ""
 "Для обрізки зображень та виведення в LaTeX потрібна бібліотека Python Image "
 "Library (PIL)."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:238
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:256
 msgid ""
 "\n"
 "<u><b>Development & Translation Requirements</b></u>\n"
@@ -19919,7 +20397,7 @@ msgstr ""
 "\n"
 "<u><b>Вимоги до розробки та перекладу</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:241
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:260
 msgid ""
 "<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
 "intend to translate or do any development (addons etc.)</i>:\n"
@@ -19927,7 +20405,7 @@ msgstr ""
 "<i>Встановлення наступних пакетів <b>РЕКОМЕНДУЄТЬСЯ</b>, якщо ви плануєте "
 "перекладати або займатися розробкою (доповнення тощо)</i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:272
 msgid ""
 "\n"
 "<u><b>Optional packages required by Third-party Addons</b></u>\n"
@@ -19935,7 +20413,7 @@ msgstr ""
 "\n"
 "<u><b>Необов'язкові пакети, необхідні для сторонніх доповнень</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:253
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:276
 msgid ""
 "<i>Prerequistes required for the following <a href=\"https://gramps-"
 "project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
@@ -19945,7 +20423,7 @@ msgstr ""
 "project.org/wiki/index.php?title=Third-party_Addons\">сторонніх доповнень</"
 "a></i>:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:300
 msgid ""
 "\n"
 "<u><b>Diagnostic checks</b></u>\n"
@@ -19953,11 +20431,11 @@ msgstr ""
 "\n"
 "<u><b>Діагностичні перевірки</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:276
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:301
 msgid "Check for potential issues.\n"
 msgstr "Перевірка потенційних проблем.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:277
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:302
 msgid ""
 "\n"
 "Environment settings:\n"
@@ -19965,7 +20443,7 @@ msgstr ""
 "\n"
 "Налаштування середовища:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:282
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:307
 msgid ""
 "\n"
 "\n"
@@ -19975,7 +20453,7 @@ msgstr ""
 "\n"
 "<u><b>Доступні локалі:</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:287
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:311
 msgid ""
 "\n"
 "<u><b>Back Up Your Genealogy Files.</b></u>\n"
@@ -19983,7 +20461,7 @@ msgstr ""
 "\n"
 "<u><b>Зробіть резервну копію своїх генеалогічних файлів.</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:288
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:314
 msgid ""
 "If you have a reason to be checking Prerequisites, it is the right time to "
 "back up your genealogy files, and then test your backups!\n"
@@ -19993,7 +20471,7 @@ msgstr ""
 "ваших генеалогічних файлів, а потім перевірити її!\n"
 "\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:292
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:321
 msgid ""
 "<i><a href=\"https://gramps-project.org/wiki/index.php?"
 "title=How_to_make_a_backup\">Backup to Gramps XML</a> You will find \"Make "
@@ -20010,7 +20488,7 @@ msgstr ""
 "експортувати всі дані.</i>\n"
 "\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:298
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:331
 msgid ""
 " • Backups can be made at any time and, at a minimum, on the first day of "
 "every month. But preferrably more often.\n"
@@ -20018,7 +20496,7 @@ msgstr ""
 " • Резервні копії можна створювати у будь-який час, і, як мінімум, у перший "
 "день кожного місяця. Але бажано частіше.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:300
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:337
 msgid ""
 " • It is strongly recommended to backup each of your Family Trees before any "
 "upgrade.\n"
@@ -20026,7 +20504,7 @@ msgstr ""
 " • Настійно рекомендується створювати резервні копії кожного з ваших "
 "родинних дерев перед будь-яким оновленням.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:302
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:343
 msgid ""
 " • Test your backups by creating a new Family Tree and then importing the "
 "backup."
@@ -20034,11 +20512,11 @@ msgstr ""
 " • Перевірте свої резервні копії, створивши нове родинне дерево та "
 "імпортувавши резервну копію."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:321
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:365
 msgid ", is the most current version.\n"
 msgstr ", це найновіша версія.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:339
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:387
 #, python-format
 msgid ""
 "You have Gramps %s. Please make a backup and then upgrade.\n"
@@ -20048,7 +20526,7 @@ msgstr ""
 "оновіть.\n"
 "%s"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:343
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:392
 #, python-format
 msgid ""
 "You have Gramps %s installed; an unreleased development version. Thank you "
@@ -20059,89 +20537,93 @@ msgstr ""
 "за ваш внесок і тестування; будь ласка, повідомляйте про будь-які проблеми. "
 "Резервні копії — ваші друзі.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:351
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:402
 #, python-format
 msgid "You have Gramps %s. Congratulations, you have the current version.\n"
 msgstr "У вас встановлено Gramps %s. Вітаємо, у вас найновіша версія.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:378
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:452
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:504
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:548
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:597
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:748
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:953
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1160
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:430
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:460
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:541
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:603
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:656
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:724
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:908
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1128
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1349
 msgid " (Requires version "
 msgstr " (Потрібна версія "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:379
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:387
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:457
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:511
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:554
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:566
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:602
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:431
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:439
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:461
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:469
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:552
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:614
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:667
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:688
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:735
 msgid " or greater installed.)\n"
 msgstr " або новіша встановлена.)\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:386
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:456
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:509
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:552
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:564
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:601
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:744
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:948
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1156
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:438
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:468
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:550
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:612
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:665
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:686
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:733
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:900
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1118
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1341
 msgid " (Passed: version "
 msgstr " (Успішно: версія "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:414
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:479
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:538
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:539
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:587
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:735
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:797
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:798
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1107
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:500
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:576
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:643
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:644
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:711
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:889
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:961
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:962
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1290
 msgid "unknown version"
 msgstr "невідома версія"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:422
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:508
 msgid "DISPLAY not set"
 msgstr "DISPLAY не встановлено"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:453
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:505
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:549
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:561
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:598
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:543
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:605
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:658
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:679
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:726
 msgid " or greater.)\n"
 msgstr " або новіша.)\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:560
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:677
 msgid " (Requires "
 msgstr " (Потрібна "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:650
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:791
 msgid " • Berkeley Database library (bsddb3: "
 msgstr " • Бібліотека бази даних Berkeley (bsddb3: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:675
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:822
 msgid " • SQLite Database library (sqlite3: "
 msgstr " • Бібліотека бази даних SQLite (sqlite3: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:689
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:839
 msgid " • xdg-utils (Manual check see instructions link)"
 msgstr " • xdg-utils (Ручна перевірка, див. посилання з інструкцією)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:702
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:852
 msgid " • librsvg2 (Manual check see instructions link)"
 msgstr " • librsvg2 (Ручна перевірка, див. посилання з інструкцією)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:713
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:864
 msgid ""
 " • language-pack-gnome-xx (Manual check see instructions link) for your "
 "Language <show locale here TBD>"
@@ -20149,49 +20631,49 @@ msgstr ""
 " • language-pack-gnome-xx (Ручна перевірка, див. посилання з інструкцією) "
 "для вашої мови <показати локаль тут (TBD)>"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:745
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1157
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1161
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1560
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1565
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1759
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:902
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1343
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1351
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1793
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1802
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2016
 msgid " or greater installed.)"
 msgstr " або новіша встановлена.)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:749
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:910
 msgid " or greater)"
 msgstr " або новіша)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:780
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:943
 msgid "Graphviz not in system PATH"
 msgstr "Graphviz не в системному шляху (PATH)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:848
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1009
 msgid "Ghostscript not in system PATH"
 msgstr "Ghostscript не в системному шляху (PATH)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:863
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1027
 msgid " (Passed: version 0.5.x is installed.)"
 msgstr " (Успішно: встановлено версію 0.5.x.)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:866
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1030
 msgid " (Requires version 0.5.x)"
 msgstr " (Потрібна версія 0.5.x)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:869
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1032
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
 msgstr " • python-fontconfig не знайдено, (потрібна версія 0.5.x)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:871
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1034
 msgid " • python-fontconfig installed, version unavailable"
 msgstr " • python-fontconfig встановлено, версія недоступна"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:950
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:955
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1120
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
 msgid " or greater installed.) (enchant module: "
 msgstr " або новіша встановлена.) (модуль enchant: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1011
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1189
 #, python-format
 msgid ""
 " • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
@@ -20200,7 +20682,7 @@ msgstr ""
 " • rcs %s TBD (Успішно: встановлена версія %s або новіша. Якщо не Microsoft "
 "Windows)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1015
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1194
 #, python-format
 msgid ""
 " • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
@@ -20208,20 +20690,20 @@ msgid ""
 msgstr ""
 " • rcs %s TBD (Потрібна версія %s або новіша. Якщо не Microsoft Windows)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1129
-msgid "can't found it because exiv2 not installed"
-msgstr "Не знайдено, оскільки exiv2 не встановлено"
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1311
+msgid "exiv2 executable not installed, can't retrieve libexiv2 version."
+msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1312
 #, python-format
 msgid "GExiv2 : %s (Exiv2 library : %s)"
 msgstr "GExiv2 : %s (Бібліотека Exiv2 : %s)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1197
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1389
 msgid "found another font"
 msgstr "знайдено інший шрифт"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1205
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1398
 msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
@@ -20230,87 +20712,83 @@ msgstr ""
 "white-rabbit\">White Rabbit</a> забезпечує надзвичайно читабельний "
 "результат.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
-msgid "Why, when same code works in Graphview"
-msgstr "Чому, коли той самий код працює в Graphview"
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1246
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1298
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1308
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1318
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1442
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1500
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1511
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1522
 msgid "not installed"
 msgstr "не встановлено"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1325
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1530
 msgid "     and one of either: (pydotplus: "
 msgstr "     і один з наступних: (pydotplus: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1327
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1532
 msgid ") or (pygraphviz: "
 msgstr ") або (pygraphviz: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1351
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1561
 msgid "Installed(MS-Windows)"
 msgstr "Встановлено (MS-Windows)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1355
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1565
 msgid "Installed(Linux/Mac)"
 msgstr "Встановлено (Linux/Mac)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1389
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1602
 msgid "not installed "
 msgstr "не встановлено "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1444
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1614
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1616
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1617
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1702
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1708
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1659
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1855
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1857
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1858
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1947
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1954
 msgid "not found."
 msgstr "не знайдено."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1466
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1685
 msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
 msgstr ""
 "Стандарт. Успішно: програму встановлено - 32-бітна версія на 64-бітній ОС "
 "Windows."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1518
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1744
 msgid ") (Requires the gramps addon listed under 'Plugin lib')"
 msgstr ") (Потрібен додаток gramps, вказаний у 'Бібліотеці плагінів')"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1551
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1780
 msgid "DBF installed"
 msgstr "DBF встановлено"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1559
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1791
 msgid ".)(Requires version "
 msgstr ".)(Потрібна версія "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1564
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1800
 msgid " installed.)(Passed: version "
 msgstr " встановлено.)(Успішно: версія "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1711
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1957
 #, python-format
 msgid "(OpenCV facedetection: %s)"
 msgstr "(OpenCV розпізнавання облич: %s)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1758
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2014
 msgid " (lxml: not found. Requires version "
 msgstr " (lxml: не знайдено. Потрібна версія "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1776
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2036
 msgid " • Requires: MongoDB TBD / pymongo TBD"
 msgstr " • Потрібно: MongoDB TBD / pymongo TBD"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1790
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2050
 #, python-format
 msgid " • Operating System: %s"
 msgstr " • Операційна система: %s"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1811
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2073
 msgid ""
 "<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
 "title=Gramps_5.0_Wiki_Manual_-"
@@ -20322,29 +20800,29 @@ msgstr ""
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Налаштування "
 "Локалей:</a></b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1817
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1818
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1819
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1820
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1870
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1871
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1872
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1874
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2081
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2082
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2083
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2084
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2145
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2146
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2147
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2148
 msgid "not set"
 msgstr "не встановлено"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1822
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1823
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1824
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1825
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1876
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1877
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1878
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1879
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2086
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2087
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2088
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2089
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2150
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2151
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2152
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2153
 msgid "not tested"
 msgstr "не перевірено"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1845
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2118
 msgid ""
 "\n"
 "Installed Locales\\Translations (If only English is listed please re-install "
@@ -20356,7 +20834,7 @@ msgstr ""
 "перевстановіть Gramps і переконайтеся, що обрали всі Переклади та Словники)\n"
 "\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1882
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2156
 msgid ""
 "\n"
 "Gramps Environment variables:\n"
@@ -20364,13 +20842,13 @@ msgstr ""
 "\n"
 "Змінні середовища Gramps:\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1921
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1983
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2019
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2195
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2258
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2295
 msgid "found"
 msgstr "знайдено"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2026
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2304
 msgid ""
 "Sphinx is a tool that builds the Gramps development documentation and man "
 "pages\n"
@@ -21514,7 +21992,7 @@ msgid "Origin:"
 msgstr "Походження:"
 
 #: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
-#: markdown_place_history_formatter.py:59
+#: WebSearch/markdown_place_history_formatter.py:59
 msgid "Note:"
 msgstr "Примітка:"
 
@@ -22078,12 +22556,26 @@ msgstr ""
 "%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:105
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "Directly importing from TMG files is not supportedby the TMG Importer "
+#| "Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that "
+#| "your TMG project was created by:TMG version 5.x or greater.Your "
+#| "file:*.TMG - Version Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
+#| "%(gramps_wiki_import_pjc_direct_url)s"
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer "
-"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
-"TMG project was created by:TMG version 5.x or greater.Your file:*.TMG - "
-"Version Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
+"Directly importing from TMG files is not supported\n"
+"by the TMG Importer Addon.\n"
+"\n"
+"You need to use an backup copy of TMG project(*.sqz)\n"
+"\n"
+"Ensure that your TMG project was created by:\n"
+"TMG version 5.x or greater.\n"
+"\n"
+"Your file:\n"
+"*.TMG - Version Control File for TMG 2.0 to TMG 4.0d\n"
+"\n"
+"Please refer to:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "Прямий імпорт із файлів TMG не підтримується додатком TMG Importer. Вам "
@@ -22093,12 +22585,26 @@ msgstr ""
 "%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:126
-#, python-format
+#, fuzzy, python-format
+#| msgid ""
+#| "Directly importing from TMG files is not supportedby the TMG Importer "
+#| "Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that "
+#| "your TMG project was created by:TMG version 5.x or greater.Your "
+#| "file:*.VER - Version Control File for TMG 1.2 and earlierPlease refer to:"
+#| "%(gramps_wiki_import_pjc_direct_url)s"
 msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer "
-"Addon.You need to use an backup copy of TMG project(*.sqz)Ensure that your "
-"TMG project was created by:TMG version 5.x or greater.Your file:*.VER - "
-"Version Control File for TMG 1.2 and earlierPlease refer to:"
+"Directly importing from TMG files is not supported\n"
+"by the TMG Importer Addon.\n"
+"\n"
+"You need to use an backup copy of TMG project(*.sqz)\n"
+"\n"
+"Ensure that your TMG project was created by:\n"
+"TMG version 5.x or greater.\n"
+"\n"
+"Your file:\n"
+"*.VER - Version Control File for TMG 1.2 and earlier\n"
+"\n"
+"Please refer to:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "Прямий імпорт із файлів TMG не підтримується додатком TMG Importer. Вам "
@@ -22133,21 +22639,21 @@ msgstr "Назва набору дани"
 msgid "_Import TMG Data Set"
 msgstr "_Імпортувати набір даних TMG"
 
-#: TMGimporter/libtmg.py:2324 TMGimporter/libtmg.py:2357
-#: TMGimporter/libtmg.py:2439 TMGimporter/libtmg.py:2466
+#: TMGimporter/libtmg.py:2319 TMGimporter/libtmg.py:2352
+#: TMGimporter/libtmg.py:2434 TMGimporter/libtmg.py:2461
 #, fuzzy
 #| msgid "Export failed"
 msgid "TMG import failed"
 msgstr "Помилка експорту"
 
-#: TMGimporter/libtmg.py:2325
+#: TMGimporter/libtmg.py:2320
 msgid ""
 "The current Family Tree is not empty.\n"
 "\n"
 "Please create a new empty Family Tree before importing a TMG backup file."
 msgstr ""
 
-#: TMGimporter/libtmg.py:2358
+#: TMGimporter/libtmg.py:2353
 msgid ""
 "The TMG backup file could not be read: PJC version information is missing or "
 "unreadable.\n"
@@ -22156,13 +22662,13 @@ msgid ""
 "(PjcVersion >= 11.0)."
 msgstr ""
 
-#: TMGimporter/libtmg.py:2370
+#: TMGimporter/libtmg.py:2365
 #, fuzzy
 #| msgid "TMG Unsupported"
 msgid "TMG version not supported"
 msgstr "TMG не підтримується"
 
-#: TMGimporter/libtmg.py:2371
+#: TMGimporter/libtmg.py:2366
 #, python-format
 msgid ""
 "This backup was created with an older version of TMG (PjcVersion %(ver)s, "
@@ -22175,14 +22681,14 @@ msgid ""
 "Addon:TMGimporter#Before_Import_From_TMG_Backup_file"
 msgstr ""
 
-#: TMGimporter/libtmg.py:2440
+#: TMGimporter/libtmg.py:2435
 msgid ""
 "No datasets were found in this TMG backup file.\n"
 "\n"
 "The backup may be corrupt or empty."
 msgstr ""
 
-#: TMGimporter/libtmg.py:2467
+#: TMGimporter/libtmg.py:2462
 #, python-format
 msgid ""
 "%(filename)s does not appear to be a valid TMG backup file.\n"
@@ -23320,11 +23826,11 @@ msgstr "Збірка вебсайтів для США (потрібен libwebco
 msgid "US Google"
 msgstr "Google США"
 
-#: WebSearch.gpr.py:34 WebSearch.gpr.py:47
+#: WebSearch/WebSearch.gpr.py:34 WebSearch/WebSearch.gpr.py:47
 msgid "WebSearch"
 msgstr "Веб-пошук"
 
-#: WebSearch.gpr.py:36
+#: WebSearch/WebSearch.gpr.py:36
 msgid ""
 "Customized queries for online services based on the active Person, Place, "
 "Family, or Source record"
@@ -23332,86 +23838,86 @@ msgstr ""
 "Індивідуальні запити для онлайн-сервісів на основі активного запису про "
 "особу, місце, сім’ю або джерело"
 
-#: WebSearch.py:468
+#: WebSearch/WebSearch.py:468
 msgid "Save Coordinates to the Place"
 msgstr "Зберегти координати місця"
 
-#: WebSearch.py:609
+#: WebSearch/WebSearch.py:609
 msgid "AI provider is disabled"
 msgstr "Постачальника штучного інтелекту вимкнено"
 
-#: WebSearch.py:613
+#: WebSearch/WebSearch.py:613
 msgid "No AI API key provided"
 msgstr "Ключ API штучного інтелекту не надано"
 
-#: WebSearch.py:619
+#: WebSearch/WebSearch.py:619
 msgid "AI-generated historical place data is currently disabled"
 msgstr ""
 "Дані про історичні місця, згенеровані штучним інтелектом, наразі вимкнено"
 
-#: WebSearch.py:629
+#: WebSearch/WebSearch.py:629
 msgid "AI provider is unknown. Please check your AI provider settings."
 msgstr ""
 "Постачальник штучного інтелекту невідомий. Перевірте налаштування "
 "постачальника штучного інтелекту."
 
-#: WebSearch.py:649
+#: WebSearch/WebSearch.py:649
 msgid "⏳ Generating historical place data, please wait..."
 msgstr "⏳ Генерування історичних даних про місця, зачекайте..."
 
-#: WebSearch.py:1521
+#: WebSearch/WebSearch.py:1520
 msgid "Keys"
 msgstr "Ключі"
 
-#: WebSearch.py:1523
+#: WebSearch/WebSearch.py:1522
 msgid "Website URL"
 msgstr "URL веб-сайту"
 
-#: WebSearch.py:1526
+#: WebSearch/WebSearch.py:1525
 msgid "Add link to note"
 msgstr "Додати посилання до нотатки"
 
-#: WebSearch.py:1528
+#: WebSearch/WebSearch.py:1527
 msgid "Add link to attribute"
 msgstr "Додати посилання до атрибута"
 
-#: WebSearch.py:1530
+#: WebSearch/WebSearch.py:1529
 msgid "Show QR-code"
 msgstr "Показати QR-код"
 
-#: WebSearch.py:1532
+#: WebSearch/WebSearch.py:1531
 msgid "Copy link to clipboard"
 msgstr "Скопіювати посилання у буфер обміну"
 
-#: WebSearch.py:1535
+#: WebSearch/WebSearch.py:1534
 msgid "Hide link for selected item"
 msgstr "Приховати посилання для вибраного елемента"
 
-#: WebSearch.py:1538
+#: WebSearch/WebSearch.py:1537
 msgid "Hide link for all items"
 msgstr "Приховати посилання для всіх елементів"
 
-#: WebSearch.py:1542
+#: WebSearch/WebSearch.py:1541
 msgid "Edit Attribute with the Link"
 msgstr "Редагувати атрибут за допомогою посилання"
 
-#: WebSearch.py:1546
+#: WebSearch/WebSearch.py:1545
 msgid "Edit Note with the Link"
 msgstr "Редагувати нотатку за допомогою посилання"
 
-#: WebSearch.py:1549
+#: WebSearch/WebSearch.py:1548
 msgid "🔍 AI Suggestions"
 msgstr "🔍 екомендації AI"
 
-#: WebSearch.py:1769
+#: WebSearch/WebSearch.py:1767
 msgid "Attribute no longer exists. The extra icon is removed"
 msgstr "Атрибут більше не існує. Додатковий значок видалено"
 
-#: WebSearch.py:1815
+#: WebSearch/WebSearch.py:1813
 msgid "Note no longer exists. The extra icon is removed"
 msgstr "Нотатки більше не існує. Додатковий значок видалено"
 
-#: WebSearch.py:1840
+#: WebSearch/WebSearch.py:1838
 #, python-brace-format
 msgid ""
 "📌 This '{title}' web link was archived for future reference by the "
@@ -23430,46 +23936,554 @@ msgstr ""
 "Ви можете скористатися цим посиланням, щоб переглянути джерело та перевірити "
 "інформацію, пов’язану з цією сутністю."
 
-#: WebSearch.py:1926
+#: WebSearch/WebSearch.py:1924
 #, python-format
 msgid "Note #%(id)s has been successfully added"
 msgstr "Примітку #%(id)s успішно додано"
 
-#: WebSearch.py:1929
+#: WebSearch/WebSearch.py:1927
 msgid "Error creating note"
 msgstr "Помилка створення нотатки"
 
-#: WebSearch.py:1949
+#: WebSearch/WebSearch.py:1947
 msgid "URL is copied to the Clipboard"
 msgstr "URL скопійовано до буфера обміну"
 
-#: WebSearch.py:2068
+#: WebSearch/WebSearch.py:2066
 msgid "WebSearch Link"
 msgstr "Посилання WebSearch"
 
-#: WebSearch.py:2110
+#: WebSearch/WebSearch.py:2108
 msgid "Attribute has been successfully added"
 msgstr "Атрибут успішно додано"
 
-#: WebSearch.py:2142
+#: WebSearch/WebSearch.py:2140
 #, python-brace-format
 msgid "Title: {title}"
 msgstr "Назва: {title}"
 
-#: WebSearch.py:2146
+#: WebSearch/WebSearch.py:2144
 #, python-brace-format
 msgid "Replaced: {keys}"
 msgstr "Замінено: {keys}"
 
-#: WebSearch.py:2149
+#: WebSearch/WebSearch.py:2147
 #, python-brace-format
 msgid "Empty: {keys}"
 msgstr "Порожній: {keys}"
 
-#: WebSearch.py:2151
+#: WebSearch/WebSearch.py:2149
 #, python-brace-format
 msgid "Comment: {comment}"
 msgstr "Коментар: {comment}"
+
+#: WebSearch/activity_row_generator.py:110
+#, python-format
+msgid "Visited: %s"
+msgstr "Відвідано: %s"
+
+#: WebSearch/activity_row_generator.py:114
+#: WebSearch/activity_row_generator.py:129
+#, python-format
+msgid "Link: %s"
+msgstr "Посилання: %s"
+
+#: WebSearch/activity_row_generator.py:116
+#, python-format
+msgid "Attribute: %s"
+msgstr "Атрибут: %s"
+
+#: WebSearch/activity_row_generator.py:118
+#, python-format
+msgid "Value: %s"
+msgstr "Значення: %s"
+
+#: WebSearch/activity_row_generator.py:123
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "Завантажено з файлу: %s"
+
+#: WebSearch/activity_row_generator.py:126
+#, python-format
+msgid "Domain: %s"
+msgstr "Домен: %s"
+
+#: WebSearch/activity_row_generator.py:131
+#, python-format
+msgid "Object: %s"
+msgstr "Об'єкт: %s"
+
+#: WebSearch/activity_row_generator.py:135
+#, python-format
+msgid "Pattern: %s"
+msgstr "Візерунок: %s"
+
+#: WebSearch/activity_row_generator.py:138
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "Ідентифікатор об'єкта Gramps: %s"
+
+#: WebSearch/activity_row_generator.py:142
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s: %s → %s: %s"
+
+#: WebSearch/activity_row_generator.py:152
+msgid "Link visited"
+msgstr "Посилання відвідано"
+
+#: WebSearch/activity_row_generator.py:153
+msgid "Link saved to Note"
+msgstr "Посилання збережено в нотатці"
+
+#: WebSearch/activity_row_generator.py:154
+msgid "Link saved to Attribute"
+msgstr "Посилання збережено до атрибута"
+
+#: WebSearch/activity_row_generator.py:155
+msgid "Place history loaded"
+msgstr "Історія місць завантажена"
+
+#: WebSearch/activity_row_generator.py:156
+msgid "Domain skipped"
+msgstr "Домен пропущено"
+
+#: WebSearch/activity_row_generator.py:157
+msgid "Link hidden for object"
+msgstr "Посилання приховано для об'єкта"
+
+#: WebSearch/activity_row_generator.py:158
+msgid "Link hidden for all objects"
+msgstr "Посилання приховано для всіх об'єктів"
+
+#: WebSearch/activity_row_generator.py:159
+msgid "Attribute updated"
+msgstr "Атрибут оновлено"
+
+#: WebSearch/activity_row_generator.py:160
+msgid "Note updated"
+msgstr "Примітку оновлено"
+
+#: WebSearch/constants.py:390
+msgid "Column - Icons"
+msgstr "Колонка - Іконки"
+
+#: WebSearch/constants.py:391
+msgid "Column - Source Types (flags)"
+msgstr "Стовпець - типи джерел (прапорці)"
+
+#: WebSearch/constants.py:392
+msgid "Column - Keys"
+msgstr "Колонка - Ключі"
+
+#: WebSearch/constants.py:393
+msgid "Column - Title"
+msgstr "Колонка - Заголовок"
+
+#: WebSearch/constants.py:394
+msgid "Column - Website Url"
+msgstr "Стовпець – URL-адреса веб-сайту"
+
+#: WebSearch/constants.py:395
+msgid "Column - Comment"
+msgstr "Колонка - коментар"
+
+#: WebSearch/constants.py:424
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "Піктограма - Відвідані URL-адреси (галочка)"
+
+#: WebSearch/constants.py:425
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "Піктограма - Збережені URL-адреси (дискета)"
+
+#: WebSearch/constants.py:426
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "Значок – URL-адреси, пов’язані з атрибутами UID (значок UID)"
+
+#: WebSearch/constants.py:427
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "Значок – URL-адреси з регіональних файлів CSV (прапорець)"
+
+#: WebSearch/constants.py:428
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "Піктограма – URL-адреси зі статичних файлів CSV (червона шпилька)"
+
+#: WebSearch/constants.py:429
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "Піктограма – URL-адреси зі звичайних файлів CSV (земля)"
+
+#: WebSearch/constants.py:430
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "Піктограма – URL-адреси з перехресних файлів CSV (перемішані стрілки)"
+
+#: WebSearch/constants.py:431
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr ""
+"Піктограма – URL-адреси зі спеціального каталогу користувача (піктограма "
+"електронної таблиці)"
+
+#: WebSearch/constants.py:432
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Піктограма – URL-адреси з вкладки «Атрибути» (піктограма «A»)"
+
+#: WebSearch/constants.py:433
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Піктограма – URL-адреси з вкладки «Інтернет» (піктограма «I»)"
+
+#: WebSearch/constants.py:434
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Піктограма – URL-адреси з вкладки «Нотатки» (піктограма «N»)"
+
+#: WebSearch/info_panel.py:108
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 Про веб-пошук"
+
+#: WebSearch/info_panel.py:111
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"WebSearch — це граплет для Gramps, який допомагає вам шукати інформацію на "
+"вебсайтах, пов'язаних з генеалогією."
+
+#: WebSearch/info_panel.py:117
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"Він підтримує шаблони посилань на основі CSV, виявлення сайтів за допомогою "
+"штучного інтелекту та пряму інтеграцію з нотатками та атрибутами."
+
+#: WebSearch/info_panel.py:125
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Інформація про систему"
+
+#: WebSearch/info_panel.py:128
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Відсутній:** `qrcode`"
+
+#: WebSearch/info_panel.py:130
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Ця бібліотека Python недоступна у вашій системі."
+
+#: WebSearch/info_panel.py:133
+msgid "Without it, QR code generation will not work."
+msgstr "Без нього генерація QR-коду не працюватиме."
+
+#: WebSearch/info_panel.py:136
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Зазвичай встановлюється за допомогою: `pip install qrcode[pil]`"
+
+#: WebSearch/info_panel.py:140 WebSearch/info_panel.py:162
+#: WebSearch/info_panel.py:181
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Примітка: Деякі операційні системи або середовища можуть вимагати "
+"альтернативних методів встановлення.*"
+
+#: WebSearch/info_panel.py:147
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **Відсутнє:** `openai`"
+
+#: WebSearch/info_panel.py:149
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr "ℹ️ Ця бібліотека необхідна для доступу до функцій на базі OpenAI."
+
+#: WebSearch/info_panel.py:153
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Без нього пропозиції сайтів, створені штучним інтелектом, та історія місць "
+"будуть вимкнені."
+
+#: WebSearch/info_panel.py:158
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 Зазвичай встановлюється за допомогою: `pip install openai`"
+
+#: WebSearch/info_panel.py:169
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Відсутнє:** `запити`"
+
+#: WebSearch/info_panel.py:171
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Ця бібліотека використовується для зв'язку з веб-API."
+
+#: WebSearch/info_panel.py:174
+msgid "Without it, external data sources may not be accessible."
+msgstr "Без нього зовнішні джерела даних можуть бути недоступні."
+
+#: WebSearch/info_panel.py:177
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 Зазвичай встановлюється за допомогою: `pip install requests`"
+
+#: WebSearch/info_panel.py:188
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Розташування файлів даних"
+
+#: WebSearch/info_panel.py:191
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"Нижче наведено шляхи до системних та користувацьких файлів даних, що "
+"використовуються WebSearch."
+
+#: WebSearch/info_panel.py:195
+msgid "#### CSV File Paths"
+msgstr "#### Шляхи до CSV-файлів"
+
+#: WebSearch/info_panel.py:197
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr "- **Шлях до системи:** `{dir|%s}` – містить вбудовані CSV-файли"
+
+#: WebSearch/info_panel.py:201
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **Шлях, визначений користувачем:** `{dir|%s}` – для власних CSV-файлів, "
+"визначених користувачем"
+
+#: WebSearch/info_panel.py:205
+msgid "#### JSON File Paths"
+msgstr "#### Шляхи до JSON-файлів"
+
+#: WebSearch/info_panel.py:208
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **Шлях до системи:** `{dir|%s}` – містить вбудований файл "
+"attribute_mapping.json"
+
+#: WebSearch/info_panel.py:214
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **Шлях, визначений користувачем:** `{dir|%s}` – для власного файлу "
+"attribute_mapping.json, визначеного користувачем"
+
+#: WebSearch/info_panel.py:221
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *Порада: натисніть будь-який шлях вище, щоб відкрити його у файловому "
+"менеджері.*"
+
+#: WebSearch/info_panel.py:224
+msgid "📖 View detailed usage in: "
+msgstr "📖 Переглянути детальне використання в: "
+
+#: WebSearch/info_panel.py:233
+msgid "## 💬 Support"
+msgstr "## 💬 Підтримка"
+
+#: WebSearch/info_panel.py:234
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 Створено та підтримується Yurii Liubymyi"
+
+#: WebSearch/info_panel.py:237
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 Щоб отримати допомогу або відгук, не соромтеся згадати `@Urchello` на "
+"форумі Gramps:"
+
+#: WebSearch/info_panel.py:241
+msgid "Gramps Forum (Discourse)"
+msgstr ""
+
+#: WebSearch/info_panel.py:245
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr ""
+"✅ Звіти про помилки та запити на нові функції абсолютно **безкоштовні**."
+
+#: WebSearch/info_panel.py:249
+#, fuzzy
+#| msgid "Issues"
+msgid "GitHub Issues"
+msgstr "Проблеми"
+
+#: WebSearch/info_panel.py:252
+msgid "Gramps Bug Tracker"
+msgstr ""
+
+#: WebSearch/info_panel.py:255
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 Версія Gramplet WebSearch: `%s`"
+
+#: WebSearch/internet_links_loader.py:70 WebSearch/internet_links_loader.py:71
+msgid "No title"
+msgstr "Без назви"
+
+#: WebSearch/markdown_place_history_formatter.py:52
+msgid "No data available."
+msgstr "Дані недоступні."
+
+#: WebSearch/markdown_place_history_formatter.py:57
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "ІСТОРИЧНИЙ АДМІНІСТРАТИВНИЙ ПОДІЛ"
+
+#: WebSearch/markdown_place_history_formatter.py:58
+msgid "Foundation date:"
+msgstr "Дата заснування:"
+
+#: WebSearch/markdown_place_history_formatter.py:60
+msgid "Coordinates:"
+msgstr "Координати:"
+
+#: WebSearch/markdown_place_history_formatter.py:61
+msgid "Administrative history"
+msgstr "Адміністративна історія"
+
+#: WebSearch/markdown_place_history_formatter.py:62
+msgid "Data provided to AI:"
+msgstr "Дані, що надаються ШІ:"
+
+#: WebSearch/markdown_place_history_formatter.py:64
+msgid "Full hierarchy"
+msgstr "Повна ієрархія"
+
+#: WebSearch/markdown_place_history_formatter.py:68
+msgid "Place Type:"
+msgstr "Тип місця:"
+
+#: WebSearch/markdown_place_history_formatter.py:69
+msgid "Last Retrieved At:"
+msgstr "Останнє отримання:"
+
+#: WebSearch/note_links_loader.py:69
+msgid "Note Link (parsed)"
+msgstr "Посилання на нотатку (проаналізовано)"
+
+#: WebSearch/note_links_loader.py:120
+msgid "Note Link (internal)"
+msgstr "Посилання на примітку (внутрішнє)"
+
+#: WebSearch/note_links_loader.py:123
+msgid "Note Link (external)"
+msgstr "Посилання на примітку (зовнішнє)"
+
+#: WebSearch/qr_window.py:76
+msgid "QR-code"
+msgstr "QR-код"
+
+#: WebSearch/qr_window.py:107 WebSearch/qr_window.py:110
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ Відсутня залежність \"qrcode\""
+
+#: WebSearch/qr_window.py:121
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ Помилка генерації QR-коду:\n"
+"Оригінальна помилка: “{}”"
+
+#: WebSearch/settings_ui_manager.py:112
+msgid "Middle Name Handling"
+msgstr "Обробка по батькові"
+
+#: WebSearch/settings_ui_manager.py:117
+msgid "Leave alone"
+msgstr "Залишити без змін"
+
+#: WebSearch/settings_ui_manager.py:118
+msgid "Separate"
+msgstr "Відокремити"
+
+#: WebSearch/settings_ui_manager.py:128
+msgid "URL Compactness Level"
+msgstr "Рівень стиснення URL"
+
+#: WebSearch/settings_ui_manager.py:134
+msgid "Shortest - No Prefix, No Keys"
+msgstr "Найкоротший - без префікса, без ключів"
+
+#: WebSearch/settings_ui_manager.py:137
+msgid "Compact - No Prefix, Keys Without Attributes"
+msgstr "Компактний – без префікса, ключі без атрибутів"
+
+#: WebSearch/settings_ui_manager.py:140
+msgid "Compact - No Prefix, Keys With Attributes"
+msgstr "Компактний - без префікса, ключі з атрибутами"
+
+#: WebSearch/settings_ui_manager.py:143
+msgid "Long - Without Prefix on the Left"
+msgstr "Довгий – Без префікса зліва"
+
+#: WebSearch/settings_ui_manager.py:150
+msgid "URL Prefix Replacement"
+msgstr "Замінник префікса URL"
+
+#: WebSearch/settings_ui_manager.py:157
+msgid "AI Provider"
+msgstr "Постачальник AI"
+
+#: WebSearch/settings_ui_manager.py:162
+msgid "(Disabled)"
+msgstr "(Вимкнено)"
+
+#: WebSearch/settings_ui_manager.py:163
+msgid "OpenAI"
+msgstr "OpenAI"
+
+#: WebSearch/settings_ui_manager.py:164
+msgid "Mistral AI"
+msgstr "Містраль А.І"
+
+#: WebSearch/settings_ui_manager.py:171
+msgid "OpenAI API Key"
+msgstr "Ключ API OpenAI"
+
+#: WebSearch/settings_ui_manager.py:176
+msgid "OpenAI Model"
+msgstr "Моделі OpenAI"
+
+#: WebSearch/settings_ui_manager.py:181
+msgid "Mistral API Key"
+msgstr "Ключ API Mistral"
+
+#: WebSearch/settings_ui_manager.py:186
+msgid "Mistral Model"
+msgstr "Модель Містраль"
+
+#: WebSearch/settings_ui_manager.py:191
+msgid "Show Links From the 'Attributes' tab"
+msgstr "Показати посилання з вкладки «Атрибути»"
+
+#: WebSearch/settings_ui_manager.py:196
+msgid "Show Links From the 'Internet' tab"
+msgstr "Показати посилання з вкладки «Інтернет»"
+
+#: WebSearch/settings_ui_manager.py:201
+msgid "Show Links From the Notes"
+msgstr "Показати посилання з нотаток"
+
+#: WebSearch/settings_ui_manager.py:209
+msgid "Enable AI-generated historical place data"
+msgstr "Увімкнути історичні дані про місця, згенеровані штучним інтелектом"
+
+#: WebSearch/settings_ui_manager.py:215
+msgid "Custom country code for AI notes (optional)"
+msgstr "Спеціальний код країни для нотаток AI (необов'язково)"
+
+#: WebSearch/settings_ui_manager.py:244
+msgid "Enable CSV Files"
+msgstr "Увімкнути файли CSV"
+
+#: WebSearch/settings_ui_manager.py:251
+msgid "Display Columns"
+msgstr "Показати стовпці"
+
+#: WebSearch/settings_ui_manager.py:265
+msgid "Display Icons"
+msgstr "Значки дисплея"
 
 #: WordleGramplet/WordleGramplet.gpr.py:4
 #: WordleGramplet/WordleGramplet.gpr.py:10
@@ -23493,334 +24507,6 @@ msgstr "Розмір шрифту"
 msgid "Select filter to restrict list"
 msgstr "Виберіть фільтр для обмеження списку"
 
-#: activity_row_generator.py:110
-#, python-format
-msgid "Visited: %s"
-msgstr "Відвідано: %s"
-
-#: activity_row_generator.py:114 activity_row_generator.py:129
-#, python-format
-msgid "Link: %s"
-msgstr "Посилання: %s"
-
-#: activity_row_generator.py:116
-#, python-format
-msgid "Attribute: %s"
-msgstr "Атрибут: %s"
-
-#: activity_row_generator.py:118
-#, python-format
-msgid "Value: %s"
-msgstr "Значення: %s"
-
-#: activity_row_generator.py:123
-#, python-format
-msgid "Loaded from file: %s"
-msgstr "Завантажено з файлу: %s"
-
-#: activity_row_generator.py:126
-#, python-format
-msgid "Domain: %s"
-msgstr "Домен: %s"
-
-#: activity_row_generator.py:131
-#, python-format
-msgid "Object: %s"
-msgstr "Об'єкт: %s"
-
-#: activity_row_generator.py:135
-#, python-format
-msgid "Pattern: %s"
-msgstr "Візерунок: %s"
-
-#: activity_row_generator.py:138
-#, python-format
-msgid "Object Gramps ID: %s"
-msgstr "Ідентифікатор об'єкта Gramps: %s"
-
-#: activity_row_generator.py:142
-#, python-format
-msgid "%s: %s → %s: %s"
-msgstr "%s: %s → %s: %s"
-
-#: activity_row_generator.py:152
-msgid "Link visited"
-msgstr "Посилання відвідано"
-
-#: activity_row_generator.py:153
-msgid "Link saved to Note"
-msgstr "Посилання збережено в нотатці"
-
-#: activity_row_generator.py:154
-msgid "Link saved to Attribute"
-msgstr "Посилання збережено до атрибута"
-
-#: activity_row_generator.py:155
-msgid "Place history loaded"
-msgstr "Історія місць завантажена"
-
-#: activity_row_generator.py:156
-msgid "Domain skipped"
-msgstr "Домен пропущено"
-
-#: activity_row_generator.py:157
-msgid "Link hidden for object"
-msgstr "Посилання приховано для об'єкта"
-
-#: activity_row_generator.py:158
-msgid "Link hidden for all objects"
-msgstr "Посилання приховано для всіх об'єктів"
-
-#: activity_row_generator.py:159
-msgid "Attribute updated"
-msgstr "Атрибут оновлено"
-
-#: activity_row_generator.py:160
-msgid "Note updated"
-msgstr "Примітку оновлено"
-
-#: constants.py:390
-msgid "Column - Icons"
-msgstr "Колонка - Іконки"
-
-#: constants.py:391
-msgid "Column - Source Types (flags)"
-msgstr "Стовпець - типи джерел (прапорці)"
-
-#: constants.py:392
-msgid "Column - Keys"
-msgstr "Колонка - Ключі"
-
-#: constants.py:393
-msgid "Column - Title"
-msgstr "Колонка - Заголовок"
-
-#: constants.py:394
-msgid "Column - Website Url"
-msgstr "Стовпець – URL-адреса веб-сайту"
-
-#: constants.py:395
-msgid "Column - Comment"
-msgstr "Колонка - коментар"
-
-#: constants.py:424
-msgid "Icon - Visited URLs (checkmark)"
-msgstr "Піктограма - Відвідані URL-адреси (галочка)"
-
-#: constants.py:425
-msgid "Icon - Saved URLs (floppy disk)"
-msgstr "Піктограма - Збережені URL-адреси (дискета)"
-
-#: constants.py:426
-msgid "Icon - URLs linked to UID attributes (UID badge)"
-msgstr "Значок – URL-адреси, пов’язані з атрибутами UID (значок UID)"
-
-#: constants.py:427
-msgid "Icon - URLs from regional CSV files (flag)"
-msgstr "Значок – URL-адреси з регіональних файлів CSV (прапорець)"
-
-#: constants.py:428
-msgid "Icon - URLs from static CSV files (red pin)"
-msgstr "Піктограма – URL-адреси зі статичних файлів CSV (червона шпилька)"
-
-#: constants.py:429
-msgid "Icon - URLs from common CSV files (earth)"
-msgstr "Піктограма – URL-адреси зі звичайних файлів CSV (земля)"
-
-#: constants.py:430
-msgid "Icon - URLs from cross CSV files (shuffle arrows)"
-msgstr "Піктограма – URL-адреси з перехресних файлів CSV (перемішані стрілки)"
-
-#: constants.py:431
-msgid "Icon - URLs from custom user directory (spreadsheet icon)"
-msgstr ""
-"Піктограма – URL-адреси зі спеціального каталогу користувача (піктограма "
-"електронної таблиці)"
-
-#: constants.py:432
-msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
-msgstr "Піктограма – URL-адреси з вкладки «Атрибути» (піктограма «A»)"
-
-#: constants.py:433
-msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
-msgstr "Піктограма – URL-адреси з вкладки «Інтернет» (піктограма «I»)"
-
-#: constants.py:434
-msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
-msgstr "Піктограма – URL-адреси з вкладки «Нотатки» (піктограма «N»)"
-
-#: info_panel.py:108
-msgid "## 🧩 About WebSearch"
-msgstr "## 🧩 Про веб-пошук"
-
-#: info_panel.py:111
-msgid ""
-"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
-"websites."
-msgstr ""
-"WebSearch — це граплет для Gramps, який допомагає вам шукати інформацію на "
-"вебсайтах, пов'язаних з генеалогією."
-
-#: info_panel.py:117
-msgid ""
-"It supports CSV-based link templates, AI-assisted site discovery, and direct "
-"integration with notes and attributes."
-msgstr ""
-"Він підтримує шаблони посилань на основі CSV, виявлення сайтів за допомогою "
-"штучного інтелекту та пряму інтеграцію з нотатками та атрибутами."
-
-#: info_panel.py:125
-msgid "## ⚙️ System Information"
-msgstr "## ⚙️ Інформація про систему"
-
-#: info_panel.py:128
-msgid "🔻 **Missing:** `qrcode`"
-msgstr "🔻 **Відсутній:** `qrcode`"
-
-#: info_panel.py:130
-msgid "ℹ️ This Python library is not available in your system."
-msgstr "ℹ️ Ця бібліотека Python недоступна у вашій системі."
-
-#: info_panel.py:133
-msgid "Without it, QR code generation will not work."
-msgstr "Без нього генерація QR-коду не працюватиме."
-
-#: info_panel.py:136
-msgid "💡 Usually installed with: `pip install qrcode[pil]`"
-msgstr "💡 Зазвичай встановлюється за допомогою: `pip install qrcode[pil]`"
-
-#: info_panel.py:140 info_panel.py:162 info_panel.py:181
-msgid ""
-"*Note: Some operating systems or environments may require alternative "
-"installation methods.*"
-msgstr ""
-"*Примітка: Деякі операційні системи або середовища можуть вимагати "
-"альтернативних методів встановлення.*"
-
-#: info_panel.py:147
-msgid "🔻 **Missing:** `openai`"
-msgstr "🔻 **Відсутнє:** `openai`"
-
-#: info_panel.py:149
-msgid "ℹ️ This library is required for accessing OpenAI-based features."
-msgstr "ℹ️ Ця бібліотека необхідна для доступу до функцій на базі OpenAI."
-
-#: info_panel.py:153
-msgid ""
-"Without it, AI-generated site suggestions and place history will be disabled."
-msgstr ""
-"Без нього пропозиції сайтів, створені штучним інтелектом, та історія місць "
-"будуть вимкнені."
-
-#: info_panel.py:158
-msgid "💡 Usually installed with: `pip install openai`"
-msgstr "💡 Зазвичай встановлюється за допомогою: `pip install openai`"
-
-#: info_panel.py:169
-msgid "🔻 **Missing:** `requests`"
-msgstr "🔻 **Відсутнє:** `запити`"
-
-#: info_panel.py:171
-msgid "ℹ️ This library is used to communicate with web APIs."
-msgstr "ℹ️ Ця бібліотека використовується для зв'язку з веб-API."
-
-#: info_panel.py:174
-msgid "Without it, external data sources may not be accessible."
-msgstr "Без нього зовнішні джерела даних можуть бути недоступні."
-
-#: info_panel.py:177
-msgid "💡 Usually installed with: `pip install requests`"
-msgstr "💡 Зазвичай встановлюється за допомогою: `pip install requests`"
-
-#: info_panel.py:188
-msgid "## 📂 Data File Locations"
-msgstr "## 📂 Розташування файлів даних"
-
-#: info_panel.py:191
-msgid ""
-"Below are the paths to system and user-defined data files used by WebSearch."
-msgstr ""
-"Нижче наведено шляхи до системних та користувацьких файлів даних, що "
-"використовуються WebSearch."
-
-#: info_panel.py:195
-msgid "#### CSV File Paths"
-msgstr "#### Шляхи до CSV-файлів"
-
-#: info_panel.py:197
-#, python-format
-msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
-msgstr "- **Шлях до системи:** `{dir|%s}` – містить вбудовані CSV-файли"
-
-#: info_panel.py:201
-#, python-format
-msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
-msgstr ""
-"- **Шлях, визначений користувачем:** `{dir|%s}` – для власних CSV-файлів, "
-"визначених користувачем"
-
-#: info_panel.py:205
-msgid "#### JSON File Paths"
-msgstr "#### Шляхи до JSON-файлів"
-
-#: info_panel.py:208
-#, python-format
-msgid ""
-"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
-"file"
-msgstr ""
-"- **Шлях до системи:** `{dir|%s}` – містить вбудований файл "
-"attribute_mapping.json"
-
-#: info_panel.py:214
-#, python-format
-msgid ""
-"- **User-defined path:** `{dir|%s}` – for custom user-defined "
-"attribute_mapping.json file"
-msgstr ""
-"- **Шлях, визначений користувачем:** `{dir|%s}` – для власного файлу "
-"attribute_mapping.json, визначеного користувачем"
-
-#: info_panel.py:221
-msgid "  💡 *Tip: click any path above to open it in your file manager.*"
-msgstr ""
-"  💡 *Порада: натисніть будь-який шлях вище, щоб відкрити його у файловому "
-"менеджері.*"
-
-#: info_panel.py:224
-msgid "📖 View detailed usage in: "
-msgstr "📖 Переглянути детальне використання в: "
-
-#: info_panel.py:233
-msgid "## 💬 Support"
-msgstr "## 💬 Підтримка"
-
-#: info_panel.py:234
-msgid "👤 Created and maintained by Yurii Liubymyi"
-msgstr "👤 Створено та підтримується Yurii Liubymyi"
-
-#: info_panel.py:237
-msgid ""
-"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
-"forum:"
-msgstr ""
-"💬 Щоб отримати допомогу або відгук, не соромтеся згадати `@Urchello` на "
-"форумі Gramps:"
-
-#: info_panel.py:245
-msgid "✅ Bug reports and feature requests are completely **free of charge**."
-msgstr ""
-"✅ Звіти про помилки та запити на нові функції абсолютно **безкоштовні**."
-
-#: info_panel.py:255
-#, python-format
-msgid "🧩 WebSearch Gramplet version: `%s`"
-msgstr "🧩 Версія Gramplet WebSearch: `%s`"
-
-#: internet_links_loader.py:70 internet_links_loader.py:71
-msgid "No title"
-msgstr "Без назви"
-
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
 msgstr "Надає бібліотеку для загального доступу до бази даних і gen.lib."
@@ -23837,7 +24523,7 @@ msgstr "Редагування особи через libaccess"
 msgid "Library for web site collections"
 msgstr "Бібліотека для збірок вебсайтів"
 
-#: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
+#: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:20
 msgid "etree"
 msgstr "etree"
 
@@ -23845,65 +24531,72 @@ msgstr "etree"
 msgid "Gramplet for testing etree with Gramps XML"
 msgstr "Gramplet для тестування etree з Gramps XML"
 
-#: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
+#: lxml/etreeGramplet.py:83 lxml/lxmlGramplet.py:115
 msgid "Invalid timestamp"
 msgstr "Недійсний часовий штамп"
 
-#: lxml/etreeGramplet.py:139
-msgid "No file parsed..."
-msgstr "Файл не розібрано…"
+#: lxml/etreeGramplet.py:130 lxml/lxmlGramplet.py:173
+msgid ""
+"Select a Gramps XML file and\n"
+" click on the Run button."
+msgstr ""
 
-#: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
-msgid "Number of editions back"
+#: lxml/etreeGramplet.py:155 lxml/lxmlGramplet.py:197
+msgid "No file loaded..."
+msgstr "Немає завантажених файлів..."
+
+#: lxml/etreeGramplet.py:203 lxml/etreeGramplet.py:209
+#, fuzzy
+#| msgid "Number of editions back"
+msgid "Number of additions and modifications back"
 msgstr "Кількість попередніх редакцій"
 
-#: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
-#, python-format
-msgid "Please fix space on \"%s\""
-msgstr "Будь ласка, виправте пробіл у \"%s\""
+#: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
+#, fuzzy
+#| msgid "No source information found"
+msgid "Print more informations on console"
+msgstr "Інформація про джерело не знайдена"
 
-#: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
-msgid "Space character on filename"
-msgstr "Пробіл у назві файлу"
-
-#: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
-msgid "Sorry, no support for your OS yet!"
-msgstr "Вибачте, але наразі ваша операційна система не підтримується!"
-
-#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
+#: lxml/etreeGramplet.py:254
 #, python-format
 msgid "Cannot uncompress \"%s\""
 msgstr "Не вдалося розпакувати \"%s\""
 
-#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
+#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:334
 msgid "Is it a compressed .gramps?"
 msgstr "Це стиснутий файл .gramps?"
 
-#: lxml/etreeGramplet.py:256 lxml/etreeGramplet.py:263 lxml/lxmlGramplet.py:278
-#: lxml/lxmlGramplet.py:286
-#, python-format
-msgid ""
-"From:\n"
-" \"%(file1)s\"\n"
-" to:\n"
-" \"%(file2)s\".\n"
-msgstr ""
-"З:\n"
-" \"%(file1)s\"\n"
-" до:\n"
-" \"%(file2)s\".\n"
-
-#: lxml/etreeGramplet.py:261 lxml/lxmlGramplet.py:283
+#: lxml/etreeGramplet.py:265
 #, python-format
 msgid "Cannot copy \"%s\""
 msgstr "Не вдається скопіювати \"%s\""
 
-#: lxml/etreeGramplet.py:418
+#: lxml/etreeGramplet.py:265 lxml/lxmlGramplet.py:348
+#, fuzzy
+#| msgid "Is it a compressed .gramps?"
+msgid "Is it a .gramps?"
+msgstr "Це стиснутий файл .gramps?"
+
+#: lxml/etreeGramplet.py:282
+msgid "Sorry, no support for your OS yet!"
+msgstr "Вибачте, але наразі ваша операційна система не підтримується!"
+
+#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:420
 #, python-format
-msgid "XML: Last %s editions since %s, were at/on :\n"
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "Не вдалося розібрати вміст \"%(file)s\""
+
+#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:420
+msgid "Parsing issue"
+msgstr "Проблема розбору"
+
+#: lxml/etreeGramplet.py:498
+#, fuzzy, python-format
+#| msgid "XML: Last %s editions since %s, were at/on :\n"
+msgid "XML: Last %s additions and modifications since %s, were on :\n"
 msgstr "XML: Остання %s зміна з %s, була :\n"
 
-#: lxml/etreeGramplet.py:471
+#: lxml/etreeGramplet.py:554
 #, python-format
 msgid ""
 "\n"
@@ -23914,115 +24607,151 @@ msgstr ""
 "XML: Кількість записів та зв’язків : \t%s\n"
 "\n"
 
-#: lxml/etreeGramplet.py:474
-#, python-format
+#: lxml/etreeGramplet.py:557
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of tags : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of tags : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Кількість тегів :\n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:476
-#, python-format
+#: lxml/etreeGramplet.py:559
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of tags : \n"
+#| "\t\t\t%s\n"
 msgid ""
 "Number of tags : \n"
-"\t\t\t%s\n"
+"\t\t\t%06s\n"
 msgstr ""
 "Кількість тегів : :\n"
 "\t\t\t%s\n"
 
-#: lxml/etreeGramplet.py:478
-#, python-format
+#: lxml/etreeGramplet.py:561
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of  events : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of  events : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Кількість подій :: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:481
-#, python-format
+#: lxml/etreeGramplet.py:564
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of persons : \n"
+#| "\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
 msgid ""
 "Number of persons : \n"
-"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+"\t\t\t%06s\t|\t(%06s) and (%06s)* surnames\n"
 msgstr ""
 "Кількість осіб:\n"
 "\t\t\t%s\t|\t(%s) і (%s)* прізвищ\n"
 
-#: lxml/etreeGramplet.py:483
-#, python-format
+#: lxml/etreeGramplet.py:566
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of persons : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of persons : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Кількість осіб:\n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:484
-#, python-format
+#: lxml/etreeGramplet.py:567
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of families : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of families : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Кількість сімей :\n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:485
-#, python-format
+#: lxml/etreeGramplet.py:568
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of sources : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of sources : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Кількість джерел :\n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:487
-#, python-format
+#: lxml/etreeGramplet.py:570
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of citations : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of citations : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Кількість цитат :\n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:490
-#, python-format
+#: lxml/etreeGramplet.py:573
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of places : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of places : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Кількість місць :\n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:491
-#, python-format
+#: lxml/etreeGramplet.py:574
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of media objects : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of media objects : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Кількість медіаоб'єктів :\n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:492
-#, python-format
+#: lxml/etreeGramplet.py:575
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of repositories : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of repositories : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Кількість сховищ :\n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:493
-#, python-format
+#: lxml/etreeGramplet.py:576
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of notes : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of notes : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Кількість нотаток :\n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:498
+#: lxml/etreeGramplet.py:581
 #, python-format
 msgid ""
 "\n"
@@ -24031,7 +24760,7 @@ msgstr ""
 "\n"
 "XML: Кількість додаткових записів та зв'язків: \t %s\n"
 
-#: lxml/etreeGramplet.py:502
+#: lxml/etreeGramplet.py:585
 #, python-format
 msgid ""
 "* loaded Family Tree base:\n"
@@ -24040,7 +24769,7 @@ msgstr ""
 "* база Сімейного Дерева завантажена:\n"
 " \"%s\"\n"
 
-#: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
+#: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:20
 msgid "lxml"
 msgstr "lxml"
 
@@ -24048,375 +24777,341 @@ msgstr "lxml"
 msgid "Gramplet for testing lxml and XSLT"
 msgstr "Gramplet для тестування lxml та XSLT"
 
-#: lxml/lxmlGramplet.py:67
+#: lxml/lxmlGramplet.py:72
 msgid "\"gzip\" is missing"
 msgstr "\"gzip\" відсутній"
 
-#: lxml/lxmlGramplet.py:67
+#: lxml/lxmlGramplet.py:72
 msgid "Where is gzip?"
 msgstr "Де знаходиться gzip?"
 
-#: lxml/lxmlGramplet.py:89
+#: lxml/lxmlGramplet.py:94
 msgid "Missing python3 lxml"
 msgstr "Відсутній python3 lxml"
 
-#: lxml/lxmlGramplet.py:89
+#: lxml/lxmlGramplet.py:94
 msgid "Please, try to install \"python3 lxml\" package."
 msgstr "Будь ласка, спробуйте встановити пакет \"python3 lxml\"."
 
-#: lxml/lxmlGramplet.py:164
-msgid "No file loaded..."
-msgstr "Немає завантажених файлів..."
+#: lxml/lxmlGramplet.py:255 lxml/lxmlGramplet.py:273 lxml/lxmlGramplet.py:749
+#, fuzzy
+#| msgid "Filter options"
+msgid "xmllint options"
+msgstr "Параметри фільтрування"
 
-#: lxml/lxmlGramplet.py:298
-#, python-format
-msgid "Cannot validate \"%(file)s\" !"
-msgstr "Неможливо виконати валідацію \"%(file)s\" !"
+#: lxml/lxmlGramplet.py:264 lxml/lxmlGramplet.py:282
+#, fuzzy
+#| msgid "Legacy place"
+msgid "debug places"
+msgstr "Застаріле місце"
 
-#: lxml/lxmlGramplet.py:298
+#: lxml/lxmlGramplet.py:265 lxml/lxmlGramplet.py:283
+msgid "debug xml"
+msgstr ""
+
+#: lxml/lxmlGramplet.py:382
 msgid "XSD validation (lxml)"
 msgstr "Валідація XSD (lxml)"
 
-#: lxml/lxmlGramplet.py:306
+#: lxml/lxmlGramplet.py:390
 #, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
 msgstr "xmllint: пропуск перевірки DTD для \"%(file)s\""
 
-#: lxml/lxmlGramplet.py:318
+#: lxml/lxmlGramplet.py:407
 #, python-format
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
 msgstr "xmllint: пропуск валідації RelaxNG для \"%(file)s\""
 
-#: lxml/lxmlGramplet.py:329
-#, python-format
-msgid "Cannot parse content of \"%(file)s\""
-msgstr "Не вдалося розібрати вміст \"%(file)s\""
-
-#: lxml/lxmlGramplet.py:329
-msgid "Parsing issue"
-msgstr "Проблема розбору"
-
-#: lxml/lxmlGramplet.py:333
-msgid "Gramps version"
-msgstr "Версія Gramps"
-
-#: lxml/lxmlGramplet.py:333
-#, python-format
-msgid ""
-"Wrong namespace\n"
-"Need: %s"
+#: lxml/lxmlGramplet.py:423
+msgid "Custom \"test.xml\" file"
 msgstr ""
-"Неправильний простір імен\n"
-"Потрібно: %s"
 
-#: lxml/lxmlGramplet.py:337
+#: lxml/lxmlGramplet.py:423
+msgid "Please try to fix \"test.xml\""
+msgstr ""
+
+#: lxml/lxmlGramplet.py:432
 #, python-format
 msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
 msgstr "Не вдалося виконати валідацію \"%(file)s\" за схемою RelaxNG"
 
-#: lxml/lxmlGramplet.py:337
+#: lxml/lxmlGramplet.py:432
 msgid "RelaxNG validation"
 msgstr "Валідація RelaxNG"
 
-#: lxml/lxmlGramplet.py:341
+#: lxml/lxmlGramplet.py:445
 #, python-format
 msgid "Cannot parse \"%(file)s\" via etree"
 msgstr "Не вдалося проаналізувати \"%(file)s\" через etree"
 
-#: lxml/lxmlGramplet.py:341
+#: lxml/lxmlGramplet.py:445
 msgid "File issue"
 msgstr "Помилка файлу"
 
-#: lxml/lxmlGramplet.py:359
+#: lxml/lxmlGramplet.py:484
 msgid "Parsing file..."
 msgstr "Обробка файлу..."
 
-#: lxml/lxmlGramplet.py:456
+#: lxml/lxmlGramplet.py:569
+#, python-format
+msgid " - (%(lang)s)"
+msgstr ""
+
+#: lxml/lxmlGramplet.py:572
+#, python-format
+msgid " - (? or %(lang)s)"
+msgstr ""
+
+#: lxml/lxmlGramplet.py:609
 msgid "Missing header"
 msgstr "Відсутній заголовок"
 
-#: lxml/lxmlGramplet.py:456
+#: lxml/lxmlGramplet.py:609 lxml/lxmlGramplet.py:719
+#, fuzzy
+#| msgid ""
+#| "Not a valid .gramps.\n"
+#| "Cannot run the gramplet...\n"
+#| "Please, try to use a .gramps\n"
+#| "generated by Gramps 4.x."
 msgid ""
 "Not a valid .gramps.\n"
 "Cannot run the gramplet...\n"
 "Please, try to use a .gramps\n"
-"generated by Gramps 4.x."
+"generated by Gramps 6.x."
 msgstr ""
 "Некоректний файл .gramps.\n"
 "Неможливо запустити gramplet...\n"
 "Будь ласка, спробуйте використати файл .gramps,\n"
 "створений у Gramps 4.x."
 
-#: lxml/lxmlGramplet.py:469 lxml/lxmlGramplet.py:474 lxml/lxmlGramplet.py:479
-#: lxml/lxmlGramplet.py:484
+#: lxml/lxmlGramplet.py:622 lxml/lxmlGramplet.py:627 lxml/lxmlGramplet.py:632
+#: lxml/lxmlGramplet.py:637
 msgid "0"
 msgstr "0"
 
-#: lxml/lxmlGramplet.py:495
+#: lxml/lxmlGramplet.py:652
 msgid "File parsed with"
 msgstr "Файл оброблено за допомогою"
 
-#: lxml/lxmlGramplet.py:498
+#: lxml/lxmlGramplet.py:654
 msgid " by Gramps "
 msgstr " за допомогою Gramps "
 
-#: lxml/lxmlGramplet.py:498
+#: lxml/lxmlGramplet.py:654
 msgid "File was generated on "
 msgstr "Файл згенеровано "
 
-#: lxml/lxmlGramplet.py:500
+#: lxml/lxmlGramplet.py:656
 msgid "Period: "
 msgstr "Період: "
 
-#: lxml/lxmlGramplet.py:502
-msgid " entries for surname(s); no frequency yet"
+#: lxml/lxmlGramplet.py:659 lxml/lxmlGramplet.py:663
+#, fuzzy, python-brace-format
+#| msgid "Ref: {number}. {name}"
+msgid "\t{number} surname"
+msgid_plural "\t{number} surnames; no frequency yet\n"
+msgstr[0] "№ {number}. {name}"
+msgstr[1] "№ {number}. {name}"
+msgstr[2] "№ {number}. {name}"
+
+#: lxml/lxmlGramplet.py:659
+#, fuzzy, python-brace-format
+#| msgid " entries for surname(s); no frequency yet"
+msgid "\t{number} surname; no frequency yet"
 msgstr " записи для прізвищ(а); частота поки що відсутня"
 
-#: lxml/lxmlGramplet.py:503
-msgid " entries for place(s)"
-msgstr " записи для місця(ць)"
+#: lxml/lxmlGramplet.py:660 lxml/lxmlGramplet.py:667
+#, fuzzy, python-brace-format
+#| msgid "Ref: {number}. {name}"
+msgid "\t{number} place"
+msgid_plural "\t{number} places\n"
+msgstr[0] "№ {number}. {name}"
+msgstr[1] "№ {number}. {name}"
+msgstr[2] "№ {number}. {name}"
 
-#: lxml/lxmlGramplet.py:504
-msgid " note(s)"
-msgstr " примітка(ки)"
+#: lxml/lxmlGramplet.py:661 lxml/lxmlGramplet.py:671
+#, fuzzy, python-brace-format
+#| msgid "Ref: {number}. {name}"
+msgid "\t{number} note"
+msgid_plural "\t{number} notes\n"
+msgstr[0] "№ {number}. {name}"
+msgstr[1] "№ {number}. {name}"
+msgstr[2] "№ {number}. {name}"
 
-#: lxml/lxmlGramplet.py:505
-msgid " source(s)"
-msgstr " джерело(а)"
+#: lxml/lxmlGramplet.py:675
+#, fuzzy, python-brace-format
+#| msgid "New source"
+msgid "\t{number} source"
+msgid_plural "\t{number} sources\n"
+msgstr[0] "Нове джерело"
+msgstr[1] "Нове джерело"
+msgstr[2] "Нове джерело"
 
-#: lxml/lxmlGramplet.py:521 lxml/lxmlGramplet.py:717
+#: lxml/lxmlGramplet.py:694 lxml/lxmlGramplet.py:919
 msgid "Gallery.html"
 msgstr "Gallery.html"
 
-#: lxml/lxmlGramplet.py:522
-#, python-format
-msgid "2. Has generated a media index on \"%(file)s\".\n"
+#: lxml/lxmlGramplet.py:695
+#, fuzzy, python-format
+#| msgid "2. Has generated a media index on \"%(file)s\".\n"
+msgid "1. Has generated a media index on \"%(file)s\".\n"
 msgstr "2. Згенеровано медіа-індекс для \"%(file)s\".\n"
 
-#: lxml/lxmlGramplet.py:525
-#, python-format
-msgid "3. Has written entries into \"%(file)s\".\n"
-msgstr "3. Записи збережено у \"%(file)s\".\n"
+#: lxml/lxmlGramplet.py:719
+msgid "XML SyntaxError"
+msgstr ""
 
-#: lxml/lxmlGramplet.py:544
+#: lxml/lxmlGramplet.py:723
 msgid "Matches XSD schema."
 msgstr "Відповідає XSD-схемі."
 
-#: lxml/lxmlGramplet.py:565
+#: lxml/lxmlGramplet.py:763
 msgid "xmllint: skip DTD validation"
 msgstr "xmllint: пропустити перевірку DTD"
 
-#: lxml/lxmlGramplet.py:589
+#: lxml/lxmlGramplet.py:787
 msgid "I am looking at ..."
 msgstr "Я шукаю ..."
 
-#: lxml/lxmlGramplet.py:590
+#: lxml/lxmlGramplet.py:788
 msgid "Content generated by Gramps"
 msgstr "Вміст створено за допомогою Gramps"
 
-#: lxml/lxmlGramplet.py:593
+#: lxml/lxmlGramplet.py:791
 msgid "List of sources"
 msgstr "Перелік джерел"
 
-#: lxml/lxmlGramplet.py:611
+#: lxml/lxmlGramplet.py:810
 msgid "Australia"
 msgstr "Австралія"
 
-#: lxml/lxmlGramplet.py:612
+#: lxml/lxmlGramplet.py:811
 msgid "Brazil"
 msgstr "Бразилія"
 
-#: lxml/lxmlGramplet.py:623
+#: lxml/lxmlGramplet.py:822
 msgid "India"
 msgstr "Індія"
 
-#: lxml/lxmlGramplet.py:625
+#: lxml/lxmlGramplet.py:824
 msgid "Norway"
 msgstr "Норвегія"
 
-#: lxml/lxmlGramplet.py:626
+#: lxml/lxmlGramplet.py:825
 msgid "Portugal"
 msgstr "Португалія"
 
-#: lxml/lxmlGramplet.py:695
-#, python-format
-msgid "1. Has generated \"%s\".\n"
+#: lxml/lxmlGramplet.py:896
+#, fuzzy, python-format
+#| msgid "1. Has generated \"%s\".\n"
+msgid "2. Has generated \"%s\".\n"
 msgstr "1. Згенеровано \"%s\".\n"
 
-#: lxml/lxmlGramplet.py:696
-#, python-format
+#: lxml/lxmlGramplet.py:898
+#, fuzzy, python-format
+#| msgid ""
+#| "Try to open\n"
+#| " \"%s\"\n"
+#| " into your prefered web navigator ..."
 msgid ""
 "Try to open\n"
 " \"%s\"\n"
-" into your prefered web navigator ..."
+" into your preferred web navigator ..."
 msgstr ""
 "Спробуйте відкрити\n"
 " \"%s\"\n"
 " у вашому улюбленому веб-навігаторі..."
 
-#: markdown_place_history_formatter.py:52
-msgid "No data available."
-msgstr "Дані недоступні."
+#~ msgid "can't found it because exiv2 not installed"
+#~ msgstr "Не знайдено, оскільки exiv2 не встановлено"
 
-#: markdown_place_history_formatter.py:57
-msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
-msgstr "ІСТОРИЧНИЙ АДМІНІСТРАТИВНИЙ ПОДІЛ"
+#~ msgid "Why, when same code works in Graphview"
+#~ msgstr "Чому, коли той самий код працює в Graphview"
 
-#: markdown_place_history_formatter.py:58
-msgid "Foundation date:"
-msgstr "Дата заснування:"
+#~ msgid "Primary Name"
+#~ msgstr "Основна назва"
 
-#: markdown_place_history_formatter.py:60
-msgid "Coordinates:"
-msgstr "Координати:"
+#~ msgid "Select All"
+#~ msgstr "Вибрати все"
 
-#: markdown_place_history_formatter.py:61
-msgid "Administrative history"
-msgstr "Адміністративна історія"
+#~ msgid "Database change detected"
+#~ msgstr "Виявлено зміну бази даних"
 
-#: markdown_place_history_formatter.py:62
-msgid "Data provided to AI:"
-msgstr "Дані, що надаються ШІ:"
+#, python-format
+#~ msgid "Clipboard Gramplet: %s"
+#~ msgstr "Gramplet Буфер обміну: %s"
 
-#: markdown_place_history_formatter.py:64
-msgid "Full hierarchy"
-msgstr "Повна ієрархія"
+#~ msgid "Include Addresses"
+#~ msgstr "Включити адреси"
 
-#: markdown_place_history_formatter.py:68
-msgid "Place Type:"
-msgstr "Тип місця:"
+#~ msgid "Modified"
+#~ msgstr "Змінено"
 
-#: markdown_place_history_formatter.py:69
-msgid "Last Retrieved At:"
-msgstr "Останнє отримання:"
+#~ msgid "Ancestor generations"
+#~ msgstr "Покоління предків"
 
-#: note_links_loader.py:69
-msgid "Note Link (parsed)"
-msgstr "Посилання на нотатку (проаналізовано)"
+#~ msgid "Descendant generations"
+#~ msgstr "Покоління нащадків"
 
-#: note_links_loader.py:124
-msgid "Note Link (internal)"
-msgstr "Посилання на примітку (внутрішнє)"
+#~ msgid "Different"
+#~ msgstr "Відрізняється"
 
-#: note_links_loader.py:127
-msgid "Note Link (external)"
-msgstr "Посилання на примітку (зовнішнє)"
+#~ msgid "Export"
+#~ msgstr "Експорт"
 
-#: qr_window.py:88
-msgid "QR-code"
-msgstr "QR-код"
+#~ msgid "Overview"
+#~ msgstr "Огляд"
 
-#: qr_window.py:119 qr_window.py:122
-msgid "⚠ Missing dependency \"qrcode\""
-msgstr "⚠ Відсутня залежність \"qrcode\""
+#~ msgid "No file parsed..."
+#~ msgstr "Файл не розібрано…"
 
-#: qr_window.py:133
-msgid ""
-"⚠ Error generating QR code:\n"
-"Original error: “{}”"
-msgstr ""
-"⚠ Помилка генерації QR-коду:\n"
-"Оригінальна помилка: “{}”"
+#, python-format
+#~ msgid "Please fix space on \"%s\""
+#~ msgstr "Будь ласка, виправте пробіл у \"%s\""
 
-#: settings_ui_manager.py:112
-msgid "Middle Name Handling"
-msgstr "Обробка по батькові"
+#~ msgid "Space character on filename"
+#~ msgstr "Пробіл у назві файлу"
 
-#: settings_ui_manager.py:117
-msgid "Leave alone"
-msgstr "Залишити без змін"
+#, python-format
+#~ msgid ""
+#~ "From:\n"
+#~ " \"%(file1)s\"\n"
+#~ " to:\n"
+#~ " \"%(file2)s\".\n"
+#~ msgstr ""
+#~ "З:\n"
+#~ " \"%(file1)s\"\n"
+#~ " до:\n"
+#~ " \"%(file2)s\".\n"
 
-#: settings_ui_manager.py:118
-msgid "Separate"
-msgstr "Відокремити"
+#, python-format
+#~ msgid "Cannot validate \"%(file)s\" !"
+#~ msgstr "Неможливо виконати валідацію \"%(file)s\" !"
 
-#: settings_ui_manager.py:128
-msgid "URL Compactness Level"
-msgstr "Рівень стиснення URL"
+#~ msgid "Gramps version"
+#~ msgstr "Версія Gramps"
 
-#: settings_ui_manager.py:134
-msgid "Shortest - No Prefix, No Keys"
-msgstr "Найкоротший - без префікса, без ключів"
+#, python-format
+#~ msgid ""
+#~ "Wrong namespace\n"
+#~ "Need: %s"
+#~ msgstr ""
+#~ "Неправильний простір імен\n"
+#~ "Потрібно: %s"
 
-#: settings_ui_manager.py:137
-msgid "Compact - No Prefix, Keys Without Attributes"
-msgstr "Компактний – без префікса, ключі без атрибутів"
+#~ msgid " entries for place(s)"
+#~ msgstr " записи для місця(ць)"
 
-#: settings_ui_manager.py:140
-msgid "Compact - No Prefix, Keys With Attributes"
-msgstr "Компактний - без префікса, ключі з атрибутами"
+#~ msgid " note(s)"
+#~ msgstr " примітка(ки)"
 
-#: settings_ui_manager.py:143
-msgid "Long - Without Prefix on the Left"
-msgstr "Довгий – Без префікса зліва"
+#~ msgid " source(s)"
+#~ msgstr " джерело(а)"
 
-#: settings_ui_manager.py:150
-msgid "URL Prefix Replacement"
-msgstr "Замінник префікса URL"
-
-#: settings_ui_manager.py:157
-msgid "AI Provider"
-msgstr "Постачальник AI"
-
-#: settings_ui_manager.py:162
-msgid "(Disabled)"
-msgstr "(Вимкнено)"
-
-#: settings_ui_manager.py:163
-msgid "OpenAI"
-msgstr "OpenAI"
-
-#: settings_ui_manager.py:164
-msgid "Mistral AI"
-msgstr "Містраль А.І"
-
-#: settings_ui_manager.py:171
-msgid "OpenAI API Key"
-msgstr "Ключ API OpenAI"
-
-#: settings_ui_manager.py:176
-msgid "OpenAI Model"
-msgstr "Моделі OpenAI"
-
-#: settings_ui_manager.py:181
-msgid "Mistral API Key"
-msgstr "Ключ API Mistral"
-
-#: settings_ui_manager.py:186
-msgid "Mistral Model"
-msgstr "Модель Містраль"
-
-#: settings_ui_manager.py:191
-msgid "Show Links From the 'Attributes' tab"
-msgstr "Показати посилання з вкладки «Атрибути»"
-
-#: settings_ui_manager.py:196
-msgid "Show Links From the 'Internet' tab"
-msgstr "Показати посилання з вкладки «Інтернет»"
-
-#: settings_ui_manager.py:201
-msgid "Show Links From the Notes"
-msgstr "Показати посилання з нотаток"
-
-#: settings_ui_manager.py:209
-msgid "Enable AI-generated historical place data"
-msgstr "Увімкнути історичні дані про місця, згенеровані штучним інтелектом"
-
-#: settings_ui_manager.py:215
-msgid "Custom country code for AI notes (optional)"
-msgstr "Спеціальний код країни для нотаток AI (необов'язково)"
-
-#: settings_ui_manager.py:244
-msgid "Enable CSV Files"
-msgstr "Увімкнути файли CSV"
-
-#: settings_ui_manager.py:251
-msgid "Display Columns"
-msgstr "Показати стовпці"
-
-#: settings_ui_manager.py:265
-msgid "Display Icons"
-msgstr "Значки дисплея"
+#, python-format
+#~ msgid "3. Has written entries into \"%(file)s\".\n"
+#~ msgstr "3. Записи збережено у \"%(file)s\".\n"
 
 #, python-format
 #~ msgid ""

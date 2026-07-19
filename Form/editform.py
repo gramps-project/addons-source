@@ -28,7 +28,10 @@ Form editor.
 # Python modules
 # -------------------------------------------------------------------------
 from gi.repository import Gdk
+import logging
 import pickle
+
+LOG = logging.getLogger(".FormGramplet")
 
 # ------------------------------------------------------------------------
 #
@@ -60,6 +63,7 @@ from gramps.gen.lib import (
     Person,
     Family,
     Attribute,
+    Source,
 )
 from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
@@ -77,6 +81,7 @@ from form import (
     get_section_columns,
     get_form_citation,
 )
+from form_validator import split_family_title
 from entrygrid import EntryGrid
 
 # ------------------------------------------------------------------------
@@ -113,6 +118,12 @@ class EditForm(ManagedWindow):
         self.event = event
         self.citation = citation
         self.callback = callback
+
+        LOG.debug(
+            "Opening EditForm for event %s, citation %s",
+            event.get_handle() or "<new>",
+            citation.get_handle() or "<new>",
+        )
 
         ManagedWindow.__init__(self, uistate, track, citation)
 
@@ -370,6 +381,20 @@ class EditForm(ManagedWindow):
             if not self.event.get_handle():
                 self.db.add_event(self.event, trans)
 
+            # Mantis 11054 (nick_h's narrow guard): if the source the
+            # citation references was deleted while this form was open,
+            # write a replacement source rather than committing a
+            # dangling-reference citation. No behaviour change when the
+            # reference is intact.
+            source_handle = self.citation.get_reference_handle()
+            if source_handle and self.db.get_source_from_handle(source_handle) is None:
+                replacement = Source()
+                replacement.set_title(
+                    _("[Source recreated after deletion mid-form-edit]")
+                )
+                self.db.add_source(replacement, trans)
+                self.citation.set_reference_handle(replacement.get_handle())
+
             citation_handle = self.citation.get_handle()
             if not self.citation.get_handle():
                 self.db.add_citation(self.citation, trans)
@@ -391,10 +416,10 @@ class EditForm(ManagedWindow):
         """
         Close the editor window.
         """
-        (width, height) = self.window.get_size()
+        width, height = self.window.get_size()
         self._config.set("interface.form-width", width)
         self._config.set("interface.form-height", height)
-        (width, height) = self.window.get_position()
+        width, height = self.window.get_position()
         self._config.set("interface.form-horiz-position", width)
         self._config.set("interface.form-vert-position", height)
         self._config.save()
@@ -700,7 +725,7 @@ class MultiSection(Gtk.Box):
         self, widget, context, pos_x, pos_y, sel_data, info, time
     ):
         if sel_data and sel_data.get_data():
-            (drag_type, idval, handle, val) = pickle.loads(sel_data.get_data())
+            drag_type, idval, handle, val = pickle.loads(sel_data.get_data())
             person = self.db.get_person_from_handle(handle)
             if person:
                 self.__person_added(person)
@@ -881,6 +906,12 @@ class MultiSection(Gtk.Box):
         for order, row in enumerate(self.model):
             all_people.append(row[0])
             person = self.db.get_person_from_handle(row[0])
+            # Mantis 11054 (nick_h's narrow guard): if the person was
+            # deleted while this form was open, drop the row rather than
+            # commit a None-target reference. No behaviour change when
+            # the reference is intact.
+            if person is None:
+                continue
             event_ref = get_event_ref(self.event, person, self.role)
 
             # Write attributes
@@ -893,6 +924,10 @@ class MultiSection(Gtk.Box):
         # Remove links to people no longer on form
         for handle in set(self.initial_people) - set(all_people):
             person = self.db.get_person_from_handle(handle)
+            # Mantis 11054: same narrow guard — the person we tried to
+            # detach is already gone, nothing to commit.
+            if person is None:
+                continue
             ref_list = [
                 event_ref
                 for event_ref in person.get_event_ref_list()
@@ -972,7 +1007,7 @@ class PersonSection(Gtk.Box):
         self, widget, context, pos_x, pos_y, sel_data, info, time
     ):
         if sel_data and sel_data.get_data():
-            (drag_type, idval, handle, val) = pickle.loads(sel_data.get_data())
+            drag_type, idval, handle, val = pickle.loads(sel_data.get_data())
             person = self.db.get_person_from_handle(handle)
             if person:
                 self.__added(person)
@@ -1051,6 +1086,11 @@ class PersonSection(Gtk.Box):
             return
 
         obj = self.dbstate.db.get_person_from_handle(self.handle)
+        # Mantis 11054 (nick_h's narrow guard): the person the form is
+        # attached to was deleted while the form was open — skip this
+        # section entirely rather than commit a None-target reference.
+        if obj is None:
+            return
         event_ref = get_event_ref(self.event, obj, self.role)
 
         row = []
@@ -1062,6 +1102,10 @@ class PersonSection(Gtk.Box):
         # Remove link to person no longer on form
         if self.initial_handle and self.handle != self.initial_handle:
             person = self.db.get_person_from_handle(self.initial_handle)
+            # Mantis 11054: the previously-attached person is already
+            # gone, nothing to detach.
+            if person is None:
+                return
             ref_list = [
                 event_ref
                 for event_ref in obj.get_event_ref_list()
@@ -1102,7 +1146,15 @@ class FamilySection(Gtk.Box):
         hbox = Gtk.Box()
 
         title = get_section_title(form_id, section)
-        title1, title2 = title.split("/")
+        title1, title2 = split_family_title(title)
+        if not title2:
+            LOG.warning(
+                "FamilySection for form '%s' section '%s' has title '%s' "
+                "without the expected 'X/Y' separator; second label will be empty",
+                form_id,
+                section,
+                title,
+            )
 
         label = Gtk.Label(label="<b>%s</b>" % title1)
         label.set_use_markup(True)
@@ -1158,7 +1210,7 @@ class FamilySection(Gtk.Box):
         self, widget, context, pos_x, pos_y, sel_data, info, time
     ):
         if sel_data and sel_data.get_data():
-            (drag_type, idval, handle, val) = pickle.loads(sel_data.get_data())
+            drag_type, idval, handle, val = pickle.loads(sel_data.get_data())
             family = self.db.get_family_from_handle(handle)
             if family:
                 self.__added(family)
@@ -1241,6 +1293,11 @@ class FamilySection(Gtk.Box):
             return
 
         obj = self.dbstate.db.get_family_from_handle(self.handle)
+        # Mantis 11054 (nick_h's narrow guard): the family the form is
+        # attached to was deleted while the form was open — skip this
+        # section entirely rather than commit a None-target reference.
+        if obj is None:
+            return
         event_ref = get_event_ref(self.event, obj, self.role)
 
         row = []
@@ -1256,6 +1313,10 @@ class FamilySection(Gtk.Box):
         # Remove link to family no longer on form
         if self.initial_handle and self.handle != self.initial_handle:
             family = self.db.get_family_from_handle(self.initial_handle)
+            # Mantis 11054: the previously-attached family is already
+            # gone, nothing to detach.
+            if family is None:
+                return
             ref_list = [
                 event_ref
                 for event_ref in obj.get_event_ref_list()

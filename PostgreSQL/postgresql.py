@@ -23,40 +23,107 @@
 Backend for PostgreSQL database.
 """
 
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 #
 # Standard python modules
 #
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 import psycopg2
 import os
 import re
 
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 #
 # Gramps modules
 #
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 from gramps.plugins.db.dbapi.dbapi import DBAPI
 from gramps.gen.utils.configmanager import ConfigManager
 from gramps.gen.config import config
 from gramps.gen.db.dbconst import ARRAYSIZE
 from gramps.gen.db.exceptions import DbConnectionError
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.gen.lib import (
+    Citation, Event, Family, Media, Note, Person, Place, Repository, Source, Tag
+)
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
-psycopg2.paramstyle = 'format'
+psycopg2.paramstyle = "format"
 
-#-------------------------------------------------------------------------
+
+# -------------------------------------------------------------------------
 #
 # PostgreSQL class
 #
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 class PostgreSQL(DBAPI):
+
+    dialect = "postgresql"
+
+    def _sql_type(self, schema_type, max_length):
+        result = super()._sql_type(schema_type, max_length)
+        return "bytea" if result == "BLOB" else result
+
+    def _quote_column(self, col):
+        # Remove this method when gramps PR #2178 (dbapi _quote_column) is merged.
+        _RESERVED = {"desc", "order", "where", "select"}
+        return f"{col}_" if col in _RESERVED else col
+
+    def _create_secondary_columns(self):
+        # Remove override when gramps PR #2178 (_quote_column) is merged into core.
+        for cls in (Person, Family, Event, Place, Repository, Source, Citation, Media, Note, Tag):
+            table_name = cls.__name__.lower()
+            for field, schema_type, max_length in cls.get_secondary_fields():
+                if field != "handle":
+                    sql_type = self._sql_type(schema_type, max_length)
+                    self.dbapi.execute(
+                        f"ALTER TABLE {table_name} ADD COLUMN"
+                        f" {self._quote_column(field)} {sql_type}"
+                    )
+
+    def _update_secondary_values(self, obj):
+        # Remove override when gramps PR #2178 (_quote_column) is merged into core.
+        table = obj.__class__.__name__
+        fields = [field[0] for field in obj.get_secondary_fields()]
+        sets = []
+        values = []
+        for field in fields:
+            sets.append(f"{self._quote_column(field)} = ?")
+            values.append(getattr(obj, field))
+
+        if table == "Person":
+            given_name, surname = self._get_person_data(obj)
+            sets.append("given_name = ?")
+            values.append(given_name)
+            sets.append("surname = ?")
+            values.append(surname)
+        if table == "Place":
+            handle = self._get_place_data(obj)
+            sets.append("enclosed_by = ?")
+            values.append(handle)
+
+        if len(values) > 0:
+            table_name = table.lower()
+            self.dbapi.execute(
+                f'UPDATE {table_name} SET {", ".join(sets)} where handle = ?',
+                self._sql_cast_list(values) + [obj.handle],
+            )
+
+    def get_media_handles(self, sort_handles=False, locale=glocale):
+        # Remove override when gramps PR #2178 (_quote_column) is merged into core.
+        if sort_handles:
+            self.dbapi.execute(
+                "SELECT handle FROM media "
+                f"ORDER BY {self._quote_column('desc')} "
+                f'COLLATE "{self._collation(locale)}"'
+            )
+        else:
+            self.dbapi.execute("SELECT handle FROM media")
+        return [row[0] for row in self.dbapi.fetchall()]
 
     def get_summary(self):
         """
@@ -64,42 +131,44 @@ class PostgreSQL(DBAPI):
         backend.
         """
         summary = super().get_summary()
-        summary.update({
-            _("Database version"): psycopg2.__version__,
-            _("Database module location"): psycopg2.__file__,
-        })
+        summary.update(
+            {
+                _("Database version"): psycopg2.__version__,
+                _("Database module location"): psycopg2.__file__,
+            }
+        )
         return summary
 
     def requires_login(self):
         return True
 
     def _initialize(self, directory, username, password):
-        config_file = os.path.join(directory, 'settings.ini')
+        config_file = os.path.join(directory, "settings.ini")
         config_mgr = ConfigManager(config_file)
-        config_mgr.register('database.dbname', '')
-        config_mgr.register('database.host', '')
-        config_mgr.register('database.port', '')
+        config_mgr.register("database.dbname", "")
+        config_mgr.register("database.host", "")
+        config_mgr.register("database.port", "")
 
         if not os.path.exists(config_file):
-            name_file = os.path.join(directory, 'name.txt')
-            with open(name_file, 'r', encoding='utf8') as file:
+            name_file = os.path.join(directory, "name.txt")
+            with open(name_file, "r", encoding="utf8") as file:
                 dbname = file.readline().strip()
-            config_mgr.set('database.dbname', dbname)
-            config_mgr.set('database.host', config.get('database.host'))
-            config_mgr.set('database.port', config.get('database.port'))
+            config_mgr.set("database.dbname", dbname)
+            config_mgr.set("database.host", config.get("database.host"))
+            config_mgr.set("database.port", config.get("database.port"))
             config_mgr.save()
 
         config_mgr.load()
 
         dbkwargs = {}
-        for key in config_mgr.get_section_settings('database'):
-            value = config_mgr.get('database.' + key)
+        for key in config_mgr.get_section_settings("database"):
+            value = config_mgr.get("database." + key)
             if value:
                 dbkwargs[key] = value
         if username:
-            dbkwargs['user'] = username
+            dbkwargs["user"] = username
         if password:
-            dbkwargs['password'] = password
+            dbkwargs["password"] = password
 
         try:
             self.dbapi = Connection(**dbkwargs)
@@ -107,11 +176,11 @@ class PostgreSQL(DBAPI):
             raise DbConnectionError(str(msg), config_file)
 
 
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 #
 # Connection class
 #
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 class Connection:
 
     def __init__(self, *args, **kwargs):
@@ -125,37 +194,28 @@ class Connection:
         Checks that a collation exists and if not creates it.
 
         :param locale: Locale to be checked.
-        :param type: A GrampsLocale object.
+        :type locale: A GrampsLocale object.
         """
-        # Duplicating system collations works, but to delete them the schema
-        # must be specified, so get the current schema
         collation = locale.get_collation()
-        self.execute('CREATE COLLATION IF NOT EXISTS "%s"'
-                     "(LOCALE = '%s')" % (collation, locale.collation))
-
-    def _hack_query(self, query):
-        query = query.replace("?", "%s")
-        query = query.replace("REGEXP", "~")
-        query = query.replace("desc", "desc_")
-        query = query.replace("BLOB", "bytea")
-        ## LIMIT offset, count
-        ## count can be -1, for all
-        ## LIMIT -1
-        ## LIMIT offset, -1
-        query = query.replace("LIMIT -1",
-                              "LIMIT all") ##
-        match = re.match(".* LIMIT (.*), (.*) ", query)
-        if match and match.groups():
-            offset, count = match.groups()
-            if count == "-1":
-                count = "all"
-            query = re.sub("(.*) LIMIT (.*), (.*) ",
-                           "\\1 LIMIT %s OFFSET %s " % (count, offset),
-                           query)
-        return query
+        # Use pg_collation to check existence rather than IF NOT EXISTS, which
+        # requires PostgreSQL 12+.
+        self.execute("SELECT 1 FROM pg_collation WHERE collname = %s", [collation])
+        if not self.fetchone():
+            self.execute(
+                "CREATE COLLATION \"%s\" (LOCALE = '%s')"
+                % (collation, locale.collation)
+            )
 
     def execute(self, *args, **kwargs):
-        sql = self._hack_query(args[0])
+        sql = args[0].replace("?", "%s")      # qmark → format paramstyle
+        sql = sql.replace(" REGEXP ", " ~ ")  # SQLite REGEXP → PostgreSQL ~
+        # TODO: remove when gramps PR #2178 (_quote_column) is merged into core
+        sql = sql.replace("ON media(desc)", "ON media(desc_)")
+        sql = re.sub(r'\bBLOB\b', 'BYTEA', sql)  # SQLite BLOB → PostgreSQL BYTEA
+        sql = re.sub(r'\bLIMIT\s+(-?\d+)\s*,\s*(-?\d+)',
+                     lambda m: f'LIMIT {"ALL" if m.group(2) == "-1" else m.group(2)} OFFSET {m.group(1)}',
+                     sql, flags=re.IGNORECASE)  # LIMIT offset, count → LIMIT count OFFSET offset
+        sql = re.sub(r'\bLIMIT\s+-1\b', 'LIMIT ALL', sql, flags=re.IGNORECASE)  # LIMIT -1 → LIMIT ALL
         if len(args) > 1:
             args = args[1]
         else:
@@ -185,9 +245,10 @@ class Connection:
         self.__connection.rollback()
 
     def table_exists(self, table):
-        self.__cursor.execute("SELECT COUNT(*) "
-                              "FROM information_schema.tables "
-                              "WHERE table_name=%s;", [table])
+        self.__cursor.execute(
+            "SELECT COUNT(*) " "FROM information_schema.tables " "WHERE table_name=%s;",
+            [table],
+        )
         return self.fetchone()[0] != 0
 
 
@@ -225,11 +286,11 @@ class Connection:
         return Cursor(self.__connection)
 
 
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 #
 # Cursor class
 #
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 class Cursor:
     def __init__(self, connection):
         self.__connection = connection

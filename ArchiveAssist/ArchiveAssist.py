@@ -82,11 +82,11 @@ def parse_ref(text: str) -> dict:
 
     # ---------- Riksarkivet ----------
     pattern = re.compile(
-        r'^(?P<archive>.+?)\s+(?:kyrkoarkiv|stadsarkiv),'
+        r'^(?P<archive>[^,]+),\s*'
         r'(?P<series>[^,]+),\s*'
-        r'(?P<nad>SE/\w+/\d+/[^,]+)\s*'
-        r'\((?P<years>\d{4}(?:-\d{4})?)\),\s*'
-        r'bildid[^_]*_(?P<bildid>\d+)'
+        r'(?P<nad>[^\(]+)*'
+        r'\((?P<years>\d{4}(?:-\d{4})?)\)\s*'
+        r'(, bildid[^_]*_(?P<bildid>\d+))?'
         r'(?:,\s*sida\s+(?P<page>\d+))?',
         re.IGNORECASE
     )
@@ -94,13 +94,21 @@ def parse_ref(text: str) -> dict:
     match = pattern.search(text)
     if not match:
         return {}
-
+    
     archive = match.group("archive").strip()
+    to_remove = ["kyrkoarkiv", "stadsarkiv"]
+    for word in to_remove:
+        archive = archive.replace(word, "")
+    archive = archive.strip()
     series = match.group("series").strip()
     nad = match.group("nad").strip()
     years = match.group("years")
-    bild = match.group("bildid").lstrip("0")
-    page = match.group("page") or f"Bild {bild}"
+    bild = match.group("bildid")
+    if bild:
+        bild = bild.lstrip("0")
+    page = match.group("page")
+    if not page and bild:
+        page = f"Bild {bild}"
 
     series_code = ':'.join(nad.split('/')[-2:]).replace(" ", "")
     abr = f"{archive} {series_code} ({years})"
@@ -243,36 +251,41 @@ class ArchiveAssist(Gramplet):
                     self.dbstate.db.commit_source(src, trans)
                 
                     # Citation
-                    cit = Citation()
-                    cit.set_confidence_level(2)
-                    cit.set_page(parsed["page"])
-                    
-                    years = parsed["years"]
-                    cit_date = Date()
-                    if years and "-" in years:
-                        start_year, end_year = [y.strip() for y in years.split("-")]
-                        cit_date.set(
-                            modifier=Date.MOD_RANGE, 
-                            value=(0, 0, int(start_year), False, 0, 0, int(end_year), False))
-                        cit.set_date_object(cit_date)
+                    if parsed["page"]:
+                        cit = Citation()
+                        cit.set_confidence_level(2)
+                        cit.set_page(parsed["page"])
+                        
+                        years = parsed["years"]
+                        cit_date = Date()
+                        if years and "-" in years:
+                            start_year, end_year = [y.strip() for y in years.split("-")]
+                            cit_date.set(
+                                modifier=Date.MOD_RANGE, 
+                                value=(0, 0, int(start_year), False, 0, 0, int(end_year), False))
+                            cit.set_date_object(cit_date)
 
-                    elif years:
-                        cit_date.set_year(int(years.strip()))
-                        cit.set_date_object(cit_date)
-                
-                    cit.set_reference_handle(src_handle)               
+                        elif years:
+                            cit_date.set_year(int(years.strip()))
+                            cit.set_date_object(cit_date)
                     
-                    if parsed["full_AID"]:
-                        AID = Attribute()
-                        AID.set_type("AID")
-                        AID.set_value(parsed["full_AID"])
-                        cit.add_attribute(AID)
+                        cit.set_reference_handle(src_handle)               
+                        
+                        if parsed["full_AID"]:
+                            AID = Attribute()
+                            AID.set_type("AID")
+                            AID.set_value(parsed["full_AID"])
+                            cit.add_attribute(AID)
+                        
+                        cit_handle = self.dbstate.db.add_citation(cit, trans)
                     
-                    cit_handle = self.dbstate.db.add_citation(cit, trans)
-                
-                    self.status_label.set_text(
-                        f"Created Source ({src.get_gramps_id()}) and Citation ({cit.get_gramps_id()})."
-                    )
+                        self.status_label.set_text(
+                            f"Created Source ({src.get_gramps_id()}) and Citation ({cit.get_gramps_id()})."
+                        )
+                    else:
+                        self.status_label.set_text(
+                            f"Created Source ({src.get_gramps_id()}). No Citation created due to missing page info."
+                        )
 
         except Exception as e:        
             LOG.error("ArchiveAssist failed: %s", str(e), exc_info=True)

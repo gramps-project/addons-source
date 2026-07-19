@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:29+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
 "PO-Revision-Date: 2026-04-14 18:01+0000\n"
 "Last-Translator: Fabio Restante <frestante@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
@@ -47,30 +47,11 @@ msgstr "Il percorso di destinazione per i file generati."
 msgid "The destination file name for html content."
 msgstr "Il nome di file di destinazione per il contenuto HTML."
 
-msgid "Descendant Indented Tree"
-msgstr "Albero indentato dei discendenti"
-
-msgid "Ancestral Fan Chart Options"
-msgstr "Opzioni grafico a ventaglio ascendenza"
-
-msgid "Paternal Background Color"
-msgstr "Colore di sfondo paterno"
-
-msgid "RGB-color for paternal box background."
-msgstr "Colore RGB per lo sfondo del riquadro paterno."
-
-msgid "Maternal Background"
-msgstr "Colore di sfondo materno"
-
-msgid "RGB-color for maternal box background."
-msgstr "Colore RGB per lo sfondo del riquadro materno."
-
-#, python-format
-msgid "See %(reference)s : %(spouse)s"
-msgstr "Vedi %(reference)s : %(spouse)s"
-
 msgid "Generating report..."
 msgstr "Generazione resoconto..."
+
+msgid "Descendant Indented Tree"
+msgstr "Albero indentato dei discendenti"
 
 msgid "Invalid Destination Directory"
 msgstr "Directory di destinazione non valida"
@@ -230,3 +211,18 @@ msgstr "Dimensione dei caratteri del corpo del testo"
 msgid "The font size in pixels for biography body text."
 msgstr ""
 "La dimensione in pixel dei caratteri del testo del corpo della biografia."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Opzioni grafico a ventaglio ascendenza"
+
+msgid "Paternal Background Color"
+msgstr "Colore di sfondo paterno"
+
+msgid "RGB-color for paternal box background."
+msgstr "Colore RGB per lo sfondo del riquadro paterno."
+
+msgid "Maternal Background"
+msgstr "Colore di sfondo materno"
+
+msgid "RGB-color for maternal box background."
+msgstr "Colore RGB per lo sfondo del riquadro materno."

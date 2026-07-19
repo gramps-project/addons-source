@@ -2,19 +2,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2018-12-04 16:36+0300\n"
-"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
-"Language-Team: Russian\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2025-10-31 18:03+0000\n"
+"Last-Translator: Mikhail Burkasov <mburkasov@gmail.com>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.14.1-dev\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 msgid "lxml"
 msgstr "lxml"
@@ -31,21 +32,8 @@ msgstr "Грамплет для тестирования etree с Gramps XML"
 msgid "Invalid timestamp"
 msgstr "Неверное время"
 
-msgid "No file parsed..."
-msgstr "Нет разобранного файла..."
-
-msgid "Number of editions back"
-msgstr "Количество изменений"
-
-msgid "Space character on filename"
-msgstr "Пробел в имени файла"
-
-#, python-format
-msgid "Please fix space on \"%s\""
-msgstr "Пожайлуйста исправьте пробел в \"%s\""
-
-msgid "Sorry, no support for your OS yet!"
-msgstr "Извините, Ваша операционная система пока не поддерживается!"
+msgid "No file loaded..."
+msgstr "Нет загруженного файла..."
 
 msgid "Is it a compressed .gramps?"
 msgstr "Это сжатый .gramps?"
@@ -55,24 +43,18 @@ msgid "Cannot uncompress \"%s\""
 msgstr "Не удалось распаковать \"%s\""
 
 #, python-format
-msgid ""
-"From:\n"
-" \"%(file1)s\"\n"
-" to:\n"
-" \"%(file2)s\".\n"
-msgstr ""
-"Из:\n"
-" \"%(file1)s\"\n"
-" в:\n"
-" \"%(file2)s\".\n"
-
-#, python-format
 msgid "Cannot copy \"%s\""
 msgstr "Не удалось скопировать \"%s\""
 
+msgid "Sorry, no support for your OS yet!"
+msgstr "Извините, Ваша операционная система пока не поддерживается!"
+
+msgid "Parsing issue"
+msgstr "Анализ замечания"
+
 #, python-format
-msgid "XML: Last %s editions since %s, were at/on :\n"
-msgstr "XML: Последние изменение %s с %s, было :\n"
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "Не удалось разобрать содержимое файла \"%(file)s\""
 
 #, python-format
 msgid ""
@@ -83,86 +65,6 @@ msgstr ""
 "\n"
 "XML: Количество записей и связей : \t%s\n"
 "\n"
-
-#, python-format
-msgid ""
-"Number of tags : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Количество меток : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of tags : \n"
-"\t\t\t%s\n"
-msgstr ""
-"Количество меток : \n"
-"\t\t\t%s\n"
-
-#, python-format
-msgid ""
-"Number of  events : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Количество событий : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of families : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Количество семей : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of sources : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Количество источников : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of citations : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Количество цитат : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of places : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Количество мест : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of media objects : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Количество документов : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of repositories : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Количество хранилищ : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of notes : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Количество заметок : \n"
-"\t\t\t%s\t|\t(%s)*\n"
 
 #, python-format
 msgid ""
@@ -192,15 +94,8 @@ msgstr "Не найден python3 lxml"
 msgid "Please, try to install \"python3 lxml\" package."
 msgstr "Попробуйте установить \"python3 lxml\" модуль."
 
-msgid "No file loaded..."
-msgstr "Нет загруженного файла..."
-
 msgid "XSD validation (lxml)"
 msgstr "XSD проверка (lxml)"
-
-#, python-format
-msgid "Cannot validate \"%(file)s\" !"
-msgstr "Не удалось проверить \"%(file)s\" !"
 
 #, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
@@ -209,24 +104,6 @@ msgstr "xmllint: пропуск DTD проверки для \"%(file)s\""
 #, python-format
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
 msgstr "xmllint: пропуск RelaxNG проверки для \"%(file)s\""
-
-msgid "Parsing issue"
-msgstr "Анализ замечания"
-
-#, python-format
-msgid "Cannot parse content of \"%(file)s\""
-msgstr "Не удалось разобрать содержимое файла \"%(file)s\""
-
-msgid "Gramps version"
-msgstr "Версия Gramps"
-
-#, python-format
-msgid ""
-"Wrong namespace\n"
-"Need: %s"
-msgstr ""
-"Неверное пространство имён\n"
-"Требуется: %s"
 
 msgid "RelaxNG validation"
 msgstr "RelaxNG прверка"
@@ -248,17 +125,6 @@ msgstr "Анализ файла..."
 msgid "Missing header"
 msgstr "Отсутствует заголовок"
 
-msgid ""
-"Not a valid .gramps.\n"
-"Cannot run the gramplet...\n"
-"Please, try to use a .gramps\n"
-"generated by Gramps 4.x."
-msgstr ""
-"Неверный .gramps.\n"
-"Не удалось запустить грамплет...\n"
-"Попробуйте использовать .gramps\n"
-"созданный Gramps 4.x."
-
 msgid "0"
 msgstr "0"
 
@@ -274,28 +140,8 @@ msgstr " Gramps "
 msgid "Period: "
 msgstr "Период: "
 
-msgid " entries for surname(s); no frequency yet"
-msgstr " вхождение фамилии(й); нет повторов пока"
-
-msgid " entries for place(s)"
-msgstr " вхождение мест(а)"
-
-msgid " note(s)"
-msgstr " заметка(и)"
-
-msgid " source(s)"
-msgstr " источник(и)"
-
 msgid "Gallery.html"
 msgstr "Gallery.html"
-
-#, python-format
-msgid "2. Has generated a media index on \"%(file)s\".\n"
-msgstr "2. Список документов создан в \"%(file)s\".\n"
-
-#, python-format
-msgid "3. Has written entries into \"%(file)s\".\n"
-msgstr "3. Вхождения записаны в \"%(file)s\".\n"
 
 msgid "Matches XSD schema."
 msgstr "Схема совпадений XSD."
@@ -326,17 +172,3 @@ msgstr "Норвегия"
 
 msgid "Portugal"
 msgstr "Португалия"
-
-#, python-format
-msgid "1. Has generated \"%s\".\n"
-msgstr "1. Создано \"%s\".\n"
-
-#, python-format
-msgid ""
-"Try to open\n"
-" \"%s\"\n"
-" into your prefered web navigator ..."
-msgstr ""
-"Попытка открыть\n"
-" \"%s\"\n"
-" в Вашем браузере по умолчанию ..."

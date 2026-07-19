@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-04-28 18:11+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 
 msgid "lxml"
 msgstr "lxml"
@@ -29,21 +29,8 @@ msgstr "Gramplet til at teste etree med Gramps XML"
 msgid "Invalid timestamp"
 msgstr "Ugyldigt tidsstempel"
 
-msgid "No file parsed..."
-msgstr "Ingen fil blev fortolket..."
-
-msgid "Number of editions back"
-msgstr "Antal af udgaver tilbage"
-
-msgid "Space character on filename"
-msgstr "Mellemrumstegn i filnavn"
-
-#, python-format
-msgid "Please fix space on \"%s\""
-msgstr "Ret venligst mellemrum i \"%s\""
-
-msgid "Sorry, no support for your OS yet!"
-msgstr "Beklager, ingen support for dit OS endnu!"
+msgid "No file loaded..."
+msgstr "Ingen fil indlæst..."
 
 msgid "Is it a compressed .gramps?"
 msgstr "Er det en komprimeret .gramps?"
@@ -53,24 +40,18 @@ msgid "Cannot uncompress \"%s\""
 msgstr "Kan ikke udpakke \"%s\""
 
 #, python-format
-msgid ""
-"From:\n"
-" \"%(file1)s\"\n"
-" to:\n"
-" \"%(file2)s\".\n"
-msgstr ""
-"Fra:\n"
-" \"%(file1)s\"\n"
-" til:\n"
-" \"%(file2)s\".\n"
-
-#, python-format
 msgid "Cannot copy \"%s\""
 msgstr "Kan ikke kopiere \"%s\""
 
+msgid "Sorry, no support for your OS yet!"
+msgstr "Beklager, ingen support for dit OS endnu!"
+
+msgid "Parsing issue"
+msgstr "Fortolkningsproblem"
+
 #, python-format
-msgid "XML: Last %s editions since %s, were at/on :\n"
-msgstr "XML: Seneste %s udgave siden %s var den:\n"
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "Kan ikke fortolke \"%(file)s\""
 
 #, python-format
 msgid ""
@@ -81,102 +62,6 @@ msgstr ""
 "\n"
 "XML: Antal poster og slægtskaber : \t%s\n"
 "\n"
-
-#, python-format
-msgid ""
-"Number of tags : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Antal mærkater : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of tags : \n"
-"\t\t\t%s\n"
-msgstr ""
-"Antal mærkater : \n"
-"\t\t\t%s\n"
-
-#, python-format
-msgid ""
-"Number of  events : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Antal  hændelser : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of persons : \n"
-"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
-msgstr ""
-"Antal personer : \n"
-"\t\t\t%s\t|\t(%s) og (%s)* efternavne\n"
-
-#, python-format
-msgid ""
-"Number of persons : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Antal personer : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of families : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Antal familier : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of sources : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Antal kilder : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of citations : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Antal kildehenvisninger : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of places : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Antal steder : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of media objects : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Antal medieobjekter : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of repositories : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Antal arkiver : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of notes : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Antal noter : \n"
-"\t\t\t%s\t|\t(%s)*\n"
 
 #, python-format
 msgid ""
@@ -206,15 +91,8 @@ msgstr "Mangler python3.lxml"
 msgid "Please, try to install \"python3 lxml\" package."
 msgstr "Forøg venligst at installere \"python3.lxml\" pakken."
 
-msgid "No file loaded..."
-msgstr "Ingen fil indlæst..."
-
 msgid "XSD validation (lxml)"
 msgstr "XSD validering (lxml)"
-
-#, python-format
-msgid "Cannot validate \"%(file)s\" !"
-msgstr "Kan ikke validere  \"%(file)s\" !"
 
 #, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
@@ -223,24 +101,6 @@ msgstr "xmllint: spring DTD validering over for \"%(file)s\""
 #, python-format
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
 msgstr "xmllint: spring RelaxNG validring over  for \"%(file)s\""
-
-msgid "Parsing issue"
-msgstr "Fortolkningsproblem"
-
-#, python-format
-msgid "Cannot parse content of \"%(file)s\""
-msgstr "Kan ikke fortolke \"%(file)s\""
-
-msgid "Gramps version"
-msgstr "Gramps version"
-
-#, python-format
-msgid ""
-"Wrong namespace\n"
-"Need: %s"
-msgstr ""
-"Forkert navnerum\n"
-"Har brug for: %s"
 
 msgid "RelaxNG validation"
 msgstr "RelaxNG validering"
@@ -262,17 +122,6 @@ msgstr "Fortolker filen..."
 msgid "Missing header"
 msgstr "Manglende overskrift"
 
-msgid ""
-"Not a valid .gramps.\n"
-"Cannot run the gramplet...\n"
-"Please, try to use a .gramps\n"
-"generated by Gramps 4.x."
-msgstr ""
-"Ikke en gyldig .gramps.\n"
-"Kan ikke udføre gramplet...\n"
-"Prøv venligst en .gramps\n"
-"genereret af Gramps 4.x."
-
 msgid "0"
 msgstr "0"
 
@@ -288,28 +137,8 @@ msgstr " med Gramps "
 msgid "Period: "
 msgstr "Periode: "
 
-msgid " entries for surname(s); no frequency yet"
-msgstr " poster for efternavn(e); ingen frekvens endnu"
-
-msgid " entries for place(s)"
-msgstr " poster for sted(er)"
-
-msgid " note(s)"
-msgstr " note(r)"
-
-msgid " source(s)"
-msgstr " kilde(r)"
-
 msgid "Gallery.html"
 msgstr "Gallery.html"
-
-#, python-format
-msgid "2. Has generated a media index on \"%(file)s\".\n"
-msgstr "2. Har dannet medieindeks for \"%(file)s\".\n"
-
-#, python-format
-msgid "3. Has written entries into \"%(file)s\".\n"
-msgstr "3. Har skrevet poster til \"%(file)s\".\n"
 
 msgid "Matches XSD schema."
 msgstr "Matcher XSD schema."
@@ -340,17 +169,3 @@ msgstr "Norge"
 
 msgid "Portugal"
 msgstr "Portugal"
-
-#, python-format
-msgid "1. Has generated \"%s\".\n"
-msgstr "1. Har dannet \"%s\".\n"
-
-#, python-format
-msgid ""
-"Try to open\n"
-" \"%s\"\n"
-" into your prefered web navigator ..."
-msgstr ""
-"Prøv at åbne\n"
-" \"%s\"\n"
-" i din foretrukne web navigator ..."

@@ -22,6 +22,7 @@
 """
 Form definitions.
 """
+
 # ---------------------------------------------------------------
 #
 # Python imports
@@ -29,6 +30,8 @@ Form definitions.
 # ---------------------------------------------------------------
 import os
 import xml.dom.minidom
+import xml.parsers.expat
+import logging
 
 # ---------------------------------------------------------------
 #
@@ -37,8 +40,17 @@ import xml.dom.minidom
 # ---------------------------------------------------------------
 from gramps.gen.datehandler import parser
 from gramps.gen.config import config
-from gramps.gui.dialog import ErrorDialog, WarningDialog
-import logging
+from gramps.gui.dialog import ErrorDialog
+
+# ---------------------------------------------------------------
+#
+# Gramps specific
+#
+# ---------------------------------------------------------------
+from form_validator import (
+    validate_form_dom,
+    validate_form_element,
+)
 
 LOG = logging.getLogger(".FormGramplet")
 
@@ -81,6 +93,7 @@ definition_files = [
     "form_dk.xml",
     "form_fr.xml",
     "form_gb.xml",
+    "form_ie.xml",
     "form_pl.xml",
     "form_us.xml",
     "test.xml",
@@ -111,7 +124,14 @@ class Form:
     A class to read form definitions from an XML file.
     """
 
-    def __init__(self):
+    def __init__(self, definition_dir=None):
+        """
+        :param definition_dir: optional override for the directory the
+            loader scans for ``form_*.xml`` / ``custom.xml`` files.
+            Defaults to the directory containing this module. Exposed
+            primarily so tests can point the loader at an isolated
+            temporary directory.
+        """
         self.__references = {}
         self.__dates = {}
         self.__headings = {}
@@ -122,27 +142,88 @@ class Form:
         self.__names = {}
         self.__section_types = {}
 
+        base_dir = definition_dir or os.path.dirname(__file__)
+        LOG.debug("Loading form definitions from %s", base_dir)
         for file_name in definition_files:
-            full_path = os.path.join(os.path.dirname(__file__), file_name)
+            full_path = os.path.join(base_dir, file_name)
             if os.path.exists(full_path):
-                try:
-                    self.__load_definitions(full_path)
-                except Exception as e:
-                    WarningDialog(
-                        _("Failed to load Form definition file:\n%s\n") % full_path,
-                    )
-                    LOG.warning(
-                        "\nERROR: failed to load Form definition file.\n%s\nException:\n%s",
-                        full_path,
-                        str(e),
-                    )
+                self.__load_file(full_path)
+            else:
+                LOG.debug("Form definition file not present: %s", full_path)
+        LOG.info(
+            "Loaded %d form definition(s) from %s",
+            len(self.__names),
+            base_dir,
+        )
 
-    def __load_definitions(self, definition_file):
-        dom = xml.dom.minidom.parse(definition_file)
+    def __load_file(self, full_path):
+        """
+        Parse and validate a single form definition file, then load any
+        well-formed ``<form>`` elements it contains.
+
+        Parse errors and structural validation errors are reported to the
+        user through an :class:`ErrorDialog` and logged; malformed forms
+        are skipped while valid forms from the same file are still loaded.
+        """
+        LOG.debug("Parsing form definition file %s", full_path)
+        try:
+            dom = xml.dom.minidom.parse(full_path)
+        except xml.parsers.expat.ExpatError as exc:
+            ErrorDialog(
+                _("XML syntax error in Form definition file"),
+                "%s\n\n%s" % (full_path, exc),
+            )
+            LOG.warning(
+                "XML syntax error in Form definition file %s: %s",
+                full_path,
+                exc,
+            )
+            return
+        except Exception as exc:
+            ErrorDialog(
+                _("Failed to read Form definition file"),
+                "%s\n\n%s" % (full_path, exc),
+            )
+            LOG.warning("Failed to read Form definition file %s: %s", full_path, exc)
+            return
+
+        errors = validate_form_dom(dom)
+        if errors:
+            ErrorDialog(
+                _("Invalid Form definition file"),
+                "%s\n\n%s" % (full_path, "\n".join(errors)),
+            )
+            LOG.warning(
+                "Invalid Form definition file %s:\n%s",
+                full_path,
+                "\n".join(errors),
+            )
+
+        try:
+            self.__load_definitions(dom)
+        finally:
+            dom.unlink()
+
+    def __load_definitions(self, dom):
         top = dom.getElementsByTagName("forms")
+        if not top:
+            return
 
         for form in top[0].getElementsByTagName("form"):
+            if validate_form_element(form):
+                # Errors for this form were already surfaced by the
+                # file-level validator — skip it so __load_definitions
+                # never touches a malformed element.
+                skipped_id = (
+                    form.attributes["id"].value
+                    if "id" in form.attributes
+                    else "<missing id>"
+                )
+                LOG.debug("Skipping invalid <form> '%s'", skipped_id)
+                continue
+
             id = form.attributes["id"].value
+            LOG.debug("Loading form '%s'", id)
             self.__names[id] = form.attributes["title"].value
             self.__types[id] = form.attributes["type"].value
             if "reference" in form.attributes:
@@ -194,7 +275,6 @@ class Form:
                     self.__columns[id][role].append(
                         (attr_text, long_text, int(size_text))
                     )
-        dom.unlink()
 
     def get_form_ids(self):
         """Return a list of ids for all form definitions."""
@@ -205,7 +285,7 @@ class Form:
         return self.__names[form_id]
 
     def get_reference(self, form_id):
-        """ Return the reference for a given form. """
+        """Return the reference for a given form."""
         return self.__references[form_id]
 
     def get_date(self, form_id):
@@ -258,11 +338,13 @@ def get_form_title(form_id):
     """
     return FORM.get_title(form_id)
 
+
 def get_form_reference(form_id):
     """
     Return the reference for a given form.
     """
     return FORM.get_reference(form_id)
+
 
 def get_form_date(form_id):
     """

@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-03 16:13-0800\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Historical Context"
+msgstr "Contexto Histórico"
+
+msgid "Lists relevant historical events during the lifetime of a Person"
+msgstr ""
+"Listados relevantes de eventos históricos durante la vida de una Miembro"
+
+msgid "Rows starting with this in the text column will be hidden "
+msgstr "Filas iniciando con esto en la columna de texto estarán ocultas "
+
+msgid "Use filter "
+msgstr "Utilizar filtro "
+
+msgid "Show outside life span "
+msgstr "Mostrar expansión de vida en lado externo "
+
+msgid "Use full dates"
+msgstr "Utilizar fechas completas"
+
+msgid "Foreground color items in lifespan"
+msgstr "Color de elementos principales en duración de vida"
+
+msgid "Background color items in lifespan"
+msgstr "Color de fondo para elementos en duración de vida"
+
+msgid "Foreground color items outside lifespan"
+msgstr "Color principal de elementos fuera del historial de vida"
+
+msgid "Background color items outside lifespan"
+msgstr "Color de fondo de elementos fuera del historial de vida"
+
+msgid "Select from files"
+msgstr "Seleccionar desde archivos"
+
+msgid "Invalid date "
+msgstr "Fecha no válida "
+
+msgid " in line: "
+msgstr " en línea: "
+
+msgid "Error:"
+msgstr "Error:"
+
+msgid ": line does not contain four sections separated by semicolons in : \""
+msgstr ""
+": la línea no contiene cuatro secciones separadas por punto y coma en : \""
+
+msgid "Cannot open URL: "
+msgstr "No se puede abrir URL: "
+
+msgid "Double click row to follow link"
+msgstr "Pulsación doble de fila para seguir enlace"

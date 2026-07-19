@@ -31,6 +31,7 @@ import gzip
 import xml.dom.minidom
 import getopt
 import sys
+from functools import reduce
 #-------------------------------------------------------------------------
 #
 # variables

@@ -423,6 +423,11 @@ class DataEntryGramplet(Gramplet):
 
     def save_data_edit(self, obj):
         if self._dirty:
+            if not self.dbstate.is_open():
+                from gramps.gui.dialog import ErrorDialog
+                ErrorDialog(_("No Family Tree is open."),
+                            _("Please open a Family Tree to edit data."))
+                return
             # Save the edits ----------------------------------
             person = self._dirty_person
             # First, get the data:
@@ -498,6 +503,10 @@ class DataEntryGramplet(Gramplet):
 
     def add_data_entry(self, obj):
         from gramps.gui.dialog import ErrorDialog
+        if not self.dbstate.is_open():
+            ErrorDialog(_("No Family Tree is open."),
+                        _("Please open a Family Tree before adding a person."))
+            return
         # First, get the data:
         if "," in self.de_widgets["NPName"].get_text():
             surname, firstname = self.de_widgets["NPName"].get_text().split(",", 1)

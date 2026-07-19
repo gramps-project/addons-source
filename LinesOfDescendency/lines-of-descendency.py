@@ -27,6 +27,7 @@
 #
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.gen.errors import ReportError
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -96,11 +97,13 @@ class LinesOfDescendency(Report):
         menu = options.menu
         pid  = menu.get_option_by_name('pid').get_value()
         self.descendent = database.get_person_from_gramps_id(pid)
+        if (self.descendent == None) :
+            raise ReportError(_("Person %s is not in the Database") % pid )
         self.descendent_handle = self.descendent.get_handle()
         ancestor = menu.get_option_by_name('ancestor').get_value()
         self.ancestor = database.get_person_from_gramps_id(ancestor)
-        if (self.descendent == None) :
-            raise ReportError(_("Person %s is not in the Database") % pid )
+        if (self.ancestor == None) :
+            raise ReportError(_("Person %s is not in the Database") % ancestor )
 
     def write_path(self, path):
         gen = 1
@@ -123,7 +126,14 @@ class LinesOfDescendency(Report):
                 mother if mother != handle \
                     else family.get_father_handle()
             handle = next_handle
-            spouse = self.database.get_person_from_handle(spouse_handle)
+            # Bug 12913: a family may have only one parent defined,
+            # in which case spouse_handle is None and
+            # get_person_from_handle raises HandleError. Guard the
+            # lookup so the existing "N.N." fallback still applies.
+            if spouse_handle:
+                spouse = self.database.get_person_from_handle(spouse_handle)
+            else:
+                spouse = None
             if spouse:
                 spouse_name = _nd.display(spouse)
             else:

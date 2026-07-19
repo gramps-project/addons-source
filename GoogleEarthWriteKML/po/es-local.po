@@ -1,0 +1,53 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "No place description"
+msgstr "Sin descripción del lugar"
+
+msgid "GoogleEarth not installed!"
+msgstr "¡GoogleEarth no instalado!"
+
+#, python-format
+msgid ""
+"Create kmz/kml file ''%s''\n"
+"in user directory ''%s''?"
+msgstr ""
+"¿Creo archivo kmz/kml ''%s''\n"
+"en el directorio del usuario ''%s''?"
+
+#, python-format
+msgid "Failure writing to %s"
+msgstr "Escritura incorrecta en %s"
+
+msgid "Directory does not exist"
+msgstr "El directorio no existe"
+
+msgid "GoogleEarth file exists!"
+msgstr "¡El archivo GoogleEarth ya existe!"
+
+#, python-format
+msgid ""
+"Overwrite kmz/kml file ''%s''\n"
+"in user home directory ''%s''?"
+msgstr ""
+"¿Sobrescribo kmz/kml del archivo ''%s''\n"
+"en directorio inicial del usuario ''%s''?"
+
+msgid "GoogleEarth"
+msgstr "GoogleEarth"
+
+msgid "Creates data file for GoogleEarth and opens it"
+msgstr "Crea archivo de datos para GoogleEarth y lo abre"

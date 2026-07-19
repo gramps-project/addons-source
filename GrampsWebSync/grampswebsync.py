@@ -26,6 +26,7 @@ import os
 import threading
 from collections.abc import Callable
 from datetime import datetime
+from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
 
@@ -179,6 +180,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
         self.db1 = dbstate.db
         self.db2 = None
+        self._closing = False
         self._download_timestamp = 0
         self._changes: Actions | None = None
         self._sync: WebApiSyncDiffHandler | None = None
@@ -212,6 +214,14 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
     def do_close(self, assistant):
         """Close the assistant."""
         LOG.debug("Closing Gramps Web Sync addon.")
+        self._closing = True
+        if self.db2 is not None:
+            LOG.debug("Closing in-memory remote database.")
+            self.db2.close()
+            self.db2 = None
+        # Clear the diff handler which holds references to both db1 and db2
+        self._sync = None
+        self._changes = None
         position = self.window.get_position()  # crock
         self.assistant.hide()
         self.window.move(position[0], position[1])
@@ -499,6 +509,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def get_diff_actions(self) -> None:
         """Download the remote data, import it and compare it to local."""
+        if self._closing:
+            return
         LOG.info("Downloading Gramps XML file.")
         path = self.handle_server_errors(self.api.download_xml)
         if path is None:
@@ -544,6 +556,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def _async_transfer_media(self):
         """Upload/download media files."""
+        if self._closing:
+            return
         self.handle_server_errors(self.download_files)
         if self.conclusion.error:
             return
@@ -664,6 +678,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self, payload: dict[str, "Any"], force: bool
     ) -> None:
         """Upload/download media files."""
+        if self._closing:
+            return
         LOG.debug("Committing changes to remote database.")
         self.handle_server_errors(
             self.api.commit,

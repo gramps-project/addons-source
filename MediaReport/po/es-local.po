@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-09 22:38+0000\n"
-"PO-Revision-Date: 2025-10-31 18:02+0000\n"
-"Last-Translator: Alejandro Moctezuma <moctezumaalejandro25@gmail.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,16 +12,41 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14.1-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Media Report"
+msgstr "Informe del medio"
+
+msgid "Generates report including images, image data and notes."
+msgstr "Genera un informe que incluye imágenes, datos de imagen y notas."
 
 msgid "INFO"
 msgstr "INF."
+
+msgid "You have to select an image to generate this report."
+msgstr "Tienes que seleccionar una imagen para generar este informe."
+
+msgid ""
+"You have to select a custom note or uncheck the option 'include custom note' "
+"to generate this report."
+msgstr ""
+"Tiene que seleccionar una nota personal o desmarcar la opción 'incluir nota "
+"personalizada' para generar este informe."
+
+msgid "This report only supports PDF as output file format."
+msgstr "Este informe solo admite el formato PDF como archivo de salida."
 
 msgid "General:"
 msgstr "General:"
 
 msgid "Image type:"
 msgstr "Tipo de imagen:"
+
+msgid "Heading"
+msgstr "Encabezado"
+
+msgid "Select a media file for this report"
+msgstr "Seleccione un archivo multimedia para este informe"
 
 msgid "Custom note"
 msgstr "Nota personalizada"
@@ -35,8 +60,28 @@ msgstr "Incluir nota personalizada"
 msgid "The custom note will be included"
 msgstr "Se incluirá la nota personalizada"
 
+msgid "Include referenced people"
+msgstr "Incluir gente referenciada"
+
+msgid "Referenced people will be included"
+msgstr "La gente referenciada será incluida"
+
+msgid "Include media data"
+msgstr "Incluir datos multimedia"
+
+msgid "Tags, notes and attributes will be included"
+msgstr "Las etiquetas, las notas y los atributos serán incluidos"
+
 msgid "Media width"
-msgstr "Anchura del objeto audiovisual"
+msgstr "Anchura del medio audiovisual"
+
+#, no-python-format
+msgid "Maximum media width in % of available page width."
+msgstr "Anchura del medio máximo en % de la anchura de página disponible."
 
 msgid "Media height"
 msgstr "Altura del objeto audiovisual"
+
+#, no-python-format
+msgid "Maximum media height in % of available page height."
+msgstr "Altura media máxima en % de la altura de la página disponible."

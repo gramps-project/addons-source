@@ -69,7 +69,6 @@ try:
     GZIP_OK = True
 except ImportError:
     GZIP_OK = False
-    ErrorDialog(_('Where is gzip?'), _('"gzip" is missing'), parent=self.uistate.window)
     LOG.error('No gzip')
 
 #-------------------------------------------------------------------------
@@ -91,8 +90,7 @@ try:
     LIBXSLT_VERSION = etree.LIBXSLT_VERSION
 except ImportError:
     LXML_OK = False
-    ErrorDialog(_('Missing python3 lxml'), _('Please, try to install "python3 lxml" package.'), parent=self.uistate.window)
-    LOG.debug('No lxml')
+    LOG.warning('No lxml; XPATH/XSLT features are unavailable')
 
 #-------------------------------------------------------------------------
 #
@@ -137,6 +135,16 @@ class lxmlGramplet(Gramplet):
         Constructs the GUI, consisting of an entry, a text view and
         a Run button.
         """
+
+        # Report a missing optional dependency here — when the gramplet is
+        # actually opened and the GUI is running — rather than as a blocking
+        # modal dialog at module import time (which stalls plugin loading and
+        # can appear with no GUI, e.g. under the CLI or the test harness).
+        if not GZIP_OK:
+            ErrorDialog(_('Where is gzip?'), _('"gzip" is missing'))
+        if not LXML_OK:
+            ErrorDialog(_('Missing python3 lxml'),
+                        _('Please, try to install "python3 lxml" package.'))
 
         self.xmllint = "--nonet " # space at the end for additional options
         self.noout = True
@@ -397,7 +405,7 @@ class lxmlGramplet(Gramplet):
             os.system(f'xmllint')
 
         try:
-            if os.name is 'nt':
+            if os.name == 'nt':
                 os.system(f'xmllint --relaxng {rng} --noout {filename} {options}')
                 LOG.debug('xmllint (relaxng) : %s' % filename)
             else:
@@ -661,22 +669,22 @@ class lxmlGramplet(Gramplet):
         _('\t{number} note'), _('\t{number} note')
         surnames_string = ngettext(
                     '\t{number} surname',
-                    '\t{number} surnames; no frequency yet\n',
-                    nb_surnames).format(number=nb_surnames)
+                    '\t{number} surnames; no frequency yet',
+                    nb_surnames).format(number=nb_surnames) + '\n'
         places_string = ngettext(
                     '\t{number} place',
-                    '\t{number} places\n',
-                    nb_pnames).format(number=nb_pnames)
+                    '\t{number} places',
+                    nb_pnames).format(number=nb_pnames) + '\n'
         notes_string = ngettext(
                     '\t{number} note',
-                    '\t{number} notes\n',
-                    nb_notes).format(number=nb_notes)
+                    '\t{number} notes',
+                    nb_notes).format(number=nb_notes) + '\n'
         sources_string = ngettext(
                     '\t{number} source',
-                    '\t{number} sources\n',
-                    nb_sources).format(number=nb_sources)
+                    '\t{number} sources',
+                    nb_sources).format(number=nb_sources) + '\n'
 
-        counters = surnames_string + places_string + notes_string + sources_string 
+        counters = surnames_string + places_string + notes_string + sources_string
 
         libs = '\nLIBXML' + str(LIBXML_VERSION) + '\tLIBXSLT' + str(LIBXSLT_VERSION)
 
@@ -755,7 +763,7 @@ class lxmlGramplet(Gramplet):
 
         dtd = os.path.join(USER_PLUGINS, 'lxml', 'grampsxml.dtd')
         try:
-            if os.name is 'nt':
+            if os.name == 'nt':
                 os.system(f'xmllint --dtdvalid {dtd} {filename} {options}')
             else:
                 os.system(f'xmllint --dtdvalid file://{dtd} {filename} {options}')

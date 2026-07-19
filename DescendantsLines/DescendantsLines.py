@@ -95,6 +95,7 @@ import gramps.gen.lib
 from gramps.plugins.lib.libtreebase import *    # for CalcLines
 from gramps.plugins.lib.libsubstkeyword import SubstKeywords
 from substkw import SubstKeywords2  # Modified version of libsubstkeywords.py
+from descendantslines_output import derive_output_filename
 from gramps.gen.lib.eventtype import EventType      # for selecting event types
 from gramps.gen.lib.eventroletype import EventRoleType  # for PRIMARY, FAMILY
 # for sorting events with unknown dates
@@ -315,9 +316,13 @@ class DescendantsLinesReport(Report):
         _event_cache = {}
 
         self.output_fmt = self.options['output_fmt']
-        self.output_fn = self.options['output_fn']
-        self.output_fn = '%s.%s' % (os.path.splitext(self.output_fn)[0],
-                                    self.output_fmt.lower())
+        # Bug 5965: derive the graphic filename from the destination chosen for
+        # the CURRENT run (the report document's output) rather than the report's
+        # own persisted "Destination" option, which retains a previous session's
+        # value and would carry that stale name over to this run.
+        self.output_fn = derive_output_filename(self.options_class.get_output(),
+                                                self.options['output_fn'],
+                                                self.output_fmt)
         self.max_gen = self.options['max_gen']
         self.gender_colors = self.options['gender_colors']
         self.inc_dnum = self.options['inc_dnum']
@@ -409,7 +414,7 @@ class DescendantsLinesReport(Report):
         # increase text pad to allow for box's line
         if STROKE_RECTANGLE:
             TEXT_PAD += RECTANGLE_TEXT_PAD
-            
+
         global FONT_NAME
         global BASE_FONT_SIZE
         FONT_NAME = self.options['FONT_NAME']
@@ -1614,12 +1619,12 @@ class DescendantsLinesOptions(MenuReportOptions):
         max_note_len.set_help(_("Maximum length of an event's note field in"
                                 " a text block, '$e(n)'\n 0=no limit "))
         menu.add_option(category_name, "max_note_len", max_note_len)
-        
+
         text_font_name = StringOption(_("Font Name"),
                                 r"sans-serif")
         text_font_name.set_help(_("Name of the Font to use. On Windows enter the file name of the .ttf at /Windows/Fonts"))
         menu.add_option(category_name, "FONT_NAME", text_font_name)
-        
+
         text_font_size = NumberOption(_("Font base size"), 12, 10, 250)
         menu.add_option(category_name, "BASE_FONT_SIZE", text_font_size)
 

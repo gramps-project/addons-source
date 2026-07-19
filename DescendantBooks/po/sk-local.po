@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-05-25 21:34+0000\n"
-"Last-Translator: Jozef Gaal <preklady@mayday.sk>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -12,23 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.12-dev\n"
-
-msgid "Descendant Book"
-msgstr "Kniha potomkov"
-
-msgid "Produces one or more descendant reports based on a supplied query."
-msgstr ""
-"Vytvára jednu alebo viac správ o potomkoch na základe dodanej požiadavky."
-
-msgid "Detailed Descendant Book"
-msgstr "Podrobná kniha potomkov"
-
-msgid ""
-"Produces one or more detailed descendant reports based on a supplied query."
-msgstr ""
-"Vytvára jednu alebo viac podrobných správ o potomkoch na základe dodanej "
-"požiadavky."
+"X-Generator: Weblate 2026.5-dev\n"
 
 #, python-format
 msgid "sp. see  %(reference)s : %(spouse)s"
@@ -226,6 +210,22 @@ msgstr "Štýl použitý pre záhlavie v indexe miest."
 
 msgid "The style used for the references in the Index of Places."
 msgstr "Štýl použitý pre referencie v indexe miest."
+
+msgid "Descendant Book"
+msgstr "Kniha potomkov"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Vytvára jednu alebo viac správ o potomkoch na základe dodanej požiadavky."
+
+msgid "Detailed Descendant Book"
+msgstr "Podrobná kniha potomkov"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Vytvára jednu alebo viac podrobných správ o potomkoch na základe dodanej "
+"požiadavky."
 
 #, python-format
 msgid "Deep pruning ascendants from %s people..."

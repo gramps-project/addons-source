@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:29+0000\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
-"Last-Translator: jmichault <jmt.2000@free.fr>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-03-26 16:09+0000\n"
+"Last-Translator: Bruno FORESTIER <bforest76@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
 "Language: fr\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
@@ -62,43 +62,6 @@ msgstr "Le chemin de destination pour les fichiers générés."
 msgid "The destination file name for html content."
 msgstr "Le fichier de destination pour le contenu HTML."
 
-msgid "Ancestral Collapsible Tree"
-msgstr "Arbre ancestral pliable"
-
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"Génère une page web avec une représentation graphique des ancêtres (SVG) "
-"représentée comme un Arbre Pliable de la bibliothèque D3.js JavaScript."
-
-msgid "Descendant Indented Tree"
-msgstr "Arbre descendant en retrait"
-
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-"Génère une page Web avec une représentation graphique des descendants (SVG) "
-"représentée sous la forme d'un arbre pliable avec retrait à partir de la "
-"bibliothèque JavaScript D3.js."
-
-msgid "Ancestral Fan Chart Options"
-msgstr "Options du diagramme des ancêtres en éventail"
-
-msgid "Paternal Background Color"
-msgstr "Couleur d'arrière-plan des parents"
-
-msgid "RGB-color for paternal box background."
-msgstr "Couleur RGB d'arrière-plan pour les parents."
-
-msgid "Maternal Background"
-msgstr "Arrière-plan maternel"
-
-msgid "RGB-color for maternal box background."
-msgstr "Couleur RGB d'arrière-plan pour le cadre maternel."
-
 msgid "Ancestral Fan Chart"
 msgstr "Graphique des ancêtres en éventail"
 
@@ -110,12 +73,11 @@ msgstr ""
 "représenté comme un graphique en éventail de la bibliothèque D3.js "
 "JavaScript."
 
-#, python-format
-msgid "See %(reference)s : %(spouse)s"
-msgstr "Voir %(reference)s : %(spouse)s"
-
 msgid "Generating report..."
 msgstr "Génération du rapport..."
+
+msgid "Descendant Indented Tree"
+msgstr "Arbre descendant en retrait"
 
 msgid "Invalid Destination Directory"
 msgstr "Dossier de destination invalide"
@@ -327,3 +289,37 @@ msgid "The font size in pixels for biography body text."
 msgstr ""
 "La taille de la police de caractères en pixels pour le corps du texte de la "
 "biographie."
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Génère une page Web avec une représentation graphique des descendants (SVG) "
+"représentée sous la forme d'un arbre pliable avec retrait à partir de la "
+"bibliothèque JavaScript D3.js."
+
+msgid "Ancestral Fan Chart Options"
+msgstr "Options du diagramme des ancêtres en éventail"
+
+msgid "Paternal Background Color"
+msgstr "Couleur d'arrière-plan des parents"
+
+msgid "RGB-color for paternal box background."
+msgstr "Couleur RGB d'arrière-plan pour les parents."
+
+msgid "Maternal Background"
+msgstr "Arrière-plan maternel"
+
+msgid "RGB-color for maternal box background."
+msgstr "Couleur RGB d'arrière-plan pour le cadre maternel."
+
+msgid "Ancestral Collapsible Tree"
+msgstr "Arbre ancestral pliable"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+"Génère une page web avec une représentation graphique des ancêtres (SVG) "
+"représentée comme un Arbre Pliable de la bibliothèque D3.js JavaScript."

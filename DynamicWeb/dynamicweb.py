@@ -123,14 +123,9 @@ import codecs
 import tarfile
 import tempfile
 
-if sys.version_info[0] < 3:
-    from cStringIO import StringIO
+from io import StringIO
 
-    string_types = basestring
-else:
-    from io import StringIO
-
-    string_types = str
+string_types = str
 from unicodedata import normalize
 from collections import defaultdict, OrderedDict
 from xml.sax.saxutils import escape

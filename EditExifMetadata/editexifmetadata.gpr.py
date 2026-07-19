@@ -35,7 +35,7 @@ register(
     gramplet_title=_("Edit Exif Metadata"),
     detached_width=550,
     detached_height=550,
-    version = '2.0.16',
+    version = '2.0.18',
     gramps_target_version="6.0",
     status=STABLE,
     include_in_listing=True,
@@ -44,4 +44,6 @@ register(
     authors=["Rob G. Healey", "Paul Culley"],
     authors_email=["robhealey1@gmail.com", "paulr2787@gmail.com"],
     navtypes=["Media"],
+    requires_mod=["PIL"],
+    requires_gi=[("GExiv2", "0.10")],
 )

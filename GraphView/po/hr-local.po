@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2026-04-08 15:09+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-11 10:35+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "Graph View"
 msgstr "Prikaz dijagrama"
@@ -229,6 +229,18 @@ msgstr ""
 msgid "Change active person?"
 msgstr "Zamijeniti aktivnu osobu?"
 
+#, python-brace-format
+msgid ""
+"This graph would contain at least {people_count} people, which exceeds the "
+"limit of {people_limit} people. For performance reasons, at least "
+"{people_missing} people won't be shown. You can change this limit in the "
+"view configuration."
+msgstr ""
+"Ovaj bi grafikon sadržavao barem {people_count} osoba, što premašuje "
+"ograničenje od {people_limit} osoba. Iz razloga performansi, barem "
+"{people_missing} osoba se neće prikazati. To se ograničenje može promijeniti "
+"u konfiguraciji prikaza."
+
 msgid "Incomplete graph"
 msgstr "Nepotpun dijagram"
 
@@ -249,13 +261,13 @@ msgid "Lines type"
 msgstr "Vrsta linija"
 
 msgid "Direct"
-msgstr "Ravne"
+msgstr "Izravne"
 
 msgid "Curves"
 msgstr "Krivulje"
 
 msgid "Ortho"
-msgstr "Pravokutne"
+msgstr "Okomite"
 
 msgid "Copy"
 msgstr "Kopiraj"
@@ -297,7 +309,7 @@ msgid "Add mother"
 msgstr "Dodaj majku"
 
 msgid "About Graph View"
-msgstr "O dijagramu srodstva"
+msgstr "O prikazu dijagrama"
 
 #, python-format
 msgid "Adding Tags to person (%s)"
@@ -337,20 +349,29 @@ msgstr "Strip"
 msgid "Modern"
 msgstr "Moderno"
 
+msgid "Generic (dark)"
+msgstr "Generički (tamni)"
+
+msgid "Generic (gray)"
+msgstr "Generički (sivi)"
+
+msgid "Generic (light)"
+msgstr "Generički (svijetli)"
+
 msgid "Persons from current graph"
-msgstr "Osobe trenutačnog dijagrama"
+msgstr "Osobe iz trenutačnog dijagrama"
 
 msgid "Other persons from database"
 msgstr "Ostale osobe iz baze podataka"
 
 msgid "No persons found..."
-msgstr "Nema osoba …"
+msgstr "Nijedna osoba nije pronađena …"
 
 msgid ""
 "Search people in the current visible graph and database.\n"
 "Use <Ctrl+F> to make search entry active."
 msgstr ""
-"Pretraži ljude u trenutačnom vidljivom dijagramu i bazi podataka.\n"
+"Pretraži osobe u trenutačnom vidljivom dijagramu i bazi podataka.\n"
 "Pomoću <Ctrl+F> aktiviraj unos pretrage."
 
 msgid "Search..."

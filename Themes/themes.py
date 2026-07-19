@@ -263,7 +263,7 @@ class MyPrefs(GrampsPreferences):
                                               shell=True)
             else:
                 txt = subprocess.check_output(
-                    'reg delete HKCU\Environment /v GTK_OVERLAY_SCROLLING /f',
+                    r'reg delete HKCU\Environment /v GTK_OVERLAY_SCROLLING /f',
                     shell=True)
         except subprocess.CalledProcessError:
             print("Cannot set environment variable GTK_OVERLAY_SCROLLING")
@@ -314,7 +314,7 @@ class MyPrefs(GrampsPreferences):
                 Screen.get_default(), MyPrefs.provider)
         try:
             txt = subprocess.check_output(
-                'reg delete HKCU\Environment /v GTK_OVERLAY_SCROLLING /f',
+                r'reg delete HKCU\Environment /v GTK_OVERLAY_SCROLLING /f',
                  shell=True)
         except subprocess.CalledProcessError:
             pass

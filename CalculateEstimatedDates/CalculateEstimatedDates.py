@@ -29,6 +29,7 @@
 # python modules
 #
 #------------------------------------------------------------------------
+import logging
 import time
 
 #------------------------------------------------------------------------
@@ -43,6 +44,7 @@ from gramps.gen.plug.menu import BooleanOption, NumberOption, StringOption, \
 from gramps.gen.lib import (Date, Event, EventType, EventRef, Source,
                             Citation, Note, NoteType)
 from gramps.gen.db import DbTxn
+from gramps.gen.errors import DatabaseError
 from gramps.gen.config import config
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.plug.report.utils import get_person_filters
@@ -53,6 +55,8 @@ from gramps.gen.utils.id import create_id
 from gramps.gen.utils.alive import probably_alive_range
 from gramps.gen.datehandler import displayer as date_displayer
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
+LOG = logging.getLogger(__name__)
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -250,140 +254,183 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
         self.MAX_AGE_PROB_ALIVE = self.options.handler.options_dict['MAX_AGE_PROB_ALIVE']
         self.AVG_GENERATION_GAP = self.options.handler.options_dict['AVG_GENERATION_GAP']
         if remove_old:
-            with DbTxn("", self.db, batch=True) as self.trans:
-                self.db.disable_signals()
-                self.results_write(_("Removing old estimations... "))
-                self.progress.set_pass((_("Removing '%s'...") % source_text),
-                                       num_people)
-                supdate = None
-                for person_handle in people:
-                    self.progress.step()
-                    pupdate = 0
-                    person = self.db.get_person_from_handle(person_handle)
-                    birth_ref = person.get_birth_ref()
-                    if birth_ref:
-                        birth = self.db.get_event_from_handle(birth_ref.ref)
-                        for citation_handle in birth.get_citation_list():
-                            citation = self.db.get_citation_from_handle(citation_handle)
-                            source_handle = citation.get_reference_handle()
-                            #print "birth handle:", source_handle
-                            source = self.db.get_source_from_handle(source_handle)
-                            if source:
-                                if source.get_title() == source_text:
-                                    #print("birth event removed from:",
-                                    #      person.gramps_id)
-                                    person.set_birth_ref(None)
-                                    person.remove_handle_references('Event',[birth_ref.ref])
-                                    # remove note
-                                    note_list = birth.get_referenced_note_handles()
-                                    birth.remove_handle_references('Note',
-                                      [note_handle for (obj_type, note_handle) in note_list])
-                                    for (obj_type, note_handle) in note_list:
-                                        self.db.remove_note(note_handle, self.trans)
-                                    self.db.remove_event(birth_ref.ref, self.trans)
-                                    self.db.remove_citation(citation_handle,
-                                                            self.trans)
-                                    pupdate = 1
-                                    supdate = source  # found the source.
-                                    break
-                    death_ref = person.get_death_ref()
-                    if death_ref:
-                        death = self.db.get_event_from_handle(death_ref.ref)
-                        for citation_handle in death.get_citation_list():
-                            citation = self.db.get_citation_from_handle(citation_handle)
-                            source_handle = citation.get_reference_handle()
-                            #print "death handle:", source_handle
-                            source = self.db.get_source_from_handle(source_handle)
-                            if source:
-                                if source.get_title() == source_text:
-                                    #print("death event removed from:",
-                                    #      person.gramps_id)
-                                    person.set_death_ref(None)
-                                    person.remove_handle_references('Event',[death_ref.ref])
-                                    # remove note
-                                    note_list = death.get_referenced_note_handles()
-                                    death.remove_handle_references('Note',
-                                      [note_handle for (obj_type, note_handle) in note_list])
-                                    for (obj_type, note_handle) in note_list:
-                                        self.db.remove_note(note_handle, self.trans)
-                                    self.db.remove_event(death_ref.ref, self.trans)
-                                    self.db.remove_citation(citation_handle,
-                                                            self.trans)
-                                    pupdate = 1
-                                    supdate = source  # found the source.
-                                    break
-                    if pupdate == 1:
-                        self.db.commit_person(person, self.trans)
-                if supdate:
-                    self.db.remove_source(supdate.handle, self.trans)
-            self.results_write(_("done!\n"))
-            self.db.enable_signals()
+            skipped = 0
+            try:
+                with DbTxn("", self.db, batch=True) as self.trans:
+                    self.db.disable_signals()
+                    self.results_write(_("Removing old estimations... "))
+                    self.progress.set_pass((_("Removing '%s'...") % source_text),
+                                           num_people)
+                    supdate = None
+                    for person_handle in people:
+                        self.progress.step()
+                        try:
+                            pupdate = 0
+                            person = self.db.get_person_from_handle(person_handle)
+                            birth_ref = person.get_birth_ref()
+                            if birth_ref:
+                                birth = self.db.get_event_from_handle(birth_ref.ref)
+                                for citation_handle in birth.get_citation_list():
+                                    citation = self.db.get_citation_from_handle(citation_handle)
+                                    source_handle = citation.get_reference_handle()
+                                    #print "birth handle:", source_handle
+                                    source = self.db.get_source_from_handle(source_handle)
+                                    if source:
+                                        if source.get_title() == source_text:
+                                            #print("birth event removed from:",
+                                            #      person.gramps_id)
+                                            person.set_birth_ref(None)
+                                            person.remove_handle_references('Event',[birth_ref.ref])
+                                            # remove note
+                                            note_list = birth.get_referenced_note_handles()
+                                            birth.remove_handle_references('Note',
+                                              [note_handle for (obj_type, note_handle) in note_list])
+                                            for (obj_type, note_handle) in note_list:
+                                                self.db.remove_note(note_handle, self.trans)
+                                            self.db.remove_event(birth_ref.ref, self.trans)
+                                            self.db.remove_citation(citation_handle,
+                                                                    self.trans)
+                                            pupdate = 1
+                                            supdate = source  # found the source.
+                                            break
+                            death_ref = person.get_death_ref()
+                            if death_ref:
+                                death = self.db.get_event_from_handle(death_ref.ref)
+                                for citation_handle in death.get_citation_list():
+                                    citation = self.db.get_citation_from_handle(citation_handle)
+                                    source_handle = citation.get_reference_handle()
+                                    #print "death handle:", source_handle
+                                    source = self.db.get_source_from_handle(source_handle)
+                                    if source:
+                                        if source.get_title() == source_text:
+                                            #print("death event removed from:",
+                                            #      person.gramps_id)
+                                            person.set_death_ref(None)
+                                            person.remove_handle_references('Event',[death_ref.ref])
+                                            # remove note
+                                            note_list = death.get_referenced_note_handles()
+                                            death.remove_handle_references('Note',
+                                              [note_handle for (obj_type, note_handle) in note_list])
+                                            for (obj_type, note_handle) in note_list:
+                                                self.db.remove_note(note_handle, self.trans)
+                                            self.db.remove_event(death_ref.ref, self.trans)
+                                            self.db.remove_citation(citation_handle,
+                                                                    self.trans)
+                                            pupdate = 1
+                                            supdate = source  # found the source.
+                                            break
+                            if pupdate == 1:
+                                self.db.commit_person(person, self.trans)
+                        except Exception:
+                            skipped += 1
+                            LOG.warning(
+                                "Failed to remove estimated dates for person"
+                                " handle %s; skipping.",
+                                person_handle, exc_info=True)
+                            continue
+                    if supdate:
+                        try:
+                            self.db.remove_source(supdate.handle, self.trans)
+                        except Exception:
+                            LOG.warning(
+                                "Failed to remove estimated-dates source;"
+                                " continuing.", exc_info=True)
+                self.results_write(_("done!\n"))
+                if skipped:
+                    self.results_write(
+                        _("Skipped %d people due to errors (see log).\n")
+                        % skipped)
+            finally:
+                self.db.enable_signals()
             self.db.request_rebuild()
         if add_birth or add_death:
             self.results_write(_("Selecting... \n\n"))
             self.progress.set_pass(_('Selecting...'),
                                    num_people)
             row = 0
+            skipped = 0
             for person_handle in people:
                 self.progress.step()
-                person = self.db.get_person_from_handle(person_handle)
-                birth_ref = person.get_birth_ref()
-                death_ref = person.get_death_ref()
-                add_birth_event, add_death_event = False, False
-                if not birth_ref or not death_ref:
-                    date1, date2, explain, other = self.calc_estimates(person)
-                    if birth_ref:
-                        ev = self.db.get_event_from_handle(birth_ref.ref)
-                        date1 = ev.get_date_object()
-                    elif not birth_ref and add_birth and date1:
-                        if date1.match( current_date, "<"):
-                            add_birth_event = True
-                            date1.make_vague()
+                try:
+                    person = self.db.get_person_from_handle(person_handle)
+                    birth_ref = person.get_birth_ref()
+                    death_ref = person.get_death_ref()
+                    add_birth_event, add_death_event = False, False
+                    if not birth_ref or not death_ref:
+                        try:
+                            date1, date2, explain, other = \
+                                self.calc_estimates(person)
+                        except DatabaseError as err:
+                            skipped += 1
+                            LOG.warning(
+                                "Could not estimate dates for %s (%s): %s"
+                                " — skipping.",
+                                name_displayer.display(person),
+                                person.gramps_id, err)
+                            continue
+                        if birth_ref:
+                            ev = self.db.get_event_from_handle(birth_ref.ref)
+                            date1 = ev.get_date_object()
+                        elif not birth_ref and add_birth and date1:
+                            if date1.match( current_date, "<"):
+                                add_birth_event = True
+                                date1.make_vague()
+                            else:
+                                date1 = Date()
                         else:
                             date1 = Date()
-                    else:
-                        date1 = Date()
-                    if death_ref:
-                        ev = self.db.get_event_from_handle(death_ref.ref)
-                        date2 = ev.get_date_object()
-                    elif not death_ref and add_death and date2:
-                        if date2.match( current_date, "<"):
-                            add_death_event = True
-                            date2.make_vague()
+                        if death_ref:
+                            ev = self.db.get_event_from_handle(death_ref.ref)
+                            date2 = ev.get_date_object()
+                        elif not death_ref and add_death and date2:
+                            if date2.match( current_date, "<"):
+                                add_death_event = True
+                                date2.make_vague()
+                            else:
+                                date2 = Date()
                         else:
                             date2 = Date()
-                    else:
-                        date2 = Date()
-                    # Describe
-                    if add_birth_event and add_death_event:
-                        action = _("Add birth and death events")
-                    elif add_birth_event:
-                        action = _("Add birth event")
-                    elif add_death_event:
-                        action = _("Add death event")
-                    else:
-                        continue
-                    #stab.columns(_("Select"), _("Person"), _("Action"),
-                    # _("Birth Date"), _("Death Date"), _("Evidence"), _("Relative"))
-                    if add_birth == 1 and not birth_ref: # no date
-                        date1 = Date()
-                    if add_death == 1 and not death_ref: # no date
-                        date2 = Date()
-                    if person == other:
-                        other = None
-                    stab.row("checkbox",
-                             person,
-                             action,
-                             date1,
-                             date2,
-                             explain or "",
-                             other or "")
-                    if add_birth_event:
-                        stab.set_cell_markup(3, row, "<b>%s</b>" % date_displayer.display(date1))
-                    if add_death_event:
-                        stab.set_cell_markup(4, row, "<b>%s</b>" % date_displayer.display(date2))
-                    self.action[person.handle] = (add_birth_event, add_death_event)
-                    row += 1
+                        # Describe
+                        if add_birth_event and add_death_event:
+                            action = _("Add birth and death events")
+                        elif add_birth_event:
+                            action = _("Add birth event")
+                        elif add_death_event:
+                            action = _("Add death event")
+                        else:
+                            continue
+                        #stab.columns(_("Select"), _("Person"), _("Action"),
+                        # _("Birth Date"), _("Death Date"), _("Evidence"), _("Relative"))
+                        if add_birth == 1 and not birth_ref: # no date
+                            date1 = Date()
+                        if add_death == 1 and not death_ref: # no date
+                            date2 = Date()
+                        if person == other:
+                            other = None
+                        stab.row("checkbox",
+                                 person,
+                                 action,
+                                 date1,
+                                 date2,
+                                 explain or "",
+                                 other or "")
+                        if add_birth_event:
+                            stab.set_cell_markup(3, row, "<b>%s</b>" % date_displayer.display(date1))
+                        if add_death_event:
+                            stab.set_cell_markup(4, row, "<b>%s</b>" % date_displayer.display(date2))
+                        self.action[person.handle] = (add_birth_event, add_death_event)
+                        row += 1
+                except Exception:
+                    skipped += 1
+                    LOG.warning(
+                        "Unexpected error processing person handle %s;"
+                        " skipping.",
+                        person_handle, exc_info=True)
+                    continue
+            if skipped:
+                self.results_write(
+                    _("Skipped %d people due to errors (see log).\n")
+                    % skipped)
             if row > 0:
                 self.results_write("  ")
                 for text, function in BUTTONS:
@@ -430,75 +477,90 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
         # Do not add birth or death event if one exists, no matter what
         if self.table.treeview.get_model() is None:
             return
-        with DbTxn("", self.db, batch=True) as self.trans:
-            self.pre_run()
-            source_text = self.options.handler.options_dict['source_text']
-            select_col = self.table.model_index_of_column[_("Select")]
-            source = self.get_or_create_source(source_text)
-            self.db.disable_signals()
-            self.results_write(_("Selecting... "))
-            self.progress.set_pass((_("Adding events '%s'...") % source_text),
-                                   len(self.table.treeview.get_model()))
-            count = 0
-            for row in self.table.treeview.get_model():
-                self.progress.step()
-                select = row[select_col] # live select value
-                if not select:
-                    continue
-                pupdate = False
-                index = row[0] # order put in
-                row_data = self.table.get_raw_data(index)
-                person = row_data[1] # check, person, action, date1, date2
-                date1 = row_data[3] # date
-                date2 = row_data[4] # date
-                evidence = row_data[5] # evidence
-                other = row_data[6] # other person
-                if other:
-                    other_name = self.sdb.name(other)
-                else:
-                    other_name = None
-                add_birth_event, add_death_event = self.action[person.handle]
-                birth_ref = person.get_birth_ref()
-                death_ref = person.get_death_ref()
-                if not birth_ref and add_birth_event:
-                    if other_name:
-                        explanation = _("Added birth event based on %(evidence)s, from %(name)s") % {
-                            'evidence' : evidence, 'name' : other_name }
-                    else:
-                        explanation = _("Added birth event based on %s") % evidence
-                    modifier = self.get_modifier("birth")
-                    birth = self.create_event(_("Estimated birth date"),
-                                              EventType.BIRTH,
-                                              date1, source, explanation, modifier)
-                    event_ref = EventRef()
-                    event_ref.set_reference_handle(birth.get_handle())
-                    person.set_birth_ref(event_ref)
-                    pupdate = True
-                    count += 1
-                if not death_ref and add_death_event:
-                    if other_name:
-                        explanation = _("Added death event based on %(evidence)s, from %(person)s") % {
-                        'evidence' : evidence, 'person' : other_name }
-                    else:
-                        explanation = _("Added death event based on %s") % evidence
-                    modifier = self.get_modifier("death")
-                    death = self.create_event(_("Estimated death date"),
-                                              EventType.DEATH,
-                                              date2, source, explanation, modifier)
-                    event_ref = EventRef()
-                    event_ref.set_reference_handle(death.get_handle())
-                    person.set_death_ref(event_ref)
-                    pupdate = True
-                    count += 1
-                if pupdate:
-                    self.db.commit_person(person, self.trans)
-        self.results_write(_(" Done! Committing..."))
-        self.results_write("\n")
-        self.db.enable_signals()
+        count = 0
+        skipped = 0
+        try:
+            with DbTxn("", self.db, batch=True) as self.trans:
+                self.pre_run()
+                source_text = self.options.handler.options_dict['source_text']
+                select_col = self.table.model_index_of_column[_("Select")]
+                source = self.get_or_create_source(source_text)
+                self.db.disable_signals()
+                self.results_write(_("Selecting... "))
+                self.progress.set_pass(
+                    (_("Adding events '%s'...") % source_text),
+                    len(self.table.treeview.get_model()))
+                for row in self.table.treeview.get_model():
+                    self.progress.step()
+                    select = row[select_col] # live select value
+                    if not select:
+                        continue
+                    try:
+                        pupdate = False
+                        index = row[0] # order put in
+                        row_data = self.table.get_raw_data(index)
+                        person = row_data[1] # check, person, action, date1, date2
+                        date1 = row_data[3] # date
+                        date2 = row_data[4] # date
+                        evidence = row_data[5] # evidence
+                        other = row_data[6] # other person
+                        if other:
+                            other_name = self.sdb.name(other)
+                        else:
+                            other_name = None
+                        add_birth_event, add_death_event = self.action[person.handle]
+                        birth_ref = person.get_birth_ref()
+                        death_ref = person.get_death_ref()
+                        if not birth_ref and add_birth_event:
+                            if other_name:
+                                explanation = _("Added birth event based on %(evidence)s, from %(name)s") % {
+                                    'evidence' : evidence, 'name' : other_name }
+                            else:
+                                explanation = _("Added birth event based on %s") % evidence
+                            modifier = self.get_modifier("birth")
+                            birth = self.create_event(_("Estimated birth date"),
+                                                      EventType.BIRTH,
+                                                      date1, source, explanation, modifier)
+                            event_ref = EventRef()
+                            event_ref.set_reference_handle(birth.get_handle())
+                            person.set_birth_ref(event_ref)
+                            pupdate = True
+                            count += 1
+                        if not death_ref and add_death_event:
+                            if other_name:
+                                explanation = _("Added death event based on %(evidence)s, from %(person)s") % {
+                                'evidence' : evidence, 'person' : other_name }
+                            else:
+                                explanation = _("Added death event based on %s") % evidence
+                            modifier = self.get_modifier("death")
+                            death = self.create_event(_("Estimated death date"),
+                                                      EventType.DEATH,
+                                                      date2, source, explanation, modifier)
+                            event_ref = EventRef()
+                            event_ref.set_reference_handle(death.get_handle())
+                            person.set_death_ref(event_ref)
+                            pupdate = True
+                            count += 1
+                        if pupdate:
+                            self.db.commit_person(person, self.trans)
+                    except Exception:
+                        skipped += 1
+                        LOG.warning(
+                            "Failed to apply estimated dates for row %s;"
+                            " skipping.",
+                            row[0] if row else "?", exc_info=True)
+                        continue
+            self.results_write(_(" Done! Committing..."))
+            self.results_write("\n")
+        finally:
+            self.db.enable_signals()
+            self.progress.close()
         self.db.request_rebuild()
         self.results_write(_("Added %d events.") % count)
+        if skipped:
+            self.results_write(
+                _(" (Skipped %d rows due to errors; see log.)") % skipped)
         self.results_write("\n\n")
-        self.progress.close()
 
     def get_modifier(self, event_type):
         setting = self.options.handler.options_dict['dates']

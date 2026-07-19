@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-09-09 18:33+0100\n"
-"PO-Revision-Date: 2026-04-17 07:09+0000\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,10 +12,40 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
+
+msgid "Network Chart"
+msgstr "Sieťový diagram"
 
 msgid "Generates a family network chart."
-msgstr "Vygeneruje diagram rodinnej siete."
+msgstr "Vygeneruje sieťový rodinný diagram."
+
+msgid "File exists. Overwrite?"
+msgstr "Súbor existuje. Prepísať ho?"
+
+msgid "created"
+msgstr "vytvorený"
+
+msgid "last_written"
+msgstr "posledný_zápis"
+
+msgid "Main"
+msgstr "Hlavné"
+
+msgid "Orthogonal (right angles in connectors)"
+msgstr "Ortogonálne (pravoúhle spojky)"
+
+msgid "Straight (no right angles in connectors)"
+msgstr "Rovné (bez pravoúhlych spojok)"
+
+msgid "Curved (curved and straight connectors)"
+msgstr "Zakrivené (zakrivené a rovné spojky)"
+
+msgid "Default (Orthogonal)"
+msgstr "Predvolené (ortogonálne)"
+
+msgid "Select the graph line connector format."
+msgstr "Vyberte formát spojok v diagrame."
 
 msgid "Top to Bottom"
 msgstr "Zhora nadol"
@@ -24,22 +54,40 @@ msgid "Left to Right"
 msgstr "Zľava doprava"
 
 msgid "Bottom to Top"
-msgstr "Zospodu navrch"
+msgstr "Zdola nahor"
 
 msgid "Right to Left"
 msgstr "Sprava doľava"
 
 msgid "Default (Top to Bottom)"
-msgstr "Predvolené (zvrchu na spodok)"
+msgstr "Predvolené (zhora nadol)"
 
 msgid "Select the graph direction."
-msgstr "Vyberte smer grafu."
+msgstr "Vyberte smer diagramu."
+
+msgid "URL Style"
+msgstr "Štýl URL"
+
+msgid "Include URLs from database."
+msgstr "Zahrnúť URL z databázy."
+
+msgid "Dynamic URL = Prefix + GrampID + Suffix"
+msgstr "Dynamická URL = predpona + GrampID + prípona"
+
+msgid "Static URL = Prefix"
+msgstr "Statická URL = predpona"
 
 msgid "Don't include URLs"
 msgstr "Nezahrnúť URL adresy"
 
+msgid "Default (include)"
+msgstr "Predvolené (zahrnúť)"
+
 msgid "Select URL style."
 msgstr "Vyberte štýl URL."
+
+msgid "URL Prefix,Suffix"
+msgstr "Predpona a prípona URL"
 
 msgid ""
 "Enter the Prefix,Suffix (use comma)\n"
@@ -51,10 +99,53 @@ msgstr ""
 "URL = predpona + GrampsID + prípona."
 
 msgid "Enter Font Name"
-msgstr "Zadať názov písma"
+msgstr "Názov písma"
+
+msgid ""
+"Enter the primary font style for the chart.\n"
+"Must already be installed.\n"
+"White Rabbit can be obtained from\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+msgstr ""
+"Zadajte primárny štýl písma pre diagram.\n"
+"Musí byť už nainštalované.\n"
+"White Rabbit je možné stiahnuť z\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+
+msgid ""
+"Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
+msgstr "Zadajte vzdialenosť medzi „generáciami“ v palcoch (0,1–5,0)."
+
+msgid "Enter Chart Title"
+msgstr "Názov diagramu"
 
 msgid "Set the title of the chart."
-msgstr "Nastavte názov grafu."
+msgstr "Nastavte názov diagramu."
+
+msgid "Default (svg)"
+msgstr "Predvolené (svg)"
+
+msgid ""
+"svg - Scalable Vector Graphics file.\n"
+"pdf - Adobe Portable Document Format.\n"
+msgstr ""
+"svg – súbor Scalable Vector Graphics.\n"
+"pdf – Adobe Portable Document Format.\n"
+
+msgid "The destination folder for generated files."
+msgstr "Cieľová zložka pre generované súbory."
+
+msgid "network"
+msgstr "sieť"
+
+msgid "The filename for the generated svg network chart."
+msgstr "Názov súboru pre generovaný sieťový diagram vo formáte svg."
+
+msgid "Different node shapes/edges for gender."
+msgstr "Rozdielne tvary uzlov/okrajov podľa pohlavia."
+
+msgid "Node differences for gender."
+msgstr "Rozdiely uzlov podľa pohlavia."
 
 msgid "Male Background"
 msgstr "Pozadie muža"
@@ -63,7 +154,7 @@ msgid "RGB-color for male box background."
 msgstr "RGB-farba pre pozadie rámika pre mužov."
 
 msgid "Male Background Alpha"
-msgstr "Pozadie muža alfa"
+msgstr "Priehľadnosť pozadia muža"
 
 msgid "Male Box Edge"
 msgstr "Okraj rámika muža"
@@ -78,10 +169,10 @@ msgid "RGB-color for Female box background."
 msgstr "RGB-farba pre pozadie rámika ženy."
 
 msgid "Female Background Alpha"
-msgstr "Pozadie ženy alfa"
+msgstr "Priehľadnosť pozadia ženy"
 
 msgid "Female Box Edge"
-msgstr "Pozadie rámika ženy"
+msgstr "Okraj rámika ženy"
 
 msgid "RGB-color for Female box edge."
 msgstr "RGB-farba pre okraj rámika ženy."
@@ -93,35 +184,35 @@ msgid "RGB-color for other box background."
 msgstr "RGB-farba pre pozadie ostatných rámikov."
 
 msgid "Other Background Alpha"
-msgstr "Iné pozadie alfa"
+msgstr "Priehľadnosť iného pozadia"
 
 msgid "Alpha for Other box background (transparent=0, solid=255)."
-msgstr "Alfa pre pozadie iného rámika (priehľadné=0, plné=255)."
+msgstr "Priehľadnosť pre pozadie iných rámikov (priehľadné=0, plné=255)."
 
 msgid "Family Connector Line"
-msgstr "Spojovacia linka rodiny"
+msgstr "Spojovacia čiara rodiny"
 
 msgid "RGB-color for family connector line."
-msgstr "RGB-farba pre spojovaciu linku rodiny."
+msgstr "RGB-farba pre spojovaciu čiaru rodiny."
 
 msgid "Marriage Connector Line"
-msgstr "Spojovacia linka manželstva"
+msgstr "Spojovacia čiara manželstva"
 
 msgid "RGB-color for marriage connector line."
-msgstr "RGB-farba pre spojovaciu linku manželstva."
+msgstr "RGB-farba pre spojovaciu čiaru manželstva."
 
 msgid "Highlight Connector Line"
-msgstr "Zvýrazniť spojovaciu linku"
+msgstr "Zvýrazniť spojovaciu čiaru"
 
 msgid ""
 "RGB-color for the highlighted path between two individuals.  If the "
 "graph.inverts, reverse the order to change."
 msgstr ""
-"RGB-farba pre zvýraznenú cestu medzi dvoma jedincami.  Ak sa graf invertuje, "
-"obráťte poradie na zmenu."
+"RGB-farba pre zvýraznenú cestu medzi dvoma jedincami.  Ak sa diagram "
+"invertuje, obráťte poradie na zmenu."
 
 msgid "Trim Box Edge"
-msgstr "Orezať okraj rámika"
+msgstr "Okraj orezaného rámika"
 
 msgid "RGB-color for box edge that has been trimmed."
 msgstr "RGB-farba pre okraj rámika, ktorý bol orezaný."
@@ -130,42 +221,73 @@ msgid "Remove color background on all nodes."
 msgstr "Odstrániť farebné pozadie na všetkých uzloch."
 
 msgid "Removes color background for individuals (nodes) on chart."
-msgstr "Odstráni farebné pozadie pre jedincov (uzly) v grafe."
+msgstr "Odstráni farebné pozadie pre jedincov (uzly) v diagrame."
+
+msgid ""
+"Enter year to start\n"
+"rounding birthday\n"
+"to year only"
+msgstr ""
+"Začiatok zaokrúhľovania\n"
+"dátumu narodenia\n"
+"len na rok"
 
 msgid ""
 "Birthdays after this year are represented by the year only.  Invalid entries "
 "will be ignored."
 msgstr ""
-"Narodeniny po tomto roku sú reprezentované iba rokom.  Neplatné záznamy budú "
-"ignorované."
+"Dátumy narodenia po tomto roku sú reprezentované iba rokom.   Neplatné "
+"záznamy budú ignorované."
+
+msgid "Round birthday to year after year entered (above)."
+msgstr "Zaokrúhliť dátum narodenia na rok po zadanom roku (nahor)."
 
 msgid "Represent birthday by year only."
-msgstr "Reprezentovať narodeniny len podľa roku."
+msgstr "Reprezentovať dátum narodenia len podľa roku."
+
+msgid ""
+"Enter year to start\n"
+"rounding marriage\n"
+"date to year only"
+msgstr ""
+"Začiatok zaokrúhľovania\n"
+"dátumu manželstva\n"
+"len na rok"
+
+msgid ""
+"Marriages after this year are represented bythe year only. Invalid entries "
+"will be ignored."
+msgstr ""
+"Dátumy manželstva po tomto roku sú reprezentované iba rokom. Neplatné "
+"záznamy budú ignorované."
+
+msgid "Round marriage to year after year entered (above)."
+msgstr "Zaokrúhliť dátum manželstva na rok po zadanom roku (nahor)."
 
 msgid "Represent marriage by year only."
-msgstr "Reprezentovať manželstvo len podľa roku."
+msgstr "Reprezentuje manželstvo len podľa roku."
 
 msgid ""
 "Attempts to remove middle names.  Only works for entries with birth year in "
 "the record."
 msgstr ""
-"Pokusy o odstránenie prostredných mien.  Funguje len pre položky s rokom "
+"Pokúsi sa odstrániť prostredné mená.  Funguje len pre položky s rokom "
 "narodenia v zázname."
 
 msgid "Remove middle names."
 msgstr "Odstrániť prostredné mená."
 
 msgid "Allow inclusion of private records in chart."
-msgstr "Povoliť zahrnutie súkromných záznamov do grafu."
+msgstr "Povoliť zahrnutie súkromných záznamov do diagramu."
 
 msgid "Trim"
-msgstr "Orezať"
+msgstr "Orezanie"
 
 msgid "Trim descendants"
 msgstr "Orezať potomkov"
 
 msgid "All descendants (children) of selected individuals will not be shown."
-msgstr "Všetci potomkovia (deti) vybraných jedincov nebudú zobrazení."
+msgstr "Všetci potomkovia (deti) vybraných jedincov sa nebudú zobrazovať."
 
 msgid "Enable trimming of descendants."
 msgstr "Povoliť orezávanie potomkov."
@@ -175,13 +297,13 @@ msgid ""
 "enabling trimming of descendants from tree."
 msgstr ""
 "Musíte zadať platnú(é) osobu(y) pred \n"
-"umožnením orezania potomkov zo stromu."
+"umožnením orezávania potomkov zo stromu."
 
 msgid "Trim ancestors"
 msgstr "Orezať predkov"
 
 msgid "All ancestors (parents) of selected individuals will not be shown."
-msgstr "Všetci predkovia (rodičia) vybraných jedincov nebudú zobrazení."
+msgstr "Všetci predkovia (rodičia) vybraných jedincov sa nebudú zobrazovať."
 
 msgid "Enable trimming of ancestors."
 msgstr "Povoliť orezávanie predkov."
@@ -190,23 +312,23 @@ msgid "Enable trimming of ancestors from tree."
 msgstr "Umožní orezávanie predkov zo stromu."
 
 msgid "Enable trim groups."
-msgstr "Povoliť orezať skupiny."
+msgstr "Povoliť orezanie skupín."
 
 msgid ""
 "Remove groups less than Min Group Size.  Automatic\n"
 "for databases with more than 1500 individuals."
 msgstr ""
-"Odstráni skupiny menšie ako minimálna veľkosť skupiny.  Automatické\n"
+"Odstráni skupiny menšie ako minimálna veľkosť skupiny.  Automaticky\n"
 "pre databázy s viac ako 1500 jedincami."
 
 msgid "Min Group Size"
-msgstr "Najmenšia veľkosť skupiny"
+msgstr "Minimálna veľkosť skupiny"
 
 msgid ""
 "Enter the minimum size group to display.\n"
 "Value may be 2 or greater."
 msgstr ""
-"Zadať minimálnu veľkosť skupiny, ktorá sa má zobraziť.\n"
+"Zadajte minimálnu veľkosť skupiny, ktorá sa má zobraziť.\n"
 "Hodnota môže byť 2 alebo viac."
 
 msgid ""
@@ -215,17 +337,17 @@ msgid ""
 "displayed path(s).\n"
 "Select two"
 msgstr ""
-"Vybrať počiatočných a\n"
+"Vyberte počiatočných a\n"
 "koncových jedincov v\n"
 "zobrazených cestách.\n"
-"Vybrať dvoch"
+"Vyberte dvoch"
 
 msgid ""
 "Starting and ending person for displayed path(s).\n"
 "Select two people"
 msgstr ""
 "Počiatočná a koncová osoba pre zobrazenú(-é) cestu(-y).\n"
-"Vybrať dve osoby"
+"Vyberte dve osoby"
 
 msgid "Highlight path(s)"
 msgstr "Zvýrazniť cestu(-y)"
@@ -244,9 +366,9 @@ msgid ""
 "Direct - Highlight direct descendant/ancestor paths.\n"
 "Any - Highlight any path(s) including direct or indirect."
 msgstr ""
-"Žiadne – nezvýrazňovať cesty.\n"
-"Priame – zvýrazniť priame cesty potomkov/predkov.\n"
-"Akékoľvek – zvýrazniť akúkoľvek cestu(-y), vrátane priamych alebo nepriamych."
+"Žiadne – nezvýrazní cesty.\n"
+"Priame – zvýrazní priame cesty potomkov/predkov.\n"
+"Akékoľvek – zvýrazní akúkoľvek cestu(-y), vrátane priamych alebo nepriamych."
 
 msgid "Show only path(s)"
 msgstr "Zobraziť len cestu(-y)"
@@ -259,12 +381,12 @@ msgid ""
 "Direct - Show only direct descendant/ancestor paths.\n"
 "Any - Show only path(s) direct or indirect."
 msgstr ""
-"Žiadne - nezobraziť iba cesty.\n"
-"Priame - zobraziť len priame cesty potomkov/predkov.\n"
-"Ľubovoľné - zobraziť len priame alebo nepriame cesty."
+"Žiadne - nezobrazí iba cesty.\n"
+"Priame - zobrazí len priame cesty potomkov/predkov.\n"
+"Ľubovoľné - zobrazí len priame alebo nepriame cesty."
 
 msgid "Select person at center of selection radius in graph."
-msgstr "Vybrať osobu v strede okruhu výberu v grafe."
+msgstr "Vyberte osobu v strede okruhu výberu v diagrame."
 
 msgid ""
 "Max connections\n"
@@ -277,24 +399,34 @@ msgid ""
 "Enter the maximum number of connections allowed from\n"
 "the center person.  Value may be 1 or greater."
 msgstr ""
-"Zadať maximálny počet povolených spojení od\n"
+"Zadajte maximálny počet povolených spojení od\n"
 "hlavnej osoby.  Hodnota môže byť 1 alebo vyššia."
 
 msgid "Limit graph to max connections from center."
-msgstr "Obmedzí graf na maximálny počet spojení od stredu."
+msgstr "Obmedzí diagram na maximálny počet spojení od stredu."
 
 msgid "Display up to max connections from central person."
-msgstr "Zobraziť maximálny počet spojení od hlavnej osoby."
+msgstr "Zobrazí maximálny počet spojení od hlavnej osoby."
 
 msgid "Highlight central person in graph."
-msgstr "Zvýrazniť hlavnú osobu v grafe."
+msgstr "Zvýrazniť hlavnú osobu v diagrame."
 
 msgid "Add yellow color background to central person."
 msgstr "Pridať žltú farbu pozadia k hlavnej osobe."
 
 msgid "Use database handle instead of GrampID id in URLs."
+msgstr "Použiť identifikátor databázy namiesto Gramps ID v URL adresách."
+
+msgid ""
+"Use database handle instead of the gramps id for URLs.\n"
+"The handle should never change whereas gramps ids can."
 msgstr ""
-"Použiť identifikátor databázy namiesto identifikátora GrampID v URL adresách."
+"Použite databázový identifikátor namiesto Gramps ID v URL adresách.\n"
+"Identifikátor databázy by sa nemal nikdy meniť, zatiaľ čo identifikátory "
+"Gramps sa meniť môžu."
 
 msgid "Confirm overwrite file."
 msgstr "Potvrdiť prepísanie súboru."
+
+msgid "Enable/disable confirmation of file overwrite."
+msgstr "Zapnúť/vypnúť potvrdzovanie prepísania súboru."

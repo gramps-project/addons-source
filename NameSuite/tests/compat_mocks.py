@@ -1,0 +1,188 @@
+#
+# Gramps - a GTK+/GNOME based genealogy program
+#
+# Copyright (C) 2026  Dmitry Bryndin
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+
+"""
+Compatibility stubs for Gramps library imports used in tests.
+This module provides a unified mocking setup for headless testing.
+"""
+
+from __future__ import annotations
+
+import sys
+from unittest.mock import MagicMock
+
+
+class Person:
+    """Fallback stub for gramps.gen.lib.Person."""
+
+    MALE: int = 0
+    FEMALE: int = 1
+    UNKNOWN: int = 2
+    OTHER: int = 3
+
+
+class NameType:
+    UNKNOWN: int = -1
+    CUSTOM: int = 0
+    AKA: int = 1
+    BIRTH: int = 2
+    MARRIED: int = 3
+
+
+class NameOriginType:
+    UNKNOWN: int = 0
+    CUSTOM: int = 1
+    PATRONYMIC: int = 5
+
+
+class Surname:
+    _surname: str
+    _origin: int
+
+    def __init__(
+        self, surname_str: str = "", origin: int = NameOriginType.UNKNOWN
+    ) -> None:
+        self._surname = surname_str
+        self._origin = origin
+
+    def get_surname(self) -> str:
+        return self._surname
+
+    def get_origintype(self) -> int:
+        return self._origin
+
+    def set_surname(self, val: str) -> None:
+        self._surname = val
+
+    def set_origintype(self, val: int) -> None:
+        self._origin = val
+
+    def set_primary(self, val: bool) -> None:
+        pass
+
+
+class Name:
+    _first_name: str
+    _type: int | None
+    _surnames: list[Surname]
+
+    def __init__(self) -> None:
+        self._first_name = ""
+        self._type = None
+        self._surnames = []
+
+    def get_first_name(self) -> str:
+        return self._first_name
+
+    def set_first_name(self, name_str: str) -> None:
+        self._first_name = name_str
+
+    def get_regular_name(self) -> str:
+        return self._first_name
+
+    def get_type(self) -> int | None:
+        return self._type
+
+    def set_type(self, val: int) -> None:
+        self._type = val
+
+    def get_surname_list(self) -> list[Surname]:
+        return self._surnames
+
+    def add_surname(self, surname: Surname) -> None:
+        self._surnames.append(surname)
+
+    def set_surname_list(self, list_: list[Surname]) -> None:
+        self._surnames = list_
+
+    def serialize(self) -> dict:
+        return {}
+
+    def unserialize(self, data: dict) -> None:
+        pass
+
+
+def mock_gramps() -> MagicMock:
+    """Injects Gramps and GTK mocks into sys.modules."""
+    # GTK Mocks
+    gi_mock = MagicMock()
+    gi_repository_mock = MagicMock()
+    sys.modules["gi"] = gi_mock
+    sys.modules["gi.repository"] = gi_repository_mock
+    sys.modules["gi.repository.Gtk"] = MagicMock()
+    sys.modules["gi.repository.GLib"] = MagicMock()
+
+    # Gramps Mocks
+    gramps_mock = MagicMock()
+    gramps_gen_mock = MagicMock()
+    gramps_gen_lib_mock = MagicMock()
+    gramps_gen_db_mock = MagicMock()
+    gramps_gen_const_mock = MagicMock()
+    gramps_gen_errors_mock = MagicMock()
+    gramps_gen_display_mock = MagicMock()
+    gramps_gui_mock = MagicMock()
+    gramps_gui_plug_mock = MagicMock()
+    gramps_gui_dialog_mock = MagicMock()
+    gramps_gui_editors_mock = MagicMock()
+
+    # Configure lib mock
+    gramps_gen_lib_mock.Person = Person
+    gramps_gen_lib_mock.Name = Name
+    gramps_gen_lib_mock.Surname = Surname
+    gramps_gen_lib_mock.NameType = NameType
+    gramps_gen_lib_mock.NameOriginType = NameOriginType
+
+    # Configure const mock
+    gramps_gen_const_mock.GRAMPS_LOCALE.translation.gettext = lambda x: x
+
+    # Configure error mock
+    class WindowActiveError(Exception):
+        pass
+
+    gramps_gen_errors_mock.WindowActiveError = WindowActiveError
+
+    # Configure tool mock
+    class MockTool:
+        def __init__(self, *args: object, **kwargs: object) -> None:
+            pass
+
+    class MockToolOptions:
+        def __init__(self, *args: object, **kwargs: object) -> None:
+            pass
+
+    gramps_gui_plug_mock.tool.Tool = MockTool
+    gramps_gui_plug_mock.tool.ToolOptions = MockToolOptions
+
+    # Inject into sys.modules
+    sys.modules["gramps"] = gramps_mock
+    sys.modules["gramps.gen"] = gramps_gen_mock
+    sys.modules["gramps.gen.lib"] = gramps_gen_lib_mock
+    sys.modules["gramps.gen.lib.nameorigintype"] = gramps_gen_lib_mock
+    sys.modules["gramps.gen.db"] = gramps_gen_db_mock
+    sys.modules["gramps.gen.const"] = gramps_gen_const_mock
+    sys.modules["gramps.gen.errors"] = gramps_gen_errors_mock
+    sys.modules["gramps.gen.display"] = gramps_gen_display_mock
+    sys.modules["gramps.gen.display.name"] = MagicMock()
+    sys.modules["gramps.gui"] = gramps_gui_mock
+    sys.modules["gramps.gui.plug"] = gramps_gui_plug_mock
+    sys.modules["gramps.gui.dialog"] = gramps_gui_dialog_mock
+    sys.modules["gramps.gui.editors"] = gramps_gui_editors_mock
+
+    return gramps_gen_lib_mock

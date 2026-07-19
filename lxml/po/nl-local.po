@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-07 06:31+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "lxml"
 msgstr "lxml"
@@ -29,21 +29,21 @@ msgstr "Gramplet voor het testen van etree met Gramps XML"
 msgid "Invalid timestamp"
 msgstr "Ongeldig tijdstempel"
 
-msgid "No file parsed..."
-msgstr "Geen bestand geparseerd ..."
+msgid ""
+"Select a Gramps XML file and\n"
+" click on the Run button."
+msgstr ""
+"Kies een Gramps XML-bestand en\n"
+" klik op de knop Uitvoeren."
 
-msgid "Number of editions back"
-msgstr "Aantal edities terug"
+msgid "No file loaded..."
+msgstr "Geen bestand geladen..."
 
-msgid "Space character on filename"
-msgstr "Spatie-teken op bestandsnaam"
+msgid "Number of additions and modifications back"
+msgstr "Aantal toevoegingen en aanpassingen terug"
 
-#, python-format
-msgid "Please fix space on \"%s\""
-msgstr "Corrigeer de spatie op \"%s\""
-
-msgid "Sorry, no support for your OS yet!"
-msgstr "Sorry, nog geen ondersteuning voor uw besturingssysteem!"
+msgid "Print more informations on console"
+msgstr "Meer informatie afdrukken op console"
 
 msgid "Is it a compressed .gramps?"
 msgstr "Is het een gecomprimeerde .gramps?"
@@ -52,25 +52,26 @@ msgstr "Is het een gecomprimeerde .gramps?"
 msgid "Cannot uncompress \"%s\""
 msgstr "Kan \"%s\" niet decomprimeren"
 
-#, python-format
-msgid ""
-"From:\n"
-" \"%(file1)s\"\n"
-" to:\n"
-" \"%(file2)s\".\n"
-msgstr ""
-"Van:\n"
-" \"%(file1)s\"\n"
-" naar:\n"
-" \"%(file2)s\".\n"
+msgid "Is it a .gramps?"
+msgstr "Is het een .gramps?"
 
 #, python-format
 msgid "Cannot copy \"%s\""
 msgstr "Kan \"%s\" niet kopiëren"
 
+msgid "Sorry, no support for your OS yet!"
+msgstr "Sorry, nog geen ondersteuning voor uw besturingssysteem!"
+
+msgid "Parsing issue"
+msgstr "Parseringsprobleem"
+
 #, python-format
-msgid "XML: Last %s editions since %s, were at/on :\n"
-msgstr "XML: laatste %s edities sinds %s, waren te/op :\n"
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "Kan inhoud van \"%(file)s\" niet parseren"
+
+#, python-format
+msgid "XML: Last %s additions and modifications since %s, were on :\n"
+msgstr "XML: laatste %s toevoegingen en aanpassingen sinds %s, waren op :\n"
 
 #, python-format
 msgid ""
@@ -85,98 +86,98 @@ msgstr ""
 #, python-format
 msgid ""
 "Number of tags : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal labels : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of tags : \n"
-"\t\t\t%s\n"
+"\t\t\t%06s\n"
 msgstr ""
 "Aantal labels : \n"
-"\t\t\t%s\n"
+"\t\t\t%06s\n"
 
 #, python-format
 msgid ""
 "Number of  events : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal gebeurtenissen : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of persons : \n"
-"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+"\t\t\t%06s\t|\t(%06s) and (%06s)* surnames\n"
 msgstr ""
 "Aantal personen : \n"
-"\t\t\t%s\t|\t(%s) en (%s)* achternamen\n"
+"\t\t\t%06s\t|\t(%06s) en (%06s)* achternamen\n"
 
 #, python-format
 msgid ""
 "Number of persons : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal personen : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of families : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal gezinnen : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of sources : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal bronnen : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of citations : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal citaten : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of places : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal locaties : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of media objects : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal media-objecten : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of repositories : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
 "Aantal bibliotheken : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
 "Number of notes : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 msgstr ""
-"Aantal notities : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+"Number of notities: \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
@@ -206,15 +207,17 @@ msgstr "Ontbrekende python3 lxml"
 msgid "Please, try to install \"python3 lxml\" package."
 msgstr "Probeer het pakket \"python3 lxml\" te installeren."
 
-msgid "No file loaded..."
-msgstr "Geen bestand geladen..."
+msgid "xmllint options"
+msgstr "xmllint-opties"
+
+msgid "debug places"
+msgstr "debug plaatsen"
+
+msgid "debug xml"
+msgstr "debug xml"
 
 msgid "XSD validation (lxml)"
 msgstr "XSD-validatie (lxml)"
-
-#, python-format
-msgid "Cannot validate \"%(file)s\" !"
-msgstr "Kan \"%(file)s\" niet valideren!"
 
 #, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
@@ -224,23 +227,11 @@ msgstr "xmllint: sla DTD-validatie over voor \"%(file)s\""
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
 msgstr "xmllint: sla RelaxNG-validatie over voor \"%(file)s\""
 
-msgid "Parsing issue"
-msgstr "Parseringsprobleem"
+msgid "Custom \"test.xml\" file"
+msgstr "Aangepast \"test.xml\" bestand"
 
-#, python-format
-msgid "Cannot parse content of \"%(file)s\""
-msgstr "Kan inhoud van \"%(file)s\" niet parseren"
-
-msgid "Gramps version"
-msgstr "Gramps-versie"
-
-#, python-format
-msgid ""
-"Wrong namespace\n"
-"Need: %s"
-msgstr ""
-"Verkeerde naamruimte\n"
-"Benodigd: %s"
+msgid "Please try to fix \"test.xml\""
+msgstr "Probeer \"test.xml\" te repareren"
 
 msgid "RelaxNG validation"
 msgstr "RelaxNG-validatie"
@@ -259,6 +250,14 @@ msgstr "Kan \"%(file)s\" niet parseren via etree"
 msgid "Parsing file..."
 msgstr "Bestand parseren..."
 
+#, python-format
+msgid " - (%(lang)s)"
+msgstr " - (%(lang)s)"
+
+#, python-format
+msgid " - (? or %(lang)s)"
+msgstr " - (? of %(lang)s)"
+
 msgid "Missing header"
 msgstr "Ontbrekende koptekst"
 
@@ -266,12 +265,12 @@ msgid ""
 "Not a valid .gramps.\n"
 "Cannot run the gramplet...\n"
 "Please, try to use a .gramps\n"
-"generated by Gramps 4.x."
+"generated by Gramps 6.x."
 msgstr ""
 "Geen geldige .gramps.\n"
 "Kan gramplet niet uitvoeren...\n"
 "Probeer alstublieft een .gramps te gebruiken\n"
-"gegenereerd door Gramps 4.x."
+"gegenereerd door Gramps 6.x."
 
 msgid "0"
 msgstr "0"
@@ -288,28 +287,43 @@ msgstr " door Gramps "
 msgid "Period: "
 msgstr "Periode: "
 
-msgid " entries for surname(s); no frequency yet"
-msgstr " vermeldingen voor achterna(a)m(en); nog geen frequentie"
+#, python-brace-format
+msgid "\t{number} surname"
+msgid_plural "\t{number} surnames; no frequency yet\n"
+msgstr[0] "\t{number} achternaam"
+msgstr[1] "\t{number} achternamen; nog geen frequentie\n"
 
-msgid " entries for place(s)"
-msgstr " vermeldingen voor plaats(en)"
+#, python-brace-format
+msgid "\t{number} surname; no frequency yet"
+msgstr "\t{number} achternaam; nog geen frequentie"
 
-msgid " note(s)"
-msgstr " notitie(s)"
+#, python-brace-format
+msgid "\t{number} place"
+msgid_plural "\t{number} places\n"
+msgstr[0] "\t{number} plaats"
+msgstr[1] "\t{number} plaatsen\n"
 
-msgid " source(s)"
-msgstr " bron(nen)"
+#, python-brace-format
+msgid "\t{number} note"
+msgid_plural "\t{number} notes\n"
+msgstr[0] "\t{number} notitie"
+msgstr[1] "\t{number} notities\n"
+
+#, python-brace-format
+msgid "\t{number} source"
+msgid_plural "\t{number} sources\n"
+msgstr[0] "\t{number} bron"
+msgstr[1] "\t{number} bronnen\n"
 
 msgid "Gallery.html"
 msgstr "Gallery.html"
 
 #, python-format
-msgid "2. Has generated a media index on \"%(file)s\".\n"
-msgstr "2. Heeft een media-index gegenereerd op \"%(file)s\".\n"
+msgid "1. Has generated a media index on \"%(file)s\".\n"
+msgstr "1. Heeft een media-index gegenereerd op \"%(file)s\".\n"
 
-#, python-format
-msgid "3. Has written entries into \"%(file)s\".\n"
-msgstr "3. Heeft vermeldingen geschreven in \"%(file)s\".\n"
+msgid "XML SyntaxError"
+msgstr "XML SyntaxError"
 
 msgid "Matches XSD schema."
 msgstr "Komt overeen met XSD-schema."
@@ -342,14 +356,14 @@ msgid "Portugal"
 msgstr "Portugal"
 
 #, python-format
-msgid "1. Has generated \"%s\".\n"
-msgstr "1. Heeft \"%s\" gegenereerd.\n"
+msgid "2. Has generated \"%s\".\n"
+msgstr "2. Heeft \"%s\" gegenereerd.\n"
 
 #, python-format
 msgid ""
 "Try to open\n"
 " \"%s\"\n"
-" into your prefered web navigator ..."
+" into your preferred web navigator ..."
 msgstr ""
 "Probeer\n"
 " \"%s\" te openen\n"

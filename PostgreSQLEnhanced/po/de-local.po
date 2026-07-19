@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-12 19:09+0300\n"
-"PO-Revision-Date: 2025-09-07 12:16+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,55 +12,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 #, python-brace-format
 msgid "Object {obj_type}:{handle} was modified by another user"
 msgstr "Objekt {obj_type}:{handle} wurde von einem anderen Benutzer geändert"
 
-msgid "Starting migration..."
-msgstr "Migration wird gestartet..."
-
-#, python-format
-msgid "Migrating %s objects..."
-msgstr "Migrieren von %s Objekten..."
-
-#, python-format, python-brace-format
-msgid "Migrated %s {obj_type} objects"
-msgstr "%s {obj_type} Objekte migriert"
-
-msgid "Migration completed!"
-msgstr "Migration abgeschlossen!"
-
-msgid "Starting upgrade..."
-msgstr "Aktualisierung wird gestartet..."
-
-#, python-format
-msgid "Upgrading %s objects..."
-msgstr "Aktualisierung von %s-Objekten..."
-
-msgid "Creating indexes..."
-msgstr "Indizes erstellen..."
-
-msgid "Upgrade completed!"
-msgstr "Aktualisierung abgeschlossen!"
-
-msgid "PostgreSQL Enhanced"
-msgstr "PostgreSQL erweitert"
-
-msgid "PostgreSQL _Enhanced Database"
-msgstr "PostgreSQL _Erweiterte Datenbank"
-
-msgid ""
-"Advanced PostgreSQL backend with JSONB storage, graph database support "
-"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
-"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
-"compatible."
-msgstr ""
-"Erweitertes PostgreSQL-Backend mit JSONB-Speicher, Unterstützung für "
-"Graphdatenbanken (Apache AGE), Vektorähnlichkeit (pgvector) und KI/ML-"
-"Funktionen. Für fortgeschrittene Benutzer. Erfordert PostgreSQL 15+ mit "
-"Erweiterungen. Kompatibel mit Gramps Web."
+msgid "pg_trgm extension required for duplicate detection"
+msgstr "pg_trgm-Erweiterung für die Duplikaterkennung erforderlich"
 
 msgid ""
 "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
@@ -114,5 +73,46 @@ msgid "Full-text search requires JSONB support or search capabilities"
 msgstr ""
 "Die Volltextsuche erfordert JSONB-Unterstützung oder Suchfunktionalität"
 
-msgid "pg_trgm extension required for duplicate detection"
-msgstr "pg_trgm-Erweiterung für die Duplikaterkennung erforderlich"
+msgid "Starting migration..."
+msgstr "Migration wird gestartet..."
+
+#, python-format
+msgid "Migrating %s objects..."
+msgstr "Migrieren von %s Objekten..."
+
+#, python-format, python-brace-format
+msgid "Migrated %s {obj_type} objects"
+msgstr "%s {obj_type} Objekte migriert"
+
+msgid "Migration completed!"
+msgstr "Migration abgeschlossen!"
+
+msgid "Starting upgrade..."
+msgstr "Aktualisierung wird gestartet..."
+
+#, python-format
+msgid "Upgrading %s objects..."
+msgstr "Aktualisierung von %s-Objekten..."
+
+msgid "Creating indexes..."
+msgstr "Indizes erstellen..."
+
+msgid "Upgrade completed!"
+msgstr "Aktualisierung abgeschlossen!"
+
+msgid "PostgreSQL Enhanced"
+msgstr "PostgreSQL erweitert"
+
+msgid "PostgreSQL _Enhanced Database"
+msgstr "PostgreSQL _Erweiterte Datenbank"
+
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
+msgstr ""
+"Erweitertes PostgreSQL-Backend mit JSONB-Speicher, Unterstützung für "
+"Graphdatenbanken (Apache AGE), Vektorähnlichkeit (pgvector) und KI/ML-"
+"Funktionen. Für fortgeschrittene Benutzer. Erfordert PostgreSQL 15+ mit "
+"Erweiterungen. Kompatibel mit Gramps Web."

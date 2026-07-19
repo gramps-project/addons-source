@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2026-05-10 10:42-0700\n"
 "PO-Revision-Date: 2025-11-17 06:51+0000\n"
 "Last-Translator: Fedir Zinchuk <fedikw@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -301,9 +301,6 @@ msgid ""
 msgstr ""
 " • rcs %s TBD (Потрібна версія %s або новіша. Якщо не Microsoft Windows)"
 
-msgid "can't found it because exiv2 not installed"
-msgstr "Не знайдено, оскільки exiv2 не встановлено"
-
 #, python-format
 msgid "GExiv2 : %s (Exiv2 library : %s)"
 msgstr "GExiv2 : %s (Бібліотека Exiv2 : %s)"
@@ -318,9 +315,6 @@ msgstr ""
 "Для додатку Networkchart шрифт <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> забезпечує надзвичайно читабельний "
 "результат.\n"
-
-msgid "Why, when same code works in Graphview"
-msgstr "Чому, коли той самий код працює в Graphview"
 
 msgid "not installed"
 msgstr "не встановлено"

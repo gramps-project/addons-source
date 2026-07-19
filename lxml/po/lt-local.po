@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-09-14 11:02+0000\n"
-"Last-Translator: Tadas Masiulionis <tadzikaz@gmail.com>\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-01-04 20:01+0000\n"
+"Last-Translator: openSUSE Lietuviškai <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
 "project/addons/lt/>\n"
 "Language: lt\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "(n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.15.1\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Poedit-Language: Lithuanian\n"
 "X-Poedit-Country: LITHUANIA\n"
@@ -21,118 +21,28 @@ msgstr ""
 msgid "Invalid timestamp"
 msgstr "Neteisinga laiko žyma"
 
-msgid "No file parsed..."
-msgstr "Nė viena rinkmena neišanalizuota..."
-
-msgid "Sorry, no support for your OS yet!"
-msgstr "Atsiprašome, jūsų OS dar nepalaikoma!"
+msgid "No file loaded..."
+msgstr "Nėra įkeltos rinkmenos..."
 
 #, python-format
 msgid "Cannot uncompress \"%s\""
 msgstr "Nepavyksta išskleisti \"%s\""
 
 #, python-format
-msgid ""
-"From:\n"
-" \"%(file1)s\"\n"
-" to:\n"
-" \"%(file2)s\".\n"
-msgstr ""
-"Iš:\n"
-" \"%(file1)s\"\n"
-" į:\n"
-" \"%(file2)s\".\n"
-
-#, python-format
 msgid "Cannot copy \"%s\""
 msgstr "Negalima kopijuoti \"%s\""
 
-#, python-format
-msgid ""
-"Number of tags : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Gairių skaičius: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+msgid "Sorry, no support for your OS yet!"
+msgstr "Atsiprašome, jūsų OS dar nepalaikoma!"
 
-#, python-format
-msgid ""
-"Number of tags : \n"
-"\t\t\t%s\n"
-msgstr ""
-"Gairių skaičius: \n"
-"\t\t\t%s\n"
-
-#, python-format
-msgid ""
-"Number of  events : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Įvykių skaičius: \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of persons : \n"
-"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
-msgstr ""
-"Asmenų skaičius: \n"
-"\t\t\t%s\t|\t(%s) ir (%s)* pavardės\n"
-
-#, python-format
-msgid ""
-"Number of persons : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Asmenų skaičius: \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of families : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Šeimų skaičius: \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of sources : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Šaltinių skaičius: \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of citations : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Citatų skaičius: \n"
-"\t\t\t%s\t|\t(%s)*\n"
-
-#, python-format
-msgid ""
-"Number of places : \n"
-"\t\t\t%s\t|\t(%s)*\n"
-msgstr ""
-"Vietovių skaičius: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+msgid "Parsing issue"
+msgstr "Analizavimo problema"
 
 msgid "Missing python3 lxml"
 msgstr "Trūksta python3 lxml"
 
 msgid "Please, try to install \"python3 lxml\" package."
 msgstr "Pabandykite įdiegti „python3 lxml“ paketą."
-
-msgid "No file loaded..."
-msgstr "Nėra įkeltos rinkmenos..."
-
-msgid "Parsing issue"
-msgstr "Analizavimo problema"
-
-msgid "Gramps version"
-msgstr "Gramps versija"
 
 msgid "File issue"
 msgstr "Rinkmenos problema"

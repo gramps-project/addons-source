@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-09-05 10:02+0000\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,16 +12,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "Import and Merge tool"
 msgstr "Nástroj na import a zlúčenie"
 
+msgid ""
+"Compares a Gramps XML database with the current one, and allows merging of "
+"the differences."
+msgstr ""
+"Porovnáva databázu Gramps vo formáte XML s aktuálnou databázou a umožňuje "
+"zlúčenie rozdielov."
+
 msgid "Import and merge a Gramps XML"
 msgstr "Importovať a zlúčiť Gramps XML"
 
+msgid "Missing"
+msgstr "Chýbajúce"
+
+msgid "Different"
+msgstr "Rozdielne"
+
 msgid "Delete original"
 msgstr "Odstrániť originál"
+
+msgid "Ignore"
+msgstr "Ignorovať"
 
 msgid "Add Import"
 msgstr "Pridať import"
@@ -32,8 +48,46 @@ msgstr "Zlúčiť do originálu"
 msgid "Merge into import"
 msgstr "Zlúčiť do importu"
 
+msgid "Replace with import"
+msgstr "Nahradiť importom"
+
 msgid "Keep original"
 msgstr "Zachovať originál"
+
+msgid ""
+"Use buttons below to set the 'Action' for each difference.  No changes will "
+"be made to your tree until you press 'Done' and confirm."
+msgstr ""
+"Pomocou tlačidiel nižšie nastavte 'Akciu' pre každý rozdiel.  Vo vašom "
+"strome sa neuskutočnia žiadne zmeny, kým nestlačíte 'Hotovo' a nepotvrdíte."
+
+msgid ""
+"This item will be deleted from your tree.  Any referenced items were also "
+"marked for deletion."
+msgstr ""
+"Táto položka bude z vášho stromu odstránená.  Akékoľvek odkazované položky "
+"boli tiež označené na odstránenie."
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked for Ignore."
+msgstr ""
+"Táto položka nebude vo vašom strome zmenená.  Akékoľvek odkazované položky "
+"boli tiež označené na ignorovanie."
+
+msgid ""
+"This item will be added to your tree.  Any referenced items were also marked "
+"for adding."
+msgstr ""
+"Táto položka bude pridaná do vášho stromu.  Akékoľvek odkazované položky "
+"boli tiež označené na pridanie."
+
+msgid ""
+"This item will be merged, saving data from your tree.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Táto položka bude zlúčená, pričom sa uložia údaje z vášho stromu.  Akékoľvek "
+"odkazované položky boli tiež označené na zlúčenie alebo pridanie."
 
 msgid ""
 "This item will be merged, using data from the import.  Any referenced items "
@@ -42,8 +96,40 @@ msgstr ""
 "Táto položka bude zlúčená s použitím údajov z importu. Všetky odkazované "
 "položky boli tiež označené na zlúčenie alebo pridanie."
 
+msgid ""
+"The import data will entirely replace the data in your tree.  Any referenced "
+"items were also marked for replacement or removal."
+msgstr ""
+"Importované údaje úplne nahradia údaje vo vašom strome.  Všetky odkazované "
+"položky boli tiež označené na nahradenie alebo odstránenie."
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked to keep."
+msgstr ""
+"Táto položka vo vašom strome zostane nezmenená.  Akékoľvek odkazované "
+"položky boli tiež označené na zachovanie."
+
+msgid "Import Failure"
+msgstr "Zlyhanie importu"
+
+msgid "Your Tree and import are the same."
+msgstr "Váš strom a import sú rovnaké."
+
+msgid "your tree "
+msgstr "váš strom "
+
+msgid "imported "
+msgstr "importované "
+
 msgid "Original"
 msgstr "Originál"
+
+msgid "Imported"
+msgstr "Importované"
+
+msgid "Result  "
+msgstr "Výsledok  "
 
 msgid "Import and Merge"
 msgstr "Import a zlúčenie"
@@ -51,8 +137,28 @@ msgstr "Import a zlúčenie"
 msgid "Replace"
 msgstr "Nahradiť"
 
+msgid ""
+"A '*' indicates that the action was automarked, a '?' indicates a conflict "
+"between automarks."
+msgstr ""
+"Znak '*' označuje, že akcia bola automaticky označená, znak '?' označuje "
+"konflikt medzi automatickými označeniami."
+
+msgid "Import file"
+msgstr "Importovať súbor"
+
+msgid "Select the difference you wish to examine."
+msgstr "Vyberte rozdiel, ktorý chcete preskúmať."
+
 msgid "Object Name/Description"
 msgstr "Názov/popis objektu"
+
+msgid ""
+"Data item details, showing the current treeitem, imported tree item, and "
+"result (when chosen)."
+msgstr ""
+"Podrobnosti o údajovej položke, ktoré zobrazujú aktuálnu položku stromu, "
+"importovanú položku stromu a výsledok (ak je vybratý)."
 
 msgid "Object and item"
 msgstr "Objekt a položka"
@@ -60,8 +166,25 @@ msgstr "Objekt a položka"
 msgid "Differences"
 msgstr "Rozdiely"
 
+msgid "This button will ignore the difference, no changes to your tree."
+msgstr "Toto tlačidlo bude ignorovať rozdiel, v strome sa nič nezmení."
+
+msgid "Unmark"
+msgstr "Zrušiť označenie"
+
+msgid "This button will add the imported data as a new object to your tree."
+msgstr ""
+"Týmto tlačidlom pridáte importované údaje ako nový objekt do vášho stromu."
+
 msgid "Done"
 msgstr "Hotovo"
+
+msgid ""
+"This button will bring up a dialog allowing you to finalize your changes, or "
+"abandon them."
+msgstr ""
+"Týmto tlačidlom vyvoláte dialógové okno, ktoré vám umožní dokončiť vaše "
+"zmeny alebo ich opustiť."
 
 msgid "Merge Original"
 msgstr "Zlúčiť originál"
@@ -72,6 +195,9 @@ msgid ""
 msgstr ""
 "Toto tlačidlo zlúči importované údaje do vášho stromu s údajmi vášho stromu "
 "ako základom."
+
+msgid "This button will replace your tree data with the imported data."
+msgstr "Týmto tlačidlom nahradíte údaje vášho stromu importovanými údajmi."
 
 msgid "Merge Import"
 msgstr "Zlúčiť import"
@@ -92,6 +218,12 @@ msgid ""
 msgstr ""
 "Toto tlačidlo upraví importované údaje.  Údaje bude stále potrebné zlúčiť, "
 "pridať alebo nahradiť."
+
+msgid "Show more details"
+msgstr "Zobraziť viac podrobností"
+
+msgid "Automark Families"
+msgstr "Automatické označenie rodín"
 
 msgid "Automark Parent Families"
 msgstr "Automaticky označiť rodičovské rodiny"

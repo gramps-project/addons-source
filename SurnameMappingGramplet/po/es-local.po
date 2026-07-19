@@ -1,0 +1,39 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Surname Mapping"
+msgstr "Relación con Apellidos"
+
+msgid "Gramplet for editing the grouping of surnames"
+msgstr "Gramplet para editar la agrupación de apellidos"
+
+msgid "Add Mapping"
+msgstr "Agregar Relación"
+
+msgid "Edit Mapping"
+msgstr "Editar Relación"
+
+msgid "Remove Mapping"
+msgstr "Retirar Relación"
+
+msgid "Group Name"
+msgstr "Nombre de Grupo"
+
+msgid "Group"
+msgstr "Grupo"
+
+msgid "Create Mapping"
+msgstr "Crear Relación"

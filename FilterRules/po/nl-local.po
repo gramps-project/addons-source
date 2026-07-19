@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-11-08 17:51+0000\n"
+"POT-Creation-Date: 2026-05-03 15:05-0700\n"
+"PO-Revision-Date: 2026-05-11 10:34+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 msgid "People related to <filter>"
 msgstr "Personen die gerelateerd zijn aan <filter>"
@@ -124,6 +124,9 @@ msgstr ""
 "Filterregel die overeenkomt met mensen op basis van hun leeftijd bij "
 "overlijden"
 
+msgid "Role:"
+msgstr "Rol:"
+
 msgid "Multiple Parents Filter"
 msgstr "Filter op meerdere ouders"
 
@@ -138,6 +141,12 @@ msgstr "De actieve persoon"
 
 msgid "Matches sources with a particular value"
 msgstr "Komt overeen met bronnen met een bepaalde waarde"
+
+msgid "Events from people with role"
+msgstr "Gebeurtenissen van mensen met rol"
+
+msgid "Matches event of people filter with role"
+msgstr "Overeenkomst met gefilterde personen met rol"
 
 msgid "Active person"
 msgstr "Actief persoon"

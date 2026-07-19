@@ -345,11 +345,13 @@ SOURCE_TYPES_WITH_FIXED_LINKS = [
 
 VIEW_IDS_MAPPING = {
     "dashboardview": None,
+    "personview": "Person",
     "personlistview": "Person",
     "relview": None,
     "familyview": "Family",
     "family_tree_view": None,
     "eventview": "Event",
+    "placelistview": "Place",
     "placetreeview": "Place",
     "sourceview": "Source",
     "citationlistview": "Citation",

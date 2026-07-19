@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-06-14 20:06+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Reference Date or Date Range"
+msgstr "Fecha de Referencia o Intervalo de Fecha"
+
+msgid "a valid Gramps date"
+msgstr "una fecha Gramps válida"
+
+msgid "Date or offset ±y or ±y, m, d"
+msgstr "Fecha o desplazamiento ±a o ±a, m, d"
+
+msgid ""
+"1. a Date\n"
+"2. a positive or negative number, representing years\n"
+"3. a positive or negative list of values, representing years, months, days"
+msgstr ""
+"1. una Fecha\n"
+"2. un número positivo o negativo, representando años\n"
+"3. un listado de valores positivos o negativos. representando años, meses, "
+"días"
+
+msgid "Result"
+msgstr "Resultado"
+
+msgid "Calculate"
+msgstr "Cálculo"
 
 msgid "Copy"
 msgstr "Copiar"
+
+msgid "Error: invalid date for first expression"
+msgstr "Error: fecha no válida para primera expresión"
+
+msgid "Error: invalid offset for second expression"
+msgstr "Error: desplazamiento no válido para segunda expresión"
+
+msgid "Error: at least one expression must be a date"
+msgstr "Error: al menos una expresión debe ser una fecha"
+
+msgid "Enter an expression in the entries above and click Calculate."
+msgstr ""
+"Introduzca una expresión dentro de los apuntes arriba y pulse Calcular."
+
+msgid "Date Calculator"
+msgstr "Calculador de Fecha"
+
+msgid "Perform date math calculations"
+msgstr "Realiza cálculos matemáticos de fecha"

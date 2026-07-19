@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2026-05-10 10:42-0700\n"
 "PO-Revision-Date: 2026-03-26 16:09+0000\n"
 "Last-Translator: Bruno FORESTIER <bforest76@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
@@ -304,9 +304,6 @@ msgstr ""
 " • rcs %s à déterminer (Nécessite version %s ou plus installée. Si pas sur "
 "Microsoft Windows)"
 
-msgid "can't found it because exiv2 not installed"
-msgstr "on ne peut pas le trouver parce que exiv2 n'est pas installé"
-
 #, python-format
 msgid "GExiv2 : %s (Exiv2 library : %s)"
 msgstr "GExiv2 : %s (bibliothèque Exiv2 : %s)"
@@ -321,9 +318,6 @@ msgstr ""
 "Pour le greffon « Networkchart », la police <a href=\"https://"
 "www.fontsquirrel.com/fonts/white-rabbit\">White Rabbit</a> donne un résultat "
 "extrêmement lisible.\n"
-
-msgid "Why, when same code works in Graphview"
-msgstr "Pourquoi, alors que le même code fonctionne dans Graphview"
 
 msgid "not installed"
 msgstr "pas installé"

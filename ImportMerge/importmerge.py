@@ -803,8 +803,8 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
                     continue
                 # now check the missing list for a match
                 changed += self.check_miss(r_objtype, r_hndl, item)
-            # check for GID conflict
-            if item.gramps_id != item1.gramps_id:
+            # check for GID conflict (Tag is a table object without gramps_id)
+            if obj_type != 'Tag' and item.gramps_id != item1.gramps_id:
                 if getattr(self.db1, 'has_' + obj_type.lower() +
                            '_gramps_id')(item.gramps_id):
                     item.gramps_id = getattr(self.db1, 'find_next_' +
@@ -823,9 +823,10 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
                     continue
                 # now check the differences list for a match
                 self.check_diffs(r_objtype, r_hndl, obj_type, item)
-            # check for GID conflict
-            if getattr(self.db1, 'has_' + obj_type.lower() +
-                       '_gramps_id')(item.gramps_id):
+            # check for GID conflict (Tag is a table object without gramps_id)
+            if obj_type != 'Tag' and getattr(
+                    self.db1, 'has_' + obj_type.lower() +
+                    '_gramps_id')(item.gramps_id):
                 item.gramps_id = getattr(self.db1, 'find_next_' +
                                          obj_type.lower() +
                                          '_gramps_id')()

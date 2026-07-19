@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
+"PO-Revision-Date: 2026-05-04 21:37+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17.1\n"
+
+msgid "Ancestor"
+msgstr "Ancestro"
+
+msgid "The ancestor from which to start the line"
+msgstr "El antepasado a partir del cual iniciar el linaje"
+
+msgid "Descendent"
+msgstr "Descendiente"
+
+msgid "The descendent to which to build the line"
+msgstr "El descendiente al cual construir el linaje"
+
+msgid "The style used for the title of the page."
+msgstr "El estilo utilizado para el título de la página."
+
+msgid "The style used for the title of a line."
+msgstr "El estilo utilizado para el título de un linaje."
+
+#, python-format
+msgid "%(line)s. line:"
+msgstr "%(line)s. linaje:"
+
+#, python-format
+msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
+msgstr "Linaje de Descendencia desde %(ancestor)s hasta %(descendent)s"
+
+msgid "Lines of Descendency Report"
+msgstr "Líneas de Informe de Descendiente"
+
+msgid ""
+"Prints out all descendency lines from a given ancestor to a given descendent "
+"in text."
+msgstr ""
+"Declara fuera todas del líneas descendientes desde un ancestro dado hasta un "
+"descendiente dado dentro del texto."

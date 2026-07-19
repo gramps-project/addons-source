@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
+"POT-Creation-Date: 2026-05-03 15:04-0700\n"
 "PO-Revision-Date: 2026-02-20 09:09+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
@@ -23,12 +23,6 @@ msgstr "גרמפלט שמציג קשר־קרבה עמוקים בין אדם הב
 
 msgid "Deep Connections"
 msgstr "חיבורים עמוקים"
-
-msgid "Pause"
-msgstr "השהיה"
-
-msgid "Copy"
-msgstr "העתקה"
 
 msgid "mentioned in note"
 msgstr "אזכור בהערה"
@@ -85,11 +79,3 @@ msgid ""
 msgstr ""
 "מושהה.\n"
 "נא ללחוץ על 'להמשיך לחפש' לקשרי־קרבה נוספים.\n"
-
-#, python-format
-msgid ""
-"\n"
-"Search completed. %d relations found."
-msgstr ""
-"\n"
-"החיפוש הושלם. נמצאו %d קשרי קרבה."
