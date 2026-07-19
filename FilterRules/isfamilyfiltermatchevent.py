@@ -92,7 +92,9 @@ class IsFamilyFilterMatchEvent(MatchesFilterBase):
         if self.MFF:
             for family in db.iter_families():
                 if self.MFF.apply_to_one(db, family):
-                    self.events.update([e.ref for e in family.get_event_ref_list()])
+                    self.selected_handles.update(
+                        [e.ref for e in family.get_event_ref_list()]
+                    )
 
     def apply_to_one(self, db: Database, event: Event) -> bool:
         """
