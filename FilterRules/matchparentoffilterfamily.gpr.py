@@ -6,10 +6,10 @@ register(
     id="MatchParentOfFilterFamily",
     name=_("Parents of family filter"),
     description=_("Matches parent of family filter"),
-    version = '0.0.2',
+    version = '0.0.3',
     authors=["jjdup"],
     authors_email=["jeremi+gramps@dupin.fdn.fr"],
-    gramps_target_version="6.0",
+    gramps_target_version="6.1",
     status=STABLE,
     fname="matchparentoffilterfamily.py",
     ruleclass="MatchesParentOfFilterFamily",  # must be rule class name

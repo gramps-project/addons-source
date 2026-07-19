@@ -28,7 +28,7 @@ register(
     description=_(
         "Matches people who are related to anybody matched by " "a person filter"
     ),
-    version = '1.0.29',
+    version = '1.0.30',
     authors=["Matthias Kemmer"],
     authors_email=["matt.familienforschung@gmail.com"],
     gramps_target_version="6.1",
