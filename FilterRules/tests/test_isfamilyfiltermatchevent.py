@@ -43,18 +43,13 @@ import tempfile
 import unittest
 
 # The addon imports Gtk at module load (via
-# gramps.gui.editors.filtereditor). Pin Gtk to 3.0 before any gramps
-# import (mirrors what gramps.grampsapp does at startup); otherwise
-# PyGObject loads GTK4 and the gramps.gui import chain crashes on
-# Gtk.IconSize.MENU (a GTK3-only enum). Skip cleanly if GTK 3 / PyGObject
-# aren't available.
+# gramps.gui.editors.filtereditor). GTK/GDK are already pinned to 3.0
+# repo-wide by tests/__init__.py (PR #950); skip cleanly here if
+# PyGObject isn't available at all.
 try:
     import gi
-
-    gi.require_version("Gtk", "3.0")
-    gi.require_version("Gdk", "3.0")
-except (ImportError, ValueError, AttributeError) as err:
-    raise unittest.SkipTest("GTK 3.0 / PyGObject not available: %s" % err)
+except ImportError as err:
+    raise unittest.SkipTest("PyGObject not available: %s" % err)
 
 # Addon root goes on sys.path so ``FilterRules.isfamilyfiltermatchevent``
 # resolves. The ``FilterRules`` directory lacks an __init__.py, so this
