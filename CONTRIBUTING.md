@@ -23,13 +23,21 @@ If you're looking for *existing* addons to install, see
 If you're looking to contribute to Gramps directly, see
 [Portal:Developers](https://gramps-project.org/wiki/index.php/Getting_started_with_Gramps_development).
 
+This document is the contributor **workflow** guide: repository setup, the
+development loop, the checklist, and the pull-request process. The full
+technical reference is the in-repo
+[Addon Development manual](docs/addon-development/README.md) — seventeen
+pages from a first Gramplet through testing, debugging, packaging, and
+cross-version compatibility. Where a section below has a deeper counterpart
+in the manual, it links there instead of repeating it.
+
 ## Table of Contents
 * [What Can Addons Extend?](#what-can-addons-extend)
 * [Overview of Writing an Addon](#overview-of-writing-an-addon)
 * [Develop Your Addon](#develop-your-addon)
-    * [Addons Source Code Repository](#addon-source-code-repository)
+    * [Addons Source Code Repository](#addons-source-code-repository)
     * [Addons Download Repository](#addons-download-repository)
-    * [Set Up a Github Account](#setup-a-github-account)
+    * [Set Up a Github Account](#set-up-a-github-account)
     * [Create Project Forks in Github](#create-project-forks-in-github)
     * [Set Up Addon Development Environment](#set-up-addon-development-environment)
         * [Gramps Repository](#gramps-repository)
@@ -50,7 +58,7 @@ If you're looking to contribute to Gramps directly, see
 * [Review the Addon Checklist](#review-the-addon-checklist)
 * [Create a Pull Request](#create-a-pull-request)
     * [Commit Your Changes](#commit-your-changes)
-    * [Verify Your Addon Is Current](#verify your addon is current)
+    * [Verify Your Addon Is Current](#verify-your-addon-is-current)
     * [Push To Your Fork](#push-to-your-fork)
     * [Create the PR](#create-the-pr)
     * [Work Towards a Merge](#work-towards-a-merge)
@@ -60,47 +68,21 @@ If you're looking to contribute to Gramps directly, see
         * [List Your Addon](#list-your-addon)
         * [Document Your Addon](#document-your-addon)
 * [Support Your Addon Through Bug Tracker](#support-your-addon-through-bug-tracker)
-* [Maintain Your Addon Code as Gramps Evolves](#maintain-your-addon-code-as-gramps-evolves)
+* [Maintain Your Addon Code as Gramps Evolves](#maintain-your-addon-as-gramps-evolves)
 * [Resources](#resources)
 * [Addon Development Tutorials and Samples](#addon-development-tutorials-and-samples)
 * [Addons External to Github](#addons-external-to-github)
 
 ## What Can Addons Extend?
-<!-- sync with https://gramps-project.org/wiki/index.php?title=Addon_list_legend&action=edit&section=2 --> 
-Addons for Gramps can extend the program in many different ways. You can
-add any of the following [types](https://github.com/gramps-project/gramps/blob/master/gramps/gen/plug/_pluginreg.py) of addons:
+Addons can extend Gramps at almost every plugin point: Importers and
+Exporters, Gramplets, View modes, Map Services, plugin libraries (GENERAL),
+Quickviews, Reports, filter Rules, Tools, document generators (DOCGEN),
+relationship calculators, Sidebars, Database backends, Thumbnailers, and
+Citation formatters.
 
-* **Importer** (IMPORT) - adds additional file format import options to Gramps
-* **Exporter** (EXPORT) - adds additional file format export options to Gramps
-* **[Gramplet](https://gramps-project.org/wiki/index.php/Gramps_Glossary#gramplet)** (GRAMPLET) - adds a new
-interactive interface section to a Gramps view mode, which can be
-activated by right-clicking on the dashboard View or from the menu
-of the Sidebar/Bottombar in other view categories. 
-* **Gramps** [**View mode**](https://gramps-project.org/wiki/index.php/Gramps_Glossary#viewmode) (VIEW) - adds a
-new view mode to the list of views available within a
-[View Category](https://gramps-project.org/wiki/index.php/Gramps_Glossary#view)
-* **[Map Service](https://gramps-project.org/wiki/index.php/[Map_Services)**
-(MAPSERVICE) - adds new mapping options to Gramps
-* **Plugin lib** (GENERAL) - libraries that provide extra functionality when
-present; can add, replace and/or modify builtin Gramps options.
-* **[Quickreport/Quickview](https://gramps-project.org/wiki/indew/Gramps_6.0_Wiki_Manual_-_Reports_-_part_8#Quick_Views)** (QUICKREPORT) - a view
-that you can run by right-clicking on an object, or if a person quickview,
-then via the Quick View Gramplet
-* **[Report](https://gramps-project.org/wiki/index.php/Gramps_6.0_Wiki_Manual_-_Reports_-_part_1)** (REPORT) - adds a new output report; this includes
-**Website** that outputs a static genealogy website based on your Gramps
-Family Tree data.
-* **[Rule](https://gramps-project.org/wiki/index.php/Gramps_6.0_Wiki_Manual_-_Filters#Add_Rule_dialog)** (RULE) - adds new
-[filter](https://gramps-project.org/wiki/index.php/Gramps_Glossary#filter)
-rules. New starting with Gramps 5.1.
-* **[Tool](https://gramps-project.org/wiki/index.php/Gramps_6.0_Wiki_Manual_-_Tools)** (TOOL) - adds a utility that helps process data from your family tree.
-* **Doc creator** (DOCGEN)
-* **Relationships** (RECALC)
-* **Sidebar** (SIDEBAR)
-* **[Database](https://gramps-project.org/wiki/index.php/Database_Backends)**
-(DATABASE) - add support for another database backend. New starting with
-Gramps 5.0.
-* **Thumbnailer** (THUMBNAILER) New starting with Gramps 5.2
-* **Citation formatter** (CITE) New starting with Gramps 5.2
+The full catalogue — with the registration constant, UI location, base
+class, and per-kind notes for each — is in the manual:
+[Addon Kinds](docs/addon-development/03-addon-kinds.md).
 
 ## Overview of Writing an Addon
 Writing an addon is fairly straightforward if you have a bit of Python
@@ -110,11 +92,11 @@ general steps to writing and sharing your own addons are:
 * [Develop your addon](#develop-your-addon)
 * [Create a Gramps plugin registration file](#create-a-gramps-plugin-registration-file) - e.g., a file named ```my-addon.gpr.py```
 * [Review the Addon Checklist](#review-the-addon-checklist)
-* [Create a Pull Request for your addon](#create-pr)
-* [Announce it on the Gramps forum](#announce-the-addon) - Let users
+* [Create a Pull Request for your addon](#create-a-pull-request)
+* [Announce it on the Gramps forum](#announce-your-addon) - Let users
 know it exists and how to use it.
-* [Support it through the issue tracker](#support-it-through-issue-tracker)
-* [Maintain the code](#maintain-the-code-as-gramps-continues-to-evolve) as
+* [Support it through the issue tracker](#support-your-addon-through-bug-tracker)
+* [Maintain the code](#maintain-your-addon-as-gramps-evolves) as
 the Gramps code continues to evolve
 
 We'll now expand on each of these steps.
@@ -463,24 +445,24 @@ see
 [Writing a Plugin](https://gramps-project.org/wiki/index.php/Writing_a_Plugin)
 specifically.
 
+The manual walks these end-to-end:
+[Tutorials](docs/addon-development/02-tutorials.md) builds one addon per
+kind, and [Fundamentals](docs/addon-development/04-fundamentals.md) covers
+the cross-cutting basics every kind shares.
 
 ### Test Your Addon As You Develop
-To test your addon as you develop, we recommend you copy your
-```NewProjectName``` plugin into your Gramps user plugin directory
-from your addon development directory, prior to testing.  Or, just
-edit in the Gramps user plugin directory until it is ready to publish,
-then copy back to your addon development directory.  Your installed Gramps
-desktop application will search this folder (and subdirectories) for
-any ```.gpr.py``` files, and add them to the plugin list.
+To test your addon as you develop, copy your ```NewProjectName``` folder
+into the Gramps user plugin directory and restart Gramps — plugin discovery
+happens at startup. On Gramps 6.0, discovery does **not** follow symbolic
+links ([Bug #10436](https://gramps-project.org/bugs/view.php?id=10436)), so
+a physical copy is required; Gramps 6.1 and later follow symlinks, so you
+can link your working tree in once and edit in place.
 
-You can of course still use the ```git``` branch for your addon to store
-intermediate steps and other work in progress.
-
-> #### Warning
-> [Bug #10436](https://gramps-project.org/bugs/view.php?id=10436)
-> Symbolic links to folders in the gramps plugin directory are not scanned, so
-> you cannot just create a symbolic link pointing to your addon source tree;
-> you will have to copy it.
+The manual covers the full development loop — where addons live, the
+restart cycle, and a first working Gramplet — in
+[the overview](docs/addon-development/01-overview.md#where-addons-live),
+and how to test logic without launching the GUI in
+[Testing](docs/addon-development/07-testing.md).
 
 If you have code that you want to share between addons, you don't need
 to do anything special. Gramps adds each directory in which a ```.gpr.py```
@@ -490,123 +472,42 @@ should always make sure you name your addons with a name appropriate for
 Python imports.
 
 ### Addon Configuration
-Some addons may want to have persistent data (data settings that remain
-between sessions). You can handle this yourself, or you can use Gramps'
-builtin configure system. 
+Some addons want persistent settings that survive between sessions. Use
+Gramps' builtin configuration manager (```configman```) rather than rolling
+your own file handling — the addon's ```.ini``` file lands in the addon's
+own directory, so it cannot conflict with ```gramps.ini``` or with other
+addons ([the Gramps architect recommends leaving the location decision to
+the addon developer](https://gramps.discourse.group/t/add-option-for-boolean-options-in-gramplet/6371/19)).
 
-At the top of the source file for your addon, you would do this:
-```
-    from config import config as configman
-    config = configman.register_manager("grampletname")
-    # register the values to save:
-    config.register("section.option-name1", value1)
-    config.register("section.option-name2", value2)
-    ...
-    # load an existing file, if one:
-    config.load()
-    # save it, it case it didn't exist:
-    config.save()
-```
-
-This will create the file ```grampletname.ini``` and put it in the same
-directory as the addon. If the config file already exists, it remains intact.
-The natural location for ```.ini``` files is in the directory in which
-the addon is installed; using the main ```gramps.ini``` file for addon
-preferences could potentially lead to a conflict between addons. Other
-locations and file formats are possible.  See
-[The Gramps architect recommends leaving this decision to the addon developer](https://gramps.discourse.group/t/add-option-for-boolean-options-in-gramplet/6371/19).
-
-In the addon, you can then:
-```
-    x = config.get("section.option-name1")
-    config.set("section.option-name1", 3)
-```
-
-and when this code is exiting, you might want to save the config. In a
-Gramplet that would be:
-```
-     def on_save(self):
-         config.save()
-```
-
-If your code is a system-level file, then you might want to save the
-config in the Gramps system folder:
-```
-    config = configman.register_manager("system", use_config_path=True)
-```
-
-This is rare; most ```.ini``` files go into the plugins directory.
-
-In other code that might use this config file, you would do this:
-```
-    from config import config as configman
-    config = configman.get_manager("grampletname")
-    x = config.get("section.option-name1")
-```
+The full pattern — registering keys, load/save, the rare
+```use_config_path``` system-folder case, and reading another addon's
+settings with ```get_manager``` — is in the manual:
+[Fundamentals → Configuration and persistent settings](docs/addon-development/04-fundamentals.md#configuration-and-persistent-settings).
 
 ### Localization
-
-> #### Note
-> These instructions will only work for Python strings. If you have a
-> glade file, it will not get translated.
-
-For general help with translations for Gramps, see
-[Coding for translation](https://gramps-project.org/wiki/index.php/Coding_for_translation). However, that will only use translations that come with Gramps,
-or allow you to contribute translations to the Gramps core. To have your own
-managed translations that will be packaged with your addon, you will need to
-add a way to retrieve the translation. Add the following to the top of your
-```NewProjectName.py``` file:
+Wrap every user-visible string in ```_()```, and bind the addon's own
+translation catalog at the top of each implementation module:
 ```
     from gramps.gen.const import GRAMPS_LOCALE as glocale
-        = glocale.get_addon_translator(__file__).gettext
+    _ = glocale.get_addon_translator(__file__).gettext
 ```
-Then you can use the standard "```_()```" function to translate phrases in
-your addon. 
+Glade files are **not** extracted automatically — mark their strings
+translatable and override the labels at runtime in Python.
 
-You can use one of a few different types of translation functions:
-```
-    gettext
-    lgettext
-    ngettext
-    lngettext
-    sgettext
-```
-
-These are obsolete starting in Gramps 4.x; ```gettext```, ```ngettext```, and
-```sgettext``` always return translated strings in Unicode for consistent
-portability between Python2 and Python3.
-
-See the [Python documentation](http://docs.python.org/3/library/gettext.html#the-gnutranslations-class) for using ```gettext``` and ```ngettext```. The
-"l" versions return the string encoded according to the
-[currently set locale](http://docs.python.org/3/library/locale.html#locale.setlocale);
-the "u" versions return Unicode strings in Python2 and are no longer available
-in Python3.
-
-The method ```sgettext``` should always be used; it is a Gramps extension
-that filters out clarifying comments for translators, such as in
-```_("Remaining names | rest")``` where "rest" is the English string that
-we want to present and "Remaining names" is a hint for translators.
+The full workflow — string marking rules, plural forms, context prefixes
+(```_("Remaining names|rest")```), ```.pot```/```.po``` generation with
+```make.py```, and Weblate — is in the manual:
+[Internationalization](docs/addon-development/11-internationalization.md).
 
 ### Files Included in Addon Distribution
-The process that creates the compressed tar file that the Gramps Download
-Manager installs in Gramps to use your addon automatically includes the
-following files:
-```
-    *.py
-    *.glade
-    *.xml
-    *.txt
-    locale/*/LC_MESSAGES/*.mo
-```
-Starting with Gramp 5.0, if you have files other than those listed above,
-you should create a ```MANIFEST``` file in the root of your addon folder
-that lists the files (or pattern) to be added, one per line, like this
-sample ```MANIFEST``` file: 
-```
-    README.md
-    extra_dir/*
-    help_files/docs/help.html
-```
+The build automatically packages ```*.py```, ```*.glade```, ```*.xml```,
+```*.txt```, and ```locale/*/LC_MESSAGES/*.mo```. Anything else (a
+```README.md```, help files, extra directories) needs a ```MANIFEST```
+file in the addon root, one file or glob pattern per line (Gramps 5.0+).
+
+The build flow, ```MANIFEST``` semantics, and what lands in the
+```.addon.tgz``` are in the manual:
+[Packaging → What build packages](docs/addon-development/12-packaging.md#what-build-packages).
 
 > #### TIP
 > Starting with Gramps 6.0 (and _only_ 6.0) translations can be done on
@@ -629,280 +530,65 @@ takes this general form:
 [PTYPE](https://github.com/gramps-project/gramps/blob/master/gramps/gen/plug/_pluginreg.py#L76) values include:
 TOOL, GRAMPLET, REPORT, QUICKVIEW (formerly QUICKREPORT), IMPORT, EXPORT,
 DOCGEN, GENERAL, MAPSERVICE, VIEW, RELCALC, SIDEBAR, DATABASE, RULE,
-THUMBNAILER, and CITE.
+THUMBNAILER, and CITE. ATTR depends on the PTYPE.
 
-ATTR depends on the PTYPE.
+You must include ```gramps_target_version``` (a string "X.Y" matching the
+Gramps major and minor version the addon targets) and the addon
+```version``` (a string "X.Y.Z"). Include author name(s) and email(s) as
+arrays of strings, and — new in Gramps 5.2 — optionally ```maintainers```
+/ ```maintainers_email``` when the maintainer differs from the author; the
+maintainer is the primary point of contact.
 
-You must include a ```gramps_target_version``` and addon ```version``` values.
-```gramps_target_version``` should be a string of the form "X.Y" matching
-a Gramps X (major) and Y (minor) version.  ```version``` is a string of
-the form "X.Y.Z" representing the version of your addon; X, Y, and Z should
-all be integers.
+In the ```.gpr.py```, the function ```_``` is predefined by the plugin
+loader to use your locale translations — mark text with ```_("TEXT")```,
+never import ```_``` there.
 
-Be sure to include attributes for author name(s) and email(s) in the form
-of an array of comma-separated strings. 
-
-There is an additional set of attributes, ```maintainers``` and
-```maintainers_email``` (new in Gramps 5.2). If you, the author, are also
-the maintainer it will be identical to the author attributes, but you may
-also designate a maintainer, in which case the maintainer will become the
-primary point of contact.
-
-Here is a sample Tool GPR file:
-```
-    register(TOOL, 
-             id    = 'AttachSource',
-             name  = _("Attach Source"),
-             description =  _("Attaches a shared source to multiple objects."),
-             version = '1.0.0',
-             gramps_target_version = '6.0',
-             status = STABLE,
-             fname = 'AttachSourceTool.py',
-             authors = ["Douglas S. Blank"],
-             authors_email = ["doug.blank@gmail.com"],
-             maintainers = ["Douglas S. Blank"],
-             maintainers_email = ["doug.blank@gmail.com"],
-             category = TOOL_DBPROC,
-             toolclass = 'AttachSourceWindow',
-             optionclass = 'AttachSourceOptions',
-             tool_modes = [TOOL_MODE_GUI],
-             help_url = "Addon:AttachSourceTool"
-    )
-```
-
-You can see examples of the kinds of addons
-[here](https://github.com/gramps-project/gramps/plugins) (such as
-[gramps-project/gramps/plugins/drawreport/drawplugins.gpr.py](https://github.com/gramps-project/gramps/plugins/drawreport/drawplugins.gpr.py))
-and see the full documentation in the
-[master/gramps/gen/plug/_pluginreg.py][https://github.com/gramps-project/gramps/blob/3f0db9303f29811b43325c30149c8844c7ce24b6/gramps/gen/plug/_pluginreg.py#L23)
-comments and docstrings.
-
-Note that this example ```.gpr.py``` will automatically use translations
-if you have them (see [Localization](#localization)). That is, the
-function "_" is predefined to use your
-locale translations; you only need to mark the text with ```_("TEXT")```
-and include a translation of "TEXT" in your translation file. For example,
-in the above example, ```_("Attach Source")``` is marked for translation.
-If you have developed and packaged your addon with translation support,
-then that phrase will be converted into the user's language.
+The manual documents every registration field, the discovery model, and a
+complete example per kind:
+[Fundamentals → The .gpr.py registration file](docs/addon-development/04-fundamentals.md#the-gprpy-registration-file)
+and [Addon Kinds](docs/addon-development/03-addon-kinds.md).
 
 ### Report Plugins
-The possible report categories are
-[gramps/gen/plug/_pluginreg.py](https://github.com/gramps-project/gramps/blob/892fc270592095192947097d22a72834d5c70447/gramps/gen/plug/_pluginreg.py#L141-L149):
-```
-    #possible report categories
-    CATEGORY_TEXT       = 0
-    CATEGORY_DRAW       = 1
-    CATEGORY_CODE       = 2
-    CATEGORY_WEB        = 3
-    CATEGORY_BOOK       = 4
-    CATEGORY_GRAPHVIZ   = 5
-    CATEGORY_TREE       = 6
-    REPORT_CAT          = [ CATEGORY_TEXT, CATEGORY_DRAW, CATEGORY_CODE,
-                            CATEGORY_WEB, CATEGORY_BOOK, CATEGORY_GRAPHVIZ, CATEGORY_TREE]
-```
+A REPORT registration declares one of the report categories
+(```CATEGORY_TEXT```, ```CATEGORY_DRAW```, ```CATEGORY_WEB```, and so on —
+defined in ```gramps/gen/plug/_pluginreg.py```); the text and draw
+categories use Gramps' Document interface.
 
-Each report category has a set of standards and an interface. The categories
-```CATEGORY_TEXT``` and ```CATEGORY_DRAW``` use the Document interface of
-Gramps. See also
-[Report API](https://gramps-project.org/wiki/index.php/Report_API)
-for a draft view on this.
-
-The application programming interface or API for reports is treated in the
-[report writing tutorial](https://gramps-project.org/wiki/index.php/Report-writing_tutorial).  For general information on Gramps development, see
-[Portal:Developers](https://gramps-project.org/wiki/index.php/Portal:Developers)
-and [Writing a Plugin](https://gramps-project.org/wiki/index.php/Writing_a_plugin).
+The manual covers the Report/ReportOptions pair, the docgen abstraction,
+and a complete text-report walkthrough:
+[Addon Kinds → REPORT](docs/addon-development/03-addon-kinds.md) and
+[Tutorials → A text Report](docs/addon-development/02-tutorials.md#a-text-report).
+See also the
+[report writing tutorial](https://gramps-project.org/wiki/index.php/Report-writing_tutorial)
+on the wiki.
 
 ### General Plugins
-The plugin framework also allows you to create generic plugins for use.
-This includes the ability to create libraries of functions, and plugins
-of your own design.
+```GENERAL``` is the escape hatch for plugin code that doesn't fit any
+other kind: shared function libraries (imported at startup with
+```load_on_reg = True``` and then available to other addons via a plain
+```import```), and pluggable categories such as ```WEBSTUFF``` (narrative
+website stylesheets) and ```Filters``` (filter-rule providers).
 
-#### Example: A library of functions
-In this example, a file named ```library.py``` will be imported at the
-time of registration (i.e., any time Gramps starts):
-```
-    # file: library.gpr.py
-
-    register(GENERAL, 
-       id    = 'My Library',
-       name  = _("My Library"),
-       description =  _("Provides a library for doing something."),
-       version = '1.0',
-       gramps_target_version = '6.0',
-       status = STABLE,
-       fname = 'library.py',
-       load_on_reg = True,
-    )
-```
-
-You can access the loaded module in other code by issuing an
-```import library``` as Python keeps track of files already
-imported. However, the amount of useful code that you can run
-when the program is imported is limited. You might like to have
-the code do something that requires a ```dbstate``` or ```uistate object```,
-but neither of these is available when just importing a file.
-
-If ```load_on_reg``` was not ```True```, this code would be unavailable
-until manually loaded. There is no mechanism in Gramps to load ```GENERAL```
-plugins automatically.
-
-In addition to importing a file at startup, you can also run a single
-function inside a ```GENERAL``` plugin, and it will be passed the
-```dbstate```, the ```uistate```, and the plugin data. The function
-must be called ```load_on_reg```, and take those three parameters:
-```
-    # file: library.py
-
-    def load_on_reg(dbstate, uistate, plugin):
-        """
-        Runs when plugin is registered.
-        """
-        print("Hello World!")
-```
-
-Here, you could connect signals to the ```dbstate```, open windows, etc.
-
-Another example of what you can do with the plugin interface is to create
-a general purpose plugin framework for use by other plugins. Here is the
-basis for a plugin system that:
-
-* allows plugins to list data files
-* allows the plugin to process all of the data files
-
-First, the ```gpr.py``` file:
-```
-    register(GENERAL, 
-      id    = "ID",
-      category = "CATEGORY",
-      load_on_reg = True,
-      process = "FUNCTION_NAME",
-    )
-```
-
-This example uses three new features:
-
-* ```GENERAL``` plugins can have a category
-* ```GENERAL``` plugins can have a load_on_reg function that returns data
-* ```GENERAL``` plugins can have a function (called ```process```) which
-will process the data
-
-If you (or someone else) create additional general plugins of this category,
-and they follow your ```load_on_reg``` data format API, then they could be
-used just like your original data. For example, here is an additional
-general plugin in the ```WEBSTUFF``` category:
-```
-    # anew.gpr.py
-
-    register(GENERAL, 
-      id    = 'a new plugin',
-      category = "WEBSTUFF",
-      version = '1.0',
-      gramps_target_version = '6.0',
-      data = ["a", "b", "c"],
-    )
-```
-
-This doesn't have ```load_on_reg = True```, nor does it have an ```fname``` or
-```process```, but it does set the data directly in the ```.gpr.py``` file.
-Then, we have the following results:
-```
-     >>> from gui.pluginmanager import GuiPluginManager
-     >>> PLUGMAN = GuiPluginManager.get_instance()
-     >>> PLUGMAN.get_plugin_data('WEBSTUFF')
-     ["a", "b", "c", "Stylesheet.css", "Another.css"]
-     >>> PLUGMAN.process_plugin_data('WEBSTUFF')
-     ["A", "B", "C", "STYLESHEET.CSS", "ANOTHER.CSS"]
-```
+The manual documents both uses and the full plugin-data API — the
+```load_on_reg(dbstate, uistate, plugin)``` function form, the ```data```
+and ```process``` registration fields, and querying by category through
+the plugin manager:
+[Addon Kinds → GENERAL](docs/addon-development/03-addon-kinds.md).
 
 ### Registered GENERAL Categories
-The following are examples of the published secondary plugin categories of
-APIs of type ```GENERAL```.
-
-#### WEBSTUFF
-A sample ```gpr.py``` file:
-```
-    # stylesheet.gpr.py
-
-    register(GENERAL, 
-      id    = 'system stylesheets',
-      category = "WEBSTUFF",
-      name  = _("CSS Stylesheets"),
-      description =  _("Provides a collection of stylesheets for the web"),
-      version = '1.0',
-      gramps_target_version = '6.0',
-      fname = "stylesheet.py",
-      load_on_reg = True,
-      process = "process_list",
-    )
-```
-
-Here is the associated program:
-```
-    # file: stylesheet.py
-
-    def load_on_reg(dbstate, uistate, plugin):
-        """
-        Runs when plugin is registered.
-        """
-        return ["Stylesheet.css", "Another.css"]
-
-    def process_list(files):
-        return [file.upper() for file in files]
-```
-
-#### Filters
-For example, ```gpr.py```:
-```
-    register(GENERAL,
-       category="Filters",
-       ...
-       load_on_reg = True
-    )
-```
-And the actual plugin:
-```
-    def load_on_reg(dbstate, uistate, plugin):
-        # returns a function that takes a namespace, 'Person', 'Family', etc.
-
-        def filters(namespace):
-            print("Ok...", plugin.category, namespace, uistate)
-            # return a Filter object here
-
-        return filters
-```
+The published ```GENERAL``` categories — ```WEBSTUFF``` and ```Filters```
+— with sample registrations and implementations, are covered in
+[Addon Kinds → GENERAL](docs/addon-development/03-addon-kinds.md).
 
 ### List Your Addon Prerequistes
-In your ```.gpr.py``` file, you can have a line like:
-```
-    ...
-    depends_on = ["libwebconnect"],
-    ...
-```
+```depends_on = ["libwebconnect"]``` in a ```.gpr.py``` lists the ids of
+other plugins that must load first (they are installed automatically);
+```requires_mod```, ```requires_gi```, and ```requires_exe``` (Gramps 5.2+)
+declare Python-module, GObject-introspection, and executable prerequisites.
 
-which is a list of plug-in identifiers from other ```.gpr.py``` files.
-This example will ensure that
-[libwebconnect](https://gramps-project.org/wiki/index.php/Addon:Web_Connect_Pack#Prerequisites)
-is loaded before your addon. If that ID can't be found, or you have a cycle
-(a circular import), then your addons won't be loaded. The Gramps architect
-summarizes this as: "The ```depends_on``` list is used to specify other plugins
-which the plugin depends on. These will be installed automatically."
-
-Example code in the Addon:Web_Connect_Pack that references ```libwebconnect```
-prerequistes can be seen in
-[addons-source/RUWebPack.gpr.py#L17](https://github.com/gramps-project/addons-source/blob/1304b65a7d758bfe17339c26260473ac3e9c4061/RUWebConnectPack/RUWebPack.gpr.py#L17).
-
-This allows common prerequisites to be shared between addons. Code can be
-maintained in its own ```.gpr.py```/addon file instead of trying to
-synchronize the maintenance of multiple copies across various silos.
-
-Additional requirements properties were implemented starting with the 
-Gramps 5.2 
-[Registration Options](https://gramps-project.org/wiki/index.php/Gramplets_development#Register_Options) that provide for specifying plug-in preqrequisites:
-
-* For modules: [```requires_mod```](https://github.com/gramps-project/gramps/blob/0f8d4ecd429431b4df64910962f8764af9ff1766/gramps/gen/plug/_pluginreg.py#L689-L719)
-* For GObject introspection: [```requires_gi```](https://github.com/gramps-project/gramps/blob/0f8d4ecd429431b4df64910962f8764af9ff1766/gramps/gen/plug/_pluginreg.py#L689-L719)
-* For executables: [```requires_exe```](https://github.com/gramps-project/gramps/blob/0f8d4ecd429431b4df64910962f8764af9ff1766/gramps/gen/plug/_pluginreg.py#L689-L719)
+Declaration rules — importable module names, verifying entries, version
+pins — are in the manual:
+[Fundamentals → Declaring dependencies](docs/addon-development/04-fundamentals.md#declaring-dependencies).
 
 ## Review the Addon Checklist
 Before you publish your new addon, review this checklist for completeness:
@@ -914,6 +600,10 @@ Before you publish your new addon, review this checklist for completeness:
 * Has a wiki page been generated?
 * Has the <tt>help_url</tt> been changed from the GitHub repository to the
 wiki page?
+
+The normative MUST / SHOULD / MAY rules a reviewer holds an addon to —
+structure, runtime, testing, translation, and the contributor workflow —
+are in the manual: [Guidelines](docs/addon-development/16-guidelines.md).
 
 ## Create a Pull Request
 Once you have created your addon, built the ```.gpr.py``` registration
@@ -1129,42 +819,30 @@ Now it is time to announce your addon to those who may not have heard
 about it yet.
 
 ### Gramps Forum
-Join the [Gramps Forum](#https://gramps-project.org/wiki/index.php/Contact#Forum) if you have not already.  Announce your addon to forum users with general
-information on why you created it, what it does for the user, and how to use
-it.
+Join the [Gramps Forum](https://gramps.discourse.group/) if you have not
+already.  Announce your addon to forum users with general information on
+why you created it, what it does for the user, and how to use it.
 
 ### Gramps Wiki
 Create an account on the
-[Gramps Wiki](#https://gramps-project.org/wiki/index.php/Main_page)
+[Gramps Wiki](https://gramps-project.org/wiki/index.php/Main_page)
 if you don't already have one.
 
 #### List Your Addon
 Add a short description of your addon to the Addons list in the wiki by
-editing the current release listing: i.e., 
+editing the current release listing: i.e.,
 [6.0_Addons](https://gramps-project.org/wiki/index.php/6.0_Addons),
 or if the addon is meant for a future release,
 [6.1_Addons](https://gramps-project.org/wiki/index.php/6.1_Addons)
 when available.  Examine other addon entries when editing the wiki page,
 and refer to the
-[Addon list legend]]](https://gramps-project.org/wiki/index.php/Addon_list_legend)
-list legend]] to understand the meaning of each column.  When ready, use the
-following template to include your addon in the list:
-```
-|- <!-- Copy this section and list your Addon -->
-|<!-- Plugin / Documentation -->
-|<!-- Type -->
-|<!-- Image -->
-|<!-- Description -->
-|<!-- Use -->
-|<!-- Rating (out of 4) -->
-|<!-- Contact -->
-|<!-- Download -->
-|-
-```
+[Addon list legend](https://gramps-project.org/wiki/index.php/Addon_list_legend)
+to understand the meaning of each column. The row template to copy is in
+the manual: [Community → List your addon](docs/addon-development/13-community.md#list-your-addon).
 
 #### Document Your Addon
-Document your addon in the wiki using the page name format 
-**Addon:NewProjectName**.  Examine some of the other addon documentaion
+Document your addon in the wiki using the page name format
+**Addon:NewProjectName**.  Examine some of the other addon documentation
 pages for suggestions, and for the general format to use.
 
 > ##### TIP
@@ -1173,30 +851,9 @@ pages for suggestions, and for the general format to use.
 > results page you will be provided with a link to create the new page.
 > Select that link to add your content.
 
-Consider including the following information in your wiki page:
-
-```
-<!-- Copy this section to your Addon support page-->
-{{Third-party plugin}}  <!-- This is a mediawiki template that expands out
-                         to display the standard addon message you see at
-                         the top of each addon page-->
-
-<!--add these sections if needed-->
-== Usage ==
-
-=== Configure Options ===
-
-==Features==
-
-== Prerequisites ==
-
-== Issues ==
-
-<!--default categories-->
-[[Category:Addons]]
-[[Category:Plugins]]
-[[Category:Developers/General]]
-```
+The conventional page skeleton (the ```{{Third-party plugin}}``` banner and
+the standard sections) is in the manual:
+[Community → Document your addon](docs/addon-development/13-community.md#document-your-addon).
 
 ## Support Your Addon Through Bug Tracker
 Create a user account on the
@@ -1232,6 +889,12 @@ often before being officially accepted.
 * A place for controversial plugins that will never be accepted into
 core, but are loved by many users (e.g., the Data Entry Gramplet).
 * A place for experimental components to live.
+
+The technical side of keeping an addon working across Gramps releases —
+```gramps_target_version``` semantics, the per-release deltas that bite
+ports, and the porting checks — is in the manual:
+[Compatibility](docs/addon-development/14-compatibility.md) and
+[What's New](docs/addon-development/15-whats-new.md).
 
 ### Examples of Common Enhancements
 And here are just some of the kinds of enhancements that might make sense:
@@ -1277,6 +940,8 @@ Also you may want to [[Addons_development#Package_your_addon |Package your addon
 -->
 
 ## Resources
+* [Addon Development manual](docs/addon-development/README.md) — the
+in-repo technical reference this document links throughout.
 * [Brief introduction to Git](https://gramps-project.org/wiki/index.php/Brief_introduction_to_git)
 * [Getting started with Gramps development](https://gramps-project.org/wiki/index.php/Getting_started_with_Gramps_development)
 * [Portal:Developers](https://gramps-project.org/wiki/index.php/Portal:Developers)
@@ -1289,6 +954,8 @@ Also you may want to [[Addons_development#Package_your_addon |Package your addon
     * For 4.1.x and earlier, see [Addons development old](https://gramps-project.org/wiki/index.php/Addons_development_old).
 
 ## Addon Development Tutorials and Samples
+* [Tutorials](docs/addon-development/02-tutorials.md) — in-repo end-to-end
+walkthroughs, one per addon kind (Gramplet, Tool, Report, Quick View, Rule).
 * [Develop an Addon Gramplet](https://gramps-project.org/wiki/index.php/Gramplets_development) (or add a [custom filtering option](https://gramps.discourse.group/t/looking-for-an-example-of-a-gramplet-with-a-custom-filter-configuration-option/5967))
 * [Develop_an_Addon_Rule](https://gramps-project.org/wiki/index.php/Develop_an_Addon_Rule) for custom filters
 * [Develop_an_Addon_Tool](https://gramps-project.org/wiki/index.php/Develop_an_Addon_Tool)

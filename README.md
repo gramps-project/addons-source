@@ -1,11 +1,11 @@
-addons-source [![Build Status](https://travis-ci.org/gramps-project/addons-source.svg?branch=master)](https://travis-ci.org/gramps-project/addons-source) <a href="https://hosted.weblate.org/engage/gramps-project/">
+addons-source <a href="https://hosted.weblate.org/engage/gramps-project/">
 <img src="https://hosted.weblate.org/widget/gramps-project/addons/svg-badge.svg" alt="Translation status" />
 </a>
 =============
 
 Source code of contributed third-party addons for the [Gramps genealogy program](https://github.com/gramps-project/gramps).
 
-You can develop your own addon following the [Addons Development](https://gramps-project.org/wiki/index.php?title=Addons_development) wiki.
+You can develop your own addon following the in-repo [Addon Development manual](docs/addon-development/README.md); the contributor workflow (forks, branches, pull requests) is in [CONTRIBUTING.md](CONTRIBUTING.md). See also the [Addons Development](https://gramps-project.org/wiki/index.php?title=Addons_development) wiki page.
 
 Note: The default git branch is `master`.  The master branch should only be used to develop addons that require features or changes found in the Gramps master branch.  Most of the time addons should be developed to work with the current released version of Gramps (`maintenance/gramps60` for the Gramps 6.0.x versions for example).
 
