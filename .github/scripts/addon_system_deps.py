@@ -103,11 +103,15 @@ MOD_BUILD_PACKAGES: dict[str, dict[str, str | None]] = {
 # fails CI on any requires_mod that is in neither set.
 WHEEL_ONLY_MODS: frozenset[str] = frozenset(
     {
+        "PIL",  # EditExifMetadata — Pillow ships binary wheels on every CI
+        # platform; declared by import name, addon_python_deps maps
+        # PIL→Pillow on the install side
         "boto3",  # S3MediaUploader — pure-Python AWS SDK wheel
         "dbf",  # TMGimporter — pure-Python wheel
         "life_line_chart",  # LifeLineChartView — pure-Python wheel
         "litellm",  # ChatWithTree / GrampsChat — pure-Python wheel
         "networkx",  # NetworkChart — pure-Python wheel
+        "pymongo",  # MongoDB — ships binary wheels on every CI platform
         "svgwrite",  # LifeLineChartView — pure-Python wheel
     }
 )
