@@ -201,7 +201,7 @@ jobs:
         # wheel-only or source-built (with a system package), so the install list
         # never silently drifts from what addons declare — the build-toolchain
         # coverage gap returns the moment a new source-built requires_mod is added
-        # without a mapping. (The system-dep analogue of the requires_mod find_spec
+        # without a mapping. (The system-dep analogue of the requires_mod dep
         # gate below.)
         shell: bash
         run: |
@@ -216,7 +216,11 @@ jobs:
         # (gramps/gui/plug/_windows.py __on_install_clicked → req.install →
         # gen/utils/requirements.py). Keeps .gpr.py files as the single
         # source of truth for addon deps — no parallel list to maintain
-        # in the image or workflow. Best-effort: a package needing exotic
+        # in the image or workflow. Import→distribution names (PIL→Pillow)
+        # come from the installed gramps' own _IMPORT_TO_PYPI table
+        # (gen/utils/pypi.py, gramps 6.1+, PR #2308), with a local mirror
+        # in addon_python_deps.py for lanes on 6.0. Best-effort: a package
+        # needing exotic
         # system deps (pygraphviz → graphviz-dev, psycopg2 → libpq-dev)
         # may fail here; the affected addon's tests will skip or fail in
         # isolation without blocking the rest.
@@ -234,13 +238,17 @@ jobs:
 
       - name: Validate requires_mod names against Gramps' dep gate
         # Cross-check: every requires_mod entry that pip successfully
-        # installed in the previous step must also resolve via
-        # find_spec(), since that is what Gramps' Addon Manager calls
-        # (gramps/gen/utils/requirements.py:check_mod). A name that
-        # pip-installs but does not import is a declaration bug — e.g.
-        # requires_mod=["Pillow"] when the importable name is "PIL".
-        # Pip-install failures upstream are skipped: those are
-        # system-dep / image gaps, not PR-caused.
+        # installed in the previous step must also pass Gramps' own dep
+        # gate — the script delegates to the installed gramps'
+        # Requirements().check_mod (gramps/gen/utils/requirements.py):
+        # find_spec on 6.0; find_spec plus a real import on 6.1+ (gramps
+        # PR #2308), so the gate matches whichever series this lane
+        # ships. A name that pip-installs but does not import is a
+        # declaration bug — e.g. requires_mod=["Pillow"] when the
+        # importable name is "PIL". Pip-installed-ness is probed by the
+        # mapped distribution name (pip only knows "Pillow", not "PIL");
+        # names whose distribution never installed are skipped: those
+        # are system-dep / image gaps, not PR-caused.
         shell: bash
         run: |
           python3 .github/scripts/addon_python_deps.py --check-resolves .
