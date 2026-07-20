@@ -1,0 +1,40 @@
+// Plugin discovery and load sequence.
+// Regenerate the SVG with:
+//   dot -Tsvg plugin-discovery.dot -o plugin-discovery.svg
+
+digraph plugin_discovery {
+    rankdir=TB
+    bgcolor="transparent"
+    pad=0.2
+    nodesep=0.4
+    ranksep=0.5
+
+    node [
+        shape=box,
+        style="rounded,filled",
+        fillcolor="#eef2f7",
+        color="#4a5b6e",
+        fontname="Helvetica",
+        fontsize=11,
+        margin="0.18,0.10"
+    ]
+    edge [
+        fontname="Helvetica",
+        fontsize=9,
+        color="#4a5b6e",
+        fontcolor="#4a5b6e"
+    ]
+
+    startup   [label="Gramps startup"]
+    reg       [label="reg_plugins(plugin_dir)\nrecursive scan\n(follows symlinks since 6.1)"]
+    gpr       [label="Load each *.gpr.py\n(top-level register() calls execute)"]
+    catalog   [label="Plugin catalog\nname, id, kind, target version\n(implementation module NOT loaded yet)"]
+    invoke    [label="User invokes the addon\n(menu, sidebar, restart, ...)"]
+    load      [label="Load fname module\nInstantiate the registered class"]
+
+    startup -> reg
+    reg     -> gpr     [label="  for each\n  addon folder"]
+    gpr     -> catalog [label="  register(...)"]
+    catalog -> invoke  [style=dashed, label="  later,\n  on demand", constraint=false]
+    invoke  -> load
+}
