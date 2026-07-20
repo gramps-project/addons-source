@@ -244,41 +244,66 @@ class RequiresModCategoryIsComplete(unittest.TestCase):
         )
 
 
+# The compiler toolchain a source-built requires_mod (pygraphviz, psycopg2, …)
+# needs at CI runtime. All three must stay installed and unpurged in the image.
+_TOOLCHAIN = ("gcc", "pkg-config", "python3-dev")
+# `apt-get` followed by any flags/words and then a removal verb / an install.
+_APT_PURGE_RE = re.compile(r"\bapt-get\b(?:\s+\S+)*?\s+(?:purge|remove|autoremove)\b")
+_APT_INSTALL_RE = re.compile(r"\bapt-get\b(?:\s+\S+)*?\s+install\b")
+
+
+def _mentions(text: str, tool: str):
+    """A whole-token match for a package name (so pkg-config != pkg-configurator)."""
+    return re.search(rf"(?<![\w-]){re.escape(tool)}(?![\w-])", text)
+
+
 class CiImageKeepsBuildToolchain(unittest.TestCase):
     """The image must keep the compiler toolchain the apt builds use."""
 
     @classmethod
     def setUpClass(cls):
         with open(_DOCKERFILE, encoding="utf-8") as fh:
-            cls.lines = [
-                ln
-                for ln in fh.read().splitlines()
-                if ln.strip() and not ln.lstrip().startswith("#")
-            ]
+            raw = fh.read()
+        # Join backslash continuations into logical lines FIRST. The install and
+        # any purge in this Dockerfile span many physical lines (one package
+        # each); a per-physical-line scan would miss a `RUN apt-get purge -y \`
+        # whose tools sit on the continuation lines (adversarial-review mutant
+        # M4c) and would also not see the whole install as one apt-get command.
+        joined = raw.replace("\\\n", " ")
+        cls.lines = [
+            ln
+            for ln in joined.splitlines()
+            if ln.strip() and not ln.lstrip().startswith("#")
+        ]
 
     def test_toolchain_not_purged(self):
         # The defect was a `RUN apt-get purge -y gcc python3-dev pkg-config` after
         # the Gramps install, removing the compiler before CI-runtime source
-        # builds of requires_mod run.
+        # builds of requires_mod run. Match any apt-get removal verb and any flag
+        # order (kills mutants M4c multi-line purge, M4d `apt-get -y purge`).
         for line in self.lines:
-            if "apt-get purge" in line or "apt-get remove" in line:
-                for tool in ("gcc", "pkg-config", "python3-dev"):
-                    self.assertNotIn(
-                        tool,
-                        line,
+            if _APT_PURGE_RE.search(line):
+                for tool in _TOOLCHAIN:
+                    self.assertIsNone(
+                        _mentions(line, tool),
                         f"Dockerfile purges build toolchain ({tool!r}) — "
                         "CI-runtime source builds of requires_mod will have no compiler:\n"
                         f"    {line.strip()}",
                     )
 
     def test_toolchain_is_installed(self):
-        text = "\n".join(self.lines)
-        for tool in ("gcc", "pkg-config"):
-            self.assertIn(
-                tool,
-                text,
-                f"Dockerfile no longer installs {tool!r}; source-built requires_mod "
-                "cannot compile in CI",
+        # Each tool must appear on an actual `apt-get install` command, not merely
+        # somewhere in the file (a comment mentioning it, or a purge line, must
+        # not satisfy this). Asserting all three covers python3-dev (mutant M4e).
+        install_lines = [ln for ln in self.lines if _APT_INSTALL_RE.search(ln)]
+        self.assertTrue(
+            install_lines, "Dockerfile has no `apt-get install` command at all"
+        )
+        for tool in _TOOLCHAIN:
+            self.assertTrue(
+                any(_mentions(ln, tool) for ln in install_lines),
+                f"Dockerfile no longer installs {tool!r} on an apt-get install "
+                "line; source-built requires_mod cannot compile in CI",
             )
 
 
