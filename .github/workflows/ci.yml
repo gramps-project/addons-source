@@ -285,6 +285,14 @@ jobs:
           source .github/scripts/active_addons.sh
           modules=""
           shopt -s globstar  # also match nested-package tests/<subpkg>/test_*.py
+          # Glob is scoped to */tests/**/ ON PURPOSE. The only root-level test
+          # module in the tree, DynamicWeb/test_dynamicweb.py, is a nose-era dev
+          # harness (nose is gone on py3.12; it asserts a USER_PLUGINS install and
+          # drives Gramps.py from a source checkout) — unrunnable here, and it
+          # declares no requires_gi, so it would hard-fail if matched. Its
+          # CI-shaped sibling DynamicWeb/tests/test_dwr_tree_names.py IS matched,
+          # so DynamicWeb keeps coverage. The runner can load a root-level module,
+          # so this is a policy choice, not a limitation.
           for f in */tests/**/test_*.py; do
             [ -f "$f" ] || continue
             addon="${f%%/*}"
@@ -294,6 +302,12 @@ jobs:
               test_windows_*)    continue ;;
             esac
             case "$f" in
+              # Sqlite/tests/test_sqlite.py predates this pipeline: it needs
+              # GRAMPS_RESOURCES + example/gramps/example.gramps from a gramps
+              # SOURCE checkout (the pip/conda wheels ship only gramps/ + share,
+              # not example/) and writes fixed /tmp paths with no cleanup. Un-
+              # excluding is a follow-up: provide example.gramps in the lane and
+              # port the test to tempfile.
               Sqlite/tests/test_sqlite.py) continue ;;
             esac
             mod="${f%.py}"
@@ -430,6 +444,8 @@ jobs:
         run: |
           source .github/scripts/active_addons.sh
           modules=""
+          # Glob scoped to */tests/**/ (see unit-test-linux for why DynamicWeb's
+          # root-level test module is deliberately not matched).
           shopt -s globstar  # also match nested-package tests/<subpkg>/test_*.py
           for f in */tests/**/test_*.py; do
             [ -f "$f" ] || continue
@@ -440,6 +456,8 @@ jobs:
               test_linux_*)      continue ;;
             esac
             case "$f" in
+              # excluded — see unit-test-linux for the rationale (needs a gramps
+              # source checkout's example.gramps; a follow-up).
               Sqlite/tests/test_sqlite.py) continue ;;
             esac
             mod="${f%.py}"
