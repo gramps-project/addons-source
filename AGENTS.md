@@ -3,6 +3,12 @@
 This document specifies rules and conventions that agents should follow when
 making changes to this repository.
 
+For the normative addon rules — MUST / SHOULD / MAY, with the origin of
+each rule (upstream PR, maintainer ruling, Mantis id) cited inline — see
+[docs/addon-development/16-guidelines.md](docs/addon-development/16-guidelines.md)
+from the Addon Development manual (PR 994). This document covers the
+hands-on agent workflow around those rules.
+
 ## Repository Overview
 
 `addons-source` holds the source code for third-party Gramps addons —
