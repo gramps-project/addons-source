@@ -151,8 +151,19 @@ def _scan(root: str, pattern: re.Pattern, first_of_tuple: bool) -> set[str]:
             for entry in _literal(match.group(1)):
                 if first_of_tuple and isinstance(entry, (tuple, list)):
                     entry = entry[0] if entry else None
-                if entry:
-                    found.add(entry)
+                if not entry:
+                    continue
+                if not isinstance(entry, str):
+                    # A non-str entry (e.g. requires_mod=[("psycopg2", ">=2")],
+                    # or a nested list) would be unhashable for .add() or crash a
+                    # later sorted()/lookup — skip it tolerantly with a note.
+                    print(
+                        f"addon_system_deps: skipping non-string requires_* "
+                        f"entry in {path}: {entry!r}",
+                        file=sys.stderr,
+                    )
+                    continue
+                found.add(entry)
     return found
 
 
@@ -180,11 +191,11 @@ def addon_requirements(addon_dir: str) -> tuple[set[str], set[str]]:
         for match in _GI_RE.finditer(text):
             for entry in _literal(match.group(1)):
                 ns = entry[0] if isinstance(entry, (tuple, list)) else entry
-                if ns:
+                if isinstance(ns, str) and ns:
                     gi.add(ns)
         for match in _EXE_RE.finditer(text):
             for entry in _literal(match.group(1)):
-                if entry:
+                if isinstance(entry, str) and entry:
                     exe.add(entry)
     return gi, exe
 

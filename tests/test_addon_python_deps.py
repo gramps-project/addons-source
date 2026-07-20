@@ -328,5 +328,21 @@ class CheckResolvesGate(unittest.TestCase):
         self.assertIn("~  pygraphviz", out)
 
 
+class NonStringRequiresMod(unittest.TestCase):
+    """A tuple-shaped requires_mod entry must be skipped, not crash the CLI."""
+
+    def test_tuple_entry_skipped_not_fatal(self) -> None:
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as root:
+            addon = os.path.join(root, "Addon")
+            os.makedirs(addon)
+            with open(os.path.join(addon, "x.gpr.py"), "w", encoding="utf-8") as fh:
+                fh.write('requires_mod = [("psycopg2", ">=2"), "svgwrite"]\n')
+            # Would previously TypeError in sorted() mixing tuple and str.
+            self.assertEqual(deps.declared_mods(root), {"svgwrite"})
+            self.assertEqual(deps.install_list(root), ["svgwrite"])
+
+
 if __name__ == "__main__":
     unittest.main()

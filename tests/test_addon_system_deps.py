@@ -307,5 +307,22 @@ class CiImageKeepsBuildToolchain(unittest.TestCase):
             )
 
 
+class NonStringRequiresEntry(unittest.TestCase):
+    """A tuple/list requires_* entry must be skipped, not crash the scanner."""
+
+    def test_tuple_requires_mod_skipped_not_fatal(self):
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as root:
+            addon = os.path.join(root, "Addon")
+            os.makedirs(addon)
+            with open(os.path.join(addon, "x.gpr.py"), "w", encoding="utf-8") as fh:
+                fh.write('requires_mod = [("psycopg2", ">=2"), "svgwrite"]\n')
+            # scan_modules / the --unmapped CLI would previously TypeError on the
+            # tuple entry (unhashable for a set, or sorted() mixing types).
+            self.assertEqual(deps.scan_modules(root), {"svgwrite"})
+            self.assertEqual(deps.unmapped(root), (set(), set(), set()))
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -171,8 +171,19 @@ def _declared_mods(text: str, path: str) -> list[str]:
             )
             continue
         for mod in value:
-            if mod:
-                out.append(mod)
+            if not mod:
+                continue
+            if not isinstance(mod, str):
+                # e.g. requires_mod=[("psycopg2", ">=2")] — an author copying
+                # the requires_gi tuple shape. A non-str entry would crash the
+                # later sorted()/mapping; skip it tolerantly with a note.
+                print(
+                    f"addon_python_deps: skipping non-string requires_mod entry "
+                    f"in {path}: {mod!r}",
+                    file=sys.stderr,
+                )
+                continue
+            out.append(mod)
     return out
 
 
