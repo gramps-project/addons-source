@@ -40,9 +40,15 @@ module after ``find_spec`` (merged as 7f94428b13; not backported to 6.0).
 These tests pin the two seams and the probe fix hermetically (fake gramps
 module trees injected via ``mock.patch.dict(sys.modules, ...)``; no network,
 no real gramps needed), plus one sync-guard that compares the fallback mirror
-against the real authority table wherever gramps >= 6.1 is importable — the
-gramps61 CI lanes — and skips elsewhere. Mirror drift can only originate from
-a 6.1+ table change, which exactly those lanes catch.
+against the real authority table wherever gramps >= 6.1 is importable.
+
+NOTE on the sync-guard's reach: it is LATENT until these workflows land on
+``maintenance/gramps61``. Today no CI lane imports a gramps that ships
+``gramps.gen.utils.pypi`` — the gramps60 image predates it, and the conda
+Windows lane pins 6.0.x — so every lane skips the guard; it self-activates
+when the pipeline reaches the 6.1 branch. Keep it: the cost is one skipped
+test until then, and it is the only place a mirror-vs-authority drift is
+caught once 6.1 arrives.
 
 Import guards use ``except (Exception, SystemExit)`` throughout: a
 half-installed gramps (raw source checkout on sys.path) raises ``SystemExit``
@@ -89,10 +95,23 @@ def _fake_gramps_tree(**leaves: types.ModuleType) -> dict[str, types.ModuleType]
     return tree
 
 
-# The overlay that makes every ``import gramps...`` raise ImportError, even on
-# a machine where the real gramps is importable (None in sys.modules halts the
-# import of the top-level package before any submodule is considered).
-_NO_GRAMPS = {"gramps": None}
+def _no_gramps_overlay() -> dict[str, None]:
+    """A sys.modules overlay under which every ``import gramps...`` fails.
+
+    A top-level ``{"gramps": None}`` alone is NOT enough: ``from
+    gramps.gen.utils.requirements import Requirements`` short-circuits on a
+    cached ``sys.modules['gramps.gen.utils.requirements']`` and never consults
+    the None-ed parent. And a cached submodule is the norm on CI — unittest
+    discovery imports ``test_plugin_registration``, which imports
+    ``gramps.gen.utils.requirements`` at module level, before these tests run.
+    So None-out the top-level name AND every already-cached ``gramps.*`` key;
+    that restores the ImportError the fallback branches must see.
+    """
+    overlay: dict[str, None] = {"gramps": None}
+    for name in list(sys.modules):
+        if name == "gramps" or name.startswith("gramps."):
+            overlay[name] = None
+    return overlay
 
 
 class GrampsTableSync(unittest.TestCase):
@@ -135,8 +154,15 @@ class DistributionMapSeam(unittest.TestCase):
         self.assertEqual(table["PIL"], "Pillow")
 
     def test_falls_back_without_gramps(self) -> None:
-        with mock.patch.dict(sys.modules, _NO_GRAMPS):
-            table = deps._distribution_map()
+        # Seed a cached gramps.gen.utils.pypi FIRST (as the integration lane's
+        # discovery would leave gramps submodules cached), then apply the
+        # overlay on top: the fallback must still fire, proving the overlay
+        # defeats a pre-cached submodule and not merely an absent gramps.
+        fake_pypi = types.ModuleType("gramps.gen.utils.pypi")
+        fake_pypi._IMPORT_TO_PYPI = {"PIL": "Pillow", "seeded": "seeded-dist"}
+        with mock.patch.dict(sys.modules, _fake_gramps_tree(pypi=fake_pypi)):
+            with mock.patch.dict(sys.modules, _no_gramps_overlay()):
+                table = deps._distribution_map()
         self.assertEqual(table, deps._IMPORT_TO_DISTRIBUTION)
 
     def test_falls_back_when_table_attr_missing(self) -> None:
@@ -168,11 +194,24 @@ class ModuleCheckerSeam(unittest.TestCase):
         self.assertEqual(calls, ["good_mod", "bad_mod"])
 
     def test_stdlib_fallback(self) -> None:
-        with mock.patch.dict(sys.modules, _NO_GRAMPS):
-            label, check = deps._module_checker()
-        self.assertIn("find_spec", label)
-        self.assertTrue(check("os"))
-        self.assertFalse(check("definitely_not_a_module_xyz"))
+        # Seed a cached gramps.gen.utils.requirements FIRST (exactly what
+        # unittest discovery of test_plugin_registration leaves behind on the
+        # integration lane), then overlay: the checker must STILL fall back to
+        # find_spec. Without the full-tree overlay this false-red'd — the
+        # delegated path was taken because the submodule was already cached.
+        fake_req = types.ModuleType("gramps.gen.utils.requirements")
+
+        class _FakeRequirements:
+            def check_mod(self, name: str) -> bool:  # pragma: no cover
+                return True
+
+        fake_req.Requirements = _FakeRequirements
+        with mock.patch.dict(sys.modules, _fake_gramps_tree(requirements=fake_req)):
+            with mock.patch.dict(sys.modules, _no_gramps_overlay()):
+                label, check = deps._module_checker()
+                self.assertIn("find_spec", label)
+                self.assertTrue(check("os"))
+                self.assertFalse(check("definitely_not_a_module_xyz"))
 
 
 class CheckResolvesGate(unittest.TestCase):
@@ -206,23 +245,36 @@ class CheckResolvesGate(unittest.TestCase):
         # old raw-name probe skipped ("~") the one declaration the mapping
         # machinery exists for — never validating it.
         recorded: list[list[str]] = []
-        rc, out = self._run(
-            check=lambda name: True, pip_ok_for={"Pillow"}, recorded=recorded
-        )
+        checked: list[str] = []
+
+        def check(name: str) -> bool:
+            checked.append(name)
+            return True
+
+        rc, out = self._run(check=check, pip_ok_for={"Pillow"}, recorded=recorded)
         self.assertEqual(rc, 0)
         pip_show = [argv for argv in recorded if "show" in argv]
         self.assertTrue(pip_show and pip_show[0][-1] == "Pillow", pip_show)
         self.assertNotIn("~", out)
         self.assertIn("ok PIL", out)
+        # The gate must JUDGE the raw import name, never the distribution name —
+        # gramps' check_mod("Pillow") would wrongly fail a correct requires_mod
+        # =["PIL"]. (Kills the M1b mutant that passed `dist` to the checker.)
+        self.assertEqual(checked, ["PIL"])
 
     def test_installed_but_unresolvable_fails(self) -> None:
         recorded: list[list[str]] = []
-        rc, out = self._run(
-            check=lambda name: False, pip_ok_for={"Pillow"}, recorded=recorded
-        )
+        checked: list[str] = []
+
+        def check(name: str) -> bool:
+            checked.append(name)
+            return False
+
+        rc, out = self._run(check=check, pip_ok_for={"Pillow"}, recorded=recorded)
         self.assertEqual(rc, 1)
         self.assertIn("x  PIL", out)
         self.assertIn("::error::", out)
+        self.assertEqual(checked, ["PIL"])
 
 
 if __name__ == "__main__":
