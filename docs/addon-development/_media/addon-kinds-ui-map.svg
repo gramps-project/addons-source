@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Where each addon kind plugs into the Gramps UI.
+  Hand-written SVG, palette matches plugin-discovery.svg
+  (#eef2f7 fill, #4a5b6e stroke/text, Helvetica).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 600" font-family="Helvetica, sans-serif" font-size="11">
+  <defs>
+    <style>
+      .surface       { fill: #eef2f7; stroke: #4a5b6e; stroke-width: 1; }
+      .surface-light { fill: #f7f9fc; stroke: #4a5b6e; stroke-width: 1; }
+      .label         { fill: #4a5b6e; }
+      .kind          { fill: #2b3b50; font-weight: bold; }
+      .kind-tag      { fill: #ffffff; font-weight: bold; font-size: 10px; }
+      .kind-tag-bg   { fill: #4a5b6e; }
+      .hint          { fill: #4a5b6e; font-style: italic; font-size: 10px; }
+      .arrow         { fill: none; stroke: #4a5b6e; stroke-width: 1; marker-end: url(#arrowhead); }
+      .frame         { fill: none; stroke: #4a5b6e; stroke-width: 1.4; }
+      .sep           { stroke: #9aacc0; stroke-width: 0.6; }
+      .ghost         { fill: #f7f9fc; stroke: #c7d2dd; stroke-width: 1; stroke-dasharray: 3,2; }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4a5b6e" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="20" y="22" class="label" font-weight="bold" font-size="13">Gramps main window — where each addon kind appears</text>
+
+  <!-- Main window frame -->
+  <rect x="20" y="50" width="600" height="460" class="frame" rx="6" />
+
+  <!-- ============================== Menu bar with inline kind tags ============================== -->
+  <rect x="20" y="50" width="600" height="30" class="surface" rx="6" />
+  <line x1="20" y1="80" x2="620" y2="80" class="sep" />
+
+  <!-- File + IMPORT/EXPORT inline -->
+  <text x="32" y="70" class="label" font-weight="bold">File</text>
+  <rect x="60" y="58" width="106" height="16" class="kind-tag-bg" rx="2" />
+  <text x="65" y="70" class="kind-tag">IMPORT / EXPORT</text>
+
+  <!-- Edit -->
+  <text x="178" y="70" class="label" font-weight="bold">Edit</text>
+
+  <!-- View -->
+  <text x="212" y="70" class="label" font-weight="bold">View</text>
+
+  <!-- Reports + REPORT -->
+  <text x="254" y="70" class="label" font-weight="bold">Reports</text>
+  <rect x="299" y="58" width="50" height="16" class="kind-tag-bg" rx="2" />
+  <text x="307" y="70" class="kind-tag">REPORT</text>
+
+  <!-- Tools + TOOL -->
+  <text x="362" y="70" class="label" font-weight="bold">Tools</text>
+  <rect x="400" y="58" width="36" height="16" class="kind-tag-bg" rx="2" />
+  <text x="408" y="70" class="kind-tag">TOOL</text>
+
+  <!-- Windows / Help -->
+  <text x="450" y="70" class="label" font-weight="bold">Windows</text>
+  <text x="510" y="70" class="label" font-weight="bold">Help</text>
+
+  <!-- Toolbar -->
+  <rect x="20" y="80" width="600" height="20" class="surface-light" />
+  <line x1="20" y1="100" x2="620" y2="100" class="sep" />
+  <text x="32" y="94" class="hint">[ toolbar ]</text>
+
+  <!-- ============================== Navigator (left) ============================== -->
+  <rect x="20" y="100" width="130" height="410" class="surface-light" />
+  <line x1="150" y1="100" x2="150" y2="510" class="sep" />
+  <text x="30" y="118" class="label" font-weight="bold">Navigator</text>
+  <text x="30" y="138" class="label">▸ Dashboard</text>
+  <text x="30" y="156" class="label">▸ People</text>
+  <text x="30" y="174" class="label">▸ Relationships</text>
+  <text x="30" y="192" class="label">▸ Families</text>
+  <text x="30" y="210" class="label">▸ Events</text>
+  <text x="30" y="228" class="label">▸ Places</text>
+  <text x="30" y="246" class="label">▸ Geography</text>
+  <text x="30" y="264" class="label">▸ Sources</text>
+  <text x="30" y="282" class="label">▸ Citations</text>
+  <text x="30" y="300" class="label">▸ Repositories</text>
+  <text x="30" y="318" class="label">▸ Media</text>
+  <text x="30" y="336" class="label">▸ Notes</text>
+
+  <!-- ============================== Main view area ============================== -->
+  <rect x="150" y="100" width="340" height="320" class="surface-light" />
+  <text x="165" y="118" class="label" font-weight="bold">Main view area</text>
+  <text x="165" y="134" class="hint">(content varies by selected Navigator category)</text>
+
+  <!-- Ghosted person rows, anchor the QUICKVIEW callout -->
+  <rect x="165" y="150" width="310" height="22" class="ghost" />
+  <text x="175" y="166" class="hint">I0001  John Doe                              1850–</text>
+  <rect x="165" y="174" width="310" height="22" class="ghost" />
+  <text x="175" y="190" class="hint">I0002  Jane Smith                            1853–</text>
+  <rect x="165" y="198" width="310" height="22" class="ghost" />
+  <text x="175" y="214" class="hint">I0003  ...</text>
+
+  <!-- ============================== Right sidebar (gramplets) ============================== -->
+  <rect x="490" y="100" width="130" height="320" class="surface-light" />
+  <line x1="490" y1="100" x2="490" y2="420" class="sep" />
+  <text x="498" y="118" class="label" font-weight="bold">Sidebar</text>
+  <rect x="498" y="130" width="114" height="62" class="surface" rx="3" />
+  <text x="506" y="146" class="hint">[ gramplet ]</text>
+  <rect x="498" y="200" width="114" height="62" class="surface" rx="3" />
+  <text x="506" y="216" class="hint">[ gramplet ]</text>
+  <rect x="498" y="270" width="114" height="62" class="surface" rx="3" />
+  <text x="506" y="286" class="hint">[ gramplet ]</text>
+
+  <!-- ============================== Bottombar ============================== -->
+  <rect x="150" y="420" width="470" height="90" class="surface-light" />
+  <text x="165" y="438" class="label" font-weight="bold">Bottombar</text>
+  <rect x="165" y="450" width="100" height="50" class="surface" rx="3" />
+  <text x="173" y="468" class="hint">[ gramplet ]</text>
+  <rect x="275" y="450" width="100" height="50" class="surface" rx="3" />
+  <text x="283" y="468" class="hint">[ gramplet ]</text>
+  <rect x="385" y="450" width="100" height="50" class="surface" rx="3" />
+  <text x="393" y="468" class="hint">[ gramplet ]</text>
+  <rect x="495" y="450" width="100" height="50" class="surface" rx="3" />
+  <text x="503" y="468" class="hint">[ gramplet ]</text>
+
+  <!-- ============================== Right-side kind callouts ============================== -->
+
+  <!-- SIDEBAR (left navigator categories) -->
+  <rect x="650" y="170" width="58" height="20" class="kind-tag-bg" rx="3" />
+  <text x="660" y="184" class="kind-tag">SIDEBAR</text>
+  <text x="716" y="184" class="hint">— one per Navigator category</text>
+  <path d="M 650 180 L 96 230" class="arrow" />
+
+  <!-- VIEW -->
+  <rect x="650" y="200" width="40" height="20" class="kind-tag-bg" rx="3" />
+  <text x="660" y="214" class="kind-tag">VIEW</text>
+  <text x="698" y="214" class="hint">— alternative way to browse a category</text>
+  <path d="M 650 210 L 300 120" class="arrow" />
+
+  <!-- QUICKVIEW -->
+  <rect x="650" y="230" width="74" height="20" class="kind-tag-bg" rx="3" />
+  <text x="657" y="244" class="kind-tag">QUICKVIEW</text>
+  <text x="732" y="244" class="hint">— right-click context menu on a row</text>
+  <path d="M 650 240 L 350 188" class="arrow" />
+
+  <!-- RULE -->
+  <rect x="650" y="260" width="42" height="20" class="kind-tag-bg" rx="3" />
+  <text x="660" y="274" class="kind-tag">RULE</text>
+  <text x="700" y="274" class="hint">— Edit ▸ Person Filter Editor ▸ Add Rule</text>
+  <path d="M 650 270 L 230 70" class="arrow" />
+
+  <!-- MAPSERVICE -->
+  <rect x="650" y="290" width="84" height="20" class="kind-tag-bg" rx="3" />
+  <text x="658" y="304" class="kind-tag">MAPSERVICE</text>
+  <text x="742" y="304" class="hint">— Geography view tile source</text>
+  <path d="M 650 300 L 100 250" class="arrow" />
+
+  <!-- GRAMPLET -->
+  <rect x="650" y="320" width="68" height="20" class="kind-tag-bg" rx="3" />
+  <text x="660" y="334" class="kind-tag">GRAMPLET</text>
+  <text x="726" y="334" class="hint">— Dashboard, sidebar, or bottombar widget</text>
+  <path d="M 650 330 L 558 220" class="arrow" />
+  <path d="M 650 335 L 558 475" class="arrow" />
+
+  <!-- ============================== Off-surface kinds ============================== -->
+  <rect x="650" y="370" width="270" height="140" class="surface-light" rx="4" />
+  <text x="662" y="388" class="kind">Kinds with no direct UI surface</text>
+
+  <text x="662" y="408" class="label"><tspan class="kind">DOCGEN</tspan> — output format used by reports</text>
+  <text x="662" y="426" class="label"><tspan class="kind">DATABASE</tspan> — backend selected at tree creation</text>
+  <text x="662" y="444" class="label"><tspan class="kind">RELCALC</tspan> — used by Relationships view (per locale)</text>
+  <text x="662" y="462" class="label"><tspan class="kind">THUMBNAILER</tspan> — media thumbnail generator</text>
+  <text x="662" y="480" class="label"><tspan class="kind">CITE</tspan> — citation formatter style</text>
+  <text x="662" y="498" class="label"><tspan class="kind">GENERAL</tspan> — shared library / pluggable category</text>
+
+  <!-- Footnote -->
+  <text x="20" y="540" class="hint">Schematic — relative positions match Gramps 6.0's default layout; not pixel-accurate. See chapter 04-addon-kinds for the registration constants and base classes per kind.</text>
+</svg>
