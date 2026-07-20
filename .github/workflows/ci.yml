@@ -24,6 +24,15 @@ on:
   pull_request:
     branches: [maintenance/gramps**]
 
+# Least privilege. Every job only reads the repo; the CI image is a public
+# GHCR package, so pulling it needs no `packages` scope. This workflow runs
+# addon-influenced code (pip package hooks derived from requires_mod, and
+# addon import-time code in the load/test lanes), so the ambient token it
+# hands that code must not carry write scopes. Presumes the gramps-ci package
+# is public (the one-time visibility flip in .github/CI-MAINTAINER.md).
+permissions:
+  contents: read
+
 jobs:
   # -----------------------------------------------------------------
   # Setup — derive the branch suffix (gramps60 / gramps61 / …) from
@@ -376,6 +385,19 @@ jobs:
           else
             echo "no conda-available addon system deps to install"
           fi
+
+      - name: Validate addon system deps are mapped
+        # Same drift gate as unit-test-linux (see its comment). This lane runs
+        # it independently and BEFORE its own pip step: unit-test-windows only
+        # `needs: setup`, not unit-test-linux, so it must not lean on the Linux
+        # gate — otherwise a novel requires_mod would reach `pip install`
+        # unguarded here (arbitrary package execution) while Linux blocks it.
+        # `python` (conda-forge env) to match the surrounding Windows style.
+        run: |
+          python .github/scripts/addon_system_deps.py --unmapped . || {
+            echo "::error::Addon(s) declare requires_gi/requires_exe/requires_mod with no entry in .github/scripts/addon_system_deps.py — add a mapping row (or, for a wheel-only module, list it in WHEEL_ONLY_MODS)."
+            exit 1
+          }
 
       - name: Install addon runtime deps (derived from requires_mod)
         # See unit-test-linux for rationale. Uses `python` (conda-forge

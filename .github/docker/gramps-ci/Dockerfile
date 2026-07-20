@@ -79,7 +79,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # requires_mod)" step pip-installs them at CI runtime from every
 # .gpr.py's requires_mod list, matching what Gramps' Addon Manager does
 # for an end user. Keeps .gpr.py the single source of truth.
-RUN pip install --no-cache-dir PyGObject pycairo orjson ruff
+# ruff is PINNED: an unpinned ruff would change the lint verdict on rebuild (a
+# new rule in the E9/F63/F7/F82 selection flips a lane red — or silently stops
+# flagging — with no repo change). Bump deliberately, not by rebuild drift.
+RUN pip install --no-cache-dir PyGObject pycairo orjson ruff==0.15.22
 
 # Install gramps: PyPI first, SHA-pinned git clone as fallback.
 RUN /bin/bash -eo pipefail <<'BASH'
