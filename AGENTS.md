@@ -27,10 +27,11 @@ There is no unified build or CI pipeline for the whole repo (the checked-in
 
 ## Branch Model
 
-Branches are per Gramps release, e.g. `maintenance/gramps60`,
-`maintenance/gramps61`. **Almost all addon work should target the maintenance
-branch matching the current released Gramps version**, not `master`. Only use
-`master` for an addon that depends on unreleased Gramps-core features.
+Branches are per Gramps major or feature release, e.g. `maintenance/gramps60`,
+`maintenance/gramps61` — not one branch per patch release. **Almost all addon
+work should target the maintenance branch matching the current released
+Gramps version.** A `master` branch exists but is not currently used for
+addon work.
 
 Pick the branch carefully:
 - When creating a new addon or fixing an existing one, branch from
@@ -75,10 +76,13 @@ Addon packaging/translation tasks go through `make.py`, run from the repo
 root. Point `GRAMPSPATH` at wherever *your* local Gramps checkout lives (it
 defaults to `../../..`, i.e. it assumes `make.py` is being invoked from one
 level inside a sibling-layout workspace — don't rely on that default, always
-set it explicitly), and set `LANGUAGE=en_US.UTF-8`:
+set it explicitly), and make sure that checkout has the matching branch
+checked out too (e.g. `maintenance/gramps61` in core when building against
+`gramps61` here). Setting `LANGUAGE=en_US.UTF-8` is no longer required on
+Gramps v6.0 and later:
 
 ```bash
-GRAMPSPATH=/path/to/your/gramps LANGUAGE=en_US.UTF-8 python3 make.py gramps61 build AddonDirectory
+GRAMPSPATH=/path/to/your/gramps python3 make.py gramps61 build AddonDirectory
 ```
 
 Common subcommands (first positional arg is the branch/version tag, e.g.
@@ -192,15 +196,20 @@ resolves.
 - Group imports under comment-banner sections (`Standard Python modules`,
   `GTK/Gnome modules`, `Gramps modules`), matching the style already used
   across this repo (e.g. `FilterRules/isfamilyfiltermatchevent.py`).
-- Format with [Black](https://black.readthedocs.io/) — not enforced by a
-  checked-in CI workflow here, but the existing codebase is Black-formatted
-  and new/changed files should be too (`black <file>`).
+- [Black](https://black.readthedocs.io/) formatting is not currently required
+  for addons — there's no checked-in CI workflow enforcing it here, though
+  that may change in the future. The existing codebase is largely
+  Black-formatted, so running `black <file>` on files you're already
+  touching is a reasonable default.
 - Docstrings: concise; full Sphinx `:param:`/`:returns:` style only when the
   parameters aren't already obvious from the signature.
 
 ## Internationalization
 
-Addons manage their own translations, separately from Gramps core. At the
+Addons manage their own translations, separately from Gramps core, though
+both go through the same Weblate instance: strings already translated in
+Gramps core are matched first, so those strings are excluded from the
+Weblate _Addons_ component and don't need separate translation there. At the
 top of an addon's main module:
 
 ```python
@@ -236,6 +245,8 @@ register(
     fname="AddonName.py",
     authors=["Author Name"],
     authors_email=["author@example.com"],
+    maintainers=["Maintainer Name"],
+    maintainers_email=["maintainer@example.com"],
     help_url="Addon:WikiPageName",
     ...  # PTYPE-specific attributes, e.g. ruleclass/namespace for RULE
 )
@@ -243,6 +254,9 @@ register(
 
 `gramps_target_version` and `version` are required. `help_url` should point
 at the addon's Gramps wiki page (`Addon:PageName`), not a GitHub URL.
+`maintainers`/`maintainers_email` identify who currently maintains the
+addon and may differ from `authors`/`authors_email` (the original author)
+once upkeep passes to someone else.
 
 > **Do not manually change `version` in a PR.** The `MAJOR.MINOR.PATCH`
 > version in `.gpr.py` is bumped automatically by the `addons` repo's
