@@ -54,7 +54,7 @@ class Roletype(MySelect):
 class MatchesEventFilterRole(MatchesEventFilter):
     labels = [_("Event filter name:"), _("Include Family events:"), (_('Role:'), Roletype)]
     name = _("Persons with events matching the <event filter> with role")
-    
+
     def prepare(self, db: Database, user):
         MatchesEventFilter.prepare(self, db, user)
 
@@ -65,9 +65,9 @@ class MatchesEventFilterRole(MatchesEventFilter):
                 self.MPF_famevents = False
         except IndexError:
             self.MPF_famevents = False
-    
+
     def apply_to_one(self, db: Database, person: Person) -> bool:
-        
+
         filt = self.find_filter()
         if filt:
             for event_ref in person.get_event_ref_list():
@@ -89,4 +89,4 @@ class MatchesEventFilterRole(MatchesEventFilter):
                             if filt.apply_to_one(db, event):
                                 return True
             return False
-    
+
