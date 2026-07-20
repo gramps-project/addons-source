@@ -1,0 +1,80 @@
+// Gramps primary objects and the most-traversed relationships.
+// Regenerate the SVG with:
+//   dot -Tsvg data-model.dot -o data-model.svg
+//
+// Convention:
+//   - Solid arrow with no label       = direct handle list
+//   - Solid arrow labelled "<Type>Ref" = goes through a ref object
+//                                        carrying metadata (Role, child
+//                                        relation, etc.)
+//   - Dashed arrow                    = reverse direction reached via
+//                                        db.find_backlink_handles()
+//
+// Notes and Tags can be attached to any primary object; omitted from
+// the diagram to keep arrows readable, called out in the caption.
+
+digraph data_model {
+    rankdir=LR
+    bgcolor="transparent"
+    pad=0.25
+    nodesep=0.5
+    ranksep=0.9
+    splines=true
+
+    node [
+        shape=box,
+        style="rounded,filled",
+        fillcolor="#eef2f7",
+        color="#4a5b6e",
+        fontname="Helvetica",
+        fontsize=11,
+        margin="0.18,0.10"
+    ]
+    edge [
+        fontname="Helvetica",
+        fontsize=9,
+        color="#4a5b6e",
+        fontcolor="#4a5b6e"
+    ]
+
+    // ---- Primary objects ----
+    person     [label="Person"]
+    family     [label="Family"]
+    event      [label="Event"]
+    place      [label="Place"]
+    citation   [label="Citation"]
+    source     [label="Source"]
+    repository [label="Repository"]
+    media      [label="Media"]
+
+    // ---- Person <-> Family (two role-distinct relationships) ----
+    person -> family [label="  parent_of\n  family_handle_list  "]
+    family -> person [label="  ChildRef  ", style=solid]
+
+    // ---- Events via EventRef (carries Role) ----
+    person -> event [label="  EventRef\n  (Role)  "]
+    family -> event [label="  EventRef\n  (Role)  "]
+
+    // ---- Places ----
+    event -> place                 [label="  place_handle  "]
+    place -> place [tailport="s", headport="s", label="  enclosed_by  "]
+
+    // ---- Sourcing chain ----
+    person -> citation   [label="  CitationRef  "]
+    family -> citation   [label="  CitationRef  "]
+    event  -> citation   [label="  CitationRef  "]
+    place  -> citation   [label="  CitationRef  "]
+    citation -> source   [label="  source_handle  "]
+    source -> repository [label="  RepoRef  "]
+
+    // ---- Media ----
+    person -> media [label="  MediaRef  "]
+    event  -> media [label="  MediaRef  "]
+    source -> media [label="  MediaRef  "]
+
+    // ---- Layout hints to control column order ----
+    { rank=same; person; family }
+    { rank=same; citation; media }
+    { rank=same; source }
+    { rank=same; repository }
+}

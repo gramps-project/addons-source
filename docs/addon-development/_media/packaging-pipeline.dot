@@ -1,0 +1,85 @@
+// Three-repo packaging pipeline: addons-source -> make.py -> addons -> user.
+// Regenerate the SVG with:
+//   dot -Tsvg packaging-pipeline.dot -o packaging-pipeline.svg
+
+digraph packaging_pipeline {
+    rankdir=LR
+    bgcolor="transparent"
+    pad=0.25
+    nodesep=0.4
+    ranksep=0.55
+
+    node [
+        shape=box,
+        style="rounded,filled",
+        fillcolor="#eef2f7",
+        color="#4a5b6e",
+        fontname="Helvetica",
+        fontsize=11,
+        margin="0.18,0.10"
+    ]
+    edge [
+        fontname="Helvetica",
+        fontsize=9,
+        color="#4a5b6e",
+        fontcolor="#4a5b6e"
+    ]
+
+    // Repos and stages.
+    subgraph cluster_source {
+        label="addons-source repository"
+        labelloc="b"
+        fontname="Helvetica"
+        fontsize=10
+        fontcolor="#4a5b6e"
+        color="#9aacc0"
+        style="rounded,dashed"
+        margin=10
+
+        source [label="MyAddon/\nMyAddon.gpr.py\nMyAddon.py\npo/\ntests/"]
+    }
+
+    make [
+        label="make.py gramps60 build MyAddon\n(compile po, package files)",
+        shape=box,
+        style="filled",
+        fillcolor="#dfe7f1"
+    ]
+    listing [
+        label="make.py gramps60 listing MyAddon\n(refresh listings JSON)",
+        shape=box,
+        style="filled",
+        fillcolor="#dfe7f1"
+    ]
+
+    subgraph cluster_addons {
+        label="addons repository"
+        labelloc="b"
+        fontname="Helvetica"
+        fontsize=10
+        fontcolor="#4a5b6e"
+        color="#9aacc0"
+        style="rounded,dashed"
+        margin=10
+
+        tgz       [label="gramps60/download/\nMyAddon.addon.tgz"]
+        listings  [label="gramps60/listings/\n*.json"]
+    }
+
+    manager [label="Gramps in-app\naddon manager"]
+    user    [
+        label="User plugin dir\n~/.local/share/gramps/\ngramps60/plugins/MyAddon/",
+        fillcolor="#e6efe2",
+        color="#5a7251"
+    ]
+
+    // Edges.
+    source  -> make     [label="  author edits  "]
+    source  -> listing  [style=invis]    // keep alignment
+    make    -> tgz      [label="  build  "]
+    make    -> listing  [style=dotted, arrowhead=none]
+    listing -> listings [label="  listing  "]
+    tgz       -> manager [label="  HTTPS fetch  "]
+    listings  -> manager [label="  HTTPS fetch  "]
+    manager -> user     [label="  install /\n  update  "]
+}
