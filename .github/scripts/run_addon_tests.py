@@ -46,7 +46,6 @@ available).
 from __future__ import annotations
 
 import argparse
-import importlib
 import os
 import re
 import signal
@@ -84,18 +83,72 @@ _OK = "__RESULT__ ok"
 _LOADERROR = "__RESULT__ loaderror"
 
 
+def _terminal_exc_name(text: str) -> str | None:
+    """The exception class name on the last ``Type: message`` line of a
+    traceback string (``ModuleNotFoundError``, ``SyntaxError``, …), or None."""
+    for line in reversed(text.strip().splitlines()):
+        m = re.match(r"^([A-Za-z_][\w.]*(?:Error|Exception|Warning)):", line.strip())
+        if m:
+            return m.group(1).rsplit(".", 1)[-1]
+    return None
+
+
 def _dep_shaped(exc: BaseException) -> bool:
     """Whether a module load failure is a missing-dependency shape.
 
     Only these may be excused as an expected platform skip when the addon's
-    declared deps are unavailable: an ``ImportError`` (missing module), or the
-    ``ValueError`` ``gi.require_version`` raises for an absent typelib
-    (``Namespace X not available``). Everything else — SyntaxError, a bug in the
-    addon's own import-time code — is a real defect and must never be excused.
+    declared deps are unavailable: a missing module (ImportError /
+    ModuleNotFoundError), or the ``ValueError`` ``gi.require_version`` raises for
+    an absent typelib (``Namespace X not available``). A SyntaxError or a bug in
+    the addon's own import-time code is a real defect and must never be excused.
+
+    Complication: ``unittest``'s loader wraps EVERY import-time exception —
+    including SyntaxError — into an ``ImportError`` whose message embeds the
+    original traceback (``Failed to import test module: …``). So for that
+    wrapper we cannot go by type; inspect the terminal exception in the embedded
+    traceback instead.
     """
+    if isinstance(exc, ValueError):
+        return "not available" in str(exc)
     if isinstance(exc, ImportError):
-        return True
-    return isinstance(exc, ValueError) and "not available" in str(exc)
+        msg = str(exc)
+        if "Failed to import test module" in msg:
+            terminal = _terminal_exc_name(msg)
+            # Unknown terminal → treat as dep (tolerant: a missing dep is the
+            # common case and we would rather skip than falsely fail).
+            return terminal in (None, "ImportError", "ModuleNotFoundError")
+        return True  # a bare ImportError (not the loader wrapper)
+    return False
+
+
+def _load_failure_exception(suite: unittest.TestSuite):
+    """The exception behind a deferred import failure, or None.
+
+    ``loadTestsFromName`` wraps a module that fails to import in a
+    ``unittest.loader._FailedTest`` placeholder carrying the original exception
+    in ``_exception``. Walk the suite for one and return that exception, so the
+    caller can classify the failure instead of running a placeholder that errors
+    anonymously. Private-API tolerant: if the internals ever change, return None
+    and let the suite run (the pre-taxonomy behaviour)."""
+    try:
+        from unittest.loader import _FailedTest
+    except Exception:
+        return None
+
+    def _walk(test):
+        if isinstance(test, unittest.TestSuite):
+            for child in test:
+                found = _walk(child)
+                if found is not None:
+                    return found
+            return None
+        if isinstance(test, _FailedTest):
+            return getattr(test, "_exception", None) or ImportError(
+                "module failed to load"
+            )
+        return None
+
+    return _walk(suite)
 
 
 def _bootstrap_gi() -> None:
@@ -136,19 +189,27 @@ def _run_worker(modname: str, root: str = ".") -> int:
     addon_dir = os.path.join(root, addon)
     if addon_dir not in sys.path:
         sys.path.append(addon_dir)
-    # Probe the import EXPLICITLY first. loadTestsFromName does not raise on a
-    # module-level ImportError/SyntaxError — since Python 3.5 it swallows the
-    # error into a _FailedTest placeholder that only errors when run, so the
-    # failure would reach the parent as an anonymous `broke=1` with its shape
-    # lost. Importing here surfaces the real exception so it can be classified
-    # (dependency-shaped vs a code bug).
+    # Load via unittest (NOT a bare import_module probe): an addon whose
+    # top-level module shares the addon's directory name (e.g.
+    # CalculateEstimatedDates/CalculateEstimatedDates.py) is shadowed by
+    # addon_dir being on sys.path, which breaks a dotted import_module but not
+    # unittest's own resolution. A load failure surfaces two ways depending on
+    # the Python version and error kind — loadTestsFromName may RAISE it, or
+    # defer it into a _FailedTest placeholder that errors only when run (so the
+    # parent would otherwise see an anonymous `broke=1` with the shape lost).
+    # Handle both, and classify the real exception (dependency-shaped vs a code
+    # bug) either way.
     try:
-        importlib.import_module(modname)
-    except Exception as exc:  # import-time failure
+        suite = unittest.defaultTestLoader.loadTestsFromName(modname)
+    except Exception as exc:  # raised import-time failure
         kind = "dep" if _dep_shaped(exc) else "other"
         print(f"{_LOADERROR} kind={kind} {exc!r}", flush=True)
         return 0
-    suite = unittest.defaultTestLoader.loadTestsFromName(modname)
+    load_exc = _load_failure_exception(suite)  # deferred (_FailedTest) failure
+    if load_exc is not None:
+        kind = "dep" if _dep_shaped(load_exc) else "other"
+        print(f"{_LOADERROR} kind={kind} {load_exc!r}", flush=True)
+        return 0
     result = unittest.TextTestRunner(verbosity=2).run(suite)
     broke = len(result.failures) + len(result.errors)
     print(
