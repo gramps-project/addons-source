@@ -7,7 +7,27 @@ on:
     # in exchange for guaranteeing gramps-ci:<suffix> exists on the
     # first push to any newly-created maintenance branch.
     branches: [maintenance/gramps**]
+  pull_request:
+    # Build-only validation (no push — see the build step's `push:` and the
+    # login step's `if:`) when a PR touches the image definition, so a broken
+    # Dockerfile is caught before it merges instead of on the next push.
+    branches: [maintenance/gramps**]
+    paths:
+      - ".github/docker/**"
+      - ".github/workflows/docker-build.yml"
+  schedule:
+    # Weekly no-cache refresh so base-image (apt security) updates and new
+    # gramps patch releases enter the image even when nothing changes the
+    # buildx cache key. Fans out to every maintenance branch (see the
+    # weekly-rebuild job). NOTE: scheduled runs execute only from the repo's
+    # DEFAULT branch — inert until these workflows exist there.
+    - cron: "23 4 * * 1"
   workflow_dispatch:
+    inputs:
+      no-cache:
+        description: "Rebuild without the buildx layer cache (fresh base image + gramps)"
+        type: boolean
+        default: false
 
 env:
   REGISTRY: ghcr.io
@@ -20,11 +40,17 @@ permissions:
 jobs:
   build-ci:
     name: Build gramps-ci
+    # The schedule event is handled by weekly-rebuild (fan-out); this job runs
+    # for push / pull_request / workflow_dispatch.
+    if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - name: Log in to GHCR
+        # Skip on pull_request: a fork PR's token is read-only and this build
+        # does not push, so the push credential is never exercised on a PR.
+        if: github.event_name != 'pull_request'
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
@@ -48,7 +74,7 @@ jobs:
         id: params
         shell: bash
         run: |
-          ref="${{ github.ref_name }}"
+          ref="${{ github.base_ref || github.ref_name }}"
           suffix="${ref#maintenance/}"
           case "$suffix" in
             gramps[0-9][0-9]) ;;
@@ -77,11 +103,41 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .github/docker/gramps-ci
-          push: true
+          # Push everywhere EXCEPT pull_request, where this is a build-only
+          # validation that must not touch GHCR.
+          push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
             GRAMPS_SERIES=${{ steps.params.outputs.series }}
             GRAMPS_FALLBACK_SHA=${{ steps.params.outputs.fallback_sha }}
+          # `no-cache` (workflow_dispatch input; empty/false on other events)
+          # forces a from-scratch rebuild — used by the weekly refresh.
+          no-cache: ${{ inputs.no-cache == true }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+  weekly-rebuild:
+    name: Weekly no-cache refresh (fan-out)
+    # The scheduled event fires only on the default branch; dispatch a no-cache
+    # rebuild for every maintenance branch that carries this workflow. Inert
+    # until these workflows reach the default branch — by design, not a bug.
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write # gh workflow run
+    steps:
+      - name: Dispatch a no-cache rebuild per maintenance branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git ls-remote --heads "https://github.com/${GITHUB_REPOSITORY}.git" \
+              'refs/heads/maintenance/gramps*' \
+            | awk -F'refs/heads/' '{print $2}' \
+            | grep -E '^maintenance/gramps[0-9][0-9]$' \
+            | while read -r branch; do
+                gh workflow run docker-build.yml --repo "$GITHUB_REPOSITORY" \
+                    --ref "$branch" -f no-cache=true \
+                  || echo "::warning::dispatch failed for $branch (workflow not on that branch yet?)"
+              done

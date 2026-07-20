@@ -14,8 +14,9 @@ an unreleased branch see [CONTRIBUTING.md](../CONTRIBUTING.md#work-towards-a-mer
 1. [One-time setup when the PR first merges](#one-time-setup-when-the-pr-first-merges)
 2. [Creating a new maintenance branch](#creating-a-new-maintenance-branch)
 3. [When a Gramps minor release lands on PyPI](#when-a-gramps-minor-release-lands-on-pypi)
-4. [Diagnostic log markers](#diagnostic-log-markers)
-5. [Optional future-proofing knobs](#optional-future-proofing-knobs)
+4. [Image lifecycle](#image-lifecycle)
+5. [Diagnostic log markers](#diagnostic-log-markers)
+6. [Optional future-proofing knobs](#optional-future-proofing-knobs)
 
 ## One-time setup when the PR first merges
 
@@ -108,6 +109,39 @@ waiting for the next push:
 2. "Run workflow" → select `maintenance/grampsNN` → Run.
 
 The `::notice::` line in the build log confirms the switch.
+
+## Image lifecycle
+
+`docker-build.yml` owns the `gramps-ci:<suffix>` image. How it rebuilds:
+
+- **On push** to `maintenance/gramps**` — builds and pushes the image
+  for that branch. This is the normal path.
+- **On pull_request** touching `.github/docker/**` or
+  `docker-build.yml` — builds the image **without pushing** (the login
+  step is skipped and `push:` is false), so a Dockerfile change is
+  validated before merge. A fork PR never touches the push credential.
+  A green PR build proves "the image still builds"; it does **not**
+  update the tag CI pulls.
+- **workflow_dispatch** with **`no-cache: true`** — a from-scratch
+  rebuild that ignores the buildx layer cache. Use this to pick up a
+  new base-image (apt security) update or a newly published gramps
+  patch release that the cache key would otherwise skip.
+- **Weekly `schedule`** — the `weekly-rebuild` job fans out a
+  `no-cache` dispatch to every `maintenance/grampsNN` branch.
+  **Caveat:** GitHub runs scheduled workflows only from the repo's
+  **default branch**, so this is inert until these workflows exist
+  there (upstream's default is `maintenance/gramps61`). That is by
+  design — remove/adjust it if the default branch never carries the
+  pipeline.
+
+**Known one-push image lag (not fixed, be aware):** `ci.yml` and
+`docker-build.yml` both fire on the same push, and `ci.yml` pulls the
+moving `gramps-ci:<suffix>` tag while the rebuild is still running. So a
+push that changes the image (e.g. a Dockerfile edit) has its CI run
+against the **previous** image. After the `Build Docker Images` run for
+that push finishes, **re-run the affected CI jobs** to test against the
+new image. For the same reason, the `ruff` version pinned in the
+Dockerfile takes effect one push late.
 
 ## Diagnostic log markers
 
