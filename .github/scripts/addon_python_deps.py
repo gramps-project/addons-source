@@ -57,6 +57,13 @@ import re
 import sys
 from collections.abc import Callable
 
+# Sibling module in the same directory: the wheel-only vs source-built
+# classification of every declared requires_mod. Running this file by path
+# already puts its dir on sys.path[0]; the insert also covers being imported
+# (the tests, and any embedding). Pure stdlib either way — no gramps import.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from addon_system_deps import WHEEL_ONLY_MODS  # noqa: E402
+
 # Matches a single-line ``requires_mod = ["a", "b"]`` assignment — the same
 # shape addon_system_deps.py's _GI_RE/_EXE_RE assume, and the only shape that
 # occurs in addons-source.
@@ -210,18 +217,23 @@ def check_resolves(root: str) -> int:
     distribution name, because that is the only name pip knows (``pip show
     PIL`` fails even with Pillow installed).
 
-    Run this *after* the install union has been pip-installed: a name whose
-    distribution pip never installed (an exotic system-dep / image gap, not a
-    PR bug) is skipped; a name that pip-installed yet still fails the gate is a
-    wrong declaration (e.g. the PyPI distribution ``"Pillow"`` instead of the
-    import name ``"PIL"``) — or, on 6.1+, a module that installs but cannot
-    import — and fails the run. Returns 1 if any bad name, else 0."""
+    Run this *after* the install union has been pip-installed. A name whose
+    distribution pip never installed is judged by its category: a **wheel-only**
+    module (``WHEEL_ONLY_MODS``) ships a pure/binary wheel that installs on
+    every CI platform, so a miss is a real provisioning regression and FAILS
+    the gate; a **source-built** module (``MOD_BUILD_PACKAGES``, e.g. pygraphviz
+    / psycopg2) can legitimately miss on an image/system gap and stays an
+    advisory skip. A name that pip-installed yet still fails the gate is a wrong
+    declaration (e.g. the PyPI distribution ``"Pillow"`` instead of the import
+    name ``"PIL"``) — or, on 6.1+, a module that installs but cannot import —
+    and fails the run. Returns 1 if any bad or missing-wheel name, else 0."""
     import subprocess
 
     label, check = _module_checker()
     print(f"dep gate: {label}")
     table = _distribution_map()
     bad: list[str] = []
+    missing_wheels: list[str] = []
     for name in sorted(declared_mods(root)):
         dist = table.get(name, name)
         installed = (
@@ -232,7 +244,14 @@ def check_resolves(root: str) -> int:
             == 0
         )
         if not installed:
-            print(f"~  {name} (pip never installed {dist}, skipping)")
+            if name in WHEEL_ONLY_MODS:
+                missing_wheels.append(name)
+                print(f"x  {name} (wheel-only, but pip never installed {dist})")
+            else:
+                print(
+                    f"~  {name} (pip never installed {dist}, skipping — "
+                    "source-built/system-dep)"
+                )
             continue
         if not check(name):
             bad.append(name)
@@ -247,8 +266,13 @@ def check_resolves(root: str) -> int:
         print("consumed by gramps' check_mod() — find_spec, plus a real import")
         print("on gramps 6.1+ — so the importable module name is required")
         print("(e.g. 'PIL', not 'Pillow').")
-        return 1
-    return 0
+    if missing_wheels:
+        print()
+        print(f"::error::Wheel-only requires_mod never pip-installed: {missing_wheels}")
+        print("These declare a pure/binary wheel that installs on every CI")
+        print("platform, so a failed install is a provisioning regression, not")
+        print("an environment gap — investigate the install step's output above.")
+    return 1 if (bad or missing_wheels) else 0
 
 
 def main(argv: list[str] | None = None) -> int:

@@ -255,9 +255,12 @@ jobs:
         # ships. A name that pip-installs but does not import is a
         # declaration bug — e.g. requires_mod=["Pillow"] when the
         # importable name is "PIL". Pip-installed-ness is probed by the
-        # mapped distribution name (pip only knows "Pillow", not "PIL");
-        # names whose distribution never installed are skipped: those
-        # are system-dep / image gaps, not PR-caused.
+        # mapped distribution name (pip only knows "Pillow", not "PIL").
+        # A name whose distribution never installed is judged by category:
+        # a wheel-only module (WHEEL_ONLY_MODS) ships a wheel that installs
+        # everywhere, so a miss is a provisioning regression and FAILS the
+        # gate; a source-built module (pygraphviz/psycopg2) can miss on an
+        # image/system gap and stays an advisory skip.
         shell: bash
         run: |
           python3 .github/scripts/addon_python_deps.py --check-resolves .

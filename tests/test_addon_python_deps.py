@@ -217,8 +217,23 @@ class ModuleCheckerSeam(unittest.TestCase):
 class CheckResolvesGate(unittest.TestCase):
     """check_resolves(): probe by distribution name, judge by import name."""
 
-    def _run(self, *, check, pip_ok_for: set[str], recorded: list[list[str]]):
-        """Drive check_resolves with one declared mod, ``PIL``, hermetically."""
+    def _run(
+        self,
+        *,
+        check,
+        pip_ok_for: set[str],
+        recorded: list[list[str]],
+        declared: set[str] | None = None,
+        dist_map: dict[str, str] | None = None,
+    ):
+        """Drive check_resolves hermetically.
+
+        Defaults to one declared mod, ``PIL`` → ``Pillow``. Pass ``declared`` /
+        ``dist_map`` to exercise the wheel-only vs source-built branches against
+        the REAL classification sets (WHEEL_ONLY_MODS is not mocked).
+        """
+        declared = {"PIL"} if declared is None else declared
+        dist_map = {"PIL": "Pillow"} if dist_map is None else dist_map
 
         def fake_run(argv, **kwargs):
             recorded.append(list(argv))
@@ -227,10 +242,8 @@ class CheckResolvesGate(unittest.TestCase):
 
         out = io.StringIO()
         with (
-            mock.patch.object(deps, "declared_mods", return_value={"PIL"}),
-            mock.patch.object(
-                deps, "_distribution_map", return_value={"PIL": "Pillow"}
-            ),
+            mock.patch.object(deps, "declared_mods", return_value=declared),
+            mock.patch.object(deps, "_distribution_map", return_value=dist_map),
             mock.patch.object(
                 deps, "_module_checker", return_value=("test gate", check)
             ),
@@ -275,6 +288,44 @@ class CheckResolvesGate(unittest.TestCase):
         self.assertIn("x  PIL", out)
         self.assertIn("::error::", out)
         self.assertEqual(checked, ["PIL"])
+
+    def test_wheel_only_never_installed_fails(self) -> None:
+        # A wheel-only dep (PIL is in the real WHEEL_ONLY_MODS) that pip never
+        # installed is a provisioning regression, not an environment gap: the
+        # gate must FAIL, and must not even consult the dep checker.
+        self.assertIn("PIL", deps.WHEEL_ONLY_MODS)  # guard the fixture premise
+        recorded: list[list[str]] = []
+        checked: list[str] = []
+
+        def check(name: str) -> bool:
+            checked.append(name)
+            return True
+
+        rc, out = self._run(
+            check=check, pip_ok_for=set(), recorded=recorded
+        )  # nothing installs
+        self.assertEqual(rc, 1)
+        self.assertIn("wheel-only", out)
+        self.assertIn("::error::Wheel-only", out)
+        self.assertEqual(
+            checked, [], "a never-installed wheel must not be gate-checked"
+        )
+
+    def test_source_built_never_installed_stays_advisory(self) -> None:
+        # A source-built dep (pygraphviz is in the real MOD_BUILD_PACKAGES, not
+        # WHEEL_ONLY_MODS) may legitimately miss on an image/system gap: advisory
+        # skip, rc 0.
+        self.assertNotIn("pygraphviz", deps.WHEEL_ONLY_MODS)  # guard the premise
+        recorded: list[list[str]] = []
+        rc, out = self._run(
+            check=lambda name: True,
+            pip_ok_for=set(),
+            recorded=recorded,
+            declared={"pygraphviz"},
+            dist_map={},
+        )
+        self.assertEqual(rc, 0)
+        self.assertIn("~  pygraphviz", out)
 
 
 if __name__ == "__main__":
