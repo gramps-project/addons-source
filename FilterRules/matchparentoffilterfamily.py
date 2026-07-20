@@ -62,7 +62,7 @@ g
 
     # we want to have this filter show family filters
     namespace = "Family"
-    
+
     def apply_to_one(self, db: Database, person: Person) -> bool:
         filt = self.find_filter()
         if filt:
