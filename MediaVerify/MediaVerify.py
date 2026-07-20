@@ -390,6 +390,17 @@ class MediaVerify(tool.Tool, ManagedWindow):
 
             for handle, new_path in self.moved_files:
                 media = self.db.get_media_from_handle(handle)
+
+                old_title = media.get_description()
+                old_path = media.get_path()
+                old_filename = os.path.splitext(os.path.basename(old_path))[0]
+
+                # If the old media title matches the old filename then update the
+                # media title to match the new filename.
+                if old_title == old_filename:
+                    new_title = os.path.splitext(os.path.basename(new_path))[0]
+                    media.set_description(new_title)
+
                 media.set_path(new_path)
                 self.db.commit_media(media, trans)
 
