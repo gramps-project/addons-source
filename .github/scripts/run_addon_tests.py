@@ -15,13 +15,20 @@ plain unittest does not:
    clock. A test that hangs (e.g. a DB import that blocks on a platform) would
    otherwise hang the whole CI job indefinitely — neither plain unittest nor
    xmlrunner has a timeout. A module that exceeds the limit is killed and
-   reported as a FAILURE, so the job stays bounded and names the culprit.
+   reported as a FAILURE, so the job stays bounded and names the culprit. The
+   worker runs in its own process group (POSIX) so the timeout reaps any
+   children it spawned, not just the worker — otherwise a hung grandchild
+   holding the stdout pipe defeats the timeout.
 
-3. **Honest skip accounting.** unittest exits 0 when every test SKIPS, so a
-   wholly-skipped module reads as a pass. This runner FAILS such a module —
-   UNLESS the addon's declared system deps are unavailable on this platform
-   (e.g. goocanvas/osm-gps-map are not on conda-forge), in which case the skip
-   is expected and tolerated (the map lives in ``addon_system_deps.py``).
+3. **Honest skip accounting.** unittest exits 0 when every test SKIPS, and also
+   when a module collects ZERO tests — both read as a pass. This runner FAILS a
+   wholly-skipped or zero-test module, UNLESS the addon's declared system deps
+   are unavailable on this platform (e.g. goocanvas/osm-gps-map are not on
+   conda-forge), in which case the skip is expected and tolerated (the map
+   lives in ``addon_system_deps.py``). A module that fails to LOAD is excused as
+   a platform skip only when the failure is dependency-shaped (ImportError, or
+   gi's absent-typelib ValueError); a SyntaxError or a bug in the addon's own
+   import-time code is a real defect and always FAILS, on every platform.
 
 Usage::
 
@@ -39,7 +46,10 @@ available).
 from __future__ import annotations
 
 import argparse
+import importlib
 import os
+import re
+import signal
 import subprocess
 import sys
 import unittest
@@ -47,15 +57,45 @@ import unittest
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import addon_system_deps as deps  # noqa: E402
 
-# Per-module wall clock. Generous enough for a legitimate DB-backed suite, small
-# enough that a hung test is caught promptly instead of running to the job cap.
-# Overridable via env for tuning/testing.
-MODULE_TIMEOUT_S = int(os.environ.get("RUN_ADDON_TESTS_TIMEOUT", "300"))
+
+def _module_timeout() -> int:
+    """Per-module wall clock (seconds). Generous enough for a legitimate
+    DB-backed suite, small enough that a hung test is caught promptly instead of
+    running to the job cap. Overridable via ``RUN_ADDON_TESTS_TIMEOUT``; a
+    non-integer value is ignored with a note rather than crashing the runner."""
+    raw = os.environ.get("RUN_ADDON_TESTS_TIMEOUT", "")
+    if raw:
+        try:
+            return int(raw)
+        except ValueError:
+            print(
+                f"run_addon_tests: ignoring non-integer "
+                f"RUN_ADDON_TESTS_TIMEOUT={raw!r}; using default 300",
+                file=sys.stderr,
+            )
+    return 300
+
+
+MODULE_TIMEOUT_S = _module_timeout()
 
 # Markers the worker prints so the parent can read the outcome without needing
 # xmlrunner (820's env has only stdlib unittest).
 _OK = "__RESULT__ ok"
 _LOADERROR = "__RESULT__ loaderror"
+
+
+def _dep_shaped(exc: BaseException) -> bool:
+    """Whether a module load failure is a missing-dependency shape.
+
+    Only these may be excused as an expected platform skip when the addon's
+    declared deps are unavailable: an ``ImportError`` (missing module), or the
+    ``ValueError`` ``gi.require_version`` raises for an absent typelib
+    (``Namespace X not available``). Everything else — SyntaxError, a bug in the
+    addon's own import-time code — is a real defect and must never be excused.
+    """
+    if isinstance(exc, ImportError):
+        return True
+    return isinstance(exc, ValueError) and "not available" in str(exc)
 
 
 def _bootstrap_gi() -> None:
@@ -96,11 +136,19 @@ def _run_worker(modname: str, root: str = ".") -> int:
     addon_dir = os.path.join(root, addon)
     if addon_dir not in sys.path:
         sys.path.append(addon_dir)
+    # Probe the import EXPLICITLY first. loadTestsFromName does not raise on a
+    # module-level ImportError/SyntaxError — since Python 3.5 it swallows the
+    # error into a _FailedTest placeholder that only errors when run, so the
+    # failure would reach the parent as an anonymous `broke=1` with its shape
+    # lost. Importing here surfaces the real exception so it can be classified
+    # (dependency-shaped vs a code bug).
     try:
-        suite = unittest.defaultTestLoader.loadTestsFromName(modname)
+        importlib.import_module(modname)
     except Exception as exc:  # import-time failure
-        print(f"{_LOADERROR} {exc!r}", flush=True)
+        kind = "dep" if _dep_shaped(exc) else "other"
+        print(f"{_LOADERROR} kind={kind} {exc!r}", flush=True)
         return 0
+    suite = unittest.defaultTestLoader.loadTestsFromName(modname)
     result = unittest.TextTestRunner(verbosity=2).run(suite)
     broke = len(result.failures) + len(result.errors)
     print(
@@ -121,17 +169,40 @@ def _classify(modname: str, platform: str, root: str) -> tuple[bool, str]:
     satisfiable = deps.addon_satisfiable_on(os.path.join(root, addon), platform)
 
     proc = subprocess.Popen(
-        [sys.executable, os.path.abspath(__file__), "--worker", modname, "--root", root],
+        [
+            sys.executable,
+            os.path.abspath(__file__),
+            "--worker",
+            modname,
+            "--root",
+            root,
+        ],
         stdout=subprocess.PIPE,
         stderr=None,  # stream the test output straight to the CI log
         text=True,
+        # Own process group so a timeout can reap the worker AND any children it
+        # spawned. Without this, proc.kill() kills only the worker and the
+        # follow-up communicate() blocks until a grandchild that inherited the
+        # stdout pipe exits — a hung grandchild defeats the timeout entirely.
+        start_new_session=(os.name == "posix"),  # setsid; raises on Windows
     )
     try:
         # communicate() enforces the wall clock and reaps the process.
         stdout, _ = proc.communicate(timeout=MODULE_TIMEOUT_S)
     except subprocess.TimeoutExpired:
-        proc.kill()
-        proc.communicate()
+        if os.name == "posix":
+            try:
+                os.killpg(proc.pid, signal.SIGKILL)  # group id == worker pid
+            except (ProcessLookupError, PermissionError):
+                proc.kill()
+        else:
+            proc.kill()
+        try:
+            # Bounded: a surviving grandchild holding the stdout pipe must not
+            # hang the run a second time.
+            proc.communicate(timeout=10)
+        except subprocess.TimeoutExpired:
+            proc.kill()
         return True, f"  FAIL  {modname} — timed out after {MODULE_TIMEOUT_S}s (hung)"
 
     out_lines = stdout.splitlines()
@@ -143,6 +214,16 @@ def _classify(modname: str, platform: str, root: str) -> tuple[bool, str]:
     )
 
     if result_line.startswith(_LOADERROR):
+        kind_m = re.search(r"\bkind=(\w+)", result_line)
+        dep_shaped = bool(kind_m) and kind_m.group(1) == "dep"
+        if not dep_shaped:
+            # A non-dependency load failure (SyntaxError, a bug in the addon's
+            # import-time code) is a real defect on every platform — never
+            # excusable as a "deps unavailable here" skip.
+            return True, (
+                f"  FAIL  {modname} — load error (not dependency-shaped; "
+                "a code bug, not a platform skip)"
+            )
         if satisfiable:
             return True, f"  FAIL  {modname} — load error"
         return False, (
@@ -160,7 +241,15 @@ def _classify(modname: str, platform: str, root: str) -> tuple[bool, str]:
 
     if broke:
         return True, f"  FAIL  {modname} — {broke} failed/errored"
-    if ran > 0 and skipped == ran:
+    if ran == 0:
+        # The module loaded but collected no tests (a class not subclassing
+        # TestCase, a mistyped method name, a refactor that broke collection).
+        # unittest exits 0 on this, so it would read as green — fail it.
+        return True, (
+            f"  FAIL  {modname} — module loaded but collected zero tests "
+            "(empty or misnamed test module reads as green)"
+        )
+    if skipped == ran:
         if satisfiable:
             return True, (
                 f"  FAIL  {modname} — all {ran} tests skipped "

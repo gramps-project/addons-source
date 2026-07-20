@@ -44,9 +44,7 @@ import unittest
 
 
 ADDONS_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-RUN_ADDON_TESTS = os.path.join(
-    ADDONS_ROOT, ".github", "scripts", "run_addon_tests.py"
-)
+RUN_ADDON_TESTS = os.path.join(ADDONS_ROOT, ".github", "scripts", "run_addon_tests.py")
 
 
 @unittest.skipUnless(
@@ -61,9 +59,7 @@ class RunAddonTestsPathsTest(unittest.TestCase):
         # Stand-in for the repo-root shared Gramps-emulation env (PR 950):
         # a top-level `tests` package the addon tests may import.
         self._write("tests/__init__.py", "")
-        self._write(
-            "tests/gramps_test_env.py", 'SENTINEL = "repo-root-shared-env"\n'
-        )
+        self._write("tests/gramps_test_env.py", 'SENTINEL = "repo-root-shared-env"\n')
 
     def tearDown(self) -> None:
         shutil.rmtree(self.root, ignore_errors=True)
@@ -74,15 +70,22 @@ class RunAddonTestsPathsTest(unittest.TestCase):
         with open(path, "w", encoding="utf-8") as fp:
             fp.write(content)
 
-    def _run(self, modname: str) -> subprocess.CompletedProcess:
+    def _run(
+        self,
+        modname: str,
+        platform: str = "apt",
+        extra_env: dict | None = None,
+    ) -> subprocess.CompletedProcess:
         env = os.environ.copy()
         env["PYTHONPATH"] = "."  # repo root on sys.path, as ci.yml sets it
+        if extra_env:
+            env.update(extra_env)
         return subprocess.run(
             [
                 sys.executable,
                 RUN_ADDON_TESTS,
                 "--platform",
-                "apt",
+                platform,
                 "--root",
                 self.root,
                 modname,
@@ -104,7 +107,7 @@ class RunAddonTestsPathsTest(unittest.TestCase):
         self._write(
             "SynthAddon/tests/sub/test_nested.py",
             "import unittest\n"
-            "from synthlib import VALUE\n"            # per-addon import root
+            "from synthlib import VALUE\n"  # per-addon import root
             "from tests.gramps_test_env import SENTINEL\n"  # shared env not shadowed
             "\n"
             "class T(unittest.TestCase):\n"
@@ -138,6 +141,124 @@ class RunAddonTestsPathsTest(unittest.TestCase):
         out = result.stdout + result.stderr
         self.assertEqual(result.returncode, 0, "runner failed:\n%s" % out)
         self.assertIn("ok    FlatAddon.tests.test_flat", result.stdout, out)
+
+    # ------------------------------------------------------------------
+    # Outcome classification (load-failure taxonomy, zero-test, timeout,
+    # tolerant timeout env) — adversarial-review findings F1-F4/F10.
+    # GooCanvas is apt-provisioned but conda:None (addon_system_deps.GI_PACKAGES),
+    # so a `requires_gi=[("GooCanvas","2.0")]` addon is unsatisfiable on conda
+    # and satisfiable on apt — the lever these tests use.
+    # ------------------------------------------------------------------
+    def _write_gi_addon(self, addon: str, test_body: str) -> None:
+        self._write(
+            f"{addon}/{addon.lower()}.gpr.py",
+            f'register(GRAMPLET, id="{addon}", requires_gi=[("GooCanvas", "2.0")])\n',
+        )
+        self._write(f"{addon}/tests/__init__.py", "")
+        self._write(f"{addon}/tests/test_x.py", test_body)
+
+    def test_syntax_error_fails_even_on_unsatisfiable_platform(self) -> None:
+        # A SyntaxError is a code bug, never a dependency shape — it must FAIL
+        # even where the addon's declared GI dep is unavailable (conda).
+        self._write_gi_addon("GiSyntax", "def broken(:\n    pass\n")
+        result = self._run("GiSyntax.tests.test_x", platform="conda")
+        out = result.stdout + result.stderr
+        self.assertNotEqual(result.returncode, 0, out)
+        self.assertIn("not dependency-shaped", out)
+
+    def test_dep_import_error_skips_on_unsatisfiable_platform(self) -> None:
+        # A dependency-shaped load failure (ImportError) where the addon's deps
+        # are unavailable is an expected platform skip.
+        self._write_gi_addon(
+            "GiDepSkip", "import definitely_not_installed_xyz  # noqa\n"
+        )
+        result = self._run("GiDepSkip.tests.test_x", platform="conda")
+        out = result.stdout + result.stderr
+        self.assertEqual(result.returncode, 0, out)
+        self.assertIn("skip", result.stdout)
+
+    def test_dep_import_error_fails_on_satisfiable_platform(self) -> None:
+        # The same ImportError where the addon declares no unsatisfiable dep
+        # (satisfiable on apt) is a real failure, not a skip.
+        self._write(
+            "PlainAddon/plainaddon.gpr.py", 'register(GRAMPLET, id="PlainAddon")\n'
+        )
+        self._write("PlainAddon/tests/__init__.py", "")
+        self._write(
+            "PlainAddon/tests/test_x.py",
+            "import definitely_not_installed_xyz  # noqa\n",
+        )
+        result = self._run("PlainAddon.tests.test_x", platform="apt")
+        out = result.stdout + result.stderr
+        self.assertNotEqual(result.returncode, 0, out)
+
+    def test_zero_collected_tests_fails(self) -> None:
+        # A module that loads but collects no tests reads as green under plain
+        # unittest; the runner must fail it.
+        self._write(
+            "EmptyAddon/emptyaddon.gpr.py", 'register(GRAMPLET, id="EmptyAddon")\n'
+        )
+        self._write("EmptyAddon/tests/__init__.py", "")
+        self._write(
+            "EmptyAddon/tests/test_x.py",
+            "class NotATestCase:\n    def test_nope(self):\n        pass\n",
+        )
+        result = self._run("EmptyAddon.tests.test_x", platform="apt")
+        out = result.stdout + result.stderr
+        self.assertNotEqual(result.returncode, 0, out)
+        self.assertIn("zero tests", out)
+
+    def test_non_integer_timeout_env_is_tolerated(self) -> None:
+        # A non-integer RUN_ADDON_TESTS_TIMEOUT must not crash the runner.
+        self._write("OkAddon/okaddon.gpr.py", 'register(GRAMPLET, id="OkAddon")\n')
+        self._write("OkAddon/tests/__init__.py", "")
+        self._write(
+            "OkAddon/tests/test_x.py",
+            "import unittest\n"
+            "class T(unittest.TestCase):\n"
+            "    def test_ok(self):\n"
+            "        self.assertTrue(True)\n",
+        )
+        result = self._run(
+            "OkAddon.tests.test_x",
+            platform="apt",
+            extra_env={"RUN_ADDON_TESTS_TIMEOUT": "soon"},
+        )
+        out = result.stdout + result.stderr
+        self.assertEqual(result.returncode, 0, out)
+        self.assertIn("ignoring non-integer", result.stderr)
+
+    @unittest.skipUnless(os.name == "posix", "process-group kill is POSIX-only")
+    def test_timeout_reaps_grandchild_holding_stdout(self) -> None:
+        # A test that spawns a long-lived child inheriting the worker's stdout
+        # must not defeat the timeout: the whole process group is reaped and the
+        # follow-up communicate() is bounded, so the runner returns promptly.
+        import time
+
+        self._write(
+            "HangAddon/hangaddon.gpr.py", 'register(GRAMPLET, id="HangAddon")\n'
+        )
+        self._write("HangAddon/tests/__init__.py", "")
+        self._write(
+            "HangAddon/tests/test_x.py",
+            "import subprocess, sys, time, unittest\n"
+            "class T(unittest.TestCase):\n"
+            "    def test_hang(self):\n"
+            # child inherits stdout (the worker's pipe); then the test blocks
+            "        subprocess.Popen([sys.executable, '-c', 'import time; time.sleep(120)'])\n"
+            "        time.sleep(120)\n",
+        )
+        start = time.monotonic()
+        result = self._run(
+            "HangAddon.tests.test_x",
+            platform="apt",
+            extra_env={"RUN_ADDON_TESTS_TIMEOUT": "3"},
+        )
+        elapsed = time.monotonic() - start
+        out = result.stdout + result.stderr
+        self.assertNotEqual(result.returncode, 0, out)
+        self.assertIn("timed out", out)
+        self.assertLess(elapsed, 45, f"timeout not bounded (took {elapsed:.1f}s)")
 
 
 if __name__ == "__main__":
