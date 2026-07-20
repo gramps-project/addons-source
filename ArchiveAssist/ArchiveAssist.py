@@ -94,7 +94,7 @@ def parse_ref(text: str) -> dict:
     match = pattern.search(text)
     if not match:
         return {}
-    
+
     archive = match.group("archive").strip()
     to_remove = ["kyrkoarkiv", "stadsarkiv"]
     for word in to_remove:
@@ -127,7 +127,7 @@ def parse_ref(text: str) -> dict:
 # Gramplet class
 # ------------------------
 class ArchiveAssist(Gramplet):
-    
+
     # I am bad at GUI. Double check...
     def init(self):
         if getattr(self, "_initialized", False):
@@ -170,7 +170,7 @@ class ArchiveAssist(Gramplet):
         vbox.pack_start(self.status_label, False, False, 0)
 
         return vbox
-    
+
     def get_or_create_repository(self, name, trans):
         for handle in self.dbstate.db.get_repository_handles():
             repo = self.dbstate.db.get_repository_from_handle(handle)
@@ -195,11 +195,11 @@ class ArchiveAssist(Gramplet):
         if not parsed:
             self.status_label.set_text("Could not parse the reference string.")
             return
-            
+
         # Find existing Source (by title)
         src = None
         src_handle = None
-        
+
         for handle in self.dbstate.db.get_source_handles():
             candidate = self.dbstate.db.get_source_from_handle(handle)
             for attr in candidate.get_attribute_list():
@@ -213,7 +213,7 @@ class ArchiveAssist(Gramplet):
 
         try:
             with DbTxn("Create Source and Citation", self.dbstate.db) as trans:
-                
+
                 # Source
                 if src:
                     self.status_label.set_text(
@@ -223,14 +223,14 @@ class ArchiveAssist(Gramplet):
                     src = Source()
                     src.set_title(parsed["abr"])
                     src.set_publication_info(parsed["years"])
-                
+
                     # FIXED NAD attribute
                     nad_attr = Attribute()
                     nad_attr.set_type("NAD")
                     nad_attr.set_value(parsed["NAD"])
                     src.add_attribute(nad_attr)
-                
-                    # FIXED AID attribute (if present)  
+
+                    # FIXED AID attribute (if present)
                     if parsed["AID"]:
                         aid_attr = Attribute()
                         aid_attr.set_type("AID")
@@ -239,46 +239,46 @@ class ArchiveAssist(Gramplet):
 
                     # First add the Source WITHOUT repo refs
                     src_handle = self.dbstate.db.add_source(src, trans)
-                    
+
                     # Now add RepoRef AFTER the source exists
                     repo_ref = RepoRef()
                     repo_handle = self.get_or_create_repository(parsed["provider"], trans)
                     repo_ref.set_reference_handle(repo_handle)
-                    
+
                     src.add_repo_reference(repo_ref)
-                    
+
                     # Persist the updated Source with its RepoRef
                     self.dbstate.db.commit_source(src, trans)
-                
+
                     # Citation
                     if parsed["page"]:
                         cit = Citation()
                         cit.set_confidence_level(2)
                         cit.set_page(parsed["page"])
-                        
+
                         years = parsed["years"]
                         cit_date = Date()
                         if years and "-" in years:
                             start_year, end_year = [y.strip() for y in years.split("-")]
                             cit_date.set(
-                                modifier=Date.MOD_RANGE, 
+                                modifier=Date.MOD_RANGE,
                                 value=(0, 0, int(start_year), False, 0, 0, int(end_year), False))
                             cit.set_date_object(cit_date)
 
                         elif years:
                             cit_date.set_year(int(years.strip()))
                             cit.set_date_object(cit_date)
-                    
-                        cit.set_reference_handle(src_handle)               
-                        
+
+                        cit.set_reference_handle(src_handle)
+
                         if parsed["full_AID"]:
                             AID = Attribute()
                             AID.set_type("AID")
                             AID.set_value(parsed["full_AID"])
                             cit.add_attribute(AID)
-                        
+
                         cit_handle = self.dbstate.db.add_citation(cit, trans)
-                    
+
                         self.status_label.set_text(
                             f"Created Source ({src.get_gramps_id()}) and Citation ({cit.get_gramps_id()})."
                         )
@@ -287,7 +287,7 @@ class ArchiveAssist(Gramplet):
                             f"Created Source ({src.get_gramps_id()}). No Citation created due to missing page info."
                         )
 
-        except Exception as e:        
+        except Exception as e:
             LOG.error("ArchiveAssist failed: %s", str(e), exc_info=True)
             self.status_label.set_text(
-                "Failed to create Source/Citation. Check logs.")  
+                "Failed to create Source/Citation. Check logs.")
