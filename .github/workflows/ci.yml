@@ -356,20 +356,19 @@ jobs:
           python -c "import gramps, gi; print('deps OK')"
 
       - name: Report gramps-vs-branch series (Windows lane caveat)
-        # The Linux lane git-builds the branch's exact gramps in its CI image
-        # (.github/docker/gramps-ci/Dockerfile, PyPI-first/git-fallback). The
-        # conda-forge Windows lane CANNOT match that: conda-forge has no gramps
-        # 6.1 yet, and gramps' own Windows build targets MSYS2 UCRT64, not conda
-        # — building 6.1 from git here fails in gramps' build hook (build_intl's
-        # `msgfmt --xml` cannot locate the shared-mime-info/appstream ITS rules,
-        # which are absent in the conda env). So on a maintenance/gramps61 (or
-        # later) branch this lane validates addons against conda-forge's newest
-        # in-range gramps (6.0.x today) rather than the branch's series. This
-        # step surfaces that honestly; it does NOT fail. Addon tests that depend
-        # on series-exact gramps behaviour skip themselves on Windows (e.g.
-        # TMGimporter's real-DB import tests) and run on the Linux lane instead.
-        # When gramps 6.1 reaches conda-forge, environment.yml's pin picks it up
-        # and this caveat disappears on its own.
+        # The Linux lane runs the branch's exact gramps in its CI image
+        # (.github/docker/gramps-ci/Dockerfile, PyPI-first / git-tip fallback).
+        # The conda Windows lane installs gramps from PyPI via environment.yml's
+        # `pip:` block (NOT from conda-forge), pinned `gramps>=6.0,<6.1`. So on a
+        # maintenance/gramps61 (or later) branch it validates addons against
+        # 6.0.x, not the branch's series — for two independent reasons: the pin's
+        # `<6.1` excludes 6.1, and 6.1 is not published on PyPI yet anyway. This
+        # step surfaces the mismatch honestly; it does NOT fail. Addon tests that
+        # depend on series-exact gramps behaviour skip themselves on Windows
+        # (e.g. TMGimporter's real-DB import tests) and run on the Linux lane
+        # instead. The caveat clears only when BOTH hold: gramps 6.1 is on PyPI,
+        # AND environment.yml's pin has been bumped on that branch (it does not
+        # self-heal — see .github/CI-MAINTAINER.md).
         run: |
           suffix="${{ needs.setup.outputs.branch_suffix }}"   # e.g. gramps61
           digits="${suffix#gramps}"                            # e.g. 61

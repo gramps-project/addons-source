@@ -68,10 +68,19 @@ git branch maintenance/gramps62 maintenance/gramps61
 git push origin maintenance/gramps62
 ```
 
-No workflow edits required. The workflows derive everything from
+No *workflow* edits required — the workflows derive everything from
 `github.ref_name`. The first push fires the same race described
 above — re-run the failed CI jobs once `Build Docker Images`
 finishes.
+
+One file is NOT auto-derived and must be bumped by hand on the new
+branch: **`.github/environment.yml`**'s gramps pin (`gramps>=6.0,<6.1`).
+The conda Windows lane installs gramps from PyPI through that pin, so
+until you bump it to the new series (e.g. `>=6.2,<6.3`) — and the
+series is actually published on PyPI — the Windows lane keeps
+validating addons against the old series. `ci.yml`'s "Report
+gramps-vs-branch series" step prints a loud `::warning::` while the two
+diverge; it does not fail.
 
 The setup job's regex (`gramps[0-9][0-9]`) requires a two-digit
 suffix. When Gramps 10.0 opens this regex needs updating in two
