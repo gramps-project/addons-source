@@ -184,7 +184,7 @@ class AssociationsTool(tool.Tool, ManagedWindow):
 
         # Process next batch
         batch_size = 50
-        for _ in range(batch_size):
+        for _batch_step in range(batch_size):
             if self._build_index >= len(self._plist):
                 # Done processing
                 self.stats_list = self._build_data
