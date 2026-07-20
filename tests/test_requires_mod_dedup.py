@@ -29,6 +29,7 @@ import os
 import re
 import sys
 import unittest
+from unittest import mock
 
 # Repo layout is fixed relative to this file: tests/ sits at the addons-source
 # root, and the CI scripts live under .github/scripts/ — resolve both from
@@ -96,7 +97,21 @@ class RequiresModDerivationDedup(unittest.TestCase):
     def test_install_list_matches_old_heredoc(self):
         old = _old_raw_union(_REPO_ROOT)
         expected = sorted(_INSTALL_MAP.get(m, m) for m in old)
-        self.assertEqual(addon_python_deps.install_list(_REPO_ROOT), expected)
+        # Pin the import->distribution table to the LOCAL mirror for this
+        # comparison. The oracle (_INSTALL_MAP) states the old heredoc's
+        # behaviour plus the install-only map; production install_list() now
+        # ALSO consults gramps' authoritative _IMPORT_TO_PYPI when a gramps
+        # >= 6.1 is importable (the gramps61 lanes). Without this pin, an
+        # upstream table gaining a mapping for a *declared* mod would flip this
+        # oracle red for a change that is not a regression here. If that
+        # happens: the GrampsTableSync guard reds first (re-sync the mirror in
+        # addon_python_deps.py), then extend _INSTALL_MAP above to match.
+        with mock.patch.object(
+            addon_python_deps,
+            "_distribution_map",
+            return_value=dict(addon_python_deps._IMPORT_TO_DISTRIBUTION),
+        ):
+            self.assertEqual(addon_python_deps.install_list(_REPO_ROOT), expected)
 
     def test_declared_raw_names_match_old_heredoc(self):
         # The find_spec gate consumes RAW import names — these must equal the
@@ -112,12 +127,22 @@ class RequiresModDerivationDedup(unittest.TestCase):
         self.assertNotIn("Pillow", addon_python_deps.declared_mods(_REPO_ROOT))
 
     def test_no_requires_mod_heredoc_remains(self):
+        # The previous assertion (re.findall(r"requires_mod\s*=\s*\(\[", ...))
+        # was a tautology: the old inline heredoc's distinctive line was
+        #   pat = re.compile(r"requires_mod\s*=\s*(\[[^\]]*\])")
+        # whose text contains the LITERAL characters `\s*`, which the guard's
+        # own `\s*` (matching whitespace) can never match — so it never bit,
+        # and pasting the heredoc back in stayed green. Match the heredoc's
+        # own literal fragments instead; both appear verbatim in the pre-dedup
+        # ci.yml and in none of the current file.
         text = _read(_CI_YML)
-        self.assertEqual(
-            re.findall(r"requires_mod\s*=\s*\(\[", text),
-            [],
-            "a requires_mod derivation heredoc still lives inline in ci.yml",
-        )
+        for fragment in ('re.compile(r"requires_mod', r"requires_mod\s*"):
+            self.assertNotIn(
+                fragment,
+                text,
+                "a requires_mod derivation heredoc still lives inline in ci.yml "
+                f"(found {fragment!r})",
+            )
 
     def test_three_jobs_consume_the_module(self):
         text = _read(_CI_YML)
