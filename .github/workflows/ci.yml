@@ -57,7 +57,14 @@ jobs:
             *) echo "::error::unexpected ref '$ref' (suffix '$suffix')"; exit 1 ;;
           esac
           echo "branch_suffix=$suffix" >> "$GITHUB_OUTPUT"
-          echo "ci_image=ghcr.io/${{ github.repository }}/gramps-ci:$suffix" >> "$GITHUB_OUTPUT"
+          # Lowercase the owner/name: GHCR refs must be lowercase, and
+          # docker-build's metadata-action lowercases what it PUSHES, so the
+          # pull side must match — otherwise a fork whose owner has uppercase
+          # letters pulls an invalid (mixed-case) reference and every container
+          # job fails at init. ${VAR,,} is a bash lowercasing expansion; there
+          # is no expression-level equivalent in Actions.
+          repo_lc="${GITHUB_REPOSITORY,,}"
+          echo "ci_image=ghcr.io/${repo_lc}/gramps-ci:$suffix" >> "$GITHUB_OUTPUT"
 
   # -----------------------------------------------------------------
   # Lint (ci container)
