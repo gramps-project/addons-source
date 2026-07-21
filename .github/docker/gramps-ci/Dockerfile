@@ -67,6 +67,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         pkg-config \
         python3-dev \
         libcairo2-dev \
+        libicu-dev \
         intltool \
         gettext \
         git \
@@ -82,7 +83,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # ruff is PINNED: an unpinned ruff would change the lint verdict on rebuild (a
 # new rule in the E9/F63/F7/F82 selection flips a lane red — or silently stops
 # flagging — with no repo change). Bump deliberately, not by rebuild drift.
-RUN pip install --no-cache-dir PyGObject pycairo orjson ruff==0.15.22
+#
+# PyICU is REQUIRED, not optional. Gramps degrades localization without it
+# ("ICU not loaded ... Localization will be impaired"), and worse, gramps 6.0's
+# gramps/plugins/webreport/common.py cannot even be IMPORTED without it: when
+# neither `icu` nor `PyICU` resolves, its outer `except ImportError: pass`
+# leaves `localAlphabeticIndex` unbound and the module-level
+# `AlphabeticIndex = localAlphabeticIndex` raises NameError. Every addon that
+# imports that module (e.g. TimePedigreeHTML) then fails to load, so CI without
+# PyICU reports an addon defect that does not exist for real users. Installing
+# it also makes the image match a normal Gramps environment. (Built from source
+# against libicu-dev above.)
+RUN pip install --no-cache-dir PyGObject pycairo orjson PyICU ruff==0.15.22
 
 # Install gramps: PyPI first, SHA-pinned git clone as fallback.
 RUN /bin/bash -eo pipefail <<'BASH'
