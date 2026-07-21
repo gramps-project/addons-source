@@ -64,6 +64,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         gir1.2-atk-1.0 \
         gir1.2-gexiv2-0.10 \
         gcc \
+        g++ \
         pkg-config \
         python3-dev \
         libcairo2-dev \
