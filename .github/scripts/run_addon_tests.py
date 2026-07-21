@@ -345,22 +345,27 @@ def _classify(modname: str, platform: str, root: str) -> tuple[bool, str]:
 
     if broke:
         return True, f"  FAIL  {modname} — {broke} failed/errored"
-    if ran == 0:
-        # The module loaded but collected no tests (a class not subclassing
+    if ran == 0 and skipped == 0:
+        # The module loaded but collected NOTHING (a class not subclassing
         # TestCase, a mistyped method name, a refactor that broke collection).
-        # unittest exits 0 on this, so it would read as green — fail it.
+        # unittest exits 0 on this, so it would read as green — fail it. Note
+        # the skipped==0 guard: a class-level skip (setUpClass raising SkipTest)
+        # reports tests=0 with skips recorded, and that is a skipped module, not
+        # an empty one — it falls through to the all-skipped rule below.
         return True, (
             f"  FAIL  {modname} — module loaded but collected zero tests "
             "(empty or misnamed test module reads as green)"
         )
-    if skipped == ran:
+    if skipped >= ran:
+        # Everything skipped — including the ran==0/skipped>0 class-level case.
+        total = max(ran, skipped)
         if satisfiable:
             return True, (
-                f"  FAIL  {modname} — all {ran} tests skipped "
+                f"  FAIL  {modname} — all {total} test(s) skipped "
                 f"(degraded coverage; deps ARE available on {platform})"
             )
         return False, (
-            f"  skip  {modname} — all {ran} skipped, expected "
+            f"  skip  {modname} — all {total} skipped, expected "
             f"(addon system deps unavailable on {platform})"
         )
     if skipped:

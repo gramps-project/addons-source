@@ -252,6 +252,28 @@ class RunAddonTestsPathsTest(unittest.TestCase):
         self.assertEqual(result.returncode, 0, out)
         self.assertIn("ok    ShadowAddon.tests.test_x", result.stdout, out)
 
+    def test_class_level_skip_is_not_reported_as_zero_tests(self) -> None:
+        # setUpClass raising SkipTest yields tests=0 with skips recorded. That is
+        # a skipped module, not an empty one — the zero-collected rule must not
+        # claim "collected zero tests" (it did, on RepositoriesReport in CI).
+        # The addon declares an unsatisfiable-on-conda dep so the all-skipped
+        # rule treats it as an expected platform skip.
+        self._write_gi_addon(
+            "GiClassSkip",
+            "import unittest\n"
+            "class T(unittest.TestCase):\n"
+            "    @classmethod\n"
+            "    def setUpClass(cls):\n"
+            "        raise unittest.SkipTest('fixture not available')\n"
+            "    def test_a(self):\n"
+            "        pass\n",
+        )
+        result = self._run("GiClassSkip.tests.test_x", platform="conda")
+        out = result.stdout + result.stderr
+        self.assertEqual(result.returncode, 0, out)
+        self.assertNotIn("zero tests", out)
+        self.assertIn("skip", result.stdout)
+
     def test_module_level_skiptest_is_honored(self) -> None:
         # A module that raises SkipTest at import is explicitly opting out (the
         # addon's own "needs a display / PyGObject" guard) — honour it as a skip
