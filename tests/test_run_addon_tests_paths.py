@@ -228,6 +228,45 @@ class RunAddonTestsPathsTest(unittest.TestCase):
         self.assertEqual(result.returncode, 0, out)
         self.assertIn("ignoring non-integer", result.stderr)
 
+    def test_same_named_addon_module_does_not_shadow_package(self) -> None:
+        # Regression: many addons ship <Addon>/<Addon>.py. Once <Addon>/ is on
+        # sys.path (for the tests' bare sibling imports) that regular module wins
+        # the bare name over the namespace-package directory, and the dotted test
+        # name <Addon>.tests.test_x died with "module '<Addon>' has no attribute
+        # 'tests'" — 11 real addons failed this way on CI.
+        self._write("ShadowAddon/shadowaddon.gpr.py", 'register(GRAMPLET, id="s")\n')
+        self._write("ShadowAddon/ShadowAddon.py", "MAIN = 'addon main module'\n")
+        self._write("ShadowAddon/sibling.py", "SIB = 5\n")
+        self._write("ShadowAddon/tests/__init__.py", "")
+        self._write(
+            "ShadowAddon/tests/test_x.py",
+            "import unittest\n"
+            "from sibling import SIB\n"  # bare sibling import needs addon dir
+            "\n"
+            "class T(unittest.TestCase):\n"
+            "    def test_sibling(self):\n"
+            "        self.assertEqual(SIB, 5)\n",
+        )
+        result = self._run("ShadowAddon.tests.test_x", platform="apt")
+        out = result.stdout + result.stderr
+        self.assertEqual(result.returncode, 0, out)
+        self.assertIn("ok    ShadowAddon.tests.test_x", result.stdout, out)
+
+    def test_module_level_skiptest_is_honored(self) -> None:
+        # A module that raises SkipTest at import is explicitly opting out (the
+        # addon's own "needs a display / PyGObject" guard) — honour it as a skip
+        # on every platform, never a failure.
+        self._write("SkipAddon/skipaddon.gpr.py", 'register(GRAMPLET, id="s")\n')
+        self._write("SkipAddon/tests/__init__.py", "")
+        self._write(
+            "SkipAddon/tests/test_x.py",
+            "import unittest\nraise unittest.SkipTest('no display here')\n",
+        )
+        result = self._run("SkipAddon.tests.test_x", platform="apt")
+        out = result.stdout + result.stderr
+        self.assertEqual(result.returncode, 0, out)
+        self.assertIn("opted out", out)
+
     @unittest.skipUnless(os.name == "posix", "process-group kill is POSIX-only")
     def test_timeout_reaps_grandchild_holding_stdout(self) -> None:
         # A test that spawns a long-lived child inheriting the worker's stdout

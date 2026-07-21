@@ -28,7 +28,9 @@ plain unittest does not:
    lives in ``addon_system_deps.py``). A module that fails to LOAD is excused as
    a platform skip only when the failure is dependency-shaped (ImportError, or
    gi's absent-typelib ValueError); a SyntaxError or a bug in the addon's own
-   import-time code is a real defect and always FAILS, on every platform.
+   import-time code is a real defect and always FAILS, on every platform. A
+   module that raises ``SkipTest`` at import is opting out explicitly and is
+   always honoured as a skip.
 
 Usage::
 
@@ -46,6 +48,7 @@ available).
 from __future__ import annotations
 
 import argparse
+import importlib
 import os
 import re
 import signal
@@ -85,12 +88,26 @@ _LOADERROR = "__RESULT__ loaderror"
 
 def _terminal_exc_name(text: str) -> str | None:
     """The exception class name on the last ``Type: message`` line of a
-    traceback string (``ModuleNotFoundError``, ``SyntaxError``, …), or None."""
+    traceback string (``ModuleNotFoundError``, ``SyntaxError``, ``SkipTest``…),
+    or None. Scans from the end, so the first match is the terminal line."""
     for line in reversed(text.strip().splitlines()):
-        m = re.match(r"^([A-Za-z_][\w.]*(?:Error|Exception|Warning)):", line.strip())
+        m = re.match(r"^([A-Za-z_][\w.]*)\s*:", line.strip())
         if m:
             return m.group(1).rsplit(".", 1)[-1]
     return None
+
+
+def _is_skip_request(exc: BaseException) -> bool:
+    """Whether a module opted out at import time via ``raise SkipTest(...)``.
+
+    A module-level SkipTest is an explicit, deliberate opt-out (the addon's own
+    guard for "this needs a display / PyGObject / a backend I don't have"), so it
+    is honoured as a skip on every platform — never a failure, and never
+    dependent on the addon's declared system deps."""
+    if isinstance(exc, unittest.SkipTest):
+        return True
+    # unittest's loader may wrap it (see _dep_shaped) — check the terminal type.
+    return isinstance(exc, ImportError) and _terminal_exc_name(str(exc)) == "SkipTest"
 
 
 def _dep_shaped(exc: BaseException) -> bool:
@@ -119,6 +136,13 @@ def _dep_shaped(exc: BaseException) -> bool:
             return terminal in (None, "ImportError", "ModuleNotFoundError")
         return True  # a bare ImportError (not the loader wrapper)
     return False
+
+
+def _load_kind(exc: BaseException) -> str:
+    """Classify a module load failure: skip | dep | other."""
+    if _is_skip_request(exc):
+        return "skip"
+    return "dep" if _dep_shaped(exc) else "other"
 
 
 def _load_failure_exception(suite: unittest.TestSuite):
@@ -187,6 +211,20 @@ def _run_worker(modname: str, root: str = ".") -> int:
     # working too.
     addon = modname.split(".", 1)[0]
     addon_dir = os.path.join(root, addon)
+    # Resolve the addon PACKAGE (its directory, from the repo root) before the
+    # addon dir joins sys.path. Many addons ship a top-level module named after
+    # the addon itself (<Addon>/<Addon>.py); the moment <Addon>/ is on sys.path
+    # that regular module wins the bare name <Addon> over the namespace package,
+    # and the dotted test name <Addon>.tests.test_x then dies with "module
+    # '<Addon>' has no attribute 'tests'". Importing the package first pins it in
+    # sys.modules so the dotted load resolves, while the addon dir added below
+    # still serves the tests' bare sibling imports (e.g. `from models import …`).
+    try:
+        importlib.import_module(addon)
+    except Exception:
+        # Not importable as a package (single-file addon, or its __init__ needs
+        # deps): leave it; the dotted load below reports the real failure.
+        pass
     if addon_dir not in sys.path:
         sys.path.append(addon_dir)
     # Load via unittest (NOT a bare import_module probe): an addon whose
@@ -202,12 +240,12 @@ def _run_worker(modname: str, root: str = ".") -> int:
     try:
         suite = unittest.defaultTestLoader.loadTestsFromName(modname)
     except Exception as exc:  # raised import-time failure
-        kind = "dep" if _dep_shaped(exc) else "other"
+        kind = _load_kind(exc)
         print(f"{_LOADERROR} kind={kind} {exc!r}", flush=True)
         return 0
     load_exc = _load_failure_exception(suite)  # deferred (_FailedTest) failure
     if load_exc is not None:
-        kind = "dep" if _dep_shaped(load_exc) else "other"
+        kind = _load_kind(load_exc)
         print(f"{_LOADERROR} kind={kind} {load_exc!r}", flush=True)
         return 0
     result = unittest.TextTestRunner(verbosity=2).run(suite)
@@ -276,7 +314,12 @@ def _classify(modname: str, platform: str, root: str) -> tuple[bool, str]:
 
     if result_line.startswith(_LOADERROR):
         kind_m = re.search(r"\bkind=(\w+)", result_line)
-        dep_shaped = bool(kind_m) and kind_m.group(1) == "dep"
+        kind = kind_m.group(1) if kind_m else ""
+        if kind == "skip":
+            # The module raised SkipTest at import: an explicit opt-out, honoured
+            # on every platform regardless of declared-dep satisfiability.
+            return False, f"  skip  {modname} — module opted out (SkipTest at import)"
+        dep_shaped = kind == "dep"
         if not dep_shaped:
             # A non-dependency load failure (SyntaxError, a bug in the addon's
             # import-time code) is a real defect on every platform — never
