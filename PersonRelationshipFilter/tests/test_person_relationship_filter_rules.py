@@ -45,16 +45,6 @@ import os
 import sys
 import unittest
 
-# The addon imports Gtk at module load — skip cleanly if gi/Gtk are not
-# available, mirroring what other addons' test suites do.
-try:
-    import gi
-
-    gi.require_version("Gtk", "3.0")
-    gi.require_version("Gdk", "3.0")
-except (ImportError, ValueError, AttributeError) as err:
-    raise unittest.SkipTest("GTK 3.0 / PyGObject not available: %s" % err)
-
 # ------------------------
 # Gramps modules
 # ------------------------
