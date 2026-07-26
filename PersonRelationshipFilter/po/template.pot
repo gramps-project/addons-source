@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-26 11:05-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:49
+msgid "Text:"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:50
+msgid "People with a name matching <text>"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:52
+msgid ""
+"Matches people's names containing a substring or matching a regular "
+"expression"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:55
+msgid "General filters"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:81
+msgid "Filter name:"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:82
+msgid "Children of name match"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:83
+msgid "Family filters"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:84
+msgid "Matches children of anybody with a given name"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:198
+msgid "given"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:200
+msgid "surname"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:247
+msgid "Person"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:248
+msgid "Father"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:249
+msgid "Mother"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:250
+msgid "Spouse"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:251
+msgid "Sibling 1"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:252
+msgid "Sibling 2"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:253
+msgid "Child 1"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:254
+msgid "Child 2"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:258
+msgid "Use regular expressions"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:282
+msgid "Probably Alive"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:284
+#, python-format
+msgid "example: '%(msg1)s' or '%(msg2)s'"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:25
+msgid "Person Relationship Filter"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:26
+msgid "Gramplet providing a person filter on relationships"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:33
+msgid "Relationship Filter"
+msgstr ""
