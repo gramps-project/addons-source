@@ -24,7 +24,7 @@ register(
     id="Person Relationship Filter",
     name=_("Person Relationship Filter"),
     description=_("Gramplet providing a person filter on relationships"),
-    version="1.0.0",
+    version = '1.0.1',
     gramps_target_version="5.2",
     status=STABLE,
     fname="PersonRelationshipFilter.py",
