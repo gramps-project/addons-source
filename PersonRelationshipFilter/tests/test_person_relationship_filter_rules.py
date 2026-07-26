@@ -48,9 +48,14 @@ import unittest
 # ------------------------
 # Gramps modules
 # ------------------------
-# The addon directory goes on sys.path so ``import PersonRelationshipFilter``
-# resolves the flat ``PersonRelationshipFilter.py`` module directly (there is
-# no wrapping package — the file lives right in the addon directory).
+# Addon root goes on sys.path so ``from PersonRelationshipFilter.
+# PersonRelationshipFilter import ...`` resolves the class/functions inside
+# the addon module. The fully-qualified form matters: when unittest loads
+# this file as ``PersonRelationshipFilter.tests.test_...``, the outer
+# ``PersonRelationshipFilter`` is already a namespace package in
+# ``sys.modules``, so a bare ``from PersonRelationshipFilter import X``
+# would look for ``X`` as an attribute of that namespace package instead of
+# importing the ``PersonRelationshipFilter.py`` submodule that defines it.
 ADDON_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if ADDON_DIR not in sys.path:
     sys.path.insert(0, ADDON_DIR)
@@ -68,7 +73,7 @@ try:
     from gramps.gen.db.utils import make_database
     from gramps.gen.lib import ChildRef, Family, Name, Person, Surname
 
-    from PersonRelationshipFilter import (
+    from PersonRelationshipFilter.PersonRelationshipFilter import (
         HasName,
         HasNamedChild,
         HasNamedFather,
