@@ -189,6 +189,36 @@ python3 -m unittest AddonName.tests.test_something -v
 Run from the `addons-source` repo root so the addon's namespace package
 resolves.
 
+## Windows Development
+
+Per `CONTRIBUTING.md`, addons here are developed and tested primarily on
+Linux; Windows and macOS are possible but far less thoroughly reviewed.
+"Windows" itself covers two different things agents should not conflate:
+
+- **MSYS2** — the POSIX-like shell/toolchain environment Gramps's own
+  Windows installer is built with. A shell running inside MSYS2 behaves like
+  a Linux shell (`bash`, POSIX paths) and can run this repo's `make.py` and
+  `unittest` invocations normally.
+- **Native Windows** — a bare `cmd.exe` or PowerShell host with no MSYS2 or
+  WSL layer underneath. The commands and paths used elsewhere in this
+  document (`make.py`, `python3 -m unittest ...`, the `GRAMPSPATH` /
+  `GRAMPS_RESOURCES` env vars) assume a POSIX shell and are not verified
+  against native `cmd`/PowerShell.
+
+If you are running as an agent on a native Windows host:
+
+- Reading, writing, and refactoring addon Python code is fine — the code
+  itself is portable.
+- Do not run this repo's tests or `make.py` directly in `cmd`/PowerShell and
+  report the result as a real pass/fail — the tooling isn't validated there,
+  so a failure may be environmental noise rather than an actual regression.
+- Ask the user to run the same command inside an MSYS2 shell, WSL, or a
+  Linux container/VM and share the output, rather than guessing at the
+  result yourself.
+
+If you're already inside MSYS2 or WSL, treat it as a POSIX shell and follow
+the rest of this document (Commands, Testing) as written.
+
 ## Code Style
 
 - Every new `.py` file needs the same GPL-2.0-or-later header with copyright
