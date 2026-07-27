@@ -18,22 +18,16 @@
 
 """Test package for the Gramps Web Sync addon.
 
-Importing this package pins GTK to 3.0, adds :data:`ADDON_DIR` and
-:data:`ADDONS_ROOT` to ``sys.path`` and sets ``GRAMPS_RESOURCES`` if unset, so
-test modules can import ``gramps`` and the addon's flat modules directly.
+Importing this package adds :data:`ADDON_DIR` and :data:`ADDONS_ROOT` to
+``sys.path`` and sets ``GRAMPS_RESOURCES`` if unset, so test modules can
+import ``gramps`` and the addon's flat modules directly. GTK/Gdk version
+pinning is handled repo-wide by the root ``tests/__init__.py`` (PR #950).
 """
 
 from __future__ import annotations
 
 import os
 import sys
-
-import gi
-
-# Must precede any gramps import, or PyGObject may load GTK 4 and the
-# gramps.gui chain dies on the GTK 3-only Gtk.IconSize.MENU.
-gi.require_version("Gtk", "3.0")
-gi.require_version("Gdk", "3.0")
 
 #: The ``GrampsWebSync`` addon directory, i.e. the parent of this package.
 ADDON_DIR: str = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
