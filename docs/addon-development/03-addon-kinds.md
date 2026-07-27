@@ -15,9 +15,13 @@
   The numeric values aren't author-facing; cite by name.
 -->
 
-## Overview
+## Summary
 
-Gramps doesn't have one "addon" shape — it has 14 of them, each registered with a different `register(KIND, …)` constant and each plugged in at a different extension point. This page is the index over all of them, with the registration constant, the UI location, the base class to subclass, and a pointer onward. Use it to answer the first question every prospective addon author asks: **which kind of thing am I writing?**
+Gramps doesn't have one "addon" shape — it has 16 of them, each registered with a different `register(KIND, …)` constant and each plugged in at a different extension point. This page is the index over all of them, with the registration constant, the UI location, the base class to subclass, and a pointer onward. Use it to answer the first question every prospective addon author asks: **which kind of thing am I writing?**
+
+The page opens with a **kinds-at-a-glance table** — every constant, where it surfaces in the UI, and what it is typically used for — so you can narrow to one or two candidates in a single read. **Per-kind notes** then take each in turn: the fields the registration adds beyond the common set, the base class to subclass (where the kind has one), the minimum viable shape of the implementation module, and a link onward to the tutorial or the live addon worth reading as an example. The kinds an author is most likely to write get a section of their own; the rarer ones are covered in a paragraph each. A closing note covers the case where one addon folder registers **several kinds at once** — a Tool plus the Gramplet that displays its output, say — which is common and entirely supported.
+
+Choosing wrong is cheap to correct early and expensive later: the kind determines the base class, the entry-point signature, and where the user finds the addon, so it is worth a few minutes here before writing code. If two kinds both look plausible, the tie-breaker is usually *how the user reaches it* — a menu item, a dashboard widget, or a right-click on an object.
 
 Source of truth for the constants: [`gramps/gen/plug/_pluginreg.py`](https://github.com/gramps-project/gramps/blob/maintenance/gramps60/gramps/gen/plug/_pluginreg.py).
 
