@@ -473,8 +473,10 @@ class SyncSession:
         path = self.backend.download_xml()
         LOG.debug("Downloaded XML to %s", path)
 
-        db2 = import_as_dict(str(path), self._user)
-        path.unlink()
+        try:
+            db2 = import_as_dict(str(path), self._user)
+        finally:
+            path.unlink()
         if db2 is None:
             raise XmlImportFailed()
         self.db2 = db2
