@@ -204,7 +204,7 @@ class WebApiHandler:
 
     def commit(
         self,
-        payload: dict[str, Any],
+        payload: list[dict[str, Any]],
         force: bool = True,
         progress_callback: Callable | None = None,
     ) -> None:
