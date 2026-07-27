@@ -30,7 +30,7 @@ The synchronization itself lives in :mod:`session`.
 from __future__ import annotations
 
 import logging
-from urllib.parse import urlparse
+from urllib.parse import urlparse, urlunparse
 
 from adapters import (
     ConfigCredentialStore,
@@ -377,6 +377,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         :param url: The URL as typed by the user.
         :returns: The URL to actually use.
         """
+        url = url.strip()
         parsed_url = urlparse(url)
         if parsed_url.scheme == "":
             # if no httpX given, prepend https!
@@ -395,7 +396,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
                 parent=self.window,
             )
             if not question.run():
-                return url.replace("http", "https")
+                return urlunparse(parsed_url._replace(scheme="https"))
         return url
 
 
