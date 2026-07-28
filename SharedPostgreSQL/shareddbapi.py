@@ -289,7 +289,9 @@ class SharedDBAPI(DbGeneric):
         self.dbapi.execute(
             "CREATE INDEX citation_gramps_id " "ON citation(treeid,gramps_id)"
         )
-        self.dbapi.execute("CREATE INDEX media_desc " "ON media(treeid,desc)")
+        self.dbapi.execute(
+            f"CREATE INDEX media_desc ON media(treeid,{self._quote_column('desc')})"
+        )
         self.dbapi.execute("CREATE INDEX media_gramps_id " "ON media(treeid,gramps_id)")
         self.dbapi.execute("CREATE INDEX place_title " "ON place(treeid,title)")
         self.dbapi.execute(
@@ -699,7 +701,7 @@ class SharedDBAPI(DbGeneric):
             self.dbapi.execute(
                 "SELECT handle FROM media "
                 "WHERE treeid = ? "
-                "ORDER BY desc "
+                f"ORDER BY {self._quote_column('desc')} "
                 'COLLATE "%s"' % locale.get_collation(),
                 [self.dbapi.treeid],
             )
@@ -882,7 +884,7 @@ class SharedDBAPI(DbGeneric):
         else:
             # Insert the object:
             sql = (
-                f"INSERT INTO %s (treeid, handle, {self.serializer.data_field}) VALUES (?, ?)"
+                f"INSERT INTO %s (treeid, handle, {self.serializer.data_field}) VALUES (?, ?, ?)"
             ) % table
             self.dbapi.execute(
                 sql, [self.dbapi.treeid, handle, self.serializer.data_to_string(data)]
@@ -1306,6 +1308,17 @@ class SharedDBAPI(DbGeneric):
             surname_list.append(row[0])
         return surname_list
 
+    def _quote_column(self, col):
+        """
+        Return a safe column name for the current dialect.
+
+        Override in dialect subclasses to handle reserved keywords, e.g. by
+        quoting or renaming them.
+        """
+        # Mirrors the hook added by gramps PR #2178; drop once that is merged
+        # and shareddbapi is resynced with core dbapi.
+        return col
+
     def _sql_type(self, schema_type, max_length):
         """
         Given a schema type, return the SQL type for
@@ -1346,7 +1359,7 @@ class SharedDBAPI(DbGeneric):
                     sql_type = self._sql_type(schema_type, max_length)
                     self.dbapi.execute(
                         "ALTER TABLE %s ADD COLUMN %s %s"
-                        % (table_name, field, sql_type)
+                        % (table_name, self._quote_column(field), sql_type)
                     )
 
     def _update_secondary_values(self, obj):
@@ -1360,7 +1373,7 @@ class SharedDBAPI(DbGeneric):
         sets = []
         values = []
         for field in fields:
-            sets.append("%s = ?" % field)
+            sets.append("%s = ?" % self._quote_column(field))
             values.append(getattr(obj, field))
 
         # Derived fields
