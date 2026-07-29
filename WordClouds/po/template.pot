@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-29 09:56-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: WordClouds/placewordcloudgramplet.py:53
+msgid "Click place name to view references"
+msgstr ""
+
+#: WordClouds/givennamewordcloudgramplet.py:50
+msgid "Click given name to view people with that given name"
+msgstr ""
+
+#: WordClouds/WordClouds.gpr.py:24 WordClouds/WordClouds.gpr.py:32
+msgid "Given Name Word Cloud"
+msgstr ""
+
+#: WordClouds/WordClouds.gpr.py:25
+msgid "Gramplet showing all given names as a word cloud"
+msgstr ""
+
+#: WordClouds/WordClouds.gpr.py:40 WordClouds/WordClouds.gpr.py:48
+msgid "Surname Word Cloud"
+msgstr ""
+
+#: WordClouds/WordClouds.gpr.py:41
+msgid "Gramplet showing all surnames as a word cloud"
+msgstr ""
+
+#: WordClouds/WordClouds.gpr.py:56 WordClouds/WordClouds.gpr.py:64
+msgid "Place Word Cloud"
+msgstr ""
+
+#: WordClouds/WordClouds.gpr.py:57
+msgid "Gramplet showing all places as a word cloud"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:147 WordClouds/cloudgramplet.py:225
+#, python-format
+msgid "Number of %s"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:149 WordClouds/cloudgramplet.py:227
+msgid "Color (low)"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:150 WordClouds/cloudgramplet.py:228
+msgid "Color (high)"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:151 WordClouds/cloudgramplet.py:229
+msgid "Hover color"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:152 WordClouds/cloudgramplet.py:230
+msgid "Layout quality"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:154 WordClouds/cloudgramplet.py:232
+msgid "Filter missing/unknown words"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:207
+#, python-format
+msgid "[Missing %s]"
+msgstr ""
+
+#: WordClouds/surnamewordcloudgramplet.py:49
+msgid "Click surname to view people with that surname"
+msgstr ""
