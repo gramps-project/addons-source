@@ -149,6 +149,24 @@ class RetryTest(RecoveryTestCase):
         self.assertIsNone(session.error)
 
 
+class MediaScanTest(RecoveryTestCase):
+    """Asking the server which files it lacks is a network step of its own."""
+
+    def test_a_failed_scan_is_retryable_as_its_own_step(self) -> None:
+        """It used to run inline on the main loop, freezing the UI while it ran."""
+        scenario = self.make_scenario()
+        scenario.server.fail_next("get_missing_files", http_error(500))
+        session = self.connect(scenario)
+
+        self.assertIs(session.state, State.FAILED)
+        self.assertIs(session.failed_in, Step.SCAN_MEDIA)
+
+        session.retry()
+
+        self.assertIs(session.state, State.DONE)
+        self.assertIsNone(session.error)
+
+
 class StaleComparisonTest(RecoveryTestCase):
     """Edits made while the review page is open must not be overwritten.
 

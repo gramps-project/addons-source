@@ -352,7 +352,7 @@ class WebApiHandler:
             )
         try:
             with self._open(req) as res:
-                chunk_size = 1024
+                chunk_size = 64 * 1024
                 chunk = res.read(chunk_size)
                 fobj.write(chunk)
                 while chunk:
