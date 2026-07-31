@@ -481,6 +481,9 @@ class SyncSession:
             return classify_http_error(exc, login=login)
         if isinstance(exc, URLError):
             return SyncError(ErrorKind.CONNECTION_FAILED, str(exc.reason))
+        # A read that times out raises this directly, not wrapped in URLError.
+        if isinstance(exc, TimeoutError):
+            return SyncError(ErrorKind.CONNECTION_FAILED, str(exc))
         if isinstance(exc, ValueError):
             kind = ErrorKind.INVALID_RESPONSE if login else ErrorKind.SERVER_ERROR
             return SyncError(kind, str(exc))
@@ -822,7 +825,7 @@ class SyncSession:
         }
         both = set(local_missing) & set(remote_missing)
 
-        self.missing_both = [(local_missing[h], h) for h in both]
+        self.missing_both = sorted((local_missing[h], h) for h in both)
         self.missing_local = [
             (gid, h) for h, gid in local_missing.items() if h not in both
         ]

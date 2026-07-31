@@ -160,15 +160,25 @@ class Keyring:
             return False
         return True
 
-    def delete(self, service: str, username: str) -> None:
-        """Remove a stored password, ignoring one that was never there."""
+    def delete(self, service: str, username: str) -> bool:
+        """Remove a stored password.
+
+        :returns: Whether the password is now gone.
+        """
         keyring = self._module()
         if keyring is None:
-            return
+            return False
         try:
             keyring.delete_password(service, username)
         except Exception as exc:  # noqa: BLE001 -- absent entries raise too
-            LOG.debug("Keyring delete for %s failed: %s", username, exc)
+            # Deleting what was never there raises, and is harmless; a keyring
+            # that is actually broken still has the password afterwards.
+            if self.get(service, username) is None:
+                LOG.debug("Nothing to delete for %s: %s", username, exc)
+                return True
+            self._failed("delete", exc)
+            return False
+        return True
 
 
 # ------------------------------------------------------------
