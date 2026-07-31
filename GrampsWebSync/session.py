@@ -105,6 +105,7 @@ class Step(Enum):
     DIFF = auto()  # import it and compare (database)
     APPLY_LOCAL = auto()  # write the local half (database)
     PUSH_REMOTE = auto()  # send the remote half (network)
+    SCAN_MEDIA = auto()  # ask which files the server lacks (network)
     TRANSFER = auto()  # move media files (network)
 
 
@@ -308,6 +309,7 @@ STATE_FOR_STEP: dict[Step, State] = {
     Step.DIFF: State.COMPARING,
     Step.APPLY_LOCAL: State.APPLYING,
     Step.PUSH_REMOTE: State.APPLYING,
+    Step.SCAN_MEDIA: State.APPLYING,  # overridden by _scan_resume_state
     Step.TRANSFER: State.TRANSFERRING,
 }
 
@@ -387,6 +389,8 @@ class SyncSession:
         #: after a failed push must not re-run the local commit. Everything
         #: else a step hands to its successor travels as an argument.
         self._payload: list[dict[str, Any]] | None = None
+        #: Where a media scan was scheduled from, so a retry resumes there.
+        self._scan_resume_state: State = State.COMPARING
         self._closing = False
 
     # --------------------------------------------------------
@@ -491,7 +495,8 @@ class SyncSession:
         """
         runner = (
             self.io_runner
-            if step in (Step.FETCH, Step.PUSH_REMOTE, Step.TRANSFER)
+            if step
+            in (Step.FETCH, Step.PUSH_REMOTE, Step.SCAN_MEDIA, Step.TRANSFER)
             else self.runner
         )
         runner.run(func, on_success, lambda exc: self._on_step_error(exc, step))
@@ -580,7 +585,11 @@ class SyncSession:
         LOG.info("Retrying sync from %s.", step.name)
         self.error = None
         self.failed_in = None
-        self._goto(STATE_FOR_STEP[step])
+        self._goto(
+            self._scan_resume_state
+            if step is Step.SCAN_MEDIA
+            else STATE_FOR_STEP[step]
+        )
         if step is Step.FETCH:
             self._run(Step.FETCH, self._fetch_xml, self._on_fetched)
         elif step is Step.DIFF:
@@ -589,6 +598,8 @@ class SyncSession:
             self._run(Step.APPLY_LOCAL, self._apply_local, self._on_local_applied)
         elif step is Step.PUSH_REMOTE:
             self._run(Step.PUSH_REMOTE, self._push_remote, self._on_applied)
+        elif step is Step.SCAN_MEDIA:
+            self._start_media_scan()
         elif step is Step.TRANSFER:
             self._start_transfer()
 
@@ -667,11 +678,12 @@ class SyncSession:
         """Move on once the diff is available."""
         if self._closing:
             return
-        if not self.changes:
-            LOG.info("Databases are in sync.")
-            self.credentials.set_timestamp(self.url, self.username, self.clock.now())
-            self._scan_media()
-        self._advance()
+        if self.changes:
+            self._advance()
+            return
+        LOG.info("Databases are in sync.")
+        self.credentials.set_timestamp(self.url, self.username, self.clock.now())
+        self._start_media_scan()
 
     # --------------------------------------------------------
     # Applying
@@ -762,28 +774,51 @@ class SyncSession:
         if self._closing:
             return
         self.credentials.set_timestamp(self.url, self.username, self.clock.now())
-        self._scan_media()
-        self._advance()
+        self._start_media_scan()
 
     # --------------------------------------------------------
     # Media
     # --------------------------------------------------------
-    def _scan_media(self) -> None:
+    def _start_media_scan(self) -> None:
+        """Ask the server which files it lacks, off the main loop.
+
+        The state to come back to is captured here, because a failure moves the
+        session to ``FAILED`` and a retry has to resume from where the scan was
+        scheduled rather than from wherever it ended up.
+        """
+        self._scan_resume_state = self.state
+        self._run(Step.SCAN_MEDIA, self._fetch_remote_missing, self._on_media_scanned)
+
+    def _fetch_remote_missing(self) -> list[dict[str, Any]]:
+        """Return the server's list of media objects with no file. Network only."""
+        if self._closing:
+            return []
+        assert self.backend is not None
+        return self.backend.get_missing_files() or []
+
+    def _on_media_scanned(self, remote: list[dict[str, Any]] | None) -> None:
+        """Combine the server's answer with a local scan, back on the main loop."""
+        if self._closing:
+            return
+        self._scan_media(remote or [])
+        self._advance()
+
+    def _scan_media(self, remote: list[dict[str, Any]]) -> None:
         """Work out which media files are missing, and on which side.
 
         A file absent from both sides cannot be transferred in either
         direction, so it is separated out here rather than being attempted
         twice and reported as two failures.
+
+        :param remote: The server's missing-file list, already fetched.
         """
-        assert self.backend is not None
         local_missing = {
             media.handle: media.gramps_id
             for media in self.db1.iter_media()
             if not self.media.exists(media)
         }
         remote_missing = {
-            media["handle"]: media["gramps_id"]
-            for media in self.backend.get_missing_files() or []
+            media["handle"]: media["gramps_id"] for media in remote
         }
         both = set(local_missing) & set(remote_missing)
 
