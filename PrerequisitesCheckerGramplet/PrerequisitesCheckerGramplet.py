@@ -778,24 +778,34 @@ class PrerequisitesCheckerGramplet(Gramplet):
         # Start check
 
         try:
-            import bsddb3 as bsddb
-
-            bsddb_str = bsddb.__version__  # Python adaptation layer
-            # Underlying DB library
-            bsddb_db_str = (
-                str(bsddb.db.version())
-                .replace(", ", ".")
-                .replace("(", "")
-                .replace(")", "")
-            )
+            import berkeleydb as bsddb
+            bsdadapt = "BerkeleyDB"
         except ImportError:
-            bsddb_str = _("not found")
-            bsddb_db_str = _("not found")
+            try:
+                import bsddb3 as bsddb
+                bsdadapt  = "Python-bsddb3"
+            except ImportError:
+                result = (
+                        _(" • Berkeley Database library (bsddb3: ")
+                        + _("not found")
+                        + _(")\n\tRequires  BerkeleyDB or Python-bsddb3 Python adapter and the Berkeley database")
+                        )
+                self.append_text(result)
+                return
+
+        bsddb_str = bsddb.__version__  # Python adaptation layer
+        # Underlying DB library
+        bsddb_db_str = (
+            str(bsddb.db.version())
+            .replace(", ", ".")
+            .replace("(", "")
+            .replace(")", "")
+        )
 
         result = (
             _(" • Berkeley Database library (bsddb3: ")
             + bsddb_db_str
-            + ") (Python-bsddb3 : "
+            + ") (" + bsdadapt + " adapter : "
             + bsddb_str
             + ")"
         )
