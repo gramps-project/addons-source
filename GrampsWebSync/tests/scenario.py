@@ -58,6 +58,11 @@ from .fakes import (
     RecordingListener,
 )
 
+#: The server a scenario authenticates against unless told otherwise. Named so
+#: that tests asserting on a per-server baseline can name the same entry.
+DEFAULT_URL = "https://example.org/api"
+DEFAULT_USERNAME = "owner"
+
 #: A convenient baseline "already synced" time for scenarios.
 T0 = 1_600_000_000.0
 #: A time after :data:`T0`, for an edit on one side.
@@ -348,8 +353,8 @@ class SyncScenario:
         self,
         mode: int = MODE_BIDIRECTIONAL,
         confirm_files: bool = True,
-        url: str = "https://example.org/api",
-        username: str = "owner",
+        url: str = DEFAULT_URL,
+        username: str = DEFAULT_USERNAME,
         password: str = "secret",
     ) -> RunResult:
         """Drive a complete sync, answering every confirmation.

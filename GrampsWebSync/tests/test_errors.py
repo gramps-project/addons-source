@@ -26,7 +26,13 @@ from urllib.error import URLError
 from session import ErrorKind, State
 
 from .fakes import http_error
-from .scenario import T0, T2, SyncScenario
+from .scenario import (
+    DEFAULT_URL as URL,
+    DEFAULT_USERNAME as USERNAME,
+    T0,
+    T2,
+    SyncScenario,
+)
 
 
 class LoginFailureTest(unittest.TestCase):
@@ -142,12 +148,13 @@ class MidSyncFailureTest(unittest.TestCase):
 
         scenario.run()
 
-        self.assertEqual(scenario.credentials.get_timestamp(), T0)
+        self.assertEqual(scenario.credentials.get_timestamp(URL, USERNAME), T0)
 
     def test_local_changes_survive_a_failed_remote_commit(self) -> None:
-        """The local transaction commits before the upload is attempted."""
+        """The local half commits before the remote half is even attempted."""
         scenario = self.make_scenario()
         scenario.remote.edit_person("I0002", surname="Neu", changed_at=T2)
+        scenario.local.edit_person("I0001", surname="Mueller", changed_at=T2)
         scenario.server.fail_always("commit", http_error(500))
 
         result = scenario.run()
@@ -172,7 +179,7 @@ class CancellationTest(unittest.TestCase):
         session.begin()
         session.cancel()
 
-        session._compare()
+        session._fetch_xml()
 
         self.assertNotIn("download_xml", scenario.server.calls)
 
@@ -185,7 +192,7 @@ class CancellationTest(unittest.TestCase):
         session.submit_credentials("https://example.org/api", "owner", "secret")
         session.cancel()
 
-        session._apply()
+        session._apply_local()
 
         self.assertEqual(scenario.server.committed, [])
 
@@ -199,7 +206,7 @@ class CancellationTest(unittest.TestCase):
         session.submit_credentials("https://example.org/api", "owner", "secret")
         session.cancel()
 
-        session._transfer()
+        session._transfer(*session._resolve_transfers())
 
         self.assertEqual(scenario.server.media_files, {})
 
@@ -229,11 +236,12 @@ class MediaFailureTest(unittest.TestCase):
         self.assertIs(result.final_state, State.DONE)
         self.assertEqual(result.session.downloaded, {"O0001": False, "O0002": True})
 
-    def test_file_missing_on_both_sides_is_recorded_not_fatal(self) -> None:
-        """Such an object is in both missing lists; neither side can supply it.
+    def test_file_missing_on_both_sides_is_reported_once(self) -> None:
+        """Neither side can supply such a file, so neither transfer is tried.
 
-        The download 404s and the upload has nothing to send, so both are
-        recorded as failures and the run still completes.
+        It used to appear in both missing lists, so the download 404d and the
+        upload found nothing to send, and the user was told of two errors for
+        one file that simply does not exist anywhere.
         """
         scenario = self.make_scenario()
         scenario.local.add_media("O0001", "nowhere.jpg", on_disk=False)
@@ -243,8 +251,11 @@ class MediaFailureTest(unittest.TestCase):
 
         self.assertIs(result.final_state, State.DONE)
         self.assertIsNone(result.error)
-        self.assertEqual(result.session.downloaded, {"O0001": False})
-        self.assertEqual(result.session.uploaded, {"O0001": False})
+        self.assertEqual([gid for gid, _h in result.session.missing_both], ["O0001"])
+        self.assertEqual(result.session.missing_local, [])
+        self.assertEqual(result.session.missing_remote, [])
+        self.assertEqual(result.session.downloaded, {})
+        self.assertEqual(result.session.uploaded, {})
 
     def test_upload_still_fails_the_run_on_a_server_error(self) -> None:
         """The new guard must not swallow genuine transport failures."""

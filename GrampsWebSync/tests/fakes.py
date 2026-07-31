@@ -235,7 +235,8 @@ class InlineTaskRunner:
     """Runs each task synchronously on the calling thread.
 
     By the time ``run`` returns, the step and its completion callback have
-    both finished.
+    both finished. Standing in for both runners keeps scenarios single-threaded
+    and their assertions deterministic.
     """
 
     def run(
@@ -251,6 +252,10 @@ class InlineTaskRunner:
             on_error(exc)
         else:
             on_success(result)
+
+    def post(self, func: Callable[[], None]) -> None:
+        """Run ``func`` immediately; there is no other thread to marshal from."""
+        func()
 
 
 class FrozenClock:
@@ -274,6 +279,9 @@ class FrozenClock:
 class MemoryCredentialStore:
     """In-memory stand-in for the config file and keyring.
 
+    Keyed by ``(url, username)`` like the real store, so each server keeps its
+    own sync baseline and switching between them does not discard one.
+
     :param url: Initially stored server URL.
     :param username: Initially stored user name.
     :param password: Initially stored password.
@@ -290,10 +298,22 @@ class MemoryCredentialStore:
         self.url = url
         self.username = username
         self.password = password
-        self.timestamp = timestamp
+        #: ``(url, username)`` -> last successful sync time.
+        self.timestamps: dict[tuple[str, str], float] = {(url, username): timestamp}
+        #: ``(url, username)`` -> whether its password may be stored.
+        self.remembered: dict[tuple[str, str], bool] = {}
         #: Every ``(url, username, password)`` passed to
         #: :meth:`save_credentials`.
         self.saved: list[tuple[str, str, str]] = []
+
+    @property
+    def timestamp(self) -> float:
+        """The baseline of the last-used entry, for convenient assertions."""
+        return self.timestamps.get((self.url, self.username), 0.0)
+
+    @timestamp.setter
+    def timestamp(self, value: float) -> None:
+        self.timestamps[(self.url, self.username)] = value
 
     def get_url(self) -> str:
         return self.url
@@ -304,19 +324,22 @@ class MemoryCredentialStore:
     def get_password(self) -> str | None:
         return self.password
 
-    def get_timestamp(self) -> float:
-        return self.timestamp
+    def get_timestamp(self, url: str, username: str) -> float:
+        return self.timestamps.get((url, username), 0.0)
 
-    def set_timestamp(self, timestamp: float) -> None:
-        self.timestamp = timestamp
-
-    def save_credentials(self, url: str, username: str, password: str) -> None:
-        # A changed URL invalidates the last-sync time, as in production.
-        if url != self.url:
-            self.timestamp = 0.0
+    def set_timestamp(self, url: str, username: str, timestamp: float) -> None:
+        self.timestamps[(url, username)] = timestamp
         self.url = url
         self.username = username
-        self.password = password
+
+    def save_credentials(
+        self, url: str, username: str, password: str, remember_password: bool = True
+    ) -> None:
+        self.url = url
+        self.username = username
+        self.password = password if remember_password else None
+        self.remembered[(url, username)] = remember_password
+        self.timestamps.setdefault((url, username), 0.0)
         self.saved.append((url, username, password))
 
 

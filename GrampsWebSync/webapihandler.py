@@ -43,6 +43,41 @@ from gramps.gen.db.dbconst import TXNADD, TXNDEL, TXNUPD
 
 LOG = logging.getLogger("grampswebsync")
 
+#: Seconds before a request that has produced nothing is abandoned. Without
+#: this, ``urlopen`` waits forever and an unreachable-but-listening server
+#: hangs the tool with no way out.
+TIMEOUT = 60
+
+
+class ServerTaskFailed(Exception):
+    """A background task on the server reported failure.
+
+    Carries the server's own description rather than a stringified status dict,
+    so the message shown to the user says what went wrong.
+    """
+
+
+def describe_task_failure(task_status: dict[str, Any]) -> str:
+    """Extract a readable reason from a failed task status.
+
+    The status dict carries the reason in one of a few shapes depending on how
+    the task died. Stringifying the whole dict, as this once did, produced a
+    message no user could act on.
+
+    :param task_status: The server's task status document.
+    :returns: The most specific description available.
+    """
+    info = task_status.get("info")
+    if isinstance(info, dict):
+        for key in ("message", "error", "detail"):
+            value = info.get(key)
+            if value:
+                return str(value)
+    elif info:
+        return str(info)
+    state = task_status.get("state", "FAILURE")
+    return f"The server reported task state {state}."
+
 
 def parse_version(version) -> tuple[int, int]:
     """Simple dependency-free version to parse a SemVer into a list of ints."""
@@ -116,6 +151,10 @@ class WebApiHandler:
         self.fetch_token()
         self._metadata: dict | None = None
 
+    def _open(self, req: Request):
+        """Open ``req`` with this handler's SSL context and timeout."""
+        return urlopen(req, context=self._ctx, timeout=TIMEOUT)
+
     @property
     def access_token(self) -> str:
         """Get the access token. Cached after first call unless refresh needed. Auto-refreshing"""
@@ -153,7 +192,7 @@ class WebApiHandler:
             f"{self.url}/metadata/",
             headers={"Authorization": f"Bearer {self.access_token}", "User-Agent": "GrampsWebSync"},
         )
-        with urlopen(req, context=self._ctx) as res:
+        with self._open(req) as res:
             self._metadata = json.load(res)
 
     def fetch_token(self) -> None:
@@ -166,7 +205,7 @@ class WebApiHandler:
             headers={"Content-Type": "application/json", "User-Agent": "GrampsWebSync"},
         )
         try:
-            with urlopen(req, context=self._ctx) as res:
+            with self._open(req) as res:
                 res_json = json.load(res)
         except (UnicodeDecodeError, json.JSONDecodeError, HTTPError):
             if "/api" not in self.url:
@@ -230,7 +269,7 @@ class WebApiHandler:
                 },
             )
             json_response: dict | None = None
-            with urlopen(req, context=self._ctx) as res:
+            with self._open(req) as res:
                 status_code = res.getcode()
                 if status_code == 202:
                     json_response = json.load(res)
@@ -264,30 +303,23 @@ class WebApiHandler:
             endpoint,
             headers={"Authorization": f"Bearer {self.access_token}", "User-Agent": "GrampsWebSync"},
         )
-        try:
-            with urlopen(req, context=self._ctx) as res:
-                task_status = json.load(res)
-                if task_status["state"] == "SUCCESS":
-                    return True
-                if task_status["state"] in {"FAILURE", "REVOKED"}:
-                    LOG.warning(f"Server task failed: {task_status}")
-                    raise ValueError(str(task_status.get("info", "Server task failed")))
-                if progress_callback:
-                    try:
-                        progress = task_status["result_object"]["progress"]
-                    except (KeyError, TypeError):
-                        progress = -1
-                    progress_callback(progress)
-                return False
-        except HTTPError as e:
-            LOG.warning(f"HTTPError while fetching task status: {e.code} - {e.reason}")
-            raise ValueError(f"HTTP Error: {e.code} - {e.reason}")
-        except URLError as e:
-            LOG.warning(f"URLError while fetching task status: {e.reason}")
-            raise ValueError(f"URL Error: {e.reason}")
-        except socket.timeout as e:
-            LOG.warning(f"Timeout while fetching task status: {e}")
-            raise ValueError("Connection timed out while fetching task status.")
+        # HTTPError and URLError are deliberately not wrapped: the caller
+        # classifies them into specific, actionable messages, which converting
+        # them to a ValueError would flatten into a generic server error.
+        with self._open(req) as res:
+            task_status = json.load(res)
+            if task_status["state"] == "SUCCESS":
+                return True
+            if task_status["state"] in {"FAILURE", "REVOKED"}:
+                LOG.warning("Server task failed: %s", task_status)
+                raise ServerTaskFailed(describe_task_failure(task_status))
+            if progress_callback:
+                try:
+                    progress = task_status["result_object"]["progress"]
+                except (KeyError, TypeError):
+                    progress = -1
+                progress_callback(progress)
+            return False
 
     def get_missing_files(self, retry: bool = True) -> list:
         """Get a list of remote media objects with missing files."""
@@ -296,7 +328,7 @@ class WebApiHandler:
             headers={"Authorization": f"Bearer {self.access_token}", "User-Agent": "GrampsWebSync"},
         )
         try:
-            with urlopen(req, context=self._ctx) as res:
+            with self._open(req) as res:
                 res_json = json.load(res)
         except HTTPError as exc:
             if exc.code == 401 and retry:
@@ -319,7 +351,7 @@ class WebApiHandler:
                 headers={"Authorization": f"Bearer {self.access_token}", "User-Agent": "GrampsWebSync"},
             )
         try:
-            with urlopen(req, context=self._ctx) as res:
+            with self._open(req) as res:
                 chunk_size = 1024
                 chunk = res.read(chunk_size)
                 fobj.write(chunk)
@@ -367,7 +399,7 @@ class WebApiHandler:
             method="PUT",
         )
         try:
-            with urlopen(req, context=self._ctx) as res:
+            with self._open(req) as res:
                 pass
         except HTTPError as exc:
             if exc.code == 401 and retry:
