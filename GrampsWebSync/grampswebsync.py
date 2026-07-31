@@ -113,20 +113,17 @@ PAGE_FOR_STATE: dict[State, int] = {
 def keyring_message(problem: KeyringUnavailable) -> str:
     """Return the localized notice for an unusable keyring.
 
-    Under snap the failure is a confinement setting the user can change, so the
-    message carries the command rather than only apologizing.
-
     :param problem: What the keyring reported.
     :returns: A message suitable for display.
     """
     if problem.snap_command:
         return _(
-            "The password could not be saved to the system keyring. "
-            "Snap confinement blocks access until you run: %s"
+            "The system keyring could not be used. Snap confinement blocks "
+            "access until you run: %s"
         ) % problem.snap_command
     return _(
-        "The password could not be saved to the system keyring. "
-        "You will need to enter it each time."
+        "The system keyring could not be used. "
+        "You will need to enter your password each time."
     )
 
 
