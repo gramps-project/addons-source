@@ -354,10 +354,30 @@ class KeyringGuardTest(unittest.TestCase):
         self.assertEqual(backend.calls, ["set"])
 
     def test_deleting_a_missing_entry_is_not_a_failure(self) -> None:
-        """Backends raise when asked to delete something that is not there."""
-        keyring = KeyringOverBackend(ExplodingBackend(RuntimeError("no such item")))
-        keyring.delete("svc", "nobody")
+        """Backends raise when asked to delete something that is not there.
+
+        A working keyring still reads cleanly, which is how that is told apart
+        from a keyring that cannot delete because it is broken.
+        """
+
+        class AbsentEntryBackend(ExplodingBackend):
+            def get_password(self, *_args):
+                return None
+
+        keyring = KeyringOverBackend(AbsentEntryBackend(RuntimeError("no such item")))
+        self.assertTrue(keyring.delete("svc", "nobody"))
         self.assertIsNone(keyring.unavailable)
+
+    def test_a_delete_that_leaves_the_password_behind_is_a_failure(self) -> None:
+        """Otherwise turning off "remember password" silently does nothing."""
+
+        class StubbornBackend(ExplodingBackend):
+            def get_password(self, *_args):
+                return "still here"
+
+        keyring = KeyringOverBackend(StubbornBackend(RuntimeError("denied")))
+        self.assertFalse(keyring.delete("svc", "user"))
+        self.assertIsNotNone(keyring.unavailable)
 
 
 class SnapHintTest(unittest.TestCase):
