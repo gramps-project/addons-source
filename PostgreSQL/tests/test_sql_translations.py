@@ -24,6 +24,7 @@ Unit tests for the PostgreSQL SQL dialect translations in Connection.execute().
 These tests cover every rewrite rule applied before a query reaches psycopg2:
   - qmark → format paramstyle  (? → %s)
   - REGEXP operator             (REGEXP → ~)
+  - LIKE operator                (LIKE → ILIKE)
   - two-arg LIMIT               (LIMIT offset, count → LIMIT count OFFSET offset)
   - unlimited LIMIT             (LIMIT -1 → LIMIT ALL)
 
@@ -141,6 +142,31 @@ class TestExecuteRegexpOperator(unittest.TestCase):
 
     def test_no_regexp_unchanged(self):
         sql = "SELECT * FROM person WHERE name = 'foo'"
+        self.assertEqual(_translated(sql), sql)
+
+
+# -------------------------------------------------------------------------
+#
+# TestExecuteLikeOperator
+#
+# -------------------------------------------------------------------------
+class TestExecuteLikeOperator(unittest.TestCase):
+    """LIKE → ILIKE substitution."""
+
+    def test_like_replaced(self):
+        result = _translated("SELECT * FROM person WHERE surname LIKE ?")
+        self.assertIn("ILIKE", result)
+
+    def test_lowercase_like_replaced(self):
+        result = _translated("SELECT * FROM person WHERE surname like ?")
+        self.assertIn("ILIKE", result)
+
+    def test_ilike_not_double_rewritten(self):
+        sql = "SELECT * FROM person WHERE surname ILIKE %s"
+        self.assertEqual(_translated(sql), sql)
+
+    def test_no_like_unchanged(self):
+        sql = "SELECT * FROM person WHERE surname = %s"
         self.assertEqual(_translated(sql), sql)
 
 
