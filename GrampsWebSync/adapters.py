@@ -172,8 +172,10 @@ class Keyring:
             keyring.delete_password(service, username)
         except Exception as exc:  # noqa: BLE001 -- absent entries raise too
             # Deleting what was never there raises, and is harmless; a keyring
-            # that is actually broken still has the password afterwards.
-            if self.get(service, username) is None:
+            # that is actually broken still has the password afterwards. A read
+            # that fails proves nothing either way, so it counts as a failure.
+            before = self.unavailable
+            if self.get(service, username) is None and self.unavailable is before:
                 LOG.debug("Nothing to delete for %s: %s", username, exc)
                 return True
             self._failed("delete", exc)
