@@ -65,4 +65,8 @@ OBJ_LST = [
 MODE_BIDIRECTIONAL = 0
 MODE_RESET_TO_LOCAL = 1
 MODE_RESET_TO_REMOTE = 2
-MODE_MERGE = 3
+
+#: Modes that delete rather than propagate. The view warns about these instead
+#: of presenting them as equal-weight peers of the default. Display text lives
+#: in the view, which is where translation happens.
+DESTRUCTIVE_MODES = frozenset({MODE_RESET_TO_LOCAL, MODE_RESET_TO_REMOTE})
