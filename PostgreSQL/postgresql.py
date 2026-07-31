@@ -209,6 +209,12 @@ class Connection:
     def execute(self, *args, **kwargs):
         sql = args[0].replace("?", "%s")      # qmark → format paramstyle
         sql = sql.replace(" REGEXP ", " ~ ")  # SQLite REGEXP → PostgreSQL ~
+        # SQLite LIKE is case-insensitive (ASCII); PostgreSQL LIKE is
+        # case-sensitive, so use ILIKE for equivalent behavior. Note that
+        # PostgreSQL's ILIKE case-folding follows the connection's locale/
+        # collation, while SQLite's is ASCII-only, so non-ASCII patterns may
+        # fold slightly differently between the two backends.
+        sql = re.sub(r"\bLIKE\b", "ILIKE", sql, flags=re.IGNORECASE)
         # TODO: remove when gramps PR #2178 (_quote_column) is merged into core
         sql = sql.replace("ON media(desc)", "ON media(desc_)")
         sql = re.sub(r'\bBLOB\b', 'BYTEA', sql)  # SQLite BLOB → PostgreSQL BYTEA
