@@ -22,12 +22,18 @@
 progressing through the stages in :class:`State`. Callers drive it with
 :meth:`~SyncSession.begin`, :meth:`~SyncSession.submit_credentials`,
 :meth:`~SyncSession.confirm_changes` and :meth:`~SyncSession.confirm_files`,
-and observe it through a :class:`SessionListener`.
+and observe it through a :class:`SessionListener`. A failed run can be resumed
+with :meth:`~SyncSession.retry`.
 
 Collaborators are supplied as ports: :class:`Backend`,
 :class:`CredentialStore`, :class:`MediaStore`, :class:`TaskRunner` and
 :class:`Clock`. Failures are recorded as a :class:`SyncError` carrying an
 :class:`ErrorKind`; callers are responsible for localizing them.
+
+Each stage is split into the part that touches a database and the part that
+talks to the network, because only the latter may leave the main loop -- see
+:class:`adapters.IoRunner`. :data:`Step` names the pieces so that a retry can
+resume at the one that failed rather than redoing the work before it.
 """
 
 from __future__ import annotations
@@ -38,7 +44,6 @@ from dataclasses import dataclass
 from enum import Enum, auto
 from pathlib import Path
 from typing import Any, Protocol
-from urllib.error import HTTPError, URLError
 
 from const import MODE_BIDIRECTIONAL, Actions
 from diffhandler import (
@@ -50,7 +55,7 @@ from diffhandler import (
 from gramps.gen.db import DbTxn
 from gramps.gen.db.utils import import_as_dict
 from gramps.gen.errors import HandleError
-from webapihandler import transaction_to_json
+from webapihandler import ServerTaskFailed, transaction_to_json
 
 LOG = logging.getLogger("grampswebsync")
 
@@ -59,6 +64,9 @@ TXN_MSG = "Apply Gramps Web Sync changes"
 
 #: Server permission required to run a sync at all.
 REQUIRED_PERMISSION = "ViewPrivate"
+
+#: A media transfer, resolved to a local path before it leaves the main loop.
+Transfers = list[tuple[str, str, str]]
 
 #: Stages reported through :meth:`SessionListener.on_status`.
 STATUS_FETCHING = "fetching"
@@ -85,6 +93,21 @@ class State(Enum):
     FAILED = auto()
 
 
+class Step(Enum):
+    """The resumable pieces of a run.
+
+    A stage that both touches a database and talks to the network is two of
+    these, so that a retry after, say, a dropped connection while pushing does
+    not re-apply the local half that already succeeded.
+    """
+
+    FETCH = auto()  # download the remote XML (network)
+    DIFF = auto()  # import it and compare (database)
+    APPLY_LOCAL = auto()  # write the local half (database)
+    PUSH_REMOTE = auto()  # send the remote half (network)
+    TRANSFER = auto()  # move media files (network)
+
+
 class ErrorKind(Enum):
     """Classification of a failure, independent of its localized wording."""
 
@@ -95,11 +118,13 @@ class ErrorKind(Enum):
     TREE_DISABLED = auto()  # HTTP 503
     CONFLICT = auto()  # HTTP 409
     SERVER_ERROR = auto()
+    SERVER_TASK_FAILED = auto()
     CONNECTION_FAILED = auto()
     INVALID_RESPONSE = auto()
     INSUFFICIENT_PERMISSIONS = auto()
     XML_IMPORT_FAILED = auto()
     APPLY_FAILED = auto()
+    STALE_LOCAL_DATA = auto()
     UNEXPECTED = auto()
 
 
@@ -123,6 +148,10 @@ class ApplyFailed(Exception):
     """Applying the confirmed actions to the databases raised."""
 
 
+class StaleLocalData(Exception):
+    """The local tree changed between the comparison and the commit."""
+
+
 # Login and mid-sync failures read a few status codes differently.
 _LOGIN_HTTP_ERRORS: dict[int, ErrorKind] = {
     401: ErrorKind.AUTH_FAILED,
@@ -140,7 +169,7 @@ _SYNC_HTTP_ERRORS: dict[int, ErrorKind] = {
 }
 
 
-def classify_http_error(exc: HTTPError, *, login: bool) -> SyncError:
+def classify_http_error(exc: Any, *, login: bool) -> SyncError:
     """Classify an :class:`HTTPError` into a :class:`SyncError`.
 
     :param exc: The raised error.
@@ -184,7 +213,7 @@ class Backend(Protocol):
 
 
 class CredentialStore(Protocol):
-    """Persistence for server credentials and the last-sync timestamp."""
+    """Persistence for server credentials and per-server sync baselines."""
 
     def get_url(self) -> str: ...
 
@@ -192,11 +221,13 @@ class CredentialStore(Protocol):
 
     def get_password(self) -> str | None: ...
 
-    def get_timestamp(self) -> float: ...
+    def get_timestamp(self, url: str, username: str) -> float: ...
 
-    def set_timestamp(self, timestamp: float) -> None: ...
+    def set_timestamp(self, url: str, username: str, timestamp: float) -> None: ...
 
-    def save_credentials(self, url: str, username: str, password: str) -> None: ...
+    def save_credentials(
+        self, url: str, username: str, password: str, remember_password: bool = True
+    ) -> None: ...
 
 
 class MediaStore(Protocol):
@@ -216,6 +247,8 @@ class TaskRunner(Protocol):
         on_success: Callable[[Any], None],
         on_error: Callable[[BaseException], None],
     ) -> None: ...
+
+    def post(self, func: Callable[[], None]) -> None: ...
 
 
 class Clock(Protocol):
@@ -269,6 +302,16 @@ def next_state(state: State, session: SyncSession) -> State:
     return state
 
 
+#: Which state a retry of each step returns to while it runs.
+STATE_FOR_STEP: dict[Step, State] = {
+    Step.FETCH: State.COMPARING,
+    Step.DIFF: State.COMPARING,
+    Step.APPLY_LOCAL: State.APPLYING,
+    Step.PUSH_REMOTE: State.APPLYING,
+    Step.TRANSFER: State.TRANSFERRING,
+}
+
+
 # ------------------------------------------------------------
 #
 # SyncSession
@@ -287,6 +330,7 @@ class SyncSession:
         runner: TaskRunner,
         clock: Clock,
         listener: SessionListener | None = None,
+        io_runner: TaskRunner | None = None,
     ) -> None:
         """Initialize the session.
 
@@ -294,11 +338,13 @@ class SyncSession:
         :param user: A :class:`gramps.gen.user.User` for import/diff progress.
         :param backend_factory: Builds a :class:`Backend` from url, username
             and password.
-        :param credentials: Where credentials and the last-sync time live.
+        :param credentials: Where credentials and sync baselines live.
         :param media: Access to local media files.
-        :param runner: Executes the slow steps.
+        :param runner: Executes steps that touch a database, on the main loop.
         :param clock: Supplies the time recorded as the last successful sync.
         :param listener: Optional observer of state and progress.
+        :param io_runner: Executes network steps. Defaults to ``runner``, which
+            keeps everything on one thread -- useful in tests.
         """
         self.db1 = db
         self.db2 = None
@@ -307,6 +353,7 @@ class SyncSession:
         self.credentials = credentials
         self.media = media
         self.runner = runner
+        self.io_runner = io_runner if io_runner is not None else runner
         self.clock = clock
         self.listener = listener
 
@@ -314,6 +361,13 @@ class SyncSession:
         self.error: SyncError | None = None
         #: Set when login fails. Recoverable, unlike :attr:`error`.
         self.login_error: SyncError | None = None
+        #: Which step failed, so :meth:`retry` can resume at the right place.
+        self.failed_in: Step | None = None
+
+        self.url: str = ""
+        self.username: str = ""
+        self.password: str = ""
+        self.remember_password: bool = True
 
         self.backend: Backend | None = None
         self.sync: WebApiSyncDiffHandler | None = None
@@ -323,9 +377,16 @@ class SyncSession:
 
         self.missing_local: list[tuple[str, str]] = []
         self.missing_remote: list[tuple[str, str]] = []
+        #: Media absent on both sides. Neither transfer can supply these, so
+        #: they are reported up front rather than as two failures each.
+        self.missing_both: list[tuple[str, str]] = []
         self.downloaded: dict[str, bool] = {}
         self.uploaded: dict[str, bool] = {}
 
+        #: Held between the two halves of the apply stage, because a retry
+        #: after a failed push must not re-run the local commit. Everything
+        #: else a step hands to its successor travels as an argument.
+        self._payload: list[dict[str, Any]] | None = None
         self._closing = False
 
     # --------------------------------------------------------
@@ -333,7 +394,7 @@ class SyncSession:
     # --------------------------------------------------------
     @property
     def has_missing_files(self) -> bool:
-        """Whether any media file is missing on either side."""
+        """Whether any media file can actually be transferred either way."""
         return bool(self.missing_local or self.missing_remote)
 
     @property
@@ -345,6 +406,11 @@ class SyncSession:
     def has_remote_actions(self) -> bool:
         """Whether the pending actions touch the remote database."""
         return has_remote_actions(self.actions)
+
+    @property
+    def can_retry(self) -> bool:
+        """Whether :meth:`retry` has a step to resume."""
+        return self.state is State.FAILED and self.failed_in is not None
 
     # --------------------------------------------------------
     # Internals
@@ -360,10 +426,16 @@ class SyncSession:
         """Move to whatever :func:`next_state` says comes next."""
         self._goto(next_state(self.state, self))
 
-    def _fail(self, error: SyncError) -> None:
-        """Record a terminal failure and move to :attr:`State.FAILED`."""
+    def _fail(self, error: SyncError, step: Step | None = None) -> None:
+        """Record a terminal failure and move to :attr:`State.FAILED`.
+
+        The remote database is deliberately kept open: a retry that had to
+        re-download and re-diff it would throw away the most expensive part of
+        the run for what is usually a transient network problem.
+        """
         LOG.warning("Sync failed: %s (%s)", error.kind.name, error.detail)
         self.error = error
+        self.failed_in = step
         self._goto(State.FAILED)
 
     def _progress(self, kind: str, fraction: float) -> None:
@@ -376,10 +448,29 @@ class SyncSession:
         if self.listener is not None:
             self.listener.on_status(stage)
 
+    def _progress_from_worker(self, kind: str, fraction: float) -> None:
+        """Report progress raised inside a network step.
+
+        Marshalled onto the main loop, since the listener draws widgets and the
+        step is running on a worker thread.
+        """
+        self.io_runner.post(lambda: self._progress(kind, fraction))
+
+    def _status_from_worker(self, stage: str) -> None:
+        """Report a status update raised inside a network step."""
+        self.io_runner.post(lambda: self._status(stage))
+
     def _classify(self, exc: BaseException, *, login: bool = False) -> SyncError:
         """Turn an exception raised by a port into a :class:`SyncError`."""
+        # Imported here so the module stays importable without urllib present.
+        from urllib.error import HTTPError, URLError
+
         if isinstance(exc, XmlImportFailed):
             return SyncError(ErrorKind.XML_IMPORT_FAILED)
+        if isinstance(exc, StaleLocalData):
+            return SyncError(ErrorKind.STALE_LOCAL_DATA)
+        if isinstance(exc, ServerTaskFailed):
+            return SyncError(ErrorKind.SERVER_TASK_FAILED, str(exc))
         if isinstance(exc, ApplyFailed):
             return SyncError(ErrorKind.APPLY_FAILED, str(exc))
         if isinstance(exc, HTTPError):
@@ -391,6 +482,20 @@ class SyncSession:
             return SyncError(kind, str(exc))
         return SyncError(ErrorKind.UNEXPECTED, str(exc))
 
+    def _run(self, step: Step, func, on_success) -> None:
+        """Schedule ``step`` on the runner that is allowed to execute it.
+
+        Network steps go to a worker thread; database steps stay on the main
+        loop, because a Gramps sqlite connection belongs to the thread that
+        created it.
+        """
+        runner = (
+            self.io_runner
+            if step in (Step.FETCH, Step.PUSH_REMOTE, Step.TRANSFER)
+            else self.runner
+        )
+        runner.run(func, on_success, lambda exc: self._on_step_error(exc, step))
+
     # --------------------------------------------------------
     # Intents
     # --------------------------------------------------------
@@ -398,18 +503,30 @@ class SyncSession:
         """Leave the introduction page."""
         self._advance()
 
-    def submit_credentials(self, url: str, username: str, password: str) -> None:
+    def submit_credentials(
+        self,
+        url: str,
+        username: str,
+        password: str,
+        remember_password: bool = True,
+    ) -> None:
         """Connect, authenticate, then download and diff the remote tree.
 
         On an authentication or permission problem the session stays on
-        :attr:`State.LOGIN` with :attr:`login_error` set.
+        :attr:`State.LOGIN` with :attr:`login_error` set. Credentials are stored
+        only once the server has accepted them, so a typo never reaches the
+        keyring.
 
         :param url: Server URL, already sanitized by the caller.
         :param username: Login name.
         :param password: Password.
+        :param remember_password: Whether the password may be stored.
         """
         self.login_error = None
-        self.credentials.save_credentials(url, username, password)
+        self.url = url
+        self.username = username
+        self.password = password
+        self.remember_password = remember_password
 
         try:
             self.backend = self._backend_factory(url, username, password)
@@ -425,8 +542,10 @@ class SyncSession:
             self._goto(State.LOGIN)
             return
 
-        self._goto(State.COMPARING)
-        self.runner.run(self._compare, self._on_compared, self._on_step_error)
+        self.credentials.save_credentials(
+            url, username, password, remember_password
+        )
+        self._start_compare()
 
     def confirm_changes(self, sync_mode: int) -> None:
         """Accept the reviewed changes and apply them.
@@ -435,7 +554,7 @@ class SyncSession:
         """
         self.sync_mode = sync_mode
         self._goto(State.APPLYING)
-        self.runner.run(self._apply, self._on_applied, self._on_step_error)
+        self._run(Step.APPLY_LOCAL, self._apply_local, self._on_local_applied)
 
     def confirm_files(self) -> None:
         """Accept the media file transfer and carry it out.
@@ -446,44 +565,99 @@ class SyncSession:
             self._advance()
             return
         self._goto(State.TRANSFERRING)
-        self.runner.run(self._transfer, self._on_transferred, self._on_step_error)
+        self._start_transfer()
+
+    def retry(self) -> None:
+        """Resume a failed run at the step that failed.
+
+        Everything before that step is left alone: the remote tree is still
+        downloaded and diffed, and a local commit that already succeeded is not
+        repeated.
+        """
+        step = self.failed_in
+        if step is None:
+            return
+        LOG.info("Retrying sync from %s.", step.name)
+        self.error = None
+        self.failed_in = None
+        self._goto(STATE_FOR_STEP[step])
+        if step is Step.FETCH:
+            self._run(Step.FETCH, self._fetch_xml, self._on_fetched)
+        elif step is Step.DIFF:
+            self._start_compare()
+        elif step is Step.APPLY_LOCAL:
+            self._run(Step.APPLY_LOCAL, self._apply_local, self._on_local_applied)
+        elif step is Step.PUSH_REMOTE:
+            self._run(Step.PUSH_REMOTE, self._push_remote, self._on_applied)
+        elif step is Step.TRANSFER:
+            self._start_transfer()
 
     def cancel(self) -> None:
         """Abandon the run and release the in-memory remote database."""
         self._closing = True
+        self._release_remote()
+
+    def _release_remote(self) -> None:
+        """Close the downloaded remote database, if one is open."""
         if self.db2 is not None:
             self.db2.close()
             self.db2 = None
         self.sync = None  # holds references to both databases
 
     # --------------------------------------------------------
-    # Steps
+    # Comparison
     # --------------------------------------------------------
-    def _on_step_error(self, exc: BaseException) -> None:
-        """Handle an exception escaping one of the background steps."""
-        self._fail(self._classify(exc))
+    def _start_compare(self) -> None:
+        """Enter the comparison stage and fetch the remote tree."""
+        self._goto(State.COMPARING)
+        self._run(Step.FETCH, self._fetch_xml, self._on_fetched)
 
-    def _compare(self) -> None:
-        """Download the remote tree and diff it against the local one."""
+    def _fetch_xml(self) -> Path | None:
+        """Download the remote tree as Gramps XML. Network only.
+
+        :returns: Where the export was written, for the next step.
+        """
         if self._closing:
-            return
+            return None
         assert self.backend is not None
         LOG.info("Downloading Gramps XML file.")
-        self._status(STATUS_FETCHING)
+        self._status_from_worker(STATUS_FETCHING)
         path = self.backend.download_xml()
         LOG.debug("Downloaded XML to %s", path)
+        return path
 
+    def _on_fetched(self, path: Path | None) -> None:
+        """Import and diff, back on the main loop."""
+        if self._closing or path is None:
+            return
+        self._run(
+            Step.DIFF, lambda: self._import_and_diff(path), self._on_compared
+        )
+
+    def _import_and_diff(self, path: Path) -> None:
+        """Import the downloaded XML and diff it against the local tree.
+
+        Runs on the main loop: ``import_as_dict`` builds an in-memory sqlite
+        database on the calling thread, and ``diff_dbs`` reads the local one,
+        which belongs to the main thread.
+
+        :param path: The export downloaded by :meth:`_fetch_xml`. It is
+            consumed here, which is why retrying this step downloads again.
+        """
+        if self._closing:
+            return
         try:
             db2 = import_as_dict(str(path), self._user)
         finally:
-            path.unlink()
+            path.unlink(missing_ok=True)
         if db2 is None:
             raise XmlImportFailed()
+        self._release_remote()
         self.db2 = db2
 
         LOG.info("Comparing local and remote data.")
         self._status(STATUS_COMPARING)
-        last_synced = self.credentials.get_timestamp() or None
+        last_synced = self.credentials.get_timestamp(self.url, self.username) or None
         self.sync = WebApiSyncDiffHandler(
             self.db1, self.db2, user=self._user, last_synced=last_synced
         )
@@ -495,19 +669,28 @@ class SyncSession:
             return
         if not self.changes:
             LOG.info("Databases are in sync.")
-            self.credentials.set_timestamp(self.clock.now())
-            self.missing_local = self._find_missing_local()
-            self.missing_remote = self._find_missing_remote()
+            self.credentials.set_timestamp(self.url, self.username, self.clock.now())
+            self._scan_media()
         self._advance()
 
-    def _apply(self) -> None:
-        """Apply the confirmed actions locally, then push them to the server."""
+    # --------------------------------------------------------
+    # Applying
+    # --------------------------------------------------------
+    def _apply_local(self) -> None:
+        """Write the local half of the sync and build the remote payload.
+
+        Runs on the main loop: both halves are prepared inside Gramps
+        transactions against databases owned by this thread.
+        """
         if self._closing:
             return
         assert self.backend is not None and self.sync is not None
         self.actions = changes_to_actions(self.changes, self.sync_mode)
+        self._payload = []
         if not self.actions:
             return
+
+        self._assert_local_unchanged()
 
         LOG.info("Committing %s actions.", len(self.actions))
         try:
@@ -515,50 +698,175 @@ class SyncSession:
                 with DbTxn(TXN_MSG, self.sync.db2) as trans2:
                     self.sync.commit_actions(self.actions, trans1, trans2)
                     lang = self.backend.get_lang()
-                    payload = transaction_to_json(trans2, lang)
+                    self._payload = transaction_to_json(trans2, lang)
+        except StaleLocalData:
+            raise
         except Exception as exc:
             raise ApplyFailed(str(exc)) from exc
 
         if self.has_local_actions:
             self._status(STATUS_LOCAL_APPLIED)
 
+    def _assert_local_unchanged(self) -> None:
+        """Verify the local tree still matches what the comparison saw.
+
+        The comparison captured object snapshots, and the user may have gone on
+        editing the tree while reviewing them -- the tool does not block the
+        main window. Committing those snapshots would silently overwrite any
+        edit made in between, so the run stops instead and re-compares.
+
+        :raises StaleLocalData: If any affected object changed or appeared.
+        """
+        for _typ, handle, obj_type, obj1, _obj2 in self.actions:
+            method = self.db1.method("get_%s_from_handle", obj_type)
+            if method is None:
+                continue
+            try:
+                current = method(handle)
+            except HandleError:
+                current = None
+            if obj1 is None:
+                # Absent locally when compared; anything here now is new.
+                if current is not None:
+                    raise StaleLocalData(f"{obj_type} {handle} was added locally")
+            elif current is None:
+                raise StaleLocalData(f"{obj_type} {handle} was deleted locally")
+            elif current.change != obj1.change:
+                raise StaleLocalData(f"{obj_type} {handle} was modified locally")
+
+    def _on_local_applied(self, _result: Any) -> None:
+        """Push the remote half, off the main loop."""
+        if self._closing:
+            return
+        self._run(Step.PUSH_REMOTE, self._push_remote, self._on_applied)
+
+    def _push_remote(self) -> None:
+        """Send the remote half of the sync to the server. Network only."""
+        if self._closing:
+            return
+        assert self.backend is not None
+        if not self._payload:
+            return
         # Always force: the server compares against the XML-round-tripped
         # object, which differs from the live one through serialization
         # artifacts alone, yielding spurious 409s.
         self.backend.commit(
-            payload, True, lambda fraction: self._progress("api", fraction)
+            self._payload,
+            True,
+            lambda fraction: self._progress_from_worker("api", fraction),
         )
+        self._payload = []
 
     def _on_applied(self, _result: Any) -> None:
         """Record the sync time and collect media state."""
         if self._closing:
             return
-        self.credentials.set_timestamp(self.clock.now())
-        self.missing_local = self._find_missing_local()
-        self.missing_remote = self._find_missing_remote()
+        self.credentials.set_timestamp(self.url, self.username, self.clock.now())
+        self._scan_media()
         self._advance()
 
-    def _transfer(self) -> None:
-        """Download media missing locally, then upload media missing remotely.
+    # --------------------------------------------------------
+    # Media
+    # --------------------------------------------------------
+    def _scan_media(self) -> None:
+        """Work out which media files are missing, and on which side.
 
-        Progress reporting lets the view pump the event loop, so the user can
-        cancel mid-transfer; both loops check for that between files.
+        A file absent from both sides cannot be transferred in either
+        direction, so it is separated out here rather than being attempted
+        twice and reported as two failures.
+        """
+        assert self.backend is not None
+        local_missing = {
+            media.handle: media.gramps_id
+            for media in self.db1.iter_media()
+            if not self.media.exists(media)
+        }
+        remote_missing = {
+            media["handle"]: media["gramps_id"]
+            for media in self.backend.get_missing_files() or []
+        }
+        both = set(local_missing) & set(remote_missing)
+
+        self.missing_both = [(local_missing[h], h) for h in both]
+        self.missing_local = [
+            (gid, h) for h, gid in local_missing.items() if h not in both
+        ]
+        self.missing_remote = [
+            (gid, h) for h, gid in remote_missing.items() if h not in both
+        ]
+        if self.missing_both:
+            LOG.warning(
+                "%s media file(s) are missing on both sides.", len(self.missing_both)
+            )
+
+    def _resolve_transfers(self) -> tuple[Transfers, Transfers]:
+        """Turn the missing-file lists into paths, on the main loop.
+
+        The transfer itself runs on a worker thread and must not touch the
+        local database, so every handle is resolved to a path first. Files a
+        previous attempt already moved are left out, so a retry after a dropped
+        connection resumes rather than starting over.
+
+        :returns: The downloads and uploads still to do.
+        """
+        downloads: Transfers = []
+        uploads: Transfers = []
+        for gramps_id, handle in self.missing_local:
+            path = self._path_for(handle)
+            if path is None:
+                self.downloaded[gramps_id] = False
+            elif not self.downloaded.get(gramps_id):
+                downloads.append((gramps_id, handle, path))
+        for gramps_id, handle in self.missing_remote:
+            path = self._path_for(handle)
+            if path is None:
+                self.uploaded[gramps_id] = False
+            elif not self.uploaded.get(gramps_id):
+                uploads.append((gramps_id, handle, path))
+        return downloads, uploads
+
+    def _start_transfer(self) -> None:
+        """Resolve paths on the main loop, then transfer off it."""
+        downloads, uploads = self._resolve_transfers()
+        self._run(
+            Step.TRANSFER,
+            lambda: self._transfer(downloads, uploads),
+            self._on_transferred,
+        )
+
+    def _path_for(self, handle: str) -> str | None:
+        """Return the local path of a media object, or ``None`` if unusable."""
+        try:
+            obj = self.db1.get_media_from_handle(handle)
+        except HandleError:
+            LOG.warning("Cannot access media object %s", handle)
+            return None
+        return self.media.full_path(obj)
+
+    def _transfer(self, downloads: Transfers, uploads: Transfers) -> None:
+        """Download then upload media files. Network only.
+
+        Both loops check for cancellation between files, so closing the window
+        stops the transfer rather than waiting for it to finish.
+
+        :param downloads: Files to fetch, as ``(gramps_id, handle, path)``.
+        :param uploads: Files to send, in the same form.
         """
         if self._closing:
             return
         assert self.backend is not None
-        for gramps_id, handle in self.missing_local:
+        for index, (gramps_id, handle, path) in enumerate(downloads, start=1):
             if self._closing:
                 return
             LOG.debug("Downloading file %s", gramps_id)
-            self.downloaded[gramps_id] = self._download_one(handle)
-            self._progress("download", len(self.downloaded) / len(self.missing_local))
-        for gramps_id, handle in self.missing_remote:
+            self.downloaded[gramps_id] = self._download_one(handle, path)
+            self._progress_from_worker("download", index / len(downloads))
+        for index, (gramps_id, handle, path) in enumerate(uploads, start=1):
             if self._closing:
                 return
             LOG.debug("Uploading file %s", gramps_id)
-            self.uploaded[gramps_id] = self._upload_one(handle)
-            self._progress("upload", len(self.uploaded) / len(self.missing_remote))
+            self.uploaded[gramps_id] = self._upload_one(handle, path)
+            self._progress_from_worker("upload", index / len(uploads))
 
     def _on_transferred(self, _result: Any) -> None:
         """Finish the run."""
@@ -566,62 +874,38 @@ class SyncSession:
             return
         self._advance()
 
-    # --------------------------------------------------------
-    # Media helpers
-    # --------------------------------------------------------
-    def _find_missing_local(self) -> list[tuple[str, str]]:
-        """Return ``(gramps_id, handle)`` for media whose file is absent locally."""
-        return [
-            (media.gramps_id, media.handle)
-            for media in self.db1.iter_media()
-            if not self.media.exists(media)
-        ]
-
-    def _find_missing_remote(self) -> list[tuple[str, str]]:
-        """Return ``(gramps_id, handle)`` for media whose file is absent remotely."""
-        assert self.backend is not None
-        return [
-            (media["gramps_id"], media["handle"])
-            for media in self.backend.get_missing_files() or []
-        ]
-
-    def _download_one(self, handle: str) -> bool:
+    def _download_one(self, handle: str, path: str) -> bool:
         """Download one media file, reporting failure rather than raising."""
         assert self.backend is not None
         try:
-            obj = self.db1.get_media_from_handle(handle)
-        except HandleError:
-            LOG.warning("Cannot access media object %s", handle)
-            return False
-        try:
-            return self.backend.download_media_file(handle, self.media.full_path(obj))
+            return self.backend.download_media_file(handle, path)
         except Exception as exc:  # noqa: BLE001 -- one bad file must not abort
-            LOG.warning("Failed to download media file %s: %s", obj.gramps_id, exc)
+            LOG.warning("Failed to download media file %s: %s", handle, exc)
             return False
 
-    def _upload_one(self, handle: str) -> bool:
+    def _upload_one(self, handle: str, path: str) -> bool:
         """Upload one media file.
 
-        A file absent on both sides appears in both missing lists: the
-        download cannot supply it and there is nothing local to send, so it is
-        recorded as a failure instead of raising.
-
         :param handle: Handle of the media object to upload.
+        :param path: Where its file lives locally.
         :returns: Whether the file was uploaded.
         """
+        import os
+
         assert self.backend is not None
-        try:
-            obj = self.db1.get_media_from_handle(handle)
-        except HandleError:
-            LOG.warning("Cannot access media object %s", handle)
+        if not os.path.exists(path):
+            LOG.warning("Cannot upload media file %s: not on disk (%s)", handle, path)
             return False
-        if not self.media.exists(obj):
-            LOG.warning(
-                "Cannot upload media file %s: missing locally as well (%s)",
-                obj.gramps_id,
-                self.media.full_path(obj),
-            )
-            return False
-        return self.backend.upload_media_file(handle, self.media.full_path(obj))
+        return self.backend.upload_media_file(handle, path)
 
-
+    # --------------------------------------------------------
+    # Step failure
+    # --------------------------------------------------------
+    def _on_step_error(self, exc: BaseException, step: Step) -> None:
+        """Handle an exception escaping one of the steps."""
+        if self._closing:
+            return
+        # Stale local data means the snapshots are worthless; a retry has to
+        # compare again rather than resume where it stopped.
+        resume = Step.DIFF if isinstance(exc, StaleLocalData) else step
+        self._fail(self._classify(exc), resume)

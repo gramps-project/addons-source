@@ -32,7 +32,6 @@ from const import (
     C_UPD_LOC,
     C_UPD_REM,
     MODE_BIDIRECTIONAL,
-    MODE_MERGE,
     MODE_RESET_TO_LOCAL,
     MODE_RESET_TO_REMOTE,
 )
@@ -43,7 +42,14 @@ from session import (
     State,
 )
 
-from .scenario import T0, T2, T3, SyncScenario
+from .scenario import (
+    DEFAULT_URL as URL,
+    DEFAULT_USERNAME as USERNAME,
+    T0,
+    T2,
+    T3,
+    SyncScenario,
+)
 
 
 class SyncFlowTestCase(unittest.TestCase):
@@ -186,13 +192,12 @@ class SyncModeTest(SyncFlowTestCase):
         self.assertNotIn("I9100", scenario.local.person_ids())
         self.assertNotIn("I9100", scenario.remote.person_ids())
 
-    def test_merge_restores_a_locally_deleted_object(self) -> None:
-        """Merge mode never deletes; a removal on one side is undone."""
+    def test_an_unknown_mode_is_rejected(self) -> None:
+        """Modes are a closed set; an unknown one must not sync silently."""
         scenario = self.make_scenario()
         scenario.local.delete_person("I0002")
-        scenario.run(mode=MODE_MERGE)
-        self.assertIn("I0002", scenario.local.person_ids())
-        self.assertIn("I0002", scenario.remote.person_ids())
+        result = scenario.run(mode=99)
+        self.assertIs(result.final_state, State.FAILED)
 
 
 class MediaFileTest(SyncFlowTestCase):
@@ -265,7 +270,7 @@ class TimestampTest(SyncFlowTestCase):
 
         scenario.run()
 
-        self.assertEqual(scenario.credentials.get_timestamp(), 1_700_000_500.0)
+        self.assertEqual(scenario.credentials.get_timestamp(URL, USERNAME), 1_700_000_500.0)
 
     def test_in_sync_run_also_records_the_sync_time(self) -> None:
         """Finding no differences still counts as a successful sync."""
@@ -274,14 +279,21 @@ class TimestampTest(SyncFlowTestCase):
 
         scenario.run()
 
-        self.assertEqual(scenario.credentials.get_timestamp(), 1_700_000_900.0)
+        self.assertEqual(
+            scenario.credentials.get_timestamp(URL, USERNAME), 1_700_000_900.0
+        )
 
-    def test_changing_the_url_clears_the_stored_timestamp(self) -> None:
-        """A timestamp is meaningless against a different tree."""
+    def test_each_server_keeps_its_own_baseline(self) -> None:
+        """Syncing elsewhere must not disturb this server's baseline.
+
+        The baseline used to be a single value that a changed URL reset, so
+        alternating between two servers discarded it every time and made every
+        run after a switch a full "modified in both" comparison.
+        """
         scenario = self.make_scenario()
-        scenario.credentials.timestamp = T3
+        scenario.credentials.timestamps[(URL, USERNAME)] = T3
         scenario.run(url="https://elsewhere.example/api")
-        self.assertNotEqual(scenario.credentials.get_timestamp(), T3)
+        self.assertEqual(scenario.credentials.get_timestamp(URL, USERNAME), T3)
 
 
 class ProgressTest(SyncFlowTestCase):

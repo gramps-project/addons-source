@@ -36,6 +36,8 @@ from adapters import (
     ConfigCredentialStore,
     GLibTaskRunner,
     GrampsMediaStore,
+    IoRunner,
+    KeyringUnavailable,
     SystemClock,
 )
 from const import (
@@ -46,14 +48,14 @@ from const import (
     C_UPD_BOTH,
     C_UPD_LOC,
     C_UPD_REM,
+    DESTRUCTIVE_MODES,
     MODE_BIDIRECTIONAL,
-    MODE_MERGE,
     MODE_RESET_TO_LOCAL,
     MODE_RESET_TO_REMOTE,
     Actions,
 )
 from diffhandler import changes_to_actions, has_local_actions, has_remote_actions
-from gi.repository import Gtk
+from gi.repository import GLib, Gtk
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.lib import Tag
 from gramps.gui.dialog import QuestionDialog2
@@ -108,6 +110,26 @@ PAGE_FOR_STATE: dict[State, int] = {
 }
 
 
+def keyring_message(problem: KeyringUnavailable) -> str:
+    """Return the localized notice for an unusable keyring.
+
+    Under snap the failure is a confinement setting the user can change, so the
+    message carries the command rather than only apologizing.
+
+    :param problem: What the keyring reported.
+    :returns: A message suitable for display.
+    """
+    if problem.snap_command:
+        return _(
+            "The password could not be saved to the system keyring. "
+            "Snap confinement blocks access until you run: %s"
+        ) % problem.snap_command
+    return _(
+        "The password could not be saved to the system keyring. "
+        "You will need to enter it each time."
+    )
+
+
 def error_message(kind: ErrorKind, detail: str = "") -> str:
     """Return the localized message for an error kind.
 
@@ -144,7 +166,13 @@ def error_message(kind: ErrorKind, detail: str = "") -> str:
             "Unable to synchronize changes to server: objects have been modified."
         ),
         ErrorKind.APPLY_FAILED: _("Unexpected error while applying changes."),
+        ErrorKind.STALE_LOCAL_DATA: _(
+            "The family tree was modified while the changes were being "
+            "reviewed. Nothing has been applied. Please compare again."
+        ),
     }
+    if kind is ErrorKind.SERVER_TASK_FAILED:
+        return _("The server could not apply the changes: %s") % detail
     if kind is ErrorKind.SERVER_ERROR:
         return _("Server error %s. Please check your connection.") % detail
     if kind is ErrorKind.UNEXPECTED:
@@ -159,6 +187,11 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         """Build the assistant and the session behind it."""
         LOG.debug("Initializing Gramps Web Sync addon.")
         BatchTool.__init__(self, dbstate, user, options_class, name)
+        if self.fail:
+            # The user declined the undo-history warning; honour that instead
+            # of opening the assistant anyway.
+            LOG.debug("Undo history warning declined; not opening the tool.")
+            return
         ManagedWindow.__init__(self, user.uistate, [], self.__class__)
 
         self.dbstate = dbstate
@@ -171,6 +204,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             credentials=self.credentials,
             media=GrampsMediaStore(dbstate.db),
             runner=GLibTaskRunner(),
+            io_runner=IoRunner(),
             clock=SystemClock(),
             listener=self,
         )
@@ -223,7 +257,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             _("Progress Information"),
         )
 
-        self.conclusion = ConclusionPage(self.assistant)
+        self.conclusion = ConclusionPage(self.assistant, on_retry=self.on_retry)
         self.add_page(self.conclusion, Gtk.AssistantPageType.SUMMARY, _("Summary"))
 
         self.show()
@@ -264,6 +298,10 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
     def _make_backend(self, url: str, username: str, password: str) -> WebApiHandler:
         """Build the real Web API handler. Injected into the session."""
         return WebApiHandler(url, username, password, None)
+
+    def on_retry(self, _button) -> None:
+        """Resume a failed run from the step that failed."""
+        self.session.retry()
 
     # --------------------------------------------------------
     # SessionListener
@@ -335,6 +373,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
                 self.loginpage.show_error(error_message(error.kind, error.detail))
             else:
                 self.loginpage.clear_error()
+            self._show_keyring_notice(self.loginpage)
 
         elif page is self.diff_progress_page:
             if self.session.state is State.LOGIN:
@@ -370,6 +409,17 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
         elif page is self.conclusion:
             self.conclusion.prepare(self.session)
+            self._show_keyring_notice(self.conclusion)
+
+    def _show_keyring_notice(self, page) -> None:
+        """Tell the user if the keyring could not be used.
+
+        Reported rather than swallowed: without this the password field is
+        simply empty every run and nothing explains why.
+        """
+        problem = self.credentials.keyring_error()
+        if problem is not None:
+            page.show_notice(keyring_message(problem))
 
     def sanitize_url(self, url: str) -> str:
         """Prepend https if no scheme is given, and warn about plain http.
@@ -505,14 +555,30 @@ class LoginPage(Page):
         self.error_label.hide()
         grid.attach(self.error_label, 0, 3, 2, 1)
 
+        # Non-fatal notice, e.g. an unusable keyring. Distinct from the error
+        # label because it does not stop the user from continuing.
+        self.notice_label = Gtk.Label()
+        self.notice_label.set_line_wrap(True)
+        self.notice_label.set_max_width_chars(60)
+        self.notice_label.set_no_show_all(True)
+        self.notice_label.hide()
+        grid.attach(self.notice_label, 0, 4, 2, 1)
+
         # Connect entry change events
         self.url.connect("changed", self.on_entry_changed)
         self.username.connect("changed", self.on_entry_changed)
         self.password.connect("changed", self.on_entry_changed)
 
     def show_error(self, message: str):
-        """Display an error message on the login page."""
-        self.error_label.set_markup(f"<b>Error:</b> {message}")
+        """Display an error message on the login page.
+
+        The message is escaped: it can carry server or exception text, and an
+        unescaped ``&`` or ``<`` would break the markup or swallow the message.
+        """
+        label = GLib.markup_escape_text(_("Error:"))
+        self.error_label.set_markup(
+            f"<b>{label}</b> {GLib.markup_escape_text(message)}"
+        )
         self.error_label.show()
         self.update_complete()
 
@@ -520,6 +586,11 @@ class LoginPage(Page):
         """Clear any displayed error message."""
         self.error_label.hide()
         self.update_complete()
+
+    def show_notice(self, message: str):
+        """Display a non-fatal notice, such as an unusable keyring."""
+        self.notice_label.set_markup(f"<i>{GLib.markup_escape_text(message)}</i>")
+        self.notice_label.show()
 
     @property
     def complete(self):
@@ -572,47 +643,54 @@ class ConfirmationPage(Page):
         scrolled_window.add(self.tree_view)
 
         self.sync_label = Gtk.Label()
-        self.sync_label.set_text("Sync mode")
+        self.sync_label.set_text(_("Sync mode"))
 
         # Box for radio buttons
         self.radio_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
 
-        # Radio buttons
-        option_name = _("Bidirectional Synchronization")
-        self.radio_button1 = Gtk.RadioButton.new_with_label_from_widget(
-            None, option_name
-        )
-        self.radio_button1.connect(
-            "toggled", self.on_radio_button_toggled, MODE_BIDIRECTIONAL
-        )
-        self.radio_box.pack_start(self.radio_button1, False, False, 0)
+        #: Mode -> the one-line explanation shown when it is selected. With
+        #: per-object selection out of scope this is the user's only control,
+        #: so each option has to say what it will do.
+        self.mode_descriptions = {
+            MODE_BIDIRECTIONAL: _(
+                "Changes from both sides are combined. Objects edited in both "
+                "places are merged."
+            ),
+            MODE_RESET_TO_LOCAL: _(
+                "The server is made to match this computer. Anything changed "
+                "only on the server is discarded."
+            ),
+            MODE_RESET_TO_REMOTE: _(
+                "This computer is made to match the server. Anything changed "
+                "only here is discarded."
+            ),
+        }
 
-        option_name = _("Reset remote to local")
-        self.radio_button2 = Gtk.RadioButton.new_from_widget(self.radio_button1)
-        self.radio_button2.set_label(option_name)
-        self.radio_button2.connect(
-            "toggled", self.on_radio_button_toggled, MODE_RESET_TO_LOCAL
-        )
-        self.radio_box.pack_start(self.radio_button2, False, False, 0)
+        first = None
+        for mode, label in (
+            (MODE_BIDIRECTIONAL, _("Bidirectional Synchronization")),
+            (MODE_RESET_TO_LOCAL, _("Reset remote to local")),
+            (MODE_RESET_TO_REMOTE, _("Reset local to remote")),
+        ):
+            if first is None:
+                button = Gtk.RadioButton.new_with_label_from_widget(None, label)
+                first = button
+            else:
+                button = Gtk.RadioButton.new_from_widget(first)
+                button.set_label(label)
+            button.connect("toggled", self.on_radio_button_toggled, mode)
+            self.radio_box.pack_start(button, False, False, 0)
 
-        option_name = _("Reset local to remote")
-        self.radio_button3 = Gtk.RadioButton.new_from_widget(self.radio_button1)
-        self.radio_button3.set_label(option_name)
-        self.radio_button3.connect(
-            "toggled", self.on_radio_button_toggled, MODE_RESET_TO_REMOTE
-        )
-        self.radio_box.pack_start(self.radio_button3, False, False, 0)
-
-        option_name = _("Merge")
-        self.radio_button4 = Gtk.RadioButton.new_from_widget(self.radio_button1)
-        self.radio_button4.set_label(option_name)
-        self.radio_button4.connect("toggled", self.on_radio_button_toggled, MODE_MERGE)
-        self.radio_box.pack_start(self.radio_button4, False, False, 0)
+        self.description_label = Gtk.Label()
+        self.description_label.set_line_wrap(True)
+        self.description_label.set_max_width_chars(70)
+        self.description_label.set_xalign(0)
 
         # Box to hold the label and radio buttons
         self.label_radio_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
         self.label_radio_box.pack_start(self.sync_label, False, False, 0)
         self.label_radio_box.pack_start(self.radio_box, False, False, 0)
+        self.label_radio_box.pack_start(self.description_label, False, False, 0)
 
         self.outer_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
         self.outer_box.pack_start(scrolled_window, True, True, 0)
@@ -624,6 +702,18 @@ class ConfirmationPage(Page):
         """Callback for radio buttons setting sync mode."""
         if button.get_active():
             self.sync_mode = int(name)
+            self.update_description()
+
+    def update_description(self):
+        """Describe the selected mode, warning if it deletes."""
+        text = self.mode_descriptions.get(self.sync_mode, "")
+        if self.sync_mode in DESTRUCTIVE_MODES:
+            self.description_label.set_markup(
+                f"<b>{GLib.markup_escape_text(_('Warning:'))}</b> "
+                f"{GLib.markup_escape_text(text)}"
+            )
+        else:
+            self.description_label.set_text(text)
 
     def prepare(self, changes: Actions):
         """Convert the changes list to a tree store."""
@@ -674,6 +764,7 @@ class ConfirmationPage(Page):
         for i, row in enumerate(self.store):
             self.tree_view.expand_row(Gtk.TreePath(i), False)
 
+        self.update_description()
         self.set_complete()
 
 
@@ -846,9 +937,13 @@ class FileProgressPage(Page):
 
 
 class ConclusionPage(Page):
-    """The conclusion page, reporting either the outcome or the error."""
+    """The conclusion page, reporting either the outcome or the error.
 
-    def __init__(self, assistant):
+    :param assistant: The assistant owning this page.
+    :param on_retry: Called when the user asks to resume a failed run.
+    """
+
+    def __init__(self, assistant, on_retry=None):
         super().__init__(assistant)
         label = Gtk.Label(label="")
         label.set_line_wrap(True)
@@ -857,18 +952,73 @@ class ConclusionPage(Page):
         self.label = label
         self.pack_start(self.label, False, False, 0)
 
+        self.notice_label = Gtk.Label()
+        self.notice_label.set_line_wrap(True)
+        self.notice_label.set_max_width_chars(60)
+        self.notice_label.set_no_show_all(True)
+        self.notice_label.hide()
+        self.pack_start(self.notice_label, False, False, 10)
+
+        # A failed run would otherwise be a dead end: the only button on a
+        # summary page is Close, and reopening the tool re-downloads and
+        # re-diffs the whole tree for what is usually a transient problem.
+        self.retry_button = Gtk.Button(label=_("Try again"))
+        self.retry_button.set_halign(Gtk.Align.CENTER)
+        self.retry_button.set_no_show_all(True)
+        self.retry_button.hide()
+        if on_retry is not None:
+            self.retry_button.connect("clicked", on_retry)
+        self.pack_start(self.retry_button, False, False, 10)
+
     def prepare(self, session: SyncSession) -> None:
         """Render the final message for ``session``."""
         if session.error is not None:
             self.label.set_text(
                 error_message(session.error.kind, session.error.detail)
             )
-        elif not session.downloaded and not session.uploaded:
-            self.label.set_text(_("Media files are in sync."))
-            LOG.info("Media files are in sync.")
         else:
-            self.label.set_text(self._transfer_summary(session))
+            self.label.set_text(self._outcome_summary(session))
+        self.retry_button.set_visible(session.can_retry)
         self.set_complete()
+
+    def show_notice(self, message: str) -> None:
+        """Show a non-fatal notice alongside the outcome."""
+        self.notice_label.set_markup(f"<i>{GLib.markup_escape_text(message)}</i>")
+        self.notice_label.show()
+
+    def _outcome_summary(self, session: SyncSession) -> str:
+        """Describe what the run actually did, to both trees and to media.
+
+        The old summary reported media only, so a run that applied hundreds of
+        object changes and moved no files said "Media files are in sync."
+        """
+        parts = []
+        applied = len(session.actions)
+        if applied:
+            parts.append(
+                ngettext("Applied %s change.", "Applied %s changes.", applied)
+                % applied
+            )
+        transfer = self._transfer_summary(session)
+        if transfer:
+            parts.append(transfer)
+        elif not session.missing_both:
+            parts.append(_("Media files are in sync."))
+        if session.missing_both:
+            count = len(session.missing_both)
+            parts.append(
+                ngettext(
+                    "%s media file is missing on both sides and could not be "
+                    "transferred.",
+                    "%s media files are missing on both sides and could not be "
+                    "transferred.",
+                    count,
+                )
+                % count
+            )
+        if not parts:
+            parts.append(_("Both trees are already in sync."))
+        return " ".join(parts)
 
     @staticmethod
     def _transfer_summary(session: SyncSession) -> str:
