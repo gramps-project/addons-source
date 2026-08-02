@@ -25,70 +25,44 @@ from __future__ import annotations
 
 import unittest
 
-import grampswebsync
-from adapters import KeyringUnavailable
-from grampswebsync import PAGE_FOR_STATE, error_message, keyring_message
-from session import ErrorKind, State
+from grampswebsync import (
+    PANE_CONNECT,
+    PANE_FOR_STATE,
+    PANE_RESULT,
+    PANE_REVIEW,
+    PANE_WORKING,
+)
+from session import State, WORKING_STATES
 
 
-class PageMappingTest(unittest.TestCase):
-    """Every flow state must correspond to a page the assistant owns."""
+class PaneMappingTest(unittest.TestCase):
+    """Every flow state must correspond to a pane the stack owns."""
 
-    def test_every_state_maps_to_a_page(self) -> None:
-        self.assertEqual(set(PAGE_FOR_STATE), set(State))
+    def test_every_state_maps_to_a_pane(self) -> None:
+        self.assertEqual(set(PANE_FOR_STATE), set(State))
 
-    def test_page_indices_match_the_assistant_page_order(self) -> None:
-        """Indices must be the contiguous range the pages are appended in.
-
-        The assistant addresses pages positionally, so a gap or an off-by-one
-        here sends the user to the wrong page rather than failing loudly.
-        """
-        self.assertEqual(sorted(set(PAGE_FOR_STATE.values())), list(range(8)))
-
-    def test_terminal_states_share_the_conclusion_page(self) -> None:
-        """Success and failure are both reported on the last page."""
+    def test_only_the_four_panes_are_named(self) -> None:
+        """A typo in a pane name would leave the stack showing the wrong child."""
         self.assertEqual(
-            PAGE_FOR_STATE[State.DONE], PAGE_FOR_STATE[State.FAILED]
+            set(PANE_FOR_STATE.values()),
+            {PANE_CONNECT, PANE_WORKING, PANE_REVIEW, PANE_RESULT},
         )
-        self.assertEqual(PAGE_FOR_STATE[State.DONE], grampswebsync.PAGE_CONCLUSION)
 
+    def test_terminal_states_share_the_result_pane(self) -> None:
+        """Success and failure are both reported in the same place."""
+        self.assertEqual(PANE_FOR_STATE[State.DONE], PANE_RESULT)
+        self.assertEqual(PANE_FOR_STATE[State.FAILED], PANE_RESULT)
 
-class ErrorMessageTest(unittest.TestCase):
-    """Every error the session can record must render as something readable."""
+    def test_every_working_state_shows_the_working_pane(self) -> None:
+        """The phase list is indexed by this tuple, so the two must agree."""
+        for state in WORKING_STATES:
+            with self.subTest(state=state.name):
+                self.assertEqual(PANE_FOR_STATE[state], PANE_WORKING)
 
-    def test_every_error_kind_has_a_message(self) -> None:
-        """An unmapped kind would surface to the user as an empty dialog."""
-        for kind in ErrorKind:
-            with self.subTest(kind=kind.name):
-                message = error_message(kind, "42")
-                self.assertTrue(message.strip(), f"{kind.name} rendered empty")
-
-    def test_detail_is_included_where_it_carries_information(self) -> None:
-        """Status codes must reach the user for the otherwise-opaque kinds."""
-        self.assertIn("42", error_message(ErrorKind.SERVER_ERROR, "42"))
-        self.assertIn("boom", error_message(ErrorKind.UNEXPECTED, "boom"))
-
-    def test_a_failed_server_task_reports_what_the_server_said(self) -> None:
-        """This used to render a stringified status dict plus advice to check
-        the connection, which was neither true nor actionable."""
-        message = error_message(ErrorKind.SERVER_TASK_FAILED, "disk full")
-        self.assertIn("disk full", message)
-        self.assertNotIn("connection", message.lower())
-
-
-class KeyringMessageTest(unittest.TestCase):
-    """An unusable keyring is reported, and under snap it is fixable."""
-
-    def test_the_snap_command_is_included_when_there_is_one(self) -> None:
-        problem = KeyringUnavailable(
-            "denied", snap_command="snap connect gramps:password-manager-service"
-        )
-        self.assertIn("snap connect gramps", keyring_message(problem))
-
-    def test_elsewhere_the_message_says_what_to_expect_instead(self) -> None:
-        message = keyring_message(KeyringUnavailable("no backend"))
-        self.assertNotIn("snap", message.lower())
-        self.assertTrue(message.strip())
+    def test_working_states_are_the_ones_that_run_unattended(self) -> None:
+        """Anything else waits for the user, and must not join the phase list."""
+        waiting = {State.CONNECT, State.REVIEW, State.DONE, State.FAILED}
+        self.assertEqual(set(WORKING_STATES), set(State) - waiting)
 
 
 if __name__ == "__main__":

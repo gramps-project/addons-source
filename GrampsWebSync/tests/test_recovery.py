@@ -50,7 +50,6 @@ class RecoveryTestCase(unittest.TestCase):
     def connect(self, scenario: SyncScenario) -> SyncSession:
         """Return a session that has connected and compared."""
         session = scenario.make_session()
-        session.begin()
         session.submit_credentials(URL, USERNAME, "secret")
         return session
 
@@ -69,7 +68,7 @@ class RetryTest(RecoveryTestCase):
         scenario.server.fail_next("commit", http_error(500))
         session = self.connect(scenario)
 
-        session.confirm_changes(MODE_BIDIRECTIONAL)
+        session.confirm(MODE_BIDIRECTIONAL)
         self.assertIs(session.state, State.FAILED)
         self.assertIs(session.failed_in, Step.PUSH_REMOTE)
 
@@ -86,7 +85,7 @@ class RetryTest(RecoveryTestCase):
         scenario.server.fail_next("commit", http_error(500))
         session = self.connect(scenario)
 
-        session.confirm_changes(MODE_BIDIRECTIONAL)
+        session.confirm(MODE_BIDIRECTIONAL)
         session.retry()
 
         # One payload reached the server: the retry re-sent, it did not stack a
@@ -101,7 +100,7 @@ class RetryTest(RecoveryTestCase):
         scenario.server.fail_next("commit", http_error(500))
         session = self.connect(scenario)
 
-        session.confirm_changes(MODE_BIDIRECTIONAL)
+        session.confirm(MODE_BIDIRECTIONAL)
         session.retry()
 
         self.assertEqual(scenario.server.calls.count("download_xml"), 1)
@@ -110,7 +109,6 @@ class RetryTest(RecoveryTestCase):
         scenario = self.make_scenario()
         scenario.server.fail_next("download_xml", http_error(500))
         session = scenario.make_session()
-        session.begin()
         session.submit_credentials(URL, USERNAME, "secret")
 
         self.assertIs(session.state, State.FAILED)
@@ -129,10 +127,10 @@ class RetryTest(RecoveryTestCase):
         scenario.local.add_media("O0002", "two.jpg", changed_at=T0)
         scenario.share()
         session = self.connect(scenario)
-        self.assertIs(session.state, State.REVIEW_FILES)
+        self.assertIs(session.state, State.REVIEW)
 
         scenario.server.fail_next("upload_media_file", http_error(500))
-        session.confirm_files()
+        session.confirm(MODE_BIDIRECTIONAL)
         self.assertIs(session.state, State.FAILED)
 
         session.retry()
@@ -179,10 +177,10 @@ class StaleComparisonTest(RecoveryTestCase):
         scenario = self.make_scenario()
         scenario.local.edit_person("I0001", surname="Mueller", changed_at=T2)
         session = self.connect(scenario)
-        self.assertIs(session.state, State.REVIEW_CHANGES)
+        self.assertIs(session.state, State.REVIEW)
 
         scenario.local.edit_person("I0001", surname="Later", changed_at=T2 + 10)
-        session.confirm_changes(MODE_BIDIRECTIONAL)
+        session.confirm(MODE_BIDIRECTIONAL)
 
         self.assertIs(session.state, State.FAILED)
         self.assertIs(session.error.kind, ErrorKind.STALE_LOCAL_DATA)
@@ -193,7 +191,7 @@ class StaleComparisonTest(RecoveryTestCase):
         session = self.connect(scenario)
 
         scenario.local.edit_person("I0001", surname="Later", changed_at=T2 + 10)
-        session.confirm_changes(MODE_BIDIRECTIONAL)
+        session.confirm(MODE_BIDIRECTIONAL)
 
         self.assertEqual(scenario.server.committed, [])
         self.assertEqual(scenario.local.surname("I0001"), "Later")
@@ -205,7 +203,7 @@ class StaleComparisonTest(RecoveryTestCase):
         session = self.connect(scenario)
 
         scenario.local.delete_person("I0001")
-        session.confirm_changes(MODE_BIDIRECTIONAL)
+        session.confirm(MODE_BIDIRECTIONAL)
 
         self.assertIs(session.error.kind, ErrorKind.STALE_LOCAL_DATA)
 
@@ -214,13 +212,13 @@ class StaleComparisonTest(RecoveryTestCase):
         scenario = self.make_scenario()
         scenario.remote.add_person("I0003", surname="Nieuw", changed_at=T2)
         session = self.connect(scenario)
-        self.assertIs(session.state, State.REVIEW_CHANGES)
+        self.assertIs(session.state, State.REVIEW)
 
         person = scenario.remote.person("I0003")
         with DbTxn("local add", scenario.db1) as trans:
             scenario.db1.add_person(person, trans)
 
-        session.confirm_changes(MODE_BIDIRECTIONAL)
+        session.confirm(MODE_BIDIRECTIONAL)
 
         self.assertIs(session.error.kind, ErrorKind.STALE_LOCAL_DATA)
 
@@ -231,7 +229,7 @@ class StaleComparisonTest(RecoveryTestCase):
         session = self.connect(scenario)
 
         scenario.local.edit_person("I0001", surname="Later", changed_at=T2 + 10)
-        session.confirm_changes(MODE_BIDIRECTIONAL)
+        session.confirm(MODE_BIDIRECTIONAL)
         self.assertIs(session.failed_in, Step.DIFF)
 
         session.retry()
@@ -245,7 +243,7 @@ class StaleComparisonTest(RecoveryTestCase):
         scenario.local.edit_person("I0001", surname="Mueller", changed_at=T2)
         session = self.connect(scenario)
 
-        session.confirm_changes(MODE_BIDIRECTIONAL)
+        session.confirm(MODE_BIDIRECTIONAL)
 
         self.assertIsNone(session.error)
         self.assertEqual(scenario.remote.surname("I0001"), "Mueller")
@@ -253,3 +251,76 @@ class StaleComparisonTest(RecoveryTestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class AbandonTest(RecoveryTestCase):
+    """Switching server mid-run, without closing the tool.
+
+    Auto-connect makes this necessary: a tree whose server has moved would
+    otherwise sit through a whole download of the old one before the user
+    could reach the connect pane.
+    """
+
+    def test_a_comparison_can_be_walked_away_from(self) -> None:
+        scenario = self.make_scenario()
+        scenario.local.edit_person("I0001", surname="Mueller", changed_at=T2)
+        session = self.connect(scenario)
+        self.assertIs(session.state, State.REVIEW)
+
+        session.abandon()
+
+        self.assertIs(session.state, State.CONNECT)
+        self.assertEqual(session.changes, [])
+
+    def test_the_remote_tree_is_released(self) -> None:
+        """It is an in-memory database; keeping it would leak one per switch."""
+        session = self.connect(self.make_scenario())
+
+        session.abandon()
+
+        self.assertIsNone(session.db2)
+
+    def test_a_previous_failure_is_cleared(self) -> None:
+        scenario = self.make_scenario()
+        scenario.server.fail_next("download_xml", http_error(500))
+        session = scenario.make_session()
+        session.submit_credentials(URL, USERNAME, "secret")
+        self.assertIs(session.state, State.FAILED)
+
+        session.abandon()
+
+        self.assertIs(session.state, State.CONNECT)
+        self.assertIsNone(session.error)
+        self.assertFalse(session.can_retry)
+
+    def test_the_session_still_works_afterwards(self) -> None:
+        scenario = self.make_scenario()
+        session = self.connect(scenario)
+        session.abandon()
+
+        session.submit_credentials(URL, USERNAME, "secret")
+
+        self.assertIn(session.state, (State.REVIEW, State.DONE))
+        self.assertIsNone(session.error)
+
+    def test_a_run_that_has_started_writing_is_not_abandoned(self) -> None:
+        """Walking away mid-apply would leave no record of what got through."""
+        scenario = self.make_scenario()
+        scenario.local.edit_person("I0001", surname="Mueller", changed_at=T2)
+        session = self.connect(scenario)
+        session.state = State.APPLYING
+
+        session.abandon()
+
+        self.assertIs(session.state, State.APPLYING)
+
+    def test_a_callback_from_the_abandoned_run_is_dropped(self) -> None:
+        """The step it belongs to is already in flight and cannot be recalled,
+        so its result must not drive the session that replaced it."""
+        session = self.connect(self.make_scenario())
+        stale = session._guarded(lambda _result: session._goto(State.DONE))
+
+        session.abandon()
+        stale(None)
+
+        self.assertIs(session.state, State.CONNECT)

@@ -23,7 +23,8 @@ from __future__ import annotations
 import unittest
 from urllib.error import URLError
 
-from session import ErrorKind, State
+from const import MIN_API_VERSION, MIN_API_VERSION_TEXT
+from session import ErrorKind, State, supported_api_version
 
 from .fakes import http_error
 from .scenario import (
@@ -33,6 +34,139 @@ from .scenario import (
     T2,
     SyncScenario,
 )
+
+
+class ApiVersionTest(unittest.TestCase):
+    """A server too old to sync with says so, at connect time."""
+
+    def make_scenario(self, **kwargs) -> SyncScenario:
+        scenario = SyncScenario(**kwargs)
+        self.addCleanup(scenario.close)
+        scenario.seed_person("I0001", surname="Doe", changed_at=T0)
+        scenario.share()
+        return scenario
+
+    def test_a_version_below_the_minimum_is_refused(self) -> None:
+        scenario = self.make_scenario()
+        scenario.server.api_version = f"{MIN_API_VERSION[0] - 1}.9"
+        result = scenario.run()
+        self.assertIs(result.final_state, State.CONNECT)
+        self.assertIs(result.login_error.kind, ErrorKind.SERVER_TOO_OLD)
+
+    def test_the_reported_version_is_carried_into_the_message(self) -> None:
+        scenario = self.make_scenario()
+        scenario.server.api_version = "1.2.3"
+        result = scenario.run()
+        self.assertEqual(result.login_error.detail, "1.2.3")
+
+    def test_a_server_reporting_no_version_is_refused(self) -> None:
+        """The field postdates the endpoints this addon needs."""
+        scenario = self.make_scenario()
+        scenario.server.api_version = None
+        result = scenario.run()
+        self.assertIs(result.login_error.kind, ErrorKind.SERVER_TOO_OLD)
+
+    def test_the_version_is_checked_before_the_permissions(self) -> None:
+        """An API too old to report a permission claim yields an empty set,
+        which would otherwise be blamed on the user's account settings."""
+        scenario = self.make_scenario(permissions=set())
+        scenario.server.api_version = "1.0.0"
+        result = scenario.run()
+        self.assertIs(result.login_error.kind, ErrorKind.SERVER_TOO_OLD)
+
+    def test_an_outdated_server_is_never_downloaded_from(self) -> None:
+        scenario = self.make_scenario()
+        scenario.server.api_version = "1.0.0"
+        scenario.run()
+        self.assertNotIn("download_xml", scenario.server.calls)
+
+    def test_a_current_server_is_accepted(self) -> None:
+        scenario = self.make_scenario()
+        result = scenario.run()
+        self.assertIsNone(result.login_error)
+
+
+class TaskQueueTest(unittest.TestCase):
+    """A server with no background task queue cannot be synced with."""
+
+    def make_scenario(self, **kwargs) -> SyncScenario:
+        scenario = SyncScenario(**kwargs)
+        self.addCleanup(scenario.close)
+        scenario.seed_person("I0001", surname="Doe", changed_at=T0)
+        scenario.share()
+        return scenario
+
+    def test_a_server_without_one_is_refused(self) -> None:
+        """Transactions run synchronously there, and time out on any real
+        tree, which surfaces as an arbitrary failure part-way through."""
+        scenario = self.make_scenario()
+        scenario.server.task_queue = False
+
+        result = scenario.run()
+
+        self.assertIs(result.final_state, State.CONNECT)
+        self.assertIs(result.login_error.kind, ErrorKind.SERVER_NO_TASK_QUEUE)
+
+    def test_it_is_refused_before_anything_is_downloaded(self) -> None:
+        scenario = self.make_scenario()
+        scenario.server.task_queue = False
+
+        scenario.run()
+
+        self.assertNotIn("download_xml", scenario.server.calls)
+
+    def test_the_version_is_reported_first_when_both_are_wrong(self) -> None:
+        """An outdated server is the more actionable of the two, and may not
+        report the queue flag at all."""
+        scenario = self.make_scenario()
+        scenario.server.api_version = "1.0.0"
+        scenario.server.task_queue = False
+
+        result = scenario.run()
+
+        self.assertIs(result.login_error.kind, ErrorKind.SERVER_TOO_OLD)
+
+    def test_the_queue_is_checked_before_the_permissions(self) -> None:
+        """What the server is configured to do is not the user's account's
+        fault, and telling them to fix their account would misdirect."""
+        scenario = self.make_scenario(permissions=set())
+        scenario.server.task_queue = False
+
+        result = scenario.run()
+
+        self.assertIs(result.login_error.kind, ErrorKind.SERVER_NO_TASK_QUEUE)
+
+    def test_a_configured_server_is_accepted(self) -> None:
+        scenario = self.make_scenario()
+        result = scenario.run()
+        self.assertIsNone(result.login_error)
+
+
+class SupportedVersionTest(unittest.TestCase):
+    """The version comparison itself."""
+
+    def test_the_minimum_itself_is_accepted(self) -> None:
+        self.assertTrue(supported_api_version(f"{MIN_API_VERSION_TEXT}.0"))
+
+    def test_a_later_version_is_accepted(self) -> None:
+        self.assertTrue(supported_api_version(f"{MIN_API_VERSION[0] + 1}.0"))
+
+    def test_a_prerelease_suffix_is_ignored(self) -> None:
+        self.assertTrue(
+            supported_api_version(f"{MIN_API_VERSION_TEXT}.0-beta1")
+        )
+
+    def test_an_earlier_version_is_rejected(self) -> None:
+        self.assertFalse(supported_api_version(f"{MIN_API_VERSION[0] - 1}.9"))
+
+    def test_nothing_at_all_is_rejected(self) -> None:
+        self.assertFalse(supported_api_version(None))
+        self.assertFalse(supported_api_version(""))
+
+    def test_an_unreadable_version_is_rejected_rather_than_raising(self) -> None:
+        """Whatever a misbehaving server sends must not reach the user as a
+        traceback."""
+        self.assertFalse(supported_api_version("not a version"))
 
 
 class LoginFailureTest(unittest.TestCase):
@@ -60,7 +194,7 @@ class LoginFailureTest(unittest.TestCase):
                 scenario = self.make_scenario()
                 scenario.server.fail_always("get_permissions", http_error(code))
                 result = scenario.run()
-                self.assertIs(result.final_state, State.LOGIN)
+                self.assertIs(result.final_state, State.CONNECT)
                 self.assertIsNotNone(result.login_error)
                 self.assertIs(result.login_error.kind, expected)
 
@@ -70,7 +204,7 @@ class LoginFailureTest(unittest.TestCase):
         scenario.server.fail_always("get_permissions", http_error(401))
         result = scenario.run()
         self.assertIsNone(result.error)
-        self.assertIs(result.final_state, State.LOGIN)
+        self.assertIs(result.final_state, State.CONNECT)
 
     def test_unreachable_server_reports_a_connection_failure(self) -> None:
         scenario = self.make_scenario()
@@ -89,7 +223,7 @@ class LoginFailureTest(unittest.TestCase):
         """Without ViewPrivate the export is partial, so sync must not start."""
         scenario = self.make_scenario(permissions={"ViewObject"})
         result = scenario.run()
-        self.assertIs(result.final_state, State.LOGIN)
+        self.assertIs(result.final_state, State.CONNECT)
         self.assertIs(result.login_error.kind, ErrorKind.INSUFFICIENT_PERMISSIONS)
 
     def test_failed_login_does_not_touch_either_tree(self) -> None:
@@ -176,7 +310,6 @@ class CancellationTest(unittest.TestCase):
     def test_cancel_before_compare_skips_the_download(self) -> None:
         scenario = self.make_scenario()
         session = scenario.make_session()
-        session.begin()
         session.cancel()
 
         session._fetch_xml()
@@ -188,7 +321,6 @@ class CancellationTest(unittest.TestCase):
         scenario = self.make_scenario()
         scenario.local.edit_person("I0001", surname="Müller", changed_at=T2)
         session = scenario.make_session()
-        session.begin()
         session.submit_credentials("https://example.org/api", "owner", "secret")
         session.cancel()
 
@@ -202,7 +334,6 @@ class CancellationTest(unittest.TestCase):
         scenario.local.add_media("O0001", "photo.jpg", changed_at=T0)
         scenario.share()
         session = scenario.make_session()
-        session.begin()
         session.submit_credentials("https://example.org/api", "owner", "secret")
         session.cancel()
 

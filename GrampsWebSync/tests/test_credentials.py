@@ -25,6 +25,7 @@ test can write to the user's own Gramps configuration.
 from __future__ import annotations
 
 import itertools
+import os
 import shutil
 import tempfile
 import unittest
@@ -81,17 +82,26 @@ class StoreTestCase(unittest.TestCase):
         self.addCleanup(shutil.rmtree, self.tmpdir, ignore_errors=True)
 
     def make_config(self, name: str | None = None):
-        """Return a config manager writing into this test's directory."""
+        """Return a config manager writing into this test's directory.
+
+        The override has to name the ``.ini`` file. Given a bare directory,
+        Gramps splits it and keeps only the parent, so every test would share
+        one file in the system temporary directory and inherit whatever a
+        previous run left in it.
+        """
         name = name or f"webapisync_test_{next(_counter)}"
         return configman.register_manager(
-            name, self.tmpdir, use_plugins_path=False
+            name, os.path.join(self.tmpdir, f"{name}.ini"), use_plugins_path=False
         )
 
-    def make_store(self, config=None, keyring=None) -> ConfigCredentialStore:
+    def make_store(
+        self, config=None, keyring=None, tree_id: str = ""
+    ) -> ConfigCredentialStore:
         """Return a store over an isolated config manager."""
         return ConfigCredentialStore(
             keyring=cast(Keyring, keyring or FakeKeyring()),
             config=config or self.make_config(),
+            tree_id=tree_id,
         )
 
 
@@ -256,6 +266,39 @@ class RememberPasswordTest(StoreTestCase):
         self.assertIsNone(store.get_password())
 
 
+class RememberPasswordChoiceTest(StoreTestCase):
+    """The stored choice comes back, so the checkbox can show it."""
+
+    def test_a_server_never_seen_before_defaults_to_remembering(self) -> None:
+        """Which is what the tool did unconditionally before there was a box."""
+        self.assertTrue(self.make_store().get_remember_password())
+
+    def test_declining_is_remembered(self) -> None:
+        store = self.make_store()
+        store.save_credentials(URL, "owner", "secret", remember_password=False)
+        self.assertFalse(store.get_remember_password())
+
+    def test_accepting_is_remembered(self) -> None:
+        store = self.make_store()
+        store.save_credentials(URL, "owner", "secret", remember_password=True)
+        self.assertTrue(store.get_remember_password())
+
+    def test_it_survives_being_reopened(self) -> None:
+        config = self.make_config()
+        first = self.make_store(config=config)
+        first.save_credentials(URL, "owner", "secret", remember_password=False)
+
+        self.assertFalse(self.make_store(config=config).get_remember_password())
+
+    def test_the_choice_is_per_server(self) -> None:
+        config = self.make_config()
+        store = self.make_store(config=config)
+        store.save_credentials(URL, "owner", "secret", remember_password=False)
+        store.save_credentials(OTHER, "owner", "secret", remember_password=True)
+
+        self.assertTrue(self.make_store(config=config).get_remember_password())
+
+
 class ForgetTest(StoreTestCase):
     """Forgetting is the wider case of the same delete."""
 
@@ -280,6 +323,342 @@ class ForgetTest(StoreTestCase):
         store.forget(URL, "owner")
 
         self.assertEqual(store.get_timestamp(OTHER, "owner"), 222.0)
+
+
+class OpenTreeTest(StoreTestCase):
+    """Entries record the local tree they were synced from.
+
+    Nothing else ties a server to a family tree, and syncing a tree against a
+    server holding a different one classifies every object as deleted on the
+    far side, so a bidirectional run proposes emptying both.
+    """
+
+    def synced(self, config, tree_id: str, url: str, username: str) -> None:
+        """Drive one complete sync of ``tree_id`` against ``url``."""
+        store = self.make_store(config=config, tree_id=tree_id)
+        store.save_credentials(url, username, "pw")
+        store.set_timestamp(url, username, 100.0)
+
+    def test_a_completed_sync_records_the_open_tree(self) -> None:
+        store = self.make_store(config=self.make_config(), tree_id="tree-a")
+        store.save_credentials(URL, "owner", "pw")
+        store.set_timestamp(URL, "owner", 100.0)
+
+        self.assertTrue(store.is_for_open_tree())
+        self.assertFalse(store.is_from_another_tree())
+
+    def test_merely_connecting_claims_nothing(self) -> None:
+        """Backing out at the review pane must leave no association behind.
+
+        Authenticating against the wrong server is an easy mistake and its own
+        review pane is where it gets noticed. Claiming the tree at that point
+        would go on connecting there unprompted, with no warning, because the
+        entry would say it *is* this tree.
+        """
+        config = self.make_config()
+        self.make_store(config=config, tree_id="my-tree").save_credentials(
+            OTHER, "someone", "pw"
+        )
+
+        reopened = self.make_store(config=config, tree_id="my-tree")
+
+        self.assertFalse(reopened.is_for_open_tree())
+
+    def test_the_wrong_server_is_still_offered_for_correcting(self) -> None:
+        """Refusing to connect unprompted must not also empty the pane."""
+        config = self.make_config()
+        self.make_store(config=config, tree_id="my-tree").save_credentials(
+            OTHER, "someone", "pw"
+        )
+
+        reopened = self.make_store(config=config, tree_id="my-tree")
+
+        self.assertEqual(reopened.get_url(), OTHER)
+
+    def test_moving_a_tree_to_another_server_drops_the_old_claim(self) -> None:
+        """Otherwise both entries claim the tree and which one wins depends on
+        the order they happen to sit in."""
+        config = self.make_config()
+        first = self.make_store(config=config, tree_id="tree-a")
+        first.save_credentials(URL, "owner", "pw")
+        first.set_timestamp(URL, "owner", 100.0)
+
+        moved = self.make_store(config=config, tree_id="tree-a")
+        moved.save_credentials(OTHER, "owner", "pw")
+        moved.set_timestamp(OTHER, "owner", 200.0)
+
+        claims = [
+            entry["url"]
+            for entry in config.get("credentials.servers")
+            if entry.get("tree_id") == "tree-a"
+        ]
+        self.assertEqual(claims, [OTHER])
+
+    def test_another_tree_may_not_be_connected_to_unprompted(self) -> None:
+        config = self.make_config()
+        self.synced(config, "tree-a", URL, "owner")
+
+        reopened = self.make_store(config=config, tree_id="tree-b")
+
+        self.assertFalse(reopened.is_for_open_tree())
+        self.assertTrue(reopened.is_from_another_tree())
+
+    def test_another_tree_still_gets_its_fields_pre_filled(self) -> None:
+        """Withholding the automatic connect must not also empty the pane."""
+        config = self.make_config()
+        self.synced(config, "tree-a", URL, "owner")
+
+        reopened = self.make_store(config=config, tree_id="tree-b")
+
+        self.assertEqual(reopened.get_url(), URL)
+        self.assertEqual(reopened.get_username(), "owner")
+
+    def test_each_tree_is_offered_its_own_server(self) -> None:
+        """Once both are recorded, opening either finds the right one."""
+        config = self.make_config()
+        self.synced(config, "tree-a", URL, "owner")
+        self.synced(config, "tree-b", OTHER, "other")
+
+        back_to_a = self.make_store(config=config, tree_id="tree-a")
+
+        self.assertEqual(back_to_a.get_url(), URL)
+        self.assertTrue(back_to_a.is_for_open_tree())
+
+    def test_the_tree_beats_the_last_used_entry(self) -> None:
+        """Otherwise reopening a tree would offer whichever server was touched
+        most recently, which is the hazard being fixed."""
+        config = self.make_config()
+        self.synced(config, "tree-a", URL, "owner")
+        self.synced(config, "tree-b", OTHER, "other")
+
+        back_to_a = self.make_store(config=config, tree_id="tree-a")
+
+        self.assertEqual(back_to_a.get_url(), URL)
+
+
+class MultiTreeServerTest(StoreTestCase):
+    """One server hosting several trees, with one account per tree.
+
+    The shape of a hosted Gramps Web deployment: the URL is shared, and only
+    the account distinguishes one tree from another. Entries are keyed by both,
+    so nothing here may fall together.
+    """
+
+    def setUp(self) -> None:
+        super().setUp()
+        self.config = self.make_config()
+        self.keyring = FakeKeyring()
+        for tree, user, baseline in (
+            ("tree-a", "alice", 1000.0),
+            ("tree-b", "bob", 2000.0),
+        ):
+            store = self.store_for(tree)
+            store.save_credentials(URL, user, f"pw-{user}")
+            store.set_timestamp(URL, user, baseline)
+
+    def store_for(self, tree_id: str) -> ConfigCredentialStore:
+        """Return a store as it would be built with ``tree_id`` open."""
+        return self.make_store(
+            config=self.config, keyring=self.keyring, tree_id=tree_id
+        )
+
+    def test_each_tree_is_offered_its_own_account(self) -> None:
+        self.assertEqual(self.store_for("tree-a").get_username(), "alice")
+        self.assertEqual(self.store_for("tree-b").get_username(), "bob")
+
+    def test_both_may_connect_unprompted(self) -> None:
+        self.assertTrue(self.store_for("tree-a").is_for_open_tree())
+        self.assertTrue(self.store_for("tree-b").is_for_open_tree())
+
+    def test_the_tree_wins_over_whichever_was_used_last(self) -> None:
+        """``tree-b`` synced most recently, so a last-used fallback would
+        hand ``tree-a`` the wrong account."""
+        self.assertEqual(self.store_for("tree-a").get_username(), "alice")
+
+    def test_each_account_keeps_its_own_baseline(self) -> None:
+        self.assertEqual(self.store_for("tree-a").get_timestamp(URL, "alice"), 1000.0)
+        self.assertEqual(self.store_for("tree-b").get_timestamp(URL, "bob"), 2000.0)
+
+    def test_passwords_do_not_collide_in_the_keyring(self) -> None:
+        """The keyring is keyed by service and user, and the service is the
+        shared URL, so the account has to be what separates them."""
+        self.assertEqual(self.store_for("tree-a").get_password(), "pw-alice")
+        self.assertEqual(self.store_for("tree-b").get_password(), "pw-bob")
+
+    def test_a_third_tree_is_pre_filled_but_not_connected_to(self) -> None:
+        """Opening an unsynced tree must not sync it against someone else's."""
+        store = self.store_for("tree-c")
+        self.assertFalse(store.is_for_open_tree())
+        self.assertTrue(store.is_from_another_tree())
+        self.assertEqual(store.get_url(), URL)
+
+
+class ForgetClearsAssociationTest(StoreTestCase):
+    """Forgetting a server also gives up the tree it had claimed."""
+
+    def synced(self, config, tree_id: str, url: str, username: str, keyring=None):
+        """Drive one complete sync of ``tree_id`` against ``url``."""
+        store = self.make_store(config=config, keyring=keyring, tree_id=tree_id)
+        store.save_credentials(url, username, "pw")
+        store.set_timestamp(url, username, 100.0)
+        return store
+
+    def test_the_entry_and_its_claim_are_both_gone(self) -> None:
+        config = self.make_config()
+        store = self.synced(config, "tree-a", URL, "owner")
+
+        store.forget(URL, "owner")
+
+        self.assertEqual(config.get("credentials.servers"), [])
+        self.assertFalse(store.is_for_open_tree())
+
+    def test_the_password_goes_too(self) -> None:
+        """Leaving it behind would be the setting appearing to do nothing."""
+        config = self.make_config()
+        keyring = FakeKeyring()
+        store = self.synced(config, "tree-a", URL, "owner", keyring=keyring)
+
+        store.forget(URL, "owner")
+
+        self.assertIn((URL, "owner"), keyring.deleted)
+
+    def test_the_baseline_goes_with_it(self) -> None:
+        """Which is why forgetting is worth confirming: the next run compares
+        the two trees from scratch."""
+        config = self.make_config()
+        store = self.synced(config, "tree-a", URL, "owner")
+
+        store.forget(URL, "owner")
+
+        self.assertEqual(store.get_timestamp(URL, "owner"), 0.0)
+
+    def test_another_tree_keeps_its_own_server(self) -> None:
+        config = self.make_config()
+        self.synced(config, "tree-a", URL, "alice")
+        self.synced(config, "tree-b", OTHER, "bob")
+
+        self.make_store(config=config, tree_id="tree-a").forget(URL, "alice")
+
+        still_there = self.make_store(config=config, tree_id="tree-b")
+        self.assertTrue(still_there.is_for_open_tree())
+        self.assertEqual(still_there.get_url(), OTHER)
+
+
+class MovedServerTest(StoreTestCase):
+    """A tree that moves to another deployment leaves the old one behind."""
+
+    def move(self, config, url: str, username: str, timestamp: float):
+        """Sync ``tree-a`` against ``url``."""
+        store = self.make_store(config=config, tree_id="tree-a")
+        store.save_credentials(url, username, "pw")
+        store.set_timestamp(url, username, timestamp)
+        return store
+
+    def test_the_new_server_is_the_one_offered(self) -> None:
+        config = self.make_config()
+        self.move(config, URL, "owner", 100.0)
+
+        moved = self.move(config, OTHER, "owner", 200.0)
+
+        self.assertEqual(moved.get_url(), OTHER)
+        self.assertTrue(moved.is_for_open_tree())
+
+    def test_the_old_server_loses_its_baseline(self) -> None:
+        """It asserted the tree and that server were identical at a moment
+        which syncing elsewhere has since made untrue. The comparison takes the
+        later of the stored baseline and what it computes, so keeping a stale
+        one can only push the cutoff too far forward -- and too far forward is
+        where objects stop looking added and start looking deleted.
+        """
+        config = self.make_config()
+        self.move(config, URL, "owner", 100.0)
+
+        self.move(config, OTHER, "owner", 200.0)
+
+        self.assertEqual(
+            self.make_store(config=config).get_timestamp(URL, "owner"), 0.0
+        )
+
+    def test_the_old_entry_itself_survives(self) -> None:
+        """Only the claim and the baseline go; the address and user name are
+        still worth offering if the user goes back."""
+        config = self.make_config()
+        self.move(config, URL, "owner", 100.0)
+
+        self.move(config, OTHER, "owner", 200.0)
+
+        urls = [entry["url"] for entry in config.get("credentials.servers")]
+        self.assertIn(URL, urls)
+
+
+class UpgradedEntryTest(StoreTestCase):
+    """An entry stored before tree ids existed must keep working."""
+
+    def make_pre_upgrade_entry(self, config) -> None:
+        """Store an entry the way the previous version did, with no tree id."""
+        store = self.make_store(config=config)
+        store.save_credentials(URL, "owner", "pw")
+        store.set_timestamp(URL, "owner", 1234.0)
+
+    def test_it_is_still_offered(self) -> None:
+        config = self.make_config()
+        self.make_pre_upgrade_entry(config)
+
+        store = self.make_store(config=config, tree_id="tree-a")
+
+        self.assertEqual(store.get_url(), URL)
+        self.assertEqual(store.get_username(), "owner")
+
+    def test_its_baseline_survives(self) -> None:
+        """Losing it would turn the next run into a full cold resync."""
+        config = self.make_config()
+        self.make_pre_upgrade_entry(config)
+
+        store = self.make_store(config=config, tree_id="tree-a")
+
+        self.assertEqual(store.get_timestamp(URL, "owner"), 1234.0)
+
+    def test_it_does_not_connect_unprompted_until_it_has_synced_once(self) -> None:
+        """No tree was recorded, so which one it belongs to is simply unknown."""
+        config = self.make_config()
+        self.make_pre_upgrade_entry(config)
+
+        store = self.make_store(config=config, tree_id="tree-a")
+
+        self.assertFalse(store.is_for_open_tree())
+
+    def test_nor_is_it_reported_as_belonging_elsewhere(self) -> None:
+        """An unknown tree is not a different tree; warning would be a guess."""
+        config = self.make_config()
+        self.make_pre_upgrade_entry(config)
+
+        store = self.make_store(config=config, tree_id="tree-a")
+
+        self.assertFalse(store.is_from_another_tree())
+
+    def test_the_first_completed_sync_adopts_the_tree(self) -> None:
+        config = self.make_config()
+        self.make_pre_upgrade_entry(config)
+
+        store = self.make_store(config=config, tree_id="tree-a")
+        store.save_credentials(URL, "owner", "pw")
+        store.set_timestamp(URL, "owner", 5678.0)
+
+        self.assertTrue(store.is_for_open_tree())
+        self.assertEqual(store.get_timestamp(URL, "owner"), 5678.0)
+
+    def test_a_tool_that_cannot_identify_the_tree_never_auto_connects(self) -> None:
+        """``get_dbid`` returning nothing must fail safe, not fail open."""
+        config = self.make_config()
+        store_a = self.make_store(config=config, tree_id="tree-a")
+        store_a.save_credentials(URL, "owner", "pw")
+        store_a.set_timestamp(URL, "owner", 100.0)
+
+        store = self.make_store(config=config, tree_id="")
+
+        self.assertFalse(store.is_for_open_tree())
+        self.assertFalse(store.is_from_another_tree())
+        self.assertEqual(store.get_url(), URL)
 
 
 class ExplodingBackend:

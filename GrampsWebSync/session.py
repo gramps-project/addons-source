@@ -20,10 +20,9 @@
 
 :class:`SyncSession` runs a synchronization against a Gramps Web server,
 progressing through the stages in :class:`State`. Callers drive it with
-:meth:`~SyncSession.begin`, :meth:`~SyncSession.submit_credentials`,
-:meth:`~SyncSession.confirm_changes` and :meth:`~SyncSession.confirm_files`,
-and observe it through a :class:`SessionListener`. A failed run can be resumed
-with :meth:`~SyncSession.retry`.
+:meth:`~SyncSession.submit_credentials` and :meth:`~SyncSession.confirm`, and
+observe it through a :class:`SessionListener`. A failed run can be resumed with
+:meth:`~SyncSession.retry`.
 
 Collaborators are supplied as ports: :class:`Backend`,
 :class:`CredentialStore`, :class:`MediaStore`, :class:`TaskRunner` and
@@ -45,7 +44,7 @@ from enum import Enum, auto
 from pathlib import Path
 from typing import Any, Protocol
 
-from const import MODE_BIDIRECTIONAL, Actions
+from const import MIN_API_VERSION, MODE_BIDIRECTIONAL, Actions
 from diffhandler import (
     WebApiSyncDiffHandler,
     changes_to_actions,
@@ -55,7 +54,7 @@ from diffhandler import (
 from gramps.gen.db import DbTxn
 from gramps.gen.db.utils import import_as_dict
 from gramps.gen.errors import HandleError
-from webapihandler import ServerTaskFailed, transaction_to_json
+from webapihandler import ServerTaskFailed, parse_version, transaction_to_json
 
 LOG = logging.getLogger("grampswebsync")
 
@@ -69,9 +68,12 @@ REQUIRED_PERMISSION = "ViewPrivate"
 Transfers = list[tuple[str, str, str]]
 
 #: Stages reported through :meth:`SessionListener.on_status`.
+STATUS_CONNECTING = "connecting"
 STATUS_FETCHING = "fetching"
 STATUS_COMPARING = "comparing"
+STATUS_SCANNING_MEDIA = "scanning_media"
 STATUS_LOCAL_APPLIED = "local_applied"
+STATUS_PUSHING = "pushing"
 
 
 # ------------------------------------------------------------
@@ -80,17 +82,26 @@ STATUS_LOCAL_APPLIED = "local_applied"
 #
 # ------------------------------------------------------------
 class State(Enum):
-    """The stages of a sync run."""
+    """The stages of a sync run, in the order they occur."""
 
-    INTRO = auto()
-    LOGIN = auto()
-    COMPARING = auto()
-    REVIEW_CHANGES = auto()
-    APPLYING = auto()
-    REVIEW_FILES = auto()
-    TRANSFERRING = auto()
+    CONNECT = auto()  # waiting for the user to supply credentials
+    CONNECTING = auto()  # authenticating against the server
+    COMPARING = auto()  # downloading, diffing and checking media
+    REVIEW = auto()  # waiting for the user to confirm what will happen
+    APPLYING = auto()  # writing both databases
+    TRANSFERRING = auto()  # moving media files
     DONE = auto()
     FAILED = auto()
+
+
+#: The stages the view renders as a progress list, in order. Every other state
+#: waits for the user or reports an outcome.
+WORKING_STATES = (
+    State.CONNECTING,
+    State.COMPARING,
+    State.APPLYING,
+    State.TRANSFERRING,
+)
 
 
 class Step(Enum):
@@ -99,13 +110,16 @@ class Step(Enum):
     A stage that both touches a database and talks to the network is two of
     these, so that a retry after, say, a dropped connection while pushing does
     not re-apply the local half that already succeeded.
+
+    Connecting is absent: it fails back to :attr:`State.CONNECT` for the user to
+    correct rather than ending the run, so there is nothing to resume.
     """
 
     FETCH = auto()  # download the remote XML (network)
     DIFF = auto()  # import it and compare (database)
+    SCAN_MEDIA = auto()  # ask which files the server lacks (network)
     APPLY_LOCAL = auto()  # write the local half (database)
     PUSH_REMOTE = auto()  # send the remote half (network)
-    SCAN_MEDIA = auto()  # ask which files the server lacks (network)
     TRANSFER = auto()  # move media files (network)
 
 
@@ -123,6 +137,8 @@ class ErrorKind(Enum):
     CONNECTION_FAILED = auto()
     INVALID_RESPONSE = auto()
     INSUFFICIENT_PERMISSIONS = auto()
+    SERVER_TOO_OLD = auto()
+    SERVER_NO_TASK_QUEUE = auto()
     XML_IMPORT_FAILED = auto()
     APPLY_FAILED = auto()
     STALE_LOCAL_DATA = auto()
@@ -182,6 +198,24 @@ def classify_http_error(exc: Any, *, login: bool) -> SyncError:
     return SyncError(kind, str(exc.code))
 
 
+def supported_api_version(version: str | None) -> bool:
+    """Whether a server reporting ``version`` is new enough to sync with.
+
+    A server that reports no version at all predates the field and is treated
+    as unsupported.
+
+    :param version: The server's ``gramps_webapi`` version, as reported.
+    :returns: Whether a sync may proceed against it.
+    """
+    if not version:
+        return False
+    try:
+        return parse_version(version) >= MIN_API_VERSION
+    except ValueError:
+        LOG.warning("Server reported an unreadable API version: %s", version)
+        return False
+
+
 # ------------------------------------------------------------
 #
 # Ports
@@ -194,6 +228,12 @@ class Backend(Protocol):
     """
 
     def get_permissions(self) -> set[str]: ...
+
+    def get_api_version(self) -> str | None: ...
+
+    def has_task_queue(self) -> bool: ...
+
+    def get_tree_name(self) -> str: ...
 
     def get_lang(self) -> str | None: ...
 
@@ -268,6 +308,27 @@ class SessionListener(Protocol):
     def on_status(self, stage: str) -> None: ...
 
 
+@dataclass(frozen=True)
+class Connection:
+    """What one connect attempt learned about a server.
+
+    Carried as one value because the whole attempt happens on a worker thread
+    and only its result crosses back to the main loop.
+
+    :param backend: The connected handler.
+    :param api_version: The Gramps Web API version it reports, if any.
+    :param task_queue: Whether it runs transactions in the background.
+    :param tree_name: What the server calls the tree it serves.
+    :param permissions: What the authenticated account may do.
+    """
+
+    backend: Backend
+    api_version: str | None
+    task_queue: bool
+    tree_name: str
+    permissions: set[str]
+
+
 # ------------------------------------------------------------
 #
 # Transition table
@@ -282,22 +343,18 @@ def next_state(state: State, session: SyncSession) -> State:
     """
     if session.error is not None:
         return State.FAILED
-    if state is State.INTRO:
-        return State.LOGIN
-    if state is State.LOGIN:
+    if state is State.CONNECT:
+        return State.CONNECTING
+    if state is State.CONNECTING:
         return State.COMPARING
     if state is State.COMPARING:
-        if session.changes:
-            return State.REVIEW_CHANGES
-        return State.REVIEW_FILES if session.has_missing_files else State.DONE
-    if state is State.REVIEW_CHANGES:
+        # Nothing to decide means nothing to show: a run that finds the trees
+        # identical and no file to move reports that and stops.
+        return State.REVIEW if session.has_review_content else State.DONE
+    if state is State.REVIEW:
         return State.APPLYING
     if state is State.APPLYING:
-        # Skipped entirely rather than shown empty: there is nothing to
-        # confirm when no file is missing on either side.
-        return State.REVIEW_FILES if session.has_missing_files else State.DONE
-    if state is State.REVIEW_FILES:
-        return State.TRANSFERRING if session.has_missing_files else State.DONE
+        return State.TRANSFERRING if session.will_transfer else State.DONE
     if state is State.TRANSFERRING:
         return State.DONE
     return state
@@ -307,9 +364,9 @@ def next_state(state: State, session: SyncSession) -> State:
 STATE_FOR_STEP: dict[Step, State] = {
     Step.FETCH: State.COMPARING,
     Step.DIFF: State.COMPARING,
+    Step.SCAN_MEDIA: State.COMPARING,  # overridden by _scan_origin
     Step.APPLY_LOCAL: State.APPLYING,
     Step.PUSH_REMOTE: State.APPLYING,
-    Step.SCAN_MEDIA: State.APPLYING,  # overridden by _scan_resume_state
     Step.TRANSFER: State.TRANSFERRING,
 }
 
@@ -359,9 +416,9 @@ class SyncSession:
         self.clock = clock
         self.listener = listener
 
-        self.state: State = State.INTRO
+        self.state: State = State.CONNECT
         self.error: SyncError | None = None
-        #: Set when login fails. Recoverable, unlike :attr:`error`.
+        #: Set when connecting fails. Recoverable, unlike :attr:`error`.
         self.login_error: SyncError | None = None
         #: Which step failed, so :meth:`retry` can resume at the right place.
         self.failed_in: Step | None = None
@@ -370,12 +427,18 @@ class SyncSession:
         self.username: str = ""
         self.password: str = ""
         self.remember_password: bool = True
+        #: The server's Gramps Web API version, once it has reported one.
+        self.api_version: str | None = None
+        #: What the server calls the tree it serves, once it has said.
+        self.tree_name: str = ""
 
         self.backend: Backend | None = None
         self.sync: WebApiSyncDiffHandler | None = None
         self.changes: Actions = []
         self.actions: Actions = []
         self.sync_mode: int = MODE_BIDIRECTIONAL
+        #: Whether the confirmed run should also move media files.
+        self.transfer_media: bool = True
 
         self.missing_local: list[tuple[str, str]] = []
         self.missing_remote: list[tuple[str, str]] = []
@@ -389,8 +452,12 @@ class SyncSession:
         #: after a failed push must not re-run the local commit. Everything
         #: else a step hands to its successor travels as an argument.
         self._payload: list[dict[str, Any]] | None = None
-        #: Where a media scan was scheduled from, so a retry resumes there.
-        self._scan_resume_state: State = State.COMPARING
+        #: Which stage the current media scan was scheduled from.
+        self._scan_origin: State = State.COMPARING
+        #: Bumped by :meth:`abandon`. Callbacks scheduled under an earlier
+        #: value belong to a run the user has walked away from, and are
+        #: dropped rather than allowed to drive the session on.
+        self._run_id = 0
         self._closing = False
 
     # --------------------------------------------------------
@@ -400,6 +467,20 @@ class SyncSession:
     def has_missing_files(self) -> bool:
         """Whether any media file can actually be transferred either way."""
         return bool(self.missing_local or self.missing_remote)
+
+    @property
+    def has_review_content(self) -> bool:
+        """Whether there is anything for the user to confirm.
+
+        Media missing on both sides does not count: nothing can be done about
+        those, so they are reported with the outcome rather than as a decision.
+        """
+        return bool(self.changes or self.has_missing_files)
+
+    @property
+    def will_transfer(self) -> bool:
+        """Whether the confirmed run still has media files to move."""
+        return self.transfer_media and self.has_missing_files
 
     @property
     def has_local_actions(self) -> bool:
@@ -502,15 +583,31 @@ class SyncSession:
             in (Step.FETCH, Step.PUSH_REMOTE, Step.SCAN_MEDIA, Step.TRANSFER)
             else self.runner
         )
-        runner.run(func, on_success, lambda exc: self._on_step_error(exc, step))
+        runner.run(
+            func,
+            self._guarded(on_success),
+            self._guarded(lambda exc: self._on_step_error(exc, step)),
+        )
+
+    def _guarded(self, callback: Callable[[Any], None]) -> Callable[[Any], None]:
+        """Wrap ``callback`` so a run the user has left cannot resume itself.
+
+        :param callback: What to call if the run is still the current one.
+        :returns: The wrapped callback.
+        """
+        run_id = self._run_id
+
+        def guarded(value: Any) -> None:
+            if run_id == self._run_id:
+                callback(value)
+            else:
+                LOG.debug("Dropping a callback from an abandoned run.")
+
+        return guarded
 
     # --------------------------------------------------------
     # Intents
     # --------------------------------------------------------
-    def begin(self) -> None:
-        """Leave the introduction page."""
-        self._advance()
-
     def submit_credentials(
         self,
         url: str,
@@ -520,10 +617,15 @@ class SyncSession:
     ) -> None:
         """Connect, authenticate, then download and diff the remote tree.
 
-        On an authentication or permission problem the session stays on
-        :attr:`State.LOGIN` with :attr:`login_error` set. Credentials are stored
-        only once the server has accepted them, so a typo never reaches the
-        keyring.
+        The connection is made off the main loop: building the backend fetches
+        an access token, which is a network round trip that used to block the
+        window before it had painted anything.
+
+        Anything the user can correct -- a wrong password, a server that is too
+        old, an account without the required permission -- returns to
+        :attr:`State.CONNECT` with :attr:`login_error` set, rather than ending
+        the run. Credentials are stored only once the server has accepted them,
+        so a typo never reaches the keyring.
 
         :param url: Server URL, already sanitized by the caller.
         :param username: Login name.
@@ -535,45 +637,23 @@ class SyncSession:
         self.username = username
         self.password = password
         self.remember_password = remember_password
-
-        try:
-            self.backend = self._backend_factory(url, username, password)
-            permissions = self.backend.get_permissions()
-        except Exception as exc:  # noqa: BLE001 -- classified below
-            self.backend = None
-            self.login_error = self._classify(exc, login=True)
-            self._goto(State.LOGIN)
-            return
-
-        if REQUIRED_PERMISSION not in permissions:
-            self.login_error = SyncError(ErrorKind.INSUFFICIENT_PERMISSIONS)
-            self._goto(State.LOGIN)
-            return
-
-        self.credentials.save_credentials(
-            url, username, password, remember_password
+        self._goto(State.CONNECTING)
+        self.io_runner.run(
+            self._connect,
+            self._guarded(self._on_connected),
+            self._guarded(self._on_connect_error),
         )
-        self._start_compare()
 
-    def confirm_changes(self, sync_mode: int) -> None:
-        """Accept the reviewed changes and apply them.
+    def confirm(self, sync_mode: int, transfer_media: bool = True) -> None:
+        """Accept what the review pane showed and carry it out.
 
         :param sync_mode: One of the ``MODE_*`` constants from :mod:`const`.
+        :param transfer_media: Whether to also move the missing media files.
         """
         self.sync_mode = sync_mode
+        self.transfer_media = transfer_media
         self._goto(State.APPLYING)
         self._run(Step.APPLY_LOCAL, self._apply_local, self._on_local_applied)
-
-    def confirm_files(self) -> None:
-        """Accept the media file transfer and carry it out.
-
-        Goes straight to :attr:`State.DONE` if nothing is missing.
-        """
-        if not self.has_missing_files:
-            self._advance()
-            return
-        self._goto(State.TRANSFERRING)
-        self._start_transfer()
 
     def retry(self) -> None:
         """Resume a failed run at the step that failed.
@@ -589,9 +669,7 @@ class SyncSession:
         self.error = None
         self.failed_in = None
         self._goto(
-            self._scan_resume_state
-            if step is Step.SCAN_MEDIA
-            else STATE_FOR_STEP[step]
+            self._scan_origin if step is Step.SCAN_MEDIA else STATE_FOR_STEP[step]
         )
         if step is Step.FETCH:
             self._run(Step.FETCH, self._fetch_xml, self._on_fetched)
@@ -606,6 +684,36 @@ class SyncSession:
         elif step is Step.TRANSFER:
             self._start_transfer()
 
+    def abandon(self) -> None:
+        """Stop the current run and return to the connect pane.
+
+        For changing server without closing the tool. Anything already in
+        flight belongs to the run being left, so its callbacks are dropped
+        rather than allowed to carry the session forward.
+
+        Refused once writing has begun: walking away mid-apply would leave the
+        user with no record of what got through.
+        """
+        if self.state in (State.APPLYING, State.TRANSFERRING):
+            LOG.debug("Not abandoning a run that has started writing.")
+            return
+        LOG.info("Abandoning the run at %s.", self.state.name)
+        self._run_id += 1
+        self._release_remote()
+        self.tree_name = ""
+        self.error = None
+        self.login_error = None
+        self.failed_in = None
+        self.changes = []
+        self.actions = []
+        self.missing_local = []
+        self.missing_remote = []
+        self.missing_both = []
+        self.downloaded = {}
+        self.uploaded = {}
+        self._payload = None
+        self._goto(State.CONNECT)
+
     def cancel(self) -> None:
         """Abandon the run and release the in-memory remote database."""
         self._closing = True
@@ -617,6 +725,65 @@ class SyncSession:
             self.db2.close()
             self.db2 = None
         self.sync = None  # holds references to both databases
+
+    # --------------------------------------------------------
+    # Connecting
+    # --------------------------------------------------------
+    def _connect(self) -> Connection:
+        """Authenticate and read what the server can do. Network only."""
+        self._status_from_worker(STATUS_CONNECTING)
+        backend = self._backend_factory(self.url, self.username, self.password)
+        return Connection(
+            backend=backend,
+            api_version=backend.get_api_version(),
+            task_queue=backend.has_task_queue(),
+            tree_name=backend.get_tree_name(),
+            permissions=backend.get_permissions(),
+        )
+
+    def _on_connected(self, connection: Connection) -> None:
+        """Store the credentials and start comparing, back on the main loop."""
+        if self._closing:
+            return
+        self.api_version = connection.api_version
+        self.tree_name = connection.tree_name
+        problem = self._reject_server(connection)
+        if problem is not None:
+            self.backend = None
+            self.login_error = problem
+            self._goto(State.CONNECT)
+            return
+        self.backend = connection.backend
+        self.credentials.save_credentials(
+            self.url, self.username, self.password, self.remember_password
+        )
+        self._start_compare()
+
+    def _on_connect_error(self, exc: BaseException) -> None:
+        """Return to the connect pane with something the user can act on."""
+        if self._closing:
+            return
+        self.backend = None
+        self.login_error = self._classify(exc, login=True)
+        self._goto(State.CONNECT)
+
+    @staticmethod
+    def _reject_server(connection: Connection) -> SyncError | None:
+        """Return why this server cannot be synced with, or ``None``.
+
+        Ordered from the server outwards. The version comes first because an
+        API too old to report a permission claim yields an empty set, which
+        would otherwise be reported as a problem with the user's account; what
+        the server is configured to do comes before what the account may do,
+        for the same reason.
+        """
+        if not supported_api_version(connection.api_version):
+            return SyncError(ErrorKind.SERVER_TOO_OLD, connection.api_version or "")
+        if not connection.task_queue:
+            return SyncError(ErrorKind.SERVER_NO_TASK_QUEUE)
+        if REQUIRED_PERMISSION not in connection.permissions:
+            return SyncError(ErrorKind.INSUFFICIENT_PERMISSIONS)
+        return None
 
     # --------------------------------------------------------
     # Comparison
@@ -678,14 +845,12 @@ class SyncSession:
         self.changes = self.sync.get_changes()
 
     def _on_compared(self, _result: Any) -> None:
-        """Move on once the diff is available."""
+        """Check the media state too, so the review can present both at once."""
         if self._closing:
             return
-        if self.changes:
-            self._advance()
-            return
-        LOG.info("Databases are in sync.")
-        self.credentials.set_timestamp(self.url, self.username, self.clock.now())
+        if not self.changes:
+            LOG.info("Databases are in sync.")
+            self.credentials.set_timestamp(self.url, self.username, self.clock.now())
         self._start_media_scan()
 
     # --------------------------------------------------------
@@ -762,6 +927,7 @@ class SyncSession:
         assert self.backend is not None
         if not self._payload:
             return
+        self._status_from_worker(STATUS_PUSHING)
         # Always force: the server compares against the XML-round-tripped
         # object, which differs from the live one through serialization
         # artifacts alone, yielding spurious 409s.
@@ -773,11 +939,24 @@ class SyncSession:
         self._payload = []
 
     def _on_applied(self, _result: Any) -> None:
-        """Record the sync time and collect media state."""
+        """Record the sync time and move on to the media files."""
         if self._closing:
             return
         self.credentials.set_timestamp(self.url, self.username, self.clock.now())
-        self._start_media_scan()
+        if self._media_objects_changed():
+            self._start_media_scan()
+            return
+        self._finish_or_transfer()
+
+    def _media_objects_changed(self) -> bool:
+        """Whether the applied actions added or removed media objects.
+
+        Their files are absent on whichever side just received them, so the
+        scan taken before the review no longer describes what to transfer and
+        has to be repeated. Most runs touch no media object at all and are
+        spared the second round trip.
+        """
+        return any(action[2] == "Media" for action in self.actions)
 
     # --------------------------------------------------------
     # Media
@@ -785,11 +964,12 @@ class SyncSession:
     def _start_media_scan(self) -> None:
         """Ask the server which files it lacks, off the main loop.
 
-        The state to come back to is captured here, because a failure moves the
-        session to ``FAILED`` and a retry has to resume from where the scan was
-        scheduled rather than from wherever it ended up.
+        The stage the scan was scheduled from is recorded, because a scan
+        happens both before the review and again after an apply that touched
+        media objects, and the two carry on differently. It also survives a
+        failure, which would otherwise leave a retry no way back.
         """
-        self._scan_resume_state = self.state
+        self._scan_origin = self.state
         self._run(Step.SCAN_MEDIA, self._fetch_remote_missing, self._on_media_scanned)
 
     def _fetch_remote_missing(self) -> list[dict[str, Any]]:
@@ -797,6 +977,7 @@ class SyncSession:
         if self._closing:
             return []
         assert self.backend is not None
+        self._status_from_worker(STATUS_SCANNING_MEDIA)
         return self.backend.get_missing_files() or []
 
     def _on_media_scanned(self, remote: list[dict[str, Any]] | None) -> None:
@@ -804,7 +985,16 @@ class SyncSession:
         if self._closing:
             return
         self._scan_media(remote or [])
+        if self._scan_origin is State.APPLYING:
+            self._finish_or_transfer()
+            return
         self._advance()
+
+    def _finish_or_transfer(self) -> None:
+        """Enter whatever follows the apply stage, and start its work."""
+        self._advance()
+        if self.state is State.TRANSFERRING:
+            self._start_transfer()
 
     def _scan_media(self, remote: list[dict[str, Any]]) -> None:
         """Work out which media files are missing, and on which side.

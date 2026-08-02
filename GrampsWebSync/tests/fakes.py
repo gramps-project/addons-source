@@ -38,6 +38,7 @@ from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError
 
+from const import MIN_API_VERSION_TEXT
 from gramps.cli.user import User
 from gramps.gen.db import DbTxn
 from gramps.gen.db.utils import make_database
@@ -46,6 +47,9 @@ from gramps.plugins.export.exportxml import export_data
 
 #: Permissions a Gramps Web user needs for a sync to be allowed to proceed.
 DEFAULT_PERMISSIONS = frozenset({"ViewPrivate", "EditObject", "AddObject"})
+
+#: A Gramps Web API version new enough to pass :data:`const.MIN_API_VERSION`.
+DEFAULT_API_VERSION = f"{MIN_API_VERSION_TEXT}.0"
 
 
 def http_error(code: int, url: str = "https://example.org/api/") -> HTTPError:
@@ -71,6 +75,10 @@ class FakeGrampsWebServer:
     :param db: The database to serve. A fresh empty one is created if omitted.
     :param permissions: Permissions to report for the logged-in user.
     :param lang: Value returned by :meth:`get_lang`.
+    :param api_version: Value returned by :meth:`get_api_version`. ``None``
+        stands for a server too old to report one at all.
+    :param task_queue: Whether the server reports a background task queue.
+    :param tree_name: What the server calls the tree it serves.
     """
 
     def __init__(
@@ -78,6 +86,9 @@ class FakeGrampsWebServer:
         db=None,
         permissions: set[str] | frozenset[str] = DEFAULT_PERMISSIONS,
         lang: str | None = "en",
+        api_version: str | None = DEFAULT_API_VERSION,
+        task_queue: bool = True,
+        tree_name: str = "Family Tree",
     ) -> None:
         if db is None:
             db = make_database("sqlite")
@@ -85,6 +96,9 @@ class FakeGrampsWebServer:
         self.db = db
         self.permissions = set(permissions)
         self.lang = lang
+        self.api_version = api_version
+        self.task_queue = task_queue
+        self.tree_name = tree_name
         self.user = User(auto_accept=True, quiet=True)
 
         #: Handles of media objects whose file the server actually holds.
@@ -128,6 +142,21 @@ class FakeGrampsWebServer:
         """Return the logged-in user's permissions."""
         self._enter("get_permissions")
         return set(self.permissions)
+
+    def get_api_version(self) -> str | None:
+        """Return the Gramps Web API version this server claims to run."""
+        self._enter("get_api_version")
+        return self.api_version
+
+    def has_task_queue(self) -> bool:
+        """Whether this server claims a background task queue."""
+        self._enter("has_task_queue")
+        return self.task_queue
+
+    def get_tree_name(self) -> str:
+        """Return the name this server gives its tree."""
+        self._enter("get_tree_name")
+        return self.tree_name
 
     def get_lang(self) -> str | None:
         """Return the server's configured language."""
