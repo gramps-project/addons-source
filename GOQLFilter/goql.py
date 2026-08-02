@@ -56,7 +56,7 @@ from typing import Any
 # GTK/Gnome modules
 #
 # -------------------------------------------------------------------------
-from gi.repository import Gdk, Gtk
+from gi.repository import Gdk, GLib, Gtk
 
 # -------------------------------------------------------------------------
 #
@@ -195,6 +195,18 @@ class QueryFilter(Gramplet):
         scroller.set_min_content_height(TEXT_AREA_HEIGHT)
         scroller.add(self.text_view)
 
+        # Reminds the user this expression's fields are specific to this
+        # view -- e.g. "gender" compiles here but not in the Family filter.
+        namespace_label = Gtk.Label()
+        namespace_label.set_markup(
+            "<b>%s</b>" % GLib.markup_escape_text(_("%s filter") % _(self.NAMESPACE))
+        )
+        namespace_label.set_xalign(0)
+
+        editor_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=3)
+        editor_box.pack_start(namespace_label, False, False, 0)
+        editor_box.pack_start(scroller, True, True, 0)
+
         # Same button shapes/icons as the built-in rule-based sidebar filter
         # (`gui/filters/sidebar/_sidebarfilter.py`'s `_init_interface`): a
         # plain mnemonic "Find" button, an icon+label "Reset", plain-text
@@ -251,7 +263,7 @@ class QueryFilter(Gramplet):
         # is also user-draggable afterward, which a fixed split wouldn't be.
         self.paned = Gtk.Paned(orientation=Gtk.Orientation.VERTICAL)
         self.paned.set_border_width(6)
-        self.paned.pack1(scroller, True, True)
+        self.paned.pack1(editor_box, True, True)
         self.paned.pack2(bottom_box, False, True)
         self._paned_position_set = False
         self.paned.connect("size-allocate", self._init_paned_position)
