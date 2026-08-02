@@ -66,7 +66,19 @@ MODE_BIDIRECTIONAL = 0
 MODE_RESET_TO_LOCAL = 1
 MODE_RESET_TO_REMOTE = 2
 
-#: Modes that delete rather than propagate. The view warns about these instead
-#: of presenting them as equal-weight peers of the default. Display text lives
-#: in the view, which is where translation happens.
+#: The modes offered, in the order they are presented. Display text lives in
+#: the view, which is where translation happens.
+SYNC_MODES = (MODE_BIDIRECTIONAL, MODE_RESET_TO_LOCAL, MODE_RESET_TO_REMOTE)
+
+#: Modes that discard one side's changes wholesale rather than propagating
+#: them. The view warns about these instead of presenting them as equal-weight
+#: peers of the default.
 DESTRUCTIVE_MODES = frozenset({MODE_RESET_TO_LOCAL, MODE_RESET_TO_REMOTE})
+
+#: Oldest Gramps Web API this addon will sync against, as ``(major, minor)``.
+#: Checked at connect time so that an unsupported server says so, instead of
+#: failing later in a way that reads as a problem with the user's account.
+MIN_API_VERSION = (3, 0)
+
+#: :data:`MIN_API_VERSION` as it is written out for the user.
+MIN_API_VERSION_TEXT = f"{MIN_API_VERSION[0]}.{MIN_API_VERSION[1]}"

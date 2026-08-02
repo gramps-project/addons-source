@@ -30,18 +30,23 @@ def fake_session(
     error: SyncError | None = None,
     changes: list | None = None,
     has_missing_files: bool = False,
+    transfer_media: bool = True,
 ) -> SimpleNamespace:
     """Build a stand-in exposing the attributes :func:`next_state` reads.
 
     :param error: A terminal error, if any.
     :param changes: The pending change list.
     :param has_missing_files: Whether media files are missing on either side.
+    :param transfer_media: Whether the confirmed run should move media files.
     :returns: The stand-in session.
     """
+    changes = changes if changes is not None else []
     return SimpleNamespace(
         error=error,
-        changes=changes if changes is not None else [],
+        changes=changes,
         has_missing_files=has_missing_files,
+        has_review_content=bool(changes or has_missing_files),
+        will_transfer=transfer_media and has_missing_files,
     )
 
 
@@ -52,46 +57,48 @@ class NextStateTest(unittest.TestCase):
         """With both changes and missing files, every state is visited."""
         session = fake_session(changes=["a change"], has_missing_files=True)
         expected = [
-            (State.INTRO, State.LOGIN),
-            (State.LOGIN, State.COMPARING),
-            (State.COMPARING, State.REVIEW_CHANGES),
-            (State.REVIEW_CHANGES, State.APPLYING),
-            (State.APPLYING, State.REVIEW_FILES),
-            (State.REVIEW_FILES, State.TRANSFERRING),
+            (State.CONNECT, State.CONNECTING),
+            (State.CONNECTING, State.COMPARING),
+            (State.COMPARING, State.REVIEW),
+            (State.REVIEW, State.APPLYING),
+            (State.APPLYING, State.TRANSFERRING),
             (State.TRANSFERRING, State.DONE),
         ]
         for state, following in expected:
             with self.subTest(state=state.name):
                 self.assertIs(next_state(state, session), following)
 
-    def test_no_changes_but_missing_files_goes_to_the_media_stage(self) -> None:
+    def test_media_alone_is_worth_reviewing(self) -> None:
+        """Transferring files is a decision even when no object changed."""
         session = fake_session(changes=[], has_missing_files=True)
-        self.assertIs(next_state(State.COMPARING, session), State.REVIEW_FILES)
+        self.assertIs(next_state(State.COMPARING, session), State.REVIEW)
 
     def test_nothing_to_do_at_all_ends_the_run(self) -> None:
-        """Fully in sync: no confirmation page of any kind is shown."""
+        """Fully in sync: no confirmation of any kind is shown."""
         session = fake_session(changes=[], has_missing_files=False)
         self.assertIs(next_state(State.COMPARING, session), State.DONE)
 
     def test_applying_with_no_missing_files_ends_the_run(self) -> None:
-        """The media page is skipped rather than shown with empty lists."""
+        """The transfer stage is skipped rather than entered with nothing to do."""
         session = fake_session(changes=["a change"], has_missing_files=False)
         self.assertIs(next_state(State.APPLYING, session), State.DONE)
 
     def test_changes_present_requires_confirmation(self) -> None:
         """Any pending change must be confirmed before it is applied."""
         session = fake_session(changes=["a change"])
-        self.assertIs(next_state(State.COMPARING, session), State.REVIEW_CHANGES)
+        self.assertIs(next_state(State.COMPARING, session), State.REVIEW)
 
-    def test_no_missing_files_skips_transfer(self) -> None:
-        """With all media present on both sides, the run ends after review."""
-        session = fake_session(has_missing_files=False)
-        self.assertIs(next_state(State.REVIEW_FILES, session), State.DONE)
+    def test_declining_the_media_transfer_skips_it(self) -> None:
+        """Unchecking the box on the review pane must actually prevent it."""
+        session = fake_session(
+            changes=["a change"], has_missing_files=True, transfer_media=False
+        )
+        self.assertIs(next_state(State.APPLYING, session), State.DONE)
 
     def test_missing_files_requires_transfer(self) -> None:
         """Missing media on either side means a transfer stage."""
         session = fake_session(has_missing_files=True)
-        self.assertIs(next_state(State.REVIEW_FILES, session), State.TRANSFERRING)
+        self.assertIs(next_state(State.APPLYING, session), State.TRANSFERRING)
 
 
 class ErrorShortCircuitTest(unittest.TestCase):

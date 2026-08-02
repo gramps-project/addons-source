@@ -241,7 +241,7 @@ class RunResult:
     @property
     def final_state(self) -> State:
         """The state the session ended in."""
-        return self.states[-1] if self.states else State.INTRO
+        return self.states[-1] if self.states else State.CONNECT
 
     @property
     def error(self):
@@ -352,31 +352,31 @@ class SyncScenario:
     def run(
         self,
         mode: int = MODE_BIDIRECTIONAL,
-        confirm_files: bool = True,
+        confirm: bool = True,
+        transfer_media: bool = True,
         url: str = DEFAULT_URL,
         username: str = DEFAULT_USERNAME,
         password: str = "secret",
     ) -> RunResult:
-        """Drive a complete sync, answering every confirmation.
+        """Drive a complete sync, answering the confirmation.
 
-        Stops early if the session fails or returns to the login page.
+        Stops early if the session fails or returns to the connect pane.
 
         :param mode: The sync mode to confirm with.
-        :param confirm_files: Whether to accept the media transfer. ``False``
-            leaves the session on :attr:`State.REVIEW_FILES`.
+        :param confirm: Whether to accept at all. ``False`` leaves the session
+            on :attr:`State.REVIEW`.
+        :param transfer_media: Whether to accept the media transfer along with
+            the object changes.
         :param url: Server URL to submit.
         :param username: User name to submit.
         :param password: Password to submit.
         :returns: A :class:`RunResult` describing the run.
         """
         session = self.make_session()
-        session.begin()
         session.submit_credentials(url, username, password)
 
-        if session.state is State.REVIEW_CHANGES:
-            session.confirm_changes(mode)
-        if session.state is State.REVIEW_FILES and confirm_files:
-            session.confirm_files()
+        if session.state is State.REVIEW and confirm:
+            session.confirm(mode, transfer_media)
 
         return RunResult(
             states=list(self.listener.states),
