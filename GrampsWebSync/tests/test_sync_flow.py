@@ -76,10 +76,10 @@ class InSyncTest(SyncFlowTestCase):
         self.assertIs(result.final_state, State.DONE)
 
     def test_confirmation_stage_is_skipped(self) -> None:
-        """With nothing to confirm, the flow bypasses the review page."""
+        """With nothing to confirm, the flow bypasses the review pane."""
         scenario = self.make_scenario()
         result = scenario.run()
-        self.assertNotIn(State.REVIEW_CHANGES, result.states)
+        self.assertNotIn(State.REVIEW, result.states)
         self.assertNotIn(State.APPLYING, result.states)
 
     def test_nothing_is_sent_to_the_server(self) -> None:
@@ -88,13 +88,13 @@ class InSyncTest(SyncFlowTestCase):
         scenario.run()
         self.assertEqual(scenario.server.committed, [])
 
-    def test_media_confirmation_is_skipped_when_nothing_is_missing(self) -> None:
-        """No page may be shown with two empty lists and an Apply button."""
+    def test_a_run_with_nothing_to_do_goes_straight_to_the_result(self) -> None:
+        """No pane may be shown with nothing on it but an Apply button."""
         scenario = self.make_scenario()
         result = scenario.run()
-        self.assertNotIn(State.REVIEW_FILES, result.states)
+        self.assertNotIn(State.REVIEW, result.states)
         self.assertEqual(
-            result.states, [State.LOGIN, State.COMPARING, State.DONE]
+            result.states, [State.CONNECTING, State.COMPARING, State.DONE]
         )
 
 
@@ -219,7 +219,8 @@ class MediaFileTest(SyncFlowTestCase):
         media = scenario.db1.get_media_from_handle(handle)
         local_path = os.path.join(scenario.local_media_dir, media.get_path())
         self.assertTrue(os.path.exists(local_path))
-        self.assertEqual(open(local_path, "rb").read(), b"server image bytes")
+        with open(local_path, "rb") as fobj:
+            self.assertEqual(fobj.read(), b"server image bytes")
 
     def test_file_missing_remotely_is_uploaded(self) -> None:
         scenario = SyncScenario()
@@ -235,6 +236,51 @@ class MediaFileTest(SyncFlowTestCase):
         self.assertEqual(result.session.uploaded, {"O0002": True})
         self.assertEqual(scenario.server.media_files[handle], b"local bytes")
 
+    def test_the_review_knows_what_will_be_transferred(self) -> None:
+        """The media scan runs before the review, not after the apply, so the
+        checkbox can state the counts rather than promising the unknown."""
+        scenario = SyncScenario()
+        self.addCleanup(scenario.close)
+        scenario.local.add_media("O0010", "up.jpg", changed_at=T0)
+        scenario.share()
+
+        session = scenario.make_session()
+        session.submit_credentials(URL, USERNAME, "secret")
+
+        self.assertIs(session.state, State.REVIEW)
+        self.assertEqual([gid for gid, _h in session.missing_remote], ["O0010"])
+
+    def test_media_arriving_with_the_sync_is_still_transferred(self) -> None:
+        """A media object added by the sync has no file on the receiving side,
+        which the scan taken before the review cannot have seen."""
+        scenario = SyncScenario()
+        self.addCleanup(scenario.close)
+        scenario.share()
+        handle = scenario.remote.add_media("O0011", "new.jpg", changed_at=T2)
+        scenario.server.media_files[handle] = b"server image bytes"
+
+        result = scenario.run()
+
+        self.assertIs(result.final_state, State.DONE)
+        self.assertEqual(result.session.downloaded, {"O0011": True})
+        media = scenario.db1.get_media_from_handle(handle)
+        local_path = os.path.join(scenario.local_media_dir, media.get_path())
+        with open(local_path, "rb") as fobj:
+            self.assertEqual(fobj.read(), b"server image bytes")
+
+    def test_a_run_touching_no_media_object_scans_only_once(self) -> None:
+        """The second scan exists for the case above; making every run pay for
+        it would be a round trip for nothing."""
+        scenario = SyncScenario()
+        self.addCleanup(scenario.close)
+        scenario.seed_person("I0001", surname="Doe", changed_at=T0)
+        scenario.share()
+        scenario.local.edit_person("I0001", surname="Müller", changed_at=T2)
+
+        scenario.run()
+
+        self.assertEqual(scenario.server.calls.count("get_missing_files"), 1)
+
     def test_transfer_stage_is_skipped_when_all_files_are_present(self) -> None:
         scenario = SyncScenario()
         self.addCleanup(scenario.close)
@@ -247,16 +293,30 @@ class MediaFileTest(SyncFlowTestCase):
         self.assertNotIn(State.TRANSFERRING, result.states)
         self.assertIs(result.final_state, State.DONE)
 
-    def test_declining_the_transfer_leaves_the_session_on_review(self) -> None:
-        """Declining the transfer must neither advance nor fail."""
+    def test_leaving_the_review_unanswered_transfers_nothing(self) -> None:
+        """Until the user confirms, the run must neither advance nor fail."""
         scenario = SyncScenario()
         self.addCleanup(scenario.close)
         scenario.local.add_media("O0004", "skipped.jpg", changed_at=T0)
         scenario.share()
 
-        result = scenario.run(confirm_files=False)
+        result = scenario.run(confirm=False)
 
-        self.assertIs(result.final_state, State.REVIEW_FILES)
+        self.assertIs(result.final_state, State.REVIEW)
+        self.assertEqual(scenario.server.media_files, {})
+
+    def test_unchecking_the_media_box_skips_the_transfer(self) -> None:
+        """The box is the only control over media now that the second
+        confirmation page is gone, so it has to actually govern."""
+        scenario = SyncScenario()
+        self.addCleanup(scenario.close)
+        scenario.local.add_media("O0005", "declined.jpg", changed_at=T0)
+        scenario.share()
+
+        result = scenario.run(transfer_media=False)
+
+        self.assertIs(result.final_state, State.DONE)
+        self.assertNotIn(State.TRANSFERRING, result.states)
         self.assertEqual(scenario.server.media_files, {})
 
 

@@ -197,15 +197,25 @@ class ConfigCredentialStore:
     switching servers no longer discards one.
     """
 
-    def __init__(self, keyring: Keyring | None = None, config: Any = None) -> None:
+    def __init__(
+        self,
+        keyring: Keyring | None = None,
+        config: Any = None,
+        tree_id: str = "",
+    ) -> None:
         """Initialize the store.
 
         :param keyring: Password storage. A real one is built if omitted.
         :param config: An already-registered config manager. Tests pass one
             pointed at a temporary directory so a run cannot write to the
             user's own Gramps configuration.
+        :param tree_id: Identifier of the local family tree that is open, from
+            ``db.get_dbid()``. Entries record the tree they were synced from,
+            so that opening another one does not silently offer this tree's
+            server. Empty means the tree is unknown and no entry can match.
         """
         self.keyring = keyring if keyring is not None else Keyring()
+        self.tree_id = tree_id or ""
         self.config = (
             config if config is not None else configman.register_manager("webapisync")
         )
@@ -252,9 +262,36 @@ class ConfigCredentialStore:
             return str(pair[0]), str(pair[1])
         return None
 
+    def _for_tree(self, servers: list[dict[str, Any]]) -> dict[str, Any] | None:
+        """Return the entry recorded against the tree that is open, if any.
+
+        The last-used entry is preferred among several, which only arises if
+        one tree has been synced to more than one account.
+        """
+        if not self.tree_id:
+            return None
+        matches = [
+            entry for entry in servers if entry.get("tree_id") == self.tree_id
+        ]
+        if not matches:
+            return None
+        pair = self._last_used()
+        if pair is not None:
+            entry = self._find(matches, *pair)
+            if entry is not None:
+                return entry
+        return matches[0]
+
     def _current(self) -> dict[str, Any] | None:
-        """Return the last-used entry, falling back to the only one stored."""
+        """Return the entry to offer: this tree's, else the last used.
+
+        Falling back to the last-used entry rather than to nothing keeps the
+        connect pane pre-filled for anyone whose entries predate tree ids.
+        """
         servers = self._servers()
+        entry = self._for_tree(servers)
+        if entry is not None:
+            return entry
         pair = self._last_used()
         if pair is not None:
             entry = self._find(servers, *pair)
@@ -344,6 +381,17 @@ class ConfigCredentialStore:
             return None
         return self.keyring.get(url, username)
 
+    def get_remember_password(self) -> bool:
+        """Whether the entry on offer is allowed to keep its password.
+
+        :returns: The stored choice, defaulting to true for a server that has
+            not been seen before.
+        """
+        entry = self._current()
+        if entry is None:
+            return True
+        return bool(entry.get("remember_password", True))
+
     def get_timestamp(self, url: str, username: str) -> float:
         """Return the sync baseline for one server.
 
@@ -355,7 +403,13 @@ class ConfigCredentialStore:
         return float(entry.get("timestamp", 0) or 0) if entry else 0.0
 
     def set_timestamp(self, url: str, username: str, timestamp: float) -> None:
-        """Record a successful sync against one server."""
+        """Record a successful sync against one server.
+
+        This is also where an entry adopts the tree that is open. Merely
+        authenticating is deliberately not enough: connecting to the wrong
+        server by mistake would otherwise claim the tree before the user has
+        seen what the sync would do, and go on connecting there unprompted.
+        """
         servers = self._servers()
         entry = self._find(servers, url, username)
         if entry is None:
@@ -366,9 +420,37 @@ class ConfigCredentialStore:
             }
             servers.append(entry)
         entry["timestamp"] = timestamp
+        if self.tree_id:
+            self._claim_tree(servers, entry)
         LOG.debug("Recording last successful sync at %s", timestamp)
         self.config.set("credentials.last_used", [normalize_url(url), username])
         self._write(servers)
+
+    def _claim_tree(
+        self, servers: list[dict[str, Any]], entry: dict[str, Any]
+    ) -> None:
+        """Record the open tree on ``entry``, and take it off every other one.
+
+        A tree has one current server. An earlier claim left in place would
+        make the choice depend on list order whenever the last-used entry is
+        neither of them, and would survive moving a tree to another server.
+
+        The abandoned entry also loses its baseline. That baseline asserts the
+        tree and that server were identical at a moment which syncing elsewhere
+        has since made untrue, and since the comparison takes the later of the
+        stored baseline and what it computes, a stale one can only push the
+        cutoff too far forward -- the direction in which objects stop looking
+        added and start looking deleted.
+        """
+        for other in servers:
+            if other is not entry and other.get("tree_id") == self.tree_id:
+                LOG.info(
+                    "Tree moved away from %s; dropping its baseline.",
+                    other.get("url"),
+                )
+                del other["tree_id"]
+                other["timestamp"] = 0.0
+        entry["tree_id"] = self.tree_id
 
     def save_credentials(
         self, url: str, username: str, password: str, remember_password: bool = True
@@ -417,6 +499,27 @@ class ConfigCredentialStore:
         if self._last_used() == (url, username):
             self.config.set("credentials.last_used", [])
         self._write(servers)
+
+    def is_for_open_tree(self) -> bool:
+        """Whether the stored credentials belong to the tree that is open.
+
+        Only then may a server be contacted without the user asking, since a
+        sync against the wrong tree proposes deleting both of them.
+        """
+        return self._for_tree(self._servers()) is not None
+
+    def is_from_another_tree(self) -> bool:
+        """Whether the credentials on offer were last synced from a different tree.
+
+        Distinguished from merely having no tree recorded, which is what every
+        entry looks like until its first sync after upgrading, and which says
+        nothing either way.
+        """
+        entry = self._current()
+        if entry is None or not self.tree_id:
+            return False
+        recorded = entry.get("tree_id", "")
+        return bool(recorded) and recorded != self.tree_id
 
     def keyring_error(self) -> KeyringUnavailable | None:
         """Return the keyring failure to report, if one has occurred."""

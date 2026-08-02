@@ -226,6 +226,14 @@ class WebApiHandler:
         """Fet API version info."""
         return (self.metadata.get("gramps_webapi") or {}).get("version")
 
+    def get_tree_name(self) -> str:
+        """Return the name the server gives the tree it is serving."""
+        return ((self.metadata.get("database") or {}).get("name") or "")
+
+    def has_task_queue(self) -> bool:
+        """Whether the server runs transactions on a background task queue."""
+        return bool((self.metadata.get("server") or {}).get("task_queue"))
+
     def download_xml(self) -> Path:
         """Download an XML export and return the path of the temp file."""
         url = f"{self.url}/exporters/gramps/file"
@@ -249,16 +257,12 @@ class WebApiHandler:
     ) -> None:
         """Commit the changes to the remote database."""
         if payload:
-            api_version = self.get_api_version()
-            background = api_version and parse_version(api_version) >= (2, 7)
             data = json.dumps(payload).encode()
-            endpoint = f"{self.url}/transactions/"
-            if force:
-                endpoint = f"{endpoint}?force=1"
-                if background:
-                    endpoint = f"{endpoint}&background=1"
-            elif background:
-                endpoint = f"{endpoint}?background=1"
+            # Always in the background. The version this addon requires always
+            # supports it, and a server whose task queue is switched off is
+            # refused at connect time rather than left to time out here.
+            query = "force=1&background=1" if force else "background=1"
+            endpoint = f"{self.url}/transactions/?{query}"
             req = Request(
                 endpoint,
                 data=data,
