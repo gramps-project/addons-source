@@ -44,7 +44,7 @@ from enum import Enum, auto
 from pathlib import Path
 from typing import Any, Protocol
 
-from const import MIN_API_VERSION, MODE_BIDIRECTIONAL, Actions
+from const import API_MAJOR, MIN_API_VERSION, MODE_BIDIRECTIONAL, Actions
 from diffhandler import (
     WebApiSyncDiffHandler,
     changes_to_actions,
@@ -138,6 +138,7 @@ class ErrorKind(Enum):
     INVALID_RESPONSE = auto()
     INSUFFICIENT_PERMISSIONS = auto()
     SERVER_TOO_OLD = auto()
+    SERVER_TOO_NEW = auto()
     SERVER_NO_TASK_QUEUE = auto()
     XML_IMPORT_FAILED = auto()
     APPLY_FAILED = auto()
@@ -198,22 +199,33 @@ def classify_http_error(exc: Any, *, login: bool) -> SyncError:
     return SyncError(kind, str(exc.code))
 
 
-def supported_api_version(version: str | None) -> bool:
-    """Whether a server reporting ``version`` is new enough to sync with.
+def api_version_problem(version: str | None) -> ErrorKind | None:
+    """Classify a server's API version against what this addon speaks.
 
-    A server that reports no version at all predates the field and is treated
-    as unsupported.
+    The two ends need opposite advice -- update the server, or move to a newer
+    Gramps -- so they are separate kinds rather than one verdict.
+
+    A version that is absent or unreadable counts as too old: the field
+    predates neither bound, and a server that cannot report one at all is far
+    likelier to be ancient than to be from the future.
 
     :param version: The server's ``gramps_webapi`` version, as reported.
-    :returns: Whether a sync may proceed against it.
+    :returns: The problem, or ``None`` if the version is usable.
     """
     if not version:
-        return False
+        return ErrorKind.SERVER_TOO_OLD
     try:
-        return parse_version(version) >= MIN_API_VERSION
+        major, _minor = parse_version(version)
     except ValueError:
         LOG.warning("Server reported an unreadable API version: %s", version)
-        return False
+        return ErrorKind.SERVER_TOO_OLD
+    if major > API_MAJOR:
+        return ErrorKind.SERVER_TOO_NEW
+    # An older major is below the minimum too, so one comparison covers both
+    # an out-of-date major and an out-of-date minor within the current one.
+    if (major, _minor) < MIN_API_VERSION:
+        return ErrorKind.SERVER_TOO_OLD
+    return None
 
 
 # ------------------------------------------------------------
@@ -777,8 +789,9 @@ class SyncSession:
         the server is configured to do comes before what the account may do,
         for the same reason.
         """
-        if not supported_api_version(connection.api_version):
-            return SyncError(ErrorKind.SERVER_TOO_OLD, connection.api_version or "")
+        version_problem = api_version_problem(connection.api_version)
+        if version_problem is not None:
+            return SyncError(version_problem, connection.api_version or "")
         if not connection.task_queue:
             return SyncError(ErrorKind.SERVER_NO_TASK_QUEUE)
         if REQUIRED_PERMISSION not in connection.permissions:
