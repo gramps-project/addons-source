@@ -104,6 +104,22 @@ class ErrorMessageTest(unittest.TestCase):
         self.assertIn("2.4.1", message)
         self.assertIn(MIN_API_VERSION_TEXT, message)
 
+    def test_the_two_version_bounds_advise_opposite_remedies(self) -> None:
+        """Too old means update the server. Too new means move to a newer
+        Gramps: an API major pairs with a Gramps release line, so no build of
+        this addon will ever speak the next one. Sending someone after the
+        wrong one has them hunting for something that does not exist."""
+        too_old = error_message(ErrorKind.SERVER_TOO_OLD, "1.0.0")
+        too_new = error_message(ErrorKind.SERVER_TOO_NEW, "9.0.0")
+        self.assertIn("update the server", too_old.lower())
+        self.assertIn("newer version of gramps", too_new.lower())
+        self.assertNotIn("update the server", too_new.lower())
+        self.assertNotIn("update the addon", too_new.lower())
+
+    def test_the_version_found_is_named_at_both_ends(self) -> None:
+        self.assertIn("1.0.0", error_message(ErrorKind.SERVER_TOO_OLD, "1.0.0"))
+        self.assertIn("9.0.0", error_message(ErrorKind.SERVER_TOO_NEW, "9.0.0"))
+
     def test_a_server_reporting_no_version_still_gets_a_message(self) -> None:
         """The detail is empty in that case, so the general branch must cope."""
         message = error_message(ErrorKind.SERVER_TOO_OLD)

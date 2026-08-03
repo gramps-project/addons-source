@@ -23,8 +23,8 @@ from __future__ import annotations
 import unittest
 from urllib.error import URLError
 
-from const import MIN_API_VERSION, MIN_API_VERSION_TEXT
-from session import ErrorKind, State, supported_api_version
+from const import API_MAJOR, MIN_API_VERSION, MIN_API_VERSION_TEXT
+from session import ErrorKind, State, api_version_problem
 
 from .fakes import http_error
 from .scenario import (
@@ -78,6 +78,18 @@ class ApiVersionTest(unittest.TestCase):
         scenario = self.make_scenario()
         scenario.server.api_version = "1.0.0"
         scenario.run()
+        self.assertNotIn("download_xml", scenario.server.calls)
+
+    def test_a_server_from_the_future_is_refused_too(self) -> None:
+        """And pointed at Gramps, since a later API pairs with a later Gramps
+        rather than with a later build of this addon."""
+        scenario = self.make_scenario()
+        scenario.server.api_version = f"{API_MAJOR + 1}.1.0"
+
+        result = scenario.run()
+
+        self.assertIs(result.final_state, State.CONNECT)
+        self.assertIs(result.login_error.kind, ErrorKind.SERVER_TOO_NEW)
         self.assertNotIn("download_xml", scenario.server.calls)
 
     def test_a_current_server_is_accepted(self) -> None:
@@ -142,31 +154,53 @@ class TaskQueueTest(unittest.TestCase):
         self.assertIsNone(result.login_error)
 
 
-class SupportedVersionTest(unittest.TestCase):
-    """The version comparison itself."""
+class ApiVersionRangeTest(unittest.TestCase):
+    """The version comparison itself, at both ends."""
 
     def test_the_minimum_itself_is_accepted(self) -> None:
-        self.assertTrue(supported_api_version(f"{MIN_API_VERSION_TEXT}.0"))
+        self.assertIsNone(api_version_problem(f"{MIN_API_VERSION_TEXT}.0"))
 
-    def test_a_later_version_is_accepted(self) -> None:
-        self.assertTrue(supported_api_version(f"{MIN_API_VERSION[0] + 1}.0"))
+    def test_a_later_minor_of_the_same_major_is_accepted(self) -> None:
+        self.assertIsNone(api_version_problem(f"{MIN_API_VERSION[0]}.99"))
 
     def test_a_prerelease_suffix_is_ignored(self) -> None:
-        self.assertTrue(
-            supported_api_version(f"{MIN_API_VERSION_TEXT}.0-beta1")
+        self.assertIsNone(api_version_problem(f"{MIN_API_VERSION_TEXT}.0-beta1"))
+
+    def test_an_earlier_version_is_too_old(self) -> None:
+        self.assertIs(
+            api_version_problem(f"{MIN_API_VERSION[0] - 1}.9"),
+            ErrorKind.SERVER_TOO_OLD,
         )
 
-    def test_an_earlier_version_is_rejected(self) -> None:
-        self.assertFalse(supported_api_version(f"{MIN_API_VERSION[0] - 1}.9"))
+    def test_the_next_major_is_too_new(self) -> None:
+        """This branch of the addon speaks one API major, the one its Gramps
+        release line pairs with."""
+        self.assertIs(
+            api_version_problem(f"{API_MAJOR + 1}.0"), ErrorKind.SERVER_TOO_NEW
+        )
 
-    def test_nothing_at_all_is_rejected(self) -> None:
-        self.assertFalse(supported_api_version(None))
-        self.assertFalse(supported_api_version(""))
+    def test_a_much_later_major_is_too_new(self) -> None:
+        self.assertIs(
+            api_version_problem(f"{API_MAJOR + 5}.2"), ErrorKind.SERVER_TOO_NEW
+        )
+
+    def test_the_supported_major_is_not_derived_from_the_minimum(self) -> None:
+        """The two are declared separately on purpose, so raising the minimum
+        within a major cannot silently move the upper bound with it."""
+        self.assertEqual(MIN_API_VERSION[0], API_MAJOR)
+
+    def test_nothing_at_all_counts_as_too_old(self) -> None:
+        """The field predates neither bound, so a server that cannot report
+        one is far likelier to be ancient than to be from the future."""
+        self.assertIs(api_version_problem(None), ErrorKind.SERVER_TOO_OLD)
+        self.assertIs(api_version_problem(""), ErrorKind.SERVER_TOO_OLD)
 
     def test_an_unreadable_version_is_rejected_rather_than_raising(self) -> None:
         """Whatever a misbehaving server sends must not reach the user as a
         traceback."""
-        self.assertFalse(supported_api_version("not a version"))
+        self.assertIs(
+            api_version_problem("not a version"), ErrorKind.SERVER_TOO_OLD
+        )
 
 
 class LoginFailureTest(unittest.TestCase):

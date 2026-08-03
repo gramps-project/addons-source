@@ -75,10 +75,26 @@ SYNC_MODES = (MODE_BIDIRECTIONAL, MODE_RESET_TO_LOCAL, MODE_RESET_TO_REMOTE)
 #: peers of the default.
 DESTRUCTIVE_MODES = frozenset({MODE_RESET_TO_LOCAL, MODE_RESET_TO_REMOTE})
 
+#: The Gramps Web API major version this branch of the addon speaks. Each
+#: Gramps release line pairs with one: Gramps 6.0, which this branch targets,
+#: pairs with Gramps Web API 3. A server on a later major therefore needs a
+#: later *Gramps*, not a later addon -- which is why the two version errors
+#: give opposite advice.
+#:
+#: Stated rather than derived from the minimum below: "the only major we speak
+#: is whichever the minimum happens to name" is an assumption that would hold
+#: silently until it did not.
+API_MAJOR = 3
+
 #: Oldest Gramps Web API this addon will sync against, as ``(major, minor)``.
 #: Checked at connect time so that an unsupported server says so, instead of
 #: failing later in a way that reads as a problem with the user's account.
-MIN_API_VERSION = (3, 0)
+#: Raise the minor when a newer endpoint becomes a hard requirement; the major
+#: is :data:`API_MAJOR` by definition.
+MIN_API_VERSION = (API_MAJOR, 0)
 
 #: :data:`MIN_API_VERSION` as it is written out for the user.
 MIN_API_VERSION_TEXT = f"{MIN_API_VERSION[0]}.{MIN_API_VERSION[1]}"
+
+#: :data:`API_MAJOR` as it is written out for the user.
+API_MAJOR_TEXT = str(API_MAJOR)
