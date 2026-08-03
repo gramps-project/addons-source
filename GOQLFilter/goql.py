@@ -56,7 +56,18 @@ from typing import Any
 # GTK/Gnome modules
 #
 # -------------------------------------------------------------------------
-from gi.repository import Gdk, GLib, Gtk
+import warnings
+
+with warnings.catch_warnings():
+    # PyGObject warns on *import* of GLib -- not on use -- when the
+    # underlying GLib build has moved unix_signal_add_full() to GLibUnix
+    # (GLib >= 2.88). This addon never calls that function; the warning is
+    # just noise from gi's override machinery. See
+    # https://gitlab.gnome.org/GNOME/pygobject/-/work_items/757
+    warnings.filterwarnings(
+        "ignore", message=".*unix_signal_add_full.*", category=DeprecationWarning
+    )
+    from gi.repository import Gdk, GLib, Gtk
 
 # -------------------------------------------------------------------------
 #
