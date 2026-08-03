@@ -24,7 +24,7 @@ register(
     name=_("SharedPostgreSQL"),
     name_accell=_("Shared _PostgreSQL Database"),
     description=_("Shared PostgreSQL Database"),
-    version = '0.1.17',
+    version = '0.1.18',
     gramps_target_version="6.1",
     status=STABLE,
     fname="sharedpostgresql.py",
