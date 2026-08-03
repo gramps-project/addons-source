@@ -48,6 +48,7 @@ from const import (
     A_MRG_REM,
     A_UPD_LOC,
     A_UPD_REM,
+    API_MAJOR_TEXT,
     MIN_API_VERSION_TEXT,
     MODE_BIDIRECTIONAL,
     MODE_RESET_TO_LOCAL,
@@ -238,6 +239,12 @@ def error_message(kind: ErrorKind, detail: str = "") -> str:
             "This server did not report a Gramps Web API version, so it is too "
             "old to synchronize with. Version %s or newer is needed."
         ) % MIN_API_VERSION_TEXT
+    if kind is ErrorKind.SERVER_TOO_NEW:
+        return _(
+            "This server runs Gramps Web API %(found)s. This version of Gramps "
+            "works with Gramps Web API %(major)s, so synchronizing with this "
+            "server needs a newer version of Gramps."
+        ) % {"found": detail, "major": API_MAJOR_TEXT}
     if kind is ErrorKind.SERVER_NO_TASK_QUEUE:
         return _(
             "This server is not configured to use a background task queue. "
