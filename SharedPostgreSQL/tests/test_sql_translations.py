@@ -25,6 +25,7 @@ Unit tests for the SharedPostgreSQL SQL dialect translations.
 These tests cover every rewrite rule applied before a query reaches psycopg2:
   - qmark -> format paramstyle  (? -> %s)
   - REGEXP operator             (REGEXP -> ~)
+  - LIKE operator               (LIKE -> ILIKE)
   - autoincrement primary key   (INTEGER PRIMARY KEY -> SERIAL PRIMARY KEY)
   - BLOB column type            (BLOB -> BYTEA)
   - two-arg LIMIT               (LIMIT offset, count -> LIMIT count OFFSET offset)
@@ -149,6 +150,40 @@ class TestExecuteRegexpOperator(unittest.TestCase):
 
     def test_no_regexp_unchanged(self):
         sql = "SELECT * FROM person WHERE name = 'foo'"
+        self.assertEqual(_translated(sql), sql)
+
+
+# -------------------------------------------------------------------------
+#
+# TestExecuteLikeOperator
+#
+# -------------------------------------------------------------------------
+class TestExecuteLikeOperator(unittest.TestCase):
+    """LIKE -> ILIKE substitution."""
+
+    def test_like_replaced(self):
+        result = _translated("SELECT * FROM person WHERE surname LIKE ?")
+        self.assertIn("ILIKE", result)
+
+    def test_lowercase_like_replaced(self):
+        result = _translated("SELECT * FROM person WHERE surname like ?")
+        self.assertIn("ILIKE", result)
+
+    def test_not_like_replaced(self):
+        result = _translated("SELECT * FROM person WHERE surname NOT LIKE ?")
+        self.assertIn("NOT ILIKE", result)
+
+    def test_ilike_not_double_rewritten(self):
+        sql = "SELECT * FROM person WHERE surname ILIKE %s"
+        self.assertEqual(_translated(sql), sql)
+
+    def test_like_word_boundary_not_in_identifier(self):
+        """LIKE as part of a longer identifier is not replaced."""
+        sql = "SELECT likelihood FROM person"
+        self.assertEqual(_translated(sql), sql)
+
+    def test_no_like_unchanged(self):
+        sql = "SELECT * FROM person WHERE surname = %s"
         self.assertEqual(_translated(sql), sql)
 
 
