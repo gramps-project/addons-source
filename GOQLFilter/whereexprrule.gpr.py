@@ -32,7 +32,7 @@ register(
         "Matches people for which the given gramps-object-query-language "
         "where-expression evaluates to true"
     ),
-    version="1.0.0",
+    version = '1.0.1',
     gramps_target_version="6.1",
     status=STABLE,
     fname="whereexprrule.py",
@@ -52,7 +52,7 @@ register(
         "Matches families for which the given gramps-object-query-language "
         "where-expression evaluates to true"
     ),
-    version="1.0.0",
+    version = '1.0.1',
     gramps_target_version="6.1",
     status=STABLE,
     fname="whereexprrule.py",
@@ -72,7 +72,7 @@ register(
         "Matches events for which the given gramps-object-query-language "
         "where-expression evaluates to true"
     ),
-    version="1.0.0",
+    version = '1.0.1',
     gramps_target_version="6.1",
     status=STABLE,
     fname="whereexprrule.py",
@@ -92,7 +92,7 @@ register(
         "Matches places for which the given gramps-object-query-language "
         "where-expression evaluates to true"
     ),
-    version="1.0.0",
+    version = '1.0.1',
     gramps_target_version="6.1",
     status=STABLE,
     fname="whereexprrule.py",
@@ -112,7 +112,7 @@ register(
         "Matches repositories for which the given gramps-object-query-language "
         "where-expression evaluates to true"
     ),
-    version="1.0.0",
+    version = '1.0.1',
     gramps_target_version="6.1",
     status=STABLE,
     fname="whereexprrule.py",
@@ -132,7 +132,7 @@ register(
         "Matches sources for which the given gramps-object-query-language "
         "where-expression evaluates to true"
     ),
-    version="1.0.0",
+    version = '1.0.1',
     gramps_target_version="6.1",
     status=STABLE,
     fname="whereexprrule.py",
@@ -152,7 +152,7 @@ register(
         "Matches citations for which the given gramps-object-query-language "
         "where-expression evaluates to true"
     ),
-    version="1.0.0",
+    version = '1.0.1',
     gramps_target_version="6.1",
     status=STABLE,
     fname="whereexprrule.py",
@@ -172,7 +172,7 @@ register(
         "Matches media for which the given gramps-object-query-language "
         "where-expression evaluates to true"
     ),
-    version="1.0.0",
+    version = '1.0.1',
     gramps_target_version="6.1",
     status=STABLE,
     fname="whereexprrule.py",
@@ -192,7 +192,7 @@ register(
         "Matches notes for which the given gramps-object-query-language "
         "where-expression evaluates to true"
     ),
-    version="1.0.0",
+    version = '1.0.1',
     gramps_target_version="6.1",
     status=STABLE,
     fname="whereexprrule.py",
