@@ -46,6 +46,14 @@ change either data_to_object(new_data) + commit_<type>() (add and update
 both being upserts, no need to distinguish) or remove_<type>() for a
 delete.
 
+This "_class"-tagged new_data shape is only produced by gramps-web-api
+servers running against Gramps >= 6.0; a server still on Gramps 5.2 (e.g.
+gramps-web-api itself untouched) serializes objects differently (no
+"_class"/"value"/"string" triplet on GrampsType-derived fields), and
+data_to_object() raises KeyError on it. Confirmed against a live gramps52
+server: read-only endpoints (auth, /trees/, /people/ counts, etc.) work
+fine, but _sync_from_server() cannot deserialize its transaction history.
+
 Credentials come from a single environment variable, GRAMPS_WEB_API_KEY
 (see webapi_client.py for its "<REFRESH_TOKEN>*<BASE64URL(URL)>" shape and
 the tradeoffs of using a refresh token here rather than a real scoped
