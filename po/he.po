@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-29 09:58-0700\n"
-"PO-Revision-Date: 2026-07-29 16:56+0000\n"
+"PO-Revision-Date: 2026-08-01 16:13+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -28,28 +28,22 @@ msgid "Ignore birthdays with tag"
 msgstr "להתעלם מימי הולדת מתוייגים בתג"
 
 msgid "Month and day"
-msgstr ""
+msgstr "חודש ויום"
 
 msgid "Only show birthdays with tag"
 msgstr "להציג רק ימי הולדת מתוייגים בתג"
 
 msgid "Proximity to current date"
-msgstr ""
+msgstr "סמיכות לתריך נוכחי"
 
-#, fuzzy
-#| msgid "Sort by "
 msgid "Sort birthdays by"
-msgstr "מיון לפי "
+msgstr "מיון תאריכי־לידה לפי"
 
-#, fuzzy
-#| msgid "Birth date of deceased"
 msgid "Sort dates of death by"
-msgstr "לידה תאריך של נפטר"
+msgstr "מיון תאריכי־פטירה לפי"
 
-#, fuzzy
-#| msgid "a gramplet that displays the birthdays of the living people"
 msgid "a gramplet that displays death dates in sorted order"
-msgstr "גרמפלט שמציג את ימי ההולדת של האנשים החיים"
+msgstr "גרמפלט שמציג תאריכי־פטירה ממוינים עלפי סדר"
 
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "גרמפלט שמציג את ימי ההולדת של האנשים החיים"
@@ -1234,7 +1228,7 @@ msgstr "לוח־גזירים אוספים"
 
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:11
 msgid "Gramplet for grouping collections of items to aid in data entry."
-msgstr "גרמפלט לקיבוץ אוספי פריטים לסיוע בהזנת נתונים."
+msgstr "גרמפלט לקיבוץ אוספי פריטים שיסיעו בהזנת נתונים."
 
 #: ClockGramplet/ClockGramplet.gpr.py:4 ClockGramplet/ClockGramplet.gpr.py:9
 msgid "Clock"
@@ -1288,10 +1282,8 @@ msgstr ""
 "האדם הרצוי כ'אדם הבית', ולאשר את הבחירה מתפריט עריכה ← קבע אדם הבית."
 
 #: CombinedView/personpage.py:306 CombinedView/personpage.py:368
-#, fuzzy
-#| msgid "Adding Tags to family (%s)"
 msgid "Add existing child to family"
-msgstr "הוספה תגים למשפחה (%s)"
+msgstr "הוספת צאצאים קיימים למשפחה"
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -2602,7 +2594,7 @@ msgstr "האם לכלול הערה השייכת לעד (אם event_format מכי
 
 #: DenominoViso/DenominoViso.py:2636
 msgid "Whether to include a person's attributes"
-msgstr "האם לכלול תכונות אדם"
+msgstr "האם לכלול מאפייני אדם"
 
 #: DenominoViso/DenominoViso.py:2640
 msgid "Whether to include a person's addresses."
@@ -2678,11 +2670,11 @@ msgstr "האם לכלול אזכורים לתמונות"
 
 #: DenominoViso/DenominoViso.py:2683
 msgid "Source reference attribute"
-msgstr "תכונות אזכורי מקור"
+msgstr "מאפייני אזכורי מקור"
 
 #: DenominoViso/DenominoViso.py:2684
 msgid "Image attribute that should be used as source reference"
-msgstr "תכונות תמונה בהן יש להשתמש באזכור מקור"
+msgstr "מאפייני תמונה בהם יש להשתמש באזכור מקור"
 
 #: DenominoViso/DenominoViso.py:2690
 msgid "Style Options"
@@ -5328,7 +5320,7 @@ msgstr "לאפשר ביטויים סדירים."
 #: ExcludeSubtreeFilter/excludesubtree.gpr.py:24
 #: ExcludeSubtreeFilter/excludesubtree.py:106
 msgid "People reachable from <Person>, stopping at <Filter> matches"
-msgstr ""
+msgstr "אנשים תואמים, שמתחילים ב־<Person>, ומסתיימים ב־<Filter>"
 
 #: ExcludeSubtreeFilter/excludesubtree.gpr.py:26
 #: ExcludeSubtreeFilter/excludesubtree.py:109
@@ -5337,11 +5329,13 @@ msgid ""
 "and children of attached families, recursively) stopping at persons in "
 "<Filter>."
 msgstr ""
+"התאמת אנשים שמתחילים ב־<Person> (סריקת כל ההורים והצאצאים של משפחות מחוברות, "
+"באופן רקורסיבי) ומסתימים ב־<Filter>."
 
 #: ExcludeSubtreeFilter/excludesubtree.py:121
 #: FilterRules/isrelatedwithfiltermatch.py:80
 msgid "Retrieving all sub-filter matches"
-msgstr ""
+msgstr "אחזור כל התאמות מסננני המשנה"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
@@ -7954,7 +7948,7 @@ msgstr "קו בלוח 2"
 
 #: Form/form_ca.xml.h:541
 msgid "PageRef"
-msgstr "עמוד הפניה"
+msgstr "עמוד אזכור"
 
 #: Form/form_ca.xml.h:542
 msgid "2. Page from Schedule 1"
@@ -7962,7 +7956,7 @@ msgstr "2. עמוד מלוח 1"
 
 #: Form/form_ca.xml.h:543
 msgid "LineRef"
-msgstr "שורה הפניה"
+msgstr "שורת אזכור"
 
 #: Form/form_ca.xml.h:544
 msgid "3. Line from Schedule 1"
@@ -15762,7 +15756,7 @@ msgstr "דגם:"
 
 #: GrampsAssistant/grampsassistant.py:1273
 msgid "Use Foundational Model"
-msgstr "שימוש בדגם יסוד:"
+msgstr "שימוש בדגם יסוד"
 
 #: GrampsAssistant/grampsassistant.py:1315
 msgid "e.g. OPENAI_API_KEY"
@@ -18047,7 +18041,7 @@ msgstr "הכללת נתונים על מדיה"
 
 #: MediaReport/media_report.py:447
 msgid "Tags, notes and attributes will be included"
-msgstr "תגים, הערות ותכונות יכללו בדוח"
+msgstr "תגים, הערות ומאפיינים יכללו בדוח"
 
 #: MediaReport/media_report.py:450
 msgid "Media width"
@@ -18418,20 +18412,16 @@ msgid "Regular Expression"
 msgstr "ביטוי רגולרי"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:88
-#, fuzzy
-#| msgid "Index of Names"
 msgid "Scan for Names"
-msgstr "מפתח שמות"
+msgstr "סריקת שמות"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:93
 msgid "Preserve original name as alternative"
 msgstr "שימור שם מקורי כחלופה"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:160
-#, fuzzy
-#| msgid "Proposed sort"
 msgid "Proposed"
-msgstr "מיון מוצע"
+msgstr "מוצע"
 
 #: NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
@@ -19156,10 +19146,8 @@ msgid "Gramplet showing an overview of events for a person"
 msgstr "גרמפלט להצגת תקציר אירועים לאדם"
 
 #: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
-#, fuzzy
-#| msgid "Person Overview"
 msgid "Overview"
-msgstr "אדם סקירה"
+msgstr "סקירה כללית"
 
 #: Overview/Overview.gpr.py:45
 msgid "Family Overview"
@@ -19558,65 +19546,49 @@ msgid "No source information found"
 msgstr "לא נמצא מידע מקור"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:25
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Person Relationship Filter"
-msgstr "יוחסה לאב"
+msgstr "מסנן קשרי‏־קרבה לאדם"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:26
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet providing a person filter on relationships"
-msgstr "גרמפלט להצגת קרובי משפחה וקשרי קירבה"
+msgstr "גרמפלט שמציע מסנן אדם בקשרי־קרבה"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:33
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Relationship Filter"
-msgstr "יוחסה לאב"
+msgstr "מסנן קשר־קרבה"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:82
-#, fuzzy
-#| msgid "Children Dead"
 msgid "Children of name match"
-msgstr "ילדים נפטר"
+msgstr "צאצים מהתאמת שמות"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:84
 msgid "Matches children of anybody with a given name"
-msgstr ""
+msgstr "התאמת צאצאים בשם מסויים של אדם כלשהו"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:251
-#, fuzzy
-#| msgid "sibling"
 msgid "Sibling 1"
-msgstr "אחאי"
+msgstr "אחאי 1"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:252
-#, fuzzy
-#| msgid "sibling"
 msgid "Sibling 2"
-msgstr "אחאי"
+msgstr "אחאי 2"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:253
-#, fuzzy
-#| msgid "Children Dead"
 msgid "Child 1"
-msgstr "ילדים נפטר"
+msgstr "צאצא 1"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:254
-#, fuzzy
-#| msgid "Children Dead"
 msgid "Child 2"
-msgstr "ילדים נפטר"
+msgstr "צאצא 2"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:282
 msgid "Probably Alive"
-msgstr ""
+msgstr "כנראה בחיים"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:284
 #, python-format
 msgid "example: '%(msg1)s' or '%(msg2)s'"
-msgstr ""
+msgstr "דוגמה: '%(msg1)s' או '%(msg2)s'"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
@@ -19987,7 +19959,7 @@ msgstr "חיפוש מקומות מקומיים ו־GeoNames להתאמה."
 msgid ""
 "Continue to merge (for local places), or to complete a place (for GeoNames)."
 msgstr ""
-"להמשיך במיזוג (מקומות מקומיים), או להשלים תכונות מקום (מקומות GeoNames)."
+"להמשיך במיזוג (מקומות מקומיים), או להשלים מאפייני מקום (מקומות GeoNames)."
 
 #: PlaceCleanup/placecleanup.glade:932
 msgid ""
@@ -20072,8 +20044,8 @@ msgid ""
 "Place Cleanup Gramplet assists in merging places, as well as completing "
 "places from the GeoNames web database"
 msgstr ""
-"גרמפלט לשיקום מקומות מסייע במיזוג מקומות והשלמת תכונות מקומות מתוך מסד־נתוני "
-"המרשתת של GeoNames"
+"גרמפלט לשיקום מקומות מסייע במיזוג מקומות והשלמת מאפייני מקומות מתוך מסד־"
+"נתוני המרשתת של GeoNames"
 
 #: PlaceCleanup/placecleanup.py:293
 #, python-format
@@ -20212,13 +20184,13 @@ msgid ""
 "parse/set the attribute fields."
 msgstr ""
 "מספק רשימה ניתנת לדפדוף של מקומות שנבחרו, ומתן אפשרות להשלים/לנתח/להגדיר את "
-"שדות התכונות."
+"שדות המאפיינים."
 
 #: PlaceCompletion/PlaceCompletion.py:95
 msgid ""
 "Place Completion by parsing, file lookup and batch setting of place "
 "attributes"
-msgstr "השלמת פרטי מקום על ידי ניתוח, חיפוש קבצים והגדרת אצווה של תכונות מקום"
+msgstr "השלמת פרטי מקום על ידי ניתוח, חיפוש קבצים והגדרת אצווה של מאפייני מקום"
 
 #: PlaceCompletion/PlaceCompletion.py:258
 msgid "Error in PlaceCompletion.py"
@@ -22189,7 +22161,7 @@ msgstr "הסרה מאפיין סוג וערך הגדרה"
 
 #: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
-msgstr "ביצוע הגדרת תכונות..."
+msgstr "מתבצעת הגדרת מאפיינים..."
 
 #: SetAttributeTool/SetAttributeTool.py:156
 #, python-format
@@ -22215,7 +22187,7 @@ msgstr "הסרה מאפיין"
 
 #: SetAttributeTool/SetAttributeTool.py:194
 msgid "Removing attributes..."
-msgstr "מתבצעת הסרת תכונות..."
+msgstr "מתבצעת הסרת מאפיינים..."
 
 #: SetAttributeTool/SetAttributeTool.py:221
 #, python-format
@@ -24198,7 +24170,7 @@ msgstr "הערה סוג"
 
 #: ToDoReport/TodoReport.py:885
 msgid "Group by reference type"
-msgstr "קיבוץ לפי סוג הפניה"
+msgstr "קיבוץ לפי סוג אזכור"
 
 #: ToDoReport/TodoReport.py:886
 msgid "Group notes by Family, Person, Place, etc."
@@ -25079,85 +25051,69 @@ msgstr "הצגת סמלים"
 
 #: WordClouds/WordClouds.gpr.py:24 WordClouds/WordClouds.gpr.py:32
 msgid "Given Name Word Cloud"
-msgstr ""
+msgstr "ענן שמות פרטיים"
 
 #: WordClouds/WordClouds.gpr.py:25
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet showing all given names as a word cloud"
-msgstr "גרמפלט להצגת קרובי משפחה וקשרי קירבה"
+msgstr "גרמפלט להצגת ענן כל השמות הפרטיים"
 
 #: WordClouds/WordClouds.gpr.py:40 WordClouds/WordClouds.gpr.py:48
 msgid "Surname Word Cloud"
-msgstr ""
+msgstr "ענן שמות משפחה"
 
 #: WordClouds/WordClouds.gpr.py:41
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet showing all surnames as a word cloud"
-msgstr "גרמפלט להצגת קרובי משפחה וקשרי קירבה"
+msgstr "גרמפלט להצגת ענן כל שמות המשפחה"
 
 #: WordClouds/WordClouds.gpr.py:56 WordClouds/WordClouds.gpr.py:64
-#, fuzzy
-#| msgid "Place history loaded"
 msgid "Place Word Cloud"
-msgstr "היסטוריית מקום נטענה"
+msgstr "ענן שמות מקום"
 
 #: WordClouds/WordClouds.gpr.py:57
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet showing all places as a word cloud"
-msgstr "גרמפלט להצגת קרובי משפחה וקשרי קירבה"
+msgstr "גרמפלט להצגת ענן שמות כל המקומות"
 
 #: WordClouds/cloudgramplet.py:147 WordClouds/cloudgramplet.py:225
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid "Number of %s"
-msgstr "מספר עמודים"
+msgstr "מספר %s"
 
 #: WordClouds/cloudgramplet.py:149 WordClouds/cloudgramplet.py:227
-#, fuzzy
-#| msgid "Colored Male"
 msgid "Color (low)"
-msgstr "צבעוני זכר"
+msgstr "צבע (נמוך)"
 
 #: WordClouds/cloudgramplet.py:150 WordClouds/cloudgramplet.py:228
 msgid "Color (high)"
-msgstr ""
+msgstr "צבע (גבוהה)"
 
 #: WordClouds/cloudgramplet.py:151 WordClouds/cloudgramplet.py:229
-#, fuzzy
-#| msgid "Hair color"
 msgid "Hover color"
-msgstr "צבע שיער"
+msgstr "צבע ריחוף"
 
 #: WordClouds/cloudgramplet.py:152 WordClouds/cloudgramplet.py:230
 msgid "Layout quality"
-msgstr ""
+msgstr "איכות מערך"
 
 #: WordClouds/cloudgramplet.py:154 WordClouds/cloudgramplet.py:232
 msgid "Filter missing/unknown words"
-msgstr ""
+msgstr "מסנן מילים חסרות/לא ידועות"
 
 #: WordClouds/cloudgramplet.py:207
-#, fuzzy, python-format
-#| msgid "[Missing]"
+#, python-format
 msgid "[Missing %s]"
-msgstr "[חסר]"
+msgstr "[חסר %s]"
 
 #: WordClouds/givennamewordcloudgramplet.py:50
 msgid "Click given name to view people with that given name"
-msgstr ""
+msgstr "הקשה על שם פרטי להצגת אנשים בשפ פרטי זה"
 
 #: WordClouds/placewordcloudgramplet.py:53
-#, fuzzy
-#| msgid "Include Image source references"
 msgid "Click place name to view references"
-msgstr "הכללת איזכורי מקור תמונה"
+msgstr "הקשה על שם מקום להצגת אזכורים"
 
 #: WordClouds/surnamewordcloudgramplet.py:49
 msgid "Click surname to view people with that surname"
-msgstr ""
+msgstr "הקשה על שם משפחה להצגת אנשים בשם משפחה זה"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
