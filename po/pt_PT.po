@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-03 09:18-0700\n"
-"PO-Revision-Date: 2026-07-03 15:58+0000\n"
+"PO-Revision-Date: 2026-07-04 17:49+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -15795,14 +15795,12 @@ msgstr ""
 
 #: GrampsAssistant/grampsassistant.gpr.py:26
 #: GrampsAssistant/grampsassistant.py:1417
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Assistant"
-msgstr "Versão Gramps"
+msgstr "Assistente Gramps"
 
 #: GrampsAssistant/grampsassistant.gpr.py:27
 msgid "AI assistant for querying your Gramps family tree"
-msgstr ""
+msgstr "Assistente de IA para consultar a sua árvore genealógica no Gramps"
 
 #: GrampsAssistant/grampsassistant.py:58
 msgid ""
@@ -15812,29 +15810,33 @@ msgid ""
 "provided tools — never write code, simulate results, or make up data. If no "
 "tool exists for the requested information, say so plainly."
 msgstr ""
+"É um assistente de genealogia prestável, com acesso à base de dados do "
+"Gramps. Responde a perguntas sobre pessoas, famílias, eventos e relações. "
+"Quando precisar de informações da base de dados, recorra às ferramentas "
+"disponibilizadas — nunca escreva código, simule resultados ou invente dados. "
+"Se não existir nenhuma ferramenta para a informação solicitada, di-lo "
+"claramente."
 
 #: GrampsAssistant/grampsassistant.py:209
-#, fuzzy
-#| msgid "Extra style settings:"
 msgid "Gramps Assistant settings"
-msgstr "Definições de estilo extra:"
+msgstr "Definições do assistente Gramps"
 
 #: GrampsAssistant/grampsassistant.py:213
 msgid "Clear conversation and context"
-msgstr ""
+msgstr "Conversa e contexto claros"
 
 #: GrampsAssistant/grampsassistant.py:388
 #: GrampsAssistant/grampsassistant.py:749
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Assistant:"
-msgstr "Versão Gramps"
+msgstr "Assistente Gramps:"
 
 #: GrampsAssistant/grampsassistant.py:390
 msgid ""
 "Ask me anything about the Gramps program or your specific Gramps family "
 "tree. Use the ⚙ button to configure the AI.\n"
 msgstr ""
+"Pergunte-me o que quiser sobre o programa Gramps ou sobre a sua árvore "
+"genealógica específica no Gramps. Utilize o botão ⚙ para configurar a IA.\n"
 
 #: GrampsAssistant/grampsassistant.py:720
 msgid ""
@@ -15842,10 +15844,13 @@ msgid ""
 "No model configured. Please click the Settings button to choose a backend "
 "and model before chatting.\n"
 msgstr ""
+"\n"
+"Não há nenhum modelo configurado. Clique no botão «Definições» para escolher "
+"um motor e um modelo antes de iniciar a conversa.\n"
 
 #: GrampsAssistant/grampsassistant.py:755
 msgid "Thinking..."
-msgstr ""
+msgstr "A pensar..."
 
 #: GrampsAssistant/grampsassistant.py:824
 #, python-brace-format
@@ -15854,95 +15859,97 @@ msgid ""
 "it before launching Gramps:\n"
 "  export {var}=your-key-here"
 msgstr ""
+"Erro na chave API: a variável de ambiente {var} não está definida ou é "
+"inválida. Defina-a antes de iniciar o Gramps:\n"
+"  export {var}=a-sua-chave-aqui"
 
 #: GrampsAssistant/grampsassistant.py:830
 msgid ""
 "API key error: this provider requires an API key. Open Settings and enter "
 "the environment variable name for your API key (e.g. OPENAI_API_KEY)."
 msgstr ""
+"Erro na chave API: este fornecedor requer uma chave API. Abra as definições "
+"e introduza o nome da variável de ambiente correspondente à sua chave API "
+"(e.g. OPENAI_API_KEY)."
 
 #: GrampsAssistant/grampsassistant.py:973
-#, fuzzy
-#| msgid "Done!\n"
 msgid "Done.\n"
-msgstr "Feito!\n"
+msgstr "Feito.\n"
 
 #: GrampsAssistant/grampsassistant.py:1203
 msgid "System Prompt:"
-msgstr ""
+msgstr "Mensagem do sistema:"
 
 #: GrampsAssistant/grampsassistant.py:1217
 msgid "Simplify tools (recommended for smaller/local models)"
-msgstr ""
+msgstr "Simplificar ferramentas (recomendado para modelos menores/locais)"
 
 #: GrampsAssistant/grampsassistant.py:1221
 msgid ""
 "When enabled, only the tools relevant to your question are sent to the "
 "model. This improves performance with smaller local models."
 msgstr ""
+"Quando activa, só as ferramentas relevantes para a sua pergunta são enviadas "
+"para o modelo. Melhora o desempenho com modelos locais menores."
 
 #: GrampsAssistant/grampsassistant.py:1230
-#, fuzzy
-#| msgid "Mistral Model"
 msgid "Use Local Model"
-msgstr "Modelo Mistral"
+msgstr "Usar modelo local"
 
 #: GrampsAssistant/grampsassistant.py:1249
 msgid ""
 "URL of a local OpenAI-compatible server. Ollama: http://localhost:11434  LM "
 "Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
 msgstr ""
+"URL de um servidor local compatível com a OpenAI. Ollama: http://"
+"localhost:11434  LM Studio: http://localhost:1234  llama.cpp: http://"
+"localhost:8080"
 
 #: GrampsAssistant/grampsassistant.py:1257
 msgid "model name (leave blank for LM Studio / llama.cpp)"
-msgstr ""
+msgstr "nome do modelo (deixe em branco para LM Studio / llama.cpp)"
 
 #: GrampsAssistant/grampsassistant.py:1260
 msgid ""
 "Model to request from the local server. Required for Ollama (e.g. llama3.1). "
 "Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
 msgstr ""
+"Modelo a solicitar ao servidor local. Obrigatório para Ollama (e.g., "
+"llama3.1). Deixe em branco para LM Studio ou llama.cpp, que utilizam "
+"qualquer modelo que esteja carregado."
 
 #: GrampsAssistant/grampsassistant.py:1267
 #: GrampsAssistant/grampsassistant.py:1311
-#, fuzzy
-#| msgid "Modern"
 msgid "Model:"
-msgstr "Moderno"
+msgstr "Modelo:"
 
 #: GrampsAssistant/grampsassistant.py:1273
-#, fuzzy
-#| msgid "Foundation date:"
 msgid "Use Foundational Model"
-msgstr "Data de fundação:"
+msgstr "Utilizar o modelo fundamental"
 
 #: GrampsAssistant/grampsassistant.py:1315
 msgid "e.g. OPENAI_API_KEY"
-msgstr ""
+msgstr "e.g. OPENAI_API_KEY"
 
 #: GrampsAssistant/grampsassistant.py:1317
 msgid "Name of the environment variable holding your API key."
-msgstr ""
+msgstr "Nome da variável de ambiente que contém a sua chave API."
 
 #: GrampsAssistant/grampsassistant.py:1319
 msgid "API key env var:"
-msgstr ""
+msgstr "Variável de ambiente da chave API:"
 
 #: GrampsAssistant/grampsassistant.py:1322
 msgid "Backend:"
-msgstr ""
+msgstr "Motor:"
 
 #: GrampsAssistant/grampsassistant.py:1334
-#, fuzzy
-#| msgid "Website URL"
 msgid "Base URL:"
-msgstr "URL do sítio web"
+msgstr "URL base:"
 
 #: GrampsAssistant/grampsassistant.py:1338
-#, fuzzy
-#| msgid "Spouse name:"
 msgid "Model name:"
-msgstr "Nome do cônjuge:"
+msgstr "Nome do modelo:"
 
 #: GrampsChat/GrampsChat.gpr.py:4 GrampsChat/GrampsChat.gpr.py:9
 msgid "GrampsChat"
