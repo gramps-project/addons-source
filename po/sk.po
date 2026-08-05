@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-03 09:18-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
+"PO-Revision-Date: 2026-07-09 15:32+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -3832,7 +3832,7 @@ msgstr "MIN_C_WIDTH"
 
 #: DescendantsLines/DescendantsLines.py:1774
 msgid "The number of ??? min width"
-msgstr "Minimálna šírka ???"
+msgstr "Veľkosť ??? min. šírky"
 
 #: DescendantsLines/DescendantsLines.py:1779
 msgid "Space around text"
@@ -9160,7 +9160,7 @@ msgstr "Číslo osvedčenia"
 #: Form/form_us.xml.h:2344 Form/form_us.xml.h:2402 Form/form_us.xml.h:2428
 #: Form/form_us.xml.h:2460
 msgid "Entry Number"
-msgstr "Číslo záznamu"
+msgstr "Číslo zápisu"
 
 #: Form/form_gb.xml.h:3 Form/form_gb.xml.h:40 Form/form_gb.xml.h:196
 #: Form/form_gb.xml.h:230 Form/form_gb.xml.h:329 Form/form_gb.xml.h:365
@@ -10242,7 +10242,7 @@ msgstr "Meno matky manžela/manželky"
 
 #: Form/form_pl.xml.h:18
 msgid "Record Number"
-msgstr ""
+msgstr "Číslo záznamu"
 
 #: Form/form_pl.xml.h:19
 msgid "Volume"
@@ -10254,11 +10254,11 @@ msgstr "Čislo domu"
 
 #: Form/form_pl.xml.h:28
 msgid "Volume Beginning Year"
-msgstr ""
+msgstr "Zväzok začínajúci rokom"
 
 #: Form/form_pl.xml.h:29
 msgid "Volume Ending Year"
-msgstr ""
+msgstr "Zväzok končiaci rokom"
 
 #: Form/form_us.xml.h:1 Form/form_us.xml.h:14 Form/form_us.xml.h:35
 #: Form/form_us.xml.h:56 Form/form_us.xml.h:96 Form/form_us.xml.h:165
@@ -15805,18 +15805,18 @@ msgid ""
 "in user home directory ''%s''?"
 msgstr ""
 "Prepísať kmz/kml súbor ''%s''\n"
-"v domovskom adresári užívateľa ''%s''?"
+"v domovskom adresári používateľa ''%s''?"
 
 #: GrampsAssistant/grampsassistant.gpr.py:26
 #: GrampsAssistant/grampsassistant.py:1417
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Assistant"
-msgstr "Gramps verzia"
+msgstr "Asistent Gramps"
 
 #: GrampsAssistant/grampsassistant.gpr.py:27
 msgid "AI assistant for querying your Gramps family tree"
 msgstr ""
+"AI asistent na získavanie informácií o vašom rodinnom strome v programe "
+"Gramps"
 
 #: GrampsAssistant/grampsassistant.py:58
 msgid ""
@@ -15826,29 +15826,33 @@ msgid ""
 "provided tools — never write code, simulate results, or make up data. If no "
 "tool exists for the requested information, say so plainly."
 msgstr ""
+"Si užitočný genealogický asistent s prístupom k databáze používateľa v "
+"programe Gramps. Odpovedaj na otázky týkajúce sa osôb, rodín, udalostí a "
+"vzťahov. Keď potrebuješ informácie z databázy, využi k tomu určené nástroje "
+"– nikdy nepíš kód, nesimuluj výsledky ani si nevymýšľaj údaje. Ak pre "
+"požadované informácie neexistuje žiadny nástroj, jasne to povedz."
 
 #: GrampsAssistant/grampsassistant.py:209
-#, fuzzy
-#| msgid "Extra style settings:"
 msgid "Gramps Assistant settings"
-msgstr "Dodatočné nastavenia štýlu:"
+msgstr "Nastavenia asistenta Gramps"
 
 #: GrampsAssistant/grampsassistant.py:213
 msgid "Clear conversation and context"
-msgstr ""
+msgstr "Vymazať konverzáciu a kontext"
 
 #: GrampsAssistant/grampsassistant.py:388
 #: GrampsAssistant/grampsassistant.py:749
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Assistant:"
-msgstr "Gramps verzia"
+msgstr "Asistent Gramps:"
 
 #: GrampsAssistant/grampsassistant.py:390
 msgid ""
 "Ask me anything about the Gramps program or your specific Gramps family "
 "tree. Use the ⚙ button to configure the AI.\n"
 msgstr ""
+"Opýtajte sa ma čokoľvek o programe Gramps alebo o vašom konkrétnom rodinnom "
+"strome v Gramps. Použite tlačidlo ⚙ na konfiguráciu umelej inteligencie (AI)"
+".\n"
 
 #: GrampsAssistant/grampsassistant.py:720
 msgid ""
@@ -15856,10 +15860,13 @@ msgid ""
 "No model configured. Please click the Settings button to choose a backend "
 "and model before chatting.\n"
 msgstr ""
+"\n"
+"Nie je nakonfigurovaný žiadny model. Pred začatím konverzácie kliknite na "
+"tlačidlo Nastavenia a vyberte backend a model.\n"
 
 #: GrampsAssistant/grampsassistant.py:755
 msgid "Thinking..."
-msgstr ""
+msgstr "Premýšľanie..."
 
 #: GrampsAssistant/grampsassistant.py:824
 #, python-brace-format
@@ -15868,95 +15875,95 @@ msgid ""
 "it before launching Gramps:\n"
 "  export {var}=your-key-here"
 msgstr ""
+"Chyba API kľúča: premenná prostredia {var} nie je nastavená alebo je "
+"neplatná. Nastavte ju pred spustením Gramps:\n"
+"  export {var}=váš-kľúč-je-tu"
 
 #: GrampsAssistant/grampsassistant.py:830
 msgid ""
 "API key error: this provider requires an API key. Open Settings and enter "
 "the environment variable name for your API key (e.g. OPENAI_API_KEY)."
 msgstr ""
+"Chyba API kľúča: tento poskytovateľ vyžaduje API kľúč. Otvorte Nastavenia a "
+"zadajte názov premennej prostredia pre váš API kľúč (napr. OPENAI_API_KEY)."
 
 #: GrampsAssistant/grampsassistant.py:973
-#, fuzzy
-#| msgid "Done!\n"
 msgid "Done.\n"
-msgstr "Hotovo!\n"
+msgstr "Hotovo.\n"
 
 #: GrampsAssistant/grampsassistant.py:1203
 msgid "System Prompt:"
-msgstr ""
+msgstr "Systémová výzva:"
 
 #: GrampsAssistant/grampsassistant.py:1217
 msgid "Simplify tools (recommended for smaller/local models)"
-msgstr ""
+msgstr "Zjednodušiť nástroje (odporúčané pre menšie/lokálne modely)"
 
 #: GrampsAssistant/grampsassistant.py:1221
 msgid ""
 "When enabled, only the tools relevant to your question are sent to the "
 "model. This improves performance with smaller local models."
 msgstr ""
+"Ak je táto možnosť zapnutá, do modelu sa odosielajú len nástroje relevantné "
+"pre vašu otázku. Tým sa zlepšuje výkon pri menších lokálnych modeloch."
 
 #: GrampsAssistant/grampsassistant.py:1230
-#, fuzzy
-#| msgid "Mistral Model"
 msgid "Use Local Model"
-msgstr "Model Mistral"
+msgstr "Použiť lokálny model"
 
 #: GrampsAssistant/grampsassistant.py:1249
 msgid ""
 "URL of a local OpenAI-compatible server. Ollama: http://localhost:11434  LM "
 "Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
 msgstr ""
+"URL lokálneho servera kompatibilného s OpenAI. Ollama: http://localhost:11434"
+"  LM Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
 
 #: GrampsAssistant/grampsassistant.py:1257
 msgid "model name (leave blank for LM Studio / llama.cpp)"
-msgstr ""
+msgstr "názov modelu (v prípade LM Studio / llama.cpp nechajte prázdne)"
 
 #: GrampsAssistant/grampsassistant.py:1260
 msgid ""
 "Model to request from the local server. Required for Ollama (e.g. llama3.1). "
 "Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
 msgstr ""
+"Model, ktorý sa má vyžiadať z lokálneho servera. Povinné pre Ollama (napr. "
+"llama3.1). V prípade LM Studio alebo llama.cpp, ktoré používajú akýkoľvek "
+"načítaný model, nechajte prázdne."
 
 #: GrampsAssistant/grampsassistant.py:1267
 #: GrampsAssistant/grampsassistant.py:1311
-#, fuzzy
-#| msgid "Modern"
 msgid "Model:"
-msgstr "Moderný"
+msgstr "Model:"
 
 #: GrampsAssistant/grampsassistant.py:1273
-#, fuzzy
-#| msgid "Foundation date:"
 msgid "Use Foundational Model"
-msgstr "Dátum založenia:"
+msgstr "Použiť základný model"
 
 #: GrampsAssistant/grampsassistant.py:1315
 msgid "e.g. OPENAI_API_KEY"
-msgstr ""
+msgstr "napr. OPENAI_API_KEY"
 
 #: GrampsAssistant/grampsassistant.py:1317
 msgid "Name of the environment variable holding your API key."
-msgstr ""
+msgstr "Názov premennej prostredia obsahujúcej váš API kľúč."
 
 #: GrampsAssistant/grampsassistant.py:1319
 msgid "API key env var:"
-msgstr ""
+msgstr "Premenná prostredia kľúča API:"
 
 #: GrampsAssistant/grampsassistant.py:1322
 msgid "Backend:"
-msgstr ""
+msgstr "Backend:"
 
 #: GrampsAssistant/grampsassistant.py:1334
-#, fuzzy
-#| msgid "Website URL"
 msgid "Base URL:"
-msgstr "URL webového sídla"
+msgstr "Základná URL:"
 
 #: GrampsAssistant/grampsassistant.py:1338
-#, fuzzy
-#| msgid "Spouse name:"
 msgid "Model name:"
-msgstr "Meno manžela/manželky:"
+msgstr "Názov modelu:"
 
 #: GrampsChat/GrampsChat.gpr.py:4 GrampsChat/GrampsChat.gpr.py:9
 msgid "GrampsChat"
@@ -18452,32 +18459,31 @@ msgstr "Kto (vy)hĺadá.koho?"
 #: NameSuite/.venv/lib/python3.12/site-packages/mypy/main.py:450
 #, python-format
 msgid "%(prog)s: error: %(message)s\n"
-msgstr ""
+msgstr "%(prog)s: chyba: %(message)s\n"
 
 #: NameSuite/name_processor.gpr.py:6
-#, fuzzy
-#| msgid "Patronymic names:"
 msgid "Audit Given and Patronymic Names"
-msgstr "Patronymické mená:"
+msgstr "Kontrola daných (krstných) mien a patronymických mien"
 
 #: NameSuite/name_processor.gpr.py:9
 msgid ""
 "Tools to rename given name, audit and infer patronymic (East Slavic) names."
 msgstr ""
+"Nástroje na premenovanie daného (krstného) mena, kontrolu a odvodzovanie "
+"patronymických (východoslovanských) mien."
 
 #: NameSuite/name_processor.gpr.py:25 NameSuite/name_processor.gpr.py:37
-#, fuzzy
-#| msgid "Patronymic names:"
 msgid "Patronymic Suggestion"
-msgstr "Patronymické mená:"
+msgstr "Návrh patronymického mena"
 
 #: NameSuite/name_processor.gpr.py:27
 msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
 msgstr ""
+"Navrhuje (východoslovanské) patronymické mená v reálnom čase počas navigácie."
 
 #: NameSuite/name_processor/views/base_tab.py:150
 msgid "Use"
-msgstr ""
+msgstr "Použiť"
 
 #: NameSuite/name_processor/views/gramplet.py:32
 #, python-brace-format
@@ -18486,238 +18492,185 @@ msgid ""
 "Suggested: {0}\n"
 "Based on father: {1}"
 msgstr ""
+"Zistené chýbajúce patronymické meno.\n"
+"Navrhované: {0}\n"
+"Na základe otca: {1}"
 
 #: NameSuite/name_processor/views/gramplet.py:34
 msgid "Navigate to an individual to check patronymic status."
-msgstr ""
+msgstr "Prejdite na konkrétnu osobu a skontrolujte stav otcovského mena."
 
 #: NameSuite/name_processor/views/gramplet.py:35
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "No active person selected."
-msgstr "Nie je nastavená aktívna osoba."
+msgstr "Nebola vybraná žiadna aktívna osoba."
 
 #: NameSuite/name_processor/views/gramplet.py:37
 msgid ""
 "Patronymic inference can't be inferred for non-binary or unknown genders."
-msgstr ""
+msgstr "Otcovské meno nemožno odvodiť pre nebinárne alebo neznáme pohlavia."
 
 #: NameSuite/name_processor/views/gramplet.py:40
 msgid "Individual already has a recorded patronymic."
-msgstr ""
+msgstr "Osoba už má zaznamenané otcovské meno."
 
 #: NameSuite/name_processor/views/gramplet.py:43
 msgid "No attached father found in database family records."
-msgstr ""
+msgstr "V databáze rodinných záznamov nebol nájdený žiadny priradený otec."
 
 #: NameSuite/name_processor/views/gramplet.py:46
 msgid "Father lacks a recorded first name."
-msgstr ""
+msgstr "Otec nemá zaznamenané prvé (krstné) meno."
 
 #: NameSuite/name_processor/views/gramplet.py:49
 msgid "Could not generate valid morphology patterns."
-msgstr ""
+msgstr "Nepodarilo sa vygenerovať platné morfologické vzory."
 
 #: NameSuite/name_processor/views/gramplet.py:51
 msgid "Patronymic applied successfully!"
-msgstr ""
+msgstr "Otcovské meno bolo úspešne priradené!"
 
 #: NameSuite/name_processor/views/gramplet.py:77
-#, fuzzy
-#| msgid "🔍 AI Suggestions"
 msgid "Apply Suggestion"
-msgstr "🔍 Návrhy AI"
+msgstr "Aplikovať návrh"
 
 #: NameSuite/name_processor/views/tool.py:92
 msgid "Infer East Slavic Patronymics"
-msgstr ""
+msgstr "Odvodiť východoslovanské patronymá"
 
 #: NameSuite/name_processor/views/tool.py:112
-#, fuzzy
-#| msgid "Checking Given Names"
 msgid "Rename Given Names"
-msgstr "Kontrola daných mien"
+msgstr "Premenovať dané (krstné) mená"
 
 #: NameSuite/name_processor/views/tool.py:115
-#, fuzzy
-#| msgid "Patronymic names:"
 msgid "Audit Patronymics"
-msgstr "Patronymické mená:"
+msgstr "Skontrolovať patronymá"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:68
 msgid "Auditing Settings"
-msgstr ""
+msgstr "Nastavenia kontroly"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:76
-#, fuzzy
-#| msgid "Place of Record"
 msgid "All Records"
-msgstr "Miesto zápisu"
+msgstr "Všetky záznamy"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:77
-#, fuzzy
-#| msgid "Male line"
 msgid "Males Only"
-msgstr "Mužská línia"
+msgstr "Iba mužov"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:78
-#, fuzzy
-#| msgid "Female line"
 msgid "Females Only"
-msgstr "Ženská línia"
+msgstr "Iba ženy"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:82
-#, fuzzy
-#| msgid "Configure"
 msgid "Configure Rules..."
-msgstr "Konfigurovať"
+msgstr "Konfigurácia pravidiel..."
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:87
 msgid "Match Pre-Revolutionary Orthography"
-msgstr ""
+msgstr "Zhoda s predrevolučnou ortografiou"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:95
-#, fuzzy
-#| msgid "Edit tags"
 msgid "Audit Database"
-msgstr "Upraviť štítky"
+msgstr "Skontrolovať databázu"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:117
-#, fuzzy
-#| msgid "Select the graph direction."
 msgid "Select All Safe Corrections"
-msgstr "Vyberte smer diagramu."
+msgstr "Vybrať všetky bezpečné opravy"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:122
 #: NameSuite/name_processor/views/tool_rename_tab.py:116
-#, fuzzy
-#| msgid "Apply to selected places"
 msgid "Apply Selected Corrections"
-msgstr "Aplikovať na vybrané miesta"
+msgstr "Aplikovať vybrané opravy"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:162
-#, fuzzy
-#| msgid "Configure"
 msgid "Configure Rules"
-msgstr "Konfigurovať"
+msgstr "Konfigurácia pravidiel"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:186
 #: NameSuite/name_processor/views/tool_rename_tab.py:156
-#, fuzzy
-#| msgid "India"
 msgid "Individual"
-msgstr "India"
+msgstr "Jedinec"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:190
 #: NameSuite/name_processor/views/tool_rename_tab.py:158
-#, fuzzy
-#| msgid "Current sort"
 msgid "Current"
-msgstr "Aktuálne zoradenie"
+msgstr "Aktuálne"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:193
-#, fuzzy
-#| msgid "Section"
 msgid "Correction"
-msgstr "Sekcia"
+msgstr "Korekcia"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:200
-#, fuzzy
-#| msgid "Configure"
 msgid "Conf"
 msgstr "Konfigurovať"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:201
-#, fuzzy
-#| msgid "Event Year"
 msgid "Ref Year"
-msgstr "Rok udalosti"
+msgstr "Referenčný rok"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:204
-#, fuzzy
-#| msgid "Relation"
 msgid "Explanation"
-msgstr "Vzťah"
+msgstr "Vysvetlenie"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:243
-#, fuzzy
-#| msgid "Completed?"
 msgid "Audit Complete!"
-msgstr "Dokončený?"
+msgstr "Kontrola dokončená!"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:248
-#, fuzzy
-#| msgid "Result"
 msgid "No Results"
-msgstr "Výsledok"
+msgstr "Žiadne výsledky"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:248
-#, fuzzy
-#| msgid "No persons found..."
 msgid "No issues found."
-msgstr "Žiadne osoby nenájdené..."
+msgstr "Neboli nájdené žiadne problémy."
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:63
-#, fuzzy
-#| msgid "Search result places"
 msgid "Search and Replace Options"
-msgstr "Výsledky vyhľadávania miest"
+msgstr "Možnosti vyhľadávania a nahradzovania"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:70
-#, fuzzy
-#| msgid "Spouse name:"
 msgid "Source Name:"
-msgstr "Meno manžela/manželky:"
+msgstr "Zdrojové meno:"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:72
 msgid "e.g. Иоанн"
-msgstr ""
+msgstr "napr. Иоанн"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:75
-#, fuzzy
-#| msgid "Street Name"
 msgid "Target Name:"
-msgstr "Názov ulice"
+msgstr "Cieľové meno:"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:77
 msgid "e.g. Иван"
-msgstr ""
+msgstr "napr. Иван"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:80
 msgid "Match Mode:"
-msgstr ""
+msgstr "Režim zhody:"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:82
 msgid "Exact Match"
-msgstr ""
+msgstr "Presná zhoda"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:83
-#, fuzzy
-#| msgid "Search substring..."
 msgid "Substring"
-msgstr "Hľadanie podreťazca..."
+msgstr "Časť reťazca"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:84
-#, fuzzy
-#| msgid "Allow regular expressions."
 msgid "Regular Expression"
-msgstr "Povoliť regulárne výrazy."
+msgstr "Regulárny výraz"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:88
-#, fuzzy
-#| msgid "Index of Names"
 msgid "Scan for Names"
-msgstr "Register mien"
+msgstr "Skenovať mená"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:93
 msgid "Preserve original name as alternative"
-msgstr ""
+msgstr "Zachovať pôvodné meno ako alternatívu"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:160
-#, fuzzy
-#| msgid "Proposed sort"
 msgid "Proposed"
-msgstr "Navrhované zoradenie"
+msgstr "Navrhované"
 
 #: NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
@@ -23492,11 +23445,15 @@ msgid ""
 msgstr ""
 "Priame importovanie zo súborov TMG nie je podporované\n"
 "doplnkom TMG Importer.\n"
+"\n"
 "Musíte použiť záložnú kópiu projektu TMG (*.sqz)\n"
+"\n"
 "Uistite sa, že váš projekt TMG bol vytvorený pomocou:\n"
 "TMG verzie 5.x alebo vyššej.\n"
+"\n"
 "Váš súbor:\n"
 "*.VER - Version Control File for TMG 1.2 and earlier\n"
+"\n"
 "Ďalšie informácie nájdete na:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 
