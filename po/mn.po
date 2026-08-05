@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-29 09:58-0700\n"
+"POT-Creation-Date: 2026-08-01 09:38-0700\n"
 "PO-Revision-Date: 2026-04-07 13:46+0000\n"
 "Last-Translator: \"Batsaihan P.\" <batsaihan.p@gmail.com>\n"
 "Language-Team: Mongolian <https://hosted.weblate.org/projects/gramps-project/"
@@ -15438,8 +15438,8 @@ msgstr ""
 msgid "AI Chatbot Gramplet (requires connecting to an LLM service)"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:118
-#: GrampsWebSync/grampswebsync.py:212
+#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:213
+#: GrampsWebSync/grampswebsync.py:271
 msgid "Gramps Web Sync"
 msgstr ""
 
@@ -15447,140 +15447,115 @@ msgstr ""
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:276
-msgid "Your user does not have sufficient server permissions to use sync."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:282
-msgid "Fetching remote data..."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:298
-msgid "Unexpected error while applying changes."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:336
-msgid "Media files are in sync."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:345
+#: GrampsWebSync/grampswebsync.py:124
 #, python-format
-msgid "Successfully downloaded %s media files."
+msgid ""
+"The system keyring could not be used. Snap confinement blocks access until "
+"you run: %s"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:348
-#, python-format
-msgid "Encountered %s errors during download."
+#: GrampsWebSync/grampswebsync.py:128
+msgid ""
+"The system keyring could not be used. You will need to enter your password "
+"each time."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:354
-#, python-format
-msgid "Successfully uploaded %s media files."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:357
-#, python-format
-msgid "Encountered %s errors during upload."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:375
+#: GrampsWebSync/grampswebsync.py:145
 msgid "Authentication failed. Please check your username and password."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:379
+#: GrampsWebSync/grampswebsync.py:148
 msgid "Access forbidden. Please check username and password."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:383
+#: GrampsWebSync/grampswebsync.py:150
 msgid "GrampsWeb service not found. Please check the URL."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:387
+#: GrampsWebSync/grampswebsync.py:152
 msgid "Too many requests, please try again in a few seconds."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:390
+#: GrampsWebSync/grampswebsync.py:154
 msgid "GrampsWeb tree is disabled."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:393
+#: GrampsWebSync/grampswebsync.py:156
+msgid "Connection failed. Please check the URL and your internet connection."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:159
+msgid "Invalid server response. Please check the URL."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:162
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:164
+msgid "Failed importing downloaded XML file."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:166
+msgid "Unable to synchronize changes to server: objects have been modified."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:168
+msgid "Unexpected error while applying changes."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:170
+msgid ""
+"The family tree was modified while the changes were being reviewed. Nothing "
+"has been applied. Please compare again."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:175
+#, python-format
+msgid "The server could not apply the changes: %s"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:177
 #, python-format
 msgid "Server error %s. Please check your connection."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:399
-msgid "Connection failed. Please check the URL and your internet connection."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:405
-msgid "Invalid server response. Please check the URL."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:409
+#: GrampsWebSync/grampswebsync.py:179 GrampsWebSync/grampswebsync.py:180
 #, python-format
 msgid "Unexpected error: %s"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:453 GrampsWebSync/grampswebsync.py:478
-msgid "Error accessing media object."
+#: GrampsWebSync/grampswebsync.py:341
+msgid "Fetching remote data..."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:522
-msgid "Failed importing downloaded XML file."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:527
+#: GrampsWebSync/grampswebsync.py:344
 msgid "Comparing local and remote data..."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:576
-msgid "Server authorization error."
+#: GrampsWebSync/grampswebsync.py:348
+msgid "Successfully applied changes to local database."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:579
-msgid "Server authorization error: insufficient permissions."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:582
-msgid "Error: URL not found."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:586
-msgid "Unable to synchronize changes to server: objects have been modified."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:590
-#, python-format
-msgid "Error %s while connecting to server."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:593
-msgid "URL error while connecting to server."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:597
-msgid "Unable to synchronize changes to server."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:626
+#: GrampsWebSync/grampswebsync.py:437
 msgid "Continue without transport encryption?"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:628
+#: GrampsWebSync/grampswebsync.py:439
 msgid ""
 "You have specified a URL with http scheme. If you continue, your password "
 "will be sent in clear text over the network. Use only for local testing!"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:633
+#: GrampsWebSync/grampswebsync.py:444
 msgid "Continue with HTTP"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:634
+#: GrampsWebSync/grampswebsync.py:445
 msgid "Use HTTPS"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:762
+#: GrampsWebSync/grampswebsync.py:495
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
 "remote family tree served by Gramps Web.\n"
@@ -15596,79 +15571,165 @@ msgid ""
 "option to make manual modifications, use the Import Merge Tool instead."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:789
+#: GrampsWebSync/grampswebsync.py:522
 msgid "Server URL: "
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:898
+#: GrampsWebSync/grampswebsync.py:578 HistContext/HistContext.py:289
+#: HistContext/HistContext.py:333 HistContext/HistContext.py:420
+msgid "Error:"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:646
+msgid "Sync mode"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:656
+msgid ""
+"Changes from both sides are combined. Objects edited in both places are "
+"merged."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:660
+msgid ""
+"The server is made to match this computer. Anything changed only on the "
+"server is discarded."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:664
+msgid ""
+"This computer is made to match the server. Anything changed only here is "
+"discarded."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:671
 msgid "Bidirectional Synchronization"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:907
+#: GrampsWebSync/grampswebsync.py:672
 msgid "Reset remote to local"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:915
+#: GrampsWebSync/grampswebsync.py:673
 msgid "Reset local to remote"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:948
+#: GrampsWebSync/grampswebsync.py:712
+msgid "Warning:"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:722
 msgid "Local changes"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:953
+#: GrampsWebSync/grampswebsync.py:727
 msgid "Remote changes"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:958
+#: GrampsWebSync/grampswebsync.py:732
 msgid "Simultaneous changes"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:1015
+#: GrampsWebSync/grampswebsync.py:790
 msgid "Fetching information about media files..."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:1035
+#: GrampsWebSync/grampswebsync.py:816
 msgid "Both trees are the same."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:1041
+#: GrampsWebSync/grampswebsync.py:822
 msgid "Applying changes to local database ..."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:1043
+#: GrampsWebSync/grampswebsync.py:824
 msgid "No changes to apply to local database."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:1047
+#: GrampsWebSync/grampswebsync.py:828
 msgid "Applying changes to remote database ..."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:1052
+#: GrampsWebSync/grampswebsync.py:833
 msgid "No changes to apply to remote database."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:1060
-msgid "Successfully applied changes to local database."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:1089
+#: GrampsWebSync/grampswebsync.py:862
 msgid "Missing locally"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:1092
+#: GrampsWebSync/grampswebsync.py:865
 msgid "Missing remotely"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:1130
+#: GrampsWebSync/grampswebsync.py:905
 #, python-format
-msgid "Downloading %s media file(s)"
+msgid "Downloading %s media file"
+msgid_plural "Downloading %s media files"
+msgstr[0] ""
+msgstr[1] ""
+
+#: GrampsWebSync/grampswebsync.py:920
+#, python-format
+msgid "Uploading %s media file"
+msgid_plural "Uploading %s media files"
+msgstr[0] ""
+msgstr[1] ""
+
+#: GrampsWebSync/grampswebsync.py:965
+msgid "Try again"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:1138
+#: GrampsWebSync/grampswebsync.py:999
 #, python-format
-msgid "Uploading %s media file(s)"
+msgid "Applied %s change."
+msgid_plural "Applied %s changes."
+msgstr[0] ""
+msgstr[1] ""
+
+#: GrampsWebSync/grampswebsync.py:1006
+msgid "Media files are in sync."
 msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:1011
+#, python-format
+msgid "%s media file is missing on both sides and could not be transferred."
+msgid_plural ""
+"%s media files are missing on both sides and could not be transferred."
+msgstr[0] ""
+msgstr[1] ""
+
+#: GrampsWebSync/grampswebsync.py:1020
+msgid "Both trees are already in sync."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:1033
+#, python-format
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] ""
+msgstr[1] ""
+
+#: GrampsWebSync/grampswebsync.py:1043
+#, python-format
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] ""
+msgstr[1] ""
+
+#: GrampsWebSync/grampswebsync.py:1056
+#, python-format
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] ""
+msgstr[1] ""
+
+#: GrampsWebSync/grampswebsync.py:1065
+#, python-format
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] ""
+msgstr[1] ""
 
 #: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
 msgid "Gram.py Script"
@@ -16417,11 +16478,6 @@ msgstr ""
 
 #: HistContext/HistContext.py:288
 msgid " in line: "
-msgstr ""
-
-#: HistContext/HistContext.py:289 HistContext/HistContext.py:333
-#: HistContext/HistContext.py:420
-msgid "Error:"
 msgstr ""
 
 #: HistContext/HistContext.py:327
@@ -20529,9 +20585,9 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:608
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:661
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:729
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:913
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1133
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1354
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:923
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1143
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1364
 msgid " (Requires version "
 msgstr ""
 
@@ -20554,9 +20610,9 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:670
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:691
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:738
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:905
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1123
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1346
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:915
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1133
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1356
 msgid " (Passed: version "
 msgstr ""
 
@@ -20565,10 +20621,10 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:648
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:649
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:716
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:894
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:966
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:967
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1295
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:904
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:976
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:977
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1305
 msgid "unknown version"
 msgstr ""
 
@@ -20588,178 +20644,186 @@ msgstr ""
 msgid " (Requires "
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:796
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:789
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:806
 msgid " • Berkeley Database library (bsddb3: "
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:827
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:791
+msgid ""
+")\n"
+"\tRequires  BerkeleyDB or Python-bsddb3 Python adapter and the Berkeley "
+"database"
+msgstr ""
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:837
 msgid " • SQLite Database library (sqlite3: "
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:844
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:854
 msgid " • xdg-utils (Manual check see instructions link)"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:857
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:867
 msgid " • librsvg2 (Manual check see instructions link)"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:869
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:879
 msgid ""
 " • language-pack-gnome-xx (Manual check see instructions link) for your "
 "Language <show locale here TBD>"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:907
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1348
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1356
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1798
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1807
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2021
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:917
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1358
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1366
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1808
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1817
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2031
 msgid " or greater installed.)"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:915
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:925
 msgid " or greater)"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:948
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:958
 msgid "Graphviz not in system PATH"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1014
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1024
 msgid "Ghostscript not in system PATH"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1032
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1042
 msgid " (Passed: version 0.5.x is installed.)"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1035
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1045
 msgid " (Requires version 0.5.x)"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1037
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1047
 msgid " • python-fontconfig not found, (Requires version 0.5.x)"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1039
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1049
 msgid " • python-fontconfig installed, version unavailable"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1125
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1135
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1145
 msgid " or greater installed.) (enchant module: "
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1194
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1204
 #, python-format
 msgid ""
 " • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1199
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1209
 #, python-format
 msgid ""
 " • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1316
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1326
 msgid "exiv2 executable not installed, can't retrieve libexiv2 version."
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1317
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1327
 #, python-format
 msgid "GExiv2 : %s (Exiv2 library : %s)"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1394
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1404
 msgid "found another font"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1403
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1413
 msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1447
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1505
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1516
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1527
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1457
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1515
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1526
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1537
 msgid "not installed"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1535
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1545
 msgid "     and one of either: (pydotplus: "
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1537
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1547
 msgid ") or (pygraphviz: "
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1566
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1576
 msgid "Installed(MS-Windows)"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1570
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1580
 msgid "Installed(Linux/Mac)"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1607
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1617
 msgid "not installed "
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1664
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1860
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1862
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1863
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1952
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1959
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1674
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1870
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1872
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1873
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1962
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1969
 msgid "not found."
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1690
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1700
 msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1749
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1759
 msgid ") (Requires the gramps addon listed under 'Plugin lib')"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1785
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1795
 msgid "DBF installed"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1796
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1806
 msgid ".)(Requires version "
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1805
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1815
 msgid " installed.)(Passed: version "
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1962
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1972
 #, python-format
 msgid "(OpenCV facedetection: %s)"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2019
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2029
 msgid " (lxml: not found. Requires version "
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2041
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2051
 msgid " • Requires: MongoDB TBD / pymongo TBD"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2055
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2065
 #, python-format
 msgid " • Operating System: %s"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2078
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2088
 msgid ""
 "<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
 "title=Gramps_5.0_Wiki_Manual_-"
@@ -20767,29 +20831,29 @@ msgid ""
 "a></b></u>\n"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2086
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2087
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2088
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2089
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2150
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2151
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2152
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2153
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2096
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2097
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2098
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2099
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2160
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2161
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2162
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2163
 msgid "not set"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2091
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2092
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2093
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2094
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2155
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2156
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2157
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2158
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2101
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2102
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2103
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2104
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2165
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2166
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2167
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2168
 msgid "not tested"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2123
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2133
 msgid ""
 "\n"
 "Installed Locales\\Translations (If only English is listed please re-install "
@@ -20797,19 +20861,19 @@ msgid ""
 "\n"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2161
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2171
 msgid ""
 "\n"
 "Gramps Environment variables:\n"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2200
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2263
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2300
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2210
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2273
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2310
 msgid "found"
 msgstr ""
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2309
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2319
 msgid ""
 "Sphinx is a tool that builds the Gramps development documentation and man "
 "pages\n"
