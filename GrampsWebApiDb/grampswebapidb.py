@@ -114,6 +114,45 @@ user) is still out of scope. If the push fails for a non-conflict reason
 is not rolled back -- the local mirror just drifts from the server until
 the next successful push or read sync.
 
+The mirror stays current while the tree is open, not just at load() time:
+load() also schedules a GLib.timeout_add_seconds() tick (POLL_INTERVAL_SECONDS)
+that re-runs _sync_from_server() for as long as the database stays open --
+the same timestamp-cursor poll gramps-connect's browser client uses against
+this same endpoint (see gramps-connect's store/historyPoll.ts), so a change
+made from any other client shows up here without closing and reopening the
+tree. It runs synchronously on the GTK main thread (like the initial
+load()-time sync already did, and like viewmanager.py's own autobackup
+timer) rather than on a background thread -- correct but simple, at the
+cost of a brief UI pause during each poll's network round trip; moving it
+off-thread (GrampsWebSync's GLibTaskRunner is the precedent, not imported
+here for the same no-cross-addon-dependency reason as transaction_to_json()
+below) is a reasonable future improvement, not attempted here. close()
+cancels the pending timeout so a closed database doesn't keep polling.
+
+_sync_from_server()'s replay runs inside a batch=True DbTxn deliberately
+(see the write-through section below for why), but that has a side effect
+beyond suppressing trans.add(): DBAPI.transaction_commit() only emits its
+person-add/family-update/event-delete/... signals `if not transaction.batch`
+(see dbapi.py), so a batch replay is otherwise invisible to every
+already-open GTK view -- the local mirror would update on disk with nothing
+on screen changing. _emit_change_signals() reproduces just that signal half
+by hand, once per synced page, using the exact same
+KEY_TO_NAME_MAP[key] + {"add"/"update"/"delete"} signal names DBAPI itself
+emits for a normal (non-batch) local edit -- so every view refreshes exactly
+the way it already knows how to for a local change, with no new view-side
+code needed. Collapsed to one signal per (obj_class, handle) -- the net
+effect across everything applied in that page, so e.g. an update
+immediately followed by a delete of the same object only fires the delete
+signal, not both.
+
+A _full_resync() (see below) is the one path that doesn't go through
+_emit_change_signals(): a full wipe-and-reimport is exactly the "too much
+changed to describe incrementally" case DbGeneric's own request_rebuild()
+exists for (it emits a single <type>-rebuild signal per object type,
+telling every view to reload wholesale rather than replay a specific
+add/update/delete) -- so _full_resync() calls that once after a successful
+reimport instead.
+
 Undo/redo integration hooks undo()/redo() the same way transaction_commit()
 hooks commits: Gramps core's own DbGenericUndo._undo()/_redo()
 (gramps/gen/db/generic.py) revert the local mirror directly via low-level
@@ -136,6 +175,8 @@ import logging
 import os
 from tempfile import NamedTemporaryFile
 from urllib.error import HTTPError, URLError
+
+from gi.repository import GLib
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.db import DbTxn
@@ -165,6 +206,11 @@ LOG = logging.getLogger("grampswebapidb")
 #: How many transactions to request per page while syncing.
 SYNC_PAGE_SIZE = 100
 
+#: How often (seconds) load() re-polls the server for as long as the
+#: database stays open -- see the module docstring's note on why this runs
+#: synchronously on the GTK main thread rather than a background timer.
+POLL_INTERVAL_SECONDS = 10
+
 #: Failure modes from WebApiHandler.from_env()/push_transaction(): a
 #: malformed/missing key (ValueError), a bad server response shape
 #: (KeyError/JSONDecodeError, the latter a ValueError subclass), or the
@@ -173,6 +219,10 @@ SYNC_PAGE_SIZE = 100
 _CONNECTION_ERRORS = (ValueError, KeyError, HTTPError, URLError, OSError)
 
 _TRANS_TYPE_NAME = {TXNADD: "add", TXNUPD: "update", TXNDEL: "delete"}
+
+#: Same signal-name suffixes DBAPI.transaction_commit() uses (dbapi.py's
+#: own `action` dict) -- see _emit_change_signals().
+_TRANS_TYPE_ACTION = {TXNADD: "-add", TXNUPD: "-update", TXNDEL: "-delete"}
 
 
 def transaction_to_json(transaction):
@@ -225,6 +275,30 @@ class WebApiDB(SQLite):
     def load(self, *args, **kwargs):
         super().load(*args, **kwargs)
         self._sync_from_server()
+        self._poll_source_id = GLib.timeout_add_seconds(
+            POLL_INTERVAL_SECONDS, self._poll_tick
+        )
+
+    def close(self, *args, **kwargs):
+        # Stop polling a database that's no longer open -- otherwise the
+        # next tick would run _sync_from_server() (and touch self.dbapi)
+        # against a connection that's about to be (or already) closed.
+        poll_source_id = getattr(self, "_poll_source_id", None)
+        if poll_source_id is not None:
+            GLib.source_remove(poll_source_id)
+            self._poll_source_id = None
+        super().close(*args, **kwargs)
+
+    def _poll_tick(self):
+        """GLib.timeout_add_seconds callback -- see the module docstring's
+        polling section. Must return True (GLib.SOURCE_CONTINUE) to keep
+        firing; returning a falsy value cancels the timeout, so a network
+        error is caught and logged here rather than left to propagate."""
+        try:
+            self._sync_from_server()
+        except _CONNECTION_ERRORS:
+            LOG.exception("Periodic sync from server failed; will retry.")
+        return GLib.SOURCE_CONTINUE
 
     def transaction_commit(self, transaction):
         # Must run before super(): it clears the transaction's records.
@@ -306,6 +380,9 @@ class WebApiDB(SQLite):
             )
             if not transactions:
                 break
+            # (obj_class, handle) -> trans_type, collapsed to the net
+            # effect within this page -- see _emit_change_signals().
+            net_changes = {}
             with DbTxn("Sync from server", self, batch=True) as trans:
                 for server_trans in transactions:
                     if not server_trans["changes"]:
@@ -313,7 +390,11 @@ class WebApiDB(SQLite):
                     for change in server_trans["changes"]:
                         if self._apply_change(change, trans):
                             applied += 1
+                            net_changes[
+                                (change["obj_class"], change["obj_handle"])
+                            ] = change["trans_type"]
                     after = max(after, server_trans["timestamp"])
+            self._emit_change_signals(net_changes)
             if len(transactions) < SYNC_PAGE_SIZE:
                 break
             page += 1
@@ -362,6 +443,13 @@ class WebApiDB(SQLite):
                     for handle in handles:
                         remove(handle, trans)
             importData(self, tmp_path, User())
+            # importData() runs its own batch=True DbTxn internally, so
+            # (like _sync_from_server()'s replay) it emits nothing to
+            # already-open views on its own -- request_rebuild() is the
+            # "too much changed to describe incrementally" signal DbGeneric
+            # itself defines for exactly this case (one <type>-rebuild per
+            # object type, telling every view to reload wholesale).
+            self.request_rebuild()
         finally:
             os.remove(tmp_path)
 
@@ -383,3 +471,31 @@ class WebApiDB(SQLite):
             obj = data_to_object(change["new_data"])
             getattr(self, f"commit_{name}")(obj, trans)
         return True
+
+    def _emit_change_signals(self, net_changes):
+        """Emit the person-add/family-update/event-delete/... signals a
+        normal (non-batch) local commit would have emitted for these same
+        changes -- see the module docstring's note on why
+        _sync_from_server()'s batch=True replay needs this done by hand.
+
+        net_changes: {(obj_class, obj_handle): trans_type}, already
+        collapsed to the net effect per handle (see _sync_from_server()).
+        Unrecognized obj_class values (reference-type changes never reach
+        here in the first place -- see _apply_change()) are skipped the
+        same way _apply_change() skips them.
+
+        Grouped and emitted in the same order DBAPI.transaction_commit()
+        uses for a normal commit -- deletes and adds before updates -- so
+        a view that (for instance) cares about total counts sees them
+        change before it sees an in-place update to one of the survivors.
+        """
+        by_type = {TXNDEL: {}, TXNADD: {}, TXNUPD: {}}
+        for (obj_class, handle), trans_type in net_changes.items():
+            key = CLASS_TO_KEY_MAP.get(obj_class)
+            if key is None:
+                continue
+            name = KEY_TO_NAME_MAP[key]
+            by_type[trans_type].setdefault(name, []).append(handle)
+        for trans_type in (TXNDEL, TXNADD, TXNUPD):
+            for name, handles in by_type[trans_type].items():
+                self.emit(name + _TRANS_TYPE_ACTION[trans_type], (handles,))
