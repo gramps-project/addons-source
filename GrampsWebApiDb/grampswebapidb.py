@@ -87,16 +87,32 @@ WebApiPushConflict (see webapi_client.push_transaction()) if anything
 changed server-side since the local mirror last synced -- a real, if
 coarse, optimistic-concurrency check: the whole push either applies or
 none of it does, with no indication of which item conflicted. On a
-conflict, transaction_commit() below resyncs from the server so the
-local mirror stops showing an edit the server never accepted; it does
-not retry the push or attempt a merge, so the local edit is simply lost
+conflict, _push_payload() below resyncs from the server so the local
+mirror stops showing an edit the server never accepted; it does not
+retry the push or attempt a merge, so the losing edit is simply lost
 from the server's perspective (still present, stale, in the local
 mirror's edit history) -- real conflict *resolution* (merge, prompt the
 user) is still out of scope. If the push fails for a non-conflict reason
 (network error, auth failure), the local commit has already happened and
 is not rolled back -- the local mirror just drifts from the server until
-the next successful push or read sync. Undo/redo integration is also
-still out of scope.
+the next successful push or read sync.
+
+Undo/redo integration hooks undo()/redo() the same way transaction_commit()
+hooks commits: Gramps core's own DbGenericUndo._undo()/_redo()
+(gramps/gen/db/generic.py) revert the local mirror directly via low-level
+_txn_begin()/undo_data()/_txn_commit() calls that never go through
+transaction_commit(), so without this override a local Undo/Redo would
+silently desync the server -- worse than a push conflict, since nothing
+would even be logged. The fix reuses transaction_to_json() on the DbTxn
+DbGenericUndo already stores in its undo/redo queues (the same object
+transaction_commit() turned into a payload the first time), then pushes
+it again: undo() sends it to POST /transactions/?undo=1, where the server
+reverses it itself (swaps old/new, add<->delete -- see
+gramps_webapi/api/resources/util.py's reverse_transaction()); redo() just
+pushes the original forward payload again, no different from a fresh
+commit. Both go through the same conflict-detection/resync path as a
+normal commit. Gramps' own undo history is in-memory/per-session, not
+persisted, so this only ever matters within a single running session.
 """
 
 import logging
@@ -189,10 +205,37 @@ class WebApiDB(SQLite):
         # Must run before super(): it clears the transaction's records.
         payload = transaction_to_json(transaction)
         super().transaction_commit(transaction)
+        self._push_payload(payload)
+
+    def undo(self, update_history=True):
+        # Peek before super(): DbGenericUndo._undo() pops this DbTxn off
+        # undoq. The DbTxn's own backing data isn't touched by that (it
+        # just moves queues), so building its JSON payload could happen
+        # either side of super() -- only grabbing the reference itself
+        # can't wait.
+        transaction = self.undodb.undoq[-1] if self.undodb.undo_count else None
+        result = super().undo(update_history)
+        if result and transaction is not None:
+            self._push_payload(transaction_to_json(transaction), undo=True)
+        return result
+
+    def redo(self, update_history=True):
+        transaction = self.undodb.redoq[-1] if self.undodb.redo_count else None
+        result = super().redo(update_history)
+        if result and transaction is not None:
+            # Redo is just re-applying the original transaction forward --
+            # not a variant of undo=True. See push_transaction()'s docstring.
+            self._push_payload(transaction_to_json(transaction))
+        return result
+
+    def _push_payload(self, payload, undo=False):
+        """Push a change-list payload to the server, handling a rejected
+        push (conflict or otherwise) the same way regardless of whether it
+        came from a plain commit, an undo, or a redo."""
         if not payload:
             return
         try:
-            self.web_client.push_transaction(payload)
+            self.web_client.push_transaction(payload, undo=undo)
         except WebApiPushConflict:
             LOG.warning(
                 "Server rejected %d local change(s): the object(s) changed "

@@ -518,6 +518,45 @@ class TestPushTransaction(unittest.TestCase):
         self.assertEqual(json.loads(req.data), payload)
         self.assertEqual(req.get_header("Authorization"), f"Bearer {token('AT0')}")
 
+    def test_undo_appends_query_param(self):
+        handler = self._authed_handler()
+        payload = [{"type": "add", "handle": "H1", "_class": "Person"}]
+        fake = QueuedUrlopen([FakeResponse({})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.push_transaction(payload, undo=True)
+        req = fake.requests[0]
+        self.assertEqual(
+            req.full_url, "https://example.com/api/transactions/?undo=1"
+        )
+        # The payload itself is the original (forward) one -- the server
+        # reverses it, not the caller. See push_transaction()'s docstring.
+        self.assertEqual(json.loads(req.data), payload)
+
+    def test_undo_defaults_to_false(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse({})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.push_transaction([{"type": "add"}])
+        self.assertEqual(fake.requests[0].full_url, "https://example.com/api/transactions/")
+
+    def test_undo_flag_survives_401_retry(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                http_error(401),
+                FakeResponse({"access_token": token("AT1")}),
+                FakeResponse({}),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake), mock.patch.object(
+            webapi_client, "sleep"
+        ):
+            handler.push_transaction([{"type": "add"}], undo=True)
+        # requests[0] = failed push, [1] = re-auth, [2] = retried push
+        self.assertEqual(
+            fake.requests[2].full_url, "https://example.com/api/transactions/?undo=1"
+        )
+
     def test_401_triggers_reauth_and_retry(self):
         handler = self._authed_handler()
         fake = QueuedUrlopen(
