@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-29 09:58-0700\n"
-"PO-Revision-Date: 2026-07-23 14:01+0000\n"
+"PO-Revision-Date: 2026-08-01 16:13+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -29,26 +29,22 @@ msgid "Ignore birthdays with tag"
 msgstr "Undlad fødseldage med ettiket"
 
 msgid "Month and day"
-msgstr ""
+msgstr "Måned og dag"
 
 msgid "Only show birthdays with tag"
 msgstr "Vis kun fødseldage med ettiket"
 
 msgid "Proximity to current date"
-msgstr ""
+msgstr "Afstand til nuværende dato"
 
-#, fuzzy
-#| msgid "Sort by:"
 msgid "Sort birthdays by"
-msgstr "Sortér efter:"
+msgstr "Sortér fødselsdage efter"
 
 msgid "Sort dates of death by"
-msgstr ""
+msgstr "Sortér dødsdatoer efter"
 
-#, fuzzy
-#| msgid "a gramplet that displays the birthdays of the living people"
 msgid "a gramplet that displays death dates in sorted order"
-msgstr "en gramplet der viser fødselsdage for levende persone"
+msgstr "en gramplet der viser dødsdatoer i sorteret rækkefølge"
 
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "en gramplet der viser fødselsdage for levende persone"
@@ -270,10 +266,8 @@ msgstr ""
 "generation."
 
 #: AncestryTableReport/AncestryTableReport.py:643
-#, fuzzy
-#| msgid "The style used for the table of contents header."
 msgid "The style used for the number of ancestors per generation."
-msgstr "Stilen der bruges til antallet af aner per generation."
+msgstr "Stilen der benyttes til antallet af aner per generation."
 
 #: AncestryTableReport/AncestryTableReport.py:654
 msgid ""
@@ -291,28 +285,24 @@ msgid "A gramplet that displays the anniversaries of events"
 msgstr "En gramplet der viser årsdage for begivenheder"
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:52
-#, fuzzy
-#| msgid "Double-click on a row to edit the selected participant."
 msgid "Double-click on a row to edit the event."
-msgstr "Dobbeltklik på en række for at redigere den valgte deltager."
+msgstr "Dobbeltklik på en række for at redigere den valgte begivenhed."
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:59
-#, fuzzy
-#| msgid "Other participants"
 msgid "Participant"
-msgstr "Andre deltagere"
+msgstr "Deltager"
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:22
 msgid ""
 "Parses strings from Riksarkivet and ArkivDigital to create sources and "
 "citations."
 msgstr ""
+"Behandler strenge fra Riksarkivet og ArkivDigital for at danne kilder og "
+"kildehenvisninger."
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:26
-#, fuzzy
-#| msgid "Archive file"
 msgid "Archive Assist"
-msgstr "Arkivfil"
+msgstr "Arkivhjælp"
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -1001,7 +991,7 @@ msgstr "udført!\n"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:432
 #, python-format
 msgid "Skipped %d people due to errors (see log).\n"
-msgstr ""
+msgstr "Sprang over %d personer på grund af fejl (se log).\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:347
 msgid ""
@@ -1076,7 +1066,7 @@ msgstr "Tilføjet %d hændelser."
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:562
 #, python-format
 msgid " (Skipped %d rows due to errors; see log.)"
-msgstr ""
+msgstr " (Sprang over %d rækker på grund af fejl: se log.)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:589
 msgid "Estimated date"
@@ -1125,47 +1115,51 @@ msgstr "Rediger valg"
 
 #: ChatWithTree/ChatWithTree.gpr.py:9
 msgid "Chat With Tree Interactive Addon"
-msgstr ""
+msgstr "Chat med Tree Interactive-tilføjelsesprogrammet"
 
 #: ChatWithTree/ChatWithTree.gpr.py:10
 msgid ""
 "Chat With Tree with the help of AI Large Language Model, needs litellm module"
 msgstr ""
+"Chat med Træ ved hjælp af AI Large Language Model, hat behov for litellm "
+"modulet"
 
 #: ChatWithTree/ChatWithTree.gpr.py:18
 msgid "Chat With Tree"
-msgstr ""
+msgstr "Chat med træ"
 
 #: ChatWithTree/ChatWithTree.py:149
 msgid "Type a message..."
-msgstr ""
+msgstr "Skriv en besked..."
 
 #: ChatWithTree/ChatWithTree.py:153 GrampsAssistant/grampsassistant.py:216
 #: GrampsAssistant/grampsassistant.py:920
 msgid "Send"
-msgstr ""
+msgstr "Send"
 
 #: ChatWithTree/ChatWithTree.py:163
 msgid "Chat with Tree initialized.                 Type /help for help."
-msgstr ""
+msgstr "Chat med træ er påbegyndt.                  Tast /help for hjælp."
 
 #: ChatWithTree/ChatWithTree.py:463
 msgid ""
 "The ChatWithTree addon is not yet initialized.                     Please "
 "reload Gramps or select a database."
 msgstr ""
+"ChatWithTree tillægget er endnu ikke initialiseret.                     "
+"Genstart venligst Gramps eller vælg en database."
 
 #: ChatWithTree/ChatWithTree.py:472
 msgid "The chatbot is currently processing a query. Please wait."
-msgstr ""
+msgstr "Chatbotten behandler for øjeblikket et spørgsmål. Vent venligst."
 
 #: ChatWithTree/ChatWithTree.py:499
 msgid "An error occurred while processing your query."
-msgstr ""
+msgstr "En fejl opstod ved behandling af dit spørgsmål."
 
 #: ChatWithTree/chatwithllm.py:119
 msgid "Tree: '{}'"
-msgstr ""
+msgstr "Træ: '{}'"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
@@ -1236,6 +1230,8 @@ msgid ""
 "An enhanced citation formatter that adds a repository and call number to the "
 "standard functionality."
 msgstr ""
+"En udvidet kildehenvisningsformatérer, der tilføjer et arkiv og "
+"samtalenummer til standardfunktionen."
 
 #: CliMerge/CliMerge.gpr.py:9
 msgid "Command Line Merge"
@@ -1308,10 +1304,8 @@ msgstr ""
 "Proband."
 
 #: CombinedView/personpage.py:306 CombinedView/personpage.py:368
-#, fuzzy
-#| msgid "Adding Tags to family (%s)"
 msgid "Add existing child to family"
-msgstr "Tilføjer mærkater til familie (%s)"
+msgstr "Tilføj eksisterende barn til familien"
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -1363,10 +1357,9 @@ msgstr ""
 #: D3Charts/DescendantIndentedTree.py:1681
 #: D3Charts/DescendantIndentedTree.py:1701 DenominoViso/DenominoViso.py:395
 #: DenominoViso/DenominoViso.py:412 DenominoViso/DenominoViso.py:2504
-#, fuzzy, python-brace-format
-#| msgid "Failure writing to %s"
+#, python-brace-format
 msgid "Failure writing {target_path}: {message}"
-msgstr "Fejl ved skrivning til %s"
+msgstr "Fejl ved skrivning til: {target_path}:{message}"
 
 #: D3Charts/AncestralCollapsibleTree.py:346 D3Charts/AncestralFanChart.py:421
 #: D3Charts/DescendantIndentedTree.py:1523
@@ -1507,10 +1500,9 @@ msgstr ""
 "Vil du forsøge at danne den?"
 
 #: D3Charts/DescendantIndentedTree.py:1379
-#, fuzzy, python-brace-format
-#| msgid "Failed to create %s: %s"
+#, python-brace-format
 msgid "Failed to create {target_path}: {message}"
-msgstr "Kunne ikke danne%s: %s"
+msgstr "Kunne ikke danne {target_path}:{message}"
 
 #: D3Charts/DescendantIndentedTree.py:1395
 #, python-format
@@ -1767,16 +1759,17 @@ msgid "The font size in pixels for biography body text."
 msgstr "Font størrelse i pixels for biografi body tekst."
 
 #: DEWebConnectPack/DEWebPack.gpr.py:11
+#, fuzzy
 msgid "DE Web Connect Pack"
-msgstr ""
+msgstr "DE Web Connect Pack"
 
 #: DEWebConnectPack/DEWebPack.gpr.py:12
 msgid "Collection of Web sites for the DE (requires libwebconnect)"
-msgstr ""
+msgstr "Samling af Web steder for DE (kræver libwebconnect)"
 
 #: DEWebConnectPack/DEWebPack.py:37
 msgid "Bielefeld Academic Search"
-msgstr ""
+msgstr "Akademisk søgning i Bielefeld"
 
 #: DEWebConnectPack/DEWebPack.py:39 SVWebconnectPack/SVWebPack.py:34
 #: UKWebConnectPack/UKWebPack.py:35 USWebConnectPack/USWebPack.py:34
@@ -1785,33 +1778,33 @@ msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
 
 #: DEWebConnectPack/DEWebPack.py:42
-#, fuzzy
-#| msgid "GoogleEarth"
 msgid "Google Archives"
-msgstr "GoogleEarth"
+msgstr "Google arkiv"
 
 #: DEWebConnectPack/DEWebPack.py:43
 #, fuzzy
 #| msgid "GoogleEarth"
 msgid "DE Google"
-msgstr "GoogleEarth"
+msgstr "DE Google"
 
 #: DEWebConnectPack/DEWebPack.py:44 UKWebConnectPack/UKWebPack.py:39
 #: USWebConnectPack/USWebPack.py:42
+#, fuzzy
 msgid "Open Library"
-msgstr ""
+msgstr "Open Library"
 
 #: DEWebConnectPack/DEWebPack.py:45
 msgid "Surname map (1890-1996)"
-msgstr ""
+msgstr "Efternavnskort (1890-1996)"
 
 #: DEWebConnectPack/DEWebPack.py:46
+#, fuzzy
 msgid "GenWiki"
-msgstr ""
+msgstr "GenWiki"
 
 #: DEWebConnectPack/DEWebPack.py:47
 msgid "German digital library"
-msgstr ""
+msgstr "Det Tyske digitale bibliotek"
 
 #: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
@@ -1835,13 +1828,11 @@ msgstr "Kr"
 
 #: DNA/dnasegmentmap.py:759
 msgid "Legend"
-msgstr ""
+msgstr "Tegnforklaring"
 
 #: DNA/dnasegmentmap.py:761
-#, fuzzy
-#| msgid "Grandparents"
 msgid ": Grandparent"
-msgstr "Bedsteforældre"
+msgstr ":Bedsteforælder"
 
 #: DNA/dnasegmentmap.py:1056
 #, python-brace-format
@@ -1860,16 +1851,16 @@ msgstr " SNPs"
 
 #: DNA/dnasegmentmap.py:1061
 msgid " : Starts at "
-msgstr ""
+msgstr " : Begynder ved "
 
 #: DNA/dnasegmentmap.py:1063
 msgid " and ends at "
 msgstr " og slutter ved "
 
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
-#, python-brace-format
+#, fuzzy, python-brace-format
 msgid "{0}"
-msgstr ""
+msgstr "{0}"
 
 #: DNA/dnasegmentmap.py:1086
 #, python-format
@@ -1877,18 +1868,18 @@ msgid "%(ancestor1)s and %(ancestor2)s"
 msgstr "%(ancestor1)s og %(ancestor2)s"
 
 #: DNA/dnasegmentmap.py:1090
-#, fuzzy, python-brace-format
-#| msgid "Relationship Type"
+#, python-brace-format
 msgid ""
 "\n"
 "Relationship: {0} "
-msgstr "Slægtskabstype:"
+msgstr ""
+"\n"
+"Slægtskab:{0} "
 
 #: DNA/dnasegmentmap.py:1091
-#, fuzzy, python-brace-format
-#| msgid "Ancestor"
+#, python-brace-format
 msgid " Ancestor: {0}"
-msgstr "Ane"
+msgstr " Ane:{0}"
 
 #: DNA/dnasegmentmap.py:1115
 msgid ""
@@ -2065,14 +2056,12 @@ msgstr "i"
 
 #: DataEntryGramplet/DataEntryGramplet.py:428
 #: DataEntryGramplet/DataEntryGramplet.py:507
-#, fuzzy
-#| msgid "Family Tree file"
 msgid "No Family Tree is open."
-msgstr "Slægtsbog"
+msgstr "Ingen slægtsbog er åben."
 
 #: DataEntryGramplet/DataEntryGramplet.py:429
 msgid "Please open a Family Tree to edit data."
-msgstr ""
+msgstr "Åben venligst en slægtsbog for at redigere data."
 
 #: DataEntryGramplet/DataEntryGramplet.py:446
 #: DataEntryGramplet/DataEntryGramplet.py:578
@@ -2082,7 +2071,7 @@ msgstr "Gramplet Data rettelse: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:508
 msgid "Please open a Family Tree before adding a person."
-msgstr ""
+msgstr "Åben venligst en slægtsbog før du tilføjer en person."
 
 #: DataEntryGramplet/DataEntryGramplet.py:524
 msgid "Can't add new person."
@@ -2174,21 +2163,19 @@ msgstr "Datoberegner"
 
 #: DateCalculator/DateCalculator.gpr.py:23
 msgid "Perform date math calculations"
-msgstr ""
+msgstr "Udfør beregninger for datoer"
 
 #: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
-msgstr ""
+msgstr "Referencedato eller datointerval"
 
 #: DateCalculator/DateCalculator.py:86
-#, fuzzy
-#| msgid "Invalid date "
 msgid "a valid Gramps date"
-msgstr "Ugyldig dato "
+msgstr "en gyldig Gramps dato"
 
 #: DateCalculator/DateCalculator.py:90
 msgid "Date or offset ±y or ±y, m, d"
-msgstr ""
+msgstr "Dato eller forskydning ±y eller ±y, m, d"
 
 #: DateCalculator/DateCalculator.py:92
 msgid ""
@@ -2196,6 +2183,9 @@ msgid ""
 "2. a positive or negative number, representing years\n"
 "3. a positive or negative list of values, representing years, months, days"
 msgstr ""
+"1. en Dato\n"
+"2. et positivt eller negativt tal, der angiver år\n"
+"3. en positiv eller negativ liste af værdier, der angiver år, måneder, dage"
 
 #: DateCalculator/DateCalculator.py:96
 msgid "Result"
@@ -2212,7 +2202,7 @@ msgstr "Kopier"
 
 #: DateCalculator/DateCalculator.py:159
 msgid "Error: invalid date for first expression"
-msgstr ""
+msgstr "Fejl: ugyldig dato i det første udtryk"
 
 #: DateCalculator/DateCalculator.py:169
 msgid "Error: invalid offset for second expression"
