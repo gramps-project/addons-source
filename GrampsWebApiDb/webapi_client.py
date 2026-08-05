@@ -32,9 +32,9 @@ directly) so this addon has no runtime dependency on another addon being
 installed.
 
 This file is a vendored copy: the canonical, standalone source is now the
-gramps-web-api-client package (not yet published; local checkout at
-~/gramps/gramps-web-api-client as of this writing), module
-gramps_web_api_client/client.py, class Client -- the same class as
+gramps-api-client package (not yet published; local checkout at
+~/gramps/gramps-api-client as of this writing), module
+gramps_api_client/client.py, class Client -- the same class as
 WebApiHandler below, just renamed. It was split out so the client could
 be discoverable/pip-installable on its own, independent of the Gramps
 addon ecosystem. Gramps addons are self-contained tarballs with no
