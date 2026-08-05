@@ -18,8 +18,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-03 09:18-0700\n"
-"PO-Revision-Date: 2026-06-27 05:51+0000\n"
-"Last-Translator: Libre <6n0n1m0s@proton.me>\n"
+"PO-Revision-Date: 2026-07-24 05:14+0000\n"
+"Last-Translator: Juan Saavedra <jcsaaver@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -264,40 +264,33 @@ msgstr ""
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:24
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:32
-#, fuzzy
-#| msgid "Inverse"
 msgid "Anniversaries"
-msgstr "Inverso"
+msgstr "Aniversarios"
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:25
-#, fuzzy
-#| msgid "a gramplet that displays the birthdays of the living people"
 msgid "A gramplet that displays the anniversaries of events"
-msgstr "un gramplet que exhibe los cumpleaños de la gente viva"
+msgstr "Un gramplete que muestra los aniversarios de eventos"
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:52
-#, fuzzy
-#| msgid "Double-click on a row to edit the selected participant."
 msgid "Double-click on a row to edit the event."
-msgstr "Pulse dos veces en una fila para editar el participante seleccionado."
+msgstr "Haga doble clic sobre una fila para editar el evento."
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:59
-#, fuzzy
-#| msgid "Other participants"
 msgid "Participant"
-msgstr "Otras participantes"
+msgstr "Participante"
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:22
 msgid ""
 "Parses strings from Riksarkivet and ArkivDigital to create sources and "
 "citations."
 msgstr ""
+"Analiza cadenas de Riksarkivet y ArkivDigital para crear fuentes y citas."
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:26
 #, fuzzy
 #| msgid "Archive file"
 msgid "Archive Assist"
-msgstr "Archivar archivo"
+msgstr "Asistente de archivo"
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -1014,7 +1007,7 @@ msgstr "¡hecho!\n"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:432
 #, python-format
 msgid "Skipped %d people due to errors (see log).\n"
-msgstr ""
+msgstr "Se omitieron %d personas debido a errores (ver log).\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:347
 msgid ""
@@ -1089,7 +1082,7 @@ msgstr "Se añadieron %d eventos."
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:562
 #, python-format
 msgid " (Skipped %d rows due to errors; see log.)"
-msgstr ""
+msgstr " (Se omitieron %d filas debido a errores; ver log.)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:589
 msgid "Estimated date"
@@ -1162,30 +1155,24 @@ msgid "Send"
 msgstr "Enviar"
 
 #: ChatWithTree/ChatWithTree.py:163
-#, fuzzy
-#| msgid "Chat with Tree initialized. Type /help for help."
 msgid "Chat with Tree initialized.                 Type /help for help."
-msgstr "Charla con Árbol Inicializado. Teclee /help para ayuda."
+msgstr "Chat con Árbol Inicializado.                 Teclee /help para ayuda."
 
 #: ChatWithTree/ChatWithTree.py:463
-#, fuzzy
-#| msgid ""
-#| "The ChatWithTree addon is not yet initialized. Please reload Gramps or "
-#| "select a database."
 msgid ""
 "The ChatWithTree addon is not yet initialized.                     Please "
 "reload Gramps or select a database."
 msgstr ""
-"La extensión ChatWithTree no está aún inicializado. Recargue Gramps o "
-"seleccione una base de datos."
+"La extensión ChatWithTree no está aún inicializada.                     "
+"Recargue Gramps o seleccione una base de datos."
 
 #: ChatWithTree/ChatWithTree.py:472
 msgid "The chatbot is currently processing a query. Please wait."
-msgstr ""
+msgstr "El chatbot está actualmente procesando una consulta. Por favor espere."
 
 #: ChatWithTree/ChatWithTree.py:499
 msgid "An error occurred while processing your query."
-msgstr ""
+msgstr "Se produjo un error al procesar su consulta."
 
 #: ChatWithTree/chatwithllm.py:119
 msgid "Tree: '{}'"
@@ -2086,14 +2073,12 @@ msgstr "en"
 
 #: DataEntryGramplet/DataEntryGramplet.py:428
 #: DataEntryGramplet/DataEntryGramplet.py:507
-#, fuzzy
-#| msgid "Family Tree file"
 msgid "No Family Tree is open."
-msgstr "Archivo del Árbol Familiar"
+msgstr "No hay ningún Árbol Genealógico abierto."
 
 #: DataEntryGramplet/DataEntryGramplet.py:429
 msgid "Please open a Family Tree to edit data."
-msgstr ""
+msgstr "Por favor abra un Árbol Genealógico para editar datos."
 
 #: DataEntryGramplet/DataEntryGramplet.py:446
 #: DataEntryGramplet/DataEntryGramplet.py:578
@@ -2103,7 +2088,7 @@ msgstr "Editar datos abuelo: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:508
 msgid "Please open a Family Tree before adding a person."
-msgstr ""
+msgstr "Por favor abra un Árbol Genealógico antes de añadir una persona."
 
 #: DataEntryGramplet/DataEntryGramplet.py:524
 msgid "Can't add new person."
@@ -2264,54 +2249,40 @@ msgid "Deep Connections"
 msgstr "Conexiones Profundas"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
-#, fuzzy
-#| msgid "Pause"
 msgid "⏸ Pause"
-msgstr "Pausar"
+msgstr "⏸ Pausa"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:108
 msgid "Pause the current search"
-msgstr ""
+msgstr "Pausa la búsqueda en curso"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:111
 msgid "▶ Continue"
-msgstr ""
+msgstr "▶ Continuar"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:114
-#, fuzzy
-#| msgid ""
-#| "Paused.\n"
-#| "Press Continue to search for additional relations.\n"
 msgid "Continue searching for more relations"
-msgstr ""
-"Pausado.\n"
-"Presione Continuar para buscar relaciones adicionales.\n"
+msgstr "Continúe buscando más relaciones"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:118
-#, fuzzy
-#| msgid "Copy"
 msgid "📋 Copy"
-msgstr "Copiar"
+msgstr "📋 Copiar"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:120
-#, fuzzy
-#| msgid "Copy link to clipboard"
 msgid "Copy selected people to clipboard"
-msgstr "Copiar enlace en el portapapeles"
+msgstr "Copiar las personas seleccionadas al portapapeles"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:128
 msgid "🗑 Clear"
-msgstr ""
+msgstr "🗑 Limpiar"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
 msgid "Clear all results and reset"
-msgstr ""
+msgstr "Limpiar todos los resultados y restablecer"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
-#, fuzzy
-#| msgid "Start type to search"
 msgid "Ready to search"
-msgstr "Teclee el texto para buscar"
+msgstr "Listo para buscar"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:185
 #, python-brace-format
@@ -2319,6 +2290,8 @@ msgid ""
 "Search Depth: {depth} | People Processed: {processed} | Queue Size: "
 "{queue_size}"
 msgstr ""
+"Profundidad de búsqueda: {depth} | Personas procesadas: {processed} | Tamaño "
+"de la cola: {queue_size}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 msgid "mentioned in note"
@@ -2355,24 +2328,20 @@ msgstr ""
 "   %s de "
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:336
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "Error: No Home Person set"
-msgstr "Ninguna Persona Activa fijada."
+msgstr "Error: No se ha definido una Persona Inicial"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:341
 msgid "No Active Person set."
 msgstr "Ninguna Persona Activa fijada."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:342
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "Error: No Active Person set"
-msgstr "Ninguna Persona Activa fijada."
+msgstr "Error: no se ha definido una Persona Activa"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:347
 msgid "Initializing search..."
-msgstr ""
+msgstr "Iniciando búsqueda..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:366
 msgid "Looking for relationship between\n"
@@ -2389,10 +2358,8 @@ msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (Persona Activa)…\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:382
-#, fuzzy
-#| msgid "Fetching records..."
 msgid "Searching for connections..."
-msgstr "Registros obtenidos…"
+msgstr "Buscando conexiones..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:402
 #, python-format
@@ -2412,46 +2379,29 @@ msgstr ""
 "Presione Continuar para buscar relaciones adicionales.\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:427
-#, fuzzy
-#| msgid ""
-#| "Paused.\n"
-#| "Press Continue to search for additional relations.\n"
 msgid "Paused - Press Continue to search for more relations"
-msgstr ""
-"Pausado.\n"
-"Presione Continuar para buscar relaciones adicionales.\n"
+msgstr "Pausado - Presione Continuar para buscar más relaciones"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:456
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "Search completed. %d relations found."
+#, python-format
 msgid ""
 "\n"
 "Search completed. %d relation paths found."
 msgstr ""
 "\n"
-"Búsqueda completada. %d relaciones encontradas."
+"Búsqueda completada. %d caminos de relación encontrados."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:460
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "Search completed. %d relations found."
 msgid "Search completed - {} relation paths found"
-msgstr ""
-"\n"
-"Búsqueda completada. %d relaciones encontradas."
+msgstr "Búsqueda completada - {} caminos de relación encontrados"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:471
 msgid "Error during search: {}"
 msgstr "Error durante la búsqueda: {}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:481
-#, fuzzy
-#| msgid "Removing '%s'..."
 msgid "Resuming search..."
-msgstr "Retira «%s»…"
+msgstr "Reanudando búsqueda..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:489
 msgid "Search interrupted by user"
@@ -3715,22 +3665,20 @@ msgstr ""
 " 0 = sin límite "
 
 #: DescendantsLines/DescendantsLines.py:1618
-#, fuzzy
-#| msgid "Font name"
 msgid "Font Name"
-msgstr "Nombre de tipo de letra"
+msgstr "Nombre de la Fuente"
 
 #: DescendantsLines/DescendantsLines.py:1620
 msgid ""
 "Name of the Font to use. On Windows enter the file name of the .ttf at /"
 "Windows/Fonts"
 msgstr ""
+"Nombre de la Fuente a usar. En Windows ingrese el nombre del archivo .ttf "
+"en /Windows/Fonts"
 
 #: DescendantsLines/DescendantsLines.py:1623
-#, fuzzy
-#| msgid "Database size"
 msgid "Font base size"
-msgstr "Tamaño de base de datos"
+msgstr "Tamaño de base de la Fuente"
 
 #: DescendantsLines/DescendantsLines.py:1629
 msgid "Box around Person's block"
@@ -5802,7 +5750,7 @@ msgstr ""
 #: FamilySheet/FamilySheet.py:232 FamilySheet/FamilySheet.py:275
 #, python-format
 msgid "→ %s"
-msgstr ""
+msgstr "→ %s"
 
 #: FamilySheet/FamilySheet.py:397
 #, python-format
@@ -6398,17 +6346,15 @@ msgstr ""
 
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
-msgstr ""
+msgstr "Eventos de las personas con rol"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:8
-#, fuzzy
-#| msgid "Matches people with an event with a selected role"
 msgid "Matches event of people filter with role"
-msgstr "Personas coinciden con un evento con un rol seleccionado"
+msgstr "Coincide con eventos de personas filtradas con rol"
 
 #: FilterRules/matchpersonfilterrole.py:69
 msgid "Role:"
-msgstr ""
+msgstr "Rol:"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
@@ -6569,6 +6515,8 @@ msgid ""
 "Check whether any Census events are missing for a person and some of their "
 "descendents"
 msgstr ""
+"Revisar si hay eventos de Censo faltantes para una persona y algunos de sus "
+"descendientes"
 
 #: Form/CensusCheckQuickview.gpr.py:23
 #, fuzzy
@@ -6581,11 +6529,13 @@ msgid ""
 "Check whether any Census events are missing for a person and some of their "
 "ancestors"
 msgstr ""
+"Revisar si hay eventos de Censo faltantes para una persona y algunos de sus "
+"ancestros"
 
 #: Form/CensusCheckQuickview.py:122 Form/CensusCheckUpQuickview.py:122
 #, python-format
 msgid "Census Check for %s"
-msgstr ""
+msgstr "Revisión de Censo para %s"
 
 #: Form/editform.py:192
 #, python-format
@@ -6608,7 +6558,7 @@ msgstr "Referencia:"
 
 #: Form/editform.py:393
 msgid "[Source recreated after deletion mid-form-edit]"
-msgstr ""
+msgstr "[Fuente recreada tras su eliminación durante la edición del formulario]"
 
 #: Form/editform.py:446
 msgid "Headings"
@@ -6620,13 +6570,11 @@ msgstr "Formulario"
 
 #: Form/form.py:174
 msgid "XML syntax error in Form definition file"
-msgstr ""
+msgstr "Error de sintaxis XML en el archivo de definición de la Forma"
 
 #: Form/form.py:185
-#, fuzzy
-#| msgid "Failed to read proto file %s: %s"
 msgid "Failed to read Form definition file"
-msgstr "No se pudo leer el protoarchivo %s: %s"
+msgstr "Falló al leer el archivo de definición de la Forma"
 
 #: Form/form.py:194
 #, fuzzy
