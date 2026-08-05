@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-01 09:38-0700\n"
-"PO-Revision-Date: 2026-07-05 22:49+0000\n"
+"PO-Revision-Date: 2026-08-03 04:02+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 msgid "Birthdays"
 msgstr "Födelsedagar"
@@ -36,28 +36,22 @@ msgid "Ignore birthdays with tag"
 msgstr "Ignorera födelsedagar med tagg"
 
 msgid "Month and day"
-msgstr ""
+msgstr "Månad och dag"
 
 msgid "Only show birthdays with tag"
 msgstr "Visa endast födelsedagar med tagg"
 
 msgid "Proximity to current date"
-msgstr ""
+msgstr "Närhet till aktuellt datum"
 
-#, fuzzy
-#| msgid "Sort by "
 msgid "Sort birthdays by"
-msgstr "Sortera efter "
+msgstr "Sortera födelsedagar efter"
 
-#, fuzzy
-#| msgid "Birth date of deceased"
 msgid "Sort dates of death by"
-msgstr "Den avlidnes födelsedatum"
+msgstr "Sortera dödsdatum efter"
 
-#, fuzzy
-#| msgid "a gramplet that displays the birthdays of the living people"
 msgid "a gramplet that displays death dates in sorted order"
-msgstr "en Gramplet, som visar födelsedagarna för levande personer"
+msgstr "en gramplet som visar dödsdatum i sorterad ordning"
 
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "en Gramplet, som visar födelsedagarna för levande personer"
@@ -1321,10 +1315,8 @@ msgstr ""
 "-> Välj Hemperson."
 
 #: CombinedView/personpage.py:306 CombinedView/personpage.py:368
-#, fuzzy
-#| msgid "Adding Tags to family (%s)"
 msgid "Add existing child to family"
-msgstr "Lägger till taggar till familjen (%s)"
+msgstr "Lägg till befintligt barn i familjen"
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -5438,7 +5430,7 @@ msgstr "Tillåt reguljära uttryck."
 #: ExcludeSubtreeFilter/excludesubtree.gpr.py:24
 #: ExcludeSubtreeFilter/excludesubtree.py:106
 msgid "People reachable from <Person>, stopping at <Filter> matches"
-msgstr ""
+msgstr "Personer som kan nås från <Person>, stannar vid <Filter> matchningar"
 
 #: ExcludeSubtreeFilter/excludesubtree.gpr.py:26
 #: ExcludeSubtreeFilter/excludesubtree.py:109
@@ -5447,11 +5439,14 @@ msgid ""
 "and children of attached families, recursively) stopping at persons in "
 "<Filter>."
 msgstr ""
+"Matchar personer som är nåbara med början från <Person> (följer alla "
+"föräldrar och barn till sammankopplade familjer, rekursivt) och stannar vid "
+"personer i <Filter>."
 
 #: ExcludeSubtreeFilter/excludesubtree.py:121
 #: FilterRules/isrelatedwithfiltermatch.py:80
 msgid "Retrieving all sub-filter matches"
-msgstr ""
+msgstr "Hämtar alla underfilterträffar"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
@@ -15920,12 +15915,16 @@ msgid ""
 "The system keyring could not be used. Snap confinement blocks access until "
 "you run: %s"
 msgstr ""
+"Systemnyckelringen kunde inte användas. Snap-begränsning blockerar åtkomst "
+"tills du kör: %s"
 
 #: GrampsWebSync/grampswebsync.py:128
 msgid ""
 "The system keyring could not be used. You will need to enter your password "
 "each time."
 msgstr ""
+"Systemnyckelringen kunde inte användas. Du måste ange ditt lösenord varje "
+"gång."
 
 #: GrampsWebSync/grampswebsync.py:145
 msgid "Authentication failed. Please check your username and password."
@@ -15981,11 +15980,13 @@ msgid ""
 "The family tree was modified while the changes were being reviewed. Nothing "
 "has been applied. Please compare again."
 msgstr ""
+"Släktträdet ändrades medan ändringarna granskades. Ingenting har tillämpats. "
+"Jämför igen."
 
 #: GrampsWebSync/grampswebsync.py:175
 #, python-format
 msgid "The server could not apply the changes: %s"
-msgstr ""
+msgstr "Servern kunde inte tillämpa ändringarna: %s"
 
 #: GrampsWebSync/grampswebsync.py:177
 #, python-format
@@ -16069,25 +16070,31 @@ msgstr "Fel:"
 
 #: GrampsWebSync/grampswebsync.py:646
 msgid "Sync mode"
-msgstr ""
+msgstr "Synkroniseringsläge"
 
 #: GrampsWebSync/grampswebsync.py:656
 msgid ""
 "Changes from both sides are combined. Objects edited in both places are "
 "merged."
 msgstr ""
+"Förändringar från båda sidor kombineras. Objekt som redigerats på båda "
+"ställena slås samman."
 
 #: GrampsWebSync/grampswebsync.py:660
 msgid ""
 "The server is made to match this computer. Anything changed only on the "
 "server is discarded."
 msgstr ""
+"Servern är gjord för att matcha den här datorn. Allt som ändras endast på "
+"servern kasseras."
 
 #: GrampsWebSync/grampswebsync.py:664
 msgid ""
 "This computer is made to match the server. Anything changed only here is "
 "discarded."
 msgstr ""
+"Den här datorn är gjord för att matcha servern. Allt som ändras endast här "
+"kasseras."
 
 #: GrampsWebSync/grampswebsync.py:671
 msgid "Bidirectional Synchronization"
@@ -16103,7 +16110,7 @@ msgstr "Återställ lokalt till fjärrläge"
 
 #: GrampsWebSync/grampswebsync.py:712
 msgid "Warning:"
-msgstr ""
+msgstr "Varning:"
 
 #: GrampsWebSync/grampswebsync.py:722
 msgid "Local changes"
@@ -16150,33 +16157,29 @@ msgid "Missing remotely"
 msgstr "Saknas på distans"
 
 #: GrampsWebSync/grampswebsync.py:905
-#, fuzzy, python-format
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
+#, python-format
 msgid "Downloading %s media file"
 msgid_plural "Downloading %s media files"
 msgstr[0] "Laddar ner %s mediefil"
-msgstr[1] "Laddar ner %s mediefil"
+msgstr[1] "Laddar ner %s mediefiler"
 
 #: GrampsWebSync/grampswebsync.py:920
-#, fuzzy, python-format
-#| msgid "Uploading %s media file"
-#| msgid_plural "Uploading %s media files"
+#, python-format
 msgid "Uploading %s media file"
 msgid_plural "Uploading %s media files"
 msgstr[0] "Laddar upp %s mediefil"
-msgstr[1] "Laddar upp %s mediefil"
+msgstr[1] "Laddar upp %s mediefiler"
 
 #: GrampsWebSync/grampswebsync.py:965
 msgid "Try again"
-msgstr ""
+msgstr "Försök igen"
 
 #: GrampsWebSync/grampswebsync.py:999
 #, python-format
 msgid "Applied %s change."
 msgid_plural "Applied %s changes."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Tillämpade %s ändring."
+msgstr[1] "Tillämpade %s ändringar."
 
 #: GrampsWebSync/grampswebsync.py:1006
 msgid "Media files are in sync."
@@ -16187,47 +16190,40 @@ msgstr "Mediefiler är synkroniserade."
 msgid "%s media file is missing on both sides and could not be transferred."
 msgid_plural ""
 "%s media files are missing on both sides and could not be transferred."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s mediafil saknas på båda sidor och kunde inte överföras."
+msgstr[1] "%s mediafiler saknas på båda sidor och kunde inte överföras."
 
 #: GrampsWebSync/grampswebsync.py:1020
-#, fuzzy
-#| msgid "Both trees are the same."
 msgid "Both trees are already in sync."
-msgstr "Båda träden är likadana."
+msgstr "Båda träden är redan synkroniserade."
 
 #: GrampsWebSync/grampswebsync.py:1033
-#, fuzzy, python-format
-#| msgid "Successfully downloaded %s media files."
+#, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "Laddar ner %s mediefiler med lyckat resultat."
-msgstr[1] "Laddar ner %s mediefiler med lyckat resultat."
+msgstr[0] "Laddade ner %s mediefil med lyckat resultat."
+msgstr[1] "Laddade ner %s mediefiler med lyckat resultat."
 
 #: GrampsWebSync/grampswebsync.py:1043
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during download."
+#, python-format
 msgid "Encountered %s error during download."
 msgid_plural "Encountered %s errors during download."
 msgstr[0] "%s fel uppstod under nedladdningen."
 msgstr[1] "%s fel uppstod under nedladdningen."
 
 #: GrampsWebSync/grampswebsync.py:1056
-#, fuzzy, python-format
-#| msgid "Successfully uploaded %s media files."
+#, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "Laddar upp %s mediefiler med lyckat resultat."
-msgstr[1] "Laddar upp %s mediefiler med lyckat resultat."
+msgstr[0] "Laddade upp %s mediefil med lyckat resultat."
+msgstr[1] "Laddade upp %s mediefiler med lyckat resultat."
 
 #: GrampsWebSync/grampswebsync.py:1065
-#, fuzzy, python-format
-#| msgid "Encountered %s error during upload."
-#| msgid_plural "Encountered %s errors during upload."
+#, python-format
 msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
-msgstr[0] "Mötte %s fel vid uppladdning."
-msgstr[1] "Mötte %s fel vid uppladdning."
+msgstr[0] "%s fel uppstod under uppladdningen."
+msgstr[1] "%s fel uppstod under uppladdningen."
 
 #: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
 msgid "Gram.py Script"
@@ -16768,14 +16764,12 @@ msgid "Families with a tag containing <substring>"
 msgstr "Familjer med en tagg som innehåller <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:42 HasTagSubstr/hastagsubstr.py:104
-#, fuzzy
-#| msgid "Matches families that are matched by an event filter"
 msgid "Matches families with a tag whose name contains the given substring"
-msgstr "Matchar familjer som matchas av ett händelsefilter"
+msgstr "Matchar familjer med en tagg vars namn innehåller den givna delsträngen"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:57 HasTagSubstr/hastagsubstr.py:113
 msgid "Events with a tag containing <substring>"
-msgstr ""
+msgstr "Händelser med en tagg som innehåller <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:59 HasTagSubstr/hastagsubstr.py:115
 msgid "Matches events with a tag whose name contains the given substring"
@@ -16794,10 +16788,8 @@ msgid "Sources with a tag containing <substring>"
 msgstr ""
 
 #: HasTagSubstr/hastagsubstr.gpr.py:93 HasTagSubstr/hastagsubstr.py:137
-#, fuzzy
-#| msgid "Matches Sources with values containing the chosen parameters"
 msgid "Matches sources with a tag whose name contains the given substring"
-msgstr "Matchar källor med värden som innehåller de valda parametrarna"
+msgstr "Matchar källor med en tagg vars namn innehåller den angivna delsträngen"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:108 HasTagSubstr/hastagsubstr.py:146
 msgid "Citations with a tag containing <substring>"
