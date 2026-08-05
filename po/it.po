@@ -67,7 +67,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-03 09:18-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"PO-Revision-Date: 2026-07-09 15:32+0000\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -76,7 +76,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -1679,7 +1679,7 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1920
 msgid "URL prefix path."
-msgstr ""
+msgstr "Percorso del prefisso URL."
 
 #: D3Charts/DescendantIndentedTree.py:1922
 msgid "URL prefix to apply to each auto-generated HREF link."
@@ -3718,10 +3718,8 @@ msgstr ""
 "Windows/Fonts"
 
 #: DescendantsLines/DescendantsLines.py:1623
-#, fuzzy
-#| msgid "Database size"
 msgid "Font base size"
-msgstr "Grandezza del database"
+msgstr "Dimensione base del carattere"
 
 #: DescendantsLines/DescendantsLines.py:1629
 msgid "Box around Person's block"
@@ -4311,11 +4309,11 @@ msgstr "(ordinato per quantità)"
 
 #: DynamicWeb/dynamicweb.py:2920
 msgid ": activate to sort column ascending"
-msgstr ""
+msgstr ": attivare per ordinare la colonna in ordine crescente"
 
 #: DynamicWeb/dynamicweb.py:2924
 msgid ": activate to sort column descending"
-msgstr ""
+msgstr ": attivare per ordinare la colonna in ordine decrescente"
 
 #: DynamicWeb/dynamicweb.py:2929
 msgid ""
@@ -4323,6 +4321,9 @@ msgid ""
 "editor and save as an SVG file.<br>Make sure that the text editor encoding "
 "is UTF-8.</p>"
 msgstr ""
+"<p>Questa pagina contiene il codice SVG grezzo.<br>Copiare il contenuto in "
+"un editor di testo, e salvarlo come file SVG.<br>Assicurarsi che la codifica "
+"dell'editor di testo sia UTF-8.</p>"
 
 #: DynamicWeb/dynamicweb.py:2937
 msgid "Alternate Name"
@@ -4346,7 +4347,7 @@ msgstr "Esempi"
 
 #: DynamicWeb/dynamicweb.py:2973
 msgid "F"
-msgstr ""
+msgstr "F"
 
 #: DynamicWeb/dynamicweb.py:2974
 msgid "Families Index"
@@ -4420,7 +4421,7 @@ msgstr "Altri partecipanti"
 
 #: DynamicWeb/dynamicweb.py:3043
 msgid "Person page"
-msgstr ""
+msgstr "Pagina della persona"
 
 #: DynamicWeb/dynamicweb.py:3044
 msgid "Person to search for"
@@ -6136,9 +6137,8 @@ msgid "The active Person"
 msgstr "La persona attiva"
 
 #: FilterRules/activepersonrule.py:58
-#, fuzzy
 msgid "Matches the active person"
-msgstr "Persona attiva: <b>%s</b>"
+msgstr "Corrisponde alla persona attiva"
 
 #: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:90
 #: FilterRules/ageatdeath.py:92
@@ -6377,10 +6377,8 @@ msgstr ""
 
 #: FilterRules2/xchromdescendants.gpr.py:25
 #: FilterRules2/xchromdescendants.py:66
-#, fuzzy
-#| msgid "Produces descendants lines of a person"
 msgid "X-chromosomal descendants of <person>"
-msgstr "Produce le linee dei discendenti di una persona"
+msgstr "Discendenti con cromosoma X di <persona>"
 
 #: FilterRules2/xchromdescendants.gpr.py:27
 msgid ""
@@ -10023,10 +10021,8 @@ msgid ""
 msgstr ""
 
 #: Form/form_ie.xml.h:33
-#, fuzzy
-#| msgid "Years at current residence"
 msgid "Years married in present Marriage"
-msgstr "Anni nella residenza attuale"
+msgstr "Anni di matrimonio nell'unione attuale"
 
 #: Form/form_ie.xml.h:34
 msgid "Months Married"
@@ -10045,10 +10041,8 @@ msgid "Children born alive to present marriage"
 msgstr ""
 
 #: Form/form_ie.xml.h:38
-#, fuzzy
-#| msgid "Children Living"
 msgid "Total Children Under 16 Living"
-msgstr "Figli viventi"
+msgstr "Numero totale di minori di 16 anni residenti"
 
 #: Form/form_ie.xml.h:39
 msgid "(1.) Entry no."
@@ -10143,10 +10137,8 @@ msgid "(2.) When Married"
 msgstr "Data del matrimonio"
 
 #: Form/form_ie.xml.h:81
-#, fuzzy
-#| msgid "Maiden Surname"
 msgid "(3.) Name and Surname"
-msgstr "Cognome da nubile"
+msgstr "(3.) Nome e cognome"
 
 #: Form/form_ie.xml.h:83
 msgid "(4.) Full or Minor"
@@ -10169,10 +10161,8 @@ msgid "(8.) Father's Name and Surname"
 msgstr ""
 
 #: Form/form_ie.xml.h:93 Form/form_ie.xml.h:97
-#, fuzzy
-#| msgid "Rank, Profession or Occupation"
 msgid "(9.) Rank or Profession of Father"
-msgstr "Grado, professione o impiego"
+msgstr "(9.) Grado o professione del padre"
 
 #: Form/form_ie.xml.h:110
 msgid "(10.) When Registered"
@@ -15213,10 +15203,8 @@ msgid ""
 msgstr ""
 
 #: Form/form_us.xml.h:2567
-#, fuzzy
-#| msgid "Citizenship"
 msgid "Country of Citizenship"
-msgstr "Cittadinanza"
+msgstr "Nazione di cittadinanza"
 
 #: Form/form_us.xml.h:2568
 msgid ""
@@ -15799,11 +15787,12 @@ msgstr ""
 #: GrampsAssistant/grampsassistant.gpr.py:26
 #: GrampsAssistant/grampsassistant.py:1417
 msgid "Gramps Assistant"
-msgstr ""
+msgstr "Assistente di Gramps"
 
 #: GrampsAssistant/grampsassistant.gpr.py:27
 msgid "AI assistant for querying your Gramps family tree"
 msgstr ""
+"Assistente AI per effettuare ricerche nel tuo albero genealogico di Gramps"
 
 #: GrampsAssistant/grampsassistant.py:58
 msgid ""
@@ -15813,27 +15802,33 @@ msgid ""
 "provided tools — never write code, simulate results, or make up data. If no "
 "tool exists for the requested information, say so plainly."
 msgstr ""
+"Sei un assistente genealogico disponibile che ha accesso al database Gramps "
+"dell'utente. Rispondi alle domande su persone, famiglie, eventi e relazioni. "
+"Quando hai bisogno di informazioni dal database, utilizza gli strumenti "
+"messi a disposizione: non scrivere mai codice, non simulare risultati, e non "
+"inventare dati. Se non esiste uno strumento per le informazioni richieste, "
+"dillo chiaramente."
 
 #: GrampsAssistant/grampsassistant.py:209
-#, fuzzy
-#| msgid "Extra style settings:"
 msgid "Gramps Assistant settings"
-msgstr "Ulteriori impostazioni sullo stile:"
+msgstr "Impostazioni per l'Assistente di Gramps"
 
 #: GrampsAssistant/grampsassistant.py:213
 msgid "Clear conversation and context"
-msgstr ""
+msgstr "Elimina conversazione e contesto"
 
 #: GrampsAssistant/grampsassistant.py:388
 #: GrampsAssistant/grampsassistant.py:749
 msgid "Gramps Assistant:"
-msgstr ""
+msgstr "Assistente di Gramps:"
 
 #: GrampsAssistant/grampsassistant.py:390
 msgid ""
 "Ask me anything about the Gramps program or your specific Gramps family "
 "tree. Use the ⚙ button to configure the AI.\n"
 msgstr ""
+"Chiedimi qualsiasi cosa sul programma Gramps o sul tuo albero genealogico "
+"specifico in Gramps. Usa il pulsante ⚙ per configurare l'IA.\n"
 
 #: GrampsAssistant/grampsassistant.py:720
 msgid ""
@@ -15841,10 +15836,13 @@ msgid ""
 "No model configured. Please click the Settings button to choose a backend "
 "and model before chatting.\n"
 msgstr ""
+"\n"
+"Nessun modello configurato. Fare clic sul pulsante Impostazioni per "
+"scegliere un motore e un modello prima di conversare,\n"
 
 #: GrampsAssistant/grampsassistant.py:755
 msgid "Thinking..."
-msgstr ""
+msgstr "Sto riflettendo..."
 
 #: GrampsAssistant/grampsassistant.py:824
 #, python-brace-format
@@ -15853,12 +15851,18 @@ msgid ""
 "it before launching Gramps:\n"
 "  export {var}=your-key-here"
 msgstr ""
+"Errore relativo alla chiave API: la variabile d'ambiente {var} non è "
+"impostata o non è valida. Impostarla prima di avviare Gramps:\n"
+"  export {var}=your-key-here"
 
 #: GrampsAssistant/grampsassistant.py:830
 msgid ""
 "API key error: this provider requires an API key. Open Settings and enter "
 "the environment variable name for your API key (e.g. OPENAI_API_KEY)."
 msgstr ""
+"Errore relativo alla chiave API: questo provider richiede una chiave API. "
+"Aprire le Impostazioni e inserire il nome della variabile d'ambiente "
+"corrispondente alla chiave API (ad es. OPENAI_API_KEY)."
 
 #: GrampsAssistant/grampsassistant.py:973
 #, fuzzy
@@ -21152,6 +21156,13 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
+"<i><a href=\"https://gramps-project.org/wiki/"
+"index.php?title=How_to_make_a_backup\">Backup in formato XML di Gramps</a> "
+"Nelle versioni recenti di Gramps, l'opzione “Crea backup...” si trova nel "
+"menu Albero genealogico; in caso contrario, utilizzare “Esporta...” nello "
+"stesso menu, ma deselezionando le opzioni relative alla privacy "
+"nell'Assistente all'esportazione per poter esportare tutti i dati. </i>\n"
+"\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:336
 msgid ""
