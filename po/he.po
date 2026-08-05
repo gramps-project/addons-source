@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-03 09:18-0700\n"
-"PO-Revision-Date: 2026-07-03 16:19+0000\n"
+"PO-Revision-Date: 2026-07-29 16:56+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -7712,7 +7712,7 @@ msgstr "6. יוחסה לראש המשפחה"
 
 #: Form/form_ca.xml.h:473 Form/form_ca.xml.h:684
 msgid "7. Single, married, widowed, divorced or legally separated"
-msgstr "7. רווק, נשוי, אלמן, התגרש או חוקית פרוד"
+msgstr "7. רווק, נשוי, אלמן, התגרש או פרוד על פי חוק"
 
 #: Form/form_ca.xml.h:474 Form/form_ca.xml.h:685 Form/form_ca.xml.h:773
 msgid "BirthMonth"
@@ -8462,7 +8462,7 @@ msgstr "5. יוחסה לראש המשפחה"
 
 #: Form/form_ca.xml.h:772
 msgid "6. Single, married, widowed, divorced or legally separated"
-msgstr "6. רווק, נשוי, אלמן, התגרש או חוקית פרוד"
+msgstr "6. רווק, נשוי, אלמן, התגרש או פרוד על פי חוק"
 
 #: Form/form_ca.xml.h:774
 msgid "7. Month of birth"
@@ -8554,7 +8554,7 @@ msgstr "10. מין"
 
 #: Form/form_ca.xml.h:825
 msgid "11. Single, married, widowed, divorced or legally separated"
-msgstr "11. רווק, נשוי, אלמן, התגרש או חוקית פרוד"
+msgstr "11. רווק, נשוי, אלמן, התגרש או פרוד על פי חוק"
 
 #: Form/form_ca.xml.h:827
 msgid "12. Age at last birthday"
@@ -15603,14 +15603,12 @@ msgstr ""
 
 #: GrampsAssistant/grampsassistant.gpr.py:26
 #: GrampsAssistant/grampsassistant.py:1417
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Assistant"
-msgstr "גרסת גרמפס"
+msgstr "סייען גרמפס"
 
 #: GrampsAssistant/grampsassistant.gpr.py:27
 msgid "AI assistant for querying your Gramps family tree"
-msgstr ""
+msgstr "סייען בינה מלאכותית לשאילתות אילן־יוחסין גרמפס"
 
 #: GrampsAssistant/grampsassistant.py:58
 msgid ""
@@ -15620,29 +15618,32 @@ msgid ""
 "provided tools — never write code, simulate results, or make up data. If no "
 "tool exists for the requested information, say so plainly."
 msgstr ""
+"פעל כסייען חקר־יוחסין יעיל עם גישה למסד הנתוניגרמפס של המשתמש. ענה על שאלות "
+"לגבי אנשים, משפחות, אירועים וקשרי־קרבה. אם אתה זקוק למידע ממסד הנתונים, פנה "
+"לכלים המסופקים – לעולם אל תכתוב קוד, אל תמציא דמיוניות תוצאות ואל תמציא "
+"נתונים שלא קיימים במסד הנתונים. אם לא קיים כלי עבור המידע המבוקש, אמור זאת "
+"במפורש."
 
 #: GrampsAssistant/grampsassistant.py:209
-#, fuzzy
-#| msgid "Extra style settings:"
 msgid "Gramps Assistant settings"
-msgstr "הגדרות סגנון נוספות:"
+msgstr "הגדרות סייען גרמפס"
 
 #: GrampsAssistant/grampsassistant.py:213
 msgid "Clear conversation and context"
-msgstr ""
+msgstr "ניקוי שיחה ותוכן"
 
 #: GrampsAssistant/grampsassistant.py:388
 #: GrampsAssistant/grampsassistant.py:749
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Assistant:"
-msgstr "גרסת גרמפס"
+msgstr "סייען גרמפס:"
 
 #: GrampsAssistant/grampsassistant.py:390
 msgid ""
 "Ask me anything about the Gramps program or your specific Gramps family "
 "tree. Use the ⚙ button to configure the AI.\n"
 msgstr ""
+"ניתן לשאול אותי כל דבר בנוגע לתוכנית גרמפס או על אילן־היחוסין מסויים. יש "
+"להשתמש בלחצן ⚙ כדי להגדיר את הבינה המלאכותית.\n"
 
 #: GrampsAssistant/grampsassistant.py:720
 msgid ""
@@ -15650,10 +15651,12 @@ msgid ""
 "No model configured. Please click the Settings button to choose a backend "
 "and model before chatting.\n"
 msgstr ""
+"\n"
+"לא תוצר מודל. נא להקיש על לחצן הגדרות לבחירת גב־המערכת ומודל לפני שיחוח.\n"
 
 #: GrampsAssistant/grampsassistant.py:755
 msgid "Thinking..."
-msgstr ""
+msgstr "חשיבה..."
 
 #: GrampsAssistant/grampsassistant.py:824
 #, python-brace-format
@@ -15662,95 +15665,94 @@ msgid ""
 "it before launching Gramps:\n"
 "  export {var}=your-key-here"
 msgstr ""
+"שגיאת מפתח API: משתנה הסביבה {var} לא הוגדר או לא תקין. נא להגדירו לפני "
+"שיגור גרמפס:\n"
+"  export {var}=הזנת-המפתח-כאן"
 
 #: GrampsAssistant/grampsassistant.py:830
 msgid ""
 "API key error: this provider requires an API key. Open Settings and enter "
 "the environment variable name for your API key (e.g. OPENAI_API_KEY)."
 msgstr ""
+"שגיאת מפתח API: ספק שרות זה דורש מפתח API. נא לפתוח את תפריט ההגדרות ולהזין "
+"את שם משתנה הסביבה למפתח ה API (לדוגמה, OPENAI_API_KEY)."
 
 #: GrampsAssistant/grampsassistant.py:973
-#, fuzzy
-#| msgid "Done!\n"
 msgid "Done.\n"
-msgstr "בוצע!\n"
+msgstr "בוצע.\n"
 
 #: GrampsAssistant/grampsassistant.py:1203
 msgid "System Prompt:"
-msgstr ""
+msgstr "הנחיית מערכת:"
 
 #: GrampsAssistant/grampsassistant.py:1217
 msgid "Simplify tools (recommended for smaller/local models)"
-msgstr ""
+msgstr "פישוט כלים (מומלץ לדגמים קטנים/מקומיים)"
 
 #: GrampsAssistant/grampsassistant.py:1221
 msgid ""
 "When enabled, only the tools relevant to your question are sent to the "
 "model. This improves performance with smaller local models."
 msgstr ""
+"כאשר מאופשר, רק הכלים הרלוונטיים לשאלה שנשאלה נשלחים למודל. זה משפר ביצועים "
+"במודלים מקומיים קטנים."
 
 #: GrampsAssistant/grampsassistant.py:1230
-#, fuzzy
-#| msgid "Mistral Model"
 msgid "Use Local Model"
-msgstr "דגם Mistral"
+msgstr "שימוש בדגם מקומי"
 
 #: GrampsAssistant/grampsassistant.py:1249
 msgid ""
 "URL of a local OpenAI-compatible server. Ollama: http://localhost:11434  LM "
 "Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
 msgstr ""
+"כתובת URL של שרת מקומי תואם OpenAI. Ollama: http://localhost:11434 LM "
+"Studio: http://localhost:1234 llama.cpp: http://localhost:8080"
 
 #: GrampsAssistant/grampsassistant.py:1257
 msgid "model name (leave blank for LM Studio / llama.cpp)"
-msgstr ""
+msgstr "שם מודל (להשאיר ריק עבור LM Studio / llama.cpp)"
 
 #: GrampsAssistant/grampsassistant.py:1260
 msgid ""
 "Model to request from the local server. Required for Ollama (e.g. llama3.1). "
 "Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
 msgstr ""
+"מודל לבקשה מהשרת המקומי. נדרש עבור Ollama (לדוגמה llama3.1). להשאיר ריק עבור "
+"LM Studio או llama.cpp, שמשתמשים בכל מודל שנטען."
 
 #: GrampsAssistant/grampsassistant.py:1267
 #: GrampsAssistant/grampsassistant.py:1311
-#, fuzzy
-#| msgid "Modern"
 msgid "Model:"
-msgstr "חדיש"
+msgstr "דגם:"
 
 #: GrampsAssistant/grampsassistant.py:1273
-#, fuzzy
-#| msgid "Foundation date:"
 msgid "Use Foundational Model"
-msgstr "תאריך יסוד:"
+msgstr "שימוש בדגם יסוד:"
 
 #: GrampsAssistant/grampsassistant.py:1315
 msgid "e.g. OPENAI_API_KEY"
-msgstr ""
+msgstr "לדוגמה OPENAI_API_KEY"
 
 #: GrampsAssistant/grampsassistant.py:1317
 msgid "Name of the environment variable holding your API key."
-msgstr ""
+msgstr "שם משתנה הסביבה שמחזיק במפתח ה–API."
 
 #: GrampsAssistant/grampsassistant.py:1319
 msgid "API key env var:"
-msgstr ""
+msgstr "משתנה' סביבת מפתח API:"
 
 #: GrampsAssistant/grampsassistant.py:1322
 msgid "Backend:"
-msgstr ""
+msgstr "גב־מערכת:"
 
 #: GrampsAssistant/grampsassistant.py:1334
-#, fuzzy
-#| msgid "Website URL"
 msgid "Base URL:"
-msgstr "כתובת URL של אתר מרשתת"
+msgstr "כתובת URL בסיסית:"
 
 #: GrampsAssistant/grampsassistant.py:1338
-#, fuzzy
-#| msgid "Spouse name:"
 msgid "Model name:"
-msgstr "זוגאי שם:"
+msgstr "שם דגם:"
 
 #: GrampsChat/GrampsChat.gpr.py:4 GrampsChat/GrampsChat.gpr.py:9
 msgid "GrampsChat"
@@ -18190,29 +18192,25 @@ msgid "%(prog)s: error: %(message)s\n"
 msgstr "%(prog)s: שגיאה: %(message)s\n"
 
 #: NameSuite/name_processor.gpr.py:6
-#, fuzzy
-#| msgid "Patronymic names:"
 msgid "Audit Given and Patronymic Names"
-msgstr "שמות פטרוניים:"
+msgstr "ביקורת שמות פרטיים ושמות פטרונימיים"
 
 #: NameSuite/name_processor.gpr.py:9
 msgid ""
 "Tools to rename given name, audit and infer patronymic (East Slavic) names."
-msgstr ""
+msgstr "כלים לשינוי שם פרטי, ביקורת והסקת שמות פטרונימיים (שמות מזרח סלאביים)."
 
 #: NameSuite/name_processor.gpr.py:25 NameSuite/name_processor.gpr.py:37
-#, fuzzy
-#| msgid "Patronymic names:"
 msgid "Patronymic Suggestion"
-msgstr "שמות פטרוניים:"
+msgstr "הצעת שם פטרוני"
 
 #: NameSuite/name_processor.gpr.py:27
 msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
-msgstr ""
+msgstr "הצעת שמות פטרונימיים (מזרח סלאביים) בזמן אמת תוך כדי ניווט."
 
 #: NameSuite/name_processor/views/base_tab.py:150
 msgid "Use"
-msgstr ""
+msgstr "להשתמש"
 
 #: NameSuite/name_processor/views/gramplet.py:32
 #, python-brace-format
@@ -18221,222 +18219,173 @@ msgid ""
 "Suggested: {0}\n"
 "Based on father: {1}"
 msgstr ""
+"זוהה שם פטרונימי חסר.\n"
+"הוצע: {0}\n"
+"מבוסס על אב: {1}"
 
 #: NameSuite/name_processor/views/gramplet.py:34
 msgid "Navigate to an individual to check patronymic status."
-msgstr ""
+msgstr "ניוט לאדם כדי לבדוק מצב שם פטרונימי."
 
 #: NameSuite/name_processor/views/gramplet.py:35
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "No active person selected."
-msgstr "לא הוגדר 'אדם פעיל'."
+msgstr "לא נבחר אדם פעיל."
 
 #: NameSuite/name_processor/views/gramplet.py:37
 msgid ""
 "Patronymic inference can't be inferred for non-binary or unknown genders."
-msgstr ""
+msgstr "לא ניתן להסיק שם פטרונימי למגדרים לא בינאריים או לא ידועים."
 
 #: NameSuite/name_processor/views/gramplet.py:40
 msgid "Individual already has a recorded patronymic."
-msgstr ""
+msgstr "לאדם כבר יש שם פטרונימי רשום."
 
 #: NameSuite/name_processor/views/gramplet.py:43
 msgid "No attached father found in database family records."
-msgstr ""
+msgstr "לא נמצא אב משוייך במסד נתוני רשומות משפחה."
 
 #: NameSuite/name_processor/views/gramplet.py:46
 msgid "Father lacks a recorded first name."
-msgstr ""
+msgstr "לאב חסרה רשומת שם פרטי."
 
 #: NameSuite/name_processor/views/gramplet.py:49
 msgid "Could not generate valid morphology patterns."
-msgstr ""
+msgstr "לא ניתן ליצור דפוסי מורפולוגיה תקינות."
 
 #: NameSuite/name_processor/views/gramplet.py:51
 msgid "Patronymic applied successfully!"
-msgstr ""
+msgstr "פטרונימי הוחל בהצלחה!"
 
 #: NameSuite/name_processor/views/gramplet.py:77
-#, fuzzy
-#| msgid "🔍 AI Suggestions"
 msgid "Apply Suggestion"
-msgstr "🔍 הצעות בינה מלאכותית"
+msgstr "החלת הצעה"
 
 #: NameSuite/name_processor/views/tool.py:92
 msgid "Infer East Slavic Patronymics"
-msgstr ""
+msgstr "להסיק פטרוניים מזרח סלביים"
 
 #: NameSuite/name_processor/views/tool.py:112
-#, fuzzy
-#| msgid "Checking Given Names"
 msgid "Rename Given Names"
-msgstr "בדיקת שמות פרטיים"
+msgstr "שינוי שמות פרטיים"
 
 #: NameSuite/name_processor/views/tool.py:115
-#, fuzzy
-#| msgid "Patronymic names:"
 msgid "Audit Patronymics"
-msgstr "שמות פטרוניים:"
+msgstr "ביקורת שמות פטרוניים"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:68
 msgid "Auditing Settings"
-msgstr ""
+msgstr "הגררות ביקורת"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:76
-#, fuzzy
-#| msgid "Place of Record"
 msgid "All Records"
-msgstr "מקום רישום"
+msgstr "כל הרשומות"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:77
-#, fuzzy
-#| msgid "Male line"
 msgid "Males Only"
-msgstr "קו זכרי"
+msgstr "זכרים בלבד"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:78
-#, fuzzy
-#| msgid "Female line"
 msgid "Females Only"
-msgstr "קו נקבי"
+msgstr "נקבות בלבד"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:82
-#, fuzzy
-#| msgid "Configure"
 msgid "Configure Rules..."
-msgstr "הגדרה"
+msgstr "תצור כללים..."
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:87
 msgid "Match Pre-Revolutionary Orthography"
-msgstr ""
+msgstr "התאמת אורתוגרפיה טרום מהפכה"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:95
-#, fuzzy
-#| msgid "Edit tags"
 msgid "Audit Database"
-msgstr "עריכה תגים"
+msgstr "בירורת מסד־נתונים"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:117
-#, fuzzy
-#| msgid "Select the graph direction."
 msgid "Select All Safe Corrections"
-msgstr "בחירת גרף כיוון."
+msgstr "בחירת כל התיקונים הבטוחים"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:122
 #: NameSuite/name_processor/views/tool_rename_tab.py:116
-#, fuzzy
-#| msgid "Apply to selected places"
 msgid "Apply Selected Corrections"
-msgstr "החלה על המקום שנבחר"
+msgstr "החלת תיקונים שנבחרו"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:162
-#, fuzzy
-#| msgid "Configure"
 msgid "Configure Rules"
-msgstr "הגדרה"
+msgstr "תצור כללים"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:186
 #: NameSuite/name_processor/views/tool_rename_tab.py:156
-#, fuzzy
-#| msgid "India"
 msgid "Individual"
-msgstr "הודו"
+msgstr "פרט"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:190
 #: NameSuite/name_processor/views/tool_rename_tab.py:158
-#, fuzzy
-#| msgid "Current sort"
 msgid "Current"
-msgstr "מיון נוכחי"
+msgstr "נוכחי"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:193
-#, fuzzy
-#| msgid "Section"
 msgid "Correction"
-msgstr "מקטע"
+msgstr "תיקון"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:200
-#, fuzzy
-#| msgid "Configure"
 msgid "Conf"
-msgstr "הגדרה"
+msgstr "תצור"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:201
-#, fuzzy
-#| msgid "Event Year"
 msgid "Ref Year"
-msgstr "שנת האירוע"
+msgstr "שנת אזכור"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:204
-#, fuzzy
-#| msgid "Relation"
 msgid "Explanation"
-msgstr "יוחסה"
+msgstr "הסבר"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:243
-#, fuzzy
-#| msgid "Completed?"
 msgid "Audit Complete!"
-msgstr "הושלם?"
+msgstr "ביקורת הושלמה!"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:248
-#, fuzzy
-#| msgid "Result"
 msgid "No Results"
-msgstr "תוצאה"
+msgstr "אין תוצאות"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:248
-#, fuzzy
-#| msgid "No persons found..."
 msgid "No issues found."
-msgstr "אין אנשים נמצא..."
+msgstr "לא נמצאו סוגיות."
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:63
-#, fuzzy
-#| msgid "Search result places"
 msgid "Search and Replace Options"
-msgstr "תוצאות חיפוש מקומות"
+msgstr "אפשרויות חיפוש והחלפה"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:70
-#, fuzzy
-#| msgid "Spouse name:"
 msgid "Source Name:"
-msgstr "זוגאי שם:"
+msgstr "שם מקור:"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:72
 msgid "e.g. Иоанн"
-msgstr ""
+msgstr "לדוגמה Иоанн"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:75
-#, fuzzy
-#| msgid "Street Name"
 msgid "Target Name:"
-msgstr "רחוב שם"
+msgstr "שם יעד:"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:77
 msgid "e.g. Иван"
-msgstr ""
+msgstr "לדוגמה Иван"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:80
 msgid "Match Mode:"
-msgstr ""
+msgstr "אופן התאמה:"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:82
 msgid "Exact Match"
-msgstr ""
+msgstr "התאמה מדוייקת"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:83
-#, fuzzy
-#| msgid "SubDistrict"
 msgid "Substring"
-msgstr "תת מחוז"
+msgstr "מחרוזת משנה"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:84
-#, fuzzy
-#| msgid "Allow regular expressions."
 msgid "Regular Expression"
-msgstr "לאפשר ביטויים סדירים."
+msgstr "ביטוי רגולרי"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:88
 #, fuzzy
@@ -18446,7 +18395,7 @@ msgstr "מפתח שמות"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:93
 msgid "Preserve original name as alternative"
-msgstr ""
+msgstr "שימור שם מקורי כחלופה"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:160
 #, fuzzy
@@ -21060,11 +21009,11 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
-"<i><a href=\"https://gramps-project.org/wiki/index.php?"
-"title=How_to_make_a_backup\">גיבוי ל־Gramps XML</a> בגרסאות גרמפס האחרונות, "
-"'יצירת גיבוי...' נמצא בתפריט אילן־יוחסין. אחרת יש להשתמש ב־'ייצוא...' באותו "
-"תפריט, אך להסיר את סימון אפשרויות הפרטיות במסייע הייצוא כדי לייצא את כל "
-"הנתונים.</i>\n"
+"<i><a href=\"https://gramps-project.org/wiki/"
+"index.php?title=How_to_make_a_backup\">גיבוי ל־Gramps XML</a> בגרסאות גרמפס "
+"האחרונות, 'יצירת גיבוי...' נמצא בתפריט אילן־יוחסין. אחרת יש להשתמש ב"
+"־'ייצוא...' באותו תפריט, אך להסיר את סימון אפשרויות הפרטיות בסייען הייצוא "
+"כדי לייצא את כל הנתונים.</i>\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:336
