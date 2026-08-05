@@ -10,11 +10,11 @@ The addon takes a single credential, via the `GRAMPS_WEB_API_KEY`
 environment variable, shaped `<REFRESH_TOKEN>*<BASE64URL(URL)>`. There is
 deliberately no login dialog and no per-tree settings.ini. Mint one once
 via username/password, either from the command line with the standalone
-`gramps-web-api-client` package (not yet published; pip-installable from
-its own repo, e.g. `pip install -e path/to/gramps-web-api-client`):
+`gramps-api-client` package (not yet published; pip-installable from
+its own repo, e.g. `pip install -e path/to/gramps-api-client`):
 
 ```bash
-export GRAMPS_WEB_API_KEY=$(gramps-web-api-client generate-key --url https://your-server/api --username youruser)
+export GRAMPS_WEB_API_KEY=$(gramps-api-client generate-key --url https://your-server/api --username youruser)
 ```
 
 or from Python, using either that package's `Client.mint_api_key(url,
@@ -48,5 +48,5 @@ gramps-web-api or a loophole being exploited.
 * `grampswebapidb.py` for the sync/write-through design (module docstring).
 * `webapi_client.py` for the token fetch/refresh implementation. This is a
   hand-synced vendored copy (see its own docstring) -- the canonical,
-  standalone source is the `gramps-web-api-client` package, which also
+  standalone source is the `gramps-api-client` package, which also
   has the `generate-key` CLI referenced above.
