@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-29 09:58-0700\n"
-"PO-Revision-Date: 2026-07-26 17:41+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -37,28 +37,22 @@ msgid "Ignore birthdays with tag"
 msgstr "Etiketli doğum günlerini yok say"
 
 msgid "Month and day"
-msgstr ""
+msgstr "Ay ve gün"
 
 msgid "Only show birthdays with tag"
 msgstr "Sadece etiketli doğum günlerini göster"
 
 msgid "Proximity to current date"
-msgstr ""
+msgstr "Geçerli tarihe yakınlık"
 
-#, fuzzy
-#| msgid "Sort by "
 msgid "Sort birthdays by"
-msgstr "Şuna göre sırala "
+msgstr "Doğum günlerine göre sırala"
 
-#, fuzzy
-#| msgid "Birth date of deceased"
 msgid "Sort dates of death by"
-msgstr "Ölenin doğum tarihi"
+msgstr "Ölüm tarihlerine göre sırala"
 
-#, fuzzy
-#| msgid "a gramplet that displays the birthdays of the living people"
 msgid "a gramplet that displays death dates in sorted order"
-msgstr "Yaşayan kişilerin doğum günlerini gösteren bir gramplet"
+msgstr "Ölüm tarihlerini sıralı düzende gösteren bir gramplet"
 
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "Yaşayan kişilerin doğum günlerini gösteren bir gramplet"
@@ -1323,10 +1317,8 @@ msgstr ""
 "Düzenle -> Ana Kişiyi Ayarla menüsü aracılığıyla seçiminizi onaylayın."
 
 #: CombinedView/personpage.py:306 CombinedView/personpage.py:368
-#, fuzzy
-#| msgid "Adding Tags to family (%s)"
 msgid "Add existing child to family"
-msgstr "Aileye etiket ekleme (%s)"
+msgstr "Mevcut çocuğu aileye ekle"
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -5486,6 +5478,8 @@ msgstr "Normal ifadelerin kullanılmasına izin verin."
 #: ExcludeSubtreeFilter/excludesubtree.py:106
 msgid "People reachable from <Person>, stopping at <Filter> matches"
 msgstr ""
+"<Kişi> öğesinden ulaşılabilen ve <Filtre> noktasında duran kişilerin "
+"eşleşmeleri"
 
 #: ExcludeSubtreeFilter/excludesubtree.gpr.py:26
 #: ExcludeSubtreeFilter/excludesubtree.py:109
@@ -5494,11 +5488,14 @@ msgid ""
 "and children of attached families, recursively) stopping at persons in "
 "<Filter>."
 msgstr ""
+"<Kişi> öğesinden başlayarak (bağlı ailelerin tüm ebeveynleri ve çocukları "
+"boyunca özyinelemeli olarak ilerleyerek) ulaşılabilen kişileri eşleştirir; "
+"<Filtre> içindeki kişilere ulaşıldığında durur."
 
 #: ExcludeSubtreeFilter/excludesubtree.py:121
 #: FilterRules/isrelatedwithfiltermatch.py:80
 msgid "Retrieving all sub-filter matches"
-msgstr ""
+msgstr "Alt filtre eşleşmelerinin tümü alınıyor"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
@@ -15125,43 +15122,44 @@ msgstr ""
 
 #: Form/form_us.xml.h:2538
 msgid "What military service have you had? (Branch, Years, Nation or State)"
-msgstr ""
+msgstr "Hangi askerlik hizmetini yaptınız? (Branş, Yıllar, Ülke veya Eyalet)"
 
 #: Form/form_us.xml.h:2539
 msgid "Do you claim exemption from draft (specify grounds)"
 msgstr ""
+"Askerlik hizmetinden muafiyet talep ediyor musunuz (gerekçelerinizi belirtin)"
 
 #: Form/form_us.xml.h:2540
 msgid "Race "
-msgstr ""
+msgstr "Irk "
 
 #: Form/form_us.xml.h:2542
 msgid "Build / Weight"
-msgstr ""
+msgstr "Yapı / Ağırlık"
 
 #: Form/form_us.xml.h:2544
 msgid "Hair Color"
-msgstr ""
+msgstr "Saç Rengi"
 
 #: Form/form_us.xml.h:2545
 msgid "Bald"
-msgstr ""
+msgstr "Kel"
 
 #: Form/form_us.xml.h:2547 Form/form_us.xml.h:2591
 msgid "Place of Registration"
-msgstr ""
+msgstr "Kayıt Yeri"
 
 #: Form/form_us.xml.h:2548 Form/form_us.xml.h:2590
 msgid "Date of Registration"
-msgstr ""
+msgstr "Kayıt Tarihi"
 
 #: Form/form_us.xml.h:2549
 msgid "Serial Number"
-msgstr ""
+msgstr "Seri Numarası"
 
 #: Form/form_us.xml.h:2550
 msgid "Order Number"
-msgstr ""
+msgstr "Sıra Numarası"
 
 #: Form/form_us.xml.h:2551
 msgid "Registration Card"
@@ -15206,7 +15204,7 @@ msgstr "(1) Ad, İkinci Ad, Soyadı"
 
 #: Form/form_us.xml.h:2555
 msgid "Place of Residence"
-msgstr ""
+msgstr "İkamet Yeri"
 
 #: Form/form_us.xml.h:2556
 msgid ""
@@ -15218,7 +15216,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2557
 msgid "Mailing Address"
-msgstr ""
+msgstr "Posta Adresi"
 
 #: Form/form_us.xml.h:2558
 msgid ""
@@ -15230,7 +15228,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2559
 msgid "Telephone"
-msgstr ""
+msgstr "Telefon"
 
 #: Form/form_us.xml.h:2560
 msgid ""
@@ -15274,7 +15272,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2569
 msgid "Who will always know your address (Name & Address)"
-msgstr ""
+msgstr "Adresinizi her zaman bilecek kişi (Ad ve Adres)"
 
 #: Form/form_us.xml.h:2570
 msgid ""
@@ -15314,7 +15312,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2577
 msgid "Place of employment or business"
-msgstr ""
+msgstr "Çalışma yeri veya işletme yeri"
 
 #: Form/form_us.xml.h:2578
 msgid ""
@@ -15342,7 +15340,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2583 Form/form_us.xml.h:2604
 msgid "Complexion"
-msgstr ""
+msgstr "Ten rengi"
 
 #: Form/form_us.xml.h:2584
 msgid ""
@@ -15366,7 +15364,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2585
 msgid "Eyes"
-msgstr ""
+msgstr "Gözler"
 
 #: Form/form_us.xml.h:2586
 msgid ""
@@ -15384,7 +15382,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2587
 msgid "Hair"
-msgstr ""
+msgstr "Saç"
 
 #: Form/form_us.xml.h:2588
 msgid ""
@@ -15404,11 +15402,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:2589
 msgid "Other characteristics"
-msgstr ""
+msgstr "Diğer özellikler"
 
 #: Form/form_us.xml.h:2596
 msgid "Date entered"
-msgstr ""
+msgstr "Girilen tarih"
 
 #: Form/form_us.xml.h:2597
 msgid "Place entered"
@@ -15416,55 +15414,55 @@ msgstr "Girilen yer"
 
 #: Form/form_us.xml.h:2598
 msgid "Term of enlistment"
-msgstr ""
+msgstr "Askere yazılma süresi"
 
 #: Form/form_us.xml.h:2602
 msgid "Eye color"
-msgstr ""
+msgstr "Göz rengi"
 
 #: Form/form_us.xml.h:2603
 msgid "Hair color"
-msgstr ""
+msgstr "Saç rengi"
 
 #: Form/form_us.xml.h:2606
 msgid "Rank in"
-msgstr ""
+msgstr "Sıralamada"
 
 #: Form/form_us.xml.h:2607
 msgid "Branch"
-msgstr ""
+msgstr "Dal"
 
 #: Form/form_us.xml.h:2608
 msgid "Regiment/Unit/Ship"
-msgstr ""
+msgstr "Alay/Birlik/Gemi"
 
 #: Form/form_us.xml.h:2610
 msgid "Service Number"
-msgstr ""
+msgstr "Servis Numarası"
 
 #: Form/form_us.xml.h:2611
 msgid "No. of enlistment"
-msgstr ""
+msgstr "Kayıt sayısı"
 
 #: Form/form_us.xml.h:2612
 msgid "Date discharged"
-msgstr ""
+msgstr "Taburcu tarihi"
 
 #: Form/form_us.xml.h:2613
 msgid "Place discharged"
-msgstr ""
+msgstr "Taburcu yeri"
 
 #: Form/form_us.xml.h:2614
 msgid "Rank out"
-msgstr ""
+msgstr "Sıralama dışı"
 
 #: Form/form_us.xml.h:2619
 msgid "Industry/Employer"
-msgstr ""
+msgstr "Sektör/İşveren"
 
 #: Form/form_us.xml.h:2622
 msgid "Residents Status"
-msgstr ""
+msgstr "Sakinlerin Durumu"
 
 #: Form/formgramplet.gpr.py:31
 msgid "Form Gramplet"
@@ -15605,11 +15603,11 @@ msgstr ""
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
-msgstr "LaTeX genealogytree kullanarak soy ağacı"
+msgstr "LaTeX genealogytree kullanarak ata ağacı"
 
 #: GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
-msgstr "LaTeX genealogytree kullanarak soy ağacı"
+msgstr "LaTeX genealogytree kullanarak soyundan gelenler ağacı"
 
 #: GenealogyTree/treeplugins.gpr.py:80
 msgid "Grandparent Tree"
@@ -19497,10 +19495,8 @@ msgid "Gramplet showing an overview of events for a person"
 msgstr "Bir kişi için olayların genel görünümünü gösteren Gramplet"
 
 #: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
-#, fuzzy
-#| msgid "Person Overview"
 msgid "Overview"
-msgstr "Kişi Genel Bakışı"
+msgstr "Genel Bakış"
 
 #: Overview/Overview.gpr.py:45
 msgid "Family Overview"
@@ -19909,65 +19905,49 @@ msgid "No source information found"
 msgstr "Kaynak bilgisi bulunamadı"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:25
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Person Relationship Filter"
-msgstr "Baba ile ilişki"
+msgstr "Kişi İlişkisi Filtresi"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:26
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet providing a person filter on relationships"
-msgstr "Bir ilişkide akrabaları gösteren Gramplet"
+msgstr "İlişkiler üzerinde kişi filtresi sağlayan Gramplet"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:33
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Relationship Filter"
-msgstr "Baba ile ilişki"
+msgstr "İlişki Filtresi"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:82
-#, fuzzy
-#| msgid "Children Dead"
 msgid "Children of name match"
-msgstr "Ölen çocuklar"
+msgstr "Ad eşleşmesinin çocukları"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:84
 msgid "Matches children of anybody with a given name"
-msgstr ""
+msgstr "Belirli bir ada sahip herhangi bir kişinin çocuklarıyla eşleşir"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:251
-#, fuzzy
-#| msgid "sibling"
 msgid "Sibling 1"
-msgstr "kardeş"
+msgstr "Kardeş 1"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:252
-#, fuzzy
-#| msgid "sibling"
 msgid "Sibling 2"
-msgstr "kardeş"
+msgstr "Kardeş 2"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:253
-#, fuzzy
-#| msgid "Children Dead"
 msgid "Child 1"
-msgstr "Ölen çocuklar"
+msgstr "Çocuk 1"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:254
-#, fuzzy
-#| msgid "Children Dead"
 msgid "Child 2"
-msgstr "Ölen çocuklar"
+msgstr "Çocuk 2"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:282
 msgid "Probably Alive"
-msgstr ""
+msgstr "Muhtemelen Hayatta"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:284
 #, python-format
 msgid "example: '%(msg1)s' or '%(msg2)s'"
-msgstr ""
+msgstr "örnek: '%(msg1)s' veya '%(msg2)s'"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
@@ -25588,85 +25568,69 @@ msgstr "Simgeleri görüntüle"
 
 #: WordClouds/WordClouds.gpr.py:24 WordClouds/WordClouds.gpr.py:32
 msgid "Given Name Word Cloud"
-msgstr ""
+msgstr "Verilen Ad Kelime Bulutu"
 
 #: WordClouds/WordClouds.gpr.py:25
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet showing all given names as a word cloud"
-msgstr "Bir ilişkide akrabaları gösteren Gramplet"
+msgstr "Tüm verilen adları kelime bulutu olarak gösteren Gramplet"
 
 #: WordClouds/WordClouds.gpr.py:40 WordClouds/WordClouds.gpr.py:48
 msgid "Surname Word Cloud"
-msgstr ""
+msgstr "Soyadı Kelime Bulutu"
 
 #: WordClouds/WordClouds.gpr.py:41
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet showing all surnames as a word cloud"
-msgstr "Bir ilişkide akrabaları gösteren Gramplet"
+msgstr "Tüm soyadlarını bir kelime bulutu olarak gösteren Gramplet"
 
 #: WordClouds/WordClouds.gpr.py:56 WordClouds/WordClouds.gpr.py:64
-#, fuzzy
-#| msgid "Place history loaded"
 msgid "Place Word Cloud"
-msgstr "Yer geçmişi yüklendi"
+msgstr "Kelime Bulutu Yerleştir"
 
 #: WordClouds/WordClouds.gpr.py:57
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet showing all places as a word cloud"
-msgstr "Bir ilişkide akrabaları gösteren Gramplet"
+msgstr "Tüm yerleri kelime bulutu olarak gösteren Gramplet"
 
 #: WordClouds/cloudgramplet.py:147 WordClouds/cloudgramplet.py:225
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid "Number of %s"
-msgstr "Sayfa sayısı"
+msgstr "%s sayısı"
 
 #: WordClouds/cloudgramplet.py:149 WordClouds/cloudgramplet.py:227
-#, fuzzy
-#| msgid "Colored Male"
 msgid "Color (low)"
-msgstr "Renkli Erkek"
+msgstr "Renk (düşük)"
 
 #: WordClouds/cloudgramplet.py:150 WordClouds/cloudgramplet.py:228
 msgid "Color (high)"
-msgstr ""
+msgstr "Renk (yüksek)"
 
 #: WordClouds/cloudgramplet.py:151 WordClouds/cloudgramplet.py:229
-#, fuzzy
-#| msgid "No color"
 msgid "Hover color"
-msgstr "Renk yok"
+msgstr "Fareyle üzerine gelindiğinde renk"
 
 #: WordClouds/cloudgramplet.py:152 WordClouds/cloudgramplet.py:230
 msgid "Layout quality"
-msgstr ""
+msgstr "Düzen kalitesi"
 
 #: WordClouds/cloudgramplet.py:154 WordClouds/cloudgramplet.py:232
 msgid "Filter missing/unknown words"
-msgstr ""
+msgstr "Eksik/bilinmeyen kelimeleri filtrele"
 
 #: WordClouds/cloudgramplet.py:207
-#, fuzzy, python-format
-#| msgid "[Missing]"
+#, python-format
 msgid "[Missing %s]"
-msgstr "[Eksik]"
+msgstr "[Eksik %s]"
 
 #: WordClouds/givennamewordcloudgramplet.py:50
 msgid "Click given name to view people with that given name"
-msgstr ""
+msgstr "Verilen ada sahip kişileri görüntülemek için verilen ada tıklayın"
 
 #: WordClouds/placewordcloudgramplet.py:53
-#, fuzzy
-#| msgid "Include Image source references"
 msgid "Click place name to view references"
-msgstr "Görüntü kaynak referanslarını dahil et"
+msgstr "Referansları görüntülemek için yer adına tıklayın"
 
 #: WordClouds/surnamewordcloudgramplet.py:49
 msgid "Click surname to view people with that surname"
-msgstr ""
+msgstr "O soyadına sahip kişileri görüntülemek için soyadına tıklayın"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
