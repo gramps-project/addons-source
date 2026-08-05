@@ -81,14 +81,22 @@ transaction_to_json() naturally sees nothing there and no push happens.
 No separate "am I currently syncing" flag is needed to stop synced
 changes from being echoed straight back to the server.
 
-Conflict handling is not implemented: pushes go out with force=1, which
-skips the server's old-data-matches check entirely (see
-gramps_webapi/api/tasks.py's process_transactions), so this is
-last-write-wins by design. If the push itself fails (network error,
-non-conflict validation error), the local commit has already happened
-and is not rolled back -- the local mirror just drifts from the server
-until the next successful push or read sync. Undo/redo integration is
-also still out of scope.
+Pushes go out without force=1, so the server compares each item's "old"
+snapshot against its own current data and rejects the whole batch with
+WebApiPushConflict (see webapi_client.push_transaction()) if anything
+changed server-side since the local mirror last synced -- a real, if
+coarse, optimistic-concurrency check: the whole push either applies or
+none of it does, with no indication of which item conflicted. On a
+conflict, transaction_commit() below resyncs from the server so the
+local mirror stops showing an edit the server never accepted; it does
+not retry the push or attempt a merge, so the local edit is simply lost
+from the server's perspective (still present, stale, in the local
+mirror's edit history) -- real conflict *resolution* (merge, prompt the
+user) is still out of scope. If the push fails for a non-conflict reason
+(network error, auth failure), the local commit has already happened and
+is not rolled back -- the local mirror just drifts from the server until
+the next successful push or read sync. Undo/redo integration is also
+still out of scope.
 """
 
 import logging
@@ -108,7 +116,7 @@ from gramps.gen.db.exceptions import DbConnectionError
 from gramps.gen.lib.json_utils import data_to_object, remove_object
 from gramps.plugins.db.dbapi.sqlite import SQLite
 
-from webapi_client import WebApiHandler
+from webapi_client import WebApiHandler, WebApiPushConflict
 
 _ = glocale.translation.gettext
 LOG = logging.getLogger("grampswebapidb")
@@ -181,16 +189,29 @@ class WebApiDB(SQLite):
         # Must run before super(): it clears the transaction's records.
         payload = transaction_to_json(transaction)
         super().transaction_commit(transaction)
-        if payload:
+        if not payload:
+            return
+        try:
+            self.web_client.push_transaction(payload)
+        except WebApiPushConflict:
+            LOG.warning(
+                "Server rejected %d local change(s): the object(s) changed "
+                "server-side since the local mirror last synced. The local "
+                "edit was applied to this mirror but was NOT accepted by "
+                "the server; resyncing the mirror from the server now.",
+                len(payload),
+            )
             try:
-                self.web_client.push_transaction(payload)
+                self._sync_from_server()
             except _CONNECTION_ERRORS:
-                LOG.exception(
-                    "Failed to push %d local change(s) to the server; "
-                    "local mirror has drifted from the server until the "
-                    "next successful push or read sync.",
-                    len(payload),
-                )
+                LOG.exception("Resync after a push conflict also failed.")
+        except _CONNECTION_ERRORS:
+            LOG.exception(
+                "Failed to push %d local change(s) to the server; "
+                "local mirror has drifted from the server until the "
+                "next successful push or read sync.",
+                len(payload),
+            )
 
     def _sync_from_server(self):
         """

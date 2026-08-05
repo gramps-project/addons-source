@@ -31,6 +31,17 @@ feed for now. Re-add pieces here (rather than importing GrampsWebSync
 directly) so this addon has no runtime dependency on another addon being
 installed.
 
+This file is a vendored copy: the canonical, standalone source is now the
+gramps-web-api-client package (not yet published; local checkout at
+~/gramps/gramps-web-api-client as of this writing), module
+gramps_web_api_client/client.py, class Client -- the same class as
+WebApiHandler below, just renamed. It was split out so the client could
+be discoverable/pip-installable on its own, independent of the Gramps
+addon ecosystem. Gramps addons are self-contained tarballs with no
+mechanism to declare a pip dependency, so this copy has to stay vendored
+here rather than importing that package directly; sync changes by hand in
+both directions.
+
 Credentials
 -----------
 Two ways in: username+password (POST /token/, matches GrampsWebSync), or
@@ -81,6 +92,33 @@ TIMEOUT = 60
 #: immediately constructing another WebApiHandler in the same second
 #: reliably 429s otherwise.
 RATE_LIMIT_BACKOFF = 1.1
+
+#: The exact message gramps_webapi/api/tasks.py's old_unchanged() check
+#: raises as ValueError("Object has changed"), which POST /transactions/
+#: (without force=1) surfaces as HTTP 400 {"error": {"message": ...}}.
+#: push_transaction() matches on this to tell a real conflict apart from
+#: the endpoint's other 400s (malformed payload, missing Gramps ID, ...),
+#: which are our own bugs, not conflicts, and should propagate as-is.
+_CONFLICT_MESSAGE = "Object has changed"
+
+
+class WebApiPushConflict(Exception):
+    """A push was rejected because the server-side object changed since
+    the local mirror's snapshot of it (see push_transaction())."""
+
+
+def _raise_for_push_conflict(exc: HTTPError) -> None:
+    """Given a 400 from POST /transactions/, raise WebApiPushConflict if
+    it's the server's old-data-mismatch check; otherwise re-raise ``exc``
+    unchanged (a genuinely different 400, e.g. a malformed payload)."""
+    try:
+        body = json.loads(exc.read())
+        message = body["error"]["message"]
+    except (ValueError, KeyError, TypeError):
+        raise exc
+    if message == _CONFLICT_MESSAGE:
+        raise WebApiPushConflict(message) from exc
+    raise exc
 
 
 def create_macos_ssl_context():
@@ -351,20 +389,27 @@ class WebApiHandler:
         self, payload: list[dict[str, Any]], retry: bool = True
     ) -> None:
         """
-        POST a batch of local changes to /transactions/. Uses force=1:
-        without it, the server compares each item's "old" snapshot
-        against its own current data and rejects the whole batch on any
-        mismatch (POST /transactions/?force=... semantics, see
-        gramps_webapi/api/tasks.py's process_transactions -> old_unchanged
-        check) -- real conflict detection/resolution is out of scope for
-        now (see grampswebapidb.py), so this is last-write-wins by design,
-        not an oversight.
+        POST a batch of local changes to /transactions/ (no force=1): the
+        server compares each item's "old" snapshot -- the local mirror's
+        state of the object *before* the local edit -- against its own
+        current data, and rejects the whole batch with HTTP 400
+        ``{"error": {"message": "Object has changed"}}`` on any mismatch
+        (see gramps_webapi/api/tasks.py's process_transactions ->
+        old_unchanged()). That's a real, if coarse, optimistic-concurrency
+        check: it fires whenever the server-side object was edited (by
+        anyone) since the local mirror last synced, which is exactly what
+        a conflict is. Raised here as WebApiPushConflict so the caller
+        (grampswebapidb.py's transaction_commit) can tell "the server
+        rejected this because something changed underneath it" apart from
+        a network/auth failure. Actual merge resolution is still out of
+        scope -- the caller's response to a conflict is to resync from the
+        server, not to retry the push.
         """
         if not payload:
             return
         data = json.dumps(payload).encode()
         req = Request(
-            f"{self.url}/transactions/?force=1",
+            f"{self.url}/transactions/",
             data=data,
             method="POST",
             headers={
@@ -384,6 +429,8 @@ class WebApiHandler:
             if exc.code == 429 and retry:
                 sleep(RATE_LIMIT_BACKOFF)
                 return self.push_transaction(payload, retry=False)
+            if exc.code == 400:
+                _raise_for_push_conflict(exc)
             raise
         except (URLError, socket.timeout):
             if retry:

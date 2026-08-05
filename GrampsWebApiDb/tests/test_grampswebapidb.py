@@ -71,7 +71,17 @@ from gramps.gen.lib import Person
 from gramps.gen.lib.json_utils import object_to_data, remove_object
 
 from GrampsWebApiDb import grampswebapidb
-from GrampsWebApiDb.grampswebapidb import WebApiDB, transaction_to_json
+from GrampsWebApiDb.grampswebapidb import WebApiDB, WebApiPushConflict, transaction_to_json
+
+# grampswebapidb.py imports webapi_client with a bare `from webapi_client
+# import ...` (see CLAUDE.md Testing conventions -- this addon has no
+# __init__.py, so Gramps and tests alike add its own directory to
+# sys.path). That makes "webapi_client" and "GrampsWebApiDb.webapi_client"
+# two distinct sys.modules entries for the same file, so an exception
+# class must come from whichever import path the code under test actually
+# uses -- grampswebapidb.WebApiPushConflict here, not a fresh
+# `from GrampsWebApiDb.webapi_client import WebApiPushConflict`, or
+# `except WebApiPushConflict` in transaction_commit() won't match it.
 
 
 # -------------------------------------------------------------------------
@@ -360,6 +370,39 @@ class TestTransactionCommit(unittest.TestCase):
         )
         with mock.patch.object(grampswebapidb.SQLite, "transaction_commit"):
             with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+                self.db.transaction_commit(trans)  # must not raise
+
+    def test_conflict_triggers_resync_not_raise(self):
+        # A WebApiPushConflict means the server rejected the whole batch
+        # because something changed server-side since the local mirror's
+        # snapshot -- the response is to resync from the server, not to
+        # propagate the exception (the local commit already happened).
+        trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
+        self.db.web_client.push_transaction.side_effect = WebApiPushConflict(
+            "Object has changed"
+        )
+        with mock.patch.object(
+            grampswebapidb.SQLite, "transaction_commit"
+        ), mock.patch.object(self.db, "_sync_from_server") as resync:
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
+                self.db.transaction_commit(trans)  # must not raise
+        resync.assert_called_once_with()
+
+    def test_conflict_resync_failure_is_also_swallowed(self):
+        trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
+        self.db.web_client.push_transaction.side_effect = WebApiPushConflict(
+            "Object has changed"
+        )
+        with mock.patch.object(
+            grampswebapidb.SQLite, "transaction_commit"
+        ), mock.patch.object(
+            self.db,
+            "_sync_from_server",
+            side_effect=HTTPError(
+                "https://example.com/api/transactions/history/", 500, "boom", None, None
+            ),
+        ):
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
                 self.db.transaction_commit(trans)  # must not raise
 
 
