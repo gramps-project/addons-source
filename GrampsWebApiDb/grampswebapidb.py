@@ -81,6 +81,23 @@ transaction_to_json() naturally sees nothing there and no push happens.
 No separate "am I currently syncing" flag is needed to stop synced
 changes from being echoed straight back to the server.
 
+_sync_from_server() can only replay what the history feed actually
+logged, and a batch=True commit -- any bulk import, merge, or tool run
+through gramps-web-api, not just a one-off -- logs nothing per-object:
+DBAPI's own commit_*/remove_* methods guard their trans.add() undo-log
+call with `if not trans.batch`, so a batch transaction leaves behind an
+empty-changes marker (a real Transaction row, but with no Change rows)
+instead of the usual per-object entries. Confirmed live: bulk-importing
+example.gramps produced exactly one such marker, and the 2157 people it
+added were otherwise invisible to this addon's sync no matter how often
+it resynced, because the transaction history itself never recorded
+them. _sync_from_server() treats an empty-changes transaction as a
+signal that its history-replay approach cannot describe what happened,
+and falls back to _full_resync() -- downloading the server's current
+full Gramps XML export and reimporting it into a wiped local mirror,
+the only way to recover completeness when the incremental feed has a
+blind spot by construction.
+
 Pushes go out without force=1, so the server compares each item's "old"
 snapshot against its own current data and rejects the whole batch with
 WebApiPushConflict (see webapi_client.push_transaction()) if anything
@@ -116,6 +133,8 @@ persisted, so this only ever matters within a single running session.
 """
 
 import logging
+import os
+from tempfile import NamedTemporaryFile
 from urllib.error import HTTPError, URLError
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -130,7 +149,9 @@ from gramps.gen.db.dbconst import (
 )
 from gramps.gen.db.exceptions import DbConnectionError
 from gramps.gen.lib.json_utils import data_to_object, remove_object
+from gramps.gen.user import User
 from gramps.plugins.db.dbapi.sqlite import SQLite
+from gramps.plugins.importer.importxml import importData
 
 from webapi_client import WebApiHandler, WebApiPushConflict
 
@@ -265,9 +286,19 @@ class WebApiDB(SQLite):
         Pull every transaction after the last-seen timestamp and replay
         its changes into the local mirror. Returns the number of changes
         applied.
+
+        An empty "changes" list on a transaction is not a no-op: it is
+        what a batch=True commit leaves behind (see the module
+        docstring's note on trans.batch guards around trans.add()) --
+        something happened server-side that this feed cannot describe.
+        Flagged rather than silently skipped; _full_resync() is the
+        fallback once the whole page range has been walked (so
+        sync_last_time still advances past it and any *describable*
+        changes around it are applied normally either way).
         """
         after = self._get_metadata("sync_last_time", default=0)
         applied = 0
+        needs_full_resync = False
         page = 1
         while True:
             transactions, _total = self.web_client.get_transaction_history(
@@ -277,6 +308,8 @@ class WebApiDB(SQLite):
                 break
             with DbTxn("Sync from server", self, batch=True) as trans:
                 for server_trans in transactions:
+                    if not server_trans["changes"]:
+                        needs_full_resync = True
                     for change in server_trans["changes"]:
                         if self._apply_change(change, trans):
                             applied += 1
@@ -285,7 +318,52 @@ class WebApiDB(SQLite):
                 break
             page += 1
         self._set_metadata("sync_last_time", after)
+        if needs_full_resync:
+            self._full_resync()
         return applied
+
+    def _full_resync(self):
+        """
+        Rebuild the local mirror from scratch: download the server's own
+        current Gramps XML export and reimport it, after clearing every
+        local primary object first. Called by _sync_from_server() when
+        the transaction-history feed contains an empty-changes marker --
+        by definition there is nothing in that history to replay for
+        whatever produced it, so the only way to recover is to fetch the
+        server's current state wholesale, the same way populating a
+        brand new local mirror already works.
+
+        Deliberately reuses the stock ImportXml importer against a raw
+        XML export rather than reconstructing objects from the REST
+        /people/, /families/, ... endpoints: those return a marshalled
+        display schema (plain ints for GrampsType fields, no "_class"
+        tag), not the json_utils shape data_to_object() needs. Only the
+        transaction-history feed's new_data and a raw XML export share
+        that shape, and the whole point of this method is that the
+        former can't be trusted here.
+
+        The clear-then-import pair each run inside their own batch=True
+        DbTxn (ImportXml's own, internally, for the import half -- see
+        importxml.py), so neither triggers transaction_commit()'s
+        push-to-server path (transaction_to_json() sees nothing to
+        push for a batch transaction) -- this is a purely local rebuild,
+        same as _sync_from_server()'s own transactions.
+        """
+        data = self.web_client.download_export()
+        with NamedTemporaryFile(suffix=".gramps", delete=False) as tmp_file:
+            tmp_file.write(data)
+            tmp_path = tmp_file.name
+        try:
+            with DbTxn(_("Clear local mirror before full resync"), self, batch=True) as trans:
+                for key in set(CLASS_TO_KEY_MAP.values()):
+                    name = KEY_TO_NAME_MAP[key]
+                    handles = list(getattr(self, f"get_{name}_handles")())
+                    remove = getattr(self, f"remove_{name}")
+                    for handle in handles:
+                        remove(handle, trans)
+            importData(self, tmp_path, User())
+        finally:
+            os.remove(tmp_path)
 
     def _apply_change(self, change, trans):
         """Replay one server change into the local mirror. Returns True
