@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-03 09:18-0700\n"
+"POT-Creation-Date: 2026-07-29 09:58-0700\n"
 "PO-Revision-Date: 2026-07-23 14:01+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
@@ -21,6 +21,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2026.8.dev0\n"
+
+msgid "Birthdays"
+msgstr "Fødseldage"
+
+msgid "Ignore birthdays with tag"
+msgstr "Undlad fødseldage med ettiket"
+
+msgid "Month and day"
+msgstr ""
+
+msgid "Only show birthdays with tag"
+msgstr "Vis kun fødseldage med ettiket"
+
+msgid "Proximity to current date"
+msgstr ""
+
+#, fuzzy
+#| msgid "Sort by:"
+msgid "Sort birthdays by"
+msgstr "Sortér efter:"
+
+msgid "Sort dates of death by"
+msgstr ""
+
+#, fuzzy
+#| msgid "a gramplet that displays the birthdays of the living people"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr "en gramplet der viser fødselsdage for levende persone"
+
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "en gramplet der viser fødselsdage for levende persone"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -247,7 +278,8 @@ msgstr "Stilen der bruges til antallet af aner per generation."
 #: AncestryTableReport/AncestryTableReport.py:654
 msgid ""
 "The style used for the total line of the number of ancestors per generation."
-msgstr "Stilen der benyttes til totallinjen af antallet af aner per generation."
+msgstr ""
+"Stilen der benyttes til totallinjen af antallet af aner per generation."
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:24
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:32
@@ -776,23 +808,6 @@ msgstr "Ret Familier"
 msgid "Looking for children birth order"
 msgstr "Søger efter børn i fødselsorden"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
-msgid "Birthdays"
-msgstr "Fødseldage"
-
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
-msgid "a gramplet that displays the birthdays of the living people"
-msgstr "en gramplet der viser fødselsdage for levende persone"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:45
-msgid "Ignore birthdays with tag"
-msgstr "Undlad fødseldage med ettiket"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:46
-msgid "Only show birthdays with tag"
-msgstr "Vis kun fødseldage med ettiket"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:194
 msgid "Calculate Estimated Dates"
@@ -1291,6 +1306,12 @@ msgstr ""
 "Du skal vælge en \"standard person\" for at fortsætte. Vælg Person oversigt, "
 "vælg den person du vil benytte som 'Proband' via menuen Rediger -> vælg "
 "Proband."
+
+#: CombinedView/personpage.py:306 CombinedView/personpage.py:368
+#, fuzzy
+#| msgid "Adding Tags to family (%s)"
+msgid "Add existing child to family"
+msgstr "Tilføjer mærkater til familie (%s)"
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -2526,12 +2547,6 @@ msgstr "af"
 #: DenominoViso/DenominoViso.py:1960
 msgid "the chart type runs out of bounds"
 msgstr "grafen kommer udenfor grænserne"
-
-#: DenominoViso/DenominoViso.py:2002 GraphView/graphview.py:968
-#: NoteCleanup/NoteCleanup.py:126 SearchGramplet/SearchGramplet.gpr.py:9
-#: SearchGramplet/SearchGramplet.gpr.py:19
-msgid "Search"
-msgstr "Søg"
 
 #: DenominoViso/DenominoViso.py:2553
 msgid "DenominoViso Options"
@@ -5482,6 +5497,24 @@ msgstr "Tillad regex"
 #: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."
 msgstr "Tillad regular expressions."
+
+#: ExcludeSubtreeFilter/excludesubtree.gpr.py:24
+#: ExcludeSubtreeFilter/excludesubtree.py:106
+msgid "People reachable from <Person>, stopping at <Filter> matches"
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.gpr.py:26
+#: ExcludeSubtreeFilter/excludesubtree.py:109
+msgid ""
+"Matches people who are reachable starting from <Person> (walking all parents "
+"and children of attached families, recursively) stopping at persons in "
+"<Filter>."
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.py:121
+#: FilterRules/isrelatedwithfiltermatch.py:80
+msgid "Retrieving all sub-filter matches"
+msgstr ""
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
@@ -16115,10 +16148,6 @@ msgstr ""
 msgid "Reset local to remote"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:923
-msgid "Merge"
-msgstr "Sammenføj"
-
 #: GrampsWebSync/grampswebsync.py:948
 msgid "Local changes"
 msgstr "Lokale ændringer"
@@ -19429,6 +19458,10 @@ msgstr "Person Oversigt"
 msgid "Gramplet showing an overview of events for a person"
 msgstr "Gramplet viser en oversigt over hændelser for en person"
 
+#: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
+msgid "Overview"
+msgstr "Oversigt"
+
 #: Overview/Overview.gpr.py:45
 msgid "Family Overview"
 msgstr "Familie Oversigt"
@@ -19850,6 +19883,61 @@ msgstr "Mærkat farve og prioritet"
 #: PersonEverything/PersonEverything.py:961
 msgid "No source information found"
 msgstr "Ingen kildeinformation fundet"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:25
+#, fuzzy
+#| msgid "Relationship to Father"
+msgid "Person Relationship Filter"
+msgstr "Slægtskab med fader"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:26
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet providing a person filter on relationships"
+msgstr "Gramplet der viser slægtskabet mellem slægtninge"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:33
+#, fuzzy
+#| msgid "Relationship to Father"
+msgid "Relationship Filter"
+msgstr "Slægtskab med fader"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:82
+msgid "Children of name match"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:84
+msgid "Matches children of anybody with a given name"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:251
+#, fuzzy
+#| msgid "sibling"
+msgid "Sibling 1"
+msgstr "søskende"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:252
+#, fuzzy
+#| msgid "sibling"
+msgid "Sibling 2"
+msgstr "søskende"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:253
+msgid "Child 1"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:254
+msgid "Child 2"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:282
+msgid "Probably Alive"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:284
+#, python-format
+msgid "example: '%(msg1)s' or '%(msg2)s'"
+msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
@@ -25533,26 +25621,85 @@ msgstr "Vis alt"
 msgid "Display Icons"
 msgstr "Visningstilstand"
 
-#: WordleGramplet/WordleGramplet.gpr.py:4
-#: WordleGramplet/WordleGramplet.gpr.py:10
-msgid "Wordle"
-msgstr "Wordle"
+#: WordClouds/WordClouds.gpr.py:24 WordClouds/WordClouds.gpr.py:32
+msgid "Given Name Word Cloud"
+msgstr ""
 
-#: WordleGramplet/WordleGramplet.gpr.py:13
-msgid "Gramplet used to make word clouds with wordle.net"
-msgstr "Gramplet der benyttes til at danne ordskyer fra wordle.net"
+#: WordClouds/WordClouds.gpr.py:25
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all given names as a word cloud"
+msgstr "Gramplet der viser slægtskabet mellem slægtninge"
 
-#: WordleGramplet/WordleGramplet.py:126
-msgid "[Missing]"
+#: WordClouds/WordClouds.gpr.py:40 WordClouds/WordClouds.gpr.py:48
+msgid "Surname Word Cloud"
+msgstr ""
+
+#: WordClouds/WordClouds.gpr.py:41
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all surnames as a word cloud"
+msgstr "Gramplet der viser slægtskabet mellem slægtninge"
+
+#: WordClouds/WordClouds.gpr.py:56 WordClouds/WordClouds.gpr.py:64
+#, fuzzy
+#| msgid "Place title"
+msgid "Place Word Cloud"
+msgstr "Stedtitel"
+
+#: WordClouds/WordClouds.gpr.py:57
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all places as a word cloud"
+msgstr "Gramplet der viser slægtskabet mellem slægtninge"
+
+#: WordClouds/cloudgramplet.py:147 WordClouds/cloudgramplet.py:225
+#, fuzzy, python-format
+#| msgid "Number of pages"
+msgid "Number of %s"
+msgstr "Antal sider"
+
+#: WordClouds/cloudgramplet.py:149 WordClouds/cloudgramplet.py:227
+msgid "Color (low)"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:150 WordClouds/cloudgramplet.py:228
+msgid "Color (high)"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:151 WordClouds/cloudgramplet.py:229
+#, fuzzy
+#| msgid "No color"
+msgid "Hover color"
+msgstr "Ingen farve"
+
+#: WordClouds/cloudgramplet.py:152 WordClouds/cloudgramplet.py:230
+msgid "Layout quality"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:154 WordClouds/cloudgramplet.py:232
+msgid "Filter missing/unknown words"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:207
+#, fuzzy, python-format
+#| msgid "[Missing]"
+msgid "[Missing %s]"
 msgstr "[Mangler]"
 
-#: WordleGramplet/WordleGramplet.py:140
-msgid "Number of font sizes"
-msgstr "Antal af fontstørrelser"
+#: WordClouds/givennamewordcloudgramplet.py:50
+msgid "Click given name to view people with that given name"
+msgstr ""
 
-#: WordleGramplet/WordleGramplet.py:144
-msgid "Select filter to restrict list"
-msgstr "Vælg filter til afgrænse listen"
+#: WordClouds/placewordcloudgramplet.py:53
+#, fuzzy
+#| msgid "Include Image source references"
+msgid "Click place name to view references"
+msgstr "Medtag Billede kilde henvisning"
+
+#: WordClouds/surnamewordcloudgramplet.py:49
+msgid "Click surname to view people with that surname"
+msgstr ""
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -26065,6 +26212,24 @@ msgstr ""
 " \"%s\"\n"
 " i din foretrukne web navigator ..."
 
+#~ msgid "Search"
+#~ msgstr "Søg"
+
+#~ msgid "Merge"
+#~ msgstr "Sammenføj"
+
+#~ msgid "Wordle"
+#~ msgstr "Wordle"
+
+#~ msgid "Gramplet used to make word clouds with wordle.net"
+#~ msgstr "Gramplet der benyttes til at danne ordskyer fra wordle.net"
+
+#~ msgid "Number of font sizes"
+#~ msgstr "Antal af fontstørrelser"
+
+#~ msgid "Select filter to restrict list"
+#~ msgstr "Vælg filter til afgrænse listen"
+
 #, python-format
 #~ msgid "\\u2192 %s"
 #~ msgstr "\\u2192 %s"
@@ -26115,9 +26280,6 @@ msgstr ""
 
 #~ msgid "Export"
 #~ msgstr "Eksporter"
-
-#~ msgid "Overview"
-#~ msgstr "Oversigt"
 
 #~ msgid "No file parsed..."
 #~ msgstr "Ingen fil blev fortolket..."

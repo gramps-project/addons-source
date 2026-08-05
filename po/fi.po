@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-03 09:18-0700\n"
+"POT-Creation-Date: 2026-07-29 09:58-0700\n"
 "PO-Revision-Date: 2026-07-26 17:40+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
@@ -36,6 +36,39 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Birthdays"
+msgstr "Syntymäpäivät"
+
+msgid "Ignore birthdays with tag"
+msgstr "Jätä pois syntymäpäivät, joissa on tagi"
+
+msgid "Month and day"
+msgstr ""
+
+msgid "Only show birthdays with tag"
+msgstr "Näytä vain syntymäpäivät, joissa on tagi"
+
+msgid "Proximity to current date"
+msgstr ""
+
+#, fuzzy
+#| msgid "Sort by "
+msgid "Sort birthdays by"
+msgstr "Lajitteluperuste "
+
+#, fuzzy
+#| msgid "Date of Death"
+msgid "Sort dates of death by"
+msgstr "Kuolinpävä"
+
+#, fuzzy
+#| msgid "a gramplet that displays the birthdays of the living people"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr "Gramplet, joka näyttää elävien ihmisten syntymä päivät ja iät"
+
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "Gramplet, joka näyttää elävien ihmisten syntymä päivät ja iät"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -783,23 +816,6 @@ msgstr "Muikkaa perheitä"
 msgid "Looking for children birth order"
 msgstr "Haetaan lapset syntymäjärjestyksessä"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
-msgid "Birthdays"
-msgstr "Syntymäpäivät"
-
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
-msgid "a gramplet that displays the birthdays of the living people"
-msgstr "Gramplet, joka näyttää elävien ihmisten syntymä päivät ja iät"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:45
-msgid "Ignore birthdays with tag"
-msgstr "Jätä pois syntymäpäivät, joissa on tagi"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:46
-msgid "Only show birthdays with tag"
-msgstr "Näytä vain syntymäpäivät, joissa on tagi"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:194
 msgid "Calculate Estimated Dates"
@@ -1307,6 +1323,12 @@ msgstr ""
 "Sinun on määritettävä 'oletushenkilö' jatkaaksesi. Avaa Henkilöt näkymä, "
 "valitse haluamasi henkilö kotihenkilöksi ja vahvista valintasi valikossa "
 "Muokkaa -> Aseta kotihenkilö."
+
+#: CombinedView/personpage.py:306 CombinedView/personpage.py:368
+#, fuzzy
+#| msgid "Adding Tags to family (%s)"
+msgid "Add existing child to family"
+msgstr "Lisää tageja perheelle (%s)"
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -2494,12 +2516,6 @@ msgstr "/"
 #: DenominoViso/DenominoViso.py:1960
 msgid "the chart type runs out of bounds"
 msgstr "kaaviotyyppi ylittää rajat"
-
-#: DenominoViso/DenominoViso.py:2002 GraphView/graphview.py:968
-#: NoteCleanup/NoteCleanup.py:126 SearchGramplet/SearchGramplet.gpr.py:9
-#: SearchGramplet/SearchGramplet.gpr.py:19
-msgid "Search"
-msgstr "Hae"
 
 #: DenominoViso/DenominoViso.py:2553
 msgid "DenominoViso Options"
@@ -5414,6 +5430,24 @@ msgstr "Salli säännölliset lausekkeet"
 #: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."
 msgstr "Salli säännölliset lausekkeet."
+
+#: ExcludeSubtreeFilter/excludesubtree.gpr.py:24
+#: ExcludeSubtreeFilter/excludesubtree.py:106
+msgid "People reachable from <Person>, stopping at <Filter> matches"
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.gpr.py:26
+#: ExcludeSubtreeFilter/excludesubtree.py:109
+msgid ""
+"Matches people who are reachable starting from <Person> (walking all parents "
+"and children of attached families, recursively) stopping at persons in "
+"<Filter>."
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.py:121
+#: FilterRules/isrelatedwithfiltermatch.py:80
+msgid "Retrieving all sub-filter matches"
+msgstr ""
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
@@ -15808,9 +15842,9 @@ msgid ""
 "Model to request from the local server. Required for Ollama (e.g. llama3.1). "
 "Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
 msgstr ""
-"Paikallispalvelimelta pyydettävä malli. Pakollinen Ollamalle (esim. llama3.1)"
-". Jätä tyhjäksi LM Studiolle tai llama.cpp-tiedostolle, jotka käyttävät "
-"ladattua mallia."
+"Paikallispalvelimelta pyydettävä malli. Pakollinen Ollamalle (esim. "
+"llama3.1). Jätä tyhjäksi LM Studiolle tai llama.cpp-tiedostolle, jotka "
+"käyttävät ladattua mallia."
 
 #: GrampsAssistant/grampsassistant.py:1267
 #: GrampsAssistant/grampsassistant.py:1311
@@ -16041,10 +16075,6 @@ msgstr "Palauta etätiedot paikallisen mukaiseksi"
 #: GrampsWebSync/grampswebsync.py:915
 msgid "Reset local to remote"
 msgstr "Palauta paikailliset tiedot etätietojen mukaisiksi"
-
-#: GrampsWebSync/grampswebsync.py:923
-msgid "Merge"
-msgstr "Yhdistä"
 
 #: GrampsWebSync/grampswebsync.py:948
 msgid "Local changes"
@@ -19318,6 +19348,10 @@ msgstr "Henkilön yleiskatsaus"
 msgid "Gramplet showing an overview of events for a person"
 msgstr "Gramplet näyttää yleiskatsauksen henkilön tapahtumista"
 
+#: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
+msgid "Overview"
+msgstr "Yleiskatsaus"
+
 #: Overview/Overview.gpr.py:45
 msgid "Family Overview"
 msgstr "Perheen yleiskatsaus"
@@ -19745,6 +19779,67 @@ msgstr "Tagin väri ja prioriteetti"
 #: PersonEverything/PersonEverything.py:961
 msgid "No source information found"
 msgstr "Ei lähdetietoja"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:25
+#, fuzzy
+#| msgid "Relationship to Father"
+msgid "Person Relationship Filter"
+msgstr "Suhde isään"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:26
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet providing a person filter on relationships"
+msgstr "Gramplet näyttää suhteessa olevia sukulaisia"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:33
+#, fuzzy
+#| msgid "Relationship to Father"
+msgid "Relationship Filter"
+msgstr "Suhde isään"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:82
+#, fuzzy
+#| msgid "Children Dead"
+msgid "Children of name match"
+msgstr "Kuolleita lapsia"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:84
+msgid "Matches children of anybody with a given name"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:251
+#, fuzzy
+#| msgid "sibling"
+msgid "Sibling 1"
+msgstr "sisarus"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:252
+#, fuzzy
+#| msgid "sibling"
+msgid "Sibling 2"
+msgstr "sisarus"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:253
+#, fuzzy
+#| msgid "Children Dead"
+msgid "Child 1"
+msgstr "Kuolleita lapsia"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:254
+#, fuzzy
+#| msgid "Children Dead"
+msgid "Child 2"
+msgstr "Kuolleita lapsia"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:282
+msgid "Probably Alive"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:284
+#, python-format
+msgid "example: '%(msg1)s' or '%(msg2)s'"
+msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
@@ -25285,27 +25380,85 @@ msgstr "Näytä sarakkeet"
 msgid "Display Icons"
 msgstr "Näytä kuvakkeet"
 
-#: WordleGramplet/WordleGramplet.gpr.py:4
-#: WordleGramplet/WordleGramplet.gpr.py:10
-msgid "Wordle"
-msgstr "Wordle"
-
-#: WordleGramplet/WordleGramplet.gpr.py:13
-msgid "Gramplet used to make word clouds with wordle.net"
+#: WordClouds/WordClouds.gpr.py:24 WordClouds/WordClouds.gpr.py:32
+msgid "Given Name Word Cloud"
 msgstr ""
-"Grampletti, jota on käytetty sanapilvien tekemiseen wordle.net-sivustolla"
 
-#: WordleGramplet/WordleGramplet.py:126
-msgid "[Missing]"
+#: WordClouds/WordClouds.gpr.py:25
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all given names as a word cloud"
+msgstr "Gramplet näyttää suhteessa olevia sukulaisia"
+
+#: WordClouds/WordClouds.gpr.py:40 WordClouds/WordClouds.gpr.py:48
+msgid "Surname Word Cloud"
+msgstr ""
+
+#: WordClouds/WordClouds.gpr.py:41
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all surnames as a word cloud"
+msgstr "Gramplet näyttää suhteessa olevia sukulaisia"
+
+#: WordClouds/WordClouds.gpr.py:56 WordClouds/WordClouds.gpr.py:64
+#, fuzzy
+#| msgid "Place history loaded"
+msgid "Place Word Cloud"
+msgstr "Paikkahistoria ladattu"
+
+#: WordClouds/WordClouds.gpr.py:57
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all places as a word cloud"
+msgstr "Gramplet näyttää suhteessa olevia sukulaisia"
+
+#: WordClouds/cloudgramplet.py:147 WordClouds/cloudgramplet.py:225
+#, fuzzy, python-format
+#| msgid "Number of pages"
+msgid "Number of %s"
+msgstr "Sivujen määrä"
+
+#: WordClouds/cloudgramplet.py:149 WordClouds/cloudgramplet.py:227
+msgid "Color (low)"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:150 WordClouds/cloudgramplet.py:228
+msgid "Color (high)"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:151 WordClouds/cloudgramplet.py:229
+#, fuzzy
+#| msgid "Hair color"
+msgid "Hover color"
+msgstr "Hiusten väri"
+
+#: WordClouds/cloudgramplet.py:152 WordClouds/cloudgramplet.py:230
+msgid "Layout quality"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:154 WordClouds/cloudgramplet.py:232
+msgid "Filter missing/unknown words"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:207
+#, fuzzy, python-format
+#| msgid "[Missing]"
+msgid "[Missing %s]"
 msgstr "[Puuttuu]"
 
-#: WordleGramplet/WordleGramplet.py:140
-msgid "Number of font sizes"
-msgstr "Kirjainkokojen määrä"
+#: WordClouds/givennamewordcloudgramplet.py:50
+msgid "Click given name to view people with that given name"
+msgstr ""
 
-#: WordleGramplet/WordleGramplet.py:144
-msgid "Select filter to restrict list"
-msgstr "Valitse suodatin luettelon rajaamiseksi"
+#: WordClouds/placewordcloudgramplet.py:53
+#, fuzzy
+#| msgid "Include Image source references"
+msgid "Click place name to view references"
+msgstr "Näytä kuvien lähdeviitteet"
+
+#: WordClouds/surnamewordcloudgramplet.py:49
+msgid "Click surname to view people with that surname"
+msgstr ""
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -25819,6 +25972,25 @@ msgstr ""
 " \"%s\"\n"
 " suosikkiselaimessasi ..."
 
+#~ msgid "Search"
+#~ msgstr "Hae"
+
+#~ msgid "Merge"
+#~ msgstr "Yhdistä"
+
+#~ msgid "Wordle"
+#~ msgstr "Wordle"
+
+#~ msgid "Gramplet used to make word clouds with wordle.net"
+#~ msgstr ""
+#~ "Grampletti, jota on käytetty sanapilvien tekemiseen wordle.net-sivustolla"
+
+#~ msgid "Number of font sizes"
+#~ msgstr "Kirjainkokojen määrä"
+
+#~ msgid "Select filter to restrict list"
+#~ msgstr "Valitse suodatin luettelon rajaamiseksi"
+
 #, python-format
 #~ msgid "\\u2192 %s"
 #~ msgstr "\\u2192 %s"
@@ -25879,9 +26051,6 @@ msgstr ""
 
 #~ msgid "Export"
 #~ msgstr "Vie"
-
-#~ msgid "Overview"
-#~ msgstr "Yleiskatsaus"
 
 #~ msgid "No file parsed..."
 #~ msgstr "Tiedostoa ei jäsennetty..."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-03 09:18-0700\n"
+"POT-Creation-Date: 2026-07-29 09:58-0700\n"
 "PO-Revision-Date: 2026-01-04 20:01+0000\n"
 "Last-Translator: openSUSE Lietuviškai <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
@@ -23,6 +23,39 @@ msgstr ""
 "Generated-By: pygettext.py 1.4\n"
 "X-Poedit-Language: Lithuanian\n"
 "X-Poedit-Country: LITHUANIA\n"
+
+msgid "Birthdays"
+msgstr "Gimtadieniai"
+
+msgid "Ignore birthdays with tag"
+msgstr "Nepaisyti gimtadienių su gairėmis"
+
+msgid "Month and day"
+msgstr ""
+
+msgid "Only show birthdays with tag"
+msgstr "Rodyti tik gimimo datas su gaire"
+
+msgid "Proximity to current date"
+msgstr ""
+
+#, fuzzy
+#| msgid "Sort by "
+msgid "Sort birthdays by"
+msgstr "Rikiuoti pagal "
+
+#, fuzzy
+#| msgid "Date of Death"
+msgid "Sort dates of death by"
+msgstr "Mirimo data"
+
+#, fuzzy
+#| msgid "a gramplet that displays the birthdays of the living people"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr "grampletas, rodanti gyvų žmonių gimtadienius"
+
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "grampletas, rodanti gyvų žmonių gimtadienius"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -773,23 +806,6 @@ msgstr "Taisyti šeimas"
 msgid "Looking for children birth order"
 msgstr "Ieškoma vaikų gimimo eilės tvarkos"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
-msgid "Birthdays"
-msgstr "Gimtadieniai"
-
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
-msgid "a gramplet that displays the birthdays of the living people"
-msgstr "grampletas, rodanti gyvų žmonių gimtadienius"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:45
-msgid "Ignore birthdays with tag"
-msgstr "Nepaisyti gimtadienių su gairėmis"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:46
-msgid "Only show birthdays with tag"
-msgstr "Rodyti tik gimimo datas su gaire"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:194
 msgid "Calculate Estimated Dates"
@@ -1270,6 +1286,10 @@ msgid ""
 "You need to set a 'default person' to go to. Select the People View, select "
 "the person you want as 'Home Person', then confirm your choice via the menu "
 "Edit -> Set Home Person."
+msgstr ""
+
+#: CombinedView/personpage.py:306 CombinedView/personpage.py:368
+msgid "Add existing child to family"
 msgstr ""
 
 #: CombinedView/personpage.py:597
@@ -2440,12 +2460,6 @@ msgstr ""
 #: DenominoViso/DenominoViso.py:1960
 msgid "the chart type runs out of bounds"
 msgstr ""
-
-#: DenominoViso/DenominoViso.py:2002 GraphView/graphview.py:968
-#: NoteCleanup/NoteCleanup.py:126 SearchGramplet/SearchGramplet.gpr.py:9
-#: SearchGramplet/SearchGramplet.gpr.py:19
-msgid "Search"
-msgstr "Paieška"
 
 #: DenominoViso/DenominoViso.py:2553
 msgid "DenominoViso Options"
@@ -5256,6 +5270,24 @@ msgstr ""
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.gpr.py:24
+#: ExcludeSubtreeFilter/excludesubtree.py:106
+msgid "People reachable from <Person>, stopping at <Filter> matches"
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.gpr.py:26
+#: ExcludeSubtreeFilter/excludesubtree.py:109
+msgid ""
+"Matches people who are reachable starting from <Person> (walking all parents "
+"and children of attached families, recursively) stopping at persons in "
+"<Filter>."
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.py:121
+#: FilterRules/isrelatedwithfiltermatch.py:80
+msgid "Retrieving all sub-filter matches"
 msgstr ""
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
@@ -15812,10 +15844,6 @@ msgstr ""
 msgid "Reset local to remote"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:923
-msgid "Merge"
-msgstr "Apjungti"
-
 #: GrampsWebSync/grampswebsync.py:948
 msgid "Local changes"
 msgstr ""
@@ -18959,6 +18987,10 @@ msgstr ""
 msgid "Gramplet showing an overview of events for a person"
 msgstr ""
 
+#: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
+msgid "Overview"
+msgstr ""
+
 #: Overview/Overview.gpr.py:45
 msgid "Family Overview"
 msgstr ""
@@ -19373,6 +19405,59 @@ msgstr "Gairės spalva ir pirmenybė"
 
 #: PersonEverything/PersonEverything.py:961
 msgid "No source information found"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:25
+#, fuzzy
+#| msgid "Relation type"
+msgid "Person Relationship Filter"
+msgstr "Ryšio rūšis"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:26
+msgid "Gramplet providing a person filter on relationships"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:33
+#, fuzzy
+#| msgid "Relation type"
+msgid "Relationship Filter"
+msgstr "Ryšio rūšis"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:82
+msgid "Children of name match"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:84
+msgid "Matches children of anybody with a given name"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:251
+#, fuzzy
+#| msgid "Show siblings"
+msgid "Sibling 1"
+msgstr "Rodyti brolius ir seseris"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:252
+#, fuzzy
+#| msgid "Show siblings"
+msgid "Sibling 2"
+msgstr "Rodyti brolius ir seseris"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:253
+msgid "Child 1"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:254
+msgid "Child 2"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:282
+msgid "Probably Alive"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:284
+#, python-format
+msgid "example: '%(msg1)s' or '%(msg2)s'"
 msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
@@ -24631,26 +24716,77 @@ msgstr "Rodyti stulpelius"
 msgid "Display Icons"
 msgstr "Rodyti piktogramas"
 
-#: WordleGramplet/WordleGramplet.gpr.py:4
-#: WordleGramplet/WordleGramplet.gpr.py:10
-msgid "Wordle"
+#: WordClouds/WordClouds.gpr.py:24 WordClouds/WordClouds.gpr.py:32
+msgid "Given Name Word Cloud"
 msgstr ""
 
-#: WordleGramplet/WordleGramplet.gpr.py:13
-msgid "Gramplet used to make word clouds with wordle.net"
+#: WordClouds/WordClouds.gpr.py:25
+msgid "Gramplet showing all given names as a word cloud"
 msgstr ""
 
-#: WordleGramplet/WordleGramplet.py:126
-msgid "[Missing]"
+#: WordClouds/WordClouds.gpr.py:40 WordClouds/WordClouds.gpr.py:48
+msgid "Surname Word Cloud"
 msgstr ""
 
-#: WordleGramplet/WordleGramplet.py:140
-msgid "Number of font sizes"
-msgstr "Šrifto dydžių skaičius"
+#: WordClouds/WordClouds.gpr.py:41
+msgid "Gramplet showing all surnames as a word cloud"
+msgstr ""
 
-#: WordleGramplet/WordleGramplet.py:144
-msgid "Select filter to restrict list"
-msgstr "Pasirinkite filtrą, kad apribotumėte sąrašą"
+#: WordClouds/WordClouds.gpr.py:56 WordClouds/WordClouds.gpr.py:64
+#, fuzzy
+#| msgid "Place history loaded"
+msgid "Place Word Cloud"
+msgstr "Vietovės istorija įkelta"
+
+#: WordClouds/WordClouds.gpr.py:57
+msgid "Gramplet showing all places as a word cloud"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:147 WordClouds/cloudgramplet.py:225
+#, fuzzy, python-format
+#| msgid "Number of pages"
+msgid "Number of %s"
+msgstr "Puslapių skaičius"
+
+#: WordClouds/cloudgramplet.py:149 WordClouds/cloudgramplet.py:227
+msgid "Color (low)"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:150 WordClouds/cloudgramplet.py:228
+msgid "Color (high)"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:151 WordClouds/cloudgramplet.py:229
+#, fuzzy
+#| msgid "Hair color"
+msgid "Hover color"
+msgstr "Plaukų spalva"
+
+#: WordClouds/cloudgramplet.py:152 WordClouds/cloudgramplet.py:230
+msgid "Layout quality"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:154 WordClouds/cloudgramplet.py:232
+msgid "Filter missing/unknown words"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:207
+#, fuzzy, python-format
+#| msgid "Missing %s: %s"
+msgid "[Missing %s]"
+msgstr "Trūksta %s: %s"
+
+#: WordClouds/givennamewordcloudgramplet.py:50
+msgid "Click given name to view people with that given name"
+msgstr ""
+
+#: WordClouds/placewordcloudgramplet.py:53
+msgid "Click place name to view references"
+msgstr ""
+
+#: WordClouds/surnamewordcloudgramplet.py:49
+msgid "Click surname to view people with that surname"
+msgstr ""
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -25132,6 +25268,18 @@ msgid ""
 " \"%s\"\n"
 " into your preferred web navigator ..."
 msgstr ""
+
+#~ msgid "Search"
+#~ msgstr "Paieška"
+
+#~ msgid "Merge"
+#~ msgstr "Apjungti"
+
+#~ msgid "Number of font sizes"
+#~ msgstr "Šrifto dydžių skaičius"
+
+#~ msgid "Select filter to restrict list"
+#~ msgstr "Pasirinkite filtrą, kad apribotumėte sąrašą"
 
 #~ msgid "Primary Name"
 #~ msgstr "Pagrindinis vardas"

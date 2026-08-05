@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-03 09:18-0700\n"
+"POT-Creation-Date: 2026-07-29 09:58-0700\n"
 "PO-Revision-Date: 2026-07-09 15:32+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
@@ -22,6 +22,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
 "X-Generator: Weblate 2026.7.1.dev0\n"
+
+msgid "Birthdays"
+msgstr "Narodeniny"
+
+msgid "Ignore birthdays with tag"
+msgstr "Ignorovať dni narodenia so štítkom"
+
+msgid "Month and day"
+msgstr ""
+
+msgid "Only show birthdays with tag"
+msgstr "Zobraziť iba dni narodenia so štítkom"
+
+msgid "Proximity to current date"
+msgstr ""
+
+#, fuzzy
+#| msgid "Sort by "
+msgid "Sort birthdays by"
+msgstr "Zoradiť podľa "
+
+#, fuzzy
+#| msgid "Birth date of deceased"
+msgid "Sort dates of death by"
+msgstr "Dátum narodenia zosnulého"
+
+#, fuzzy
+#| msgid "a gramplet that displays the birthdays of the living people"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr "Gramplet, ktorý zobrazuje narodeniny žijúcich ľudí"
+
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "Gramplet, ktorý zobrazuje narodeniny žijúcich ľudí"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -769,23 +802,6 @@ msgstr "Upraviť rodiny"
 msgid "Looking for children birth order"
 msgstr "Hľadanie poradia narodenia detí"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
-msgid "Birthdays"
-msgstr "Narodeniny"
-
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
-msgid "a gramplet that displays the birthdays of the living people"
-msgstr "Gramplet, ktorý zobrazuje narodeniny žijúcich ľudí"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:45
-msgid "Ignore birthdays with tag"
-msgstr "Ignorovať dni narodenia so štítkom"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:46
-msgid "Only show birthdays with tag"
-msgstr "Zobraziť iba dni narodenia so štítkom"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:194
 msgid "Calculate Estimated Dates"
@@ -1298,6 +1314,12 @@ msgstr ""
 "Musíte nastaviť 'východziu osobu', ku ktorej chcete prejsť. Vyberte pohľad "
 "Ľudia, vyberte osobu, ktorú chcete ako 'Domovskú osobu', a potom potvrďte "
 "svoj výber cez menu Upraviť -> Nastaviť domovskú osobu."
+
+#: CombinedView/personpage.py:306 CombinedView/personpage.py:368
+#, fuzzy
+#| msgid "Adding Tags to family (%s)"
+msgid "Add existing child to family"
+msgstr "Pridávanie štítkov k rodine (%s)"
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -2485,12 +2507,6 @@ msgstr "z"
 #: DenominoViso/DenominoViso.py:1960
 msgid "the chart type runs out of bounds"
 msgstr "typ grafu presahuje hranice"
-
-#: DenominoViso/DenominoViso.py:2002 GraphView/graphview.py:968
-#: NoteCleanup/NoteCleanup.py:126 SearchGramplet/SearchGramplet.gpr.py:9
-#: SearchGramplet/SearchGramplet.gpr.py:19
-msgid "Search"
-msgstr "Vyhľadávanie"
 
 #: DenominoViso/DenominoViso.py:2553
 msgid "DenominoViso Options"
@@ -5424,6 +5440,24 @@ msgstr "Povoliť regex"
 #: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."
 msgstr "Povoliť regulárne výrazy."
+
+#: ExcludeSubtreeFilter/excludesubtree.gpr.py:24
+#: ExcludeSubtreeFilter/excludesubtree.py:106
+msgid "People reachable from <Person>, stopping at <Filter> matches"
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.gpr.py:26
+#: ExcludeSubtreeFilter/excludesubtree.py:109
+msgid ""
+"Matches people who are reachable starting from <Person> (walking all parents "
+"and children of attached families, recursively) stopping at persons in "
+"<Filter>."
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.py:121
+#: FilterRules/isrelatedwithfiltermatch.py:80
+msgid "Retrieving all sub-filter matches"
+msgstr ""
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
@@ -15851,8 +15885,8 @@ msgid ""
 "tree. Use the ⚙ button to configure the AI.\n"
 msgstr ""
 "Opýtajte sa ma čokoľvek o programe Gramps alebo o vašom konkrétnom rodinnom "
-"strome v Gramps. Použite tlačidlo ⚙ na konfiguráciu umelej inteligencie (AI)"
-".\n"
+"strome v Gramps. Použite tlačidlo ⚙ na konfiguráciu umelej inteligencie "
+"(AI).\n"
 
 #: GrampsAssistant/grampsassistant.py:720
 msgid ""
@@ -15916,8 +15950,9 @@ msgid ""
 "URL of a local OpenAI-compatible server. Ollama: http://localhost:11434  LM "
 "Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
 msgstr ""
-"URL lokálneho servera kompatibilného s OpenAI. Ollama: http://localhost:11434"
-"  LM Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
+"URL lokálneho servera kompatibilného s OpenAI. Ollama: http://"
+"localhost:11434  LM Studio: http://localhost:1234  llama.cpp: http://"
+"localhost:8080"
 
 #: GrampsAssistant/grampsassistant.py:1257
 msgid "model name (leave blank for LM Studio / llama.cpp)"
@@ -16165,10 +16200,6 @@ msgstr "Obnoviť vzdialené na lokálne"
 #: GrampsWebSync/grampswebsync.py:915
 msgid "Reset local to remote"
 msgstr "Obnoviť lokálne na vzdialené"
-
-#: GrampsWebSync/grampswebsync.py:923
-msgid "Merge"
-msgstr "Zlúčiť"
 
 #: GrampsWebSync/grampswebsync.py:948
 msgid "Local changes"
@@ -19405,6 +19436,10 @@ msgstr "Osobný prehľad"
 msgid "Gramplet showing an overview of events for a person"
 msgstr "Gramplet zobrazujúci prehľad udalostí pre osobu"
 
+#: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
+msgid "Overview"
+msgstr "Prehľad"
+
 #: Overview/Overview.gpr.py:45
 msgid "Family Overview"
 msgstr "Rodinný prehľad"
@@ -19809,6 +19844,67 @@ msgstr "Farba štítku a priorita"
 #: PersonEverything/PersonEverything.py:961
 msgid "No source information found"
 msgstr "Neboli nájdené žiadne informácie o zdroji"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:25
+#, fuzzy
+#| msgid "Relationship to Father"
+msgid "Person Relationship Filter"
+msgstr "Vzťah k otcovi"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:26
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet providing a person filter on relationships"
+msgstr "Gramplet zobrazujúci príbuzných vo vzťahu"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:33
+#, fuzzy
+#| msgid "Relationship to Father"
+msgid "Relationship Filter"
+msgstr "Vzťah k otcovi"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:82
+#, fuzzy
+#| msgid "Children Dead"
+msgid "Children of name match"
+msgstr "Deti zomreté"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:84
+msgid "Matches children of anybody with a given name"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:251
+#, fuzzy
+#| msgid "sibling"
+msgid "Sibling 1"
+msgstr "súrodenec"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:252
+#, fuzzy
+#| msgid "sibling"
+msgid "Sibling 2"
+msgstr "súrodenec"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:253
+#, fuzzy
+#| msgid "Children Dead"
+msgid "Child 1"
+msgstr "Deti zomreté"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:254
+#, fuzzy
+#| msgid "Children Dead"
+msgid "Child 2"
+msgstr "Deti zomreté"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:282
+msgid "Probably Alive"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:284
+#, python-format
+msgid "example: '%(msg1)s' or '%(msg2)s'"
+msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
@@ -25395,26 +25491,87 @@ msgstr "Zobraziť stĺpce"
 msgid "Display Icons"
 msgstr "Zobraziť ikony"
 
-#: WordleGramplet/WordleGramplet.gpr.py:4
-#: WordleGramplet/WordleGramplet.gpr.py:10
-msgid "Wordle"
-msgstr "Wordle"
+#: WordClouds/WordClouds.gpr.py:24 WordClouds/WordClouds.gpr.py:32
+msgid "Given Name Word Cloud"
+msgstr ""
 
-#: WordleGramplet/WordleGramplet.gpr.py:13
-msgid "Gramplet used to make word clouds with wordle.net"
-msgstr "Gramplet používaný na vytváranie oblakov slov s wordle.net"
+#: WordClouds/WordClouds.gpr.py:25
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all given names as a word cloud"
+msgstr "Gramplet zobrazujúci príbuzných vo vzťahu"
 
-#: WordleGramplet/WordleGramplet.py:126
-msgid "[Missing]"
+#: WordClouds/WordClouds.gpr.py:40 WordClouds/WordClouds.gpr.py:48
+msgid "Surname Word Cloud"
+msgstr ""
+
+#: WordClouds/WordClouds.gpr.py:41
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all surnames as a word cloud"
+msgstr "Gramplet zobrazujúci príbuzných vo vzťahu"
+
+#: WordClouds/WordClouds.gpr.py:56 WordClouds/WordClouds.gpr.py:64
+#, fuzzy
+#| msgid "Place history loaded"
+msgid "Place Word Cloud"
+msgstr "História miesta načítaná"
+
+#: WordClouds/WordClouds.gpr.py:57
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all places as a word cloud"
+msgstr "Gramplet zobrazujúci príbuzných vo vzťahu"
+
+#: WordClouds/cloudgramplet.py:147 WordClouds/cloudgramplet.py:225
+#, fuzzy, python-format
+#| msgid "Number of pages"
+msgid "Number of %s"
+msgstr "Počet stránok"
+
+#: WordClouds/cloudgramplet.py:149 WordClouds/cloudgramplet.py:227
+#, fuzzy
+#| msgid "Colored Male"
+msgid "Color (low)"
+msgstr "Farebný muž"
+
+#: WordClouds/cloudgramplet.py:150 WordClouds/cloudgramplet.py:228
+msgid "Color (high)"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:151 WordClouds/cloudgramplet.py:229
+#, fuzzy
+#| msgid "Hair color"
+msgid "Hover color"
+msgstr "Farba vlasov"
+
+#: WordClouds/cloudgramplet.py:152 WordClouds/cloudgramplet.py:230
+msgid "Layout quality"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:154 WordClouds/cloudgramplet.py:232
+msgid "Filter missing/unknown words"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:207
+#, fuzzy, python-format
+#| msgid "[Missing]"
+msgid "[Missing %s]"
 msgstr "Chýbajúci]"
 
-#: WordleGramplet/WordleGramplet.py:140
-msgid "Number of font sizes"
-msgstr "Počet veľkostí písma"
+#: WordClouds/givennamewordcloudgramplet.py:50
+msgid "Click given name to view people with that given name"
+msgstr ""
 
-#: WordleGramplet/WordleGramplet.py:144
-msgid "Select filter to restrict list"
-msgstr "Vyberte filter na vymedzenie zoznamu"
+#: WordClouds/placewordcloudgramplet.py:53
+#, fuzzy
+#| msgid "Include Image source references"
+msgid "Click place name to view references"
+msgstr "Zahrnúť zdrojové referencie obrázkov"
+
+#: WordClouds/surnamewordcloudgramplet.py:49
+msgid "Click surname to view people with that surname"
+msgstr ""
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -25870,6 +26027,24 @@ msgstr ""
 " \"%s\" \n"
 " do svojho preferovaného webového prehliadača ..."
 
+#~ msgid "Search"
+#~ msgstr "Vyhľadávanie"
+
+#~ msgid "Merge"
+#~ msgstr "Zlúčiť"
+
+#~ msgid "Wordle"
+#~ msgstr "Wordle"
+
+#~ msgid "Gramplet used to make word clouds with wordle.net"
+#~ msgstr "Gramplet používaný na vytváranie oblakov slov s wordle.net"
+
+#~ msgid "Number of font sizes"
+#~ msgstr "Počet veľkostí písma"
+
+#~ msgid "Select filter to restrict list"
+#~ msgstr "Vyberte filter na vymedzenie zoznamu"
+
 #, python-format
 #~ msgid "\\u2192 %s"
 #~ msgstr "\\u2192 %s"
@@ -25930,9 +26105,6 @@ msgstr ""
 
 #~ msgid "Export"
 #~ msgstr "Exportovať"
-
-#~ msgid "Overview"
-#~ msgstr "Prehľad"
 
 #~ msgid "No file parsed..."
 #~ msgstr "Nebol analyzovaný žiadny súbor..."

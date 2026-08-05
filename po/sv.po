@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-03 09:18-0700\n"
+"POT-Creation-Date: 2026-07-29 09:58-0700\n"
 "PO-Revision-Date: 2026-07-05 22:49+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
@@ -28,6 +28,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2026.7.1.dev0\n"
+
+msgid "Birthdays"
+msgstr "Födelsedagar"
+
+msgid "Ignore birthdays with tag"
+msgstr "Ignorera födelsedagar med tagg"
+
+msgid "Month and day"
+msgstr ""
+
+msgid "Only show birthdays with tag"
+msgstr "Visa endast födelsedagar med tagg"
+
+msgid "Proximity to current date"
+msgstr ""
+
+#, fuzzy
+#| msgid "Sort by "
+msgid "Sort birthdays by"
+msgstr "Sortera efter "
+
+#, fuzzy
+#| msgid "Birth date of deceased"
+msgid "Sort dates of death by"
+msgstr "Den avlidnes födelsedatum"
+
+#, fuzzy
+#| msgid "a gramplet that displays the birthdays of the living people"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr "en Gramplet, som visar födelsedagarna för levande personer"
+
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "en Gramplet, som visar födelsedagarna för levande personer"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -782,23 +815,6 @@ msgstr "Redigera familjer"
 msgid "Looking for children birth order"
 msgstr "Söker efter barns födelseordning"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
-msgid "Birthdays"
-msgstr "Födelsedagar"
-
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
-msgid "a gramplet that displays the birthdays of the living people"
-msgstr "en Gramplet, som visar födelsedagarna för levande personer"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:45
-msgid "Ignore birthdays with tag"
-msgstr "Ignorera födelsedagar med tagg"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:46
-msgid "Only show birthdays with tag"
-msgstr "Visa endast födelsedagar med tagg"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:194
 msgid "Calculate Estimated Dates"
@@ -1303,6 +1319,12 @@ msgstr ""
 "Du behöver definiera en 'standardperson' att gå till. Välj Personvy, välj "
 "den person du vill ha som 'hemperson'. Bekräfta ditt val via menyn Redigera "
 "-> Välj Hemperson."
+
+#: CombinedView/personpage.py:306 CombinedView/personpage.py:368
+#, fuzzy
+#| msgid "Adding Tags to family (%s)"
+msgid "Add existing child to family"
+msgstr "Lägger till taggar till familjen (%s)"
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -2489,12 +2511,6 @@ msgstr "av"
 #: DenominoViso/DenominoViso.py:1960
 msgid "the chart type runs out of bounds"
 msgstr "diagramtypen utanför gränser"
-
-#: DenominoViso/DenominoViso.py:2002 GraphView/graphview.py:968
-#: NoteCleanup/NoteCleanup.py:126 SearchGramplet/SearchGramplet.gpr.py:9
-#: SearchGramplet/SearchGramplet.gpr.py:19
-msgid "Search"
-msgstr "Sök"
 
 #: DenominoViso/DenominoViso.py:2553
 msgid "DenominoViso Options"
@@ -5418,6 +5434,24 @@ msgstr "Tillåt reguljära uttryck"
 #: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."
 msgstr "Tillåt reguljära uttryck."
+
+#: ExcludeSubtreeFilter/excludesubtree.gpr.py:24
+#: ExcludeSubtreeFilter/excludesubtree.py:106
+msgid "People reachable from <Person>, stopping at <Filter> matches"
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.gpr.py:26
+#: ExcludeSubtreeFilter/excludesubtree.py:109
+msgid ""
+"Matches people who are reachable starting from <Person> (walking all parents "
+"and children of attached families, recursively) stopping at persons in "
+"<Filter>."
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.py:121
+#: FilterRules/isrelatedwithfiltermatch.py:80
+msgid "Retrieving all sub-filter matches"
+msgstr ""
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
@@ -15826,9 +15860,9 @@ msgid ""
 "Model to request from the local server. Required for Ollama (e.g. llama3.1). "
 "Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
 msgstr ""
-"Modell att begära från den lokala servern. Krävs för Ollama (t.ex. llama3.1)"
-". Lämna tomt för LM Studio eller llama.cpp, som använder den modell som "
-"laddas."
+"Modell att begära från den lokala servern. Krävs för Ollama (t.ex. "
+"llama3.1). Lämna tomt för LM Studio eller llama.cpp, som använder den modell "
+"som laddas."
 
 #: GrampsAssistant/grampsassistant.py:1267
 #: GrampsAssistant/grampsassistant.py:1311
@@ -16066,10 +16100,6 @@ msgstr "Återställ fjärr till lokalt läge"
 #: GrampsWebSync/grampswebsync.py:915
 msgid "Reset local to remote"
 msgstr "Återställ lokalt till fjärrläge"
-
-#: GrampsWebSync/grampswebsync.py:923
-msgid "Merge"
-msgstr "Slå samman"
 
 #: GrampsWebSync/grampswebsync.py:948
 msgid "Local changes"
@@ -19362,6 +19392,10 @@ msgstr "Personöversikt"
 msgid "Gramplet showing an overview of events for a person"
 msgstr "Gramplet som visar en översikt på händelser för en person"
 
+#: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
+msgid "Overview"
+msgstr "Översikt"
+
 #: Overview/Overview.gpr.py:45
 msgid "Family Overview"
 msgstr "Familjeöversikt"
@@ -19784,6 +19818,67 @@ msgstr "Taggfärg och prioritet"
 #: PersonEverything/PersonEverything.py:961
 msgid "No source information found"
 msgstr "Ingen källinformation funnen"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:25
+#, fuzzy
+#| msgid "Relationship to Father"
+msgid "Person Relationship Filter"
+msgstr "Släktskap med far"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:26
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet providing a person filter on relationships"
+msgstr "Gramplet som visar släktingar i en relation"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:33
+#, fuzzy
+#| msgid "Relationship to Father"
+msgid "Relationship Filter"
+msgstr "Släktskap med far"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:82
+#, fuzzy
+#| msgid "Children Dead"
+msgid "Children of name match"
+msgstr "Barn döda"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:84
+msgid "Matches children of anybody with a given name"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:251
+#, fuzzy
+#| msgid "sibling"
+msgid "Sibling 1"
+msgstr "syskon"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:252
+#, fuzzy
+#| msgid "sibling"
+msgid "Sibling 2"
+msgstr "syskon"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:253
+#, fuzzy
+#| msgid "Children Dead"
+msgid "Child 1"
+msgstr "Barn döda"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:254
+#, fuzzy
+#| msgid "Children Dead"
+msgid "Child 2"
+msgstr "Barn döda"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:282
+msgid "Probably Alive"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:284
+#, python-format
+msgid "example: '%(msg1)s' or '%(msg2)s'"
+msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
@@ -25301,26 +25396,85 @@ msgstr "Visa kolumner"
 msgid "Display Icons"
 msgstr "Visa ikoner"
 
-#: WordleGramplet/WordleGramplet.gpr.py:4
-#: WordleGramplet/WordleGramplet.gpr.py:10
-msgid "Wordle"
-msgstr "Wordle"
+#: WordClouds/WordClouds.gpr.py:24 WordClouds/WordClouds.gpr.py:32
+msgid "Given Name Word Cloud"
+msgstr ""
 
-#: WordleGramplet/WordleGramplet.gpr.py:13
-msgid "Gramplet used to make word clouds with wordle.net"
-msgstr "Gramplet för att skapa ordmoln med wordle.net"
+#: WordClouds/WordClouds.gpr.py:25
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all given names as a word cloud"
+msgstr "Gramplet som visar släktingar i en relation"
 
-#: WordleGramplet/WordleGramplet.py:126
-msgid "[Missing]"
+#: WordClouds/WordClouds.gpr.py:40 WordClouds/WordClouds.gpr.py:48
+msgid "Surname Word Cloud"
+msgstr ""
+
+#: WordClouds/WordClouds.gpr.py:41
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all surnames as a word cloud"
+msgstr "Gramplet som visar släktingar i en relation"
+
+#: WordClouds/WordClouds.gpr.py:56 WordClouds/WordClouds.gpr.py:64
+#, fuzzy
+#| msgid "Place history loaded"
+msgid "Place Word Cloud"
+msgstr "Platshistorik laddad"
+
+#: WordClouds/WordClouds.gpr.py:57
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all places as a word cloud"
+msgstr "Gramplet som visar släktingar i en relation"
+
+#: WordClouds/cloudgramplet.py:147 WordClouds/cloudgramplet.py:225
+#, fuzzy, python-format
+#| msgid "Number of pages"
+msgid "Number of %s"
+msgstr "Antal sidor"
+
+#: WordClouds/cloudgramplet.py:149 WordClouds/cloudgramplet.py:227
+msgid "Color (low)"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:150 WordClouds/cloudgramplet.py:228
+msgid "Color (high)"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:151 WordClouds/cloudgramplet.py:229
+#, fuzzy
+#| msgid "Hair color"
+msgid "Hover color"
+msgstr "Hårfärg"
+
+#: WordClouds/cloudgramplet.py:152 WordClouds/cloudgramplet.py:230
+msgid "Layout quality"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:154 WordClouds/cloudgramplet.py:232
+msgid "Filter missing/unknown words"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:207
+#, fuzzy, python-format
+#| msgid "[Missing]"
+msgid "[Missing %s]"
 msgstr "[Saknas]"
 
-#: WordleGramplet/WordleGramplet.py:140
-msgid "Number of font sizes"
-msgstr "Antal typsnittsstorlekar"
+#: WordClouds/givennamewordcloudgramplet.py:50
+msgid "Click given name to view people with that given name"
+msgstr ""
 
-#: WordleGramplet/WordleGramplet.py:144
-msgid "Select filter to restrict list"
-msgstr "Välj ett filter för att begränsa lista"
+#: WordClouds/placewordcloudgramplet.py:53
+#, fuzzy
+#| msgid "Include Image source references"
+msgid "Click place name to view references"
+msgstr "Huruvida ta med bildkällreferenser"
+
+#: WordClouds/surnamewordcloudgramplet.py:49
+msgid "Click surname to view people with that surname"
+msgstr ""
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -25835,6 +25989,24 @@ msgstr ""
 "\"%s\"\n"
 "till din föredragna webbnavigator ..."
 
+#~ msgid "Search"
+#~ msgstr "Sök"
+
+#~ msgid "Merge"
+#~ msgstr "Slå samman"
+
+#~ msgid "Wordle"
+#~ msgstr "Wordle"
+
+#~ msgid "Gramplet used to make word clouds with wordle.net"
+#~ msgstr "Gramplet för att skapa ordmoln med wordle.net"
+
+#~ msgid "Number of font sizes"
+#~ msgstr "Antal typsnittsstorlekar"
+
+#~ msgid "Select filter to restrict list"
+#~ msgstr "Välj ett filter för att begränsa lista"
+
 #, python-format
 #~ msgid "\\u2192 %s"
 #~ msgstr "\\u2192 %s"
@@ -25892,9 +26064,6 @@ msgstr ""
 
 #~ msgid "Export"
 #~ msgstr "Exportera"
-
-#~ msgid "Overview"
-#~ msgstr "Översikt"
 
 #~ msgid "No file parsed..."
 #~ msgstr "Ingen fil tolkades..."
