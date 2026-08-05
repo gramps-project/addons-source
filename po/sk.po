@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-01 09:38-0700\n"
-"PO-Revision-Date: 2026-08-01 16:13+0000\n"
+"PO-Revision-Date: 2026-08-03 04:01+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -16018,12 +16018,16 @@ msgid ""
 "The system keyring could not be used. Snap confinement blocks access until "
 "you run: %s"
 msgstr ""
+"Systémovú kľúčenku sa nepodarilo použiť. Obmedzenie Snap blokuje prístup, "
+"kým nespustíte: %s"
 
 #: GrampsWebSync/grampswebsync.py:128
 msgid ""
 "The system keyring could not be used. You will need to enter your password "
 "each time."
 msgstr ""
+"Systémovú kľúčenku sa nepodarilo použiť. Heslo budete musieť zadávať "
+"zakaždým."
 
 #: GrampsWebSync/grampswebsync.py:145
 msgid "Authentication failed. Please check your username and password."
@@ -16078,11 +16082,13 @@ msgid ""
 "The family tree was modified while the changes were being reviewed. Nothing "
 "has been applied. Please compare again."
 msgstr ""
+"Rodinný strom bol modifikovaný počas kontroly zmien. Nič nebolo aplikované. "
+"Prosím, porovnajte znova."
 
 #: GrampsWebSync/grampswebsync.py:175
 #, python-format
 msgid "The server could not apply the changes: %s"
-msgstr ""
+msgstr "Server nemohol aplikovať zmeny: %s"
 
 #: GrampsWebSync/grampswebsync.py:177
 #, python-format
@@ -16166,25 +16172,31 @@ msgstr "Chyba:"
 
 #: GrampsWebSync/grampswebsync.py:646
 msgid "Sync mode"
-msgstr ""
+msgstr "Synchronizovaný režim"
 
 #: GrampsWebSync/grampswebsync.py:656
 msgid ""
 "Changes from both sides are combined. Objects edited in both places are "
 "merged."
 msgstr ""
+"Zmeny z oboch strán sú kombinované. Objekty upravené na oboch miestach sa "
+"zlúčia."
 
 #: GrampsWebSync/grampswebsync.py:660
 msgid ""
 "The server is made to match this computer. Anything changed only on the "
 "server is discarded."
 msgstr ""
+"Server sa upraví tak, aby zodpovedal tomuto počítaču. Čokoľvek zmenené len "
+"na serveri sa vyradí."
 
 #: GrampsWebSync/grampswebsync.py:664
 msgid ""
 "This computer is made to match the server. Anything changed only here is "
 "discarded."
 msgstr ""
+"Tento počítač sa upraví tak, aby zodpovedal serveru. Čokoľvek zmenené len tu "
+"sa vyradí."
 
 #: GrampsWebSync/grampswebsync.py:671
 msgid "Bidirectional Synchronization"
@@ -16199,10 +16211,8 @@ msgid "Reset local to remote"
 msgstr "Obnoviť lokálne na vzdialené"
 
 #: GrampsWebSync/grampswebsync.py:712
-#, fuzzy
-#| msgid "Learning"
 msgid "Warning:"
-msgstr "Učenie"
+msgstr "Upozornenie:"
 
 #: GrampsWebSync/grampswebsync.py:722
 msgid "Local changes"
@@ -16249,34 +16259,32 @@ msgid "Missing remotely"
 msgstr "Chýbajúce vzdialene"
 
 #: GrampsWebSync/grampswebsync.py:905
-#, fuzzy, python-format
-#| msgid "Downloading %s media file(s)"
+#, python-format
 msgid "Downloading %s media file"
 msgid_plural "Downloading %s media files"
-msgstr[0] "Sťahovanie %s súboru(-ov) média"
-msgstr[1] "Sťahovanie %s súboru(-ov) média"
-msgstr[2] "Sťahovanie %s súboru(-ov) média"
+msgstr[0] "Sťahovanie %s mediálneho súboru"
+msgstr[1] "Sťahovanie %s mediálnych súborov"
+msgstr[2] "Sťahovanie %s mediálnych súborov"
 
 #: GrampsWebSync/grampswebsync.py:920
-#, fuzzy, python-format
-#| msgid "Uploading %s media file(s)"
+#, python-format
 msgid "Uploading %s media file"
 msgid_plural "Uploading %s media files"
-msgstr[0] "Nahrávanie %s súboru(-ov) média"
-msgstr[1] "Nahrávanie %s súboru(-ov) média"
-msgstr[2] "Nahrávanie %s súboru(-ov) média"
+msgstr[0] "Nahrávanie %s mediálneho súboru"
+msgstr[1] "Nahrávanie %s mediálnych súborov"
+msgstr[2] "Nahrávanie %s mediálnych súborov"
 
 #: GrampsWebSync/grampswebsync.py:965
 msgid "Try again"
-msgstr ""
+msgstr "Skúste znova"
 
 #: GrampsWebSync/grampswebsync.py:999
 #, python-format
 msgid "Applied %s change."
 msgid_plural "Applied %s changes."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Aplikovaná %s zmena."
+msgstr[1] "Aplikované %s zmeny."
+msgstr[2] "Aplikovaných %s zmien."
 
 #: GrampsWebSync/grampswebsync.py:1006
 msgid "Media files are in sync."
@@ -16287,50 +16295,46 @@ msgstr "Mediálne súbory sú synchronizované."
 msgid "%s media file is missing on both sides and could not be transferred."
 msgid_plural ""
 "%s media files are missing on both sides and could not be transferred."
-msgstr[0] ""
+msgstr[0] "%s mediálny súbor chýba na oboch stranách a nepodarilo sa ho preniesť."
 msgstr[1] ""
+"%s mediálne súbory chýbajú na oboch stranách a nepodarilo sa ich preniesť."
 msgstr[2] ""
+"%s mediálnych súborov chýba na oboch stranách a nepodarilo sa ich preniesť."
 
 #: GrampsWebSync/grampswebsync.py:1020
-#, fuzzy
-#| msgid "Both trees are the same."
 msgid "Both trees are already in sync."
-msgstr "Obidva stromy sú rovnaké."
+msgstr "Obidva stromy sú už synchronizované."
 
 #: GrampsWebSync/grampswebsync.py:1033
-#, fuzzy, python-format
-#| msgid "Successfully downloaded %s media files."
+#, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "Úspešne stiahnuté %s mediálne súbory."
+msgstr[0] "Úspešne stiahnutý %s mediálny súbor."
 msgstr[1] "Úspešne stiahnuté %s mediálne súbory."
-msgstr[2] "Úspešne stiahnuté %s mediálne súbory."
+msgstr[2] "Úspešne stiahnutých %s mediálnych súborov."
 
 #: GrampsWebSync/grampswebsync.py:1043
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during download."
+#, python-format
 msgid "Encountered %s error during download."
 msgid_plural "Encountered %s errors during download."
-msgstr[0] "Počas sťahovania sa vyskytlo %s chýb."
-msgstr[1] "Počas sťahovania sa vyskytlo %s chýb."
+msgstr[0] "Počas sťahovania sa vyskytla %s chyba."
+msgstr[1] "Počas sťahovania sa vyskytli %s chyby."
 msgstr[2] "Počas sťahovania sa vyskytlo %s chýb."
 
 #: GrampsWebSync/grampswebsync.py:1056
-#, fuzzy, python-format
-#| msgid "Successfully uploaded %s media files."
+#, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "Úspešne nahraté %s mediálne súbory."
-msgstr[1] "Úspešne nahraté %s mediálne súbory."
-msgstr[2] "Úspešne nahraté %s mediálne súbory."
+msgstr[0] "Úspešne nahraný %s mediálny súbor."
+msgstr[1] "Úspešne nahrané %s mediálne súbory."
+msgstr[2] "Úspešne nahraných %s mediálnych súborov."
 
 #: GrampsWebSync/grampswebsync.py:1065
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during upload."
+#, python-format
 msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
-msgstr[0] "Počas nahrávania sa vyskytlo %s chýb."
-msgstr[1] "Počas nahrávania sa vyskytlo %s chýb."
+msgstr[0] "Počas nahrávania sa vyskytla %s chyba."
+msgstr[1] "Počas nahrávania sa vyskytli %s chyby."
 msgstr[2] "Počas nahrávania sa vyskytlo %s chýb."
 
 #: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
@@ -21621,6 +21625,9 @@ msgid ""
 "\tRequires  BerkeleyDB or Python-bsddb3 Python adapter and the Berkeley "
 "database"
 msgstr ""
+")\n"
+"\tVyžaduje  BerkeleyDB alebo adaptér Python-bsddb3 pre Python a databázu "
+"Berkeley"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:837
 msgid " • SQLite Database library (sqlite3: "
