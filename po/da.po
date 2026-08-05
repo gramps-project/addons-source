@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-01 09:38-0700\n"
-"PO-Revision-Date: 2026-08-01 16:13+0000\n"
+"PO-Revision-Date: 2026-08-04 10:13+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 msgid "Birthdays"
 msgstr "Fødseldage"
@@ -1475,8 +1475,7 @@ msgstr ""
 "bibliotek."
 
 #: D3Charts/DescendantIndentedTree.py:678
-#, fuzzy, python-format
-#| msgid "See %(reference)s : %(spouse)s"
+#, python-format
 msgctxt "spouse"
 msgid "See %(reference)s : %(spouse)s"
 msgstr "Se %(reference)s : %(spouse)s"
@@ -1759,7 +1758,6 @@ msgid "The font size in pixels for biography body text."
 msgstr "Font størrelse i pixels for biografi body tekst."
 
 #: DEWebConnectPack/DEWebPack.gpr.py:11
-#, fuzzy
 msgid "DE Web Connect Pack"
 msgstr "DE Web Connect Pack"
 
@@ -1782,14 +1780,11 @@ msgid "Google Archives"
 msgstr "Google arkiv"
 
 #: DEWebConnectPack/DEWebPack.py:43
-#, fuzzy
-#| msgid "GoogleEarth"
 msgid "DE Google"
 msgstr "DE Google"
 
 #: DEWebConnectPack/DEWebPack.py:44 UKWebConnectPack/UKWebPack.py:39
 #: USWebConnectPack/USWebPack.py:42
-#, fuzzy
 msgid "Open Library"
 msgstr "Open Library"
 
@@ -1798,7 +1793,6 @@ msgid "Surname map (1890-1996)"
 msgstr "Efternavnskort (1890-1996)"
 
 #: DEWebConnectPack/DEWebPack.py:46
-#, fuzzy
 msgid "GenWiki"
 msgstr "GenWiki"
 
@@ -1858,7 +1852,7 @@ msgid " and ends at "
 msgstr " og slutter ved "
 
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "{0}"
 msgstr "{0}"
 
@@ -2206,7 +2200,7 @@ msgstr "Fejl: ugyldig dato i det første udtryk"
 
 #: DateCalculator/DateCalculator.py:169
 msgid "Error: invalid offset for second expression"
-msgstr ""
+msgstr "Fejl: ugyldig afstand for andet udtryk"
 
 #: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
 #: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
@@ -2215,7 +2209,7 @@ msgstr "Fejl: Mindst et udtryk skal være en dato"
 
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
-msgstr ""
+msgstr "Indtast et udtryk i ovenstående poster og klik på Beregn."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
@@ -2230,48 +2224,36 @@ msgid "Deep Connections"
 msgstr "Dybe Slægtskaber"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
-#, fuzzy
-#| msgid "Pause"
 msgid "⏸ Pause"
-msgstr "Pause"
+msgstr "⏸ Pause"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:108
 msgid "Pause the current search"
-msgstr ""
+msgstr "Sæt den nuværende søgning på pause"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:111
 msgid "▶ Continue"
-msgstr ""
+msgstr "▶ Fortsæt"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:114
-#, fuzzy
-#| msgid ""
-#| "Paused.\n"
-#| "Press Continue to search for additional relations.\n"
 msgid "Continue searching for more relations"
-msgstr ""
-"Pauset.\n"
-"Tryk Fortsæt for at søge efter flere slægtskaber.\n"
+msgstr "Tryk Fortsæt for at søge efter flere slægtskaber"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:118
-#, fuzzy
-#| msgid "Copy"
 msgid "📋 Copy"
-msgstr "Kopier"
+msgstr "📋 Kopiér"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:120
-#, fuzzy
-#| msgid "Collections Clipboard"
 msgid "Copy selected people to clipboard"
-msgstr "Samlings Udklipsholder"
+msgstr "Kopiér valgte personer til udklipsholderen"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:128
 msgid "🗑 Clear"
-msgstr ""
+msgstr "🗑 Nulstil"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
 msgid "Clear all results and reset"
-msgstr ""
+msgstr "Fjern alle resultater og nulstil"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
 #, fuzzy
