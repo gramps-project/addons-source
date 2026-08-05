@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-07-31 16:24+0000\n"
+"Last-Translator: medardo <medardo@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 msgid "Dynamic Web Report"
 msgstr "Resoconto web dinamico"
@@ -99,6 +99,21 @@ msgstr "(ordinato per nome)"
 msgid "(sort by quantity)"
 msgstr "(ordinato per quantità)"
 
+msgid ": activate to sort column ascending"
+msgstr ": attivare per ordinare la colonna in ordine crescente"
+
+msgid ": activate to sort column descending"
+msgstr ": attivare per ordinare la colonna in ordine decrescente"
+
+msgid ""
+"<p>This page provides the SVG raw code.<br>Copy the contents into a text "
+"editor and save as an SVG file.<br>Make sure that the text editor encoding "
+"is UTF-8.</p>"
+msgstr ""
+"<p>Questa pagina contiene il codice SVG grezzo.<br>Copiare il contenuto in "
+"un editor di testo, e salvarlo come file SVG.<br>Assicurarsi che la codifica "
+"dell'editor di testo sia UTF-8.</p>"
+
 msgid "Alternate Name"
 msgstr "Nome alternativo"
 
@@ -110,6 +125,9 @@ msgstr "Configura"
 
 msgid "Examples"
 msgstr "Esempi"
+
+msgid "F"
+msgstr "F"
 
 msgid "Families Index"
 msgstr "Indice delle famiglie"
@@ -157,6 +175,9 @@ msgstr "Nessun cognome corrispondente."
 
 msgid "Other participants"
 msgstr "Altri partecipanti"
+
+msgid "Person page"
+msgstr "Pagina della persona"
 
 msgid "Person to search for"
 msgstr "Persona da cercare"

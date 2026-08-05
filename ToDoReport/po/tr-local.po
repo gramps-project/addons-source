@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,10 +12,75 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "TR-Title"
+msgstr "TR-Başlık"
+
+#, python-format
+msgid "Report on Notes Tagged '%s'"
+msgstr "'%s' Etiketli Notlar Raporu"
+
+msgid "TR-Heading"
+msgstr "TR-Başlık"
+
+msgid "NoteTable"
+msgstr "Not Tablosu"
+
+msgid "TR-Table"
+msgstr "TR-Tablo"
+
+msgid "TR-TableCell"
+msgstr "TR-Tablo Hücresi"
+
+msgid "TR-Normal-Bold"
+msgstr "TR-Normal-Kalın"
+
+msgid "TR-Normal"
+msgstr "TR-Normal"
+
+msgid "TR-Note"
+msgstr "TR-Not"
+
+msgid "TR-BorderCell"
+msgstr "TR-Kenar Hücresi"
+
+msgid "date: "
+msgstr "tarih: "
+
+msgid "place: "
+msgstr "yer: "
+
+msgid "Note Type"
+msgstr "Not Türü"
+
+msgid "Group by reference type"
+msgstr "Referans türüne göre gruplandır"
+
+msgid "Group notes by Family, Person, Place, etc."
+msgstr "Notları Aile, Kişi, Yer vb. türlere göre grupla."
+
 msgid "The style used for the title of the page."
 msgstr "Sayfa başlığı için kullanılan stil."
+
+msgid "The basic style used for the table cell display."
+msgstr "Tablo hücresi görüntüleme için kullanılan temel stil."
+
+msgid "The basic style used for the table border cell display."
+msgstr "Tablo kenarlık hücresi görüntüleme için kullanılan temel stil."
+
+msgid "The basic style used for the table display."
+msgstr "Tablo görüntüleme için kullanılan temel stil."
+
+msgid "Todo Report"
+msgstr "Yapılacaklar Raporu"
+
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"Belirli bir etikete sahip tüm notların listesini, referans verdiği "
+"kayıtlarla (Kişi, Aile, Olay vb.) birlikte oluşturur."

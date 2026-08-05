@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-07-31 17:35+0200\n"
 "PO-Revision-Date: 2026-05-17 15:49+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
@@ -21,19 +21,6 @@ msgstr "Gramps Web sinkronizacija"
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Sinkronizira lokalnu bazu podataka s Gramps Web instancom."
 
-msgid "Your user does not have sufficient server permissions to use sync."
-msgstr ""
-"Tvoj korisnik nema dovoljne dozvole na serveru za korištenje sinkronizacije."
-
-msgid "Fetching remote data..."
-msgstr "Dohvaćanje ne-lokalnih zapisa …"
-
-msgid "Unexpected error while applying changes."
-msgstr "Neočekivana greška prilikom primjene promjena."
-
-msgid "Media files are in sync."
-msgstr "Medijske datoteke su sinkronizirane."
-
 msgid "Authentication failed. Please check your username and password."
 msgstr "Autentifikacija nije uspjela. Provjeri svoje korisničko ime i lozinku."
 
@@ -49,51 +36,42 @@ msgstr "Previše zahtjeva, pokušaj ponovo za par sekundi."
 msgid "GrampsWeb tree is disabled."
 msgstr "GrampsWeb stablo je deaktivirano."
 
-#, python-format
-msgid "Server error %s. Please check your connection."
-msgstr "Greška servera %s. Provjeri vezu."
-
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr "Povezivanje nije uspjelo. Provjeri URL i internetsku vezu."
 
 msgid "Invalid server response. Please check the URL."
 msgstr "Nevažeći odgovor servera. Provjeri URL."
 
-#, python-format
-msgid "Unexpected error: %s"
-msgstr "Neočekivana greška: %s"
-
-msgid "Error accessing media object."
-msgstr "Greška pri pristupu medijskom objektu."
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"Tvoj korisnik nema dovoljne dozvole na serveru za korištenje sinkronizacije."
 
 msgid "Failed importing downloaded XML file."
 msgstr "Uvoz preuzete XML datoteke nije uspio."
-
-msgid "Comparing local and remote data..."
-msgstr "Uspoređivanje lokalnih i ne-lokalnih podataka …"
-
-msgid "Server authorization error."
-msgstr "Greška autorizacije servera."
-
-msgid "Server authorization error: insufficient permissions."
-msgstr "Greška autorizacije servera: nedovoljne dozvole."
-
-msgid "Error: URL not found."
-msgstr "Greška: URL nije pronađen."
 
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr ""
 "Nije moguće sinkronizirati promjene sa serverom: objekti su promijenjeni."
 
+msgid "Unexpected error while applying changes."
+msgstr "Neočekivana greška prilikom primjene promjena."
+
 #, python-format
-msgid "Error %s while connecting to server."
-msgstr "Greška %s tijekom povezivanja na server."
+msgid "Server error %s. Please check your connection."
+msgstr "Greška servera %s. Provjeri vezu."
 
-msgid "URL error while connecting to server."
-msgstr "URL greška tijekom povezivanja na server."
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Neočekivana greška: %s"
 
-msgid "Unable to synchronize changes to server."
-msgstr "Nije moguće sinkronizirati promjene sa serverom."
+msgid "Fetching remote data..."
+msgstr "Dohvaćanje ne-lokalnih zapisa …"
+
+msgid "Comparing local and remote data..."
+msgstr "Uspoređivanje lokalnih i ne-lokalnih podataka …"
+
+msgid "Successfully applied changes to local database."
+msgstr "Promjene na lokalnoj bazi podataka su uspješno primijenjene."
 
 msgid "Continue without transport encryption?"
 msgstr "Nastaviti bez šifriranja prijenosa?"
@@ -141,6 +119,9 @@ msgstr ""
 msgid "Server URL: "
 msgstr "URL servera: "
 
+msgid "Error:"
+msgstr "Greška:"
+
 msgid "Bidirectional Synchronization"
 msgstr "Dvosmjerna sinkronizacija"
 
@@ -149,9 +130,6 @@ msgstr "Resetiraj ne-lokalne u lokalne podatke"
 
 msgid "Reset local to remote"
 msgstr "Resetiraj lokalne u ne-lokalne podatke"
-
-msgid "Merge"
-msgstr "Spoji"
 
 msgid "Local changes"
 msgstr "Lokalne promjene"
@@ -183,11 +161,11 @@ msgstr "Primjena promjena na ne-lokalnu bazu podataka …"
 msgid "No changes to apply to remote database."
 msgstr "Nema promjena za ne-lokalnu bazu podataka."
 
-msgid "Successfully applied changes to local database."
-msgstr "Promjene na lokalnoj bazi podataka su uspješno primijenjene."
-
 msgid "Missing locally"
 msgstr "Nedostaje lokalno"
 
 msgid "Missing remotely"
 msgstr "Nedostaje ne-lokalno"
+
+msgid "Media files are in sync."
+msgstr "Medijske datoteke su sinkronizirane."

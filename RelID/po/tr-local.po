@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,16 +12,137 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "Display relations and distances with the home person"
+msgstr "Ana kişiyle olan ilişkileri ve mesafeleri göster"
+
+msgid "Will display relational informations with the home person"
+msgstr "Ana kişiyle olan ilişkisel bilgileri görüntüler"
+
+msgid "Relation and distances with root"
+msgstr "Kök kişiyle olan ilişki ve mesafeler"
+
 msgid "Select filter to restrict people"
 msgstr "İnsanları listelemek için filtreyi seçin"
+
+msgid "Filter rule"
+msgstr "Filtre kuralı"
 
 msgid "Select the filter rule"
 msgstr "Filtre kuralını seçin"
 
+msgid "Deep generations"
+msgstr "Derin nesiller"
+
+msgid "How deep should we go?"
+msgstr "Ne kadar derine gitmeliyiz?"
+
+msgid "Rel_id"
+msgstr "İlişki_Kimliği"
+
+msgid "Relation"
+msgstr "İlişki"
+
+msgid "up"
+msgstr "yukarı"
+
+msgid "down"
+msgstr "aşağı"
+
+msgid "Common MRA"
+msgstr "Ortak MRA"
+
+msgid "Rank"
+msgstr "Rütbe"
+
+msgid "Period"
+msgstr "Dönem"
+
+msgid "Shared Subtree"
+msgstr "Paylaşılan Alt Ağaç"
+
+msgid "Centrality"
+msgstr "Merkezilik"
+
+msgid "Unique Ancestors"
+msgstr "Benzersiz Atalar"
+
+msgid "Surname Diversity"
+msgstr "Soyadı Çeşitliliği"
+
 msgid "Save"
 msgstr "Kaydet"
+
+msgid "Quit"
+msgstr "Çıkış"
+
+msgid "No default person set."
+msgstr "Varsayılan kişi ayarlanmadı."
+
+msgid "Please wait, filtering..."
+msgstr "Lütfen bekleyin, filtreleniyor..."
+
+msgid "Network Metrics"
+msgstr "Ağ Ölçümleri"
+
+msgid "Enabled"
+msgstr "Etkin"
+
+msgid "Disabled"
+msgstr "Engelli"
+
+msgid "Enable or disable family network metrics"
+msgstr "Aile ağı ölçümlerini etkinleştir veya devre dışı bırak"
+
+msgid "Generating relation map..."
+msgstr "İlişki haritası oluşturuluyor..."
+
+msgid ""
+"\n"
+"Filtering\tCurrent match\t\tTime of pass\n"
+msgstr ""
+"\n"
+"Filtreleme\tGeçerli eşleşme\t\tGeçiş süresi\n"
+
+#, python-format
+msgid "%d/%d \t\t %d/%d \t\t%f"
+msgstr "%d/%d \t\t %d/%d \t\t%f"
+
+msgid "Folder Chooser"
+msgstr "Klasör Seçici"
+
+msgid "_Select"
+msgstr "_Seç"
+
+msgid "Please, select a folder"
+msgstr "Lütfen, bir klasör seçin"
+
+msgid "Foldername need"
+msgstr "Klasör adı gerekli"
+
+msgid "Foldername will be used for saving the content."
+msgstr "Klasör adı içeriği kaydetmek için kullanılacaktır."
+
+msgid "Did you set a foldername?"
+msgstr "Bir klasör adı belirledin mi?"
+
+msgid "Cannot set a valid location."
+msgstr "Geçerli bir konum ayarlanamıyor."
+
+msgid "Failed to save data."
+msgstr "Veriler kaydedilemedi."
+
+msgid "Relationships Map and Tab"
+msgstr "İlişkiler Haritası ve Sekmesi"
+
+msgid "Enable family network metrics"
+msgstr "Aile ağı ölçümlerini etkinleştirin"
+
+msgid "Whether to calculate and display family network metrics."
+msgstr ""
+"Aile ağı ölçümlerinin hesaplanıp hesaplanmayacağı ve görüntülenip "
+"görüntülenmeyeceği."

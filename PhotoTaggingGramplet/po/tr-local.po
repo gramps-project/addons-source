@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.8.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
+msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
+
+msgid "Replace existing references to the person being assigned without asking"
+msgstr "Atama yapılan kişiye ait mevcut referansları sormadan değiştir"
+
+msgid "Face detection"
+msgstr "Yüz algılama"
+
+msgid "Minimum face width (px)"
+msgstr "Minimum yüz genişliği (px)"
+
+msgid "Minimum face height (px)"
+msgstr "Minimum yüz yüksekliği (px)"
+
+msgid "Detect faces inside existing boxes"
+msgstr "Mevcut kutuların içindeki yüzleri algıla"
+
+msgid "Sensitivity (1 min .. 20 max)"
+msgstr "Hassasiyet (min. 1 .. maks. 20)"
+
+msgid "Add Person"
+msgstr "Kişi Ekle"
+
+msgid "Clear Reference"
+msgstr "Referansı Temizle"
+
+msgid "Remove Selection"
+msgstr "Seçimi Kaldır"
+
+msgid "Edit referenced Person"
+msgstr "Referans verilen Kişiyi düzenle"
+
+msgid "Zoom In"
+msgstr "Yakınlaştır"
+
+msgid "Zoom Out"
+msgstr "Uzaklaştır"
+
+msgid "Detect faces"
+msgstr "Yüzleri algıla"
+
+msgid "Detect faces (OpenCV module required)"
+msgstr "Yüzleri algıla (OpenCV modülü gereklidir)"
+
+msgid "XMP Region Name"
+msgstr "XMP Bölge Adı"
+
+msgid "Set as active person"
+msgstr "Etkin kişi olarak ayarla"
+
+msgid "_Select"
+msgstr "_Seç"
+
+#, python-brace-format
+msgid "Replace to {0}"
+msgstr "{0} ile değiştir"
+
+msgid "Detecting faces..."
+msgstr "Yüzler algılanıyor..."
+
+msgid "Detection finished"
+msgstr "Algılama tamamlandı"
+
+#, python-brace-format
+msgid "Another region of this image is associated with {name}. Remove it?"
+msgstr ""
+"Bu görüntünün başka bir bölgesi {name} ile ilişkilendirilmiş. Kaldırılsın mı?"
+
+#, python-brace-format
+msgid ""
+"{count} other regions of this image are associated with {name}. Remove them?"
+msgstr ""
+"Bu görüntünün {count} diğer bölgesi {name} ile ilişkilendirilmiş. "
+"Kaldırılsın mı?"
+
+#, python-format
+msgid "Male person|Dead at %s"
+msgstr "Erkek kişi|%s tarihinde öldü"
+
+#, python-format
+msgid "Female person|Dead at %s"
+msgstr "Kadın kişi|%s tarihinde öldü"
+
+#, python-format
+msgid "Unknown gender person|Dead at %s"
+msgstr "Cinsiyeti bilinmeyen kişi|%s tarihinde öldü"
+
+msgid "Photo Tagging"
+msgstr "Fotoğraf Etiketleme"
+
+msgid "Gramplet for tagging people in photos"
+msgstr "Fotoğraflardaki kişileri etiketlemek için Gramplet"

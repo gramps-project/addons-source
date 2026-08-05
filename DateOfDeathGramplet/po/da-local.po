@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-04 00:00-0000\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -12,25 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
-
-msgid "Date of Death"
-msgstr "Dødsdato"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 msgid "a gramplet that displays death dates in sorted order"
-msgstr "en gramplet der viser dødsdatoer sorteret"
-
-msgid "No Family Tree loaded."
-msgstr "Ingen stamtræ indlæst."
+msgstr "en gramplet der viser dødsdatoer i sorteret rækkefølge"
 
 msgid "Sort dates of death by"
-msgstr "Sorter dødsdatoerne efter"
+msgstr "Sortér dødsdatoer efter"
 
 msgid "Month and day"
 msgstr "Måned og dag"
 
 msgid "Proximity to current date"
-msgstr "Nærhed til nuværende dato"
-
-msgid "Processing..."
-msgstr "Behandler…"
+msgstr "Afstand til nuværende dato"

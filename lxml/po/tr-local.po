@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,13 +12,183 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "lxml"
+msgstr "lxml"
+
+msgid "Gramplet for testing lxml and XSLT"
+msgstr "lxml ve XSLT testleri için Gramplet"
+
+msgid "etree"
+msgstr "etree"
+
+msgid "Gramplet for testing etree with Gramps XML"
+msgstr "Gramps XML ile etree'yi test etmek için Gramplet"
+
+msgid "Invalid timestamp"
+msgstr "Geçersiz zaman damgası"
+
+msgid ""
+"Select a Gramps XML file and\n"
+" click on the Run button."
+msgstr ""
+"Bir Gramps XML dosyası seçin ve\n"
+" çalıştır düğmesine tıklayın."
+
+msgid "No file loaded..."
+msgstr "Hiçbir dosya yüklenmedi..."
+
 msgid "Number of additions and modifications back"
 msgstr "Geriye dönük ekleme ve değişiklik sayısı"
+
+msgid "Print more informations on console"
+msgstr "Konsolda daha fazla bilgi yazdırın"
+
+msgid "Is it a compressed .gramps?"
+msgstr "Sıkıştırılmış bir .gramps dosyası mı?"
+
+#, python-format
+msgid "Cannot uncompress \"%s\""
+msgstr "\"%s\" sıkıştırması açılamıyor"
+
+msgid "Is it a .gramps?"
+msgstr "Bir .gramps dosyası mı?"
+
+#, python-format
+msgid "Cannot copy \"%s\""
+msgstr "\"%s\" kopyalanamıyor"
+
+msgid "Sorry, no support for your OS yet!"
+msgstr "Üzgünüz, işletim sisteminiz henüz desteklenmiyor!"
+
+msgid "Parsing issue"
+msgstr "Ayrıştırma sorunu"
+
+#, python-format
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "\"%(file)s\" içeriği ayrıştırılamıyor"
+
+#, python-format
+msgid "XML: Last %s additions and modifications since %s, were on :\n"
+msgstr "XML: %s tarihinden bu yana son %s ekleme ve değişiklik şunlardır :\n"
+
+#, python-format
+msgid ""
+"\n"
+"XML: Number of records and relations : \t%s\n"
+"\n"
+msgstr ""
+"\n"
+"XML: Kayıt ve ilişki sayısı : \t%s\n"
+"\n"
+
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Etiket sayısı : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%06s\n"
+msgstr ""
+"Etiket sayısı : \n"
+"\t\t\t%06s\n"
+
+#, python-format
+msgid ""
+"Number of  events : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Etkinlik sayısı \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%06s\t|\t(%06s) and (%06s)* surnames\n"
+msgstr ""
+"Kişi sayısı : \n"
+"\t\t\t%06s\t|\t(%06s) ve (%06s)* soyadları\n"
+
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Kişi sayısı : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of families : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Aile sayısı : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of sources : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Kaynak sayısı : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of citations : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Alıntı sayısı : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of places : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Yer sayısı : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of media objects : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Medya nesnesi sayısı : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of repositories : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Depo sayısı : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of notes : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"Not sayısı : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"\n"
+"XML: Number of additional records and relations: \t%s\n"
+msgstr ""
+"\n"
+"XML: Ek kayıt ve ilişkilerin sayısı: \t%s\n"
 
 #, python-format
 msgid ""
@@ -28,5 +198,172 @@ msgstr ""
 "* Aile Ağacı tabanı yüklendi:\n"
 " \"%s\"\n"
 
+msgid "Where is gzip?"
+msgstr "gzip nerede?"
+
+msgid "\"gzip\" is missing"
+msgstr "\"gzip\" eksik"
+
+msgid "Missing python3 lxml"
+msgstr "python3 lxml eksik"
+
+msgid "Please, try to install \"python3 lxml\" package."
+msgstr "Lütfen \"python3 lxml\" paketini yüklemeyi deneyin."
+
+msgid "xmllint options"
+msgstr "xmllint seçenekleri"
+
 msgid "debug places"
 msgstr "hata ayıklama yerleri"
+
+msgid "debug xml"
+msgstr "xml hata ayıklama"
+
+msgid "XSD validation (lxml)"
+msgstr "XSD doğrulaması (lxml)"
+
+#, python-format
+msgid "xmllint: skip DTD validation for \"%(file)s\""
+msgstr "xmllint: \"%(file)s\" için DTD doğrulamasını atla"
+
+#, python-format
+msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
+msgstr "xmllint: \"%(file)s\" için RelaxNG doğrulamasını atla"
+
+msgid "Custom \"test.xml\" file"
+msgstr "Özel \"test.xml\" dosyası"
+
+msgid "Please try to fix \"test.xml\""
+msgstr "Lütfen \"test.xml\" dosyasını düzeltmeyi deneyin"
+
+msgid "RelaxNG validation"
+msgstr "RelaxNG doğrulaması"
+
+#, python-format
+msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
+msgstr "\"%(file)s\" RelaxNG şeması üzerinden doğrulanamıyor"
+
+msgid "File issue"
+msgstr "Dosya sorunu"
+
+#, python-format
+msgid "Cannot parse \"%(file)s\" via etree"
+msgstr "\"%(file)s\" etree üzerinden ayrıştırılamıyor"
+
+msgid "Parsing file..."
+msgstr "Dosya ayrıştırılıyor..."
+
+#, python-format
+msgid " - (%(lang)s)"
+msgstr " - (%(lang)s)"
+
+#, python-format
+msgid " - (? or %(lang)s)"
+msgstr " - (? veya %(lang)s)"
+
+msgid "Missing header"
+msgstr "Üst bilgi eksik"
+
+msgid ""
+"Not a valid .gramps.\n"
+"Cannot run the gramplet...\n"
+"Please, try to use a .gramps\n"
+"generated by Gramps 6.x."
+msgstr ""
+"Geçerli bir .gramps değil.\n"
+"Gramplet çalıştırılamıyor...\n"
+"Lütfen, Gramps 6.x tarafından oluşturulan\n"
+"bir .gramps kullanmayı deneyin."
+
+msgid "0"
+msgstr "0"
+
+msgid "File parsed with"
+msgstr "Dosya şu şekilde ayrıştırıldı"
+
+msgid "File was generated on "
+msgstr "Dosya şu tarihte oluşturuldu "
+
+msgid " by Gramps "
+msgstr " Gramps tarafından "
+
+msgid "Period: "
+msgstr "Dönem: "
+
+#, python-brace-format
+msgid "\t{number} surname"
+msgid_plural "\t{number} surnames; no frequency yet"
+msgstr[0] "\t{number} soyadı; henüz sıklık yok"
+
+#, python-brace-format
+msgid "\t{number} surname; no frequency yet"
+msgstr "\t{number} soyadı; henüz sıklık yok"
+
+#, python-brace-format
+msgid "\t{number} place"
+msgid_plural "\t{number} places"
+msgstr[0] "\t{number} yer"
+
+#, python-brace-format
+msgid "\t{number} note"
+msgid_plural "\t{number} notes"
+msgstr[0] "\t{number} not"
+
+#, python-brace-format
+msgid "\t{number} source"
+msgid_plural "\t{number} sources"
+msgstr[0] "\t{number} kaynak"
+
+msgid "Gallery.html"
+msgstr "Gallery.html"
+
+#, python-format
+msgid "1. Has generated a media index on \"%(file)s\".\n"
+msgstr "1. \"%(file)s\" üzerinde bir medya dizini oluşturuldu.\n"
+
+msgid "XML SyntaxError"
+msgstr "XML Sözdizimi Hatası"
+
+msgid "Matches XSD schema."
+msgstr "XSD şemasıyla eşleşiyor."
+
+msgid "xmllint: skip DTD validation"
+msgstr "xmllint: DTD doğrulamasını atla"
+
+msgid "I am looking at ..."
+msgstr "Şuna bakıyorum..."
+
+msgid "Content generated by Gramps"
+msgstr "Gramps tarafından oluşturulan içerik"
+
+msgid "List of sources"
+msgstr "Kaynakların listesi"
+
+msgid "Australia"
+msgstr "Avustralya"
+
+msgid "Brazil"
+msgstr "Brezilya"
+
+msgid "India"
+msgstr "Hindistan"
+
+msgid "Norway"
+msgstr "Norveç"
+
+msgid "Portugal"
+msgstr "Portekiz"
+
+#, python-format
+msgid "2. Has generated \"%s\".\n"
+msgstr "2. \"%s\" oluşturuldu.\n"
+
+#, python-format
+msgid ""
+"Try to open\n"
+" \"%s\"\n"
+" into your preferred web navigator ..."
+msgstr ""
+"Tercih ettiğiniz\n"
+" \"%s\"\n"
+" web gezgininde açmayı deneyin..."

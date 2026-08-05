@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"POT-Creation-Date: 2026-07-31 17:35+0200\n"
+"PO-Revision-Date: 2026-07-31 16:24+0000\n"
+"Last-Translator: medardo <medardo@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,43 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 msgid "Gramps Web Sync"
 msgstr "Sincronizzazione Web di Gramps"
 
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Sincronizza un database locale con un'istanza web di Gramps."
-
-msgid "Your user does not have sufficient server permissions to use sync."
-msgstr ""
-"L'utente non dispone delle autorizzazioni necessarie sul server per "
-"utilizzare la sincronizzazione."
-
-msgid "Fetching remote data..."
-msgstr "Recupero dei dati remoti..."
-
-msgid "Unexpected error while applying changes."
-msgstr "Errore inatteso nell'applicazione delle modifiche."
-
-msgid "Media files are in sync."
-msgstr "I file multimediali sono sincronizzati."
-
-#, python-format
-msgid "Successfully downloaded %s media files."
-msgstr "Scaricati con successo %s file multimediali."
-
-#, python-format
-msgid "Encountered %s errors during download."
-msgstr "Si sono verificati %s errori durante lo scaricamento."
-
-#, python-format
-msgid "Successfully uploaded %s media files."
-msgstr "Caricati con successo %s file multimediali."
-
-#, python-format
-msgid "Encountered %s errors during upload."
-msgstr "Si sono verificati %s errori durante il caricamento."
 
 msgid "Authentication failed. Please check your username and password."
 msgstr "Autenticazione non riuscita. Verifica nome utente e password."
@@ -65,52 +35,44 @@ msgstr "Troppe richieste, prova di nuovo tra qualche secondo."
 msgid "GrampsWeb tree is disabled."
 msgstr "L'albero GrampsWeb è disabilitato."
 
-#, python-format
-msgid "Server error %s. Please check your connection."
-msgstr "Errore del server %s. Controlla la connessione."
-
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr "Connessione non riuscita. Controlla l'URL e la connessione Internet."
 
 msgid "Invalid server response. Please check the URL."
 msgstr "Risposta del server non valida. Controlla l'URL."
 
-#, python-format
-msgid "Unexpected error: %s"
-msgstr "Errore inaspettato: %s"
-
-msgid "Error accessing media object."
-msgstr "Errore nell'accesso a oggetti multimediali."
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"L'utente non dispone delle autorizzazioni necessarie sul server per "
+"utilizzare la sincronizzazione."
 
 msgid "Failed importing downloaded XML file."
 msgstr "Impossibile importare il file XML scaricato."
-
-msgid "Comparing local and remote data..."
-msgstr "Confronto tra dati locali e remoti..."
-
-msgid "Server authorization error."
-msgstr "Errore di autorizzazione del server."
-
-msgid "Server authorization error: insufficient permissions."
-msgstr "Errore di autorizzazione del server: permessi insufficienti."
-
-msgid "Error: URL not found."
-msgstr "Errore: URL non trovato."
 
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr ""
 "Impossibile sincronizzare le modifiche al server: gli oggetti sono stati "
 "modificati."
 
+msgid "Unexpected error while applying changes."
+msgstr "Errore inatteso nell'applicazione delle modifiche."
+
 #, python-format
-msgid "Error %s while connecting to server."
-msgstr "Errore %s durante la connessione al server."
+msgid "Server error %s. Please check your connection."
+msgstr "Errore del server %s. Controlla la connessione."
 
-msgid "URL error while connecting to server."
-msgstr "Errore URL durante la connessione al server."
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Errore inaspettato: %s"
 
-msgid "Unable to synchronize changes to server."
-msgstr "Impossibile sincronizzare le modifiche al server."
+msgid "Fetching remote data..."
+msgstr "Recupero dei dati remoti..."
+
+msgid "Comparing local and remote data..."
+msgstr "Confronto tra dati locali e remoti..."
+
+msgid "Successfully applied changes to local database."
+msgstr "Le modifiche al database locale sono state applicate con successo."
 
 msgid "Continue without transport encryption?"
 msgstr "Vuoi continuare senza crittografia del traffico?"
@@ -131,6 +93,9 @@ msgstr "Usa HTTPS"
 msgid "Server URL: "
 msgstr "URL del server: "
 
+msgid "Error:"
+msgstr "Errore:"
+
 msgid "Bidirectional Synchronization"
 msgstr "Sincronizzazione bidirezionale"
 
@@ -139,9 +104,6 @@ msgstr "Reimposta da remoto a locale"
 
 msgid "Reset local to remote"
 msgstr "Reimposta da locale a remoto"
-
-msgid "Merge"
-msgstr "Fondi"
 
 msgid "Local changes"
 msgstr "Modifiche locali"
@@ -170,19 +132,11 @@ msgstr "Applicazione delle modifiche al database remoto..."
 msgid "No changes to apply to remote database."
 msgstr "Nessuna modifica da applicare al database remoto."
 
-msgid "Successfully applied changes to local database."
-msgstr "Le modifiche al database locale sono state applicate con successo."
-
 msgid "Missing locally"
 msgstr "Mancante in locale"
 
 msgid "Missing remotely"
 msgstr "Mancante in remoto"
 
-#, python-format
-msgid "Downloading %s media file(s)"
-msgstr "Scaricamento di %s file multimediali"
-
-#, python-format
-msgid "Uploading %s media file(s)"
-msgstr "Caricamento di %s file multimediali"
+msgid "Media files are in sync."
+msgstr "I file multimediali sono sincronizzati."

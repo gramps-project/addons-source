@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-04-20 04:09+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-26 17:40+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,11 +12,53 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Gram.py Script"
+msgstr "Gram.py-scripti"
+
+msgid "Run a special Gramps Python script"
+msgstr "Suorita erityinen Gramps Python -skripti"
+
+msgid "Load query from a .script file"
+msgstr "Komento .script-tiedostosta"
+
+msgid "Save query to a .script file"
+msgstr "Tallenna kysely .script-tiedostoon"
 
 msgid "Save"
 msgstr "Tallenna"
 
+msgid "Download results as a CSV file"
+msgstr "Lataa tulokset CSV-tiedostona"
+
+msgid "Open..."
+msgstr "Avaa..."
+
+msgid "Save as..."
+msgstr "Tallenna nimellä..."
+
+msgid "Save as CSV"
+msgstr "Tallenna CVS-muodossa"
+
+msgid "Copy to clipboard"
+msgstr "Kopioi leikepöydälle"
+
 msgid "Table"
 msgstr "Taulukko"
+
+msgid "Chart"
+msgstr "Kaavio"
+
+msgid "Execute <Alt+Enter>"
+msgstr "Suorita <Alt+Enter>"
+
+msgid "Execute the script"
+msgstr "Suorita scripti"
+
+msgid "Ready..."
+msgstr "Valmis...."
+
+msgid "Gram.py Script Edited Data"
+msgstr "Gram.py-skriptin muokkaamat tiedot"

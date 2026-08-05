@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-04 21:37+0000\n"
-"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"PO-Revision-Date: 2026-07-24 05:14+0000\n"
+"Last-Translator: Juan Saavedra <jcsaaver@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #, python-format
 msgid "Form: %s"
@@ -27,8 +27,16 @@ msgstr "Editar formulario"
 msgid "Reference:"
 msgstr "Referencia:"
 
+msgid "[Source recreated after deletion mid-form-edit]"
+msgstr ""
+"[Fuente recreada tras su eliminación durante la edición del formulario]"
+
 msgid "Headings"
 msgstr "Títulos"
+
+#, python-format
+msgid "Census Check for %s"
+msgstr "Revisión de Censo para %s"
 
 msgid "Form Gramplet"
 msgstr "Forma Gramplet"
@@ -45,8 +53,28 @@ msgstr "Ordenación"
 msgid "Form"
 msgstr "Formulario"
 
+msgid "XML syntax error in Form definition file"
+msgstr "Error de sintaxis XML en el archivo de definición de la Forma"
+
+msgid "Failed to read Form definition file"
+msgstr "Falló al leer el archivo de definición de la Forma"
+
 msgid "Select Form"
 msgstr "Seleccionar formulario"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"descendents"
+msgstr ""
+"Revisar si hay eventos de Censo faltantes para una persona y algunos de sus "
+"descendientes"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"ancestors"
+msgstr ""
+"Revisar si hay eventos de Censo faltantes para una persona y algunos de sus "
+"ancestros"
 
 msgid "Persons"
 msgstr "Personas"

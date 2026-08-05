@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-04 00:00-0000\n"
-"PO-Revision-Date: 2025-05-19 21:02+0000\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,16 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 msgid "Birthdays"
 msgstr "Geburtstage"
 
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "ein Gramplet, das die Geburtstage der lebenden Personen anzeigt"
-
-msgid "No Family Tree loaded."
-msgstr "Kein Stammbaum geladen."
 
 msgid "Sort birthdays by"
 msgstr "Geburtstage sortieren nach"
@@ -37,6 +34,3 @@ msgstr "Geburtstage mit Etikett ignorieren"
 
 msgid "Only show birthdays with tag"
 msgstr "Nur Geburtstage mit Etikett anzeigen"
-
-msgid "Processing..."
-msgstr "Verarbeitung..."

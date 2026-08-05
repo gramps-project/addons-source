@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-24 01:13-0700\n"
-"PO-Revision-Date: 2026-06-04 05:01+0000\n"
+"PO-Revision-Date: 2026-08-03 04:01+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,172 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.8.dev0\n"
+
+msgid "Audit Given and Patronymic Names"
+msgstr "Voornamen en Patroniemen controleren"
+
+msgid ""
+"Tools to rename given name, audit and infer patronymic (East Slavic) names."
+msgstr ""
+"Hulpmiddelen om de voornaam te hernoemen, te controleren en patroniemnamen "
+"(Oost-Slavisch) af te leiden."
+
+msgid "Patronymic Suggestion"
+msgstr "Patroniemsuggestie"
+
+msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
+msgstr ""
+"Stelt realtime (Oost-Slavisch) patroniemnamen voor terwijl u navigeert."
+
+msgid "Auditing Settings"
+msgstr "Controle-instellingen"
+
+msgid "All Records"
+msgstr "Alle registraties"
+
+msgid "Males Only"
+msgstr "Alleen mannen"
+
+msgid "Females Only"
+msgstr "Alleen vrouwen"
+
+msgid "Configure Rules..."
+msgstr "Regels configureren…"
+
+msgid "Match Pre-Revolutionary Orthography"
+msgstr "Overeenkomst met Pre-Revolutionaire Orthografie"
+
+msgid "Audit Database"
+msgstr "Database controleren"
+
+msgid "Select All Safe Corrections"
+msgstr "Alle veilige correcties selecteren"
+
+msgid "Apply Selected Corrections"
+msgstr "Alle geselecteerde correcties toepassen"
+
+msgid "Configure Rules"
+msgstr "Regels configureren"
+
+msgid "Individual"
+msgstr "Individu"
+
+msgid "Current"
+msgstr "Huidige"
+
+msgid "Correction"
+msgstr "Correctie"
+
+msgid "Conf"
+msgstr "Conf"
+
+msgid "Ref Year"
+msgstr "RefJaar"
+
+msgid "Explanation"
+msgstr "Verklaring"
+
+msgid "Audit Complete!"
+msgstr "Controle voltooid!"
+
+msgid "No Results"
+msgstr "Geen resultaten"
+
+msgid "No issues found."
+msgstr "Geen problemen gevonden."
+
+msgid "Use"
+msgstr "Gebruiken"
+
+msgid "Search and Replace Options"
+msgstr "Zoek en vervang opties"
+
+msgid "Source Name:"
+msgstr "Bronnaam:"
+
+msgid "e.g. Иоанн"
+msgstr "bijv. Иоанн"
+
+msgid "Target Name:"
+msgstr "Doelnaam:"
+
+msgid "e.g. Иван"
+msgstr "bijv. Иван"
+
+msgid "Match Mode:"
+msgstr "Overeenkomstmodus:"
+
+msgid "Exact Match"
+msgstr "Exacte overeenkomst"
+
+msgid "Substring"
+msgstr "Deelreeks"
+
+msgid "Regular Expression"
+msgstr "Reguliere expressies"
+
+msgid "Scan for Names"
+msgstr "Zoeken naar namen"
+
+msgid "Preserve original name as alternative"
+msgstr "Oorspronkelijke naam als alternatief behouden"
 
 msgid "Select All"
 msgstr "Alles selecteren"
+
+msgid "Proposed"
+msgstr "Voorgesteld"
+
+msgid "Infer East Slavic Patronymics"
+msgstr "Oost-Slavische patroniemen herleiden"
+
+msgid "Rename Given Names"
+msgstr "Voornamen vervangen"
+
+msgid "Audit Patronymics"
+msgstr "Patroniemen controleren"
+
+#, python-brace-format
+msgid ""
+"Missing Patronymic Detected.\n"
+"Suggested: {0}\n"
+"Based on father: {1}"
+msgstr ""
+"Ontbrekend patroniem gedetecteerd.\n"
+"Voorgesteld: {0}\n"
+"Gebaseerd op vader: {1}"
+
+msgid "Navigate to an individual to check patronymic status."
+msgstr "Navigeer naar een individu om de patroniemstatus te controleren."
+
+msgid "No active person selected."
+msgstr "Geen actieve persoon geselecteerd.."
+
+msgid ""
+"Patronymic inference can't be inferred for non-binary or unknown genders."
+msgstr ""
+"Patronieminferentie kan niet worden afgeleid voor non-binaire of onbekende "
+"geslachten."
+
+msgid "Individual already has a recorded patronymic."
+msgstr "Individu heeft al een opgenomen patroniem."
+
+msgid "No attached father found in database family records."
+msgstr "Geen bijgevoegde vader gevonden in databaseregistraties."
+
+msgid "Father lacks a recorded first name."
+msgstr "Vader mist een geregistreerde voornaam."
+
+msgid "Could not generate valid morphology patterns."
+msgstr "Kon geen geldige morfologiepatronen genereren."
+
+msgid "Patronymic applied successfully!"
+msgstr "Patroniem met succes toegepast!"
+
+msgid "Apply Suggestion"
+msgstr "Suggestie toepassen"
+
+#, python-format
+msgid "%(prog)s: error: %(message)s\n"
+msgstr "%(prog)s: fout: %(message)s\n"

@@ -1,0 +1,61 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.8.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+msgid "Inlaw Parents"
+msgstr "Evlilik Yoluyla Ebeveynler"
+
+msgid "Grandparents"
+msgstr "Büyükanneler ve Büyükbabalar"
+
+msgid "Inlaw Grandparents"
+msgstr "Evlilik Yoluyla Büyükanneler ve Büyükbabalar"
+
+msgid "Great grandparents"
+msgstr "Büyük Büyükanneler ve Büyükbabalar"
+
+msgid "Inlaw Great grandparents"
+msgstr "Evlilik Yoluyla Büyük Büyükanneler ve Büyükbabalar"
+
+msgid "Great, "
+msgstr "Büyük, "
+
+msgid "great, "
+msgstr "büyük, "
+
+msgid "great grandparents"
+msgstr "büyükanneler ve büyükbabalar"
+
+msgid "Inlaw Great, "
+msgstr "Evlilik Yoluyla Büyük, "
+
+msgid "Partner's spouse"
+msgstr "Partnerin eşi"
+
+#, python-format
+msgid "Timeline for %s"
+msgstr "%s için zaman çizelgesi"
+
+msgid "People involved"
+msgstr "İlgili kişiler"
+
+msgid "Today"
+msgstr "Bugün"
+
+msgid "Display a person's events on a timeline"
+msgstr "Bir kişinin etkinliklerini zaman çizelgesinde görüntüle"

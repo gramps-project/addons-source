@@ -1,0 +1,120 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.8.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+#, python-brace-format
+msgid "Object {obj_type}:{handle} was modified by another user"
+msgstr ""
+"{obj_type}:{handle} nesnesi başka bir kullanıcı tarafından değiştirildi"
+
+msgid "pg_trgm extension required for duplicate detection"
+msgstr "Yinelenen kopyaların tespiti için pg_trgm uzantısı gereklidir"
+
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+"Gelişmiş PostgreSQL desteği için psycopg3 gereklidir. Şununla kurun: pip "
+"install 'psycopg[binary]'"
+
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+"psycopg3 sürümü %(installed)s çok eski. %(required)s veya daha yeni bir "
+"sürüm gereklidir."
+
+msgid "Database Backend"
+msgstr "Veritabanı Arka Ucu"
+
+msgid "Database module"
+msgstr "Veritabanı modülü"
+
+msgid "JSONB support"
+msgstr "JSONB desteği"
+
+msgid "Version warning"
+msgstr "Sürüm uyarısı"
+
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr "PostgreSQL %(version)s, önerilen %(recommended)s sürümünün altındadır"
+
+msgid "Extensions"
+msgstr "Uzantılar"
+
+msgid "Database size"
+msgstr "Veritabanı boyutu"
+
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr "%(persons)d kişi, %(families)d aile, %(events)d etkinlik"
+
+msgid "Migration manager not initialized"
+msgstr "Geçiş yöneticisi başlatılmadı"
+
+msgid "Enhanced queries require JSONB support"
+msgstr "Gelişmiş sorgular JSONB desteği gerektirir"
+
+msgid "Full-text search requires JSONB support or search capabilities"
+msgstr "Tam metin araması için JSONB desteği veya arama yetenekleri gereklidir"
+
+msgid "Starting migration..."
+msgstr "Geçiş başlatılıyor..."
+
+#, python-format
+msgid "Migrating %s objects..."
+msgstr "%s nesne taşınıyor..."
+
+#, python-format, python-brace-format
+msgid "Migrated %s {obj_type} objects"
+msgstr "%s adet {obj_type} nesnesi taşındı"
+
+msgid "Migration completed!"
+msgstr "Geçiş tamamlandı!"
+
+msgid "Starting upgrade..."
+msgstr "Yükseltme başlatılıyor..."
+
+#, python-format
+msgid "Upgrading %s objects..."
+msgstr "%s nesne yükseltiliyor..."
+
+msgid "Creating indexes..."
+msgstr "Dizinler oluşturuluyor..."
+
+msgid "Upgrade completed!"
+msgstr "Yükseltme tamamlandı!"
+
+msgid "PostgreSQL Enhanced"
+msgstr "Gelişmiş PostgreSQL"
+
+msgid "PostgreSQL _Enhanced Database"
+msgstr "Gelişmiş PostgreSQL Veritabanı"
+
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
+msgstr ""
+"JSONB depolama, grafik veritabanı desteği (Apache AGE), vektör benzerliği "
+"(pgvector) ve yapay zeka/makine öğrenimi yeteneklerine sahip gelişmiş "
+"PostgreSQL arka ucu. Gelişmiş kullanıcılar için. PostgreSQL 15+ ve "
+"eklentileri gerektirir. Gramps Web ile uyumludur."

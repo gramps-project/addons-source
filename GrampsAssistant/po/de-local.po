@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-03 09:03-0700\n"
-"PO-Revision-Date: 2026-06-20 17:01+0000\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,138 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
+
+msgid ""
+"You are a helpful genealogy assistant with access to the user's Gramps "
+"database. Answer questions about people, families, events, and "
+"relationships. When you need information from the database, call the "
+"provided tools — never write code, simulate results, or make up data. If no "
+"tool exists for the requested information, say so plainly."
+msgstr ""
+"Du bist ein hilfsbereiter Genealogie-Assistent mit Zugriff auf die Gramps-"
+"Datenbank des Benutzers. Beantworte Fragen zu Personen, Familien, "
+"Ereignissen und Verwandtschaftsverhältnissen. Wenn du Informationen aus der "
+"Datenbank benötigst, nutze die bereitgestellten Werkzeuge – schreibe niemals "
+"Code, simuliere keine Ergebnisse und erfinde keine Daten. Falls es für die "
+"angeforderten Informationen kein Werkzeug gibt, gib dies klar und deutlich "
+"an."
+
+msgid "Gramps Assistant settings"
+msgstr "Gramps Assistent-Einstellungen"
+
+msgid "Clear conversation and context"
+msgstr "Kommunikation und Kontext leeren"
 
 msgid "Send"
 msgstr "Senden"
+
+msgid "Gramps Assistant:"
+msgstr "Gramps-Assistent:"
+
+msgid ""
+"Ask me anything about the Gramps program or your specific Gramps family "
+"tree. Use the ⚙ button to configure the AI.\n"
+msgstr ""
+"Frag mich alles, was du über das Programm Gramps oder deinen persönlichen "
+"Gramps-Stammbaum wissen möchtest. Nutze die Schaltfläche ⚙, um die KI zu "
+"konfigurieren.\n"
+
+msgid ""
+"\n"
+"No model configured. Please click the Settings button to choose a backend "
+"and model before chatting.\n"
+msgstr ""
+"\n"
+"Es wurde kein Modell konfiguriert. Bitte klicke auf die Schaltfläche "
+"„Einstellungen“, um vor dem Chatten ein Backend und ein Modell auszuwählen.\n"
+
+msgid "Thinking..."
+msgstr "Ich denke nach..."
+
+#, python-brace-format
+msgid ""
+"API key error: the environment variable {var} is not set or is invalid. Set "
+"it before launching Gramps:\n"
+"  export {var}=your-key-here"
+msgstr ""
+"API-Schlüssel-Fehler: Die Umgebungsvariable {var} ist nicht gesetzt oder "
+"ungültig. Stelle sie vor dem Start von Gramps ein:\n"
+"  export {var}=dein-Schlüssel-hier"
+
+msgid ""
+"API key error: this provider requires an API key. Open Settings and enter "
+"the environment variable name for your API key (e.g. OPENAI_API_KEY)."
+msgstr ""
+"API-Schlüssel-Fehler: Dieser Anbieter benötigt einen API-Schlüssel. Öffne "
+"die Einstellungen und gib den Namen der Umgebungsvariablen für deinen API-"
+"Schlüssel ein (z. B. OPENAI_API_KEY)."
+
+msgid "Done.\n"
+msgstr "Fertig.\n"
+
+msgid "System Prompt:"
+msgstr "System Prompt:"
+
+msgid "Simplify tools (recommended for smaller/local models)"
+msgstr "Werkzeuge vereinfachen (empfohlen für kleinere/lokale Modelle)"
+
+msgid ""
+"When enabled, only the tools relevant to your question are sent to the "
+"model. This improves performance with smaller local models."
+msgstr ""
+"Wenn diese Option aktiviert ist, werden nur die für deine Frage relevanten "
+"Werkzeuge an das Modell gesendet. Dies verbessert die Leistung bei kleineren "
+"lokalen Modellen."
+
+msgid "Use Local Model"
+msgstr "Lokales Modell verwenden"
+
+msgid ""
+"URL of a local OpenAI-compatible server. Ollama: http://localhost:11434  LM "
+"Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
+msgstr ""
+"URL eines lokalen OpenAI-kompatiblen Servers. Ollama: http://"
+"localhost:11434  LM Studio: http://localhost:1234  llama.cpp: http://"
+"localhost:8080"
+
+msgid "model name (leave blank for LM Studio / llama.cpp)"
+msgstr "Modellname (bei LM Studio / llama.cpp leer lassen)"
+
+msgid ""
+"Model to request from the local server. Required for Ollama (e.g. llama3.1). "
+"Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
+msgstr ""
+"Vom lokalen Server anzuforderndes Modell. Erforderlich für Ollama (z. B. "
+"llama3.1). Bei LM Studio oder llama.cpp, die das jeweils geladene Modell "
+"verwenden, bitte leer lassen."
+
+msgid "Model:"
+msgstr "Modell:"
+
+msgid "Use Foundational Model"
+msgstr "Grundlegendes Modell verwenden"
+
+msgid "e.g. OPENAI_API_KEY"
+msgstr "z. B. OPENAI_API_KEY"
+
+msgid "Name of the environment variable holding your API key."
+msgstr "Name der Umgebungsvariable, die deinen API-Schlüssel enthält."
+
+msgid "API key env var:"
+msgstr "API-Schlüssel Umgebungsvariable:"
+
+msgid "Backend:"
+msgstr "Backend:"
+
+msgid "Base URL:"
+msgstr "Basis-URL:"
+
+msgid "Model name:"
+msgstr "Modellname:"
+
+msgid "Gramps Assistant"
+msgstr "Gramps-Assistent"
+
+msgid "AI assistant for querying your Gramps family tree"
+msgstr "KI-Assistent zur Abfrage deines Gramps-Stammbaums"

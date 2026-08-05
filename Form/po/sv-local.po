@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"PO-Revision-Date: 2026-08-03 04:02+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #, python-format
 msgid "Form: %s"
@@ -108,11 +108,42 @@ msgstr "Stadsdistrikt Stad eller by"
 msgid "Street etc with No. of House"
 msgstr "Gata etc. med husnummer"
 
+msgid "No. of Schedule"
+msgstr "Antal scheman"
+
+msgid "Name of Public Institution"
+msgstr "Namn på offentlig institution"
+
+msgid "Name and Surname"
+msgstr "Namn och efternamn"
+
 msgid "Relation"
 msgstr "Relation"
 
+msgid "Relationship to Head of Household"
+msgstr "Förhållande till hushållets överhuvud"
+
+msgid "Year Age"
+msgstr "År Ålder"
+
+msgid "Month Age"
+msgstr "Månad Ålder"
+
+msgid "Age in months"
+msgstr "Ålder i månader"
+
+msgid "Marriage or Orphanhood"
+msgstr "Äktenskap eller föräldralöshet"
+
 msgid "Birthplace"
 msgstr "Födelseort"
+
+msgid ""
+"\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
+"cannot speak Irish\""
+msgstr ""
+"\"Endast irländska\", \"Irländska och engelska\", \"Engelska och "
+"irländska\", \"Läser men kan inte tala irländska\""
 
 msgid "Personal Occupation"
 msgstr "Personlig sysselsättning"
@@ -120,14 +151,152 @@ msgstr "Personlig sysselsättning"
 msgid "Years Married"
 msgstr "Antal år gift"
 
+msgid "Years married in present Marriage"
+msgstr "År gifta i nuvarande äktenskap"
+
+msgid "Months Married"
+msgstr "Månader gifta"
+
+msgid "Months married in present Marriage"
+msgstr "Månader gifta i nuvarande äktenskap"
+
+msgid "Present Marriage Children"
+msgstr "Nuvarande äktenskaps barn"
+
+msgid "Children born alive to present marriage"
+msgstr "Barn födda levande i nuvarande äktenskap"
+
+msgid "Total Children Under 16 Living"
+msgstr "Totalt antal barn under 16 år som lever"
+
+msgid "(1.) Entry no."
+msgstr "(1.) Inlägg nr."
+
+msgid "Superintendent Registrar's District"
+msgstr "Chefsregistratorns distrikt"
+
+msgid "Registrar's District"
+msgstr "Registratorns distrikt"
+
+msgid "Union"
+msgstr "Union"
+
+msgid "(10.) Signature of Registrar"
+msgstr "(10.) Registratorns underskrift"
+
+msgid "(11.) Baptismal Name if added after Registration of Birth, and Date"
+msgstr "(11.) Dopnamn om det tillkommit efter födelseregistrering, och datum"
+
+msgid "(3.) Name (if any)"
+msgstr "(3.) Namn (om sådant finns)"
+
 msgid "Place of Birth"
 msgstr "Födelseort"
+
+msgid "(2.) Date and Place of Birth"
+msgstr "(2.) Födelsedatum och födelseort"
+
+msgid "(4.) M or F for male or female"
+msgstr "(4.) M eller K för man eller kvinna"
+
+msgid "(5.) Name and Surname and Dwelling-place of Father"
+msgstr "(5.) Faderns namn och efternamn samt bostad"
+
+msgid "(7.) Rank or Profession of Father"
+msgstr "(7.) Faderns rang eller yrke"
+
+msgid "(6.) Name and Surname and Maiden Surname of Mother"
+msgstr "(6.) Moderns namn och efternamn samt flicknamn"
 
 msgid "Maiden Surname"
 msgstr "Flicknamn"
 
+msgid "(8.) Signature, Qualification, and Residence of Informant"
+msgstr "(8.) Informantens underskrift, kvalifikationer och bosättningsort"
+
+msgid "When Registered"
+msgstr "När registrerad"
+
+msgid "(9.) Date when birth was registered"
+msgstr "(9.) Datum då födelsen registrerades"
+
+msgid "Year"
+msgstr "År"
+
+msgid "Solemnized at the Catholic"
+msgstr "Högtidlighållande vid den katolska"
+
+msgid "Certificate number"
+msgstr "Certifikatnummer"
+
+msgid "Page number"
+msgstr "Sidnummer"
+
+msgid "(1.) Entry No."
+msgstr "(1.) Inlägg nr."
+
+msgid "(2.) When Married"
+msgstr "(2.) När gift"
+
+msgid "(3.) Name and Surname"
+msgstr "(3.) Förnamn och efternamn"
+
+msgid "(4.) Full or Minor"
+msgstr "(4.) Fullständig eller mindre"
+
 msgid "Condition"
 msgstr "Kondition"
+
+msgid "(5.) Bachelor or Spinster"
+msgstr "(5.) Ungkarl eller ungmö"
+
+msgid "(6.) Rank or Profession"
+msgstr "(6.) Rang eller yrke"
+
+msgid "Residence at the Time of Marriage"
+msgstr "Bostad vid tidpunkten för äktenskapet"
+
+msgid "(8.) Father's Name and Surname"
+msgstr "(8.) Fars namn och efternamn"
+
+msgid "(9.) Rank or Profession of Father"
+msgstr "(9.) Fars rang eller yrke"
+
+msgid "(10.) When Registered"
+msgstr "(10.) Vid registrering"
+
+msgid "(11.) Signature of Registrar"
+msgstr "(11.) Registratorns underskrift"
+
+msgid "(2.) Date and Place of Death"
+msgstr "(2.) Dödsdatum och -ort"
+
+msgid "(4.) M or F for Male or Female"
+msgstr "(4.) M eller K för man eller kvinna"
+
+msgid "(5.) Widowed or Married"
+msgstr "(5.) Änka/Änkling eller gift"
+
+msgid "(6.) Age last Birthday"
+msgstr "(6.) Ålder senaste födelsedag"
+
+msgid "(7.) Rank, Profession, or Occupation"
+msgstr "(7.) Rang, yrke eller sysselsättning"
+
+msgid "(8.) Certified Cause of Death and Duration of Illness"
+msgstr "(8.) Bekräftad dödsorsak och sjukdomens varaktighet"
+
+msgid "Duration of Illness"
+msgstr "Sjukdomens varaktighet"
+
+msgid "Relation to deceased"
+msgstr "Släktskap till avliden"
+
+msgid "(9.) e.g. Son, Daughter"
+msgstr "(9.) t.ex. Son, Dotter"
+
+msgid "(9.) e.g. Present at death"
+msgstr "(9.) t.ex. Närvarande vid dödsfallet"
 
 msgid "Schedule"
 msgstr "Schema"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
@@ -20,11 +20,335 @@ msgstr ""
 msgid "Place Cleanup"
 msgstr "Yeri temizle"
 
+msgid ""
+"Place Cleanup Gramplet assists in merging places, as well as completing "
+"places from the GeoNames web database"
+msgstr ""
+"Yer Temizleme Gramplet'i, yerlerin birleştirilmesine ve GeoNames web "
+"veritabanından yer bilgilerinin tamamlanmasına yardımcı olur"
+
+msgid ""
+"No\n"
+"Matches"
+msgstr ""
+"Hayır\n"
+"Eşleşmeler"
+
 msgid "Find"
 msgstr "Bul"
+
+#, python-format
+msgid ""
+"%s\n"
+"Local\n"
+"Matches"
+msgstr ""
+"%s\n"
+"Yerel\n"
+"Eşleşmeler"
+
+msgid "Find GeoNames"
+msgstr "GeoNames Bul"
+
+msgid "Need to set GeoNames ID"
+msgstr "GeoNames Kimliği ayarlanmalı"
+
+msgid "Use the Help button for more information"
+msgstr "Daha fazla bilgi için Yardım düğmesini kullanın"
+
+msgid ""
+"Try changing the Title, or use the \"Edit\" button to finish this level of "
+"the place manually."
+msgstr ""
+"Başlığı değiştirmeyi deneyin veya bu yer seviyesini el ile tamamlamak için "
+"\"Düzenle\" düğmesini kullanın."
+
+#, python-format
+msgid ""
+"%s\n"
+"GeoNames\n"
+"Matches"
+msgstr ""
+"%s\n"
+"GeoNames\n"
+"Eşleşmeler"
+
+#, python-format
+msgid "%s matches were found"
+msgstr "%s eşleşme bulundu"
+
+msgid ""
+"Only 10 matches are shown.\n"
+"To see additional results, press the search button again.\n"
+"Or try changing the Title with more detail, such as a country."
+msgstr ""
+"Yalnızca 10 eşleşme gösteriliyor.\n"
+"Ek sonuçları görmek için arama düğmesine tekrar basın.\n"
+"Veya Başlığı daha ayrıntılı bilgilerle, örneğin bir ülke ile değiştirmeyi "
+"deneyin."
+
+msgid "Problem getting data from web"
+msgstr "Web'den veri alma sorunu"
+
+msgid "Web request Timeout, you can try again..."
+msgstr "Web isteği zaman aşımına uğradı, tekrar deneyebilirsiniz..."
+
+msgid "Problem getting data from GeoNames"
+msgstr "GeoNames'ten veri alma sorunu"
+
+msgid ""
+"One of the places you are merging encloses the other!\n"
+"Please choose another place."
+msgstr ""
+"Birleştirdiğiniz yerlerden biri diğerini kapsıyor!\n"
+"Lütfen başka bir yer seçin."
+
+msgid ""
+"The place you chose is enclosed in the place you are workin on!\n"
+"Please cancel and choose another place."
+msgstr ""
+"Seçtiğiniz yer, üzerinde çalıştığınız yerin içinde yer alıyor!\n"
+"Lütfen iptal edin ve başka bir yer seçin."
+
+msgid "GeoNames web site"
+msgstr "GeoNames web sitesi"
+
+msgid "GeoNames author"
+msgstr "GeoNames yazarı"
+
+msgid "GeoNames was founded by Marc Wick. You can reach him at "
+msgstr ""
+"GeoNames, Marc Wick tarafından kurulmuştur. Ona şu adresten ulaşabilirsiniz "
+
+msgid ""
+"GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
+"Switzerland.\n"
+"This work is licensed under a "
+msgstr ""
+"GeoNames, Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, İsviçre'nin bir "
+"projesidir.\n"
+"Bu çalışma şu lisans altında lisanslanmıştır "
+
+msgid "Creative Commons Attribution 3.0 License"
+msgstr "Creative Commons Attribution 3.0 Lisansı"
+
+#, python-format
+msgid "Add Souce/Repo/Note (%s)"
+msgstr "Kaynak/Depo/Not Ekle (%s)"
+
+msgid "This Place is not used!"
+msgstr "Bu Yer kullanılmıyor!"
+
+msgid ""
+"You should delete it, or, if it contains useful notes or other data, use the "
+"Find to merge it into a valid place."
+msgstr ""
+"Silmeniz veya yararlı notlar veya diğer veriler içeriyorsa, geçerli bir yere "
+"birleştirmek için Bul özelliğini kullanmanız gerekir."
+
+msgid "City, County, State, Country"
+msgstr "Şehir, İlçe, Eyalet, Ülke"
 
 msgid "Primary Name"
 msgstr "Birincil ad"
 
+msgid "The current Primary name."
+msgstr "Geçerli birincil ad."
+
+msgid "The postal code for the place, if any."
+msgstr "Varsa, yerin posta kodu."
+
+msgid "What type of place this is. Eg 'Country', 'City', ... ."
+msgstr "Bu yerin türü. Örneğin 'Ülke', 'Şehir', ..."
+
+msgid "Check this box if you want to keep the original Postal code."
+msgstr "Orijinal Posta kodunu saklamak istiyorsanız bu kutuyu işaretleyin."
+
+msgid "Check this box if you want to keep the original Place Type."
+msgstr "Orijinal Yer Türünü saklamak istiyorsanız bu kutuyu işaretleyin."
+
+msgid "Orig"
+msgstr "Orijinal"
+
+msgid "Check this box if you want to keep the original Latitude and Longitude."
+msgstr "Orijinal Enlem ve Boylamı saklamak istiyorsanız bu kutuyu işaretleyin."
+
+msgid "The Gramps ID.."
+msgstr "Gramps Kimliği.."
+
+msgid "Check this box if you want to keep the original Gramps ID."
+msgstr "Orijinal Gramps Kimliğini saklamak istiyorsanız bu kutuyu işaretleyin."
+
+msgid ""
+"Alterative Names\n"
+"Select one or more rows and press 'Keep' button to toggle the 'include into "
+"place' status ."
+msgstr ""
+"Alternatif Adlar\n"
+"Bir veya daha fazla satır seçin ve 'Yere dahil et' durumunu değiştirmek için "
+"'Sakla' düğmesine basın."
+
+msgid "Inc"
+msgstr "Dahil Et"
+
+msgid "Lang"
+msgstr "Dil"
+
+msgid ""
+"Select one or more rows and use this button to keep the alternative names."
+msgstr ""
+"Bir veya daha fazla satır seçin ve alternatif adları saklamak için bu "
+"düğmeyi kullanın."
+
+msgid "Select one row and use this button to make the row the primary name."
+msgstr "Bir satır seçin ve satırı birincil ad yapmak için bu düğmeyi kullanın."
+
+msgid "Discard"
+msgstr "At"
+
+msgid ""
+"Select one or more rows and use this button to discard the alternative names."
+msgstr ""
+"Bir veya daha fazla satır seçin ve alternatif adları atmak için bu düğmeyi "
+"kullanın."
+
+msgid "Cancel the operation, no changes are made to your Place."
+msgstr "İşlemi iptal edin, Yerinizde hiçbir değişiklik yapılmaz."
+
+msgid "Store the values in your Place."
+msgstr "Değerleri Yerinizde saklayın."
+
+msgid "Keep Web Links"
+msgstr "Web Bağlantılarını Sakla"
+
+msgid "Puts web links (typically wikipedia) into your place."
+msgstr "Yerinizin içine web bağlantıları (genellikle Wikipedia) ekler."
+
+msgid "Add citation and source to Place"
+msgstr "Yere alıntı ve kaynak ekle"
+
+msgid "This Adds a Citation to your place, citing GeoNames."
+msgstr "Bu, GeoNames'i kaynak gösteren bir alıntı ekler."
+
+msgid "GeoNames User ID"
+msgstr "GeoNames Kullanıcı Kimliği"
+
+msgid "Enter you Geonames user ID here."
+msgstr "GeoNames kullanıcı kimliğinizi buraya girin."
+
+msgid "Alternative Names Languages to keep"
+msgstr "Saklanacak Alternatif Ad Dilleri"
+
+msgid ""
+"Enter the two or three letter codes for the languages you wish to keep, "
+"seperated by spaces.\n"
+"For example \"en fr ru\".\n"
+"These languages will initially be checked off on the Names result display.\n"
+"If you often see an un-checked name in a specific language you want, add the "
+"language code here."
+msgstr ""
+"Saklamak istediğiniz dillerin iki veya üç harfli kodlarını boşluklarla "
+"ayırarak girin.\n"
+"Örneğin \"en fr ru\".\n"
+"Bu diller, Adlar sonuç ekranında başlangıçta işaretlenecektir.\n"
+"Belirli bir dilde sık sık işaretlenmemiş bir ad görüyorsanız, dil kodunu "
+"buraya ekleyin."
+
+msgid "Currently Enclosed Places"
+msgstr "Şu Anda Kapsamlı Yerler"
+
+msgid ""
+"When cleaning a place that is already enclosed, this affects what is done.\n"
+"If '<b>Keep current Enclosure</b>' is selected, no changes to the enclosing "
+"place is made.\n"
+"If '<b>Replace with GeoNames Enclosure</b>' is selected, the enclosed place "
+"is changed to the next level GeoNames place.  This may result in some unused "
+"places remaining in your database."
+msgstr ""
+"Zaten başka bir yerin içinde bulunan bir yeri düzenlerken bunun nasıl "
+"işleneceğini belirler.\n"
+"'<b>Geçerli Kapsamı Sakla</b>' seçilirse, kapsayan yerde hiçbir değişiklik "
+"yapılmaz.\n"
+"'<b>GeoNames Kapsamıyla Değiştir</b>' seçilirse, kapsanan yer bir sonraki "
+"GeoNames hiyerarşi düzeyindeki yerle değiştirilir.  Bu durum veritabanınızda "
+"kullanılmayan bazı yerlerin kalmasına neden olabilir."
+
+msgid "Keep current Enclosure"
+msgstr "Geçerli Kapsamı Sakla"
+
+msgid "Replace with GeoNames Enclosure"
+msgstr "GeoNames Kapsamıyla Değiştir"
+
+msgid ""
+"Current Place title.\n"
+"You can edit this to help find other places, particularly to reduce the "
+"number of results."
+msgstr ""
+"Geçerli Yer başlığı.\n"
+"Özellikle sonuç sayısını azaltmak amacıyla diğer yerleri bulmayı "
+"kolaylaştırmak için bunu düzenleyebilirsiniz."
+
+msgid "Search your local places and GeoNames for a match."
+msgstr "Eşleşme bulmak için yerel yerlerinizi ve GeoNames'i arayın."
+
+msgid ""
+"Continue to merge (for local places), or to complete a place (for GeoNames)."
+msgstr ""
+"(Yerel yerler için) birleştirmeye veya (GeoNames için) yeri tamamlamaya "
+"devam edin."
+
+msgid ""
+"Split up Title, Edit manually, and enclose with next level of hierarchy.  "
+"For use when the initial component of the Title is too detailed to be found "
+"in the gazetteer."
+msgstr ""
+"Başlığı böl, elle düzenle ve hiyerarşinin bir sonraki düzeyiyle "
+"ilişkilendir.  Başlığın ilk bileşeni dizinde bulunamayacak kadar ayrıntılı "
+"olduğunda kullanılır."
+
+msgid "Next Place"
+msgstr "Sonraki Yer"
+
+msgid "Find an incomplete place."
+msgstr "Eksik bir yeri bulun."
+
 msgid "Set preferences"
 msgstr "Tercihleri ayarla"
+
+msgid "Select one of these places to continue the cleanup process."
+msgstr "Temizleme işlemine devam etmek için bu yerlerden birini seçin."
+
+msgid "Search result places"
+msgstr "Arama sonucu yerleri"
+
+msgid ""
+"Checking the 'Populated' checkbox causes the GeoNames search to include "
+"'Populted places', places where people live and work."
+msgstr ""
+"'Yerleşimli' onay kutusunu işaretlemek, GeoNames aramasının 'Yerleşimli "
+"yerler'i, yani insanların yaşadığı ve çalıştığı yerleri içermesine neden "
+"olur."
+
+msgid "Populated"
+msgstr "Yerleşimli"
+
+msgid ""
+"Checking the 'Admin' checkbox cause the GeoNames search to include "
+"adminstrative subdivisions in the search (countries, states, counties etc.)."
+msgstr ""
+"'Yönetici' onay kutusunu işaretlemek, GeoNames aramasına idari alt bölümleri "
+"(ülkeler, eyaletler, ilçeler vb.) dahil eder."
+
+msgid ""
+"Checking the 'Spot' checkbox cause the GeoNames search to include a wide "
+"variety of other places in the search (churches, burial grounds, buildings "
+"etc.)."
+msgstr ""
+"'Yer' onay kutusunu işaretlemek, GeoNames aramasına çok çeşitli diğer "
+"yerleri (kiliseler, mezarlıklar, binalar vb.) dahil eder."
+
+msgid "Admin"
+msgstr "Yönetici"
+
+msgid "Spot"
+msgstr "Yer"

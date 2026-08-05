@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.8.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+msgid "PhpGedView"
+msgstr "PhpGedView"
+
+msgid "Download a GEDCOM file from a phpGedView server."
+msgstr "Bir phpGedView sunucusundan bir GEDCOM dosyası indir."
+
+msgid "Fetching index list..."
+msgstr "Dizin listesi getiriliyor..."
+
+msgid "Fetching records..."
+msgstr "Kayıtlar getiriliyor..."
+
+msgid "Logging in..."
+msgstr "Giriş yapılıyor..."
+
+msgid "Fetching GEDCOM..."
+msgstr "GEDCOM getiriliyor..."
+
+msgid "Importing GEDCOM..."
+msgstr "GEDCOM içe aktarılıyor..."
+
+msgid "Error: login failed"
+msgstr "Hata: Giriş başarısız"
+
+msgid "done."
+msgstr "Tamamlandı."
+
+msgid "Connecting..."
+msgstr "Bağlanılıyor..."
+
+msgid "Get version..."
+msgstr "Sürüm alınıyor..."
+
+#, python-format
+msgid "Version %s"
+msgstr "Sürüm %s"
+
+msgid "Reading file list..."
+msgstr "Dosya listesi okunuyor..."
+
+msgid "Error: Invalid URL"
+msgstr "Hata: Geçersiz URL"
+
+msgid "- default -"
+msgstr "- varsayılan -"
+
+msgid "phpGedView import"
+msgstr "phpGedView içe aktarma"
+
+msgid "http://"
+msgstr "http://"
+
+msgid "Username:"
+msgstr "Kullanıcı adı:"
+
+msgid "Password:"
+msgstr "Şifre:"

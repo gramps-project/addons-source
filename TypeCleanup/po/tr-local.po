@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,10 +12,97 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "Event Roles"
+msgstr "Etkinlik Rolleri"
+
+msgid "Event Types"
+msgstr "Etkinlik Türleri"
+
+msgid "Family Relation Types"
+msgstr "Aile İlişkisi Türleri"
+
+msgid "Child reference Types"
+msgstr "Çocuk Referans Türleri"
+
+msgid "Name Origin Types"
+msgstr "Ad Kökeni Türleri"
+
+msgid "Name Types"
+msgstr "Ad Türleri"
+
+msgid "Note Types"
+msgstr "Not Türleri"
+
 msgid "Place Types"
 msgstr "Yer Türleri"
+
+msgid "Repository Types"
+msgstr "Depo Türleri"
+
+msgid "Source Media Types"
+msgstr "Kaynak Medya Türleri"
+
+msgid "URL Types"
+msgstr "URL Türleri"
+
+msgid "Types Cleanup Tool"
+msgstr "Tür Temizleme Aracı"
+
+msgid ""
+"Remove the selected type from the db.\n"
+"This does not change any referenced objects."
+msgstr ""
+"Seçilen türü veritabanından kaldırır.\n"
+"Bu, referans verilen nesnelerde herhangi bir değişikliğe neden olmaz."
+
+msgid ""
+"Select a new name for the current type, prior to renaming the type in the "
+"referenced objects."
+msgstr ""
+"Referans verilen nesnelerdeki türü yeniden adlandırmadan önce, geçerli tür "
+"için yeni bir ad seçin."
+
+msgid "Rename"
+msgstr "Yeniden adlandır"
+
+msgid "Rename the selected type in all referenced objects."
+msgstr "Seçilen türü tüm referans verilen nesnelerde yeniden adlandırın."
+
+msgid "Close the Type Cleanup Tool"
+msgstr "Tür Temizleme Aracını kapat"
+
+msgid "Types"
+msgstr "Türler"
+
+msgid "Type Cleanup Tool"
+msgstr "Tür Temizleme Aracı"
+
+#, python-format
+msgid "Changing type from %(old_type)s to %(new_type)s."
+msgstr "%(old_type)s türü %(new_type)s olarak değiştirme."
+
+msgid ""
+"Removing this custom type will eliminate it from the type selection drop "
+"down lists\n"
+"and further runs of this tool.\n"
+"\n"
+"However, it will not remove it from the referenced items in the database.\n"
+"If you want to change it in referenced items, use 'Rename'."
+msgstr ""
+"Bu özel türü kaldırmak, onu tür seçimi açılır listelerinden kaldıracaktır\n"
+"ve bu aracın sonraki çalıştırmalarında artık kullanılamayacaktır.\n"
+"\n"
+"Ancak, veritabanındaki referans verilen öğelerden kaldırılmayacaktır.\n"
+"Referans verilen öğelerde de değiştirmek istiyorsanız, 'Yeniden Adlandır' "
+"seçeneğini kullanın."
+
+msgid "Type Cleanup"
+msgstr "Tür Temizleme"
+
+msgid "Clean up (remove) custom types"
+msgstr "Özel türleri temizle (kaldır)"

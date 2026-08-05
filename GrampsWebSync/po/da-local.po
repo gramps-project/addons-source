@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-11 21:37+0200\n"
-"PO-Revision-Date: 2025-09-30 08:02+0000\n"
+"POT-Creation-Date: 2026-07-31 17:35+0200\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Web Sync"
@@ -20,37 +20,18 @@ msgstr "Gramps Web Sync"
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Synkroniserer en lokal database med em Gramps web instans."
 
-msgid "Fetching remote data..."
-msgstr "Henter eksterne data ..."
-
-msgid "Unexpected error while applying changes."
-msgstr "Uventet fejl ved anvendelse af ændringer."
-
-msgid "Media files are in sync."
-msgstr "Mediefiler er synkrone."
-
-msgid "Error accessing media object."
-msgstr "Fejl ved tilgang til medieobjekt."
-
-msgid "Comparing local and remote data..."
-msgstr "Sammeligner lokale og eksterne data..."
-
-msgid "Server authorization error."
-msgstr "Server godkendelsesfejl."
-
-msgid "Server authorization error: insufficient permissions."
-msgstr "Server godkendelsesfejl: ikke tilstrækkelige tilladelser."
-
-msgid "Error: URL not found."
-msgstr "Fejl: Kan ikke finde URL."
-
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr ""
 "Kan ikke synkronisere ændringer til serveres: objekter er blevet ændret."
 
-#, python-format
-msgid "Error %s while connecting to server."
-msgstr "Fejl %s ved forbindelse til server."
+msgid "Unexpected error while applying changes."
+msgstr "Uventet fejl ved anvendelse af ændringer."
+
+msgid "Fetching remote data..."
+msgstr "Henter eksterne data ..."
+
+msgid "Comparing local and remote data..."
+msgstr "Sammeligner lokale og eksterne data..."
 
 msgid "Continue without transport encryption?"
 msgstr "Fortsæt uden transport kryptering?"
@@ -98,6 +79,9 @@ msgstr ""
 msgid "Server URL: "
 msgstr "Server URL: "
 
+msgid "Error:"
+msgstr "Fejl:"
+
 msgid "Local changes"
 msgstr "Lokale ændringer"
 
@@ -118,3 +102,6 @@ msgstr "Mangler lokalt"
 
 msgid "Missing remotely"
 msgstr "Mangler eksternt"
+
+msgid "Media files are in sync."
+msgstr "Mediefiler er synkrone."

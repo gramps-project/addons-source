@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,14 +12,122 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
+
+msgid "Sources and Citations Report"
+msgstr "Kaynaklar ve Alıntılar Raporu"
+
+msgid "Provides a source and Citations Report with notes"
+msgstr "Notlarla birlikte bir Kaynak ve Alıntılar Raporu sağlar"
+
+#, python-format
+msgid "Key: %s"
+msgstr "Anahtar: %s"
+
+msgid "Citations:"
+msgstr "Alıntılar:"
+
+#, python-format
+msgid "%d"
+msgstr "%d"
+
+#, python-format
+msgid "  %s"
+msgstr "  %s"
+
+#, python-format
+msgid " - %s "
+msgstr " - %s "
+
+#, python-format
+msgid "   Type: %s"
+msgstr "   Tür: %s"
+
+#, python-format
+msgid "   N-ID: %s"
+msgstr "   N-Kimliği: %s"
+
+#, python-format
+msgid "   %s"
+msgstr "   %s"
+
+#, python-format
+msgid "%s"
+msgstr "%s"
+
+#, python-format
+msgid "   ( %s )"
+msgstr "   ( %s )"
+
+msgid "   Spouses: "
+msgstr "   Eş: "
 
 #, python-format
 msgid "%s "
 msgstr "%s "
 
+#, python-format
+msgid "and %s "
+msgstr "ve %s "
+
+#, python-format
+msgid " %s"
+msgstr " %s"
+
+msgid "Title of the Report"
+msgstr "Raporun Başlığı"
+
+msgid "Title string for the report."
+msgstr "Raporun başlık metni."
+
+msgid "Subtitle of the Report"
+msgstr "Raporun Alt Başlığı"
+
+msgid "Subtitle string for the report."
+msgstr "Raporun alt başlık metni."
+
+msgid "researcher name"
+msgstr "Araştırmacı adı"
+
+msgid "Select sources using a filter"
+msgstr "Kaynakları bir filtre kullanarak seçin"
+
+msgid "Show persons"
+msgstr "Kişileri göster"
+
+msgid "Whether to show events and persons mentioned in the note"
+msgstr ""
+"Notta bahsedilen etkinliklerin ve kişilerin gösterilip gösterilmeyeceği"
+
 msgid "The style used for the title of the report."
 msgstr "Rapor başlığı için kullanılan stil."
+
+msgid "The style used for the subtitle of the report."
+msgstr "Raporun alt başlığı için kullanılan stil."
+
+msgid "The style used for the footer of the report."
+msgstr "Raporun alt bilgisi için kullanılan stil."
+
+msgid "The style used for source title."
+msgstr "Kaynak başlığı için kullanılan stil."
+
+msgid "The style used for source subtitle."
+msgstr "Kaynak alt başlığı için kullanılan stil."
+
+msgid "The style used for Source details."
+msgstr "Kaynak ayrıntıları için kullanılan stil."
+
+msgid "The style used for citation title."
+msgstr "Alıntı başlığı için kullanılan stil."
+
+msgid "The style used for a column title."
+msgstr "Sütun başlığı için kullanılan stil."
+
+msgid "The style used for each section."
+msgstr "Her bölüm için kullanılan stil."
+
+msgid "The style used for event and person details."
+msgstr "Etkinlik ve kişi detayları için kullanılan stil."

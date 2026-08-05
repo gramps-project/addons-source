@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-26 11:05-0700\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
+
+msgid "Children of name match"
+msgstr "Kinder, deren Name übereinstimmt"
+
+msgid "Matches children of anybody with a given name"
+msgstr "Gibt alle Kinder einer beliebigen Person mit einem Vornamen zurück"
+
+msgid "Sibling 1"
+msgstr "Geschwister 1"
+
+msgid "Sibling 2"
+msgstr "Geschwister 2"
+
+msgid "Child 1"
+msgstr "Kind 1"
+
+msgid "Child 2"
+msgstr "Kind 2"
+
+msgid "Probably Alive"
+msgstr "Wahrscheinlich am Leben"
+
+#, python-format
+msgid "example: '%(msg1)s' or '%(msg2)s'"
+msgstr "Beispiel: „%(msg1)s“ oder „%(msg2)s“"
+
+msgid "Person Relationship Filter"
+msgstr "Beziehungsfilter für Personen"
+
+msgid "Gramplet providing a person filter on relationships"
+msgstr ""
+"Gramplet, das einen Personenfilter für Verwandtschaftsbeziehungen "
+"bereitstellt"
+
+msgid "Relationship Filter"
+msgstr "Beziehungsfilter"

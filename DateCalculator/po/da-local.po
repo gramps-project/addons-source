@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -12,7 +12,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
+
+msgid "Reference Date or Date Range"
+msgstr "Referencedato eller datointerval"
+
+msgid "a valid Gramps date"
+msgstr "en gyldig Gramps dato"
+
+msgid "Date or offset ±y or ±y, m, d"
+msgstr "Dato eller forskydning ±y eller ±y, m, d"
+
+msgid ""
+"1. a Date\n"
+"2. a positive or negative number, representing years\n"
+"3. a positive or negative list of values, representing years, months, days"
+msgstr ""
+"1. en Dato\n"
+"2. et positivt eller negativt tal, der angiver år\n"
+"3. en positiv eller negativ liste af værdier, der angiver år, måneder, dage"
 
 msgid "Result"
 msgstr "Resultat"
@@ -23,8 +41,20 @@ msgstr "Beregn"
 msgid "Copy"
 msgstr "Kopier"
 
+msgid "Error: invalid date for first expression"
+msgstr "Fejl: ugyldig dato i det første udtryk"
+
+msgid "Error: invalid offset for second expression"
+msgstr "Fejl: ugyldig afstand for andet udtryk"
+
 msgid "Error: at least one expression must be a date"
 msgstr "Fejl: Mindst et udtryk skal være en dato"
 
+msgid "Enter an expression in the entries above and click Calculate."
+msgstr "Indtast et udtryk i ovenstående poster og klik på Beregn."
+
 msgid "Date Calculator"
 msgstr "Datoberegner"
+
+msgid "Perform date math calculations"
+msgstr "Udfør beregninger for datoer"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-04 00:00-0000\n"
-"PO-Revision-Date: 2026-05-14 19:17+0000\n"
+"PO-Revision-Date: 2026-07-01 15:01+0000\n"
 "Last-Translator: \"David D.\" <dadu042@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fr/>\n"
@@ -12,25 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Weblate 2026.5.dev0\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 msgid "Date of Death"
 msgstr "Date de décès"
-
-msgid "a gramplet that displays death dates in sorted order"
-msgstr "un gramplet qui affiche les dates de décès triées"
-
-msgid "No Family Tree loaded."
-msgstr "Aucun arbre généalogique chargé."
-
-msgid "Sort dates of death by"
-msgstr "Trier les dates de décès par"
-
-msgid "Month and day"
-msgstr "Mois et jour"
-
-msgid "Proximity to current date"
-msgstr "Proximité à la date actuelle"
-
-msgid "Processing..."
-msgstr "Traitement en cours…"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,22 +12,246 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "PlaceCompletion"
+msgstr "Yer Tamamlama"
+
+msgid ""
+"Provides a browsable list of selected places, with possibility to complete/"
+"parse/set the attribute fields."
+msgstr ""
+"Seçilen yerlerin göz atılabilir bir listesini sağlar ve öznitelik alanlarını "
+"tamamlama/ayrıştır/ayarlama olanağı sunar."
+
+msgid ""
+"Place Completion by parsing, file lookup and batch setting of place "
+"attributes"
+msgstr ""
+"Yer Tamamlama, ayrıştırma, dosya arama ve yer özniteliklerinin toplu "
+"ayarlanması yoluyla gerçekleştirilir"
+
+msgid "Error in PlaceCompletion.py"
+msgstr "PlaceCompletion.py dosyasında hata"
+
+msgid "Non existing group used in get"
+msgstr "get işleminde mevcut olmayan grup kullanıldı"
+
+#, python-format
+msgid "PlaceCompletion is unable to create %s %s"
+msgstr "Yer Tamamlama %s %s oluşturamıyor"
+
 msgid "Places tool"
 msgstr "Yerler aracı"
+
+msgid "Missing regex groups in match lat/lon"
+msgstr "Enlem/boylam eşleşmesinde eksik regex grupları"
+
+#, python-format
+msgid ""
+"Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
+msgstr ""
+"Enlem/boylam eşleşmesinde %(lat)s ve %(lon)s regex grupları bulunmalıdır"
+
+msgid "Non valid regex for match lat/lon"
+msgstr "Geçersiz enlem/boylam eşleştirme düzenli ifadesi"
+
+msgid "Non valid regular expression given to find lat/lon. Quiting."
+msgstr ""
+"Enlem/boylam bulmak için geçersiz bir düzenli ifade verildi. Çıkılıyor."
+
+msgid "Finding Places and appropriate changes"
+msgstr "Yerleri bulma ve uygun değişiklikler"
+
+msgid "Filtering"
+msgstr "Filtreleme"
+
+msgid "Loading lat/lon file in Memory..."
+msgstr "Enlem/boylam dosyası belleğe yükleniyor..."
+
+msgid "Examining places"
+msgstr "Yerler inceleniyor"
+
+msgid "Set Tag"
+msgstr "Etiket Ayarla"
 
 msgid "Doing Place changes"
 msgstr "Yer değişiklikleri yapma"
 
+msgid "No place record was modified."
+msgstr "Hiçbir yer kaydı değiştirilmedi."
+
+msgid "1 place record was modified."
+msgstr "1 yer kaydı değiştirildi."
+
+#, python-format
+msgid "%d place records were modified."
+msgstr "%d yer kaydı değiştirildi."
+
 msgid "Change places"
 msgstr "Yerleri değiştir"
+
+msgid "The selected file is a directory, not a file."
+msgstr "Seçilen öğe bir dosya değil, bir dizindir."
+
+msgid "The file you want to access is not a regular file."
+msgstr "Erişmek istediğiniz öğe normal bir dosya değil."
+
+msgid "The file does not exist."
+msgstr "Dosya mevcut değil."
+
+msgid "Problem reading file"
+msgstr "Dosya okuma sorunu"
+
+#, python-format
+msgid "invalid lat or lon value, %(lat)s, %(lon)s"
+msgstr "Geçersiz enlem veya boylam değeri, %(lat)s, %(lon)s"
+
+msgid "No lat/lon conversion"
+msgstr "Enlem/boylam dönüştürmesi yok"
+
+msgid "All in degree notation"
+msgstr "Tüm değerler derece cinsinden"
+
+msgid "All in decimal notation"
+msgstr "Tüm değerler ondalık sayı cinsinden"
+
+msgid "Correct -50° in 50°S"
+msgstr "-50° değerini 50°G olarak düzelt"
 
 msgid "No changes"
 msgstr "Değişiklik yok"
 
+msgid "City[, State]"
+msgstr "Şehir[, Eyalet]"
+
+msgid "City,PostalCode,Country"
+msgstr "Şehir,Posta Kodu,Ülke"
+
+msgid "City[(Street;Locality;Parish)],PostalCode,Country"
+msgstr "Şehir[(Sokak;Yerleşim Yeri;İlçe)],Posta Kodu,Ülke"
+
+msgid "TitleStart [, City] [, State]"
+msgstr "BaşlıkBaşlangıcı [, Şehir] [, Eyalet]"
+
+msgid "TitleStart [, City] [, County] [, State] [, Country]"
+msgstr "BaşlıkBaşlangıcı [, Şehir] [, İlçe] [, Eyalet] [, Ülke]"
+
+msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
+msgstr "BaşlıkBaşlangıcı [, Şehir] [, Posta Kodu] [, İlçe] [, Eyalet] [, Ülke]"
+
+msgid "Don't search"
+msgstr "Arama yapmayın"
+
+msgid "GeoNames country file, city search"
+msgstr "GeoNames ülke dosyası, şehir araması"
+
+msgid "GeoNames country file, city localized variants search"
+msgstr "GeoNames ülke dosyası, yerelleştirilmiş şehir varyantları araması"
+
+msgid "GeoNames country file, county/city search"
+msgstr "GeoNames ülke dosyası, ilçe/şehir araması"
+
+msgid "GeoNames country file, title begin, general search"
+msgstr "GeoNames ülke dosyası, başlık başlangıcı, genel arama"
+
+msgid "GeoNames USA state file, city search"
+msgstr "GeoNames ABD eyalet dosyası, şehir araması"
+
+msgid "GNS Geonet country file, city search"
+msgstr "GNS Geonet ülke dosyası, şehir araması"
+
+msgid "GNS Geonet country file, county/city search"
+msgstr "GNS Geonet ülke dosyası, ilçe/şehir araması"
+
+msgid "GNS Geonet country file, title begin, general search"
+msgstr "GNS Geonet ülke dosyası, başlık başlangıcı, genel arama"
+
+msgid "Wikipedia CSV Dump"
+msgstr "Wikipedia CSV Dökümü"
+
+msgid "All Places"
+msgstr "Tüm Yerler"
+
+msgid "No Latitude/Longitude given"
+msgstr "Enlem/Boylam verilmedi"
+
+msgid "_Google Maps"
+msgstr "_Google Haritalar"
+
+msgid "Apply all suggested changes"
+msgstr "Önerilen tüm değişiklikleri uygula"
+
+msgid "Selection of the Places you want to complete:"
+msgstr "Tamamlamak istediğiniz Yerlerin seçimi:"
+
+msgid "Parish:"
+msgstr "Bölge:"
+
 msgid "Place _filter:"
 msgstr "Yer _süzgeci:"
+
+msgid "Count_ry:"
+msgstr "Ül_ke:"
+
+msgid "C_enter latitude:"
+msgstr "M_erkez enlemi:"
+
+msgid "Center longitude:"
+msgstr "Merkez boylamı:"
+
+msgid "Places in a rectangle:"
+msgstr "Bir dikdörtgen içindeki yerler:"
+
+msgid "Height:"
+msgstr "Yükseklik:"
+
+msgid "1. Look up latitude and longitude:"
+msgstr "1. Enlem ve boylamı arayın:"
+
+msgid "Search in:"
+msgstr "Şurada ara:"
+
+msgid "Select A File"
+msgstr "Bir Dosya Seç"
+
+msgid "Parse as:"
+msgstr "Şu şekilde ayrıştır:"
+
+msgid "2. Conversion of existing title or position:"
+msgstr "2. Mevcut başlığın veya konumun dönüştürülmesi:"
+
+msgid "Change title into:"
+msgstr "Başlığı şuna değiştir:"
+
+msgid "Convert lat/lon as:"
+msgstr "Enlem/boylamı şuna dönüştür:"
+
+msgid ""
+"Or define a simple\n"
+"title format:"
+msgstr ""
+"Veya basit bir\n"
+"başlık biçimi tanımla:"
+
+msgid ""
+"Available variables: city, street, locality, parish, county, state, country, "
+"postal_code"
+msgstr ""
+"Kullanılabilir değişkenler: şehir, cadde, yerleşim yeri, mahalle, ilçe, "
+"eyalet, ülke, posta kodu"
+
+msgid ""
+"Delete to delete a row, Double-click on the row to edit place with changes "
+"pre-entered, \n"
+"Press Tab on a row or Google Maps button to see place on a map. Press Apply "
+"to do all changes automatically"
+msgstr ""
+"Sil düğmesine basarak bir satırı silin, önceden girilmiş değişikliklerle "
+"yeri düzenlemek için satıra çift tıklayın, \n"
+"bir satırda Tab tuşuna veya Google Haritalar düğmesine basarak yeri haritada "
+"görüntüleyin. Tüm değişiklikleri otomatik olarak uygulamak için Uygula "
+"düğmesine basın"

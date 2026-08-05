@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
-"PO-Revision-Date: 2026-04-28 18:11+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 msgid "Deep Connections Gramplet"
 msgstr "Dybe forbindelser Gramplet"
@@ -22,6 +22,41 @@ msgstr "Gramplet der viser et dybt slægtskab mellem aktiv og hovedpersoner"
 
 msgid "Deep Connections"
 msgstr "Dybe Slægtskaber"
+
+msgid "⏸ Pause"
+msgstr "⏸ Pause"
+
+msgid "Pause the current search"
+msgstr "Sæt den nuværende søgning på pause"
+
+msgid "▶ Continue"
+msgstr "▶ Fortsæt"
+
+msgid "Continue searching for more relations"
+msgstr "Tryk Fortsæt for at søge efter flere slægtskaber"
+
+msgid "📋 Copy"
+msgstr "📋 Kopiér"
+
+msgid "Copy selected people to clipboard"
+msgstr "Kopiér valgte personer til udklipsholderen"
+
+msgid "🗑 Clear"
+msgstr "🗑 Nulstil"
+
+msgid "Clear all results and reset"
+msgstr "Fjern alle resultater og nulstil"
+
+msgid "Ready to search"
+msgstr "Klar til at søge"
+
+#, python-brace-format
+msgid ""
+"Search Depth: {depth} | People Processed: {processed} | Queue Size: "
+"{queue_size}"
+msgstr ""
+"Søgedybde: {depth} | Personer behandlet: {processed} | Køstørrelse: "
+"{queue_size}"
 
 msgid "mentioned in note"
 msgstr "Nævnt i note"
@@ -50,8 +85,17 @@ msgstr ""
 "\n"
 "  %s af "
 
+msgid "Error: No Home Person set"
+msgstr "Fejl: Ingen proband valgt."
+
 msgid "No Active Person set."
 msgstr "Ingen aktive person valgt."
+
+msgid "Error: No Active Person set"
+msgstr "Fejl: Ingen aktiv person valgt"
+
+msgid "Initializing search..."
+msgstr "Initialiserer søgning..."
 
 msgid "Looking for relationship between\n"
 msgstr "Leder for slægtsskab mellem\n"
@@ -63,6 +107,9 @@ msgstr "  <b>%s</b> (Probanden) og\n"
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (Active Person)...\n"
+
+msgid "Searching for connections..."
+msgstr "Leder efter forbindelser..."
 
 #, python-format
 msgid ""
@@ -76,3 +123,26 @@ msgid ""
 msgstr ""
 "Pauset.\n"
 "Tryk Fortsæt for at søge efter flere slægtskaber.\n"
+
+msgid "Paused - Press Continue to search for more relations"
+msgstr "Pauset - Tryk Fortsæt for at søge efter flere slægtskaber"
+
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relation paths found."
+msgstr ""
+"\n"
+"Søgning afsluttet. %d slægtskabslinjer fundet."
+
+msgid "Search completed - {} relation paths found"
+msgstr "Søgning afsluttet - {} slægtskabslinjer fundet"
+
+msgid "Error during search: {}"
+msgstr "Fejl ved søgning: {}"
+
+msgid "Resuming search..."
+msgstr "Genoptager søgning…"
+
+msgid "Search interrupted by user"
+msgstr "Søgning afbrudt af bruger"

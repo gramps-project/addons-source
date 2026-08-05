@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
@@ -309,6 +309,29 @@ msgstr "Anneyi ekle"
 msgid "About Graph View"
 msgstr "Grafik Görünümü Hakkında"
 
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Kişiye (%s) etiket ekleme"
+
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Aileye etiket ekleme (%s)"
+
+#, python-format
+msgid "Deleting the person [%s] will remove it from the database."
+msgstr "[%s] kişisini silmek, onu veritabanından kaldıracaktır."
+
+#, python-format
+msgid "Delete family [%s]?"
+msgstr "[%s] ailesi silinsin mi?"
+
+msgid "Deleting the family will remove it from the database."
+msgstr "Aileyi silmek, onu veritabanından kaldıracaktır."
+
+#, python-format
+msgid "Delete Family [%s]"
+msgstr "Aileyi Sil [%s]"
+
 msgid "Dynamic and interactive graph of relations"
 msgstr "Dinamik ve etkileşimli ilişki grafiği"
 
@@ -332,3 +355,29 @@ msgstr "Genel (gri)"
 
 msgid "Generic (light)"
 msgstr "Genel (aydınlık)"
+
+msgid "Persons from current graph"
+msgstr "Mevcut grafikteki kişiler"
+
+msgid "Other persons from database"
+msgstr "Veritabanındaki diğer kişiler"
+
+msgid "No persons found..."
+msgstr "Kişi bulunamadı..."
+
+msgid ""
+"Search people in the current visible graph and database.\n"
+"Use <Ctrl+F> to make search entry active."
+msgstr ""
+"Mevcut görünür grafikte ve veritabanında kişileri arayın.\n"
+"Arama girişini etkinleştirmek için <Ctrl+F> tuşunu kullanın."
+
+msgid "Search..."
+msgstr "Ara..."
+
+#, python-format
+msgid "<b>%s:</b>"
+msgstr "<b>%s:</b>"
+
+msgid "Partners"
+msgstr "Partnerler"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,16 +12,68 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "Last Change Report"
+msgstr "Son Değişiklik Raporu"
+
+msgid "You must select at least one type of record."
+msgstr "En az bir kayıt türü seçmelisiniz."
+
+msgid "People Changed"
+msgstr "İnsanlar Değiştirildi"
+
+msgid "Changed On"
+msgstr "Değiştirildi"
+
+msgid "Families Changed"
+msgstr "Aileler Değiştirildi"
+
+msgid "Family Surname"
+msgstr "Aile Soyadı"
+
+#, python-format
+msgid "%s and %s"
+msgstr "%s ve %s"
+
+msgid "Events Changed"
+msgstr "Etkinlikler Değiştirildi"
+
+msgid "Places Changed"
+msgstr "Yerler Değiştirildi"
+
+msgid "Media Changed"
+msgstr "Medya Değiştirildi"
+
+msgid "Sources Changed"
+msgstr "Kaynaklar Değiştirildi"
+
 msgid "Notes Changed"
-msgstr "Notlar değişti"
+msgstr "Notlar Değiştirildi"
+
+msgid "Citations Changed"
+msgstr "Alıntılar Değiştirildi"
+
+msgid "Select From"
+msgstr "Şuradan seçin"
 
 msgid "The style used for the title of the page."
 msgstr "Sayfa başlığı için kullanılan stil."
 
+msgid "The style used for normal text"
+msgstr "Normal metin için kullanılan stil"
+
 msgid "changed on"
-msgstr "değişti"
+msgstr "değiştirildi"
+
+msgid "List the last ten person records that have been changed"
+msgstr "Son on kişi kaydında yapılan değişiklikleri listeleyin"
+
+msgid "Latest Changes"
+msgstr "Son Değişiklikler"
+
+msgid "Report of the last records that have been changed"
+msgstr "Değiştirilen son kayıtların raporu"

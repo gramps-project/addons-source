@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
@@ -20,8 +20,56 @@ msgstr ""
 msgid "Select filter to restrict people"
 msgstr "İnsanları listelemek için filtreyi seçin"
 
+msgid "Attribute type to add or edit"
+msgstr "Eklenecek veya düzenlenecek öznitelik türü"
+
+msgid "Attribute value to add or edit"
+msgstr "Eklenecek veya düzenlenecek öznitelik değeri"
+
+msgid "Remove attribute type and value set"
+msgstr "Öznitelik türü ve değer kümesini kaldır"
+
+msgid "Set Attribute"
+msgstr "Öznitelik Ayarla"
+
 msgid "Processing...\n"
 msgstr "İşleniyor...\n"
 
+msgid "Setting attributes..."
+msgstr "Öznitelikler ayarlanıyor..."
+
+#, python-format
+msgid ""
+"Setting '%s' attributes to '%s'...\n"
+"\n"
+msgstr ""
+"'%s' öznitelikleri '%s' olarak ayarlanıyor...\n"
+"\n"
+
+#, python-format
+msgid ""
+"\n"
+"Set %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"%d adet '%s' özniteliğini '%s' olarak ayarla\n"
+
+msgid "Remove Attribute"
+msgstr "Özniteliği Kaldır"
+
+msgid "Removing attributes..."
+msgstr "Öznitelikler kaldırılıyor..."
+
+#, python-format
+msgid ""
+"\n"
+"Removing %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"%d adet '%s' özniteliği '%s' olarak kaldırılıyor\n"
+
 msgid "Done!\n"
 msgstr "Bitti!\n"
+
+msgid "Set an attribute to a given value."
+msgstr "Belirli bir değere sahip bir öznitelik ayarlayın."

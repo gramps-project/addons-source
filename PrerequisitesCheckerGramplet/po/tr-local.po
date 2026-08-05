@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"POT-Creation-Date: 2026-08-01 09:23-0700\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,10 +12,152 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
+
+msgid "Prerequisites Checker"
+msgstr "Önkoşullar Denetleyicisi"
+
+msgid "Prerequisites Checker Gramplet"
+msgstr "Önkoşul Denetleyicisi Gramplet"
+
+msgid ""
+"Diagnostic Gramplet to help evaluate if <a href=\"https://gramps-project.org/"
+"\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
+"blob/master/README.md\">prerequisites</a> installed.\n"
+msgstr ""
+"<a href=\"https://gramps-project.org/\">Gramps</a>'ın tüm <a href=\"https://"
+"github.com/gramps-project/gramps/blob/master/README.md\">önkoşullarının</a> "
+"yüklü olup olmadığını değerlendirmeye yardımcı olan tanılama Gramplet'i.\n"
+
+msgid ""
+"Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
+"installed."
+msgstr ""
+"Gramps'in gerekli tüm önkoşullarının yüklü olup olmadığını değerlendirmeye "
+"yardımcı olan Tanılama Gramplet'i."
+
+msgid ""
+"\n"
+"<u><b>REQUIRED</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>ZORUNLU</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
+" (Requires the minimum version or greater.)</i>:\n"
+msgstr ""
+"<i>Aşağıdaki paketlerin kurulumu <b>KESİNLİKLE GEREKLİDİR</b>\n"
+" (En az belirtilen sürüm veya daha yenisini gerektirir.)</i>:\n"
+
+msgid ""
+"\n"
+"<u><b>RECOMMENDED</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>ÖNERİLEN</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
+"as necessary for Geography and Charts</i>:\n"
+msgstr ""
+"<i>Coğrafya ve Haritalar için gerekli olduğu durumlarda aşağıdaki paketlerin "
+"yüklenmesi <b>ŞİDDETLE ÖNERİLİR</b> </i>:\n"
+
+msgid ""
+"\n"
+"<u><b>Optional</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>İsteğe bağlı</b></u>\n"
+
+msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
+msgstr "<i>Aşağıdaki paketlerin yüklemeleri <b>isteğe bağlıdır</b></i>:\n"
+
+msgid "Gtkspell enables spell checking in the notes.\n"
+msgstr "Gtkspell notlarda yazım denetimi özelliğini etkinleştirir.\n"
+
+msgid ""
+"Python Image Library (PIL) is needed for cropping images and LaTeX output."
+msgstr ""
+"Resim kırpma ve LaTeX çıktısı için Python Resim Kütüphanesi (PIL) gereklidir."
+
+msgid ""
+"\n"
+"<u><b>Development & Translation Requirements</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Geliştirme ve Çeviri Gereksinimleri</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
+"intend to translate or do any development (addons etc.)</i>:\n"
+msgstr ""
+"<i>Çeviri yapmayı veya herhangi bir geliştirme (eklenti vb.) yapmayı "
+"planlıyorsanız aşağıdaki paketlerin yüklemeleri <b>ÖNERİLİR</b>:</i>\n"
+
+msgid ""
+"\n"
+"<u><b>Optional packages required by Third-party Addons</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Üçüncü taraf eklentiler tarafından gerekli olan isteğe bağlı paketler</"
+"b></u>\n"
+
+msgid ""
+"<i>Prerequistes required for the following <a href=\"https://gramps-"
+"project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
+"to work</i>:\n"
+msgstr ""
+"<i>Aşağıdaki <a href=\"https://gramps-project.org/wiki/index.php?title=Third-"
+"party_Addons\">Üçüncü Taraf Eklentilerinin</a> çalışması için gerekli ön "
+"koşullar</i>:\n"
+
+msgid ""
+"\n"
+"<u><b>Diagnostic checks</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Teşhis kontrolleri</b></u>\n"
+
+msgid "Check for potential issues.\n"
+msgstr "Olası sorunları kontrol edin.\n"
+
+msgid ""
+"\n"
+"Environment settings:\n"
+msgstr ""
+"\n"
+"Ortam ayarları:\n"
+
+msgid ""
+"\n"
+"\n"
+"<u><b>Locales available:</b></u>\n"
+msgstr ""
+"\n"
+"\n"
+"<u><b>Kullanılabilir yerel ayarlar:</b></u>\n"
+
+msgid ""
+"\n"
+"<u><b>Back Up Your Genealogy Files.</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Soy ağacı dosyalarınızı yedekleyin.</b></u>\n"
+
+msgid ""
+"If you have a reason to be checking Prerequisites, it is the right time to "
+"back up your genealogy files, and then test your backups!\n"
+"\n"
+msgstr ""
+"Önkoşulları kontrol etmeniz için bir nedeniniz varsa, soy ağacı "
+"dosyalarınızın yedeğini almanın ve ardından yedeklerinizi test etmenin tam "
+"zamanı!\n"
+"\n"
 
 msgid ""
 "<i><a href=\"https://gramps-project.org/wiki/index.php?"
@@ -34,6 +176,13 @@ msgstr ""
 "\n"
 
 msgid ""
+" • Backups can be made at any time and, at a minimum, on the first day of "
+"every month. But preferrably more often.\n"
+msgstr ""
+" • Yedeklemeler her zaman yapılabilir ve en azından her ayın ilk günü "
+"yapılmalıdır. Ancak daha sık yapılması tercih edilir.\n"
+
+msgid ""
 " • It is strongly recommended to backup each of your Family Trees before any "
 "upgrade.\n"
 msgstr ""
@@ -46,3 +195,230 @@ msgid ""
 msgstr ""
 " • Yeni bir Aile Ağacı oluşturarak ve ardından yedeklemeyi içe aktararak "
 "yedeklerinizi test edin."
+
+msgid ", is the most current version.\n"
+msgstr ", bu en güncel sürümdür.\n"
+
+#, python-format
+msgid ""
+"You have Gramps %s. Please make a backup and then upgrade.\n"
+"%s"
+msgstr ""
+"Gramps %s'ye sahipsiniz. Lütfen yedekleme yapın ve ardından yükseltme "
+"işlemini gerçekleştirin.\n"
+"%s"
+
+#, python-format
+msgid ""
+"You have Gramps %s installed; an unreleased development version. Thank you "
+"for contributing and testing; please report any issues. Backups are your "
+"friend.\n"
+msgstr ""
+"Gramps %s adlı, henüz yayınlanmamış bir geliştirme sürümünü yüklediniz. "
+"Katkılarınız ve testleriniz için teşekkür ederiz; lütfen herhangi bir sorun "
+"bildiriniz. Yedeklemeler her zaman işinize yarayacaktır.\n"
+
+#, python-format
+msgid "You have Gramps %s. Congratulations, you have the current version.\n"
+msgstr ""
+"%s sürümündeki Gramps'a sahipsiniz. Tebrikler, en güncel sürümü "
+"kullanıyorsunuz.\n"
+
+msgid " (Requires version "
+msgstr " (Yüklemesi gereken sürüm "
+
+msgid " or greater installed.)\n"
+msgstr " veya daha üst bir sürüm gerektirir.)\n"
+
+msgid " (Passed: version "
+msgstr " (Geçti: sürüm "
+
+msgid "unknown version"
+msgstr "bilinmeyen sürüm"
+
+msgid "DISPLAY not set"
+msgstr "ayarlanmamış veya"
+
+msgid " or greater.)\n"
+msgstr " daha yüksek.)\n"
+
+msgid " (Requires "
+msgstr " (Gereklidir "
+
+msgid " • Berkeley Database library (bsddb3: "
+msgstr " • Berkeley Veritabanı kütüphanesi (bsddb3: "
+
+msgid " • SQLite Database library (sqlite3: "
+msgstr " • SQLite Veritabanı kütüphanesi (sqlite3: "
+
+msgid " • xdg-utils (Manual check see instructions link)"
+msgstr " • xdg-utils (Manuel kontrol için talimatlar bağlantısına bakın)"
+
+msgid " • librsvg2 (Manual check see instructions link)"
+msgstr " • librsvg2 (Manuel kontrol için talimatlar bağlantısına bakın)"
+
+msgid ""
+" • language-pack-gnome-xx (Manual check see instructions link) for your "
+"Language <show locale here TBD>"
+msgstr ""
+" • language-pack-gnome-xx (Manuel kontrol, talimatlar bağlantısına bakın) "
+"Diliniz için <yerel ayarı burada göster TBD>"
+
+msgid " or greater installed.)"
+msgstr " veya daha üstü yüklü.)"
+
+msgid " or greater)"
+msgstr " veya daha büyük)"
+
+msgid "Graphviz not in system PATH"
+msgstr "Graphviz sistem YOLUNDA değil"
+
+msgid "Ghostscript not in system PATH"
+msgstr "Ghostscript sistem YOLUNDA değil"
+
+msgid " (Passed: version 0.5.x is installed.)"
+msgstr " (Başarılı: 0.5.x sürümü yüklü.)"
+
+msgid " (Requires version 0.5.x)"
+msgstr " (0.5.x sürümü gereklidir)"
+
+msgid " • python-fontconfig not found, (Requires version 0.5.x)"
+msgstr " • python-fontconfig bulunamadı, (0.5.x sürümü gereklidir)"
+
+msgid " • python-fontconfig installed, version unavailable"
+msgstr " • python-fontconfig yüklü, sürüm bilgisi mevcut değil"
+
+msgid " or greater installed.) (enchant module: "
+msgstr " veya daha üstü kurulu.) (büyü modülü: "
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+" • rcs %s TBD (Geçti: %s veya daha üstü sürüm yüklü. Microsoft Windows'ta "
+"değilse)"
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+" • rcs %s TBD (Microsoft Windows'da yüklü değilse, %s veya daha üst bir "
+"sürümün kurulu olması gerekir)"
+
+msgid "exiv2 executable not installed, can't retrieve libexiv2 version."
+msgstr "exiv2 yürütülebilir dosyası yüklü değil, libexiv2 sürümü alınamıyor."
+
+#, python-format
+msgid "GExiv2 : %s (Exiv2 library : %s)"
+msgstr "GExiv2 : %s (Exiv2 kütüphanesi : %s)"
+
+msgid "found another font"
+msgstr "başka bir yazı tipi bulundu"
+
+msgid ""
+"For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
+"white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
+msgstr ""
+"Networkchart eklentisi için <a href=\"https://www.fontsquirrel.com/fonts/"
+"white-rabbit\">White Rabbit</a> yazı tipi son derece okunaklı bir sonuç "
+"sağlar.\n"
+
+msgid "not installed"
+msgstr "yüklenmedi"
+
+msgid "     and one of either: (pydotplus: "
+msgstr "     ve bunlardan biri: (pydotplus: "
+
+msgid ") or (pygraphviz: "
+msgstr ") veya (pygraphviz: "
+
+msgid "Installed(MS-Windows)"
+msgstr "Yüklü (MS-Windows)"
+
+msgid "Installed(Linux/Mac)"
+msgstr "Yüklü (Linux/Mac)"
+
+msgid "not installed "
+msgstr "yüklenmedi "
+
+msgid "not found."
+msgstr "bulunamadı."
+
+msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
+msgstr ""
+"Standart. Geçti: program yüklü - 64 bit Windows işletim sisteminde 32 bit."
+
+msgid ") (Requires the gramps addon listed under 'Plugin lib')"
+msgstr ""
+") ('Eklenti kütüphanesi' altında listelenen gramps eklentisini gerektirir)"
+
+msgid "DBF installed"
+msgstr "DBF yüklü"
+
+msgid ".)(Requires version "
+msgstr ".)(Sürüm gerektirir "
+
+msgid " installed.)(Passed: version "
+msgstr " yüklü.)(Geçti: sürüm "
+
+#, python-format
+msgid "(OpenCV facedetection: %s)"
+msgstr "(OpenCV yüz algılama: %s)"
+
+msgid " (lxml: not found. Requires version "
+msgstr " (lxml: bulunamadı. Sürüm gerektirir "
+
+msgid " • Requires: MongoDB TBD / pymongo TBD"
+msgstr " • Gerektirir: MongoDB TBD / pymongo TBD"
+
+#, python-format
+msgid " • Operating System: %s"
+msgstr " • İşletim Sistemi: %s"
+
+msgid ""
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
+"a></b></u>\n"
+msgstr ""
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Yerel Ayarlar:</"
+"a></b></u>\n"
+
+msgid "not set"
+msgstr "ayarlanmadı"
+
+msgid "not tested"
+msgstr "test edilmedi"
+
+msgid ""
+"\n"
+"Installed Locales\\Translations (If only English is listed please re-install "
+"Gramps again and make sure to select all the Translations and Dictionaries)\n"
+"\n"
+msgstr ""
+"\n"
+"Yüklü Yerel Ayarlar\\Çeviriler (Yalnızca İngilizce listeleniyorsa lütfen "
+"Gramps'i yeniden yükleyin ve tüm Çeviriler ile Sözlükleri seçtiğinizden emin "
+"olun)\n"
+"\n"
+
+msgid ""
+"\n"
+"Gramps Environment variables:\n"
+msgstr ""
+"\n"
+"Gramps Ortam değişkenleri:\n"
+
+msgid "found"
+msgstr "bulundu"
+
+msgid ""
+"Sphinx is a tool that builds the Gramps development documentation and man "
+"pages\n"
+msgstr ""
+"Sphinx, Gramps geliştirme belgelerini ve kılavuz sayfalarını oluşturan bir "
+"araçtır\n"

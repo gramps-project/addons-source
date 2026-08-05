@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-26 17:40+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Select filter to restrict people"
@@ -175,6 +175,10 @@ msgstr "Poistetaan '%s'..."
 msgid "done!\n"
 msgstr "valmis!\n"
 
+#, python-format
+msgid "Skipped %d people due to errors (see log).\n"
+msgstr "%d henkilöä ohitettiin virheiden vuoksi (katso loki).\n"
+
 msgid ""
 "Selecting... \n"
 "\n"
@@ -229,6 +233,10 @@ msgstr " Tehty! Talletetaan ..."
 #, python-format
 msgid "Added %d events."
 msgstr "%d tapahtumaa lisätty."
+
+#, python-format
+msgid " (Skipped %d rows due to errors; see log.)"
+msgstr " (%d riviä ohitettu virheiden vuoksi; katso loki.)"
 
 msgid "Estimated date"
 msgstr "Arvioitu päivä"

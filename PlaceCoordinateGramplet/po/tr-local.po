@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,13 +12,96 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "The place was not found. You may clarify the search keywords."
+msgstr "Yer bulunamadı. Arama anahtar kelimelerini netleştirebilirsiniz."
+
+msgid "Failed to search for the coordinates due to some unexpected error."
+msgstr "Beklenmedik bir hata nedeniyle koordinat araması başarısız oldu."
+
+msgid "The place was not found."
+msgstr "Yer bulunamadı."
+
+msgid "The place was not identified."
+msgstr "Yer tanımlanamadı."
+
+msgid "Coordinates were not given."
+msgstr "Koordinatlar verilmedi."
+
+msgid "Failed to interpret the input format."
+msgstr "Giriş biçimi yorumlanamadı."
+
+#, python-brace-format
+msgid "DB entry [{id}] {name}:"
+msgstr "Veritabanı girişi [{id}] {name}:"
+
+msgid "Nothing has been searched yet"
+msgstr "Henüz hiçbir şey aranmadı"
+
+msgid "No place is active"
+msgstr "Etkin yer yok"
+
+msgid "Place Coordinate Gramplet view"
+msgstr "Yer Koordinatları Gramplet görünümü"
+
+msgid "View for the place coordinate gramplet."
+msgstr "Yer koordinatları gramplet görünümü."
+
 msgid "Place and Coordinates"
 msgstr "Yer ve Koordinatlar"
 
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr "Bir yerin koordinatlarını ayarlamayı basitleştiren gramplet"
+
 msgid "Place Coordinates"
 msgstr "Yer Koordinatları"
+
+msgid "Place Coordinate Gramplet"
+msgstr "Yer Koordinatları Grampleti"
+
+msgid "Map Menu"
+msgstr "Harita Menüsü"
+
+msgid "Add city as place"
+msgstr "Şehri yer olarak ekle"
+
+msgid "Add addess as place"
+msgstr "Adresi yer olarak ekle"
+
+msgid "Search for:"
+msgstr "Aranacak yer:"
+
+msgid "Found place:"
+msgstr "Bulunan yer:"
+
+msgid "No DB entry is selected"
+msgstr "Seçili veritabanı girişi yok"
+
+msgid "Postal-Code:"
+msgstr "Posta Kodu:"
+
+msgid "Show found place externally in Google Maps"
+msgstr "Bulunan yeri Google Haritalarda harici olarak göster"
+
+msgid ""
+"Take last clicked position\n"
+"from Geography map"
+msgstr ""
+"Coğrafya haritasından\n"
+"en son tıklanan konumu al"
+
+msgid "Search location from DB"
+msgstr "Veritabanından konum ara"
+
+msgid "Apply geo location to Database"
+msgstr "Coğrafi konumu veritabanına uygula"
+
+msgid "Go"
+msgstr "Git"
+
+msgid "Show help"
+msgstr "Yardımı göster"

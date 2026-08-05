@@ -21,23 +21,8 @@ msgstr "Bursdager"
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "en gramplet som viser bursdager for levende personer"
 
-msgid "No Family Tree loaded."
-msgstr "Ingen slektstre lastet."
-
-msgid "Sort birthdays by"
-msgstr "Sorter bursdager etter"
-
-msgid "Month and day"
-msgstr "Måned og dag"
-
-msgid "Proximity to current date"
-msgstr "Nærhet til gjeldende dato"
-
 msgid "Ignore birthdays with tag"
 msgstr "Ignorer bursdager med merke"
 
 msgid "Only show birthdays with tag"
 msgstr "Vis kun bursdager med merke"
-
-msgid "Processing..."
-msgstr "Behandling..."

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,10 +12,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+#, python-format
+msgid "Number of %s's descendants"
+msgstr "%s öğesinin soyundan gelenlerinin sayısı"
+
 msgid "Generation"
 msgstr "Nesil"
+
+msgid "Seen"
+msgstr "Görülen"
+
+msgid "Outlived"
+msgstr "Ömrü boyunca hayatta kalan"
+
+msgid "Now alive"
+msgstr "Şu anda hayatta olan"
+
+#, python-format
+msgid "Seen = number of descendants whose birth %s has lived to see"
+msgstr "Görülen = %s öğesinin doğumunu gördüğü soyundan gelenlerin sayısı"
+
+#, python-format
+msgid "Outlived = number of descendants who died while %s was still alive"
+msgstr ""
+"Ömrü boyunca hayatta kalanlar = %s hayattayken ölen soyundan gelenlerin "
+"sayısı"
+
+msgid "Number of descendants"
+msgstr "Soydan gelen sayısı"
+
+msgid "Shows the number of descendants of the current person"
+msgstr "Mevcut kişinin soyundan gelenlerin sayısını gösterir"

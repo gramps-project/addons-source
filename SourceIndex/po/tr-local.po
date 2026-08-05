@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 23:40+0000\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
@@ -20,17 +20,235 @@ msgstr ""
 msgid "Sources Index"
 msgstr "Kaynaklar Dizini"
 
+msgid "BirthIndex"
+msgstr "Doğum Dizini"
+
+msgid "MarriageIndex"
+msgstr "Evlilik Dizini"
+
+msgid "DeathIndex"
+msgstr "Ölüm Dizini"
+
+msgid "CensusIndex"
+msgstr "Nüfus Sayımı Dizini"
+
+msgid "SourceIndex"
+msgstr "Kaynak Dizini"
+
+msgid "*** Error: Must install either ElementTree or lxml."
+msgstr "*** Hata: ElementTree veya lxml yüklenmelidir."
+
+msgid "must install either ElementTree or lxml"
+msgstr "ElementTree veya lxml yüklenmelidir"
+
+msgid "index"
+msgstr "dizin"
+
+msgid "_File"
+msgstr "_Dosya"
+
+msgid "Import CSV"
+msgstr "CSV İçe Aktar"
+
+msgid "Display all"
+msgstr "Tümünü görüntüle"
+
+msgid "Display only births"
+msgstr "Yalnızca doğumları görüntüle"
+
+msgid "Births/Baptisms"
+msgstr "Doğumlar/Vaftizler"
+
+msgid "Display only marriages"
+msgstr "Yalnızca evlilikleri görüntüle"
+
+msgid "Marriages/Families"
+msgstr "Evlilikler/Aileler"
+
+msgid "Display only deaths"
+msgstr "Yalnızca ölümleri görüntüle"
+
+msgid "Deaths/Burials"
+msgstr "Ölümler/Definler"
+
+msgid "Display only censuses"
+msgstr "Yalnızca nüfus sayımlarını görüntüle"
+
+msgid "Censuses"
+msgstr "Nüfus sayımları"
+
+msgid "About this utility."
+msgstr "Bu yardımcı program hakkında."
+
+msgid "About dialog"
+msgstr "Hakkında iletişim kutusu"
+
+msgid "New birth or baptism"
+msgstr "Yeni doğum veya vaftiz"
+
+msgid "add birth act"
+msgstr "doğum kaydı ekle"
+
+msgid "New marriage"
+msgstr "Yeni evlilik"
+
+msgid "add marriage act"
+msgstr "evlilik kaydı ekle"
+
+msgid "New death or burial"
+msgstr "Yeni ölüm veya defin"
+
+msgid "add death act"
+msgstr "ölüm kaydı ekle"
+
+msgid "New census"
+msgstr "Yeni nüfus sayımı"
+
+msgid "add census"
+msgstr "nüfus sayımı ekle"
+
+msgid "Select a birth source"
+msgstr "Bir doğum kaynağı seçin"
+
+msgid "birth"
+msgstr "doğum"
+
+msgid "Select a marriage source"
+msgstr "Bir evlilik kaynağı seçin"
+
+msgid "Select a death source"
+msgstr "Bir ölüm kaynağı seçin"
+
+msgid "Select a census source"
+msgstr "Bir nüfus sayımı kaynağı seçin"
+
+msgid "census"
+msgstr "nüfus sayımı"
+
+msgid "Select a repository storing a source"
+msgstr "Bir kaynak saklayan depo seçin"
+
+msgid "repositories"
+msgstr "depolar"
+
+msgid "Selected view"
+msgstr "Seçilen görünüm"
+
+msgid ""
+"Records transcriptions ... births/deaths/marriages/censuses with common "
+"fields: id, repository, person name, birth date and place, parents."
+msgstr ""
+"Kayıt dökümleri ... doğumlar/ölümler/evlilikler/nüfus sayımları için ortak "
+"alanlar: kimlik, depo, kişi adı, doğum tarihi ve yeri, ebeveynler."
+
+msgid "Info:"
+msgstr "Bilgi:"
+
+msgid "Death act:"
+msgstr "Ölüm kaydı:"
+
 msgid "Reference:"
 msgstr "Referans:"
 
 msgid "Volume:"
 msgstr "Cilt:"
 
+msgid "<b>Death act</b>"
+msgstr "<b>Ölüm kaydı</b>"
+
+msgid "First name:"
+msgstr "İlk adı:"
+
 msgid "Age:"
 msgstr "Yaş:"
 
+msgid "<b>Image</b>"
+msgstr "<b>Resim</b>"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Depo</b>"
+
+msgid "<b>Data person</b>"
+msgstr "<b>Kişi verileri</b>"
+
+msgid "Origin:"
+msgstr "Köken:"
+
+msgid "Occupation:"
+msgstr "Meslek:"
+
+msgid "Live:"
+msgstr "Yaşıyor:"
+
+msgid "<b>Witness:</b>"
+msgstr "<b>Tanık:</b>"
+
+msgid "Birth date:"
+msgstr "Doğum tarihi:"
+
+msgid "Birth place:"
+msgstr "Doğum yeri:"
+
+msgid "Note:"
+msgstr "Not:"
+
+msgid "Spouse name:"
+msgstr "Eşinin adı:"
+
+msgid "Marriage date:"
+msgstr "Evlilik tarihi:"
+
+msgid "Marriage place:"
+msgstr "Evlilik yeri:"
+
+msgid "<b>Data mother</b>"
+msgstr "<b>Anne verileri</b>"
+
+msgid "<b>Data father</b>"
+msgstr "<b>Baba verileri</b>"
+
+msgid "<b>Spouse</b> "
+msgstr "<b>Eş</b> "
+
+msgid "alive"
+msgstr "hayatta"
+
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"tanık1, ad, verilen ad, yaş, meslek; tanık2, ad, verilen ad, yaş, meslek, "
+"vb ..."
+
+msgid "witness"
+msgstr "tanık"
+
+msgid "<b>Witness</b>"
+msgstr "<b>Tanık</b>"
+
+msgid "Names:"
+msgstr "Adlar:"
+
+msgid "First names:"
+msgstr "İlk adlar:"
+
+msgid "<b>Census</b>"
+msgstr "<b>Nüfus sayımı</b>"
+
+msgid "Death date:"
+msgstr "Ölüm tarihi:"
+
 msgid "Death place:"
 msgstr "Ölüm yeri:"
+
+msgid "Family status:"
+msgstr "Aile durumu:"
+
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr "sıra, kişi, soyadı, verilen ad, yaş, durum, meslek, vb ..."
+
+msgid "Birth act:"
+msgstr "Doğum kaydı:"
 
 msgid ""
 "Volume\n"
@@ -44,3 +262,171 @@ msgstr "Kaynak başlığı"
 
 msgid "The volume or page of this source"
 msgstr "Bu kaynağın cilt numarası veya sayfası"
+
+msgid "select the gender/sex"
+msgstr "Cinsi/cinsiyeti seçin"
+
+msgid "The names of the main person written into the source"
+msgstr "Kaynakta adı geçen ana kişinin adı"
+
+msgid "The first names of the main person written into the source"
+msgstr "Kaynakta yer alan ana kişinin ilk adları"
+
+msgid "Other:"
+msgstr "Diğer:"
+
+msgid "Repository title"
+msgstr "Depo başlığı"
+
+msgid "<b><i>Repository</i></b>"
+msgstr "<b><i>Depo</i></b>"
+
+msgid ""
+"Spouse\n"
+"names:"
+msgstr ""
+"Eş\n"
+"adları:"
+
+msgid ""
+"Marriage\n"
+"date:"
+msgstr ""
+"Evlilik\n"
+"tarihi:"
+
+msgid ""
+"Death\n"
+"date:"
+msgstr ""
+"Ölüm\n"
+"tarihi:"
+
+msgid ""
+"<b>Witness\n"
+"Godfather\n"
+"Godmother:</b>"
+msgstr ""
+"<b>Şahit\n"
+"Vaftiz babası\n"
+"Vaftiz annesi:</b>"
+
+msgid "Call number:"
+msgstr "Çağrı numarası:"
+
+msgid "The call number into the repository"
+msgstr "Depoya çağrı numarası"
+
+msgid "<b><i>Data person</i></b>"
+msgstr "<b><i>Kişisel veriler</i></b>"
+
+msgid "<b><i>Data margin</i></b>"
+msgstr "<b><i>Veri kenar boşluğu</i></b>"
+
+msgid "<b><i>Data father</i></b>"
+msgstr "<b><i>Baba verileri</i></b>"
+
+msgid "<b><i>Data mother</i></b>"
+msgstr "<b><i>Anne verileri</i></b>"
+
+msgid ""
+"witness1, name, given, age, occupation;\n"
+"witness2, name, given, age, occupation;\n"
+"godfather, name, given, age, occupation;\n"
+"etc ..."
+msgstr ""
+"tanık1, ad, verilen ad, yaş, meslek;\n"
+"tanık2, ad, verilen ad, yaş, meslek;\n"
+"vaftiz babası, ad, verilen ad, yaş, meslek;\n"
+"vb ..."
+
+msgid ""
+"Marriage\n"
+"place:"
+msgstr ""
+"Evlilik\n"
+"yeri:"
+
+msgid ""
+"Death\n"
+"place:"
+msgstr ""
+"Ölüm\n"
+"yeri:"
+
+msgid ""
+"Birth\n"
+"place:"
+msgstr ""
+"Doğum\n"
+"yeri:"
+
+msgid "Origine:"
+msgstr "Köken:"
+
+msgid "<b><i>Citation</i></b>"
+msgstr "<b><i>Alıntı</i></b>"
+
+msgid "<b><i>Source</i></b>"
+msgstr "<b><i>Kaynak</i></b>"
+
+msgid "Marriage act:"
+msgstr "Evlilik kaydı:"
+
+msgid "m. date:"
+msgstr "evlilik tarihi:"
+
+msgid "m. place:"
+msgstr "evlilik yeri:"
+
+msgid "d.contract:"
+msgstr "sözleşme tarihi:"
+
+msgid "dates banns:"
+msgstr "ilan tarihleri:"
+
+msgid "p.contract:"
+msgstr "sözleşme yeri:"
+
+msgid "places banns:"
+msgstr "ilan yerleri:"
+
+msgid "<b>Data union</b>"
+msgstr "<b>Birlik verileri</b>"
+
+msgid "<b>Marriage act</b>"
+msgstr "<b>Evlilik kaydı</b>"
+
+msgid ""
+"<b>Data father\n"
+"spouse1</b>"
+msgstr ""
+"<b>Baba verileri\n"
+"eş1</b>"
+
+msgid ""
+"<b>Data mother\n"
+"spouse1</b>"
+msgstr ""
+"<b>Anne verileri\n"
+"eş1</b>"
+
+msgid ""
+"<b>Data mother\n"
+"spouse2</b>"
+msgstr ""
+"<b>Anne verilei\n"
+"eş2</b>"
+
+msgid ""
+"<b>Data father\n"
+"spouse2</b>"
+msgstr ""
+"<b>Baba verileri\n"
+"eş2</b>"
+
+msgid "<b>Data spouse1</b>"
+msgstr "<b>Eş1 verileri</b>"
+
+msgid "<b>Data spouse2</b>"
+msgstr "<b>Eş2 verileri</b>"

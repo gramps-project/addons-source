@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-02 18:04+0000\n"
+"POT-Creation-Date: 2026-07-31 17:35+0200\n"
+"PO-Revision-Date: 2026-08-03 04:02+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Webb-synkronisering"
@@ -20,19 +20,20 @@ msgstr "Gramps Webb-synkronisering"
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Synkroniserar en lokal databas med en Gramps Webbinstans."
 
-msgid "Your user does not have sufficient server permissions to use sync."
+#, python-format
+msgid ""
+"The system keyring could not be used. Snap confinement blocks access until "
+"you run: %s"
 msgstr ""
-"Din användare har inte tillräckliga serverbehörigheter för att använda "
-"synkronisering."
+"Systemnyckelringen kunde inte användas. Snap-begränsning blockerar åtkomst "
+"tills du kör: %s"
 
-msgid "Fetching remote data..."
-msgstr "Hämtar fjärrdata..."
-
-msgid "Unexpected error while applying changes."
-msgstr "Oväntat fel vid tillämpning av ändringar."
-
-msgid "Media files are in sync."
-msgstr "Mediefiler är synkroniserade."
+msgid ""
+"The system keyring could not be used. You will need to enter your password "
+"each time."
+msgstr ""
+"Systemnyckelringen kunde inte användas. Du måste ange ditt lösenord varje "
+"gång."
 
 msgid "Authentication failed. Please check your username and password."
 msgstr ""
@@ -50,10 +51,6 @@ msgstr "För många förfrågningar, försök igen om några sekunder."
 msgid "GrampsWeb tree is disabled."
 msgstr "GrampsWeb-trädet är inaktiverat."
 
-#, python-format
-msgid "Server error %s. Please check your connection."
-msgstr "Server-fel %s. Kontrollera din anslutning."
-
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr ""
 "Anslutningen misslyckades. Kontrollera URL:en och din internetanslutning."
@@ -61,41 +58,48 @@ msgstr ""
 msgid "Invalid server response. Please check the URL."
 msgstr "Ogiltigt serversvar. Kontrollera URL:en."
 
-#, python-format
-msgid "Unexpected error: %s"
-msgstr "Oväntat fel: %s"
-
-msgid "Error accessing media object."
-msgstr "Fel vid åtkomst till medieobjektet."
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"Din användare har inte tillräckliga serverbehörigheter för att använda "
+"synkronisering."
 
 msgid "Failed importing downloaded XML file."
 msgstr "Misslyckades med att importera den nedladdade XML-filen."
-
-msgid "Comparing local and remote data..."
-msgstr "Jämför lokala- och fjärrdata..."
-
-msgid "Server authorization error."
-msgstr "Serverauktoriseringsfel."
-
-msgid "Server authorization error: insufficient permissions."
-msgstr "Serverauktoriseringsfel: otillräckliga behörigheter."
-
-msgid "Error: URL not found."
-msgstr "Fel: URL inte hittad."
 
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr ""
 "Det gick inte att synkronisera ändringar till servern: objekt har ändrats."
 
+msgid "Unexpected error while applying changes."
+msgstr "Oväntat fel vid tillämpning av ändringar."
+
+msgid ""
+"The family tree was modified while the changes were being reviewed. Nothing "
+"has been applied. Please compare again."
+msgstr ""
+"Släktträdet ändrades medan ändringarna granskades. Ingenting har tillämpats. "
+"Jämför igen."
+
 #, python-format
-msgid "Error %s while connecting to server."
-msgstr "Fel %s vid anslutning till servern."
+msgid "The server could not apply the changes: %s"
+msgstr "Servern kunde inte tillämpa ändringarna: %s"
 
-msgid "URL error while connecting to server."
-msgstr "URL-fel vid anslutning till servern."
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "Server-fel %s. Kontrollera din anslutning."
 
-msgid "Unable to synchronize changes to server."
-msgstr "Det gick inte att synkronisera ändringarna med servern."
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Oväntat fel: %s"
+
+msgid "Fetching remote data..."
+msgstr "Hämtar fjärrdata..."
+
+msgid "Comparing local and remote data..."
+msgstr "Jämför lokala- och fjärrdata..."
+
+msgid "Successfully applied changes to local database."
+msgstr "Ändringarna har tillämpats i den lokala databasen."
 
 msgid "Continue without transport encryption?"
 msgstr "Fortsätta utan transportkryptering?"
@@ -144,6 +148,33 @@ msgstr ""
 msgid "Server URL: "
 msgstr "Server URL: "
 
+msgid "Error:"
+msgstr "Fel:"
+
+msgid "Sync mode"
+msgstr "Synkroniseringsläge"
+
+msgid ""
+"Changes from both sides are combined. Objects edited in both places are "
+"merged."
+msgstr ""
+"Förändringar från båda sidor kombineras. Objekt som redigerats på båda "
+"ställena slås samman."
+
+msgid ""
+"The server is made to match this computer. Anything changed only on the "
+"server is discarded."
+msgstr ""
+"Servern är gjord för att matcha den här datorn. Allt som ändras endast på "
+"servern kasseras."
+
+msgid ""
+"This computer is made to match the server. Anything changed only here is "
+"discarded."
+msgstr ""
+"Den här datorn är gjord för att matcha servern. Allt som ändras endast här "
+"kasseras."
+
 msgid "Bidirectional Synchronization"
 msgstr "Dubbelriktad synkronisering"
 
@@ -153,8 +184,8 @@ msgstr "Återställ fjärr till lokalt läge"
 msgid "Reset local to remote"
 msgstr "Återställ lokalt till fjärrläge"
 
-msgid "Merge"
-msgstr "Slå samman"
+msgid "Warning:"
+msgstr "Varning:"
 
 msgid "Local changes"
 msgstr "Lokala ändringar"
@@ -186,11 +217,66 @@ msgstr "Tillämpar ändringar i fjärrdatabasen ..."
 msgid "No changes to apply to remote database."
 msgstr "Inga ändringar som ska tillämpas på fjärrdatabasen."
 
-msgid "Successfully applied changes to local database."
-msgstr "Ändringarna har tillämpats i den lokala databasen."
-
 msgid "Missing locally"
 msgstr "Saknas lokalt"
 
 msgid "Missing remotely"
 msgstr "Saknas på distans"
+
+#, python-format
+msgid "Downloading %s media file"
+msgid_plural "Downloading %s media files"
+msgstr[0] "Laddar ner %s mediefil"
+msgstr[1] "Laddar ner %s mediefiler"
+
+#, python-format
+msgid "Uploading %s media file"
+msgid_plural "Uploading %s media files"
+msgstr[0] "Laddar upp %s mediefil"
+msgstr[1] "Laddar upp %s mediefiler"
+
+msgid "Try again"
+msgstr "Försök igen"
+
+#, python-format
+msgid "Applied %s change."
+msgid_plural "Applied %s changes."
+msgstr[0] "Tillämpade %s ändring."
+msgstr[1] "Tillämpade %s ändringar."
+
+msgid "Media files are in sync."
+msgstr "Mediefiler är synkroniserade."
+
+#, python-format
+msgid "%s media file is missing on both sides and could not be transferred."
+msgid_plural ""
+"%s media files are missing on both sides and could not be transferred."
+msgstr[0] "%s mediafil saknas på båda sidor och kunde inte överföras."
+msgstr[1] "%s mediafiler saknas på båda sidor och kunde inte överföras."
+
+msgid "Both trees are already in sync."
+msgstr "Båda träden är redan synkroniserade."
+
+#, python-format
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "Laddade ner %s mediefil med lyckat resultat."
+msgstr[1] "Laddade ner %s mediefiler med lyckat resultat."
+
+#, python-format
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "%s fel uppstod under nedladdningen."
+msgstr[1] "%s fel uppstod under nedladdningen."
+
+#, python-format
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "Laddade upp %s mediefil med lyckat resultat."
+msgstr[1] "Laddade upp %s mediefiler med lyckat resultat."
+
+#, python-format
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "%s fel uppstod under uppladdningen."
+msgstr[1] "%s fel uppstod under uppladdningen."

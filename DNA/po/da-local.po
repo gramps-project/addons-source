@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 msgid "Chromosome "
 msgstr "Kromosom "
@@ -22,6 +22,12 @@ msgstr " Kort for"
 
 msgid "Chr"
 msgstr "Kr"
+
+msgid "Legend"
+msgstr "Tegnforklaring"
+
+msgid ": Grandparent"
+msgstr ":Bedsteforælder"
 
 #, python-brace-format
 msgid ""
@@ -36,12 +42,31 @@ msgstr ""
 msgid " SNPs"
 msgstr " SNPs"
 
+msgid " : Starts at "
+msgstr " : Begynder ved "
+
 msgid " and ends at "
 msgstr " og slutter ved "
+
+#, python-brace-format
+msgid "{0}"
+msgstr "{0}"
 
 #, python-format
 msgid "%(ancestor1)s and %(ancestor2)s"
 msgstr "%(ancestor1)s og %(ancestor2)s"
+
+#, python-brace-format
+msgid ""
+"\n"
+"Relationship: {0} "
+msgstr ""
+"\n"
+"Slægtskab:{0} "
+
+#, python-brace-format
+msgid " Ancestor: {0}"
+msgstr " Ane:{0}"
 
 msgid ""
 "Click to make this person active\n"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-04 00:00-0000\n"
-"PO-Revision-Date: 2025-03-02 14:58+0000\n"
+"PO-Revision-Date: 2026-05-17 15:49+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,25 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 msgid "Date of Death"
 msgstr "Datum smrti"
-
-msgid "a gramplet that displays death dates in sorted order"
-msgstr "gramplet koji prikazuje datume smrti poredane"
-
-msgid "No Family Tree loaded."
-msgstr "Nije učitano obiteljsko stablo."
-
-msgid "Sort dates of death by"
-msgstr "Poredaj datume smrti prema"
-
-msgid "Month and day"
-msgstr "Mjesec i dan"
-
-msgid "Proximity to current date"
-msgstr "Blizina trenutnog datuma"
-
-msgid "Processing..."
-msgstr "Obrađujem…"

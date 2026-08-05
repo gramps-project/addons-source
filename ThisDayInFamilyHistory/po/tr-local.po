@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,14 +12,463 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
+
+msgid "This Day in Family History"
+msgstr "Aile Tarihinde Bugün"
 
 msgid ""
 "A configurable program that shows you the connected events from your family "
 "tree that match today's day and month."
 msgstr ""
-"Aile ağacınızdaki bugünün günü ve ayına denk gelen bağlantılı olayları "
+"Aile ağacınızdaki bugünün günü ve ayına denk gelen bağlantılı etkinlikleri "
 "gösteren, yapılandırılabilir bir program."
+
+msgid "Database is not open, can't check history right now."
+msgstr "Veritabanı açık değil, şu anda geçmişi kontrol edemiyorum."
+
+#, python-format
+msgid "On %(date)s in family history ...\n"
+msgstr "%(date)s tarihinde aile geçmişinde ...\n"
+
+msgid "... nothing happened!  Check again tomorrow!"
+msgstr "... hiçbir şey olmadı!  Yarın tekrar kontrol edin!"
+
+msgid "Report only living tree members"
+msgstr "Yalnızca yaşayan ağaç üyelerini rapor edin"
+
+msgid "Show these events"
+msgstr "Bu etkinlikleri göster"
+
+msgid "Sort by "
+msgstr "Şuna göre sırala "
+
+msgid "Sort in ascending order?"
+msgstr "Artan düzende sıralansın mı?"
+
+msgid "January"
+msgstr "Ocak"
+
+msgid "February"
+msgstr "Şubat"
+
+msgid "March"
+msgstr "Mart"
+
+msgid "April"
+msgstr "Nisan"
+
+msgid "May"
+msgstr "Mayıs"
+
+msgid "June"
+msgstr "Haziran"
+
+msgid "July"
+msgstr "Temmuz"
+
+msgid "August"
+msgstr "Ağustos"
+
+msgid "September"
+msgstr "Eylül"
+
+msgid "October"
+msgstr "Ekim"
+
+msgid "November"
+msgstr "Kasım"
+
+msgid "December"
+msgstr "Aralık"
+
+msgid "Person Name"
+msgstr "Kişi Adı"
+
+msgid "Event Year"
+msgstr "Etkinlik Yılı"
+
+msgid "gregorian"
+msgstr "Gregoryen"
+
+msgid "Unknown father/partner"
+msgstr "Bilinmeyen baba/partner"
+
+msgid "Unknown mother/partner"
+msgstr "Bilinmeyen anne/partner"
+
+msgid " and "
+msgstr " ve "
+
+msgid "unknown participant"
+msgstr "bilinmeyen katılımcı"
+
+msgid "unknown location"
+msgstr "bilinmeyen konum"
+
+#, python-format
+msgid "%(male_name)s was adopted in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda evlat edinildi."
+
+#, python-format
+msgid "%(female_name)s was adopted in %(year)s at %(place)s."
+msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda evlat edinildi."
+
+#, python-format
+msgid "%(male_name)s was christened in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumundda vaftiz edildi."
+
+#, python-format
+msgid "%(female_name)s was christened in %(year)s at %(place)s."
+msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda vaftiz edildi."
+
+#, python-format
+msgid "%(male_name)s was married in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda evlendi."
+
+#, python-format
+msgid "%(female_name)s was married in %(year)s at %(place)s."
+msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda evlendi."
+
+#, python-format
+msgid "%(male_name)s received an annulment in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s, %(year)s yılında %(place)s konumunda evliliğinin iptal "
+"kararını aldı."
+
+#, python-format
+msgid "%(female_name)s received an annulment in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda evliliğinin iptal "
+"kararını aldı."
+
+#, python-format
+msgid "%(male_name)s was baptized in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda vaftiz edildi."
+
+#, python-format
+msgid "%(female_name)s was baptized in %(year)s at %(place)s."
+msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda vaftiz edildi."
+
+#, python-format
+msgid "%(male_name)s became a bar mitzvah in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda bar mitzvah oldu."
+
+#, python-format
+msgid "%(female_name)s became a bar mitzvah in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda bar mitzvah oldu."
+
+#, python-format
+msgid "%(male_name)s became a bat mitzvah in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda bat mitzvah oldu."
+
+#, python-format
+msgid "%(female_name)s became a bat mitzvah in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda bat mitzvah oldu."
+
+#, python-format
+msgid "%(male_name)s was born in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda doğdu."
+
+#, python-format
+msgid "%(female_name)s was born in %(year)s at %(place)s."
+msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda doğdu."
+
+#, python-format
+msgid "%(male_name)s was blessed in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda kutsandı."
+
+#, python-format
+msgid "%(female_name)s was blessed in %(year)s at %(place)s."
+msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda kutsandı."
+
+#, python-format
+msgid "%(male_name)s was buried in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda defnedildi."
+
+#, python-format
+msgid "%(female_name)s was buried in %(year)s at %(place)s."
+msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda defnedildi."
+
+#, python-format
+msgid "%(male_name)s participated in a census in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s, %(year)s yılında %(place)s konumunda yapılan bir nüfus "
+"sayımına katıldı."
+
+#, python-format
+msgid "%(female_name)s participated in a census in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda yapılan bir nüfus "
+"sayımına katıldı."
+
+#, python-format
+msgid "%(male_name)s was confirmed in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda onaylandı."
+
+#, python-format
+msgid "%(female_name)s was confirmed in %(year)s at %(place)s."
+msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda onaylandı."
+
+#, python-format
+msgid "%(male_name)s was cremated in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda yakıldı."
+
+#, python-format
+msgid "%(female_name)s was cremated in %(year)s at %(place)s."
+msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda yakıldı."
+
+#, python-format
+msgid "%(male_name)s died in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda öldü."
+
+#, python-format
+msgid "%(female_name)s died in %(year)s at %(place)s."
+msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda öldü."
+
+#, python-format
+msgid "%(male_name)s was awarded a degree in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s, %(year)s yılında %(place)s konumunda bir lisans derecesi "
+"almıştır."
+
+#, python-format
+msgid "%(female_name)s was awarded a degree in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda bir lisans derecesi "
+"almıştır."
+
+#, python-format
+msgid "%(male_name)s was granted a divorce in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s, %(year)s yılında %(place)s konumunda bir boşanma kararı aldı."
+
+#, python-format
+msgid "%(female_name)s was granted a divorce in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda bir boşanma kararı "
+"aldı."
+
+#, python-format
+msgid "%(male_name)s filed for divorce in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s, %(year)s yılında %(place)s konumunda boşanma davası açtı."
+
+#, python-format
+msgid "%(female_name)s filed for divorce in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda boşanma davası açtı."
+
+#, python-format
+msgid "%(male_name)s was elected in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda seçildi."
+
+#, python-format
+msgid "%(female_name)s was elected in %(year)s at %(place)s."
+msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda seçildi."
+
+#, python-format
+msgid "%(male_name)s emigrated in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda göç etti."
+
+#, python-format
+msgid "%(female_name)s emigrated in %(year)s at %(place)s."
+msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda göç etti."
+
+#, python-format
+msgid "%(male_name)s became engaged in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda nişanlandı."
+
+#, python-format
+msgid "%(female_name)s became engaged in %(year)s at %(place)s."
+msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda nişanlandı."
+
+#, python-format
+msgid "%(male_name)s received first communion in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s, %(year)s yılında %(place)s konumunda ilk komünyonunu aldı."
+
+#, python-format
+msgid "%(female_name)s received first communion in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda ilk komünyonunu aldı."
+
+#, python-format
+msgid "%(male_name)s graduated in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda mezun oldu."
+
+#, python-format
+msgid "%(female_name)s graduated in %(year)s at %(place)s."
+msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda mezun oldu."
+
+#, python-format
+msgid "%(male_name)s immigrated in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumuna göç etti."
+
+#, python-format
+msgid "%(female_name)s immigrated in %(year)s at %(place)s."
+msgstr "%(female_name)s, %(year)s yılında %(place)s konumuna göç etti."
+
+#, python-format
+msgid "%(male_name)s got married in %(year)s at %(place)s."
+msgstr "%(male_name)s %(year)s yılında %(place)s konumunda evlendi."
+
+#, python-format
+msgid "%(female_name)s got married in %(year)s at %(place)s."
+msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda evlendi."
+
+#, python-format
+msgid "%(male_name)s joined as a family in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s, %(year)s yılında %(place)s konumunda bir aile olarak katıldı."
+
+#, python-format
+msgid "%(female_name)s joined as a family in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda bir aile olarak "
+"katıldı."
+
+#, python-format
+msgid "%(male_name)s entered a civil union in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s, %(year)s yılında %(place)s konumunda medeni birlikteliğe "
+"girdi."
+
+#, python-format
+msgid "%(female_name)s entered a civil union in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda medeni birlikteliğe "
+"girdi."
+
+#, python-format
+msgid "%(male_name)s had a custom marriage in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s, %(year)s yılında %(place)s konumunda özel bir evlilik töreni "
+"yaptı."
+
+#, python-format
+msgid "%(female_name)s had a custom marriage in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda özel bir evlilik "
+"töreni yaptı."
+
+#, python-format
+msgid "%(male_name)s announced a marriage banns in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s, %(year)s yılında %(place)s konumunda bir evlilik ilanı "
+"duyurdu."
+
+#, python-format
+msgid "%(female_name)s announced a marriage banns in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda bir evlilik ilanı "
+"duyurdu."
+
+#, python-format
+msgid "%(male_name)s entered a marriage contract in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s, %(year)s yılında %(place)s konumunda bir evlilik sözleşmesi "
+"yaptı."
+
+#, python-format
+msgid "%(female_name)s entered a marriage contract in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda bir evlilik sözleşmesi "
+"yaptı."
+
+#, python-format
+msgid "%(male_name)s obtained a marriage license in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s, %(year)s yılında %(place)s konumunda bir evlilik ruhsatı aldı."
+
+#, python-format
+msgid "%(female_name)s obtained a marriage license in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda bir evlilik ruhsatı "
+"aldı."
+
+#, python-format
+msgid "%(male_name)s obtained a marriage settlement in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s, %(year)s yılında %(place)s konumunda bir evlilik sözleşmesi "
+"imzaladı."
+
+#, python-format
+msgid ""
+"%(female_name)s obtained a marriage settlement in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda bir evlilik sözleşmesi "
+"imzaladı."
+
+#, python-format
+msgid "%(male_name)s entered military service in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s, %(year)s yılında %(place)s konumunda askerlik hizmetine "
+"başladı."
+
+#, python-format
+msgid "%(female_name)s entered military service in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda askerlik hizmetine "
+"başladı."
+
+#, python-format
+msgid "%(male_name)s became naturalized in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s, %(year)s yılında %(place)s konumunda vatandaşlığa kabul "
+"edildi."
+
+#, python-format
+msgid "%(female_name)s became naturalized in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda vatandaşlığa kabul "
+"edildi."
+
+#, python-format
+msgid "%(male_name)s had a title bestowed in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s adlı kişiye %(year)s yılında %(place)s konumunda bir unvan "
+"verildi."
+
+#, python-format
+msgid "%(female_name)s had a title bestowed in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s adlı kişiye %(year)s yılında %(place)s konumunda bir unvan "
+"verildi."
+
+#, python-format
+msgid "%(male_name)s was ordained in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s adlı kişiye %(year)s yılında %(place)s konumunda rütbesi "
+"verildi."
+
+#, python-format
+msgid "%(female_name)s was ordained in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s adlı kişiye %(year)s yılında %(place)s konumunda rütbesi "
+"verildi."
+
+#, python-format
+msgid "%(male_name)s was granted probate in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s için %(year)s yılında %(place)s konumunda vasiyetname onayı "
+"verildi."
+
+#, python-format
+msgid "%(female_name)s was granted probate in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s için %(year)s yılında %(place)s konumunda vasiyetname onayı "
+"verildi."
+
+#, python-format
+msgid "%(male_name)s retired in %(year)s at %(place)s."
+msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda emekli oldu."
+
+#, python-format
+msgid "%(female_name)s retired in %(year)s at %(place)s."
+msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda emekli oldu."

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-10 19:07+0000\n"
+"POT-Creation-Date: 2026-07-31 17:35+0200\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 msgid "Gramps Web Sync"
 msgstr "מרשתת גרמפס סנכרון"
@@ -21,33 +21,18 @@ msgstr "מרשתת גרמפס סנכרון"
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "מסנכרן מסד־נתונים מקומי עם מופע מרשתת גרמפס."
 
-msgid "Your user does not have sufficient server permissions to use sync."
-msgstr "למשתמש אין הרשאות שרת מספיקות לשימוש בסנכרון."
-
-msgid "Fetching remote data..."
-msgstr "מאחזר נתונים מרוחקים..."
-
-msgid "Unexpected error while applying changes."
-msgstr "שגיאה בלתי צפויה בעת החלת שינויים."
-
-msgid "Media files are in sync."
-msgstr "קובצי המדיה מסונכרנים."
-
 #, python-format
-msgid "Successfully downloaded %s media files."
-msgstr "הורדת %s קובצי מדיה הושלמה בהצלחה."
+msgid ""
+"The system keyring could not be used. Snap confinement blocks access until "
+"you run: %s"
+msgstr ""
+"לא ניתן היה להשתמש בצרור־מפתחות המערכת. הגבלת Snap חוסמת את הגישה עד להרצת: "
+"%s"
 
-#, python-format
-msgid "Encountered %s errors during download."
-msgstr "אירעו %s שגיאות במהלך ההורדה."
-
-#, python-format
-msgid "Successfully uploaded %s media files."
-msgstr "העלאת %s קובצי מדיה הושלמה בהצלחה."
-
-#, python-format
-msgid "Encountered %s errors during upload."
-msgstr "אירעו %s שגיאות במהלך ההעלאה."
+msgid ""
+"The system keyring could not be used. You will need to enter your password "
+"each time."
+msgstr "לא ניתן היה להשתמש בצרור מפתחות המערכת. תדרש הזנת סיסמה בכל פעם."
 
 msgid "Authentication failed. Please check your username and password."
 msgstr "האימות נכשל. יש לבדוק שם משתמש וססמה."
@@ -64,50 +49,49 @@ msgstr "יותר מדי בקשות; יש לנסות שוב בעוד כמה שנ�
 msgid "GrampsWeb tree is disabled."
 msgstr "אילן מרשתת גרמפס מושבת."
 
-#, python-format
-msgid "Server error %s. Please check your connection."
-msgstr "שגיאת שרת %s. נא לבדוק חיבור."
-
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr "חיבור כשל. נא לבדוק את ה־URL והחיבור למרשתת."
 
 msgid "Invalid server response. Please check the URL."
 msgstr "תגובת שרת לא תקינה. יש לבדוק את כתובת ה־URL."
 
-#, python-format
-msgid "Unexpected error: %s"
-msgstr "שגיאה בלתי צפויה: %s"
-
-msgid "Error accessing media object."
-msgstr "שגיאה גישה מדיה עצם."
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr "למשתמש אין הרשאות שרת מספיקות לשימוש בסנכרון."
 
 msgid "Failed importing downloaded XML file."
 msgstr "ייבוא קובץ XML שהורד נכשל."
 
-msgid "Comparing local and remote data..."
-msgstr "השוואת מקומי ומרוחק נתונים..."
-
-msgid "Server authorization error."
-msgstr "שגיאת הרשאת שרת."
-
-msgid "Server authorization error: insufficient permissions."
-msgstr "שגיאת הרשאת שרת: הרשאות בלתי מספיקות."
-
-msgid "Error: URL not found."
-msgstr "שגיאה: לא נמצא URL."
-
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr "לא ניתן לסנכרון שינויים לשרת: עצמים יש היה שונו."
 
+msgid "Unexpected error while applying changes."
+msgstr "שגיאה בלתי צפויה בעת החלת שינויים."
+
+msgid ""
+"The family tree was modified while the changes were being reviewed. Nothing "
+"has been applied. Please compare again."
+msgstr "אילן־היוחסין הוסגל במהלך סקירת השינויים. לא הוחל דבר. נא להשוות שוב."
+
 #, python-format
-msgid "Error %s while connecting to server."
-msgstr "שגיאה %s בעת התחברות לשרת."
+msgid "The server could not apply the changes: %s"
+msgstr "השרת לא הצליח להחיל שינויים: %s"
 
-msgid "URL error while connecting to server."
-msgstr "שגיאת URL בעת חיבור לשרת."
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "שגיאת שרת %s. נא לבדוק חיבור."
 
-msgid "Unable to synchronize changes to server."
-msgstr "לא ניתן לסנכרון שינויים לשרת."
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "שגיאה בלתי צפויה: %s"
+
+msgid "Fetching remote data..."
+msgstr "מאחזר נתונים מרוחקים..."
+
+msgid "Comparing local and remote data..."
+msgstr "השוואת מקומי ומרוחק נתונים..."
+
+msgid "Successfully applied changes to local database."
+msgstr "בהצלחה הוחלו שינויים למקומי מסד־נתונים."
 
 msgid "Continue without transport encryption?"
 msgstr "להמשיך ללא הצפנת תעבורה?"
@@ -154,6 +138,27 @@ msgstr ""
 msgid "Server URL: "
 msgstr "כתובת URL של השרת: "
 
+msgid "Error:"
+msgstr "שגיאה:"
+
+msgid "Sync mode"
+msgstr "מצב סינכרון"
+
+msgid ""
+"Changes from both sides are combined. Objects edited in both places are "
+"merged."
+msgstr "שינויים משני הצדדים שולבו. עצמים שנערכו בשני המקומות מוזגו."
+
+msgid ""
+"The server is made to match this computer. Anything changed only on the "
+"server is discarded."
+msgstr "השרת בנוי כך שהתאמות יתבצעו למחשב זה. כל שינוי שנעשה רק בשרת יושלך."
+
+msgid ""
+"This computer is made to match the server. Anything changed only here is "
+"discarded."
+msgstr "מחשב זה בנוי כך שהתאמות יתבצעו לשרת. כל שינוי שנעשה רק כאן יושלך."
+
 msgid "Bidirectional Synchronization"
 msgstr "סנכרון דו־כיווני"
 
@@ -163,8 +168,8 @@ msgstr "שיצוב מצב מרוחק למקומי"
 msgid "Reset local to remote"
 msgstr "שיצוב מצב מקומי למרוחק"
 
-msgid "Merge"
-msgstr "מיזוג"
+msgid "Warning:"
+msgstr "אזהרה:"
 
 msgid "Local changes"
 msgstr "שינויים מקומיים"
@@ -196,9 +201,6 @@ msgstr "החלת שינויים במסד נתונים מרוחק ..."
 msgid "No changes to apply to remote database."
 msgstr "אין שינויים להחלה על מסד־הנתונים המרוחק."
 
-msgid "Successfully applied changes to local database."
-msgstr "בהצלחה הוחלו שינויים למקומי מסד־נתונים."
-
 msgid "Missing locally"
 msgstr "חסרים באופן מקומי"
 
@@ -206,9 +208,75 @@ msgid "Missing remotely"
 msgstr "חסרים באופן מרוחק"
 
 #, python-format
-msgid "Downloading %s media file(s)"
-msgstr "הורדת %s מדיה קובץ(s)"
+msgid "Downloading %s media file"
+msgid_plural "Downloading %s media files"
+msgstr[0] "הורדת קובץ מדיה %s"
+msgstr[1] "הורדת %s קבצי מדיה"
+msgstr[2] "הורדת %s קבצי מדיה"
+msgstr[3] "הורדת %s קבצי מדיה"
 
 #, python-format
-msgid "Uploading %s media file(s)"
-msgstr "העלאת %s קובצי מדיה"
+msgid "Uploading %s media file"
+msgid_plural "Uploading %s media files"
+msgstr[0] "העלאת קובץ מדיה %s"
+msgstr[1] "העלאת %s קבצי מדיה"
+msgstr[2] "העלאת %s קבצי מדיה"
+msgstr[3] "העלאת %s קבצי מדיה"
+
+msgid "Try again"
+msgstr "נא לנסות שוב"
+
+#, python-format
+msgid "Applied %s change."
+msgid_plural "Applied %s changes."
+msgstr[0] "הוחל שינוי %s."
+msgstr[1] "הוחלו %s שינויים."
+msgstr[2] "הוחלו %s שינויים."
+msgstr[3] "הוחלו %s שינויים."
+
+msgid "Media files are in sync."
+msgstr "קובצי המדיה מסונכרנים."
+
+#, python-format
+msgid "%s media file is missing on both sides and could not be transferred."
+msgid_plural ""
+"%s media files are missing on both sides and could not be transferred."
+msgstr[0] "קובץ מדיה %s חסר בשני הצדדים ולא ניתנים להעברה."
+msgstr[1] "%s קבצי מדיה חסרים בשני הצדדים ולא ניתנו להעברה."
+msgstr[2] "%s קבצי מדיה חסרים בשני הצדדים ולא ניתנו להעברה."
+msgstr[3] "%s קבצי מדיה חסרים בשני הצדדים ולא ניתנו להעברה."
+
+msgid "Both trees are already in sync."
+msgstr "שני אילנות־היוחסין מסונכרים כבר."
+
+#, python-format
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "הורדת קובץ מדיה %s צלחה."
+msgstr[1] "הורדת %s קבצי מדיה צלחה."
+msgstr[2] "הורדת %s קבצי מדיה צלחה."
+msgstr[3] "הורדת %s קבצי מדיה צלחה."
+
+#, python-format
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "אירעה שגיאה %s במהלך ההורדה."
+msgstr[1] "אירעו %s שגיאות במהלך ההורדה."
+msgstr[2] "אירעו %s שגיאות במהלך ההורדה."
+msgstr[3] "אירעו %s שגיאות במהלך ההורדה."
+
+#, python-format
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "העלאת קובץ מדיה %s צלחה."
+msgstr[1] "העלאת %s קבצי מדיה צלחה."
+msgstr[2] "העלאת %s קבצי מדיה צלחה."
+msgstr[3] "העלאת %s קבצי מדיה צלחה."
+
+#, python-format
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "אירעה שגיאה %s במהלך ההעלאה."
+msgstr[1] "אירעו %s שגיאות במהלך ההעלאה."
+msgstr[2] "אירעו %s שגיאות במהלך ההעלאה."
+msgstr[3] "אירעו %s שגיאות במהלך ההעלאה."

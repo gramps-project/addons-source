@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.8.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+msgid "House Timeline"
+msgstr "Evin Zaman Çizelgesi"
+
+msgid "Lists the Residents of an Address by Timeline"
+msgstr "Bir Adresin Sakinlerini Zaman Çizelgesine Göre Listeler"
+
+msgid "House Icon Style"
+msgstr "Ev Simgesi Stili"
+
+msgid "Unicode"
+msgstr "Unicode"
+
+msgid ""
+"There are no individuals with Address data. Please add Address data to "
+"people."
+msgstr ""
+"Adres bilgisi olan kişi bulunmamaktadır. Lütfen kişilere adres bilgisi "
+"ekleyin."
+
+msgid "Time In Family"
+msgstr "Aile İçinde Geçirilen Süre"
+
+msgid "First Resident"
+msgstr "İlk İkamet"
+
+msgid "Last Resident"
+msgstr "Son İkamet"
+
+msgid "Total Known Residents"
+msgstr "Toplam Bilinen İkametler"

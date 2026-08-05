@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
@@ -20,14 +20,142 @@ msgstr ""
 msgid "No title"
 msgstr "Başlık yok"
 
+msgid "No data available."
+msgstr "Veri mevcut değil."
+
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "TARİHİ İDARİ BÖLÜMLERİ"
+
+msgid "Foundation date:"
+msgstr "Kuruluş tarihi:"
+
+msgid "Note:"
+msgstr "Not:"
+
 msgid "Coordinates:"
 msgstr "Koordinatlar:"
+
+msgid "Administrative history"
+msgstr "İdari tarihçe"
+
+msgid "Data provided to AI:"
+msgstr "Yapay zekâya sağlanan veriler:"
+
+msgid "Full hierarchy"
+msgstr "Tam hiyerarşi"
 
 msgid "Place Type:"
 msgstr "Yer Türü:"
 
+msgid "Last Retrieved At:"
+msgstr "Son Erişim Tarihi:"
+
 msgid "Save Coordinates to the Place"
 msgstr "Yer koordinatlarını kaydet"
+
+msgid "AI provider is disabled"
+msgstr "Yapay zekâ sağlayıcısı devre dışı bırakıldı"
+
+msgid "No AI API key provided"
+msgstr "Yapay zekâ API anahtarı sağlanmadı"
+
+msgid "AI-generated historical place data is currently disabled"
+msgstr ""
+"Yapay zekâ tarafından oluşturulan tarihsel yer verileri şu anda devre dışı "
+"bırakıldı"
+
+msgid "AI provider is unknown. Please check your AI provider settings."
+msgstr ""
+"Yapay zekâ sağlayıcısı bilinmiyor. Lütfen yapay zekâ sağlayıcı ayarlarınızı "
+"kontrol edin."
+
+msgid "⏳ Generating historical place data, please wait..."
+msgstr "⏳ Tarihsel yer verileri oluşturuluyor, lütfen bekleyin..."
+
+msgid "Keys"
+msgstr "Anahtarlar"
+
+msgid "Website URL"
+msgstr "Web sitesi URL adresi"
+
+msgid "Add link to note"
+msgstr "Bağlantıyı nota ekle"
+
+msgid "Add link to attribute"
+msgstr "Bağlantıyı özniteliğe ekle"
+
+msgid "Show QR-code"
+msgstr "QR kodunu göster"
+
+msgid "Copy link to clipboard"
+msgstr "Bağlantıyı panoya kopyala"
+
+msgid "Hide link for selected item"
+msgstr "Seçilen öğe için bağlantıyı gizle"
+
+msgid "Hide link for all items"
+msgstr "Tüm öğeler için bağlantıyı gizle"
+
+msgid "Edit Attribute with the Link"
+msgstr "Bağlantılı Özniteliği Düzenle"
+
+msgid "Edit Note with the Link"
+msgstr "Bağlantılı Notu Düzenle"
+
+msgid "Edit Internet link"
+msgstr "İnternet bağlantısını düzenle"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 Yapay Zekâ Önerileri"
+
+msgid "Attribute no longer matches this WebSearch row"
+msgstr "Öznitelik artık bu Web Arama satırıyla eşleşmiyor"
+
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr "Öznitelik artık mevcut değil. Ek simge kaldırıldı"
+
+msgid "Note no longer exists"
+msgstr "Not artık mevcut değil"
+
+msgid "Note no longer exists. The extra icon is removed"
+msgstr "Not artık mevcut değil. Ek simge kaldırıldı"
+
+msgid "Internet link no longer matches this WebSearch row"
+msgstr "İnternet bağlantısı artık bu Web Arama satırıyla eşleşmiyor"
+
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+"📌 Bu '{title}' web bağlantısı, gelecekte başvurmak üzere WebSearch "
+"gramplet'i (sürüm {version}) tarafından arşivlendi:\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"Bu bağlantıyı, kaynağı yeniden ziyaret etmek ve bu varlıkla ilgili bilgileri "
+"doğrulamak için kullanabilirsiniz."
+
+#, python-format
+msgid "Note #%(id)s has been successfully added"
+msgstr "Not #%(id)s başarıyla eklendi"
+
+msgid "Error creating note"
+msgstr "Not oluşturma hatası"
+
+msgid "URL is copied to the Clipboard"
+msgstr "URL panoya kopyalandı"
+
+msgid "WebSearch Link"
+msgstr "Web Arama Bağlantısı"
+
+msgid "Attribute has been successfully added"
+msgstr "Öznitelik başarıyla eklendi"
 
 #, python-brace-format
 msgid "Title: {title}"
@@ -41,8 +169,376 @@ msgstr "Değiştirildi: {keys}"
 msgid "Empty: {keys}"
 msgstr "Boş: {keys}"
 
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "Yorum: {comment}"
+
+msgid "Column - Icons"
+msgstr "Sütun - Simgeler"
+
+msgid "Column - Source Types (flags)"
+msgstr "Sütun - Kaynak Türleri (bayraklar)"
+
+msgid "Column - Keys"
+msgstr "Sütun - Anahtarlar"
+
+msgid "Column - Title"
+msgstr "Sütun - Başlık"
+
+msgid "Column - Website Url"
+msgstr "Sütun - Web Sitesi Url adresi"
+
+msgid "Column - Comment"
+msgstr "Sütun - Yorum"
+
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "Simge - Ziyaret Edilen URL adresleri (onay işareti)"
+
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "Simge - Kaydedilmiş URL adresleri (disket)"
+
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "Simge - UID özniteliklerine bağlı URL adresleri (UID rozeti)"
+
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "Simge - Bölgesel CSV dosyalarından URL adresleri (bayrak)"
+
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "Simge - Statik CSV dosyalarından URL adresleri (kırmızı pin)"
+
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "Simge - Yaygın CSV dosyalarından URL adresleri (dünya)"
+
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "Simge - Çapraz CSV dosyalarından URL adresleri (karıştırma okları)"
+
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr ""
+"Simge - Özel kullanıcı dizininden URL adresleri (elektronik tablo simgesi)"
+
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "Simge - 'Öznitelikler' sekmesindeki URL adresleri ('A' simgesi)"
+
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "Simge - 'İnternet' sekmesindeki URL adresleri ('I' simgesi)"
+
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "Simge - 'Notlar' sekmesindeki URL adresleri ('N' simgesi)"
+
+msgid "QR-code"
+msgstr "QR kodu"
+
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ \"qrcode\" bağımlılığı eksik"
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ QR kodu oluşturma hatası:\n"
+"Orijinal hata: “{}”"
+
+msgid "Note Link (parsed)"
+msgstr "Not Bağlantısı (ayrıştırılmış)"
+
+msgid "Note Link (internal)"
+msgstr "Not Bağlantısı (dahili)"
+
+msgid "Note Link (external)"
+msgstr "Not Bağlantısı (harici)"
+
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 Web Arama Hakkında"
+
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"Web Arama, Gramps için soybilimle ilgili web sitelerinde arama yapmanıza "
+"yardımcı olan bir Gramplet uygulamasıdır."
+
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"CSV tabanlı bağlantı şablonlarını, yapay zekâ destekli site keşfini ve "
+"notlar ile özniteliklerle doğrudan entegrasyonu destekler."
+
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ Sistem Bilgileri"
+
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **Eksik:** `qrcode`"
+
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ Bu Python kütüphanesi sisteminizde mevcut değil."
+
+msgid "Without it, QR code generation will not work."
+msgstr "Bu olmadan, QR kodu oluşturma çalışmayacaktır."
+
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 Genellikle şu komutla yüklenir: `pip install qrcode[pil]`"
+
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*Not: Bazı işletim sistemleri veya ortamlar alternatif yükleme yöntemleri "
+"gerektirebilir.*"
+
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **Eksik:** `openai`"
+
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr "ℹ️ Bu kütüphane, OpenAI tabanlı özelliklere erişmek için gereklidir."
+
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr ""
+"Bu olmadan, yapay zekâ tarafından oluşturulan site önerileri ve yer geçmişi "
+"devre dışı bırakılacaktır."
+
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 Genellikle şu komutla yüklenir: `pip install openai`"
+
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **Eksik:** `requests`"
+
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ Bu kütüphane, web API'leriyle iletişim kurmak için kullanılır."
+
+msgid "Without it, external data sources may not be accessible."
+msgstr "Bu olmadan, harici veri kaynaklarına erişilemeyebilir."
+
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 Genellikle şu komutla yüklenir: `pip install requests`"
+
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 Veri Dosyası Konumları"
+
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"Aşağıda, Web Arama tarafından kullanılan sistem ve kullanıcı tanımlı veri "
+"dosyalarının yolları bulunmaktadır."
+
+msgid "#### CSV File Paths"
+msgstr "#### CSV Dosya Yolları"
+
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr "- **Sistem yolu:** `{dir|%s}` – yerleşik CSV dosyalarını içerir"
+
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr ""
+"- **Kullanıcı tanımlı yol:** `{dir|%s}` – özel kullanıcı tanımlı CSV "
+"dosyaları içindir"
+
+msgid "#### JSON File Paths"
+msgstr "#### JSON Dosya Yolları"
+
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **Sistem yolu:** `{dir|%s}` – yerleşik attribute_mapping.json dosyasını "
+"içerir"
+
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **Kullanıcı tanımlı yol:** `{dir|%s}` – özel kullanıcı tanımlı "
+"attribute_mapping.json dosyası içindir"
+
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *İpucu: Dosya yöneticinizde açmak için yukarıdaki herhangi bir yola "
+"tıklayın.*"
+
+msgid "📖 View detailed usage in: "
+msgstr "📖 Ayrıntılı kullanım bilgilerini görüntüleyin: "
+
+msgid "## 💬 Support"
+msgstr "## 💬 Destek"
+
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 Yurii Liubymyi tarafından oluşturuldu ve bakımı yapıldı"
+
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 Yardım veya geri bildirim için Gramps forumunda `@Urchello` etiketini "
+"kullanabilirsiniz:"
+
+msgid "Gramps Forum (Discourse)"
+msgstr "Gramps Forumu (Tartışma)"
+
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr "✅ Hata raporları ve özellik istekleri tamamen **ücretsizdir**."
+
+msgid "GitHub Issues"
+msgstr "GitHub Sorunları"
+
+msgid "Gramps Bug Tracker"
+msgstr "Gramps Hata Takip Sistemi"
+
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 Web Arama Gramplet sürümü: `%s`"
+
+msgid "Middle Name Handling"
+msgstr "İkinci Ad İşleme"
+
+msgid "Leave alone"
+msgstr "Olduğu gibi bırak"
+
+msgid "Separate"
+msgstr "Ayır"
+
+msgid "URL Compactness Level"
+msgstr "URL Kompaktlık Seviyesi"
+
+msgid "Shortest - No Prefix, No Keys"
+msgstr "En Kısa - Ön Ek Yok, Anahtar Yok"
+
+msgid "Compact - No Prefix, Keys Without Attributes"
+msgstr "Kompakt - Ön Ek Yok, Özniteliksiz Anahtarlar"
+
+msgid "Compact - No Prefix, Keys With Attributes"
+msgstr "Kompakt - Önek Yok, Öznitelikli Anahtarlar"
+
+msgid "Long - Without Prefix on the Left"
+msgstr "Uzun - Solda Önek Olmadan"
+
+msgid "URL Prefix Replacement"
+msgstr "URL Öneki Değiştirme"
+
+msgid "AI Provider"
+msgstr "Yapay Zekâ Sağlayıcısı"
+
+msgid "(Disabled)"
+msgstr "(Devre Dışı)"
+
+msgid "OpenAI"
+msgstr "OpenAI"
+
+msgid "Mistral AI"
+msgstr "Mistral AI"
+
+msgid "OpenAI API Key"
+msgstr "OpenAI API Anahtarı"
+
+msgid "OpenAI Model"
+msgstr "OpenAI Modeli"
+
+msgid "Mistral API Key"
+msgstr "Mistral API Anahtarı"
+
+msgid "Mistral Model"
+msgstr "Mistral Modeli"
+
+msgid "Show Links From the 'Attributes' tab"
+msgstr "'Öznitelikler' sekmesindeki bağlantıları göster"
+
+msgid "Show Links From the 'Internet' tab"
+msgstr "'İnternet' sekmesindeki bağlantıları göster"
+
+msgid "Show Links From the Notes"
+msgstr "Notlardaki bağlantıları göster"
+
+msgid "Enable AI-generated historical place data"
+msgstr "Yapay zekâ tarafından oluşturulan tarihsel yer verilerini etkinleştir"
+
+msgid "Custom country code for AI notes (optional)"
+msgstr "Yapay zekâ notları için özel ülke kodu (isteğe bağlı)"
+
+msgid "Enable CSV Files"
+msgstr "CSV dosyalarını etkinleştir"
+
+msgid "Display Columns"
+msgstr "Sütunları görüntüle"
+
+msgid "Display Icons"
+msgstr "Simgeleri görüntüle"
+
+msgid "WebSearch"
+msgstr "Web Arama"
+
+msgid ""
+"Customized queries for online services based on the active Person, Place, "
+"Family, or Source record"
+msgstr ""
+"Etkin Kişi, Yer, Aile veya Kaynak kaydına dayalı çevrimiçi hizmetler için "
+"özelleştirilmiş sorgular"
+
+#, python-format
+msgid "Visited: %s"
+msgstr "Ziyaret edildi: %s"
+
+#, python-format
+msgid "Link: %s"
+msgstr "Bağlantı: %s"
+
+#, python-format
+msgid "Attribute: %s"
+msgstr "Öznitelik: %s"
+
+#, python-format
+msgid "Value: %s"
+msgstr "Değer: %s"
+
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "Dosyadan yüklendi: %s"
+
+#, python-format
+msgid "Domain: %s"
+msgstr "Alan adı: %s"
+
+#, python-format
+msgid "Object: %s"
+msgstr "Nesne: %s"
+
+#, python-format
+msgid "Pattern: %s"
+msgstr "Desen: %s"
+
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "Nesne Gramps Kimliği: %s"
+
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s: %s → %s: %s"
+
+msgid "Link visited"
+msgstr "Bağlantı ziyaret edildi"
+
+msgid "Link saved to Note"
+msgstr "Bağlantı Nota kaydedildi"
+
+msgid "Link saved to Attribute"
+msgstr "Bağlantı Özniteliğe kaydedildi"
+
 msgid "Place history loaded"
 msgstr "Yer geçmişi yüklendi"
+
+msgid "Domain skipped"
+msgstr "Alan adı atlandı"
+
+msgid "Link hidden for object"
+msgstr "Nesne için bağlantı gizlendi"
+
+msgid "Link hidden for all objects"
+msgstr "Tüm nesneler için bağlantı gizlendi"
+
+msgid "Attribute updated"
+msgstr "Öznitelik güncellendi"
 
 msgid "Note updated"
 msgstr "Not güncellendi"

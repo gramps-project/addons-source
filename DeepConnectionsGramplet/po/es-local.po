@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-27 05:51+0000\n"
-"Last-Translator: Libre <6n0n1m0s@proton.me>\n"
+"PO-Revision-Date: 2026-07-24 05:14+0000\n"
+"Last-Translator: Juan Saavedra <jcsaaver@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 msgid "Deep Connections Gramplet"
 msgstr "Conexiones profundas de Gramplet"
@@ -22,6 +22,41 @@ msgstr "Gramplet mostrando una relación profunda entre activo y gente inicial"
 
 msgid "Deep Connections"
 msgstr "Conexiones Profundas"
+
+msgid "⏸ Pause"
+msgstr "⏸ Pausa"
+
+msgid "Pause the current search"
+msgstr "Pausa la búsqueda en curso"
+
+msgid "▶ Continue"
+msgstr "▶ Continuar"
+
+msgid "Continue searching for more relations"
+msgstr "Continúe buscando más relaciones"
+
+msgid "📋 Copy"
+msgstr "📋 Copiar"
+
+msgid "Copy selected people to clipboard"
+msgstr "Copiar las personas seleccionadas al portapapeles"
+
+msgid "🗑 Clear"
+msgstr "🗑 Limpiar"
+
+msgid "Clear all results and reset"
+msgstr "Limpiar todos los resultados y restablecer"
+
+msgid "Ready to search"
+msgstr "Listo para buscar"
+
+#, python-brace-format
+msgid ""
+"Search Depth: {depth} | People Processed: {processed} | Queue Size: "
+"{queue_size}"
+msgstr ""
+"Profundidad de búsqueda: {depth} | Personas procesadas: {processed} | Tamaño "
+"de la cola: {queue_size}"
 
 msgid "mentioned in note"
 msgstr "mencionado en nota"
@@ -50,8 +85,17 @@ msgstr ""
 "\n"
 "   %s de "
 
+msgid "Error: No Home Person set"
+msgstr "Error: No se ha definido una Persona Inicial"
+
 msgid "No Active Person set."
 msgstr "Ninguna Persona Activa fijada."
+
+msgid "Error: No Active Person set"
+msgstr "Error: no se ha definido una Persona Activa"
+
+msgid "Initializing search..."
+msgstr "Iniciando búsqueda..."
 
 msgid "Looking for relationship between\n"
 msgstr "Buscando relación entre\n"
@@ -63,6 +107,9 @@ msgstr "  <b>%s</b> (Persona Inicial) y\n"
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (Persona Activa)…\n"
+
+msgid "Searching for connections..."
+msgstr "Buscando conexiones..."
 
 #, python-format
 msgid ""
@@ -79,8 +126,25 @@ msgstr ""
 "Pausado.\n"
 "Presione Continuar para buscar relaciones adicionales.\n"
 
+msgid "Paused - Press Continue to search for more relations"
+msgstr "Pausado - Presione Continuar para buscar más relaciones"
+
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relation paths found."
+msgstr ""
+"\n"
+"Búsqueda completada. %d caminos de relación encontrados."
+
+msgid "Search completed - {} relation paths found"
+msgstr "Búsqueda completada - {} caminos de relación encontrados"
+
 msgid "Error during search: {}"
 msgstr "Error durante la búsqueda: {}"
+
+msgid "Resuming search..."
+msgstr "Reanudando búsqueda..."
 
 msgid "Search interrupted by user"
 msgstr "Búsqueda interrumpida por el usuario"

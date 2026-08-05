@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-04 00:00-0000\n"
-"PO-Revision-Date: 2026-02-21 14:09+0000\n"
-"Last-Translator: Daniel Szollosi-Nagy <dsn-weblate@kdconsulting.net>\n"
+"PO-Revision-Date: 2026-06-05 13:54+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hu/>\n"
 "Language: hu\n"
@@ -12,31 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Birthdays"
 msgstr "Születésnapok"
-
-msgid "a gramplet that displays the birthdays of the living people"
-msgstr "egy gramplet, amely megjeleníti az élő emberek születésnapját"
-
-msgid "No Family Tree loaded."
-msgstr "Nincs betöltve családfa."
-
-msgid "Sort birthdays by"
-msgstr "Születésnapok rendezése szerint"
-
-msgid "Month and day"
-msgstr "Hónap és nap"
-
-msgid "Proximity to current date"
-msgstr "Az aktuális dátum közelsége"
-
-msgid "Ignore birthdays with tag"
-msgstr "A címkével ellátott születésnapok figyelmen kívül hagyása"
-
-msgid "Only show birthdays with tag"
-msgstr "Csak a címkével ellátott születésnapokat jelenítse meg"
-
-msgid "Processing..."
-msgstr "Feldolgozás..."

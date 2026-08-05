@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,16 +12,221 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "Import and Merge tool"
+msgstr "İçe Aktarma ve Birleştirme aracı"
+
+msgid ""
+"Compares a Gramps XML database with the current one, and allows merging of "
+"the differences."
+msgstr ""
+"Bir Gramps XML veritabanını mevcut veritabanıyla karşılaştırır ve "
+"farklılıkların birleştirilmesine olanak tanır."
+
+msgid "Import and merge a Gramps XML"
+msgstr "Gramps XML dosyasını içe aktar ve birleştir"
+
+msgid "Missing"
+msgstr "Eksik"
+
+msgid "Delete original"
+msgstr "Orijinali sil"
+
+msgid "Ignore"
+msgstr "Yok say"
+
+msgid "Add Import"
+msgstr "İçe Aktarma Ekle"
+
+msgid "Merge into original"
+msgstr "Orijinaline birleştir"
+
+msgid "Merge into import"
+msgstr "İçe aktarmaya birleştir"
+
+msgid "Replace with import"
+msgstr "İçe aktarma ile değiştir"
+
+msgid "Keep original"
+msgstr "Orijinalini koruyun"
+
+msgid ""
+"Use buttons below to set the 'Action' for each difference.  No changes will "
+"be made to your tree until you press 'Done' and confirm."
+msgstr ""
+"Aşağıdaki düğmeleri kullanarak her bir fark için 'Eylem'i ayarlayın.  "
+"'Tamam' düğmesine basıp onaylamadığınız sürece ağacınızda hiçbir değişiklik "
+"yapılmayacaktır."
+
+msgid ""
+"This item will be deleted from your tree.  Any referenced items were also "
+"marked for deletion."
+msgstr ""
+"Bu öğe ağacınızdan silinecektir.  Referans verilen tüm öğeler de silinmek "
+"üzere işaretlenmiştir."
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked for Ignore."
+msgstr ""
+"Bu öğe ağacınızda değiştirilmeyecektir.  Referans verilen tüm öğeler de Yok "
+"say olarak işaretlenmiştir."
+
+msgid ""
+"This item will be added to your tree.  Any referenced items were also marked "
+"for adding."
+msgstr ""
+"Bu öğe ağacınıza eklenecektir.  Referans verilen tüm öğeler de eklenmek "
+"üzere işaretlenmiştir."
+
+msgid ""
+"This item will be merged, saving data from your tree.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Bu öğe birleştirilecek ve ağacınızdaki veriler kaydedilecektir.  Referans "
+"verilen tüm öğeler de birleştirme veya ekleme için işaretlenmiştir."
+
+msgid ""
+"This item will be merged, using data from the import.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Bu öğe, içe aktarılan veriler kullanılarak birleştirilecektir.  Referans "
+"verilen tüm öğeler de birleştirme veya ekleme için işaretlenmiştir."
+
+msgid ""
+"The import data will entirely replace the data in your tree.  Any referenced "
+"items were also marked for replacement or removal."
+msgstr ""
+"İçe aktarılan veriler, ağacınızdaki verilerin tamamını değiştirecektir.  "
+"Referans verilen tüm öğeler de değiştirilmek veya kaldırılmak üzere "
+"işaretlenmiştir."
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked to keep."
+msgstr ""
+"Bu öğe soy ağacınızda değiştirilmeyecektir.  Referans verilen tüm öğeler de "
+"saklanmak üzere işaretlenmiştir."
+
+msgid "Import Failure"
+msgstr "İçe Aktarma Hatası"
+
+msgid "Your Tree and import are the same."
+msgstr "Ağacınız ve içe aktardığınız dosyalar aynı."
+
+msgid "your tree "
+msgstr "ağacınız "
+
+msgid "imported "
+msgstr "içe aktarılmış "
+
+msgid "Original"
+msgstr "Orijinal"
+
+msgid "Imported"
+msgstr "İçe aktarılmış"
+
+msgid "Result  "
+msgstr "Sonuç  "
+
+msgid "Import and Merge"
+msgstr "İçe Aktar ve Birleştir"
+
 msgid "Replace"
 msgstr "Yer değiştir"
+
+msgid ""
+"A '*' indicates that the action was automarked, a '?' indicates a conflict "
+"between automarks."
+msgstr ""
+"'*' işareti, bir işlemin otomatik olarak işaretlendiğini, '?' işareti ise "
+"otomatik işaretlemeler arasında bir çakışma olduğunu gösterir."
+
+msgid "Import file"
+msgstr "Dosyayı içe aktar"
+
+msgid "Select the difference you wish to examine."
+msgstr "İncelemek istediğiniz farkı seçin."
+
+msgid "Object Name/Description"
+msgstr "Nesne Adı/Açıklaması"
+
+msgid ""
+"Data item details, showing the current treeitem, imported tree item, and "
+"result (when chosen)."
+msgstr ""
+"Veri öğesi ayrıntıları; geçerli ağaç öğesini, içe aktarılan ağaç öğesini ve "
+"sonucu (seçildiğinde) gösterir."
+
+msgid "Object and item"
+msgstr "Nesne ve öğe"
 
 msgid "Differences"
 msgstr "Farklılıklar"
 
+msgid "This button will ignore the difference, no changes to your tree."
+msgstr "Bu düğme farkı yok sayacak, ağacınızda hiçbir değişiklik olmayacak."
+
+msgid "Unmark"
+msgstr "İşaretsiz"
+
+msgid "This button will add the imported data as a new object to your tree."
+msgstr ""
+"Bu düğme, içe aktarılan verileri ağacınıza yeni bir nesne olarak "
+"ekleyecektir."
+
 msgid "Done"
 msgstr "Bitti"
+
+msgid ""
+"This button will bring up a dialog allowing you to finalize your changes, or "
+"abandon them."
+msgstr ""
+"Bu düğme, değişikliklerinizi kesinleştirmenize veya iptal etmenize olanak "
+"tanıyan bir iletişim kutusu açacaktır."
+
+msgid "Merge Original"
+msgstr "Orijinali Birleştir"
+
+msgid ""
+"This button will merge the imported data into your tree with your tree data "
+"as a base."
+msgstr ""
+"Bu düğme, içe aktarılan verileri, ağacınızdaki verileri temel alarak "
+"ağacınızla birleştirecektir."
+
+msgid "This button will replace your tree data with the imported data."
+msgstr "Bu düğme, ağaç verilerinizi içe aktarılan verilerle değiştirecektir."
+
+msgid "Merge Import"
+msgstr "İçe Aktarmayı Birleştir"
+
+msgid ""
+"This button will merge the imported data into your tree with the imported "
+"data as a base."
+msgstr ""
+"Bu düğme, içe aktarılan verileri temel alarak bu verileri ağacınızla "
+"birleştirecektir."
+
+msgid "Edit Import"
+msgstr "İçe Aktarmayı Düzenle"
+
+msgid ""
+"This button will edit the imported data.  The data will still need to be "
+"merged, added or replaced."
+msgstr ""
+"Bu düğme, içe aktarılan verileri düzenleyecektir. Verilerin yine de "
+"birleştirilmesi, eklenmesi veya değiştirilmesi gerekecektir."
+
+msgid "Show more details"
+msgstr "Daha fazla ayrıntı göster"
+
+msgid "Automark Families"
+msgstr "Aileleri otomatik işaretle"
+
+msgid "Automark Parent Families"
+msgstr "Ebeveyn Aileleri otomatik işaretle"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-03 09:03-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"PO-Revision-Date: 2026-08-03 04:02+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,134 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
+
+msgid ""
+"You are a helpful genealogy assistant with access to the user's Gramps "
+"database. Answer questions about people, families, events, and "
+"relationships. When you need information from the database, call the "
+"provided tools — never write code, simulate results, or make up data. If no "
+"tool exists for the requested information, say so plainly."
+msgstr ""
+"Du är en hjälpsam släktforskningsassistent med tillgång till användarens "
+"Gramps-databas. Svara på frågor om personer, familjer, händelser och "
+"släktskap. När du behöver information från databasen, anropa de verktyg som "
+"finns tillgängliga – skriv aldrig kod, simulera resultat eller hitta på "
+"data. Om det inte finns något verktyg för den begärda informationen, säg det "
+"tydligt."
+
+msgid "Gramps Assistant settings"
+msgstr "Inställningar för Gramps-assistenten"
+
+msgid "Clear conversation and context"
+msgstr "Tydlig konversation och sammanhang"
 
 msgid "Send"
 msgstr "Skicka"
+
+msgid "Gramps Assistant:"
+msgstr "Gramps-assistenten:"
+
+msgid ""
+"Ask me anything about the Gramps program or your specific Gramps family "
+"tree. Use the ⚙ button to configure the AI.\n"
+msgstr ""
+"Fråga mig om vad som helst om Gramps-programmet eller ditt specifika Gramps-"
+"släktträd. Använd ⚙-knappen för att konfigurera AI:n.\n"
+
+msgid ""
+"\n"
+"No model configured. Please click the Settings button to choose a backend "
+"and model before chatting.\n"
+msgstr ""
+"\n"
+"Ingen modell konfigurerad. Klicka på knappen Inställningar för att välja en "
+"backend och modell innan du chattar.\n"
+
+msgid "Thinking..."
+msgstr "Tänker..."
+
+#, python-brace-format
+msgid ""
+"API key error: the environment variable {var} is not set or is invalid. Set "
+"it before launching Gramps:\n"
+"  export {var}=your-key-here"
+msgstr ""
+"API-nyckelfel: miljövariabeln {var} är inte angiven eller är ogiltig. Ställ "
+"in den innan du startar Gramps:\n"
+"  export {var}=din-nyckel-här"
+
+msgid ""
+"API key error: this provider requires an API key. Open Settings and enter "
+"the environment variable name for your API key (e.g. OPENAI_API_KEY)."
+msgstr ""
+"API-nyckelfel: den här leverantören kräver en API-nyckel. Öppna "
+"Inställningar och ange miljövariabelnamnet för din API-nyckel (t.ex. "
+"OPENAI_API_KEY)."
+
+msgid "Done.\n"
+msgstr "Klart.\n"
+
+msgid "System Prompt:"
+msgstr "Systemprompt:"
+
+msgid "Simplify tools (recommended for smaller/local models)"
+msgstr "Förenklingsverktyg (rekommenderas för mindre/lokala modeller)"
+
+msgid ""
+"When enabled, only the tools relevant to your question are sent to the "
+"model. This improves performance with smaller local models."
+msgstr ""
+"När det är aktiverat skickas endast de verktyg som är relevanta för din "
+"fråga till modellen. Detta förbättrar prestandan med mindre lokala modeller."
+
+msgid "Use Local Model"
+msgstr "Använd lokal modell"
+
+msgid ""
+"URL of a local OpenAI-compatible server. Ollama: http://localhost:11434  LM "
+"Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
+msgstr ""
+"URL till en lokal OpenAI-kompatibel server. Ollama: http://localhost:11434 "
+"LM Studio: http://localhost:1234 llama.cpp: http://localhost:8080"
+
+msgid "model name (leave blank for LM Studio / llama.cpp)"
+msgstr "modellnamn (lämna tomt för LM Studio / llama.cpp)"
+
+msgid ""
+"Model to request from the local server. Required for Ollama (e.g. llama3.1). "
+"Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
+msgstr ""
+"Modell att begära från den lokala servern. Krävs för Ollama (t.ex. "
+"llama3.1). Lämna tomt för LM Studio eller llama.cpp, som använder den modell "
+"som laddas."
+
+msgid "Model:"
+msgstr "Modell:"
+
+msgid "Use Foundational Model"
+msgstr "Använd grundläggande modell"
+
+msgid "e.g. OPENAI_API_KEY"
+msgstr "t.ex. OPENAI_API_KEY"
+
+msgid "Name of the environment variable holding your API key."
+msgstr "Namn på miljövariabeln som innehåller din API-nyckel."
+
+msgid "API key env var:"
+msgstr "API-nyckelmiljövariabel:"
+
+msgid "Backend:"
+msgstr "Backend:"
+
+msgid "Base URL:"
+msgstr "Bas-URL:"
+
+msgid "Model name:"
+msgstr "Modellnamn:"
+
+msgid "Gramps Assistant"
+msgstr "Gramps-assistent"
+
+msgid "AI assistant for querying your Gramps family tree"
+msgstr "AI-assistent för att söka i ditt Gramps-släktträd"

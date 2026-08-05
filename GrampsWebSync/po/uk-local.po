@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-07-31 17:35+0200\n"
 "PO-Revision-Date: 2025-11-17 06:51+0000\n"
 "Last-Translator: Fedir Zinchuk <fedikw@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -21,20 +21,6 @@ msgstr "Веб-синхронізація Gramps"
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Синхронізує локальну базу даних з Gramps Web."
 
-msgid "Your user does not have sufficient server permissions to use sync."
-msgstr ""
-"Ваш користувач не має достатніх прав на сервері для використання "
-"синхронізації."
-
-msgid "Fetching remote data..."
-msgstr "Отримання віддалених даних..."
-
-msgid "Unexpected error while applying changes."
-msgstr "Несподівана помилка під час застосування змін."
-
-msgid "Media files are in sync."
-msgstr "Медіафайли синхронізовані."
-
 msgid "Authentication failed. Please check your username and password."
 msgstr ""
 "Не вдалося виконати автентифікацію. Будь ласка, перевірте своє ім'я "
@@ -52,10 +38,6 @@ msgstr "Забагато запитів, спробуйте ще раз чере
 msgid "GrampsWeb tree is disabled."
 msgstr "Дерево GrampsWeb вимкнено."
 
-#, python-format
-msgid "Server error %s. Please check your connection."
-msgstr "Помилка сервера %s. Будь ласка, перевірте ваше з’єднання."
-
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr ""
 "Помилка з’єднання. Будь ласка, перевірте URL-адресу та ваше інтернет-"
@@ -64,40 +46,36 @@ msgstr ""
 msgid "Invalid server response. Please check the URL."
 msgstr "Недійсна відповідь сервера. Будь ласка, перевірте URL-адресу."
 
-#, python-format
-msgid "Unexpected error: %s"
-msgstr "Неочікувана помилка: %s"
-
-msgid "Error accessing media object."
-msgstr "Помилка доступу до медіаобʼєкта."
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"Ваш користувач не має достатніх прав на сервері для використання "
+"синхронізації."
 
 msgid "Failed importing downloaded XML file."
 msgstr "Не вдалося імпортувати завантажений XML-файл."
 
-msgid "Comparing local and remote data..."
-msgstr "Порівняння локальних та віддалених даних..."
-
-msgid "Server authorization error."
-msgstr "Помилка авторизації на сервері."
-
-msgid "Server authorization error: insufficient permissions."
-msgstr "Помилка авторизації на сервері: недостатньо прав."
-
-msgid "Error: URL not found."
-msgstr "Помилка: URL не знайдено."
-
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr "Не вдалося синхронізувати зміни з сервером: обʼєкти було змінено."
 
+msgid "Unexpected error while applying changes."
+msgstr "Несподівана помилка під час застосування змін."
+
 #, python-format
-msgid "Error %s while connecting to server."
-msgstr "Помилка %s під час підключення до сервера."
+msgid "Server error %s. Please check your connection."
+msgstr "Помилка сервера %s. Будь ласка, перевірте ваше з’єднання."
 
-msgid "URL error while connecting to server."
-msgstr "Помилка URL під час підключення до сервера."
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Неочікувана помилка: %s"
 
-msgid "Unable to synchronize changes to server."
-msgstr "Не вдалося синхронізувати зміни із сервером."
+msgid "Fetching remote data..."
+msgstr "Отримання віддалених даних..."
+
+msgid "Comparing local and remote data..."
+msgstr "Порівняння локальних та віддалених даних..."
+
+msgid "Successfully applied changes to local database."
+msgstr "Зміни успішно застосовані до локальної бази даних."
 
 msgid "Continue without transport encryption?"
 msgstr "Продовжити без транспортного шифрування?"
@@ -145,6 +123,9 @@ msgstr ""
 msgid "Server URL: "
 msgstr "URL сервера: "
 
+msgid "Error:"
+msgstr "Помилка:"
+
 msgid "Bidirectional Synchronization"
 msgstr "Двостороння синхронізація"
 
@@ -153,9 +134,6 @@ msgstr "Скинути віддалені дані до локальних"
 
 msgid "Reset local to remote"
 msgstr "Скинути локальні дані до віддалених"
-
-msgid "Merge"
-msgstr "Об'єднати"
 
 msgid "Local changes"
 msgstr "Локальні зміни"
@@ -187,11 +165,11 @@ msgstr "Застосування змін до віддаленої бази д�
 msgid "No changes to apply to remote database."
 msgstr "Немає змін для застосування до віддаленої бази даних."
 
-msgid "Successfully applied changes to local database."
-msgstr "Зміни успішно застосовані до локальної бази даних."
-
 msgid "Missing locally"
 msgstr "Відсутнє локально"
 
 msgid "Missing remotely"
 msgstr "Відсутнє віддалено"
+
+msgid "Media files are in sync."
+msgstr "Медіафайли синхронізовані."

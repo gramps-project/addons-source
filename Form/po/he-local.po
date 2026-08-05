@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-10 19:07+0000\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 #, python-format
 msgid "Form: %s"
@@ -1311,7 +1311,7 @@ msgid "6. Relation to head of family"
 msgstr "6. יוחסה לראש המשפחה"
 
 msgid "7. Single, married, widowed, divorced or legally separated"
-msgstr "7. רווק, נשוי, אלמן, התגרש או חוקית פרוד"
+msgstr "7. רווק, נשוי, אלמן, התגרש או פרוד על פי חוק"
 
 msgid "BirthMonth"
 msgstr "לידה חודש"
@@ -1455,13 +1455,13 @@ msgid "Line on Schedule 2"
 msgstr "קו בלוח 2"
 
 msgid "PageRef"
-msgstr "עמוד הפניה"
+msgstr "עמוד אזכור"
 
 msgid "2. Page from Schedule 1"
 msgstr "2. עמוד מלוח 1"
 
 msgid "LineRef"
-msgstr "שורה הפניה"
+msgstr "שורת אזכור"
 
 msgid "3. Line from Schedule 1"
 msgstr "3. קו מלוח 1"
@@ -1857,7 +1857,7 @@ msgid "5. Relation to head of family"
 msgstr "5. יוחסה לראש המשפחה"
 
 msgid "6. Single, married, widowed, divorced or legally separated"
-msgstr "6. רווק, נשוי, אלמן, התגרש או חוקית פרוד"
+msgstr "6. רווק, נשוי, אלמן, התגרש או פרוד על פי חוק"
 
 msgid "7. Month of birth"
 msgstr "7. חודש מתוך לידה"
@@ -1927,7 +1927,7 @@ msgid "10. Sex"
 msgstr "10. מין"
 
 msgid "11. Single, married, widowed, divorced or legally separated"
-msgstr "11. רווק, נשוי, אלמן, התגרש או חוקית פרוד"
+msgstr "11. רווק, נשוי, אלמן, התגרש או פרוד על פי חוק"
 
 msgid "12. Age at last birthday"
 msgstr "12. גיל ביום ההולדת האחרון"

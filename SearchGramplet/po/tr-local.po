@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
@@ -20,18 +20,63 @@ msgstr ""
 msgid "Search"
 msgstr "Arama"
 
+msgid "Gramplet for search objects in database."
+msgstr "Veritabanındaki nesneleri aramak için Gramplet."
+
 msgid "Show bookmarked first"
 msgstr "Önce yer işaretli olanları göster"
+
+msgid "Sort by object type"
+msgstr "Nesne türüne göre sırala"
 
 msgid "Persons"
 msgstr "Kişiler"
 
+msgid "Menu to set search objects"
+msgstr "Aranacak nesneleri ayarlama menüsü"
+
+msgid "Select objects to search"
+msgstr "Aranacak nesneleri seçin"
+
+msgid "SearchGramplet configuration menu"
+msgstr "SearchGramplet yapılandırma menüsü"
+
 #, python-format
 msgid "found: %s"
 msgstr "Bulunan: %s"
+
+msgid "No matches..."
+msgstr "Eşleşme yok..."
+
+msgid "Start type to search"
+msgstr "Aranacak başlangıç türü"
+
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+"Aranacak başlangıç türü nesneleri.\n"
+"Tüm nesneleri göstermek için yalnızca «*» sembolünü girin."
+
+msgid "Search..."
+msgstr "Ara..."
 
 msgid "Remove from bookmarks"
 msgstr "Yer işaretlerinden kaldır"
 
 msgid "Add to bookmarks"
 msgstr "Yer işaretlerine ekle"
+
+#, python-format
+msgid "Birth: %s"
+msgstr "Doğum: %s"
+
+#, python-format
+msgid "Death: %s"
+msgstr "Ölüm: %s"
+
+msgid "Set as Active person"
+msgstr "Etkin kişi olarak ayarla"
+
+msgid "Set as Home person"
+msgstr "Ana kişi olarak ayarla"

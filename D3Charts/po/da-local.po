@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2026-04-28 18:11+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -12,7 +12,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "Fejl ved skrivning til: {target_path}:{message}"
 
 #, python-format
 msgid "Failed to create directory structure : %s"
@@ -68,6 +72,11 @@ msgstr ""
 "Danner e web side med en grafisk repræsentation af aner (SVG) repræsenteret "
 "som en viftetavle fra D3.js JavaScript bibliotek."
 
+#, python-format
+msgctxt "spouse"
+msgid "See %(reference)s : %(spouse)s"
+msgstr "Se %(reference)s : %(spouse)s"
+
 msgid "Generating report..."
 msgstr "Danner rapporten..."
 
@@ -84,6 +93,10 @@ msgid ""
 msgstr ""
 "Målfolder %s findes ikke\n"
 "Vil du forsøge at danne den?"
+
+#, python-brace-format
+msgid "Failed to create {target_path}: {message}"
+msgstr "Kunne ikke danne {target_path}:{message}"
 
 #, python-format
 msgid ""

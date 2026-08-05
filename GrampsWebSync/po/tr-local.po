@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"POT-Creation-Date: 2026-07-31 17:35+0200\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
@@ -22,35 +22,6 @@ msgstr "Gramps Web Senkronizasyonu"
 
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Yerel bir veritabanını bir Gramps Web örneğiyle senkronize eder."
-
-msgid "Your user does not have sufficient server permissions to use sync."
-msgstr ""
-"Kullanıcınızın senkronizasyonu kullanmak için yeterli sunucu izinleri yok."
-
-msgid "Fetching remote data..."
-msgstr "Uzak veriler alınıyor..."
-
-msgid "Unexpected error while applying changes."
-msgstr "Değişiklikler uygulanırken beklenmedik bir hata oluştu."
-
-msgid "Media files are in sync."
-msgstr "Medya dosyaları senkronize durumda."
-
-#, python-format
-msgid "Successfully downloaded %s media files."
-msgstr "%s medya dosyası başarıyla indirildi."
-
-#, python-format
-msgid "Encountered %s errors during download."
-msgstr "İndirme sırasında %s hata oluştu."
-
-#, python-format
-msgid "Successfully uploaded %s media files."
-msgstr "%s medya dosyası başarıyla yüklendi."
-
-#, python-format
-msgid "Encountered %s errors during upload."
-msgstr "Yükleme sırasında %s hata oluştu."
 
 msgid "Authentication failed. Please check your username and password."
 msgstr ""
@@ -69,10 +40,6 @@ msgstr "Çok fazla istek geldi, lütfen birkaç saniye sonra tekrar deneyin."
 msgid "GrampsWeb tree is disabled."
 msgstr "GrampsWeb ağacı devre dışı bırakıldı."
 
-#, python-format
-msgid "Server error %s. Please check your connection."
-msgstr "Sunucu hatası %s. Lütfen bağlantınızı kontrol edin."
-
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr ""
 "Bağlantı başarısız oldu. Lütfen URL adresinizi ve internet bağlantınızı "
@@ -81,40 +48,35 @@ msgstr ""
 msgid "Invalid server response. Please check the URL."
 msgstr "Geçersiz sunucu yanıtı. Lütfen URL adresini kontrol edin."
 
-#, python-format
-msgid "Unexpected error: %s"
-msgstr "Beklenmeyen hata: %s"
-
-msgid "Error accessing media object."
-msgstr "Medya nesnesine erişimde hata oluştu."
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"Kullanıcınızın senkronizasyonu kullanmak için yeterli sunucu izinleri yok."
 
 msgid "Failed importing downloaded XML file."
 msgstr "İndirilen XML dosyasının içe aktarılması başarısız oldu."
 
-msgid "Comparing local and remote data..."
-msgstr "Yerel ve uzaktan gelen verileri karşılaştırma..."
-
-msgid "Server authorization error."
-msgstr "Sunucu yetkilendirme hatası."
-
-msgid "Server authorization error: insufficient permissions."
-msgstr "Sunucu yetkilendirme hatası: Yetersiz izinler."
-
-msgid "Error: URL not found."
-msgstr "Hata: URL bulunamadı."
-
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr "Değişiklikler sunucuya senkronize edilemiyor: nesneler değiştirildi."
 
+msgid "Unexpected error while applying changes."
+msgstr "Değişiklikler uygulanırken beklenmedik bir hata oluştu."
+
 #, python-format
-msgid "Error %s while connecting to server."
-msgstr "Sunucuya bağlanırken %s hatası oluştu."
+msgid "Server error %s. Please check your connection."
+msgstr "Sunucu hatası %s. Lütfen bağlantınızı kontrol edin."
 
-msgid "URL error while connecting to server."
-msgstr "Sunucuya bağlanırken URL hatası oluştu."
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Beklenmeyen hata: %s"
 
-msgid "Unable to synchronize changes to server."
-msgstr "Değişiklikler sunucuya senkronize edilemedi."
+msgid "Fetching remote data..."
+msgstr "Uzak veriler alınıyor..."
+
+msgid "Comparing local and remote data..."
+msgstr "Yerel ve uzaktan gelen verileri karşılaştırma..."
+
+msgid "Successfully applied changes to local database."
+msgstr "Değişiklikler yerel veritabanına başarıyla uygulandı."
 
 msgid "Continue without transport encryption?"
 msgstr "Taşıma şifrelemesi olmadan devam edilsin mi?"
@@ -163,6 +125,9 @@ msgstr ""
 msgid "Server URL: "
 msgstr "Sunucu URL adresi: "
 
+msgid "Error:"
+msgstr "Hata:"
+
 msgid "Bidirectional Synchronization"
 msgstr "Çift Yönlü Senkronizasyon"
 
@@ -171,9 +136,6 @@ msgstr "Uzak adresi yerel adrese sıfırla"
 
 msgid "Reset local to remote"
 msgstr "Yerel olanı uzak olana sıfırla"
-
-msgid "Merge"
-msgstr "Birleştir"
 
 msgid "Local changes"
 msgstr "Yerel değişiklikler"
@@ -202,19 +164,11 @@ msgstr "Uzak veritabanına değişiklikler uygulanıyor..."
 msgid "No changes to apply to remote database."
 msgstr "Uzak veritabanına uygulanacak değişiklik yok."
 
-msgid "Successfully applied changes to local database."
-msgstr "Değişiklikler yerel veritabanına başarıyla uygulandı."
-
 msgid "Missing locally"
 msgstr "Yerel olarak kayıp"
 
 msgid "Missing remotely"
 msgstr "Uzaktan kayıp"
 
-#, python-format
-msgid "Downloading %s media file(s)"
-msgstr "%s medya dosyası indiriliyor"
-
-#, python-format
-msgid "Uploading %s media file(s)"
-msgstr "%s medya dosyası yükleniyor"
+msgid "Media files are in sync."
+msgstr "Medya dosyaları senkronize durumda."

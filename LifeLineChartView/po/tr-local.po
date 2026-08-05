@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,13 +12,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid ""
+"LifeLineChartView dependencies are missing. It is not possible to use this "
+"plugin without them."
+msgstr ""
+"LifeLineChartView bağımlılıkları eksik. Bunlar olmadan bu eklentiyi "
+"kullanmak mümkün değil."
+
+#, python-brace-format
+msgid "cursor position at {date}"
+msgstr "İmleç konumu {date}"
+
+msgid "Hide person"
+msgstr "Kişiyi gizle"
+
+msgid "Show person"
+msgstr "Kişiyi göster"
+
+msgid "Show siblings"
+msgstr "Kardeşleri göster"
+
+msgid "Hide siblings"
+msgstr "Kardeşleri gizle"
+
+msgid "Show ancestors above "
+msgstr "Üstteki ataları göster "
+
+msgid "General Layout"
+msgstr "Genel Düzen"
+
+msgid "Life Line Chart"
+msgstr "Yaşam Çizgisi Grafiği"
+
 msgid "Zoom in"
 msgstr "Yakınlaştır"
+
+msgid "Ctrl"
+msgstr "Ctrl"
+
+msgid "Mouse wheel"
+msgstr "Fare tekerleği"
 
 msgid "Zoom out"
 msgstr "Uzaklaştır"
@@ -29,5 +67,366 @@ msgstr "Orijinale yakınlaştır"
 msgid "Zoom to best fit"
 msgstr "En uygun boyuta yakınlaştır"
 
+msgid "Rebuild data cache"
+msgstr "Veri önbelleğini yeniden oluştur"
+
+msgid "Revert the placement and person selection"
+msgstr "Yerleşimi ve kişi seçimini geri al"
+
+msgid "Open Life Line Chart help"
+msgstr "Yaşam Çizgisi Grafiği yardımını aç"
+
+msgid "Export View as SVG"
+msgstr "Görünümü SVG olarak dışa aktar"
+
+msgid "Label Configuration"
+msgstr "Etiket Yapılandırması"
+
+msgid "Reset all settings"
+msgstr "Tüm ayarları sıfırla"
+
+msgid "Life Line Ancestor Chart"
+msgstr "Yaşam Çizgisi Atalar Grafiği"
+
+msgid "Persons and their relation in a time based chart"
+msgstr "Zaman bazlı grafikteki kişiler ve ilişkileri"
+
+msgid "Life Line Descendant Chart"
+msgstr "Yaşam Çizgisi Soyundan Gelen Grafiği"
+
+msgid "Warp the chart shape"
+msgstr "Grafik şeklini bük"
+
+msgid "The overall shape of the chart can be warped."
+msgstr "Grafiğin genel şekli bükülebilir."
+
+msgid "Normal grid shape"
+msgstr "Normal ızgara şekli"
+
+msgid "Sine shape"
+msgstr "Sinüs şekli"
+
+msgid "Triangular shape"
+msgstr "Üçgen şekil"
+
+msgid "Show photos"
+msgstr "Fotoğrafları göster"
+
+msgid "Photos of the individual are shown."
+msgstr "Bireyin fotoğrafları gösterilmektedir."
+
+msgid "Photo size"
+msgstr "Fotoğraf boyutu"
+
+msgid ""
+"Photos which are shown are fitted into a square of this extent. The size is "
+"given relative to the line thickness."
+msgstr ""
+"Gösterilen fotoğraflar bu boyuttaki bir kareye sığdırılmıştır. Boyut, çizgi "
+"kalınlığına göre verilmiştir."
+
+msgid "Total height"
+msgstr "Toplam yükseklik"
+
+msgid "Total height of the whole chart."
+msgstr "Tüm grafiğin toplam yüksekliği."
+
+msgid "Relative line thickness"
+msgstr "Göreceli çizgi kalınlığı"
+
+msgid ""
+"The line thickness of an individual is given relatively to the horizontal "
+"step size."
+msgstr "Bireysel çizgi kalınlığı, yatay adım boyutuna göre verilmiştir."
+
+msgid "Horizontal step size"
+msgstr "Yatay adım boyutu"
+
+msgid ""
+"This is the distance from one line to another. This value is also used for "
+"scaling of other items."
+msgstr ""
+"Bu, bir çizgiden diğerine olan mesafedir. Bu değer, diğer öğelerin "
+"ölçeklendirilmesi için de kullanılır."
+
+msgid "Show birth label"
+msgstr "Doğum etiketini göster"
+
+msgid "Activate the birth label."
+msgstr "Doğum etiketini etkinleştirin."
+
+msgid "Birth label along path"
+msgstr "Yol boyunca doğum etiketi"
+
+msgid "The birth label is aligned to the individual line."
+msgstr "Doğum etiketi, birey çizgisine hizalanır."
+
+msgid "Birth label rotation"
+msgstr "Doğum etiketi döndürme"
+
+msgid "The birth label is written in a text frame rotated by this value."
+msgstr ""
+"Doğum etiketi, bu değer kadar döndürülmüş bir metin çerçevesine yazılır."
+
+msgid "Horizontal offset of birth label"
+msgstr "Doğum etiketinin yatay kaydırması"
+
+msgid ""
+"The birth label is moved horizontally by this value, which is given "
+"relatively to the font size."
+msgstr ""
+"Doğum etiketi, yazı tipi boyutuna göre verilen bu değer kadar yatay olarak "
+"hareket ettirilir."
+
+msgid "Vertical offset of birth label"
+msgstr "Doğum etiketinin dikey kaydırması"
+
+msgid ""
+"The birth label is moved vertically by this value, which is given relatively "
+"to the font size."
+msgstr ""
+"Doğum etiketi, yazı tipi boyutuna göre verilen bu değer kadar dikey olarak "
+"hareket ettirilir."
+
+msgid "Wrap words in birth label"
+msgstr "Doğum etiketindeki kelimeleri sar"
+
+msgid "The birth label content is wrapped where possible."
+msgstr "Doğum etiketi içeriği, mümkün olan yerlerde sarılır."
+
+msgid "Birth label anchor"
+msgstr "Doğum etiketi bağlantısı"
+
+msgid "Text alignment of the birth label."
+msgstr "Doğum etiketinin metin hizalaması."
+
+msgid "Center"
+msgstr "Ortala"
+
+msgid "Show death label"
+msgstr "Ölüm etiketini göster"
+
+msgid "Activate the death label."
+msgstr "Ölüm etiketini etkinleştir."
+
+msgid "Death label rotation"
+msgstr "Ölüm etiketi döndürme"
+
+msgid "The death label is written in a text frame rotated by this value."
+msgstr ""
+"Ölüm etiketi, bu değer kadar döndürülmüş bir metin çerçevesine yazılır."
+
+msgid "Horizontal offset of death label"
+msgstr "Ölüm etiketinin yatay kaydırma mesafesi"
+
+msgid ""
+"The death label is moved horizontally by this value, which is given "
+"relatively to the font size."
+msgstr ""
+"Ölüm etiketi, yazı tipi boyutuna göre verilen bu değer kadar yatay olarak "
+"hareket ettirilir."
+
+msgid "Vertical offset of death label"
+msgstr "Ölüm etiketinin dikey kaydırma mesafesi"
+
+msgid ""
+"The death label is moved vertically by this value, which is given relatively "
+"to the font size."
+msgstr ""
+"Ölüm etiketi, yazı tipi boyutuna göre verilen bu değer kadar dikey olarak "
+"hareket ettirilir."
+
+msgid "Wrap words in death label"
+msgstr "Ölüm etiketindeki kelimeleri sar"
+
+msgid "The death label content is wrapped where possible."
+msgstr "Ölüm etiketi içeriği, mümkün olan yerlerde sarılır."
+
+msgid "Death label anchor"
+msgstr "Ölüm etiketi bağlantısı"
+
+msgid "Text alignment of the death label."
+msgstr "Ölüm etiketinin metin hizalaması."
+
+msgid "Show marriage label"
+msgstr "Evlilik etiketini göster"
+
+msgid "Activate the marriage label."
+msgstr "Evlilik etiketini etkinleştir."
+
+msgid "Fade individual color"
+msgstr "Birey rengini soldur"
+
+msgid "The color of the individuals is faded to black with increasing age."
+msgstr "Bireylerin rengi, yaş arttıkça siyaha doğru soldurulur."
+
+msgid "Font name"
+msgstr "Yazı tipi adı"
+
+msgid "Name of the font family used for labels."
+msgstr "Etiketler için kullanılan yazı tipi ailesinin adı."
+
+msgid "Relative font size"
+msgstr "Göreceli yazı tipi boyutu"
+
+msgid "The font size is given relatively to the line thickness."
+msgstr "Yazı tipi boyutu, çizgi kalınlığına göre verilir."
+
+msgid "Family shape"
+msgstr "Aile şekli"
+
+msgid "The shape of the families can be varied."
+msgstr "Ailelerin şekli değiştirilebilir."
+
+msgid "Rectangular"
+msgstr "Dikdörtgen"
+
+msgid "Softer"
+msgstr "Daha yumuşak"
+
+msgid "Upper year minimum margin"
+msgstr "Üst yıl minimum marjı"
+
+msgid ""
+"The upper bound of the chart is extended by at least this number of years."
+msgstr "Grafiğin üst sınırı en az bu yıl sayısı kadar genişletilir."
+
+msgid "Lower year minimum margin"
+msgstr "Alt yıl minimum marjı"
+
+msgid ""
+"The lower bound of the chart is extended by at least this number of years."
+msgstr "Grafiğin alt sınırı en az bu kadar yıl genişletilir."
+
+msgid "Visualize connections"
+msgstr "Bağlantıları görselleştirin"
+
+msgid ""
+"Visualize the connections between families and individuals. This is for "
+"debugging purposes."
+msgstr ""
+"Aileler ve bireyler arasındaki bağlantıları görselleştirin. Bu, hata "
+"ayıklama amaçlıdır."
+
+msgid "Visualize ambiguous placement"
+msgstr "Belirsiz yerleşimi görselleştirin"
+
+msgid "Visualize automatically detected errors in the placement algorithm."
+msgstr ""
+"Yerleştirme algoritmasında otomatik olarak algılanan hataları görselleştirin."
+
+msgid "Coloring of individuals"
+msgstr "Bireylerin renklendirilmesi"
+
+msgid "There are different ways to determine the color of an individual."
+msgstr "Bir bireyin rengini belirlemenin farklı yolları vardır."
+
+msgid "Unique"
+msgstr "Benzersiz"
+
+msgid "Based on surname"
+msgstr "Soyadına göre"
+
+msgid "Flip vertically"
+msgstr "Dikey olarak çevir"
+
+msgid "If active, the chart is flipped vertically."
+msgstr "Etkinse, grafik dikey olarak çevrilir."
+
+msgid "Line weighting"
+msgstr "Çizgi kalınlığı"
+
+msgid "The line width can be configured."
+msgstr "Çizgi kalınlığı yapılandırılabilir."
+
+msgid "none"
+msgstr "yok"
+
+msgid "Show pedigree collapse"
+msgstr "Soy ağacı daralmasını göster"
+
+msgid ""
+"Due to pedigree collapse one individual might appear several times in a "
+"simple ancestor chart. If this is active, then every individual only appears "
+"once."
+msgstr ""
+"Soy ağacı daralması nedeniyle, bir birey basit bir soy ağacında birkaç kez "
+"görünebilir. Bu etkinse, her birey yalnızca bir kez görünür."
+
 msgid "Maximum number of generations"
 msgstr "Maksimum nesil sayısı"
+
+msgid ""
+"if this number of generations has been reached, the algorithm doesn't go any "
+"deeper"
+msgstr "Bu nesil sayısına ulaşıldığında, algoritma daha derine inmez"
+
+msgid "Fathers have the same color"
+msgstr "Babalar aynı renkte"
+
+msgid ""
+"Starting from the root person, each father of an added individual has the "
+"same color as that individual."
+msgstr ""
+"Kök kişiden başlayarak, eklenen her bireyin babası, o bireyle aynı renktedir."
+
+msgid "Maximum number of compression steps"
+msgstr "Maksimum sıkıştırma adımı sayısı"
+
+msgid "Debugging of the compression algorithm. Abort after x steps."
+msgstr "Sıkıştırma algoritmasının hata ayıklaması. x adımdan sonra iptal et."
+
+msgid "Maximum number of flipping steps"
+msgstr "Maksimum çevirme adımı sayısı"
+
+msgid "Debugging of the flipping algorithm. Abort after x steps."
+msgstr ""
+"Çevirme algoritmasının hata ayıklaması. x adımdan sonra işlemi iptal et."
+
+msgid "Compress the chart horizontally"
+msgstr "Grafiği yatay olarak sıkıştır"
+
+msgid ""
+"By default every individual has a unique horizontal slot. This can be "
+"inefficient with many generations. This algorithm lets several people share "
+"a horizontal slot, if they do not overlap."
+msgstr ""
+"Varsayılan olarak her bireyin benzersiz bir yatay yuvası vardır. Bu, birçok "
+"nesilde verimsiz olabilir. Bu algoritma, çakışmadıkları takdirde birkaç "
+"kişinin yatay bir yuvayı paylaşmasına olanak tanır."
+
+msgid "Flip families to reduce horizontal connections"
+msgstr "Yatay bağlantıları azaltmak için aileleri çevirin"
+
+msgid ""
+"Switch the position of mother and father in a family, to reduce the overall "
+"horizontal cross connections in larger graphs. This is happens if one person "
+"is shown in more than one family or it is caused by pedigree collapse."
+msgstr ""
+"Daha büyük grafiklerde genel yatay çapraz bağlantıları azaltmak için bir "
+"ailedeki anne ve babanın konumunu değiştirin. Bu, bir kişi birden fazla "
+"ailede gösteriliyorsa veya soy ağacı çökmesinden kaynaklanıyorsa olur."
+
+msgid "Highlight descandants"
+msgstr "Soydan gelenleri vurgula"
+
+msgid "Highlight the persons which are descendants."
+msgstr "Soydan gelen kişileri vurgulayın."
+
+msgid "Number of descendants"
+msgstr "Soydan gelen sayısı"
+
+msgid "Very soft"
+msgstr "Çok yumuşak"
+
+msgid "General chart layout"
+msgstr "Genel grafik düzeni"
+
+msgid "There are different layouts for descendant charts."
+msgstr "Soydan gelen grafikler için farklı düzenler vardır."
+
+msgid "Parents enclose children"
+msgstr "Ebeveynler çocukları çevreler"
+
+msgid "Cactus"
+msgstr "Kaktüs"

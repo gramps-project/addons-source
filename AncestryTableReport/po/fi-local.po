@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-03-11 20:51+0100\n"
-"PO-Revision-Date: 2026-04-20 04:09+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-26 17:40+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,14 +12,86 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Ancestry Table"
 msgstr "Sukutaulu"
 
+msgid "Produces a table of ancestry about a person"
+msgstr "Listaa henkilön esi-isät"
+
+#, python-format
+msgid "Person %(name)s is not in the Database"
+msgstr "Henkilöä %(name)s ei ole tietokannassa"
+
+#, python-format
+msgid "Ancestry Table Report for %(name)s"
+msgstr "Henkilön %(name)s esi-isäraportti"
+
+#, python-format
+msgid "Generation %(gen_number)d"
+msgstr "Sukupolvi %(sukupolvien_numero)d"
+
+#, python-format
+msgid "Number of Ancestors for %(name)s"
+msgstr "Henkilön %(name)s löydettyjen esi-isien määrä"
+
 msgid "Generation"
 msgstr "Sukupolvi"
 
+msgid "To start a new page after each generation."
+msgstr "Aloita uusi sivu jokaisen sukupolven jälkeen."
+
+msgid "Number of ancestors per generation"
+msgstr "Esivanhempien lukumäärä sukupolvea kohden"
+
+msgid "Add a page with tne number of ancestors per generation."
+msgstr "Lisää sivu, jossa on esi-isien lukumäärä sukupolvea kohden."
+
+msgid "Mask the name of the calendar in the dates"
+msgstr "Älä näytä kalenterin nimeä päivämäärien yhteydessä"
+
+msgid ""
+"By default, except for gregorian dates, Gramps shows the name of the "
+"calendar in the dates."
+msgstr ""
+"Oletusarvoisesti Gramps näyttää kalenterin nimen päivämäärissä, lukuun "
+"ottamatta gregoriaanisia päivämääriä."
+
 msgid "The style used for the title of the report."
 msgstr "Raportin otsikon tyyli."
+
+msgid "The style used for the Sosa number of the paternal branch."
+msgstr "Isänhaaran Sosa-numerossa käytetty tyyli."
+
+msgid "The style used for the Sosa number of the maternal branch."
+msgstr "Äitihaaran Sosa-numerossa käytetty tyyli."
+
+msgid "The style used for the data of the males."
+msgstr "Miesten tiedossa käytetty tyyli."
+
+msgid "The style used for the data of the females."
+msgstr "Naisten tiedoissa käytetty tyyli."
+
+msgid "The style used for the marriage."
+msgstr "Avioliitossa käytetty tyyli."
+
+msgid ""
+"The style used for an empty row.\n"
+"To enlarge the height of the empty row, just increse the size of the police."
+msgstr ""
+"Tyhjän rivin tyyli.\n"
+"Suurenna korkeutta lisäämällä fonttikokoa."
+
+msgid ""
+"The style used for the header table of the number of ancestors per "
+"generation."
+msgstr "Sukupolven esi-isien lukumäärän otsikossa käytetty tyyli."
+
+msgid "The style used for the number of ancestors per generation."
+msgstr "Sukupolven esi-isien lukuäärän tyyli."
+
+msgid ""
+"The style used for the total line of the number of ancestors per generation."
+msgstr "Sukupolven esi-isien määrän tyyli."

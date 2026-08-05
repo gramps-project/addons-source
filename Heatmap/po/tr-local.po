@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,10 +12,103 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "Map tiles"
+msgstr "Harita döşemeleri"
+
+msgid ""
+"Set the size of the heatmap points.\n"
+"Default: 15"
+msgstr ""
+"Isı haritası noktalarının boyutunu ayarlayın.\n"
+"Varsayılan: 15"
+
+msgid "File path"
+msgstr "Dosya yolu"
+
+msgid ""
+"For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
+"the characters space, underline and hypen are allowed. The file name also "
+"has to start and end with an alphanumeric character.The file extention "
+"'.html' is added by the report."
+msgstr ""
+"Dosya adı için yalnızca A-Z, a-z İngilizce harfler ve 0-9 sayıları ile "
+"boşluk, alt çizgi ve tire karakterlerine izin verilir. Dosya adı ayrıca "
+"alfasayısal bir karakterle başlamalı ve bitmelidir. Dosya uzantısı '.html' "
+"rapor tarafından eklenir."
+
+msgid "File name"
+msgstr "Dosya adı"
+
+msgid "Enable custom start position"
+msgstr "Özel başlangıç konumunu etkinleştirin"
+
+msgid ""
+"Enabling will force the map open at your custom start position and zoom."
+msgstr ""
+"Etkinleştirildiğinde, harita özel başlangıç konumunuzda ve yakınlaştırma "
+"seviyenizde açılacaktır."
+
+msgid "Start latitude"
+msgstr "Başlangıç enlemi"
+
+msgid ""
+"Set custom start position latitude\n"
+"Default: 50.0"
+msgstr ""
+"Özel başlangıç pozisyonu enlemini ayarlayın\n"
+"Varsayılan: 50.0"
+
+msgid "Start longitude"
+msgstr "Başlangıç boylamı"
+
+msgid ""
+"Set custom start position longitude\n"
+"Default: 10.0"
+msgstr ""
+"Özel başlangıç pozisyonu boylamını ayarlayın\n"
+"Varsayılan: 10.0"
+
+msgid "Start zoom"
+msgstr "Yakınlaştırmayı başlat"
+
+msgid ""
+"Set the value for the starting zoom\n"
+"Default: 5"
+msgstr ""
+"Başlangıç yakınlaştırma değeri için ayar yapın\n"
+"Varsayılan: 5"
+
+msgid "Path does not exist."
+msgstr "Yol mevcut değil."
+
+msgid "Invalid filename."
+msgstr "Geçersiz dosya adı."
+
 msgid "INFO"
 msgstr "BİLGİ"
+
+msgid "Create a heatmap web report."
+msgstr "Bir ısı haritası web raporu oluşturun."
+
+msgid "Stamen Terrain"
+msgstr "Stamen Arazisi"
+
+msgid "Stamen Terrain (Background only)"
+msgstr "Stamen Arazisi (Sadece arka plan)"
+
+msgid "Stamen Toner"
+msgstr "Stamen Toner"
+
+msgid "Stamen Watercolor"
+msgstr "Stamen Suluboya"
+
+msgid "CartoDB Positron"
+msgstr "CartoDB Pozitron"
+
+msgid "CartoDB DarkMatter"
+msgstr "CartoDB Karanlık Madde"

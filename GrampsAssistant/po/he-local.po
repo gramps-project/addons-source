@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-03 09:03-0700\n"
-"PO-Revision-Date: 2026-06-10 19:07+0000\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,130 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
+
+msgid ""
+"You are a helpful genealogy assistant with access to the user's Gramps "
+"database. Answer questions about people, families, events, and "
+"relationships. When you need information from the database, call the "
+"provided tools — never write code, simulate results, or make up data. If no "
+"tool exists for the requested information, say so plainly."
+msgstr ""
+"פעל כסייען חקר־יוחסין יעיל עם גישה למסד הנתוניגרמפס של המשתמש. ענה על שאלות "
+"לגבי אנשים, משפחות, אירועים וקשרי־קרבה. אם אתה זקוק למידע ממסד הנתונים, פנה "
+"לכלים המסופקים – לעולם אל תכתוב קוד, אל תמציא דמיוניות תוצאות ואל תמציא "
+"נתונים שלא קיימים במסד הנתונים. אם לא קיים כלי עבור המידע המבוקש, אמור זאת "
+"במפורש."
+
+msgid "Gramps Assistant settings"
+msgstr "הגדרות סייען גרמפס"
+
+msgid "Clear conversation and context"
+msgstr "ניקוי שיחה ותוכן"
 
 msgid "Send"
 msgstr "לשלוח"
+
+msgid "Gramps Assistant:"
+msgstr "סייען גרמפס:"
+
+msgid ""
+"Ask me anything about the Gramps program or your specific Gramps family "
+"tree. Use the ⚙ button to configure the AI.\n"
+msgstr ""
+"ניתן לשאול אותי כל דבר בנוגע לתוכנית גרמפס או על אילן־היחוסין מסויים. יש "
+"להשתמש בלחצן ⚙ כדי להגדיר את הבינה המלאכותית.\n"
+
+msgid ""
+"\n"
+"No model configured. Please click the Settings button to choose a backend "
+"and model before chatting.\n"
+msgstr ""
+"\n"
+"לא תוצר מודל. נא להקיש על לחצן הגדרות לבחירת גב־המערכת ומודל לפני שיחוח.\n"
+
+msgid "Thinking..."
+msgstr "חשיבה..."
+
+#, python-brace-format
+msgid ""
+"API key error: the environment variable {var} is not set or is invalid. Set "
+"it before launching Gramps:\n"
+"  export {var}=your-key-here"
+msgstr ""
+"שגיאת מפתח API: משתנה הסביבה {var} לא הוגדר או לא תקין. נא להגדירו לפני "
+"שיגור גרמפס:\n"
+"  export {var}=הזנת-המפתח-כאן"
+
+msgid ""
+"API key error: this provider requires an API key. Open Settings and enter "
+"the environment variable name for your API key (e.g. OPENAI_API_KEY)."
+msgstr ""
+"שגיאת מפתח API: ספק שרות זה דורש מפתח API. נא לפתוח את תפריט ההגדרות ולהזין "
+"את שם משתנה הסביבה למפתח ה API (לדוגמה, OPENAI_API_KEY)."
+
+msgid "Done.\n"
+msgstr "בוצע.\n"
+
+msgid "System Prompt:"
+msgstr "הנחיית מערכת:"
+
+msgid "Simplify tools (recommended for smaller/local models)"
+msgstr "פישוט כלים (מומלץ לדגמים קטנים/מקומיים)"
+
+msgid ""
+"When enabled, only the tools relevant to your question are sent to the "
+"model. This improves performance with smaller local models."
+msgstr ""
+"כאשר מאופשר, רק הכלים הרלוונטיים לשאלה שנשאלה נשלחים למודל. זה משפר ביצועים "
+"במודלים מקומיים קטנים."
+
+msgid "Use Local Model"
+msgstr "שימוש בדגם מקומי"
+
+msgid ""
+"URL of a local OpenAI-compatible server. Ollama: http://localhost:11434  LM "
+"Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
+msgstr ""
+"כתובת URL של שרת מקומי תואם OpenAI. Ollama: http://localhost:11434 LM "
+"Studio: http://localhost:1234 llama.cpp: http://localhost:8080"
+
+msgid "model name (leave blank for LM Studio / llama.cpp)"
+msgstr "שם מודל (להשאיר ריק עבור LM Studio / llama.cpp)"
+
+msgid ""
+"Model to request from the local server. Required for Ollama (e.g. llama3.1). "
+"Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
+msgstr ""
+"מודל לבקשה מהשרת המקומי. נדרש עבור Ollama (לדוגמה llama3.1). להשאיר ריק עבור "
+"LM Studio או llama.cpp, שמשתמשים בכל מודל שנטען."
+
+msgid "Model:"
+msgstr "דגם:"
+
+msgid "Use Foundational Model"
+msgstr "שימוש בדגם יסוד"
+
+msgid "e.g. OPENAI_API_KEY"
+msgstr "לדוגמה OPENAI_API_KEY"
+
+msgid "Name of the environment variable holding your API key."
+msgstr "שם משתנה הסביבה שמחזיק במפתח ה–API."
+
+msgid "API key env var:"
+msgstr "משתנה' סביבת מפתח API:"
+
+msgid "Backend:"
+msgstr "גב־מערכת:"
+
+msgid "Base URL:"
+msgstr "כתובת URL בסיסית:"
+
+msgid "Model name:"
+msgstr "שם דגם:"
+
+msgid "Gramps Assistant"
+msgstr "סייען גרמפס"
+
+msgid "AI assistant for querying your Gramps family tree"
+msgstr "סייען בינה מלאכותית לשאילתות אילן־יוחסין גרמפס"

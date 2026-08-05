@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,13 +12,82 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "The Tool requires at least one tag to execute."
+msgstr "Aracın çalıştırılması için en az bir etiket gerekir."
+
+msgid "ERROR"
+msgstr "HATA"
+
+msgid "Add/Remove"
+msgstr "Ekle/Kaldır"
+
+msgid "Add or remove tags from objects."
+msgstr "Nesnelere etiket ekleyin veya kaldırın."
+
+msgid "Add Tags"
+msgstr "Etiketleri Ekle"
+
+msgid "Remove Tags"
+msgstr "Etiketleri Kaldır"
+
+msgid "General options"
+msgstr "Genel seçenekler"
+
+msgid "Choose a category."
+msgstr "Bir kategori seçin."
+
+msgid "Choose Tag"
+msgstr "Etiket Seç"
+
+msgid "Choose a tag to remove."
+msgstr "Kaldırılacak etiketi seçin."
+
 msgid "Persons"
 msgstr "Kişiler"
 
+msgid "Filter options"
+msgstr "Filtreleme seçenekleri"
+
+#, python-format
+msgid "All %s"
+msgstr "Tüm %s"
+
+msgid "Add/Remove Tag Tool"
+msgstr "Etiket Ekle/Kaldır Aracı"
+
+msgid ""
+"Unable to run the tool. Please check if your database contains tags, filters "
+"and objects."
+msgstr ""
+"Aracı çalıştıramadı. Lütfen veritabanınızda etiketler, filtreler ve nesneler "
+"bulunup bulunmadığını kontrol edin."
+
+msgid "WARNING"
+msgstr "UYARI"
+
+#, python-format
+msgid "No %s objects were found in database."
+msgstr "Veritabanında hiçbir %s nesnesi bulunamadı."
+
+msgid "Process tags..."
+msgstr "Etiketleri işleyin..."
+
+msgid "added"
+msgstr "eklendi"
+
+msgid "removed"
+msgstr "kaldırıldı"
+
+msgid "Tag '{}' was {} to {} {} objects.\n"
+msgstr "'{}' etiketi, {} {} nesneleri için {} idi.\n"
+
 msgid "INFO"
 msgstr "BİLGİ"
+
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr "İnsan gruplarına, etkinliklere vb. bir etiket ekleyin veya kaldırın."

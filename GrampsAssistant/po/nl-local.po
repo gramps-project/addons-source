@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-03 09:03-0700\n"
-"PO-Revision-Date: 2026-06-04 05:01+0000\n"
+"PO-Revision-Date: 2026-08-03 04:01+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,136 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.8.dev0\n"
+
+msgid ""
+"You are a helpful genealogy assistant with access to the user's Gramps "
+"database. Answer questions about people, families, events, and "
+"relationships. When you need information from the database, call the "
+"provided tools — never write code, simulate results, or make up data. If no "
+"tool exists for the requested information, say so plainly."
+msgstr ""
+"U bent een behulpzame genealogische assistent met toegang tot de Gramps-"
+"database van de gebruiker. Beantwoord vragen over mensen, gezinnen, "
+"gebeurtenissen en relaties. Wanneer u informatie uit de database nodig "
+"heeft, roept u de meegeleverde tools aan — schrijf nooit code, simuleer geen "
+"resultaten of verzin gegevens. Als er geen hulpmiddel bestaat voor de "
+"gevraagde informatie, zeg dat dan duidelijk."
+
+msgid "Gramps Assistant settings"
+msgstr "Gramps Assistent instellingen"
+
+msgid "Clear conversation and context"
+msgstr "Gesprek en context wissen"
 
 msgid "Send"
 msgstr "Versturen"
+
+msgid "Gramps Assistant:"
+msgstr "Gramps Assistent:"
+
+msgid ""
+"Ask me anything about the Gramps program or your specific Gramps family "
+"tree. Use the ⚙ button to configure the AI.\n"
+msgstr ""
+"Vraag me iets over het Gramps programma of uw specifieke Gramps stamboom. "
+"Gebruik de ⚙-knop om de AI te configureren\n"
+
+msgid ""
+"\n"
+"No model configured. Please click the Settings button to choose a backend "
+"and model before chatting.\n"
+msgstr ""
+"\n"
+"Geen model geconfigureerd. Klik op de knop Instellingen om een backend en "
+"model te kiezen voor het chatten.\n"
+
+msgid "Thinking..."
+msgstr "Nadenken…"
+
+#, python-brace-format
+msgid ""
+"API key error: the environment variable {var} is not set or is invalid. Set "
+"it before launching Gramps:\n"
+"  export {var}=your-key-here"
+msgstr ""
+"API-sleutelfout: de omgevingsvariabele {var} is niet ingesteld of ongeldig. "
+"Stel deze in voordat u Gramps start:\n"
+"  export {var}=your-key-here"
+
+msgid ""
+"API key error: this provider requires an API key. Open Settings and enter "
+"the environment variable name for your API key (e.g. OPENAI_API_KEY)."
+msgstr ""
+"API-sleutelfout: deze provider vereist een API-sleutel. Open Instellingen en "
+"voer de naam van de omgevingsvariabele in voor uw API-sleutel (bijv. "
+"OPENAI_API_KEY)."
+
+msgid "Done.\n"
+msgstr "Klaar!\n"
+
+msgid "System Prompt:"
+msgstr "Systeemprompt:"
+
+msgid "Simplify tools (recommended for smaller/local models)"
+msgstr "Vereenvoudigingstools (aanbevolen voor kleinere/lokale modellen)"
+
+msgid ""
+"When enabled, only the tools relevant to your question are sent to the "
+"model. This improves performance with smaller local models."
+msgstr ""
+"Indien ingeschakeld, worden alleen de tools die relevant zijn voor uw vraag "
+"naar het model verzonden. Dit verbetert de prestaties bij kleinere lokale "
+"modellen."
+
+msgid "Use Local Model"
+msgstr "Gebruik Lokaal Model"
+
+msgid ""
+"URL of a local OpenAI-compatible server. Ollama: http://localhost:11434  LM "
+"Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
+msgstr ""
+"URL van een lokale OpenAI-compatibele server. Ollama: http://"
+"localhost:11434  LM Studio: http://localhost:1234  llama.cpp: http://"
+"localhost:8080"
+
+msgid "model name (leave blank for LM Studio / llama.cpp)"
+msgstr "modelname (leeg laten voor LM Studio / llama.cpp)"
+
+msgid ""
+"Model to request from the local server. Required for Ollama (e.g. llama3.1). "
+"Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
+msgstr ""
+"Model op te vragen bij de lokale server. Vereist voor Ollama (bijv. "
+"llama3.1). Laat leeg voor LM Studio of llama.cpp, die welk model dan ook "
+"wordt geladen gebruiken."
+
+msgid "Model:"
+msgstr "Model:"
+
+msgid "Use Foundational Model"
+msgstr "Gebruik Foundational Model"
+
+msgid "e.g. OPENAI_API_KEY"
+msgstr "bijv. OPENAI_API_KEY"
+
+msgid "Name of the environment variable holding your API key."
+msgstr "Naam van de omgevingsvariabele die uw API-sleutel bevat."
+
+msgid "API key env var:"
+msgstr "API-sleutel omg.var:"
+
+msgid "Backend:"
+msgstr "Back-end:"
+
+msgid "Base URL:"
+msgstr "Basis-URL:"
+
+msgid "Model name:"
+msgstr "Modelnaam:"
+
+msgid "Gramps Assistant"
+msgstr "Gramps Assistent"
+
+msgid "AI assistant for querying your Gramps family tree"
+msgstr "AI-assistent voor het opvragen van uw Gramps-stamboom"

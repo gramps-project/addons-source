@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-04 00:00-0000\n"
-"PO-Revision-Date: 2025-05-26 07:15+0000\n"
+"PO-Revision-Date: 2026-08-03 04:02+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,16 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 msgid "Birthdays"
 msgstr "Födelsedagar"
 
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "en Gramplet, som visar födelsedagarna för levande personer"
-
-msgid "No Family Tree loaded."
-msgstr "Inget släktträd laddat."
 
 msgid "Sort birthdays by"
 msgstr "Sortera födelsedagar efter"
@@ -37,6 +34,3 @@ msgstr "Ignorera födelsedagar med tagg"
 
 msgid "Only show birthdays with tag"
 msgstr "Visa endast födelsedagar med tagg"
-
-msgid "Processing..."
-msgstr "Bearbetar..."

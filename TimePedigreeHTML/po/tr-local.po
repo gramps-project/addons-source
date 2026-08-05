@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,10 +12,113 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "Failed writing "
+msgstr "Yazma başarısız oldu "
+
+msgid "Year of Birth of Center Person"
+msgstr "Merkez Kişinin Doğum Yılı"
+
+msgid "The year of birth of the center person. Estimate a year if unknown"
+msgstr "Merkez kişinin doğum yılı. Bilinmiyorsa tahmini bir yıl girin"
+
+msgid "Destination directory"
+msgstr "Hedef dizin"
+
+msgid "Path for generated files"
+msgstr "Oluşturulan dosyaların yolu"
+
 msgid "The destination file name for html content."
 msgstr "Html içeriği için hedef dosya adı."
+
+msgid "Default Age"
+msgstr "Varsayılan Yaş"
+
+msgid "Default age of parent when child is born with unknown year of birth"
+msgstr "Çocuğun doğum yılı bilinmiyorsa ebeveynin varsayılan yaşı"
+
+msgid "What to show"
+msgstr "Ne gösterilsin"
+
+msgid "Show GrampsID"
+msgstr "Gramps Kimliğini Göster"
+
+msgid "Show GrampsID on top right of the box"
+msgstr "Kutunun sağ üst köşesinde Gramps Kimliğini göster"
+
+msgid "Optimize"
+msgstr "Optimize Et"
+
+msgid "Use as little space in horizontal direction as possible"
+msgstr "Yatay yönde mümkün olduğunca az yer kullan"
+
+msgid "Male Box Color"
+msgstr "Erkek Kutu Rengi"
+
+msgid "Box background color for male person"
+msgstr "Erkek kişi kutusunun arka plan rengi"
+
+msgid "Female Box Color"
+msgstr "Kadın Kutu Rengi"
+
+msgid "Box background color for female person"
+msgstr "Kadın kişi kutusunun arka plan rengi"
+
+msgid "Number of pixel per year"
+msgstr "Yıl başına piksel sayısı"
+
+msgid "How many pixel height is one year?"
+msgstr "Bir yılın yüksekliği kaç piksel olsun?"
+
+msgid "Offset X Coordinate"
+msgstr "X Koordinatı Ofseti"
+
+msgid "How many pixel are unused besides the most left and most right boxes?"
+msgstr ""
+"En soldaki ve en sağdaki kutuların dışında kaç piksel kullanılmadan "
+"bırakılacak?"
+
+msgid "Offset Y Coordinate"
+msgstr "Y Koordinatı Ofseti"
+
+msgid "How many pixel are unused above first box?"
+msgstr "İlk kutunun üstünde kaç piksel kullanılmadan bırakılacak?"
+
+msgid "Width of a box in pixel"
+msgstr "Bir kutunun piksel cinsinden genişliği"
+
+msgid "Width of the box of a person in pixel"
+msgstr "Bir kişi kutusunun piksel cinsinden genişliği"
+
+msgid "Horizontal space between boxes in pixel"
+msgstr "Kutular arasındaki yatay mesafe piksel cinsinden"
+
+msgid "Minimum horizontal space between 2 boxes in pixel"
+msgstr "İki kutu arasındaki minimum yatay mesafe piksel cinsinden"
+
+msgid "Length of vertical part of a line in pixel"
+msgstr "Bir çizginin dikey kısmının piksel cinsinden uzunluğu"
+
+msgid ""
+"Parent and child boxes are connected with lines. This is the length of the "
+"vertical part of the lines in pixel"
+msgstr ""
+"Ebeveyn ve çocuk kutuları çizgilerle birbirine bağlanmıştır. Bu, çizgilerin "
+"dikey kısmının piksel cinsinden uzunluğudur"
+
+msgid "Number of pixel between left border and scale"
+msgstr "Sol kenarlık ile ölçek arasındaki piksel sayısı"
+
+msgid "Timeline Pedigree Report"
+msgstr "Zaman Çizelgesi Soy Ağacı Raporu"
+
+msgid ""
+"Creates an HTML webpage that uses JavaScript to show a pedigree block "
+"diagram arranged vertically by birth date"
+msgstr ""
+"Doğum tarihine göre dikey olarak düzenlenmiş bir soyağacı blok diyagramı "
+"göstermek için JavaScript kullanan bir HTML web sayfası oluşturur"

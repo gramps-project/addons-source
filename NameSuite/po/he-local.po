@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-24 01:13-0700\n"
-"PO-Revision-Date: 2026-06-10 19:07+0000\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,167 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
+
+msgid "Audit Given and Patronymic Names"
+msgstr "ביקורת שמות פרטיים ושמות פטרונימיים"
+
+msgid ""
+"Tools to rename given name, audit and infer patronymic (East Slavic) names."
+msgstr "כלים לשינוי שם פרטי, ביקורת והסקת שמות פטרונימיים (שמות מזרח סלאביים)."
+
+msgid "Patronymic Suggestion"
+msgstr "הצעת שם פטרוני"
+
+msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
+msgstr "הצעת שמות פטרונימיים (מזרח סלאביים) בזמן אמת תוך כדי ניווט."
+
+msgid "Auditing Settings"
+msgstr "הגררות ביקורת"
+
+msgid "All Records"
+msgstr "כל הרשומות"
+
+msgid "Males Only"
+msgstr "זכרים בלבד"
+
+msgid "Females Only"
+msgstr "נקבות בלבד"
+
+msgid "Configure Rules..."
+msgstr "תצור כללים..."
+
+msgid "Match Pre-Revolutionary Orthography"
+msgstr "התאמת אורתוגרפיה טרום מהפכה"
+
+msgid "Audit Database"
+msgstr "בירורת מסד־נתונים"
+
+msgid "Select All Safe Corrections"
+msgstr "בחירת כל התיקונים הבטוחים"
+
+msgid "Apply Selected Corrections"
+msgstr "החלת תיקונים שנבחרו"
+
+msgid "Configure Rules"
+msgstr "תצור כללים"
+
+msgid "Individual"
+msgstr "פרט"
+
+msgid "Current"
+msgstr "נוכחי"
+
+msgid "Correction"
+msgstr "תיקון"
+
+msgid "Conf"
+msgstr "תצור"
+
+msgid "Ref Year"
+msgstr "שנת אזכור"
+
+msgid "Explanation"
+msgstr "הסבר"
+
+msgid "Audit Complete!"
+msgstr "ביקורת הושלמה!"
+
+msgid "No Results"
+msgstr "אין תוצאות"
+
+msgid "No issues found."
+msgstr "לא נמצאו סוגיות."
+
+msgid "Use"
+msgstr "להשתמש"
+
+msgid "Search and Replace Options"
+msgstr "אפשרויות חיפוש והחלפה"
+
+msgid "Source Name:"
+msgstr "שם מקור:"
+
+msgid "e.g. Иоанн"
+msgstr "לדוגמה Иоанн"
+
+msgid "Target Name:"
+msgstr "שם יעד:"
+
+msgid "e.g. Иван"
+msgstr "לדוגמה Иван"
+
+msgid "Match Mode:"
+msgstr "אופן התאמה:"
+
+msgid "Exact Match"
+msgstr "התאמה מדוייקת"
+
+msgid "Substring"
+msgstr "מחרוזת משנה"
+
+msgid "Regular Expression"
+msgstr "ביטוי רגולרי"
+
+msgid "Scan for Names"
+msgstr "סריקת שמות"
+
+msgid "Preserve original name as alternative"
+msgstr "שימור שם מקורי כחלופה"
 
 msgid "Select All"
 msgstr "לבחור הכול"
+
+msgid "Proposed"
+msgstr "מוצע"
+
+msgid "Infer East Slavic Patronymics"
+msgstr "להסיק פטרוניים מזרח סלביים"
+
+msgid "Rename Given Names"
+msgstr "שינוי שמות פרטיים"
+
+msgid "Audit Patronymics"
+msgstr "ביקורת שמות פטרוניים"
+
+#, python-brace-format
+msgid ""
+"Missing Patronymic Detected.\n"
+"Suggested: {0}\n"
+"Based on father: {1}"
+msgstr ""
+"זוהה שם פטרונימי חסר.\n"
+"הוצע: {0}\n"
+"מבוסס על אב: {1}"
+
+msgid "Navigate to an individual to check patronymic status."
+msgstr "ניוט לאדם כדי לבדוק מצב שם פטרונימי."
+
+msgid "No active person selected."
+msgstr "לא נבחר אדם פעיל."
+
+msgid ""
+"Patronymic inference can't be inferred for non-binary or unknown genders."
+msgstr "לא ניתן להסיק שם פטרונימי למגדרים לא בינאריים או לא ידועים."
+
+msgid "Individual already has a recorded patronymic."
+msgstr "לאדם כבר יש שם פטרונימי רשום."
+
+msgid "No attached father found in database family records."
+msgstr "לא נמצא אב משוייך במסד נתוני רשומות משפחה."
+
+msgid "Father lacks a recorded first name."
+msgstr "לאב חסרה רשומת שם פרטי."
+
+msgid "Could not generate valid morphology patterns."
+msgstr "לא ניתן ליצור דפוסי מורפולוגיה תקינות."
+
+msgid "Patronymic applied successfully!"
+msgstr "פטרונימי הוחל בהצלחה!"
+
+msgid "Apply Suggestion"
+msgstr "החלת הצעה"
+
+#, python-format
+msgid "%(prog)s: error: %(message)s\n"
+msgstr "%(prog)s: שגיאה: %(message)s\n"

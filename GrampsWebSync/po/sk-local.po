@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
+"POT-Creation-Date: 2026-07-31 17:35+0200\n"
+"PO-Revision-Date: 2026-08-05 18:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Web Sync"
@@ -20,35 +20,20 @@ msgstr "Gramps Web Sync"
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Synchronizuje lokálnu databázu s inštanciou Gramps Web."
 
-msgid "Your user does not have sufficient server permissions to use sync."
+#, python-format
+msgid ""
+"The system keyring could not be used. Snap confinement blocks access until "
+"you run: %s"
 msgstr ""
-"Váš používateľ nemá dostatočné oprávnenia na serveri na používanie "
-"synchronizácie."
+"Systémovú kľúčenku sa nepodarilo použiť. Obmedzenie Snap blokuje prístup, "
+"kým nespustíte: %s"
 
-msgid "Fetching remote data..."
-msgstr "Získavanie vzdialených údajov..."
-
-msgid "Unexpected error while applying changes."
-msgstr "Neočakávaná chyba pri aplikovaní zmien."
-
-msgid "Media files are in sync."
-msgstr "Mediálne súbory sú synchronizované."
-
-#, python-format
-msgid "Successfully downloaded %s media files."
-msgstr "Úspešne stiahnuté %s mediálne súbory."
-
-#, python-format
-msgid "Encountered %s errors during download."
-msgstr "Počas sťahovania sa vyskytlo %s chýb."
-
-#, python-format
-msgid "Successfully uploaded %s media files."
-msgstr "Úspešne nahraté %s mediálne súbory."
-
-#, python-format
-msgid "Encountered %s errors during upload."
-msgstr "Počas nahrávania sa vyskytlo %s chýb."
+msgid ""
+"The system keyring could not be used. You will need to enter your password "
+"each time."
+msgstr ""
+"Systémovú kľúčenku sa nepodarilo použiť. Heslo budete musieť zadávať "
+"zakaždým."
 
 msgid "Authentication failed. Please check your username and password."
 msgstr "Autorizácia zlyhala. Skontrolujte svoje používateľské meno a heslo."
@@ -65,10 +50,6 @@ msgstr "Príliš veľa požiadaviek, skúste to prosím o niekoľko sekúnd nesk
 msgid "GrampsWeb tree is disabled."
 msgstr "GrampsWeb tree je deaktivovaný."
 
-#, python-format
-msgid "Server error %s. Please check your connection."
-msgstr "Chyba servera %s. Skontrolujte svoje pripojenie."
-
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr ""
 "Spojenie sa nepodarilo. Skontrolujte adresu URL a vaše pripojenie k "
@@ -77,40 +58,47 @@ msgstr ""
 msgid "Invalid server response. Please check the URL."
 msgstr "Neplatná odpoveď servera. Skontrolujte adresu URL."
 
-#, python-format
-msgid "Unexpected error: %s"
-msgstr "Neočakávaná chyba: %s"
-
-msgid "Error accessing media object."
-msgstr "Chyba prístupu k mediálnemu objektu."
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"Váš používateľ nemá dostatočné oprávnenia na serveri na používanie "
+"synchronizácie."
 
 msgid "Failed importing downloaded XML file."
 msgstr "Stiahnutý súbor XML sa nepodarilo importovať."
 
-msgid "Comparing local and remote data..."
-msgstr "Porovnávanie miestnych a vzdialených údajov..."
-
-msgid "Server authorization error."
-msgstr "Chyba autorizácie servera."
-
-msgid "Server authorization error: insufficient permissions."
-msgstr "Chyba autorizácie servera: nedostatočné oprávnenia."
-
-msgid "Error: URL not found."
-msgstr "Chyba: Adresa URL sa nenašla."
-
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr "Zmeny sa nedajú synchronizovať so serverom: objekty boli upravené."
 
+msgid "Unexpected error while applying changes."
+msgstr "Neočakávaná chyba pri aplikovaní zmien."
+
+msgid ""
+"The family tree was modified while the changes were being reviewed. Nothing "
+"has been applied. Please compare again."
+msgstr ""
+"Rodinný strom bol modifikovaný počas kontroly zmien. Nič nebolo aplikované. "
+"Prosím, porovnajte znova."
+
 #, python-format
-msgid "Error %s while connecting to server."
-msgstr "Chyba %s pri pripájaní k serveru."
+msgid "The server could not apply the changes: %s"
+msgstr "Server nemohol aplikovať zmeny: %s"
 
-msgid "URL error while connecting to server."
-msgstr "Chyba URL pri pripájaní k serveru."
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "Chyba servera %s. Skontrolujte svoje pripojenie."
 
-msgid "Unable to synchronize changes to server."
-msgstr "Zmeny sa nedajú synchronizovať so serverom."
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Neočakávaná chyba: %s"
+
+msgid "Fetching remote data..."
+msgstr "Získavanie vzdialených údajov..."
+
+msgid "Comparing local and remote data..."
+msgstr "Porovnávanie miestnych a vzdialených údajov..."
+
+msgid "Successfully applied changes to local database."
+msgstr "Zmeny boli úspešne aplikované v lokálnej databáze."
 
 msgid "Continue without transport encryption?"
 msgstr "Pokračovať bez šifrovania prenosu?"
@@ -159,6 +147,33 @@ msgstr ""
 msgid "Server URL: "
 msgstr "URL servera: "
 
+msgid "Error:"
+msgstr "Chyba:"
+
+msgid "Sync mode"
+msgstr "Synchronizovaný režim"
+
+msgid ""
+"Changes from both sides are combined. Objects edited in both places are "
+"merged."
+msgstr ""
+"Zmeny z oboch strán sú kombinované. Objekty upravené na oboch miestach sa "
+"zlúčia."
+
+msgid ""
+"The server is made to match this computer. Anything changed only on the "
+"server is discarded."
+msgstr ""
+"Server sa upraví tak, aby zodpovedal tomuto počítaču. Čokoľvek zmenené len "
+"na serveri sa vyradí."
+
+msgid ""
+"This computer is made to match the server. Anything changed only here is "
+"discarded."
+msgstr ""
+"Tento počítač sa upraví tak, aby zodpovedal serveru. Čokoľvek zmenené len tu "
+"sa vyradí."
+
 msgid "Bidirectional Synchronization"
 msgstr "Obojsmerná synchronizácia"
 
@@ -168,8 +183,8 @@ msgstr "Obnoviť vzdialené na lokálne"
 msgid "Reset local to remote"
 msgstr "Obnoviť lokálne na vzdialené"
 
-msgid "Merge"
-msgstr "Zlúčiť"
+msgid "Warning:"
+msgstr "Upozornenie:"
 
 msgid "Local changes"
 msgstr "Lokálne zmeny"
@@ -201,9 +216,6 @@ msgstr "Aplikovanie zmien do vzdialenej databázy ..."
 msgid "No changes to apply to remote database."
 msgstr "Žiadne zmeny na aplikovanie do vzdialenej databázy."
 
-msgid "Successfully applied changes to local database."
-msgstr "Zmeny boli úspešne aplikované v lokálnej databáze."
-
 msgid "Missing locally"
 msgstr "Chýbajúce lokálne"
 
@@ -211,9 +223,70 @@ msgid "Missing remotely"
 msgstr "Chýbajúce vzdialene"
 
 #, python-format
-msgid "Downloading %s media file(s)"
-msgstr "Sťahovanie %s súboru(-ov) média"
+msgid "Downloading %s media file"
+msgid_plural "Downloading %s media files"
+msgstr[0] "Sťahovanie %s mediálneho súboru"
+msgstr[1] "Sťahovanie %s mediálnych súborov"
+msgstr[2] "Sťahovanie %s mediálnych súborov"
 
 #, python-format
-msgid "Uploading %s media file(s)"
-msgstr "Nahrávanie %s súboru(-ov) média"
+msgid "Uploading %s media file"
+msgid_plural "Uploading %s media files"
+msgstr[0] "Nahrávanie %s mediálneho súboru"
+msgstr[1] "Nahrávanie %s mediálnych súborov"
+msgstr[2] "Nahrávanie %s mediálnych súborov"
+
+msgid "Try again"
+msgstr "Skúste znova"
+
+#, python-format
+msgid "Applied %s change."
+msgid_plural "Applied %s changes."
+msgstr[0] "Aplikovaná %s zmena."
+msgstr[1] "Aplikované %s zmeny."
+msgstr[2] "Aplikovaných %s zmien."
+
+msgid "Media files are in sync."
+msgstr "Mediálne súbory sú synchronizované."
+
+#, python-format
+msgid "%s media file is missing on both sides and could not be transferred."
+msgid_plural ""
+"%s media files are missing on both sides and could not be transferred."
+msgstr[0] ""
+"%s mediálny súbor chýba na oboch stranách a nepodarilo sa ho preniesť."
+msgstr[1] ""
+"%s mediálne súbory chýbajú na oboch stranách a nepodarilo sa ich preniesť."
+msgstr[2] ""
+"%s mediálnych súborov chýba na oboch stranách a nepodarilo sa ich preniesť."
+
+msgid "Both trees are already in sync."
+msgstr "Obidva stromy sú už synchronizované."
+
+#, python-format
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "Úspešne stiahnutý %s mediálny súbor."
+msgstr[1] "Úspešne stiahnuté %s mediálne súbory."
+msgstr[2] "Úspešne stiahnutých %s mediálnych súborov."
+
+#, python-format
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "Počas sťahovania sa vyskytla %s chyba."
+msgstr[1] "Počas sťahovania sa vyskytli %s chyby."
+msgstr[2] "Počas sťahovania sa vyskytlo %s chýb."
+
+#, python-format
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "Úspešne nahraný %s mediálny súbor."
+msgstr[1] "Úspešne nahrané %s mediálne súbory."
+msgstr[2] "Úspešne nahraných %s mediálnych súborov."
+
+#, python-format
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "Počas nahrávania sa vyskytla %s chyba."
+msgstr[1] "Počas nahrávania sa vyskytli %s chyby."
+msgstr[2] "Počas nahrávania sa vyskytlo %s chýb."

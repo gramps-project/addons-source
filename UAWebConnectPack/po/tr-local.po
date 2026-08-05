@@ -1,0 +1,57 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.8.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+msgid "Forum: ukrgenealogy.com.ua"
+msgstr "Forum: ukrgenealogy.com.ua"
+
+msgid "Forum: genoua.name"
+msgstr "Forum: genoua.name"
+
+msgid "Encyclopedia: esu.com.ua"
+msgstr "Ansiklopedi: esu.com.ua"
+
+msgid "Wikipedia: uk.wikipedia.org"
+msgstr "Wikipedia: uk.wikipedia.org"
+
+msgid "Repressed DB: reabit.org.ua"
+msgstr "Bastırılmış Veritabanı: reabit.org.ua"
+
+msgid "Genealogy DB: familysearch.org"
+msgstr "Şecere Veritabanı: familysearch.org"
+
+msgid "Genealogy DB: myheritage.com.ua"
+msgstr "Şecere Veritabanı: myheritage.com.ua"
+
+msgid "Genealogy DB: pra.in.ua"
+msgstr "Şecere Veritabanı: pra.in.ua"
+
+msgid "Map: Ridni.org"
+msgstr "Harita: Ridni.org"
+
+msgid "Search: google.com.ua"
+msgstr "Arama: google.com.ua"
+
+msgid "Search: roots.in.ua"
+msgstr "Arama: roots.in.ua"
+
+msgid "UA Web Connect Pack"
+msgstr "UA Web Bağlantı Paketi"
+
+msgid "Collection of Web sites for the UA (requires libwebconnect)"
+msgstr "UA için web siteleri koleksiyonu (libwebconnect gerektirir)"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
@@ -20,5 +20,35 @@ msgstr ""
 msgid "Ancestor"
 msgstr "Atalar"
 
+msgid "The ancestor from which to start the line"
+msgstr "Soyun başlangıç noktası olan atası"
+
+msgid "Descendent"
+msgstr "Soyundan gelen"
+
+msgid "The descendent to which to build the line"
+msgstr "Soyundan gelen ağacını oluşturmak için kullanılacak torun"
+
 msgid "The style used for the title of the page."
 msgstr "Sayfa başlığı için kullanılan stil."
+
+msgid "The style used for the title of a line."
+msgstr "Bir satırın başlığı için kullanılan stil."
+
+#, python-format
+msgid "%(line)s. line:"
+msgstr "%(line)s. satır:"
+
+#, python-format
+msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
+msgstr "%(ancestor)s > %(descendent)s uzanan soy hatları"
+
+msgid "Lines of Descendency Report"
+msgstr "Soy Kütüğü Raporu"
+
+msgid ""
+"Prints out all descendency lines from a given ancestor to a given descendent "
+"in text."
+msgstr ""
+"Belirtilen bir atadan belirtilen bir toruna kadar uzanan tüm soy hatlarını "
+"metin olarak yazdırır."

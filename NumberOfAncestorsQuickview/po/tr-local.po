@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,10 +12,38 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "Number of ancestors"
+msgstr "Ataların Sayısı"
+
+msgid "Shows the number of ancestors of the current person"
+msgstr "Geçerli kişinin atalarının sayısını gösterir"
+
+#, python-format
+msgid "Number of %s's ancestors"
+msgstr "%s öğesinin atalarının sayısı"
+
 msgid "Generation"
 msgstr "Nesil"
+
+msgid "Found"
+msgstr "Bulunan"
+
+msgid "Theoretical"
+msgstr "Teorik"
+
+msgid "Percent"
+msgstr "Yüzde"
+
+msgid ""
+"There were {} of {} ancestors ({}) found.\n"
+"Only individual ancestors were counted. Duplicates caused by pedigree "
+"collapse were ignored."
+msgstr ""
+"{} atadan {} tanesi ({}) bulundu.\n"
+"Yalnızca tekil atalar sayıldı. Soy ağacındaki çakışmalardan kaynaklanan "
+"yinelenenler göz ardı edildi."

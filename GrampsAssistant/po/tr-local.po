@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-03 09:03-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,10 +12,137 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid ""
+"You are a helpful genealogy assistant with access to the user's Gramps "
+"database. Answer questions about people, families, events, and "
+"relationships. When you need information from the database, call the "
+"provided tools — never write code, simulate results, or make up data. If no "
+"tool exists for the requested information, say so plainly."
+msgstr ""
+"Siz, kullanıcının Gramps veritabanına erişimi olan yardımsever bir soy ağacı "
+"asistanısınız. Kişiler, aileler, olaylar ve ilişkiler hakkında soruları "
+"yanıtlayın. Veritabanından bilgiye ihtiyacınız olduğunda, sağlanan araçları "
+"kullanın; asla kod yazmayın, sonuçları simüle etmeyin veya veri uydurmayın. "
+"İstenen bilgi için bir araç yoksa, bunu açıkça belirtin."
+
+msgid "Gramps Assistant settings"
+msgstr "Gramps Asistanı ayarları"
+
+msgid "Clear conversation and context"
+msgstr "Sohbeti ve bağlamı temizle"
+
 msgid "Send"
 msgstr "Gönder"
+
+msgid "Gramps Assistant:"
+msgstr "Gramps Asistanı:"
+
+msgid ""
+"Ask me anything about the Gramps program or your specific Gramps family "
+"tree. Use the ⚙ button to configure the AI.\n"
+msgstr ""
+"Gramps programı veya size özel Gramps aile ağacınız hakkında bana "
+"istediğiniz her şeyi sorun. Yapay zekâyı yapılandırmak için ⚙ düğmesini "
+"kullanın.\n"
+
+msgid ""
+"\n"
+"No model configured. Please click the Settings button to choose a backend "
+"and model before chatting.\n"
+msgstr ""
+"\n"
+"Model yapılandırılmamış. Lütfen sohbet etmeye başlamadan önce bir arka uç ve "
+"model seçmek için Ayarlar düğmesine tıklayın.\n"
+
+msgid "Thinking..."
+msgstr "Düşünüyor..."
+
+#, python-brace-format
+msgid ""
+"API key error: the environment variable {var} is not set or is invalid. Set "
+"it before launching Gramps:\n"
+"  export {var}=your-key-here"
+msgstr ""
+"API anahtarı hatası: {var} ortam değişkeni ayarlanmamış veya geçersiz. "
+"Gramps'i başlatmadan önce ayarlayın:\n"
+"dışa aktar {var}=anahtarınızı-buraya-girin"
+
+msgid ""
+"API key error: this provider requires an API key. Open Settings and enter "
+"the environment variable name for your API key (e.g. OPENAI_API_KEY)."
+msgstr ""
+"API anahtarı hatası: Bu sağlayıcı bir API anahtarı gerektiriyor. Ayarları "
+"açın ve API anahtarınızın ortam değişkeni adını girin (örneğin, "
+"OPENAI_API_KEY)."
+
+msgid "Done.\n"
+msgstr "Bitti.\n"
+
+msgid "System Prompt:"
+msgstr "Sistem İstemi:"
+
+msgid "Simplify tools (recommended for smaller/local models)"
+msgstr "Basitleştirme araçları (daha küçük/yerel modeller için önerilir)"
+
+msgid ""
+"When enabled, only the tools relevant to your question are sent to the "
+"model. This improves performance with smaller local models."
+msgstr ""
+"Etkinleştirildiğinde, modele yalnızca sorunuzla ilgili araçlar gönderilir. "
+"Bu, daha küçük yerel modellerde performansı artırır."
+
+msgid "Use Local Model"
+msgstr "Yerel Modeli Kullanın"
+
+msgid ""
+"URL of a local OpenAI-compatible server. Ollama: http://localhost:11434  LM "
+"Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
+msgstr ""
+"Yerel OpenAI uyumlu sunucunun URL adresi. Ollama: http://localhost:11434  LM "
+"Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
+
+msgid "model name (leave blank for LM Studio / llama.cpp)"
+msgstr "Model adı (LM Studio / llama.cpp için boş bırakın)"
+
+msgid ""
+"Model to request from the local server. Required for Ollama (e.g. llama3.1). "
+"Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
+msgstr ""
+"Yerel sunucudan talep edilecek model. Ollama için gereklidir (örneğin "
+"llama3.1). LM Studio veya llama.cpp için boş bırakın, bunlar yüklenen modeli "
+"kullanır."
+
+msgid "Model:"
+msgstr "Model:"
+
+msgid "Use Foundational Model"
+msgstr "Temel Modeli Kullanın"
+
+msgid "e.g. OPENAI_API_KEY"
+msgstr "örneğin OPENAI_API_KEY"
+
+msgid "Name of the environment variable holding your API key."
+msgstr "API anahtarınızı içeren ortam değişkeninin adı."
+
+msgid "API key env var:"
+msgstr "API anahtar ortam değişkeni:"
+
+msgid "Backend:"
+msgstr "Arka uç:"
+
+msgid "Base URL:"
+msgstr "Temel URL:"
+
+msgid "Model name:"
+msgstr "Model adı:"
+
+msgid "Gramps Assistant"
+msgstr "Büyükbaba Asistanı"
+
+msgid "AI assistant for querying your Gramps family tree"
+msgstr "Gramps aile ağacınızı sorgulamak için yapay zekâ asistanı"

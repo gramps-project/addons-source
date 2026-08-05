@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-07-31 17:35+0200\n"
 "PO-Revision-Date: 2026-07-01 15:01+0000\n"
 "Last-Translator: \"David D.\" <dadu042@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
@@ -19,20 +19,6 @@ msgstr "Synchronisation Gramps Web"
 
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Synchronise une base de données locale avec une instance «Gramps Web»."
-
-msgid "Your user does not have sufficient server permissions to use sync."
-msgstr ""
-"Votre utilisateur ne dispose pas des autorisations serveur suffisantes pour "
-"utiliser la synchronisation."
-
-msgid "Fetching remote data..."
-msgstr "Récupération des données distantes…"
-
-msgid "Unexpected error while applying changes."
-msgstr "Erreur inattendue en appliquant les modifications."
-
-msgid "Media files are in sync."
-msgstr "Les fichiers media sont synchronisés."
 
 msgid "Authentication failed. Please check your username and password."
 msgstr ""
@@ -53,10 +39,6 @@ msgstr "Il y trop de requêtes, merci d'essayer à nouveau dans un instant."
 msgid "GrampsWeb tree is disabled."
 msgstr "L'arbre de GrampsWeb est désactivé."
 
-#, python-format
-msgid "Server error %s. Please check your connection."
-msgstr "Erreur serveur %s. Veuillez vérifier votre connexion."
-
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr ""
 "Problème de connexion. Merci de vérifier l'adresse URL et votre connexion à "
@@ -65,42 +47,38 @@ msgstr ""
 msgid "Invalid server response. Please check the URL."
 msgstr "Réponse du serveur incorrecte. Veuillez vérifier l'URL."
 
-#, python-format
-msgid "Unexpected error: %s"
-msgstr "erreur innatendue : %s"
-
-msgid "Error accessing media object."
-msgstr "Erreur en accédant à un objet medium."
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"Votre utilisateur ne dispose pas des autorisations serveur suffisantes pour "
+"utiliser la synchronisation."
 
 msgid "Failed importing downloaded XML file."
 msgstr "Échec du téléchargement du fichier XML."
-
-msgid "Comparing local and remote data..."
-msgstr "Comparaison des données locales et distantes…"
-
-msgid "Server authorization error."
-msgstr "Erreur d'autorisation du serveur."
-
-msgid "Server authorization error: insufficient permissions."
-msgstr "Erreur d'autorisation du serveur : autorisations insuffisantes."
-
-msgid "Error: URL not found."
-msgstr "Erreur : URL non trouvée."
 
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr ""
 "Impossible de synchroniser les changements au serveur : les objets ont été "
 "modifiés."
 
+msgid "Unexpected error while applying changes."
+msgstr "Erreur inattendue en appliquant les modifications."
+
 #, python-format
-msgid "Error %s while connecting to server."
-msgstr "Erreur %s en se connectant au serveur."
+msgid "Server error %s. Please check your connection."
+msgstr "Erreur serveur %s. Veuillez vérifier votre connexion."
 
-msgid "URL error while connecting to server."
-msgstr "Erreur d'URL en se connectant au serveur."
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "erreur innatendue : %s"
 
-msgid "Unable to synchronize changes to server."
-msgstr "Impossible de synchroniser les changements au serveur."
+msgid "Fetching remote data..."
+msgstr "Récupération des données distantes…"
+
+msgid "Comparing local and remote data..."
+msgstr "Comparaison des données locales et distantes…"
+
+msgid "Successfully applied changes to local database."
+msgstr "Modifications apportées à la base de données locale avec succès."
 
 msgid "Continue without transport encryption?"
 msgstr "Continuer sans chiffrement ?"
@@ -150,6 +128,9 @@ msgstr ""
 msgid "Server URL: "
 msgstr "URL du serveur : "
 
+msgid "Error:"
+msgstr "Erreur :"
+
 msgid "Bidirectional Synchronization"
 msgstr "Synchronisation bidirectionnelle"
 
@@ -158,9 +139,6 @@ msgstr "Réinitialiser du distant vers le local"
 
 msgid "Reset local to remote"
 msgstr "Réinitialiser l'arbre local depuis l'arbre distant"
-
-msgid "Merge"
-msgstr "Fusion"
 
 msgid "Local changes"
 msgstr "Changements locaux"
@@ -192,11 +170,11 @@ msgstr "Appliquer les modifications à la base de données distante ..."
 msgid "No changes to apply to remote database."
 msgstr "Aucun changement à appliquer à la base de données distante."
 
-msgid "Successfully applied changes to local database."
-msgstr "Modifications apportées à la base de données locale avec succès."
-
 msgid "Missing locally"
 msgstr "Manque localement"
 
 msgid "Missing remotely"
 msgstr "Manque sur le serveur distant"
+
+msgid "Media files are in sync."
+msgstr "Les fichiers media sont synchronisés."

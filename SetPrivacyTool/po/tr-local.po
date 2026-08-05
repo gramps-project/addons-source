@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,13 +12,69 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
+
+msgid "Set Privacy Tool"
+msgstr "Gizlilik Aracı Ayarla"
+
+#, python-format
+msgid "Set private: %d %s\n"
+msgstr "Özel olarak ayarla: %d %s\n"
+
+#, python-format
+msgid "Not private: %d %s\n"
+msgstr "Özel değil: %d %s\n"
+
+msgid "Set persons private.."
+msgstr "Kişileri özel olarak ayarla.."
+
+msgid "Set events private.."
+msgstr "Etkinlikleri özel olarak ayarla.."
+
+msgid "Set media private.."
+msgstr "Medyayı özel olarak ayarla.."
+
+msgid "Set adresses private.."
+msgstr "Adresleri özel olarak ayarla.."
+
+msgid "Set internet objects private.."
+msgstr "İnternet nesnelerini özel olarak ayarla.."
+
+msgid ""
+"The time range in years from today you want to set objects private.\n"
+"'0 years' = remove privacy from all objects."
+msgstr ""
+"Nesneleri özel olarak ayarlamak istediğiniz tarihten itibaren yıl cinsinden "
+"zaman aralığı.\n"
+"'0 yıl' = tüm nesnelerin gizliliğini kaldırır."
+
+msgid "Always private if no date."
+msgstr "Tarih yoksa her zaman özel."
+
+msgid "If checked, all objects without a date will also be set private."
+msgstr ""
+"İşaretlenirse, tarihi olmayan tüm nesneler de özel olarak ayarlanacaktır."
 
 msgid "Select filter to restrict people"
 msgstr "İnsanları listelemek için filtreyi seçin"
 
 msgid "Persons"
 msgstr "Kişiler"
+
+msgid "Select filter to restrict events"
+msgstr "Etkinlikleri kısıtlamak için filtre seçin"
+
+msgid "Select filter to restrict medias"
+msgstr "Medyaları kısıtlamak için filtre seçin"
+
+msgid "Internet type filter"
+msgstr "İnternet türü filtresi"
+
+msgid "E-Mail"
+msgstr "E-Posta"
+
+msgid "Set all objects of the last <number> of years private."
+msgstr "Son <sayı> yıllık tüm nesneleri özel olarak ayarlayın."

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-06-06 13:09+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-26 17:40+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Data Entry Gramplet"
@@ -78,9 +78,18 @@ msgstr "Kopioi aktiiviset tiedot"
 msgid "in"
 msgstr "paikassa"
 
+msgid "No Family Tree is open."
+msgstr "Sukupuuta ei ole avattu."
+
+msgid "Please open a Family Tree to edit data."
+msgstr "Avaa sukupuu muokataksesi tietoja."
+
 #, python-format
 msgid "Gramplet Data Edit: %s"
 msgstr "Gramplet-tietojen muokkaus: %s"
+
+msgid "Please open a Family Tree before adding a person."
+msgstr "Avaa sukupuu lisätäksesi henkilön."
 
 msgid "Please provide a name."
 msgstr "Anna nimi."

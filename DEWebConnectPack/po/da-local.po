@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -12,7 +12,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
+
+msgid "DE Web Connect Pack"
+msgstr "DE Web Connect Pack"
+
+msgid "Collection of Web sites for the DE (requires libwebconnect)"
+msgstr "Samling af Web steder for DE (kræver libwebconnect)"
+
+msgid "Bielefeld Academic Search"
+msgstr "Akademisk søgning i Bielefeld"
 
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
+
+msgid "Google Archives"
+msgstr "Google arkiv"
+
+msgid "DE Google"
+msgstr "DE Google"
+
+msgid "Open Library"
+msgstr "Open Library"
+
+msgid "Surname map (1890-1996)"
+msgstr "Efternavnskort (1890-1996)"
+
+msgid "GenWiki"
+msgstr "GenWiki"
+
+msgid "German digital library"
+msgstr "Det Tyske digitale bibliotek"

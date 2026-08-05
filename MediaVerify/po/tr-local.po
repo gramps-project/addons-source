@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,10 +12,98 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "Media Verify Tool"
+msgstr "Medya Doğrulama Aracı"
+
+msgid "Moved/Renamed Files"
+msgstr "Taşınan/Yeniden Adlandırılan Dosyalar"
+
+msgid "Missing Files"
+msgstr "Eksik Dosyalar"
+
+msgid "Duplicate Files"
+msgstr "Yinelenen Dosyalar"
+
+msgid "Extra Files"
+msgstr "Fazladan Dosyalar"
+
+msgid "No md5 Generated"
+msgstr "md5 Oluşturulmadı"
+
+msgid "Errors"
+msgstr "Hatalar"
+
+msgid "Close the Media Verify Tool"
+msgstr "Medya Doğrulama Aracını Kapat"
+
+msgid "Generate"
+msgstr "Oluştur"
+
+msgid "Generate md5 hashes for media objects"
+msgstr "Medya nesneleri için md5 özetleri oluşturun"
+
+msgid "Verify"
+msgstr "Doğrula"
+
+msgid "Check media paths and report missing, duplicate and extra files"
+msgstr ""
+"Medya yollarını kontrol edin ve eksik, yinelenen ve fazladan dosyaları "
+"raporlayın"
+
+msgid "Export the results to a text file"
+msgstr "Sonuçları bir metin dosyasına aktarın"
+
+msgid "Fix"
+msgstr "Düzelt"
+
+msgid "Fix media paths of moved and renamed files"
+msgstr "Taşınan ve yeniden adlandırılan dosyaların medya yollarını düzeltin"
+
+msgid "Verify Gramps media using md5 hashes"
+msgstr "md5 özetlerini kullanarak Gramps medyasını doğrulayın"
+
+msgid "Files"
+msgstr "Dosyalar"
+
+msgid "Export results to a text file"
+msgstr "Sonuçları bir metin dosyasına aktarın"
+
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Rapor yazılırken hata: %s"
+
+msgid "Generating media hashes"
+msgstr "Medya özetleri oluşturuluyor"
+
+msgid "Set media hashes"
+msgstr "Medya özetlerini ayarlayın"
+
+msgid ""
+"Media path not set.  You must set the \"Base path for relative media paths\" "
+"in the Preferences."
+msgstr ""
+"Medya yolu ayarlanmadı.  Tercihlerde \"Göreli medya yolları için temel "
+"yol\"u ayarlamanız gerekir."
+
+msgid "Finding files"
+msgstr "Dosyaları bulma"
+
 msgid "Checking paths"
 msgstr "Yolları kontrol etme"
+
+msgid "Fixing file paths"
+msgstr "Yollar kontrol ediliyor"
+
+msgid "Fix media paths"
+msgstr "Medya yollarını düzeltin"
+
+msgid "Media Verify"
+msgstr "Medya Doğrulama"
+
+msgid "Verify that media is present in the correct path"
+msgstr "Medyanın doğru yolda bulunduğunu doğrulayın"

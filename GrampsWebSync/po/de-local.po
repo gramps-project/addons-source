@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-20 17:01+0000\n"
+"POT-Creation-Date: 2026-07-31 17:35+0200\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps-Web-Synchronisierung"
@@ -20,35 +20,20 @@ msgstr "Gramps-Web-Synchronisierung"
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Synchronisiert eine lokale Datenbank mit einer Gramps-Webinstanz."
 
-msgid "Your user does not have sufficient server permissions to use sync."
+#, python-format
+msgid ""
+"The system keyring could not be used. Snap confinement blocks access until "
+"you run: %s"
 msgstr ""
-"Dein Benutzer hat nicht die nötigen Server-Rechte, um die Synchronisierung "
-"zu nutzen."
+"Der System-Schlüsselbund konnte nicht verwendet werden. Die Snap-"
+"Einschränkung blockiert den Zugriff, bis du folgenden Befehl ausführst: %s"
 
-msgid "Fetching remote data..."
-msgstr "Ferndaten werden abgerufen..."
-
-msgid "Unexpected error while applying changes."
-msgstr "Unerwarteter Fehler beim Anwenden der Änderungen."
-
-msgid "Media files are in sync."
-msgstr "Die Mediendateien sind synchronisiert."
-
-#, python-format
-msgid "Successfully downloaded %s media files."
-msgstr "%s Mediendateien wurden erfolgreich heruntergeladen."
-
-#, python-format
-msgid "Encountered %s errors during download."
-msgstr "Beim Herunterladen sind %s Fehler aufgetreten."
-
-#, python-format
-msgid "Successfully uploaded %s media files."
-msgstr "%s Mediendatei wurden erfolgreich hochgeladen."
-
-#, python-format
-msgid "Encountered %s errors during upload."
-msgstr "Beim Hochladen sind %s Fehler aufgetreten."
+msgid ""
+"The system keyring could not be used. You will need to enter your password "
+"each time."
+msgstr ""
+"Der System-Schlüsselbund konnte nicht verwendet werden. Du musst dein "
+"Passwort jedes Mal eingeben."
 
 msgid "Authentication failed. Please check your username and password."
 msgstr ""
@@ -68,10 +53,6 @@ msgstr "Zu viele Anfragen, bitte versuche es in wenigen Sekunden erneut."
 msgid "GrampsWeb tree is disabled."
 msgstr "Der GrampsWeb-Baum ist deaktiviert."
 
-#, python-format
-msgid "Server error %s. Please check your connection."
-msgstr "Serverfehler %s. Bitte überprüfe deine Verbindung."
-
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr ""
 "Verbindung fehlgeschlagen. Bitte überprüfe die URL und deine "
@@ -80,42 +61,49 @@ msgstr ""
 msgid "Invalid server response. Please check the URL."
 msgstr "Ungültige Serverantwort. Bitte überprüfe die URL."
 
-#, python-format
-msgid "Unexpected error: %s"
-msgstr "Unerwarteter Fehler: %s"
-
-msgid "Error accessing media object."
-msgstr "Fehler beim Zugriff auf das Medienobjekt."
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"Dein Benutzer hat nicht die nötigen Server-Rechte, um die Synchronisierung "
+"zu nutzen."
 
 msgid "Failed importing downloaded XML file."
 msgstr "Das Importieren der heruntergeladenen XML-Datei ist fehlgeschlagen."
-
-msgid "Comparing local and remote data..."
-msgstr "Vergleich von lokalen und externen Daten..."
-
-msgid "Server authorization error."
-msgstr "Server-Autorisierungsfehler."
-
-msgid "Server authorization error: insufficient permissions."
-msgstr "Server-Autorisierungsfehler: unzureichende Berechtigungen."
-
-msgid "Error: URL not found."
-msgstr "Fehler: URL nicht gefunden."
 
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr ""
 "Änderungen können nicht mit dem Server synchronisiert werden: Objekte wurden "
 "geändert."
 
+msgid "Unexpected error while applying changes."
+msgstr "Unerwarteter Fehler beim Anwenden der Änderungen."
+
+msgid ""
+"The family tree was modified while the changes were being reviewed. Nothing "
+"has been applied. Please compare again."
+msgstr ""
+"Der Stammbaum wurde während der Überprüfung der Änderungen modifiziert. Es "
+"wurden noch keine Änderungen übernommen. Bitte vergleiche die Daten erneut."
+
 #, python-format
-msgid "Error %s while connecting to server."
-msgstr "Fehler %s beim Herstellen der Verbindung zum Server."
+msgid "The server could not apply the changes: %s"
+msgstr "Der Server konnte die Änderungen nicht übernehmen: %s"
 
-msgid "URL error while connecting to server."
-msgstr "URL-Fehler bei der Verbindung zum Server."
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "Serverfehler %s. Bitte überprüfe deine Verbindung."
 
-msgid "Unable to synchronize changes to server."
-msgstr "Änderungen können nicht mit dem Server synchronisiert werden."
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Unerwarteter Fehler: %s"
+
+msgid "Fetching remote data..."
+msgstr "Ferndaten werden abgerufen..."
+
+msgid "Comparing local and remote data..."
+msgstr "Vergleich von lokalen und externen Daten..."
+
+msgid "Successfully applied changes to local database."
+msgstr "Änderungen erfolgreich in der lokalen Datenbank übernommen."
 
 msgid "Continue without transport encryption?"
 msgstr "Ohne Transportverschlüsselung fortfahren?"
@@ -168,6 +156,33 @@ msgstr ""
 msgid "Server URL: "
 msgstr "Server-URL: "
 
+msgid "Error:"
+msgstr "Fehler:"
+
+msgid "Sync mode"
+msgstr "Synchronisierungsmodus"
+
+msgid ""
+"Changes from both sides are combined. Objects edited in both places are "
+"merged."
+msgstr ""
+"Änderungen von beiden Seiten werden zusammengeführt. Objekte, die an beiden "
+"Orten bearbeitet wurden, werden zusammengeführt."
+
+msgid ""
+"The server is made to match this computer. Anything changed only on the "
+"server is discarded."
+msgstr ""
+"Der Server ist auf diesen Computer abgestimmt. Alle Änderungen, die "
+"ausschließlich auf dem Server vorgenommen wurden, werden verworfen."
+
+msgid ""
+"This computer is made to match the server. Anything changed only here is "
+"discarded."
+msgstr ""
+"Dieser Computer ist auf den Server abgestimmt. Alle Änderungen, die "
+"ausschließlich hier vorgenommen wurden, werden verworfen."
+
 msgid "Bidirectional Synchronization"
 msgstr "Bidirektionale Synchronisation"
 
@@ -177,8 +192,8 @@ msgstr "Zurücksetzen von entfernt auf lokal"
 msgid "Reset local to remote"
 msgstr "Lokal auf entfernt zurücksetzen"
 
-msgid "Merge"
-msgstr "Zusammenführen"
+msgid "Warning:"
+msgstr "Warnung:"
 
 msgid "Local changes"
 msgstr "Lokale Änderungen"
@@ -210,9 +225,6 @@ msgstr "Änderungen auf entfernte Datenbank anwenden ..."
 msgid "No changes to apply to remote database."
 msgstr "Keine Änderungen an der entfernten Datenbank durchzuführen."
 
-msgid "Successfully applied changes to local database."
-msgstr "Änderungen erfolgreich in der lokalen Datenbank übernommen."
-
 msgid "Missing locally"
 msgstr "Lokal nicht vorhanden"
 
@@ -220,9 +232,63 @@ msgid "Missing remotely"
 msgstr "Fehlt entfernt"
 
 #, python-format
-msgid "Downloading %s media file(s)"
-msgstr "%s Mediendatei(en) werden heruntergeladen"
+msgid "Downloading %s media file"
+msgid_plural "Downloading %s media files"
+msgstr[0] "%s Mediendatei wird heruntergeladen"
+msgstr[1] "%s Mediendateien werden heruntergeladen"
 
 #, python-format
-msgid "Uploading %s media file(s)"
-msgstr "%s Mediendatei(en) werden hochgeladen"
+msgid "Uploading %s media file"
+msgid_plural "Uploading %s media files"
+msgstr[0] "%s Mediendatei wird hochgeladen"
+msgstr[1] "%s Mediendateien werden hochgeladen"
+
+msgid "Try again"
+msgstr "Versuche es noch einmal"
+
+#, python-format
+msgid "Applied %s change."
+msgid_plural "Applied %s changes."
+msgstr[0] "%s Änderung wurde übernommen."
+msgstr[1] "%s Änderungen wurden übernommen."
+
+msgid "Media files are in sync."
+msgstr "Die Mediendateien sind synchronisiert."
+
+#, python-format
+msgid "%s media file is missing on both sides and could not be transferred."
+msgid_plural ""
+"%s media files are missing on both sides and could not be transferred."
+msgstr[0] ""
+"%s Mediendatei fehlt auf beiden Seiten und konnte daher nicht übertragen "
+"werden."
+msgstr[1] ""
+"%s Mediendateien fehlen auf beiden Seiten und konnten nicht übertragen "
+"werden."
+
+msgid "Both trees are already in sync."
+msgstr "Beide Bäume sind bereits synchronisiert."
+
+#, python-format
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "%s Mediendatei wurde erfolgreich heruntergeladen."
+msgstr[1] "%s Mediendateien wurden erfolgreich heruntergeladen."
+
+#, python-format
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "Beim Herunterladen ist %s Fehler aufgetreten."
+msgstr[1] "Beim Herunterladen sind %s Fehler aufgetreten."
+
+#, python-format
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "%s Mediendatei wurde erfolgreich hochgeladen."
+msgstr[1] "%s Mediendateien wurden erfolgreich hochgeladen."
+
+#, python-format
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "Beim Hochladen ist %s Fehler aufgetreten."
+msgstr[1] "Beim Hochladen sind %s Fehler aufgetreten."

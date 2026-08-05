@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,16 +12,70 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "Set properties for multiple places"
+msgstr "Birden fazla yer için özellikler ayarla"
+
+msgid ""
+"This gramplet allows setting properties for multiple places at the same time"
+msgstr ""
+"Bu Gramplet, aynı anda birden fazla yer için özellikler ayarlamanıza olanak "
+"tanır"
+
+msgid "New enclosing place"
+msgstr "Yeni kapsayıcı yer"
+
+msgid "Timespan:"
+msgstr "Zaman aralığı:"
+
+msgid "Set timespan for enclosing places"
+msgstr "Kapsayıcı yerler için zaman aralığını ayarla"
+
+msgid "Clear original enclosing places"
+msgstr "Orijinal kapsayıcı yerleri temizle"
+
+msgid "Clear tags"
+msgstr "Etiketleri temizle"
+
+msgid "Generate hierarchy"
+msgstr "Hiyerarşi oluştur"
+
+msgid "use spaces as separator"
+msgstr "Ayırıcı olarak boşluk kullan"
+
+msgid "reverse hierarchy"
+msgstr "Hiyerarşiyi tersine çevir"
+
 msgid "Replace text"
 msgstr "Metni değiştir"
+
+msgid "Use regex"
+msgstr "Düzenli ifade kullan"
+
+msgid "Old text:"
+msgstr "Eski metin:"
+
+msgid "New text:"
+msgstr "Yeni metin:"
+
+msgid "Clear selections"
+msgstr "Seçimleri temizle"
 
 msgid "Apply to selected places"
 msgstr "Seçilen yerlere uygula"
 
+msgid "Setting place properties"
+msgstr "Seçilen yerlere uygula"
+
+msgid "Regex operation failed: {}"
+msgstr "Düzenli ifade işlemi başarısız oldu: {}"
+
 msgid "PlaceUpdate"
 msgstr "YerGüncelle"
+
+msgid "Gramplet to manipulate multiple places"
+msgstr "Birden fazla yeri yönetmek için Gramplet"

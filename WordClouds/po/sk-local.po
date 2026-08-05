@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-29 09:56-0700\n"
+"PO-Revision-Date: 2026-08-05 18:02+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
+
+msgid "Click place name to view references"
+msgstr "Kliknutím na názov miesta zobrazíte odkazy"
+
+msgid "Click given name to view people with that given name"
+msgstr "Kliknutím na dané (krstné) meno zobrazíte ľudí s týmto daným menom"
+
+msgid "Given Name Word Cloud"
+msgstr "Oblak slov s danými (krstnými) menami"
+
+msgid "Gramplet showing all given names as a word cloud"
+msgstr "Gramplet zobrazujúci všetky dané (krstné) mená ako oblak slov"
+
+msgid "Surname Word Cloud"
+msgstr "Oblak slov s priezviskami"
+
+msgid "Gramplet showing all surnames as a word cloud"
+msgstr "Gramplet zobrazujúci všetky priezviská ako oblak slov"
+
+msgid "Place Word Cloud"
+msgstr "Oblak slov s miestami"
+
+msgid "Gramplet showing all places as a word cloud"
+msgstr "Gramplet zobrazujúci všetky miesta ako oblak slov"
+
+#, python-format
+msgid "Number of %s"
+msgstr "Počet od %s"
+
+msgid "Color (low)"
+msgstr "Farba (slabá)"
+
+msgid "Color (high)"
+msgstr "Farba (silná)"
+
+msgid "Hover color"
+msgstr "Farba pri prechode kurzorom"
+
+msgid "Layout quality"
+msgstr "Kvalita rozloženia"
+
+msgid "Filter missing/unknown words"
+msgstr "Filtrovať chýbajúce/neznáme slová"
+
+#, python-format
+msgid "[Missing %s]"
+msgstr "[Chýbajúce %s]"
+
+msgid "Click surname to view people with that surname"
+msgstr "Kliknutím na priezvisko zobrazíte ľudí s týmto priezviskom"

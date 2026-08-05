@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-04 05:01+0000\n"
+"POT-Creation-Date: 2026-07-31 17:35+0200\n"
+"PO-Revision-Date: 2026-08-03 04:01+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Web-synchronisatie"
@@ -21,35 +21,20 @@ msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr ""
 "Synchroniseert een lokaal gegevensbestand met een Gramps Web-instantie."
 
-msgid "Your user does not have sufficient server permissions to use sync."
+#, python-format
+msgid ""
+"The system keyring could not be used. Snap confinement blocks access until "
+"you run: %s"
 msgstr ""
-"Uw gebruiker heeft niet voldoende servermachtigingen om synchronisatie te "
-"gebruiken."
+"De systeemsleutelring kon niet worden gebruikt. Snap-beperking blokkeert de "
+"toegang totdat u het volgende uitvoert: %s"
 
-msgid "Fetching remote data..."
-msgstr "Gegevens van server ophalen..."
-
-msgid "Unexpected error while applying changes."
-msgstr "Onverwachte fout bij het verwerken van wijzigingen."
-
-msgid "Media files are in sync."
-msgstr "Mediabestanden zijn gesynchroniseerd."
-
-#, python-format
-msgid "Successfully downloaded %s media files."
-msgstr "%s mediabestanden succesvol gedownload."
-
-#, python-format
-msgid "Encountered %s errors during download."
-msgstr "%s fouten opgetreden bij het downloaden."
-
-#, python-format
-msgid "Successfully uploaded %s media files."
-msgstr "%s mediabestanden met succes geüploadet."
-
-#, python-format
-msgid "Encountered %s errors during upload."
-msgstr "%s fouten opgetreden bij het uploaden."
+msgid ""
+"The system keyring could not be used. You will need to enter your password "
+"each time."
+msgstr ""
+"De systeemsleutelring kon niet worden gebruikt. U moet elke keer uw "
+"wachtwoord invoeren."
 
 msgid "Authentication failed. Please check your username and password."
 msgstr "Authenticatie mislukt. Controleer uw gebruikersnaam en wachtwoord."
@@ -66,51 +51,54 @@ msgstr "Te veel verzoeken, probeer het over een paar seconden opnieuw."
 msgid "GrampsWeb tree is disabled."
 msgstr "GrampsWeb stamboom is uitgeschakeld."
 
-#, python-format
-msgid "Server error %s. Please check your connection."
-msgstr "Serverfout %s. Controleer uw verbinding."
-
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr "Verbinding mislukt. Controleer de URL en uw internetverbinding."
 
 msgid "Invalid server response. Please check the URL."
 msgstr "Ongeldige serverreactie. Controleer de URL."
 
-#, python-format
-msgid "Unexpected error: %s"
-msgstr "Onverwachte fout: %s"
-
-msgid "Error accessing media object."
-msgstr "Fout bij het openen van het media-object."
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"Uw gebruiker heeft niet voldoende servermachtigingen om synchronisatie te "
+"gebruiken."
 
 msgid "Failed importing downloaded XML file."
 msgstr "Het importeren van het gedownloade XML-bestand is mislukt."
-
-msgid "Comparing local and remote data..."
-msgstr "Lokale en externe gegevens vergelijken…"
-
-msgid "Server authorization error."
-msgstr "Fout bij serverautorisatie."
-
-msgid "Server authorization error: insufficient permissions."
-msgstr "Serverautorisatiefout: onvoldoende machtigingen."
-
-msgid "Error: URL not found."
-msgstr "Fout: URL niet gevonden."
 
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr ""
 "Kan wijzigingen naar de server niet synchroniseren: objecten zijn gewijzigd."
 
+msgid "Unexpected error while applying changes."
+msgstr "Onverwachte fout bij het verwerken van wijzigingen."
+
+msgid ""
+"The family tree was modified while the changes were being reviewed. Nothing "
+"has been applied. Please compare again."
+msgstr ""
+"De stamboom werd aangepast tijdens het controleren van de wijzigingen. Er is "
+"niets toegepast. Vergelijk nog eens."
+
 #, python-format
-msgid "Error %s while connecting to server."
-msgstr "Fout %s tijdens het verbinden met de server."
+msgid "The server could not apply the changes: %s"
+msgstr "De server kon de wijzigingen niet toepassen: %s"
 
-msgid "URL error while connecting to server."
-msgstr "URL-fout tijdens het verbinden met de server."
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "Serverfout %s. Controleer uw verbinding."
 
-msgid "Unable to synchronize changes to server."
-msgstr "Kan wijzigingen naar de server niet synchroniseren."
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Onverwachte fout: %s"
+
+msgid "Fetching remote data..."
+msgstr "Gegevens van server ophalen..."
+
+msgid "Comparing local and remote data..."
+msgstr "Lokale en externe gegevens vergelijken…"
+
+msgid "Successfully applied changes to local database."
+msgstr "Wijzigingen zijn met succes toegepast op lokale database."
 
 msgid "Continue without transport encryption?"
 msgstr "Doorgaan zonder transportversleuteling?"
@@ -162,6 +150,33 @@ msgstr ""
 msgid "Server URL: "
 msgstr "URL van de server: "
 
+msgid "Error:"
+msgstr "Fout:"
+
+msgid "Sync mode"
+msgstr "Synchronisatiemodus"
+
+msgid ""
+"Changes from both sides are combined. Objects edited in both places are "
+"merged."
+msgstr ""
+"Veranderingen van beide kanten worden gecombineerd. Objecten die op beide "
+"plaatsen zijn bewerkt, worden samengevoegd."
+
+msgid ""
+"The server is made to match this computer. Anything changed only on the "
+"server is discarded."
+msgstr ""
+"De server is ingesteld om overeen te komen met deze computer. Alles wat "
+"alleen op de server is gewijzigd, wordt weggegooid."
+
+msgid ""
+"This computer is made to match the server. Anything changed only here is "
+"discarded."
+msgstr ""
+"Deze computer is ingesteld om overeen te komen met de server Alles wat "
+"alleen hier is gewijzigd, wordt weggegooid."
+
 msgid "Bidirectional Synchronization"
 msgstr "Synchronisatie in twee richtingen"
 
@@ -171,8 +186,8 @@ msgstr "Server opnieuw instellen vanuit lokaal"
 msgid "Reset local to remote"
 msgstr "Lokaal opnieuw instellen vanuit server"
 
-msgid "Merge"
-msgstr "Samenvoegen"
+msgid "Warning:"
+msgstr "Waarschuwing:"
 
 msgid "Local changes"
 msgstr "Lokale wijzigingen"
@@ -204,9 +219,6 @@ msgstr "Wijzigingen toepassen op externe database…"
 msgid "No changes to apply to remote database."
 msgstr "Geen wijzigingen nodig op externe database."
 
-msgid "Successfully applied changes to local database."
-msgstr "Wijzigingen zijn toegepast op lokale database."
-
 msgid "Missing locally"
 msgstr "Lokaal vermist"
 
@@ -214,9 +226,62 @@ msgid "Missing remotely"
 msgstr "Extern vermist"
 
 #, python-format
-msgid "Downloading %s media file(s)"
-msgstr "%s mediabestand(en) downloaden"
+msgid "Downloading %s media file"
+msgid_plural "Downloading %s media files"
+msgstr[0] "%s mediabestand downloaden"
+msgstr[1] "%s mediabestanden downloaden"
 
 #, python-format
-msgid "Uploading %s media file(s)"
-msgstr "%s mediabestand(en) uploaden"
+msgid "Uploading %s media file"
+msgid_plural "Uploading %s media files"
+msgstr[0] "%s mediabestand uploaden"
+msgstr[1] "%s mediabestanden uploaden"
+
+msgid "Try again"
+msgstr "Probeer het opnieuw"
+
+#, python-format
+msgid "Applied %s change."
+msgid_plural "Applied %s changes."
+msgstr[0] "%s wijziging toegepast."
+msgstr[1] "%s wijzigingen toegepast."
+
+msgid "Media files are in sync."
+msgstr "Mediabestanden zijn gesynchroniseerd."
+
+#, python-format
+msgid "%s media file is missing on both sides and could not be transferred."
+msgid_plural ""
+"%s media files are missing on both sides and could not be transferred."
+msgstr[0] ""
+"%s mediabestand ontbreekt aan beide kanten en kon niet worden overgedragen."
+msgstr[1] ""
+"%s mediabestanden ontbreken aan beide kanten en konden niet worden "
+"overgedragen."
+
+msgid "Both trees are already in sync."
+msgstr "Beide stambomen zijn gesynchroniseerd."
+
+#, python-format
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "%s mediabestand met succes gedownload."
+msgstr[1] "%s mediabestanden met succes gedownload."
+
+#, python-format
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "%s fout opgetreden bij het downloaden."
+msgstr[1] "%s fouten opgetreden bij het downloaden."
+
+#, python-format
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "%s mediabestand met succes geüploadet."
+msgstr[1] "%s mediabestanden met succes geüploadet."
+
+#, python-format
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "%s fout opgetreden bij het uploaden."
+msgstr[1] "%s fouten opgetreden bij het uploaden."

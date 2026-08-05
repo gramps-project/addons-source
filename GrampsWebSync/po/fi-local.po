@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-02 18:04+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"POT-Creation-Date: 2026-07-31 17:35+0200\n"
+"PO-Revision-Date: 2026-07-26 17:40+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Gramps Web Sync"
@@ -21,27 +21,14 @@ msgstr "Gramps Web -synkronointi"
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Synkronoi paikallisen tietokannan Gramps Web -instanssin kanssa."
 
-msgid "Your user does not have sufficient server permissions to use sync."
-msgstr ""
-"Käyttäjätunuksellasi ei ole riittäviä palvelinoikeuksia synkronointiin."
-
-msgid "Fetching remote data..."
-msgstr "Haetaan etätietoja..."
-
-msgid "Unexpected error while applying changes."
-msgstr "Odottamaton virhe muutoksien toteuttamiseen."
-
-msgid "Media files are in sync."
-msgstr "Mediatiedostoissa ei synkronoitavaa."
-
 msgid "Authentication failed. Please check your username and password."
-msgstr "Todennus epäonnistui. Tarkista käyttäjänimesi ja salasanasi."
+msgstr "Todennus epäonnistui. Tarkista käyttäjätunnuksesi ja salasanasi."
 
 msgid "Access forbidden. Please check username and password."
-msgstr "Pääsy kielletty. Tarkista käyttäjätunnus ja salasana."
+msgstr "Pääsy evätty. Tarkista käyttäjätunnus ja salasana."
 
 msgid "GrampsWeb service not found. Please check the URL."
-msgstr "GrampsWeb-palvelua ei löytynyt. Tarkista URL."
+msgstr "GrampsWeb-palvelua ei löytynyt. Tarkista URL-osoite."
 
 msgid "Too many requests, please try again in a few seconds."
 msgstr "Liikaa pyyntöjä, yritä uudelleen muutaman sekunnin kuluttua."
@@ -49,50 +36,41 @@ msgstr "Liikaa pyyntöjä, yritä uudelleen muutaman sekunnin kuluttua."
 msgid "GrampsWeb tree is disabled."
 msgstr "GrampsWeb ei ole tarjolla."
 
-#, python-format
-msgid "Server error %s. Please check your connection."
-msgstr "Palvelinvirhe %s. Tarkasta yhteytesi."
-
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr "Yhteysvirhe. Tarkasta URL-osoite ja yhteytesi."
 
 msgid "Invalid server response. Please check the URL."
 msgstr "Virheellinen palvelimen vastaus. Tarkasta URL-osoitteesi."
 
-#, python-format
-msgid "Unexpected error: %s"
-msgstr "Odottamaton virhe: %s"
-
-msgid "Error accessing media object."
-msgstr "Mediaobjektin lukeminen ei onnistunut."
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"Käyttäjätunuksellasi ei ole riittäviä palvelinoikeuksia synkronointiin."
 
 msgid "Failed importing downloaded XML file."
 msgstr "Ladatun XML-tiedoston tuonti tietokantaan ei onnistunut."
 
-msgid "Comparing local and remote data..."
-msgstr "Verrataan paikallisia ja etätietoja..."
-
-msgid "Server authorization error."
-msgstr "Palvelimen valtuutusvirhe."
-
-msgid "Server authorization error: insufficient permissions."
-msgstr "Palvelimen valtuutusvirhe: riittämättömät käyttöoikeudet."
-
-msgid "Error: URL not found."
-msgstr "Virhe: URL-osoitetta ei löytynyt."
-
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr "Muutosten synkronointi palvelimelle epäonnistui: kohteita on muokattu."
 
+msgid "Unexpected error while applying changes."
+msgstr "Odottamaton virhe muutoksien toteuttamiseen."
+
 #, python-format
-msgid "Error %s while connecting to server."
-msgstr "Virhe %s yhdistettäessä palvelimeen."
+msgid "Server error %s. Please check your connection."
+msgstr "Palvelinvirhe %s. Tarkasta yhteytesi."
 
-msgid "URL error while connecting to server."
-msgstr "URL-virhe palvelimelle yhdistettäessä."
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Odottamaton virhe: %s"
 
-msgid "Unable to synchronize changes to server."
-msgstr "Muutosten synkronointi palvelimelle ei onnistunut."
+msgid "Fetching remote data..."
+msgstr "Haetaan etätietoja..."
+
+msgid "Comparing local and remote data..."
+msgstr "Verrataan paikallisia ja etätietoja..."
+
+msgid "Successfully applied changes to local database."
+msgstr "Muutokset toteutettu paikalliseen tietokantaan."
 
 msgid "Continue without transport encryption?"
 msgstr "Jatketaanko ilman tiedonsiirron salausta?"
@@ -140,6 +118,9 @@ msgstr ""
 msgid "Server URL: "
 msgstr "Palvelimen URL: "
 
+msgid "Error:"
+msgstr "Virhe:"
+
 msgid "Bidirectional Synchronization"
 msgstr "Kaksisuuntainen synkronointi"
 
@@ -148,9 +129,6 @@ msgstr "Palauta etätiedot paikallisen mukaiseksi"
 
 msgid "Reset local to remote"
 msgstr "Palauta paikailliset tiedot etätietojen mukaisiksi"
-
-msgid "Merge"
-msgstr "Yhdistä"
 
 msgid "Local changes"
 msgstr "Paikalliset muutokset"
@@ -182,11 +160,11 @@ msgstr "Muutoksia viedään etätietokantaan..."
 msgid "No changes to apply to remote database."
 msgstr "Ei muutoksia etätietokantaan."
 
-msgid "Successfully applied changes to local database."
-msgstr "Muutokset toteutettu paikalliseen tietokantaan."
-
 msgid "Missing locally"
 msgstr "Puuttuu paikallisista tiedoista"
 
 msgid "Missing remotely"
 msgstr "Puuttuu etätiedoista"
+
+msgid "Media files are in sync."
+msgstr "Mediatiedostoissa ei synkronoitavaa."

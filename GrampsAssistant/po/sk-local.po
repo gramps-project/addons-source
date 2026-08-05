@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-03 09:03-0700\n"
-"PO-Revision-Date: 2026-06-29 14:56+0000\n"
+"PO-Revision-Date: 2026-08-05 18:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,136 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
+
+msgid ""
+"You are a helpful genealogy assistant with access to the user's Gramps "
+"database. Answer questions about people, families, events, and "
+"relationships. When you need information from the database, call the "
+"provided tools — never write code, simulate results, or make up data. If no "
+"tool exists for the requested information, say so plainly."
+msgstr ""
+"Si užitočný genealogický asistent s prístupom k databáze používateľa v "
+"programe Gramps. Odpovedaj na otázky týkajúce sa osôb, rodín, udalostí a "
+"vzťahov. Keď potrebuješ informácie z databázy, využi k tomu určené nástroje "
+"– nikdy nepíš kód, nesimuluj výsledky ani si nevymýšľaj údaje. Ak pre "
+"požadované informácie neexistuje žiadny nástroj, jasne to povedz."
+
+msgid "Gramps Assistant settings"
+msgstr "Nastavenia asistenta Gramps"
+
+msgid "Clear conversation and context"
+msgstr "Vymazať konverzáciu a kontext"
 
 msgid "Send"
 msgstr "Poslať"
+
+msgid "Gramps Assistant:"
+msgstr "Asistent Gramps:"
+
+msgid ""
+"Ask me anything about the Gramps program or your specific Gramps family "
+"tree. Use the ⚙ button to configure the AI.\n"
+msgstr ""
+"Opýtajte sa ma čokoľvek o programe Gramps alebo o vašom konkrétnom rodinnom "
+"strome v Gramps. Použite tlačidlo ⚙ na konfiguráciu umelej inteligencie "
+"(AI).\n"
+
+msgid ""
+"\n"
+"No model configured. Please click the Settings button to choose a backend "
+"and model before chatting.\n"
+msgstr ""
+"\n"
+"Nie je nakonfigurovaný žiadny model. Pred začatím konverzácie kliknite na "
+"tlačidlo Nastavenia a vyberte backend a model.\n"
+
+msgid "Thinking..."
+msgstr "Premýšľanie..."
+
+#, python-brace-format
+msgid ""
+"API key error: the environment variable {var} is not set or is invalid. Set "
+"it before launching Gramps:\n"
+"  export {var}=your-key-here"
+msgstr ""
+"Chyba API kľúča: premenná prostredia {var} nie je nastavená alebo je "
+"neplatná. Nastavte ju pred spustením Gramps:\n"
+"  export {var}=váš-kľúč-je-tu"
+
+msgid ""
+"API key error: this provider requires an API key. Open Settings and enter "
+"the environment variable name for your API key (e.g. OPENAI_API_KEY)."
+msgstr ""
+"Chyba API kľúča: tento poskytovateľ vyžaduje API kľúč. Otvorte Nastavenia a "
+"zadajte názov premennej prostredia pre váš API kľúč (napr. OPENAI_API_KEY)."
+
+msgid "Done.\n"
+msgstr "Hotovo.\n"
+
+msgid "System Prompt:"
+msgstr "Systémová výzva:"
+
+msgid "Simplify tools (recommended for smaller/local models)"
+msgstr "Zjednodušiť nástroje (odporúčané pre menšie/lokálne modely)"
+
+msgid ""
+"When enabled, only the tools relevant to your question are sent to the "
+"model. This improves performance with smaller local models."
+msgstr ""
+"Ak je táto možnosť zapnutá, do modelu sa odosielajú len nástroje relevantné "
+"pre vašu otázku. Tým sa zlepšuje výkon pri menších lokálnych modeloch."
+
+msgid "Use Local Model"
+msgstr "Použiť lokálny model"
+
+msgid ""
+"URL of a local OpenAI-compatible server. Ollama: http://localhost:11434  LM "
+"Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
+msgstr ""
+"URL lokálneho servera kompatibilného s OpenAI. Ollama: http://"
+"localhost:11434  LM Studio: http://localhost:1234  llama.cpp: http://"
+"localhost:8080"
+
+msgid "model name (leave blank for LM Studio / llama.cpp)"
+msgstr "názov modelu (v prípade LM Studio / llama.cpp nechajte prázdne)"
+
+msgid ""
+"Model to request from the local server. Required for Ollama (e.g. llama3.1). "
+"Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
+msgstr ""
+"Model, ktorý sa má vyžiadať z lokálneho servera. Povinné pre Ollama (napr. "
+"llama3.1). V prípade LM Studio alebo llama.cpp, ktoré používajú akýkoľvek "
+"načítaný model, nechajte prázdne."
+
+msgid "Model:"
+msgstr "Model:"
+
+msgid "Use Foundational Model"
+msgstr "Použiť základný model"
+
+msgid "e.g. OPENAI_API_KEY"
+msgstr "napr. OPENAI_API_KEY"
+
+msgid "Name of the environment variable holding your API key."
+msgstr "Názov premennej prostredia obsahujúcej váš API kľúč."
+
+msgid "API key env var:"
+msgstr "Premenná prostredia kľúča API:"
+
+msgid "Backend:"
+msgstr "Backend:"
+
+msgid "Base URL:"
+msgstr "Základná URL:"
+
+msgid "Model name:"
+msgstr "Názov modelu:"
+
+msgid "Gramps Assistant"
+msgstr "Asistent Gramps"
+
+msgid "AI assistant for querying your Gramps family tree"
+msgstr ""
+"AI asistent na získavanie informácií o vašom rodinnom strome v programe "
+"Gramps"

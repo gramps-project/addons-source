@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
@@ -101,11 +101,17 @@ msgstr "Sayım görevlisinin imzası"
 msgid "Persons"
 msgstr "Kişiler"
 
+msgid "Rooms"
+msgstr "Odalar"
+
 msgid "County or Co. Borough"
 msgstr "İlçe veya İl Belediyesi"
 
 msgid "District Electoral Division or Ward"
 msgstr "İlçe Seçim Bölgesi veya Mahalle"
+
+msgid "Townland"
+msgstr "Kasaba"
 
 msgid "Urban Dist. Town or Village"
 msgstr "Şehir Bölgesi, Kasaba veya Köy"
@@ -122,6 +128,9 @@ msgstr "Kamu Kurumunun Adı"
 msgid "Name and Surname"
 msgstr "Ad ve Soyad"
 
+msgid "Relation"
+msgstr "İlişki"
+
 msgid "Relationship to Head of Household"
 msgstr "Hane halkı başkanıyla olan ilişki"
 
@@ -137,8 +146,17 @@ msgstr "Yaş ayı"
 msgid "Age in months"
 msgstr "Ay cinsinden yaş"
 
+msgid "Sex"
+msgstr "Cinsiyet"
+
 msgid "Marriage or Orphanhood"
 msgstr "Evlilik veya Yetimlik"
+
+msgid "Birthplace"
+msgstr "Doğum Yeri"
+
+msgid "Irish Language"
+msgstr "İrlanda Dili"
 
 msgid ""
 "\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
@@ -146,6 +164,12 @@ msgid ""
 msgstr ""
 "\"Sadece İrlandaca\", \"İrlandaca ve İngilizce\", \"İngilizce ve "
 "İrlandaca\", \"İrlandaca okuyabiliyorum ama konuşamıyorum\""
+
+msgid "Personal Occupation"
+msgstr "Kişisel Meslek"
+
+msgid "Years Married"
+msgstr "Evlilik Yılı Süresi"
 
 msgid "Years married in present Marriage"
 msgstr "Mevcut evliliğin yıl cinsinden süresi"
@@ -166,7 +190,7 @@ msgid "Total Children Under 16 Living"
 msgstr "16 Yaş Altında Yaşayan Toplam Çocuk Sayısı"
 
 msgid "(1.) Entry no."
-msgstr "(1.) Kayıt numarası"
+msgstr "(1.) Giriş numarası"
 
 msgid "Superintendent Registrar's District"
 msgstr "Baş Kayıt Memurunun Bölgesi"
@@ -192,6 +216,9 @@ msgstr "Doğum Yeri"
 msgid "(2.) Date and Place of Birth"
 msgstr "(2.) Doğum Tarihi ve Yeri"
 
+msgid "Date of Birth"
+msgstr "Doğum tarihi"
+
 msgid "(4.) M or F for male or female"
 msgstr "(4.) Erkek veya kadın için E veya K"
 
@@ -203,6 +230,9 @@ msgstr "(7.) Babanın Rütbesi veya Mesleği"
 
 msgid "(6.) Name and Surname and Maiden Surname of Mother"
 msgstr "(6.) Annenin Adı, Soyadı ve Kızlık Soyadı"
+
+msgid "Maiden Surname"
+msgstr "Kızlık Soyadı"
 
 msgid "(8.) Signature, Qualification, and Residence of Informant"
 msgstr "(8.) Bilgi Verenin İmzası, Nitelikleri ve İkametgahı"
@@ -237,6 +267,9 @@ msgstr "(3.) Ad ve Soyad"
 msgid "(4.) Full or Minor"
 msgstr "(4.) Tam veya Kısmi"
 
+msgid "Condition"
+msgstr "Medeni durum"
+
 msgid "(5.) Bachelor or Spinster"
 msgstr "(5.) Bekar erkek veya bekar kadın"
 
@@ -251,6 +284,9 @@ msgstr "(8.) Babanın Adı ve Soyadı"
 
 msgid "(9.) Rank or Profession of Father"
 msgstr "(9.) Babanın Rütbesi veya Mesleği"
+
+msgid "Signed"
+msgstr "İmzalandı"
 
 msgid "(10.) When Registered"
 msgstr "(10.) Kayıt olunduğunda"
@@ -294,29 +330,5246 @@ msgstr "(9.) Örneğin: Oğlu, Kızı"
 msgid "(9.) e.g. Present at death"
 msgstr "(9.) Örneğin: Ölüm anında hazır bulunan"
 
+msgid "Schedule"
+msgstr "Zamanlama"
+
+msgid "EnumDistrict"
+msgstr "Sayım Bölgesi"
+
+msgid "Township"
+msgstr "İlçe"
+
+msgid "Comprising"
+msgstr "İçeren"
+
+msgid "OfTheSaid"
+msgstr "Söz Konusu"
+
+msgid "Enumerator"
+msgstr "Nüfus Sayımı Görevlisi"
+
+msgid "1. Names of Inmates"
+msgstr "1. Sakinlerin Adları"
+
+msgid "2. Profession, Trade or Occupation"
+msgstr "2. Meslek, Ticaret veya İş"
+
+msgid "BirthPlace"
+msgstr "Doğum Yeri"
+
+msgid "3. Place of Birth"
+msgstr "3. Doğum Yeri"
+
+msgid "4. Religion"
+msgstr "4. Din"
+
+msgid "5. Residence if Outside of Limits"
+msgstr "5. Sınırlar Dışında İkamet Ediliyorsa"
+
+msgid "6. Age at Next Birthday"
+msgstr "6. Bir Sonraki Doğum Günündeki Yaş"
+
+msgid "SexMale"
+msgstr "Cinsiyet Erkek"
+
+msgid "7. Sex: Male"
+msgstr "7. Cinsiyet: Erkek"
+
+msgid "SexFemale"
+msgstr "Cinsiyet Kadın"
+
+msgid "8. Sex: Female"
+msgstr "8. Cinsiyet: Kadın"
+
+msgid "MaritalStatus"
+msgstr "Medeni Durum"
+
+msgid "9. Married or Single"
+msgstr "9. Evli veya Bekâr"
+
+msgid "Coloured"
+msgstr "Renkli"
+
+msgid "10. Coloured Persons - Negroes"
+msgstr "10. Renkli Kişiler - Siyahiler"
+
+msgid "Indians"
+msgstr "Hintliler"
+
+msgid "11. Indians, if any"
+msgstr "11. Varsa Hintliler"
+
+msgid "ResidentsMale"
+msgstr "İkamet Eden Erkek"
+
+msgid "12. Residents: Members, Male"
+msgstr "12. İkamet Edenler: Üyeler, Erkek"
+
+msgid "ResidentsFemale"
+msgstr "İkamet Eden Kadın"
+
+msgid "13. Residents: Members, Female"
+msgstr "13. İkamet Edenler: Üyeler, Kadın"
+
+msgid "NonMembersMale"
+msgstr "Üye Olmayan Erkek"
+
+msgid "14. Residents: Not Members: Male"
+msgstr "14. İkamet Edenler: Üye Olmayanlar: Erkek"
+
+msgid "NonMembersFemale"
+msgstr "Üye Olmayan Kadın"
+
+msgid "15. Residents: Not Members: Female"
+msgstr "15. İkamet Edenler: Üye Olmayanlar: Kadın"
+
+msgid "AbsentMembersMale"
+msgstr "Bulunmayan Üye Erkek"
+
+msgid "16. Members Absent: Male"
+msgstr "16. Bulunmayan Üyeler: Erkek"
+
+msgid "AbsentMembersFemale"
+msgstr "Bulunmayan Üye Kadın"
+
+msgid "17. Members Absent: Female"
+msgstr "17. Bulunmayan Üyeler: Kadın"
+
+msgid "DeafDumbMale"
+msgstr "Sağır Dilsiz Erkek"
+
+msgid "18. Deaf and Dumb: Male"
+msgstr "18. Sağır ve Dilsiz: Erkek"
+
+msgid "DeafDumbFemale"
+msgstr "Sağır Dilsiz Kadın"
+
+msgid "19. Deaf and Dumb: Female"
+msgstr "19. Sağır ve Dilsiz: Kadın"
+
+msgid "BlindMale"
+msgstr "Kör Erkek"
+
+msgid "20. Blind: Male"
+msgstr "20. Kör: Erkek"
+
+msgid "BlindFemale"
+msgstr "Kör Kadın"
+
+msgid "21. Blind: Female"
+msgstr "21. Kör: Kadın"
+
+msgid "LunaticMale"
+msgstr "Akıl Hastası Erkek"
+
+msgid "22. Lunatics: Male"
+msgstr "22. Akıl Hastaları: Erkek"
+
+msgid "LunaticFemale"
+msgstr "Akıl Hastası Kadın"
+
+msgid "23. Lunatics: Female"
+msgstr "23. Akıl Hastaları: Kadın"
+
+msgid "ScholarMale"
+msgstr "Öğrenci Erkek"
+
+msgid "24. Attending School: Male"
+msgstr "24. Okula Devam Eden: Erkek"
+
+msgid "ScholarFemale"
+msgstr "Öğrenci Kadın"
+
+msgid "25. Attending School: Female"
+msgstr "25. Okula Devam Eden: Kadın"
+
+msgid "Birth1851Male"
+msgstr "1851 Doğum Erkek"
+
+msgid "26. Births During the Year 1851: Male"
+msgstr "26. 1851 Yılında Doğanlar: Erkek"
+
+msgid "Birth1851Female"
+msgstr "1851 Doğum Kadın"
+
+msgid "27. Births During the Year 1851: Female"
+msgstr "27. 1851 Yılında Doğanlar: Kadın"
+
+msgid "Death1851Male"
+msgstr "1851 Ölüm Erkek"
+
+msgid "28. Deaths During the Year 1851: Male"
+msgstr "28. 1851 Yılında Ölümler: Erkek"
+
+msgid "Death1851Female"
+msgstr "1851 Ölüm Kadın"
+
+msgid "29. Deaths During the Year 1851: Female"
+msgstr "29. 1851 Yılında Ölümler: Kadın"
+
+msgid "DeathAgeCause"
+msgstr "Ölüm Yaşı Nedeni"
+
+msgid "30. Age and Cause of Deaths"
+msgstr "30. Ölümlerin Yaşı ve Nedeni"
+
+msgid "Houses"
+msgstr "Evler"
+
+msgid ""
+"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
+msgstr "31. Evler: Tuğla, Taş, Ahşap, Kütük, Baraka veya diğer ikamet türleri"
+
+msgid "HousesStories"
+msgstr "Evler Kat Sayısı"
+
+msgid "32. Houses: No. of Stories"
+msgstr "32. Evler: Kat Sayısı"
+
+msgid "HousesFamilies"
+msgstr "Evler Aile Sayısı"
+
+msgid "33. No. of Families Occupying"
+msgstr "33. Evde Oturan Aile Sayısı"
+
+msgid "HousesVacant"
+msgstr "Evler Boş"
+
+msgid "34. Houses: Vacant"
+msgstr "34. Evler: Boş"
+
+msgid "HousesBuilding"
+msgstr "Evler Yapım"
+
+msgid "35. Houses: Building"
+msgstr "35. Evler: Yapım"
+
+msgid "Shops"
+msgstr "Dükkanlar"
+
+msgid "36. Shops, Stores, Inns, Taverns etc."
+msgstr "36. Dükkanlar, Mağazalar, Hanlar, Tavernalar vb."
+
+msgid "PublicBuildings"
+msgstr "Kamu Binaları"
+
+msgid "37. Public Buildings"
+msgstr "37. Kamu Binaları"
+
+msgid "WorshipPlaces"
+msgstr "İbadet Yerleri"
+
+msgid "38. Places of Worship"
+msgstr "38. İbadet Yerleri"
+
+msgid "BuisnessInfo"
+msgstr "İşletme Bilgileri"
+
+msgid ""
+"39. Information on Mills, Factories etc., their cost, power, produce, etc."
+msgstr ""
+"39. Değirmenler, Fabrikalar vb. hakkında bilgiler; maliyetleri, güçleri, "
+"üretimleri vb."
+
+msgid "NumEmployees"
+msgstr "Çalışan Sayısı"
+
+msgid "40. Number of Persons Usually Employed Therein"
+msgstr "40. Orada Genellikle Çalıştırılan Kişi Sayısı"
+
+msgid "41. General Remarks of the Enumerator"
+msgstr "41. Sayım Görevlisinin Genel Açıklamaları"
+
+msgid "1. Name of Occupier"
+msgstr "1. Oturanın Adı"
+
+msgid "Concession"
+msgstr "İmtiyaz"
+
+msgid "2. Concession or Range"
+msgstr "2. İmtiyaz veya Bölge"
+
+msgid "Lot"
+msgstr "Parsel"
+
+msgid "3. Lot or part of Lot"
+msgstr "3. Parsel veya Parselin Bir Kısmı"
+
+msgid "AcresHeld"
+msgstr "Sahip Olunan Dönüm"
+
+msgid "4. Number of Acres of Land: Held by each person or family"
+msgstr "4. Her kişi veya aile tarafından sahip olunan arazi dönümü sayısı"
+
+msgid "AcresCultivation"
+msgstr "Ekili Dönüm"
+
+msgid "5. Number of Acres of Land: Under Cultivation"
+msgstr "5. Ekili durumda olan arazi dönümü sayısı"
+
+msgid "AcresCrops"
+msgstr "Ürün Dönümü"
+
+msgid "6. Number of Acres of Land: Under Crops in 1851"
+msgstr "6. 1851 yılında ürün altında bulunan arazi dönümü sayısı"
+
+msgid "AcresPasture"
+msgstr "Mera Dönümü"
+
+msgid "7. Number of Acres of Land: Under Pasture in 1851"
+msgstr "7. 1851 yılında mera olarak kullanılan arazi dönümü sayısı"
+
+msgid "AcresGardens"
+msgstr "Bahçe Dönümü"
+
+msgid "8. Number of Acres of Land: Gardens or Orchards"
+msgstr "8. Bahçe veya meyve bahçesi olan arazi dönümü sayısı"
+
+msgid "AcresWood"
+msgstr "Orman Dönümü"
+
+msgid "9. Number of Acres of Land: Under Wood or Wild"
+msgstr "9. Ormanlık veya yabani durumda olan arazi dönümü sayısı"
+
+msgid "WheatAcres"
+msgstr "Buğday Dönümü"
+
+msgid "10. Wheat: Acres"
+msgstr "10. Buğday: Dönüm"
+
+msgid "WheatBsh"
+msgstr "Buğday Kilesi"
+
+msgid "11. Wheat: Produce Bsh."
+msgstr "11. Buğday: Üretim Kilesi."
+
+msgid "BarleyAcres"
+msgstr "Arpa Dönüm"
+
+msgid "12. Barley: Acres"
+msgstr "12. Arpa: Dönüm"
+
+msgid "BarleyBsh"
+msgstr "Arpa Kile"
+
+msgid "13. Barley: Produce Bsh."
+msgstr "13. Arpa: Üretim Kilesi."
+
+msgid "RyeAcres"
+msgstr "Çavdar Dönüm"
+
+msgid "14. Rye: Acres"
+msgstr "14. Çavdar: Dönüm"
+
+msgid "RyeBsh"
+msgstr "Çavdar Kile"
+
+msgid "15. Rye: Produce Bsh."
+msgstr "15. Çavdar: Üretim Kilesi."
+
+msgid "PeasAcres"
+msgstr "Bezelye Dönüm"
+
+msgid "16. Peas: Acres"
+msgstr "16. Bezelye: Dönüm"
+
+msgid "PeasBush"
+msgstr "Bezelye Kile"
+
+msgid "17. Peas: Produce Bsh."
+msgstr "17. Bezelye: Üretim Kilesi."
+
+msgid "OatsAcres"
+msgstr "Yulaf Dönüm"
+
+msgid "18. Oats: Acres"
+msgstr "18. Yulaf: Dönüm"
+
+msgid "OatsBush"
+msgstr "Yulaf Kile"
+
+msgid "19. Oats: Produce Bsh."
+msgstr "19. Yulaf:Üretim Kilesi."
+
+msgid "BWheatAcres"
+msgstr "Karabuğday Dönüm"
+
+msgid "20. B.Wheat: Acres"
+msgstr "20. Karabuğday: Dönüm"
+
+msgid "BWheatBush"
+msgstr "Karabuğday Kile"
+
+msgid "21. B.Wheat: Produce Bsh."
+msgstr "21. Karabuğday: Üretim Kilesi."
+
+msgid "CornAcres"
+msgstr "Mısır Dönüm"
+
+msgid "22. Corn: Acres"
+msgstr "22. Mısır: Dönüm"
+
+msgid "CornBush"
+msgstr "Mısır Kile"
+
+msgid "23. Corn: Produce Bsh."
+msgstr "23. Mısır: Üretim Kilesi."
+
+msgid "PotatoesAcres"
+msgstr "Patates Dönüm"
+
+msgid "24. Potatoes: Acres"
+msgstr "24. Patates: Dönüm"
+
+msgid "PotatoesBush"
+msgstr "Patates Kile"
+
+msgid "25. Potatoes: Produce Bsh."
+msgstr "25. Patates: Üretim Kilesi."
+
+msgid "TurnipsAcres"
+msgstr "Şalgam Dönüm"
+
+msgid "26. Turnips: Acres"
+msgstr "26. Şalgam: Dönüm"
+
+msgid "TurnipsBush"
+msgstr "Şalgam Kile"
+
+msgid "27. Turnips: Produce Bsh."
+msgstr "27. Şalgam: Üretim Kilesi."
+
+msgid "CloverBush"
+msgstr "Yonca Kile"
+
+msgid "28. Clover, Timothy or other grass seed - Bsh."
+msgstr "28. Yonca, Çayır veya Diğer Çim Tohumu - Kilesi."
+
+msgid "CarrotsBush"
+msgstr "Havuç Kile"
+
+msgid "29. Carrots - Bsh."
+msgstr "29. Havuç - Kilesi."
+
+msgid "MangleWurtzel"
+msgstr "Pancar"
+
+msgid "30. Mangle Wurtzel"
+msgstr "30. Pancar"
+
+msgid "BeansBush"
+msgstr "Fasulye Kile"
+
+msgid "31. Beans Bush"
+msgstr "31. Fasulye Kilesi"
+
+msgid "HopsLbs"
+msgstr "Şerbetçiotu Kilosu"
+
+msgid "32. Hops Lbs."
+msgstr "32. Şerbetçiotu Kilosu."
+
+msgid "HayQty"
+msgstr "Saman Miktarı"
+
+msgid "33. Hay, Bundles or Tons"
+msgstr "33. Saman, Demet veya Ton"
+
+msgid "FlaxLbs"
+msgstr "Keten Kilosu"
+
+msgid "34. Flax or Hemp, Lbs."
+msgstr "34. Keten veya Kenevir, Kilosu."
+
+msgid "TobaccoLbs"
+msgstr "Tütün Kilosu"
+
+msgid "35. Tobacco Lbs."
+msgstr "35. Tütün Kilosu."
+
+msgid "WoolLbs."
+msgstr "Yün Kilosu."
+
+msgid "36. Wool Lbs."
+msgstr "36. Yün Kilosu."
+
 msgid "Column37"
 msgstr "Sütun37"
+
+msgid "37."
+msgstr "37."
 
 msgid "Column38"
 msgstr "Sütun38"
 
+msgid "38."
+msgstr "38."
+
 msgid "Column39"
 msgstr "Sütun39"
+
+msgid "39."
+msgstr "39."
+
+msgid "MapleSugarLbs"
+msgstr "Akçaağaç Şekeri Kilosu"
+
+msgid "40. Maple Sugar Lbs."
+msgstr "40. Akçaağaç Şekeri Kilosu."
+
+msgid "CiderGalls"
+msgstr "Elma Suyu Galonu"
+
+msgid "41. Cider Galls."
+msgstr "41. Elma Suyu Galonu."
+
+msgid "ClothYards"
+msgstr "Kumaş Metreleri"
+
+msgid "42. Fulled Cloth Yards"
+msgstr "42. Keçe Kumaş Metreleri"
+
+msgid "LinnenYards"
+msgstr "Keten Metreleri"
+
+msgid "43. Linnen - Yds."
+msgstr "43. Keten - Metreleri."
+
+msgid "FlannelYds"
+msgstr "Pazen Metreleri"
+
+msgid "44. Flannel - Yds."
+msgstr "44. Pazen - Metreleri."
+
+msgid "Bulls"
+msgstr "Boğalar"
+
+msgid "45. Bulls, Oxen or Steers"
+msgstr "45. Boğalar, Öküzler veya Tosunlar"
+
+msgid "Milch Cows"
+msgstr "Süt İnekleri"
+
+msgid "46. Milch Cows"
+msgstr "46. Süt İnekleri"
+
+msgid "Calves"
+msgstr "Buzağılar"
+
+msgid "47. Calves or Heifers"
+msgstr "47. Buzağılar veya Düveler"
+
+msgid "Horses"
+msgstr "Atlar"
+
+msgid "48. Horses of all ages"
+msgstr "48. Her Yaştan Atlar"
+
+msgid "Sheep"
+msgstr "Koyunlar"
+
+msgid "49. Sheep"
+msgstr "49. Koyunlar"
+
+msgid "Pigs"
+msgstr "Domuzlar"
+
+msgid "50. Pigs"
+msgstr "50. Domuzlar"
+
+msgid "ButterLbs"
+msgstr "Tereyağı Kilosu"
+
+msgid "51. Butter - Lbs."
+msgstr "51. Tereyağı - Kilosu."
+
+msgid "CheeseLbs"
+msgstr "Peynir Kilosu"
+
+msgid "52. Cheese - Lbs."
+msgstr "52. Peynir - Kilosu."
+
+msgid "Beef"
+msgstr "Sığır Eti"
+
+msgid "53. Beef - Barrels or Cwts."
+msgstr "53. Sığır Eti - Variller veya Tonu."
+
+msgid "Pork"
+msgstr "Domuz Eti"
+
+msgid "54. Pork - Barrels or Cwts."
+msgstr "54. Domuz Eti - Variller veya Tonu."
+
+msgid "Fish"
+msgstr "Balık"
+
+msgid "55. Quantity of Fish Cured"
+msgstr "55. İşlenmiş Balık Miktarı"
+
+msgid "56. Remarks"
+msgstr "56. Açıklamalar"
+
+msgid "2. Profession, trade or occupation"
+msgstr "2. Meslek, ticaret veya iş"
+
+msgid "Married1851"
+msgstr "Evlilik 1851"
+
+msgid "4. Married during the year"
+msgstr "4. Yıl içinde evlenenler"
+
+msgid "5. Religion"
+msgstr "5. Din"
+
+msgid "6. Residence, if out of limits"
+msgstr "6. İkamet yeri, sınırlar dışındaysa"
+
+msgid "7. Age next Birthday"
+msgstr "7. Bir sonraki doğum günündeki yaş"
+
+msgid "8. Sex: Male"
+msgstr "8. Cinsiyet: Erkek"
+
+msgid "SexFemail"
+msgstr "Cinsiyet Kadın"
+
+msgid "9. Sex:Female"
+msgstr "9. Cinsiyet: Kadın"
+
+msgid "10. Married or Single"
+msgstr "10. Evli veya Bekâr"
+
+msgid "Widowers"
+msgstr "Dullar"
+
+msgid "11. Widowers"
+msgstr "11. Dullar"
+
+msgid "Widows"
+msgstr "Dullar"
+
+msgid "12. Widows"
+msgstr "12. Dullar"
+
+msgid "13. Coloured Persons, Mulato or Indians"
+msgstr "13. Renkli Kişiler, Melezler veya Hintliler"
+
+msgid "MemberMale"
+msgstr "Üye Erkek"
+
+msgid "14. Members: Male"
+msgstr "14. Üyeler: Erkek"
+
+msgid "MemberFemale"
+msgstr "Üye Kadın"
+
+msgid "15. Members: Female"
+msgstr "15. Üyeler: Kadın"
+
+msgid "NotMemberMale"
+msgstr "Üye Olmayan Erkek"
+
+msgid "16. Not Members: Male"
+msgstr "16. Üye Olmayanlar: Erkek"
+
+msgid "NotMemberFemale"
+msgstr "Üye Olmayan Kadın"
+
+msgid "17. Not Members: Female"
+msgstr "17. Üye Olmayanlar: Kadın"
+
+msgid "MemberAbsentMale"
+msgstr "Üye Olmayan Erkek"
+
+msgid "18. Members Absent: Male"
+msgstr "18. Üye Olmayanlar: Erkek"
+
+msgid "MemberAbsentFemale"
+msgstr "Üye Olmayan Kadın"
+
+msgid "19. Members Absent: Female"
+msgstr "19. Üye Olmayanlar: Kadın"
+
+msgid "DeafDumb"
+msgstr "Sağır Dilsiz"
+
+msgid "20. Deaf and Dumb"
+msgstr "20. Sağır ve Dilsiz"
+
+msgid "Blind"
+msgstr "Kör"
+
+msgid "21. Blind"
+msgstr "21. Kör"
+
+msgid "Lunatic"
+msgstr "Akıl Hastası"
+
+msgid "22. Lunatics or Idiots"
+msgstr "22. Akıl Hastaları veya Zihinsel Engelliler"
+
+msgid "23. Attending School within the year: Male"
+msgstr "23. Yıl İçinde Okula Devam Edenler: Erkek"
+
+msgid "24. Attending School within the year: Female"
+msgstr "24. Yıl İçinde Okula Devam Edenler: Kadın"
+
+msgid "CantReadMale"
+msgstr "Okuyamayan Erkek"
+
+msgid "25. Persons over 20, who cannot read or write: Male"
+msgstr "25. 20 Yaş Üstü Okuyup Yazamayan Kişiler: Erkek"
+
+msgid "CantReadFemale"
+msgstr "Okuyamayan Kadın"
+
+msgid "26. Persons over 20, who cannot read or write: Female"
+msgstr "26. 20 Yaş Üstü Okuyup Yazamayan Kişiler: Kadın"
+
+msgid "Birth1860Male"
+msgstr "1860 Doğumlu Erkek"
+
+msgid "27. Births in 1860: Male"
+msgstr "27. 1860 Doğumlular: Erkek"
+
+msgid "Birth1860Female"
+msgstr "1860 Doğumlu Kadın"
+
+msgid "28. Births in 1860: Female"
+msgstr "28. 1860 Doğumlar: Kadın"
+
+msgid "Death1860Male"
+msgstr "1860 Yılında Ölen Erkek"
+
+msgid "29. Deaths in 1860: Male"
+msgstr "29. 1860 Yılındaki Ölümler: Erkek"
+
+msgid "Death1860Female"
+msgstr "1860 Yılında Ölen Kadın"
+
+msgid "30. Deaths in 1860: Female"
+msgstr "30. 1860 Yılındaki Ölümler: Kadın"
+
+msgid "31. Age and cause of death"
+msgstr "31. Ölüm yaşı ve nedeni"
+
+msgid "32. Houses: Brick, Stone, Frame, Log, etc."
+msgstr "32. Evler: Tuğla, Taş, Ahşap Karkas, Kütük vb."
+
+msgid "33. Houses: No. of Stories"
+msgstr "33. Evler: Kat Sayısı"
+
+msgid "34. Houses: No. of families living in the house"
+msgstr "34. Evler: Evde Yaşayan Aile Sayısı"
+
+msgid "35. Houses: Vacant"
+msgstr "35. Evler: Boş"
+
+msgid "HouseBeingBuilt"
+msgstr "Yapım Aşamasındaki Ev"
+
+msgid "36. Houses: Being built"
+msgstr "36. Evler: Yapım aşamasında"
+
+msgid "SubDistrict"
+msgstr "Alt Bölge"
+
+msgid "Vessels"
+msgstr "Tekneler"
+
+msgid "1. Vessels"
+msgstr "1. Tekneler"
+
+msgid "Shanties"
+msgstr "Barakalar"
+
+msgid "2. Shanties"
+msgstr "2. Barakalar"
+
+msgid "HousesBeingBuilt"
+msgstr "Yapım Aşamasındaki Evler"
+
+msgid "3. Dwelling houses in construction"
+msgstr "3. Yapım aşamasındaki evler"
+
+msgid "4. Dwelling houses unoccupied"
+msgstr "4. Boş evler"
+
+msgid "HousesInhabited"
+msgstr "Oturulan Evler"
+
+msgid "5. Dwelling houses inhabited"
+msgstr "5. Oturulan evler"
+
+msgid "6.Families"
+msgstr "6. Aileler"
+
+msgid "7. Names"
+msgstr "7. Adlar"
+
+msgid "8. Sex"
+msgstr "8. Cinsiyet"
+
+msgid "9. Age"
+msgstr "9. Yaş"
+
+msgid "Birth1871"
+msgstr "Doğum 1871"
+
+msgid "10. Born within last twelve months"
+msgstr "10. Son on iki ay içinde doğmuş"
+
+msgid "11. Country or Province of Birth"
+msgstr "11. Doğum Ülkesi veya Eyaleti"
+
+msgid "12. Religion"
+msgstr "12. Din"
+
+msgid "13. Origin"
+msgstr "13. Köken"
+
+msgid "14. Profession, Occupation or Trade"
+msgstr "14. Meslek, İş veya Ticaret"
+
+msgid "15. Married or Widowed"
+msgstr "15. Evli veya Dul"
+
+msgid "Maried1871"
+msgstr "Evli 1871"
+
+msgid "16. Married within last twelve months"
+msgstr "16. Son on iki ay içinde evlenmiş"
+
+msgid "Scholar"
+msgstr "Öğrenci"
+
+msgid "17. Going to school"
+msgstr "17. Okula gidiyor"
+
+msgid "CantRead"
+msgstr "Okuyamıyor"
+
+msgid "18. Over 20 unable to read"
+msgstr "18. 20 yaşın üzerinde olup okuyamayan"
+
+msgid "CantWrite"
+msgstr "Yazamıyor"
+
+msgid "19. Over 20 unable to write"
+msgstr "19. 20 yaşın üzerinde olup yazamayan"
+
+msgid "22. Unsound mind"
+msgstr "22. Akıl sağlığı yerinde değil"
+
+msgid "23. Date of Operations and Remarks"
+msgstr "23. İşlemlerin Tarihi ve Açıklamalar"
+
+msgid "3. Houses in construction"
+msgstr "3. Yapım aşamasındaki evler"
+
+msgid "4. Houses unoccupied"
+msgstr "4. Boş evler"
+
+msgid "5. Houses inhabited"
+msgstr "5. Oturulan evler"
+
+msgid "6. Families"
+msgstr "6. Aileler"
+
+msgid "Birth1881"
+msgstr "Doğum 1881"
+
+msgid "16. Going to school"
+msgstr "16. Okula gidiyor"
+
+msgid "17. Deaf and Dumb"
+msgstr "17. Sağır ve Dilsiz"
+
+msgid "18. Blind"
+msgstr "18. Kör"
+
+msgid "19. Unsound mind"
+msgstr "19. Akıl sağlığı yerinde değil"
+
+msgid "20. Date of Operations and Remarks"
+msgstr "20. İşlemlerin Tarihi ve Açıklamalar"
+
+msgid "1. Vessels and Shanties"
+msgstr "1. Gemiler ve Gecekondular"
+
+msgid "2. Houses in construction"
+msgstr "2. Yapım aşamasındaki evler"
+
+msgid "3. Houses unoccupied"
+msgstr "3. Boş evler"
+
+msgid "4. Houses inhabited"
+msgstr "4. Oturulan evler"
+
+msgid "5. Families"
+msgstr "5. Aileler"
+
+msgid "6. Names"
+msgstr "6. Adlar"
+
+msgid "7. Sex"
+msgstr "7. Cinsiyet"
+
+msgid "8. Age"
+msgstr "8. Yaş"
+
+msgid "9. Married or Widowed"
+msgstr "9. Evli veya Dul"
+
+msgid "10. Relationship to Head of Family"
+msgstr "10. Aile Reisiyle İlişki"
+
+msgid "12. FrenchCanadian"
+msgstr "12. Fransız Kanadalı"
+
+msgid "BirthPlaceFather"
+msgstr "Babanın Doğum Yeri"
+
+msgid "13. Birth Place of Father"
+msgstr "13. Babanın Doğum Yeri"
+
+msgid "BirthPlaceMother"
+msgstr "Annenin Doğum Yeri"
+
+msgid "14. Birth Place of Mother"
+msgstr "14. Annenin Doğum Yeri"
+
+msgid "15. Religion"
+msgstr "15. Din"
+
+msgid "16. Profession, Occupation or Trade"
+msgstr "16. Meslek, İş veya Ticaret"
+
+msgid "Employer"
+msgstr "İşveren"
+
+msgid "17. Employers"
+msgstr "17. İşverenler"
+
+msgid "Employee"
+msgstr "Çalışan"
+
+msgid "18. Wage Earner"
+msgstr "18. Ücretli Çalışan"
+
+msgid "Unemployed"
+msgstr "İşsiz"
+
+msgid "19. Unemployed during week preceding Census"
+msgstr "19. Nüfus Sayımından önceki haftada işsiz olanlar"
+
+msgid "Employees"
+msgstr "Çalışanlar"
+
+msgid "20. Employer to state average number of hands employed during year"
+msgstr ""
+"20. İşverenin yıl boyunca çalıştırdığı ortalama çalışan sayısını belirtmesi"
+
+msgid "CanRead"
+msgstr "Okuyabiliyor"
+
+msgid "21. Instruction: Read"
+msgstr "21. Talimat: Okuyun"
+
+msgid "CanWrite"
+msgstr "Yazabiliyor"
+
+msgid "22. Instruction: Write"
+msgstr "22. Talimat: Yazın"
+
+msgid "23. Deaf and Dumb"
+msgstr "23. Sağır ve Dilsiz"
+
+msgid "24. Blind"
+msgstr "24. Kör"
+
+msgid "25. Unsound mind"
+msgstr "25. Akıl sağlığı yerinde değil"
+
+msgid "SubTitle"
+msgstr "Alt Başlık"
+
+msgid "PollSub"
+msgstr "Anket Alt Başlığı"
+
+msgid "House"
+msgstr "Ev"
+
+msgid "1. Dwelling house"
+msgstr "1. Ev"
+
+msgid "2. Family or household"
+msgstr "2. Aile veya hane halkı"
+
+msgid "3. Name of each person in family"
+msgstr "3. Ailedeki her bir kişinin adı"
+
+msgid "4. Sex"
+msgstr "4. Cinsiyet"
+
+msgid "Colour"
+msgstr "Renk"
+
+msgid "5. Colour"
+msgstr "5. Renk"
+
+msgid "6. Relation to head of family"
+msgstr "6. Aile reisiyle ilişkisi"
+
+msgid "7. Single, married, widowed, divorced or legally separated"
+msgstr "7. Bekâr, evli, dul, boşanmış veya yasal olarak ayrılmış"
+
+msgid "BirthMonth"
+msgstr "Doğum Ayı"
+
+msgid "8. Month and Date of Birth"
+msgstr "8. Doğum Ayı ve Tarihi"
+
+msgid "BirthYear"
+msgstr "Doğum Yılı"
+
+msgid "9. Year of birth"
+msgstr "9. Doğum yılı"
+
+msgid "10. Age at last birthday"
+msgstr "10. Son doğum günündeki yaşı"
+
+msgid "11. Country or place of birth"
+msgstr "11. Doğum ülkesi veya yeri"
+
+msgid "12. Year of immigration to Canada, if an immigrant"
+msgstr "12. Göçmen ise Kanada'ya göç yılı"
+
+msgid "13. Year of naturalization, if formerly an alien"
+msgstr "13. Daha önce yabancı uyrukluysa vatandaşlığa kabul yılı"
+
+msgid "Race"
+msgstr "Irk"
+
+msgid "14. Racial or tribal origin"
+msgstr "14. Irksal veya kabilesel köken"
+
+msgid "Nationality"
+msgstr "Uyruk"
+
+msgid "15. Nationality"
+msgstr "15. Uyruk"
+
+msgid "16. Religion"
+msgstr "16. Din"
+
+msgid "17. Profession, occupation, trade or means of living of each person"
+msgstr "17. Her bir kişinin mesleği, işi, zanaatı veya geçim kaynağı"
+
+msgid "OwnMeans"
+msgstr "Kendi Geçimi"
+
+msgid "18. Living on own means"
+msgstr "18. Kendi imkânlarıyla geçiniyor"
+
+msgid "19. Employer"
+msgstr "19. İşveren"
+
+msgid "20. Employee"
+msgstr "20. Çalışan"
+
+msgid "SelfEmployed"
+msgstr "Serbest Meslek"
+
+msgid "21. Working on own account"
+msgstr "21. Kendi hesabına çalışıyor"
+
+msgid "WhereEmployed"
+msgstr "Çalıştığı Yer"
+
+msgid "22. Working at trade in factory or in home"
+msgstr "22. Fabrikada veya evde ticaretle uğraşıyor"
+
+msgid "MonthsFactory"
+msgstr "Fabrika Ayları"
+
+msgid "23. Months employed at trade in factory"
+msgstr "23. Fabrikada ticaretle uğraşılan aylar"
+
+msgid "MonthsHome"
+msgstr "Ev Ayları"
+
+msgid "24. Months employed at trade in home"
+msgstr "24. Evde ticaretle uğraşılan aylar"
+
+msgid "MonthsOther"
+msgstr "Diğer Aylar"
+
+msgid "25. Months employed in other occupation than trace in factory or home"
+msgstr "25. Fabrikada veya evde ticaret dışında başka bir işte çalışılan aylar"
+
+msgid "EarningsOccupation"
+msgstr "Meslek Kazancı"
+
+msgid "26. Earnings from occupation or trade"
+msgstr "26. Meslekten veya ticaretten elde edilen kazanç"
+
+msgid "EarningsOther"
+msgstr "Diğer Kazançlar"
+
+msgid "27. Extra earning (From other than chief occupation or trade)"
+msgstr "27. Ek kazanç (Ana meslek veya ticaret dışında)"
+
+msgid "SchoolMonths"
+msgstr "Okul Ayları"
+
+msgid "28. Months at school in 1910"
+msgstr "28. 1910 yılında okulda geçirilen aylar"
+
+msgid "Read"
+msgstr "Oku"
+
+msgid "29. Can read"
+msgstr "29. Okuyabiliyor"
+
+msgid "Write"
+msgstr "Yaz"
+
+msgid "30. Can write"
+msgstr "30. Yazabiliyor"
+
+msgid "SpeakEnglish"
+msgstr "İngilizce Konuşabiliyor"
+
+msgid "31. Can speak English"
+msgstr "31. İngilizce konuşabiliyor"
+
+msgid "SpeakFrench"
+msgstr "Fransızca Konuşabiliyor"
+
+msgid "32. Can speak French"
+msgstr "32. Fransızca konuşabiliyor"
+
+msgid "33. Mother tongue (If spoken)"
+msgstr "33. Ana dili (Konuşuluyorsa)"
+
+msgid "Infirmities"
+msgstr "Engeller"
+
+msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
+msgstr ""
+"34. Engeller: a. Sağır ve dilsiz; b. Kör; c. Akıl sağlığı yerinde değil"
+
+msgid "Name from Schedule 1"
+msgstr "Zamanlama 1'den Ad"
+
+msgid "Line on Schedule 2"
+msgstr "Zamanlama 2'deki Satır"
+
+msgid "PageRef"
+msgstr "Sayfa Referansı"
+
+msgid "2. Page from Schedule 1"
+msgstr "2. Zamanlama 1'deki sayfa"
+
+msgid "LineRef"
+msgstr "Satır Referansı"
+
+msgid "3. Line from Schedule 1"
+msgstr "3. Zamanlama 1'deki satır"
+
+msgid "3. Place of Habitation"
+msgstr "3. İkamet Yeri"
+
+msgid "HousesConst"
+msgstr "Yapım Halindeki Evler"
+
+msgid "4. Houses: In construction"
+msgstr "4. Evler: Yapım halinde"
+
+msgid "5. Houses: Vacant"
+msgstr "5. Evler: Boş"
+
+msgid "6. Houses: Inhabited"
+msgstr "6. Evler: Oturulan"
+
+msgid "Institution"
+msgstr "Kurum"
+
+msgid "7. Institution: Special or legal name"
+msgstr "7. Kurum: Özel veya yasal adı"
+
+msgid "Buildings"
+msgstr "Binalar"
+
+msgid "8. Institution: Number of buildings"
+msgstr "8. Kurum: Bina sayısı"
+
+msgid "9. Number of families in house or institution"
+msgstr "9. Evde veya kurumda bulunan aile sayısı"
+
+msgid "10. Number of rooms in house or institution for each famiy"
+msgstr "10. Evde veya kurumda her aile için oda sayısı"
+
+msgid "Inmates"
+msgstr "Oturanlar"
+
+msgid "11. Number of inmates in institution"
+msgstr "11. Kurumdaki kişi sayısı"
+
+msgid "OwnedAcres"
+msgstr "Sahip Olunan Dönüm"
+
+msgid "12. Real Estate Owned: Grand total of acres"
+msgstr "12. Sahip Olunan Gayrimenkul: Toplam dönüm"
+
+msgid "OwnedLots"
+msgstr "Sahip Olunan Parseller"
+
+msgid "13. Real Estate Owned: Number of town or village lots"
+msgstr "13. Sahip Olunan Gayrimenkul: Kasaba veya köy parsellerinin sayısı"
+
+msgid "OwnedHouses"
+msgstr "Sahip Olunan Evler"
+
+msgid "14. Real Estate Owned: Number of dwelling houses"
+msgstr "14. Sahip Olunan Gayrimenkul: Ev sayısı"
+
+msgid "OwnedStores"
+msgstr "Sahip Olunan Mağazalar"
+
+msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
+msgstr "15. Sahip Olunan Gayrimenkul: Mağaza, depo vb. sayısı."
+
+msgid "OwnedBars"
+msgstr "Sahip Olunan Ahırlar"
+
+msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
+msgstr ""
+"16. Sahip Olunan Gayrimenkul: Ahır, at ahırı ve diğer müştemilatların sayısı"
+
+msgid "OwnedSilos"
+msgstr "Sahip Olunan Silolar"
+
+msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
+msgstr ""
+"17. Sahip Olunan Gayrimenkul: Silo sayısı ve kübik fit cinsinden kapasiteleri"
+
+msgid "OwnedFactories"
+msgstr "Sahip Olunan Fabrikalar"
+
+msgid "18. Real Estate Owned: Number of manufacturing establishments"
+msgstr "18. Sahip Olunan Gayrimenkul: İmalat tesisi sayısı"
+
+msgid "LeasedAcres"
+msgstr "Kiralanan Dönüm"
+
+msgid "19. Real Estate Leased: Grand total of acres"
+msgstr "19. Kiralanan Gayrimenkul: Toplam dönüm"
+
+msgid "LeasedLots"
+msgstr "Kiralanan Parseller"
+
+msgid "20. Real Estate Leased: Number of town or village lots"
+msgstr "20. Kiralanan Gayrimenkul: Kasaba veya köy parsellerinin sayısı"
+
+msgid "LeasedHouses"
+msgstr "Kiralanmış Evler"
+
+msgid "21. Real Estate Leased: Number of dwelling houses"
+msgstr "21. Kiralanan Gayrimenkuller: Ev sayısı"
+
+msgid "LeasedStores"
+msgstr "Kiralanmış Mağazalar"
+
+msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
+msgstr "22. Kiralanan Gayrimenkuller: Mağaza, depo vb. sayısı."
+
+msgid "LeasedBarns"
+msgstr "Kiralanmış Ahırlar"
+
+msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
+msgstr ""
+"23. Kiralanan Gayrimenkuller: Ahır, at ahırı ve diğer müştemilat sayısı"
+
+msgid "LeasedSilos"
+msgstr "Kiralanmış Silolar"
+
+msgid "24. Real Estate Leased: Number of silos and capacity in cubic feet"
+msgstr ""
+"24. Kiralanan Gayrimenkuller: Silo sayısı ve kübik fit cinsinden kapasiteleri"
+
+msgid "LeasedFactories"
+msgstr "Kiralanmış Fabrikalar"
+
+msgid "25. Real Estate Leased: Number of manufacturing establishments"
+msgstr "25. Kiralanan Gayrimenkuller: İmalat tesisi sayısı"
+
+msgid "Denomination"
+msgstr "Mezhep"
+
+msgid "26. Church or place of worship: Religious denomination"
+msgstr "26. Kilise veya ibadet yeri: Dini mezhep"
+
+msgid "Communicants"
+msgstr "Cemaat Üyeleri"
+
+msgid "27. Church or place of worship: Number of communicants"
+msgstr "27. Kilise veya ibadet yeri: Cemaat üyesi sayısı"
+
+msgid "Seating"
+msgstr "Oturma"
+
+msgid "28. Church or place of worship: Seating capacity"
+msgstr "28. Kilise veya ibadet yeri: Oturma kapasitesi"
+
+msgid "SSDenomination"
+msgstr "Pazar Okulu Mezhebi"
+
+msgid "29. Sunday School: Religious Denomination"
+msgstr "29. Pazar Okulu: Dini Mezhep"
+
+msgid "SSTeachers"
+msgstr "Pazar Okulu Öğretmenleri"
+
+msgid "30. Sunday School: Number of officers and teachers"
+msgstr "30. Pazar Okulu: Görevli ve öğretmen sayısı"
+
+msgid "SSScholars"
+msgstr "Pazar Okulu Öğrencileri"
+
+msgid "31. Sunday School: Number of Scholars"
+msgstr "31. Pazar Okulu: Öğrenci sayısı"
+
+msgid "SchoolRooms"
+msgstr "Okul Odaları"
+
+msgid "32. School: Number of rooms"
+msgstr "32. Okul: Oda sayısı"
+
+msgid "SchoolTeachers"
+msgstr "Okul Öğretmenleri"
+
+msgid "33. School: Number of teachers"
+msgstr "33. Okul: Öğretmen sayısı"
+
+msgid "SchoolStudents"
+msgstr "Okul Öğrencileri"
+
+msgid "34. School: Number of Scholars"
+msgstr "34. Okul: Öğrenci sayısı"
+
+msgid "DateVisit"
+msgstr "Ziyaret Tarihi"
+
+msgid "35. Date of visit"
+msgstr "35. Ziyaret tarihi"
+
+msgid "Reason"
+msgstr "Neden"
+
+msgid "36. The reason, if not enumerated on first visit"
+msgstr "36. İlk ziyarette sayımı yapılamadıysa nedeni"
+
+msgid "DateEnum"
+msgstr "Sayım Tarihi"
+
+msgid "37. Date when enumerated"
+msgstr "37. Sayımın yapıldığı tarih"
+
+msgid "1. No. of family in order of visitation"
+msgstr "1. Ziyaret sırasına göre aile sayısı"
+
+msgid "2. Name of each person in the family"
+msgstr "2. Ailedeki her bir kişinin adı"
+
+msgid "3.Relation to head of family"
+msgstr "3. Aile reisiyle ilişkisi"
+
+msgid "5. Married, single, widowed or divorced"
+msgstr "5. Evli, bekar, dul veya boşanmış"
+
+msgid "6. Age"
+msgstr "6. Yaş"
+
+msgid "7. Country or place of birth"
+msgstr "7. Doğduğu ülke veya yer"
+
+msgid "8. Year of immigration to Canada"
+msgstr "8. Kanada'ya göç yılı"
+
+msgid "PostOffice"
+msgstr "Posta Ofisi"
+
+msgid "9. Post office address"
+msgstr "9. Posta ofisi adresi"
+
+msgid "Section"
+msgstr "Bölüm"
+
+msgid "10. Location: Section"
+msgstr "10. Konum: Bölüm"
+
+msgid "11. Location: Township"
+msgstr "11. Konum: Kasaba"
+
+msgid "12. Location: Range"
+msgstr "12. Konum: Menzil"
+
+msgid "Meridian"
+msgstr "Meridyen"
+
+msgid "13. Location: Meridian"
+msgstr "13. Konum: Meridyen"
+
+msgid "14. Livestock: Horses, all ages"
+msgstr "14. Hayvancılık: Her yaştan at"
+
+msgid "Cows"
+msgstr "İnekler"
+
+msgid "15. Livestock: Milch cows"
+msgstr "15. Hayvancılık: Süt inekleri"
+
+msgid "16. Other horned or meat cattle, all ages"
+msgstr "16. Diğer boynuzlu veya etlik sığırlar, her yaşta"
+
+msgid "17. Sheep and lambs, all ages"
+msgstr "17. Koyunlar ve kuzular, her yaşta"
+
+msgid "18. Hogs and pigs, all ages"
+msgstr "18. Domuzlar ve domuz yavruları, her yaşta"
+
+msgid "4. Place of habitation"
+msgstr "4. İkamet yeri"
+
+msgid "5. Sex"
+msgstr "5. Cinsiyet"
+
+msgid "8. Month of birth"
+msgstr "8. Doğum ayı"
+
+msgid "16. Chief occupation or trade"
+msgstr "16. Başlıca meslek veya iş"
+
+msgid "OtherEmployment"
+msgstr "Diğer İş"
+
+msgid "18. Employment other than at chief trade or occupation, if any"
+msgstr "18. Başlıca meslek veya iş dışında yapılan işler, varsa"
+
+msgid "22. State where person employed"
+msgstr "22. Kişinin çalıştığı eyalet"
+
+msgid "WeeksOccupation"
+msgstr "Meslek Haftası"
+
+msgid "23. Weeks employed in 1910 at chief occupation or trade"
+msgstr "23. 1910 yılında başlıca meslek veya işte çalışılan hafta sayısı"
+
+msgid "WeeksOther"
+msgstr "Diğer Hafta"
+
+msgid "24. Weeks employed in 1910 at other than chief occupation or trade"
+msgstr "24. 1910 yılında başlıca meslek veya iş dışında çalışılan hafta sayısı"
+
+msgid "HoursOccupation"
+msgstr "Meslek Saatleri"
+
+msgid "25. Hours of working time per week at chief occupation"
+msgstr "25. Başlıca meslekte haftalık çalışma saatleri"
+
+msgid "HoursOther"
+msgstr "Diğer Saatler"
+
+msgid "26. Hours of working time per week at other occupation, if any"
+msgstr "26. Diğer işte haftalık çalışma saatleri, varsa"
+
+msgid "27. Total earnings in 1910 from chief occupation or trade"
+msgstr "27. 1910 yılında başlıca meslek veya işten elde edilen toplam kazanç"
+
+msgid "28. Total earnings in 1910 from other than chief occupation or trade"
+msgstr ""
+"28. 1910 yılında asıl meslek veya zanaat dışındaki işten elde edilen toplam "
+"kazanç"
+
+msgid "Wages"
+msgstr "Ücretler"
+
+msgid "29. Rate of earnings per hour when employed by the hour-Cents"
+msgstr "29. Saatlik ücretle çalışanlarda saatlik kazanç oranı - Kuruş"
+
+msgid "InsuranceLife"
+msgstr "Hayat Sigortası"
+
+msgid "30. Insurance: Upon life"
+msgstr "30. Sigorta: Hayat sigortası"
+
+msgid "InsuranceAccident"
+msgstr "Kaza Sigortası"
+
+msgid "31. Insurance: Against accident or illness"
+msgstr "31. Sigorta: Kaza veya hastalık sigortası"
+
+msgid "InsuranceCost"
+msgstr "Sigorta Maliyeti"
+
+msgid "32. Insurance: Cost of insurance in census year"
+msgstr "32. Sigorta: Nüfus sayımı yılındaki sigorta maliyeti"
+
+msgid "33. Months at school in 1910"
+msgstr "33. 1910 yılında okulda geçirilen ay sayısı"
+
+msgid "34. Can Read"
+msgstr "34. Okuyabiliyor"
+
+msgid "35. Can Write"
+msgstr "35. Yazabiliyor"
+
+msgid "36. Language commonly spoken"
+msgstr "36. Yaygın olarak konuşulan dil"
+
+msgid "SchoolCost"
+msgstr "Okul Maliyeti"
+
+msgid ""
+"37. Cost of education in 1910 for persons over 16 years of age at College, "
+"Convent or University"
+msgstr ""
+"16 yaşından büyük kişiler için 1910 yılında Kolej, Manastır Okulu veya "
+"Üniversitedeki eğitim maliyeti"
+
+msgid "38. Blind"
+msgstr "38. Kör"
+
+msgid "39. Deaf and dumb"
+msgstr "39. Sağır ve dilsiz"
+
+msgid "40. Crazy or lunatic"
+msgstr "40. Deli veya akıl hastası"
+
+msgid "Idiotic"
+msgstr "Geri Zekâlı"
+
+msgid "41. Idiotic or silly"
+msgstr "41. Geri zekâlı veya ahmak"
+
+msgid "1. House"
+msgstr "1. Ev"
+
+msgid "Dwelling house"
+msgstr "Ev"
+
+msgid "2. Family"
+msgstr "2. Aile"
+
+msgid "Family or household"
+msgstr "Aile veya hane halkı"
+
+msgid "3. Name"
+msgstr "3. Ad"
+
+msgid "Name of each person in family"
+msgstr "Ailedeki her kişinin adı"
+
+msgid "5. Relation to head of family"
+msgstr "5. Aile reisiyle ilişkisi"
+
+msgid "6. Single, married, widowed, divorced or legally separated"
+msgstr "6. Bekar, evli, dul, boşanmış veya yasal olarak ayrılmış"
+
+msgid "7. Month of birth"
+msgstr "7. Doğum ayı"
+
+msgid "8. Age at last birthday"
+msgstr "8. Son doğum günündeki yaşı"
+
+msgid "9. Country or place of birth"
+msgstr "9. Doğduğu ülke veya yer"
+
+msgid "10. Racial or tribal origin"
+msgstr "10. Irksal veya kabilesel köken"
+
+msgid "11. Religion"
+msgstr "11. Din"
+
+msgid "12. Months at school in 1910"
+msgstr "12. 1910 yılında okulda geçirilen ay sayısı"
+
+msgid "13. Can Read"
+msgstr "13. Okuma becerisi"
+
+msgid "14. Can Write"
+msgstr "14. Yazma becerisi"
+
+msgid "15. Language commonly spoken"
+msgstr "15. Yaygın olarak konuşulan dil"
+
+msgid ""
+"16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or "
+"lunatic"
+msgstr ""
+"16. Engeller: a. kör; b. sağır ve dilsiz; c. aptal veya zihinsel engelli; d. "
+"deli veya akıl hastası"
+
+msgid "1. Dwelling House"
+msgstr "1. İkametgah"
+
+msgid "2. Family, Household or Institution"
+msgstr "2. Aile, Hane Halkı veya Kurum"
+
+msgid "3. Name of each person in family, household or institution"
+msgstr "3. Aile, hane halkı veya kurumdaki her kişinin adı"
+
+msgid "MilitaryService"
+msgstr "Askerlik Hizmeti"
+
+msgid "4. Military Service"
+msgstr "4. Askerlik Hizmeti"
+
+msgid "5. Place of Habitation: Township"
+msgstr "5. İkamet Yeri: İlçe"
+
+msgid "6. Place of Habitation: Range"
+msgstr "6. İkamet Yeri: Bölge"
+
+msgid "7. Place of Habitation: Meridian"
+msgstr "7. İkamet Yeri: Meridyen"
+
+msgid "8. Place of Habitation: Municipality"
+msgstr "8. İkamet Yeri: Belediye"
+
+msgid "9. Relationship to head of family or household"
+msgstr "9. Aile veya hane halkı reisiyle ilişkisi"
+
+msgid "10. Sex"
+msgstr "10. Cinsiyet"
+
+msgid "11. Single, married, widowed, divorced or legally separated"
+msgstr "11. Bekâr, evli, dul, boşanmış veya yasal olarak ayrı"
+
+msgid "12. Age at last birthday"
+msgstr "12. Son doğum günündeki yaş"
+
+msgid "13. Country or place of birth"
+msgstr "13. Doğduğu ülke veya yer"
+
+msgid "14. Religion"
+msgstr "14. Din"
+
+msgid "15. Year of immigration to Canada"
+msgstr "15. Kanada'ya göç yılı"
+
+msgid "16. Year of naturalization"
+msgstr "16. Vatandaşlığa kabul yılı"
+
+msgid "17. Nationality"
+msgstr "17. Uyruk"
+
+msgid "18. Race or tribal origin"
+msgstr "18. Irk veya kabilesel köken"
+
+msgid "19. Can speak English"
+msgstr "19. İngilizce konuşma becerisi"
+
+msgid "20. Can speak French"
+msgstr "20. Fransızca konuşma becerisi"
+
+msgid "OtherLanguage"
+msgstr "Diğer Dil"
+
+msgid "21. Other language spoken as mother tongue"
+msgstr "21. Anadil olarak konuşulan diğer dil"
+
+msgid "22. Can Read"
+msgstr "22. Okuma becerisi"
+
+msgid "23. Can Write"
+msgstr "23. Yazma becerisi"
+
+msgid "24. Chief occupation or trade"
+msgstr "24. Başlıca meslek veya ticaret"
+
+msgid "25. Employer, \"E\", Employee, \"W\""
+msgstr "25. İşveren, \"D\", Çalışan, \"B\""
+
+msgid "EmploymentPlace"
+msgstr "İş Yeri"
+
+msgid "26. State where person is employed"
+msgstr "26. Kişinin çalıştığı eyalet"
+
+msgid "NARA publication"
+msgstr "NARA yayını"
+
+msgid "Roll No."
+msgstr "Kayıt No."
+
+msgid "Page No."
+msgstr "Sayfa No."
+
+msgid "Sheet No."
+msgstr "Sayfa No."
+
+msgid "Minor Civil Division"
+msgstr "Küçük Sivil Bölüm"
+
+msgid "County of"
+msgstr "İlçesi"
+
+msgid "District (or Territory) of"
+msgstr "Bölgesi (veya Toprakları)"
+
+msgid "Free white males 16 & up"
+msgstr "16 yaş ve üzeri özgür beyaz erkekler"
+
+msgid "Free white males under 16"
+msgstr "16 yaş altı özgür beyaz erkekler"
+
+msgid "Free white females"
+msgstr "Özgür beyaz kadınlar"
+
+msgid "All other free persons"
+msgstr "Diğer tüm özgür kişiler"
+
+msgid "Slaves"
+msgstr "Köleler"
+
+msgid "Enumeration Date"
+msgstr "Sayım Tarihi"
+
+msgid "Free white males under 10"
+msgstr "10 yaş altı özgür beyaz erkekler"
+
+msgid "Free white males 10-15"
+msgstr "10-15 yaş arası özgür beyaz erkekler"
+
+msgid "Free white males 16-25"
+msgstr "16-25 yaş arası özgür beyaz erkekler"
+
+msgid "Free white males 26-44"
+msgstr "26-44 yaş arası özgür beyaz erkekler"
+
+msgid "Free white males 45 and over"
+msgstr "45 yaş ve üzeri özgür beyaz erkekler"
+
+msgid "Free white females under 10"
+msgstr "10 yaş altı özgür beyaz kadınlar"
+
+msgid "Free white females 10-15"
+msgstr "10-15 yaş arası özgür beyaz kadınlar"
+
+msgid "Free white females 16-25"
+msgstr "16-25 yaş arası özgür beyaz kadınlar"
+
+msgid "Free white females 26-44"
+msgstr "26-44 yaş arası özgür beyaz kadınlar"
+
+msgid "Free white females 45 and over"
+msgstr "45 yaş ve üzeri özgür beyaz kadınlar"
+
+msgid "Free white males 16-18"
+msgstr "16-18 yaş arası özgür beyaz erkekler"
+
+msgid "Foreigners not naturalized"
+msgstr "Vatandaşlığa kabul edilmemiş yabancılar"
+
+msgid "Persons engaged in Agriculture"
+msgstr "Tarımda çalışan kişiler"
+
+msgid "Persons engaged in Commerce"
+msgstr "Ticarette çalışan kişiler"
+
+msgid "Persons engaged in Manufactures"
+msgstr "İmalatta çalışan kişiler"
+
+msgid "Slave males under 14"
+msgstr "14 yaş altı köle erkekler"
+
+msgid "Slave males 14-25"
+msgstr "14-25 yaş arası köle erkekler"
+
+msgid "Slave males 26-44"
+msgstr "26-44 yaş arası köle erkekler"
+
+msgid "Slave males 45 and over"
+msgstr "45 yaş ve üzeri köle erkekler"
+
+msgid "Slave females under 14"
+msgstr "14 yaş altı köle kadınlar"
+
+msgid "Slave females 14-25"
+msgstr "14-25 yaş arası köle kadınlar"
+
+msgid "Slave females 26-44"
+msgstr "26-44 yaş arası köle kadınlar"
+
+msgid "Slave females 45 and over"
+msgstr "45 yaş ve üzeri köle kadınlar"
+
+msgid "Free colored males under 14"
+msgstr "14 yaş altı özgür renkli erkekler"
+
+msgid "Free colored males 14-25"
+msgstr "14-25 yaş arası özgür renkli erkekler"
+
+msgid "Free colored males 26-44"
+msgstr "26-44 yaş arası özgür renkli erkekler"
+
+msgid "Free colored males 45 and over"
+msgstr "45 yaş ve üzeri özgür renkli erkekler"
+
+msgid "Free colored females under 14"
+msgstr "14 yaş altı özgür renkli kadınlar"
+
+msgid "Free colored females 14-25"
+msgstr "14-25 yaş arası özgür renkli kadınlar"
+
+msgid "Free colored females 26-44"
+msgstr "26-44 yaş arası özgür renkli kadınlar"
+
+msgid "Free colored females 45 and over"
+msgstr "45 yaş ve üzeri özgür renkli kadınlar"
+
+msgid "Free white males under 5"
+msgstr "5 yaş altı özgür beyaz erkekler"
+
+msgid "Free white males 5-9"
+msgstr "5-9 yaş arası özgür beyaz erkekler"
+
+msgid "Free white males 10-14"
+msgstr "10-14 yaş arası özgür beyaz erkekler"
+
+msgid "Free white males 15-20"
+msgstr "15-20 yaş arası özgür beyaz erkekler"
+
+msgid "Free white males 20-29"
+msgstr "20-29 yaş arası özgür beyaz erkekler"
+
+msgid "Free white males 30-39"
+msgstr "30-39 yaş arası özgür beyaz erkekler"
+
+msgid "Free white males 40-49"
+msgstr "40-49 yaş arası özgür beyaz erkekler"
+
+msgid "Free white males 50-59"
+msgstr "50-59 yaş arası özgür beyaz erkekler"
+
+msgid "Free white males 60-69"
+msgstr "60-69 yaş arası özgür beyaz erkekler"
+
+msgid "Free white males 70-79"
+msgstr "70-79 yaş arası özgür beyaz erkekler"
+
+msgid "Free white males 80-89"
+msgstr "80-89 yaş arası özgür beyaz erkekler"
+
+msgid "Free white males 90-99"
+msgstr "90-99 yaş arası özgür beyaz erkekler"
+
+msgid "Free white males 100 and over"
+msgstr "100 yaş ve üzeri özgür beyaz erkekler"
+
+msgid "Free white females under 5"
+msgstr "5 yaş altı özgür beyaz kadınlar"
+
+msgid "Free white females 5-9"
+msgstr "5-9 yaş arası özgür beyaz kadınlar"
+
+msgid "Free white females 10-14"
+msgstr "10-14 yaş arası özgür beyaz kadınlar"
+
+msgid "Free white females 15-20"
+msgstr "5-20 yaş arası özgür beyaz kadınlar"
+
+msgid "Free white females 20-29"
+msgstr "20-29 yaş arası özgür beyaz kadınlar"
+
+msgid "Free white females 30-39"
+msgstr "30-39 yaş arası özgür beyaz kadınlar"
+
+msgid "Free white females 40-49"
+msgstr "40-49 yaş arası özgür beyaz kadınlar"
+
+msgid "Free white females 50-59"
+msgstr "50-59 yaş arası özgür beyaz kadınlar"
+
+msgid "Free white females 60-69"
+msgstr "60-69 yaş arası özgür beyaz kadınlar"
+
+msgid "Free white females 70-79"
+msgstr "70-79 yaş arası özgür beyaz kadınlar"
+
+msgid "Free white females 80-89"
+msgstr "80-89 yaş arası özgür beyaz kadınlar"
+
+msgid "Free white females 90-99"
+msgstr "90-99 yaş arası özgür beyaz kadınlar"
+
+msgid "Free white females 100 and over"
+msgstr "100 yaş ve üzeri özgür beyaz kadınlar"
+
+msgid "Slave males under 10"
+msgstr "10 yaş altı köle erkekler"
+
+msgid "Slave males 10-23"
+msgstr "10-23 yaş arası köle erkekler"
+
+msgid "Slave males 24-35"
+msgstr "24-35 yaş arası köle erkekler"
+
+msgid "Slave males 36-54"
+msgstr "36-54 yaş arası köle erkekler"
+
+msgid "Slave males 55-99"
+msgstr "55-99 yaş arası köle erkekler"
+
+msgid "Slave males 100 and over"
+msgstr "100 yaş ve üzeri köle erkekler"
+
+msgid "Slave females under 10"
+msgstr "10 yaş altı köle kadınlar"
+
+msgid "Slave females 10-23"
+msgstr "10-23 yaş arası köle kadınlar"
+
+msgid "Slave females 24-35"
+msgstr "24-35 yaş arası köle kadınlar"
+
+msgid "Slave females 36-54"
+msgstr "36-54 yaş arası köle kadınlar"
+
+msgid "Slave females 55-99"
+msgstr "55-99 yaş arası köle kadınlar"
+
+msgid "Slave females 100 and over"
+msgstr "100 yaş ve üzeri köle kadınlar"
+
+msgid "Free colored males under 10"
+msgstr "10 yaş altı özgür renkli erkekler"
+
+msgid "Free colored males 10-23"
+msgstr "10-23 yaş arası özgür renkli erkekler"
+
+msgid "Free colored males 24-35"
+msgstr "24-35 yaş arası özgür renkli erkekler"
+
+msgid "Free colored males 36-54"
+msgstr "36-54 yaş arası özgür renkli erkekler"
+
+msgid "Free colored males 55-99"
+msgstr "55-99 yaş arası özgür renkli erkekler"
+
+msgid "Free colored males 100 and over"
+msgstr "100 yaş ve üzeri özgür renkli erkekler"
+
+msgid "Free colored females under 10"
+msgstr "10 yaş altı özgür renkli kadınlar"
+
+msgid "Free colored females 10-23"
+msgstr "10-23 yaş arası özgür renkli kadınlar"
+
+msgid "Free colored females 24-35"
+msgstr "24-35 yaş arası özgür renkli kadınlar"
+
+msgid "Free colored females 36-54"
+msgstr "36-54 yaş arası özgür renkli kadınlar"
+
+msgid "Free colored females 55-99"
+msgstr "55-99 yaş arası özgür renkli kadınlar"
+
+msgid "Free colored females 100 and over"
+msgstr "100 yaş ve üzeri özgür renkli kadınlar"
+
+msgid "White persons deaf/dumb under 14"
+msgstr "14 yaş altı sağır/dilsiz beyaz kişiler"
+
+msgid "White persons deaf/dumb 14-24"
+msgstr "14-24 yaş arası sağır/dilsiz beyaz kişiler"
+
+msgid "White persons deaf/dumb 25 and over"
+msgstr "25 yaş ve üzeri sağır/dilsiz beyaz kişiler"
+
+msgid "White persons blind"
+msgstr "Kör beyaz kişiler"
+
+msgid "Aliens"
+msgstr "Yabancılar"
+
+msgid "Slaves and colored persons deaf/dumb under 14"
+msgstr "14 yaş altı sağır/dilsiz köleler ve renkli kişiler"
+
+msgid "Slaves and colored persons deaf/dumb 14-24"
+msgstr "14-24 yaş arası köleler ve renkli sağır/dilsiz kişiler"
+
+msgid "Slaves and colored persons deaf/dumb 25 and over"
+msgstr "25 yaş ve üzeri köleler ve renkli sağır/dilsiz kişiler"
+
+msgid "Slaves and colored persons blind"
+msgstr "Köleler ve renkli kör kişiler"
+
+msgid "Persons employed in Mining"
+msgstr "Madencilikte çalışan kişiler"
+
+msgid "Persons employed in Agriculture"
+msgstr "Tarımda çalışan kişiler"
+
+msgid "Persons employed in Commerce"
+msgstr "Ticarette çalışan kişiler"
+
+msgid "Persons employed in Manufacture and trade"
+msgstr "İmalat ve ticarette çalışan kişiler"
+
+msgid "Persons employed in Navigation of the ocean"
+msgstr "Okyanusta seyrüseferde çalışan kişiler"
+
+msgid "Persons employed in Navigation of canals, lakes, rivers"
+msgstr "Kanallarda, göllerde, nehirlerde seyrüseferde çalışan kişiler"
+
+msgid "Learned professional engineers"
+msgstr "Eğitimli profesyonel mühendisler"
+
+msgid "Names of pensioners for Revolutionary or military services"
+msgstr ""
+"Devrimci savaş veya askerî hizmetler için emekli maaşı alanların adları"
+
+msgid "Ages"
+msgstr "Yaşlar"
+
+msgid "White persons insane and idiots at public charge"
+msgstr "Kamu desteğiyle yaşayan beyaz akıl hastaları ve zekâ geriliği olanlar"
+
+msgid "White persons insane and idiots at private charge"
+msgstr "Özel destekle yaşayan beyaz akıl hastaları ve zekâ geriliği olanlar"
+
+msgid "Colored persons deaf/dumb"
+msgstr "Sağır/dilsiz renkli kişiler"
+
+msgid "Colored persons blind"
+msgstr "Kör renkli kişiler"
+
+msgid "Colored persons insane and idiots at private charge"
+msgstr ""
+"Özel destekle yaşayan akıl hastaları ve zekâ geriliği olan renkli kişiler"
+
+msgid "Colored persons insane and idiots at public charge"
+msgstr ""
+"Kamu desteğiyle yaşayan akıl hastaları ve zekâ geriliği olan renkli kişiler"
+
+msgid "Universities or college"
+msgstr "Üniversiteler veya kolejler"
+
+msgid "Number of students"
+msgstr "Öğrenci sayısı"
+
+msgid "Academies and Grammar Schools"
+msgstr "Akademiler ve Gramer Okulları"
+
+msgid "No. of scholars"
+msgstr "Öğrenci sayısı"
+
+msgid "Primary and Common Schools"
+msgstr "İlkokullar ve Ortaokullar"
+
+msgid "No. of scholars at public charge"
+msgstr "Kamu desteğiyle eğitim gören öğrenci sayısı"
+
+msgid "White persons illiterate over 20"
+msgstr "20 yaş üzeri okuma yazma bilmeyen beyaz kişiler"
+
+msgid "State of"
+msgstr "Eyaleti"
+
+msgid "Line No."
+msgstr "Satır No."
+
+msgid "Family No."
+msgstr "Aile No."
+
+msgid "Value of real estate"
+msgstr "Gayrimenkul değeri"
 
 msgid "Place of birth"
 msgstr "Doğum yeri"
 
+msgid "Married within the year"
+msgstr "Yıl içinde evlenen"
+
+msgid "Attended school within the year"
+msgstr "Yıl içinde okula devam eden"
+
+msgid "Illiterate and over 20"
+msgstr "Okuma yazma bilmeyen ve 20 yaş üzeri"
+
+msgid "Deaf, dumb, blind, insane, idiotic, pauper or convict"
+msgstr ""
+"Sağır, dilsiz, kör, akıl hastası, zekâ geriliği olan, yoksul veya hükümlü"
+
+msgid "Production of Agriculture in"
+msgstr "Tarım Üretimi"
+
+msgid "in the County of"
+msgstr "İlçesinde"
+
+msgid "Owner, Agent, or Manager"
+msgstr "Sahip, Temsilci veya Yönetici"
+
+msgid "Acres Improved"
+msgstr "İyileştirilmiş dönüm alanı"
+
+msgid "Acres Unimproved"
+msgstr "İyileştirilmemiş dönüm alanı"
+
+msgid "Cash Value of Farm"
+msgstr "Çiftliğin Nakit Değeri"
+
+msgid "Value of Farming Implements and Machinery"
+msgstr "Tarım Aletleri ve Makinelerinin Değeri"
+
+msgid "Asses and Mules"
+msgstr "Eşekler ve Katırlar"
+
+msgid "Working Oxen"
+msgstr "Çalıştırılan Öküzler"
+
+msgid "Other Cattle"
+msgstr "Diğer Sığırlar"
+
+msgid "Swine"
+msgstr "Domuzlar"
+
+msgid "Value of Live Stock"
+msgstr "Canlı Hayvan Değeri"
+
+msgid "Wheat"
+msgstr "Buğday"
+
+msgid "Indian Corn"
+msgstr "Hint Mısırı"
+
+msgid "Oats"
+msgstr "Yulaf"
+
+msgid "Rice"
+msgstr "Pirinç"
+
+msgid "Tobacco"
+msgstr "Tütün"
+
+msgid "Ginned Cotton"
+msgstr "Çırçırlanmış Pamuk"
+
+msgid "Wool"
+msgstr "Yün"
+
+msgid "Peas and Beans"
+msgstr "Bezelye ve Fasulye"
+
+msgid "Irish Potatoes"
+msgstr "İrlanda Patatesi"
+
+msgid "Sweet Potatoes"
+msgstr "Tatlı Patates"
+
+msgid "Barley"
+msgstr "Arpa"
+
+msgid "Buckwheat"
+msgstr "Karabuğday"
+
+msgid "Value of Orchard Products"
+msgstr "Meyve Bahçesi Ürünlerinin Değeri"
+
+msgid "Wine"
+msgstr "Şarap"
+
+msgid "Value of Market Gardens"
+msgstr "Pazar Bahçelerinin Değeri"
+
+msgid "Butter"
+msgstr "Tereyağı"
+
+msgid "Cheese"
+msgstr "Peynir"
+
+msgid "Hay"
+msgstr "Saman"
+
+msgid "Clover Seed"
+msgstr "Yonca Tohumu"
+
+msgid "Other Grass Seeds"
+msgstr "Diğer Çim Tohumları"
+
+msgid "Hops"
+msgstr "Şerbetçiotu"
+
+msgid "Hemp Dew Rotted"
+msgstr "Çiğde Çürütülmüş Kenevir"
+
+msgid "Hemp Water Rotted"
+msgstr "Suda Çürütülmüş Kenevir"
+
+msgid "Flax"
+msgstr "Keten"
+
+msgid "Flaxseed"
+msgstr "Keten Tohumu"
+
+msgid "Silk Cocoons"
+msgstr "İpek Kozaları"
+
+msgid "Maple Sugar"
+msgstr "Akçaağaç Şekeri"
+
+msgid "Cane Sugar"
+msgstr "Kamış Şekeri"
+
+msgid "Molasses"
+msgstr "Pekmez"
+
+msgid "Beeswax"
+msgstr "Balmumu"
+
+msgid "Value of Homemade Manufactures"
+msgstr "Ev Yapımı İmalatların Değeri"
+
+msgid "Value of Animals Slaughtered"
+msgstr "Kesilen Hayvanların Değeri"
+
+msgid "Post Office"
+msgstr "Postane"
+
+msgid "Value of personal estate"
+msgstr "Kişisel mülk değeri"
+
+msgid "Live Stock June 1, 1860"
+msgstr "1 Haziran 1860 Tarihi İtibariyle Canlı Hayvanlar"
+
+msgid "Produce during the year ending June 1, 1860"
+msgstr "1 Haziran 1860 tarihinde sona eren yıl içindeki ürünler"
+
+msgid "Wheat, bushels of"
+msgstr "Buğday, kile olarak"
+
+msgid "Rye, bushels of"
+msgstr "Çavdar, kile olarak"
+
+msgid "Indian Corn, bushels of"
+msgstr "Hint Mısırı, kile olarak"
+
+msgid "Oats, bushels of"
+msgstr "Yulaf, kile olarak"
+
+msgid "Rice, pounds of"
+msgstr "Pirinç, pound olarak"
+
+msgid "Tobacco, pounds of"
+msgstr "Tütün, pound olarak"
+
+msgid "Ginned Cotton, bales of 400 lbs."
+msgstr "Çırçırlanmış Pamuk, 400 poundluk balyalar halinde"
+
+msgid "Wool, pounds of"
+msgstr "Yün, pound olarak"
+
+msgid "Peas and Beans, bushels of"
+msgstr "Bezelye ve Fasulye, kile olarak"
+
+msgid "Irish Potatoes, bushels of"
+msgstr "İrlanda Patatesi, kile olarak"
+
+msgid "Sweet Potatoes, bushels of"
+msgstr "Tatlı Patates, kile olarak"
+
+msgid "Barley, bushels of"
+msgstr "Arpa, kile olarak"
+
+msgid "Buckwheat, bushels of"
+msgstr "Karabuğday, kile olarak"
+
+msgid "Value of Orchard Products in $"
+msgstr "Meyve Bahçesi Ürünlerinin Değeri, $ olarak"
+
+msgid "Wine, gallons of"
+msgstr "Şarap, galon olarak"
+
+msgid "Value of products of market gardens"
+msgstr "Pazar bahçesi ürünlerinin değeri"
+
+msgid "Butter, pounds of"
+msgstr "Tereyağı, pound olarak"
+
+msgid "Cheese, pounds of"
+msgstr "Peynir, pound olarak"
+
+msgid "Hay, tons of"
+msgstr "Saman, ton olarak"
+
+msgid "Clover Seed, bushels of"
+msgstr "Yonca Tohumu, kile olarak"
+
+msgid "Other Grass Seeds, bushels of"
+msgstr "Diğer Çim Tohumları, kile olarak"
+
+msgid "Hops, pounds of"
+msgstr "Şerbetçiotu, pound olarak"
+
+msgid "Hemp Dew Rotted, tons of"
+msgstr "Çiğde Çürütülmüş Kenevir, ton olarak"
+
+msgid "Hemp Water Rotted, tons of"
+msgstr "Suda Çürütülmüş Kenevir, ton olarak"
+
+msgid "Flax, pounds of"
+msgstr "Keten, pound olarak"
+
+msgid "Flaxseed, bushels of"
+msgstr "Keten tohumu, kile olarak"
+
+msgid "Silk Cocoons, pounds of"
+msgstr "İpek Kozası, pound olarak"
+
+msgid "Maple Sugar, pounds of"
+msgstr "Akçaağaç Şekeri, pound olarak"
+
+msgid "Cane sugar, hogshead of 1,000 pounds"
+msgstr "Kamış şekeri, 1.000 poundluk fıçı olarak"
+
+msgid "Molasses, gallons of"
+msgstr "Pekmez, galon olarak"
+
+msgid "Beeswax, pounds of"
+msgstr "Balmumu, pound olarak"
+
+msgid "Honey, pounds of"
+msgstr "Bal, pound olarak"
+
+msgid "Value of home-made manufactures"
+msgstr "Ev yapımı imalatların değeri"
+
+msgid "Persons who Died during the Year ending 1 June 1860 in"
+msgstr "1 Haziran 1860'ta sona eren yıl içinde ölen kişiler"
+
+msgid "Free or slave"
+msgstr "Özgür veya köle"
+
+msgid "Married or widowed"
+msgstr "Evli veya dul"
+
+msgid "Month in which person died"
+msgstr "Kişinin öldüğü ay"
+
+msgid "Cause of death"
+msgstr "Ölüm nedeni"
+
+msgid "Number of days ill"
+msgstr "Hasta olunan gün sayısı"
+
+msgid "Father of foreign birth"
+msgstr "Babanın yabancı doğumlu olması"
+
+msgid "Mother of foreign birth"
+msgstr "Annenin yabancı doğumlu olması"
+
+msgid "Month, if born within the year"
+msgstr "Yıl içinde doğmuşsa, doğduğu ay"
+
+msgid "Month, if married within the year"
+msgstr "Yıl içinde evlenmişse, evlendiği ay"
+
+msgid "Cannot read"
+msgstr "Okuyamıyor"
+
+msgid "Cannot write"
+msgstr "Yazamıyor"
+
+msgid "Deaf, dumb, blind, insane or idiotic"
+msgstr "Sağır, dilsiz, kör, akıl hastası veya zihinsel engelli"
+
+msgid "Male citizen 21 and over"
+msgstr "21 yaş ve üzeri erkek vatandaş"
+
+msgid ""
+"Male citizen 21 and over where right to vote is denied on grounds other than "
+"rebellion or other crime"
+msgstr ""
+"21 yaş ve üzeri, isyan veya başka bir suç dışında nedenlerle oy kullanma "
+"hakkı elinden alınmış erkek vatandaş"
+
+msgid "Supervisor's Dist. No."
+msgstr "Denetmen Bölgesi No."
+
+msgid "Enumeration Dist. No."
+msgstr "Sayım Bölgesi No."
+
+msgid "Month, if born within the census year"
+msgstr "Sayım yılı içinde doğmuşsa, doğduğu ay"
+
+msgid "Relationship to head"
+msgstr "Aile reisiyle ilişkisi"
+
+msgid "Single"
+msgstr "Bekâr"
+
+msgid "Widowed, divorced"
+msgstr "Dul, boşanmış"
+
+msgid "Married during the census year"
+msgstr "Sayım yılı içinde evlenmiş"
+
+msgid "Number of months unemployed during the census year"
+msgstr "Sayım yılı içinde işsiz kalınan ay sayısı"
+
+msgid "Illness on day of enumeration"
+msgstr "Sayım gününde hastalık durumu"
+
+msgid "Deaf and dumb"
+msgstr "Sağır ve dilsiz"
+
+msgid "Insane"
+msgstr "Akıl hastası"
+
+msgid "Maimed, crippled, bedridden, or otherwise disabled"
+msgstr "Sakat, engelli, yatalak veya başka şekilde engelli"
+
+msgid "Attended school within the census year"
+msgstr "Sayım yılı içinde okula devam etti"
+
+msgid "Place of birth of father"
+msgstr "Babanın doğum yeri"
+
+msgid "Place of birth of mother"
+msgstr "Annenin doğum yeri"
+
+msgid "Owner"
+msgstr "Sahip"
+
+msgid "Rents for fixed money"
+msgstr "Sabit gelir karşılığında alınan kiralar"
+
+msgid "Rents for share of products"
+msgstr "Ürün payı karşılığında alınan kiralar"
+
+msgid "Acres Tilled"
+msgstr "İşlenen dönüm"
+
+msgid "Acres Permanent Meadows, Pastures, Orchards, Vineyards"
+msgstr "Kalıcı çayırlar, meralar, meyve bahçeleri, bağlar, dönüm olarak"
+
+msgid "Acres Woodland and forest"
+msgstr "Ormanlık ve ağaçlık alan, dönüm olarak"
+
+msgid "Acres Other unimproved land"
+msgstr "Diğer işlenmemiş arazi, dönüm olarak"
+
+msgid "Value of Farm"
+msgstr "Çiftliğin değeri"
+
+msgid "Value of Implements and Machinery"
+msgstr "Alet ve makinelerin değeri"
+
+msgid "Cost of building and repairing fences in 1879"
+msgstr "1879 yılında çitlerin yapımı ve onarım maliyeti"
+
+msgid "Cost of Fertilizers purchased in 1879"
+msgstr "1879 yılında satın alınan gübrelerin maliyeti"
+
+msgid "Farm Labor Hiring 1879"
+msgstr "1879 yılında işe alınan tarım işçiliği"
+
+msgid "Weeks hired labor in 1879"
+msgstr "1879 yılında işe alınan işçiliğin hafta sayısı"
+
+msgid "Estimated value of all farm productions for 1879"
+msgstr "1879 yılına ait tüm çiftlik üretiminin tahmini değeri"
+
+msgid "Acreage Grass Lands Mown in 1879"
+msgstr "1879 yılında biçilen çayır arazisi, dönüm olarak"
+
+msgid "Acreage Grass Lands Not Mown in 1879"
+msgstr "1879 yılında biçilmeyen çayır arazisi, dönüm olarak"
+
+msgid "Tons Hay Harvested in 1879"
+msgstr "1879 yılında hasat edilen saman, ton olarak"
+
+msgid "Bushels Clover Seed Harvested in 1879"
+msgstr "1879 yılında hasat edilen yonca tohumu, kile olarak"
+
+msgid "Bushels Grass Seed Harvested in 1879"
+msgstr "1879 yılında hasat edilen çim tohumu, kile olarak"
+
+msgid "Horses on hand"
+msgstr "Eldeki at sayısı"
+
+msgid "Mules and Asses on hand"
+msgstr "Eldeki katır ve eşek sayısı"
+
+msgid "Working Oxen on hand"
+msgstr "Eldeki iş öküzü sayısı"
+
+msgid "Milch Cows on hand"
+msgstr "Eldeki süt ineği sayısı"
+
+msgid "Other Cattle on hand"
+msgstr "Eldeki diğer sığır sayısı"
+
+msgid "Calves Dropped in 1879"
+msgstr "1879 yılında doğan buzağı sayısı"
+
+msgid "Cattle Purchased in 1879"
+msgstr "1879 yılında satın alınan sığır sayısı"
+
+msgid "Cattle Sold living in 1879"
+msgstr "1879 yılında canlı olarak satılan sığır sayısı"
+
+msgid "Cattle Slaughtered in 1879"
+msgstr "1879 yılında kesilen sığır sayısı"
+
+msgid "Cattle Died, strayed, or stolen in 1879"
+msgstr "1879 yılında ölen, kaybolan veya çalınan sığır sayısı"
+
+msgid "Gallons Milk Sold or sent to butter or cheese factories in 1879"
+msgstr ""
+"1879 yılında satılan veya tereyağı ya da peynir fabrikalarına gönderilen "
+"süt, galon olarak"
+
+msgid "Pounds Butter made on farm in 1879"
+msgstr "1879 yılında çiftlikte üretilen tereyağı, pound olarak"
+
+msgid "Pounds Cheese made on farm in 1879"
+msgstr "1879 yılında çiftlikte üretilen peynir, pound olarak"
+
+msgid "Sheep on hand"
+msgstr "Eldeki koyun sayısı"
+
+msgid "Lambs Dropped in 1879"
+msgstr "1879 yılında doğan kuzu sayısı"
+
+msgid "Sheep and Lambs Purchased in 1879"
+msgstr "1879 yılında satın alınan koyun ve kuzu sayısı"
+
+msgid "Sheep and Lambs Sold living in 1879"
+msgstr "1879 yılında canlı olarak satılan koyun ve kuzu sayısı"
+
+msgid "Sheep and Lambs Slaughtered in 1879"
+msgstr "1879 yılında kesilen koyun ve kuzu sayısı"
+
+msgid "Sheep and Lambs Killed by dogs in 1879"
+msgstr "1879 yılında köpekler tarafından öldürülen koyun ve kuzu sayısı"
+
+msgid "Sheep and Lambs Died of Disease in 1879"
+msgstr "1879 yılında hastalıktan ölen koyun ve kuzu sayısı"
+
+msgid "Sheep and Lambs Died of stress or weather in 1879"
+msgstr ""
+"1879 yılında stres veya hava koşulları nedeniyle ölen koyun ve kuzu sayısı"
+
+msgid "Number of Fleece, Spring 1880"
+msgstr "1880 İlkbaharında kırkılan yapağı sayısı"
+
+msgid "Pounds Wool, Spring 1880"
+msgstr "1880 İlkbaharında elde edilen yün, pound olarak"
+
+msgid "Swine on hand"
+msgstr "Eldeki domuz sayısı"
+
+msgid "Barnyard Poultry on hand"
+msgstr "Eldeki kümes hayvanı sayısı"
+
+msgid "Other Poultry on hand"
+msgstr "Eldeki diğer kanatlı hayvan sayısı"
+
+msgid "Dozen eggs produced in 1879"
+msgstr "1879 yılında üretilen yumurta, düzine olarak"
+
+msgid "Acres Barley in 1879"
+msgstr "1879 yılında arpa ekili alan, dönüm olarak"
+
+msgid "Bushels Barley in 1879"
+msgstr "1879 yılında üretilen arpa, kile olarak"
+
+msgid "Acres Buckwheat in 1879"
+msgstr "1879 yılında karabuğday ekili alan, dönüm olarak"
+
+msgid "Bushels Buckwheat in 1879"
+msgstr "1879 yılında üretilen karabuğday, kile olarak"
+
+msgid "Acres Indian Corn in 1879"
+msgstr "1879 yılında mısır ekili alan, dönüm olarak"
+
+msgid "Bushels Indian Corn in 1879"
+msgstr "1879 yılında üretilen mısır, kile olarak"
+
+msgid "Acres Oats in 1879"
+msgstr "1879 yılında yulaf ekili alan, dönüm olarak"
+
+msgid "Bushels Oats in 1879"
+msgstr "1879 yılında üretilen yulaf, kile olarak"
+
+msgid "Acres Rye in 1879"
+msgstr "1879 yılında çavdar ekili alan, dönüm olarak"
+
+msgid "Bushels Rye in 1879"
+msgstr "1879 yılında üretilen çavdar, kile olarak"
+
+msgid "Acres Wheat in 1879"
+msgstr "1879 yılında buğday ekili alan, dönüm olarak"
+
+msgid "Bushels Wheat in 1879"
+msgstr "1879 yılında üretilen buğday, kile olarak"
+
+msgid "Bushels Canadian Peas in 1879"
+msgstr "1879 yılında üretilen Kanada bezelyesi, kile olarak"
+
+msgid "Bushels Beans in 1879"
+msgstr "1879 yılında üretilen fasulye, kile olarak"
+
+msgid "Acres Flax in 1879"
+msgstr "1879 yılında keten ekili alan, dönüm olarak"
+
+msgid "Bushels Flax Sued in 1879"
+msgstr "1879'da Ekilen Keten,kile olarak"
+
+msgid "Tons Flax Straw in 1879"
+msgstr "1879'da Ekilen Keten Samanı, ton olarak"
+
+msgid "Pounds Flax Fiber in 1879"
+msgstr "1879'da Ekilen Keten Lifi, pound olarak"
+
+msgid "Acres Hemp in 1879"
+msgstr "1879'da Ekilen Kenevir, dönüm olarak"
+
+msgid "Tons Hemp in 1879"
+msgstr "1879'da Ekilen Kenevir, ton olarak"
+
+msgid "Acres Sorghum in 1879"
+msgstr "1879'da Ekilen Sorgum Şekeri, dönüm olarak"
+
+msgid "Pounds Sorghum Sugar in 1879"
+msgstr "1879'da Ekilen Sorgum Şekeri, pound olarak"
+
+msgid "Gallons Sorghum Molasses in 1879"
+msgstr "1879'da Ekilen Sorgum Pekmezi, galon olarak"
+
+msgid "Pounds Maple Sugar in 1879"
+msgstr "1879'da Ekilen Akçaağaç Şekeri, pound olarak"
+
+msgid "Gallons Maple Molasses in 1879"
+msgstr "1879'da Ekilen Akçaağaç Pekmezi, galon olarak"
+
+msgid "Acres Broom Corn in 1879"
+msgstr "1879'da Ekilen Süpürge Mısırı, dönüm olarak"
+
+msgid "Pounds Broom Corn in 1879"
+msgstr "1879'da Ekilen Süpürge Mısırı, pound olarak"
+
+msgid "Acres Hops in 1879"
+msgstr "1879'da Ekilen Şerbetçi Otu, dönüm olarak"
+
+msgid "Pounds Hops in 1879"
+msgstr "1879'da Ekilen Şerbetçi Otu, pound olarak"
+
+msgid "Acres Potatoes (Irish) in 1879"
+msgstr "1879'da Ekilen Patates (İrlanda), dönüm olarak"
+
+msgid "Bushels Potatoes (Irish) in 1879"
+msgstr "1879'da Ekilen Patates (İrlanda), kile olarak"
+
+msgid "Acres Potatoes (Sweet) in 1879"
+msgstr "1879'da Ekilen Patates (Tatlı), dönüm olarak"
+
+msgid "Bushels Potatoes (Sweet) in 1879"
+msgstr "1879'da Patates (Tatlı) Miktarı, kile olarak"
+
+msgid "Acres Tobacco in 1879"
+msgstr "1879'da Tütün Alanı, dönüm olarak"
+
+msgid "Pounds Tobacco in 1879"
+msgstr "1879'da Tütün Miktarı, pound olarak"
+
+msgid "Acres Apple Orchards in 1879"
+msgstr "1879'da Elma Bahçesi Alanı, dönüm olarak"
+
+msgid "Number of Bearing Apple Trees in 1879"
+msgstr "1879'da Meyve Veren Elma Ağacı Sayısı"
+
+msgid "Bushels Apples in 1879"
+msgstr "1879'da Elma Miktarı, kile olarak"
+
+msgid "Acres Peach Orchards in 1879"
+msgstr "1879'da Şeftali Bahçesi Alanı, dönüm olarak"
+
+msgid "Number of Bearing Peach Trees in 1879"
+msgstr "1879'da Meyve Veren Şeftali Ağacı Sayısı"
+
+msgid "Bushels Peaches in 1879"
+msgstr "1879'da Şeftali Miktarı, kile olarak"
+
+msgid "Total value of Orchard Products Sold or Consumed in 1879"
+msgstr "1879'da Satılan veya Tüketilen Bahçe Ürünlerinin Toplam Değeri"
+
+msgid "Acres Nurseries"
+msgstr "Fidanlık Alanı, dönüm olarak"
+
+msgid "Value of Nursery Products Sold"
+msgstr "Satılan Fidanlık Ürünlerinin Değeri"
+
+msgid "Acres Vineyards"
+msgstr "Bağ Alanı, dönüm olarak"
+
+msgid "Grapes sold in 1879"
+msgstr "1879'da Satılan Üzüm"
+
+msgid "Wine made in 1879"
+msgstr "1879'da Üretilen Şarap"
+
+msgid "Value of Market Garden Produce Sold in 1879"
+msgstr "1879'da Satılan Pazar Bahçesi Ürünlerinin Değeri"
+
+msgid "Pounds Honey in 1879"
+msgstr "1879'da Bal Miktarı, pound olarak"
+
+msgid "Pounds Beeswax in 1879"
+msgstr "1879'da Balmumu Miktarı, pound olarak"
+
+msgid "Cords of Wood cut in 1879"
+msgstr "1879'da Kesilen Odun Miktarı, kordon olarak"
+
+msgid "Value of forest products sold or consumed in 1879"
+msgstr "1879'da Satılan veya Tüketilen Orman Ürünlerinin Değeri"
+
+msgid "Street and No."
+msgstr "Sokak ve No."
+
+msgid "Ward"
+msgstr "Mahalle"
+
+msgid "Veteran of Civil War or widow of a veteran"
+msgstr "İç Savaş gazisi veya bir gazinin dul eşi"
+
+msgid "Single, married, widowed or divorced"
+msgstr "Bekâr, evli, dul veya boşanmış"
+
+msgid "Mother of how many children and number of children living"
+msgstr "Kaç çocuğun annesi olduğu ve yaşayan çocuk sayısı"
+
+msgid "Number of years in US"
+msgstr "ABD'de geçirilen yıl sayısı"
+
+msgid "Naturalized"
+msgstr "Vatandaşlığa alınmış"
+
+msgid "Naturalization papers taken out"
+msgstr "Vatandaşlık belgeleri için başvurulmuş"
+
+msgid "Able to read"
+msgstr "Okuyabilir"
+
+msgid "Able to write"
+msgstr "Yazabilir"
+
+msgid "Able to speak English; if not, the language spoken"
+msgstr "İngilizce konuşabilir; değilse, konuşulan dil"
+
+msgid "Suffering from disease"
+msgstr "Hastalıktan muzdarip"
+
+msgid "Whether defective and name of defect"
+msgstr "Kusurlu olup olmadığı ve kusurun adı"
+
+msgid "Prisoner, convict, homeless child or pauper"
+msgstr "Mahkûm, hükümlü, evsiz çocuk veya yoksul"
+
+msgid "Supplemental schedule and page"
+msgstr "Ek zamanlama ve sayfa"
+
+msgid "Supervisor's District No."
+msgstr "Denetçi Bölge No."
+
+msgid "Enumeration District No."
+msgstr "Sayım Bölgesi No."
+
+msgid "Rank"
+msgstr "Rütbe"
+
+msgid "Company"
+msgstr "Bölük"
+
+msgid "Regiment/Vessel"
+msgstr "Alay/Gemi"
+
+msgid "Date Enlisted"
+msgstr "Askere Alınma Tarihi"
+
+msgid "Date Discharged"
+msgstr "Terhis Tarihi"
+
+msgid "Length of Service"
+msgstr "Hizmet Süresi"
+
+msgid "Disability Incurred"
+msgstr "Meydana Gelen Sakatlık"
+
+msgid "State (or Territory) of"
+msgstr "Eyalet (veya Bölge)"
+
+msgid "Division of County"
+msgstr "İlçe Bölümü"
+
+msgid "Name of Institution"
+msgstr "Kurumun Adı"
+
+msgid "City, Town, Village"
+msgstr "Şehir, Kasaba, Köy"
+
+msgid "Ward of city"
+msgstr "Şehrin bölgesi"
+
+msgid "Street Address"
+msgstr "Sokak Adresi"
+
+msgid "Relation to head"
+msgstr "Aile reisiyle ilişkisi"
+
+msgid "Month of birth"
+msgstr "Doğum ayı"
+
+msgid "Year of birth"
+msgstr "Doğum yılı"
+
+msgid "Years of present marriage"
+msgstr "Mevcut evliliğin yılı"
+
+msgid "Mother of how many children"
+msgstr "Annenin sahip olduğu çocuk sayısı"
+
+msgid "Number of children living"
+msgstr "Yaşayan çocuk sayısı"
+
+msgid "Year of immigration"
+msgstr "Göç yılı"
+
+msgid "Months not employed"
+msgstr "Çalışmadığı ay sayısı"
+
+msgid "Attended school"
+msgstr "Okula devam etti"
+
+msgid "Can read"
+msgstr "Okuyabilir"
+
+msgid "Can write"
+msgstr "Yazabilir"
+
+msgid "Can speak English"
+msgstr "İngilizce konuşabilir"
+
+msgid "Home owned or rented"
+msgstr "Ev sahibi veya kiracı"
+
+msgid "Owned free or mortgaged"
+msgstr "Tamamen kendisine ait veya ipotekli"
+
+msgid "Farm or house"
+msgstr "Çiftlik veya ev"
+
+msgid "Number of farm schedule"
+msgstr "Çiftlik zamanlama numarası"
+
+msgid "Naturalized or alien"
+msgstr "Vatandaşlığa alınmış veya yabancı"
+
+msgid "Able to speak English; if not, language spoken"
+msgstr "İngilizce konuşabilir; değilse, konuştuğu dil"
+
+msgid "Nature of industry"
+msgstr "Endüstrinin niteliği"
+
+msgid "Employer, employee or working on own account"
+msgstr "İşveren, çalışan veya kendi hesabına çalışan"
+
+msgid "Out of work"
+msgstr "İşsiz"
+
+msgid "Weeks out of work in 1909"
+msgstr "1909 yılında işsiz kaldığı haftalar"
+
+msgid "Attended school since Sept. 1, 1909"
+msgstr "1 Eylül 1909'dan sonra okula devam etti"
+
+msgid "Civil War veteran"
+msgstr "İç Savaş gazisi"
+
+msgid "If owned, free or mortgaged"
+msgstr "Mülkiyeti varsa, tamamen kendisine ait veya ipotekli"
+
+msgid "Year of naturalization"
+msgstr "Vatandaşlığa alınma yılı"
+
+msgid "Attended school since Sept. 1, 1919"
+msgstr "1 Eylül 1919'dan sonra okula devam etti"
+
+msgid "Mother tongue"
+msgstr "Ana dili"
+
+msgid "Father mother tongue"
+msgstr "Babanın ana dili"
+
+msgid "Mother's mother tongue"
+msgstr "Annenin ana dili"
+
+msgid "Able to speak English"
+msgstr "İngilizce konuşabilir"
+
+msgid "Industry"
+msgstr "Sektör"
+
+msgid "Employer, worker or working on own account"
+msgstr "İşveren, işçi veya kendi hesabına çalışan"
+
+msgid "Incorporated place"
+msgstr "Birleştirilmiş yerleşim yeri"
+
+msgid "Unincorporated place"
+msgstr "Birleştirilmemiş yerleşim yeri"
+
+msgid "Value of home or monthly rental"
+msgstr "Evin değeri veya aylık kira bedeli"
+
+msgid "Radio set"
+msgstr "Radyo cihazı"
+
+msgid "Farm?"
+msgstr "Çiftlik mi?"
+
+msgid "Marital condition"
+msgstr "Medeni durum"
+
+msgid "Age at first marriage"
+msgstr "İlk evlilik yaşı"
+
+msgid "Attended school since Sept. 1, 1929"
+msgstr "1 Eylül 1929'dan beri okula devam etti"
+
+msgid "Able to read and write"
+msgstr "Okuyup yazabiliyor"
+
+msgid "Language before coming to US"
+msgstr "ABD'ye gelmeden önce konuştuğu dil"
+
+msgid "Class of worker"
+msgstr "Çalışan sınıfı"
+
+msgid "Employed"
+msgstr "Çalışan"
+
+msgid "Line number for unemployed"
+msgstr "İşsizler için sıra numarası"
+
+msgid "Veteran"
+msgstr "Gazi"
+
+msgid "What war"
+msgstr "Hangi savaş"
+
+msgid "Home Owned/Rented"
+msgstr "Ev Sahibi/Kiracı"
+
+msgid "Home value/monthly rental"
+msgstr "Ev değeri/aylık kira"
+
+msgid "Color/Race"
+msgstr "Renk/Irk"
+
+msgid "Age at Last Birthday"
+msgstr "Son doğum günündeki yaşı"
+
+msgid "Marital Status"
+msgstr "Medeni Durum"
+
+msgid "Attended school/college since March 1, 1940"
+msgstr "1 Mart 1940'tan beri okula/üniversiteye devam etti"
+
+msgid "Highest grade completed"
+msgstr "Tamamlanan en yüksek sınıf"
+
+msgid "Citizenship if foreign born"
+msgstr "Yabancı doğumluysa vatandaşlık durumu"
+
+msgid "City (April 1, 1935)"
+msgstr "Şehir (1 Nisan 1935)"
+
+msgid "State (Territory/Country)"
+msgstr "Eyalet (Bölge/Ülke)"
+
+msgid "On a Farm (Y/N)"
+msgstr "Çiftlikte mi? (E/H)"
+
+msgid "At Work during week March 24-30"
+msgstr "24-30 Mart haftasında çalışıyor muydu"
+
+msgid "public Emergency Work?"
+msgstr "Kamu acil durum çalışması mı?"
+
+msgid "Seeking work?"
+msgstr "İş mi arıyor?"
+
+msgid "Have a Job?"
+msgstr "Bir işi var mı?"
+
+msgid "housework (H), school (S), unable to work (U) or other (Ot)"
+msgstr "Ev işleri (E), okul (O), çalışamaz durumda (D veya diğer (Di)"
+
+msgid "# hours worked during week March 24-30, 1940"
+msgstr "# 24-30 Mart 1940 haftasında çalışılan saat sayısı"
+
+msgid "Weeks unemployed up to March 30, 1940"
+msgstr "30 Mart 1940'a kadar işsiz kalınan hafta sayısı"
+
+msgid "# weeks worked in 1939"
+msgstr "# 1939'da çalışılan hafta sayısı"
+
+msgid "Amount of money, wages, salary in 1939"
+msgstr "1939'daki para , ücret, maaş miktarı"
+
+msgid "Income of more than $50 from other sources?"
+msgstr "Diğer kaynaklardan 50 dolardan fazla gelir var mı?"
+
+msgid "Number of Farm Schedule"
+msgstr "Çiftlik Zamanlama Numarası"
+
+msgid "Veteran?"
+msgstr "Gazi mi?"
+
+msgid "If child, veteran-father dead?"
+msgstr "Çocuksa, gazi babası ölü mü?"
+
+msgid "War/Military Service"
+msgstr "Savaş/Askerlik Hizmeti"
+
+msgid "Have Federal SSN?"
+msgstr "Federal Sosyal Güvenlik Numarası var mı?"
+
+msgid "Deductions made in 1939?"
+msgstr "1939'da kesinti yapıldı mı?"
+
+msgid "If so, made from all, 1/2 or more, less from wages in 1939?"
+msgstr ""
+"Eğer yapıldıysa, 1939 ücretlerinden tamamından, yarısından veya daha "
+"fazlasından, daha azından mı kesildi?"
+
+msgid "Usual Occupation"
+msgstr "Yaptığı olağan meslek"
+
+msgid "Usual Industry"
+msgstr "Yaptığı olağan sektör"
+
+msgid "Usual Class of Work"
+msgstr "Yaptığı olağan iş sınıfı"
+
+msgid "If woman, married more than once?"
+msgstr "Kadınsa, birden fazla kez evlenmiş mi?"
+
+msgid "Number of children ever born"
+msgstr "Doğan çocuk sayısı"
+
+msgid "Incorporated place or township"
+msgstr "Birleşik yer veya kasaba"
+
+msgid "E. D. Number"
+msgstr "E. D. Numarası"
+
+msgid "Hotel, large rooming house, institution, military installation, etc."
+msgstr "Otel, büyük pansiyon, kurum, askeri tesis vb."
+
+msgid "Is this house on a farm (or ranch)?"
+msgstr "Bu ev bir çiftlikte (veya çiftlik arazisinde) mi?"
+
+msgid "On 3+ acres of land?"
+msgstr "3+ dönüm arazi üzerinde mi?"
+
+msgid "Is this house on a place of three or more acres?"
+msgstr "Bu ev üç veya daha fazla dönümlük bir arazi üzerinde mi?"
+
+msgid "Agricultural Questionnaire Number"
+msgstr "Tarım Anketi Numarası"
+
+msgid "Age at last birthday"
+msgstr "Son doğum günündeki yaş"
+
+msgid "How old was he on his last birthday?"
+msgstr "Son doğum gününde kaç yaşındaydı?"
+
+msgid "Marital status"
+msgstr "Medeni durumu"
+
+msgid "Is he now married, widowed, divorced, separated, or never married?"
+msgstr "Şu anda evli, dul, boşanmış, ayrı mı yaşıyor yoksa hiç evlenmemiş mi?"
+
+msgid "What State (or foreign country) was he born in?"
+msgstr "Hangi eyalette (veya yabancı ülkede) doğdu?"
+
+msgid "Is he naturalized?"
+msgstr "Vatandaşlığa kabul edildi mi?"
+
+msgid "housework (H), work (W), unable to work (U) or other (Ot)"
+msgstr "Ev işleri (E), iş (İ), çalışamayacak durumda (Ç) veya diğer (Di)"
+
+msgid ""
+"What was this person doing most of last week—working, keeping house, or "
+"something else?"
+msgstr ""
+"Bu kişi geçen haftanın büyük bölümünde ne yapıyordu—çalışıyor muydu, ev "
+"işleriyle mi uğraşıyordu, yoksa başka bir şey mi yapıyordu?"
+
+msgid "Worked last week? (Y/N)"
+msgstr "Geçen hafta çalıştı mı? (E/H)"
+
+msgid ""
+"Did this person do any work at all last week, not counting work around the "
+"house?"
+msgstr "Bu kişi geçen hafta ev işleri dışında herhangi bir iş yaptı mı?"
+
+msgid "Looking for work?"
+msgstr "İş arıyor mu?"
+
+msgid "Was this person looking for work?"
+msgstr "Bu kişi iş arıyor muydu?"
+
+msgid "Has a job or business?"
+msgstr "Bir işi veya işletmesi var mı?"
+
+msgid "Even though he didn’t work last week, does he have a job or business?"
+msgstr "Geçen hafta çalışmamış olsa bile, bir işi veya işletmesi var mı?"
+
+msgid "# hours worked last week"
+msgstr "# Geçen hafta çalıştığı saat sayısı"
+
+msgid "How many hours did he work last week?"
+msgstr "Geçen hafta kaç saat çalıştı?"
+
+msgid "Type of work"
+msgstr "İş türü"
+
+msgid "What kind of work was he doing?"
+msgstr "Ne tür bir iş yapıyordu?"
+
+msgid "Business or industry"
+msgstr "İşletme veya sektör"
+
+msgid "What kind of business or industry was he working in?"
+msgstr "Hangi tür işletme veya sektörde çalışıyordu?"
+
+msgid "Same house in Apr 1949?"
+msgstr "Nisan 1949'da aynı evde miydi?"
+
+msgid "Was he living in this same house a year ago?"
+msgstr "Bir yıl önce de aynı evde mi yaşıyordu?"
+
+msgid "Farm in Apr 1949?"
+msgstr "Nisan 1949'da çiftlikte miydi?"
+
+msgid "Was he living on a farm a year ago?"
+msgstr "Bir yıl önce bir çiftlikte mi yaşıyordu?"
+
+msgid "Same county in Apr 1949?"
+msgstr "Nisan 1949'da aynı ilçede miydi?"
+
+msgid "Was he living in this same county a year ago?"
+msgstr "Bir yıl önce de aynı ilçede mi yaşıyordu?"
+
+msgid "State or foreign country"
+msgstr "Eyalet veya yabancı ülke"
+
+msgid "What country was his father born in?"
+msgstr "Babası hangi ülkede doğdu?"
+
+msgid "What country was his mother born in?"
+msgstr "Annesi hangi ülkede doğdu?"
+
+msgid "Highest grade attended"
+msgstr "Devam ettiği en yüksek sınıf"
+
+msgid "What is the highest grade of school that he has attended?"
+msgstr "Devam ettiği en yüksek okul sınıfı hangisidir?"
+
+msgid "Completed?"
+msgstr "Tamamladı mı?"
+
+msgid "Did he finish this grade?"
+msgstr "Bu sınıfı bitirdi mi?"
+
+msgid "Attended school since Feb 1, 1950?"
+msgstr "1 Şubat 1950'den beri okula devam etti mi?"
+
+msgid "Has he attended school at any time since February 1st?"
+msgstr "1 Şubat'tan bu yana herhangi bir zamanda okula devam etti mi?"
+
+msgid "How many weeks has he been looking for work?"
+msgstr "Kaç haftadır iş arıyor?"
+
+msgid "# weeks worked in 1949"
+msgstr "# 1949'da çalıştığı hafta sayısı"
+
+msgid ""
+"Last year, in how many weeks did this person do any work at all, not "
+"counting work around the house?"
+msgstr ""
+"Geçen yıl, ev işleri hariç olmak üzere bu kişi toplam kaç hafta herhangi bir "
+"işte çalıştı?"
+
+msgid "Amount of wages/salary in 1949"
+msgstr "1949'daki ücret/maaş tutarı"
+
+msgid ""
+"Last year, how much money did he earn working as an employee for wages or "
+"salary?"
+msgstr ""
+"Geçen yıl, ücretli veya maaşlı bir çalışan olarak ne kadar para kazandı?"
+
+msgid "Amount of money from own business in 1949"
+msgstr "1949'da kendi işinden elde ettiği gelir tutarı"
+
+msgid ""
+"Last year, how much money did he earn working in his own business, "
+"professional practice, or farm?"
+msgstr ""
+"Geçen yıl, kendi işi, serbest mesleği veya çiftliğinde çalışarak ne kadar "
+"para kazandı?"
+
+msgid "Amount of other income in 1949"
+msgstr "1949'daki diğer gelir tutarı"
+
+msgid ""
+"Last year, how much money did he receive from interest, dividends, veteran’s "
+"allowances, pensions, rents, or other income?"
+msgstr ""
+"Geçen yıl, faiz, temettü, gazi ödenekleri, emekli maaşları, kira gelirleri "
+"veya diğer gelirlerden ne kadar para aldı?"
+
+msgid "Relatives in household wages/salary in 1949"
+msgstr "1949'da hanedeki akrabaların ücret/maaş geliri"
+
+msgid ""
+"Last year, how much money did his relatives in this household earn working "
+"for wages or salary?"
+msgstr ""
+"Geçen yıl, bu hanedeki akrabaları ücretli veya maaşlı çalışarak ne kadar "
+"para kazandı?"
+
+msgid "Relatives in household earnings from own business in 1949"
+msgstr "1949'da hanedeki akrabaların kendi işlerinden elde ettiği kazanç"
+
+msgid ""
+"Last year, how much money did his relatives in this household earn in own "
+"business, professional practice, or farm?"
+msgstr ""
+"Geçen yıl, bu hanedeki akrabaları kendi işleri, serbest meslekleri veya "
+"çiftliklerinden ne kadar para kazandı?"
+
+msgid "Relatives in household other income in 1949"
+msgstr "1949'da hanedeki akrabaların diğer gelirleri"
+
+msgid ""
+"Last year, how much money did his relatives in this household receive from "
+"interest, dividends, veteran’s allowances, pensions, rents, or other income?"
+msgstr ""
+"Geçen yıl, bu hanedeki akrabaları faiz, temettü, gazi ödenekleri, emekli "
+"maaşları, kira gelirleri veya diğer gelirlerden ne kadar para aldı?"
+
+msgid "WWII Veteran?"
+msgstr "II. Dünya Savaşı gazisi mi?"
+
+msgid "Did he ever serve in the U. S. Armed Forces during World War II?"
+msgstr ""
+"II. Dünya Savaşı sırasında ABD Silahlı Kuvvetlerinde hiç görev yaptı mı?"
+
+msgid "WWI Veteran?"
+msgstr "I. Dünya Savaşı gazisi mi?"
+
+msgid "World War I?"
+msgstr "I. Dünya Savaşı mı?"
+
+msgid "Any other time, including present service?"
+msgstr "Mevcut hizmet dâhil olmak üzere başka herhangi bir zamanda?"
+
+msgid "What kind of work did this person do in his last job?"
+msgstr "Bu kişi son işinde ne tür bir çalışma yaptı?"
+
+msgid "What kind of business or industry did he work in?"
+msgstr "Hangi iş kolunda veya sektörde çalıştı?"
+
+msgid "Class of worker [last job]"
+msgstr "Çalışanın sınıfı [son iş]"
+
+msgid "Has this person been married more than once?"
+msgstr "Bu kişi birden fazla kez evlendi mi?"
+
+msgid "# years since marriage ended"
+msgstr "# Evliliğin sona ermesinden bu yana geçen yıl sayısı"
+
+msgid ""
+"How many years since this person was married, widowed, divorced, or "
+"separated?"
+msgstr ""
+"Bu kişinin evli, dul, boşanmış veya ayrı yaşar durumda olmasının üzerinden "
+"kaç yıl geçti?"
+
+msgid "How many children has she ever borne, not counting stillbirths?"
+msgstr "Ölü doğumlar hariç, şimdiye kadar kaç çocuk doğurdu?"
+
+msgid "Census Date"
+msgstr "Nüfus Sayımı Tarihi"
+
+msgid "District of"
+msgstr "Bölgesi"
+
+msgid "Married Y/N"
+msgstr "Evli E/H"
+
+msgid "Spouses Age"
+msgstr "Eşlerin Yaşı"
+
+msgid "File No."
+msgstr "Dosya No."
+
+msgid "Post Office Address"
+msgstr "Posta Adresi"
+
+msgid "Entered service as (rank)"
+msgstr "Hizmete giriş (rütbe)"
+
+msgid "Date Entered"
+msgstr "Hizmete giriş tarihi"
+
+msgid "Place of Enlistment"
+msgstr "Askere alınma yeri"
+
+msgid "Name, Letter of Co., Number of Regiment"
+msgstr "Birliğin adı, bölüğün harfi, alayın numarası"
+
+msgid "Continued until"
+msgstr "Devam ettiği tarih"
+
+msgid "Re-enlisted as"
+msgstr "Tekrar kayıt olduğu tarih"
+
+msgid "On date"
+msgstr "Şu tarihte"
+
+msgid "and continued until"
+msgstr "ve şu tarihe kadar devam etti"
+
+msgid "3rd enlistment"
+msgstr "3. askerlik kaydı"
+
+msgid "Enlisted on"
+msgstr "Şu tarihte askere alındı"
+
+msgid "Enlistment Place"
+msgstr "Askere alınma yeri"
+
+msgid "in the command of"
+msgstr "şu komutanlığın emrinde"
+
+msgid "Other service, if any"
+msgstr "Varsa diğer hizmetleri"
+
+msgid "No. on pension roll"
+msgstr "Emekli maaşı sicil numarası"
+
+msgid "County lived in when first placed on roll"
+msgstr "İlk kez emekli maaşı siciline alındığında yaşadığı ilçe"
+
+msgid "Other states lived in and when"
+msgstr "Yaşadığı diğer eyaletler ve ne zaman yaşadığı"
+
+msgid "Moved to Alabama"
+msgstr "Alabama'ya taşındı"
+
+msgid "Branch of service"
+msgstr "Hizmet sınıfı"
+
+msgid "Letter of Company"
+msgstr "Bölük harfi"
+
+msgid "Number of Regiment"
+msgstr "Alay numarası"
+
+msgid "Was it an Alabama Regiment"
+msgstr "Bu bir Alabama Alayı mıydı"
+
+msgid "If not, give name of state"
+msgstr "Değilse, eyaletin adını belirtin"
+
+msgid "Name of your Captain"
+msgstr "Yüzbaşınızın adı"
+
+msgid "Name of your Colonel"
+msgstr "Albayınızın adı"
+
+msgid "By what other name was your Company called"
+msgstr "Bölüğünüz başka hangi adla anılıyordu"
+
+msgid "By what other name was your Regiment called"
+msgstr "Alayınız başka hangi adla anılıyordu"
+
+msgid "Battles in which you took part"
+msgstr "Katıldığınız muharebeler"
+
+msgid "Ever wounded"
+msgstr "Hiç yaralandınız mı"
+
+msgid "When wounded"
+msgstr "Ne zaman yaralandınız"
+
+msgid "In what battles"
+msgstr "Hangi muharebelerde"
+
+msgid "Were you captured"
+msgstr "Esir alındınız mı"
+
+msgid "When captured"
+msgstr "Ne zaman esir alındınız"
+
+msgid "Where captured"
+msgstr "Nerede esir alındınız"
+
+msgid "Were you imprisoned"
+msgstr "Hapsedildiniz mi"
+
+msgid "When imprisoned"
+msgstr "Ne zaman hapsedildiniz"
+
+msgid "Where imprisoned"
+msgstr "Nerede hapsedildiniz"
+
+msgid "How were you discharged"
+msgstr "Terhisiniz nasıl gerçekleşti"
+
+msgid "Did you transfer to another Company or Command"
+msgstr "Başka bir Bölüğe veya Birliğe nakledildiniz mi"
+
+msgid "If so, give Company and Regiment"
+msgstr "Evetse, Bölük ve Alayın adını belirtin"
+
+msgid "What branch of service and date of transfer"
+msgstr "Hangi hizmet sınıfına ve nakil tarihi"
+
+msgid "Captains name"
+msgstr "Yüzbaşının adı"
+
+msgid "Colonels name"
+msgstr "Albayın adı"
+
+msgid "Length of service"
+msgstr "Hizmet süresi"
+
+msgid "Are you married"
+msgstr "Evli misiniz"
+
+msgid "Age of wife"
+msgstr "Eşinizin yaşı"
+
+msgid "Birthplace of wife"
+msgstr "Eşinizin doğum yeri"
+
+msgid "Date married"
+msgstr "Evlenme tarihi"
+
 msgid "Place married"
 msgstr "Evlenme yeri"
+
+msgid "When, where and circumstances you quit the service"
+msgstr "Hizmetten ne zaman, nerede ve koşullarda ayrıldığınız"
+
+msgid "Paroled at close of war"
+msgstr "Savaşın sonunda şartlı tahliye edildi"
+
+msgid "If so, when"
+msgstr "Eğer öyleyse, ne zaman"
+
+msgid "and where"
+msgstr "ve nerede"
+
+msgid "Have you your parole"
+msgstr "Şartlı tahliye belgeniz var mı"
+
+msgid "Voting Precinct and County"
+msgstr "Oy verme bölgesi ve ilçe"
+
+msgid "With whom are you living"
+msgstr "Kiminle birlikte yaşıyorsunuz"
+
+msgid "Regularly received your pension warrant"
+msgstr "Emekli maaşı ödemenizi düzenli olarak aldınız mı"
+
+msgid "If No give information regarding the same"
+msgstr "Hayır ise, bununla ilgili bilgi verin"
+
+msgid "Witness name and P.O Address"
+msgstr "Tanığın adı ve posta adresi"
+
+msgid "Widow of"
+msgstr "Dul eşi"
+
+msgid "Her age"
+msgstr "Yaşı"
+
+msgid "Her date of birth"
+msgstr "Doğum tarihi"
+
+msgid "Date of marriage"
+msgstr "Evlenme tarihi"
+
+msgid "Born within census year"
+msgstr "Nüfus sayımı yılı içinde doğdu"
+
+msgid "Married during census year"
+msgstr "Nüfus sayımı yılı içinde evlendi"
+
+msgid "Months unemployed during census year"
+msgstr "Nüfus sayımı yılı içinde işsiz kaldığı ay sayısı"
+
+msgid "(Day of the Enumerator's visit) sick or temporarily disabled"
+msgstr "(Sayım görevlisinin ziyareti günü) hasta veya geçici olarak engelli"
+
+msgid "Deaf and Dumb"
+msgstr "Sağır ve dilsiz"
+
+msgid "Maimed, Crippled, Bedridden, or otherwise disabled."
+msgstr "Sakat, engelli, yatağa bağımlı veya başka bir şekilde engelli."
+
+msgid "Can not read"
+msgstr "Okuyamıyor"
+
+msgid "Can not write"
+msgstr "Yazamıyor"
+
+msgid "Street Name"
+msgstr "Sokak Adı"
+
+msgid "House No."
+msgstr "Ev No."
+
+msgid "Precinct No."
+msgstr "Bölge No."
+
+msgid "Inside or Outside City Limits"
+msgstr "Şehir Sınırları İçinde veya Dışında"
+
+msgid "Age Male"
+msgstr "Erkek Yaşı"
+
+msgid "Age Female"
+msgstr "Kadın Yaşı"
+
+msgid "Relation to Family"
+msgstr "Aile ile İlişkisi"
+
+msgid "Degree of Education"
+msgstr "Eğitim Düzeyi"
+
+msgid "Owner or Renter"
+msgstr "Ev Sahibi veya Kiracı"
+
+msgid "In or Out"
+msgstr "İçeride veya Dışarıda"
+
+msgid "White Males Under 10"
+msgstr "10 Yaş Altı Beyaz Erkekler"
+
+msgid "White Males 10 to 20"
+msgstr "10–20 Yaş Arası Beyaz Erkekler"
+
+msgid "White Males 20 to 30"
+msgstr "20–30 Yaş Arası Beyaz Erkekler"
+
+msgid "White Males 30 to 40"
+msgstr "30–40 Yaş Arası Beyaz Erkekler"
+
+msgid "White Males 40 to 50"
+msgstr "40–50 Yaş Arası Beyaz Erkekler"
+
+msgid "White Males 50 to 60"
+msgstr "50–60 Yaş Arası Beyaz Erkekler"
+
+msgid "White Males 60 to 70"
+msgstr "60–70 Yaş Arası Beyaz Erkekler"
+
+msgid "White Males 70 to 80"
+msgstr "70–80 Yaş Arası Beyaz Erkekler"
+
+msgid "White Males 80 to 90"
+msgstr "80–90 Yaş Arası Beyaz Erkekler"
+
+msgid "White Males Over 90"
+msgstr "90 Yaş Üstü Beyaz Erkekler"
+
+msgid "White Females Under 10"
+msgstr "10 Yaş Altı Beyaz Kadınlar"
+
+msgid "White Females 10 to 20"
+msgstr "10–20 Yaş Arası Beyaz Kadınlar"
+
+msgid "White Females 20 to 30"
+msgstr "20–30 Yaş Arası Beyaz Kadınlar"
+
+msgid "White Females 30 to 40"
+msgstr "30–40 Yaş Arası Beyaz Kadınlar"
+
+msgid "White Females 40 to 50"
+msgstr "40–50 Yaş Arası Beyaz Kadınlar"
+
+msgid "White Females 50 to 60"
+msgstr "50–60 Yaş Arası Beyaz Kadınlar"
+
+msgid "White Females 60 to 70"
+msgstr "60–70 Yaş Arası Beyaz Kadınlar"
+
+msgid "White Females 70 to 80"
+msgstr "70–80 Yaş Arası Beyaz Kadınlar"
+
+msgid "White Females 80 to 90"
+msgstr "80–90 Yaş Arası Beyaz Kadınlar"
+
+msgid "White Females Over 90"
+msgstr "90 Yaş Üstü Beyaz Kadınlar"
+
+msgid "Male Negroes and Mulattoes"
+msgstr "Siyahi ve Melez Erkekler"
+
+msgid "Female Negroes and Mulattoes"
+msgstr "Siyahi ve Melez Kadınlar"
+
+msgid "Militia"
+msgstr "Milisler"
+
+msgid "Manufactories of All Kinds"
+msgstr "Her Türlü İmalathane"
+
+msgid "Value of products of manufactories"
+msgstr "İmalathane ürünlerinin değeri"
+
+msgid "Value of products of Coal Mines"
+msgstr "Kömür madeni ürünlerinin değeri"
+
+msgid "Pounds of Wool"
+msgstr "Yün miktarı, pound olarak"
+
+msgid "Number of Colleges"
+msgstr "Kolej Sayısı"
+
+msgid "Number of Pupils"
+msgstr "Öğrenci Sayısı"
+
+msgid "Number of Common Schools"
+msgstr "Devlet Okulu Sayısı"
+
+msgid "Males over 21 years"
+msgstr "21 yaş üstü erkekler"
+
+msgid "Males under 21 years"
+msgstr "21 yaş altı erkekler"
+
+msgid "Total number"
+msgstr "Toplam sayı"
+
+msgid "Widowed"
+msgstr "Dullar"
+
+msgid "Years resident in the state"
+msgstr "Eyalette ikamet edilen yıl sayısı"
+
+msgid "Native voters"
+msgstr "Yerli seçmenler"
+
+msgid "Naturalized voters"
+msgstr "Vatandaşlığa alınmış seçmenler"
+
+msgid "Owners of land"
+msgstr "Arazi sahipleri"
+
+msgid "Paupers"
+msgstr "Yoksullar"
+
+msgid "Acres of improved land"
+msgstr "İşlenmiş arazi alanı, dönüm olarak"
+
+msgid "Acres of unimproved land"
+msgstr "İşlenmemiş arazi alanı, dönüm olarak"
+
+msgid "Acres in meadow"
+msgstr "Çayır alanı, dönüm olarak"
+
+msgid "Tons of hay"
+msgstr "Ton cinsinden saman"
+
+msgid "Bushels of grass seed"
+msgstr "Çim tohumu, kile olarak"
+
+msgid "Acres of spring wheat"
+msgstr "İlkbahar buğdayı alanı, dönüm olarak"
+
+msgid "Bushels harvested (spring wheat)"
+msgstr "Hasat edilen ilkbahar buğdayı, kile olarak"
+
+msgid "Acres of winter wheat"
+msgstr "Kış buğdayı alanı, dönüm olarak"
+
+msgid "Bushels harvested (winter wheat)"
+msgstr "Hasat edilen buğday miktarı (kışlık buğday)"
+
+msgid "Acres of oats"
+msgstr "Yulaf ekili arazi, dönüm olarak"
+
+msgid "Bushels harvested (oats)"
+msgstr "Hasat edilen yulaf, kile olarak"
+
+msgid "Acres of corn"
+msgstr "Mısır ekili arazi, dönüm olarak"
+
+msgid "Bushels harvested (corn)"
+msgstr "Hasat edilen mısır, kile olarak"
+
+msgid "Acres of potatoes"
+msgstr "Patates ekili arazi, dönüm olarak"
+
+msgid "Bushels harvested (potatoes)"
+msgstr "Hasat edilen kile (patates)"
+
+msgid "Number of hogs sold"
+msgstr "Satılan domuz sayısı"
+
+msgid "Value of hogs sold"
+msgstr "Satılan domuzların değeri"
+
+msgid "Number of cattle sold"
+msgstr "Satılan sığır sayısı"
+
+msgid "Value of cattle sold"
+msgstr "Satılan sığırların değeri"
+
+msgid "Pounds of butter manufactured"
+msgstr "Üretilen tereyağı, pound olarak"
+
+msgid "Pounds of cheese"
+msgstr "Peynir, pound olarak"
+
+msgid "Pounds of wool"
+msgstr "Yün, pound olarak"
+
+msgid "Value of domestic manufactures"
+msgstr "Yerli imalat ürünlerinin değeri"
+
+msgid "Value of general manufactures"
+msgstr "Genel imalat ürünlerinin değeri"
+
+msgid "Town of"
+msgstr "Kasabası"
+
+msgid "City of"
+msgstr "Şehri"
+
+msgid "Township of"
+msgstr "İlçesi"
+
+msgid "Street and Number"
+msgstr "Sokak ve Numara"
+
+msgid "Place of birth, county"
+msgstr "Doğum yeri, ilçe"
+
+msgid "Place of birth, state or territory"
+msgstr "Doğum yeri, eyalet veya bölge"
+
+msgid "Place of birth, country"
+msgstr "Doğum yeri, ülke"
+
+msgid "Father (N, Native; F, Foreign)"
+msgstr "Baba (Y, Yerli; E, Ecnebi)"
+
+msgid "Mother (N, Native; F, Foreign)"
+msgstr "Anne (Y, Yerli; E, Ecnebi)"
+
+msgid "Subject to military duty"
+msgstr "Askerlik görevine tabi"
+
+msgid "Entitled to vote"
+msgstr "Oy kullanma hakkına sahip"
+
+msgid "Alien who has taken out first papers"
+msgstr "İlk vatandaşlık başvurusunu yapmış yabancı"
+
+msgid "Alien who has not taken out first papers"
+msgstr "İlk vatandaşlık başvurusunu yapmamış yabancı"
+
+msgid "Over 10 and cannot read or write"
+msgstr "10 yaşından büyük ve okuma yazma bilmiyor"
+
+msgid "Over 10 and can read but not write"
+msgstr "10 yaşından büyük ve okuyabiliyor ama yazamıyor"
+
+msgid "Deaf and dumb, blind, insane, or idiotic"
+msgstr "Sağır ve dilsiz, kör, akıl hastası veya zihinsel engelli"
+
+msgid "Age 18 or older"
+msgstr "18 yaş veya üzeri"
+
+msgid "Age 5 to 18"
+msgstr "5-18 yaş arası"
+
+msgid "Age under 5"
+msgstr "5 yaşın altında"
+
+msgid "White Male"
+msgstr "Beyaz Erkek"
+
+msgid "White Female"
+msgstr "Beyaz Kadın"
+
+msgid "Colored Male"
+msgstr "Renkli Erkek"
+
+msgid "Colored Female"
+msgstr "Renkli Kadın"
+
+msgid "Single, Widowed, or Divorced"
+msgstr "Bekâr, Dul veya Boşanmış"
+
+msgid "Father (N,Native; F,Foreign)"
+msgstr "Baba (Y, Yerli; E, Ecnebi)"
+
+msgid "Mother (N,Native; F,Foreign)"
+msgstr "Anne (Y, Yerli; E, Ecnebi)"
+
+msgid "Religious belief"
+msgstr "Dini inanç"
+
+msgid "Can read but not write, over 10 years old"
+msgstr "Okuyabiliyor ama yazamıyor, 10 yaşından büyük"
+
+msgid "Cannot read or write, over 10 years old"
+msgstr "Okuyamıyor veya yazamıyor, 10 yaşından büyük"
+
+msgid "Children over 6 and under 17 not attending school in 1894"
+msgstr ""
+"1894 yılında okula devam etmeyen, 6 yaşından büyük ve 17 yaşından küçük "
+"çocuklar"
+
+msgid "Births in 1894"
+msgstr "1894 yılındaki doğumlar"
+
+msgid "Deaths in 1894"
+msgstr "1894 yılındaki ölümler"
+
+msgid "Deaf and dumb not in State School for Deaf"
+msgstr "Devlet Sağırlar Okulunda olmayan sağır ve dilsizler"
+
+msgid "Blind not in State College for Blind"
+msgstr "Devlet Körler Kolejinde olmayan körler"
+
+msgid "Insane not in State Hospital for Insane"
+msgstr "Devlet Akıl Hastanesinde olmayan akıl hastaları"
+
+msgid "Company if in Civil War"
+msgstr "İç Savaşta görev yaptıysa birliği"
+
+msgid "Regiment if in Civil War"
+msgstr "İç Savaşta görev yaptıysa alayı"
+
+msgid "State if in Civil War"
+msgstr "İç Savaşta görev yaptıysa eyaleti"
+
+msgid "Arm of service and rank if in Civil War"
+msgstr "İç Savaşta görev yaptıysa hizmet sınıfı ve rütbesi"
+
+msgid "Regiment if in Mexican War"
+msgstr "Meksika Savaşında görev yaptıysa alayı"
+
+msgid "State if in Mexican War"
+msgstr "Meksika Savaşında görev yaptıysa eyaleti"
+
+msgid "Card No."
+msgstr "Kart No."
+
+msgid "P.O. Address"
+msgstr "Posta Kutusu Adresi"
+
+msgid "P. O. Address"
+msgstr "Posta Kutusu Adresi"
+
+msgid "Can you read?"
+msgstr "Okuyabiliyor musunuz?"
+
+msgid "Can you write?"
+msgstr "Yazabiliyor musunuz?"
+
+msgid "Color, White-Black-Yellow-Red"
+msgstr "Renk: Beyaz-Siyah-Sarı-Kırmızı"
+
+msgid "Place of Birth-Self"
+msgstr "Doğum Yeri-Kendisi"
+
+msgid "Place of birth, Self"
+msgstr "Doğum yeri, Kendisi"
+
+msgid "Place of Birth-Mother"
+msgstr "Doğum Yeri-Annesi"
+
+msgid "Place of birth, Mother"
+msgstr "Doğum yeri, Annesi"
+
+msgid "Place of Birth-Father"
+msgstr "Doğum Yeri-Babası"
+
+msgid "Place of birth, Father"
+msgstr "Doğum yeri, Babası"
+
+msgid "Own home or farm"
+msgstr "Kendi evi veya çiftliği"
+
+msgid "Do you own your home or farm?"
+msgstr "Ev veya çiftlik sahibi misiniz?"
+
+msgid "Value of home or farm"
+msgstr "Ev veya çiftliğin değeri"
+
+msgid "Entire value of home or farm?"
+msgstr "Ev veya çiftliğin toplam değeri?"
+
+msgid "How much incumberance on home or farm"
+msgstr "Ev veya çiftlik üzerindeki ipotek miktarı"
+
+msgid "How much incumberance on your home or farm?"
+msgstr "Ev veya çiftliğinizde ne kadar ipotek var?"
+
+msgid "If foreign born, are you naturalized"
+msgstr "Yabancı doğumluysanız, vatandaşlığa kabul edildiniz mi"
+
+msgid "If you are foreign born, are you naturalized?"
+msgstr "Yabancı doğumluysanız, vatandaşlığa kabul edildiniz mi?"
+
+msgid "Years in U.S."
+msgstr "ABD'de geçirilen yıllar."
+
+msgid "Years in Iowa"
+msgstr "Iowa'da geçirilen yıllar"
+
+msgid "Years in Iowa>"
+msgstr "Iowa'da geçirilen yıllar>"
+
+msgid "Conjugal condition; Single-Married-Widowed-Divorced-Separated"
+msgstr "Medeni durum; Bekâr-Evli-Dul-Boşanmış-Ayrı"
+
+msgid "Months in school in 1904-Public"
+msgstr "1904 yılında okulda geçirilen ay sayısı-Devlet Okulu"
+
+msgid "Months in school in 1904; Public"
+msgstr "1904 yılında okulda geçirilen ay sayısı; Devlet Okulu"
+
+msgid "Months in school in 1904-High"
+msgstr "1904 yılında okulda geçirilen ay sayısı-Lise"
+
+msgid "Months in school in 1904; High"
+msgstr "1904 yılında okulda geçirilen ay sayısı; Lise"
+
+msgid "Months in school in 1904-Private"
+msgstr "1904 yılında okulda geçirilen ay sayısı-Özel Okul"
+
+msgid "Months in school in 1904; Private"
+msgstr "1904 yılında okulda geçirilen ay sayısı; Özel Okul"
+
+msgid "Months in school in 1904-College"
+msgstr "1904 yılında okulda geçirilen ay sayısı-Kolej"
+
+msgid "Months in school in 1904; College"
+msgstr "1904 yılında okulda geçirilen ay sayısı; Kolej"
+
+msgid "Months unemployed in 1904"
+msgstr "1904 yılında işsiz geçirilen ay sayısı"
+
+msgid "Military-Service in which war"
+msgstr "Askerlik Hizmeti; hangi savaşta"
+
+msgid "Military Service in; Civil War-Mexican War-Spanish War"
+msgstr "Askerlik Hizmeti; İç Savaş-Meksika Savaşı-İspanyol Savaşı"
+
+msgid "Military-Company"
+msgstr "Askerî Birlik"
+
+msgid "Military Service; Company"
+msgstr "Askerlik Hizmeti; Birlik"
+
+msgid "Military-Regiment"
+msgstr "Askeri Alay"
+
+msgid "Military Service; Regiment"
+msgstr "Askerlik Hizmeti; Alay"
+
+msgid "Military-State"
+msgstr "Askerlik-Eyalet"
+
+msgid "Military Service; State"
+msgstr "Askerlik Hizmeti; Eyalet"
+
+msgid "Military-Class of service"
+msgstr "Askeri Hizmet Sınıfı"
+
+msgid "Military Service; Class of service; Cavalry-Infantry-Artillery-Navy"
+msgstr "Askerlik Hizmeti; Hizmet sınıfı; Süvari-Piyade-Topçu-Donanma"
+
+msgid "Military-Date of enlistment"
+msgstr "Askerlik Kayıt Tarihi"
+
+msgid "Military Service; Date of enlistment"
+msgstr "Askerlik Hizmeti; Kayıt tarihi"
+
+msgid "Military-Date of discharge"
+msgstr "Askerlik-Terhis tarihi"
+
+msgid "Military Service; Date of discharge"
+msgstr "Askerlik Hizmeti; Terhis tarihi"
+
+msgid "Military-Remarks"
+msgstr "Askerlik-Açıklamalar"
+
+msgid "Military Service; Remarks"
+msgstr "Askerlik Hizmeti; Açıklamalar"
+
+msgid "Town or Township"
+msgstr "Kasaba veya İlçe"
+
+msgid "Months in 1914 Unemployed"
+msgstr "1914'te İşsiz Geçirilen Ay Sayısı"
+
+msgid "Earnings for 1914 from occupation"
+msgstr "1914 Yılında Meslekten Elde Edilen Kazanç"
+
+msgid "Extent of Education Common"
+msgstr "İlkokul Eğitim Düzeyi"
+
+msgid "Extent of Education Grammar"
+msgstr "Ortaokul Eğitim Düzeyi"
+
+msgid "Extent of Education High School"
+msgstr "Lise Eğitim Düzeyi"
+
+msgid "Extent of Education College"
+msgstr "Üniversite Eğitim Düzeyi"
+
+msgid "Own house or farm"
+msgstr "Kendi evi veya çiftliği"
+
+msgid "Incumbrance on farm or home"
+msgstr "Çiftlik veya ev üzerinde ipotek"
+
+msgid "Value of farm or home"
+msgstr "Çiftliğin veya evin değeri"
+
+msgid "Military Service: Civil War"
+msgstr "Askerlik Hizmeti: İç Savaş"
+
+msgid "Military Service: Mexican"
+msgstr "Askerlik Hizmeti: Meksika"
+
+msgid "Military Service: Spanish"
+msgstr "Askerlik Hizmeti: İspanya"
+
+msgid "Military Service: Infantry"
+msgstr "Askerlik Hizmeti: Piyade"
+
+msgid "Military Service: Cavalry"
+msgstr "Askerlik Hizmeti: Süvari"
+
+msgid "Military Service: Artillery"
+msgstr "Askerlik Hizmeti: Topçu"
+
+msgid "Military Service: Navy"
+msgstr "Askerlik Hizmeti: Donanma"
+
+msgid "Military Service: State"
+msgstr "Askerlik Hizmeti: Eyalet"
+
+msgid "Military Service: Regiment"
+msgstr "Askerlik Hizmeti: Alay"
+
+msgid "Military Service: Company"
+msgstr "Askerlik Hizmeti: Bölük"
+
+msgid "Church Affiliation"
+msgstr "Bağlı Olduğu Kilise"
+
+msgid "Father's Birthplace"
+msgstr "Babanın Doğum Yeri"
+
+msgid "Mother's Birthplace"
+msgstr "Annenin Doğum Yeri"
+
+msgid "Months in School 1914: Public"
+msgstr "1914'te Okulda Geçirilen Ay Sayısı: Devlet Okulu"
+
+msgid "Months in School 1914: High"
+msgstr "1914'te Okulda Geçirilen Ay Sayısı: Lise"
+
+msgid "Months in School 1914: Private"
+msgstr "1914'te Okulda Geçirilen Ay Sayısı: Özel Okul"
+
+msgid "Months in School 1914: College"
+msgstr "1914'te Okulda Geçirilen Ay Sayısı: Üniversite"
+
+msgid "Deaf"
+msgstr "Sağır"
+
+msgid "Idiot"
+msgstr "Ahmak"
+
+msgid "Naturalized if foreign born?"
+msgstr "Yabancı doğumluysa vatandaşlığa alınmış mı?"
+
+msgid "House Number"
+msgstr "Ev Numarası"
+
+msgid "Color or Race"
+msgstr "Renk veya Irk"
+
+msgid "Home Owned or Rented"
+msgstr "Ev Sahibi veya Kiracı"
+
+msgid "Home Owned Free or Mortgaged"
+msgstr "Ev Borçsuz veya İpotekli"
+
+msgid "Home Value"
+msgstr "Evin Değeri"
+
+msgid "Mortgage Debt"
+msgstr "İpotek Borcu"
+
+msgid "Monthly Rent"
+msgstr "Aylık Kira"
+
+msgid "Insurance on Home"
+msgstr "Ev Sigortası"
+
+msgid "Years in US"
+msgstr "ABD'de Geçirilen Yıllar"
+
+msgid "Attended Rural School"
+msgstr "Kırsal Okula Devam Etti"
+
+msgid "Attended Grade School"
+msgstr "İlkokula Devam Etti"
+
+msgid "Attended High School"
+msgstr "Liseye Devam Etti"
+
+msgid "Attended College"
+msgstr "Üniversiteye Devam Etti"
+
+msgid "Highest Grade Rural School"
+msgstr "Kırsal Okulda Tamamlanan En Yüksek Sınıf"
+
+msgid "Highest Grade Grammar School"
+msgstr "İlkokulda Tamamlanan En Yüksek Sınıf"
+
+msgid "Highest Grade High School"
+msgstr "Lisede Tamamlanan En Yüksek Sınıf"
+
+msgid "No. Years College"
+msgstr "Üniversitede Okunan Yıllar"
+
+msgid "Months in School 1924"
+msgstr "1924'te Okulda Geçirilen Aylar"
+
+msgid "Able to Read"
+msgstr "Okuyabiliyor"
+
+msgid "Able to Write"
+msgstr "Yazabiliyor"
+
+msgid "Father's Name"
+msgstr "Babanın Adı"
+
+msgid "Father's Place of Birth"
+msgstr "Babanın Doğum Yeri"
+
+msgid "Mother's Name"
+msgstr "Annenin Adı"
+
+msgid "Mother's Place of Birth"
+msgstr "Annenin Doğum Yeri"
+
+msgid "Parents Place of Marriage"
+msgstr "Ebeveynlerin Evlilik Yeri"
+
+msgid "Civil War Veteran"
+msgstr "İç Savaş Gazisi"
+
+msgid "Civil War Service Branch"
+msgstr "İç Savaş Hizmet Kolu"
+
+msgid "Civil War State"
+msgstr "İç Savaş Eyaleti"
+
+msgid "Spanish-American War Veteran"
+msgstr "İspanyol-Amerikan Savaşı Gazisi"
+
+msgid "Spanish-American War Service Branch"
+msgstr "İspanyol-Amerikan Savaşı Hizmet Kolu"
+
+msgid "Spanish-American War State"
+msgstr "İspanyol-Amerikan Savaşı Eyaleti"
+
+msgid "World War Veteran"
+msgstr "Dünya Savaşı Gazisi"
+
+msgid "World War Service Branch"
+msgstr "Dünya Savaşı Hizmet Kolu"
+
+msgid "World War State"
+msgstr "Dünya Savaşı Eyaleti"
+
+msgid "Agricultural Pursuits"
+msgstr "Tarımsal Uğraşlar"
+
+msgid "Professional Services"
+msgstr "Profesyonel Hizmetler"
+
+msgid "Domestic/Personal Services"
+msgstr "Ev İçi/Kişisel Hizmetler"
+
+msgid "Trade and Transportation"
+msgstr "Ticaret ve Ulaştırma"
+
+msgid "Manufacturing and Mechanical"
+msgstr "İmalat ve Mekanik İşler"
+
+msgid "Unclassified Laborer"
+msgstr "Sınıflandırılmamış İşçi"
+
+msgid "Months unemployed due to illness"
+msgstr "Hastalık nedeniyle işsiz kalınan aylar"
+
+msgid "Income lost due to illness"
+msgstr "Hastalık nedeniyle kaybedilen gelir"
+
+msgid "Months unemployed"
+msgstr "İşsiz kalınan aylar"
+
+msgid "Free Inhabitants in"
+msgstr "Özgür Sakinler"
+
+msgid "Regiment"
+msgstr "Alay"
+
+msgid "Real Estate"
+msgstr "Gayrimenkul"
+
+msgid "Personal Estate"
+msgstr "Kişisel Mal Varlığı"
+
+msgid "Attended School"
+msgstr "Okula Devam Etti"
+
+msgid "Illiterate"
+msgstr "Okuma Yazma Bilmiyor"
+
+msgid "Disabled"
+msgstr "Engelli"
+
+msgid "Personal Property"
+msgstr "Kişisel Mülkiyet"
+
+msgid "Where From"
+msgstr "Nereden"
+
+msgid "School"
+msgstr "Okul"
+
+msgid "Cannot Read 10-15"
+msgstr "10-15 Yaş Arası Okuyamayanlar"
+
+msgid "Cannot Read 15-21"
+msgstr "15-21 Yaş Arası Okuyamayanlar"
+
+msgid "Cannot Read 21+"
+msgstr "21 Yaş ve Üzeri Okuyamayanlar"
+
+msgid "Cannot Write 10-15"
+msgstr "10-15 Yaş Arası Yazamayanlar"
+
+msgid "Cannot Write 15-21"
+msgstr "15-21 Yaş Arası Yazamayanlar"
+
+msgid "Cannot Write 21+"
+msgstr "21 Yaş ve Üzeri Yazamayanlar"
+
+msgid "Cannot Read/Write 10-15"
+msgstr "10-15 Yaş Arası Okuyamayanlar/Yazamayanlar"
+
+msgid "Cannot Read/Write 15-21"
+msgstr "15-21 Yaş Arası Okuyamayanlar/Yazamayanlar"
+
+msgid "Cannot Read/Write 21+"
+msgstr "21 Yaş ve Üzeri Okuyamayanlar/Yazamayanlar"
+
+msgid "Widow(er)"
+msgstr "Dul(lar)"
+
+msgid "Learning"
+msgstr "Öğrenim"
+
+msgid "Illiteracy 10-15"
+msgstr "10-15 Yaş Arası Okuma Yazma Bilmeyenler"
+
+msgid "Illiteracy 15-21"
+msgstr "15-21 Yaş Arası Okuma Yazma Bilmeyenler"
+
+msgid "Illiteracy 21+"
+msgstr "21 Yaş ve Üzeri Okuma Yazma Bilmeyenler"
+
+msgid "Honorably discharged"
+msgstr "Şerefli terhis"
+
+msgid "State Enlisted"
+msgstr "Askere yazıldığı eyalet"
+
+msgid "Arm of Service"
+msgstr "Hizmet sınıfı"
+
+msgid "Prison"
+msgstr "Hapishane"
+
+msgid "Where from Kansas"
+msgstr "Kansas'tan nereli"
+
+msgid "Trade or profession being learned"
+msgstr "Öğrenilmekte olan zanaat veya meslek"
+
+msgid "Illiterate and 10 to 15 years old"
+msgstr "Okuma Yazma Bilmeyen ve 10-15 Yaş Arası"
+
+msgid "Illiterate and 16 to 21 years old"
+msgstr "Okuma Yazma Bilmeyen ve 16-21 Yaş Arası"
+
+msgid "Illiterate and over 21"
+msgstr "Okuma Yazma Bilmeyen ve 21 Yaş Üzeri"
+
+msgid "Honorably discharged from military service"
+msgstr "Askerlik hizmetinden şerefli terhis"
+
+msgid "State in which enlisted"
+msgstr "Askere yazıldığı eyalet"
+
+msgid "Company or command"
+msgstr "Bölük veya komutanlık"
+
+msgid "Regiment or other organization"
+msgstr "Alay veya diğer birlik"
+
+msgid "Arm of service"
+msgstr "Hizmet sınıfı"
+
+msgid "Prison in which confined as a prisoner of war"
+msgstr "Savaş esiri olarak tutulduğu hapishane"
+
+msgid "Home owned free or mortgaged"
+msgstr "Ev kendisine ait ve borçsuz veya ipotekli"
+
+msgid "Where from to Kansas"
+msgstr "Kansas'a nereden geldi"
+
+msgid "Number of months unemployed"
+msgstr "İşsiz kaldığı ay sayısı"
+
+msgid "Illiterate and 15 to 21 years old"
+msgstr "Okuma yazma bilmeyen ve 15-21 yaş arası"
 
 msgid "Number of volumes in home library"
 msgstr "Ev kütüphanesindeki cilt sayısı"
 
+msgid "Number of house"
+msgstr "Ev numarası"
+
+msgid "Year of immigration to the United States"
+msgstr "Amerika Birleşik Devletleri'ne göç ettiği yıl"
+
+msgid "Naturalized, alien or first papers"
+msgstr ""
+"Vatandaşlığa kabul edilmiş, yabancı uyruklu veya ilk vatandaşlık belgelerini "
+"almış"
+
+msgid "Attended school within year"
+msgstr "Yıl içinde okula devam etti"
+
+msgid "Nativity"
+msgstr "Doğum yeri"
+
+msgid "Father's Nativity"
+msgstr "Babanın doğum yeri"
+
+msgid "Mother's Nativity"
+msgstr "Annenin doğum yeri"
+
+msgid "Inhabitants in"
+msgstr "İkamet edenler"
+
+msgid "Served in Federal army during rebellion"
+msgstr "İsyan sırasında Federal orduda hizmet etti"
+
+msgid "Residence in State - Years"
+msgstr "Eyalette ikamet süresi - Yıllar"
+
+msgid "Residence in State - Months"
+msgstr "Eyalette ikamet süresi - Aylar"
+
+msgid "Residence in District - Years"
+msgstr "İlçede ikamet süresi - Yıllar"
+
+msgid "Residence in District - Months"
+msgstr "İlçede ikamet - Aylar"
+
+msgid "Months Employed"
+msgstr "Çalışılan Aylar"
+
+msgid "Solder/Sailor"
+msgstr "Lehimci/Denizci"
+
+msgid "Foreign father"
+msgstr "Yabancı baba"
+
+msgid "Foreign mother"
+msgstr "Yabancı anne"
+
+msgid "Organized Township"
+msgstr "Organize İlçe"
+
+msgid "Unorganized Township"
+msgstr "Organize Olmayan İlçe"
+
+msgid "Name of Village"
+msgstr "Köyün adı"
+
+msgid "Name of City"
+msgstr "Şehrin adı"
+
+msgid "Sub-division"
+msgstr "Alt bölge"
+
+msgid "Precincts"
+msgstr "Seçim bölgeleri"
+
+msgid "Enumerated date from"
+msgstr "Sayım başlangıç tarihi"
+
+msgid "Enumerated date to"
+msgstr "Sayım bitiş tarihi"
+
+msgid "Enumeration number"
+msgstr "Sayım numarası"
+
+msgid "Fathers birthplace"
+msgstr "Babanın doğum yeri"
+
+msgid "Mothers birthplace"
+msgstr "Annenin doğum yeri"
+
+msgid "Residence in District - years"
+msgstr "Bölgede ikamet süresi - yıllar"
+
+msgid "Residence in District - months"
+msgstr "Bölgede ikamet süresi - aylar"
+
+msgid "Army service"
+msgstr "Askerlik hizmeti"
+
+msgid "Wars"
+msgstr "Savaşlar"
+
+msgid "White males under 10"
+msgstr "10 yaş altı beyaz erkekler"
+
+msgid "White males 10-17"
+msgstr "10-17 yaş arası beyaz erkekler"
+
+msgid "White males 18-20"
+msgstr "18-20 yaş arası beyaz erkekler"
+
+msgid "White males 21-44"
+msgstr "21-44 yaş arası beyaz erkekler"
+
+msgid "White males 45 and over"
+msgstr "45 yaş ve üzeri beyaz erkekler"
+
+msgid "Total White Males"
+msgstr "Toplam beyaz erkek"
+
+msgid "White females under 10"
+msgstr "10 yaş altı beyaz kadınlar"
+
+msgid "White females 10-17"
+msgstr "10-17 yaş arası beyaz kadınlar"
+
+msgid "White females 18-20"
+msgstr "18-20 yaş arası beyaz kadınlar"
+
+msgid "White females 21-44"
+msgstr "21-44 yaş arası beyaz kadınlar"
+
+msgid "White females 45 and over"
+msgstr "45 yaş ve üzeri beyaz kadınlar"
+
+msgid "Total White Females"
+msgstr "Toplam beyaz kadın"
+
+msgid "Total White Population"
+msgstr "Toplam beyaz nüfus"
+
+msgid "White persons between 6 and 18"
+msgstr "6-18 yaş arasındaki beyaz kişiler"
+
+msgid "No. White persons who can read and write"
+msgstr "Okuyup yazabilen beyaz kişilerin sayısı"
+
+msgid "Colored males under 10"
+msgstr "10 yaş altı renkli erkekler"
+
+msgid "Colored males 10-17"
+msgstr "10-17 yaş arası renkli erkekler"
+
+msgid "Colored males 18-20"
+msgstr "18-20 yaş arası renkli erkekler"
+
+msgid "Colored males 21-44"
+msgstr "21-44 yaş arası renkli erkekler"
+
+msgid "Colored males 45 and over"
+msgstr "45 yaş ve üzeri renkli erkekler"
+
+msgid "Total Colored Males"
+msgstr "Toplam renkli erkek"
+
+msgid "Colored females under 10"
+msgstr "10 yaş altı renkli kadınlar"
+
+msgid "Colored females 10-17"
+msgstr "10-17 yaş arası renkli kadınlar"
+
+msgid "Colored females 18-20"
+msgstr "18-20 yaş arası renkli kadınlar"
+
+msgid "Colored females 21-44"
+msgstr "21-44 yaş arası renkli kadınlar"
+
+msgid "Colored females 45 and over"
+msgstr "45 yaş ve üzeri renkli kadınlar"
+
+msgid "Total Colored Females"
+msgstr "Toplam renkli kadın"
+
+msgid "Total Colored Population"
+msgstr "Toplam renkli nüfus"
+
+msgid "Colored persons between 6 and 18"
+msgstr "6-18 yaş arası renkli kişiler"
+
+msgid "No. Colored persons who can read and write"
+msgstr "Okuma ve yazma bilen renkli kişi sayısı"
+
+msgid "Deaf and Dumb Males"
+msgstr "Sağır ve dilsiz erkekler"
+
+msgid "Deaf and Dumb Males Age"
+msgstr "Sağır ve dilsiz erkeklerin yaşı"
+
+msgid "Deaf and Dumb Females"
+msgstr "Sağır ve dilsiz kadınlar"
+
+msgid "Deaf and Dumb Females Age"
+msgstr "Sağır ve dilsiz kadınların yaşı"
+
+msgid "Deaf and Dumb White"
+msgstr "Sağır ve Dilsiz Beyaz"
+
+msgid "Deaf and Dumb Colored"
+msgstr "Sağır ve Dilsiz Renkli"
+
+msgid "No. Deaf and Dumb taught to read and write"
+msgstr "Okuma ve yazma öğretilmiş sağır ve dilsiz sayısı"
+
+msgid "Blind Males"
+msgstr "Kör Erkekler"
+
+msgid "Blind Males Age"
+msgstr "Kör Erkeklerin Yaşı"
+
+msgid "Blind Females"
+msgstr "Kör Kadınlar"
+
+msgid "Blind Females Age"
+msgstr "Kör Kadınların Yaşı"
+
+msgid "Blind White"
+msgstr "Kör Beyazlar"
+
+msgid "Blind Colored"
+msgstr "Kör Renkliler"
+
+msgid "No. Blind taught to read and write"
+msgstr "Okuma ve yazma öğretilmiş kör sayısı"
+
+msgid "Insane Males"
+msgstr "Akıl Hastası Erkekler"
+
+msgid "Insane Males Age"
+msgstr "Akıl Hastası Erkeklerin Yaşı"
+
+msgid "Insane Females"
+msgstr "Akıl Hastası Kadınlar"
+
+msgid "Insane Females Age"
+msgstr "Akıl Hastası Kadınların Yaşı"
+
+msgid "Insane White"
+msgstr "Akıl Hastası Beyazlar"
+
+msgid "Insane Colored"
+msgstr "Akıl Hastası Renkliler"
+
+msgid "No. Insane taught to read and write"
+msgstr "Okuma ve yazma öğretilmiş akıl hastası sayısı"
+
+msgid "Live Stock Horses"
+msgstr "Canlı Hayvanlık Atlar"
+
+msgid "Live Stock Mules"
+msgstr "Canlı Hayvanlık Katırlar"
+
+msgid "Live Stock Jacks"
+msgstr "Canlı Hayvanlık Eşekler"
+
+msgid "Live Stock Jennies"
+msgstr "Canlı Hayvanlık Dişi Katırlar"
+
+msgid "Live Stock Cattle"
+msgstr "Canlı Hayvanlık Sığırlar"
+
+msgid "Live Stock Sheep"
+msgstr "Canlı Hayvanlık Koyunlar"
+
+msgid "Live Stock Hogs"
+msgstr "Canlı Hayvanlık Domuzlar"
+
+msgid "Products Bushels Wheat"
+msgstr "Ürünler Buğday, kile olarak"
+
+msgid "Products Bushels Corn"
+msgstr "Ürünler Mısır, kile olarak"
+
+msgid "Products Bushels Oats"
+msgstr "Ürünler Yulaf, kile olarak"
+
+msgid "Products Bushels Barley"
+msgstr "Ürünler Çavdar, kile olarak"
+
+msgid "Products Bushels Rye"
+msgstr "Ürünler Çavdar, kile olarak"
+
+msgid "Products Lbs. Tobacco"
+msgstr "Ürünler Tütün, kile olarak"
+
+msgid "Products Lbs. Wool"
+msgstr "Ürünler Yün, kile olarak"
+
+msgid "Products Lbs. Sugar"
+msgstr "Ürünler Şeker, kile olarak"
+
+msgid "Products Tons Hay"
+msgstr "Ürünler Saman, kile olarak"
+
+msgid "Products Tons Hemp"
+msgstr "Ürünler Kenevir, kile olarak"
+
+msgid "Products Galls. Whiskey"
+msgstr "Ürünler Viski, galon olarak"
+
+msgid "Products Galls. Wine"
+msgstr "Ürünler Şarap, galon olarak"
+
+msgid "Products Galls. Molasses"
+msgstr "Ürünler Pekmez, galon olarak"
+
+msgid "Total Population"
+msgstr "Toplam Nüfus"
+
+msgid "Building Material"
+msgstr "Yapı Malzemesi"
+
+msgid "Dwelling Value"
+msgstr "Konut Değeri"
+
+msgid "Birthplace (NY County or other)"
+msgstr "Doğum Yeri (New York ilçesi veya başka bir yer)"
+
+msgid "Years resident in this city or town"
+msgstr "Bu şehir veya kasabada ikamet edilen yıllar"
+
+msgid "Native Voter"
+msgstr "Vatandaşlığa Geçirilmiş Seçmen"
+
+msgid "Naturalized Voter"
+msgstr "Vatandaşlığa Alınmış Seçmen"
+
+msgid "Alien"
+msgstr "Yabancı"
+
+msgid "Persons of color not taxed"
+msgstr "Vergiye tabi olmayan renkli kişiler"
+
+msgid "Over 21/Illiterate"
+msgstr "21 Yaş Üstü/Okuma Yazma Bilmeyen"
+
+msgid "Landowner"
+msgstr "Toprak Sahibi"
+
+msgid "Deaf, Dumb, Blind, Insane, Idiotic"
+msgstr "Sağır, Dilsiz, Kör, Akıl Hastası, Zihinsel Engelli"
+
+msgid "Inhabitants in the"
+msgstr "Yerleşik kişiler"
+
+msgid "Parent of how many children"
+msgstr "Kaç çocuğun ebeveyni olduğu"
+
+msgid "Number of times married"
+msgstr "Evlilik sayısı"
+
+msgid "Place of Occupation"
+msgstr "Meslek yeri"
+
+msgid "Land owner"
+msgstr "Arazi sahibi"
+
+msgid "Now in army"
+msgstr "Şu anda orduda"
+
+msgid "Now in navy"
+msgstr "Şu anda donanmada"
+
+msgid "Formerly in army"
+msgstr "Daha önce orduda"
+
+msgid "Formerly in navy"
+msgstr "Daha önce donanmada"
+
+msgid "Usual place of employment (if not same city/town)"
+msgstr "Olağan çalışma yeri (aynı şehir/kasabada değilse)"
+
+msgid "Election District of the Town of"
+msgstr "Kasabasının Seçim Bölgesi"
+
+msgid "the County of"
+msgstr "İlçesi"
+
+msgid "Birth Country"
+msgstr "Doğum Ülkesi"
+
+msgid "Citizen or Alien"
+msgstr "Vatandaş veya Yabancı"
+
+msgid "Inhabitants living in"
+msgstr "Yaşayan sakinler"
+
+msgid "Election District, Ward"
+msgstr "Seçim Bölgesi, Mahalle"
+
+msgid "Number of years in the US"
+msgstr "ABD'de geçirilen yıl sayısı"
+
+msgid "Class"
+msgstr "Sınıf"
+
+msgid "Inmate: Residence given when admitted"
+msgstr "Kurum sakini: Kabul edildiğinde verilen ikamet adresi"
+
+msgid "Inhabitants of Block No."
+msgstr "Blok No. sakinleri."
+
+msgid "Election District No."
+msgstr "Seçim Bölgesi No."
+
+msgid "Ward No."
+msgstr "Mahalle No."
+
+msgid "City or Village"
+msgstr "Şehir veya Köy"
+
+msgid "Assembly District No."
+msgstr "Meclis Bölgesi No."
+
+msgid "Where and When Naturalized"
+msgstr "Vatandaşlığa Kabul Edilme Yeri ve Zamanı"
+
+msgid "WM 21-60"
+msgstr "21-60 Yaş Arası Erkek"
+
+msgid "WM under 21 above 60 "
+msgstr "21 Yaş Altı ve 60 Yaş Üstü Erkek "
+
+msgid "WF all ages"
+msgstr "Her Yaştan Kadın"
+
+msgid "Blacks 12-50"
+msgstr "12-50 Yaş Arası Siyahlar"
+
+msgid "Blacks under 12 above 50"
+msgstr "12 Yaş Altı ve 50 Yaş Üstü Siyahlar"
+
+msgid "Native White Males"
+msgstr "Yerli Beyaz Erkekler"
+
+msgid "Native White Females"
+msgstr "Yerli Beyaz Kadınlar"
+
+msgid "Native Colored Males"
+msgstr "Yerli Renkli Erkekler"
+
+msgid "Native Colored Females"
+msgstr "Yerli Renkli Kadınlar"
+
+msgid "Foreign Males"
+msgstr "Yabancı Erkekler"
+
+msgid "Foreign Females"
+msgstr "Yabancı Kadınlar"
+
+msgid "Male Children 5 and Under"
+msgstr "5 Yaş ve Altındaki Erkek Çocuklar"
+
+msgid "Female Children 5 and Under"
+msgstr "5 Yaş ve Altındaki Kız Çocuklar"
+
+msgid "Males 5 to 20 Years of Age"
+msgstr "5 ile 20 Yaş Arasındaki Erkekler"
+
+msgid "Females 5 to 20 Years of Age"
+msgstr "5 ile 20 Yaş Arasındaki Kadınlar"
+
+msgid "Males 20 to 60 Years of Age"
+msgstr "20 ile 60 Yaş Arasındaki Erkekler"
+
+msgid "Females 20 to 60 Years of Age"
+msgstr "20 ile 60 Yaş Arasındaki Kadınlar"
+
+msgid "Males Over 60 Years of Age"
+msgstr "60 Yaş Üstü Erkekler"
+
+msgid "Females Over 60 Years of Age"
+msgstr "60 Yaş Üstü Kadınlar"
+
+msgid "P.O."
+msgstr "Posta Kodu"
+
+msgid "Sec."
+msgstr "Bölüm"
+
+msgid "T."
+msgstr "T."
+
+msgid "R."
+msgstr "R."
+
+msgid "No."
+msgstr "No."
+
+msgid "St./Ave "
+msgstr "Cad./Bulv. "
+
+msgid "Hotel or Institution"
+msgstr "Otel veya Kurum"
+
+msgid "Years in South Dakota"
+msgstr "Güney Dakota'da geçirilen yıllar"
+
+msgid "Years in United States"
+msgstr "Amerika Birleşik Devletleri'nde geçirilen yıllar"
+
+msgid "Birthplace of Father"
+msgstr "Babanın Doğum Yeri"
+
+msgid "Birthplace of Mother"
+msgstr "Annenin Doğum Yeri"
+
+msgid "Black"
+msgstr "Siyah"
+
+msgid "Red"
+msgstr "Kırmızı"
+
+msgid "Yellow"
+msgstr "Sarı"
+
+msgid "Divorced"
+msgstr "Boşanmış"
+
+msgid "Can Read"
+msgstr "Okuyabiliyor"
+
+msgid "Can't Read"
+msgstr "Okuyamıyor"
+
+msgid "Can Write"
+msgstr "Yazabiliyor"
+
+msgid "Can't Write"
+msgstr "Yazamıyor"
+
+msgid "Do you own your home or farm"
+msgstr "Eviniz veya çiftliğiniz size mi ait"
+
+msgid "Ancestry"
+msgstr "Soy"
+
+msgid "Father's birthplace"
+msgstr "Babanın doğum yeri"
+
+msgid "Mother's birthplace"
+msgstr "Annenin doğum yeri"
+
+msgid "Extent of Education"
+msgstr "Eğitim Düzeyi"
+
+msgid "Graduate of"
+msgstr "Mezun Olduğu Okul"
+
+msgid "Maiden name of wife"
+msgstr "Eşin kızlık soyadı"
+
+msgid "Year married"
+msgstr "Evlilik yılı"
+
+msgid "Church affiliation"
+msgstr "Bağlı olduğu kilise"
+
+msgid "If Foreign Born, are you Naturalized"
+msgstr "Yabancı Doğumluysa, Vatandaşlığa Kabul Edildi mi"
+
+msgid "Years in S.D."
+msgstr "Güney Dakota'da Geçirilen Yıllar."
+
+msgid "Division"
+msgstr "Bölge"
+
+msgid "Male under 21"
+msgstr "21 yaş altı erkek"
+
+msgid "Male over 21"
+msgstr "21 yaş üstü erkek"
+
+msgid "Female under 21"
+msgstr "21 yaş altı kadın"
+
+msgid "Female over 21"
+msgstr "21 yaş üstü kadın"
+
+msgid "Town/City"
+msgstr "Kasaba/Şehir"
+
+msgid "Heads of Families"
+msgstr "Aile Reisleri"
+
+msgid "White males"
+msgstr "Beyaz erkekler"
+
+msgid "White females"
+msgstr "Beyaz kadınlar"
+
+msgid "Colored males"
+msgstr "Renkli erkekler"
+
+msgid "Colored females"
+msgstr "Renkli kadınlar"
+
+msgid "Deaf & Dumb"
+msgstr "Sağır ve Dilsiz"
+
+msgid "Foreign Birth"
+msgstr "Yabancı Doğumlu"
+
+msgid "Inhabitants of"
+msgstr "Sakinleri"
+
+msgid "in"
+msgstr "içinde"
+
 msgid "of"
 msgstr "<"
 
+msgid "Nativity - United States"
+msgstr "Doğum Yeri - Amerika Birleşik Devletleri"
+
+msgid "Nativity - Germany"
+msgstr "Doğum Yeri - Almanya"
+
+msgid "Nativity - Great Britain"
+msgstr "Doğum Yeri - Büyük Britanya"
+
+msgid "Nativity - Ireland"
+msgstr "Doğum Yeri - İrlanda"
+
+msgid "Nativity - France"
+msgstr "Doğum Yeri - Fransa"
+
+msgid "Nativity - British America"
+msgstr "Doğum Yeri - Britanya Amerikası"
+
+msgid "Nativity - Scandinavian"
+msgstr "Doğum Yeri - İskandinavya"
+
+msgid "Nativity - Holland"
+msgstr "Doğum Yeri - Hollanda"
+
+msgid "Nativity - All other countries"
+msgstr "Doğum Yeri - Diğer tüm ülkeler"
+
+msgid "Residing in the"
+msgstr "İkamet eden"
+
+msgid "Co."
+msgstr "İlçe"
+
+msgid "Reg't."
+msgstr "Alay."
+
+msgid "State or Vessel"
+msgstr "Eyalet veya Gemi"
+
+msgid "Parents place of birth"
+msgstr "Ebeveynlerin doğum yeri"
+
+msgid "Owned/Rented"
+msgstr "Mülk Sahibi/Kiracı"
+
+msgid "Free/Mortgaged"
+msgstr "Borçsuz/İpotekli"
+
+msgid "Farm/House"
+msgstr "Çiftlik/Ev"
+
+msgid "Certificate Number"
+msgstr "Sertifika Numarası"
+
+msgid "Entry Number"
+msgstr "Giriş Numarası"
+
+msgid "Date Registered"
+msgstr "Kayıt Tarihi"
+
+msgid "Registrar"
+msgstr "Kayıt Memuru"
+
+msgid "Twin, triplet or other"
+msgstr "İkiz, üçüz veya diğer"
+
+msgid "No. in order of birth"
+msgstr "Doğum sırasındaki numarası"
+
+msgid "Legitimate"
+msgstr "Meşru"
+
+msgid "Date of birth"
+msgstr "Doğum tarihi"
+
+msgid "Place of Record"
+msgstr "Kayıt Yeri"
+
 msgid "Book/Volume"
 msgstr "Kitap/Cilt"
+
+msgid "Race/Color"
+msgstr "Irk/Renk"
+
+msgid ""
+"STOP! If you want this record to be attached to the Parents move to Father."
+msgstr "DUR! Bu kaydın Ebeveynlere eklenmesini istiyorsanız Babaya gidin."
+
+msgid "Mother (Maiden Name)"
+msgstr "Anne (Kızlık Soyadı)"
+
+msgid "Residence of Parents"
+msgstr "Ebeveynlerin İkamet Yeri"
+
+msgid "By Whom Reported"
+msgstr "Bildirimi Yapan Kişi"
+
+msgid "Date Recorded"
+msgstr "Kayıt Tarihi"
+
+msgid "License No."
+msgstr "Lisans No."
+
+msgid "Date of Marriage"
+msgstr "Evlilik Tarihi"
+
+msgid "Married by"
+msgstr "Evlendiren Kişi"
+
+msgid "Place of Marriage"
+msgstr "Evlilik Yeri"
+
+msgid "Consent given by"
+msgstr "Onay veren kişi"
+
+msgid "Bond/Licence"
+msgstr "Teminat/Lisans"
+
+msgid "Length of Residence"
+msgstr "İkamet Süresi"
+
+msgid "Served in U.S. Military"
+msgstr "ABD Ordusunda Hizmet Etti"
+
+msgid "Spouse's Name"
+msgstr "Eşinin Adı"
+
+msgid "Birth date of deceased"
+msgstr "Ölenin doğum tarihi"
+
+msgid "Industry or Business"
+msgstr "Sektör veya İşletme"
+
+msgid "Name of employer"
+msgstr "İşverenin adı"
+
+msgid "Date last worked"
+msgstr "Son çalışma tarihi"
+
+msgid "Years in this occupation"
+msgstr "Bu meslekte geçirilen yıllar"
+
+msgid "Education Level"
+msgstr "Eğitim Düzeyi"
+
+msgid "Social Security No."
+msgstr "Sosyal Güvenlik No."
+
+msgid "Place of Burial"
+msgstr "Defin Yeri"
+
+msgid "Date of Burial"
+msgstr "Defin Tarihi"
+
+msgid "Residence Place"
+msgstr "İkametgâh Yeri"
+
+msgid "Burial Date"
+msgstr "Defin Tarihi"
+
+msgid "Burial Place"
+msgstr "Defin Yeri"
+
+msgid "Congressional District"
+msgstr "Kongre Bölgesi"
+
+msgid "in the Counties of"
+msgstr "İlçelerinde"
+
+msgid "in the month of"
+msgstr "Ayında"
+
+msgid "Age 1 July 1863"
+msgstr "1 Temmuz 1863 tarihindeki yaşı"
+
+msgid "White or Colored"
+msgstr "Beyaz veya Renkli"
+
+msgid "Former Military Service"
+msgstr "Önceki Askerlik Hizmeti"
+
+msgid "Station Headquarters"
+msgstr "Karargâh"
+
+msgid "Congr. Dist. of"
+msgstr "Kongre Bölgesi"
+
+msgid "Card (A, B, or C)"
+msgstr "Kart (A, B veya C)"
+
+msgid "Serial No."
+msgstr "Seri No."
+
+msgid "Registration No."
+msgstr "Kayıt No."
+
+msgid "Order No."
+msgstr "Sıra No."
+
+msgid "Age in yrs."
+msgstr "Yaş, yıl olarak."
+
+msgid "Home Address"
+msgstr "Ev Adresi"
+
+msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
+msgstr ""
+"Doğuştan Yerli, Vatandaşlığa Kabul Edilmiş Vatandaş, Yabancı, Vatandaş "
+"Olmayan veya Hintli Vatandaş"
+
+msgid "If not a citizen, of what nation are you a citizen or subject?"
+msgstr "Vatandaş değilseniz, hangi ülkenin vatandaşı veya tebaasısınız?"
+
+msgid "Employer's Name & address"
+msgstr "İşverenin Adı ve Adresi"
+
+msgid "Nearest Relative"
+msgstr "En Yakın Akraba"
+
+msgid "Dependants & Address"
+msgstr "Bağımlı Kişiler ve Adresleri"
+
+msgid ""
+"Have you a father, mother, wife, child under 12, or a sister or brother "
+"under 12, solely dependent on your support (specify which)?"
+msgstr ""
+"Yalnızca sizin desteğinize bağımlı olan bir babanız, anneniz, eşiniz, 12 "
+"yaşından küçük çocuğunuz veya 12 yaşından küçük kız ya da erkek kardeşiniz "
+"var mı (hangisi olduğunu belirtin)?"
+
+msgid "What military service have you had? (Branch, Years, Nation or State)"
+msgstr "Hangi askerlik hizmetini yaptınız? (Branş, Yıllar, Ülke veya Eyalet)"
+
+msgid "Do you claim exemption from draft (specify grounds)"
+msgstr ""
+"Askerlik hizmetinden muafiyet talep ediyor musunuz (gerekçelerinizi belirtin)"
+
+msgid "Race "
+msgstr "Irk "
+
+msgid "Build / Weight"
+msgstr "Yapı / Ağırlık"
+
+msgid "Hair Color"
+msgstr "Saç Rengi"
+
+msgid "Bald"
+msgstr "Kel"
+
+msgid "Disability"
+msgstr "Engellilik durumu"
+
+msgid "Place of Registration"
+msgstr "Kayıt Yeri"
+
+msgid "Date of Registration"
+msgstr "Kayıt Tarihi"
+
+msgid "Serial Number"
+msgstr "Seri Numarası"
+
+msgid "Order Number"
+msgstr "Sıra Numarası"
 
 msgid "Registration Card"
 msgstr "Kayıt Kartı"
@@ -356,6 +5609,9 @@ msgstr ""
 msgid "(1) First, Middle, Last"
 msgstr "(1) Ad, İkinci Ad, Soyadı"
 
+msgid "Place of Residence"
+msgstr "İkamet Yeri"
+
 msgid ""
 "(2) Address or Place of Residence\n"
 " No. and street or R.F.D. No., Town, County, State"
@@ -363,12 +5619,18 @@ msgstr ""
 "(2) Adres veya İkamet Yeri\n"
 " No. ve sokak adı veya R.F.D. No., Kasaba, İlçe, Eyalet"
 
+msgid "Mailing Address"
+msgstr "Posta Adresi"
+
 msgid ""
 " Not used on D.S.S. Form 1\n"
 " (3) Used on all other forms"
 msgstr ""
 " D.S.S. Form 1'de kullanılmaz\n"
 "(3) Diğer tüm formlarda kullanılır"
+
+msgid "Telephone"
+msgstr "Telefon"
 
 msgid ""
 "(3) On D.S.S. Form 1\n"
@@ -404,6 +5666,9 @@ msgstr ""
 "(6) D.S.S.'de Form 1\n"
 "Diğer formlarda kullanılmaz"
 
+msgid "Who will always know your address (Name & Address)"
+msgstr "Adresinizi her zaman bilecek kişi (Ad ve Adres)"
+
 msgid ""
 "(7 & 9) On D.S.S. Form 1\n"
 "(7) On all but D.S.S. Form 1 (Rev. 6-9-41)\n"
@@ -434,6 +5699,9 @@ msgstr ""
 "(9) D.S.S. Form 1'de (Rev. 6-9-41)\n"
 "(8) diğer tüm formlarda"
 
+msgid "Place of employment or business"
+msgstr "Çalışma yeri veya işletme yeri"
+
 msgid ""
 "(11) On D.S.S. Form 1\n"
 "(10) On D.S.S. Form 1 (Rev. 6-9-41)\n"
@@ -456,6 +5724,9 @@ msgstr ""
 "Hintli\n"
 "Filipinli"
 
+msgid "Complexion"
+msgstr "Ten rengi"
+
 msgid ""
 "Sallow\n"
 "Light\n"
@@ -475,6 +5746,9 @@ msgstr ""
 "Koyu kahverengi\n"
 "Siyah"
 
+msgid "Eyes"
+msgstr "Gözler"
+
 msgid ""
 "Blue\n"
 "Gray\n"
@@ -487,6 +5761,9 @@ msgstr ""
 "Ela\n"
 "Kahverengi\n"
 "Siyah"
+
+msgid "Hair"
+msgstr "Saç"
 
 msgid ""
 "Blonde\n"
@@ -503,8 +5780,224 @@ msgstr ""
 "Gri\n"
 "Sade"
 
+msgid "Other characteristics"
+msgstr "Diğer özellikler"
+
+msgid "Date entered"
+msgstr "Girilen tarih"
+
 msgid "Place entered"
 msgstr "Girilen yer"
+
+msgid "Term of enlistment"
+msgstr "Askere yazılma süresi"
+
+msgid "Eye color"
+msgstr "Göz rengi"
+
+msgid "Hair color"
+msgstr "Saç rengi"
+
+msgid "Rank in"
+msgstr "Sıralamada"
+
+msgid "Branch"
+msgstr "Dal"
+
+msgid "Regiment/Unit/Ship"
+msgstr "Alay/Birlik/Gemi"
+
+msgid "Service Number"
+msgstr "Servis Numarası"
+
+msgid "No. of enlistment"
+msgstr "Kayıt sayısı"
+
+msgid "Date discharged"
+msgstr "Taburcu tarihi"
+
+msgid "Place discharged"
+msgstr "Taburcu yeri"
+
+msgid "Rank out"
+msgstr "Sıralama dışı"
+
+msgid "Industry/Employer"
+msgstr "Sektör/İşveren"
+
+msgid "Residents Status"
+msgstr "Sakinlerin Durumu"
+
+msgid "Amt"
+msgstr "İlçe"
+
+msgid "Town or City"
+msgstr "Kasaba veya Şehir"
+
+msgid "Herred eller By"
+msgstr "İlçe veya Şehir"
+
+msgid "Sogn"
+msgstr "Mahalle"
+
+msgid "Gade"
+msgstr "Sokak"
+
+msgid "Gift"
+msgstr "Evli"
+
+msgid "Alder"
+msgstr "Yaş"
+
+msgid "Stilling i familien"
+msgstr "Aile içindeki konumu"
+
+msgid "Titel, Embed, Forretning, Håndværk"
+msgstr "Unvan, Görev, Ticaret, Zanaat"
+
+msgid "Stilling, embede eller erhverv"
+msgstr "Görev, makam veya meslek"
+
+msgid "Where Born"
+msgstr "Doğum yeri"
+
+msgid "Fødested"
+msgstr "Doğum Yeri"
+
+msgid "Erhverv"
+msgstr "İş Yeri"
+
+msgid "Trossamfund"
+msgstr "Dini Topluluk"
+
+msgid "Sted"
+msgstr "Konum"
+
+msgid "Comments"
+msgstr "Yorumlar"
+
+msgid "Bemærkninger"
+msgstr "Çalışma Yeri"
+
+msgid "Place of Work"
+msgstr "İş Yeri"
+
+msgid "Arbejdssted"
+msgstr "Çalışma yeri"
+
+msgid "Fødselsdato"
+msgstr "Doğum tarihi"
+
+msgid "Years at current residence"
+msgstr "Mevcut ikamette geçirilen yıllar"
+
+msgid "År tilflyttet"
+msgstr "Taşınılan yıl"
+
+msgid "Previous residence"
+msgstr "Önceki ikamet yeri"
+
+msgid "Tilflyttet fra"
+msgstr "Taşındığı yer"
+
+msgid "År gift"
+msgstr "Evlenilen yıl"
+
+msgid "Children Living"
+msgstr "Yaşayan çocuklar"
+
+msgid "Levende børn"
+msgstr "Yaşayan çocuklar"
+
+msgid "Children Dead"
+msgstr "Ölen çocuklar"
+
+msgid "Døde børn"
+msgstr "Ölen çocuklar"
+
+msgid "Køn"
+msgstr "Cinsiyet"
+
+msgid "Year stayed in parish"
+msgstr "Cemaatte ikamet etmeye başlanan yıl"
+
+msgid "Hvilket aar taget ophold i sognet"
+msgstr "Hangi yıl cemaatte ikamet etmeye başlandı"
+
+msgid "Previous Residence"
+msgstr "Önceki ikamet yeri"
+
+msgid "Sidste bopæl inden tilflytning"
+msgstr "Taşınmadan önceki son ikamet yeri"
+
+msgid "Bemærkning"
+msgstr "Not"
+
+msgid "Income"
+msgstr "Gelir"
+
+msgid "Indkomst"
+msgstr "Gelirler"
+
+msgid "Assets"
+msgstr "Mal varlığı"
+
+msgid "Formue"
+msgstr "Servet"
+
+msgid "State Tax"
+msgstr "Devlet vergisi"
+
+msgid "Statsskat"
+msgstr "Devlet vergisi"
+
+msgid "Council"
+msgstr "Belediye"
+
+msgid "Kommuneskat"
+msgstr "Belediye vergisi"
+
+msgid "Residence on 5 Nov 1924"
+msgstr "5 Kasım 1924 tarihindeki ikamet yeri"
+
+msgid "Bopæl 5 nov 1924"
+msgstr "5 Kasım 1924 tarihindeki ikamet yeri"
+
+msgid "Stay on 5 Nov 1929"
+msgstr "5 Kasım 1929 tarihindeki ikamet"
+
+msgid "Ophold 5 nov 1929"
+msgstr "5 Kasım 1929 tarihindeki ikamet"
+
+msgid "Date Married"
+msgstr "Evlilik tarihi"
+
+msgid "Dato gift"
+msgstr "Evlenme tarihi"
+
+msgid "Event Place (Original)"
+msgstr "Etkinlik Yeri (Orijinal)"
+
+msgid "Birth Year (Estimated)"
+msgstr "Doğum Yılı (Tahmini)"
+
+msgid "Spouse's Gender"
+msgstr "Eşinin Cinsiyeti"
+
+msgid "Spouse's Age"
+msgstr "Eşinin Yaşı"
+
+msgid "Spouse's Birth Year (Estimated)"
+msgstr "Eşinin Doğum Yılı (Tahmini)"
+
+msgid "Spouse's Father's Name"
+msgstr "Eşinin Babasının Adı"
+
+msgid "Spouse's Mother's Name"
+msgstr "Eşinin Annesinin Adı"
+
+msgid "Record Number"
+msgstr "Kayıt Numarası"
 
 msgid "Volume"
 msgstr "Cilt"
@@ -514,3 +6007,533 @@ msgstr "Cilt Başlangıç Yılı"
 
 msgid "Volume Ending Year"
 msgstr "Cilt Bitiş Yılı"
+
+msgid "Can read and write"
+msgstr "Okuyup yazabiliyor"
+
+msgid "Military"
+msgstr "Askerlik"
+
+msgid "Taxes"
+msgstr "Vergiler"
+
+msgid "Type of roof"
+msgstr "Çatı tipi"
+
+msgid "Arrived since"
+msgstr "Geliş tarihi"
+
+msgid "Registration District"
+msgstr "Kayıt Bölgesi"
+
+msgid "Administrative Area"
+msgstr "İdari Bölge"
+
+msgid "County/Administrative Area"
+msgstr "İl/İdari Bölge"
+
+msgid "Banns/Licence"
+msgstr "Nikah İlanı/Evlilik Belgesi"
+
+msgid "Deceased"
+msgstr "Vefat Eden"
+
+msgid "Maiden surname of woman who was married"
+msgstr "Evli kadının kızlık soyadı"
+
+msgid "Usual Address"
+msgstr "Olağan Adres"
+
+msgid "City or Borough"
+msgstr "Şehir veya İlçe"
+
+msgid "Parish or Township"
+msgstr "Mahalle veya Belde"
+
+msgid "NAMES of each Person who abode therein the preceding Night."
+msgstr "Bir Önceki Gece Orada İkamet Eden Her Kişinin ADLARI."
+
+msgid ""
+"AGE, rounded down to the nearest five years for those aged fifteen or over."
+msgstr ""
+"YAŞ, on beş yaş ve üzerindekiler için en yakın alt beş yıla yuvarlanmış."
+
+msgid "PROFESSION, TRADE, EMPLOYMENT or of INDEPENDENT MEANS."
+msgstr "MESLEK, TİCARET, İŞ veya BAĞIMSIZ GELİR."
+
+msgid ""
+"Whether Born in same County (Y or N), Scotland (S), Ireland (I) or Foreign "
+"Parts (P)."
+msgstr ""
+"Aynı İlçede (E veya H), İskoçya'da (S), İrlanda'da (I) veya Yabancı "
+"Ülkelerde (P) doğmuş olup olmadığı."
+
+msgid "Ecclesiastical District"
+msgstr "Kilise Bölgesi"
+
+msgid ""
+"Name and Surname of each Person who abode in the house, on the Night of the "
+"30th March, 1851"
+msgstr "30 Mart 1851 Gecesi Evde Bulunan Her Kişinin Adı ve Soyadı"
+
+msgid "Relation to Head of Family"
+msgstr "Aile Reisiyle İlişkisi"
+
+msgid "Rank, Profession or Occupation"
+msgstr "Rütbe, Meslek veya İş"
+
+msgid "Whether Blind or Deaf and Dumb"
+msgstr "Kör veya Sağır ve Dilsiz Olup Olmadığı"
+
+msgid "City or Municipal Borough"
+msgstr "Şehir veya Belediye Bölgesi"
+
+msgid "Municipal Ward"
+msgstr "Belediye Mahallesi"
+
+msgid "Parliamentary Borough"
+msgstr "Parlamento Bölgesi"
+
+msgid "Hamlet or Tything"
+msgstr "Köy veya İlçe"
+
+msgid "Name and Surname of each Person"
+msgstr "Her Kişinin Adı ve Soyadı"
+
+msgid "Rank, Profession of Occupation"
+msgstr "Rütbe, Meslek veya İş"
+
+msgid "Whether Blind, or Deaf-and-Dumb"
+msgstr "Kör veya Sağır ve Dilsiz Olup Olmadığı"
+
+msgid "Civil Parish or Township"
+msgstr "Sivil Bölge veya Kasaba"
+
+msgid "Village or Hamlet"
+msgstr "Köy veya Mezra"
+
+msgid "Local Board or Improvement Commissioners District"
+msgstr "Yerel Yönetim Kurulu veya İyileştirme Komiserleri Bölgesi"
+
+msgid "NAME and Surname of each Person"
+msgstr "Her Kişinin ADI ve Soyadı"
+
+msgid "RELATION to Head of Family"
+msgstr "Aile Reisiyle İLİŞKİSİ"
+
+msgid "CONDITION"
+msgstr "MEDENİ DURUM"
+
+msgid "AGE of"
+msgstr "YAŞI"
+
+msgid "Rank, Profession or OCCUPATION"
+msgstr "Rütbe, Meslek veya İş"
+
+msgid ""
+"Whether\n"
+"1. Deaf-and-Dumb\n"
+"2. Blind\n"
+"3. Imbecile or Idiot\n"
+"4. Lunatic"
+msgstr ""
+"Şunlardan biri olup olmadığı\n"
+"1. Sağır ve Dilsiz\n"
+"2. Kör\n"
+"3. Zihinsel Engelli veya Ahmak\n"
+"4. Akıl Hastası"
+
+msgid "Town, Village or Hamlet"
+msgstr "Kasaba, Köy veya Mezra"
+
+msgid "Urban Sanitary District"
+msgstr "Kentsel Sağlık Bölgesi"
+
+msgid "Rural Sanitary District"
+msgstr "Kırsal Sağlık Bölgesi"
+
+msgid "Ecclesiastical Parish or District"
+msgstr "Kilise Bölgesi veya İlçesi"
+
+msgid "CONDITION as to Marriage"
+msgstr "Evlilik DURUMU"
+
+msgid "AGE last Birthday of"
+msgstr "Son Doğum Günündeki YAŞ"
+
+msgid ""
+"If\n"
+"(1) Deaf-and-Dumb\n"
+"(2) Blind\n"
+"(3) Imbecile or Idiot\n"
+"(4) Lunatic"
+msgstr ""
+"Şunlardan biri ise\n"
+"(1) Sağır ve Dilsiz\n"
+"(2) Kör\n"
+"(3) Zihinsel Engelli veya Ahmak\n"
+"(4) Akıl Hastası"
+
+msgid "Administrative County"
+msgstr "İdari İlçe"
+
+msgid "Civil Parish"
+msgstr "Sivil Bölge"
+
+msgid "Municipal Borough"
+msgstr "Belediye İlçesi"
+
+msgid "Parliamentary Borough or Division"
+msgstr "Parlamento İlçesi veya Seçim Bölgesi"
+
+msgid "PROFESSION or OCCUPATION"
+msgstr "MESLEK veya İŞ"
+
+msgid "Neither"
+msgstr "Hiçbiri"
+
+msgid "Neither Employer nor Employed"
+msgstr "Ne İşveren Ne de Çalışan"
+
+msgid ""
+"If\n"
+"(1) Deaf-and-Blind\n"
+"(2) Blind\n"
+"(3) Lunatic, Imbecile or Idiot"
+msgstr ""
+"Eğer şunlardan biriyse\n"
+"(1) Sağır ve Kör\n"
+"(2) Kör\n"
+"(3) Akıl Hastası, Zihinsel Engelli veya Ahmak"
+
+msgid "Ecclesiastical Parish"
+msgstr "Kilise Bölgesi"
+
+msgid "County Borough, Municipal Borough, or Urban District"
+msgstr "Kontluk İlçe Belediyesi, Belediye İlçesi veya Kentsel Bölge"
+
+msgid "Ward of Municipal Borough or of Urban District"
+msgstr "Belediye İlçesi veya Kentsel Bölgenin Mahallesi"
+
+msgid "Rural District"
+msgstr "Kırsal Bölge"
+
+msgid "Town or Village or Hamlet"
+msgstr "Kasaba, Köy veya Mezra"
+
+msgid "Condition as to Marriage"
+msgstr "Evlilik Durumu"
+
+msgid "Age last Birthday of"
+msgstr "Son Doğum Günündeki Yaş"
+
+msgid "PROFESSION OR OCCUPATION"
+msgstr "MESLEK VEYA İŞ"
+
+msgid "Work Type"
+msgstr "Çalışma Türü"
+
+msgid "Employer, Worker or Own Account"
+msgstr "İşveren, Çalışan veya Kendi Hesabına Çalışan"
+
+msgid "At Home"
+msgstr "Evde"
+
+msgid "If Working at Home"
+msgstr "Evden Çalışıyorsa"
+
+msgid ""
+"If\n"
+"(1) Deaf and Dumb\n"
+"(2) Blind\n"
+"(3) Lunatic\n"
+"(4) Imbecile, feeble-minded"
+msgstr ""
+"Eğer şunlardan biriyse\n"
+"(1) Sağır ve Dilsiz\n"
+"(2) Kör\n"
+"(3) Akıl Hastası\n"
+"(4) Zeka Geriliği Olan, Zihinsel Engelli"
+
+msgid "Registration Sub-District"
+msgstr "Kayıt Alt Bölgesi"
+
+msgid "Enumeration District"
+msgstr "Sayım Bölgesi"
+
+msgid "Number of Rooms"
+msgstr "Oda Sayısı"
+
+msgid "NAME AND SURNAME"
+msgstr "ADI VE SOYADI"
+
+msgid "RELATIONSHIP to Head of Family"
+msgstr "Aile Reisi ile İLİŞKİSİ"
+
+msgid "AGE (last Birthday)"
+msgstr "YAŞ (son doğum günündeki)"
+
+msgid ""
+"\"Single,\" \"Married,\" \"Widower,\" or \"Widow,\" for all persons aged 15 "
+"years and upwards."
+msgstr ""
+"15 yaş ve üzeri tüm kişiler için \"Bekar\", \"Evli\", \"Dul Erkek\" veya "
+"\"Dul Kadın\" durumu."
+
+msgid "Completed Years the present Marriage has lasted."
+msgstr "Mevcut evliliğin sürdüğü tamamlanmış yıl olarak süresi."
+
+msgid "Children Total"
+msgstr "Toplam Çocuk"
+
+msgid "Total Children Born Alive."
+msgstr "Doğumundan beri hayatta olan toplam çocuk sayısı."
+
+msgid "Children still Living."
+msgstr "Hala hayatta olan çocuklar."
+
+msgid "Children Died"
+msgstr "Ölen Çocuklar"
+
+msgid "Children who have Died."
+msgstr "Ölmüş Çocuklar."
+
+msgid "Industry or Service with which worker is connected."
+msgstr "Çalışanın bağlı olduğu sektör veya hizmet."
+
+msgid "Whether Employer, Worker or Working on Own Account"
+msgstr "İşveren, Çalışan veya Kendi Hesabına Çalışan Olup Olmadığı"
+
+msgid "Whether Working at Home"
+msgstr "Evden Çalışıp Çalışmadığı"
+
+msgid "BIRTHPLACE of every Person."
+msgstr "Her Kişinin DOĞUM YERİ."
+
+msgid "NATIONALITY of every Person born in a Foreign Country."
+msgstr "Yabancı Bir Ülkede Doğan Her Kişinin UYRUĞU."
+
+msgid "INFIRMITY"
+msgstr "ENGELLİLİK"
+
+msgid "NAME and SURNAME"
+msgstr "ADI ve SOYADI"
+
+msgid "RELATIONSHIP to Head of Household"
+msgstr "Aile Reisiyle İLİŞKİSİ"
+
+msgid "AGE years"
+msgstr "Yıl olarak YAŞ"
+
+msgid "Age Months"
+msgstr "Ay Olarak Yaş"
+
+msgid "AGE months"
+msgstr "Ay olarak YAŞ"
+
+msgid "SEX"
+msgstr "CİNSİYET"
+
+msgid "MARRIAGE or ORPHANHOOD"
+msgstr "EVLİLİK veya YETİMLİK"
+
+msgid ""
+"If attending a School or any kind of Educational Institution for the purpose "
+"of receiving Instruction"
+msgstr ""
+"Öğretim almak amacıyla bir okula veya herhangi bir eğitim kurumuna devam "
+"edip etmediği"
+
+msgid ""
+"State here the precise branch of Profession, Trade, Manufacture, Service, &c."
+msgstr ""
+"Buraya meslek, ticaret, imalat, hizmet vb. alanın tam ve açık adını yazınız."
+
+msgid "Number of living children"
+msgstr "Yaşayan çocuk sayısı"
+
+msgid "Total number under sixteen years of age. If none write \"None.\""
+msgstr "On altı yaşın altındaki toplam çocuk sayısı. Eğer yoksa \"Yok\" yazın"
+
+msgid "Ages of living children"
+msgstr "Yaşayan çocukların yaşları"
+
+msgid "For each child place a X in the column corresponding to its age."
+msgstr "Her çocuk için, yaşına karşılık gelen sütuna bir X işareti koyun."
+
+msgid "E.D. Letter Code"
+msgstr "E.D. Harf Kodu"
+
+msgid "Borough, U.D. or R.D."
+msgstr "İlçe, U.D. veya R.D."
+
+msgid "Registration District and Sub-district"
+msgstr "Kayıt Bölgesi ve Alt Bölgesi"
+
+msgid "SURNAMES and OTHER NAMES."
+msgstr "SOYADLAR ve DİĞER ADLAR."
+
+msgid "OVSPI"
+msgstr "OVSPI"
+
+msgid "O, V, S, P or I"
+msgstr "O, V, S, P veya I"
+
+msgid "M or F"
+msgstr "E veya K"
+
+msgid "S, M, W or D."
+msgstr "B, E, D veya B."
+
+msgid "PERSONAL OCCUPATION"
+msgstr "KİŞİSEL MESLEK"
+
+msgid "Instructions"
+msgstr "Talimatlar"
+
+msgid "See INSTRUCTIONS"
+msgstr "TALİMATLARA bakın"
+
+msgid "Language Spoken"
+msgstr "Konuşulan Dil"
+
+msgid "LANGUAGE SPOKEN."
+msgstr "KONUŞULAN DİL."
+
+msgid "GROS Data"
+msgstr "GROS Verileri"
+
+msgid "Born in County"
+msgstr "Doğduğu İlçe"
+
+msgid "Foreigner, Born England or Ireland"
+msgstr "Yabancı, İngiltere veya İrlanda Doğumlu"
+
+msgid "Quoad Sacra Parish"
+msgstr "Quoad Sacra Bölgesi"
+
+msgid "Parliamentary Burgh"
+msgstr "Parlamento Kasabası"
+
+msgid "Royal Burgh"
+msgstr "Kraliyet Kasabası"
+
+msgid "Town or Village"
+msgstr "Kasaba veya Köy"
+
+msgid "House Schedule No"
+msgstr "Ev Sıra Numarası"
+
+msgid "Relation to Head"
+msgstr "Aile Reisiyle İlişkisi"
+
+msgid "Blind, or Deaf and Dumb"
+msgstr "Kör veya Sağır ve Dilsiz"
+
+msgid "No. Of Schedule"
+msgstr "Zamanlama Numarası"
+
+msgid "Road, Street, etc, and No. or Name of House"
+msgstr "Yol, Sokak vb. ve Ev Numarası veya Adı"
+
+msgid "House Inhabited"
+msgstr "İkamet Edilen Ev"
+
+msgid "House U or B"
+msgstr "Ev U veya B"
+
+msgid "Rank, Profession, or Occupation"
+msgstr "Rütbe, Meslek veya İş"
+
+msgid "Whether Blind, or Deaf and Dumb"
+msgstr "Kör veya Sağır ve Dilsiz Olup Olmadığı"
+
+msgid "No. of Children from 5 to 13 attending School"
+msgstr "Okula Giden 5-13 Yaş Arası Çocuk Sayısı"
+
+msgid "WindowRooms"
+msgstr "Pencereli Odalar"
+
+msgid "No. of Rooms with one or more Windows"
+msgstr "Bir veya Daha Fazla Penceresi Olan Oda Sayısı"
+
+msgid "Police Burgh"
+msgstr "Polis Kasabası"
+
+msgid "Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic"
+msgstr ""
+"1. Sağır ve Dilsiz, 2. Kör, 3. Zihinsel Engelli veya Ahmak, 4. Akıl Hastası "
+"olup olmadığı"
+
+msgid "School Board District"
+msgstr "Okul Kurulu Bölgesi"
+
+msgid "School board District"
+msgstr "Okul Kurulu Bölgesi"
+
+msgid "Parliamentary Division"
+msgstr "Parlamento Bölgesi"
+
+msgid "Municipal Burgh"
+msgstr "Belediye Kasabası"
+
+msgid "Burgh Ward"
+msgstr "Kasaba Mahallesi"
+
+msgid "Island"
+msgstr "İzlanda"
+
+msgid "Gaellic or G. & E."
+msgstr "Galce veya G. ve E."
+
+msgid "Parish Ward"
+msgstr "Bölge Mahallesi"
+
+msgid "Profession or Occupation"
+msgstr "Meslek veya İş"
+
+msgid "Employer, Worker or on Own Account"
+msgstr "İşveren, İşçi veya Kendi Hesabına Çalışan"
+
+msgid "Working at Home"
+msgstr "Evden Çalışıyor"
+
+msgid "District Electoral Division"
+msgstr "Bölge Seçim Birimi"
+
+msgid "No. on Form B"
+msgstr "B Formundaki Numara"
+
+msgid "\"Read and Write\", \"Read\" or \"Cannot Read\""
+msgstr "\"Okur ve Yazar\", \"Okur\" veya \"Okuyamaz\""
+
+msgid ""
+"\"Irish\" or \"Irish & English\", in other cases no entry should be made"
+msgstr ""
+"\"İrlandaca\" veya \"İrlandaca ve İngilizce\" dışında herhangi bir giriş "
+"yapılmamalıdır"
+
+msgid ""
+"\"Deaf and Dumb\", \"Dumb only\", \"Blind\", \"Imbecile or Idiot\", or "
+"\"Lunatic\""
+msgstr ""
+"\"Sağır ve Dilsiz\", \"Yalnızca Dilsiz\", \"Kör\", \"Zekâ Geriliği Olan veya "
+"Ahmak\", ya da \"Akıl Hastası\""
+
+msgid "Poor Law Union"
+msgstr "Yoksullar Yasası Birliği"
+
+msgid "Barony"
+msgstr "Baronluk"
+
+msgid "Urban District"
+msgstr "Kentsel Bölge"
+
+msgid "Head of Family"
+msgstr "Aile Reisi"
+
+msgid "Total Children"
+msgstr "Toplam Çocuk"
+
+msgid "Children born alive to present Marriage"
+msgstr "Mevcut evlilikten canlı doğan çocuklar"

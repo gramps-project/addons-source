@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
-"PO-Revision-Date: 2026-05-04 21:37+0000\n"
-"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-24 05:14+0000\n"
+"Last-Translator: Juan Saavedra <jcsaaver@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 msgid "Select filter to restrict people"
 msgstr "Seleccione filtro para restringir las personas"
@@ -175,6 +175,10 @@ msgstr "Retira «%s»…"
 msgid "done!\n"
 msgstr "¡hecho!\n"
 
+#, python-format
+msgid "Skipped %d people due to errors (see log).\n"
+msgstr "Se omitieron %d personas debido a errores (ver log).\n"
+
 msgid ""
 "Selecting... \n"
 "\n"
@@ -229,6 +233,10 @@ msgstr " ¡Listo! Efectuando cambios…"
 #, python-format
 msgid "Added %d events."
 msgstr "Se añadieron %d eventos."
+
+#, python-format
+msgid " (Skipped %d rows due to errors; see log.)"
+msgstr " (Se omitieron %d filas debido a errores; ver log.)"
 
 msgid "Estimated date"
 msgstr "Fecha estimada"

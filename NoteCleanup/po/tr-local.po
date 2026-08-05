@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,10 +12,119 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
+msgid "Note Cleanup"
+msgstr "Not Temizleme"
+
+msgid "Clean up Notes that contain HTML markup"
+msgstr "HTML işaretlemesi içeren notları temizle"
+
+msgid "Note Cleanup Tool"
+msgstr "Not Temizleme Aracı"
+
+msgid "Cleaned Notes"
+msgstr "Temizlenmiş Notlar"
+
+msgid "Links Only"
+msgstr "Yalnızca Bağlantılar"
+
+msgid "Issues"
+msgstr "Sorunlar"
+
+msgid "Close the Note Cleanup Tool"
+msgstr "Not Temizleme Aracını Kapat"
+
+msgid "Save All"
+msgstr "Tümünü Kaydet"
+
+msgid "Save All Changes"
+msgstr "Tüm Değişiklikleri Kaydet"
+
 msgid "Search"
 msgstr "Arama"
+
+msgid "Search for Untidy Notes"
+msgstr "Düzensiz Notları Ara"
+
+msgid "Generate Test Notes"
+msgstr "Test Notları Oluştur"
+
+msgid ""
+"Generate Test notes in range N99996-N99999.\n"
+"These are added to your database, so you may want to work with a test "
+"database or delete them later."
+msgstr ""
+"N99996-N99999 aralığında test notları oluştur.\n"
+"Bunlar veritabanınıza eklenecektir; bu nedenle bir test veritabanı kullanmak "
+"veya daha sonra bunları silmek isteyebilirsiniz."
+
+msgid "Export the results to a text file"
+msgstr "Sonuçları bir metin dosyasına aktarın"
+
+msgid ""
+"Please back up your database before running this tool.\n"
+"\n"
+"Start the tool by pressing the 'Search' button, then review the results.\n"
+"When satisifed press the 'Save All' button to save your work.\n"
+"You may export a summary list of the notes that were found using the "
+"'Export' button."
+msgstr ""
+"Lütfen bu aracı çalıştırmadan önce veritabanınızın yedeğini alın.\n"
+"\n"
+"Aracı başlatmak için \"Ara\" düğmesine basın, ardından sonuçları gözden "
+"geçirin.\n"
+"Memnun kaldığınızda çalışmanızı kaydetmek için \"Tümünü Kaydet\" düğmesine "
+"basın.\n"
+"Bulunan notların özet listesini \"Dışa Aktar\" düğmesini kullanarak dışa "
+"aktarabilirsiniz."
+
+msgid "Clean up Notes"
+msgstr "Notları Temizle"
+
+msgid "Cleanup Test Notes"
+msgstr "Test Notlarını Temizle"
+
+msgid "Add Test Note"
+msgstr "Test Notu Ekle"
+
+msgid "Export results to a text file"
+msgstr "Sonuçları bir metin dosyasına aktarın"
+
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Rapor yazılırken hata: %s"
+
+msgid ""
+"\n"
+"\n"
+"Notes selected on the left pane are shown Before cleanup in this box."
+msgstr ""
+"\n"
+"\n"
+"Sol bölmede seçilen notlar, temizlemeden önce bu kutuda gösterilir."
+
+msgid ""
+"\n"
+"\n"
+"Notes selected on the left pane are shown After cleanup in this box.\n"
+"If you wish to make changes, you can make them here and use the style "
+"controls in the toolbar above."
+msgstr ""
+"\n"
+"\n"
+"Sol bölmede seçilen notlar, temizlemeden sonra bu kutuda gösterilir.\n"
+"Değişiklik yapmak isterseniz, burada değişiklik yapabilir ve yukarıdaki araç "
+"çubuğundaki stil kontrollerini kullanabilirsiniz."
+
+msgid "Saving Notes"
+msgstr "Notları Kaydetme"
+
+msgid "Saving Cleaned Notes"
+msgstr "Temizlenmiş Notları Kaydetme"
+
+msgid "Scanning Notes"
+msgstr "Notları Tarama"

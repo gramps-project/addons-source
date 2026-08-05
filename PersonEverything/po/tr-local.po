@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-03 03:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,10 +12,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
+
+#, python-format
+msgid "All information about %s"
+msgstr "%s hakkında tüm bilgiler"
+
+msgid "Primary name"
+msgstr "Birincil ad"
+
+msgid "Alternate name"
+msgstr "Alternatif ad"
+
+msgid " This is the primary birth event."
+msgstr " Bu, birincil doğum olayıdır."
+
+msgid " This is the primary death event."
+msgstr " Bu, birincil ölüm olayıdır."
 
 msgid "Relationship to Father"
 msgstr "Baba ile ilişki"
@@ -23,8 +39,92 @@ msgstr "Baba ile ilişki"
 msgid "Relationship to Mother"
 msgstr "Anne ile ilişki"
 
+msgid "Parent Family"
+msgstr "Ebeveyn Ailesi"
+
+msgid ""
+"Details of any children and events etc. would be in a similar report for the "
+"father or mother."
+msgstr ""
+"Herhangi bir çocuğun ve olayın ayrıntıları vb. baba veya anne için benzer "
+"bir raporda yer alacaktır."
+
+msgid "Temple and status"
+msgstr "Tapınak ve durumu"
+
+msgid "LDS Ordinance family"
+msgstr "LDS Yönetmeliği ailesi"
+
+msgid "LDS "
+msgstr "LDS "
+
+msgid "Street, City, County, State, Postal Code, Country, Phone number"
+msgstr "Sokak, Şehir, İlçe, Eyalet, Posta Kodu, Ülke, Telefon numarası"
+
 msgid "Media Reference"
 msgstr "Ortam referansı"
 
+msgid "Description and Path"
+msgstr "Açıklama ve Yol"
+
+msgid "Referenced Region"
+msgstr "Referans Bölge"
+
+msgid "Mime type"
+msgstr "Mime türü"
+
+msgid ""
+"Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
+msgstr ""
+"Verilen ad(lar): Unvan, Verilen Ad, Ek, Çağrı Adı, Takma Ad, Aile Takma Adı"
+
+msgid "Note type"
+msgstr "Not türü"
+
+msgid "Parent Place"
+msgstr "Ana Konum"
+
+msgid "Alternate Location"
+msgstr "Alternatif Konum"
+
+msgid "Alternative Name"
+msgstr "Alternatif Ad"
+
+msgid "Latitude, Longitude"
+msgstr "Enlem, Boylam"
+
+msgid "Repository type"
+msgstr "Depo türü"
+
+msgid "Repository reference"
+msgstr "Depo referansı"
+
+msgid "Media type"
+msgstr "Medya türü"
+
+msgid "Origin type"
+msgstr "Kaynak türü"
+
+msgid "Prefix, surname, connector"
+msgstr "Ön ek, soyadı, bağlayıcı"
+
+msgid "{This is the primary surname}"
+msgstr "{Bu birincil soyadıdır}"
+
+msgid "Tag name"
+msgstr "Etiket adı"
+
+msgid "Tag colour and priority"
+msgstr "Etiket rengi ve önceliği"
+
+msgid "No source information found"
+msgstr "Kaynak bilgisi bulunamadı"
+
 msgid "The style used for the title of the page."
 msgstr "Sayfa başlığı için kullanılan stil."
+
+msgid "PersonEverything Report"
+msgstr "Kişi Her Şey Raporu"
+
+msgid "Produces a report containing everything about the active person"
+msgstr "Etkin kişi hakkında her şeyi içeren bir rapor oluşturur"

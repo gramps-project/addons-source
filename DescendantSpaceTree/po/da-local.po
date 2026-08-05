@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-02 20:12-0600\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -12,13 +12,203 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
+
+msgid "Patriarchal Line (Male ancestor)"
+msgstr "Patriarkal linje (mandlige ane)"
+
+msgid "Matriarchal Line (Female ancestor)"
+msgstr "Matriarkal linje (kvindelig ane)"
+
+msgid "Dark theme"
+msgstr "Mørkt tema"
+
+msgid "Light theme"
+msgstr "Lyst tema"
+
+msgid "Continue Descendant Tree"
+msgstr "Fortsæt efterkommer træ"
+
+msgid "Alternate Descendant Tree"
+msgstr "Alternativt efterkommer træ"
+
+msgid "Descendant SpaceTree"
+msgstr "SpaceTree for efterkommere"
+
+msgid "Total descendants"
+msgstr "Totalt antal efterkommere"
+
+msgid "Marriages/Families:<ul>"
+msgstr "Ægteskaber/Familier:<ul>"
 
 msgid "Invalid Destination Directory"
 msgstr "Ugyldig målfolder"
 
+#, python-format
+msgid ""
+"Destination Directory %s does not exist\n"
+"Do you want to attempt to create it."
+msgstr ""
+"Målfolder %s findes ikke\n"
+"Vil du forsøge at danne den."
+
+#, python-format
+msgid "Failed to create %s: %s"
+msgstr "Fejl ved dannelse af %s: %s"
+
+#, python-format
+msgid "Failed to read proto file %s: %s"
+msgstr "Kunne ikke læse proto-fil %s:%s"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite?"
+msgstr ""
+"Målfil %s findes allerede.\n"
+"Vil du overskrive?"
+
+msgid "Failed writing file: "
+msgstr "Fejl ved skrivning af fil: "
+
+msgid "Descendants of"
+msgstr "Efterkommere af"
+
+msgid "How to Use the DescendantSpaceTree Viewer"
+msgstr "Sådan benyttes DescendantSpaceTree-viseren"
+
+msgid ""
+"For the best viewing experience, maximize your browser window to use the "
+"entire screen.  A resize will reset the graph to the center person."
+msgstr ""
+"For den bedste visningsoplevelse, vælg fuldskærmsvisning for din browser.  "
+"En ændring af størrelsen vil gendanne grafen for midterpersonen."
+
+msgid "Click on a node to focus on a descendant and expand any children."
+msgstr ""
+"Klik på en node for at fokusere på en efterkommer og udvide eventuelle børn."
+
+msgid "Click and drag anywhere on the viewer to position the descendant tree."
+msgstr ""
+"Klik og træk hvorsomhelst på viservinduet for at placere efterkommertræet."
+
+#. Translators: Please do not translate ___HELP_RESET_BUTTON___.
+msgid ""
+"Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
+"starting descendant."
+msgstr ""
+"Klik på gendannelsesknappen ___HELP_RESET_BUTTON___ for at komme tilbage til "
+"begyndelses-efterkommeren."
+
+msgid ""
+"Search for a person by typing into the search box.  At least three "
+"characters are required to search.  Click on any of the suggestions to "
+"quickly navigate to that person.  A person may appear more than once in a "
+"search, a plus sign (+) after the name indicates that person appears as a "
+"spouse."
+msgstr ""
+"Søg efter en person ved at taste i søgefeltet.  Mindst tre bogstaver kræves "
+"for at søge.  Klik på en af forslagene for at navigere hurtigt til "
+"personen.  En person kan forekommer mere end en gang i søgningen, et "
+"plustegn (+) efter navnet angiver at personen forekommer som ægtefælle."
+
+msgid ""
+"A descendant and any spouses are listed in the same node.  Children of all "
+"of the descendant's families are grouped together."
+msgstr ""
+"En efterkommer og eventuelle ægtefæller er listet i den samme node.  Børn af "
+"alle efterkommernes familier er grupperet sammen."
+
+msgid ""
+"Persons born after a specified date may not display their birth or death "
+"dates."
+msgstr ""
+"Personer født efter en angivet dato, vil ikke vises med fødsels- eller døds-"
+"datoer."
+
+msgid ""
+"Person nodes are colored to indicate the number of children, the deeper tint "
+"of the coloring, the greater number of children."
+msgstr ""
+"Person-noder er farvede for at angive antal børn, jo mørkere farve, jo flere "
+"børn."
+
+msgid ""
+"The currently selected descendant and all of the ancestors of that person "
+"are highlighted in yellow."
+msgstr ""
+"Den nuværende valgte efterkommer og alle aner til den person er markeret i "
+"gult."
+
+#. Translators: Please do not translate ___NAV_BUTTON_CONTINUE___ or ___NAV_BUTTON_ALT___.
+msgid ""
+"A person may occur in different branches.  This is usually because of inter-"
+"family marriages (such as that of cousins.)  In this case, a button will "
+"also appear for that person,  ___NAV_BUTTON_CONTINUE___ or "
+"___NAV_BUTTON_ALT___  to navigate the other branch.  Only one branch will "
+"expand descendants of this person. "
+msgstr ""
+"En person kan forekomme i forskellige grene.  Dette sker normalt på grund af "
+"ægteskab indenfor familien (som f.eks. fætter/kusine.)  I dette tilfælde, "
+"vil der også være en knap for den person,  ___NAV_BUTTON_CONTINUE___ eller "
+"___NAV_BUTTON_ALT___  for aat navigere i den anden gren.  kun en gren vil "
+"blive udvidet efterkommere af denne person. "
+
+msgid ""
+"The following open source projects are used in building this viewer, see "
+"source code LICENSE*.txt files for complete licenses and required notices."
+msgstr ""
+"De følgende open source projekter er benyttet for at bygge denne viser, se "
+"kildetekst LICENSE*.txt filer for komplette licenser og krævede notitser."
+
+msgid "Search. . ."
+msgstr "Søg..."
+
 msgid "Include Generations"
 msgstr "Medtag generationer"
 
+msgid "Branch to expand when duplicated"
+msgstr "Gren der skal udvides ved duplicering"
+
+msgid ""
+"When a descendant appears more than once, prefer the selected lineage to "
+"expand descendancy line"
+msgstr ""
+"Når en efterkommer forekommer mere end en gang, foretræk den valgte linje "
+"hvor efterkommerlinjen skal udvides"
+
+msgid "Maximum display birth year"
+msgstr "Maks visningsår for fødsel"
+
+msgid "Birth/death dates will not be displayed after this year"
+msgstr "Fødsels-/døds- datoer vil ikke blive vist efter dette år"
+
+msgid "Theme preference"
+msgstr "Temaindstilling"
+
+msgid "Theme color preference for Space Tree"
+msgstr "Tema farveindstilling for SpaceTree"
+
 msgid "The destination path for generated files."
 msgstr "Mål stien for dannede filer"
+
+msgid "Destination File"
+msgstr "Målfil"
+
+msgid "The destination file name for the report."
+msgstr "Målfilnavn for rapporten."
+
+msgid "Open generated HTML file with default browser."
+msgstr "Åbn den dannede HTML fil med standardbrowseren."
+
+msgid "Descendant Space Tree"
+msgstr "Space Tree for efterkommere"
+
+msgid ""
+"Generates a web page with an interactive graph of descendants represented as "
+"a Space Tree for efficient viewing, even with many descendants or "
+"generations."
+msgstr ""
+"Danner en webside med en interaktiv graf over efterkommere repræsenterede "
+"som et Space Tree for effektiv visning, sselv med mange efterkommere eller "
+"generationer."

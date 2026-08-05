@@ -1,0 +1,55 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.8.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+msgid "Pedigree Chart"
+msgstr "Soyağacı Grafiği"
+
+msgid "Alternate version of the traditional pedigree chart."
+msgstr "Geleneksel soyağacı grafiğinin alternatif sürümü."
+
+#, python-format
+msgid "Pedigree Chart for %s"
+msgstr "%s için Soyağacı Grafiği"
+
+#, python-format
+msgid "Page %d"
+msgstr "Sayfa %d"
+
+msgid "Show Mother/Father captions"
+msgstr "Anne/Baba unvanlarını göster"
+
+msgid "Show the title of mother or father beside each ancestor's box."
+msgstr "Her atanın kutusunun yanında anne veya babanın unvanını göster."
+
+msgid "Show page numbers"
+msgstr "Sayfa numaralarını göster"
+
+msgid "Add a footer on every page with the page number and date printed."
+msgstr ""
+"Her sayfaya sayfa numarası ve yazdırılan tarihle birlikte bir altbilgi "
+"ekleyin."
+
+msgid "The basic style used for the title display."
+msgstr "Başlık gösterimi için kullanılan temel stil."
+
+msgid "Style used for names (only for PDF document and PostScript)."
+msgstr "Adlar için kullanılan stil (yalnızca PDF belgesi ve PostScript için)."
+
+msgid "Style used for labels and captions."
+msgstr "Etiketler ve başlıklar için kullanılan stil."

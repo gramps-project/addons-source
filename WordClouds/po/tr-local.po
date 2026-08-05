@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-29 09:56-0700\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.8.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+msgid "Click place name to view references"
+msgstr "Referansları görüntülemek için yer adına tıklayın"
+
+msgid "Click given name to view people with that given name"
+msgstr "Verilen ada sahip kişileri görüntülemek için verilen ada tıklayın"
+
+msgid "Given Name Word Cloud"
+msgstr "Verilen Ad Kelime Bulutu"
+
+msgid "Gramplet showing all given names as a word cloud"
+msgstr "Tüm verilen adları kelime bulutu olarak gösteren Gramplet"
+
+msgid "Surname Word Cloud"
+msgstr "Soyadı Kelime Bulutu"
+
+msgid "Gramplet showing all surnames as a word cloud"
+msgstr "Tüm soyadlarını bir kelime bulutu olarak gösteren Gramplet"
+
+msgid "Place Word Cloud"
+msgstr "Kelime Bulutu Yerleştir"
+
+msgid "Gramplet showing all places as a word cloud"
+msgstr "Tüm yerleri kelime bulutu olarak gösteren Gramplet"
+
+#, python-format
+msgid "Number of %s"
+msgstr "%s sayısı"
+
+msgid "Color (low)"
+msgstr "Renk (düşük)"
+
+msgid "Color (high)"
+msgstr "Renk (yüksek)"
+
+msgid "Hover color"
+msgstr "Fareyle üzerine gelindiğinde renk"
+
+msgid "Layout quality"
+msgstr "Düzen kalitesi"
+
+msgid "Filter missing/unknown words"
+msgstr "Eksik/bilinmeyen kelimeleri filtrele"
+
+#, python-format
+msgid "[Missing %s]"
+msgstr "[Eksik %s]"
+
+msgid "Click surname to view people with that surname"
+msgstr "O soyadına sahip kişileri görüntülemek için soyadına tıklayın"

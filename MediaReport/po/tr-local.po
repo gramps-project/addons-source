@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,10 +12,79 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
 
 msgid "INFO"
 msgstr "BİLGİ"
+
+msgid "You have to select an image to generate this report."
+msgstr "Bu raporu oluşturmak için bir resim seçmeniz gerekiyor."
+
+msgid ""
+"You have to select a custom note or uncheck the option 'include custom note' "
+"to generate this report."
+msgstr ""
+"Bu raporu oluşturmak için özel bir not seçmeniz veya 'özel not ekle' "
+"seçeneğinin işaretini kaldırmanız gerekmektedir."
+
+msgid "This report only supports PDF as output file format."
+msgstr "Bu rapor yalnızca PDF dosya biçimini desteklemektedir."
+
+msgid "General:"
+msgstr "Genel:"
+
+msgid "Image type:"
+msgstr "Resim türü:"
+
+msgid "Heading"
+msgstr "Başlık"
+
+msgid "Select a media file for this report"
+msgstr "Bu rapor için bir medya dosyası seçin"
+
+msgid "Custom note"
+msgstr "Özel not"
+
+msgid "Select a note for this report"
+msgstr "Bu rapor için bir not seçin"
+
+msgid "Include custom note"
+msgstr "Özel notu dahil et"
+
+msgid "The custom note will be included"
+msgstr "Özel not dahil edilecektir"
+
+msgid "Include referenced people"
+msgstr "Referans verilen kişileri dahil et"
+
+msgid "Referenced people will be included"
+msgstr "Referans verilen kişiler dahil edilecektir"
+
+msgid "Include media data"
+msgstr "Medya verilerini dahil et"
+
+msgid "Tags, notes and attributes will be included"
+msgstr "Etiketler, notlar ve öznitelikler dahil edilecektir"
+
+msgid "Media width"
+msgstr "Medya genişliği"
+
+#, no-python-format
+msgid "Maximum media width in % of available page width."
+msgstr "Mevcut sayfa genişliğinin %'si olarak maksimum medya genişliği."
+
+msgid "Media height"
+msgstr "Medya yüksekliği"
+
+#, no-python-format
+msgid "Maximum media height in % of available page height."
+msgstr "Mevcut sayfa yüksekliğinin %'si olarak maksimum medya yüksekliği."
+
+msgid "Media Report"
+msgstr "Medya Raporu"
+
+msgid "Generates report including images, image data and notes."
+msgstr "Resimleri, resim verilerini ve notları içeren bir rapor oluşturur."

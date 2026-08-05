@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
-"PO-Revision-Date: 2026-04-20 04:09+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-07-26 17:40+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Deep Connections Gramplet"
@@ -23,6 +23,41 @@ msgstr "Gramplet näyttää aktiivi- ja kotihenkilön väliset suhteet syvemmäl
 
 msgid "Deep Connections"
 msgstr "Syväsuhteet"
+
+msgid "⏸ Pause"
+msgstr "⏸ Pysäytä"
+
+msgid "Pause the current search"
+msgstr "Keskeytä nykyinen haku"
+
+msgid "▶ Continue"
+msgstr "▶ Jatka"
+
+msgid "Continue searching for more relations"
+msgstr "Jatka hakua löytääksesi lisää suhteita"
+
+msgid "📋 Copy"
+msgstr "📋 Kopioi"
+
+msgid "Copy selected people to clipboard"
+msgstr "Kopioi valitut henkilöt leikepöydälle"
+
+msgid "🗑 Clear"
+msgstr "🗑 Tyhjennä"
+
+msgid "Clear all results and reset"
+msgstr "Tyhjennä kaikki tulokset ja palauta alkuarvoihin"
+
+msgid "Ready to search"
+msgstr "Valmis etsintään"
+
+#, python-brace-format
+msgid ""
+"Search Depth: {depth} | People Processed: {processed} | Queue Size: "
+"{queue_size}"
+msgstr ""
+"Haun syvyys: {depth} | Henkilötä käsitelty: {processed} | Jonon koko: "
+"{queue_size}"
 
 msgid "mentioned in note"
 msgstr "mainitussa huomautuksessa"
@@ -51,8 +86,17 @@ msgstr ""
 "\n"
 "   %s henkilölle "
 
+msgid "Error: No Home Person set"
+msgstr "Kotihenkilöä ei ole asetettu."
+
 msgid "No Active Person set."
 msgstr "Aktiivihenkilöä ei ole asetettu."
+
+msgid "Error: No Active Person set"
+msgstr "Virhe: aktiivista henkilöä ei ole asetettu"
+
+msgid "Initializing search..."
+msgstr "Hakua alustetaan..."
 
 msgid "Looking for relationship between\n"
 msgstr "Etsitään henkilöiden väliset sukulaisuussuhteet\n"
@@ -64,6 +108,9 @@ msgstr "  <b>%s</b> (kotihenkilö) ja\n"
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (aktiivihenkilö)...\n"
+
+msgid "Searching for connections..."
+msgstr "Yhteyksiä etsitään..."
 
 #, python-format
 msgid ""
@@ -79,3 +126,26 @@ msgid ""
 msgstr ""
 "Pysäytetty.\n"
 "Etsi lisää suhteita painamalla Jatka.\n"
+
+msgid "Paused - Press Continue to search for more relations"
+msgstr "Keskeytetty - Paina Jatka etsiäksesi lisää suhteita"
+
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relation paths found."
+msgstr ""
+"\n"
+"Haku suoritettu. Löydettiin %d suhdepolkua."
+
+msgid "Search completed - {} relation paths found"
+msgstr "Haku valmis - %d suhdepolkua löytynyt"
+
+msgid "Error during search: {}"
+msgstr "Virhe haun aikana: {}"
+
+msgid "Resuming search..."
+msgstr "Hakua jatketaan..."
+
+msgid "Search interrupted by user"
+msgstr "Käyttäjä keskeytti haun"
