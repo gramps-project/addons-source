@@ -33,4 +33,5 @@ register(
     databaseclass="WebApiDB",
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],
+    help_url="Addon:GrampsWebApiDb",
 )

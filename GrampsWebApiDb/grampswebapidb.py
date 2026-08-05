@@ -134,7 +134,11 @@ from gramps.plugins.db.dbapi.sqlite import SQLite
 
 from webapi_client import WebApiHandler, WebApiPushConflict
 
-_ = glocale.translation.gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 LOG = logging.getLogger("grampswebapidb")
 
 #: How many transactions to request per page while syncing.
