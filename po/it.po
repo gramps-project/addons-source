@@ -62,13 +62,14 @@
 # Vincenzo Alfano <vinc.alfano@gmail.com>, 2016.
 # Fabio Restante <frestante@gmail.com>, 2025, 2026.
 # Paolo Zamponi <feus73@gmail.com>, 2025, 2026.
+# medardo <medardo@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-29 09:58-0700\n"
-"PO-Revision-Date: 2026-07-09 15:32+0000\n"
-"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
+"PO-Revision-Date: 2026-07-31 16:24+0000\n"
+"Last-Translator: medardo <medardo@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -76,7 +77,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 msgid "Birthdays"
 msgstr "Compleanni"
@@ -85,7 +86,7 @@ msgid "Ignore birthdays with tag"
 msgstr "Ignora compleanni con etichetta"
 
 msgid "Month and day"
-msgstr ""
+msgstr "Mese e giorno"
 
 msgid "Only show birthdays with tag"
 msgstr "Mostra solo compleanni con etichetta"
@@ -103,13 +104,11 @@ msgstr "Ordina per "
 msgid "Sort dates of death by"
 msgstr "Data di nascita del deceduto"
 
-#, fuzzy
-#| msgid "a gramplet that displays the birthdays of the living people"
 msgid "a gramplet that displays death dates in sorted order"
-msgstr "un gramplet che mostra i compleanni delle persone in vita"
+msgstr "Un gramplet che visualizza le date di decesso in ordine cronologico"
 
 msgid "a gramplet that displays the birthdays of the living people"
-msgstr "un gramplet che mostra i compleanni delle persone in vita"
+msgstr "Un gramplet che mostra i compleanni delle persone in vita"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
