@@ -126,6 +126,24 @@ class FakeResponse:
         return False
 
 
+class FakeBinaryResponse:
+    """Like FakeResponse, but for endpoints that return a raw file body
+    rather than JSON (see download_export()/_get_binary())."""
+
+    def __init__(self, body: bytes, headers=None):
+        self._body = body
+        self.headers = headers or {}
+
+    def read(self):
+        return self._body
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc_info):
+        return False
+
+
 def http_error(code, url="https://example.com/api"):
     return HTTPError(url, code, f"HTTP {code}", None, None)
 
@@ -482,6 +500,74 @@ class TestTransactionHistory(unittest.TestCase):
         with mock.patch.object(webapi_client, "urlopen", fake):
             _transactions, total = handler.get_transaction_history()
         self.assertEqual(total, 3)
+
+
+# -------------------------------------------------------------------------
+#
+# TestDownloadExport
+#
+# -------------------------------------------------------------------------
+class TestDownloadExport(unittest.TestCase):
+    """download_export() (grampswebapidb.py's _full_resync() fallback)
+    hits GET /exporters/<extension>/file and returns the raw body,
+    sharing _get_binary()'s 401/429/network retry behavior with
+    _get_json()."""
+
+    def _authed_handler(self):
+        fake = QueuedUrlopen([FakeResponse({"access_token": token("AT0")})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler = WebApiHandler("https://example.com/api", refresh_token="RT")
+        return handler
+
+    def test_request_url_and_returns_raw_bytes(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeBinaryResponse(b"gzip-bytes-here")])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            data = handler.download_export()
+        self.assertEqual(data, b"gzip-bytes-here")
+        self.assertEqual(
+            fake.requests[0].full_url, "https://example.com/api/exporters/gramps/file"
+        )
+
+    def test_extension_is_configurable(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeBinaryResponse(b"gedcom-bytes")])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.download_export(extension="ged")
+        self.assertEqual(
+            fake.requests[0].full_url, "https://example.com/api/exporters/ged/file"
+        )
+
+    def test_401_triggers_reauth_and_retry(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                http_error(401),
+                FakeResponse({"access_token": token("AT1")}),  # the re-auth call
+                FakeBinaryResponse(b"data-after-reauth"),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake), mock.patch.object(
+            webapi_client, "sleep"
+        ):
+            data = handler.download_export()
+        self.assertEqual(data, b"data-after-reauth")
+
+    def test_429_retries_once(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([http_error(429), FakeBinaryResponse(b"data")])
+        with mock.patch.object(webapi_client, "urlopen", fake), mock.patch.object(
+            webapi_client, "sleep"
+        ):
+            data = handler.download_export()
+        self.assertEqual(data, b"data")
+
+    def test_second_failure_propagates(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([http_error(500), http_error(500)])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            with self.assertRaises(HTTPError):
+                handler.download_export()
 
 
 # -------------------------------------------------------------------------

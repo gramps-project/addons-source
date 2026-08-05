@@ -361,6 +361,50 @@ class WebApiHandler:
                 return self._get_json(url, retry=False)
             raise
 
+    def _get_binary(self, url: str, retry: bool = True) -> bytes:
+        """GET ``url`` with the bearer token and return the raw response
+        body, unlike _get_json() -- for endpoints that return a file
+        rather than a JSON document (see download_export())."""
+        req = Request(
+            url,
+            headers={
+                "Authorization": f"Bearer {self.access_token}",
+                "User-Agent": "GrampsWebApiDb",
+            },
+        )
+        try:
+            with self._open(req) as res:
+                return res.read()
+        except HTTPError as exc:
+            if exc.code == 401 and retry:
+                sleep(RATE_LIMIT_BACKOFF)
+                self._authenticate()
+                return self._get_binary(url, retry=False)
+            if exc.code == 429 and retry:
+                sleep(RATE_LIMIT_BACKOFF)
+                return self._get_binary(url, retry=False)
+            raise
+        except (URLError, socket.timeout):
+            if retry:
+                sleep(1)
+                return self._get_binary(url, retry=False)
+            raise
+
+    def download_export(self, extension: str = "gramps") -> bytes:
+        """
+        Download a full backup export of the tree from the server --
+        by default a gzip-compressed Gramps XML file, the exact on-disk
+        shape Gramps' own ImportXml importer already reads (confirmed
+        against a live server: GET /exporters/gramps/file runs
+        synchronously and streams the file back, no task polling
+        needed). Used by grampswebapidb.py's WebApiDB._full_resync() to
+        rebuild the local mirror wholesale when the transaction-history
+        feed can't describe what changed -- see that method's own doc
+        comment on why.
+        """
+        url = f"{self.url}/exporters/{extension}/file"
+        return self._get_binary(url)
+
     def get_transaction_history(
         self, after: float = 0, page: int = 1, pagesize: int = 100
     ) -> tuple[list[dict[str, Any]], int]:
