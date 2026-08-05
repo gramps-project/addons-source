@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-29 09:58-0700\n"
-"PO-Revision-Date: 2026-07-04 17:49+0000\n"
+"PO-Revision-Date: 2026-07-30 22:02+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 msgid "Birthdays"
 msgstr "Aniversários"
@@ -26,28 +26,22 @@ msgid "Ignore birthdays with tag"
 msgstr "Ignorar aniversários com etiqueta"
 
 msgid "Month and day"
-msgstr ""
+msgstr "Mês e dia"
 
 msgid "Only show birthdays with tag"
 msgstr "Mostrar só aniversários com etiqueta"
 
 msgid "Proximity to current date"
-msgstr ""
+msgstr "Proximidade à data actual"
 
-#, fuzzy
-#| msgid "Sort by "
 msgid "Sort birthdays by"
-msgstr "Ordenar por "
+msgstr "Ordenar aniversários por"
 
-#, fuzzy
-#| msgid "Birth date of deceased"
 msgid "Sort dates of death by"
-msgstr "Data de nascimento do falecido"
+msgstr "Ordenar óbitos por"
 
-#, fuzzy
-#| msgid "a gramplet that displays the birthdays of the living people"
 msgid "a gramplet that displays death dates in sorted order"
-msgstr "um gramplet que mostra os aniversários de indivíduos vivos"
+msgstr "um gramplet que mostra os óbitos ordenados"
 
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "um gramplet que mostra os aniversários de indivíduos vivos"
@@ -1308,10 +1302,8 @@ msgstr ""
 "Editar -> Definir indivíduo inicial."
 
 #: CombinedView/personpage.py:306 CombinedView/personpage.py:368
-#, fuzzy
-#| msgid "Adding Tags to family (%s)"
 msgid "Add existing child to family"
-msgstr "Adicionar etiquetas à família (%s)"
+msgstr "Adicionar filho existente à família"
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -5448,6 +5440,8 @@ msgstr "Permite a utilização de expressões regulares."
 #: ExcludeSubtreeFilter/excludesubtree.py:106
 msgid "People reachable from <Person>, stopping at <Filter> matches"
 msgstr ""
+"Indivíduoss contactáveis a partir de <indivíduo>, parando em <filtro> "
+"correspondências"
 
 #: ExcludeSubtreeFilter/excludesubtree.gpr.py:26
 #: ExcludeSubtreeFilter/excludesubtree.py:109
@@ -5456,11 +5450,14 @@ msgid ""
 "and children of attached families, recursively) stopping at persons in "
 "<Filter>."
 msgstr ""
+"Compara indivíduos que estão acessíveis a partir de <indivíduo> (percorrendo "
+"recursivamente todos os pais e filhos das famílias associadas), parando nos "
+"indivíduos em <filtro>."
 
 #: ExcludeSubtreeFilter/excludesubtree.py:121
 #: FilterRules/isrelatedwithfiltermatch.py:80
 msgid "Retrieving all sub-filter matches"
-msgstr ""
+msgstr "A obter todas as correspondências do subfiltro"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
@@ -19858,65 +19855,49 @@ msgid "No source information found"
 msgstr "Sem informações de fontes"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:25
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Person Relationship Filter"
-msgstr "Relação com o pai"
+msgstr "Filtro de parentescos do indivíduo"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:26
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet providing a person filter on relationships"
-msgstr "Gramplet que mostra parentes numa relação"
+msgstr "Gramplet que permite filtrar as relações por indivíduo"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:33
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Relationship Filter"
-msgstr "Relação com o pai"
+msgstr "Filtro de parentescos"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:82
-#, fuzzy
-#| msgid "Children Dead"
 msgid "Children of name match"
-msgstr "Filhos falecidos"
+msgstr "Filhos com o mesmo nome"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:84
 msgid "Matches children of anybody with a given name"
-msgstr ""
+msgstr "Corresponde aos filhos de qualquer pessoa com um determinado nome"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:251
-#, fuzzy
-#| msgid "sibling"
 msgid "Sibling 1"
-msgstr "irmão"
+msgstr "Irmão 1"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:252
-#, fuzzy
-#| msgid "sibling"
 msgid "Sibling 2"
-msgstr "irmão"
+msgstr "Irmão 2"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:253
-#, fuzzy
-#| msgid "Children Dead"
 msgid "Child 1"
-msgstr "Filhos falecidos"
+msgstr "Filho 1"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:254
-#, fuzzy
-#| msgid "Children Dead"
 msgid "Child 2"
-msgstr "Filhos falecidos"
+msgstr "Filho 2"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:282
 msgid "Probably Alive"
-msgstr ""
+msgstr "Provavelmente vivo"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:284
 #, python-format
 msgid "example: '%(msg1)s' or '%(msg2)s'"
-msgstr ""
+msgstr "exemplo: \"%(msg1)s\" ou \"%(msg2)s\""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
@@ -25475,85 +25456,69 @@ msgstr "Ícones de exibição"
 
 #: WordClouds/WordClouds.gpr.py:24 WordClouds/WordClouds.gpr.py:32
 msgid "Given Name Word Cloud"
-msgstr ""
+msgstr "Nuvem de nomes próprios"
 
 #: WordClouds/WordClouds.gpr.py:25
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet showing all given names as a word cloud"
-msgstr "Gramplet que mostra parentes numa relação"
+msgstr "Gramplet que mostra todos os nomes próprios numa nuvem"
 
 #: WordClouds/WordClouds.gpr.py:40 WordClouds/WordClouds.gpr.py:48
 msgid "Surname Word Cloud"
-msgstr ""
+msgstr "Nuvem de apelidos"
 
 #: WordClouds/WordClouds.gpr.py:41
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet showing all surnames as a word cloud"
-msgstr "Gramplet que mostra parentes numa relação"
+msgstr "Gramplet que mostra todos os apelidos numa nuvem"
 
 #: WordClouds/WordClouds.gpr.py:56 WordClouds/WordClouds.gpr.py:64
-#, fuzzy
-#| msgid "Place history loaded"
 msgid "Place Word Cloud"
-msgstr "Histórico do local carregado"
+msgstr "Nuvem de locais"
 
 #: WordClouds/WordClouds.gpr.py:57
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet showing all places as a word cloud"
-msgstr "Gramplet que mostra parentes numa relação"
+msgstr "Gramplet que mostra todos os locais numa nuvem"
 
 #: WordClouds/cloudgramplet.py:147 WordClouds/cloudgramplet.py:225
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid "Number of %s"
-msgstr "Número de páginas"
+msgstr "Número de %s"
 
 #: WordClouds/cloudgramplet.py:149 WordClouds/cloudgramplet.py:227
-#, fuzzy
-#| msgid "Colored Male"
 msgid "Color (low)"
-msgstr "De cor masculino"
+msgstr "Cor (baixa)"
 
 #: WordClouds/cloudgramplet.py:150 WordClouds/cloudgramplet.py:228
 msgid "Color (high)"
-msgstr ""
+msgstr "Cor (alta)"
 
 #: WordClouds/cloudgramplet.py:151 WordClouds/cloudgramplet.py:229
-#, fuzzy
-#| msgid "Hair color"
 msgid "Hover color"
-msgstr "Cor do cabelo"
+msgstr "Cor ao pairar"
 
 #: WordClouds/cloudgramplet.py:152 WordClouds/cloudgramplet.py:230
 msgid "Layout quality"
-msgstr ""
+msgstr "Qualidade da disposição"
 
 #: WordClouds/cloudgramplet.py:154 WordClouds/cloudgramplet.py:232
 msgid "Filter missing/unknown words"
-msgstr ""
+msgstr "Filtrar palavras em falta/desconhecidas"
 
 #: WordClouds/cloudgramplet.py:207
-#, fuzzy, python-format
-#| msgid "[Missing]"
+#, python-format
 msgid "[Missing %s]"
-msgstr "(em falta)"
+msgstr "[%s em falta]"
 
 #: WordClouds/givennamewordcloudgramplet.py:50
 msgid "Click given name to view people with that given name"
-msgstr ""
+msgstr "Clique no nome próprio para ver indivíduos com esse nome"
 
 #: WordClouds/placewordcloudgramplet.py:53
-#, fuzzy
-#| msgid "Include Image source references"
 msgid "Click place name to view references"
-msgstr "Incluir referências à fonte das imagens"
+msgstr "Clique em locais para ver referências"
 
 #: WordClouds/surnamewordcloudgramplet.py:49
 msgid "Click surname to view people with that surname"
-msgstr ""
+msgstr "Clique no qpelido para ver indivíduos com esse apelido"
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
