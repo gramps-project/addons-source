@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-03 09:18-0700\n"
-"PO-Revision-Date: 2026-04-28 18:11+0000\n"
+"PO-Revision-Date: 2026-07-23 14:01+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -137,39 +137,32 @@ msgid "The style used for the title of the page."
 msgstr "Fontformat for sidens titel"
 
 #: AncestryTableReport/AncestryTableReport.gpr.py:3
-#, fuzzy
-#| msgid "Ancestry"
 msgid "Ancestry Table"
-msgstr "Aner"
+msgstr "Anetabel"
 
 #: AncestryTableReport/AncestryTableReport.gpr.py:4
-#, fuzzy
-#| msgid "Produces descendants lines of a person"
 msgid "Produces a table of ancestry about a person"
-msgstr "Danner efterkommerlinier for en person"
+msgstr "Danner en anetabel for en person"
 
 #: AncestryTableReport/AncestryTableReport.py:133
 #, python-format
 msgid "Person %(name)s is not in the Database"
-msgstr ""
+msgstr "Personen %(name)s findes ikke i databasen"
 
 #: AncestryTableReport/AncestryTableReport.py:277
-#, fuzzy, python-format
-#| msgid "The style used for names"
+#, python-format
 msgid "Ancestry Table Report for %(name)s"
-msgstr "Stilen der benyttes til navne"
+msgstr "Anetabel rapport for %(name)s"
 
 #: AncestryTableReport/AncestryTableReport.py:311
-#, fuzzy, python-format
-#| msgid "Generations up"
+#, python-format
 msgid "Generation %(gen_number)d"
-msgstr "Generationer op"
+msgstr "Generation %(gen_number)d"
 
 #: AncestryTableReport/AncestryTableReport.py:360
-#, fuzzy, python-format
-#| msgid "Number of Ancestors found "
+#, python-format
 msgid "Number of Ancestors for %(name)s"
-msgstr "Antal fundne aner "
+msgstr "Antal aner for %(name)s"
 
 #: AncestryTableReport/AncestryTableReport.py:370
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
@@ -180,31 +173,27 @@ msgstr "Generation"
 
 #: AncestryTableReport/AncestryTableReport.py:472
 msgid "To start a new page after each generation."
-msgstr ""
+msgstr "At begynde en ny side efter hver generation."
 
 #: AncestryTableReport/AncestryTableReport.py:475
-#, fuzzy
-#| msgid "Number of ancestors"
 msgid "Number of ancestors per generation"
-msgstr "Antal aner"
+msgstr "Antal aner pr generation"
 
 #: AncestryTableReport/AncestryTableReport.py:476
-#, fuzzy
-#| msgid "Whether to display the theoretical number of ancestor by generation"
 msgid "Add a page with tne number of ancestors per generation."
-msgstr "Hvorvidt det teoretiske anta aber per generation skal medtagesl"
+msgstr "Tilføj en side med antallet aner per generation."
 
 #: AncestryTableReport/AncestryTableReport.py:495
-#, fuzzy
-#| msgid "Color the name to indicate a person's gender in the chart."
 msgid "Mask the name of the calendar in the dates"
-msgstr "Farv navnet for at angive en persons køn i diagrammet."
+msgstr "Skjul kalendernavnet i datoerne"
 
 #: AncestryTableReport/AncestryTableReport.py:496
 msgid ""
 "By default, except for gregorian dates, Gramps shows the name of the "
 "calendar in the dates."
 msgstr ""
+"Som standard viser Gramps navnet på kalenderen i datoerne, bortset fra "
+"gregorianske datoer."
 
 #: AncestryTableReport/AncestryTableReport.py:519
 #: RepositoriesReport/RepositoriesReport.py:175
@@ -214,74 +203,60 @@ msgid "The style used for the title of the report."
 msgstr "Stilen der benyttes til rapportens titel."
 
 #: AncestryTableReport/AncestryTableReport.py:541
-#, fuzzy
-#| msgid "The style used for the subtitle of the report."
 msgid "The style used for the Sosa number of the paternal branch."
-msgstr "Stilen der benyttes til rapportens undertitel."
+msgstr "Stilen der benyttes til Sosa-nummeret for faderens linje."
 
 #: AncestryTableReport/AncestryTableReport.py:552
-#, fuzzy
-#| msgid "The style used for the subtitle of the report."
 msgid "The style used for the Sosa number of the maternal branch."
-msgstr "Stilen der benyttes til rapportens undertitel."
+msgstr "Stilen der benyttes til Sosa-nummeret for moderens linje."
 
 #: AncestryTableReport/AncestryTableReport.py:562
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the data of the males."
-msgstr "Fontformat for sidens titel"
+msgstr "Stilen der benyttes for mændenes data."
 
 #: AncestryTableReport/AncestryTableReport.py:572
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the data of the females."
-msgstr "Fontformat for sidens titel"
+msgstr "Stilen de benyttes for kvindernes data."
 
 #: AncestryTableReport/AncestryTableReport.py:583
-#, fuzzy
-#| msgid "The style used for names."
 msgid "The style used for the marriage."
-msgstr "Stilen der benyttes til navne."
+msgstr "Stilen der benyttes for ægteskabet."
 
 #: AncestryTableReport/AncestryTableReport.py:593
 msgid ""
 "The style used for an empty row.\n"
 "To enlarge the height of the empty row, just increse the size of the police."
 msgstr ""
+"Stilen der benyttes for en tom rækker.\n"
+"For at forøge højden på den tomme række, øg simpelthen størrelsen på tegnene."
 
 #: AncestryTableReport/AncestryTableReport.py:632
-#, fuzzy
-#| msgid "The style used for the header in the Index of Places."
 msgid ""
 "The style used for the header table of the number of ancestors per "
 "generation."
-msgstr "Stilen der benyttes til oveskiften i Indeks over Steder."
+msgstr ""
+"Stilen der benyttes til overskiften i tabellen over antallet af aner per "
+"generation."
 
 #: AncestryTableReport/AncestryTableReport.py:643
 #, fuzzy
 #| msgid "The style used for the table of contents header."
 msgid "The style used for the number of ancestors per generation."
-msgstr "Stilen der bruges til indholdsfortegnelsens overskrift."
+msgstr "Stilen der bruges til antallet af aner per generation."
 
 #: AncestryTableReport/AncestryTableReport.py:654
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid ""
 "The style used for the total line of the number of ancestors per generation."
-msgstr "Stilen der benyttes til rapportens titel."
+msgstr "Stilen der benyttes til totallinjen af antallet af aner per generation."
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:24
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:32
-#, fuzzy
-#| msgid "Inverse"
 msgid "Anniversaries"
-msgstr "Omvendt"
+msgstr "Årsdage"
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:25
-#, fuzzy
-#| msgid "a gramplet that displays the birthdays of the living people"
 msgid "A gramplet that displays the anniversaries of events"
-msgstr "en gramplet der viser fødselsdage for levende persone"
+msgstr "En gramplet der viser årsdage for begivenheder"
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:52
 #, fuzzy
@@ -16142,7 +16117,7 @@ msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:923
 msgid "Merge"
-msgstr ""
+msgstr "Sammenføj"
 
 #: GrampsWebSync/grampswebsync.py:948
 msgid "Local changes"
@@ -20814,7 +20789,7 @@ msgstr "Visning for sted koordinat gramplet."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
 msgid "Place and Coordinates"
-msgstr "Sted og koorsinater"
+msgstr "Sted og koordinater"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
 msgid "Gramplet that simplifies setting the coordinates of a place"
