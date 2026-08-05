@@ -386,7 +386,10 @@ class WebApiHandler:
         return body, total_count
 
     def push_transaction(
-        self, payload: list[dict[str, Any]], retry: bool = True
+        self,
+        payload: list[dict[str, Any]],
+        retry: bool = True,
+        undo: bool = False,
     ) -> None:
         """
         POST a batch of local changes to /transactions/ (no force=1): the
@@ -404,12 +407,24 @@ class WebApiHandler:
         a network/auth failure. Actual merge resolution is still out of
         scope -- the caller's response to a conflict is to resync from the
         server, not to retry the push.
+
+        ``undo=True`` sends the *same* payload a prior push_transaction()
+        call already sent, with ?undo=1: the server reverses it itself
+        (swaps old/new, add<->delete -- see
+        gramps_webapi/api/resources/util.py's reverse_transaction()) before
+        applying, so this is how grampswebapidb.py implements Undo without
+        having to compute the inverse payload locally. Redo is *not* a
+        variant of this -- it's just an ordinary push_transaction() call
+        with the original (forward) payload again.
         """
         if not payload:
             return
         data = json.dumps(payload).encode()
+        url = f"{self.url}/transactions/"
+        if undo:
+            url += "?undo=1"
         req = Request(
-            f"{self.url}/transactions/",
+            url,
             data=data,
             method="POST",
             headers={
@@ -425,15 +440,15 @@ class WebApiHandler:
             if exc.code == 401 and retry:
                 sleep(RATE_LIMIT_BACKOFF)
                 self._authenticate()
-                return self.push_transaction(payload, retry=False)
+                return self.push_transaction(payload, retry=False, undo=undo)
             if exc.code == 429 and retry:
                 sleep(RATE_LIMIT_BACKOFF)
-                return self.push_transaction(payload, retry=False)
+                return self.push_transaction(payload, retry=False, undo=undo)
             if exc.code == 400:
                 _raise_for_push_conflict(exc)
             raise
         except (URLError, socket.timeout):
             if retry:
                 sleep(RATE_LIMIT_BACKOFF)
-                return self.push_transaction(payload, retry=False)
+                return self.push_transaction(payload, retry=False, undo=undo)
             raise
