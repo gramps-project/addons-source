@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-04 08:55-0700\n"
-"PO-Revision-Date: 2026-08-03 04:01+0000\n"
+"PO-Revision-Date: 2026-08-05 18:02+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 msgid "Birthdays"
 msgstr "Narodeniny"
@@ -15438,282 +15438,271 @@ msgid "Select Form"
 msgstr "Vybrať formulár"
 
 #: GOQLFilter/goql.gpr.py:31
-#, fuzzy
-#| msgid "Person Relationship Filter"
 msgid "Person GOQL Filter"
-msgstr "Filter vzťahov osôb"
+msgstr "Filter GOQL pre osoby"
 
 #: GOQLFilter/goql.gpr.py:32
 msgid "Gramplet providing a gramps-object-query-language person filter"
-msgstr ""
+msgstr "Gramplet poskytujúci filter osôb v Gramps Object Query Language"
 
 #: GOQLFilter/goql.gpr.py:39 GOQLFilter/goql.gpr.py:58
 #: GOQLFilter/goql.gpr.py:77 GOQLFilter/goql.gpr.py:96
 #: GOQLFilter/goql.gpr.py:117 GOQLFilter/goql.gpr.py:136
 #: GOQLFilter/goql.gpr.py:155 GOQLFilter/goql.gpr.py:174
 #: GOQLFilter/goql.gpr.py:193
-#, fuzzy
-#| msgid "Filtering"
 msgid "GOQL Filter"
-msgstr "Filtrovanie"
+msgstr "Filter GOQL"
 
 #: GOQLFilter/goql.gpr.py:50
-#, fuzzy
-#| msgid "Family Filter name:"
 msgid "Family GOQL Filter"
-msgstr "Názov rodinného filtra:"
+msgstr "Filter GOQL pre rodiny"
 
 #: GOQLFilter/goql.gpr.py:51
 msgid "Gramplet providing a gramps-object-query-language family filter"
-msgstr ""
+msgstr "Gramplet poskytujúci filter rodín v Gramps Object Query Language"
 
 #: GOQLFilter/goql.gpr.py:69
 msgid "Event GOQL Filter"
-msgstr ""
+msgstr "Filter GOQL pre udalosti"
 
 #: GOQLFilter/goql.gpr.py:70
 msgid "Gramplet providing a gramps-object-query-language event filter"
-msgstr ""
+msgstr "Gramplet poskytujúci filter udalostí v Gramps Object Query Language"
 
 #: GOQLFilter/goql.gpr.py:88
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place GOQL Filter"
-msgstr "Miesto _filter:"
+msgstr "Filter GOQL pre miesta"
 
 #: GOQLFilter/goql.gpr.py:89
 msgid "Gramplet providing a gramps-object-query-language place filter"
-msgstr ""
+msgstr "Gramplet poskytujúci filter miest v Gramps Object Query Language"
 
 #: GOQLFilter/goql.gpr.py:107
-#, fuzzy
-#| msgid "Repository title"
 msgid "Repository GOQL Filter"
-msgstr "Názov repozitára"
+msgstr "Filter GOQL pre repozitáre"
 
 #: GOQLFilter/goql.gpr.py:109
 msgid "Gramplet providing a gramps-object-query-language repository filter"
-msgstr ""
+msgstr "Gramplet poskytujúci filter repozitárov v Gramps Object Query Language"
 
 #: GOQLFilter/goql.gpr.py:128
-#, fuzzy
-#| msgid "Source type"
 msgid "Source GOQL Filter"
-msgstr "Typ zdroja"
+msgstr "Filter GOQL pre zdroje"
 
 #: GOQLFilter/goql.gpr.py:129
 msgid "Gramplet providing a gramps-object-query-language source filter"
-msgstr ""
+msgstr "Gramplet poskytujúci filter zdrojov v Gramps Object Query Language"
 
 #: GOQLFilter/goql.gpr.py:147
-#, fuzzy
-#| msgid "Relationship Filter"
 msgid "Citation GOQL Filter"
-msgstr "Filter vzťahov"
+msgstr "Filter GOQL pre citácie"
 
 #: GOQLFilter/goql.gpr.py:148
-#, fuzzy
-#| msgid "Gramplet providing a person filter on relationships"
 msgid "Gramplet providing a gramps-object-query-language citation filter"
-msgstr "Gramplet poskytujúci filter osôb podľa vzťahov"
+msgstr "Gramplet poskytujúci filter citácií v Gramps Object Query Language"
 
 #: GOQLFilter/goql.gpr.py:166
-#, fuzzy
-#| msgid "Media Object Title"
 msgid "Media GOQL Filter"
-msgstr "Názov objektu média"
+msgstr "Filter GOQL pre médiá"
 
 #: GOQLFilter/goql.gpr.py:167
 msgid "Gramplet providing a gramps-object-query-language media filter"
-msgstr ""
+msgstr "Gramplet poskytujúci filter médií v Gramps Object Query Language"
 
 #: GOQLFilter/goql.gpr.py:185
-#, fuzzy
-#| msgid "Note Link (internal)"
 msgid "Note GOQL Filter"
-msgstr "Odkaz poznámky (interný)"
+msgstr "Filter GOQL pre poznámky"
 
 #: GOQLFilter/goql.gpr.py:186
 msgid "Gramplet providing a gramps-object-query-language note filter"
-msgstr ""
+msgstr "Gramplet poskytujúci filter poznámok v Gramps Object Query Language"
 
 #: GOQLFilter/goql.py:186
 msgid "A gramps-object-query-language where-expression, e.g.\n"
-msgstr ""
+msgstr "Výraz WHERE (kde) v Gramps Object Query Language, napr.\n"
 
 #: GOQLFilter/goql.py:188
 msgid "Enter inserts a newline; Ctrl+Enter runs Find.\n"
-msgstr ""
+msgstr "Enter vloží nový riadok; Ctrl+Enter spustí Hľadať.\n"
 
 #: GOQLFilter/goql.py:189
 msgid "Up/Down at the first/last line recalls previous expressions.\n"
 msgstr ""
+"Šípky hore/dole na prvom/poslednom riadku pripomenú predchádzajúce výrazy.\n"
 
 #: GOQLFilter/goql.py:190
 msgid "Tab always completes -- it never inserts a tab character."
-msgstr ""
+msgstr "Tab vždy dopĺňa -- nikdy nevloží znak tabulátora."
 
 #: GOQLFilter/goql.py:213
-#, fuzzy, python-format
-#| msgid "Use filter "
+#, python-format
 msgid "%s filter"
-msgstr "Použiť filter "
+msgstr "filter %s"
 
 #: GOQLFilter/goql.py:233
 msgid "This resets the filter parameters to empty state."
-msgstr ""
+msgstr "Toto resetuje parametre filtra do prázdneho stavu."
 
 #: GOQLFilter/goql.py:239
 msgid "This opens a dialog to save the current expression as a named filter."
 msgstr ""
+"Toto otvorí dialóg na uloženie aktuálneho výrazu ako pomenovaného filtra."
 
 #: GOQLFilter/goql.py:244
 msgid "Open this gramplet's help page in a browser."
-msgstr ""
+msgstr "Otvoriť stránku nápovedy tohto grampletu v prehliadači."
 
 #: GOQLFilter/goql.py:402
 msgid "SQL"
-msgstr ""
+msgstr "SQL"
 
 #: GOQLFilter/goql.py:403
-#, fuzzy
-#| msgid "Python Shell"
 msgid "Python evaluation"
-msgstr "Príkazový riadok jazyka Python"
+msgstr "Vyhodnotenie v Pythone"
 
 #: GOQLFilter/goql.py:523
-#, fuzzy, python-format
-#| msgid "Error: login failed"
+#, python-format
 msgid "Error applying filter: %s"
-msgstr "Chyba: prihlásenie zlyhalo"
+msgstr "Chyba pri aplikovaní filtra: %s"
 
 #: GOQLFilter/goql.py:526
 #, python-format
 msgid "Showing %(shown)d of %(total)d (%(method)s)"
-msgstr ""
+msgstr "Zobrazené %(shown)d z %(total)d (%(method)s)"
 
 #: GOQLFilter/goql.py:541
-#, fuzzy, python-format
-#| msgid "Error creating note"
+#, python-format
 msgid "Error resetting filter: %s"
-msgstr "Chyba pri vytváraní poznámky"
+msgstr "Chyba pri resetovaní filtra: %s"
 
 #: GOQLFilter/goql.py:548
-#, fuzzy
-#| msgid "Enter Python expressions"
 msgid "Enter an expression first"
-msgstr "Zadajte v výrazy jazyku Python"
+msgstr "Najprv zadajte výraz"
 
 #: GOQLFilter/goql.py:560
 #, python-brace-format
 msgid "Created by the GOQL Filter gramplet on {today}"
-msgstr ""
+msgstr "Vytvorené grampletom Filter GOQL na {today}"
 
 #: GOQLFilter/whereexprrule.gpr.py:30 GOQLFilter/whereexprrule.py:261
 msgid "People matching the <GOQL expression>"
-msgstr ""
+msgstr "Ľudia zodpovedajúci <výrazu GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:32
 msgid ""
 "Matches people for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Zodpovedá osobám, pre ktoré sa daný výraz WHERE v Gramps Object Query "
+"Language vyhodnotí ako pravdivý"
 
 #: GOQLFilter/whereexprrule.gpr.py:50 GOQLFilter/whereexprrule.py:266
-#, fuzzy
-#| msgid "Families matching <event filter>"
 msgid "Families matching the <GOQL expression>"
-msgstr "Rodiny, ktoré vyhovujú filtru <event filter>"
+msgstr "Rodiny zodpovedajúce <výrazu GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:52
 msgid ""
 "Matches families for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Zodpovedá rodinám, pre ktoré sa daný výraz WHERE v Gramps Object Query "
+"Language vyhodnotí ako pravdivý"
 
 #: GOQLFilter/whereexprrule.gpr.py:70 GOQLFilter/whereexprrule.py:271
 msgid "Events matching the <GOQL expression>"
-msgstr ""
+msgstr "Udalosti zodpovedajúce <výrazu GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:72
 msgid ""
 "Matches events for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Zodpovedá udalostiam, pre ktoré sa daný výraz WHERE v Gramps Object Query "
+"Language vyhodnotí ako pravdivý"
 
 #: GOQLFilter/whereexprrule.gpr.py:90 GOQLFilter/whereexprrule.py:276
 msgid "Places matching the <GOQL expression>"
-msgstr ""
+msgstr "Miesta zodpovedajúce <výrazu GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:92
 msgid ""
 "Matches places for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Zodpovedá miestam, pre ktoré sa daný výraz WHERE v Gramps Object Query "
+"Language vyhodnotí ako pravdivý"
 
 #: GOQLFilter/whereexprrule.gpr.py:110 GOQLFilter/whereexprrule.py:281
 msgid "Repositories matching the <GOQL expression>"
-msgstr ""
+msgstr "Repozitáre zodpovedajúce <výrazu GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:112
 msgid ""
 "Matches repositories for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Zodpovedá repozitárom, pre ktoré sa daný výraz WHERE v Gramps Object Query "
+"Language vyhodnotí ako pravdivý"
 
 #: GOQLFilter/whereexprrule.gpr.py:130 GOQLFilter/whereexprrule.py:286
-#, fuzzy
-#| msgid "Source matching parameters"
 msgid "Sources matching the <GOQL expression>"
-msgstr "Parametre pre vyhľadávanie zdrojov"
+msgstr "Zdroje zodpovedajúce <výrazu GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:132
 msgid ""
 "Matches sources for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Zodpovedá zdrojom, pre ktoré sa daný výraz WHERE v Gramps Object Query "
+"Language vyhodnotí ako pravdivý"
 
 #: GOQLFilter/whereexprrule.gpr.py:150 GOQLFilter/whereexprrule.py:291
 msgid "Citations matching the <GOQL expression>"
-msgstr ""
+msgstr "Citácie zodpovedajúce <výrazu GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:152
 msgid ""
 "Matches citations for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Zodpovedá citáciám, pre ktoré sa daný výraz WHERE v Gramps Object Query "
+"Language vyhodnotí ako pravdivý"
 
 #: GOQLFilter/whereexprrule.gpr.py:170 GOQLFilter/whereexprrule.py:296
 msgid "Media matching the <GOQL expression>"
-msgstr ""
+msgstr "Médiá zodpovedajúce <výrazu GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:172
 msgid ""
 "Matches media for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Zodpovedá médiám, pre ktoré sa daný výraz WHERE v Gramps Object Query "
+"Language vyhodnotí ako pravdivý"
 
 #: GOQLFilter/whereexprrule.gpr.py:190 GOQLFilter/whereexprrule.py:301
 msgid "Notes matching the <GOQL expression>"
-msgstr ""
+msgstr "Poznámky zodpovedajúce <výrazu GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:192
 msgid ""
 "Matches notes for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Zodpovedá poznámkam, pre ktoré sa daný výraz WHERE v Gramps Object Query "
+"Language vyhodnotí ako pravdivý"
 
 #: GOQLFilter/whereexprrule.py:212
-#, fuzzy
-#| msgid "Regular Expression"
 msgid "GOQL expression"
-msgstr "Regulárny výraz"
+msgstr "Výraz GOQL"
 
 #: GOQLFilter/whereexprrule.py:214
 msgid ""
 "Matches objects for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Zodpovedá objektom, pre ktoré sa daný výraz WHERE v Gramps Object Query "
+"Language vyhodnotí ako pravdivý"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
