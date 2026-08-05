@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-04 08:55-0700\n"
-"PO-Revision-Date: 2026-08-03 04:01+0000\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 
 msgid "Birthdays"
 msgstr "Geburtstage"
@@ -15636,106 +15636,102 @@ msgid "Select Form"
 msgstr "Formular auswählen"
 
 #: GOQLFilter/goql.gpr.py:31
-#, fuzzy
-#| msgid "Person Filter Editor"
 msgid "Person GOQL Filter"
-msgstr "Personenfiltereditor"
+msgstr "GOQL-Filter für Personen"
 
 #: GOQLFilter/goql.gpr.py:32
 msgid "Gramplet providing a gramps-object-query-language person filter"
 msgstr ""
+"Gramplet, das einen Personenfilter für die Gramps-Objekt-Abfragesprache "
+"bereitstellt"
 
 #: GOQLFilter/goql.gpr.py:39 GOQLFilter/goql.gpr.py:58
 #: GOQLFilter/goql.gpr.py:77 GOQLFilter/goql.gpr.py:96
 #: GOQLFilter/goql.gpr.py:117 GOQLFilter/goql.gpr.py:136
 #: GOQLFilter/goql.gpr.py:155 GOQLFilter/goql.gpr.py:174
 #: GOQLFilter/goql.gpr.py:193
-#, fuzzy
-#| msgid "Filtering"
 msgid "GOQL Filter"
-msgstr "Filtern"
+msgstr "GOQL Filter"
 
 #: GOQLFilter/goql.gpr.py:50
-#, fuzzy
-#| msgid "Family Filter name:"
 msgid "Family GOQL Filter"
-msgstr "Familienfilter Name:"
+msgstr "GOQL-Filter für Familien"
 
 #: GOQLFilter/goql.gpr.py:51
 msgid "Gramplet providing a gramps-object-query-language family filter"
 msgstr ""
+"Gramplet, das einen Familienfilter für die Gramps-Objekt-Abfragesprache "
+"bereitstellt"
 
 #: GOQLFilter/goql.gpr.py:69
 msgid "Event GOQL Filter"
-msgstr ""
+msgstr "GOQL-Filter für Ereignisse"
 
 #: GOQLFilter/goql.gpr.py:70
 msgid "Gramplet providing a gramps-object-query-language event filter"
 msgstr ""
+"Gramplet, das einen Ereignisfilter für die Gramps-Objekt-Abfragesprache "
+"bereitstellt"
 
 #: GOQLFilter/goql.gpr.py:88
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place GOQL Filter"
-msgstr "Orte_filter:"
+msgstr "GOQL-Filter für Orte"
 
 #: GOQLFilter/goql.gpr.py:89
 msgid "Gramplet providing a gramps-object-query-language place filter"
 msgstr ""
+"Gramplet, das einen Ortefilter für die Gramps-Objekt-Abfragesprache "
+"bereitstellt"
 
 #: GOQLFilter/goql.gpr.py:107
-#, fuzzy
-#| msgid "Repository title"
 msgid "Repository GOQL Filter"
-msgstr "Aufbewahrungsorttitel"
+msgstr "GOQL-Filter für Aufbewahrungsorte"
 
 #: GOQLFilter/goql.gpr.py:109
 msgid "Gramplet providing a gramps-object-query-language repository filter"
 msgstr ""
+"Gramplet, das einen Aufbewahrungsortefilter für die Gramps-Objekt-"
+"Abfragesprache bereitstellt"
 
 #: GOQLFilter/goql.gpr.py:128
-#, fuzzy
-#| msgid "Source type"
 msgid "Source GOQL Filter"
-msgstr "Quellenart"
+msgstr "GOQL-Filter für Quellen"
 
 #: GOQLFilter/goql.gpr.py:129
 msgid "Gramplet providing a gramps-object-query-language source filter"
 msgstr ""
-
-#: GOQLFilter/goql.gpr.py:147
-#, fuzzy
-#| msgid "Relationship Filter"
-msgid "Citation GOQL Filter"
-msgstr "Beziehungsfilter"
-
-#: GOQLFilter/goql.gpr.py:148
-#, fuzzy
-#| msgid "Gramplet providing a person filter on relationships"
-msgid "Gramplet providing a gramps-object-query-language citation filter"
-msgstr ""
-"Gramplet, das einen Personenfilter für Verwandtschaftsbeziehungen "
+"Gramplet, das einen Quellenfilter für die Gramps-Objekt-Abfragesprache "
 "bereitstellt"
 
+#: GOQLFilter/goql.gpr.py:147
+msgid "Citation GOQL Filter"
+msgstr "GOQL-Filter für Quellenangaben"
+
+#: GOQLFilter/goql.gpr.py:148
+msgid "Gramplet providing a gramps-object-query-language citation filter"
+msgstr ""
+"Gramplet, das einen Quellenangabenfilter für die Gramps-Objekt-"
+"Abfragesprache bereitstellt"
+
 #: GOQLFilter/goql.gpr.py:166
-#, fuzzy
-#| msgid "Media Object Title"
 msgid "Media GOQL Filter"
-msgstr "Medienobjekttitel"
+msgstr "GOQL-Filter für Medien"
 
 #: GOQLFilter/goql.gpr.py:167
 msgid "Gramplet providing a gramps-object-query-language media filter"
 msgstr ""
+"Gramplet, das einen Medienfilter für die Gramps-Objekt-Abfragesprache "
+"bereitstellt"
 
 #: GOQLFilter/goql.gpr.py:185
-#, fuzzy
-#| msgid "Note Link (internal)"
 msgid "Note GOQL Filter"
-msgstr "Notiz-Link (intern)"
+msgstr "GOQL-Filter für Notizen"
 
 #: GOQLFilter/goql.gpr.py:186
 msgid "Gramplet providing a gramps-object-query-language note filter"
 msgstr ""
+"Gramplet, das einen Notizenfilter für die Gramps-Objekt-Abfragesprache "
+"bereitstellt"
 
 #: GOQLFilter/goql.py:186
 msgid "A gramps-object-query-language where-expression, e.g.\n"
