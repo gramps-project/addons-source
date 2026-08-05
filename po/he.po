@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-04 08:55-0700\n"
-"PO-Revision-Date: 2026-08-03 20:31+0000\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -15234,108 +15234,88 @@ msgid "Select Form"
 msgstr "בחירת טופס"
 
 #: GOQLFilter/goql.gpr.py:31
-#, fuzzy
-#| msgid "Person Relationship Filter"
 msgid "Person GOQL Filter"
-msgstr "מסנן קשרי‏־קרבה לאדם"
+msgstr "מסנן GOQL לאדם"
 
 #: GOQLFilter/goql.gpr.py:32
 msgid "Gramplet providing a gramps-object-query-language person filter"
-msgstr ""
+msgstr "גרמפלט שמספק מסנן אדם בשפת־שאילתות־עצמי־גרמפס (GOQL)"
 
 #: GOQLFilter/goql.gpr.py:39 GOQLFilter/goql.gpr.py:58
 #: GOQLFilter/goql.gpr.py:77 GOQLFilter/goql.gpr.py:96
 #: GOQLFilter/goql.gpr.py:117 GOQLFilter/goql.gpr.py:136
 #: GOQLFilter/goql.gpr.py:155 GOQLFilter/goql.gpr.py:174
 #: GOQLFilter/goql.gpr.py:193
-#, fuzzy
-#| msgid "Filtering"
 msgid "GOQL Filter"
-msgstr "סינון"
+msgstr "מסנן GOQL"
 
 #: GOQLFilter/goql.gpr.py:50
-#, fuzzy
-#| msgid "Family Filter name:"
 msgid "Family GOQL Filter"
-msgstr "משפחה מסנן שם:"
+msgstr "מסנן GOQL למשפחה"
 
 #: GOQLFilter/goql.gpr.py:51
 msgid "Gramplet providing a gramps-object-query-language family filter"
-msgstr ""
+msgstr "גרמפלט שמספק מסנן משפחה בשפת־שאילתות־עצמי־גרמפס (GOQL)"
 
 #: GOQLFilter/goql.gpr.py:69
 msgid "Event GOQL Filter"
-msgstr ""
+msgstr "מסנן GOQL לאירוע"
 
 #: GOQLFilter/goql.gpr.py:70
 msgid "Gramplet providing a gramps-object-query-language event filter"
-msgstr ""
+msgstr "ברמפלט שמספר מסנן אירועים בשפת־שאילתות־עצמי־גרמפס (GOQL)"
 
 #: GOQLFilter/goql.gpr.py:88
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place GOQL Filter"
-msgstr "מסנן _מקומות:"
+msgstr "מסנן מקומות GOQL"
 
 #: GOQLFilter/goql.gpr.py:89
 msgid "Gramplet providing a gramps-object-query-language place filter"
-msgstr ""
+msgstr "גרמפלט שמספק מסנן מקומות בשפת־שאילתות־עצמי־גרמפס (GOQL)"
 
 #: GOQLFilter/goql.gpr.py:107
-#, fuzzy
-#| msgid "Repository title"
 msgid "Repository GOQL Filter"
-msgstr "כותרת מאגר"
+msgstr "מסנן מאגרים GOQL"
 
 #: GOQLFilter/goql.gpr.py:109
 msgid "Gramplet providing a gramps-object-query-language repository filter"
-msgstr ""
+msgstr "גרמפלט שמספק מסנן מאגרים בשפת־שאילתות־עצמי־גרמפס (GOQL)"
 
 #: GOQLFilter/goql.gpr.py:128
-#, fuzzy
-#| msgid "Source type"
 msgid "Source GOQL Filter"
-msgstr "סוג מקור"
+msgstr "מסנן מקור GOQL"
 
 #: GOQLFilter/goql.gpr.py:129
 msgid "Gramplet providing a gramps-object-query-language source filter"
-msgstr ""
+msgstr "גרמפלט שמספק מסנן מקורות בשפת־שאילתות־עצמי־גרמפס (GOQL)"
 
 #: GOQLFilter/goql.gpr.py:147
-#, fuzzy
-#| msgid "Relationship Filter"
 msgid "Citation GOQL Filter"
-msgstr "מסנן קשר־קרבה"
+msgstr "מסנן מובאה GOQL"
 
 #: GOQLFilter/goql.gpr.py:148
-#, fuzzy
-#| msgid "Gramplet providing a person filter on relationships"
 msgid "Gramplet providing a gramps-object-query-language citation filter"
-msgstr "גרמפלט שמציע מסנן אדם בקשרי־קרבה"
+msgstr "גרמפלט שמספק מסנן מובאות בשפת־שאילתות־עצמי־גרמפס (GOQL)"
 
 #: GOQLFilter/goql.gpr.py:166
-#, fuzzy
-#| msgid "Media Object Title"
 msgid "Media GOQL Filter"
-msgstr "כותרת עצם מדיה"
+msgstr "מסנן מדיה GOQL"
 
 #: GOQLFilter/goql.gpr.py:167
 msgid "Gramplet providing a gramps-object-query-language media filter"
-msgstr ""
+msgstr "גרמפלט שמספק מסנן מדיה בשפת־שאילתות־עצמי־גרמפס (GOQL)"
 
 #: GOQLFilter/goql.gpr.py:185
-#, fuzzy
-#| msgid "Note Link (internal)"
 msgid "Note GOQL Filter"
-msgstr "הערה קישור (פנימי)"
+msgstr "מסנן הערה GOQL"
 
 #: GOQLFilter/goql.gpr.py:186
 msgid "Gramplet providing a gramps-object-query-language note filter"
-msgstr ""
+msgstr "גרמפלט שמספק מסנן הערות בשפת־שאילתות־עצמי־גרמפס (GOQL)"
 
 #: GOQLFilter/goql.py:186
 msgid "A gramps-object-query-language where-expression, e.g.\n"
-msgstr ""
+msgstr "ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), לדוגמה\n"
 
 #: GOQLFilter/goql.py:188
 msgid "Enter inserts a newline; Ctrl+Enter runs Find.\n"
@@ -15413,7 +15393,7 @@ msgstr ""
 msgid ""
 "Matches people for which the given gramps-object-query-language where-"
 "expression evaluates to true"
-msgstr ""
+msgstr "התאמת אנשים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GOQLFilter/whereexprrule.gpr.py:50 GOQLFilter/whereexprrule.py:266
 #, fuzzy
@@ -15426,6 +15406,7 @@ msgid ""
 "Matches families for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"התאמת משפחות שבהן ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GOQLFilter/whereexprrule.gpr.py:70 GOQLFilter/whereexprrule.py:271
 msgid "Events matching the <GOQL expression>"
@@ -15436,6 +15417,7 @@ msgid ""
 "Matches events for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"התאמת אירועים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GOQLFilter/whereexprrule.gpr.py:90 GOQLFilter/whereexprrule.py:276
 msgid "Places matching the <GOQL expression>"
@@ -15446,6 +15428,7 @@ msgid ""
 "Matches places for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"התאמת מקומות שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GOQLFilter/whereexprrule.gpr.py:110 GOQLFilter/whereexprrule.py:281
 msgid "Repositories matching the <GOQL expression>"
@@ -15455,7 +15438,7 @@ msgstr ""
 msgid ""
 "Matches repositories for which the given gramps-object-query-language where-"
 "expression evaluates to true"
-msgstr ""
+msgstr "התאמת אגרים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GOQLFilter/whereexprrule.gpr.py:130 GOQLFilter/whereexprrule.py:286
 #, fuzzy
@@ -15468,6 +15451,7 @@ msgid ""
 "Matches sources for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"התאמת מקורות שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GOQLFilter/whereexprrule.gpr.py:150 GOQLFilter/whereexprrule.py:291
 msgid "Citations matching the <GOQL expression>"
@@ -15478,6 +15462,7 @@ msgid ""
 "Matches citations for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"התאמת מובאות שבהן ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GOQLFilter/whereexprrule.gpr.py:170 GOQLFilter/whereexprrule.py:296
 msgid "Media matching the <GOQL expression>"
@@ -15487,7 +15472,7 @@ msgstr ""
 msgid ""
 "Matches media for which the given gramps-object-query-language where-"
 "expression evaluates to true"
-msgstr ""
+msgstr "התאמת מדיה שבהן ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GOQLFilter/whereexprrule.gpr.py:190 GOQLFilter/whereexprrule.py:301
 msgid "Notes matching the <GOQL expression>"
@@ -15497,7 +15482,7 @@ msgstr ""
 msgid ""
 "Matches notes for which the given gramps-object-query-language where-"
 "expression evaluates to true"
-msgstr ""
+msgstr "התאמת הערות שבהן ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GOQLFilter/whereexprrule.py:212
 #, fuzzy
@@ -15509,7 +15494,7 @@ msgstr "ביטוי רגולרי"
 msgid ""
 "Matches objects for which the given gramps-object-query-language where-"
 "expression evaluates to true"
-msgstr ""
+msgstr "התאמת עצמים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
