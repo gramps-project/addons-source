@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-01 09:38-0700\n"
+"POT-Creation-Date: 2026-08-04 08:55-0700\n"
 "PO-Revision-Date: 2026-01-04 20:01+0000\n"
 "Last-Translator: openSUSE Lietuviškai <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
@@ -15137,6 +15137,270 @@ msgstr "Formos"
 #: Form/selectform.py:74 Form/selectform.py:81
 msgid "Select Form"
 msgstr "Pasirinkite formą"
+
+#: GOQLFilter/goql.gpr.py:31
+#, fuzzy
+#| msgid "Relation type"
+msgid "Person GOQL Filter"
+msgstr "Ryšio rūšis"
+
+#: GOQLFilter/goql.gpr.py:32
+msgid "Gramplet providing a gramps-object-query-language person filter"
+msgstr ""
+
+#: GOQLFilter/goql.gpr.py:39 GOQLFilter/goql.gpr.py:58
+#: GOQLFilter/goql.gpr.py:77 GOQLFilter/goql.gpr.py:96
+#: GOQLFilter/goql.gpr.py:117 GOQLFilter/goql.gpr.py:136
+#: GOQLFilter/goql.gpr.py:155 GOQLFilter/goql.gpr.py:174
+#: GOQLFilter/goql.gpr.py:193
+#, fuzzy
+#| msgid "Filtering"
+msgid "GOQL Filter"
+msgstr "Filtravimas"
+
+#: GOQLFilter/goql.gpr.py:50
+#, fuzzy
+#| msgid "Family Tree file"
+msgid "Family GOQL Filter"
+msgstr "Šeimos medžio rinkmena"
+
+#: GOQLFilter/goql.gpr.py:51
+msgid "Gramplet providing a gramps-object-query-language family filter"
+msgstr ""
+
+#: GOQLFilter/goql.gpr.py:69
+msgid "Event GOQL Filter"
+msgstr ""
+
+#: GOQLFilter/goql.gpr.py:70
+msgid "Gramplet providing a gramps-object-query-language event filter"
+msgstr ""
+
+#: GOQLFilter/goql.gpr.py:88
+#, fuzzy
+#| msgid "Place _filter:"
+msgid "Place GOQL Filter"
+msgstr "Vietovės _filtras:"
+
+#: GOQLFilter/goql.gpr.py:89
+msgid "Gramplet providing a gramps-object-query-language place filter"
+msgstr ""
+
+#: GOQLFilter/goql.gpr.py:107
+#, fuzzy
+#| msgid "Repository type"
+msgid "Repository GOQL Filter"
+msgstr "Saugyklos rūšis"
+
+#: GOQLFilter/goql.gpr.py:109
+msgid "Gramplet providing a gramps-object-query-language repository filter"
+msgstr ""
+
+#: GOQLFilter/goql.gpr.py:128
+#, fuzzy
+#| msgid "Source type"
+msgid "Source GOQL Filter"
+msgstr "Šaltinio rūšis"
+
+#: GOQLFilter/goql.gpr.py:129
+msgid "Gramplet providing a gramps-object-query-language source filter"
+msgstr ""
+
+#: GOQLFilter/goql.gpr.py:147
+#, fuzzy
+#| msgid "Relation type"
+msgid "Citation GOQL Filter"
+msgstr "Ryšio rūšis"
+
+#: GOQLFilter/goql.gpr.py:148
+msgid "Gramplet providing a gramps-object-query-language citation filter"
+msgstr ""
+
+#: GOQLFilter/goql.gpr.py:166
+#, fuzzy
+msgid "Media GOQL Filter"
+msgstr "Audio/Video Bylų Filtrai"
+
+#: GOQLFilter/goql.gpr.py:167
+msgid "Gramplet providing a gramps-object-query-language media filter"
+msgstr ""
+
+#: GOQLFilter/goql.gpr.py:185
+#, fuzzy
+#| msgid "Note on Family"
+msgid "Note GOQL Filter"
+msgstr "Pastaba šeimoje"
+
+#: GOQLFilter/goql.gpr.py:186
+msgid "Gramplet providing a gramps-object-query-language note filter"
+msgstr ""
+
+#: GOQLFilter/goql.py:186
+msgid "A gramps-object-query-language where-expression, e.g.\n"
+msgstr ""
+
+#: GOQLFilter/goql.py:188
+msgid "Enter inserts a newline; Ctrl+Enter runs Find.\n"
+msgstr ""
+
+#: GOQLFilter/goql.py:189
+msgid "Up/Down at the first/last line recalls previous expressions.\n"
+msgstr ""
+
+#: GOQLFilter/goql.py:190
+msgid "Tab always completes -- it never inserts a tab character."
+msgstr ""
+
+#: GOQLFilter/goql.py:213
+#, fuzzy, python-format
+#| msgid "Use filter "
+msgid "%s filter"
+msgstr "Naudoti filtrą "
+
+#: GOQLFilter/goql.py:233
+msgid "This resets the filter parameters to empty state."
+msgstr ""
+
+#: GOQLFilter/goql.py:239
+msgid "This opens a dialog to save the current expression as a named filter."
+msgstr ""
+
+#: GOQLFilter/goql.py:244
+msgid "Open this gramplet's help page in a browser."
+msgstr ""
+
+#: GOQLFilter/goql.py:402
+msgid "SQL"
+msgstr ""
+
+#: GOQLFilter/goql.py:403
+msgid "Python evaluation"
+msgstr ""
+
+#: GOQLFilter/goql.py:523
+#, python-format
+msgid "Error applying filter: %s"
+msgstr ""
+
+#: GOQLFilter/goql.py:526
+#, python-format
+msgid "Showing %(shown)d of %(total)d (%(method)s)"
+msgstr ""
+
+#: GOQLFilter/goql.py:541
+#, fuzzy, python-format
+#| msgid "Error creating note"
+msgid "Error resetting filter: %s"
+msgstr "Klaida sukuriant pastabą"
+
+#: GOQLFilter/goql.py:548
+msgid "Enter an expression first"
+msgstr ""
+
+#: GOQLFilter/goql.py:560
+#, python-brace-format
+msgid "Created by the GOQL Filter gramplet on {today}"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:30 GOQLFilter/whereexprrule.py:261
+msgid "People matching the <GOQL expression>"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:32
+msgid ""
+"Matches people for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:50 GOQLFilter/whereexprrule.py:266
+msgid "Families matching the <GOQL expression>"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:52
+msgid ""
+"Matches families for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:70 GOQLFilter/whereexprrule.py:271
+msgid "Events matching the <GOQL expression>"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:72
+msgid ""
+"Matches events for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:90 GOQLFilter/whereexprrule.py:276
+msgid "Places matching the <GOQL expression>"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:92
+msgid ""
+"Matches places for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:110 GOQLFilter/whereexprrule.py:281
+msgid "Repositories matching the <GOQL expression>"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:112
+msgid ""
+"Matches repositories for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:130 GOQLFilter/whereexprrule.py:286
+msgid "Sources matching the <GOQL expression>"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:132
+msgid ""
+"Matches sources for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:150 GOQLFilter/whereexprrule.py:291
+msgid "Citations matching the <GOQL expression>"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:152
+msgid ""
+"Matches citations for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:170 GOQLFilter/whereexprrule.py:296
+msgid "Media matching the <GOQL expression>"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:172
+msgid ""
+"Matches media for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:190 GOQLFilter/whereexprrule.py:301
+msgid "Notes matching the <GOQL expression>"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.gpr.py:192
+msgid ""
+"Matches notes for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.py:212
+msgid "GOQL expression"
+msgstr ""
+
+#: GOQLFilter/whereexprrule.py:214
+msgid ""
+"Matches objects for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
