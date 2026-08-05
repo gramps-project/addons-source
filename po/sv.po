@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-03 09:18-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"PO-Revision-Date: 2026-07-05 22:49+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.7.1.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -9891,32 +9891,24 @@ msgid "Street etc with No. of House"
 msgstr "Gata etc. med husnummer"
 
 #: Form/form_ie.xml.h:13
-#, fuzzy
-#| msgid "Schedule"
 msgid "No. of Schedule"
-msgstr "Schema"
+msgstr "Antal scheman"
 
 #: Form/form_ie.xml.h:14
 msgid "Name of Public Institution"
-msgstr ""
+msgstr "Namn på offentlig institution"
 
 #: Form/form_ie.xml.h:16 Form/form_ie.xml.h:113
-#, fuzzy
-#| msgid "Maiden Surname"
 msgid "Name and Surname"
-msgstr "Flicknamn"
+msgstr "Namn och efternamn"
 
 #: Form/form_ie.xml.h:18
-#, fuzzy
-#| msgid "10. Relationship to Head of Family"
 msgid "Relationship to Head of Household"
-msgstr "10. Släktskap med familjeöverhuvud"
+msgstr "Förhållande till hushållets överhuvud"
 
 #: Form/form_ie.xml.h:19
-#, fuzzy
-#| msgid "Default Age"
 msgid "Year Age"
-msgstr "Standardålder"
+msgstr "År Ålder"
 
 #: Form/form_ie.xml.h:20 Form/form_us.xml.h:2561
 msgid "Age in years"
@@ -9924,203 +9916,175 @@ msgstr ""
 
 #: Form/form_ie.xml.h:21
 msgid "Month Age"
-msgstr ""
+msgstr "Månad Ålder"
 
 #: Form/form_ie.xml.h:22
-#, fuzzy
-#| msgid "Merge into import"
 msgid "Age in months"
-msgstr "Slå samman till import"
+msgstr "Ålder i månader"
 
 #: Form/form_ie.xml.h:25
 msgid "Marriage or Orphanhood"
-msgstr ""
+msgstr "Äktenskap eller föräldralöshet"
 
 #: Form/form_ie.xml.h:28
 msgid ""
 "\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
 "cannot speak Irish\""
 msgstr ""
+"\"Endast irländska\", \"Irländska och engelska\", \"Engelska och "
+"irländska\", \"Läser men kan inte tala irländska\""
 
 #: Form/form_ie.xml.h:33
 msgid "Years married in present Marriage"
-msgstr ""
+msgstr "År gifta i nuvarande äktenskap"
 
 #: Form/form_ie.xml.h:34
-#, fuzzy
-#| msgid "Date Married"
 msgid "Months Married"
-msgstr "Datum för giftermål"
+msgstr "Månader gifta"
 
 #: Form/form_ie.xml.h:35
 msgid "Months married in present Marriage"
-msgstr ""
+msgstr "Månader gifta i nuvarande äktenskap"
 
 #: Form/form_ie.xml.h:36
-#, fuzzy
-#| msgid "Parents enclose children"
 msgid "Present Marriage Children"
-msgstr "Föräldrar stänger in barn"
+msgstr "Nuvarande äktenskaps barn"
 
 #: Form/form_ie.xml.h:37
 msgid "Children born alive to present marriage"
-msgstr ""
+msgstr "Barn födda levande i nuvarande äktenskap"
 
 #: Form/form_ie.xml.h:38
-#, fuzzy
-#| msgid "Children Living"
 msgid "Total Children Under 16 Living"
-msgstr "Barn som lever"
+msgstr "Totalt antal barn under 16 år som lever"
 
 #: Form/form_ie.xml.h:39
 msgid "(1.) Entry no."
-msgstr ""
+msgstr "(1.) Inlägg nr."
 
 #: Form/form_ie.xml.h:40 Form/form_ie.xml.h:74 Form/form_ie.xml.h:102
 msgid "Superintendent Registrar's District"
-msgstr ""
+msgstr "Chefsregistratorns distrikt"
 
 #: Form/form_ie.xml.h:41 Form/form_ie.xml.h:73 Form/form_ie.xml.h:103
 msgid "Registrar's District"
-msgstr ""
+msgstr "Registratorns distrikt"
 
 #: Form/form_ie.xml.h:43 Form/form_ie.xml.h:105
 msgid "Union"
-msgstr ""
+msgstr "Union"
 
 #: Form/form_ie.xml.h:45
-#, fuzzy
-#| msgid "Date of Registration"
 msgid "(10.) Signature of Registrar"
-msgstr "Datum för registrering"
+msgstr "(10.) Registratorns underskrift"
 
 #: Form/form_ie.xml.h:46
 msgid "(11.) Baptismal Name if added after Registration of Birth, and Date"
-msgstr ""
+msgstr "(11.) Dopnamn om det tillkommit efter födelseregistrering, och datum"
 
 #: Form/form_ie.xml.h:48
 msgid "(3.) Name (if any)"
-msgstr ""
+msgstr "(3.) Namn (om sådant finns)"
 
 #: Form/form_ie.xml.h:50 Form/form_ie.xml.h:52
-#, fuzzy
-#| msgid "3. Place of Birth"
 msgid "(2.) Date and Place of Birth"
-msgstr "3. Födelseort"
+msgstr "(2.) Födelsedatum och födelseort"
 
 #: Form/form_ie.xml.h:54
 msgid "(4.) M or F for male or female"
-msgstr ""
+msgstr "(4.) M eller K för man eller kvinna"
 
 #: Form/form_ie.xml.h:56 Form/form_ie.xml.h:58
 msgid "(5.) Name and Surname and Dwelling-place of Father"
-msgstr ""
+msgstr "(5.) Faderns namn och efternamn samt bostad"
 
 #: Form/form_ie.xml.h:60
 msgid "(7.) Rank or Profession of Father"
-msgstr ""
+msgstr "(7.) Faderns rang eller yrke"
 
 #: Form/form_ie.xml.h:62 Form/form_ie.xml.h:64
 msgid "(6.) Name and Surname and Maiden Surname of Mother"
-msgstr ""
+msgstr "(6.) Moderns namn och efternamn samt flicknamn"
 
 #: Form/form_ie.xml.h:66 Form/form_ie.xml.h:68
 msgid "(8.) Signature, Qualification, and Residence of Informant"
-msgstr ""
+msgstr "(8.) Informantens underskrift, kvalifikationer och bosättningsort"
 
 #: Form/form_ie.xml.h:69
 msgid "When Registered"
-msgstr ""
+msgstr "När registrerad"
 
 #: Form/form_ie.xml.h:70
 msgid "(9.) Date when birth was registered"
-msgstr ""
+msgstr "(9.) Datum då födelsen registrerades"
 
 #: Form/form_ie.xml.h:71
-#, fuzzy
-#| msgid "Year only"
 msgid "Year"
-msgstr "Bara år"
+msgstr "År"
 
 #: Form/form_ie.xml.h:72
 msgid "Solemnized at the Catholic"
-msgstr ""
+msgstr "Högtidlighållande vid den katolska"
 
 #: Form/form_ie.xml.h:76 Form/form_ie.xml.h:107
-#, fuzzy
-#| msgid "Serial Number"
 msgid "Certificate number"
-msgstr "Serienummer"
+msgstr "Certifikatnummer"
 
 #: Form/form_ie.xml.h:77 Form/form_ie.xml.h:108
-#, fuzzy
-#| msgid "Show page numbers"
 msgid "Page number"
-msgstr "Visa sidnummer"
+msgstr "Sidnummer"
 
 #: Form/form_ie.xml.h:78 Form/form_ie.xml.h:109
 msgid "(1.) Entry No."
-msgstr ""
+msgstr "(1.) Inlägg nr."
 
 #: Form/form_ie.xml.h:79
-#, fuzzy
-#| msgid "Date Married"
 msgid "(2.) When Married"
-msgstr "Datum för giftermål"
+msgstr "(2.) När gift"
 
 #: Form/form_ie.xml.h:81
-#, fuzzy
-#| msgid "Maiden Surname"
 msgid "(3.) Name and Surname"
-msgstr "Flicknamn"
+msgstr "(3.) Förnamn och efternamn"
 
 #: Form/form_ie.xml.h:83
 msgid "(4.) Full or Minor"
-msgstr ""
+msgstr "(4.) Fullständig eller mindre"
 
 #: Form/form_ie.xml.h:85
 msgid "(5.) Bachelor or Spinster"
-msgstr ""
+msgstr "(5.) Ungkarl eller ungmö"
 
 #: Form/form_ie.xml.h:87
 msgid "(6.) Rank or Profession"
-msgstr ""
+msgstr "(6.) Rang eller yrke"
 
 #: Form/form_ie.xml.h:89
-#, fuzzy
-#| msgid "Date of Marriage"
 msgid "Residence at the Time of Marriage"
-msgstr "Datum för giftermål"
+msgstr "Bostad vid tidpunkten för äktenskapet"
 
 #: Form/form_ie.xml.h:91 Form/form_ie.xml.h:95
-#, fuzzy
-#| msgid "Father's Name"
 msgid "(8.) Father's Name and Surname"
-msgstr "Fars namn"
+msgstr "(8.) Fars namn och efternamn"
 
 #: Form/form_ie.xml.h:93 Form/form_ie.xml.h:97
 msgid "(9.) Rank or Profession of Father"
-msgstr ""
+msgstr "(9.) Fars rang eller yrke"
 
 #: Form/form_ie.xml.h:110
 msgid "(10.) When Registered"
-msgstr ""
+msgstr "(10.) Vid registrering"
 
 #: Form/form_ie.xml.h:111
-#, fuzzy
-#| msgid "Date of Registration"
 msgid "(11.) Signature of Registrar"
-msgstr "Datum för registrering"
+msgstr "(11.) Registratorns underskrift"
 
 #: Form/form_ie.xml.h:114 Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
 msgid "Date of Death"
 msgstr ""
 
 #: Form/form_ie.xml.h:115 Form/form_ie.xml.h:117
-#, fuzzy
-#| msgid "30. Age and Cause of Deaths"
 msgid "(2.) Date and Place of Death"
-msgstr "30. Ålder och dödsorsak"
+msgstr "(2.) Dödsdatum och -ort"
 
 #: Form/form_ie.xml.h:116 Form/form_us.xml.h:2432 Form/form_us.xml.h:2495
 msgid "Place of Death"
@@ -10128,49 +10092,39 @@ msgstr ""
 
 #: Form/form_ie.xml.h:119
 msgid "(4.) M or F for Male or Female"
-msgstr ""
+msgstr "(4.) M eller K för man eller kvinna"
 
 #: Form/form_ie.xml.h:121
-#, fuzzy
-#| msgid "Widowed, divorced"
 msgid "(5.) Widowed or Married"
-msgstr "Änka/änkling, frånskild"
+msgstr "(5.) Änka/Änkling eller gift"
 
 #: Form/form_ie.xml.h:123
-#, fuzzy
-#| msgid "6. Age at Next Birthday"
 msgid "(6.) Age last Birthday"
-msgstr "6. Ålder vid nästa födelsedag"
+msgstr "(6.) Ålder senaste födelsedag"
 
 #: Form/form_ie.xml.h:125
-#, fuzzy
-#| msgid "2. Profession, Trade or Occupation"
 msgid "(7.) Rank, Profession, or Occupation"
-msgstr "2. Yrke, handel eller sysselsättning"
+msgstr "(7.) Rang, yrke eller sysselsättning"
 
 #: Form/form_ie.xml.h:127 Form/form_ie.xml.h:129
 msgid "(8.) Certified Cause of Death and Duration of Illness"
-msgstr ""
+msgstr "(8.) Bekräftad dödsorsak och sjukdomens varaktighet"
 
 #: Form/form_ie.xml.h:128
-#, fuzzy
-#| msgid "Direction of time"
 msgid "Duration of Illness"
-msgstr "Tidsriktning"
+msgstr "Sjukdomens varaktighet"
 
 #: Form/form_ie.xml.h:132
-#, fuzzy
-#| msgid "Relation to Head"
 msgid "Relation to deceased"
-msgstr "Släktskap till huvudperson"
+msgstr "Släktskap till avliden"
 
 #: Form/form_ie.xml.h:133
 msgid "(9.) e.g. Son, Daughter"
-msgstr ""
+msgstr "(9.) t.ex. Son, Dotter"
 
 #: Form/form_ie.xml.h:135
 msgid "(9.) e.g. Present at death"
-msgstr ""
+msgstr "(9.) t.ex. Närvarande vid dödsfallet"
 
 #: Form/form_pl.xml.h:5
 msgid "Event Place (Original)"
@@ -15754,14 +15708,12 @@ msgstr ""
 
 #: GrampsAssistant/grampsassistant.gpr.py:26
 #: GrampsAssistant/grampsassistant.py:1417
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Assistant"
-msgstr "Gramps version"
+msgstr "Gramps-assistent"
 
 #: GrampsAssistant/grampsassistant.gpr.py:27
 msgid "AI assistant for querying your Gramps family tree"
-msgstr ""
+msgstr "AI-assistent för att söka i ditt Gramps-släktträd"
 
 #: GrampsAssistant/grampsassistant.py:58
 msgid ""
@@ -15771,29 +15723,33 @@ msgid ""
 "provided tools — never write code, simulate results, or make up data. If no "
 "tool exists for the requested information, say so plainly."
 msgstr ""
+"Du är en hjälpsam släktforskningsassistent med tillgång till användarens "
+"Gramps-databas. Svara på frågor om personer, familjer, händelser och "
+"släktskap. När du behöver information från databasen, anropa de verktyg som "
+"finns tillgängliga – skriv aldrig kod, simulera resultat eller hitta på "
+"data. Om det inte finns något verktyg för den begärda informationen, säg det "
+"tydligt."
 
 #: GrampsAssistant/grampsassistant.py:209
-#, fuzzy
-#| msgid "Extra style settings:"
 msgid "Gramps Assistant settings"
-msgstr "Extra mallinställningar:"
+msgstr "Inställningar för Gramps-assistenten"
 
 #: GrampsAssistant/grampsassistant.py:213
 msgid "Clear conversation and context"
-msgstr ""
+msgstr "Tydlig konversation och sammanhang"
 
 #: GrampsAssistant/grampsassistant.py:388
 #: GrampsAssistant/grampsassistant.py:749
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Assistant:"
-msgstr "Gramps version"
+msgstr "Gramps-assistenten:"
 
 #: GrampsAssistant/grampsassistant.py:390
 msgid ""
 "Ask me anything about the Gramps program or your specific Gramps family "
 "tree. Use the ⚙ button to configure the AI.\n"
 msgstr ""
+"Fråga mig om vad som helst om Gramps-programmet eller ditt specifika Gramps-"
+"släktträd. Använd ⚙-knappen för att konfigurera AI:n.\n"
 
 #: GrampsAssistant/grampsassistant.py:720
 msgid ""
@@ -15801,10 +15757,13 @@ msgid ""
 "No model configured. Please click the Settings button to choose a backend "
 "and model before chatting.\n"
 msgstr ""
+"\n"
+"Ingen modell konfigurerad. Klicka på knappen Inställningar för att välja en "
+"backend och modell innan du chattar.\n"
 
 #: GrampsAssistant/grampsassistant.py:755
 msgid "Thinking..."
-msgstr ""
+msgstr "Tänker..."
 
 #: GrampsAssistant/grampsassistant.py:824
 #, python-brace-format
@@ -15813,93 +15772,96 @@ msgid ""
 "it before launching Gramps:\n"
 "  export {var}=your-key-here"
 msgstr ""
+"API-nyckelfel: miljövariabeln {var} är inte angiven eller är ogiltig. Ställ "
+"in den innan du startar Gramps:\n"
+"  export {var}=din-nyckel-här"
 
 #: GrampsAssistant/grampsassistant.py:830
 msgid ""
 "API key error: this provider requires an API key. Open Settings and enter "
 "the environment variable name for your API key (e.g. OPENAI_API_KEY)."
 msgstr ""
+"API-nyckelfel: den här leverantören kräver en API-nyckel. Öppna "
+"Inställningar och ange miljövariabelnamnet för din API-nyckel (t.ex. "
+"OPENAI_API_KEY)."
 
 #: GrampsAssistant/grampsassistant.py:973
-#, fuzzy
-#| msgid "Done!\n"
 msgid "Done.\n"
-msgstr "Klart!\n"
+msgstr "Klart.\n"
 
 #: GrampsAssistant/grampsassistant.py:1203
 msgid "System Prompt:"
-msgstr ""
+msgstr "Systemprompt:"
 
 #: GrampsAssistant/grampsassistant.py:1217
 msgid "Simplify tools (recommended for smaller/local models)"
-msgstr ""
+msgstr "Förenklingsverktyg (rekommenderas för mindre/lokala modeller)"
 
 #: GrampsAssistant/grampsassistant.py:1221
 msgid ""
 "When enabled, only the tools relevant to your question are sent to the "
 "model. This improves performance with smaller local models."
 msgstr ""
+"När det är aktiverat skickas endast de verktyg som är relevanta för din "
+"fråga till modellen. Detta förbättrar prestandan med mindre lokala modeller."
 
 #: GrampsAssistant/grampsassistant.py:1230
 msgid "Use Local Model"
-msgstr ""
+msgstr "Använd lokal modell"
 
 #: GrampsAssistant/grampsassistant.py:1249
 msgid ""
 "URL of a local OpenAI-compatible server. Ollama: http://localhost:11434  LM "
 "Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
 msgstr ""
+"URL till en lokal OpenAI-kompatibel server. Ollama: http://localhost:11434 "
+"LM Studio: http://localhost:1234 llama.cpp: http://localhost:8080"
 
 #: GrampsAssistant/grampsassistant.py:1257
 msgid "model name (leave blank for LM Studio / llama.cpp)"
-msgstr ""
+msgstr "modellnamn (lämna tomt för LM Studio / llama.cpp)"
 
 #: GrampsAssistant/grampsassistant.py:1260
 msgid ""
 "Model to request from the local server. Required for Ollama (e.g. llama3.1). "
 "Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
 msgstr ""
+"Modell att begära från den lokala servern. Krävs för Ollama (t.ex. llama3.1)"
+". Lämna tomt för LM Studio eller llama.cpp, som använder den modell som "
+"laddas."
 
 #: GrampsAssistant/grampsassistant.py:1267
 #: GrampsAssistant/grampsassistant.py:1311
-#, fuzzy
-#| msgid "Modern"
 msgid "Model:"
-msgstr "Modern"
+msgstr "Modell:"
 
 #: GrampsAssistant/grampsassistant.py:1273
-#, fuzzy
-#| msgid "Foundation date:"
 msgid "Use Foundational Model"
-msgstr "Grunddatum:"
+msgstr "Använd grundläggande modell"
 
 #: GrampsAssistant/grampsassistant.py:1315
 msgid "e.g. OPENAI_API_KEY"
-msgstr ""
+msgstr "t.ex. OPENAI_API_KEY"
 
 #: GrampsAssistant/grampsassistant.py:1317
 msgid "Name of the environment variable holding your API key."
-msgstr ""
+msgstr "Namn på miljövariabeln som innehåller din API-nyckel."
 
 #: GrampsAssistant/grampsassistant.py:1319
 msgid "API key env var:"
-msgstr ""
+msgstr "API-nyckelmiljövariabel:"
 
 #: GrampsAssistant/grampsassistant.py:1322
 msgid "Backend:"
-msgstr ""
+msgstr "Backend:"
 
 #: GrampsAssistant/grampsassistant.py:1334
-#, fuzzy
-#| msgid "Website URL"
 msgid "Base URL:"
-msgstr "Webbplatsens URL"
+msgstr "Bas-URL:"
 
 #: GrampsAssistant/grampsassistant.py:1338
-#, fuzzy
-#| msgid "Spouse name:"
 msgid "Model name:"
-msgstr "Namn på make/maka:"
+msgstr "Modellnamn:"
 
 #: GrampsChat/GrampsChat.gpr.py:4 GrampsChat/GrampsChat.gpr.py:9
 msgid "GrampsChat"
@@ -15937,25 +15899,19 @@ msgid "Media files are in sync."
 msgstr "Mediefiler är synkroniserade."
 
 #: GrampsWebSync/grampswebsync.py:345
-#, fuzzy, python-format
-#| msgid "Successfully downloaded %s media file."
-#| msgid_plural "Successfully downloaded %s media files."
+#, python-format
 msgid "Successfully downloaded %s media files."
-msgstr "Laddar ner %s mediefil med lyckat resultat."
+msgstr "Laddar ner %s mediefiler med lyckat resultat."
 
 #: GrampsWebSync/grampswebsync.py:348
-#, fuzzy, python-format
-#| msgid "Encountered %s error during download."
-#| msgid_plural "Encountered %s errors during download."
+#, python-format
 msgid "Encountered %s errors during download."
-msgstr "Mötte %s fel vid nedladdning."
+msgstr "%s fel uppstod under nedladdningen."
 
 #: GrampsWebSync/grampswebsync.py:354
-#, fuzzy, python-format
-#| msgid "Successfully uploaded %s media file."
-#| msgid_plural "Successfully uploaded %s media files."
+#, python-format
 msgid "Successfully uploaded %s media files."
-msgstr "Laddar upp %s mediefil med lyckat resultat."
+msgstr "Laddar upp %s mediefiler med lyckat resultat."
 
 #: GrampsWebSync/grampswebsync.py:357
 #, fuzzy, python-format
