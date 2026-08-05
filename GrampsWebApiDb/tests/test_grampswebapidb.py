@@ -408,6 +408,97 @@ class TestTransactionCommit(unittest.TestCase):
 
 # -------------------------------------------------------------------------
 #
+# TestUndoRedo
+#
+# -------------------------------------------------------------------------
+class TestUndoRedo(unittest.TestCase):
+    """undo()/redo() peek the relevant DbTxn off DbGenericUndo's queue,
+    turn it back into a change-list payload, and push it -- undo via
+    push_transaction(..., undo=True) (server reverses it), redo via a
+    plain push (same as an ordinary commit). Both delegate to
+    _push_payload(), whose conflict/error handling is already covered by
+    TestTransactionCommit, so these just confirm the wiring: the right
+    payload, the right undo flag, and the peek-before-super ordering."""
+
+    def setUp(self):
+        self.db = new_instance()
+        self.db.undodb = mock.MagicMock()
+
+    def test_undo_pushes_with_undo_flag(self):
+        txn = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
+        self.db.undodb.undo_count = 1
+        self.db.undodb.undoq = [txn]
+        self.db.undodb.undo.return_value = True
+        with mock.patch.object(self.db, "_push_payload") as push:
+            result = self.db.undo()
+        self.assertTrue(result)
+        push.assert_called_once()
+        payload = push.call_args[0][0]
+        self.assertEqual(payload[0]["handle"], "H1")
+        self.assertEqual(push.call_args.kwargs, {"undo": True})
+
+    def test_redo_pushes_without_undo_flag(self):
+        txn = FakeTransaction([(0, TXNDEL, "H1", person_data("H1"), None)])
+        self.db.undodb.redo_count = 1
+        self.db.undodb.redoq = [txn]
+        self.db.undodb.redo.return_value = True
+        with mock.patch.object(self.db, "_push_payload") as push:
+            result = self.db.redo()
+        self.assertTrue(result)
+        payload = push.call_args[0][0]
+        self.assertEqual(payload[0]["handle"], "H1")
+        self.assertEqual(push.call_args.kwargs, {})
+
+    def test_no_push_when_nothing_to_undo(self):
+        self.db.undodb.undo_count = 0
+        self.db.undodb.undo.return_value = False
+        with mock.patch.object(self.db, "_push_payload") as push:
+            result = self.db.undo()
+        self.assertFalse(result)
+        push.assert_not_called()
+
+    def test_no_push_when_nothing_to_redo(self):
+        self.db.undodb.redo_count = 0
+        self.db.undodb.redo.return_value = False
+        with mock.patch.object(self.db, "_push_payload") as push:
+            result = self.db.redo()
+        self.assertFalse(result)
+        push.assert_not_called()
+
+    def test_undo_not_pushed_if_super_reports_nothing_undone(self):
+        # undo_count > 0 doesn't guarantee _undo() actually ran (e.g. a
+        # readonly db -- see DbUndo.undo()); only a truthy result pushes.
+        txn = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
+        self.db.undodb.undo_count = 1
+        self.db.undodb.undoq = [txn]
+        self.db.undodb.undo.return_value = False
+        with mock.patch.object(self.db, "_push_payload") as push:
+            result = self.db.undo()
+        self.assertFalse(result)
+        push.assert_not_called()
+
+    def test_transaction_grabbed_before_super_pops_the_queue(self):
+        # WebApiDB.undo() must read undoq[-1] before delegating to
+        # super().undo() (-> DbGenericUndo._undo(), which pops it) -- grab
+        # it too late and the payload would be built from the wrong (or a
+        # missing) transaction.
+        txn = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
+        self.db.undodb.undo_count = 1
+        self.db.undodb.undoq = [txn]
+
+        def pop_on_undo(update_history):
+            self.db.undodb.undoq.pop()
+            return True
+
+        self.db.undodb.undo.side_effect = pop_on_undo
+        with mock.patch.object(self.db, "_push_payload") as push:
+            self.db.undo()
+        payload = push.call_args[0][0]
+        self.assertEqual(payload[0]["handle"], "H1")
+
+
+# -------------------------------------------------------------------------
+#
 # TestMisc
 #
 # -------------------------------------------------------------------------
