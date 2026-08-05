@@ -260,6 +260,12 @@ class TestSyncFromServer(unittest.TestCase):
         self.patcher = mock.patch.object(grampswebapidb, "DbTxn", FakeDbTxn)
         self.patcher.start()
         self.addCleanup(self.patcher.stop)
+        # Every existing test here predates the empty-changes-marker ->
+        # full-resync fallback (see TestFullResyncTrigger below) and uses
+        # "changes": [] purely as pagination/timestamp filler, not to
+        # exercise that fallback -- stub it out so those tests keep
+        # testing what they always tested.
+        self.db._full_resync = mock.MagicMock()
 
     def test_stops_after_short_page(self):
         change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
@@ -319,6 +325,115 @@ class TestSyncFromServer(unittest.TestCase):
         self.db.web_client.get_transaction_history.return_value = (page, 1)
         applied = self.db._sync_from_server()
         self.assertEqual(applied, 0)
+
+
+# -------------------------------------------------------------------------
+#
+# TestFullResyncTrigger
+#
+# A batch=True commit (any bulk import/merge/tool run through
+# gramps-web-api) leaves an empty "changes" list on its transaction
+# row -- see the module docstring's note on trans.batch guards around
+# trans.add(). _sync_from_server() can't replay what was never logged,
+# so it falls back to _full_resync() whenever it sees one.
+#
+# -------------------------------------------------------------------------
+class TestFullResyncTrigger(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+        self.db.web_client = mock.MagicMock()
+        self.metadata = {}
+        self.db._get_metadata = lambda key, default=0: self.metadata.get(
+            key, default
+        )
+        self.db._set_metadata = lambda key, value, use_txn=True: self.metadata.__setitem__(
+            key, value
+        )
+        self.db._full_resync = mock.MagicMock()
+        self.patcher = mock.patch.object(grampswebapidb, "DbTxn", FakeDbTxn)
+        self.patcher.start()
+        self.addCleanup(self.patcher.stop)
+
+    def test_empty_changes_transaction_triggers_full_resync(self):
+        page = [{"timestamp": 1.0, "changes": []}]
+        self.db.web_client.get_transaction_history.return_value = (page, 1)
+        self.db._sync_from_server()
+        self.db._full_resync.assert_called_once_with()
+
+    def test_normal_transactions_do_not_trigger_full_resync(self):
+        change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
+        page = [{"timestamp": 1.0, "changes": [change]}]
+        self.db.web_client.get_transaction_history.return_value = (page, 1)
+        with mock.patch.object(self.db, "_apply_change", return_value=True):
+            self.db._sync_from_server()
+        self.db._full_resync.assert_not_called()
+
+    def test_marker_alongside_real_changes_still_applies_the_real_ones(self):
+        # A marker transaction doesn't block replaying whatever *is*
+        # describable elsewhere in the same page -- only the parts the
+        # history feed genuinely has no record of need the fallback.
+        change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
+        page = [
+            {"timestamp": 1.0, "changes": []},
+            {"timestamp": 2.0, "changes": [change]},
+        ]
+        self.db.web_client.get_transaction_history.return_value = (page, 2)
+        with mock.patch.object(self.db, "_apply_change", return_value=True):
+            applied = self.db._sync_from_server()
+        self.assertEqual(applied, 1)
+        self.db._full_resync.assert_called_once_with()
+
+    def test_marker_still_advances_sync_last_time(self):
+        page = [{"timestamp": 42.0, "changes": []}]
+        self.db.web_client.get_transaction_history.return_value = (page, 1)
+        self.db._sync_from_server()
+        self.assertEqual(self.metadata["sync_last_time"], 42.0)
+
+
+# -------------------------------------------------------------------------
+#
+# TestFullResync
+#
+# -------------------------------------------------------------------------
+class TestFullResync(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+        self.db.web_client = mock.MagicMock()
+        self.db.web_client.download_export.return_value = b"fake gramps xml bytes"
+        self.patcher = mock.patch.object(grampswebapidb, "DbTxn", FakeDbTxn)
+        self.patcher.start()
+        self.addCleanup(self.patcher.stop)
+
+    def test_downloads_export_wipes_and_reimports(self):
+        # get_<name>_handles/remove_<name> for every primary type, plus
+        # importData itself, are all faked out -- this test is only
+        # confirming the wiring (download -> wipe every type -> import
+        # the downloaded file -> clean up the temp file), not any real
+        # Gramps object storage.
+        for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
+            if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
+                continue
+            setattr(self.db, f"get_{name}_handles", mock.MagicMock(return_value=["H1"]))
+            setattr(self.db, f"remove_{name}", mock.MagicMock())
+
+        captured_path = {}
+
+        def fake_import_data(database, filename, user):
+            captured_path["path"] = filename
+            self.assertTrue(os.path.exists(filename))
+            with open(filename, "rb") as f:
+                self.assertEqual(f.read(), b"fake gramps xml bytes")
+
+        with mock.patch.object(grampswebapidb, "importData", fake_import_data):
+            self.db._full_resync()
+
+        self.db.web_client.download_export.assert_called_once_with()
+        for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
+            if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
+                continue
+            getattr(self.db, f"remove_{name}").assert_called_once_with("H1", mock.ANY)
+        # The temp file is cleaned up after import, not left behind.
+        self.assertFalse(os.path.exists(captured_path["path"]))
 
 
 # -------------------------------------------------------------------------
