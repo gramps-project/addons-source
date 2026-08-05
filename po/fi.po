@@ -25,8 +25,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-07-03 09:18-0700\n"
-"PO-Revision-Date: 2026-06-02 18:04+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2026-07-26 17:40+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -34,7 +34,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
@@ -157,33 +157,28 @@ msgid "Ancestry Table"
 msgstr "Sukutaulu"
 
 #: AncestryTableReport/AncestryTableReport.gpr.py:4
-#, fuzzy
-#| msgid "Produces descendants lines of a person"
 msgid "Produces a table of ancestry about a person"
-msgstr "Tuottaa henkilön jälkeläislinjoja"
+msgstr "Listaa henkilön esi-isät"
 
 #: AncestryTableReport/AncestryTableReport.py:133
 #, python-format
 msgid "Person %(name)s is not in the Database"
-msgstr ""
+msgstr "Henkilöä %(name)s ei ole tietokannassa"
 
 #: AncestryTableReport/AncestryTableReport.py:277
-#, fuzzy, python-format
-#| msgid "The style used for names"
+#, python-format
 msgid "Ancestry Table Report for %(name)s"
-msgstr "Nimien tyyli"
+msgstr "Henkilön %(name)s esi-isäraportti"
 
 #: AncestryTableReport/AncestryTableReport.py:311
-#, fuzzy, python-format
-#| msgid "Generations up"
+#, python-format
 msgid "Generation %(gen_number)d"
-msgstr "Jälkipolvet"
+msgstr "Sukupolvi %(sukupolvien_numero)d"
 
 #: AncestryTableReport/AncestryTableReport.py:360
-#, fuzzy, python-format
-#| msgid "Number of Ancestors found "
+#, python-format
 msgid "Number of Ancestors for %(name)s"
-msgstr "Löydettyjen esi-isien lukumäärä "
+msgstr "Henkilön %(name)s löydettyjen esi-isien määrä"
 
 #: AncestryTableReport/AncestryTableReport.py:370
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
@@ -194,31 +189,27 @@ msgstr "Sukupolvi"
 
 #: AncestryTableReport/AncestryTableReport.py:472
 msgid "To start a new page after each generation."
-msgstr ""
+msgstr "Aloita uusi sivu jokaisen sukupolven jälkeen."
 
 #: AncestryTableReport/AncestryTableReport.py:475
-#, fuzzy
-#| msgid "Number of ancestors"
 msgid "Number of ancestors per generation"
-msgstr "Esivanhempien lukumäärä"
+msgstr "Esivanhempien lukumäärä sukupolvea kohden"
 
 #: AncestryTableReport/AncestryTableReport.py:476
-#, fuzzy
-#| msgid "Whether to display the theoretical number of ancestor by generation"
 msgid "Add a page with tne number of ancestors per generation."
-msgstr "Näytetäänkö esi-isien teoreettinen lukumäärä sukupolvittain"
+msgstr "Lisää sivu, jossa on esi-isien lukumäärä sukupolvea kohden."
 
 #: AncestryTableReport/AncestryTableReport.py:495
-#, fuzzy
-#| msgid "Color the name to indicate a person's gender in the chart."
 msgid "Mask the name of the calendar in the dates"
-msgstr "Väritä nimi ilmaisemaan henkilön sukupuoli kaaviossa."
+msgstr "Älä näytä kalenterin nimeä päivämäärien yhteydessä"
 
 #: AncestryTableReport/AncestryTableReport.py:496
 msgid ""
 "By default, except for gregorian dates, Gramps shows the name of the "
 "calendar in the dates."
 msgstr ""
+"Oletusarvoisesti Gramps näyttää kalenterin nimen päivämäärissä, lukuun "
+"ottamatta gregoriaanisia päivämääriä."
 
 #: AncestryTableReport/AncestryTableReport.py:519
 #: RepositoriesReport/RepositoriesReport.py:175
@@ -228,98 +219,76 @@ msgid "The style used for the title of the report."
 msgstr "Raportin otsikon tyyli."
 
 #: AncestryTableReport/AncestryTableReport.py:541
-#, fuzzy
-#| msgid "The style used for the subtitle of the report."
 msgid "The style used for the Sosa number of the paternal branch."
-msgstr "Raportin alaotsikon tyyli."
+msgstr "Isänhaaran Sosa-numerossa käytetty tyyli."
 
 #: AncestryTableReport/AncestryTableReport.py:552
-#, fuzzy
-#| msgid "The style used for the subtitle of the report."
 msgid "The style used for the Sosa number of the maternal branch."
-msgstr "Raportin alaotsikon tyyli."
+msgstr "Äitihaaran Sosa-numerossa käytetty tyyli."
 
 #: AncestryTableReport/AncestryTableReport.py:562
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the data of the males."
-msgstr "Sivun otsikossa käytetty tyyli."
+msgstr "Miesten tiedossa käytetty tyyli."
 
 #: AncestryTableReport/AncestryTableReport.py:572
-#, fuzzy
-#| msgid "The style used for the title of the page."
 msgid "The style used for the data of the females."
-msgstr "Sivun otsikossa käytetty tyyli."
+msgstr "Naisten tiedoissa käytetty tyyli."
 
 #: AncestryTableReport/AncestryTableReport.py:583
-#, fuzzy
-#| msgid "The style used for names."
 msgid "The style used for the marriage."
-msgstr "Nimissä käytetty tyyli."
+msgstr "Avioliitossa käytetty tyyli."
 
 #: AncestryTableReport/AncestryTableReport.py:593
 msgid ""
 "The style used for an empty row.\n"
 "To enlarge the height of the empty row, just increse the size of the police."
 msgstr ""
+"Tyhjän rivin tyyli.\n"
+"Suurenna korkeutta lisäämällä fonttikokoa."
 
 #: AncestryTableReport/AncestryTableReport.py:632
-#, fuzzy
-#| msgid "The style used for the header in the Index of Places."
 msgid ""
 "The style used for the header table of the number of ancestors per "
 "generation."
-msgstr "Paikkahakemiston otsikossa käytetty tyyli."
+msgstr "Sukupolven esi-isien lukumäärän otsikossa käytetty tyyli."
 
 #: AncestryTableReport/AncestryTableReport.py:643
-#, fuzzy
-#| msgid "The style used for the table of contents header."
 msgid "The style used for the number of ancestors per generation."
-msgstr "Sisällysluettelon otsikon tyyli."
+msgstr "Sukupolven esi-isien lukuäärän tyyli."
 
 #: AncestryTableReport/AncestryTableReport.py:654
-#, fuzzy
-#| msgid "The style used for the title of the report."
 msgid ""
 "The style used for the total line of the number of ancestors per generation."
-msgstr "Raportin otsikon tyyli."
+msgstr "Sukupolven esi-isien määrän tyyli."
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:24
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:32
-#, fuzzy
-#| msgid "Inverse"
 msgid "Anniversaries"
-msgstr "Käänteinen"
+msgstr "Merkkipäivät"
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:25
-#, fuzzy
-#| msgid "a gramplet that displays the birthdays of the living people"
 msgid "A gramplet that displays the anniversaries of events"
-msgstr "Gramplet, joka näyttää elävien ihmisten syntymä päivät ja iät"
+msgstr "Gramplet, joka näyttää tapahtumien vuosipäivät"
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:52
-#, fuzzy
-#| msgid "Double-click on a row to edit the selected participant."
 msgid "Double-click on a row to edit the event."
-msgstr "Voit muokata osallistujaa kaksoisnapsauttamalla sen riviä."
+msgstr "Muokkaa tapahtumaa kaksoisnapsauttamalla riviä."
 
 #: AnniversariesGramplet/AnniversariesGramplet.py:59
-#, fuzzy
-#| msgid "Other participants"
 msgid "Participant"
-msgstr "Muut osallistujat"
+msgstr "Osallistuja"
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:22
 msgid ""
 "Parses strings from Riksarkivet and ArkivDigital to create sources and "
 "citations."
 msgstr ""
+"Jäsentää Riksarkivet ja ArkivDigital -merkkijonoja lähteiden ja viittausten "
+"luomiseksi."
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:26
-#, fuzzy
-#| msgid "Archive file"
 msgid "Archive Assist"
-msgstr "Arkistotiedosto"
+msgstr "Arkistoavustaja"
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
@@ -1027,7 +996,7 @@ msgstr "valmis!\n"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:432
 #, python-format
 msgid "Skipped %d people due to errors (see log).\n"
-msgstr ""
+msgstr "%d henkilöä ohitettiin virheiden vuoksi (katso loki).\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:347
 msgid ""
@@ -1102,7 +1071,7 @@ msgstr "%d tapahtumaa lisätty."
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:562
 #, python-format
 msgid " (Skipped %d rows due to errors; see log.)"
-msgstr ""
+msgstr " (%d riviä ohitettu virheiden vuoksi; katso loki.)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:589
 msgid "Estimated date"
@@ -1173,17 +1142,11 @@ msgid "Send"
 msgstr "Lähetä"
 
 #: ChatWithTree/ChatWithTree.py:163
-#, fuzzy
-#| msgid "Chat with Tree initialized. Type /help for help."
 msgid "Chat with Tree initialized.                 Type /help for help."
 msgstr ""
 "Keskustelu sukupuun kanssa on aloitettu. Kirjoita /help saadaksesi apua."
 
 #: ChatWithTree/ChatWithTree.py:463
-#, fuzzy
-#| msgid ""
-#| "The ChatWithTree addon is not yet initialized. Please reload Gramps or "
-#| "select a database."
 msgid ""
 "The ChatWithTree addon is not yet initialized.                     Please "
 "reload Gramps or select a database."
@@ -1193,11 +1156,11 @@ msgstr ""
 
 #: ChatWithTree/ChatWithTree.py:472
 msgid "The chatbot is currently processing a query. Please wait."
-msgstr ""
+msgstr "Chatbot käsittelee parhaillaan kyselyä. Odota."
 
 #: ChatWithTree/ChatWithTree.py:499
 msgid "An error occurred while processing your query."
-msgstr ""
+msgstr "Virhe kyselysi käsittelyssä."
 
 #: ChatWithTree/chatwithllm.py:119
 msgid "Tree: '{}'"
@@ -1511,8 +1474,7 @@ msgstr ""
 "tiivistettävänä puuna käyttäen D3.js JavaScript-kirjastoa."
 
 #: D3Charts/DescendantIndentedTree.py:678
-#, fuzzy, python-format
-#| msgid "See %(reference)s : %(spouse)s"
+#, python-format
 msgctxt "spouse"
 msgid "See %(reference)s : %(spouse)s"
 msgstr "Katso %(reference)s : %(spouse)s"
@@ -2083,14 +2045,12 @@ msgstr "paikassa"
 
 #: DataEntryGramplet/DataEntryGramplet.py:428
 #: DataEntryGramplet/DataEntryGramplet.py:507
-#, fuzzy
-#| msgid "Family Tree file"
 msgid "No Family Tree is open."
-msgstr "Sukupuutiedosto"
+msgstr "Sukupuuta ei ole avattu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:429
 msgid "Please open a Family Tree to edit data."
-msgstr ""
+msgstr "Avaa sukupuu muokataksesi tietoja."
 
 #: DataEntryGramplet/DataEntryGramplet.py:446
 #: DataEntryGramplet/DataEntryGramplet.py:578
@@ -2100,7 +2060,7 @@ msgstr "Gramplet-tietojen muokkaus: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:508
 msgid "Please open a Family Tree before adding a person."
-msgstr ""
+msgstr "Avaa sukupuu lisätäksesi henkilön."
 
 #: DataEntryGramplet/DataEntryGramplet.py:524
 msgid "Can't add new person."
@@ -2260,54 +2220,40 @@ msgid "Deep Connections"
 msgstr "Syväsuhteet"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
-#, fuzzy
-#| msgid "Pause"
 msgid "⏸ Pause"
-msgstr "Pysäytä"
+msgstr "⏸ Pysäytä"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:108
 msgid "Pause the current search"
-msgstr ""
+msgstr "Keskeytä nykyinen haku"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:111
 msgid "▶ Continue"
-msgstr ""
+msgstr "▶ Jatka"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:114
-#, fuzzy
-#| msgid ""
-#| "Paused.\n"
-#| "Press Continue to search for additional relations.\n"
 msgid "Continue searching for more relations"
-msgstr ""
-"Pysäytetty.\n"
-"Etsi lisää suhteita painamalla Jatka.\n"
+msgstr "Jatka hakua löytääksesi lisää suhteita"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:118
-#, fuzzy
-#| msgid "Copy"
 msgid "📋 Copy"
-msgstr "Kopioi"
+msgstr "📋 Kopioi"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:120
-#, fuzzy
-#| msgid "Copy link to clipboard"
 msgid "Copy selected people to clipboard"
-msgstr "Kopioi linkki leikepöydälle"
+msgstr "Kopioi valitut henkilöt leikepöydälle"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:128
 msgid "🗑 Clear"
-msgstr ""
+msgstr "🗑 Tyhjennä"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
 msgid "Clear all results and reset"
-msgstr ""
+msgstr "Tyhjennä kaikki tulokset ja palauta alkuarvoihin"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
-#, fuzzy
-#| msgid "Start type to search"
 msgid "Ready to search"
-msgstr "Ala kirjoittaa hakusanaa"
+msgstr "Valmis etsintään"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:185
 #, python-brace-format
@@ -2315,6 +2261,8 @@ msgid ""
 "Search Depth: {depth} | People Processed: {processed} | Queue Size: "
 "{queue_size}"
 msgstr ""
+"Haun syvyys: {depth} | Henkilötä käsitelty: {processed} | Jonon koko: "
+"{queue_size}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 msgid "mentioned in note"
@@ -2351,24 +2299,20 @@ msgstr ""
 "   %s henkilölle "
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:336
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "Error: No Home Person set"
-msgstr "Aktiivihenkilöä ei ole asetettu."
+msgstr "Kotihenkilöä ei ole asetettu."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:341
 msgid "No Active Person set."
 msgstr "Aktiivihenkilöä ei ole asetettu."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:342
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "Error: No Active Person set"
-msgstr "Aktiivihenkilöä ei ole asetettu."
+msgstr "Virhe: aktiivista henkilöä ei ole asetettu"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:347
 msgid "Initializing search..."
-msgstr ""
+msgstr "Hakua alustetaan..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:366
 msgid "Looking for relationship between\n"
@@ -2385,10 +2329,8 @@ msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (aktiivihenkilö)...\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:382
-#, fuzzy
-#| msgid "Fetching records..."
 msgid "Searching for connections..."
-msgstr "Noudetaan tietueita…"
+msgstr "Yhteyksiä etsitään..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:402
 #, python-format
@@ -2408,50 +2350,33 @@ msgstr ""
 "Etsi lisää suhteita painamalla Jatka.\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:427
-#, fuzzy
-#| msgid ""
-#| "Paused.\n"
-#| "Press Continue to search for additional relations.\n"
 msgid "Paused - Press Continue to search for more relations"
-msgstr ""
-"Pysäytetty.\n"
-"Etsi lisää suhteita painamalla Jatka.\n"
+msgstr "Keskeytetty - Paina Jatka etsiäksesi lisää suhteita"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:456
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "Search completed. %d relations found."
+#, python-format
 msgid ""
 "\n"
 "Search completed. %d relation paths found."
 msgstr ""
 "\n"
-"Haku valmis. %d suhdetta löytynyt."
+"Haku suoritettu. Löydettiin %d suhdepolkua."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:460
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "Search completed. %d relations found."
 msgid "Search completed - {} relation paths found"
-msgstr ""
-"\n"
-"Haku valmis. %d suhdetta löytynyt."
+msgstr "Haku valmis - %d suhdepolkua löytynyt"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:471
 msgid "Error during search: {}"
-msgstr ""
+msgstr "Virhe haun aikana: {}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:481
-#, fuzzy
-#| msgid "Removing '%s'..."
 msgid "Resuming search..."
-msgstr "Poistetaan '%s'..."
+msgstr "Hakua jatketaan..."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:489
 msgid "Search interrupted by user"
-msgstr ""
+msgstr "Käyttäjä keskeytti haun"
 
 #: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
@@ -3103,7 +3028,7 @@ msgstr "Paikkahakemisto"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:544
 msgid "Index of Dates"
-msgstr "Päivämäärähakemisto"
+msgstr "Päiväyshakemisto"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:567
 msgid "Index of Names"
@@ -3694,8 +3619,6 @@ msgstr ""
 "0 = ei rajoitusta "
 
 #: DescendantsLines/DescendantsLines.py:1618
-#, fuzzy
-#| msgid "Font name"
 msgid "Font Name"
 msgstr "Fontin nimi"
 
@@ -3704,12 +3627,12 @@ msgid ""
 "Name of the Font to use. On Windows enter the file name of the .ttf at /"
 "Windows/Fonts"
 msgstr ""
+"Käytettävän fontin nimi. Windowsissa kirjoita .ttf-tiedoston nimi "
+"osoitteesssa /Windows/Fonts"
 
 #: DescendantsLines/DescendantsLines.py:1623
-#, fuzzy
-#| msgid "Database size"
 msgid "Font base size"
-msgstr "Tietokannan koko"
+msgstr "Fontin peruskoko"
 
 #: DescendantsLines/DescendantsLines.py:1629
 msgid "Box around Person's block"
@@ -5704,7 +5627,7 @@ msgstr ""
 #: FamilySheet/FamilySheet.py:232 FamilySheet/FamilySheet.py:275
 #, python-format
 msgid "→ %s"
-msgstr ""
+msgstr "→ %s"
 
 #: FamilySheet/FamilySheet.py:397
 #, python-format
@@ -6291,17 +6214,15 @@ msgstr ""
 
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
-msgstr ""
+msgstr "Tapahtumia henkilöiltä, joilla on rooli"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:8
-#, fuzzy
-#| msgid "Matches people with an event with a selected role"
 msgid "Matches event of people filter with role"
-msgstr "Poimii henkilöt, joiden tapahtumissa on valittu rooli"
+msgstr "Poimii henkilöt, joiden tapahtumissa on tämä rooli"
 
 #: FilterRules/matchpersonfilterrole.py:69
 msgid "Role:"
-msgstr ""
+msgstr "Rooli:"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
@@ -6451,33 +6372,33 @@ msgid "Fix coords"
 msgstr "Korjaa koordinaatit"
 
 #: Form/CensusCheckQuickview.gpr.py:9
-#, fuzzy
-#| msgid "Censuses"
 msgid "CensusCheck"
-msgstr "Väestönlaskennat"
+msgstr "Väestönlaskennan valvonta"
 
 #: Form/CensusCheckQuickview.gpr.py:10
 msgid ""
 "Check whether any Census events are missing for a person and some of their "
 "descendents"
 msgstr ""
+"Tarkista, puuttuuko henkilön ja joidenkin hänen jälkeläistensä "
+"väestönlaskennan tapahtumia"
 
 #: Form/CensusCheckQuickview.gpr.py:23
-#, fuzzy
-#| msgid "Censuses"
 msgid "CensusCheckUp"
-msgstr "Väestönlaskennat"
+msgstr "Väestönlaskennan tarkastus"
 
 #: Form/CensusCheckQuickview.gpr.py:24
 msgid ""
 "Check whether any Census events are missing for a person and some of their "
 "ancestors"
 msgstr ""
+"Tarkista, puuttuuko henkilön ja joidenkin hänen esivanhempiensa "
+"väestönlaskennan tapahtumia"
 
 #: Form/CensusCheckQuickview.py:122 Form/CensusCheckUpQuickview.py:122
 #, python-format
 msgid "Census Check for %s"
-msgstr ""
+msgstr "Väestönlaskennan valvonta henkilölle %s"
 
 #: Form/editform.py:192
 #, python-format
@@ -6500,7 +6421,7 @@ msgstr "Viite:"
 
 #: Form/editform.py:393
 msgid "[Source recreated after deletion mid-form-edit]"
-msgstr ""
+msgstr "[Poistettu lähde luotu uudelleen lomaketta muokattaessa]"
 
 #: Form/editform.py:446
 msgid "Headings"
@@ -6512,19 +6433,15 @@ msgstr "Lomake"
 
 #: Form/form.py:174
 msgid "XML syntax error in Form definition file"
-msgstr ""
+msgstr "XML-syntaksivirhe lomakkeen kuvaustiedostossa"
 
 #: Form/form.py:185
-#, fuzzy
-#| msgid "Failed to read proto file %s: %s"
 msgid "Failed to read Form definition file"
-msgstr "Mallitiedoston %s lukeminen epäonnistui: %s"
+msgstr "Lomakkeen määritystiedoston lukeminen epäonnistui"
 
 #: Form/form.py:194
-#, fuzzy
-#| msgid "Invalid Destination Directory"
 msgid "Invalid Form definition file"
-msgstr "Virheellinen kohdehakemisto"
+msgstr "Virheellinen lomakkeen määritystiedosto"
 
 #: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
 #: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
@@ -9955,13 +9872,11 @@ msgstr ""
 #, fuzzy
 #| msgid "Enumerator"
 msgid "Signature of Enumerator"
-msgstr "Luetelma"
+msgstr "Laskijan allekirjoitus"
 
 #: Form/form_ie.xml.h:8
-#, fuzzy
-#| msgid "City or Borough"
 msgid "County or Co. Borough"
-msgstr "Kaupunki tai kaupunginosa"
+msgstr "Maakunta tai kaupunginosa"
 
 #: Form/form_ie.xml.h:9
 msgid "District Electoral Division or Ward"
@@ -9987,21 +9902,16 @@ msgstr ""
 
 #: Form/form_ie.xml.h:16 Form/form_ie.xml.h:113
 #, fuzzy
-#| msgid "Maiden Surname"
 msgid "Name and Surname"
 msgstr "Tyttönimi"
 
 #: Form/form_ie.xml.h:18
-#, fuzzy
-#| msgid "10. Relationship to Head of Family"
 msgid "Relationship to Head of Household"
-msgstr "10. Suhde perheenpäähän"
+msgstr "Suhde perheenpäähän"
 
 #: Form/form_ie.xml.h:19
-#, fuzzy
-#| msgid "Default Age"
 msgid "Year Age"
-msgstr "Oletusikä"
+msgstr "Ikävuosi"
 
 #: Form/form_ie.xml.h:20 Form/form_us.xml.h:2561
 msgid "Age in years"
@@ -10009,18 +9919,17 @@ msgstr ""
 
 #: Form/form_ie.xml.h:21
 msgid "Month Age"
-msgstr ""
+msgstr "Ikäkuukausi"
 
 # Yhdistä tuontiin
 #: Form/form_ie.xml.h:22
-#, fuzzy
-#| msgid "Merge into import"
 msgid "Age in months"
-msgstr "Yhdistetään tuonnista"
+msgstr "Ikä kuukausina"
 
 #: Form/form_ie.xml.h:25
+#, fuzzy
 msgid "Marriage or Orphanhood"
-msgstr ""
+msgstr "Avioliitto tai orpous"
 
 #: Form/form_ie.xml.h:28
 msgid ""
@@ -10040,7 +9949,7 @@ msgstr "Avioliiton solmimispäivä"
 
 #: Form/form_ie.xml.h:35
 msgid "Months married in present Marriage"
-msgstr ""
+msgstr "Kuukaudet naimisissa nykyisessä avioliitossa"
 
 #: Form/form_ie.xml.h:36
 #, fuzzy
@@ -15495,6 +15404,9 @@ msgid ""
 "generations per page. Useful for large sandclock trees that otherwise clip "
 "off the rendered page."
 msgstr ""
+"Käytä genealogytree-mallia 'database pole reduced', joka pakkaa enemmän "
+"sukupolvia sivua kohden. Hyödyllinen suurille tiimalasikaavioille, jotka ei "
+"muuten mahdu tulossivulle."
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
@@ -15712,8 +15624,7 @@ msgid "GOV error on id %s with code: "
 msgstr "GOV-virhe tunnuksella %s, koodi: "
 
 #: GetGOV/getgov.py:555
-#, fuzzy, python-format
-#| msgid "from %s to %s"
+#, python-format
 msgctxt "end"
 msgid "from %(begin)s to %(end)s"
 msgstr "välillä %s – %s"
@@ -15777,14 +15688,12 @@ msgstr ""
 
 #: GrampsAssistant/grampsassistant.gpr.py:26
 #: GrampsAssistant/grampsassistant.py:1417
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Assistant"
-msgstr "Gramps versio"
+msgstr "Gramps-avustaja"
 
 #: GrampsAssistant/grampsassistant.gpr.py:27
 msgid "AI assistant for querying your Gramps family tree"
-msgstr ""
+msgstr "Tekoälyavustaja Gramps-sukupuun kyselyihin"
 
 #: GrampsAssistant/grampsassistant.py:58
 msgid ""
@@ -15794,29 +15703,32 @@ msgid ""
 "provided tools — never write code, simulate results, or make up data. If no "
 "tool exists for the requested information, say so plainly."
 msgstr ""
+"Olet avulias sukututkimusavustaja, jolla on pääsy käyttäjän Gramps-"
+"tietokantaan. Vastaa kysymyksiin ihmisistä, perheistä, tapahtumista ja "
+"suhteista. Kun tarvitset tietoa tietokannasta, käytä annettuja työkaluja – "
+"älä koskaan kirjoita koodia, simuloi tuloksia tai keksi tietoja. Jos "
+"pyydetylle tiedolle ei ole työkalua, sano se suoraan."
 
 #: GrampsAssistant/grampsassistant.py:209
-#, fuzzy
-#| msgid "Extra style settings:"
 msgid "Gramps Assistant settings"
-msgstr "Muita tyyliasetuksia:"
+msgstr "Gramps-avustajan asetukset"
 
 #: GrampsAssistant/grampsassistant.py:213
 msgid "Clear conversation and context"
-msgstr ""
+msgstr "Tyhjennä keskustelu ja konteksti"
 
 #: GrampsAssistant/grampsassistant.py:388
 #: GrampsAssistant/grampsassistant.py:749
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Assistant:"
-msgstr "Gramps versio"
+msgstr "Gramps-avustaja:"
 
 #: GrampsAssistant/grampsassistant.py:390
 msgid ""
 "Ask me anything about the Gramps program or your specific Gramps family "
 "tree. Use the ⚙ button to configure the AI.\n"
 msgstr ""
+"Kysy minulta mitä tahansa Gramps-ohjelmasta tai omasta Gramps-sukupuustasi. "
+"Käytä ⚙-painiketta tekoälyn asetusten muuttamiseen.\n"
 
 #: GrampsAssistant/grampsassistant.py:720
 msgid ""
@@ -15824,10 +15736,13 @@ msgid ""
 "No model configured. Please click the Settings button to choose a backend "
 "and model before chatting.\n"
 msgstr ""
+"\n"
+"Mallia ei ole määritetty. Valitse taustajärjestelmä ja malli napsauttamalla "
+"Asetukset-painiketta ennen keskustelun aloittamista.\n"
 
 #: GrampsAssistant/grampsassistant.py:755
 msgid "Thinking..."
-msgstr ""
+msgstr "Ajattelu..."
 
 #: GrampsAssistant/grampsassistant.py:824
 #, python-brace-format
@@ -15836,32 +15751,38 @@ msgid ""
 "it before launching Gramps:\n"
 "  export {var}=your-key-here"
 msgstr ""
+"API-avainvirhe: ympäristömuuttujaa {var} ei ole asetettu tai se on "
+"virheellinen. Aseta se ennen Grampsin käynnistämistä:\n"
+"export {var}=your-key-here"
 
 #: GrampsAssistant/grampsassistant.py:830
 msgid ""
 "API key error: this provider requires an API key. Open Settings and enter "
 "the environment variable name for your API key (e.g. OPENAI_API_KEY)."
 msgstr ""
+"API-avainvirhe: tämä palvelu vaatii API-avaimen. Avaa Asetukset ja anna API-"
+"avaimesi ympäristömuuttujan nimi (esim. OPENAI_API_KEY)."
 
 #: GrampsAssistant/grampsassistant.py:973
-#, fuzzy
-#| msgid "Done!\n"
 msgid "Done.\n"
-msgstr "Valmis!\n"
+msgstr "Valmis.\n"
 
 #: GrampsAssistant/grampsassistant.py:1203
 msgid "System Prompt:"
-msgstr ""
+msgstr "Järjestelmäkehote:"
 
 #: GrampsAssistant/grampsassistant.py:1217
 msgid "Simplify tools (recommended for smaller/local models)"
 msgstr ""
+"Yksinkertaista työkaluja (suositellaan pienemmille/paikallisille malleille)"
 
 #: GrampsAssistant/grampsassistant.py:1221
 msgid ""
 "When enabled, only the tools relevant to your question are sent to the "
 "model. This improves performance with smaller local models."
 msgstr ""
+"Kun tämä on käytössä, malliin lähetetään vain kysymykseesi liittyvät "
+"työkalut. Tämä parantaa suorituskykyä pienempien paikallisten mallien kanssa."
 
 #: GrampsAssistant/grampsassistant.py:1230
 #, fuzzy
@@ -15874,65 +15795,63 @@ msgid ""
 "URL of a local OpenAI-compatible server. Ollama: http://localhost:11434  LM "
 "Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
 msgstr ""
+"Paikallisen OpenAI-yhteensopivan palvelimen URL-osoite. Ollama: http://"
+"localhost:11434 LM Studio: http://localhost:1234 llama.cpp: http://"
+"localhost:8080"
 
 #: GrampsAssistant/grampsassistant.py:1257
 msgid "model name (leave blank for LM Studio / llama.cpp)"
-msgstr ""
+msgstr "mallinimi (jätä tyhjäksi, jos tiedosto on LM Studio / llama.cpp)"
 
 #: GrampsAssistant/grampsassistant.py:1260
 msgid ""
 "Model to request from the local server. Required for Ollama (e.g. llama3.1). "
 "Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
 msgstr ""
+"Paikallispalvelimelta pyydettävä malli. Pakollinen Ollamalle (esim. llama3.1)"
+". Jätä tyhjäksi LM Studiolle tai llama.cpp-tiedostolle, jotka käyttävät "
+"ladattua mallia."
 
 #: GrampsAssistant/grampsassistant.py:1267
 #: GrampsAssistant/grampsassistant.py:1311
-#, fuzzy
-#| msgid "Modern"
 msgid "Model:"
-msgstr "Moderni"
+msgstr "Malli:"
 
 #: GrampsAssistant/grampsassistant.py:1273
-#, fuzzy
-#| msgid "Foundation date:"
 msgid "Use Foundational Model"
-msgstr "Perustamispäivä:"
+msgstr "Käytä perusmallia"
 
 #: GrampsAssistant/grampsassistant.py:1315
 msgid "e.g. OPENAI_API_KEY"
-msgstr ""
+msgstr "esim. OPENAI_API_KEY"
 
 #: GrampsAssistant/grampsassistant.py:1317
 msgid "Name of the environment variable holding your API key."
-msgstr ""
+msgstr "API-avaimesi sisältävän ympäristömuuttujan nimi."
 
 #: GrampsAssistant/grampsassistant.py:1319
 msgid "API key env var:"
-msgstr ""
+msgstr "API-avaimen ympäristömuuttuja:"
 
 #: GrampsAssistant/grampsassistant.py:1322
 msgid "Backend:"
-msgstr ""
+msgstr "Taustajärjestelmä:"
 
 #: GrampsAssistant/grampsassistant.py:1334
-#, fuzzy
-#| msgid "Website URL"
 msgid "Base URL:"
-msgstr "Nettisivuston URL"
+msgstr "Nettisivuston URL:"
 
 #: GrampsAssistant/grampsassistant.py:1338
-#, fuzzy
-#| msgid "Spouse name:"
 msgid "Model name:"
-msgstr "Puolison nimi:"
+msgstr "Mallin nimi:"
 
 #: GrampsChat/GrampsChat.gpr.py:4 GrampsChat/GrampsChat.gpr.py:9
 msgid "GrampsChat"
-msgstr ""
+msgstr "GrampsChat"
 
 #: GrampsChat/GrampsChat.gpr.py:5
 msgid "AI Chatbot Gramplet (requires connecting to an LLM service)"
-msgstr ""
+msgstr "AI Chatbot Gramplet (vaatii yhteyden LLM-palveluun)"
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:118
 #: GrampsWebSync/grampswebsync.py:212
@@ -15961,44 +15880,36 @@ msgid "Media files are in sync."
 msgstr "Mediatiedostoissa ei synkronoitavaa."
 
 #: GrampsWebSync/grampswebsync.py:345
-#, fuzzy, python-format
-#| msgid "Successfully downloaded %s media file."
-#| msgid_plural "Successfully downloaded %s media files."
+#, python-format
 msgid "Successfully downloaded %s media files."
-msgstr "%s mediatiedosto tuotiin onnistuneesti."
+msgstr "%s mediatiedostoa tuotiin onnistuneesti."
 
 #: GrampsWebSync/grampswebsync.py:348
-#, fuzzy, python-format
-#| msgid "Encountered %s error during download."
-#| msgid_plural "Encountered %s errors during download."
+#, python-format
 msgid "Encountered %s errors during download."
-msgstr "Latauksessa ilmeni %s virhe."
+msgstr "Tuonnin aikana ilmeni virhe %s."
 
 #: GrampsWebSync/grampswebsync.py:354
-#, fuzzy, python-format
-#| msgid "Successfully uploaded %s media file."
-#| msgid_plural "Successfully uploaded %s media files."
+#, python-format
 msgid "Successfully uploaded %s media files."
-msgstr "%s mediatiedosto ladattiin onnistuneesti."
+msgstr "%s mediatiedostoa lähetettiin onnistuneesti."
 
 #: GrampsWebSync/grampswebsync.py:357
-#, fuzzy, python-format
-#| msgid "Encountered %s error during upload."
-#| msgid_plural "Encountered %s errors during upload."
+#, python-format
 msgid "Encountered %s errors during upload."
-msgstr "Latauksen aikana ilmeni %s virhe."
+msgstr "Lähetyksen aikana ilmeni virhe %s."
 
 #: GrampsWebSync/grampswebsync.py:375
 msgid "Authentication failed. Please check your username and password."
-msgstr "Todennus epäonnistui. Tarkista käyttäjänimesi ja salasanasi."
+msgstr "Todennus epäonnistui. Tarkista käyttäjätunnuksesi ja salasanasi."
 
 #: GrampsWebSync/grampswebsync.py:379
 msgid "Access forbidden. Please check username and password."
-msgstr "Pääsy kielletty. Tarkista käyttäjätunnus ja salasana."
+msgstr "Pääsy evätty. Tarkista käyttäjätunnus ja salasana."
 
 #: GrampsWebSync/grampswebsync.py:383
 msgid "GrampsWeb service not found. Please check the URL."
-msgstr "GrampsWeb-palvelua ei löytynyt. Tarkista URL."
+msgstr "GrampsWeb-palvelua ei löytynyt. Tarkista URL-osoite."
 
 #: GrampsWebSync/grampswebsync.py:387
 msgid "Too many requests, please try again in a few seconds."
@@ -16184,89 +16095,70 @@ msgid "Missing remotely"
 msgstr "Puuttuu etätiedoista"
 
 #: GrampsWebSync/grampswebsync.py:1130
-#, fuzzy, python-format
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
+#, python-format
 msgid "Downloading %s media file(s)"
-msgstr "Tuodaan Grampsista %s mediatiedosto"
+msgstr "Tuodaan Grampsista %s mediatiedostoa"
 
 #: GrampsWebSync/grampswebsync.py:1138
-#, fuzzy, python-format
-#| msgid "Uploading %s media file"
-#| msgid_plural "Uploading %s media files"
+#, python-format
 msgid "Uploading %s media file(s)"
-msgstr "Viedään Grampsiin %s mediatiedosto"
+msgstr "Viedään Grampsiin %s mediatiedostoa"
 
 #: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
 msgid "Gram.py Script"
-msgstr ""
+msgstr "Gram.py-scripti"
 
 #: GrampyScript/GrampyScript.gpr.py:24
 msgid "Run a special Gramps Python script"
-msgstr ""
+msgstr "Suorita erityinen Gramps Python -skripti"
 
 #: GrampyScript/GrampyScript.py:91
-#, fuzzy
-#| msgid "Loaded from file: %s"
 msgid "Load query from a .script file"
-msgstr "Ladattu tiedostosta: %s"
+msgstr "Komento .script-tiedostosta"
 
 #: GrampyScript/GrampyScript.py:121
-#, fuzzy
-#| msgid "Save tree as file"
 msgid "Save query to a .script file"
-msgstr "Tallenna puu tiedostoon"
+msgstr "Tallenna kysely .script-tiedostoon"
 
 #: GrampyScript/GrampyScript.py:141
-#, fuzzy
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
 msgid "Download results as a CSV file"
-msgstr "Tuodaan Grampsista %s mediatiedosto"
+msgstr "Lataa tulokset CSV-tiedostona"
 
 #: GrampyScript/GrampyScript.py:303
-#, fuzzy
-#| msgid "OpenAI"
 msgid "Open..."
-msgstr "OpenAI"
+msgstr "Avaa..."
 
 #: GrampyScript/GrampyScript.py:305
-#, fuzzy
-#| msgid "Save images in ..."
 msgid "Save as..."
-msgstr "Tallenna kuvat kansioon..."
+msgstr "Tallenna nimellä..."
 
 #: GrampyScript/GrampyScript.py:319
 msgid "Save as CSV"
-msgstr ""
+msgstr "Tallenna CVS-muodossa"
 
 #: GrampyScript/GrampyScript.py:320
-#, fuzzy
-#| msgid "Copy link to clipboard"
 msgid "Copy to clipboard"
-msgstr "Kopioi linkki leikepöydälle"
+msgstr "Kopioi leikepöydälle"
 
 #: GrampyScript/GrampyScript.py:395
-#, fuzzy
-#| msgid "Quilt Chart"
 msgid "Chart"
-msgstr "Peittokaavio"
+msgstr "Kaavio"
 
 #: GrampyScript/GrampyScript.py:400
 msgid "Execute <Alt+Enter>"
-msgstr ""
+msgstr "Suorita <Alt+Enter>"
 
 #: GrampyScript/GrampyScript.py:402
 msgid "Execute the script"
-msgstr ""
+msgstr "Suorita scripti"
 
 #: GrampyScript/GrampyScript.py:416
 msgid "Ready..."
-msgstr ""
+msgstr "Valmis...."
 
 #: GrampyScript/GrampyScript.py:1028
 msgid "Gram.py Script Edited Data"
-msgstr ""
+msgstr "Gram.py-skriptin muokkaamat tiedot"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -16286,15 +16178,15 @@ msgstr "Moderni"
 
 #: GraphView/avatars.py:65
 msgid "Generic (dark)"
-msgstr ""
+msgstr "Yleinen (tumma)"
 
 #: GraphView/avatars.py:66
 msgid "Generic (gray)"
-msgstr ""
+msgstr "Yleinen (harmaa)"
 
 #: GraphView/avatars.py:67
 msgid "Generic (light)"
-msgstr ""
+msgstr "Yleinen (vaalea)"
 
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
 #: GraphView/graphview.py:189
@@ -16737,80 +16629,76 @@ msgstr "Kumppanit"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:25 HasTagSubstr/hastagsubstr.py:93
 msgid "People with a tag containing <substring>"
-msgstr ""
+msgstr "Poimii henkilöt, joiden tagi sisältää merkkijonon <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:26 HasTagSubstr/hastagsubstr.py:94
 msgid "Matches people with a tag whose name contains the given substring"
-msgstr ""
+msgstr "Poimii henkilöt, joiden nimeen sisältyy annettu merkkijono"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:40 HasTagSubstr/hastagsubstr.py:102
 msgid "Families with a tag containing <substring>"
-msgstr ""
+msgstr "Perheet, joiden tagi sisältää merkkijonon <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:42 HasTagSubstr/hastagsubstr.py:104
-#, fuzzy
-#| msgid "Matches families that are matched by an event filter"
 msgid "Matches families with a tag whose name contains the given substring"
-msgstr "Poimii perheet, joilla on suotimen mukainen tapahtuma"
+msgstr "Perheet, joiden tagi sisältää annetun merkkijonon"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:57 HasTagSubstr/hastagsubstr.py:113
 msgid "Events with a tag containing <substring>"
-msgstr ""
+msgstr "Tapahtumat, joiden tagi sisältää merkkijonon <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:59 HasTagSubstr/hastagsubstr.py:115
 msgid "Matches events with a tag whose name contains the given substring"
-msgstr ""
+msgstr "Poimii tapahtumat, joiden nimi sisältää merkkijonon <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:74 HasTagSubstr/hastagsubstr.py:124
 msgid "Places with a tag containing <substring>"
-msgstr ""
+msgstr "Paikat, joiden tag sisältää merkkijonon <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:76 HasTagSubstr/hastagsubstr.py:126
 msgid "Matches places with a tag whose name contains the given substring"
-msgstr ""
+msgstr "Paikat, joiden tag sisältää annetun merkkijonon"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:91 HasTagSubstr/hastagsubstr.py:135
 msgid "Sources with a tag containing <substring>"
-msgstr ""
+msgstr "Lähteet, joiden tag sisältää merkkijonon <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:93 HasTagSubstr/hastagsubstr.py:137
-#, fuzzy
-#| msgid "Matches Sources with values containing the chosen parameters"
 msgid "Matches sources with a tag whose name contains the given substring"
-msgstr "Poimii lähteet, jotka sisältävät valitun arvon"
+msgstr "Lähteet, joiden tag sisältää annetun merkkijonon"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:108 HasTagSubstr/hastagsubstr.py:146
 msgid "Citations with a tag containing <substring>"
-msgstr ""
+msgstr "Viitteet, joiden tagi sisältää merkkijonon <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:110 HasTagSubstr/hastagsubstr.py:148
 msgid "Matches citations with a tag whose name contains the given substring"
-msgstr ""
+msgstr "Viitteet, joiden tagi sisältää annetun merkkijonon"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:125 HasTagSubstr/hastagsubstr.py:157
 msgid "Repositories with a tag containing <substring>"
-msgstr ""
+msgstr "Arkistot, joiden tagi sisältää merkkijonon <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:127 HasTagSubstr/hastagsubstr.py:159
 msgid "Matches repositories with a tag whose name contains the given substring"
-msgstr ""
+msgstr "Arkistot, joiden tagi sisältää annetun merkkijonon"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:142 HasTagSubstr/hastagsubstr.py:168
 msgid "Media objects with a tag containing <substring>"
-msgstr ""
+msgstr "Mediaobjektit, joiden tagi sisältää merkkijonon <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:144 HasTagSubstr/hastagsubstr.py:170
 msgid ""
 "Matches media objects with a tag whose name contains the given substring"
-msgstr ""
+msgstr "Mediaobjektit, joiden tagi sisältää annetun merkkijonon"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:159 HasTagSubstr/hastagsubstr.py:179
 msgid "Notes with a tag containing <substring>"
-msgstr ""
+msgstr "Lisätiedot, joiden tagi sisältää merkkijonon <substring>"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:161 HasTagSubstr/hastagsubstr.py:181
 msgid "Matches notes with a tag whose name contains the given substring"
-msgstr ""
+msgstr "Lisätiedot, joiden tagi sisältää annetun merkkijonon"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
