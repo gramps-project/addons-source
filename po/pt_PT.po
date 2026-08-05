@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-01 09:38-0700\n"
-"PO-Revision-Date: 2026-07-30 22:02+0000\n"
+"PO-Revision-Date: 2026-08-03 04:01+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16005,12 +16005,16 @@ msgid ""
 "The system keyring could not be used. Snap confinement blocks access until "
 "you run: %s"
 msgstr ""
+"Impossível utilizar o porta-chaves do sistema. O confinamento do Snap "
+"bloqueia o acesso até que execute: %s"
 
 #: GrampsWebSync/grampswebsync.py:128
 msgid ""
 "The system keyring could not be used. You will need to enter your password "
 "each time."
 msgstr ""
+"Impossível utilizar o porta-chaves do sistema. Terá de inserir a sua senha "
+"sempre que necessário."
 
 #: GrampsWebSync/grampswebsync.py:145
 msgid "Authentication failed. Please check your username and password."
@@ -16066,11 +16070,13 @@ msgid ""
 "The family tree was modified while the changes were being reviewed. Nothing "
 "has been applied. Please compare again."
 msgstr ""
+"A árvore genealógica foi alterada enquanto as alterações estavam a ser "
+"revistas. Nenhuma alteração foi aplicada. Por favor, compare novamente."
 
 #: GrampsWebSync/grampswebsync.py:175
 #, python-format
 msgid "The server could not apply the changes: %s"
-msgstr ""
+msgstr "O servidor não conseguiu aplicar as alterações: %s"
 
 #: GrampsWebSync/grampswebsync.py:177
 #, python-format
@@ -16156,25 +16162,31 @@ msgstr "Erro:"
 
 #: GrampsWebSync/grampswebsync.py:646
 msgid "Sync mode"
-msgstr ""
+msgstr "Modo de sincronização"
 
 #: GrampsWebSync/grampswebsync.py:656
 msgid ""
 "Changes from both sides are combined. Objects edited in both places are "
 "merged."
 msgstr ""
+"As alterações de ambos os lados são combinadas. Os objectos editados em "
+"ambos os locais são unidos."
 
 #: GrampsWebSync/grampswebsync.py:660
 msgid ""
 "The server is made to match this computer. Anything changed only on the "
 "server is discarded."
 msgstr ""
+"O servidor foi feito para corresponder a este computador. Qualquer alteração "
+"feita no servidor é descartada."
 
 #: GrampsWebSync/grampswebsync.py:664
 msgid ""
 "This computer is made to match the server. Anything changed only here is "
 "discarded."
 msgstr ""
+"Este computador foi feito para corresponder ao servidor. Qualquer alteração "
+"feita aqui é ignorada."
 
 #: GrampsWebSync/grampswebsync.py:671
 msgid "Bidirectional Synchronization"
@@ -16189,10 +16201,8 @@ msgid "Reset local to remote"
 msgstr "Repor a local com a remota"
 
 #: GrampsWebSync/grampswebsync.py:712
-#, fuzzy
-#| msgid "Learning"
 msgid "Warning:"
-msgstr "Aprendizagem"
+msgstr "Aviso:"
 
 #: GrampsWebSync/grampswebsync.py:722
 msgid "Local changes"
@@ -16239,31 +16249,29 @@ msgid "Missing remotely"
 msgstr "Remotos em falta"
 
 #: GrampsWebSync/grampswebsync.py:905
-#, fuzzy, python-format
-#| msgid "Downloading %s media file(s)"
+#, python-format
 msgid "Downloading %s media file"
 msgid_plural "Downloading %s media files"
-msgstr[0] "A transferir %s ficheiro(s) multimédia"
-msgstr[1] "A transferir %s ficheiro(s) multimédia"
+msgstr[0] "A transferir %s ficheiro multimédia"
+msgstr[1] "A transferir %s ficheiros multimédia"
 
 #: GrampsWebSync/grampswebsync.py:920
-#, fuzzy, python-format
-#| msgid "Uploading %s media file(s)"
+#, python-format
 msgid "Uploading %s media file"
 msgid_plural "Uploading %s media files"
-msgstr[0] "A enviar %s ficheiro(s) multimédia"
-msgstr[1] "A enviar %s ficheiro(s) multimédia"
+msgstr[0] "A enviar %s ficheiro multimédia"
+msgstr[1] "A enviar %s ficheiros multimédia"
 
 #: GrampsWebSync/grampswebsync.py:965
 msgid "Try again"
-msgstr ""
+msgstr "Tentar novamente"
 
 #: GrampsWebSync/grampswebsync.py:999
 #, python-format
 msgid "Applied %s change."
 msgid_plural "Applied %s changes."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Aplicar %s alteração."
+msgstr[1] "Aplicar %s alterações."
 
 #: GrampsWebSync/grampswebsync.py:1006
 msgid "Media files are in sync."
@@ -16275,44 +16283,42 @@ msgid "%s media file is missing on both sides and could not be transferred."
 msgid_plural ""
 "%s media files are missing on both sides and could not be transferred."
 msgstr[0] ""
+"O ficheiro multimédia %s não existe em nenhum dos lados e não foi possível "
+"transferi-lo."
 msgstr[1] ""
+"Os ficheiros multimédia %s não existem em nenhum dos lados e não foi "
+"possível transferi-los."
 
 #: GrampsWebSync/grampswebsync.py:1020
-#, fuzzy
-#| msgid "Both trees are the same."
 msgid "Both trees are already in sync."
-msgstr "As árvores são idênticas."
+msgstr "As árvores já estão sincronizadas."
 
 #: GrampsWebSync/grampswebsync.py:1033
-#, fuzzy, python-format
-#| msgid "Successfully downloaded %s media files."
+#, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "Transferiu com êxito %s ficheiros multimédia."
+msgstr[0] "Transferiu com êxito %s ficheiro multimédia."
 msgstr[1] "Transferiu com êxito %s ficheiros multimédia."
 
 #: GrampsWebSync/grampswebsync.py:1043
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during download."
+#, python-format
 msgid "Encountered %s error during download."
 msgid_plural "Encountered %s errors during download."
-msgstr[0] "Encontrados %s erros durante a transferência."
+msgstr[0] "Encontrado %s erro durante a transferência."
 msgstr[1] "Encontrados %s erros durante a transferência."
 
 #: GrampsWebSync/grampswebsync.py:1056
-#, fuzzy, python-format
-#| msgid "Successfully uploaded %s media files."
+#, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "Envio com êxito de %s ficheiros multimédia."
+msgstr[0] "Envio com êxito de %s ficheiro multimédia."
 msgstr[1] "Envio com êxito de %s ficheiros multimédia."
 
 #: GrampsWebSync/grampswebsync.py:1065
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during upload."
+#, python-format
 msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
-msgstr[0] "%s erros encontrados durante o envio."
+msgstr[0] "%s erro encontrado durante o envio."
 msgstr[1] "%s erros encontrados durante o envio."
 
 #: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
@@ -21619,6 +21625,9 @@ msgid ""
 "\tRequires  BerkeleyDB or Python-bsddb3 Python adapter and the Berkeley "
 "database"
 msgstr ""
+")\n"
+"\tRequer adaptador Python BerkeleyDB ou Python-bsddb3 e a base de dados "
+"Berkeley"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:837
 msgid " • SQLite Database library (sqlite3: "
