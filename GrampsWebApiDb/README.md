@@ -1,8 +1,14 @@
 GrampsWebApiDb is a Gramps database backend that uses a Gramps Web API
 server (e.g. gramps-connect or Gramps Web) as a live database, mirrored
 locally in SQLite for speed. Reads are served from the local mirror, which
-is kept current via the server's transaction-history feed; local edits are
-pushed back to the server as they're committed.
+is kept current via the server's transaction-history feed -- both at load
+time and on an ongoing poll while the tree stays open, so a change made
+from another client (the web app, another desktop instance) shows up here
+without closing and reopening the tree; local edits are pushed back to the
+server as they're committed. Every already-open Gramps view (People,
+Families, ...) refreshes itself automatically as synced changes land, the
+same as it would for a local edit -- see `grampswebapidb.py`'s module
+docstring for how.
 
 ## Credentials
 
