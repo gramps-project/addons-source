@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-03 09:18-0700\n"
+"POT-Creation-Date: 2026-07-29 09:58-0700\n"
 "PO-Revision-Date: 2026-07-26 17:41+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
@@ -29,6 +29,39 @@ msgstr ""
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
+
+msgid "Birthdays"
+msgstr "Doğum günleri"
+
+msgid "Ignore birthdays with tag"
+msgstr "Etiketli doğum günlerini yok say"
+
+msgid "Month and day"
+msgstr ""
+
+msgid "Only show birthdays with tag"
+msgstr "Sadece etiketli doğum günlerini göster"
+
+msgid "Proximity to current date"
+msgstr ""
+
+#, fuzzy
+#| msgid "Sort by "
+msgid "Sort birthdays by"
+msgstr "Şuna göre sırala "
+
+#, fuzzy
+#| msgid "Birth date of deceased"
+msgid "Sort dates of death by"
+msgstr "Ölenin doğum tarihi"
+
+#, fuzzy
+#| msgid "a gramplet that displays the birthdays of the living people"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr "Yaşayan kişilerin doğum günlerini gösteren bir gramplet"
+
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "Yaşayan kişilerin doğum günlerini gösteren bir gramplet"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -780,23 +813,6 @@ msgstr "Aileleri Düzenle"
 msgid "Looking for children birth order"
 msgstr "Çocuk doğum sırası aranıyor"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
-msgid "Birthdays"
-msgstr "Doğum günleri"
-
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
-msgid "a gramplet that displays the birthdays of the living people"
-msgstr "Yaşayan kişilerin doğum günlerini gösteren bir gramplet"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:45
-msgid "Ignore birthdays with tag"
-msgstr "Etiketli doğum günlerini yok say"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:46
-msgid "Only show birthdays with tag"
-msgstr "Sadece etiketli doğum günlerini göster"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:194
 msgid "Calculate Estimated Dates"
@@ -1305,6 +1321,12 @@ msgstr ""
 "Gitmek için bir 'varsayılan kişiyi' ayarlamanız gerekiyor. Kişiler "
 "Görünümünü seçin, 'Ana Kişi' olarak istediğiniz kişiyi seçin, ardından "
 "Düzenle -> Ana Kişiyi Ayarla menüsü aracılığıyla seçiminizi onaylayın."
+
+#: CombinedView/personpage.py:306 CombinedView/personpage.py:368
+#, fuzzy
+#| msgid "Adding Tags to family (%s)"
+msgid "Add existing child to family"
+msgstr "Aileye etiket ekleme (%s)"
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -2500,12 +2522,6 @@ msgstr "<"
 #: DenominoViso/DenominoViso.py:1960
 msgid "the chart type runs out of bounds"
 msgstr "Grafik türü sınırların dışına çıkıyor"
-
-#: DenominoViso/DenominoViso.py:2002 GraphView/graphview.py:968
-#: NoteCleanup/NoteCleanup.py:126 SearchGramplet/SearchGramplet.gpr.py:9
-#: SearchGramplet/SearchGramplet.gpr.py:19
-msgid "Search"
-msgstr "Arama"
 
 #: DenominoViso/DenominoViso.py:2553
 msgid "DenominoViso Options"
@@ -5466,6 +5482,24 @@ msgstr "Düzenli ifadelere izin ver"
 msgid "Allow regular expressions."
 msgstr "Normal ifadelerin kullanılmasına izin verin."
 
+#: ExcludeSubtreeFilter/excludesubtree.gpr.py:24
+#: ExcludeSubtreeFilter/excludesubtree.py:106
+msgid "People reachable from <Person>, stopping at <Filter> matches"
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.gpr.py:26
+#: ExcludeSubtreeFilter/excludesubtree.py:109
+msgid ""
+"Matches people who are reachable starting from <Person> (walking all parents "
+"and children of attached families, recursively) stopping at persons in "
+"<Filter>."
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.py:121
+#: FilterRules/isrelatedwithfiltermatch.py:80
+msgid "Retrieving all sub-filter matches"
+msgstr ""
+
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
 msgstr "Kişi GEXF"
@@ -8103,7 +8137,8 @@ msgstr "Engeller"
 
 #: Form/form_ca.xml.h:527
 msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
-msgstr "34. Engeller: a. Sağır ve dilsiz; b. Kör; c. Akıl sağlığı yerinde değil"
+msgstr ""
+"34. Engeller: a. Sağır ve dilsiz; b. Kör; c. Akıl sağlığı yerinde değil"
 
 #: Form/form_ca.xml.h:538
 msgid "Name from Schedule 1"
@@ -8282,7 +8317,8 @@ msgstr "Kiralanmış Ahırlar"
 
 #: Form/form_ca.xml.h:586
 msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
-msgstr "23. Kiralanan Gayrimenkuller: Ahır, at ahırı ve diğer müştemilat sayısı"
+msgstr ""
+"23. Kiralanan Gayrimenkuller: Ahır, at ahırı ve diğer müştemilat sayısı"
 
 #: Form/form_ca.xml.h:587
 msgid "LeasedSilos"
@@ -10791,7 +10827,8 @@ msgstr "Eğitimli profesyonel mühendisler"
 
 #: Form/form_us.xml.h:232
 msgid "Names of pensioners for Revolutionary or military services"
-msgstr "Devrimci savaş veya askerî hizmetler için emekli maaşı alanların adları"
+msgstr ""
+"Devrimci savaş veya askerî hizmetler için emekli maaşı alanların adları"
 
 #: Form/form_us.xml.h:233
 msgid "Ages"
@@ -16206,10 +16243,6 @@ msgstr "Uzak adresi yerel adrese sıfırla"
 msgid "Reset local to remote"
 msgstr "Yerel olanı uzak olana sıfırla"
 
-#: GrampsWebSync/grampswebsync.py:923
-msgid "Merge"
-msgstr "Birleştir"
-
 #: GrampsWebSync/grampswebsync.py:948
 msgid "Local changes"
 msgstr "Yerel değişiklikler"
@@ -16836,7 +16869,8 @@ msgstr "<alt dize> etiketi içeren kaynaklar"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:93 HasTagSubstr/hastagsubstr.py:137
 msgid "Matches sources with a tag whose name contains the given substring"
-msgstr "Adında belirtilen alt dizeyi içeren etikete sahip kaynakları eşleştirir"
+msgstr ""
+"Adında belirtilen alt dizeyi içeren etikete sahip kaynakları eşleştirir"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:108 HasTagSubstr/hastagsubstr.py:146
 msgid "Citations with a tag containing <substring>"
@@ -16844,7 +16878,8 @@ msgstr "<alt dize> etiketi içeren alıntılar"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:110 HasTagSubstr/hastagsubstr.py:148
 msgid "Matches citations with a tag whose name contains the given substring"
-msgstr "Alıntıları, adında belirtilen alt dizeyi içeren bir etiketle eşleştirir"
+msgstr ""
+"Alıntıları, adında belirtilen alt dizeyi içeren bir etiketle eşleştirir"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:125 HasTagSubstr/hastagsubstr.py:157
 msgid "Repositories with a tag containing <substring>"
@@ -17790,7 +17825,8 @@ msgstr "Ölüm etiketi döndürme"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:51
 msgid "The death label is written in a text frame rotated by this value."
-msgstr "Ölüm etiketi, bu değer kadar döndürülmüş bir metin çerçevesine yazılır."
+msgstr ""
+"Ölüm etiketi, bu değer kadar döndürülmüş bir metin çerçevesine yazılır."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:53
 msgid "Horizontal offset of death label"
@@ -19460,6 +19496,12 @@ msgstr "Kişi Genel Bakışı"
 msgid "Gramplet showing an overview of events for a person"
 msgstr "Bir kişi için olayların genel görünümünü gösteren Gramplet"
 
+#: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
+#, fuzzy
+#| msgid "Person Overview"
+msgid "Overview"
+msgstr "Kişi Genel Bakışı"
+
 #: Overview/Overview.gpr.py:45
 msgid "Family Overview"
 msgstr "Aile Genel Bakışı"
@@ -19865,6 +19907,67 @@ msgstr "Etiket rengi ve önceliği"
 #: PersonEverything/PersonEverything.py:961
 msgid "No source information found"
 msgstr "Kaynak bilgisi bulunamadı"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:25
+#, fuzzy
+#| msgid "Relationship to Father"
+msgid "Person Relationship Filter"
+msgstr "Baba ile ilişki"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:26
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet providing a person filter on relationships"
+msgstr "Bir ilişkide akrabaları gösteren Gramplet"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:33
+#, fuzzy
+#| msgid "Relationship to Father"
+msgid "Relationship Filter"
+msgstr "Baba ile ilişki"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:82
+#, fuzzy
+#| msgid "Children Dead"
+msgid "Children of name match"
+msgstr "Ölen çocuklar"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:84
+msgid "Matches children of anybody with a given name"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:251
+#, fuzzy
+#| msgid "sibling"
+msgid "Sibling 1"
+msgstr "kardeş"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:252
+#, fuzzy
+#| msgid "sibling"
+msgid "Sibling 2"
+msgstr "kardeş"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:253
+#, fuzzy
+#| msgid "Children Dead"
+msgid "Child 1"
+msgstr "Ölen çocuklar"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:254
+#, fuzzy
+#| msgid "Children Dead"
+msgid "Child 2"
+msgstr "Ölen çocuklar"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:282
+msgid "Probably Alive"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:284
+#, python-format
+msgid "example: '%(msg1)s' or '%(msg2)s'"
+msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
@@ -20521,7 +20624,8 @@ msgstr "Geçersiz enlem/boylam eşleştirme düzenli ifadesi"
 
 #: PlaceCompletion/PlaceCompletion.py:420
 msgid "Non valid regular expression given to find lat/lon. Quiting."
-msgstr "Enlem/boylam bulmak için geçersiz bir düzenli ifade verildi. Çıkılıyor."
+msgstr ""
+"Enlem/boylam bulmak için geçersiz bir düzenli ifade verildi. Çıkılıyor."
 
 #: PlaceCompletion/PlaceCompletion.py:479
 msgid "Finding Places and appropriate changes"
@@ -21088,7 +21192,8 @@ msgstr "PostgreSQL Veritabanı"
 #: PostgreSQLEnhanced/concurrency.py:479
 #, python-brace-format
 msgid "Object {obj_type}:{handle} was modified by another user"
-msgstr "{obj_type}:{handle} nesnesi başka bir kullanıcı tarafından değiştirildi"
+msgstr ""
+"{obj_type}:{handle} nesnesi başka bir kullanıcı tarafından değiştirildi"
 
 #: PostgreSQLEnhanced/migration.py:168
 msgid "Starting migration..."
@@ -21708,10 +21813,10 @@ msgid ""
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
 "a></b></u>\n"
 msgstr ""
-"<u><b><a href=\"https://gramps-project.org/wiki/"
-"index.php?title=Gramps_5.0_Wiki_Manual_-"
-"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Yerel Ayarlar:</a>"
-"</b></u>\n"
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Yerel Ayarlar:</"
+"a></b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2086
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2087
@@ -22951,8 +23056,8 @@ msgid ""
 "witness1, name, given, age, occupation; witness2, name, given, age, "
 "occupation, etc ..."
 msgstr ""
-"tanık1, ad, verilen ad, yaş, meslek; tanık2, ad, verilen ad, yaş, meslek, vb "
-"..."
+"tanık1, ad, verilen ad, yaş, meslek; tanık2, ad, verilen ad, yaş, meslek, "
+"vb ..."
 
 #: SourceIndex/index.glade:7
 msgid "index"
@@ -23280,7 +23385,8 @@ msgstr "Kişileri göster"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:444
 msgid "Whether to show events and persons mentioned in the note"
-msgstr "Notta bahsedilen etkinliklerin ve kişilerin gösterilip gösterilmeyeceği"
+msgstr ""
+"Notta bahsedilen etkinliklerin ve kişilerin gösterilip gösterilmeyeceği"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:495
 msgid "The style used for the subtitle of the report."
@@ -23835,7 +23941,8 @@ msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda bar mitzvah oldu."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:513
 #, python-format
 msgid "%(female_name)s became a bar mitzvah in %(year)s at %(place)s."
-msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda bar mitzvah oldu."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda bar mitzvah oldu."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:516
 #, python-format
@@ -23845,7 +23952,8 @@ msgstr "%(male_name)s, %(year)s yılında %(place)s konumunda bat mitzvah oldu."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:518
 #, python-format
 msgid "%(female_name)s became a bat mitzvah in %(year)s at %(place)s."
-msgstr "%(female_name)s, %(year)s yılında %(place)s konumunda bat mitzvah oldu."
+msgstr ""
+"%(female_name)s, %(year)s yılında %(place)s konumunda bat mitzvah oldu."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:521
 #, python-format
@@ -25478,26 +25586,87 @@ msgstr "Sütunları görüntüle"
 msgid "Display Icons"
 msgstr "Simgeleri görüntüle"
 
-#: WordleGramplet/WordleGramplet.gpr.py:4
-#: WordleGramplet/WordleGramplet.gpr.py:10
-msgid "Wordle"
-msgstr "Wordle"
+#: WordClouds/WordClouds.gpr.py:24 WordClouds/WordClouds.gpr.py:32
+msgid "Given Name Word Cloud"
+msgstr ""
 
-#: WordleGramplet/WordleGramplet.gpr.py:13
-msgid "Gramplet used to make word clouds with wordle.net"
-msgstr "wordle.net ile kelime bulutları oluşturmak için kullanılan Gramplet"
+#: WordClouds/WordClouds.gpr.py:25
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all given names as a word cloud"
+msgstr "Bir ilişkide akrabaları gösteren Gramplet"
 
-#: WordleGramplet/WordleGramplet.py:126
-msgid "[Missing]"
+#: WordClouds/WordClouds.gpr.py:40 WordClouds/WordClouds.gpr.py:48
+msgid "Surname Word Cloud"
+msgstr ""
+
+#: WordClouds/WordClouds.gpr.py:41
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all surnames as a word cloud"
+msgstr "Bir ilişkide akrabaları gösteren Gramplet"
+
+#: WordClouds/WordClouds.gpr.py:56 WordClouds/WordClouds.gpr.py:64
+#, fuzzy
+#| msgid "Place history loaded"
+msgid "Place Word Cloud"
+msgstr "Yer geçmişi yüklendi"
+
+#: WordClouds/WordClouds.gpr.py:57
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all places as a word cloud"
+msgstr "Bir ilişkide akrabaları gösteren Gramplet"
+
+#: WordClouds/cloudgramplet.py:147 WordClouds/cloudgramplet.py:225
+#, fuzzy, python-format
+#| msgid "Number of pages"
+msgid "Number of %s"
+msgstr "Sayfa sayısı"
+
+#: WordClouds/cloudgramplet.py:149 WordClouds/cloudgramplet.py:227
+#, fuzzy
+#| msgid "Colored Male"
+msgid "Color (low)"
+msgstr "Renkli Erkek"
+
+#: WordClouds/cloudgramplet.py:150 WordClouds/cloudgramplet.py:228
+msgid "Color (high)"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:151 WordClouds/cloudgramplet.py:229
+#, fuzzy
+#| msgid "No color"
+msgid "Hover color"
+msgstr "Renk yok"
+
+#: WordClouds/cloudgramplet.py:152 WordClouds/cloudgramplet.py:230
+msgid "Layout quality"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:154 WordClouds/cloudgramplet.py:232
+msgid "Filter missing/unknown words"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:207
+#, fuzzy, python-format
+#| msgid "[Missing]"
+msgid "[Missing %s]"
 msgstr "[Eksik]"
 
-#: WordleGramplet/WordleGramplet.py:140
-msgid "Number of font sizes"
-msgstr "Yazı tipi boyutu sayısı"
+#: WordClouds/givennamewordcloudgramplet.py:50
+msgid "Click given name to view people with that given name"
+msgstr ""
 
-#: WordleGramplet/WordleGramplet.py:144
-msgid "Select filter to restrict list"
-msgstr "Listeyi kısıtlamak için filtre seçin"
+#: WordClouds/placewordcloudgramplet.py:53
+#, fuzzy
+#| msgid "Include Image source references"
+msgid "Click place name to view references"
+msgstr "Görüntü kaynak referanslarını dahil et"
+
+#: WordClouds/surnamewordcloudgramplet.py:49
+msgid "Click surname to view people with that surname"
+msgstr ""
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -25944,6 +26113,24 @@ msgstr ""
 "Tercih ettiğiniz\n"
 " \"%s\"\n"
 " web gezgininde açmayı deneyin..."
+
+#~ msgid "Search"
+#~ msgstr "Arama"
+
+#~ msgid "Merge"
+#~ msgstr "Birleştir"
+
+#~ msgid "Wordle"
+#~ msgstr "Wordle"
+
+#~ msgid "Gramplet used to make word clouds with wordle.net"
+#~ msgstr "wordle.net ile kelime bulutları oluşturmak için kullanılan Gramplet"
+
+#~ msgid "Number of font sizes"
+#~ msgstr "Yazı tipi boyutu sayısı"
+
+#~ msgid "Select filter to restrict list"
+#~ msgstr "Listeyi kısıtlamak için filtre seçin"
 
 #~ msgid "Primary Name"
 #~ msgstr "Birincil ad"

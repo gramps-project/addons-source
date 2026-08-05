@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-03 09:18-0700\n"
+"POT-Creation-Date: 2026-07-29 09:58-0700\n"
 "PO-Revision-Date: 2026-07-24 05:14+0000\n"
 "Last-Translator: Juan Saavedra <jcsaaver@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
@@ -28,6 +28,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2026.8.dev0\n"
+
+msgid "Birthdays"
+msgstr "Cumpleaños"
+
+msgid "Ignore birthdays with tag"
+msgstr "Ignorar cumpleaños con etiqueta"
+
+msgid "Month and day"
+msgstr ""
+
+msgid "Only show birthdays with tag"
+msgstr "Solo mostrar cumpleaños con etiqueta"
+
+msgid "Proximity to current date"
+msgstr ""
+
+#, fuzzy
+#| msgid "Sort by "
+msgid "Sort birthdays by"
+msgstr "Ordenar por "
+
+msgid "Sort dates of death by"
+msgstr ""
+
+#, fuzzy
+#| msgid "a gramplet that displays the birthdays of the living people"
+msgid "a gramplet that displays death dates in sorted order"
+msgstr "un gramplet que exhibe los cumpleaños de la gente viva"
+
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "un gramplet que exhibe los cumpleaños de la gente viva"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -793,23 +824,6 @@ msgstr "Editar familias"
 msgid "Looking for children birth order"
 msgstr "Buscando el nacimiento de los hijos ordenados"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
-msgid "Birthdays"
-msgstr "Cumpleaños"
-
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
-msgid "a gramplet that displays the birthdays of the living people"
-msgstr "un gramplet que exhibe los cumpleaños de la gente viva"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:45
-msgid "Ignore birthdays with tag"
-msgstr "Ignorar cumpleaños con etiqueta"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:46
-msgid "Only show birthdays with tag"
-msgstr "Solo mostrar cumpleaños con etiqueta"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:194
 msgid "Calculate Estimated Dates"
@@ -1319,6 +1333,12 @@ msgstr ""
 "Necesita fijar una 'persona por defecto' para ir. Seleccione la Vista de "
 "Gente, seleccione la persona que quiere como 'Persona inicial', después "
 "confirme su elección por medio del menú Editar → Establecer Persona Inicial."
+
+#: CombinedView/personpage.py:306 CombinedView/personpage.py:368
+#, fuzzy
+#| msgid "Adding Tags to family (%s)"
+msgid "Add existing child to family"
+msgstr "Añadir Etiquetas a familia (%s)"
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -2524,12 +2544,6 @@ msgstr "de"
 #: DenominoViso/DenominoViso.py:1960
 msgid "the chart type runs out of bounds"
 msgstr "el tipo de cuadro ejecuta fuera de acotaciones"
-
-#: DenominoViso/DenominoViso.py:2002 GraphView/graphview.py:968
-#: NoteCleanup/NoteCleanup.py:126 SearchGramplet/SearchGramplet.gpr.py:9
-#: SearchGramplet/SearchGramplet.gpr.py:19
-msgid "Search"
-msgstr "Búsqueda"
 
 #: DenominoViso/DenominoViso.py:2553
 msgid "DenominoViso Options"
@@ -5533,6 +5547,24 @@ msgstr "Concede exreg"
 msgid "Allow regular expressions."
 msgstr "Concede expresiones regulares."
 
+#: ExcludeSubtreeFilter/excludesubtree.gpr.py:24
+#: ExcludeSubtreeFilter/excludesubtree.py:106
+msgid "People reachable from <Person>, stopping at <Filter> matches"
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.gpr.py:26
+#: ExcludeSubtreeFilter/excludesubtree.py:109
+msgid ""
+"Matches people who are reachable starting from <Person> (walking all parents "
+"and children of attached families, recursively) stopping at persons in "
+"<Filter>."
+msgstr ""
+
+#: ExcludeSubtreeFilter/excludesubtree.py:121
+#: FilterRules/isrelatedwithfiltermatch.py:80
+msgid "Retrieving all sub-filter matches"
+msgstr ""
+
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
 msgstr "Persona GEXF"
@@ -6558,7 +6590,8 @@ msgstr "Referencia:"
 
 #: Form/editform.py:393
 msgid "[Source recreated after deletion mid-form-edit]"
-msgstr "[Fuente recreada tras su eliminación durante la edición del formulario]"
+msgstr ""
+"[Fuente recreada tras su eliminación durante la edición del formulario]"
 
 #: Form/editform.py:446
 msgid "Headings"
@@ -16196,10 +16229,6 @@ msgstr "Restablecer remoto a local"
 msgid "Reset local to remote"
 msgstr "Restablecer local a remoto"
 
-#: GrampsWebSync/grampswebsync.py:923
-msgid "Merge"
-msgstr "Fusionar"
-
 #: GrampsWebSync/grampswebsync.py:948
 msgid "Local changes"
 msgstr "Cambios locales"
@@ -19543,6 +19572,10 @@ msgstr "Visión general de persona"
 msgid "Gramplet showing an overview of events for a person"
 msgstr "Gramplet mostrando una visión general de los eventos para una persona"
 
+#: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
+msgid "Overview"
+msgstr "Descripción general"
+
 #: Overview/Overview.gpr.py:45
 msgid "Family Overview"
 msgstr "Panorama general de la familia"
@@ -19969,6 +20002,61 @@ msgstr "Color de etiqueta y prioridad"
 #: PersonEverything/PersonEverything.py:961
 msgid "No source information found"
 msgstr "No se ha encontrado información de origen"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:25
+#, fuzzy
+#| msgid "Relationship to Father"
+msgid "Person Relationship Filter"
+msgstr "Relación con el padre"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:26
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet providing a person filter on relationships"
+msgstr "Gramplet mostrando relativas dentro de una relación"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:33
+#, fuzzy
+#| msgid "Relationship to Father"
+msgid "Relationship Filter"
+msgstr "Relación con el padre"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:82
+msgid "Children of name match"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:84
+msgid "Matches children of anybody with a given name"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:251
+#, fuzzy
+#| msgid "sibling"
+msgid "Sibling 1"
+msgstr "hermano"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:252
+#, fuzzy
+#| msgid "sibling"
+msgid "Sibling 2"
+msgstr "hermano"
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:253
+msgid "Child 1"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:254
+msgid "Child 2"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:282
+msgid "Probably Alive"
+msgstr ""
+
+#: PersonRelationshipFilter/PersonRelationshipFilter.py:284
+#, python-format
+msgid "example: '%(msg1)s' or '%(msg2)s'"
+msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
@@ -25558,26 +25646,85 @@ msgstr ""
 msgid "Display Icons"
 msgstr ""
 
-#: WordleGramplet/WordleGramplet.gpr.py:4
-#: WordleGramplet/WordleGramplet.gpr.py:10
-msgid "Wordle"
+#: WordClouds/WordClouds.gpr.py:24 WordClouds/WordClouds.gpr.py:32
+msgid "Given Name Word Cloud"
 msgstr ""
 
-#: WordleGramplet/WordleGramplet.gpr.py:13
-msgid "Gramplet used to make word clouds with wordle.net"
+#: WordClouds/WordClouds.gpr.py:25
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all given names as a word cloud"
+msgstr "Gramplet mostrando relativas dentro de una relación"
+
+#: WordClouds/WordClouds.gpr.py:40 WordClouds/WordClouds.gpr.py:48
+msgid "Surname Word Cloud"
 msgstr ""
 
-#: WordleGramplet/WordleGramplet.py:126
-msgid "[Missing]"
+#: WordClouds/WordClouds.gpr.py:41
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all surnames as a word cloud"
+msgstr "Gramplet mostrando relativas dentro de una relación"
+
+#: WordClouds/WordClouds.gpr.py:56 WordClouds/WordClouds.gpr.py:64
+#, fuzzy
+#| msgid "Place history loaded"
+msgid "Place Word Cloud"
+msgstr "Lugar de historia cargado"
+
+#: WordClouds/WordClouds.gpr.py:57
+#, fuzzy
+#| msgid "Gramplet showing relatives in a relation"
+msgid "Gramplet showing all places as a word cloud"
+msgstr "Gramplet mostrando relativas dentro de una relación"
+
+#: WordClouds/cloudgramplet.py:147 WordClouds/cloudgramplet.py:225
+#, fuzzy, python-format
+#| msgid "Number of pages"
+msgid "Number of %s"
+msgstr "Número de páginas"
+
+#: WordClouds/cloudgramplet.py:149 WordClouds/cloudgramplet.py:227
+msgid "Color (low)"
 msgstr ""
 
-#: WordleGramplet/WordleGramplet.py:140
-msgid "Number of font sizes"
+#: WordClouds/cloudgramplet.py:150 WordClouds/cloudgramplet.py:228
+msgid "Color (high)"
 msgstr ""
 
-#: WordleGramplet/WordleGramplet.py:144
-msgid "Select filter to restrict list"
-msgstr "Seleccione un filtro para restringir la lista"
+#: WordClouds/cloudgramplet.py:151 WordClouds/cloudgramplet.py:229
+#, fuzzy
+#| msgid "No color"
+msgid "Hover color"
+msgstr "Sin color"
+
+#: WordClouds/cloudgramplet.py:152 WordClouds/cloudgramplet.py:230
+msgid "Layout quality"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:154 WordClouds/cloudgramplet.py:232
+msgid "Filter missing/unknown words"
+msgstr ""
+
+#: WordClouds/cloudgramplet.py:207
+#, fuzzy, python-format
+#| msgid "Missing %s: %s"
+msgid "[Missing %s]"
+msgstr "Falta %s: %s"
+
+#: WordClouds/givennamewordcloudgramplet.py:50
+msgid "Click given name to view people with that given name"
+msgstr ""
+
+#: WordClouds/placewordcloudgramplet.py:53
+#, fuzzy
+#| msgid "Include Image source references"
+msgid "Click place name to view references"
+msgstr "Incluye referencias de origen de Imagen"
+
+#: WordClouds/surnamewordcloudgramplet.py:49
+msgid "Click surname to view people with that surname"
+msgstr ""
 
 #: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
@@ -26088,6 +26235,15 @@ msgstr ""
 " «%s»\n"
 " en su navegador web preferido…"
 
+#~ msgid "Search"
+#~ msgstr "Búsqueda"
+
+#~ msgid "Merge"
+#~ msgstr "Fusionar"
+
+#~ msgid "Select filter to restrict list"
+#~ msgstr "Seleccione un filtro para restringir la lista"
+
 #, python-format
 #~ msgid "\\u2192 %s"
 #~ msgstr "\\u2192 %s"
@@ -26148,9 +26304,6 @@ msgstr ""
 
 #~ msgid "Export"
 #~ msgstr "Exportar"
-
-#~ msgid "Overview"
-#~ msgstr "Descripción general"
 
 #~ msgid "No file parsed..."
 #~ msgstr "No se ha analizado ningún archivo..."
