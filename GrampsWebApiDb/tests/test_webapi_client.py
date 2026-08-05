@@ -44,6 +44,7 @@ Run with::
 #
 # -------------------------------------------------------------------------
 import base64
+import io
 import json
 import os
 import sys
@@ -70,6 +71,7 @@ except ImportError as _err:
 from GrampsWebApiDb import webapi_client
 from GrampsWebApiDb.webapi_client import (
     WebApiHandler,
+    WebApiPushConflict,
     decode_jwt_payload,
     make_api_key,
     parse_api_key,
@@ -126,6 +128,13 @@ class FakeResponse:
 
 def http_error(code, url="https://example.com/api"):
     return HTTPError(url, code, f"HTTP {code}", None, None)
+
+
+def http_error_with_body(code, body, url="https://example.com/api"):
+    """An HTTPError whose .read() yields a JSON-encoded body, the way a
+    real gramps-web-api error response (abort_with_message()) looks."""
+    fp = io.BytesIO(json.dumps(body).encode())
+    return HTTPError(url, code, f"HTTP {code}", None, fp)
 
 
 class QueuedUrlopen:
@@ -494,14 +503,17 @@ class TestPushTransaction(unittest.TestCase):
             handler.push_transaction([])
         self.assertEqual(fake.requests, [])
 
-    def test_non_empty_payload_posts_with_force(self):
+    def test_non_empty_payload_posts_without_force(self):
+        # No force=1: the server's old-data-mismatch check must run, or
+        # WebApiPushConflict can never fire -- see push_transaction()'s
+        # docstring.
         handler = self._authed_handler()
         payload = [{"type": "add", "handle": "H1", "_class": "Person"}]
         fake = QueuedUrlopen([FakeResponse({})])
         with mock.patch.object(webapi_client, "urlopen", fake):
             handler.push_transaction(payload)
         req = fake.requests[0]
-        self.assertEqual(req.full_url, "https://example.com/api/transactions/?force=1")
+        self.assertEqual(req.full_url, "https://example.com/api/transactions/")
         self.assertEqual(req.get_method(), "POST")
         self.assertEqual(json.loads(req.data), payload)
         self.assertEqual(req.get_header("Authorization"), f"Bearer {token('AT0')}")
@@ -525,6 +537,45 @@ class TestPushTransaction(unittest.TestCase):
         ):
             handler.push_transaction([{"type": "add"}])
         self.assertEqual(len(fake.requests), 2)
+
+    def test_object_changed_400_raises_push_conflict(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                http_error_with_body(
+                    400, {"error": {"code": 400, "message": "Object has changed"}}
+                )
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            with self.assertRaises(WebApiPushConflict):
+                handler.push_transaction([{"type": "add"}])
+        # Not retried -- a conflict isn't transient, so exactly one request.
+        self.assertEqual(len(fake.requests), 1)
+
+    def test_other_400_reasons_are_not_conflicts(self):
+        # e.g. a payload item missing a required Gramps ID -- our own bug,
+        # not a concurrent edit -- must propagate as a plain HTTPError.
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                http_error_with_body(
+                    400, {"error": {"code": 400, "message": "Gramps ID missing"}}
+                )
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            with self.assertRaises(HTTPError) as ctx:
+                handler.push_transaction([{"type": "add"}])
+        self.assertNotIsInstance(ctx.exception, WebApiPushConflict)
+
+    def test_400_with_unparseable_body_propagates_as_http_error(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([http_error_with_body(400, "not-a-dict-body")])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            with self.assertRaises(HTTPError) as ctx:
+                handler.push_transaction([{"type": "add"}])
+        self.assertNotIsInstance(ctx.exception, WebApiPushConflict)
 
 
 if __name__ == "__main__":
