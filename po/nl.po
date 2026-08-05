@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-01 09:38-0700\n"
-"PO-Revision-Date: 2026-08-01 16:13+0000\n"
+"PO-Revision-Date: 2026-08-03 04:01+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -16144,12 +16144,16 @@ msgid ""
 "The system keyring could not be used. Snap confinement blocks access until "
 "you run: %s"
 msgstr ""
+"De systeemsleutelring kon niet worden gebruikt. Snap-beperking blokkeert de "
+"toegang totdat u het volgende uitvoert: %s"
 
 #: GrampsWebSync/grampswebsync.py:128
 msgid ""
 "The system keyring could not be used. You will need to enter your password "
 "each time."
 msgstr ""
+"De systeemsleutelring kon niet worden gebruikt. U moet elke keer uw "
+"wachtwoord invoeren."
 
 #: GrampsWebSync/grampswebsync.py:145
 msgid "Authentication failed. Please check your username and password."
@@ -16203,11 +16207,13 @@ msgid ""
 "The family tree was modified while the changes were being reviewed. Nothing "
 "has been applied. Please compare again."
 msgstr ""
+"De stamboom werd aangepast tijdens het controleren van de wijzigingen. Er is "
+"niets toegepast. Vergelijk nog eens."
 
 #: GrampsWebSync/grampswebsync.py:175
 #, python-format
 msgid "The server could not apply the changes: %s"
-msgstr ""
+msgstr "De server kon de wijzigingen niet toepassen: %s"
 
 #: GrampsWebSync/grampswebsync.py:177
 #, python-format
@@ -16229,7 +16235,7 @@ msgstr "Lokale en externe gegevens vergelijken…"
 
 #: GrampsWebSync/grampswebsync.py:348
 msgid "Successfully applied changes to local database."
-msgstr "Wijzigingen zijn toegepast op lokale database."
+msgstr "Wijzigingen zijn met succes toegepast op lokale database."
 
 #: GrampsWebSync/grampswebsync.py:437
 msgid "Continue without transport encryption?"
@@ -16294,25 +16300,31 @@ msgstr "Fout:"
 
 #: GrampsWebSync/grampswebsync.py:646
 msgid "Sync mode"
-msgstr ""
+msgstr "Synchronisatiemodus"
 
 #: GrampsWebSync/grampswebsync.py:656
 msgid ""
 "Changes from both sides are combined. Objects edited in both places are "
 "merged."
 msgstr ""
+"Veranderingen van beide kanten worden gecombineerd. Objecten die op beide "
+"plaatsen zijn bewerkt, worden samengevoegd."
 
 #: GrampsWebSync/grampswebsync.py:660
 msgid ""
 "The server is made to match this computer. Anything changed only on the "
 "server is discarded."
 msgstr ""
+"De server is ingesteld om overeen te komen met deze computer. Alles wat "
+"alleen op de server is gewijzigd, wordt weggegooid."
 
 #: GrampsWebSync/grampswebsync.py:664
 msgid ""
 "This computer is made to match the server. Anything changed only here is "
 "discarded."
 msgstr ""
+"Deze computer is ingesteld om overeen te komen met de server Alles wat "
+"alleen hier is gewijzigd, wordt weggegooid."
 
 #: GrampsWebSync/grampswebsync.py:671
 msgid "Bidirectional Synchronization"
@@ -16327,10 +16339,8 @@ msgid "Reset local to remote"
 msgstr "Lokaal opnieuw instellen vanuit server"
 
 #: GrampsWebSync/grampswebsync.py:712
-#, fuzzy
-#| msgid "Learning"
 msgid "Warning:"
-msgstr "Lerend"
+msgstr "Waarschuwing:"
 
 #: GrampsWebSync/grampswebsync.py:722
 msgid "Local changes"
@@ -16377,31 +16387,29 @@ msgid "Missing remotely"
 msgstr "Extern vermist"
 
 #: GrampsWebSync/grampswebsync.py:905
-#, fuzzy, python-format
-#| msgid "Downloading %s media file(s)"
+#, python-format
 msgid "Downloading %s media file"
 msgid_plural "Downloading %s media files"
-msgstr[0] "%s mediabestand(en) downloaden"
-msgstr[1] "%s mediabestand(en) downloaden"
+msgstr[0] "%s mediabestand downloaden"
+msgstr[1] "%s mediabestanden downloaden"
 
 #: GrampsWebSync/grampswebsync.py:920
-#, fuzzy, python-format
-#| msgid "Uploading %s media file(s)"
+#, python-format
 msgid "Uploading %s media file"
 msgid_plural "Uploading %s media files"
-msgstr[0] "%s mediabestand(en) uploaden"
-msgstr[1] "%s mediabestand(en) uploaden"
+msgstr[0] "%s mediabestand uploaden"
+msgstr[1] "%s mediabestanden uploaden"
 
 #: GrampsWebSync/grampswebsync.py:965
 msgid "Try again"
-msgstr ""
+msgstr "Probeer het opnieuw"
 
 #: GrampsWebSync/grampswebsync.py:999
 #, python-format
 msgid "Applied %s change."
 msgid_plural "Applied %s changes."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s wijziging toegepast."
+msgstr[1] "%s wijzigingen toegepast."
 
 #: GrampsWebSync/grampswebsync.py:1006
 msgid "Media files are in sync."
@@ -16413,44 +16421,41 @@ msgid "%s media file is missing on both sides and could not be transferred."
 msgid_plural ""
 "%s media files are missing on both sides and could not be transferred."
 msgstr[0] ""
+"%s mediabestand ontbreekt aan beide kanten en kon niet worden overgedragen."
 msgstr[1] ""
+"%s mediabestanden ontbreken aan beide kanten en konden niet worden "
+"overgedragen."
 
 #: GrampsWebSync/grampswebsync.py:1020
-#, fuzzy
-#| msgid "Both trees are the same."
 msgid "Both trees are already in sync."
-msgstr "Beide stambomen zijn hetzelfde."
+msgstr "Beide stambomen zijn gesynchroniseerd."
 
 #: GrampsWebSync/grampswebsync.py:1033
-#, fuzzy, python-format
-#| msgid "Successfully downloaded %s media files."
+#, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "%s mediabestanden succesvol gedownload."
-msgstr[1] "%s mediabestanden succesvol gedownload."
+msgstr[0] "%s mediabestand met succes gedownload."
+msgstr[1] "%s mediabestanden met succes gedownload."
 
 #: GrampsWebSync/grampswebsync.py:1043
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during download."
+#, python-format
 msgid "Encountered %s error during download."
 msgid_plural "Encountered %s errors during download."
-msgstr[0] "%s fouten opgetreden bij het downloaden."
+msgstr[0] "%s fout opgetreden bij het downloaden."
 msgstr[1] "%s fouten opgetreden bij het downloaden."
 
 #: GrampsWebSync/grampswebsync.py:1056
-#, fuzzy, python-format
-#| msgid "Successfully uploaded %s media files."
+#, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "%s mediabestanden met succes geüploadet."
+msgstr[0] "%s mediabestand met succes geüploadet."
 msgstr[1] "%s mediabestanden met succes geüploadet."
 
 #: GrampsWebSync/grampswebsync.py:1065
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during upload."
+#, python-format
 msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
-msgstr[0] "%s fouten opgetreden bij het uploaden."
+msgstr[0] "%s fout opgetreden bij het uploaden."
 msgstr[1] "%s fouten opgetreden bij het uploaden."
 
 #: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
@@ -18780,7 +18785,7 @@ msgstr "Kon geen geldige morfologiepatronen genereren."
 
 #: NameSuite/name_processor/views/gramplet.py:51
 msgid "Patronymic applied successfully!"
-msgstr "Patroniem succesvol toegepast!"
+msgstr "Patroniem met succes toegepast!"
 
 #: NameSuite/name_processor/views/gramplet.py:77
 msgid "Apply Suggestion"
@@ -21794,6 +21799,8 @@ msgid ""
 "\tRequires  BerkeleyDB or Python-bsddb3 Python adapter and the Berkeley "
 "database"
 msgstr ""
+")\n"
+"\tVereist  BerkeleyDB of Python-bsddb3 Python adapter en de Berkeley database"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:837
 msgid " • SQLite Database library (sqlite3: "
@@ -25172,7 +25179,7 @@ msgstr ""
 #: WebSearch/WebSearch.py:2229
 #, python-format
 msgid "Note #%(id)s has been successfully added"
-msgstr "Notitie #%(id)s is met succes toegevoeg"
+msgstr "Notitie #%(id)s is met succes toegevoegd"
 
 #: WebSearch/WebSearch.py:2232
 msgid "Error creating note"
@@ -25188,7 +25195,7 @@ msgstr "WebSearch Link"
 
 #: WebSearch/WebSearch.py:2428
 msgid "Attribute has been successfully added"
-msgstr "Attribuut is met success toegevoegd"
+msgstr "Attribuut is met succes toegevoegd"
 
 #: WebSearch/WebSearch.py:2460
 #, python-brace-format
