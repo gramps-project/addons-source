@@ -228,6 +228,59 @@ class TestApplyChange(unittest.TestCase):
 
 # -------------------------------------------------------------------------
 #
+# TestEmitChangeSignals
+#
+# -------------------------------------------------------------------------
+class TestEmitChangeSignals(unittest.TestCase):
+    """_emit_change_signals() reproduces the person-add/family-update/...
+    signals a normal (non-batch) local commit would have emitted -- see
+    _sync_from_server()'s batch=True DbTxn and the module docstring's note
+    on why that otherwise leaves already-open views unaware anything
+    changed."""
+
+    def setUp(self):
+        self.db = new_instance()
+        self.db.emit = mock.MagicMock()
+
+    def emitted(self):
+        return {call.args[0]: call.args[1][0] for call in self.db.emit.call_args_list}
+
+    def test_add_emits_person_add_with_handle(self):
+        self.db._emit_change_signals({("Person", "H1"): TXNADD})
+        self.assertEqual(self.emitted(), {"person-add": ["H1"]})
+
+    def test_update_emits_dash_update(self):
+        self.db._emit_change_signals({("Family", "F1"): TXNUPD})
+        self.assertEqual(self.emitted(), {"family-update": ["F1"]})
+
+    def test_delete_emits_dash_delete(self):
+        self.db._emit_change_signals({("Event", "E1"): TXNDEL})
+        self.assertEqual(self.emitted(), {"event-delete": ["E1"]})
+
+    def test_unrecognized_obj_class_is_skipped(self):
+        self.db._emit_change_signals({("NotAThing", "H1"): TXNADD})
+        self.db.emit.assert_not_called()
+
+    def test_same_class_and_trans_type_batched_into_one_call(self):
+        self.db._emit_change_signals(
+            {("Person", "H1"): TXNUPD, ("Person", "H2"): TXNUPD}
+        )
+        self.db.emit.assert_called_once()
+        name, (handles,) = self.db.emit.call_args[0]
+        self.assertEqual(name, "person-update")
+        self.assertEqual(set(handles), {"H1", "H2"})
+
+    def test_deletes_and_adds_emitted_before_updates(self):
+        # Same ordering as DBAPI.transaction_commit()'s own signal loop.
+        self.db._emit_change_signals(
+            {("Person", "H1"): TXNUPD, ("Family", "F1"): TXNDEL}
+        )
+        names = [call.args[0] for call in self.db.emit.call_args_list]
+        self.assertEqual(names, ["family-delete", "person-update"])
+
+
+# -------------------------------------------------------------------------
+#
 # TestSyncFromServer
 #
 # -------------------------------------------------------------------------
@@ -250,6 +303,12 @@ class TestSyncFromServer(unittest.TestCase):
     def setUp(self):
         self.db = new_instance()
         self.db.web_client = mock.MagicMock()
+        # _sync_from_server() now emits change signals per page (see
+        # TestEmitChangeSignals for that logic in isolation) -- emit()
+        # itself needs Callback.__init__'s instance state, which
+        # new_instance()'s bare __new__() never runs, so it's stubbed here
+        # the same way commit_person/remove_person are stubbed elsewhere.
+        self.db.emit = mock.MagicMock()
         self.metadata = {}
         self.db._get_metadata = lambda key, default=0: self.metadata.get(
             key, default
@@ -326,6 +385,51 @@ class TestSyncFromServer(unittest.TestCase):
         applied = self.db._sync_from_server()
         self.assertEqual(applied, 0)
 
+    def test_emits_a_signal_per_applied_change(self):
+        change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
+        self.db.web_client.get_transaction_history.return_value = (
+            [{"timestamp": 5.0, "changes": [change]}],
+            1,
+        )
+        with mock.patch.object(self.db, "_apply_change", return_value=True):
+            self.db._sync_from_server()
+        self.db.emit.assert_called_once_with("person-add", (["H1"],))
+
+    def test_repeated_changes_to_one_handle_collapse_to_the_last(self):
+        # Same handle, updated then deleted within one page/poll -- only
+        # the net (delete) signal should fire, not both.
+        page = [
+            {
+                "timestamp": 1.0,
+                "changes": [
+                    {"obj_class": "Person", "trans_type": TXNUPD, "obj_handle": "H1"}
+                ],
+            },
+            {
+                "timestamp": 2.0,
+                "changes": [
+                    {"obj_class": "Person", "trans_type": TXNDEL, "obj_handle": "H1"}
+                ],
+            },
+        ]
+        self.db.web_client.get_transaction_history.return_value = (page, 2)
+        with mock.patch.object(self.db, "_apply_change", return_value=True):
+            self.db._sync_from_server()
+        self.db.emit.assert_called_once_with("person-delete", (["H1"],))
+
+    def test_unrecognized_changes_emit_no_signal(self):
+        page = [
+            {
+                "timestamp": 1.0,
+                "changes": [
+                    {"obj_class": "Bogus", "trans_type": TXNADD, "obj_handle": "H1"}
+                ],
+            }
+        ]
+        self.db.web_client.get_transaction_history.return_value = (page, 1)
+        self.db._sync_from_server()
+        self.db.emit.assert_not_called()
+
 
 # -------------------------------------------------------------------------
 #
@@ -342,6 +446,7 @@ class TestFullResyncTrigger(unittest.TestCase):
     def setUp(self):
         self.db = new_instance()
         self.db.web_client = mock.MagicMock()
+        self.db.emit = mock.MagicMock()  # see TestSyncFromServer.setUp's note
         self.metadata = {}
         self.db._get_metadata = lambda key, default=0: self.metadata.get(
             key, default
@@ -400,6 +505,7 @@ class TestFullResync(unittest.TestCase):
         self.db = new_instance()
         self.db.web_client = mock.MagicMock()
         self.db.web_client.download_export.return_value = b"fake gramps xml bytes"
+        self.db.emit = mock.MagicMock()  # see TestSyncFromServer.setUp's note
         self.patcher = mock.patch.object(grampswebapidb, "DbTxn", FakeDbTxn)
         self.patcher.start()
         self.addCleanup(self.patcher.stop)
@@ -434,6 +540,32 @@ class TestFullResync(unittest.TestCase):
             getattr(self.db, f"remove_{name}").assert_called_once_with("H1", mock.ANY)
         # The temp file is cleaned up after import, not left behind.
         self.assertFalse(os.path.exists(captured_path["path"]))
+        # A successful reimport can't be described as specific add/update/
+        # delete signals, so every view is told to reload wholesale instead
+        # -- see request_rebuild() in gramps.gen.db.generic.
+        emitted = [call.args[0] for call in self.db.emit.call_args_list]
+        self.assertIn("person-rebuild", emitted)
+        self.assertIn("family-rebuild", emitted)
+
+    def test_failed_import_does_not_trigger_rebuild(self):
+        # request_rebuild() sits after importData() in _full_resync(), not
+        # in a finally -- a reimport that raised partway through left the
+        # mirror in an unknown state, which is not something to tell every
+        # view "reload, this is now correct" about.
+        for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
+            if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
+                continue
+            setattr(self.db, f"get_{name}_handles", mock.MagicMock(return_value=[]))
+            setattr(self.db, f"remove_{name}", mock.MagicMock())
+
+        def failing_import_data(database, filename, user):
+            raise RuntimeError("boom")
+
+        with mock.patch.object(grampswebapidb, "importData", failing_import_data):
+            with self.assertRaises(RuntimeError):
+                self.db._full_resync()
+
+        self.db.emit.assert_not_called()
 
 
 # -------------------------------------------------------------------------
@@ -640,6 +772,75 @@ class TestMisc(unittest.TestCase):
             db._initialize("/tmp/some-tree", "user", "pw")
         self.assertIs(db.web_client, sentinel_client)
         super_init.assert_called_once_with("/tmp/some-tree", "user", "pw")
+
+
+# -------------------------------------------------------------------------
+#
+# TestPolling
+#
+# load() schedules a GLib.timeout_add_seconds() tick that re-syncs for as
+# long as the database stays open (see the module docstring's polling
+# section); close() must cancel it so a closed database doesn't keep
+# polling on a connection that's going away.
+#
+# -------------------------------------------------------------------------
+class TestPolling(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+
+    def test_load_syncs_and_schedules_polling(self):
+        with mock.patch.object(
+            grampswebapidb.SQLite, "load"
+        ) as super_load, mock.patch.object(
+            self.db, "_sync_from_server"
+        ) as sync, mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds", return_value=42
+        ) as timeout_add:
+            self.db.load("some/path")
+        super_load.assert_called_once_with("some/path")
+        sync.assert_called_once_with()
+        timeout_add.assert_called_once_with(
+            grampswebapidb.POLL_INTERVAL_SECONDS, self.db._poll_tick
+        )
+        self.assertEqual(self.db._poll_source_id, 42)
+
+    def test_close_cancels_pending_poll(self):
+        self.db._poll_source_id = 42
+        with mock.patch.object(
+            grampswebapidb.SQLite, "close"
+        ) as super_close, mock.patch.object(
+            grampswebapidb.GLib, "source_remove"
+        ) as source_remove:
+            self.db.close()
+        source_remove.assert_called_once_with(42)
+        self.assertIsNone(self.db._poll_source_id)
+        super_close.assert_called_once_with()
+
+    def test_close_without_a_poll_scheduled_is_a_no_op(self):
+        # e.g. close() called after a failed load(), before the timeout
+        # was ever scheduled.
+        with mock.patch.object(
+            grampswebapidb.SQLite, "close"
+        ) as super_close, mock.patch.object(
+            grampswebapidb.GLib, "source_remove"
+        ) as source_remove:
+            self.db.close()
+        source_remove.assert_not_called()
+        super_close.assert_called_once_with()
+
+    def test_poll_tick_syncs_and_keeps_repeating(self):
+        with mock.patch.object(self.db, "_sync_from_server") as sync:
+            result = self.db._poll_tick()
+        sync.assert_called_once_with()
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
+
+    def test_poll_tick_swallows_connection_errors_and_keeps_repeating(self):
+        with mock.patch.object(
+            self.db, "_sync_from_server", side_effect=OSError("network down")
+        ):
+            with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+                result = self.db._poll_tick()
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
 
 
 if __name__ == "__main__":
