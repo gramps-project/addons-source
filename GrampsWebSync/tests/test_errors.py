@@ -92,6 +92,32 @@ class ApiVersionTest(unittest.TestCase):
         self.assertIs(result.login_error.kind, ErrorKind.SERVER_TOO_NEW)
         self.assertNotIn("download_xml", scenario.server.calls)
 
+    def test_a_rejected_server_leaves_its_version_on_screen(self) -> None:
+        """The message names that version, so the footer showing it agrees."""
+        scenario = self.make_scenario()
+        scenario.server.api_version = "1.0.0"
+
+        result = scenario.run()
+
+        self.assertEqual(result.session.api_version, "1.0.0")
+
+    def test_but_a_second_attempt_does_not_inherit_it(self) -> None:
+        """The context strip titles itself with the tree name and the footer
+        with the version, so carrying either forward labels the new attempt
+        with the previous server's identity."""
+        scenario = self.make_scenario()
+        scenario.server.api_version = "1.0.0"
+        session = scenario.make_session()
+        session.submit_credentials(URL, USERNAME, "secret")
+        self.assertEqual(session.api_version, "1.0.0")
+
+        scenario.server.fail_always("get_api_version", URLError("no route"))
+        session.submit_credentials("https://elsewhere.example/api", "other", "pw")
+
+        self.assertIs(session.state, State.CONNECT)
+        self.assertIsNone(session.api_version)
+        self.assertEqual(session.tree_name, "")
+
     def test_a_current_server_is_accepted(self) -> None:
         scenario = self.make_scenario()
         result = scenario.run()
