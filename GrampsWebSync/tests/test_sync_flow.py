@@ -268,6 +268,37 @@ class MediaFileTest(SyncFlowTestCase):
         with open(local_path, "rb") as fobj:
             self.assertEqual(fobj.read(), b"server image bytes")
 
+    def test_a_file_neither_side_holds_is_never_offered_as_an_upload(self) -> None:
+        """The server has the object but no file, and this tree has never had
+        the object at all, so there is nothing here to send. Counting it as an
+        upload promised a transfer that cannot happen, and the run then
+        contradicted itself at the end by reporting it missing on both sides.
+        """
+        scenario = SyncScenario()
+        self.addCleanup(scenario.close)
+        scenario.share()
+        scenario.remote.add_media("O0020", "ghost.jpg", changed_at=T2)
+
+        session = scenario.make_session()
+        session.submit_credentials(URL, USERNAME, "secret")
+
+        self.assertEqual([gid for gid, _h in session.missing_remote], [])
+        self.assertEqual([gid for gid, _h in session.missing_both], ["O0020"])
+
+    def test_it_is_reported_once_at_the_end_too(self) -> None:
+        """Same run, carried through: the count the review showed has to be
+        the count the summary reports."""
+        scenario = SyncScenario()
+        self.addCleanup(scenario.close)
+        scenario.share()
+        scenario.remote.add_media("O0021", "ghost.jpg", changed_at=T2)
+
+        result = scenario.run()
+
+        self.assertIs(result.final_state, State.DONE)
+        self.assertEqual(len(result.session.missing_both), 1)
+        self.assertEqual(result.session.uploaded, {})
+
     def test_a_run_touching_no_media_object_scans_only_once(self) -> None:
         """The second scan exists for the case above; making every run pay for
         it would be a round trip for nothing."""
