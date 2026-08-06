@@ -635,6 +635,11 @@ class SyncSession:
         :param remember_password: Whether the password may be stored.
         """
         self.login_error = None
+        # These describe the server, and the view displays them. Left set,
+        # they would label this attempt with the previous server's identity.
+        self.backend = None
+        self.api_version = None
+        self.tree_name = ""
         self.url = url
         self.username = username
         self.password = password

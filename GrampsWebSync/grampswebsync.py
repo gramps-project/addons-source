@@ -834,8 +834,7 @@ class WorkingPane(Gtk.Box):
     def __init__(self) -> None:
         Gtk.Box.__init__(self, orientation=Gtk.Orientation.VERTICAL, spacing=24)
         self.set_valign(Gtk.Align.CENTER)
-        # Centred rather than filling: the pane holds a short list and a bar,
-        # and stretched across a wide window they drift apart illegibly.
+        # Filling the width would space the phase list and the bar far apart.
         self.set_halign(Gtk.Align.CENTER)
 
         #: Whether the running phase has reported a real fraction. Until it
