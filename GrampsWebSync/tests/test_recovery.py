@@ -303,6 +303,20 @@ class AbandonTest(RecoveryTestCase):
         self.assertIn(session.state, (State.REVIEW, State.DONE))
         self.assertIsNone(session.error)
 
+    def test_the_connection_is_forgotten_with_the_run(self) -> None:
+        """The context strip and the version footer are rendered from these,
+        so leaving them set describes the server just walked away from."""
+        session = self.connect(self.make_scenario())
+
+        session.abandon()
+
+        self.assertEqual(session.url, "")
+        self.assertEqual(session.username, "")
+        self.assertEqual(session.password, "")
+        self.assertEqual(session.tree_name, "")
+        self.assertIsNone(session.api_version)
+        self.assertIsNone(session.backend)
+
     def test_a_run_that_has_started_writing_is_not_abandoned(self) -> None:
         """Walking away mid-apply would leave no record of what got through."""
         scenario = self.make_scenario()

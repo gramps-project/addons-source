@@ -223,7 +223,7 @@ class WebApiHandler:
         return (self.metadata.get("locale") or {}).get("lang")
 
     def get_api_version(self) -> str | None:
-        """Fet API version info."""
+        """Fetch API version info."""
         return (self.metadata.get("gramps_webapi") or {}).get("version")
 
     def get_tree_name(self) -> str:

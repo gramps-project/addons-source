@@ -370,7 +370,9 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         LOG.info("Forgetting the stored server.")
         self.credentials.forget(url, username)
         self.connect_pane.set_credentials("", "", "")
-        self._render(State.CONNECT)
+        # Also drops the session's copy of the connection, which the context
+        # strip and the version footer are rendered from.
+        self.session.abandon()
 
     def _submit(self) -> None:
         """Hand what the connect pane holds to the session."""
