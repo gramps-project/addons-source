@@ -104,11 +104,29 @@ WebApiPushConflict (see webapi_client.push_transaction()) if anything
 changed server-side since the local mirror last synced -- a real, if
 coarse, optimistic-concurrency check: the whole push either applies or
 none of it does, with no indication of which item conflicted. On a
-conflict, _push_payload() below resyncs from the server so the local
-mirror stops showing an edit the server never accepted; it does not
-retry the push or attempt a merge, so the losing edit is simply lost
-from the server's perspective (still present, stale, in the local
-mirror's edit history) -- real conflict *resolution* (merge, prompt the
+conflict, _push_payload() below resyncs from the server (so the local
+mirror picks up whatever changed) and then, for a plain commit (not an
+undo/redo -- see _retry_after_conflict()), replays each object's intended
+*new* state as a fresh local edit via commit_<type>()/remove_<type>() on
+top of that just-resynced data. That fresh edit goes through the normal
+transaction_commit() -> _push_payload() path again with is_retry=True,
+so it carries an up-to-date "old" snapshot and will only be rejected a
+second time if something changes server-side in the brief window between
+the resync and the retry -- in which case it is logged and dropped rather
+than retried again, to avoid retrying forever against a genuinely hot
+object.
+
+For an add/update whose handle still exists after the resync (i.e. the
+conflicting server-side edit changed the same object rather than deleting
+it), _merge_or_overwrite() below combines the two edits with the object's
+own merge() -- the same list-unioning logic behind Gramps' Merge People/
+Family/... tools (ported from GrampsWebSync's diffhandler.py, credit
+David Straub, same license) -- rather than letting the retry blindly
+clobber whatever the other side changed. merge() only unions *list*-valued
+fields (notes, citations, media, urls, event/family refs, ...); it never
+touches scalar fields (a name, a date, a gender), so two edits to the
+exact same scalar field still resolve as local-overwrites-remote -- real
+field-level conflict *resolution* for that narrower case (diff, prompt the
 user) is still out of scope. If the push fails for a non-conflict reason
 (network error, auth failure), the local commit has already happened and
 is not rolled back -- the local mirror just drifts from the server until
@@ -173,6 +191,7 @@ persisted, so this only ever matters within a single running session.
 
 import logging
 import os
+from copy import deepcopy
 from tempfile import NamedTemporaryFile
 from urllib.error import HTTPError, URLError
 
@@ -189,6 +208,7 @@ from gramps.gen.db.dbconst import (
     TXNUPD,
 )
 from gramps.gen.db.exceptions import DbConnectionError
+from gramps.gen.lib.baseobj import BaseObject
 from gramps.gen.lib.json_utils import data_to_object, remove_object
 from gramps.gen.user import User
 from gramps.plugins.db.dbapi.sqlite import SQLite
@@ -251,12 +271,42 @@ def transaction_to_json(transaction):
     return out
 
 
+def _merge_or_overwrite(current, local_obj):
+    """Combine local_obj's content into current via the object's own
+    merge() -- the same list-unioning logic behind Gramps' Merge People/
+    Family/... tools (ported from GrampsWebSync's diffhandler.py, credit
+    David Straub, same license) -- when the type actually implements it.
+
+    Falls back to local_obj outright for a type (e.g. Tag) that only
+    inherits BaseObject's no-op merge(): "merging" into a no-op would
+    silently keep current's content and discard the local edit entirely,
+    which is worse than the plain overwrite this replaces.
+
+    local_obj's gramps_id is cleared before merging so merge() doesn't
+    misread it as a real second object being absorbed (which is what
+    merge() is for) and tag on a spurious "Merged Gramps ID" attribute --
+    this is the same object, edited twice, not two objects becoming one.
+    """
+    if type(current).merge is BaseObject.merge:
+        return local_obj
+    merged = deepcopy(current)
+    local_copy = deepcopy(local_obj)
+    local_copy.gramps_id = None
+    merged.merge(local_copy)
+    return merged
+
+
 class WebApiDB(SQLite):
     """
     DBAPI backend whose local SQLite connection is a mirror of a
     Gramps Web API server, kept in sync via the server's transaction
     history endpoint.
     """
+
+    #: Set around _retry_after_conflict()'s own DbTxn so the
+    #: transaction_commit() it triggers can tell _push_payload() this push
+    #: is itself a conflict retry -- see _push_payload().
+    _retrying = False
 
     def requires_login(self):
         # Credentials come from GRAMPS_WEB_API_KEY, not a login dialog.
@@ -304,7 +354,11 @@ class WebApiDB(SQLite):
         # Must run before super(): it clears the transaction's records.
         payload = transaction_to_json(transaction)
         super().transaction_commit(transaction)
-        self._push_payload(payload)
+        # self._retrying is set by _retry_after_conflict() while it holds
+        # its own DbTxn open, so the push this commit triggers knows it is
+        # itself a conflict retry and won't retry again on a second
+        # conflict -- see _push_payload().
+        self._push_payload(payload, is_retry=self._retrying)
 
     def undo(self, update_history=True):
         # Peek before super(): DbGenericUndo._undo() pops this DbTxn off
@@ -327,10 +381,16 @@ class WebApiDB(SQLite):
             self._push_payload(transaction_to_json(transaction))
         return result
 
-    def _push_payload(self, payload, undo=False):
+    def _push_payload(self, payload, undo=False, is_retry=False):
         """Push a change-list payload to the server, handling a rejected
         push (conflict or otherwise) the same way regardless of whether it
-        came from a plain commit, an undo, or a redo."""
+        came from a plain commit, an undo, or a redo.
+
+        is_retry marks a push that is itself the replay _retry_after_conflict()
+        made from an earlier conflict -- a second conflict on that replay is
+        logged and dropped rather than retried again, so a genuinely hot
+        object can't send this into an unbounded retry loop.
+        """
         if not payload:
             return
         try:
@@ -338,15 +398,24 @@ class WebApiDB(SQLite):
         except WebApiPushConflict:
             LOG.warning(
                 "Server rejected %d local change(s): the object(s) changed "
-                "server-side since the local mirror last synced. The local "
-                "edit was applied to this mirror but was NOT accepted by "
-                "the server; resyncing the mirror from the server now.",
+                "server-side since the local mirror last synced. Resyncing "
+                "the mirror from the server now.",
                 len(payload),
             )
             try:
                 self._sync_from_server()
             except _CONNECTION_ERRORS:
                 LOG.exception("Resync after a push conflict also failed.")
+                return
+            if undo or is_retry:
+                LOG.warning(
+                    "Giving up on %d local change(s) after a repeated or "
+                    "undo/redo conflict; the local mirror was not resent to "
+                    "the server.",
+                    len(payload),
+                )
+                return
+            self._retry_after_conflict(payload)
         except _CONNECTION_ERRORS:
             LOG.exception(
                 "Failed to push %d local change(s) to the server; "
@@ -354,6 +423,42 @@ class WebApiDB(SQLite):
                 "next successful push or read sync.",
                 len(payload),
             )
+
+    def _retry_after_conflict(self, payload):
+        """Reapply each locally-intended change on top of the mirror
+        _push_payload() just resynced, as a fresh local edit -- see the
+        module docstring's write-through section. An add/update whose
+        object still exists after the resync is combined with the current
+        (server-fresh) object via _merge_or_overwrite() rather than
+        blindly replacing it.
+
+        Runs as one ordinary (non-batch) DbTxn, so it goes through the
+        normal transaction_commit() -> _push_payload() path again -- this
+        time with an "old" snapshot that matches what the resync just
+        pulled down, so it will only be rejected again if something else
+        changed server-side in the brief window since that resync.
+        """
+        self._retrying = True
+        try:
+            with DbTxn(_("Retry local change after server conflict"), self) as trans:
+                for entry in payload:
+                    key = CLASS_TO_KEY_MAP.get(entry["_class"])
+                    if key is None:
+                        continue
+                    name = KEY_TO_NAME_MAP[key]
+                    handle = entry["handle"]
+                    has_handle = getattr(self, f"has_{name}_handle")
+                    if entry["type"] == "delete":
+                        if has_handle(handle):
+                            getattr(self, f"remove_{name}")(handle, trans)
+                    else:
+                        obj = data_to_object(entry["new"])
+                        if has_handle(handle):
+                            current = getattr(self, f"get_{name}_from_handle")(handle)
+                            obj = _merge_or_overwrite(current, obj)
+                        getattr(self, f"commit_{name}")(obj, trans)
+        finally:
+            self._retrying = False
 
     def _sync_from_server(self):
         """
@@ -390,9 +495,9 @@ class WebApiDB(SQLite):
                     for change in server_trans["changes"]:
                         if self._apply_change(change, trans):
                             applied += 1
-                            net_changes[
-                                (change["obj_class"], change["obj_handle"])
-                            ] = change["trans_type"]
+                            net_changes[(change["obj_class"], change["obj_handle"])] = (
+                                change["trans_type"]
+                            )
                     after = max(after, server_trans["timestamp"])
             self._emit_change_signals(net_changes)
             if len(transactions) < SYNC_PAGE_SIZE:
@@ -435,7 +540,9 @@ class WebApiDB(SQLite):
             tmp_file.write(data)
             tmp_path = tmp_file.name
         try:
-            with DbTxn(_("Clear local mirror before full resync"), self, batch=True) as trans:
+            with DbTxn(
+                _("Clear local mirror before full resync"), self, batch=True
+            ) as trans:
                 for key in set(CLASS_TO_KEY_MAP.values()):
                     name = KEY_TO_NAME_MAP[key]
                     handles = list(getattr(self, f"get_{name}_handles")())

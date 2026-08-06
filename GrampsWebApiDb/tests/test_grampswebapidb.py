@@ -67,11 +67,15 @@ except ImportError as _err:
 
 from gramps.gen.db.dbconst import REFERENCE_KEY, TXNADD, TXNDEL, TXNUPD
 from gramps.gen.db.exceptions import DbConnectionError
-from gramps.gen.lib import Person
+from gramps.gen.lib import Person, Tag
 from gramps.gen.lib.json_utils import object_to_data, remove_object
 
 from GrampsWebApiDb import grampswebapidb
-from GrampsWebApiDb.grampswebapidb import WebApiDB, WebApiPushConflict, transaction_to_json
+from GrampsWebApiDb.grampswebapidb import (
+    WebApiDB,
+    WebApiPushConflict,
+    transaction_to_json,
+)
 
 # grampswebapidb.py imports webapi_client with a bare `from webapi_client
 # import ...` (see CLAUDE.md Testing conventions -- this addon has no
@@ -310,11 +314,9 @@ class TestSyncFromServer(unittest.TestCase):
         # the same way commit_person/remove_person are stubbed elsewhere.
         self.db.emit = mock.MagicMock()
         self.metadata = {}
-        self.db._get_metadata = lambda key, default=0: self.metadata.get(
-            key, default
-        )
-        self.db._set_metadata = lambda key, value, use_txn=True: self.metadata.__setitem__(
-            key, value
+        self.db._get_metadata = lambda key, default=0: self.metadata.get(key, default)
+        self.db._set_metadata = (
+            lambda key, value, use_txn=True: self.metadata.__setitem__(key, value)
         )
         self.patcher = mock.patch.object(grampswebapidb, "DbTxn", FakeDbTxn)
         self.patcher.start()
@@ -448,11 +450,9 @@ class TestFullResyncTrigger(unittest.TestCase):
         self.db.web_client = mock.MagicMock()
         self.db.emit = mock.MagicMock()  # see TestSyncFromServer.setUp's note
         self.metadata = {}
-        self.db._get_metadata = lambda key, default=0: self.metadata.get(
-            key, default
-        )
-        self.db._set_metadata = lambda key, value, use_txn=True: self.metadata.__setitem__(
-            key, value
+        self.db._get_metadata = lambda key, default=0: self.metadata.get(key, default)
+        self.db._set_metadata = (
+            lambda key, value, use_txn=True: self.metadata.__setitem__(key, value)
         )
         self.db._full_resync = mock.MagicMock()
         self.patcher = mock.patch.object(grampswebapidb, "DbTxn", FakeDbTxn)
@@ -619,21 +619,28 @@ class TestTransactionCommit(unittest.TestCase):
             with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
                 self.db.transaction_commit(trans)  # must not raise
 
-    def test_conflict_triggers_resync_not_raise(self):
+    def test_conflict_triggers_resync_then_retry(self):
         # A WebApiPushConflict means the server rejected the whole batch
         # because something changed server-side since the local mirror's
-        # snapshot -- the response is to resync from the server, not to
-        # propagate the exception (the local commit already happened).
+        # snapshot -- the response is to resync from the server and then
+        # retry the local edit on top of that fresh data (see
+        # _retry_after_conflict()), not to propagate the exception (the
+        # local commit already happened).
         trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
         self.db.web_client.push_transaction.side_effect = WebApiPushConflict(
             "Object has changed"
         )
         with mock.patch.object(
             grampswebapidb.SQLite, "transaction_commit"
-        ), mock.patch.object(self.db, "_sync_from_server") as resync:
+        ), mock.patch.object(self.db, "_sync_from_server") as resync, mock.patch.object(
+            self.db, "_retry_after_conflict"
+        ) as retry:
             with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
                 self.db.transaction_commit(trans)  # must not raise
         resync.assert_called_once_with()
+        retry.assert_called_once()
+        payload = retry.call_args[0][0]
+        self.assertEqual(payload[0]["handle"], "H1")
 
     def test_conflict_resync_failure_is_also_swallowed(self):
         trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
@@ -648,9 +655,278 @@ class TestTransactionCommit(unittest.TestCase):
             side_effect=HTTPError(
                 "https://example.com/api/transactions/history/", 500, "boom", None, None
             ),
-        ):
+        ), mock.patch.object(
+            self.db, "_retry_after_conflict"
+        ) as retry:
             with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
                 self.db.transaction_commit(trans)  # must not raise
+        # A failed resync means the mirror still doesn't reflect the
+        # server, so retrying the edit on top of it would be pointless.
+        retry.assert_not_called()
+
+    def test_repeated_conflict_on_a_retry_is_not_retried_again(self):
+        # is_retry=True marks a push that is itself _retry_after_conflict()'s
+        # replay -- a second conflict on that replay must not recurse into
+        # another retry, or a genuinely hot object could retry forever.
+        trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
+        self.db.web_client.push_transaction.side_effect = WebApiPushConflict(
+            "Object has changed"
+        )
+        with mock.patch.object(
+            grampswebapidb.SQLite, "transaction_commit"
+        ), mock.patch.object(self.db, "_sync_from_server") as resync, mock.patch.object(
+            self.db, "_retry_after_conflict"
+        ) as retry:
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
+                self.db._push_payload(
+                    transaction_to_json(trans), is_retry=True
+                )  # must not raise
+        resync.assert_called_once_with()
+        retry.assert_not_called()
+
+    def test_undo_conflict_is_not_retried(self):
+        # Retrying an undo/redo against data that changed underneath it is
+        # a murkier case (are we replaying the reversal, or the original
+        # edit?) than retrying a plain commit -- see the module docstring.
+        # Left as resync-and-drop, same as before this feature existed.
+        trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
+        self.db.web_client.push_transaction.side_effect = WebApiPushConflict(
+            "Object has changed"
+        )
+        with mock.patch.object(
+            grampswebapidb.SQLite, "transaction_commit"
+        ), mock.patch.object(self.db, "_sync_from_server") as resync, mock.patch.object(
+            self.db, "_retry_after_conflict"
+        ) as retry:
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
+                self.db._push_payload(transaction_to_json(trans), undo=True)
+        resync.assert_called_once_with()
+        retry.assert_not_called()
+
+
+# -------------------------------------------------------------------------
+#
+# TestRetryAfterConflict
+#
+# -------------------------------------------------------------------------
+class TestRetryAfterConflict(unittest.TestCase):
+    """_retry_after_conflict() replays each payload entry as a fresh
+    commit_<type>()/remove_<type>() call on top of the mirror _push_payload()
+    just resynced -- see the module docstring's write-through section.
+    DbTxn itself is stubbed out (a bare context-manager stand-in) so this
+    isolates just the replay logic, the same way TestApplyChange isolates
+    _apply_change() from a real transaction. _merge_or_overwrite() itself
+    is covered separately by TestMergeOrOverwrite, so here it's mocked out
+    to just confirm it's consulted (and with what) when the handle still
+    exists after the resync."""
+
+    def setUp(self):
+        self.db = new_instance()
+        self.db.commit_person = mock.MagicMock()
+        self.db.remove_person = mock.MagicMock()
+        self.db.has_person_handle = mock.MagicMock()
+        self.db.get_person_from_handle = mock.MagicMock()
+        dbtxn_patch = mock.patch.object(grampswebapidb, "DbTxn")
+        mock_dbtxn_class = dbtxn_patch.start()
+        mock_dbtxn_class.return_value.__enter__.return_value = "TRANS"
+        self.addCleanup(dbtxn_patch.stop)
+
+    def test_add_to_a_handle_that_does_not_exist_is_committed_as_is(self):
+        # A true add (or an update whose object was deleted server-side in
+        # the same window) has nothing to merge into.
+        self.db.has_person_handle.return_value = False
+        new_data = remove_object(person_data("H1", "I0001"))
+        payload = [
+            {
+                "type": "add",
+                "handle": "H1",
+                "_class": "Person",
+                "old": None,
+                "new": new_data,
+            }
+        ]
+        self.db._retry_after_conflict(payload)
+        self.db.get_person_from_handle.assert_not_called()
+        self.db.commit_person.assert_called_once()
+        obj, trans = self.db.commit_person.call_args[0]
+        self.assertIsInstance(obj, Person)
+        self.assertEqual(obj.get_handle(), "H1")
+        self.assertEqual(trans, "TRANS")
+
+    def test_update_of_a_still_present_handle_is_merged_with_the_current_object(self):
+        self.db.has_person_handle.return_value = True
+        current = Person()
+        current.set_handle("H1")
+        self.db.get_person_from_handle.return_value = current
+        new_data = remove_object(person_data("H1", "I0002"))
+        payload = [
+            {
+                "type": "update",
+                "handle": "H1",
+                "_class": "Person",
+                "old": None,
+                "new": new_data,
+            }
+        ]
+        with mock.patch.object(grampswebapidb, "_merge_or_overwrite") as merge_fn:
+            merge_fn.return_value = "MERGED"
+            self.db._retry_after_conflict(payload)
+        merge_current, merge_local = merge_fn.call_args[0]
+        self.assertIs(merge_current, current)
+        self.assertIsInstance(merge_local, Person)
+        self.assertEqual(merge_local.get_gramps_id(), "I0002")
+        self.db.commit_person.assert_called_once_with("MERGED", "TRANS")
+
+    def test_delete_removes_if_handle_still_present(self):
+        self.db.has_person_handle.return_value = True
+        payload = [
+            {
+                "type": "delete",
+                "handle": "H1",
+                "_class": "Person",
+                "old": remove_object(person_data("H1")),
+                "new": None,
+            }
+        ]
+        self.db._retry_after_conflict(payload)
+        self.db.remove_person.assert_called_once_with("H1", "TRANS")
+
+    def test_delete_is_skipped_if_handle_already_gone(self):
+        # The conflicting server-side change may have been a delete of the
+        # same object -- nothing left to remove a second time.
+        self.db.has_person_handle.return_value = False
+        payload = [
+            {
+                "type": "delete",
+                "handle": "H1",
+                "_class": "Person",
+                "old": remove_object(person_data("H1")),
+                "new": None,
+            }
+        ]
+        self.db._retry_after_conflict(payload)
+        self.db.remove_person.assert_not_called()
+
+    def test_unrecognized_class_is_skipped(self):
+        payload = [
+            {
+                "type": "update",
+                "handle": "H1",
+                "_class": "NotAThing",
+                "old": None,
+                "new": {},
+            }
+        ]
+        self.db._retry_after_conflict(payload)  # must not raise
+        self.db.commit_person.assert_not_called()
+        self.db.has_person_handle.assert_not_called()
+
+    def test_retrying_flag_set_during_replay_and_cleared_after(self):
+        self.db.has_person_handle.return_value = False
+        seen = {}
+
+        def check_flag(obj, trans):
+            seen["during"] = self.db._retrying
+
+        self.db.commit_person.side_effect = check_flag
+        new_data = remove_object(person_data("H1"))
+        payload = [
+            {
+                "type": "update",
+                "handle": "H1",
+                "_class": "Person",
+                "old": None,
+                "new": new_data,
+            }
+        ]
+        self.db._retry_after_conflict(payload)
+        self.assertTrue(seen["during"])
+        self.assertFalse(self.db._retrying)
+
+    def test_retrying_flag_cleared_even_if_commit_raises(self):
+        self.db.has_person_handle.return_value = False
+        self.db.commit_person.side_effect = RuntimeError("boom")
+        new_data = remove_object(person_data("H1"))
+        payload = [
+            {
+                "type": "update",
+                "handle": "H1",
+                "_class": "Person",
+                "old": None,
+                "new": new_data,
+            }
+        ]
+        with self.assertRaises(RuntimeError):
+            self.db._retry_after_conflict(payload)
+        self.assertFalse(self.db._retrying)
+
+
+# -------------------------------------------------------------------------
+#
+# TestMergeOrOverwrite
+#
+# -------------------------------------------------------------------------
+class TestMergeOrOverwrite(unittest.TestCase):
+    """_merge_or_overwrite() ports GrampsWebSync's diffhandler.py A_MRG_REM
+    handling: combine two edits of the same object via the object's own
+    merge() -- the same list-unioning logic behind Gramps' Merge People/
+    Family/... tools -- rather than letting one edit silently clobber the
+    other. Uses real Person/Tag objects rather than mocks, since the whole
+    point is exercising Gramps' own merge() implementation."""
+
+    def test_list_valued_fields_from_both_sides_are_unioned(self):
+        current = Person()
+        current.set_handle("H1")
+        current.set_gramps_id("I0001")
+        current.add_note("N-remote")
+
+        local = Person()
+        local.set_handle("H1")
+        local.set_gramps_id("I0002")
+        local.add_note("N-local")
+
+        merged = grampswebapidb._merge_or_overwrite(current, local)
+        self.assertEqual(set(merged.get_note_list()), {"N-remote", "N-local"})
+
+    def test_current_object_is_not_mutated(self):
+        current = Person()
+        current.set_handle("H1")
+        current.add_note("N-remote")
+        local = Person()
+        local.set_handle("H1")
+        local.add_note("N-local")
+
+        grampswebapidb._merge_or_overwrite(current, local)
+        self.assertEqual(current.get_note_list(), ["N-remote"])
+
+    def test_local_obj_gramps_id_is_cleared_before_merging(self):
+        # merge() tags on a "Merged Gramps ID" attribute if the acquisition
+        # has a gramps_id -- appropriate for absorbing a second, separate
+        # object (Gramps' Merge People tool), but this is one object edited
+        # twice, not two objects becoming one, so that attribute must not
+        # appear, and local's own gramps_id object must be untouched.
+        current = Person()
+        current.set_handle("H1")
+        local = Person()
+        local.set_handle("H1")
+        local.set_gramps_id("I0002")
+
+        merged = grampswebapidb._merge_or_overwrite(current, local)
+        self.assertEqual(merged.get_attribute_list(), [])
+        self.assertEqual(local.get_gramps_id(), "I0002")
+
+    def test_type_without_a_real_merge_falls_back_to_local_obj(self):
+        # Tag only inherits BaseObject's no-op merge() -- "merging" into it
+        # would silently keep current's content and drop the local edit.
+        current = Tag()
+        current.set_handle("H1")
+        current.set_name("Remote name")
+        local = Tag()
+        local.set_handle("H1")
+        local.set_name("Local name")
+
+        result = grampswebapidb._merge_or_overwrite(current, local)
+        self.assertIs(result, local)
 
 
 # -------------------------------------------------------------------------
