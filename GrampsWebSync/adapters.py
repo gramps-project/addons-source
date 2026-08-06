@@ -431,17 +431,13 @@ class ConfigCredentialStore:
     ) -> None:
         """Record the open tree on ``entry``, and take it off every other one.
 
-        A tree has one current server. An earlier claim left in place would
-        make the choice depend on list order whenever the last-used entry is
-        neither of them, and would survive moving a tree to another server.
-
-        The abandoned entry also loses its baseline. That baseline asserts the
-        tree and that server were identical at a moment which syncing elsewhere
-        has since made untrue, and since the comparison takes the later of the
-        stored baseline and what it computes, a stale one can only push the
-        cutoff too far forward -- the direction in which objects stop looking
-        added and start looking deleted.
+        Any entry that loses the claim also loses its baseline.
         """
+        # A tree has one current server, or the choice falls to list order.
+        # The old baseline is dropped because it claims the tree and that
+        # server matched at a time that is no longer true. Keeping it would
+        # raise the comparison cutoff, and a cutoff that is too late makes
+        # objects look deleted rather than added.
         for other in servers:
             if other is not entry and other.get("tree_id") == self.tree_id:
                 LOG.info(
