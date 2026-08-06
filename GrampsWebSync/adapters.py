@@ -434,10 +434,9 @@ class ConfigCredentialStore:
         Any entry that loses the claim also loses its baseline.
         """
         # A tree has one current server, or the choice falls to list order.
-        # The old baseline is dropped because it claims the tree and that
-        # server matched at a time that is no longer true. Keeping it would
-        # raise the comparison cutoff, and a cutoff that is too late makes
-        # objects look deleted rather than added.
+        # The old baseline no longer describes anything true, and keeping it
+        # would raise the comparison cutoff; too high a cutoff makes objects
+        # look deleted instead of added.
         for other in servers:
             if other is not entry and other.get("tree_id") == self.tree_id:
                 LOG.info(
