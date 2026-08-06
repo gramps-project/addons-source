@@ -689,8 +689,10 @@ class SyncSession:
     def abandon(self) -> None:
         """Stop the current run and return to the connect pane.
 
-        Callbacks already in flight are dropped. Does nothing once writing has
-        begun, which would otherwise leave no record of what got through.
+        Clears what identifies the connection along with the run, so nothing
+        left on screen describes the server being walked away from. Callbacks
+        already in flight are dropped. Does nothing once writing has begun,
+        which would otherwise leave no record of what got through.
         """
         if self.state in (State.APPLYING, State.TRANSFERRING):
             LOG.debug("Not abandoning a run that has started writing.")
@@ -698,6 +700,11 @@ class SyncSession:
         LOG.info("Abandoning the run at %s.", self.state.name)
         self._run_id += 1
         self._release_remote()
+        self.backend = None
+        self.url = ""
+        self.username = ""
+        self.password = ""
+        self.api_version = None
         self.tree_name = ""
         self.error = None
         self.login_error = None
