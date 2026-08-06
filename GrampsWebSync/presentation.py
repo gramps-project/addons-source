@@ -674,11 +674,8 @@ def outcome_summary(session: SyncSession) -> str:
     """
     parts = []
     applied = len(session.actions)
-    # The trees are reported on first and unconditionally. Leaving this to a
-    # fallback meant the commonest outcome of all -- nothing to do -- was
-    # described entirely by the media sentence below, which is the complaint
-    # that started this: a run that touched no file said "Media files are in
-    # sync." and nothing whatever about the trees.
+    # Reported first and unconditionally: left to a fallback, a run with
+    # nothing to do was described entirely by the media sentence below.
     if applied:
         parts.append(
             ngettext("Applied %s change.", "Applied %s changes.", applied) % applied

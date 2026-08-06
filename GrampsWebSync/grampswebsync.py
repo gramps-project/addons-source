@@ -135,6 +135,18 @@ MARK_PENDING = "pending"
 #: nor a bundled SVG would; the theme is also already a Gramps dependency.
 DONE_ICON = "emblem-ok-symbolic"
 
+#: How often the working pane is refreshed. A progress bar in pulse mode only
+#: moves when it is told to, so this is the pulse rate as well as the rate the
+#: elapsed clock is checked at.
+TICK_INTERVAL_MS = 120
+
+#: Column of the review tree holding the object name: free text of unbounded
+#: length, and the only one that gives way when the window is too narrow.
+NAME_COLUMN = 1
+
+#: How narrow the name column may get before the tree scrolls instead.
+NAME_MIN_WIDTH = 180
+
 #: How wide the progress bar is allowed to get. Left to fill the pane it
 #: stretches the width of the window and reads as a divider rather than a bar.
 PROGRESS_WIDTH = 380
@@ -276,20 +288,15 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
     # Lifecycle
     # --------------------------------------------------------
     def _start(self) -> None:
-        """Show the stored server, and connect straight away if it is complete.
+        """Show the stored server, and connect if it belongs to the open tree.
 
-        Opening the tool used to cost two clicks that carried no decision: an
-        introduction page, then a login page with every field already filled in.
-        Both are gone -- the introduction moved into an expander on the connect
-        pane, and a server that can be connected to simply is.
-
-        Connecting unprompted is only safe when the stored entry belongs to the
-        tree that is open. Against the wrong tree the two share nothing, every
-        object falls the wrong side of the sync baseline, and a bidirectional
-        run proposes deleting both trees. Where that cannot be established --
-        including for every entry stored before this was recorded -- the
-        credentials are still offered, but the user presses Connect.
+        Where the tree cannot be established the credentials are still offered,
+        but the user presses Connect.
         """
+        # Connecting unprompted is only safe for the tree the entry was synced
+        # from: against another one the two share nothing, every object falls
+        # the wrong side of the baseline, and a bidirectional run proposes
+        # deleting both trees.
         url = self.credentials.get_url()
         username = self.credentials.get_username()
         password = self.credentials.get_password() or ""
@@ -515,7 +522,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             self._phase_started = time.monotonic()
             self.working_pane.set_elapsed(0)
             if self._timer_id is None:
-                self._timer_id = GLib.timeout_add_seconds(1, self._tick)
+                self._timer_id = GLib.timeout_add(TICK_INTERVAL_MS, self._tick)
         else:
             self._stop_timer()
 
@@ -526,7 +533,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             self._timer_id = None
 
     def _tick(self) -> bool:
-        """Update the elapsed-time readout."""
+        """Animate the progress bar and update the elapsed-time readout."""
+        self.working_pane.pulse()
         self.working_pane.set_elapsed(int(time.monotonic() - self._phase_started))
         return True
 
@@ -828,6 +836,11 @@ class WorkingPane(Gtk.Box):
         # and stretched across a wide window they drift apart illegibly.
         self.set_halign(Gtk.Align.CENTER)
 
+        #: Whether the running phase has reported a real fraction. Until it
+        #: does the bar is pulsed; afterwards pulsing would fight the value.
+        self._measurable = False
+        self._elapsed_text = ""
+
         self._rows: dict[State, PhaseRow] = {}
         phases = Gtk.Grid()
         phases.set_row_spacing(8)
@@ -867,7 +880,8 @@ class WorkingPane(Gtk.Box):
             else:
                 mark = MARK_PENDING
             self._rows[phase].set_marker(mark)
-        self.set_fraction(-1)
+        self._measurable = False
+        self.progressbar.set_fraction(0)
 
     def set_detail(self, text: str) -> None:
         """Show what the running phase is doing right now."""
@@ -876,14 +890,27 @@ class WorkingPane(Gtk.Box):
     def set_fraction(self, fraction: float) -> None:
         """Advance the progress bar, or pulse it when nothing is measurable."""
         if fraction >= 0:
+            self._measurable = True
             self.progressbar.set_fraction(min(fraction, 1.0))
         else:
+            self.progressbar.pulse()
+
+    def pulse(self) -> None:
+        """Advance the bar while the running phase reports no fraction.
+
+        Downloading the remote tree reports none at all, so without a caller
+        on a timer the bar moved one step and then stood still for the longest
+        phase of the run.
+        """
+        if not self._measurable:
             self.progressbar.pulse()
 
     def set_elapsed(self, seconds: int) -> None:
         """Show how long the current phase has been running."""
         text = "" if seconds < 3 else f"{seconds // 60}:{seconds % 60:02d}"
-        self.elapsed_label.set_markup(_dim(text))
+        if text != self._elapsed_text:
+            self._elapsed_text = text
+            self.elapsed_label.set_markup(_dim(text))
 
 
 class ReviewPane(Gtk.Box):
@@ -934,10 +961,17 @@ class ReviewPane(Gtk.Box):
             (_("Change"), _("Name"), _("ID"))
         ):
             renderer = Gtk.CellRendererText()
-            renderer.set_property("ellipsize", Pango.EllipsizeMode.END)
             column = Gtk.TreeViewColumn(title, renderer, text=index)
             column.set_resizable(True)
-            column.set_expand(index == 1)
+            if index == NAME_COLUMN:
+                # An ellipsizing renderer reports a minimum width of almost
+                # nothing, so only the column that should absorb the shortfall
+                # gets one. Setting it on all three let every column collapse
+                # to its minimum, and cut off the group headings, which sit in
+                # column 0 and are longer than any leaf value in it.
+                renderer.set_property("ellipsize", Pango.EllipsizeMode.END)
+                column.set_expand(True)
+                column.set_min_width(NAME_MIN_WIDTH)
             self.tree_view.append_column(column)
         self.scrolled = Gtk.ScrolledWindow()
         self.scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)

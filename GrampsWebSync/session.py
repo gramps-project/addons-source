@@ -202,15 +202,9 @@ def classify_http_error(exc: Any, *, login: bool) -> SyncError:
 def api_version_problem(version: str | None) -> ErrorKind | None:
     """Classify a server's API version against what this addon speaks.
 
-    The two ends need opposite advice -- update the server, or move to a newer
-    Gramps -- so they are separate kinds rather than one verdict.
-
-    A version that is absent or unreadable counts as too old: the field
-    predates neither bound, and a server that cannot report one at all is far
-    likelier to be ancient than to be from the future.
-
     :param version: The server's ``gramps_webapi`` version, as reported.
-    :returns: The problem, or ``None`` if the version is usable.
+    :returns: The problem, or ``None`` if the version is usable. An absent or
+        unreadable version counts as :attr:`ErrorKind.SERVER_TOO_OLD`.
     """
     if not version:
         return ErrorKind.SERVER_TOO_OLD
@@ -629,15 +623,11 @@ class SyncSession:
     ) -> None:
         """Connect, authenticate, then download and diff the remote tree.
 
-        The connection is made off the main loop: building the backend fetches
-        an access token, which is a network round trip that used to block the
-        window before it had painted anything.
-
-        Anything the user can correct -- a wrong password, a server that is too
-        old, an account without the required permission -- returns to
-        :attr:`State.CONNECT` with :attr:`login_error` set, rather than ending
-        the run. Credentials are stored only once the server has accepted them,
-        so a typo never reaches the keyring.
+        Runs off the main loop. Anything the user can correct -- a wrong
+        password, an unsupported server, an account without the required
+        permission -- returns to :attr:`State.CONNECT` with
+        :attr:`login_error` set rather than ending the run, and credentials
+        are stored only once the server has accepted them.
 
         :param url: Server URL, already sanitized by the caller.
         :param username: Login name.
@@ -699,12 +689,8 @@ class SyncSession:
     def abandon(self) -> None:
         """Stop the current run and return to the connect pane.
 
-        For changing server without closing the tool. Anything already in
-        flight belongs to the run being left, so its callbacks are dropped
-        rather than allowed to carry the session forward.
-
-        Refused once writing has begun: walking away mid-apply would leave the
-        user with no record of what got through.
+        Callbacks already in flight are dropped. Does nothing once writing has
+        begun, which would otherwise leave no record of what got through.
         """
         if self.state in (State.APPLYING, State.TRANSFERRING):
             LOG.debug("Not abandoning a run that has started writing.")
@@ -1010,31 +996,39 @@ class SyncSession:
             self._start_transfer()
 
     def _scan_media(self, remote: list[dict[str, Any]]) -> None:
-        """Work out which media files are missing, and on which side.
+        """Classify media objects by which side has the file on disk.
 
-        A file absent from both sides cannot be transferred in either
-        direction, so it is separated out here rather than being attempted
-        twice and reported as two failures.
+        Fills three disjoint lists of ``(gramps_id, handle)``:
+        :attr:`missing_local` (file on the server, not here),
+        :attr:`missing_remote` (file here, not on the server) and
+        :attr:`missing_both` (file on neither).
 
-        :param remote: The server's missing-file list, already fetched.
+        :param remote: Media objects the server reports no file for.
         """
-        local_missing = {
-            media.handle: media.gramps_id
-            for media in self.db1.iter_media()
-            if not self.media.exists(media)
-        }
-        remote_missing = {
+        on_disk_here: set[str] = set()
+        absent_here: dict[str, str] = {}
+        for media in self.db1.iter_media():
+            if self.media.exists(media):
+                on_disk_here.add(media.handle)
+            else:
+                absent_here[media.handle] = media.gramps_id
+        absent_on_server = {
             media["handle"]: media["gramps_id"] for media in remote
         }
-        both = set(local_missing) & set(remote_missing)
 
-        self.missing_both = sorted((local_missing[h], h) for h in both)
-        self.missing_local = [
-            (gid, h) for h, gid in local_missing.items() if h not in both
-        ]
-        self.missing_remote = [
-            (gid, h) for h, gid in remote_missing.items() if h not in both
-        ]
+        # `on_disk_here` is built only from media objects in db1, so a handle
+        # missing from it means either that db1 has the object but not its
+        # file, or that db1 has no such object yet. An upload is possible in
+        # neither case.
+        self.missing_remote = sorted(
+            (gid, h) for h, gid in absent_on_server.items() if h in on_disk_here
+        )
+        self.missing_both = sorted(
+            (gid, h) for h, gid in absent_on_server.items() if h not in on_disk_here
+        )
+        self.missing_local = sorted(
+            (gid, h) for h, gid in absent_here.items() if h not in absent_on_server
+        )
         if self.missing_both:
             LOG.warning(
                 "%s media file(s) are missing on both sides.", len(self.missing_both)
