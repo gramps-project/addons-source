@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-04 14:40-0700\n"
+"POT-Creation-Date: 2026-08-07 11:38-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,4 +29,23 @@ msgstr ""
 msgid ""
 "Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) as a live "
 "database, mirrored locally for speed."
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.py:396
+#, python-format
+msgid ""
+"This Family Tree is named \"%(actual)s\", but GRAMPS_WEB_API_KEY currently "
+"authenticates as \"%(expected)s\". Rename this Family Tree to "
+"\"%(expected_typeable)s\" (Family Trees -> Manage Family Trees) if it's "
+"meant to mirror that account, or open/create the Family Tree already named "
+"that -- reusing this one would mix its existing local data with the other "
+"account's."
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.py:524
+msgid "Retry local change after server conflict"
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.py:642
+msgid "Clear local mirror before full resync"
 msgstr ""
