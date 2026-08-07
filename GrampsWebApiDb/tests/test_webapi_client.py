@@ -343,6 +343,63 @@ class TestAccessTokenProperty(unittest.TestCase):
         self.assertEqual(handler.get_permissions(), ["edit", "view"])
 
 
+# -------------------------------------------------------------------------
+#
+# TestIdentity
+#
+# hostname/get_current_username()/get_identity() resolve who and where a
+# credential authenticates as -- grampswebapidb.py's _check_identity() uses
+# get_identity() to bind a local mirror to one particular server account
+# (see that module's docstring).
+#
+# -------------------------------------------------------------------------
+class TestIdentity(unittest.TestCase):
+    def _handler(self):
+        fake = QueuedUrlopen([FakeResponse({"access_token": token("AT1")})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler = WebApiHandler("https://example.com/api", refresh_token="RT")
+        return handler, fake
+
+    def test_hostname_strips_scheme_and_path(self):
+        handler, _fake = self._handler()
+        self.assertEqual(handler.hostname, "example.com")
+
+    def test_get_current_username_resolves_via_users_dash_and_caches(self):
+        # A refresh-token credential (the normal from_env() path) carries
+        # no plaintext username -- unlike get_permissions()'s claim, this
+        # isn't in the JWT at all, so it takes a real GET /users/-/.
+        handler, fake = self._handler()
+        fake._items.append(FakeResponse({"name": "dblank"}))
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertEqual(handler.get_current_username(), "dblank")
+        self.assertEqual(handler.username, "dblank")
+        self.assertEqual(fake.requests[-1].full_url, "https://example.com/api/users/-/")
+
+        # Cached: a second call makes no further request.
+        fake._items.append(FakeResponse({"name": "someone-else"}))
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertEqual(handler.get_current_username(), "dblank")
+
+    def test_get_current_username_skips_lookup_for_password_login(self):
+        # A username+password login already knows its own username --
+        # no need to ask the server to confirm it.
+        fake = QueuedUrlopen(
+            [FakeResponse({"access_token": token("AT1"), "refresh_token": "RT"})]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler = WebApiHandler(
+                "https://example.com/api", username="dblank", password="pw"
+            )
+            self.assertEqual(handler.get_current_username(), "dblank")
+        self.assertEqual(len(fake.requests), 1)
+
+    def test_get_identity_combines_username_and_hostname(self):
+        handler, fake = self._handler()
+        fake._items.append(FakeResponse({"name": "dblank"}))
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertEqual(handler.get_identity(), "dblank@example.com")
+
+
 def time_now():
     import time
 

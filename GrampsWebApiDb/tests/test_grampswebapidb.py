@@ -432,6 +432,55 @@ class TestSyncFromServer(unittest.TestCase):
         self.db._sync_from_server()
         self.db.emit.assert_not_called()
 
+    def test_no_progress_callback_by_default(self):
+        # _poll_tick()'s background call relies on this: no callback means
+        # no attempt to report progress, so a periodic poll can't raise
+        # trying to call None.
+        page = [{"timestamp": 1.0, "changes": []}]
+        self.db.web_client.get_transaction_history.return_value = (page, 1)
+        self.db._sync_from_server()  # must not raise
+
+    def test_progress_reported_as_percent_of_total(self):
+        page = [{"timestamp": 1.0, "changes": []}] * 25
+        self.db.web_client.get_transaction_history.return_value = (page, 100)
+        progress = mock.MagicMock()
+        self.db._sync_from_server(progress_callback=progress)
+        progress.assert_called_once_with(25)
+
+    def test_progress_accumulates_and_caps_at_100_across_pages(self):
+        full_page = [
+            {"timestamp": float(i), "changes": []}
+            for i in range(grampswebapidb.SYNC_PAGE_SIZE)
+        ]
+        short_page = [{"timestamp": 999.0, "changes": []}]
+        total = grampswebapidb.SYNC_PAGE_SIZE  # short page pushes seen > total
+        self.db.web_client.get_transaction_history.side_effect = [
+            (full_page, total),
+            (short_page, total),
+        ]
+        progress = mock.MagicMock()
+        self.db._sync_from_server(progress_callback=progress)
+        self.assertEqual(
+            [call.args[0] for call in progress.call_args_list], [100, 100]
+        )
+
+    def test_no_progress_call_when_total_is_zero(self):
+        # An empty-history sync (a brand new server-side tree, or nothing
+        # new since last sync) has no meaningful denominator to report
+        # against -- guards a ZeroDivisionError, not just noise.
+        page = [{"timestamp": 1.0, "changes": []}]
+        self.db.web_client.get_transaction_history.return_value = (page, 0)
+        progress = mock.MagicMock()
+        self.db._sync_from_server(progress_callback=progress)
+        progress.assert_not_called()
+
+    def test_progress_callback_passed_through_to_full_resync(self):
+        page = [{"timestamp": 1.0, "changes": []}]
+        self.db.web_client.get_transaction_history.return_value = (page, 1)
+        progress = mock.MagicMock()
+        self.db._sync_from_server(progress_callback=progress)
+        self.db._full_resync.assert_called_once_with(progress_callback=progress)
+
 
 # -------------------------------------------------------------------------
 #
@@ -463,7 +512,7 @@ class TestFullResyncTrigger(unittest.TestCase):
         page = [{"timestamp": 1.0, "changes": []}]
         self.db.web_client.get_transaction_history.return_value = (page, 1)
         self.db._sync_from_server()
-        self.db._full_resync.assert_called_once_with()
+        self.db._full_resync.assert_called_once_with(progress_callback=None)
 
     def test_normal_transactions_do_not_trigger_full_resync(self):
         change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
@@ -486,7 +535,7 @@ class TestFullResyncTrigger(unittest.TestCase):
         with mock.patch.object(self.db, "_apply_change", return_value=True):
             applied = self.db._sync_from_server()
         self.assertEqual(applied, 1)
-        self.db._full_resync.assert_called_once_with()
+        self.db._full_resync.assert_called_once_with(progress_callback=None)
 
     def test_marker_still_advances_sync_last_time(self):
         page = [{"timestamp": 42.0, "changes": []}]
@@ -566,6 +615,44 @@ class TestFullResync(unittest.TestCase):
                 self.db._full_resync()
 
         self.db.emit.assert_not_called()
+
+    def test_no_progress_callback_by_default(self):
+        for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
+            if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
+                continue
+            setattr(self.db, f"get_{name}_handles", mock.MagicMock(return_value=[]))
+            setattr(self.db, f"remove_{name}", mock.MagicMock())
+        with mock.patch.object(grampswebapidb, "importData"):
+            self.db._full_resync()  # must not raise
+
+    def test_progress_bookends_the_download_and_reimport(self):
+        for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
+            if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
+                continue
+            setattr(self.db, f"get_{name}_handles", mock.MagicMock(return_value=[]))
+            setattr(self.db, f"remove_{name}", mock.MagicMock())
+        progress = mock.MagicMock()
+        with mock.patch.object(grampswebapidb, "importData"):
+            self.db._full_resync(progress_callback=progress)
+        self.assertEqual([call.args[0] for call in progress.call_args_list], [0, 100])
+
+    def test_progress_not_completed_if_import_fails(self):
+        # The 100% marker means "the rebuild finished" -- a failed reimport
+        # must not claim that, same reasoning as request_rebuild() above.
+        for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
+            if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
+                continue
+            setattr(self.db, f"get_{name}_handles", mock.MagicMock(return_value=[]))
+            setattr(self.db, f"remove_{name}", mock.MagicMock())
+
+        def failing_import_data(database, filename, user):
+            raise RuntimeError("boom")
+
+        progress = mock.MagicMock()
+        with mock.patch.object(grampswebapidb, "importData", failing_import_data):
+            with self.assertRaises(RuntimeError):
+                self.db._full_resync(progress_callback=progress)
+        progress.assert_called_once_with(0)
 
 
 # -------------------------------------------------------------------------
@@ -1052,6 +1139,58 @@ class TestMisc(unittest.TestCase):
 
 # -------------------------------------------------------------------------
 #
+# TestCheckIdentity
+#
+# Nothing but a Family Tree's own name ties its local mirror to one
+# particular GRAMPS_WEB_API_KEY account (see the module docstring) --
+# _check_identity() requires that name to be "<username>@<host>" for
+# whoever the current key authenticates as, so pointing the key at a
+# different account while reopening the same tree fails loudly at load()
+# instead of quietly mixing that account's data into the old mirror.
+#
+# -------------------------------------------------------------------------
+class TestCheckIdentity(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+        self.db._directory = "/tmp/some-tree"
+        self.db.web_client = mock.MagicMock()
+        self.db.web_client.get_identity.return_value = "dblank@hadaly.duckdns.org"
+
+    def test_matching_name_passes(self):
+        self.db.get_dbname = mock.MagicMock(return_value="dblank@hadaly.duckdns.org")
+        self.db._check_identity()  # must not raise
+
+    def test_name_sanitized_the_same_way_dbman_does_still_passes(self):
+        # gramps.gui.dbman's Family Tree Manager replaces "." (among other
+        # characters) with "_" in any name typed through its rename UI, so
+        # a hostname's dots can never actually reach name.txt -- the check
+        # must accept the sanitized form as a match, not just the literal
+        # "<username>@<host>" string.
+        self.db.get_dbname = mock.MagicMock(return_value="dblank@hadaly_duckdns_org")
+        self.db._check_identity()  # must not raise
+
+    def test_mismatched_name_raises(self):
+        self.db.get_dbname = mock.MagicMock(return_value="Gramps Web API DB")
+        with self.assertRaises(DbConnectionError):
+            self.db._check_identity()
+
+    def test_mismatch_error_names_the_typeable_form(self):
+        self.db.get_dbname = mock.MagicMock(return_value="Gramps Web API DB")
+        with self.assertRaises(DbConnectionError) as ctx:
+            self.db._check_identity()
+        self.assertIn("dblank@hadaly_duckdns_org", str(ctx.exception))
+
+    def test_connection_error_resolving_identity_is_wrapped(self):
+        self.db.get_dbname = mock.MagicMock(return_value="dblank@hadaly.duckdns.org")
+        self.db.web_client.get_identity.side_effect = HTTPError(
+            "https://example.com/api/users/-/", 500, "boom", None, None
+        )
+        with self.assertRaises(DbConnectionError):
+            self.db._check_identity()
+
+
+# -------------------------------------------------------------------------
+#
 # TestPolling
 #
 # load() schedules a GLib.timeout_add_seconds() tick that re-syncs for as
@@ -1068,17 +1207,44 @@ class TestPolling(unittest.TestCase):
         with mock.patch.object(
             grampswebapidb.SQLite, "load"
         ) as super_load, mock.patch.object(
+            self.db, "_check_identity"
+        ) as check_identity, mock.patch.object(
             self.db, "_sync_from_server"
         ) as sync, mock.patch.object(
             grampswebapidb.GLib, "timeout_add_seconds", return_value=42
         ) as timeout_add:
             self.db.load("some/path")
         super_load.assert_called_once_with("some/path")
-        sync.assert_called_once_with()
+        check_identity.assert_called_once_with()
+        sync.assert_called_once_with(progress_callback=None)
         timeout_add.assert_called_once_with(
             grampswebapidb.POLL_INTERVAL_SECONDS, self.db._poll_tick
         )
         self.assertEqual(self.db._poll_source_id, 42)
+
+    def test_load_forwards_positional_callback_to_sync(self):
+        # DbGeneric.load()'s own signature is (directory, callback=None,
+        # mode=..., ...) -- cli/grampscli.py calls it positionally
+        # (db.load(filename, self._pulse_progress, mode, ...)), so load()
+        # must recognize the callback there too, not just as a kwarg.
+        my_callback = mock.MagicMock()
+        with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
+            self.db, "_check_identity"
+        ), mock.patch.object(self.db, "_sync_from_server") as sync, mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds"
+        ):
+            self.db.load("some/path", my_callback, "w")
+        sync.assert_called_once_with(progress_callback=my_callback)
+
+    def test_load_forwards_keyword_callback_to_sync(self):
+        my_callback = mock.MagicMock()
+        with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
+            self.db, "_check_identity"
+        ), mock.patch.object(self.db, "_sync_from_server") as sync, mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds"
+        ):
+            self.db.load("some/path", callback=my_callback)
+        sync.assert_called_once_with(progress_callback=my_callback)
 
     def test_close_cancels_pending_poll(self):
         self.db._poll_source_id = 42
