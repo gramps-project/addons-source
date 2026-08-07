@@ -8,7 +8,9 @@ without closing and reopening the tree; local edits are pushed back to the
 server as they're committed. Every already-open Gramps view (People,
 Families, ...) refreshes itself automatically as synced changes land, the
 same as it would for a local edit -- see `grampswebapidb.py`'s module
-docstring for how.
+docstring for how. The initial sync when opening a tree reports real
+progress through Gramps' own load-progress bar, not just a spinning
+cursor.
 
 ## Credentials
 
@@ -48,6 +50,25 @@ request auth yet). Practically, that means:
 This is a documented engineering tradeoff, made because the properly-scoped
 alternative isn't available server-side today — not a vulnerability in
 gramps-web-api or a loophole being exploited.
+
+## Family Tree naming
+
+Because credentials come from an environment variable rather than a
+per-tree setting, nothing else ties a Family Tree's local mirror to one
+particular server account. Gramps must therefore name each Family Tree
+using this backend `<username>@<host>` for the account `GRAMPS_WEB_API_KEY`
+authenticates as — e.g. `dblank@hadaly.duckdns.org`. Opening a Family Tree
+whose name doesn't match the currently-set `GRAMPS_WEB_API_KEY` fails to
+load rather than silently mixing that account's data into a mirror synced
+from a different one. To connect to a different server or account, create
+a new Family Tree named accordingly rather than reusing an existing one.
+
+Gramps' own Family Tree Manager silently replaces characters like `.` with
+`_` in any name you type (it needs the name safe to use as a filename), so
+a hostname's dots never survive intact — name the tree
+`dblank@hadaly_duckdns_org`, not `dblank@hadaly.duckdns.org`. The error
+dialog shown for a mismatch always spells out the exact typeable name to
+use.
 
 ## See also
 
