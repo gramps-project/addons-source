@@ -20,7 +20,7 @@
 register(
     DATABASE,
     id="grampswebapidb",
-    status=UNSTABLE,
+    status=BETA,
     name=_("GrampsWebApiDb"),
     name_accell=_("Gramps _Web API Database"),
     description=_(
