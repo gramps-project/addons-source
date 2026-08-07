@@ -62,6 +62,15 @@ no login dialog: the same env var also works as a bare SDK credential
 (WebApiHandler.from_env()) for scripts that talk to the server directly,
 without going through Gramps at all -- one credential, two consumers.
 
+Because of that, nothing but the Family Tree's own name ties its local
+mirror to one particular server account. _check_identity() requires that
+name to be "<username>@<host>" (modulo Gramps' own filename-safe-character
+substitution on tree names, e.g. dots -> underscores -- see
+_FAMILY_TREE_NAME_UNSAFE_CHARS) for whoever GRAMPS_WEB_API_KEY currently
+authenticates as, checked on every load() -- so pointing the env var at a
+different account while reopening the same Family Tree fails loudly
+instead of quietly mixing that account's data into the old mirror.
+
 Write-through (local edits pushed back to the server) hooks
 transaction_commit() rather than the individual commit_person/
 commit_family/... methods: DbTxn.__exit__ calls self.db.transaction_commit
@@ -191,6 +200,7 @@ persisted, so this only ever matters within a single running session.
 
 import logging
 import os
+import re
 from copy import deepcopy
 from tempfile import NamedTemporaryFile
 from urllib.error import HTTPError, URLError
@@ -237,6 +247,14 @@ POLL_INTERVAL_SECONDS = 10
 #: server being unreachable (HTTPError/URLError/OSError -- socket.timeout
 #: is an OSError subclass).
 _CONNECTION_ERRORS = (ValueError, KeyError, HTTPError, URLError, OSError)
+
+#: Same substitution gramps.gui.dbman's Family Tree Manager applies to
+#: whatever a user types renaming a tree (dbman.py's __change_name(): "kill
+#: special characters so can use as file name in backup"). A hostname-
+#: bearing name can't survive that GUI round-trip with its dots intact, so
+#: _check_identity() normalizes through this same substitution on both
+#: sides before comparing -- see that method.
+_FAMILY_TREE_NAME_UNSAFE_CHARS = re.compile(r"[':<>|,;=\"\[\]\.\+\*\/\?\\]")
 
 _TRANS_TYPE_NAME = {TXNADD: "add", TXNUPD: "update", TXNDEL: "delete"}
 
@@ -323,11 +341,74 @@ class WebApiDB(SQLite):
         super()._initialize(directory, username, password)
 
     def load(self, *args, **kwargs):
+        # callback is Gramps' own load-progress hook -- position 2 in
+        # DbGeneric.load()'s signature, or the "callback" kwarg -- the same
+        # plain percentage function cli/grampscli.py's _pulse_progress and
+        # gui/dbloader.py's real progress-bar wiring already provide.
+        # Forwarded to _sync_from_server() so a slow initial catch-up (a
+        # new mirror, or one that's been offline a while) shows real
+        # progress instead of Gramps just looking hung; _poll_tick()'s own
+        # background-poll call deliberately leaves this at its None
+        # default, since a 10-second background tick shouldn't pop a
+        # progress bar.
+        callback = kwargs.get("callback")
+        if callback is None and len(args) >= 2:
+            callback = args[1]
         super().load(*args, **kwargs)
-        self._sync_from_server()
+        self._check_identity()
+        self._sync_from_server(progress_callback=callback)
         self._poll_source_id = GLib.timeout_add_seconds(
             POLL_INTERVAL_SECONDS, self._poll_tick
         )
+
+    def _check_identity(self):
+        """Require this Family Tree's own name to be "<username>@<host>"
+        for whoever GRAMPS_WEB_API_KEY currently authenticates as.
+
+        Nothing else ties a local mirror to one particular server account:
+        there is no per-tree settings.ini (see the module docstring), and
+        _sync_from_server() only ever asks for changes *after* its stored
+        sync_last_time -- it has no way to notice the mirror belongs to a
+        different account entirely and would just quietly go on mixing old
+        and new data. Requiring (and reading back) the account identity in
+        the tree's own display name catches that at load time instead, and
+        costs nothing extra: get_dbname() just rereads the same name.txt
+        Gramps already writes for the Family Tree Manager.
+
+        Both sides are compared after _FAMILY_TREE_NAME_UNSAFE_CHARS's
+        substitution, not the raw "<username>@<host>" string: the Family
+        Tree Manager's own rename callback silently applies that same
+        substitution to anything typed in (dbman.py's __change_name()), so
+        a hostname's dots can never actually reach name.txt intact -- an
+        exact-string comparison would reject every tree name Gramps itself
+        would let you type.
+        """
+        try:
+            expected = self.web_client.get_identity()
+        except _CONNECTION_ERRORS as err:
+            raise DbConnectionError(str(err), self._directory) from err
+        expected_typeable = _FAMILY_TREE_NAME_UNSAFE_CHARS.sub("_", expected)
+        actual = self.get_dbname()
+        actual_normalized = _FAMILY_TREE_NAME_UNSAFE_CHARS.sub("_", actual)
+        if actual_normalized != expected_typeable:
+            raise DbConnectionError(
+                _(
+                    'This Family Tree is named "%(actual)s", but '
+                    "GRAMPS_WEB_API_KEY currently authenticates as "
+                    '"%(expected)s". Rename this Family Tree to '
+                    '"%(expected_typeable)s" (Family Trees -> Manage '
+                    "Family Trees) if it's meant to mirror that account, "
+                    "or open/create the Family Tree already named that -- "
+                    "reusing this one would mix its existing local data "
+                    "with the other account's."
+                )
+                % {
+                    "actual": actual,
+                    "expected": expected,
+                    "expected_typeable": expected_typeable,
+                },
+                self._directory,
+            )
 
     def close(self, *args, **kwargs):
         # Stop polling a database that's no longer open -- otherwise the
@@ -460,7 +541,7 @@ class WebApiDB(SQLite):
         finally:
             self._retrying = False
 
-    def _sync_from_server(self):
+    def _sync_from_server(self, progress_callback=None):
         """
         Pull every transaction after the last-seen timestamp and replay
         its changes into the local mirror. Returns the number of changes
@@ -474,13 +555,20 @@ class WebApiDB(SQLite):
         fallback once the whole page range has been walked (so
         sync_last_time still advances past it and any *describable*
         changes around it are applied normally either way).
+
+        progress_callback, if given, is called with an int 0-100 after
+        each page -- see load()'s callback param. "total" comes from the
+        server's X-Total-Count for this "after" filter (get_transaction_
+        history()'s docstring), so it stays a stable denominator across
+        pages barring concurrent server-side writes during the sync.
         """
         after = self._get_metadata("sync_last_time", default=0)
         applied = 0
         needs_full_resync = False
         page = 1
+        seen = 0
         while True:
-            transactions, _total = self.web_client.get_transaction_history(
+            transactions, total = self.web_client.get_transaction_history(
                 after=after, page=page, pagesize=SYNC_PAGE_SIZE
             )
             if not transactions:
@@ -500,15 +588,18 @@ class WebApiDB(SQLite):
                             )
                     after = max(after, server_trans["timestamp"])
             self._emit_change_signals(net_changes)
+            seen += len(transactions)
+            if progress_callback is not None and total:
+                progress_callback(min(100, int(seen * 100 / total)))
             if len(transactions) < SYNC_PAGE_SIZE:
                 break
             page += 1
         self._set_metadata("sync_last_time", after)
         if needs_full_resync:
-            self._full_resync()
+            self._full_resync(progress_callback=progress_callback)
         return applied
 
-    def _full_resync(self):
+    def _full_resync(self, progress_callback=None):
         """
         Rebuild the local mirror from scratch: download the server's own
         current Gramps XML export and reimport it, after clearing every
@@ -534,7 +625,14 @@ class WebApiDB(SQLite):
         push-to-server path (transaction_to_json() sees nothing to
         push for a batch transaction) -- this is a purely local rebuild,
         same as _sync_from_server()'s own transactions.
+
+        progress_callback, if given, only gets 0/100 markers bookending
+        the download+reimport -- unlike _sync_from_server()'s page-by-page
+        reporting, ImportXml has no internal step reporting to forward
+        finer-grained progress from.
         """
+        if progress_callback is not None:
+            progress_callback(0)
         data = self.web_client.download_export()
         with NamedTemporaryFile(suffix=".gramps", delete=False) as tmp_file:
             tmp_file.write(data)
@@ -559,6 +657,8 @@ class WebApiDB(SQLite):
             self.request_rebuild()
         finally:
             os.remove(tmp_path)
+        if progress_callback is not None:
+            progress_callback(100)
 
     def _apply_change(self, change, trans):
         """Replay one server change into the local mirror. Returns True

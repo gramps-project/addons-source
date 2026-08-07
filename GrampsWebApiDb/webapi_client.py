@@ -73,7 +73,7 @@ from tempfile import NamedTemporaryFile
 from time import sleep
 from typing import Any
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlparse
 from urllib.request import Request, urlopen
 
 LOG = logging.getLogger("grampswebapidb")
@@ -332,6 +332,33 @@ class WebApiHandler:
     def get_permissions(self) -> set[str]:
         """Get the permissions of the current user."""
         return decode_jwt_payload(self.access_token).get("permissions", set())
+
+    @property
+    def hostname(self) -> str:
+        """Server hostname, e.g. "hadaly.duckdns.org" for a url of
+        "https://hadaly.duckdns.org/api"."""
+        return urlparse(self.url).hostname or self.url
+
+    def get_current_username(self) -> str:
+        """Name of the user this handler is authenticated as.
+
+        Set directly for a username+password login (mint_api_key()); the
+        refresh-token credential the normal from_env() path uses carries no
+        plaintext username (the access token's "sub" claim is a user id,
+        not a name -- see gramps-web-api's token.py), so it is resolved
+        once via GET /users/-/ (the "current user" alias) and cached here.
+        """
+        if self.username is None:
+            data, _headers = self._get_json(f"{self.url}/users/-/")
+            self.username = data["name"]
+        return self.username
+
+    def get_identity(self) -> str:
+        """"<username>@<hostname>" identifying the account+server this
+        handler authenticates as -- see grampswebapidb.py's
+        _check_identity(), which requires a Family Tree's own name to
+        match this before trusting its local mirror."""
+        return f"{self.get_current_username()}@{self.hostname}"
 
     def _get_json(self, url: str, retry: bool = True) -> tuple[Any, dict]:
         """GET ``url`` with the bearer token and return ``(body, headers)``."""
