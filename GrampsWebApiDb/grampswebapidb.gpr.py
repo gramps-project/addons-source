@@ -27,7 +27,7 @@ register(
         "Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) "
         "as a live database, mirrored locally for speed."
     ),
-    version="0.1.0",
+    version = '0.1.1',
     gramps_target_version="6.0",
     fname="grampswebapidb.py",
     databaseclass="WebApiDB",
