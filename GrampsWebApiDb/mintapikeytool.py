@@ -28,9 +28,11 @@ Python from GrampsWebApiDb's own README -- this tool is that same call
 behind a form, for anyone who just wants the key string.
 
 A TOOL rather than a gramplet: generating a key is a one-off setup action,
-not something worth keeping permanently docked in a gramplet bar, and
-unlike a gramplet it doesn't need an open Family Tree at all -- see
-build_dialog() and the module's use of dbstate below.
+not something worth keeping permanently docked in a gramplet bar. It
+doesn't read or write anything in dbstate's Family Tree -- see
+build_dialog() below -- but Gramps only populates the Tools menu once
+some Family Tree is open, so in practice the user still needs one open
+(any backend, even an empty local tree) to reach this tool at all.
 
 On success, it also sets GRAMPS_WEB_API_KEY in this running Gramps
 process's environment, so a WebApiDB-backed Family Tree can be opened in

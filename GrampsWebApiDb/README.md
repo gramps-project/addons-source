@@ -21,9 +21,12 @@ settings.ini. Generate one once via username/password.
 
 The easiest way is the **Generate Gramps Web API key** tool (this addon
 also installs `mintapikeytool.py`/`mintapikeytool.gpr.py`): open it from
-Tools → Utilities → Generate Gramps Web API key (no Family Tree needs to
-be open), enter the server URL, username, and password, and click
-**Generate API Key**. On success it sets `GRAMPS_WEB_API_KEY` in the
+Tools → Utilities → Generate Gramps Web API key, enter the server URL,
+username, and password, and click **Generate API Key**. Gramps only shows
+the Tools menu once *some* Family Tree is open -- it doesn't have to be a
+WebApiDB one, even an empty local tree works, so open (or create) one
+first if you don't already have one open. On success the tool sets
+`GRAMPS_WEB_API_KEY` in the
 running Gramps process's environment, so a WebApiDB-backed Family Tree
 can be opened right away without restarting Gramps -- but that only lasts
 for this process; it is not written to a shell profile, settings.ini, or
