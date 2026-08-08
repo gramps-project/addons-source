@@ -248,6 +248,25 @@ POLL_INTERVAL_SECONDS = 10
 #: is an OSError subclass).
 _CONNECTION_ERRORS = (ValueError, KeyError, HTTPError, URLError, OSError)
 
+
+def _describe_connection_error(err):
+    """
+    Turn a _CONNECTION_ERRORS exception into DbConnectionError's message
+    body. A 403 means the account GRAMPS_WEB_API_KEY authenticates as was
+    correctly identified but isn't allowed to do this -- worth calling out
+    specifically, since the raw HTTPError text ("HTTP Error 403:
+    Forbidden") reads like an auth failure rather than a permissions one.
+    """
+    if isinstance(err, HTTPError) and err.code == 403:
+        return _(
+            "The account authenticating via GRAMPS_WEB_API_KEY does not "
+            "have permission on the server for this operation (HTTP 403 "
+            "Forbidden). Generate a key for an account with sufficient "
+            "permissions, or ask the server administrator to grant this "
+            "one access."
+        )
+    return str(err)
+
 #: Same substitution gramps.gui.dbman's Family Tree Manager applies to
 #: whatever a user types renaming a tree (dbman.py's __change_name(): "kill
 #: special characters so can use as file name in backup"). A hostname-
@@ -334,7 +353,7 @@ class WebApiDB(SQLite):
         try:
             self.web_client = WebApiHandler.from_env()
         except _CONNECTION_ERRORS as err:
-            raise DbConnectionError(str(err), directory) from err
+            raise DbConnectionError(_describe_connection_error(err), directory) from err
 
         # Local mirror: reuse SQLite's own _initialize for the on-disk
         # cache file, then sync from the server on load().
@@ -356,7 +375,12 @@ class WebApiDB(SQLite):
             callback = args[1]
         super().load(*args, **kwargs)
         self._check_identity()
-        self._sync_from_server(progress_callback=callback)
+        try:
+            self._sync_from_server(progress_callback=callback)
+        except _CONNECTION_ERRORS as err:
+            raise DbConnectionError(
+                _describe_connection_error(err), self._directory
+            ) from err
         self._poll_source_id = GLib.timeout_add_seconds(
             POLL_INTERVAL_SECONDS, self._poll_tick
         )
@@ -386,7 +410,9 @@ class WebApiDB(SQLite):
         try:
             expected = self.web_client.get_identity()
         except _CONNECTION_ERRORS as err:
-            raise DbConnectionError(str(err), self._directory) from err
+            raise DbConnectionError(
+                _describe_connection_error(err), self._directory
+            ) from err
         expected_typeable = _FAMILY_TREE_NAME_UNSAFE_CHARS.sub("_", expected)
         actual = self.get_dbname()
         actual_normalized = _FAMILY_TREE_NAME_UNSAFE_CHARS.sub("_", actual)
