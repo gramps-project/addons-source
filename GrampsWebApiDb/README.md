@@ -16,8 +16,29 @@ cursor.
 
 The addon takes a single credential, via the `GRAMPS_WEB_API_KEY`
 environment variable, shaped `<REFRESH_TOKEN>*<BASE64URL(URL)>`. There is
-deliberately no login dialog and no per-tree settings.ini. Mint one once
-via username/password, either from the command line with the standalone
+deliberately no login dialog wired into WebApiDB itself, and no per-tree
+settings.ini. Generate one once via username/password.
+
+The easiest way is the **Generate Gramps Web API key** tool (this addon
+also installs `mintapikeytool.py`/`mintapikeytool.gpr.py`): open it from
+Tools → Utilities → Generate Gramps Web API key (no Family Tree needs to
+be open), enter the server URL, username, and password, and click
+**Generate API Key**. On success it sets `GRAMPS_WEB_API_KEY` in the
+running Gramps process's environment, so a WebApiDB-backed Family Tree
+can be opened right away without restarting Gramps -- but that only lasts
+for this process; it is not written to a shell profile, settings.ini, or
+any open Family Tree. Copy the displayed key into your shell's startup
+file too if you want it set automatically next time.
+
+Click **Create Synced Family Tree for this key** to also create a new,
+empty Family Tree for that key's account, using the `grampswebapidb`
+database backend and already named correctly (see "Family Tree naming"
+below) -- equivalent to creating one by hand via Family Trees → Manage
+Family Trees, just with the name and backend filled in for you. It
+creates the tree but does not open it; open it from Family Trees →
+Manage Family Trees afterward to start syncing.
+
+Alternatively, generate one from the command line with the standalone
 `gramps-api-client` package (not yet published; pip-installable from
 its own repo, e.g. `pip install -e path/to/gramps-api-client`):
 
