@@ -28,8 +28,8 @@ register(
         "for it."
     ),
     status=BETA,
-    version="0.1.0",
-    gramps_target_version="6.0",
+    version = '0.1.1',
+    gramps_target_version="6.1",
     fname="mintapikeytool.py",
     authors=["Doug Blank"],
     authors_email=["doug.blank@gmail.com"],

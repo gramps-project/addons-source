@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-07 11:38-0700\n"
+"POT-Creation-Date: 2026-08-09 10:02-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,155 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: GrampsWebApiDb/mintapikeytool.py:129 GrampsWebApiDb/mintapikeytool.gpr.py:23
+msgid "Generate Gramps Web API key"
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:141
+msgid "Server URL"
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:141
+msgid "e.g. https://your-server/api"
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:143
+msgid "Username"
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:144
+msgid "Password"
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:153
+msgid "Generate API Key"
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:162
+msgid ""
+"Enter your server URL, username, and password, then click Generate API Key."
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:168
+msgid "GRAMPS_WEB_API_KEY"
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:176
+msgid "Copy"
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:182
+msgid "Create Synced Family Tree for this key"
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:188
+msgid "Family Tree"
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:197
+#, python-format
+msgid ""
+"Found an existing %s for this session. Click Create Synced Family Tree to "
+"use it directly, or fill in the form above to generate a different key."
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:222
+msgid "Please fill in the server URL, username, and password."
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:229
+msgid "Generating API key…"
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:260
+#, python-format
+msgid "Login failed (HTTP %d): check your username and password."
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:263
+#, python-format
+msgid "Server returned an error (HTTP %d %s): check the Server URL."
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:271
+#, python-format
+msgid "Could not reach the server: check the Server URL. (%s)"
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:274
+#, python-format
+msgid "Unexpected response from the server: %s"
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:277 GrampsWebApiDb/mintapikeytool.py:369
+#, python-format
+msgid "Error: %s"
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:286
+#, python-format
+msgid ""
+"Success. %s is now set for this Gramps session -- no restart needed. Copy "
+"the key below to also set it in your shell environment for next time."
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:307
+msgid "Looking up account identity…"
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:339
+#, python-format
+msgid ""
+"A Family Tree named \"%s\" already exists. Open it from Family Trees -> "
+"Manage Family Trees instead of creating another one."
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:352
+#, python-format
+msgid "Error creating Family Tree: %s"
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:358
+#, python-format
+msgid ""
+"Created Family Tree \"%s\". Open it from Family Trees -> Manage Family Trees "
+"to start syncing."
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.gpr.py:25
+msgid ""
+"Turn a Gramps Web API server URL, username, and password into a "
+"GRAMPS_WEB_API_KEY value for GrampsWebApiDb, and optionally create a "
+"matching, correctly-named GrampsWebApiDb Family Tree for it."
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.py:262
+msgid ""
+"The account authenticating via GRAMPS_WEB_API_KEY does not have permission "
+"on the server for this operation (HTTP 403 Forbidden). Generate a key for an "
+"account with sufficient permissions, or ask the server administrator to "
+"grant this one access."
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.py:422
+#, python-format
+msgid ""
+"This Family Tree is named \"%(actual)s\", but GRAMPS_WEB_API_KEY currently "
+"authenticates as \"%(expected)s\". Rename this Family Tree to "
+"\"%(expected_typeable)s\" (Family Trees -> Manage Family Trees) if it's "
+"meant to mirror that account, or open/create the Family Tree already named "
+"that -- reusing this one would mix its existing local data with the other "
+"account's."
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.py:550
+msgid "Retry local change after server conflict"
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.py:668
+msgid "Clear local mirror before full resync"
+msgstr ""
 
 #: GrampsWebApiDb/grampswebapidb.gpr.py:24
 msgid "GrampsWebApiDb"
@@ -29,23 +178,4 @@ msgstr ""
 msgid ""
 "Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) as a live "
 "database, mirrored locally for speed."
-msgstr ""
-
-#: GrampsWebApiDb/grampswebapidb.py:396
-#, python-format
-msgid ""
-"This Family Tree is named \"%(actual)s\", but GRAMPS_WEB_API_KEY currently "
-"authenticates as \"%(expected)s\". Rename this Family Tree to "
-"\"%(expected_typeable)s\" (Family Trees -> Manage Family Trees) if it's "
-"meant to mirror that account, or open/create the Family Tree already named "
-"that -- reusing this one would mix its existing local data with the other "
-"account's."
-msgstr ""
-
-#: GrampsWebApiDb/grampswebapidb.py:524
-msgid "Retry local change after server conflict"
-msgstr ""
-
-#: GrampsWebApiDb/grampswebapidb.py:642
-msgid "Clear local mirror before full resync"
 msgstr ""
