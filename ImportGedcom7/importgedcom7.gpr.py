@@ -29,4 +29,6 @@ register(
     import_function="import_data",
     extension="ged7",
     requires_mod=["gramps_gedcom7"],
+    authors=["David Straub"],
+    authors_email=["straub@protonmail.com"],
 )
