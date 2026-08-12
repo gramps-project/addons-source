@@ -141,6 +141,111 @@ user) is still out of scope. If the push fails for a non-conflict reason
 is not rolled back -- the local mirror just drifts from the server until
 the next successful push or read sync.
 
+Not every local batch=True commit is a pull-side replay, though: the same
+trans.batch guard that makes _sync_from_server()'s own replay silent to
+transaction_to_json() applies equally to *local* bulk operations run
+against this open tree from outside this file entirely -- ImportXml/
+ImportGedcom/ImportCsv/..., and stock Tools like Check and Repair
+Database, Media Manager, Extract Information from Names, Rename Event
+Types, Reorder Gramps IDs, and Sort Events all open their own DbTxn with
+batch=True for performance. Left alone, any of those would apply locally
+and never reach the server: transaction_commit() would see the same empty
+transaction_to_json() payload it correctly sees for _sync_from_server()'s
+own pull-side batch replay, with nothing in the payload itself to tell the
+two apart. transaction_begin() (called by DbTxn.__enter__, so before the
+batch operation's body runs) tells them apart with a _pulling flag set
+only around _sync_from_server()'s own batch DbTxns (including the ones
+_full_resync() opens) -- everywhere else, a batch=True transaction gets a
+snapshot of every primary object type's handle set stashed on the
+transaction itself (_handles_by_class()). transaction_commit() diffs that
+snapshot against the post-commit state (_reconcile_batch_commit()) to
+reconstruct what changed: a handle that appeared is an add, one that
+disappeared is a delete, and one that persisted but whose .change moved to
+at or after the transaction's own start_time was an update -- _commit_
+base() always stamps .change on every commit, batch or not; only the
+undo-log recording that batch skips is what normally would have let
+transaction_to_json() see this directly. The reconstructed entries are
+handed to _retry_after_conflict() -- not because anything conflicted, but
+because it already does exactly what's needed here: replay each entry as
+a fresh, ordinary (non-batch) local edit, so it picks up a real "old"
+snapshot from DBAPI's own commit path and goes out through the normal
+push path one object at a time, with the same conflict handling a live
+edit gets. This costs roughly double the local writes for whatever the
+batch operation actually touched (once for the batch commit, once more
+for this replay) -- accepted as the price of correctness, the same trade
+_full_resync() already makes for the equivalent pull-side blind spot.
+
+A second, previously-unhandled kind of silent drift: when a push's own
+HTTP call fails for a plain connectivity reason (network down, server
+unreachable -- not a conflict), the local commit has already happened and
+is never rolled back, but until now nothing remembered that the push
+still needed to go out -- "the next successful push or read sync" above
+was aspirational, not implemented. _push_payload() now persists such a
+payload (via _set_metadata(), the same mechanism sync_last_time already
+uses, so it survives close()/reopen) to a "pending_pushes" queue instead
+of just logging and forgetting it. _flush_pending_pushes(), called at the
+top of every _sync_from_server() (both the load()-time call and every
+poll tick), retries the queue in order and stops at the first entry that
+still can't be delivered, rather than skipping ahead -- so a later,
+causally-dependent edit (e.g. a Family added after the Person it
+references) can never reach the server ahead of an earlier one still
+stuck behind a connectivity failure.
+
+Not every push failure is worth queueing, though: a 4xx other than 429 is
+the server's considered answer about the request itself and will not
+change on replay, so _is_retryable_push_error() sends those straight to a
+loud log instead -- queueing one would retry it on every poll forever and
+eventually evict genuinely retryable work from the capped queue.
+
+The most likely such rejection is a permissions one, and _check_
+permissions() heads it off at load() rather than letting every subsequent
+edit fail: gramps-web-api gates POST /transactions/ behind all three of
+AddObject/EditObject/DeleteObject at once (transactions.py's
+require_permissions(); has_permissions() fails if any are missing), and
+gates GET /transactions/history/ behind ViewPrivate. ViewPrivate is the
+one whose absence would otherwise be *silent* rather than merely fatal:
+the history feed 403s loudly without it, but GET /exporters/gramps/file
+does not refuse the request at all -- it passes
+view_private=has_permissions({PERM_VIEW_PRIVATE}) into the export task
+(exporters.py), so an under-privileged caller gets a privacy-filtered
+export, which _full_resync() would then import over a wiped local mirror,
+quietly dropping every private record from the mirror. Checking the
+permission set up front costs no extra round trip (gramps-web-api puts it
+in the access token's own claims, so get_permissions() just decodes the
+JWT already in hand) and names exactly what is missing. A tree opened
+read-only (DBMODE_R) never pushes, so it is held to the read permission
+only.
+
+GET /metadata/ (cached per handler; needs no special permission) supplies
+the two versions the addon reasons about. The server's *Gramps* version
+gates compatibility outright: _check_server_version() refuses at load()
+below MIN_SERVER_GRAMPS_VERSION, since anything older serializes its
+transaction history in the pre-6.0 shape and would otherwise fail much
+later as a bare KeyError out of data_to_object() mid-sync. It is
+deliberately lenient about a server that reports no parseable version at
+all -- better to try than to block on a guess.
+
+The server's *gramps-web-api* version gates one optimization: from 2.7,
+POST /transactions/ accepts ?background=1, queueing the work and
+answering 202 immediately instead of holding the connection open while it
+processes. _push_payload() uses that only for payloads at or above
+BACKGROUND_PUSH_THRESHOLD, where server-side processing could plausibly
+outlast webapi_client.TIMEOUT and drop the connection mid-write -- most of
+all the single large payload _reconcile_batch_commit() builds after a bulk
+import. Everything smaller stays synchronous, which is simpler and keeps
+the crisp "400 means conflict" semantics. Two asymmetries make the
+backgrounded path trickier than just adding a query parameter, both
+absorbed inside push_transaction() so callers see identical behavior
+either way: the server only really backgrounds the work if it has a Celery
+queue configured (otherwise it runs inline and answers 200, so 202 means
+"poll GET /tasks/<id>" and 200 means "already done"), and on that inline
+path a conflict comes back as HTTP 500 rather than 400, because run_task()
+catches process_transactions()'s ValueError and re-aborts it (see
+gramps_webapi/api/tasks.py). Both 400 and 500 are therefore checked for
+the "Object has changed" sentinel, and a failed background task is
+inspected for it too -- otherwise a conflict on that path would read as a
+transient server error and be queued for retry forever.
+
 The mirror stays current while the tree is open, not just at load() time:
 load() also schedules a GLib.timeout_add_seconds() tick (POLL_INTERVAL_SECONDS)
 that re-runs _sync_from_server() for as long as the database stays open --
@@ -155,6 +260,22 @@ off-thread (GrampsWebSync's GLibTaskRunner is the precedent, not imported
 here for the same no-cross-addon-dependency reason as transaction_to_json()
 below) is a reasonable future improvement, not attempted here. close()
 cancels the pending timeout so a closed database doesn't keep polling.
+
+A second, independent timeout (MEDIA_POLL_INTERVAL_SECONDS, coarser than
+POLL_INTERVAL_SECONDS) drives _sync_media_files(): downloading media files
+that exist as Media-object records in the mirror but not on local disk,
+and uploading local media files the server doesn't have yet. This is
+ported from GrampsWebSync's own media-file-sync step (grampswebsync.py's
+file_confirmation/file_progress wizard pages, webapihandler.py's
+get_missing_files()/download_media_file()/upload_media_file() -- same
+repo, same license, credit David Straub), but runs unattended on its own
+timer here instead of as an explicit user-driven wizard step with its own
+progress UI. It is a separate, coarser timer rather than piggybacking on
+_poll_tick() because, unlike the record-history feed, there is no cheap
+"what changed since last time" signal for file presence -- every pass
+re-checks every local Media object's file with os.path.exists() and
+re-asks the server's own GET /media/?filemissing=1 endpoint, and anything
+found missing is then transferred in full.
 
 _sync_from_server()'s replay runs inside a batch=True DbTxn deliberately
 (see the write-through section below for why), but that has a side effect
@@ -211,6 +332,7 @@ from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.db import DbTxn
 from gramps.gen.db.dbconst import (
     CLASS_TO_KEY_MAP,
+    DBMODE_W,
     KEY_TO_CLASS_MAP,
     KEY_TO_NAME_MAP,
     TXNADD,
@@ -218,13 +340,15 @@ from gramps.gen.db.dbconst import (
     TXNUPD,
 )
 from gramps.gen.db.exceptions import DbConnectionError
+from gramps.gen.errors import HandleError
 from gramps.gen.lib.baseobj import BaseObject
-from gramps.gen.lib.json_utils import data_to_object, remove_object
+from gramps.gen.lib.json_utils import data_to_object, object_to_data, remove_object
 from gramps.gen.user import User
+from gramps.gen.utils.file import media_path_full
 from gramps.plugins.db.dbapi.sqlite import SQLite
 from gramps.plugins.importer.importxml import importData
 
-from webapi_client import WebApiHandler, WebApiPushConflict
+from webapi_client import WebApiHandler, WebApiPushConflict, parse_version
 
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -240,6 +364,67 @@ SYNC_PAGE_SIZE = 100
 #: database stays open -- see the module docstring's note on why this runs
 #: synchronously on the GTK main thread rather than a background timer.
 POLL_INTERVAL_SECONDS = 10
+
+#: How often (seconds) load() and the ongoing poll re-scan for media files
+#: missing locally or on the server -- see _sync_media_files(). Coarser
+#: than POLL_INTERVAL_SECONDS: unlike a record-history page fetch, a scan
+#: touches every local Media object's file on disk (os.path.exists()) and
+#: hits a separate server endpoint, and anything found missing is then
+#: transferred in full -- not worth doing on every 10-second record-sync
+#: tick.
+MEDIA_POLL_INTERVAL_SECONDS = 300
+
+#: Cap on the persisted pending-push queue (see _queue_pending_push()).
+#: A queue this long means the server has been unreachable across a great
+#: many local edits; keeping every one of them forever would grow the
+#: metadata row without bound, so the oldest are dropped with a loud log
+#: rather than silently.
+MAX_PENDING_PUSHES = 1000
+
+#: Server-side permission names (gramps-web-api's auth/const.py) this
+#: addon depends on, checked at load() by _check_permissions().
+#:
+#: ViewPrivate is required to read at all: GET /transactions/history/
+#: calls require_permissions([PERM_VIEW_PRIVATE]) outright (see
+#: gramps_webapi/api/resources/history.py), so the whole incremental sync
+#: 403s without it. It matters just as much for _full_resync()'s fallback,
+#: which fails *silently* rather than loudly instead: GET /exporters/
+#: gramps/file doesn't refuse the request, it passes
+#: view_private=has_permissions({PERM_VIEW_PRIVATE}) into the export task
+#: (exporters.py), so a caller lacking it gets a privacy-filtered export
+#: -- which _full_resync() would then import over a wiped local mirror,
+#: quietly dropping every private record from the mirror.
+_PERM_VIEW_PRIVATE = "ViewPrivate"
+
+#: POST /transactions/ requires all three of these together
+#: (transactions.py's require_permissions([PERM_ADD_OBJ, PERM_EDIT_OBJ,
+#: PERM_DEL_OBJ]) -- has_permissions() fails if *any* are missing), so
+#: write-through needs all three or no local edit can ever be pushed.
+#: PUT /media/<handle>/file additionally needs EditObject, already
+#: included here.
+_WRITE_PERMISSIONS = ("AddObject", "EditObject", "DeleteObject")
+
+#: Together: the permission set of gramps-web-api's "Editor" role, the
+#: least-privileged built-in role that can run this addon read-write.
+_REQUIRED_ROLE_NAME = "Editor"
+
+#: Oldest Gramps version a *server* can run and still produce the
+#: "_class"-tagged transaction-history serialization data_to_object()
+#: understands -- see the module docstring's note on gramps52 servers.
+#: Checked at load() by _check_server_version() so an incompatible server
+#: says so, instead of failing later as a bare KeyError mid-sync.
+MIN_SERVER_GRAMPS_VERSION = (6, 0)
+
+#: Payload size (number of change entries) at or above which a push is
+#: sent with ?background=1 where the server supports it -- see
+#: _push_payload(). Small pushes stay synchronous: that is the
+#: overwhelmingly common case (one interactive edit), it keeps the crisp
+#: 400-means-conflict semantics, and it avoids a pointless extra
+#: round trip to the task endpoint. The threshold exists for the genuinely
+#: large payload -- above all the one _reconcile_batch_commit() builds
+#: after a bulk import -- where server-side processing can plausibly
+#: outlast webapi_client.TIMEOUT and the connection would drop mid-write.
+BACKGROUND_PUSH_THRESHOLD = 100
 
 #: Failure modes from WebApiHandler.from_env()/push_transaction(): a
 #: malformed/missing key (ValueError), a bad server response shape
@@ -266,6 +451,27 @@ def _describe_connection_error(err):
             "one access."
         )
     return str(err)
+
+
+def _is_retryable_push_error(err):
+    """Whether a failed push is worth queueing for a later retry.
+
+    A 4xx is the server's considered answer about *this* request -- 403
+    (the account lacks AddObject/EditObject/DeleteObject; see
+    _check_permissions()), 404, or a 400 that push_transaction() already
+    determined isn't a conflict -- and will keep being the answer no
+    matter how often it is replayed. Queueing one would retry it on every
+    poll forever and, worse, eventually evict genuinely retryable work
+    from the capped queue.
+
+    429 is the exception: it is explicitly "try again shortly", not a
+    refusal. Everything else (5xx, URLError, socket timeout, a malformed
+    response) is transient or unknown, and gets the benefit of the doubt.
+    """
+    if isinstance(err, HTTPError):
+        return err.code == 429 or not 400 <= err.code < 500
+    return True
+
 
 #: Same substitution gramps.gui.dbman's Family Tree Manager applies to
 #: whatever a user types renaming a tree (dbman.py's __change_name(): "kill
@@ -345,6 +551,13 @@ class WebApiDB(SQLite):
     #: is itself a conflict retry -- see _push_payload().
     _retrying = False
 
+    #: Set around _sync_from_server()'s own batch=True DbTxns (including
+    #: the ones _full_resync() opens) so transaction_begin() can tell them
+    #: apart from a batch=True transaction started by anything else (a
+    #: bulk import, a Tool) -- see the module docstring and
+    #: _reconcile_batch_commit().
+    _pulling = False
+
     def requires_login(self):
         # Credentials come from GRAMPS_WEB_API_KEY, not a login dialog.
         return False
@@ -373,16 +586,37 @@ class WebApiDB(SQLite):
         callback = kwargs.get("callback")
         if callback is None and len(args) >= 2:
             callback = args[1]
+        # mode is position 3 in DbGeneric.load()'s signature, defaulting to
+        # DBMODE_W -- read the same two ways as callback above. A tree
+        # opened read-only never pushes, so it needs no write permissions.
+        mode = kwargs.get("mode")
+        if mode is None and len(args) >= 3:
+            mode = args[2]
+        if mode is None:
+            mode = DBMODE_W
         super().load(*args, **kwargs)
         self._check_identity()
+        self._check_permissions(writable=(mode == DBMODE_W))
+        self._check_server_version()
         try:
             self._sync_from_server(progress_callback=callback)
         except _CONNECTION_ERRORS as err:
             raise DbConnectionError(
                 _describe_connection_error(err), self._directory
             ) from err
+        try:
+            self._sync_media_files()
+        except _CONNECTION_ERRORS:
+            # Unlike the record sync above, a media-file-sync failure here
+            # doesn't block opening the tree: the record mirror is already
+            # usable, and missing/un-uploaded media files are recovered on
+            # the next successful media poll (or the next load()).
+            LOG.exception("Initial media file sync failed; will retry.")
         self._poll_source_id = GLib.timeout_add_seconds(
             POLL_INTERVAL_SECONDS, self._poll_tick
+        )
+        self._media_poll_source_id = GLib.timeout_add_seconds(
+            MEDIA_POLL_INTERVAL_SECONDS, self._media_poll_tick
         )
 
     def _check_identity(self):
@@ -436,6 +670,87 @@ class WebApiDB(SQLite):
                 self._directory,
             )
 
+    def _check_permissions(self, writable=True):
+        """Fail at load() if the account GRAMPS_WEB_API_KEY authenticates
+        as lacks a server permission this addon depends on, naming exactly
+        which -- rather than letting each affected operation fail on its
+        own later, in ways that range from a bare 403 to (for the export
+        fallback) no error at all. See _PERM_VIEW_PRIVATE's comment for
+        what each permission actually gates.
+
+        ``writable`` is False for a tree opened read-only (DBMODE_R), which
+        never pushes and so needs only the read permission.
+
+        Costs no extra round trip: gramps-web-api puts the permission list
+        in the access token's own claims (token.py's ``claims = {
+        "permissions": [...]}``), so get_permissions() just decodes the JWT
+        this handler already holds.
+        """
+        required = [_PERM_VIEW_PRIVATE]
+        if writable:
+            required += list(_WRITE_PERMISSIONS)
+        try:
+            granted = set(self.web_client.get_permissions())
+        except _CONNECTION_ERRORS as err:
+            raise DbConnectionError(
+                _describe_connection_error(err), self._directory
+            ) from err
+        missing = [perm for perm in required if perm not in granted]
+        if not missing:
+            return
+        raise DbConnectionError(
+            _(
+                "The account authenticating via GRAMPS_WEB_API_KEY is "
+                "missing server permission(s) this addon requires: "
+                "%(missing)s. Grant it at least the "
+                '"%(role)s" role on the server (or ask an administrator '
+                "to), then reopen this Family Tree. Opening it as-is would "
+                "leave the local mirror silently incomplete or unable to "
+                "save changes back."
+            )
+            % {"missing": ", ".join(missing), "role": _REQUIRED_ROLE_NAME},
+            self._directory,
+        )
+
+    def _check_server_version(self):
+        """Fail at load() if the server runs a Gramps too old to produce
+        the transaction-history serialization this addon reads.
+
+        A gramps52-era server answers auth and read-only endpoints
+        perfectly well, so nothing fails until _sync_from_server() feeds
+        its differently-shaped new_data to data_to_object() and gets a
+        bare KeyError -- see the module docstring. Asking GET /metadata/
+        up front turns that into a sentence naming both versions.
+
+        Deliberately lenient about *not knowing*: a server that doesn't
+        report a Gramps version, or reports one this can't parse, is
+        allowed through rather than blocked on a guess. The KeyError path
+        still catches a genuinely incompatible one, just less kindly.
+        """
+        try:
+            reported = self.web_client.get_gramps_version()
+        except _CONNECTION_ERRORS as err:
+            raise DbConnectionError(
+                _describe_connection_error(err), self._directory
+            ) from err
+        version = parse_version(reported)
+        if version is None or version >= MIN_SERVER_GRAMPS_VERSION:
+            return
+        raise DbConnectionError(
+            _(
+                "This server runs Gramps %(actual)s, but this addon needs "
+                "a server running Gramps %(required)s or newer: older "
+                "servers serialize their transaction history in a format "
+                "it cannot read. Upgrade the Gramps installation behind "
+                "the Gramps Web API server (or ask its administrator to)."
+            )
+            % {
+                "actual": reported,
+                "required": ".".join(str(part) for part in MIN_SERVER_GRAMPS_VERSION),
+            },
+            self._directory,
+        )
+
     def close(self, *args, **kwargs):
         # Stop polling a database that's no longer open -- otherwise the
         # next tick would run _sync_from_server() (and touch self.dbapi)
@@ -444,6 +759,10 @@ class WebApiDB(SQLite):
         if poll_source_id is not None:
             GLib.source_remove(poll_source_id)
             self._poll_source_id = None
+        media_poll_source_id = getattr(self, "_media_poll_source_id", None)
+        if media_poll_source_id is not None:
+            GLib.source_remove(media_poll_source_id)
+            self._media_poll_source_id = None
         super().close(*args, **kwargs)
 
     def _poll_tick(self):
@@ -457,10 +776,39 @@ class WebApiDB(SQLite):
             LOG.exception("Periodic sync from server failed; will retry.")
         return GLib.SOURCE_CONTINUE
 
+    def _media_poll_tick(self):
+        """GLib.timeout_add_seconds callback for the slower media-file
+        scan -- same contract as _poll_tick() (must return True to keep
+        firing; a connection error is caught and logged here rather than
+        left to propagate), just for _sync_media_files() instead of the
+        record-history poll."""
+        try:
+            self._sync_media_files()
+        except _CONNECTION_ERRORS:
+            LOG.exception("Periodic media file sync failed; will retry.")
+        return GLib.SOURCE_CONTINUE
+
+    def transaction_begin(self, transaction):
+        """Hook DbTxn.__enter__ (which calls this immediately, before the
+        transaction's body runs) to snapshot the local per-type handle
+        sets ahead of a batch=True transaction that isn't one of
+        _sync_from_server()'s own (self._pulling) -- _reconcile_batch_
+        commit() needs that "before" picture to diff against, since DBAPI
+        skips its usual undo-log recording for a batch commit regardless
+        of who started it. See the module docstring."""
+        result = super().transaction_begin(transaction)
+        if transaction.batch and not self._pulling:
+            transaction._webapidb_before_handles = self._handles_by_class()
+        return result
+
     def transaction_commit(self, transaction):
         # Must run before super(): it clears the transaction's records.
         payload = transaction_to_json(transaction)
         super().transaction_commit(transaction)
+        before_handles = getattr(transaction, "_webapidb_before_handles", None)
+        if before_handles is not None:
+            self._reconcile_batch_commit(before_handles, transaction.start_time)
+            return
         # self._retrying is set by _retry_after_conflict() while it holds
         # its own DbTxn open, so the push this commit triggers knows it is
         # itself a conflict retry and won't retry again on a second
@@ -501,7 +849,9 @@ class WebApiDB(SQLite):
         if not payload:
             return
         try:
-            self.web_client.push_transaction(payload, undo=undo)
+            self.web_client.push_transaction(
+                payload, undo=undo, background=self._use_background_push(payload)
+            )
         except WebApiPushConflict:
             LOG.warning(
                 "Server rejected %d local change(s): the object(s) changed "
@@ -523,13 +873,121 @@ class WebApiDB(SQLite):
                 )
                 return
             self._retry_after_conflict(payload)
-        except _CONNECTION_ERRORS:
+        except _CONNECTION_ERRORS as err:
+            if not _is_retryable_push_error(err):
+                # A permission/payload rejection is not going to start
+                # working on its own; queueing it would retry it on every
+                # poll forever and eventually push real, retryable work out
+                # of the capped queue.
+                LOG.error(
+                    "Server permanently rejected %d local change(s) (%s). "
+                    "They will not be retried, and the local mirror has "
+                    "drifted from the server for those object(s).",
+                    len(payload),
+                    err,
+                )
+                return
             LOG.exception(
-                "Failed to push %d local change(s) to the server; "
-                "local mirror has drifted from the server until the "
-                "next successful push or read sync.",
+                "Failed to push %d local change(s) to the server; queued "
+                "for retry on the next successful contact with the server.",
                 len(payload),
             )
+            self._queue_pending_push(payload, undo=undo)
+
+    def _use_background_push(self, payload):
+        """Whether to ask the server to process this payload as a
+        background task rather than inline -- see BACKGROUND_PUSH_THRESHOLD
+        and webapi_client.push_transaction()'s ``background`` param.
+
+        A server that can't do it (too old, or its version can't be
+        determined) always answers False. A failure asking is not worth
+        aborting the push over: fall back to the synchronous path, which
+        works everywhere.
+        """
+        if len(payload) < BACKGROUND_PUSH_THRESHOLD:
+            return False
+        try:
+            return self.web_client.supports_background_transactions()
+        except _CONNECTION_ERRORS:
+            LOG.debug(
+                "Could not determine server support for background "
+                "transactions; pushing synchronously.",
+                exc_info=True,
+            )
+            return False
+
+    def _queue_pending_push(self, payload, undo=False):
+        """Persist a payload whose push failed for a connectivity reason,
+        so _flush_pending_pushes() can retry it later -- including after a
+        close()/reopen, since this goes through _set_metadata() (the same
+        mechanism sync_last_time already uses) rather than an in-memory
+        list. See the module docstring."""
+        pending = self._get_metadata("pending_pushes", default=[])
+        pending.append({"payload": payload, "undo": undo})
+        if len(pending) > MAX_PENDING_PUSHES:
+            dropped = len(pending) - MAX_PENDING_PUSHES
+            LOG.error(
+                "Pending-push queue exceeded %d entries; dropping the %d "
+                "oldest. Those local change(s) will not reach the server -- "
+                "the local mirror has permanently drifted and needs a manual "
+                "reconciliation against it.",
+                MAX_PENDING_PUSHES,
+                dropped,
+            )
+            pending = pending[dropped:]
+        self._set_metadata("pending_pushes", pending)
+
+    def _flush_pending_pushes(self):
+        """Retry queued pushes that previously failed for a connectivity
+        reason, oldest first, stopping at the first that still can't be
+        delivered -- see the module docstring on why this doesn't skip
+        ahead past a stuck entry.
+
+        A queued entry that comes back as a *conflict* rather than a
+        connectivity failure is dropped rather than retried forever: by the
+        time it is replayed the server has moved on, and _push_payload()'s
+        resync-and-merge path needs an "old" snapshot contemporaneous with
+        the edit, which a queued payload no longer has. An entry the server
+        permanently rejects (see _is_retryable_push_error()) is likewise
+        dropped rather than left to block the queue forever -- permissions
+        may well have changed between queueing and now.
+        """
+        pending = self._get_metadata("pending_pushes", default=[])
+        if not pending:
+            return
+        LOG.info("Retrying %d queued push(es) to the server.", len(pending))
+        while pending:
+            entry = pending[0]
+            try:
+                self.web_client.push_transaction(
+                    entry["payload"],
+                    undo=entry.get("undo", False),
+                    background=self._use_background_push(entry["payload"]),
+                )
+            except WebApiPushConflict:
+                LOG.warning(
+                    "A queued push of %d change(s) conflicts with the "
+                    "server's current data and cannot be replayed safely; "
+                    "dropping it. The local mirror has drifted from the "
+                    "server for those object(s).",
+                    len(entry["payload"]),
+                )
+            except _CONNECTION_ERRORS as err:
+                if _is_retryable_push_error(err):
+                    LOG.warning(
+                        "Still unable to deliver %d queued push(es); will retry.",
+                        len(pending),
+                    )
+                    break
+                LOG.error(
+                    "Server permanently rejected a queued push of %d "
+                    "change(s) (%s); dropping it. The local mirror has "
+                    "drifted from the server for those object(s).",
+                    len(entry["payload"]),
+                    err,
+                )
+            pending.pop(0)
+        self._set_metadata("pending_pushes", pending)
 
     def _retry_after_conflict(self, payload):
         """Reapply each locally-intended change on top of the mirror
@@ -567,6 +1025,93 @@ class WebApiDB(SQLite):
         finally:
             self._retrying = False
 
+    def _handles_by_class(self):
+        """{obj_class: set(handles)} across every primary object type --
+        the "before" snapshot transaction_begin() stashes on a local
+        batch=True transaction for _reconcile_batch_commit() to diff
+        against. See the module docstring."""
+        return {
+            obj_class: set(getattr(self, f"get_{KEY_TO_NAME_MAP[key]}_handles")())
+            for obj_class, key in CLASS_TO_KEY_MAP.items()
+        }
+
+    def _reconcile_batch_commit(self, before_handles, start_time):
+        """Reconstruct what a local batch=True transaction changed, by
+        diffing the pre-transaction handle snapshot against the current
+        state, and push it -- see the module docstring's note on why a
+        batch commit is otherwise invisible to transaction_to_json().
+
+        An object present now but not before is an add; one present before
+        but not now is a delete; one present in both whose .change is at or
+        after the transaction's start_time was updated during it
+        (_commit_base() stamps .change on every commit, batch included).
+        Objects the batch left untouched keep an older .change and are
+        correctly skipped.
+
+        The reconstructed entries go to _retry_after_conflict(), which
+        replays each as an ordinary non-batch local edit -- so each one
+        picks up a real "old" snapshot and goes out through the normal
+        transaction_commit() -> _push_payload() path.
+
+        Cost: the surviving-handle pass reads every primary object in the
+        tree to check its .change, so this is O(total objects) per batch
+        commit, not O(objects the batch touched). That is the same order
+        as whatever opened a batch transaction in the first place (a bulk
+        import writes everything; Check and Repair reads everything), and
+        .change isn't a queryable secondary column in DBAPI's schema --
+        only handle plus a couple of per-type extras are -- so there is no
+        cheaper way to ask "what did this transaction touch" after the
+        fact. If this ever shows up as a real bottleneck, the fix is to
+        make the batch operation's own transaction non-batch, not to
+        make this cleverer.
+        """
+        entries = []
+        for obj_class, key in CLASS_TO_KEY_MAP.items():
+            name = KEY_TO_NAME_MAP[key]
+            before = before_handles.get(obj_class, set())
+            after = set(getattr(self, f"get_{name}_handles")())
+            for handle in after - before:
+                entries.append({"type": "add", "handle": handle, "_class": obj_class})
+            for handle in before - after:
+                entries.append(
+                    {"type": "delete", "handle": handle, "_class": obj_class}
+                )
+            get_obj = getattr(self, f"get_{name}_from_handle")
+            for handle in after & before:
+                if get_obj(handle).change >= start_time:
+                    entries.append(
+                        {"type": "update", "handle": handle, "_class": obj_class}
+                    )
+        if not entries:
+            return
+        LOG.info(
+            "Reconstructed %d change(s) from a local batch transaction that "
+            "Gramps did not record per-object; pushing them to the server.",
+            len(entries),
+        )
+        self._retry_after_conflict(self._fill_entry_payloads(entries))
+
+    def _fill_entry_payloads(self, entries):
+        """Attach the "new" object data _retry_after_conflict() needs to
+        each reconstructed add/update entry, read from the local mirror as
+        it stands after the batch commit. A delete carries no "new" data,
+        and an add/update whose handle has since vanished is dropped."""
+        filled = []
+        for entry in entries:
+            if entry["type"] == "delete":
+                filled.append({**entry, "old": None, "new": None})
+                continue
+            key = CLASS_TO_KEY_MAP[entry["_class"]]
+            name = KEY_TO_NAME_MAP[key]
+            try:
+                obj = getattr(self, f"get_{name}_from_handle")(entry["handle"])
+            except HandleError:
+                continue
+            filled.append(
+                {**entry, "old": None, "new": remove_object(object_to_data(obj))}
+            )
+        return filled
+
     def _sync_from_server(self, progress_callback=None):
         """
         Pull every transaction after the last-seen timestamp and replay
@@ -588,6 +1133,7 @@ class WebApiDB(SQLite):
         history()'s docstring), so it stays a stable denominator across
         pages barring concurrent server-side writes during the sync.
         """
+        self._flush_pending_pushes()
         after = self._get_metadata("sync_last_time", default=0)
         applied = 0
         needs_full_resync = False
@@ -602,17 +1148,25 @@ class WebApiDB(SQLite):
             # (obj_class, handle) -> trans_type, collapsed to the net
             # effect within this page -- see _emit_change_signals().
             net_changes = {}
-            with DbTxn("Sync from server", self, batch=True) as trans:
-                for server_trans in transactions:
-                    if not server_trans["changes"]:
-                        needs_full_resync = True
-                    for change in server_trans["changes"]:
-                        if self._apply_change(change, trans):
-                            applied += 1
-                            net_changes[(change["obj_class"], change["obj_handle"])] = (
-                                change["trans_type"]
-                            )
-                    after = max(after, server_trans["timestamp"])
+            # _pulling marks this batch DbTxn as one of our own replays, so
+            # transaction_begin() doesn't snapshot handles for it and
+            # transaction_commit() doesn't try to push it back out as if it
+            # were a local bulk edit -- see the module docstring.
+            self._pulling = True
+            try:
+                with DbTxn("Sync from server", self, batch=True) as trans:
+                    for server_trans in transactions:
+                        if not server_trans["changes"]:
+                            needs_full_resync = True
+                        for change in server_trans["changes"]:
+                            if self._apply_change(change, trans):
+                                applied += 1
+                                net_changes[
+                                    (change["obj_class"], change["obj_handle"])
+                                ] = change["trans_type"]
+                        after = max(after, server_trans["timestamp"])
+            finally:
+                self._pulling = False
             self._emit_change_signals(net_changes)
             seen += len(transactions)
             if progress_callback is not None and total:
@@ -647,10 +1201,11 @@ class WebApiDB(SQLite):
 
         The clear-then-import pair each run inside their own batch=True
         DbTxn (ImportXml's own, internally, for the import half -- see
-        importxml.py), so neither triggers transaction_commit()'s
-        push-to-server path (transaction_to_json() sees nothing to
-        push for a batch transaction) -- this is a purely local rebuild,
-        same as _sync_from_server()'s own transactions.
+        importxml.py), both under the _pulling flag so transaction_commit()
+        treats them as pull-side replays rather than local bulk edits to
+        reconstruct and push back -- this is a purely local rebuild from
+        what the server already has, same as _sync_from_server()'s own
+        transactions.
 
         progress_callback, if given, only gets 0/100 markers bookending
         the download+reimport -- unlike _sync_from_server()'s page-by-page
@@ -663,6 +1218,11 @@ class WebApiDB(SQLite):
         with NamedTemporaryFile(suffix=".gramps", delete=False) as tmp_file:
             tmp_file.write(data)
             tmp_path = tmp_file.name
+        # Both halves below are pull-side rebuilds, not local edits -- see
+        # _sync_from_server()'s own note on the _pulling flag. ImportXml
+        # opens its own batch DbTxn internally, so this has to stay set
+        # across importData() too, not just the explicit DbTxn above it.
+        self._pulling = True
         try:
             with DbTxn(
                 _("Clear local mirror before full resync"), self, batch=True
@@ -682,9 +1242,96 @@ class WebApiDB(SQLite):
             # object type, telling every view to reload wholesale).
             self.request_rebuild()
         finally:
+            self._pulling = False
             os.remove(tmp_path)
         if progress_callback is not None:
             progress_callback(100)
+
+    def _sync_media_files(self):
+        """
+        Download media files missing locally, then upload local media
+        files the server doesn't have yet -- the file-transfer half of
+        keeping the mirror in sync, alongside _sync_from_server()'s
+        object-record replay (which only ever moves a Media object's
+        *metadata* -- path, description, checksum, ... -- never the file
+        the path points at). See the module docstring's note on why this
+        runs on its own, coarser timer instead of every record-sync tick.
+
+        A single file failing to transfer (network error, a stale handle,
+        a 409 because something else uploaded it first) is logged and
+        skipped rather than aborting the rest of the pass -- the same
+        shape as _push_payload()'s error handling, just applied per file
+        here since there is no single all-or-nothing request covering
+        every file the way POST /transactions/ does for object records.
+
+        Returns ``(downloaded, uploaded)`` file counts.
+        """
+        downloaded = 0
+        for handle in self._missing_local_media_handles():
+            if self._download_one_media_file(handle):
+                downloaded += 1
+        uploaded = 0
+        for handle in self._missing_remote_media_handles():
+            if self._upload_one_media_file(handle):
+                uploaded += 1
+        if downloaded or uploaded:
+            LOG.info(
+                "Media file sync: downloaded %d file(s), uploaded %d file(s).",
+                downloaded,
+                uploaded,
+            )
+        return downloaded, uploaded
+
+    def _missing_local_media_handles(self):
+        """Handles of local Media objects whose file isn't on disk.
+        Ported from GrampsWebSync's get_missing_files_local()."""
+        return [
+            media.handle
+            for media in self.iter_media()
+            if not os.path.exists(media_path_full(self, media.get_path()))
+        ]
+
+    def _missing_remote_media_handles(self):
+        """Handles of Media objects the server has no uploaded file for
+        yet. Ported from GrampsWebSync's get_missing_files_remote()."""
+        return [item["handle"] for item in self.web_client.get_missing_files()]
+
+    def _download_one_media_file(self, handle):
+        """Download one locally-missing media file. Returns True on
+        success; logs and returns False on a HandleError (the object was
+        removed locally between the scan and here) or a connection error,
+        rather than aborting the rest of _sync_media_files()'s pass."""
+        try:
+            obj = self.get_media_from_handle(handle)
+        except HandleError:
+            return False
+        path = media_path_full(self, obj.get_path())
+        try:
+            self.web_client.download_media_file(handle, path)
+        except _CONNECTION_ERRORS as err:
+            LOG.warning("Failed to download media file for %s: %s", obj.gramps_id, err)
+            return False
+        return True
+
+    def _upload_one_media_file(self, handle):
+        """Upload one media file the server is missing. Returns True on
+        success; False if the local object no longer exists, its file
+        isn't actually on disk either (nothing to upload), the server
+        already got a file for it from elsewhere in the meantime (a 409
+        -- see WebApiHandler.upload_media_file()), or the upload
+        otherwise failed."""
+        try:
+            obj = self.get_media_from_handle(handle)
+        except HandleError:
+            return False
+        path = media_path_full(self, obj.get_path())
+        if not os.path.exists(path):
+            return False
+        try:
+            return self.web_client.upload_media_file(handle, path)
+        except _CONNECTION_ERRORS as err:
+            LOG.warning("Failed to upload media file for %s: %s", obj.gramps_id, err)
+            return False
 
     def _apply_change(self, change, trans):
         """Replay one server change into the local mirror. Returns True

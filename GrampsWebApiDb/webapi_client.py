@@ -24,10 +24,13 @@ Minimal Gramps Web API client: authentication and read access.
 
 Trimmed from the WebApiHandler class in the GrampsWebSync addon (same
 repo, same license) -- credit to David Straub for the original token
-fetch/refresh and SSL-context handling. Dropped everything specific to
-GrampsWebSync's push-a-local-transaction / XML-export / media-file-sync
-job, since WebApiDB only needs auth plus reading the transaction-history
-feed for now. Re-add pieces here (rather than importing GrampsWebSync
+fetch/refresh and SSL-context handling. Originally dropped everything
+specific to GrampsWebSync's push-a-local-transaction / XML-export /
+media-file-sync job, since WebApiDB only needed auth plus reading the
+transaction-history feed; media-file-sync (get_missing_files(),
+download_media_file(), upload_media_file()) has since been ported back in
+for grampswebapidb.py's own unattended media sync -- see that module's
+docstring. Re-add pieces here (rather than importing GrampsWebSync
 directly) so this addon has no runtime dependency on another addon being
 installed.
 
@@ -93,6 +96,21 @@ TIMEOUT = 60
 #: reliably 429s otherwise.
 RATE_LIMIT_BACKOFF = 1.1
 
+#: Chunk size used when streaming a media file download to disk -- see
+#: download_media_file().
+_DOWNLOAD_CHUNK_SIZE = 1024 * 64
+
+#: First gramps-web-api version whose POST /transactions/ understands
+#: ?background=1 (same gate GrampsWebSync's webapihandler.commit() uses).
+BACKGROUND_MIN_API_VERSION = (2, 7)
+
+#: How long to keep polling GET /tasks/<id> for a backgrounded push before
+#: giving up, and how long to wait between polls. The give-up is a
+#: TimeoutError (an OSError subclass), so callers that treat connection
+#: errors as retryable pick it up as one.
+TASK_TIMEOUT = 600
+TASK_POLL_INTERVAL = 1.0
+
 #: The exact message gramps_webapi/api/tasks.py's old_unchanged() check
 #: raises as ValueError("Object has changed"), which POST /transactions/
 #: (without force=1) surfaces as HTTP 400 {"error": {"message": ...}}.
@@ -119,6 +137,57 @@ def _raise_for_push_conflict(exc: HTTPError) -> None:
     if message == _CONFLICT_MESSAGE:
         raise WebApiPushConflict(message) from exc
     raise exc
+
+
+def parse_version(version):
+    """Parse a SemVer-ish string into a ``(major, minor)`` tuple.
+
+    Dependency-free, and tolerant of the pre-release/build suffixes a
+    development build carries ("2.7.0-rc1", "2.7.0+dirty"). Returns None
+    if the string doesn't start with something numeric, so callers can
+    treat "I can't tell" differently from "it's old".
+
+    Ported from GrampsWebSync's webapihandler.parse_version() (same repo,
+    same license, credit David Straub), plus the None fallback.
+    """
+    if not version:
+        return None
+    main_version = str(version).split("-", 1)[0].split("+", 1)[0]
+    parts = []
+    for part in main_version.split("."):
+        try:
+            parts.append(int(part))
+        except ValueError:
+            break
+    if not parts:
+        return None
+    if len(parts) == 1:
+        parts.append(0)
+    return (parts[0], parts[1])
+
+
+def _task_error_message(body):
+    """Pull a human-readable failure message out of a GET /tasks/<id>
+    body for a FAILURE/REVOKED task.
+
+    The server reports the same underlying result three ways -- a
+    structured "result_object" (a {"error": {...}} dict when the task
+    aborted through TaskError), plus "info"/"result" stringifications
+    kept for backward compatibility (see gramps_webapi/api/resources/
+    tasks.py). Prefer the structured form, fall back to the strings.
+    """
+    payload = body.get("result_object")
+    if isinstance(payload, dict):
+        error = payload.get("error")
+        if isinstance(error, dict) and error.get("message"):
+            return str(error["message"])
+        if error:
+            return str(error)
+    for key in ("info", "result"):
+        value = body.get(key)
+        if value:
+            return str(value)
+    return "unknown error"
 
 
 def create_macos_ssl_context():
@@ -199,6 +268,7 @@ class WebApiHandler:
         self.password = password
         self._refresh_token = refresh_token
         self._access_token: str | None = None
+        self._metadata: dict[str, Any] | None = None
         self._ctx = (
             create_macos_ssl_context() if platform.system() == "Darwin" else None
         )
@@ -276,7 +346,10 @@ class WebApiHandler:
         req = Request(
             f"{self.url}/token/",
             data=data.encode(),
-            headers={"Content-Type": "application/json", "User-Agent": "GrampsWebApiDb"},
+            headers={
+                "Content-Type": "application/json",
+                "User-Agent": "GrampsWebApiDb",
+            },
         )
         try:
             with self._open(req) as res:
@@ -320,12 +393,16 @@ class WebApiHandler:
                 return self._refresh_access_token(retry_on_rate_limit=False)
             if "/api" not in self.url:
                 self.url = f"{self.url}/api"
-                return self._refresh_access_token(retry_on_rate_limit=retry_on_rate_limit)
+                return self._refresh_access_token(
+                    retry_on_rate_limit=retry_on_rate_limit
+                )
             raise
         except (UnicodeDecodeError, json.JSONDecodeError):
             if "/api" not in self.url:
                 self.url = f"{self.url}/api"
-                return self._refresh_access_token(retry_on_rate_limit=retry_on_rate_limit)
+                return self._refresh_access_token(
+                    retry_on_rate_limit=retry_on_rate_limit
+                )
             raise
         self._access_token = res_json["access_token"]
 
@@ -353,8 +430,38 @@ class WebApiHandler:
             self.username = data["name"]
         return self.username
 
+    def get_metadata(self) -> dict[str, Any]:
+        """Server metadata (GET /metadata/), cached for this handler's
+        lifetime -- it describes the deployment, which doesn't change
+        while a tree is open. Needs no special permission beyond being
+        authenticated (metadata.py's MetadataResource is a plain
+        ProtectedResource)."""
+        if self._metadata is None:
+            data, _headers = self._get_json(f"{self.url}/metadata/")
+            self._metadata = data
+        return self._metadata
+
+    def get_api_version(self) -> str | None:
+        """gramps-web-api's own version string, e.g. "2.8.1"."""
+        return (self.get_metadata().get("gramps_webapi") or {}).get("version")
+
+    def get_gramps_version(self) -> str | None:
+        """Version of the Gramps library the *server* runs on, e.g.
+        "6.0.1". grampswebapidb.py gates on this: the transaction-history
+        feed's object serialization only has the "_class"-tagged shape
+        data_to_object() understands from Gramps 6.0 onwards."""
+        return (self.get_metadata().get("gramps") or {}).get("version")
+
+    def supports_background_transactions(self) -> bool:
+        """Whether POST /transactions/ on this server understands
+        ?background=1. Unknown/unparseable versions answer False -- the
+        synchronous path works on every version, so it's the safe
+        default."""
+        version = parse_version(self.get_api_version())
+        return version is not None and version >= BACKGROUND_MIN_API_VERSION
+
     def get_identity(self) -> str:
-        """"<username>@<hostname>" identifying the account+server this
+        """ "<username>@<hostname>" identifying the account+server this
         handler authenticates as -- see grampswebapidb.py's
         _check_identity(), which requires a Family Tree's own name to
         match this before trusting its local mirror."""
@@ -375,7 +482,9 @@ class WebApiHandler:
         except HTTPError as exc:
             if exc.code == 401 and retry:
                 # in case of 401, retry once with a new token
-                sleep(RATE_LIMIT_BACKOFF)  # avoid immediately re-tripping the rate limit
+                sleep(
+                    RATE_LIMIT_BACKOFF
+                )  # avoid immediately re-tripping the rate limit
                 self._authenticate()
                 return self._get_json(url, retry=False)
             if exc.code == 429 and retry:
@@ -432,6 +541,112 @@ class WebApiHandler:
         url = f"{self.url}/exporters/{extension}/file"
         return self._get_binary(url)
 
+    def get_missing_files(self) -> list[dict[str, Any]]:
+        """
+        List the server's Media objects that have no uploaded file yet
+        (GET /media/?filemissing=1) -- the remote side of the
+        missing-file comparison grampswebapidb.py's WebApiDB._sync_media_
+        files() makes; the local side is a plain os.path.exists() check,
+        nothing the server needs to be asked about. Each item is the
+        server's own JSON Media object; only "handle" is used by the
+        caller. Shares _get_json()'s existing 401/429/network retry
+        handling.
+        """
+        body, _headers = self._get_json(f"{self.url}/media/?filemissing=1")
+        return body
+
+    def download_media_file(self, handle: str, path: str, retry: bool = True) -> None:
+        """
+        Download one media file from the server and write it to
+        ``path``, creating any missing parent directory first. Streamed
+        in chunks rather than buffered fully in memory the way
+        _get_binary() is -- media files (video in particular) can be
+        large.
+
+        Ported from GrampsWebSync's webapihandler.download_media_file()/
+        _download_file() (same repo, same license, credit David Straub),
+        folded into one method and authenticated the same way every
+        other request in this class already is -- a bearer header, not
+        GrampsWebSync's ``?jwt=`` query-string variant (gramps-web-api
+        accepts both; see JWT_TOKEN_LOCATION in its config.py, and there
+        is no <img src=...>-style consumer here that would need the
+        query-string form).
+        """
+        req = Request(
+            f"{self.url}/media/{handle}/file",
+            headers={
+                "Authorization": f"Bearer {self.access_token}",
+                "User-Agent": "GrampsWebApiDb",
+            },
+        )
+        try:
+            with self._open(req) as res:
+                os.makedirs(os.path.dirname(path), exist_ok=True)
+                with open(path, "wb") as f:
+                    chunk = res.read(_DOWNLOAD_CHUNK_SIZE)
+                    while chunk:
+                        f.write(chunk)
+                        chunk = res.read(_DOWNLOAD_CHUNK_SIZE)
+        except HTTPError as exc:
+            if exc.code == 401 and retry:
+                sleep(RATE_LIMIT_BACKOFF)
+                self._authenticate()
+                return self.download_media_file(handle, path, retry=False)
+            if exc.code == 429 and retry:
+                sleep(RATE_LIMIT_BACKOFF)
+                return self.download_media_file(handle, path, retry=False)
+            raise
+        except (URLError, socket.timeout):
+            if retry:
+                sleep(RATE_LIMIT_BACKOFF)
+                return self.download_media_file(handle, path, retry=False)
+            raise
+
+    def upload_media_file(self, handle: str, path: str, retry: bool = True) -> bool:
+        """
+        Upload one local media file to the server for ``handle`` (PUT
+        /media/<handle>/file?uploadmissing=1), streamed from disk rather
+        than read fully into memory first. Returns False on a 409 --
+        something else already uploaded a file for this object in the
+        meantime, an expected outcome of a concurrent sync rather than a
+        failure -- and True otherwise.
+
+        Ported from GrampsWebSync's webapihandler.upload_media_file()/
+        _upload_file(), folded into one method and sharing this class's
+        retry conventions (401 re-auth, 429 backoff, one retry each)
+        rather than the source's separate hand-rolled helper.
+        """
+        with open(path, "rb") as f:
+            req = Request(
+                f"{self.url}/media/{handle}/file?uploadmissing=1",
+                data=f,
+                method="PUT",
+                headers={
+                    "Authorization": f"Bearer {self.access_token}",
+                    "User-Agent": "GrampsWebApiDb",
+                },
+            )
+            try:
+                with self._open(req) as res:
+                    res.read()
+            except HTTPError as exc:
+                if exc.code == 409:
+                    return False
+                if exc.code == 401 and retry:
+                    sleep(RATE_LIMIT_BACKOFF)
+                    self._authenticate()
+                    return self.upload_media_file(handle, path, retry=False)
+                if exc.code == 429 and retry:
+                    sleep(RATE_LIMIT_BACKOFF)
+                    return self.upload_media_file(handle, path, retry=False)
+                raise
+            except (URLError, socket.timeout):
+                if retry:
+                    sleep(RATE_LIMIT_BACKOFF)
+                    return self.upload_media_file(handle, path, retry=False)
+                raise
+        return True
+
     def get_transaction_history(
         self, after: float = 0, page: int = 1, pagesize: int = 100
     ) -> tuple[list[dict[str, Any]], int]:
@@ -456,11 +671,46 @@ class WebApiHandler:
         total_count = int(headers.get("X-Total-Count", len(body)))
         return body, total_count
 
+    def wait_for_task(
+        self,
+        task_id: str,
+        timeout: float = TASK_TIMEOUT,
+        poll_interval: float = TASK_POLL_INTERVAL,
+    ) -> None:
+        """Poll GET /tasks/<id> until a backgrounded server task finishes.
+
+        Returns normally on SUCCESS. A FAILURE/REVOKED task raises --
+        WebApiPushConflict if it failed the server's old-data check (the
+        same "Object has changed" sentinel a synchronous push reports as
+        HTTP 400, so the caller's conflict handling works identically
+        either way), otherwise ValueError carrying the server's message.
+        Gives up after ``timeout`` seconds with a TimeoutError, which is
+        an OSError and so reads as a transient/connection-ish failure to
+        callers rather than a refusal.
+        """
+        deadline = time.monotonic() + timeout
+        while True:
+            body, _headers = self._get_json(f"{self.url}/tasks/{task_id}")
+            state = body.get("state")
+            if state == "SUCCESS":
+                return
+            if state in ("FAILURE", "REVOKED"):
+                message = _task_error_message(body)
+                if message == _CONFLICT_MESSAGE:
+                    raise WebApiPushConflict(message)
+                raise ValueError(f"Server task {state}: {message}")
+            if time.monotonic() >= deadline:
+                raise TimeoutError(
+                    f"Server task {task_id} did not finish within {timeout}s"
+                )
+            sleep(poll_interval)
+
     def push_transaction(
         self,
         payload: list[dict[str, Any]],
         retry: bool = True,
         undo: bool = False,
+        background: bool = False,
     ) -> None:
         """
         POST a batch of local changes to /transactions/ (no force=1): the
@@ -487,13 +737,38 @@ class WebApiHandler:
         having to compute the inverse payload locally. Redo is *not* a
         variant of this -- it's just an ordinary push_transaction() call
         with the original (forward) payload again.
+
+        ``background=True`` adds ?background=1, asking the server to queue
+        the work and answer 202 immediately rather than holding the
+        connection open while it processes -- the way to push a payload
+        big enough to risk hitting TIMEOUT mid-request. Only meaningful on
+        gramps-web-api >= BACKGROUND_MIN_API_VERSION; check
+        supports_background_transactions() first. Two wrinkles the caller
+        doesn't have to care about, both handled here so a backgrounded
+        push raises exactly what a synchronous one would:
+
+        - The server only *actually* backgrounds the work if it has a
+          Celery queue configured; otherwise run_task() runs it inline and
+          returns 200 (see gramps_webapi/api/tasks.py). So a 202 means
+          "poll the task", and a 200 means it's already done.
+        - On that inline path a conflict surfaces as HTTP **500**, not
+          400: run_task() catches the ValueError process_transactions
+          raises and re-aborts it as a 500 with the same
+          {"error": {"message": ...}} body. Checked for the conflict
+          sentinel here too, so it doesn't get misread as a transient
+          server error and retried forever.
         """
         if not payload:
             return
         data = json.dumps(payload).encode()
-        url = f"{self.url}/transactions/"
+        params = {}
         if undo:
-            url += "?undo=1"
+            params["undo"] = "1"
+        if background:
+            params["background"] = "1"
+        url = f"{self.url}/transactions/"
+        if params:
+            url += "?" + urlencode(params)
         req = Request(
             url,
             data=data,
@@ -506,20 +781,32 @@ class WebApiHandler:
         )
         try:
             with self._open(req) as res:
-                res.read()
+                status = res.getcode()
+                body = res.read()
         except HTTPError as exc:
             if exc.code == 401 and retry:
                 sleep(RATE_LIMIT_BACKOFF)
                 self._authenticate()
-                return self.push_transaction(payload, retry=False, undo=undo)
+                return self.push_transaction(
+                    payload, retry=False, undo=undo, background=background
+                )
             if exc.code == 429 and retry:
                 sleep(RATE_LIMIT_BACKOFF)
-                return self.push_transaction(payload, retry=False, undo=undo)
-            if exc.code == 400:
+                return self.push_transaction(
+                    payload, retry=False, undo=undo, background=background
+                )
+            # 400 is the synchronous conflict; 500 is the same conflict
+            # re-wrapped by run_task() on the inline background path.
+            if exc.code in (400, 500):
                 _raise_for_push_conflict(exc)
             raise
         except (URLError, socket.timeout):
             if retry:
                 sleep(RATE_LIMIT_BACKOFF)
-                return self.push_transaction(payload, retry=False, undo=undo)
+                return self.push_transaction(
+                    payload, retry=False, undo=undo, background=background
+                )
             raise
+        if status == 202:
+            task_id = json.loads(body)["task"]["id"]
+            self.wait_for_task(task_id)
