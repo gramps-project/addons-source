@@ -46,7 +46,7 @@ Run with::
 import os
 import sys
 import unittest
-from urllib.error import HTTPError
+from urllib.error import HTTPError, URLError
 from unittest import mock
 
 # -------------------------------------------------------------------------
@@ -460,9 +460,7 @@ class TestSyncFromServer(unittest.TestCase):
         ]
         progress = mock.MagicMock()
         self.db._sync_from_server(progress_callback=progress)
-        self.assertEqual(
-            [call.args[0] for call in progress.call_args_list], [100, 100]
-        )
+        self.assertEqual([call.args[0] for call in progress.call_args_list], [100, 100])
 
     def test_no_progress_call_when_total_is_zero(self):
         # An empty-history sync (a brand new server-side tree, or nothing
@@ -480,6 +478,41 @@ class TestSyncFromServer(unittest.TestCase):
         progress = mock.MagicMock()
         self.db._sync_from_server(progress_callback=progress)
         self.db._full_resync.assert_called_once_with(progress_callback=progress)
+
+    def test_pulling_flag_is_set_during_replay_and_cleared_after(self):
+        # _pulling tells transaction_begin() this batch DbTxn is a
+        # server-pull replay, not a local bulk edit to reconstruct and push
+        # back -- without it, every synced page would be echoed straight
+        # back at the server. A leaked True would then silently disable
+        # reconciliation for later genuine local batch operations.
+        change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
+        self.db.web_client.get_transaction_history.return_value = (
+            [{"timestamp": 5.0, "changes": [change]}],
+            1,
+        )
+        seen = {}
+
+        def check_flag(change, trans):
+            seen["during"] = self.db._pulling
+            return True
+
+        with mock.patch.object(self.db, "_apply_change", side_effect=check_flag):
+            self.db._sync_from_server()
+        self.assertTrue(seen["during"])
+        self.assertFalse(self.db._pulling)
+
+    def test_pulling_flag_is_cleared_even_if_replay_raises(self):
+        change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
+        self.db.web_client.get_transaction_history.return_value = (
+            [{"timestamp": 5.0, "changes": [change]}],
+            1,
+        )
+        with mock.patch.object(
+            self.db, "_apply_change", side_effect=RuntimeError("boom")
+        ):
+            with self.assertRaises(RuntimeError):
+                self.db._sync_from_server()
+        self.assertFalse(self.db._pulling)
 
 
 # -------------------------------------------------------------------------
@@ -616,6 +649,44 @@ class TestFullResync(unittest.TestCase):
 
         self.db.emit.assert_not_called()
 
+    def test_pulling_flag_is_set_during_the_rebuild_and_cleared_after(self):
+        # _pulling suppresses the batch-commit reconciliation that would
+        # otherwise try to push this whole wipe-and-reimport back at the
+        # server as if it were a local bulk edit. It has to stay set across
+        # importData() (which opens its own batch DbTxn internally), and it
+        # has to be cleared afterwards -- a leaked True would silently
+        # disable reconciliation for every later local batch operation in
+        # the session.
+        for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
+            if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
+                continue
+            setattr(self.db, f"get_{name}_handles", mock.MagicMock(return_value=[]))
+            setattr(self.db, f"remove_{name}", mock.MagicMock())
+        seen = {}
+
+        def check_flag(database, filename, user):
+            seen["during_import"] = self.db._pulling
+
+        with mock.patch.object(grampswebapidb, "importData", check_flag):
+            self.db._full_resync()
+        self.assertTrue(seen["during_import"])
+        self.assertFalse(self.db._pulling)
+
+    def test_pulling_flag_is_cleared_even_if_the_reimport_raises(self):
+        for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
+            if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
+                continue
+            setattr(self.db, f"get_{name}_handles", mock.MagicMock(return_value=[]))
+            setattr(self.db, f"remove_{name}", mock.MagicMock())
+
+        def failing_import_data(database, filename, user):
+            raise RuntimeError("boom")
+
+        with mock.patch.object(grampswebapidb, "importData", failing_import_data):
+            with self.assertRaises(RuntimeError):
+                self.db._full_resync()
+        self.assertFalse(self.db._pulling)
+
     def test_no_progress_callback_by_default(self):
         for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
             if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
@@ -664,6 +735,15 @@ class TestTransactionCommit(unittest.TestCase):
     def setUp(self):
         self.db = new_instance()
         self.db.web_client = mock.MagicMock()
+        # A push that fails for a connectivity reason now persists the
+        # payload via _set_metadata() for later retry (see
+        # TestPendingPushQueue), so even the plain push tests here need
+        # somewhere for that to land.
+        self.metadata = {}
+        self.db._get_metadata = lambda key, default=0: self.metadata.get(key, default)
+        self.db._set_metadata = (
+            lambda key, value, use_txn=True: self.metadata.__setitem__(key, value)
+        )
 
     def test_no_local_changes_does_not_push(self):
         trans = FakeTransaction([])
@@ -1191,6 +1271,260 @@ class TestCheckIdentity(unittest.TestCase):
 
 # -------------------------------------------------------------------------
 #
+# TestCheckPermissions
+#
+# The server gates GET /transactions/history/ behind ViewPrivate and POST
+# /transactions/ behind AddObject+EditObject+DeleteObject together. Checked
+# up front at load() so a missing one is named explicitly rather than
+# surfacing later as a bare 403 -- or, for the ViewPrivate export path, as
+# a silently privacy-filtered resync. See the module docstring.
+#
+# -------------------------------------------------------------------------
+class TestCheckPermissions(unittest.TestCase):
+    ALL_PERMS = ["ViewPrivate", "AddObject", "EditObject", "DeleteObject"]
+
+    def setUp(self):
+        self.db = new_instance()
+        self.db._directory = "/tmp/tree"
+        self.db.web_client = mock.MagicMock()
+
+    def _grant(self, *perms):
+        self.db.web_client.get_permissions.return_value = list(perms)
+
+    def test_editor_role_permissions_pass(self):
+        self._grant(*self.ALL_PERMS)
+        self.db._check_permissions()  # must not raise
+
+    def test_extra_permissions_are_fine(self):
+        # An Owner/Admin has a superset; only the required ones matter.
+        self._grant(*self.ALL_PERMS, "AddUser", "ImportFile")
+        self.db._check_permissions()  # must not raise
+
+    def test_missing_view_private_raises(self):
+        self._grant("AddObject", "EditObject", "DeleteObject")
+        with self.assertRaises(DbConnectionError) as ctx:
+            self.db._check_permissions()
+        self.assertIn("ViewPrivate", str(ctx.exception))
+
+    def test_missing_one_write_permission_raises(self):
+        # has_permissions() server-side fails if *any* of the three are
+        # missing, so a Contributor (AddObject only) cannot push at all.
+        self._grant("ViewPrivate", "AddObject")
+        with self.assertRaises(DbConnectionError) as ctx:
+            self.db._check_permissions()
+        message = str(ctx.exception)
+        self.assertIn("EditObject", message)
+        self.assertIn("DeleteObject", message)
+        self.assertNotIn("AddObject", message.replace("EditObject", ""))
+
+    def test_error_names_the_role_to_ask_for(self):
+        self._grant()
+        with self.assertRaises(DbConnectionError) as ctx:
+            self.db._check_permissions()
+        self.assertIn("Editor", str(ctx.exception))
+
+    def test_read_only_tree_does_not_need_write_permissions(self):
+        # A tree opened read-only never pushes, so a Member-level account
+        # (ViewPrivate but no write permissions) is enough for it.
+        self._grant("ViewPrivate")
+        self.db._check_permissions(writable=False)  # must not raise
+
+    def test_read_only_tree_still_needs_view_private(self):
+        self._grant("AddObject", "EditObject", "DeleteObject")
+        with self.assertRaises(DbConnectionError):
+            self.db._check_permissions(writable=False)
+
+    def test_connection_error_fetching_permissions_is_wrapped(self):
+        self.db.web_client.get_permissions.side_effect = HTTPError(
+            "https://example.com/api/token/refresh/", 500, "boom", None, None
+        )
+        with self.assertRaises(DbConnectionError):
+            self.db._check_permissions()
+
+    def test_load_checks_permissions_for_a_writable_tree(self):
+        with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
+            self.db, "_check_identity"
+        ), mock.patch.object(self.db, "_check_permissions") as check, mock.patch.object(
+            self.db, "_check_server_version"
+        ), mock.patch.object(
+            self.db, "_sync_from_server"
+        ), mock.patch.object(
+            self.db, "_sync_media_files"
+        ), mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds"
+        ):
+            self.db.load("some/path")
+        check.assert_called_once_with(writable=True)
+
+    def test_load_in_read_only_mode_checks_read_permissions_only(self):
+        # DbGeneric.load()'s signature is (directory, callback, mode, ...) --
+        # cli/grampscli.py passes mode positionally.
+        with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
+            self.db, "_check_identity"
+        ), mock.patch.object(self.db, "_check_permissions") as check, mock.patch.object(
+            self.db, "_check_server_version"
+        ), mock.patch.object(
+            self.db, "_sync_from_server"
+        ), mock.patch.object(
+            self.db, "_sync_media_files"
+        ), mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds"
+        ):
+            self.db.load("some/path", None, "r")
+        check.assert_called_once_with(writable=False)
+
+    def test_load_reads_mode_from_a_keyword_too(self):
+        with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
+            self.db, "_check_identity"
+        ), mock.patch.object(self.db, "_check_permissions") as check, mock.patch.object(
+            self.db, "_check_server_version"
+        ), mock.patch.object(
+            self.db, "_sync_from_server"
+        ), mock.patch.object(
+            self.db, "_sync_media_files"
+        ), mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds"
+        ):
+            self.db.load("some/path", mode="r")
+        check.assert_called_once_with(writable=False)
+
+
+# -------------------------------------------------------------------------
+#
+# TestCheckServerVersion
+#
+# A server running Gramps < 6.0 serializes its transaction history in a
+# shape data_to_object() can't read, which would otherwise surface as a
+# bare KeyError mid-sync. See the module docstring.
+#
+# -------------------------------------------------------------------------
+class TestCheckServerVersion(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+        self.db._directory = "/tmp/tree"
+        self.db.web_client = mock.MagicMock()
+
+    def test_supported_version_passes(self):
+        self.db.web_client.get_gramps_version.return_value = "6.0.1"
+        self.db._check_server_version()  # must not raise
+
+    def test_newer_version_passes(self):
+        self.db.web_client.get_gramps_version.return_value = "6.1.0"
+        self.db._check_server_version()  # must not raise
+
+    def test_too_old_raises_naming_both_versions(self):
+        self.db.web_client.get_gramps_version.return_value = "5.2.3"
+        with self.assertRaises(DbConnectionError) as ctx:
+            self.db._check_server_version()
+        message = str(ctx.exception)
+        self.assertIn("5.2.3", message)
+        self.assertIn("6.0", message)
+
+    def test_unknown_version_is_allowed_through(self):
+        # Better to try and let the KeyError path catch a genuinely
+        # incompatible server than to block on a guess.
+        self.db.web_client.get_gramps_version.return_value = None
+        self.db._check_server_version()  # must not raise
+
+    def test_unparseable_version_is_allowed_through(self):
+        self.db.web_client.get_gramps_version.return_value = "some-dev-build"
+        self.db._check_server_version()  # must not raise
+
+    def test_connection_error_is_wrapped(self):
+        self.db.web_client.get_gramps_version.side_effect = HTTPError(
+            "https://example.com/api/metadata/", 500, "boom", None, None
+        )
+        with self.assertRaises(DbConnectionError):
+            self.db._check_server_version()
+
+
+# -------------------------------------------------------------------------
+#
+# TestUseBackgroundPush
+#
+# -------------------------------------------------------------------------
+class TestUseBackgroundPush(unittest.TestCase):
+    """Only a large payload on a capable server goes through the server's
+    background task queue -- see BACKGROUND_PUSH_THRESHOLD."""
+
+    def setUp(self):
+        self.db = new_instance()
+        self.db.web_client = mock.MagicMock()
+
+    def _payload(self, size):
+        return [{"type": "add", "handle": "H%d" % i} for i in range(size)]
+
+    def test_small_payload_is_synchronous_without_asking_the_server(self):
+        self.db.web_client.supports_background_transactions.return_value = True
+        self.assertFalse(self.db._use_background_push(self._payload(1)))
+        self.db.web_client.supports_background_transactions.assert_not_called()
+
+    def test_large_payload_on_a_capable_server_goes_background(self):
+        self.db.web_client.supports_background_transactions.return_value = True
+        payload = self._payload(grampswebapidb.BACKGROUND_PUSH_THRESHOLD)
+        self.assertTrue(self.db._use_background_push(payload))
+
+    def test_large_payload_on_an_old_server_stays_synchronous(self):
+        self.db.web_client.supports_background_transactions.return_value = False
+        payload = self._payload(grampswebapidb.BACKGROUND_PUSH_THRESHOLD)
+        self.assertFalse(self.db._use_background_push(payload))
+
+    def test_failure_asking_falls_back_to_synchronous(self):
+        # Not worth failing the push over -- the synchronous path works
+        # against every server version.
+        self.db.web_client.supports_background_transactions.side_effect = OSError(
+            "metadata unreachable"
+        )
+        payload = self._payload(grampswebapidb.BACKGROUND_PUSH_THRESHOLD)
+        self.assertFalse(self.db._use_background_push(payload))
+
+    def test_push_payload_passes_the_flag_through(self):
+        self.db._get_metadata = lambda key, default=0: default
+        self.db._set_metadata = lambda key, value, use_txn=True: None
+        self.db.web_client.supports_background_transactions.return_value = True
+        payload = self._payload(grampswebapidb.BACKGROUND_PUSH_THRESHOLD)
+        self.db._push_payload(payload)
+        self.assertTrue(
+            self.db.web_client.push_transaction.call_args.kwargs["background"]
+        )
+
+
+# -------------------------------------------------------------------------
+#
+# TestIsRetryablePushError
+#
+# -------------------------------------------------------------------------
+class TestIsRetryablePushError(unittest.TestCase):
+    """A 4xx other than 429 is the server's settled answer and must not be
+    queued for retry -- see _is_retryable_push_error()."""
+
+    def _http(self, code):
+        return HTTPError("https://example.com/api/transactions/", code, "x", None, None)
+
+    def test_403_is_not_retryable(self):
+        self.assertFalse(grampswebapidb._is_retryable_push_error(self._http(403)))
+
+    def test_400_is_not_retryable(self):
+        self.assertFalse(grampswebapidb._is_retryable_push_error(self._http(400)))
+
+    def test_404_is_not_retryable(self):
+        self.assertFalse(grampswebapidb._is_retryable_push_error(self._http(404)))
+
+    def test_429_is_retryable(self):
+        self.assertTrue(grampswebapidb._is_retryable_push_error(self._http(429)))
+
+    def test_500_is_retryable(self):
+        self.assertTrue(grampswebapidb._is_retryable_push_error(self._http(500)))
+
+    def test_network_errors_are_retryable(self):
+        self.assertTrue(grampswebapidb._is_retryable_push_error(OSError("down")))
+        self.assertTrue(
+            grampswebapidb._is_retryable_push_error(URLError("no route to host"))
+        )
+
+
+# -------------------------------------------------------------------------
+#
 # TestPolling
 #
 # load() schedules a GLib.timeout_add_seconds() tick that re-syncs for as
@@ -1209,18 +1543,32 @@ class TestPolling(unittest.TestCase):
         ) as super_load, mock.patch.object(
             self.db, "_check_identity"
         ) as check_identity, mock.patch.object(
+            self.db, "_check_permissions"
+        ), mock.patch.object(
+            self.db, "_check_server_version"
+        ), mock.patch.object(
             self.db, "_sync_from_server"
         ) as sync, mock.patch.object(
-            grampswebapidb.GLib, "timeout_add_seconds", return_value=42
+            self.db, "_sync_media_files"
+        ) as sync_media, mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds", side_effect=[42, 43]
         ) as timeout_add:
             self.db.load("some/path")
         super_load.assert_called_once_with("some/path")
         check_identity.assert_called_once_with()
         sync.assert_called_once_with(progress_callback=None)
-        timeout_add.assert_called_once_with(
-            grampswebapidb.POLL_INTERVAL_SECONDS, self.db._poll_tick
+        sync_media.assert_called_once_with()
+        timeout_add.assert_has_calls(
+            [
+                mock.call(grampswebapidb.POLL_INTERVAL_SECONDS, self.db._poll_tick),
+                mock.call(
+                    grampswebapidb.MEDIA_POLL_INTERVAL_SECONDS,
+                    self.db._media_poll_tick,
+                ),
+            ]
         )
         self.assertEqual(self.db._poll_source_id, 42)
+        self.assertEqual(self.db._media_poll_source_id, 43)
 
     def test_load_forwards_positional_callback_to_sync(self):
         # DbGeneric.load()'s own signature is (directory, callback=None,
@@ -1230,7 +1578,13 @@ class TestPolling(unittest.TestCase):
         my_callback = mock.MagicMock()
         with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
             self.db, "_check_identity"
-        ), mock.patch.object(self.db, "_sync_from_server") as sync, mock.patch.object(
+        ), mock.patch.object(self.db, "_check_permissions"), mock.patch.object(
+            self.db, "_check_server_version"
+        ), mock.patch.object(
+            self.db, "_sync_from_server"
+        ) as sync, mock.patch.object(
+            self.db, "_sync_media_files"
+        ), mock.patch.object(
             grampswebapidb.GLib, "timeout_add_seconds"
         ):
             self.db.load("some/path", my_callback, "w")
@@ -1240,27 +1594,54 @@ class TestPolling(unittest.TestCase):
         my_callback = mock.MagicMock()
         with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
             self.db, "_check_identity"
-        ), mock.patch.object(self.db, "_sync_from_server") as sync, mock.patch.object(
+        ), mock.patch.object(self.db, "_check_permissions"), mock.patch.object(
+            self.db, "_check_server_version"
+        ), mock.patch.object(
+            self.db, "_sync_from_server"
+        ) as sync, mock.patch.object(
+            self.db, "_sync_media_files"
+        ), mock.patch.object(
             grampswebapidb.GLib, "timeout_add_seconds"
         ):
             self.db.load("some/path", callback=my_callback)
         sync.assert_called_once_with(progress_callback=my_callback)
 
+    def test_load_media_sync_failure_does_not_block_load(self):
+        # Unlike a _sync_from_server() failure (which load() re-raises as
+        # DbConnectionError), a failed initial media sync is logged and
+        # swallowed -- the record mirror is already usable, so opening the
+        # tree should still succeed.
+        with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
+            self.db, "_check_identity"
+        ), mock.patch.object(self.db, "_check_permissions"), mock.patch.object(
+            self.db, "_check_server_version"
+        ), mock.patch.object(
+            self.db, "_sync_from_server"
+        ), mock.patch.object(
+            self.db, "_sync_media_files", side_effect=OSError("network down")
+        ), mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds"
+        ):
+            with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+                self.db.load("some/path")  # must not raise
+
     def test_close_cancels_pending_poll(self):
         self.db._poll_source_id = 42
+        self.db._media_poll_source_id = 43
         with mock.patch.object(
             grampswebapidb.SQLite, "close"
         ) as super_close, mock.patch.object(
             grampswebapidb.GLib, "source_remove"
         ) as source_remove:
             self.db.close()
-        source_remove.assert_called_once_with(42)
+        source_remove.assert_has_calls([mock.call(42), mock.call(43)])
         self.assertIsNone(self.db._poll_source_id)
+        self.assertIsNone(self.db._media_poll_source_id)
         super_close.assert_called_once_with()
 
     def test_close_without_a_poll_scheduled_is_a_no_op(self):
-        # e.g. close() called after a failed load(), before the timeout
-        # was ever scheduled.
+        # e.g. close() called after a failed load(), before the timeouts
+        # were ever scheduled.
         with mock.patch.object(
             grampswebapidb.SQLite, "close"
         ) as super_close, mock.patch.object(
@@ -1283,6 +1664,625 @@ class TestPolling(unittest.TestCase):
             with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
                 result = self.db._poll_tick()
         self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
+
+    def test_media_poll_tick_syncs_and_keeps_repeating(self):
+        with mock.patch.object(self.db, "_sync_media_files") as sync_media:
+            result = self.db._media_poll_tick()
+        sync_media.assert_called_once_with()
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
+
+    def test_media_poll_tick_swallows_connection_errors_and_keeps_repeating(self):
+        with mock.patch.object(
+            self.db, "_sync_media_files", side_effect=OSError("network down")
+        ):
+            with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+                result = self.db._media_poll_tick()
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
+
+
+# -------------------------------------------------------------------------
+#
+# TestSyncMediaFiles
+#
+# _sync_media_files() and its helpers: the file-transfer half of keeping
+# the mirror in sync, ported from GrampsWebSync's media-file-sync wizard
+# step (grampswebsync.py/webapihandler.py, credit David Straub).
+#
+# -------------------------------------------------------------------------
+class FakeMedia:
+    """Duck-types the bit of a Media object these helpers read."""
+
+    def __init__(self, handle, path, gramps_id="O0001"):
+        self.handle = handle
+        self._path = path
+        self.gramps_id = gramps_id
+
+    def get_path(self):
+        return self._path
+
+
+class TestMissingLocalMediaHandles(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+
+    def test_returns_handles_whose_file_is_missing(self):
+        present = FakeMedia("H1", "present.jpg")
+        missing = FakeMedia("H2", "missing.jpg")
+        with mock.patch.object(
+            self.db, "iter_media", return_value=[present, missing]
+        ), mock.patch.object(
+            grampswebapidb,
+            "media_path_full",
+            side_effect=lambda db, path: "/tree/" + path,
+        ), mock.patch.object(
+            grampswebapidb.os.path, "exists", side_effect=lambda p: "present" in p
+        ):
+            handles = self.db._missing_local_media_handles()
+        self.assertEqual(handles, ["H2"])
+
+    def test_no_media_objects_returns_empty_list(self):
+        with mock.patch.object(self.db, "iter_media", return_value=[]):
+            self.assertEqual(self.db._missing_local_media_handles(), [])
+
+
+class TestMissingRemoteMediaHandles(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+
+    def test_extracts_handles_from_server_response(self):
+        self.db.web_client = mock.MagicMock()
+        self.db.web_client.get_missing_files.return_value = [
+            {"handle": "H1", "gramps_id": "O0001"},
+            {"handle": "H2", "gramps_id": "O0002"},
+        ]
+        self.assertEqual(self.db._missing_remote_media_handles(), ["H1", "H2"])
+
+    def test_empty_server_response(self):
+        self.db.web_client = mock.MagicMock()
+        self.db.web_client.get_missing_files.return_value = []
+        self.assertEqual(self.db._missing_remote_media_handles(), [])
+
+
+class TestDownloadOneMediaFile(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+        self.db.web_client = mock.MagicMock()
+
+    def test_downloads_and_returns_true(self):
+        media = FakeMedia("H1", "photo.jpg")
+        with mock.patch.object(
+            self.db, "get_media_from_handle", return_value=media
+        ), mock.patch.object(
+            grampswebapidb, "media_path_full", return_value="/tree/photo.jpg"
+        ):
+            result = self.db._download_one_media_file("H1")
+        self.assertTrue(result)
+        self.db.web_client.download_media_file.assert_called_once_with(
+            "H1", "/tree/photo.jpg"
+        )
+
+    def test_missing_local_object_returns_false(self):
+        with mock.patch.object(
+            self.db,
+            "get_media_from_handle",
+            side_effect=grampswebapidb.HandleError("H1"),
+        ):
+            result = self.db._download_one_media_file("H1")
+        self.assertFalse(result)
+        self.db.web_client.download_media_file.assert_not_called()
+
+    def test_connection_error_is_logged_and_returns_false(self):
+        media = FakeMedia("H1", "photo.jpg")
+        self.db.web_client.download_media_file.side_effect = OSError("network down")
+        with mock.patch.object(
+            self.db, "get_media_from_handle", return_value=media
+        ), mock.patch.object(
+            grampswebapidb, "media_path_full", return_value="/tree/photo.jpg"
+        ):
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
+                result = self.db._download_one_media_file("H1")
+        self.assertFalse(result)
+
+
+class TestUploadOneMediaFile(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+        self.db.web_client = mock.MagicMock()
+
+    def test_uploads_and_returns_true(self):
+        media = FakeMedia("H1", "photo.jpg")
+        self.db.web_client.upload_media_file.return_value = True
+        with mock.patch.object(
+            self.db, "get_media_from_handle", return_value=media
+        ), mock.patch.object(
+            grampswebapidb, "media_path_full", return_value="/tree/photo.jpg"
+        ), mock.patch.object(
+            grampswebapidb.os.path, "exists", return_value=True
+        ):
+            result = self.db._upload_one_media_file("H1")
+        self.assertTrue(result)
+        self.db.web_client.upload_media_file.assert_called_once_with(
+            "H1", "/tree/photo.jpg"
+        )
+
+    def test_conflict_response_returns_false(self):
+        # WebApiHandler.upload_media_file() itself returns False on a 409
+        # (someone else already uploaded a file for this object) rather
+        # than raising -- propagated here as-is.
+        media = FakeMedia("H1", "photo.jpg")
+        self.db.web_client.upload_media_file.return_value = False
+        with mock.patch.object(
+            self.db, "get_media_from_handle", return_value=media
+        ), mock.patch.object(
+            grampswebapidb, "media_path_full", return_value="/tree/photo.jpg"
+        ), mock.patch.object(
+            grampswebapidb.os.path, "exists", return_value=True
+        ):
+            result = self.db._upload_one_media_file("H1")
+        self.assertFalse(result)
+
+    def test_missing_local_object_returns_false(self):
+        with mock.patch.object(
+            self.db,
+            "get_media_from_handle",
+            side_effect=grampswebapidb.HandleError("H1"),
+        ):
+            result = self.db._upload_one_media_file("H1")
+        self.assertFalse(result)
+        self.db.web_client.upload_media_file.assert_not_called()
+
+    def test_file_not_on_disk_returns_false_without_uploading(self):
+        media = FakeMedia("H1", "photo.jpg")
+        with mock.patch.object(
+            self.db, "get_media_from_handle", return_value=media
+        ), mock.patch.object(
+            grampswebapidb, "media_path_full", return_value="/tree/photo.jpg"
+        ), mock.patch.object(
+            grampswebapidb.os.path, "exists", return_value=False
+        ):
+            result = self.db._upload_one_media_file("H1")
+        self.assertFalse(result)
+        self.db.web_client.upload_media_file.assert_not_called()
+
+    def test_connection_error_is_logged_and_returns_false(self):
+        media = FakeMedia("H1", "photo.jpg")
+        self.db.web_client.upload_media_file.side_effect = OSError("network down")
+        with mock.patch.object(
+            self.db, "get_media_from_handle", return_value=media
+        ), mock.patch.object(
+            grampswebapidb, "media_path_full", return_value="/tree/photo.jpg"
+        ), mock.patch.object(
+            grampswebapidb.os.path, "exists", return_value=True
+        ):
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
+                result = self.db._upload_one_media_file("H1")
+        self.assertFalse(result)
+
+
+class TestSyncMediaFiles(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+
+    def test_downloads_missing_local_then_uploads_missing_remote(self):
+        with mock.patch.object(
+            self.db, "_missing_local_media_handles", return_value=["H1", "H2"]
+        ), mock.patch.object(
+            self.db, "_missing_remote_media_handles", return_value=["H3"]
+        ), mock.patch.object(
+            self.db, "_download_one_media_file", return_value=True
+        ) as download, mock.patch.object(
+            self.db, "_upload_one_media_file", return_value=True
+        ) as upload:
+            result = self.db._sync_media_files()
+        download.assert_has_calls([mock.call("H1"), mock.call("H2")])
+        upload.assert_called_once_with("H3")
+        self.assertEqual(result, (2, 1))
+
+    def test_counts_only_successful_transfers(self):
+        with mock.patch.object(
+            self.db, "_missing_local_media_handles", return_value=["H1", "H2"]
+        ), mock.patch.object(
+            self.db, "_missing_remote_media_handles", return_value=[]
+        ), mock.patch.object(
+            self.db, "_download_one_media_file", side_effect=[True, False]
+        ):
+            result = self.db._sync_media_files()
+        self.assertEqual(result, (1, 0))
+
+    def test_nothing_missing_is_a_no_op(self):
+        with mock.patch.object(
+            self.db, "_missing_local_media_handles", return_value=[]
+        ), mock.patch.object(self.db, "_missing_remote_media_handles", return_value=[]):
+            result = self.db._sync_media_files()
+        self.assertEqual(result, (0, 0))
+
+
+# -------------------------------------------------------------------------
+#
+# TestBatchCommitReconciliation
+#
+# A local batch=True transaction (a bulk import, or a stock Tool like
+# Check and Repair Database) records nothing per-object -- DBAPI skips
+# trans.add() for a batch commit -- so transaction_to_json() sees an
+# empty payload and nothing would ever be pushed. transaction_begin()
+# snapshots handles up front and transaction_commit() diffs them after,
+# reconstructing the change list. See the module docstring.
+#
+# -------------------------------------------------------------------------
+class FakeBatchTxn:
+    """Duck-types the DbTxn attributes the batch-reconciliation path
+    reads: .batch, .start_time, and whatever attribute transaction_begin()
+    stashes its handle snapshot in. get_recnos() returns nothing, matching
+    a real batch transaction's empty undo log."""
+
+    def __init__(self, batch=True, start_time=100.0):
+        self.batch = batch
+        self.start_time = start_time
+
+    def get_recnos(self, reverse=False):
+        return []
+
+    def get_record(self, recno):  # pragma: no cover - never reached
+        raise AssertionError("a batch transaction records nothing")
+
+
+def stored_person(handle, change):
+    """A real Person with a given .change timestamp -- the field
+    _reconcile_batch_commit() compares against the transaction's
+    start_time. Real rather than a stub because _fill_entry_payloads()
+    then runs it through object_to_data()."""
+    person = Person()
+    person.set_handle(handle)
+    person.set_gramps_id("I" + handle)
+    person.change = change
+    return person
+
+
+def stub_all_handle_accessors(db, handles_by_class=None, objects=None):
+    """Give ``db`` a get_<name>_handles/get_<name>_from_handle for every
+    primary type, so _handles_by_class()/_reconcile_batch_commit() can walk
+    all of CLASS_TO_KEY_MAP without a real database."""
+    handles_by_class = handles_by_class or {}
+    objects = objects or {}
+    for obj_class, key in grampswebapidb.CLASS_TO_KEY_MAP.items():
+        name = grampswebapidb.KEY_TO_NAME_MAP[key]
+        setattr(
+            db,
+            f"get_{name}_handles",
+            mock.MagicMock(return_value=list(handles_by_class.get(obj_class, []))),
+        )
+        setattr(
+            db,
+            f"get_{name}_from_handle",
+            mock.MagicMock(side_effect=lambda h, _o=objects: _o[h]),
+        )
+
+
+class TestTransactionBeginSnapshot(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+
+    def test_local_batch_transaction_gets_a_handle_snapshot(self):
+        stub_all_handle_accessors(self.db, {"Person": ["H1"]})
+        trans = FakeBatchTxn(batch=True)
+        with mock.patch.object(grampswebapidb.SQLite, "transaction_begin"):
+            self.db.transaction_begin(trans)
+        self.assertEqual(trans._webapidb_before_handles["Person"], {"H1"})
+
+    def test_non_batch_transaction_gets_no_snapshot(self):
+        # An ordinary edit is recorded per-object by DBAPI, so
+        # transaction_to_json() sees it and none of this is needed.
+        trans = FakeBatchTxn(batch=False)
+        with mock.patch.object(grampswebapidb.SQLite, "transaction_begin"):
+            self.db.transaction_begin(trans)
+        self.assertFalse(hasattr(trans, "_webapidb_before_handles"))
+
+    def test_pull_side_batch_transaction_gets_no_snapshot(self):
+        # _sync_from_server()'s own replay is a batch transaction too, but
+        # pushing it back to the server would echo the server's own changes
+        # straight back at it.
+        self.db._pulling = True
+        trans = FakeBatchTxn(batch=True)
+        with mock.patch.object(grampswebapidb.SQLite, "transaction_begin"):
+            self.db.transaction_begin(trans)
+        self.assertFalse(hasattr(trans, "_webapidb_before_handles"))
+
+
+class TestReconcileBatchCommit(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+        self.db.web_client = mock.MagicMock()
+
+    def test_added_handle_becomes_an_add(self):
+        obj = stored_person("H2", 150.0)
+        stub_all_handle_accessors(
+            self.db,
+            {"Person": ["H1", "H2"]},
+            {"H1": stored_person("H1", 50.0), "H2": obj},
+        )
+        before = {c: set() for c in grampswebapidb.CLASS_TO_KEY_MAP}
+        before["Person"] = {"H1"}
+        with mock.patch.object(self.db, "_retry_after_conflict") as replay:
+            self.db._reconcile_batch_commit(before, start_time=100.0)
+        entries = replay.call_args[0][0]
+        self.assertEqual(len(entries), 1)
+        self.assertEqual(entries[0]["type"], "add")
+        self.assertEqual(entries[0]["handle"], "H2")
+        self.assertEqual(entries[0]["_class"], "Person")
+
+    def test_removed_handle_becomes_a_delete(self):
+        stub_all_handle_accessors(self.db, {"Person": []})
+        before = {c: set() for c in grampswebapidb.CLASS_TO_KEY_MAP}
+        before["Person"] = {"H1"}
+        with mock.patch.object(self.db, "_retry_after_conflict") as replay:
+            self.db._reconcile_batch_commit(before, start_time=100.0)
+        entries = replay.call_args[0][0]
+        self.assertEqual(len(entries), 1)
+        self.assertEqual(entries[0]["type"], "delete")
+        self.assertEqual(entries[0]["handle"], "H1")
+        self.assertIsNone(entries[0]["new"])
+
+    def test_surviving_handle_touched_during_the_batch_becomes_an_update(self):
+        stub_all_handle_accessors(
+            self.db, {"Person": ["H1"]}, {"H1": stored_person("H1", 150.0)}
+        )
+        before = {c: set() for c in grampswebapidb.CLASS_TO_KEY_MAP}
+        before["Person"] = {"H1"}
+        with mock.patch.object(self.db, "_retry_after_conflict") as replay:
+            self.db._reconcile_batch_commit(before, start_time=100.0)
+        entries = replay.call_args[0][0]
+        self.assertEqual(len(entries), 1)
+        self.assertEqual(entries[0]["type"], "update")
+
+    def test_untouched_handle_is_skipped(self):
+        # The whole point of comparing .change against start_time: a bulk
+        # tool that rewrote 3 of 10000 objects must push 3, not 10000.
+        stub_all_handle_accessors(
+            self.db, {"Person": ["H1"]}, {"H1": stored_person("H1", 50.0)}
+        )
+        before = {c: set() for c in grampswebapidb.CLASS_TO_KEY_MAP}
+        before["Person"] = {"H1"}
+        with mock.patch.object(self.db, "_retry_after_conflict") as replay:
+            self.db._reconcile_batch_commit(before, start_time=100.0)
+        replay.assert_not_called()
+
+    def test_change_exactly_at_start_time_counts_as_touched(self):
+        # int(time.time()) truncation in _commit_base() means a fast
+        # transaction can stamp .change to exactly its own start second --
+        # treating that as untouched would silently drop the change.
+        stub_all_handle_accessors(
+            self.db, {"Person": ["H1"]}, {"H1": stored_person("H1", 100.0)}
+        )
+        before = {c: set() for c in grampswebapidb.CLASS_TO_KEY_MAP}
+        before["Person"] = {"H1"}
+        with mock.patch.object(self.db, "_retry_after_conflict") as replay:
+            self.db._reconcile_batch_commit(before, start_time=100.0)
+        entries = replay.call_args[0][0]
+        self.assertEqual(entries[0]["type"], "update")
+
+    def test_nothing_changed_pushes_nothing(self):
+        stub_all_handle_accessors(self.db)
+        before = {c: set() for c in grampswebapidb.CLASS_TO_KEY_MAP}
+        with mock.patch.object(self.db, "_retry_after_conflict") as replay:
+            self.db._reconcile_batch_commit(before, start_time=100.0)
+        replay.assert_not_called()
+
+    def test_transaction_commit_routes_a_snapshotted_batch_to_reconcile(self):
+        trans = FakeBatchTxn(batch=True, start_time=100.0)
+        trans._webapidb_before_handles = {"Person": {"H1"}}
+        with mock.patch.object(
+            grampswebapidb.SQLite, "transaction_commit"
+        ), mock.patch.object(self.db, "_reconcile_batch_commit") as reconcile:
+            self.db.transaction_commit(trans)
+        reconcile.assert_called_once_with({"Person": {"H1"}}, 100.0)
+        # ...and does NOT also take the ordinary push path, which would
+        # push an empty payload.
+        self.db.web_client.push_transaction.assert_not_called()
+
+
+class TestFillEntryPayloads(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+
+    def test_add_entry_gets_current_object_data(self):
+        person = Person()
+        person.set_handle("H1")
+        person.set_gramps_id("I0001")
+        self.db.get_person_from_handle = mock.MagicMock(return_value=person)
+        filled = self.db._fill_entry_payloads(
+            [{"type": "add", "handle": "H1", "_class": "Person"}]
+        )
+        self.assertEqual(len(filled), 1)
+        self.assertIsNone(filled[0]["old"])
+        self.assertEqual(filled[0]["new"]["gramps_id"], "I0001")
+        # remove_object() strips the cached _object back-reference, which
+        # is not JSON-serializable and must never reach the wire.
+        self.assertNotIn("_object", filled[0]["new"])
+
+    def test_delete_entry_carries_no_object_data(self):
+        filled = self.db._fill_entry_payloads(
+            [{"type": "delete", "handle": "H1", "_class": "Person"}]
+        )
+        self.assertEqual(filled[0]["new"], None)
+        self.assertEqual(filled[0]["old"], None)
+
+    def test_vanished_handle_is_dropped(self):
+        # The object was removed between the diff and here -- nothing left
+        # to describe, and asking the server to add it would fail.
+        self.db.get_person_from_handle = mock.MagicMock(
+            side_effect=grampswebapidb.HandleError("H1")
+        )
+        filled = self.db._fill_entry_payloads(
+            [{"type": "add", "handle": "H1", "_class": "Person"}]
+        )
+        self.assertEqual(filled, [])
+
+
+# -------------------------------------------------------------------------
+#
+# TestPendingPushQueue
+#
+# A push that fails for a connectivity reason (rather than a conflict) is
+# persisted and retried later, so an edit made while offline still
+# reaches the server. See the module docstring.
+#
+# -------------------------------------------------------------------------
+class TestPendingPushQueue(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+        self.db.web_client = mock.MagicMock()
+        self.metadata = {}
+        self.db._get_metadata = lambda key, default=0: self.metadata.get(key, default)
+        self.db._set_metadata = (
+            lambda key, value, use_txn=True: self.metadata.__setitem__(key, value)
+        )
+
+    def _payload(self, handle="H1"):
+        return [{"type": "add", "handle": handle, "_class": "Person"}]
+
+    def test_connection_failure_queues_the_payload(self):
+        self.db.web_client.push_transaction.side_effect = HTTPError(
+            "https://example.com/api/transactions/", 500, "boom", None, None
+        )
+        with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+            self.db._push_payload(self._payload())
+        queued = self.metadata["pending_pushes"]
+        self.assertEqual(len(queued), 1)
+        self.assertEqual(queued[0]["payload"], self._payload())
+        self.assertFalse(queued[0]["undo"])
+
+    def test_undo_flag_is_preserved_in_the_queue(self):
+        self.db.web_client.push_transaction.side_effect = OSError("network down")
+        with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+            self.db._push_payload(self._payload(), undo=True)
+        self.assertTrue(self.metadata["pending_pushes"][0]["undo"])
+
+    def test_successful_push_queues_nothing(self):
+        self.db._push_payload(self._payload())
+        self.assertNotIn("pending_pushes", self.metadata)
+
+    def test_conflict_does_not_queue(self):
+        # A conflict is handled by resync-and-retry, not by queueing --
+        # queueing it too would push the same edit twice.
+        self.db.web_client.push_transaction.side_effect = WebApiPushConflict(
+            "Object has changed"
+        )
+        with mock.patch.object(self.db, "_sync_from_server"), mock.patch.object(
+            self.db, "_retry_after_conflict"
+        ):
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
+                self.db._push_payload(self._payload())
+        self.assertNotIn("pending_pushes", self.metadata)
+
+    def test_flush_sends_queued_pushes_in_order_and_clears_them(self):
+        self.metadata["pending_pushes"] = [
+            {"payload": self._payload("H1"), "undo": False},
+            {"payload": self._payload("H2"), "undo": False},
+        ]
+        with self.assertLogs(grampswebapidb.LOG, level="INFO"):
+            self.db._flush_pending_pushes()
+        sent = [
+            c[0][0][0]["handle"]
+            for c in self.db.web_client.push_transaction.call_args_list
+        ]
+        self.assertEqual(sent, ["H1", "H2"])
+        self.assertEqual(self.metadata["pending_pushes"], [])
+
+    def test_flush_stops_at_the_first_still_undeliverable_entry(self):
+        # Order matters: a later edit may depend on an earlier one (a
+        # Family referencing a Person), so a stuck entry must block the
+        # rest rather than letting them jump the queue.
+        self.metadata["pending_pushes"] = [
+            {"payload": self._payload("H1"), "undo": False},
+            {"payload": self._payload("H2"), "undo": False},
+        ]
+        self.db.web_client.push_transaction.side_effect = OSError("still down")
+        with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
+            self.db._flush_pending_pushes()
+        self.assertEqual(self.db.web_client.push_transaction.call_count, 1)
+        self.assertEqual(len(self.metadata["pending_pushes"]), 2)
+
+    def test_flush_drops_a_queued_push_that_now_conflicts(self):
+        # A queued payload's "old" snapshot is stale by definition, so the
+        # resync-and-merge path can't be applied to it -- dropping it is
+        # the honest outcome, loudly logged.
+        self.metadata["pending_pushes"] = [
+            {"payload": self._payload("H1"), "undo": False},
+            {"payload": self._payload("H2"), "undo": False},
+        ]
+        self.db.web_client.push_transaction.side_effect = [
+            WebApiPushConflict("Object has changed"),
+            None,
+        ]
+        with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
+            self.db._flush_pending_pushes()
+        # The conflicting entry is dropped, but the one behind it still goes.
+        self.assertEqual(self.db.web_client.push_transaction.call_count, 2)
+        self.assertEqual(self.metadata["pending_pushes"], [])
+
+    def test_empty_queue_makes_no_requests(self):
+        self.db._flush_pending_pushes()
+        self.db.web_client.push_transaction.assert_not_called()
+
+    def test_queue_is_capped_dropping_the_oldest(self):
+        self.metadata["pending_pushes"] = [
+            {"payload": self._payload("H%d" % i), "undo": False}
+            for i in range(grampswebapidb.MAX_PENDING_PUSHES)
+        ]
+        self.db.web_client.push_transaction.side_effect = OSError("network down")
+        with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+            self.db._push_payload(self._payload("NEW"))
+        queued = self.metadata["pending_pushes"]
+        self.assertEqual(len(queued), grampswebapidb.MAX_PENDING_PUSHES)
+        # Oldest dropped, newest kept.
+        self.assertEqual(queued[0]["payload"][0]["handle"], "H1")
+        self.assertEqual(queued[-1]["payload"][0]["handle"], "NEW")
+
+    def test_permanent_rejection_is_not_queued(self):
+        # A 403 (the account lacks write permissions) will answer the same
+        # way forever -- queueing it would retry on every poll and
+        # eventually evict genuinely retryable work from the capped queue.
+        self.db.web_client.push_transaction.side_effect = HTTPError(
+            "https://example.com/api/transactions/", 403, "Forbidden", None, None
+        )
+        with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+            self.db._push_payload(self._payload())
+        self.assertNotIn("pending_pushes", self.metadata)
+
+    def test_rate_limit_is_still_queued(self):
+        # 429 is "try again shortly", not a refusal.
+        self.db.web_client.push_transaction.side_effect = HTTPError(
+            "https://example.com/api/transactions/", 429, "Too Many", None, None
+        )
+        with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+            self.db._push_payload(self._payload())
+        self.assertEqual(len(self.metadata["pending_pushes"]), 1)
+
+    def test_flush_drops_a_permanently_rejected_entry_and_continues(self):
+        self.metadata["pending_pushes"] = [
+            {"payload": self._payload("H1"), "undo": False},
+            {"payload": self._payload("H2"), "undo": False},
+        ]
+        self.db.web_client.push_transaction.side_effect = [
+            HTTPError(
+                "https://example.com/api/transactions/", 403, "Forbidden", None, None
+            ),
+            None,
+        ]
+        with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+            self.db._flush_pending_pushes()
+        # The rejected entry is dropped rather than blocking the queue
+        # forever -- permissions may have changed since it was queued.
+        self.assertEqual(self.db.web_client.push_transaction.call_count, 2)
+        self.assertEqual(self.metadata["pending_pushes"], [])
+
+    def test_sync_from_server_flushes_the_queue_first(self):
+        # The queue is retried on every poll tick, not just at load().
+        self.db.emit = mock.MagicMock()
+        self.db.web_client.get_transaction_history.return_value = ([], 0)
+        with mock.patch.object(self.db, "_flush_pending_pushes") as flush:
+            self.db._sync_from_server()
+        flush.assert_called_once_with()
 
 
 if __name__ == "__main__":
