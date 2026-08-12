@@ -48,6 +48,7 @@ import io
 import json
 import os
 import sys
+import tempfile
 import unittest
 from urllib.error import HTTPError, URLError
 from unittest import mock
@@ -110,14 +111,23 @@ def token(tag: str) -> str:
 
 
 class FakeResponse:
-    """Stand-in for the object returned by ``urlopen(...).__enter__()``."""
+    """Stand-in for the object returned by ``urlopen(...).__enter__()``.
 
-    def __init__(self, body=None, headers=None):
+    ``status`` matters to push_transaction(), which distinguishes a 202
+    ("the server queued a background task, go poll it") from a plain 200
+    -- see that method's ``background`` param.
+    """
+
+    def __init__(self, body=None, headers=None, status=200):
         self._body = json.dumps(body if body is not None else {}).encode()
         self.headers = headers or {}
+        self._status = status
 
     def read(self):
         return self._body
+
+    def getcode(self):
+        return self._status
 
     def __enter__(self):
         return self
@@ -136,6 +146,27 @@ class FakeBinaryResponse:
 
     def read(self):
         return self._body
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc_info):
+        return False
+
+
+class FakeChunkedResponse:
+    """Stand-in for a streamed download response: read(n) returns up to
+    n bytes at a time, like a real socket-backed file object -- unlike
+    FakeResponse.read(), which ignores any argument and returns
+    everything at once. Needed for download_media_file(), which reads in
+    a chunked loop."""
+
+    def __init__(self, body: bytes, headers=None):
+        self._buf = io.BytesIO(body)
+        self.headers = headers or {}
+
+    def read(self, size=-1):
+        return self._buf.read(size)
 
     def __enter__(self):
         return self
@@ -432,7 +463,9 @@ class TestRateLimitAndFallbackRetries(unittest.TestCase):
         mock_sleep.assert_called_once_with(webapi_client.RATE_LIMIT_BACKOFF)
 
     def test_refresh_retries_once_after_429(self):
-        fake = QueuedUrlopen([http_error(429), FakeResponse({"access_token": token("AT")})])
+        fake = QueuedUrlopen(
+            [http_error(429), FakeResponse({"access_token": token("AT")})]
+        )
         with mock.patch.object(webapi_client, "urlopen", fake), mock.patch.object(
             webapi_client, "sleep"
         ):
@@ -629,6 +662,400 @@ class TestDownloadExport(unittest.TestCase):
 
 # -------------------------------------------------------------------------
 #
+# TestGetMissingFiles
+#
+# -------------------------------------------------------------------------
+class TestGetMissingFiles(unittest.TestCase):
+    """get_missing_files() (grampswebapidb.py's _missing_remote_media_
+    handles()) hits GET /media/?filemissing=1 and returns the decoded
+    body as-is, sharing _get_json()'s retry behavior."""
+
+    def _authed_handler(self):
+        fake = QueuedUrlopen([FakeResponse({"access_token": token("AT0")})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler = WebApiHandler("https://example.com/api", refresh_token="RT")
+        return handler
+
+    def test_request_url_and_returns_body(self):
+        handler = self._authed_handler()
+        body = [{"handle": "H1", "gramps_id": "O0001"}]
+        fake = QueuedUrlopen([FakeResponse(body)])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            result = handler.get_missing_files()
+        self.assertEqual(result, body)
+        self.assertEqual(
+            fake.requests[0].full_url,
+            "https://example.com/api/media/?filemissing=1",
+        )
+
+    def test_empty_response(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse([])])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertEqual(handler.get_missing_files(), [])
+
+
+# -------------------------------------------------------------------------
+#
+# TestDownloadMediaFile
+#
+# -------------------------------------------------------------------------
+class TestDownloadMediaFile(unittest.TestCase):
+    """download_media_file() streams GET /media/<handle>/file to disk in
+    chunks, creating any missing parent directory, and shares the same
+    401/429/network retry-once behavior as the rest of this class."""
+
+    def _authed_handler(self):
+        fake = QueuedUrlopen([FakeResponse({"access_token": token("AT0")})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler = WebApiHandler("https://example.com/api", refresh_token="RT")
+        return handler
+
+    def test_writes_body_to_path_and_creates_parent_dirs(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeChunkedResponse(b"binary-image-data")])
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "sub", "dir", "photo.jpg")
+            with mock.patch.object(webapi_client, "urlopen", fake):
+                handler.download_media_file("H1", path)
+            with open(path, "rb") as f:
+                self.assertEqual(f.read(), b"binary-image-data")
+        self.assertEqual(
+            fake.requests[0].full_url, "https://example.com/api/media/H1/file"
+        )
+        self.assertEqual(
+            fake.requests[0].get_header("Authorization"), f"Bearer {token('AT0')}"
+        )
+
+    def test_streams_content_larger_than_one_chunk(self):
+        handler = self._authed_handler()
+        body = b"x" * (webapi_client._DOWNLOAD_CHUNK_SIZE * 2 + 100)
+        fake = QueuedUrlopen([FakeChunkedResponse(body)])
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "photo.jpg")
+            with mock.patch.object(webapi_client, "urlopen", fake):
+                handler.download_media_file("H1", path)
+            with open(path, "rb") as f:
+                self.assertEqual(f.read(), body)
+
+    def test_401_triggers_reauth_and_retry(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                http_error(401),
+                FakeResponse({"access_token": token("AT1")}),
+                FakeChunkedResponse(b"data-after-reauth"),
+            ]
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "photo.jpg")
+            with mock.patch.object(webapi_client, "urlopen", fake), mock.patch.object(
+                webapi_client, "sleep"
+            ):
+                handler.download_media_file("H1", path)
+            with open(path, "rb") as f:
+                self.assertEqual(f.read(), b"data-after-reauth")
+
+    def test_429_retries_once(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([http_error(429), FakeChunkedResponse(b"data")])
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "photo.jpg")
+            with mock.patch.object(webapi_client, "urlopen", fake), mock.patch.object(
+                webapi_client, "sleep"
+            ):
+                handler.download_media_file("H1", path)
+            with open(path, "rb") as f:
+                self.assertEqual(f.read(), b"data")
+
+    def test_second_failure_propagates(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([http_error(500), http_error(500)])
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "photo.jpg")
+            with mock.patch.object(webapi_client, "urlopen", fake):
+                with self.assertRaises(HTTPError):
+                    handler.download_media_file("H1", path)
+
+
+# -------------------------------------------------------------------------
+#
+# TestUploadMediaFile
+#
+# -------------------------------------------------------------------------
+class TestUploadMediaFile(unittest.TestCase):
+    """upload_media_file() streams a local file to PUT
+    /media/<handle>/file?uploadmissing=1, returns False (rather than
+    raising) on a 409, and shares the class's 401/429/network
+    retry-once behavior otherwise."""
+
+    def _authed_handler(self):
+        fake = QueuedUrlopen([FakeResponse({"access_token": token("AT0")})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler = WebApiHandler("https://example.com/api", refresh_token="RT")
+        return handler
+
+    def _tmp_file(self, tmp, content=b"local-bytes"):
+        path = os.path.join(tmp, "photo.jpg")
+        with open(path, "wb") as f:
+            f.write(content)
+        return path
+
+    def test_request_url_and_method(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse({})])
+        with tempfile.TemporaryDirectory() as tmp:
+            path = self._tmp_file(tmp)
+            with mock.patch.object(webapi_client, "urlopen", fake):
+                result = handler.upload_media_file("H1", path)
+        self.assertTrue(result)
+        req = fake.requests[0]
+        self.assertEqual(
+            req.full_url, "https://example.com/api/media/H1/file?uploadmissing=1"
+        )
+        self.assertEqual(req.get_method(), "PUT")
+        self.assertEqual(req.get_header("Authorization"), f"Bearer {token('AT0')}")
+
+    def test_409_returns_false_without_retry(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([http_error(409)])
+        with tempfile.TemporaryDirectory() as tmp:
+            path = self._tmp_file(tmp)
+            with mock.patch.object(webapi_client, "urlopen", fake):
+                result = handler.upload_media_file("H1", path)
+        self.assertFalse(result)
+        self.assertEqual(len(fake.requests), 1)
+
+    def test_401_triggers_reauth_and_retry(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                http_error(401),
+                FakeResponse({"access_token": token("AT1")}),
+                FakeResponse({}),
+            ]
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            path = self._tmp_file(tmp)
+            with mock.patch.object(webapi_client, "urlopen", fake), mock.patch.object(
+                webapi_client, "sleep"
+            ):
+                result = handler.upload_media_file("H1", path)
+        self.assertTrue(result)
+        self.assertEqual(handler._access_token, token("AT1"))
+
+    def test_429_retries_once(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([http_error(429), FakeResponse({})])
+        with tempfile.TemporaryDirectory() as tmp:
+            path = self._tmp_file(tmp)
+            with mock.patch.object(webapi_client, "urlopen", fake), mock.patch.object(
+                webapi_client, "sleep"
+            ):
+                result = handler.upload_media_file("H1", path)
+        self.assertTrue(result)
+        self.assertEqual(len(fake.requests), 2)
+
+    def test_second_failure_propagates(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([http_error(500), http_error(500)])
+        with tempfile.TemporaryDirectory() as tmp:
+            path = self._tmp_file(tmp)
+            with mock.patch.object(webapi_client, "urlopen", fake):
+                with self.assertRaises(HTTPError):
+                    handler.upload_media_file("H1", path)
+
+
+# -------------------------------------------------------------------------
+#
+# TestParseVersion
+#
+# -------------------------------------------------------------------------
+class TestParseVersion(unittest.TestCase):
+    def test_plain_version(self):
+        self.assertEqual(webapi_client.parse_version("2.7.1"), (2, 7))
+
+    def test_major_only_gets_a_zero_minor(self):
+        self.assertEqual(webapi_client.parse_version("3"), (3, 0))
+
+    def test_prerelease_and_build_suffixes_are_ignored(self):
+        self.assertEqual(webapi_client.parse_version("2.7.0-rc1"), (2, 7))
+        self.assertEqual(webapi_client.parse_version("2.7.0+dirty"), (2, 7))
+
+    def test_unparseable_returns_none(self):
+        # None rather than a guess, so callers can distinguish "old" from
+        # "can't tell" -- see supports_background_transactions().
+        self.assertIsNone(webapi_client.parse_version("unknown"))
+        self.assertIsNone(webapi_client.parse_version(""))
+        self.assertIsNone(webapi_client.parse_version(None))
+
+    def test_trailing_garbage_after_a_numeric_prefix_is_truncated(self):
+        self.assertEqual(webapi_client.parse_version("2.7.x"), (2, 7))
+
+
+# -------------------------------------------------------------------------
+#
+# TestMetadata
+#
+# -------------------------------------------------------------------------
+class TestMetadata(unittest.TestCase):
+    METADATA = {
+        "gramps": {"version": "6.0.1"},
+        "gramps_webapi": {"version": "2.8.0", "schema": "2.8.0"},
+    }
+
+    def _authed_handler(self):
+        fake = QueuedUrlopen([FakeResponse({"access_token": token("AT0")})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler = WebApiHandler("https://example.com/api", refresh_token="RT")
+        return handler
+
+    def test_fetches_and_caches_metadata(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse(self.METADATA)])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertEqual(handler.get_metadata(), self.METADATA)
+            # Second call must not hit the network again.
+            handler.get_metadata()
+        self.assertEqual(len(fake.requests), 1)
+        self.assertEqual(fake.requests[0].full_url, "https://example.com/api/metadata/")
+
+    def test_version_accessors(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse(self.METADATA)])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertEqual(handler.get_gramps_version(), "6.0.1")
+            self.assertEqual(handler.get_api_version(), "2.8.0")
+
+    def test_missing_sections_return_none(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse({})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertIsNone(handler.get_gramps_version())
+            self.assertIsNone(handler.get_api_version())
+
+    def test_background_supported_from_2_7(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse({"gramps_webapi": {"version": "2.7.0"}})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertTrue(handler.supports_background_transactions())
+
+    def test_background_not_supported_before_2_7(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse({"gramps_webapi": {"version": "2.6.9"}})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertFalse(handler.supports_background_transactions())
+
+    def test_unknown_version_does_not_claim_background_support(self):
+        # The synchronous path works on every version, so it's the safe
+        # answer when the version can't be determined.
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse({})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertFalse(handler.supports_background_transactions())
+
+
+# -------------------------------------------------------------------------
+#
+# TestWaitForTask
+#
+# -------------------------------------------------------------------------
+class TestWaitForTask(unittest.TestCase):
+    """wait_for_task() polls GET /tasks/<id> until the backgrounded push
+    finishes, translating a failed task into the same exceptions a
+    synchronous push would raise."""
+
+    def _authed_handler(self):
+        fake = QueuedUrlopen([FakeResponse({"access_token": token("AT0")})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler = WebApiHandler("https://example.com/api", refresh_token="RT")
+        return handler
+
+    def test_success_returns(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse({"state": "SUCCESS"})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.wait_for_task("T1")  # must not raise
+        self.assertEqual(fake.requests[0].full_url, "https://example.com/api/tasks/T1")
+
+    def test_polls_until_the_task_leaves_pending(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                FakeResponse({"state": "PENDING"}),
+                FakeResponse({"state": "STARTED"}),
+                FakeResponse({"state": "SUCCESS"}),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake), mock.patch.object(
+            webapi_client, "sleep"
+        ):
+            handler.wait_for_task("T1")
+        self.assertEqual(len(fake.requests), 3)
+
+    def test_conflict_in_a_failed_task_raises_push_conflict(self):
+        # The whole point: a conflict must look the same whether it came
+        # back as a synchronous 400 or as a failed background task.
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [FakeResponse({"state": "FAILURE", "info": "Object has changed"})]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            with self.assertRaises(WebApiPushConflict):
+                handler.wait_for_task("T1")
+
+    def test_structured_error_payload_is_preferred(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                FakeResponse(
+                    {
+                        "state": "FAILURE",
+                        "result_object": {
+                            "error": {"code": 400, "message": "Object has changed"}
+                        },
+                        "info": "something less specific",
+                    }
+                )
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            with self.assertRaises(WebApiPushConflict):
+                handler.wait_for_task("T1")
+
+    def test_other_failure_raises_value_error_with_the_message(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [FakeResponse({"state": "FAILURE", "info": "Gramps ID missing"})]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            with self.assertRaises(ValueError) as ctx:
+                handler.wait_for_task("T1")
+        self.assertNotIsInstance(ctx.exception, WebApiPushConflict)
+        self.assertIn("Gramps ID missing", str(ctx.exception))
+
+    def test_revoked_is_also_a_failure(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse({"state": "REVOKED", "info": "cancelled"})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            with self.assertRaises(ValueError):
+                handler.wait_for_task("T1")
+
+    def test_timeout_raises_timeout_error(self):
+        # TimeoutError is an OSError, so grampswebapidb.py's connection-error
+        # handling treats a stuck task as retryable rather than a refusal.
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse({"state": "PENDING"})] * 10)
+        with mock.patch.object(webapi_client, "urlopen", fake), mock.patch.object(
+            webapi_client, "sleep"
+        ):
+            with self.assertRaises(TimeoutError):
+                handler.wait_for_task("T1", timeout=-1)
+        self.assertIsInstance(TimeoutError(), OSError)
+
+
+# -------------------------------------------------------------------------
+#
 # TestPushTransaction
 #
 # -------------------------------------------------------------------------
@@ -668,9 +1095,7 @@ class TestPushTransaction(unittest.TestCase):
         with mock.patch.object(webapi_client, "urlopen", fake):
             handler.push_transaction(payload, undo=True)
         req = fake.requests[0]
-        self.assertEqual(
-            req.full_url, "https://example.com/api/transactions/?undo=1"
-        )
+        self.assertEqual(req.full_url, "https://example.com/api/transactions/?undo=1")
         # The payload itself is the original (forward) one -- the server
         # reverses it, not the caller. See push_transaction()'s docstring.
         self.assertEqual(json.loads(req.data), payload)
@@ -680,7 +1105,9 @@ class TestPushTransaction(unittest.TestCase):
         fake = QueuedUrlopen([FakeResponse({})])
         with mock.patch.object(webapi_client, "urlopen", fake):
             handler.push_transaction([{"type": "add"}])
-        self.assertEqual(fake.requests[0].full_url, "https://example.com/api/transactions/")
+        self.assertEqual(
+            fake.requests[0].full_url, "https://example.com/api/transactions/"
+        )
 
     def test_undo_flag_survives_401_retry(self):
         handler = self._authed_handler()
@@ -703,7 +1130,11 @@ class TestPushTransaction(unittest.TestCase):
     def test_401_triggers_reauth_and_retry(self):
         handler = self._authed_handler()
         fake = QueuedUrlopen(
-            [http_error(401), FakeResponse({"access_token": token("AT1")}), FakeResponse({})]
+            [
+                http_error(401),
+                FakeResponse({"access_token": token("AT1")}),
+                FakeResponse({}),
+            ]
         )
         with mock.patch.object(webapi_client, "urlopen", fake), mock.patch.object(
             webapi_client, "sleep"
@@ -750,6 +1181,103 @@ class TestPushTransaction(unittest.TestCase):
             with self.assertRaises(HTTPError) as ctx:
                 handler.push_transaction([{"type": "add"}])
         self.assertNotIsInstance(ctx.exception, WebApiPushConflict)
+
+    def test_background_appends_query_param(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse({})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.push_transaction([{"type": "add"}], background=True)
+        self.assertIn("background=1", fake.requests[0].full_url)
+
+    def test_background_combines_with_undo(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse({})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.push_transaction([{"type": "add"}], undo=True, background=True)
+        url = fake.requests[0].full_url
+        self.assertIn("undo=1", url)
+        self.assertIn("background=1", url)
+
+    def test_202_response_waits_for_the_task(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                FakeResponse(
+                    {"task": {"id": "T7", "href": "/api/tasks/T7"}}, status=202
+                ),
+                FakeResponse({"state": "SUCCESS"}),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.push_transaction([{"type": "add"}], background=True)
+        self.assertEqual(fake.requests[1].full_url, "https://example.com/api/tasks/T7")
+
+    def test_200_response_in_background_mode_does_not_poll(self):
+        # A server without a Celery queue runs the work inline and answers
+        # 200 even for ?background=1 -- nothing left to wait for.
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse({}, status=200)])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.push_transaction([{"type": "add"}], background=True)
+        self.assertEqual(len(fake.requests), 1)
+
+    def test_conflict_from_a_backgrounded_task_raises_push_conflict(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                FakeResponse({"task": {"id": "T7"}}, status=202),
+                FakeResponse({"state": "FAILURE", "info": "Object has changed"}),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            with self.assertRaises(WebApiPushConflict):
+                handler.push_transaction([{"type": "add"}], background=True)
+
+    def test_500_carrying_the_conflict_message_is_a_conflict(self):
+        # run_task() re-wraps process_transactions()'s "Object has changed"
+        # ValueError as a 500 when it runs the work inline, so the same
+        # conflict arrives with a different status code -- it must not be
+        # mistaken for a transient server error.
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                http_error_with_body(
+                    500, {"error": {"code": 500, "message": "Object has changed"}}
+                )
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            with self.assertRaises(WebApiPushConflict):
+                handler.push_transaction([{"type": "add"}], background=True)
+
+    def test_ordinary_500_still_propagates_as_http_error(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                http_error_with_body(
+                    500, {"error": {"code": 500, "message": "Database is locked"}}
+                )
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            with self.assertRaises(HTTPError) as ctx:
+                handler.push_transaction([{"type": "add"}])
+        self.assertNotIsInstance(ctx.exception, WebApiPushConflict)
+
+    def test_background_flag_survives_401_retry(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                http_error(401),
+                FakeResponse({"access_token": token("AT1")}),
+                FakeResponse({}),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake), mock.patch.object(
+            webapi_client, "sleep"
+        ):
+            handler.push_transaction([{"type": "add"}], background=True)
+        self.assertIn("background=1", fake.requests[2].full_url)
 
     def test_400_with_unparseable_body_propagates_as_http_error(self):
         handler = self._authed_handler()
