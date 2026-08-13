@@ -576,6 +576,88 @@ class TestFullResyncTrigger(unittest.TestCase):
         self.db._sync_from_server()
         self.assertEqual(self.metadata["sync_last_time"], 42.0)
 
+    def test_short_mirror_triggers_full_resync(self):
+        # A server whose tree was populated without gramps-web-api
+        # recording history (demo.grampsweb.org: 4668 people, a history
+        # holding only the edits made through the API) would otherwise
+        # sync to a mirror holding just those, with nothing logged.
+        self.db.web_client.get_transaction_history.return_value = ([], 0)
+        self.db.web_client.get_object_count.return_value = 26541
+        with mock.patch.object(self.db, "get_total", return_value=1):
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
+                self.db._sync_from_server(verify_totals=True)
+        self.db._full_resync.assert_called_once_with(progress_callback=None)
+
+    def test_a_replayed_feed_that_still_falls_short_triggers_full_resync(self):
+        # The case that made the empty-feed-only version of this check
+        # useless: one API edit against a history-less server hands back a
+        # transaction and advances the cursor, so the sync looks fine.
+        change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
+        page = [{"timestamp": 1786645046.3, "changes": [change]}]
+        self.db.web_client.get_transaction_history.return_value = (page, 1)
+        self.db.web_client.get_object_count.return_value = 26541
+        with mock.patch.object(self.db, "_apply_change", return_value=True):
+            with mock.patch.object(self.db, "get_total", return_value=1):
+                with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
+                    applied = self.db._sync_from_server(verify_totals=True)
+        self.assertEqual(applied, 1)
+        self.assertEqual(self.metadata["sync_last_time"], 1786645046.3)
+        self.db._full_resync.assert_called_once_with(progress_callback=None)
+
+    def test_matching_totals_do_not_trigger_full_resync(self):
+        self.db.web_client.get_transaction_history.return_value = ([], 0)
+        self.db.web_client.get_object_count.return_value = 26541
+        with mock.patch.object(self.db, "get_total", return_value=26541):
+            self.db._sync_from_server(verify_totals=True)
+        self.db._full_resync.assert_not_called()
+
+    def test_a_larger_local_total_is_left_alone(self):
+        # An extra local object is either about to be pushed or something
+        # the export would destroy -- not a shortfall to repair.
+        self.db.web_client.get_transaction_history.return_value = ([], 0)
+        self.db.web_client.get_object_count.return_value = 10
+        with mock.patch.object(self.db, "get_total", return_value=11):
+            self.db._sync_from_server(verify_totals=True)
+        self.db._full_resync.assert_not_called()
+
+    def test_queued_pushes_suppress_the_total_check(self):
+        # Local edits the server hasn't accepted yet: the counts are
+        # legitimately out of step, and a rebuild would fight with work
+        # still waiting to go the other way. _sync_from_server() drains
+        # the queue on the way in, so what's left here is what the flush
+        # couldn't place (a 429, a 5xx) -- hence the stubbed flush.
+        self.metadata["pending_pushes"] = [{"payload": [], "undo": False}]
+        self.db.web_client.get_transaction_history.return_value = ([], 0)
+        with mock.patch.object(self.db, "_flush_pending_pushes"), mock.patch.object(
+            self.db, "get_total", return_value=0
+        ) as get_total:
+            self.db._sync_from_server(verify_totals=True)
+        self.db._full_resync.assert_not_called()
+        get_total.assert_not_called()
+        self.db.web_client.get_object_count.assert_not_called()
+
+    def test_poll_syncs_do_not_check_totals(self):
+        # Only load() asks for the check -- a rebuild must never land in
+        # the middle of a working session, and the poll shouldn't spend a
+        # request per tick to find that out.
+        self.db.web_client.get_transaction_history.return_value = ([], 0)
+        with mock.patch.object(self.db, "get_total", return_value=0) as get_total:
+            self.db._sync_from_server()
+        self.db._full_resync.assert_not_called()
+        get_total.assert_not_called()
+        self.db.web_client.get_object_count.assert_not_called()
+
+    def test_total_check_forwards_the_progress_callback(self):
+        callback = mock.MagicMock()
+        self.db.web_client.get_transaction_history.return_value = ([], 0)
+        self.db.web_client.get_object_count.return_value = 1
+        with mock.patch.object(self.db, "get_total", return_value=0):
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
+                self.db._sync_from_server(
+                    progress_callback=callback, verify_totals=True
+                )
+        self.db._full_resync.assert_called_once_with(progress_callback=callback)
+
 
 # -------------------------------------------------------------------------
 #
@@ -588,6 +670,9 @@ class TestFullResync(unittest.TestCase):
         self.db.web_client = mock.MagicMock()
         self.db.web_client.download_export.return_value = b"fake gramps xml bytes"
         self.db.emit = mock.MagicMock()  # see TestSyncFromServer.setUp's note
+        # _full_resync() reports the rebuilt total at DEBUG; there's no
+        # real dbapi connection behind these stubs to count.
+        self.db.get_total = mock.MagicMock(return_value=0)
         self.patcher = mock.patch.object(grampswebapidb, "DbTxn", FakeDbTxn)
         self.patcher.start()
         self.addCleanup(self.patcher.stop)
@@ -1556,7 +1641,7 @@ class TestPolling(unittest.TestCase):
             self.db.load("some/path")
         super_load.assert_called_once_with("some/path")
         check_identity.assert_called_once_with()
-        sync.assert_called_once_with(progress_callback=None)
+        sync.assert_called_once_with(progress_callback=None, verify_totals=True)
         sync_media.assert_called_once_with()
         timeout_add.assert_has_calls(
             [
@@ -1588,7 +1673,7 @@ class TestPolling(unittest.TestCase):
             grampswebapidb.GLib, "timeout_add_seconds"
         ):
             self.db.load("some/path", my_callback, "w")
-        sync.assert_called_once_with(progress_callback=my_callback)
+        sync.assert_called_once_with(progress_callback=my_callback, verify_totals=True)
 
     def test_load_forwards_keyword_callback_to_sync(self):
         my_callback = mock.MagicMock()
@@ -1604,7 +1689,7 @@ class TestPolling(unittest.TestCase):
             grampswebapidb.GLib, "timeout_add_seconds"
         ):
             self.db.load("some/path", callback=my_callback)
-        sync.assert_called_once_with(progress_callback=my_callback)
+        sync.assert_called_once_with(progress_callback=my_callback, verify_totals=True)
 
     def test_load_media_sync_failure_does_not_block_load(self):
         # Unlike a _sync_from_server() failure (which load() re-raises as
@@ -1624,6 +1709,32 @@ class TestPolling(unittest.TestCase):
         ):
             with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
                 self.db.load("some/path")  # must not raise
+        # That traceback is this outage's one loud report -- the media
+        # poll should stay quiet rather than repeat it 300 seconds later.
+        self.assertEqual(self.db._media_poll_failures, 1)
+
+    def test_load_resets_poll_backoff_state(self):
+        # Class-attribute defaults, so an instance reused across a
+        # close()/load() must not start out backed off from the previous
+        # tree's outage.
+        self.db._poll_failures = 4
+        self.db._media_poll_failures = 4
+        self.db._poll_interval = grampswebapidb.POLL_BACKOFF_MAX_SECONDS
+        with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
+            self.db, "_check_identity"
+        ), mock.patch.object(self.db, "_check_permissions"), mock.patch.object(
+            self.db, "_check_server_version"
+        ), mock.patch.object(
+            self.db, "_sync_from_server"
+        ), mock.patch.object(
+            self.db, "_sync_media_files"
+        ), mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds"
+        ):
+            self.db.load("some/path")
+        self.assertEqual(self.db._poll_failures, 0)
+        self.assertEqual(self.db._media_poll_failures, 0)
+        self.assertEqual(self.db._poll_interval, grampswebapidb.POLL_INTERVAL_SECONDS)
 
     def test_close_cancels_pending_poll(self):
         self.db._poll_source_id = 42
@@ -1657,13 +1768,73 @@ class TestPolling(unittest.TestCase):
         sync.assert_called_once_with()
         self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
 
-    def test_poll_tick_swallows_connection_errors_and_keeps_repeating(self):
+    def test_poll_tick_swallows_connection_errors_and_keeps_polling(self):
+        # The failing tick reschedules itself at a longer interval, so it
+        # reports SOURCE_REMOVE for the *old* source while the replacement
+        # keeps the poll alive.
+        self.db._poll_interval = grampswebapidb.POLL_INTERVAL_SECONDS
         with mock.patch.object(
             self.db, "_sync_from_server", side_effect=OSError("network down")
-        ):
-            with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+        ), mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds", return_value=99
+        ) as timeout_add:
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
                 result = self.db._poll_tick()
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_REMOVE)
+        timeout_add.assert_called_once_with(
+            grampswebapidb.POLL_INTERVAL_SECONDS * 2, self.db._poll_tick
+        )
+        self.assertEqual(self.db._poll_source_id, 99)
+        self.assertEqual(
+            self.db._poll_interval, grampswebapidb.POLL_INTERVAL_SECONDS * 2
+        )
+        self.assertEqual(self.db._poll_failures, 1)
+
+    def test_poll_tick_reports_a_lasting_outage_only_once(self):
+        # A server that stays down must not log a warning (let alone a
+        # traceback) on every tick for the whole outage.
+        with mock.patch.object(
+            self.db, "_sync_from_server", side_effect=OSError("network down")
+        ), mock.patch.object(grampswebapidb.GLib, "timeout_add_seconds"):
+            with self.assertLogs(grampswebapidb.LOG, level="DEBUG") as logs:
+                for _unused in range(5):
+                    self.db._poll_tick()
+        warnings = [rec for rec in logs.records if rec.levelname == "WARNING"]
+        self.assertEqual(len(warnings), 1)
+        self.assertEqual(self.db._poll_failures, 5)
+
+    def test_poll_tick_backs_off_to_the_cap_and_stops_rescheduling(self):
+        with mock.patch.object(
+            self.db, "_sync_from_server", side_effect=OSError("network down")
+        ), mock.patch.object(grampswebapidb.GLib, "timeout_add_seconds") as timeout_add:
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
+                for _unused in range(20):
+                    result = self.db._poll_tick()
+        self.assertEqual(
+            self.db._poll_interval, grampswebapidb.POLL_BACKOFF_MAX_SECONDS
+        )
+        # Every reschedule doubles the interval, so once the cap is
+        # reached the timer is left alone rather than churned each tick.
         self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
+        intervals = [call.args[0] for call in timeout_add.call_args_list]
+        self.assertEqual(intervals, sorted(intervals))
+        self.assertLessEqual(intervals[-1], grampswebapidb.POLL_BACKOFF_MAX_SECONDS)
+
+    def test_poll_tick_restores_the_normal_interval_after_recovery(self):
+        self.db._poll_failures = 3
+        self.db._poll_interval = grampswebapidb.POLL_BACKOFF_MAX_SECONDS
+        with mock.patch.object(self.db, "_sync_from_server"), mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds", return_value=7
+        ) as timeout_add:
+            with self.assertLogs(grampswebapidb.LOG, level="INFO"):
+                result = self.db._poll_tick()
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_REMOVE)
+        timeout_add.assert_called_once_with(
+            grampswebapidb.POLL_INTERVAL_SECONDS, self.db._poll_tick
+        )
+        self.assertEqual(self.db._poll_source_id, 7)
+        self.assertEqual(self.db._poll_interval, grampswebapidb.POLL_INTERVAL_SECONDS)
+        self.assertEqual(self.db._poll_failures, 0)
 
     def test_media_poll_tick_syncs_and_keeps_repeating(self):
         with mock.patch.object(self.db, "_sync_media_files") as sync_media:
@@ -1675,9 +1846,30 @@ class TestPolling(unittest.TestCase):
         with mock.patch.object(
             self.db, "_sync_media_files", side_effect=OSError("network down")
         ):
-            with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
                 result = self.db._media_poll_tick()
         self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
+        self.assertEqual(self.db._media_poll_failures, 1)
+
+    def test_media_poll_tick_reports_a_lasting_outage_only_once(self):
+        with mock.patch.object(
+            self.db, "_sync_media_files", side_effect=OSError("network down")
+        ):
+            with self.assertLogs(grampswebapidb.LOG, level="DEBUG") as logs:
+                for _unused in range(4):
+                    result = self.db._media_poll_tick()
+        warnings = [rec for rec in logs.records if rec.levelname == "WARNING"]
+        self.assertEqual(len(warnings), 1)
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
+        self.assertEqual(self.db._media_poll_failures, 4)
+
+    def test_media_poll_tick_notes_recovery(self):
+        self.db._media_poll_failures = 2
+        with mock.patch.object(self.db, "_sync_media_files"):
+            with self.assertLogs(grampswebapidb.LOG, level="INFO"):
+                result = self.db._media_poll_tick()
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
+        self.assertEqual(self.db._media_poll_failures, 0)
 
 
 # -------------------------------------------------------------------------
