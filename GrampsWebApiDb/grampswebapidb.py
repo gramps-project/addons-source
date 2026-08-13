@@ -284,6 +284,22 @@ the first tick that succeeds -- meanwhile local edits go on working
 against the mirror and queue for push (see _queue_pending_push()). See
 _poll_tick() and _record_poll_failure().
 
+Keeping the GUI alive
+---------------------
+All of that network work runs synchronously on the GTK main thread, so
+anything long -- the initial catch-up, a full-export rebuild, a first
+media sync, a backgrounded push being waited on -- is time the main loop
+is not answering. The window stops redrawing and the window manager
+offers to force-quit Gramps. _pump_main_loop() gives the loop its turn at
+the boundaries of each of those (between sync pages, between media files,
+across the export download's chunks and the task-poll loop, either side
+of ImportXml), which keeps the window live and Gramps' own progress bar
+moving. Doing the work off-thread would be the real fix and remains the
+better long-term answer (GrampsWebSync's GLibTaskRunner is the
+precedent); this is the version that doesn't restructure every call path.
+Pumping re-enters, so the poll timeouts check _syncing and skip a tick
+rather than starting a second sync underneath the first.
+
 Tracing a session
 -----------------
 Most of what this addon does is invisible from the Gramps UI: a sync that
@@ -489,6 +505,39 @@ BACKGROUND_PUSH_THRESHOLD = 100
 _CONNECTION_ERRORS = (ValueError, KeyError, HTTPError, URLError, OSError)
 
 
+def _pump_main_loop():
+    """Dispatch whatever the main loop has pending, without blocking.
+
+    Every network round trip this addon makes runs synchronously on the
+    GTK main thread (see the module docstring's polling section), so a
+    long one -- a full-export download, a page-by-page catch-up, a media
+    transfer, a backgrounded push being waited on -- is time the main
+    loop spends inside this addon rather than answering. The window
+    manager reads that as a hung application and offers to force-quit it,
+    and the window itself stops redrawing (no progress bar movement, no
+    repaint after an overlapping window moves away).
+
+    Calling this at the boundaries of those operations gives the loop its
+    turn: pending redraws, the progress bar Gramps is already driving via
+    load()'s callback, and the window manager's own ping all get handled,
+    and the application stays live.
+
+    Goes through GLib's default main context rather than Gtk.main_
+    iteration() so this module stays importable without a display: it is
+    a DATABASE plugin, loadable from the CLI, where pulling in gramps.gui
+    (or Gtk) has no business being a requirement. GTK drives that very
+    context, so the effect under the GUI is the same.
+
+    The obvious hazard of pumping a main loop mid-operation is
+    re-entrancy -- our own POLL_INTERVAL_SECONDS timeout coming round
+    while a sync is in flight. _poll_tick()/_media_poll_tick() check
+    _syncing for exactly that and skip their turn.
+    """
+    context = GLib.MainContext.default()
+    while context.pending():
+        context.iteration(False)
+
+
 def _describe_connection_error(err):
     """
     Turn a _CONNECTION_ERRORS exception into DbConnectionError's message
@@ -612,6 +661,11 @@ class WebApiDB(SQLite):
     #: bulk import, a Tool) -- see the module docstring and
     #: _reconcile_batch_commit().
     _pulling = False
+
+    #: Set for the duration of a sync (records or media files), so the
+    #: timeouts don't start a second one underneath the first when
+    #: _pump_main_loop() hands the main loop back mid-operation.
+    _syncing = False
 
     #: Consecutive failed polls, per timer, and the record poll's current
     #: interval -- the outage state _poll_tick()/_media_poll_tick() use to
@@ -856,6 +910,11 @@ class WebApiDB(SQLite):
         _record_poll_failure()) -- a 10-second traceback loop for as long
         as a server stays down buries anything else in the log and makes a
         routine outage look like a crash."""
+        if self._syncing:
+            # Reached from inside _pump_main_loop(), part-way through a
+            # sync this would otherwise start again underneath itself.
+            LOG.debug("poll: a sync is already running; skipping this tick")
+            return GLib.SOURCE_CONTINUE
         try:
             self._sync_from_server()
         except _CONNECTION_ERRORS as err:
@@ -922,6 +981,9 @@ class WebApiDB(SQLite):
         Reported once per outage for the same reason as _poll_tick(), but
         with no backoff to go with it: MEDIA_POLL_INTERVAL_SECONDS is
         already as coarse as that poll's backoff cap."""
+        if self._syncing:
+            LOG.debug("media poll: a sync is already running; skipping this tick")
+            return GLib.SOURCE_CONTINUE
         try:
             self._sync_media_files()
         except _CONNECTION_ERRORS as err:
@@ -1020,7 +1082,9 @@ class WebApiDB(SQLite):
             " background" if background else "",
         )
         try:
-            self.web_client.push_transaction(payload, undo=undo, background=background)
+            self.web_client.push_transaction(
+                payload, undo=undo, background=background, on_wait=_pump_main_loop
+            )
             LOG.debug("push: accepted in %.2fs", monotonic() - started)
         except WebApiPushConflict:
             LOG.warning(
@@ -1133,6 +1197,7 @@ class WebApiDB(SQLite):
                     entry["payload"],
                     undo=entry.get("undo", False),
                     background=self._use_background_push(entry["payload"]),
+                    on_wait=_pump_main_loop,
                 )
             except WebApiPushConflict:
                 LOG.warning(
@@ -1308,6 +1373,15 @@ class WebApiDB(SQLite):
         history()'s docstring), so it stays a stable denominator across
         pages barring concurrent server-side writes during the sync.
         """
+        self._syncing = True
+        try:
+            return self._sync_from_server_inner(progress_callback, verify_totals)
+        finally:
+            self._syncing = False
+
+    def _sync_from_server_inner(self, progress_callback, verify_totals):
+        """_sync_from_server()'s body, minus the _syncing bookkeeping --
+        see that method for what this does and why."""
         self._flush_pending_pushes()
         after = self._get_metadata("sync_last_time", default=0)
         started = monotonic()
@@ -1365,9 +1439,19 @@ class WebApiDB(SQLite):
             )
             if progress_callback is not None and total:
                 progress_callback(min(100, int(seen * 100 / total)))
+            # Between pages: a batch DbTxn has just closed and the next
+            # one hasn't opened, so this is the one point in the replay
+            # where handing the main loop back is safe. A catch-up of any
+            # size would otherwise hold it for its whole duration.
+            _pump_main_loop()
             if len(transactions) < SYNC_PAGE_SIZE:
                 break
             page += 1
+        # Also once on the way out: the loop above breaks before its own
+        # pump whenever the feed hands back a short page or nothing at
+        # all, which is every routine poll -- and each of those still
+        # cost a blocking round trip to find out.
+        _pump_main_loop()
         self._set_metadata("sync_last_time", after)
         LOG.debug(
             "sync: %d change(s) applied, %d skipped, from %d transaction(s) "
@@ -1486,7 +1570,10 @@ class WebApiDB(SQLite):
         if progress_callback is not None:
             progress_callback(0)
         started = monotonic()
-        data = self.web_client.download_export()
+        # The single longest transfer this addon makes -- streamed rather
+        # than read in one go so the main loop keeps its turn throughout
+        # (see _pump_main_loop() and download_export()'s on_chunk).
+        data = self.web_client.download_export(on_chunk=_pump_main_loop)
         LOG.debug(
             "resync: downloaded a %.1f MB export in %.2fs",
             len(data) / (1024 * 1024),
@@ -1495,6 +1582,12 @@ class WebApiDB(SQLite):
         with NamedTemporaryFile(suffix=".gramps", delete=False) as tmp_file:
             tmp_file.write(data)
             tmp_path = tmp_file.name
+        # Last chance to let the main loop catch up while the mirror is
+        # still intact: from here to request_rebuild() the local data is
+        # being torn down and rebuilt, and anything dispatched in the
+        # middle of that would be looking at a half-empty tree. See
+        # _pump_main_loop().
+        _pump_main_loop()
         # Both halves below are pull-side rebuilds, not local edits -- see
         # _sync_from_server()'s own note on the _pulling flag. ImportXml
         # opens its own batch DbTxn internally, so this has to stay set
@@ -1514,6 +1607,11 @@ class WebApiDB(SQLite):
                     cleared += len(handles)
             LOG.debug("resync: cleared %d local object(s); reimporting", cleared)
             imported_at = monotonic()
+            # ImportXml exposes no per-step hook to drive (it never calls
+            # User.step_progress), so this one call is uninterruptible --
+            # the longest stall left in a rebuild, and the reason
+            # off-thread sync remains the real fix. See the module
+            # docstring's "Keeping the GUI alive".
             importData(self, tmp_path, User())
             LOG.debug(
                 "resync: reimport left %d object(s) (%.2fs)",
@@ -1527,6 +1625,9 @@ class WebApiDB(SQLite):
             # itself defines for exactly this case (one <type>-rebuild per
             # object type, telling every view to reload wholesale).
             self.request_rebuild()
+            # The mirror is whole again and every view has been told to
+            # reload, so it's safe to let the loop run once more.
+            _pump_main_loop()
         finally:
             self._pulling = False
             os.remove(tmp_path)
@@ -1552,17 +1653,30 @@ class WebApiDB(SQLite):
 
         Returns ``(downloaded, uploaded)`` file counts.
         """
+        self._syncing = True
+        try:
+            return self._sync_media_files_inner()
+        finally:
+            self._syncing = False
+
+    def _sync_media_files_inner(self):
+        """_sync_media_files()'s body, minus the _syncing bookkeeping --
+        see that method for what this does and why."""
         started = monotonic()
         missing_local = self._missing_local_media_handles()
         downloaded = 0
         for handle in missing_local:
             if self._download_one_media_file(handle):
                 downloaded += 1
+            # One file is one blocking transfer; a first sync of a tree
+            # with media runs hundreds of them back to back.
+            _pump_main_loop()
         missing_remote = self._missing_remote_media_handles()
         uploaded = 0
         for handle in missing_remote:
             if self._upload_one_media_file(handle):
                 uploaded += 1
+            _pump_main_loop()
         LOG.debug(
             "media: %d missing locally (%d downloaded), %d missing on the "
             "server (%d uploaded), in %.2fs",
