@@ -580,10 +580,19 @@ class WebApiHandler:
                 return self._get_json(url, retry=False)
             raise
 
-    def _get_binary(self, url: str, retry: bool = True) -> bytes:
+    def _get_binary(self, url: str, retry: bool = True, on_chunk=None) -> bytes:
         """GET ``url`` with the bearer token and return the raw response
         body, unlike _get_json() -- for endpoints that return a file
-        rather than a JSON document (see download_export())."""
+        rather than a JSON document (see download_export()).
+
+        ``on_chunk``, if given, is called with no arguments after each
+        _DOWNLOAD_CHUNK_SIZE bytes arrive, and switches the read from one
+        blocking res.read() to a chunked loop. It exists for callers on a
+        GUI thread: a multi-megabyte export is one uninterruptible read
+        otherwise, long enough for the window manager to decide the
+        application has stopped responding (see grampswebapidb.py's
+        _pump_main_loop()).
+        """
         req = Request(
             url,
             headers={
@@ -593,23 +602,32 @@ class WebApiHandler:
         )
         try:
             with self._open(req) as res:
-                return res.read()
+                if on_chunk is None:
+                    return res.read()
+                chunks = []
+                while True:
+                    chunk = res.read(_DOWNLOAD_CHUNK_SIZE)
+                    if not chunk:
+                        break
+                    chunks.append(chunk)
+                    on_chunk()
+                return b"".join(chunks)
         except HTTPError as exc:
             if exc.code == 401 and retry:
                 sleep(RATE_LIMIT_BACKOFF)
                 self._authenticate()
-                return self._get_binary(url, retry=False)
+                return self._get_binary(url, retry=False, on_chunk=on_chunk)
             if exc.code == 429 and retry:
                 sleep(RATE_LIMIT_BACKOFF)
-                return self._get_binary(url, retry=False)
+                return self._get_binary(url, retry=False, on_chunk=on_chunk)
             raise
         except (URLError, socket.timeout):
             if retry:
                 sleep(1)
-                return self._get_binary(url, retry=False)
+                return self._get_binary(url, retry=False, on_chunk=on_chunk)
             raise
 
-    def download_export(self, extension: str = "gramps") -> bytes:
+    def download_export(self, extension: str = "gramps", on_chunk=None) -> bytes:
         """
         Download a full backup export of the tree from the server --
         by default a gzip-compressed Gramps XML file, the exact on-disk
@@ -620,9 +638,14 @@ class WebApiHandler:
         rebuild the local mirror wholesale when the transaction-history
         feed can't describe what changed -- see that method's own doc
         comment on why.
+
+        ``on_chunk`` is passed through to _get_binary(): a hook called as
+        the bytes arrive, so a caller on the GUI thread can keep its main
+        loop alive across what is easily the longest single transfer this
+        client makes.
         """
         url = f"{self.url}/exporters/{extension}/file"
-        return self._get_binary(url)
+        return self._get_binary(url, on_chunk=on_chunk)
 
     def get_missing_files(self) -> list[dict[str, Any]]:
         """
@@ -759,8 +782,16 @@ class WebApiHandler:
         task_id: str,
         timeout: float = TASK_TIMEOUT,
         poll_interval: float = TASK_POLL_INTERVAL,
+        on_wait=None,
     ) -> None:
         """Poll GET /tasks/<id> until a backgrounded server task finishes.
+
+        ``on_wait``, if given, is called with no arguments once per poll,
+        before sleeping. A backgrounded push can occupy the server for
+        minutes (TASK_TIMEOUT allows ten), which is that much time a
+        caller on the GUI thread would otherwise spend inside this loop
+        without touching its main loop -- see grampswebapidb.py's
+        _pump_main_loop().
 
         Returns normally on SUCCESS. A FAILURE/REVOKED task raises --
         WebApiPushConflict if it failed the server's old-data check (the
@@ -786,6 +817,8 @@ class WebApiHandler:
                 raise TimeoutError(
                     f"Server task {task_id} did not finish within {timeout}s"
                 )
+            if on_wait is not None:
+                on_wait()
             sleep(poll_interval)
 
     def push_transaction(
@@ -794,6 +827,7 @@ class WebApiHandler:
         retry: bool = True,
         undo: bool = False,
         background: bool = False,
+        on_wait=None,
     ) -> None:
         """
         POST a batch of local changes to /transactions/ (no force=1): the
@@ -871,12 +905,20 @@ class WebApiHandler:
                 sleep(RATE_LIMIT_BACKOFF)
                 self._authenticate()
                 return self.push_transaction(
-                    payload, retry=False, undo=undo, background=background
+                    payload,
+                    retry=False,
+                    undo=undo,
+                    background=background,
+                    on_wait=on_wait,
                 )
             if exc.code == 429 and retry:
                 sleep(RATE_LIMIT_BACKOFF)
                 return self.push_transaction(
-                    payload, retry=False, undo=undo, background=background
+                    payload,
+                    retry=False,
+                    undo=undo,
+                    background=background,
+                    on_wait=on_wait,
                 )
             # 400 is the synchronous conflict; 500 is the same conflict
             # re-wrapped by run_task() on the inline background path.
@@ -887,9 +929,13 @@ class WebApiHandler:
             if retry:
                 sleep(RATE_LIMIT_BACKOFF)
                 return self.push_transaction(
-                    payload, retry=False, undo=undo, background=background
+                    payload,
+                    retry=False,
+                    undo=undo,
+                    background=background,
+                    on_wait=on_wait,
                 )
             raise
         if status == 202:
             task_id = json.loads(body)["task"]["id"]
-            self.wait_for_task(task_id)
+            self.wait_for_task(task_id, on_wait=on_wait)

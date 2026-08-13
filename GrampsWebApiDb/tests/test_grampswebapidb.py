@@ -328,6 +328,50 @@ class TestSyncFromServer(unittest.TestCase):
         # testing what they always tested.
         self.db._full_resync = mock.MagicMock()
 
+    def test_syncing_flag_is_set_during_the_sync_and_cleared_after(self):
+        # What stops _pump_main_loop()'s re-entrant timeout ticks from
+        # starting a second sync underneath this one.
+        seen = []
+        self.db.web_client.get_transaction_history.side_effect = lambda **kwargs: (
+            seen.append(self.db._syncing),
+            ([], 0),
+        )[1]
+        self.db._sync_from_server()
+        self.assertEqual(seen, [True])
+        self.assertFalse(self.db._syncing)
+
+    def test_syncing_flag_is_cleared_even_if_the_sync_raises(self):
+        self.db.web_client.get_transaction_history.side_effect = OSError("down")
+        with self.assertRaises(OSError):
+            self.db._sync_from_server()
+        self.assertFalse(self.db._syncing)
+
+    def test_main_loop_is_pumped_between_pages(self):
+        # A catch-up of any size would otherwise hold the main loop for
+        # its whole duration -- long enough for the window manager to
+        # offer to force-quit Gramps.
+        full_page = [
+            {"timestamp": float(i), "changes": []}
+            for i in range(grampswebapidb.SYNC_PAGE_SIZE)
+        ]
+        short_page = [{"timestamp": 999.0, "changes": []}]
+        self.db.web_client.get_transaction_history.side_effect = [
+            (full_page, len(full_page) + 1),
+            (short_page, 1),
+        ]
+        with mock.patch.object(grampswebapidb, "_pump_main_loop") as pump:
+            self.db._sync_from_server()
+        # Once after each page, plus once on the way out.
+        self.assertEqual(pump.call_count, 3)
+
+    def test_main_loop_is_pumped_even_when_nothing_came_back(self):
+        # The routine poll: the loop breaks before its own pump, but the
+        # round trip that found nothing still blocked the main loop.
+        self.db.web_client.get_transaction_history.return_value = ([], 0)
+        with mock.patch.object(grampswebapidb, "_pump_main_loop") as pump:
+            self.db._sync_from_server()
+        self.assertEqual(pump.call_count, 1)
+
     def test_stops_after_short_page(self):
         change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
         self.db.web_client.get_transaction_history.return_value = (
@@ -700,7 +744,9 @@ class TestFullResync(unittest.TestCase):
         with mock.patch.object(grampswebapidb, "importData", fake_import_data):
             self.db._full_resync()
 
-        self.db.web_client.download_export.assert_called_once_with()
+        self.db.web_client.download_export.assert_called_once_with(
+            on_chunk=grampswebapidb._pump_main_loop
+        )
         for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
             if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
                 continue
@@ -1768,6 +1814,22 @@ class TestPolling(unittest.TestCase):
         sync.assert_called_once_with()
         self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
 
+    def test_poll_tick_does_not_start_a_sync_underneath_a_running_one(self):
+        # _pump_main_loop() hands the main loop back part-way through a
+        # sync, which is when this timeout can fire re-entrantly.
+        self.db._syncing = True
+        with mock.patch.object(self.db, "_sync_from_server") as sync:
+            result = self.db._poll_tick()
+        sync.assert_not_called()
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
+
+    def test_media_poll_tick_does_not_start_a_sync_underneath_a_running_one(self):
+        self.db._syncing = True
+        with mock.patch.object(self.db, "_sync_media_files") as sync_media:
+            result = self.db._media_poll_tick()
+        sync_media.assert_not_called()
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
+
     def test_poll_tick_swallows_connection_errors_and_keeps_polling(self):
         # The failing tick reschedules itself at a longer interval, so it
         # reports SOURCE_REMOVE for the *old* source while the replacement
@@ -2069,6 +2131,28 @@ class TestSyncMediaFiles(unittest.TestCase):
         download.assert_has_calls([mock.call("H1"), mock.call("H2")])
         upload.assert_called_once_with("H3")
         self.assertEqual(result, (2, 1))
+
+    def test_main_loop_is_pumped_per_file_and_syncing_flag_is_managed(self):
+        # Each transfer is its own blocking round trip, and a first sync
+        # of a tree with media runs hundreds back to back.
+        seen = []
+        with mock.patch.object(
+            self.db, "_missing_local_media_handles", return_value=["H1", "H2"]
+        ), mock.patch.object(
+            self.db, "_missing_remote_media_handles", return_value=["H3"]
+        ), mock.patch.object(
+            self.db,
+            "_download_one_media_file",
+            side_effect=lambda handle: seen.append(self.db._syncing) or True,
+        ), mock.patch.object(
+            self.db, "_upload_one_media_file", return_value=True
+        ), mock.patch.object(
+            grampswebapidb, "_pump_main_loop"
+        ) as pump:
+            self.db._sync_media_files()
+        self.assertEqual(pump.call_count, 3)
+        self.assertEqual(seen, [True, True])
+        self.assertFalse(self.db._syncing)
 
     def test_counts_only_successful_transfers(self):
         with mock.patch.object(

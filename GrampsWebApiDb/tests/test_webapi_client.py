@@ -619,6 +619,27 @@ class TestDownloadExport(unittest.TestCase):
             fake.requests[0].full_url, "https://example.com/api/exporters/gramps/file"
         )
 
+    def test_on_chunk_streams_the_body_and_fires_between_chunks(self):
+        # A multi-megabyte export read in one go is one uninterruptible
+        # call -- long enough for the window manager to decide Gramps has
+        # stopped responding. See grampswebapidb._pump_main_loop().
+        handler = self._authed_handler()
+        body = b"x" * (webapi_client._DOWNLOAD_CHUNK_SIZE * 2 + 17)
+        fake = QueuedUrlopen([FakeChunkedResponse(body)])
+        calls = []
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            data = handler.download_export(on_chunk=lambda: calls.append(1))
+        self.assertEqual(data, body)
+        self.assertEqual(len(calls), 3)
+
+    def test_without_on_chunk_the_body_is_read_in_one_go(self):
+        # FakeBinaryResponse.read() takes no size argument, so this also
+        # pins that the unchunked path stays a plain read().
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeBinaryResponse(b"gzip-bytes-here")])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertEqual(handler.download_export(), b"gzip-bytes-here")
+
     def test_extension_is_configurable(self):
         handler = self._authed_handler()
         fake = QueuedUrlopen([FakeBinaryResponse(b"gedcom-bytes")])
@@ -1029,6 +1050,26 @@ class TestWaitForTask(unittest.TestCase):
         ):
             handler.wait_for_task("T1")
         self.assertEqual(len(fake.requests), 3)
+
+    def test_on_wait_fires_once_per_poll(self):
+        # TASK_TIMEOUT allows ten minutes of this loop; a caller on the
+        # GUI thread has to be able to keep its main loop alive across it.
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                FakeResponse({"state": "PENDING"}),
+                FakeResponse({"state": "STARTED"}),
+                FakeResponse({"state": "SUCCESS"}),
+            ]
+        )
+        calls = []
+        with mock.patch.object(webapi_client, "urlopen", fake), mock.patch.object(
+            webapi_client, "sleep"
+        ):
+            handler.wait_for_task("T1", on_wait=lambda: calls.append(1))
+        # Once before each of the two sleeps; the SUCCESS poll returns
+        # without waiting again.
+        self.assertEqual(len(calls), 2)
 
     def test_conflict_in_a_failed_task_raises_push_conflict(self):
         # The whole point: a conflict must look the same whether it came
