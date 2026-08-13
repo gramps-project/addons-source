@@ -107,6 +107,22 @@ full Gramps XML export and reimporting it into a wiped local mirror,
 the only way to recover completeness when the incremental feed has a
 blind spot by construction.
 
+An empty-changes marker is not the only shape that blind spot takes: a
+server whose tree was populated without gramps-web-api recording any
+history at all (a server-side import straight into the database, a
+restored dump, a truncated history table) has no history to describe
+what it holds -- https://demo.grampsweb.org is exactly that, 4668 people
+against a history that was empty until someone edited it through the
+API. Replaying such a feed produces a mirror holding only the few edits
+the history does know about, with nothing to distinguish that from a
+correct sync. load() therefore checks the mirror's own object total
+against the server's after each sync (_mirror_is_short_of_the_server(),
+via _sync_from_server()'s verify_totals) and routes a shortfall to the
+same _full_resync(). Comparing totals rather than watching for an empty
+feed is what makes the case detectable: one API edit against such a
+server is enough for the feed to hand back a transaction and for the
+sync to look like it worked.
+
 Pushes go out without force=1, so the server compares each item's "old"
 snapshot against its own current data and rejects the whole batch with
 WebApiPushConflict (see webapi_client.push_transaction()) if anything
@@ -261,6 +277,31 @@ here for the same no-cross-addon-dependency reason as transaction_to_json()
 below) is a reasonable future improvement, not attempted here. close()
 cancels the pending timeout so a closed database doesn't keep polling.
 
+A server that stops answering does not interrupt the session: the poll
+reports the outage once, backs off towards POLL_BACKOFF_MAX_SECONDS while
+it lasts, and picks the mirror up again from the persisted sync cursor on
+the first tick that succeeds -- meanwhile local edits go on working
+against the mirror and queue for push (see _queue_pending_push()). See
+_poll_tick() and _record_poll_failure().
+
+Tracing a session
+-----------------
+Most of what this addon does is invisible from the Gramps UI: a sync that
+finds nothing, a push that succeeded, a mirror quietly short of the
+server. Both this module and webapi_client.py log to ".grampswebapidb",
+so::
+
+    gramps -d .grampswebapidb
+
+turns on a DEBUG trace of exactly that (argparser.py's -d hands the name
+to logging.getLogger().setLevel()). It is deliberately per-operation
+rather than per-object: one line per HTTP request (method, path, status,
+round-trip time -- WebApiHandler._open()), one per sync page and one per
+sync (changes applied/skipped, cursor, elapsed), plus load, push, queue
+depth, media transfer counts, and the local-vs-server totals compared at
+load. Nothing logs object data or credentials, and replaying a busy feed
+costs a fixed handful of lines rather than one per change.
+
 A second, independent timeout (MEDIA_POLL_INTERVAL_SECONDS, coarser than
 POLL_INTERVAL_SECONDS) drives _sync_media_files(): downloading media files
 that exist as Media-object records in the mirror but not on local disk,
@@ -324,6 +365,7 @@ import os
 import re
 from copy import deepcopy
 from tempfile import NamedTemporaryFile
+from time import monotonic
 from urllib.error import HTTPError, URLError
 
 from gi.repository import GLib
@@ -355,7 +397,7 @@ try:
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
-LOG = logging.getLogger("grampswebapidb")
+LOG = logging.getLogger(".grampswebapidb")
 
 #: How many transactions to request per page while syncing.
 SYNC_PAGE_SIZE = 100
@@ -373,6 +415,19 @@ POLL_INTERVAL_SECONDS = 10
 #: transferred in full -- not worth doing on every 10-second record-sync
 #: tick.
 MEDIA_POLL_INTERVAL_SECONDS = 300
+
+#: Ceiling (seconds) on the record poll's backoff while the server is
+#: unreachable -- see _poll_tick(). Every consecutive failure doubles the
+#: interval from POLL_INTERVAL_SECONDS up to this cap, and the first
+#: success resets it. A server that is down (or a laptop that is off the
+#: network) stays down for minutes or hours, not seconds, and each futile
+#: tick costs a blocking round trip on the GTK main thread -- including
+#: webapi_client's own one-shot retry sleep -- so retrying every 10
+#: seconds for the whole outage buys nothing and stutters the UI. The cap
+#: is deliberately no larger than MEDIA_POLL_INTERVAL_SECONDS: once the
+#: server comes back, the mirror should catch up within a poll or two,
+#: not stay stale for an hour.
+POLL_BACKOFF_MAX_SECONDS = 300
 
 #: Cap on the persisted pending-push queue (see _queue_pending_push()).
 #: A queue this long means the server has been unreachable across a great
@@ -558,6 +613,14 @@ class WebApiDB(SQLite):
     #: _reconcile_batch_commit().
     _pulling = False
 
+    #: Consecutive failed polls, per timer, and the record poll's current
+    #: interval -- the outage state _poll_tick()/_media_poll_tick() use to
+    #: log an outage once instead of once per tick, and to back the record
+    #: poll off while it lasts. Reset by the first successful sync.
+    _poll_failures = 0
+    _media_poll_failures = 0
+    _poll_interval = POLL_INTERVAL_SECONDS
+
     def requires_login(self):
         # Credentials come from GRAMPS_WEB_API_KEY, not a login dialog.
         return False
@@ -567,6 +630,7 @@ class WebApiDB(SQLite):
             self.web_client = WebApiHandler.from_env()
         except _CONNECTION_ERRORS as err:
             raise DbConnectionError(_describe_connection_error(err), directory) from err
+        LOG.debug("client: mirroring %s", self.web_client.url)
 
         # Local mirror: reuse SQLite's own _initialize for the on-disk
         # cache file, then sync from the server on load().
@@ -594,16 +658,25 @@ class WebApiDB(SQLite):
             mode = args[2]
         if mode is None:
             mode = DBMODE_W
+        LOG.debug(
+            "load: %s (mode %s)", args[0] if args else kwargs.get("directory"), mode
+        )
         super().load(*args, **kwargs)
         self._check_identity()
         self._check_permissions(writable=(mode == DBMODE_W))
         self._check_server_version()
         try:
-            self._sync_from_server(progress_callback=callback)
+            self._sync_from_server(progress_callback=callback, verify_totals=True)
         except _CONNECTION_ERRORS as err:
             raise DbConnectionError(
                 _describe_connection_error(err), self._directory
             ) from err
+        # Fresh outage state for a freshly opened tree: these are class
+        # attributes, so an instance reused across a close()/load() would
+        # otherwise start out backed off from the previous tree's outage.
+        self._poll_failures = 0
+        self._media_poll_failures = 0
+        self._poll_interval = POLL_INTERVAL_SECONDS
         try:
             self._sync_media_files()
         except _CONNECTION_ERRORS:
@@ -612,6 +685,9 @@ class WebApiDB(SQLite):
             # usable, and missing/un-uploaded media files are recovered on
             # the next successful media poll (or the next load()).
             LOG.exception("Initial media file sync failed; will retry.")
+            # Counts as this outage's one loud report, so _media_poll_tick()
+            # doesn't immediately say the same thing again 300 seconds later.
+            self._media_poll_failures = 1
         self._poll_source_id = GLib.timeout_add_seconds(
             POLL_INTERVAL_SECONDS, self._poll_tick
         )
@@ -769,23 +845,109 @@ class WebApiDB(SQLite):
         """GLib.timeout_add_seconds callback -- see the module docstring's
         polling section. Must return True (GLib.SOURCE_CONTINUE) to keep
         firing; returning a falsy value cancels the timeout, so a network
-        error is caught and logged here rather than left to propagate."""
+        error is caught and handled here rather than left to propagate.
+
+        An unreachable server is an expected, self-healing condition, not
+        a bug in this addon: local edits keep working against the mirror
+        and queue up for the next successful push (_queue_pending_push()),
+        and the sync cursor is persisted, so the poll only has to survive
+        the outage. It is therefore reported once per outage rather than
+        once per tick, and the timer backs off while it lasts (see
+        _record_poll_failure()) -- a 10-second traceback loop for as long
+        as a server stays down buries anything else in the log and makes a
+        routine outage look like a crash."""
         try:
             self._sync_from_server()
-        except _CONNECTION_ERRORS:
-            LOG.exception("Periodic sync from server failed; will retry.")
-        return GLib.SOURCE_CONTINUE
+        except _CONNECTION_ERRORS as err:
+            return self._record_poll_failure(err)
+        if self._poll_failures:
+            LOG.info(
+                "Sync from server succeeded again after %d failed attempt(s).",
+                self._poll_failures,
+            )
+            self._poll_failures = 0
+        return self._reschedule_poll(POLL_INTERVAL_SECONDS)
+
+    def _record_poll_failure(self, err):
+        """Handle a failed _poll_tick() sync: report it (once per outage,
+        with the detail kept at DEBUG for whoever is diagnosing one) and
+        slow the timer down, doubling up to POLL_BACKOFF_MAX_SECONDS.
+
+        Returns what _poll_tick() must return: GLib.SOURCE_REMOVE if the
+        interval changed (_reschedule_poll() has already installed the
+        replacement timeout), GLib.SOURCE_CONTINUE otherwise."""
+        self._poll_failures += 1
+        interval = min(self._poll_interval * 2, POLL_BACKOFF_MAX_SECONDS)
+        if self._poll_failures == 1:
+            LOG.warning(
+                "Periodic sync from server failed (%s); retrying, backing off "
+                "to at most every %d seconds until the server answers again.",
+                err,
+                POLL_BACKOFF_MAX_SECONDS,
+            )
+            LOG.debug("Periodic sync failure detail", exc_info=True)
+        else:
+            LOG.debug(
+                "Periodic sync from server still failing after %d attempts (%s); "
+                "next retry in %d seconds.",
+                self._poll_failures,
+                err,
+                interval,
+                exc_info=True,
+            )
+        return self._reschedule_poll(interval)
+
+    def _reschedule_poll(self, interval):
+        """Point the record poll at a new interval, GLib.timeout_add_
+        seconds() having no way to retime an existing source: a fresh
+        timeout is installed and the caller (always _poll_tick(), the
+        running callback) reports GLib.SOURCE_REMOVE so the old one is
+        dropped rather than left firing alongside it. A no-op -- and so
+        plain GLib.SOURCE_CONTINUE -- when the interval is unchanged,
+        which is the common case on both a healthy poll and a failing one
+        already sitting at POLL_BACKOFF_MAX_SECONDS."""
+        if interval == self._poll_interval:
+            return GLib.SOURCE_CONTINUE
+        self._poll_interval = interval
+        self._poll_source_id = GLib.timeout_add_seconds(interval, self._poll_tick)
+        return GLib.SOURCE_REMOVE
 
     def _media_poll_tick(self):
         """GLib.timeout_add_seconds callback for the slower media-file
         scan -- same contract as _poll_tick() (must return True to keep
-        firing; a connection error is caught and logged here rather than
+        firing; a connection error is caught and reported here rather than
         left to propagate), just for _sync_media_files() instead of the
-        record-history poll."""
+        record-history poll.
+
+        Reported once per outage for the same reason as _poll_tick(), but
+        with no backoff to go with it: MEDIA_POLL_INTERVAL_SECONDS is
+        already as coarse as that poll's backoff cap."""
         try:
             self._sync_media_files()
-        except _CONNECTION_ERRORS:
-            LOG.exception("Periodic media file sync failed; will retry.")
+        except _CONNECTION_ERRORS as err:
+            if self._media_poll_failures == 0:
+                LOG.warning(
+                    "Periodic media file sync failed (%s); will retry every "
+                    "%d seconds.",
+                    err,
+                    MEDIA_POLL_INTERVAL_SECONDS,
+                )
+                LOG.debug("Periodic media file sync failure detail", exc_info=True)
+            else:
+                LOG.debug(
+                    "Periodic media file sync still failing after %d attempts (%s).",
+                    self._media_poll_failures + 1,
+                    err,
+                    exc_info=True,
+                )
+            self._media_poll_failures += 1
+            return GLib.SOURCE_CONTINUE
+        if self._media_poll_failures:
+            LOG.info(
+                "Media file sync succeeded again after %d failed attempt(s).",
+                self._media_poll_failures,
+            )
+            self._media_poll_failures = 0
         return GLib.SOURCE_CONTINUE
 
     def transaction_begin(self, transaction):
@@ -848,10 +1010,18 @@ class WebApiDB(SQLite):
         """
         if not payload:
             return
+        started = monotonic()
+        background = self._use_background_push(payload)
+        LOG.debug(
+            "push: %d change(s) (%s)%s%s",
+            len(payload),
+            ", ".join(sorted({entry["type"] for entry in payload})),
+            " undo" if undo else "",
+            " background" if background else "",
+        )
         try:
-            self.web_client.push_transaction(
-                payload, undo=undo, background=self._use_background_push(payload)
-            )
+            self.web_client.push_transaction(payload, undo=undo, background=background)
+            LOG.debug("push: accepted in %.2fs", monotonic() - started)
         except WebApiPushConflict:
             LOG.warning(
                 "Server rejected %d local change(s): the object(s) changed "
@@ -988,6 +1158,7 @@ class WebApiDB(SQLite):
                 )
             pending.pop(0)
         self._set_metadata("pending_pushes", pending)
+        LOG.debug("queue: %d push(es) still pending after the flush", len(pending))
 
     def _retry_after_conflict(self, payload):
         """Reapply each locally-intended change on top of the mirror
@@ -1112,7 +1283,7 @@ class WebApiDB(SQLite):
             )
         return filled
 
-    def _sync_from_server(self, progress_callback=None):
+    def _sync_from_server(self, progress_callback=None, verify_totals=False):
         """
         Pull every transaction after the last-seen timestamp and replay
         its changes into the local mirror. Returns the number of changes
@@ -1125,7 +1296,11 @@ class WebApiDB(SQLite):
         Flagged rather than silently skipped; _full_resync() is the
         fallback once the whole page range has been walked (so
         sync_last_time still advances past it and any *describable*
-        changes around it are applied normally either way).
+        changes around it are applied normally either way). A feed that is
+        empty *altogether*, or too sparse to account for what the server
+        holds, is the same kind of gap and gets the same fallback -- see
+        _mirror_is_short_of_the_server(), which ``verify_totals`` asks for
+        (load() does; the poll doesn't).
 
         progress_callback, if given, is called with an int 0-100 after
         each page -- see load()'s callback param. "total" comes from the
@@ -1135,7 +1310,10 @@ class WebApiDB(SQLite):
         """
         self._flush_pending_pushes()
         after = self._get_metadata("sync_last_time", default=0)
+        started = monotonic()
+        LOG.debug("sync: asking for transactions after %s", after)
         applied = 0
+        skipped = 0
         needs_full_resync = False
         page = 1
         seen = 0
@@ -1164,20 +1342,113 @@ class WebApiDB(SQLite):
                                 net_changes[
                                     (change["obj_class"], change["obj_handle"])
                                 ] = change["trans_type"]
+                            else:
+                                # Reference-type changes and anything else
+                                # with no primary-object class to map --
+                                # counted rather than logged per change,
+                                # which would be one line per row of the
+                                # feed.
+                                skipped += 1
                         after = max(after, server_trans["timestamp"])
             finally:
                 self._pulling = False
             self._emit_change_signals(net_changes)
             seen += len(transactions)
+            LOG.debug(
+                "sync: page %d, %d transaction(s) of %s, %d change(s) applied "
+                "so far, cursor %s",
+                page,
+                len(transactions),
+                total,
+                applied,
+                after,
+            )
             if progress_callback is not None and total:
                 progress_callback(min(100, int(seen * 100 / total)))
             if len(transactions) < SYNC_PAGE_SIZE:
                 break
             page += 1
         self._set_metadata("sync_last_time", after)
+        LOG.debug(
+            "sync: %d change(s) applied, %d skipped, from %d transaction(s) "
+            "in %.2fs; cursor now %s",
+            applied,
+            skipped,
+            seen,
+            monotonic() - started,
+            after,
+        )
+        if not needs_full_resync and verify_totals:
+            needs_full_resync = self._mirror_is_short_of_the_server()
         if needs_full_resync:
             self._full_resync(progress_callback=progress_callback)
         return applied
+
+    def _mirror_is_short_of_the_server(self):
+        """Whether the mirror holds fewer objects than the server says its
+        tree has, once the incremental sync has had its turn -- the other
+        way the history feed can fail to describe the server's state,
+        alongside the empty-"changes" marker _sync_from_server() already
+        watches for.
+
+        A server can hold a full tree that its history does not account
+        for: that table only records what gramps-web-api itself wrote, so
+        anything populated by another route (a server-side import straight
+        into the database, a restored dump, a truncated history table) has
+        nothing to replay. https://demo.grampsweb.org is exactly this --
+        4668 people, and GET /transactions/history/ returned X-Total-Count
+        0 until someone edited it through the API. Without this check,
+        syncing such a server is *silently* wrong: load() succeeds, the
+        feed describes only the handful of edits it does know about, and
+        the user gets a Family Tree holding those and nothing else, with
+        nothing in the log to say why.
+
+        Comparing totals rather than asking whether the feed came back
+        empty is what makes that case detectable at all. An empty feed is
+        only the extreme of it: one API edit against a history-less server
+        is enough to hand back a transaction, advance sync_last_time, and
+        make the sync look like it worked. Both counts cover the same ten
+        primary types (webapi_client.OBJECT_COUNT_KEYS mirrors Gramps'
+        own DbGeneric.get_total()), so equality is the invariant this
+        addon exists to maintain and a mirror that falls short of it is
+        provably missing data -- _full_resync()'s wholesale XML export
+        being the same recovery used for the empty-"changes" case, and for
+        the same reason: the history cannot describe what is already
+        there.
+
+        Only run where _sync_from_server()'s caller asks for it -- load(),
+        not the 10-second poll (see POLL_INTERVAL_SECONDS): an outdated
+        mirror is repaired when the tree is opened, not on a timer, so the
+        extra GET /metadata/ costs one request per open and a rebuild can
+        never land in the middle of a working session.
+
+        Skipped outright while pushes are queued (see
+        _queue_pending_push()): those are local edits the server has not
+        accepted yet, so the two counts are legitimately out of step, and
+        rebuilding from the server's export in that state would fight with
+        work still waiting to go the other way.
+
+        A *larger* local total isn't treated as damage: an extra local
+        object is either something this mirror is about to push or
+        something the export would silently destroy, neither of which a
+        rebuild should decide on its own. Only a shortfall is repaired.
+        """
+        if self._get_metadata("pending_pushes", default=[]):
+            LOG.debug("Pending pushes queued; skipping the mirror total check.")
+            return False
+        local_total = self.get_total()
+        server_total = self.web_client.get_object_count()
+        LOG.debug("totals: local mirror %d, server %d", local_total, server_total)
+        if local_total >= server_total:
+            return False
+        LOG.warning(
+            "Local mirror holds %d objects but the server reports %d; its "
+            "transaction history cannot account for the difference, so the "
+            "mirror is being rebuilt from a full export.",
+            local_total,
+            server_total,
+        )
+        return True
 
     def _full_resync(self, progress_callback=None):
         """
@@ -1214,7 +1485,13 @@ class WebApiDB(SQLite):
         """
         if progress_callback is not None:
             progress_callback(0)
+        started = monotonic()
         data = self.web_client.download_export()
+        LOG.debug(
+            "resync: downloaded a %.1f MB export in %.2fs",
+            len(data) / (1024 * 1024),
+            monotonic() - started,
+        )
         with NamedTemporaryFile(suffix=".gramps", delete=False) as tmp_file:
             tmp_file.write(data)
             tmp_path = tmp_file.name
@@ -1224,6 +1501,7 @@ class WebApiDB(SQLite):
         # across importData() too, not just the explicit DbTxn above it.
         self._pulling = True
         try:
+            cleared = 0
             with DbTxn(
                 _("Clear local mirror before full resync"), self, batch=True
             ) as trans:
@@ -1233,7 +1511,15 @@ class WebApiDB(SQLite):
                     remove = getattr(self, f"remove_{name}")
                     for handle in handles:
                         remove(handle, trans)
+                    cleared += len(handles)
+            LOG.debug("resync: cleared %d local object(s); reimporting", cleared)
+            imported_at = monotonic()
             importData(self, tmp_path, User())
+            LOG.debug(
+                "resync: reimport left %d object(s) (%.2fs)",
+                self.get_total(),
+                monotonic() - imported_at,
+            )
             # importData() runs its own batch=True DbTxn internally, so
             # (like _sync_from_server()'s replay) it emits nothing to
             # already-open views on its own -- request_rebuild() is the
@@ -1266,14 +1552,26 @@ class WebApiDB(SQLite):
 
         Returns ``(downloaded, uploaded)`` file counts.
         """
+        started = monotonic()
+        missing_local = self._missing_local_media_handles()
         downloaded = 0
-        for handle in self._missing_local_media_handles():
+        for handle in missing_local:
             if self._download_one_media_file(handle):
                 downloaded += 1
+        missing_remote = self._missing_remote_media_handles()
         uploaded = 0
-        for handle in self._missing_remote_media_handles():
+        for handle in missing_remote:
             if self._upload_one_media_file(handle):
                 uploaded += 1
+        LOG.debug(
+            "media: %d missing locally (%d downloaded), %d missing on the "
+            "server (%d uploaded), in %.2fs",
+            len(missing_local),
+            downloaded,
+            len(missing_remote),
+            uploaded,
+            monotonic() - started,
+        )
         if downloaded or uploaded:
             LOG.info(
                 "Media file sync: downloaded %d file(s), uploaded %d file(s).",

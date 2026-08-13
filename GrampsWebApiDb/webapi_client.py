@@ -79,7 +79,7 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode, urlparse
 from urllib.request import Request, urlopen
 
-LOG = logging.getLogger("grampswebapidb")
+LOG = logging.getLogger(".grampswebapidb")
 
 #: Environment variable read by WebApiHandler.from_env().
 API_KEY_ENV_VAR = "GRAMPS_WEB_API_KEY"
@@ -95,6 +95,24 @@ TIMEOUT = 60
 #: immediately constructing another WebApiHandler in the same second
 #: reliably 429s otherwise.
 RATE_LIMIT_BACKOFF = 1.1
+
+#: The "object_counts" buckets GET /metadata/ reports that correspond to
+#: the ten primary types Gramps' own DbGeneric.get_total() counts -- see
+#: get_object_count(). Summed by name rather than over whatever keys the
+#: response happens to carry, so a server that grows an extra bucket
+#: can't make a perfectly good local mirror look permanently short of it.
+OBJECT_COUNT_KEYS = (
+    "people",
+    "families",
+    "events",
+    "places",
+    "repositories",
+    "sources",
+    "citations",
+    "media",
+    "notes",
+    "tags",
+)
 
 #: Chunk size used when streaming a media file download to disk -- see
 #: download_media_file().
@@ -137,6 +155,14 @@ def _raise_for_push_conflict(exc: HTTPError) -> None:
     if message == _CONFLICT_MESSAGE:
         raise WebApiPushConflict(message) from exc
     raise exc
+
+
+def _request_target(req: Request) -> str:
+    """The path+query of ``req`` for a log line -- scheme and host
+    dropped as noise (one server per handler), credentials never
+    involved: they travel in headers, not the URL. See _open()."""
+    parts = urlparse(req.full_url)
+    return parts.path + (f"?{parts.query}" if parts.query else "")
 
 
 def parse_version(version):
@@ -307,8 +333,46 @@ class WebApiHandler:
         return make_api_key(handler._refresh_token, handler.url)
 
     def _open(self, req: Request):
-        """Open ``req`` with this handler's SSL context and timeout."""
-        return urlopen(req, context=self._ctx, timeout=TIMEOUT)
+        """Open ``req`` with this handler's SSL context and timeout.
+
+        Every request this client makes funnels through here, so this is
+        also where each one is traced at DEBUG: method, path, outcome and
+        round-trip time, one line apiece. Only the path+query is logged,
+        never headers -- the bearer token lives in a header, and nothing
+        this addon sends puts a credential in a URL. The timing stops at
+        the response headers, before the body is read, which is what makes
+        it useful for telling a slow server apart from a slow transfer.
+        """
+        started = time.monotonic()
+        target = _request_target(req)
+        try:
+            res = urlopen(req, context=self._ctx, timeout=TIMEOUT)
+        except HTTPError as exc:
+            LOG.debug(
+                "%s %s -> HTTP %s (%.2fs)",
+                req.get_method(),
+                target,
+                exc.code,
+                time.monotonic() - started,
+            )
+            raise
+        except (URLError, socket.timeout) as exc:
+            LOG.debug(
+                "%s %s -> %s (%.2fs)",
+                req.get_method(),
+                target,
+                exc,
+                time.monotonic() - started,
+            )
+            raise
+        LOG.debug(
+            "%s %s -> %s (%.2fs)",
+            req.get_method(),
+            target,
+            getattr(res, "status", "?"),
+            time.monotonic() - started,
+        )
+        return res
 
     @property
     def access_token(self) -> str:
@@ -440,6 +504,25 @@ class WebApiHandler:
             data, _headers = self._get_json(f"{self.url}/metadata/")
             self._metadata = data
         return self._metadata
+
+    def get_object_count(self) -> int:
+        """How many primary objects the server's tree currently holds:
+        GET /metadata/'s "object_counts", summed over OBJECT_COUNT_KEYS.
+
+        Deliberately *not* routed through get_metadata()'s cache. That
+        cache is for the deployment description -- versions, server
+        features -- which cannot change while a tree is open; an object
+        count is live state, and the only reason to ask for it is to
+        compare it against what a local mirror holds right now (see
+        grampswebapidb.py's _mirror_is_short_of_the_server()).
+        """
+        data, _headers = self._get_json(f"{self.url}/metadata/")
+        counts = data.get("object_counts") or {}
+        return sum(
+            count
+            for key, count in counts.items()
+            if key in OBJECT_COUNT_KEYS and isinstance(count, int)
+        )
 
     def get_api_version(self) -> str | None:
         """gramps-web-api's own version string, e.g. "2.8.1"."""

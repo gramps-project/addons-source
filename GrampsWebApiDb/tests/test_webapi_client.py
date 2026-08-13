@@ -954,6 +954,43 @@ class TestMetadata(unittest.TestCase):
         with mock.patch.object(webapi_client, "urlopen", fake):
             self.assertFalse(handler.supports_background_transactions())
 
+    def test_object_count_sums_every_type(self):
+        handler = self._authed_handler()
+        counts = {"object_counts": {"people": 4668, "families": 2855, "tags": 13}}
+        fake = QueuedUrlopen([FakeResponse(counts)])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertEqual(handler.get_object_count(), 4668 + 2855 + 13)
+
+    def test_object_count_without_the_section_is_zero(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse({"gramps": {"version": "6.0.1"}})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertEqual(handler.get_object_count(), 0)
+
+    def test_object_count_ignores_non_numeric_entries(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [FakeResponse({"object_counts": {"people": 3, "note": "n/a"}})]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertEqual(handler.get_object_count(), 3)
+
+    def test_object_count_is_not_served_from_the_metadata_cache(self):
+        # Live state, unlike the versions get_metadata() caches: two calls
+        # must produce two requests, and must not poison that cache.
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                FakeResponse({"object_counts": {"people": 1}}),
+                FakeResponse({"object_counts": {"people": 2}}),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertEqual(handler.get_object_count(), 1)
+            self.assertEqual(handler.get_object_count(), 2)
+        self.assertEqual(len(fake.requests), 2)
+        self.assertIsNone(handler._metadata)
+
 
 # -------------------------------------------------------------------------
 #
