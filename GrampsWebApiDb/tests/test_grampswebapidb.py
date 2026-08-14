@@ -45,6 +45,7 @@ Run with::
 # -------------------------------------------------------------------------
 import os
 import sys
+import time
 import unittest
 from urllib.error import HTTPError, URLError
 from unittest import mock
@@ -717,6 +718,7 @@ class TestFullResync(unittest.TestCase):
         # _full_resync() reports the rebuilt total at DEBUG; there's no
         # real dbapi connection behind these stubs to count.
         self.db.get_total = mock.MagicMock(return_value=0)
+        self.db._set_metadata = mock.MagicMock()
         self.patcher = mock.patch.object(grampswebapidb, "DbTxn", FakeDbTxn)
         self.patcher.start()
         self.addCleanup(self.patcher.stop)
@@ -855,6 +857,50 @@ class TestFullResync(unittest.TestCase):
             with self.assertRaises(RuntimeError):
                 self.db._full_resync(progress_callback=progress)
         progress.assert_called_once_with(0)
+
+    def test_advances_sync_last_time_past_the_stuck_cursor(self):
+        # A totals-shortfall rebuild (_mirror_is_short_of_the_server()) can
+        # be triggered by a history feed whose very first page came back
+        # empty, which leaves sync_last_time at whatever it started as (0
+        # for a brand new mirror) instead of anywhere near "now". Left
+        # alone, _push_payload()'s "resync from the server, then retry"
+        # conflict recovery reuses that same stuck cursor and so can never
+        # actually pick up what changed -- see the module's _full_resync()
+        # docstring. Confirm the rebuild now leaves a fresh, roughly-"now"
+        # cursor behind instead.
+        for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
+            if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
+                continue
+            setattr(self.db, f"get_{name}_handles", mock.MagicMock(return_value=[]))
+            setattr(self.db, f"remove_{name}", mock.MagicMock())
+        before = time.time()
+        with mock.patch.object(grampswebapidb, "importData"):
+            self.db._full_resync()
+        after = time.time()
+        self.db._set_metadata.assert_called_once_with("sync_last_time", mock.ANY)
+        cutoff = self.db._set_metadata.call_args.args[1]
+        self.assertGreaterEqual(cutoff, before)
+        self.assertLessEqual(cutoff, after)
+
+    def test_does_not_advance_sync_last_time_if_the_reimport_raises(self):
+        # A rebuild that failed partway through left the mirror in an
+        # unknown state (same reasoning as test_failed_import_does_not_
+        # trigger_rebuild() above) -- advancing the cursor anyway would
+        # tell the next sync "everything up to here is accounted for" for
+        # a mirror that plainly isn't.
+        for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
+            if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
+                continue
+            setattr(self.db, f"get_{name}_handles", mock.MagicMock(return_value=[]))
+            setattr(self.db, f"remove_{name}", mock.MagicMock())
+
+        def failing_import_data(database, filename, user):
+            raise RuntimeError("boom")
+
+        with mock.patch.object(grampswebapidb, "importData", failing_import_data):
+            with self.assertRaises(RuntimeError):
+                self.db._full_resync()
+        self.db._set_metadata.assert_not_called()
 
 
 # -------------------------------------------------------------------------
