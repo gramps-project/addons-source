@@ -381,7 +381,7 @@ import os
 import re
 from copy import deepcopy
 from tempfile import NamedTemporaryFile
-from time import monotonic
+from time import monotonic, time
 from urllib.error import HTTPError, URLError
 
 from gi.repository import GLib
@@ -1566,9 +1566,30 @@ class WebApiDB(SQLite):
         the download+reimport -- unlike _sync_from_server()'s page-by-page
         reporting, ImportXml has no internal step reporting to forward
         finer-grained progress from.
+
+        Also (re)sets sync_last_time to a timestamp taken right before the
+        export download starts, so the next incremental sync asks the
+        history feed for changes after that point instead of wherever the
+        walk that triggered this rebuild happened to leave the cursor --
+        for the totals-shortfall case (_mirror_is_short_of_the_server()),
+        that walk can be a single empty page, which leaves sync_last_time
+        at its untouched starting value (0 for a brand new mirror) rather
+        than anywhere near "now". Left uncorrected, every later poll asks
+        for history "after 0" forever on a server whose history can't
+        describe its own data anyway, so it's a harmless no-op -- but a
+        *push conflict*'s own recovery (_push_payload()'s "resync from the
+        server now, then retry") uses that exact same stuck cursor, so the
+        resync it does can never actually pick up what changed and the
+        retry is doomed to repeat the same conflict and give up. Taken
+        before the download rather than after: a transaction the server
+        commits while the export is being generated or transferred is
+        safer to see again on the next poll (re-applying an already-
+        reflected change is a no-op) than to have it fall silently before
+        the cursor and only be discovered next time a shortfall check runs.
         """
         if progress_callback is not None:
             progress_callback(0)
+        sync_cutoff = time()
         started = monotonic()
         # The single longest transfer this addon makes -- streamed rather
         # than read in one go so the main loop keeps its turn throughout
@@ -1631,6 +1652,7 @@ class WebApiDB(SQLite):
         finally:
             self._pulling = False
             os.remove(tmp_path)
+        self._set_metadata("sync_last_time", sync_cutoff)
         if progress_callback is not None:
             progress_callback(100)
 
