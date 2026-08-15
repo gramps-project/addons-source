@@ -550,9 +550,12 @@ def _http_error_detail(err):
     validation errors (a raw 422, before the request even reaches
     gramps-web-api's route handler) put that under "detail"; the app's
     own domain errors (see webapi_client._raise_for_push_conflict(),
-    _task_error_message()) use {"error": {"message": ...}} instead. Try
-    both shapes; give up quietly (None) if the body isn't JSON at all, or
-    has already been read by something else.
+    _task_error_message()) use {"error": {"message": ...}} instead;
+    flask-jwt-extended's own error handlers -- what actually answers a
+    rejected POST /token/refresh/ (expired, revoked, or otherwise invalid
+    refresh token) -- use a third shape, {"msg": ...}. Try all three; give
+    up quietly (None) if the body isn't JSON at all, or has already been
+    read by something else.
     """
     try:
         body = json.loads(err.read())
@@ -566,6 +569,9 @@ def _http_error_detail(err):
     error = body.get("error")
     if isinstance(error, dict) and error.get("message"):
         return str(error["message"])
+    msg = body.get("msg")
+    if msg:
+        return str(msg)
     return None
 
 
