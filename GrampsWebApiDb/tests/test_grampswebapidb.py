@@ -1430,6 +1430,13 @@ class TestDescribeConnectionError(unittest.TestCase):
         message = grampswebapidb._describe_connection_error(err)
         self.assertIn("Object has changed", message)
 
+    def test_appends_flask_jwt_extendeds_msg_shape_too(self):
+        # What POST /token/refresh/ actually answers with when the stored
+        # refresh token is expired, revoked, or otherwise rejected.
+        err = self._http_error(422, {"msg": "Signature verification failed"})
+        message = grampswebapidb._describe_connection_error(err)
+        self.assertIn("Signature verification failed", message)
+
     def test_no_body_falls_back_to_the_bare_status(self):
         message = grampswebapidb._describe_connection_error(self._http_error(500))
         self.assertEqual(message, str(self._http_error(500)))
