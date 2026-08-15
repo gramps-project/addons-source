@@ -376,6 +376,7 @@ normal commit. Gramps' own undo history is in-memory/per-session, not
 persisted, so this only ever matters within a single running session.
 """
 
+import json
 import logging
 import os
 import re
@@ -538,6 +539,36 @@ def _pump_main_loop():
         context.iteration(False)
 
 
+def _http_error_detail(err):
+    """Pull the server's own explanation out of an HTTPError's JSON body,
+    if it has one.
+
+    _get_json()/_get_binary() re-raise a non-401/429 HTTPError as-is,
+    which throws away its response body -- so a bare "HTTP Error 422:
+    Unprocessable Entity" reaches the user with no hint which request
+    parameter the server actually objected to. FastAPI's own automatic
+    validation errors (a raw 422, before the request even reaches
+    gramps-web-api's route handler) put that under "detail"; the app's
+    own domain errors (see webapi_client._raise_for_push_conflict(),
+    _task_error_message()) use {"error": {"message": ...}} instead. Try
+    both shapes; give up quietly (None) if the body isn't JSON at all, or
+    has already been read by something else.
+    """
+    try:
+        body = json.loads(err.read())
+    except (ValueError, OSError, AttributeError):
+        return None
+    if not isinstance(body, dict):
+        return None
+    detail = body.get("detail")
+    if detail:
+        return str(detail)
+    error = body.get("error")
+    if isinstance(error, dict) and error.get("message"):
+        return str(error["message"])
+    return None
+
+
 def _describe_connection_error(err):
     """
     Turn a _CONNECTION_ERRORS exception into DbConnectionError's message
@@ -545,6 +576,10 @@ def _describe_connection_error(err):
     correctly identified but isn't allowed to do this -- worth calling out
     specifically, since the raw HTTPError text ("HTTP Error 403:
     Forbidden") reads like an auth failure rather than a permissions one.
+
+    Anything else that came with a JSON body (see _http_error_detail())
+    gets that appended, so a validation failure like a bare 422 names the
+    field it rejected instead of just its status code.
     """
     if isinstance(err, HTTPError) and err.code == 403:
         return _(
@@ -554,6 +589,10 @@ def _describe_connection_error(err):
             "permissions, or ask the server administrator to grant this "
             "one access."
         )
+    if isinstance(err, HTTPError):
+        detail = _http_error_detail(err)
+        if detail:
+            return "%s\n\n%s" % (err, detail)
     return str(err)
 
 

@@ -43,6 +43,8 @@ Run with::
 # Standard python modules
 #
 # -------------------------------------------------------------------------
+import io
+import json
 import os
 import sys
 import time
@@ -1392,6 +1394,60 @@ class TestMisc(unittest.TestCase):
             db._initialize("/tmp/some-tree", "user", "pw")
         self.assertIs(db.web_client, sentinel_client)
         super_init.assert_called_once_with("/tmp/some-tree", "user", "pw")
+
+
+# -------------------------------------------------------------------------
+#
+# TestDescribeConnectionError
+#
+# _get_json()/_get_binary() re-raise a non-401/429 HTTPError as-is, which
+# throws its response body away -- so, absent _http_error_detail(), a
+# validation failure the server explained in detail (a raw 422 from
+# FastAPI's own request validation, before gramps-web-api's route handler
+# even runs) would reach the user as nothing but "HTTP Error 422:
+# Unprocessable Entity". See _describe_connection_error()'s docstring.
+#
+# -------------------------------------------------------------------------
+class TestDescribeConnectionError(unittest.TestCase):
+    @staticmethod
+    def _http_error(code, body=None):
+        fp = io.BytesIO(json.dumps(body).encode()) if body is not None else None
+        return HTTPError("https://example.com/api/transactions/", code, "x", None, fp)
+
+    def test_403_names_the_permission_problem_instead_of_the_raw_status(self):
+        message = grampswebapidb._describe_connection_error(self._http_error(403))
+        self.assertIn("GRAMPS_WEB_API_KEY", message)
+        self.assertNotIn("HTTP Error 403", message)
+
+    def test_422_appends_fastapi_detail(self):
+        err = self._http_error(422, {"detail": [{"msg": "value is not a valid float"}]})
+        message = grampswebapidb._describe_connection_error(err)
+        self.assertIn("HTTP Error 422", message)
+        self.assertIn("value is not a valid float", message)
+
+    def test_appends_the_apps_own_error_message_shape_too(self):
+        err = self._http_error(400, {"error": {"message": "Object has changed"}})
+        message = grampswebapidb._describe_connection_error(err)
+        self.assertIn("Object has changed", message)
+
+    def test_no_body_falls_back_to_the_bare_status(self):
+        message = grampswebapidb._describe_connection_error(self._http_error(500))
+        self.assertEqual(message, str(self._http_error(500)))
+
+    def test_unparseable_body_falls_back_to_the_bare_status(self):
+        err = HTTPError(
+            "https://example.com/api/transactions/",
+            422,
+            "x",
+            None,
+            io.BytesIO(b"not json"),
+        )
+        message = grampswebapidb._describe_connection_error(err)
+        self.assertEqual(message, str(err))
+
+    def test_non_http_error_just_stringifies(self):
+        message = grampswebapidb._describe_connection_error(ValueError("boom"))
+        self.assertEqual(message, "boom")
 
 
 # -------------------------------------------------------------------------
