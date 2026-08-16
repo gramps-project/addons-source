@@ -300,6 +300,20 @@ precedent); this is the version that doesn't restructure every call path.
 Pumping re-enters, so the poll timeouts check _syncing and skip a tick
 rather than starting a second sync underneath the first.
 
+Reentering the main loop can also let the *user* act on this very Family
+Tree while a pump-driven operation is suspended partway through it --
+switching to another tree or quitting Gramps calls close() from a GTK
+event dispatched during the pump, which closes self.dbapi's connection
+out from under the still-running caller. Left unhandled, that caller
+resumes after the pump and crashes on its next database touch
+(sqlite3.ProgrammingError: Cannot operate on a closed database) instead
+of unwinding cleanly. Every _pump_main_loop() call this class makes goes
+through _guarded_pump() instead of the bare function for exactly this
+reason: it raises _DatabaseClosed if close() ran during that pump, and
+the entry points that can trigger one (_poll_tick(), _media_poll_tick(),
+load(), _push_payload(), _flush_pending_pushes()) catch it as "nothing
+left to do here", not a failure.
+
 Tracing a session
 -----------------
 Most of what this addon does is invisible from the Gramps UI: a sync that
@@ -504,6 +518,15 @@ BACKGROUND_PUSH_THRESHOLD = 100
 #: server being unreachable (HTTPError/URLError/OSError -- socket.timeout
 #: is an OSError subclass).
 _CONNECTION_ERRORS = (ValueError, KeyError, HTTPError, URLError, OSError)
+
+
+class _DatabaseClosed(Exception):
+    """Raised by WebApiDB._guarded_pump() when close() ran while a
+    pump-driven sync/push was suspended -- see the module docstring's
+    "Keeping the GUI alive" section. Deliberately not one of the
+    _CONNECTION_ERRORS: it isn't a connectivity problem, and turning it
+    into a DbConnectionError would show the user a scary message about a
+    tree they've already left."""
 
 
 def _pump_main_loop():
@@ -712,6 +735,11 @@ class WebApiDB(SQLite):
     #: _pump_main_loop() hands the main loop back mid-operation.
     _syncing = False
 
+    #: Set by close(), before anything else it does, so a pump-driven
+    #: sync/push suspended elsewhere on the call stack sees it as soon as
+    #: the main loop gives control back -- see _guarded_pump().
+    _closed = False
+
     #: Consecutive failed polls, per timer, and the record poll's current
     #: interval -- the outage state _poll_tick()/_media_poll_tick() use to
     #: log an outage once instead of once per tick, and to back the record
@@ -766,6 +794,12 @@ class WebApiDB(SQLite):
         self._check_server_version()
         try:
             self._sync_from_server(progress_callback=callback, verify_totals=True)
+        except _DatabaseClosed:
+            # The tree was closed (or switched away from) while this
+            # initial sync was suspended mid-pump -- see _guarded_pump().
+            # Nothing left to open; don't schedule polling for it.
+            LOG.debug("load: tree closed during initial sync; aborting")
+            return
         except _CONNECTION_ERRORS as err:
             raise DbConnectionError(
                 _describe_connection_error(err), self._directory
@@ -778,6 +812,9 @@ class WebApiDB(SQLite):
         self._poll_interval = POLL_INTERVAL_SECONDS
         try:
             self._sync_media_files()
+        except _DatabaseClosed:
+            LOG.debug("load: tree closed during initial media sync; aborting")
+            return
         except _CONNECTION_ERRORS:
             # Unlike the record sync above, a media-file-sync failure here
             # doesn't block opening the tree: the record mirror is already
@@ -927,6 +964,12 @@ class WebApiDB(SQLite):
         )
 
     def close(self, *args, **kwargs):
+        # Set first, before anything else: a sync/push elsewhere on the
+        # call stack may be suspended inside _guarded_pump(), waiting to
+        # find out whether it's still safe to touch self.dbapi once the
+        # main loop hands control back. See _guarded_pump() and the module
+        # docstring's "Keeping the GUI alive" section.
+        self._closed = True
         # Stop polling a database that's no longer open -- otherwise the
         # next tick would run _sync_from_server() (and touch self.dbapi)
         # against a connection that's about to be (or already) closed.
@@ -939,6 +982,27 @@ class WebApiDB(SQLite):
             GLib.source_remove(media_poll_source_id)
             self._media_poll_source_id = None
         super().close(*args, **kwargs)
+
+    def _guarded_pump(self):
+        """_pump_main_loop(), then raise _DatabaseClosed if that let
+        close() run out from under us.
+
+        Every _pump_main_loop() call this class makes goes through here
+        instead of the bare function. Without it, a sync/push resumes
+        after the pump and immediately crashes trying to touch
+        self.dbapi -- the user switching or closing this very Family Tree
+        is a perfectly ordinary GTK event, and reentering the main loop
+        mid-operation (see the module docstring) is exactly what lets it
+        get dispatched underneath a suspended call. Callers that can
+        trigger a pump (directly or via webapi_client's on_wait/on_chunk
+        hooks) let this propagate up to whichever entry point started
+        them -- _poll_tick(), _media_poll_tick(), load(), _push_payload(),
+        _flush_pending_pushes() -- which treat it as nothing left to do,
+        not a failure.
+        """
+        _pump_main_loop()
+        if self._closed:
+            raise _DatabaseClosed()
 
     def _poll_tick(self):
         """GLib.timeout_add_seconds callback -- see the module docstring's
@@ -962,6 +1026,13 @@ class WebApiDB(SQLite):
             return GLib.SOURCE_CONTINUE
         try:
             self._sync_from_server()
+        except _DatabaseClosed:
+            # The tree got closed (or switched away from) while this tick
+            # was suspended mid-sync -- see _guarded_pump(). The GLib
+            # source is already gone (close() removed it); nothing more
+            # to do or report.
+            LOG.debug("poll: tree closed mid-sync; stopping this timer")
+            return GLib.SOURCE_REMOVE
         except _CONNECTION_ERRORS as err:
             return self._record_poll_failure(err)
         if self._poll_failures:
@@ -1031,6 +1102,9 @@ class WebApiDB(SQLite):
             return GLib.SOURCE_CONTINUE
         try:
             self._sync_media_files()
+        except _DatabaseClosed:
+            LOG.debug("media poll: tree closed mid-sync; stopping this timer")
+            return GLib.SOURCE_REMOVE
         except _CONNECTION_ERRORS as err:
             if self._media_poll_failures == 0:
                 LOG.warning(
@@ -1128,9 +1202,15 @@ class WebApiDB(SQLite):
         )
         try:
             self.web_client.push_transaction(
-                payload, undo=undo, background=background, on_wait=_pump_main_loop
+                payload, undo=undo, background=background, on_wait=self._guarded_pump
             )
             LOG.debug("push: accepted in %.2fs", monotonic() - started)
+        except _DatabaseClosed:
+            # The tree was closed (or switched away from) while this push
+            # was suspended mid-wait -- see _guarded_pump(). Nothing left
+            # to push to; the edit stays local and unsent.
+            LOG.debug("push: tree closed mid-push; abandoning it")
+            return
         except WebApiPushConflict:
             LOG.warning(
                 "Server rejected %d local change(s): the object(s) changed "
@@ -1140,6 +1220,9 @@ class WebApiDB(SQLite):
             )
             try:
                 self._sync_from_server()
+            except _DatabaseClosed:
+                LOG.debug("push: tree closed during conflict resync; abandoning it")
+                return
             except _CONNECTION_ERRORS:
                 LOG.exception("Resync after a push conflict also failed.")
                 return
@@ -1242,7 +1325,7 @@ class WebApiDB(SQLite):
                     entry["payload"],
                     undo=entry.get("undo", False),
                     background=self._use_background_push(entry["payload"]),
-                    on_wait=_pump_main_loop,
+                    on_wait=self._guarded_pump,
                 )
             except WebApiPushConflict:
                 LOG.warning(
@@ -1488,7 +1571,7 @@ class WebApiDB(SQLite):
             # one hasn't opened, so this is the one point in the replay
             # where handing the main loop back is safe. A catch-up of any
             # size would otherwise hold it for its whole duration.
-            _pump_main_loop()
+            self._guarded_pump()
             if len(transactions) < SYNC_PAGE_SIZE:
                 break
             page += 1
@@ -1496,7 +1579,7 @@ class WebApiDB(SQLite):
         # pump whenever the feed hands back a short page or nothing at
         # all, which is every routine poll -- and each of those still
         # cost a blocking round trip to find out.
-        _pump_main_loop()
+        self._guarded_pump()
         self._set_metadata("sync_last_time", after)
         LOG.debug(
             "sync: %d change(s) applied, %d skipped, from %d transaction(s) "
@@ -1638,8 +1721,8 @@ class WebApiDB(SQLite):
         started = monotonic()
         # The single longest transfer this addon makes -- streamed rather
         # than read in one go so the main loop keeps its turn throughout
-        # (see _pump_main_loop() and download_export()'s on_chunk).
-        data = self.web_client.download_export(on_chunk=_pump_main_loop)
+        # (see _guarded_pump() and download_export()'s on_chunk).
+        data = self.web_client.download_export(on_chunk=self._guarded_pump)
         LOG.debug(
             "resync: downloaded a %.1f MB export in %.2fs",
             len(data) / (1024 * 1024),
@@ -1652,8 +1735,8 @@ class WebApiDB(SQLite):
         # still intact: from here to request_rebuild() the local data is
         # being torn down and rebuilt, and anything dispatched in the
         # middle of that would be looking at a half-empty tree. See
-        # _pump_main_loop().
-        _pump_main_loop()
+        # _guarded_pump().
+        self._guarded_pump()
         # Both halves below are pull-side rebuilds, not local edits -- see
         # _sync_from_server()'s own note on the _pulling flag. ImportXml
         # opens its own batch DbTxn internally, so this has to stay set
@@ -1693,7 +1776,7 @@ class WebApiDB(SQLite):
             self.request_rebuild()
             # The mirror is whole again and every view has been told to
             # reload, so it's safe to let the loop run once more.
-            _pump_main_loop()
+            self._guarded_pump()
         finally:
             self._pulling = False
             os.remove(tmp_path)
@@ -1737,13 +1820,13 @@ class WebApiDB(SQLite):
                 downloaded += 1
             # One file is one blocking transfer; a first sync of a tree
             # with media runs hundreds of them back to back.
-            _pump_main_loop()
+            self._guarded_pump()
         missing_remote = self._missing_remote_media_handles()
         uploaded = 0
         for handle in missing_remote:
             if self._upload_one_media_file(handle):
                 uploaded += 1
-            _pump_main_loop()
+            self._guarded_pump()
         LOG.debug(
             "media: %d missing locally (%d downloaded), %d missing on the "
             "server (%d uploaded), in %.2fs",

@@ -749,7 +749,7 @@ class TestFullResync(unittest.TestCase):
             self.db._full_resync()
 
         self.db.web_client.download_export.assert_called_once_with(
-            on_chunk=grampswebapidb._pump_main_loop
+            on_chunk=self.db._guarded_pump
         )
         for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
             if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
@@ -965,6 +965,15 @@ class TestTransactionCommit(unittest.TestCase):
             with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
                 self.db.transaction_commit(trans)  # must not raise
 
+    def test_push_swallows_database_closed_mid_push(self):
+        # The tree was closed (or switched away from) while push_transaction()'s
+        # on_wait=self._guarded_pump had handed the main loop back -- see
+        # TestGuardedPump. Not a failure: nothing left to push to.
+        trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
+        self.db.web_client.push_transaction.side_effect = grampswebapidb._DatabaseClosed
+        with mock.patch.object(grampswebapidb.SQLite, "transaction_commit"):
+            self.db.transaction_commit(trans)  # must not raise, must not log
+
     def test_conflict_triggers_resync_then_retry(self):
         # A WebApiPushConflict means the server rejected the whole batch
         # because something changed server-side since the local mirror's
@@ -1008,6 +1017,21 @@ class TestTransactionCommit(unittest.TestCase):
                 self.db.transaction_commit(trans)  # must not raise
         # A failed resync means the mirror still doesn't reflect the
         # server, so retrying the edit on top of it would be pointless.
+        retry.assert_not_called()
+
+    def test_conflict_resync_database_closed_is_also_swallowed(self):
+        trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
+        self.db.web_client.push_transaction.side_effect = WebApiPushConflict(
+            "Object has changed"
+        )
+        with mock.patch.object(
+            grampswebapidb.SQLite, "transaction_commit"
+        ), mock.patch.object(
+            self.db, "_sync_from_server", side_effect=grampswebapidb._DatabaseClosed
+        ), mock.patch.object(
+            self.db, "_retry_after_conflict"
+        ) as retry:
+            self.db.transaction_commit(trans)  # must not raise, must not log
         retry.assert_not_called()
 
     def test_repeated_conflict_on_a_retry_is_not_retried_again(self):
@@ -1904,6 +1928,7 @@ class TestPolling(unittest.TestCase):
         self.assertIsNone(self.db._poll_source_id)
         self.assertIsNone(self.db._media_poll_source_id)
         super_close.assert_called_once_with()
+        self.assertTrue(self.db._closed)
 
     def test_close_without_a_poll_scheduled_is_a_no_op(self):
         # e.g. close() called after a failed load(), before the timeouts
@@ -1916,6 +1941,7 @@ class TestPolling(unittest.TestCase):
             self.db.close()
         source_remove.assert_not_called()
         super_close.assert_called_once_with()
+        self.assertTrue(self.db._closed)
 
     def test_poll_tick_syncs_and_keeps_repeating(self):
         with mock.patch.object(self.db, "_sync_from_server") as sync:
@@ -2041,6 +2067,61 @@ class TestPolling(unittest.TestCase):
                 result = self.db._media_poll_tick()
         self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
         self.assertEqual(self.db._media_poll_failures, 0)
+
+    def test_poll_tick_stops_quietly_when_the_tree_closed_mid_sync(self):
+        # The user switching (or closing) this Family Tree while
+        # _guarded_pump() had handed the main loop back mid-sync -- see
+        # TestGuardedPump. Not a failure: no WARNING, and the timer must
+        # not reschedule itself (close() already removed its GLib source).
+        with mock.patch.object(
+            self.db, "_sync_from_server", side_effect=grampswebapidb._DatabaseClosed
+        ):
+            result = self.db._poll_tick()
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_REMOVE)
+        self.assertEqual(self.db._poll_failures, 0)
+
+    def test_media_poll_tick_stops_quietly_when_the_tree_closed_mid_sync(self):
+        with mock.patch.object(
+            self.db, "_sync_media_files", side_effect=grampswebapidb._DatabaseClosed
+        ):
+            result = self.db._media_poll_tick()
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_REMOVE)
+        self.assertEqual(self.db._media_poll_failures, 0)
+
+
+# -------------------------------------------------------------------------
+#
+# TestGuardedPump
+#
+# _guarded_pump() is what every _pump_main_loop() call inside WebApiDB
+# goes through instead of the bare function -- see the module docstring's
+# "Keeping the GUI alive" section. Regression coverage for the crash a PR
+# tester hit: switching Family Trees while a poll-driven sync was
+# suspended mid-_pump_main_loop() resumed against an already-closed
+# sqlite connection (sqlite3.ProgrammingError: Cannot operate on a closed
+# database).
+#
+# -------------------------------------------------------------------------
+class TestGuardedPump(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+
+    def test_pumps_and_returns_when_still_open(self):
+        with mock.patch.object(grampswebapidb, "_pump_main_loop") as pump:
+            self.db._guarded_pump()  # must not raise
+        pump.assert_called_once_with()
+
+    def test_raises_database_closed_if_close_ran_during_the_pump(self):
+        def fake_pump():
+            # Simulates close() running from a GTK event dispatched while
+            # this pump had control -- see close()'s own _closed = True.
+            self.db._closed = True
+
+        with mock.patch.object(
+            grampswebapidb, "_pump_main_loop", side_effect=fake_pump
+        ):
+            with self.assertRaises(grampswebapidb._DatabaseClosed):
+                self.db._guarded_pump()
 
 
 # -------------------------------------------------------------------------
