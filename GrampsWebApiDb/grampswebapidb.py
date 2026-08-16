@@ -367,6 +367,19 @@ the entry points that can trigger one (_poll_tick(), _media_poll_tick(),
 load(), _push_payload(), _flush_pending_pushes()) catch it as "nothing
 left to do here", not a failure.
 
+Reentering the main loop can also run GUI code this addon does not own
+and cannot make correct -- a redraw, or an idle callback some view
+scheduled off one of our own commit/rebuild signals. Confirmed in the
+field: a HandleError raised by a PeopleView redraw dispatched off
+_full_resync()'s trailing pump propagated straight up through an
+otherwise-successful WebApiPushConflict recovery and killed Gramps,
+after the resync itself had already fixed the local mirror. Gramps'
+own Callback.emit() already treats a connected handler's exception as
+that handler's problem and not the emitter's (log and continue);
+_pump_main_loop() now does the same around
+GLib.MainContext.iteration(), which has no such protection built in on
+its own.
+
 Tracing a session
 -----------------
 Most of what this addon does is invisible from the Gramps UI: a sync that
@@ -610,10 +623,34 @@ def _pump_main_loop():
     re-entrancy -- our own POLL_INTERVAL_SECONDS timeout coming round
     while a sync is in flight. _poll_tick()/_media_poll_tick() check
     _syncing for exactly that and skip their turn.
+
+    A second, subtler hazard: whatever pending source this dispatches --
+    a redraw, an idle callback a view scheduled off one of our own
+    request_rebuild()/commit signals, an unrelated timer -- runs
+    arbitrary code this addon does not own and cannot make correct.
+    Gramps' own Callback.emit() already treats a connected handler's
+    exception as that handler's problem (log and move on, never let it
+    abort the emit()); GLib.MainContext.iteration() has no such
+    protection built in, so left unguarded, a bug in some completely
+    unrelated bit of GUI code reached this way can propagate up through
+    this addon's sync/push machinery and take the whole application down
+    with it -- confirmed in the field as a HandleError raised from a
+    PeopleView redraw during _full_resync()'s post-reimport pump,
+    surfacing (and killing Gramps) from inside a WebApiPushConflict
+    handler that had otherwise recovered correctly. Catching and logging
+    here, matching Callback.emit()'s own posture, keeps that class of bug
+    a cosmetic GUI glitch instead of a lost edit and a crashed app.
     """
     context = GLib.MainContext.default()
     while context.pending():
-        context.iteration(False)
+        try:
+            context.iteration(False)
+        except Exception:
+            LOG.exception(
+                "Unhandled exception from a GTK/GLib callback dispatched "
+                "while pumping the main loop mid-sync; continuing rather "
+                "than letting it abort the sync/push in progress."
+            )
 
 
 def _http_error_detail(err):
