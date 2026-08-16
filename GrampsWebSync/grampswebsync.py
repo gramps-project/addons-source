@@ -157,6 +157,20 @@ def _dim(text: str) -> str:
     return f"<small>{GLib.markup_escape_text(text)}</small>"
 
 
+def _hide_until_needed(widget: Gtk.Widget) -> None:
+    """Show a widget's contents, then leave the widget itself hidden.
+
+    Order matters. ``show_all`` skips a widget that has no-show-all set and so
+    never reaches its children, which leaves a container that is later made
+    visible looking empty.
+
+    :param widget: The widget to prepare. Call after adding its children.
+    """
+    widget.show_all()
+    widget.set_no_show_all(True)
+    widget.hide()
+
+
 def _label(text: str = "", *, xalign: float = 0.0, wrap: bool = True) -> Gtk.Label:
     """Return a left-aligned label with sensible wrapping defaults."""
     label = Gtk.Label(label=text)
@@ -929,7 +943,6 @@ class ReviewPane(Gtk.Box):
         self.sync_mode = MODE_BIDIRECTIONAL
 
         self.mode_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=3)
-        self.mode_box.set_no_show_all(True)
         self.mode_box.pack_start(
             _label(_("Sync mode:"), wrap=False), False, False, 0
         )
@@ -949,6 +962,7 @@ class ReviewPane(Gtk.Box):
         self.description_label = _label()
         self.description_label.set_margin_start(24)
         self.mode_box.pack_start(self.description_label, False, False, 0)
+        _hide_until_needed(self.mode_box)
         self.pack_start(self.mode_box, False, False, 0)
 
         self.warning_label = _label()
@@ -977,8 +991,8 @@ class ReviewPane(Gtk.Box):
         self.scrolled = Gtk.ScrolledWindow()
         self.scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         self.scrolled.set_shadow_type(Gtk.ShadowType.IN)
-        self.scrolled.set_no_show_all(True)
         self.scrolled.add(self.tree_view)
+        _hide_until_needed(self.scrolled)
         self.pack_start(self.scrolled, True, True, 0)
 
         self.media_check = Gtk.CheckButton(label="")
@@ -1004,7 +1018,6 @@ class ReviewPane(Gtk.Box):
         # object list to show, so neither is offered.
         self.mode_box.set_visible(bool(session.changes))
         self.scrolled.set_visible(bool(session.changes))
-        self.tree_view.show_all()
         self._render_media(session)
         self._render_changes()
 
@@ -1094,8 +1107,6 @@ class ResultPane(Gtk.Box):
         self.pack_start(self.notice_label, False, False, 0)
 
         self.details = Gtk.Expander(label=_("Details"))
-        self.details.set_no_show_all(True)
-        self.details.hide()
         details_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
         self.details_label = _label()
         self.details_label.set_selectable(True)
@@ -1105,6 +1116,7 @@ class ResultPane(Gtk.Box):
         copy_button.connect("clicked", self._on_copy)
         details_box.pack_start(copy_button, False, False, 0)
         self.details.add(details_box)
+        _hide_until_needed(self.details)
         self.pack_start(self.details, False, False, 0)
 
         self._details_text = ""
