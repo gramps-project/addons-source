@@ -997,7 +997,10 @@ class TestTransactionCommit(unittest.TestCase):
         # server() exists for, not just an ordinary edit the incremental
         # feed would replay -- see the module docstring.
         resync.assert_called_once_with(verify_totals=True)
-        retry.assert_called_once()
+        # refresh_from_server=True: merge against a direct per-object
+        # fetch, not the mirror the resync above may not have been able
+        # to update for this exact object -- see _retry_after_conflict().
+        retry.assert_called_once_with(mock.ANY, refresh_from_server=True)
         payload = retry.call_args[0][0]
         self.assertEqual(payload[0]["handle"], "H1")
 
@@ -1022,6 +1025,30 @@ class TestTransactionCommit(unittest.TestCase):
         # A failed resync means the mirror still doesn't reflect the
         # server, so retrying the edit on top of it would be pointless.
         retry.assert_not_called()
+
+    def test_retry_fetch_failure_is_queued_not_dropped(self):
+        # _retry_after_conflict(refresh_from_server=True) fetches each
+        # entry fresh before committing anything locally -- a network
+        # failure there is a plain connectivity problem, not a conflict,
+        # so the payload is queued for later like any other push that
+        # couldn't be delivered (see TestPendingPushQueue), not dropped.
+        trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
+        self.db.web_client.push_transaction.side_effect = WebApiPushConflict(
+            "Object has changed"
+        )
+        with mock.patch.object(
+            grampswebapidb.SQLite, "transaction_commit"
+        ), mock.patch.object(self.db, "_sync_from_server"), mock.patch.object(
+            self.db,
+            "_retry_after_conflict",
+            side_effect=OSError("network down"),
+        ):
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
+                self.db.transaction_commit(trans)  # must not raise
+        self.assertEqual(len(self.metadata["pending_pushes"]), 1)
+        self.assertEqual(
+            self.metadata["pending_pushes"][0]["payload"][0]["handle"], "H1"
+        )
 
     def test_conflict_resync_database_closed_is_also_swallowed(self):
         trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
@@ -1100,6 +1127,7 @@ class TestRetryAfterConflict(unittest.TestCase):
         self.db.remove_person = mock.MagicMock()
         self.db.has_person_handle = mock.MagicMock()
         self.db.get_person_from_handle = mock.MagicMock()
+        self.db.web_client = mock.MagicMock()
         dbtxn_patch = mock.patch.object(grampswebapidb, "DbTxn")
         mock_dbtxn_class = dbtxn_patch.start()
         mock_dbtxn_class.return_value.__enter__.return_value = "TRANS"
@@ -1150,6 +1178,78 @@ class TestRetryAfterConflict(unittest.TestCase):
         self.assertIsInstance(merge_local, Person)
         self.assertEqual(merge_local.get_gramps_id(), "I0002")
         self.db.commit_person.assert_called_once_with("MERGED", "TRANS")
+
+    def test_refresh_from_server_merges_against_a_direct_fetch_not_the_mirror(self):
+        # The whole point of refresh_from_server=True: the local mirror
+        # (has_person_handle/get_person_from_handle) is never consulted
+        # for the merge decision -- only WebApiHandler.get_object(), a
+        # direct GET /people/<handle> -- since a resync can be blind to
+        # what the server actually holds (bulk-imported data never
+        # touches the transaction-history feed; see the module docstring
+        # and webapi_client.get_object()'s docstring).
+        server_data = remove_object(person_data("H1", "I0099"))
+        self.db.web_client.get_object.return_value = server_data
+        new_data = remove_object(person_data("H1", "I0002"))
+        payload = [
+            {
+                "type": "update",
+                "handle": "H1",
+                "_class": "Person",
+                "old": None,
+                "new": new_data,
+            }
+        ]
+        with mock.patch.object(grampswebapidb, "_merge_or_overwrite") as merge_fn:
+            merge_fn.return_value = "MERGED"
+            self.db._retry_after_conflict(payload, refresh_from_server=True)
+        self.db.web_client.get_object.assert_called_once_with("Person", "H1")
+        self.db.has_person_handle.assert_not_called()
+        self.db.get_person_from_handle.assert_not_called()
+        merge_current, merge_local = merge_fn.call_args[0]
+        self.assertEqual(merge_current.get_gramps_id(), "I0099")
+        self.assertIsInstance(merge_local, Person)
+        self.db.commit_person.assert_called_once_with("MERGED", "TRANS")
+
+    def test_refresh_from_server_with_no_server_object_commits_as_is(self):
+        # get_object() returning None (a 404) means the server has
+        # nothing at this handle to merge against -- same as a true add.
+        self.db.web_client.get_object.return_value = None
+        new_data = remove_object(person_data("H1", "I0001"))
+        payload = [
+            {
+                "type": "update",
+                "handle": "H1",
+                "_class": "Person",
+                "old": None,
+                "new": new_data,
+            }
+        ]
+        with mock.patch.object(grampswebapidb, "_merge_or_overwrite") as merge_fn:
+            self.db._retry_after_conflict(payload, refresh_from_server=True)
+        merge_fn.assert_not_called()
+        self.db.commit_person.assert_called_once()
+        obj, trans = self.db.commit_person.call_args[0]
+        self.assertEqual(obj.get_gramps_id(), "I0001")
+
+    def test_refresh_from_server_fetches_before_opening_the_transaction(self):
+        # A network failure here must fail cleanly with nothing committed
+        # locally yet -- see _push_payload()'s handling of this, which
+        # queues the whole payload for later rather than leaving a
+        # partially-applied transaction.
+        self.db.web_client.get_object.side_effect = OSError("network down")
+        new_data = remove_object(person_data("H1"))
+        payload = [
+            {
+                "type": "update",
+                "handle": "H1",
+                "_class": "Person",
+                "old": None,
+                "new": new_data,
+            }
+        ]
+        with self.assertRaises(OSError):
+            self.db._retry_after_conflict(payload, refresh_from_server=True)
+        self.db.commit_person.assert_not_called()
 
     def test_delete_removes_if_handle_still_present(self):
         self.db.has_person_handle.return_value = True

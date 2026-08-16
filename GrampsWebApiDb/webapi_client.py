@@ -114,6 +114,23 @@ OBJECT_COUNT_KEYS = (
     "tags",
 )
 
+#: Gramps class name -> the REST resource's plural path segment, e.g.
+#: "Person" -> GET /people/<handle> -- see gramps-web-api's api/__init__.py
+#: route registrations. Used by get_object() to fetch one primary object's
+#: current server-side state directly, by class and handle.
+CLASS_TO_ENDPOINT = {
+    "Person": "people",
+    "Family": "families",
+    "Event": "events",
+    "Place": "places",
+    "Source": "sources",
+    "Citation": "citations",
+    "Repository": "repositories",
+    "Media": "media",
+    "Note": "notes",
+    "Tag": "tags",
+}
+
 #: Chunk size used when streaming a media file download to disk -- see
 #: download_media_file().
 _DOWNLOAD_CHUNK_SIZE = 1024 * 64
@@ -776,6 +793,39 @@ class WebApiHandler:
         body, headers = self._get_json(url)
         total_count = int(headers.get("X-Total-Count", len(body)))
         return body, total_count
+
+    def get_object(self, obj_class: str, handle: str) -> dict[str, Any] | None:
+        """Fetch one primary object's current server-side state directly
+        -- GET /<type>/<handle> -- rather than through the transaction-
+        history feed or a full-tree resync.
+
+        Both of those describe the server's state only as far as
+        gramps-web-api's own transaction log accounts for it -- which a
+        bulk import (POST /importers/<ext>/file, GEDCOM/Gramps XML/CSV/
+        ...) never touches at all, since it runs the same batch=True
+        import machinery a local Gramps client's own Import menu action
+        would (see grampswebapidb.py's module docstring). That is normal
+        server administration, not a quirk of any one installation, so an
+        object whose true current content the history feed cannot
+        describe is an ordinary thing to run into, not an edge case.
+        grampswebapidb.py's _retry_after_conflict() calls this to read
+        the one object actually in question directly, sidestepping that
+        blind spot entirely rather than trying to detect it.
+
+        Returns ``None`` if the server has no object at this handle (a
+        404 -- deleted, or never existed), the same "nothing to merge
+        against" signal a locally-new object gives.
+        """
+        endpoint = CLASS_TO_ENDPOINT.get(obj_class)
+        if endpoint is None:
+            raise ValueError(f"Unknown object class: {obj_class!r}")
+        try:
+            data, _headers = self._get_json(f"{self.url}/{endpoint}/{handle}")
+        except HTTPError as exc:
+            if exc.code == 404:
+                return None
+            raise
+        return data
 
     def wait_for_task(
         self,
