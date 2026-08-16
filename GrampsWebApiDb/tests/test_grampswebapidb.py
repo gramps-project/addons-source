@@ -43,10 +43,13 @@ Run with::
 # Standard python modules
 #
 # -------------------------------------------------------------------------
+import copy
 import io
 import json
 import os
+import shutil
 import sys
+import tempfile
 import time
 import unittest
 from urllib.error import HTTPError, URLError
@@ -68,9 +71,11 @@ try:
 except ImportError as _err:
     raise unittest.SkipTest("gramps package not available: %s" % _err)
 
+from gramps.gen.db import DbTxn
 from gramps.gen.db.dbconst import REFERENCE_KEY, TXNADD, TXNDEL, TXNUPD
 from gramps.gen.db.exceptions import DbConnectionError
-from gramps.gen.lib import Person, Tag
+from gramps.gen.db.utils import make_database
+from gramps.gen.lib import Attribute, Person, Tag
 from gramps.gen.lib.json_utils import object_to_data, remove_object
 
 from GrampsWebApiDb import grampswebapidb
@@ -1179,16 +1184,16 @@ class TestRetryAfterConflict(unittest.TestCase):
         self.assertEqual(merge_local.get_gramps_id(), "I0002")
         self.db.commit_person.assert_called_once_with("MERGED", "TRANS")
 
-    def test_refresh_from_server_merges_against_a_direct_fetch_not_the_mirror(self):
-        # The whole point of refresh_from_server=True: the local mirror
-        # (has_person_handle/get_person_from_handle) is never consulted
-        # for the merge decision -- only WebApiHandler.get_object(), a
-        # direct GET /people/<handle> -- since a resync can be blind to
-        # what the server actually holds (bulk-imported data never
-        # touches the transaction-history feed; see the module docstring
-        # and webapi_client.get_object()'s docstring).
-        server_data = remove_object(person_data("H1", "I0099"))
-        self.db.web_client.get_object.return_value = server_data
+    def test_refresh_from_server_pulls_before_merging(self):
+        # refresh_from_server=True calls _pull_conflicting_objects() (see
+        # TestPullConflictingObjects) first, so that by the time this
+        # merge loop runs, the local mirror it consults is already
+        # current -- the merge/commit logic below is otherwise identical
+        # to refresh_from_server=False.
+        self.db.has_person_handle.return_value = True
+        current = Person()
+        current.set_handle("H1")
+        self.db.get_person_from_handle.return_value = current
         new_data = remove_object(person_data("H1", "I0002"))
         payload = [
             {
@@ -1199,44 +1204,19 @@ class TestRetryAfterConflict(unittest.TestCase):
                 "new": new_data,
             }
         ]
-        with mock.patch.object(grampswebapidb, "_merge_or_overwrite") as merge_fn:
+        with mock.patch.object(
+            self.db, "_pull_conflicting_objects"
+        ) as pull, mock.patch.object(grampswebapidb, "_merge_or_overwrite") as merge_fn:
             merge_fn.return_value = "MERGED"
             self.db._retry_after_conflict(payload, refresh_from_server=True)
-        self.db.web_client.get_object.assert_called_once_with("Person", "H1")
-        self.db.has_person_handle.assert_not_called()
-        self.db.get_person_from_handle.assert_not_called()
+        pull.assert_called_once_with(payload)
         merge_current, merge_local = merge_fn.call_args[0]
-        self.assertEqual(merge_current.get_gramps_id(), "I0099")
+        self.assertIs(merge_current, current)
         self.assertIsInstance(merge_local, Person)
         self.db.commit_person.assert_called_once_with("MERGED", "TRANS")
 
-    def test_refresh_from_server_with_no_server_object_commits_as_is(self):
-        # get_object() returning None (a 404) means the server has
-        # nothing at this handle to merge against -- same as a true add.
-        self.db.web_client.get_object.return_value = None
-        new_data = remove_object(person_data("H1", "I0001"))
-        payload = [
-            {
-                "type": "update",
-                "handle": "H1",
-                "_class": "Person",
-                "old": None,
-                "new": new_data,
-            }
-        ]
-        with mock.patch.object(grampswebapidb, "_merge_or_overwrite") as merge_fn:
-            self.db._retry_after_conflict(payload, refresh_from_server=True)
-        merge_fn.assert_not_called()
-        self.db.commit_person.assert_called_once()
-        obj, trans = self.db.commit_person.call_args[0]
-        self.assertEqual(obj.get_gramps_id(), "I0001")
-
-    def test_refresh_from_server_fetches_before_opening_the_transaction(self):
-        # A network failure here must fail cleanly with nothing committed
-        # locally yet -- see _push_payload()'s handling of this, which
-        # queues the whole payload for later rather than leaving a
-        # partially-applied transaction.
-        self.db.web_client.get_object.side_effect = OSError("network down")
+    def test_refresh_from_server_false_does_not_pull(self):
+        self.db.has_person_handle.return_value = False
         new_data = remove_object(person_data("H1"))
         payload = [
             {
@@ -1247,8 +1227,30 @@ class TestRetryAfterConflict(unittest.TestCase):
                 "new": new_data,
             }
         ]
-        with self.assertRaises(OSError):
-            self.db._retry_after_conflict(payload, refresh_from_server=True)
+        with mock.patch.object(self.db, "_pull_conflicting_objects") as pull:
+            self.db._retry_after_conflict(payload)
+        pull.assert_not_called()
+
+    def test_pull_failure_propagates_before_any_local_commit(self):
+        # A network failure pulling fresh server data must fail cleanly
+        # with nothing committed locally yet -- see _push_payload()'s
+        # handling of this, which queues the whole payload for later
+        # rather than leaving a partially-applied transaction.
+        new_data = remove_object(person_data("H1"))
+        payload = [
+            {
+                "type": "update",
+                "handle": "H1",
+                "_class": "Person",
+                "old": None,
+                "new": new_data,
+            }
+        ]
+        with mock.patch.object(
+            self.db, "_pull_conflicting_objects", side_effect=OSError("network down")
+        ):
+            with self.assertRaises(OSError):
+                self.db._retry_after_conflict(payload, refresh_from_server=True)
         self.db.commit_person.assert_not_called()
 
     def test_delete_removes_if_handle_still_present(self):
@@ -1333,6 +1335,256 @@ class TestRetryAfterConflict(unittest.TestCase):
         with self.assertRaises(RuntimeError):
             self.db._retry_after_conflict(payload)
         self.assertFalse(self.db._retrying)
+
+
+# -------------------------------------------------------------------------
+#
+# TestPullConflictingObjects
+#
+# _pull_conflicting_objects() -- the refresh_from_server=True half of
+# _retry_after_conflict() -- brings the local mirror's copy of each
+# conflicting object up to date with a direct GET /<type>/<handle> read
+# (WebApiHandler.get_object()), as a pull-side replay (batch=True,
+# _pulling=True, so nothing here gets pushed back out -- see
+# TestSyncFromServer for the same pattern), before the retry's own
+# merge-and-commit runs. Without this as an actual local write, DBAPI
+# would still compute the retry's "old" snapshot from the stale
+# pre-conflict mirror -- see the module docstring and
+# _retry_after_conflict()'s.
+#
+# -------------------------------------------------------------------------
+class TestPullConflictingObjects(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+        self.db.web_client = mock.MagicMock()
+        self.db.commit_person = mock.MagicMock()
+        self.db.has_person_handle = mock.MagicMock(return_value=False)
+        self.db.emit = mock.MagicMock()
+        dbtxn_patch = mock.patch.object(grampswebapidb, "DbTxn", FakeDbTxn)
+        dbtxn_patch.start()
+        self.addCleanup(dbtxn_patch.stop)
+
+    def emitted(self):
+        return {call.args[0]: call.args[1][0] for call in self.db.emit.call_args_list}
+
+    @staticmethod
+    def _update_entry(handle="H1"):
+        return {
+            "type": "update",
+            "handle": handle,
+            "_class": "Person",
+            "old": None,
+            "new": {},
+        }
+
+    def test_pulls_and_commits_each_entrys_current_server_object(self):
+        server_data = remove_object(person_data("H1", "I0099"))
+        self.db.web_client.get_object.return_value = server_data
+        self.db._pull_conflicting_objects([self._update_entry()])
+        self.db.web_client.get_object.assert_called_once_with("Person", "H1")
+        self.db.commit_person.assert_called_once()
+        obj, _trans = self.db.commit_person.call_args[0]
+        self.assertEqual(obj.get_gramps_id(), "I0099")
+
+    def test_existing_handle_emits_update(self):
+        self.db.web_client.get_object.return_value = remove_object(person_data("H1"))
+        self.db.has_person_handle.return_value = True
+        self.db._pull_conflicting_objects([self._update_entry()])
+        self.assertEqual(self.emitted(), {"person-update": ["H1"]})
+
+    def test_new_handle_emits_add(self):
+        self.db.web_client.get_object.return_value = remove_object(person_data("H1"))
+        self.db.has_person_handle.return_value = False
+        self.db._pull_conflicting_objects([self._update_entry()])
+        self.assertEqual(self.emitted(), {"person-add": ["H1"]})
+
+    def test_delete_entries_are_never_fetched_or_pulled(self):
+        payload = [
+            {
+                "type": "delete",
+                "handle": "H1",
+                "_class": "Person",
+                "old": {},
+                "new": None,
+            }
+        ]
+        self.db._pull_conflicting_objects(payload)
+        self.db.web_client.get_object.assert_not_called()
+        self.db.commit_person.assert_not_called()
+
+    def test_missing_server_object_is_skipped(self):
+        # get_object() returning None (a 404): nothing to pull in --
+        # _retry_after_conflict()'s own has_handle()/commit_<type>()
+        # already do the right thing for a handle absent from the mirror.
+        self.db.web_client.get_object.return_value = None
+        self.db._pull_conflicting_objects([self._update_entry()])
+        self.db.commit_person.assert_not_called()
+        self.db.emit.assert_not_called()
+
+    def test_unrecognized_class_is_skipped(self):
+        payload = [
+            {
+                "type": "update",
+                "handle": "H1",
+                "_class": "NotAThing",
+                "old": None,
+                "new": {},
+            }
+        ]
+        self.db.web_client.get_object.return_value = {}
+        self.db._pull_conflicting_objects(payload)  # must not raise
+        self.db.commit_person.assert_not_called()
+
+    def test_all_fetches_happen_before_any_local_commit(self):
+        self.db.web_client.get_object.side_effect = [
+            remove_object(person_data("H1")),
+            OSError("network down"),
+        ]
+        payload = [self._update_entry("H1"), self._update_entry("H2")]
+        with self.assertRaises(OSError):
+            self.db._pull_conflicting_objects(payload)
+        self.db.commit_person.assert_not_called()
+
+    def test_pulling_flag_set_during_and_cleared_after(self):
+        self.db.web_client.get_object.return_value = remove_object(person_data("H1"))
+        seen = {}
+
+        def check_flag(obj, trans):
+            seen["during"] = self.db._pulling
+
+        self.db.commit_person.side_effect = check_flag
+        self.db._pull_conflicting_objects([self._update_entry()])
+        self.assertTrue(seen["during"])
+        self.assertFalse(self.db._pulling)
+
+    def test_pulling_flag_cleared_even_if_a_commit_raises(self):
+        self.db.web_client.get_object.return_value = remove_object(person_data("H1"))
+        self.db.commit_person.side_effect = RuntimeError("boom")
+        with self.assertRaises(RuntimeError):
+            self.db._pull_conflicting_objects([self._update_entry()])
+        self.assertFalse(self.db._pulling)
+
+
+# -------------------------------------------------------------------------
+#
+# TestConflictRetryAgainstARealDatabase
+#
+# Every test above stubs out commit_person/has_person_handle/get_person_
+# from_handle as independent mocks, which cannot catch a bug where
+# _pull_conflicting_objects()'s write and the later merge step's read of
+# "the current object" disagree -- exactly the shape of bug this fix was
+# written for: an earlier version merged get_object()'s result in memory
+# without ever writing it into the local mirror, so DBAPI's own "old"-
+# snapshot capture (which reads straight from local storage at commit
+# time, with no awareness of get_object() at all -- see _commit_base())
+# kept sending the same stale pre-conflict "old" on the retry and got
+# rejected again, identically, even though the retry's "new" was
+# correctly merged. This class runs against a real (temp-directory)
+# SQLite-backed database and real DbTxn/transaction_commit machinery --
+# only the network layer (web_client) is mocked -- so it actually
+# exercises that interaction end to end.
+#
+# -------------------------------------------------------------------------
+class TestConflictRetryAgainstARealDatabase(unittest.TestCase):
+    def setUp(self):
+        tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
+        self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
+        db = make_database("sqlite")
+        db.load(tmpdir)
+        with DbTxn("seed", db) as trans:
+            person = Person()
+            person.set_gramps_id("I0001")
+            db.add_person(person, trans)
+            self.handle = person.handle
+        # Reclassify the real, already-initialized SQLite-backed db as a
+        # WebApiDB, rather than going through its network-dependent
+        # load() -- this addon has no per-tree settings.ini (see the
+        # module docstring), so nothing else ties identity to a server,
+        # and this is the minimal way to run its push/retry logic against
+        # a real DBAPI backend.
+        db.__class__ = WebApiDB
+        db.web_client = mock.MagicMock()
+        db._syncing = False
+        db._retrying = False
+        db._pulling = False
+        db._get_metadata = lambda key, default=0: default
+        db._set_metadata = lambda key, value, use_txn=True: None
+        db.web_client.get_transaction_history.return_value = ([], 0)
+        db.web_client.get_object_count.return_value = 1
+        db.web_client.supports_background_transactions.return_value = False
+        self.db = db
+        self.addCleanup(self.db.close)
+
+    def _make_server_fresh(self):
+        """The server's true current state for self.handle, diverged from
+        the local mirror's stale copy (private=False -> True) via a route
+        this addon's history feed cannot see -- see
+        _pull_conflicting_objects()'s docstring."""
+        server_fresh = copy.deepcopy(
+            remove_object(object_to_data(self.db.get_person_from_handle(self.handle)))
+        )
+        server_fresh["private"] = True
+        return server_fresh
+
+    def _push_conflicts_once_then_succeeds(self):
+        calls = []
+
+        def fake_push(payload, undo=False, background=False, on_wait=None):
+            calls.append(copy.deepcopy(payload))
+            if len(calls) == 1:
+                raise WebApiPushConflict("Object has changed")
+
+        self.db.web_client.push_transaction.side_effect = fake_push
+        return calls
+
+    def _add_an_attribute(self):
+        with DbTxn("edit", self.db) as trans:
+            person = self.db.get_person_from_handle(self.handle)
+            attr = Attribute()
+            attr.set_type("Occupation")
+            attr.set_value("Tester")
+            person.add_attribute(attr)
+            self.db.commit_person(person, trans)
+
+    def test_retry_pushes_the_fetched_object_as_old_not_the_stale_mirror(self):
+        stale_local = remove_object(
+            object_to_data(self.db.get_person_from_handle(self.handle))
+        )
+        server_fresh = self._make_server_fresh()
+        self.db.web_client.get_object.return_value = server_fresh
+        calls = self._push_conflicts_once_then_succeeds()
+
+        self._add_an_attribute()
+
+        self.assertEqual(len(calls), 2)
+        # The original push sent the stale local snapshot -- that's what
+        # the server rejected.
+        self.assertEqual(calls[0][0]["old"], stale_local)
+        # The retry must send the *fetched* server state as "old", not
+        # the same stale value again -- otherwise it is guaranteed to
+        # conflict identically and the edit is dropped for good (see
+        # _push_payload()'s "give up after a repeated conflict" branch).
+        self.assertEqual(calls[1][0]["old"], server_fresh)
+        # "new" is the merge of that fresh state with the local edit's
+        # actual intent, not a blind overwrite of either side.
+        self.assertTrue(calls[1][0]["new"]["private"])
+        self.assertTrue(
+            any(a["value"] == "Tester" for a in calls[1][0]["new"]["attribute_list"])
+        )
+
+    def test_conflict_resolves_without_being_dropped(self):
+        # Same setup, phrased as an outcome: the local mirror ends up
+        # holding the merged result, and the edit was not dropped after
+        # only its first, correctly-rejected attempt.
+        self.db.web_client.get_object.return_value = self._make_server_fresh()
+        calls = self._push_conflicts_once_then_succeeds()
+
+        self._add_an_attribute()
+
+        self.assertEqual(len(calls), 2)
+        final = self.db.get_person_from_handle(self.handle)
+        self.assertTrue(final.get_privacy())
+        self.assertEqual(len(final.get_attribute_list()), 1)
 
 
 # -------------------------------------------------------------------------

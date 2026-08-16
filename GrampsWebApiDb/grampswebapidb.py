@@ -149,20 +149,23 @@ appear in history) to land in between.
 So: on a conflict, _push_payload() below resyncs from the server (with
 verify_totals=True, the same defense load() uses, for its own sake --
 other objects may genuinely have changed) and then, for a plain commit
-(not an undo/redo -- see _retry_after_conflict()), replays each object's
-intended *new* state as a fresh local edit via commit_<type>()/
-remove_<type>(), the same as before -- except the "current" object each
-add/update is merged against comes from a direct GET /<type>/<handle>
-(WebApiHandler.get_object()) taken right before that replay, not from
-the resync or the local mirror. That is the one thing this addon can
-ask the server that is authoritative regardless of whether history or a
-resync's snapshot can explain how the object got there. That fresh edit
-goes through the normal transaction_commit() -> _push_payload() path
-again with is_retry=True, so it carries an up-to-date "old" snapshot
-matching what was just read, and will only be rejected a second time if
-something changes server-side in the brief window since then -- in
-which case it is logged and dropped rather than retried again, to avoid
-retrying forever against a genuinely hot object.
+(not an undo/redo -- see _retry_after_conflict()), pulls each entry's
+object fresh with its own direct GET /<type>/<handle>
+(WebApiHandler.get_object(), via _pull_conflicting_objects()) *into the
+local mirror* before replaying the intended *new* state as a fresh local
+edit via commit_<type>()/remove_<type>(). That local write, not just a
+fresher value read into memory, is what matters: DBAPI computes the
+retry's own "old" snapshot from whatever is actually stored locally at
+commit time, with no awareness of anything read here -- so unless the
+mirror itself is caught up first, the retry would push the same stale
+"old" as the original failed push and be rejected again identically, no
+matter how correct its "new" was. That fresh edit goes through the
+normal transaction_commit() -> _push_payload() path again with
+is_retry=True, so it now carries an "old" snapshot matching what was
+just pulled, and will only be rejected a second time if something
+changes server-side in the brief window since then -- in which case it
+is logged and dropped rather than retried again, to avoid retrying
+forever against a genuinely hot object.
 
 For an add/update whose object still exists server-side (i.e. the
 conflicting edit changed the same object rather than deleting it),
@@ -1409,40 +1412,34 @@ class WebApiDB(SQLite):
         _merge_or_overwrite() rather than blindly replacing it.
 
         refresh_from_server, set only by _push_payload()'s conflict
-        handler, reads each entry's "current" object with a direct
-        GET /<type>/<handle> (WebApiHandler.get_object()) instead of the
-        local mirror. A resync -- incremental, or the object-count check
-        verify_totals asks for -- can be blind to what the server
-        actually holds for this exact object: a bulk import never
-        touches the transaction-history feed at all (see get_object()'s
-        docstring), which is normal server administration for a real
-        installation, not a rare condition, so the local mirror is not a
-        reliable merge base right after a conflict. Fetched up front, all
-        at once, before the DbTxn below opens -- so a network failure
-        here fails cleanly with nothing committed locally yet, rather
-        than leaving a partially-applied transaction; _push_payload()
-        queues the whole payload for a later retry on that failure, the
-        same as any other connectivity failure.
+        handler, first calls _pull_conflicting_objects() to bring the
+        local mirror's copy of each entry's object up to date with a
+        direct GET /<type>/<handle> read, *before* anything below runs.
+        That has to be an actual local write, not just a fresher value
+        used in memory for the merge: DBAPI computes this retry's own
+        "old" snapshot from whatever is stored locally at commit time
+        (_commit_base()'s _get_raw_data() call, entirely independent of
+        what get_object() returned) -- so unless the mirror itself is
+        caught up first, the retry below would still push the stale
+        pre-conflict "old" and be rejected again identically, even though
+        its "new" reflected correct data. See _pull_conflicting_objects()
+        for why the local mirror (and even this addon's own full-tree
+        resync) cannot be trusted to have already done this.
 
         _reconcile_batch_commit()'s call leaves this off -- replaying a
         local batch operation's own changes as a first push, not
-        recovering from a conflict, so there is nothing to refresh
-        against yet, and fetching every entry individually would cost one
-        request per object for what can be a large batch.
+        recovering from a conflict, so there is nothing to pull yet, and
+        fetching every entry individually would cost one request per
+        object for what can be a large batch.
 
         Runs as one ordinary (non-batch) DbTxn, so it goes through the
         normal transaction_commit() -> _push_payload() path again -- this
-        time with an "old" snapshot that matches what was just read, so it
-        will only be rejected again if something else changed server-side
-        in the brief window since then.
+        time with an "old" snapshot that matches what was just pulled, so
+        it will only be rejected again if something else changed
+        server-side in the brief window since then.
         """
-        fresh = {}
         if refresh_from_server:
-            for entry in payload:
-                if entry["type"] != "delete":
-                    fresh[entry["handle"]] = self.web_client.get_object(
-                        entry["_class"], entry["handle"]
-                    )
+            self._pull_conflicting_objects(payload)
         self._retrying = True
         try:
             with DbTxn(_("Retry local change after server conflict"), self) as trans:
@@ -1458,17 +1455,73 @@ class WebApiDB(SQLite):
                             getattr(self, f"remove_{name}")(handle, trans)
                     else:
                         obj = data_to_object(entry["new"])
-                        if refresh_from_server:
-                            server_data = fresh.get(handle)
-                            if server_data is not None:
-                                current = data_to_object(server_data)
-                                obj = _merge_or_overwrite(current, obj)
-                        elif has_handle(handle):
+                        if has_handle(handle):
                             current = getattr(self, f"get_{name}_from_handle")(handle)
                             obj = _merge_or_overwrite(current, obj)
                         getattr(self, f"commit_{name}")(obj, trans)
         finally:
             self._retrying = False
+
+    def _pull_conflicting_objects(self, payload):
+        """Bring the local mirror's copy of each non-delete ``payload``
+        entry's object up to date with a direct GET /<type>/<handle> read
+        (WebApiHandler.get_object()) -- a pull-side replay, like
+        _sync_from_server()'s own (batch=True, _pulling=True, so nothing
+        here gets pushed back out -- see the module docstring), not a
+        local edit.
+
+        Neither the incremental history feed nor even a full-tree resync
+        can be trusted to have already done this for the object(s) a push
+        just conflicted on: gramps-web-api's bulk-import path (POST
+        /importers/<ext>/file -- GEDCOM, Gramps XML, CSV, ...) runs the
+        same batch=True import machinery a local Gramps client's own
+        Import menu action would, which never touches the transaction-
+        history table at all (see get_object()'s docstring) -- ordinary
+        server administration for any real installation, not a quirk of
+        one server -- and a full-tree resync only proves the mirror was
+        accurate at the moment its export was taken, seconds to tens of
+        seconds before _retry_after_conflict() actually commits. A direct
+        per-object read is the one thing this addon can ask the server
+        that is authoritative regardless of how the object got to its
+        current state.
+
+        Every GET happens before the DbTxn below opens, all at once -- so
+        a network failure here (propagated to _push_payload(), which
+        queues the whole payload for a later retry) leaves nothing
+        committed locally yet, rather than a partially-applied batch.
+
+        A handle the server no longer has (get_object() returns None --
+        deleted, or never existed) is left untouched: nothing to pull in,
+        and _retry_after_conflict()'s own has_handle()/commit_<type>()
+        already do the right thing for a handle absent from the mirror.
+        """
+        fresh = {}
+        for entry in payload:
+            if entry["type"] != "delete":
+                fresh[entry["handle"]] = self.web_client.get_object(
+                    entry["_class"], entry["handle"]
+                )
+        net_changes = {}
+        self._pulling = True
+        try:
+            with DbTxn(_("Refresh before conflict retry"), self, batch=True) as trans:
+                for entry in payload:
+                    server_data = fresh.get(entry["handle"])
+                    if server_data is None:
+                        continue
+                    key = CLASS_TO_KEY_MAP.get(entry["_class"])
+                    if key is None:
+                        continue
+                    name = KEY_TO_NAME_MAP[key]
+                    handle = entry["handle"]
+                    existed = getattr(self, f"has_{name}_handle")(handle)
+                    getattr(self, f"commit_{name}")(data_to_object(server_data), trans)
+                    net_changes[(entry["_class"], handle)] = (
+                        TXNUPD if existed else TXNADD
+                    )
+        finally:
+            self._pulling = False
+        self._emit_change_signals(net_changes)
 
     def _handles_by_class(self):
         """{obj_class: set(handles)} across every primary object type --
