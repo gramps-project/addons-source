@@ -174,12 +174,23 @@ _merge_or_overwrite() below combines the two edits with the object's own
 merge() -- the same list-unioning logic behind Gramps' Merge People/
 Family/... tools (ported from GrampsWebSync's diffhandler.py, credit
 David Straub, same license) -- rather than letting the retry blindly
-clobber whatever the other side changed. merge() only unions *list*-valued
-fields (notes, citations, media, urls, event/family refs, ...); it never
-touches scalar fields (a name, a date, a gender), so two edits to the
-exact same scalar field still resolve as local-overwrites-remote -- real
-field-level conflict *resolution* for that narrower case (diff, prompt the
-user) is still out of scope. If the push fails for a non-conflict reason
+clobber whatever the other side changed. merge(current, acquisition) is
+called as current.merge(acquisition) with current the server's post-
+resync copy and acquisition the local edit, so a *list*-valued field
+(notes, citations, media, urls, event/family refs, tags, ...) is
+unioned -- both sides' items survive -- and any other field merge()
+doesn't specially handle is simply left as current's own value, with
+acquisition's silently discarded (confirmed empirically:
+merge(FEMALE-current, MALE-local) keeps FEMALE) -- the *opposite* of
+"local overwrites remote". Two fields do get their own special-cased
+merge instead of either of those: privacy is OR'd
+(PrivacyBase._merge_privacy(): ``self.private = self.private or
+other.private``, so the merged object is private if either side marked
+it private -- confirmed the same way), and Person.merge() keeps
+current's own primary name but demotes acquisition's into current's
+alternate_names list rather than discarding it. Real field-level
+conflict *resolution* for the plain-scalar case (diff, prompt the user)
+is still out of scope. If the push fails for a non-conflict reason
 (network error, auth failure), the local commit has already happened and
 is not rolled back -- the local mirror just drifts from the server until
 the next successful push or read sync.

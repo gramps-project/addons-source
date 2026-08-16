@@ -1522,6 +1522,39 @@ class TestMergeOrOverwrite(unittest.TestCase):
         result = grampswebapidb._merge_or_overwrite(current, local)
         self.assertIs(result, local)
 
+    def test_privacy_is_ored_not_left_at_either_sides_value(self):
+        # PrivacyBase._merge_privacy() (called from Person.merge()) is
+        # "self.private = self.private or other.private" -- neither a
+        # plain list union nor "current's value wins" (see the next
+        # test): the merged object is private if *either* side marked
+        # it private. Confirmed against a live server during this
+        # addon's own conflict-recovery testing.
+        current = Person()
+        current.set_handle("H1")
+        current.set_privacy(False)
+        local = Person()
+        local.set_handle("H1")
+        local.set_privacy(True)
+
+        merged = grampswebapidb._merge_or_overwrite(current, local)
+        self.assertTrue(merged.get_privacy())
+
+    def test_a_scalar_field_merge_does_not_special_case_keeps_currents_value(self):
+        # A field merge() has no per-field handling for at all (gender,
+        # unlike privacy or a name) is simply never touched: merged
+        # starts as a deepcopy of *current*, so current's own value
+        # survives and local's is silently discarded -- the opposite of
+        # "local overwrites remote".
+        current = Person()
+        current.set_handle("H1")
+        current.set_gender(Person.FEMALE)
+        local = Person()
+        local.set_handle("H1")
+        local.set_gender(Person.MALE)
+
+        merged = grampswebapidb._merge_or_overwrite(current, local)
+        self.assertEqual(merged.get_gender(), Person.FEMALE)
+
 
 # -------------------------------------------------------------------------
 #
