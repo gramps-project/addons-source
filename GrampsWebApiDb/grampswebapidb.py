@@ -129,17 +129,22 @@ WebApiPushConflict (see webapi_client.push_transaction()) if anything
 changed server-side since the local mirror last synced -- a real, if
 coarse, optimistic-concurrency check: the whole push either applies or
 none of it does, with no indication of which item conflicted. On a
-conflict, _push_payload() below resyncs from the server (so the local
-mirror picks up whatever changed) and then, for a plain commit (not an
-undo/redo -- see _retry_after_conflict()), replays each object's intended
-*new* state as a fresh local edit via commit_<type>()/remove_<type>() on
-top of that just-resynced data. That fresh edit goes through the normal
-transaction_commit() -> _push_payload() path again with is_retry=True,
-so it carries an up-to-date "old" snapshot and will only be rejected a
-second time if something changes server-side in the brief window between
-the resync and the retry -- in which case it is logged and dropped rather
-than retried again, to avoid retrying forever against a genuinely hot
-object.
+conflict, _push_payload() below resyncs from the server -- with
+verify_totals=True, the same defense load() uses, since a conflict can
+be caused by a server-side change the incremental history feed cannot
+describe at all (see _mirror_is_short_of_the_server()'s docstring; a
+plain resync would come back empty and the retry below would be
+guaranteed to conflict again identically) as easily as by an ordinary
+edit the feed would replay normally -- and then, for a plain commit (not
+an undo/redo -- see _retry_after_conflict()), replays each object's
+intended *new* state as a fresh local edit via commit_<type>()/
+remove_<type>() on top of that just-resynced data. That fresh edit goes
+through the normal transaction_commit() -> _push_payload() path again
+with is_retry=True, so it carries an up-to-date "old" snapshot and will
+only be rejected a second time if something changes server-side in the
+brief window between the resync and the retry -- in which case it is
+logged and dropped rather than retried again, to avoid retrying forever
+against a genuinely hot object.
 
 For an add/update whose handle still exists after the resync (i.e. the
 conflicting server-side edit changed the same object rather than deleting
@@ -1219,7 +1224,17 @@ class WebApiDB(SQLite):
                 len(payload),
             )
             try:
-                self._sync_from_server()
+                # verify_totals=True, same as load(): a conflict can be
+                # caused by a server-side change the incremental history
+                # feed cannot describe at all (see
+                # _mirror_is_short_of_the_server()'s docstring on
+                # demo.grampsweb.org's restore-from-a-dump behavior)
+                # rather than by an ordinary edit the feed would replay
+                # normally. Without this, that resync always comes back
+                # empty, the retry below re-sends against the same stale
+                # "old" snapshot, and the edit is dropped for good on the
+                # second identical conflict.
+                self._sync_from_server(verify_totals=True)
             except _DatabaseClosed:
                 LOG.debug("push: tree closed during conflict resync; abandoning it")
                 return

@@ -992,7 +992,11 @@ class TestTransactionCommit(unittest.TestCase):
         ) as retry:
             with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
                 self.db.transaction_commit(trans)  # must not raise
-        resync.assert_called_once_with()
+        # verify_totals=True, same as load(): a conflict can be the
+        # untracked-server-change blind spot _mirror_is_short_of_the_
+        # server() exists for, not just an ordinary edit the incremental
+        # feed would replay -- see the module docstring.
+        resync.assert_called_once_with(verify_totals=True)
         retry.assert_called_once()
         payload = retry.call_args[0][0]
         self.assertEqual(payload[0]["handle"], "H1")
@@ -1051,7 +1055,7 @@ class TestTransactionCommit(unittest.TestCase):
                 self.db._push_payload(
                     transaction_to_json(trans), is_retry=True
                 )  # must not raise
-        resync.assert_called_once_with()
+        resync.assert_called_once_with(verify_totals=True)
         retry.assert_not_called()
 
     def test_undo_conflict_is_not_retried(self):
@@ -1070,7 +1074,7 @@ class TestTransactionCommit(unittest.TestCase):
         ) as retry:
             with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
                 self.db._push_payload(transaction_to_json(trans), undo=True)
-        resync.assert_called_once_with()
+        resync.assert_called_once_with(verify_totals=True)
         retry.assert_not_called()
 
 
