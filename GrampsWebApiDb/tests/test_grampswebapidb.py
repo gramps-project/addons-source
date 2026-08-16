@@ -2348,6 +2348,46 @@ class TestPolling(unittest.TestCase):
 
 # -------------------------------------------------------------------------
 #
+# TestPumpMainLoop
+#
+# Regression coverage for a second crash a PR tester hit: a plain local
+# edit ("Add Attribute") conflicted, _push_payload()'s WebApiPushConflict
+# handler correctly ran a full resync to recover, and a HandleError raised
+# by a PeopleView redraw dispatched off the resync's trailing
+# _guarded_pump() call propagated all the way up and killed Gramps --
+# after the resync itself had already succeeded. See _pump_main_loop()'s
+# docstring: GLib.MainContext.iteration() dispatches arbitrary pending
+# GTK/GLib callbacks this addon does not own, and unlike Gramps' own
+# Callback.emit() (which already logs-and-continues on a handler
+# exception), iteration() has no such protection built in.
+#
+# -------------------------------------------------------------------------
+class TestPumpMainLoop(unittest.TestCase):
+    def test_an_exception_from_a_dispatched_callback_is_logged_not_raised(self):
+        context = mock.Mock()
+        context.pending.side_effect = [True, False]
+        context.iteration.side_effect = RuntimeError("boom, from unrelated GUI code")
+        with mock.patch.object(
+            grampswebapidb.GLib.MainContext, "default", return_value=context
+        ):
+            with self.assertLogs(grampswebapidb.LOG.name, level="ERROR"):
+                grampswebapidb._pump_main_loop()  # must not raise
+        context.iteration.assert_called_once_with(False)
+
+    def test_still_drains_every_pending_source_after_one_raises(self):
+        context = mock.Mock()
+        context.pending.side_effect = [True, True, False]
+        context.iteration.side_effect = [RuntimeError("boom"), None]
+        with mock.patch.object(
+            grampswebapidb.GLib.MainContext, "default", return_value=context
+        ):
+            with self.assertLogs(grampswebapidb.LOG.name, level="ERROR"):
+                grampswebapidb._pump_main_loop()
+        self.assertEqual(context.iteration.call_count, 2)
+
+
+# -------------------------------------------------------------------------
+#
 # TestGuardedPump
 #
 # _guarded_pump() is what every _pump_main_loop() call inside WebApiDB
