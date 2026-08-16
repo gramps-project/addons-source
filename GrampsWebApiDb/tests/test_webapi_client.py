@@ -594,6 +594,81 @@ class TestTransactionHistory(unittest.TestCase):
 
 # -------------------------------------------------------------------------
 #
+# TestGetObject
+#
+# get_object() (grampswebapidb.py's _retry_after_conflict()'s
+# refresh_from_server path) hits GET /<type>/<handle> directly, the one
+# source of truth for an object's current server-side state that does not
+# depend on gramps-web-api's own transaction-history feed having anything
+# to say about it -- see its own docstring.
+#
+# -------------------------------------------------------------------------
+class TestGetObject(unittest.TestCase):
+    def _authed_handler(self):
+        fake = QueuedUrlopen([FakeResponse({"access_token": token("AT0")})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler = WebApiHandler("https://example.com/api", refresh_token="RT")
+        return handler
+
+    def test_request_url_uses_the_plural_endpoint(self):
+        handler = self._authed_handler()
+        body = {"_class": "Person", "handle": "H1"}
+        fake = QueuedUrlopen([FakeResponse(body)])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            data = handler.get_object("Person", "H1")
+        self.assertEqual(data, body)
+        self.assertEqual(fake.requests[0].full_url, "https://example.com/api/people/H1")
+
+    def test_family_uses_its_irregular_plural(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse({"_class": "Family", "handle": "H1"})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.get_object("Family", "H1")
+        self.assertEqual(
+            fake.requests[0].full_url, "https://example.com/api/families/H1"
+        )
+
+    def test_404_returns_none(self):
+        # Deleted server-side, or never existed -- the same "nothing to
+        # merge against" signal a locally-new object gives.
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([http_error(404)])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertIsNone(handler.get_object("Person", "H1"))
+
+    def test_other_http_error_propagates(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([http_error(500), http_error(500)])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            with self.assertRaises(HTTPError):
+                handler.get_object("Person", "H1")
+
+    def test_unknown_class_raises_without_a_request(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            with self.assertRaises(ValueError):
+                handler.get_object("NotAThing", "H1")
+        self.assertEqual(len(fake.requests), 0)
+
+    def test_401_triggers_reauth_and_retry(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                http_error(401),
+                FakeResponse({"access_token": token("AT1")}),  # the re-auth call
+                FakeResponse({"_class": "Person", "handle": "H1"}),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake), mock.patch.object(
+            webapi_client, "sleep"
+        ):
+            data = handler.get_object("Person", "H1")
+        self.assertEqual(data["handle"], "H1")
+
+
+# -------------------------------------------------------------------------
+#
 # TestDownloadExport
 #
 # -------------------------------------------------------------------------
