@@ -130,42 +130,43 @@ changed server-side since the local mirror last synced -- a real, if
 coarse, optimistic-concurrency check: the whole push either applies or
 none of it does, with no indication of which item conflicted.
 
-Neither side of this addon's own resync machinery can be trusted to
-explain a conflict, and this is not a one-server edge case: gramps-web-
-api's bulk-import path (POST /importers/<ext>/file -- GEDCOM, Gramps
-XML, CSV, ...) runs the same batch=True import machinery a local Gramps
-client's own Import menu action would, which never touches its
-transaction-history table at all (DBAPI's own _commit_base() only calls
-trans.add() when `not trans.batch`) -- ordinary server administration
-for any real installation, not a quirk of any particular one. So: the
-incremental history feed can be blind to an object's true current state
-from the moment it was imported, and even this addon's own full-tree
-resync (_full_resync(), the verify_totals=True fallback below and
-load()'s) only proves the mirror was accurate at the moment its export
-was taken -- seconds to tens of seconds before the retry actually goes
-out, plenty of time for another push (through the API, so it would
-appear in history) to land in between.
+The incremental history feed can't be trusted to explain a conflict, and
+this is not a one-server edge case: gramps-web-api's bulk-import path
+(POST /importers/<ext>/file -- GEDCOM, Gramps XML, CSV, ...) runs the
+same batch=True import machinery a local Gramps client's own Import menu
+action would, which never touches its transaction-history table at all
+(DBAPI's own _commit_base() only calls trans.add() when `not
+trans.batch`) -- ordinary server administration for any real
+installation, not a quirk of any particular one. So the incremental
+history feed can be blind to an object's true current state from the
+moment it was imported, indefinitely -- and a totals comparison
+(_mirror_is_short_of_the_server(), the verify_totals check load() and
+_sync_from_server() use elsewhere) can't catch this either, since the
+object count doesn't change when an already-known object's content
+changes server-side, only when objects are added or removed.
 
-So: on a conflict, _push_payload() below resyncs from the server (with
-verify_totals=True, the same defense load() uses, for its own sake --
-other objects may genuinely have changed) and then, for a plain commit
-(not an undo/redo -- see _retry_after_conflict()), pulls each entry's
-object fresh with its own direct GET /<type>/<handle>
-(WebApiHandler.get_object(), via _pull_conflicting_objects()) *into the
-local mirror* before replaying the intended *new* state as a fresh local
-edit via commit_<type>()/remove_<type>(). That local write, not just a
-fresher value read into memory, is what matters: DBAPI computes the
-retry's own "old" snapshot from whatever is actually stored locally at
-commit time, with no awareness of anything read here -- so unless the
-mirror itself is caught up first, the retry would push the same stale
-"old" as the original failed push and be rejected again identically, no
-matter how correct its "new" was. That fresh edit goes through the
-normal transaction_commit() -> _push_payload() path again with
-is_retry=True, so it now carries an "old" snapshot matching what was
-just pulled, and will only be rejected a second time if something
-changes server-side in the brief window since then -- in which case it
-is logged and dropped rather than retried again, to avoid retrying
-forever against a genuinely hot object.
+A per-object fix was tried and doesn't work: gramps-web-api's REST
+single-object endpoints (GET /<type>/<handle>) serialize with
+GrampsJSONEncoder.extract_object() (gramps_webapi/api/resources/
+emit.py) -- a walk of the object's own __dict__/properties for the
+frontend's display schema, with no "_class" tag on GrampsType-derived
+fields -- not the gramps.gen.lib.json_utils shape data_to_object()
+needs to reconstruct a Gramps object; feeding it that shape raises
+KeyError. Only two things produce the compatible shape: the
+transaction-history feed's new_data, and a raw Gramps XML export (see
+_full_resync()). So on a conflict, _push_payload() below does a full
+resync (_resync_after_conflict(), reusing _full_resync()) -- expensive,
+but the only server round-trip that reliably brings the local mirror
+back to the server's true current state for whatever this push touched
+-- and then, for a plain commit (not an undo/redo -- see
+_retry_after_conflict()), replays the intended *new* state as a fresh
+local edit via commit_<type>()/remove_<type>(). That fresh edit goes
+through the normal transaction_commit() -> _push_payload() path again
+with is_retry=True, so it now carries an "old" snapshot matching the
+just-resynced mirror, and will only be rejected a second time if
+something changes server-side in the brief window since the resync ran
+-- in which case it is logged and dropped rather than retried again, to
+avoid retrying forever against a genuinely hot object.
 
 For an add/update whose object still exists server-side (i.e. the
 conflicting edit changed the same object rather than deleting it),
@@ -1245,20 +1246,16 @@ class WebApiDB(SQLite):
                 len(payload),
             )
             try:
-                # verify_totals=True, same as load(): a conflict can be
-                # caused by a server-side change the incremental history
-                # feed cannot describe at all -- a bulk import runs
-                # entirely outside gramps-web-api's own transaction log
-                # (see webapi_client.get_object()'s docstring), ordinary
-                # server administration rather than an edge case -- as
-                # easily as by an ordinary edit the feed would replay
-                # normally. Without this, that resync can come back
-                # describing nothing relevant either way; it is still
-                # worth doing for its own sake (other objects may
-                # genuinely have changed), just not trusted on its own
-                # for the object(s) in this payload -- see
-                # _retry_after_conflict()'s refresh_from_server below.
-                self._sync_from_server(verify_totals=True)
+                # A full resync, not the incremental history feed: a
+                # conflict can be caused by a server-side change the
+                # history feed cannot describe at all -- a bulk import
+                # runs entirely outside gramps-web-api's own transaction
+                # log (see _resync_after_conflict()'s docstring), ordinary
+                # server administration rather than an edge case -- and a
+                # totals check can't catch a content-only change to an
+                # already-known object either. See _resync_after_conflict()
+                # for why nothing cheaper is trustworthy here.
+                self._resync_after_conflict()
             except _DatabaseClosed:
                 LOG.debug("push: tree closed during conflict resync; abandoning it")
                 return
@@ -1274,15 +1271,20 @@ class WebApiDB(SQLite):
                 )
                 return
             try:
-                self._retry_after_conflict(payload, refresh_from_server=True)
+                self._retry_after_conflict(payload)
             except _CONNECTION_ERRORS as err:
-                # Nothing has been committed locally yet at this point --
-                # see _retry_after_conflict()'s docstring -- so this is a
-                # plain connectivity failure, queued like any other.
+                # _retry_after_conflict()'s own DbTxn body (data_to_object(),
+                # commit_<type>(), the merge) is what can raise here -- its
+                # nested transaction_commit() -> _push_payload() call
+                # handles a rejected push itself and does not re-raise, so
+                # reaching this except means the DbTxn body never finished
+                # and aborted without committing. Nothing local to lose;
+                # queue the original payload the same as any other
+                # connectivity failure.
                 LOG.warning(
-                    "Could not fetch current server data for %d local "
-                    "change(s) after a conflict (%s); queued for retry on "
-                    "the next successful contact with the server.",
+                    "Could not replay %d local change(s) after a conflict "
+                    "(%s); queued for retry on the next successful contact "
+                    "with the server.",
                     len(payload),
                     err,
                 )
@@ -1405,41 +1407,33 @@ class WebApiDB(SQLite):
         self._set_metadata("pending_pushes", pending)
         LOG.debug("queue: %d push(es) still pending after the flush", len(pending))
 
-    def _retry_after_conflict(self, payload, refresh_from_server=False):
+    def _retry_after_conflict(self, payload):
         """Reapply each locally-intended change as a fresh local edit --
         see the module docstring's write-through section. An add/update
         whose object still exists is combined with the current object via
         _merge_or_overwrite() rather than blindly replacing it.
 
-        refresh_from_server, set only by _push_payload()'s conflict
-        handler, first calls _pull_conflicting_objects() to bring the
-        local mirror's copy of each entry's object up to date with a
-        direct GET /<type>/<handle> read, *before* anything below runs.
-        That has to be an actual local write, not just a fresher value
-        used in memory for the merge: DBAPI computes this retry's own
-        "old" snapshot from whatever is stored locally at commit time
-        (_commit_base()'s _get_raw_data() call, entirely independent of
-        what get_object() returned) -- so unless the mirror itself is
-        caught up first, the retry below would still push the stale
-        pre-conflict "old" and be rejected again identically, even though
-        its "new" reflected correct data. See _pull_conflicting_objects()
-        for why the local mirror (and even this addon's own full-tree
-        resync) cannot be trusted to have already done this.
-
-        _reconcile_batch_commit()'s call leaves this off -- replaying a
-        local batch operation's own changes as a first push, not
-        recovering from a conflict, so there is nothing to pull yet, and
-        fetching every entry individually would cost one request per
-        object for what can be a large batch.
+        Callers are responsible for making sure the local mirror already
+        holds the server's true current state for whatever this payload
+        touches, *before* this runs: DBAPI computes this retry's own "old"
+        snapshot from whatever is stored locally at commit time
+        (_commit_base()'s _get_raw_data() call), so a stale mirror means
+        the retry pushes the same stale "old" as the original failed push
+        and is rejected again identically, no matter how correct its
+        "new" is. _push_payload()'s conflict handler does this with a
+        full resync (_resync_after_conflict()) before calling here; see
+        that method's docstring for why nothing cheaper is trustworthy.
+        _reconcile_batch_commit()'s call needs no such refresh -- it is
+        replaying a local batch operation's own just-committed changes,
+        not recovering from a conflict.
 
         Runs as one ordinary (non-batch) DbTxn, so it goes through the
         normal transaction_commit() -> _push_payload() path again -- this
-        time with an "old" snapshot that matches what was just pulled, so
-        it will only be rejected again if something else changed
-        server-side in the brief window since then.
+        time with an "old" snapshot that matches the local mirror's
+        current (freshly-resynced, for the conflict path) state, so it
+        will only be rejected again if something else changed server-side
+        in the brief window since then.
         """
-        if refresh_from_server:
-            self._pull_conflicting_objects(payload)
         self._retrying = True
         try:
             with DbTxn(_("Retry local change after server conflict"), self) as trans:
@@ -1462,66 +1456,43 @@ class WebApiDB(SQLite):
         finally:
             self._retrying = False
 
-    def _pull_conflicting_objects(self, payload):
-        """Bring the local mirror's copy of each non-delete ``payload``
-        entry's object up to date with a direct GET /<type>/<handle> read
-        (WebApiHandler.get_object()) -- a pull-side replay, like
-        _sync_from_server()'s own (batch=True, _pulling=True, so nothing
-        here gets pushed back out -- see the module docstring), not a
-        local edit.
+    def _resync_after_conflict(self):
+        """Rebuild the local mirror from a fresh server export
+        (_full_resync()) before a conflict retry -- called by
+        _push_payload()'s WebApiPushConflict handler in place of an
+        incremental _sync_from_server(). Neither the incremental history
+        feed nor a totals check is trustworthy here: gramps-web-api's
+        bulk-import path (POST /importers/<ext>/file -- GEDCOM, Gramps
+        XML, CSV, ...) runs the same batch=True import machinery a local
+        Gramps client's own Import menu action would, which never touches
+        the transaction-history table at all (see the module docstring),
+        so the incremental feed can be blind to an object's true current
+        state indefinitely -- ordinary server administration for any real
+        installation, not a quirk of one server. A totals comparison
+        doesn't catch this either: the object count doesn't change when
+        an already-known object's content changes server-side, only when
+        objects are added or removed, so a conflict caused by a content
+        edit on a bulk-imported object leaves totals matching on both
+        sides even though the mirror's copy of that object is stale.
 
-        Neither the incremental history feed nor even a full-tree resync
-        can be trusted to have already done this for the object(s) a push
-        just conflicted on: gramps-web-api's bulk-import path (POST
-        /importers/<ext>/file -- GEDCOM, Gramps XML, CSV, ...) runs the
-        same batch=True import machinery a local Gramps client's own
-        Import menu action would, which never touches the transaction-
-        history table at all (see get_object()'s docstring) -- ordinary
-        server administration for any real installation, not a quirk of
-        one server -- and a full-tree resync only proves the mirror was
-        accurate at the moment its export was taken, seconds to tens of
-        seconds before _retry_after_conflict() actually commits. A direct
-        per-object read is the one thing this addon can ask the server
-        that is authoritative regardless of how the object got to its
-        current state.
-
-        Every GET happens before the DbTxn below opens, all at once -- so
-        a network failure here (propagated to _push_payload(), which
-        queues the whole payload for a later retry) leaves nothing
-        committed locally yet, rather than a partially-applied batch.
-
-        A handle the server no longer has (get_object() returns None --
-        deleted, or never existed) is left untouched: nothing to pull in,
-        and _retry_after_conflict()'s own has_handle()/commit_<type>()
-        already do the right thing for a handle absent from the mirror.
+        A per-object REST fetch (GET /<type>/<handle>) was tried here
+        first and doesn't work: gramps-web-api's single-object endpoints
+        serialize with GrampsJSONEncoder.extract_object() (a walk of the
+        object's own __dict__/properties for the frontend's display
+        schema -- no "_class" tag on GrampsType-derived fields), not the
+        gramps.gen.lib.json_utils shape data_to_object() requires to
+        reconstruct a Gramps object. Only two things produce that
+        compatible shape: the transaction-history feed's new_data, and a
+        raw Gramps XML export -- see _full_resync()'s own docstring. So a
+        full resync, expensive as it is, is the only server round-trip
+        that can bring the local mirror back into a state
+        _retry_after_conflict() can safely build an "old" snapshot from.
         """
-        fresh = {}
-        for entry in payload:
-            if entry["type"] != "delete":
-                fresh[entry["handle"]] = self.web_client.get_object(
-                    entry["_class"], entry["handle"]
-                )
-        net_changes = {}
-        self._pulling = True
+        self._syncing = True
         try:
-            with DbTxn(_("Refresh before conflict retry"), self, batch=True) as trans:
-                for entry in payload:
-                    server_data = fresh.get(entry["handle"])
-                    if server_data is None:
-                        continue
-                    key = CLASS_TO_KEY_MAP.get(entry["_class"])
-                    if key is None:
-                        continue
-                    name = KEY_TO_NAME_MAP[key]
-                    handle = entry["handle"]
-                    existed = getattr(self, f"has_{name}_handle")(handle)
-                    getattr(self, f"commit_{name}")(data_to_object(server_data), trans)
-                    net_changes[(entry["_class"], handle)] = (
-                        TXNUPD if existed else TXNADD
-                    )
+            self._full_resync()
         finally:
-            self._pulling = False
-        self._emit_change_signals(net_changes)
+            self._syncing = False
 
     def _handles_by_class(self):
         """{obj_class: set(handles)} across every primary object type --
