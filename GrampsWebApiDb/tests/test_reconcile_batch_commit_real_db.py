@@ -30,83 +30,82 @@ section and _reconcile_batch_commit()'s own docstring.
 Why this file exists, separately
 ---------------------------------
 Every test in test_grampswebapidb.py's TestReconcileBatchCommit class
-stubs out the handle accessors and DbTxn itself, isolating the diff
-logic from real commit/push machinery -- appropriate for a fast unit
-suite, but exactly the isolation that let a previous fix to a
-neighboring mechanism (conflict-retry) ship broken for two review
-rounds: see commit 8e21ed72d, and TestConflictRetryAgainstARealDatabase
-in test_grampswebapidb.py, which was written for the same reason. This
+stubs out _iter_raw_data() and DbTxn itself, isolating the diff logic
+from real commit/push machinery -- appropriate for a fast unit suite,
+but exactly the isolation that let a previous fix to a neighboring
+mechanism (conflict-retry) ship broken for two review rounds: see
+commit 8e21ed72d, and TestConflictRetryAgainstARealDatabase in
+test_grampswebapidb.py, which was written for the same reason. This
 file runs a real ImportXml import and real batch=True DbTxns against a
 real DBAPI-backed SQLite database (WebApiDB.__class__ reclassification,
 same trick), with only the network layer (web_client) mocked, and
 checks what actually gets pushed.
 
-What it found
---------------
-Three independent bugs, none caught by the mocked unit tests, each
-individually sufficient to make _reconcile_batch_commit() fail to
-sync real local batch changes to a real server:
+What it found (now fixed)
+--------------------------
+This file originally documented three independent bugs in
+_reconcile_batch_commit(), none caught by the mocked unit tests, each
+individually sufficient to make it fail to sync real local batch
+changes to a real server -- every test below currently passes because
+all three are fixed (_reconcile_batch_commit() and
+_snapshot_all_objects() in grampswebapidb.py; see their docstrings for
+the current design). Left here, unmodified, as the regression tests
+that prove it and guard against it breaking again:
 
 1. Timestamp precision (test_update_within_the_same_wall_clock_second_
-   as_batch_start_is_not_silently_missed): _reconcile_batch_commit()
-   only treats a surviving handle as changed if
+   as_batch_start_is_not_silently_missed): the old implementation only
+   treated a surviving handle as changed if
    ``get_obj(handle).change >= start_time``. ``.change`` is an int
    (whole seconds); ``start_time`` is a raw ``time.time()`` float. Any
-   real edit that lands within the same wall-clock second the batch
+   real edit that landed within the same wall-clock second the batch
    transaction began in -- the common case for a fast local tool --
-   compares a truncated-down int against a float with a nonzero
-   fractional part and silently fails the check. The change is never
+   compared a truncated-down int against a float with a nonzero
+   fractional part and silently failed the check. The change was never
    even attempted, let alone pushed: no entry, no log line, nothing.
+   Fixed by comparing actual before/after content
+   (gramps.gen.merge.diff.diff_items()) instead of timestamps at all.
 
 2. Stale "old" snapshot (test_real_import_add_is_pushed_as_an_add_not_
    a_false_conflict, test_real_batch_update_pushes_the_pre_batch_state_
-   as_old): by the time _reconcile_batch_commit() runs, the real batch
-   operation has already written its result to local storage for real.
-   _retry_after_conflict()'s replay then re-commits that *already-
-   current* local state as a "fresh" edit, so DBAPI's own "old"
-   snapshot (_commit_base()'s _get_raw_data(), read from local storage
-   at commit time) captures the *post-batch* content, not what the
-   server last actually saw. For a brand-new object this means "type":
-   "update" with a non-None "old" instead of "type": "add" with "old":
-   None; for a changed object it means "old" that already matches
-   "new". Either way, a real server's own old-data check (gramps_webapi/
-   api/tasks.py's old_unchanged(), confirmed by reading that source)
-   compares this against what it actually holds and calls it a
-   conflict -- even though nothing server-side changed at all.
-   _push_payload() then does a full resync, and because this push
-   already has is_retry=True (_retry_after_conflict() sets
-   self._retrying for its own DbTxn, and _reconcile_batch_commit()
-   goes through that same method), it gives up rather than retrying
-   again -- so the entire reconstructed batch (every add and update in
-   it, bundled into one push -- see the module docstring on
-   WebApiPushConflict) is silently dropped, logged only as a WARNING.
+   as_old): by the time _reconcile_batch_commit() ran, the real batch
+   operation had already written its result to local storage for real.
+   The old implementation's replay (via _retry_after_conflict()) then
+   re-committed that *already-current* local state as a "fresh" edit,
+   so DBAPI's own "old" snapshot (_commit_base()'s _get_raw_data(),
+   read from local storage at commit time) captured the *post-batch*
+   content, not what the server last actually saw. For a brand-new
+   object this meant "type": "update" with a non-None "old" instead of
+   "type": "add" with "old": None; for a changed object it meant "old"
+   that already matched "new". Either way, a real server's own old-
+   data check (gramps_webapi/api/tasks.py's old_unchanged(), confirmed
+   by reading that source) compared this against what it actually held
+   and called it a conflict -- even though nothing server-side changed
+   at all -- and because that push already had is_retry=True, it gave
+   up rather than retrying, silently dropping the entire reconstructed
+   batch. Fixed by capturing the true pre-transaction data up front
+   (transaction_begin()'s _snapshot_all_objects() call) and building
+   the payload's "old" from that, instead of from local storage at
+   replay time.
 
 3. Deletes swallowed (test_real_batch_delete_is_pushed_not_swallowed):
    _retry_after_conflict()'s delete handling is
    ``if has_handle(handle): remove(...)`` -- correct for its original
    use (a conflict retry, where "already gone" means someone else beat
-   us to the delete, nothing to do). But by the time
-   _reconcile_batch_commit() replays a *real* local delete, the object
-   is *legitimately* already gone (the real batch operation removed it
-   for real). has_handle() is therefore already False, the guard skips
-   the remove() call entirely, nothing is recorded in the replay's own
-   DbTxn, and the delete is never pushed to the server at all -- no
-   entry, no log line, nothing.
-
-None of these are fixed here. This file exists to pin down exactly what
-is broken, with reproducible real-database evidence, before deciding
-how to fix it -- see the commit/PR discussion this file was written
-alongside.
+   us to the delete, nothing to do). But by the time the old
+   _reconcile_batch_commit() replayed a *real* local delete through it,
+   the object was *legitimately* already gone (the real batch operation
+   removed it for real), so has_handle() was already False, the guard
+   skipped the remove() call entirely, and the delete never reached the
+   server. Fixed by building the delete entry directly from the pre-
+   transaction snapshot instead of replaying it through
+   _retry_after_conflict() at all -- that method is now only reached
+   (via _push_payload()'s own conflict handling) if a reconciliation
+   push itself genuinely conflicts, the same as any other edit.
 
 Not wired into the addon's normal fast test run (this repo has no CI --
 see CLAUDE.md); explicit invocation only::
 
     python3 -m unittest GrampsWebApiDb.tests.test_reconcile_batch_commit_real_db -v
-
-Kept for future regression testing of this path once it's fixed --
-every "current, buggy" test below asserts the *correct* behavior, so it
-will start passing (and should stay passing) once the underlying bug it
-documents is fixed, with no test changes needed.
 """
 
 # -------------------------------------------------------------------------
@@ -140,12 +139,12 @@ except ImportError as _err:
 
 from gramps.gen.db import DbTxn
 from gramps.gen.db.utils import make_database
-from gramps.gen.lib import Person
-from gramps.gen.lib.json_utils import object_to_data, remove_object
+from gramps.gen.lib import Note, Person, Tag
+from gramps.gen.lib.json_utils import data_to_object, object_to_data, remove_object
 from gramps.gen.user import User
 from gramps.plugins.importer.importxml import importData
 
-from GrampsWebApiDb.grampswebapidb import WebApiDB
+from GrampsWebApiDb.grampswebapidb import WebApiDB, WebApiPushConflict
 
 #: A minimal, valid Gramps XML document holding one person -- enough for
 #: a real ImportXml run. ImportXml strips a leading "_" off the XML
@@ -322,6 +321,119 @@ class TestReconcileBatchCommitAgainstARealDatabase(unittest.TestCase):
         touched_handles = {e["handle"] for e in self.pushes[0]}
         self.assertEqual(touched_handles, {handle})
         self.assertNotIn(untouched, touched_handles)
+
+    # -- Additional edge cases -------------------------------------------
+
+    def test_a_resave_with_no_real_change_is_not_pushed(self):
+        # Some tools (Check and Repair among them) re-commit an object
+        # even when nothing about it actually needed fixing. That must
+        # not be reported as an update -- diff_items() ignores "change"
+        # (the timestamp _commit_base() bumps on every commit,
+        # unconditionally), the same as gramps-web-api's own
+        # old_unchanged() conflict check does server-side.
+        handle = self._seed_person()
+        with DbTxn("simulated batch tool", self.db, batch=True) as trans:
+            person = self.db.get_person_from_handle(handle)
+            self.db.commit_person(person, trans)
+        self.assertEqual(len(self.pushes), 0)
+
+    def test_multiple_object_types_in_one_batch_are_all_reconciled(self):
+        # _reconcile_batch_commit() walks every entry in CLASS_TO_KEY_MAP,
+        # not just Person -- a real batch tool touching several object
+        # types at once (e.g. Check and Repair fixing both people and
+        # tags) must have all of them reconciled together in one push.
+        with DbTxn("simulated batch tool", self.db, batch=True) as trans:
+            person = Person()
+            person.set_gramps_id("I0002")
+            self.db.add_person(person, trans)
+            tag = Tag()
+            tag.set_name("A Tag")
+            self.db.add_tag(tag, trans)
+        self.assertEqual(len(self.pushes), 1)
+        entries = {(e["_class"], e["type"]) for e in self.pushes[0]}
+        self.assertEqual(entries, {("Person", "add"), ("Tag", "add")})
+
+    def test_add_update_and_delete_together_in_one_batch_are_all_reconciled(self):
+        keep = self._seed_person()
+        gone = self._seed_person()
+        pre_batch_keep = remove_object(
+            object_to_data(self.db.get_person_from_handle(keep))
+        )
+        with DbTxn("simulated batch tool", self.db, batch=True) as trans:
+            new_person = Person()
+            new_person.set_gramps_id("I0099")
+            self.db.add_person(new_person, trans)
+            added = new_person.handle
+
+            person = self.db.get_person_from_handle(keep)
+            person.set_privacy(True)
+            self.db.commit_person(person, trans)
+
+            self.db.remove_person(gone, trans)
+
+        self.assertEqual(len(self.pushes), 1)
+        by_handle = {e["handle"]: e for e in self.pushes[0]}
+        self.assertEqual(set(by_handle), {added, keep, gone})
+        self.assertEqual(by_handle[added]["type"], "add")
+        self.assertIsNone(by_handle[added]["old"])
+        self.assertEqual(by_handle[keep]["type"], "update")
+        self.assertEqual(by_handle[keep]["old"], pre_batch_keep)
+        self.assertTrue(by_handle[keep]["new"]["private"])
+        self.assertEqual(by_handle[gone]["type"], "delete")
+        self.assertIsNone(by_handle[gone]["new"])
+
+    def test_a_genuine_conflict_on_the_reconciliation_push_recovers_via_full_resync(
+        self,
+    ):
+        # If the server's own copy of a touched object really did change
+        # in the narrow window between this addon's before-snapshot and
+        # the reconciliation push actually going out, the push must get
+        # the same recovery any other edit's conflict gets (full resync,
+        # then a retry) -- not a special case, and not silently dropped.
+        handle = self._seed_person(privacy=False)
+        server_fresh = copy.deepcopy(
+            remove_object(object_to_data(self.db.get_person_from_handle(handle)))
+        )
+        server_fresh["private"] = True  # changed server-side, unknown to us
+
+        calls = []
+
+        def fake_push(payload, undo=False, background=False, on_wait=None):
+            calls.append(copy.deepcopy(payload))
+            if len(calls) == 1:
+                raise WebApiPushConflict("Object has changed")
+
+        self.db.web_client.push_transaction.side_effect = fake_push
+
+        def fake_full_resync():
+            self.db._pulling = True
+            try:
+                with DbTxn("fake resync", self.db, batch=True) as trans:
+                    self.db.commit_person(data_to_object(server_fresh), trans)
+            finally:
+                self.db._pulling = False
+
+        with mock.patch.object(self.db, "_full_resync", side_effect=fake_full_resync):
+            with DbTxn("simulated batch tool", self.db, batch=True) as trans:
+                person = self.db.get_person_from_handle(handle)
+                # A list-valued field, not a scalar one: _merge_or_
+                # overwrite()'s merge() only unions list fields, so this
+                # is what actually verifies the local edit survives
+                # alongside the server's own (scalar) change, rather than
+                # one silently overwriting the other -- see that
+                # function's own docstring on the scalar-field caveat.
+                note = Note()
+                note.set_handle("N-local")
+                self.db.add_note(note, trans)
+                person.add_note("N-local")
+                self.db.commit_person(person, trans)
+
+        self.assertEqual(len(calls), 2)
+        final = self.db.get_person_from_handle(handle)
+        # Server's concurrent change survived...
+        self.assertTrue(final.get_privacy())
+        # ...and so did the local batch's own edit.
+        self.assertIn("N-local", final.get_note_list())
 
 
 if __name__ == "__main__":
