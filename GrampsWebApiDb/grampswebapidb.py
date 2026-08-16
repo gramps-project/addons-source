@@ -199,24 +199,39 @@ two apart. transaction_begin() (called by DbTxn.__enter__, so before the
 batch operation's body runs) tells them apart with a _pulling flag set
 only around _sync_from_server()'s own batch DbTxns (including the ones
 _full_resync() opens) -- everywhere else, a batch=True transaction gets a
-snapshot of every primary object type's handle set stashed on the
-transaction itself (_handles_by_class()). transaction_commit() diffs that
-snapshot against the post-commit state (_reconcile_batch_commit()) to
-reconstruct what changed: a handle that appeared is an add, one that
-disappeared is a delete, and one that persisted but whose .change moved to
-at or after the transaction's own start_time was an update -- _commit_
-base() always stamps .change on every commit, batch or not; only the
-undo-log recording that batch skips is what normally would have let
-transaction_to_json() see this directly. The reconstructed entries are
-handed to _retry_after_conflict() -- not because anything conflicted, but
-because it already does exactly what's needed here: replay each entry as
-a fresh, ordinary (non-batch) local edit, so it picks up a real "old"
-snapshot from DBAPI's own commit path and goes out through the normal
-push path one object at a time, with the same conflict handling a live
-edit gets. This costs roughly double the local writes for whatever the
-batch operation actually touched (once for the batch commit, once more
-for this replay) -- accepted as the price of correctness, the same trade
-_full_resync() already makes for the equivalent pull-side blind spot.
+full snapshot of every primary object's current data stashed on the
+transaction itself (_snapshot_all_objects()), not just which handles
+exist. transaction_commit() diffs that snapshot against a fresh one taken
+right after the commit (_reconcile_batch_commit()) to reconstruct what
+changed: a handle that appeared is an add ("old": None); one that
+disappeared is a delete ("old" the pre-transaction data); one that
+persisted is an update only if its content actually differs, compared
+with gramps.gen.merge.diff.diff_items() -- the same function gramps-web-
+api's own old_unchanged() conflict check uses server-side, so this
+addon's "did it change" agrees with the server's. (An earlier version of
+this used handle presence plus a `.change`-timestamp comparison instead
+of a real content diff, and replayed each reconstructed entry through
+_retry_after_conflict() to pick up an "old" snapshot -- three separate
+bugs followed from that: `.change` (whole seconds) compared against the
+transaction's own start_time (a sub-second float) silently missed any
+edit landing in the same wall-clock second the batch began in, which is
+the common case; replaying against local storage that by then already
+held the batch's own result sent the object's *post*-batch content as
+"old" instead of what the server last actually saw, which a real
+server's own old-data check always reads as a conflict; and replaying a
+delete against storage where the object was already legitimately gone
+did nothing at all. Building the payload directly from the two
+snapshots, with real "old" data captured before anything ran, avoids
+all three.) The reconstructed payload goes out through the normal
+transaction_commit() -> _push_payload() path, with the same conflict
+handling (full resync, then _retry_after_conflict()) any other edit
+gets, for the rare case something else changed the same object in the
+meantime. Reading (and briefly holding in memory) two full copies of
+every primary object's data per batch commit is a real cost, but
+_snapshot_all_objects() keeps it to O(types) bulk queries rather than
+O(handles) individual ones, and correctness here is worth more than the
+memory -- the same trade _full_resync() already makes for the
+equivalent pull-side blind spot.
 
 A second, previously-unhandled kind of silent drift: when a push's own
 HTTP call fails for a plain connectivity reason (network down, server
@@ -442,7 +457,8 @@ from gramps.gen.db.dbconst import (
 from gramps.gen.db.exceptions import DbConnectionError
 from gramps.gen.errors import HandleError
 from gramps.gen.lib.baseobj import BaseObject
-from gramps.gen.lib.json_utils import data_to_object, object_to_data, remove_object
+from gramps.gen.lib.json_utils import data_to_object, remove_object
+from gramps.gen.merge.diff import diff_items
 from gramps.gen.user import User
 from gramps.gen.utils.file import media_path_full
 from gramps.plugins.db.dbapi.sqlite import SQLite
@@ -1160,24 +1176,26 @@ class WebApiDB(SQLite):
 
     def transaction_begin(self, transaction):
         """Hook DbTxn.__enter__ (which calls this immediately, before the
-        transaction's body runs) to snapshot the local per-type handle
-        sets ahead of a batch=True transaction that isn't one of
+        transaction's body runs) to snapshot every primary object's full
+        current data ahead of a batch=True transaction that isn't one of
         _sync_from_server()'s own (self._pulling) -- _reconcile_batch_
-        commit() needs that "before" picture to diff against, since DBAPI
-        skips its usual undo-log recording for a batch commit regardless
-        of who started it. See the module docstring."""
+        commit() needs that "before" picture (not just which handles
+        exist) to diff against, since DBAPI skips its usual undo-log
+        recording for a batch commit regardless of who started it. See
+        the module docstring and _reconcile_batch_commit()'s own
+        docstring for why full data, not just handles or timestamps."""
         result = super().transaction_begin(transaction)
         if transaction.batch and not self._pulling:
-            transaction._webapidb_before_handles = self._handles_by_class()
+            transaction._webapidb_before = self._snapshot_all_objects()
         return result
 
     def transaction_commit(self, transaction):
         # Must run before super(): it clears the transaction's records.
         payload = transaction_to_json(transaction)
         super().transaction_commit(transaction)
-        before_handles = getattr(transaction, "_webapidb_before_handles", None)
-        if before_handles is not None:
-            self._reconcile_batch_commit(before_handles, transaction.start_time)
+        before = getattr(transaction, "_webapidb_before", None)
+        if before is not None:
+            self._reconcile_batch_commit(before)
             return
         # self._retrying is set by _retry_after_conflict() while it holds
         # its own DbTxn open, so the push this commit triggers knows it is
@@ -1423,9 +1441,10 @@ class WebApiDB(SQLite):
         "new" is. _push_payload()'s conflict handler does this with a
         full resync (_resync_after_conflict()) before calling here; see
         that method's docstring for why nothing cheaper is trustworthy.
-        _reconcile_batch_commit()'s call needs no such refresh -- it is
-        replaying a local batch operation's own just-committed changes,
-        not recovering from a conflict.
+        This is only ever reached via that path now -- a local batch
+        operation's own reconciled changes (_reconcile_batch_commit())
+        push directly through _push_payload(), landing here only if
+        that push itself conflicts, the same as any other edit.
 
         Runs as one ordinary (non-batch) DbTxn, so it goes through the
         normal transaction_commit() -> _push_payload() path again -- this
@@ -1494,63 +1513,110 @@ class WebApiDB(SQLite):
         finally:
             self._syncing = False
 
-    def _handles_by_class(self):
-        """{obj_class: set(handles)} across every primary object type --
-        the "before" snapshot transaction_begin() stashes on a local
-        batch=True transaction for _reconcile_batch_commit() to diff
-        against. See the module docstring."""
-        return {
-            obj_class: set(getattr(self, f"get_{KEY_TO_NAME_MAP[key]}_handles")())
-            for obj_class, key in CLASS_TO_KEY_MAP.items()
-        }
+    def _snapshot_all_objects(self):
+        """{(obj_class, handle): data} across every primary object the
+        local mirror holds right now, ``data`` being the same
+        json_utils-shaped, "_object"-stripped form transaction_to_json()
+        sends as "old"/"new" (_iter_raw_data() reads it straight back out
+        of storage via the same serializer _commit_base() wrote it with
+        -- see dbapi.py). Called twice around a local batch=True
+        transaction (before it opens, and again once it has committed)
+        so _reconcile_batch_commit() can diff the two and know exactly
+        what changed -- see that method's docstring for why full data,
+        not just which handles exist or a wall-clock timestamp, is what
+        this needs.
 
-    def _reconcile_batch_commit(self, before_handles, start_time):
-        """Reconstruct what a local batch=True transaction changed, by
-        diffing the pre-transaction handle snapshot against the current
-        state, and push it -- see the module docstring's note on why a
-        batch commit is otherwise invisible to transaction_to_json().
-
-        An object present now but not before is an add; one present before
-        but not now is a delete; one present in both whose .change is at or
-        after the transaction's start_time was updated during it
-        (_commit_base() stamps .change on every commit, batch included).
-        Objects the batch left untouched keep an older .change and are
-        correctly skipped.
-
-        The reconstructed entries go to _retry_after_conflict(), which
-        replays each as an ordinary non-batch local edit -- so each one
-        picks up a real "old" snapshot and goes out through the normal
-        transaction_commit() -> _push_payload() path.
-
-        Cost: the surviving-handle pass reads every primary object in the
-        tree to check its .change, so this is O(total objects) per batch
-        commit, not O(objects the batch touched). That is the same order
-        as whatever opened a batch transaction in the first place (a bulk
-        import writes everything; Check and Repair reads everything), and
-        .change isn't a queryable secondary column in DBAPI's schema --
-        only handle plus a couple of per-type extras are -- so there is no
-        cheaper way to ask "what did this transaction touch" after the
-        fact. If this ever shows up as a real bottleneck, the fix is to
-        make the batch operation's own transaction non-batch, not to
-        make this cleverer.
+        Uses _iter_raw_data() (one bulk SELECT per object type) rather
+        than _get_raw_data() per handle, so this is O(types) queries,
+        not O(handles) -- cheap regardless of how many objects a batch
+        operation actually touches.
         """
-        entries = []
+        snapshot = {}
         for obj_class, key in CLASS_TO_KEY_MAP.items():
-            name = KEY_TO_NAME_MAP[key]
-            before = before_handles.get(obj_class, set())
-            after = set(getattr(self, f"get_{name}_handles")())
-            for handle in after - before:
-                entries.append({"type": "add", "handle": handle, "_class": obj_class})
-            for handle in before - after:
+            for handle, data in self._iter_raw_data(key):
+                snapshot[(obj_class, handle)] = remove_object(data)
+        return snapshot
+
+    def _reconcile_batch_commit(self, before):
+        """Reconstruct exactly what a local batch=True transaction
+        changed, by diffing the pre-transaction object snapshot
+        (transaction_begin()'s _snapshot_all_objects() call) against a
+        fresh one taken now, and push the result -- see the module
+        docstring's note on why a batch commit is otherwise invisible to
+        transaction_to_json().
+
+        A handle present now but not before is an add, pushed with
+        "old": None, the same as any other first-time add. One present
+        before but not now is a delete, pushed with "old" the last
+        known-synced data (what the object looked like before this
+        transaction touched it) and "new": None. One present in both is
+        only an update if its content actually differs -- compared with
+        gramps.gen.merge.diff.diff_items(), the exact function gramps-
+        web-api's own old_unchanged() conflict check uses server-side
+        (gramps_webapi/api/tasks.py, confirmed by reading that source),
+        so "did this really change" here agrees with the server's own
+        idea of it: both ignore the object's own "change" timestamp, so
+        a resave with no other change is correctly not reported at all.
+
+        Getting "old" right this way -- genuinely the pre-transaction
+        state, not whatever commit_<type>()/remove_<type>() happens to
+        find in local storage if replayed afterward -- is the point.
+        local storage by reconciliation time already holds the batch's
+        own result, not what the mirror last actually synced with the
+        server; replaying against it (an earlier version of this method
+        did, via _retry_after_conflict()) sends a false "old" a real
+        server always rejects as a conflict for an add, and a no-op
+        "old"-matches-"new" for an update -- and for a delete, replaying
+        against already-gone-for-real local storage does nothing at
+        all, silently dropping it. Building the payload directly here
+        instead avoids all three: pushed the same way as any other
+        local edit (transaction_commit() -> _push_payload()), with that
+        method's existing conflict handling (full resync then
+        _retry_after_conflict()) intact for the rare case something
+        else changed the same object in the meantime.
+
+        Cost: a full before/after object snapshot, not just handle sets
+        or timestamps -- see _snapshot_all_objects()'s own docstring for
+        why, and why that stays cheap (O(types) queries) regardless. If
+        this ever shows up as a real bottleneck, the fix is to make the
+        batch operation's own transaction non-batch, not to make this
+        cleverer.
+        """
+        after = self._snapshot_all_objects()
+        entries = []
+        for obj_class, handle in after.keys() - before.keys():
+            entries.append(
+                {
+                    "type": "add",
+                    "handle": handle,
+                    "_class": obj_class,
+                    "old": None,
+                    "new": after[(obj_class, handle)],
+                }
+            )
+        for obj_class, handle in before.keys() - after.keys():
+            entries.append(
+                {
+                    "type": "delete",
+                    "handle": handle,
+                    "_class": obj_class,
+                    "old": before[(obj_class, handle)],
+                    "new": None,
+                }
+            )
+        for obj_class, handle in before.keys() & after.keys():
+            old_data = before[(obj_class, handle)]
+            new_data = after[(obj_class, handle)]
+            if diff_items(obj_class, old_data, new_data):
                 entries.append(
-                    {"type": "delete", "handle": handle, "_class": obj_class}
+                    {
+                        "type": "update",
+                        "handle": handle,
+                        "_class": obj_class,
+                        "old": old_data,
+                        "new": new_data,
+                    }
                 )
-            get_obj = getattr(self, f"get_{name}_from_handle")
-            for handle in after & before:
-                if get_obj(handle).change >= start_time:
-                    entries.append(
-                        {"type": "update", "handle": handle, "_class": obj_class}
-                    )
         if not entries:
             return
         LOG.info(
@@ -1558,28 +1624,7 @@ class WebApiDB(SQLite):
             "Gramps did not record per-object; pushing them to the server.",
             len(entries),
         )
-        self._retry_after_conflict(self._fill_entry_payloads(entries))
-
-    def _fill_entry_payloads(self, entries):
-        """Attach the "new" object data _retry_after_conflict() needs to
-        each reconstructed add/update entry, read from the local mirror as
-        it stands after the batch commit. A delete carries no "new" data,
-        and an add/update whose handle has since vanished is dropped."""
-        filled = []
-        for entry in entries:
-            if entry["type"] == "delete":
-                filled.append({**entry, "old": None, "new": None})
-                continue
-            key = CLASS_TO_KEY_MAP[entry["_class"]]
-            name = KEY_TO_NAME_MAP[key]
-            try:
-                obj = getattr(self, f"get_{name}_from_handle")(entry["handle"])
-            except HandleError:
-                continue
-            filled.append(
-                {**entry, "old": None, "new": remove_object(object_to_data(obj))}
-            )
-        return filled
+        self._push_payload(entries)
 
     def _sync_from_server(self, progress_callback=None, verify_totals=False):
         """

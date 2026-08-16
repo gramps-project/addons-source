@@ -2595,15 +2595,24 @@ class TestSyncMediaFiles(unittest.TestCase):
 # Check and Repair Database) records nothing per-object -- DBAPI skips
 # trans.add() for a batch commit -- so transaction_to_json() sees an
 # empty payload and nothing would ever be pushed. transaction_begin()
-# snapshots handles up front and transaction_commit() diffs them after,
-# reconstructing the change list. See the module docstring.
+# snapshots every primary object's full current data up front
+# (_snapshot_all_objects()) and transaction_commit() diffs a fresh
+# snapshot against it after, reconstructing the change list -- not just
+# which handles exist, and not a .change-vs-start_time timestamp guess
+# (an earlier version compared timestamps instead of content and, for
+# that and two other reasons, could silently miss changes, push a false
+# "old" a real server always rejects as a conflict, or drop deletes
+# outright -- see the module docstring and _reconcile_batch_commit()'s
+# own docstring for the full account; GrampsWebApiDb/tests/
+# test_reconcile_batch_commit_real_db.py exercises all of that against a
+# real database).
 #
 # -------------------------------------------------------------------------
 class FakeBatchTxn:
     """Duck-types the DbTxn attributes the batch-reconciliation path
     reads: .batch, .start_time, and whatever attribute transaction_begin()
-    stashes its handle snapshot in. get_recnos() returns nothing, matching
-    a real batch transaction's empty undo log."""
+    stashes its snapshot in. get_recnos() returns nothing, matching a real
+    batch transaction's empty undo log."""
 
     def __init__(self, batch=True, start_time=100.0):
         self.batch = batch
@@ -2616,48 +2625,42 @@ class FakeBatchTxn:
         raise AssertionError("a batch transaction records nothing")
 
 
-def stored_person(handle, change):
-    """A real Person with a given .change timestamp -- the field
-    _reconcile_batch_commit() compares against the transaction's
-    start_time. Real rather than a stub because _fill_entry_payloads()
-    then runs it through object_to_data()."""
-    person = Person()
-    person.set_handle(handle)
-    person.set_gramps_id("I" + handle)
-    person.change = change
-    return person
+def raw_person_data(handle, change=100.0, **extra):
+    """A minimal json_utils-shaped dict standing in for what
+    _get_raw_data()/_iter_raw_data() returns for a Person.
+    _reconcile_batch_commit() only ever diffs and forwards these as
+    plain dicts (via diff_items()) -- it never turns them back into
+    real objects -- so a real Person is not needed to test it."""
+    data = {"handle": handle, "change": change, "gramps_id": "I" + handle}
+    data.update(extra)
+    return data
 
 
-def stub_all_handle_accessors(db, handles_by_class=None, objects=None):
-    """Give ``db`` a get_<name>_handles/get_<name>_from_handle for every
-    primary type, so _handles_by_class()/_reconcile_batch_commit() can walk
-    all of CLASS_TO_KEY_MAP without a real database."""
-    handles_by_class = handles_by_class or {}
-    objects = objects or {}
-    for obj_class, key in grampswebapidb.CLASS_TO_KEY_MAP.items():
-        name = grampswebapidb.KEY_TO_NAME_MAP[key]
-        setattr(
-            db,
-            f"get_{name}_handles",
-            mock.MagicMock(return_value=list(handles_by_class.get(obj_class, []))),
-        )
-        setattr(
-            db,
-            f"get_{name}_from_handle",
-            mock.MagicMock(side_effect=lambda h, _o=objects: _o[h]),
-        )
+def stub_iter_raw_data(db, data_by_class):
+    """data_by_class: {obj_class: {handle: raw_data_dict}}. Stubs
+    _iter_raw_data() -- the bulk per-type read _snapshot_all_objects()
+    uses -- so _reconcile_batch_commit()/_snapshot_all_objects() can be
+    exercised without a real database."""
+
+    def fake_iter_raw_data(key):
+        obj_class = grampswebapidb.KEY_TO_CLASS_MAP[key]
+        return list(data_by_class.get(obj_class, {}).items())
+
+    db._iter_raw_data = mock.MagicMock(side_effect=fake_iter_raw_data)
 
 
 class TestTransactionBeginSnapshot(unittest.TestCase):
     def setUp(self):
         self.db = new_instance()
 
-    def test_local_batch_transaction_gets_a_handle_snapshot(self):
-        stub_all_handle_accessors(self.db, {"Person": ["H1"]})
+    def test_local_batch_transaction_gets_a_full_object_snapshot(self):
+        stub_iter_raw_data(self.db, {"Person": {"H1": raw_person_data("H1")}})
         trans = FakeBatchTxn(batch=True)
         with mock.patch.object(grampswebapidb.SQLite, "transaction_begin"):
             self.db.transaction_begin(trans)
-        self.assertEqual(trans._webapidb_before_handles["Person"], {"H1"})
+        self.assertEqual(
+            trans._webapidb_before, {("Person", "H1"): raw_person_data("H1")}
+        )
 
     def test_non_batch_transaction_gets_no_snapshot(self):
         # An ordinary edit is recorded per-object by DBAPI, so
@@ -2665,7 +2668,7 @@ class TestTransactionBeginSnapshot(unittest.TestCase):
         trans = FakeBatchTxn(batch=False)
         with mock.patch.object(grampswebapidb.SQLite, "transaction_begin"):
             self.db.transaction_begin(trans)
-        self.assertFalse(hasattr(trans, "_webapidb_before_handles"))
+        self.assertFalse(hasattr(trans, "_webapidb_before"))
 
     def test_pull_side_batch_transaction_gets_no_snapshot(self):
         # _sync_from_server()'s own replay is a batch transaction too, but
@@ -2675,7 +2678,7 @@ class TestTransactionBeginSnapshot(unittest.TestCase):
         trans = FakeBatchTxn(batch=True)
         with mock.patch.object(grampswebapidb.SQLite, "transaction_begin"):
             self.db.transaction_begin(trans)
-        self.assertFalse(hasattr(trans, "_webapidb_before_handles"))
+        self.assertFalse(hasattr(trans, "_webapidb_before"))
 
 
 class TestReconcileBatchCommit(unittest.TestCase):
@@ -2683,129 +2686,138 @@ class TestReconcileBatchCommit(unittest.TestCase):
         self.db = new_instance()
         self.db.web_client = mock.MagicMock()
 
-    def test_added_handle_becomes_an_add(self):
-        obj = stored_person("H2", 150.0)
-        stub_all_handle_accessors(
+    def test_added_handle_becomes_an_add_with_no_old_data(self):
+        stub_iter_raw_data(
             self.db,
-            {"Person": ["H1", "H2"]},
-            {"H1": stored_person("H1", 50.0), "H2": obj},
+            {"Person": {"H1": raw_person_data("H1"), "H2": raw_person_data("H2")}},
         )
-        before = {c: set() for c in grampswebapidb.CLASS_TO_KEY_MAP}
-        before["Person"] = {"H1"}
-        with mock.patch.object(self.db, "_retry_after_conflict") as replay:
-            self.db._reconcile_batch_commit(before, start_time=100.0)
-        entries = replay.call_args[0][0]
+        before = {("Person", "H1"): raw_person_data("H1")}
+        with mock.patch.object(self.db, "_push_payload") as push:
+            self.db._reconcile_batch_commit(before)
+        entries = push.call_args[0][0]
         self.assertEqual(len(entries), 1)
         self.assertEqual(entries[0]["type"], "add")
         self.assertEqual(entries[0]["handle"], "H2")
         self.assertEqual(entries[0]["_class"], "Person")
+        self.assertIsNone(entries[0]["old"])
+        self.assertEqual(entries[0]["new"], raw_person_data("H2"))
 
-    def test_removed_handle_becomes_a_delete(self):
-        stub_all_handle_accessors(self.db, {"Person": []})
-        before = {c: set() for c in grampswebapidb.CLASS_TO_KEY_MAP}
-        before["Person"] = {"H1"}
-        with mock.patch.object(self.db, "_retry_after_conflict") as replay:
-            self.db._reconcile_batch_commit(before, start_time=100.0)
-        entries = replay.call_args[0][0]
+    def test_removed_handle_becomes_a_delete_carrying_its_last_known_data(self):
+        stub_iter_raw_data(self.db, {"Person": {}})
+        before = {("Person", "H1"): raw_person_data("H1")}
+        with mock.patch.object(self.db, "_push_payload") as push:
+            self.db._reconcile_batch_commit(before)
+        entries = push.call_args[0][0]
         self.assertEqual(len(entries), 1)
         self.assertEqual(entries[0]["type"], "delete")
         self.assertEqual(entries[0]["handle"], "H1")
         self.assertIsNone(entries[0]["new"])
+        # Bug fixed: an earlier version replayed deletes through
+        # _retry_after_conflict()'s has_handle() guard, which (correct
+        # for an actual conflict retry) silently no-ops here since the
+        # object is legitimately already gone -- dropping every
+        # reconciled delete. This builds the entry directly instead.
+        self.assertEqual(entries[0]["old"], raw_person_data("H1"))
 
-    def test_surviving_handle_touched_during_the_batch_becomes_an_update(self):
-        stub_all_handle_accessors(
-            self.db, {"Person": ["H1"]}, {"H1": stored_person("H1", 150.0)}
+    def test_surviving_handle_with_real_content_change_becomes_an_update(self):
+        stub_iter_raw_data(
+            self.db,
+            {"Person": {"H1": raw_person_data("H1", change=200.0, gramps_id="I0002")}},
         )
-        before = {c: set() for c in grampswebapidb.CLASS_TO_KEY_MAP}
-        before["Person"] = {"H1"}
-        with mock.patch.object(self.db, "_retry_after_conflict") as replay:
-            self.db._reconcile_batch_commit(before, start_time=100.0)
-        entries = replay.call_args[0][0]
+        before = {
+            ("Person", "H1"): raw_person_data("H1", change=100.0, gramps_id="I0001")
+        }
+        with mock.patch.object(self.db, "_push_payload") as push:
+            self.db._reconcile_batch_commit(before)
+        entries = push.call_args[0][0]
+        self.assertEqual(len(entries), 1)
+        self.assertEqual(entries[0]["type"], "update")
+        # Bug fixed: an earlier version replayed this through
+        # _retry_after_conflict(), which re-commits whatever local
+        # storage holds *now* -- by reconciliation time, already the
+        # batch's own result -- so "old" ended up matching "new"
+        # instead of genuinely reflecting the pre-batch state a real
+        # server needs to compare against.
+        self.assertEqual(entries[0]["old"]["gramps_id"], "I0001")
+        self.assertEqual(entries[0]["new"]["gramps_id"], "I0002")
+
+    def test_update_within_the_same_wall_clock_second_as_batch_start_is_still_detected(
+        self,
+    ):
+        # Bug fixed: an earlier version compared .change (int) against
+        # the transaction's own start_time (a float), so any edit
+        # landing in the same wall-clock second as start_time -- the
+        # common case for a fast local tool -- was silently missed.
+        # This version diffs content, not timestamps, so it isn't
+        # fooled by two events sharing a second.
+        stub_iter_raw_data(
+            self.db,
+            {"Person": {"H1": raw_person_data("H1", change=100.0, private=True)}},
+        )
+        before = {("Person", "H1"): raw_person_data("H1", change=100.0, private=False)}
+        with mock.patch.object(self.db, "_push_payload") as push:
+            self.db._reconcile_batch_commit(before)
+        entries = push.call_args[0][0]
         self.assertEqual(len(entries), 1)
         self.assertEqual(entries[0]["type"], "update")
 
-    def test_untouched_handle_is_skipped(self):
-        # The whole point of comparing .change against start_time: a bulk
-        # tool that rewrote 3 of 10000 objects must push 3, not 10000.
-        stub_all_handle_accessors(
-            self.db, {"Person": ["H1"]}, {"H1": stored_person("H1", 50.0)}
+    def test_resave_with_only_the_change_timestamp_different_is_not_pushed(self):
+        # diff_items() -- the same function gramps-web-api's own
+        # old_unchanged() conflict check uses server-side -- ignores
+        # "change", so a resave that touched nothing else must not be
+        # reported as an update.
+        stub_iter_raw_data(
+            self.db, {"Person": {"H1": raw_person_data("H1", change=999.0)}}
         )
-        before = {c: set() for c in grampswebapidb.CLASS_TO_KEY_MAP}
-        before["Person"] = {"H1"}
-        with mock.patch.object(self.db, "_retry_after_conflict") as replay:
-            self.db._reconcile_batch_commit(before, start_time=100.0)
-        replay.assert_not_called()
+        before = {("Person", "H1"): raw_person_data("H1", change=100.0)}
+        with mock.patch.object(self.db, "_push_payload") as push:
+            self.db._reconcile_batch_commit(before)
+        push.assert_not_called()
 
-    def test_change_exactly_at_start_time_counts_as_touched(self):
-        # int(time.time()) truncation in _commit_base() means a fast
-        # transaction can stamp .change to exactly its own start second --
-        # treating that as untouched would silently drop the change.
-        stub_all_handle_accessors(
-            self.db, {"Person": ["H1"]}, {"H1": stored_person("H1", 100.0)}
-        )
-        before = {c: set() for c in grampswebapidb.CLASS_TO_KEY_MAP}
-        before["Person"] = {"H1"}
-        with mock.patch.object(self.db, "_retry_after_conflict") as replay:
-            self.db._reconcile_batch_commit(before, start_time=100.0)
-        entries = replay.call_args[0][0]
-        self.assertEqual(entries[0]["type"], "update")
+    def test_untouched_handle_is_skipped(self):
+        # A bulk tool that rewrote 3 of 10000 objects must push 3, not
+        # 10000.
+        data = raw_person_data("H1")
+        stub_iter_raw_data(self.db, {"Person": {"H1": data}})
+        before = {("Person", "H1"): data}
+        with mock.patch.object(self.db, "_push_payload") as push:
+            self.db._reconcile_batch_commit(before)
+        push.assert_not_called()
 
     def test_nothing_changed_pushes_nothing(self):
-        stub_all_handle_accessors(self.db)
-        before = {c: set() for c in grampswebapidb.CLASS_TO_KEY_MAP}
-        with mock.patch.object(self.db, "_retry_after_conflict") as replay:
-            self.db._reconcile_batch_commit(before, start_time=100.0)
+        stub_iter_raw_data(self.db, {})
+        with mock.patch.object(self.db, "_push_payload") as push:
+            self.db._reconcile_batch_commit({})
+        push.assert_not_called()
+
+    def test_pushes_directly_not_via_retry_after_conflict(self):
+        # Bug fixed: an earlier version routed every reconstructed entry
+        # through _retry_after_conflict(), whose replay reads local
+        # storage at commit time -- already the batch's own result by
+        # then, not the pre-batch state a real server needs. This
+        # builds the correct payload directly and pushes it the normal
+        # way, so _retry_after_conflict() is only ever reached (via
+        # _push_payload()'s own conflict handling) if the push actually
+        # conflicts.
+        stub_iter_raw_data(self.db, {"Person": {"H1": raw_person_data("H1")}})
+        with mock.patch.object(
+            self.db, "_retry_after_conflict"
+        ) as replay, mock.patch.object(self.db, "_push_payload") as push:
+            self.db._reconcile_batch_commit({})
+        push.assert_called_once()
         replay.assert_not_called()
 
     def test_transaction_commit_routes_a_snapshotted_batch_to_reconcile(self):
         trans = FakeBatchTxn(batch=True, start_time=100.0)
-        trans._webapidb_before_handles = {"Person": {"H1"}}
+        trans._webapidb_before = {("Person", "H1"): raw_person_data("H1")}
         with mock.patch.object(
             grampswebapidb.SQLite, "transaction_commit"
         ), mock.patch.object(self.db, "_reconcile_batch_commit") as reconcile:
             self.db.transaction_commit(trans)
-        reconcile.assert_called_once_with({"Person": {"H1"}}, 100.0)
+        reconcile.assert_called_once_with({("Person", "H1"): raw_person_data("H1")})
         # ...and does NOT also take the ordinary push path, which would
         # push an empty payload.
         self.db.web_client.push_transaction.assert_not_called()
-
-
-class TestFillEntryPayloads(unittest.TestCase):
-    def setUp(self):
-        self.db = new_instance()
-
-    def test_add_entry_gets_current_object_data(self):
-        person = Person()
-        person.set_handle("H1")
-        person.set_gramps_id("I0001")
-        self.db.get_person_from_handle = mock.MagicMock(return_value=person)
-        filled = self.db._fill_entry_payloads(
-            [{"type": "add", "handle": "H1", "_class": "Person"}]
-        )
-        self.assertEqual(len(filled), 1)
-        self.assertIsNone(filled[0]["old"])
-        self.assertEqual(filled[0]["new"]["gramps_id"], "I0001")
-        # remove_object() strips the cached _object back-reference, which
-        # is not JSON-serializable and must never reach the wire.
-        self.assertNotIn("_object", filled[0]["new"])
-
-    def test_delete_entry_carries_no_object_data(self):
-        filled = self.db._fill_entry_payloads(
-            [{"type": "delete", "handle": "H1", "_class": "Person"}]
-        )
-        self.assertEqual(filled[0]["new"], None)
-        self.assertEqual(filled[0]["old"], None)
-
-    def test_vanished_handle_is_dropped(self):
-        # The object was removed between the diff and here -- nothing left
-        # to describe, and asking the server to add it would fail.
-        self.db.get_person_from_handle = mock.MagicMock(
-            side_effect=grampswebapidb.HandleError("H1")
-        )
-        filled = self.db._fill_entry_payloads(
-            [{"type": "add", "handle": "H1", "_class": "Person"}]
-        )
-        self.assertEqual(filled, [])
 
 
 # -------------------------------------------------------------------------
