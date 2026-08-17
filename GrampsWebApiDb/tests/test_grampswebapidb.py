@@ -76,13 +76,25 @@ from gramps.gen.db import DbTxn
 from gramps.gen.db.dbconst import REFERENCE_KEY, TXNADD, TXNDEL, TXNUPD
 from gramps.gen.db.exceptions import DbConnectionError
 from gramps.gen.db.utils import make_database
-from gramps.gen.lib import Attribute, Person, Tag
+from gramps.gen.lib import (
+    Attribute,
+    Event,
+    EventRef,
+    EventRoleType,
+    EventType,
+    Person,
+    Tag,
+)
 from gramps.gen.lib.json_utils import data_to_object, object_to_data, remove_object
 
 from GrampsWebApiDb import grampswebapidb
 from GrampsWebApiDb.grampswebapidb import (
+    GRANULAR_REBUILD_MAX_CHANGES,
     WebApiDB,
     WebApiPushConflict,
+    _diff_snapshots,
+    _restore_birth_death_indices,
+    _snapshot_birth_death_indices,
     transaction_to_json,
 )
 from GrampsWebApiDb.tests.fakes import FakeHandleDb, InlineTaskRunner
@@ -783,6 +795,14 @@ class TestFullResync(unittest.TestCase):
         self.db.get_total = mock.MagicMock(return_value=0)
         self.db._set_metadata = mock.MagicMock()
         self.db._run_id = 0
+        # _describe_resync_to_views()'s before/after diff calls
+        # _snapshot_all_objects(), which reads real storage via
+        # _iter_raw_data() -- there's none behind these stubs either, so
+        # this defaults every test in this class to an empty before/after
+        # (no signal at all -- see _describe_resync_to_views()'s own
+        # comment on why that's correct when nothing genuinely changed).
+        # Tests that care what got signaled override this themselves.
+        self.db._iter_raw_data = mock.MagicMock(return_value=iter([]))
         self.patcher = mock.patch.object(grampswebapidb, "DbTxn", FakeDbTxn)
         self.patcher.start()
         self.addCleanup(self.patcher.stop)
@@ -813,6 +833,40 @@ class TestFullResync(unittest.TestCase):
                 continue
             setattr(self.db, f"get_{name}_handles", mock.MagicMock(return_value=["H1"]))
             setattr(self.db, f"remove_{name}", mock.MagicMock())
+        # _snapshot_birth_death_indices()/_restore_birth_death_indices()
+        # (see grampswebapidb.py) look up "H1" as a Person via these two --
+        # a fake with unchanged fields keeps the restore step a no-op, same
+        # as everything else this wiring-only test fakes out.
+        fake_person = mock.MagicMock()
+        fake_person.birth_ref_index = -1
+        fake_person.death_ref_index = -1
+        fake_person.get_event_ref_list.return_value = []
+        self.db.get_person_from_handle = mock.MagicMock(return_value=fake_person)
+        self.db.has_person_handle = mock.MagicMock(return_value=True)
+
+        # Enough net "adds" (see _diff_snapshots()) to land above
+        # GRANULAR_REBUILD_MAX_CHANGES, so this reimport is the
+        # legitimately-everything-changed case _describe_resync_to_views()
+        # still uses request_rebuild() for -- matching what wiping and
+        # reimporting the *entire* mirror actually represents. The first
+        # call per type is the pre-clear "before" snapshot (empty, nothing
+        # populated it); every call after that is "after" -- see
+        # _snapshot_all_objects()'s two callers.
+        calls = {"n": 0}
+        per_type_after = (
+            GRANULAR_REBUILD_MAX_CHANGES // len(grampswebapidb.CLASS_TO_KEY_MAP) + 10
+        )
+
+        def fake_iter_raw_data(key):
+            calls["n"] += 1
+            if calls["n"] <= len(grampswebapidb.CLASS_TO_KEY_MAP):
+                return iter([])
+            return iter(
+                (f"H{calls['n']}-{i}", {"gramps_id": f"G{i}"})
+                for i in range(per_type_after)
+            )
+
+        self.db._iter_raw_data = mock.MagicMock(side_effect=fake_iter_raw_data)
 
         captured_path = {}
 
@@ -834,9 +888,12 @@ class TestFullResync(unittest.TestCase):
             getattr(self.db, f"remove_{name}").assert_called_once_with("H1", mock.ANY)
         # The temp file is cleaned up after import, not left behind.
         self.assertFalse(os.path.exists(captured_path["path"]))
-        # A successful reimport can't be described as specific add/update/
-        # delete signals, so every view is told to reload wholesale instead
-        # -- see request_rebuild() in gramps.gen.db.generic.
+        # This many net changes is "everything changed" territory, where
+        # request_rebuild() -- one signal per type -- stays cheaper for
+        # every view than replaying an individual signal per object; see
+        # _describe_resync_to_views()'s own comment. TestDescribeResync
+        # ToViews covers the far more common small-diff case, which uses
+        # granular per-object signals instead.
         emitted = [call.args[0] for call in self.db.emit.call_args_list]
         self.assertIn("person-rebuild", emitted)
         self.assertIn("family-rebuild", emitted)
@@ -1097,11 +1154,40 @@ class TestBootstrapFullResync(unittest.TestCase):
                 continue
             setattr(self.db, f"get_{name}_handles", mock.MagicMock(return_value=[]))
             setattr(self.db, f"remove_{name}", mock.MagicMock())
+        # _describe_resync_to_views()'s before/after diff calls
+        # _snapshot_all_objects(), which reads real storage via
+        # _iter_raw_data() -- there's none behind these stubs either, so
+        # this defaults every test in this class to an empty before/after
+        # (no signal at all). Tests that care what got signaled override
+        # this themselves.
+        self.db._iter_raw_data = mock.MagicMock(return_value=iter([]))
         self.patcher = mock.patch.object(grampswebapidb, "DbTxn", FakeDbTxn)
         self.patcher.start()
         self.addCleanup(self.patcher.stop)
 
     def test_downloads_wipes_and_reimports_with_no_progress_callback(self):
+        # Enough net "adds" (see _diff_snapshots()) to land above
+        # GRANULAR_REBUILD_MAX_CHANGES -- matching what a bootstrap
+        # against a real, populated tree actually represents, and the
+        # case _describe_resync_to_views() still uses request_rebuild()
+        # for. The first call per type is the pre-clear "before" snapshot
+        # (empty, nothing populated it); every call after that is "after".
+        calls = {"n": 0}
+        per_type_after = (
+            GRANULAR_REBUILD_MAX_CHANGES // len(grampswebapidb.CLASS_TO_KEY_MAP) + 10
+        )
+
+        def fake_iter_raw_data(key):
+            calls["n"] += 1
+            if calls["n"] <= len(grampswebapidb.CLASS_TO_KEY_MAP):
+                return iter([])
+            return iter(
+                (f"H{calls['n']}-{i}", {"gramps_id": f"G{i}"})
+                for i in range(per_type_after)
+            )
+
+        self.db._iter_raw_data = mock.MagicMock(side_effect=fake_iter_raw_data)
+
         with mock.patch.object(grampswebapidb, "importData") as import_data:
             self.db._bootstrap_full_resync()  # must not raise
         self.db.web_client.download_export.assert_called_once_with()
@@ -1814,6 +1900,212 @@ class TestConflictRetryAgainstARealDatabase(unittest.TestCase):
         final = self.db.get_person_from_handle(self.handle)
         self.assertTrue(final.get_privacy())
         self.assertEqual(len(final.get_attribute_list()), 1)
+
+
+class TestBirthDeathIndexPreservedAcrossResync(unittest.TestCase):
+    """Gramps XML has no element for Person.birth_ref_index/
+    death_ref_index (see exportxml.py's write_person()) -- ImportXml
+    recomputes both from document order instead of preserving them,
+    wrong whenever the true index was -1 despite a BIRTH/DEATH-type
+    event ref existing (confirmed via a real export/reimport round trip:
+    birth_ref_index went from -1 to 0 with no edit involved). Since
+    diff_items() treats both fields as ordinary content, that
+    recomputation would otherwise make a Person's local mirror disagree
+    with the server after every single resync, forever, for reasons
+    unrelated to anything actually edited -- see the module docstring's
+    "A Gramps XML export isn't perfectly round-trip-faithful either"
+    paragraph. These test _snapshot_birth_death_indices()/
+    _restore_birth_death_indices() directly, against a real DBAPI
+    database, standing in for the mis-recompute a real ImportXml run
+    would produce rather than running one.
+    """
+
+    def setUp(self):
+        tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
+        self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
+        self.db = make_database("sqlite")
+        self.db.load(tmpdir)
+        self.addCleanup(self.db.close)
+        with DbTxn("seed", self.db) as trans:
+            event = Event()
+            event.set_type(EventType.BIRTH)
+            self.db.add_event(event, trans)
+            self.event_handle = event.handle
+
+            person = Person()
+            person.set_gramps_id("I0001")
+            ref = EventRef()
+            ref.set_reference_handle(self.event_handle)
+            ref.set_role(EventRoleType.PRIMARY)
+            person.add_event_ref(ref)
+            # Deliberately left at -1 (the constructor default) rather
+            # than calling set_birth_ref(ref) -- a real, legal state
+            # (nothing marks this BIRTH-type ref as "the" birth event)
+            # that ImportXml's own heuristic cannot tell apart from an
+            # oversight.
+            self.db.add_person(person, trans)
+            self.handle = person.handle
+
+    def _mimic_import_xml_recompute(self):
+        """Overwrite birth_ref_index the way ImportXml's GrampsParser
+        would on a reimport (self.person.get_birth_ref() is None -> set
+        it to the first PRIMARY BIRTH-type ref it sees) -- standing in
+        for a real export/reimport round trip without needing one."""
+        with DbTxn("mimic reimport", self.db, batch=True) as trans:
+            person = self.db.get_person_from_handle(self.handle)
+            person.birth_ref_index = 0
+            self.db.commit_person(person, trans)
+
+    def test_restores_the_index_import_xml_cannot_preserve(self):
+        snapshot = _snapshot_birth_death_indices(self.db)
+
+        self._mimic_import_xml_recompute()
+        # The mis-recompute really did happen -- otherwise this test
+        # would pass even without _restore_birth_death_indices() doing
+        # anything.
+        self.assertEqual(self.db.get_person_from_handle(self.handle).birth_ref_index, 0)
+
+        with DbTxn("restore", self.db, batch=True) as trans:
+            restored = _restore_birth_death_indices(self.db, snapshot, trans)
+
+        self.assertEqual(restored, 1)
+        self.assertEqual(
+            self.db.get_person_from_handle(self.handle).birth_ref_index, -1
+        )
+
+    def test_does_not_restore_when_the_event_ref_list_itself_changed(self):
+        # A real edit landed on this Person's event refs between the
+        # snapshot and the resync (e.g. someone added an event through
+        # the API) -- restoring the stale pre-resync index would be
+        # wrong here, so this must leave the freshly-recomputed value
+        # alone rather than clobber it.
+        snapshot = _snapshot_birth_death_indices(self.db)
+
+        with DbTxn("real edit", self.db, batch=True) as trans:
+            person = self.db.get_person_from_handle(self.handle)
+            other_ref = EventRef()
+            other_ref.set_reference_handle(self.event_handle)
+            other_ref.set_role(EventRoleType.WITNESS)
+            person.add_event_ref(other_ref)
+            person.birth_ref_index = 0
+            self.db.commit_person(person, trans)
+
+        with DbTxn("restore", self.db, batch=True) as trans:
+            restored = _restore_birth_death_indices(self.db, snapshot, trans)
+
+        self.assertEqual(restored, 0)
+        self.assertEqual(self.db.get_person_from_handle(self.handle).birth_ref_index, 0)
+
+    def test_a_person_deleted_since_the_snapshot_is_skipped_not_erred(self):
+        snapshot = _snapshot_birth_death_indices(self.db)
+
+        with DbTxn("delete", self.db, batch=True) as trans:
+            self.db.remove_person(self.handle, trans)
+
+        with DbTxn("restore", self.db, batch=True) as trans:
+            restored = _restore_birth_death_indices(self.db, snapshot, trans)
+
+        self.assertEqual(restored, 0)
+
+
+class TestDescribeResyncToViews(unittest.TestCase):
+    """_describe_resync_to_views() -- called by _full_resync_async()'s
+    rebuild() and _bootstrap_full_resync() once a reimport is done --
+    tells already-open views what actually changed, using a real
+    before/after object diff (_diff_snapshots(), the same one
+    _reconcile_batch_commit() uses) instead of request_rebuild()'s
+    blanket "reload everything" signal, whenever that diff is small
+    enough to be worth being precise about instead. See
+    GRANULAR_REBUILD_MAX_CHANGES's own comment for why this matters:
+    gui/displaystate.py's History.history_changed() resets Active Person
+    on any <type>-rebuild signal, so a resync recovering from an ordinary
+    push conflict -- which only ever touches a handful of objects --
+    doesn't need to reset it, unlike before this existed.
+    """
+
+    def setUp(self):
+        tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
+        self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
+        db = make_database("sqlite")
+        db.load(tmpdir)
+        # Same minimal reclassify-a-real-DBAPI-db-as-WebApiDB shape as
+        # TestConflictRetryAgainstARealDatabase.setUp() -- see that
+        # method's own comment. web_client is mocked so the ordinary
+        # (non-batch) DbTxns below can commit through transaction_commit()
+        # -> _start_push() without a real network call; nothing here
+        # asserts on what got pushed.
+        db.__class__ = WebApiDB
+        db.web_client = mock.MagicMock()
+        db.runner = InlineTaskRunner()
+        db.io_runner = InlineTaskRunner()
+        db._syncing = False
+        db._retrying = False
+        db._pulling = False
+        db._get_metadata = lambda key, default=0: default
+        db._set_metadata = lambda key, value, use_txn=True: None
+        db.emit = mock.MagicMock()
+        self.db = db
+        self.addCleanup(self.db.close)
+
+    def emitted(self):
+        return {call.args[0]: call.args[1][0] for call in self.db.emit.call_args_list}
+
+    def test_small_diff_emits_granular_signals_not_rebuild(self):
+        with DbTxn("seed", self.db) as trans:
+            untouched = Person()
+            untouched.set_gramps_id("I0001")
+            self.db.add_person(untouched, trans)
+            touched = Person()
+            touched.set_gramps_id("I0002")
+            self.db.add_person(touched, trans)
+
+        before = self.db._snapshot_all_objects()
+
+        with DbTxn("edit", self.db) as trans:
+            person = self.db.get_person_from_handle(touched.handle)
+            attr = Attribute()
+            attr.set_type("Occupation")
+            attr.set_value("Tester")
+            person.add_attribute(attr)
+            self.db.commit_person(person, trans)
+        self.db.emit.reset_mock()  # only care what the resync step itself signals
+
+        self.db._describe_resync_to_views(before)
+
+        self.assertEqual(self.emitted(), {"person-update": [touched.handle]})
+
+    def test_nothing_changed_emits_nothing(self):
+        with DbTxn("seed", self.db) as trans:
+            p = Person()
+            p.set_gramps_id("I0001")
+            self.db.add_person(p, trans)
+        before = self.db._snapshot_all_objects()
+        self.db.emit.reset_mock()
+
+        self.db._describe_resync_to_views(before)
+
+        self.db.emit.assert_not_called()
+
+    def test_large_diff_falls_back_to_request_rebuild(self):
+        # An empty "before" plus a low threshold stands in for what a
+        # bootstrap resync against a real, populated tree looks like --
+        # net effect "everything was added" -- without needing hundreds
+        # of real Person objects to cross the real threshold.
+        with mock.patch.object(grampswebapidb, "GRANULAR_REBUILD_MAX_CHANGES", 1):
+            with DbTxn("seed", self.db) as trans:
+                for i in range(3):
+                    p = Person()
+                    p.set_gramps_id(f"I000{i}")
+                    self.db.add_person(p, trans)
+            self.db.emit.reset_mock()
+
+            self.db._describe_resync_to_views({})
+
+        emitted_names = [call.args[0] for call in self.db.emit.call_args_list]
+        self.assertIn("person-rebuild", emitted_names)
+        # request_rebuild() emits one signal per type, not one per object
+        # -- the whole point of falling back to it here.
+        self.assertNotIn("person-add", emitted_names)
 
 
 # -------------------------------------------------------------------------
