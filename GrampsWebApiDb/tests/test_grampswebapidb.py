@@ -50,6 +50,7 @@ import os
 import shutil
 import sys
 import tempfile
+import threading
 import time
 import unittest
 from urllib.error import HTTPError, URLError
@@ -999,14 +1000,25 @@ class TestTransactionCommit(unittest.TestCase):
             with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
                 self.db.transaction_commit(trans)  # must not raise
 
-    def test_push_swallows_database_closed_mid_push(self):
-        # The tree was closed (or switched away from) while push_transaction()'s
-        # on_wait=self._guarded_pump had handed the main loop back -- see
-        # TestGuardedPump. Not a failure: nothing left to push to.
+    def test_push_dropped_if_tree_closed_mid_push(self):
+        # The tree was closed (or switched away from) while the push was
+        # in flight on io_runner -- self._guarded() (wrapping the push's
+        # own on_success/on_error) silently drops the result, unlike the
+        # old pump-based _DatabaseClosed mechanism this replaces (nothing
+        # in this chain pumps the main loop anymore, so nothing can raise
+        # it here). Not a failure: nothing left to push to.
         trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
-        self.db.web_client.push_transaction.side_effect = grampswebapidb._DatabaseClosed
+
+        def close_mid_push(*args, **kwargs):
+            self.db._run_id += 1
+
+        self.db.web_client.push_transaction.side_effect = close_mid_push
         with mock.patch.object(grampswebapidb.SQLite, "transaction_commit"):
             self.db.transaction_commit(trans)  # must not raise, must not log
+        # Dropped, not delivered: self._syncing (only cleared by
+        # on_done/on_error, via _finish_async_op()) is still True --
+        # close() resets it directly instead (see TestClose).
+        self.assertTrue(self.db._syncing)
 
     def test_conflict_triggers_resync_then_retry(self):
         # A WebApiPushConflict means the server rejected the whole batch
@@ -1022,7 +1034,9 @@ class TestTransactionCommit(unittest.TestCase):
         with mock.patch.object(
             grampswebapidb.SQLite, "transaction_commit"
         ), mock.patch.object(
-            self.db, "_resync_after_conflict"
+            self.db,
+            "_resync_after_conflict_async",
+            side_effect=stub_async_done(None),
         ) as resync, mock.patch.object(
             self.db, "_retry_after_conflict"
         ) as retry:
@@ -1031,8 +1045,8 @@ class TestTransactionCommit(unittest.TestCase):
         # A full resync, not the incremental history feed or a totals
         # check -- neither can see a content-only change to an
         # already-known, bulk-imported object -- see the module
-        # docstring and _resync_after_conflict().
-        resync.assert_called_once_with()
+        # docstring and _resync_after_conflict_async().
+        self.assertEqual(resync.call_count, 1)
         retry.assert_called_once_with(mock.ANY)
         payload = retry.call_args[0][0]
         self.assertEqual(payload[0]["handle"], "H1")
@@ -1046,13 +1060,15 @@ class TestTransactionCommit(unittest.TestCase):
             grampswebapidb.SQLite, "transaction_commit"
         ), mock.patch.object(
             self.db,
-            "_resync_after_conflict",
-            side_effect=HTTPError(
-                "https://example.com/api/exporters/gramps/file",
-                500,
-                "boom",
-                None,
-                None,
+            "_resync_after_conflict_async",
+            side_effect=stub_async_error(
+                HTTPError(
+                    "https://example.com/api/exporters/gramps/file",
+                    500,
+                    "boom",
+                    None,
+                    None,
+                )
             ),
         ), mock.patch.object(
             self.db, "_retry_after_conflict"
@@ -1066,17 +1082,19 @@ class TestTransactionCommit(unittest.TestCase):
     def test_retry_failure_is_queued_not_dropped(self):
         # A failure inside _retry_after_conflict() itself (its DbTxn body
         # never finished, so nothing committed locally -- see
-        # _push_payload()'s handling of this) is a plain connectivity-
-        # shaped problem, not a conflict, so the payload is queued for
-        # later like any other push that couldn't be delivered (see
-        # TestPendingPushQueue), not dropped.
+        # _push_payload_async()'s handling of this) is a plain
+        # connectivity-shaped problem, not a conflict, so the payload is
+        # queued for later like any other push that couldn't be
+        # delivered (see TestPendingPushQueue), not dropped.
         trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
         self.db.web_client.push_transaction.side_effect = WebApiPushConflict(
             "Object has changed"
         )
         with mock.patch.object(
             grampswebapidb.SQLite, "transaction_commit"
-        ), mock.patch.object(self.db, "_resync_after_conflict"), mock.patch.object(
+        ), mock.patch.object(
+            self.db, "_resync_after_conflict_async", side_effect=stub_async_done(None)
+        ), mock.patch.object(
             self.db,
             "_retry_after_conflict",
             side_effect=OSError("network down"),
@@ -1088,22 +1106,30 @@ class TestTransactionCommit(unittest.TestCase):
             self.metadata["pending_pushes"][0]["payload"][0]["handle"], "H1"
         )
 
-    def test_conflict_resync_database_closed_is_also_swallowed(self):
+    def test_conflict_resync_dropped_if_tree_closed_mid_resync(self):
+        # The async equivalent of the old _DatabaseClosed-during-resync
+        # test: nothing in this chain pumps the main loop anymore, so
+        # nothing raises _DatabaseClosed here -- self._guarded() (wrapping
+        # _full_resync_async()'s own internal steps) just drops the
+        # result instead. Exercises the real (non-mocked)
+        # _resync_after_conflict_async()/_full_resync_async() chain, not
+        # a stubbed-away one, since the drop happens inside it.
         trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
         self.db.web_client.push_transaction.side_effect = WebApiPushConflict(
             "Object has changed"
         )
+
+        def close_mid_download():
+            self.db._run_id += 1
+            return b""
+
+        self.db.web_client.download_export.side_effect = close_mid_download
         with mock.patch.object(
             grampswebapidb.SQLite, "transaction_commit"
-        ), mock.patch.object(
-            self.db,
-            "_resync_after_conflict",
-            side_effect=grampswebapidb._DatabaseClosed,
-        ), mock.patch.object(
-            self.db, "_retry_after_conflict"
-        ) as retry:
+        ), mock.patch.object(self.db, "_retry_after_conflict") as retry:
             self.db.transaction_commit(trans)  # must not raise, must not log
         retry.assert_not_called()
+        self.assertTrue(self.db._syncing)
 
     def test_repeated_conflict_on_a_retry_is_not_retried_again(self):
         # is_retry=True marks a push that is itself _retry_after_conflict()'s
@@ -1116,15 +1142,17 @@ class TestTransactionCommit(unittest.TestCase):
         with mock.patch.object(
             grampswebapidb.SQLite, "transaction_commit"
         ), mock.patch.object(
-            self.db, "_resync_after_conflict"
+            self.db,
+            "_resync_after_conflict_async",
+            side_effect=stub_async_done(None),
         ) as resync, mock.patch.object(
             self.db, "_retry_after_conflict"
         ) as retry:
             with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
-                self.db._push_payload(
+                self.db._start_push(
                     transaction_to_json(trans), is_retry=True
                 )  # must not raise
-        resync.assert_called_once_with()
+        self.assertEqual(resync.call_count, 1)
         retry.assert_not_called()
 
     def test_undo_conflict_is_not_retried(self):
@@ -1139,13 +1167,15 @@ class TestTransactionCommit(unittest.TestCase):
         with mock.patch.object(
             grampswebapidb.SQLite, "transaction_commit"
         ), mock.patch.object(
-            self.db, "_resync_after_conflict"
+            self.db,
+            "_resync_after_conflict_async",
+            side_effect=stub_async_done(None),
         ) as resync, mock.patch.object(
             self.db, "_retry_after_conflict"
         ) as retry:
             with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
-                self.db._push_payload(transaction_to_json(trans), undo=True)
-        resync.assert_called_once_with()
+                self.db._start_push(transaction_to_json(trans), undo=True)
+        self.assertEqual(resync.call_count, 1)
         retry.assert_not_called()
 
 
@@ -1153,36 +1183,32 @@ class TestTransactionCommit(unittest.TestCase):
 #
 # TestResyncAfterConflict
 #
-# _resync_after_conflict() wraps _full_resync() -- not the incremental
-# _sync_from_server() -- with the same _syncing bookkeeping
-# _sync_from_server() and _sync_media_files() do around their own bodies,
-# so a poll tick landing mid-resync skips its turn instead of starting a
-# second sync underneath this one. See the module docstring and this
-# method's own docstring for why a full resync, not the cheaper
-# incremental feed or a totals check, is what a conflict retry needs.
+# _resync_after_conflict_async() wraps _full_resync_async() -- not the
+# incremental _sync_from_server_async() -- and, unlike the old
+# synchronous _resync_after_conflict() this replaces, does NOT manage
+# self._syncing itself: the caller (ultimately _start_push()) already
+# claims it for the whole chain, including this detour -- see the
+# module docstring and _start_push()'s own docstring for why a full
+# resync, not the cheaper incremental feed or a totals check, is what a
+# conflict retry needs.
 #
 # -------------------------------------------------------------------------
 class TestResyncAfterConflict(unittest.TestCase):
     def setUp(self):
         self.db = new_instance()
-        self.db._full_resync = mock.MagicMock()
+        self.db._full_resync_async = mock.MagicMock()
 
     def test_delegates_to_full_resync(self):
-        self.db._resync_after_conflict()
-        self.db._full_resync.assert_called_once_with()
+        on_done = lambda _: None
+        on_error = lambda _: None
+        self.db._resync_after_conflict_async(on_done, on_error)
+        self.db._full_resync_async.assert_called_once_with(on_done, on_error)
 
-    def test_syncing_flag_is_set_during_and_cleared_after(self):
-        seen = []
-        self.db._full_resync.side_effect = lambda: seen.append(self.db._syncing)
-        self.db._resync_after_conflict()
-        self.assertEqual(seen, [True])
-        self.assertFalse(self.db._syncing)
-
-    def test_syncing_flag_is_cleared_even_if_the_resync_raises(self):
-        self.db._full_resync.side_effect = OSError("down")
-        with self.assertRaises(OSError):
-            self.db._resync_after_conflict()
-        self.assertFalse(self.db._syncing)
+    def test_does_not_touch_syncing_itself(self):
+        # Caller already owns it -- see _start_push()'s docstring.
+        self.db._syncing = True
+        self.db._resync_after_conflict_async(lambda _: None, lambda _: None)
+        self.assertTrue(self.db._syncing)
 
 
 # -------------------------------------------------------------------------
@@ -1408,27 +1434,34 @@ class TestConflictRetryAgainstARealDatabase(unittest.TestCase):
         return server_fresh
 
     def _stub_full_resync_to(self, server_fresh):
-        """Patch _full_resync() to commit server_fresh into local storage
-        via a real, batch=True/_pulling=True DbTxn -- standing in for
-        what a real resync does (download and reimport a full XML
+        """Patch _full_resync_async() to commit server_fresh into local
+        storage via a real, batch=True/_pulling=True DbTxn -- standing in
+        for what a real resync does (download and reimport a full XML
         export), without actually needing one here. What matters for
-        these tests is the local write _resync_after_conflict() relies
-        on, not how a real resync produces it."""
+        these tests is the local write _resync_after_conflict_async()
+        relies on, not how a real resync produces it. InlineTaskRunner
+        (see new_instance()) resolves the real chain inline, so the
+        write-then-read ordering this test protects (see _start_push()'s
+        docstring and section 3.6 of the refactor plan) is exercised for
+        real, not assumed."""
 
-        def fake_full_resync():
+        def fake_full_resync_async(on_done, on_error, progress_callback=None):
             self.db._pulling = True
             try:
                 with DbTxn("fake resync", self.db, batch=True) as trans:
                     self.db.commit_person(data_to_object(server_fresh), trans)
             finally:
                 self.db._pulling = False
+            on_done(None)
 
-        return mock.patch.object(self.db, "_full_resync", side_effect=fake_full_resync)
+        return mock.patch.object(
+            self.db, "_full_resync_async", side_effect=fake_full_resync_async
+        )
 
     def _push_conflicts_once_then_succeeds(self):
         calls = []
 
-        def fake_push(payload, undo=False, background=False, on_wait=None):
+        def fake_push(payload, undo=False, background=False):
             calls.append(copy.deepcopy(payload))
             if len(calls) == 1:
                 raise WebApiPushConflict("Object has changed")
@@ -1484,6 +1517,122 @@ class TestConflictRetryAgainstARealDatabase(unittest.TestCase):
         final = self.db.get_person_from_handle(self.handle)
         self.assertTrue(final.get_privacy())
         self.assertEqual(len(final.get_attribute_list()), 1)
+
+
+# -------------------------------------------------------------------------
+#
+# TestSyncingStaysHeldAcrossNestedRetryPush
+#
+# Regression test for the premature-completion bug documented in
+# _start_push()'s docstring (and section 2.2.1 of the refactor plan): a
+# first draft of this design cleared self._syncing as soon as
+# _retry_after_conflict()'s local DbTxn committed, before its own nested
+# re-push -- a real network round trip -- had actually resolved, letting
+# a second, unrelated edit race it. InlineTaskRunner-based tests
+# structurally cannot catch this class of bug: everything resolves
+# inline, in one call, before any assertion runs. This uses the real
+# GLibTaskRunner/IoRunner pair and a real worker thread, driven by a
+# live GLib.MainContext loop, to prove self._syncing is still True while
+# the nested re-push is genuinely in flight.
+#
+# -------------------------------------------------------------------------
+class TestSyncingStaysHeldAcrossNestedRetryPush(unittest.TestCase):
+    def setUp(self):
+        self.db = WebApiDB.__new__(WebApiDB)
+        self.db.runner = grampswebapidb.GLibTaskRunner()
+        self.db.io_runner = grampswebapidb.IoRunner()
+        self.db.web_client = mock.MagicMock()
+        self.db._syncing = False
+        self.db._retrying = False
+        self.db._pulling = False
+        self.db._run_id = 0
+        self.metadata = {}
+        self.db._get_metadata = lambda key, default=0: self.metadata.get(key, default)
+        self.db._set_metadata = (
+            lambda key, value, use_txn=True: self.metadata.__setitem__(key, value)
+        )
+
+    def _pump_until(self, predicate, timeout=5.0):
+        context = grampswebapidb.GLib.MainContext.default()
+        deadline = time.monotonic() + timeout
+        while not predicate():
+            if time.monotonic() > deadline:
+                raise AssertionError("timed out waiting for the async chain")
+            context.iteration(True)
+
+    def test_syncing_stays_true_across_the_retrys_nested_repush(self):
+        release_second_push = threading.Event()
+        calls = []
+
+        def fake_push(payload, undo=False, background=False):
+            calls.append(1)
+            if len(calls) == 1:
+                raise WebApiPushConflict("Object has changed")
+            # The retry's own nested re-push: block on a real worker
+            # thread until the test below has observed self._syncing
+            # still True, so the assertion genuinely races real network
+            # I/O rather than something InlineTaskRunner already resolved.
+            release_second_push.wait(timeout=5.0)
+
+        self.db.web_client.push_transaction.side_effect = fake_push
+
+        # The write-then-read ordering a real resync's DB write must
+        # provide is covered separately
+        # (TestConflictRetryAgainstARealDatabase) -- stubbed trivially
+        # here so this test is only about the _syncing race.
+        def fake_full_resync_async(on_done, on_error, progress_callback=None):
+            on_done(None)
+
+        def fake_retry(payload):
+            # Standing in for _retry_after_conflict()'s real DbTxn body:
+            # its own DbTxn.__exit__ is what triggers the nested
+            # transaction_commit() -> _start_push(is_retry=True) call in
+            # the real code -- reproduced directly here since what this
+            # test cares about doesn't need a real database.
+            self.db._start_push(payload, is_retry=True)
+
+        with mock.patch.object(
+            self.db, "_full_resync_async", side_effect=fake_full_resync_async
+        ), mock.patch.object(self.db, "_retry_after_conflict", side_effect=fake_retry):
+            self.db._syncing = True
+            payload = [
+                {
+                    "type": "add",
+                    "handle": "H1",
+                    "_class": "Person",
+                    "old": None,
+                    "new": {"handle": "H1"},
+                }
+            ]
+
+            # Standing in for _start_push()'s own _finish_async_op(None)
+            # wrapping (not exercised directly here -- this test is about
+            # _push_payload_async()'s chain, not _start_push()'s queueing
+            # logic): the real chain's outermost on_done/on_error clear
+            # self._syncing once the whole thing -- including the nested
+            # retry push -- is actually done.
+            def outer_done(_):
+                self.db._syncing = False
+
+            def outer_error(_):
+                self.db._syncing = False
+
+            self.db._push_payload_async(
+                payload, on_done=outer_done, on_error=outer_error
+            )
+
+            # Wait until the nested re-push is genuinely in flight on its
+            # own worker thread (the second push_transaction call).
+            self._pump_until(lambda: len(calls) >= 2)
+            # It's blocked on release_second_push, so this chain is not
+            # done yet -- the bug this test guards against would have
+            # already cleared this.
+            self.assertTrue(self.db._syncing)
+
+            release_second_push.set()
+            self._pump_until(lambda: not self.db._syncing)
+
+        self.assertFalse(self.db._syncing)
 
 
 # -------------------------------------------------------------------------
@@ -1610,7 +1759,7 @@ class TestUndoRedo(unittest.TestCase):
         self.db.undodb.undo_count = 1
         self.db.undodb.undoq = [txn]
         self.db.undodb.undo.return_value = True
-        with mock.patch.object(self.db, "_push_payload") as push:
+        with mock.patch.object(self.db, "_start_push") as push:
             result = self.db.undo()
         self.assertTrue(result)
         push.assert_called_once()
@@ -1623,7 +1772,7 @@ class TestUndoRedo(unittest.TestCase):
         self.db.undodb.redo_count = 1
         self.db.undodb.redoq = [txn]
         self.db.undodb.redo.return_value = True
-        with mock.patch.object(self.db, "_push_payload") as push:
+        with mock.patch.object(self.db, "_start_push") as push:
             result = self.db.redo()
         self.assertTrue(result)
         payload = push.call_args[0][0]
@@ -1633,7 +1782,7 @@ class TestUndoRedo(unittest.TestCase):
     def test_no_push_when_nothing_to_undo(self):
         self.db.undodb.undo_count = 0
         self.db.undodb.undo.return_value = False
-        with mock.patch.object(self.db, "_push_payload") as push:
+        with mock.patch.object(self.db, "_start_push") as push:
             result = self.db.undo()
         self.assertFalse(result)
         push.assert_not_called()
@@ -1641,7 +1790,7 @@ class TestUndoRedo(unittest.TestCase):
     def test_no_push_when_nothing_to_redo(self):
         self.db.undodb.redo_count = 0
         self.db.undodb.redo.return_value = False
-        with mock.patch.object(self.db, "_push_payload") as push:
+        with mock.patch.object(self.db, "_start_push") as push:
             result = self.db.redo()
         self.assertFalse(result)
         push.assert_not_called()
@@ -1653,7 +1802,7 @@ class TestUndoRedo(unittest.TestCase):
         self.db.undodb.undo_count = 1
         self.db.undodb.undoq = [txn]
         self.db.undodb.undo.return_value = False
-        with mock.patch.object(self.db, "_push_payload") as push:
+        with mock.patch.object(self.db, "_start_push") as push:
             result = self.db.undo()
         self.assertFalse(result)
         push.assert_not_called()
@@ -1672,7 +1821,7 @@ class TestUndoRedo(unittest.TestCase):
             return True
 
         self.db.undodb.undo.side_effect = pop_on_undo
-        with mock.patch.object(self.db, "_push_payload") as push:
+        with mock.patch.object(self.db, "_start_push") as push:
             self.db.undo()
         payload = push.call_args[0][0]
         self.assertEqual(payload[0]["handle"], "H1")
@@ -2035,7 +2184,9 @@ class TestUseBackgroundPush(unittest.TestCase):
         self.db._set_metadata = lambda key, value, use_txn=True: None
         self.db.web_client.supports_background_transactions.return_value = True
         payload = self._payload(grampswebapidb.BACKGROUND_PUSH_THRESHOLD)
-        self.db._push_payload(payload)
+        self.db._push_payload_async(
+            payload, on_done=lambda _: None, on_error=lambda _: None
+        )
         self.assertTrue(
             self.db.web_client.push_transaction.call_args.kwargs["background"]
         )
@@ -2834,7 +2985,7 @@ class TestReconcileBatchCommit(unittest.TestCase):
             {"Person": {"H1": raw_person_data("H1"), "H2": raw_person_data("H2")}},
         )
         before = {("Person", "H1"): raw_person_data("H1")}
-        with mock.patch.object(self.db, "_push_payload") as push:
+        with mock.patch.object(self.db, "_start_push") as push:
             self.db._reconcile_batch_commit(before)
         entries = push.call_args[0][0]
         self.assertEqual(len(entries), 1)
@@ -2847,7 +2998,7 @@ class TestReconcileBatchCommit(unittest.TestCase):
     def test_removed_handle_becomes_a_delete_carrying_its_last_known_data(self):
         stub_iter_raw_data(self.db, {"Person": {}})
         before = {("Person", "H1"): raw_person_data("H1")}
-        with mock.patch.object(self.db, "_push_payload") as push:
+        with mock.patch.object(self.db, "_start_push") as push:
             self.db._reconcile_batch_commit(before)
         entries = push.call_args[0][0]
         self.assertEqual(len(entries), 1)
@@ -2869,7 +3020,7 @@ class TestReconcileBatchCommit(unittest.TestCase):
         before = {
             ("Person", "H1"): raw_person_data("H1", change=100.0, gramps_id="I0001")
         }
-        with mock.patch.object(self.db, "_push_payload") as push:
+        with mock.patch.object(self.db, "_start_push") as push:
             self.db._reconcile_batch_commit(before)
         entries = push.call_args[0][0]
         self.assertEqual(len(entries), 1)
@@ -2897,7 +3048,7 @@ class TestReconcileBatchCommit(unittest.TestCase):
             {"Person": {"H1": raw_person_data("H1", change=100.0, private=True)}},
         )
         before = {("Person", "H1"): raw_person_data("H1", change=100.0, private=False)}
-        with mock.patch.object(self.db, "_push_payload") as push:
+        with mock.patch.object(self.db, "_start_push") as push:
             self.db._reconcile_batch_commit(before)
         entries = push.call_args[0][0]
         self.assertEqual(len(entries), 1)
@@ -2912,7 +3063,7 @@ class TestReconcileBatchCommit(unittest.TestCase):
             self.db, {"Person": {"H1": raw_person_data("H1", change=999.0)}}
         )
         before = {("Person", "H1"): raw_person_data("H1", change=100.0)}
-        with mock.patch.object(self.db, "_push_payload") as push:
+        with mock.patch.object(self.db, "_start_push") as push:
             self.db._reconcile_batch_commit(before)
         push.assert_not_called()
 
@@ -2922,13 +3073,13 @@ class TestReconcileBatchCommit(unittest.TestCase):
         data = raw_person_data("H1")
         stub_iter_raw_data(self.db, {"Person": {"H1": data}})
         before = {("Person", "H1"): data}
-        with mock.patch.object(self.db, "_push_payload") as push:
+        with mock.patch.object(self.db, "_start_push") as push:
             self.db._reconcile_batch_commit(before)
         push.assert_not_called()
 
     def test_nothing_changed_pushes_nothing(self):
         stub_iter_raw_data(self.db, {})
-        with mock.patch.object(self.db, "_push_payload") as push:
+        with mock.patch.object(self.db, "_start_push") as push:
             self.db._reconcile_batch_commit({})
         push.assert_not_called()
 
@@ -2939,12 +3090,12 @@ class TestReconcileBatchCommit(unittest.TestCase):
         # then, not the pre-batch state a real server needs. This
         # builds the correct payload directly and pushes it the normal
         # way, so _retry_after_conflict() is only ever reached (via
-        # _push_payload()'s own conflict handling) if the push actually
-        # conflicts.
+        # _push_payload_async()'s own conflict handling) if the push
+        # actually conflicts.
         stub_iter_raw_data(self.db, {"Person": {"H1": raw_person_data("H1")}})
         with mock.patch.object(
             self.db, "_retry_after_conflict"
-        ) as replay, mock.patch.object(self.db, "_push_payload") as push:
+        ) as replay, mock.patch.object(self.db, "_start_push") as push:
             self.db._reconcile_batch_commit({})
         push.assert_called_once()
         replay.assert_not_called()
@@ -2984,12 +3135,25 @@ class TestPendingPushQueue(unittest.TestCase):
     def _payload(self, handle="H1"):
         return [{"type": "add", "handle": handle, "_class": "Person"}]
 
+    def _push(self, payload, undo=False, is_retry=False):
+        """Drive _push_payload_async() to completion synchronously (via
+        InlineTaskRunner -- see new_instance()), the way these
+        unit-level tests want the old direct _push_payload() call to
+        behave."""
+        self.db._push_payload_async(
+            payload,
+            on_done=lambda _: None,
+            on_error=lambda _: None,
+            undo=undo,
+            is_retry=is_retry,
+        )
+
     def test_connection_failure_queues_the_payload(self):
         self.db.web_client.push_transaction.side_effect = HTTPError(
             "https://example.com/api/transactions/", 500, "boom", None, None
         )
         with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
-            self.db._push_payload(self._payload())
+            self._push(self._payload())
         queued = self.metadata["pending_pushes"]
         self.assertEqual(len(queued), 1)
         self.assertEqual(queued[0]["payload"], self._payload())
@@ -2998,11 +3162,11 @@ class TestPendingPushQueue(unittest.TestCase):
     def test_undo_flag_is_preserved_in_the_queue(self):
         self.db.web_client.push_transaction.side_effect = OSError("network down")
         with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
-            self.db._push_payload(self._payload(), undo=True)
+            self._push(self._payload(), undo=True)
         self.assertTrue(self.metadata["pending_pushes"][0]["undo"])
 
     def test_successful_push_queues_nothing(self):
-        self.db._push_payload(self._payload())
+        self._push(self._payload())
         self.assertNotIn("pending_pushes", self.metadata)
 
     def test_conflict_does_not_queue(self):
@@ -3011,11 +3175,11 @@ class TestPendingPushQueue(unittest.TestCase):
         self.db.web_client.push_transaction.side_effect = WebApiPushConflict(
             "Object has changed"
         )
-        with mock.patch.object(self.db, "_resync_after_conflict"), mock.patch.object(
-            self.db, "_retry_after_conflict"
-        ):
+        with mock.patch.object(
+            self.db, "_resync_after_conflict_async", side_effect=stub_async_done(None)
+        ), mock.patch.object(self.db, "_retry_after_conflict"):
             with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
-                self.db._push_payload(self._payload())
+                self._push(self._payload())
         self.assertNotIn("pending_pushes", self.metadata)
 
     def test_flush_sends_queued_pushes_in_order_and_clears_them(self):
@@ -3075,7 +3239,7 @@ class TestPendingPushQueue(unittest.TestCase):
         ]
         self.db.web_client.push_transaction.side_effect = OSError("network down")
         with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
-            self.db._push_payload(self._payload("NEW"))
+            self._push(self._payload("NEW"))
         queued = self.metadata["pending_pushes"]
         self.assertEqual(len(queued), grampswebapidb.MAX_PENDING_PUSHES)
         # Oldest dropped, newest kept.
@@ -3090,7 +3254,7 @@ class TestPendingPushQueue(unittest.TestCase):
             "https://example.com/api/transactions/", 403, "Forbidden", None, None
         )
         with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
-            self.db._push_payload(self._payload())
+            self._push(self._payload())
         self.assertNotIn("pending_pushes", self.metadata)
 
     def test_rate_limit_is_still_queued(self):
@@ -3099,7 +3263,7 @@ class TestPendingPushQueue(unittest.TestCase):
             "https://example.com/api/transactions/", 429, "Too Many", None, None
         )
         with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
-            self.db._push_payload(self._payload())
+            self._push(self._payload())
         self.assertEqual(len(self.metadata["pending_pushes"]), 1)
 
     def test_flush_drops_a_permanently_rejected_entry_and_continues(self):

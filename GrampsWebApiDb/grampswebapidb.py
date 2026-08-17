@@ -822,10 +822,20 @@ class WebApiDB(SQLite):
     #: _reconcile_batch_commit().
     _pulling = False
 
-    #: Set for the duration of a sync (records or media files), so the
-    #: timeouts don't start a second one underneath the first when
-    #: _pump_main_loop() hands the main loop back mid-operation.
+    #: Set for the duration of any async operation that owns the mirror
+    #: -- a record/media sync, or (since the move off reentrant pumping)
+    #: a push -- so a second one can't start concurrently and land an
+    #: overlapping DB-apply callback. See _start_push()/_finish_async_op().
     _syncing = False
+
+    #: The chain a conflict retry's nested re-push belongs to, stashed by
+    #: _after_conflict_resync() so _start_push()'s recursive
+    #: (is_retry=True) call can complete *that* chain instead of treating
+    #: the retry's own local commit as the finish line -- see both
+    #: methods' docstrings and section 2.2.1 of the refactor plan for the
+    #: premature-completion bug this exists to prevent.
+    _retry_chain_done = None
+    _retry_chain_error = None
 
     #: Bumped by close(), before anything else it does, so a pump-driven
     #: sync/push suspended elsewhere on the call stack can tell (via
@@ -1400,8 +1410,8 @@ class WebApiDB(SQLite):
         # self._retrying is set by _retry_after_conflict() while it holds
         # its own DbTxn open, so the push this commit triggers knows it is
         # itself a conflict retry and won't retry again on a second
-        # conflict -- see _push_payload().
-        self._push_payload(payload, is_retry=self._retrying)
+        # conflict -- see _start_push().
+        self._start_push(payload, is_retry=self._retrying)
 
     def undo(self, update_history=True):
         # Peek before super(): DbGenericUndo._undo() pops this DbTxn off
@@ -1412,7 +1422,7 @@ class WebApiDB(SQLite):
         transaction = self.undodb.undoq[-1] if self.undodb.undo_count else None
         result = super().undo(update_history)
         if result and transaction is not None:
-            self._push_payload(transaction_to_json(transaction), undo=True)
+            self._start_push(transaction_to_json(transaction), undo=True)
         return result
 
     def redo(self, update_history=True):
@@ -1421,112 +1431,312 @@ class WebApiDB(SQLite):
         if result and transaction is not None:
             # Redo is just re-applying the original transaction forward --
             # not a variant of undo=True. See push_transaction()'s docstring.
-            self._push_payload(transaction_to_json(transaction))
+            self._start_push(transaction_to_json(transaction))
         return result
 
-    def _push_payload(self, payload, undo=False, is_retry=False):
-        """Push a change-list payload to the server, handling a rejected
-        push (conflict or otherwise) the same way regardless of whether it
-        came from a plain commit, an undo, or a redo.
+    def _start_push(self, payload, undo=False, is_retry=False):
+        """Route a locally-intended push through the single-flight gate
+        self._syncing (see the module docstring): the true top-level
+        entry point for a given local edit -- transaction_commit(),
+        undo(), redo() -- claims self._syncing here before anything
+        touches the network, and only the terminal handler
+        _finish_async_op() wraps releases it, once this whole chain
+        (including any conflict-recovery detour through
+        _push_payload_async() -> _resync_after_conflict_async() ->
+        _retry_after_conflict()'s own nested push) has actually
+        finished -- not merely been started.
 
-        is_retry marks a push that is itself the replay _retry_after_conflict()
-        made from an earlier conflict -- a second conflict on that replay is
-        logged and dropped rather than retried again, so a genuinely hot
-        object can't send this into an unbounded retry loop.
+        A recursive call (is_retry=True, reached only via
+        _retry_after_conflict()'s own nested transaction_commit()) never
+        claims self._syncing itself: it is always already held by
+        whichever outer call started this chain, and reuses that outer
+        call's own completion callbacks (self._retry_chain_done/
+        self._retry_chain_error, stashed by _after_conflict_resync())
+        so the chain's real end -- not just this recursive leg's local
+        commit -- is what finally clears the flag. An earlier version of
+        this design let self._syncing clear as soon as the retry's local
+        DbTxn committed, before its own nested re-push (a real network
+        round trip) had actually resolved -- exactly the class of race
+        this refactor exists to eliminate, just reintroduced one level
+        up if not guarded against here too.
+
+        If self._syncing is already held by something else when a
+        non-retry payload arrives, the push is queued
+        (_queue_pending_push()) rather than raced against whatever is in
+        flight -- deferred, not dropped: _finish_async_op() flushes the
+        queue once the in-flight chain completes (from phase 4 on; see
+        that method's own docstring for the interim behavior before
+        _flush_pending_pushes_async() exists).
         """
         if not payload:
+            if is_retry and self._retry_chain_done is not None:
+                self._retry_chain_done(None)
+            return
+        if not is_retry:
+            if self._syncing:
+                self._queue_pending_push(payload, undo=undo)
+                return
+            self._syncing = True
+            on_done = self._finish_async_op(None)
+            on_error = self._finish_async_op(None)
+        else:
+            on_done = self._retry_chain_done or self._finish_async_op(None)
+            on_error = self._retry_chain_error or self._finish_async_op(None)
+        self._push_payload_async(
+            payload, on_done, on_error, undo=undo, is_retry=is_retry
+        )
+
+    def _finish_async_op(self, on_done):
+        """Wrap a top-level async chain's true completion handler so
+        self._syncing only clears once the chain is genuinely done.
+        Shared by every top-level entry point that claims
+        self._syncing -- currently _start_push() only; _poll_tick(),
+        _media_poll_tick(), and load()'s wait-adapter still manage the
+        flag directly until later phases give them a reason to route
+        through here too (see each one's own comments).
+
+        Not yet flushing a pending-push queue on the way out: that needs
+        _flush_pending_pushes_async(), which doesn't exist until phase 4
+        of the refactor. Until then, anything _queue_pending_push()
+        catches while a chain held self._syncing simply waits for the
+        next record sync (still the old synchronous
+        _flush_pending_pushes(), called at the top of every
+        _sync_from_server()/poll tick today) -- the same wait a
+        connectivity-failure-queued push has always had, not a new
+        regression, just not yet the tighter "flush immediately" bound
+        the finished design calls for.
+        """
+
+        def finish(*args):
+            self._syncing = False
+            if on_done is not None:
+                on_done(*args)
+
+        return finish
+
+    def _push_payload_async(
+        self, payload, on_done, on_error, undo=False, is_retry=False
+    ):
+        """Push a change-list payload to the server, handling a rejected
+        push (conflict or otherwise) the same way regardless of whether
+        it came from a plain commit, an undo, or a redo. The async
+        counterpart of the old (pump-based) _push_payload(): the network
+        call runs entirely on io_runner (see taskrunner.py) -- no
+        self.dbapi touch anywhere in this method or anything it
+        schedules.
+
+        Caller (_start_push()) already owns self._syncing; this method
+        and everything it chains into never touches that flag itself --
+        see that method's docstring.
+
+        is_retry marks a push that is itself the replay
+        _retry_after_conflict() made from an earlier conflict -- a
+        second conflict on that replay is logged and dropped rather than
+        retried again, so a genuinely hot object can't send this into an
+        unbounded retry loop.
+        """
+        if not payload:
+            on_done(None)
             return
         started = monotonic()
-        background = self._use_background_push(payload)
-        LOG.debug(
-            "push: %d change(s) (%s)%s%s",
-            len(payload),
-            ", ".join(sorted({entry["type"] for entry in payload})),
-            " undo" if undo else "",
-            " background" if background else "",
-        )
-        try:
-            self.web_client.push_transaction(
-                payload, undo=undo, background=background, on_wait=self._guarded_pump
-            )
-            LOG.debug("push: accepted in %.2fs", monotonic() - started)
-        except _DatabaseClosed:
-            # The tree was closed (or switched away from) while this push
-            # was suspended mid-wait -- see _guarded_pump(). Nothing left
-            # to push to; the edit stays local and unsent.
-            LOG.debug("push: tree closed mid-push; abandoning it")
-            return
-        except WebApiPushConflict:
-            LOG.warning(
-                "Server rejected %d local change(s): the object(s) changed "
-                "server-side since the local mirror last synced. Resyncing "
-                "the mirror from the server now.",
+
+        def do_push():
+            # io_runner: pure network, no self.dbapi touch.
+            # _use_background_push()'s own network call
+            # (supports_background_transactions()) belongs here too, not
+            # on the main thread -- see that method's docstring.
+            background = self._use_background_push(payload)
+            LOG.debug(
+                "push: %d change(s) (%s)%s%s",
                 len(payload),
+                ", ".join(sorted({entry["type"] for entry in payload})),
+                " undo" if undo else "",
+                " background" if background else "",
             )
-            try:
+            self.web_client.push_transaction(payload, undo=undo, background=background)
+            LOG.debug("push: accepted in %.2fs", monotonic() - started)
+
+        def on_pushed(_result):
+            on_done(None)
+
+        def on_push_error(exc):
+            if isinstance(exc, WebApiPushConflict):
+                LOG.warning(
+                    "Server rejected %d local change(s): the object(s) "
+                    "changed server-side since the local mirror last "
+                    "synced. Resyncing the mirror from the server now.",
+                    len(payload),
+                )
+
+                def on_resync_error(resync_exc):
+                    LOG.error(
+                        "Resync after a push conflict also failed.",
+                        exc_info=resync_exc,
+                    )
+                    on_error(resync_exc)
+
                 # A full resync, not the incremental history feed: a
                 # conflict can be caused by a server-side change the
                 # history feed cannot describe at all -- a bulk import
                 # runs entirely outside gramps-web-api's own transaction
-                # log (see _resync_after_conflict()'s docstring), ordinary
-                # server administration rather than an edge case -- and a
-                # totals check can't catch a content-only change to an
-                # already-known object either. See _resync_after_conflict()
-                # for why nothing cheaper is trustworthy here.
-                self._resync_after_conflict()
-            except _DatabaseClosed:
-                LOG.debug("push: tree closed during conflict resync; abandoning it")
-                return
-            except _CONNECTION_ERRORS:
-                LOG.exception("Resync after a push conflict also failed.")
-                return
-            if undo or is_retry:
-                LOG.warning(
-                    "Giving up on %d local change(s) after a repeated or "
-                    "undo/redo conflict; the local mirror was not resent to "
-                    "the server.",
-                    len(payload),
+                # log (see _resync_after_conflict_async()'s docstring),
+                # ordinary server administration rather than an edge
+                # case -- and a totals check can't catch a content-only
+                # change to an already-known object either. See
+                # _resync_after_conflict_async() for why nothing cheaper
+                # is trustworthy here.
+                self._resync_after_conflict_async(
+                    on_done=lambda _: self._after_conflict_resync(
+                        payload, undo, is_retry, on_done, on_error
+                    ),
+                    on_error=on_resync_error,
                 )
                 return
-            try:
-                self._retry_after_conflict(payload)
-            except _CONNECTION_ERRORS as err:
-                # _retry_after_conflict()'s own DbTxn body (data_to_object(),
-                # commit_<type>(), the merge) is what can raise here -- its
-                # nested transaction_commit() -> _push_payload() call
-                # handles a rejected push itself and does not re-raise, so
-                # reaching this except means the DbTxn body never finished
-                # and aborted without committing. Nothing local to lose;
-                # queue the original payload the same as any other
-                # connectivity failure.
-                LOG.warning(
-                    "Could not replay %d local change(s) after a conflict "
-                    "(%s); queued for retry on the next successful contact "
-                    "with the server.",
-                    len(payload),
-                    err,
-                )
-                self._queue_pending_push(payload, undo=undo)
-        except _CONNECTION_ERRORS as err:
-            if not _is_retryable_push_error(err):
+            if not _is_retryable_push_error(exc):
                 # A permission/payload rejection is not going to start
                 # working on its own; queueing it would retry it on every
-                # poll forever and eventually push real, retryable work out
-                # of the capped queue.
+                # poll forever and eventually push real, retryable work
+                # out of the capped queue.
                 LOG.error(
                     "Server permanently rejected %d local change(s) (%s). "
                     "They will not be retried, and the local mirror has "
                     "drifted from the server for those object(s).",
                     len(payload),
-                    err,
+                    exc,
                 )
+                on_error(exc)
                 return
-            LOG.exception(
+            # LOG.exception() (used by the old synchronous _push_payload())
+            # relies on sys.exc_info(), which has nothing to show from
+            # inside a callback outside any active except block -- exc is
+            # passed explicitly via exc_info instead, same as elsewhere
+            # in this file's ..._async() error handlers.
+            LOG.error(
                 "Failed to push %d local change(s) to the server; queued "
                 "for retry on the next successful contact with the server.",
                 len(payload),
+                exc_info=exc,
             )
             self._queue_pending_push(payload, undo=undo)
+            on_error(exc)
+
+        self.io_runner.run(
+            do_push, self._guarded(on_pushed), self._guarded(on_push_error)
+        )
+
+    def _after_conflict_resync(self, payload, undo, is_retry, on_done, on_error):
+        """_push_payload_async()'s continuation once
+        _resync_after_conflict_async() has brought the local mirror back
+        to the server's true current state: replay the original edit on
+        top of it (_retry_after_conflict()), unless this is already a
+        retry or an undo/redo -- see _push_payload_async()'s docstring
+        on is_retry.
+
+        _retry_after_conflict()'s own DbTxn body is 100% local DB work
+        (no network), so it runs as one runner (main-thread) step --
+        run_retry() below. What it triggers on exit
+        (DbTxn.__exit__ -> transaction_commit() -> _start_push(...,
+        is_retry=True)) is a *nested* push, itself asynchronous;
+        run_retry()'s own runner.run() completing therefore does NOT
+        mean this chain is done, only that the local commit landed. The
+        chain's real on_done/on_error are stashed on self
+        (self._retry_chain_done/_retry_chain_error) so that nested
+        _start_push() call can find and use them instead of treating the
+        retry's local commit as the finish line -- see _start_push()'s
+        docstring for the bug this specifically fixes.
+        """
+        if undo or is_retry:
+            LOG.warning(
+                "Giving up on %d local change(s) after a repeated or "
+                "undo/redo conflict; the local mirror was not resent to "
+                "the server.",
+                len(payload),
+            )
+            on_done(None)
+            return
+
+        # This call is itself already known-valid (reached only via a
+        # self._guarded() callback further up the chain), but scheduling
+        # run_retry() below is a fresh hop through the main loop
+        # (self.runner.run() -> another GLib.idle_add) -- close() could
+        # still run in that narrow gap before run_retry() actually
+        # executes. Re-checked inside run_retry() itself, same reasoning
+        # as _full_resync_async()'s rebuild() -- see that method's
+        # comment for the fuller explanation of why a fresh self._guarded()
+        # wrapping alone can't catch this (it only stops the *outcome*
+        # from being delivered, not the DbTxn from running in the first
+        # place).
+        run_id = self._run_id
+
+        def on_retry_db_error(exc):
+            # _retry_after_conflict()'s own DbTxn body (data_to_object(),
+            # commit_<type>(), the merge) is what can raise here -- its
+            # nested transaction_commit() -> _start_push() call handles a
+            # rejected push itself and does not re-raise, so reaching
+            # this means the DbTxn body never finished and aborted
+            # without committing. Nothing local to lose; queue the
+            # original payload the same as any other connectivity
+            # failure.
+            LOG.warning(
+                "Could not replay %d local change(s) after a conflict "
+                "(%s); queued for retry on the next successful contact "
+                "with the server.",
+                len(payload),
+                exc,
+            )
+            self._queue_pending_push(payload, undo=undo)
+            on_error(exc)
+
+        def run_retry():
+            if self._run_id != run_id:
+                # The tree closed between this being scheduled and
+                # actually running. No resource to clean up here (unlike
+                # _full_resync_async()'s temp file) -- just don't touch
+                # self.dbapi, which may already be closed.
+                LOG.debug("retry: tree closed before it ran; discarding it")
+                return
+            # Read synchronously by _start_push() inside this same call
+            # (via DbTxn.__exit__ -> transaction_commit()), before the
+            # finally below clears it -- same single-callback-body
+            # ordering guarantee as self._retrying itself.
+            #
+            # DbTxn.__exit__() calls transaction_commit() unconditionally
+            # on a clean exit (txn.py), whether or not the transaction's
+            # body actually committed anything -- so _start_push(...,
+            # is_retry=True) is *always* reached exactly once here, never
+            # skipped. Its own "if not payload:" branch already handles
+            # the all-entries-were-no-ops case by calling
+            # self._retry_chain_done(None) itself; there is deliberately
+            # no fallback completion call here after
+            # _retry_after_conflict() returns -- an earlier version of
+            # this method had one, on the mistaken assumption that an
+            # empty commit skips transaction_commit() entirely, and it
+            # fired unconditionally, completing the chain the moment the
+            # *local* commit landed regardless of whether the recursive
+            # push it had just scheduled was still genuinely in flight --
+            # reintroducing the exact premature-completion bug
+            # _start_push()'s docstring describes. Only a real exception
+            # from _retry_after_conflict() itself (caught below via
+            # on_retry_db_error) is a valid reason for this chain to stop
+            # here instead of via that recursive push's own eventual
+            # on_done/on_error.
+            self._retry_chain_done, self._retry_chain_error = on_done, on_error
+            try:
+                self._retry_after_conflict(payload)
+            finally:
+                self._retry_chain_done = None
+                self._retry_chain_error = None
+
+        self.runner.run(
+            run_retry,
+            # No-op: the chain's real completion fires from inside
+            # run_retry() itself (via the nested push's on_done/
+            # on_error), not from runner.run()'s own on_success --
+            # run_retry() returning just means the *local* commit
+            # landed, not that the chain is done.
+            self._guarded(lambda _: None),
+            self._guarded(on_retry_db_error),
+        )
 
     def _use_background_push(self, payload):
         """Whether to ask the server to process this payload as a
@@ -1675,24 +1885,25 @@ class WebApiDB(SQLite):
         finally:
             self._retrying = False
 
-    def _resync_after_conflict(self):
+    def _resync_after_conflict_async(self, on_done, on_error):
         """Rebuild the local mirror from a fresh server export
-        (_full_resync()) before a conflict retry -- called by
-        _push_payload()'s WebApiPushConflict handler in place of an
-        incremental _sync_from_server(). Neither the incremental history
-        feed nor a totals check is trustworthy here: gramps-web-api's
-        bulk-import path (POST /importers/<ext>/file -- GEDCOM, Gramps
-        XML, CSV, ...) runs the same batch=True import machinery a local
-        Gramps client's own Import menu action would, which never touches
-        the transaction-history table at all (see the module docstring),
-        so the incremental feed can be blind to an object's true current
-        state indefinitely -- ordinary server administration for any real
-        installation, not a quirk of one server. A totals comparison
-        doesn't catch this either: the object count doesn't change when
-        an already-known object's content changes server-side, only when
-        objects are added or removed, so a conflict caused by a content
-        edit on a bulk-imported object leaves totals matching on both
-        sides even though the mirror's copy of that object is stale.
+        (_full_resync_async()) before a conflict retry -- called by
+        _push_payload_async()'s WebApiPushConflict handler in place of
+        an incremental sync. Neither the incremental history feed nor a
+        totals check is trustworthy here: gramps-web-api's bulk-import
+        path (POST /importers/<ext>/file -- GEDCOM, Gramps XML, CSV,
+        ...) runs the same batch=True import machinery a local Gramps
+        client's own Import menu action would, which never touches the
+        transaction-history table at all (see the module docstring), so
+        the incremental feed can be blind to an object's true current
+        state indefinitely -- ordinary server administration for any
+        real installation, not a quirk of one server. A totals
+        comparison doesn't catch this either: the object count doesn't
+        change when an already-known object's content changes
+        server-side, only when objects are added or removed, so a
+        conflict caused by a content edit on a bulk-imported object
+        leaves totals matching on both sides even though the mirror's
+        copy of that object is stale.
 
         A per-object REST fetch (GET /<type>/<handle>) was tried here
         first and doesn't work: gramps-web-api's single-object endpoints
@@ -1702,16 +1913,176 @@ class WebApiDB(SQLite):
         gramps.gen.lib.json_utils shape data_to_object() requires to
         reconstruct a Gramps object. Only two things produce that
         compatible shape: the transaction-history feed's new_data, and a
-        raw Gramps XML export -- see _full_resync()'s own docstring. So a
-        full resync, expensive as it is, is the only server round-trip
-        that can bring the local mirror back into a state
-        _retry_after_conflict() can safely build an "old" snapshot from.
+        raw Gramps XML export -- see _full_resync_async()'s own
+        docstring. So a full resync, expensive as it is, is the only
+        server round-trip that can bring the local mirror back into a
+        state _retry_after_conflict() can safely build an "old" snapshot
+        from.
+
+        Caller already owns self._syncing (see _start_push()); this is a
+        thin, purpose-named wrapper around _full_resync_async() rather
+        than a second flag-managing layer -- unlike the old synchronous
+        _resync_after_conflict() this replaces, which had to manage
+        self._syncing itself since nothing else did for a plain push.
         """
-        self._syncing = True
-        try:
-            self._full_resync()
-        finally:
-            self._syncing = False
+        self._full_resync_async(on_done, on_error)
+
+    def _full_resync_async(self, on_done, on_error, progress_callback=None):
+        """Rebuild the local mirror from scratch: download the server's
+        own current Gramps XML export and reimport it, after clearing
+        every local primary object first. Called by
+        _resync_after_conflict_async() (a push conflict) and, from phase
+        4 on, also when the transaction-history feed contains an
+        empty-changes marker -- by definition there is nothing in that
+        history to replay for whatever produced it, so the only way to
+        recover is to fetch the server's current state wholesale, the
+        same way populating a brand new local mirror already works.
+
+        Deliberately reuses the stock ImportXml importer against a raw
+        XML export rather than reconstructing objects from the REST
+        /people/, /families/, ... endpoints: those return a marshalled
+        display schema (plain ints for GrampsType fields, no "_class"
+        tag), not the json_utils shape data_to_object() needs. Only the
+        transaction-history feed's new_data and a raw XML export share
+        that shape, and the whole point of this method is that the
+        former can't be trusted here.
+
+        Two steps: the download runs on io_runner (network + disk, no
+        self.dbapi touch); the clear-then-reimport runs as a single
+        runner (main-thread) step -- both the explicit clearing DbTxn
+        and ImportXml's own internal batch DbTxn, under self._pulling so
+        transaction_commit() treats them as pull-side replays rather
+        than local bulk edits to reconstruct and push back. Doing both
+        halves inside one callback body (rather than pumping between
+        them, as the old synchronous _full_resync() this will eventually
+        replace still does) means close() can no longer interrupt a
+        rebuild mid-way -- it can only run strictly before this step
+        starts or strictly after it returns.
+
+        rebuild() re-checks self._run_id itself, rather than relying
+        solely on self._guarded() around its scheduling, for a reason
+        specific to this method: the downloaded export is a real
+        resource (a temp file) that needs cleaning up even if the tree
+        closes in the gap between the download finishing and this step
+        actually running -- a self._guarded()-dropped callback runs
+        nothing at all, which would leak the file. Checking inside
+        rebuild() itself (before it does anything else) additionally
+        closes the narrower window between that check and the step
+        being scheduled, so self.dbapi -- possibly already closed by
+        then -- is never touched once the chain is known to be stale.
+
+        progress_callback, if given, only gets 0/100 markers bookending
+        the download+reimport -- unlike the record sync's page-by-page
+        reporting, ImportXml has no internal step reporting to forward
+        finer-grained progress from.
+
+        Also (re)sets sync_last_time to a timestamp taken right before
+        the export download starts, so the next incremental sync asks
+        the history feed for changes after that point instead of
+        wherever the walk that triggered this rebuild happened to leave
+        the cursor -- for the totals-shortfall case, that walk can be a
+        single empty page, which leaves sync_last_time at its untouched
+        starting value (0 for a brand new mirror) rather than anywhere
+        near "now". Left uncorrected, every later poll asks for history
+        "after 0" forever on a server whose history can't describe its
+        own data anyway, so it's a harmless no-op -- but a *push
+        conflict*'s own recovery (resync then retry) uses that exact
+        same stuck cursor, so the resync it does can never actually pick
+        up what changed and the retry is doomed to repeat the same
+        conflict and give up. Taken before the download rather than
+        after: a transaction the server commits while the export is
+        being generated or transferred is safer to see again on the
+        next poll (re-applying an already-reflected change is a no-op)
+        than to have it fall silently before the cursor and only be
+        discovered next time a shortfall check runs.
+        """
+        if progress_callback is not None:
+            progress_callback(0)
+        sync_cutoff = time()
+        started = monotonic()
+        # Captured once, up front, and reused for every hop below --
+        # deliberately not re-wrapped via self._guarded() partway through
+        # (see on_downloaded()'s own comment for why that would be wrong
+        # here specifically).
+        run_id = self._run_id
+        guarded_done = self._guarded(lambda _: on_done(None))
+        guarded_error = self._guarded(on_error)
+
+        def download():
+            # io_runner: network + disk only -- the single longest
+            # transfer this addon makes. No on_chunk to pump for anymore
+            # (a worker thread has nothing to hand back to); one plain
+            # read is fine.
+            data = self.web_client.download_export()
+            LOG.debug(
+                "resync: downloaded a %.1f MB export in %.2fs",
+                len(data) / (1024 * 1024),
+                monotonic() - started,
+            )
+            with NamedTemporaryFile(suffix=".gramps", delete=False) as tmp_file:
+                tmp_file.write(data)
+                return tmp_file.name
+
+        def rebuild(tmp_path):
+            # runner: clear + reimport + rebuild-signal + sync_last_time,
+            # all in one main-thread callback body -- see this method's
+            # own docstring on why that's the point, not incidental.
+            if self._run_id != run_id:
+                # The tree closed somewhere between the download
+                # finishing and this step actually running. Clean up the
+                # temp file -- nothing else will -- but do not touch
+                # self.dbapi, which may already be closed. See this
+                # method's own docstring on why this check lives here
+                # rather than relying on self._guarded() alone.
+                LOG.debug("resync: tree closed before rebuild ran; discarding it")
+                os.remove(tmp_path)
+                return
+            self._pulling = True
+            try:
+                cleared = 0
+                with DbTxn(
+                    _("Clear local mirror before full resync"), self, batch=True
+                ) as trans:
+                    for key in set(CLASS_TO_KEY_MAP.values()):
+                        name = KEY_TO_NAME_MAP[key]
+                        handles = list(getattr(self, f"get_{name}_handles")())
+                        remove = getattr(self, f"remove_{name}")
+                        for handle in handles:
+                            remove(handle, trans)
+                        cleared += len(handles)
+                LOG.debug("resync: cleared %d local object(s); reimporting", cleared)
+                imported_at = monotonic()
+                importData(self, tmp_path, User())
+                LOG.debug(
+                    "resync: reimport left %d object(s) (%.2fs)",
+                    self.get_total(),
+                    monotonic() - imported_at,
+                )
+                self.request_rebuild()
+            finally:
+                self._pulling = False
+                os.remove(tmp_path)
+            self._set_metadata("sync_last_time", sync_cutoff)
+            if progress_callback is not None:
+                progress_callback(100)
+
+        def on_downloaded(tmp_path):
+            # Deliberately NOT wrapped in self._guarded(): tmp_path is a
+            # real resource (a downloaded temp file) that needs cleaning
+            # up even if the tree closed while the download was in
+            # flight, and a self._guarded()-dropped callback runs
+            # nothing at all. rebuild() re-checks self._run_id itself
+            # (see its own comment) before touching self.dbapi, so
+            # scheduling it unconditionally here is still safe -- and
+            # guarded_done/guarded_error (captured once, above, against
+            # this call's original run_id) are reused rather than
+            # wrapped fresh here, since a fresh self._guarded() call made
+            # from inside this always-firing callback would capture
+            # self._run_id as it is *now* (already stale, in the case
+            # this comment is about), defeating the check entirely.
+            self.runner.run(lambda: rebuild(tmp_path), guarded_done, guarded_error)
+
+        self.io_runner.run(download, on_downloaded, guarded_error)
 
     def _snapshot_all_objects(self):
         """{(obj_class, handle): data} across every primary object the
@@ -1824,7 +2195,7 @@ class WebApiDB(SQLite):
             "Gramps did not record per-object; pushing them to the server.",
             len(entries),
         )
-        self._push_payload(entries)
+        self._start_push(entries)
 
     def _sync_from_server(self, progress_callback=None, verify_totals=False):
         """
