@@ -587,11 +587,17 @@ class WebApiHandler:
 
         ``on_chunk``, if given, is called with no arguments after each
         _DOWNLOAD_CHUNK_SIZE bytes arrive, and switches the read from one
-        blocking res.read() to a chunked loop. It exists for callers on a
-        GUI thread: a multi-megabyte export is one uninterruptible read
-        otherwise, long enough for the window manager to decide the
-        application has stopped responding (see grampswebapidb.py's
-        _pump_main_loop()).
+        blocking res.read() to a chunked loop. It exists for a caller
+        blocking a GUI thread on this call: a multi-megabyte export is
+        one uninterruptible read otherwise, long enough for the window
+        manager to decide the application has stopped responding.
+        grampswebapidb.py no longer passes this (its WebApiDB._full_
+        resync_async() runs this call on a worker thread instead, where
+        there is no main loop to keep alive) -- kept here, unused by that
+        caller, since this file is also the vendored source for the
+        standalone gramps-api-client package (see this module's own
+        docstring), and a single-threaded caller elsewhere may still want
+        it.
         """
         req = Request(
             url,
@@ -634,15 +640,16 @@ class WebApiHandler:
         shape Gramps' own ImportXml importer already reads (confirmed
         against a live server: GET /exporters/gramps/file runs
         synchronously and streams the file back, no task polling
-        needed). Used by grampswebapidb.py's WebApiDB._full_resync() to
-        rebuild the local mirror wholesale when the transaction-history
+        needed). Used by grampswebapidb.py's WebApiDB._full_resync_async()
+        to rebuild the local mirror wholesale when the transaction-history
         feed can't describe what changed -- see that method's own doc
         comment on why.
 
         ``on_chunk`` is passed through to _get_binary(): a hook called as
-        the bytes arrive, so a caller on the GUI thread can keep its main
-        loop alive across what is easily the longest single transfer this
-        client makes.
+        the bytes arrive, so a caller on a GUI thread blocking on this
+        call can keep its main loop alive across what is easily the
+        longest single transfer this client makes. See _get_binary()'s
+        own docstring for why grampswebapidb.py no longer passes this.
         """
         url = f"{self.url}/exporters/{extension}/file"
         return self._get_binary(url, on_chunk=on_chunk)
@@ -789,9 +796,13 @@ class WebApiHandler:
         ``on_wait``, if given, is called with no arguments once per poll,
         before sleeping. A backgrounded push can occupy the server for
         minutes (TASK_TIMEOUT allows ten), which is that much time a
-        caller on the GUI thread would otherwise spend inside this loop
-        without touching its main loop -- see grampswebapidb.py's
-        _pump_main_loop().
+        caller blocking a GUI thread on this call would otherwise spend
+        inside this loop without touching its main loop.
+        grampswebapidb.py no longer passes this (its own push machinery
+        runs this call on a worker thread, where blocking in
+        time.sleep() is exactly what the thread is for) -- kept here,
+        unused by that caller, for the same vendored-package reason
+        _get_binary()'s ``on_chunk`` is.
 
         Returns normally on SUCCESS. A FAILURE/REVOKED task raises --
         WebApiPushConflict if it failed the server's old-data check (the
