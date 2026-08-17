@@ -909,18 +909,33 @@ class WebApiDB(SQLite):
         self._check_identity()
         self._check_permissions(writable=(mode == DBMODE_W))
         self._check_server_version()
+        # _sync_from_server_async() runs its network legs on a worker
+        # thread; _run_async_to_completion() blocks this call (pumping
+        # the main loop so that worker thread's result can actually be
+        # delivered) until it finishes -- see that method's docstring
+        # for why load() still waits synchronously here rather than
+        # returning early, unlike everywhere else in this file.
+        tree_closed_during_sync = False
+        self._syncing = True
         try:
-            self._sync_from_server(progress_callback=callback, verify_totals=True)
-        except _DatabaseClosed:
-            # The tree was closed (or switched away from) while this
-            # initial sync was suspended mid-pump -- see _guarded_pump().
-            # Nothing left to open; don't schedule polling for it.
-            LOG.debug("load: tree closed during initial sync; aborting")
-            return
+            sync_result = self._run_async_to_completion(
+                lambda on_done, on_error: self._sync_from_server_async(
+                    on_done, on_error, progress_callback=callback, verify_totals=True
+                )
+            )
+            tree_closed_during_sync = sync_result is None
         except _CONNECTION_ERRORS as err:
             raise DbConnectionError(
                 _describe_connection_error(err), self._directory
             ) from err
+        finally:
+            self._syncing = False
+        if tree_closed_during_sync:
+            # The tree was closed (or switched away from) while this
+            # initial sync was still in flight. Nothing left to open;
+            # don't schedule polling for it.
+            LOG.debug("load: tree closed during initial sync; aborting")
+            return
         # Fresh outage state for a freshly opened tree: these are class
         # attributes, so an instance reused across a close()/load() would
         # otherwise start out backed off from the previous tree's outage.
@@ -1235,8 +1250,19 @@ class WebApiDB(SQLite):
     def _poll_tick(self):
         """GLib.timeout_add_seconds callback -- see the module docstring's
         polling section. Must return True (GLib.SOURCE_CONTINUE) to keep
-        firing; returning a falsy value cancels the timeout, so a network
-        error is caught and handled here rather than left to propagate.
+        firing.
+
+        Unlike the old synchronous version, always returns
+        GLib.SOURCE_CONTINUE immediately: starting
+        _sync_from_server_async() can't report success or failure
+        synchronously, so the backoff/recovery bookkeeping
+        (_on_poll_success()/_on_poll_error(), via _reschedule_poll())
+        happens later, from its on_done/on_error. A tree closed mid-sync
+        needs no special handling here to stop this timer -- close()
+        removes it directly, and _guarded() (wrapping
+        _sync_from_server_async()'s callbacks) silently drops one
+        belonging to an abandoned chain rather than this method having to
+        notice and react.
 
         An unreachable server is an expected, self-healing condition, not
         a bug in this addon: local edits keep working against the mirror
@@ -1248,37 +1274,43 @@ class WebApiDB(SQLite):
         as a server stays down buries anything else in the log and makes a
         routine outage look like a crash."""
         if self._syncing:
-            # Reached from inside _pump_main_loop(), part-way through a
-            # sync this would otherwise start again underneath itself.
+            # Reached from inside a still-running chain this tick would
+            # otherwise start again underneath.
             LOG.debug("poll: a sync is already running; skipping this tick")
             return GLib.SOURCE_CONTINUE
-        try:
-            self._sync_from_server()
-        except _DatabaseClosed:
-            # The tree got closed (or switched away from) while this tick
-            # was suspended mid-sync -- see _guarded_pump(). The GLib
-            # source is already gone (close() removed it); nothing more
-            # to do or report.
-            LOG.debug("poll: tree closed mid-sync; stopping this timer")
-            return GLib.SOURCE_REMOVE
-        except _CONNECTION_ERRORS as err:
-            return self._record_poll_failure(err)
+        self._syncing = True
+        self._sync_from_server_async(
+            on_done=self._finish_async_op(self._on_poll_success),
+            on_error=self._finish_async_op(self._on_poll_error),
+        )
+        return GLib.SOURCE_CONTINUE
+
+    def _on_poll_success(self, applied):
+        """_poll_tick()'s on_done -- see that method."""
         if self._poll_failures:
             LOG.info(
                 "Sync from server succeeded again after %d failed attempt(s).",
                 self._poll_failures,
             )
             self._poll_failures = 0
-        return self._reschedule_poll(POLL_INTERVAL_SECONDS)
+        self._reschedule_poll(POLL_INTERVAL_SECONDS)
+
+    def _on_poll_error(self, exc):
+        """_poll_tick()'s on_error -- see that method."""
+        if not isinstance(exc, _CONNECTION_ERRORS):
+            # Not a connectivity classification this poll knows how to
+            # back off from -- see _on_media_poll_error()'s identical
+            # reasoning.
+            LOG.error(
+                "Unexpected error during periodic sync from server.", exc_info=exc
+            )
+            return
+        self._record_poll_failure(exc)
 
     def _record_poll_failure(self, err):
         """Handle a failed _poll_tick() sync: report it (once per outage,
         with the detail kept at DEBUG for whoever is diagnosing one) and
-        slow the timer down, doubling up to POLL_BACKOFF_MAX_SECONDS.
-
-        Returns what _poll_tick() must return: GLib.SOURCE_REMOVE if the
-        interval changed (_reschedule_poll() has already installed the
-        replacement timeout), GLib.SOURCE_CONTINUE otherwise."""
+        slow the timer down, doubling up to POLL_BACKOFF_MAX_SECONDS."""
         self._poll_failures += 1
         interval = min(self._poll_interval * 2, POLL_BACKOFF_MAX_SECONDS)
         if self._poll_failures == 1:
@@ -1288,7 +1320,7 @@ class WebApiDB(SQLite):
                 err,
                 POLL_BACKOFF_MAX_SECONDS,
             )
-            LOG.debug("Periodic sync failure detail", exc_info=True)
+            LOG.debug("Periodic sync failure detail", exc_info=err)
         else:
             LOG.debug(
                 "Periodic sync from server still failing after %d attempts (%s); "
@@ -1296,24 +1328,31 @@ class WebApiDB(SQLite):
                 self._poll_failures,
                 err,
                 interval,
-                exc_info=True,
+                exc_info=err,
             )
-        return self._reschedule_poll(interval)
+        self._reschedule_poll(interval)
 
     def _reschedule_poll(self, interval):
-        """Point the record poll at a new interval, GLib.timeout_add_
-        seconds() having no way to retime an existing source: a fresh
-        timeout is installed and the caller (always _poll_tick(), the
-        running callback) reports GLib.SOURCE_REMOVE so the old one is
-        dropped rather than left firing alongside it. A no-op -- and so
-        plain GLib.SOURCE_CONTINUE -- when the interval is unchanged,
-        which is the common case on both a healthy poll and a failing one
-        already sitting at POLL_BACKOFF_MAX_SECONDS."""
+        """Point the record poll at a new interval. A no-op when the
+        interval is unchanged, which is the common case on both a
+        healthy poll and a failing one already sitting at
+        POLL_BACKOFF_MAX_SECONDS.
+
+        Unlike the old synchronous _poll_tick(), which could report
+        GLib.SOURCE_REMOVE from inside the very timeout callback being
+        replaced (letting GLib itself drop that firing instance), this
+        is now always called from an async on_done/on_error, well after
+        _poll_tick() already returned GLib.SOURCE_CONTINUE to keep the
+        current timer alive -- so the old timer has to be removed
+        explicitly (GLib.timeout_add_seconds() has no way to retime an
+        existing source in place either way) rather than relying on a
+        return value GLib is no longer watching for by the time this
+        runs."""
         if interval == self._poll_interval:
-            return GLib.SOURCE_CONTINUE
+            return
         self._poll_interval = interval
+        GLib.source_remove(self._poll_source_id)
         self._poll_source_id = GLib.timeout_add_seconds(interval, self._poll_tick)
-        return GLib.SOURCE_REMOVE
 
     def _media_poll_tick(self):
         """GLib.timeout_add_seconds callback for the slower media-file
@@ -1341,14 +1380,13 @@ class WebApiDB(SQLite):
             return GLib.SOURCE_CONTINUE
         self._syncing = True
         self._sync_media_files_async(
-            on_done=self._on_media_poll_success,
-            on_error=self._on_media_poll_error,
+            on_done=self._finish_async_op(self._on_media_poll_success),
+            on_error=self._finish_async_op(self._on_media_poll_error),
         )
         return GLib.SOURCE_CONTINUE
 
     def _on_media_poll_success(self, result):
         """_media_poll_tick()'s on_done -- see that method."""
-        self._syncing = False
         if self._media_poll_failures:
             LOG.info(
                 "Media file sync succeeded again after %d failed attempt(s).",
@@ -1358,7 +1396,6 @@ class WebApiDB(SQLite):
 
     def _on_media_poll_error(self, exc):
         """_media_poll_tick()'s on_error -- see that method."""
-        self._syncing = False
         if not isinstance(exc, _CONNECTION_ERRORS):
             # Not a connectivity classification this poll knows how to
             # back off from. The old synchronous _sync_media_files() let
@@ -1464,9 +1501,7 @@ class WebApiDB(SQLite):
         non-retry payload arrives, the push is queued
         (_queue_pending_push()) rather than raced against whatever is in
         flight -- deferred, not dropped: _finish_async_op() flushes the
-        queue once the in-flight chain completes (from phase 4 on; see
-        that method's own docstring for the interim behavior before
-        _flush_pending_pushes_async() exists).
+        queue once the in-flight chain completes.
         """
         if not payload:
             if is_retry and self._retry_chain_done is not None:
@@ -1488,26 +1523,45 @@ class WebApiDB(SQLite):
 
     def _finish_async_op(self, on_done):
         """Wrap a top-level async chain's true completion handler so
-        self._syncing only clears once the chain is genuinely done.
-        Shared by every top-level entry point that claims
-        self._syncing -- currently _start_push() only; _poll_tick(),
-        _media_poll_tick(), and load()'s wait-adapter still manage the
-        flag directly until later phases give them a reason to route
-        through here too (see each one's own comments).
+        self._syncing only clears once the chain is genuinely done --
+        including one attempt at flushing anything that arrived and got
+        queued (_queue_pending_push()) while this chain held the flag.
+        Shared by every top-level entry point that claims self._syncing
+        (_start_push(), _poll_tick(), _media_poll_tick()), so a push
+        that had to wait behind, say, a poll-triggered resync goes out
+        as soon as that resync's chain finishes, not on the next poll
+        tick.
 
-        Not yet flushing a pending-push queue on the way out: that needs
-        _flush_pending_pushes_async(), which doesn't exist until phase 4
-        of the refactor. Until then, anything _queue_pending_push()
-        catches while a chain held self._syncing simply waits for the
-        next record sync (still the old synchronous
-        _flush_pending_pushes(), called at the top of every
-        _sync_from_server()/poll tick today) -- the same wait a
-        connectivity-failure-queued push has always had, not a new
-        regression, just not yet the tighter "flush immediately" bound
-        the finished design calls for.
+        Deliberately *one* flush attempt, not a "keep looping while the
+        queue is non-empty" recursion: _flush_pending_pushes_async()
+        already drains the queue as far as it currently can in that one
+        call (see its own docstring), stopping naturally at the first
+        still-undeliverable entry -- if it stopped there, the queue is
+        non-empty for exactly that reason, and calling it again
+        immediately would just retry the identical failing entry,
+        synchronously, forever. An earlier version of this method did
+        exactly that (loop while non-empty) and deadlocked every test
+        (and would have hung a real session) the moment any push failed
+        for a connectivity reason, since the same queued entry made the
+        post-flush check non-empty again on every pass. A push that
+        arrives genuinely *during* this flush (a concurrent edit while
+        self._syncing is still held) is not lost, just not flushed
+        immediately -- it waits for the next chain's own completion, or
+        the next poll tick, same as any other queued push today.
         """
 
         def finish(*args):
+            if self._get_metadata("pending_pushes", default=[]):
+                # self._syncing stays True until the flush -- a
+                # continuation of this same chain, not a new operation
+                # free to race whatever comes next -- itself finishes.
+                def done_flushing(_result):
+                    self._syncing = False
+                    if on_done is not None:
+                        on_done(*args)
+
+                self._flush_pending_pushes_async(done_flushing, done_flushing)
+                return
             self._syncing = False
             if on_done is not None:
                 on_done(*args)
@@ -1781,35 +1835,71 @@ class WebApiDB(SQLite):
             pending = pending[dropped:]
         self._set_metadata("pending_pushes", pending)
 
-    def _flush_pending_pushes(self):
+    def _flush_pending_pushes_async(self, on_done, on_error):
         """Retry queued pushes that previously failed for a connectivity
         reason, oldest first, stopping at the first that still can't be
         delivered -- see the module docstring on why this doesn't skip
         ahead past a stuck entry.
 
         A queued entry that comes back as a *conflict* rather than a
-        connectivity failure is dropped rather than retried forever: by the
-        time it is replayed the server has moved on, and _push_payload()'s
-        resync-and-merge path needs an "old" snapshot contemporaneous with
-        the edit, which a queued payload no longer has. An entry the server
-        permanently rejects (see _is_retryable_push_error()) is likewise
-        dropped rather than left to block the queue forever -- permissions
-        may well have changed between queueing and now.
+        connectivity failure is dropped rather than retried forever: by
+        the time it is replayed the server has moved on, and
+        _push_payload_async()'s resync-and-merge path needs an "old"
+        snapshot contemporaneous with the edit, which a queued payload
+        no longer has. An entry the server permanently rejects (see
+        _is_retryable_push_error()) is likewise dropped rather than left
+        to block the queue forever -- permissions may well have changed
+        between queueing and now.
+
+        Stopping early (a still-undeliverable entry) or exhausting the
+        queue both call on_done, not on_error: neither is a failure of
+        this method itself, and its caller (currently only
+        _finish_async_op(), via a fresh self._get_metadata() check each
+        time it re-wraps itself) always treats "flushed as far as
+        possible" as success. Reads the queue itself (rather than
+        taking it as a parameter) for the same reason _flush_pending_
+        pushes() always did: called from more than one place, each
+        needing the current persisted state, not a snapshot from
+        whenever the caller happened to start.
         """
         pending = self._get_metadata("pending_pushes", default=[])
         if not pending:
+            on_done(None)
             return
         LOG.info("Retrying %d queued push(es) to the server.", len(pending))
-        while pending:
-            entry = pending[0]
-            try:
-                self.web_client.push_transaction(
-                    entry["payload"],
-                    undo=entry.get("undo", False),
-                    background=self._use_background_push(entry["payload"]),
-                    on_wait=self._guarded_pump,
-                )
-            except WebApiPushConflict:
+        self._flush_one_pending_push(pending, on_done, on_error)
+
+    def _flush_one_pending_push(self, pending, on_done, on_error):
+        """_flush_pending_pushes_async()'s per-entry step. ``pending`` is
+        mutated in place (entries popped off the front as they're
+        delivered or dropped) and persisted once this recursion bottoms
+        out, exactly the way the old synchronous while-loop this
+        replaces did with its own local variable."""
+        if not pending:
+            self._set_metadata("pending_pushes", pending)
+            LOG.debug("queue: %d push(es) still pending after the flush", len(pending))
+            on_done(None)
+            return
+        entry = pending[0]
+
+        def do_push():
+            # io_runner: pure network, no self.dbapi touch. See
+            # _push_payload_async()'s do_push() for why
+            # _use_background_push() belongs here too.
+            background = self._use_background_push(entry["payload"])
+            self.web_client.push_transaction(
+                entry["payload"], undo=entry.get("undo", False), background=background
+            )
+
+        def pop_and_continue():
+            pending.pop(0)
+            self._flush_one_pending_push(pending, on_done, on_error)
+
+        def on_pushed(_result):
+            pop_and_continue()
+
+        def on_push_error(exc):
+            if isinstance(exc, WebApiPushConflict):
                 LOG.warning(
                     "A queued push of %d change(s) conflicts with the "
                     "server's current data and cannot be replayed safely; "
@@ -1817,23 +1907,31 @@ class WebApiDB(SQLite):
                     "server for those object(s).",
                     len(entry["payload"]),
                 )
-            except _CONNECTION_ERRORS as err:
-                if _is_retryable_push_error(err):
-                    LOG.warning(
-                        "Still unable to deliver %d queued push(es); will retry.",
-                        len(pending),
-                    )
-                    break
-                LOG.error(
-                    "Server permanently rejected a queued push of %d "
-                    "change(s) (%s); dropping it. The local mirror has "
-                    "drifted from the server for those object(s).",
-                    len(entry["payload"]),
-                    err,
+                pop_and_continue()
+                return
+            if _is_retryable_push_error(exc):
+                LOG.warning(
+                    "Still unable to deliver %d queued push(es); will retry.",
+                    len(pending),
                 )
-            pending.pop(0)
-        self._set_metadata("pending_pushes", pending)
-        LOG.debug("queue: %d push(es) still pending after the flush", len(pending))
+                self._set_metadata("pending_pushes", pending)
+                LOG.debug(
+                    "queue: %d push(es) still pending after the flush", len(pending)
+                )
+                on_done(None)
+                return
+            LOG.error(
+                "Server permanently rejected a queued push of %d change(s) "
+                "(%s); dropping it. The local mirror has drifted from the "
+                "server for those object(s).",
+                len(entry["payload"]),
+                exc,
+            )
+            pop_and_continue()
+
+        self.io_runner.run(
+            do_push, self._guarded(on_pushed), self._guarded(on_push_error)
+        )
 
     def _retry_after_conflict(self, payload):
         """Reapply each locally-intended change as a fresh local edit --
@@ -2197,110 +2295,240 @@ class WebApiDB(SQLite):
         )
         self._start_push(entries)
 
-    def _sync_from_server(self, progress_callback=None, verify_totals=False):
+    def _sync_from_server_async(
+        self, on_done, on_error, progress_callback=None, verify_totals=False
+    ):
         """
         Pull every transaction after the last-seen timestamp and replay
-        its changes into the local mirror. Returns the number of changes
-        applied.
+        its changes into the local mirror. Calls on_done(applied) with
+        the number of changes applied.
 
         An empty "changes" list on a transaction is not a no-op: it is
         what a batch=True commit leaves behind (see the module
         docstring's note on trans.batch guards around trans.add()) --
         something happened server-side that this feed cannot describe.
-        Flagged rather than silently skipped; _full_resync() is the
-        fallback once the whole page range has been walked (so
+        Flagged rather than silently skipped; _full_resync_async() is
+        the fallback once the whole page range has been walked (so
         sync_last_time still advances past it and any *describable*
-        changes around it are applied normally either way). A feed that is
-        empty *altogether*, or too sparse to account for what the server
-        holds, is the same kind of gap and gets the same fallback -- see
-        _mirror_is_short_of_the_server(), which ``verify_totals`` asks for
-        (load() does; the poll doesn't).
+        changes around it are applied normally either way). A feed that
+        is empty *altogether*, or too sparse to account for what the
+        server holds, is the same kind of gap and gets the same
+        fallback -- see _mirror_is_short_of_the_server_async(), which
+        ``verify_totals`` asks for (load() does; the poll doesn't).
 
         progress_callback, if given, is called with an int 0-100 after
         each page -- see load()'s callback param. "total" comes from the
         server's X-Total-Count for this "after" filter (get_transaction_
         history()'s docstring), so it stays a stable denominator across
         pages barring concurrent server-side writes during the sync.
-        """
-        self._syncing = True
-        try:
-            return self._sync_from_server_inner(progress_callback, verify_totals)
-        finally:
-            self._syncing = False
 
-    def _sync_from_server_inner(self, progress_callback, verify_totals):
-        """_sync_from_server()'s body, minus the _syncing bookkeeping --
-        see that method for what this does and why."""
-        self._flush_pending_pushes()
-        after = self._get_metadata("sync_last_time", default=0)
+        Caller already owns self._syncing (see _start_push()'s
+        docstring for why none of this file's ..._async() chains touch
+        that flag themselves). Alternates io_runner (fetch one page) and
+        runner (apply that page's batch DbTxn replay) for as many pages
+        as the feed has -- a recursive continuation (_sync_page())
+        rather than a fixed-length chain, since the page count isn't
+        known up front.
+        """
         started = monotonic()
-        LOG.debug("sync: asking for transactions after %s", after)
-        applied = 0
-        skipped = 0
-        needs_full_resync = False
-        page = 1
-        seen = 0
-        while True:
-            transactions, total = self.web_client.get_transaction_history(
+
+        def after_flush(_result):
+            after = self._get_metadata("sync_last_time", default=0)
+            LOG.debug("sync: asking for transactions after %s", after)
+            self._sync_page(
+                after=after,
+                page=1,
+                seen=0,
+                applied=0,
+                skipped=0,
+                needs_full_resync=False,
+                started=started,
+                progress_callback=progress_callback,
+                verify_totals=verify_totals,
+                on_done=on_done,
+                on_error=on_error,
+            )
+
+        self._flush_pending_pushes_async(after_flush, on_error)
+
+    def _sync_page(
+        self,
+        after,
+        page,
+        seen,
+        applied,
+        skipped,
+        needs_full_resync,
+        started,
+        progress_callback,
+        verify_totals,
+        on_done,
+        on_error,
+    ):
+        """_sync_from_server_async()'s per-page step: fetches one page
+        on io_runner, applies it on runner, and recurses for the next
+        page until the feed runs dry or hands back a short page."""
+        run_id = self._run_id
+
+        def fetch():
+            # io_runner: network only.
+            return self.web_client.get_transaction_history(
                 after=after, page=page, pagesize=SYNC_PAGE_SIZE
             )
+
+        def on_fetched(result):
+            transactions, total = result
             if not transactions:
-                break
-            # (obj_class, handle) -> trans_type, collapsed to the net
-            # effect within this page -- see _emit_change_signals().
-            net_changes = {}
-            # _pulling marks this batch DbTxn as one of our own replays, so
-            # transaction_begin() doesn't snapshot handles for it and
-            # transaction_commit() doesn't try to push it back out as if it
-            # were a local bulk edit -- see the module docstring.
-            self._pulling = True
-            try:
-                with DbTxn("Sync from server", self, batch=True) as trans:
-                    for server_trans in transactions:
-                        if not server_trans["changes"]:
-                            needs_full_resync = True
-                        for change in server_trans["changes"]:
-                            if self._apply_change(change, trans):
-                                applied += 1
-                                net_changes[
-                                    (change["obj_class"], change["obj_handle"])
-                                ] = change["trans_type"]
-                            else:
-                                # Reference-type changes and anything else
-                                # with no primary-object class to map --
-                                # counted rather than logged per change,
-                                # which would be one line per row of the
-                                # feed.
-                                skipped += 1
-                        after = max(after, server_trans["timestamp"])
-            finally:
-                self._pulling = False
-            self._emit_change_signals(net_changes)
-            seen += len(transactions)
-            LOG.debug(
-                "sync: page %d, %d transaction(s) of %s, %d change(s) applied "
-                "so far, cursor %s",
-                page,
-                len(transactions),
-                total,
-                applied,
-                after,
+                self._finish_sync(
+                    after,
+                    seen,
+                    applied,
+                    skipped,
+                    needs_full_resync,
+                    started,
+                    progress_callback,
+                    verify_totals,
+                    on_done,
+                    on_error,
+                )
+                return
+
+            def apply_page():
+                # runner: self._pulling around a batch=True DbTxn
+                # replay, then signal emission -- identical body to the
+                # old synchronous per-page work, no pump in the middle.
+                # Re-checks self._run_id itself, like
+                # _full_resync_async()'s rebuild(): this step was
+                # scheduled from inside an already-guarded callback
+                # (on_fetched), and close() could in principle run in
+                # the gap between that scheduling and this actually
+                # executing -- see that method's own comment for the
+                # fuller explanation.
+                if self._run_id != run_id:
+                    LOG.debug(
+                        "sync: tree closed before this page was applied; "
+                        "discarding it"
+                    )
+                    return None
+                new_after = after
+                # (obj_class, handle) -> trans_type, collapsed to the
+                # net effect within this page -- see
+                # _emit_change_signals().
+                net_changes = {}
+                new_applied = applied
+                new_skipped = skipped
+                new_needs_full_resync = needs_full_resync
+                # _pulling marks this batch DbTxn as one of our own
+                # replays, so transaction_begin() doesn't snapshot
+                # handles for it and transaction_commit() doesn't try to
+                # push it back out as if it were a local bulk edit -- see
+                # the module docstring.
+                self._pulling = True
+                try:
+                    with DbTxn("Sync from server", self, batch=True) as trans:
+                        for server_trans in transactions:
+                            if not server_trans["changes"]:
+                                new_needs_full_resync = True
+                            for change in server_trans["changes"]:
+                                if self._apply_change(change, trans):
+                                    new_applied += 1
+                                    net_changes[
+                                        (change["obj_class"], change["obj_handle"])
+                                    ] = change["trans_type"]
+                                else:
+                                    # Reference-type changes and anything
+                                    # else with no primary-object class
+                                    # to map -- counted rather than
+                                    # logged per change, which would be
+                                    # one line per row of the feed.
+                                    new_skipped += 1
+                            new_after = max(new_after, server_trans["timestamp"])
+                finally:
+                    self._pulling = False
+                self._emit_change_signals(net_changes)
+                return new_after, new_applied, new_skipped, new_needs_full_resync
+
+            def on_applied(result2):
+                if result2 is None:
+                    # Stale (see apply_page()'s own check) -- nothing to
+                    # continue with. self._guarded() below already drops
+                    # this same case for a tree closed *before*
+                    # apply_page() even started; this covers the
+                    # narrower gap where it closed after.
+                    return
+                (
+                    new_after,
+                    new_applied,
+                    new_skipped,
+                    new_needs_full_resync,
+                ) = result2
+                new_seen = seen + len(transactions)
+                LOG.debug(
+                    "sync: page %d, %d transaction(s) of %s, %d change(s) "
+                    "applied so far, cursor %s",
+                    page,
+                    len(transactions),
+                    total,
+                    new_applied,
+                    new_after,
+                )
+                if progress_callback is not None and total:
+                    progress_callback(min(100, int(new_seen * 100 / total)))
+                if len(transactions) < SYNC_PAGE_SIZE:
+                    self._finish_sync(
+                        new_after,
+                        new_seen,
+                        new_applied,
+                        new_skipped,
+                        new_needs_full_resync,
+                        started,
+                        progress_callback,
+                        verify_totals,
+                        on_done,
+                        on_error,
+                    )
+                else:
+                    self._sync_page(
+                        after=new_after,
+                        page=page + 1,
+                        seen=new_seen,
+                        applied=new_applied,
+                        skipped=new_skipped,
+                        needs_full_resync=new_needs_full_resync,
+                        started=started,
+                        progress_callback=progress_callback,
+                        verify_totals=verify_totals,
+                        on_done=on_done,
+                        on_error=on_error,
+                    )
+
+            self.runner.run(
+                apply_page, self._guarded(on_applied), self._guarded(on_error)
             )
-            if progress_callback is not None and total:
-                progress_callback(min(100, int(seen * 100 / total)))
-            # Between pages: a batch DbTxn has just closed and the next
-            # one hasn't opened, so this is the one point in the replay
-            # where handing the main loop back is safe. A catch-up of any
-            # size would otherwise hold it for its whole duration.
-            self._guarded_pump()
-            if len(transactions) < SYNC_PAGE_SIZE:
-                break
-            page += 1
-        # Also once on the way out: the loop above breaks before its own
-        # pump whenever the feed hands back a short page or nothing at
-        # all, which is every routine poll -- and each of those still
-        # cost a blocking round trip to find out.
-        self._guarded_pump()
+
+        self.io_runner.run(fetch, self._guarded(on_fetched), self._guarded(on_error))
+
+    def _finish_sync(
+        self,
+        after,
+        seen,
+        applied,
+        skipped,
+        needs_full_resync,
+        started,
+        progress_callback,
+        verify_totals,
+        on_done,
+        on_error,
+    ):
+        """_sync_page()'s tail once the feed runs dry (immediately, or
+        after the last, short page): persist the cursor, log a summary,
+        fall back to a full resync if the feed couldn't describe
+        everything (or, if asked, the mirror's own object count says
+        it's short), and call on_done(applied). Always reached on the
+        main thread (either from on_fetched()'s own immediate branch or
+        from apply_page()'s on_applied(), a runner step's on_success),
+        so self._set_metadata() here is safe."""
         self._set_metadata("sync_last_time", after)
         LOG.debug(
             "sync: %d change(s) applied, %d skipped, from %d transaction(s) "
@@ -2311,18 +2539,35 @@ class WebApiDB(SQLite):
             monotonic() - started,
             after,
         )
-        if not needs_full_resync and verify_totals:
-            needs_full_resync = self._mirror_is_short_of_the_server()
-        if needs_full_resync:
-            self._full_resync(progress_callback=progress_callback)
-        return applied
 
-    def _mirror_is_short_of_the_server(self):
-        """Whether the mirror holds fewer objects than the server says its
-        tree has, once the incremental sync has had its turn -- the other
-        way the history feed can fail to describe the server's state,
-        alongside the empty-"changes" marker _sync_from_server() already
-        watches for.
+        def maybe_full_resync(needs_resync):
+            if needs_resync:
+                # Deliver the record-sync's own applied count to on_done
+                # regardless of the resync outcome, matching what the
+                # old synchronous method always returned here -- a full
+                # resync's own result isn't what a caller of *this*
+                # method is asking about.
+                self._full_resync_async(
+                    lambda _: on_done(applied),
+                    on_error,
+                    progress_callback=progress_callback,
+                )
+            else:
+                on_done(applied)
+
+        if not needs_full_resync and verify_totals:
+            self._mirror_is_short_of_the_server_async(maybe_full_resync, on_error)
+        else:
+            maybe_full_resync(needs_full_resync)
+
+    def _mirror_is_short_of_the_server_async(self, on_done, on_error):
+        """Whether the mirror holds fewer objects than the server says
+        its tree has, once the incremental sync has had its turn -- the
+        other way the history feed can fail to describe the server's
+        state, alongside the empty-"changes" marker
+        _sync_from_server_async() already watches for. Calls
+        on_done(True) if the mirror is short and needs a full resync,
+        on_done(False) otherwise.
 
         A server can hold a full tree that its history does not account
         for: that table only records what gramps-web-api itself wrote, so
@@ -2344,16 +2589,16 @@ class WebApiDB(SQLite):
         primary types (webapi_client.OBJECT_COUNT_KEYS mirrors Gramps'
         own DbGeneric.get_total()), so equality is the invariant this
         addon exists to maintain and a mirror that falls short of it is
-        provably missing data -- _full_resync()'s wholesale XML export
-        being the same recovery used for the empty-"changes" case, and for
-        the same reason: the history cannot describe what is already
-        there.
+        provably missing data -- _full_resync_async()'s wholesale XML
+        export being the same recovery used for the empty-"changes" case,
+        and for the same reason: the history cannot describe what is
+        already there.
 
-        Only run where _sync_from_server()'s caller asks for it -- load(),
-        not the 10-second poll (see POLL_INTERVAL_SECONDS): an outdated
-        mirror is repaired when the tree is opened, not on a timer, so the
-        extra GET /metadata/ costs one request per open and a rebuild can
-        never land in the middle of a working session.
+        Only run where _sync_from_server_async()'s caller asks for it --
+        load(), not the 10-second poll (see POLL_INTERVAL_SECONDS): an
+        outdated mirror is repaired when the tree is opened, not on a
+        timer, so the extra GET /metadata/ costs one request per open and
+        a rebuild can never land in the middle of a working session.
 
         Skipped outright while pushes are queued (see
         _queue_pending_push()): those are local edits the server has not
@@ -2365,145 +2610,50 @@ class WebApiDB(SQLite):
         object is either something this mirror is about to push or
         something the export would silently destroy, neither of which a
         rebuild should decide on its own. Only a shortfall is repaired.
+
+        The local total is a DB read (must run on runner); the server's
+        count is a network call (must run on io_runner) -- one extra hop
+        rather than reading self.dbapi from io_runner, consistent with
+        every other DB-read-then-network-call split in this file.
         """
         if self._get_metadata("pending_pushes", default=[]):
             LOG.debug("Pending pushes queued; skipping the mirror total check.")
-            return False
-        local_total = self.get_total()
-        server_total = self.web_client.get_object_count()
-        LOG.debug("totals: local mirror %d, server %d", local_total, server_total)
-        if local_total >= server_total:
-            return False
-        LOG.warning(
-            "Local mirror holds %d objects but the server reports %d; its "
-            "transaction history cannot account for the difference, so the "
-            "mirror is being rebuilt from a full export.",
-            local_total,
-            server_total,
-        )
-        return True
+            on_done(False)
+            return
 
-    def _full_resync(self, progress_callback=None):
-        """
-        Rebuild the local mirror from scratch: download the server's own
-        current Gramps XML export and reimport it, after clearing every
-        local primary object first. Called by _sync_from_server() when
-        the transaction-history feed contains an empty-changes marker --
-        by definition there is nothing in that history to replay for
-        whatever produced it, so the only way to recover is to fetch the
-        server's current state wholesale, the same way populating a
-        brand new local mirror already works.
+        def read_local_total():
+            return self.get_total()
 
-        Deliberately reuses the stock ImportXml importer against a raw
-        XML export rather than reconstructing objects from the REST
-        /people/, /families/, ... endpoints: those return a marshalled
-        display schema (plain ints for GrampsType fields, no "_class"
-        tag), not the json_utils shape data_to_object() needs. Only the
-        transaction-history feed's new_data and a raw XML export share
-        that shape, and the whole point of this method is that the
-        former can't be trusted here.
+        def on_local_total(local_total):
+            def fetch_server_total():
+                return self.web_client.get_object_count()
 
-        The clear-then-import pair each run inside their own batch=True
-        DbTxn (ImportXml's own, internally, for the import half -- see
-        importxml.py), both under the _pulling flag so transaction_commit()
-        treats them as pull-side replays rather than local bulk edits to
-        reconstruct and push back -- this is a purely local rebuild from
-        what the server already has, same as _sync_from_server()'s own
-        transactions.
+            def on_server_total(server_total):
+                LOG.debug(
+                    "totals: local mirror %d, server %d", local_total, server_total
+                )
+                if local_total >= server_total:
+                    on_done(False)
+                    return
+                LOG.warning(
+                    "Local mirror holds %d objects but the server reports "
+                    "%d; its transaction history cannot account for the "
+                    "difference, so the mirror is being rebuilt from a "
+                    "full export.",
+                    local_total,
+                    server_total,
+                )
+                on_done(True)
 
-        progress_callback, if given, only gets 0/100 markers bookending
-        the download+reimport -- unlike _sync_from_server()'s page-by-page
-        reporting, ImportXml has no internal step reporting to forward
-        finer-grained progress from.
-
-        Also (re)sets sync_last_time to a timestamp taken right before the
-        export download starts, so the next incremental sync asks the
-        history feed for changes after that point instead of wherever the
-        walk that triggered this rebuild happened to leave the cursor --
-        for the totals-shortfall case (_mirror_is_short_of_the_server()),
-        that walk can be a single empty page, which leaves sync_last_time
-        at its untouched starting value (0 for a brand new mirror) rather
-        than anywhere near "now". Left uncorrected, every later poll asks
-        for history "after 0" forever on a server whose history can't
-        describe its own data anyway, so it's a harmless no-op -- but a
-        *push conflict*'s own recovery (_push_payload()'s "resync from the
-        server now, then retry") uses that exact same stuck cursor, so the
-        resync it does can never actually pick up what changed and the
-        retry is doomed to repeat the same conflict and give up. Taken
-        before the download rather than after: a transaction the server
-        commits while the export is being generated or transferred is
-        safer to see again on the next poll (re-applying an already-
-        reflected change is a no-op) than to have it fall silently before
-        the cursor and only be discovered next time a shortfall check runs.
-        """
-        if progress_callback is not None:
-            progress_callback(0)
-        sync_cutoff = time()
-        started = monotonic()
-        # The single longest transfer this addon makes -- streamed rather
-        # than read in one go so the main loop keeps its turn throughout
-        # (see _guarded_pump() and download_export()'s on_chunk).
-        data = self.web_client.download_export(on_chunk=self._guarded_pump)
-        LOG.debug(
-            "resync: downloaded a %.1f MB export in %.2fs",
-            len(data) / (1024 * 1024),
-            monotonic() - started,
-        )
-        with NamedTemporaryFile(suffix=".gramps", delete=False) as tmp_file:
-            tmp_file.write(data)
-            tmp_path = tmp_file.name
-        # Last chance to let the main loop catch up while the mirror is
-        # still intact: from here to request_rebuild() the local data is
-        # being torn down and rebuilt, and anything dispatched in the
-        # middle of that would be looking at a half-empty tree. See
-        # _guarded_pump().
-        self._guarded_pump()
-        # Both halves below are pull-side rebuilds, not local edits -- see
-        # _sync_from_server()'s own note on the _pulling flag. ImportXml
-        # opens its own batch DbTxn internally, so this has to stay set
-        # across importData() too, not just the explicit DbTxn above it.
-        self._pulling = True
-        try:
-            cleared = 0
-            with DbTxn(
-                _("Clear local mirror before full resync"), self, batch=True
-            ) as trans:
-                for key in set(CLASS_TO_KEY_MAP.values()):
-                    name = KEY_TO_NAME_MAP[key]
-                    handles = list(getattr(self, f"get_{name}_handles")())
-                    remove = getattr(self, f"remove_{name}")
-                    for handle in handles:
-                        remove(handle, trans)
-                    cleared += len(handles)
-            LOG.debug("resync: cleared %d local object(s); reimporting", cleared)
-            imported_at = monotonic()
-            # ImportXml exposes no per-step hook to drive (it never calls
-            # User.step_progress), so this one call is uninterruptible --
-            # the longest stall left in a rebuild, and the reason
-            # off-thread sync remains the real fix. See the module
-            # docstring's "Keeping the GUI alive".
-            importData(self, tmp_path, User())
-            LOG.debug(
-                "resync: reimport left %d object(s) (%.2fs)",
-                self.get_total(),
-                monotonic() - imported_at,
+            self.io_runner.run(
+                fetch_server_total,
+                self._guarded(on_server_total),
+                self._guarded(on_error),
             )
-            # importData() runs its own batch=True DbTxn internally, so
-            # (like _sync_from_server()'s replay) it emits nothing to
-            # already-open views on its own -- request_rebuild() is the
-            # "too much changed to describe incrementally" signal DbGeneric
-            # itself defines for exactly this case (one <type>-rebuild per
-            # object type, telling every view to reload wholesale).
-            self.request_rebuild()
-            # The mirror is whole again and every view has been told to
-            # reload, so it's safe to let the loop run once more.
-            self._guarded_pump()
-        finally:
-            self._pulling = False
-            os.remove(tmp_path)
-        self._set_metadata("sync_last_time", sync_cutoff)
-        if progress_callback is not None:
-            progress_callback(100)
+
+        self.runner.run(
+            read_local_total, self._guarded(on_local_total), self._guarded(on_error)
+        )
 
     def _sync_media_files_async(self, on_done, on_error):
         """
