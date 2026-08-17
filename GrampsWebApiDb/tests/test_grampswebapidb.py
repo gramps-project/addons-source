@@ -135,6 +135,31 @@ def new_instance():
     return db
 
 
+def stub_async_done(result=None):
+    """A mock.patch.object(obj, "some_async_method", side_effect=...) stub
+    for an ``..._async(on_done, on_error, ...)`` method (called either
+    positionally or by keyword -- both conventions are used across this
+    file) that immediately calls ``on_done(result)`` -- for tests that
+    only need the top-level operation to "succeed" without exercising the
+    real chain underneath it."""
+
+    def stub(*args, **kwargs):
+        on_done = kwargs.get("on_done", args[0] if args else None)
+        on_done(result)
+
+    return stub
+
+
+def stub_async_error(exc):
+    """Same as stub_async_done(), but for the on_error path."""
+
+    def stub(*args, **kwargs):
+        on_error = kwargs.get("on_error", args[1] if len(args) > 1 else None)
+        on_error(exc)
+
+    return stub
+
+
 # -------------------------------------------------------------------------
 #
 # TestTransactionToJson
@@ -1876,7 +1901,7 @@ class TestCheckPermissions(unittest.TestCase):
         ), mock.patch.object(
             self.db, "_sync_from_server"
         ), mock.patch.object(
-            self.db, "_sync_media_files"
+            self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
         ), mock.patch.object(
             grampswebapidb.GLib, "timeout_add_seconds"
         ):
@@ -1893,7 +1918,7 @@ class TestCheckPermissions(unittest.TestCase):
         ), mock.patch.object(
             self.db, "_sync_from_server"
         ), mock.patch.object(
-            self.db, "_sync_media_files"
+            self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
         ), mock.patch.object(
             grampswebapidb.GLib, "timeout_add_seconds"
         ):
@@ -1908,7 +1933,7 @@ class TestCheckPermissions(unittest.TestCase):
         ), mock.patch.object(
             self.db, "_sync_from_server"
         ), mock.patch.object(
-            self.db, "_sync_media_files"
+            self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
         ), mock.patch.object(
             grampswebapidb.GLib, "timeout_add_seconds"
         ):
@@ -2076,7 +2101,7 @@ class TestPolling(unittest.TestCase):
         ), mock.patch.object(
             self.db, "_sync_from_server"
         ) as sync, mock.patch.object(
-            self.db, "_sync_media_files"
+            self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
         ) as sync_media, mock.patch.object(
             grampswebapidb.GLib, "timeout_add_seconds", side_effect=[42, 43]
         ) as timeout_add:
@@ -2084,7 +2109,9 @@ class TestPolling(unittest.TestCase):
         super_load.assert_called_once_with("some/path")
         check_identity.assert_called_once_with()
         sync.assert_called_once_with(progress_callback=None, verify_totals=True)
-        sync_media.assert_called_once_with()
+        # Called with on_done/on_error closures now, not no-args -- see
+        # _run_async_to_completion().
+        self.assertEqual(sync_media.call_count, 1)
         timeout_add.assert_has_calls(
             [
                 mock.call(grampswebapidb.POLL_INTERVAL_SECONDS, self.db._poll_tick),
@@ -2110,7 +2137,7 @@ class TestPolling(unittest.TestCase):
         ), mock.patch.object(
             self.db, "_sync_from_server"
         ) as sync, mock.patch.object(
-            self.db, "_sync_media_files"
+            self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
         ), mock.patch.object(
             grampswebapidb.GLib, "timeout_add_seconds"
         ):
@@ -2126,7 +2153,7 @@ class TestPolling(unittest.TestCase):
         ), mock.patch.object(
             self.db, "_sync_from_server"
         ) as sync, mock.patch.object(
-            self.db, "_sync_media_files"
+            self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
         ), mock.patch.object(
             grampswebapidb.GLib, "timeout_add_seconds"
         ):
@@ -2145,7 +2172,9 @@ class TestPolling(unittest.TestCase):
         ), mock.patch.object(
             self.db, "_sync_from_server"
         ), mock.patch.object(
-            self.db, "_sync_media_files", side_effect=OSError("network down")
+            self.db,
+            "_sync_media_files_async",
+            side_effect=stub_async_error(OSError("network down")),
         ), mock.patch.object(
             grampswebapidb.GLib, "timeout_add_seconds"
         ):
@@ -2169,7 +2198,7 @@ class TestPolling(unittest.TestCase):
         ), mock.patch.object(
             self.db, "_sync_from_server"
         ), mock.patch.object(
-            self.db, "_sync_media_files"
+            self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
         ), mock.patch.object(
             grampswebapidb.GLib, "timeout_add_seconds"
         ):
@@ -2242,7 +2271,7 @@ class TestPolling(unittest.TestCase):
 
     def test_media_poll_tick_does_not_start_a_sync_underneath_a_running_one(self):
         self.db._syncing = True
-        with mock.patch.object(self.db, "_sync_media_files") as sync_media:
+        with mock.patch.object(self.db, "_sync_media_files_async") as sync_media:
             result = self.db._media_poll_tick()
         sync_media.assert_not_called()
         self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
@@ -2316,14 +2345,21 @@ class TestPolling(unittest.TestCase):
         self.assertEqual(self.db._poll_failures, 0)
 
     def test_media_poll_tick_syncs_and_keeps_repeating(self):
-        with mock.patch.object(self.db, "_sync_media_files") as sync_media:
+        with mock.patch.object(
+            self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
+        ) as sync_media:
             result = self.db._media_poll_tick()
-        sync_media.assert_called_once_with()
+        self.assertEqual(sync_media.call_count, 1)
         self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
+        # on_done fired synchronously (InlineTaskRunner), so the flag this
+        # poll claimed is already released.
+        self.assertFalse(self.db._syncing)
 
     def test_media_poll_tick_swallows_connection_errors_and_keeps_repeating(self):
         with mock.patch.object(
-            self.db, "_sync_media_files", side_effect=OSError("network down")
+            self.db,
+            "_sync_media_files_async",
+            side_effect=stub_async_error(OSError("network down")),
         ):
             with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
                 result = self.db._media_poll_tick()
@@ -2332,7 +2368,9 @@ class TestPolling(unittest.TestCase):
 
     def test_media_poll_tick_reports_a_lasting_outage_only_once(self):
         with mock.patch.object(
-            self.db, "_sync_media_files", side_effect=OSError("network down")
+            self.db,
+            "_sync_media_files_async",
+            side_effect=stub_async_error(OSError("network down")),
         ):
             with self.assertLogs(grampswebapidb.LOG, level="DEBUG") as logs:
                 for _unused in range(4):
@@ -2344,7 +2382,9 @@ class TestPolling(unittest.TestCase):
 
     def test_media_poll_tick_notes_recovery(self):
         self.db._media_poll_failures = 2
-        with mock.patch.object(self.db, "_sync_media_files"):
+        with mock.patch.object(
+            self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
+        ):
             with self.assertLogs(grampswebapidb.LOG, level="INFO"):
                 result = self.db._media_poll_tick()
         self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
@@ -2362,13 +2402,32 @@ class TestPolling(unittest.TestCase):
         self.assertEqual(result, grampswebapidb.GLib.SOURCE_REMOVE)
         self.assertEqual(self.db._poll_failures, 0)
 
-    def test_media_poll_tick_stops_quietly_when_the_tree_closed_mid_sync(self):
-        with mock.patch.object(
-            self.db, "_sync_media_files", side_effect=grampswebapidb._DatabaseClosed
-        ):
+    def test_media_poll_tick_drops_a_result_delivered_after_close(self):
+        # Unlike _poll_tick(), _media_poll_tick() no longer needs to
+        # notice a mid-sync close() and stop its own timer -- close()
+        # already does that directly (test_close_cancels_pending_poll).
+        # What it must still get right: a media sync already in flight
+        # when close() runs must not touch _media_poll_failures/_syncing
+        # for a tree it no longer owns once its result comes back --
+        # _guarded() (wrapping _sync_media_files_async()'s internal
+        # callbacks) drops it instead. Exercises the real chain (not a
+        # mocked _sync_media_files_async) since _guarded() lives inside
+        # it, not in _media_poll_tick() itself.
+        self.db.web_client = mock.MagicMock()
+
+        def fake_get_missing_files():
+            self.db._run_id += 1  # simulates close() running before this fires
+            return []
+
+        self.db.web_client.get_missing_files.side_effect = fake_get_missing_files
+        with mock.patch.object(self.db, "iter_media", return_value=[]):
             result = self.db._media_poll_tick()
-        self.assertEqual(result, grampswebapidb.GLib.SOURCE_REMOVE)
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
         self.assertEqual(self.db._media_poll_failures, 0)
+        # Dropped, not delivered: _on_media_poll_success() never ran, so
+        # _syncing (only cleared there) is still True -- close() resets
+        # it directly instead (see TestClose).
+        self.assertTrue(self.db._syncing)
 
 
 # -------------------------------------------------------------------------
@@ -2503,222 +2562,171 @@ class FakeMedia:
         return self._path
 
 
-class TestMissingLocalMediaHandles(unittest.TestCase):
+class TestScanAndResolveMedia(unittest.TestCase):
     def setUp(self):
         self.db = new_instance()
 
-    def test_returns_handles_whose_file_is_missing(self):
+    def test_returns_missing_local_and_missing_remote_as_handle_path_pairs(self):
         present = FakeMedia("H1", "present.jpg")
         missing = FakeMedia("H2", "missing.jpg")
+        remote_media = FakeMedia("H3", "remote.jpg")
         with mock.patch.object(
             self.db, "iter_media", return_value=[present, missing]
+        ), mock.patch.object(
+            self.db, "get_media_from_handle", return_value=remote_media
         ), mock.patch.object(
             grampswebapidb,
             "media_path_full",
             side_effect=lambda db, path: "/tree/" + path,
         ), mock.patch.object(
-            grampswebapidb.os.path, "exists", side_effect=lambda p: "present" in p
+            grampswebapidb.os.path, "exists", side_effect=lambda p: "missing" not in p
         ):
-            handles = self.db._missing_local_media_handles()
-        self.assertEqual(handles, ["H2"])
+            missing_local, missing_remote = self.db._scan_and_resolve_media(
+                [{"handle": "H3"}]
+            )
+        self.assertEqual(missing_local, [("H2", "/tree/missing.jpg")])
+        self.assertEqual(missing_remote, [("H3", "/tree/remote.jpg")])
 
-    def test_no_media_objects_returns_empty_list(self):
+    def test_no_media_objects_and_no_remote_missing_returns_empty_lists(self):
         with mock.patch.object(self.db, "iter_media", return_value=[]):
-            self.assertEqual(self.db._missing_local_media_handles(), [])
+            missing_local, missing_remote = self.db._scan_and_resolve_media([])
+        self.assertEqual(missing_local, [])
+        self.assertEqual(missing_remote, [])
 
-
-class TestMissingRemoteMediaHandles(unittest.TestCase):
-    def setUp(self):
-        self.db = new_instance()
-
-    def test_extracts_handles_from_server_response(self):
-        self.db.web_client = mock.MagicMock()
-        self.db.web_client.get_missing_files.return_value = [
-            {"handle": "H1", "gramps_id": "O0001"},
-            {"handle": "H2", "gramps_id": "O0002"},
-        ]
-        self.assertEqual(self.db._missing_remote_media_handles(), ["H1", "H2"])
-
-    def test_empty_server_response(self):
-        self.db.web_client = mock.MagicMock()
-        self.db.web_client.get_missing_files.return_value = []
-        self.assertEqual(self.db._missing_remote_media_handles(), [])
-
-
-class TestDownloadOneMediaFile(unittest.TestCase):
-    def setUp(self):
-        self.db = new_instance()
-        self.db.web_client = mock.MagicMock()
-
-    def test_downloads_and_returns_true(self):
-        media = FakeMedia("H1", "photo.jpg")
+    def test_remote_missing_handle_removed_locally_is_skipped(self):
         with mock.patch.object(
-            self.db, "get_media_from_handle", return_value=media
+            self.db, "iter_media", return_value=[]
         ), mock.patch.object(
-            grampswebapidb, "media_path_full", return_value="/tree/photo.jpg"
-        ):
-            result = self.db._download_one_media_file("H1")
-        self.assertTrue(result)
-        self.db.web_client.download_media_file.assert_called_once_with(
-            "H1", "/tree/photo.jpg"
-        )
-
-    def test_missing_local_object_returns_false(self):
-        with mock.patch.object(
             self.db,
             "get_media_from_handle",
             side_effect=grampswebapidb.HandleError("H1"),
         ):
-            result = self.db._download_one_media_file("H1")
-        self.assertFalse(result)
-        self.db.web_client.download_media_file.assert_not_called()
+            _, missing_remote = self.db._scan_and_resolve_media([{"handle": "H1"}])
+        self.assertEqual(missing_remote, [])
 
-    def test_connection_error_is_logged_and_returns_false(self):
-        media = FakeMedia("H1", "photo.jpg")
-        self.db.web_client.download_media_file.side_effect = OSError("network down")
-        with mock.patch.object(
-            self.db, "get_media_from_handle", return_value=media
-        ), mock.patch.object(
-            grampswebapidb, "media_path_full", return_value="/tree/photo.jpg"
-        ):
-            with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
-                result = self.db._download_one_media_file("H1")
-        self.assertFalse(result)
-
-
-class TestUploadOneMediaFile(unittest.TestCase):
-    def setUp(self):
-        self.db = new_instance()
-        self.db.web_client = mock.MagicMock()
-
-    def test_uploads_and_returns_true(self):
-        media = FakeMedia("H1", "photo.jpg")
-        self.db.web_client.upload_media_file.return_value = True
-        with mock.patch.object(
-            self.db, "get_media_from_handle", return_value=media
-        ), mock.patch.object(
-            grampswebapidb, "media_path_full", return_value="/tree/photo.jpg"
-        ), mock.patch.object(
-            grampswebapidb.os.path, "exists", return_value=True
-        ):
-            result = self.db._upload_one_media_file("H1")
-        self.assertTrue(result)
-        self.db.web_client.upload_media_file.assert_called_once_with(
-            "H1", "/tree/photo.jpg"
-        )
-
-    def test_conflict_response_returns_false(self):
-        # WebApiHandler.upload_media_file() itself returns False on a 409
-        # (someone else already uploaded a file for this object) rather
-        # than raising -- propagated here as-is.
-        media = FakeMedia("H1", "photo.jpg")
-        self.db.web_client.upload_media_file.return_value = False
-        with mock.patch.object(
-            self.db, "get_media_from_handle", return_value=media
-        ), mock.patch.object(
-            grampswebapidb, "media_path_full", return_value="/tree/photo.jpg"
-        ), mock.patch.object(
-            grampswebapidb.os.path, "exists", return_value=True
-        ):
-            result = self.db._upload_one_media_file("H1")
-        self.assertFalse(result)
-
-    def test_missing_local_object_returns_false(self):
-        with mock.patch.object(
-            self.db,
-            "get_media_from_handle",
-            side_effect=grampswebapidb.HandleError("H1"),
-        ):
-            result = self.db._upload_one_media_file("H1")
-        self.assertFalse(result)
-        self.db.web_client.upload_media_file.assert_not_called()
-
-    def test_file_not_on_disk_returns_false_without_uploading(self):
+    def test_remote_missing_handle_whose_local_file_is_also_missing_is_excluded(self):
+        # Nothing to upload if the local file the server wants isn't
+        # actually on disk -- matches the old _upload_one_media_file()'s
+        # "not os.path.exists(path): return False" skip.
         media = FakeMedia("H1", "photo.jpg")
         with mock.patch.object(
+            self.db, "iter_media", return_value=[]
+        ), mock.patch.object(
             self.db, "get_media_from_handle", return_value=media
         ), mock.patch.object(
             grampswebapidb, "media_path_full", return_value="/tree/photo.jpg"
         ), mock.patch.object(
             grampswebapidb.os.path, "exists", return_value=False
         ):
-            result = self.db._upload_one_media_file("H1")
-        self.assertFalse(result)
-        self.db.web_client.upload_media_file.assert_not_called()
-
-    def test_connection_error_is_logged_and_returns_false(self):
-        media = FakeMedia("H1", "photo.jpg")
-        self.db.web_client.upload_media_file.side_effect = OSError("network down")
-        with mock.patch.object(
-            self.db, "get_media_from_handle", return_value=media
-        ), mock.patch.object(
-            grampswebapidb, "media_path_full", return_value="/tree/photo.jpg"
-        ), mock.patch.object(
-            grampswebapidb.os.path, "exists", return_value=True
-        ):
-            with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
-                result = self.db._upload_one_media_file("H1")
-        self.assertFalse(result)
+            _, missing_remote = self.db._scan_and_resolve_media([{"handle": "H1"}])
+        self.assertEqual(missing_remote, [])
 
 
-class TestSyncMediaFiles(unittest.TestCase):
+class TestTransferMediaFiles(unittest.TestCase):
     def setUp(self):
         self.db = new_instance()
+        self.db.web_client = mock.MagicMock()
 
-    def test_downloads_missing_local_then_uploads_missing_remote(self):
-        with mock.patch.object(
-            self.db, "_missing_local_media_handles", return_value=["H1", "H2"]
-        ), mock.patch.object(
-            self.db, "_missing_remote_media_handles", return_value=["H3"]
-        ), mock.patch.object(
-            self.db, "_download_one_media_file", return_value=True
-        ) as download, mock.patch.object(
-            self.db, "_upload_one_media_file", return_value=True
-        ) as upload:
-            result = self.db._sync_media_files()
-        download.assert_has_calls([mock.call("H1"), mock.call("H2")])
-        upload.assert_called_once_with("H3")
+    def test_downloads_and_uploads_and_returns_counts(self):
+        self.db.web_client.upload_media_file.return_value = True
+        result = self.db._transfer_media_files(
+            [("H1", "/a"), ("H2", "/b")], [("H3", "/c")]
+        )
+        self.db.web_client.download_media_file.assert_has_calls(
+            [mock.call("H1", "/a"), mock.call("H2", "/b")]
+        )
+        self.db.web_client.upload_media_file.assert_called_once_with("H3", "/c")
         self.assertEqual(result, (2, 1))
 
-    def test_main_loop_is_pumped_per_file_and_syncing_flag_is_managed(self):
-        # Each transfer is its own blocking round trip, and a first sync
-        # of a tree with media runs hundreds back to back.
-        seen = []
-        with mock.patch.object(
-            self.db, "_missing_local_media_handles", return_value=["H1", "H2"]
-        ), mock.patch.object(
-            self.db, "_missing_remote_media_handles", return_value=["H3"]
-        ), mock.patch.object(
-            self.db,
-            "_download_one_media_file",
-            side_effect=lambda handle: seen.append(self.db._syncing) or True,
-        ), mock.patch.object(
-            self.db, "_upload_one_media_file", return_value=True
-        ), mock.patch.object(
-            grampswebapidb, "_pump_main_loop"
-        ) as pump:
-            self.db._sync_media_files()
-        self.assertEqual(pump.call_count, 3)
-        self.assertEqual(seen, [True, True])
-        self.assertFalse(self.db._syncing)
+    def test_conflict_response_is_not_counted(self):
+        # WebApiHandler.upload_media_file() itself returns False on a 409
+        # (someone else already uploaded a file for this object) rather
+        # than raising.
+        self.db.web_client.upload_media_file.return_value = False
+        result = self.db._transfer_media_files([], [("H1", "/a")])
+        self.assertEqual(result, (0, 0))
 
-    def test_counts_only_successful_transfers(self):
+    def test_download_connection_error_is_logged_and_skipped(self):
+        self.db.web_client.download_media_file.side_effect = OSError("network down")
+        with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
+            result = self.db._transfer_media_files([("H1", "/a")], [])
+        self.assertEqual(result, (0, 0))
+
+    def test_upload_connection_error_is_logged_and_skipped(self):
+        self.db.web_client.upload_media_file.side_effect = OSError("network down")
+        with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
+            result = self.db._transfer_media_files([], [("H1", "/a")])
+        self.assertEqual(result, (0, 0))
+
+    def test_nothing_to_transfer_is_a_no_op(self):
+        result = self.db._transfer_media_files([], [])
+        self.assertEqual(result, (0, 0))
+        self.db.web_client.download_media_file.assert_not_called()
+        self.db.web_client.upload_media_file.assert_not_called()
+
+
+class TestSyncMediaFilesAsync(unittest.TestCase):
+    # runner/io_runner are InlineTaskRunner (see new_instance()), so the
+    # whole io_runner -> runner -> io_runner -> on_done chain resolves
+    # synchronously within one call, deterministically -- see
+    # GrampsWebApiDb/taskrunner.py and tests/fakes.py.
+    def setUp(self):
+        self.db = new_instance()
+        self.db.web_client = mock.MagicMock()
+
+    def test_full_chain_resolves_via_on_done_not_a_return_value(self):
+        present = FakeMedia("H1", "present.jpg")
+        missing = FakeMedia("H2", "missing.jpg")
+        remote_media = FakeMedia("H3", "remote.jpg")
+        self.db.web_client.get_missing_files.return_value = [{"handle": "H3"}]
+        self.db.web_client.upload_media_file.return_value = True
         with mock.patch.object(
-            self.db, "_missing_local_media_handles", return_value=["H1", "H2"]
+            self.db, "iter_media", return_value=[present, missing]
         ), mock.patch.object(
-            self.db, "_missing_remote_media_handles", return_value=[]
+            self.db, "get_media_from_handle", return_value=remote_media
         ), mock.patch.object(
-            self.db, "_download_one_media_file", side_effect=[True, False]
+            grampswebapidb,
+            "media_path_full",
+            side_effect=lambda db, path: "/tree/" + path,
+        ), mock.patch.object(
+            grampswebapidb.os.path,
+            "exists",
+            side_effect=lambda p: "missing" not in p,
         ):
-            result = self.db._sync_media_files()
-        self.assertEqual(result, (1, 0))
+            result = {}
+            self.db._sync_media_files_async(
+                on_done=lambda value: result.update(done=value),
+                on_error=lambda exc: result.update(error=exc),
+            )
+        self.assertNotIn("error", result)
+        self.assertEqual(result["done"], (1, 1))
+        self.db.web_client.download_media_file.assert_called_once_with(
+            "H2", "/tree/missing.jpg"
+        )
+        self.db.web_client.upload_media_file.assert_called_once_with(
+            "H3", "/tree/remote.jpg"
+        )
+
+    def test_error_fetching_remote_missing_calls_on_error(self):
+        boom = OSError("network down")
+        self.db.web_client.get_missing_files.side_effect = boom
+        result = {}
+        self.db._sync_media_files_async(
+            on_done=lambda value: result.update(done=value),
+            on_error=lambda exc: result.update(error=exc),
+        )
+        self.assertNotIn("done", result)
+        self.assertIs(result["error"], boom)
 
     def test_nothing_missing_is_a_no_op(self):
-        with mock.patch.object(
-            self.db, "_missing_local_media_handles", return_value=[]
-        ), mock.patch.object(self.db, "_missing_remote_media_handles", return_value=[]):
-            result = self.db._sync_media_files()
-        self.assertEqual(result, (0, 0))
+        self.db.web_client.get_missing_files.return_value = []
+        with mock.patch.object(self.db, "iter_media", return_value=[]):
+            result = {}
+            self.db._sync_media_files_async(
+                on_done=lambda value: result.update(done=value),
+                on_error=lambda exc: result.update(error=exc),
+            )
+        self.assertEqual(result["done"], (0, 0))
 
 
 # -------------------------------------------------------------------------
