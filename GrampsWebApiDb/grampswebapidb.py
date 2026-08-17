@@ -917,11 +917,21 @@ class WebApiDB(SQLite):
         self._poll_failures = 0
         self._media_poll_failures = 0
         self._poll_interval = POLL_INTERVAL_SECONDS
+        # _sync_media_files_async() runs its network legs on a worker
+        # thread; _run_async_to_completion() blocks this call (pumping the
+        # main loop so that worker thread's result can actually be
+        # delivered) until it finishes -- see that method's docstring for
+        # why load() still waits synchronously here rather than returning
+        # early, unlike everywhere else in this file.
+        tree_closed_during_media_sync = False
+        self._syncing = True
         try:
-            self._sync_media_files()
-        except _DatabaseClosed:
-            LOG.debug("load: tree closed during initial media sync; aborting")
-            return
+            media_result = self._run_async_to_completion(
+                lambda on_done, on_error: self._sync_media_files_async(
+                    on_done, on_error
+                )
+            )
+            tree_closed_during_media_sync = media_result is None
         except _CONNECTION_ERRORS:
             # Unlike the record sync above, a media-file-sync failure here
             # doesn't block opening the tree: the record mirror is already
@@ -931,6 +941,11 @@ class WebApiDB(SQLite):
             # Counts as this outage's one loud report, so _media_poll_tick()
             # doesn't immediately say the same thing again 300 seconds later.
             self._media_poll_failures = 1
+        finally:
+            self._syncing = False
+        if tree_closed_during_media_sync:
+            LOG.debug("load: tree closed during initial media sync; aborting")
+            return
         self._poll_source_id = GLib.timeout_add_seconds(
             POLL_INTERVAL_SECONDS, self._poll_tick
         )
@@ -1161,6 +1176,52 @@ class WebApiDB(SQLite):
         if self._run_id != run_id:
             raise _DatabaseClosed()
 
+    def _run_async_to_completion(self, start_chain):
+        """Block the calling thread (always the main thread -- this is
+        only ever called from load()) until an async chain finishes,
+        while still pumping the main loop so the worker-thread dispatch
+        that chain depends on can actually be delivered.
+
+        start_chain(on_done, on_error) must kick off exactly one
+        ..._async() chain (e.g. ``lambda on_done, on_error:
+        self._sync_media_files_async(on_done, on_error)``) and return
+        immediately, the same contract every ..._async() method in this
+        file follows.
+
+        Raises whatever the chain's on_error received. Returns whatever
+        its on_done received -- or None, with nothing raised, if the tree
+        was closed while this was waiting (_guarded_pump() propagates
+        that as _DatabaseClosed, caught here rather than left to whoever
+        called this). load() is the one caller that still needs a
+        synchronous answer: Gramps core's DbGeneric.load() contract
+        requires the tree to be ready by the time it returns, unlike
+        every other entry point in this file (_poll_tick(),
+        transaction_commit(), ...), which starts a chain and returns
+        immediately -- see the module docstring's "Keeping the GUI alive"
+        section for why load() alone keeps this synchronous wait instead
+        of also going fully asynchronous.
+        """
+        box = {}
+
+        def on_done(value=None):
+            box["done"] = True
+            box["value"] = value
+
+        def on_error(exc):
+            box["done"] = True
+            box["error"] = exc
+
+        start_chain(on_done, on_error)
+        while not box.get("done"):
+            try:
+                self._guarded_pump()
+            except _DatabaseClosed:
+                LOG.debug("load: tree closed while waiting on an async chain")
+                return None
+        if "error" in box:
+            raise box["error"]
+        return box.get("value")
+
     def _poll_tick(self):
         """GLib.timeout_add_seconds callback -- see the module docstring's
         polling section. Must return True (GLib.SOURCE_CONTINUE) to keep
@@ -1247,9 +1308,20 @@ class WebApiDB(SQLite):
     def _media_poll_tick(self):
         """GLib.timeout_add_seconds callback for the slower media-file
         scan -- same contract as _poll_tick() (must return True to keep
-        firing; a connection error is caught and reported here rather than
-        left to propagate), just for _sync_media_files() instead of the
+        firing), just for _sync_media_files_async() instead of the
         record-history poll.
+
+        Unlike _poll_tick(), this always returns GLib.SOURCE_CONTINUE
+        immediately: starting _sync_media_files_async() can't report
+        success or failure synchronously the way the old
+        _sync_media_files() call this replaced could, so that bookkeeping
+        (_on_media_poll_success()/_on_media_poll_error()) happens later,
+        from its on_done/on_error. A tree closed mid-sync needs no
+        special handling here the way it once did to stop this very
+        timer -- close() removes the timeout itself, and _guarded()
+        (wrapping _sync_media_files_async()'s callbacks) silently drops
+        one belonging to an abandoned chain rather than this method
+        having to notice and react.
 
         Reported once per outage for the same reason as _poll_tick(), but
         with no backoff to go with it: MEDIA_POLL_INTERVAL_SECONDS is
@@ -1257,36 +1329,50 @@ class WebApiDB(SQLite):
         if self._syncing:
             LOG.debug("media poll: a sync is already running; skipping this tick")
             return GLib.SOURCE_CONTINUE
-        try:
-            self._sync_media_files()
-        except _DatabaseClosed:
-            LOG.debug("media poll: tree closed mid-sync; stopping this timer")
-            return GLib.SOURCE_REMOVE
-        except _CONNECTION_ERRORS as err:
-            if self._media_poll_failures == 0:
-                LOG.warning(
-                    "Periodic media file sync failed (%s); will retry every "
-                    "%d seconds.",
-                    err,
-                    MEDIA_POLL_INTERVAL_SECONDS,
-                )
-                LOG.debug("Periodic media file sync failure detail", exc_info=True)
-            else:
-                LOG.debug(
-                    "Periodic media file sync still failing after %d attempts (%s).",
-                    self._media_poll_failures + 1,
-                    err,
-                    exc_info=True,
-                )
-            self._media_poll_failures += 1
-            return GLib.SOURCE_CONTINUE
+        self._syncing = True
+        self._sync_media_files_async(
+            on_done=self._on_media_poll_success,
+            on_error=self._on_media_poll_error,
+        )
+        return GLib.SOURCE_CONTINUE
+
+    def _on_media_poll_success(self, result):
+        """_media_poll_tick()'s on_done -- see that method."""
+        self._syncing = False
         if self._media_poll_failures:
             LOG.info(
                 "Media file sync succeeded again after %d failed attempt(s).",
                 self._media_poll_failures,
             )
             self._media_poll_failures = 0
-        return GLib.SOURCE_CONTINUE
+
+    def _on_media_poll_error(self, exc):
+        """_media_poll_tick()'s on_error -- see that method."""
+        self._syncing = False
+        if not isinstance(exc, _CONNECTION_ERRORS):
+            # Not a connectivity classification this poll knows how to
+            # back off from. The old synchronous _sync_media_files() let
+            # anything else propagate out of _media_poll_tick() uncaught
+            # (there was nowhere for it to go but the caller); there is no
+            # such caller for an async on_error, so log it loudly here
+            # instead of silently losing it.
+            LOG.error("Unexpected error during periodic media file sync.", exc_info=exc)
+            return
+        if self._media_poll_failures == 0:
+            LOG.warning(
+                "Periodic media file sync failed (%s); will retry every " "%d seconds.",
+                exc,
+                MEDIA_POLL_INTERVAL_SECONDS,
+            )
+            LOG.debug("Periodic media file sync failure detail", exc_info=exc)
+        else:
+            LOG.debug(
+                "Periodic media file sync still failing after %d attempts (%s).",
+                self._media_poll_failures + 1,
+                exc,
+                exc_info=exc,
+            )
+        self._media_poll_failures += 1
 
     def transaction_begin(self, transaction):
         """Hook DbTxn.__enter__ (which calls this immediately, before the
@@ -2048,7 +2134,7 @@ class WebApiDB(SQLite):
         if progress_callback is not None:
             progress_callback(100)
 
-    def _sync_media_files(self):
+    def _sync_media_files_async(self, on_done, on_error):
         """
         Download media files missing locally, then upload local media
         files the server doesn't have yet -- the file-transfer half of
@@ -2061,103 +2147,147 @@ class WebApiDB(SQLite):
         A single file failing to transfer (network error, a stale handle,
         a 409 because something else uploaded it first) is logged and
         skipped rather than aborting the rest of the pass -- the same
-        shape as _push_payload()'s error handling, just applied per file
-        here since there is no single all-or-nothing request covering
-        every file the way POST /transactions/ does for object records.
+        shape as _push_payload_async()'s error handling, just applied per
+        file here since there is no single all-or-nothing request
+        covering every file the way POST /transactions/ does for object
+        records.
 
-        Returns ``(downloaded, uploaded)`` file counts.
+        Three steps, alternating io_runner (network) and runner (DB
+        reads) -- the old per-file loop interleaved a DB read with a
+        network call on every single file, which a worker thread must
+        never do (self.dbapi is only safe to touch from the main thread),
+        so this instead resolves every handle this pass will touch to a
+        (handle, path) pair up front, on the main thread, before any
+        network I/O starts:
+
+          1. io_runner: ask the server which files it's missing.
+          2. runner: resolve this pass's missing-local and missing-remote
+             media to (handle, path) pairs (_scan_and_resolve_media()) --
+             the last thing to touch self.dbapi.
+          3. io_runner: actually move the files (_transfer_media_files()),
+             pure network + local disk I/O.
+
+        Calls on_done((downloaded, uploaded)) when finished. Caller
+        already owns self._syncing (see the module docstring's note on
+        why _push_payload_async()'s ..._async() methods never touch it
+        themselves).
         """
-        self._syncing = True
-        try:
-            return self._sync_media_files_inner()
-        finally:
-            self._syncing = False
-
-    def _sync_media_files_inner(self):
-        """_sync_media_files()'s body, minus the _syncing bookkeeping --
-        see that method for what this does and why."""
         started = monotonic()
-        missing_local = self._missing_local_media_handles()
-        downloaded = 0
-        for handle in missing_local:
-            if self._download_one_media_file(handle):
-                downloaded += 1
-            # One file is one blocking transfer; a first sync of a tree
-            # with media runs hundreds of them back to back.
-            self._guarded_pump()
-        missing_remote = self._missing_remote_media_handles()
-        uploaded = 0
-        for handle in missing_remote:
-            if self._upload_one_media_file(handle):
-                uploaded += 1
-            self._guarded_pump()
-        LOG.debug(
-            "media: %d missing locally (%d downloaded), %d missing on the "
-            "server (%d uploaded), in %.2fs",
-            len(missing_local),
-            downloaded,
-            len(missing_remote),
-            uploaded,
-            monotonic() - started,
+
+        def fetch_remote_missing():
+            return self.web_client.get_missing_files()
+
+        def on_remote_missing_fetched(remote_missing):
+            def scan():
+                return self._scan_and_resolve_media(remote_missing)
+
+            def on_scanned(scan_result):
+                missing_local, missing_remote = scan_result
+
+                def transfer():
+                    return self._transfer_media_files(missing_local, missing_remote)
+
+                def on_transferred(transfer_result):
+                    downloaded, uploaded = transfer_result
+                    LOG.debug(
+                        "media: %d missing locally (%d downloaded), %d missing "
+                        "on the server (%d uploaded), in %.2fs",
+                        len(missing_local),
+                        downloaded,
+                        len(missing_remote),
+                        uploaded,
+                        monotonic() - started,
+                    )
+                    if downloaded or uploaded:
+                        LOG.info(
+                            "Media file sync: downloaded %d file(s), uploaded "
+                            "%d file(s).",
+                            downloaded,
+                            uploaded,
+                        )
+                    on_done((downloaded, uploaded))
+
+                self.io_runner.run(
+                    transfer, self._guarded(on_transferred), self._guarded(on_error)
+                )
+
+            self.runner.run(scan, self._guarded(on_scanned), self._guarded(on_error))
+
+        self.io_runner.run(
+            fetch_remote_missing,
+            self._guarded(on_remote_missing_fetched),
+            self._guarded(on_error),
         )
-        if downloaded or uploaded:
-            LOG.info(
-                "Media file sync: downloaded %d file(s), uploaded %d file(s).",
-                downloaded,
-                uploaded,
-            )
+
+    def _scan_and_resolve_media(self, remote_missing):
+        """Resolve this pass's missing-local and missing-remote media to
+        ``(handle, path)`` pairs while still on the main thread -- DB
+        reads (iter_media(), get_media_from_handle()) plus a cheap
+        os.path.exists() check, no network. Ported from the old
+        _missing_local_media_handles()/_missing_remote_media_handles(),
+        fused with the local-object lookup the old per-file
+        _download_one_media_file()/_upload_one_media_file() each did
+        separately, so _transfer_media_files() below never needs to
+        touch self.dbapi again once this returns -- see
+        _sync_media_files_async()'s docstring for why that split exists.
+
+        ``remote_missing`` is the server's own answer (web_client.
+        get_missing_files()) to "which Media objects have no uploaded
+        file yet" -- a list of dicts with a "handle" key.
+        """
+        missing_local = []
+        for media in self.iter_media():
+            path = media_path_full(self, media.get_path())
+            if not os.path.exists(path):
+                missing_local.append((media.handle, path))
+
+        missing_remote = []
+        for item in remote_missing:
+            handle = item["handle"]
+            try:
+                obj = self.get_media_from_handle(handle)
+            except HandleError:
+                # The object was removed locally between the scan and here.
+                continue
+            path = media_path_full(self, obj.get_path())
+            if os.path.exists(path):
+                missing_remote.append((handle, path))
+        return missing_local, missing_remote
+
+    def _transfer_media_files(self, missing_local, missing_remote):
+        """Actually move the files: pure network + local disk I/O, no
+        self.dbapi touch at all -- every handle needed was already
+        resolved to a path by _scan_and_resolve_media() on the main
+        thread, so this is safe to run entirely on io_runner. A transfer
+        failing (network error, a 409 because something else uploaded it
+        first) is logged and skipped rather than aborting the rest of
+        the pass.
+
+        Logs by handle rather than gramps_id, unlike the old per-file
+        helpers this replaces: gramps_id would mean a get_media_from_
+        handle() call here, and this method must not touch self.dbapi.
+        """
+        downloaded = 0
+        for handle, path in missing_local:
+            try:
+                self.web_client.download_media_file(handle, path)
+            except _CONNECTION_ERRORS as err:
+                LOG.warning(
+                    "Failed to download media file for handle %s: %s", handle, err
+                )
+                continue
+            downloaded += 1
+
+        uploaded = 0
+        for handle, path in missing_remote:
+            try:
+                if self.web_client.upload_media_file(handle, path):
+                    uploaded += 1
+            except _CONNECTION_ERRORS as err:
+                LOG.warning(
+                    "Failed to upload media file for handle %s: %s", handle, err
+                )
         return downloaded, uploaded
-
-    def _missing_local_media_handles(self):
-        """Handles of local Media objects whose file isn't on disk.
-        Ported from GrampsWebSync's get_missing_files_local()."""
-        return [
-            media.handle
-            for media in self.iter_media()
-            if not os.path.exists(media_path_full(self, media.get_path()))
-        ]
-
-    def _missing_remote_media_handles(self):
-        """Handles of Media objects the server has no uploaded file for
-        yet. Ported from GrampsWebSync's get_missing_files_remote()."""
-        return [item["handle"] for item in self.web_client.get_missing_files()]
-
-    def _download_one_media_file(self, handle):
-        """Download one locally-missing media file. Returns True on
-        success; logs and returns False on a HandleError (the object was
-        removed locally between the scan and here) or a connection error,
-        rather than aborting the rest of _sync_media_files()'s pass."""
-        try:
-            obj = self.get_media_from_handle(handle)
-        except HandleError:
-            return False
-        path = media_path_full(self, obj.get_path())
-        try:
-            self.web_client.download_media_file(handle, path)
-        except _CONNECTION_ERRORS as err:
-            LOG.warning("Failed to download media file for %s: %s", obj.gramps_id, err)
-            return False
-        return True
-
-    def _upload_one_media_file(self, handle):
-        """Upload one media file the server is missing. Returns True on
-        success; False if the local object no longer exists, its file
-        isn't actually on disk either (nothing to upload), the server
-        already got a file for it from elsewhere in the meantime (a 409
-        -- see WebApiHandler.upload_media_file()), or the upload
-        otherwise failed."""
-        try:
-            obj = self.get_media_from_handle(handle)
-        except HandleError:
-            return False
-        path = media_path_full(self, obj.get_path())
-        if not os.path.exists(path):
-            return False
-        try:
-            return self.web_client.upload_media_file(handle, path)
-        except _CONNECTION_ERRORS as err:
-            LOG.warning("Failed to upload media file for %s: %s", obj.gramps_id, err)
-            return False
 
     def _apply_change(self, change, trans):
         """Replay one server change into the local mirror. Returns True
