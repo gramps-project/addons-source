@@ -486,6 +486,7 @@ normal commit. Gramps' own undo history is in-memory/per-session, not
 persisted, so this only ever matters within a single running session.
 """
 
+import inspect
 import json
 import logging
 import os
@@ -720,6 +721,36 @@ def _http_error_detail(err):
     return None
 
 
+def _wrap_progress_callback(callback, text):
+    """Adapt a Gramps load()-progress callback (a plain percentage
+    function, 0-100) to also carry a descriptive label, for callers that
+    accept one: gui/dbloader.py's uistate.pulse_progressbar(value,
+    text=None) shows it as "<text>: NN%" on the progress bar dbloader.py
+    already displays for the duration of any db.load() call, turning
+    that otherwise-blank bar into a real "Syncing with Gramps Web API..."
+    indicator during the initial catch-up sync. cli/grampscli.py's own
+    callback, _pulse_progress(value), takes only the one positional
+    argument -- calling it with a second would raise TypeError -- so the
+    signature is inspected once, here, rather than assumed.
+
+    Returns ``callback`` unchanged if it is None or doesn't accept a
+    second argument.
+    """
+    if callback is None:
+        return None
+    try:
+        accepts_text = len(inspect.signature(callback).parameters) >= 2
+    except (TypeError, ValueError):
+        # Some callables (a bound method of a C extension type, a
+        # functools.partial with no introspectable signature, ...) can't
+        # be inspected at all -- safest default is the plain percent-only
+        # call every caller is guaranteed to accept.
+        accepts_text = False
+    if not accepts_text:
+        return callback
+    return lambda value: callback(value, text)
+
+
 def _describe_connection_error(err):
     """
     Turn a _CONNECTION_ERRORS exception into DbConnectionError's message
@@ -915,8 +946,8 @@ class WebApiDB(SQLite):
         # DbGeneric.load()'s signature, or the "callback" kwarg -- the same
         # plain percentage function cli/grampscli.py's _pulse_progress and
         # gui/dbloader.py's real progress-bar wiring already provide.
-        # Forwarded to _sync_from_server() so a slow initial catch-up (a
-        # new mirror, or one that's been offline a while) shows real
+        # Forwarded to _sync_from_server_async() so a slow initial catch-up
+        # (a new mirror, or one that's been offline a while) shows real
         # progress instead of Gramps just looking hung; _poll_tick()'s own
         # background-poll call deliberately leaves this at its None
         # default, since a 10-second background tick shouldn't pop a
@@ -924,6 +955,12 @@ class WebApiDB(SQLite):
         callback = kwargs.get("callback")
         if callback is None and len(args) >= 2:
             callback = args[1]
+        # Labels the already-visible progress bar dbloader.py shows for
+        # the duration of this call ("Syncing with Gramps Web API: NN%")
+        # instead of leaving it a bare percentage -- see
+        # _wrap_progress_callback()'s own docstring for why this is safe
+        # for callers (the CLI's) that don't accept a label at all.
+        callback = _wrap_progress_callback(callback, _("Syncing with Gramps Web API"))
         # mode is position 3 in DbGeneric.load()'s signature, defaulting to
         # DBMODE_W -- read the same two ways as callback above. A tree
         # opened read-only never pushes, so it needs no write permissions.

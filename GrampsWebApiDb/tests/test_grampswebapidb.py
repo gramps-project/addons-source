@@ -1939,6 +1939,57 @@ class TestMisc(unittest.TestCase):
 
 # -------------------------------------------------------------------------
 #
+# TestWrapProgressCallback
+#
+# gui/dbloader.py's uistate.pulse_progressbar(value, text=None) accepts a
+# label, turning load()'s already-visible progress bar into a real
+# "Syncing with Gramps Web API: NN%" indicator instead of a bare
+# percentage; cli/grampscli.py's own callback, _pulse_progress(value),
+# takes only the percentage and would raise TypeError if called with a
+# second argument. _wrap_progress_callback() picks the right shape per
+# callback rather than assuming one.
+#
+# -------------------------------------------------------------------------
+class TestWrapProgressCallback(unittest.TestCase):
+    def test_none_callback_stays_none(self):
+        self.assertIsNone(grampswebapidb._wrap_progress_callback(None, "text"))
+
+    def test_one_arg_callback_is_returned_unwrapped(self):
+        def one_arg_callback(value):
+            pass
+
+        wrapped = grampswebapidb._wrap_progress_callback(one_arg_callback, "text")
+        self.assertIs(wrapped, one_arg_callback)
+
+    def test_two_arg_callback_is_wrapped_with_the_label(self):
+        seen = []
+
+        def two_arg_callback(value, text=None):
+            seen.append((value, text))
+
+        wrapped = grampswebapidb._wrap_progress_callback(
+            two_arg_callback, "Syncing with Gramps Web API"
+        )
+        wrapped(42)
+        self.assertEqual(seen, [(42, "Syncing with Gramps Web API")])
+
+    def test_uninspectable_callback_falls_back_to_percent_only(self):
+        # Some callables (a bound method of a C extension type, ...)
+        # raise from inspect.signature() rather than reporting a shape --
+        # the safest default is the plain percent-only call every caller
+        # is guaranteed to accept.
+        with mock.patch.object(
+            grampswebapidb.inspect,
+            "signature",
+            side_effect=TypeError("not introspectable"),
+        ):
+            callback = mock.MagicMock()
+            wrapped = grampswebapidb._wrap_progress_callback(callback, "text")
+        self.assertIs(wrapped, callback)
+
+
+# -------------------------------------------------------------------------
+#
 # TestDescribeConnectionError
 #
 # _get_json()/_get_binary() re-raise a non-401/429 HTTPError as-is, which
@@ -2389,8 +2440,13 @@ class TestPolling(unittest.TestCase):
         ):
             self.db.load("some/path", my_callback, "w")
         sync.assert_called_once_with(
-            mock.ANY, mock.ANY, progress_callback=my_callback, verify_totals=True
+            mock.ANY, mock.ANY, progress_callback=mock.ANY, verify_totals=True
         )
+        # The callback load() actually forwards is wrapped (see
+        # _wrap_progress_callback()) to label the progress bar -- confirm
+        # it still ultimately calls through to my_callback.
+        sync.call_args.kwargs["progress_callback"](42)
+        my_callback.assert_called_once_with(42, "Syncing with Gramps Web API")
 
     def test_load_forwards_keyword_callback_to_sync(self):
         my_callback = mock.MagicMock()
@@ -2407,8 +2463,10 @@ class TestPolling(unittest.TestCase):
         ):
             self.db.load("some/path", callback=my_callback)
         sync.assert_called_once_with(
-            mock.ANY, mock.ANY, progress_callback=my_callback, verify_totals=True
+            mock.ANY, mock.ANY, progress_callback=mock.ANY, verify_totals=True
         )
+        sync.call_args.kwargs["progress_callback"](42)
+        my_callback.assert_called_once_with(42, "Syncing with Gramps Web API")
 
     def test_load_media_sync_failure_does_not_block_load(self):
         # Unlike a _sync_from_server() failure (which load() re-raises as
