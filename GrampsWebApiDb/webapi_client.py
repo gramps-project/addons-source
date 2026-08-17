@@ -839,6 +839,7 @@ class WebApiHandler:
         undo: bool = False,
         background: bool = False,
         on_wait=None,
+        message: str | None = None,
     ) -> None:
         """
         POST a batch of local changes to /transactions/ (no force=1): the
@@ -885,6 +886,22 @@ class WebApiHandler:
           {"error": {"message": ...}} body. Checked for the conflict
           sentinel here too, so it doesn't get misread as a transient
           server error and retried forever.
+
+        ``message``, if given, becomes the ``?message=`` query param --
+        the description gramps-web-api stores for this transaction in its
+        own history log (gramps_webapi/api/resources/transactions.py's
+        TransactionsQueryArgs). Left unset, the server defaults it to the
+        generic "Raw transaction", which is what every push from this
+        addon showed in the server's revision history before callers
+        started passing the local DbTxn's own description through (see
+        grampswebapidb.py's transaction_commit()) -- the same per-edit
+        message ("Add Person (Jane Doe)", "Edit Family", ...) Gramps
+        desktop's own editors already set on the DbTxn, and the same
+        convention gramps-web-api's own per-object PUT/POST endpoints use
+        (DbTxn(f"Edit {class_name}", ...) in
+        gramps_webapi/api/resources/base.py) -- so a push from this addon
+        shows up in the server's history the same way an edit made
+        directly in Gramps Web would.
         """
         if not payload:
             return
@@ -894,6 +911,8 @@ class WebApiHandler:
             params["undo"] = "1"
         if background:
             params["background"] = "1"
+        if message:
+            params["message"] = message
         url = f"{self.url}/transactions/"
         if params:
             url += "?" + urlencode(params)
@@ -921,6 +940,7 @@ class WebApiHandler:
                     undo=undo,
                     background=background,
                     on_wait=on_wait,
+                    message=message,
                 )
             if exc.code == 429 and retry:
                 sleep(RATE_LIMIT_BACKOFF)
@@ -930,6 +950,7 @@ class WebApiHandler:
                     undo=undo,
                     background=background,
                     on_wait=on_wait,
+                    message=message,
                 )
             # 400 is the synchronous conflict; 500 is the same conflict
             # re-wrapped by run_task() on the inline background path.
@@ -945,6 +966,7 @@ class WebApiHandler:
                     undo=undo,
                     background=background,
                     on_wait=on_wait,
+                    message=message,
                 )
             raise
         if status == 202:
