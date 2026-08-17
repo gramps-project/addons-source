@@ -145,6 +145,7 @@ from gramps.gen.user import User
 from gramps.plugins.importer.importxml import importData
 
 from GrampsWebApiDb.grampswebapidb import WebApiDB, WebApiPushConflict
+from GrampsWebApiDb.tests.fakes import InlineTaskRunner
 
 #: A minimal, valid Gramps XML document holding one person -- enough for
 #: a real ImportXml run. ImportXml strips a leading "_" off the XML
@@ -180,6 +181,8 @@ class TestReconcileBatchCommitAgainstARealDatabase(unittest.TestCase):
         # backend, without going through WebApiDB's network-dependent load().
         db.__class__ = WebApiDB
         db.web_client = mock.MagicMock()
+        db.runner = InlineTaskRunner()
+        db.io_runner = InlineTaskRunner()
         db._syncing = False
         db._retrying = False
         db._pulling = False

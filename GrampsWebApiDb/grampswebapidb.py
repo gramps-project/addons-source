@@ -488,6 +488,7 @@ from gramps.gen.utils.file import media_path_full
 from gramps.plugins.db.dbapi.sqlite import SQLite
 from gramps.plugins.importer.importxml import importData
 
+from taskrunner import GLibTaskRunner, IoRunner
 from webapi_client import WebApiHandler, WebApiPushConflict, parse_version
 
 try:
@@ -849,6 +850,13 @@ class WebApiDB(SQLite):
         except _CONNECTION_ERRORS as err:
             raise DbConnectionError(_describe_connection_error(err), directory) from err
         LOG.debug("client: mirroring %s", self.web_client.url)
+
+        # runner dispatches DB/GUI-touching steps on the main loop;
+        # io_runner runs pure network I/O on a worker thread. See
+        # taskrunner.py's module docstring for why -- this is what replaces
+        # the old _pump_main_loop()/_guarded_pump() reentrancy.
+        self.runner = GLibTaskRunner()
+        self.io_runner = IoRunner()
 
         # Local mirror: reuse SQLite's own _initialize for the on-disk
         # cache file, then sync from the server on load().
