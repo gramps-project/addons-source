@@ -345,11 +345,12 @@ class TestSyncFromServer(unittest.TestCase):
     def setUp(self):
         self.db = new_instance()
         self.db.web_client = mock.MagicMock()
-        # _sync_from_server() now emits change signals per page (see
-        # TestEmitChangeSignals for that logic in isolation) -- emit()
-        # itself needs Callback.__init__'s instance state, which
-        # new_instance()'s bare __new__() never runs, so it's stubbed here
-        # the same way commit_person/remove_person are stubbed elsewhere.
+        # _sync_from_server_async() now emits change signals per page
+        # (see TestEmitChangeSignals for that logic in isolation) --
+        # emit() itself needs Callback.__init__'s instance state, which
+        # new_instance()'s bare __new__() never runs, so it's stubbed
+        # here the same way commit_person/remove_person are stubbed
+        # elsewhere.
         self.db.emit = mock.MagicMock()
         self.metadata = {}
         self.db._get_metadata = lambda key, default=0: self.metadata.get(key, default)
@@ -364,51 +365,40 @@ class TestSyncFromServer(unittest.TestCase):
         # "changes": [] purely as pagination/timestamp filler, not to
         # exercise that fallback -- stub it out so those tests keep
         # testing what they always tested.
-        self.db._full_resync = mock.MagicMock()
+        self.db._full_resync_async = mock.MagicMock(side_effect=stub_async_done(None))
 
-    def test_syncing_flag_is_set_during_the_sync_and_cleared_after(self):
-        # What stops _pump_main_loop()'s re-entrant timeout ticks from
-        # starting a second sync underneath this one.
-        seen = []
-        self.db.web_client.get_transaction_history.side_effect = lambda **kwargs: (
-            seen.append(self.db._syncing),
-            ([], 0),
-        )[1]
-        self.db._sync_from_server()
-        self.assertEqual(seen, [True])
-        self.assertFalse(self.db._syncing)
+    def _sync(self, progress_callback=None, verify_totals=False):
+        """Drive _sync_from_server_async() to completion synchronously
+        (via InlineTaskRunner -- see new_instance()), returning what
+        on_done received or raising what on_error received -- the same
+        contract the old direct _sync_from_server() call had."""
+        result = {}
+        self.db._sync_from_server_async(
+            on_done=lambda applied: result.update(done=applied),
+            on_error=lambda exc: result.update(error=exc),
+            progress_callback=progress_callback,
+            verify_totals=verify_totals,
+        )
+        if "error" in result:
+            raise result["error"]
+        return result.get("done")
 
-    def test_syncing_flag_is_cleared_even_if_the_sync_raises(self):
+    def test_does_not_touch_syncing_itself(self):
+        # Caller (_start_push()/_poll_tick()/load()'s wait-adapter)
+        # already owns it -- see _sync_from_server_async()'s docstring.
+        self.db.web_client.get_transaction_history.return_value = ([], 0)
+        self.db._syncing = True
+        self._sync()
+        self.assertTrue(self.db._syncing)
+
+    def test_error_is_delivered_via_on_error_not_raised_directly(self):
+        # apply_page()/fetch() run as runner.run()/io_runner.run() steps,
+        # so an exception there is caught and dispatched to on_error --
+        # _sync() above re-raises it only so existing assertRaises-style
+        # tests keep working unchanged.
         self.db.web_client.get_transaction_history.side_effect = OSError("down")
         with self.assertRaises(OSError):
-            self.db._sync_from_server()
-        self.assertFalse(self.db._syncing)
-
-    def test_main_loop_is_pumped_between_pages(self):
-        # A catch-up of any size would otherwise hold the main loop for
-        # its whole duration -- long enough for the window manager to
-        # offer to force-quit Gramps.
-        full_page = [
-            {"timestamp": float(i), "changes": []}
-            for i in range(grampswebapidb.SYNC_PAGE_SIZE)
-        ]
-        short_page = [{"timestamp": 999.0, "changes": []}]
-        self.db.web_client.get_transaction_history.side_effect = [
-            (full_page, len(full_page) + 1),
-            (short_page, 1),
-        ]
-        with mock.patch.object(grampswebapidb, "_pump_main_loop") as pump:
-            self.db._sync_from_server()
-        # Once after each page, plus once on the way out.
-        self.assertEqual(pump.call_count, 3)
-
-    def test_main_loop_is_pumped_even_when_nothing_came_back(self):
-        # The routine poll: the loop breaks before its own pump, but the
-        # round trip that found nothing still blocked the main loop.
-        self.db.web_client.get_transaction_history.return_value = ([], 0)
-        with mock.patch.object(grampswebapidb, "_pump_main_loop") as pump:
-            self.db._sync_from_server()
-        self.assertEqual(pump.call_count, 1)
+            self._sync()
 
     def test_stops_after_short_page(self):
         change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
@@ -417,7 +407,7 @@ class TestSyncFromServer(unittest.TestCase):
             1,
         )
         with mock.patch.object(self.db, "_apply_change", return_value=True) as apply:
-            applied = self.db._sync_from_server()
+            applied = self._sync()
         self.assertEqual(applied, 1)
         apply.assert_called_once_with(change, mock.ANY)
         self.db.web_client.get_transaction_history.assert_called_once()
@@ -432,7 +422,7 @@ class TestSyncFromServer(unittest.TestCase):
             (full_page, len(full_page) + 1),
             (short_page, 1),
         ]
-        applied = self.db._sync_from_server()
+        applied = self._sync()
         self.assertEqual(applied, 0)
         self.assertEqual(self.db.web_client.get_transaction_history.call_count, 2)
         calls = self.db.web_client.get_transaction_history.call_args_list
@@ -442,7 +432,7 @@ class TestSyncFromServer(unittest.TestCase):
     def test_no_transactions_leaves_sync_time_unchanged(self):
         self.metadata["sync_last_time"] = 42.0
         self.db.web_client.get_transaction_history.return_value = ([], 0)
-        applied = self.db._sync_from_server()
+        applied = self._sync()
         self.assertEqual(applied, 0)
         self.assertEqual(self.metadata["sync_last_time"], 42.0)
 
@@ -453,7 +443,7 @@ class TestSyncFromServer(unittest.TestCase):
             {"timestamp": 20.0, "changes": []},
         ]
         self.db.web_client.get_transaction_history.return_value = (page, 3)
-        self.db._sync_from_server()
+        self._sync()
         self.assertEqual(self.metadata["sync_last_time"], 30.0)
 
     def test_unrecognized_changes_are_not_counted(self):
@@ -466,7 +456,7 @@ class TestSyncFromServer(unittest.TestCase):
             }
         ]
         self.db.web_client.get_transaction_history.return_value = (page, 1)
-        applied = self.db._sync_from_server()
+        applied = self._sync()
         self.assertEqual(applied, 0)
 
     def test_emits_a_signal_per_applied_change(self):
@@ -476,7 +466,7 @@ class TestSyncFromServer(unittest.TestCase):
             1,
         )
         with mock.patch.object(self.db, "_apply_change", return_value=True):
-            self.db._sync_from_server()
+            self._sync()
         self.db.emit.assert_called_once_with("person-add", (["H1"],))
 
     def test_repeated_changes_to_one_handle_collapse_to_the_last(self):
@@ -498,7 +488,7 @@ class TestSyncFromServer(unittest.TestCase):
         ]
         self.db.web_client.get_transaction_history.return_value = (page, 2)
         with mock.patch.object(self.db, "_apply_change", return_value=True):
-            self.db._sync_from_server()
+            self._sync()
         self.db.emit.assert_called_once_with("person-delete", (["H1"],))
 
     def test_unrecognized_changes_emit_no_signal(self):
@@ -511,7 +501,7 @@ class TestSyncFromServer(unittest.TestCase):
             }
         ]
         self.db.web_client.get_transaction_history.return_value = (page, 1)
-        self.db._sync_from_server()
+        self._sync()
         self.db.emit.assert_not_called()
 
     def test_no_progress_callback_by_default(self):
@@ -520,13 +510,13 @@ class TestSyncFromServer(unittest.TestCase):
         # trying to call None.
         page = [{"timestamp": 1.0, "changes": []}]
         self.db.web_client.get_transaction_history.return_value = (page, 1)
-        self.db._sync_from_server()  # must not raise
+        self._sync()  # must not raise
 
     def test_progress_reported_as_percent_of_total(self):
         page = [{"timestamp": 1.0, "changes": []}] * 25
         self.db.web_client.get_transaction_history.return_value = (page, 100)
         progress = mock.MagicMock()
-        self.db._sync_from_server(progress_callback=progress)
+        self._sync(progress_callback=progress)
         progress.assert_called_once_with(25)
 
     def test_progress_accumulates_and_caps_at_100_across_pages(self):
@@ -541,7 +531,7 @@ class TestSyncFromServer(unittest.TestCase):
             (short_page, total),
         ]
         progress = mock.MagicMock()
-        self.db._sync_from_server(progress_callback=progress)
+        self._sync(progress_callback=progress)
         self.assertEqual([call.args[0] for call in progress.call_args_list], [100, 100])
 
     def test_no_progress_call_when_total_is_zero(self):
@@ -551,15 +541,17 @@ class TestSyncFromServer(unittest.TestCase):
         page = [{"timestamp": 1.0, "changes": []}]
         self.db.web_client.get_transaction_history.return_value = (page, 0)
         progress = mock.MagicMock()
-        self.db._sync_from_server(progress_callback=progress)
+        self._sync(progress_callback=progress)
         progress.assert_not_called()
 
     def test_progress_callback_passed_through_to_full_resync(self):
         page = [{"timestamp": 1.0, "changes": []}]
         self.db.web_client.get_transaction_history.return_value = (page, 1)
         progress = mock.MagicMock()
-        self.db._sync_from_server(progress_callback=progress)
-        self.db._full_resync.assert_called_once_with(progress_callback=progress)
+        self._sync(progress_callback=progress)
+        self.db._full_resync_async.assert_called_once_with(
+            mock.ANY, mock.ANY, progress_callback=progress
+        )
 
     def test_pulling_flag_is_set_during_replay_and_cleared_after(self):
         # _pulling tells transaction_begin() this batch DbTxn is a
@@ -579,7 +571,7 @@ class TestSyncFromServer(unittest.TestCase):
             return True
 
         with mock.patch.object(self.db, "_apply_change", side_effect=check_flag):
-            self.db._sync_from_server()
+            self._sync()
         self.assertTrue(seen["during"])
         self.assertFalse(self.db._pulling)
 
@@ -593,7 +585,7 @@ class TestSyncFromServer(unittest.TestCase):
             self.db, "_apply_change", side_effect=RuntimeError("boom")
         ):
             with self.assertRaises(RuntimeError):
-                self.db._sync_from_server()
+                self._sync()
         self.assertFalse(self.db._pulling)
 
 
@@ -618,24 +610,39 @@ class TestFullResyncTrigger(unittest.TestCase):
         self.db._set_metadata = (
             lambda key, value, use_txn=True: self.metadata.__setitem__(key, value)
         )
-        self.db._full_resync = mock.MagicMock()
+        self.db._full_resync_async = mock.MagicMock(side_effect=stub_async_done(None))
         self.patcher = mock.patch.object(grampswebapidb, "DbTxn", FakeDbTxn)
         self.patcher.start()
         self.addCleanup(self.patcher.stop)
 
+    def _sync(self, progress_callback=None, verify_totals=False):
+        """See TestSyncFromServer._sync()."""
+        result = {}
+        self.db._sync_from_server_async(
+            on_done=lambda applied: result.update(done=applied),
+            on_error=lambda exc: result.update(error=exc),
+            progress_callback=progress_callback,
+            verify_totals=verify_totals,
+        )
+        if "error" in result:
+            raise result["error"]
+        return result.get("done")
+
     def test_empty_changes_transaction_triggers_full_resync(self):
         page = [{"timestamp": 1.0, "changes": []}]
         self.db.web_client.get_transaction_history.return_value = (page, 1)
-        self.db._sync_from_server()
-        self.db._full_resync.assert_called_once_with(progress_callback=None)
+        self._sync()
+        self.db._full_resync_async.assert_called_once_with(
+            mock.ANY, mock.ANY, progress_callback=None
+        )
 
     def test_normal_transactions_do_not_trigger_full_resync(self):
         change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
         page = [{"timestamp": 1.0, "changes": [change]}]
         self.db.web_client.get_transaction_history.return_value = (page, 1)
         with mock.patch.object(self.db, "_apply_change", return_value=True):
-            self.db._sync_from_server()
-        self.db._full_resync.assert_not_called()
+            self._sync()
+        self.db._full_resync_async.assert_not_called()
 
     def test_marker_alongside_real_changes_still_applies_the_real_ones(self):
         # A marker transaction doesn't block replaying whatever *is*
@@ -648,14 +655,16 @@ class TestFullResyncTrigger(unittest.TestCase):
         ]
         self.db.web_client.get_transaction_history.return_value = (page, 2)
         with mock.patch.object(self.db, "_apply_change", return_value=True):
-            applied = self.db._sync_from_server()
+            applied = self._sync()
         self.assertEqual(applied, 1)
-        self.db._full_resync.assert_called_once_with(progress_callback=None)
+        self.db._full_resync_async.assert_called_once_with(
+            mock.ANY, mock.ANY, progress_callback=None
+        )
 
     def test_marker_still_advances_sync_last_time(self):
         page = [{"timestamp": 42.0, "changes": []}]
         self.db.web_client.get_transaction_history.return_value = (page, 1)
-        self.db._sync_from_server()
+        self._sync()
         self.assertEqual(self.metadata["sync_last_time"], 42.0)
 
     def test_short_mirror_triggers_full_resync(self):
@@ -667,8 +676,10 @@ class TestFullResyncTrigger(unittest.TestCase):
         self.db.web_client.get_object_count.return_value = 26541
         with mock.patch.object(self.db, "get_total", return_value=1):
             with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
-                self.db._sync_from_server(verify_totals=True)
-        self.db._full_resync.assert_called_once_with(progress_callback=None)
+                self._sync(verify_totals=True)
+        self.db._full_resync_async.assert_called_once_with(
+            mock.ANY, mock.ANY, progress_callback=None
+        )
 
     def test_a_replayed_feed_that_still_falls_short_triggers_full_resync(self):
         # The case that made the empty-feed-only version of this check
@@ -681,17 +692,19 @@ class TestFullResyncTrigger(unittest.TestCase):
         with mock.patch.object(self.db, "_apply_change", return_value=True):
             with mock.patch.object(self.db, "get_total", return_value=1):
                 with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
-                    applied = self.db._sync_from_server(verify_totals=True)
+                    applied = self._sync(verify_totals=True)
         self.assertEqual(applied, 1)
         self.assertEqual(self.metadata["sync_last_time"], 1786645046.3)
-        self.db._full_resync.assert_called_once_with(progress_callback=None)
+        self.db._full_resync_async.assert_called_once_with(
+            mock.ANY, mock.ANY, progress_callback=None
+        )
 
     def test_matching_totals_do_not_trigger_full_resync(self):
         self.db.web_client.get_transaction_history.return_value = ([], 0)
         self.db.web_client.get_object_count.return_value = 26541
         with mock.patch.object(self.db, "get_total", return_value=26541):
-            self.db._sync_from_server(verify_totals=True)
-        self.db._full_resync.assert_not_called()
+            self._sync(verify_totals=True)
+        self.db._full_resync_async.assert_not_called()
 
     def test_a_larger_local_total_is_left_alone(self):
         # An extra local object is either about to be pushed or something
@@ -699,22 +712,23 @@ class TestFullResyncTrigger(unittest.TestCase):
         self.db.web_client.get_transaction_history.return_value = ([], 0)
         self.db.web_client.get_object_count.return_value = 10
         with mock.patch.object(self.db, "get_total", return_value=11):
-            self.db._sync_from_server(verify_totals=True)
-        self.db._full_resync.assert_not_called()
+            self._sync(verify_totals=True)
+        self.db._full_resync_async.assert_not_called()
 
     def test_queued_pushes_suppress_the_total_check(self):
         # Local edits the server hasn't accepted yet: the counts are
         # legitimately out of step, and a rebuild would fight with work
-        # still waiting to go the other way. _sync_from_server() drains
-        # the queue on the way in, so what's left here is what the flush
-        # couldn't place (a 429, a 5xx) -- hence the stubbed flush.
+        # still waiting to go the other way. _sync_from_server_async()
+        # drains the queue on the way in, so what's left here is what
+        # the flush couldn't place (a 429, a 5xx) -- hence the stubbed
+        # flush.
         self.metadata["pending_pushes"] = [{"payload": [], "undo": False}]
         self.db.web_client.get_transaction_history.return_value = ([], 0)
-        with mock.patch.object(self.db, "_flush_pending_pushes"), mock.patch.object(
-            self.db, "get_total", return_value=0
-        ) as get_total:
-            self.db._sync_from_server(verify_totals=True)
-        self.db._full_resync.assert_not_called()
+        with mock.patch.object(
+            self.db, "_flush_pending_pushes_async", side_effect=stub_async_done(None)
+        ), mock.patch.object(self.db, "get_total", return_value=0) as get_total:
+            self._sync(verify_totals=True)
+        self.db._full_resync_async.assert_not_called()
         get_total.assert_not_called()
         self.db.web_client.get_object_count.assert_not_called()
 
@@ -724,8 +738,8 @@ class TestFullResyncTrigger(unittest.TestCase):
         # request per tick to find that out.
         self.db.web_client.get_transaction_history.return_value = ([], 0)
         with mock.patch.object(self.db, "get_total", return_value=0) as get_total:
-            self.db._sync_from_server()
-        self.db._full_resync.assert_not_called()
+            self._sync()
+        self.db._full_resync_async.assert_not_called()
         get_total.assert_not_called()
         self.db.web_client.get_object_count.assert_not_called()
 
@@ -735,10 +749,10 @@ class TestFullResyncTrigger(unittest.TestCase):
         self.db.web_client.get_object_count.return_value = 1
         with mock.patch.object(self.db, "get_total", return_value=0):
             with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
-                self.db._sync_from_server(
-                    progress_callback=callback, verify_totals=True
-                )
-        self.db._full_resync.assert_called_once_with(progress_callback=callback)
+                self._sync(progress_callback=callback, verify_totals=True)
+        self.db._full_resync_async.assert_called_once_with(
+            mock.ANY, mock.ANY, progress_callback=callback
+        )
 
 
 # -------------------------------------------------------------------------
@@ -752,13 +766,29 @@ class TestFullResync(unittest.TestCase):
         self.db.web_client = mock.MagicMock()
         self.db.web_client.download_export.return_value = b"fake gramps xml bytes"
         self.db.emit = mock.MagicMock()  # see TestSyncFromServer.setUp's note
-        # _full_resync() reports the rebuilt total at DEBUG; there's no
-        # real dbapi connection behind these stubs to count.
+        # _full_resync_async() reports the rebuilt total at DEBUG; there's
+        # no real dbapi connection behind these stubs to count.
         self.db.get_total = mock.MagicMock(return_value=0)
         self.db._set_metadata = mock.MagicMock()
+        self.db._run_id = 0
         self.patcher = mock.patch.object(grampswebapidb, "DbTxn", FakeDbTxn)
         self.patcher.start()
         self.addCleanup(self.patcher.stop)
+
+    def _resync(self, progress_callback=None):
+        """Drive _full_resync_async() to completion synchronously (via
+        InlineTaskRunner -- see new_instance()), the way these
+        unit-level tests want the old direct _full_resync() call to
+        behave: raises whatever on_error received."""
+        result = {}
+        self.db._full_resync_async(
+            on_done=lambda value: result.update(done=value),
+            on_error=lambda exc: result.update(error=exc),
+            progress_callback=progress_callback,
+        )
+        if "error" in result:
+            raise result["error"]
+        return result.get("done")
 
     def test_downloads_export_wipes_and_reimports(self):
         # get_<name>_handles/remove_<name> for every primary type, plus
@@ -781,11 +811,11 @@ class TestFullResync(unittest.TestCase):
                 self.assertEqual(f.read(), b"fake gramps xml bytes")
 
         with mock.patch.object(grampswebapidb, "importData", fake_import_data):
-            self.db._full_resync()
+            self._resync()
 
-        self.db.web_client.download_export.assert_called_once_with(
-            on_chunk=self.db._guarded_pump
-        )
+        # No on_chunk anymore -- nothing to pump for once this runs on a
+        # worker thread. See _full_resync_async()'s own docstring.
+        self.db.web_client.download_export.assert_called_once_with()
         for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
             if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
                 continue
@@ -800,10 +830,10 @@ class TestFullResync(unittest.TestCase):
         self.assertIn("family-rebuild", emitted)
 
     def test_failed_import_does_not_trigger_rebuild(self):
-        # request_rebuild() sits after importData() in _full_resync(), not
-        # in a finally -- a reimport that raised partway through left the
-        # mirror in an unknown state, which is not something to tell every
-        # view "reload, this is now correct" about.
+        # request_rebuild() sits after importData() in rebuild(), not in
+        # a finally -- a reimport that raised partway through left the
+        # mirror in an unknown state, which is not something to tell
+        # every view "reload, this is now correct" about.
         for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
             if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
                 continue
@@ -815,7 +845,7 @@ class TestFullResync(unittest.TestCase):
 
         with mock.patch.object(grampswebapidb, "importData", failing_import_data):
             with self.assertRaises(RuntimeError):
-                self.db._full_resync()
+                self._resync()
 
         self.db.emit.assert_not_called()
 
@@ -838,7 +868,7 @@ class TestFullResync(unittest.TestCase):
             seen["during_import"] = self.db._pulling
 
         with mock.patch.object(grampswebapidb, "importData", check_flag):
-            self.db._full_resync()
+            self._resync()
         self.assertTrue(seen["during_import"])
         self.assertFalse(self.db._pulling)
 
@@ -854,7 +884,7 @@ class TestFullResync(unittest.TestCase):
 
         with mock.patch.object(grampswebapidb, "importData", failing_import_data):
             with self.assertRaises(RuntimeError):
-                self.db._full_resync()
+                self._resync()
         self.assertFalse(self.db._pulling)
 
     def test_no_progress_callback_by_default(self):
@@ -864,7 +894,7 @@ class TestFullResync(unittest.TestCase):
             setattr(self.db, f"get_{name}_handles", mock.MagicMock(return_value=[]))
             setattr(self.db, f"remove_{name}", mock.MagicMock())
         with mock.patch.object(grampswebapidb, "importData"):
-            self.db._full_resync()  # must not raise
+            self._resync()  # must not raise
 
     def test_progress_bookends_the_download_and_reimport(self):
         for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
@@ -874,7 +904,7 @@ class TestFullResync(unittest.TestCase):
             setattr(self.db, f"remove_{name}", mock.MagicMock())
         progress = mock.MagicMock()
         with mock.patch.object(grampswebapidb, "importData"):
-            self.db._full_resync(progress_callback=progress)
+            self._resync(progress_callback=progress)
         self.assertEqual([call.args[0] for call in progress.call_args_list], [0, 100])
 
     def test_progress_not_completed_if_import_fails(self):
@@ -892,19 +922,19 @@ class TestFullResync(unittest.TestCase):
         progress = mock.MagicMock()
         with mock.patch.object(grampswebapidb, "importData", failing_import_data):
             with self.assertRaises(RuntimeError):
-                self.db._full_resync(progress_callback=progress)
+                self._resync(progress_callback=progress)
         progress.assert_called_once_with(0)
 
     def test_advances_sync_last_time_past_the_stuck_cursor(self):
-        # A totals-shortfall rebuild (_mirror_is_short_of_the_server()) can
-        # be triggered by a history feed whose very first page came back
-        # empty, which leaves sync_last_time at whatever it started as (0
-        # for a brand new mirror) instead of anywhere near "now". Left
-        # alone, _push_payload()'s "resync from the server, then retry"
-        # conflict recovery reuses that same stuck cursor and so can never
-        # actually pick up what changed -- see the module's _full_resync()
-        # docstring. Confirm the rebuild now leaves a fresh, roughly-"now"
-        # cursor behind instead.
+        # A totals-shortfall rebuild (_mirror_is_short_of_the_server_async())
+        # can be triggered by a history feed whose very first page came
+        # back empty, which leaves sync_last_time at whatever it started
+        # as (0 for a brand new mirror) instead of anywhere near "now".
+        # Left alone, a push conflict's own "resync from the server, then
+        # retry" recovery reuses that same stuck cursor and so can never
+        # actually pick up what changed -- see the module's
+        # _full_resync_async() docstring. Confirm the rebuild now leaves
+        # a fresh, roughly-"now" cursor behind instead.
         for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
             if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
                 continue
@@ -912,7 +942,7 @@ class TestFullResync(unittest.TestCase):
             setattr(self.db, f"remove_{name}", mock.MagicMock())
         before = time.time()
         with mock.patch.object(grampswebapidb, "importData"):
-            self.db._full_resync()
+            self._resync()
         after = time.time()
         self.db._set_metadata.assert_called_once_with("sync_last_time", mock.ANY)
         cutoff = self.db._set_metadata.call_args.args[1]
@@ -936,7 +966,47 @@ class TestFullResync(unittest.TestCase):
 
         with mock.patch.object(grampswebapidb, "importData", failing_import_data):
             with self.assertRaises(RuntimeError):
-                self.db._full_resync()
+                self._resync()
+        self.db._set_metadata.assert_not_called()
+
+    def test_tree_closed_between_download_and_rebuild_cleans_up_and_skips_dbapi(self):
+        # The narrow window this addon must not crash in: the export
+        # finished downloading, but close() ran before rebuild() actually
+        # started -- self.dbapi may already be gone. rebuild() must
+        # clean up the temp file (nothing else will) without touching it.
+        for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
+            if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
+                continue
+            setattr(
+                self.db,
+                f"get_{name}_handles",
+                mock.MagicMock(
+                    side_effect=AssertionError(
+                        f"get_{name}_handles() touched self.dbapi after close()"
+                    )
+                ),
+            )
+
+        def close_mid_download():
+            self.db._run_id += 1
+            return b"fake gramps xml bytes"
+
+        self.db.web_client.download_export.side_effect = close_mid_download
+        captured_path = {}
+
+        real_named_temp_file = grampswebapidb.NamedTemporaryFile
+
+        def capture_temp_file(*args, **kwargs):
+            tmp = real_named_temp_file(*args, **kwargs)
+            captured_path["path"] = tmp.name
+            return tmp
+
+        with mock.patch.object(
+            grampswebapidb, "NamedTemporaryFile", capture_temp_file
+        ), mock.patch.object(grampswebapidb, "importData") as import_data:
+            self._resync()
+        import_data.assert_not_called()
+        self.assertFalse(os.path.exists(captured_path["path"]))
         self.db._set_metadata.assert_not_called()
 
 
@@ -1098,6 +1168,16 @@ class TestTransactionCommit(unittest.TestCase):
             self.db,
             "_retry_after_conflict",
             side_effect=OSError("network down"),
+        ), mock.patch.object(
+            # This test is about the queueing itself, not
+            # _finish_async_op()'s separately-tested "flush once on
+            # chain completion" behavior -- left un-stubbed, the queued
+            # entry would immediately be re-flushed against the same
+            # ever-conflicting mock and dropped rather than surviving to
+            # the assertion below.
+            self.db,
+            "_flush_pending_pushes_async",
+            side_effect=stub_async_done(None),
         ):
             with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
                 self.db.transaction_commit(trans)  # must not raise
@@ -2048,7 +2128,7 @@ class TestCheckPermissions(unittest.TestCase):
         ), mock.patch.object(self.db, "_check_permissions") as check, mock.patch.object(
             self.db, "_check_server_version"
         ), mock.patch.object(
-            self.db, "_sync_from_server"
+            self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ), mock.patch.object(
             self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
         ), mock.patch.object(
@@ -2065,7 +2145,7 @@ class TestCheckPermissions(unittest.TestCase):
         ), mock.patch.object(self.db, "_check_permissions") as check, mock.patch.object(
             self.db, "_check_server_version"
         ), mock.patch.object(
-            self.db, "_sync_from_server"
+            self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ), mock.patch.object(
             self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
         ), mock.patch.object(
@@ -2080,7 +2160,7 @@ class TestCheckPermissions(unittest.TestCase):
         ), mock.patch.object(self.db, "_check_permissions") as check, mock.patch.object(
             self.db, "_check_server_version"
         ), mock.patch.object(
-            self.db, "_sync_from_server"
+            self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ), mock.patch.object(
             self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
         ), mock.patch.object(
@@ -2239,6 +2319,19 @@ class TestIsRetryablePushError(unittest.TestCase):
 class TestPolling(unittest.TestCase):
     def setUp(self):
         self.db = new_instance()
+        # _reschedule_poll() removes the previous timer explicitly (see
+        # its own docstring) -- a real placeholder id so that call has
+        # something to pass to GLib.source_remove() in tests that don't
+        # mock it away themselves.
+        self.db._poll_source_id = 1
+        # _finish_async_op() (wrapping _poll_tick()'s/_media_poll_tick()'s
+        # on_done/on_error) checks the pending-push queue on the way out
+        # -- see its own docstring -- which touches _get_metadata().
+        self.metadata = {}
+        self.db._get_metadata = lambda key, default=0: self.metadata.get(key, default)
+        self.db._set_metadata = (
+            lambda key, value, use_txn=True: self.metadata.__setitem__(key, value)
+        )
 
     def test_load_syncs_and_schedules_polling(self):
         with mock.patch.object(
@@ -2250,7 +2343,7 @@ class TestPolling(unittest.TestCase):
         ), mock.patch.object(
             self.db, "_check_server_version"
         ), mock.patch.object(
-            self.db, "_sync_from_server"
+            self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ) as sync, mock.patch.object(
             self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
         ) as sync_media, mock.patch.object(
@@ -2259,9 +2352,11 @@ class TestPolling(unittest.TestCase):
             self.db.load("some/path")
         super_load.assert_called_once_with("some/path")
         check_identity.assert_called_once_with()
-        sync.assert_called_once_with(progress_callback=None, verify_totals=True)
         # Called with on_done/on_error closures now, not no-args -- see
         # _run_async_to_completion().
+        sync.assert_called_once_with(
+            mock.ANY, mock.ANY, progress_callback=None, verify_totals=True
+        )
         self.assertEqual(sync_media.call_count, 1)
         timeout_add.assert_has_calls(
             [
@@ -2286,14 +2381,16 @@ class TestPolling(unittest.TestCase):
         ), mock.patch.object(self.db, "_check_permissions"), mock.patch.object(
             self.db, "_check_server_version"
         ), mock.patch.object(
-            self.db, "_sync_from_server"
+            self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ) as sync, mock.patch.object(
             self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
         ), mock.patch.object(
             grampswebapidb.GLib, "timeout_add_seconds"
         ):
             self.db.load("some/path", my_callback, "w")
-        sync.assert_called_once_with(progress_callback=my_callback, verify_totals=True)
+        sync.assert_called_once_with(
+            mock.ANY, mock.ANY, progress_callback=my_callback, verify_totals=True
+        )
 
     def test_load_forwards_keyword_callback_to_sync(self):
         my_callback = mock.MagicMock()
@@ -2302,14 +2399,16 @@ class TestPolling(unittest.TestCase):
         ), mock.patch.object(self.db, "_check_permissions"), mock.patch.object(
             self.db, "_check_server_version"
         ), mock.patch.object(
-            self.db, "_sync_from_server"
+            self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ) as sync, mock.patch.object(
             self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
         ), mock.patch.object(
             grampswebapidb.GLib, "timeout_add_seconds"
         ):
             self.db.load("some/path", callback=my_callback)
-        sync.assert_called_once_with(progress_callback=my_callback, verify_totals=True)
+        sync.assert_called_once_with(
+            mock.ANY, mock.ANY, progress_callback=my_callback, verify_totals=True
+        )
 
     def test_load_media_sync_failure_does_not_block_load(self):
         # Unlike a _sync_from_server() failure (which load() re-raises as
@@ -2321,7 +2420,7 @@ class TestPolling(unittest.TestCase):
         ), mock.patch.object(self.db, "_check_permissions"), mock.patch.object(
             self.db, "_check_server_version"
         ), mock.patch.object(
-            self.db, "_sync_from_server"
+            self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ), mock.patch.object(
             self.db,
             "_sync_media_files_async",
@@ -2347,7 +2446,7 @@ class TestPolling(unittest.TestCase):
         ), mock.patch.object(self.db, "_check_permissions"), mock.patch.object(
             self.db, "_check_server_version"
         ), mock.patch.object(
-            self.db, "_sync_from_server"
+            self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ), mock.patch.object(
             self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
         ), mock.patch.object(
@@ -2377,6 +2476,7 @@ class TestPolling(unittest.TestCase):
     def test_close_without_a_poll_scheduled_is_a_no_op(self):
         # e.g. close() called after a failed load(), before the timeouts
         # were ever scheduled.
+        del self.db._poll_source_id  # undo setUp()'s placeholder
         starting_run_id = self.db._run_id
         with mock.patch.object(
             grampswebapidb.SQLite, "close"
@@ -2406,16 +2506,19 @@ class TestPolling(unittest.TestCase):
         self.assertFalse(self.db._retrying)
 
     def test_poll_tick_syncs_and_keeps_repeating(self):
-        with mock.patch.object(self.db, "_sync_from_server") as sync:
+        with mock.patch.object(
+            self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
+        ) as sync:
             result = self.db._poll_tick()
-        sync.assert_called_once_with()
+        self.assertEqual(sync.call_count, 1)
         self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
+        # on_done fired synchronously (InlineTaskRunner via the mock's own
+        # stub_async_done), so the flag this tick claimed is released.
+        self.assertFalse(self.db._syncing)
 
     def test_poll_tick_does_not_start_a_sync_underneath_a_running_one(self):
-        # _pump_main_loop() hands the main loop back part-way through a
-        # sync, which is when this timeout can fire re-entrantly.
         self.db._syncing = True
-        with mock.patch.object(self.db, "_sync_from_server") as sync:
+        with mock.patch.object(self.db, "_sync_from_server_async") as sync:
             result = self.db._poll_tick()
         sync.assert_not_called()
         self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
@@ -2428,18 +2531,26 @@ class TestPolling(unittest.TestCase):
         self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
 
     def test_poll_tick_swallows_connection_errors_and_keeps_polling(self):
-        # The failing tick reschedules itself at a longer interval, so it
-        # reports SOURCE_REMOVE for the *old* source while the replacement
-        # keeps the poll alive.
+        # Unlike the old synchronous version, _poll_tick() itself always
+        # returns GLib.SOURCE_CONTINUE immediately -- the backoff
+        # reschedule (a new, longer-interval timer replacing the current
+        # one) happens later, from _on_poll_error(), via
+        # _reschedule_poll()'s own explicit GLib.source_remove() +
+        # GLib.timeout_add_seconds() pair.
         self.db._poll_interval = grampswebapidb.POLL_INTERVAL_SECONDS
         with mock.patch.object(
-            self.db, "_sync_from_server", side_effect=OSError("network down")
+            self.db,
+            "_sync_from_server_async",
+            side_effect=stub_async_error(OSError("network down")),
         ), mock.patch.object(
             grampswebapidb.GLib, "timeout_add_seconds", return_value=99
-        ) as timeout_add:
+        ) as timeout_add, mock.patch.object(
+            grampswebapidb.GLib, "source_remove"
+        ) as source_remove:
             with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
                 result = self.db._poll_tick()
-        self.assertEqual(result, grampswebapidb.GLib.SOURCE_REMOVE)
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
+        source_remove.assert_called_once_with(1)  # setUp()'s placeholder id
         timeout_add.assert_called_once_with(
             grampswebapidb.POLL_INTERVAL_SECONDS * 2, self.db._poll_tick
         )
@@ -2453,8 +2564,14 @@ class TestPolling(unittest.TestCase):
         # A server that stays down must not log a warning (let alone a
         # traceback) on every tick for the whole outage.
         with mock.patch.object(
-            self.db, "_sync_from_server", side_effect=OSError("network down")
-        ), mock.patch.object(grampswebapidb.GLib, "timeout_add_seconds"):
+            self.db,
+            "_sync_from_server_async",
+            side_effect=stub_async_error(OSError("network down")),
+        ), mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds"
+        ), mock.patch.object(
+            grampswebapidb.GLib, "source_remove"
+        ):
             with self.assertLogs(grampswebapidb.LOG, level="DEBUG") as logs:
                 for _unused in range(5):
                     self.db._poll_tick()
@@ -2464,16 +2581,20 @@ class TestPolling(unittest.TestCase):
 
     def test_poll_tick_backs_off_to_the_cap_and_stops_rescheduling(self):
         with mock.patch.object(
-            self.db, "_sync_from_server", side_effect=OSError("network down")
-        ), mock.patch.object(grampswebapidb.GLib, "timeout_add_seconds") as timeout_add:
+            self.db,
+            "_sync_from_server_async",
+            side_effect=stub_async_error(OSError("network down")),
+        ), mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds"
+        ) as timeout_add, mock.patch.object(
+            grampswebapidb.GLib, "source_remove"
+        ):
             with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
                 for _unused in range(20):
                     result = self.db._poll_tick()
         self.assertEqual(
             self.db._poll_interval, grampswebapidb.POLL_BACKOFF_MAX_SECONDS
         )
-        # Every reschedule doubles the interval, so once the cap is
-        # reached the timer is left alone rather than churned each tick.
         self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
         intervals = [call.args[0] for call in timeout_add.call_args_list]
         self.assertEqual(intervals, sorted(intervals))
@@ -2482,12 +2603,17 @@ class TestPolling(unittest.TestCase):
     def test_poll_tick_restores_the_normal_interval_after_recovery(self):
         self.db._poll_failures = 3
         self.db._poll_interval = grampswebapidb.POLL_BACKOFF_MAX_SECONDS
-        with mock.patch.object(self.db, "_sync_from_server"), mock.patch.object(
+        with mock.patch.object(
+            self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
+        ), mock.patch.object(
             grampswebapidb.GLib, "timeout_add_seconds", return_value=7
-        ) as timeout_add:
+        ) as timeout_add, mock.patch.object(
+            grampswebapidb.GLib, "source_remove"
+        ) as source_remove:
             with self.assertLogs(grampswebapidb.LOG, level="INFO"):
                 result = self.db._poll_tick()
-        self.assertEqual(result, grampswebapidb.GLib.SOURCE_REMOVE)
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
+        source_remove.assert_called_once_with(1)  # setUp()'s placeholder id
         timeout_add.assert_called_once_with(
             grampswebapidb.POLL_INTERVAL_SECONDS, self.db._poll_tick
         )
@@ -2541,17 +2667,32 @@ class TestPolling(unittest.TestCase):
         self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
         self.assertEqual(self.db._media_poll_failures, 0)
 
-    def test_poll_tick_stops_quietly_when_the_tree_closed_mid_sync(self):
-        # The user switching (or closing) this Family Tree while
-        # _guarded_pump() had handed the main loop back mid-sync -- see
-        # TestGuardedPump. Not a failure: no WARNING, and the timer must
-        # not reschedule itself (close() already removed its GLib source).
-        with mock.patch.object(
-            self.db, "_sync_from_server", side_effect=grampswebapidb._DatabaseClosed
-        ):
-            result = self.db._poll_tick()
-        self.assertEqual(result, grampswebapidb.GLib.SOURCE_REMOVE)
+    def test_poll_tick_drops_a_result_delivered_after_close(self):
+        # Unlike the old pump-based mechanism (see TestGuardedPump),
+        # nothing in this chain pumps the main loop anymore, so nothing
+        # raises _DatabaseClosed here -- self._guarded() (wrapping
+        # _sync_from_server_async()'s internal callbacks) drops the
+        # result instead. close() already removes this timer's GLib
+        # source directly (test_close_cancels_pending_poll); what this
+        # covers is that a sync already in flight when close() runs
+        # must not touch _poll_failures/_syncing for a tree it no
+        # longer owns once its result comes back. Exercises the real
+        # chain (not a mocked _sync_from_server_async) since
+        # self._guarded() lives inside it.
+        self.db.web_client = mock.MagicMock()
+
+        def close_mid_fetch(**kwargs):
+            self.db._run_id += 1
+            return ([], 0)
+
+        self.db.web_client.get_transaction_history.side_effect = close_mid_fetch
+        result = self.db._poll_tick()
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
         self.assertEqual(self.db._poll_failures, 0)
+        # Dropped, not delivered: _on_poll_success() never ran, so
+        # _syncing (only cleared there) is still True -- close() resets
+        # it directly instead (see TestClose).
+        self.assertTrue(self.db._syncing)
 
     def test_media_poll_tick_drops_a_result_delivered_after_close(self):
         # Unlike _poll_tick(), _media_poll_tick() no longer needs to
@@ -3148,6 +3289,15 @@ class TestPendingPushQueue(unittest.TestCase):
             is_retry=is_retry,
         )
 
+    def _flush(self):
+        """Drive _flush_pending_pushes_async() to completion
+        synchronously (via InlineTaskRunner), the way these unit-level
+        tests want the old direct _flush_pending_pushes() call to
+        behave."""
+        self.db._flush_pending_pushes_async(
+            on_done=lambda _: None, on_error=lambda _: None
+        )
+
     def test_connection_failure_queues_the_payload(self):
         self.db.web_client.push_transaction.side_effect = HTTPError(
             "https://example.com/api/transactions/", 500, "boom", None, None
@@ -3188,7 +3338,7 @@ class TestPendingPushQueue(unittest.TestCase):
             {"payload": self._payload("H2"), "undo": False},
         ]
         with self.assertLogs(grampswebapidb.LOG, level="INFO"):
-            self.db._flush_pending_pushes()
+            self._flush()
         sent = [
             c[0][0][0]["handle"]
             for c in self.db.web_client.push_transaction.call_args_list
@@ -3206,7 +3356,7 @@ class TestPendingPushQueue(unittest.TestCase):
         ]
         self.db.web_client.push_transaction.side_effect = OSError("still down")
         with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
-            self.db._flush_pending_pushes()
+            self._flush()
         self.assertEqual(self.db.web_client.push_transaction.call_count, 1)
         self.assertEqual(len(self.metadata["pending_pushes"]), 2)
 
@@ -3223,13 +3373,13 @@ class TestPendingPushQueue(unittest.TestCase):
             None,
         ]
         with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
-            self.db._flush_pending_pushes()
+            self._flush()
         # The conflicting entry is dropped, but the one behind it still goes.
         self.assertEqual(self.db.web_client.push_transaction.call_count, 2)
         self.assertEqual(self.metadata["pending_pushes"], [])
 
     def test_empty_queue_makes_no_requests(self):
-        self.db._flush_pending_pushes()
+        self._flush()
         self.db.web_client.push_transaction.assert_not_called()
 
     def test_queue_is_capped_dropping_the_oldest(self):
@@ -3278,7 +3428,7 @@ class TestPendingPushQueue(unittest.TestCase):
             None,
         ]
         with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
-            self.db._flush_pending_pushes()
+            self._flush()
         # The rejected entry is dropped rather than blocking the queue
         # forever -- permissions may have changed since it was queued.
         self.assertEqual(self.db.web_client.push_transaction.call_count, 2)
@@ -3288,9 +3438,13 @@ class TestPendingPushQueue(unittest.TestCase):
         # The queue is retried on every poll tick, not just at load().
         self.db.emit = mock.MagicMock()
         self.db.web_client.get_transaction_history.return_value = ([], 0)
-        with mock.patch.object(self.db, "_flush_pending_pushes") as flush:
-            self.db._sync_from_server()
-        flush.assert_called_once_with()
+        with mock.patch.object(
+            self.db, "_flush_pending_pushes_async", side_effect=stub_async_done(None)
+        ) as flush:
+            self.db._sync_from_server_async(
+                on_done=lambda _: None, on_error=lambda _: None
+            )
+        self.assertEqual(flush.call_count, 1)
 
 
 if __name__ == "__main__":
