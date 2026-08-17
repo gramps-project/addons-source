@@ -45,7 +45,7 @@ persistence otherwise stays a manual step.
 creates (but does not open) a new, empty Family Tree using the
 "grampswebapidb" DATABASE plugin, named "<username>@<host>" for whoever
 the key authenticates as -- the exact name grampswebapidb.py's
-_check_identity() requires, via the same CLIDbManager.create_new_db_cli()
+_check_identity_async() requires, via the same CLIDbManager.create_new_db_cli()
 Gramps' own Family Tree Manager uses for its "New" button, just with an
 explicit dbid instead of the configured default backend. See README.md's
 "Family Tree naming" section for why that name is required.
@@ -94,10 +94,10 @@ _ = _trans.gettext
 #: in the status label rather than acted on.
 _MINT_ERRORS = (ValueError, HTTPError, URLError, OSError)
 
-#: Same substitution grampswebapidb.py's _check_identity() applies to a
+#: Same substitution grampswebapidb.py's _check_identity_async() applies to a
 #: Family Tree's own name before comparing it against the server identity
 #: -- keep in sync if that changes. Applied here too so a tree created by
-#: this button already has the name _check_identity() will accept.
+#: this button already has the name _check_identity_async() will accept.
 _FAMILY_TREE_NAME_UNSAFE_CHARS = re.compile(r"[':<>|,;=\"\[\]\.\+\*\/\?\\]")
 
 #: The DATABASE plugin id grampswebapidb.gpr.py registers WebApiDB under.
@@ -256,21 +256,20 @@ class MintApiKeyTool(tool.Tool, ManagedWindow):
         """
         if isinstance(exc, HTTPError):
             if exc.code in (401, 403):
-                return _(
-                    "Login failed (HTTP %d): check your username and password."
-                ) % exc.code
-            return _(
-                "Server returned an error (HTTP %d %s): check the Server URL."
-            ) % (exc.code, exc.reason)
+                return (
+                    _("Login failed (HTTP %d): check your username and password.")
+                    % exc.code
+                )
+            return _("Server returned an error (HTTP %d %s): check the Server URL.") % (
+                exc.code,
+                exc.reason,
+            )
         if isinstance(exc, OSError):
             # Covers URLError (DNS failure, connection refused, ...) and
             # socket.timeout, both OSError subclasses -- the server at
             # that URL could not be reached at all.
             reason = getattr(exc, "reason", exc)
-            return (
-                _("Could not reach the server: check the Server URL. (%s)")
-                % reason
-            )
+            return _("Could not reach the server: check the Server URL. (%s)") % reason
         return _("Unexpected response from the server: %s") % exc
 
     def _mint_failed(self, message):

@@ -379,7 +379,7 @@ class TestAccessTokenProperty(unittest.TestCase):
 # TestIdentity
 #
 # hostname/get_current_username()/get_identity() resolve who and where a
-# credential authenticates as -- grampswebapidb.py's _check_identity() uses
+# credential authenticates as -- grampswebapidb.py's _check_identity_async() uses
 # get_identity() to bind a local mirror to one particular server account
 # (see that module's docstring).
 #
