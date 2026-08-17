@@ -161,6 +161,18 @@ def stub_async_error(exc):
     return stub
 
 
+def run_check(db, method_name, **kwargs):
+    """Drive one of the _check_..._async() methods to completion via the
+    same _run_async_to_completion() production code load() itself uses --
+    with InlineTaskRunner wired into new_instance(), the chain resolves
+    synchronously, so this needs no real main loop. Returns on_done's
+    value, or raises whatever on_error received."""
+    method = getattr(db, method_name)
+    return db._run_async_to_completion(
+        lambda on_done, on_error: method(on_done, on_error, **kwargs)
+    )
+
+
 # -------------------------------------------------------------------------
 #
 # TestTransactionToJson
@@ -924,6 +936,56 @@ class TestFullResync(unittest.TestCase):
             with self.assertRaises(RuntimeError):
                 self._resync(progress_callback=progress)
         progress.assert_called_once_with(0)
+
+    def test_uses_import_progress_user_when_progress_callback_given(self):
+        # Real progress during the reimport comes from importData()'s own
+        # internal reporting, forwarded via _import_progress_user() --
+        # see TestImportProgressUser for that function's own behavior.
+        for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
+            if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
+                continue
+            setattr(self.db, f"get_{name}_handles", mock.MagicMock(return_value=[]))
+            setattr(self.db, f"remove_{name}", mock.MagicMock())
+        progress = mock.MagicMock()
+        captured = {}
+
+        def fake_import_data(database, filename, user):
+            captured["user"] = user
+
+        with mock.patch.object(
+            grampswebapidb, "importData", fake_import_data
+        ), mock.patch.object(
+            grampswebapidb,
+            "_import_progress_user",
+            return_value=mock.sentinel.import_user,
+        ) as import_progress_user:
+            self._resync(progress_callback=progress)
+        import_progress_user.assert_called_once_with(progress)
+        self.assertIs(captured["user"], mock.sentinel.import_user)
+
+    def test_uses_the_plain_inert_user_when_no_progress_callback(self):
+        # A conflict-triggered background resync passes no
+        # progress_callback -- must not attempt to build a GUI User at
+        # all (see _import_progress_user()'s own docstring on why that
+        # matters: it's the thing that would pull in Gtk).
+        for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
+            if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
+                continue
+            setattr(self.db, f"get_{name}_handles", mock.MagicMock(return_value=[]))
+            setattr(self.db, f"remove_{name}", mock.MagicMock())
+        captured = {}
+
+        def fake_import_data(database, filename, user):
+            captured["user"] = user
+
+        with mock.patch.object(
+            grampswebapidb, "importData", fake_import_data
+        ), mock.patch.object(
+            grampswebapidb, "_import_progress_user"
+        ) as import_progress_user:
+            self._resync()  # progress_callback defaults to None
+        import_progress_user.assert_not_called()
+        self.assertIsInstance(captured["user"], grampswebapidb.User)
 
     def test_advances_sync_last_time_past_the_stuck_cursor(self):
         # A totals-shortfall rebuild (_mirror_is_short_of_the_server_async())
@@ -1990,6 +2052,50 @@ class TestWrapProgressCallback(unittest.TestCase):
 
 # -------------------------------------------------------------------------
 #
+# TestImportProgressUser
+#
+# _full_resync_async()'s reimport needs a User whose callback actually
+# reaches importData()'s internal progress reporting -- gen.user.User
+# hardcodes its own no-op callback, discarding whatever is passed to it.
+# gui.user.User does not, and is exactly what Gramps' own GUI import uses
+# (gui/dbloader.py's DbLoader.do_import()) -- confirmed by direct testing
+# against a large export to report real progress without hanging or
+# crashing Gramps. See _import_progress_user()'s own docstring.
+#
+# -------------------------------------------------------------------------
+class TestImportProgressUser(unittest.TestCase):
+    def test_uses_gui_user_with_a_display(self):
+        callback = mock.MagicMock()
+        with mock.patch.object(
+            grampswebapidb, "has_display", return_value=True
+        ), mock.patch("gramps.gui.user.User") as gui_user_cls:
+            user = grampswebapidb._import_progress_user(callback)
+        gui_user_cls.assert_called_once_with(callback=callback)
+        self.assertIs(user, gui_user_cls.return_value)
+
+    def test_falls_back_to_the_inert_user_without_a_display(self):
+        # CLI use: no Gtk to build a gui.user.User with in the first
+        # place, and nothing to paint progress on anyway.
+        callback = mock.MagicMock()
+        with mock.patch.object(grampswebapidb, "has_display", return_value=False):
+            user = grampswebapidb._import_progress_user(callback)
+        self.assertIsInstance(user, grampswebapidb.User)
+
+    def test_falls_back_to_the_inert_user_if_gui_user_is_not_importable(self):
+        # has_display() can be True (a display exists) while PyGObject
+        # itself still isn't installed -- gui.user.User pulls in Gtk at
+        # import time, which this DATABASE plugin must stay usable
+        # without.
+        callback = mock.MagicMock()
+        with mock.patch.object(
+            grampswebapidb, "has_display", return_value=True
+        ), mock.patch.dict(sys.modules, {"gramps.gui.user": None}):
+            user = grampswebapidb._import_progress_user(callback)
+        self.assertIsInstance(user, grampswebapidb.User)
+
+
+# -------------------------------------------------------------------------
+#
 # TestDescribeConnectionError
 #
 # _get_json()/_get_binary() re-raise a non-401/429 HTTPError as-is, which
@@ -2055,7 +2161,7 @@ class TestDescribeConnectionError(unittest.TestCase):
 #
 # Nothing but a Family Tree's own name ties its local mirror to one
 # particular GRAMPS_WEB_API_KEY account (see the module docstring) --
-# _check_identity() requires that name to be "<username>@<host>" for
+# _check_identity_async() requires that name to be "<username>@<host>" for
 # whoever the current key authenticates as, so pointing the key at a
 # different account while reopening the same tree fails loudly at load()
 # instead of quietly mixing that account's data into the old mirror.
@@ -2070,7 +2176,7 @@ class TestCheckIdentity(unittest.TestCase):
 
     def test_matching_name_passes(self):
         self.db.get_dbname = mock.MagicMock(return_value="dblank@hadaly.duckdns.org")
-        self.db._check_identity()  # must not raise
+        run_check(self.db, "_check_identity_async")  # must not raise
 
     def test_name_sanitized_the_same_way_dbman_does_still_passes(self):
         # gramps.gui.dbman's Family Tree Manager replaces "." (among other
@@ -2079,17 +2185,17 @@ class TestCheckIdentity(unittest.TestCase):
         # must accept the sanitized form as a match, not just the literal
         # "<username>@<host>" string.
         self.db.get_dbname = mock.MagicMock(return_value="dblank@hadaly_duckdns_org")
-        self.db._check_identity()  # must not raise
+        run_check(self.db, "_check_identity_async")  # must not raise
 
     def test_mismatched_name_raises(self):
         self.db.get_dbname = mock.MagicMock(return_value="Gramps Web API DB")
         with self.assertRaises(DbConnectionError):
-            self.db._check_identity()
+            run_check(self.db, "_check_identity_async")
 
     def test_mismatch_error_names_the_typeable_form(self):
         self.db.get_dbname = mock.MagicMock(return_value="Gramps Web API DB")
         with self.assertRaises(DbConnectionError) as ctx:
-            self.db._check_identity()
+            run_check(self.db, "_check_identity_async")
         self.assertIn("dblank@hadaly_duckdns_org", str(ctx.exception))
 
     def test_connection_error_resolving_identity_is_wrapped(self):
@@ -2098,7 +2204,7 @@ class TestCheckIdentity(unittest.TestCase):
             "https://example.com/api/users/-/", 500, "boom", None, None
         )
         with self.assertRaises(DbConnectionError):
-            self.db._check_identity()
+            run_check(self.db, "_check_identity_async")
 
 
 # -------------------------------------------------------------------------
@@ -2119,23 +2225,30 @@ class TestCheckPermissions(unittest.TestCase):
         self.db = new_instance()
         self.db._directory = "/tmp/tree"
         self.db.web_client = mock.MagicMock()
+        # load()'s own tests below reach the EXPERIMENTAL bootstrap-resync
+        # probe (see load()'s own comment) -- these three keep it a no-op
+        # (mirror not short of the server) so those tests still exercise
+        # the ordinary wrapped record-sync path they're actually about.
+        self.db._get_metadata = mock.MagicMock(return_value=[])
+        self.db.get_total = mock.MagicMock(return_value=0)
+        self.db.web_client.get_object_count.return_value = 0
 
     def _grant(self, *perms):
         self.db.web_client.get_permissions.return_value = list(perms)
 
     def test_editor_role_permissions_pass(self):
         self._grant(*self.ALL_PERMS)
-        self.db._check_permissions()  # must not raise
+        run_check(self.db, "_check_permissions_async")  # must not raise
 
     def test_extra_permissions_are_fine(self):
         # An Owner/Admin has a superset; only the required ones matter.
         self._grant(*self.ALL_PERMS, "AddUser", "ImportFile")
-        self.db._check_permissions()  # must not raise
+        run_check(self.db, "_check_permissions_async")  # must not raise
 
     def test_missing_view_private_raises(self):
         self._grant("AddObject", "EditObject", "DeleteObject")
         with self.assertRaises(DbConnectionError) as ctx:
-            self.db._check_permissions()
+            run_check(self.db, "_check_permissions_async")
         self.assertIn("ViewPrivate", str(ctx.exception))
 
     def test_missing_one_write_permission_raises(self):
@@ -2143,7 +2256,7 @@ class TestCheckPermissions(unittest.TestCase):
         # missing, so a Contributor (AddObject only) cannot push at all.
         self._grant("ViewPrivate", "AddObject")
         with self.assertRaises(DbConnectionError) as ctx:
-            self.db._check_permissions()
+            run_check(self.db, "_check_permissions_async")
         message = str(ctx.exception)
         self.assertIn("EditObject", message)
         self.assertIn("DeleteObject", message)
@@ -2152,32 +2265,34 @@ class TestCheckPermissions(unittest.TestCase):
     def test_error_names_the_role_to_ask_for(self):
         self._grant()
         with self.assertRaises(DbConnectionError) as ctx:
-            self.db._check_permissions()
+            run_check(self.db, "_check_permissions_async")
         self.assertIn("Editor", str(ctx.exception))
 
     def test_read_only_tree_does_not_need_write_permissions(self):
         # A tree opened read-only never pushes, so a Member-level account
         # (ViewPrivate but no write permissions) is enough for it.
         self._grant("ViewPrivate")
-        self.db._check_permissions(writable=False)  # must not raise
+        run_check(self.db, "_check_permissions_async", writable=False)  # must not raise
 
     def test_read_only_tree_still_needs_view_private(self):
         self._grant("AddObject", "EditObject", "DeleteObject")
         with self.assertRaises(DbConnectionError):
-            self.db._check_permissions(writable=False)
+            run_check(self.db, "_check_permissions_async", writable=False)
 
     def test_connection_error_fetching_permissions_is_wrapped(self):
         self.db.web_client.get_permissions.side_effect = HTTPError(
             "https://example.com/api/token/refresh/", 500, "boom", None, None
         )
         with self.assertRaises(DbConnectionError):
-            self.db._check_permissions()
+            run_check(self.db, "_check_permissions_async")
 
     def test_load_checks_permissions_for_a_writable_tree(self):
         with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
-            self.db, "_check_identity"
-        ), mock.patch.object(self.db, "_check_permissions") as check, mock.patch.object(
-            self.db, "_check_server_version"
+            self.db, "_check_identity_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db, "_check_permissions_async", side_effect=stub_async_done(True)
+        ) as check, mock.patch.object(
+            self.db, "_check_server_version_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
             self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ), mock.patch.object(
@@ -2186,15 +2301,17 @@ class TestCheckPermissions(unittest.TestCase):
             grampswebapidb.GLib, "timeout_add_seconds"
         ):
             self.db.load("some/path")
-        check.assert_called_once_with(writable=True)
+        check.assert_called_once_with(mock.ANY, mock.ANY, writable=True)
 
     def test_load_in_read_only_mode_checks_read_permissions_only(self):
         # DbGeneric.load()'s signature is (directory, callback, mode, ...) --
         # cli/grampscli.py passes mode positionally.
         with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
-            self.db, "_check_identity"
-        ), mock.patch.object(self.db, "_check_permissions") as check, mock.patch.object(
-            self.db, "_check_server_version"
+            self.db, "_check_identity_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db, "_check_permissions_async", side_effect=stub_async_done(True)
+        ) as check, mock.patch.object(
+            self.db, "_check_server_version_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
             self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ), mock.patch.object(
@@ -2203,13 +2320,15 @@ class TestCheckPermissions(unittest.TestCase):
             grampswebapidb.GLib, "timeout_add_seconds"
         ):
             self.db.load("some/path", None, "r")
-        check.assert_called_once_with(writable=False)
+        check.assert_called_once_with(mock.ANY, mock.ANY, writable=False)
 
     def test_load_reads_mode_from_a_keyword_too(self):
         with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
-            self.db, "_check_identity"
-        ), mock.patch.object(self.db, "_check_permissions") as check, mock.patch.object(
-            self.db, "_check_server_version"
+            self.db, "_check_identity_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db, "_check_permissions_async", side_effect=stub_async_done(True)
+        ) as check, mock.patch.object(
+            self.db, "_check_server_version_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
             self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ), mock.patch.object(
@@ -2218,7 +2337,7 @@ class TestCheckPermissions(unittest.TestCase):
             grampswebapidb.GLib, "timeout_add_seconds"
         ):
             self.db.load("some/path", mode="r")
-        check.assert_called_once_with(writable=False)
+        check.assert_called_once_with(mock.ANY, mock.ANY, writable=False)
 
 
 # -------------------------------------------------------------------------
@@ -2238,16 +2357,16 @@ class TestCheckServerVersion(unittest.TestCase):
 
     def test_supported_version_passes(self):
         self.db.web_client.get_gramps_version.return_value = "6.0.1"
-        self.db._check_server_version()  # must not raise
+        run_check(self.db, "_check_server_version_async")  # must not raise
 
     def test_newer_version_passes(self):
         self.db.web_client.get_gramps_version.return_value = "6.1.0"
-        self.db._check_server_version()  # must not raise
+        run_check(self.db, "_check_server_version_async")  # must not raise
 
     def test_too_old_raises_naming_both_versions(self):
         self.db.web_client.get_gramps_version.return_value = "5.2.3"
         with self.assertRaises(DbConnectionError) as ctx:
-            self.db._check_server_version()
+            run_check(self.db, "_check_server_version_async")
         message = str(ctx.exception)
         self.assertIn("5.2.3", message)
         self.assertIn("6.0", message)
@@ -2256,18 +2375,18 @@ class TestCheckServerVersion(unittest.TestCase):
         # Better to try and let the KeyError path catch a genuinely
         # incompatible server than to block on a guess.
         self.db.web_client.get_gramps_version.return_value = None
-        self.db._check_server_version()  # must not raise
+        run_check(self.db, "_check_server_version_async")  # must not raise
 
     def test_unparseable_version_is_allowed_through(self):
         self.db.web_client.get_gramps_version.return_value = "some-dev-build"
-        self.db._check_server_version()  # must not raise
+        run_check(self.db, "_check_server_version_async")  # must not raise
 
     def test_connection_error_is_wrapped(self):
         self.db.web_client.get_gramps_version.side_effect = HTTPError(
             "https://example.com/api/metadata/", 500, "boom", None, None
         )
         with self.assertRaises(DbConnectionError):
-            self.db._check_server_version()
+            run_check(self.db, "_check_server_version_async")
 
 
 # -------------------------------------------------------------------------
@@ -2383,16 +2502,23 @@ class TestPolling(unittest.TestCase):
         self.db._set_metadata = (
             lambda key, value, use_txn=True: self.metadata.__setitem__(key, value)
         )
+        # load()'s own tests below reach the EXPERIMENTAL bootstrap-resync
+        # probe (see load()'s own comment) -- these two keep it a no-op
+        # (mirror not short of the server) so those tests still exercise
+        # the ordinary wrapped record-sync path they're actually about.
+        self.db.get_total = mock.MagicMock(return_value=0)
+        self.db.web_client = mock.MagicMock()
+        self.db.web_client.get_object_count.return_value = 0
 
     def test_load_syncs_and_schedules_polling(self):
         with mock.patch.object(
             grampswebapidb.SQLite, "load"
         ) as super_load, mock.patch.object(
-            self.db, "_check_identity"
+            self.db, "_check_identity_async", side_effect=stub_async_done(True)
         ) as check_identity, mock.patch.object(
-            self.db, "_check_permissions"
+            self.db, "_check_permissions_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
-            self.db, "_check_server_version"
+            self.db, "_check_server_version_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
             self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ) as sync, mock.patch.object(
@@ -2402,7 +2528,7 @@ class TestPolling(unittest.TestCase):
         ) as timeout_add:
             self.db.load("some/path")
         super_load.assert_called_once_with("some/path")
-        check_identity.assert_called_once_with()
+        check_identity.assert_called_once_with(mock.ANY, mock.ANY)
         # Called with on_done/on_error closures now, not no-args -- see
         # _run_async_to_completion().
         sync.assert_called_once_with(
@@ -2428,9 +2554,11 @@ class TestPolling(unittest.TestCase):
         # must recognize the callback there too, not just as a kwarg.
         my_callback = mock.MagicMock()
         with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
-            self.db, "_check_identity"
-        ), mock.patch.object(self.db, "_check_permissions"), mock.patch.object(
-            self.db, "_check_server_version"
+            self.db, "_check_identity_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db, "_check_permissions_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db, "_check_server_version_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
             self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ) as sync, mock.patch.object(
@@ -2451,9 +2579,11 @@ class TestPolling(unittest.TestCase):
     def test_load_forwards_keyword_callback_to_sync(self):
         my_callback = mock.MagicMock()
         with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
-            self.db, "_check_identity"
-        ), mock.patch.object(self.db, "_check_permissions"), mock.patch.object(
-            self.db, "_check_server_version"
+            self.db, "_check_identity_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db, "_check_permissions_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db, "_check_server_version_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
             self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ) as sync, mock.patch.object(
@@ -2474,9 +2604,11 @@ class TestPolling(unittest.TestCase):
         # swallowed -- the record mirror is already usable, so opening the
         # tree should still succeed.
         with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
-            self.db, "_check_identity"
-        ), mock.patch.object(self.db, "_check_permissions"), mock.patch.object(
-            self.db, "_check_server_version"
+            self.db, "_check_identity_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db, "_check_permissions_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db, "_check_server_version_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
             self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ), mock.patch.object(
@@ -2500,9 +2632,11 @@ class TestPolling(unittest.TestCase):
         self.db._media_poll_failures = 4
         self.db._poll_interval = grampswebapidb.POLL_BACKOFF_MAX_SECONDS
         with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
-            self.db, "_check_identity"
-        ), mock.patch.object(self.db, "_check_permissions"), mock.patch.object(
-            self.db, "_check_server_version"
+            self.db, "_check_identity_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db, "_check_permissions_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db, "_check_server_version_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
             self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ), mock.patch.object(
@@ -2797,27 +2931,29 @@ class TestPolling(unittest.TestCase):
 #
 # -------------------------------------------------------------------------
 class TestPumpMainLoop(unittest.TestCase):
+    # _pump_main_loop() dispatches at most one source per call, blocking
+    # (via context.iteration(True)) until one is ready rather than
+    # busy-spinning over context.pending() -- see its own docstring for
+    # why (confirmed live: the old spin-while-pending loop pinned a CPU
+    # core for the whole time _run_async_to_completion() waited on a
+    # worker thread, competing with that thread for the GIL).
     def test_an_exception_from_a_dispatched_callback_is_logged_not_raised(self):
         context = mock.Mock()
-        context.pending.side_effect = [True, False]
         context.iteration.side_effect = RuntimeError("boom, from unrelated GUI code")
         with mock.patch.object(
             grampswebapidb.GLib.MainContext, "default", return_value=context
         ):
             with self.assertLogs(grampswebapidb.LOG.name, level="ERROR"):
                 grampswebapidb._pump_main_loop()  # must not raise
-        context.iteration.assert_called_once_with(False)
+        context.iteration.assert_called_once_with(True)
 
-    def test_still_drains_every_pending_source_after_one_raises(self):
+    def test_dispatches_exactly_one_source_per_call(self):
         context = mock.Mock()
-        context.pending.side_effect = [True, True, False]
-        context.iteration.side_effect = [RuntimeError("boom"), None]
         with mock.patch.object(
             grampswebapidb.GLib.MainContext, "default", return_value=context
         ):
-            with self.assertLogs(grampswebapidb.LOG.name, level="ERROR"):
-                grampswebapidb._pump_main_loop()
-        self.assertEqual(context.iteration.call_count, 2)
+            grampswebapidb._pump_main_loop()
+        context.iteration.assert_called_once_with(True)
 
 
 # -------------------------------------------------------------------------

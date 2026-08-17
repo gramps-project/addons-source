@@ -546,7 +546,7 @@ class WebApiHandler:
     def get_identity(self) -> str:
         """ "<username>@<hostname>" identifying the account+server this
         handler authenticates as -- see grampswebapidb.py's
-        _check_identity(), which requires a Family Tree's own name to
+        _check_identity_async(), which requires a Family Tree's own name to
         match this before trusting its local mirror."""
         return f"{self.get_current_username()}@{self.hostname}"
 

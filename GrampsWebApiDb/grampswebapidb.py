@@ -63,7 +63,7 @@ no login dialog: the same env var also works as a bare SDK credential
 without going through Gramps at all -- one credential, two consumers.
 
 Because of that, nothing but the Family Tree's own name ties its local
-mirror to one particular server account. _check_identity() requires that
+mirror to one particular server account. _check_identity_async() requires that
 name to be "<username>@<host>" (modulo Gramps' own filename-safe-character
 substitution on tree names, e.g. dots -> underscores -- see
 _FAMILY_TREE_NAME_UNSAFE_CHARS) for whoever GRAMPS_WEB_API_KEY currently
@@ -287,7 +287,7 @@ only.
 
 GET /metadata/ (cached per handler; needs no special permission) supplies
 the two versions the addon reasons about. The server's *Gramps* version
-gates compatibility outright: _check_server_version() refuses at load()
+gates compatibility outright: _check_server_version_async() refuses at load()
 below MIN_SERVER_GRAMPS_VERSION, since anything older serializes its
 transaction history in the pre-6.0 shape and would otherwise fail much
 later as a bare KeyError out of data_to_object() mid-sync. It is
@@ -499,6 +499,7 @@ from urllib.error import HTTPError, URLError
 from gi.repository import GLib
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.gen.constfunc import has_display
 from gramps.gen.db import DbTxn
 from gramps.gen.db.dbconst import (
     CLASS_TO_KEY_MAP,
@@ -567,7 +568,7 @@ POLL_BACKOFF_MAX_SECONDS = 300
 MAX_PENDING_PUSHES = 1000
 
 #: Server-side permission names (gramps-web-api's auth/const.py) this
-#: addon depends on, checked at load() by _check_permissions().
+#: addon depends on, checked at load() by _check_permissions_async().
 #:
 #: ViewPrivate is required to read at all: GET /transactions/history/
 #: calls require_permissions([PERM_VIEW_PRIVATE]) outright (see
@@ -596,7 +597,7 @@ _REQUIRED_ROLE_NAME = "Editor"
 #: Oldest Gramps version a *server* can run and still produce the
 #: "_class"-tagged transaction-history serialization data_to_object()
 #: understands -- see the module docstring's note on gramps52 servers.
-#: Checked at load() by _check_server_version() so an incompatible server
+#: Checked at load() by _check_server_version_async() so an incompatible server
 #: says so, instead of failing later as a bare KeyError mid-sync.
 MIN_SERVER_GRAMPS_VERSION = (6, 0)
 
@@ -629,7 +630,25 @@ class _DatabaseClosed(Exception):
 
 
 def _pump_main_loop():
-    """Dispatch whatever the main loop has pending, without blocking.
+    """Dispatch the main loop's next source, blocking until one is ready
+    rather than busy-spinning.
+
+    _run_async_to_completion()'s own wait loop calls this over and over
+    until the chain it's waiting on finishes. An earlier version of this
+    function checked context.pending() and looped calling
+    context.iteration(False) only while something was already queued --
+    which means, the instant nothing is pending (the common case while
+    waiting on a worker thread doing real I/O), that outer wait loop
+    spun as fast as Python and the GIL would allow, pinning a CPU core
+    for the whole wait. Confirmed live (2026-08-17) that this made both
+    the window's own responsiveness and the actual worker-thread transfer
+    it was waiting on noticeably worse -- a tight Python loop reacquiring
+    the GIL on every spin leaves less of it for the thread doing the
+    actual work. context.iteration(True) blocks efficiently (via the
+    platform's own poll/select under the hood) until a source is ready --
+    including the GLib.idle_add() callback a worker thread's result
+    arrives through -- then dispatches exactly that one, the same
+    at-most-one-source-per-call contract the old loop had.
 
     Every network round trip this addon makes runs synchronously on the
     GTK main thread (see the module docstring's polling section), so a
@@ -674,15 +693,14 @@ def _pump_main_loop():
     a cosmetic GUI glitch instead of a lost edit and a crashed app.
     """
     context = GLib.MainContext.default()
-    while context.pending():
-        try:
-            context.iteration(False)
-        except Exception:
-            LOG.exception(
-                "Unhandled exception from a GTK/GLib callback dispatched "
-                "while pumping the main loop mid-sync; continuing rather "
-                "than letting it abort the sync/push in progress."
-            )
+    try:
+        context.iteration(True)
+    except Exception:
+        LOG.exception(
+            "Unhandled exception from a GTK/GLib callback dispatched "
+            "while pumping the main loop mid-sync; continuing rather "
+            "than letting it abort the sync/push in progress."
+        )
 
 
 def _http_error_detail(err):
@@ -751,6 +769,39 @@ def _wrap_progress_callback(callback, text):
     return lambda value: callback(value, text)
 
 
+def _import_progress_user(callback):
+    """Build the User importData() should see for _full_resync_async()'s
+    reimport, using exactly the class and wiring Gramps' own GUI import
+    uses -- gui/dbloader.py's DbLoader.do_import():
+    ``User(callback=self._pulse_progress, ...)`` -- confirmed, by testing
+    it directly against the same large export this addon's own reimport
+    was previously freezing on with no progress at all, to report real
+    progress throughout a large import without hanging or crashing
+    Gramps.
+
+    uistate/dbstate/parent are intentionally omitted: ImportXml's
+    GrampsParser never calls begin_progress()/step_progress()/
+    end_progress() (only self.update() -> UpdateCallback ->
+    user.callback(), see gen/updatecallback.py) -- so the ProgressMeter
+    dialog those three would drive, the only thing that would need a
+    parent window, is never triggered either way. Only UserBase.callback()
+    (inherited unchanged) matters here, and that just calls
+    callback(percentage[, text]).
+
+    Falls back to the inert gramps.gen.user.User if there's no display
+    (CLI use) or gi/Gtk aren't importable -- gui.user.User pulls in Gtk at
+    import time, which this DATABASE plugin must stay usable without.
+    """
+    if has_display():
+        try:
+            from gramps.gui.user import User as GuiUser
+
+            return GuiUser(callback=callback)
+        except ImportError:
+            pass
+    return User(callback=callback)
+
+
 def _describe_connection_error(err):
     """
     Turn a _CONNECTION_ERRORS exception into DbConnectionError's message
@@ -762,6 +813,14 @@ def _describe_connection_error(err):
     Anything else that came with a JSON body (see _http_error_detail())
     gets that appended, so a validation failure like a bare 422 names the
     field it rejected instead of just its status code.
+
+    URLError.__str__() wraps its reason in literal angle brackets --
+    "<urlopen error [Errno 111] Connection refused>" -- which Gramps'
+    own dialog code renders as Pango markup: the "<urlopen ...>" reads
+    as an unclosed tag, so the markup parser rejects the whole string
+    and the user sees a GTK warning in the log instead of the actual
+    error message. Using err.reason directly avoids ever producing that
+    wrapper.
     """
     if isinstance(err, HTTPError) and err.code == 403:
         return _(
@@ -775,6 +834,12 @@ def _describe_connection_error(err):
         detail = _http_error_detail(err)
         if detail:
             return "%s\n\n%s" % (err, detail)
+        return str(err)
+    if isinstance(err, URLError):
+        # HTTPError is itself a URLError subclass, so this branch is only
+        # reached for a "real" URLError (DNS failure, connection refused,
+        # ...) -- an HTTPError always returns above, one way or the other.
+        return str(err.reason)
     return str(err)
 
 
@@ -783,7 +848,7 @@ def _is_retryable_push_error(err):
 
     A 4xx is the server's considered answer about *this* request -- 403
     (the account lacks AddObject/EditObject/DeleteObject; see
-    _check_permissions()), 404, or a 400 that push_transaction() already
+    _check_permissions_async()), 404, or a 400 that push_transaction() already
     determined isn't a conflict -- and will keep being the answer no
     matter how often it is replayed. Queueing one would retry it on every
     poll forever and, worse, eventually evict genuinely retryable work
@@ -802,7 +867,7 @@ def _is_retryable_push_error(err):
 #: whatever a user types renaming a tree (dbman.py's __change_name(): "kill
 #: special characters so can use as file name in backup"). A hostname-
 #: bearing name can't survive that GUI round-trip with its dots intact, so
-#: _check_identity() normalizes through this same substitution on both
+#: _check_identity_async() normalizes through this same substitution on both
 #: sides before comparing -- see that method.
 _FAMILY_TREE_NAME_UNSAFE_CHARS = re.compile(r"[':<>|,;=\"\[\]\.\+\*\/\?\\]")
 
@@ -973,9 +1038,56 @@ class WebApiDB(SQLite):
             "load: %s (mode %s)", args[0] if args else kwargs.get("directory"), mode
         )
         super().load(*args, **kwargs)
-        self._check_identity()
-        self._check_permissions(writable=(mode == DBMODE_W))
-        self._check_server_version()
+        # Each check below makes exactly one network call. Run via
+        # _run_async_to_completion() (on io_runner, main loop pumped while
+        # waiting) rather than the old synchronous versions directly:
+        # confirmed live (2026-08-17) that three back-to-back blocking
+        # calls here, with nothing pumping the loop between them, is
+        # enough on its own to make the window unresponsive.
+        for check_name, start_chain in (
+            (
+                "identity",
+                lambda on_done, on_error: self._check_identity_async(on_done, on_error),
+            ),
+            (
+                "permissions",
+                lambda on_done, on_error: self._check_permissions_async(
+                    on_done, on_error, writable=(mode == DBMODE_W)
+                ),
+            ),
+            (
+                "server version",
+                lambda on_done, on_error: self._check_server_version_async(
+                    on_done, on_error
+                ),
+            ),
+        ):
+            result = self._run_async_to_completion(start_chain)
+            if result is None:
+                LOG.debug("load: tree closed during %s check; aborting", check_name)
+                return
+        # A quick, synchronous, unwrapped check for the totals-shortfall
+        # case -- the same condition _mirror_is_short_of_the_server_async()
+        # checks, done directly here rather than through the async chain.
+        # If the mirror is clearly behind, run the whole resync outside
+        # _run_async_to_completion()'s pump loop entirely (see
+        # _bootstrap_full_resync()'s own docstring), skipping the wrapped
+        # record-sync call below (a bootstrap resync already brings the
+        # mirror fully current, same as the async path's effect).
+        # Deliberately does not cover the other full-resync trigger (an
+        # empty-"changes" marker on an otherwise-adequate feed) -- that
+        # still goes through _full_resync_async() via the wrapped path
+        # below, same as before this method existed.
+        needs_bootstrap_resync = False
+        if not self._get_metadata("pending_pushes", default=[]):
+            try:
+                local_total = self.get_total()
+                server_total = self.web_client.get_object_count()
+            except _CONNECTION_ERRORS as err:
+                raise DbConnectionError(
+                    _describe_connection_error(err), self._directory
+                ) from err
+            needs_bootstrap_resync = server_total > local_total
         # _sync_from_server_async() runs its network legs on a worker
         # thread; _run_async_to_completion() blocks this call (pumping
         # the main loop so that worker thread's result can actually be
@@ -985,12 +1097,18 @@ class WebApiDB(SQLite):
         tree_closed_during_sync = False
         self._syncing = True
         try:
-            sync_result = self._run_async_to_completion(
-                lambda on_done, on_error: self._sync_from_server_async(
-                    on_done, on_error, progress_callback=callback, verify_totals=True
+            if needs_bootstrap_resync:
+                self._bootstrap_full_resync(callback)
+            else:
+                sync_result = self._run_async_to_completion(
+                    lambda on_done, on_error: self._sync_from_server_async(
+                        on_done,
+                        on_error,
+                        progress_callback=callback,
+                        verify_totals=True,
+                    )
                 )
-            )
-            tree_closed_during_sync = sync_result is None
+                tree_closed_during_sync = sync_result is None
         except _CONNECTION_ERRORS as err:
             raise DbConnectionError(
                 _describe_connection_error(err), self._directory
@@ -1045,7 +1163,7 @@ class WebApiDB(SQLite):
             MEDIA_POLL_INTERVAL_SECONDS, self._media_poll_tick
         )
 
-    def _check_identity(self):
+    def _check_identity_async(self, on_done, on_error):
         """Require this Family Tree's own name to be "<username>@<host>"
         for whoever GRAMPS_WEB_API_KEY currently authenticates as.
 
@@ -1066,37 +1184,60 @@ class WebApiDB(SQLite):
         a hostname's dots can never actually reach name.txt intact -- an
         exact-string comparison would reject every tree name Gramps itself
         would let you type.
-        """
-        try:
-            expected = self.web_client.get_identity()
-        except _CONNECTION_ERRORS as err:
-            raise DbConnectionError(
-                _describe_connection_error(err), self._directory
-            ) from err
-        expected_typeable = _FAMILY_TREE_NAME_UNSAFE_CHARS.sub("_", expected)
-        actual = self.get_dbname()
-        actual_normalized = _FAMILY_TREE_NAME_UNSAFE_CHARS.sub("_", actual)
-        if actual_normalized != expected_typeable:
-            raise DbConnectionError(
-                _(
-                    'This Family Tree is named "%(actual)s", but '
-                    "GRAMPS_WEB_API_KEY currently authenticates as "
-                    '"%(expected)s". Rename this Family Tree to '
-                    '"%(expected_typeable)s" (Family Trees -> Manage '
-                    "Family Trees) if it's meant to mirror that account, "
-                    "or open/create the Family Tree already named that -- "
-                    "reusing this one would mix its existing local data "
-                    "with the other account's."
-                )
-                % {
-                    "actual": actual,
-                    "expected": expected,
-                    "expected_typeable": expected_typeable,
-                },
-                self._directory,
-            )
 
-    def _check_permissions(self, writable=True):
+        Runs on io_runner like every other network call in this file:
+        confirmed live (2026-08-17, against a real server) that running
+        this and the other two load()-time checks synchronously on the
+        main thread -- each one a real network round trip with nothing
+        pumping the loop in between -- is enough on its own to make the
+        window unresponsive, even before reaching any resync work.
+        """
+
+        def fetch():
+            return self.web_client.get_identity()
+
+        def on_fetched(expected):
+            expected_typeable = _FAMILY_TREE_NAME_UNSAFE_CHARS.sub("_", expected)
+            actual = self.get_dbname()
+            actual_normalized = _FAMILY_TREE_NAME_UNSAFE_CHARS.sub("_", actual)
+            if actual_normalized != expected_typeable:
+                on_error(
+                    DbConnectionError(
+                        _(
+                            'This Family Tree is named "%(actual)s", but '
+                            "GRAMPS_WEB_API_KEY currently authenticates as "
+                            '"%(expected)s". Rename this Family Tree to '
+                            '"%(expected_typeable)s" (Family Trees -> Manage '
+                            "Family Trees) if it's meant to mirror that "
+                            "account, or open/create the Family Tree "
+                            "already named that -- reusing this one would "
+                            "mix its existing local data with the other "
+                            "account's."
+                        )
+                        % {
+                            "actual": actual,
+                            "expected": expected,
+                            "expected_typeable": expected_typeable,
+                        },
+                        self._directory,
+                    )
+                )
+                return
+            on_done(True)
+
+        def on_fetch_error(exc):
+            if isinstance(exc, _CONNECTION_ERRORS):
+                on_error(
+                    DbConnectionError(_describe_connection_error(exc), self._directory)
+                )
+            else:
+                on_error(exc)
+
+        self.io_runner.run(
+            fetch, self._guarded(on_fetched), self._guarded(on_fetch_error)
+        )
+
+    def _check_permissions_async(self, on_done, on_error, writable=True):
         """Fail at load() if the account GRAMPS_WEB_API_KEY authenticates
         as lacks a server permission this addon depends on, naming exactly
         which -- rather than letting each affected operation fail on its
@@ -1111,34 +1252,51 @@ class WebApiDB(SQLite):
         in the access token's own claims (token.py's ``claims = {
         "permissions": [...]}``), so get_permissions() just decodes the JWT
         this handler already holds.
+
+        Runs on io_runner for the same reason _check_identity_async() does.
         """
         required = [_PERM_VIEW_PRIVATE]
         if writable:
             required += list(_WRITE_PERMISSIONS)
-        try:
-            granted = set(self.web_client.get_permissions())
-        except _CONNECTION_ERRORS as err:
-            raise DbConnectionError(
-                _describe_connection_error(err), self._directory
-            ) from err
-        missing = [perm for perm in required if perm not in granted]
-        if not missing:
-            return
-        raise DbConnectionError(
-            _(
-                "The account authenticating via GRAMPS_WEB_API_KEY is "
-                "missing server permission(s) this addon requires: "
-                "%(missing)s. Grant it at least the "
-                '"%(role)s" role on the server (or ask an administrator '
-                "to), then reopen this Family Tree. Opening it as-is would "
-                "leave the local mirror silently incomplete or unable to "
-                "save changes back."
+
+        def fetch():
+            return self.web_client.get_permissions()
+
+        def on_fetched(permissions):
+            granted = set(permissions)
+            missing = [perm for perm in required if perm not in granted]
+            if not missing:
+                on_done(True)
+                return
+            on_error(
+                DbConnectionError(
+                    _(
+                        "The account authenticating via GRAMPS_WEB_API_KEY is "
+                        "missing server permission(s) this addon requires: "
+                        "%(missing)s. Grant it at least the "
+                        '"%(role)s" role on the server (or ask an '
+                        "administrator to), then reopen this Family Tree. "
+                        "Opening it as-is would leave the local mirror "
+                        "silently incomplete or unable to save changes back."
+                    )
+                    % {"missing": ", ".join(missing), "role": _REQUIRED_ROLE_NAME},
+                    self._directory,
+                )
             )
-            % {"missing": ", ".join(missing), "role": _REQUIRED_ROLE_NAME},
-            self._directory,
+
+        def on_fetch_error(exc):
+            if isinstance(exc, _CONNECTION_ERRORS):
+                on_error(
+                    DbConnectionError(_describe_connection_error(exc), self._directory)
+                )
+            else:
+                on_error(exc)
+
+        self.io_runner.run(
+            fetch, self._guarded(on_fetched), self._guarded(on_fetch_error)
         )
 
-    def _check_server_version(self):
+    def _check_server_version_async(self, on_done, on_error):
         """Fail at load() if the server runs a Gramps too old to produce
         the transaction-history serialization this addon reads.
 
@@ -1152,29 +1310,48 @@ class WebApiDB(SQLite):
         report a Gramps version, or reports one this can't parse, is
         allowed through rather than blocked on a guess. The KeyError path
         still catches a genuinely incompatible one, just less kindly.
+
+        Runs on io_runner for the same reason _check_identity_async() does.
         """
-        try:
-            reported = self.web_client.get_gramps_version()
-        except _CONNECTION_ERRORS as err:
-            raise DbConnectionError(
-                _describe_connection_error(err), self._directory
-            ) from err
-        version = parse_version(reported)
-        if version is None or version >= MIN_SERVER_GRAMPS_VERSION:
-            return
-        raise DbConnectionError(
-            _(
-                "This server runs Gramps %(actual)s, but this addon needs "
-                "a server running Gramps %(required)s or newer: older "
-                "servers serialize their transaction history in a format "
-                "it cannot read. Upgrade the Gramps installation behind "
-                "the Gramps Web API server (or ask its administrator to)."
+
+        def fetch():
+            return self.web_client.get_gramps_version()
+
+        def on_fetched(reported):
+            version = parse_version(reported)
+            if version is None or version >= MIN_SERVER_GRAMPS_VERSION:
+                on_done(True)
+                return
+            on_error(
+                DbConnectionError(
+                    _(
+                        "This server runs Gramps %(actual)s, but this addon "
+                        "needs a server running Gramps %(required)s or "
+                        "newer: older servers serialize their transaction "
+                        "history in a format it cannot read. Upgrade the "
+                        "Gramps installation behind the Gramps Web API "
+                        "server (or ask its administrator to)."
+                    )
+                    % {
+                        "actual": reported,
+                        "required": ".".join(
+                            str(part) for part in MIN_SERVER_GRAMPS_VERSION
+                        ),
+                    },
+                    self._directory,
+                )
             )
-            % {
-                "actual": reported,
-                "required": ".".join(str(part) for part in MIN_SERVER_GRAMPS_VERSION),
-            },
-            self._directory,
+
+        def on_fetch_error(exc):
+            if isinstance(exc, _CONNECTION_ERRORS):
+                on_error(
+                    DbConnectionError(_describe_connection_error(exc), self._directory)
+                )
+            else:
+                on_error(exc)
+
+        self.io_runner.run(
+            fetch, self._guarded(on_fetched), self._guarded(on_fetch_error)
         )
 
     def close(self, *args, **kwargs):
@@ -2139,10 +2316,12 @@ class WebApiDB(SQLite):
         being scheduled, so self.dbapi -- possibly already closed by
         then -- is never touched once the chain is known to be stale.
 
-        progress_callback, if given, only gets 0/100 markers bookending
-        the download+reimport -- unlike the record sync's page-by-page
-        reporting, ImportXml has no internal step reporting to forward
-        finer-grained progress from.
+        progress_callback, if given, gets a 0 marker before the download,
+        then real percentages throughout the reimport -- forwarded to
+        importData() via _import_progress_user(), which builds exactly
+        the gui.user.User Gramps' own GUI import uses (see that
+        function's docstring) -- and a final 100 once everything,
+        including request_rebuild(), has finished.
 
         Also (re)sets sync_last_time to a timestamp taken right before
         the export download starts, so the next incremental sync asks
@@ -2220,7 +2399,12 @@ class WebApiDB(SQLite):
                         cleared += len(handles)
                 LOG.debug("resync: cleared %d local object(s); reimporting", cleared)
                 imported_at = monotonic()
-                importData(self, tmp_path, User())
+                import_user = (
+                    _import_progress_user(progress_callback)
+                    if progress_callback is not None
+                    else User()
+                )
+                importData(self, tmp_path, import_user)
                 LOG.debug(
                     "resync: reimport left %d object(s) (%.2fs)",
                     self.get_total(),
@@ -2251,6 +2435,138 @@ class WebApiDB(SQLite):
             self.runner.run(lambda: rebuild(tmp_path), guarded_done, guarded_error)
 
         self.io_runner.run(download, on_downloaded, guarded_error)
+
+    def _bootstrap_full_resync(self, progress_callback=None):
+        """load()'s own alternative to _full_resync_async(), used
+        specifically for the totals-shortfall check load() runs itself
+        before the ordinary record-sync call (see load()'s own comment)
+        -- most commonly hit opening a brand new mirror against a large
+        existing tree, exactly the scenario that prompted this method.
+
+        _full_resync_async() schedules its reimport step via
+        self.runner.run() (GLib.idle_add underneath), dispatched from
+        inside _run_async_to_completion()'s own pump loop
+        (_pump_main_loop(), using GLib.MainContext.iteration()) when
+        called from load(). importData()'s own progress reporting (see
+        _import_progress_user()) then calls Gtk.main_iteration() --
+        a *different* pumping API -- from inside that already-running
+        step. Gramps' own native GUI Import never has that outer
+        wrapping at all: it calls importData() directly from an ordinary
+        GTK signal handler. This method reproduces that same shape for
+        load()'s bootstrap case instead: plain sequential calls, on the
+        calling thread, with importData() itself never scheduled via
+        io_runner/runner/GLib.idle_add at all -- so there is nothing of
+        this addon's own left for importData()'s own pumping to end up
+        nested inside.
+
+        Confirmed via live GUI testing (2026-08-17) that this resolves a
+        freeze reported for exactly this load()-time scenario -- delete
+        an existing mirror, create a fresh one, open it against a large
+        (26540-object) tree. That investigation also uncovered an
+        unrelated, session-long confound (a stale/misresolved installed
+        plugin copy, see project memory) that had made every earlier
+        live test that session meaningless, regardless of what the code
+        actually did -- worth keeping in mind before reading too much
+        into the reentrant-pumping theory above as *proven*: it is
+        plausible and this method is a reasonable defensive structural
+        match to Gramps' own working native-Import shape, but the
+        specific freeze reports blamed on it before the stale-plugin
+        discovery are not reliable evidence either way. _full_resync_async()
+        itself is unchanged and still used for both its other callers
+        (_resync_after_conflict_async(), and _finish_sync()'s own
+        empty-"changes"-marker trigger) -- neither has actually been
+        shown to freeze; this method exists for the highest-traffic case
+        (a brand new or far-behind mirror at load() time) rather than as
+        a proven-required fix for the other two.
+
+        Safe to skip _full_resync_async()'s _run_id staleness checks and
+        self._guarded() wrapping here specifically because load() calls
+        this before the tree is open at all (dbloader.py's read_file()
+        doesn't call dbstate.change_database(db) until load() returns),
+        so there is no UI path by which close() could run against this
+        tree while this method is still executing -- unlike
+        _full_resync_async()'s other callers, which run against an
+        already-open tree where that's a live concern.
+
+        Body is otherwise a direct copy of _full_resync_async()'s
+        rebuild() (see that method for the fuller explanation of each
+        step): download, clear every local primary object, reimport,
+        signal a rebuild, and advance sync_last_time.
+
+        The download itself IS still run on io_runner and awaited via
+        _run_async_to_completion(), unlike everything after it -- unlike
+        importData(), nothing reentrant happens while it's in flight, so
+        there is no second pumping API for _run_async_to_completion()'s
+        own loop to end up nested under. Confirmed live (2026-08-17) that
+        running the download as a plain blocking call here instead --
+        unlike every other network call in this file -- froze the window
+        for its whole duration (6+ seconds for this export, longer for a
+        bigger one).
+        """
+        if progress_callback is not None:
+            progress_callback(0)
+        sync_cutoff = time()
+        started = monotonic()
+
+        def download():
+            return self.web_client.download_export()
+
+        data = self._run_async_to_completion(
+            lambda on_done, on_error: self.io_runner.run(
+                download, self._guarded(on_done), self._guarded(on_error)
+            )
+        )
+        if data is None:
+            # Tree closed while the download was in flight -- see
+            # _run_async_to_completion()'s own docstring. Not expected in
+            # practice for load()'s bootstrap case (see this method's own
+            # docstring on why), but handled the same way the rest of
+            # this file does rather than assumed away.
+            LOG.debug("bootstrap resync: tree closed during download; aborting")
+            return
+        LOG.debug(
+            "bootstrap resync: downloaded a %.1f MB export in %.2fs",
+            len(data) / (1024 * 1024),
+            monotonic() - started,
+        )
+        with NamedTemporaryFile(suffix=".gramps", delete=False) as tmp_file:
+            tmp_file.write(data)
+            tmp_path = tmp_file.name
+        self._pulling = True
+        try:
+            cleared = 0
+            with DbTxn(
+                _("Clear local mirror before full resync"), self, batch=True
+            ) as trans:
+                for key in set(CLASS_TO_KEY_MAP.values()):
+                    name = KEY_TO_NAME_MAP[key]
+                    handles = list(getattr(self, f"get_{name}_handles")())
+                    remove = getattr(self, f"remove_{name}")
+                    for handle in handles:
+                        remove(handle, trans)
+                    cleared += len(handles)
+            LOG.debug(
+                "bootstrap resync: cleared %d local object(s); reimporting", cleared
+            )
+            imported_at = monotonic()
+            import_user = (
+                _import_progress_user(progress_callback)
+                if progress_callback is not None
+                else User()
+            )
+            importData(self, tmp_path, import_user)
+            LOG.debug(
+                "bootstrap resync: reimport left %d object(s) (%.2fs)",
+                self.get_total(),
+                monotonic() - imported_at,
+            )
+            self.request_rebuild()
+        finally:
+            self._pulling = False
+            os.remove(tmp_path)
+        self._set_metadata("sync_last_time", sync_cutoff)
+        if progress_callback is not None:
+            progress_callback(100)
 
     def _snapshot_all_objects(self):
         """{(obj_class, handle): data} across every primary object the
