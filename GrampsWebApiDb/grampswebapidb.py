@@ -52,7 +52,7 @@ gramps-web-api itself untouched) serializes objects differently (no
 "_class"/"value"/"string" triplet on GrampsType-derived fields), and
 data_to_object() raises KeyError on it. Confirmed against a live gramps52
 server: read-only endpoints (auth, /trees/, /people/ counts, etc.) work
-fine, but _sync_from_server() cannot deserialize its transaction history.
+fine, but _sync_from_server_async() cannot deserialize its transaction history.
 
 Credentials come from a single environment variable, GRAMPS_WEB_API_KEY
 (see webapi_client.py for its "<REFRESH_TOKEN>*<BASE64URL(URL)>" shape and
@@ -83,14 +83,14 @@ handler, which builds its response the same way). This must run *before*
 super().transaction_commit(), since DBAPI.transaction_commit() clears the
 transaction's records as its last step.
 
-The other place a DbTxn gets used is _sync_from_server() itself, applying
+The other place a DbTxn gets used is _sync_from_server_async() itself, applying
 server-pulled changes -- that uses batch=True, and DBAPI._commit_base()
 skips trans.add() entirely for batch transactions (see dbapi.py), so
 transaction_to_json() naturally sees nothing there and no push happens.
 No separate "am I currently syncing" flag is needed to stop synced
 changes from being echoed straight back to the server.
 
-_sync_from_server() can only replay what the history feed actually
+_sync_from_server_async() can only replay what the history feed actually
 logged, and a batch=True commit -- any bulk import, merge, or tool run
 through gramps-web-api, not just a one-off -- logs nothing per-object:
 DBAPI's own commit_*/remove_* methods guard their trans.add() undo-log
@@ -100,9 +100,9 @@ instead of the usual per-object entries. Confirmed live: bulk-importing
 example.gramps produced exactly one such marker, and the 2157 people it
 added were otherwise invisible to this addon's sync no matter how often
 it resynced, because the transaction history itself never recorded
-them. _sync_from_server() treats an empty-changes transaction as a
+them. _sync_from_server_async() treats an empty-changes transaction as a
 signal that its history-replay approach cannot describe what happened,
-and falls back to _full_resync() -- downloading the server's current
+and falls back to _full_resync_async() -- downloading the server's current
 full Gramps XML export and reimporting it into a wiped local mirror,
 the only way to recover completeness when the incremental feed has a
 blind spot by construction.
@@ -116,9 +116,9 @@ against a history that was empty until someone edited it through the
 API. Replaying such a feed produces a mirror holding only the few edits
 the history does know about, with nothing to distinguish that from a
 correct sync. load() therefore checks the mirror's own object total
-against the server's after each sync (_mirror_is_short_of_the_server(),
-via _sync_from_server()'s verify_totals) and routes a shortfall to the
-same _full_resync(). Comparing totals rather than watching for an empty
+against the server's after each sync (_mirror_is_short_of_the_server_async(),
+via _sync_from_server_async()'s verify_totals) and routes a shortfall to the
+same _full_resync_async(). Comparing totals rather than watching for an empty
 feed is what makes the case detectable: one API edit against such a
 server is enough for the feed to hand back a transaction and for the
 sync to look like it worked.
@@ -140,8 +140,8 @@ trans.batch`) -- ordinary server administration for any real
 installation, not a quirk of any particular one. So the incremental
 history feed can be blind to an object's true current state from the
 moment it was imported, indefinitely -- and a totals comparison
-(_mirror_is_short_of_the_server(), the verify_totals check load() and
-_sync_from_server() use elsewhere) can't catch this either, since the
+(_mirror_is_short_of_the_server_async(), the verify_totals check load() and
+_sync_from_server_async() use elsewhere) can't catch this either, since the
 object count doesn't change when an already-known object's content
 changes server-side, only when objects are added or removed.
 
@@ -154,14 +154,14 @@ fields -- not the gramps.gen.lib.json_utils shape data_to_object()
 needs to reconstruct a Gramps object; feeding it that shape raises
 KeyError. Only two things produce the compatible shape: the
 transaction-history feed's new_data, and a raw Gramps XML export (see
-_full_resync()). So on a conflict, _push_payload() below does a full
-resync (_resync_after_conflict(), reusing _full_resync()) -- expensive,
+_full_resync_async()). So on a conflict, _push_payload_async() below does a full
+resync (_resync_after_conflict_async(), reusing _full_resync_async()) -- expensive,
 but the only server round-trip that reliably brings the local mirror
 back to the server's true current state for whatever this push touched
 -- and then, for a plain commit (not an undo/redo -- see
 _retry_after_conflict()), replays the intended *new* state as a fresh
 local edit via commit_<type>()/remove_<type>(). That fresh edit goes
-through the normal transaction_commit() -> _push_payload() path again
+through the normal transaction_commit() -> _start_push() path again
 with is_retry=True, so it now carries an "old" snapshot matching the
 just-resynced mirror, and will only be rejected a second time if
 something changes server-side in the brief window since the resync ran
@@ -196,7 +196,7 @@ is not rolled back -- the local mirror just drifts from the server until
 the next successful push or read sync.
 
 Not every local batch=True commit is a pull-side replay, though: the same
-trans.batch guard that makes _sync_from_server()'s own replay silent to
+trans.batch guard that makes _sync_from_server_async()'s own replay silent to
 transaction_to_json() applies equally to *local* bulk operations run
 against this open tree from outside this file entirely -- ImportXml/
 ImportGedcom/ImportCsv/..., and stock Tools like Check and Repair
@@ -204,12 +204,12 @@ Database, Media Manager, Extract Information from Names, Rename Event
 Types, Reorder Gramps IDs, and Sort Events all open their own DbTxn with
 batch=True for performance. Left alone, any of those would apply locally
 and never reach the server: transaction_commit() would see the same empty
-transaction_to_json() payload it correctly sees for _sync_from_server()'s
+transaction_to_json() payload it correctly sees for _sync_from_server_async()'s
 own pull-side batch replay, with nothing in the payload itself to tell the
 two apart. transaction_begin() (called by DbTxn.__enter__, so before the
 batch operation's body runs) tells them apart with a _pulling flag set
-only around _sync_from_server()'s own batch DbTxns (including the ones
-_full_resync() opens) -- everywhere else, a batch=True transaction gets a
+only around _sync_from_server_async()'s own batch DbTxns (including the ones
+_full_resync_async() opens) -- everywhere else, a batch=True transaction gets a
 full snapshot of every primary object's current data stashed on the
 transaction itself (_snapshot_all_objects()), not just which handles
 exist. transaction_commit() diffs that snapshot against a fresh one taken
@@ -234,14 +234,14 @@ delete against storage where the object was already legitimately gone
 did nothing at all. Building the payload directly from the two
 snapshots, with real "old" data captured before anything ran, avoids
 all three.) The reconstructed payload goes out through the normal
-transaction_commit() -> _push_payload() path, with the same conflict
+transaction_commit() -> _start_push() path, with the same conflict
 handling (full resync, then _retry_after_conflict()) any other edit
 gets, for the rare case something else changed the same object in the
 meantime. Reading (and briefly holding in memory) two full copies of
 every primary object's data per batch commit is a real cost, but
 _snapshot_all_objects() keeps it to O(types) bulk queries rather than
 O(handles) individual ones, and correctness here is worth more than the
-memory -- the same trade _full_resync() already makes for the
+memory -- the same trade _full_resync_async() already makes for the
 equivalent pull-side blind spot.
 
 A second, previously-unhandled kind of silent drift: when a push's own
@@ -249,11 +249,11 @@ HTTP call fails for a plain connectivity reason (network down, server
 unreachable -- not a conflict), the local commit has already happened and
 is never rolled back, but until now nothing remembered that the push
 still needed to go out -- "the next successful push or read sync" above
-was aspirational, not implemented. _push_payload() now persists such a
+was aspirational, not implemented. _push_payload_async() now persists such a
 payload (via _set_metadata(), the same mechanism sync_last_time already
 uses, so it survives close()/reopen) to a "pending_pushes" queue instead
-of just logging and forgetting it. _flush_pending_pushes(), called at the
-top of every _sync_from_server() (both the load()-time call and every
+of just logging and forgetting it. _flush_pending_pushes_async(), called at the
+top of every _sync_from_server_async() (both the load()-time call and every
 poll tick), retries the queue in order and stops at the first entry that
 still can't be delivered, rather than skipping ahead -- so a later,
 causally-dependent edit (e.g. a Family added after the Person it
@@ -277,7 +277,7 @@ the history feed 403s loudly without it, but GET /exporters/gramps/file
 does not refuse the request at all -- it passes
 view_private=has_permissions({PERM_VIEW_PRIVATE}) into the export task
 (exporters.py), so an under-privileged caller gets a privacy-filtered
-export, which _full_resync() would then import over a wiped local mirror,
+export, which _full_resync_async() would then import over a wiped local mirror,
 quietly dropping every private record from the mirror. Checking the
 permission set up front costs no extra round trip (gramps-web-api puts it
 in the access token's own claims, so get_permissions() just decodes the
@@ -297,7 +297,7 @@ all -- better to try than to block on a guess.
 The server's *gramps-web-api* version gates one optimization: from 2.7,
 POST /transactions/ accepts ?background=1, queueing the work and
 answering 202 immediately instead of holding the connection open while it
-processes. _push_payload() uses that only for payloads at or above
+processes. _push_payload_async() uses that only for payloads at or above
 BACKGROUND_PUSH_THRESHOLD, where server-side processing could plausibly
 outlast webapi_client.TIMEOUT and drop the connection mid-write -- most of
 all the single large payload _reconcile_batch_commit() builds after a bulk
@@ -317,18 +317,14 @@ transient server error and be queued for retry forever.
 
 The mirror stays current while the tree is open, not just at load() time:
 load() also schedules a GLib.timeout_add_seconds() tick (POLL_INTERVAL_SECONDS)
-that re-runs _sync_from_server() for as long as the database stays open --
-the same timestamp-cursor poll gramps-connect's browser client uses against
-this same endpoint (see gramps-connect's store/historyPoll.ts), so a change
-made from any other client shows up here without closing and reopening the
-tree. It runs synchronously on the GTK main thread (like the initial
-load()-time sync already did, and like viewmanager.py's own autobackup
-timer) rather than on a background thread -- correct but simple, at the
-cost of a brief UI pause during each poll's network round trip; moving it
-off-thread (GrampsWebSync's GLibTaskRunner is the precedent, not imported
-here for the same no-cross-addon-dependency reason as transaction_to_json()
-below) is a reasonable future improvement, not attempted here. close()
-cancels the pending timeout so a closed database doesn't keep polling.
+that re-runs _sync_from_server_async() for as long as the database stays
+open -- the same timestamp-cursor poll gramps-connect's browser client uses
+against this same endpoint (see gramps-connect's store/historyPoll.ts), so a
+change made from any other client shows up here without closing and
+reopening the tree. Its network legs run on a worker thread (see "Keeping
+the GUI alive" below), so a poll's round trip no longer costs the window a
+UI pause the way it once did. close() cancels the pending timeout so a
+closed database doesn't keep polling.
 
 A server that stops answering does not interrupt the session: the poll
 reports the outage once, backs off towards POLL_BACKOFF_MAX_SECONDS while
@@ -339,46 +335,80 @@ _poll_tick() and _record_poll_failure().
 
 Keeping the GUI alive
 ---------------------
-All of that network work runs synchronously on the GTK main thread, so
-anything long -- the initial catch-up, a full-export rebuild, a first
-media sync, a backgrounded push being waited on -- is time the main loop
-is not answering. The window stops redrawing and the window manager
-offers to force-quit Gramps. _pump_main_loop() gives the loop its turn at
-the boundaries of each of those (between sync pages, between media files,
-across the export download's chunks and the task-poll loop, either side
-of ImportXml), which keeps the window live and Gramps' own progress bar
-moving. Doing the work off-thread would be the real fix and remains the
-better long-term answer (GrampsWebSync's GLibTaskRunner is the
-precedent); this is the version that doesn't restructure every call path.
-Pumping re-enters, so the poll timeouts check _syncing and skip a tick
-rather than starting a second sync underneath the first.
+Every network round trip this addon makes runs on a worker thread
+(taskrunner.py's IoRunner), never on the GTK main thread -- so nothing here
+can hold the window unresponsive the way blocking network I/O on the main
+thread would, and there is nothing to interleave with the main loop's own
+event processing while a sync, push, or resync is in flight. Everything
+that touches self.dbapi (a commit, a DbTxn, importData()'s reimport) stays
+on the main thread instead, dispatched via GLibTaskRunner -- the sqlite
+backend binds a connection to its creating thread, so a DB step can never
+run anywhere else. Each such step is written as one method call that
+starts, runs to completion, and returns, with the *next* step (on either
+runner) scheduled only once it has -- see _push_payload_async(),
+_full_resync_async(), _sync_from_server_async()/_sync_page(), and
+_sync_media_files_async() for the actual chains.
 
-Reentering the main loop can also let the *user* act on this very Family
-Tree while a pump-driven operation is suspended partway through it --
-switching to another tree or quitting Gramps calls close() from a GTK
-event dispatched during the pump, which closes self.dbapi's connection
-out from under the still-running caller. Left unhandled, that caller
-resumes after the pump and crashes on its next database touch
-(sqlite3.ProgrammingError: Cannot operate on a closed database) instead
-of unwinding cleanly. Every _pump_main_loop() call this class makes goes
-through _guarded_pump() instead of the bare function for exactly this
-reason: it raises _DatabaseClosed if close() ran during that pump, and
-the entry points that can trigger one (_poll_tick(), _media_poll_tick(),
-load(), _push_payload(), _flush_pending_pushes()) catch it as "nothing
-left to do here", not a failure.
+This wasn't always true: earlier versions of this addon ran all of that
+network work synchronously on the GTK main thread and periodically called
+_pump_main_loop() (still present, now with exactly one caller --
+_run_async_to_completion(), see below) to hand the loop back its turn
+mid-operation, the same tactic viewmanager.py's own autobackup timer uses.
+That reentrancy caused two separate crashes in the field: switching Family
+Trees while a pump-driven sync was suspended mid-operation resumed against
+an already-closed self.dbapi (sqlite3.ProgrammingError), and a HandleError
+raised by an unrelated view's redraw, dispatched from a pending GTK
+callback during a pump, propagated straight up through an otherwise-
+successful WebApiPushConflict recovery and crashed the whole application.
+Both are structurally impossible now: there is no reentrant pump inside
+any of the chains above for another GTK event to interleave with, and
+close() can only ever run strictly before or strictly after one of these
+main-thread steps, never during one.
 
-Reentering the main loop can also run GUI code this addon does not own
-and cannot make correct -- a redraw, or an idle callback some view
-scheduled off one of our own commit/rebuild signals. Confirmed in the
-field: a HandleError raised by a PeopleView redraw dispatched off
-_full_resync()'s trailing pump propagated straight up through an
-otherwise-successful WebApiPushConflict recovery and killed Gramps,
-after the resync itself had already fixed the local mirror. Gramps'
-own Callback.emit() already treats a connected handler's exception as
-that handler's problem and not the emitter's (log and continue);
-_pump_main_loop() now does the same around
-GLib.MainContext.iteration(), which has no such protection built in on
-its own.
+A callback scheduled on a worker thread can still find, by the time it's
+delivered back to the main thread, that close() ran while it was in
+flight -- switching Family Trees or quitting Gramps is a perfectly
+ordinary GTK event, unrelated to whatever network call happens to be
+outstanding. self._run_id, a generation counter close() bumps before
+anything else it does, and self._guarded() (a decorator-like wrapper
+applied to a step's on_success/on_error before handing it to a runner)
+together replace what _DatabaseClosed/_guarded_pump()/self._closed used to
+do for the old pump-based reentrancy: a self._guarded()-wrapped callback
+whose captured run_id no longer matches self._run_id is silently dropped
+rather than run, instead of raising an exception for some caller further
+up a call stack to catch. Some DB-touching steps (_full_resync_async()'s
+rebuild(), _after_conflict_resync()'s run_retry()) go further and re-check
+self._run_id themselves as their very first action, before touching
+self.dbapi at all -- needed wherever a step is scheduled from inside a
+callback that already ran (so self._guarded() has already let it through
+once) rather than scheduled directly by the top-level caller that claimed
+self._syncing; see either method's own comments for the narrow scheduling
+gap this closes.
+
+self._syncing is the single-flight gate stopping two such chains from
+running concurrently and landing overlapping DB-apply callbacks against
+the same local mirror: the true top-level entry point for a given
+operation (_start_push(), _poll_tick(), _media_poll_tick(), load()'s
+wait-adapter) claims it before anything touches the network, and only
+_finish_async_op() -- wrapping that operation's real completion, including
+any conflict-recovery detour a push takes through a full resync and retry
+-- releases it, once the whole chain has actually finished, not merely
+started. A push arriving while self._syncing is already held is queued
+(_queue_pending_push()) rather than raced against whatever is in flight;
+_finish_async_op() attempts one flush of that queue before releasing the
+flag, so a deferred push goes out as soon as the chain that pre-empted it
+finishes rather than waiting for the next poll tick.
+
+load() is the one entry point that still needs a synchronous answer:
+Gramps core's own DbGeneric.load() contract requires the tree to be ready
+by the time it returns, unlike every other entry point in this file, which
+starts a chain and returns immediately. _run_async_to_completion() bridges
+that gap -- the *only* remaining caller of _guarded_pump()/
+_pump_main_loop() -- by driving one of the async chains above to
+completion synchronously: pumping the main loop (so the worker-thread
+dispatch that chain depends on can actually be delivered), but never
+touching self.dbapi itself while doing so, and never reentering any of
+this addon's own DB-touching steps. See that method's own docstring.
 
 Tracing a session
 -----------------
@@ -399,7 +429,7 @@ load. Nothing logs object data or credentials, and replaying a busy feed
 costs a fixed handful of lines rather than one per change.
 
 A second, independent timeout (MEDIA_POLL_INTERVAL_SECONDS, coarser than
-POLL_INTERVAL_SECONDS) drives _sync_media_files(): downloading media files
+POLL_INTERVAL_SECONDS) drives _sync_media_files_async(): downloading media files
 that exist as Media-object records in the mirror but not on local disk,
 and uploading local media files the server doesn't have yet. This is
 ported from GrampsWebSync's own media-file-sync step (grampswebsync.py's
@@ -414,7 +444,7 @@ re-checks every local Media object's file with os.path.exists() and
 re-asks the server's own GET /media/?filemissing=1 endpoint, and anything
 found missing is then transferred in full.
 
-_sync_from_server()'s replay runs inside a batch=True DbTxn deliberately
+_sync_from_server_async()'s replay runs inside a batch=True DbTxn deliberately
 (see the write-through section below for why), but that has a side effect
 beyond suppressing trans.add(): DBAPI.transaction_commit() only emits its
 person-add/family-update/event-delete/... signals `if not transaction.batch`
@@ -430,12 +460,12 @@ effect across everything applied in that page, so e.g. an update
 immediately followed by a delete of the same object only fires the delete
 signal, not both.
 
-A _full_resync() (see below) is the one path that doesn't go through
+A _full_resync_async() (see below) is the one path that doesn't go through
 _emit_change_signals(): a full wipe-and-reimport is exactly the "too much
 changed to describe incrementally" case DbGeneric's own request_rebuild()
 exists for (it emits a single <type>-rebuild signal per object type,
 telling every view to reload wholesale rather than replay a specific
-add/update/delete) -- so _full_resync() calls that once after a successful
+add/update/delete) -- so _full_resync_async() calls that once after a successful
 reimport instead.
 
 Undo/redo integration hooks undo()/redo() the same way transaction_commit()
@@ -1946,20 +1976,23 @@ class WebApiDB(SQLite):
         (_commit_base()'s _get_raw_data() call), so a stale mirror means
         the retry pushes the same stale "old" as the original failed push
         and is rejected again identically, no matter how correct its
-        "new" is. _push_payload()'s conflict handler does this with a
-        full resync (_resync_after_conflict()) before calling here; see
-        that method's docstring for why nothing cheaper is trustworthy.
-        This is only ever reached via that path now -- a local batch
-        operation's own reconciled changes (_reconcile_batch_commit())
-        push directly through _push_payload(), landing here only if
-        that push itself conflicts, the same as any other edit.
+        "new" is. _push_payload_async()'s conflict handler does this with
+        a full resync (_resync_after_conflict_async()) before calling
+        here (via _after_conflict_resync()); see that method's docstring
+        for why nothing cheaper is trustworthy. This is only ever reached
+        via that path now -- a local batch operation's own reconciled
+        changes (_reconcile_batch_commit()) push directly through
+        _start_push(), landing here only if that push itself conflicts,
+        the same as any other edit.
 
         Runs as one ordinary (non-batch) DbTxn, so it goes through the
-        normal transaction_commit() -> _push_payload() path again -- this
+        normal transaction_commit() -> _start_push() path again -- this
         time with an "old" snapshot that matches the local mirror's
         current (freshly-resynced, for the conflict path) state, so it
         will only be rejected again if something else changed server-side
-        in the brief window since then.
+        in the brief window since then. _after_conflict_resync() runs
+        this as one runner (main-thread) step, since it's 100% local DB
+        work with no network of its own.
         """
         self._retrying = True
         try:
