@@ -827,10 +827,18 @@ class WebApiDB(SQLite):
     #: _pump_main_loop() hands the main loop back mid-operation.
     _syncing = False
 
-    #: Set by close(), before anything else it does, so a pump-driven
-    #: sync/push suspended elsewhere on the call stack sees it as soon as
-    #: the main loop gives control back -- see _guarded_pump().
-    _closed = False
+    #: Bumped by close(), before anything else it does, so a pump-driven
+    #: sync/push suspended elsewhere on the call stack can tell (via
+    #: _guarded_pump()) that the tree it was working on is gone as soon as
+    #: the main loop gives control back. Also what _guarded() (used by the
+    #: worker-thread-based ..._async() chains) compares against to drop a
+    #: callback belonging to an abandoned chain -- see that method. An
+    #: instance can be load()-ed again after close() (Gramps may reuse one
+    #: WebApiDB object across Family Trees), so this is a generation
+    #: counter rather than a boolean: each close() starts a new generation
+    #: instead of leaving a single flag that a fresh load() would have to
+    #: remember to clear.
+    _run_id = 0
 
     #: Consecutive failed polls, per timer, and the record poll's current
     #: interval -- the outage state _poll_tick()/_media_poll_tick() use to
@@ -1063,12 +1071,26 @@ class WebApiDB(SQLite):
         )
 
     def close(self, *args, **kwargs):
-        # Set first, before anything else: a sync/push elsewhere on the
-        # call stack may be suspended inside _guarded_pump(), waiting to
+        # Bumped first, before anything else: a sync/push elsewhere on the
+        # call stack may be suspended inside _guarded_pump() (waiting to
         # find out whether it's still safe to touch self.dbapi once the
-        # main loop hands control back. See _guarded_pump() and the module
-        # docstring's "Keeping the GUI alive" section.
-        self._closed = True
+        # main loop hands control back) or, once the ..._async() chains
+        # land, inside a worker-thread step whose eventual callback
+        # _guarded() must recognize as belonging to an abandoned chain.
+        # See _guarded_pump(), _guarded(), and the module docstring's
+        # "Keeping the GUI alive" section.
+        self._run_id += 1
+        # A callback _guarded() drops (or a _guarded_pump() call that
+        # raises) never reaches the `finally` blocks that would otherwise
+        # clear these -- that unwind only ever happens because something
+        # further up the call stack catches it, and after this point
+        # nothing does. Reset explicitly so an instance reused for a fresh
+        # load() (Gramps may reuse one WebApiDB object across Family
+        # Trees) doesn't start out believing an abandoned operation from
+        # the previous tree is still in flight.
+        self._syncing = False
+        self._pulling = False
+        self._retrying = False
         # Stop polling a database that's no longer open -- otherwise the
         # next tick would run _sync_from_server() (and touch self.dbapi)
         # against a connection that's about to be (or already) closed.
@@ -1081,6 +1103,32 @@ class WebApiDB(SQLite):
             GLib.source_remove(media_poll_source_id)
             self._media_poll_source_id = None
         super().close(*args, **kwargs)
+
+    def _guarded(self, callback):
+        """Wrap a worker-thread-step callback (an ``on_success``/``on_error``
+        handed to ``self.runner.run()``/``self.io_runner.run()``) so it is
+        silently dropped if close() ran while that step was in flight,
+        instead of resuming and touching a ``self.dbapi`` that is already
+        gone.
+
+        Not used yet -- introduced here alongside _run_id so later phases'
+        ..._async() methods (see the module docstring) have it ready. The
+        async equivalent of _guarded_pump(): where _guarded_pump() raises
+        to unwind a still-synchronous call stack, this instead just never
+        calls through, since there is no stack left to unwind once the
+        step it wraps has already been handed to a worker thread or the
+        idle-add queue -- the same posture GrampsWebSync's
+        SyncSession._guarded() takes for a run the user has abandoned.
+        """
+        run_id = self._run_id
+
+        def guarded(value):
+            if run_id == self._run_id:
+                callback(value)
+            else:
+                LOG.debug("Dropping a callback from a chain abandoned by close().")
+
+        return guarded
 
     def _guarded_pump(self):
         """_pump_main_loop(), then raise _DatabaseClosed if that let
@@ -1098,9 +1146,19 @@ class WebApiDB(SQLite):
         them -- _poll_tick(), _media_poll_tick(), load(), _push_payload(),
         _flush_pending_pushes() -- which treat it as nothing left to do,
         not a failure.
+
+        Detects this the same way _guarded() does -- comparing _run_id
+        before and after -- rather than a boolean _closed flag, since an
+        instance can be load()-ed again after close() (see _run_id's own
+        docstring); capturing run_id fresh on each call, right before the
+        one pump it guards, is exactly the right scope: nothing before
+        this call needed protecting (it already ran), and nothing this
+        call's caller does after seeing the raised exception touches
+        self.dbapi either.
         """
+        run_id = self._run_id
         _pump_main_loop()
-        if self._closed:
+        if self._run_id != run_id:
             raise _DatabaseClosed()
 
     def _poll_tick(self):

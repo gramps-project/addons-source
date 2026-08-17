@@ -2181,6 +2181,7 @@ class TestPolling(unittest.TestCase):
     def test_close_cancels_pending_poll(self):
         self.db._poll_source_id = 42
         self.db._media_poll_source_id = 43
+        starting_run_id = self.db._run_id
         with mock.patch.object(
             grampswebapidb.SQLite, "close"
         ) as super_close, mock.patch.object(
@@ -2191,11 +2192,12 @@ class TestPolling(unittest.TestCase):
         self.assertIsNone(self.db._poll_source_id)
         self.assertIsNone(self.db._media_poll_source_id)
         super_close.assert_called_once_with()
-        self.assertTrue(self.db._closed)
+        self.assertEqual(self.db._run_id, starting_run_id + 1)
 
     def test_close_without_a_poll_scheduled_is_a_no_op(self):
         # e.g. close() called after a failed load(), before the timeouts
         # were ever scheduled.
+        starting_run_id = self.db._run_id
         with mock.patch.object(
             grampswebapidb.SQLite, "close"
         ) as super_close, mock.patch.object(
@@ -2204,7 +2206,24 @@ class TestPolling(unittest.TestCase):
             self.db.close()
         source_remove.assert_not_called()
         super_close.assert_called_once_with()
-        self.assertTrue(self.db._closed)
+        self.assertEqual(self.db._run_id, starting_run_id + 1)
+
+    def test_close_resets_syncing_pulling_retrying_flags(self):
+        # A dropped _guarded() callback (or a raised _DatabaseClosed from
+        # _guarded_pump()) never reaches the `finally` blocks that would
+        # otherwise clear these -- close() must reset them itself so a
+        # reused instance's next load() doesn't start out believing an
+        # abandoned operation from the previous tree is still in flight.
+        self.db._syncing = True
+        self.db._pulling = True
+        self.db._retrying = True
+        with mock.patch.object(grampswebapidb.SQLite, "close"), mock.patch.object(
+            grampswebapidb.GLib, "source_remove"
+        ):
+            self.db.close()
+        self.assertFalse(self.db._syncing)
+        self.assertFalse(self.db._pulling)
+        self.assertFalse(self.db._retrying)
 
     def test_poll_tick_syncs_and_keeps_repeating(self):
         with mock.patch.object(self.db, "_sync_from_server") as sync:
@@ -2417,14 +2436,50 @@ class TestGuardedPump(unittest.TestCase):
     def test_raises_database_closed_if_close_ran_during_the_pump(self):
         def fake_pump():
             # Simulates close() running from a GTK event dispatched while
-            # this pump had control -- see close()'s own _closed = True.
-            self.db._closed = True
+            # this pump had control -- see close()'s own self._run_id += 1.
+            self.db._run_id += 1
 
         with mock.patch.object(
             grampswebapidb, "_pump_main_loop", side_effect=fake_pump
         ):
             with self.assertRaises(grampswebapidb._DatabaseClosed):
                 self.db._guarded_pump()
+
+
+# -------------------------------------------------------------------------
+#
+# TestGuarded
+#
+# _guarded() is the async equivalent of _guarded_pump(): it wraps an
+# on_success/on_error handed to self.runner.run()/self.io_runner.run() so a
+# callback belonging to a chain close() abandoned is silently dropped
+# instead of resuming and touching a self.dbapi that's already gone. Not
+# used by any real call site yet (introduced in phase 1 alongside _run_id,
+# wired up starting phase 2) -- these tests cover the method itself.
+#
+# -------------------------------------------------------------------------
+class TestGuarded(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+
+    def test_callback_runs_when_run_id_is_unchanged(self):
+        seen = []
+        wrapped = self.db._guarded(seen.append)
+        wrapped("value")
+        self.assertEqual(seen, ["value"])
+
+    def test_callback_is_dropped_when_run_id_changed_since_wrapping(self):
+        seen = []
+        wrapped = self.db._guarded(seen.append)
+        self.db._run_id += 1  # simulates close() running before this fires
+        wrapped("value")
+        self.assertEqual(seen, [])
+
+    def test_drop_is_logged_at_debug(self):
+        wrapped = self.db._guarded(lambda value: None)
+        self.db._run_id += 1
+        with self.assertLogs(grampswebapidb.LOG.name, level="DEBUG"):
+            wrapped("value")
 
 
 # -------------------------------------------------------------------------
