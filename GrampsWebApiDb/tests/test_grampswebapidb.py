@@ -128,9 +128,10 @@ class FakeTransaction:
     get_recnos()/get_record(). Avoids needing a real commitdb/pickle round
     trip just to test the flattening logic."""
 
-    def __init__(self, records):
+    def __init__(self, records, description=""):
         # records: list of (key, action, handle, old_data, new_data)
         self._records = records
+        self._description = description
 
     def get_recnos(self, reverse=False):
         idx = range(len(self._records))
@@ -138,6 +139,9 @@ class FakeTransaction:
 
     def get_record(self, recno):
         return self._records[recno]
+
+    def get_description(self):
+        return self._description
 
 
 def new_instance():
@@ -1345,6 +1349,30 @@ class TestTransactionCommit(unittest.TestCase):
         payload = self.db.web_client.push_transaction.call_args[0][0]
         self.assertEqual(payload[0]["handle"], "H1")
 
+    def test_transaction_description_is_forwarded_as_message(self):
+        # The DbTxn's own description (e.g. "Add Person (Jane Doe)", set
+        # by Gramps desktop's editors) becomes push_transaction()'s
+        # ``message`` -- see the module docstring's note on why, and
+        # gramps-web-api's TransactionsQueryArgs.
+        trans = FakeTransaction(
+            [(0, TXNADD, "H1", None, person_data("H1"))],
+            description="Add Person (Jane Doe)",
+        )
+        with mock.patch.object(grampswebapidb.SQLite, "transaction_commit"):
+            self.db.transaction_commit(trans)
+        self.assertEqual(
+            self.db.web_client.push_transaction.call_args.kwargs["message"],
+            "Add Person (Jane Doe)",
+        )
+
+    def test_empty_description_forwards_none(self):
+        trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
+        with mock.patch.object(grampswebapidb.SQLite, "transaction_commit"):
+            self.db.transaction_commit(trans)
+        self.assertIsNone(
+            self.db.web_client.push_transaction.call_args.kwargs["message"]
+        )
+
     def test_payload_built_before_super_clears_records(self):
         # The base class's transaction_commit() clears the transaction's
         # records as its last step -- see the module docstring's "must run
@@ -1844,7 +1872,7 @@ class TestConflictRetryAgainstARealDatabase(unittest.TestCase):
     def _push_conflicts_once_then_succeeds(self):
         calls = []
 
-        def fake_push(payload, undo=False, background=False):
+        def fake_push(payload, undo=False, background=False, message=None):
             calls.append(copy.deepcopy(payload))
             if len(calls) == 1:
                 raise WebApiPushConflict("Object has changed")
@@ -2153,7 +2181,7 @@ class TestSyncingStaysHeldAcrossNestedRetryPush(unittest.TestCase):
         release_second_push = threading.Event()
         calls = []
 
-        def fake_push(payload, undo=False, background=False):
+        def fake_push(payload, undo=False, background=False, message=None):
             calls.append(1)
             if len(calls) == 1:
                 raise WebApiPushConflict("Object has changed")
@@ -2444,7 +2472,7 @@ class TestUndoRedo(unittest.TestCase):
         push.assert_called_once()
         payload = push.call_args[0][0]
         self.assertEqual(payload[0]["handle"], "H1")
-        self.assertEqual(push.call_args.kwargs, {"undo": True})
+        self.assertEqual(push.call_args.kwargs, {"undo": True, "message": None})
 
     def test_redo_pushes_without_undo_flag(self):
         txn = FakeTransaction([(0, TXNDEL, "H1", person_data("H1"), None)])
@@ -2456,7 +2484,35 @@ class TestUndoRedo(unittest.TestCase):
         self.assertTrue(result)
         payload = push.call_args[0][0]
         self.assertEqual(payload[0]["handle"], "H1")
-        self.assertEqual(push.call_args.kwargs, {})
+        self.assertEqual(push.call_args.kwargs, {"message": None})
+
+    def test_undo_message_wraps_description(self):
+        txn = FakeTransaction(
+            [(0, TXNADD, "H1", None, person_data("H1"))],
+            description="Add Person (Jane Doe)",
+        )
+        self.db.undodb.undo_count = 1
+        self.db.undodb.undoq = [txn]
+        self.db.undodb.undo.return_value = True
+        with mock.patch.object(self.db, "_start_push") as push:
+            self.db.undo()
+        self.assertEqual(
+            push.call_args.kwargs["message"], "Undo: Add Person (Jane Doe)"
+        )
+
+    def test_redo_message_wraps_description(self):
+        txn = FakeTransaction(
+            [(0, TXNDEL, "H1", person_data("H1"), None)],
+            description="Add Person (Jane Doe)",
+        )
+        self.db.undodb.redo_count = 1
+        self.db.undodb.redoq = [txn]
+        self.db.undodb.redo.return_value = True
+        with mock.patch.object(self.db, "_start_push") as push:
+            self.db.redo()
+        self.assertEqual(
+            push.call_args.kwargs["message"], "Redo: Add Person (Jane Doe)"
+        )
 
     def test_no_push_when_nothing_to_undo(self):
         self.db.undodb.undo_count = 0
@@ -3842,15 +3898,19 @@ class FakeBatchTxn:
     stashes its snapshot in. get_recnos() returns nothing, matching a real
     batch transaction's empty undo log."""
 
-    def __init__(self, batch=True, start_time=100.0):
+    def __init__(self, batch=True, start_time=100.0, description=""):
         self.batch = batch
         self.start_time = start_time
+        self._description = description
 
     def get_recnos(self, reverse=False):
         return []
 
     def get_record(self, recno):  # pragma: no cover - never reached
         raise AssertionError("a batch transaction records nothing")
+
+    def get_description(self):
+        return self._description
 
 
 def raw_person_data(handle, change=100.0, **extra):
@@ -4042,7 +4102,9 @@ class TestReconcileBatchCommit(unittest.TestCase):
             grampswebapidb.SQLite, "transaction_commit"
         ), mock.patch.object(self.db, "_reconcile_batch_commit") as reconcile:
             self.db.transaction_commit(trans)
-        reconcile.assert_called_once_with({("Person", "H1"): raw_person_data("H1")})
+        reconcile.assert_called_once_with(
+            {("Person", "H1"): raw_person_data("H1")}, message=None
+        )
         # ...and does NOT also take the ordinary push path, which would
         # push an empty payload.
         self.db.web_client.push_transaction.assert_not_called()

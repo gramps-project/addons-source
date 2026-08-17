@@ -1942,16 +1942,24 @@ class WebApiDB(SQLite):
     def transaction_commit(self, transaction):
         # Must run before super(): it clears the transaction's records.
         payload = transaction_to_json(transaction)
+        # The same description Gramps desktop's own editors set on this
+        # DbTxn (e.g. "Add Person (Jane Doe)", editperson.py) and the
+        # convention gramps-web-api's own per-object PUT/POST endpoints
+        # use for their transaction log -- forwarded as-is so a push from
+        # this addon shows up the same way in the server's revision
+        # history instead of as a generic "Raw transaction". See
+        # push_transaction()'s docstring.
+        message = transaction.get_description() or None
         super().transaction_commit(transaction)
         before = getattr(transaction, "_webapidb_before", None)
         if before is not None:
-            self._reconcile_batch_commit(before)
+            self._reconcile_batch_commit(before, message=message)
             return
         # self._retrying is set by _retry_after_conflict() while it holds
         # its own DbTxn open, so the push this commit triggers knows it is
         # itself a conflict retry and won't retry again on a second
         # conflict -- see _start_push().
-        self._start_push(payload, is_retry=self._retrying)
+        self._start_push(payload, is_retry=self._retrying, message=message)
 
     def undo(self, update_history=True):
         # Peek before super(): DbGenericUndo._undo() pops this DbTxn off
@@ -1962,19 +1970,25 @@ class WebApiDB(SQLite):
         transaction = self.undodb.undoq[-1] if self.undodb.undo_count else None
         result = super().undo(update_history)
         if result and transaction is not None:
-            self._start_push(transaction_to_json(transaction), undo=True)
+            description = transaction.get_description()
+            message = _("Undo: %s") % description if description else None
+            self._start_push(
+                transaction_to_json(transaction), undo=True, message=message
+            )
         return result
 
     def redo(self, update_history=True):
         transaction = self.undodb.redoq[-1] if self.undodb.redo_count else None
         result = super().redo(update_history)
         if result and transaction is not None:
+            description = transaction.get_description()
+            message = _("Redo: %s") % description if description else None
             # Redo is just re-applying the original transaction forward --
             # not a variant of undo=True. See push_transaction()'s docstring.
-            self._start_push(transaction_to_json(transaction))
+            self._start_push(transaction_to_json(transaction), message=message)
         return result
 
-    def _start_push(self, payload, undo=False, is_retry=False):
+    def _start_push(self, payload, undo=False, is_retry=False, message=None):
         """Route a locally-intended push through the single-flight gate
         self._syncing (see the module docstring): the true top-level
         entry point for a given local edit -- transaction_commit(),
@@ -2012,7 +2026,7 @@ class WebApiDB(SQLite):
             return
         if not is_retry:
             if self._syncing:
-                self._queue_pending_push(payload, undo=undo)
+                self._queue_pending_push(payload, undo=undo, message=message)
                 return
             self._syncing = True
             on_done = self._finish_async_op(None)
@@ -2021,7 +2035,7 @@ class WebApiDB(SQLite):
             on_done = self._retry_chain_done or self._finish_async_op(None)
             on_error = self._retry_chain_error or self._finish_async_op(None)
         self._push_payload_async(
-            payload, on_done, on_error, undo=undo, is_retry=is_retry
+            payload, on_done, on_error, undo=undo, is_retry=is_retry, message=message
         )
 
     def _finish_async_op(self, on_done):
@@ -2072,7 +2086,7 @@ class WebApiDB(SQLite):
         return finish
 
     def _push_payload_async(
-        self, payload, on_done, on_error, undo=False, is_retry=False
+        self, payload, on_done, on_error, undo=False, is_retry=False, message=None
     ):
         """Push a change-list payload to the server, handling a rejected
         push (conflict or otherwise) the same way regardless of whether
@@ -2091,6 +2105,9 @@ class WebApiDB(SQLite):
         second conflict on that replay is logged and dropped rather than
         retried again, so a genuinely hot object can't send this into an
         unbounded retry loop.
+
+        ``message`` is forwarded to push_transaction() as-is -- see its
+        docstring.
         """
         if not payload:
             on_done(None)
@@ -2110,7 +2127,9 @@ class WebApiDB(SQLite):
                 " undo" if undo else "",
                 " background" if background else "",
             )
-            self.web_client.push_transaction(payload, undo=undo, background=background)
+            self.web_client.push_transaction(
+                payload, undo=undo, background=background, message=message
+            )
             LOG.debug("push: accepted in %.2fs", monotonic() - started)
 
         def on_pushed(_result):
@@ -2144,7 +2163,7 @@ class WebApiDB(SQLite):
                 # is trustworthy here.
                 self._resync_after_conflict_async(
                     on_done=lambda _: self._after_conflict_resync(
-                        payload, undo, is_retry, on_done, on_error
+                        payload, undo, is_retry, on_done, on_error, message=message
                     ),
                     on_error=on_resync_error,
                 )
@@ -2174,14 +2193,16 @@ class WebApiDB(SQLite):
                 len(payload),
                 exc_info=exc,
             )
-            self._queue_pending_push(payload, undo=undo)
+            self._queue_pending_push(payload, undo=undo, message=message)
             on_error(exc)
 
         self.io_runner.run(
             do_push, self._guarded(on_pushed), self._guarded(on_push_error)
         )
 
-    def _after_conflict_resync(self, payload, undo, is_retry, on_done, on_error):
+    def _after_conflict_resync(
+        self, payload, undo, is_retry, on_done, on_error, message=None
+    ):
         """_push_payload_async()'s continuation once
         _resync_after_conflict_async() has brought the local mirror back
         to the server's true current state: replay the original edit on
@@ -2241,7 +2262,7 @@ class WebApiDB(SQLite):
                 len(payload),
                 exc,
             )
-            self._queue_pending_push(payload, undo=undo)
+            self._queue_pending_push(payload, undo=undo, message=message)
             on_error(exc)
 
         def run_retry():
@@ -2317,14 +2338,20 @@ class WebApiDB(SQLite):
             )
             return False
 
-    def _queue_pending_push(self, payload, undo=False):
+    def _queue_pending_push(self, payload, undo=False, message=None):
         """Persist a payload whose push failed for a connectivity reason,
         so _flush_pending_pushes() can retry it later -- including after a
         close()/reopen, since this goes through _set_metadata() (the same
         mechanism sync_last_time already uses) rather than an in-memory
-        list. See the module docstring."""
+        list. See the module docstring.
+
+        ``message`` (see push_transaction()'s docstring) is persisted
+        alongside the payload so a queued push, once retried, still shows
+        up in the server's history under its original description rather
+        than falling back to "Raw transaction".
+        """
         pending = self._get_metadata("pending_pushes", default=[])
-        pending.append({"payload": payload, "undo": undo})
+        pending.append({"payload": payload, "undo": undo, "message": message})
         if len(pending) > MAX_PENDING_PUSHES:
             dropped = len(pending) - MAX_PENDING_PUSHES
             LOG.error(
@@ -2391,7 +2418,10 @@ class WebApiDB(SQLite):
             # _use_background_push() belongs here too.
             background = self._use_background_push(entry["payload"])
             self.web_client.push_transaction(
-                entry["payload"], undo=entry.get("undo", False), background=background
+                entry["payload"],
+                undo=entry.get("undo", False),
+                background=background,
+                message=entry.get("message"),
             )
 
         def pop_and_continue():
@@ -2987,7 +3017,7 @@ class WebApiDB(SQLite):
         }
         self._emit_change_signals(net_changes)
 
-    def _reconcile_batch_commit(self, before):
+    def _reconcile_batch_commit(self, before, message=None):
         """Reconstruct exactly what a local batch=True transaction
         changed, by diffing the pre-transaction object snapshot
         (transaction_begin()'s _snapshot_all_objects() call) against a
@@ -3018,6 +3048,11 @@ class WebApiDB(SQLite):
         this ever shows up as a real bottleneck, the fix is to make the
         batch operation's own transaction non-batch, not to make this
         cleverer.
+
+        ``message`` (see push_transaction()'s docstring) is the
+        triggering batch DbTxn's own description, forwarded through to
+        _start_push() -- the reconstructed entries otherwise carry no
+        description of their own.
         """
         entries = _diff_snapshots(before, self._snapshot_all_objects())
         if not entries:
@@ -3027,7 +3062,7 @@ class WebApiDB(SQLite):
             "Gramps did not record per-object; pushing them to the server.",
             len(entries),
         )
-        self._start_push(entries)
+        self._start_push(entries, message=message)
 
     def _sync_from_server_async(
         self, on_done, on_error, progress_callback=None, verify_totals=False

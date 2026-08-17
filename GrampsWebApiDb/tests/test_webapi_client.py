@@ -1178,6 +1178,46 @@ class TestPushTransaction(unittest.TestCase):
         # reverses it, not the caller. See push_transaction()'s docstring.
         self.assertEqual(json.loads(req.data), payload)
 
+    def test_message_appends_query_param(self):
+        handler = self._authed_handler()
+        payload = [{"type": "add", "handle": "H1", "_class": "Person"}]
+        fake = QueuedUrlopen([FakeResponse({})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.push_transaction(payload, message="Add Person (Jane Doe)")
+        req = fake.requests[0]
+        self.assertEqual(
+            req.full_url,
+            "https://example.com/api/transactions/?message=Add+Person+%28Jane+Doe%29",
+        )
+
+    def test_no_message_omits_query_param(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse({})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.push_transaction([{"type": "add"}])
+        self.assertEqual(
+            fake.requests[0].full_url, "https://example.com/api/transactions/"
+        )
+
+    def test_message_survives_401_retry(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                http_error(401),
+                FakeResponse({"access_token": token("AT1")}),
+                FakeResponse({}),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake), mock.patch.object(
+            webapi_client, "sleep"
+        ):
+            handler.push_transaction([{"type": "add"}], message="Edit Family")
+        # requests[0] = failed push, [1] = re-auth, [2] = retried push
+        self.assertEqual(
+            fake.requests[2].full_url,
+            "https://example.com/api/transactions/?message=Edit+Family",
+        )
+
     def test_undo_defaults_to_false(self):
         handler = self._authed_handler()
         fake = QueuedUrlopen([FakeResponse({})])
