@@ -168,6 +168,20 @@ something changes server-side in the brief window since the resync ran
 -- in which case it is logged and dropped rather than retried again, to
 avoid retrying forever against a genuinely hot object.
 
+A Gramps XML export isn't perfectly round-trip-faithful either, though:
+it has no element for Person.birth_ref_index/death_ref_index (see
+exportxml.py's write_person()), so ImportXml recomputes both from
+document order on the way back in instead of preserving them -- wrong
+whenever the true index was -1 despite a BIRTH/DEATH-type event ref
+existing, or pointed at something other than the first such ref. Since
+diff_items() (the same function old_unchanged() uses server-side) treats
+those two fields as ordinary content, a Person whose true index doesn't
+match that heuristic would otherwise disagree with the server after
+every single resync, forever, for reasons unrelated to anything actually
+edited. _snapshot_birth_death_indices()/_restore_birth_death_indices()
+carry the pre-resync value back across the reimport for any Person whose
+event_ref_list didn't itself change, closing that gap.
+
 For an add/update whose object still exists server-side (i.e. the
 conflicting edit changed the same object rather than deleting it),
 _merge_or_overwrite() below combines the two edits with the object's own
@@ -567,6 +581,25 @@ POLL_BACKOFF_MAX_SECONDS = 300
 #: rather than silently.
 MAX_PENDING_PUSHES = 1000
 
+#: Net change count at or below which _full_resync_async()/
+#: _bootstrap_full_resync() describe a reimport with granular per-object
+#: signals (_emit_change_signals(), reusing _reconcile_batch_commit()'s
+#: own before/after diff via _diff_snapshots()) instead of request_rebuild().
+#: See those methods' own comments: a resync recovering from a push
+#: conflict or repairing a mirror the history feed lost track of touches a
+#: small number of objects against an otherwise-already-correct mirror, so
+#: a precise diff is both cheap and far less disruptive than telling every
+#: view to reload wholesale -- most importantly, gui/displaystate.py's
+#: History.history_changed() only resets Active Person on an actual
+#: <type>-rebuild signal, so a small, targeted diff leaves Active Person
+#: alone unless the active object itself was one of the handles that
+#: genuinely changed. Above this threshold (a bootstrap resync against an
+#: empty mirror, or a mirror repair that's badly fallen behind), the diff
+#: itself is legitimately "everything," where one rebuild signal per type
+#: is cheaper for every view than replaying that many individual add
+#: signals -- so request_rebuild() stays the right tool there.
+GRANULAR_REBUILD_MAX_CHANGES = 500
+
 #: Server-side permission names (gramps-web-api's auth/const.py) this
 #: addon depends on, checked at load() by _check_permissions_async().
 #:
@@ -873,6 +906,13 @@ _FAMILY_TREE_NAME_UNSAFE_CHARS = re.compile(r"[':<>|,;=\"\[\]\.\+\*\/\?\\]")
 
 _TRANS_TYPE_NAME = {TXNADD: "add", TXNUPD: "update", TXNDEL: "delete"}
 
+#: The reverse of _TRANS_TYPE_NAME -- _diff_snapshots() emits "type" as a
+#: string (transaction_to_json()'s shape, and what _reconcile_batch_commit()
+#: pushes), but _emit_change_signals() takes TXNADD/TXNUPD/TXNDEL. Built
+#: from _TRANS_TYPE_NAME rather than duplicated by hand so the two can
+#: never drift apart.
+_NAME_TO_TRANS_TYPE = {name: code for code, name in _TRANS_TYPE_NAME.items()}
+
 #: Same signal-name suffixes DBAPI.transaction_commit() uses (dbapi.py's
 #: own `action` dict) -- see _emit_change_signals().
 _TRANS_TYPE_ACTION = {TXNADD: "-add", TXNUPD: "-update", TXNDEL: "-delete"}
@@ -961,6 +1001,145 @@ def _prune_dangling_references(obj, db):
                 continue
             has_handle = getattr(db, has_handle_name)
             handles[:] = [h for h in handles if has_handle(h)]
+
+
+def _event_ref_signature(person):
+    """A (handle, role) tuple per entry of person's event_ref_list --
+    enough to tell whether the list itself was untouched across a resync
+    (see _snapshot_birth_death_indices()), without pulling in the full
+    equality check EventRef.is_equivalent() does (citations, notes, ...
+    are irrelevant here)."""
+    return tuple((ref.ref, ref.role.serialize()) for ref in person.get_event_ref_list())
+
+
+def _snapshot_birth_death_indices(db):
+    """Capture birth_ref_index/death_ref_index (plus an event_ref_list
+    signature to tell whether it's still safe to trust that capture
+    afterwards) for every Person, keyed by handle -- taken right before
+    _full_resync_async()'s rebuild() clears the mirror.
+
+    Gramps XML has no element for either index (confirmed against
+    exportxml.py's write_person(): only the event_ref_list itself is
+    written) -- ImportXml instead *recomputes* both, unconditionally,
+    from document order: the first PRIMARY-role BIRTH/DEATH-type event
+    ref becomes the new birth_ref_index/death_ref_index, and a Person
+    with no such ref keeps -1 (importxml.py's own GrampsParser,
+    ``self.person.get_birth_ref() is None`` guard). That recomputation
+    is wrong whenever the true index was already -1 despite a BIRTH/
+    DEATH-type ref existing (nothing marks one as "the" birth/death
+    among several, or none is marked as primary at all -- both real,
+    legal states, common on data imported from outside Gramps) or
+    pointed at something other than the first such ref (multiple
+    disputed-date events, a later one picked as authoritative). Since
+    diff_items() (gen/merge/diff.py) treats birth_ref_index/
+    death_ref_index as ordinary content -- unlike "change", there is no
+    key-name skip for them -- a Person whose true index doesn't match
+    that heuristic silently and permanently disagrees with the server
+    after every single resync, so any future edit to that Person's own
+    "old" snapshot never matches the server's current data again:
+    gramps-web-api's old_unchanged() (api/tasks.py) rejects the push,
+    _push_payload_async() resyncs (recomputing the same wrong value
+    right back), and the retry conflicts identically -- confirmed via a
+    local export/reimport round-trip against a real DBAPI database
+    (birth_ref_index went from -1, correct, to 0 purely from the XML
+    round trip, with no edit involved).
+
+    _restore_birth_death_indices() undoes the damage for whatever this
+    captured, once the reimport is done -- but only for a Person whose
+    event_ref_list (see _event_ref_signature()) still matches signature
+    for signature afterwards: if it doesn't, something legitimately
+    changed that Person server-side and the freshly-recomputed index is
+    at least as trustworthy as blindly replaying a now-stale one.
+    """
+    snapshot = {}
+    for handle in db.get_person_handles():
+        person = db.get_person_from_handle(handle)
+        snapshot[handle] = (
+            person.birth_ref_index,
+            person.death_ref_index,
+            _event_ref_signature(person),
+        )
+    return snapshot
+
+
+def _restore_birth_death_indices(db, snapshot, trans):
+    """_snapshot_birth_death_indices()'s other half -- see that
+    function's docstring. Called under the same self._pulling context
+    _full_resync_async()'s rebuild() already holds around the reimport
+    itself, so this local-only correction does not get mistaken for an
+    edit to push back to the server (see transaction_begin()'s
+    self._pulling check). Returns the number of Person objects
+    corrected, purely for the caller's own debug log."""
+    restored = 0
+    for handle, (birth_idx, death_idx, signature) in snapshot.items():
+        if not db.has_person_handle(handle):
+            continue
+        person = db.get_person_from_handle(handle)
+        if _event_ref_signature(person) != signature:
+            continue
+        if person.birth_ref_index == birth_idx and person.death_ref_index == death_idx:
+            continue
+        person.birth_ref_index = birth_idx
+        person.death_ref_index = death_idx
+        db.commit_person(person, trans)
+        restored += 1
+    return restored
+
+
+def _diff_snapshots(before, after):
+    """Diff two {(obj_class, handle): data} snapshots (_snapshot_all_
+    objects()'s own shape) into a transaction_to_json()-shaped change
+    list: a handle present only in ``after`` is an add ("old": None), one
+    present only in ``before`` is a delete ("new": None), and one present
+    in both is an update only if its content actually differs -- compared
+    with gramps.gen.merge.diff.diff_items(), the exact function gramps-
+    web-api's own old_unchanged() conflict check uses server-side
+    (gramps_webapi/api/tasks.py, confirmed by reading that source), so
+    "did this really change" here agrees with the server's own idea of
+    it: both ignore the object's own "change" timestamp, so a resave with
+    no other change is correctly not reported at all.
+
+    Shared by _reconcile_batch_commit() (which pushes the result to the
+    server -- a local batch=True commit's own changes need to go out) and
+    _full_resync_async()/_bootstrap_full_resync() (which only need it to
+    decide what to *tell already-open views*, via _emit_change_signals()
+    -- what was just pulled *from* the server must never be pushed back).
+    """
+    entries = []
+    for obj_class, handle in after.keys() - before.keys():
+        entries.append(
+            {
+                "type": "add",
+                "handle": handle,
+                "_class": obj_class,
+                "old": None,
+                "new": after[(obj_class, handle)],
+            }
+        )
+    for obj_class, handle in before.keys() - after.keys():
+        entries.append(
+            {
+                "type": "delete",
+                "handle": handle,
+                "_class": obj_class,
+                "old": before[(obj_class, handle)],
+                "new": None,
+            }
+        )
+    for obj_class, handle in before.keys() & after.keys():
+        old_data = before[(obj_class, handle)]
+        new_data = after[(obj_class, handle)]
+        if diff_items(obj_class, old_data, new_data):
+            entries.append(
+                {
+                    "type": "update",
+                    "handle": handle,
+                    "_class": obj_class,
+                    "old": old_data,
+                    "new": new_data,
+                }
+            )
+    return entries
 
 
 def _merge_or_overwrite(current, local_obj, db):
@@ -2466,6 +2645,8 @@ class WebApiDB(SQLite):
                 return
             self._pulling = True
             try:
+                before = self._snapshot_all_objects()
+                birth_death_snapshot = _snapshot_birth_death_indices(self)
                 cleared = 0
                 with DbTxn(
                     _("Clear local mirror before full resync"), self, batch=True
@@ -2490,7 +2671,23 @@ class WebApiDB(SQLite):
                     self.get_total(),
                     monotonic() - imported_at,
                 )
-                self.request_rebuild()
+                if birth_death_snapshot:
+                    with DbTxn(
+                        _("Restore birth/death event references lost on reimport"),
+                        self,
+                        batch=True,
+                    ) as trans:
+                        restored = _restore_birth_death_indices(
+                            self, birth_death_snapshot, trans
+                        )
+                    if restored:
+                        LOG.debug(
+                            "resync: restored birth/death event reference "
+                            "index on %d person(s) Gramps XML re-import "
+                            "can't preserve",
+                            restored,
+                        )
+                self._describe_resync_to_views(before)
             finally:
                 self._pulling = False
                 os.remove(tmp_path)
@@ -2651,6 +2848,8 @@ class WebApiDB(SQLite):
             tmp_path = tmp_file.name
         self._pulling = True
         try:
+            before = self._snapshot_all_objects()
+            birth_death_snapshot = _snapshot_birth_death_indices(self)
             cleared = 0
             with DbTxn(
                 _("Clear local mirror before full resync"), self, batch=True
@@ -2683,7 +2882,23 @@ class WebApiDB(SQLite):
                 self.get_total(),
                 monotonic() - imported_at,
             )
-            self.request_rebuild()
+            if birth_death_snapshot:
+                with DbTxn(
+                    _("Restore birth/death event references lost on reimport"),
+                    self,
+                    batch=True,
+                ) as trans:
+                    restored = _restore_birth_death_indices(
+                        self, birth_death_snapshot, trans
+                    )
+                if restored:
+                    LOG.debug(
+                        "bootstrap resync: restored birth/death event "
+                        "reference index on %d person(s) Gramps XML "
+                        "re-import can't preserve",
+                        restored,
+                    )
+            self._describe_resync_to_views(before)
         finally:
             self._pulling = False
             os.remove(tmp_path)
@@ -2697,12 +2912,11 @@ class WebApiDB(SQLite):
         json_utils-shaped, "_object"-stripped form transaction_to_json()
         sends as "old"/"new" (_iter_raw_data() reads it straight back out
         of storage via the same serializer _commit_base() wrote it with
-        -- see dbapi.py). Called twice around a local batch=True
-        transaction (before it opens, and again once it has committed)
-        so _reconcile_batch_commit() can diff the two and know exactly
-        what changed -- see that method's docstring for why full data,
-        not just which handles exist or a wall-clock timestamp, is what
-        this needs.
+        -- see dbapi.py). Two callers, both diffing a before/after pair
+        via _diff_snapshots(): _reconcile_batch_commit() around a local
+        batch=True transaction (transaction_begin()'s own call is the
+        "before" half), and _full_resync_async()/_bootstrap_full_resync()
+        around a full wipe-and-reimport (see _describe_resync_to_views()).
 
         Uses _iter_raw_data() (one bulk SELECT per object type) rather
         than _get_raw_data() per handle, so this is O(types) queries,
@@ -2715,26 +2929,71 @@ class WebApiDB(SQLite):
                 snapshot[(obj_class, handle)] = remove_object(data)
         return snapshot
 
+    def _describe_resync_to_views(self, before):
+        """Tell every already-open view what a full resync's clear+
+        reimport actually changed -- called by _full_resync_async()'s
+        rebuild() and _bootstrap_full_resync(), once each has finished
+        reimporting (and, for the former, restoring whatever
+        _restore_birth_death_indices() could).
+
+        request_rebuild() (DbGeneric's own "too much changed to describe
+        incrementally" signal, gen/db/generic.py) is correct for the
+        genuinely-everything-changed case -- a brand new mirror, or one
+        so far behind a repair effectively rebuilds it -- but it is
+        needlessly disruptive for the far more common case this resync
+        recovers from: a push conflict or a mirror-repair shortfall,
+        where the mirror was already correct for everything except the
+        handful of objects actually involved and the wipe+reimport was
+        only ever a (surprisingly expensive) way to get back to that
+        state. gramps.gui.displaystate.py's own History.history_changed()
+        listens for exactly this signal and responds by resetting Active
+        Person to find_initial_person() unconditionally -- confirmed live
+        (2026-08-17): a user mid-edit on one Person, with a different
+        Person active, would see Active Person silently reset out from
+        under them on every conflict-triggered resync, since a plain
+        commit conflict already means at least one resync ran before the
+        edit could even be retried.
+
+        _diff_snapshots() (the same before/after diff
+        _reconcile_batch_commit() uses to reconstruct a local batch
+        commit, minus the push -- what was just pulled *from* the server
+        must never be pushed back) turns ``before`` and a fresh
+        _snapshot_all_objects() into the same shape _emit_change_signals()
+        already knows how to turn into precise person-add/family-update/
+        event-delete/... signals. A view listening for those (rather than
+        a blanket rebuild) only reloads what actually changed -- and
+        History only resets Active Person if the active object's own
+        handle is among them.
+
+        GRANULAR_REBUILD_MAX_CHANGES caps this: above it, the diff itself
+        is legitimately "everything" (an empty-mirror bootstrap, or a
+        repair recovering from a mirror badly out of step), where one
+        rebuild signal per type is cheaper for every view than replaying
+        that many individual signals -- so request_rebuild() stays the
+        right tool there. An empty diff (nothing genuinely changed --
+        possible for a mirror-repair triggered by a totals check that
+        turns out to have been spurious) skips telling views anything at
+        all, rather than either signal shape.
+        """
+        entries = _diff_snapshots(before, self._snapshot_all_objects())
+        if not entries:
+            return
+        if len(entries) > GRANULAR_REBUILD_MAX_CHANGES:
+            self.request_rebuild()
+            return
+        net_changes = {
+            (entry["_class"], entry["handle"]): _NAME_TO_TRANS_TYPE[entry["type"]]
+            for entry in entries
+        }
+        self._emit_change_signals(net_changes)
+
     def _reconcile_batch_commit(self, before):
         """Reconstruct exactly what a local batch=True transaction
         changed, by diffing the pre-transaction object snapshot
         (transaction_begin()'s _snapshot_all_objects() call) against a
-        fresh one taken now, and push the result -- see the module
-        docstring's note on why a batch commit is otherwise invisible to
-        transaction_to_json().
-
-        A handle present now but not before is an add, pushed with
-        "old": None, the same as any other first-time add. One present
-        before but not now is a delete, pushed with "old" the last
-        known-synced data (what the object looked like before this
-        transaction touched it) and "new": None. One present in both is
-        only an update if its content actually differs -- compared with
-        gramps.gen.merge.diff.diff_items(), the exact function gramps-
-        web-api's own old_unchanged() conflict check uses server-side
-        (gramps_webapi/api/tasks.py, confirmed by reading that source),
-        so "did this really change" here agrees with the server's own
-        idea of it: both ignore the object's own "change" timestamp, so
-        a resave with no other change is correctly not reported at all.
+        fresh one taken now (via _diff_snapshots()), and push the result
+        -- see the module docstring's note on why a batch commit is
+        otherwise invisible to transaction_to_json().
 
         Getting "old" right this way -- genuinely the pre-transaction
         state, not whatever commit_<type>()/remove_<type>() happens to
@@ -2760,41 +3019,7 @@ class WebApiDB(SQLite):
         batch operation's own transaction non-batch, not to make this
         cleverer.
         """
-        after = self._snapshot_all_objects()
-        entries = []
-        for obj_class, handle in after.keys() - before.keys():
-            entries.append(
-                {
-                    "type": "add",
-                    "handle": handle,
-                    "_class": obj_class,
-                    "old": None,
-                    "new": after[(obj_class, handle)],
-                }
-            )
-        for obj_class, handle in before.keys() - after.keys():
-            entries.append(
-                {
-                    "type": "delete",
-                    "handle": handle,
-                    "_class": obj_class,
-                    "old": before[(obj_class, handle)],
-                    "new": None,
-                }
-            )
-        for obj_class, handle in before.keys() & after.keys():
-            old_data = before[(obj_class, handle)]
-            new_data = after[(obj_class, handle)]
-            if diff_items(obj_class, old_data, new_data):
-                entries.append(
-                    {
-                        "type": "update",
-                        "handle": handle,
-                        "_class": obj_class,
-                        "old": old_data,
-                        "new": new_data,
-                    }
-                )
+        entries = _diff_snapshots(before, self._snapshot_all_objects())
         if not entries:
             return
         LOG.info(
