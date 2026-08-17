@@ -84,6 +84,7 @@ from GrampsWebApiDb.grampswebapidb import (
     WebApiPushConflict,
     transaction_to_json,
 )
+from GrampsWebApiDb.tests.fakes import InlineTaskRunner
 
 # grampswebapidb.py imports webapi_client with a bare `from webapi_client
 # import ...` (see CLAUDE.md Testing conventions -- this addon has no
@@ -128,7 +129,10 @@ class FakeTransaction:
 
 def new_instance():
     """A WebApiDB that never touched a real SQLite file or server."""
-    return WebApiDB.__new__(WebApiDB)
+    db = WebApiDB.__new__(WebApiDB)
+    db.runner = InlineTaskRunner()
+    db.io_runner = InlineTaskRunner()
+    return db
 
 
 # -------------------------------------------------------------------------
@@ -1354,6 +1358,8 @@ class TestConflictRetryAgainstARealDatabase(unittest.TestCase):
         # a real DBAPI backend.
         db.__class__ = WebApiDB
         db.web_client = mock.MagicMock()
+        db.runner = InlineTaskRunner()
+        db.io_runner = InlineTaskRunner()
         db._syncing = False
         db._retrying = False
         db._pulling = False
