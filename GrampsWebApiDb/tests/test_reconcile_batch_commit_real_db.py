@@ -192,7 +192,7 @@ class TestReconcileBatchCommitAgainstARealDatabase(unittest.TestCase):
         self.addCleanup(self.db.close)
         self.pushes = []
 
-        def fake_push(payload, undo=False, background=False, on_wait=None):
+        def fake_push(payload, undo=False, background=False):
             self.pushes.append(copy.deepcopy(payload))
 
         self.db.web_client.push_transaction.side_effect = fake_push
@@ -401,22 +401,25 @@ class TestReconcileBatchCommitAgainstARealDatabase(unittest.TestCase):
 
         calls = []
 
-        def fake_push(payload, undo=False, background=False, on_wait=None):
+        def fake_push(payload, undo=False, background=False):
             calls.append(copy.deepcopy(payload))
             if len(calls) == 1:
                 raise WebApiPushConflict("Object has changed")
 
         self.db.web_client.push_transaction.side_effect = fake_push
 
-        def fake_full_resync():
+        def fake_full_resync_async(on_done, on_error, progress_callback=None):
             self.db._pulling = True
             try:
                 with DbTxn("fake resync", self.db, batch=True) as trans:
                     self.db.commit_person(data_to_object(server_fresh), trans)
             finally:
                 self.db._pulling = False
+            on_done(None)
 
-        with mock.patch.object(self.db, "_full_resync", side_effect=fake_full_resync):
+        with mock.patch.object(
+            self.db, "_full_resync_async", side_effect=fake_full_resync_async
+        ):
             with DbTxn("simulated batch tool", self.db, batch=True) as trans:
                 person = self.db.get_person_from_handle(handle)
                 # A list-valued field, not a scalar one: _merge_or_
