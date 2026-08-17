@@ -85,7 +85,7 @@ from GrampsWebApiDb.grampswebapidb import (
     WebApiPushConflict,
     transaction_to_json,
 )
-from GrampsWebApiDb.tests.fakes import InlineTaskRunner
+from GrampsWebApiDb.tests.fakes import FakeHandleDb, InlineTaskRunner
 
 # grampswebapidb.py imports webapi_client with a bare `from webapi_client
 # import ...` (see CLAUDE.md Testing conventions -- this addon has no
@@ -1575,10 +1575,11 @@ class TestRetryAfterConflict(unittest.TestCase):
         with mock.patch.object(grampswebapidb, "_merge_or_overwrite") as merge_fn:
             merge_fn.return_value = "MERGED"
             self.db._retry_after_conflict(payload)
-        merge_current, merge_local = merge_fn.call_args[0]
+        merge_current, merge_local, merge_db = merge_fn.call_args[0]
         self.assertIs(merge_current, current)
         self.assertIsInstance(merge_local, Person)
         self.assertEqual(merge_local.get_gramps_id(), "I0002")
+        self.assertIs(merge_db, self.db)
         self.db.commit_person.assert_called_once_with("MERGED", "TRANS")
 
     def test_delete_removes_if_handle_still_present(self):
@@ -1955,7 +1956,8 @@ class TestMergeOrOverwrite(unittest.TestCase):
         local.set_gramps_id("I0002")
         local.add_note("N-local")
 
-        merged = grampswebapidb._merge_or_overwrite(current, local)
+        db = FakeHandleDb()
+        merged = grampswebapidb._merge_or_overwrite(current, local, db)
         self.assertEqual(set(merged.get_note_list()), {"N-remote", "N-local"})
 
     def test_current_object_is_not_mutated(self):
@@ -1966,7 +1968,7 @@ class TestMergeOrOverwrite(unittest.TestCase):
         local.set_handle("H1")
         local.add_note("N-local")
 
-        grampswebapidb._merge_or_overwrite(current, local)
+        grampswebapidb._merge_or_overwrite(current, local, FakeHandleDb())
         self.assertEqual(current.get_note_list(), ["N-remote"])
 
     def test_local_obj_gramps_id_is_cleared_before_merging(self):
@@ -1981,7 +1983,7 @@ class TestMergeOrOverwrite(unittest.TestCase):
         local.set_handle("H1")
         local.set_gramps_id("I0002")
 
-        merged = grampswebapidb._merge_or_overwrite(current, local)
+        merged = grampswebapidb._merge_or_overwrite(current, local, FakeHandleDb())
         self.assertEqual(merged.get_attribute_list(), [])
         self.assertEqual(local.get_gramps_id(), "I0002")
 
@@ -1995,7 +1997,7 @@ class TestMergeOrOverwrite(unittest.TestCase):
         local.set_handle("H1")
         local.set_name("Local name")
 
-        result = grampswebapidb._merge_or_overwrite(current, local)
+        result = grampswebapidb._merge_or_overwrite(current, local, FakeHandleDb())
         self.assertIs(result, local)
 
     def test_privacy_is_ored_not_left_at_either_sides_value(self):
@@ -2012,7 +2014,7 @@ class TestMergeOrOverwrite(unittest.TestCase):
         local.set_handle("H1")
         local.set_privacy(True)
 
-        merged = grampswebapidb._merge_or_overwrite(current, local)
+        merged = grampswebapidb._merge_or_overwrite(current, local, FakeHandleDb())
         self.assertTrue(merged.get_privacy())
 
     def test_a_scalar_field_merge_does_not_special_case_keeps_currents_value(self):
@@ -2028,8 +2030,97 @@ class TestMergeOrOverwrite(unittest.TestCase):
         local.set_handle("H1")
         local.set_gender(Person.MALE)
 
-        merged = grampswebapidb._merge_or_overwrite(current, local)
+        merged = grampswebapidb._merge_or_overwrite(current, local, FakeHandleDb())
         self.assertEqual(merged.get_gender(), Person.FEMALE)
+
+
+# -------------------------------------------------------------------------
+#
+# TestPruneDanglingReferences
+#
+# -------------------------------------------------------------------------
+class TestPruneDanglingReferences(unittest.TestCase):
+    """_merge_or_overwrite()'s dangling-reference guard: merge()'s own
+    list-unioning (TagBase._merge_tag_list() and the Note/Citation
+    equivalents) has no existence check, so replaying a stale pre-conflict
+    local edit can resurrect a handle for a Tag/Note/Citation another
+    client deleted server-side in the meantime -- exactly what the
+    freshly-resynced "current" object correctly no longer references.
+    Reproduced live (2026-08-17) against a real GTK PersonListModel: the
+    very next redraw of a row with such a dangling tag_list entry crashed
+    Gramps with an uncaught HandleError from PeopleModel.column_tag_color().
+    """
+
+    def test_tag_only_known_to_local_side_is_dropped(self):
+        current = Person()
+        current.set_handle("H1")
+        local = Person()
+        local.set_handle("H1")
+        local.add_tag("deleted-tag-handle")
+
+        db = FakeHandleDb(known_handles=set())
+        merged = grampswebapidb._merge_or_overwrite(current, local, db)
+        self.assertEqual(merged.get_tag_list(), [])
+
+    def test_tag_still_known_survives(self):
+        current = Person()
+        current.set_handle("H1")
+        local = Person()
+        local.set_handle("H1")
+        local.add_tag("live-tag-handle")
+
+        db = FakeHandleDb(known_handles={"live-tag-handle"})
+        merged = grampswebapidb._merge_or_overwrite(current, local, db)
+        self.assertEqual(merged.get_tag_list(), ["live-tag-handle"])
+
+    def test_dangling_note_and_citation_are_dropped_too(self):
+        current = Person()
+        current.set_handle("H1")
+        local = Person()
+        local.set_handle("H1")
+        local.add_note("deleted-note-handle")
+        local.add_citation("deleted-citation-handle")
+
+        db = FakeHandleDb(known_handles=set())
+        merged = grampswebapidb._merge_or_overwrite(current, local, db)
+        self.assertEqual(merged.get_note_list(), [])
+        self.assertEqual(merged.get_citation_list(), [])
+
+    def test_dangling_reference_on_a_nested_child_object_is_dropped(self):
+        # Attribute mixes in NoteBase/CitationBase of its own -- merge()
+        # copies local's attribute_list wholesale, so a dangling note on
+        # one of those attributes needs the same pruning, not just on the
+        # Person's own top-level note_list.
+        current = Person()
+        current.set_handle("H1")
+        local = Person()
+        local.set_handle("H1")
+        attr = Attribute()
+        attr.set_type("Occupation")
+        attr.add_note("deleted-note-handle")
+        local.add_attribute(attr)
+
+        db = FakeHandleDb(known_handles=set())
+        merged = grampswebapidb._merge_or_overwrite(current, local, db)
+        merged_attrs = merged.get_attribute_list()
+        self.assertEqual(len(merged_attrs), 1)
+        self.assertEqual(merged_attrs[0].get_note_list(), [])
+
+    def test_prune_dangling_references_applies_directly_without_a_merge(self):
+        # _merge_or_overwrite()'s type(current).merge is BaseObject.merge
+        # fallback (e.g. Tag) returns local_obj outright with no merge()
+        # call at all -- confirming _prune_dangling_references() itself
+        # mutates its argument in place covers that path without needing
+        # a real no-merge type that also happens to carry a tag_list.
+        person = Person()
+        person.set_handle("H1")
+        person.add_tag("deleted-tag-handle")
+        person.add_note("live-note-handle")
+
+        db = FakeHandleDb(known_handles={"live-note-handle"})
+        grampswebapidb._prune_dangling_references(person, db)
+        self.assertEqual(person.get_tag_list(), [])
+        self.assertEqual(person.get_note_list(), ["live-note-handle"])
 
 
 # -------------------------------------------------------------------------

@@ -904,7 +904,66 @@ def transaction_to_json(transaction):
     return out
 
 
-def _merge_or_overwrite(current, local_obj):
+#: Handle-list attributes merge() unions without any existence check --
+#: see _prune_dangling_references() below. TagBase/NoteBase/CitationBase
+#: are the only primary-object mixins that hold plain handle lists rather
+#: than reference objects of their own (EventRef, ChildRef, ... carry a
+#: handle *inside* a child object get_handle_referents() already walks
+#: to, so pruning each of these three attributes on every node
+#: _iter_referents() yields covers those too).
+_DANGLING_REFERENCE_CHECKS = (
+    ("tag_list", "has_tag_handle"),
+    ("note_list", "has_note_handle"),
+    ("citation_list", "has_citation_handle"),
+)
+
+
+def _iter_referents(obj):
+    """obj, then every child object get_handle_referents() reaches,
+    recursively -- e.g. a Person's EventRef/Attribute/MediaRef/Address
+    entries, each of which can carry its own tag_list/note_list/
+    citation_list. Same traversal BaseObject.get_referenced_handles_
+    recursively() uses, just walking nodes instead of collecting handles.
+    """
+    yield obj
+    for child in obj.get_handle_referents():
+        yield from _iter_referents(child)
+
+
+def _prune_dangling_references(obj, db):
+    """Strip any Tag/Note/Citation handle obj (or any nested child object
+    -- see _iter_referents()) carries that no longer resolves in db.
+
+    _merge_or_overwrite() below exists specifically to replay a *stale*
+    pre-conflict local edit on top of a freshly-resynced object
+    (_retry_after_conflict()) -- and merge()'s own list-unioning
+    (TagBase._merge_tag_list() and the Note/Citation equivalents,
+    gen/lib/{tagbase,notebase,citationbase}.py) has no existence check at
+    all. If the push conflict this retry is recovering from was itself
+    caused by another client deleting one of those Tag/Note/Citation
+    objects, resync correctly drops the reference from the freshly-
+    fetched "current" -- but the union then resurrects that now-dangling
+    handle straight into the object about to be committed. Confirmed in
+    the field (2026-08-17): the very next redraw of the affected row then
+    crashed Gramps with an uncaught HandleError (PeopleModel.
+    column_tag_color() -> db.get_tag_from_handle()), reproduced exactly
+    by replaying this same sequence against a real GTK PersonListModel.
+
+    Applied to whatever _merge_or_overwrite() is about to return, not
+    just the merge() branch's output -- the type(current).merge is
+    BaseObject.merge fallback (e.g. Tag) returns local_obj outright with
+    no merge() call at all to have caught this otherwise.
+    """
+    for node in _iter_referents(obj):
+        for attr, has_handle_name in _DANGLING_REFERENCE_CHECKS:
+            handles = getattr(node, attr, None)
+            if not handles:
+                continue
+            has_handle = getattr(db, has_handle_name)
+            handles[:] = [h for h in handles if has_handle(h)]
+
+
+def _merge_or_overwrite(current, local_obj, db):
     """Combine local_obj's content into current via the object's own
     merge() -- the same list-unioning logic behind Gramps' Merge People/
     Family/... tools (ported from GrampsWebSync's diffhandler.py, credit
@@ -919,14 +978,20 @@ def _merge_or_overwrite(current, local_obj):
     misread it as a real second object being absorbed (which is what
     merge() is for) and tag on a spurious "Merged Gramps ID" attribute --
     this is the same object, edited twice, not two objects becoming one.
+
+    db is required so the result can be checked for dangling references
+    before it's returned -- see _prune_dangling_references().
     """
     if type(current).merge is BaseObject.merge:
-        return local_obj
-    merged = deepcopy(current)
-    local_copy = deepcopy(local_obj)
-    local_copy.gramps_id = None
-    merged.merge(local_copy)
-    return merged
+        result = local_obj
+    else:
+        merged = deepcopy(current)
+        local_copy = deepcopy(local_obj)
+        local_copy.gramps_id = None
+        merged.merge(local_copy)
+        result = merged
+    _prune_dangling_references(result, db)
+    return result
 
 
 class WebApiDB(SQLite):
@@ -2240,7 +2305,7 @@ class WebApiDB(SQLite):
                         obj = data_to_object(entry["new"])
                         if has_handle(handle):
                             current = getattr(self, f"get_{name}_from_handle")(handle)
-                            obj = _merge_or_overwrite(current, obj)
+                            obj = _merge_or_overwrite(current, obj, self)
                         getattr(self, f"commit_{name}")(obj, trans)
         finally:
             self._retrying = False

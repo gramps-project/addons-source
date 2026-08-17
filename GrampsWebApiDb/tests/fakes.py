@@ -62,3 +62,26 @@ class InlineTaskRunner:
     def post(self, func: Callable[[], None]) -> None:
         """Run ``func`` immediately; there is no other thread to marshal from."""
         func()
+
+
+class FakeHandleDb:
+    """Minimal stand-in for the ``db`` argument grampswebapidb.py's
+    _prune_dangling_references() (called from _merge_or_overwrite()) uses
+    to check whether a Tag/Note/Citation handle still exists: answers
+    has_tag_handle()/has_note_handle()/has_citation_handle() from a
+    settable set of "known" handles.
+
+    Defaults to reporting every handle as known (``known_handles=None``),
+    so a test that isn't exercising the pruning itself can pass one
+    without also having to enumerate every handle its test objects use.
+    """
+
+    def __init__(self, known_handles=None):
+        self.known_handles = known_handles
+
+    def _has_handle(self, handle):
+        return True if self.known_handles is None else handle in self.known_handles
+
+    has_tag_handle = _has_handle
+    has_note_handle = _has_handle
+    has_citation_handle = _has_handle
