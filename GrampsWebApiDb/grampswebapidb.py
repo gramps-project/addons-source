@@ -1044,28 +1044,41 @@ class WebApiDB(SQLite):
         # confirmed live (2026-08-17) that three back-to-back blocking
         # calls here, with nothing pumping the loop between them, is
         # enough on its own to make the window unresponsive.
-        for check_name, start_chain in (
+        #
+        # Each also reports a small, fixed percentage once it succeeds --
+        # not a real fraction of anything, just visible proof of progress
+        # during a stretch that, before this, reported nothing at all.
+        # Reported live (2026-08-17): checks + a full bootstrap resync
+        # (see _bootstrap_full_resync() below) can together leave the bar
+        # motionless for over ten seconds before the reimport's own real
+        # percentages start arriving.
+        for check_name, start_chain, percent_after in (
             (
                 "identity",
                 lambda on_done, on_error: self._check_identity_async(on_done, on_error),
+                5,
             ),
             (
                 "permissions",
                 lambda on_done, on_error: self._check_permissions_async(
                     on_done, on_error, writable=(mode == DBMODE_W)
                 ),
+                10,
             ),
             (
                 "server version",
                 lambda on_done, on_error: self._check_server_version_async(
                     on_done, on_error
                 ),
+                15,
             ),
         ):
             result = self._run_async_to_completion(start_chain)
             if result is None:
                 LOG.debug("load: tree closed during %s check; aborting", check_name)
                 return
+            if callback is not None:
+                callback(percent_after)
         # A quick, synchronous, unwrapped check for the totals-shortfall
         # case -- the same condition _mirror_is_short_of_the_server_async()
         # checks, done directly here rather than through the async chain.
@@ -1098,6 +1111,8 @@ class WebApiDB(SQLite):
         self._syncing = True
         try:
             if needs_bootstrap_resync:
+                if callback is not None:
+                    callback(20)
                 self._bootstrap_full_resync(callback)
             else:
                 sync_result = self._run_async_to_completion(
@@ -2502,20 +2517,57 @@ class WebApiDB(SQLite):
         unlike every other network call in this file -- froze the window
         for its whole duration (6+ seconds for this export, longer for a
         bigger one).
+
+        progress_callback, if given, is called throughout -- not just the
+        0/100 bookend load()'s other callers get. load() itself has
+        already reported 5/10/15/20 by the time this method is called
+        (see its own comments); from here, DOWNLOAD_START_PCT..
+        DOWNLOAD_END_PCT is a slow, fixed-rate pulse for the download
+        (there is no real byte-level progress to report for a single
+        unchunked read -- see the download() closure below -- so this is
+        proof of life, not a measurement), and
+        REIMPORT_START_PCT..100 is importData()'s own real percentage
+        (via _import_progress_user()), rescaled onto that remaining span
+        so the bar keeps climbing instead of resetting to 0% once the
+        reimport itself starts reporting.
         """
-        if progress_callback is not None:
-            progress_callback(0)
+        DOWNLOAD_START_PCT = 20
+        DOWNLOAD_END_PCT = 30
+        REIMPORT_START_PCT = 30
+
         sync_cutoff = time()
         started = monotonic()
 
         def download():
             return self.web_client.download_export()
 
-        data = self._run_async_to_completion(
-            lambda on_done, on_error: self.io_runner.run(
-                download, self._guarded(on_done), self._guarded(on_error)
+        # Ticks once a second, capped at DOWNLOAD_END_PCT, for as long as
+        # the download is in flight -- fires because
+        # _run_async_to_completion()'s own wait loop below pumps this
+        # same GLib main context. Cancelled in the finally below the
+        # instant the download finishes (success, failure, or a closed
+        # tree alike), so it never fires during the reimport phase, which
+        # reports its own real percentages instead.
+        pulse_source_id = None
+        if progress_callback is not None:
+            pulse_state = {"value": DOWNLOAD_START_PCT}
+
+            def pulse():
+                pulse_state["value"] = min(pulse_state["value"] + 1, DOWNLOAD_END_PCT)
+                progress_callback(pulse_state["value"])
+                return GLib.SOURCE_CONTINUE
+
+            pulse_source_id = GLib.timeout_add_seconds(1, pulse)
+
+        try:
+            data = self._run_async_to_completion(
+                lambda on_done, on_error: self.io_runner.run(
+                    download, self._guarded(on_done), self._guarded(on_error)
+                )
             )
-        )
+        finally:
+            if pulse_source_id is not None:
+                GLib.source_remove(pulse_source_id)
         if data is None:
             # Tree closed while the download was in flight -- see
             # _run_async_to_completion()'s own docstring. Not expected in
@@ -2549,11 +2601,17 @@ class WebApiDB(SQLite):
                 "bootstrap resync: cleared %d local object(s); reimporting", cleared
             )
             imported_at = monotonic()
-            import_user = (
-                _import_progress_user(progress_callback)
-                if progress_callback is not None
-                else User()
-            )
+            if progress_callback is not None:
+
+                def rescaled_progress(value):
+                    progress_callback(
+                        REIMPORT_START_PCT
+                        + int(value * (100 - REIMPORT_START_PCT) / 100)
+                    )
+
+                import_user = _import_progress_user(rescaled_progress)
+            else:
+                import_user = User()
             importData(self, tmp_path, import_user)
             LOG.debug(
                 "bootstrap resync: reimport left %d object(s) (%.2fs)",

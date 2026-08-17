@@ -1074,6 +1074,160 @@ class TestFullResync(unittest.TestCase):
 
 # -------------------------------------------------------------------------
 #
+# TestBootstrapFullResync
+#
+# load()'s alternative to _full_resync_async() for its own totals-
+# shortfall check -- see _bootstrap_full_resync()'s own docstring for why
+# it exists (a load()-time-only, unwrapped call shape) and what its
+# progress_callback staging means (DOWNLOAD_START_PCT/DOWNLOAD_END_PCT/
+# REIMPORT_START_PCT, all local to that method).
+#
+# -------------------------------------------------------------------------
+class TestBootstrapFullResync(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+        self.db.web_client = mock.MagicMock()
+        self.db.web_client.download_export.return_value = b"fake gramps xml bytes"
+        self.db.emit = mock.MagicMock()
+        self.db.get_total = mock.MagicMock(return_value=0)
+        self.db._set_metadata = mock.MagicMock()
+        self.db._run_id = 0
+        for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
+            if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
+                continue
+            setattr(self.db, f"get_{name}_handles", mock.MagicMock(return_value=[]))
+            setattr(self.db, f"remove_{name}", mock.MagicMock())
+        self.patcher = mock.patch.object(grampswebapidb, "DbTxn", FakeDbTxn)
+        self.patcher.start()
+        self.addCleanup(self.patcher.stop)
+
+    def test_downloads_wipes_and_reimports_with_no_progress_callback(self):
+        with mock.patch.object(grampswebapidb, "importData") as import_data:
+            self.db._bootstrap_full_resync()  # must not raise
+        self.db.web_client.download_export.assert_called_once_with()
+        import_data.assert_called_once()
+        self.assertIsInstance(import_data.call_args.args[2], grampswebapidb.User)
+        self.db._set_metadata.assert_called_once_with("sync_last_time", mock.ANY)
+        emitted = [call.args[0] for call in self.db.emit.call_args_list]
+        self.assertIn("person-rebuild", emitted)
+
+    def test_no_progress_callback_means_no_pulse_timer_at_all(self):
+        # Nothing to pulse for if there's nowhere to report it to -- and
+        # no display/GTK requirement either, matching this addon's
+        # headless-CLI-safety rule elsewhere in the file.
+        with mock.patch.object(grampswebapidb, "importData"), mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds"
+        ) as timeout_add, mock.patch.object(
+            grampswebapidb.GLib, "source_remove"
+        ) as source_remove:
+            self.db._bootstrap_full_resync()
+        timeout_add.assert_not_called()
+        source_remove.assert_not_called()
+
+    def test_progress_callback_given_registers_and_cleans_up_a_pulse_timer(self):
+        with mock.patch.object(grampswebapidb, "importData"), mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds", return_value=99
+        ) as timeout_add, mock.patch.object(
+            grampswebapidb.GLib, "source_remove"
+        ) as source_remove:
+            self.db._bootstrap_full_resync(progress_callback=mock.MagicMock())
+        timeout_add.assert_called_once_with(1, mock.ANY)
+        source_remove.assert_called_once_with(99)
+
+    def test_pulse_ticks_up_to_but_never_past_download_end_pct(self):
+        captured_pulse = {}
+
+        def fake_timeout_add_seconds(interval, pulse):
+            captured_pulse["pulse"] = pulse
+            return 1
+
+        progress = mock.MagicMock()
+        with mock.patch.object(grampswebapidb, "importData"), mock.patch.object(
+            grampswebapidb.GLib,
+            "timeout_add_seconds",
+            side_effect=fake_timeout_add_seconds,
+        ), mock.patch.object(grampswebapidb.GLib, "source_remove"):
+            self.db._bootstrap_full_resync(progress_callback=progress)
+        pulse = captured_pulse["pulse"]
+        # Fire it far more times than the 20->30 range has room for --
+        # confirm it holds at 30 rather than climbing past it.
+        for _ in range(20):
+            self.assertEqual(pulse(), grampswebapidb.GLib.SOURCE_CONTINUE)
+        reported = [call.args[0] for call in progress.call_args_list]
+        self.assertEqual(max(v for v in reported if v <= 30), 30)
+        self.assertNotIn(31, reported)
+
+    def test_reimport_progress_is_rescaled_onto_the_remaining_range(self):
+        # importData()'s own real percentages (0-100) must land on
+        # REIMPORT_START_PCT..100 (30..100), not 0..100 directly -- that
+        # would make the bar visibly reset partway through. Mocks
+        # _import_progress_user() directly (rather than relying on
+        # has_display()/a real gui.user.User) so this test's outcome
+        # doesn't depend on whether this environment happens to have a
+        # display -- see that function's own docstring for the fallback
+        # this would otherwise silently hit.
+        captured = {}
+
+        def fake_import_progress_user(callback):
+            captured["callback"] = callback
+            return mock.MagicMock()
+
+        def fake_import_data(database, filename, user):
+            captured["callback"](0)
+            captured["callback"](50)
+            captured["callback"](100)
+
+        progress = mock.MagicMock()
+        with mock.patch.object(
+            grampswebapidb, "importData", fake_import_data
+        ), mock.patch.object(
+            grampswebapidb, "_import_progress_user", fake_import_progress_user
+        ), mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds", return_value=1
+        ), mock.patch.object(
+            grampswebapidb.GLib, "source_remove"
+        ):
+            self.db._bootstrap_full_resync(progress_callback=progress)
+        reported = [call.args[0] for call in progress.call_args_list]
+        # 0 -> 30, 50 -> 65, 100 -> 100, plus a final explicit 100.
+        self.assertIn(30, reported)
+        self.assertIn(65, reported)
+        self.assertEqual(reported[-1], 100)
+
+    def test_tree_closed_during_download_returns_without_reimporting(self):
+        # _run_async_to_completion() (used for the download step -- see
+        # this method's own docstring) already returns None, with
+        # nothing raised, when the tree closed while it was waiting --
+        # mocked directly here rather than simulated by bumping
+        # self.db._run_id synchronously inside download() itself: unlike
+        # _full_resync_async() (which schedules its own steps via
+        # io_runner/runner and has no polling wait loop of its own),
+        # _bootstrap_full_resync() relies on _run_async_to_completion()'s
+        # wait loop, which only unwinds via a real pumped GTK/GLib event
+        # noticing the closure -- something a synchronous
+        # InlineTaskRunner-driven test cannot reproduce (and will hang
+        # trying to, since nothing would ever wake its blocking pump).
+        with mock.patch.object(
+            self.db, "_run_async_to_completion", return_value=None
+        ), mock.patch.object(grampswebapidb, "importData") as import_data:
+            self.db._bootstrap_full_resync()  # must not raise
+        import_data.assert_not_called()
+        self.db._set_metadata.assert_not_called()
+
+    def test_failed_import_does_not_call_request_rebuild(self):
+        def failing_import_data(database, filename, user):
+            raise RuntimeError("boom")
+
+        self.db.request_rebuild = mock.MagicMock()
+        with mock.patch.object(grampswebapidb, "importData", failing_import_data):
+            with self.assertRaises(RuntimeError):
+                self.db._bootstrap_full_resync()
+        self.db.request_rebuild.assert_not_called()
+        self.assertFalse(self.db._pulling)
+
+
+# -------------------------------------------------------------------------
+#
 # TestTransactionCommit
 #
 # -------------------------------------------------------------------------
@@ -2547,6 +2701,65 @@ class TestPolling(unittest.TestCase):
         self.assertEqual(self.db._poll_source_id, 42)
         self.assertEqual(self.db._media_poll_source_id, 43)
 
+    def test_load_reports_staged_progress_through_the_pre_checks(self):
+        # Each of the three load()-time checks previously reported
+        # nothing at all -- confirmed live (2026-08-17) that this left
+        # the progress bar motionless for a real, noticeable stretch
+        # before the record sync (or a bootstrap resync) got a chance to
+        # report anything of its own. A fixed, small percentage after
+        # each check at least proves the app is still working.
+        my_callback = mock.MagicMock()
+        with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
+            self.db, "_check_identity_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db, "_check_permissions_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db, "_check_server_version_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
+        ), mock.patch.object(
+            self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
+        ), mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds"
+        ):
+            self.db.load("some/path", my_callback, "w")
+        reported = [
+            call.args[0]
+            for call in my_callback.call_args_list
+            if call.args[0] in (5, 10, 15)
+        ]
+        self.assertEqual(reported, [5, 10, 15])
+
+    def test_load_reports_20_percent_before_a_bootstrap_resync(self):
+        my_callback = mock.MagicMock()
+        self.db.get_total = mock.MagicMock(return_value=0)
+        self.db.web_client.get_object_count.return_value = 26540
+        with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
+            self.db, "_check_identity_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db, "_check_permissions_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db, "_check_server_version_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db, "_bootstrap_full_resync"
+        ) as bootstrap, mock.patch.object(
+            self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
+        ), mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds"
+        ):
+            self.db.load("some/path", my_callback, "w")
+        reported = [call.args[0] for call in my_callback.call_args_list]
+        self.assertIn(20, reported)
+        # _bootstrap_full_resync() is called with load()'s own wrapped
+        # callback (which labels the progress bar -- see
+        # _wrap_progress_callback()), not my_callback directly; confirm
+        # it still ultimately forwards to my_callback.
+        bootstrap.assert_called_once_with(mock.ANY)
+        wrapped_callback = bootstrap.call_args.args[0]
+        my_callback.reset_mock()
+        wrapped_callback(55)
+        my_callback.assert_called_once_with(55, "Syncing with Gramps Web API")
+
     def test_load_forwards_positional_callback_to_sync(self):
         # DbGeneric.load()'s own signature is (directory, callback=None,
         # mode=..., ...) -- cli/grampscli.py calls it positionally
@@ -2572,7 +2785,10 @@ class TestPolling(unittest.TestCase):
         )
         # The callback load() actually forwards is wrapped (see
         # _wrap_progress_callback()) to label the progress bar -- confirm
-        # it still ultimately calls through to my_callback.
+        # it still ultimately calls through to my_callback. Reset first:
+        # the 5/10/15 pre-check stage reports (see load()'s own comment)
+        # already called my_callback a few times before this point.
+        my_callback.reset_mock()
         sync.call_args.kwargs["progress_callback"](42)
         my_callback.assert_called_once_with(42, "Syncing with Gramps Web API")
 
@@ -2595,6 +2811,7 @@ class TestPolling(unittest.TestCase):
         sync.assert_called_once_with(
             mock.ANY, mock.ANY, progress_callback=mock.ANY, verify_totals=True
         )
+        my_callback.reset_mock()
         sync.call_args.kwargs["progress_callback"](42)
         my_callback.assert_called_once_with(42, "Syncing with Gramps Web API")
 
