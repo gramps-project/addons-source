@@ -74,7 +74,7 @@ except ImportError as _err:
 
 from gramps.gen.db import DbTxn
 from gramps.gen.db.dbconst import REFERENCE_KEY, TXNADD, TXNDEL, TXNUPD
-from gramps.gen.db.exceptions import DbConnectionError
+from gramps.gen.db.exceptions import DbConnectionError, DbWriteFailure
 from gramps.gen.db.utils import make_database
 from gramps.gen.lib import (
     Attribute,
@@ -1589,6 +1589,72 @@ class TestTransactionCommit(unittest.TestCase):
         self.assertEqual(resync.call_count, 1)
         retry.assert_not_called()
 
+    def test_missing_write_permissions_rejects_before_local_commit(self):
+        # self._missing_write_permissions is set once at load() by
+        # _check_permissions_async() -- see the module docstring's
+        # section on it. A genuine local edit must be rejected before
+        # anything commits, not merely before the (doomed) push.
+        self.db._missing_write_permissions = ["EditObject"]
+        trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
+        with mock.patch.object(
+            grampswebapidb.SQLite, "transaction_commit"
+        ) as super_commit, mock.patch.object(
+            grampswebapidb.SQLite, "transaction_abort"
+        ) as abort:
+            with self.assertRaises(DbWriteFailure) as ctx:
+                self.db.transaction_commit(trans)
+        super_commit.assert_not_called()
+        abort.assert_called_once_with(trans)
+        self.assertIn("EditObject", str(ctx.exception))
+        self.db.web_client.push_transaction.assert_not_called()
+
+    def test_missing_write_permissions_names_the_role_to_ask_for(self):
+        self.db._missing_write_permissions = ["AddObject", "EditObject"]
+        trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
+        with mock.patch.object(
+            grampswebapidb.SQLite, "transaction_commit"
+        ), mock.patch.object(grampswebapidb.SQLite, "transaction_abort"):
+            with self.assertRaises(DbWriteFailure) as ctx:
+                self.db.transaction_commit(trans)
+        self.assertIn("Editor", str(ctx.exception))
+
+    def test_pulling_is_exempt_from_the_permission_rejection(self):
+        # A server-to-local replay (poll/resync) must go on committing
+        # locally regardless of self._missing_write_permissions -- this
+        # is what lets a read-only account still poll and stay current.
+        self.db._missing_write_permissions = ["EditObject"]
+        self.db._pulling = True
+        trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
+        with mock.patch.object(
+            grampswebapidb.SQLite, "transaction_commit"
+        ) as super_commit:
+            self.db.transaction_commit(trans)  # must not raise
+        super_commit.assert_called_once_with(trans)
+
+    def test_recording_note_is_exempt_from_the_permission_rejection(self):
+        # The addon's own note/tag bookkeeping (_record_conflict_notes())
+        # must go on committing locally (and attempting its own push)
+        # exactly as before -- see that method's docstring.
+        self.db._missing_write_permissions = ["EditObject"]
+        self.db._recording_note = True
+        trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
+        with mock.patch.object(
+            grampswebapidb.SQLite, "transaction_commit"
+        ) as super_commit:
+            self.db.transaction_commit(trans)  # must not raise
+        super_commit.assert_called_once_with(trans)
+        self.db.web_client.push_transaction.assert_called_once()
+
+    def test_no_missing_permissions_is_unaffected(self):
+        self.db._missing_write_permissions = []
+        trans = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
+        with mock.patch.object(
+            grampswebapidb.SQLite, "transaction_commit"
+        ) as super_commit:
+            self.db.transaction_commit(trans)  # must not raise
+        super_commit.assert_called_once_with(trans)
+        self.db.web_client.push_transaction.assert_called_once()
+
 
 # -------------------------------------------------------------------------
 #
@@ -1929,6 +1995,98 @@ class TestConflictRetryAgainstARealDatabase(unittest.TestCase):
         final = self.db.get_person_from_handle(self.handle)
         self.assertTrue(final.get_privacy())
         self.assertEqual(len(final.get_attribute_list()), 1)
+
+
+# -------------------------------------------------------------------------
+#
+# TestMissingWritePermissionsAgainstARealDatabase
+#
+# transaction_commit()'s missing-write-permission rejection calls
+# transaction_abort() (self.dbapi.rollback()) instead of letting
+# super().transaction_commit() run -- confirmed here against a real
+# DBAPI-backed connection, not just a mocked one, that the rejected
+# edit's local writes genuinely never land, and that the connection is
+# left clean enough for a later, permitted commit to succeed (nothing
+# left half-open the way skipping transaction_abort() would).
+#
+# -------------------------------------------------------------------------
+class TestMissingWritePermissionsAgainstARealDatabase(unittest.TestCase):
+    def setUp(self):
+        tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
+        self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
+        db = make_database("sqlite")
+        db.load(tmpdir)
+        with DbTxn("seed", db) as trans:
+            person = Person()
+            person.set_gramps_id("I0001")
+            db.add_person(person, trans)
+            self.handle = person.handle
+        db.__class__ = WebApiDB
+        db.web_client = mock.MagicMock()
+        db.runner = InlineTaskRunner()
+        db.io_runner = InlineTaskRunner()
+        db._syncing = False
+        db._retrying = False
+        db._pulling = False
+        db._recording_note = False
+        db._get_metadata = lambda key, default=0: default
+        db._set_metadata = lambda key, value, use_txn=True: None
+        self.db = db
+        self.addCleanup(self.db.close)
+
+    def test_rejected_add_never_lands_locally(self):
+        self.db._missing_write_permissions = ["AddObject"]
+        person = Person()
+        person.set_gramps_id("I0002")
+        with self.assertRaises(DbWriteFailure):
+            with DbTxn("add", self.db) as trans:
+                self.db.add_person(person, trans)
+        self.assertFalse(self.db.has_person_handle(person.handle))
+        self.db.web_client.push_transaction.assert_not_called()
+
+    def test_rejected_edit_leaves_the_object_unchanged(self):
+        self.db._missing_write_permissions = ["EditObject"]
+        with self.assertRaises(DbWriteFailure):
+            with DbTxn("edit", self.db) as trans:
+                person = self.db.get_person_from_handle(self.handle)
+                person.set_privacy(True)
+                self.db.commit_person(person, trans)
+        self.assertFalse(self.db.get_person_from_handle(self.handle).get_privacy())
+        self.db.web_client.push_transaction.assert_not_called()
+
+    def test_connection_still_usable_for_a_later_permitted_commit(self):
+        # The whole point of calling transaction_abort() rather than
+        # simply not calling super().transaction_commit(): a rejected
+        # transaction must not leave the underlying SQL connection with a
+        # transaction still open, which would make the very next
+        # transaction_begin() (a real "BEGIN TRANSACTION" while one is
+        # already active) fail. Simulates permissions being fixed and the
+        # tree reopened by clearing the flag on the same instance.
+        self.db._missing_write_permissions = ["EditObject"]
+        with self.assertRaises(DbWriteFailure):
+            with DbTxn("edit", self.db) as trans:
+                person = self.db.get_person_from_handle(self.handle)
+                person.set_privacy(True)
+                self.db.commit_person(person, trans)
+
+        self.db._missing_write_permissions = []
+        with DbTxn("edit", self.db) as trans:
+            person = self.db.get_person_from_handle(self.handle)
+            person.set_privacy(True)
+            self.db.commit_person(person, trans)
+        self.assertTrue(self.db.get_person_from_handle(self.handle).get_privacy())
+
+    def test_pulling_replay_still_commits_locally(self):
+        # A poll/resync-driven replay must go on updating the mirror even
+        # though this account cannot push -- that's the entire point of
+        # not blocking load() over a missing write permission.
+        self.db._missing_write_permissions = ["EditObject"]
+        self.db._pulling = True
+        with DbTxn("pulled update", self.db) as trans:
+            person = self.db.get_person_from_handle(self.handle)
+            person.set_privacy(True)
+            self.db.commit_person(person, trans)
+        self.assertTrue(self.db.get_person_from_handle(self.handle).get_privacy())
 
 
 class TestConflictNoteRecording(unittest.TestCase):
@@ -3665,6 +3823,33 @@ class TestUndoRedo(unittest.TestCase):
             self.db.undo()
         payload = push.call_args[0][0]
         self.assertEqual(payload[0]["handle"], "H1")
+
+    def test_missing_write_permissions_rejects_undo_before_super(self):
+        # Unlike transaction_commit(), there is no hook that can catch
+        # this after the fact: DbGenericUndo._undo() (what super().undo()
+        # delegates to) commits directly, bypassing transaction_commit()
+        # entirely -- see undo()'s own docstring. So this must reject
+        # before ever calling super(), and self.undodb.undo() must never
+        # be reached.
+        self.db._missing_write_permissions = ["EditObject"]
+        self.db.undodb.undo_count = 1
+        self.db.undodb.undoq = [FakeTransaction([(0, TXNADD, "H1", None, {})])]
+        with mock.patch.object(self.db, "_start_push") as push:
+            with self.assertRaises(DbWriteFailure) as ctx:
+                self.db.undo()
+        self.db.undodb.undo.assert_not_called()
+        push.assert_not_called()
+        self.assertIn("EditObject", str(ctx.exception))
+
+    def test_missing_write_permissions_rejects_redo_before_super(self):
+        self.db._missing_write_permissions = ["EditObject"]
+        self.db.undodb.redo_count = 1
+        self.db.undodb.redoq = [FakeTransaction([(0, TXNADD, "H1", None, {})])]
+        with mock.patch.object(self.db, "_start_push") as push:
+            with self.assertRaises(DbWriteFailure):
+                self.db.redo()
+        self.db.undodb.redo.assert_not_called()
+        push.assert_not_called()
 
 
 # -------------------------------------------------------------------------

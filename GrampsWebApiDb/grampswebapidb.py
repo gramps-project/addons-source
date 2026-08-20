@@ -379,14 +379,27 @@ gates POST /transactions/ behind all three at once (transactions.py's
 require_permissions(); has_permissions() fails if any are missing) -- does
 *not* fail load(): the mirror still opens and keeps polling and staying
 current for reading, and self._missing_write_permissions names the
-shortfall in one loud log line so the user finds out before hitting a
-surprise 403, without being blocked from reading. Only an actual write
-is refused, and only when one is actually attempted: it reaches the
-server and comes back a 403, which _push_payload_async() already treats
-as a non-retryable rejection (see below) -- logged, and recorded as a
-note on the affected object(s), the same path a permission *revoked*
-mid-session (rather than missing from the start) already went through.
-Checking the permission set up front costs no extra round trip
+shortfall in one loud log line so the user finds out before ever
+attempting an edit. An actual write is refused synchronously, at the
+point of the attempt: transaction_commit() checks
+self._missing_write_permissions itself and, for a genuine local edit
+(not self._pulling's server-to-local replays, or self._recording_note's
+own bookkeeping -- see both flags' own comments), calls
+transaction_abort() and raises DbWriteFailure before anything reaches
+self.dbapi as committed, rather than letting it commit locally and
+finding out only when the resulting push comes back 403. undo()/redo()
+do the same, before even calling super() -- Gramps core's own undo/redo
+machinery (DbGenericUndo) commits directly, bypassing
+transaction_commit() entirely, so there is no later point at which
+either could still be intercepted. This is strictly better than the
+push-time rejection below where it is possible (no wasted round trip, no
+local/server divergence to explain after the fact -- see
+_missing_write_permission_error()), but it can only ever catch what is
+already known at load() time: a permission *revoked* mid-session is
+still invisible until the next push actually goes out and comes back
+403, handled by _push_payload_async()'s existing non-retryable-rejection
+path (logged, and recorded as a note on the affected object(s) -- see
+below). Checking the permission set up front costs no extra round trip
 (gramps-web-api puts it in the access token's own claims, so
 get_permissions() just decodes the JWT already in hand) and names
 exactly what is missing either way.
@@ -616,7 +629,7 @@ from gramps.gen.db.dbconst import (
     TXNDEL,
     TXNUPD,
 )
-from gramps.gen.db.exceptions import DbConnectionError
+from gramps.gen.db.exceptions import DbConnectionError, DbWriteFailure
 from gramps.gen.errors import HandleError
 from gramps.gen.lib import Note, NoteType, Tag
 from gramps.gen.lib.baseobj import BaseObject
@@ -779,6 +792,38 @@ _WRITE_PERMISSIONS = ("AddObject", "EditObject", "DeleteObject")
 #: Together: the permission set of gramps-web-api's "Editor" role, the
 #: least-privileged built-in role that can run this addon read-write.
 _REQUIRED_ROLE_NAME = "Editor"
+
+
+def _missing_write_permission_error(missing_write_permissions):
+    """Build the DbWriteFailure raised by transaction_commit()/undo()/
+    redo() when self._missing_write_permissions (set once, at load(), by
+    _check_permissions_async()) says this account cannot push edits at
+    all -- see transaction_commit()'s own docstring for why that check
+    can reject *before* anything commits locally instead of only after a
+    doomed push comes back 403.
+
+    DbWriteFailure's own __str__ returns only its first argument (see
+    gramps.gen.db.exceptions), and nothing in Gramps core catches this
+    exception type around an ordinary editor's own DbTxn -- it reaches
+    the user via Gramps' top-level sys.excepthook bug-report dialog, the
+    same as any other uncaught exception from a GTK callback (see
+    grampsapp.py) -- so the actually useful explanation belongs in that
+    first argument, not the second.
+    """
+    return DbWriteFailure(
+        _(
+            "This local edit was not saved: the account authenticating "
+            "via GRAMPS_WEB_API_KEY is missing server permission(s) "
+            "needed to push changes to this Family Tree: %(missing)s. "
+            'Grant it the "%(role)s" role on the server (or ask an '
+            "administrator to) to enable editing."
+        )
+        % {
+            "missing": ", ".join(missing_write_permissions),
+            "role": _REQUIRED_ROLE_NAME,
+        }
+    )
+
 
 #: Oldest Gramps version a *server* can run and still produce the
 #: "_class"-tagged transaction-history serialization data_to_object()
@@ -1812,6 +1857,15 @@ class WebApiDB(SQLite):
     #: _reconcile_batch_commit().
     _pulling = False
 
+    #: Set around _record_conflict_notes()'s own DbTxns (including the
+    #: tag-creation ones _get_or_create_tag() opens on its behalf) so
+    #: transaction_commit()'s own missing-write-permission rejection (see
+    #: its docstring) doesn't reject the very note it is itself recording
+    #: -- the addon's own bookkeeping, not a fresh local edit, and one
+    #: that must go on being allowed to commit locally regardless of
+    #: self._missing_write_permissions, the same as _pulling.
+    _recording_note = False
+
     #: Set for the duration of any async operation that owns the mirror
     #: -- a record/media sync, or (since the move off reentrant pumping)
     #: a push -- so a second one can't start concurrently and land an
@@ -1822,11 +1876,12 @@ class WebApiDB(SQLite):
     #: authenticating via GRAMPS_WEB_API_KEY was found missing at load()'s
     #: _check_permissions_async() -- empty for a fully-privileged account,
     #: for a tree opened read-only (never checked), or before load() has
-    #: run its checks. Does not by itself block anything: it is purely
-    #: informational (logged once at load()) and left for
-    #: _push_payload_async()'s own per-push 403 handling to actually
-    #: reject an edit when one is attempted -- see
-    #: _check_permissions_async()'s docstring.
+    #: run its checks. When non-empty, transaction_commit()/undo()/redo()
+    #: reject a genuine local edit with it, synchronously and before
+    #: anything commits locally -- see transaction_commit()'s own
+    #: docstring. Never updated after load(): a permission revoked
+    #: mid-session is not reflected here, and still only surfaces from an
+    #: actual push's own 403 -- see _push_payload_async().
     _missing_write_permissions = ()
 
     #: The chain a conflict retry's nested re-push belongs to, stashed by
@@ -2154,16 +2209,12 @@ class WebApiDB(SQLite):
         (AddObject/EditObject/DeleteObject) does *not* block load(): a
         viewer- or contributor-level account can still open the tree, and
         the mirror still polls and stays current for reading -- only
-        pushing a local edit back to the server is unavailable to it, and
-        gets rejected when it is actually attempted, via
-        _push_payload_async()'s existing handling of a non-retryable 4xx
-        (_is_retryable_push_error()): the server answers 403, the push is
-        logged loudly as permanently rejected, and a note recording why is
-        attached to the affected object(s) -- see
-        _record_undelivered_push_notes(). self._missing_write_permissions
-        is stashed here and logged once, at load() time, so a user who
-        never even attempts an edit still finds out why before hitting a
-        surprise 403 later.
+        editing it is unavailable. self._missing_write_permissions,
+        stashed here, is what transaction_commit()/undo()/redo() check to
+        reject a local edit synchronously, before it ever reaches
+        self.dbapi as committed -- see transaction_commit()'s own
+        docstring. Logged once here too, at load() time, so a user who
+        never even attempts an edit still finds out why up front.
 
         ``writable`` is False for a tree opened read-only (DBMODE_R), which
         never pushes and so is not checked for write permissions at all.
@@ -2699,6 +2750,37 @@ class WebApiDB(SQLite):
         return result
 
     def transaction_commit(self, transaction):
+        # Reject before anything is committed locally -- not just before
+        # the push -- when the account is *known*, from load()'s own
+        # _check_permissions_async(), to lack write access altogether:
+        # self._missing_write_permissions is set once there and never
+        # updated mid-session, so this only ever catches the load-time-
+        # known case, not a permission revoked after load() (that one is
+        # still only discoverable from a live 403 -- see
+        # _push_payload_async()'s on_push_error and the module
+        # docstring). transaction_begin() already called self.dbapi.begin()
+        # for this transaction and whatever the caller's DbTxn body did
+        # (commit_person(), etc.) is only staged in that still-open SQL
+        # transaction, not yet durable -- transaction_abort() (self.dbapi.
+        # rollback()) unwinds it cleanly instead of leaving it half-open,
+        # which simply calling super().transaction_commit() at some later
+        # point would not: DbTxn.__exit__() only calls transaction_abort()
+        # for an exception raised *inside* the `with` block, not one
+        # raised by transaction_commit() itself, so this method has to do
+        # that part itself before raising. Exempted: self._pulling (a
+        # server-to-local replay, which must always be allowed so a
+        # read-only account can still poll and stay current -- see the
+        # module docstring) and self._recording_note (the addon's own
+        # note/tag bookkeeping, which must go on committing locally and
+        # attempting its own push exactly as before -- see
+        # _record_conflict_notes()'s docstring).
+        if (
+            self._missing_write_permissions
+            and not self._pulling
+            and not self._recording_note
+        ):
+            self.transaction_abort(transaction)
+            raise _missing_write_permission_error(self._missing_write_permissions)
         # Must run before super(): it clears the transaction's records.
         payload = transaction_to_json(transaction)
         # The same description Gramps desktop's own editors set on this
@@ -2721,6 +2803,18 @@ class WebApiDB(SQLite):
         self._start_push(payload, is_retry=self._retrying, message=message)
 
     def undo(self, update_history=True):
+        # Unlike transaction_commit(), there is no way to let the local
+        # change happen and then reject just the push: DbGenericUndo._undo()
+        # (Gramps core) commits directly via self.db._txn_begin()/
+        # _txn_commit(), never through transaction_commit(), so by the
+        # time control would return here the local mirror has already
+        # changed regardless of what this method does. Reject before even
+        # calling super() instead -- nothing has touched self.dbapi yet,
+        # so there is nothing to unwind, unlike transaction_commit()'s own
+        # transaction_abort() call. See that method's docstring for what
+        # self._missing_write_permissions does and does not catch.
+        if self._missing_write_permissions:
+            raise _missing_write_permission_error(self._missing_write_permissions)
         # Peek before super(): DbGenericUndo._undo() pops this DbTxn off
         # undoq. The DbTxn's own backing data isn't touched by that (it
         # just moves queues), so building its JSON payload could happen
@@ -2737,6 +2831,11 @@ class WebApiDB(SQLite):
         return result
 
     def redo(self, update_history=True):
+        # See undo()'s own comment: DbGenericUndo._redo() commits directly,
+        # bypassing transaction_commit(), so this has to reject before
+        # calling super() too.
+        if self._missing_write_permissions:
+            raise _missing_write_permission_error(self._missing_write_permissions)
         transaction = self.undodb.redoq[-1] if self.undodb.redo_count else None
         result = super().redo(update_history)
         if result and transaction is not None:
@@ -3405,36 +3504,42 @@ class WebApiDB(SQLite):
         stays exactly what it always was: one object per conflicting
         entry, nothing else (see that method's docstring). This one goes
         through the completely ordinary transaction_commit() ->
-        _start_push() path like any other local edit -- no special-
-        casing needed, and safe even if *this* push itself hits a
+        _start_push() path like any other local edit, under
+        self._recording_note so transaction_commit()'s own missing-
+        write-permission rejection (see its docstring) lets it through
+        regardless -- and safe even if *this* push itself hits a
         conflict, since attaching a note is a list-valued change
         merge() already unions correctly (unlike the scalar edit this
         note exists to record in the first place).
         """
-        message_tag = self._get_or_create_tag(MESSAGE_TAG_NAME)
-        todo_tag = self._get_or_create_tag(MESSAGE_TODO_OPEN_TAG_NAME)
-        with DbTxn(_message_note_description(), self) as trans:
-            for obj_class, name, handle, lines in conflicts:
-                get_from_handle = getattr(self, f"get_{name}_from_handle", None)
-                if get_from_handle is None:
-                    continue
-                try:
-                    obj = get_from_handle(handle)
-                except HandleError:
-                    continue  # gone locally by the time this runs
-                if not hasattr(obj, "add_note"):
-                    continue  # e.g. Tag -- nothing to attach a note to
-                summary = "; ".join(lines)
-                note = Note()
-                note.set_handle(create_id())
-                note.set_gramps_id(self.find_next_note_gramps_id())
-                note.set_type(NoteType.GENERAL)
-                note.set(f"{MESSAGE_NOTE_AUTHOR}: {obj_class} -- {summary}")
-                note.add_tag(message_tag.handle)
-                note.add_tag(todo_tag.handle)
-                self.commit_note(note, trans)
-                obj.add_note(note.handle)
-                getattr(self, f"commit_{name}")(obj, trans)
+        self._recording_note = True
+        try:
+            message_tag = self._get_or_create_tag(MESSAGE_TAG_NAME)
+            todo_tag = self._get_or_create_tag(MESSAGE_TODO_OPEN_TAG_NAME)
+            with DbTxn(_message_note_description(), self) as trans:
+                for obj_class, name, handle, lines in conflicts:
+                    get_from_handle = getattr(self, f"get_{name}_from_handle", None)
+                    if get_from_handle is None:
+                        continue
+                    try:
+                        obj = get_from_handle(handle)
+                    except HandleError:
+                        continue  # gone locally by the time this runs
+                    if not hasattr(obj, "add_note"):
+                        continue  # e.g. Tag -- nothing to attach a note to
+                    summary = "; ".join(lines)
+                    note = Note()
+                    note.set_handle(create_id())
+                    note.set_gramps_id(self.find_next_note_gramps_id())
+                    note.set_type(NoteType.GENERAL)
+                    note.set(f"{MESSAGE_NOTE_AUTHOR}: {obj_class} -- {summary}")
+                    note.add_tag(message_tag.handle)
+                    note.add_tag(todo_tag.handle)
+                    self.commit_note(note, trans)
+                    obj.add_note(note.handle)
+                    getattr(self, f"commit_{name}")(obj, trans)
+        finally:
+            self._recording_note = False
 
     def _record_undelivered_push_notes(self, payload, reason):
         """Attach a gramps-connect-style "message" Note to every add/
