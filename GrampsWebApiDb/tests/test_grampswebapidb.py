@@ -3274,6 +3274,28 @@ class TestDiscardedScalarFields(unittest.TestCase):
         )
         self.assertEqual(discarded, [])
 
+    def test_no_old_data_reports_nothing(self):
+        # A fresh add (transaction_to_json()'s "old": None convention)
+        # replayed by _retry_after_conflict(): has_handle() is what routes
+        # it into the merge path at all, so current already holds exactly
+        # local's own values from the original commit -- comparing against
+        # a fictitious {} baseline instead of skipping used to flag every
+        # field local set as both "touched" and "discarded" even though
+        # kept and discarded were identical (nothing actually happened).
+        current = Person()
+        current.set_handle("H1")
+        current.set_gender(Person.MALE)
+
+        local = Person()
+        local.set_handle("H1")
+        local.set_gender(Person.MALE)
+
+        merged = grampswebapidb._merge_or_overwrite(current, local, FakeHandleDb())
+        discarded = grampswebapidb._discarded_scalar_fields(
+            None, current, local, merged
+        )
+        self.assertEqual(discarded, [])
+
     def test_locked_field_is_never_reported_here_even_on_a_genuine_collision(self):
         # primary_name is handled exclusively by _demoted_field_conflicts()
         # -- reporting it here too would double-report the same conflict,
@@ -3963,16 +3985,29 @@ class TestCheckPermissions(unittest.TestCase):
             run_check(self.db, "_check_permissions_async")
         self.assertIn("ViewPrivate", str(ctx.exception))
 
-    def test_missing_one_write_permission_raises(self):
+    def test_missing_one_write_permission_does_not_block_load(self):
         # has_permissions() server-side fails if *any* of the three are
-        # missing, so a Contributor (AddObject only) cannot push at all.
+        # missing, so a Contributor (AddObject only) cannot push at all --
+        # but that no longer keeps the tree from opening: it still needs
+        # to poll and stay current for reading. Only an actual push is
+        # rejected, later, when one is attempted (see
+        # TestPushPermanentRejection / the module docstring).
         self._grant("ViewPrivate", "AddObject")
-        with self.assertRaises(DbConnectionError) as ctx:
-            run_check(self.db, "_check_permissions_async")
-        message = str(ctx.exception)
+        with self.assertLogs(grampswebapidb.LOG, level="WARNING") as ctx:
+            run_check(self.db, "_check_permissions_async")  # must not raise
+        message = "\n".join(ctx.output)
         self.assertIn("EditObject", message)
         self.assertIn("DeleteObject", message)
         self.assertNotIn("AddObject", message.replace("EditObject", ""))
+        self.assertEqual(
+            sorted(self.db._missing_write_permissions), ["DeleteObject", "EditObject"]
+        )
+
+    def test_missing_write_permissions_names_the_role_to_ask_for(self):
+        self._grant("ViewPrivate")
+        with self.assertLogs(grampswebapidb.LOG, level="WARNING") as ctx:
+            run_check(self.db, "_check_permissions_async")  # must not raise
+        self.assertIn("Editor", "\n".join(ctx.output))
 
     def test_error_names_the_role_to_ask_for(self):
         self._grant()
@@ -3980,11 +4015,18 @@ class TestCheckPermissions(unittest.TestCase):
             run_check(self.db, "_check_permissions_async")
         self.assertIn("Editor", str(ctx.exception))
 
+    def test_full_permissions_leave_no_missing_write_permissions(self):
+        self._grant(*self.ALL_PERMS)
+        run_check(self.db, "_check_permissions_async")
+        self.assertEqual(self.db._missing_write_permissions, [])
+
     def test_read_only_tree_does_not_need_write_permissions(self):
         # A tree opened read-only never pushes, so a Member-level account
-        # (ViewPrivate but no write permissions) is enough for it.
+        # (ViewPrivate but no write permissions) is enough for it, and it
+        # is never even checked for write permissions.
         self._grant("ViewPrivate")
         run_check(self.db, "_check_permissions_async", writable=False)  # must not raise
+        self.assertEqual(self.db._missing_write_permissions, [])
 
     def test_read_only_tree_still_needs_view_private(self):
         self._grant("AddObject", "EditObject", "DeleteObject")
