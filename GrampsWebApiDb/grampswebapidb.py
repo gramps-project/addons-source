@@ -121,7 +121,12 @@ via _sync_from_server_async()'s verify_totals) and routes a shortfall to the
 same _full_resync_async(). Comparing totals rather than watching for an empty
 feed is what makes the case detectable: one API edit against such a
 server is enough for the feed to hand back a transaction and for the
-sync to look like it worked.
+sync to look like it worked. The ongoing poll (_poll_tick(), see
+VERIFY_TOTALS_POLL_INTERVAL_SECONDS) asks for the same check too, just on
+an hourly cadence rather than every tick, so this blind spot opening up
+while a tree is already sitting open -- not just at the moment it's
+opened -- gets caught within the hour instead of only at the next
+load().
 
 Pushes go out without force=1, so the server compares each item's "old"
 snapshot against its own current data and rejects the whole batch with
@@ -179,8 +184,12 @@ those two fields as ordinary content, a Person whose true index doesn't
 match that heuristic would otherwise disagree with the server after
 every single resync, forever, for reasons unrelated to anything actually
 edited. _snapshot_birth_death_indices()/_restore_birth_death_indices()
-carry the pre-resync value back across the reimport for any Person whose
-event_ref_list didn't itself change, closing that gap.
+carry the pre-resync value back across the reimport, closing that gap --
+by relocating the specific EventRef each index actually identifies
+(_relocate_birth_death_index()), not a bare integer position, so an
+unrelated addition/removal/reorder elsewhere in that Person's
+event_ref_list no longer forfeits the restore the way an earlier,
+whole-list-signature version of this mechanism did.
 
 For an add/update whose object still exists server-side (i.e. the
 conflicting edit changed the same object rather than deleting it),
@@ -192,19 +201,77 @@ clobber whatever the other side changed. merge(current, acquisition) is
 called as current.merge(acquisition) with current the server's post-
 resync copy and acquisition the local edit, so a *list*-valued field
 (notes, citations, media, urls, event/family refs, tags, ...) is
-unioned -- both sides' items survive -- and any other field merge()
-doesn't specially handle is simply left as current's own value, with
-acquisition's silently discarded (confirmed empirically:
-merge(FEMALE-current, MALE-local) keeps FEMALE) -- the *opposite* of
-"local overwrites remote". Two fields do get their own special-cased
-merge instead of either of those: privacy is OR'd
-(PrivacyBase._merge_privacy(): ``self.private = self.private or
-other.private``, so the merged object is private if either side marked
-it private -- confirmed the same way), and Person.merge() keeps
+unioned -- both sides' items survive. Two fields get their own special-
+cased merge beyond that: privacy is OR'd (PrivacyBase._merge_privacy():
+``self.private = self.private or other.private``, so the merged object
+is private if either side marked it private), and Person.merge() keeps
 current's own primary name but demotes acquisition's into current's
-alternate_names list rather than discarding it. Real field-level
-conflict *resolution* for the plain-scalar case (diff, prompt the user)
-is still out of scope. If the push fails for a non-conflict reason
+alternate_names list rather than discarding it.
+
+Any *other* field -- a plain scalar (date, place, description, gender,
+...) merge() has no handling for at all -- is left at current's own
+value by merge() itself (confirmed empirically: merge(FEMALE-current,
+MALE-local) keeps FEMALE), which would silently discard acquisition's
+edit to it even when nothing about that field actually collided.
+_apply_uncontested_scalar_edits() below layers a real per-field 3-way
+merge on top to fix exactly that: using entry["old"] (the payload's own
+pre-edit snapshot, threaded through as _merge_or_overwrite()'s optional
+old_data) as the true merge base, any such field acquisition is the
+*only* side to have touched gets applied on top of merge()'s result --
+so a conflict on one field of an object no longer costs an unrelated
+edit to a different field on that same object. Genuine field-level
+conflict *resolution* -- both sides touching the identical field to
+different values -- has no algorithmic answer (there is no "more
+correct" of two different birth dates) and is deliberately left at
+current's value, same as before, with _SCALAR_MERGE_LOCKED_FIELDS
+excluding the handful of fields (currently just Person.primary_name)
+whose merge() already has real special-cased handling that this generic
+layer would otherwise fight rather than complement.
+
+For that remaining, truly irreconcilable case, silently losing the
+discarded value is not acceptable either: _discarded_scalar_fields()
+below re-diffs current/acquisition/merged-result field by field (reusing
+gramps.gen.merge.diff.diff_items(), the same function the server's own
+old_unchanged() check uses) to find exactly which top-level fields
+acquisition touched that the merged result still doesn't reflect.
+
+Three more genuine-conflict shapes get the same treatment, each unable
+to reuse that same current-vs-merged-result comparison for its own
+reason: _demoted_field_conflicts() covers a _SCALAR_MERGE_LOCKED_FIELDS
+field (Person.primary_name) -- current.primary_name never changes value
+regardless of whether local_obj's edit to it collided with anything, so
+"touched" has to be checked directly against old_data instead;
+_actively_resolved_conflicts() covers a _SCALAR_MERGE_ACTIVELY_RESOLVED_
+FIELDS field (Citation.confidence, whose level_priority rule reassigns
+it on *every* merge() call, collision or not, so "merge() changed it"
+can't mean "there was a conflict" the way it does for every other
+field); and _prune_dangling_references()'s own pruned list (threaded
+through as _merge_or_overwrite()'s optional pruned parameter) covers a
+Tag/Note/Citation reference the other side deleted entirely -- a
+delete-vs-reference conflict, not a same-field value disagreement, but
+a genuine one whenever it fires. _conflict_summary_lines() below
+combines all four into the lines one Note records. Deliberately never
+triggered by an uncontested edit (only one side touched the field) or a
+successful list union (two different Tags/Notes/... both added --
+merge()'s equivalence-checked unioning, gen/lib/*base.py's various
+_merge_*_list() methods, means this is never itself a source of
+duplicate entries either) -- only a real, two-sided disagreement is
+worth a human's attention; see TODO.md's "Only do for CONFLICTS" note.
+
+There is deliberately no synchronous "pick a winner" prompt anywhere in
+this addon (no login dialog, no settings.ini, no wizard -- a background
+poll tick can't demand a decision mid-session), so automatic resolution
+stays automatic; what changes is that it is no longer silent. That Note
+is tagged the way gramps-connect's own message-note convention already
+is -- a plain Note
+(NoteType untouched) tagged "message" plus "todo-open" (see
+../gramps-connect/app/src/store/notesApi.ts) -- so the record shows up
+as a review-worthy message in gramps-connect's Messages view for free,
+and degrades to an ordinary tagged note anywhere that doesn't know the
+convention (gramps-web, desktop Gramps). It runs as its own, separate
+local transaction, committed only after _retry_after_conflict()'s own
+DbTxn has already landed -- see that
+method's docstring for why. If the push fails for a non-conflict reason
 (network error, auth failure), the local commit has already happened and
 is not rolled back -- the local mirror just drifts from the server until
 the next successful push or read sync.
@@ -278,7 +345,23 @@ Not every push failure is worth queueing, though: a 4xx other than 429 is
 the server's considered answer about the request itself and will not
 change on replay, so _is_retryable_push_error() sends those straight to a
 loud log instead -- queueing one would retry it on every poll forever and
-eventually evict genuinely retryable work from the capped queue.
+eventually evict genuinely retryable work from the capped queue. That log
+line alone used to be the end of it, silently: local and server diverge
+for that edit's object(s) with nothing else to show for it. Every point
+that gives up on a payload this way -- a fresh push's own non-retryable
+rejection, a queued push that comes back a conflict or non-retryable on
+replay, or an entry evicted from the queue outright -- now also calls
+_record_undelivered_push_notes(), reusing _record_conflict_notes()'s own
+message-note machinery (same tags, same author, same separate-
+transaction timing) to attach a note to each affected object explaining
+why. _is_message_note_push() guards every one of those call sites: it
+checks a failing payload's own "message" (forwarded from its local
+DbTxn's description) against _message_note_description(), so a message
+note that itself fails to sync the same way doesn't recursively spawn
+another note about that failure -- confirmed against a real database,
+not just reasoned about, since InlineTaskRunner-driven tests resolve the
+whole nested chain synchronously and would hang or blow the stack
+otherwise, not just log an extra line.
 
 The most likely such rejection is a permissions one, and _check_
 permissions() heads it off at load() rather than letting every subsequent
@@ -526,11 +609,13 @@ from gramps.gen.db.dbconst import (
 )
 from gramps.gen.db.exceptions import DbConnectionError
 from gramps.gen.errors import HandleError
+from gramps.gen.lib import Note, NoteType, Tag
 from gramps.gen.lib.baseobj import BaseObject
-from gramps.gen.lib.json_utils import data_to_object, remove_object
+from gramps.gen.lib.json_utils import data_to_object, object_to_dict, remove_object
 from gramps.gen.merge.diff import diff_items
 from gramps.gen.user import User
 from gramps.gen.utils.file import media_path_full
+from gramps.gen.utils.id import create_id
 from gramps.plugins.db.dbapi.sqlite import SQLite
 from gramps.plugins.importer.importxml import importData
 
@@ -561,6 +646,19 @@ POLL_INTERVAL_SECONDS = 10
 #: tick.
 MEDIA_POLL_INTERVAL_SECONDS = 300
 
+#: How often (seconds) the ongoing poll also asks _sync_from_server_async()
+#: for a totals check (verify_totals=True) -- the same mirror-completeness
+#: safety net load() always runs (see _mirror_is_short_of_the_server_async()),
+#: just far less often here: every 10-second tick would mean an extra
+#: GET /metadata/ request forever, for a blind spot (a server populated
+#: out-of-band -- a restored dump, a truncated history table -- with no
+#: transaction trail to describe it) that only matters if it happens while
+#: a tree is already open; load() already covers every other case, since
+#: it always runs one. _poll_tick() derives how many ticks that is from
+#: POLL_INTERVAL_SECONDS, so this stays an hour in wall-clock terms even
+#: if that changes.
+VERIFY_TOTALS_POLL_INTERVAL_SECONDS = 3600
+
 #: Ceiling (seconds) on the record poll's backoff while the server is
 #: unreachable -- see _poll_tick(). Every consecutive failure doubles the
 #: interval from POLL_INTERVAL_SECONDS up to this cap, and the first
@@ -580,6 +678,52 @@ POLL_BACKOFF_MAX_SECONDS = 300
 #: metadata row without bound, so the oldest are dropped with a loud log
 #: rather than silently.
 MAX_PENDING_PUSHES = 1000
+
+#: Tag names gramps-connect's own message-note convention uses to mark a
+#: Note as a reviewable message rather than an ordinary research note (see
+#: ../gramps-connect/app/src/store/notesApi.ts's MESSAGE_TAG/TODO_OPEN_TAG).
+#: Reused as-is here -- both sides converge on the same Tag object via
+#: get_tag_from_name(), and a recorded conflict or undelivered-push
+#: notice shows up in gramps-connect's Messages view with no new
+#: client-side code needed.
+MESSAGE_TAG_NAME = "message"
+MESSAGE_TODO_OPEN_TAG_NAME = "todo-open"
+
+#: "Author" name for the "<author>: <message>" plain-text convention
+#: gramps-connect's authoredText.ts parses (see notesApi.ts). Shared by
+#: every message note this addon writes -- conflict records
+#: (_record_conflict_notes()) and undelivered-push notices
+#: (_record_undelivered_push_notes()) alike.
+MESSAGE_NOTE_AUTHOR = "GrampsWebApiDb"
+
+
+def _message_note_description():
+    """The DbTxn description _record_conflict_notes() uses -- also
+    becomes that commit's own pushed transaction "message"
+    (transaction_commit() forwards transaction.get_description()
+    through as-is; see its own comment). A function, not a module-level
+    constant, so a locale switched mid-session doesn't leave a stale
+    translation baked into later comparisons -- recomputed fresh every
+    time, same as every other translated DbTxn description in this
+    file.
+
+    _is_message_note_push() checks a push's own message against this to
+    tell whether that payload *is* a message-note commit, wherever this
+    file is about to record another undelivered-push note about a
+    payload that failed to reach the server -- so a message note that
+    itself fails to sync doesn't recursively spawn another note about
+    that failure, forever. See _record_undelivered_push_notes()'s
+    docstring.
+    """
+    return _("Record a discarded sync conflict")
+
+
+def _is_message_note_push(message):
+    """True if message (a push's own "message" field) is one this
+    addon's own message-note machinery produced -- see
+    _message_note_description()."""
+    return message == _message_note_description()
+
 
 #: Net change count at or below which _full_resync_async()/
 #: _bootstrap_full_resync() describe a reimport with granular per-object
@@ -877,15 +1021,22 @@ def _describe_connection_error(err):
 
 
 def _is_retryable_push_error(err):
-    """Whether a failed push is worth queueing for a later retry.
+    """Whether a failed request is worth retrying -- named for its
+    original use (a failed push, see _push_payload_async()) but equally
+    applicable to a failed poll read (_on_poll_error()/
+    _on_media_poll_error()): the same 4xx-is-a-considered-answer logic
+    holds regardless of which kind of request it was.
 
     A 4xx is the server's considered answer about *this* request -- 403
     (the account lacks AddObject/EditObject/DeleteObject; see
-    _check_permissions_async()), 404, or a 400 that push_transaction() already
-    determined isn't a conflict -- and will keep being the answer no
-    matter how often it is replayed. Queueing one would retry it on every
-    poll forever and, worse, eventually evict genuinely retryable work
-    from the capped queue.
+    _check_permissions_async() -- or, on a poll's read path, ViewPrivate,
+    or the account behind GRAMPS_WEB_API_KEY no longer existing at all,
+    e.g. the server having been reset), 404, or a 400 that
+    push_transaction() already determined isn't a conflict -- and will
+    keep being the answer no matter how often it is replayed. Retrying
+    one forever would just repeat the same rejection on every poll (and,
+    for a push, eventually evict genuinely retryable work from the
+    capped queue).
 
     429 is the exception: it is explicitly "try again shortly", not a
     refusal. Everything else (5xx, URLError, socket timeout, a malformed
@@ -894,6 +1045,40 @@ def _is_retryable_push_error(err):
     if isinstance(err, HTTPError):
         return err.code == 429 or not 400 <= err.code < 500
     return True
+
+
+def _notify_fatal_poll_error(detail):
+    """Show a native error dialog for _give_up_polling() -- the GUI
+    equivalent of load()'s own DbConnectionError path, reached directly
+    instead of by raising: a poll tick fires long after load() has
+    already returned, so there is no load() call left for a raised
+    exception to propagate out of and no dbstate/viewmanager code
+    waiting to catch one.
+
+    gramps.gui.user.User.notify_db_error() drives the same DBErrorDialog
+    load()'s own DbConnectionError shows -- imported the same has_display()-
+    gated, best-effort way _import_progress_user() already does, since
+    this DATABASE plugin must stay importable and usable without a
+    display (CLI use) or gi/Gtk installed at all. Headless or import
+    failure just leaves _give_up_polling()'s own LOG.error() call as the
+    only record -- there is no dialog to show either way.
+    """
+    if not has_display():
+        return
+    try:
+        from gramps.gui.user import User as GuiUser
+    except ImportError:
+        return
+    GuiUser().notify_db_error(
+        _(
+            "GrampsWebApiDb: this Family Tree's server credentials are no "
+            "longer valid, so periodic syncing has stopped:\n\n%(detail)s\n\n"
+            "Local edits will keep working, but will not reach the server "
+            "until this tree is closed and reopened with a valid "
+            "GRAMPS_WEB_API_KEY."
+        )
+        % {"detail": detail}
+    )
 
 
 #: Same substitution gramps.gui.dbman's Family Tree Manager applies to
@@ -970,7 +1155,7 @@ def _iter_referents(obj):
         yield from _iter_referents(child)
 
 
-def _prune_dangling_references(obj, db):
+def _prune_dangling_references(obj, db, pruned=None):
     """Strip any Tag/Note/Citation handle obj (or any nested child object
     -- see _iter_referents()) carries that no longer resolves in db.
 
@@ -993,6 +1178,15 @@ def _prune_dangling_references(obj, db):
     just the merge() branch's output -- the type(current).merge is
     BaseObject.merge fallback (e.g. Tag) returns local_obj outright with
     no merge() call at all to have caught this otherwise.
+
+    pruned, if given a list, gets one (attr, handle) tuple appended for
+    every handle actually stripped -- always a genuine two-sided
+    disagreement when it fires at all (local's edit still points at
+    something; db, reflecting the post-resync server state, says it no
+    longer exists), unlike an uncontested edit. How
+    _merge_or_overwrite() surfaces this to _retry_after_conflict() as a
+    conflict worth a message, without changing this function's own
+    in-place-mutation contract for existing callers that don't pass it.
     """
     for node in _iter_referents(obj):
         for attr, has_handle_name in _DANGLING_REFERENCE_CHECKS:
@@ -1000,23 +1194,77 @@ def _prune_dangling_references(obj, db):
             if not handles:
                 continue
             has_handle = getattr(db, has_handle_name)
-            handles[:] = [h for h in handles if has_handle(h)]
+            kept = []
+            for handle in handles:
+                if has_handle(handle):
+                    kept.append(handle)
+                elif pruned is not None:
+                    pruned.append((attr, handle))
+            handles[:] = kept
 
 
-def _event_ref_signature(person):
-    """A (handle, role) tuple per entry of person's event_ref_list --
-    enough to tell whether the list itself was untouched across a resync
-    (see _snapshot_birth_death_indices()), without pulling in the full
-    equality check EventRef.is_equivalent() does (citations, notes, ...
-    are irrelevant here)."""
-    return tuple((ref.ref, ref.role.serialize()) for ref in person.get_event_ref_list())
+def _birth_death_ref_identity(person):
+    """The (handle, role) identity -- (ref.ref, ref.role.serialize()) --
+    of whichever EventRef person's birth_ref_index/death_ref_index
+    currently points to, or None for an index that's -1 (nothing marked
+    primary) or out of range. What _restore_birth_death_indices() uses
+    to relocate the *same* ref after a resync by what it actually is,
+    not by trusting a bare integer position to still mean the same thing
+    once the list itself has changed around it -- see
+    _relocate_birth_death_index()."""
+    refs = person.get_event_ref_list()
+
+    def identity(index):
+        if index < 0 or index >= len(refs):
+            return None
+        ref = refs[index]
+        return (ref.ref, ref.role.serialize())
+
+    return identity(person.birth_ref_index), identity(person.death_ref_index)
+
+
+def _relocate_birth_death_index(event_ref_list, identity):
+    """Where identity (see _birth_death_ref_identity()) sits in
+    event_ref_list now, tolerating unrelated additions, removals, or
+    reordering elsewhere in the list -- unlike an earlier version of
+    this mechanism, which trusted a restore only if the person's whole
+    event_ref_list matched an exact pre-resync signature, forfeiting the
+    restore over any concurrent event-ref edit at all, even one entirely
+    unrelated to birth/death.
+
+    identity of None means "nothing was marked primary before" (the
+    original index was -1) -- restorable unconditionally as -1
+    regardless of what else in the list changed: birth_ref_index/
+    death_ref_index has no representation in a Gramps XML export at all
+    (see _snapshot_birth_death_indices()'s docstring), so nothing a
+    resync pulls in could ever correctly tell this addon to change its
+    own memory of this field from any other client. That memory --
+    including "nothing was marked" -- is the best available answer
+    regardless of what else about the person changed, for exactly the
+    same reason a real index is worth relocating rather than discarding
+    below.
+
+    Returns None (leave whatever ImportXml's own document-order
+    heuristic already computed alone) if identity names a specific ref
+    that is no longer present at all: unlike an unrelated list change,
+    losing the actual referenced event/role pair leaves nothing to
+    relocate to, and the freshly-recomputed guess is at least as
+    trustworthy as a now-dangling position would be.
+    """
+    if identity is None:
+        return -1
+    for position, ref in enumerate(event_ref_list):
+        if (ref.ref, ref.role.serialize()) == identity:
+            return position
+    return None
 
 
 def _snapshot_birth_death_indices(db):
-    """Capture birth_ref_index/death_ref_index (plus an event_ref_list
-    signature to tell whether it's still safe to trust that capture
-    afterwards) for every Person, keyed by handle -- taken right before
-    _full_resync_async()'s rebuild() clears the mirror.
+    """Capture birth_ref_index/death_ref_index -- as the specific
+    EventRef each currently identifies, not the bare integer position,
+    see _birth_death_ref_identity() -- for every Person, keyed by
+    handle, taken right before _full_resync_async()'s rebuild() clears
+    the mirror.
 
     Gramps XML has no element for either index (confirmed against
     exportxml.py's write_person(): only the event_ref_list itself is
@@ -1045,44 +1293,44 @@ def _snapshot_birth_death_indices(db):
     round trip, with no edit involved).
 
     _restore_birth_death_indices() undoes the damage for whatever this
-    captured, once the reimport is done -- but only for a Person whose
-    event_ref_list (see _event_ref_signature()) still matches signature
-    for signature afterwards: if it doesn't, something legitimately
-    changed that Person server-side and the freshly-recomputed index is
-    at least as trustworthy as blindly replaying a now-stale one.
+    captured, once the reimport is done.
     """
     snapshot = {}
     for handle in db.get_person_handles():
         person = db.get_person_from_handle(handle)
-        snapshot[handle] = (
-            person.birth_ref_index,
-            person.death_ref_index,
-            _event_ref_signature(person),
-        )
+        snapshot[handle] = _birth_death_ref_identity(person)
     return snapshot
 
 
 def _restore_birth_death_indices(db, snapshot, trans):
     """_snapshot_birth_death_indices()'s other half -- see that
-    function's docstring. Called under the same self._pulling context
-    _full_resync_async()'s rebuild() already holds around the reimport
-    itself, so this local-only correction does not get mistaken for an
-    edit to push back to the server (see transaction_begin()'s
-    self._pulling check). Returns the number of Person objects
-    corrected, purely for the caller's own debug log."""
+    function's docstring and _relocate_birth_death_index()'s for how
+    each index is relocated independently, tolerating an unrelated
+    change elsewhere in the person's event_ref_list. Called under the
+    same self._pulling context _full_resync_async()'s rebuild() already
+    holds around the reimport itself, so this local-only correction does
+    not get mistaken for an edit to push back to the server (see
+    transaction_begin()'s self._pulling check). Returns the number of
+    Person objects corrected, purely for the caller's own debug log.
+    """
     restored = 0
-    for handle, (birth_idx, death_idx, signature) in snapshot.items():
+    for handle, (birth_identity, death_identity) in snapshot.items():
         if not db.has_person_handle(handle):
             continue
         person = db.get_person_from_handle(handle)
-        if _event_ref_signature(person) != signature:
-            continue
-        if person.birth_ref_index == birth_idx and person.death_ref_index == death_idx:
-            continue
-        person.birth_ref_index = birth_idx
-        person.death_ref_index = death_idx
-        db.commit_person(person, trans)
-        restored += 1
+        event_ref_list = person.get_event_ref_list()
+        new_birth = _relocate_birth_death_index(event_ref_list, birth_identity)
+        new_death = _relocate_birth_death_index(event_ref_list, death_identity)
+        changed = False
+        if new_birth is not None and new_birth != person.birth_ref_index:
+            person.birth_ref_index = new_birth
+            changed = True
+        if new_death is not None and new_death != person.death_ref_index:
+            person.death_ref_index = new_death
+            changed = True
+        if changed:
+            db.commit_person(person, trans)
+            restored += 1
     return restored
 
 
@@ -1142,11 +1390,119 @@ def _diff_snapshots(before, after):
     return entries
 
 
-def _merge_or_overwrite(current, local_obj, db):
+#: object_to_dict() keys that never represent a real field edit: "change"
+#: is a commit timestamp, "handle"/"_class" identify the object rather
+#: than describe it, and "gramps_id" is deliberately cleared on local_obj
+#: before merge() runs (see _merge_or_overwrite() below), so it always
+#: "differs" from current without representing an actual local edit.
+_DISCARD_CHECK_IGNORED_FIELDS = frozenset({"_class", "handle", "change", "gramps_id"})
+
+#: Fields a primary type's own merge() deliberately preserves through a
+#: substitute mechanism, rather than simply leaving unhandled -- applying
+#: _apply_uncontested_scalar_edits() to these would fight that mechanism
+#: instead of complementing it. Currently just Person.primary_name:
+#: Person.merge() (gramps/gen/lib/person.py) always keeps current's own
+#: primary name and demotes acquisition's into current's alternate_names
+#: instead (already unioned in by the time _apply_uncontested_scalar_
+#: edits() runs) -- current.primary_name genuinely never changes value,
+#: structurally indistinguishable from "merge() never touched this
+#: field" the way every other special-cased field is (see that
+#: function's docstring), so it has to be named here explicitly instead.
+_SCALAR_MERGE_LOCKED_FIELDS = {"Person": frozenset({"primary_name"})}
+
+#: Fields a primary type's own merge() actively resolves via real
+#: business logic when both sides genuinely disagree, rather than either
+#: leaving a plain scalar at current's unchanged value or unioning a
+#: list. Currently just Citation.confidence: Citation.merge()
+#: (gramps/gen/lib/citation.py) always takes the more cautious of the
+#: two confidence levels, via a level_priority lookup -- a real,
+#: deliberate decision between two explicit values, worth a human
+#: knowing happened even though nothing was lost (the result is one of
+#: the two original values, just not left to chance which). Checked by
+#: _actively_resolved_conflicts() the same way _SCALAR_MERGE_LOCKED_
+#: FIELDS's Person.primary_name is checked by _demoted_field_
+#: conflicts() -- both need to be named explicitly, since in each case
+#: merge() already produced a definite value, so _discarded_scalar_
+#: fields() correctly has nothing left to flag for them.
+_SCALAR_MERGE_ACTIVELY_RESOLVED_FIELDS = {"Citation": frozenset({"confidence"})}
+
+
+def _is_genuine_collision(field, old_value, current_value, local_value):
+    """True only for the one shape of disagreement with no algorithmic
+    "correct" answer: current *and* local_obj both actually touched
+    field (each differs from old_value, the payload's own pre-edit
+    snapshot -- the true 3-way merge base), landing on genuinely
+    different values. An edit only one side made is not a conflict --
+    see TODO.md's "Only do for CONFLICTS" note -- so every function in
+    this file that has to tell the two apart shares this one check.
+    """
+    return (
+        diff_items(field, old_value, local_value)
+        and diff_items(field, old_value, current_value)
+        and diff_items(field, current_value, local_value)
+    )
+
+
+def _apply_uncontested_scalar_edits(old_data, current, local_obj, merged):
+    """Layered on top of merge()'s own field-specific handling (list
+    union, privacy-OR, ...): for any *other* field -- one merge() leaves
+    at current's unchanged value, a plain scalar it has no handling for
+    at all -- apply local_obj's edit if local_obj is the only side that
+    actually touched it, relative to old_data (the payload's own
+    pre-edit snapshot, entry["old"]) -- the true 3-way merge base; see
+    _discarded_scalar_fields()'s docstring for why old_data, not
+    current, decides "touched". A field both sides touched to
+    genuinely different values is a true collision and is deliberately
+    left alone here, at current's value -- see the module docstring's
+    "silently losing the discarded value is not" paragraph;
+    _discarded_scalar_fields(), called after this, records what's still
+    left to record once this has done what it safely can.
+
+    Mutates and returns merged in place, via plain setattr()/getattr():
+    every object_to_dict() top-level key names a real property on the
+    object (confirmed against Person's "gender", Event's "date"/"place"/
+    "description"/"type", ...), so this needs no per-class field list of
+    its own -- it discovers which fields merge() already handled by
+    asking what merge() actually changed (comparing current against
+    merged), the same technique _discarded_scalar_fields() uses, with
+    one necessary exception: _SCALAR_MERGE_LOCKED_FIELDS above.
+
+    A no-op if old_data is None: a caller with no real pre-edit baseline
+    (nothing in this file calls _merge_or_overwrite() without one except
+    tests exercising it directly) gets exactly the previous whole-
+    object-scalar behavior, not a guess at what "touched" means without
+    one.
+    """
+    if old_data is None or type(current).merge is BaseObject.merge:
+        return merged
+    locked = _SCALAR_MERGE_LOCKED_FIELDS.get(type(current).__name__, frozenset())
+    current_data = object_to_dict(current)
+    local_data = object_to_dict(local_obj)
+    merged_data = object_to_dict(merged)
+    for field, local_value in local_data.items():
+        if field in _DISCARD_CHECK_IGNORED_FIELDS or field in locked:
+            continue
+        if diff_items(field, current_data.get(field), merged_data.get(field)):
+            continue  # merge() already gave this field its own handling
+        old_value = old_data.get(field)
+        if not diff_items(field, old_value, local_value):
+            continue  # local_obj never touched this field
+        current_value = current_data.get(field)
+        if _is_genuine_collision(field, old_value, current_value, local_value):
+            continue  # a true conflict -- leave it for the note, not here
+        setattr(merged, field, getattr(local_obj, field))
+    return merged
+
+
+def _merge_or_overwrite(current, local_obj, db, old_data=None, pruned=None):
     """Combine local_obj's content into current via the object's own
     merge() -- the same list-unioning logic behind Gramps' Merge People/
     Family/... tools (ported from GrampsWebSync's diffhandler.py, credit
-    David Straub, same license) -- when the type actually implements it.
+    David Straub, same license) -- when the type actually implements it,
+    then _apply_uncontested_scalar_edits() layers a real per-field 3-way
+    merge on top for whatever merge() leaves untouched: a field only
+    local_obj touched (old_data provided) survives too, not just the
+    fields merge() itself knows how to combine.
 
     Falls back to local_obj outright for a type (e.g. Tag) that only
     inherits BaseObject's no-op merge(): "merging" into a no-op would
@@ -1158,8 +1514,17 @@ def _merge_or_overwrite(current, local_obj, db):
     merge() is for) and tag on a spurious "Merged Gramps ID" attribute --
     this is the same object, edited twice, not two objects becoming one.
 
+    old_data is entry["old"] -- the payload's own pre-edit snapshot, the
+    3-way merge base _apply_uncontested_scalar_edits() needs. Optional
+    (defaults to None, a no-op there) so every existing caller that
+    doesn't have one keeps the previous whole-object-scalar behavior
+    unchanged.
+
     db is required so the result can be checked for dangling references
-    before it's returned -- see _prune_dangling_references().
+    before it's returned -- see _prune_dangling_references(). pruned, if
+    given a list, is forwarded to it to collect what got stripped -- a
+    genuine conflict in its own right (the module docstring's "silently
+    losing the discarded value is not" section covers this too).
     """
     if type(current).merge is BaseObject.merge:
         result = local_obj
@@ -1168,9 +1533,239 @@ def _merge_or_overwrite(current, local_obj, db):
         local_copy = deepcopy(local_obj)
         local_copy.gramps_id = None
         merged.merge(local_copy)
+        _apply_uncontested_scalar_edits(old_data, current, local_obj, merged)
         result = merged
-    _prune_dangling_references(result, db)
+    _prune_dangling_references(result, db, pruned=pruned)
     return result
+
+
+def _readable_field_value(value):
+    """Render one object_to_dict() field value as a short, human-readable
+    string for a conflict note -- not a full pretty-printer, just enough
+    for a reader to tell what the kept/discarded value actually was.
+    """
+    if value is None or value == "":
+        return "(empty)"
+    if isinstance(value, dict):
+        if "string" in value:
+            # GrampsType-shaped (EventType, NameType, ...): its own
+            # custom string if set, else the type's standard name.
+            return value["string"] or str(value.get("value", value))
+        if "dateval" in value:
+            # Date-shaped: the user's own text if they set one, else the
+            # raw (day, month, year, slash) tuple.
+            return value.get("text") or str(value["dateval"])
+        return json.dumps(value, default=str)[:80]
+    if isinstance(value, list):
+        return f"{len(value)} item(s)"
+    return str(value)[:80]
+
+
+def _discarded_scalar_fields(old_data, current, local_obj, result):
+    """Return [(field, kept, discarded), ...] for every top-level field
+    local_obj's edit actually touched (differs from old_data, the
+    payload's own pre-edit snapshot -- entry["old"], the true 3-way merge
+    base) where result -- what _merge_or_overwrite() actually committed
+    -- still matches current unchanged, i.e. that edit did not survive.
+
+    old_data, not current, is what decides whether local_obj "touched" a
+    field: current is the server's post-resync state, which can itself
+    differ from old_data on fields local_obj never edited at all --
+    Person.merge()'s privacy-OR is exactly this shape (current.private
+    can be True from someone else's edit while local_obj.private is
+    still whatever it always was), and comparing against current there
+    would misreport an untouched field as a discarded local edit.
+
+    Deliberately does not need to know which fields merge() unions versus
+    leaves at current's value (see the module docstring's conflict-
+    handling section): comparing result against current directly catches
+    either shape of "local's edit didn't make it in" -- a plain scalar
+    merge() has no special handling for, or (structurally, though not
+    expected in practice for merge()'s own list/privacy/name handling) a
+    list-valued field for some reason not reflecting local's addition.
+
+    Returns [] for a type without a real merge() (BaseObject.merge --
+    result is local_obj outright, so nothing was discarded). Skips
+    _SCALAR_MERGE_LOCKED_FIELDS: those are handled exclusively by
+    _demoted_field_conflicts() instead, which (unlike this function)
+    requires a genuine collision -- merge() demotes a locked field like
+    Person.primary_name into a substitute unconditionally, on *every*
+    conflict-retry for that type, whether or not the field itself was
+    ever actually disputed, so checking it here the same way would flag
+    a plain uncontested edit as a discarded conflict; see TODO.md's
+    "Only do for CONFLICTS" note.
+    """
+    if type(current).merge is BaseObject.merge:
+        return []
+    if not isinstance(result, type(current)):
+        # Best-effort bookkeeping, not the retry's actual commit -- never
+        # raise into that path over a result shape this couldn't parse.
+        return []
+    locked = _SCALAR_MERGE_LOCKED_FIELDS.get(type(current).__name__, frozenset())
+    old_data = old_data or {}
+    current_data = object_to_dict(current)
+    local_data = object_to_dict(local_obj)
+    result_data = object_to_dict(result)
+    discarded = []
+    for field, local_value in local_data.items():
+        if field in _DISCARD_CHECK_IGNORED_FIELDS or field in locked:
+            continue
+        old_value = old_data.get(field)
+        if not diff_items(field, old_value, local_value):
+            continue  # local_obj didn't actually touch this field
+        current_value = current_data.get(field)
+        result_value = result_data.get(field)
+        if diff_items(field, current_value, result_value):
+            continue  # the result does reflect a real change -- not discarded
+        discarded.append(
+            (
+                field,
+                _readable_field_value(current_value),
+                _readable_field_value(local_value),
+            )
+        )
+    return discarded
+
+
+def _demoted_field_conflicts(old_data, current, local_obj, merged):
+    """Return [(field, kept, discarded), ...] for a _SCALAR_MERGE_LOCKED_
+    FIELDS field (currently just Person.primary_name) where old_data
+    shows a genuine collision -- current *and* local_obj both actually
+    touched it, to different values (see _is_genuine_collision()).
+
+    A locked field structurally never shows as "touched" by comparing
+    current against merged the way _discarded_scalar_fields() and
+    _apply_uncontested_scalar_edits() both detect every other field's
+    handling -- merge() demotes it into a substitute field entirely
+    (e.g. Person.merge() -> alternate_names) rather than declining to
+    change it the ordinary way, so current.primary_name genuinely never
+    changes value whether or not local_obj's edit to it collided with
+    anything. Requiring a real collision here, explicitly, is what
+    keeps this from flagging an ordinary, uncontested name edit that
+    happens to land on a locked field -- see TODO.md's "Only do for
+    CONFLICTS" note; nothing is actually lost in either case (merge()
+    always preserves the demoted value as an alternate), but only a
+    genuine conflict is worth a human's attention.
+
+    Returns [] without old_data, or for a type with no locked fields.
+    """
+    if old_data is None:
+        return []
+    locked = _SCALAR_MERGE_LOCKED_FIELDS.get(type(current).__name__)
+    if not locked:
+        return []
+    old_data = old_data or {}
+    current_data = object_to_dict(current)
+    local_data = object_to_dict(local_obj)
+    conflicts = []
+    for field in locked:
+        old_value = old_data.get(field)
+        current_value = current_data.get(field)
+        local_value = local_data.get(field)
+        if not _is_genuine_collision(field, old_value, current_value, local_value):
+            continue
+        conflicts.append(
+            (
+                field,
+                _readable_field_value(current_value),
+                _readable_field_value(local_value),
+            )
+        )
+    return conflicts
+
+
+def _actively_resolved_conflicts(old_data, current, local_obj, merged):
+    """Return [(field, kept, other), ...] for a _SCALAR_MERGE_ACTIVELY_
+    RESOLVED_FIELDS field (currently just Citation.confidence) where
+    old_data shows a genuine collision -- current *and* local_obj both
+    actually touched it, to different values (see
+    _is_genuine_collision()) -- that merge()'s own business logic (the
+    level_priority rule) then resolved to a definite answer, one of the
+    two original values.
+
+    Unlike _discarded_scalar_fields(), does not require merged to still
+    match current: merge() actively reassigns one of these fields on
+    every call regardless of whether a real collision occurred, so
+    "merged differs from current" doesn't by itself mean anything --
+    only a genuine collision (checked directly here, the same way
+    _demoted_field_conflicts() has to) does. kept is whichever of
+    current/local_obj's values merge() actually kept; other is whichever
+    it didn't -- both worth showing, since a human can't otherwise tell
+    a resolved conflict happened at all.
+
+    Returns [] without old_data, or for a type with no actively-resolved
+    fields.
+    """
+    if old_data is None:
+        return []
+    fields = _SCALAR_MERGE_ACTIVELY_RESOLVED_FIELDS.get(type(current).__name__)
+    if not fields:
+        return []
+    old_data = old_data or {}
+    current_data = object_to_dict(current)
+    local_data = object_to_dict(local_obj)
+    merged_data = object_to_dict(merged)
+    conflicts = []
+    for field in fields:
+        old_value = old_data.get(field)
+        current_value = current_data.get(field)
+        local_value = local_data.get(field)
+        if not _is_genuine_collision(field, old_value, current_value, local_value):
+            continue
+        merged_value = merged_data.get(field)
+        other_value = (
+            local_value
+            if diff_items(field, merged_value, current_value)
+            else current_value
+        )
+        conflicts.append(
+            (
+                field,
+                _readable_field_value(merged_value),
+                _readable_field_value(other_value),
+            )
+        )
+    return conflicts
+
+
+def _conflict_summary_lines(old_data, current, local_obj, merged, pruned):
+    """Build the human-readable lines _record_conflict_notes() writes
+    into one Note per conflicted object. Every source here only fires
+    for a genuine two-sided disagreement -- see each function's own
+    docstring, and TODO.md's "Only do for CONFLICTS" note -- so an
+    uncontested edit, or two different items both surviving a list
+    union, never produces a line.
+
+    pruned is _merge_or_overwrite()'s own pruned list (a dangling Tag/
+    Note/Citation reference _prune_dangling_references() had to strip):
+    always a genuine conflict when non-empty -- local's edit still
+    pointed at something that db, reflecting the post-resync server
+    state, says no longer exists, a real two-sided disagreement about
+    whether that referenced object should still exist at all.
+    """
+    lines = []
+    for field, kept, discarded in _discarded_scalar_fields(
+        old_data, current, local_obj, merged
+    ):
+        lines.append(f"kept {field} ({kept}), discarded local edit ({discarded})")
+    for field, kept, discarded in _demoted_field_conflicts(
+        old_data, current, local_obj, merged
+    ):
+        lines.append(
+            f"{field} conflict: kept ({kept}); local's conflicting edit "
+            f"({discarded}) was preserved separately rather than applied directly"
+        )
+    for field, kept, other in _actively_resolved_conflicts(
+        old_data, current, local_obj, merged
+    ):
+        lines.append(
+            f"{field} conflict: automatically resolved to ({kept}) over ({other})"
+        )
+    for attr, handle in pruned:
+        lines.append(
+            f"removed a {attr} reference ({handle}) that no longer exists on the server"
+        )
+    return lines
 
 
 class WebApiDB(SQLite):
@@ -1227,6 +1822,22 @@ class WebApiDB(SQLite):
     _poll_failures = 0
     _media_poll_failures = 0
     _poll_interval = POLL_INTERVAL_SECONDS
+
+    #: Ticks since _poll_tick() last asked for a totals check -- see
+    #: VERIFY_TOTALS_POLL_INTERVAL_SECONDS. Reset to 0 both by load()
+    #: (fresh state for a freshly opened tree, same as the outage
+    #: counters above) and by _poll_tick() itself every time it actually
+    #: fires one.
+    _polls_since_verify_totals = 0
+
+    #: Set by _give_up_polling() the first time either poller hits a
+    #: permanently-rejected request (see that method) -- both timers
+    #: share the one credential, so a rejection on either means neither
+    #: can succeed again, and this keeps the second poller's own arrival
+    #: at the same conclusion from showing a second dialog for the same
+    #: underlying problem. Reset by load() like every other outage-state
+    #: flag above.
+    _polling_abandoned = False
 
     def requires_login(self):
         # Credentials come from GRAMPS_WEB_API_KEY, not a login dialog.
@@ -1386,6 +1997,8 @@ class WebApiDB(SQLite):
         self._poll_failures = 0
         self._media_poll_failures = 0
         self._poll_interval = POLL_INTERVAL_SECONDS
+        self._polls_since_verify_totals = 0
+        self._polling_abandoned = False
         # _sync_media_files_async() runs its network legs on a worker
         # thread; _run_async_to_completion() blocks this call (pumping the
         # main loop so that worker thread's result can actually be
@@ -1775,16 +2388,34 @@ class WebApiDB(SQLite):
         once per tick, and the timer backs off while it lasts (see
         _record_poll_failure()) -- a 10-second traceback loop for as long
         as a server stays down buries anything else in the log and makes a
-        routine outage look like a crash."""
+        routine outage look like a crash.
+
+        Also asks for a totals check (verify_totals=True) once every
+        VERIFY_TOTALS_POLL_INTERVAL_SECONDS worth of ticks -- see that
+        constant and _mirror_is_short_of_the_server_async(). Tick-counted
+        (self._polls_since_verify_totals), not wall-clock-timed: this
+        still lands roughly on schedule during ordinary polling, and
+        stretches out for free during a backoff (_record_poll_failure())
+        without any extra bookkeeping, which is the right direction to
+        drift -- there is nothing useful to verify totals against while
+        the server is unreachable anyway. Reset to 0 both here and by
+        load(), which always runs its own check regardless."""
         if self._syncing:
             # Reached from inside a still-running chain this tick would
             # otherwise start again underneath.
             LOG.debug("poll: a sync is already running; skipping this tick")
             return GLib.SOURCE_CONTINUE
         self._syncing = True
+        self._polls_since_verify_totals += 1
+        verify_totals = self._polls_since_verify_totals >= (
+            VERIFY_TOTALS_POLL_INTERVAL_SECONDS // POLL_INTERVAL_SECONDS
+        )
+        if verify_totals:
+            self._polls_since_verify_totals = 0
         self._sync_from_server_async(
             on_done=self._finish_async_op(self._on_poll_success),
             on_error=self._finish_async_op(self._on_poll_error),
+            verify_totals=verify_totals,
         )
         return GLib.SOURCE_CONTINUE
 
@@ -1808,7 +2439,67 @@ class WebApiDB(SQLite):
                 "Unexpected error during periodic sync from server.", exc_info=exc
             )
             return
+        if not _is_retryable_push_error(exc):
+            # A permanent rejection (a revoked/expired token, an account
+            # the server no longer has -- see _give_up_polling()), not a
+            # connectivity blip: backing this off and retrying forever
+            # would just repeat the identical rejection every
+            # POLL_BACKOFF_MAX_SECONDS, silently, with nothing durable to
+            # tell the user their session is permanently stuck.
+            self._give_up_polling(exc)
+            return
         self._record_poll_failure(exc)
+
+    def _give_up_polling(self, exc):
+        """Reached from either _on_poll_error() or _on_media_poll_error()
+        once _is_retryable_push_error() says a poll's own request was
+        permanently rejected, not merely unreachable -- most plausibly
+        the account GRAMPS_WEB_API_KEY authenticates as no longer being
+        valid (a revoked/expired refresh token, or the server itself
+        having been reset: a fresh database behind the same URL, the old
+        account simply gone). Both timers share the one credential, so a
+        rejection on either means neither can succeed again -- this
+        stops both, not just whichever poller noticed first.
+
+        Deliberately does not call self.close(): nothing here can tell
+        dbstate/viewmanager a tree closed -- that direction only ever
+        runs the other way (viewmanager.py calls db.close(), never the
+        reverse; confirmed against gui/viewmanager.py) -- so doing that
+        would leave Gramps' own UI still showing the tree as open while
+        the connection underneath is actually gone, silently broken
+        rather than visibly stopped. What this leaves instead: sync
+        stopped, but the tree stays open and usable, local edits keep
+        working against the mirror and queuing (same as any other
+        unreachable-server state -- they simply never drain), and the
+        user has a clear, undismissable answer for why nothing is
+        syncing, via _notify_fatal_poll_error()'s dialog -- the nearest
+        equivalent reachable from here to load()'s own DbConnectionError
+        path, which isn't itself reachable once load() has already
+        returned.
+
+        Idempotent via self._polling_abandoned: both pollers can hit
+        this around the same moment (they share the one credential), and
+        the second call here stops its own timer quietly rather than
+        show a second dialog for the same underlying problem.
+        """
+        for attr in ("_poll_source_id", "_media_poll_source_id"):
+            source_id = getattr(self, attr, None)
+            if source_id is not None:
+                GLib.source_remove(source_id)
+                setattr(self, attr, None)
+        if self._polling_abandoned:
+            return
+        self._polling_abandoned = True
+        detail = _describe_connection_error(exc)
+        LOG.error(
+            "Periodic sync from the server was permanently rejected (%s); "
+            "this tree's credentials appear to no longer be valid. "
+            "Polling has stopped -- local edits will keep working but "
+            "will not sync until this tree is closed and reopened with a "
+            "valid GRAMPS_WEB_API_KEY.",
+            detail,
+        )
+        _notify_fatal_poll_error(detail)
 
     def _record_poll_failure(self, err):
         """Handle a failed _poll_tick() sync: report it (once per outage,
@@ -1907,6 +2598,11 @@ class WebApiDB(SQLite):
             # such caller for an async on_error, so log it loudly here
             # instead of silently losing it.
             LOG.error("Unexpected error during periodic media file sync.", exc_info=exc)
+            return
+        if not _is_retryable_push_error(exc):
+            # Same permanent-rejection reasoning as _on_poll_error() --
+            # see _give_up_polling().
+            self._give_up_polling(exc)
             return
         if self._media_poll_failures == 0:
             LOG.warning(
@@ -2180,7 +2876,19 @@ class WebApiDB(SQLite):
                     len(payload),
                     exc,
                 )
+                # on_error() first, not after: it's what releases
+                # self._syncing (via _finish_async_op(), the top-level
+                # caller's wrapped completion handler) -- calling it
+                # before the note's own local commit means that commit's
+                # own push (transaction_commit() -> _start_push()) finds
+                # self._syncing already clear and can go out right away,
+                # instead of finding it still held by this very chain and
+                # being deferred to _queue_pending_push() for no reason.
                 on_error(exc)
+                if not _is_message_note_push(message):
+                    self._record_undelivered_push_notes(
+                        payload, f"server permanently rejected it ({exc})"
+                    )
                 return
             # LOG.exception() (used by the old synchronous _push_payload())
             # relies on sys.exc_info(), which has nothing to show from
@@ -2349,9 +3057,20 @@ class WebApiDB(SQLite):
         alongside the payload so a queued push, once retried, still shows
         up in the server's history under its original description rather
         than falling back to "Raw transaction".
+
+        Recording a note for an evicted entry (see
+        _record_undelivered_push_notes()) is its own local edit, which
+        can itself land right back here if its push fails for a
+        connectivity reason too -- so the trimmed queue is persisted
+        *before* any of that runs, not after. Recording first would let
+        that nested call read this method's not-yet-persisted ``pending``
+        via its own _get_metadata() call, then overwrite it with a stale
+        copy missing whatever the nested call just queued, once this
+        call's own _set_metadata() finally runs.
         """
         pending = self._get_metadata("pending_pushes", default=[])
         pending.append({"payload": payload, "undo": undo, "message": message})
+        evicted_entries = []
         if len(pending) > MAX_PENDING_PUSHES:
             dropped = len(pending) - MAX_PENDING_PUSHES
             LOG.error(
@@ -2362,8 +3081,16 @@ class WebApiDB(SQLite):
                 MAX_PENDING_PUSHES,
                 dropped,
             )
+            evicted_entries = pending[:dropped]
             pending = pending[dropped:]
         self._set_metadata("pending_pushes", pending)
+        for evicted in evicted_entries:
+            if not _is_message_note_push(evicted.get("message")):
+                self._record_undelivered_push_notes(
+                    evicted["payload"],
+                    "it was evicted from the local retry queue after too "
+                    "many undelivered changes accumulated",
+                )
 
     def _flush_pending_pushes_async(self, on_done, on_error):
         """Retry queued pushes that previously failed for a connectivity
@@ -2404,7 +3131,26 @@ class WebApiDB(SQLite):
         mutated in place (entries popped off the front as they're
         delivered or dropped) and persisted once this recursion bottoms
         out, exactly the way the old synchronous while-loop this
-        replaces did with its own local variable."""
+        replaces did with its own local variable.
+
+        Recording a note for a dropped entry below (see
+        _record_undelivered_push_notes()) is its own local edit, which
+        could in principle land right back in _queue_pending_push() if
+        its own push fails for a connectivity reason -- and because this
+        method only persists ``pending`` once the whole recursion
+        bottoms out, not after every pop (see above), that nested call's
+        own _set_metadata() could be overwritten by this one's once it
+        finally runs, losing the note-push's own queued retry. Unlike
+        the same risk in _queue_pending_push() itself (persist-before-
+        record there, since it has one write to reorder around), fixing
+        it here would mean persisting after every single pop instead of
+        once at the end -- a real behavior change to well-tested
+        existing logic for what is, worst case, one best-effort
+        diagnostic note lost to a narrow double-failure race, not the
+        original edit itself (that loss is already logged unconditionally
+        either way). Left as a known, acceptable gap rather than
+        rearchitected for it.
+        """
         if not pending:
             self._set_metadata("pending_pushes", pending)
             LOG.debug("queue: %d push(es) still pending after the flush", len(pending))
@@ -2440,6 +3186,12 @@ class WebApiDB(SQLite):
                     "server for those object(s).",
                     len(entry["payload"]),
                 )
+                if not _is_message_note_push(entry.get("message")):
+                    self._record_undelivered_push_notes(
+                        entry["payload"],
+                        "it conflicted with the server's current data and "
+                        "could not be replayed safely",
+                    )
                 pop_and_continue()
                 return
             if _is_retryable_push_error(exc):
@@ -2460,6 +3212,10 @@ class WebApiDB(SQLite):
                 len(entry["payload"]),
                 exc,
             )
+            if not _is_message_note_push(entry.get("message")):
+                self._record_undelivered_push_notes(
+                    entry["payload"], f"server permanently rejected it ({exc})"
+                )
             pop_and_continue()
 
         self.io_runner.run(
@@ -2496,8 +3252,21 @@ class WebApiDB(SQLite):
         in the brief window since then. _after_conflict_resync() runs
         this as one runner (main-thread) step, since it's 100% local DB
         work with no network of its own.
+
+        Any genuine conflict _merge_or_overwrite() had to resolve
+        automatically -- a discarded scalar field, a demoted primary
+        name, an actively-resolved field like Citation confidence, or a
+        pruned dangling reference (see _conflict_summary_lines()) -- is
+        collected here and handed to _record_conflict_notes()
+        afterwards, as its own separate transaction -- not inside the
+        ``with DbTxn`` below, so this retry's own commit stays exactly
+        what it was before: one object per conflicting entry, nothing
+        else. An uncontested edit, or two different items both
+        surviving a list union, produces no lines and is never recorded
+        -- see TODO.md's "Only do for CONFLICTS" note.
         """
         self._retrying = True
+        conflicts = []
         try:
             with DbTxn(_("Retry local change after server conflict"), self) as trans:
                 for entry in payload:
@@ -2514,10 +3283,139 @@ class WebApiDB(SQLite):
                         obj = data_to_object(entry["new"])
                         if has_handle(handle):
                             current = getattr(self, f"get_{name}_from_handle")(handle)
-                            obj = _merge_or_overwrite(current, obj, self)
+                            old_data = entry.get("old")
+                            pruned = []
+                            merged = _merge_or_overwrite(
+                                current, obj, self, old_data=old_data, pruned=pruned
+                            )
+                            lines = _conflict_summary_lines(
+                                old_data, current, obj, merged, pruned
+                            )
+                            if lines:
+                                conflicts.append((entry["_class"], name, handle, lines))
+                            obj = merged
                         getattr(self, f"commit_{name}")(obj, trans)
         finally:
             self._retrying = False
+        if conflicts:
+            self._record_conflict_notes(conflicts)
+
+    def _get_or_create_tag(self, name):
+        """Look up a Tag by name, creating it if this is the first time
+        it's needed here -- the same lookup-or-create gramps-connect's
+        own notesApi.ts does for its "message"/"todo-open" tags, so both
+        sides converge on the same Tag object regardless of which one
+        creates it first.
+
+        Runs its own DbTxn rather than sharing the caller's: tag
+        creation is a one-time, idempotent event (a second call finds it
+        via get_tag_from_name() and never reaches the create branch
+        again), not part of what any particular conflict recording is
+        "about".
+        """
+        tag = self.get_tag_from_name(name)
+        if tag is not None:
+            return tag
+        tag = Tag()
+        tag.set_handle(create_id())
+        tag.set_name(name)
+        with DbTxn(_("Create tag"), self) as trans:
+            self.commit_tag(tag, trans)
+        return tag
+
+    def _record_conflict_notes(self, conflicts):
+        """Attach one gramps-connect-style "message" Note per conflicted
+        object, recording exactly what _retry_after_conflict() had to
+        resolve automatically -- see the module docstring's "silently
+        losing the discarded value is not" paragraph and
+        _conflict_summary_lines()'s own docstring for what counts.
+
+        ``conflicts`` is a list of (obj_class, name, handle, lines) from
+        _retry_after_conflict(), where lines is
+        _conflict_summary_lines()'s own list of ready-made, human-
+        readable strings -- already filtered to genuine conflicts only,
+        nothing left for this method to decide.
+
+        Runs as its own, separate local transaction, called only after
+        _retry_after_conflict()'s own DbTxn has already committed --
+        deliberately not folded into that one, so the retry's own commit
+        stays exactly what it always was: one object per conflicting
+        entry, nothing else (see that method's docstring). This one goes
+        through the completely ordinary transaction_commit() ->
+        _start_push() path like any other local edit -- no special-
+        casing needed, and safe even if *this* push itself hits a
+        conflict, since attaching a note is a list-valued change
+        merge() already unions correctly (unlike the scalar edit this
+        note exists to record in the first place).
+        """
+        message_tag = self._get_or_create_tag(MESSAGE_TAG_NAME)
+        todo_tag = self._get_or_create_tag(MESSAGE_TODO_OPEN_TAG_NAME)
+        with DbTxn(_message_note_description(), self) as trans:
+            for obj_class, name, handle, lines in conflicts:
+                get_from_handle = getattr(self, f"get_{name}_from_handle", None)
+                if get_from_handle is None:
+                    continue
+                try:
+                    obj = get_from_handle(handle)
+                except HandleError:
+                    continue  # gone locally by the time this runs
+                if not hasattr(obj, "add_note"):
+                    continue  # e.g. Tag -- nothing to attach a note to
+                summary = "; ".join(lines)
+                note = Note()
+                note.set_handle(create_id())
+                note.set_gramps_id(self.find_next_note_gramps_id())
+                note.set_type(NoteType.GENERAL)
+                note.set(f"{MESSAGE_NOTE_AUTHOR}: {obj_class} -- {summary}")
+                note.add_tag(message_tag.handle)
+                note.add_tag(todo_tag.handle)
+                self.commit_note(note, trans)
+                obj.add_note(note.handle)
+                getattr(self, f"commit_{name}")(obj, trans)
+
+    def _record_undelivered_push_notes(self, payload, reason):
+        """Attach a gramps-connect-style "message" Note to every add/
+        update entry in payload whose object still exists locally,
+        recording that this local edit will never reach the server, and
+        why -- reusing _record_conflict_notes()'s own Note-attachment
+        machinery (same tags, same separate-transaction timing, same
+        reasoning) rather than a second implementation of it. See
+        TODO.md gap #2/#3: local and server permanently diverge for
+        that object the moment this runs, exactly the kind of silent
+        loss the "never silent, never blocking" design principle exists
+        to close, just from a delivery failure rather than a merge
+        conflict.
+
+        Called from every point elsewhere in this file that gives up on
+        a local edit ever reaching the server: a non-retryable
+        rejection (_push_payload_async()'s on_push_error), a queued
+        push that now conflicts or is itself non-retryable on replay
+        (_flush_one_pending_push()'s on_push_error), and a pending-push
+        queue eviction (_queue_pending_push()).
+
+        A delete entry has no local object left to attach a note to --
+        skipped here, same as _record_conflict_notes() skips a handle
+        that's gone by the time it runs; only the caller's own log line
+        records that one.
+        """
+        conflicts = []
+        for entry in payload:
+            if entry["type"] == "delete":
+                continue  # nothing local left to attach a note to
+            key = CLASS_TO_KEY_MAP.get(entry["_class"])
+            if key is None:
+                continue
+            name = KEY_TO_NAME_MAP[key]
+            conflicts.append(
+                (
+                    entry["_class"],
+                    name,
+                    entry["handle"],
+                    [f"local edit could not be synced to the server: {reason}"],
+                )
+            )
+        if conflicts:
+            self._record_conflict_notes(conflicts)
 
     def _resync_after_conflict_async(self, on_done, on_error):
         """Rebuild the local mirror from a fresh server export
@@ -3083,7 +3981,8 @@ class WebApiDB(SQLite):
         is empty *altogether*, or too sparse to account for what the
         server holds, is the same kind of gap and gets the same
         fallback -- see _mirror_is_short_of_the_server_async(), which
-        ``verify_totals`` asks for (load() does; the poll doesn't).
+        ``verify_totals`` asks for (load() always does; the poll does
+        too, but only once every VERIFY_TOTALS_POLL_INTERVAL_SECONDS).
 
         progress_callback, if given, is called with an int 0-100 after
         each page -- see load()'s callback param. "total" comes from the
@@ -3364,10 +4263,13 @@ class WebApiDB(SQLite):
         already there.
 
         Only run where _sync_from_server_async()'s caller asks for it --
-        load(), not the 10-second poll (see POLL_INTERVAL_SECONDS): an
-        outdated mirror is repaired when the tree is opened, not on a
-        timer, so the extra GET /metadata/ costs one request per open and
-        a rebuild can never land in the middle of a working session.
+        load() every time, and _poll_tick() once every
+        VERIFY_TOTALS_POLL_INTERVAL_SECONDS rather than every 10-second
+        tick (see that constant): the extra GET /metadata/ request is
+        cheap enough for that cadence, but not for every tick forever,
+        and a shortfall discovered mid-session still routes to the same
+        _full_resync_async() a shortfall at load() would -- no longer
+        only repaired when the tree happens to be reopened.
 
         Skipped outright while pushes are queued (see
         _queue_pending_push()): those are local edits the server has not

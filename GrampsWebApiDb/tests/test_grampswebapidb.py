@@ -78,6 +78,7 @@ from gramps.gen.db.exceptions import DbConnectionError
 from gramps.gen.db.utils import make_database
 from gramps.gen.lib import (
     Attribute,
+    Citation,
     Event,
     EventRef,
     EventRoleType,
@@ -1930,6 +1931,525 @@ class TestConflictRetryAgainstARealDatabase(unittest.TestCase):
         self.assertEqual(len(final.get_attribute_list()), 1)
 
 
+class TestConflictNoteRecording(unittest.TestCase):
+    """_retry_after_conflict() -> _record_conflict_notes(): a genuine
+    scalar-field conflict (both sides changed the same field to
+    different values) must leave a gramps-connect-style "message" Note
+    behind recording what was kept and what was discarded, not just
+    silently keep the server's value -- see the module docstring's
+    "silently losing the discarded value is not" paragraph and TODO.md's
+    "never silent, never blocking" design principle. Same real-DBAPI
+    setup as TestConflictRetryAgainstARealDatabase."""
+
+    def setUp(self):
+        tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
+        self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
+        db = make_database("sqlite")
+        db.load(tmpdir)
+        with DbTxn("seed", db) as trans:
+            person = Person()
+            person.set_gramps_id("I0001")
+            person.set_gender(Person.FEMALE)
+            db.add_person(person, trans)
+            self.handle = person.handle
+        db.__class__ = WebApiDB
+        db.web_client = mock.MagicMock()
+        db.runner = InlineTaskRunner()
+        db.io_runner = InlineTaskRunner()
+        db._syncing = False
+        db._retrying = False
+        db._pulling = False
+        db._get_metadata = lambda key, default=0: default
+        db._set_metadata = lambda key, value, use_txn=True: None
+        db.web_client.get_transaction_history.return_value = ([], 0)
+        db.web_client.get_object_count.return_value = 1
+        db.web_client.supports_background_transactions.return_value = False
+        self.db = db
+        self.addCleanup(self.db.close)
+
+    def _current_data(self):
+        return remove_object(
+            object_to_data(self.db.get_person_from_handle(self.handle))
+        )
+
+    def _stub_full_resync_to(self, server_fresh):
+        def fake_full_resync_async(on_done, on_error, progress_callback=None):
+            self.db._pulling = True
+            try:
+                with DbTxn("fake resync", self.db, batch=True) as trans:
+                    self.db.commit_person(data_to_object(server_fresh), trans)
+            finally:
+                self.db._pulling = False
+            on_done(None)
+
+        return mock.patch.object(
+            self.db, "_full_resync_async", side_effect=fake_full_resync_async
+        )
+
+    def _push_conflicts_once_then_succeeds(self):
+        calls = []
+
+        def fake_push(payload, undo=False, background=False, message=None):
+            calls.append(copy.deepcopy(payload))
+            if len(calls) == 1:
+                raise WebApiPushConflict("Object has changed")
+
+        self.db.web_client.push_transaction.side_effect = fake_push
+        return calls
+
+    def test_genuine_conflict_leaves_a_tagged_message_note(self):
+        server_fresh = self._current_data()
+        server_fresh["gender"] = Person.MALE
+        calls = self._push_conflicts_once_then_succeeds()
+
+        with self._stub_full_resync_to(server_fresh):
+            with DbTxn("edit", self.db) as trans:
+                person = self.db.get_person_from_handle(self.handle)
+                person.set_gender(Person.UNKNOWN)
+                self.db.commit_person(person, trans)
+
+        # The original push, the retry, then the note-recording side
+        # effects (creating the two tags and attaching the note each
+        # push through the normal transaction_commit() path in turn) --
+        # more than the plain retry case, since _record_conflict_notes()
+        # is real local edits, not free bookkeeping.
+        self.assertGreaterEqual(len(calls), 2)
+        final = self.db.get_person_from_handle(self.handle)
+        # The server's post-resync value won -- merge() has no special
+        # handling for gender, so it's left at current's value.
+        self.assertEqual(final.get_gender(), Person.MALE)
+
+        note_handles = final.get_note_list()
+        self.assertEqual(len(note_handles), 1)
+        note = self.db.get_note_from_handle(note_handles[0])
+        self.assertIn("gender", note.get())
+        self.assertTrue(
+            note.get().startswith(f"{grampswebapidb.MESSAGE_NOTE_AUTHOR}: ")
+        )
+
+        message_tag = self.db.get_tag_from_name(grampswebapidb.MESSAGE_TAG_NAME)
+        todo_tag = self.db.get_tag_from_name(grampswebapidb.MESSAGE_TODO_OPEN_TAG_NAME)
+        self.assertIsNotNone(message_tag)
+        self.assertIsNotNone(todo_tag)
+        self.assertIn(message_tag.handle, note.get_tag_list())
+        self.assertIn(todo_tag.handle, note.get_tag_list())
+
+    def test_a_conflict_resolved_entirely_by_merge_leaves_no_note(self):
+        # Same shape as TestConflictRetryAgainstARealDatabase's own
+        # privacy-OR/attribute-union case: nothing is actually discarded
+        # (privacy is OR'd, the attribute list is unioned), so no
+        # conflict note should be created at all.
+        server_fresh = self._current_data()
+        server_fresh["private"] = True
+        calls = self._push_conflicts_once_then_succeeds()
+
+        with self._stub_full_resync_to(server_fresh):
+            with DbTxn("edit", self.db) as trans:
+                person = self.db.get_person_from_handle(self.handle)
+                attr = Attribute()
+                attr.set_type("Occupation")
+                attr.set_value("Tester")
+                person.add_attribute(attr)
+                self.db.commit_person(person, trans)
+
+        self.assertEqual(len(calls), 2)
+        final = self.db.get_person_from_handle(self.handle)
+        self.assertEqual(final.get_note_list(), [])
+        self.assertIsNone(self.db.get_tag_from_name(grampswebapidb.MESSAGE_TAG_NAME))
+
+    def test_genuine_primary_name_collision_leaves_a_note(self):
+        server_fresh = self._current_data()
+        server_fresh["primary_name"]["first_name"] = "FromServer"
+        calls = self._push_conflicts_once_then_succeeds()
+
+        with self._stub_full_resync_to(server_fresh):
+            with DbTxn("edit", self.db) as trans:
+                person = self.db.get_person_from_handle(self.handle)
+                person.get_primary_name().set_first_name("FromLocal")
+                self.db.commit_person(person, trans)
+
+        self.assertGreaterEqual(len(calls), 2)
+        final = self.db.get_person_from_handle(self.handle)
+        # Server's name wins as primary; local's is demoted, not lost.
+        self.assertEqual(final.get_primary_name().get_first_name(), "FromServer")
+        self.assertEqual(
+            [n.get_first_name() for n in final.get_alternate_names()], ["FromLocal"]
+        )
+        note_handles = final.get_note_list()
+        self.assertEqual(len(note_handles), 1)
+        note = self.db.get_note_from_handle(note_handles[0])
+        self.assertIn("primary_name", note.get())
+
+    def test_uncontested_primary_name_edit_beside_a_real_conflict_is_not_named_in_the_note(
+        self,
+    ):
+        # The regression this guards against: local's primary-name edit
+        # was never disputed (the server never touched the name), but
+        # this Person also has a genuine gender conflict -- the note
+        # must mention gender, not primary_name, even though
+        # Person.merge() demotes the name into alternate_names on every
+        # retry regardless of whether it was ever actually contested.
+        server_fresh = self._current_data()
+        server_fresh["gender"] = Person.MALE  # server's real conflict
+        calls = self._push_conflicts_once_then_succeeds()
+
+        with self._stub_full_resync_to(server_fresh):
+            with DbTxn("edit", self.db) as trans:
+                person = self.db.get_person_from_handle(self.handle)
+                person.get_primary_name().set_first_name("Corrected")  # uncontested
+                person.set_gender(Person.UNKNOWN)  # local's real conflict
+                self.db.commit_person(person, trans)
+
+        self.assertGreaterEqual(len(calls), 2)
+        final = self.db.get_person_from_handle(self.handle)
+        note_handles = final.get_note_list()
+        self.assertEqual(len(note_handles), 1)
+        note = self.db.get_note_from_handle(note_handles[0])
+        self.assertIn("gender", note.get())
+        self.assertNotIn("primary_name", note.get())
+
+    def test_a_reference_the_other_side_deleted_is_pruned_and_leaves_a_note(self):
+        # Local's edit still references a Tag that, by the time the
+        # resync catches up, no longer exists at all -- the other side
+        # deleted it. Always a genuine conflict when it fires (see
+        # _prune_dangling_references()'s docstring): local implicitly
+        # wants to keep the reference, reality says it's gone.
+        with DbTxn("seed tag", self.db) as trans:
+            tag = Tag()
+            tag.set_name("SomeTag")
+            self.db.add_tag(tag, trans)
+            tag_handle = tag.handle
+            person = self.db.get_person_from_handle(self.handle)
+            person.add_tag(tag_handle)
+            self.db.commit_person(person, trans)
+
+        server_fresh = self._current_data()  # still carries the tag reference
+        calls = self._push_conflicts_once_then_succeeds()
+
+        def fake_resync_with_tag_deleted(on_done, on_error, progress_callback=None):
+            self.db._pulling = True
+            try:
+                with DbTxn("fake resync", self.db, batch=True) as trans:
+                    self.db.commit_person(data_to_object(server_fresh), trans)
+                    self.db.remove_tag(tag_handle, trans)  # the other side's delete
+            finally:
+                self.db._pulling = False
+            on_done(None)
+
+        with mock.patch.object(
+            self.db, "_full_resync_async", side_effect=fake_resync_with_tag_deleted
+        ):
+            with DbTxn("edit", self.db) as trans:
+                person = self.db.get_person_from_handle(self.handle)
+                person.set_gender(Person.UNKNOWN)  # any local edit; still tags H1
+                self.db.commit_person(person, trans)
+
+        self.assertGreaterEqual(len(calls), 2)
+        final = self.db.get_person_from_handle(self.handle)
+        self.assertEqual(final.get_tag_list(), [])  # dangling reference pruned
+        note_handles = final.get_note_list()
+        self.assertEqual(len(note_handles), 1)
+        note = self.db.get_note_from_handle(note_handles[0])
+        self.assertIn("tag_list", note.get())
+        self.assertIn(tag_handle, note.get())
+
+
+class TestFieldLevelMergeAgainstARealDatabase(unittest.TestCase):
+    """_retry_after_conflict() end-to-end with _apply_uncontested_scalar_
+    edits() wired in: two *different* fields edited concurrently on the
+    same object must both survive, and no conflict note should be
+    created for that -- there was never a genuine collision, just a
+    whole-object conflict response covering an object where only one
+    field actually collided. Same real-DBAPI setup as
+    TestConflictRetryAgainstARealDatabase, seeding an Event instead of a
+    Person for clean, independent scalar fields (date/place/description,
+    none of them special-cased by Event.merge() beyond privacy)."""
+
+    def setUp(self):
+        tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
+        self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
+        db = make_database("sqlite")
+        db.load(tmpdir)
+        with DbTxn("seed", db) as trans:
+            event = Event()
+            event.set_description("Original")
+            db.add_event(event, trans)
+            self.handle = event.handle
+        db.__class__ = WebApiDB
+        db.web_client = mock.MagicMock()
+        db.runner = InlineTaskRunner()
+        db.io_runner = InlineTaskRunner()
+        db._syncing = False
+        db._retrying = False
+        db._pulling = False
+        db._get_metadata = lambda key, default=0: default
+        db._set_metadata = lambda key, value, use_txn=True: None
+        db.web_client.get_transaction_history.return_value = ([], 0)
+        db.web_client.get_object_count.return_value = 1
+        db.web_client.supports_background_transactions.return_value = False
+        self.db = db
+        self.addCleanup(self.db.close)
+
+    def _current_data(self):
+        return remove_object(object_to_data(self.db.get_event_from_handle(self.handle)))
+
+    def _stub_full_resync_to(self, server_fresh):
+        def fake_full_resync_async(on_done, on_error, progress_callback=None):
+            self.db._pulling = True
+            try:
+                with DbTxn("fake resync", self.db, batch=True) as trans:
+                    self.db.commit_event(data_to_object(server_fresh), trans)
+            finally:
+                self.db._pulling = False
+            on_done(None)
+
+        return mock.patch.object(
+            self.db, "_full_resync_async", side_effect=fake_full_resync_async
+        )
+
+    def _push_conflicts_once_then_succeeds(self):
+        calls = []
+
+        def fake_push(payload, undo=False, background=False, message=None):
+            calls.append(copy.deepcopy(payload))
+            if len(calls) == 1:
+                raise WebApiPushConflict("Object has changed")
+
+        self.db.web_client.push_transaction.side_effect = fake_push
+        return calls
+
+    def test_non_overlapping_field_edits_both_survive_with_no_note(self):
+        server_fresh = self._current_data()
+        server_fresh["place"] = "PLACE-1"  # server touched the place ref only
+        calls = self._push_conflicts_once_then_succeeds()
+
+        with self._stub_full_resync_to(server_fresh):
+            with DbTxn("edit", self.db) as trans:
+                event = self.db.get_event_from_handle(self.handle)
+                event.set_description("Updated by local")  # local: description only
+                self.db.commit_event(event, trans)
+
+        self.assertEqual(len(calls), 2)
+        final = self.db.get_event_from_handle(self.handle)
+        self.assertEqual(final.get_description(), "Updated by local")
+        self.assertEqual(final.get_place_handle(), "PLACE-1")
+        self.assertEqual(final.get_note_list(), [])
+        self.assertIsNone(self.db.get_tag_from_name(grampswebapidb.MESSAGE_TAG_NAME))
+
+    def test_a_genuine_same_field_collision_still_leaves_a_note(self):
+        server_fresh = self._current_data()
+        server_fresh["description"] = "Changed on server"
+        calls = self._push_conflicts_once_then_succeeds()
+
+        with self._stub_full_resync_to(server_fresh):
+            with DbTxn("edit", self.db) as trans:
+                event = self.db.get_event_from_handle(self.handle)
+                event.set_description("Changed locally")
+                self.db.commit_event(event, trans)
+
+        self.assertGreaterEqual(len(calls), 2)
+        final = self.db.get_event_from_handle(self.handle)
+        self.assertEqual(final.get_description(), "Changed on server")
+        note_handles = final.get_note_list()
+        self.assertEqual(len(note_handles), 1)
+        note = self.db.get_note_from_handle(note_handles[0])
+        self.assertIn("description", note.get())
+
+
+class TestUndeliveredPushNotes(unittest.TestCase):
+    """_record_undelivered_push_notes(): a local edit that will never
+    reach the server -- a fresh non-retryable rejection, a queued push
+    that now conflicts or is itself non-retryable on replay, or a queue
+    eviction -- leaves the same kind of message note
+    _record_conflict_notes() does, via the same machinery (see TODO.md
+    gap #2/#3). Also confirms the recursion guard
+    (_is_message_note_push()): a message note that itself fails to sync
+    must not spawn another note about that failure."""
+
+    def setUp(self):
+        tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
+        self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
+        db = make_database("sqlite")
+        db.load(tmpdir)
+        with DbTxn("seed", db) as trans:
+            person = Person()
+            person.set_gramps_id("I0001")
+            db.add_person(person, trans)
+            self.handle = person.handle
+        db.__class__ = WebApiDB
+        db.web_client = mock.MagicMock()
+        db.runner = InlineTaskRunner()
+        db.io_runner = InlineTaskRunner()
+        db._syncing = False
+        db._retrying = False
+        db._pulling = False
+        db._get_metadata = lambda key, default=0: default
+        db._set_metadata = lambda key, value, use_txn=True: None
+        db.web_client.get_transaction_history.return_value = ([], 0)
+        db.web_client.get_object_count.return_value = 1
+        db.web_client.supports_background_transactions.return_value = False
+        self.db = db
+        self.addCleanup(self.db.close)
+
+    def _forbidden(self):
+        return HTTPError(
+            "https://example.com/api/transactions/", 403, "forbidden", None, None
+        )
+
+    def _queued_entry(self):
+        data = remove_object(
+            object_to_data(self.db.get_person_from_handle(self.handle))
+        )
+        payload = [
+            {
+                "type": "update",
+                "handle": self.handle,
+                "_class": "Person",
+                "old": data,
+                "new": data,
+            }
+        ]
+        return {"payload": payload, "undo": False, "message": None}
+
+    def _fake_pending_entry(self):
+        """A queued entry for a handle that doesn't exist locally --
+        used to pad the queue in the eviction test so any *additional*
+        eviction the test's own note-recording causes (its tag/note
+        commits queue too -- see _use_persisted_metadata()) lands on
+        padding, not the one real entry under test:
+        get_person_from_handle() raises HandleError for it, caught and
+        skipped by _record_conflict_notes(), so no note results."""
+        payload = [
+            {
+                "type": "add",
+                "handle": "NONEXISTENT",
+                "_class": "Person",
+                "old": None,
+                "new": {},
+            }
+        ]
+        return {"payload": payload, "undo": False, "message": None}
+
+    def test_a_fresh_non_retryable_rejection_leaves_a_note(self):
+        calls = []
+
+        def fake_push(payload, undo=False, background=False, message=None):
+            calls.append(message)
+            if len(calls) == 1:
+                raise self._forbidden()
+            # Every subsequent push (the note-recording side effects)
+            # succeeds.
+
+        self.db.web_client.push_transaction.side_effect = fake_push
+
+        with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+            with DbTxn("edit", self.db) as trans:
+                person = self.db.get_person_from_handle(self.handle)
+                person.set_privacy(True)
+                self.db.commit_person(person, trans)
+
+        # The original edit's push, then the note-recording side effects
+        # (creating the two tags and attaching the note each push in
+        # turn, same as TestConflictNoteRecording's own genuine-conflict
+        # case) -- more than a bare "record one note" would suggest.
+        self.assertGreaterEqual(len(calls), 2)
+        final = self.db.get_person_from_handle(self.handle)
+        note_handles = final.get_note_list()
+        self.assertEqual(len(note_handles), 1)
+        note = self.db.get_note_from_handle(note_handles[0])
+        self.assertIn("permanently rejected", note.get())
+
+    def test_the_notes_own_failed_push_does_not_recurse(self):
+        # Every push -- the original edit's, and the note-commit's own
+        # -- is rejected identically (permissions revoked mid-session,
+        # say). Confirms _is_message_note_push() stops this at one
+        # note, not an unbounded chain of notes about notes.
+        self.db.web_client.push_transaction.side_effect = self._forbidden()
+
+        with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+            with DbTxn("edit", self.db) as trans:
+                person = self.db.get_person_from_handle(self.handle)
+                person.set_privacy(True)
+                self.db.commit_person(person, trans)
+
+        final = self.db.get_person_from_handle(self.handle)
+        self.assertEqual(len(final.get_note_list()), 1)
+
+    def _use_persisted_metadata(self, pending_pushes):
+        # A real dict-backed store, not a single shared list handed back
+        # by every call -- _record_undelivered_push_notes()'s own nested
+        # commits (the two tags, the note) can themselves queue via
+        # _queue_pending_push() during these tests, and that needs a
+        # real read-modify-write round trip through _get_metadata()/
+        # _set_metadata() to behave correctly, the same as
+        # TestPendingPushQueue's own mocking.
+        self.metadata = {"pending_pushes": pending_pushes}
+        self.db._get_metadata = lambda key, default=0: self.metadata.get(key, default)
+        self.db._set_metadata = (
+            lambda key, value, use_txn=True: self.metadata.__setitem__(key, value)
+        )
+        # Both call sites under test here (_flush_pending_pushes_async(),
+        # _queue_pending_push()) are, in production, only ever reached
+        # while something else already holds self._syncing (a poll tick,
+        # load()'s own sync, or the push that's queueing in the first
+        # place) -- matching that here is what makes the note-commit's
+        # own nested push defer to the queue instead of going out for
+        # real against this test's mocked web_client.
+        self.db._syncing = True
+
+    def test_a_queued_push_that_now_conflicts_leaves_a_note(self):
+        self._use_persisted_metadata([self._queued_entry()])
+        self.db.web_client.push_transaction.side_effect = WebApiPushConflict(
+            "Object has changed"
+        )
+
+        with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
+            self.db._flush_pending_pushes_async(
+                on_done=lambda _: None, on_error=lambda _: None
+            )
+
+        final = self.db.get_person_from_handle(self.handle)
+        note_handles = final.get_note_list()
+        self.assertEqual(len(note_handles), 1)
+        note = self.db.get_note_from_handle(note_handles[0])
+        self.assertIn("conflicted", note.get())
+
+    def test_a_queued_push_permanently_rejected_leaves_a_note(self):
+        self._use_persisted_metadata([self._queued_entry()])
+        self.db.web_client.push_transaction.side_effect = self._forbidden()
+
+        with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+            self.db._flush_pending_pushes_async(
+                on_done=lambda _: None, on_error=lambda _: None
+            )
+
+        final = self.db.get_person_from_handle(self.handle)
+        note_handles = final.get_note_list()
+        self.assertEqual(len(note_handles), 1)
+        note = self.db.get_note_from_handle(note_handles[0])
+        self.assertIn("permanently rejected", note.get())
+
+    def test_queue_eviction_leaves_a_note_for_each_evicted_entry(self):
+        # The real entry is oldest (index 0), so it's the one evicted;
+        # the padding gives the note-commit's own cascading queue
+        # pressure somewhere harmless to land -- see
+        # _fake_pending_entry()'s own docstring.
+        padding = [self._fake_pending_entry() for _ in range(4)]
+        self._use_persisted_metadata([self._queued_entry()] + padding)
+
+        with mock.patch.object(grampswebapidb, "MAX_PENDING_PUSHES", 5):
+            with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+                self.db._queue_pending_push(
+                    self._fake_pending_entry()["payload"], undo=False, message=None
+                )
+
+        final = self.db.get_person_from_handle(self.handle)
+        note_handles = final.get_note_list()
+        self.assertEqual(len(note_handles), 1)
+        note = self.db.get_note_from_handle(note_handles[0])
+        self.assertIn("evicted", note.get())
+
+
 class TestBirthDeathIndexPreservedAcrossResync(unittest.TestCase):
     """Gramps XML has no element for Person.birth_ref_index/
     death_ref_index (see exportxml.py's write_person()) -- ImportXml
@@ -2001,28 +2521,97 @@ class TestBirthDeathIndexPreservedAcrossResync(unittest.TestCase):
             self.db.get_person_from_handle(self.handle).birth_ref_index, -1
         )
 
-    def test_does_not_restore_when_the_event_ref_list_itself_changed(self):
-        # A real edit landed on this Person's event refs between the
-        # snapshot and the resync (e.g. someone added an event through
-        # the API) -- restoring the stale pre-resync index would be
-        # wrong here, so this must leave the freshly-recomputed value
-        # alone rather than clobber it.
+    def test_minus_one_is_restored_even_when_the_event_ref_list_changed(self):
+        # A concurrent, unrelated edit landed on this Person's event
+        # refs between the snapshot and the resync (e.g. someone added
+        # an event through the API) -- but birth_ref_index/
+        # death_ref_index has no representation in a Gramps XML export
+        # at all, so nothing about that edit could have told this addon
+        # anything new about it. The pre-resync -1 (nothing marked
+        # primary) is still the best available answer, so it must win
+        # over whatever ImportXml's document-order heuristic guessed --
+        # unlike an earlier, whole-list-signature version of this
+        # mechanism, which forfeited the restore over any event-ref
+        # change at all, even one unrelated to birth/death.
         snapshot = _snapshot_birth_death_indices(self.db)
 
-        with DbTxn("real edit", self.db, batch=True) as trans:
+        with DbTxn("unrelated edit", self.db, batch=True) as trans:
             person = self.db.get_person_from_handle(self.handle)
             other_ref = EventRef()
             other_ref.set_reference_handle(self.event_handle)
             other_ref.set_role(EventRoleType.WITNESS)
             person.add_event_ref(other_ref)
+            person.birth_ref_index = 0  # ImportXml-style recompute
+            self.db.commit_person(person, trans)
+
+        with DbTxn("restore", self.db, batch=True) as trans:
+            restored = _restore_birth_death_indices(self.db, snapshot, trans)
+
+        self.assertEqual(restored, 1)
+        self.assertEqual(
+            self.db.get_person_from_handle(self.handle).birth_ref_index, -1
+        )
+
+    def test_a_real_index_relocates_across_an_unrelated_list_change(self):
+        # The literal fix this mechanism exists for: birth_ref_index
+        # correctly points at the real primary birth ref (index 0)
+        # before the resync. A concurrent, unrelated edit inserts a
+        # *different* ref ahead of it, shifting the birth ref to index
+        # 1 -- an earlier, whole-list-signature version of this
+        # mechanism would have forfeited the restore entirely here, even
+        # though the referenced ref itself is untouched, just moved.
+        with DbTxn("mark as birth", self.db, batch=True) as trans:
+            person = self.db.get_person_from_handle(self.handle)
             person.birth_ref_index = 0
+            self.db.commit_person(person, trans)
+
+        snapshot = _snapshot_birth_death_indices(self.db)
+
+        with DbTxn("unrelated edit", self.db, batch=True) as trans:
+            other_event = Event()
+            other_event.set_type(EventType.OCCUPATION)
+            self.db.add_event(other_event, trans)
+            person = self.db.get_person_from_handle(self.handle)
+            new_ref = EventRef()
+            new_ref.set_reference_handle(other_event.handle)
+            new_ref.set_role(EventRoleType.PRIMARY)
+            person.get_event_ref_list().insert(0, new_ref)
+            person.birth_ref_index = 0  # ImportXml now (wrongly) points at new_ref
+            self.db.commit_person(person, trans)
+
+        with DbTxn("restore", self.db, batch=True) as trans:
+            restored = _restore_birth_death_indices(self.db, snapshot, trans)
+
+        self.assertEqual(restored, 1)
+        final = self.db.get_person_from_handle(self.handle)
+        self.assertEqual(final.birth_ref_index, 1)
+        self.assertEqual(final.get_event_ref_list()[1].ref, self.event_handle)
+
+    def test_a_real_index_is_not_restored_if_its_own_ref_was_removed(self):
+        # Unlike an unrelated list change, losing the *actual* referenced
+        # event/role pair leaves nothing to relocate to -- ImportXml's
+        # own freshly-recomputed guess is kept rather than pointing at a
+        # now-dangling position.
+        with DbTxn("mark as birth", self.db, batch=True) as trans:
+            person = self.db.get_person_from_handle(self.handle)
+            person.birth_ref_index = 0
+            self.db.commit_person(person, trans)
+
+        snapshot = _snapshot_birth_death_indices(self.db)
+
+        with DbTxn("removes the birth ref", self.db, batch=True) as trans:
+            person = self.db.get_person_from_handle(self.handle)
+            person.set_event_ref_list([])
+            person.birth_ref_index = -1  # ImportXml's own recompute: nothing left
             self.db.commit_person(person, trans)
 
         with DbTxn("restore", self.db, batch=True) as trans:
             restored = _restore_birth_death_indices(self.db, snapshot, trans)
 
         self.assertEqual(restored, 0)
-        self.assertEqual(self.db.get_person_from_handle(self.handle).birth_ref_index, 0)
+        self.assertEqual(
+            self.db.get_person_from_handle(self.handle).birth_ref_index, -1
+        )
 
     def test_a_person_deleted_since_the_snapshot_is_skipped_not_erred(self):
         snapshot = _snapshot_birth_death_indices(self.db)
@@ -2445,6 +3034,500 @@ class TestPruneDanglingReferences(unittest.TestCase):
 
 # -------------------------------------------------------------------------
 #
+# TestApplyUncontestedScalarEdits
+#
+# -------------------------------------------------------------------------
+class TestApplyUncontestedScalarEdits(unittest.TestCase):
+    """_apply_uncontested_scalar_edits() is _merge_or_overwrite()'s real
+    per-field 3-way merge, layered on top of merge()'s own list-union/
+    privacy-OR/... handling: a field only local_obj touched (relative to
+    old_data, the payload's real pre-edit snapshot) survives even though
+    merge() itself has no idea what to do with it. Real Person/Event/Tag
+    objects, same as TestMergeOrOverwrite."""
+
+    def test_a_local_only_edit_survives(self):
+        # Server never touched gender (current == old); local did.
+        old = Event()
+        old.set_handle("H1")
+        old.set_description("Original")
+        old_data = remove_object(object_to_data(old))
+
+        current = Event()
+        current.set_handle("H1")
+        current.set_description("Original")
+
+        local = Event()
+        local.set_handle("H1")
+        local.set_description("Updated by local")
+
+        merged = grampswebapidb._merge_or_overwrite(
+            current, local, FakeHandleDb(), old_data=old_data
+        )
+        self.assertEqual(merged.get_description(), "Updated by local")
+
+    def test_a_genuine_collision_is_not_applied(self):
+        # Both sides touched description, to different values -- current's
+        # (the server's post-resync value) must survive, matching the
+        # whole-object behavior this layers on top of.
+        old = Event()
+        old.set_handle("H1")
+        old.set_description("Original")
+        old_data = remove_object(object_to_data(old))
+
+        current = Event()
+        current.set_handle("H1")
+        current.set_description("Changed on server")
+
+        local = Event()
+        local.set_handle("H1")
+        local.set_description("Changed locally")
+
+        merged = grampswebapidb._merge_or_overwrite(
+            current, local, FakeHandleDb(), old_data=old_data
+        )
+        self.assertEqual(merged.get_description(), "Changed on server")
+
+    def test_two_different_fields_edited_concurrently_both_survive(self):
+        # The actual point of this layer: a conflict on *one* field must
+        # not cost an edit to a completely different field on the same
+        # object -- see the module docstring and TODO.md's gap #1.
+        old = Event()
+        old.set_handle("H1")
+        old.set_description("Original")
+        old_data = remove_object(object_to_data(old))
+
+        current = Event()  # server touched the place ref, not description
+        current.set_handle("H1")
+        current.set_description("Original")
+        current.set_place_handle("PLACE-1")
+
+        local = Event()  # local touched description, not the place ref
+        local.set_handle("H1")
+        local.set_description("Updated by local")
+
+        merged = grampswebapidb._merge_or_overwrite(
+            current, local, FakeHandleDb(), old_data=old_data
+        )
+        self.assertEqual(merged.get_description(), "Updated by local")
+        self.assertEqual(merged.get_place_handle(), "PLACE-1")
+
+    def test_persons_primary_name_is_never_overridden(self):
+        # Locked field (see _SCALAR_MERGE_LOCKED_FIELDS): Person.merge()
+        # deliberately keeps current's own primary name and demotes
+        # local's into alternate_names instead -- applying this layer's
+        # generic rule here would fight that, not complement it, even
+        # though local is the only side that touched it.
+        old = Person()
+        old.set_handle("H1")
+        old.get_primary_name().set_first_name("Old")
+        old_data = remove_object(object_to_data(old))
+
+        current = Person()
+        current.set_handle("H1")
+        current.get_primary_name().set_first_name("Old")
+
+        local = Person()
+        local.set_handle("H1")
+        local.get_primary_name().set_first_name("New")
+
+        merged = grampswebapidb._merge_or_overwrite(
+            current, local, FakeHandleDb(), old_data=old_data
+        )
+        self.assertEqual(merged.get_primary_name().get_first_name(), "Old")
+        # Demoted into alternate_names by Person.merge() itself, not lost.
+        self.assertEqual(
+            [n.get_first_name() for n in merged.get_alternate_names()], ["New"]
+        )
+
+    def test_no_old_data_is_a_no_op(self):
+        # Callers that don't pass old_data (every existing caller before
+        # this layer existed) get exactly the previous whole-object-
+        # scalar behavior -- see _merge_or_overwrite()'s own docstring.
+        current = Event()
+        current.set_handle("H1")
+        current.set_description("Current")
+
+        local = Event()
+        local.set_handle("H1")
+        local.set_description("Local")
+
+        merged = grampswebapidb._merge_or_overwrite(current, local, FakeHandleDb())
+        self.assertEqual(merged.get_description(), "Current")
+
+    def test_type_without_a_real_merge_is_unaffected(self):
+        # Tag falls back to local_obj outright -- nothing for this layer
+        # to add on top of that.
+        current = Tag()
+        current.set_handle("H1")
+        current.set_name("Remote name")
+
+        local = Tag()
+        local.set_handle("H1")
+        local.set_name("Local name")
+
+        old_data = remove_object(object_to_data(current))
+        merged = grampswebapidb._merge_or_overwrite(
+            current, local, FakeHandleDb(), old_data=old_data
+        )
+        self.assertEqual(merged.get_name(), "Local name")
+
+
+# -------------------------------------------------------------------------
+#
+# TestDiscardedScalarFields
+#
+# -------------------------------------------------------------------------
+class TestDiscardedScalarFields(unittest.TestCase):
+    """_discarded_scalar_fields() feeds _record_conflict_notes() -- see
+    the module docstring's "silently losing the discarded value is not"
+    paragraph. old_data (entry["old"], the payload's own pre-edit
+    snapshot) is the 3-way merge base that decides whether local_obj
+    "touched" a field at all; current/result are only used to decide
+    whether that touch survived. Real Person/Tag objects, same as
+    TestMergeOrOverwrite."""
+
+    def test_a_genuine_scalar_conflict_is_reported(self):
+        old = Person()
+        old.set_handle("H1")
+        old.set_gender(Person.FEMALE)
+        old_data = remove_object(object_to_data(old))
+
+        current = Person()  # the server's post-resync state
+        current.set_handle("H1")
+        current.set_gender(Person.UNKNOWN)
+
+        local = Person()  # what the local edit actually intended
+        local.set_handle("H1")
+        local.set_gender(Person.MALE)
+
+        merged = grampswebapidb._merge_or_overwrite(current, local, FakeHandleDb())
+        discarded = grampswebapidb._discarded_scalar_fields(
+            old_data, current, local, merged
+        )
+
+        fields = {field for field, kept, lost in discarded}
+        self.assertIn("gender", fields)
+
+    def test_a_field_local_never_touched_is_not_reported(self):
+        # current's privacy differs from local's, but only because
+        # current changed server-side -- local's own value is identical
+        # to what it was before local's edit (old), so this must not be
+        # reported as a discarded local edit even though
+        # _merge_or_overwrite() does apply its own special-cased OR here.
+        old = Person()
+        old.set_handle("H1")
+        old.set_privacy(False)
+        old_data = remove_object(object_to_data(old))
+
+        current = Person()
+        current.set_handle("H1")
+        current.set_privacy(True)
+
+        local = Person()
+        local.set_handle("H1")
+        local.set_privacy(False)
+
+        merged = grampswebapidb._merge_or_overwrite(current, local, FakeHandleDb())
+        discarded = grampswebapidb._discarded_scalar_fields(
+            old_data, current, local, merged
+        )
+        self.assertEqual(discarded, [])
+
+    def test_a_successfully_unioned_list_field_is_not_reported(self):
+        old = Person()
+        old.set_handle("H1")
+        old_data = remove_object(object_to_data(old))
+
+        current = Person()
+        current.set_handle("H1")
+        current.add_note("N-remote")
+
+        local = Person()
+        local.set_handle("H1")
+        local.add_note("N-local")
+
+        merged = grampswebapidb._merge_or_overwrite(current, local, FakeHandleDb())
+        discarded = grampswebapidb._discarded_scalar_fields(
+            old_data, current, local, merged
+        )
+        self.assertEqual(discarded, [])
+
+    def test_type_without_a_real_merge_reports_nothing(self):
+        # Tag falls back to local_obj outright (see _merge_or_overwrite())
+        # -- nothing was actually discarded, regardless of what changed.
+        old = Tag()
+        old.set_handle("H1")
+        old.set_name("Old name")
+        old_data = remove_object(object_to_data(old))
+
+        current = Tag()
+        current.set_handle("H1")
+        current.set_name("Remote name")
+
+        local = Tag()
+        local.set_handle("H1")
+        local.set_name("Local name")
+
+        merged = grampswebapidb._merge_or_overwrite(current, local, FakeHandleDb())
+        discarded = grampswebapidb._discarded_scalar_fields(
+            old_data, current, local, merged
+        )
+        self.assertEqual(discarded, [])
+
+    def test_locked_field_is_never_reported_here_even_on_a_genuine_collision(self):
+        # primary_name is handled exclusively by _demoted_field_conflicts()
+        # -- reporting it here too would double-report the same conflict,
+        # and with the wrong framing ("discarded" when it's actually
+        # preserved as an alternate name, not lost).
+        old = Person()
+        old.set_handle("H1")
+        old.get_primary_name().set_first_name("Old")
+        old_data = remove_object(object_to_data(old))
+
+        current = Person()
+        current.set_handle("H1")
+        current.get_primary_name().set_first_name("FromServer")
+
+        local = Person()
+        local.set_handle("H1")
+        local.get_primary_name().set_first_name("FromLocal")
+
+        merged = grampswebapidb._merge_or_overwrite(
+            current, local, FakeHandleDb(), old_data=old_data
+        )
+        discarded = grampswebapidb._discarded_scalar_fields(
+            old_data, current, local, merged
+        )
+        fields = {field for field, kept, lost in discarded}
+        self.assertNotIn("primary_name", fields)
+
+
+# -------------------------------------------------------------------------
+#
+# TestDemotedFieldConflicts
+#
+# -------------------------------------------------------------------------
+class TestDemotedFieldConflicts(unittest.TestCase):
+    """_demoted_field_conflicts() feeds _conflict_summary_lines() for
+    _SCALAR_MERGE_LOCKED_FIELDS (currently just Person.primary_name) --
+    the one case where a genuine collision has to be detected directly
+    (via _is_genuine_collision()) rather than by comparing merge()'s
+    result against current, since a locked field never shows as
+    "touched" that way at all -- see the function's own docstring."""
+
+    def test_a_genuine_collision_is_reported(self):
+        old = Person()
+        old.set_handle("H1")
+        old.get_primary_name().set_first_name("Old")
+        old_data = remove_object(object_to_data(old))
+
+        current = Person()
+        current.set_handle("H1")
+        current.get_primary_name().set_first_name("FromServer")
+
+        local = Person()
+        local.set_handle("H1")
+        local.get_primary_name().set_first_name("FromLocal")
+
+        merged = grampswebapidb._merge_or_overwrite(
+            current, local, FakeHandleDb(), old_data=old_data
+        )
+        conflicts = grampswebapidb._demoted_field_conflicts(
+            old_data, current, local, merged
+        )
+        fields = {field for field, kept, lost in conflicts}
+        self.assertIn("primary_name", fields)
+
+    def test_an_uncontested_local_edit_is_not_reported(self):
+        # THE regression this exists to guard: local edited its primary
+        # name and the server never touched it at all (current == old)
+        # -- Person.merge() demotes it into alternate_names on *every*
+        # conflict-retry regardless, but that demotion is not a
+        # conflict, so this must report nothing -- see TODO.md's "Only
+        # do for CONFLICTS" note.
+        old = Person()
+        old.set_handle("H1")
+        old.get_primary_name().set_first_name("Same")
+        old_data = remove_object(object_to_data(old))
+
+        current = Person()
+        current.set_handle("H1")
+        current.get_primary_name().set_first_name("Same")  # server never touched it
+
+        local = Person()
+        local.set_handle("H1")
+        local.get_primary_name().set_first_name("Corrected")  # local's only edit
+
+        merged = grampswebapidb._merge_or_overwrite(
+            current, local, FakeHandleDb(), old_data=old_data
+        )
+        conflicts = grampswebapidb._demoted_field_conflicts(
+            old_data, current, local, merged
+        )
+        self.assertEqual(conflicts, [])
+
+    def test_no_old_data_reports_nothing(self):
+        current = Person()
+        current.set_handle("H1")
+        current.get_primary_name().set_first_name("FromServer")
+
+        local = Person()
+        local.set_handle("H1")
+        local.get_primary_name().set_first_name("FromLocal")
+
+        merged = grampswebapidb._merge_or_overwrite(current, local, FakeHandleDb())
+        conflicts = grampswebapidb._demoted_field_conflicts(
+            None, current, local, merged
+        )
+        self.assertEqual(conflicts, [])
+
+    def test_a_type_with_no_locked_fields_reports_nothing(self):
+        old = Tag()
+        old.set_handle("H1")
+        old.set_name("Old")
+        old_data = remove_object(object_to_data(old))
+
+        current = Tag()
+        current.set_handle("H1")
+        current.set_name("FromServer")
+
+        local = Tag()
+        local.set_handle("H1")
+        local.set_name("FromLocal")
+
+        merged = grampswebapidb._merge_or_overwrite(
+            current, local, FakeHandleDb(), old_data=old_data
+        )
+        conflicts = grampswebapidb._demoted_field_conflicts(
+            old_data, current, local, merged
+        )
+        self.assertEqual(conflicts, [])
+
+
+# -------------------------------------------------------------------------
+#
+# TestActivelyResolvedConflicts
+#
+# -------------------------------------------------------------------------
+class TestActivelyResolvedConflicts(unittest.TestCase):
+    """_actively_resolved_conflicts() feeds _conflict_summary_lines() for
+    _SCALAR_MERGE_ACTIVELY_RESOLVED_FIELDS (currently just
+    Citation.confidence) -- like TestDemotedFieldConflicts, a genuine
+    collision has to be detected directly, since merge() reassigns this
+    field on every call whether or not a real collision occurred."""
+
+    def test_a_genuine_collision_is_reported(self):
+        old = Citation()
+        old.set_handle("H1")
+        old.set_confidence_level(Citation.CONF_NORMAL)
+        old_data = remove_object(object_to_data(old))
+
+        current = Citation()  # server lowered it
+        current.set_handle("H1")
+        current.set_confidence_level(Citation.CONF_LOW)
+
+        local = Citation()  # local raised it
+        local.set_handle("H1")
+        local.set_confidence_level(Citation.CONF_HIGH)
+
+        merged = grampswebapidb._merge_or_overwrite(
+            current, local, FakeHandleDb(), old_data=old_data
+        )
+        # Citation.merge()'s level_priority rule actually keeps current's
+        # (LOW) here -- confirms this test's own premise before checking
+        # that the conflict got reported at all.
+        self.assertEqual(merged.get_confidence_level(), Citation.CONF_LOW)
+
+        conflicts = grampswebapidb._actively_resolved_conflicts(
+            old_data, current, local, merged
+        )
+        fields = {field for field, kept, other in conflicts}
+        self.assertIn("confidence", fields)
+
+    def test_an_uncontested_local_edit_is_not_reported(self):
+        old = Citation()
+        old.set_handle("H1")
+        old.set_confidence_level(Citation.CONF_NORMAL)
+        old_data = remove_object(object_to_data(old))
+
+        current = Citation()
+        current.set_handle("H1")
+        current.set_confidence_level(Citation.CONF_NORMAL)  # server never touched it
+
+        local = Citation()
+        local.set_handle("H1")
+        local.set_confidence_level(Citation.CONF_HIGH)  # local's only edit
+
+        merged = grampswebapidb._merge_or_overwrite(
+            current, local, FakeHandleDb(), old_data=old_data
+        )
+        conflicts = grampswebapidb._actively_resolved_conflicts(
+            old_data, current, local, merged
+        )
+        self.assertEqual(conflicts, [])
+
+    def test_no_old_data_reports_nothing(self):
+        current = Citation()
+        current.set_handle("H1")
+        current.set_confidence_level(Citation.CONF_LOW)
+
+        local = Citation()
+        local.set_handle("H1")
+        local.set_confidence_level(Citation.CONF_HIGH)
+
+        merged = grampswebapidb._merge_or_overwrite(current, local, FakeHandleDb())
+        conflicts = grampswebapidb._actively_resolved_conflicts(
+            None, current, local, merged
+        )
+        self.assertEqual(conflicts, [])
+
+
+# -------------------------------------------------------------------------
+#
+# TestPruneDanglingReferencesPruned
+#
+# -------------------------------------------------------------------------
+class TestPruneDanglingReferencesPruned(unittest.TestCase):
+    """_prune_dangling_references()'s optional pruned list -- how
+    _merge_or_overwrite() surfaces a dangling-reference removal to
+    _retry_after_conflict() as a genuine conflict (see
+    _conflict_summary_lines()'s docstring)."""
+
+    def test_a_pruned_handle_is_collected(self):
+        person = Person()
+        person.set_handle("H1")
+        person.add_tag("deleted-tag-handle")
+        person.add_note("live-note-handle")
+
+        db = FakeHandleDb(known_handles={"live-note-handle"})
+        pruned = []
+        grampswebapidb._prune_dangling_references(person, db, pruned=pruned)
+        self.assertEqual(pruned, [("tag_list", "deleted-tag-handle")])
+
+    def test_nothing_pruned_is_an_empty_list_not_none(self):
+        person = Person()
+        person.set_handle("H1")
+        person.add_note("live-note-handle")
+
+        db = FakeHandleDb(known_handles={"live-note-handle"})
+        pruned = []
+        grampswebapidb._prune_dangling_references(person, db, pruned=pruned)
+        self.assertEqual(pruned, [])
+
+    def test_pruned_defaults_to_none_and_is_not_required(self):
+        # Existing callers that don't care (e.g. _merge_or_overwrite()'s
+        # own default) must keep working unchanged.
+        person = Person()
+        person.set_handle("H1")
+        person.add_tag("deleted-tag-handle")
+
+        db = FakeHandleDb(known_handles=set())
+        grampswebapidb._prune_dangling_references(person, db)  # must not raise
+        self.assertEqual(person.get_tag_list(), [])
+
+
+# -------------------------------------------------------------------------
+#
 # TestUndoRedo
 #
 # -------------------------------------------------------------------------
@@ -2685,6 +3768,42 @@ class TestImportProgressUser(unittest.TestCase):
         ), mock.patch.dict(sys.modules, {"gramps.gui.user": None}):
             user = grampswebapidb._import_progress_user(callback)
         self.assertIsInstance(user, grampswebapidb.User)
+
+
+# -------------------------------------------------------------------------
+#
+# TestNotifyFatalPollError
+#
+# -------------------------------------------------------------------------
+class TestNotifyFatalPollError(unittest.TestCase):
+    """_notify_fatal_poll_error() -- _give_up_polling()'s dialog, the
+    nearest reachable equivalent to load()'s own DbConnectionError path
+    once load() has already returned. Same has_display()-gated,
+    best-effort construction as _import_progress_user(); see
+    TestImportProgressUser above."""
+
+    def test_shows_a_db_error_dialog_with_a_display(self):
+        with mock.patch.object(
+            grampswebapidb, "has_display", return_value=True
+        ), mock.patch("gramps.gui.user.User") as gui_user_cls:
+            grampswebapidb._notify_fatal_poll_error("HTTP Error 401: Unauthorized")
+        gui_user_cls.assert_called_once_with()
+        notify = gui_user_cls.return_value.notify_db_error
+        notify.assert_called_once()
+        self.assertIn("HTTP Error 401", notify.call_args[0][0])
+
+    def test_does_nothing_without_a_display(self):
+        with mock.patch.object(
+            grampswebapidb, "has_display", return_value=False
+        ), mock.patch("gramps.gui.user.User") as gui_user_cls:
+            grampswebapidb._notify_fatal_poll_error("detail")
+        gui_user_cls.assert_not_called()
+
+    def test_does_nothing_if_gui_user_is_not_importable(self):
+        with mock.patch.object(
+            grampswebapidb, "has_display", return_value=True
+        ), mock.patch.dict(sys.modules, {"gramps.gui.user": None}):
+            grampswebapidb._notify_fatal_poll_error("detail")  # must not raise
 
 
 # -------------------------------------------------------------------------
@@ -3287,6 +4406,8 @@ class TestPolling(unittest.TestCase):
         self.db._poll_failures = 4
         self.db._media_poll_failures = 4
         self.db._poll_interval = grampswebapidb.POLL_BACKOFF_MAX_SECONDS
+        self.db._polls_since_verify_totals = 200
+        self.db._polling_abandoned = True
         with mock.patch.object(grampswebapidb.SQLite, "load"), mock.patch.object(
             self.db, "_check_identity_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
@@ -3304,6 +4425,8 @@ class TestPolling(unittest.TestCase):
         self.assertEqual(self.db._poll_failures, 0)
         self.assertEqual(self.db._media_poll_failures, 0)
         self.assertEqual(self.db._poll_interval, grampswebapidb.POLL_INTERVAL_SECONDS)
+        self.assertEqual(self.db._polls_since_verify_totals, 0)
+        self.assertFalse(self.db._polling_abandoned)
 
     def test_close_cancels_pending_poll(self):
         self.db._poll_source_id = 42
@@ -3371,6 +4494,38 @@ class TestPolling(unittest.TestCase):
         sync.assert_not_called()
         self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
 
+    def test_poll_tick_does_not_verify_totals_before_the_interval_elapses(self):
+        with mock.patch.object(
+            self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
+        ) as sync:
+            self.db._poll_tick()
+        self.assertFalse(sync.call_args.kwargs["verify_totals"])
+        self.assertEqual(self.db._polls_since_verify_totals, 1)
+
+    def test_poll_tick_verifies_totals_once_the_interval_elapses(self):
+        ticks_per_check = (
+            grampswebapidb.VERIFY_TOTALS_POLL_INTERVAL_SECONDS
+            // grampswebapidb.POLL_INTERVAL_SECONDS
+        )
+        self.db._polls_since_verify_totals = ticks_per_check - 1
+        with mock.patch.object(
+            self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
+        ) as sync:
+            self.db._poll_tick()
+        self.assertTrue(sync.call_args.kwargs["verify_totals"])
+        # Reset immediately, not left to grow past the threshold forever.
+        self.assertEqual(self.db._polls_since_verify_totals, 0)
+
+    def test_poll_tick_skipped_underneath_a_running_sync_does_not_advance_the_counter(
+        self,
+    ):
+        self.db._syncing = True
+        self.db._polls_since_verify_totals = 5
+        with mock.patch.object(self.db, "_sync_from_server_async") as sync:
+            self.db._poll_tick()
+        sync.assert_not_called()
+        self.assertEqual(self.db._polls_since_verify_totals, 5)
+
     def test_media_poll_tick_does_not_start_a_sync_underneath_a_running_one(self):
         self.db._syncing = True
         with mock.patch.object(self.db, "_sync_media_files_async") as sync_media:
@@ -3407,6 +4562,83 @@ class TestPolling(unittest.TestCase):
             self.db._poll_interval, grampswebapidb.POLL_INTERVAL_SECONDS * 2
         )
         self.assertEqual(self.db._poll_failures, 1)
+
+    def test_poll_tick_stops_and_notifies_on_a_permanently_rejected_request(self):
+        # A server reset invalidates GRAMPS_WEB_API_KEY (the refresh
+        # token's account is simply gone) -- this reads as a permanent
+        # 401/403, not a connectivity blip, so it must not be backed off
+        # and retried forever the way test_poll_tick_swallows_connection_
+        # errors_and_keeps_polling()'s OSError is.
+        err = HTTPError("https://example.com/api/transactions/", 401, "x", None, None)
+        with mock.patch.object(
+            self.db, "_sync_from_server_async", side_effect=stub_async_error(err)
+        ), mock.patch.object(
+            grampswebapidb, "_notify_fatal_poll_error"
+        ) as notify, mock.patch.object(
+            grampswebapidb.GLib, "source_remove"
+        ) as source_remove, mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds"
+        ) as timeout_add:
+            with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+                result = self.db._poll_tick()
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
+        # Stopped, not rescheduled: no backoff timer replaces this one.
+        source_remove.assert_called_once_with(1)  # setUp()'s placeholder id
+        timeout_add.assert_not_called()
+        self.assertIsNone(self.db._poll_source_id)
+        self.assertEqual(self.db._poll_failures, 0)
+        self.assertTrue(self.db._polling_abandoned)
+        notify.assert_called_once()
+
+    def test_media_poll_tick_stops_and_notifies_on_a_permanently_rejected_request(
+        self,
+    ):
+        self.db._media_poll_source_id = 2
+        err = HTTPError("https://example.com/api/media/", 403, "x", None, None)
+        with mock.patch.object(
+            self.db, "_sync_media_files_async", side_effect=stub_async_error(err)
+        ), mock.patch.object(
+            grampswebapidb, "_notify_fatal_poll_error"
+        ) as notify, mock.patch.object(
+            grampswebapidb.GLib, "source_remove"
+        ) as source_remove:
+            with self.assertLogs(grampswebapidb.LOG, level="ERROR"):
+                result = self.db._media_poll_tick()
+        self.assertEqual(result, grampswebapidb.GLib.SOURCE_CONTINUE)
+        source_remove.assert_any_call(2)
+        self.assertIsNone(self.db._media_poll_source_id)
+        self.assertEqual(self.db._media_poll_failures, 0)
+        self.assertTrue(self.db._polling_abandoned)
+        notify.assert_called_once()
+
+    def test_give_up_polling_stops_both_timers_and_notifies_once(self):
+        self.db._poll_source_id = 1
+        self.db._media_poll_source_id = 2
+        err = HTTPError("https://example.com/api/transactions/", 401, "x", None, None)
+        with mock.patch.object(
+            grampswebapidb, "_notify_fatal_poll_error"
+        ) as notify, mock.patch.object(
+            grampswebapidb.GLib, "source_remove"
+        ) as source_remove:
+            self.db._give_up_polling(err)
+        self.assertEqual(source_remove.call_args_list, [mock.call(1), mock.call(2)])
+        self.assertIsNone(self.db._poll_source_id)
+        self.assertIsNone(self.db._media_poll_source_id)
+        notify.assert_called_once()
+
+    def test_give_up_polling_is_idempotent_across_both_pollers(self):
+        # Both pollers share the one credential and can hit this around
+        # the same tick -- the second arrival must stop its own timer
+        # quietly, not show a second dialog for the same problem.
+        self.db._poll_source_id = 1
+        self.db._media_poll_source_id = 2
+        err = HTTPError("https://example.com/api/transactions/", 401, "x", None, None)
+        with mock.patch.object(
+            grampswebapidb, "_notify_fatal_poll_error"
+        ) as notify, mock.patch.object(grampswebapidb.GLib, "source_remove"):
+            self.db._give_up_polling(err)
+            self.db._give_up_polling(err)
+        notify.assert_called_once()
 
     def test_poll_tick_reports_a_lasting_outage_only_once(self):
         # A server that stays down must not log a warning (let alone a
@@ -4128,6 +5360,11 @@ class TestPendingPushQueue(unittest.TestCase):
         self.db._set_metadata = (
             lambda key, value, use_txn=True: self.metadata.__setitem__(key, value)
         )
+        # This class is about queue/flush mechanics, not note content --
+        # TestUndeliveredPushNotes covers _record_undelivered_push_notes()
+        # itself, against a real database; new_instance() here has no
+        # real self.dbapi for it to touch.
+        self.db._record_undelivered_push_notes = mock.MagicMock()
 
     def _payload(self, handle="H1"):
         return [{"type": "add", "handle": handle, "_class": "Person"}]
