@@ -364,23 +364,32 @@ whole nested chain synchronously and would hang or blow the stack
 otherwise, not just log an extra line.
 
 The most likely such rejection is a permissions one, and _check_
-permissions() heads it off at load() rather than letting every subsequent
-edit fail: gramps-web-api gates POST /transactions/ behind all three of
-AddObject/EditObject/DeleteObject at once (transactions.py's
-require_permissions(); has_permissions() fails if any are missing), and
-gates GET /transactions/history/ behind ViewPrivate. ViewPrivate is the
-one whose absence would otherwise be *silent* rather than merely fatal:
-the history feed 403s loudly without it, but GET /exporters/gramps/file
-does not refuse the request at all -- it passes
+permissions() checks for it up front at load() -- but only ViewPrivate is
+fatal to opening the tree at all: gates GET /transactions/history/, and its
+absence would otherwise be *silent* rather than merely loud, since GET
+/exporters/gramps/file does not refuse a request lacking it -- it passes
 view_private=has_permissions({PERM_VIEW_PRIVATE}) into the export task
 (exporters.py), so an under-privileged caller gets a privacy-filtered
 export, which _full_resync_async() would then import over a wiped local mirror,
-quietly dropping every private record from the mirror. Checking the
-permission set up front costs no extra round trip (gramps-web-api puts it
-in the access token's own claims, so get_permissions() just decodes the
-JWT already in hand) and names exactly what is missing. A tree opened
-read-only (DBMODE_R) never pushes, so it is held to the read permission
-only.
+quietly dropping every private record from the mirror. A tree opened
+read-only (DBMODE_R) never pushes, so it is checked for ViewPrivate only.
+
+A writable tree missing AddObject/EditObject/DeleteObject -- gramps-web-api
+gates POST /transactions/ behind all three at once (transactions.py's
+require_permissions(); has_permissions() fails if any are missing) -- does
+*not* fail load(): the mirror still opens and keeps polling and staying
+current for reading, and self._missing_write_permissions names the
+shortfall in one loud log line so the user finds out before hitting a
+surprise 403, without being blocked from reading. Only an actual write
+is refused, and only when one is actually attempted: it reaches the
+server and comes back a 403, which _push_payload_async() already treats
+as a non-retryable rejection (see below) -- logged, and recorded as a
+note on the affected object(s), the same path a permission *revoked*
+mid-session (rather than missing from the start) already went through.
+Checking the permission set up front costs no extra round trip
+(gramps-web-api puts it in the access token's own claims, so
+get_permissions() just decodes the JWT already in hand) and names
+exactly what is missing either way.
 
 GET /metadata/ (cached per handler; needs no special permission) supplies
 the two versions the addon reasons about. The server's *Gramps* version
@@ -1594,7 +1603,24 @@ def _discarded_scalar_fields(old_data, current, local_obj, result):
     ever actually disputed, so checking it here the same way would flag
     a plain uncontested edit as a discarded conflict; see TODO.md's
     "Only do for CONFLICTS" note.
+
+    Also returns [] without a real old_data, same as
+    _apply_uncontested_scalar_edits() and _demoted_field_conflicts(): a
+    caller with no genuine pre-edit baseline is always a fresh add (see
+    transaction_to_json()'s "old": None convention) being retried against
+    an object that -- since has_handle() is what routes _retry_after_
+    conflict() into this merge path at all -- already exists locally with
+    exactly local_obj's own values, from the original commit this retry
+    is replaying. Treating a missing old_data as {} used to compare every
+    field against that fictitious empty baseline instead of skipping the
+    check, so every field local_obj actually set (its own real content,
+    not an edit relative to anything) read as "touched," and then as
+    "discarded" the moment current happened to already hold the identical
+    value -- a spurious conflict note, its "kept" and "discarded" values
+    always identical, on every retried add.
     """
+    if old_data is None:
+        return []
     if type(current).merge is BaseObject.merge:
         return []
     if not isinstance(result, type(current)):
@@ -1602,7 +1628,6 @@ def _discarded_scalar_fields(old_data, current, local_obj, result):
         # raise into that path over a result shape this couldn't parse.
         return []
     locked = _SCALAR_MERGE_LOCKED_FIELDS.get(type(current).__name__, frozenset())
-    old_data = old_data or {}
     current_data = object_to_dict(current)
     local_data = object_to_dict(local_obj)
     result_data = object_to_dict(result)
@@ -1792,6 +1817,17 @@ class WebApiDB(SQLite):
     #: a push -- so a second one can't start concurrently and land an
     #: overlapping DB-apply callback. See _start_push()/_finish_async_op().
     _syncing = False
+
+    #: Write permission(s) (of _WRITE_PERMISSIONS) the account
+    #: authenticating via GRAMPS_WEB_API_KEY was found missing at load()'s
+    #: _check_permissions_async() -- empty for a fully-privileged account,
+    #: for a tree opened read-only (never checked), or before load() has
+    #: run its checks. Does not by itself block anything: it is purely
+    #: informational (logged once at load()) and left for
+    #: _push_payload_async()'s own per-push 403 handling to actually
+    #: reject an edit when one is attempted -- see
+    #: _check_permissions_async()'s docstring.
+    _missing_write_permissions = ()
 
     #: The chain a conflict retry's nested re-push belongs to, stashed by
     #: _after_conflict_resync() so _start_push()'s recursive
@@ -2110,15 +2146,27 @@ class WebApiDB(SQLite):
         )
 
     def _check_permissions_async(self, on_done, on_error, writable=True):
-        """Fail at load() if the account GRAMPS_WEB_API_KEY authenticates
-        as lacks a server permission this addon depends on, naming exactly
-        which -- rather than letting each affected operation fail on its
-        own later, in ways that range from a bare 403 to (for the export
-        fallback) no error at all. See _PERM_VIEW_PRIVATE's comment for
-        what each permission actually gates.
+        """Fail at load() only if the account GRAMPS_WEB_API_KEY
+        authenticates as lacks ViewPrivate -- the one permission whose
+        absence is either loudly fatal (the history feed 403s outright) or
+        worse, silent (the export fallback just drops private records; see
+        _PERM_VIEW_PRIVATE's comment). A missing write permission
+        (AddObject/EditObject/DeleteObject) does *not* block load(): a
+        viewer- or contributor-level account can still open the tree, and
+        the mirror still polls and stays current for reading -- only
+        pushing a local edit back to the server is unavailable to it, and
+        gets rejected when it is actually attempted, via
+        _push_payload_async()'s existing handling of a non-retryable 4xx
+        (_is_retryable_push_error()): the server answers 403, the push is
+        logged loudly as permanently rejected, and a note recording why is
+        attached to the affected object(s) -- see
+        _record_undelivered_push_notes(). self._missing_write_permissions
+        is stashed here and logged once, at load() time, so a user who
+        never even attempts an edit still finds out why before hitting a
+        surprise 403 later.
 
         ``writable`` is False for a tree opened read-only (DBMODE_R), which
-        never pushes and so needs only the read permission.
+        never pushes and so is not checked for write permissions at all.
 
         Costs no extra round trip: gramps-web-api puts the permission list
         in the access token's own claims (token.py's ``claims = {
@@ -2127,34 +2175,49 @@ class WebApiDB(SQLite):
 
         Runs on io_runner for the same reason _check_identity_async() does.
         """
-        required = [_PERM_VIEW_PRIVATE]
-        if writable:
-            required += list(_WRITE_PERMISSIONS)
 
         def fetch():
             return self.web_client.get_permissions()
 
         def on_fetched(permissions):
             granted = set(permissions)
-            missing = [perm for perm in required if perm not in granted]
-            if not missing:
-                on_done(True)
-                return
-            on_error(
-                DbConnectionError(
-                    _(
-                        "The account authenticating via GRAMPS_WEB_API_KEY is "
-                        "missing server permission(s) this addon requires: "
-                        "%(missing)s. Grant it at least the "
-                        '"%(role)s" role on the server (or ask an '
-                        "administrator to), then reopen this Family Tree. "
-                        "Opening it as-is would leave the local mirror "
-                        "silently incomplete or unable to save changes back."
+            if _PERM_VIEW_PRIVATE not in granted:
+                on_error(
+                    DbConnectionError(
+                        _(
+                            "The account authenticating via GRAMPS_WEB_API_KEY is "
+                            "missing server permission(s) this addon requires: "
+                            "%(missing)s. Grant it at least the "
+                            '"%(role)s" role on the server (or ask an '
+                            "administrator to), then reopen this Family Tree. "
+                            "Opening it as-is would leave the local mirror "
+                            "silently incomplete or unable to save changes back."
+                        )
+                        % {"missing": _PERM_VIEW_PRIVATE, "role": _REQUIRED_ROLE_NAME},
+                        self._directory,
                     )
-                    % {"missing": ", ".join(missing), "role": _REQUIRED_ROLE_NAME},
-                    self._directory,
                 )
+                return
+            missing_write = (
+                [perm for perm in _WRITE_PERMISSIONS if perm not in granted]
+                if writable
+                else []
             )
+            self._missing_write_permissions = missing_write
+            if missing_write:
+                LOG.warning(
+                    "The account authenticating via GRAMPS_WEB_API_KEY is "
+                    'missing server permission(s) ("%s") this addon needs '
+                    "to push local changes back to the server; grant it "
+                    'the "%s" role (or ask an administrator to) to enable '
+                    "editing. Opening this Family Tree read-only against "
+                    "the server: the local mirror will keep polling and "
+                    "staying current, but any local edit will be rejected "
+                    "when it tries to push.",
+                    ", ".join(missing_write),
+                    _REQUIRED_ROLE_NAME,
+                )
+            on_done(True)
 
         def on_fetch_error(exc):
             if isinstance(exc, _CONNECTION_ERRORS):

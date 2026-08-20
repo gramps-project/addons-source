@@ -192,7 +192,7 @@ class TestReconcileBatchCommitAgainstARealDatabase(unittest.TestCase):
         self.addCleanup(self.db.close)
         self.pushes = []
 
-        def fake_push(payload, undo=False, background=False):
+        def fake_push(payload, undo=False, background=False, message=None):
             self.pushes.append(copy.deepcopy(payload))
 
         self.db.web_client.push_transaction.side_effect = fake_push
@@ -401,7 +401,7 @@ class TestReconcileBatchCommitAgainstARealDatabase(unittest.TestCase):
 
         calls = []
 
-        def fake_push(payload, undo=False, background=False):
+        def fake_push(payload, undo=False, background=False, message=None):
             calls.append(copy.deepcopy(payload))
             if len(calls) == 1:
                 raise WebApiPushConflict("Object has changed")
