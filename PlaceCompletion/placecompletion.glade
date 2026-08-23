@@ -722,10 +722,19 @@ title format:</property>
                       </packing>
                     </child>
                     <child>
+                      <!-- NOTE: xalign auto-reverses for RTL locales (0.0 =
+                           left in LTR but RIGHT in RTL; 1.0 = right in LTR but
+                           LEFT in RTL) - unlike GtkLabel:justify, which does
+                           NOT reverse for RTL. xalign=0 here renders correctly
+                           right-aligned in Hebrew/Arabic. If you ever switch
+                           this to justify=LEFT/RIGHT instead, remember that
+                           "right" must be written literally as "right", not
+                           inferred from xalign logic. See:
+                           https://docs.gtk.org/gtk3/property.Label.xalign.html -->
                       <object class="GtkLabel" id="label3">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="xalign">1</property>
+                        <property name="xalign">0</property>
                         <property name="xpad">6</property>
                         <property name="label" translatable="yes">Available variables: city, street, locality, parish, county, state, country, postal_code</property>
                         <property name="selectable">False</property>
