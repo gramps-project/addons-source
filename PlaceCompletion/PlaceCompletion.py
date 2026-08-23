@@ -405,9 +405,14 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                 latlongroup = ['lat', 'lon']
                 for group in latlongroup :
                     if findregex.find(r'(?P<'+group+r'>') == -1 :
+                        from gramps.gen.const import GRAMPS_LOCALE as glocale
+                        from gramps.plugins.lib.libnarrate import fix_hebrew_connectors
                         WarningDialog(_('Missing regex groups in match lat/lon'),
-                    _('Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting')
+                    fix_hebrew_connectors(
+                        _('Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting')
                                 % {'lat' : latlongroup[0], 'lon' : latlongroup[1]},
+                        glocale,
+                    ),
                             self.window)
                         return
                 #check if extra data can be extracted from file
