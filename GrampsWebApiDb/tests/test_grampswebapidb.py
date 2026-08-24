@@ -46,6 +46,7 @@ Run with::
 import copy
 import io
 import json
+import logging
 import os
 import shutil
 import sys
@@ -4011,6 +4012,103 @@ class TestNotifyFatalPollError(unittest.TestCase):
             grampswebapidb, "has_display", return_value=True
         ), mock.patch.dict(sys.modules, {"gramps.gui.user": None}):
             grampswebapidb._notify_fatal_poll_error("detail")  # must not raise
+
+
+# -------------------------------------------------------------------------
+#
+# TestNotifyMissingWritePermission / TestInstallQuietPopupFilter /
+# TestMissingWritePermissionErrorBuilder
+#
+# _missing_write_permission_error() (the exception transaction_commit()/
+# undo()/redo() raise -- see its own docstring) now also shows the user a
+# calm, native dialog immediately (_notify_missing_write_permission(),
+# same has_display()-gated construction as _notify_fatal_poll_error()
+# above) and makes sure that dialog isn't immediately followed by
+# Gramps' own generic "Gramps has experienced an unexpected error...
+# restart Gramps immediately" crash dialog, which nothing in Gramps core
+# catches this exception type before reaching (_install_quiet_popup_
+# filter(), which tags the root logger's GtkHandler, if any, with a
+# logging.Filter that recognizes only this one exception subclass,
+# _MissingWritePermissionError -- any other DbWriteFailure, or any other
+# exception at all, still pops that dialog exactly as before).
+#
+# -------------------------------------------------------------------------
+class TestNotifyMissingWritePermission(unittest.TestCase):
+    def test_shows_an_error_dialog_with_a_display(self):
+        with mock.patch.object(
+            grampswebapidb, "has_display", return_value=True
+        ), mock.patch("gramps.gui.user.User") as gui_user_cls:
+            grampswebapidb._notify_missing_write_permission("detail text")
+        gui_user_cls.assert_called_once_with()
+        notify = gui_user_cls.return_value.notify_error
+        notify.assert_called_once()
+        self.assertIn("detail text", notify.call_args[0][1])
+
+    def test_does_nothing_without_a_display(self):
+        with mock.patch.object(
+            grampswebapidb, "has_display", return_value=False
+        ), mock.patch("gramps.gui.user.User") as gui_user_cls:
+            grampswebapidb._notify_missing_write_permission("detail")
+        gui_user_cls.assert_not_called()
+
+    def test_does_nothing_if_gui_user_is_not_importable(self):
+        with mock.patch.object(
+            grampswebapidb, "has_display", return_value=True
+        ), mock.patch.dict(sys.modules, {"gramps.gui.user": None}):
+            grampswebapidb._notify_missing_write_permission("detail")  # must not raise
+
+
+class TestInstallQuietPopupFilter(unittest.TestCase):
+    def setUp(self):
+        from gramps.gui.logger import GtkHandler
+
+        self.gtk_handler = GtkHandler()
+        self.root_logger = logging.getLogger()
+        self.root_logger.addHandler(self.gtk_handler)
+        self.addCleanup(self.root_logger.removeHandler, self.gtk_handler)
+
+    def _record_for(self, exc):
+        try:
+            raise exc
+        except Exception:
+            return logging.LogRecord(
+                "x", logging.ERROR, __file__, 1, "msg", None, sys.exc_info()
+            )
+
+    def test_does_nothing_without_a_display(self):
+        with mock.patch.object(grampswebapidb, "has_display", return_value=False):
+            grampswebapidb._install_quiet_popup_filter()
+        self.assertEqual(self.gtk_handler.filters, [])
+
+    def test_blocks_only_the_missing_write_permission_exception(self):
+        with mock.patch.object(grampswebapidb, "has_display", return_value=True):
+            grampswebapidb._install_quiet_popup_filter()
+        blocked = self._record_for(grampswebapidb._MissingWritePermissionError("boom"))
+        allowed = self._record_for(DbWriteFailure("some other failure"))
+        self.assertFalse(self.gtk_handler.filter(blocked))
+        self.assertTrue(self.gtk_handler.filter(allowed))
+
+    def test_is_idempotent(self):
+        with mock.patch.object(grampswebapidb, "has_display", return_value=True):
+            grampswebapidb._install_quiet_popup_filter()
+            grampswebapidb._install_quiet_popup_filter()
+        self.assertEqual(len(self.gtk_handler.filters), 1)
+
+
+class TestMissingWritePermissionErrorBuilder(unittest.TestCase):
+    def test_notifies_and_installs_the_quiet_filter_and_returns_a_dbwritefailure(
+        self,
+    ):
+        with mock.patch.object(
+            grampswebapidb, "_notify_missing_write_permission"
+        ) as notify, mock.patch.object(
+            grampswebapidb, "_install_quiet_popup_filter"
+        ) as install:
+            err = grampswebapidb._missing_write_permission_error(["EditObject"])
+        notify.assert_called_once()
+        install.assert_called_once_with()
+        self.assertIsInstance(err, grampswebapidb._MissingWritePermissionError)
+        self.assertIsInstance(err, DbWriteFailure)
 
 
 # -------------------------------------------------------------------------
