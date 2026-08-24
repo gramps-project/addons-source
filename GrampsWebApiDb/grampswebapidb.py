@@ -794,6 +794,87 @@ _WRITE_PERMISSIONS = ("AddObject", "EditObject", "DeleteObject")
 _REQUIRED_ROLE_NAME = "Editor"
 
 
+class _MissingWritePermissionError(DbWriteFailure):
+    """DbWriteFailure raised specifically by _missing_write_permission_
+    error() -- a distinct subclass purely so _install_quiet_popup_
+    filter()'s logging.Filter can recognize this one, already-explained,
+    expected condition and single it out from any other DbWriteFailure
+    (e.g. exportxml.py's backup-write failures), which must keep
+    reaching Gramps' generic crash dialog unchanged.
+    """
+
+
+def _notify_missing_write_permission(message):
+    """Show a calm, native dialog carrying the same explanation as the
+    DbWriteFailure _missing_write_permission_error() is about to raise.
+
+    Neither a friendlier exception message nor a custom dialog title can
+    change what Gramps' own top-level crash dialog says -- ErrorView
+    (gui/logger/_errorview.py) hardcodes "Gramps has experienced an
+    unexpected error" and "it would be advisable to restart Gramps
+    immediately" regardless of exception type or message, which is
+    needlessly alarming for something as ordinary and recoverable as a
+    read-only account attempting an edit. This dialog is the actually
+    useful one; _install_quiet_popup_filter() (below) keeps the alarming
+    one from also popping up right after it. has_display()-gated the
+    same best-effort way _notify_fatal_poll_error() already is, since
+    this DATABASE plugin must stay importable and usable without a
+    display (CLI use) or gi/Gtk installed at all -- headless just skips
+    the dialog, same as _notify_fatal_poll_error().
+    """
+    if not has_display():
+        return
+    try:
+        from gramps.gui.user import User as GuiUser
+    except ImportError:
+        return
+    GuiUser().notify_error(_("Can't save this change"), message)
+
+
+def _install_quiet_popup_filter():
+    """Add a logging.Filter to the root logger's GtkHandler, if one is
+    attached, so that a _MissingWritePermissionError reaching Gramps'
+    top-level sys.excepthook (grampsapp.py's exc_hook, which LOG.error()s
+    every uncaught exception unconditionally -- there is no narrower
+    extension point in Gramps core to hook instead) still gets its full
+    traceback recorded to the log file/console exactly as any other
+    uncaught exception would, but does not also trigger GtkHandler's own
+    modal "Gramps has experienced an unexpected error" popup on top of
+    the calmer, already-shown _notify_missing_write_permission() dialog.
+    Filtering on the log record (rather than wrapping sys.excepthook
+    itself) leaves grampsapp.exc_hook's own special-casing (Ctrl-C,
+    IOError, HandleError's runcheck flag) completely untouched, and
+    affects only this one exception subclass -- any other DbWriteFailure,
+    or any other exception at all, still pops the generic dialog exactly
+    as before.
+
+    Idempotent (checked via the filter instance's class, not identity)
+    and a no-op wherever GtkHandler isn't attached at all: no display
+    (has_display() gates the import, same reasoning as
+    _notify_missing_write_permission()), a CLI session, or simply not
+    having reached gui.grampsgui.py's do_startup() yet.
+    """
+    if not has_display():
+        return
+    try:
+        from gramps.gui.logger import GtkHandler
+    except ImportError:
+        return
+    for handler in logging.getLogger().handlers:
+        if isinstance(handler, GtkHandler) and not any(
+            isinstance(f, _QuietMissingWritePermissionFilter) for f in handler.filters
+        ):
+            handler.addFilter(_QuietMissingWritePermissionFilter())
+
+
+class _QuietMissingWritePermissionFilter(logging.Filter):
+    """See _install_quiet_popup_filter()."""
+
+    def filter(self, record):
+        exc_info = record.exc_info
+        return not (exc_info and isinstance(exc_info[1], _MissingWritePermissionError))
+
+
 def _missing_write_permission_error(missing_write_permissions):
     """Build the DbWriteFailure raised by transaction_commit()/undo()/
     redo() when self._missing_write_permissions (set once, at load(), by
@@ -802,27 +883,30 @@ def _missing_write_permission_error(missing_write_permissions):
     can reject *before* anything commits locally instead of only after a
     doomed push comes back 403.
 
-    DbWriteFailure's own __str__ returns only its first argument (see
-    gramps.gen.db.exceptions), and nothing in Gramps core catches this
-    exception type around an ordinary editor's own DbTxn -- it reaches
-    the user via Gramps' top-level sys.excepthook bug-report dialog, the
-    same as any other uncaught exception from a GTK callback (see
-    grampsapp.py) -- so the actually useful explanation belongs in that
-    first argument, not the second.
+    Also shows the user a calm explanation immediately, via
+    _notify_missing_write_permission(), and makes sure Gramps' own
+    generic crash dialog won't pop up right after it, via
+    _install_quiet_popup_filter() -- see both for why. The raised
+    exception itself is still required: nothing in Gramps core catches
+    this exception type around an ordinary editor's own DbTxn, but that
+    propagation is exactly what stops the editor from treating the save
+    as having succeeded (e.g. closing itself and discarding the reason
+    why), so it has to keep happening even though the user has already
+    been told what went wrong by the time it does.
     """
-    return DbWriteFailure(
-        _(
-            "This local edit was not saved: the account authenticating "
-            "via GRAMPS_WEB_API_KEY is missing server permission(s) "
-            "needed to push changes to this Family Tree: %(missing)s. "
-            'Grant it the "%(role)s" role on the server (or ask an '
-            "administrator to) to enable editing."
-        )
-        % {
-            "missing": ", ".join(missing_write_permissions),
-            "role": _REQUIRED_ROLE_NAME,
-        }
-    )
+    message = _(
+        "This local edit was not saved: the account authenticating "
+        "via GRAMPS_WEB_API_KEY is missing server permission(s) "
+        "needed to push changes to this Family Tree: %(missing)s. "
+        'Grant it the "%(role)s" role on the server (or ask an '
+        "administrator to) to enable editing."
+    ) % {
+        "missing": ", ".join(missing_write_permissions),
+        "role": _REQUIRED_ROLE_NAME,
+    }
+    _install_quiet_popup_filter()
+    _notify_missing_write_permission(message)
+    return _MissingWritePermissionError(message)
 
 
 #: Oldest Gramps version a *server* can run and still produce the
