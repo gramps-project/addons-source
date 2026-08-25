@@ -7,7 +7,7 @@ register(
     REPORT,
     id="ExpandedAncestorTree",
     name=_("Expanded Ancestor Tree"),
-    description=_("Expanded Ancestor Graph showing direct ancestors, siblings, cousins and spouses."),
+    description=_("Expanded Ancestor Graph showing direct ancestors, siblings, nieces/nephews cousins and spouses."),
     version="1.0.0",
     gramps_target_version="6.0",
     status=STABLE,
