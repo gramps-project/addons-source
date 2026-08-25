@@ -943,8 +943,8 @@ class ExpandedAncestorTreeOptions(MenuReportOptions):
         anc_sibs.set_help(_("Whether to display the siblings of direct ancestors"))
         menu.add_option(category_name, "inc_anc_siblings", anc_sibs)
 
-        cousins = BooleanOption(_("Include cousins (children of siblings)"), False)
-        cousins.set_help(_("Whether to display the children of the ancestors' siblings"))
+        cousins = BooleanOption(_("Include cousins (collateral descendants)"), False)
+        cousins.set_help(_("Whether to display the cousins and descendants of the ancestors' siblings"))
         menu.add_option(category_name, "inc_cousins", cousins)
 
         self.max_gen = NumberOption(_("Generations"), 10, 1, 50)
