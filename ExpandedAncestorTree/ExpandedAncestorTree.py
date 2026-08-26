@@ -387,9 +387,11 @@ class MakeExpandedTree:
     coordinate) of every box on the canvas.
     """
 
-    def __init__(self, dbase, canvas):
+    def __init__(self, dbase, canvas,user=None):
         self.database = dbase
         self.canvas = canvas
+        self.user = user
+        self.limit_warned = False
         _gui = GUIConnect()
 
         self.max_gen = _gui.maxgen()
@@ -399,6 +401,8 @@ class MakeExpandedTree:
         self.inc_anc_siblings = True if anc_sibs is None else anc_sibs
         cuz = _gui.get_val("inc_cousins")
         self.inc_cousins = False if cuz is None else cuz
+        desc_val = _gui.get_val("desc_gen")
+        self.desc_gen = int(desc_val) if desc_val else 3
 
         self.calc_items = CalcItems(self.database)
         self.visited = set()
@@ -430,11 +434,17 @@ class MakeExpandedTree:
         if not is_center_line and current_gen == 1 and not node.is_center:
             return
 
-        if current_gen < -15:
+        if current_gen < (1 - self.desc_gen):
             return
 
-        if len(self.visited) > 1000:
-            raise ReportError(_("The generated tree is too large (over 1000 people). Please reduce the number of generations or disable some options to prevent performance issues."))
+        if len(self.visited) > 250:
+            if not self.limit_warned and self.user:
+                self.limit_warned = True
+                self.user.warn(
+                    _("Tree Truncated"),
+                    _("The generated tree reached the 250 people safety limit and has been truncated.\n\nPlease reduce the number of generations or disable some options to see all branches.")
+                )
+            return
 
         person = self.database.get_person_from_handle(node.handle)
         if not person:
@@ -489,9 +499,15 @@ class MakeExpandedTree:
         is exhausted or the handle was already visited elsewhere.
         """
 
-        if len(self.visited) > 1000:
-            raise ReportError(_("The generated tree is too large (over 1000 people). Please reduce the number of generations or disable some options to prevent performance issues."))
-        
+        if len(self.visited) > 250:
+            if not self.limit_warned and self.user:
+                self.limit_warned = True
+                self.user.warn(
+                    _("Tree Truncated"),
+                    _("The generated tree reached the 250 people safety limit and has been truncated.\n\nPlease reduce the number of generations or disable some options to see all branches.")
+                )
+            return None
+
         if gen > self.max_gen or person_handle in self.visited:
             return None
 
@@ -850,7 +866,7 @@ class ExpandedAncestorTree(Report):
         with self._user.progress(_("Ancestor Tree Expanded"), _("Making the Tree..."), 4) as step:
             #  traverse the DB.
             self.max_generations = self.connect.get_val("maxgen")
-            tree = MakeExpandedTree(database, self.canvas)
+            tree = MakeExpandedTree(database, self.canvas, self._user)
             tree.start(self.connect.get_val("pid"))
             tree = None
             step()
@@ -1048,6 +1064,9 @@ class ExpandedAncestorTreeOptions(MenuReportOptions):
         self.max_gen.set_help(_("The number of generations to include in the tree"))
         menu.add_option(category_name, "maxgen", self.max_gen)
 
+        self.desc_gen = NumberOption(_("Descendant Generations"), 3, 1, 50)
+        self.desc_gen.set_help(_("The number of descendant generations to include"))
+        menu.add_option(category_name, "desc_gen", self.desc_gen)
 
         self.show_idx = BooleanOption(_("Show Index"), False)
         self.show_idx.set_help(_("Display index of each person"))
