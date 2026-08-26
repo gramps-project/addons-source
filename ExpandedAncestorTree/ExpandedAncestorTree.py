@@ -9,7 +9,7 @@
 #
 # MODIFICATION NOTICE:
 # This file is a heavily modified version of the original "Ancestor Tree" report.
-# Modifications by Bartók Szabolcs (2026) include:
+# Modifications by Bartok Szabolcs (2026) include:
 # - Replaced AscendPerson traversal with a custom engine to include siblings and cousins.
 # - Replaced LineBase with TreeConnectionLine for smart-routing and bridged intersections.
 # - Added dynamic color-coding for family branch lines.
@@ -162,7 +162,7 @@ class TitleN(TitleNoDisplay):
         self._ = locale.translation.sgettext
 
     def calc_title(self, center):
-        self.mark_text = self._("Expanded Ancestor Graph")
+        self.mark_text = self._("Ancestor Tree Expanded")
         self.text = ""
 
 
@@ -178,7 +178,7 @@ class TitleA(TitleBox):
         name = ""
         if center is not None:
             name = self._nd.display(center)
-        self.text = self._("Expanded Ancestor Graph for %s") % name
+        self.text = self._("Ancestor Tree Expanded for %s") % name
         self.set_box_height_width()
 
 
@@ -206,55 +206,94 @@ class TreeConnectionLine(LineBase):
         self.is_main = is_main
         self.family_index = family_index
 
-    def display(self, page):
-        # Nothing to connect if either side is missing.
+    def get_vertical_trunk(self, page):
+        """Kiszámolja a függőleges összekötő vonal (trunk) koordinátáit és magasságát."""
         if not self.start or not self.end:
-            return
-        doc = page.canvas.doc
+            return None
 
-        # Choose one of 15 coloured styles when the colour option is enabled.
-        color_opt = GUIConnect().color_lines()
-        line_style = f"AC2-line-color-{self.family_index % 15}" if color_opt else "AC2-line"
-
-        s_box = self.start[0]
         e_box = self.end[0]
-
-        start_x = s_box.x_cm + s_box.width - page.page_x_offset
         end_x = e_box.x_cm - page.page_x_offset
-        gap = end_x - start_x
+        base_end_x = end_x
 
-        main_x = start_x + gap * 0.2
+        if getattr(e_box, 'level', [0])[LVL_GEN] <= 1:
+            c_offset = getattr(e_box, 'collateral_offset', 0)
+            if c_offset > 0:
+                base_end_x -= c_offset * 0.6
+
+        col_w = page.canvas.report_opts.col_width
+        main_x = base_end_x - col_w * 0.8
+
         if self.is_main:
             my_x = main_x
         else:
-            my_x = start_x + gap * (0.4 + (self.family_index % 4) * 0.15)
+            my_x = base_end_x - col_w * (0.6 - (self.family_index % 4) * 0.15)
 
         min_y = 9999999
         max_y = -9999999
+        for b in self.start + self.end:
+            y = b.y_cm + b.height / 2.0 - page.page_y_offset
+            min_y = min(min_y, y)
+            max_y = max(max_y, y)
+
+        return (my_x, min_y, max_y)
+
+    def display(self, page):
+        if not self.start or not self.end:
+            return
+
+        doc = page.canvas.doc
+        color_opt = GUIConnect().color_lines()
+        line_style = f"AC2-line-color-{self.family_index % 15}" if color_opt else "AC2-line"
+
+        my_trunk = self.get_vertical_trunk(page)
+        if not my_trunk:
+            return
+        my_x, min_y, max_y = my_trunk
+
+        vertical_trunks = []
+        if hasattr(page.canvas, 'lines'):
+            for line in page.canvas.lines:
+                if isinstance(line, TreeConnectionLine) and line != self:
+                    trunk = line.get_vertical_trunk(page)
+                    if trunk:
+                        vertical_trunks.append(trunk)
+
+        hw = 0.1
+        h = 0.15
+
+        def draw_horizontal_with_bridges(x1, x2, y_pos):
+            x_start = min(x1, x2)
+            x_end = max(x1, x2)
+
+            intersections = []
+            for Tx, Tmin_y, Tmax_y in vertical_trunks:
+                if x_start + 0.1 < Tx < x_end - 0.1:
+                    if Tmin_y + 0.05 < y_pos < Tmax_y - 0.05:
+                        intersections.append(Tx)
+
+            intersections.sort()
+
+            current_x = x_start
+            for Tx in intersections:
+                doc.draw_line(line_style, current_x, y_pos, Tx - hw, y_pos)
+                # bridge
+                doc.draw_line(line_style, Tx - hw, y_pos, Tx - hw/2, y_pos - h)
+                doc.draw_line(line_style, Tx - hw/2, y_pos - h, Tx + hw/2, y_pos - h)
+                doc.draw_line(line_style, Tx + hw/2, y_pos - h, Tx + hw, y_pos)
+                current_x = Tx + hw
+
+            doc.draw_line(line_style, current_x, y_pos, x_end, y_pos)
+
 
         for b in self.start:
             y = b.y_cm + b.height / 2.0 - page.page_y_offset
-            min_y = min(min_y, y)
-            max_y = max(max_y, y)
+            x1 = b.x_cm + b.width - page.page_x_offset
+            draw_horizontal_with_bridges(x1, my_x, y)
 
-            if not self.is_main:
-                # Side lines get a decorative bridge step just before the
-                hw = 0.1
-                h = 0.15
-                doc.draw_line(line_style, b.x_cm + b.width - page.page_x_offset, y, main_x - hw, y)
-                doc.draw_line(line_style, main_x - hw, y, main_x - hw/2, y - h)
-                doc.draw_line(line_style, main_x - hw/2, y - h, main_x + hw/2, y - h)
-                doc.draw_line(line_style, main_x + hw/2, y - h, main_x + hw, y)
-                doc.draw_line(line_style, main_x + hw, y, my_x, y)
-            else:
-                doc.draw_line(line_style, b.x_cm + b.width - page.page_x_offset, y, my_x, y)
-
-        # Wires from the trunk into each end box.
         for b in self.end:
             y = b.y_cm + b.height / 2.0 - page.page_y_offset
-            min_y = min(min_y, y)
-            max_y = max(max_y, y)
-            doc.draw_line(line_style, my_x, y, b.x_cm - page.page_x_offset, y)
+            x2 = b.x_cm - page.page_x_offset
+            draw_horizontal_with_bridges(my_x, x2, y)
 
         if min_y < max_y:
             doc.draw_line(line_style, my_x, min_y, my_x, max_y)
@@ -334,6 +373,7 @@ class NodeData:
         self.family_groups = []
         self.y = 0.0
         self.box = None
+        self.collateral_offset = 0
 
 
 class MakeExpandedTree:
@@ -354,6 +394,7 @@ class MakeExpandedTree:
 
         self.max_gen = _gui.maxgen()
         self.inc_center_siblings = _gui.get_val("inc_siblings")
+        self.inc_center_descendants = _gui.get_val("inc_children")
         anc_sibs = _gui.get_val("inc_anc_siblings")
         self.inc_anc_siblings = True if anc_sibs is None else anc_sibs
         cuz = _gui.get_val("inc_cousins")
@@ -380,11 +421,20 @@ class MakeExpandedTree:
                         siblings.append(child_handle)
         return siblings
 
-    def fetch_descendants(self, node, current_gen):
+    def fetch_descendants(self, node, current_gen, offset=1, is_center_line=False):
         """Attach spouses and children (= cousins) to a sibling/cousin node.
         """
-        if current_gen <= 1:
+
+        if not is_center_line and current_gen < 1:
             return
+        if not is_center_line and current_gen == 1 and not node.is_center:
+            return
+
+        if current_gen < -15:
+            return
+
+        if len(self.visited) > 1000:
+            raise ReportError(_("The generated tree is too large (over 1000 people). Please reduce the number of generations or disable some options to prevent performance issues."))
 
         person = self.database.get_person_from_handle(node.handle)
         if not person:
@@ -409,6 +459,7 @@ class MakeExpandedTree:
             if spouse_h and spouse_h not in self.visited:
                 self.visited.add(spouse_h)
                 spouse_node = NodeData(spouse_h, current_gen, is_spouse=True)
+                spouse_node.collateral_offset = node.collateral_offset
 
             # Recurse one generation down so grandchildren of the common
             children_nodes = []
@@ -416,7 +467,8 @@ class MakeExpandedTree:
                 if child_h not in self.visited:
                     self.visited.add(child_h)
                     c_node = NodeData(child_h, current_gen - 1, is_cousin=True)
-                    self.fetch_descendants(c_node, current_gen - 1)
+                    c_node.collateral_offset = offset
+                    self.fetch_descendants(c_node, current_gen - 1, offset, is_center_line=is_center_line)
                     children_nodes.append(c_node)
 
             if children_nodes:
@@ -436,6 +488,10 @@ class MakeExpandedTree:
         Returns the created NodeData, or None when the generation budget
         is exhausted or the handle was already visited elsewhere.
         """
+
+        if len(self.visited) > 1000:
+            raise ReportError(_("The generated tree is too large (over 1000 people). Please reduce the number of generations or disable some options to prevent performance issues."))
+        
         if gen > self.max_gen or person_handle in self.visited:
             return None
 
@@ -444,6 +500,10 @@ class MakeExpandedTree:
             self.max_generation = gen
 
         node = NodeData(person_handle, gen, is_center=is_center)
+
+
+        if is_center:
+            self.fetch_descendants(node, gen, offset=0, is_center_line=self.inc_center_descendants)
 
         # Sibling policy: the centre person has its own toggle while all
         # ancestors share a single "include ancestor siblings" toggle.
@@ -502,6 +562,13 @@ class MakeExpandedTree:
 
         self.flat_nodes.append(node)
 
+        if node.is_center:
+            for fg in node.family_groups:
+                if fg['spouse']: self.flat_nodes.append(fg['spouse'])
+            for fg in node.family_groups:
+                for child in fg['children']:
+                    self.append_descendants(child)
+
         for sib in node.siblings:
             for fg in sib.family_groups:
                 if fg['spouse']: self.flat_nodes.append(fg['spouse'])
@@ -544,13 +611,17 @@ class MakeExpandedTree:
                 if person:
                     box.add_mark(self.database, person)
 
-                if n.is_spouse:
+                if n.is_center:
+                    box.boxstr = "AC2-center-box"
+                elif n.is_spouse:
                     box.boxstr = "AC2-spouse-box"
                 elif n.is_sibling or n.is_cousin:
                     box.boxstr = "AC2-sibling-box"
 
                 self.canvas.add_box(box)
                 n.box = box
+                box.collateral_offset = getattr(n, 'collateral_offset', 0)
+
 
             #  create the connecting lines ---------------------
             family_index = 0
@@ -558,8 +629,7 @@ class MakeExpandedTree:
                 if n.is_spouse:
                     continue
 
-                if n.is_sibling or n.is_cousin:
-
+                if n.family_groups:
                     for fg in n.family_groups:
                         children = fg['children']
                         spouse = fg['spouse']
@@ -574,8 +644,8 @@ class MakeExpandedTree:
                         cline = TreeConnectionLine(start_boxes, end_boxes, is_main=False, family_index=family_index)
                         self.canvas.add_line(cline)
                         family_index += 1
-                else:
 
+                if not (n.is_sibling or n.is_cousin):
                     if n.father or n.mother:
                         start_boxes = [n.box]
                         for sib in n.siblings:
@@ -593,19 +663,31 @@ class MakeExpandedTree:
 
 
 class LRTransform:
-    """Left-to-right placement transform.
-    """
+    """Left-to-right placement transform."""
 
-    def __init__(self, canvas, max_generations):
+    def __init__(self, canvas, max_generations, gen_shift=0):
         self.canvas = canvas
         self.rept_opts = canvas.report_opts
         self.y_offset = self.rept_opts.littleoffset * 2 + self.canvas.title.height
+        self.gen_shift = gen_shift
+
+        max_offset = max([getattr(b, 'collateral_offset', 0) for b in self.canvas.boxes if b.level[LVL_GEN] <= 1] + [0])
+
+        self.cascade_pad = max_offset * 0.6
 
     def _place(self, box):
         box.x_cm = self.rept_opts.littleoffset
-        box.x_cm += box.level[LVL_GEN] * (
-            self.rept_opts.col_width + self.rept_opts.max_box_width
-        )
+
+        display_gen = box.level[LVL_GEN] + self.gen_shift
+
+        box.x_cm += display_gen * (self.rept_opts.col_width + self.rept_opts.max_box_width + self.cascade_pad)
+
+        # cascade
+        if box.level[LVL_GEN] <= 1:
+            c_offset = getattr(box, 'collateral_offset', 0)
+            if c_offset > 0:
+                box.x_cm += c_offset * 0.6
+
         box.y_cm = self.rept_opts.max_box_height + self.rept_opts.box_pgap
         box.y_cm *= box.level[LVL_Y]
         box.y_cm += self.y_offset
@@ -667,7 +749,12 @@ class MakeReport:
         for box in self.canvas.boxes:
             box.width = self.canvas.report_opts.max_box_width
 
-        transform = LRTransform(self.canvas, self.max_generations)
+        #shift the whole tree
+        min_gen = min([b.level[LVL_GEN] for b in self.canvas.boxes] + [1])
+        gen_shift = 1 - min_gen if min_gen < 1 else 0
+        self.max_generations += gen_shift
+
+        transform = LRTransform(self.canvas, self.max_generations, gen_shift)
         transform.place()
 
 
@@ -760,7 +847,7 @@ class ExpandedAncestorTree(Report):
         self.canvas.report_opts.box_pgap *= self.connect.get_val("box_Yscale")
         self.canvas.report_opts.box_mgap *= self.connect.get_val("box_Yscale")
 
-        with self._user.progress(_("Expanded Ancestor Tree"), _("Making the Tree..."), 4) as step:
+        with self._user.progress(_("Ancestor Tree Expanded"), _("Making the Tree..."), 4) as step:
             #  traverse the DB.
             self.max_generations = self.connect.get_val("maxgen")
             tree = MakeExpandedTree(database, self.canvas)
@@ -819,7 +906,7 @@ class ExpandedAncestorTree(Report):
         self.canvas.paginate(colsperpage, one_page)
 
         pages = self.canvas.page_count(incblank)
-        with self._user.progress(_("Expanded Ancestor Tree"), _("Printing the Tree..."), pages) as step:
+        with self._user.progress(_("Ancestor Tree Expanded"), _("Printing the Tree..."), pages) as step:
             for page in self.canvas.page_iter_gen(incblank):
                 self.doc.start_page()
                 if inc_border:
@@ -840,6 +927,12 @@ class ExpandedAncestorTree(Report):
         graph_style.set_shadow(graph_style.get_shadow(), self.canvas.report_opts.box_shadow * scale)
         graph_style.set_line_width(graph_style.get_line_width() * scale)
         style_sheet.add_draw_style("AC2-box", graph_style)
+
+        if style_sheet.has_style("AC2-center-box"):
+            graph_style_center = style_sheet.get_draw_style("AC2-center-box")
+            graph_style_center.set_shadow(graph_style_center.get_shadow(), self.canvas.report_opts.box_shadow * scale)
+            graph_style_center.set_line_width(graph_style_center.get_line_width() * scale)
+            style_sheet.add_draw_style("AC2-center-box", graph_style_center)
 
         graph_style = style_sheet.get_draw_style("AC2-sibling-box")
         graph_style.set_shadow(graph_style.get_shadow(), self.canvas.report_opts.box_shadow * scale)
@@ -934,6 +1027,10 @@ class ExpandedAncestorTreeOptions(MenuReportOptions):
         self.__pid = PersonOption(_("Center Person"))
         self.__pid.set_help(_("The center person for the tree"))
         menu.add_option(category_name, "pid", self.__pid)
+
+        descendants = BooleanOption(_("Include descendants of the center person"), False)
+        descendants.set_help(_("Whether to display the children and full descending lines of the center person"))
+        menu.add_option(category_name, "inc_children", descendants)
 
         siblings = BooleanOption(_("Include siblings of the center person"), False)
         siblings.set_help(_("Whether to only display the center person or all of his/her siblings too"))
@@ -1176,6 +1273,13 @@ class ExpandedAncestorTreeOptions(MenuReportOptions):
         graph_style.set_paragraph_style("AC2-Note")
         graph_style.set_fill_color((255, 255, 255))
         default_style.add_draw_style("AC2-note-box", graph_style)
+
+        graph_style_center = GraphicsStyle()
+        graph_style_center.set_paragraph_style("AC2-Normal")
+        graph_style_center.set_shadow(0, box_shadow)
+        graph_style_center.set_fill_color((255, 255, 255))
+        graph_style_center.set_line_width(3.0)
+        default_style.add_draw_style("AC2-center-box", graph_style_center)
 
         graph_style = GraphicsStyle()
         graph_style.set_paragraph_style("AC2-Title")
