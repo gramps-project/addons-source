@@ -13,11 +13,15 @@
   trace), this one is symptom-first.
 -->
 
-## Overview
+## Summary
 
 The failure modes that bite first-time addon authors, organised by symptom. Each entry is "what you see → why → what to do." Read this sideways: jump to the symptom that matches what you're seeing, follow the link out to the relevant chapter for the fix in depth.
 
-For technique-level coverage (pdb, gdb, profilers), see [08-debug](08-debug.md). For the normative rules an addon must satisfy, see [16-guidelines](16-guidelines.md).
+The entries are grouped into six families, roughly in the order an addon meets them. **Loading and discovery** — the addon doesn't appear anywhere, edits vanish on restart, or the folder is present but ignored — is where most first-day problems land, and the cause is usually the plugin path, a `.gpr.py` error swallowing the whole addon, or the symlink rule. **Imports and Python namespace traps** covers the ones that look like Python bugs rather than Gramps bugs: `from <Addon> import <Addon>` binding the submodule instead of the class, `requires_mod` naming the PyPI distribution instead of the importable module, and a `requires_gi` declaration that is valid on 6.0 and broken on 6.1.
+
+**Database access** covers the errors that only appear on real data — a `KeyError` partway through an iteration, backlinks returning a class *name* rather than a class, and the mocked test that passes while `example.gramps` fails. **Translation and locale** covers the two classic reports: strings marked with `_()` that never translate, and an addon that translates on one platform but not another. **Testing** covers the gap between your machine and CI, and between the pre-commit hook and the CI run — they check different things, so green locally is not green upstream. **Pull-request shape** covers what gets a submission bounced rather than reviewed: a rejected version bump, a duplicate, or a PR that simply sits.
+
+If nothing here matches, the problem is probably not a known pattern — go to [08-debug](08-debug.md) for the technique-level coverage (log levels, repro scripts, pdb, gdb, profilers) and work it from the evidence. For the normative rules an addon must satisfy, see [16-guidelines](16-guidelines.md).
 
 ## Loading and discovery
 
@@ -174,6 +178,32 @@ Three common causes:
 2. **`requires_mod` deps assumed in tests.** Addon tests must be runnable without the addon's `requires_mod` dependencies installed in the test Python — Mac contributors can't easily install addon deps into the Gramps Python (Gary Griffin, 2026-05-16). Mock at the import boundary or skip cleanly.
 
 3. **Test loaded by dotted path surfaces the namespace trap.** Local `discover` from `tests/` would hide the `from <Addon> import <Addon>` bug; CI loads by dotted path (`<Addon>.tests.<module>`), which exposes it. See bug 12691.
+
+### "`CustomFilters` is `None` in my test."
+
+`gramps.gen.filters` initialises `CustomFilters = None` at import and only populates it when `reload_custom_filters()` runs — and that function **rebinds the module global** rather than mutating an object in place (`gramps/gen/filters/__init__.py:24`, `:38-41`):
+
+```python
+def reload_custom_filters():
+    global CustomFilters
+    CustomFilters = FilterList(CUSTOM_FILTERS)
+    CustomFilters.load()
+```
+
+So importing the *name* first captures the `None` and never sees the replacement:
+
+```python
+# Wrong — binds None for good
+from gramps.gen.filters import CustomFilters, reload_custom_filters
+reload_custom_filters()
+
+# Right — reload, then import the name
+from gramps.gen.filters import reload_custom_filters
+reload_custom_filters()
+from gramps.gen.filters import CustomFilters
+```
+
+Inside Gramps the view manager calls it during startup, which is why this only bites under test. Core's own suites do the same thing at module import time (`gramps/test/test_util.py:41`, `gramps/gen/filters/rules/test/person_rules_test.py:34`). Called out in upstream [`addons-source/AGENTS.md`](https://github.com/gramps-project/addons-source/blob/maintenance/gramps61/AGENTS.md) → Testing.
 
 ### "PR's pre-commit passed but CI is red."
 
