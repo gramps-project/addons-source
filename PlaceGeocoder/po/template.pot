@@ -1,0 +1,132 @@
+# Translations template for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-06-01 16:07-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: PlaceGeocoder/PlaceGeocoder.py:263
+msgid ""
+"\n"
+"Dry run only -- no coordinates were written.\n"
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:228
+#, python-format
+msgid "  error: %s (%s)\n"
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.gpr.py:30
+msgid ""
+"Bulk-fill missing place coordinates by looking up each place name with "
+"OpenStreetMap Nominatim. By default keeps only town-level or finer "
+"matches (skipping state/country centroids) and writes the results in a "
+"single undoable transaction."
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:150
+msgid "Contact email (for the request header)"
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:260
+#, python-format
+msgid "Errors: %d\n"
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:204
+msgid "Every place already has coordinates.\n"
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.gpr.py:28 PlaceGeocoder/PlaceGeocoder.py:171
+#: PlaceGeocoder/PlaceGeocoder.py:217
+msgid "Geocode Places"
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:209
+#, python-format
+msgid "Geocoding %(count)d place(s) [%(mode)s]...\n"
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:212
+msgid "Geocoding places..."
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:128
+msgid "Keep only town-level or finer"
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:140
+msgid "Maximum places (0 = all)"
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:258
+#, python-format
+msgid "No match: %d\n"
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:146
+msgid "Nominatim asks for at most one request per second; do not lower."
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:152
+msgid "Nominatim's usage policy asks bulk users to identify themselves."
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:126 PlaceGeocoder/PlaceGeocoder.py:177
+msgid "Options"
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:141
+msgid "Process at most this many places; 0 means no limit."
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:202
+msgid "Results"
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:144
+msgid "Seconds between lookups"
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:253
+#, python-format
+msgid "Set coordinates: %d\n"
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:130
+msgid "Skip matches that only resolve to a state or country centroid."
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:256
+#, python-format
+msgid "Skipped (too coarse): %d\n"
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:136
+msgid "Turn off for a dry run that only reports what would be set."
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:134
+msgid "Write coordinates to the tree"
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:207
+msgid "dry run"
+msgstr ""
+
+#: PlaceGeocoder/PlaceGeocoder.py:207
+msgid "writing changes"
+msgstr ""
+
