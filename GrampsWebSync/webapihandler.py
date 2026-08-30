@@ -28,6 +28,8 @@ import logging
 import os
 import platform
 import socket
+import ssl
+import subprocess
 import time
 from collections.abc import Callable
 from pathlib import Path
@@ -91,25 +93,75 @@ def parse_version(version) -> tuple[int, int]:
     return (parts[0], parts[1])
 
 
-def create_macos_ssl_context():
-    import ssl
-    import subprocess
+#: Apple's public roots — absent from the ``security list-keychains`` list.
+MACOS_ROOT_KEYCHAIN = "/System/Library/Keychains/SystemRootCertificates.keychain"
 
-    """Creates an SSL context using macOS system certificates."""
+#: The machine-wide keychain, where an administrator installs a private CA.
+MACOS_ADMIN_KEYCHAIN = "/Library/Keychains/System.keychain"
+
+KEYCHAIN_TIMEOUT = 30
+
+
+def _macos_keychains() -> list[str]:
+    """Return the keychains to read trust anchors from, in search order."""
+    keychains = [MACOS_ROOT_KEYCHAIN, MACOS_ADMIN_KEYCHAIN]
+    try:
+        listed = subprocess.run(
+            ["security", "list-keychains"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            timeout=KEYCHAIN_TIMEOUT,
+        ).stdout.decode("utf-8", "replace")
+    except (OSError, subprocess.SubprocessError) as exc:
+        LOG.warning("Could not list macOS keychains: %s", exc)
+        listed = ""
+    # Each entry is quoted and indented on its own line.
+    for line in listed.splitlines():
+        path = line.strip().strip('"')
+        if path and path not in keychains:
+            keychains.append(path)
+    return keychains
+
+
+def create_macos_ssl_context() -> ssl.SSLContext:
+    """Create an SSL context trusting the CAs in the user's macOS keychains.
+
+    A privately issued CA — a corporate root, or one made for a self-hosted
+    Gramps Web instance — lands in the admin or login keychain, never in the
+    read-only ``SystemRootCertificates`` list. Reading that list alone fails
+    with ``CERTIFICATE_VERIFY_FAILED`` on a server Safari opens happily.
+
+    There is no fallback: the bundled OpenSSL's ``OPENSSLDIR`` points into the
+    build machine's tree, so the default store is empty on a user's Mac.
+    """
     ctx = ssl.create_default_context()
-    macos_ca_certs = subprocess.run(
-        [
-            "security",
-            "find-certificate",
-            "-a",
-            "-p",
-            "/System/Library/Keychains/SystemRootCertificates.keychain",
-        ],
-        stdout=subprocess.PIPE,
-    ).stdout
+    pem_blocks: list[bytes] = []
+    for keychain in _macos_keychains():
+        try:
+            result = subprocess.run(
+                ["security", "find-certificate", "-a", "-p", keychain],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.DEVNULL,
+                timeout=KEYCHAIN_TIMEOUT,
+            )
+        except (OSError, subprocess.SubprocessError) as exc:
+            LOG.warning("Could not read certificates from %s: %s", keychain, exc)
+            continue
+        if result.stdout:
+            pem_blocks.append(result.stdout)
 
-    with NamedTemporaryFile("w+b") as tmp_file:
-        tmp_file.write(macos_ca_certs)
+    if not pem_blocks:
+        LOG.warning(
+            "No certificates found in the macOS keychains; TLS verification "
+            "will fail for every server."
+        )
+        return ctx
+
+    with NamedTemporaryFile("w+b", suffix=".pem") as tmp_file:
+        tmp_file.write(b"\n".join(pem_blocks))
+        # Without the flush, the tail of the buffer is still unwritten when
+        # OpenSSL opens the file by name, silently truncating the anchors.
+        tmp_file.flush()
         ctx.load_verify_locations(tmp_file.name)
 
     return ctx
