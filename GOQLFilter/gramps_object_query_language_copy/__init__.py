@@ -29,7 +29,7 @@ handle.
 VENDORED COPY -- do not edit directly. This is a verbatim copy of the
 "gramps_object_query_language" package (PyPI: gramps-object-query-language,
 https://github.com/dsblank/gramps-object-query-language), pinned at
-version 0.4.0 / commit de157c9e12ac1c758b36bebd17007ae56275d116, imported
+version 0.4.1 / commit b717eab575e99d8dc1dad958bf44442fe64f4276, imported
 here as "gramps_object_query_language_copy" (not the upstream package name)
 so it can't collide with a real pip-installed copy of the same library on
 the same interpreter.

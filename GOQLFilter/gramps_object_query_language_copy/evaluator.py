@@ -64,7 +64,6 @@ from .query import (
     ObjectTypeSpec,
     Or,
     RelatedObject,
-    WholeJsonData,
 )
 
 # Real getter method name for each `ObjectTypeSpec.table`, used to fetch a
@@ -204,10 +203,6 @@ def resolve_column_ref(db: Any, obj: Any, ref: ColumnRef, spec: ObjectTypeSpec) 
         return resolve_column_ref(db, related_obj, ref.field, ref.target)
     if isinstance(ref, JsonPath):
         return get_json_path(obj, ref)
-    if isinstance(ref, WholeJsonData):
-        if ref.base_column != "json_data":
-            raise ValueError(f"unsupported JsonPath base column: {ref.base_column!r}")
-        return json_utils.object_to_dict(obj)
     if isinstance(ref, CollectionCount):
         return _collection_count(db, obj, ref)
     if isinstance(ref, FlatColumnRef):
