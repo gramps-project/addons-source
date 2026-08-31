@@ -55,9 +55,14 @@ section's recommended v1:
   path's own `order_by` already has (a `JsonPath`/`RelatedObject` column
   can't be sorted by there either), so this path doesn't leapfrog ahead of
   what SQL itself can do.
-- Collation is ASCII/codepoint only (plain Python `<`/`>`) -- SQL's
-  locale-aware `COLLATE` has no Python-side equivalent here. Documented
-  gap, not attempted.
+- Collation matches the SQL path's own default exactly, not full locale
+  parity: `_null_safe_cmp` ASCII-case-folds any `str` operand before
+  comparing (`_nocase_key`), the same folding SQLite's built-in `NOCASE`
+  collation does (`query.py`'s `_column_expr` default -- see ROADMAP.md's
+  "Default `NOCASE` collation on the SQL path"). Only the 26 ASCII letters
+  fold; accented/non-Latin letters don't, on either path, so the two stay
+  in agreement. A real locale-aware `COLLATE` still has no Python-side
+  equivalent here -- that remains a documented gap.
 
 `NULL` placement, for both plain sorting and keyset seeking, matches
 SQLite's own verified default (confirmed empirically, not assumed): `NULL`
@@ -78,6 +83,7 @@ by sorting and seeking on both this path and the SQL path, not two.
 from __future__ import annotations
 
 import functools
+import string
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from gramps.gen.filters import GenericFilterFactory
@@ -92,7 +98,7 @@ from .query import (
     effective_order_by,
     order_by_key,
     resolve_order_by,
-    resolve_select_ref_string,
+    resolve_ref_string,
 )
 
 # Core `Filter` namespace for each `ObjectTypeSpec.table` that has one.
@@ -151,11 +157,31 @@ class _PredicateRule(Rule):
         return matched
 
 
+_ASCII_NOCASE_TABLE = str.maketrans(string.ascii_uppercase, string.ascii_lowercase)
+
+
+def _nocase_key(value: str) -> str:
+    """ASCII-only case fold, matching SQLite's built-in `NOCASE` collation --
+    the SQL path's own default for text `ORDER BY` columns (`query.py`'s
+    `_column_expr`). Deliberately not `str.lower()`: Python's `.lower()`
+    case-folds far beyond ASCII (e.g. accented letters), which would fold
+    values `NOCASE` leaves alone and put the two paths back out of
+    agreement -- see this module's own docstring.
+    """
+    return value.translate(_ASCII_NOCASE_TABLE)
+
+
 def _null_safe_cmp(a: Any, b: Any, direction: str) -> int:
     """Column-level three-way compare matching SQLite's verified `ORDER BY`
     default: `NULL` sorts as the smallest value regardless of direction, so
-    `DESC` is the exact reverse of `ASC`, `NULL`s included.
+    `DESC` is the exact reverse of `ASC`, `NULL`s included. String operands
+    are ASCII-case-folded first (`_nocase_key`), matching the SQL path's own
+    `NOCASE` default so the two paths agree on order.
     """
+    if isinstance(a, str):
+        a = _nocase_key(a)
+    if isinstance(b, str):
+        b = _nocase_key(b)
     if a is None and b is None:
         cmp = 0
     elif a is None:
@@ -233,9 +259,9 @@ def run_query(
     for each handle, never an unproxied lookup.
 
     `order_by`/`limit`/`after` mean exactly what they mean on `Query`/
-    `compile_query` -- see this module's own docstring for the two scope
-    caps (flat-column `order_by` only, ASCII-only collation) and the NULL
-    placement policies used. A trailing `handle` tiebreaker is always
+    `compile_query` -- see this module's own docstring for the scope cap
+    (flat-column `order_by` only) and its ASCII-`NOCASE` collation/NULL
+    placement policies. A trailing `handle` tiebreaker is always
     applied (via `effective_order_by`), even when `order_by` is empty, so
     the result is always in a fully deterministic order, matching the SQL
     path's own always-present `ORDER BY`.
@@ -296,7 +322,7 @@ def run_query(
         # rejected -- a flat column against `spec.columns`, a JSON path
         # against the type's own Gramps schema -- just with a better error.
         columns = [
-            resolve_select_ref_string(spec, column) if isinstance(column, str) else column
+            resolve_ref_string(spec, column) if isinstance(column, str) else column
             for column in select
         ]
         return [

@@ -225,8 +225,6 @@ def ref_value_type(spec: ObjectTypeSpec, ref: "ColumnRef") -> Any:
         return path_value_type(spec, ref.segments)
     if isinstance(ref, CollectionCount):
         return "integer"
-    if isinstance(ref, WholeJsonData):
-        return "object"
     return None
 
 
@@ -377,30 +375,6 @@ class JsonPath:
                 continue
             if isinstance(segment, bool) or not isinstance(segment, (str, int)):
                 raise QueryError(f"invalid JsonPath segment: {segment!r}")
-
-
-@dataclass(frozen=True)
-class WholeJsonData:
-    """The entire JSON-blob secondary column, selected whole -- spelled
-    `"."` as a path string (`resolve_ref_string(spec, ".")`), the one path
-    text that isn't a valid dotted/bracketed `JsonPath` spelling.
-
-    A separate class from `JsonPath` rather than an empty-segments
-    `JsonPath(())`, deliberately -- `JsonPath` requires at least one
-    segment (`test_jsonpath_requires_at_least_one_segment`) precisely so an
-    empty/malformed path stays a caller error there; giving "the whole
-    object, on purpose" its own type keeps that guarantee intact instead of
-    overloading the same shape to mean two different things depending on
-    how it was reached.
-
-    Renders as a bare reference to `base_column` (see `_render_column`) --
-    `json_data` is stored as JSON-encoded TEXT already on both backends
-    (see `JsonPath`'s docstring), so the whole blob is exactly what
-    `SELECT json_data` returns; no extraction function needed the way a
-    `JsonPath` needs `json_extract`/`jsonb_extract_path_text`.
-    """
-
-    base_column: str = "json_data"
 
 
 @dataclass(frozen=True)
@@ -751,29 +725,8 @@ def resolve_ref_string(spec: ObjectTypeSpec, text: str) -> "ColumnRef":
     a `RelatedObject` crossing a relationship. There is no special case for
     a single segment: `gendr` is rejected because the Gramps schema has no
     such field, not because of any rule about dots.
-
-    Used for `order_by` and (via `json_column_to_ref`) `where` column
-    references too -- `"."` (see `resolve_select_ref_string`) is
-    deliberately *not* handled here, so filtering or sorting on the whole
-    object stays a `QueryError` (`parse_path_string` rejects `"."` as two
-    empty path segments) rather than silently compiling into a comparison
-    or `ORDER BY` against a serialized JSON blob.
     """
     return resolve_column_path(spec, parse_path_string(text))
-
-
-def resolve_select_ref_string(spec: ObjectTypeSpec, text: str) -> "ColumnRef":
-    """`resolve_ref_string`, plus `"."` as a `select`-only spelling of "the
-    whole `json_data` blob" (`WholeJsonData`) -- not a dotted path at all,
-    so it's checked before `parse_path_string` ever sees it (`"."` splits
-    into two empty path segments, neither a valid identifier, and would
-    otherwise just raise). Used only where a `select` entry string is
-    resolved (`compile_query`, `run_query`) -- see `resolve_ref_string`'s
-    docstring for why `order_by`/`where` don't get this same case.
-    """
-    if text == ".":
-        return WholeJsonData()
-    return resolve_ref_string(spec, text)
 
 
 def default_ref_key(ref: "ColumnRef") -> str:
@@ -797,8 +750,6 @@ def default_ref_key(ref: "ColumnRef") -> str:
         return ref.name
     if isinstance(ref, RelatedObject):
         return f"{ref.name}.{default_ref_key(ref.field)}"
-    if isinstance(ref, WholeJsonData):
-        return "."
     if isinstance(ref, JsonPath):
         parts: List[str] = []
         for segment in ref.segments:
@@ -841,12 +792,11 @@ class FlatColumnRef:
 
 # A column reference is either a plain (whitelisted) column name, a path
 # into one column's JSON content, a field reached via a relationship (see
-# `RelatedObject`/`resolve_column_path`), a whole JSON-blob column
-# (`WholeJsonData`), or (value-position only, see `FlatColumnRef`) a flat
-# column marked as a field rather than a literal -- `field: ColumnRef` on
-# `RelatedObject` makes this recursive, so a chain like `birth.place.title`
-# is itself a valid `ColumnRef`.
-ColumnRef = Union[str, JsonPath, RelatedObject, CollectionCount, FlatColumnRef, WholeJsonData]
+# `RelatedObject`/`resolve_column_path`), or (value-position only, see
+# `FlatColumnRef`) a flat column marked as a field rather than a literal --
+# `field: ColumnRef` on `RelatedObject` makes this recursive, so a chain
+# like `birth.place.title` is itself a valid `ColumnRef`.
+ColumnRef = Union[str, JsonPath, RelatedObject, CollectionCount, FlatColumnRef]
 SelectRef = ColumnRef
 
 
@@ -1154,11 +1104,6 @@ def _render_column(
         sql, params = _render_json_path(column, _require_dialect(dialect, column), value)
     elif isinstance(column, CollectionCount):
         sql, params = _render_collection_count(column, spec.table, dialect, treeid)
-    elif isinstance(column, WholeJsonData):
-        # No extraction function needed -- the column already *is* the
-        # whole JSON blob, on both dialects (see `WholeJsonData`'s
-        # docstring), so this renders identically regardless of `dialect`.
-        sql, params = _quote_column(column.base_column, dialect), []
     else:
         if isinstance(column, FlatColumnRef):
             column = column.name
@@ -1816,12 +1761,10 @@ class Query:
     already-resolved `JsonPath`/`RelatedObject`/`CollectionCount`, or a
     dotted/bracketed *path string* (`"birth.place.title"`,
     `"primary_name.surname_list[0].surname"`), resolved by `compile_query`
-    through `resolve_select_ref_string` (the same `resolve_column_path` a
-    `where_expr` path goes through, for every spelling except one). A
-    single-segment string stays a strict flat-column reference -- see
-    `resolve_ref_string`. `"."` is that one exception: the whole `json_data`
-    blob (`WholeJsonData`), a `select`-only spelling -- `order_by`/`where`
-    reject it. Omitting `select` returns every flat column, sorted.
+    through the same `resolve_column_path` a `where_expr` path goes
+    through. A single-segment string stays a strict flat-column reference
+    -- see `resolve_ref_string`. Omitting `select` returns every flat
+    column, sorted.
 
     `default_ref_key` gives each entry its canonical response key, and
     `query_lang.parse_select` parses a list of entry strings (with optional
@@ -1901,12 +1844,32 @@ def _column_expr(
     reference to a column in `_POSTGRESQL_PHYSICAL_COLUMN_OVERRIDES` (e.g.
     `Media.desc`) needs the same physical-name mapping a `SELECT`/`WHERE`
     reference does.
+
+    When `collation` isn't given, text columns on SQLite (`dialect` is
+    `Dialect.SQLITE` or omitted -- SQLite is the default target) fall back
+    to `COLLATE NOCASE` rather than no `COLLATE` clause at all. Plain
+    binary/codepoint comparison sorts every lowercase letter after every
+    uppercase one, so a surname stored with an uncapitalized prefix
+    ("de Vos", "von Hebel") sorts after every "Z..." surname instead of
+    interleaving with them the way Gramps Desktop's locale-aware collator
+    does -- see ROADMAP.md's "Default NOCASE collation" note. `NOCASE` is
+    ASCII-only case folding, not full locale parity (it won't fold
+    accented letters), but it's built into SQLite and needs no connection
+    setup, unlike a real locale collation (`resources/object_query.py`'s
+    `_resolve_collation`), so it's a safe default with no caller wiring
+    required. PostgreSQL has no built-in `NOCASE` collation, so this
+    fallback is SQLite-only; an explicit `collation` is still required
+    there for the same fix.
     """
     sql, params = _render_column(
         column, spec, dialect, value=_cast_hint(ref_value_type(spec, column)), treeid=treeid
     )
-    if collation and _is_text_ref(column, spec):
-        return f'{sql} COLLATE "{collation}"', params
+    if _is_text_ref(column, spec):
+        effective_collation = collation or (
+            "NOCASE" if dialect in (None, Dialect.SQLITE) else None
+        )
+        if effective_collation:
+            return f'{sql} COLLATE "{effective_collation}"', params
     return sql, params
 
 
@@ -2107,7 +2070,13 @@ def compile_query(
     `collation`, if given, names a locale collation already ensured to exist
     on the connection (see `resources/object_query.py`'s `_resolve_collation`)
     and is applied to every text-typed `ORDER BY` column (and the matching
-    keyset comparisons) via `COLLATE "<collation>"`.
+    keyset comparisons) via `COLLATE "<collation>"`. Omitted (the default),
+    text columns still get `COLLATE "NOCASE"` on SQLite (see `_column_expr`)
+    -- ASCII case-folding built into SQLite itself, not full locale parity,
+    but enough to keep an uncapitalized surname prefix ("de Vos") from
+    sorting after every "Z..." surname instead of interleaving with them.
+    PostgreSQL has no built-in `NOCASE`, so an explicit `collation` is still
+    needed there for the same fix.
 
     A `select` entry given as a dotted/bracketed path string is resolved
     here (via `resolve_ref_string`) before rendering, so the same text
@@ -2126,7 +2095,7 @@ def compile_query(
     table, no `JsonPath`/`RelatedObject`); it is not safe in general.
     """
     columns = [
-        resolve_select_ref_string(spec, entry) if isinstance(entry, str) else entry
+        resolve_ref_string(spec, entry) if isinstance(entry, str) else entry
         for entry in (query.select if query.select else sorted(spec.columns))
     ]
 

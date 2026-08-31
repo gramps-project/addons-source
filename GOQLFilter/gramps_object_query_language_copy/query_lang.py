@@ -169,7 +169,6 @@ from .query import (
     QueryError,
     Regex,
     SelectRef,
-    WholeJsonData,
     default_ref_key,
     resolve_collection,
     resolve_column_path,
@@ -1176,8 +1175,7 @@ def parse_select_entry(spec: ObjectTypeSpec, entry: str) -> Tuple[SelectRef, str
     The entry is a column expression in the same "almost Python" grammar
     `where_expr` uses for a comparison's column side -- a flat column
     (`gramps_id`), a JSON path (`primary_name.surname_list[0].surname`), a
-    path crossing relationships (`birth.place.title`), `"."` for the whole
-    `json_data` blob (`WholeJsonData`), or a
+    path crossing relationships (`birth.place.title`), or a
     `count(relationship[, condition])` call -- optionally followed by
     `as <key>` to name it in the response.
 
@@ -1210,24 +1208,15 @@ def parse_select_entry(spec: ObjectTypeSpec, entry: str) -> Tuple[SelectRef, str
                 f"must be a plain name"
             )
 
-    if text == ".":
-        # Not valid Python syntax (`ast.parse(".")` is a `SyntaxError`), so
-        # this has to be caught before the parser ever sees it -- the one
-        # select entry that isn't an expression at all, just a literal
-        # stand-in for "the whole `json_data` blob".
-        ref: SelectRef = WholeJsonData()
-    else:
-        try:
-            node = ast.parse(text, mode="eval").body
-        except SyntaxError as error:
-            raise QueryLangError(
-                f"could not parse select entry {entry!r}: {error}"
-            ) from error
+    try:
+        node = ast.parse(text, mode="eval").body
+    except SyntaxError as error:
+        raise QueryLangError(f"could not parse select entry {entry!r}: {error}") from error
 
-        try:
-            ref = json_column_to_ref(_translate_column_or_count(node, spec), spec)
-        except (QueryLangError, QueryError) as error:
-            raise QueryLangError(f"invalid select entry {entry!r}: {error}") from error
+    try:
+        ref = json_column_to_ref(_translate_column_or_count(node, spec), spec)
+    except (QueryLangError, QueryError) as error:
+        raise QueryLangError(f"invalid select entry {entry!r}: {error}") from error
 
     if alias is not None:
         return ref, alias
