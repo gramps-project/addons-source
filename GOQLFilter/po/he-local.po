@@ -1,0 +1,135 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-04 08:52-0700\n"
+"PO-Revision-Date: 2026-08-05 18:01+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
+"addons/he/>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
+
+msgid ""
+"Matches objects for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"התאמת עצמים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
+
+msgid "Person GOQL Filter"
+msgstr "מסנן GOQL לאדם"
+
+msgid "Gramplet providing a gramps-object-query-language person filter"
+msgstr "גרמפלט שמספק מסנן אדם בשפת־שאילתות־עצמי־גרמפס (GOQL)"
+
+msgid "GOQL Filter"
+msgstr "מסנן GOQL"
+
+msgid "Family GOQL Filter"
+msgstr "מסנן GOQL למשפחה"
+
+msgid "Gramplet providing a gramps-object-query-language family filter"
+msgstr "גרמפלט שמספק מסנן משפחה בשפת־שאילתות־עצמי־גרמפס (GOQL)"
+
+msgid "Event GOQL Filter"
+msgstr "מסנן GOQL לאירוע"
+
+msgid "Gramplet providing a gramps-object-query-language event filter"
+msgstr "ברמפלט שמספר מסנן אירועים בשפת־שאילתות־עצמי־גרמפס (GOQL)"
+
+msgid "Place GOQL Filter"
+msgstr "מסנן מקומות GOQL"
+
+msgid "Gramplet providing a gramps-object-query-language place filter"
+msgstr "גרמפלט שמספק מסנן מקומות בשפת־שאילתות־עצמי־גרמפס (GOQL)"
+
+msgid "Repository GOQL Filter"
+msgstr "מסנן מאגרים GOQL"
+
+msgid "Gramplet providing a gramps-object-query-language repository filter"
+msgstr "גרמפלט שמספק מסנן מאגרים בשפת־שאילתות־עצמי־גרמפס (GOQL)"
+
+msgid "Source GOQL Filter"
+msgstr "מסנן מקור GOQL"
+
+msgid "Gramplet providing a gramps-object-query-language source filter"
+msgstr "גרמפלט שמספק מסנן מקורות בשפת־שאילתות־עצמי־גרמפס (GOQL)"
+
+msgid "Citation GOQL Filter"
+msgstr "מסנן מובאה GOQL"
+
+msgid "Gramplet providing a gramps-object-query-language citation filter"
+msgstr "גרמפלט שמספק מסנן מובאות בשפת־שאילתות־עצמי־גרמפס (GOQL)"
+
+msgid "Media GOQL Filter"
+msgstr "מסנן מדיה GOQL"
+
+msgid "Gramplet providing a gramps-object-query-language media filter"
+msgstr "גרמפלט שמספק מסנן מדיה בשפת־שאילתות־עצמי־גרמפס (GOQL)"
+
+msgid "Note GOQL Filter"
+msgstr "מסנן הערה GOQL"
+
+msgid "Gramplet providing a gramps-object-query-language note filter"
+msgstr "גרמפלט שמספק מסנן הערות בשפת־שאילתות־עצמי־גרמפס (GOQL)"
+
+msgid "A gramps-object-query-language where-expression, e.g.\n"
+msgstr "ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), לדוגמה\n"
+
+msgid ""
+"Matches people for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"התאמת אנשים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
+
+msgid ""
+"Matches families for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"התאמת משפחות שבהן ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
+
+msgid ""
+"Matches events for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"התאמת אירועים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
+
+msgid ""
+"Matches places for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"התאמת מקומות שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
+
+msgid ""
+"Matches repositories for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"התאמת אגרים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
+
+msgid ""
+"Matches sources for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"התאמת מקורות שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
+
+msgid ""
+"Matches citations for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"התאמת מובאות שבהן ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
+
+msgid ""
+"Matches media for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr "התאמת מדיה שבהן ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
+
+msgid ""
+"Matches notes for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"התאמת הערות שבהן ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
