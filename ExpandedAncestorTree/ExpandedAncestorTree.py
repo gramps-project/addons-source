@@ -129,29 +129,29 @@ class PersonBox(BoxBase):
         is_vector = any(v in doc_type_str for v in ['pdf', 'svg', 'cairo', 'psdoc', 'image'])
 
         if is_vector:
+            style_sheet = doc.get_style_sheet()
+            base_font_pt = style_sheet.get_paragraph_style("AC2-Normal").get_font().get_size()
+            lh = PT2CM(base_font_pt)
+
             doc.draw_box(self.boxstr, "", x, y, self.width, self.height)
 
-            y_off = 0.3
+            y_off = lh * 0.95
             for i, line_text in enumerate(lines):
                 if not line_text.strip():
                     continue
                 style = "AC2-Name" if i == 0 else "AC2-Normal-Text"
-                doc.draw_text(style, line_text, x + 0.2, y + y_off)
-                y_off += 0.45
+                doc.draw_text(style, line_text, x + lh * 0.6, y + y_off)
+                y_off += lh * 1.2
 
             if self.idx > 0:
-                style_sheet = doc.get_style_sheet()
-                yoff_idx = PT2CM(style_sheet.get_paragraph_style("AC2-Normal").get_font().get_size())
-                doc.draw_text(self.boxstr, "%d" % self.idx, x, y - yoff_idx)
+                doc.draw_text(self.boxstr, "%d" % self.idx, x, y - lh * 1.4)
         else:
             if self.idx > 0:
                 text_str = f"[{self.idx}] {text_str}"
             doc.draw_box(self.boxstr, text_str, x, y, self.width, self.height)
 
-
 class FamilyBox(BoxBase):
     """Marriage/family box inherited from the original report.
-
     """
 
     def __init__(self, level):
@@ -289,11 +289,15 @@ class TreeConnectionLine(LineBase):
             doc.draw_line(line_style, current_x, y_pos, x_end, y_pos)
 
         for b in self.start_boxes:
+            if b not in page.boxes:
+                continue
             y = b.y_cm + b.height / 2.0 - page.page_y_offset
             x1 = b.x_cm + b.width - page.page_x_offset
             draw_horizontal_with_bridges(x1, my_x, y)
 
         for b in self.end_boxes:
+            if b not in page.boxes:
+                continue
             y = b.y_cm + b.height / 2.0 - page.page_y_offset
             x2 = b.x_cm - page.page_x_offset
             draw_horizontal_with_bridges(my_x, x2, y)
@@ -687,7 +691,10 @@ class LRTransform:
     def __init__(self, canvas, max_generations, gen_shift=0):
         self.canvas = canvas
         self.rept_opts = canvas.report_opts
-        self.y_offset = self.rept_opts.littleoffset * 2 + self.canvas.title.height
+
+        top_margin = 0.8 if GUIConnect().get_val("show_idx") else 0.0
+        self.y_offset = self.rept_opts.littleoffset * 2 + self.canvas.title.height + top_margin
+
         self.gen_shift = gen_shift
 
         max_offset = max([getattr(b, 'collateral_offset', 0) for b in self.canvas.boxes] + [0])
@@ -755,6 +762,9 @@ class MakeReport:
             self.get_height_width(box)
 
         self.canvas.report_opts.max_box_height = max(self.father_ht, self.mother_ht)
+
+        if GUIConnect().get_val("show_idx"):
+            self.canvas.report_opts.box_pgap += 1.0
 
         for box in self.canvas.boxes:
             box.width = self.canvas.report_opts.max_box_width
@@ -856,6 +866,9 @@ class ExpandedAncestorTree(Report):
         font_normal = style_sheet.get_paragraph_style("AC2-Normal").get_font()
         self.canvas = Canvas(self.doc, ReportOptions(self.doc, font_normal, "AC2-line"))
 
+        if self.connect.get_val("show_idx"):
+            self.canvas.report_opts.littleoffset += 1.0
+
         self.canvas.report_opts.box_shadow *= self.connect.get_val("shadowscale")
         self.canvas.report_opts.box_pgap *= self.connect.get_val("box_Yscale")
         self.canvas.report_opts.box_mgap *= self.connect.get_val("box_Yscale")
@@ -892,9 +905,12 @@ class ExpandedAncestorTree(Report):
             one_page = self.connect.get_val("resize_page")
             scale_report = self.connect.get_val("scale_tree")
 
-            if "Svg" in self.doc.__class__.__name__:
+            if "Svg" in self.doc.__class__.__name__ or "svg" in str(type(self.doc)).lower():
                 one_page = True
                 scale_report = 0
+
+            if scale_report == 2 and not ("Svg" in self.doc.__class__.__name__ or "svg" in str(type(self.doc)).lower()):
+                scale_report = 1
 
             scale = self.canvas.scale_report(one_page, scale_report != 0, scale_report == 2)
             step()
