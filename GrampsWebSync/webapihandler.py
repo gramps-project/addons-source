@@ -126,13 +126,9 @@ def _macos_keychains() -> list[str]:
 def create_macos_ssl_context() -> ssl.SSLContext:
     """Create an SSL context trusting the CAs in the user's macOS keychains.
 
-    A privately issued CA — a corporate root, or one made for a self-hosted
-    Gramps Web instance — lands in the admin or login keychain, never in the
-    read-only ``SystemRootCertificates`` list. Reading that list alone fails
-    with ``CERTIFICATE_VERIFY_FAILED`` on a server Safari opens happily.
-
-    There is no fallback: the bundled OpenSSL's ``OPENSSLDIR`` points into the
-    build machine's tree, so the default store is empty on a user's Mac.
+    Searches the hard-coded system keychains and the user keychains reported
+    by ``security list-keychains``, so that a privately issued CA installed in
+    the admin or login keychain is trusted alongside Apple's public roots.
     """
     ctx = ssl.create_default_context()
     pem_blocks: list[bytes] = []
