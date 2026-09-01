@@ -1,0 +1,7 @@
+GOQLFilter/gramps_object_query_language_copy/__init__.py
+GOQLFilter/gramps_object_query_language_copy/evaluator.py
+GOQLFilter/gramps_object_query_language_copy/proxied_query.py
+GOQLFilter/gramps_object_query_language_copy/query.py
+GOQLFilter/gramps_object_query_language_copy/query_lang.py
+GOQLFilter/gramps_object_query_language_copy/py.typed
+GOQLFilter/gramps_object_query_language_copy/LICENSE
