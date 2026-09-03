@@ -150,6 +150,8 @@ from .query import (
     SOURCE,
     TAG,
     And,
+    BacklinkClassFilter,
+    Backlinks,
     CollectionCount,
     ColumnRef,
     Contains,
@@ -381,7 +383,9 @@ def _translate_count_call(node: ast.Call, spec: ObjectTypeSpec) -> dict:
 
     `relationship`/`condition` resolve exactly like `exists(...)`'s do --
     same `resolve_collection` lookup, same recursive `_translate_top_level`
-    against the collection's target type for the optional condition.
+    against the collection's target type for the optional condition (or,
+    for `Backlinks`, `_translate_backlinks_condition` -- see
+    `_translate_exists_call`'s own docstring).
     """
     if not 1 <= len(node.args) <= 2 or node.keywords:
         raise QueryLangError(
@@ -399,7 +403,10 @@ def _translate_count_call(node: ast.Call, spec: ObjectTypeSpec) -> dict:
         raise QueryLangError(str(error)) from error
     payload: dict = {"relationship": name_node.id}
     if len(node.args) == 2:
-        payload["where"] = _translate_top_level(node.args[1], collection.target)
+        if isinstance(collection, Backlinks):
+            payload["where"] = [_translate_backlinks_condition(node.args[1])]
+        else:
+            payload["where"] = _translate_top_level(node.args[1], collection.target)
     return {"count_of": payload}
 
 
@@ -627,6 +634,67 @@ def _translate_regex_call(node: ast.Call, spec: ObjectTypeSpec) -> dict:
     return {"column": column, "op": "regex", "value": pattern}
 
 
+def _translate_backlinks_condition(node: ast.AST) -> dict:
+    """`exists(backlinks, ...)`/`count(backlinks, ...)`'s only supported
+    condition shape: a single comparison against `_class`, the referrer's
+    own class name (`_class == "Person"`) -- not routed through
+    `_translate_compare`'s general and/or/field-path machinery at all,
+    since there's no `ObjectTypeSpec` to validate a richer path against (a
+    backlink's referrer can be any of the ten object types; see `query.py`'s
+    `Backlinks`/`BacklinkClassFilter` docstrings). Chaining (`a < b < c`),
+    field-vs-field, and substring/`in`-as-membership-on-a-path are all out
+    of scope here on purpose -- only `_class`, `==`/`!=`/`is`/`is not`/`in`
+    (folded straight to `"eq"`/`"ne"`/`"in"`, matching `_COMPARE_OPS` --
+    `not in` isn't supported, there's no `{"not": ...}` wrapper for this
+    leaf shape to unwrap, see `_backlink_condition_from_json`), and a
+    string (or string-list, for `in`) literal.
+    """
+    if not isinstance(node, ast.Compare) or len(node.ops) != 1 or len(node.comparators) != 1:
+        raise QueryLangError(
+            f"exists(backlinks, ...)'s condition must be a single comparison "
+            f"against _class, e.g. _class == \"Person\": {ast.dump(node)}"
+        )
+    op = _COMPARE_OPS.get(type(node.ops[0]))
+    if op not in ("eq", "ne", "in"):
+        raise QueryLangError(
+            f"_class only supports ==, !=, is, 'is not', in -- not "
+            f"{type(node.ops[0]).__name__!r}: {ast.dump(node)}"
+        )
+
+    def _is_class_name(candidate: ast.AST) -> bool:
+        return isinstance(candidate, ast.Name) and candidate.id == "_class"
+
+    left, rhs = node.left, node.comparators[0]
+    if op == "in":
+        if not _is_class_name(left):
+            raise QueryLangError(
+                f"'in' needs _class on the left, e.g. "
+                f"_class in [\"Person\", \"Family\"]: {ast.dump(node)}"
+            )
+        values = _translate_list(rhs)
+        if not values or not all(isinstance(v, str) for v in values):
+            raise QueryLangError(
+                f"_class in [...] needs a non-empty list of string literals: {ast.dump(node)}"
+            )
+        return {"column": "_class", "op": "in", "value": values}
+    if _is_class_name(left):
+        value_node = rhs
+    elif _is_class_name(rhs):
+        value_node = left
+        op = _FLIP_OP[op]  # eq/ne flip to themselves -- kept for consistency with every other comparison
+    else:
+        raise QueryLangError(
+            f"exists(backlinks, ...)'s condition must compare _class, the "
+            f"referring object's own type: {ast.dump(node)}"
+        )
+    value = _translate_value(value_node)
+    if not isinstance(value, str):
+        raise QueryLangError(
+            f"_class must be compared against a string literal: {ast.dump(node)}"
+        )
+    return {"column": "_class", "op": op, "value": value}
+
+
 def _translate_exists_call(node: ast.Call, spec: ObjectTypeSpec) -> dict:
     """Translate `exists(relationship[, condition])` into
     `{"exists": {"relationship": ..., "where": [...]}}` -- `where` omitted
@@ -638,7 +706,11 @@ def _translate_exists_call(node: ast.Call, spec: ObjectTypeSpec) -> dict:
     name's target drives `resolve_column_path` -- `condition`, if given, is
     itself a full `where_expr` boolean expression, just parsed against that
     target type instead of `spec`, via the same `_translate_top_level` this
-    module already uses for the top-level expression.
+    module already uses for the top-level expression. `Backlinks` (see
+    `resolve_collection`'s own docstring) has no such target type, so its
+    `condition` goes through `_translate_backlinks_condition` instead,
+    wrapped in a single-element list to match `_translate_top_level`'s own
+    `List[dict]` shape.
     """
     if not 1 <= len(node.args) <= 2 or node.keywords:
         raise QueryLangError(
@@ -656,7 +728,10 @@ def _translate_exists_call(node: ast.Call, spec: ObjectTypeSpec) -> dict:
         raise QueryLangError(str(error)) from error
     payload: dict = {"relationship": name_node.id}
     if len(node.args) == 2:
-        payload["where"] = _translate_top_level(node.args[1], collection.target)
+        if isinstance(collection, Backlinks):
+            payload["where"] = [_translate_backlinks_condition(node.args[1])]
+        else:
+            payload["where"] = _translate_top_level(node.args[1], collection.target)
     return {"exists": payload}
 
 
@@ -1026,7 +1101,9 @@ def json_column_to_ref(column: Union[str, dict], spec: ObjectTypeSpec) -> Column
     `{"count_of": {"relationship": ..., "where": [...]}}` resolves to a
     `CollectionCount` the same way `_node_from_json`'s `"exists"` case
     resolves to an `Exists` -- same `resolve_collection` lookup, same
-    recursive `where_list_to_ast` for the optional condition.
+    recursive `where_list_to_ast` for the optional condition (or, when
+    `relationship` resolves to `Backlinks`, `_backlink_condition_from_json`
+    instead -- see `_node_from_json`'s own docstring for why).
 
     A plain string goes through `resolve_ref_string`, so a *dotted* one
     (`"birth.date.sortval"`) means the same thing here as the identical
@@ -1039,11 +1116,12 @@ def json_column_to_ref(column: Union[str, dict], spec: ObjectTypeSpec) -> Column
     if "count_of" in column:
         payload = column["count_of"]
         collection = resolve_collection(spec, payload["relationship"])
-        condition = (
-            where_list_to_ast(payload["where"], collection.target)
-            if "where" in payload
-            else None
-        )
+        if "where" not in payload:
+            condition = None
+        elif isinstance(collection, Backlinks):
+            condition = _backlink_condition_from_json(payload["where"])
+        else:
+            condition = where_list_to_ast(payload["where"], collection.target)
         return CollectionCount(collection, condition)
     return resolve_column_path(spec, column["json_path"])
 
@@ -1083,6 +1161,33 @@ def _condition_from_json(condition: dict, spec: ObjectTypeSpec) -> Any:
     return _OP_CLASSES[op](column, value)
 
 
+def _backlink_condition_from_json(where: List[dict]) -> BacklinkClassFilter:
+    """The `Backlinks`-specific counterpart to `where_list_to_ast` -- a
+    backlinks condition is always exactly the one leaf
+    `_translate_backlinks_condition` (or a raw `where` JSON body written by
+    hand in that same shape) produces: `{"column": "_class", "op":
+    "eq"/"ne"/"in", "value": ...}`. No `and`/`or`/`not`/nested `exists` --
+    see `BacklinkClassFilter`'s own docstring in query.py for why a
+    backlink's condition can't reach any richer than its own class name.
+    Raises `QueryError` (not `QueryLangError` -- matching `where_list_to_ast`'s
+    own convention: there's no parsing here, only already-translated/
+    already-parsed JSON).
+    """
+    if len(where) != 1:
+        raise QueryError(
+            f"a backlinks condition must be exactly one comparison against "
+            f"_class, got {len(where)}"
+        )
+    leaf = where[0]
+    op = leaf.get("op")
+    if leaf.get("column") != "_class" or op not in ("eq", "ne", "in"):
+        raise QueryError(
+            f"a backlinks condition must be a single _class ==/!=/in "
+            f"comparison, got {leaf!r}"
+        )
+    return BacklinkClassFilter(op=op, value=leaf["value"])
+
+
 def where_list_to_ast(conditions: List[dict], spec: ObjectTypeSpec) -> Any:
     """A `parse_expr`-shaped list of top-level conditions (implicitly AND'd),
     translated to a single `query.py` boolean expression -- shared by
@@ -1114,6 +1219,12 @@ def _node_from_json(node: dict, spec: ObjectTypeSpec) -> Any:
     [...]}`/`{"not": node}`/`{"exists": {...}}` combinator -- translated to a
     `query.py` boolean expression (`Eq`/`Lt`/`In`/... for a leaf, `And`/`Or`/
     `Not`/`Exists` for a combinator), recursing into each child the same way.
+    `"exists"`'s `relationship` resolving to `Backlinks` (rather than an
+    ordinary `Collection`) routes its optional `where` through
+    `_backlink_condition_from_json` instead of `where_list_to_ast` -- a
+    `Backlinks` condition is never a general boolean tree (see
+    `BacklinkClassFilter`'s docstring in query.py), so it needs no
+    `collection.target` to resolve against (it has none).
     """
     if "and" in node:
         return And(*(_node_from_json(child, spec) for child in node["and"]))
@@ -1124,11 +1235,12 @@ def _node_from_json(node: dict, spec: ObjectTypeSpec) -> Any:
     if "exists" in node:
         payload = node["exists"]
         collection = resolve_collection(spec, payload["relationship"])
-        condition = (
-            where_list_to_ast(payload["where"], collection.target)
-            if "where" in payload
-            else None
-        )
+        if "where" not in payload:
+            condition = None
+        elif isinstance(collection, Backlinks):
+            condition = _backlink_condition_from_json(payload["where"])
+        else:
+            condition = where_list_to_ast(payload["where"], collection.target)
         return Exists(collection, condition)
     return _condition_from_json(node, spec)
 

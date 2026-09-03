@@ -497,11 +497,56 @@ class CollectionCount:
 
     Shares `Exists`'s subquery body (`_collection_subquery_body`) verbatim,
     just wrapped as `(SELECT COUNT(*) FROM ...)` instead of
-    `EXISTS (SELECT 1 FROM ...)` -- see `_render_collection_count`.
+    `EXISTS (SELECT 1 FROM ...)` -- see `_render_collection_count`. Also
+    covers `Backlinks` (defined just below), whose body comes from
+    `_backlinks_subquery_body` instead -- see `Exists`'s own docstring for
+    why.
     """
 
-    collection: Collection
+    collection: "Union[Collection, Backlinks]"
     condition: Optional[Any] = None
+
+
+@dataclass(frozen=True)
+class Backlinks:
+    """Pseudo-collection: `EXISTS`/`COUNT` against Gramps' own `reference`
+    table (`obj_handle, obj_class, ref_handle, ref_class` -- see
+    `gramps/plugins/db/dbapi/dbapi.py`'s `CREATE TABLE reference`, and
+    `find_backlink_handles()` there for the same lookup done row-by-row)
+    rather than a list living in the current row's own `json_data`. Unlike
+    `Collection`, there's no `list_path`/`ref_field` (nothing to unnest out
+    of this row) and no single `target` (a backlink's referrer can be any
+    of the ten object types at once, told apart only by `reference`'s own
+    `obj_class` column) -- so it's registered and dispatched on separately
+    everywhere a `Collection` is (`_COLLECTIONS`, `Exists.compile`,
+    `_render_collection_count`), rather than trying to squeeze it into
+    `Collection`'s shape.
+    """
+
+    name: str = "backlinks"
+
+
+@dataclass(frozen=True)
+class BacklinkClassFilter:
+    """`Backlinks`'s only supported condition shape: a single comparison
+    against the referrer's class name -- `exists(backlinks, _class ==
+    "Person")`. `_class` matches the field name every object's own
+    serialized JSON already uses for its type (gramps-web-api's
+    `NoteSchema`/etc.'s `_class`), not `obj_class` (the physical
+    `reference` row's own column name -- see `_backlinks_subquery_body`),
+    so a `where_expr` author never needs to know that table exists.
+
+    Deliberately not a general `Comparison`/boolean tree the way every
+    other collection's condition is: a backlink's referrer can be any of
+    the ten object types, so there's no single schema to resolve a richer
+    field path (`primary_name.surname`) against -- see the "Reverse
+    relationships" item in ROADMAP.md for that larger, deliberately
+    out-of-scope feature. `op` is `"eq"`/`"ne"`/`"in"`; `value` is a class
+    name string (`"eq"`/`"ne"`) or a list of them (`"in"`).
+    """
+
+    op: str
+    value: Any
 
 
 def _generic_collections(
@@ -594,6 +639,20 @@ _COLLECTIONS: dict[str, dict[str, Collection]] = {
     },
 }
 
+# Every one of the ten object types can be pointed to by something else --
+# even Tag, via any other type's own tag_list -- so "backlinks" is injected
+# into every table uniformly here, rather than repeated by hand in each
+# `_COLLECTIONS[...]` entry above the way the four optional
+# `_generic_collections()` flags (which really do vary per type) are.
+# `setdefault` also covers `TAG.table`, which -- unlike the other nine --
+# has no forward collections at all today, so it has no dict entry above yet.
+for _table in (
+    PERSON.table, FAMILY.table, EVENT.table, PLACE.table, REPOSITORY.table,
+    SOURCE.table, CITATION.table, MEDIA.table, NOTE.table, TAG.table,
+):
+    _COLLECTIONS.setdefault(_table, {})["backlinks"] = Backlinks()
+del _table
+
 
 def _check_no_collection_relationship_name_collisions() -> None:
     for table, collections in _COLLECTIONS.items():
@@ -608,10 +667,15 @@ def _check_no_collection_relationship_name_collisions() -> None:
 _check_no_collection_relationship_name_collisions()
 
 
-def resolve_collection(spec: ObjectTypeSpec, name: str) -> Collection:
-    """Look up a `Collection` by name on `spec`'s table -- `exists(...)`'s
-    first argument, resolved the same way `resolve_column_path` resolves a
-    `_RELATIONSHIPS` name, just from the separate `_COLLECTIONS` namespace.
+def resolve_collection(spec: ObjectTypeSpec, name: str) -> Union[Collection, Backlinks]:
+    """Look up a `Collection` (or `Backlinks`) by name on `spec`'s table --
+    `exists(...)`'s first argument, resolved the same way
+    `resolve_column_path` resolves a `_RELATIONSHIPS` name, just from the
+    separate `_COLLECTIONS` namespace. Every caller needs its own
+    `isinstance(..., Backlinks)` branch before touching `Collection`-only
+    fields like `.target` -- see `Exists.compile`/`_render_collection_count`
+    in this module, and `query_lang.py`'s `_translate_exists_call`/
+    `_translate_count_call`/`_node_from_json`/`json_column_to_ref`.
     """
     collections = _COLLECTIONS.get(spec.table, {})
     if name not in collections:
@@ -1557,6 +1621,46 @@ def _collection_subquery_body(
     return body, params
 
 
+def _backlinks_subquery_body(
+    outer_table: str,
+    condition: Optional["BacklinkClassFilter"],
+    treeid: Optional[int],
+) -> Tuple[str, list]:
+    """`reference WHERE reference.ref_handle = <outer_table>.handle
+    [ AND reference.obj_class {=,!=,IN} (?[, ?...])][ AND reference.treeid
+    = ?]` -- the `EXISTS`/`COUNT` body for `Backlinks`, parallel to
+    `_collection_subquery_body` but against a real relational table
+    instead of a JSON array unnested out of the current row -- identical
+    on both backends (`reference`'s columns are plain SQL columns, not
+    JSON), so (unlike every `Collection`) this needs no per-dialect source
+    function and no `dialect` argument at all. No table alias either:
+    `reference` never collides with `outer_table` (always one of the ten
+    primary tables, never literally "reference" itself), so there's
+    nothing to disambiguate.
+    """
+    where_parts = [f"reference.ref_handle = {outer_table}.handle"]
+    params: list = []
+    if condition is not None:
+        if condition.op == "in":
+            placeholders = ", ".join("?" for _ in condition.value)
+            where_parts.append(f"reference.obj_class IN ({placeholders})")
+            params.extend(condition.value)
+        else:
+            sql_op = "=" if condition.op == "eq" else "!="
+            where_parts.append(f"reference.obj_class {sql_op} ?")
+            params.append(condition.value)
+    if treeid is not None:
+        # Only meaningful under the `SharedPostgreSQL` addon, whose
+        # `reference` table (unlike the single-tree `dbapi` backend's) is
+        # itself tenant-scoped by a `treeid` column -- confirmed against
+        # that addon's own `shareddbapi.py` (`CREATE TABLE reference`, and
+        # its own `find_backlink_handles` filtering `... AND treeid = ?`).
+        where_parts.append("reference.treeid = ?")
+        params.append(treeid)
+    body = f"reference WHERE {' AND '.join(where_parts)}"
+    return body, params
+
+
 def _render_collection_count(
     count: "CollectionCount",
     outer_table: str,
@@ -1567,6 +1671,9 @@ def _render_collection_count(
     dispatched from `_render_column` the same way `RelatedObject`/`JsonPath`
     dispatch to their own renderers.
     """
+    if isinstance(count.collection, Backlinks):
+        body, params = _backlinks_subquery_body(outer_table, count.condition, treeid)
+        return f"(SELECT COUNT(*) FROM {body})", params
     if dialect is None:
         raise QueryError(
             f"a dialect is required to compile count({count.collection.name!r}, ...), "
@@ -1582,6 +1689,10 @@ class Exists:
     """`EXISTS (SELECT 1 FROM <target> JOIN <list> ... WHERE ...)` -- a
     one-to-many membership test over a `Collection` (see there), optionally
     narrowed by a `condition` compiled against the collection's target type.
+    Also covers `Backlinks` (see there), whose `EXISTS` body is rendered by
+    `_backlinks_subquery_body` instead -- a real table join rather than a
+    JSON-array unnest, since a backlink lives in Gramps' own `reference`
+    table, not in this row's own `json_data`.
 
     Not a correlated *scalar* subquery like `RelatedObject` -- `handle_ref`
     there names a single related row; here there can be any number, so the
@@ -1600,7 +1711,7 @@ class Exists:
     three-valued-logic special case at all.
     """
 
-    def __init__(self, collection: Collection, condition: Optional[Any] = None):
+    def __init__(self, collection: Union[Collection, Backlinks], condition: Optional[Any] = None):
         self.collection = collection
         self.condition = condition
 
@@ -1610,6 +1721,9 @@ class Exists:
         dialect: Optional[Dialect] = None,
         treeid: Optional[int] = None,
     ) -> Tuple[str, list]:
+        if isinstance(self.collection, Backlinks):
+            body, params = _backlinks_subquery_body(spec.table, self.condition, treeid)
+            return f"EXISTS (SELECT 1 FROM {body})", params
         if dialect is None:
             raise QueryError(
                 f"a dialect is required to compile exists({self.collection.name!r}, ...), "
