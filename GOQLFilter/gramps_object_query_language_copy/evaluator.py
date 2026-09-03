@@ -43,13 +43,15 @@ p99 latency -- see `object_query.py`'s dispatch.
 from __future__ import annotations
 
 import re
-from typing import Any, Optional
+from typing import Any, Iterator, Optional, Tuple
 
 from gramps.gen.errors import HandleError
 from gramps.gen.lib import json_utils
 
 from .query import (
     And,
+    BacklinkClassFilter,
+    Backlinks,
     Collection,
     CollectionCount,
     ColumnIndex,
@@ -223,6 +225,40 @@ def _collection_handles(obj: Any, collection: Collection) -> list:
     return [item for item in items if item]
 
 
+def _backlink_handles(
+    db: Any, obj: Any, condition: Optional[BacklinkClassFilter]
+) -> Iterator[Tuple[str, str]]:
+    """`(class_name, handle)` pairs for every object referencing `obj`,
+    matching `condition` (a `BacklinkClassFilter`, `Backlinks`' only
+    supported condition shape -- see query.py) if given -- the evaluator
+    counterpart to `query.py`'s `_backlinks_subquery_body`, walking
+    `db.find_backlink_handles` directly instead of joining the physical
+    `reference` table in SQL.
+
+    "eq"/"in" map straight onto `find_backlink_handles`'s own
+    `include_classes` parameter (already exactly "which classes to
+    include"); "ne" has no such shape to pass through (there's no
+    "every class except this one" parameter), so it walks the
+    unrestricted result and filters in Python instead.
+
+    Privacy comes from `db` itself, same as every other relationship this
+    module evaluates (see the module docstring): when `db` is a
+    `PrivateProxyDb`, its own `find_backlink_handles` override already
+    excludes a referrer that is itself private (`gramps/gen/proxy/
+    private.py`) before this function ever sees it -- no separate privacy
+    handling needed here.
+    """
+    if condition is None:
+        yield from db.find_backlink_handles(obj.handle)
+    elif condition.op in ("eq", "in"):
+        include_classes = [condition.value] if condition.op == "eq" else list(condition.value)
+        yield from db.find_backlink_handles(obj.handle, include_classes)
+    else:
+        for class_name, handle in db.find_backlink_handles(obj.handle):
+            if class_name != condition.value:
+                yield class_name, handle
+
+
 def _collection_count(db: Any, obj: Any, count: CollectionCount) -> int:
     """How many related rows in `count.collection` match `count.condition`
     (every related row at all, if `condition` is `None`) -- the evaluator
@@ -230,6 +266,8 @@ def _collection_count(db: Any, obj: Any, count: CollectionCount) -> int:
     `Exists`'s short-circuit on the first match, this has to walk every
     related row, matching `COUNT(*)`'s own semantics.
     """
+    if isinstance(count.collection, Backlinks):
+        return sum(1 for _ in _backlink_handles(db, obj, count.condition))
     getter = getattr(db, GETTER_BY_TABLE[count.collection.target.table])
     matched = 0
     for handle in _collection_handles(obj, count.collection):
@@ -354,6 +392,8 @@ def _evaluate_tri(db: Any, obj: Any, expr: Any, spec: ObjectTypeSpec) -> Optiona
         # other branch here, there's no missing-value case to collapse to
         # None for.
         collection = expr.collection
+        if isinstance(collection, Backlinks):
+            return any(True for _ in _backlink_handles(db, obj, expr.condition))
         getter = getattr(db, GETTER_BY_TABLE[collection.target.table])
         for handle in _collection_handles(obj, collection):
             try:
