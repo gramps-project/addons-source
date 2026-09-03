@@ -27,7 +27,7 @@ if (5, 2, 0) <= VERSION_TUPLE <= (6, 2, 0):
         id="ExpandedAncestorTree",
         name=_("Ancestor Tree Expanded"),
         description=_("Expanded Ancestor Graph showing direct ancestors, siblings, cousins and spouses."),
-        version="1.0.3",
+        version = '1.0.4',
         gramps_target_version=major_version,
         status=STABLE,
         fname="ExpandedAncestorTree.py",
