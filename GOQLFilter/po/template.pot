@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-04 08:52-0700\n"
+"POT-Creation-Date: 2026-09-03 09:11-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,53 +17,53 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: GOQLFilter/whereexprrule.py:212
+#: GOQLFilter/whereexprrule.py:210
 msgid "GOQL expression"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.py:214
+#: GOQLFilter/whereexprrule.py:212
 msgid ""
 "Matches objects for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.py:217
+#: GOQLFilter/whereexprrule.py:215
 msgid "General filters"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.py:261 GOQLFilter/whereexprrule.gpr.py:30
+#: GOQLFilter/whereexprrule.py:259 GOQLFilter/whereexprrule.gpr.py:30
 msgid "People matching the <GOQL expression>"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.py:266 GOQLFilter/whereexprrule.gpr.py:50
+#: GOQLFilter/whereexprrule.py:264 GOQLFilter/whereexprrule.gpr.py:49
 msgid "Families matching the <GOQL expression>"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.py:271 GOQLFilter/whereexprrule.gpr.py:70
+#: GOQLFilter/whereexprrule.py:269 GOQLFilter/whereexprrule.gpr.py:68
 msgid "Events matching the <GOQL expression>"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.py:276 GOQLFilter/whereexprrule.gpr.py:90
+#: GOQLFilter/whereexprrule.py:274 GOQLFilter/whereexprrule.gpr.py:87
 msgid "Places matching the <GOQL expression>"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.py:281 GOQLFilter/whereexprrule.gpr.py:110
+#: GOQLFilter/whereexprrule.py:279 GOQLFilter/whereexprrule.gpr.py:106
 msgid "Repositories matching the <GOQL expression>"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.py:286 GOQLFilter/whereexprrule.gpr.py:130
+#: GOQLFilter/whereexprrule.py:284 GOQLFilter/whereexprrule.gpr.py:125
 msgid "Sources matching the <GOQL expression>"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.py:291 GOQLFilter/whereexprrule.gpr.py:150
+#: GOQLFilter/whereexprrule.py:289 GOQLFilter/whereexprrule.gpr.py:144
 msgid "Citations matching the <GOQL expression>"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.py:296 GOQLFilter/whereexprrule.gpr.py:170
+#: GOQLFilter/whereexprrule.py:294 GOQLFilter/whereexprrule.gpr.py:163
 msgid "Media matching the <GOQL expression>"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.py:301 GOQLFilter/whereexprrule.gpr.py:190
+#: GOQLFilter/whereexprrule.py:299 GOQLFilter/whereexprrule.gpr.py:182
 msgid "Notes matching the <GOQL expression>"
 msgstr ""
 
@@ -75,75 +75,75 @@ msgstr ""
 msgid "Gramplet providing a gramps-object-query-language person filter"
 msgstr ""
 
-#: GOQLFilter/goql.gpr.py:39 GOQLFilter/goql.gpr.py:58
-#: GOQLFilter/goql.gpr.py:77 GOQLFilter/goql.gpr.py:96
-#: GOQLFilter/goql.gpr.py:117 GOQLFilter/goql.gpr.py:136
-#: GOQLFilter/goql.gpr.py:155 GOQLFilter/goql.gpr.py:174
-#: GOQLFilter/goql.gpr.py:193
+#: GOQLFilter/goql.gpr.py:39 GOQLFilter/goql.gpr.py:57
+#: GOQLFilter/goql.gpr.py:75 GOQLFilter/goql.gpr.py:93
+#: GOQLFilter/goql.gpr.py:113 GOQLFilter/goql.gpr.py:131
+#: GOQLFilter/goql.gpr.py:149 GOQLFilter/goql.gpr.py:167
+#: GOQLFilter/goql.gpr.py:185
 msgid "GOQL Filter"
 msgstr ""
 
-#: GOQLFilter/goql.gpr.py:50
+#: GOQLFilter/goql.gpr.py:49
 msgid "Family GOQL Filter"
 msgstr ""
 
-#: GOQLFilter/goql.gpr.py:51
+#: GOQLFilter/goql.gpr.py:50
 msgid "Gramplet providing a gramps-object-query-language family filter"
 msgstr ""
 
-#: GOQLFilter/goql.gpr.py:69
+#: GOQLFilter/goql.gpr.py:67
 msgid "Event GOQL Filter"
 msgstr ""
 
-#: GOQLFilter/goql.gpr.py:70
+#: GOQLFilter/goql.gpr.py:68
 msgid "Gramplet providing a gramps-object-query-language event filter"
 msgstr ""
 
-#: GOQLFilter/goql.gpr.py:88
+#: GOQLFilter/goql.gpr.py:85
 msgid "Place GOQL Filter"
 msgstr ""
 
-#: GOQLFilter/goql.gpr.py:89
+#: GOQLFilter/goql.gpr.py:86
 msgid "Gramplet providing a gramps-object-query-language place filter"
 msgstr ""
 
-#: GOQLFilter/goql.gpr.py:107
+#: GOQLFilter/goql.gpr.py:103
 msgid "Repository GOQL Filter"
 msgstr ""
 
-#: GOQLFilter/goql.gpr.py:109
+#: GOQLFilter/goql.gpr.py:105
 msgid "Gramplet providing a gramps-object-query-language repository filter"
 msgstr ""
 
-#: GOQLFilter/goql.gpr.py:128
+#: GOQLFilter/goql.gpr.py:123
 msgid "Source GOQL Filter"
 msgstr ""
 
-#: GOQLFilter/goql.gpr.py:129
+#: GOQLFilter/goql.gpr.py:124
 msgid "Gramplet providing a gramps-object-query-language source filter"
 msgstr ""
 
-#: GOQLFilter/goql.gpr.py:147
+#: GOQLFilter/goql.gpr.py:141
 msgid "Citation GOQL Filter"
 msgstr ""
 
-#: GOQLFilter/goql.gpr.py:148
+#: GOQLFilter/goql.gpr.py:142
 msgid "Gramplet providing a gramps-object-query-language citation filter"
 msgstr ""
 
-#: GOQLFilter/goql.gpr.py:166
+#: GOQLFilter/goql.gpr.py:159
 msgid "Media GOQL Filter"
 msgstr ""
 
-#: GOQLFilter/goql.gpr.py:167
+#: GOQLFilter/goql.gpr.py:160
 msgid "Gramplet providing a gramps-object-query-language media filter"
 msgstr ""
 
-#: GOQLFilter/goql.gpr.py:185
+#: GOQLFilter/goql.gpr.py:177
 msgid "Note GOQL Filter"
 msgstr ""
 
-#: GOQLFilter/goql.gpr.py:186
+#: GOQLFilter/goql.gpr.py:178
 msgid "Gramplet providing a gramps-object-query-language note filter"
 msgstr ""
 
@@ -238,49 +238,49 @@ msgid ""
 "expression evaluates to true"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.gpr.py:52
+#: GOQLFilter/whereexprrule.gpr.py:51
 msgid ""
 "Matches families for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.gpr.py:72
+#: GOQLFilter/whereexprrule.gpr.py:70
 msgid ""
 "Matches events for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.gpr.py:92
+#: GOQLFilter/whereexprrule.gpr.py:89
 msgid ""
 "Matches places for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.gpr.py:112
+#: GOQLFilter/whereexprrule.gpr.py:108
 msgid ""
 "Matches repositories for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.gpr.py:132
+#: GOQLFilter/whereexprrule.gpr.py:127
 msgid ""
 "Matches sources for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.gpr.py:152
+#: GOQLFilter/whereexprrule.gpr.py:146
 msgid ""
 "Matches citations for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.gpr.py:172
+#: GOQLFilter/whereexprrule.gpr.py:165
 msgid ""
 "Matches media for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
 
-#: GOQLFilter/whereexprrule.gpr.py:192
+#: GOQLFilter/whereexprrule.gpr.py:184
 msgid ""
 "Matches notes for which the given gramps-object-query-language where-"
 "expression evaluates to true"
