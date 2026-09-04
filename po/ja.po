@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-09 10:08-0700\n"
+"POT-Creation-Date: 2026-09-03 12:30-0700\n"
 "PO-Revision-Date: 2026-08-23 14:53+0000\n"
 "Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
@@ -215,7 +215,8 @@ msgstr "日付の暦名を非表示にする"
 msgid ""
 "By default, except for gregorian dates, Gramps shows the name of the "
 "calendar in the dates."
-msgstr "デフォルトでは、グレゴリオ暦の日付を除き、Gramps は日付に暦名を表示します。"
+msgstr ""
+"デフォルトでは、グレゴリオ暦の日付を除き、Gramps は日付に暦名を表示します。"
 
 #: AncestryTableReport/AncestryTableReport.py:519
 #: RepositoriesReport/RepositoriesReport.py:175
@@ -289,8 +290,8 @@ msgid ""
 "Parses strings from Riksarkivet and ArkivDigital to create sources and "
 "citations."
 msgstr ""
-"Riksarkivet と ArkivDigital からの文字列を解析して、ソースと引用を作成します"
-"。"
+"Riksarkivet と ArkivDigital からの文字列を解析して、ソースと引用を作成しま"
+"す。"
 
 #: ArchiveAssist/ArchiveAssist.gpr.py:26
 msgid "Archive Assist"
@@ -599,8 +600,8 @@ msgstr ""
 "タブで「+」 (プラス）を押すと、人物を追加できます。\n"
 "\n"
 "または外部ファイルから人物をインポートする :\n"
-"  • 「家系図」メニューの「インポート...」を使用して、外部ファイルを使用して"
-"ツリーを作成することができます。"
+"  • 「家系図」メニューの「インポート...」を使用して、外部ファイルを使用してツ"
+"リーを作成することができます。"
 
 #: Betawhatsnext/Betawhatsnext.py:254
 msgid ""
@@ -1131,7 +1132,8 @@ msgstr "送信"
 
 #: ChatWithTree/ChatWithTree.py:163
 msgid "Chat with Tree initialized.                 Type /help for help."
-msgstr "チャットウィズツリーが初期化されました。ヘルプは /help を入力してください。"
+msgstr ""
+"チャットウィズツリーが初期化されました。ヘルプは /help を入力してください。"
 
 #: ChatWithTree/ChatWithTree.py:463
 msgid ""
@@ -1238,7 +1240,8 @@ msgstr "コレクションクリップボード"
 
 #: ClipboardGramplet/ClipboardGramplet.gpr.py:11
 msgid "Gramplet for grouping collections of items to aid in data entry."
-msgstr "データ入力を補助するために項目のコレクションをグループ化するグランプレット。"
+msgstr ""
+"データ入力を補助するために項目のコレクションをグループ化するグランプレット。"
 
 #: ClockGramplet/ClockGramplet.gpr.py:4 ClockGramplet/ClockGramplet.gpr.py:9
 msgid "Clock"
@@ -2250,7 +2253,8 @@ msgstr "検索準備完了"
 msgid ""
 "Search Depth: {depth} | People Processed: {processed} | Queue Size: "
 "{queue_size}"
-msgstr "検索深度: {depth} | 処理済み人物: {processed} | キューサイズ: {queue_size}"
+msgstr ""
+"検索深度: {depth} | 処理済み人物: {processed} | キューサイズ: {queue_size}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 msgid "mentioned in note"
@@ -2930,7 +2934,8 @@ msgstr "配偶者 参照 %(reference)s : %(spouse)s"
 #: DescendantBooks/DescendantBookReport.py:249
 #, python-format
 msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
-msgstr "レポート参照: %(report)s, 参照: %(reference)s : %(person)s & %(spouse)s"
+msgstr ""
+"レポート参照: %(report)s, 参照: %(reference)s : %(person)s & %(spouse)s"
 
 #: DescendantBooks/DescendantBookReport.py:374
 msgid "Descendants Report"
@@ -3313,15 +3318,16 @@ msgstr "ノードをクリックして子孫にフォーカスし、子供を展
 #: DescendantSpaceTree/DescendantSpaceTree.py:904
 msgid "Click and drag anywhere on the viewer to position the descendant tree."
 msgstr ""
-"ビューア上の任意の場所をクリックしてドラッグし、子孫ツリーの位置を調整します"
-"。"
+"ビューア上の任意の場所をクリックしてドラッグし、子孫ツリーの位置を調整しま"
+"す。"
 
 #. Translators: Please do not translate ___HELP_RESET_BUTTON___.
 #: DescendantSpaceTree/DescendantSpaceTree.py:914
 msgid ""
 "Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
 "starting descendant."
-msgstr "リセットボタン ___HELP_RESET_BUTTON___ をクリックして、開始子孫に戻ります。"
+msgstr ""
+"リセットボタン ___HELP_RESET_BUTTON___ をクリックして、開始子孫に戻ります。"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:923
 msgid ""
@@ -3341,8 +3347,8 @@ msgid ""
 "A descendant and any spouses are listed in the same node.  Children of all "
 "of the descendant's families are grouped together."
 msgstr ""
-"子孫とその配偶者は同じノードにリストされます。子孫のすべての家族の子供は"
-"グループ化されます。"
+"子孫とその配偶者は同じノードにリストされます。子孫のすべての家族の子供はグ"
+"ループ化されます。"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:946
 msgid ""
@@ -3364,7 +3370,8 @@ msgstr ""
 msgid ""
 "The currently selected descendant and all of the ancestors of that person "
 "are highlighted in yellow."
-msgstr "現在選択されている子孫とその人物のすべての祖先は黄色で強調表示されます。"
+msgstr ""
+"現在選択されている子孫とその人物のすべての祖先は黄色で強調表示されます。"
 
 #. Translators: Please do not translate ___NAV_BUTTON_CONTINUE___ or ___NAV_BUTTON_ALT___.
 #: DescendantSpaceTree/DescendantSpaceTree.py:975
@@ -3376,9 +3383,9 @@ msgid ""
 "expand descendants of this person. "
 msgstr ""
 "人物が異なるブランチに現れることがあります。これは通常、家族間の結婚 (いとこ"
-"同士など）が原因です。この場合、その人物にもボタンが表示され"
-"、___NAV_BUTTON_CONTINUE___ または ___NAV_BUTTON_ALT___ で他のブランチに移動"
-"できます。この人物の子孫を展開するのは1つのブランチのみです。 "
+"同士など）が原因です。この場合、その人物にもボタンが表示され、"
+"___NAV_BUTTON_CONTINUE___ または ___NAV_BUTTON_ALT___ で他のブランチに移動で"
+"きます。この人物の子孫を展開するのは1つのブランチのみです。 "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:989
 msgid ""
@@ -3553,7 +3560,8 @@ msgstr "イベントを日付で並べ替え"
 
 #: DescendantsLines/DescendantsLines.py:1602
 msgid "Sort events by date (else use the order of the 'Display Format' above)."
-msgstr "イベントを日付で並べ替え (そうでない場合は、上記の「表示形式」の順序を使用)。"
+msgstr ""
+"イベントを日付で並べ替え (そうでない場合は、上記の「表示形式」の順序を使用)。"
 
 #: DescendantsLines/DescendantsLines.py:1606
 msgid "Text style"
@@ -3615,7 +3623,8 @@ msgstr "すべての人物ブロックの高さを同じにする"
 msgid ""
 "All the blocks of all the person have the same height, which is the height "
 "of the highest block."
-msgstr "すべての人物のブロックの高さは、最も高いブロックの高さと同じになります。"
+msgstr ""
+"すべての人物のブロックの高さは、最も高いブロックの高さと同じになります。"
 
 #: DescendantsLines/DescendantsLines.py:1640
 msgid "All Person's blocks have the same width"
@@ -3846,7 +3855,8 @@ msgstr "非公開とマークされた人物、画像、イベントを保護"
 
 #: DescendantsLines/DescendantsLines.py:1812
 msgid "The Privacy setting of only these types of Gramps objects are checked"
-msgstr "これらのタイプのGrampsオブジェクトのみプライバシー設定がチェックされます"
+msgstr ""
+"これらのタイプのGrampsオブジェクトのみプライバシー設定がチェックされます"
 
 #: DescendantsLines/DescendantsLines.py:1816
 msgid "Privacy text"
@@ -3867,7 +3877,8 @@ msgstr "全画像付き詳細子孫レポート"
 #: DetDescendantReport-images/detdescendantreport.gpr.py:6
 msgid ""
 "Produces a detailed descendant report with all images and optional todo list."
-msgstr "すべての画像とオプションのToDoリストを含む詳細な子孫レポートを生成します。"
+msgstr ""
+"すべての画像とオプションのToDoリストを含む詳細な子孫レポートを生成します。"
 
 #: DetDescendantReport-images/detdescendantreporti.py:472
 #, python-format
@@ -4050,7 +4061,8 @@ msgstr "メディアダウンロードツール"
 
 #: DownloadMedia/DownloadMedia.py:106
 msgid "Make sure you are connected to the internet before starting this tool."
-msgstr "このツールを開始する前にインターネットに接続していることを確認してください。"
+msgstr ""
+"このツールを開始する前にインターネットに接続していることを確認してください。"
 
 #: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
 msgid "Downloading files"
@@ -4189,9 +4201,9 @@ msgid ""
 "editor and save as an SVG file.<br>Make sure that the text editor encoding "
 "is UTF-8.</p>"
 msgstr ""
-"<p>このページでは、SVG の生のコードを提供します。<br>内容をテキスト "
-"エディターにコピーし、SVG ファイルとして保存します。<br>テキスト エディタの"
-"エンコーディングが UTF-8 であることを確認してください。</p>"
+"<p>このページでは、SVG の生のコードを提供します。<br>内容をテキスト エディ"
+"ターにコピーし、SVG ファイルとして保存します。<br>テキスト エディタのエンコー"
+"ディングが UTF-8 であることを確認してください。</p>"
 
 #: DynamicWeb/dynamicweb.py:2937
 msgid "Alternate Name"
@@ -4848,9 +4860,9 @@ msgid ""
 "example, in the media index page, the names of the individuals, families, "
 "places, sources that reference the media."
 msgstr ""
-"インデックス ページに項目への参照を含めるかどうか。たとえば、メディア "
-"インデックス ページでは、メディアを参照する個人、家族、場所、ソースの名前など"
-"です。"
+"インデックス ページに項目への参照を含めるかどうか。たとえば、メディア イン"
+"デックス ページでは、メディアを参照する個人、家族、場所、ソースの名前などで"
+"す。"
 
 #: DynamicWeb/dynamicweb.py:5080
 msgid "Default number of entries in the indexes"
@@ -4989,8 +5001,8 @@ msgid ""
 "Warning:  Changing this entry will update the Media object title field in "
 "Gramps not Exiv2 metadata."
 msgstr ""
-"警告: このエントリを変更すると、Exiv2メタデータではなくGrampsの"
-"メディアオブジェクトのタイトルフィールドが更新されます。"
+"警告: このエントリを変更すると、Exiv2メタデータではなくGrampsのメディアオブ"
+"ジェクトのタイトルフィールドが更新されます。"
 
 #: EditExifMetadata/editexifmetadata.py:165
 msgid "Provide a short description for this image."
@@ -5046,8 +5058,8 @@ msgid ""
 "This is the measurement of Above or Below Sea Level.  It is measured in "
 "meters.  Example: 200.558, -200.558"
 msgstr ""
-"これは海抜または海面下の測定値です。メートル単位で測定されます。例: "
-"200.558, -200.558"
+"これは海抜または海面下の測定値です。メートル単位で測定されます。例: 200.558, "
+"-200.558"
 
 #: EditExifMetadata/editexifmetadata.py:195
 msgid ""
@@ -5083,8 +5095,8 @@ msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
 msgstr ""
-"画像がExifメタデータの読み取り/書き込みが可能な画像タイプでない場合、可能な"
-"タイプに変換しますか？"
+"画像がExifメタデータの読み取り/書き込みが可能な画像タイプでない場合、可能なタ"
+"イプに変換しますか？"
 
 #: EditExifMetadata/editexifmetadata.py:213
 msgid ""
@@ -5144,7 +5156,8 @@ msgstr "サムネイル表示領域"
 msgid ""
 "WARNING: You are about to convert this image into a .jpeg image.  Are you "
 "sure that you want to do this?"
-msgstr "警告: この画像を.jpeg画像に変換しようとしています。本当に実行しますか？"
+msgstr ""
+"警告: この画像を.jpeg画像に変換しようとしています。本当に実行しますか？"
 
 #: EditExifMetadata/editexifmetadata.py:730
 msgid "Convert and Delete"
@@ -5166,7 +5179,8 @@ msgstr "エラーが発生しました。ソースと宛先のファイルパス
 msgid ""
 "There was an error in deleting the original file.  You will need to delete "
 "it yourself!"
-msgstr "元のファイルの削除中にエラーが発生しました。自分で削除する必要があります！"
+msgstr ""
+"元のファイルの削除中にエラーが発生しました。自分で削除する必要があります！"
 
 #: EditExifMetadata/editexifmetadata.py:838
 msgid "There was an error in converting your image file."
@@ -5198,11 +5212,13 @@ msgstr "編集領域からクリアされたデータフィールドを再表示
 
 #: EditExifMetadata/editexifmetadata.py:936
 msgid "This button will clear all of the data fields shown here."
-msgstr "このボタンは、ここに表示されているすべてのデータフィールドをクリアします。"
+msgstr ""
+"このボタンは、ここに表示されているすべてのデータフィールドをクリアします。"
 
 #: EditExifMetadata/editexifmetadata.py:940
 msgid "This button will clear all of the GPS fields shown here."
-msgstr "このボタンは、ここに表示されているすべてのGPSフィールドをクリアします。"
+msgstr ""
+"このボタンは、ここに表示されているすべてのGPSフィールドをクリアします。"
 
 #: EditExifMetadata/editexifmetadata.py:944
 msgid ""
@@ -5349,8 +5365,8 @@ msgid ""
 "If True only the substring will be replaced, otherwise the whole description "
 "will be deleted and replaced by the new one."
 msgstr ""
-"Trueの場合は部分文字列のみが置き換えられ、それ以外の場合は説明全体が削除され"
-"、新しい説明に置き換えられます。"
+"Trueの場合は部分文字列のみが置き換えられ、それ以外の場合は説明全体が削除さ"
+"れ、新しい説明に置き換えられます。"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:151
 msgid "Allow regex"
@@ -5380,6 +5396,113 @@ msgstr ""
 msgid "Retrieving all sub-filter matches"
 msgstr "すべてのサブフィルター一致を取得中"
 
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:28
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:174
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:973
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1053
+#, fuzzy
+#| msgid "Ancestor Generations"
+msgid "Ancestor Tree Expanded"
+msgstr "祖先世代"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:29
+msgid ""
+"Expanded Ancestor Graph showing direct ancestors, siblings, cousins and "
+"spouses."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:190
+#, fuzzy, python-format
+#| msgid "Ancestors places for %s"
+msgid "Ancestor Tree Expanded for %s"
+msgstr "%s の祖先の場所"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:544
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:606
+msgid "Tree Truncated"
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:545
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:607
+msgid ""
+"The generated tree reached the 400 people safety limit and has been "
+"truncated.\n"
+"\n"
+"Please reduce the number of generations or disable some options to see all "
+"branches."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1182
+#, fuzzy
+#| msgid "Shows the number of descendants of the current person"
+msgid "Include descendants of the center person"
+msgstr "現在の人物の子孫の数を表示します"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1183
+#, fuzzy
+#| msgid "Shows the number of descendants of the current person"
+msgid ""
+"Whether to display the children and full descending lines of the center "
+"person"
+msgstr "現在の人物の子孫の数を表示します"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1190
+#, fuzzy
+#| msgid "Include siblings of ancestors."
+msgid "Include siblings of ancestors"
+msgstr "先祖の兄弟姉妹も含める。"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1191
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid "Whether to display the siblings of direct ancestors"
+msgstr "世代ごとに祖先の理論的な数を表示するかどうか"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1194
+msgid "Include cousins (collateral descendants)"
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1195
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid ""
+"Whether to display the cousins and descendants of the ancestors' siblings"
+msgstr "世代ごとに祖先の理論的な数を表示するかどうか"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1202
+#: FamilyTree/FamilyTree.py:1051
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
+msgid "Descendant Generations"
+msgstr "子孫世代"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1203
+#, fuzzy
+#| msgid "The number of descendant generations to include in the tree"
+msgid "The number of descendant generations to include"
+msgstr "ツリーに含める子孫世代の数"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1242
+#, fuzzy
+#| msgid "Whether to include the index of Names at the end of the report."
+msgid "Whether to resize the page to fit the size of the tree."
+msgstr "レポートの最後に名前のインデックスを含めるかどうか。"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1262
+#, fuzzy
+#| msgid "Use a table format for the families index"
+msgid "Use random colors for family lines"
+msgstr "家族インデックスには表形式を使用する"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1263
+msgid "Draw each family's connecting lines with a distinct color."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1372
+#, fuzzy
+#| msgid "The style used for names."
+msgid "The bold style used for the names."
+msgstr "名前に使用されるスタイル。"
+
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
 msgstr "人物 GEXF"
@@ -5402,7 +5525,8 @@ msgstr "Prologエクスポート"
 
 #: ExportProlog/ExportProlog.gpr.py:6
 msgid "Exports data into a Prolog fact format.  Data is in Unicode (utf-8)"
-msgstr "データをPrologファクト形式でエクスポートします。データはUnicode (utf-8）です"
+msgstr ""
+"データをPrologファクト形式でエクスポートします。データはUnicode (utf-8）です"
 
 #: ExportRaw/ExportRaw.gpr.py:4
 msgid "Raw Export"
@@ -5444,8 +5568,8 @@ msgid ""
 "(add to group), or <shift> (extend group) click, or with <ctrl> or <shift> "
 "arrow keys and 'space'.  Or <ctrl>'a' for select all."
 msgstr ""
-"選択された行のチェックマークを切り替えます。行は <ctrl> (グループに追加）"
-"、<shift> (グループを拡張）クリック、または <ctrl> や <shift> 矢印キーと "
+"選択された行のチェックマークを切り替えます。行は <ctrl> (グループに追加）、"
+"<shift> (グループを拡張）クリック、または <ctrl> や <shift> 矢印キーと "
 "'space' で選択できます。または <ctrl>'a' で全て選択します。"
 
 #: ExtractCity/extractcity.gpr.py:34
@@ -5582,7 +5706,8 @@ msgstr "家族シート"
 msgid ""
 "Produces a family sheet showing full information about a person and his/her "
 "partners and children."
-msgstr "人物とそのパートナー、子供に関する完全な情報を示す家族シートを生成します。"
+msgstr ""
+"人物とそのパートナー、子供に関する完全な情報を示す家族シートを生成します。"
 
 #: FamilySheet/FamilySheet.py:232 FamilySheet/FamilySheet.py:275
 #, python-format
@@ -5782,11 +5907,6 @@ msgstr "祖先世代"
 #: FamilyTree/FamilyTree.py:1048
 msgid "The number of ancestor generations to include in the tree"
 msgstr "ツリーに含める祖先世代の数"
-
-#: FamilyTree/FamilyTree.py:1051
-#: TimelinePedigreeView/TimelinePedigreeView.py:1465
-msgid "Descendant Generations"
-msgstr "子孫世代"
 
 #: FamilyTree/FamilyTree.py:1052
 msgid "The number of descendant generations to include in the tree"
@@ -6233,7 +6353,8 @@ msgstr "<filter> のミトコンドリア遺伝"
 msgid ""
 "Matches recorded descendants of a filter result following mitochondrial "
 "inheritance patterns."
-msgstr "フィルター結果のミトコンドリア遺伝パターンに従う記録された子孫に一致します。"
+msgstr ""
+"フィルター結果のミトコンドリア遺伝パターンに従う記録された子孫に一致します。"
 
 #: FilterRules2/patrilinealprogenitor.gpr.py:25
 #: FilterRules2/patrilinealprogenitor.py:62
@@ -9146,7 +9267,8 @@ msgstr "職業、業種、就業、または自営。"
 msgid ""
 "Whether Born in same County (Y or N), Scotland (S), Ireland (I) or Foreign "
 "Parts (P)."
-msgstr "同一郡出身か (Y/N)、スコットランド (S)、アイルランド (I)、または海外 (P)。"
+msgstr ""
+"同一郡出身か (Y/N)、スコットランド (S)、アイルランド (I)、または海外 (P)。"
 
 #: Form/form_gb.xml.h:70 Form/form_gb.xml.h:91 Form/form_gb.xml.h:110
 msgid "Ecclesiastical District"
@@ -9786,7 +9908,8 @@ msgstr "アイルランド語"
 #: Form/form_gb.xml.h:591 Form/form_gb.xml.h:623
 msgid ""
 "\"Irish\" or \"Irish & English\", in other cases no entry should be made"
-msgstr "「アイルランド語」または「アイルランド語と英語」、それ以外の場合は記入不要"
+msgstr ""
+"「アイルランド語」または「アイルランド語と英語」、それ以外の場合は記入不要"
 
 #: Form/form_gb.xml.h:593 Form/form_gb.xml.h:625
 msgid ""
@@ -15298,7 +15421,8 @@ msgstr "イベントGOQLフィルター"
 
 #: GOQLFilter/goql.gpr.py:70
 msgid "Gramplet providing a gramps-object-query-language event filter"
-msgstr "Grampsオブジェクトクエリ言語のイベントフィルターを提供するグランプレット"
+msgstr ""
+"Grampsオブジェクトクエリ言語のイベントフィルターを提供するグランプレット"
 
 #: GOQLFilter/goql.gpr.py:88
 msgid "Place GOQL Filter"
@@ -15314,7 +15438,8 @@ msgstr "リポジトリGOQLフィルター"
 
 #: GOQLFilter/goql.gpr.py:109
 msgid "Gramplet providing a gramps-object-query-language repository filter"
-msgstr "Grampsオブジェクトクエリ言語のリポジトリフィルターを提供するグランプレット"
+msgstr ""
+"Grampsオブジェクトクエリ言語のリポジトリフィルターを提供するグランプレット"
 
 #: GOQLFilter/goql.gpr.py:128
 msgid "Source GOQL Filter"
@@ -15338,7 +15463,8 @@ msgstr "メディア GOQL フィルター"
 
 #: GOQLFilter/goql.gpr.py:167
 msgid "Gramplet providing a gramps-object-query-language media filter"
-msgstr "Grampsオブジェクトクエリ言語のメディアフィルターを提供するグランプレット"
+msgstr ""
+"Grampsオブジェクトクエリ言語のメディアフィルターを提供するグランプレット"
 
 #: GOQLFilter/goql.gpr.py:185
 msgid "Note GOQL Filter"
@@ -15971,8 +16097,8 @@ msgid ""
 "Ask me anything about the Gramps program or your specific Gramps family "
 "tree. Use the ⚙ button to configure the AI.\n"
 msgstr ""
-"GrampsプログラムやあなたのGramps家系図について何でも質問してください。⚙ "
-"ボタンでAIを設定してください。\n"
+"GrampsプログラムやあなたのGramps家系図について何でも質問してください。⚙ ボタ"
+"ンでAIを設定してください。\n"
 
 #: GrampsAssistant/grampsassistant.py:720
 msgid ""
@@ -15981,8 +16107,8 @@ msgid ""
 "and model before chatting.\n"
 msgstr ""
 "\n"
-"モデルが設定されていません。チャットする前に、設定ボタンをクリックして"
-"バックエンドとモデルを選択してください。\n"
+"モデルが設定されていません。チャットする前に、設定ボタンをクリックしてバック"
+"エンドとモデルを選択してください。\n"
 
 #: GrampsAssistant/grampsassistant.py:755
 msgid "Thinking..."
@@ -16049,8 +16175,8 @@ msgid ""
 "Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
 msgstr ""
 "ローカルサーバーに要求するモデル。Ollamaの場合は必須 (例: llama3.1）。LM "
-"Studioまたはllama.cppの場合は空白にします。これらの場合は読み込まれている"
-"モデルが使用されます。"
+"Studioまたはllama.cppの場合は空白にします。これらの場合は読み込まれているモデ"
+"ルが使用されます。"
 
 #: GrampsAssistant/grampsassistant.py:1267
 #: GrampsAssistant/grampsassistant.py:1311
@@ -16106,8 +16232,8 @@ msgid ""
 "Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) as a live "
 "database, mirrored locally for speed."
 msgstr ""
-"Gramps Web APIサーバー (例: gramps-connect または Gramps Web）を"
-"ライブデータベースとして使用し、速度のためにローカルにミラーリングします。"
+"Gramps Web APIサーバー (例: gramps-connect または Gramps Web）をライブデータ"
+"ベースとして使用し、速度のためにローカルにミラーリングします。"
 
 #: GrampsWebApiDb/grampswebapidb.py:262
 msgid ""
@@ -16131,12 +16257,12 @@ msgid ""
 "that -- reusing this one would mix its existing local data with the other "
 "account's."
 msgstr ""
-"この家系図の名前は \"%(actual)s\" ですが、GRAMPS_WEB_API_KEY は現在 \"%"
-"(expected)s\" として認証されています。このアカウントをミラーリングすることを"
-"意図している場合は、この家系図の名前を \"%(expected_typeable)s\" に変更する"
-"か (家系図 -> 家系図の管理）、すでにその名前の家系図を開く/作成してくださ"
-"い -- これを再利用すると、既存のローカルデータと他のアカウントのデータが混ざ"
-"ってしまいます。"
+"この家系図の名前は \"%(actual)s\" ですが、GRAMPS_WEB_API_KEY は現在 "
+"\"%(expected)s\" として認証されています。このアカウントをミラーリングすること"
+"を意図している場合は、この家系図の名前を \"%(expected_typeable)s\" に変更する"
+"か (家系図 -> 家系図の管理）、すでにその名前の家系図を開く/作成してください "
+"-- これを再利用すると、既存のローカルデータと他のアカウントのデータが混ざって"
+"しまいます。"
 
 #: GrampsWebApiDb/grampswebapidb.py:550
 msgid "Retry local change after server conflict"
@@ -16201,9 +16327,8 @@ msgid ""
 "Found an existing %s for this session. Click Create Synced Family Tree to "
 "use it directly, or fill in the form above to generate a different key."
 msgstr ""
-"このセッションの既存の %s が見つかりました。「Create Synced Family Tree」を"
-"クリックして直接使用するか、上のフォームに入力して別のキーを生成してください"
-"。"
+"このセッションの既存の %s が見つかりました。「Create Synced Family Tree」をク"
+"リックして直接使用するか、上のフォームに入力して別のキーを生成してください。"
 
 #: GrampsWebApiDb/mintapikeytool.py:222
 msgid "Please fill in the server URL, username, and password."
@@ -16216,12 +16341,14 @@ msgstr "APIキーを生成中…"
 #: GrampsWebApiDb/mintapikeytool.py:260
 #, python-format
 msgid "Login failed (HTTP %d): check your username and password."
-msgstr "ログインに失敗しました (HTTP %d）: ユーザー名とパスワードを確認してください。"
+msgstr ""
+"ログインに失敗しました (HTTP %d）: ユーザー名とパスワードを確認してください。"
 
 #: GrampsWebApiDb/mintapikeytool.py:263
 #, python-format
 msgid "Server returned an error (HTTP %d %s): check the Server URL."
-msgstr "サーバーがエラーを返しました (HTTP %d %s）: サーバーURLを確認してください。"
+msgstr ""
+"サーバーがエラーを返しました (HTTP %d %s）: サーバーURLを確認してください。"
 
 #: GrampsWebApiDb/mintapikeytool.py:271
 #, python-format
@@ -16372,8 +16499,8 @@ msgstr ""
 "されたものです。\n"
 "\n"
 "同期が成功すると、2つのツリーは同一になります。変更はタイムスタンプに基づいて"
-"伝播されます。ローカルまたはリモートのツリーに変更を加える前に確認を求める"
-"プロンプトが表示されます。\n"
+"伝播されます。ローカルまたはリモートのツリーに変更を加える前に確認を求めるプ"
+"ロンプトが表示されます。\n"
 "\n"
 "代わりに、手動で修正するオプションを付けて2つの大幅に異なるツリーをマージした"
 "い場合は、代わりにインポートマージツールを使用してください。"
@@ -16464,7 +16591,8 @@ msgstr "無効なサーバーレスポンスです。URLを確認してくださ
 
 #: GrampsWebSync/presentation.py:220
 msgid "Your user does not have sufficient server permissions to use sync."
-msgstr "あなたのユーザーには同期を使用するための十分なサーバー権限がありません。"
+msgstr ""
+"あなたのユーザーには同期を使用するための十分なサーバー権限がありません。"
 
 #: GrampsWebSync/presentation.py:222
 msgid "Failed importing downloaded XML file."
@@ -16492,8 +16620,8 @@ msgid ""
 "This server runs Gramps Web API %(found)s, but synchronization needs "
 "%(needed)s or newer. Please update the server."
 msgstr ""
-"このサーバーはGramps Web API %(found)s を実行していますが、同期には %(needed)"
-"s 以上が必要です。サーバーを更新してください。"
+"このサーバーはGramps Web API %(found)s を実行していますが、同期には "
+"%(needed)s 以上が必要です。サーバーを更新してください。"
 
 #: GrampsWebSync/presentation.py:239
 #, python-format
@@ -16521,8 +16649,8 @@ msgid ""
 "Synchronization needs one: without it, applying changes times out before the "
 "server has finished. Please enable it on the server."
 msgstr ""
-"このサーバーはバックグラウンドタスクキューを使用するように設定されていません"
-"。同期にはそれが必要です: これがないと、サーバーが完了する前に変更の適用が"
+"このサーバーはバックグラウンドタスクキューを使用するように設定されていませ"
+"ん。同期にはそれが必要です: これがないと、サーバーが完了する前に変更の適用が"
 "タイムアウトします。サーバーで有効にしてください。"
 
 #: GrampsWebSync/presentation.py:256
@@ -17373,7 +17501,8 @@ msgstr "<substring> を含むタグを持つメディアオブジェクト"
 #: HasTagSubstr/hastagsubstr.gpr.py:144 HasTagSubstr/hastagsubstr.py:170
 msgid ""
 "Matches media objects with a tag whose name contains the given substring"
-msgstr "指定された部分文字列を名前に含むタグを持つメディアオブジェクトに一致します"
+msgstr ""
+"指定された部分文字列を名前に含むタグを持つメディアオブジェクトに一致します"
 
 #: HasTagSubstr/hastagsubstr.gpr.py:159 HasTagSubstr/hastagsubstr.py:179
 msgid "Notes with a tag containing <substring>"
@@ -17423,9 +17552,9 @@ msgid ""
 "has to start and end with an alphanumeric character.The file extention "
 "'.html' is added by the report."
 msgstr ""
-"ファイル名には英字 (A-Z, a-z）、数字 (0-9）、スペース、アンダースコア、"
-"ハイフンのみ使用できます。ファイル名は英数字で始まり、英数字で終わる必要があ"
-"ります。拡張子 '.html' はレポートによって追加されます。"
+"ファイル名には英字 (A-Z, a-z）、数字 (0-9）、スペース、アンダースコア、ハイフ"
+"ンのみ使用できます。ファイル名は英数字で始まり、英数字で終わる必要がありま"
+"す。拡張子 '.html' はレポートによって追加されます。"
 
 #: Heatmap/heatmap.py:103
 msgid "File name"
@@ -17725,9 +17854,9 @@ msgid ""
 "Copy the files to a correct directory or change the media path in the "
 "Preferences."
 msgstr ""
-"開かれたファイルにはメディアパス %s があり、インポート先の家系図の"
-"メディアパスと競合しています。元のメディアパスは保持されています。ファイルを"
-"正しいディレクトリにコピーするか、環境設定でメディアパスを変更してください。"
+"開かれたファイルにはメディアパス %s があり、インポート先の家系図のメディアパ"
+"スと競合しています。元のメディアパスは保持されています。ファイルを正しいディ"
+"レクトリにコピーするか、環境設定でメディアパスを変更してください。"
 
 #: ImportGramplet/ImportGramplet.py:172
 msgid ""
@@ -17807,13 +17936,15 @@ msgstr "マーク解除"
 
 #: ImportMerge/importmerge.glade:353
 msgid "This button will add the imported data as a new object to your tree."
-msgstr "このボタンはインポートデータを新しいオブジェクトとしてツリーに追加します。"
+msgstr ""
+"このボタンはインポートデータを新しいオブジェクトとしてツリーに追加します。"
 
 #: ImportMerge/importmerge.glade:368
 msgid ""
 "This button will bring up a dialog allowing you to finalize your changes, or "
 "abandon them."
-msgstr "このボタンは、変更を確定するか破棄するかを選択するダイアログを表示します。"
+msgstr ""
+"このボタンは、変更を確定するか破棄するかを選択するダイアログを表示します。"
 
 #: ImportMerge/importmerge.glade:392
 msgid "Merge Original"
@@ -17876,7 +18007,8 @@ msgstr "インポートおよびマージツール"
 msgid ""
 "Compares a Gramps XML database with the current one, and allows merging of "
 "the differences."
-msgstr "Gramps XMLデータベースを現在のものと比較し、差分のマージを可能にします。"
+msgstr ""
+"Gramps XMLデータベースを現在のものと比較し、差分のマージを可能にします。"
 
 #: ImportMerge/importmerge.py:81
 msgid "Import and merge a Gramps XML"
@@ -17939,8 +18071,8 @@ msgid ""
 "This item will be merged, saving data from your tree.  Any referenced items "
 "were also marked for merging or adding."
 msgstr ""
-"この項目はマージされ、ツリーのデータが保存されます。参照されている項目も"
-"マージまたは追加対象としてマークされています。"
+"この項目はマージされ、ツリーのデータが保存されます。参照されている項目もマー"
+"ジまたは追加対象としてマークされています。"
 
 #: ImportMerge/importmerge.py:127
 msgid ""
@@ -18164,7 +18296,8 @@ msgstr "相対的な線の太さ"
 msgid ""
 "The line thickness of an individual is given relatively to the horizontal "
 "step size."
-msgstr "個人の線の太さは、水平方向のステップサイズに対する相対値で指定されます。"
+msgstr ""
+"個人の線の太さは、水平方向のステップサイズに対する相対値で指定されます。"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:23
 msgid "Horizontal step size"
@@ -18450,8 +18583,8 @@ msgid ""
 "simple ancestor chart. If this is active, then every individual only appears "
 "once."
 msgstr ""
-"家系崩壊により、単純な祖先チャートで同じ個人が複数回表示されることがあります"
-"。これが有効な場合、各個人は一度だけ表示されます。"
+"家系崩壊により、単純な祖先チャートで同じ個人が複数回表示されることがありま"
+"す。これが有効な場合、各個人は一度だけ表示されます。"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:102
 msgid ""
@@ -18467,7 +18600,8 @@ msgstr "父親は同じ色"
 msgid ""
 "Starting from the root person, each father of an added individual has the "
 "same color as that individual."
-msgstr "ルート人物から始めて、追加された各個人の父親はその個人と同じ色を持ちます。"
+msgstr ""
+"ルート人物から始めて、追加された各個人の父親はその個人と同じ色を持ちます。"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:105
 msgid "Maximum number of compression steps"
@@ -18643,7 +18777,8 @@ msgstr "子孫系統レポート"
 msgid ""
 "Prints out all descendency lines from a given ancestor to a given descendent "
 "in text."
-msgstr "指定された祖先から指定された子孫までのすべての系統をテキストで出力します。"
+msgstr ""
+"指定された祖先から指定された子孫までのすべての系統をテキストで出力します。"
 
 #: LinesOfDescendency/lines-of-descendency.py:57
 msgid "The ancestor from which to start the line"
@@ -18759,8 +18894,8 @@ msgid ""
 "You have to select a custom note or uncheck the option 'include custom note' "
 "to generate this report."
 msgstr ""
-"このレポートを生成するには、カスタムメモを選択するか、「カスタムメモを含める"
-"」オプションのチェックを外す必要があります。"
+"このレポートを生成するには、カスタムメモを選択するか、「カスタムメモを含め"
+"る」オプションのチェックを外す必要があります。"
 
 #: MediaReport/media_report.py:125
 msgid "This report only supports PDF as output file format."
@@ -19487,7 +19622,8 @@ msgstr ""
 msgid ""
 "Birthdays after this year are represented by the year only.  Invalid entries "
 "will be ignored."
-msgstr "この年以降の誕生日は年のみで表示されます。無効なエントリは無視されます。"
+msgstr ""
+"この年以降の誕生日は年のみで表示されます。無効なエントリは無視されます。"
 
 #: NetworkChart/NetworkChart.py:1080
 msgid "Round birthday to year after year entered (above)."
@@ -19526,8 +19662,8 @@ msgid ""
 "Attempts to remove middle names.  Only works for entries with birth year in "
 "the record."
 msgstr ""
-"ミドルネームを削除しようとします。レコードに生年があるエントリのみ機能します"
-"。"
+"ミドルネームを削除しようとします。レコードに生年があるエントリのみ機能しま"
+"す。"
 
 #: NetworkChart/NetworkChart.py:1107
 msgid "Remove middle names."
@@ -19807,8 +19943,8 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"左ペインで選択されたメモが、このボックスにクリーンアップ前として表示されます"
-"。"
+"左ペインで選択されたメモが、このボックスにクリーンアップ前として表示されま"
+"す。"
 
 #: NoteCleanup/NoteCleanup.py:386
 msgid ""
@@ -19820,8 +19956,8 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"左ペインで選択されたメモが、このボックスにクリーンアップ後として表示されます"
-"。\n"
+"左ペインで選択されたメモが、このボックスにクリーンアップ後として表示されま"
+"す。\n"
 "変更したい場合は、ここで変更し、上部のツールバーのスタイルコントロールを使用"
 "できます。"
 
@@ -19944,7 +20080,8 @@ msgstr "PDFフォームを生成"
 msgid ""
 "Generate blank fillable PDF forms: census/event forms or Ahnentafel pedigree "
 "charts."
-msgstr "空白の入力可能PDFフォームを生成: 国勢調査/イベントフォームまたは家系図。"
+msgstr ""
+"空白の入力可能PDFフォームを生成: 国勢調査/イベントフォームまたは家系図。"
 
 #: PDFForms/PDFForms.gpr.py:46
 msgid "Import Fillable PDF Forms"
@@ -20228,8 +20365,8 @@ msgid ""
 "Details of any children and events etc. would be in a similar report for the "
 "father or mother."
 msgstr ""
-"子供やイベントなどの詳細は、父親または母親向けの同様のレポートに記載されます"
-"。"
+"子供やイベントなどの詳細は、父親または母親向けの同様のレポートに記載されま"
+"す。"
 
 #: PersonEverything/PersonEverything.py:404
 msgid "Temple and status"
@@ -20475,8 +20612,8 @@ msgstr "この画像の別の領域が {name} に関連付けられています�
 msgid ""
 "{count} other regions of this image are associated with {name}. Remove them?"
 msgstr ""
-"この画像の {count} 個の他の領域が {name} に関連付けられています。削除しますか"
-"？"
+"この画像の {count} 個の他の領域が {name} に関連付けられています。削除します"
+"か？"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1116
 #, python-format
@@ -20703,8 +20840,8 @@ msgid ""
 "is changed to the next level GeoNames place.  This may result in some unused "
 "places remaining in your database."
 msgstr ""
-"すでに囲まれている場所をクリーンアップする場合、これは実行内容に影響します"
-"。\n"
+"すでに囲まれている場所をクリーンアップする場合、これは実行内容に影響しま"
+"す。\n"
 "「<b>現在の囲いを保持</b>」を選択した場合、囲んでいる場所は変更されません。\n"
 "「<b>GeoNames 囲いに置換</b>」を選択した場合、囲まれている場所は次のレベルの "
 "GeoNames 場所に変更されます。.  これにより、データベースに未使用の場所がいく"
@@ -20996,8 +21133,8 @@ msgstr "緯度/経度の一致に正規表現グループがありません"
 msgid ""
 "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
 msgstr ""
-"正規表現グループ %(lat)s と %(lon)s は緯度/経度の一致に存在する必要があります"
-"。終了します"
+"正規表現グループ %(lat)s と %(lon)s は緯度/経度の一致に存在する必要がありま"
+"す。終了します"
 
 #: PlaceCompletion/PlaceCompletion.py:419
 msgid "Non valid regex for match lat/lon"
@@ -21394,7 +21531,8 @@ msgstr "複数の場所のプロパティを設定"
 #: PlaceUpdate/PlaceUpdate.py:96
 msgid ""
 "This gramplet allows setting properties for multiple places at the same time"
-msgstr "このグランプレットを使用すると、複数の場所のプロパティを同時に設定できます"
+msgstr ""
+"このグランプレットを使用すると、複数の場所のプロパティを同時に設定できます"
 
 #: PlaceUpdate/PlaceUpdate.py:111
 msgid "New enclosing place"
@@ -21628,8 +21766,8 @@ msgid ""
 "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
 "install 'psycopg[binary]'"
 msgstr ""
-"PostgreSQL Enhanced サポートには psycopg3 が必要です。次のコマンドで"
-"インストールしてください: pip install 'psycopg[binary]'"
+"PostgreSQL Enhanced サポートには psycopg3 が必要です。次のコマンドでインス"
+"トールしてください: pip install 'psycopg[binary]'"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:164
 #, python-format
@@ -21711,8 +21849,8 @@ msgid ""
 msgstr ""
 "<a href=\"https://gramps-project.org/\">Gramps</a> がすべての <a "
 "href=\"https://github.com/gramps-project/gramps/blob/master/README.md\">前提"
-"条件</a> をインストールしているかどうかを評価するのに役立つ診断グランプレット"
-"。\n"
+"条件</a> をインストールしているかどうかを評価するのに役立つ診断グランプレッ"
+"ト。\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:153
 msgid ""
@@ -21806,8 +21944,8 @@ msgid ""
 "to work</i>:\n"
 msgstr ""
 "<i>以下の <a href=\"https://gramps-project.org/wiki/index.php?title=Third-"
-"party_Addons\">サードパーティアドオン</a> が動作するために必要な前提条件</i>"
-":\n"
+"party_Addons\">サードパーティアドオン</a> が動作するために必要な前提条件</"
+"i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:305
 msgid ""
@@ -21853,8 +21991,8 @@ msgid ""
 "back up your genealogy files, and then test your backups!\n"
 "\n"
 msgstr ""
-"前提条件をチェックする理由がある場合は、系譜ファイルをバックアップし、"
-"バックアップをテストする良い機会です！\n"
+"前提条件をチェックする理由がある場合は、系譜ファイルをバックアップし、バック"
+"アップをテストする良い機会です！\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:326
@@ -21866,12 +22004,12 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
-"<i><a href=\"https://gramps-project.org/wiki/"
-"index.php?title=How_to_make_a_backup\">Gramps XML へのバックアップ</a> 最近"
-"の Gramps バージョンでは家系図メニューに「バックアップを作成...」があります。"
-"それ以外の場合は同じメニューの「エクスポート...」を使用しますが、すべての"
-"データをエクスポートするにはエクスポーターアシスタントの"
-"プライバシーオプションのチェックを外してください。</i>\n"
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Gramps XML へのバックアップ</a> 最近の Gramps "
+"バージョンでは家系図メニューに「バックアップを作成...」があります。それ以外の"
+"場合は同じメニューの「エクスポート...」を使用しますが、すべてのデータをエクス"
+"ポートするにはエクスポーターアシスタントのプライバシーオプションのチェックを"
+"外してください。</i>\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:336
@@ -21908,8 +22046,8 @@ msgid ""
 "You have Gramps %s. Please make a backup and then upgrade.\n"
 "%s"
 msgstr ""
-"Gramps %s をお使いです。バックアップを作成してからアップグレードしてください"
-"。\n"
+"Gramps %s をお使いです。バックアップを作成してからアップグレードしてくださ"
+"い。\n"
 "%s"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:397
@@ -21919,9 +22057,9 @@ msgid ""
 "for contributing and testing; please report any issues. Backups are your "
 "friend.\n"
 msgstr ""
-"Gramps %s がインストールされています。これはリリースされていない開発"
-"バージョンです。貢献とテストに感謝します。問題があれば報告してください。"
-"バックアップはあなたの味方です。\n"
+"Gramps %s がインストールされています。これはリリースされていない開発バージョ"
+"ンです。貢献とテストに感謝します。問題があれば報告してください。バックアップ"
+"はあなたの味方です。\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:407
 #, python-format
@@ -22063,7 +22201,8 @@ msgstr " • python-fontconfig が見つかりません (バージョン 0.5.x �
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1049
 msgid " • python-fontconfig installed, version unavailable"
-msgstr " • python-fontconfig はインストールされていますが、バージョンは不明です"
+msgstr ""
+" • python-fontconfig はインストールされていますが、バージョンは不明です"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1135
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1145
@@ -22149,7 +22288,8 @@ msgstr "見つかりませんでした。"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1700
 msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
-msgstr "標準。合格: プログラムがインストールされています - 64bit Win OS 上の 32bit。"
+msgstr ""
+"標準。合格: プログラムがインストールされています - 64bit Win OS 上の 32bit。"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1759
 msgid ") (Requires the gramps addon listed under 'Plugin lib')"
@@ -22192,8 +22332,8 @@ msgid ""
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
 "a></b></u>\n"
 msgstr ""
-"<u><b><a href=\"https://gramps-project.org/wiki/"
-"index.php?title=Gramps_5.0_Wiki_Manual_-"
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">ロケール設定:</a></"
 "b></u>\n"
 
@@ -23547,8 +23687,8 @@ msgid ""
 "Records transcriptions ... births/deaths/marriages/censuses with common "
 "fields: id, repository, person name, birth date and place, parents."
 msgstr ""
-"レコードの書き起こし ... 出生/死亡/結婚/国勢調査。共通フィールド: ID、"
-"リポジトリ、人物名、生年月日と場所、両親。"
+"レコードの書き起こし ... 出生/死亡/結婚/国勢調査。共通フィールド: ID、リポジ"
+"トリ、人物名、生年月日と場所、両親。"
 
 #: SourceIndex/index.py:407
 msgid "*** Error: Must install either ElementTree or lxml."
@@ -24090,8 +24230,8 @@ msgid ""
 msgstr ""
 "%(filename)s は有効な TMG バックアップファイルではないようです。\n"
 "\n"
-"ファイルは、プロジェクト設定ファイル (.PJC) を含む TMG "
-"バックアップアーカイブ (*.SQZ) である必要があります。\n"
+"ファイルは、プロジェクト設定ファイル (.PJC) を含む TMG バックアップアーカイ"
+"ブ (*.SQZ) である必要があります。\n"
 "\n"
 "ファイルが TMG バージョン 5.x 以降で作成されたことを確認してください。"
 
@@ -24132,7 +24272,8 @@ msgstr "今日の家族史"
 msgid ""
 "A configurable program that shows you the connected events from your family "
 "tree that match today's day and month."
-msgstr "今日の日付と月に一致する家系図の関連イベントを表示する設定可能なプログラム。"
+msgstr ""
+"今日の日付と月に一致する家系図の関連イベントを表示する設定可能なプログラム。"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:105
 msgid "Database is not open, can't check history right now."
@@ -24304,7 +24445,8 @@ msgstr "%(male_name)s は %(year)s に %(place)s でバル・ミツワーにな�
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:513
 #, python-format
 msgid "%(female_name)s became a bar mitzvah in %(year)s at %(place)s."
-msgstr "%(female_name)s は %(year)s に %(place)s でバル・ミツワーになりました。"
+msgstr ""
+"%(female_name)s は %(year)s に %(place)s でバル・ミツワーになりました。"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:516
 #, python-format
@@ -24314,7 +24456,8 @@ msgstr "%(male_name)s は %(year)s に %(place)s でバト・ミツワーにな�
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:518
 #, python-format
 msgid "%(female_name)s became a bat mitzvah in %(year)s at %(place)s."
-msgstr "%(female_name)s は %(year)s に %(place)s でバト・ミツワーになりました。"
+msgstr ""
+"%(female_name)s は %(year)s に %(place)s でバト・ミツワーになりました。"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:521
 #, python-format
@@ -24506,7 +24649,8 @@ msgstr "%(male_name)s は %(year)s に %(place)s でシビルユニオンを結�
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:627
 #, python-format
 msgid "%(female_name)s entered a civil union in %(year)s at %(place)s."
-msgstr "%(female_name)s は %(year)s に %(place)s でシビルユニオンを結びました。"
+msgstr ""
+"%(female_name)s は %(year)s に %(place)s でシビルユニオンを結びました。"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:636
 #, python-format
@@ -24884,8 +25028,8 @@ msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
-"特定のタグが付いたすべてのメモと、それが参照するレコード (人物、家族、"
-"イベントなど）のリストを生成します。"
+"特定のタグが付いたすべてのメモと、それが参照するレコード (人物、家族、イベン"
+"トなど）のリストを生成します。"
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
@@ -25219,8 +25363,8 @@ msgid ""
 "Customized queries for online services based on the active Person, Place, "
 "Family, or Source record"
 msgstr ""
-"アクティブな人物、場所、家族、またはソースレコードに基づいた"
-"オンラインサービス用のカスタマイズされたクエリ"
+"アクティブな人物、場所、家族、またはソースレコードに基づいたオンラインサービ"
+"ス用のカスタマイズされたクエリ"
 
 #: WebSearch/WebSearch.py:477
 msgid "Save Coordinates to the Place"
@@ -25515,7 +25659,8 @@ msgstr "アイコン - クロスCSVファイルからのURL (シャッフル矢�
 
 #: WebSearch/constants.py:433
 msgid "Icon - URLs from custom user directory (spreadsheet icon)"
-msgstr "アイコン - カスタムユーザーディレクトリからのURL (スプレッドシートアイコン)"
+msgstr ""
+"アイコン - カスタムユーザーディレクトリからのURL (スプレッドシートアイコン)"
 
 #: WebSearch/constants.py:434
 msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
@@ -25538,16 +25683,16 @@ msgid ""
 "WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
 "websites."
 msgstr ""
-"WebSearchは、系譜関連のウェブサイトを検索するのに役立つGramps用の"
-"グランプレットです。"
+"WebSearchは、系譜関連のウェブサイトを検索するのに役立つGramps用のグランプレッ"
+"トです。"
 
 #: WebSearch/info_panel.py:117
 msgid ""
 "It supports CSV-based link templates, AI-assisted site discovery, and direct "
 "integration with notes and attributes."
 msgstr ""
-"CSVベースのリンクテンプレート、AI支援サイト検出、メモや属性との直接統合を"
-"サポートしています。"
+"CSVベースのリンクテンプレート、AI支援サイト検出、メモや属性との直接統合をサ"
+"ポートしています。"
 
 #: WebSearch/info_panel.py:125
 msgid "## ⚙️ System Information"
@@ -25660,7 +25805,8 @@ msgstr ""
 
 #: WebSearch/info_panel.py:221
 msgid "  💡 *Tip: click any path above to open it in your file manager.*"
-msgstr "  💡 *ヒント: 上のパスをクリックすると、ファイルマネージャーで開きます。*"
+msgstr ""
+"  💡 *ヒント: 上のパスをクリックすると、ファイルマネージャーで開きます。*"
 
 #: WebSearch/info_panel.py:224
 msgid "📖 View detailed usage in: "

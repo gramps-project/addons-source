@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-09 10:08-0700\n"
+"POT-Creation-Date: 2026-09-03 12:30-0700\n"
 "PO-Revision-Date: 2026-06-28 22:01+0000\n"
 "Last-Translator: Andre Magri <andremagri@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
@@ -5546,6 +5546,111 @@ msgstr ""
 msgid "Retrieving all sub-filter matches"
 msgstr ""
 
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:28
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:174
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:973
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1053
+#, fuzzy
+#| msgid "Ancestor Generations"
+msgid "Ancestor Tree Expanded"
+msgstr "Número máximo de gerações de ascendentes"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:29
+msgid ""
+"Expanded Ancestor Graph showing direct ancestors, siblings, cousins and "
+"spouses."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:190
+#, fuzzy, python-format
+#| msgid "AncestorFill for %s"
+msgid "Ancestor Tree Expanded for %s"
+msgstr "Preenchimento de Ancestrais para %s"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:544
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:606
+msgid "Tree Truncated"
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:545
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:607
+msgid ""
+"The generated tree reached the 400 people safety limit and has been "
+"truncated.\n"
+"\n"
+"Please reduce the number of generations or disable some options to see all "
+"branches."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1182
+#, fuzzy
+#| msgid "The number of descendant generations to include in the tree"
+msgid "Include descendants of the center person"
+msgstr "Número de gerações a serem incluídas na árvore"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1183
+#, fuzzy
+#| msgid "The number of descendant generations to include in the tree"
+msgid ""
+"Whether to display the children and full descending lines of the center "
+"person"
+msgstr "Número de gerações a serem incluídas na árvore"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1190
+#, fuzzy
+#| msgid "Include Residence"
+msgid "Include siblings of ancestors"
+msgstr "Incluir residência"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1191
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid "Whether to display the siblings of direct ancestors"
+msgstr "Exibir ou não o número teórico de ancestrais por geração"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1194
+msgid "Include cousins (collateral descendants)"
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1195
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid ""
+"Whether to display the cousins and descendants of the ancestors' siblings"
+msgstr "Exibir ou não o número teórico de ancestrais por geração"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1202
+#: FamilyTree/FamilyTree.py:1051
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
+msgid "Descendant Generations"
+msgstr "Número máximo de gerações de descendentes"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1203
+#, fuzzy
+#| msgid "The number of descendant generations to include in the tree"
+msgid "The number of descendant generations to include"
+msgstr "Número de gerações a serem incluídas na árvore"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1242
+#, fuzzy
+#| msgid "Whether to scale to fit on a single page."
+msgid "Whether to resize the page to fit the size of the tree."
+msgstr "Ajustar para caber em uma única página"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1262
+msgid "Use random colors for family lines"
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1263
+msgid "Draw each family's connecting lines with a distinct color."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1372
+#, fuzzy
+#| msgid "The style used for names."
+msgid "The bold style used for the names."
+msgstr "O estilo usado para nomes."
+
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
 msgstr ""
@@ -5986,11 +6091,6 @@ msgstr "Número máximo de gerações de ascendentes"
 #: FamilyTree/FamilyTree.py:1048
 msgid "The number of ancestor generations to include in the tree"
 msgstr "Número de gerações a serem incluídas na árvore"
-
-#: FamilyTree/FamilyTree.py:1051
-#: TimelinePedigreeView/TimelinePedigreeView.py:1465
-msgid "Descendant Generations"
-msgstr "Número máximo de gerações de descendentes"
 
 #: FamilyTree/FamilyTree.py:1052
 msgid "The number of descendant generations to include in the tree"
