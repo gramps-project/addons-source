@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-04 08:55-0700\n"
-"PO-Revision-Date: 2026-08-05 18:01+0000\n"
+"POT-Creation-Date: 2026-09-03 12:30-0700\n"
+"PO-Revision-Date: 2026-08-29 07:51+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "Birthdays"
 msgstr "ימי הולדת"
@@ -304,7 +304,7 @@ msgstr "בדיקת המידע לשיוכ‏ים לאנשים."
 
 #: AssociationsTool/associationstool.py:53
 msgid "Associations state tool"
-msgstr "כלי מצב שיוכים"
+msgstr "כלי מצב־שיוכים"
 
 #: AssociationsTool/associationstool.py:81
 msgid "Type of link"
@@ -1348,7 +1348,7 @@ msgstr "כשל ביצירת מבנה מחיצות: %s"
 #: D3Charts/DescendantIndentedTree.py:1559
 #, python-format
 msgid "Failed to copy web files : %s"
-msgstr "כשל בהעתקת קבצימרשתת: %s"
+msgstr "כשל בהעתקת קבצי מרשתת: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:817
 msgid "Ancestral Collapsible Tree Options"
@@ -1737,7 +1737,7 @@ msgstr "אוסף אתרי מרשתת עבור DE (נדרש libweblink)"
 
 #: DEWebConnectPack/DEWebPack.py:37
 msgid "Bielefeld Academic Search"
-msgstr "חיפוש אקדמי Bielefel"
+msgstr "חיפוש לומדני Bielefel"
 
 #: DEWebConnectPack/DEWebPack.py:39 SVWebconnectPack/SVWebPack.py:34
 #: UKWebConnectPack/UKWebPack.py:35 USWebConnectPack/USWebPack.py:34
@@ -2160,7 +2160,9 @@ msgid "Calculate"
 msgstr "חישוב"
 
 #: DateCalculator/DateCalculator.py:107
-#: EditExifMetadata/editexifmetadata.py:219 GraphView/graphview.py:3873
+#: EditExifMetadata/editexifmetadata.py:219
+#: GrampsWebApiDb/mintapikeytool.py:176 GrampsWebSync/grampswebsync.py:1063
+#: GraphView/graphview.py:3873
 msgid "Copy"
 msgstr "העתקה"
 
@@ -2269,7 +2271,7 @@ msgid ""
 "   %s of "
 msgstr ""
 "\n"
-"   %s של "
+"   %s מתוך "
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:336
 msgid "Error: No Home Person set"
@@ -2868,7 +2870,7 @@ msgstr "אורך בין מקפים"
 #: DescendantBooks/CollectAscendants.py:178
 #, python-format
 msgid "Deep pruning ascendants from %s people..."
-msgstr "גיזום עמוק של אבות קדמונים של %s אנשים..."
+msgstr "גיזום עמוק של אבות קדמונים מתוך %s אנשים..."
 
 #: DescendantBooks/CollectAscendants.py:182
 #, python-format
@@ -2970,7 +2972,7 @@ msgstr "דוח צאצאים מפורט"
 #: DescendantBooks/DetailedDescendantBookReport.py:364
 #, python-format
 msgid "Generating %s report references..."
-msgstr "חילול %s דוחות אזכורים..."
+msgstr "מתבצע חילול %s דוחות אזכורים..."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:455
 #, python-format
@@ -3663,7 +3665,7 @@ msgid ""
 "United States of America/USA"
 msgstr ""
 "כלומר\n"
-"ארצות הברית של אמריקה/USA"
+"ארצות הברית של אמריקה/ארה\"ב"
 
 #: DescendantsLines/DescendantsLines.py:1714
 msgid "Spouse and Family"
@@ -3933,7 +3935,7 @@ msgstr "בחירת קובץ ‎.gpkg או ‎.gramps"
 
 #: Differences/differences.py:342
 msgid "Show items that are different"
-msgstr "הצגת פריטים ששונים"
+msgstr "הצגת פריטים שונים"
 
 #: Differences/differences.py:343
 msgid "Include items that are different"
@@ -3941,7 +3943,7 @@ msgstr "הכללת פריטים ששונים"
 
 #: Differences/differences.py:346
 msgid "Show items missing from file"
-msgstr "הצגת פריטים חסר מקובץ"
+msgstr "הצגת פריטים חסרים מקובץ"
 
 #: Differences/differences.py:347
 msgid "Include items not in file but in database"
@@ -3949,7 +3951,7 @@ msgstr "הכללת פריטים שאינם בקובץ אך נמצאים במסד
 
 #: Differences/differences.py:350
 msgid "Show items added in file"
-msgstr "הצגת פריטים שנוספו בקובץ"
+msgstr "הצגת פריטים שנוספו לקובץ"
 
 #: Differences/differences.py:351
 msgid "Include items in file but not in database"
@@ -5210,7 +5212,7 @@ msgstr "שונה: "
 
 #: EditExifMetadata/editexifmetadata.py:1058
 msgid "Latitude/ Longitude/ Altitude GPS coordinates"
-msgstr "נקודות־ציון GPS של קו רוחב/קו אורך/גובה"
+msgstr "נקודות־ציון GPS של קו רוחב/קו אורך/רום"
 
 #: EditExifMetadata/editexifmetadata.py:1073
 msgid "Latitude :"
@@ -5337,6 +5339,113 @@ msgstr ""
 msgid "Retrieving all sub-filter matches"
 msgstr "אחזור כל התאמות מסננני המשנה"
 
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:28
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:174
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:973
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1053
+#, fuzzy
+#| msgid "Ancestor Generations"
+msgid "Ancestor Tree Expanded"
+msgstr "דורות אבות"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:29
+msgid ""
+"Expanded Ancestor Graph showing direct ancestors, siblings, cousins and "
+"spouses."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:190
+#, fuzzy, python-format
+#| msgid "Ancestors places for %s"
+msgid "Ancestor Tree Expanded for %s"
+msgstr "אבות מקומות עבור %s"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:544
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:606
+msgid "Tree Truncated"
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:545
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:607
+msgid ""
+"The generated tree reached the 400 people safety limit and has been "
+"truncated.\n"
+"\n"
+"Please reduce the number of generations or disable some options to see all "
+"branches."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1182
+#, fuzzy
+#| msgid "Shows the number of descendants of the current person"
+msgid "Include descendants of the center person"
+msgstr "הצגת מספר הצאצאים של האדם הנוכחי"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1183
+#, fuzzy
+#| msgid "Shows the number of descendants of the current person"
+msgid ""
+"Whether to display the children and full descending lines of the center "
+"person"
+msgstr "הצגת מספר הצאצאים של האדם הנוכחי"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1190
+#, fuzzy
+#| msgid "Include siblings of ancestors."
+msgid "Include siblings of ancestors"
+msgstr "לכלול אחאים של אבות."
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1191
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid "Whether to display the siblings of direct ancestors"
+msgstr "האם להציג את המספר התיאורטי של אבות קדמונים לפי דור"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1194
+msgid "Include cousins (collateral descendants)"
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1195
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid ""
+"Whether to display the cousins and descendants of the ancestors' siblings"
+msgstr "האם להציג את המספר התיאורטי של אבות קדמונים לפי דור"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1202
+#: FamilyTree/FamilyTree.py:1051
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
+msgid "Descendant Generations"
+msgstr "דורות צאצאים"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1203
+#, fuzzy
+#| msgid "The number of descendant generations to include in the tree"
+msgid "The number of descendant generations to include"
+msgstr "מספר צאצא דורות שיש לכלול באילן"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1242
+#, fuzzy
+#| msgid "Whether to include the index of Names at the end of the report."
+msgid "Whether to resize the page to fit the size of the tree."
+msgstr "האם לכלול את מפתח השמות בסוף הדוח."
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1262
+#, fuzzy
+#| msgid "Use a table format for the families index"
+msgid "Use random colors for family lines"
+msgstr "שימוש טבלה תסדיר עבור משפחות מפתח"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1263
+msgid "Draw each family's connecting lines with a distinct color."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1372
+#, fuzzy
+#| msgid "The style used for names."
+msgid "The bold style used for the names."
+msgstr "הסגנון שמשמש לשמות."
+
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
 msgstr "אדם GEXF"
@@ -5411,7 +5520,7 @@ msgstr "חילוץ מקום נתונים ממקום כותרת"
 
 #: ExtractCity/extractcity.gpr.py:35
 msgid "Attempts to extract city and state/province from a place title"
-msgstr "ניסיון לחלץ עיר ומדינה/פרובינציה מכותרת מקום"
+msgstr "ניסיון לחלץ עיר ומדינת־משנה/חבל מכותרת מקום"
 
 #: ExtractCity/extractcity.py:402
 msgid "Place title"
@@ -5739,11 +5848,6 @@ msgstr "דורות אבות"
 #: FamilyTree/FamilyTree.py:1048
 msgid "The number of ancestor generations to include in the tree"
 msgstr "מספר אב דורות שיש לכלול באילן"
-
-#: FamilyTree/FamilyTree.py:1051
-#: TimelinePedigreeView/TimelinePedigreeView.py:1465
-msgid "Descendant Generations"
-msgstr "דורות צאצאים"
 
 #: FamilyTree/FamilyTree.py:1052
 msgid "The number of descendant generations to include in the tree"
@@ -6105,14 +6209,14 @@ msgstr "לכלול את ההורים במשפחות שתואמות."
 
 #: FilterRules/infamilyrule.py:141 FilterRules/isfamilyfiltermatchevent.py:81
 msgid "Family Filter name:"
-msgstr "משפחה מסנן שם:"
+msgstr "שם מסנן משפחות:"
 
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:25
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:26
 #: FilterRules/isfamilyfiltermatchevent.py:82
 #: FilterRules/isfamilyfiltermatchevent.py:83
 msgid "Events of families matching a <family filter>"
-msgstr "אירועים של משפחות שתואמות למסנן <מסנן משפחה>"
+msgstr "אירועי משפחה שתואמות למסנן <מסנן משפחות>"
 
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:27
 #: FilterRules/isrelatedwithfiltermatch.py:65
@@ -7443,7 +7547,7 @@ msgstr "10. נולדו בשנים־עשר החודשים האחרונים"
 
 #: Form/form_ca.xml.h:317 Form/form_ca.xml.h:371 Form/form_ca.xml.h:420
 msgid "11. Country or Province of Birth"
-msgstr "11. ארץ או פרובינציה של לידה"
+msgstr "11. מדינה או חבל הלידה"
 
 #: Form/form_ca.xml.h:319 Form/form_ca.xml.h:373
 msgid "12. Religion"
@@ -7667,7 +7771,7 @@ msgstr "עובדים"
 
 #: Form/form_ca.xml.h:438
 msgid "20. Employer to state average number of hands employed during year"
-msgstr "20. מעסיק למדינה ממוצע מספר של עובדים מועסקים במהלך שנה"
+msgstr "20. מספר העובדים הממוצע שהעסיק המעסיק במהלך השנה"
 
 #: Form/form_ca.xml.h:439 Form/form_ca.xml.h:846
 msgid "CanRead"
@@ -7764,7 +7868,7 @@ msgstr "10. גיל ביום ההולדת האחרון"
 
 #: Form/form_ca.xml.h:481 Form/form_ca.xml.h:692
 msgid "11. Country or place of birth"
-msgstr "11. ארץ או מקום מתוך לידה"
+msgstr "11. מדינה או מקום לידה"
 
 #: Form/form_ca.xml.h:483 Form/form_ca.xml.h:694
 msgid "12. Year of immigration to Canada, if an immigrant"
@@ -8025,7 +8129,7 @@ msgstr "בבעלות אקרים"
 
 #: Form/form_ca.xml.h:564
 msgid "12. Real Estate Owned: Grand total of acres"
-msgstr "12. נכסי מקרקעין בבעלות: סך כל האקרים"
+msgstr "12. מקרקעין בבעלות: סך כל האקרים"
 
 #: Form/form_ca.xml.h:565
 msgid "OwnedLots"
@@ -8033,7 +8137,7 @@ msgstr "בבעלות מגרשים"
 
 #: Form/form_ca.xml.h:566
 msgid "13. Real Estate Owned: Number of town or village lots"
-msgstr "13. נכסי מקרקעין בבעלות: מספר מגרשי עיירה או כפר"
+msgstr "13. מקרקעין בבעלות: מספר מגרשי עיירה או כפר"
 
 #: Form/form_ca.xml.h:567
 msgid "OwnedHouses"
@@ -8049,7 +8153,7 @@ msgstr "בבעלות חנויות"
 
 #: Form/form_ca.xml.h:570
 msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
-msgstr "15. נכסי מקרקעין בבעלות: מספר חנויות, מחסנים ועוד"
+msgstr "15. מקרקעין בבעלות: מספר חנויות, מחסנים ועוד"
 
 #: Form/form_ca.xml.h:571
 msgid "OwnedBars"
@@ -8057,7 +8161,7 @@ msgstr "בבעלות סרגל"
 
 #: Form/form_ca.xml.h:572
 msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
-msgstr "16. נכסי מקרקעין בבעלות: מספר אסמים, אורוות ומבני־עזר אחרים"
+msgstr "16. מקרקעין בבעלות: מספר אסמים, אורוות ומבני־עזר אחרים"
 
 #: Form/form_ca.xml.h:573
 msgid "OwnedSilos"
@@ -8065,7 +8169,7 @@ msgstr "בבעלות ממגורות"
 
 #: Form/form_ca.xml.h:574
 msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
-msgstr "17. נכסי מקרקעין בבעלות: מספר ממגורות וקיבולת ברגל מעוקבת"
+msgstr "17. מקרקעין בבעלות: מספר ממגורות וקיבולת ברגל מעוקבת"
 
 #: Form/form_ca.xml.h:575
 msgid "OwnedFactories"
@@ -8073,7 +8177,7 @@ msgstr "בבעלות מפעלים"
 
 #: Form/form_ca.xml.h:576
 msgid "18. Real Estate Owned: Number of manufacturing establishments"
-msgstr "18. נכסי מקרקעין בבעלות: מספר מפעלי ייצור"
+msgstr "18. מקרקעין בבעלות: מספר מפעלי ייצור"
 
 #: Form/form_ca.xml.h:577
 msgid "LeasedAcres"
@@ -8081,7 +8185,7 @@ msgstr "אקרים בחכירה"
 
 #: Form/form_ca.xml.h:578
 msgid "19. Real Estate Leased: Grand total of acres"
-msgstr "19. נכסי מקרקעין בחכירה: סך כל האקרים"
+msgstr "19. מקרקעין חכורים: סך כל האקרים"
 
 #: Form/form_ca.xml.h:579
 msgid "LeasedLots"
@@ -8089,7 +8193,7 @@ msgstr "חלקות חכורות"
 
 #: Form/form_ca.xml.h:580
 msgid "20. Real Estate Leased: Number of town or village lots"
-msgstr "20. נכסי מקרקעין בחכירה: מספר מגרשי עיירה או כפר"
+msgstr "20. מקרקעין חכורים: מספר מגרשי עיירה או כפר"
 
 #: Form/form_ca.xml.h:581
 msgid "LeasedHouses"
@@ -8097,7 +8201,7 @@ msgstr "חכורים בתים"
 
 #: Form/form_ca.xml.h:582
 msgid "21. Real Estate Leased: Number of dwelling houses"
-msgstr "21. נכסי מקרקעין בחכירה: מספר בתי מגורים"
+msgstr "21. מקרקעין חכורים: מספר בתי מגורים"
 
 #: Form/form_ca.xml.h:583
 msgid "LeasedStores"
@@ -8105,7 +8209,7 @@ msgstr "חכורים חנויות"
 
 #: Form/form_ca.xml.h:584
 msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
-msgstr "22. נכסי מקרקעין בחכירה: מספר חנויות, מחסנים ועוד"
+msgstr "22. מקרקעין חכורים: מספר חנויות, מחסנים ועוד"
 
 #: Form/form_ca.xml.h:585
 msgid "LeasedBarns"
@@ -8113,7 +8217,7 @@ msgstr "אסמים חכורים"
 
 #: Form/form_ca.xml.h:586
 msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
-msgstr "23. נכסי מקרקעין בחכירה: מספר אסמים, אורוות ומבני־עזר אחרים"
+msgstr "23. מקרקעין חכורים: מספר אסמים, אורוות ומבני־עזר אחרים"
 
 #: Form/form_ca.xml.h:587
 msgid "LeasedSilos"
@@ -8129,7 +8233,7 @@ msgstr "מפעלים חכורים"
 
 #: Form/form_ca.xml.h:590
 msgid "25. Real Estate Leased: Number of manufacturing establishments"
-msgstr "25. נכסי מקרקעין בחכירה: מספר מפעלי ייצור"
+msgstr "25. מקרקעין חכורים: מספר מפעלי ייצור"
 
 #: Form/form_ca.xml.h:591
 msgid "Denomination"
@@ -8249,7 +8353,7 @@ msgstr "6. גיל"
 
 #: Form/form_ca.xml.h:637
 msgid "7. Country or place of birth"
-msgstr "7. ארץ או מקום מתוך לידה"
+msgstr "7. מדינה או מקום לידה"
 
 #: Form/form_ca.xml.h:639
 msgid "8. Year of immigration to Canada"
@@ -8337,7 +8441,7 @@ msgstr "18. תעסוקה שאינה המקצוע או משלח־היד העיק�
 
 #: Form/form_ca.xml.h:714
 msgid "22. State where person employed"
-msgstr "22. מדינה היכן אדם מועסקים"
+msgstr "22. מדינת־משנה בה אדם מועסק"
 
 #: Form/form_ca.xml.h:715
 msgid "WeeksOccupation"
@@ -8650,7 +8754,7 @@ msgstr "מקום תעסוקה"
 
 #: Form/form_ca.xml.h:855
 msgid "26. State where person is employed"
-msgstr "26. מדינה היכן אדם מועסקים"
+msgstr "26. מדינת־משנה בה אדם מועסק"
 
 #: Form/form_dk.xml.h:2 Form/form_dk.xml.h:19 Form/form_dk.xml.h:36
 #: Form/form_dk.xml.h:51 Form/form_dk.xml.h:68 Form/form_dk.xml.h:85
@@ -8932,7 +9036,7 @@ msgstr "רכוש"
 
 #: Form/form_dk.xml.h:358
 msgid "State Tax"
-msgstr "מס מדינה"
+msgstr "מסוי מדינת־משנה"
 
 #: Form/form_dk.xml.h:359
 msgid "Statsskat"
@@ -9450,7 +9554,7 @@ msgstr "מקום לידה של כל אדם."
 
 #: Form/form_gb.xml.h:227 Form/form_gb.xml.h:360
 msgid "NATIONALITY of every Person born in a Foreign Country."
-msgstr "לאום של כל אדם שנולד בארץ זרה."
+msgstr "לאום של כל אדם שנולד במדינה זרה."
 
 #: Form/form_gb.xml.h:229 Form/form_gb.xml.h:362
 msgid "INFIRMITY"
@@ -9791,15 +9895,15 @@ msgstr "חתימת פוקד"
 
 #: Form/form_ie.xml.h:8
 msgid "County or Co. Borough"
-msgstr "מחוז או רובע מחוזי"
+msgstr "מחוז או עיר־מחוז"
 
 #: Form/form_ie.xml.h:9
 msgid "District Electoral Division or Ward"
-msgstr "חלוקה מחוזית לבחירות או רובע"
+msgstr "אזור בחירה מחוזי/רובע"
 
 #: Form/form_ie.xml.h:11
 msgid "Urban Dist. Town or Village"
-msgstr "מחוז עירוני, עיירה או כפר"
+msgstr "נפה עירונית, עיירה או כפר"
 
 #: Form/form_ie.xml.h:12
 msgid "Street etc with No. of House"
@@ -9882,7 +9986,7 @@ msgstr "מחוז הרשם המפקח"
 
 #: Form/form_ie.xml.h:41 Form/form_ie.xml.h:73 Form/form_ie.xml.h:103
 msgid "Registrar's District"
-msgstr "רשם של מחוז"
+msgstr "מחוז הרשם"
 
 #: Form/form_ie.xml.h:43 Form/form_ie.xml.h:105
 msgid "Union"
@@ -10669,7 +10773,7 @@ msgstr "לבנים אנאלפביתים מעל גיל 20"
 #: Form/form_us.xml.h:647 Form/form_us.xml.h:783 Form/form_us.xml.h:826
 #: Form/form_us.xml.h:1067 Form/form_us.xml.h:1100 Form/form_us.xml.h:2505
 msgid "State of"
-msgstr "מדינה מתוך"
+msgstr "מדינת־משנה של"
 
 #: Form/form_us.xml.h:259 Form/form_us.xml.h:280 Form/form_us.xml.h:335
 #: Form/form_us.xml.h:356 Form/form_us.xml.h:413 Form/form_us.xml.h:434
@@ -10688,7 +10792,7 @@ msgstr "מס' משפחה"
 
 #: Form/form_us.xml.h:266 Form/form_us.xml.h:342 Form/form_us.xml.h:441
 msgid "Value of real estate"
-msgstr "ערך מתוך מקרקעין אחוזה"
+msgstr "ערך מקרקעין"
 
 #: Form/form_us.xml.h:267 Form/form_us.xml.h:344 Form/form_us.xml.h:420
 #: Form/form_us.xml.h:443 Form/form_us.xml.h:487 Form/form_us.xml.h:625
@@ -10906,7 +11010,7 @@ msgstr "דואר"
 
 #: Form/form_us.xml.h:343 Form/form_us.xml.h:442
 msgid "Value of personal estate"
-msgstr "ערך מתוך אישי אחוזה"
+msgstr "ערך מקרקעין פרטיים"
 
 #: Form/form_us.xml.h:363
 msgid "Live Stock June 1, 1860"
@@ -11074,7 +11178,7 @@ msgstr "מספר ימי מחלה"
 
 #: Form/form_us.xml.h:444 Form/form_us.xml.h:1643
 msgid "Father of foreign birth"
-msgstr "אב שנולד בארץ זרה"
+msgstr "אב שנולד במדינה זרה"
 
 #: Form/form_us.xml.h:445 Form/form_us.xml.h:1644
 msgid "Mother of foreign birth"
@@ -11697,7 +11801,7 @@ msgstr "נכות שנגרמה"
 
 #: Form/form_us.xml.h:660 Form/form_us.xml.h:702 Form/form_us.xml.h:745
 msgid "State (or Territory) of"
-msgstr "מדינה (או טריטוריה) של"
+msgstr "מדינת־משנה (או טריטוריה) של"
 
 #: Form/form_us.xml.h:666 Form/form_us.xml.h:708 Form/form_us.xml.h:750
 #: Form/form_us.xml.h:785 Form/form_us.xml.h:828
@@ -11818,7 +11922,7 @@ msgstr "למד בבית־ספר מאז 1 בספטמבר 1909"
 
 #: Form/form_us.xml.h:740
 msgid "Civil War veteran"
-msgstr "אזרחי מלחמה ותיק מלחמה"
+msgstr "ותיק מלחמת האזרחים"
 
 #: Form/form_us.xml.h:759
 msgid "If owned, free or mortgaged"
@@ -11949,7 +12053,7 @@ msgstr "עיר (אפריל 1, 1935)"
 
 #: Form/form_us.xml.h:854
 msgid "State (Territory/Country)"
-msgstr "מדינה (טריטוריה/ארץ)"
+msgstr "מדינת־משנה (טריטוריה/מדינה)"
 
 #: Form/form_us.xml.h:855
 msgid "On a Farm (Y/N)"
@@ -12090,7 +12194,7 @@ msgstr "האם הוא נשוי כעת, אלמן, גרוש, פרוד או מעו�
 
 #: Form/form_us.xml.h:911
 msgid "What State (or foreign country) was he born in?"
-msgstr "באיזו מדינה (או ארץ זרה) הוא נולד?"
+msgstr "באיזו מדינת־משנה (או מדינה זרה) הוא נולד?"
 
 #: Form/form_us.xml.h:912
 msgid "Is he naturalized?"
@@ -12146,7 +12250,7 @@ msgstr "סוג עבודה"
 
 #: Form/form_us.xml.h:924
 msgid "What kind of work was he doing?"
-msgstr "איזה סוג עבודה הוא ביצע?"
+msgstr "איזה סוג עבודה הוא עסק?"
 
 #: Form/form_us.xml.h:925
 msgid "Business or industry"
@@ -12182,15 +12286,15 @@ msgstr "האם הוא גר באותו מחוז לפני שנה?"
 
 #: Form/form_us.xml.h:935
 msgid "State or foreign country"
-msgstr "מדינה או זר ארץ"
+msgstr "מדינת־משנה או מדינה זרה"
 
 #: Form/form_us.xml.h:937
 msgid "What country was his father born in?"
-msgstr "מה ארץ היה שלו אב נולד ב?"
+msgstr "באיזו מדינה נולד אביו?"
 
 #: Form/form_us.xml.h:939
 msgid "What country was his mother born in?"
-msgstr "מה ארץ היה שלו אם נולד ב?"
+msgstr "באיזו מדינה נולדה אימו?"
 
 #: Form/form_us.xml.h:940
 msgid "Highest grade attended"
@@ -12434,7 +12538,7 @@ msgstr "מחוז המגורים בעת הרישום הראשון ברשימה"
 
 #: Form/form_us.xml.h:1006
 msgid "Other states lived in and when"
-msgstr "מדינות אחרות שבהן התגורר ומתי"
+msgstr "מדינות־משנה אחרות שבהן התגורר ומתי"
 
 #: Form/form_us.xml.h:1007
 msgid "Moved to Alabama"
@@ -12458,7 +12562,7 @@ msgstr "האם היה זה רגימנט אלבמה"
 
 #: Form/form_us.xml.h:1017
 msgid "If not, give name of state"
-msgstr "אם לא, יש לציין את שם המדינה"
+msgstr "אם לא, נא לציין את שם מדינת־משנה"
 
 #: Form/form_us.xml.h:1018
 msgid "Name of your Captain"
@@ -12682,7 +12786,7 @@ msgstr "קשר למשפחה"
 
 #: Form/form_us.xml.h:1142 Form/form_us.xml.h:1156
 msgid "Degree of Education"
-msgstr "דרגת מתוך השכלה"
+msgstr "רמת השכלה"
 
 #: Form/form_us.xml.h:1143
 msgid "Owner or Renter"
@@ -12832,7 +12936,7 @@ msgstr "אלמן"
 
 #: Form/form_us.xml.h:1206
 msgid "Years resident in the state"
-msgstr "שנים תושב במדינה"
+msgstr "שנות מגורים במדינת־משנה"
 
 #: Form/form_us.xml.h:1209
 msgid "Native voters"
@@ -12970,11 +13074,11 @@ msgstr "מקום מתוך לידה, מחוז"
 
 #: Form/form_us.xml.h:1260
 msgid "Place of birth, state or territory"
-msgstr "מקום לידה, מדינה או טריטוריה"
+msgstr "מקום לידה, מדינת־משנה או טריטוריה"
 
 #: Form/form_us.xml.h:1261
 msgid "Place of birth, country"
-msgstr "מקום מתוך לידה, ארץ"
+msgstr "מקום לידה, מדינה"
 
 #: Form/form_us.xml.h:1262
 msgid "Father (N, Native; F, Foreign)"
@@ -13078,11 +13182,11 @@ msgstr "פטירות ב־1894"
 
 #: Form/form_us.xml.h:1300
 msgid "Deaf and dumb not in State School for Deaf"
-msgstr "חירש ואילם לא במדינה בית־ספר עבור חירש"
+msgstr "חירש־אילם שאינו לומד בבית הספר המדינתי לחירשים"
 
 #: Form/form_us.xml.h:1301
 msgid "Blind not in State College for Blind"
-msgstr "עיוור לא במדינה מכללה עבור עיוור"
+msgstr "עיוור שאינו לומד בבית הספר המדינתי לעיוורים"
 
 #: Form/form_us.xml.h:1302
 msgid "Insane not in State Hospital for Insane"
@@ -13090,19 +13194,19 @@ msgstr "חולי נפש שאינם בבית־חולים מדינתי לחולי 
 
 #: Form/form_us.xml.h:1303
 msgid "Company if in Civil War"
-msgstr "פלוגה אם באזרחי מלחמה"
+msgstr "פלוגה במלחמת האזרחים"
 
 #: Form/form_us.xml.h:1304
 msgid "Regiment if in Civil War"
-msgstr "רגימנט אם באזרחי מלחמה"
+msgstr "גדוד במלחמת האזרחים"
 
 #: Form/form_us.xml.h:1305
 msgid "State if in Civil War"
-msgstr "מדינה אם באזרחי מלחמה"
+msgstr "מדינת־משנה אם מלחמת האזרחים"
 
 #: Form/form_us.xml.h:1306
 msgid "Arm of service and rank if in Civil War"
-msgstr "חיל שירות ודרגה אם השתתף במלחמת האזרחים"
+msgstr "חיל ודרגה אם במלחמת האזרחים"
 
 #: Form/form_us.xml.h:1307
 msgid "Regiment if in Mexican War"
@@ -13110,7 +13214,7 @@ msgstr "רגימנט אם השתתף במלחמת מקסיקו"
 
 #: Form/form_us.xml.h:1308
 msgid "State if in Mexican War"
-msgstr "מדינה אם במלחמת מקסיקו"
+msgstr "מדינת־משנה אם במלחמת מקסיקו"
 
 #: Form/form_us.xml.h:1309 Form/form_us.xml.h:1376 Form/form_us.xml.h:2038
 #: Form/form_us.xml.h:2075 Form/form_us.xml.h:2112 Form/form_us.xml.h:2150
@@ -13254,7 +13358,7 @@ msgstr "שירות צבאי – באיזו מלחמה"
 
 #: Form/form_us.xml.h:1361
 msgid "Military Service in; Civil War-Mexican War-Spanish War"
-msgstr "שירות צבאי ב־: מלחמת האזרחים – מלחמת מקסיקו – מלחמת ספרד"
+msgstr "שירות צבאי ב: מלחמת האזרחים – מלחמת מקסיקו – מלחמת ספרד"
 
 #: Form/form_us.xml.h:1362
 msgid "Military-Company"
@@ -13274,11 +13378,11 @@ msgstr "צבאי שירות; רגימנט"
 
 #: Form/form_us.xml.h:1366
 msgid "Military-State"
-msgstr "צבא-מדינה"
+msgstr "צבא מדינת־משנה"
 
 #: Form/form_us.xml.h:1367
 msgid "Military Service; State"
-msgstr "צבאי שירות; מדינה"
+msgstr "צבאי שירות; מדינת־משנה"
 
 #: Form/form_us.xml.h:1368
 msgid "Military-Class of service"
@@ -13335,7 +13439,7 @@ msgstr "היקף של חינוך דקדוק"
 
 #: Form/form_us.xml.h:1388
 msgid "Extent of Education High School"
-msgstr "היקף השכלה בבית־ספר תיכון"
+msgstr "היקף חינוך בבית־ספר תיכון"
 
 #: Form/form_us.xml.h:1389
 msgid "Extent of Education College"
@@ -13355,7 +13459,7 @@ msgstr "ערך החווה או הבית"
 
 #: Form/form_us.xml.h:1394
 msgid "Military Service: Civil War"
-msgstr "צבאי שירות: אזרחי מלחמה"
+msgstr "שירות צבאי: מלחמת האזרחים"
 
 #: Form/form_us.xml.h:1395
 msgid "Military Service: Mexican"
@@ -13383,7 +13487,7 @@ msgstr "צבאי שירות: צי"
 
 #: Form/form_us.xml.h:1401
 msgid "Military Service: State"
-msgstr "צבאי שירות: מדינה"
+msgstr "שירות צבאי: מדינת־משנה"
 
 #: Form/form_us.xml.h:1402
 msgid "Military Service: Regiment"
@@ -13525,15 +13629,15 @@ msgstr "הורים מקום מתוך נישואין"
 
 #: Form/form_us.xml.h:1460
 msgid "Civil War Veteran"
-msgstr "אזרחי מלחמה ותיק מלחמה"
+msgstr "ותיק מלחמת האזרחים"
 
 #: Form/form_us.xml.h:1461
 msgid "Civil War Service Branch"
-msgstr "אזרחי מלחמה שירות ענף"
+msgstr "ענף שרות במלחמת האזרחים"
 
 #: Form/form_us.xml.h:1462
 msgid "Civil War State"
-msgstr "אזרחי מלחמה מדינה"
+msgstr "מדינת־משנה במלחמת האזרחים"
 
 #: Form/form_us.xml.h:1463
 msgid "Spanish-American War Veteran"
@@ -13545,7 +13649,7 @@ msgstr "זרוע שירות במלחמת ארצות הברית–ספרד"
 
 #: Form/form_us.xml.h:1465
 msgid "Spanish-American War State"
-msgstr "מדינת השירות במלחמת ספרד–ארצות הברית"
+msgstr "מדינת־משנה במלחמת ספרד–ארצות הברית"
 
 #: Form/form_us.xml.h:1466
 msgid "World War Veteran"
@@ -13557,7 +13661,7 @@ msgstr "זרוע שירות במלחמת העולם"
 
 #: Form/form_us.xml.h:1468
 msgid "World War State"
-msgstr "מדינה במלחמת העולם"
+msgstr "מדינת־משנה במלחמת העולם"
 
 #: Form/form_us.xml.h:1469
 msgid "Agricultural Pursuits"
@@ -13606,11 +13710,11 @@ msgstr "רגימנט"
 
 #: Form/form_us.xml.h:1491 Form/form_us.xml.h:1503
 msgid "Real Estate"
-msgstr "מקרקעין אחוזה"
+msgstr "מקרקעין"
 
 #: Form/form_us.xml.h:1492
 msgid "Personal Estate"
-msgstr "אישי אחוזה"
+msgstr "מקרקעין פרטי"
 
 #: Form/form_us.xml.h:1495
 msgid "Attended School"
@@ -13694,7 +13798,7 @@ msgstr "שוחרר בכבוד"
 
 #: Form/form_us.xml.h:1533
 msgid "State Enlisted"
-msgstr "מדינה התגייס"
+msgstr "במדינת־משנה בה התגייס"
 
 #: Form/form_us.xml.h:1536
 msgid "Arm of Service"
@@ -13730,7 +13834,7 @@ msgstr "שוחרר בכבוד משירות צבאי"
 
 #: Form/form_us.xml.h:1551 Form/form_us.xml.h:1573 Form/form_us.xml.h:1596
 msgid "State in which enlisted"
-msgstr "מדינה בש התגייס"
+msgstr "במדינת־משנה בה התגייס"
 
 #: Form/form_us.xml.h:1552 Form/form_us.xml.h:1574 Form/form_us.xml.h:1597
 msgid "Company or command"
@@ -13774,7 +13878,7 @@ msgstr "מספר בית"
 
 #: Form/form_us.xml.h:1613
 msgid "Year of immigration to the United States"
-msgstr "שנת הגירה לארצות הברית"
+msgstr "שנת ההגירה לארצות הברית"
 
 #: Form/form_us.xml.h:1614
 msgid "Naturalized, alien or first papers"
@@ -13791,11 +13895,11 @@ msgstr "מקום לידה"
 
 #: Form/form_us.xml.h:1629
 msgid "Father's Nativity"
-msgstr "אב של ארץ לידה"
+msgstr "מקום לידת האב"
 
 #: Form/form_us.xml.h:1630
 msgid "Mother's Nativity"
-msgstr "אם של ארץ לידה"
+msgstr "מקום לידת האם"
 
 #: Form/form_us.xml.h:1634 Form/form_us.xml.h:1649
 msgid "Inhabitants in"
@@ -13807,11 +13911,11 @@ msgstr "שירת בצבא הפדרלי במהלך המרד"
 
 #: Form/form_us.xml.h:1658 Form/form_us.xml.h:1689
 msgid "Residence in State - Years"
-msgstr "מגורים במדינה - שנים"
+msgstr "מגורים במדינת־משנה – שנים"
 
 #: Form/form_us.xml.h:1659 Form/form_us.xml.h:1690
 msgid "Residence in State - Months"
-msgstr "מגורים במדינה - חודשים"
+msgstr "מגורים במדינת־משנה – חודשים"
 
 #: Form/form_us.xml.h:1660
 msgid "Residence in District - Years"
@@ -14443,7 +14547,7 @@ msgstr "שנים בדקוטה הדרומית"
 
 #: Form/form_us.xml.h:2054
 msgid "Years in United States"
-msgstr "שנים בארצות הברית"
+msgstr "מספר השנים בארצות הברית"
 
 #: Form/form_us.xml.h:2055
 msgid "Birthplace of Father"
@@ -14602,35 +14706,35 @@ msgstr "מקום לידה - ארצות הברית"
 
 #: Form/form_us.xml.h:2278 Form/form_us.xml.h:2307
 msgid "Nativity - Germany"
-msgstr "ארץ לידה – גרמניה"
+msgstr "מקום לידה – גרמניה"
 
 #: Form/form_us.xml.h:2279 Form/form_us.xml.h:2308
 msgid "Nativity - Great Britain"
-msgstr "ארץ לידה – בריטניה הגדולה"
+msgstr "מקום לידה – בריטניה"
 
 #: Form/form_us.xml.h:2280 Form/form_us.xml.h:2309
 msgid "Nativity - Ireland"
-msgstr "ארץ לידה - אירלנד"
+msgstr "מקום לידה - אירלנד"
 
 #: Form/form_us.xml.h:2281 Form/form_us.xml.h:2310
 msgid "Nativity - France"
-msgstr "ארץ לידה – צרפת"
+msgstr "מקום לידה – צרפת"
 
 #: Form/form_us.xml.h:2282 Form/form_us.xml.h:2311
 msgid "Nativity - British America"
-msgstr "ארץ לידה – אמריקה הבריטית"
+msgstr "מקום לידה – אמריקה הבריטית"
 
 #: Form/form_us.xml.h:2283 Form/form_us.xml.h:2312
 msgid "Nativity - Scandinavian"
-msgstr "ארץ לידה – סקנדינביה"
+msgstr "מקום לידה – סקנדינביה"
 
 #: Form/form_us.xml.h:2284 Form/form_us.xml.h:2313
 msgid "Nativity - Holland"
-msgstr "ארץ לידה – הולנד"
+msgstr "מקום לידה – הולנד"
 
 #: Form/form_us.xml.h:2285 Form/form_us.xml.h:2314
 msgid "Nativity - All other countries"
-msgstr "מקום לידה - כל אחר ארץ"
+msgstr "מקום לידה - כל שאר המדינות"
 
 #: Form/form_us.xml.h:2287 Form/form_us.xml.h:2316
 msgid "Residing in the"
@@ -14646,7 +14750,7 @@ msgstr "Reg't."
 
 #: Form/form_us.xml.h:2294 Form/form_us.xml.h:2323
 msgid "State or Vessel"
-msgstr "מדינה או כלי שיט"
+msgstr "מדינת־משנה או אוניה"
 
 #: Form/form_us.xml.h:2337
 msgid "Parents place of birth"
@@ -14765,7 +14869,7 @@ msgstr "שנים בזה משלח יד"
 
 #: Form/form_us.xml.h:2447
 msgid "Education Level"
-msgstr "השכלה מפלס"
+msgstr "רמת השכלה"
 
 #: Form/form_us.xml.h:2453
 msgid "Social Security No."
@@ -14853,7 +14957,7 @@ msgstr "אזרח מלידה, אזרח שהתאזרח, זר, לא־אזרח או 
 
 #: Form/form_us.xml.h:2531
 msgid "If not a citizen, of what nation are you a citizen or subject?"
-msgstr "אם אינו אזרח, של איזו אומה הוא אזרח או נתין?"
+msgstr "אם לא אזרח, אז אזרח או נתין ל איזו מדינה?"
 
 #: Form/form_us.xml.h:2533 Form/form_us.xml.h:2575
 msgid "Employer's Name & address"
@@ -14877,7 +14981,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2538
 msgid "What military service have you had? (Branch, Years, Nation or State)"
-msgstr "איזה שירות צבאי היה? (זרוע, שנים, לאום או מדינה)"
+msgstr "פרטי השירות הצבאי: זרוע, שנות שירות, מדינה או מדינת־משנה"
 
 #: Form/form_us.xml.h:2539
 msgid "Do you claim exemption from draft (specify grounds)"
@@ -14965,7 +15069,7 @@ msgid ""
 " No. and street or R.F.D. No., Town, County, State"
 msgstr ""
 "(2) כתובת או מקום מגורים\n"
-" מס׳ ורחוב או מס׳ R.F.D., עיירה, מחוז, מדינה"
+" מס׳ ורחוב או מס׳ R.F.D., עיירה, מחוז, מדינת־משנה"
 
 #: Form/form_us.xml.h:2557
 msgid "Mailing Address"
@@ -15013,7 +15117,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2567
 msgid "Country of Citizenship"
-msgstr "ארץ של אזרחות"
+msgstr "מדינת אזרחות"
 
 #: Form/form_us.xml.h:2568
 msgid ""
@@ -15251,11 +15355,11 @@ msgstr "מסנן GOQL"
 
 #: GOQLFilter/goql.gpr.py:50
 msgid "Family GOQL Filter"
-msgstr "מסנן GOQL למשפחה"
+msgstr "מסנן משפחות GOQL"
 
 #: GOQLFilter/goql.gpr.py:51
 msgid "Gramplet providing a gramps-object-query-language family filter"
-msgstr "גרמפלט שמספק מסנן משפחה בשפת־שאילתות־עצמי־גרמפס (GOQL)"
+msgstr "גרמפלט שמספק מסנן משפחות בשפת־שאילתות־עצמי־גרמפס (GOQL)"
 
 #: GOQLFilter/goql.gpr.py:69
 msgid "Event GOQL Filter"
@@ -15320,86 +15424,79 @@ msgstr "ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), 
 #: GOQLFilter/goql.py:188
 msgid "Enter inserts a newline; Ctrl+Enter runs Find.\n"
 msgstr ""
+"הקשה על 'אנטר' מכניסה שורה חדשה, הקשה על 'קונטרול+אנטר' מפעילה חיפוש.\n"
 
 #: GOQLFilter/goql.py:189
 msgid "Up/Down at the first/last line recalls previous expressions.\n"
-msgstr ""
+msgstr "מקשי החצים למעלה/למטה בשורה הראשונה/אחרונה קוראת לביטויים קודמים.\n"
 
 #: GOQLFilter/goql.py:190
 msgid "Tab always completes -- it never inserts a tab character."
-msgstr ""
+msgstr "מקש הטבלר תמיד משלים -- הוא אף פעם לא מוסיף תו טבלר."
 
 #: GOQLFilter/goql.py:213
-#, fuzzy, python-format
-#| msgid "Use filter "
+#, python-format
 msgid "%s filter"
-msgstr "שימוש במסנן "
+msgstr "במסנן %s"
 
 #: GOQLFilter/goql.py:233
 msgid "This resets the filter parameters to empty state."
-msgstr ""
+msgstr "זה משצב את פרמטרי המסנן למצב ריק."
 
 #: GOQLFilter/goql.py:239
 msgid "This opens a dialog to save the current expression as a named filter."
-msgstr ""
+msgstr "פתיחת חלון שיח לשמירת הביטוי הנוכחי כמסנן עם שם."
 
 #: GOQLFilter/goql.py:244
 msgid "Open this gramplet's help page in a browser."
-msgstr ""
+msgstr "פתיחת עמוד העזרה של הגרמפלט בדפדפן."
 
 #: GOQLFilter/goql.py:402
 msgid "SQL"
-msgstr ""
+msgstr "SQL"
 
 #: GOQLFilter/goql.py:403
-#, fuzzy
-#| msgid "Python Shell"
 msgid "Python evaluation"
-msgstr "מעטפת פיתון"
+msgstr "הערכת פיתון"
 
 #: GOQLFilter/goql.py:523
-#, fuzzy, python-format
-#| msgid "Error: login failed"
+#, python-format
 msgid "Error applying filter: %s"
-msgstr "שגיאה: הכניסה נכשלה"
+msgstr "שגיאה בהחלת מסנן: %s"
 
 #: GOQLFilter/goql.py:526
 #, python-format
 msgid "Showing %(shown)d of %(total)d (%(method)s)"
-msgstr ""
+msgstr "הצגת %(shown)d מתוך %(total)d %(method)s"
 
 #: GOQLFilter/goql.py:541
-#, fuzzy, python-format
-#| msgid "Error creating note"
+#, python-format
 msgid "Error resetting filter: %s"
-msgstr "שגיאה ביצירת הערה"
+msgstr "שגיאה בשצוב מסנן: %s"
 
 #: GOQLFilter/goql.py:548
-#, fuzzy
-#| msgid "Enter Python expressions"
 msgid "Enter an expression first"
-msgstr "הזנת ביטוי פיתון"
+msgstr "נא להזין ביטוי תחילה"
 
 #: GOQLFilter/goql.py:560
 #, python-brace-format
 msgid "Created by the GOQL Filter gramplet on {today}"
-msgstr ""
+msgstr "נוצר על ידי גרמפלט מסנן ה־GOQL ב־{today}"
 
 #: GOQLFilter/whereexprrule.gpr.py:30 GOQLFilter/whereexprrule.py:261
 msgid "People matching the <GOQL expression>"
-msgstr ""
+msgstr "אנשים שתואמים <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:32
 msgid ""
 "Matches people for which the given gramps-object-query-language where-"
 "expression evaluates to true"
-msgstr "התאמת אנשים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
+msgstr ""
+"התאמת אנשים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GOQLFilter/whereexprrule.gpr.py:50 GOQLFilter/whereexprrule.py:266
-#, fuzzy
-#| msgid "Families matching <event filter>"
 msgid "Families matching the <GOQL expression>"
-msgstr "משפחות שתואמות <מסנן אירוע>"
+msgstr "משפחות שתואמות <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:52
 msgid ""
@@ -15410,7 +15507,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:70 GOQLFilter/whereexprrule.py:271
 msgid "Events matching the <GOQL expression>"
-msgstr ""
+msgstr "אירועים שתואמים <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:72
 msgid ""
@@ -15421,7 +15518,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:90 GOQLFilter/whereexprrule.py:276
 msgid "Places matching the <GOQL expression>"
-msgstr ""
+msgstr "מקומות שתואמים <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:92
 msgid ""
@@ -15432,19 +15529,18 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:110 GOQLFilter/whereexprrule.py:281
 msgid "Repositories matching the <GOQL expression>"
-msgstr ""
+msgstr "מאגרים שתואמים <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:112
 msgid ""
 "Matches repositories for which the given gramps-object-query-language where-"
 "expression evaluates to true"
-msgstr "התאמת אגרים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
+msgstr ""
+"התאמת אגרים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GOQLFilter/whereexprrule.gpr.py:130 GOQLFilter/whereexprrule.py:286
-#, fuzzy
-#| msgid "Source matching parameters"
 msgid "Sources matching the <GOQL expression>"
-msgstr "מדדי התאמת מקורות"
+msgstr "מקורות שתואמים <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:132
 msgid ""
@@ -15455,7 +15551,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:150 GOQLFilter/whereexprrule.py:291
 msgid "Citations matching the <GOQL expression>"
-msgstr ""
+msgstr "מובאות שתואמות <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:152
 msgid ""
@@ -15466,7 +15562,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:170 GOQLFilter/whereexprrule.py:296
 msgid "Media matching the <GOQL expression>"
-msgstr ""
+msgstr "מדיה שתואמת <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:172
 msgid ""
@@ -15476,25 +15572,25 @@ msgstr "התאמת מדיה שבהן ביטוי where בשפת־שאילתות־
 
 #: GOQLFilter/whereexprrule.gpr.py:190 GOQLFilter/whereexprrule.py:301
 msgid "Notes matching the <GOQL expression>"
-msgstr ""
+msgstr "הערות שתואמות <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:192
 msgid ""
 "Matches notes for which the given gramps-object-query-language where-"
 "expression evaluates to true"
-msgstr "התאמת הערות שבהן ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
+msgstr ""
+"התאמת הערות שבהן ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GOQLFilter/whereexprrule.py:212
-#, fuzzy
-#| msgid "Regular Expression"
 msgid "GOQL expression"
-msgstr "ביטוי רגולרי"
+msgstr "ביטוי GOQL"
 
 #: GOQLFilter/whereexprrule.py:214
 msgid ""
 "Matches objects for which the given gramps-object-query-language where-"
 "expression evaluates to true"
-msgstr "התאמת עצמים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
+msgstr ""
+"התאמת עצמים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
@@ -15873,7 +15969,7 @@ msgstr ""
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:163
 #, python-format
 msgid "Failure writing to %s"
-msgstr "כתיבה ל־%s נכשלה"
+msgstr "כתיבה ל־%s כשלה"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:164
 msgid "Directory does not exist"
@@ -16053,8 +16149,186 @@ msgstr "שיח גרמפס"
 msgid "AI Chatbot Gramplet (requires connecting to an LLM service)"
 msgstr "גרמפלט שיחוח בינה מלאכותית (דורש חיבור לשירות LLM)"
 
-#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:213
-#: GrampsWebSync/grampswebsync.py:271
+#: GrampsWebApiDb/grampswebapidb.gpr.py:24
+msgid "GrampsWebApiDb"
+msgstr "GrampsWebApiDb"
+
+#: GrampsWebApiDb/grampswebapidb.gpr.py:25
+msgid "Gramps _Web API Database"
+msgstr "מסד־נתוני _מרשתת גרמפש"
+
+#: GrampsWebApiDb/grampswebapidb.gpr.py:27
+msgid ""
+"Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) as a live "
+"database, mirrored locally for speed."
+msgstr ""
+"שימוש בשרת API גרמפס מרשתת (לדוגמה gramps-connect או Gramps Web) כמסד נתונים "
+"פעיל, עם שיקוף מקומי להגברת מהירות."
+
+#: GrampsWebApiDb/grampswebapidb.py:262
+msgid ""
+"The account authenticating via GRAMPS_WEB_API_KEY does not have permission "
+"on the server for this operation (HTTP 403 Forbidden). Generate a key for an "
+"account with sufficient permissions, or ask the server administrator to "
+"grant this one access."
+msgstr ""
+"אין הרשאה בשרת לפעולת אימות חשבון באמצעות GRAMPS_WEB_API_KEY (HTTP 403 "
+"אסור). נא ליצור מפתח לחשבון עם הרשאות מספקות, או לבקש ממנהל השרת להעניק "
+"גישהלחשבון זה."
+
+#: GrampsWebApiDb/grampswebapidb.py:422
+#, python-format
+msgid ""
+"This Family Tree is named \"%(actual)s\", but GRAMPS_WEB_API_KEY currently "
+"authenticates as \"%(expected)s\". Rename this Family Tree to "
+"\"%(expected_typeable)s\" (Family Trees -> Manage Family Trees) if it's "
+"meant to mirror that account, or open/create the Family Tree already named "
+"that -- reusing this one would mix its existing local data with the other "
+"account's."
+msgstr ""
+"אילן־היוחסין נקרא \"%(actual)s\", אבל GRAMPS_WEB_API_KEY מאמת כרגע "
+"כ־\"%(expected)s\". נא לשנות את שם אילן־יוחסין זה "
+"ל־\"%(expected_typeable)s\" (אילנות־יוחסין -> ניהול אילנות־יוחסין) אם הוא "
+"אמור לשקף את החשבון הזה, או לפתוח/ליצור את אילן־היוחסין שכבר נקרא כך – שימוש "
+"חוזר באילן־יוחסין זה יגרום לערבב הנתונים המקומיים הקיימים שלו עם אלה של "
+"החשבון האחר."
+
+#: GrampsWebApiDb/grampswebapidb.py:550
+msgid "Retry local change after server conflict"
+msgstr "לנסות שנוי מקומי שוב לאחר התנגשות בשרת"
+
+#: GrampsWebApiDb/grampswebapidb.py:668
+msgid "Clear local mirror before full resync"
+msgstr "נא לנקות ראי מקומי לפני סינכרון חוזר מלא"
+
+#: GrampsWebApiDb/mintapikeytool.gpr.py:23 GrampsWebApiDb/mintapikeytool.py:129
+msgid "Generate Gramps Web API key"
+msgstr "חילול מפתח API מרשתת גרמפס"
+
+#: GrampsWebApiDb/mintapikeytool.gpr.py:25
+msgid ""
+"Turn a Gramps Web API server URL, username, and password into a "
+"GRAMPS_WEB_API_KEY value for GrampsWebApiDb, and optionally create a "
+"matching, correctly-named GrampsWebApiDb Family Tree for it."
+msgstr ""
+"הפיכת כתובת URL של שרת API מרשתת גרמפס, שם משתמש וסיסמה לערך "
+"GRAMPS_WEB_API_KEY עבור GrampsWebApiDb, לחלופין לצור עבורו אילן־יוחסין תואם "
+"בשם הנכון של GrampsWebApiDb."
+
+#: GrampsWebApiDb/mintapikeytool.py:141
+msgid "Server URL"
+msgstr "כתובת URL של השרת"
+
+#: GrampsWebApiDb/mintapikeytool.py:141
+msgid "e.g. https://your-server/api"
+msgstr "לדוגמה https://your-server/api"
+
+#: GrampsWebApiDb/mintapikeytool.py:143
+msgid "Username"
+msgstr "שם משתמש"
+
+#: GrampsWebApiDb/mintapikeytool.py:144
+msgid "Password"
+msgstr "סיסמה"
+
+#: GrampsWebApiDb/mintapikeytool.py:153
+msgid "Generate API Key"
+msgstr "חילול מפתח API"
+
+#: GrampsWebApiDb/mintapikeytool.py:162
+msgid ""
+"Enter your server URL, username, and password, then click Generate API Key."
+msgstr ""
+"נא להזין כתבת URL של השרת, שם משתמש וסיסמה, לאחר מכן להקיש על חילול מפתח API."
+
+#: GrampsWebApiDb/mintapikeytool.py:168
+msgid "GRAMPS_WEB_API_KEY"
+msgstr "GRAMPS_WEB_API_KEY"
+
+#: GrampsWebApiDb/mintapikeytool.py:182
+msgid "Create Synced Family Tree for this key"
+msgstr "יצירת אילן־יוחסין מסונכרן עבורמפתח זה"
+
+#: GrampsWebApiDb/mintapikeytool.py:197
+#, python-format
+msgid ""
+"Found an existing %s for this session. Click Create Synced Family Tree to "
+"use it directly, or fill in the form above to generate a different key."
+msgstr ""
+"נמצא %s קיים לשיח זה. נא להקיש על יצירת אילן־יוחסין מסונכרן כדי להשתמש בו "
+"באופן ישיר, או למלא את הטופס מעל לחילול מפתח שונה."
+
+#: GrampsWebApiDb/mintapikeytool.py:222
+msgid "Please fill in the server URL, username, and password."
+msgstr "נא להזין את כתובת ה־URL של השרת, שם משתמש וססמה."
+
+#: GrampsWebApiDb/mintapikeytool.py:229
+msgid "Generating API key…"
+msgstr "מתבצע חילול מפתח API…"
+
+#: GrampsWebApiDb/mintapikeytool.py:260
+#, python-format
+msgid "Login failed (HTTP %d): check your username and password."
+msgstr "התחברות כשלה (HTTP %d):  נא לבדוק שם משתמש וסיסמה."
+
+#: GrampsWebApiDb/mintapikeytool.py:263
+#, python-format
+msgid "Server returned an error (HTTP %d %s): check the Server URL."
+msgstr "השרת החזיר שגיאה (HTTP %d %s): נא לבדוק את כתובת ה־URL של השרת."
+
+#: GrampsWebApiDb/mintapikeytool.py:271
+#, python-format
+msgid "Could not reach the server: check the Server URL. (%s)"
+msgstr "השרת לא נגיש: נא לבדוק את כתובת ה־URL של השרת. (%s)"
+
+#: GrampsWebApiDb/mintapikeytool.py:274
+#, python-format
+msgid "Unexpected response from the server: %s"
+msgstr "תגובה בלתי צפויה מהשרת: %s"
+
+#: GrampsWebApiDb/mintapikeytool.py:277 GrampsWebApiDb/mintapikeytool.py:369
+#, python-format
+msgid "Error: %s"
+msgstr "שגיאה: %s"
+
+#: GrampsWebApiDb/mintapikeytool.py:286
+#, python-format
+msgid ""
+"Success. %s is now set for this Gramps session -- no restart needed. Copy "
+"the key below to also set it in your shell environment for next time."
+msgstr ""
+"הצלחה. %s מוגדר כעת לשיח גרמפס זה -- שתחול לא נדרש. נא להעתיק את המפתח מטה "
+"כדי להגדיר אותו גם בסביבת המעטפת לפעם הבאה."
+
+#: GrampsWebApiDb/mintapikeytool.py:307
+msgid "Looking up account identity…"
+msgstr "מתבצע חפוש זהות חשבון…"
+
+#: GrampsWebApiDb/mintapikeytool.py:339
+#, python-format
+msgid ""
+"A Family Tree named \"%s\" already exists. Open it from Family Trees -> "
+"Manage Family Trees instead of creating another one."
+msgstr ""
+"אילן־יוחסין בשם '%s' קיים כבר. ניתן לפתוח אותו מתפריט 'אילנות־יוחסין -> "
+"ניהול אילנות־יוחסין' במקום ליצור אחד נוסף."
+
+#: GrampsWebApiDb/mintapikeytool.py:352
+#, python-format
+msgid "Error creating Family Tree: %s"
+msgstr "שגיאה ביצרת אילן־יוחסין: %s"
+
+#: GrampsWebApiDb/mintapikeytool.py:358
+#, python-format
+msgid ""
+"Created Family Tree \"%s\". Open it from Family Trees -> Manage Family Trees "
+"to start syncing."
+msgstr ""
+"אילן־יוחסין '%s' נוצר. ניתן לפתוח אותו מתפריט 'אילנות־יוחסין -> ניהול אילנות־"
+"יוחסין' כדי להתחיל לסנכרן."
+
+#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:204
+#: GrampsWebSync/grampswebsync.py:269
 msgid "Gramps Web Sync"
 msgstr "מרשתת גרמפס סנכרון"
 
@@ -16062,119 +16336,73 @@ msgstr "מרשתת גרמפס סנכרון"
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "מסנכרן מסד־נתונים מקומי עם מופע מרשתת גרמפס."
 
-#: GrampsWebSync/grampswebsync.py:124
-#, python-format
+#: GrampsWebSync/grampswebsync.py:249
+msgid "_Try again"
+msgstr "_לנסות שוב"
+
+#: GrampsWebSync/grampswebsync.py:250
+msgid "C_onnect"
+msgstr "לה_תחבר"
+
+#: GrampsWebSync/grampswebsync.py:345
+msgid "Forget this server?"
+msgstr "האם לשכוח שרת זה?"
+
+#: GrampsWebSync/grampswebsync.py:347
 msgid ""
-"The system keyring could not be used. Snap confinement blocks access until "
-"you run: %s"
+"The address, user name and password stored for this server will be removed, "
+"along with the record of when this family tree last synchronized with it. "
+"The next synchronization will compare the two trees from scratch."
 msgstr ""
-"לא ניתן היה להשתמש בצרור־מפתחות המערכת. הגבלת Snap חוסמת את הגישה עד להרצת: "
-"%s"
+"הכתובת, שם משתמש וסיסמה שמאוחסנים עבור שרת זה יוסרו, יחד עם רשומת מועד "
+"סונכרן אחרון של אילן־יוחסין זה. הסינכרון הבא ישווה את שני אילנות־היוחסין "
+"מאפס."
 
-#: GrampsWebSync/grampswebsync.py:128
+#: GrampsWebSync/grampswebsync.py:352
+msgid "Forget"
+msgstr "לשכוח"
+
+#: GrampsWebSync/grampswebsync.py:480
 msgid ""
-"The system keyring could not be used. You will need to enter your password "
-"each time."
-msgstr "לא ניתן היה להשתמש בצרור מפתחות המערכת. תדרש הזנת סיסמה בכל פעם."
-
-#: GrampsWebSync/grampswebsync.py:145
-msgid "Authentication failed. Please check your username and password."
-msgstr "האימות נכשל. יש לבדוק שם משתמש וססמה."
-
-#: GrampsWebSync/grampswebsync.py:148
-msgid "Access forbidden. Please check username and password."
-msgstr "הגישה אסורה. יש לבדוק שם משתמש וססמה."
-
-#: GrampsWebSync/grampswebsync.py:150
-msgid "GrampsWeb service not found. Please check the URL."
-msgstr "שירות מרשתת גרמפס לא נמצא. יש לבדוק את כתובת ה־URL."
-
-#: GrampsWebSync/grampswebsync.py:152
-msgid "Too many requests, please try again in a few seconds."
-msgstr "יותר מדי בקשות; יש לנסות שוב בעוד כמה שניות."
-
-#: GrampsWebSync/grampswebsync.py:154
-msgid "GrampsWeb tree is disabled."
-msgstr "אילן מרשתת גרמפס מושבת."
-
-#: GrampsWebSync/grampswebsync.py:156
-msgid "Connection failed. Please check the URL and your internet connection."
-msgstr "חיבור כשל. נא לבדוק את ה־URL והחיבור למרשתת."
-
-#: GrampsWebSync/grampswebsync.py:159
-msgid "Invalid server response. Please check the URL."
-msgstr "תגובת שרת לא תקינה. יש לבדוק את כתובת ה־URL."
-
-#: GrampsWebSync/grampswebsync.py:162
-msgid "Your user does not have sufficient server permissions to use sync."
-msgstr "למשתמש אין הרשאות שרת מספיקות לשימוש בסנכרון."
-
-#: GrampsWebSync/grampswebsync.py:164
-msgid "Failed importing downloaded XML file."
-msgstr "ייבוא קובץ XML שהורד נכשל."
-
-#: GrampsWebSync/grampswebsync.py:166
-msgid "Unable to synchronize changes to server: objects have been modified."
-msgstr "לא ניתן לסנכרון שינויים לשרת: עצמים יש היה שונו."
-
-#: GrampsWebSync/grampswebsync.py:168
-msgid "Unexpected error while applying changes."
-msgstr "שגיאה בלתי צפויה בעת החלת שינויים."
-
-#: GrampsWebSync/grampswebsync.py:170
-msgid ""
-"The family tree was modified while the changes were being reviewed. Nothing "
-"has been applied. Please compare again."
-msgstr "אילן־היוחסין הוסגל במהלך סקירת השינויים. לא הוחל דבר. נא להשוות שוב."
-
-#: GrampsWebSync/grampswebsync.py:175
-#, python-format
-msgid "The server could not apply the changes: %s"
-msgstr "השרת לא הצליח להחיל שינויים: %s"
-
-#: GrampsWebSync/grampswebsync.py:177
-#, python-format
-msgid "Server error %s. Please check your connection."
-msgstr "שגיאת שרת %s. נא לבדוק חיבור."
-
-#: GrampsWebSync/grampswebsync.py:179 GrampsWebSync/grampswebsync.py:180
-#, python-format
-msgid "Unexpected error: %s"
-msgstr "שגיאה בלתי צפויה: %s"
-
-#: GrampsWebSync/grampswebsync.py:341
-msgid "Fetching remote data..."
-msgstr "מאחזר נתונים מרוחקים..."
-
-#: GrampsWebSync/grampswebsync.py:344
-msgid "Comparing local and remote data..."
-msgstr "השוואת מקומי ומרוחק נתונים..."
-
-#: GrampsWebSync/grampswebsync.py:348
-msgid "Successfully applied changes to local database."
-msgstr "בהצלחה הוחלו שינויים למקומי מסד־נתונים."
-
-#: GrampsWebSync/grampswebsync.py:437
-msgid "Continue without transport encryption?"
-msgstr "להמשיך ללא הצפנת תעבורה?"
-
-#: GrampsWebSync/grampswebsync.py:439
-msgid ""
-"You have specified a URL with http scheme. If you continue, your password "
-"will be sent in clear text over the network. Use only for local testing!"
+"These credentials were last used with a different family tree. Check the "
+"server before continuing."
 msgstr ""
-"צוינה כתובת URL עם סכמת http. בהמשך, הססמה תישלח כמלל גלוי ברשת. יש להשתמש "
-"בכך לבדיקה מקומית בלבד!"
+"השימוש האחרון בנתוני האמנה נעשה לאילן־יוחסין יוחסין שונה. נא לבדוק את השרת "
+"לפני המשך הפעולה."
 
-#: GrampsWebSync/grampswebsync.py:444
-msgid "Continue with HTTP"
-msgstr "המשך עם HTTP"
+#: GrampsWebSync/grampswebsync.py:556
+msgid "Change server…"
+msgstr "החלפת שרת…"
 
-#: GrampsWebSync/grampswebsync.py:445
-msgid "Use HTTPS"
-msgstr "שימוש ב־HTTPS"
+#: GrampsWebSync/grampswebsync.py:591
+msgid "Server URL:"
+msgstr "כתובת URL של השרת:"
 
-#: GrampsWebSync/grampswebsync.py:495
+#: GrampsWebSync/grampswebsync.py:593 PhpGedView/phpgedview.glade:170
+msgid "Username:"
+msgstr "שם משתמש:"
+
+#: GrampsWebSync/grampswebsync.py:594 PhpGedView/phpgedview.glade:182
+msgid "Password:"
+msgstr "ססמה:"
+
+#: GrampsWebSync/grampswebsync.py:598
+msgid "Remember password"
+msgstr "לזכור סיסמה"
+
+#: GrampsWebSync/grampswebsync.py:610
+msgid "Forget this server"
+msgstr "לשכוח שרת זה"
+
+#: GrampsWebSync/grampswebsync.py:641
+msgid "About this tool"
+msgstr "על כלי זה."
+
+#: GrampsWebSync/grampswebsync.py:645
+msgid "Open the online manual"
+msgstr "פתיחת מדריך־המשתמש המקוון"
+
+#: GrampsWebSync/grampswebsync.py:658
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
 "remote family tree served by Gramps Web.\n"
@@ -16201,120 +16429,333 @@ msgstr ""
 "אם במקום זאת נדרש למזג שני אילנות שונים משמעותית עם אפשרות לבצע שינויים "
 "ידניים, יש להשתמש בכלי מיזוג ייבוא."
 
-#: GrampsWebSync/grampswebsync.py:522
-msgid "Server URL: "
-msgstr "כתובת URL של השרת: "
-
-#: GrampsWebSync/grampswebsync.py:578 HistContext/HistContext.py:289
+#: GrampsWebSync/grampswebsync.py:729 HistContext/HistContext.py:289
 #: HistContext/HistContext.py:333 HistContext/HistContext.py:420
 msgid "Error:"
 msgstr "שגיאה:"
 
-#: GrampsWebSync/grampswebsync.py:646
-msgid "Sync mode"
-msgstr "מצב סינכרון"
+#: GrampsWebSync/grampswebsync.py:756 GrampsWebSync/grampswebsync.py:1012
+msgid "Warning:"
+msgstr "אזהרה:"
 
-#: GrampsWebSync/grampswebsync.py:656
+#: GrampsWebSync/grampswebsync.py:901
+msgid "Sync mode:"
+msgstr "מצב סינכרון:"
+
+#: GrampsWebSync/grampswebsync.py:1077
+msgid "Synchronization complete"
+msgstr "סנכרון הושלם"
+
+#: GrampsWebSync/grampswebsync.py:1084
+msgid "Synchronization failed"
+msgstr "סנכרון כשל"
+
+#: GrampsWebSync/presentation.py:128
+#, python-format
+msgid "Gramps Web Sync %(addon)s, Web API %(api)s"
+msgstr "סנכרון Gramps Web %(addon)s API מרשתת %(api)s"
+
+#: GrampsWebSync/presentation.py:132
+#, python-format
+msgid "Gramps Web Sync %s"
+msgstr "סנכרון Gramps Web %s"
+
+#: GrampsWebSync/presentation.py:164
+msgid ""
+"This URL uses http, so your password will be sent in clear text. Use only "
+"for local testing."
+msgstr ""
+"כתובת URL זו משתמשת ב־http, כלומר, הססמה תישלח כמלל גלוי. יש להשתמש בזה "
+"לבדיקה מקומית בלבד."
+
+#: GrampsWebSync/presentation.py:182
+#, python-format
+msgid ""
+"The system keyring could not be used. Snap confinement blocks access until "
+"you run: %s"
+msgstr ""
+"לא ניתן היה להשתמש בצרור־מפתחות המערכת. הגבלת Snap חוסמת את הגישה עד להרצת: "
+"%s"
+
+#: GrampsWebSync/presentation.py:186
+msgid ""
+"The system keyring could not be used. You will need to enter your password "
+"each time."
+msgstr "לא ניתן היה להשתמש בצרור מפתחות המערכת. תדרש הזנת סיסמה בכל פעם."
+
+#: GrampsWebSync/presentation.py:203
+msgid "Authentication failed. Please check your username and password."
+msgstr "האימות נכשל. יש לבדוק שם משתמש וססמה."
+
+#: GrampsWebSync/presentation.py:206
+msgid "Access forbidden. Please check username and password."
+msgstr "הגישה אסורה. יש לבדוק שם משתמש וססמה."
+
+#: GrampsWebSync/presentation.py:208
+msgid "GrampsWeb service not found. Please check the URL."
+msgstr "שירות מרשתת גרמפס לא נמצא. יש לבדוק את כתובת ה־URL."
+
+#: GrampsWebSync/presentation.py:210
+msgid "Too many requests, please try again in a few seconds."
+msgstr "יותר מדי בקשות; יש לנסות שוב בעוד כמה שניות."
+
+#: GrampsWebSync/presentation.py:212
+msgid "GrampsWeb tree is disabled."
+msgstr "אילן מרשתת גרמפס מושבת."
+
+#: GrampsWebSync/presentation.py:214
+msgid "Connection failed. Please check the URL and your internet connection."
+msgstr "חיבור כשל. נא לבדוק את ה־URL והחיבור למרשתת."
+
+#: GrampsWebSync/presentation.py:217
+msgid "Invalid server response. Please check the URL."
+msgstr "תגובת שרת לא תקינה. יש לבדוק את כתובת ה־URL."
+
+#: GrampsWebSync/presentation.py:220
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr "למשתמש אין הרשאות שרת מספיקות לשימוש בסנכרון."
+
+#: GrampsWebSync/presentation.py:222
+msgid "Failed importing downloaded XML file."
+msgstr "ייבוא קובץ XML שהורד נכשל."
+
+#: GrampsWebSync/presentation.py:224
+msgid "Unable to synchronize changes to server: objects have been modified."
+msgstr "לא ניתן לסנכרון שינויים לשרת: עצמים יש היה שונו."
+
+#: GrampsWebSync/presentation.py:226
+msgid "Unexpected error while applying changes."
+msgstr "שגיאה בלתי צפויה בעת החלת שינויים."
+
+#: GrampsWebSync/presentation.py:228
+msgid ""
+"The family tree was modified while the changes were being reviewed. Nothing "
+"has been applied. Please compare again."
+msgstr "אילן־היוחסין הוסגל במהלך סקירת השינויים. לא הוחל דבר. נא להשוות שוב."
+
+#: GrampsWebSync/presentation.py:235
+#, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s, but synchronization needs "
+"%(needed)s or newer. Please update the server."
+msgstr ""
+"שרת זה מירץ Gramps Web API %(found)s, אבל הסינכרון דורש %(needed)s או חדש "
+"יותר. נא לעדכן את השרת."
+
+#: GrampsWebSync/presentation.py:239
+#, python-format
+msgid ""
+"This server did not report a Gramps Web API version, so it is too old to "
+"synchronize with. Version %s or newer is needed."
+msgstr ""
+"השרת לא דיווח על גרסת Gramps Web API, לכן הוא ישן מדי מכדי להסתנכרן. נדרשת "
+"גרסה %s או חדשה יותר."
+
+#: GrampsWebSync/presentation.py:244
+#, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s. This version of Gramps works with "
+"Gramps Web API %(major)s, so synchronizing with this server needs a newer "
+"version of Gramps."
+msgstr ""
+"שרת זה מריץ את Gramps Web API %(found)s. גרסה זו של גרמפס עובדת עם Gramps "
+"Web API %(major)s, לכן סנכרון עם שרת זה דורש גרסה חדשה יותר של גרמפס."
+
+#: GrampsWebSync/presentation.py:250
+msgid ""
+"This server is not configured to use a background task queue. "
+"Synchronization needs one: without it, applying changes times out before the "
+"server has finished. Please enable it on the server."
+msgstr ""
+"שרת זה לא מוגדר להרצת תור משימות ברקע. לסנכרון נדרש אחד כזה: בלעדיו, פסק זמן "
+"להחלת שינויים יתרחש לפני שהשרת סיים. נא אפשר זאת בשרת."
+
+#: GrampsWebSync/presentation.py:256
+#, python-format
+msgid "The server could not apply the changes: %s"
+msgstr "השרת לא הצליח להחיל שינויים: %s"
+
+#: GrampsWebSync/presentation.py:258
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "שגיאת שרת %s. נא לבדוק חיבור."
+
+#: GrampsWebSync/presentation.py:260 GrampsWebSync/presentation.py:261
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "שגיאה בלתי צפויה: %s"
+
+#: GrampsWebSync/presentation.py:267
+msgid "Signing in…"
+msgstr "מתבצעת התחברות…"
+
+#: GrampsWebSync/presentation.py:268
+msgid "Downloading the remote family tree…"
+msgstr "מתבצעת הורדתאילן־יוחסין מרוחק…"
+
+#: GrampsWebSync/presentation.py:269
+msgid "Comparing the two family trees…"
+msgstr "מתבצאת השוואת שני אילנות־היוחסין…"
+
+#: GrampsWebSync/presentation.py:270
+msgid "Checking which media files are missing…"
+msgstr "מתבצעת בדיקת עצמי מדיה חסרים…"
+
+#: GrampsWebSync/presentation.py:271
+msgid "Applied the changes to this computer."
+msgstr "החלת שינויים במחשב זה."
+
+#: GrampsWebSync/presentation.py:272
+msgid "Sending the changes to the server…"
+msgstr "השינויים נשלחים לשרת…"
+
+#: GrampsWebSync/presentation.py:284
+msgid "Downloading media files…"
+msgstr "מתבצעת הורדת קבצי מדיה…"
+
+#: GrampsWebSync/presentation.py:285
+msgid "Uploading media files…"
+msgstr "מתבצעת העלאת קבצי מדיה…"
+
+#: GrampsWebSync/presentation.py:293
+msgid "Connect"
+msgstr "התחברות"
+
+#: GrampsWebSync/presentation.py:295
+msgid "Apply changes"
+msgstr "החלת שינויים"
+
+#: GrampsWebSync/presentation.py:296
+msgid "Transfer media files"
+msgstr "העברת קבצי מדיה"
+
+#: GrampsWebSync/presentation.py:304
+msgid "Bidirectional synchronization"
+msgstr "סנכרון דו־כיווני"
+
+#: GrampsWebSync/presentation.py:305
+msgid "Reset the server to match this computer"
+msgstr "שיצוב השרת כך שיתאים למחשב זה"
+
+#: GrampsWebSync/presentation.py:306
+msgid "Reset this computer to match the server"
+msgstr "שיצוב מחשס זה כך שיתאים לשרת"
+
+#: GrampsWebSync/presentation.py:319
 msgid ""
 "Changes from both sides are combined. Objects edited in both places are "
 "merged."
 msgstr "שינויים משני הצדדים שולבו. עצמים שנערכו בשני המקומות מוזגו."
 
-#: GrampsWebSync/grampswebsync.py:660
+#: GrampsWebSync/presentation.py:323
 msgid ""
 "The server is made to match this computer. Anything changed only on the "
 "server is discarded."
 msgstr "השרת בנוי כך שהתאמות יתבצעו למחשב זה. כל שינוי שנעשה רק בשרת יושלך."
 
-#: GrampsWebSync/grampswebsync.py:664
+#: GrampsWebSync/presentation.py:327
 msgid ""
 "This computer is made to match the server. Anything changed only here is "
 "discarded."
 msgstr "מחשב זה בנוי כך שהתאמות יתבצעו לשרת. כל שינוי שנעשה רק כאן יושלך."
 
-#: GrampsWebSync/grampswebsync.py:671
-msgid "Bidirectional Synchronization"
-msgstr "סנכרון דו־כיווני"
-
-#: GrampsWebSync/grampswebsync.py:672
-msgid "Reset remote to local"
-msgstr "שיצוב מצב מרוחק למקומי"
-
-#: GrampsWebSync/grampswebsync.py:673
-msgid "Reset local to remote"
-msgstr "שיצוב מצב מקומי למרוחק"
-
-#: GrampsWebSync/grampswebsync.py:712
-msgid "Warning:"
-msgstr "אזהרה:"
-
-#: GrampsWebSync/grampswebsync.py:722
-msgid "Local changes"
-msgstr "שינויים מקומיים"
-
-#: GrampsWebSync/grampswebsync.py:727
-msgid "Remote changes"
-msgstr "שינויים מרחוק"
-
-#: GrampsWebSync/grampswebsync.py:732
-msgid "Simultaneous changes"
-msgstr "שינויים בו־זמנית"
-
-#: GrampsWebSync/grampswebsync.py:790
-msgid "Fetching information about media files..."
-msgstr "שליפת מידע על קובצי מדיה..."
-
-#: GrampsWebSync/grampswebsync.py:816
-msgid "Both trees are the same."
-msgstr "שני אילנות הם אותו."
-
-#: GrampsWebSync/grampswebsync.py:822
-msgid "Applying changes to local database ..."
-msgstr "החלת שינויים במסד נתונים מקומי ..."
-
-#: GrampsWebSync/grampswebsync.py:824
-msgid "No changes to apply to local database."
-msgstr "אין שינויים להחלה על מסד־הנתונים המקומי."
-
-#: GrampsWebSync/grampswebsync.py:828
-msgid "Applying changes to remote database ..."
-msgstr "החלת שינויים במסד נתונים מרוחק ..."
-
-#: GrampsWebSync/grampswebsync.py:833
-msgid "No changes to apply to remote database."
-msgstr "אין שינויים להחלה על מסד־הנתונים המרוחק."
-
-#: GrampsWebSync/grampswebsync.py:862
-msgid "Missing locally"
-msgstr "חסרים באופן מקומי"
-
-#: GrampsWebSync/grampswebsync.py:865
-msgid "Missing remotely"
-msgstr "חסרים באופן מרוחק"
-
-#: GrampsWebSync/grampswebsync.py:905
+#: GrampsWebSync/presentation.py:574
 #, python-format
-msgid "Downloading %s media file"
-msgid_plural "Downloading %s media files"
-msgstr[0] "הורדת קובץ מדיה %s"
-msgstr[1] "הורדת %s קבצי מדיה"
-msgstr[2] "הורדת %s קבצי מדיה"
-msgstr[3] "הורדת %s קבצי מדיה"
+msgid "Will change on this computer (%s object)"
+msgid_plural "Will change on this computer (%s objects)"
+msgstr[0] "ישתנה במחשב זה (עצם %s)"
+msgstr[1] "ישתנו במחשב זה (%s עצמים)"
+msgstr[2] "ישתנו במחשב זה (%s עצמים)"
+msgstr[3] "ישתנו במחשב זה (%s עצמים)"
 
-#: GrampsWebSync/grampswebsync.py:920
+#: GrampsWebSync/presentation.py:582
 #, python-format
-msgid "Uploading %s media file"
-msgid_plural "Uploading %s media files"
-msgstr[0] "העלאת קובץ מדיה %s"
-msgstr[1] "העלאת %s קבצי מדיה"
-msgstr[2] "העלאת %s קבצי מדיה"
-msgstr[3] "העלאת %s קבצי מדיה"
+msgid "Will change on the server (%s object)"
+msgid_plural "Will change on the server (%s objects)"
+msgstr[0] "ישתנה בשרת (עצם %s)"
+msgstr[1] "ישתנו בשרת (%s עצמים)"
+msgstr[2] "ישתנו בשרת (%s עצמים)"
+msgstr[3] "ישתנו בשרת (%s עצמים)"
 
-#: GrampsWebSync/grampswebsync.py:965
-msgid "Try again"
-msgstr "נא לנסות שוב"
+#: GrampsWebSync/presentation.py:593
+#, python-format
+msgid "Add %s object"
+msgid_plural "Add %s objects"
+msgstr[0] "הוספת עצם %s"
+msgstr[1] "הוספת %s עצמים"
+msgstr[2] "הוספת %s עצמים"
+msgstr[3] "הוספת %s עצמים"
 
-#: GrampsWebSync/grampswebsync.py:999
+#: GrampsWebSync/presentation.py:594
+#, python-format
+msgid "Update %s object"
+msgid_plural "Update %s objects"
+msgstr[0] "עדכון עצם %s"
+msgstr[1] "עדכון %s עצמים"
+msgstr[2] "עדכון %s עצמים"
+msgstr[3] "עדכון %s עצמים"
+
+#: GrampsWebSync/presentation.py:595
+#, python-format
+msgid "Merge %s object"
+msgid_plural "Merge %s objects"
+msgstr[0] "הגירת עצם %s"
+msgstr[1] "הגירת %s עצמים"
+msgstr[2] "הגירת %s עצמים"
+msgstr[3] "הגירת %s עצמים"
+
+#: GrampsWebSync/presentation.py:596
+#, python-format
+msgid "Delete %s object"
+msgid_plural "Delete %s objects"
+msgstr[0] "מחיקת עצם %s"
+msgstr[1] "מחיקת %s עצמים"
+msgstr[2] "מחיקת %s עצמים"
+msgstr[3] "מחיקת %s עצמים"
+
+#: GrampsWebSync/presentation.py:615
+#, python-format
+msgid "%s object will be deleted on this computer."
+msgid_plural "%s objects will be deleted on this computer."
+msgstr[0] "עצם %s ימחק ממחשב זה."
+msgstr[1] "%s עצמים ימחקו ממחשב זה."
+msgstr[2] "%s עצמים ימחקו ממחשב זה."
+msgstr[3] "%s עצמים ימחקו ממחשב זה."
+
+#: GrampsWebSync/presentation.py:624
+#, python-format
+msgid "%s object will be deleted on the server."
+msgid_plural "%s objects will be deleted on the server."
+msgstr[0] "עצם %s ימחק מהשרת."
+msgstr[1] "%s עצמים ימחקו מהשרת."
+msgstr[2] "%s עצמים ימחקו מהשרת."
+msgstr[3] "%s עצמים ימחקו מהשרת."
+
+#: GrampsWebSync/presentation.py:636
+#, python-format
+msgid "%(down)s to download, %(up)s to upload"
+msgstr "%(down)s להורדה, %(up)s להעלאה"
+
+#: GrampsWebSync/presentation.py:642
+#, python-format
+msgid "Also transfer %(total)s media file (%(counts)s)"
+msgid_plural "Also transfer %(total)s media files (%(counts)s)"
+msgstr[0] "להעביר גם %(total)s קובץ מדיה %(counts)s"
+msgstr[1] "להעביר גם %(total)s קבצי מדיה %(counts)s"
+msgstr[2] "להעביר גם %(total)s קבצי מדיה %(counts)s"
+msgstr[3] "להעביר גם %(total)s קבצי מדיה %(counts)s"
+
+#: GrampsWebSync/presentation.py:658
+#, python-format
+msgid "%s media file is missing on both sides and cannot be transferred."
+msgid_plural ""
+"%s media files are missing on both sides and cannot be transferred."
+msgstr[0] "קובץ מדיה %s חסר בשני הצדדים ולא ניתנים להעברה."
+msgstr[1] "%s קבצי מדיה חסרים בשני הצדדים ולא ניתנו להעברה."
+msgstr[2] "%s קבצי מדיה חסרים בשני הצדדים ולא ניתנו להעברה."
+msgstr[3] "%s קבצי מדיה חסרים בשני הצדדים ולא ניתנו להעברה."
+
+#: GrampsWebSync/presentation.py:681
 #, python-format
 msgid "Applied %s change."
 msgid_plural "Applied %s changes."
@@ -16323,25 +16764,15 @@ msgstr[1] "הוחלו %s שינויים."
 msgstr[2] "הוחלו %s שינויים."
 msgstr[3] "הוחלו %s שינויים."
 
-#: GrampsWebSync/grampswebsync.py:1006
-msgid "Media files are in sync."
-msgstr "קובצי המדיה מסונכרנים."
-
-#: GrampsWebSync/grampswebsync.py:1011
-#, python-format
-msgid "%s media file is missing on both sides and could not be transferred."
-msgid_plural ""
-"%s media files are missing on both sides and could not be transferred."
-msgstr[0] "קובץ מדיה %s חסר בשני הצדדים ולא ניתנים להעברה."
-msgstr[1] "%s קבצי מדיה חסרים בשני הצדדים ולא ניתנו להעברה."
-msgstr[2] "%s קבצי מדיה חסרים בשני הצדדים ולא ניתנו להעברה."
-msgstr[3] "%s קבצי מדיה חסרים בשני הצדדים ולא ניתנו להעברה."
-
-#: GrampsWebSync/grampswebsync.py:1020
+#: GrampsWebSync/presentation.py:684
 msgid "Both trees are already in sync."
 msgstr "שני אילנות־היוחסין מסונכרים כבר."
 
-#: GrampsWebSync/grampswebsync.py:1033
+#: GrampsWebSync/presentation.py:689
+msgid "Media files are in sync."
+msgstr "קובצי המדיה מסונכרנים."
+
+#: GrampsWebSync/presentation.py:708
 #, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
@@ -16350,7 +16781,7 @@ msgstr[1] "הורדת %s קבצי מדיה צלחה."
 msgstr[2] "הורדת %s קבצי מדיה צלחה."
 msgstr[3] "הורדת %s קבצי מדיה צלחה."
 
-#: GrampsWebSync/grampswebsync.py:1043
+#: GrampsWebSync/presentation.py:717
 #, python-format
 msgid "Encountered %s error during download."
 msgid_plural "Encountered %s errors during download."
@@ -16359,7 +16790,7 @@ msgstr[1] "אירעו %s שגיאות במהלך ההורדה."
 msgstr[2] "אירעו %s שגיאות במהלך ההורדה."
 msgstr[3] "אירעו %s שגיאות במהלך ההורדה."
 
-#: GrampsWebSync/grampswebsync.py:1056
+#: GrampsWebSync/presentation.py:727
 #, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
@@ -16368,7 +16799,7 @@ msgstr[1] "העלאת %s קבצי מדיה צלחה."
 msgstr[2] "העלאת %s קבצי מדיה צלחה."
 msgstr[3] "העלאת %s קבצי מדיה צלחה."
 
-#: GrampsWebSync/grampswebsync.py:1065
+#: GrampsWebSync/presentation.py:736
 #, python-format
 msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
@@ -16376,6 +16807,60 @@ msgstr[0] "אירעה שגיאה %s במהלך ההעלאה."
 msgstr[1] "אירעו %s שגיאות במהלך ההעלאה."
 msgstr[2] "אירעו %s שגיאות במהלך ההעלאה."
 msgstr[3] "אירעו %s שגיאות במהלך ההעלאה."
+
+#: GrampsWebSync/presentation.py:768
+msgid "No server configured"
+msgstr "אין שרת מתוצר"
+
+#: GrampsWebSync/presentation.py:769
+#, python-format
+msgid "%(user)s on %(server)s"
+msgstr "%(user)s ב־%(server)s"
+
+#: GrampsWebSync/presentation.py:774
+#, python-format
+msgid "%(where)s — %(synced)s"
+msgstr "%(where)s — %(synced)s"
+
+#: GrampsWebSync/presentation.py:788
+msgid "Never synced"
+msgstr "מעולם לא סונכרן"
+
+#: GrampsWebSync/presentation.py:792
+msgid "Last synced just now"
+msgstr "סונכר לאחרונה זה עתה"
+
+#: GrampsWebSync/presentation.py:795
+#, python-format
+msgid "Last synced %s minute ago"
+msgid_plural "Last synced %s minutes ago"
+msgstr[0] "סונכרן לאחרונה לפני דקה %s"
+msgstr[1] "סונכרן לאחרונה לפני %s דקות"
+msgstr[2] "סונכרן לאחרונה לפני %s דקות"
+msgstr[3] "סונכרן לאחרונה לפני %s דקות"
+
+#: GrampsWebSync/presentation.py:801
+#, python-format
+msgid "Last synced %s hour ago"
+msgid_plural "Last synced %s hours ago"
+msgstr[0] "סונכרן לאחרונה לפני שעה %s"
+msgstr[1] "סונכרן לאחרונה לפני %s שעות"
+msgstr[2] "סונכרן לאחרונה לפני %s שעות"
+msgstr[3] "סונכרן לאחרונה לפני %s שעות"
+
+#: GrampsWebSync/presentation.py:806
+#, python-format
+msgid "Last synced %s day ago"
+msgid_plural "Last synced %s days ago"
+msgstr[0] "סונכרן לאחרונה לפני יום %s"
+msgstr[1] "סונכרן לאחרונה לפני %s ימים"
+msgstr[2] "סונכרן לאחרונה לפני %s ימים"
+msgstr[3] "סונכרן לאחרונה לפני %s ימים"
+
+#: GrampsWebSync/presentation.py:807
+#, python-format
+msgid "Last synced on %s"
+msgstr "סונכרן לאחרונ ב־%s"
 
 #: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
 msgid "Gram.py Script"
@@ -17315,9 +17800,9 @@ msgid ""
 "Copy the files to a correct directory or change the media path in the "
 "Preferences."
 msgstr ""
-"לקובץ שנפתח יש נתיב מדיה %s, שמתנגש עם נתיב המדיה של אילן־היוחסין שאליו "
-"מתבצע הייבוא. נתיב המדיה המקורי נשמר. יש להעתיק את הקבצים למחיצה נכונה או "
-"לשנות את נתיב המדיה בהעדפות."
+"לקובץ שנפתח יש נתיב מדיה %s, שמתנגש עם נתיב המדיה של אילן־היוחסין יעד "
+"הייבוא. נתיב המדיה המקורי נשמר. יש להעתיק את הקבצים למחיצה נכונה או לשנות את "
+"נתיב המדיה בהעדפות."
 
 #: ImportGramplet/ImportGramplet.py:172
 msgid ""
@@ -17452,7 +17937,7 @@ msgstr "סימון משפחות אוטומטי"
 
 #: ImportMerge/importmerge.glade:498
 msgid "Automark Parent Families"
-msgstr "אטמוט הערת משפחת הורה"
+msgstr "אטמוט סימון משפחת הורים"
 
 #: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:329
 #: ImportMerge/importmerge.py:708
@@ -19419,7 +19904,7 @@ msgstr "הצגת מספר האבות של האדם הנוכחי"
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:50
 #, python-format
 msgid "Number of %s's ancestors"
-msgstr "מספר האבות של %s"
+msgstr "מספר אבות קדמונים של %s"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:55
 msgid "Found"
@@ -19449,7 +19934,7 @@ msgstr "הצגת מספר הצאצאים של האדם הנוכחי"
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
 #, python-format
 msgid "Number of %s's descendants"
-msgstr "מספר הצאצאים של %s"
+msgstr "מספר צאצאים של %s"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
 msgid "Seen"
@@ -19801,7 +20286,7 @@ msgstr "LDS "
 
 #: PersonEverything/PersonEverything.py:435
 msgid "Street, City, County, State, Postal Code, Country, Phone number"
-msgstr "רחוב, עיר, מחוז, מדינה, קוד דואר, ארץ, מספר טלפון"
+msgstr "רחוב, עיר, מחוז, מדינת־משנה, קוד דואר, מדינה, מספר טלפון"
 
 #: PersonEverything/PersonEverything.py:449
 msgid "Media Reference"
@@ -20059,14 +20544,6 @@ msgstr "ייבוא phpGedView"
 msgid "http://"
 msgstr "http://"
 
-#: PhpGedView/phpgedview.glade:170
-msgid "Username:"
-msgstr "שם משתמש:"
-
-#: PhpGedView/phpgedview.glade:182
-msgid "Password:"
-msgstr "ססמה:"
-
 #: PhpGedView/phpgedview.gpr.py:24
 msgid "PhpGedView"
 msgstr "PhpGedView"
@@ -20126,7 +20603,7 @@ msgstr "שגיאה: לא תקין URL"
 
 #: PlaceCleanup/placecleanup.glade:27
 msgid "City, County, State, Country"
-msgstr "עיר, מחוז, ארץ, מדינה"
+msgstr "עיר, מחוז, מדינת־משנה, מדינה"
 
 #: PlaceCleanup/placecleanup.glade:89
 msgid "The current Primary name."
@@ -20352,8 +20829,8 @@ msgid ""
 "Checking the 'Admin' checkbox cause the GeoNames search to include "
 "adminstrative subdivisions in the search (countries, states, counties etc.)."
 msgstr ""
-"סימון תיבת 'מנהלתי' תגרום לחיפוש GeoNames לכלול בתוצאות החיפוש גם אזורים "
-"מנהליים משניים (מדינות, חבלים, מחוזות וכיוצא בזה)."
+"סימון תיבת הסימון 'מנהלי' תגרום לחיפוש GeoNames לכלול בתוצאות החיפוש גם "
+"אזורים מנהליים משניים (מדינות, מדינות־משנה, מחוזות וכיוצא בזה)."
 
 #: PlaceCleanup/placecleanup.glade:1145
 msgid ""
@@ -20650,7 +21127,7 @@ msgstr "אין שינויים"
 
 #: PlaceCompletion/PlaceCompletion.py:1143
 msgid "City[, State]"
-msgstr "עיר[, חבל]"
+msgstr "עיר[, מדינת־משנה]"
 
 #: PlaceCompletion/PlaceCompletion.py:1145
 msgid "City,PostalCode,Country"
@@ -20662,15 +21139,15 @@ msgstr "עיר[(רחוב;שכונה;קהילה)],מיקוד,מדינה"
 
 #: PlaceCompletion/PlaceCompletion.py:1149
 msgid "TitleStart [, City] [, State]"
-msgstr "TitleStart [, עיר] [, חבל]"
+msgstr "תחילת כותרת [, עיר] [, מדינת־משנה]"
 
 #: PlaceCompletion/PlaceCompletion.py:1151
 msgid "TitleStart [, City] [, County] [, State] [, Country]"
-msgstr "כותרת התחלה [, עיר] [, מחוז] [, מדינה] [, ארץ]"
+msgstr "תחילת כותרת [, עיר] [, מחוז] [, מדינת־משנה] [, מדינה]"
 
 #: PlaceCompletion/PlaceCompletion.py:1153
 msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
-msgstr "תחילת כותרת [, עיר] [, מיקוד] [, מחוז] [, מדינה] [, ארץ]"
+msgstr "תחילת כותרת [, עיר] [, מיקוד] [, מחוז] [, מדינת־משנה] [, מדינה]"
 
 #: PlaceCompletion/PlaceCompletion.py:1177
 msgid "Don't search"
@@ -20694,7 +21171,7 @@ msgstr "קובץ מדינות GeoNames, תחילת כותרת, חיפוש כלל
 
 #: PlaceCompletion/PlaceCompletion.py:1207
 msgid "GeoNames USA state file, city search"
-msgstr "קובץ מדינות USA של GeoNames, חיפוש ערים"
+msgstr "קובץ מדינת־המשנה בארה\"ב של GeoNames, חיפוש ערים"
 
 #: PlaceCompletion/PlaceCompletion.py:1221
 msgid "GNS Geonet country file, city search"
@@ -20750,11 +21227,11 @@ msgstr "מ_רכוז קו רוחב:"
 
 #: PlaceCompletion/placecompletion.glade:383
 msgid "Center longitude:"
-msgstr "מרכוז קו אורך:"
+msgstr "קו אורך אמצעי:"
 
 #: PlaceCompletion/placecompletion.glade:430
 msgid "Places in a rectangle:"
-msgstr "מקומות בתוך מרובע:"
+msgstr "מקומות בתא שטח מלבני:"
 
 #: PlaceCompletion/placecompletion.glade:460
 msgid "Height:"
@@ -20800,7 +21277,7 @@ msgstr ""
 msgid ""
 "Available variables: city, street, locality, parish, county, state, country, "
 "postal_code"
-msgstr "משתנים זמינים: עיר, רחוב, שכונה, קהילה, מחוז, חבל, מדינה, מיקוד"
+msgstr "משתנים זמינים: עיר, רחוב, ישוב, קהילה, מחוז, מדינת־משנה, מדינה, מיקוד"
 
 #: PlaceCompletion/placecompletion.glade:820
 msgid ""
@@ -21068,11 +21545,11 @@ msgstr "הסתרה"
 
 #: PluginManager/PluginManager.py:460
 msgid "Show hidden items"
-msgstr "הצג פריטים מוסתרים"
+msgstr "הצגת פריטים מוסתרים"
 
 #: PluginManager/PluginManager.py:467
 msgid "Show Built-in items"
-msgstr "הצג פריטים מובנים"
+msgstr "הצגת פריטים מובנים"
 
 #: PluginManager/PluginManager.py:474
 msgid "* indicates 3rd party addon"
@@ -21130,7 +21607,7 @@ msgstr "התחלת הגירה..."
 #: PostgreSQLEnhanced/migration.py:182
 #, python-format
 msgid "Migrating %s objects..."
-msgstr "מבצע הגירה של %s עצמים..."
+msgstr "מתבמעת הגירת %s עצמים..."
 
 #: PostgreSQLEnhanced/migration.py:193
 #, python-format, python-brace-format
@@ -22404,7 +22881,7 @@ msgstr "חיפוש חופשי בארכיון הלאומי של שוודיה"
 
 #: SVWebconnectPack/SVWebPack.py:42
 msgid "Arkiv Digital estate records for Skåne"
-msgstr "רשומות עיזבון של Arkiv Digital עבור סקונה"
+msgstr "רשומות עיזבון של ArkivDigital – סקונה"
 
 #: SVWebconnectPack/SVWebPack.py:43
 msgid "Ancestry Search"
@@ -23674,7 +24151,7 @@ msgstr "מסד־הנתונים אינו פתוח, לא ניתן לבדוק כע�
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:106
 #, python-format
 msgid "On %(date)s in family history ...\n"
-msgstr "על %(date)s במשפחה היסטוריה...\n"
+msgstr "בתאריך %(date)s בהיסטורית משפחה...\n"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:107
 msgid "... nothing happened!  Check again tomorrow!"
@@ -25382,7 +25859,7 @@ msgstr "לאפשר נתוני מקום היסטוריים שנוצרו על יד
 
 #: WebSearch/settings_ui_manager.py:215
 msgid "Custom country code for AI notes (optional)"
-msgstr "קוד ארץ מותאם להערות בינה מלאכותית (חלופי)"
+msgstr "קוד מדינה מותאם להערות בינה מלאכותית (חלופי)"
 
 #: WebSearch/settings_ui_manager.py:244
 msgid "Enable CSV Files"
@@ -25920,6 +26397,63 @@ msgstr ""
 " '%s'\n"
 " בדפדפן המרשתת המועדף..."
 
+#~ msgid "Fetching remote data..."
+#~ msgstr "מאחזר נתונים מרוחקים..."
+
+#~ msgid "Comparing local and remote data..."
+#~ msgstr "השוואת מקומי ומרוחק נתונים..."
+
+#~ msgid "Successfully applied changes to local database."
+#~ msgstr "בהצלחה הוחלו שינויים למקומי מסד־נתונים."
+
+#~ msgid "Continue without transport encryption?"
+#~ msgstr "להמשיך ללא הצפנת תעבורה?"
+
+#~ msgid "Continue with HTTP"
+#~ msgstr "המשך עם HTTP"
+
+#~ msgid "Use HTTPS"
+#~ msgstr "שימוש ב־HTTPS"
+
+#~ msgid "Reset remote to local"
+#~ msgstr "שיצוב מצב מרוחק למקומי"
+
+#~ msgid "Reset local to remote"
+#~ msgstr "שיצוב מצב מקומי למרוחק"
+
+#~ msgid "Local changes"
+#~ msgstr "שינויים מקומיים"
+
+#~ msgid "Remote changes"
+#~ msgstr "שינויים מרחוק"
+
+#~ msgid "Simultaneous changes"
+#~ msgstr "שינויים בו־זמנית"
+
+#~ msgid "Fetching information about media files..."
+#~ msgstr "שליפת מידע על קובצי מדיה..."
+
+#~ msgid "Both trees are the same."
+#~ msgstr "שני אילנות הם אותו."
+
+#~ msgid "Applying changes to local database ..."
+#~ msgstr "החלת שינויים במסד נתונים מקומי ..."
+
+#~ msgid "No changes to apply to local database."
+#~ msgstr "אין שינויים להחלה על מסד־הנתונים המקומי."
+
+#~ msgid "Applying changes to remote database ..."
+#~ msgstr "החלת שינויים במסד נתונים מרוחק ..."
+
+#~ msgid "No changes to apply to remote database."
+#~ msgstr "אין שינויים להחלה על מסד־הנתונים המרוחק."
+
+#~ msgid "Missing locally"
+#~ msgstr "חסרים באופן מקומי"
+
+#~ msgid "Missing remotely"
+#~ msgstr "חסרים באופן מרוחק"
+
 #~ msgid "Error accessing media object."
 #~ msgstr "שגיאה גישה מדיה עצם."
 
@@ -25938,9 +26472,6 @@ msgstr ""
 
 #~ msgid "URL error while connecting to server."
 #~ msgstr "שגיאת URL בעת חיבור לשרת."
-
-#~ msgid "Unable to synchronize changes to server."
-#~ msgstr "לא ניתן לסנכרון שינויים לשרת."
 
 #~ msgid "Search"
 #~ msgstr "חיפוש"

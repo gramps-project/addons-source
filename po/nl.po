@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-04 08:55-0700\n"
-"PO-Revision-Date: 2026-08-03 04:01+0000\n"
+"POT-Creation-Date: 2026-09-03 12:30-0700\n"
+"PO-Revision-Date: 2026-09-04 16:46+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 
 msgid "Birthdays"
 msgstr "Verjaardagen"
@@ -2223,7 +2223,9 @@ msgid "Calculate"
 msgstr "Berekenen"
 
 #: DateCalculator/DateCalculator.py:107
-#: EditExifMetadata/editexifmetadata.py:219 GraphView/graphview.py:3873
+#: EditExifMetadata/editexifmetadata.py:219
+#: GrampsWebApiDb/mintapikeytool.py:176 GrampsWebSync/grampswebsync.py:1063
+#: GraphView/graphview.py:3873
 msgid "Copy"
 msgstr "Kopieer"
 
@@ -5550,6 +5552,105 @@ msgstr ""
 msgid "Retrieving all sub-filter matches"
 msgstr "Alle overeenkomsten van de subfilters aanleveren"
 
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:28
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:174
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:973
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1053
+msgid "Ancestor Tree Expanded"
+msgstr "Afkomststamboom uitgebreid"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:29
+msgid ""
+"Expanded Ancestor Graph showing direct ancestors, siblings, cousins and "
+"spouses."
+msgstr ""
+"Uitgebreide vooroudergrafiek met directe voorouders, broers en zussen, neven "
+"en echtgenoten."
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:190
+#, python-format
+msgid "Ancestor Tree Expanded for %s"
+msgstr "Afkomststamboom uitgebreid voor %s"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:544
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:606
+msgid "Tree Truncated"
+msgstr "Stamboom ingekort"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:545
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:607
+msgid ""
+"The generated tree reached the 400 people safety limit and has been "
+"truncated.\n"
+"\n"
+"Please reduce the number of generations or disable some options to see all "
+"branches."
+msgstr ""
+"De gegenereerde stamboom bereikte de veiligheidslimiet van 400 personen en "
+"is ingeperkt.\n"
+"\n"
+"Verminder het aantal generaties of schakel enkele opties uit om alle "
+"vertakkingen te zien."
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1182
+msgid "Include descendants of the center person"
+msgstr "Inclusief nakomelingen van de centrale persoon"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1183
+msgid ""
+"Whether to display the children and full descending lines of the center "
+"person"
+msgstr ""
+"Of de kinderen en alle takken met nakomelingen van de centrale persoon "
+"moeten worden weergegeven"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1190
+msgid "Include siblings of ancestors"
+msgstr "Inclusief broers/zussen van voorouders"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1191
+msgid "Whether to display the siblings of direct ancestors"
+msgstr "Of de broers en zussen van directe voorouders moeten worden weergegeven"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1194
+msgid "Include cousins (collateral descendants)"
+msgstr "Inclusief neven/nichten (bijkomende nakomelingen)"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1195
+msgid ""
+"Whether to display the cousins and descendants of the ancestors' siblings"
+msgstr ""
+"Of neven/nichten en nakomelingen van de broers/zussen van de voorouders "
+"moeten worden weergegeven"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1202
+#: FamilyTree/FamilyTree.py:1051
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
+msgid "Descendant Generations"
+msgstr "Afstammelingsgeneraties"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1203
+msgid "The number of descendant generations to include"
+msgstr "Het aantal afstammelingsgeneraties dat moet worden opgenomen"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1242
+msgid "Whether to resize the page to fit the size of the tree."
+msgstr ""
+"Of het formaat van de pagina moet worden aangepast aan de grootte van de "
+"boom."
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1262
+msgid "Use random colors for family lines"
+msgstr "Gebruik willekeurige kleuren voor familielijnen"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1263
+msgid "Draw each family's connecting lines with a distinct color."
+msgstr "Teken de verbindingslijnen van elke familie met een aparte kleur."
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1372
+msgid "The bold style used for the names."
+msgstr "De vetgedrukte stijl die wordt gebruikt voor de namen."
+
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
 msgstr "Persoon GEXF"
@@ -5964,11 +6065,6 @@ msgstr "Vooroudergeneraties"
 #: FamilyTree/FamilyTree.py:1048
 msgid "The number of ancestor generations to include in the tree"
 msgstr "Het aantal vooroudergeneraties dat in de boom moet worden opgenomen"
-
-#: FamilyTree/FamilyTree.py:1051
-#: TimelinePedigreeView/TimelinePedigreeView.py:1465
-msgid "Descendant Generations"
-msgstr "Afstammelingsgeneraties"
 
 #: FamilyTree/FamilyTree.py:1052
 msgid "The number of descendant generations to include in the tree"
@@ -15561,282 +15657,273 @@ msgid "Select Form"
 msgstr "Selecteer formulier"
 
 #: GOQLFilter/goql.gpr.py:31
-#, fuzzy
-#| msgid "Person Relationship Filter"
 msgid "Person GOQL Filter"
-msgstr "Relatiefilter voor personen"
+msgstr "GOQL-filter voor personen"
 
 #: GOQLFilter/goql.gpr.py:32
 msgid "Gramplet providing a gramps-object-query-language person filter"
-msgstr ""
+msgstr "Gramplet die een persoonsfilter biedt in gramps-object-query-taal"
 
 #: GOQLFilter/goql.gpr.py:39 GOQLFilter/goql.gpr.py:58
 #: GOQLFilter/goql.gpr.py:77 GOQLFilter/goql.gpr.py:96
 #: GOQLFilter/goql.gpr.py:117 GOQLFilter/goql.gpr.py:136
 #: GOQLFilter/goql.gpr.py:155 GOQLFilter/goql.gpr.py:174
 #: GOQLFilter/goql.gpr.py:193
-#, fuzzy
-#| msgid "Filtering"
 msgid "GOQL Filter"
-msgstr "Filteren"
+msgstr "GOQL-filter"
 
 #: GOQLFilter/goql.gpr.py:50
-#, fuzzy
-#| msgid "Family Filter name:"
 msgid "Family GOQL Filter"
-msgstr "Gezinsfilter naam:"
+msgstr "GOQL-filter voor gezinnen"
 
 #: GOQLFilter/goql.gpr.py:51
 msgid "Gramplet providing a gramps-object-query-language family filter"
-msgstr ""
+msgstr "Gramplet die een familiefilter biedt in gramps-object-query-taal"
 
 #: GOQLFilter/goql.gpr.py:69
 msgid "Event GOQL Filter"
-msgstr ""
+msgstr "GOQL-filter voor gebeurtenissen"
 
 #: GOQLFilter/goql.gpr.py:70
 msgid "Gramplet providing a gramps-object-query-language event filter"
-msgstr ""
+msgstr "Gramplet die een gebeurtenisfilter biedt in gramps-object-query-taal"
 
 #: GOQLFilter/goql.gpr.py:88
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place GOQL Filter"
-msgstr "Locatie_filter:"
+msgstr "GOQL-filter voor plaatsen"
 
 #: GOQLFilter/goql.gpr.py:89
 msgid "Gramplet providing a gramps-object-query-language place filter"
-msgstr ""
+msgstr "Gramplet die een plaatsfilter biedt in gramps-object-query-taal"
 
 #: GOQLFilter/goql.gpr.py:107
-#, fuzzy
-#| msgid "Repository title"
 msgid "Repository GOQL Filter"
-msgstr "Bibliotheektitel"
+msgstr "GOQL-filter voor opslagplaatsen"
 
 #: GOQLFilter/goql.gpr.py:109
 msgid "Gramplet providing a gramps-object-query-language repository filter"
 msgstr ""
+"Gramplet die een filter biedt voor gramps-object-query-taal-opslagplaatsen"
 
 #: GOQLFilter/goql.gpr.py:128
-#, fuzzy
-#| msgid "Source type"
 msgid "Source GOQL Filter"
-msgstr "Brontype"
+msgstr "GOQL-filter voor bronnen"
 
 #: GOQLFilter/goql.gpr.py:129
 msgid "Gramplet providing a gramps-object-query-language source filter"
-msgstr ""
+msgstr "Gramplet die een filter biedt voor gramps-object-query-taal-bronnen"
 
 #: GOQLFilter/goql.gpr.py:147
-#, fuzzy
-#| msgid "Relationship Filter"
 msgid "Citation GOQL Filter"
-msgstr "Relatiefilter"
+msgstr "GOQL-filter voor citaten"
 
 #: GOQLFilter/goql.gpr.py:148
-#, fuzzy
-#| msgid "Gramplet providing a person filter on relationships"
 msgid "Gramplet providing a gramps-object-query-language citation filter"
-msgstr "Gramplet die een persoonsfilter op relaties biedt"
+msgstr "Gramplet die een citatenfilter biedt in gramps-object-query-taal"
 
 #: GOQLFilter/goql.gpr.py:166
-#, fuzzy
-#| msgid "Media Object Title"
 msgid "Media GOQL Filter"
-msgstr "Titel van mediaobject"
+msgstr "GOQL-filter voor media"
 
 #: GOQLFilter/goql.gpr.py:167
 msgid "Gramplet providing a gramps-object-query-language media filter"
-msgstr ""
+msgstr "Gramplet die een mediafilter biedt in gramps-object-query-taal"
 
 #: GOQLFilter/goql.gpr.py:185
-#, fuzzy
-#| msgid "Note Link (internal)"
 msgid "Note GOQL Filter"
-msgstr "Notitiekoppeling (intern)"
+msgstr "GOQL-filter voor notities"
 
 #: GOQLFilter/goql.gpr.py:186
 msgid "Gramplet providing a gramps-object-query-language note filter"
-msgstr ""
+msgstr "Gramplet die een notitiesfilter biedt in gramps-object-query-taal"
 
 #: GOQLFilter/goql.py:186
 msgid "A gramps-object-query-language where-expression, e.g.\n"
-msgstr ""
+msgstr "Een 'where'-uitdrukking in gramps-object-query-taal, bijv.\n"
 
 #: GOQLFilter/goql.py:188
 msgid "Enter inserts a newline; Ctrl+Enter runs Find.\n"
-msgstr ""
+msgstr "Enter voegt een nieuwe regel in; Ctrl+Enter start Zoekopdracht.\n"
 
 #: GOQLFilter/goql.py:189
 msgid "Up/Down at the first/last line recalls previous expressions.\n"
 msgstr ""
+"Omhoog/omlaag op de eerste/laatste regel roept eerdere uitdrukkingen op.\n"
 
 #: GOQLFilter/goql.py:190
 msgid "Tab always completes -- it never inserts a tab character."
-msgstr ""
+msgstr "De Tab-toets voltooit altijd – en voegt nooit een tabteken in."
 
 #: GOQLFilter/goql.py:213
-#, fuzzy, python-format
-#| msgid "Use filter "
+#, python-format
 msgid "%s filter"
-msgstr "Gebruik filter: "
+msgstr "%s filter"
 
 #: GOQLFilter/goql.py:233
 msgid "This resets the filter parameters to empty state."
-msgstr ""
+msgstr "Hiermee worden de filterparameters teruggezet naar de lege toestand."
 
 #: GOQLFilter/goql.py:239
 msgid "This opens a dialog to save the current expression as a named filter."
 msgstr ""
+"Dit opent een dialoogvenster om de huidige expressie op te slaan als een "
+"benoemd filter."
 
 #: GOQLFilter/goql.py:244
 msgid "Open this gramplet's help page in a browser."
-msgstr ""
+msgstr "Open de helppagina van deze gramplet in een browser."
 
 #: GOQLFilter/goql.py:402
 msgid "SQL"
-msgstr ""
+msgstr "SQL"
 
 #: GOQLFilter/goql.py:403
-#, fuzzy
-#| msgid "Python Shell"
 msgid "Python evaluation"
-msgstr "Python Shell"
+msgstr "Python-evaluatie"
 
 #: GOQLFilter/goql.py:523
-#, fuzzy, python-format
-#| msgid "Error: login failed"
+#, python-format
 msgid "Error applying filter: %s"
-msgstr "Fout: inloggen mislukt"
+msgstr "Fout bij toepassing filter: %s"
 
 #: GOQLFilter/goql.py:526
 #, python-format
 msgid "Showing %(shown)d of %(total)d (%(method)s)"
-msgstr ""
+msgstr "%(shown)d van %(total)d (%(method)s) weergeven"
 
 #: GOQLFilter/goql.py:541
-#, fuzzy, python-format
-#| msgid "Error creating note"
+#, python-format
 msgid "Error resetting filter: %s"
-msgstr "Fout bij aanmaken notitie"
+msgstr "Fout bij herstel van filter: %s"
 
 #: GOQLFilter/goql.py:548
-#, fuzzy
-#| msgid "Enter Python expressions"
 msgid "Enter an expression first"
-msgstr "Voer Python-expressies in"
+msgstr "Voer eerst een expressie in"
 
 #: GOQLFilter/goql.py:560
 #, python-brace-format
 msgid "Created by the GOQL Filter gramplet on {today}"
-msgstr ""
+msgstr "{today} aangemaakt door de GOQL-filter gramplet"
 
 #: GOQLFilter/whereexprrule.gpr.py:30 GOQLFilter/whereexprrule.py:261
 msgid "People matching the <GOQL expression>"
-msgstr ""
+msgstr "Personen die overeenkomen met de <GOQL-expressie>"
 
 #: GOQLFilter/whereexprrule.gpr.py:32
 msgid ""
 "Matches people for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Komt overeen met personen waarvoor de gegeven gramps-object-query-taal "
+"'where'-expressie evalueert tot waar"
 
 #: GOQLFilter/whereexprrule.gpr.py:50 GOQLFilter/whereexprrule.py:266
-#, fuzzy
-#| msgid "Families matching <event filter>"
 msgid "Families matching the <GOQL expression>"
-msgstr "Gezinnen die overeenkomen met <gebeurtenisfilter>"
+msgstr "Gezinnen die overeenkomen met de <GOQL-expressie>"
 
 #: GOQLFilter/whereexprrule.gpr.py:52
 msgid ""
 "Matches families for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Komt overeen met gezinnen waarvoor de gegeven gramps-object-query-taal "
+"'where'-expressie evalueert tot waar"
 
 #: GOQLFilter/whereexprrule.gpr.py:70 GOQLFilter/whereexprrule.py:271
 msgid "Events matching the <GOQL expression>"
-msgstr ""
+msgstr "Gebeurtenissen die overeenkomen met de <GOQL-expressie>"
 
 #: GOQLFilter/whereexprrule.gpr.py:72
 msgid ""
 "Matches events for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Komt overeen met gebeurtenissen waarvoor de gegeven gramps-object-query-taal "
+"'where'-expressie evalueert tot waar"
 
 #: GOQLFilter/whereexprrule.gpr.py:90 GOQLFilter/whereexprrule.py:276
 msgid "Places matching the <GOQL expression>"
-msgstr ""
+msgstr "Plaatsen die overeenkomen met de <GOQL-expressie>"
 
 #: GOQLFilter/whereexprrule.gpr.py:92
 msgid ""
 "Matches places for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Komt overeen met plaatsen waarvoor de gegeven gramps-object-query-taal "
+"'where'-expressie evalueert tot waar"
 
 #: GOQLFilter/whereexprrule.gpr.py:110 GOQLFilter/whereexprrule.py:281
 msgid "Repositories matching the <GOQL expression>"
-msgstr ""
+msgstr "Opslagplaatsen die overeenkomen met de <GOQL-expressie>"
 
 #: GOQLFilter/whereexprrule.gpr.py:112
 msgid ""
 "Matches repositories for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Komt overeen met opslagplaatsen waarvoor de gegeven gramps-object-query-taal "
+"'where'-expressie evalueert tot waar"
 
 #: GOQLFilter/whereexprrule.gpr.py:130 GOQLFilter/whereexprrule.py:286
-#, fuzzy
-#| msgid "Source matching parameters"
 msgid "Sources matching the <GOQL expression>"
-msgstr "Met bron overeenkomende parameters"
+msgstr "Bronnen die overeenkomen met de <GOQL-expressie>"
 
 #: GOQLFilter/whereexprrule.gpr.py:132
 msgid ""
 "Matches sources for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Komt overeen met bronnen waarvoor de gegeven gramps-object-query-taal "
+"'where'-expressie evalueert tot waar"
 
 #: GOQLFilter/whereexprrule.gpr.py:150 GOQLFilter/whereexprrule.py:291
 msgid "Citations matching the <GOQL expression>"
-msgstr ""
+msgstr "Citaten die overeenkomen met de <GOQL-expressie>"
 
 #: GOQLFilter/whereexprrule.gpr.py:152
 msgid ""
 "Matches citations for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Komt overeen met citaten waarvoor de gegeven gramps-object-query-taal "
+"'where'-expressie evalueert tot waar"
 
 #: GOQLFilter/whereexprrule.gpr.py:170 GOQLFilter/whereexprrule.py:296
 msgid "Media matching the <GOQL expression>"
-msgstr ""
+msgstr "Media die overeenkomen met de <GOQL-expressie>"
 
 #: GOQLFilter/whereexprrule.gpr.py:172
 msgid ""
 "Matches media for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Komt overeen met media waarvoor de gegeven gramps-object-query-taal 'where'-"
+"expressie evalueert tot waar"
 
 #: GOQLFilter/whereexprrule.gpr.py:190 GOQLFilter/whereexprrule.py:301
 msgid "Notes matching the <GOQL expression>"
-msgstr ""
+msgstr "Notities die overeenkomen met de <GOQL-expressie>"
 
 #: GOQLFilter/whereexprrule.gpr.py:192
 msgid ""
 "Matches notes for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Komt overeen met notities waarvoor de gegeven gramps-object-query-taal "
+"'where'-expressie evalueert tot waar"
 
 #: GOQLFilter/whereexprrule.py:212
-#, fuzzy
-#| msgid "Regular Expression"
 msgid "GOQL expression"
-msgstr "Reguliere expressies"
+msgstr "GOQL-expressie"
 
 #: GOQLFilter/whereexprrule.py:214
 msgid ""
 "Matches objects for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Komt overeen met objecten waarvoor de gegeven gramps-object-query-taal "
+"'where'-expressie evalueert tot waar"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
@@ -15960,7 +16047,7 @@ msgstr ""
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
-msgstr "Afkomstboom opgebouwd met LaTeX genealogytree"
+msgstr "Afkomststamboom opgebouwd met LaTeX genealogytree"
 
 #: GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
@@ -16406,8 +16493,192 @@ msgstr "GrampsChat"
 msgid "AI Chatbot Gramplet (requires connecting to an LLM service)"
 msgstr "AI Chatbot Gramplet (vereist verbinding maken met een LLM-dienst)"
 
-#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:213
-#: GrampsWebSync/grampswebsync.py:271
+#: GrampsWebApiDb/grampswebapidb.gpr.py:24
+msgid "GrampsWebApiDb"
+msgstr "GrampsWebApiDb"
+
+#: GrampsWebApiDb/grampswebapidb.gpr.py:25
+msgid "Gramps _Web API Database"
+msgstr "Gramps _Web API Database"
+
+#: GrampsWebApiDb/grampswebapidb.gpr.py:27
+msgid ""
+"Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) as a live "
+"database, mirrored locally for speed."
+msgstr ""
+"Gebruik een Gramps Web API server (bijvoorbeeld gramps-connect of Gramps "
+"Web) als live database, lokaal gespiegeld voor snelheid."
+
+#: GrampsWebApiDb/grampswebapidb.py:262
+msgid ""
+"The account authenticating via GRAMPS_WEB_API_KEY does not have permission "
+"on the server for this operation (HTTP 403 Forbidden). Generate a key for an "
+"account with sufficient permissions, or ask the server administrator to "
+"grant this one access."
+msgstr ""
+"De accountauthenticatie via GRAMPS_WEB_API_KEY heeft geen toestemming op de "
+"server voor deze bewerking (HTTP 403 Forbidden). Genereer een sleutel voor "
+"een account met voldoende machtigingen, of vraag de serverbeheerder om deze "
+"toegang te verlenen."
+
+#: GrampsWebApiDb/grampswebapidb.py:422
+#, python-format
+msgid ""
+"This Family Tree is named \"%(actual)s\", but GRAMPS_WEB_API_KEY currently "
+"authenticates as \"%(expected)s\". Rename this Family Tree to "
+"\"%(expected_typeable)s\" (Family Trees -> Manage Family Trees) if it's "
+"meant to mirror that account, or open/create the Family Tree already named "
+"that -- reusing this one would mix its existing local data with the other "
+"account's."
+msgstr ""
+"Deze stamboom heet \"%(actual)s\", maar GRAMPS_WEB_API_KEY authenticeert "
+"momenteel als \"%(expected)s\". Hernoem deze stamboom naar "
+"\"%(expected_typeable)s\" (Stambomen -> Stambomen beheren) als het de "
+"bedoeling is om dat account te spiegelen, of open/maak de stamboom aan die "
+"al zo is genoemd -- hergebruik van dit account zou de bestaande lokale "
+"gegevens combineren met die van het andere account."
+
+#: GrampsWebApiDb/grampswebapidb.py:550
+msgid "Retry local change after server conflict"
+msgstr "Lokale wijziging opnieuw proberen na serverconflict"
+
+#: GrampsWebApiDb/grampswebapidb.py:668
+msgid "Clear local mirror before full resync"
+msgstr "Lokale kopie verwijderen voor volledig nieuwe synchronisatie"
+
+#: GrampsWebApiDb/mintapikeytool.gpr.py:23 GrampsWebApiDb/mintapikeytool.py:129
+msgid "Generate Gramps Web API key"
+msgstr "Gramps Web API-sleutel genereren"
+
+#: GrampsWebApiDb/mintapikeytool.gpr.py:25
+msgid ""
+"Turn a Gramps Web API server URL, username, and password into a "
+"GRAMPS_WEB_API_KEY value for GrampsWebApiDb, and optionally create a "
+"matching, correctly-named GrampsWebApiDb Family Tree for it."
+msgstr ""
+"Zet een Gramps Web API-server-URL, gebruikersnaam en wachtwoord om in een "
+"GRAMPS_WEB_API_KEY-waarde voor GrampsWebApiDb en maak er optioneel een "
+"bijpassende, correct genaamde GrampsWebApiDb-stamboom voor."
+
+#: GrampsWebApiDb/mintapikeytool.py:141
+msgid "Server URL"
+msgstr "Server-URL"
+
+#: GrampsWebApiDb/mintapikeytool.py:141
+msgid "e.g. https://your-server/api"
+msgstr "bijv. https://your-server/api"
+
+#: GrampsWebApiDb/mintapikeytool.py:143
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+#: GrampsWebApiDb/mintapikeytool.py:144
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: GrampsWebApiDb/mintapikeytool.py:153
+msgid "Generate API Key"
+msgstr "API-sleutel genereren"
+
+#: GrampsWebApiDb/mintapikeytool.py:162
+msgid ""
+"Enter your server URL, username, and password, then click Generate API Key."
+msgstr ""
+"Voer uw server-URL, gebruikersnaam en wachtwoord in en klik vervolgens op "
+"API-sleutel genereren."
+
+#: GrampsWebApiDb/mintapikeytool.py:168
+msgid "GRAMPS_WEB_API_KEY"
+msgstr "GRAMPS_WEB_API_KEY"
+
+#: GrampsWebApiDb/mintapikeytool.py:182
+msgid "Create Synced Family Tree for this key"
+msgstr "Maak een gesynchroniseerde stamboom voor deze sleutel"
+
+#: GrampsWebApiDb/mintapikeytool.py:197
+#, python-format
+msgid ""
+"Found an existing %s for this session. Click Create Synced Family Tree to "
+"use it directly, or fill in the form above to generate a different key."
+msgstr ""
+"Een bestaande %s gevonden voor deze sessie. Klik op Gesynchroniseerde "
+"stamboom aanmaken om deze direct te gebruiken of vul het bovenstaande "
+"formulier in om een andere sleutel te genereren."
+
+#: GrampsWebApiDb/mintapikeytool.py:222
+msgid "Please fill in the server URL, username, and password."
+msgstr "Vul de server-URL, gebruikersnaam en het wachtwoord in."
+
+#: GrampsWebApiDb/mintapikeytool.py:229
+msgid "Generating API key…"
+msgstr "API-sleutel genereren…"
+
+#: GrampsWebApiDb/mintapikeytool.py:260
+#, python-format
+msgid "Login failed (HTTP %d): check your username and password."
+msgstr ""
+"Inloggen mislukt (HTTP %d): Controleer uw gebruikersnaam en wachtwoord."
+
+#: GrampsWebApiDb/mintapikeytool.py:263
+#, python-format
+msgid "Server returned an error (HTTP %d %s): check the Server URL."
+msgstr ""
+"Server heeft een fout geretourneerd (HTTP %d %s): controleer de Server-URL."
+
+#: GrampsWebApiDb/mintapikeytool.py:271
+#, python-format
+msgid "Could not reach the server: check the Server URL. (%s)"
+msgstr "Kon de server niet bereiken: controleer de server-URL. (%s)"
+
+#: GrampsWebApiDb/mintapikeytool.py:274
+#, python-format
+msgid "Unexpected response from the server: %s"
+msgstr "Onverwachte reactie van de server: %s"
+
+#: GrampsWebApiDb/mintapikeytool.py:277 GrampsWebApiDb/mintapikeytool.py:369
+#, python-format
+msgid "Error: %s"
+msgstr "Fout: %s"
+
+#: GrampsWebApiDb/mintapikeytool.py:286
+#, python-format
+msgid ""
+"Success. %s is now set for this Gramps session -- no restart needed. Copy "
+"the key below to also set it in your shell environment for next time."
+msgstr ""
+"Succes. %s is nu ingesteld voor deze Gramps-sessie -- geen herstart nodig. "
+"Kopieer de onderstaande sleutel om deze ook in te stellen in uw shell-"
+"omgeving voor de volgende keer."
+
+#: GrampsWebApiDb/mintapikeytool.py:307
+msgid "Looking up account identity…"
+msgstr "Accountidentiteit opzoeken…"
+
+#: GrampsWebApiDb/mintapikeytool.py:339
+#, python-format
+msgid ""
+"A Family Tree named \"%s\" already exists. Open it from Family Trees -> "
+"Manage Family Trees instead of creating another one."
+msgstr ""
+"Er bestaat al een stamboom met de naam \"%s\". Open deze met Stambomen - > "
+"Stambomen beheren in plaats van er nog een te maken."
+
+#: GrampsWebApiDb/mintapikeytool.py:352
+#, python-format
+msgid "Error creating Family Tree: %s"
+msgstr "Fout bij aanmaken van stamboom: %s"
+
+#: GrampsWebApiDb/mintapikeytool.py:358
+#, python-format
+msgid ""
+"Created Family Tree \"%s\". Open it from Family Trees -> Manage Family Trees "
+"to start syncing."
+msgstr ""
+"Stamboom \"%s\" aangemaakt. Open deze met Stambomen - > Stambomen beheren om "
+"de synchronisatie te starten."
+
+#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:204
+#: GrampsWebSync/grampswebsync.py:269
 msgid "Gramps Web Sync"
 msgstr "Gramps Web-synchronisatie"
 
@@ -16416,127 +16687,74 @@ msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr ""
 "Synchroniseert een lokaal gegevensbestand met een Gramps Web-instantie."
 
-#: GrampsWebSync/grampswebsync.py:124
-#, python-format
+#: GrampsWebSync/grampswebsync.py:249
+msgid "_Try again"
+msgstr "_Opnieuw proberen"
+
+#: GrampsWebSync/grampswebsync.py:250
+msgid "C_onnect"
+msgstr "_Verbinden"
+
+#: GrampsWebSync/grampswebsync.py:345
+msgid "Forget this server?"
+msgstr "Deze server vergeten?"
+
+#: GrampsWebSync/grampswebsync.py:347
 msgid ""
-"The system keyring could not be used. Snap confinement blocks access until "
-"you run: %s"
+"The address, user name and password stored for this server will be removed, "
+"along with the record of when this family tree last synchronized with it. "
+"The next synchronization will compare the two trees from scratch."
 msgstr ""
-"De systeemsleutelring kon niet worden gebruikt. Snap-beperking blokkeert de "
-"toegang totdat u het volgende uitvoert: %s"
+"Het adres, de gebruikersnaam en het wachtwoord dat voor deze server is "
+"opgeslagen, worden verwijderd, samen met de registratie de laatste "
+"synchronisatie van deze stamboom. Bij de volgende synchronisatie worden de "
+"twee stambomen helemaal opnieuw vergeleken."
 
-#: GrampsWebSync/grampswebsync.py:128
+#: GrampsWebSync/grampswebsync.py:352
+msgid "Forget"
+msgstr "Vergeten"
+
+#: GrampsWebSync/grampswebsync.py:480
 msgid ""
-"The system keyring could not be used. You will need to enter your password "
-"each time."
+"These credentials were last used with a different family tree. Check the "
+"server before continuing."
 msgstr ""
-"De systeemsleutelring kon niet worden gebruikt. U moet elke keer uw "
-"wachtwoord invoeren."
+"Deze inloggegevens zijn voor het laatst gebruikt met een andere stamboom. "
+"Controleer de server voordat u verdergaat."
 
-#: GrampsWebSync/grampswebsync.py:145
-msgid "Authentication failed. Please check your username and password."
-msgstr "Authenticatie mislukt. Controleer uw gebruikersnaam en wachtwoord."
+#: GrampsWebSync/grampswebsync.py:556
+msgid "Change server…"
+msgstr "Server wijzigen…"
 
-#: GrampsWebSync/grampswebsync.py:148
-msgid "Access forbidden. Please check username and password."
-msgstr "Toegang verboden. Controleer gebruikersnaam en wachtwoord."
+#: GrampsWebSync/grampswebsync.py:591
+msgid "Server URL:"
+msgstr "Server-URL:"
 
-#: GrampsWebSync/grampswebsync.py:150
-msgid "GrampsWeb service not found. Please check the URL."
-msgstr "GrampsWeb-service niet gevonden. Controleer de URL."
+#: GrampsWebSync/grampswebsync.py:593 PhpGedView/phpgedview.glade:170
+msgid "Username:"
+msgstr "Gebruikersnaam:"
 
-#: GrampsWebSync/grampswebsync.py:152
-msgid "Too many requests, please try again in a few seconds."
-msgstr "Te veel verzoeken, probeer het over een paar seconden opnieuw."
+#: GrampsWebSync/grampswebsync.py:594 PhpGedView/phpgedview.glade:182
+msgid "Password:"
+msgstr "Wachtwoord:"
 
-#: GrampsWebSync/grampswebsync.py:154
-msgid "GrampsWeb tree is disabled."
-msgstr "GrampsWeb stamboom is uitgeschakeld."
+#: GrampsWebSync/grampswebsync.py:598
+msgid "Remember password"
+msgstr "Wachtwoord onthouden"
 
-#: GrampsWebSync/grampswebsync.py:156
-msgid "Connection failed. Please check the URL and your internet connection."
-msgstr "Verbinding mislukt. Controleer de URL en uw internetverbinding."
+#: GrampsWebSync/grampswebsync.py:610
+msgid "Forget this server"
+msgstr "Deze server vergeten"
 
-#: GrampsWebSync/grampswebsync.py:159
-msgid "Invalid server response. Please check the URL."
-msgstr "Ongeldige serverreactie. Controleer de URL."
+#: GrampsWebSync/grampswebsync.py:641
+msgid "About this tool"
+msgstr "Over dit hulpmiddel"
 
-#: GrampsWebSync/grampswebsync.py:162
-msgid "Your user does not have sufficient server permissions to use sync."
-msgstr ""
-"Uw gebruiker heeft niet voldoende servermachtigingen om synchronisatie te "
-"gebruiken."
+#: GrampsWebSync/grampswebsync.py:645
+msgid "Open the online manual"
+msgstr "Open de online handleiding"
 
-#: GrampsWebSync/grampswebsync.py:164
-msgid "Failed importing downloaded XML file."
-msgstr "Het importeren van het gedownloade XML-bestand is mislukt."
-
-#: GrampsWebSync/grampswebsync.py:166
-msgid "Unable to synchronize changes to server: objects have been modified."
-msgstr ""
-"Kan wijzigingen naar de server niet synchroniseren: objecten zijn gewijzigd."
-
-#: GrampsWebSync/grampswebsync.py:168
-msgid "Unexpected error while applying changes."
-msgstr "Onverwachte fout bij het verwerken van wijzigingen."
-
-#: GrampsWebSync/grampswebsync.py:170
-msgid ""
-"The family tree was modified while the changes were being reviewed. Nothing "
-"has been applied. Please compare again."
-msgstr ""
-"De stamboom werd aangepast tijdens het controleren van de wijzigingen. Er is "
-"niets toegepast. Vergelijk nog eens."
-
-#: GrampsWebSync/grampswebsync.py:175
-#, python-format
-msgid "The server could not apply the changes: %s"
-msgstr "De server kon de wijzigingen niet toepassen: %s"
-
-#: GrampsWebSync/grampswebsync.py:177
-#, python-format
-msgid "Server error %s. Please check your connection."
-msgstr "Serverfout %s. Controleer uw verbinding."
-
-#: GrampsWebSync/grampswebsync.py:179 GrampsWebSync/grampswebsync.py:180
-#, python-format
-msgid "Unexpected error: %s"
-msgstr "Onverwachte fout: %s"
-
-#: GrampsWebSync/grampswebsync.py:341
-msgid "Fetching remote data..."
-msgstr "Gegevens van server ophalen..."
-
-#: GrampsWebSync/grampswebsync.py:344
-msgid "Comparing local and remote data..."
-msgstr "Lokale en externe gegevens vergelijken…"
-
-#: GrampsWebSync/grampswebsync.py:348
-msgid "Successfully applied changes to local database."
-msgstr "Wijzigingen zijn met succes toegepast op lokale database."
-
-#: GrampsWebSync/grampswebsync.py:437
-msgid "Continue without transport encryption?"
-msgstr "Doorgaan zonder transportversleuteling?"
-
-#: GrampsWebSync/grampswebsync.py:439
-msgid ""
-"You have specified a URL with http scheme. If you continue, your password "
-"will be sent in clear text over the network. Use only for local testing!"
-msgstr ""
-"U hebt een URL met http-schema opgegeven. Als u doorgaat, wordt uw "
-"wachtwoord in leesbare tekst via het netwerk verzonden. Gebruik dit alleen "
-"voor lokale tests!"
-
-#: GrampsWebSync/grampswebsync.py:444
-msgid "Continue with HTTP"
-msgstr "Doorgaan met HTTP"
-
-#: GrampsWebSync/grampswebsync.py:445
-msgid "Use HTTPS"
-msgstr "HTTPS gebruiken"
-
-#: GrampsWebSync/grampswebsync.py:495
+#: GrampsWebSync/grampswebsync.py:658
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
 "remote family tree served by Gramps Web.\n"
@@ -16567,20 +16785,229 @@ msgstr ""
 "samenvoegen met de optie om handmatige wijzigingen aan te brengen, gebruikt "
 "u in plaats daarvan de Import Merge Tool."
 
-#: GrampsWebSync/grampswebsync.py:522
-msgid "Server URL: "
-msgstr "URL van de server: "
-
-#: GrampsWebSync/grampswebsync.py:578 HistContext/HistContext.py:289
+#: GrampsWebSync/grampswebsync.py:729 HistContext/HistContext.py:289
 #: HistContext/HistContext.py:333 HistContext/HistContext.py:420
 msgid "Error:"
 msgstr "Fout:"
 
-#: GrampsWebSync/grampswebsync.py:646
-msgid "Sync mode"
-msgstr "Synchronisatiemodus"
+#: GrampsWebSync/grampswebsync.py:756 GrampsWebSync/grampswebsync.py:1012
+msgid "Warning:"
+msgstr "Waarschuwing:"
 
-#: GrampsWebSync/grampswebsync.py:656
+#: GrampsWebSync/grampswebsync.py:901
+msgid "Sync mode:"
+msgstr "Synchronisatiemodus:"
+
+#: GrampsWebSync/grampswebsync.py:1077
+msgid "Synchronization complete"
+msgstr "Synchronisatie voltooid"
+
+#: GrampsWebSync/grampswebsync.py:1084
+msgid "Synchronization failed"
+msgstr "Synchronisatie is mislukt"
+
+#: GrampsWebSync/presentation.py:128
+#, python-format
+msgid "Gramps Web Sync %(addon)s, Web API %(api)s"
+msgstr "Gramps Web Sync %(addon)s, Web API %(api)s"
+
+#: GrampsWebSync/presentation.py:132
+#, python-format
+msgid "Gramps Web Sync %s"
+msgstr "Gramps Web Sync %s"
+
+#: GrampsWebSync/presentation.py:164
+msgid ""
+"This URL uses http, so your password will be sent in clear text. Use only "
+"for local testing."
+msgstr ""
+"Deze URL gebruikt http, dus uw wachtwoord wordt als gewone tekst verzonden. "
+"Gebruik dit alleen voor lokaal testen."
+
+#: GrampsWebSync/presentation.py:182
+#, python-format
+msgid ""
+"The system keyring could not be used. Snap confinement blocks access until "
+"you run: %s"
+msgstr ""
+"De systeemsleutelring kon niet worden gebruikt. Snap-beperking blokkeert de "
+"toegang totdat u het volgende uitvoert: %s"
+
+#: GrampsWebSync/presentation.py:186
+msgid ""
+"The system keyring could not be used. You will need to enter your password "
+"each time."
+msgstr ""
+"De systeemsleutelring kon niet worden gebruikt. U moet elke keer uw "
+"wachtwoord invoeren."
+
+#: GrampsWebSync/presentation.py:203
+msgid "Authentication failed. Please check your username and password."
+msgstr "Authenticatie mislukt. Controleer uw gebruikersnaam en wachtwoord."
+
+#: GrampsWebSync/presentation.py:206
+msgid "Access forbidden. Please check username and password."
+msgstr "Toegang verboden. Controleer gebruikersnaam en wachtwoord."
+
+#: GrampsWebSync/presentation.py:208
+msgid "GrampsWeb service not found. Please check the URL."
+msgstr "GrampsWeb-service niet gevonden. Controleer de URL."
+
+#: GrampsWebSync/presentation.py:210
+msgid "Too many requests, please try again in a few seconds."
+msgstr "Te veel verzoeken, probeer het over een paar seconden opnieuw."
+
+#: GrampsWebSync/presentation.py:212
+msgid "GrampsWeb tree is disabled."
+msgstr "GrampsWeb stamboom is uitgeschakeld."
+
+#: GrampsWebSync/presentation.py:214
+msgid "Connection failed. Please check the URL and your internet connection."
+msgstr "Verbinding mislukt. Controleer de URL en uw internetverbinding."
+
+#: GrampsWebSync/presentation.py:217
+msgid "Invalid server response. Please check the URL."
+msgstr "Ongeldige serverreactie. Controleer de URL."
+
+#: GrampsWebSync/presentation.py:220
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"Uw gebruiker heeft niet voldoende servermachtigingen om synchronisatie te "
+"gebruiken."
+
+#: GrampsWebSync/presentation.py:222
+msgid "Failed importing downloaded XML file."
+msgstr "Het importeren van het gedownloade XML-bestand is mislukt."
+
+#: GrampsWebSync/presentation.py:224
+msgid "Unable to synchronize changes to server: objects have been modified."
+msgstr ""
+"Kan wijzigingen naar de server niet synchroniseren: objecten zijn gewijzigd."
+
+#: GrampsWebSync/presentation.py:226
+msgid "Unexpected error while applying changes."
+msgstr "Onverwachte fout bij het verwerken van wijzigingen."
+
+#: GrampsWebSync/presentation.py:228
+msgid ""
+"The family tree was modified while the changes were being reviewed. Nothing "
+"has been applied. Please compare again."
+msgstr ""
+"De stamboom werd aangepast tijdens het controleren van de wijzigingen. Er is "
+"niets toegepast. Vergelijk nog eens."
+
+#: GrampsWebSync/presentation.py:235
+#, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s, but synchronization needs "
+"%(needed)s or newer. Please update the server."
+msgstr ""
+"Deze server draait Gramps Web API %(found)s, maar synchronisatie vereist "
+"%(needed)s of nieuwer. Update de server."
+
+#: GrampsWebSync/presentation.py:239
+#, python-format
+msgid ""
+"This server did not report a Gramps Web API version, so it is too old to "
+"synchronize with. Version %s or newer is needed."
+msgstr ""
+"Deze server heeft geen Gramps Web API-versie gerapporteerd en is dus te oud "
+"om mee te synchroniseren. Versie %s of nieuwer is nodig."
+
+#: GrampsWebSync/presentation.py:244
+#, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s. This version of Gramps works with "
+"Gramps Web API %(major)s, so synchronizing with this server needs a newer "
+"version of Gramps."
+msgstr ""
+"Deze server draait Gramps Web API %(found)s. Deze versie van Gramps werkt "
+"met Gramps Web API %(major)s, dus voor synchronisatie met deze server is een "
+"nieuwere versie van Gramps nodig."
+
+#: GrampsWebSync/presentation.py:250
+msgid ""
+"This server is not configured to use a background task queue. "
+"Synchronization needs one: without it, applying changes times out before the "
+"server has finished. Please enable it on the server."
+msgstr ""
+"Deze server is niet geconfigureerd om een achtergrondtaakwachtrij te "
+"gebruiken. Synchronisatie heeft er een nodig: zonder deze wijzigingen wordt "
+"er een time-out toegepast voordat de server klaar is. Schakel het in op de "
+"server."
+
+#: GrampsWebSync/presentation.py:256
+#, python-format
+msgid "The server could not apply the changes: %s"
+msgstr "De server kon de wijzigingen niet toepassen: %s"
+
+#: GrampsWebSync/presentation.py:258
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "Serverfout %s. Controleer uw verbinding."
+
+#: GrampsWebSync/presentation.py:260 GrampsWebSync/presentation.py:261
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Onverwachte fout: %s"
+
+#: GrampsWebSync/presentation.py:267
+msgid "Signing in…"
+msgstr "Aanmelden…"
+
+#: GrampsWebSync/presentation.py:268
+msgid "Downloading the remote family tree…"
+msgstr "Externe stamboom downloaden…"
+
+#: GrampsWebSync/presentation.py:269
+msgid "Comparing the two family trees…"
+msgstr "De twee stambomen vergelijken…"
+
+#: GrampsWebSync/presentation.py:270
+msgid "Checking which media files are missing…"
+msgstr "Controleren welke mediabestanden ontbreken…"
+
+#: GrampsWebSync/presentation.py:271
+msgid "Applied the changes to this computer."
+msgstr "Wijzigingen toegepast op deze computer."
+
+#: GrampsWebSync/presentation.py:272
+msgid "Sending the changes to the server…"
+msgstr "Wijzigingen naar de server verzenden…"
+
+#: GrampsWebSync/presentation.py:284
+msgid "Downloading media files…"
+msgstr "Mediabestand downloaden…"
+
+#: GrampsWebSync/presentation.py:285
+msgid "Uploading media files…"
+msgstr "Mediabestand uploaden…"
+
+#: GrampsWebSync/presentation.py:293
+msgid "Connect"
+msgstr "Verbinding maken"
+
+#: GrampsWebSync/presentation.py:295
+msgid "Apply changes"
+msgstr "Wijziging toepassen"
+
+#: GrampsWebSync/presentation.py:296
+msgid "Transfer media files"
+msgstr "Mediabestand overdagen"
+
+#: GrampsWebSync/presentation.py:304
+msgid "Bidirectional synchronization"
+msgstr "Synchronisatie in twee richtingen"
+
+#: GrampsWebSync/presentation.py:305
+msgid "Reset the server to match this computer"
+msgstr "Herstel de server zodat deze overeenkomt met deze computer"
+
+#: GrampsWebSync/presentation.py:306
+msgid "Reset this computer to match the server"
+msgstr "Herstel deze computer zodat deze overeenkomt met de server"
+
+#: GrampsWebSync/presentation.py:319
 msgid ""
 "Changes from both sides are combined. Objects edited in both places are "
 "merged."
@@ -16588,7 +17015,7 @@ msgstr ""
 "Veranderingen van beide kanten worden gecombineerd. Objecten die op beide "
 "plaatsen zijn bewerkt, worden samengevoegd."
 
-#: GrampsWebSync/grampswebsync.py:660
+#: GrampsWebSync/presentation.py:323
 msgid ""
 "The server is made to match this computer. Anything changed only on the "
 "server is discarded."
@@ -16596,7 +17023,7 @@ msgstr ""
 "De server is ingesteld om overeen te komen met deze computer. Alles wat "
 "alleen op de server is gewijzigd, wordt weggegooid."
 
-#: GrampsWebSync/grampswebsync.py:664
+#: GrampsWebSync/presentation.py:327
 msgid ""
 "This computer is made to match the server. Anything changed only here is "
 "discarded."
@@ -16604,137 +17031,175 @@ msgstr ""
 "Deze computer is ingesteld om overeen te komen met de server Alles wat "
 "alleen hier is gewijzigd, wordt weggegooid."
 
-#: GrampsWebSync/grampswebsync.py:671
-msgid "Bidirectional Synchronization"
-msgstr "Synchronisatie in twee richtingen"
-
-#: GrampsWebSync/grampswebsync.py:672
-msgid "Reset remote to local"
-msgstr "Server opnieuw instellen vanuit lokaal"
-
-#: GrampsWebSync/grampswebsync.py:673
-msgid "Reset local to remote"
-msgstr "Lokaal opnieuw instellen vanuit server"
-
-#: GrampsWebSync/grampswebsync.py:712
-msgid "Warning:"
-msgstr "Waarschuwing:"
-
-#: GrampsWebSync/grampswebsync.py:722
-msgid "Local changes"
-msgstr "Lokale wijzigingen"
-
-#: GrampsWebSync/grampswebsync.py:727
-msgid "Remote changes"
-msgstr "Externe wijzigingen"
-
-#: GrampsWebSync/grampswebsync.py:732
-msgid "Simultaneous changes"
-msgstr "Gelijktijdige wijzigingen"
-
-#: GrampsWebSync/grampswebsync.py:790
-msgid "Fetching information about media files..."
-msgstr "Informatie over mediabestanden ophalen…"
-
-#: GrampsWebSync/grampswebsync.py:816
-msgid "Both trees are the same."
-msgstr "Beide stambomen zijn hetzelfde."
-
-#: GrampsWebSync/grampswebsync.py:822
-msgid "Applying changes to local database ..."
-msgstr "Wijzigingen toepassen op de lokale database…"
-
-#: GrampsWebSync/grampswebsync.py:824
-msgid "No changes to apply to local database."
-msgstr "Geen wijzigingen toe te passen op lokale database."
-
-#: GrampsWebSync/grampswebsync.py:828
-msgid "Applying changes to remote database ..."
-msgstr "Wijzigingen toepassen op externe database…"
-
-#: GrampsWebSync/grampswebsync.py:833
-msgid "No changes to apply to remote database."
-msgstr "Geen wijzigingen nodig op externe database."
-
-#: GrampsWebSync/grampswebsync.py:862
-msgid "Missing locally"
-msgstr "Lokaal vermist"
-
-#: GrampsWebSync/grampswebsync.py:865
-msgid "Missing remotely"
-msgstr "Extern vermist"
-
-#: GrampsWebSync/grampswebsync.py:905
+#: GrampsWebSync/presentation.py:574
 #, python-format
-msgid "Downloading %s media file"
-msgid_plural "Downloading %s media files"
-msgstr[0] "%s mediabestand downloaden"
-msgstr[1] "%s mediabestanden downloaden"
+msgid "Will change on this computer (%s object)"
+msgid_plural "Will change on this computer (%s objects)"
+msgstr[0] "Zal wijzigen op deze computer (%s object)"
+msgstr[1] "Zal wijzigen op deze computer (%s objecten)"
 
-#: GrampsWebSync/grampswebsync.py:920
+#: GrampsWebSync/presentation.py:582
 #, python-format
-msgid "Uploading %s media file"
-msgid_plural "Uploading %s media files"
-msgstr[0] "%s mediabestand uploaden"
-msgstr[1] "%s mediabestanden uploaden"
+msgid "Will change on the server (%s object)"
+msgid_plural "Will change on the server (%s objects)"
+msgstr[0] "Zal wijzigen op de server (%s object)"
+msgstr[1] "Zal wijzigen op de server (%s objecten)"
 
-#: GrampsWebSync/grampswebsync.py:965
-msgid "Try again"
-msgstr "Probeer het opnieuw"
+#: GrampsWebSync/presentation.py:593
+#, python-format
+msgid "Add %s object"
+msgid_plural "Add %s objects"
+msgstr[0] "%s object toevoegen"
+msgstr[1] "%s objecten toevoegen"
 
-#: GrampsWebSync/grampswebsync.py:999
+#: GrampsWebSync/presentation.py:594
+#, python-format
+msgid "Update %s object"
+msgid_plural "Update %s objects"
+msgstr[0] "%s object bijwerken"
+msgstr[1] "%s objecten bijwerken"
+
+#: GrampsWebSync/presentation.py:595
+#, python-format
+msgid "Merge %s object"
+msgid_plural "Merge %s objects"
+msgstr[0] "%s object samenvoegen"
+msgstr[1] "%s objecten samenvoegen"
+
+#: GrampsWebSync/presentation.py:596
+#, python-format
+msgid "Delete %s object"
+msgid_plural "Delete %s objects"
+msgstr[0] "%s object verwijderen"
+msgstr[1] "%s objecten verwijderen"
+
+#: GrampsWebSync/presentation.py:615
+#, python-format
+msgid "%s object will be deleted on this computer."
+msgid_plural "%s objects will be deleted on this computer."
+msgstr[0] "%s object wordt op deze computer verwijderd."
+msgstr[1] "%s objecten wordt op deze computer verwijderd."
+
+#: GrampsWebSync/presentation.py:624
+#, python-format
+msgid "%s object will be deleted on the server."
+msgid_plural "%s objects will be deleted on the server."
+msgstr[0] "%s object wordt op de server verwijderd."
+msgstr[1] "%s objecten wordt op de server verwijderd."
+
+#: GrampsWebSync/presentation.py:636
+#, python-format
+msgid "%(down)s to download, %(up)s to upload"
+msgstr "%(down)s te downloaden, %(up)s te uploaden"
+
+#: GrampsWebSync/presentation.py:642
+#, python-format
+msgid "Also transfer %(total)s media file (%(counts)s)"
+msgid_plural "Also transfer %(total)s media files (%(counts)s)"
+msgstr[0] "Tevens %(counts)s mediabestand (%(total)s) overzetten"
+msgstr[1] "Tevens %(counts)s mediabestanden (%(total)s) overzetten"
+
+#: GrampsWebSync/presentation.py:658
+#, python-format
+msgid "%s media file is missing on both sides and cannot be transferred."
+msgid_plural ""
+"%s media files are missing on both sides and cannot be transferred."
+msgstr[0] ""
+"%s mediabestand ontbreekt aan beide kanten en kan niet worden overgedragen."
+msgstr[1] ""
+"%s mediabestanden ontbreken aan beide kanten en kunnen niet worden "
+"overgedragen."
+
+#: GrampsWebSync/presentation.py:681
 #, python-format
 msgid "Applied %s change."
 msgid_plural "Applied %s changes."
 msgstr[0] "%s wijziging toegepast."
 msgstr[1] "%s wijzigingen toegepast."
 
-#: GrampsWebSync/grampswebsync.py:1006
-msgid "Media files are in sync."
-msgstr "Mediabestanden zijn gesynchroniseerd."
-
-#: GrampsWebSync/grampswebsync.py:1011
-#, python-format
-msgid "%s media file is missing on both sides and could not be transferred."
-msgid_plural ""
-"%s media files are missing on both sides and could not be transferred."
-msgstr[0] ""
-"%s mediabestand ontbreekt aan beide kanten en kon niet worden overgedragen."
-msgstr[1] ""
-"%s mediabestanden ontbreken aan beide kanten en konden niet worden "
-"overgedragen."
-
-#: GrampsWebSync/grampswebsync.py:1020
+#: GrampsWebSync/presentation.py:684
 msgid "Both trees are already in sync."
 msgstr "Beide stambomen zijn gesynchroniseerd."
 
-#: GrampsWebSync/grampswebsync.py:1033
+#: GrampsWebSync/presentation.py:689
+msgid "Media files are in sync."
+msgstr "Mediabestanden zijn gesynchroniseerd."
+
+#: GrampsWebSync/presentation.py:708
 #, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
 msgstr[0] "%s mediabestand met succes gedownload."
 msgstr[1] "%s mediabestanden met succes gedownload."
 
-#: GrampsWebSync/grampswebsync.py:1043
+#: GrampsWebSync/presentation.py:717
 #, python-format
 msgid "Encountered %s error during download."
 msgid_plural "Encountered %s errors during download."
 msgstr[0] "%s fout opgetreden bij het downloaden."
 msgstr[1] "%s fouten opgetreden bij het downloaden."
 
-#: GrampsWebSync/grampswebsync.py:1056
+#: GrampsWebSync/presentation.py:727
 #, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
 msgstr[0] "%s mediabestand met succes geüploadet."
 msgstr[1] "%s mediabestanden met succes geüploadet."
 
-#: GrampsWebSync/grampswebsync.py:1065
+#: GrampsWebSync/presentation.py:736
 #, python-format
 msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
 msgstr[0] "%s fout opgetreden bij het uploaden."
 msgstr[1] "%s fouten opgetreden bij het uploaden."
+
+#: GrampsWebSync/presentation.py:768
+msgid "No server configured"
+msgstr "Geen server geconfigureerd"
+
+#: GrampsWebSync/presentation.py:769
+#, python-format
+msgid "%(user)s on %(server)s"
+msgstr "%(user)s op %(server)s"
+
+#: GrampsWebSync/presentation.py:774
+#, python-format
+msgid "%(where)s — %(synced)s"
+msgstr "%(where)s — %(synced)s"
+
+#: GrampsWebSync/presentation.py:788
+msgid "Never synced"
+msgstr "Nooit gesynchroniseerd"
+
+#: GrampsWebSync/presentation.py:792
+msgid "Last synced just now"
+msgstr "Zojuist gesynchroniseerd"
+
+#: GrampsWebSync/presentation.py:795
+#, python-format
+msgid "Last synced %s minute ago"
+msgid_plural "Last synced %s minutes ago"
+msgstr[0] "%s minuut geleden gesynchroniseerd"
+msgstr[1] "%s minuten geleden gesynchroniseerd"
+
+#: GrampsWebSync/presentation.py:801
+#, python-format
+msgid "Last synced %s hour ago"
+msgid_plural "Last synced %s hours ago"
+msgstr[0] "%s uur geleden gesynchroniseerd"
+msgstr[1] "%s uren geleden gesynchroniseerd"
+
+#: GrampsWebSync/presentation.py:806
+#, python-format
+msgid "Last synced %s day ago"
+msgid_plural "Last synced %s days ago"
+msgstr[0] "%s dag geleden gesynchroniseerd"
+msgstr[1] "%s dagen geleden gesynchroniseerd"
+
+#: GrampsWebSync/presentation.py:807
+#, python-format
+msgid "Last synced on %s"
+msgstr "Laatst gesynchroniseerd op %s"
 
 #: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
 msgid "Gram.py Script"
@@ -20540,14 +21005,6 @@ msgstr "phpGedView importeren"
 #: PhpGedView/phpgedview.glade:103
 msgid "http://"
 msgstr "http://"
-
-#: PhpGedView/phpgedview.glade:170
-msgid "Username:"
-msgstr "Gebruikersnaam:"
-
-#: PhpGedView/phpgedview.glade:182
-msgid "Password:"
-msgstr "Wachtwoord:"
 
 #: PhpGedView/phpgedview.gpr.py:24
 msgid "PhpGedView"
@@ -26514,6 +26971,63 @@ msgstr ""
 " \"%s\" te openen\n"
 " in uw favoriete webnavigator..."
 
+#~ msgid "Fetching remote data..."
+#~ msgstr "Gegevens van server ophalen..."
+
+#~ msgid "Comparing local and remote data..."
+#~ msgstr "Lokale en externe gegevens vergelijken…"
+
+#~ msgid "Successfully applied changes to local database."
+#~ msgstr "Wijzigingen zijn met succes toegepast op lokale database."
+
+#~ msgid "Continue without transport encryption?"
+#~ msgstr "Doorgaan zonder transportversleuteling?"
+
+#~ msgid "Continue with HTTP"
+#~ msgstr "Doorgaan met HTTP"
+
+#~ msgid "Use HTTPS"
+#~ msgstr "HTTPS gebruiken"
+
+#~ msgid "Reset remote to local"
+#~ msgstr "Server opnieuw instellen vanuit lokaal"
+
+#~ msgid "Reset local to remote"
+#~ msgstr "Lokaal opnieuw instellen vanuit server"
+
+#~ msgid "Local changes"
+#~ msgstr "Lokale wijzigingen"
+
+#~ msgid "Remote changes"
+#~ msgstr "Externe wijzigingen"
+
+#~ msgid "Simultaneous changes"
+#~ msgstr "Gelijktijdige wijzigingen"
+
+#~ msgid "Fetching information about media files..."
+#~ msgstr "Informatie over mediabestanden ophalen…"
+
+#~ msgid "Both trees are the same."
+#~ msgstr "Beide stambomen zijn hetzelfde."
+
+#~ msgid "Applying changes to local database ..."
+#~ msgstr "Wijzigingen toepassen op de lokale database…"
+
+#~ msgid "No changes to apply to local database."
+#~ msgstr "Geen wijzigingen toe te passen op lokale database."
+
+#~ msgid "Applying changes to remote database ..."
+#~ msgstr "Wijzigingen toepassen op externe database…"
+
+#~ msgid "No changes to apply to remote database."
+#~ msgstr "Geen wijzigingen nodig op externe database."
+
+#~ msgid "Missing locally"
+#~ msgstr "Lokaal vermist"
+
+#~ msgid "Missing remotely"
+#~ msgstr "Extern vermist"
+
 #~ msgid "Error accessing media object."
 #~ msgstr "Fout bij het openen van het media-object."
 
@@ -26532,9 +27046,6 @@ msgstr ""
 
 #~ msgid "URL error while connecting to server."
 #~ msgstr "URL-fout tijdens het verbinden met de server."
-
-#~ msgid "Unable to synchronize changes to server."
-#~ msgstr "Kan wijzigingen naar de server niet synchroniseren."
 
 #~ msgid "Search"
 #~ msgstr "Zoeken"

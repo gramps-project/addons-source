@@ -13,13 +13,14 @@
 # Milan <mobrcian@hotmail.com>, 2025.
 # Nick Hall <nick-h@gramps-project.org>, 2025.
 # Morgan Antonsson <morgan.antonsson@gmail.com>, 2025.
+# Eric Bjurvald <epg.bjurvald@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-04 08:55-0700\n"
-"PO-Revision-Date: 2026-08-03 04:02+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2026-09-03 12:30-0700\n"
+"PO-Revision-Date: 2026-08-31 17:51+0000\n"
+"Last-Translator: Eric Bjurvald <epg.bjurvald@gmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -27,7 +28,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "Birthdays"
 msgstr "Födelsedagar"
@@ -2196,7 +2197,9 @@ msgid "Calculate"
 msgstr "Beräkna"
 
 #: DateCalculator/DateCalculator.py:107
-#: EditExifMetadata/editexifmetadata.py:219 GraphView/graphview.py:3873
+#: EditExifMetadata/editexifmetadata.py:219
+#: GrampsWebApiDb/mintapikeytool.py:176 GrampsWebSync/grampswebsync.py:1063
+#: GraphView/graphview.py:3873
 msgid "Copy"
 msgstr "Kopiera"
 
@@ -5448,6 +5451,113 @@ msgstr ""
 msgid "Retrieving all sub-filter matches"
 msgstr "Hämtar alla underfilterträffar"
 
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:28
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:174
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:973
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1053
+#, fuzzy
+#| msgid "Ancestor Generations"
+msgid "Ancestor Tree Expanded"
+msgstr "Färfädersgenertioner"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:29
+msgid ""
+"Expanded Ancestor Graph showing direct ancestors, siblings, cousins and "
+"spouses."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:190
+#, fuzzy, python-format
+#| msgid "Ancestors places for %s"
+msgid "Ancestor Tree Expanded for %s"
+msgstr "Förfädernas boplatser för %s"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:544
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:606
+msgid "Tree Truncated"
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:545
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:607
+msgid ""
+"The generated tree reached the 400 people safety limit and has been "
+"truncated.\n"
+"\n"
+"Please reduce the number of generations or disable some options to see all "
+"branches."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1182
+#, fuzzy
+#| msgid "Shows the number of descendants of the current person"
+msgid "Include descendants of the center person"
+msgstr "Visar antal ättlingar till aktuell person"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1183
+#, fuzzy
+#| msgid "Shows the number of descendants of the current person"
+msgid ""
+"Whether to display the children and full descending lines of the center "
+"person"
+msgstr "Visar antal ättlingar till aktuell person"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1190
+#, fuzzy
+#| msgid "Include siblings of ancestors."
+msgid "Include siblings of ancestors"
+msgstr "Ta med syskon för anor."
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1191
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid "Whether to display the siblings of direct ancestors"
+msgstr "Huruvida det teoretiska antalet förfäder ska visas per generation"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1194
+msgid "Include cousins (collateral descendants)"
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1195
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid ""
+"Whether to display the cousins and descendants of the ancestors' siblings"
+msgstr "Huruvida det teoretiska antalet förfäder ska visas per generation"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1202
+#: FamilyTree/FamilyTree.py:1051
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
+msgid "Descendant Generations"
+msgstr "Ättlingagenerationer"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1203
+#, fuzzy
+#| msgid "The number of descendant generations to include in the tree"
+msgid "The number of descendant generations to include"
+msgstr "Antal ättlingagenerationer som skall tas med i trädet"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1242
+#, fuzzy
+#| msgid "Whether to include the index of Names at the end of the report."
+msgid "Whether to resize the page to fit the size of the tree."
+msgstr "Huruvida ta med namnindex i slutet av rapporten."
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1262
+#, fuzzy
+#| msgid "Use a table format for the families index"
+msgid "Use random colors for family lines"
+msgstr "Använd ett tabellformat för familjeindexet"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1263
+msgid "Draw each family's connecting lines with a distinct color."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1372
+#, fuzzy
+#| msgid "The style used for names."
+msgid "The bold style used for the names."
+msgstr "Mall för namn."
+
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
 msgstr "GEXF för person"
@@ -5855,11 +5965,6 @@ msgstr "Färfädersgenertioner"
 #: FamilyTree/FamilyTree.py:1048
 msgid "The number of ancestor generations to include in the tree"
 msgstr "Antal förfädergenerationer som skall tas med i trädet"
-
-#: FamilyTree/FamilyTree.py:1051
-#: TimelinePedigreeView/TimelinePedigreeView.py:1465
-msgid "Descendant Generations"
-msgstr "Ättlingagenerationer"
 
 #: FamilyTree/FamilyTree.py:1052
 msgid "The number of descendant generations to include in the tree"
@@ -16178,8 +16283,176 @@ msgstr "Grampschatt"
 msgid "AI Chatbot Gramplet (requires connecting to an LLM service)"
 msgstr "AI Chatbot Gramplet (kräver anslutning till en LLM-tjänst)"
 
-#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:213
-#: GrampsWebSync/grampswebsync.py:271
+#: GrampsWebApiDb/grampswebapidb.gpr.py:24
+#, fuzzy
+#| msgid "Gramps Web Sync"
+msgid "GrampsWebApiDb"
+msgstr "Gramps Webb-synkronisering"
+
+#: GrampsWebApiDb/grampswebapidb.gpr.py:25
+msgid "Gramps _Web API Database"
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.gpr.py:27
+msgid ""
+"Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) as a live "
+"database, mirrored locally for speed."
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.py:262
+msgid ""
+"The account authenticating via GRAMPS_WEB_API_KEY does not have permission "
+"on the server for this operation (HTTP 403 Forbidden). Generate a key for an "
+"account with sufficient permissions, or ask the server administrator to "
+"grant this one access."
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.py:422
+#, python-format
+msgid ""
+"This Family Tree is named \"%(actual)s\", but GRAMPS_WEB_API_KEY currently "
+"authenticates as \"%(expected)s\". Rename this Family Tree to "
+"\"%(expected_typeable)s\" (Family Trees -> Manage Family Trees) if it's "
+"meant to mirror that account, or open/create the Family Tree already named "
+"that -- reusing this one would mix its existing local data with the other "
+"account's."
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.py:550
+msgid "Retry local change after server conflict"
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.py:668
+msgid "Clear local mirror before full resync"
+msgstr "Töm lokal version före fullständing omsynkronisering"
+
+#: GrampsWebApiDb/mintapikeytool.gpr.py:23 GrampsWebApiDb/mintapikeytool.py:129
+msgid "Generate Gramps Web API key"
+msgstr "Generera Gramps Web API-nyckel"
+
+#: GrampsWebApiDb/mintapikeytool.gpr.py:25
+msgid ""
+"Turn a Gramps Web API server URL, username, and password into a "
+"GRAMPS_WEB_API_KEY value for GrampsWebApiDb, and optionally create a "
+"matching, correctly-named GrampsWebApiDb Family Tree for it."
+msgstr ""
+
+#: GrampsWebApiDb/mintapikeytool.py:141
+msgid "Server URL"
+msgstr "Server-URL"
+
+#: GrampsWebApiDb/mintapikeytool.py:141
+msgid "e.g. https://your-server/api"
+msgstr "t.ex. https://din-server/api"
+
+#: GrampsWebApiDb/mintapikeytool.py:143
+msgid "Username"
+msgstr "Användarnamn"
+
+#: GrampsWebApiDb/mintapikeytool.py:144
+msgid "Password"
+msgstr "Lösenord"
+
+#: GrampsWebApiDb/mintapikeytool.py:153
+msgid "Generate API Key"
+msgstr "Generera API-nyckel"
+
+#: GrampsWebApiDb/mintapikeytool.py:162
+msgid ""
+"Enter your server URL, username, and password, then click Generate API Key."
+msgstr ""
+"Ange din server-URL, användarnamn och lösenord och klicka sedan på Generera "
+"API-nyckel."
+
+#: GrampsWebApiDb/mintapikeytool.py:168
+msgid "GRAMPS_WEB_API_KEY"
+msgstr "GRAMPS_WEB_API_KEY"
+
+#: GrampsWebApiDb/mintapikeytool.py:182
+msgid "Create Synced Family Tree for this key"
+msgstr "Skapa synkroniserat släktträd för denna nyckel"
+
+#: GrampsWebApiDb/mintapikeytool.py:197
+#, python-format
+msgid ""
+"Found an existing %s for this session. Click Create Synced Family Tree to "
+"use it directly, or fill in the form above to generate a different key."
+msgstr ""
+"Hittade en befintlig %s för den här sessionen. Klicka på Skapa synkroniserat "
+"släktträd för att använda den direkt, eller fyll i formuläret ovan för att "
+"generera en annan nyckel."
+
+#: GrampsWebApiDb/mintapikeytool.py:222
+msgid "Please fill in the server URL, username, and password."
+msgstr "Vänligen fyll i server-URL, användarnamn och lösenord."
+
+#: GrampsWebApiDb/mintapikeytool.py:229
+msgid "Generating API key…"
+msgstr "Genererar API-nyckel…"
+
+#: GrampsWebApiDb/mintapikeytool.py:260
+#, python-format
+msgid "Login failed (HTTP %d): check your username and password."
+msgstr ""
+"Inloggningen misslyckades (HTTP %d): kontrollera ditt användarnamn och "
+"lösenord."
+
+#: GrampsWebApiDb/mintapikeytool.py:263
+#, python-format
+msgid "Server returned an error (HTTP %d %s): check the Server URL."
+msgstr "Servern returnerade ett fel (HTTP %d %s): kontrollera server-URL:en."
+
+#: GrampsWebApiDb/mintapikeytool.py:271
+#, python-format
+msgid "Could not reach the server: check the Server URL. (%s)"
+msgstr "Kan inte komma åt servern: kontrollera server-URL:en. (%s)"
+
+#: GrampsWebApiDb/mintapikeytool.py:274
+#, python-format
+msgid "Unexpected response from the server: %s"
+msgstr "Oväntat svar från servern: %s"
+
+#: GrampsWebApiDb/mintapikeytool.py:277 GrampsWebApiDb/mintapikeytool.py:369
+#, python-format
+msgid "Error: %s"
+msgstr "Fel: %s"
+
+#: GrampsWebApiDb/mintapikeytool.py:286
+#, python-format
+msgid ""
+"Success. %s is now set for this Gramps session -- no restart needed. Copy "
+"the key below to also set it in your shell environment for next time."
+msgstr ""
+"Lyckad. %s är nu satt för denna Gramps-session -- ingen omstart krävs. "
+"Kopiera nyckeln nedan för att lägga till den i din skalmiljö till nästa gång."
+
+#: GrampsWebApiDb/mintapikeytool.py:307
+msgid "Looking up account identity…"
+msgstr "Kollar upp kontoidentitet…"
+
+#: GrampsWebApiDb/mintapikeytool.py:339
+#, python-format
+msgid ""
+"A Family Tree named \"%s\" already exists. Open it from Family Trees -> "
+"Manage Family Trees instead of creating another one."
+msgstr ""
+"Ett släktträd med namnet \"%s\" finns redan. Öppna det från Släktträd -> "
+"Hantera Släktträd istället för att skapa ett till."
+
+#: GrampsWebApiDb/mintapikeytool.py:352
+#, python-format
+msgid "Error creating Family Tree: %s"
+msgstr "Fel vid skapande av släktträd: %s"
+
+#: GrampsWebApiDb/mintapikeytool.py:358
+#, python-format
+msgid ""
+"Created Family Tree \"%s\". Open it from Family Trees -> Manage Family Trees "
+"to start syncing."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:204
+#: GrampsWebSync/grampswebsync.py:269
 msgid "Gramps Web Sync"
 msgstr "Gramps Webb-synkronisering"
 
@@ -16187,128 +16460,74 @@ msgstr "Gramps Webb-synkronisering"
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Synkroniserar en lokal databas med en Gramps Webbinstans."
 
-#: GrampsWebSync/grampswebsync.py:124
-#, python-format
+#: GrampsWebSync/grampswebsync.py:249
+msgid "_Try again"
+msgstr "_Försök igen"
+
+#: GrampsWebSync/grampswebsync.py:250
+msgid "C_onnect"
+msgstr "A_nslut"
+
+#: GrampsWebSync/grampswebsync.py:345
+msgid "Forget this server?"
+msgstr "Glöm denna server?"
+
+#: GrampsWebSync/grampswebsync.py:347
 msgid ""
-"The system keyring could not be used. Snap confinement blocks access until "
-"you run: %s"
+"The address, user name and password stored for this server will be removed, "
+"along with the record of when this family tree last synchronized with it. "
+"The next synchronization will compare the two trees from scratch."
 msgstr ""
-"Systemnyckelringen kunde inte användas. Snap-begränsning blockerar åtkomst "
-"tills du kör: %s"
+"Webbadressen, användarnamnet och lösenordet som är lagrade för denna server "
+"kommer att tas bort, tillsammans med anteckningen om när detta släktträd "
+"senast synkroniserades med den. Nästa synkronisering kommer att jämföra de "
+"två träden från grunden."
 
-#: GrampsWebSync/grampswebsync.py:128
+#: GrampsWebSync/grampswebsync.py:352
+msgid "Forget"
+msgstr "Glöm"
+
+#: GrampsWebSync/grampswebsync.py:480
 msgid ""
-"The system keyring could not be used. You will need to enter your password "
-"each time."
+"These credentials were last used with a different family tree. Check the "
+"server before continuing."
 msgstr ""
-"Systemnyckelringen kunde inte användas. Du måste ange ditt lösenord varje "
-"gång."
+"Dessa inloggningsuppgifter användes senast för ett annat släktträd. "
+"Kontrollera servern innan du fortsätter."
 
-#: GrampsWebSync/grampswebsync.py:145
-msgid "Authentication failed. Please check your username and password."
-msgstr ""
-"Autentiseringen misslyckades. Kontrollera ditt användarnamn och lösenord."
+#: GrampsWebSync/grampswebsync.py:556
+msgid "Change server…"
+msgstr "Byt server…"
 
-#: GrampsWebSync/grampswebsync.py:148
-msgid "Access forbidden. Please check username and password."
-msgstr "Åtkomst förbjuden. Kontrollera användarnamn och lösenord."
+#: GrampsWebSync/grampswebsync.py:591
+msgid "Server URL:"
+msgstr "Server-URL:"
 
-#: GrampsWebSync/grampswebsync.py:150
-msgid "GrampsWeb service not found. Please check the URL."
-msgstr "GrampsWeb-tjänsten hittades inte. Kontrollera URL:en."
+#: GrampsWebSync/grampswebsync.py:593 PhpGedView/phpgedview.glade:170
+msgid "Username:"
+msgstr "Användarnamn:"
 
-#: GrampsWebSync/grampswebsync.py:152
-msgid "Too many requests, please try again in a few seconds."
-msgstr "För många förfrågningar, försök igen om några sekunder."
+#: GrampsWebSync/grampswebsync.py:594 PhpGedView/phpgedview.glade:182
+msgid "Password:"
+msgstr "Lösenord:"
 
-#: GrampsWebSync/grampswebsync.py:154
-msgid "GrampsWeb tree is disabled."
-msgstr "GrampsWeb-trädet är inaktiverat."
+#: GrampsWebSync/grampswebsync.py:598
+msgid "Remember password"
+msgstr "Kom ihåg lösenord"
 
-#: GrampsWebSync/grampswebsync.py:156
-msgid "Connection failed. Please check the URL and your internet connection."
-msgstr ""
-"Anslutningen misslyckades. Kontrollera URL:en och din internetanslutning."
+#: GrampsWebSync/grampswebsync.py:610
+msgid "Forget this server"
+msgstr "Glöm denna server"
 
-#: GrampsWebSync/grampswebsync.py:159
-msgid "Invalid server response. Please check the URL."
-msgstr "Ogiltigt serversvar. Kontrollera URL:en."
+#: GrampsWebSync/grampswebsync.py:641
+msgid "About this tool"
+msgstr "Om detta verktyg"
 
-#: GrampsWebSync/grampswebsync.py:162
-msgid "Your user does not have sufficient server permissions to use sync."
-msgstr ""
-"Din användare har inte tillräckliga serverbehörigheter för att använda "
-"synkronisering."
+#: GrampsWebSync/grampswebsync.py:645
+msgid "Open the online manual"
+msgstr "Öppna onlinehandboken"
 
-#: GrampsWebSync/grampswebsync.py:164
-msgid "Failed importing downloaded XML file."
-msgstr "Misslyckades med att importera den nedladdade XML-filen."
-
-#: GrampsWebSync/grampswebsync.py:166
-msgid "Unable to synchronize changes to server: objects have been modified."
-msgstr ""
-"Det gick inte att synkronisera ändringar till servern: objekt har ändrats."
-
-#: GrampsWebSync/grampswebsync.py:168
-msgid "Unexpected error while applying changes."
-msgstr "Oväntat fel vid tillämpning av ändringar."
-
-#: GrampsWebSync/grampswebsync.py:170
-msgid ""
-"The family tree was modified while the changes were being reviewed. Nothing "
-"has been applied. Please compare again."
-msgstr ""
-"Släktträdet ändrades medan ändringarna granskades. Ingenting har tillämpats. "
-"Jämför igen."
-
-#: GrampsWebSync/grampswebsync.py:175
-#, python-format
-msgid "The server could not apply the changes: %s"
-msgstr "Servern kunde inte tillämpa ändringarna: %s"
-
-#: GrampsWebSync/grampswebsync.py:177
-#, python-format
-msgid "Server error %s. Please check your connection."
-msgstr "Server-fel %s. Kontrollera din anslutning."
-
-#: GrampsWebSync/grampswebsync.py:179 GrampsWebSync/grampswebsync.py:180
-#, python-format
-msgid "Unexpected error: %s"
-msgstr "Oväntat fel: %s"
-
-#: GrampsWebSync/grampswebsync.py:341
-msgid "Fetching remote data..."
-msgstr "Hämtar fjärrdata..."
-
-#: GrampsWebSync/grampswebsync.py:344
-msgid "Comparing local and remote data..."
-msgstr "Jämför lokala- och fjärrdata..."
-
-#: GrampsWebSync/grampswebsync.py:348
-msgid "Successfully applied changes to local database."
-msgstr "Ändringarna har tillämpats i den lokala databasen."
-
-#: GrampsWebSync/grampswebsync.py:437
-msgid "Continue without transport encryption?"
-msgstr "Fortsätta utan transportkryptering?"
-
-#: GrampsWebSync/grampswebsync.py:439
-msgid ""
-"You have specified a URL with http scheme. If you continue, your password "
-"will be sent in clear text over the network. Use only for local testing!"
-msgstr ""
-"Du har angett en URL med http-schema. Om du fortsätter skickas ditt lösenord "
-"i klartext över nätverket. Använd endast för lokal testning!"
-
-#: GrampsWebSync/grampswebsync.py:444
-msgid "Continue with HTTP"
-msgstr "Fortsätt med HTTP"
-
-#: GrampsWebSync/grampswebsync.py:445
-msgid "Use HTTPS"
-msgstr "Använd HTTPS"
-
-#: GrampsWebSync/grampswebsync.py:495
+#: GrampsWebSync/grampswebsync.py:658
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
 "remote family tree served by Gramps Web.\n"
@@ -16337,20 +16556,224 @@ msgstr ""
 "Om du istället vill sammanfoga två signifikant olika träd med möjlighet att "
 "göra manuella ändringar, använd verktyget Importera sammanfogning istället."
 
-#: GrampsWebSync/grampswebsync.py:522
-msgid "Server URL: "
-msgstr "Server URL: "
-
-#: GrampsWebSync/grampswebsync.py:578 HistContext/HistContext.py:289
+#: GrampsWebSync/grampswebsync.py:729 HistContext/HistContext.py:289
 #: HistContext/HistContext.py:333 HistContext/HistContext.py:420
 msgid "Error:"
 msgstr "Fel:"
 
-#: GrampsWebSync/grampswebsync.py:646
-msgid "Sync mode"
-msgstr "Synkroniseringsläge"
+#: GrampsWebSync/grampswebsync.py:756 GrampsWebSync/grampswebsync.py:1012
+msgid "Warning:"
+msgstr "Varning:"
 
-#: GrampsWebSync/grampswebsync.py:656
+#: GrampsWebSync/grampswebsync.py:901
+msgid "Sync mode:"
+msgstr "Synkroniseringsläge:"
+
+#: GrampsWebSync/grampswebsync.py:1077
+msgid "Synchronization complete"
+msgstr "Synkroniseringen klar"
+
+#: GrampsWebSync/grampswebsync.py:1084
+msgid "Synchronization failed"
+msgstr "Synkroniseringen misslyckades"
+
+#: GrampsWebSync/presentation.py:128
+#, python-format
+msgid "Gramps Web Sync %(addon)s, Web API %(api)s"
+msgstr ""
+
+#: GrampsWebSync/presentation.py:132
+#, fuzzy, python-format
+#| msgid "Gramps Web Sync"
+msgid "Gramps Web Sync %s"
+msgstr "Gramps Webb-synkronisering"
+
+#: GrampsWebSync/presentation.py:164
+msgid ""
+"This URL uses http, so your password will be sent in clear text. Use only "
+"for local testing."
+msgstr ""
+"Denna URL använder http, så ditt lösenord kommer att skickas i klartext. "
+"Använd endast för lokal testning."
+
+#: GrampsWebSync/presentation.py:182
+#, python-format
+msgid ""
+"The system keyring could not be used. Snap confinement blocks access until "
+"you run: %s"
+msgstr ""
+"Systemnyckelringen kunde inte användas. Snap-begränsning blockerar åtkomst "
+"tills du kör: %s"
+
+#: GrampsWebSync/presentation.py:186
+msgid ""
+"The system keyring could not be used. You will need to enter your password "
+"each time."
+msgstr ""
+"Systemnyckelringen kunde inte användas. Du måste ange ditt lösenord varje "
+"gång."
+
+#: GrampsWebSync/presentation.py:203
+msgid "Authentication failed. Please check your username and password."
+msgstr ""
+"Autentiseringen misslyckades. Kontrollera ditt användarnamn och lösenord."
+
+#: GrampsWebSync/presentation.py:206
+msgid "Access forbidden. Please check username and password."
+msgstr "Åtkomst förbjuden. Kontrollera användarnamn och lösenord."
+
+#: GrampsWebSync/presentation.py:208
+msgid "GrampsWeb service not found. Please check the URL."
+msgstr "GrampsWeb-tjänsten hittades inte. Kontrollera URL:en."
+
+#: GrampsWebSync/presentation.py:210
+msgid "Too many requests, please try again in a few seconds."
+msgstr "För många förfrågningar, försök igen om några sekunder."
+
+#: GrampsWebSync/presentation.py:212
+msgid "GrampsWeb tree is disabled."
+msgstr "GrampsWeb-trädet är inaktiverat."
+
+#: GrampsWebSync/presentation.py:214
+msgid "Connection failed. Please check the URL and your internet connection."
+msgstr ""
+"Anslutningen misslyckades. Kontrollera URL:en och din internetanslutning."
+
+#: GrampsWebSync/presentation.py:217
+msgid "Invalid server response. Please check the URL."
+msgstr "Ogiltigt serversvar. Kontrollera URL:en."
+
+#: GrampsWebSync/presentation.py:220
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"Din användare har inte tillräckliga serverbehörigheter för att använda "
+"synkronisering."
+
+#: GrampsWebSync/presentation.py:222
+msgid "Failed importing downloaded XML file."
+msgstr "Misslyckades med att importera den nedladdade XML-filen."
+
+#: GrampsWebSync/presentation.py:224
+msgid "Unable to synchronize changes to server: objects have been modified."
+msgstr ""
+"Det gick inte att synkronisera ändringar till servern: objekt har ändrats."
+
+#: GrampsWebSync/presentation.py:226
+msgid "Unexpected error while applying changes."
+msgstr "Oväntat fel vid tillämpning av ändringar."
+
+#: GrampsWebSync/presentation.py:228
+msgid ""
+"The family tree was modified while the changes were being reviewed. Nothing "
+"has been applied. Please compare again."
+msgstr ""
+"Släktträdet ändrades medan ändringarna granskades. Ingenting har tillämpats. "
+"Jämför igen."
+
+#: GrampsWebSync/presentation.py:235
+#, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s, but synchronization needs "
+"%(needed)s or newer. Please update the server."
+msgstr ""
+
+#: GrampsWebSync/presentation.py:239
+#, python-format
+msgid ""
+"This server did not report a Gramps Web API version, so it is too old to "
+"synchronize with. Version %s or newer is needed."
+msgstr ""
+
+#: GrampsWebSync/presentation.py:244
+#, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s. This version of Gramps works with "
+"Gramps Web API %(major)s, so synchronizing with this server needs a newer "
+"version of Gramps."
+msgstr ""
+
+#: GrampsWebSync/presentation.py:250
+msgid ""
+"This server is not configured to use a background task queue. "
+"Synchronization needs one: without it, applying changes times out before the "
+"server has finished. Please enable it on the server."
+msgstr ""
+"Denna server är inte konfigurerad för att använda en bakgrundsuppgiftskö. "
+"Synkronisering behövs: utan den kan tillämpningen av ändringar avbrytas "
+"innan servern är klar. Vänligen aktivera den på servern."
+
+#: GrampsWebSync/presentation.py:256
+#, python-format
+msgid "The server could not apply the changes: %s"
+msgstr "Servern kunde inte tillämpa ändringarna: %s"
+
+#: GrampsWebSync/presentation.py:258
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "Server-fel %s. Kontrollera din anslutning."
+
+#: GrampsWebSync/presentation.py:260 GrampsWebSync/presentation.py:261
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "Oväntat fel: %s"
+
+#: GrampsWebSync/presentation.py:267
+msgid "Signing in…"
+msgstr "Loggar in…"
+
+#: GrampsWebSync/presentation.py:268
+msgid "Downloading the remote family tree…"
+msgstr "Laddar ner fjärrsläktträd…"
+
+#: GrampsWebSync/presentation.py:269
+msgid "Comparing the two family trees…"
+msgstr "Jämför de två släktträden…"
+
+#: GrampsWebSync/presentation.py:270
+msgid "Checking which media files are missing…"
+msgstr "Kontrollerar vilka mediefiler som saknas…"
+
+#: GrampsWebSync/presentation.py:271
+msgid "Applied the changes to this computer."
+msgstr "Tillämpade ändringarna på denna dator."
+
+#: GrampsWebSync/presentation.py:272
+msgid "Sending the changes to the server…"
+msgstr "Skickar ändringarna till servern…"
+
+#: GrampsWebSync/presentation.py:284
+msgid "Downloading media files…"
+msgstr "Laddar ner mediefiler…"
+
+#: GrampsWebSync/presentation.py:285
+msgid "Uploading media files…"
+msgstr "Laddar upp mediefiler…"
+
+#: GrampsWebSync/presentation.py:293
+msgid "Connect"
+msgstr "Anslut"
+
+#: GrampsWebSync/presentation.py:295
+msgid "Apply changes"
+msgstr "Tillämpa ändringar"
+
+#: GrampsWebSync/presentation.py:296
+msgid "Transfer media files"
+msgstr "För över mediefiler"
+
+#: GrampsWebSync/presentation.py:304
+msgid "Bidirectional synchronization"
+msgstr "Dubbelriktad synkronisering"
+
+#: GrampsWebSync/presentation.py:305
+msgid "Reset the server to match this computer"
+msgstr "Återställ servern för att matcha denna dator"
+
+#: GrampsWebSync/presentation.py:306
+msgid "Reset this computer to match the server"
+msgstr "Återställ denna dator för att matcha servern"
+
+#: GrampsWebSync/presentation.py:319
 msgid ""
 "Changes from both sides are combined. Objects edited in both places are "
 "merged."
@@ -16358,7 +16781,7 @@ msgstr ""
 "Förändringar från båda sidor kombineras. Objekt som redigerats på båda "
 "ställena slås samman."
 
-#: GrampsWebSync/grampswebsync.py:660
+#: GrampsWebSync/presentation.py:323
 msgid ""
 "The server is made to match this computer. Anything changed only on the "
 "server is discarded."
@@ -16366,7 +16789,7 @@ msgstr ""
 "Servern är gjord för att matcha den här datorn. Allt som ändras endast på "
 "servern kasseras."
 
-#: GrampsWebSync/grampswebsync.py:664
+#: GrampsWebSync/presentation.py:327
 msgid ""
 "This computer is made to match the server. Anything changed only here is "
 "discarded."
@@ -16374,134 +16797,172 @@ msgstr ""
 "Den här datorn är gjord för att matcha servern. Allt som ändras endast här "
 "kasseras."
 
-#: GrampsWebSync/grampswebsync.py:671
-msgid "Bidirectional Synchronization"
-msgstr "Dubbelriktad synkronisering"
-
-#: GrampsWebSync/grampswebsync.py:672
-msgid "Reset remote to local"
-msgstr "Återställ fjärr till lokalt läge"
-
-#: GrampsWebSync/grampswebsync.py:673
-msgid "Reset local to remote"
-msgstr "Återställ lokalt till fjärrläge"
-
-#: GrampsWebSync/grampswebsync.py:712
-msgid "Warning:"
-msgstr "Varning:"
-
-#: GrampsWebSync/grampswebsync.py:722
-msgid "Local changes"
-msgstr "Lokala ändringar"
-
-#: GrampsWebSync/grampswebsync.py:727
-msgid "Remote changes"
-msgstr "Fjärrändringar"
-
-#: GrampsWebSync/grampswebsync.py:732
-msgid "Simultaneous changes"
-msgstr "Samtidiga förändringar"
-
-#: GrampsWebSync/grampswebsync.py:790
-msgid "Fetching information about media files..."
-msgstr "Hämtar information om mediefiler..."
-
-#: GrampsWebSync/grampswebsync.py:816
-msgid "Both trees are the same."
-msgstr "Båda träden är likadana."
-
-#: GrampsWebSync/grampswebsync.py:822
-msgid "Applying changes to local database ..."
-msgstr "Tillämpar ändringar i den lokala databasen ..."
-
-#: GrampsWebSync/grampswebsync.py:824
-msgid "No changes to apply to local database."
-msgstr "Inga ändringar som ska tillämpas på den lokala databasen."
-
-#: GrampsWebSync/grampswebsync.py:828
-msgid "Applying changes to remote database ..."
-msgstr "Tillämpar ändringar i fjärrdatabasen ..."
-
-#: GrampsWebSync/grampswebsync.py:833
-msgid "No changes to apply to remote database."
-msgstr "Inga ändringar som ska tillämpas på fjärrdatabasen."
-
-#: GrampsWebSync/grampswebsync.py:862
-msgid "Missing locally"
-msgstr "Saknas lokalt"
-
-#: GrampsWebSync/grampswebsync.py:865
-msgid "Missing remotely"
-msgstr "Saknas på distans"
-
-#: GrampsWebSync/grampswebsync.py:905
+#: GrampsWebSync/presentation.py:574
 #, python-format
-msgid "Downloading %s media file"
-msgid_plural "Downloading %s media files"
-msgstr[0] "Laddar ner %s mediefil"
-msgstr[1] "Laddar ner %s mediefiler"
+msgid "Will change on this computer (%s object)"
+msgid_plural "Will change on this computer (%s objects)"
+msgstr[0] "Kommer ändra på denna dator (%s objekt)"
+msgstr[1] "Kommer ändra på denna dator (%s objekt)"
 
-#: GrampsWebSync/grampswebsync.py:920
+#: GrampsWebSync/presentation.py:582
 #, python-format
-msgid "Uploading %s media file"
-msgid_plural "Uploading %s media files"
-msgstr[0] "Laddar upp %s mediefil"
-msgstr[1] "Laddar upp %s mediefiler"
+msgid "Will change on the server (%s object)"
+msgid_plural "Will change on the server (%s objects)"
+msgstr[0] "Kommer ändra på servern (%s objekt)"
+msgstr[1] "Kommer ändra på servern (%s objekt)"
 
-#: GrampsWebSync/grampswebsync.py:965
-msgid "Try again"
-msgstr "Försök igen"
+#: GrampsWebSync/presentation.py:593
+#, python-format
+msgid "Add %s object"
+msgid_plural "Add %s objects"
+msgstr[0] "Lägg till %s objekt"
+msgstr[1] "Lägg till %s objekt"
 
-#: GrampsWebSync/grampswebsync.py:999
+#: GrampsWebSync/presentation.py:594
+#, python-format
+msgid "Update %s object"
+msgid_plural "Update %s objects"
+msgstr[0] "Uppdatera %s objekt"
+msgstr[1] "Uppdatera %s objekt"
+
+#: GrampsWebSync/presentation.py:595
+#, python-format
+msgid "Merge %s object"
+msgid_plural "Merge %s objects"
+msgstr[0] "Slå ihop %s objekt"
+msgstr[1] "Slå ihop %s objekt"
+
+#: GrampsWebSync/presentation.py:596
+#, python-format
+msgid "Delete %s object"
+msgid_plural "Delete %s objects"
+msgstr[0] "Ta bort %s objekt"
+msgstr[1] "Ta bort %s objekt"
+
+#: GrampsWebSync/presentation.py:615
+#, python-format
+msgid "%s object will be deleted on this computer."
+msgid_plural "%s objects will be deleted on this computer."
+msgstr[0] "%s objekt kommer att tas bort från den här datorn."
+msgstr[1] "%s objekt kommer att tas bort från den här datorn."
+
+#: GrampsWebSync/presentation.py:624
+#, python-format
+msgid "%s object will be deleted on the server."
+msgid_plural "%s objects will be deleted on the server."
+msgstr[0] "%s objekt kommer att tas bort från servern."
+msgstr[1] "%s objekt kommer att tas bort från servern."
+
+#: GrampsWebSync/presentation.py:636
+#, python-format
+msgid "%(down)s to download, %(up)s to upload"
+msgstr "%(down)s till nedladdning, %(up)s till uppladdning"
+
+#: GrampsWebSync/presentation.py:642
+#, python-format
+msgid "Also transfer %(total)s media file (%(counts)s)"
+msgid_plural "Also transfer %(total)s media files (%(counts)s)"
+msgstr[0] "För också över %(total)s mediefil (%(counts)s)"
+msgstr[1] "För också över %(total)s mediefiler (%(counts)s)"
+
+#: GrampsWebSync/presentation.py:658
+#, python-format
+msgid "%s media file is missing on both sides and cannot be transferred."
+msgid_plural ""
+"%s media files are missing on both sides and cannot be transferred."
+msgstr[0] "%s mediafil saknas på båda sidor och kan inte överföras."
+msgstr[1] "%s mediafiler saknas på båda sidor och kan inte överföras."
+
+#: GrampsWebSync/presentation.py:681
 #, python-format
 msgid "Applied %s change."
 msgid_plural "Applied %s changes."
 msgstr[0] "Tillämpade %s ändring."
 msgstr[1] "Tillämpade %s ändringar."
 
-#: GrampsWebSync/grampswebsync.py:1006
-msgid "Media files are in sync."
-msgstr "Mediefiler är synkroniserade."
-
-#: GrampsWebSync/grampswebsync.py:1011
-#, python-format
-msgid "%s media file is missing on both sides and could not be transferred."
-msgid_plural ""
-"%s media files are missing on both sides and could not be transferred."
-msgstr[0] "%s mediafil saknas på båda sidor och kunde inte överföras."
-msgstr[1] "%s mediafiler saknas på båda sidor och kunde inte överföras."
-
-#: GrampsWebSync/grampswebsync.py:1020
+#: GrampsWebSync/presentation.py:684
 msgid "Both trees are already in sync."
 msgstr "Båda träden är redan synkroniserade."
 
-#: GrampsWebSync/grampswebsync.py:1033
+#: GrampsWebSync/presentation.py:689
+msgid "Media files are in sync."
+msgstr "Mediefiler är synkroniserade."
+
+#: GrampsWebSync/presentation.py:708
 #, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
 msgstr[0] "Laddade ner %s mediefil med lyckat resultat."
 msgstr[1] "Laddade ner %s mediefiler med lyckat resultat."
 
-#: GrampsWebSync/grampswebsync.py:1043
+#: GrampsWebSync/presentation.py:717
 #, python-format
 msgid "Encountered %s error during download."
 msgid_plural "Encountered %s errors during download."
 msgstr[0] "%s fel uppstod under nedladdningen."
 msgstr[1] "%s fel uppstod under nedladdningen."
 
-#: GrampsWebSync/grampswebsync.py:1056
+#: GrampsWebSync/presentation.py:727
 #, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
 msgstr[0] "Laddade upp %s mediefil med lyckat resultat."
 msgstr[1] "Laddade upp %s mediefiler med lyckat resultat."
 
-#: GrampsWebSync/grampswebsync.py:1065
+#: GrampsWebSync/presentation.py:736
 #, python-format
 msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
 msgstr[0] "%s fel uppstod under uppladdningen."
 msgstr[1] "%s fel uppstod under uppladdningen."
+
+#: GrampsWebSync/presentation.py:768
+msgid "No server configured"
+msgstr ""
+
+#: GrampsWebSync/presentation.py:769
+#, python-format
+msgid "%(user)s on %(server)s"
+msgstr ""
+
+#: GrampsWebSync/presentation.py:774
+#, python-format
+msgid "%(where)s — %(synced)s"
+msgstr ""
+
+#: GrampsWebSync/presentation.py:788
+msgid "Never synced"
+msgstr ""
+
+#: GrampsWebSync/presentation.py:792
+msgid "Last synced just now"
+msgstr ""
+
+#: GrampsWebSync/presentation.py:795
+#, python-format
+msgid "Last synced %s minute ago"
+msgid_plural "Last synced %s minutes ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: GrampsWebSync/presentation.py:801
+#, python-format
+msgid "Last synced %s hour ago"
+msgid_plural "Last synced %s hours ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: GrampsWebSync/presentation.py:806
+#, python-format
+msgid "Last synced %s day ago"
+msgid_plural "Last synced %s days ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: GrampsWebSync/presentation.py:807
+#, python-format
+msgid "Last synced on %s"
+msgstr ""
 
 #: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
 msgid "Gram.py Script"
@@ -18778,7 +19239,7 @@ msgstr ""
 
 #: NameSuite/name_processor/views/gramplet.py:40
 msgid "Individual already has a recorded patronymic."
-msgstr ""
+msgstr "Individen har redan ett registrerat fadersnamn."
 
 #: NameSuite/name_processor/views/gramplet.py:43
 msgid "No attached father found in database family records."
@@ -20346,14 +20807,6 @@ msgstr "phpGedView-import"
 #: PhpGedView/phpgedview.glade:103
 msgid "http://"
 msgstr "http://"
-
-#: PhpGedView/phpgedview.glade:170
-msgid "Username:"
-msgstr "Användarnamn:"
-
-#: PhpGedView/phpgedview.glade:182
-msgid "Password:"
-msgstr "Lösenord:"
 
 #: PhpGedView/phpgedview.gpr.py:24
 msgid "PhpGedView"
@@ -26330,6 +26783,63 @@ msgstr ""
 "\"%s\"\n"
 "till din föredragna webbnavigator ..."
 
+#~ msgid "Fetching remote data..."
+#~ msgstr "Hämtar fjärrdata..."
+
+#~ msgid "Comparing local and remote data..."
+#~ msgstr "Jämför lokala- och fjärrdata..."
+
+#~ msgid "Successfully applied changes to local database."
+#~ msgstr "Ändringarna har tillämpats i den lokala databasen."
+
+#~ msgid "Continue without transport encryption?"
+#~ msgstr "Fortsätta utan transportkryptering?"
+
+#~ msgid "Continue with HTTP"
+#~ msgstr "Fortsätt med HTTP"
+
+#~ msgid "Use HTTPS"
+#~ msgstr "Använd HTTPS"
+
+#~ msgid "Reset remote to local"
+#~ msgstr "Återställ fjärr till lokalt läge"
+
+#~ msgid "Reset local to remote"
+#~ msgstr "Återställ lokalt till fjärrläge"
+
+#~ msgid "Local changes"
+#~ msgstr "Lokala ändringar"
+
+#~ msgid "Remote changes"
+#~ msgstr "Fjärrändringar"
+
+#~ msgid "Simultaneous changes"
+#~ msgstr "Samtidiga förändringar"
+
+#~ msgid "Fetching information about media files..."
+#~ msgstr "Hämtar information om mediefiler..."
+
+#~ msgid "Both trees are the same."
+#~ msgstr "Båda träden är likadana."
+
+#~ msgid "Applying changes to local database ..."
+#~ msgstr "Tillämpar ändringar i den lokala databasen ..."
+
+#~ msgid "No changes to apply to local database."
+#~ msgstr "Inga ändringar som ska tillämpas på den lokala databasen."
+
+#~ msgid "Applying changes to remote database ..."
+#~ msgstr "Tillämpar ändringar i fjärrdatabasen ..."
+
+#~ msgid "No changes to apply to remote database."
+#~ msgstr "Inga ändringar som ska tillämpas på fjärrdatabasen."
+
+#~ msgid "Missing locally"
+#~ msgstr "Saknas lokalt"
+
+#~ msgid "Missing remotely"
+#~ msgstr "Saknas på distans"
+
 #~ msgid "Error accessing media object."
 #~ msgstr "Fel vid åtkomst till medieobjektet."
 
@@ -26348,9 +26858,6 @@ msgstr ""
 
 #~ msgid "URL error while connecting to server."
 #~ msgstr "URL-fel vid anslutning till servern."
-
-#~ msgid "Unable to synchronize changes to server."
-#~ msgstr "Det gick inte att synkronisera ändringarna med servern."
 
 #~ msgid "Search"
 #~ msgstr "Sök"
