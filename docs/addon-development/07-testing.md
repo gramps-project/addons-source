@@ -16,11 +16,17 @@
   these tests catch.
 -->
 
-## Overview
+## Summary
 
 How to test an addon without launching the GUI on every iteration — the test framework, the layout conventions, the fixtures that work, and the platform-aware rules that keep tests portable across Linux, Windows, and Mac.
 
 A working test suite is what makes an addon **maintainable across Gramps releases**. The matrix of (Gramps version × OS) makes manual testing impossible at scale; the per-OS prefix conventions below let a single CI matrix verify your addon against every supported combination automatically.
+
+The page starts with the ground rules: the framework is **stdlib `unittest`** and nothing else — no pytest, no third-party runner — plus the class-header convention and the `tests/` **layout** each addon follows, including why the per-addon `tests/__init__.py` exists and why it must stay empty. Two sections then cover the mechanics that are easy to get wrong: the **GTK-pin contract** (Gramps pins the GObject-introspection versions once at startup, so an addon module must never call `gi.require_version` itself — the pin belongs in the addons-source repo-root `tests/__init__.py`, and copying it into a module produces the works-in-tests, breaks-in-Gramps failure) and **loading by dotted path** rather than by filesystem path or `unittest discover`, which is what keeps the namespace-package semantics intact.
+
+The middle of the page is about writing tests that hold up. **Mocked versus `example.gramps`-backed** weighs the two fixture styles and says when each is the right call — a mock is fast and precise, the shipped example tree is realistic and catches assumptions a mock would rubber-stamp. **Tests must run without `requires_mod` dependencies** covers keeping a suite green on a machine that lacks your addon's optional imports, by mocking at the import boundary or skipping cleanly. **What to test** and **what the test catches that the GUI doesn't** are the judgement calls: what is worth asserting, and why a passing manual click-through is weaker evidence than it feels. The closing section is the concrete commands for **running tests locally**, per addon and for the whole suite.
+
+One convention on the page belongs to CI rather than to your own runs: the **filename prefixes**. Test files are `test_*.py`, and the `test_linux_*`, `test_windows_*`, and `test_integration_*` variants scope a file to where it can actually run — which is what lets one CI matrix cover both Linux and Windows without either runner failing on tests that were never meant for it.
 
 ## Framework: stdlib `unittest`
 
@@ -78,7 +84,7 @@ The marker is **hygiene, not a bug fix**. Python 3.3+'s implicit namespace packa
 
 The convention crystallises as: every addon's `tests/` **should** have an `__init__.py`; the addon directory itself **should not**.
 
-The asymmetry matters. The addon directory must remain a plain namespace dir — Gramps' plugin loader puts the addon dir on `sys.path` and imports `<Addon>.py` by name. Making the addon dir a regular package can disturb plugin loading (and the [Mantis 12691](https://gramps-project.org/bugs/view.php?id=12691) namespace trap lives in exactly this area). The `tests/` subfolder has no such constraint, so making it an explicit package is free.
+The asymmetry matters, though not for the reason it is often given. Gramps' plugin loader puts the addon dir itself on `sys.path` and imports the `fname` module as a *top-level* name, so an addon-root `__init__.py` never runs at load time and does not break the addon — seven addons on `maintenance/gramps60` ship one and work. What it does is make the same file importable under two names (top-level at runtime, `<Addon>.<module>` from the repo root under test), which yields two module objects and two copies of everything in them. Keeping the addon root a plain directory keeps the two views identical; the `tests/` subfolder has no such concern, so making it an explicit package is free. See [16-guidelines → Structure](16-guidelines.md#structure) for the full rule and the one legitimate exception.
 
 This is what [addons-source PR 930](https://github.com/gramps-project/addons-source/pull/930) (Gary Griffin) is moving toward.
 
