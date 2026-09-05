@@ -387,6 +387,8 @@ class SharedDBAPI(DbGeneric):
             # FIXME: need a User GUI update callback here:
             self.reindex_reference_map(lambda percent: percent)
         self.dbapi.commit()
+        if txn.batch:
+            self._analyze_tables(self._get_txn_tables(txn))
         if not txn.batch:
             # Now, emit signals:
             # do deletes and adds first
@@ -412,6 +414,39 @@ class SharedDBAPI(DbGeneric):
         self._after_commit(txn)
         txn.clear()
         self.has_changed += 1  # Also gives commits since startup
+
+    def _get_txn_tables(self, txn):
+        """
+        Return the names of the tables that a transaction added rows to,
+        updated, or deleted from.
+        """
+        tables = set()
+        for obj_type, _trans_type in txn:
+            if obj_type == REFERENCE_KEY:
+                tables.add("reference")
+            elif obj_type in KEY_TO_NAME_MAP:
+                tables.add(KEY_TO_NAME_MAP[obj_type])
+        return tables
+
+    def _analyze_tables(self, tables):
+        """
+        Refresh the query planner's statistics for the given tables.
+
+        On a shared database, every tree's rows live together in the same
+        tables, so autovacuum's analyze threshold -- a fixed count plus a
+        fraction of the *whole* table's row count -- is sized against all
+        trees combined. A batch transaction (import, or a bulk tool such as
+        "Check and Repair") can add or rewrite a large number of rows for
+        one tree without moving that shared threshold, so autovacuum can go
+        on indefinitely without ever analyzing the rows just written. Until
+        it does, the planner keeps using statistics that predate them and
+        can pick badly wrong plans (e.g. a secondary index instead of the
+        primary key) for the tree that was just imported. Explicitly
+        analyzing the touched tables after a batch commit avoids that wait.
+        """
+        for table in tables:
+            _LOG.debug("    DBAPI %s analyzing table '%s'", hex(id(self)), table)
+            self.dbapi.execute(f"ANALYZE {table}")
 
     def transaction_abort(self, txn):
         """
