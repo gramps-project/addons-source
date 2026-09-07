@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-09 10:08-0700\n"
-"PO-Revision-Date: 2026-08-09 17:02+0000\n"
+"PO-Revision-Date: 2026-08-28 06:51+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -15426,154 +15426,163 @@ msgstr "Dette nulstiller filter parametrerne."
 #: GOQLFilter/goql.py:239
 msgid "This opens a dialog to save the current expression as a named filter."
 msgstr ""
+"Dette åbner en dialog, hvor man kan gemme det nuværende udtryk som et filter."
 
 #: GOQLFilter/goql.py:244
 msgid "Open this gramplet's help page in a browser."
-msgstr ""
+msgstr "Åbher denne gramplet hjælpeside i en browser."
 
 #: GOQLFilter/goql.py:402
 msgid "SQL"
-msgstr ""
+msgstr "SQL"
 
 #: GOQLFilter/goql.py:403
-#, fuzzy
-#| msgid "Python Shell"
 msgid "Python evaluation"
-msgstr "Python Shell"
+msgstr "Python evaluering"
 
 #: GOQLFilter/goql.py:523
-#, fuzzy, python-format
-#| msgid "Error: login failed"
+#, python-format
 msgid "Error applying filter: %s"
-msgstr "Fejl: Login fejlede"
+msgstr "Fejl under benyttelse af filter: %s"
 
 #: GOQLFilter/goql.py:526
 #, python-format
 msgid "Showing %(shown)d of %(total)d (%(method)s)"
-msgstr ""
+msgstr "Viser %(shown)d af %(total)d (%(method)s)"
 
 #: GOQLFilter/goql.py:541
-#, fuzzy, python-format
-#| msgid "Error in reading '%s'"
+#, python-format
 msgid "Error resetting filter: %s"
-msgstr "Fejl ved læsning af '%s'"
+msgstr "Fejl ved nulstilling af filter: %s"
 
 #: GOQLFilter/goql.py:548
-#, fuzzy
-#| msgid "Enter Python expressions"
 msgid "Enter an expression first"
-msgstr "Enter Python expressions"
+msgstr "Indtast først et udtryk"
 
 #: GOQLFilter/goql.py:560
 #, python-brace-format
 msgid "Created by the GOQL Filter gramplet on {today}"
-msgstr ""
+msgstr "Dannet af GOQL Filter gramplet den {today}"
 
 #: GOQLFilter/whereexprrule.gpr.py:30 GOQLFilter/whereexprrule.py:261
 msgid "People matching the <GOQL expression>"
-msgstr ""
+msgstr "Personer der matcher <GOQL expression>"
 
 #: GOQLFilter/whereexprrule.gpr.py:32
 msgid ""
 "Matches people for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matcher personer hvor det angivne gramps-object-query-language where-udtryk "
+"er andt"
 
 #: GOQLFilter/whereexprrule.gpr.py:50 GOQLFilter/whereexprrule.py:266
-#, fuzzy
-#| msgid "Families matching <event filter>"
 msgid "Families matching the <GOQL expression>"
-msgstr "Familier der matcher <event filter>"
+msgstr "Familier der matcher <GOQL expression>"
 
 #: GOQLFilter/whereexprrule.gpr.py:52
 msgid ""
 "Matches families for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matcher familier hvor det givne gramps-object-query-language where-udtryk er "
+"sandt"
 
 #: GOQLFilter/whereexprrule.gpr.py:70 GOQLFilter/whereexprrule.py:271
 msgid "Events matching the <GOQL expression>"
-msgstr ""
+msgstr "Begivenheder der matcher <GOQL expression>"
 
 #: GOQLFilter/whereexprrule.gpr.py:72
 msgid ""
 "Matches events for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matcher begivenheder hvor det givne gramps-object-query-language where-"
+"udtryk er sandt"
 
 #: GOQLFilter/whereexprrule.gpr.py:90 GOQLFilter/whereexprrule.py:276
 msgid "Places matching the <GOQL expression>"
-msgstr ""
+msgstr "Steder der matcher <GOQL expression>"
 
 #: GOQLFilter/whereexprrule.gpr.py:92
 msgid ""
 "Matches places for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matcher steder hvor det givne gramps-object-query-language where-udtryk er "
+"sandt"
 
 #: GOQLFilter/whereexprrule.gpr.py:110 GOQLFilter/whereexprrule.py:281
 msgid "Repositories matching the <GOQL expression>"
-msgstr ""
+msgstr "Arkiver der matcher <GOQL expression>"
 
 #: GOQLFilter/whereexprrule.gpr.py:112
 msgid ""
 "Matches repositories for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matcher arkiver hvor det givne gramps-object-query-language where-udtryk er "
+"sandt"
 
 #: GOQLFilter/whereexprrule.gpr.py:130 GOQLFilter/whereexprrule.py:286
-#, fuzzy
-#| msgid "Source matching parameters"
 msgid "Sources matching the <GOQL expression>"
-msgstr "Kilde der matcher parametre"
+msgstr "Kilder der marcher <GOQL expression>"
 
 #: GOQLFilter/whereexprrule.gpr.py:132
 msgid ""
 "Matches sources for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matcher kilder hvor det givne gramps-object-query-language where-udtryk er "
+"sandt"
 
 #: GOQLFilter/whereexprrule.gpr.py:150 GOQLFilter/whereexprrule.py:291
 msgid "Citations matching the <GOQL expression>"
-msgstr ""
+msgstr "Kildehenvisninger der matcher <GOQL expression>"
 
 #: GOQLFilter/whereexprrule.gpr.py:152
 msgid ""
 "Matches citations for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matcher kildehenvisninger hvor det givne gramps-object-query-language where-"
+"udtryk er sandt"
 
 #: GOQLFilter/whereexprrule.gpr.py:170 GOQLFilter/whereexprrule.py:296
 msgid "Media matching the <GOQL expression>"
-msgstr ""
+msgstr "Medier der matcher <GOQL expression>"
 
 #: GOQLFilter/whereexprrule.gpr.py:172
 msgid ""
 "Matches media for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matcher medier hvor det givne gramps-object-query-language where-udtryk er "
+"sandt"
 
 #: GOQLFilter/whereexprrule.gpr.py:190 GOQLFilter/whereexprrule.py:301
 msgid "Notes matching the <GOQL expression>"
-msgstr ""
+msgstr "Noter der matcher <GOQL expression>"
 
 #: GOQLFilter/whereexprrule.gpr.py:192
 msgid ""
 "Matches notes for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matcher noter hvor det givne gramps-object-query-language where-udtryk er "
+"sandt"
 
 #: GOQLFilter/whereexprrule.py:212
-#, fuzzy
-#| msgid "Allow regular expressions."
 msgid "GOQL expression"
-msgstr "Tillad regular expressions."
+msgstr "GOQL udtryk"
 
 #: GOQLFilter/whereexprrule.py:214
 msgid ""
 "Matches objects for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Matcher objekter hvor det givne gramps-object-query-language where-udtryk er "
+"sandt"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
@@ -15682,7 +15691,7 @@ msgstr "Medtag søskende til aner."
 
 #: GenealogyTree/gt_sandclock.py:273
 msgid "Compact tree layout"
-msgstr ""
+msgstr "Kompakt trælayout"
 
 #: GenealogyTree/gt_sandclock.py:275
 msgid ""
@@ -15690,6 +15699,9 @@ msgid ""
 "generations per page. Useful for large sandclock trees that otherwise clip "
 "off the rendered page."
 msgstr ""
+"Benyt genealogytree-skabelonen 'database pole reduced', der pakker flere "
+"generationer per side. Brugbart for store timeglastræer, som ellers beskærer "
+"den viste side."
 
 #: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
@@ -15781,14 +15793,9 @@ msgid "Gathering data"
 msgstr "Samler data"
 
 #: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of persons : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid "Number of Persons: %s"
-msgstr ""
-"Antal personer : \n"
-"\t\t\t%s\t|\t(%s)*\n"
+msgstr "Antal personer: %s"
 
 #: GeoTimeLines/GeoTimeLines.py:1776
 msgid ""
@@ -15796,6 +15803,9 @@ msgid ""
 "to differentiate different\n"
 "markers at the same location"
 msgstr ""
+"Skub kortmarkørerne\n"
+"for at skelne mellem forskellige\n"
+"markører på samme plads"
 
 #: GeoTimeLines/GeoTimeLines.py:1786
 msgid ""
@@ -15820,6 +15830,8 @@ msgid ""
 "Days to keep lines on the map after\n"
 "an event"
 msgstr ""
+"Dage hvor linjer på kortet skal beholdes efter\n"
+"en begivenhed"
 
 #: GeoTimeLines/GeoTimeLines.py:1822
 msgid "Use custom map icons"
@@ -15830,6 +15842,8 @@ msgid ""
 "If there is no birth event for a person, their age\n"
 "is assumed to be this at their first event"
 msgstr ""
+"Hvis der ikke er en fødselsbegivenhed for en person, bliver\n"
+"deres alder anslået til at være dette ved en første begivenhed"
 
 #: GeoTimeLines/GeoTimeLines.py:1836
 msgid ""
