@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-04 08:55-0700\n"
-"PO-Revision-Date: 2026-08-05 18:01+0000\n"
+"PO-Revision-Date: 2026-08-07 07:57+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -15735,181 +15735,197 @@ msgstr ""
 
 #: GOQLFilter/goql.py:186
 msgid "A gramps-object-query-language where-expression, e.g.\n"
-msgstr ""
+msgstr "Ein „where“-Ausdruck in der Gramps-Objekt-Abfragesprache, z. B.\n"
 
 #: GOQLFilter/goql.py:188
 msgid "Enter inserts a newline; Ctrl+Enter runs Find.\n"
 msgstr ""
+"Mit der Eingabetaste wird ein Zeilenumbruch eingefügt; mit Strg+Eingabetaste "
+"wird die Suchfunktion aufgerufen.\n"
 
 #: GOQLFilter/goql.py:189
 msgid "Up/Down at the first/last line recalls previous expressions.\n"
 msgstr ""
+"Mit den Pfeiltasten „Auf“ und „Ab“ an der ersten bzw. letzten Zeile werden "
+"vorherige Ausdrücke aufgerufen.\n"
 
 #: GOQLFilter/goql.py:190
 msgid "Tab always completes -- it never inserts a tab character."
 msgstr ""
+"Die Tabulatortaste vervollständigt immer – sie fügt niemals ein "
+"Tabulatorzeichen ein."
 
 #: GOQLFilter/goql.py:213
-#, fuzzy, python-format
-#| msgid "Use filter "
+#, python-format
 msgid "%s filter"
-msgstr "Filter anwenden "
+msgstr "%s Filter"
 
 #: GOQLFilter/goql.py:233
 msgid "This resets the filter parameters to empty state."
 msgstr ""
+"Dadurch werden die Filterparameter auf den leeren Zustand zurückgesetzt."
 
 #: GOQLFilter/goql.py:239
 msgid "This opens a dialog to save the current expression as a named filter."
 msgstr ""
+"Dadurch wird ein Dialogfeld geöffnet, in dem du den aktuellen Ausdruck als "
+"benannten Filter speichern kannst."
 
 #: GOQLFilter/goql.py:244
 msgid "Open this gramplet's help page in a browser."
-msgstr ""
+msgstr "Öffne die Hilfeseite dieses Gramplets in einem Browser."
 
 #: GOQLFilter/goql.py:402
 msgid "SQL"
-msgstr ""
+msgstr "SQL"
 
 #: GOQLFilter/goql.py:403
-#, fuzzy
-#| msgid "Python Shell"
 msgid "Python evaluation"
-msgstr "Python-Shell"
+msgstr "Python-Auswertung"
 
 #: GOQLFilter/goql.py:523
-#, fuzzy, python-format
-#| msgid "Error: login failed"
+#, python-format
 msgid "Error applying filter: %s"
-msgstr "Fehler: Anmeldung fehlgeschlagen"
+msgstr "Fehler beim Anwenden des Filters: %s"
 
 #: GOQLFilter/goql.py:526
 #, python-format
 msgid "Showing %(shown)d of %(total)d (%(method)s)"
-msgstr ""
+msgstr "Anzeige von %(shown)d von %(total)d (%(method)s)"
 
 #: GOQLFilter/goql.py:541
-#, fuzzy, python-format
-#| msgid "Error creating note"
+#, python-format
 msgid "Error resetting filter: %s"
-msgstr "Fehler beim Erstellen der Notiz"
+msgstr "Fehler beim Zurücksetzen des Filters: %s"
 
 #: GOQLFilter/goql.py:548
-#, fuzzy
-#| msgid "Enter Python expressions"
 msgid "Enter an expression first"
-msgstr "Pythonausdrücke eingeben"
+msgstr "Gib zunächst einen Ausdruck ein"
 
 #: GOQLFilter/goql.py:560
 #, python-brace-format
 msgid "Created by the GOQL Filter gramplet on {today}"
-msgstr ""
+msgstr "Erstellt vom GOQL-Filter-Gramplet am {today}"
 
 #: GOQLFilter/whereexprrule.gpr.py:30 GOQLFilter/whereexprrule.py:261
 msgid "People matching the <GOQL expression>"
-msgstr ""
+msgstr "Personen, die dem <GOQL-Ausdruck> entsprechen"
 
 #: GOQLFilter/whereexprrule.gpr.py:32
 msgid ""
 "Matches people for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Liefert Personen, für die der angegebene „where“-Ausdruck in der Gramps-"
+"Objekt-Abfragesprache den Wert „true“ ergibt"
 
 #: GOQLFilter/whereexprrule.gpr.py:50 GOQLFilter/whereexprrule.py:266
-#, fuzzy
-#| msgid "Families matching <event filter>"
 msgid "Families matching the <GOQL expression>"
-msgstr "Familien, die <Ereignisfilter> entsprechen"
+msgstr "Familien, die dem <GOQL-Ausdruck> entsprechen"
 
 #: GOQLFilter/whereexprrule.gpr.py:52
 msgid ""
 "Matches families for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Liefert Familien, für die der angegebene „where“-Ausdruck in der Gramps-"
+"Objekt-Abfragesprache den Wert „true“ ergibt"
 
 #: GOQLFilter/whereexprrule.gpr.py:70 GOQLFilter/whereexprrule.py:271
 msgid "Events matching the <GOQL expression>"
-msgstr ""
+msgstr "Ereignisse, die dem <GOQL-Ausdruck> entsprechen"
 
 #: GOQLFilter/whereexprrule.gpr.py:72
 msgid ""
 "Matches events for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Liefert Ereignisse, für die der angegebene „where“-Ausdruck in der Gramps-"
+"Objekt-Abfragesprache den Wert „true“ ergibt"
 
 #: GOQLFilter/whereexprrule.gpr.py:90 GOQLFilter/whereexprrule.py:276
 msgid "Places matching the <GOQL expression>"
-msgstr ""
+msgstr "Orte, die dem <GOQL-Ausdruck> entsprechen"
 
 #: GOQLFilter/whereexprrule.gpr.py:92
 msgid ""
 "Matches places for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Liefert Orte, für die der angegebene „where“-Ausdruck in der Gramps-Objekt-"
+"Abfragesprache den Wert „true“ ergibt"
 
 #: GOQLFilter/whereexprrule.gpr.py:110 GOQLFilter/whereexprrule.py:281
 msgid "Repositories matching the <GOQL expression>"
-msgstr ""
+msgstr "Aufbewahrungsorte, die dem <GOQL-Ausdruck> entsprechen"
 
 #: GOQLFilter/whereexprrule.gpr.py:112
 msgid ""
 "Matches repositories for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Liefert Aufbewahrungsorte, für die der angegebene „where“-Ausdruck in der "
+"Gramps-Objekt-Abfragesprache den Wert „true“ ergibt"
 
 #: GOQLFilter/whereexprrule.gpr.py:130 GOQLFilter/whereexprrule.py:286
-#, fuzzy
-#| msgid "Source matching parameters"
 msgid "Sources matching the <GOQL expression>"
-msgstr "Quelle, die den Parametern entspricht"
+msgstr "Quellen, die dem <GOQL-Ausdruck> entsprechen"
 
 #: GOQLFilter/whereexprrule.gpr.py:132
 msgid ""
 "Matches sources for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Liefert Quellen, für die der angegebene „where“-Ausdruck in der Gramps-"
+"Objekt-Abfragesprache den Wert „true“ ergibt"
 
 #: GOQLFilter/whereexprrule.gpr.py:150 GOQLFilter/whereexprrule.py:291
 msgid "Citations matching the <GOQL expression>"
-msgstr ""
+msgstr "Quellenangaben, die dem <GOQL-Ausdruck> entsprechen"
 
 #: GOQLFilter/whereexprrule.gpr.py:152
 msgid ""
 "Matches citations for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Liefert Quellenangaben, für die der angegebene „where“-Ausdruck in der "
+"Gramps-Objekt-Abfragesprache den Wert „true“ ergibt"
 
 #: GOQLFilter/whereexprrule.gpr.py:170 GOQLFilter/whereexprrule.py:296
 msgid "Media matching the <GOQL expression>"
-msgstr ""
+msgstr "Medien, die dem <GOQL-Ausdruck> entsprechen"
 
 #: GOQLFilter/whereexprrule.gpr.py:172
 msgid ""
 "Matches media for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Liefert Medien, für die der angegebene „where“-Ausdruck in der Gramps-Objekt-"
+"Abfragesprache den Wert „true“ ergibt"
 
 #: GOQLFilter/whereexprrule.gpr.py:190 GOQLFilter/whereexprrule.py:301
 msgid "Notes matching the <GOQL expression>"
-msgstr ""
+msgstr "Notizen, die dem <GOQL-Ausdruck> entsprechen"
 
 #: GOQLFilter/whereexprrule.gpr.py:192
 msgid ""
 "Matches notes for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Liefert Notizen, für die der angegebene „where“-Ausdruck in der Gramps-"
+"Objekt-Abfragesprache den Wert „true“ ergibt"
 
 #: GOQLFilter/whereexprrule.py:212
-#, fuzzy
-#| msgid "Regular Expression"
 msgid "GOQL expression"
-msgstr "Regulärer Ausdruck"
+msgstr "GOQL-Ausdruck"
 
 #: GOQLFilter/whereexprrule.py:214
 msgid ""
 "Matches objects for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Liefert Objekte, für die der angegebene „where“-Ausdruck in der Gramps-"
+"Objekt-Abfragesprache den Wert „true“ ergibt"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
