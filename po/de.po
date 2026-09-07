@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-09 10:08-0700\n"
+"POT-Creation-Date: 2026-09-03 12:30-0700\n"
 "PO-Revision-Date: 2026-08-14 21:51+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
@@ -5595,6 +5595,117 @@ msgstr ""
 msgid "Retrieving all sub-filter matches"
 msgstr "Alle Übereinstimmungen der Unterfilter abrufen"
 
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:28
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:174
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:973
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1053
+#, fuzzy
+#| msgid "Ancestor Generations"
+msgid "Ancestor Tree Expanded"
+msgstr "Vorfahrengenerationen"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:29
+msgid ""
+"Expanded Ancestor Graph showing direct ancestors, siblings, cousins and "
+"spouses."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:190
+#, fuzzy, python-format
+#| msgid "Ancestors places for %s"
+msgid "Ancestor Tree Expanded for %s"
+msgstr "Ahnenplätze für %s"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:544
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:606
+msgid "Tree Truncated"
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:545
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:607
+msgid ""
+"The generated tree reached the 400 people safety limit and has been "
+"truncated.\n"
+"\n"
+"Please reduce the number of generations or disable some options to see all "
+"branches."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1182
+#, fuzzy
+#| msgid "Shows the number of descendants of the current person"
+msgid "Include descendants of the center person"
+msgstr "Zeigt die Anzahl der Nachkommen der aktuellen Person an"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1183
+#, fuzzy
+#| msgid "Shows the number of descendants of the current person"
+msgid ""
+"Whether to display the children and full descending lines of the center "
+"person"
+msgstr "Zeigt die Anzahl der Nachkommen der aktuellen Person an"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1190
+#, fuzzy
+#| msgid "Include siblings of ancestors."
+msgid "Include siblings of ancestors"
+msgstr "Geschwister der Vorfahren einbeziehen."
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1191
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid "Whether to display the siblings of direct ancestors"
+msgstr ""
+"Ob die theoretische Anzahl der Vorfahren pro Generation angezeigt werden soll"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1194
+msgid "Include cousins (collateral descendants)"
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1195
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid ""
+"Whether to display the cousins and descendants of the ancestors' siblings"
+msgstr ""
+"Ob die theoretische Anzahl der Vorfahren pro Generation angezeigt werden soll"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1202
+#: FamilyTree/FamilyTree.py:1051
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
+msgid "Descendant Generations"
+msgstr "Nachkommengenerationen"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1203
+#, fuzzy
+#| msgid "The number of descendant generations to include in the tree"
+msgid "The number of descendant generations to include"
+msgstr ""
+"Die Anzahl der Nachkommengenerationen, die in den Baum aufgenommen werden "
+"sollen"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1242
+#, fuzzy
+#| msgid "Whether to include the index of Names at the end of the report."
+msgid "Whether to resize the page to fit the size of the tree."
+msgstr "Ob das Namensverzeichnis am Ende des Berichts aufgenommen werden soll."
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1262
+#, fuzzy
+#| msgid "Use a table format for the families index"
+msgid "Use random colors for family lines"
+msgstr "Verwende ein Tabellenformat für das Familienverzeichnis"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1263
+msgid "Draw each family's connecting lines with a distinct color."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1372
+#, fuzzy
+#| msgid "The style used for names."
+msgid "The bold style used for the names."
+msgstr "Der für Namen verwendete Stil."
+
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
 msgstr "Person GEXF"
@@ -6011,11 +6122,6 @@ msgid "The number of ancestor generations to include in the tree"
 msgstr ""
 "Die Anzahl der Vorfahren-Generationen, die in den Stammbaum aufgenommen "
 "werden sollen"
-
-#: FamilyTree/FamilyTree.py:1051
-#: TimelinePedigreeView/TimelinePedigreeView.py:1465
-msgid "Descendant Generations"
-msgstr "Nachkommengenerationen"
 
 #: FamilyTree/FamilyTree.py:1052
 msgid "The number of descendant generations to include in the tree"
@@ -16610,8 +16716,8 @@ msgid ""
 "Found an existing %s for this session. Click Create Synced Family Tree to "
 "use it directly, or fill in the form above to generate a different key."
 msgstr ""
-"Für diese Sitzung wurde ein vorhandener %s gefunden. Klicke auf „"
-"Synchronisierten Stammbaum erstellen“, um ihn direkt zu verwenden, oder "
+"Für diese Sitzung wurde ein vorhandener %s gefunden. Klicke auf "
+"„Synchronisierten Stammbaum erstellen“, um ihn direkt zu verwenden, oder "
 "fülle das obige Formular aus, um einen anderen Schlüssel zu generieren."
 
 #: GrampsWebApiDb/mintapikeytool.py:222
@@ -16639,7 +16745,8 @@ msgstr ""
 #: GrampsWebApiDb/mintapikeytool.py:271
 #, python-format
 msgid "Could not reach the server: check the Server URL. (%s)"
-msgstr "Der Server konnte nicht erreicht werden: Überprüfe die Server-URL. (%s)"
+msgstr ""
+"Der Server konnte nicht erreicht werden: Überprüfe die Server-URL. (%s)"
 
 #: GrampsWebApiDb/mintapikeytool.py:274
 #, python-format
@@ -16671,8 +16778,8 @@ msgid ""
 "A Family Tree named \"%s\" already exists. Open it from Family Trees -> "
 "Manage Family Trees instead of creating another one."
 msgstr ""
-"Ein Stammbaum mit dem Namen „%s“ existiert bereits. Öffne ihn über „"
-"Stammbäume“ → „Stammbäume verwalten“, anstatt einen neuen anzulegen."
+"Ein Stammbaum mit dem Namen „%s“ existiert bereits. Öffne ihn über "
+"„Stammbäume“ → „Stammbäume verwalten“, anstatt einen neuen anzulegen."
 
 #: GrampsWebApiDb/mintapikeytool.py:352
 #, python-format
@@ -16685,8 +16792,8 @@ msgid ""
 "Created Family Tree \"%s\". Open it from Family Trees -> Manage Family Trees "
 "to start syncing."
 msgstr ""
-"Der Stammbaum „%s“ wurde erstellt. Öffne ihn unter „Stammbäume“ -> „"
-"Stammbäume verwalten“, um die Synchronisierung zu starten."
+"Der Stammbaum „%s“ wurde erstellt. Öffne ihn unter „Stammbäume“ -> "
+"„Stammbäume verwalten“, um die Synchronisierung zu starten."
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:204
 #: GrampsWebSync/grampswebsync.py:269

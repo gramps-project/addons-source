@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-09 10:08-0700\n"
+"POT-Creation-Date: 2026-09-03 12:30-0700\n"
 "PO-Revision-Date: 2026-08-11 14:52+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
@@ -5552,6 +5552,116 @@ msgstr ""
 msgid "Retrieving all sub-filter matches"
 msgstr "Alle overeenkomsten van de subfilters aanleveren"
 
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:28
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:174
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:973
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1053
+#, fuzzy
+#| msgid "Ancestor Generations"
+msgid "Ancestor Tree Expanded"
+msgstr "Vooroudergeneraties"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:29
+msgid ""
+"Expanded Ancestor Graph showing direct ancestors, siblings, cousins and "
+"spouses."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:190
+#, fuzzy, python-format
+#| msgid "Ancestors places for %s"
+msgid "Ancestor Tree Expanded for %s"
+msgstr "Afkomstlocaties voor %s"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:544
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:606
+msgid "Tree Truncated"
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:545
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:607
+msgid ""
+"The generated tree reached the 400 people safety limit and has been "
+"truncated.\n"
+"\n"
+"Please reduce the number of generations or disable some options to see all "
+"branches."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1182
+#, fuzzy
+#| msgid "Shows the number of descendants of the current person"
+msgid "Include descendants of the center person"
+msgstr "Toont het aantal nakomelingen van de huidige persoon"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1183
+#, fuzzy
+#| msgid "Shows the number of descendants of the current person"
+msgid ""
+"Whether to display the children and full descending lines of the center "
+"person"
+msgstr "Toont het aantal nakomelingen van de huidige persoon"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1190
+#, fuzzy
+#| msgid "Include siblings of ancestors."
+msgid "Include siblings of ancestors"
+msgstr "Inclusief broers/zussen van voorouders."
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1191
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid "Whether to display the siblings of direct ancestors"
+msgstr ""
+"Of het theoretische aantal voorouders per generatie moet worden weergegeven"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1194
+msgid "Include cousins (collateral descendants)"
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1195
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid ""
+"Whether to display the cousins and descendants of the ancestors' siblings"
+msgstr ""
+"Of het theoretische aantal voorouders per generatie moet worden weergegeven"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1202
+#: FamilyTree/FamilyTree.py:1051
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
+msgid "Descendant Generations"
+msgstr "Afstammelingsgeneraties"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1203
+#, fuzzy
+#| msgid "The number of descendant generations to include in the tree"
+msgid "The number of descendant generations to include"
+msgstr ""
+"Het aantal afstammelingsgeneraties dat in de boom moet worden opgenomen"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1242
+#, fuzzy
+#| msgid "Whether to include the index of Names at the end of the report."
+msgid "Whether to resize the page to fit the size of the tree."
+msgstr "Of de namenindex aan het einde van het rapport moet worden opgenomen."
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1262
+#, fuzzy
+#| msgid "Use a table format for the families index"
+msgid "Use random colors for family lines"
+msgstr "Gebruik een tabelindeling voor de gezinsindex"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1263
+msgid "Draw each family's connecting lines with a distinct color."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1372
+#, fuzzy
+#| msgid "The style used for names."
+msgid "The bold style used for the names."
+msgstr "De stijl die wordt gebruikt voor namen."
+
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
 msgstr "Persoon GEXF"
@@ -5966,11 +6076,6 @@ msgstr "Vooroudergeneraties"
 #: FamilyTree/FamilyTree.py:1048
 msgid "The number of ancestor generations to include in the tree"
 msgstr "Het aantal vooroudergeneraties dat in de boom moet worden opgenomen"
-
-#: FamilyTree/FamilyTree.py:1051
-#: TimelinePedigreeView/TimelinePedigreeView.py:1465
-msgid "Descendant Generations"
-msgstr "Afstammelingsgeneraties"
 
 #: FamilyTree/FamilyTree.py:1052
 msgid "The number of descendant generations to include in the tree"
@@ -16438,11 +16543,11 @@ msgid ""
 "account's."
 msgstr ""
 "Deze stamboom heet \"%(actual)s\", maar GRAMPS_WEB_API_KEY authenticeert "
-"momenteel als \"%(expected)s\". Hernoem deze stamboom naar \"%"
-"(expected_typeable)s\" (Stambomen -> Stambomen beheren) als het de bedoeling "
-"is om dat account te spiegelen, of open/maak de stamboom aan die al zo is "
-"genoemd -- hergebruik van dit account zou de bestaande lokale gegevens "
-"combineren met die van het andere account."
+"momenteel als \"%(expected)s\". Hernoem deze stamboom naar "
+"\"%(expected_typeable)s\" (Stambomen -> Stambomen beheren) als het de "
+"bedoeling is om dat account te spiegelen, of open/maak de stamboom aan die "
+"al zo is genoemd -- hergebruik van dit account zou de bestaande lokale "
+"gegevens combineren met die van het andere account."
 
 #: GrampsWebApiDb/grampswebapidb.py:550
 msgid "Retry local change after server conflict"
@@ -16522,7 +16627,8 @@ msgstr "API-sleutel genereren…"
 #: GrampsWebApiDb/mintapikeytool.py:260
 #, python-format
 msgid "Login failed (HTTP %d): check your username and password."
-msgstr "Inloggen mislukt (HTTP %d): Controleer uw gebruikersnaam en wachtwoord."
+msgstr ""
+"Inloggen mislukt (HTTP %d): Controleer uw gebruikersnaam en wachtwoord."
 
 #: GrampsWebApiDb/mintapikeytool.py:263
 #, python-format
@@ -16807,8 +16913,8 @@ msgid ""
 "This server runs Gramps Web API %(found)s, but synchronization needs "
 "%(needed)s or newer. Please update the server."
 msgstr ""
-"Deze server draait Gramps Web API %(found)s, maar synchronisatie vereist %"
-"(needed)s of nieuwer. Update de server."
+"Deze server draait Gramps Web API %(found)s, maar synchronisatie vereist "
+"%(needed)s of nieuwer. Update de server."
 
 #: GrampsWebSync/presentation.py:239
 #, python-format
