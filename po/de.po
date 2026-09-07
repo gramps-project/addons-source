@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-09 10:08-0700\n"
-"PO-Revision-Date: 2026-08-07 07:57+0000\n"
+"PO-Revision-Date: 2026-08-14 21:51+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "Birthdays"
 msgstr "Geburtstage"
@@ -16501,20 +16501,21 @@ msgid "AI Chatbot Gramplet (requires connecting to an LLM service)"
 msgstr "AI-Chatbot-Gramplet (erfordert die Verbindung zu einem LLM-Dienst)"
 
 #: GrampsWebApiDb/grampswebapidb.gpr.py:24
-#, fuzzy
-#| msgid "Gramps Web Sync"
 msgid "GrampsWebApiDb"
-msgstr "Gramps-Web-Synchronisierung"
+msgstr "GrampsWebApiDB"
 
 #: GrampsWebApiDb/grampswebapidb.gpr.py:25
 msgid "Gramps _Web API Database"
-msgstr ""
+msgstr "Gramps _Web API Datenbank"
 
 #: GrampsWebApiDb/grampswebapidb.gpr.py:27
 msgid ""
 "Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) as a live "
 "database, mirrored locally for speed."
 msgstr ""
+"Verwende einen Gramps-Web-API-Server (z. B. gramps-connect oder Gramps Web) "
+"als Live-Datenbank, die aus Gründen der Geschwindigkeit lokal gespiegelt "
+"wird."
 
 #: GrampsWebApiDb/grampswebapidb.py:262
 msgid ""
@@ -16523,6 +16524,11 @@ msgid ""
 "account with sufficient permissions, or ask the server administrator to "
 "grant this one access."
 msgstr ""
+"Das Konto, das sich über GRAMPS_WEB_API_KEY authentifiziert, verfügt auf dem "
+"Server nicht über die erforderlichen Berechtigungen für diesen Vorgang (HTTP "
+"403 Forbidden). Erstelle einen Schlüssel für ein Konto mit ausreichenden "
+"Berechtigungen oder bitte den Serveradministrator, diesem Konto Zugriff zu "
+"gewähren."
 
 #: GrampsWebApiDb/grampswebapidb.py:422
 #, python-format
@@ -16534,18 +16540,24 @@ msgid ""
 "that -- reusing this one would mix its existing local data with the other "
 "account's."
 msgstr ""
+"Dieser Stammbaum trägt den Namen „%(actual)s“, aber GRAMPS_WEB_API_KEY "
+"authentifiziert sich derzeit als „%(expected)s“. Benenne diesen Stammbaum in "
+"„%(expected_typeable)s“ um (Stammbäume -> Stammbäume verwalten), wenn er "
+"dieses Konto widerspiegeln soll, oder öffne bzw. erstelle den Stammbaum, der "
+"bereits diesen Namen trägt – die Wiederverwendung dieses Stammbaums würde "
+"dessen vorhandene lokale Daten mit denen des anderen Kontos vermischen."
 
 #: GrampsWebApiDb/grampswebapidb.py:550
 msgid "Retry local change after server conflict"
-msgstr ""
+msgstr "Lokale Änderung nach Serverkonflikt erneut versuchen"
 
 #: GrampsWebApiDb/grampswebapidb.py:668
 msgid "Clear local mirror before full resync"
-msgstr ""
+msgstr "Lokalen Spiegel vor der vollständigen Neusynchronisierung löschen"
 
 #: GrampsWebApiDb/mintapikeytool.gpr.py:23 GrampsWebApiDb/mintapikeytool.py:129
 msgid "Generate Gramps Web API key"
-msgstr ""
+msgstr "Gramps-Web-API-Schlüssel generieren"
 
 #: GrampsWebApiDb/mintapikeytool.gpr.py:25
 msgid ""
@@ -16553,49 +16565,44 @@ msgid ""
 "GRAMPS_WEB_API_KEY value for GrampsWebApiDb, and optionally create a "
 "matching, correctly-named GrampsWebApiDb Family Tree for it."
 msgstr ""
+"Wandelt die URL eines Gramps-Web-API-Servers sowie Benutzername und Passwort "
+"in einen GRAMPS_WEB_API_KEY-Wert für „GrampsWebApiDB“ um und erstellt "
+"optional einen passenden, korrekt benannten GrampsWebApiDB-Stammbaum dafür."
 
 #: GrampsWebApiDb/mintapikeytool.py:141
-#, fuzzy
-#| msgid "Server URL: "
 msgid "Server URL"
-msgstr "Server-URL: "
+msgstr "Server-URL"
 
 #: GrampsWebApiDb/mintapikeytool.py:141
 msgid "e.g. https://your-server/api"
-msgstr ""
+msgstr "z. B. https://dein-server/api"
 
 #: GrampsWebApiDb/mintapikeytool.py:143
-#, fuzzy
-#| msgid "Username:"
 msgid "Username"
-msgstr "Benutzername:"
+msgstr "Benutzername"
 
 #: GrampsWebApiDb/mintapikeytool.py:144
-#, fuzzy
-#| msgid "Password:"
 msgid "Password"
-msgstr "Kennwort:"
+msgstr "Kennwort"
 
 #: GrampsWebApiDb/mintapikeytool.py:153
-#, fuzzy
-#| msgid "Generate"
 msgid "Generate API Key"
-msgstr "Generieren"
+msgstr "API-Schlüssel generieren"
 
 #: GrampsWebApiDb/mintapikeytool.py:162
 msgid ""
 "Enter your server URL, username, and password, then click Generate API Key."
 msgstr ""
+"Gib die URL deines Servers, deinen Benutzernamen und dein Passwort ein und "
+"klicke anschließend auf „API-Schlüssel generieren“."
 
 #: GrampsWebApiDb/mintapikeytool.py:168
 msgid "GRAMPS_WEB_API_KEY"
-msgstr ""
+msgstr "GRAMPS_WEB_API_KEY"
 
 #: GrampsWebApiDb/mintapikeytool.py:182
-#, fuzzy
-#| msgid "Family Tree for %s"
 msgid "Create Synced Family Tree for this key"
-msgstr "Stammbaum für %s"
+msgstr "Synchronisierten Stammbaum für diesen Schlüssel erstellen"
 
 #: GrampsWebApiDb/mintapikeytool.py:197
 #, python-format
@@ -16603,49 +16610,46 @@ msgid ""
 "Found an existing %s for this session. Click Create Synced Family Tree to "
 "use it directly, or fill in the form above to generate a different key."
 msgstr ""
+"Für diese Sitzung wurde ein vorhandener %s gefunden. Klicke auf „"
+"Synchronisierten Stammbaum erstellen“, um ihn direkt zu verwenden, oder "
+"fülle das obige Formular aus, um einen anderen Schlüssel zu generieren."
 
 #: GrampsWebApiDb/mintapikeytool.py:222
-#, fuzzy
-#| msgid "Access forbidden. Please check username and password."
 msgid "Please fill in the server URL, username, and password."
-msgstr ""
-"Zugriff verboten. Bitte prüfe mal deinen Benutzernamen und dein Kennwort."
+msgstr "Bitte gib die Server-URL, den Benutzernamen und das Passwort ein."
 
 #: GrampsWebApiDb/mintapikeytool.py:229
-#, fuzzy
-#| msgid "Generation "
 msgid "Generating API key…"
-msgstr "Generation "
+msgstr "API-Schlüssel wird generiert…"
 
 #: GrampsWebApiDb/mintapikeytool.py:260
-#, fuzzy, python-format
-#| msgid "Authentication failed. Please check your username and password."
+#, python-format
 msgid "Login failed (HTTP %d): check your username and password."
 msgstr ""
-"Die Authentifizierung ist fehlgeschlagen. Bitte überprüfe deinen "
-"Benutzernamen und dein Kennwort."
+"Die Anmeldung ist fehlgeschlagen (HTTP %d): Bitte überprüfe deinen "
+"Benutzernamen und dein Passwort."
 
 #: GrampsWebApiDb/mintapikeytool.py:263
 #, python-format
 msgid "Server returned an error (HTTP %d %s): check the Server URL."
 msgstr ""
+"Der Server hat einen Fehler zurückgegeben (HTTP %d %s): Überprüfe die Server-"
+"URL."
 
 #: GrampsWebApiDb/mintapikeytool.py:271
 #, python-format
 msgid "Could not reach the server: check the Server URL. (%s)"
-msgstr ""
+msgstr "Der Server konnte nicht erreicht werden: Überprüfe die Server-URL. (%s)"
 
 #: GrampsWebApiDb/mintapikeytool.py:274
-#, fuzzy, python-format
-#| msgid "Unexpected error: %s"
+#, python-format
 msgid "Unexpected response from the server: %s"
-msgstr "Unerwarteter Fehler: %s"
+msgstr "Unerwartete Antwort vom Server: %s"
 
 #: GrampsWebApiDb/mintapikeytool.py:277 GrampsWebApiDb/mintapikeytool.py:369
-#, fuzzy, python-format
-#| msgid "Error:"
+#, python-format
 msgid "Error: %s"
-msgstr "Fehler:"
+msgstr "Fehler: %s"
 
 #: GrampsWebApiDb/mintapikeytool.py:286
 #, python-format
@@ -16653,10 +16657,13 @@ msgid ""
 "Success. %s is now set for this Gramps session -- no restart needed. Copy "
 "the key below to also set it in your shell environment for next time."
 msgstr ""
+"Erfolg. %s ist nun für diese Gramps-Sitzung festgelegt – ein Neustart ist "
+"nicht erforderlich. Kopiere den folgenden Schlüssel, um ihn auch in deiner "
+"Shell-Umgebung für das nächste Mal festzulegen."
 
 #: GrampsWebApiDb/mintapikeytool.py:307
 msgid "Looking up account identity…"
-msgstr ""
+msgstr "Kontoidentität wird überprüft…"
 
 #: GrampsWebApiDb/mintapikeytool.py:339
 #, python-format
@@ -16664,12 +16671,13 @@ msgid ""
 "A Family Tree named \"%s\" already exists. Open it from Family Trees -> "
 "Manage Family Trees instead of creating another one."
 msgstr ""
+"Ein Stammbaum mit dem Namen „%s“ existiert bereits. Öffne ihn über „"
+"Stammbäume“ → „Stammbäume verwalten“, anstatt einen neuen anzulegen."
 
 #: GrampsWebApiDb/mintapikeytool.py:352
-#, fuzzy, python-format
-#| msgid "Error resetting filter: %s"
+#, python-format
 msgid "Error creating Family Tree: %s"
-msgstr "Fehler beim Zurücksetzen des Filters: %s"
+msgstr "Fehler beim Erstellen des Stammbaums: %s"
 
 #: GrampsWebApiDb/mintapikeytool.py:358
 #, python-format
@@ -16677,6 +16685,8 @@ msgid ""
 "Created Family Tree \"%s\". Open it from Family Trees -> Manage Family Trees "
 "to start syncing."
 msgstr ""
+"Der Stammbaum „%s“ wurde erstellt. Öffne ihn unter „Stammbäume“ -> „"
+"Stammbäume verwalten“, um die Synchronisierung zu starten."
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:204
 #: GrampsWebSync/grampswebsync.py:269
@@ -16688,20 +16698,16 @@ msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Synchronisiert eine lokale Datenbank mit einer Gramps-Webinstanz."
 
 #: GrampsWebSync/grampswebsync.py:249
-#, fuzzy
-#| msgid "Try again"
 msgid "_Try again"
-msgstr "Versuche es noch einmal"
+msgstr "_Versuche es noch einmal"
 
 #: GrampsWebSync/grampswebsync.py:250
-#, fuzzy
-#| msgid "Connecting..."
 msgid "C_onnect"
-msgstr "Verbinde..."
+msgstr "Ver_binden"
 
 #: GrampsWebSync/grampswebsync.py:345
 msgid "Forget this server?"
-msgstr ""
+msgstr "Diesen Server vergessen?"
 
 #: GrampsWebSync/grampswebsync.py:347
 msgid ""
@@ -16709,26 +16715,30 @@ msgid ""
 "along with the record of when this family tree last synchronized with it. "
 "The next synchronization will compare the two trees from scratch."
 msgstr ""
+"Die für diesen Server gespeicherte Adresse, der Benutzername und das "
+"Passwort werden gelöscht, ebenso wie der Eintrag darüber, wann dieser "
+"Stammbaum zuletzt mit dem Server synchronisiert wurde. Bei der nächsten "
+"Synchronisierung werden die beiden Stammbäume von Grund auf neu verglichen."
 
 #: GrampsWebSync/grampswebsync.py:352
 msgid "Forget"
-msgstr ""
+msgstr "Vergessen"
 
 #: GrampsWebSync/grampswebsync.py:480
 msgid ""
 "These credentials were last used with a different family tree. Check the "
 "server before continuing."
 msgstr ""
+"Diese Anmeldedaten wurden zuletzt für einen anderen Stammbaum verwendet. "
+"Überprüfe den Server, bevor du fortfährst."
 
 #: GrampsWebSync/grampswebsync.py:556
 msgid "Change server…"
-msgstr ""
+msgstr "Server wechseln…"
 
 #: GrampsWebSync/grampswebsync.py:591
-#, fuzzy
-#| msgid "Server URL: "
 msgid "Server URL:"
-msgstr "Server-URL: "
+msgstr "Server-URL:"
 
 #: GrampsWebSync/grampswebsync.py:593 PhpGedView/phpgedview.glade:170
 msgid "Username:"
@@ -16740,21 +16750,19 @@ msgstr "Kennwort:"
 
 #: GrampsWebSync/grampswebsync.py:598
 msgid "Remember password"
-msgstr ""
+msgstr "Passwort speichern"
 
 #: GrampsWebSync/grampswebsync.py:610
 msgid "Forget this server"
-msgstr ""
+msgstr "Diesen Server vergessen"
 
 #: GrampsWebSync/grampswebsync.py:641
-#, fuzzy
-#| msgid "About this utility."
 msgid "About this tool"
-msgstr "Über dieses Dienstprogramm."
+msgstr "Über dieses Werkzeug"
 
 #: GrampsWebSync/grampswebsync.py:645
 msgid "Open the online manual"
-msgstr ""
+msgstr "Das Online-Handbuch öffnen"
 
 #: GrampsWebSync/grampswebsync.py:658
 msgid ""
@@ -16798,46 +16806,34 @@ msgid "Warning:"
 msgstr "Warnung:"
 
 #: GrampsWebSync/grampswebsync.py:901
-#, fuzzy
-#| msgid "Sync mode"
 msgid "Sync mode:"
-msgstr "Synchronisierungsmodus"
+msgstr "Synchronisierungsmodus:"
 
 #: GrampsWebSync/grampswebsync.py:1077
-#, fuzzy
-#| msgid "Migration completed!"
 msgid "Synchronization complete"
-msgstr "Migration abgeschlossen!"
+msgstr "Synchronisierung abgeschlossen"
 
 #: GrampsWebSync/grampswebsync.py:1084
-#, fuzzy
-#| msgid "Generation failed"
 msgid "Synchronization failed"
-msgstr "Die Generierung ist fehlgeschlagen"
+msgstr "Die Synchronisierung ist fehlgeschlagen"
 
 #: GrampsWebSync/presentation.py:128
 #, python-format
 msgid "Gramps Web Sync %(addon)s, Web API %(api)s"
-msgstr ""
+msgstr "Gramps Web Sync %(addon)s, Web API %(api)s"
 
 #: GrampsWebSync/presentation.py:132
-#, fuzzy, python-format
-#| msgid "Gramps Web Sync"
+#, python-format
 msgid "Gramps Web Sync %s"
-msgstr "Gramps-Web-Synchronisierung"
+msgstr "Gramps Web Sync %s"
 
 #: GrampsWebSync/presentation.py:164
-#, fuzzy
-#| msgid ""
-#| "You have specified a URL with http scheme. If you continue, your password "
-#| "will be sent in clear text over the network. Use only for local testing!"
 msgid ""
 "This URL uses http, so your password will be sent in clear text. Use only "
 "for local testing."
 msgstr ""
-"Du hast eine URL mit dem http-Schema angegeben. Wenn du fortfährst, wird "
-"dein Passwort im Klartext über das Netzwerk gesendet. Nur für lokale Tests "
-"verwenden!"
+"Diese URL verwendet HTTP, daher wird dein Passwort im Klartext übertragen. "
+"Verwende sie nur für lokale Testzwecke."
 
 #: GrampsWebSync/presentation.py:182
 #, python-format
@@ -16923,6 +16919,9 @@ msgid ""
 "This server runs Gramps Web API %(found)s, but synchronization needs "
 "%(needed)s or newer. Please update the server."
 msgstr ""
+"Auf diesem Server läuft die Gramps-Web-API %(found)s, für die "
+"Synchronisierung ist jedoch %(needed)s oder eine neuere Version "
+"erforderlich. Bitte aktualisiere den Server."
 
 #: GrampsWebSync/presentation.py:239
 #, python-format
@@ -16930,6 +16929,9 @@ msgid ""
 "This server did not report a Gramps Web API version, so it is too old to "
 "synchronize with. Version %s or newer is needed."
 msgstr ""
+"Dieser Server hat keine Gramps-Web-API-Version gemeldet, daher ist er zu "
+"alt, um eine Synchronisierung durchzuführen. Es wird Version %s oder eine "
+"neuere Version benötigt."
 
 #: GrampsWebSync/presentation.py:244
 #, python-format
@@ -16938,6 +16940,10 @@ msgid ""
 "Gramps Web API %(major)s, so synchronizing with this server needs a newer "
 "version of Gramps."
 msgstr ""
+"Auf diesem Server läuft die Gramps-Web-API %(found)s. Diese Version von "
+"Gramps ist mit der Gramps-Web-API %(major)s kompatibel, daher ist für die "
+"Synchronisierung mit diesem Server eine neuere Version von Gramps "
+"erforderlich."
 
 #: GrampsWebSync/presentation.py:250
 msgid ""
@@ -16945,6 +16951,11 @@ msgid ""
 "Synchronization needs one: without it, applying changes times out before the "
 "server has finished. Please enable it on the server."
 msgstr ""
+"Dieser Server ist nicht für die Verwendung einer "
+"Hintergrundaufgabenwarteschlange konfiguriert. Für die Synchronisierung ist "
+"eine solche erforderlich: Ohne sie läuft die Zeitüberschreitung beim "
+"Übernehmen der Änderungen ab, bevor der Server den Vorgang abgeschlossen "
+"hat. Bitte aktiviere diese Funktion auf dem Server."
 
 #: GrampsWebSync/presentation.py:256
 #, python-format
@@ -16963,80 +16974,59 @@ msgstr "Unerwarteter Fehler: %s"
 
 #: GrampsWebSync/presentation.py:267
 msgid "Signing in…"
-msgstr ""
+msgstr "Anmeldung…"
 
 #: GrampsWebSync/presentation.py:268
-#, fuzzy
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
 msgid "Downloading the remote family tree…"
-msgstr "%s Mediendatei wird heruntergeladen"
+msgstr "Der entfernte Stammbaum wird heruntergeladen…"
 
 #: GrampsWebSync/presentation.py:269
 msgid "Comparing the two family trees…"
-msgstr ""
+msgstr "Vergleich der beiden Stammbäume…"
 
 #: GrampsWebSync/presentation.py:270
 msgid "Checking which media files are missing…"
-msgstr ""
+msgstr "Prüfung, welche Mediendateien fehlen…"
 
 #: GrampsWebSync/presentation.py:271
 msgid "Applied the changes to this computer."
-msgstr ""
+msgstr "Die Änderungen wurden auf diesem Computer übernommen."
 
 #: GrampsWebSync/presentation.py:272
-#, fuzzy
-#| msgid "Unable to synchronize changes to server."
 msgid "Sending the changes to the server…"
-msgstr "Änderungen können nicht mit dem Server synchronisiert werden."
+msgstr "Die Änderungen werden an den Server gesendet…"
 
 #: GrampsWebSync/presentation.py:284
-#, fuzzy
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
 msgid "Downloading media files…"
-msgstr "%s Mediendatei wird heruntergeladen"
+msgstr "Mediendateien werden heruntergeladen…"
 
 #: GrampsWebSync/presentation.py:285
-#, fuzzy
-#| msgid "Uploading %s media file"
-#| msgid_plural "Uploading %s media files"
 msgid "Uploading media files…"
-msgstr "%s Mediendatei wird hochgeladen"
+msgstr "Mediendateien werden hochgeladen…"
 
 #: GrampsWebSync/presentation.py:293
-#, fuzzy
-#| msgid "Connecting..."
 msgid "Connect"
-msgstr "Verbinde..."
+msgstr "Verbinden"
 
 #: GrampsWebSync/presentation.py:295
-#, fuzzy
-#| msgid "Applied %s change."
-#| msgid_plural "Applied %s changes."
 msgid "Apply changes"
-msgstr "%s Änderung wurde übernommen."
+msgstr "Änderungen übernehmen"
 
 #: GrampsWebSync/presentation.py:296
-#, fuzzy
-#| msgid "Uploading %s media file"
-#| msgid_plural "Uploading %s media files"
 msgid "Transfer media files"
-msgstr "%s Mediendatei wird hochgeladen"
+msgstr "Mediendateien übertragen"
 
 #: GrampsWebSync/presentation.py:304
-#, fuzzy
-#| msgid "Bidirectional Synchronization"
 msgid "Bidirectional synchronization"
 msgstr "Bidirektionale Synchronisation"
 
 #: GrampsWebSync/presentation.py:305
 msgid "Reset the server to match this computer"
-msgstr ""
+msgstr "Den Server so zurücksetzen, dass er mit diesem Computer übereinstimmt"
 
 #: GrampsWebSync/presentation.py:306
 msgid "Reset this computer to match the server"
-msgstr ""
+msgstr "Diesen Computer so zurücksetzen, dass er mit dem Server übereinstimmt"
 
 #: GrampsWebSync/presentation.py:319
 msgid ""
@@ -17066,87 +17056,80 @@ msgstr ""
 #, python-format
 msgid "Will change on this computer (%s object)"
 msgid_plural "Will change on this computer (%s objects)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Wird auf diesem Computer geändert (%s Objekt)"
+msgstr[1] "Wird auf diesem Computer geändert (%s Objekte)"
 
 #: GrampsWebSync/presentation.py:582
 #, python-format
 msgid "Will change on the server (%s object)"
 msgid_plural "Will change on the server (%s objects)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Wird auf dem Server geändert (%s Objekt)"
+msgstr[1] "Wird auf dem Server geändert (%s Objekte)"
 
 #: GrampsWebSync/presentation.py:593
-#, fuzzy, python-format
-#| msgid "Add Test Note"
+#, python-format
 msgid "Add %s object"
 msgid_plural "Add %s objects"
-msgstr[0] "Testnotiz hinzufügen"
-msgstr[1] "Testnotiz hinzufügen"
+msgstr[0] "%s Objekt hinzufügen"
+msgstr[1] "%s Objekte hinzufügen"
 
 #: GrampsWebSync/presentation.py:594
-#, fuzzy, python-format
-#| msgid "Upgrading %s objects..."
+#, python-format
 msgid "Update %s object"
 msgid_plural "Update %s objects"
-msgstr[0] "Aktualisierung von %s-Objekten..."
-msgstr[1] "Aktualisierung von %s-Objekten..."
+msgstr[0] "%s Objekt aktualisieren"
+msgstr[1] "%s Objekte aktualisieren"
 
 #: GrampsWebSync/presentation.py:595
-#, fuzzy, python-format
-#| msgid "Migrating %s objects..."
+#, python-format
 msgid "Merge %s object"
 msgid_plural "Merge %s objects"
-msgstr[0] "Migrieren von %s Objekten..."
-msgstr[1] "Migrieren von %s Objekten..."
+msgstr[0] "%s Objekt zusammenführen"
+msgstr[1] "%s Objekte zusammenführen"
 
 #: GrampsWebSync/presentation.py:596
 #, python-format
 msgid "Delete %s object"
 msgid_plural "Delete %s objects"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s Objekt löschen"
+msgstr[1] "%s Objekte löschen"
 
 #: GrampsWebSync/presentation.py:615
 #, python-format
 msgid "%s object will be deleted on this computer."
 msgid_plural "%s objects will be deleted on this computer."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s Objekt wird auf diesem Computer gelöscht."
+msgstr[1] "%s Objekte werden auf diesem Computer gelöscht."
 
 #: GrampsWebSync/presentation.py:624
 #, python-format
 msgid "%s object will be deleted on the server."
 msgid_plural "%s objects will be deleted on the server."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s Objekt wird auf dem Server gelöscht."
+msgstr[1] "%s Objekte werden auf dem Server gelöscht."
 
 #: GrampsWebSync/presentation.py:636
 #, python-format
 msgid "%(down)s to download, %(up)s to upload"
-msgstr ""
+msgstr "%(down)s zum Herunterladen, %(up)s zum Hochladen"
 
 #: GrampsWebSync/presentation.py:642
 #, python-format
 msgid "Also transfer %(total)s media file (%(counts)s)"
 msgid_plural "Also transfer %(total)s media files (%(counts)s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Außerdem %(total)s Mediendatei (%(counts)s) übertragen"
+msgstr[1] "Außerdem %(total)s Mediendateien (%(counts)s) übertragen"
 
 #: GrampsWebSync/presentation.py:658
-#, fuzzy, python-format
-#| msgid "%s media file is missing on both sides and could not be transferred."
-#| msgid_plural ""
-#| "%s media files are missing on both sides and could not be transferred."
+#, python-format
 msgid "%s media file is missing on both sides and cannot be transferred."
 msgid_plural ""
 "%s media files are missing on both sides and cannot be transferred."
 msgstr[0] ""
-"%s Mediendatei fehlt auf beiden Seiten und konnte daher nicht übertragen "
+"%s Mediendatei fehlt auf beiden Seiten und kann daher nicht übertragen "
 "werden."
 msgstr[1] ""
-"%s Mediendateien fehlen auf beiden Seiten und konnten nicht übertragen "
-"werden."
+"%s Mediendateien fehlen auf beiden Seiten und können nicht übertragen werden."
 
 #: GrampsWebSync/presentation.py:681
 #, python-format
@@ -17193,51 +17176,51 @@ msgstr[1] "Beim Hochladen sind %s Fehler aufgetreten."
 
 #: GrampsWebSync/presentation.py:768
 msgid "No server configured"
-msgstr ""
+msgstr "Kein Server konfiguriert"
 
 #: GrampsWebSync/presentation.py:769
 #, python-format
 msgid "%(user)s on %(server)s"
-msgstr ""
+msgstr "%(user)s auf %(server)s"
 
 #: GrampsWebSync/presentation.py:774
 #, python-format
 msgid "%(where)s — %(synced)s"
-msgstr ""
+msgstr "%(where)s — %(synced)s"
 
 #: GrampsWebSync/presentation.py:788
 msgid "Never synced"
-msgstr ""
+msgstr "Noch nie synchronisiert"
 
 #: GrampsWebSync/presentation.py:792
 msgid "Last synced just now"
-msgstr ""
+msgstr "Zuletzt synchronisiert: gerade eben"
 
 #: GrampsWebSync/presentation.py:795
 #, python-format
 msgid "Last synced %s minute ago"
 msgid_plural "Last synced %s minutes ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Zuletzt synchronisiert vor %s Minute"
+msgstr[1] "Zuletzt synchronisiert vor %s Minuten"
 
 #: GrampsWebSync/presentation.py:801
 #, python-format
 msgid "Last synced %s hour ago"
 msgid_plural "Last synced %s hours ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Zuletzt synchronisiert vor %s Stunde"
+msgstr[1] "Zuletzt synchronisiert vor %s Stunden"
 
 #: GrampsWebSync/presentation.py:806
 #, python-format
 msgid "Last synced %s day ago"
 msgid_plural "Last synced %s days ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Zuletzt synchronisiert vor %s Tag"
+msgstr[1] "Zuletzt synchronisiert vor %s Tagen"
 
 #: GrampsWebSync/presentation.py:807
 #, python-format
 msgid "Last synced on %s"
-msgstr ""
+msgstr "Zuletzt synchronisiert am %s"
 
 #: GrampyScript/GrampyScript.gpr.py:23 GrampyScript/GrampyScript.gpr.py:32
 msgid "Gram.py Script"
