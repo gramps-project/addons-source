@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-04 08:55-0700\n"
-"PO-Revision-Date: 2026-07-30 22:02+0000\n"
+"PO-Revision-Date: 2026-08-07 07:57+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
@@ -15481,286 +15481,277 @@ msgid "Select Form"
 msgstr "Formu Seçin"
 
 #: GOQLFilter/goql.gpr.py:31
-#, fuzzy
-#| msgid "Person Relationship Filter"
 msgid "Person GOQL Filter"
-msgstr "Kişi İlişkisi Filtresi"
+msgstr "Kişi GOQL Filtresi"
 
 #: GOQLFilter/goql.gpr.py:32
 msgid "Gramplet providing a gramps-object-query-language person filter"
 msgstr ""
+"Gramplet, Gramps nesne sorgulama dili ile kişi filtreleme özelliği sunuyor"
 
 #: GOQLFilter/goql.gpr.py:39 GOQLFilter/goql.gpr.py:58
 #: GOQLFilter/goql.gpr.py:77 GOQLFilter/goql.gpr.py:96
 #: GOQLFilter/goql.gpr.py:117 GOQLFilter/goql.gpr.py:136
 #: GOQLFilter/goql.gpr.py:155 GOQLFilter/goql.gpr.py:174
 #: GOQLFilter/goql.gpr.py:193
-#, fuzzy
-#| msgid "Filtering"
 msgid "GOQL Filter"
-msgstr "Filtreleme"
+msgstr "GOQL Filtresi"
 
 #: GOQLFilter/goql.gpr.py:50
-#, fuzzy
-#| msgid "Family Filter name:"
 msgid "Family GOQL Filter"
-msgstr "Aile Filtresi adı:"
+msgstr "Aile GOQL Filtresi"
 
 #: GOQLFilter/goql.gpr.py:51
 msgid "Gramplet providing a gramps-object-query-language family filter"
-msgstr ""
+msgstr "Gramplet, Gramps nesne sorgulama dili için bir aile filtresi sağlıyor"
 
 #: GOQLFilter/goql.gpr.py:69
 msgid "Event GOQL Filter"
-msgstr ""
+msgstr "Etkinlik GOQL Filtresi"
 
 #: GOQLFilter/goql.gpr.py:70
 msgid "Gramplet providing a gramps-object-query-language event filter"
-msgstr ""
+msgstr "Gramplet, Gramps Nesne Sorgu Dili için bir etkinlik filtresi sağlıyor"
 
 #: GOQLFilter/goql.gpr.py:88
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place GOQL Filter"
-msgstr "Yer _süzgeci:"
+msgstr "GOQL Filtresini Yerleştir"
 
 #: GOQLFilter/goql.gpr.py:89
 msgid "Gramplet providing a gramps-object-query-language place filter"
-msgstr ""
+msgstr "Gramplet, Gramps nesne sorgulama dili için yer filtresi sağlıyor"
 
 #: GOQLFilter/goql.gpr.py:107
-#, fuzzy
-#| msgid "Repository title"
 msgid "Repository GOQL Filter"
-msgstr "Depo başlığı"
+msgstr "Depo GOQL Filtresi"
 
 #: GOQLFilter/goql.gpr.py:109
 msgid "Gramplet providing a gramps-object-query-language repository filter"
-msgstr ""
+msgstr "Gramplet, Gramps Nesne Sorgu Dili için bir depo filtresi sağlıyor"
 
 #: GOQLFilter/goql.gpr.py:128
-#, fuzzy
-#| msgid "Source type"
 msgid "Source GOQL Filter"
-msgstr "Kaynak türü"
+msgstr "Kaynak GOQL Filtresi"
 
 #: GOQLFilter/goql.gpr.py:129
 msgid "Gramplet providing a gramps-object-query-language source filter"
-msgstr ""
+msgstr "Gramplet, Gramps nesne sorgulama dili için bir kaynak filtresi sağlıyor"
 
 #: GOQLFilter/goql.gpr.py:147
-#, fuzzy
-#| msgid "Relationship Filter"
 msgid "Citation GOQL Filter"
-msgstr "İlişki Filtresi"
+msgstr "Alıntı GOQL Filtresi"
 
 #: GOQLFilter/goql.gpr.py:148
-#, fuzzy
-#| msgid "Gramplet providing a person filter on relationships"
 msgid "Gramplet providing a gramps-object-query-language citation filter"
-msgstr "İlişkiler üzerinde kişi filtresi sağlayan Gramplet"
+msgstr "Gramplet, Gramps nesne sorgulama dili için bir alıntı filtresi sağlıyor"
 
 #: GOQLFilter/goql.gpr.py:166
-#, fuzzy
-#| msgid "Media Object Title"
 msgid "Media GOQL Filter"
-msgstr "Medya Nesnesi Başlığı"
+msgstr "Medya GOQL Filtresi"
 
 #: GOQLFilter/goql.gpr.py:167
 msgid "Gramplet providing a gramps-object-query-language media filter"
-msgstr ""
+msgstr "Gramplet, Gramps nesne sorgulama dili için bir medya filtresi sağlıyor"
 
 #: GOQLFilter/goql.gpr.py:185
-#, fuzzy
-#| msgid "Note Link (internal)"
 msgid "Note GOQL Filter"
-msgstr "Not Bağlantısı (dahili)"
+msgstr "Not GOQL Filtresi"
 
 #: GOQLFilter/goql.gpr.py:186
 msgid "Gramplet providing a gramps-object-query-language note filter"
-msgstr ""
+msgstr "Gramplet, Gramps nesne sorgu dili için not filtresi sağlıyor"
 
 #: GOQLFilter/goql.py:186
 msgid "A gramps-object-query-language where-expression, e.g.\n"
-msgstr ""
+msgstr "Gramps nesne sorgulama dilinde, örneğin şu ifade kullanılır\n"
 
 #: GOQLFilter/goql.py:188
 msgid "Enter inserts a newline; Ctrl+Enter runs Find.\n"
 msgstr ""
+"Enter tuşu yeni satır ekler; Ctrl+Enter tuşu ise Bul işlevini çalıştırır.\n"
 
 #: GOQLFilter/goql.py:189
 msgid "Up/Down at the first/last line recalls previous expressions.\n"
-msgstr ""
+msgstr "İlk/son satırdaki Yukarı/Aşağı düğmeleri önceki ifadeleri hatırlatır.\n"
 
 #: GOQLFilter/goql.py:190
 msgid "Tab always completes -- it never inserts a tab character."
-msgstr ""
+msgstr "Sekme tuşu her zaman tamamlanır -- asla sekme karakteri eklenmez."
 
 #: GOQLFilter/goql.py:213
-#, fuzzy, python-format
-#| msgid "Use filter "
+#, python-format
 msgid "%s filter"
-msgstr "Filtreyi kullan "
+msgstr "%s filtresi"
 
 #: GOQLFilter/goql.py:233
 msgid "This resets the filter parameters to empty state."
-msgstr ""
+msgstr "Bu işlem, filtre parametrelerini boş duruma sıfırlar."
 
 #: GOQLFilter/goql.py:239
 msgid "This opens a dialog to save the current expression as a named filter."
 msgstr ""
+"Bu, mevcut ifadeyi adlandırılmış bir filtre olarak kaydetmek için bir "
+"iletişim kutusu açar."
 
 #: GOQLFilter/goql.py:244
 msgid "Open this gramplet's help page in a browser."
-msgstr ""
+msgstr "Bu grampletin yardım sayfasını bir tarayıcıda açın."
 
 #: GOQLFilter/goql.py:402
 msgid "SQL"
-msgstr ""
+msgstr "SQL"
 
 #: GOQLFilter/goql.py:403
-#, fuzzy
-#| msgid "Python Shell"
 msgid "Python evaluation"
-msgstr "Python Kabuğu"
+msgstr "Python değerlendirmesi"
 
 #: GOQLFilter/goql.py:523
-#, fuzzy, python-format
-#| msgid "Error: login failed"
+#, python-format
 msgid "Error applying filter: %s"
-msgstr "Hata: Giriş başarısız"
+msgstr "Filtre uygulanırken hata oluştu: %s"
 
 #: GOQLFilter/goql.py:526
 #, python-format
 msgid "Showing %(shown)d of %(total)d (%(method)s)"
-msgstr ""
+msgstr "Gösterilen %(shown)d / %(total)d (%(method)s)"
 
 #: GOQLFilter/goql.py:541
-#, fuzzy, python-format
-#| msgid "Error creating note"
+#, python-format
 msgid "Error resetting filter: %s"
-msgstr "Not oluşturma hatası"
+msgstr "Filtre sıfırlama hatası: %s"
 
 #: GOQLFilter/goql.py:548
-#, fuzzy
-#| msgid "Enter Python expressions"
 msgid "Enter an expression first"
-msgstr "Python ifadelerini girin"
+msgstr "Önce bir ifade girin"
 
 #: GOQLFilter/goql.py:560
 #, python-brace-format
 msgid "Created by the GOQL Filter gramplet on {today}"
-msgstr ""
+msgstr "{today} tarihinde GOQL Filter grampleti tarafından oluşturuldu"
 
 #: GOQLFilter/whereexprrule.gpr.py:30 GOQLFilter/whereexprrule.py:261
 msgid "People matching the <GOQL expression>"
-msgstr ""
+msgstr "<GOQL ifadesi> ile eşleşen kişiler"
 
 #: GOQLFilter/whereexprrule.gpr.py:32
 msgid ""
 "Matches people for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Verilen gramps nesnesinin sorgu dilinde ifadenin doğru olarak "
+"değerlendirildiği kişileri eşleştirir"
 
 #: GOQLFilter/whereexprrule.gpr.py:50 GOQLFilter/whereexprrule.py:266
-#, fuzzy
-#| msgid "Families matching <event filter>"
 msgid "Families matching the <GOQL expression>"
-msgstr "<Etkinlik filtresi> ile eşleşen aileler"
+msgstr "<GOQL ifadesi> ile eşleşen aileler"
 
 #: GOQLFilter/whereexprrule.gpr.py:52
 msgid ""
 "Matches families for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Verilen gramps nesnesi sorgu dilinde ifadenin doğru olarak değerlendirildiği "
+"ailelerle eşleşir"
 
 #: GOQLFilter/whereexprrule.gpr.py:70 GOQLFilter/whereexprrule.py:271
 msgid "Events matching the <GOQL expression>"
-msgstr ""
+msgstr "<GOQL ifadesi> ile eşleşen etkinlikler"
 
 #: GOQLFilter/whereexprrule.gpr.py:72
 msgid ""
 "Matches events for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Verilen gramps nesnesi sorgu dilindeki ifadenin doğru olarak "
+"değerlendirildiği olaylarla eşleşir"
 
 #: GOQLFilter/whereexprrule.gpr.py:90 GOQLFilter/whereexprrule.py:276
 msgid "Places matching the <GOQL expression>"
-msgstr ""
+msgstr "<GOQL ifadesi> ile eşleşen yerler"
 
 #: GOQLFilter/whereexprrule.gpr.py:92
 msgid ""
 "Matches places for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Verilen gramps nesnesi sorgu dilindeki ifadenin doğru olarak "
+"değerlendirildiği yerlerle eşleşir"
 
 #: GOQLFilter/whereexprrule.gpr.py:110 GOQLFilter/whereexprrule.py:281
 msgid "Repositories matching the <GOQL expression>"
-msgstr ""
+msgstr "<GOQL ifadesi> ile eşleşen depolar"
 
 #: GOQLFilter/whereexprrule.gpr.py:112
 msgid ""
 "Matches repositories for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Verilen gramps nesnesi sorgu dilinde ifadesinin doğru olarak "
+"değerlendirildiği depoları eşleştirir"
 
 #: GOQLFilter/whereexprrule.gpr.py:130 GOQLFilter/whereexprrule.py:286
-#, fuzzy
-#| msgid "Source matching parameters"
 msgid "Sources matching the <GOQL expression>"
-msgstr "Kaynak eşleştirme parametreleri"
+msgstr "<GOQL ifadesi> ile eşleşen kaynaklar"
 
 #: GOQLFilter/whereexprrule.gpr.py:132
 msgid ""
 "Matches sources for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Verilen gramps nesnesi sorgu dilinin, ifadenin doğru olarak "
+"değerlendirildiği kaynaklarıyla eşleşir"
 
 #: GOQLFilter/whereexprrule.gpr.py:150 GOQLFilter/whereexprrule.py:291
 msgid "Citations matching the <GOQL expression>"
-msgstr ""
+msgstr "<GOQL ifadesi> ile eşleşen alıntılar"
 
 #: GOQLFilter/whereexprrule.gpr.py:152
 msgid ""
 "Matches citations for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Verilen gramps nesnesi sorgu dilinin ifadesinin doğru olarak "
+"değerlendirildiği alıntıları eşleştirir"
 
 #: GOQLFilter/whereexprrule.gpr.py:170 GOQLFilter/whereexprrule.py:296
 msgid "Media matching the <GOQL expression>"
-msgstr ""
+msgstr "<GOQL ifadesi> ile eşleşen medya"
 
 #: GOQLFilter/whereexprrule.gpr.py:172
 msgid ""
 "Matches media for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Verilen gramps nesnesi sorgu dilinde ifadenin doğru olarak değerlendirildiği "
+"medyaları eşleştirir"
 
 #: GOQLFilter/whereexprrule.gpr.py:190 GOQLFilter/whereexprrule.py:301
 msgid "Notes matching the <GOQL expression>"
-msgstr ""
+msgstr "<GOQL ifadesi> ile eşleşen notlar"
 
 #: GOQLFilter/whereexprrule.gpr.py:192
 msgid ""
 "Matches notes for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Verilen gramps nesnesi sorgu dilinde ifadenin doğru olarak değerlendirildiği "
+"notlarla eşleşir"
 
 #: GOQLFilter/whereexprrule.py:212
-#, fuzzy
-#| msgid "Regular Expression"
 msgid "GOQL expression"
-msgstr "Normal İfade"
+msgstr "GOQL ifadesi"
 
 #: GOQLFilter/whereexprrule.py:214
 msgid ""
 "Matches objects for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
+"Verilen gramps nesnesi sorgu dilindeki ifadenin doğru olarak "
+"değerlendirildiği nesnelerle eşleşir"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
-msgstr "GEDCOM Uzantılarını (GED2) Dışa Aktar"
+msgstr "GEDCOM Uzantılarını Dışa Aktar (GED2)"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:33
 msgid "GEDCOM Extensions (GED2)"
@@ -16522,10 +16513,8 @@ msgid "Reset local to remote"
 msgstr "Yerel olanı uzak olana sıfırla"
 
 #: GrampsWebSync/grampswebsync.py:712
-#, fuzzy
-#| msgid "Learning"
 msgid "Warning:"
-msgstr "Öğrenim"
+msgstr "Uyarı:"
 
 #: GrampsWebSync/grampswebsync.py:722
 msgid "Local changes"
@@ -16572,15 +16561,13 @@ msgid "Missing remotely"
 msgstr "Uzaktan kayıp"
 
 #: GrampsWebSync/grampswebsync.py:905
-#, fuzzy, python-format
-#| msgid "Downloading %s media file(s)"
+#, python-format
 msgid "Downloading %s media file"
 msgid_plural "Downloading %s media files"
 msgstr[0] "%s medya dosyası indiriliyor"
 
 #: GrampsWebSync/grampswebsync.py:920
-#, fuzzy, python-format
-#| msgid "Uploading %s media file(s)"
+#, python-format
 msgid "Uploading %s media file"
 msgid_plural "Uploading %s media files"
 msgstr[0] "%s medya dosyası yükleniyor"
@@ -16607,35 +16594,29 @@ msgid_plural ""
 msgstr[0] ""
 
 #: GrampsWebSync/grampswebsync.py:1020
-#, fuzzy
-#| msgid "Both trees are the same."
 msgid "Both trees are already in sync."
-msgstr "Her iki ağaç da aynı."
+msgstr "İki ağaç da zaten senkronize durumda."
 
 #: GrampsWebSync/grampswebsync.py:1033
-#, fuzzy, python-format
-#| msgid "Successfully downloaded %s media files."
+#, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
 msgstr[0] "%s medya dosyası başarıyla indirildi."
 
 #: GrampsWebSync/grampswebsync.py:1043
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during download."
+#, python-format
 msgid "Encountered %s error during download."
 msgid_plural "Encountered %s errors during download."
 msgstr[0] "İndirme sırasında %s hata oluştu."
 
 #: GrampsWebSync/grampswebsync.py:1056
-#, fuzzy, python-format
-#| msgid "Successfully uploaded %s media files."
+#, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
 msgstr[0] "%s medya dosyası başarıyla yüklendi."
 
 #: GrampsWebSync/grampswebsync.py:1065
-#, fuzzy, python-format
-#| msgid "Encountered %s errors during upload."
+#, python-format
 msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
 msgstr[0] "Yükleme sırasında %s hata oluştu."
