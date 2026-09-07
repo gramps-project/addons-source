@@ -13,13 +13,14 @@
 # Milan <mobrcian@hotmail.com>, 2025.
 # Nick Hall <nick-h@gramps-project.org>, 2025.
 # Morgan Antonsson <morgan.antonsson@gmail.com>, 2025.
+# Eric Bjurvald <epg.bjurvald@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-09 10:08-0700\n"
-"PO-Revision-Date: 2026-08-03 04:02+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"PO-Revision-Date: 2026-08-31 17:51+0000\n"
+"Last-Translator: Eric Bjurvald <epg.bjurvald@gmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -27,7 +28,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "Birthdays"
 msgstr "Födelsedagar"
@@ -16221,11 +16222,11 @@ msgstr ""
 
 #: GrampsWebApiDb/grampswebapidb.py:668
 msgid "Clear local mirror before full resync"
-msgstr ""
+msgstr "Töm lokal version före fullständing omsynkronisering"
 
 #: GrampsWebApiDb/mintapikeytool.gpr.py:23 GrampsWebApiDb/mintapikeytool.py:129
 msgid "Generate Gramps Web API key"
-msgstr ""
+msgstr "Generera Gramps Web API-nyckel"
 
 #: GrampsWebApiDb/mintapikeytool.gpr.py:25
 msgid ""
@@ -16235,47 +16236,39 @@ msgid ""
 msgstr ""
 
 #: GrampsWebApiDb/mintapikeytool.py:141
-#, fuzzy
-#| msgid "Server URL: "
 msgid "Server URL"
-msgstr "Server URL: "
+msgstr "Server-URL"
 
 #: GrampsWebApiDb/mintapikeytool.py:141
 msgid "e.g. https://your-server/api"
-msgstr ""
+msgstr "t.ex. https://din-server/api"
 
 #: GrampsWebApiDb/mintapikeytool.py:143
-#, fuzzy
-#| msgid "Username:"
 msgid "Username"
-msgstr "Användarnamn:"
+msgstr "Användarnamn"
 
 #: GrampsWebApiDb/mintapikeytool.py:144
-#, fuzzy
-#| msgid "Password:"
 msgid "Password"
-msgstr "Lösenord:"
+msgstr "Lösenord"
 
 #: GrampsWebApiDb/mintapikeytool.py:153
-#, fuzzy
-#| msgid "Generate"
 msgid "Generate API Key"
-msgstr "Skapa"
+msgstr "Generera API-nyckel"
 
 #: GrampsWebApiDb/mintapikeytool.py:162
 msgid ""
 "Enter your server URL, username, and password, then click Generate API Key."
 msgstr ""
+"Ange din server-URL, användarnamn och lösenord och klicka sedan på Generera "
+"API-nyckel."
 
 #: GrampsWebApiDb/mintapikeytool.py:168
 msgid "GRAMPS_WEB_API_KEY"
-msgstr ""
+msgstr "GRAMPS_WEB_API_KEY"
 
 #: GrampsWebApiDb/mintapikeytool.py:182
-#, fuzzy
-#| msgid "Family Tree for %s"
 msgid "Create Synced Family Tree for this key"
-msgstr "Släktträd för %s"
+msgstr "Skapa synkroniserat släktträd för denna nyckel"
 
 #: GrampsWebApiDb/mintapikeytool.py:197
 #, python-format
@@ -16283,47 +16276,44 @@ msgid ""
 "Found an existing %s for this session. Click Create Synced Family Tree to "
 "use it directly, or fill in the form above to generate a different key."
 msgstr ""
+"Hittade en befintlig %s för den här sessionen. Klicka på Skapa synkroniserat "
+"släktträd för att använda den direkt, eller fyll i formuläret ovan för att "
+"generera en annan nyckel."
 
 #: GrampsWebApiDb/mintapikeytool.py:222
-#, fuzzy
-#| msgid "Access forbidden. Please check username and password."
 msgid "Please fill in the server URL, username, and password."
-msgstr "Åtkomst förbjuden. Kontrollera användarnamn och lösenord."
+msgstr "Vänligen fyll i server-URL, användarnamn och lösenord."
 
 #: GrampsWebApiDb/mintapikeytool.py:229
-#, fuzzy
-#| msgid "Generation "
 msgid "Generating API key…"
-msgstr "Generation "
+msgstr "Genererar API-nyckel…"
 
 #: GrampsWebApiDb/mintapikeytool.py:260
-#, fuzzy, python-format
-#| msgid "Authentication failed. Please check your username and password."
+#, python-format
 msgid "Login failed (HTTP %d): check your username and password."
 msgstr ""
-"Autentiseringen misslyckades. Kontrollera ditt användarnamn och lösenord."
+"Inloggningen misslyckades (HTTP %d): kontrollera ditt användarnamn och "
+"lösenord."
 
 #: GrampsWebApiDb/mintapikeytool.py:263
 #, python-format
 msgid "Server returned an error (HTTP %d %s): check the Server URL."
-msgstr ""
+msgstr "Servern returnerade ett fel (HTTP %d %s): kontrollera server-URL:en."
 
 #: GrampsWebApiDb/mintapikeytool.py:271
 #, python-format
 msgid "Could not reach the server: check the Server URL. (%s)"
-msgstr ""
+msgstr "Kan inte komma åt servern: kontrollera server-URL:en. (%s)"
 
 #: GrampsWebApiDb/mintapikeytool.py:274
-#, fuzzy, python-format
-#| msgid "Unexpected error: %s"
+#, python-format
 msgid "Unexpected response from the server: %s"
-msgstr "Oväntat fel: %s"
+msgstr "Oväntat svar från servern: %s"
 
 #: GrampsWebApiDb/mintapikeytool.py:277 GrampsWebApiDb/mintapikeytool.py:369
-#, fuzzy, python-format
-#| msgid "Error:"
+#, python-format
 msgid "Error: %s"
-msgstr "Fel:"
+msgstr "Fel: %s"
 
 #: GrampsWebApiDb/mintapikeytool.py:286
 #, python-format
@@ -16331,10 +16321,12 @@ msgid ""
 "Success. %s is now set for this Gramps session -- no restart needed. Copy "
 "the key below to also set it in your shell environment for next time."
 msgstr ""
+"Lyckad. %s är nu satt för denna Gramps-session -- ingen omstart krävs. "
+"Kopiera nyckeln nedan för att lägga till den i din skalmiljö till nästa gång."
 
 #: GrampsWebApiDb/mintapikeytool.py:307
 msgid "Looking up account identity…"
-msgstr ""
+msgstr "Kollar upp kontoidentitet…"
 
 #: GrampsWebApiDb/mintapikeytool.py:339
 #, python-format
@@ -16342,12 +16334,13 @@ msgid ""
 "A Family Tree named \"%s\" already exists. Open it from Family Trees -> "
 "Manage Family Trees instead of creating another one."
 msgstr ""
+"Ett släktträd med namnet \"%s\" finns redan. Öppna det från Släktträd -> "
+"Hantera Släktträd istället för att skapa ett till."
 
 #: GrampsWebApiDb/mintapikeytool.py:352
-#, fuzzy, python-format
-#| msgid "Error creating note"
+#, python-format
 msgid "Error creating Family Tree: %s"
-msgstr "Fel vid skapande av notis"
+msgstr "Fel vid skapande av släktträd: %s"
 
 #: GrampsWebApiDb/mintapikeytool.py:358
 #, python-format
@@ -16366,20 +16359,16 @@ msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Synkroniserar en lokal databas med en Gramps Webbinstans."
 
 #: GrampsWebSync/grampswebsync.py:249
-#, fuzzy
-#| msgid "Try again"
 msgid "_Try again"
-msgstr "Försök igen"
+msgstr "_Försök igen"
 
 #: GrampsWebSync/grampswebsync.py:250
-#, fuzzy
-#| msgid "Connecting..."
 msgid "C_onnect"
-msgstr "Ansluter..."
+msgstr "A_nslut"
 
 #: GrampsWebSync/grampswebsync.py:345
 msgid "Forget this server?"
-msgstr ""
+msgstr "Glöm denna server?"
 
 #: GrampsWebSync/grampswebsync.py:347
 msgid ""
@@ -16387,26 +16376,30 @@ msgid ""
 "along with the record of when this family tree last synchronized with it. "
 "The next synchronization will compare the two trees from scratch."
 msgstr ""
+"Webbadressen, användarnamnet och lösenordet som är lagrade för denna server "
+"kommer att tas bort, tillsammans med anteckningen om när detta släktträd "
+"senast synkroniserades med den. Nästa synkronisering kommer att jämföra de "
+"två träden från grunden."
 
 #: GrampsWebSync/grampswebsync.py:352
 msgid "Forget"
-msgstr ""
+msgstr "Glöm"
 
 #: GrampsWebSync/grampswebsync.py:480
 msgid ""
 "These credentials were last used with a different family tree. Check the "
 "server before continuing."
 msgstr ""
+"Dessa inloggningsuppgifter användes senast för ett annat släktträd. "
+"Kontrollera servern innan du fortsätter."
 
 #: GrampsWebSync/grampswebsync.py:556
 msgid "Change server…"
-msgstr ""
+msgstr "Byt server…"
 
 #: GrampsWebSync/grampswebsync.py:591
-#, fuzzy
-#| msgid "Server URL: "
 msgid "Server URL:"
-msgstr "Server URL: "
+msgstr "Server-URL:"
 
 #: GrampsWebSync/grampswebsync.py:593 PhpGedView/phpgedview.glade:170
 msgid "Username:"
@@ -16418,21 +16411,19 @@ msgstr "Lösenord:"
 
 #: GrampsWebSync/grampswebsync.py:598
 msgid "Remember password"
-msgstr ""
+msgstr "Kom ihåg lösenord"
 
 #: GrampsWebSync/grampswebsync.py:610
 msgid "Forget this server"
-msgstr ""
+msgstr "Glöm denna server"
 
 #: GrampsWebSync/grampswebsync.py:641
-#, fuzzy
-#| msgid "About this utility."
 msgid "About this tool"
-msgstr "Om detta verktyg."
+msgstr "Om detta verktyg"
 
 #: GrampsWebSync/grampswebsync.py:645
 msgid "Open the online manual"
-msgstr ""
+msgstr "Öppna onlinehandboken"
 
 #: GrampsWebSync/grampswebsync.py:658
 msgid ""
@@ -16473,22 +16464,16 @@ msgid "Warning:"
 msgstr "Varning:"
 
 #: GrampsWebSync/grampswebsync.py:901
-#, fuzzy
-#| msgid "Sync mode"
 msgid "Sync mode:"
-msgstr "Synkroniseringsläge"
+msgstr "Synkroniseringsläge:"
 
 #: GrampsWebSync/grampswebsync.py:1077
-#, fuzzy
-#| msgid "Migration completed!"
 msgid "Synchronization complete"
-msgstr "Migreringen är klar!"
+msgstr "Synkroniseringen klar"
 
 #: GrampsWebSync/grampswebsync.py:1084
-#, fuzzy
-#| msgid "Generation "
 msgid "Synchronization failed"
-msgstr "Generation "
+msgstr "Synkroniseringen misslyckades"
 
 #: GrampsWebSync/presentation.py:128
 #, python-format
@@ -16502,16 +16487,12 @@ msgid "Gramps Web Sync %s"
 msgstr "Gramps Webb-synkronisering"
 
 #: GrampsWebSync/presentation.py:164
-#, fuzzy
-#| msgid ""
-#| "You have specified a URL with http scheme. If you continue, your password "
-#| "will be sent in clear text over the network. Use only for local testing!"
 msgid ""
 "This URL uses http, so your password will be sent in clear text. Use only "
 "for local testing."
 msgstr ""
-"Du har angett en URL med http-schema. Om du fortsätter skickas ditt lösenord "
-"i klartext över nätverket. Använd endast för lokal testning!"
+"Denna URL använder http, så ditt lösenord kommer att skickas i klartext. "
+"Använd endast för lokal testning."
 
 #: GrampsWebSync/presentation.py:182
 #, python-format
@@ -16615,6 +16596,9 @@ msgid ""
 "Synchronization needs one: without it, applying changes times out before the "
 "server has finished. Please enable it on the server."
 msgstr ""
+"Denna server är inte konfigurerad för att använda en bakgrundsuppgiftskö. "
+"Synkronisering behövs: utan den kan tillämpningen av ändringar avbrytas "
+"innan servern är klar. Vänligen aktivera den på servern."
 
 #: GrampsWebSync/presentation.py:256
 #, python-format
@@ -16633,80 +16617,59 @@ msgstr "Oväntat fel: %s"
 
 #: GrampsWebSync/presentation.py:267
 msgid "Signing in…"
-msgstr ""
+msgstr "Loggar in…"
 
 #: GrampsWebSync/presentation.py:268
-#, fuzzy
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
 msgid "Downloading the remote family tree…"
-msgstr "Laddar ner %s mediefil"
+msgstr "Laddar ner fjärrsläktträd…"
 
 #: GrampsWebSync/presentation.py:269
 msgid "Comparing the two family trees…"
-msgstr ""
+msgstr "Jämför de två släktträden…"
 
 #: GrampsWebSync/presentation.py:270
 msgid "Checking which media files are missing…"
-msgstr ""
+msgstr "Kontrollerar vilka mediefiler som saknas…"
 
 #: GrampsWebSync/presentation.py:271
 msgid "Applied the changes to this computer."
-msgstr ""
+msgstr "Tillämpade ändringarna på denna dator."
 
 #: GrampsWebSync/presentation.py:272
-#, fuzzy
-#| msgid "Unable to synchronize changes to server."
 msgid "Sending the changes to the server…"
-msgstr "Det gick inte att synkronisera ändringarna med servern."
+msgstr "Skickar ändringarna till servern…"
 
 #: GrampsWebSync/presentation.py:284
-#, fuzzy
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
 msgid "Downloading media files…"
-msgstr "Laddar ner %s mediefil"
+msgstr "Laddar ner mediefiler…"
 
 #: GrampsWebSync/presentation.py:285
-#, fuzzy
-#| msgid "Uploading %s media file"
-#| msgid_plural "Uploading %s media files"
 msgid "Uploading media files…"
-msgstr "Laddar upp %s mediefil"
+msgstr "Laddar upp mediefiler…"
 
 #: GrampsWebSync/presentation.py:293
-#, fuzzy
-#| msgid "Connecting..."
 msgid "Connect"
-msgstr "Ansluter..."
+msgstr "Anslut"
 
 #: GrampsWebSync/presentation.py:295
-#, fuzzy
-#| msgid "Applied %s change."
-#| msgid_plural "Applied %s changes."
 msgid "Apply changes"
-msgstr "Tillämpade %s ändring."
+msgstr "Tillämpa ändringar"
 
 #: GrampsWebSync/presentation.py:296
-#, fuzzy
-#| msgid "Uploading %s media file"
-#| msgid_plural "Uploading %s media files"
 msgid "Transfer media files"
-msgstr "Laddar upp %s mediefil"
+msgstr "För över mediefiler"
 
 #: GrampsWebSync/presentation.py:304
-#, fuzzy
-#| msgid "Bidirectional Synchronization"
 msgid "Bidirectional synchronization"
 msgstr "Dubbelriktad synkronisering"
 
 #: GrampsWebSync/presentation.py:305
 msgid "Reset the server to match this computer"
-msgstr ""
+msgstr "Återställ servern för att matcha denna dator"
 
 #: GrampsWebSync/presentation.py:306
 msgid "Reset this computer to match the server"
-msgstr ""
+msgstr "Återställ denna dator för att matcha servern"
 
 #: GrampsWebSync/presentation.py:319
 msgid ""
@@ -16736,83 +16699,77 @@ msgstr ""
 #, python-format
 msgid "Will change on this computer (%s object)"
 msgid_plural "Will change on this computer (%s objects)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Kommer ändra på denna dator (%s objekt)"
+msgstr[1] "Kommer ändra på denna dator (%s objekt)"
 
 #: GrampsWebSync/presentation.py:582
 #, python-format
 msgid "Will change on the server (%s object)"
 msgid_plural "Will change on the server (%s objects)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Kommer ändra på servern (%s objekt)"
+msgstr[1] "Kommer ändra på servern (%s objekt)"
 
 #: GrampsWebSync/presentation.py:593
-#, fuzzy, python-format
-#| msgid "Add Test Note"
+#, python-format
 msgid "Add %s object"
 msgid_plural "Add %s objects"
-msgstr[0] "Lägg till testnotis"
-msgstr[1] "Lägg till testnotis"
+msgstr[0] "Lägg till %s objekt"
+msgstr[1] "Lägg till %s objekt"
 
 #: GrampsWebSync/presentation.py:594
-#, fuzzy, python-format
-#| msgid "Upgrading %s objects..."
+#, python-format
 msgid "Update %s object"
 msgid_plural "Update %s objects"
-msgstr[0] "Uppgraderar %s objekt..."
-msgstr[1] "Uppgraderar %s objekt..."
+msgstr[0] "Uppdatera %s objekt"
+msgstr[1] "Uppdatera %s objekt"
 
 #: GrampsWebSync/presentation.py:595
-#, fuzzy, python-format
-#| msgid "Migrating %s objects..."
+#, python-format
 msgid "Merge %s object"
 msgid_plural "Merge %s objects"
-msgstr[0] "Migrerar %s objekt..."
-msgstr[1] "Migrerar %s objekt..."
+msgstr[0] "Slå ihop %s objekt"
+msgstr[1] "Slå ihop %s objekt"
 
 #: GrampsWebSync/presentation.py:596
 #, python-format
 msgid "Delete %s object"
 msgid_plural "Delete %s objects"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ta bort %s objekt"
+msgstr[1] "Ta bort %s objekt"
 
 #: GrampsWebSync/presentation.py:615
 #, python-format
 msgid "%s object will be deleted on this computer."
 msgid_plural "%s objects will be deleted on this computer."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s objekt kommer att tas bort från den här datorn."
+msgstr[1] "%s objekt kommer att tas bort från den här datorn."
 
 #: GrampsWebSync/presentation.py:624
 #, python-format
 msgid "%s object will be deleted on the server."
 msgid_plural "%s objects will be deleted on the server."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s objekt kommer att tas bort från servern."
+msgstr[1] "%s objekt kommer att tas bort från servern."
 
 #: GrampsWebSync/presentation.py:636
 #, python-format
 msgid "%(down)s to download, %(up)s to upload"
-msgstr ""
+msgstr "%(down)s till nedladdning, %(up)s till uppladdning"
 
 #: GrampsWebSync/presentation.py:642
 #, python-format
 msgid "Also transfer %(total)s media file (%(counts)s)"
 msgid_plural "Also transfer %(total)s media files (%(counts)s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "För också över %(total)s mediefil (%(counts)s)"
+msgstr[1] "För också över %(total)s mediefiler (%(counts)s)"
 
 #: GrampsWebSync/presentation.py:658
-#, fuzzy, python-format
-#| msgid "%s media file is missing on both sides and could not be transferred."
-#| msgid_plural ""
-#| "%s media files are missing on both sides and could not be transferred."
+#, python-format
 msgid "%s media file is missing on both sides and cannot be transferred."
 msgid_plural ""
 "%s media files are missing on both sides and cannot be transferred."
-msgstr[0] "%s mediafil saknas på båda sidor och kunde inte överföras."
-msgstr[1] "%s mediafiler saknas på båda sidor och kunde inte överföras."
+msgstr[0] "%s mediafil saknas på båda sidor och kan inte överföras."
+msgstr[1] "%s mediafiler saknas på båda sidor och kan inte överföras."
 
 #: GrampsWebSync/presentation.py:681
 #, python-format
@@ -19180,7 +19137,7 @@ msgstr ""
 
 #: NameSuite/name_processor/views/gramplet.py:40
 msgid "Individual already has a recorded patronymic."
-msgstr ""
+msgstr "Individen har redan ett registrerat fadersnamn."
 
 #: NameSuite/name_processor/views/gramplet.py:43
 msgid "No attached father found in database family records."
