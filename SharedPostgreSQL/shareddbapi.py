@@ -271,6 +271,40 @@ class SharedDBAPI(DbGeneric):
             ")"
         )
 
+        # Every one of these tables holds all trees' rows together, so
+        # autovacuum's default analyze threshold -- a fixed count plus a
+        # fraction of the *whole* table's row count -- is sized against all
+        # trees combined. A single tree's import or edit burst can leave
+        # the planner's statistics for that tree stale until enough
+        # unrelated activity elsewhere pushes the combined table past that
+        # threshold, which can make it pick a badly wrong plan (e.g. a
+        # secondary index instead of the primary key) for that tree's rows.
+        # A fixed, table-size-independent threshold lets autovacuum notice
+        # and re-analyze after any one tree's typical-sized batch of
+        # changes, regardless of how large the shared table has grown.
+        for table in (
+            "person",
+            "family",
+            "source",
+            "citation",
+            "event",
+            "media",
+            "place",
+            "repository",
+            "note",
+            "tag",
+            "reference",
+            "name_group",
+            "metadata",
+            "gender_stats",
+        ):
+            self.dbapi.execute(
+                f"ALTER TABLE {table} SET ("
+                "autovacuum_analyze_scale_factor = 0, "
+                "autovacuum_analyze_threshold = 5000"
+                ")"
+            )
+
         self._create_secondary_columns()
 
         ## Indices:
