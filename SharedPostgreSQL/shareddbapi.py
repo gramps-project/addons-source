@@ -74,6 +74,11 @@ from gramps.gen.const import GRAMPS_LOCALE as glocale
 LOG = logging.getLogger(".shareddbapi")
 _LOG = logging.getLogger(DBLOGNAME)
 
+# Fixed, table-size-independent autovacuum analyze settings applied to each
+# per-tree table at schema creation -- see _create_schema().
+SHARED_TABLE_ANALYZE_SCALE_FACTOR = 0
+SHARED_TABLE_ANALYZE_THRESHOLD = 5000
+
 
 class SharedDBAPI(DbGeneric):
     """
@@ -300,8 +305,8 @@ class SharedDBAPI(DbGeneric):
         ):
             self.dbapi.execute(
                 f"ALTER TABLE {table} SET ("
-                "autovacuum_analyze_scale_factor = 0, "
-                "autovacuum_analyze_threshold = 5000"
+                f"autovacuum_analyze_scale_factor = {SHARED_TABLE_ANALYZE_SCALE_FACTOR}, "
+                f"autovacuum_analyze_threshold = {SHARED_TABLE_ANALYZE_THRESHOLD}"
                 ")"
             )
 
