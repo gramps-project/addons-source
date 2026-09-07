@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-03 12:30-0700\n"
-"PO-Revision-Date: 2026-08-23 14:53+0000\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
 "Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -5409,7 +5409,7 @@ msgstr "祖先世代"
 msgid ""
 "Expanded Ancestor Graph showing direct ancestors, siblings, cousins and "
 "spouses."
-msgstr ""
+msgstr "直系の祖先、兄弟姉妹、いとこ、および配偶者を表示する拡張祖先図。"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:190
 #, fuzzy, python-format
@@ -5420,7 +5420,7 @@ msgstr "%s の祖先の場所"
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:544
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:606
 msgid "Tree Truncated"
-msgstr ""
+msgstr "切り詰められたツリー"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:545
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:607
@@ -5431,6 +5431,10 @@ msgid ""
 "Please reduce the number of generations or disable some options to see all "
 "branches."
 msgstr ""
+"生成されたツリーは400人の安全制限に達したため、途中で切り詰められました。\n"
+"\n"
+"すべてのツリーを表示するには、世代数を減らすか、一部のオプションを無効にして"
+"ください。"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1182
 #, fuzzy
@@ -5447,10 +5451,8 @@ msgid ""
 msgstr "現在の人物の子孫の数を表示します"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1190
-#, fuzzy
-#| msgid "Include siblings of ancestors."
 msgid "Include siblings of ancestors"
-msgstr "先祖の兄弟姉妹も含める。"
+msgstr "先祖の兄弟姉妹も含める"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1191
 #, fuzzy
@@ -5460,7 +5462,7 @@ msgstr "世代ごとに祖先の理論的な数を表示するかどうか"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1194
 msgid "Include cousins (collateral descendants)"
-msgstr ""
+msgstr "いとこ (傍系の子孫) を含める"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1195
 #, fuzzy
@@ -5495,7 +5497,7 @@ msgstr "家族インデックスには表形式を使用する"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1263
 msgid "Draw each family's connecting lines with a distinct color."
-msgstr ""
+msgstr "各家族をつなぐ線を、それぞれ異なる色で描いてください。"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1372
 #, fuzzy
