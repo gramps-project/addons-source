@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-04 08:55-0700\n"
-"PO-Revision-Date: 2026-08-05 18:01+0000\n"
+"PO-Revision-Date: 2026-08-09 17:02+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "Birthdays"
 msgstr "Fødseldage"
@@ -81,7 +81,7 @@ msgstr "AneUfyldelse for %s"
 
 #: AncestorFill/AncestorFill.py:205
 msgid "Generation "
-msgstr "Generation"
+msgstr "Generation "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
@@ -89,11 +89,11 @@ msgstr "Antal fundne aner "
 
 #: AncestorFill/AncestorFill.py:207
 msgid "Percent of Ancestors found "
-msgstr "Procent fundne aner"
+msgstr "Procent af fundne aner "
 
 #: AncestorFill/AncestorFill.py:208
 msgid "Number of unique Ancestors found "
-msgstr "Antal af fundne unikke aner"
+msgstr "Antal af fundne unikke aner "
 
 #: AncestorFill/AncestorFill.py:209
 msgid "Number of theoretical Ancestors "
@@ -5447,7 +5447,7 @@ msgstr ""
 #: ExcludeSubtreeFilter/excludesubtree.py:121
 #: FilterRules/isrelatedwithfiltermatch.py:80
 msgid "Retrieving all sub-filter matches"
-msgstr ""
+msgstr "Henter alle underfiltermatches"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
@@ -5550,43 +5550,43 @@ msgstr ""
 
 #: FRWebConnectPack/FRWebPack.gpr.py:11
 msgid "FR Web Connect Pack"
-msgstr ""
+msgstr "FR Web Connect Pack"
 
 #: FRWebConnectPack/FRWebPack.gpr.py:12
 msgid "Collection of Web sites for the FR (requires libwebconnect)"
-msgstr ""
+msgstr "Samling af websider for FR (kræver libwebconnect)"
 
 #: FRWebConnectPack/FRWebPack.py:41
 msgid "Cultural ministry (France)"
-msgstr ""
+msgstr "Kulturministeriet (Frankrig)"
 
 #: FRWebConnectPack/FRWebPack.py:42
 msgid "Genealogical bank"
-msgstr ""
+msgstr "Genealogical bank"
 
 #: FRWebConnectPack/FRWebPack.py:44
 msgid "OrigineFile (Quebec)"
-msgstr ""
+msgstr "Oprindelsesfil (Quebec)"
 
 #: FRWebConnectPack/FRWebPack.py:50
 msgid "Cyber genealogy"
-msgstr ""
+msgstr "Cyber-genealogi"
 
 #: FRWebConnectPack/FRWebPack.py:53
 msgid "RetroNews (Bnf)"
-msgstr ""
+msgstr "RetroNews (Bnf)"
 
 #: FRWebConnectPack/FRWebPack.py:58
 msgid "Hathi Trust Digital Library (fr)"
-msgstr ""
+msgstr "Hathi Trust digitale bibliotek (fr)"
 
 #: FRWebConnectPack/FRWebPack.py:59
 msgid "Open Library (fr)"
-msgstr ""
+msgstr "Open Library (fr)"
 
 #: FRWebConnectPack/FRWebPack.py:60
 msgid "Belgium's Archives"
-msgstr ""
+msgstr "Belgiens arkiv"
 
 #: FaceDetection/FaceDetection.gpr.py:4
 msgid "Face Detection"
@@ -5661,7 +5661,7 @@ msgstr ""
 #: FamilySheet/FamilySheet.py:232 FamilySheet/FamilySheet.py:275
 #, python-format
 msgid "→ %s"
-msgstr ""
+msgstr "→ %s"
 
 #: FamilySheet/FamilySheet.py:397
 #, python-format
@@ -6247,17 +6247,15 @@ msgstr ""
 
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
-msgstr ""
+msgstr "Begivenheder fra personer med rolle"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:8
-#, fuzzy
-#| msgid "Matches people with an event with a selected role"
 msgid "Matches event of people filter with role"
-msgstr "Matcher personer med en hændelse med en valgt rolle"
+msgstr "Matcher begivenheder for personer med rolle"
 
 #: FilterRules/matchpersonfilterrole.py:69
 msgid "Role:"
-msgstr ""
+msgstr "Rolle:"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
@@ -6403,33 +6401,33 @@ msgid "Fix coords"
 msgstr "Ordn koordinater"
 
 #: Form/CensusCheckQuickview.gpr.py:9
-#, fuzzy
-#| msgid "Censuses"
 msgid "CensusCheck"
-msgstr "Folketællinger"
+msgstr "Folketællingskontrol"
 
 #: Form/CensusCheckQuickview.gpr.py:10
 msgid ""
 "Check whether any Census events are missing for a person and some of their "
 "descendents"
 msgstr ""
+"Kontrollér om en folketællingsbegivenhed mangler for en person og nogle af "
+"deres efterkommere"
 
 #: Form/CensusCheckQuickview.gpr.py:23
-#, fuzzy
-#| msgid "Censuses"
 msgid "CensusCheckUp"
-msgstr "Folketællinger"
+msgstr "Folketællingskontrol"
 
 #: Form/CensusCheckQuickview.gpr.py:24
 msgid ""
 "Check whether any Census events are missing for a person and some of their "
 "ancestors"
 msgstr ""
+"Kontrollér hvorvidt nogen folketællingsbegivenhed mangler for en person og "
+"nogle af deres efterkommere"
 
 #: Form/CensusCheckQuickview.py:122 Form/CensusCheckUpQuickview.py:122
 #, python-format
 msgid "Census Check for %s"
-msgstr ""
+msgstr "Folketællingskontrol for %s"
 
 #: Form/editform.py:192
 #, python-format
@@ -6452,7 +6450,7 @@ msgstr "Henvisning:"
 
 #: Form/editform.py:393
 msgid "[Source recreated after deletion mid-form-edit]"
-msgstr ""
+msgstr "[Kilde gendannet efter sletning midt i formularredigeringen]"
 
 #: Form/editform.py:446
 msgid "Headings"
@@ -6464,19 +6462,15 @@ msgstr "Formular"
 
 #: Form/form.py:174
 msgid "XML syntax error in Form definition file"
-msgstr ""
+msgstr "XML syntaks fejl i Formulardefinitionsfilen"
 
 #: Form/form.py:185
-#, fuzzy
-#| msgid "Failed to copy web files : %s"
 msgid "Failed to read Form definition file"
-msgstr "Kunne ikke kopiere web filer: %s"
+msgstr "Kunne ikke læse formulardefinitionsfilen filen"
 
 #: Form/form.py:194
-#, fuzzy
-#| msgid "Invalid Destination Directory"
 msgid "Invalid Form definition file"
-msgstr "Ugyldig målfolder"
+msgstr "Ugyldig Formulardefinitionsfil"
 
 #: Form/form_ca.xml.h:1 Form/form_ca.xml.h:92 Form/form_ca.xml.h:210
 #: Form/form_ca.xml.h:288 Form/form_ca.xml.h:342 Form/form_ca.xml.h:390
@@ -9906,63 +9900,51 @@ msgstr ""
 
 #: Form/form_ie.xml.h:1
 msgid "Total Area in Statute Acres"
-msgstr ""
+msgstr "Total Area in Statute Acres"
 
 #: Form/form_ie.xml.h:2
 msgid "Signature of Head of Household"
-msgstr ""
+msgstr "Signature of Head of Household"
 
 #: Form/form_ie.xml.h:3
-#, fuzzy
-#| msgid "Enumerator"
 msgid "Signature of Enumerator"
-msgstr "Optæller"
+msgstr "Signature of Enumerator"
 
 #: Form/form_ie.xml.h:8
 msgid "County or Co. Borough"
-msgstr ""
+msgstr "County or Co. Borough"
 
 #: Form/form_ie.xml.h:9
 msgid "District Electoral Division or Ward"
-msgstr ""
+msgstr "District Electoral Division or Ward"
 
 #: Form/form_ie.xml.h:11
 msgid "Urban Dist. Town or Village"
-msgstr ""
+msgstr "Urban Dist. Town or Village"
 
 #: Form/form_ie.xml.h:12
 msgid "Street etc with No. of House"
-msgstr ""
+msgstr "Street etc with No. of House"
 
 #: Form/form_ie.xml.h:13
-#, fuzzy
-#| msgid "Schedule"
 msgid "No. of Schedule"
-msgstr "Skedulering"
+msgstr "No. of Schedule"
 
 #: Form/form_ie.xml.h:14
-#, fuzzy
-#| msgid "11. Number of inmates in institution"
 msgid "Name of Public Institution"
-msgstr "11. Antal beboere i institution"
+msgstr "Name of Public Institution"
 
 #: Form/form_ie.xml.h:16 Form/form_ie.xml.h:113
-#, fuzzy
-#| msgid "Based on surname"
 msgid "Name and Surname"
-msgstr "Baseret på efternavn"
+msgstr "Name and Surname"
 
 #: Form/form_ie.xml.h:18
-#, fuzzy
-#| msgid "10. Relationship to Head of Family"
 msgid "Relationship to Head of Household"
-msgstr "10. Slægtskab med familieoverhovedet"
+msgstr "Relationship to Head of Household"
 
 #: Form/form_ie.xml.h:19
-#, fuzzy
-#| msgid "Default View"
 msgid "Year Age"
-msgstr "Standard visning"
+msgstr "Year Age"
 
 #: Form/form_ie.xml.h:20 Form/form_us.xml.h:2561
 msgid "Age in years"
@@ -9972,41 +9954,39 @@ msgstr ""
 #, fuzzy
 #| msgid "MonthsHome"
 msgid "Month Age"
-msgstr "MånederHjemme"
+msgstr "Month Age"
 
 #: Form/form_ie.xml.h:22
-#, fuzzy
-#| msgid "Merge into import"
 msgid "Age in months"
-msgstr "Sammenflet ind i importen"
+msgstr "Age in months"
 
 #: Form/form_ie.xml.h:25
 msgid "Marriage or Orphanhood"
-msgstr ""
+msgstr "Marriage or Orphanhood"
 
 #: Form/form_ie.xml.h:28
 msgid ""
 "\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
 "cannot speak Irish\""
 msgstr ""
+"\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
+"cannot speak Irish\""
 
 #: Form/form_ie.xml.h:33
 msgid "Years married in present Marriage"
-msgstr ""
+msgstr "Years married in present Marriage"
 
 #: Form/form_ie.xml.h:34
 msgid "Months Married"
-msgstr ""
+msgstr "Months Married"
 
 #: Form/form_ie.xml.h:35
 msgid "Months married in present Marriage"
-msgstr ""
+msgstr "Months married in present Marriage"
 
 #: Form/form_ie.xml.h:36
-#, fuzzy
-#| msgid "Parents enclose children"
 msgid "Present Marriage Children"
-msgstr "Forældre omslutter børn"
+msgstr "Present Marriage Children"
 
 #: Form/form_ie.xml.h:37
 msgid "Children born alive to present marriage"
@@ -15335,130 +15315,111 @@ msgid "Select Form"
 msgstr "Vælg formular"
 
 #: GOQLFilter/goql.gpr.py:31
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Person GOQL Filter"
-msgstr "Slægtskab med fader"
+msgstr "Person GOQL Filter"
 
 #: GOQLFilter/goql.gpr.py:32
 msgid "Gramplet providing a gramps-object-query-language person filter"
-msgstr ""
+msgstr "Gramplet der giver et gramps-objekt-query-language person filter"
 
 #: GOQLFilter/goql.gpr.py:39 GOQLFilter/goql.gpr.py:58
 #: GOQLFilter/goql.gpr.py:77 GOQLFilter/goql.gpr.py:96
 #: GOQLFilter/goql.gpr.py:117 GOQLFilter/goql.gpr.py:136
 #: GOQLFilter/goql.gpr.py:155 GOQLFilter/goql.gpr.py:174
 #: GOQLFilter/goql.gpr.py:193
-#, fuzzy
-#| msgid "Filtering"
 msgid "GOQL Filter"
-msgstr "Filrtrerer"
+msgstr "GOQL Filter"
 
 #: GOQLFilter/goql.gpr.py:50
-#, fuzzy
-#| msgid "Family Filter name:"
 msgid "Family GOQL Filter"
-msgstr "Familiefilternavn:"
+msgstr "Familie GOQL Filter"
 
 #: GOQLFilter/goql.gpr.py:51
 msgid "Gramplet providing a gramps-object-query-language family filter"
-msgstr ""
+msgstr "Gramplet der giveret gramps-objekt-query-language familie filter"
 
 #: GOQLFilter/goql.gpr.py:69
 msgid "Event GOQL Filter"
-msgstr ""
+msgstr "Begivenheds GOQL Filter"
 
 #: GOQLFilter/goql.gpr.py:70
 msgid "Gramplet providing a gramps-object-query-language event filter"
-msgstr ""
+msgstr "Gramplet der giver et gramps-objekt-query-language begivenheds filter"
 
 #: GOQLFilter/goql.gpr.py:88
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place GOQL Filter"
-msgstr "Sted_filter"
+msgstr "Sted GOQL Filter"
 
 #: GOQLFilter/goql.gpr.py:89
 msgid "Gramplet providing a gramps-object-query-language place filter"
-msgstr ""
+msgstr "Gramplet der giver et gramps-objekt-query-language sted filter"
 
 #: GOQLFilter/goql.gpr.py:107
-#, fuzzy
-#| msgid "Repository title"
 msgid "Repository GOQL Filter"
-msgstr "Arkivtitel"
+msgstr "Arkiv GOQL Filter"
 
 #: GOQLFilter/goql.gpr.py:109
 msgid "Gramplet providing a gramps-object-query-language repository filter"
-msgstr ""
+msgstr "Gramplet der giver et gramps-objekt-query-language arkiv filter"
 
 #: GOQLFilter/goql.gpr.py:128
-#, fuzzy
-#| msgid "Source type"
 msgid "Source GOQL Filter"
-msgstr "Kilde type"
+msgstr "Kilde GOQL Filter"
 
 #: GOQLFilter/goql.gpr.py:129
 msgid "Gramplet providing a gramps-object-query-language source filter"
-msgstr ""
+msgstr "Gramplet der giver et gramps-objekt-query-language kilde filter"
 
 #: GOQLFilter/goql.gpr.py:147
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Citation GOQL Filter"
-msgstr "Slægtskab med fader"
+msgstr "Kildehenvisnings GOQL Filter"
 
 #: GOQLFilter/goql.gpr.py:148
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet providing a gramps-object-query-language citation filter"
-msgstr "Gramplet der viser slægtskabet mellem slægtninge"
+msgstr ""
+"Gramplet der giver et gramps-objekt-query-language kildehenvisnings filter"
 
 #: GOQLFilter/goql.gpr.py:166
-#, fuzzy
-#| msgid "Media Object Title"
 msgid "Media GOQL Filter"
-msgstr "Medieobjekttitel"
+msgstr "Medie GOQL Filter"
 
 #: GOQLFilter/goql.gpr.py:167
 msgid "Gramplet providing a gramps-object-query-language media filter"
-msgstr ""
+msgstr "Gramplet der giver et gramps-objekt-query-language medie filter"
 
 #: GOQLFilter/goql.gpr.py:185
-#, fuzzy
-#| msgid "Note on Family"
 msgid "Note GOQL Filter"
-msgstr "Note om Familie"
+msgstr "Note GOQL Filter"
 
 #: GOQLFilter/goql.gpr.py:186
 msgid "Gramplet providing a gramps-object-query-language note filter"
-msgstr ""
+msgstr "Gramplet der giver et gramps-objekt-query-language note filter"
 
 #: GOQLFilter/goql.py:186
 msgid "A gramps-object-query-language where-expression, e.g.\n"
-msgstr ""
+msgstr "Et gramps-objekt-query-language \"where\"-udtryk, f.eks\n"
 
 #: GOQLFilter/goql.py:188
 msgid "Enter inserts a newline; Ctrl+Enter runs Find.\n"
-msgstr ""
+msgstr "Enter indsætter en ny linje; Ctrl+Enter udfører Find.\n"
 
 #: GOQLFilter/goql.py:189
 msgid "Up/Down at the first/last line recalls previous expressions.\n"
 msgstr ""
+"Pil op og pil ned på den første/sidste linje genbruger tidligere udtryk\n"
 
 #: GOQLFilter/goql.py:190
 msgid "Tab always completes -- it never inserts a tab character."
-msgstr ""
+msgstr "Tab fuldfører altid strengen -- det indsætter aldrig et tab tegn."
 
 #: GOQLFilter/goql.py:213
-#, fuzzy, python-format
-#| msgid "Use filter "
+#, python-format
 msgid "%s filter"
-msgstr "Benyt filter "
+msgstr "%s filter"
 
 #: GOQLFilter/goql.py:233
 msgid "This resets the filter parameters to empty state."
-msgstr ""
+msgstr "Dette nulstiller filter parametrerne."
 
 #: GOQLFilter/goql.py:239
 msgid "This opens a dialog to save the current expression as a named filter."
