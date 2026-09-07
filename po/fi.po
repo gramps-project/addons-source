@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-09 10:08-0700\n"
+"POT-Creation-Date: 2026-09-03 12:30-0700\n"
 "PO-Revision-Date: 2026-09-03 12:51+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
@@ -5445,6 +5445,113 @@ msgstr ""
 msgid "Retrieving all sub-filter matches"
 msgstr "Haetaan kaikkia alisuodattimien osumia"
 
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:28
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:174
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:973
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1053
+#, fuzzy
+#| msgid "Ancestor Generations"
+msgid "Ancestor Tree Expanded"
+msgstr "Esivanhempien sukupolvet"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:29
+msgid ""
+"Expanded Ancestor Graph showing direct ancestors, siblings, cousins and "
+"spouses."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:190
+#, fuzzy, python-format
+#| msgid "Ancestors places for %s"
+msgid "Ancestor Tree Expanded for %s"
+msgstr "Henkilön %s esivanhempien paikat"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:544
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:606
+msgid "Tree Truncated"
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:545
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:607
+msgid ""
+"The generated tree reached the 400 people safety limit and has been "
+"truncated.\n"
+"\n"
+"Please reduce the number of generations or disable some options to see all "
+"branches."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1182
+#, fuzzy
+#| msgid "Shows the number of descendants of the current person"
+msgid "Include descendants of the center person"
+msgstr "Näyttää nykyisen henkilön jälkeläisten lukumäärän"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1183
+#, fuzzy
+#| msgid "Shows the number of descendants of the current person"
+msgid ""
+"Whether to display the children and full descending lines of the center "
+"person"
+msgstr "Näyttää nykyisen henkilön jälkeläisten lukumäärän"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1190
+#, fuzzy
+#| msgid "Include siblings of ancestors."
+msgid "Include siblings of ancestors"
+msgstr "Sisällytä esivanhempien sisarukset."
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1191
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid "Whether to display the siblings of direct ancestors"
+msgstr "Näytetäänkö esi-isien teoreettinen lukumäärä sukupolvittain"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1194
+msgid "Include cousins (collateral descendants)"
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1195
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid ""
+"Whether to display the cousins and descendants of the ancestors' siblings"
+msgstr "Näytetäänkö esi-isien teoreettinen lukumäärä sukupolvittain"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1202
+#: FamilyTree/FamilyTree.py:1051
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
+msgid "Descendant Generations"
+msgstr "Jälkeläisten sukupolvet"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1203
+#, fuzzy
+#| msgid "The number of descendant generations to include in the tree"
+msgid "The number of descendant generations to include"
+msgstr "Puuhun sisällytettävien jälkipolvien lukumäärä"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1242
+#, fuzzy
+#| msgid "Whether to include the index of Names at the end of the report."
+msgid "Whether to resize the page to fit the size of the tree."
+msgstr "Sisällytetäänkö nimihakemisto raportin loppuun."
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1262
+#, fuzzy
+#| msgid "Use a table format for the families index"
+msgid "Use random colors for family lines"
+msgstr "Perheluettelo taulukkona"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1263
+msgid "Draw each family's connecting lines with a distinct color."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1372
+#, fuzzy
+#| msgid "The style used for names."
+msgid "The bold style used for the names."
+msgstr "Nimissä käytetty tyyli."
+
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
 msgstr "Henkilö GEXF"
@@ -5852,11 +5959,6 @@ msgstr "Esivanhempien sukupolvet"
 #: FamilyTree/FamilyTree.py:1048
 msgid "The number of ancestor generations to include in the tree"
 msgstr "Puuhun sisällytettävien esipolvien lukumäärä"
-
-#: FamilyTree/FamilyTree.py:1051
-#: TimelinePedigreeView/TimelinePedigreeView.py:1465
-msgid "Descendant Generations"
-msgstr "Jälkeläisten sukupolvet"
 
 #: FamilyTree/FamilyTree.py:1052
 msgid "The number of descendant generations to include in the tree"
@@ -15495,7 +15597,8 @@ msgstr "Lauseeseen <GOQL expression> täsmäävät henkilöt"
 msgid ""
 "Matches people for which the given gramps-object-query-language where-"
 "expression evaluates to true"
-msgstr "Löytää henkilöt, joille annettu gramps-objektikyselykielen ehto on tosi"
+msgstr ""
+"Löytää henkilöt, joille annettu gramps-objektikyselykielen ehto on tosi"
 
 #: GOQLFilter/whereexprrule.gpr.py:50 GOQLFilter/whereexprrule.py:266
 msgid "Families matching the <GOQL expression>"
@@ -15536,7 +15639,8 @@ msgstr "Lauseeseen <GOQL expression> täsmäävät arkistot"
 msgid ""
 "Matches repositories for which the given gramps-object-query-language where-"
 "expression evaluates to true"
-msgstr "Löytää arkistot, joille annettu gramps-objektikyselykielen ehto on tosi"
+msgstr ""
+"Löytää arkistot, joille annettu gramps-objektikyselykielen ehto on tosi"
 
 #: GOQLFilter/whereexprrule.gpr.py:130 GOQLFilter/whereexprrule.py:286
 msgid "Sources matching the <GOQL expression>"
@@ -16281,7 +16385,8 @@ msgstr ""
 #: GrampsWebApiDb/mintapikeytool.py:263
 #, python-format
 msgid "Server returned an error (HTTP %d %s): check the Server URL."
-msgstr "Palvelin palautti virheen (HTTP %d %s): tarkista palvelimen URL-osoite."
+msgstr ""
+"Palvelin palautti virheen (HTTP %d %s): tarkista palvelimen URL-osoite."
 
 #: GrampsWebApiDb/mintapikeytool.py:271
 #, python-format
@@ -16552,8 +16657,8 @@ msgid ""
 "This server runs Gramps Web API %(found)s, but synchronization needs "
 "%(needed)s or newer. Please update the server."
 msgstr ""
-"Tämä palvelin käyttää Gramps Web API:a %(found)s, mutta synkronointi vaatii %"
-"(needed)s:n tai uudemman. Palvelin on päivitettävä."
+"Tämä palvelin käyttää Gramps Web API:a %(found)s, mutta synkronointi vaatii "
+"%(needed)s:n tai uudemman. Palvelin on päivitettävä."
 
 #: GrampsWebSync/presentation.py:239
 #, python-format
@@ -16751,7 +16856,8 @@ msgstr[1] "Siirretään myös %(total)s mediatiedostoa (%(counts)s)"
 msgid "%s media file is missing on both sides and cannot be transferred."
 msgid_plural ""
 "%s media files are missing on both sides and cannot be transferred."
-msgstr[0] "%s mediatiedosto puuttuu molemmilta puolilta, eikä sitä voida siirtää."
+msgstr[0] ""
+"%s mediatiedosto puuttuu molemmilta puolilta, eikä sitä voida siirtää."
 msgstr[1] ""
 "%s mediatiedostoa puuttuu molemmilta puolilta, eikä niitä voida siirtää."
 
@@ -20099,8 +20205,8 @@ msgstr "Sukupolvet:"
 #: PDFForms/generatepdfform.py:213
 msgid "Includes subject plus up to 5 ancestor generations (2–32 people)."
 msgstr ""
-"Sisältää kohteen sekä enintään viisi esivanhempien sukupolvea (2–32 henkilöä)"
-"."
+"Sisältää kohteen sekä enintään viisi esivanhempien sukupolvea (2–32 "
+"henkilöä)."
 
 #: PDFForms/generatepdfform.py:252
 msgid "Save PDF as…"
