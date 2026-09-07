@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-09 10:08-0700\n"
+"POT-Creation-Date: 2026-09-03 12:30-0700\n"
 "PO-Revision-Date: 2026-08-29 07:51+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
@@ -5339,6 +5339,113 @@ msgstr ""
 msgid "Retrieving all sub-filter matches"
 msgstr "אחזור כל התאמות מסננני המשנה"
 
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:28
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:174
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:973
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1053
+#, fuzzy
+#| msgid "Ancestor Generations"
+msgid "Ancestor Tree Expanded"
+msgstr "דורות אבות"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:29
+msgid ""
+"Expanded Ancestor Graph showing direct ancestors, siblings, cousins and "
+"spouses."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:190
+#, fuzzy, python-format
+#| msgid "Ancestors places for %s"
+msgid "Ancestor Tree Expanded for %s"
+msgstr "אבות מקומות עבור %s"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:544
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:606
+msgid "Tree Truncated"
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:545
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:607
+msgid ""
+"The generated tree reached the 400 people safety limit and has been "
+"truncated.\n"
+"\n"
+"Please reduce the number of generations or disable some options to see all "
+"branches."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1182
+#, fuzzy
+#| msgid "Shows the number of descendants of the current person"
+msgid "Include descendants of the center person"
+msgstr "הצגת מספר הצאצאים של האדם הנוכחי"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1183
+#, fuzzy
+#| msgid "Shows the number of descendants of the current person"
+msgid ""
+"Whether to display the children and full descending lines of the center "
+"person"
+msgstr "הצגת מספר הצאצאים של האדם הנוכחי"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1190
+#, fuzzy
+#| msgid "Include siblings of ancestors."
+msgid "Include siblings of ancestors"
+msgstr "לכלול אחאים של אבות."
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1191
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid "Whether to display the siblings of direct ancestors"
+msgstr "האם להציג את המספר התיאורטי של אבות קדמונים לפי דור"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1194
+msgid "Include cousins (collateral descendants)"
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1195
+#, fuzzy
+#| msgid "Whether to display the theoretical number of ancestor by generation"
+msgid ""
+"Whether to display the cousins and descendants of the ancestors' siblings"
+msgstr "האם להציג את המספר התיאורטי של אבות קדמונים לפי דור"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1202
+#: FamilyTree/FamilyTree.py:1051
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
+msgid "Descendant Generations"
+msgstr "דורות צאצאים"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1203
+#, fuzzy
+#| msgid "The number of descendant generations to include in the tree"
+msgid "The number of descendant generations to include"
+msgstr "מספר צאצא דורות שיש לכלול באילן"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1242
+#, fuzzy
+#| msgid "Whether to include the index of Names at the end of the report."
+msgid "Whether to resize the page to fit the size of the tree."
+msgstr "האם לכלול את מפתח השמות בסוף הדוח."
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1262
+#, fuzzy
+#| msgid "Use a table format for the families index"
+msgid "Use random colors for family lines"
+msgstr "שימוש טבלה תסדיר עבור משפחות מפתח"
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1263
+msgid "Draw each family's connecting lines with a distinct color."
+msgstr ""
+
+#: ExpandedAncestorTree/ExpandedAncestorTree.py:1372
+#, fuzzy
+#| msgid "The style used for names."
+msgid "The bold style used for the names."
+msgstr "הסגנון שמשמש לשמות."
+
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
 msgstr "אדם GEXF"
@@ -5741,11 +5848,6 @@ msgstr "דורות אבות"
 #: FamilyTree/FamilyTree.py:1048
 msgid "The number of ancestor generations to include in the tree"
 msgstr "מספר אב דורות שיש לכלול באילן"
-
-#: FamilyTree/FamilyTree.py:1051
-#: TimelinePedigreeView/TimelinePedigreeView.py:1465
-msgid "Descendant Generations"
-msgstr "דורות צאצאים"
 
 #: FamilyTree/FamilyTree.py:1052
 msgid "The number of descendant generations to include in the tree"
@@ -16070,8 +16172,8 @@ msgid ""
 "account with sufficient permissions, or ask the server administrator to "
 "grant this one access."
 msgstr ""
-"אין הרשאה בשרת לפעולת אימות חשבון באמצעות GRAMPS_WEB_API_KEY (HTTP 403 אסור)"
-". נא ליצור מפתח לחשבון עם הרשאות מספקות, או לבקש ממנהל השרת להעניק "
+"אין הרשאה בשרת לפעולת אימות חשבון באמצעות GRAMPS_WEB_API_KEY (HTTP 403 "
+"אסור). נא ליצור מפתח לחשבון עם הרשאות מספקות, או לבקש ממנהל השרת להעניק "
 "גישהלחשבון זה."
 
 #: GrampsWebApiDb/grampswebapidb.py:422
@@ -16084,11 +16186,12 @@ msgid ""
 "that -- reusing this one would mix its existing local data with the other "
 "account's."
 msgstr ""
-"אילן־היוחסין נקרא \"%(actual)s\", אבל GRAMPS_WEB_API_KEY מאמת כרגע כ־\"%"
-"(expected)s\". נא לשנות את שם אילן־יוחסין זה ל־\"%(expected_typeable)s\" "
-"(אילנות־יוחסין -> ניהול אילנות־יוחסין) אם הוא אמור לשקף את החשבון הזה, או "
-"לפתוח/ליצור את אילן־היוחסין שכבר נקרא כך – שימוש חוזר באילן־יוחסין זה יגרום "
-"לערבב הנתונים המקומיים הקיימים שלו עם אלה של החשבון האחר."
+"אילן־היוחסין נקרא \"%(actual)s\", אבל GRAMPS_WEB_API_KEY מאמת כרגע "
+"כ־\"%(expected)s\". נא לשנות את שם אילן־יוחסין זה "
+"ל־\"%(expected_typeable)s\" (אילנות־יוחסין -> ניהול אילנות־יוחסין) אם הוא "
+"אמור לשקף את החשבון הזה, או לפתוח/ליצור את אילן־היוחסין שכבר נקרא כך – שימוש "
+"חוזר באילן־יוחסין זה יגרום לערבב הנתונים המקומיים הקיימים שלו עם אלה של "
+"החשבון האחר."
 
 #: GrampsWebApiDb/grampswebapidb.py:550
 msgid "Retry local change after server conflict"
