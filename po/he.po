@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-04 08:55-0700\n"
-"PO-Revision-Date: 2026-08-05 18:01+0000\n"
+"PO-Revision-Date: 2026-08-07 22:27+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "Birthdays"
 msgstr "ימי הולדת"
@@ -15319,75 +15319,68 @@ msgstr "ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), 
 
 #: GOQLFilter/goql.py:188
 msgid "Enter inserts a newline; Ctrl+Enter runs Find.\n"
-msgstr ""
+msgstr "הקשה על 'אנטר' מכניסה שורה חדשה, הקשה על 'קונטרול+אנטר' מפעילה חיפוש.\n"
 
 #: GOQLFilter/goql.py:189
 msgid "Up/Down at the first/last line recalls previous expressions.\n"
-msgstr ""
+msgstr "מקשי החצים למעלה/למטה בשורה הראשונה/אחרונה קוראת לביטויים קודמים.\n"
 
 #: GOQLFilter/goql.py:190
 msgid "Tab always completes -- it never inserts a tab character."
-msgstr ""
+msgstr "מקש הטבלר תמיד משלים -- הוא אף פעם לא מוסיף תו טבלר."
 
 #: GOQLFilter/goql.py:213
-#, fuzzy, python-format
-#| msgid "Use filter "
+#, python-format
 msgid "%s filter"
-msgstr "שימוש במסנן "
+msgstr "במסנן %s"
 
 #: GOQLFilter/goql.py:233
 msgid "This resets the filter parameters to empty state."
-msgstr ""
+msgstr "זה משצב את פרמטרי המסנן למצב ריק."
 
 #: GOQLFilter/goql.py:239
 msgid "This opens a dialog to save the current expression as a named filter."
-msgstr ""
+msgstr "פתיחת חלון שיח לשמירת הביטוי הנוכחי כמסנן עם שם."
 
 #: GOQLFilter/goql.py:244
 msgid "Open this gramplet's help page in a browser."
-msgstr ""
+msgstr "פתיחת עמוד העזרה של הגרמפלט בדפדפן."
 
 #: GOQLFilter/goql.py:402
 msgid "SQL"
-msgstr ""
+msgstr "SQL"
 
 #: GOQLFilter/goql.py:403
-#, fuzzy
-#| msgid "Python Shell"
 msgid "Python evaluation"
-msgstr "מעטפת פיתון"
+msgstr "הערכת פיתון"
 
 #: GOQLFilter/goql.py:523
-#, fuzzy, python-format
-#| msgid "Error: login failed"
+#, python-format
 msgid "Error applying filter: %s"
-msgstr "שגיאה: הכניסה נכשלה"
+msgstr "שגיאה בהחלת מסנן: %s"
 
 #: GOQLFilter/goql.py:526
 #, python-format
 msgid "Showing %(shown)d of %(total)d (%(method)s)"
-msgstr ""
+msgstr "הצגת %(shown)d מתוך %(total)d %(method)s"
 
 #: GOQLFilter/goql.py:541
-#, fuzzy, python-format
-#| msgid "Error creating note"
+#, python-format
 msgid "Error resetting filter: %s"
-msgstr "שגיאה ביצירת הערה"
+msgstr "שגיאה בשצוב מסנן: %s"
 
 #: GOQLFilter/goql.py:548
-#, fuzzy
-#| msgid "Enter Python expressions"
 msgid "Enter an expression first"
-msgstr "הזנת ביטוי פיתון"
+msgstr "נא להזין ביטוי תחילה"
 
 #: GOQLFilter/goql.py:560
 #, python-brace-format
 msgid "Created by the GOQL Filter gramplet on {today}"
-msgstr ""
+msgstr "נוצר על ידי גרמפלט מסנן ה־GOQL ב־{today}"
 
 #: GOQLFilter/whereexprrule.gpr.py:30 GOQLFilter/whereexprrule.py:261
 msgid "People matching the <GOQL expression>"
-msgstr ""
+msgstr "אנשים שתואמים <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:32
 msgid ""
@@ -15396,10 +15389,8 @@ msgid ""
 msgstr "התאמת אנשים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GOQLFilter/whereexprrule.gpr.py:50 GOQLFilter/whereexprrule.py:266
-#, fuzzy
-#| msgid "Families matching <event filter>"
 msgid "Families matching the <GOQL expression>"
-msgstr "משפחות שתואמות <מסנן אירוע>"
+msgstr "משפחות שתואמות <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:52
 msgid ""
@@ -15410,7 +15401,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:70 GOQLFilter/whereexprrule.py:271
 msgid "Events matching the <GOQL expression>"
-msgstr ""
+msgstr "אירועים שתואמים <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:72
 msgid ""
@@ -15421,7 +15412,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:90 GOQLFilter/whereexprrule.py:276
 msgid "Places matching the <GOQL expression>"
-msgstr ""
+msgstr "מקומות שתואמים <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:92
 msgid ""
@@ -15432,7 +15423,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:110 GOQLFilter/whereexprrule.py:281
 msgid "Repositories matching the <GOQL expression>"
-msgstr ""
+msgstr "מאגרים שתואמים <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:112
 msgid ""
@@ -15441,10 +15432,8 @@ msgid ""
 msgstr "התאמת אגרים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GOQLFilter/whereexprrule.gpr.py:130 GOQLFilter/whereexprrule.py:286
-#, fuzzy
-#| msgid "Source matching parameters"
 msgid "Sources matching the <GOQL expression>"
-msgstr "מדדי התאמת מקורות"
+msgstr "מקורות שתואמים <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:132
 msgid ""
@@ -15455,7 +15444,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:150 GOQLFilter/whereexprrule.py:291
 msgid "Citations matching the <GOQL expression>"
-msgstr ""
+msgstr "מובאות שתואמות <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:152
 msgid ""
@@ -15466,7 +15455,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:170 GOQLFilter/whereexprrule.py:296
 msgid "Media matching the <GOQL expression>"
-msgstr ""
+msgstr "מדיה שתואמת <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:172
 msgid ""
@@ -15476,7 +15465,7 @@ msgstr "התאמת מדיה שבהן ביטוי where בשפת־שאילתות־
 
 #: GOQLFilter/whereexprrule.gpr.py:190 GOQLFilter/whereexprrule.py:301
 msgid "Notes matching the <GOQL expression>"
-msgstr ""
+msgstr "הערות שתואמות <ביטוי GOQL>"
 
 #: GOQLFilter/whereexprrule.gpr.py:192
 msgid ""
@@ -15485,10 +15474,8 @@ msgid ""
 msgstr "התאמת הערות שבהן ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
 #: GOQLFilter/whereexprrule.py:212
-#, fuzzy
-#| msgid "Regular Expression"
 msgid "GOQL expression"
-msgstr "ביטוי רגולרי"
+msgstr "ביטוי GOQL"
 
 #: GOQLFilter/whereexprrule.py:214
 msgid ""
