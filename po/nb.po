@@ -10,13 +10,14 @@
 # Harald H. <haarektrans@gmail.com>, 2017.
 # Harald Herreros <h.herreros@proton.me>, 2025, 2026.
 # Harald Herreros <haraldh@users.noreply.hosted.weblate.org>, 2026.
+# Frode Jemtland <frode.jemtland@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-09 10:08-0700\n"
-"PO-Revision-Date: 2026-06-01 12:35+0000\n"
-"Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
+"PO-Revision-Date: 2026-08-13 17:19+0000\n"
+"Last-Translator: Frode Jemtland <frode.jemtland@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
 "Language: nb\n"
@@ -24,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Birthdays"
@@ -34,26 +35,22 @@ msgid "Ignore birthdays with tag"
 msgstr "Ignorer bursdager med merke"
 
 msgid "Month and day"
-msgstr ""
+msgstr "Måned og dag"
 
 msgid "Only show birthdays with tag"
 msgstr "Vis kun bursdager med merke"
 
 msgid "Proximity to current date"
-msgstr ""
+msgstr "Avstand til dagens dato"
 
-#, fuzzy
-#| msgid "Ignore birthdays with tag"
 msgid "Sort birthdays by"
-msgstr "Ignorer bursdager med merke"
+msgstr "Sorter bursdager etter"
 
 msgid "Sort dates of death by"
-msgstr ""
+msgstr "Sorter dødsdato etter"
 
-#, fuzzy
-#| msgid "a gramplet that displays the birthdays of the living people"
 msgid "a gramplet that displays death dates in sorted order"
-msgstr "en gramplet som viser bursdager for levende personer"
+msgstr "en gramplet som viser dødsdato i sortert rekkefølge"
 
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "en gramplet som viser bursdager for levende personer"
@@ -259,17 +256,12 @@ msgid "The style used for the marriage."
 msgstr "Stilen som brukes for ekteskapet."
 
 #: AncestryTableReport/AncestryTableReport.py:593
-#, fuzzy
-#| msgid ""
-#| "The style used for an empty row.\n"
-#| "To enlarge the height of the empty row, just increase the size of the "
-#| "font."
 msgid ""
 "The style used for an empty row.\n"
 "To enlarge the height of the empty row, just increse the size of the police."
 msgstr ""
 "Stilen som brukes for en tom rad.\n"
-"Øk skriftstørrelsen for å gjøre den tomme raden høyere."
+"For å øk høyden på den tomme raden, øk tekststørrelsen."
 
 #: AncestryTableReport/AncestryTableReport.py:632
 msgid ""
@@ -291,7 +283,7 @@ msgstr ""
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:24
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:32
 msgid "Anniversaries"
-msgstr ""
+msgstr "Årsdag"
 
 #: AnniversariesGramplet/AnniversariesGramplet.gpr.py:25
 msgid "A gramplet that displays the anniversaries of events"
@@ -319,7 +311,7 @@ msgstr "Arkivhjelp"
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Check Associations data"
-msgstr ""
+msgstr "Kontrollere relasjonsdata"
 
 #: AssociationsTool/associationstool.gpr.py:37
 msgid "Will check the data on Association for people."
@@ -1101,7 +1093,7 @@ msgstr ""
 
 #: ChangeGivenNames/ChangeGivenNames.py:66
 msgid "manual|Fix_Capitalization_of_Given_Names..."
-msgstr "manual|Fix_Capitalization_of_Given_Names..."
+msgstr "manual|Fiks_versaler_i_fornavn..."
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
 msgid "Checking Given Names"
@@ -2291,7 +2283,7 @@ msgstr "Feil: Ingen startperson er valgt"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:341
 msgid "No Active Person set."
-msgstr "Ingen aktiv person valgt."
+msgstr "Ingen aktiv person satt."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:342
 msgid "Error: No Active Person set"
@@ -4142,7 +4134,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:2960
 msgid "Configure"
-msgstr ""
+msgstr "Konfigurere"
 
 #: DynamicWeb/dynamicweb.py:2967
 msgid "DynamicWeb_report#Help"
@@ -9720,10 +9712,8 @@ msgid "Total Area in Statute Acres"
 msgstr ""
 
 #: Form/form_ie.xml.h:2
-#, fuzzy
-#| msgid "RELATIONSHIP to Head of Household"
 msgid "Signature of Head of Household"
-msgstr "Slektskap til husholdets hovedperson"
+msgstr "Signaturen til husholdningsansvarlige"
 
 #: Form/form_ie.xml.h:3
 msgid "Signature of Enumerator"
@@ -9758,10 +9748,8 @@ msgid "Name and Surname"
 msgstr ""
 
 #: Form/form_ie.xml.h:18
-#, fuzzy
-#| msgid "9. Relationship to head of family or household"
 msgid "Relationship to Head of Household"
-msgstr "9. Slektskap til hovedperson i familien eller husholdet"
+msgstr "Slektskap til husholdningsansvarlige"
 
 #: Form/form_ie.xml.h:19
 msgid "Year Age"
@@ -9794,10 +9782,8 @@ msgid "Years married in present Marriage"
 msgstr ""
 
 #: Form/form_ie.xml.h:34
-#, fuzzy
-#| msgid "Date Married"
 msgid "Months Married"
-msgstr "Vielsesdato"
+msgstr "Månder gift"
 
 #: Form/form_ie.xml.h:35
 msgid "Months married in present Marriage"
@@ -9827,7 +9813,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Ecclesiastical Parish or District"
 msgid "Registrar's District"
-msgstr "Kirkesogn eller distrikt"
+msgstr "Registrarområdet"
 
 #: Form/form_ie.xml.h:43 Form/form_ie.xml.h:105
 msgid "Union"
@@ -9849,7 +9835,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Place of Birth"
 msgid "(2.) Date and Place of Birth"
-msgstr "Fødested"
+msgstr "(2.) Fødselsdato og -sted"
 
 #: Form/form_ie.xml.h:54
 msgid "(4.) M or F for male or female"
@@ -9881,33 +9867,27 @@ msgstr ""
 
 #: Form/form_ie.xml.h:71
 msgid "Year"
-msgstr ""
+msgstr "År"
 
 #: Form/form_ie.xml.h:72
 msgid "Solemnized at the Catholic"
 msgstr ""
 
 #: Form/form_ie.xml.h:76 Form/form_ie.xml.h:107
-#, fuzzy
-#| msgid "Total number"
 msgid "Certificate number"
-msgstr "Totalt antall"
+msgstr "Sertifikatnummer"
 
 #: Form/form_ie.xml.h:77 Form/form_ie.xml.h:108
-#, fuzzy
-#| msgid "Show page numbers"
 msgid "Page number"
-msgstr "Vis sidetall"
+msgstr "Sidetall"
 
 #: Form/form_ie.xml.h:78 Form/form_ie.xml.h:109
 msgid "(1.) Entry No."
 msgstr ""
 
 #: Form/form_ie.xml.h:79
-#, fuzzy
-#| msgid "Date Married"
 msgid "(2.) When Married"
-msgstr "Vielsesdato"
+msgstr "(2.) Vielsesdato"
 
 #: Form/form_ie.xml.h:81
 msgid "(3.) Name and Surname"
@@ -9966,10 +9946,8 @@ msgid "(5.) Widowed or Married"
 msgstr ""
 
 #: Form/form_ie.xml.h:123
-#, fuzzy
-#| msgid "6. Age at Next Birthday"
 msgid "(6.) Age last Birthday"
-msgstr "6. Alder ved neste bursdag"
+msgstr "(6.) Alder ved sist bursdag"
 
 #: Form/form_ie.xml.h:125
 msgid "(7.) Rank, Profession, or Occupation"
@@ -9980,16 +9958,12 @@ msgid "(8.) Certified Cause of Death and Duration of Illness"
 msgstr ""
 
 #: Form/form_ie.xml.h:128
-#, fuzzy
-#| msgid "Direction of time"
 msgid "Duration of Illness"
-msgstr "Tidsretning"
+msgstr "Sykdomsvarighet"
 
 #: Form/form_ie.xml.h:132
-#, fuzzy
-#| msgid "Relation to Head"
 msgid "Relation to deceased"
-msgstr "Relasjon til hovedperson"
+msgstr "Relasjon til avdød"
 
 #: Form/form_ie.xml.h:133
 msgid "(9.) e.g. Son, Daughter"
@@ -15122,10 +15096,8 @@ msgid "Select Form"
 msgstr "Velg skjema"
 
 #: GOQLFilter/goql.gpr.py:31
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Person GOQL Filter"
-msgstr "Slektskap til far"
+msgstr "GOQL personfilter"
 
 #: GOQLFilter/goql.gpr.py:32
 msgid "Gramplet providing a gramps-object-query-language person filter"
@@ -15136,14 +15108,12 @@ msgstr ""
 #: GOQLFilter/goql.gpr.py:117 GOQLFilter/goql.gpr.py:136
 #: GOQLFilter/goql.gpr.py:155 GOQLFilter/goql.gpr.py:174
 #: GOQLFilter/goql.gpr.py:193
-#, fuzzy
-#| msgid "Filtering"
 msgid "GOQL Filter"
-msgstr "Filterer"
+msgstr "GOQL filter"
 
 #: GOQLFilter/goql.gpr.py:50
 msgid "Family GOQL Filter"
-msgstr ""
+msgstr "GOQL familiefilter"
 
 #: GOQLFilter/goql.gpr.py:51
 msgid "Gramplet providing a gramps-object-query-language family filter"
@@ -15151,59 +15121,47 @@ msgstr ""
 
 #: GOQLFilter/goql.gpr.py:69
 msgid "Event GOQL Filter"
-msgstr ""
+msgstr "GOQL hendelsesfilter"
 
 #: GOQLFilter/goql.gpr.py:70
 msgid "Gramplet providing a gramps-object-query-language event filter"
 msgstr ""
 
 #: GOQLFilter/goql.gpr.py:88
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place GOQL Filter"
-msgstr "Steds_filter:"
+msgstr "GOQL stedsfilter"
 
 #: GOQLFilter/goql.gpr.py:89
 msgid "Gramplet providing a gramps-object-query-language place filter"
 msgstr ""
 
 #: GOQLFilter/goql.gpr.py:107
-#, fuzzy
-#| msgid "Repository title"
 msgid "Repository GOQL Filter"
-msgstr "Arkivtittel"
+msgstr "GOQL arkivfilter"
 
 #: GOQLFilter/goql.gpr.py:109
 msgid "Gramplet providing a gramps-object-query-language repository filter"
 msgstr ""
 
 #: GOQLFilter/goql.gpr.py:128
-#, fuzzy
-#| msgid "Source type"
 msgid "Source GOQL Filter"
-msgstr "Kildetype"
+msgstr "GOQL kildefilter"
 
 #: GOQLFilter/goql.gpr.py:129
 msgid "Gramplet providing a gramps-object-query-language source filter"
 msgstr ""
 
 #: GOQLFilter/goql.gpr.py:147
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Citation GOQL Filter"
-msgstr "Slektskap til far"
+msgstr "GOQL sitatfilter"
 
 #: GOQLFilter/goql.gpr.py:148
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet providing a gramps-object-query-language citation filter"
-msgstr "Gramplet som viser beslektede slektninger"
+msgstr "Gramplet som gir gramps-object-query-language sitatfilter"
 
 #: GOQLFilter/goql.gpr.py:166
-#, fuzzy
-#| msgid "Media Object Title"
 msgid "Media GOQL Filter"
-msgstr "Tittel for medieopbjekt"
+msgstr "GOQL mediafilter"
 
 #: GOQLFilter/goql.gpr.py:167
 msgid "Gramplet providing a gramps-object-query-language media filter"
@@ -15211,7 +15169,7 @@ msgstr ""
 
 #: GOQLFilter/goql.gpr.py:185
 msgid "Note GOQL Filter"
-msgstr ""
+msgstr "GOQL notatfilter"
 
 #: GOQLFilter/goql.gpr.py:186
 msgid "Gramplet providing a gramps-object-query-language note filter"
@@ -15234,10 +15192,9 @@ msgid "Tab always completes -- it never inserts a tab character."
 msgstr ""
 
 #: GOQLFilter/goql.py:213
-#, fuzzy, python-format
-#| msgid "Use filter "
+#, python-format
 msgid "%s filter"
-msgstr "Bruk filter "
+msgstr "%s filter"
 
 #: GOQLFilter/goql.py:233
 msgid "This resets the filter parameters to empty state."
@@ -15256,10 +15213,8 @@ msgid "SQL"
 msgstr ""
 
 #: GOQLFilter/goql.py:403
-#, fuzzy
-#| msgid "Python Shell"
 msgid "Python evaluation"
-msgstr "Pythonskall"
+msgstr "Python-evaluering"
 
 #: GOQLFilter/goql.py:523
 #, python-format
@@ -15277,19 +15232,17 @@ msgid "Error resetting filter: %s"
 msgstr ""
 
 #: GOQLFilter/goql.py:548
-#, fuzzy
-#| msgid "Enter Python expressions"
 msgid "Enter an expression first"
-msgstr "Skriv inn Python-uttrykk"
+msgstr "Skriv inn et uttrykk først"
 
 #: GOQLFilter/goql.py:560
 #, python-brace-format
 msgid "Created by the GOQL Filter gramplet on {today}"
-msgstr ""
+msgstr "Laget med GOQL Filter gramplet {today}"
 
 #: GOQLFilter/whereexprrule.gpr.py:30 GOQLFilter/whereexprrule.py:261
 msgid "People matching the <GOQL expression>"
-msgstr ""
+msgstr "Personer som treffer <GOQL uttrykket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:32
 msgid ""
@@ -15298,10 +15251,8 @@ msgid ""
 msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:50 GOQLFilter/whereexprrule.py:266
-#, fuzzy
-#| msgid "Families matching <event filter>"
 msgid "Families matching the <GOQL expression>"
-msgstr "Familier som matcher <event filter>"
+msgstr "Familier som treffer <GOQL uttrykket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:52
 msgid ""
@@ -15311,7 +15262,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:70 GOQLFilter/whereexprrule.py:271
 msgid "Events matching the <GOQL expression>"
-msgstr ""
+msgstr "Hendelser som treffer <GOQL uttrykket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:72
 msgid ""
@@ -15321,7 +15272,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:90 GOQLFilter/whereexprrule.py:276
 msgid "Places matching the <GOQL expression>"
-msgstr ""
+msgstr "Steder som treffer <GOQL uttrykket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:92
 msgid ""
@@ -15331,7 +15282,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:110 GOQLFilter/whereexprrule.py:281
 msgid "Repositories matching the <GOQL expression>"
-msgstr ""
+msgstr "Arkiv som treffer <GOQL uttrykket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:112
 msgid ""
@@ -15341,7 +15292,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:130 GOQLFilter/whereexprrule.py:286
 msgid "Sources matching the <GOQL expression>"
-msgstr ""
+msgstr "Kilder som treffer <GOQL uttrykket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:132
 msgid ""
@@ -15351,7 +15302,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:150 GOQLFilter/whereexprrule.py:291
 msgid "Citations matching the <GOQL expression>"
-msgstr ""
+msgstr "Sitater som treffer <GOQL uttrykket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:152
 msgid ""
@@ -15361,7 +15312,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:170 GOQLFilter/whereexprrule.py:296
 msgid "Media matching the <GOQL expression>"
-msgstr ""
+msgstr "Meia som treffer <GOQL uttrykket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:172
 msgid ""
@@ -15371,7 +15322,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:190 GOQLFilter/whereexprrule.py:301
 msgid "Notes matching the <GOQL expression>"
-msgstr ""
+msgstr "Notater som treffer <GOQL uttrykket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:192
 msgid ""
@@ -15381,7 +15332,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.py:212
 msgid "GOQL expression"
-msgstr ""
+msgstr "GOQL uttrykk"
 
 #: GOQLFilter/whereexprrule.py:214
 msgid ""
@@ -15769,10 +15720,8 @@ msgstr ""
 
 #: GrampsAssistant/grampsassistant.gpr.py:26
 #: GrampsAssistant/grampsassistant.py:1417
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Assistant"
-msgstr "Gramps versjon"
+msgstr "Gramps-assistent"
 
 #: GrampsAssistant/grampsassistant.gpr.py:27
 msgid "AI assistant for querying your Gramps family tree"
@@ -15788,10 +15737,8 @@ msgid ""
 msgstr ""
 
 #: GrampsAssistant/grampsassistant.py:209
-#, fuzzy
-#| msgid "Extra style settings:"
 msgid "Gramps Assistant settings"
-msgstr "Ekstra stilinnstillinger:"
+msgstr "Innstillinger for Gramps-asistenten"
 
 #: GrampsAssistant/grampsassistant.py:213
 msgid "Clear conversation and context"
@@ -15799,10 +15746,8 @@ msgstr ""
 
 #: GrampsAssistant/grampsassistant.py:388
 #: GrampsAssistant/grampsassistant.py:749
-#, fuzzy
-#| msgid "Gramps version"
 msgid "Gramps Assistant:"
-msgstr "Gramps versjon"
+msgstr "Gramps-assistenten:"
 
 #: GrampsAssistant/grampsassistant.py:390
 msgid ""
@@ -15836,10 +15781,8 @@ msgid ""
 msgstr ""
 
 #: GrampsAssistant/grampsassistant.py:973
-#, fuzzy
-#| msgid "Done!\n"
 msgid "Done.\n"
-msgstr "Gjort!\n"
+msgstr "Ferdig!\n"
 
 #: GrampsAssistant/grampsassistant.py:1203
 msgid "System Prompt:"
@@ -15881,10 +15824,8 @@ msgid "Model:"
 msgstr ""
 
 #: GrampsAssistant/grampsassistant.py:1273
-#, fuzzy
-#| msgid "Foundation date:"
 msgid "Use Foundational Model"
-msgstr "Stiftelsesdato:"
+msgstr "Bruk grunnleggende modell"
 
 #: GrampsAssistant/grampsassistant.py:1315
 msgid "e.g. OPENAI_API_KEY"
@@ -15907,10 +15848,8 @@ msgid "Base URL:"
 msgstr ""
 
 #: GrampsAssistant/grampsassistant.py:1338
-#, fuzzy
-#| msgid "Source type"
 msgid "Model name:"
-msgstr "Kildetype"
+msgstr "Modellnavn:"
 
 #: GrampsChat/GrampsChat.gpr.py:4 GrampsChat/GrampsChat.gpr.py:9
 msgid "GrampsChat"
@@ -15982,17 +15921,15 @@ msgstr ""
 
 #: GrampsWebApiDb/mintapikeytool.py:143
 msgid "Username"
-msgstr ""
+msgstr "Brukernavn"
 
 #: GrampsWebApiDb/mintapikeytool.py:144
 msgid "Password"
-msgstr ""
+msgstr "Passord"
 
 #: GrampsWebApiDb/mintapikeytool.py:153
-#, fuzzy
-#| msgid "Generate"
 msgid "Generate API Key"
-msgstr "Generer"
+msgstr "Generer API nøkkel"
 
 #: GrampsWebApiDb/mintapikeytool.py:162
 msgid ""
@@ -16019,10 +15956,8 @@ msgid "Please fill in the server URL, username, and password."
 msgstr ""
 
 #: GrampsWebApiDb/mintapikeytool.py:229
-#, fuzzy
-#| msgid "Generation "
 msgid "Generating API key…"
-msgstr "Generasjon "
+msgstr "Genererer API-nøkkel…"
 
 #: GrampsWebApiDb/mintapikeytool.py:260
 #, python-format
@@ -16045,10 +15980,9 @@ msgid "Unexpected response from the server: %s"
 msgstr ""
 
 #: GrampsWebApiDb/mintapikeytool.py:277 GrampsWebApiDb/mintapikeytool.py:369
-#, fuzzy, python-format
-#| msgid "Form: %s"
+#, python-format
 msgid "Error: %s"
-msgstr "Skjema: %s"
+msgstr "Feil: %s"
 
 #: GrampsWebApiDb/mintapikeytool.py:286
 #, python-format
@@ -16094,10 +16028,8 @@ msgid "_Try again"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:250
-#, fuzzy
-#| msgid "Connecting..."
 msgid "C_onnect"
-msgstr "Kobler til…"
+msgstr "K_oble til"
 
 #: GrampsWebSync/grampswebsync.py:345
 msgid "Forget this server?"
@@ -16186,10 +16118,8 @@ msgid "Synchronization complete"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.py:1084
-#, fuzzy
-#| msgid "Generation failed"
 msgid "Synchronization failed"
-msgstr "Generering mislyktes"
+msgstr "Synkroniseringen mislyktes"
 
 #: GrampsWebSync/presentation.py:128
 #, python-format
@@ -16319,11 +16249,8 @@ msgid "Signing in…"
 msgstr ""
 
 #: GrampsWebSync/presentation.py:268
-#, fuzzy
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
 msgid "Downloading the remote family tree…"
-msgstr "Laster ned %s mediefil"
+msgstr "Laster ned det eksterne slektstreet…"
 
 #: GrampsWebSync/presentation.py:269
 msgid "Comparing the two family trees…"
@@ -16342,37 +16269,24 @@ msgid "Sending the changes to the server…"
 msgstr ""
 
 #: GrampsWebSync/presentation.py:284
-#, fuzzy
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
 msgid "Downloading media files…"
-msgstr "Laster ned %s mediefil"
+msgstr "Laster ned mediafiler…"
 
 #: GrampsWebSync/presentation.py:285
-#, fuzzy
-#| msgid "Uploading %s media file"
-#| msgid_plural "Uploading %s media files"
 msgid "Uploading media files…"
-msgstr "Laster opp %s mediefil"
+msgstr "Laster opp mediafiler…"
 
 #: GrampsWebSync/presentation.py:293
-#, fuzzy
-#| msgid "Connecting..."
 msgid "Connect"
-msgstr "Kobler til…"
+msgstr "Koble til"
 
 #: GrampsWebSync/presentation.py:295
-#, fuzzy
-#| msgid "No changes"
 msgid "Apply changes"
-msgstr "Ingen endringer"
+msgstr "Bruk endringene"
 
 #: GrampsWebSync/presentation.py:296
-#, fuzzy
-#| msgid "Uploading %s media file"
-#| msgid_plural "Uploading %s media files"
 msgid "Transfer media files"
-msgstr "Laster opp %s mediefil"
+msgstr "Overfører mediafilene"
 
 #: GrampsWebSync/presentation.py:304
 msgid "Bidirectional synchronization"
@@ -16419,12 +16333,11 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: GrampsWebSync/presentation.py:593
-#, fuzzy, python-format
-#| msgid "Add Test Note"
+#, python-format
 msgid "Add %s object"
 msgid_plural "Add %s objects"
-msgstr[0] "Legg til testnotat"
-msgstr[1] "Legg til testnotat"
+msgstr[0] "Legg til %s objekt"
+msgstr[1] "Legg til %s objekter"
 
 #: GrampsWebSync/presentation.py:594
 #, python-format
@@ -16497,13 +16410,11 @@ msgid "Media files are in sync."
 msgstr ""
 
 #: GrampsWebSync/presentation.py:708
-#, fuzzy, python-format
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
+#, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "Laster ned %s mediefil"
-msgstr[1] "Laster ned %s mediefil"
+msgstr[0] "Lastet ned %s mediafil med suksess."
+msgstr[1] "Lastet ned %s mediafiler med suksess."
 
 #: GrampsWebSync/presentation.py:717
 #, python-format
@@ -16513,13 +16424,11 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: GrampsWebSync/presentation.py:727
-#, fuzzy, python-format
-#| msgid "Uploading %s media file"
-#| msgid_plural "Uploading %s media files"
+#, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "Laster opp %s mediefil"
-msgstr[1] "Laster opp %s mediefil"
+msgstr[0] "Lastet opp %s mediafil med suksess."
+msgstr[1] "Lastet opp %s mediafiler med suksess."
 
 #: GrampsWebSync/presentation.py:736
 #, python-format
@@ -18729,8 +18638,6 @@ msgid "Navigate to an individual to check patronymic status."
 msgstr ""
 
 #: NameSuite/name_processor/views/gramplet.py:35
-#, fuzzy
-#| msgid "No Active Person set."
 msgid "No active person selected."
 msgstr "Ingen aktiv person valgt."
 
@@ -18760,20 +18667,16 @@ msgid "Patronymic applied successfully!"
 msgstr ""
 
 #: NameSuite/name_processor/views/gramplet.py:77
-#, fuzzy
-#| msgid "Apply all suggested changes"
 msgid "Apply Suggestion"
-msgstr "Aktivere alle foreslåtte endringer"
+msgstr "Bruk foreslåtte endringer"
 
 #: NameSuite/name_processor/views/tool.py:92
 msgid "Infer East Slavic Patronymics"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool.py:112
-#, fuzzy
-#| msgid "Checking Given Names"
 msgid "Rename Given Names"
-msgstr "Kontrollerer fornavn"
+msgstr "Endre fornavn"
 
 #: NameSuite/name_processor/views/tool.py:115
 msgid "Audit Patronymics"
@@ -18784,10 +18687,8 @@ msgid "Auditing Settings"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:76
-#, fuzzy
-#| msgid "Place of Record"
 msgid "All Records"
-msgstr "Registreringssted"
+msgstr "Alle registreringer"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:77
 msgid "Males Only"
@@ -18806,10 +18707,8 @@ msgid "Match Pre-Revolutionary Orthography"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:95
-#, fuzzy
-#| msgid "Edit tags"
 msgid "Audit Database"
-msgstr "Rediger merker"
+msgstr "Revider databasen"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:117
 msgid "Select All Safe Corrections"
@@ -18817,10 +18716,8 @@ msgstr ""
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:122
 #: NameSuite/name_processor/views/tool_rename_tab.py:116
-#, fuzzy
-#| msgid "Apply to selected places"
 msgid "Apply Selected Corrections"
-msgstr "Bruk på valgte steder"
+msgstr "Bruk valgte korrigeringer"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:162
 msgid "Configure Rules"
@@ -18837,36 +18734,28 @@ msgid "Current"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:193
-#, fuzzy
-#| msgid "Section"
 msgid "Correction"
-msgstr "Seksjon"
+msgstr "Korrigering"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:200
 msgid "Conf"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:201
-#, fuzzy
-#| msgid "Event Year"
 msgid "Ref Year"
-msgstr "Hendelsesår"
+msgstr "Ref. år"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:204
-#, fuzzy
-#| msgid "Relation"
 msgid "Explanation"
-msgstr "Relasjon"
+msgstr "Forklaring"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:243
 msgid "Audit Complete!"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:248
-#, fuzzy
-#| msgid "Result"
 msgid "No Results"
-msgstr "Resultat"
+msgstr "Tomt resultat"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:248
 msgid "No issues found."
@@ -18877,10 +18766,8 @@ msgid "Search and Replace Options"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:70
-#, fuzzy
-#| msgid "Source type"
 msgid "Source Name:"
-msgstr "Kildetype"
+msgstr "Kildenavn:"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:72
 msgid "e.g. Иоанн"
@@ -18903,30 +18790,24 @@ msgid "Exact Match"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:83
-#, fuzzy
-#| msgid "Search substring..."
 msgid "Substring"
-msgstr "Søk etter delstreng…"
+msgstr "Delstreng"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:84
 msgid "Regular Expression"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:88
-#, fuzzy
-#| msgid "Index of Names"
 msgid "Scan for Names"
-msgstr "Navneregister"
+msgstr "Skann etter navn"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:93
 msgid "Preserve original name as alternative"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:160
-#, fuzzy
-#| msgid "Proposed sort"
 msgid "Proposed"
-msgstr "Foreslått sortering"
+msgstr "Foreslått"
 
 #: NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
@@ -19985,22 +19866,16 @@ msgid "No source information found"
 msgstr "Ingen kildeinformasjon funnet"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:25
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Person Relationship Filter"
-msgstr "Slektskap til far"
+msgstr "Personsrelasjonsfilter"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:26
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet providing a person filter on relationships"
-msgstr "Gramplet som viser beslektede slektninger"
+msgstr "Gramplet som gir personfilter på relasjoner"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:33
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Relationship Filter"
-msgstr "Slektskap til far"
+msgstr "Relasjonsfilter"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:82
 msgid "Children of name match"
@@ -20011,16 +19886,12 @@ msgid "Matches children of anybody with a given name"
 msgstr ""
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:251
-#, fuzzy
-#| msgid "sibling"
 msgid "Sibling 1"
-msgstr "søsken"
+msgstr "Søsken 1"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:252
-#, fuzzy
-#| msgid "sibling"
 msgid "Sibling 2"
-msgstr "søsken"
+msgstr "Søsken 2"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:253
 msgid "Child 1"
@@ -20798,7 +20669,7 @@ msgstr "_Google Kart"
 
 #: PlaceCompletion/placecompletion.glade:112
 msgid "Apply all suggested changes"
-msgstr "Aktivere alle foreslåtte endringer"
+msgstr "Bruk alle foreslåtte endringer"
 
 #: PlaceCompletion/placecompletion.glade:148
 msgid "Selection of the Places you want to complete:"
@@ -23626,7 +23497,7 @@ msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:130
 msgid "December"
-msgstr ""
+msgstr "desember"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:130
 msgid "November"
@@ -25263,42 +25134,29 @@ msgid "Given Name Word Cloud"
 msgstr ""
 
 #: WordClouds/WordClouds.gpr.py:25
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet showing all given names as a word cloud"
-msgstr "Gramplet som viser beslektede slektninger"
+msgstr "Gramplet som viser alle fornavn som en ordsky"
 
 #: WordClouds/WordClouds.gpr.py:40 WordClouds/WordClouds.gpr.py:48
 msgid "Surname Word Cloud"
 msgstr ""
 
 #: WordClouds/WordClouds.gpr.py:41
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet showing all surnames as a word cloud"
-msgstr "Gramplet som viser beslektede slektninger"
+msgstr "Gramplet som viser alle etternavn som en ordsky"
 
 #: WordClouds/WordClouds.gpr.py:56 WordClouds/WordClouds.gpr.py:64
-#, fuzzy
-#| msgid "Place history loaded"
 msgid "Place Word Cloud"
-msgstr "Stedshistorikk innlastet"
+msgstr "Sted-ordsky"
 
 #: WordClouds/WordClouds.gpr.py:57
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet showing all places as a word cloud"
-msgstr "Gramplet som viser beslektede slektninger"
+msgstr "Gramplet som viser alle steder som en ordsky"
 
 #: WordClouds/cloudgramplet.py:147 WordClouds/cloudgramplet.py:225
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of tags : \n"
-#| "\t\t\t%06s\n"
+#, python-format
 msgid "Number of %s"
-msgstr ""
-"Antall merker : \n"
-"\t\t\t%06s\n"
+msgstr "Antall %s"
 
 #: WordClouds/cloudgramplet.py:149 WordClouds/cloudgramplet.py:227
 msgid "Color (low)"
@@ -25309,10 +25167,8 @@ msgid "Color (high)"
 msgstr ""
 
 #: WordClouds/cloudgramplet.py:151 WordClouds/cloudgramplet.py:229
-#, fuzzy
-#| msgid "Hair Color"
 msgid "Hover color"
-msgstr "Hårfarge"
+msgstr "Svevefarge"
 
 #: WordClouds/cloudgramplet.py:152 WordClouds/cloudgramplet.py:230
 msgid "Layout quality"
@@ -25323,20 +25179,17 @@ msgid "Filter missing/unknown words"
 msgstr ""
 
 #: WordClouds/cloudgramplet.py:207
-#, fuzzy, python-format
-#| msgid "Missing header"
+#, python-format
 msgid "[Missing %s]"
-msgstr "Mangler overskrift"
+msgstr "[Mangler %s]"
 
 #: WordClouds/givennamewordcloudgramplet.py:50
 msgid "Click given name to view people with that given name"
 msgstr ""
 
 #: WordClouds/placewordcloudgramplet.py:53
-#, fuzzy
-#| msgid "Include Image source references"
 msgid "Click place name to view references"
-msgstr "Inkluder kildehenvisninger for bilder"
+msgstr "Klikk på stedsnavn for å se referanser"
 
 #: WordClouds/surnamewordcloudgramplet.py:49
 msgid "Click surname to view people with that surname"
