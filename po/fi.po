@@ -25,7 +25,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-03 12:30-0700\n"
-"PO-Revision-Date: 2026-09-03 12:51+0000\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
 "Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
@@ -34,7 +34,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 
 msgid "Birthdays"
@@ -4253,7 +4253,7 @@ msgstr "Siirry koko näytölle napsauttamalla karttaa"
 
 #: DynamicWeb/dynamicweb.py:2960
 msgid "Configure"
-msgstr "Asetukset"
+msgstr "Näytön asetukset"
 
 #: DynamicWeb/dynamicweb.py:2967
 msgid "DynamicWeb_report#Help"
@@ -5449,27 +5449,26 @@ msgstr "Haetaan kaikkia alisuodattimien osumia"
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:174
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:973
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1053
-#, fuzzy
-#| msgid "Ancestor Generations"
 msgid "Ancestor Tree Expanded"
-msgstr "Esivanhempien sukupolvet"
+msgstr "Laajennettu esivanhempien puu"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:29
 msgid ""
 "Expanded Ancestor Graph showing direct ancestors, siblings, cousins and "
 "spouses."
 msgstr ""
+"Laajennettu esivanhempien kaavio näyttäen suorat esivanhemmat, sisarukset, "
+"serkut ja puolisot."
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:190
-#, fuzzy, python-format
-#| msgid "Ancestors places for %s"
+#, python-format
 msgid "Ancestor Tree Expanded for %s"
-msgstr "Henkilön %s esivanhempien paikat"
+msgstr "Henkilön %s laajennettu esivanhempien puu"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:544
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:606
 msgid "Tree Truncated"
-msgstr ""
+msgstr "Katkaistu puu"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:545
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:607
@@ -5480,43 +5479,37 @@ msgid ""
 "Please reduce the number of generations or disable some options to see all "
 "branches."
 msgstr ""
+"Luotu sukupuu saavutti 400 henkilön turvarajan ja se on katkaistu.\n"
+"\n"
+"Vähennä sukupolvien määrää tai poista joitakin valintoja nähdäksesi kaikki "
+"haarat."
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1182
-#, fuzzy
-#| msgid "Shows the number of descendants of the current person"
 msgid "Include descendants of the center person"
 msgstr "Näyttää nykyisen henkilön jälkeläisten lukumäärän"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1183
-#, fuzzy
-#| msgid "Shows the number of descendants of the current person"
 msgid ""
 "Whether to display the children and full descending lines of the center "
 "person"
-msgstr "Näyttää nykyisen henkilön jälkeläisten lukumäärän"
+msgstr "Näytetäänkö valitun henkilön lapset ja täydet jälkeläislinjat"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1190
-#, fuzzy
-#| msgid "Include siblings of ancestors."
 msgid "Include siblings of ancestors"
-msgstr "Sisällytä esivanhempien sisarukset."
+msgstr "Sisällytä esivanhempien sisarukset"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1191
-#, fuzzy
-#| msgid "Whether to display the theoretical number of ancestor by generation"
 msgid "Whether to display the siblings of direct ancestors"
-msgstr "Näytetäänkö esi-isien teoreettinen lukumäärä sukupolvittain"
+msgstr "Näytetäänkö suorien esivanhempien sisarukset"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1194
 msgid "Include cousins (collateral descendants)"
-msgstr ""
+msgstr "Sisällytä serkut (sivujälkeläiset)"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1195
-#, fuzzy
-#| msgid "Whether to display the theoretical number of ancestor by generation"
 msgid ""
 "Whether to display the cousins and descendants of the ancestors' siblings"
-msgstr "Näytetäänkö esi-isien teoreettinen lukumäärä sukupolvittain"
+msgstr "Näytetäänkö esivanhempien sisarusten serkut ja jälkeläiset"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1202
 #: FamilyTree/FamilyTree.py:1051
@@ -5525,32 +5518,24 @@ msgid "Descendant Generations"
 msgstr "Jälkeläisten sukupolvet"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1203
-#, fuzzy
-#| msgid "The number of descendant generations to include in the tree"
 msgid "The number of descendant generations to include"
-msgstr "Puuhun sisällytettävien jälkipolvien lukumäärä"
+msgstr "Sisällytettävien jälkipolvien lukumäärä"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1242
-#, fuzzy
-#| msgid "Whether to include the index of Names at the end of the report."
 msgid "Whether to resize the page to fit the size of the tree."
-msgstr "Sisällytetäänkö nimihakemisto raportin loppuun."
+msgstr "Muutetaanko sivun kokoa puun koon mukaan."
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1262
-#, fuzzy
-#| msgid "Use a table format for the families index"
 msgid "Use random colors for family lines"
-msgstr "Perheluettelo taulukkona"
+msgstr "Käytä sukulinjoille satunnaisia värejä"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1263
 msgid "Draw each family's connecting lines with a distinct color."
-msgstr ""
+msgstr "Piirrä kunkin perheen yhdysviivat omilla väreillään."
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1372
-#, fuzzy
-#| msgid "The style used for names."
 msgid "The bold style used for the names."
-msgstr "Nimissä käytetty tyyli."
+msgstr "Nimien korostettu tyyli."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
@@ -19248,8 +19233,6 @@ msgid "Infer East Slavic Patronymics"
 msgstr "Käytä itäslaavilaista patronyymiä"
 
 #: NameSuite/name_processor/views/tool.py:112
-#, fuzzy
-#| msgid "Checking Given Names"
 msgid "Rename Given Names"
 msgstr "Muokkaa etunimiä"
 
@@ -19328,10 +19311,8 @@ msgid "Ref Year"
 msgstr "Tapahtumavuosi"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:204
-#, fuzzy
-#| msgid "Relation"
 msgid "Explanation"
-msgstr "Suhde"
+msgstr "Selitys"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:243
 msgid "Audit Complete!"
@@ -19358,10 +19339,8 @@ msgid "e.g. Иоанн"
 msgstr "esim. Johannes"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:75
-#, fuzzy
-#| msgid "Street Name"
 msgid "Target Name:"
-msgstr "Nimi"
+msgstr "Nimi:"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:77
 msgid "e.g. Иван"
@@ -20539,65 +20518,49 @@ msgid "No source information found"
 msgstr "Ei lähdetietoja"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:25
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Person Relationship Filter"
-msgstr "Suhde isään"
+msgstr "Henkilösuhdesuodatin"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:26
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet providing a person filter on relationships"
-msgstr "Gramplet näyttää suhteessa olevia sukulaisia"
+msgstr "Gramplet tarjoaa henkilösuhteiden suodattimen"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.gpr.py:33
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Relationship Filter"
-msgstr "Suhde isään"
+msgstr "Suhdesuodatin"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:82
-#, fuzzy
-#| msgid "Children Dead"
 msgid "Children of name match"
-msgstr "Kuolleita lapsia"
+msgstr "Nimen mukaan poimitut lapset"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:84
 msgid "Matches children of anybody with a given name"
-msgstr ""
+msgstr "Löytää pyydetyn nimisten henkilöiden lapset"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:251
-#, fuzzy
-#| msgid "sibling"
 msgid "Sibling 1"
-msgstr "sisarus"
+msgstr "sisarus 1"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:252
-#, fuzzy
-#| msgid "sibling"
 msgid "Sibling 2"
-msgstr "sisarus"
+msgstr "sisarus 2"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:253
-#, fuzzy
-#| msgid "Children Dead"
 msgid "Child 1"
-msgstr "Kuolleita lapsia"
+msgstr "lapsi 1"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:254
-#, fuzzy
-#| msgid "Children Dead"
 msgid "Child 2"
-msgstr "Kuolleita lapsia"
+msgstr "lapsi 2"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:282
 msgid "Probably Alive"
-msgstr ""
+msgstr "luultavasti elossa"
 
 #: PersonRelationshipFilter/PersonRelationshipFilter.py:284
 #, python-format
 msgid "example: '%(msg1)s' or '%(msg2)s'"
-msgstr ""
+msgstr "Esimerkki: '%(msg1)s' tai '%(msg2)s'"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
@@ -25558,10 +25521,8 @@ msgid "Attribute no longer exists. The extra icon is removed"
 msgstr "Ominaisuutta ei enää ole. Ylimääräinen kuvake on poistettu"
 
 #: WebSearch/WebSearch.py:1983
-#, fuzzy
-#| msgid "Note no longer exists. The extra icon is removed"
 msgid "Note no longer exists"
-msgstr "Lisätietoa ei enää ole. Ylimääräinen kuvake on poistettu"
+msgstr "Lisätietoa ei enää ole"
 
 #: WebSearch/WebSearch.py:2005
 msgid "Note no longer exists. The extra icon is removed"
@@ -25569,7 +25530,7 @@ msgstr "Lisätietoa ei enää ole. Ylimääräinen kuvake on poistettu"
 
 #: WebSearch/WebSearch.py:2057
 msgid "Internet link no longer matches this WebSearch row"
-msgstr ""
+msgstr "Internet-linkki ei enää vastaa tätä WebSearch-riviä"
 
 #: WebSearch/WebSearch.py:2148
 #, python-brace-format
@@ -25949,21 +25910,19 @@ msgstr ""
 
 #: WebSearch/info_panel.py:241
 msgid "Gramps Forum (Discourse)"
-msgstr ""
+msgstr "Gramps-foorumi (Discoursessa)"
 
 #: WebSearch/info_panel.py:245
 msgid "✅ Bug reports and feature requests are completely **free of charge**."
 msgstr "✅ Virheilmoitukset ja ominaisuuspyynnöt ovat täysin **ilmaisia**."
 
 #: WebSearch/info_panel.py:249
-#, fuzzy
-#| msgid "Issues"
 msgid "GitHub Issues"
-msgstr "Ongelmat"
+msgstr "Ongelmat (GitHub-listaus)"
 
 #: WebSearch/info_panel.py:252
 msgid "Gramps Bug Tracker"
-msgstr ""
+msgstr "Gramps Bug Tracker"
 
 #: WebSearch/info_panel.py:255
 #, python-format
@@ -26140,41 +26099,32 @@ msgstr "Näytä kuvakkeet"
 
 #: WordClouds/WordClouds.gpr.py:24 WordClouds/WordClouds.gpr.py:32
 msgid "Given Name Word Cloud"
-msgstr ""
+msgstr "Etunimien sanapilvi"
 
 #: WordClouds/WordClouds.gpr.py:25
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet showing all given names as a word cloud"
-msgstr "Gramplet näyttää suhteessa olevia sukulaisia"
+msgstr "Gramplet, joka näyttää kaikki etunimet sanapilvenä"
 
 #: WordClouds/WordClouds.gpr.py:40 WordClouds/WordClouds.gpr.py:48
 msgid "Surname Word Cloud"
-msgstr ""
+msgstr "Sukunimi-sanapilvi"
 
 #: WordClouds/WordClouds.gpr.py:41
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet showing all surnames as a word cloud"
-msgstr "Gramplet näyttää suhteessa olevia sukulaisia"
+msgstr "Sukunimien sanapilvi"
 
 #: WordClouds/WordClouds.gpr.py:56 WordClouds/WordClouds.gpr.py:64
-#, fuzzy
-#| msgid "Place history loaded"
 msgid "Place Word Cloud"
-msgstr "Paikkahistoria ladattu"
+msgstr "Paikka-sanapilvi"
 
 #: WordClouds/WordClouds.gpr.py:57
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet showing all places as a word cloud"
-msgstr "Gramplet näyttää suhteessa olevia sukulaisia"
+msgstr "Gramplet näyttää kaikki paikat sanapilvenä"
 
 #: WordClouds/cloudgramplet.py:147 WordClouds/cloudgramplet.py:225
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid "Number of %s"
-msgstr "Sivujen määrä"
+msgstr "%s-määrä"
 
 #: WordClouds/cloudgramplet.py:149 WordClouds/cloudgramplet.py:227
 msgid "Color (low)"
