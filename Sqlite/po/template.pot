@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,111 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: Sqlite/ExportSql.py:1346
+#: Sqlite/ExportSql.py:1702 Sqlite/ExportSql.py:1714
+msgid "Regular"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1703
+msgid "Before"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1704
+msgid "After"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1705
+msgid "About"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1706
+msgid "Range"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1707
+msgid "From"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1708
+msgid "To"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1709
+msgid "Span"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1710
+msgid "Text only"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1715
+msgid "Estimated"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1716
+msgid "Calculated"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1720
+msgid "January 1"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1721
+msgid "March 1"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1722
+msgid "March 25"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1723
+msgid "September 1"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1727
+msgid "female"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1728
+msgid "male"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1729
+msgid "unknown"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1730
+msgid "other"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1734
+msgid "Very Low"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1735
+msgid "Low"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1736
+msgid "Normal"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1737
+msgid "High"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1738
+msgid "Very High"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1749
+msgid "Flowed"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1750
+msgid "Preformatted"
+msgstr ""
+
+#: Sqlite/ExportSql.py:1953
 #, python-format
 msgid "Export Complete: %d second"
 msgid_plural "Export Complete: %d seconds"
@@ -37,16 +141,16 @@ msgstr ""
 msgid "SQLite Export"
 msgstr ""
 
-#: Sqlite/ImportSql.py:142
+#: Sqlite/ImportSql.py:159
 #, python-format
 msgid "%s could not be opened\n"
 msgstr ""
 
-#: Sqlite/ImportSql.py:590
+#: Sqlite/ImportSql.py:562
 msgid "CSV import"
 msgstr ""
 
-#: Sqlite/ImportSql.py:893
+#: Sqlite/ImportSql.py:899
 #, python-format
 msgid "Import Complete: %d second"
 msgid_plural "Import Complete: %d seconds"

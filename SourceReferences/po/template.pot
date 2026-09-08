@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,15 +29,15 @@ msgstr ""
 msgid "References"
 msgstr ""
 
-#: SourceReferences/SourceReferences.py:50
+#: SourceReferences/SourceReferences.py:51
 msgid "Type"
 msgstr ""
 
-#: SourceReferences/SourceReferences.py:51
+#: SourceReferences/SourceReferences.py:52
 msgid "Name"
 msgstr ""
 
-#: SourceReferences/SourceReferences.py:141
+#: SourceReferences/SourceReferences.py:142
 msgid ""
 "Cannot open new citation editor at this time. Either the citation is already "
 "being edited, or the associated source is already being edited, and opening "
@@ -48,6 +48,6 @@ msgid ""
 "citation alone"
 msgstr ""
 
-#: SourceReferences/SourceReferences.py:154
+#: SourceReferences/SourceReferences.py:155
 msgid "Cannot open new citation editor"
 msgstr ""

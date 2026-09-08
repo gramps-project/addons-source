@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,10 +29,10 @@ msgstr ""
 msgid "Shared PostgreSQL Database"
 msgstr ""
 
-#: SharedPostgreSQL/sharedpostgresql.py:64
+#: SharedPostgreSQL/sharedpostgresql.py:80
 msgid "Database version"
 msgstr ""
 
-#: SharedPostgreSQL/sharedpostgresql.py:65
+#: SharedPostgreSQL/sharedpostgresql.py:81
 msgid "Database module location"
 msgstr ""

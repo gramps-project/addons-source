@@ -24,7 +24,7 @@ register(
     id="RemoveTagTool",
     name=_("Add/Remove Tag Tool"),
     description=_("Add or remove a tag from groups of people, events, etc."),
-    version = '1.1.14',
+    version = '1.1.15',
     gramps_target_version="6.1",
     status=STABLE,
     fname="RemoveTagTool.py",

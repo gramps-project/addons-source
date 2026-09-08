@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,25 +34,25 @@ msgstr ""
 msgid "Gramplet for testing etree with Gramps XML"
 msgstr ""
 
-#: lxml/etreeGramplet.py:83 lxml/lxmlGramplet.py:115
+#: lxml/etreeGramplet.py:83 lxml/lxmlGramplet.py:113
 msgid "Invalid timestamp"
 msgstr ""
 
-#: lxml/etreeGramplet.py:119 lxml/lxmlGramplet.py:162
+#: lxml/etreeGramplet.py:119 lxml/lxmlGramplet.py:170
 msgid "Select file"
 msgstr ""
 
-#: lxml/etreeGramplet.py:130 lxml/lxmlGramplet.py:173
+#: lxml/etreeGramplet.py:130 lxml/lxmlGramplet.py:181
 msgid ""
 "Select a Gramps XML file and\n"
 " click on the Run button."
 msgstr ""
 
-#: lxml/etreeGramplet.py:139 lxml/lxmlGramplet.py:182
+#: lxml/etreeGramplet.py:139 lxml/lxmlGramplet.py:190
 msgid "Run"
 msgstr ""
 
-#: lxml/etreeGramplet.py:155 lxml/lxmlGramplet.py:197
+#: lxml/etreeGramplet.py:155 lxml/lxmlGramplet.py:205
 msgid "No file loaded..."
 msgstr ""
 
@@ -64,7 +64,7 @@ msgstr ""
 msgid "Print more informations on console"
 msgstr ""
 
-#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:334
+#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:342
 msgid "Is it a compressed .gramps?"
 msgstr ""
 
@@ -73,7 +73,7 @@ msgstr ""
 msgid "Cannot uncompress \"%s\""
 msgstr ""
 
-#: lxml/etreeGramplet.py:265 lxml/lxmlGramplet.py:348
+#: lxml/etreeGramplet.py:265 lxml/lxmlGramplet.py:356
 msgid "Is it a .gramps?"
 msgstr ""
 
@@ -86,11 +86,11 @@ msgstr ""
 msgid "Sorry, no support for your OS yet!"
 msgstr ""
 
-#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:420
+#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:428
 msgid "Parsing issue"
 msgstr ""
 
-#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:420
+#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:428
 #, python-format
 msgid "Cannot parse content of \"%(file)s\""
 msgstr ""
@@ -206,97 +206,97 @@ msgid ""
 " \"%s\"\n"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:72
-msgid "Where is gzip?"
-msgstr ""
-
-#: lxml/lxmlGramplet.py:72
-msgid "\"gzip\" is missing"
-msgstr ""
-
-#: lxml/lxmlGramplet.py:94
-msgid "Missing python3 lxml"
-msgstr ""
-
-#: lxml/lxmlGramplet.py:94
-msgid "Please, try to install \"python3 lxml\" package."
-msgstr ""
-
-#: lxml/lxmlGramplet.py:116
+#: lxml/lxmlGramplet.py:114
 msgid "Unknown"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:255 lxml/lxmlGramplet.py:273 lxml/lxmlGramplet.py:749
+#: lxml/lxmlGramplet.py:144
+msgid "Where is gzip?"
+msgstr ""
+
+#: lxml/lxmlGramplet.py:144
+msgid "\"gzip\" is missing"
+msgstr ""
+
+#: lxml/lxmlGramplet.py:146
+msgid "Missing python3 lxml"
+msgstr ""
+
+#: lxml/lxmlGramplet.py:147
+msgid "Please, try to install \"python3 lxml\" package."
+msgstr ""
+
+#: lxml/lxmlGramplet.py:263 lxml/lxmlGramplet.py:281 lxml/lxmlGramplet.py:757
 msgid "xmllint options"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:264 lxml/lxmlGramplet.py:282
+#: lxml/lxmlGramplet.py:272 lxml/lxmlGramplet.py:290
 msgid "debug places"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:265 lxml/lxmlGramplet.py:283
+#: lxml/lxmlGramplet.py:273 lxml/lxmlGramplet.py:291
 msgid "debug xml"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:382
+#: lxml/lxmlGramplet.py:390
 msgid "XSD validation (lxml)"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:390
+#: lxml/lxmlGramplet.py:398
 #, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
 msgstr ""
 
-#: lxml/lxmlGramplet.py:407
+#: lxml/lxmlGramplet.py:415
 #, python-format
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
 msgstr ""
 
-#: lxml/lxmlGramplet.py:423
+#: lxml/lxmlGramplet.py:431
 msgid "Custom \"test.xml\" file"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:423
+#: lxml/lxmlGramplet.py:431
 msgid "Please try to fix \"test.xml\""
 msgstr ""
 
-#: lxml/lxmlGramplet.py:432
+#: lxml/lxmlGramplet.py:440
 msgid "RelaxNG validation"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:432
+#: lxml/lxmlGramplet.py:440
 #, python-format
 msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:445
+#: lxml/lxmlGramplet.py:453
 msgid "File issue"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:445
+#: lxml/lxmlGramplet.py:453
 #, python-format
 msgid "Cannot parse \"%(file)s\" via etree"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:484
+#: lxml/lxmlGramplet.py:492
 msgid "Parsing file..."
 msgstr ""
 
-#: lxml/lxmlGramplet.py:569
+#: lxml/lxmlGramplet.py:577
 #, python-format
 msgid " - (%(lang)s)"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:572
+#: lxml/lxmlGramplet.py:580
 #, python-format
 msgid " - (? or %(lang)s)"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:609
+#: lxml/lxmlGramplet.py:617
 msgid "Missing header"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:609 lxml/lxmlGramplet.py:719
+#: lxml/lxmlGramplet.py:617 lxml/lxmlGramplet.py:727
 msgid ""
 "Not a valid .gramps.\n"
 "Cannot run the gramplet...\n"
@@ -304,191 +304,191 @@ msgid ""
 "generated by Gramps 6.x."
 msgstr ""
 
-#: lxml/lxmlGramplet.py:622 lxml/lxmlGramplet.py:627 lxml/lxmlGramplet.py:632
-#: lxml/lxmlGramplet.py:637
+#: lxml/lxmlGramplet.py:630 lxml/lxmlGramplet.py:635 lxml/lxmlGramplet.py:640
+#: lxml/lxmlGramplet.py:645
 msgid "0"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:652
+#: lxml/lxmlGramplet.py:660
 msgid "File parsed with"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:654
+#: lxml/lxmlGramplet.py:662
 msgid "File was generated on "
 msgstr ""
 
-#: lxml/lxmlGramplet.py:654
+#: lxml/lxmlGramplet.py:662
 msgid " by Gramps "
 msgstr ""
 
-#: lxml/lxmlGramplet.py:656
+#: lxml/lxmlGramplet.py:664
 msgid "Period: "
 msgstr ""
 
-#: lxml/lxmlGramplet.py:659 lxml/lxmlGramplet.py:663
+#: lxml/lxmlGramplet.py:667 lxml/lxmlGramplet.py:671
 #, python-brace-format
 msgid "\t{number} surname"
 msgid_plural "\t{number} surnames; no frequency yet"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lxml/lxmlGramplet.py:659
+#: lxml/lxmlGramplet.py:667
 #, python-brace-format
 msgid "\t{number} surname; no frequency yet"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:660 lxml/lxmlGramplet.py:667
+#: lxml/lxmlGramplet.py:668 lxml/lxmlGramplet.py:675
 #, python-brace-format
 msgid "\t{number} place"
 msgid_plural "\t{number} places"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lxml/lxmlGramplet.py:661 lxml/lxmlGramplet.py:671
+#: lxml/lxmlGramplet.py:669 lxml/lxmlGramplet.py:679
 #, python-brace-format
 msgid "\t{number} note"
 msgid_plural "\t{number} notes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lxml/lxmlGramplet.py:675
+#: lxml/lxmlGramplet.py:683
 #, python-brace-format
 msgid "\t{number} source"
 msgid_plural "\t{number} sources"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lxml/lxmlGramplet.py:694 lxml/lxmlGramplet.py:919
+#: lxml/lxmlGramplet.py:702 lxml/lxmlGramplet.py:927
 msgid "Gallery.html"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:695
+#: lxml/lxmlGramplet.py:703
 #, python-format
 msgid "1. Has generated a media index on \"%(file)s\".\n"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:719
+#: lxml/lxmlGramplet.py:727
 msgid "XML SyntaxError"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:723
+#: lxml/lxmlGramplet.py:731
 msgid "Matches XSD schema."
 msgstr ""
 
-#: lxml/lxmlGramplet.py:763
+#: lxml/lxmlGramplet.py:771
 msgid "xmllint: skip DTD validation"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:787
+#: lxml/lxmlGramplet.py:795
 msgid "I am looking at ..."
 msgstr ""
 
-#: lxml/lxmlGramplet.py:788
+#: lxml/lxmlGramplet.py:796
 msgid "Content generated by Gramps"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:789
+#: lxml/lxmlGramplet.py:797
 msgid "Surnames"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:790
+#: lxml/lxmlGramplet.py:798
 msgid "Places"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:791
+#: lxml/lxmlGramplet.py:799
 msgid "List of sources"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:810
+#: lxml/lxmlGramplet.py:818
 msgid "Australia"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:811
+#: lxml/lxmlGramplet.py:819
 msgid "Brazil"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:812
+#: lxml/lxmlGramplet.py:820
 msgid "Bulgaria"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:813
+#: lxml/lxmlGramplet.py:821
 msgid "Canada"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:814
+#: lxml/lxmlGramplet.py:822
 msgid "Chile"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:815
+#: lxml/lxmlGramplet.py:823
 msgid "China"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:816
+#: lxml/lxmlGramplet.py:824
 msgid "Croatia"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:817
+#: lxml/lxmlGramplet.py:825
 msgid "Czech Republic"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:818
+#: lxml/lxmlGramplet.py:826
 msgid "England"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:819
+#: lxml/lxmlGramplet.py:827
 msgid "Finland"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:820
+#: lxml/lxmlGramplet.py:828
 msgid "France"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:821
+#: lxml/lxmlGramplet.py:829
 msgid "Germany"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:822
+#: lxml/lxmlGramplet.py:830
 msgid "India"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:823
+#: lxml/lxmlGramplet.py:831
 msgid "Japan"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:824
+#: lxml/lxmlGramplet.py:832
 msgid "Norway"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:825
+#: lxml/lxmlGramplet.py:833
 msgid "Portugal"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:826
+#: lxml/lxmlGramplet.py:834
 msgid "Russia"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:827
+#: lxml/lxmlGramplet.py:835
 msgid "Sweden"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:828
+#: lxml/lxmlGramplet.py:836
 msgid "United States of America"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:832
+#: lxml/lxmlGramplet.py:840
 msgid "Name"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:833
+#: lxml/lxmlGramplet.py:841
 msgid "Country"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:896
+#: lxml/lxmlGramplet.py:904
 #, python-format
 msgid "2. Has generated \"%s\".\n"
 msgstr ""
 
-#: lxml/lxmlGramplet.py:898
+#: lxml/lxmlGramplet.py:906
 #, python-format
 msgid ""
 "Try to open\n"
@@ -496,6 +496,6 @@ msgid ""
 " into your preferred web navigator ..."
 msgstr ""
 
-#: lxml/lxmlGramplet.py:917
+#: lxml/lxmlGramplet.py:925
 msgid "Gallery"
 msgstr ""

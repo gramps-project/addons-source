@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,49 +17,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:231
 msgid "The place was not found. You may clarify the search keywords."
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:219
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:247
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:235
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:266
 msgid "Failed to search for the coordinates due to some unexpected error."
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:263
 msgid "The place was not found."
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:288
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:319
 msgid "The place was not identified."
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:290
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:321
 msgid "Coordinates were not given."
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:286
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:305
 msgid "Failed to interpret the input format."
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:313
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
 #, python-format
 msgid "Edit Place (%s)"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:351
 #, python-brace-format
 msgid "DB entry [{id}] {name}:"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:356
 #: PlaceCoordinateGramplet/placecoordinate.glade:132
 msgid "Nothing has been searched yet"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:378
 msgid "No place is active"
 msgstr ""
 

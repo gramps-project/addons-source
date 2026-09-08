@@ -8,7 +8,7 @@ register(
     id="AncestorFill",
     name=_("AncestorFill"),
     description=_("Report on the filling of the tree"),
-    version = '1.0.26',
+    version = '1.0.27',
     gramps_target_version="6.1",
     include_in_listing=True,
     status=STABLE,

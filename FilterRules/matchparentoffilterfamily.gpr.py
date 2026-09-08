@@ -6,7 +6,7 @@ register(
     id="MatchParentOfFilterFamily",
     name=_("Parents of family filter"),
     description=_("Matches parent of family filter"),
-    version = '0.0.3',
+    version = '0.0.4',
     authors=["jjdup"],
     authors_email=["jeremi+gramps@dupin.fdn.fr"],
     gramps_target_version="6.1",

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,30 +17,109 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: AssociationsTool/associationstool.gpr.py:36
+#: AssociationsTool/associationstool.gpr.py:43
 msgid "Check Associations data"
 msgstr ""
 
-#: AssociationsTool/associationstool.gpr.py:37
-msgid "Will check the data on Association for people."
+#: AssociationsTool/associationstool.gpr.py:44
+msgid "Display all person Associations in a sortable, hotlinked table"
 msgstr ""
 
-#: AssociationsTool/associationstool.py:53
+#: AssociationsTool/associationstool.py:130
 msgid "Associations state tool"
 msgstr ""
 
-#: AssociationsTool/associationstool.py:80
-msgid "Name"
+#: AssociationsTool/associationstool.py:181
+#, python-format
+msgid "Error initializing data: %s"
 msgstr ""
 
-#: AssociationsTool/associationstool.py:81
-msgid "Type of link"
+#: AssociationsTool/associationstool.py:222
+#, python-format
+msgid "Error processing person %s: %s"
 msgstr ""
 
-#: AssociationsTool/associationstool.py:82
-msgid "Of"
+#: AssociationsTool/associationstool.py:252
+msgid "Processing associations..."
 msgstr ""
 
-#: AssociationsTool/associationstool.py:83
-msgid "Relationship Calculator"
+#: AssociationsTool/associationstool.py:257
+#, python-format
+msgid "Could not create progress dialog: %s"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:281
+#, python-format
+msgid "Processing %d of %d persons"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:347
+#, python-format
+msgid "Error displaying associations: %s"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:365
+#: AssociationsTool/associationstool.py:448
+msgid "Starting Name"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:366
+#: AssociationsTool/associationstool.py:449
+msgid "Calculated"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:368
+#: AssociationsTool/associationstool.py:451
+msgid "Associate"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:369
+#: AssociationsTool/associationstool.py:452
+msgid "Link Type"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:420
+msgid "_Help"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:427
+#: AssociationsTool/associationstool.py:459
+#, python-format
+msgid "Total associations found: %d"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:553
+msgid "Edit Starting Person"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:554
+msgid "Edit Associate Person"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:555
+msgid "Edit Association"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:557
+msgid "Copy row to clipboard"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:558
+msgid "Create Note from row"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:672
+msgid "Association:"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:673
+msgid "Starting Person"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:674
+msgid "Relationship"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:675
+msgid "Link type"
 msgstr ""

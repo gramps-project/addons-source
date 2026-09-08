@@ -37,7 +37,7 @@ register(
         "Person, Place, Family, or Source record"
     ),
     status=STABLE,
-    version = '1.10.20',
+    version = '1.10.21',
     fname="WebSearch.py",
     height=20,
     detached_width=400,

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,84 +25,240 @@ msgstr ""
 msgid "Run a special Gramps Python script"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:91
+#: GrampyScript/script_descriptions.py:44
+msgid "List All People"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:46
+msgid ""
+"Iterate over every person in the database and show their Gramps ID, given "
+"name, surname, and gender in the results table."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:51
+msgid "Filter By Surname"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:53
+msgid ""
+"List only the people whose surname matches a given value — a starting point "
+"for narrowing any report down by a condition."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:58
+msgid "Family Overview"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:60
+msgid ""
+"List every family together with the father, the mother, and how many "
+"children they have — a quick way to spot families that look incomplete."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:66
+msgid "Gender Breakdown (Pie Chart)"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:68
+msgid ""
+"Count how many people are male, female, or of unknown gender, then draw a "
+"pie chart of the totals. Check the Chart tab after running."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:74
+msgid "Age At Death Histogram"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:76
+msgid ""
+"For everyone with both a birth and a death event recorded, compute their age "
+"in whole years and draw a histogram of the distribution. Check the Chart tab "
+"after running."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:82
+msgid "Mark Unsourced People As Private"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:84
+msgid ""
+"Batch-edit example: find every person who has no citations attached and flag "
+"them as private, wrapped in begin_changes()/end_changes() so the edits "
+"happen inside a single, undoable transaction."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:91
+msgid "CSV-Ready People Report"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:93
+msgid ""
+"Build a simple tabular report — ID, name, gender, birth year — for every "
+"person. Once it runs, use Data > Save as CSV or Copy to clipboard to export "
+"the Table tab's contents."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:99
+msgid "Active Person Summary"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:101
+msgid ""
+"Show a compact family summary for the currently active person: their record, "
+"parents, spouse, and children."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:106
+msgid "Report On Selected People"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:108
+msgid ""
+"List just the people currently selected (highlighted) in the People view. "
+"Select some rows in the People view before running this script."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:114
+msgid "Find People Missing A Birth Date"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:116
+msgid ""
+"Data-quality check: list every person who has no recorded birth event, so "
+"you can prioritize research on those records."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:121
+msgid "Births Per Decade (Import Example)"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:123
+msgid ""
+"Counts births by decade, using a decade() function imported from "
+"script_helpers.py in this same folder — a template for sharing helper code "
+"between your own scripts with a plain 'import' statement."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:130
+msgid "Custom Filter Example"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:132
+msgid ""
+"Runs one of your own custom filters (from the Filters gramplet/editor) by "
+"name using custom_filter(). Change 'example filter' to the name of a filter "
+"you've already created; if the name doesn't match one, a warning shows up in "
+"the Output tab instead."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:140
+msgid "Delete Unused Repositories (Delete Example)"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:142
+msgid ""
+"Demonstrates delete(): removes any Repository record that nothing else in "
+"the tree refers to. Most trees have no unused repositories, so this is "
+"unlikely to actually delete anything — it's meant to show the pattern, "
+"wrapped in begin_changes()/end_changes() as a single undoable transaction."
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:88
 msgid "Load query from a .script file"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:97 GrampyScript/GrampyScript.py:127
-#: GrampyScript/GrampyScript.py:147
+#: GrampyScript/GrampyScript.py:94 GrampyScript/GrampyScript.py:155
+#: GrampyScript/GrampyScript.py:175
 msgid "_Cancel"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:97
+#: GrampyScript/GrampyScript.py:94
 msgid "Load"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:121
+#: GrampyScript/GrampyScript.py:149
 msgid "Save query to a .script file"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:127 GrampyScript/GrampyScript.py:147
-#: GrampyScript/GrampyScript.py:304
+#: GrampyScript/GrampyScript.py:155 GrampyScript/GrampyScript.py:175
+#: GrampyScript/GrampyScript.py:337
 msgid "Save"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:141
+#: GrampyScript/GrampyScript.py:169
 msgid "Download results as a CSV file"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:300
+#: GrampyScript/GrampyScript.py:333
 msgid "Script"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:302
+#: GrampyScript/GrampyScript.py:335
 msgid "New"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:303
+#: GrampyScript/GrampyScript.py:336
 msgid "Open..."
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:305
+#: GrampyScript/GrampyScript.py:338
 msgid "Save as..."
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:317
+#: GrampyScript/GrampyScript.py:339
+msgid "Help"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:354
 msgid "Data"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:319
+#: GrampyScript/GrampyScript.py:356
 msgid "Save as CSV"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:320
+#: GrampyScript/GrampyScript.py:357
 msgid "Copy to clipboard"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:382
-msgid "Table"
-msgstr ""
-
-#: GrampyScript/GrampyScript.py:386
-msgid "Output"
-msgstr ""
-
-#: GrampyScript/GrampyScript.py:395
-msgid "Chart"
-msgstr ""
-
-#: GrampyScript/GrampyScript.py:400
+#: GrampyScript/GrampyScript.py:424
 msgid "Execute <Alt+Enter>"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:402
+#: GrampyScript/GrampyScript.py:426
 msgid "Execute the script"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:416
-msgid "Ready..."
+#: GrampyScript/GrampyScript.py:443
+msgid "Table"
 msgstr ""
 
-#: GrampyScript/GrampyScript.py:1028
+#: GrampyScript/GrampyScript.py:447
+msgid "Output"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:456
+msgid "Chart"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:480 GrampyScript/GrampyScript.py:551
+msgid "Ready... (Tab for completions)"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:505
+msgid "Untitled"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:532
+msgid "Save Changes?"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:534
+msgid ""
+"If you continue without saving, the changes you have made to this script "
+"will be lost."
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:1332
 msgid "Gram.py Script Edited Data"
 msgstr ""

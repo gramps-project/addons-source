@@ -9,7 +9,7 @@ register(
     id="biographyquickview",
     name=_("Biography"),
     description=_("Display a text biography"),
-    version = '1.0.20',
+    version = '1.0.21',
     gramps_target_version="6.1",
     status=STABLE,
     fname="BiographyQuickview.py",

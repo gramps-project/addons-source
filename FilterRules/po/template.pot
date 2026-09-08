@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,6 +51,33 @@ msgstr ""
 msgid "Filter rule that matches relatives by degrees of separation"
 msgstr ""
 
+#: FilterRules/matcheventfilterrole.py:55
+#: FilterRules/familieswitheventfiltermatch.py:44
+msgid "Event filter name:"
+msgstr ""
+
+#: FilterRules/matcheventfilterrole.py:55
+#: FilterRules/matchpersonfilterrole.py:69
+msgid "Include Family events:"
+msgstr ""
+
+#: FilterRules/matcheventfilterrole.py:55
+#: FilterRules/matchpersonfilterrole.py:69
+msgid "Role:"
+msgstr ""
+
+#: FilterRules/matcheventfilterrole.py:56
+msgid "Persons with events matching the <event filter> with role"
+msgstr ""
+
+#: FilterRules/matcheventfilterrole.gpr.py:7
+msgid "People from event with role"
+msgstr ""
+
+#: FilterRules/matcheventfilterrole.gpr.py:8
+msgid "Matches people of event filter with role"
+msgstr ""
+
 #: FilterRules/hassourcefilter.gpr.py:28
 msgid "Source matching parameters"
 msgstr ""
@@ -68,7 +95,16 @@ msgid "Matches people who have more than one set of parents"
 msgstr ""
 
 #: FilterRules/multipleparents.py:57
+#: FilterRules/matchparentoffilterfamily.py:61
 msgid "Family filters"
+msgstr ""
+
+#: FilterRules/matchparentoffilterfamily.py:59
+msgid "Family filter name:"
+msgstr ""
+
+#: FilterRules/matchparentoffilterfamily.py:60
+msgid "Parents of <filter> family match"
 msgstr ""
 
 #: FilterRules/associationsofpersonmatch.py:65
@@ -137,10 +173,6 @@ msgstr ""
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:26
 msgid "Matches families that are matched by an event filter"
-msgstr ""
-
-#: FilterRules/familieswitheventfiltermatch.py:44
-msgid "Event filter name:"
 msgstr ""
 
 #: FilterRules/familieswitheventfiltermatch.py:47
@@ -221,14 +253,6 @@ msgstr ""
 msgid "Person filter name:"
 msgstr ""
 
-#: FilterRules/matchpersonfilterrole.py:69
-msgid "Include Family events:"
-msgstr ""
-
-#: FilterRules/matchpersonfilterrole.py:69
-msgid "Role:"
-msgstr ""
-
 #: FilterRules/matchpersonfilterrole.py:70
 msgid "Events of persons matching the <person filter>"
 msgstr ""
@@ -252,6 +276,14 @@ msgstr ""
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
 msgid "The active Person"
+msgstr ""
+
+#: FilterRules/matchparentoffilterfamily.gpr.py:7
+msgid "Parents of family filter"
+msgstr ""
+
+#: FilterRules/matchparentoffilterfamily.gpr.py:8
+msgid "Matches parent of family filter"
 msgstr ""
 
 #: FilterRules/hassourcefilter.py:53

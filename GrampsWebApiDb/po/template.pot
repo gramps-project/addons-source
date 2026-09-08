@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-09 10:02-0700\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -139,7 +139,7 @@ msgid ""
 "matching, correctly-named GrampsWebApiDb Family Tree for it."
 msgstr ""
 
-#: GrampsWebApiDb/grampswebapidb.py:262
+#: GrampsWebApiDb/grampswebapidb.py:447
 msgid ""
 "The account authenticating via GRAMPS_WEB_API_KEY does not have permission "
 "on the server for this operation (HTTP 403 Forbidden). Generate a key for an "
@@ -147,7 +147,7 @@ msgid ""
 "grant this one access."
 msgstr ""
 
-#: GrampsWebApiDb/grampswebapidb.py:422
+#: GrampsWebApiDb/grampswebapidb.py:656
 #, python-format
 msgid ""
 "This Family Tree is named \"%(actual)s\", but GRAMPS_WEB_API_KEY currently "
@@ -158,11 +158,30 @@ msgid ""
 "account's."
 msgstr ""
 
-#: GrampsWebApiDb/grampswebapidb.py:550
+#: GrampsWebApiDb/grampswebapidb.py:703
+#, python-format
+msgid ""
+"The account authenticating via GRAMPS_WEB_API_KEY is missing server "
+"permission(s) this addon requires: %(missing)s. Grant it at least the "
+"\"%(role)s\" role on the server (or ask an administrator to), then reopen "
+"this Family Tree. Opening it as-is would leave the local mirror silently "
+"incomplete or unable to save changes back."
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.py:741
+#, python-format
+msgid ""
+"This server runs Gramps %(actual)s, but this addon needs a server running "
+"Gramps %(required)s or newer: older servers serialize their transaction "
+"history in a format it cannot read. Upgrade the Gramps installation behind "
+"the Gramps Web API server (or ask its administrator to)."
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.py:1008
 msgid "Retry local change after server conflict"
 msgstr ""
 
-#: GrampsWebApiDb/grampswebapidb.py:668
+#: GrampsWebApiDb/grampswebapidb.py:1228
 msgid "Clear local mirror before full resync"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-06 07:24+0200\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,13 +18,146 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:204
-#: GrampsWebSync/grampswebsync.py:269
+#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:230
+#: GrampsWebSync/grampswebsync.py:295
 msgid "Gramps Web Sync"
 msgstr ""
 
 #: GrampsWebSync/grampswebsync.gpr.py:30
 msgid "Synchronizes a local database with a Gramps Web instance."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:272
+msgid "_Cancel"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:274
+msgid "_Close"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:275
+msgid "_Try again"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:276
+msgid "C_onnect"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:277
+msgid "_Apply"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:371
+msgid "Forget this server?"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:373
+msgid ""
+"The address, user name and password stored for this server will be removed, "
+"along with the record of when this family tree last synchronized with it. "
+"The next synchronization will compare the two trees from scratch."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:378
+msgid "Forget"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:379
+msgid "Cancel"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:508
+msgid ""
+"These credentials were last used with a different family tree. Check the "
+"server before continuing."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:585
+msgid "Change server…"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:620
+msgid "Server URL:"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:622
+msgid "Username:"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:623
+msgid "Password:"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:627
+msgid "Remember password"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:639
+msgid "Forget this server"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:670
+msgid "About this tool"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:674
+msgid "Open the online manual"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:687
+msgid ""
+"This tool allows to synchronize the currently opened family tree with a "
+"remote family tree served by Gramps Web.\n"
+"\n"
+"The tool assumes that the two trees are derivatives of each other, i.e. one "
+"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
+"\n"
+"After successful synchronization, the two trees will be identical. "
+"Modifications will be propagated based on timestamps. You will be prompted "
+"for confirmation before any changes are made to the local or remote trees.\n"
+"\n"
+"If you instead want to merge two significantly different trees with the "
+"option to make manual modifications, use the Import Merge Tool instead."
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:758
+msgid "Error:"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:785 GrampsWebSync/grampswebsync.py:1065
+msgid "Warning:"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:947
+msgid "Sync mode:"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:976
+msgid "Change"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:976
+msgid "Name"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:976
+msgid "ID"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:1109
+msgid "Details"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:1114
+msgid "Copy"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:1129
+msgid "Synchronization complete"
+msgstr ""
+
+#: GrampsWebSync/grampswebsync.py:1136
+msgid "Synchronization failed"
 msgstr ""
 
 #: GrampsWebSync/presentation.py:126
@@ -397,137 +530,4 @@ msgstr[1] ""
 #: GrampsWebSync/presentation.py:807
 #, python-format
 msgid "Last synced on %s"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:246
-msgid "_Cancel"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:248
-msgid "_Close"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:249
-msgid "_Try again"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:250
-msgid "C_onnect"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:251
-msgid "_Apply"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:345
-msgid "Forget this server?"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:347
-msgid ""
-"The address, user name and password stored for this server will be removed, "
-"along with the record of when this family tree last synchronized with it. "
-"The next synchronization will compare the two trees from scratch."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:352
-msgid "Forget"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:353
-msgid "Cancel"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:480
-msgid ""
-"These credentials were last used with a different family tree. Check the "
-"server before continuing."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:556
-msgid "Change server…"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:591
-msgid "Server URL:"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:593
-msgid "Username:"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:594
-msgid "Password:"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:598
-msgid "Remember password"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:610
-msgid "Forget this server"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:641
-msgid "About this tool"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:645
-msgid "Open the online manual"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:658
-msgid ""
-"This tool allows to synchronize the currently opened family tree with a "
-"remote family tree served by Gramps Web.\n"
-"\n"
-"The tool assumes that the two trees are derivatives of each other, i.e. one "
-"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
-"\n"
-"After successful synchronization, the two trees will be identical. "
-"Modifications will be propagated based on timestamps. You will be prompted "
-"for confirmation before any changes are made to the local or remote trees.\n"
-"\n"
-"If you instead want to merge two significantly different trees with the "
-"option to make manual modifications, use the Import Merge Tool instead."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:729
-msgid "Error:"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:756 GrampsWebSync/grampswebsync.py:1012
-msgid "Warning:"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:901
-msgid "Sync mode:"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:929
-msgid "Change"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:929
-msgid "Name"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:929
-msgid "ID"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:1056
-msgid "Details"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:1063
-msgid "Copy"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:1077
-msgid "Synchronization complete"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:1084
-msgid "Synchronization failed"
 msgstr ""

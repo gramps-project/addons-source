@@ -24,7 +24,7 @@ register(
     id="FamilyRelationshipTool",
     name=_("Family Relationship Tool"),
     description=_("Mass-edit the family relationship type for a group of families."),
-    version = '1.1.13',
+    version = '1.1.14',
     gramps_target_version="6.1",
     status=STABLE,
     fname="FamilyRelationshipTool.py",

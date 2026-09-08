@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -212,31 +212,31 @@ msgstr ""
 msgid "_Edit"
 msgstr ""
 
-#: Form/form.py:79
+#: Form/form.py:78
 msgid "Order"
 msgstr ""
 
-#: Form/form.py:82
+#: Form/form.py:81
 msgid "Form"
 msgstr ""
 
-#: Form/form.py:87
+#: Form/form.py:86
 msgid "Groom"
 msgstr ""
 
-#: Form/form.py:88
+#: Form/form.py:87
 msgid "Bride"
 msgstr ""
 
-#: Form/form.py:174
+#: Form/form.py:173
 msgid "XML syntax error in Form definition file"
 msgstr ""
 
-#: Form/form.py:185
+#: Form/form.py:184
 msgid "Failed to read Form definition file"
 msgstr ""
 
-#: Form/form.py:194
+#: Form/form.py:193
 msgid "Invalid Form definition file"
 msgstr ""
 

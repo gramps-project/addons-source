@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,199 +50,199 @@ msgstr ""
 msgid "Places tool"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:408
+#: PlaceCompletion/PlaceCompletion.py:410
 msgid "Missing regex groups in match lat/lon"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:409
+#: PlaceCompletion/PlaceCompletion.py:412
 #, python-format
 msgid ""
 "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:419
+#: PlaceCompletion/PlaceCompletion.py:424
 msgid "Non valid regex for match lat/lon"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:420
+#: PlaceCompletion/PlaceCompletion.py:425
 msgid "Non valid regular expression given to find lat/lon. Quiting."
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:479
+#: PlaceCompletion/PlaceCompletion.py:484
 msgid "Finding Places and appropriate changes"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:481
+#: PlaceCompletion/PlaceCompletion.py:486
 msgid "Filtering"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:491
+#: PlaceCompletion/PlaceCompletion.py:496
 msgid "Loading lat/lon file in Memory..."
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:497
+#: PlaceCompletion/PlaceCompletion.py:502
 msgid "Examining places"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:520
+#: PlaceCompletion/PlaceCompletion.py:525
 msgid "City"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:523
+#: PlaceCompletion/PlaceCompletion.py:528
 msgid "State"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:526
+#: PlaceCompletion/PlaceCompletion.py:531
 msgid "Country"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:685
+#: PlaceCompletion/PlaceCompletion.py:690
 msgid "Set Tag"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:687
+#: PlaceCompletion/PlaceCompletion.py:692
 msgid "Doing Place changes"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:731
+#: PlaceCompletion/PlaceCompletion.py:736
 msgid "No place record was modified."
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:733
+#: PlaceCompletion/PlaceCompletion.py:738
 msgid "1 place record was modified."
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:735
+#: PlaceCompletion/PlaceCompletion.py:740
 #, python-format
 msgid "%d place records were modified."
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:736
+#: PlaceCompletion/PlaceCompletion.py:741
 msgid "Change places"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:808
-#: PlaceCompletion/PlaceCompletion.py:814
+#: PlaceCompletion/PlaceCompletion.py:813
 #: PlaceCompletion/PlaceCompletion.py:819
-#: PlaceCompletion/PlaceCompletion.py:825
+#: PlaceCompletion/PlaceCompletion.py:824
+#: PlaceCompletion/PlaceCompletion.py:830
 msgid "Cannot open file"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:809
+#: PlaceCompletion/PlaceCompletion.py:814
 msgid "The selected file is a directory, not a file."
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:815
+#: PlaceCompletion/PlaceCompletion.py:820
 msgid "You do not have read access to the selected file."
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:820
+#: PlaceCompletion/PlaceCompletion.py:825
 msgid "The file you want to access is not a regular file."
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:826
+#: PlaceCompletion/PlaceCompletion.py:831
 msgid "The file does not exist."
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:858
+#: PlaceCompletion/PlaceCompletion.py:863
 msgid "Problem reading file"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:970
-#: PlaceCompletion/PlaceCompletion.py:982
+#: PlaceCompletion/PlaceCompletion.py:975
+#: PlaceCompletion/PlaceCompletion.py:987
 #, python-format
 msgid "invalid lat or lon value, %(lat)s, %(lon)s"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1135
+#: PlaceCompletion/PlaceCompletion.py:1140
 msgid "No lat/lon conversion"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1136
+#: PlaceCompletion/PlaceCompletion.py:1141
 msgid "All in degree notation"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1137
+#: PlaceCompletion/PlaceCompletion.py:1142
 msgid "All in decimal notation"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1138
+#: PlaceCompletion/PlaceCompletion.py:1143
 msgid "Correct -50° in 50°S"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1142
+#: PlaceCompletion/PlaceCompletion.py:1147
 msgid "No changes"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1143
+#: PlaceCompletion/PlaceCompletion.py:1148
 msgid "City[, State]"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1145
+#: PlaceCompletion/PlaceCompletion.py:1150
 msgid "City,PostalCode,Country"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1147
+#: PlaceCompletion/PlaceCompletion.py:1152
 msgid "City[(Street;Locality;Parish)],PostalCode,Country"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1149
+#: PlaceCompletion/PlaceCompletion.py:1154
 msgid "TitleStart [, City] [, State]"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1151
+#: PlaceCompletion/PlaceCompletion.py:1156
 msgid "TitleStart [, City] [, County] [, State] [, Country]"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1153
+#: PlaceCompletion/PlaceCompletion.py:1158
 msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1177
+#: PlaceCompletion/PlaceCompletion.py:1182
 msgid "Don't search"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1180
+#: PlaceCompletion/PlaceCompletion.py:1185
 msgid "GeoNames country file, city search"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1185
+#: PlaceCompletion/PlaceCompletion.py:1190
 msgid "GeoNames country file, city localized variants search"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1190
+#: PlaceCompletion/PlaceCompletion.py:1195
 msgid "GeoNames country file, county/city search"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1202
+#: PlaceCompletion/PlaceCompletion.py:1207
 msgid "GeoNames country file, title begin, general search"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1207
+#: PlaceCompletion/PlaceCompletion.py:1212
 msgid "GeoNames USA state file, city search"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1221
+#: PlaceCompletion/PlaceCompletion.py:1226
 msgid "GNS Geonet country file, city search"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1228
+#: PlaceCompletion/PlaceCompletion.py:1233
 msgid "GNS Geonet country file, county/city search"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1236
+#: PlaceCompletion/PlaceCompletion.py:1241
 msgid "GNS Geonet country file, title begin, general search"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1244
+#: PlaceCompletion/PlaceCompletion.py:1249
 msgid "Wikipedia CSV Dump"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1332
+#: PlaceCompletion/PlaceCompletion.py:1337
 msgid "All Places"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1335
+#: PlaceCompletion/PlaceCompletion.py:1340
 msgid "No Latitude/Longitude given"
 msgstr ""
 
@@ -336,13 +336,13 @@ msgid ""
 "title format:"
 msgstr ""
 
-#: PlaceCompletion/placecompletion.glade:730
+#: PlaceCompletion/placecompletion.glade:739
 msgid ""
 "Available variables: city, street, locality, parish, county, state, country, "
 "postal_code"
 msgstr ""
 
-#: PlaceCompletion/placecompletion.glade:820
+#: PlaceCompletion/placecompletion.glade:829
 msgid ""
 "Delete to delete a row, Double-click on the row to edit place with changes "
 "pre-entered, \n"

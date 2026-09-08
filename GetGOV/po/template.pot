@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,22 +36,26 @@ msgid "GetGOV error: %s"
 msgstr ""
 
 #: GetGOV/getgov.py:421
+msgid "GOV link"
+msgstr ""
+
+#: GetGOV/getgov.py:428
 #, python-format
 msgid "GOV error on id %s with code: "
 msgstr ""
 
-#: GetGOV/getgov.py:555
+#: GetGOV/getgov.py:562
 #, python-format
 msgctxt "end"
 msgid "from %(begin)s to %(end)s"
 msgstr ""
 
-#: GetGOV/getgov.py:557
+#: GetGOV/getgov.py:564
 #, python-format
 msgid "after %s"
 msgstr ""
 
-#: GetGOV/getgov.py:559
+#: GetGOV/getgov.py:566
 #, python-format
 msgid "before %s"
 msgstr ""

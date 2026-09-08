@@ -4,7 +4,7 @@ register(
     name=_("Interactive Family Tree"),
     description=_("Opens an interactive tree in the browser"),
     status=STABLE,
-    version = '1.1.16',
+    version = '1.1.17',
     fname="topola.py",
     gramps_target_version="6.1",
     authors=["Przemek Więch"],
