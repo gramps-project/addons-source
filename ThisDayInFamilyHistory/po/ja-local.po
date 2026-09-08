@@ -1,0 +1,409 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "This Day in Family History"
+msgstr "今日の家族史"
+
+msgid ""
+"A configurable program that shows you the connected events from your family "
+"tree that match today's day and month."
+msgstr ""
+"今日の日付と月に一致する家系図の関連イベントを表示する設定可能なプログラム。"
+
+msgid "Database is not open, can't check history right now."
+msgstr "データベースが開いていないため、履歴を確認できません。"
+
+#, python-format
+msgid "On %(date)s in family history ...\n"
+msgstr "%(date)s の家族史 ...\n"
+
+msgid "... nothing happened!  Check again tomorrow!"
+msgstr "... 何も起こりませんでした！ 明日もう一度確認してください！"
+
+msgid "Report only living tree members"
+msgstr "存命のツリーメンバーのみを報告"
+
+msgid "Show these events"
+msgstr "これらのイベントを表示"
+
+msgid "Sort by "
+msgstr "並べ替え "
+
+msgid "Sort in ascending order?"
+msgstr "昇順で並べ替えますか？"
+
+msgid "January"
+msgstr "1月"
+
+msgid "February"
+msgstr "2月"
+
+msgid "March"
+msgstr "3月"
+
+msgid "April"
+msgstr "4月"
+
+msgid "May"
+msgstr "5月"
+
+msgid "June"
+msgstr "6月"
+
+msgid "July"
+msgstr "7月"
+
+msgid "August"
+msgstr "8月"
+
+msgid "September"
+msgstr "9月"
+
+msgid "October"
+msgstr "10月"
+
+msgid "November"
+msgstr "11月"
+
+msgid "December"
+msgstr "12月"
+
+msgid "Person Name"
+msgstr "人物名"
+
+msgid "Event Year"
+msgstr "イベント年"
+
+msgid "gregorian"
+msgstr "グレゴリオ暦"
+
+msgid "Unknown father/partner"
+msgstr "不明な父親/パートナー"
+
+msgid "Unknown mother/partner"
+msgstr "不明な母親/パートナー"
+
+msgid " and "
+msgstr " と "
+
+msgid "unknown participant"
+msgstr "不明な参加者"
+
+msgid "unknown location"
+msgstr "不明な場所"
+
+#, python-format
+msgid "%(male_name)s was adopted in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で養子になりました。"
+
+#, python-format
+msgid "%(female_name)s was adopted in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で養子になりました。"
+
+#, python-format
+msgid "%(male_name)s was christened in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で洗礼式を受けました。"
+
+#, python-format
+msgid "%(female_name)s was christened in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で洗礼式を受けました。"
+
+#, python-format
+msgid "%(male_name)s was married in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で結婚しました。"
+
+#, python-format
+msgid "%(female_name)s was married in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で結婚しました。"
+
+#, python-format
+msgid "%(male_name)s received an annulment in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で婚姻無効を受けました。"
+
+#, python-format
+msgid "%(female_name)s received an annulment in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で婚姻無効を受けました。"
+
+#, python-format
+msgid "%(male_name)s was baptized in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で洗礼を受けました。"
+
+#, python-format
+msgid "%(female_name)s was baptized in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で洗礼を受けました。"
+
+#, python-format
+msgid "%(male_name)s became a bar mitzvah in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s でバル・ミツワーになりました。"
+
+#, python-format
+msgid "%(female_name)s became a bar mitzvah in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s は %(year)s に %(place)s でバル・ミツワーになりました。"
+
+#, python-format
+msgid "%(male_name)s became a bat mitzvah in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s でバト・ミツワーになりました。"
+
+#, python-format
+msgid "%(female_name)s became a bat mitzvah in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s は %(year)s に %(place)s でバト・ミツワーになりました。"
+
+#, python-format
+msgid "%(male_name)s was born in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で生まれました。"
+
+#, python-format
+msgid "%(female_name)s was born in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で生まれました。"
+
+#, python-format
+msgid "%(male_name)s was blessed in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で祝福を受けました。"
+
+#, python-format
+msgid "%(female_name)s was blessed in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で祝福を受けました。"
+
+#, python-format
+msgid "%(male_name)s was buried in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で埋葬されました。"
+
+#, python-format
+msgid "%(female_name)s was buried in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で埋葬されました。"
+
+#, python-format
+msgid "%(male_name)s participated in a census in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で国勢調査に参加しました。"
+
+#, python-format
+msgid "%(female_name)s participated in a census in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で国勢調査に参加しました。"
+
+#, python-format
+msgid "%(male_name)s was confirmed in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で堅信礼を受けました。"
+
+#, python-format
+msgid "%(female_name)s was confirmed in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で堅信礼を受けました。"
+
+#, python-format
+msgid "%(male_name)s was cremated in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で火葬されました。"
+
+#, python-format
+msgid "%(female_name)s was cremated in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で火葬されました。"
+
+#, python-format
+msgid "%(male_name)s died in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で亡くなりました。"
+
+#, python-format
+msgid "%(female_name)s died in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で亡くなりました。"
+
+#, python-format
+msgid "%(male_name)s was awarded a degree in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で学位を授与されました。"
+
+#, python-format
+msgid "%(female_name)s was awarded a degree in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で学位を授与されました。"
+
+#, python-format
+msgid "%(male_name)s was granted a divorce in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で離婚が認められました。"
+
+#, python-format
+msgid "%(female_name)s was granted a divorce in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で離婚が認められました。"
+
+#, python-format
+msgid "%(male_name)s filed for divorce in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で離婚を申請しました。"
+
+#, python-format
+msgid "%(female_name)s filed for divorce in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で離婚を申請しました。"
+
+#, python-format
+msgid "%(male_name)s was elected in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で選出されました。"
+
+#, python-format
+msgid "%(female_name)s was elected in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で選出されました。"
+
+#, python-format
+msgid "%(male_name)s emigrated in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s から移住しました。"
+
+#, python-format
+msgid "%(female_name)s emigrated in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s から移住しました。"
+
+#, python-format
+msgid "%(male_name)s became engaged in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で婚約しました。"
+
+#, python-format
+msgid "%(female_name)s became engaged in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で婚約しました。"
+
+#, python-format
+msgid "%(male_name)s received first communion in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で初聖体を受けました。"
+
+#, python-format
+msgid "%(female_name)s received first communion in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で初聖体を受けました。"
+
+#, python-format
+msgid "%(male_name)s graduated in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で卒業しました。"
+
+#, python-format
+msgid "%(female_name)s graduated in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で卒業しました。"
+
+#, python-format
+msgid "%(male_name)s immigrated in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s に移住しました。"
+
+#, python-format
+msgid "%(female_name)s immigrated in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s に移住しました。"
+
+#, python-format
+msgid "%(male_name)s got married in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で結婚しました。"
+
+#, python-format
+msgid "%(female_name)s got married in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で結婚しました。"
+
+#, python-format
+msgid "%(male_name)s joined as a family in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で家族に加わりました。"
+
+#, python-format
+msgid "%(female_name)s joined as a family in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で家族に加わりました。"
+
+#, python-format
+msgid "%(male_name)s entered a civil union in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s でシビルユニオンを結びました。"
+
+#, python-format
+msgid "%(female_name)s entered a civil union in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s は %(year)s に %(place)s でシビルユニオンを結びました。"
+
+#, python-format
+msgid "%(male_name)s had a custom marriage in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で任意の結婚をしました。"
+
+#, python-format
+msgid "%(female_name)s had a custom marriage in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で任意の結婚をしました。"
+
+#, python-format
+msgid "%(male_name)s announced a marriage banns in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で結婚予告を発表しました。"
+
+#, python-format
+msgid "%(female_name)s announced a marriage banns in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で結婚予告を発表しました。"
+
+#, python-format
+msgid "%(male_name)s entered a marriage contract in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で婚姻契約を結びました。"
+
+#, python-format
+msgid "%(female_name)s entered a marriage contract in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で婚姻契約を結びました。"
+
+#, python-format
+msgid "%(male_name)s obtained a marriage license in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で婚姻許可証を取得しました。"
+
+#, python-format
+msgid "%(female_name)s obtained a marriage license in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で婚姻許可証を取得しました。"
+
+#, python-format
+msgid "%(male_name)s obtained a marriage settlement in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で婚姻契約を結びました。"
+
+#, python-format
+msgid ""
+"%(female_name)s obtained a marriage settlement in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で婚姻契約を結びました。"
+
+#, python-format
+msgid "%(male_name)s entered military service in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で兵役に就きました。"
+
+#, python-format
+msgid "%(female_name)s entered military service in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で兵役に就きました。"
+
+#, python-format
+msgid "%(male_name)s became naturalized in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で帰化しました。"
+
+#, python-format
+msgid "%(female_name)s became naturalized in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で帰化しました。"
+
+#, python-format
+msgid "%(male_name)s had a title bestowed in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で称号を授与されました。"
+
+#, python-format
+msgid "%(female_name)s had a title bestowed in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で称号を授与されました。"
+
+#, python-format
+msgid "%(male_name)s was ordained in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で叙階されました。"
+
+#, python-format
+msgid "%(female_name)s was ordained in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で叙階されました。"
+
+#, python-format
+msgid "%(male_name)s was granted probate in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で検認が認められました。"
+
+#, python-format
+msgid "%(female_name)s was granted probate in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で検認が認められました。"
+
+#, python-format
+msgid "%(male_name)s retired in %(year)s at %(place)s."
+msgstr "%(male_name)s は %(year)s に %(place)s で退職しました。"
+
+#, python-format
+msgid "%(female_name)s retired in %(year)s at %(place)s."
+msgstr "%(female_name)s は %(year)s に %(place)s で退職しました。"

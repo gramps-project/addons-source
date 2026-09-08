@@ -1,0 +1,313 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "寫入 {target_path} 失敗：{message}"
+
+#, python-format
+msgid "Failed to create directory structure : %s"
+msgstr "無法建立目錄結構：%s"
+
+#, python-format
+msgid "Failed to copy web files : %s"
+msgstr "無法複製網頁檔案：%s"
+
+msgid "Ancestral Collapsible Tree Options"
+msgstr "可收合的祖先樹狀圖選項"
+
+msgid "Include Generations"
+msgstr "包含世代數"
+
+msgid "Male Background Color"
+msgstr "男性背景色彩"
+
+msgid "RGB-color for male box background."
+msgstr "男性方塊背景的 RGB 顏色。"
+
+msgid "Male Expandable Background Color"
+msgstr "可展開男性方塊的背景色彩"
+
+msgid "RGB-color for male expandable box background."
+msgstr "可展開男性方塊背景的 RGB 色彩。"
+
+msgid "Female Background"
+msgstr "女性背景"
+
+msgid "RGB-color for female box background."
+msgstr "女性方塊背景的 RGB 色彩。"
+
+msgid "Female Expandable Background"
+msgstr "可展開女性方塊的背景"
+
+msgid "RGB-color for female expandable box background."
+msgstr "可展開女性方塊背景的 RGB 色彩。"
+
+msgid "The destination path for generated files."
+msgstr "產生檔案的目的地路徑。"
+
+msgid "The destination file name for html content."
+msgstr "HTML 內容的目的檔案名稱。"
+
+msgid "Ancestral Fan Chart"
+msgstr "祖先扇形圖"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Fan Chart from the D3.js JavaScript library."
+msgstr "產生網頁，以 D3.js JavaScript 函式庫的扇形圖呈現祖先圖 (SVG)。"
+
+#, python-format
+msgctxt "spouse"
+msgid "See %(reference)s : %(spouse)s"
+msgstr "參見 %(reference)s：%(spouse)s"
+
+msgid "Generating report..."
+msgstr "正在產生報告..."
+
+msgid "Descendant Indented Tree"
+msgstr "後代縮排樹狀圖"
+
+msgid "Invalid Destination Directory"
+msgstr "目的地目錄無效"
+
+#, python-format
+msgid ""
+"Destinaton diretory %s does not exist\n"
+"Do you want to attempt to create it?"
+msgstr ""
+"目的地目錄 %s 不存在\n"
+"要嘗試建立嗎？"
+
+#, python-brace-format
+msgid "Failed to create {target_path}: {message}"
+msgstr "無法建立 {target_path}：{message}"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"目的地檔案 %s 已存在。\n"
+"要覆寫嗎？"
+
+msgid "Default View"
+msgstr "預設檢視"
+
+msgid "Expand All"
+msgstr "全部展開"
+
+msgid "Include contraction level"
+msgstr "包含收合層級"
+
+msgid "The number of descendant levels to contract on initial display."
+msgstr "初始顯示時要摺疊的後代層級數。"
+
+msgid "The font size in pixels for each node."
+msgstr "各節點的字型大小，單位為像素。"
+
+msgid "Whether to show duplicate family trees in the report."
+msgstr "是否在報告中顯示重複的家族樹。"
+
+msgid "Expanded Row Background Color"
+msgstr "已展開列的背景色彩"
+
+msgid "RGB-color for expanded row background."
+msgstr "已展開列背景的 RGB 色彩。"
+
+msgid "Expandable Background Color"
+msgstr "可展開項目的背景色彩"
+
+msgid "RGB-color for expandable row background."
+msgstr "可展開列背景的 RGB 顏色。"
+
+msgid "Non-Expandable Background Color"
+msgstr "無法展開項目的背景色彩"
+
+msgid "RGB-color for non-expandable row background."
+msgstr "無法展開列背景的 RGB 顏色。"
+
+msgid "Include records marked private"
+msgstr "包含標示為私密的記錄"
+
+msgid "Whether to include private objects."
+msgstr "是否包含私密物件。"
+
+msgid "Include Last Name Only"
+msgstr "僅包含姓氏"
+
+msgid "Include Full Name Only"
+msgstr "只包含全名"
+
+msgid "How to handle living people."
+msgstr "在世人物的處理方式。"
+
+msgid "Whether or not to include people who may have recently died."
+msgstr "是否納入可能最近過世的人物。"
+
+msgid "Navigation"
+msgstr "導覽"
+
+msgid "Contraction/Expansion mechanism"
+msgstr "收合／展開方式"
+
+msgid "Entire node."
+msgstr "整個節點。"
+
+msgid "Arrow images at start of node."
+msgstr "節點開頭的箭頭圖示。"
+
+msgid "Plus/Minus images at start of node."
+msgstr "節點開頭的加號／減號圖示。"
+
+msgid "Where to click to expand/contract nodes."
+msgstr "按一下哪個位置可展開／收合節點。"
+
+msgid "Auto-generate HREF links for nodes"
+msgstr "自動為節點產生 HREF 連結"
+
+msgid "Whether to auto-generate HTML links for each node on the report."
+msgstr "是否為報告中的每個節點自動產生 HTML 連結。"
+
+msgid "URL prefix path."
+msgstr "網址前綴路徑。"
+
+msgid "URL prefix to apply to each auto-generated HREF link."
+msgstr "套用至每個自動產生的 HREF 連結的網址前綴。"
+
+msgid "URL file extension"
+msgstr "網址副檔名"
+
+msgid "No file extension."
+msgstr "不加副檔名。"
+
+msgid ".html"
+msgstr ".html"
+
+msgid ".htm"
+msgstr ".htm"
+
+msgid ".shtml"
+msgstr ".shtml"
+
+msgid ".php"
+msgstr ".php"
+
+msgid ".php3"
+msgstr ".php3"
+
+msgid ".cgi"
+msgstr ".cgi"
+
+msgid "URL file name delimeter"
+msgstr "網址檔名分隔符號"
+
+msgid "Remove all whitespace."
+msgstr "移除所有空白字元。"
+
+msgid "Replace whitespace with dash(-)."
+msgstr "以連字號 (-) 取代空白。"
+
+msgid "Replace whitespace with underscore(_)"
+msgstr "以底線 (_) 取代空白"
+
+msgid "What to use as file name delimiter replacing whitespace."
+msgstr "檔名中用來取代空白的分隔符號。"
+
+msgid "Generations to generate HREF links"
+msgstr "產生超連結世代數"
+
+msgid "The number of generations to generate HREF links."
+msgstr "產生超連結的世代數。"
+
+msgid "Exclude persons who died before (years)"
+msgstr "排除未滿指定年齡即逝世的人物 (歲)"
+
+msgid ""
+"Whether to generate links for people who died in infancy, -1 excludes nobody."
+msgstr "是否為嬰兒時期夭折的人物產生連結，-1 表示不排除任何人。"
+
+msgid "Exclude center person"
+msgstr "排除中心人物"
+
+msgid "Whether or not to generate links for center person."
+msgstr "是否為中心人物產生連結。"
+
+msgid "Exclude Spouses"
+msgstr "排除配偶"
+
+msgid "Whether or not to generate links for spouses."
+msgstr "是否為配偶產生連結。"
+
+msgid "Biography Content"
+msgstr "傳記內容"
+
+msgid "Show biography tooltips"
+msgstr "顯示傳記工具提示"
+
+msgid "Whether to show biography tooltips when hovering over a node."
+msgstr "是否在游標移到節點上時顯示傳記工具提示。"
+
+msgid "Text Color"
+msgstr "文字色彩"
+
+msgid "RGB-color for biography text."
+msgstr "傳記文字的 RGB 色彩。"
+
+msgid "RGB-color for biography tooltip."
+msgstr "傳記工具提示的 RGB 色彩。"
+
+msgid "Header Font size"
+msgstr "標題字型大小"
+
+msgid "The font size in pixels for biography header text."
+msgstr "傳記標題文字的字型大小，單位為像素。"
+
+msgid "Body Font size"
+msgstr "內文字型大小"
+
+msgid "The font size in pixels for biography body text."
+msgstr "傳記內文文字的字型大小（以像素為單位）。"
+
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"產生網頁，以 D3.js JavaScript 函式庫的可收合縮排樹狀布局呈現後代圖 (SVG)。"
+
+msgid "Ancestral Fan Chart Options"
+msgstr "祖先扇形圖選項"
+
+msgid "Paternal Background Color"
+msgstr "父系背景色彩"
+
+msgid "RGB-color for paternal box background."
+msgstr "父系方塊背景的 RGB 色彩。"
+
+msgid "Maternal Background"
+msgstr "母系背景"
+
+msgid "RGB-color for maternal box background."
+msgstr "母系方塊背景的 RGB 色彩。"
+
+msgid "Ancestral Collapsible Tree"
+msgstr "可收合的祖先樹狀圖"
+
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr "產生網頁，以 D3.js JavaScript 函式庫的可收合樹狀布局呈現祖先圖 (SVG)。"

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,10 +12,111 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Failed writing "
+msgstr "書き込みに失敗しました "
+
+msgid "Year of Birth of Center Person"
+msgstr "中心人物の生年"
+
+msgid "The year of birth of the center person. Estimate a year if unknown"
+msgstr "中心人物の生年。不明な場合は年を推定"
+
+msgid "Destination directory"
+msgstr "出力先ディレクトリ"
+
+msgid "Path for generated files"
+msgstr "生成ファイルのパス"
+
 msgid "The destination file name for html content."
 msgstr "HTML コンテンツの保存先ファイル名。"
+
+msgid "Default Age"
+msgstr "デフォルト年齢"
+
+msgid "Default age of parent when child is born with unknown year of birth"
+msgstr "子供の生年が不明な場合の親のデフォルト年齢"
+
+msgid "What to show"
+msgstr "表示内容"
+
+msgid "Show GrampsID"
+msgstr "GrampsIDを表示"
+
+msgid "Show GrampsID on top right of the box"
+msgstr "ボックスの右上にGrampsIDを表示"
+
+msgid "Optimize"
+msgstr "最適化"
+
+msgid "Use as little space in horizontal direction as possible"
+msgstr "水平方向のスペースをできるだけ少なくする"
+
+msgid "Male Box Color"
+msgstr "男性ボックスの色"
+
+msgid "Box background color for male person"
+msgstr "男性のボックス背景色"
+
+msgid "Female Box Color"
+msgstr "女性ボックスの色"
+
+msgid "Box background color for female person"
+msgstr "女性のボックス背景色"
+
+msgid "Number of pixel per year"
+msgstr "1年あたりのピクセル数"
+
+msgid "How many pixel height is one year?"
+msgstr "1年は何ピクセルの高さですか？"
+
+msgid "Offset X Coordinate"
+msgstr "X座標オフセット"
+
+msgid "How many pixel are unused besides the most left and most right boxes?"
+msgstr "一番左と一番右のボックスのほかに未使用のピクセルはいくつですか？"
+
+msgid "Offset Y Coordinate"
+msgstr "Y座標オフセット"
+
+msgid "How many pixel are unused above first box?"
+msgstr "最初のボックスの上に未使用のピクセルはいくつですか？"
+
+msgid "Width of a box in pixel"
+msgstr "ボックスの幅 (ピクセル）"
+
+msgid "Width of the box of a person in pixel"
+msgstr "人物のボックスの幅 (ピクセル）"
+
+msgid "Horizontal space between boxes in pixel"
+msgstr "ボックス間の水平スペース (ピクセル）"
+
+msgid "Minimum horizontal space between 2 boxes in pixel"
+msgstr "2つのボックス間の最小水平スペース (ピクセル）"
+
+msgid "Length of vertical part of a line in pixel"
+msgstr "線の垂直部分の長さ (ピクセル）"
+
+msgid ""
+"Parent and child boxes are connected with lines. This is the length of the "
+"vertical part of the lines in pixel"
+msgstr ""
+"親と子のボックスは線で接続されています。これは線の垂直部分の長さ (ピクセル）"
+"です"
+
+msgid "Number of pixel between left border and scale"
+msgstr "左ボーダーとスケールの間のピクセル数"
+
+msgid "Timeline Pedigree Report"
+msgstr "タイムライン系図レポート"
+
+msgid ""
+"Creates an HTML webpage that uses JavaScript to show a pedigree block "
+"diagram arranged vertically by birth date"
+msgstr ""
+"JavaScript を使用して、生年月日で垂直に配置された系図ブロック図を表示する "
+"HTML ウェブページを作成します"

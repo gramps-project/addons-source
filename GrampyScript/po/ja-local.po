@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,13 +12,55 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Gram.py Script"
+msgstr "Gram.py スクリプト"
+
+msgid "Run a special Gramps Python script"
+msgstr "特別なGramps Pythonスクリプトを実行"
+
+msgid "Load query from a .script file"
+msgstr ".script ファイルからクエリを読み込む"
+
+msgid "Save query to a .script file"
+msgstr "クエリを .script ファイルとして保存"
+
 msgid "Save"
 msgstr "保存"
 
+msgid "Download results as a CSV file"
+msgstr "結果をCSVファイルとしてダウンロード"
+
+msgid "Open..."
+msgstr "開く..."
+
+msgid "Save as..."
+msgstr "名前を付けて保存..."
+
+msgid "Save as CSV"
+msgstr "CSVとして保存"
+
+msgid "Copy to clipboard"
+msgstr "クリップボードにコピー"
+
 msgid "Table"
 msgstr "表"
+
+msgid "Chart"
+msgstr "チャート"
+
+msgid "Execute <Alt+Enter>"
+msgstr "実行 <Alt+Enter>"
+
+msgid "Execute the script"
+msgstr "スクリプトを実行"
+
+msgid "Ready..."
+msgstr "準備完了..."
+
+msgid "Gram.py Script Edited Data"
+msgstr "Gram.py スクリプト編集データ"

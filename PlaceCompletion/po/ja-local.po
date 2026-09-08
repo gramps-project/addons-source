@@ -1,0 +1,254 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "PlaceCompletion"
+msgstr "PlaceCompletion"
+
+msgid ""
+"Provides a browsable list of selected places, with possibility to complete/"
+"parse/set the attribute fields."
+msgstr ""
+"選択した場所のブラウズ可能なリストを提供し、属性フィールドを補完/解析/設定す"
+"ることができます。"
+
+msgid ""
+"Place Completion by parsing, file lookup and batch setting of place "
+"attributes"
+msgstr "解析、ファイル検索、および場所属性のバッチ設定による場所の補完"
+
+msgid "Error in PlaceCompletion.py"
+msgstr "PlaceCompletion.py でエラーが発生しました"
+
+msgid "Non existing group used in get"
+msgstr "取得に使用されたグループが存在しません"
+
+#, python-format
+msgid "PlaceCompletion is unable to create %s %s"
+msgstr "PlaceCompletion は %s %s を作成できません"
+
+msgid "Places tool"
+msgstr "場所ツール"
+
+msgid "Missing regex groups in match lat/lon"
+msgstr "緯度/経度の一致に正規表現グループがありません"
+
+#, python-format
+msgid ""
+"Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
+msgstr ""
+"正規表現グループ %(lat)s と %(lon)s は緯度/経度の一致に存在する必要がありま"
+"す。終了します"
+
+msgid "Non valid regex for match lat/lon"
+msgstr "緯度/経度の一致に無効な正規表現です"
+
+msgid "Non valid regular expression given to find lat/lon. Quiting."
+msgstr "緯度/経度を見つけるための無効な正規表現が指定されました。終了します。"
+
+msgid "Finding Places and appropriate changes"
+msgstr "場所と適切な変更を見つける"
+
+msgid "Filtering"
+msgstr "フィルタリング"
+
+msgid "Loading lat/lon file in Memory..."
+msgstr "緯度/経度ファイルをメモリにロード中..."
+
+msgid "Examining places"
+msgstr "場所を調査中"
+
+msgid "Set Tag"
+msgstr "タグを設定"
+
+msgid "Doing Place changes"
+msgstr "場所の変更を実行中"
+
+msgid "No place record was modified."
+msgstr "場所レコードは変更されませんでした。"
+
+msgid "1 place record was modified."
+msgstr "1 件の場所レコードが変更されました。"
+
+#, python-format
+msgid "%d place records were modified."
+msgstr "%d 件の場所レコードが変更されました。"
+
+msgid "Change places"
+msgstr "場所を変更"
+
+msgid "The selected file is a directory, not a file."
+msgstr "選択されたファイルはディレクトリであり、ファイルではありません。"
+
+msgid "The file you want to access is not a regular file."
+msgstr "アクセスしようとしているファイルは通常のファイルではありません。"
+
+msgid "The file does not exist."
+msgstr "ファイルが存在しません。"
+
+msgid "Problem reading file"
+msgstr "ファイルの読み取り中に問題が発生しました"
+
+#, python-format
+msgid "invalid lat or lon value, %(lat)s, %(lon)s"
+msgstr "無効な緯度または経度の値です。%(lat)s, %(lon)s"
+
+msgid "No lat/lon conversion"
+msgstr "緯度/経度の変換なし"
+
+msgid "All in degree notation"
+msgstr "すべて度数表記"
+
+msgid "All in decimal notation"
+msgstr "すべて十進表記"
+
+msgid "Correct -50° in 50°S"
+msgstr "-50° を 50°S に修正"
+
+msgid "No changes"
+msgstr "変更なし"
+
+msgid "City[, State]"
+msgstr "都市[, 州]"
+
+msgid "City,PostalCode,Country"
+msgstr "都市,郵便番号,国"
+
+msgid "City[(Street;Locality;Parish)],PostalCode,Country"
+msgstr "都市[(通り;地区;教区)],郵便番号,国"
+
+msgid "TitleStart [, City] [, State]"
+msgstr "タイトル開始 [, 都市] [, 州]"
+
+msgid "TitleStart [, City] [, County] [, State] [, Country]"
+msgstr "タイトル開始 [, 都市] [, 郡] [, 州] [, 国]"
+
+msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
+msgstr "タイトル開始 [, 都市] [, 郵便番号] [, 郡] [, 州] [, 国]"
+
+msgid "Don't search"
+msgstr "検索しない"
+
+msgid "GeoNames country file, city search"
+msgstr "GeoNames 国ファイル、都市検索"
+
+msgid "GeoNames country file, city localized variants search"
+msgstr "GeoNames 国ファイル、都市のローカライズされたバリアント検索"
+
+msgid "GeoNames country file, county/city search"
+msgstr "GeoNames 国ファイル、郡/都市検索"
+
+msgid "GeoNames country file, title begin, general search"
+msgstr "GeoNames 国ファイル、タイトル開始、一般検索"
+
+msgid "GeoNames USA state file, city search"
+msgstr "GeoNames 米国州ファイル、都市検索"
+
+msgid "GNS Geonet country file, city search"
+msgstr "GNS Geonet 国ファイル、都市検索"
+
+msgid "GNS Geonet country file, county/city search"
+msgstr "GNS Geonet 国ファイル、郡/都市検索"
+
+msgid "GNS Geonet country file, title begin, general search"
+msgstr "GNS Geonet 国ファイル、タイトル開始、一般検索"
+
+msgid "Wikipedia CSV Dump"
+msgstr "Wikipedia CSV ダンプ"
+
+msgid "All Places"
+msgstr "すべての場所"
+
+msgid "No Latitude/Longitude given"
+msgstr "緯度/経度が指定されていません"
+
+msgid "_Google Maps"
+msgstr "_Google マップ"
+
+msgid "Apply all suggested changes"
+msgstr "提案されたすべての変更を適用"
+
+msgid "Selection of the Places you want to complete:"
+msgstr "補完する場所の選択:"
+
+msgid "Parish:"
+msgstr "教区:"
+
+msgid "Place _filter:"
+msgstr "場所 _フィルター:"
+
+msgid "Count_ry:"
+msgstr "国(_R):"
+
+msgid "C_enter latitude:"
+msgstr "中心緯度(_E):"
+
+msgid "Center longitude:"
+msgstr "中心経度:"
+
+msgid "Places in a rectangle:"
+msgstr "矩形内の場所:"
+
+msgid "Height:"
+msgstr "高さ:"
+
+msgid "1. Look up latitude and longitude:"
+msgstr "1. 緯度と経度を検索:"
+
+msgid "Search in:"
+msgstr "検索対象:"
+
+msgid "Select A File"
+msgstr "ファイルを選択"
+
+msgid "Parse as:"
+msgstr "解析形式:"
+
+msgid "2. Conversion of existing title or position:"
+msgstr "2. 既存のタイトルまたは位置の変換:"
+
+msgid "Change title into:"
+msgstr "タイトルを変更:"
+
+msgid "Convert lat/lon as:"
+msgstr "緯度/経度を変換:"
+
+msgid ""
+"Or define a simple\n"
+"title format:"
+msgstr ""
+"または簡潔な\n"
+"タイトル形式を定義:"
+
+msgid ""
+"Available variables: city, street, locality, parish, county, state, country, "
+"postal_code"
+msgstr ""
+"利用可能な変数: city, street, locality, parish, county, state, country, "
+"postal_code"
+
+msgid ""
+"Delete to delete a row, Double-click on the row to edit place with changes "
+"pre-entered, \n"
+"Press Tab on a row or Google Maps button to see place on a map. Press Apply "
+"to do all changes automatically"
+msgstr ""
+"行を削除するには削除、行をダブルクリックすると変更が事前に入力された状態で場"
+"所を編集、\n"
+"行で Tab キーを押すか Google マップ ボタンを押すと地図上で場所を確認。適用を"
+"押すとすべての変更が自動的に実行されます"

@@ -1,0 +1,51 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Include witnesses"
+msgstr "包含見證人"
+
+msgid "Include media"
+msgstr "包含媒體"
+
+msgid "Patronymic names:"
+msgstr "父名："
+
+msgid "Don't change"
+msgstr "不變更"
+
+msgid "Add Patronymic name after Given name"
+msgstr "在名字後加上父名"
+
+msgid "Ignore Patronymic name"
+msgstr "忽略父名"
+
+msgid "Type of surname:"
+msgstr "姓氏類型："
+
+msgid "Export failed"
+msgstr "匯出失敗"
+
+msgid "Export GEDCOM Extensions (GED2)"
+msgstr "匯出 GEDCOM 擴充格式 (GED2)"
+
+msgid "GEDCOM Extensions (GED2)"
+msgstr "GEDCOM 擴充功能（GED2）"
+
+msgid "Extensions to the common GEDCOM format."
+msgstr "一般 GEDCOM 格式的擴充。"
+
+msgid "GEDCOM Extensions options"
+msgstr "GEDCOM 擴充格式選項"

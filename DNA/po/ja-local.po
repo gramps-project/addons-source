@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Chromosome "
+msgstr "染色体 "
+
+msgid " Map for "
+msgstr " のマップ "
+
+msgid "Chr"
+msgstr "Chr"
+
+msgid "Legend"
+msgstr "凡例"
+
+msgid ": Grandparent"
+msgstr ": 祖父母"
+
+#, python-brace-format
+msgid ""
+"\n"
+"{0}\n"
+"{1} cMs"
+msgstr ""
+"\n"
+"{0}\n"
+"{1} cMs"
+
+msgid " SNPs"
+msgstr " SNPs"
+
+msgid " : Starts at "
+msgstr " : 開始位置 "
+
+msgid " and ends at "
+msgstr " 終了位置 "
+
+#, python-brace-format
+msgid "{0}"
+msgstr "{0}"
+
+#, python-format
+msgid "%(ancestor1)s and %(ancestor2)s"
+msgstr "%(ancestor1)s と %(ancestor2)s"
+
+#, python-brace-format
+msgid ""
+"\n"
+"Relationship: {0} "
+msgstr ""
+"\n"
+"関係: {0} "
+
+#, python-brace-format
+msgid " Ancestor: {0}"
+msgstr " 祖先: {0}"
+
+msgid ""
+"Click to make this person active\n"
+"Right-click to edit this person"
+msgstr ""
+"クリックしてこの人物をアクティブにする\n"
+"右クリックしてこの人物を編集"
+
+msgid "DNA Segment Map"
+msgstr "DNAセグメントマップ"
+
+msgid "Gramplet showing a matching DNA segment map"
+msgstr "一致するDNAセグメントマップを表示するグランプレット"

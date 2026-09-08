@@ -1,0 +1,177 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-09 10:02-0700\n"
+"PO-Revision-Date: 2026-09-04 16:45+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Generate Gramps Web API key"
+msgstr "Gramps-Web-API-Schlüssel generieren"
+
+msgid "Server URL"
+msgstr "Server-URL"
+
+msgid "e.g. https://your-server/api"
+msgstr "z. B. https://dein-server/api"
+
+msgid "Username"
+msgstr "Benutzername"
+
+msgid "Password"
+msgstr "Kennwort"
+
+msgid "Generate API Key"
+msgstr "API-Schlüssel generieren"
+
+msgid ""
+"Enter your server URL, username, and password, then click Generate API Key."
+msgstr ""
+"Gib die URL deines Servers, deinen Benutzernamen und dein Passwort ein und "
+"klicke anschließend auf „API-Schlüssel generieren“."
+
+msgid "GRAMPS_WEB_API_KEY"
+msgstr "GRAMPS_WEB_API_KEY"
+
+msgid "Copy"
+msgstr "Kopieren"
+
+msgid "Create Synced Family Tree for this key"
+msgstr "Synchronisierten Stammbaum für diesen Schlüssel erstellen"
+
+#, python-format
+msgid ""
+"Found an existing %s for this session. Click Create Synced Family Tree to "
+"use it directly, or fill in the form above to generate a different key."
+msgstr ""
+"Für diese Sitzung wurde ein vorhandener %s gefunden. Klicke auf "
+"„Synchronisierten Stammbaum erstellen“, um ihn direkt zu verwenden, oder "
+"fülle das obige Formular aus, um einen anderen Schlüssel zu generieren."
+
+msgid "Please fill in the server URL, username, and password."
+msgstr "Bitte gib die Server-URL, den Benutzernamen und das Passwort ein."
+
+msgid "Generating API key…"
+msgstr "API-Schlüssel wird generiert…"
+
+#, python-format
+msgid "Login failed (HTTP %d): check your username and password."
+msgstr ""
+"Die Anmeldung ist fehlgeschlagen (HTTP %d): Bitte überprüfe deinen "
+"Benutzernamen und dein Passwort."
+
+#, python-format
+msgid "Server returned an error (HTTP %d %s): check the Server URL."
+msgstr ""
+"Der Server hat einen Fehler zurückgegeben (HTTP %d %s): Überprüfe die Server-"
+"URL."
+
+#, python-format
+msgid "Could not reach the server: check the Server URL. (%s)"
+msgstr ""
+"Der Server konnte nicht erreicht werden: Überprüfe die Server-URL. (%s)"
+
+#, python-format
+msgid "Unexpected response from the server: %s"
+msgstr "Unerwartete Antwort vom Server: %s"
+
+#, python-format
+msgid "Error: %s"
+msgstr "Fehler: %s"
+
+#, python-format
+msgid ""
+"Success. %s is now set for this Gramps session -- no restart needed. Copy "
+"the key below to also set it in your shell environment for next time."
+msgstr ""
+"Erfolg. %s ist nun für diese Gramps-Sitzung festgelegt – ein Neustart ist "
+"nicht erforderlich. Kopiere den folgenden Schlüssel, um ihn auch in deiner "
+"Shell-Umgebung für das nächste Mal festzulegen."
+
+msgid "Looking up account identity…"
+msgstr "Kontoidentität wird überprüft…"
+
+#, python-format
+msgid ""
+"A Family Tree named \"%s\" already exists. Open it from Family Trees -> "
+"Manage Family Trees instead of creating another one."
+msgstr ""
+"Ein Stammbaum mit dem Namen „%s“ existiert bereits. Öffne ihn über "
+"„Stammbäume“ → „Stammbäume verwalten“, anstatt einen neuen anzulegen."
+
+#, python-format
+msgid "Error creating Family Tree: %s"
+msgstr "Fehler beim Erstellen des Stammbaums: %s"
+
+#, python-format
+msgid ""
+"Created Family Tree \"%s\". Open it from Family Trees -> Manage Family Trees "
+"to start syncing."
+msgstr ""
+"Der Stammbaum „%s“ wurde erstellt. Öffne ihn unter „Stammbäume“ -> "
+"„Stammbäume verwalten“, um die Synchronisierung zu starten."
+
+msgid ""
+"Turn a Gramps Web API server URL, username, and password into a "
+"GRAMPS_WEB_API_KEY value for GrampsWebApiDb, and optionally create a "
+"matching, correctly-named GrampsWebApiDb Family Tree for it."
+msgstr ""
+"Wandelt die URL eines Gramps-Web-API-Servers sowie Benutzername und Passwort "
+"in einen GRAMPS_WEB_API_KEY-Wert für „GrampsWebApiDB“ um und erstellt "
+"optional einen passenden, korrekt benannten GrampsWebApiDB-Stammbaum dafür."
+
+msgid ""
+"The account authenticating via GRAMPS_WEB_API_KEY does not have permission "
+"on the server for this operation (HTTP 403 Forbidden). Generate a key for an "
+"account with sufficient permissions, or ask the server administrator to "
+"grant this one access."
+msgstr ""
+"Das Konto, das sich über GRAMPS_WEB_API_KEY authentifiziert, verfügt auf dem "
+"Server nicht über die erforderlichen Berechtigungen für diesen Vorgang (HTTP "
+"403 Forbidden). Erstelle einen Schlüssel für ein Konto mit ausreichenden "
+"Berechtigungen oder bitte den Serveradministrator, diesem Konto Zugriff zu "
+"gewähren."
+
+#, python-format
+msgid ""
+"This Family Tree is named \"%(actual)s\", but GRAMPS_WEB_API_KEY currently "
+"authenticates as \"%(expected)s\". Rename this Family Tree to "
+"\"%(expected_typeable)s\" (Family Trees -> Manage Family Trees) if it's "
+"meant to mirror that account, or open/create the Family Tree already named "
+"that -- reusing this one would mix its existing local data with the other "
+"account's."
+msgstr ""
+"Dieser Stammbaum trägt den Namen „%(actual)s“, aber GRAMPS_WEB_API_KEY "
+"authentifiziert sich derzeit als „%(expected)s“. Benenne diesen Stammbaum in "
+"„%(expected_typeable)s“ um (Stammbäume -> Stammbäume verwalten), wenn er "
+"dieses Konto widerspiegeln soll, oder öffne bzw. erstelle den Stammbaum, der "
+"bereits diesen Namen trägt – die Wiederverwendung dieses Stammbaums würde "
+"dessen vorhandene lokale Daten mit denen des anderen Kontos vermischen."
+
+msgid "Retry local change after server conflict"
+msgstr "Lokale Änderung nach Serverkonflikt erneut versuchen"
+
+msgid "Clear local mirror before full resync"
+msgstr "Lokalen Spiegel vor der vollständigen Neusynchronisierung löschen"
+
+msgid "GrampsWebApiDb"
+msgstr "GrampsWebApiDB"
+
+msgid "Gramps _Web API Database"
+msgstr "Gramps _Web API Datenbank"
+
+msgid ""
+"Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) as a live "
+"database, mirrored locally for speed."
+msgstr ""
+"Verwende einen Gramps-Web-API-Server (z. B. gramps-connect oder Gramps Web) "
+"als Live-Datenbank, die aus Gründen der Geschwindigkeit lokal gespiegelt "
+"wird."

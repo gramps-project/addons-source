@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-09 22:38+0000\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,10 +12,79 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 msgid "INFO"
 msgstr "INFO"
+
+msgid "You have to select an image to generate this report."
+msgstr "このレポートを生成するには画像を選択する必要があります。"
+
+msgid ""
+"You have to select a custom note or uncheck the option 'include custom note' "
+"to generate this report."
+msgstr ""
+"このレポートを生成するには、カスタムメモを選択するか、「カスタムメモを含め"
+"る」オプションのチェックを外す必要があります。"
+
+msgid "This report only supports PDF as output file format."
+msgstr "このレポートは出力ファイル形式としてPDFのみをサポートしています。"
+
+msgid "General:"
+msgstr "全般:"
+
+msgid "Image type:"
+msgstr "画像タイプ:"
+
+msgid "Heading"
+msgstr "見出し"
+
+msgid "Select a media file for this report"
+msgstr "このレポートのメディアファイルを選択"
+
+msgid "Custom note"
+msgstr "カスタムメモ"
+
+msgid "Select a note for this report"
+msgstr "このレポートのメモを選択"
+
+msgid "Include custom note"
+msgstr "カスタムメモを含める"
+
+msgid "The custom note will be included"
+msgstr "カスタムメモが含まれます"
+
+msgid "Include referenced people"
+msgstr "参照されている人物を含める"
+
+msgid "Referenced people will be included"
+msgstr "参照されている人物が含まれます"
+
+msgid "Include media data"
+msgstr "メディアデータを含める"
+
+msgid "Tags, notes and attributes will be included"
+msgstr "タグ、メモ、属性が含まれます"
+
+msgid "Media width"
+msgstr "メディアの幅"
+
+#, no-python-format
+msgid "Maximum media width in % of available page width."
+msgstr "利用可能なページ幅に対する最大メディア幅 (%）"
+
+msgid "Media height"
+msgstr "メディアの高さ"
+
+#, no-python-format
+msgid "Maximum media height in % of available page height."
+msgstr "利用可能なページ高さに対する最大メディア高さ (%）"
+
+msgid "Media Report"
+msgstr "メディアレポート"
+
+msgid "Generates report including images, image data and notes."
+msgstr "画像、画像データ、メモを含むレポートを生成します。"

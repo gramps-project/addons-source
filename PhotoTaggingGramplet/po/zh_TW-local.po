@@ -1,0 +1,106 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
+msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
+
+msgid "Replace existing references to the person being assigned without asking"
+msgstr "不詢問，直接取代現有對所指定人物的參照"
+
+msgid "Face detection"
+msgstr "人臉偵測"
+
+msgid "Minimum face width (px)"
+msgstr "最小臉部寬度（px）"
+
+msgid "Minimum face height (px)"
+msgstr "人臉高度下限 (px)"
+
+msgid "Detect faces inside existing boxes"
+msgstr "偵測既有框選範圍內的臉孔"
+
+msgid "Sensitivity (1 min .. 20 max)"
+msgstr "靈敏度 (最低 1 .. 最高 20)"
+
+msgid "Add Person"
+msgstr "新增人物"
+
+msgid "Clear Reference"
+msgstr "清除參照"
+
+msgid "Remove Selection"
+msgstr "移除選取範圍"
+
+msgid "Edit referenced Person"
+msgstr "編輯被參照的人物"
+
+msgid "Zoom In"
+msgstr "放大"
+
+msgid "Zoom Out"
+msgstr "縮小"
+
+msgid "Detect faces"
+msgstr "偵測臉孔"
+
+msgid "Detect faces (OpenCV module required)"
+msgstr "偵測臉孔（需要 OpenCV 模組）"
+
+msgid "XMP Region Name"
+msgstr "XMP 區域名稱"
+
+msgid "Set as active person"
+msgstr "設為目前人物"
+
+msgid "_Select"
+msgstr "選取(_S)"
+
+#, python-brace-format
+msgid "Replace to {0}"
+msgstr "取代為 {0}"
+
+msgid "Detecting faces..."
+msgstr "正在偵測人臉..."
+
+msgid "Detection finished"
+msgstr "偵測完成"
+
+#, python-brace-format
+msgid "Another region of this image is associated with {name}. Remove it?"
+msgstr "這張圖片的另一個區域已與 {name} 關聯。要移除嗎？"
+
+#, python-brace-format
+msgid ""
+"{count} other regions of this image are associated with {name}. Remove them?"
+msgstr "這張圖片另有 {count} 個區域已與 {name} 關聯。要移除嗎？"
+
+#, python-format
+msgid "Male person|Dead at %s"
+msgstr "過世時年齡：%s"
+
+#, python-format
+msgid "Female person|Dead at %s"
+msgstr "過世時年齡：%s"
+
+#, python-format
+msgid "Unknown gender person|Dead at %s"
+msgstr "去世時年齡為 %s"
+
+msgid "Photo Tagging"
+msgstr "照片標記"
+
+msgid "Gramplet for tagging people in photos"
+msgstr "用於在照片中標記人物的 Gramplet"

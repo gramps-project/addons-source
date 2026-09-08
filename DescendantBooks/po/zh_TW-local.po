@@ -1,0 +1,249 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+#, python-format
+msgid "sp. see  %(reference)s : %(spouse)s"
+msgstr "配偶請參閱 %(reference)s：%(spouse)s"
+
+#, python-format
+msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
+msgstr "請參閱報告：%(report)s，參照：%(reference)s：%(person)s 與 %(spouse)s"
+
+msgid "Descendants Report"
+msgstr "後代報告"
+
+#, python-format
+msgid "Writing %s reports..."
+msgstr "正在寫入 %s 份報告…"
+
+#, python-brace-format
+msgid "{report_count}. Descendants of {name}"
+msgstr "{report_count}. {name} 的後代"
+
+#, python-brace-format
+msgid "{report_count:d}. {name}"
+msgstr "{report_count:d}. {name}"
+
+msgid "Select filter to restrict people that appear in the report"
+msgstr "選取篩選器以限定報告中出現的人物"
+
+msgid "Whether to show duplicate family trees in the report."
+msgstr "是否在報告中顯示重複的家族樹。"
+
+msgid "The style used for the title of the page."
+msgstr "頁面標題使用的樣式。"
+
+msgid "The style used for the table of contents header."
+msgstr "目錄標題使用的樣式。"
+
+msgid "The style used for the table of contents detail."
+msgstr "用於目錄詳細資料的樣式。"
+
+msgid "Detailed Descendants Report"
+msgstr "詳細後代報告"
+
+#, python-format
+msgid "Generating %s report references..."
+msgstr "正在產生 %s 份報告的參照..."
+
+#, python-format
+msgid "%(report_count)s. Descendant Report for %(person_name)s"
+msgstr "%(report_count)s. %(person_name)s 的後代報告"
+
+msgid "Index of Places"
+msgstr "地點索引"
+
+msgid "Index of Dates"
+msgstr "日期索引"
+
+msgid "Index of Names"
+msgstr "姓名索引"
+
+msgid "Report, Generation, Person, Name"
+msgstr "報告、世代、人物、姓名"
+
+#, python-brace-format
+msgid "See Report : {report}, Generation : {generation}, Person : {person}"
+msgstr "請參閱報告：{report}，世代：{generation}，人物：{person}"
+
+#, python-format
+msgid "Report appearances for %s"
+msgstr "列出 %s 的出現位置"
+
+#, python-brace-format
+msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "配偶：報告：{report}，世代：{generation}，人物：{person}"
+
+#, python-brace-format
+msgid "Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "報告：{report}，世代：{generation}，人物：{person}"
+
+#, python-format
+msgid "%(event_name)s of %(name)s "
+msgstr "%(name)s 的 %(event_name)s "
+
+#, python-format
+msgid "%(event_name)s of %(name)s and %(mate)s "
+msgstr "%(name)s 與 %(mate)s 的%(event_name)s "
+
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s，%(place)s"
+
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#, python-format
+msgid ". Ref: %(repno)s %(gen)s %(per)s "
+msgstr "。參照：%(repno)s %(gen)s %(per)s "
+
+#, python-format
+msgid "%(event_name)s:"
+msgstr "%(event_name)s："
+
+#, python-format
+msgid " %(event_text)s"
+msgstr " %(event_text)s"
+
+#, python-brace-format
+msgid "Ref: {number}. {name}"
+msgstr "參考：{number}。{name}"
+
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s：%(name)s%(endnotes)s"
+
+#, python-format
+msgid "%(type)s:"
+msgstr "%(type)s："
+
+#, python-format
+msgid " %(value)s%(endnotes)s"
+msgstr " %(value)s%(endnotes)s"
+
+msgid "List children"
+msgstr "列出子女"
+
+msgid "Add descendant reference in child list"
+msgstr "在子女清單加入後代參照"
+
+msgid "Include Index of Names"
+msgstr "包含姓名索引"
+
+msgid "Whether to include the index of Names at the end of the report."
+msgstr "是否在報告結尾加入姓名索引。"
+
+msgid "Include index of Dates"
+msgstr "包含日期索引"
+
+msgid "Whether to include the index of Dates at the end of the report."
+msgstr "是否在報告結尾加入日期索引。"
+
+msgid "Include index of Places"
+msgstr "包含地點索引"
+
+msgid "Whether to include the index of Places at the end of the report."
+msgstr "是否在報告末尾包含地點索引。"
+
+msgid "Include the 'Report appearances' section with each person"
+msgstr "在每位人物的資料中加入「報告出現記錄」區段"
+
+msgid ""
+"The 'Report appearances' section shows other places in the report where the "
+"person is mentioned."
+msgstr "「在報告中出現的位置」區段會顯示報告中其他提及此人物的位置。"
+
+msgid "The style used for the children list."
+msgstr "子女清單使用的樣式。"
+
+msgid "The basic style used for Note header."
+msgstr "備註標題使用的基本樣式。"
+
+msgid "The style used for the first personal entry."
+msgstr "第一個人物項目使用的樣式。"
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr "「更多資料」標題及伴侶標題使用的樣式。"
+
+msgid "The style used for additional detail data."
+msgstr "補充詳細資料使用的樣式。"
+
+msgid "The style used for note detail data."
+msgstr "備註詳細資料使用的樣式。"
+
+msgid "The style used for the date in the Index of Dates."
+msgstr "日期索引中日期使用的樣式。"
+
+msgid "The style used for the events in the Index of Dates."
+msgstr "日期索引中事件使用的樣式。"
+
+msgid "The style used for the header in the Index of Names."
+msgstr "姓名索引中標題使用的樣式。"
+
+msgid "The style used for the references in the Index of Names."
+msgstr "姓名索引中參照使用的樣式。"
+
+msgid "The style used for the header in the Index of Places."
+msgstr "地點索引中標題使用的樣式。"
+
+msgid "The style used for the references in the Index of Places."
+msgstr "地點索引中參照使用的樣式。"
+
+msgid "Descendant Book"
+msgstr "後代譜書"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr "依據指定的查詢產生一份或多份後代報告。"
+
+msgid "Detailed Descendant Book"
+msgstr "詳細後代譜書"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr "依據提供的查詢產生一份或多份詳細的後代報告。"
+
+#, python-format
+msgid "Deep pruning ascendants from %s people..."
+msgstr "正在從 %s 位人物深入剪除祖先..."
+
+#, python-format
+msgid "Pruning ascendants from %s people..."
+msgstr "正在從 %s 位人物中移除祖先分支…"
+
+#, python-format
+msgid "Getting ascendants from %s people..."
+msgstr "正在從 %s 位人物取得祖先…"
+
+#, python-format
+msgid "Verifying descendants from %s people..."
+msgstr "正在驗證 %s 位人物的後代..."
+
+#, python-format
+msgid "Getting missing descendants from %s people..."
+msgstr "正在從 %s 位人物中尋找缺少的後代…"
+
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr "正在驗證剪除後 %s 位人物的後代..."
+
+#, python-format
+msgid "Getting missing descendants from %s people ..."
+msgstr "正在取得 %s 位人物缺少的後代 ..."

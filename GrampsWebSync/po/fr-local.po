@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-31 17:35+0200\n"
+"POT-Creation-Date: 2026-08-06 07:24+0200\n"
 "PO-Revision-Date: 2026-07-01 15:01+0000\n"
 "Last-Translator: \"David D.\" <dadu042@users.noreply.hosted.weblate.org>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/gramps-project/"
@@ -71,30 +71,14 @@ msgstr "Erreur serveur %s. Veuillez vérifier votre connexion."
 msgid "Unexpected error: %s"
 msgstr "erreur innatendue : %s"
 
-msgid "Fetching remote data..."
-msgstr "Récupération des données distantes…"
+msgid "Media files are in sync."
+msgstr "Les fichiers media sont synchronisés."
 
-msgid "Comparing local and remote data..."
-msgstr "Comparaison des données locales et distantes…"
+msgid "Username:"
+msgstr "Nom d'utilisateur :"
 
-msgid "Successfully applied changes to local database."
-msgstr "Modifications apportées à la base de données locale avec succès."
-
-msgid "Continue without transport encryption?"
-msgstr "Continuer sans chiffrement ?"
-
-msgid ""
-"You have specified a URL with http scheme. If you continue, your password "
-"will be sent in clear text over the network. Use only for local testing!"
-msgstr ""
-"Vous avez spécifié une URL http. Si vous continuez, votre mot de passe sera "
-"envoyé en clair sur le réseau. Utilisez seulement pour les tests locaux !"
-
-msgid "Continue with HTTP"
-msgstr "Continuer avec HTTP"
-
-msgid "Use HTTPS"
-msgstr "Utiliser HTTPS"
+msgid "Password:"
+msgstr "Mot de passe :"
 
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
@@ -125,56 +109,8 @@ msgstr ""
 "possibilité d'effectuer des modifications manuelles, utilisez plutôt l'outil "
 "d'importation et de fusion."
 
-msgid "Server URL: "
-msgstr "URL du serveur : "
-
 msgid "Error:"
 msgstr "Erreur :"
 
-msgid "Bidirectional Synchronization"
-msgstr "Synchronisation bidirectionnelle"
-
-msgid "Reset remote to local"
-msgstr "Réinitialiser du distant vers le local"
-
-msgid "Reset local to remote"
-msgstr "Réinitialiser l'arbre local depuis l'arbre distant"
-
-msgid "Local changes"
-msgstr "Changements locaux"
-
-msgid "Modified"
-msgstr "Modifié"
-
-msgid "Remote changes"
-msgstr "Changements distants"
-
-msgid "Simultaneous changes"
-msgstr "Changements simultanés"
-
-msgid "Fetching information about media files..."
-msgstr "Obtenir des informations sur les fichiers média..."
-
-msgid "Both trees are the same."
-msgstr "Les deux arbrers sont identiques."
-
-msgid "Applying changes to local database ..."
-msgstr "Application des changements à la base de données locale…"
-
-msgid "No changes to apply to local database."
-msgstr "Aucune modification à appliquer à la base de données locale."
-
-msgid "Applying changes to remote database ..."
-msgstr "Appliquer les modifications à la base de données distante ..."
-
-msgid "No changes to apply to remote database."
-msgstr "Aucun changement à appliquer à la base de données distante."
-
-msgid "Missing locally"
-msgstr "Manque localement"
-
-msgid "Missing remotely"
-msgstr "Manque sur le serveur distant"
-
-msgid "Media files are in sync."
-msgstr "Les fichiers media sont synchronisés."
+msgid "Copy"
+msgstr "Copie"

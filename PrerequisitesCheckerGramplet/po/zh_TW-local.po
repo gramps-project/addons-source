@@ -1,0 +1,399 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-01 09:23-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Prerequisites Checker"
+msgstr "必要套件檢查工具"
+
+msgid "Prerequisites Checker Gramplet"
+msgstr "必要條件檢查器 Gramplet"
+
+msgid ""
+"Diagnostic Gramplet to help evaluate if <a href=\"https://gramps-project.org/"
+"\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
+"blob/master/README.md\">prerequisites</a> installed.\n"
+msgstr ""
+"用來協助檢查 <a href=\"https://gramps-project.org/\">Gramps</a> 是否已安裝所"
+"有 <a href=\"https://github.com/gramps-project/gramps/blob/master/"
+"README.md\">必要條件</a> 的診斷 Gramplet。\n"
+
+msgid ""
+"Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
+"installed."
+msgstr "協助評估 Gramps 是否已安裝所有必要套件的診斷 Gramplet。"
+
+msgid ""
+"\n"
+"<u><b>REQUIRED</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>必要</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
+" (Requires the minimum version or greater.)</i>:\n"
+msgstr ""
+"<i><b>必須安裝</b>下列套件\n"
+"（需要最低版本或更新版本。）</i>：\n"
+
+msgid ""
+"\n"
+"<u><b>RECOMMENDED</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>建議</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
+"as necessary for Geography and Charts</i>:\n"
+msgstr "<i><b>強烈建議</b>安裝以下套件，地理與圖表功能需要這些套件</i>：\n"
+
+msgid ""
+"\n"
+"<u><b>Optional</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>選用</b></u>\n"
+
+msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
+msgstr "<i>以下套件的安裝為 <b>選用</b></i>：\n"
+
+msgid "Gtkspell enables spell checking in the notes.\n"
+msgstr "Gtkspell 可啟用備註的拼字檢查。\n"
+
+msgid ""
+"Python Image Library (PIL) is needed for cropping images and LaTeX output."
+msgstr "裁切圖片及 LaTeX 輸出需要 Python Image Library (PIL)。"
+
+msgid ""
+"\n"
+"<u><b>Development & Translation Requirements</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>開發與翻譯需求</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
+"intend to translate or do any development (addons etc.)</i>:\n"
+msgstr ""
+"<i>若您打算翻譯或進行任何開發 (附加元件等)，<b>建議</b>安裝以下套件</i>：\n"
+
+msgid ""
+"\n"
+"<u><b>Optional packages required by Third-party Addons</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>第三方附加元件所需的選用套件</b></u>\n"
+
+msgid ""
+"<i>Prerequistes required for the following <a href=\"https://gramps-"
+"project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
+"to work</i>:\n"
+msgstr ""
+"<i>以下<a href=\"https://gramps-project.org/wiki/index.php?title=Third-"
+"party_Addons\">第三方附加元件</a>運作所需的必要套件</i>：\n"
+
+msgid ""
+"\n"
+"<u><b>Diagnostic checks</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>診斷檢查</b></u>\n"
+
+msgid "Check for potential issues.\n"
+msgstr "檢查潛在問題。\n"
+
+msgid ""
+"\n"
+"Environment settings:\n"
+msgstr ""
+"\n"
+"環境設定：\n"
+
+msgid ""
+"\n"
+"\n"
+"<u><b>Locales available:</b></u>\n"
+msgstr ""
+"\n"
+"\n"
+"<u><b>可用的語系：</b></u>\n"
+
+msgid ""
+"\n"
+"<u><b>Back Up Your Genealogy Files.</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>備份您的家譜檔案。</b></u>\n"
+
+msgid ""
+"If you have a reason to be checking Prerequisites, it is the right time to "
+"back up your genealogy files, and then test your backups!\n"
+"\n"
+msgstr ""
+"如果您正在檢查必要條件，現在正是備份家譜檔案，並測試備份是否可用的好時機！\n"
+"\n"
+
+msgid ""
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Backup to Gramps XML</a> You will find \"Make "
+"Backup...\" in the Family Tree menu of recent Gramps versions, otherwise use "
+"\"Export...\" in the same menu but uncheck privacy options in the Exporter "
+"Assistant in order to export all data.</i>\n"
+"\n"
+msgstr ""
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">備份為 Gramps XML</a> 在近期版本的 Gramps 中，您"
+"可以在「家族樹」選單找到「製作備份...」；若沒有此選項，請使用同一選單中的「匯"
+"出...」，並取消勾選匯出助理中的隱私選項，以匯出所有資料。</i>\n"
+"\n"
+
+msgid ""
+" • Backups can be made at any time and, at a minimum, on the first day of "
+"every month. But preferrably more often.\n"
+msgstr " • 隨時都可以備份，至少應在每月第一天備份一次。但最好更頻繁地備份。\n"
+
+msgid ""
+" • It is strongly recommended to backup each of your Family Trees before any "
+"upgrade.\n"
+msgstr " • 強烈建議在任何升級之前，備份每一棵家族樹。\n"
+
+msgid ""
+" • Test your backups by creating a new Family Tree and then importing the "
+"backup."
+msgstr " • 建立新的家族樹並匯入備份，以測試備份。"
+
+msgid ", is the most current version.\n"
+msgstr "，為最新版本。\n"
+
+#, python-format
+msgid ""
+"You have Gramps %s. Please make a backup and then upgrade.\n"
+"%s"
+msgstr ""
+"您目前的 Gramps 版本為 %s。請先進行備份後再升級。\n"
+"%s"
+
+#, python-format
+msgid ""
+"You have Gramps %s installed; an unreleased development version. Thank you "
+"for contributing and testing; please report any issues. Backups are your "
+"friend.\n"
+msgstr ""
+"您已安裝 Gramps %s，這是尚未發布的開發版本。感謝您的貢獻與測試；如有問題，請"
+"回報。請善用備份。\n"
+
+#, python-format
+msgid "You have Gramps %s. Congratulations, you have the current version.\n"
+msgstr "您使用的是 Gramps %s。恭喜，這是目前的版本。\n"
+
+msgid " (Requires version "
+msgstr " (需要版本 "
+
+msgid " or greater installed.)\n"
+msgstr " 或更新版本已安裝。）\n"
+
+msgid " (Passed: version "
+msgstr " (通過：版本 "
+
+msgid "unknown version"
+msgstr "版本不明"
+
+msgid "DISPLAY not set"
+msgstr "未設定 DISPLAY"
+
+msgid " or greater.)\n"
+msgstr " 或更新版本。)\n"
+
+msgid " (Requires "
+msgstr " （需要 "
+
+msgid " • Berkeley Database library (bsddb3: "
+msgstr " • Berkeley Database 程式庫 (bsddb3： "
+
+msgid ""
+")\n"
+"\tRequires  BerkeleyDB or Python-bsddb3 Python adapter and the Berkeley "
+"database"
+msgstr ""
+")\n"
+"\t需要 BerkeleyDB 或 Python-bsddb3 Python 配接器及 Berkeley 資料庫"
+
+msgid " • SQLite Database library (sqlite3: "
+msgstr " • SQLite 資料庫函式庫（sqlite3： "
+
+msgid " • xdg-utils (Manual check see instructions link)"
+msgstr " • xdg-utils（手動檢查請參閱說明連結）"
+
+msgid " • librsvg2 (Manual check see instructions link)"
+msgstr " • librsvg2 (手動檢查，請參閱說明連結)"
+
+msgid ""
+" • language-pack-gnome-xx (Manual check see instructions link) for your "
+"Language <show locale here TBD>"
+msgstr ""
+" • 適用於您的語言 <show locale here TBD> 的 language-pack-gnome-xx（手動檢查"
+"請參閱說明連結）"
+
+msgid " or greater installed.)"
+msgstr " 或更新版本已安裝。)"
+
+msgid " or greater)"
+msgstr " 或更新版本)"
+
+msgid "Graphviz not in system PATH"
+msgstr "系統 PATH 中沒有 Graphviz"
+
+msgid "Ghostscript not in system PATH"
+msgstr "系統 PATH 中沒有 Ghostscript"
+
+msgid " (Passed: version 0.5.x is installed.)"
+msgstr " (通過：已安裝 0.5.x 版本。)"
+
+msgid " (Requires version 0.5.x)"
+msgstr " (需要 0.5.x 版本)"
+
+msgid " • python-fontconfig not found, (Requires version 0.5.x)"
+msgstr " • 找不到 python-fontconfig，(需要 0.5.x 版本)"
+
+msgid " • python-fontconfig installed, version unavailable"
+msgstr " • 已安裝 python-fontconfig，但無法取得版本"
+
+msgid " or greater installed.) (enchant module: "
+msgstr " 或更新版本已安裝。) (enchant 模組： "
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+" • rcs %s 待確認 (通過：已安裝 %s 或更新版本。非 Microsoft Windows 系統適用)"
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+" • rcs %s 待確認 (需要安裝 %s 或更新版本。非 Microsoft Windows 系統適用)"
+
+msgid "exiv2 executable not installed, can't retrieve libexiv2 version."
+msgstr "尚未安裝 exiv2 執行檔，無法取得 libexiv2 版本。"
+
+#, python-format
+msgid "GExiv2 : %s (Exiv2 library : %s)"
+msgstr "GExiv2：%s (Exiv2 程式庫：%s)"
+
+msgid "found another font"
+msgstr "找到其他字型"
+
+msgid ""
+"For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
+"white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
+msgstr ""
+"對於 Networkchart 附加元件，<a href=\"https://www.fontsquirrel.com/fonts/"
+"white-rabbit\">White Rabbit</a> 字型能呈現非常易讀的結果。\n"
+
+msgid "not installed"
+msgstr "未安裝"
+
+msgid "     and one of either: (pydotplus: "
+msgstr "     並安裝下列任一項：(pydotplus： "
+
+msgid ") or (pygraphviz: "
+msgstr ") 或 (pygraphviz： "
+
+msgid "Installed(MS-Windows)"
+msgstr "已安裝 (MS-Windows)"
+
+msgid "Installed(Linux/Mac)"
+msgstr "已安裝 (Linux/Mac)"
+
+msgid "not installed "
+msgstr "未安裝 "
+
+msgid "not found."
+msgstr "找不到。"
+
+msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
+msgstr "標準。已通過：程式已安裝－32 位元版本，可在 64 位元 Win OS 上執行。"
+
+msgid ") (Requires the gramps addon listed under 'Plugin lib')"
+msgstr ") (需要「Plugin lib」下列出的 Gramps 附加元件)"
+
+msgid "DBF installed"
+msgstr "已安裝 DBF"
+
+msgid ".)(Requires version "
+msgstr "。)(需要版本 "
+
+msgid " installed.)(Passed: version "
+msgstr " 已安裝。)(通過：版本 "
+
+#, python-format
+msgid "(OpenCV facedetection: %s)"
+msgstr "(OpenCV 人臉偵測：%s)"
+
+msgid " (lxml: not found. Requires version "
+msgstr " (lxml：找不到。需要版本 "
+
+msgid " • Requires: MongoDB TBD / pymongo TBD"
+msgstr " • 需要：MongoDB 待確認 / pymongo 待確認"
+
+#, python-format
+msgid " • Operating System: %s"
+msgstr " • 作業系統：%s"
+
+msgid ""
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
+"a></b></u>\n"
+msgstr ""
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">地區設定：</a></"
+"b></u>\n"
+
+msgid "not set"
+msgstr "未設定"
+
+msgid "not tested"
+msgstr "未測試"
+
+msgid ""
+"\n"
+"Installed Locales\\Translations (If only English is listed please re-install "
+"Gramps again and make sure to select all the Translations and Dictionaries)\n"
+"\n"
+msgstr ""
+"\n"
+"已安裝的語系\\翻譯 (若僅列出英文，請重新安裝 Gramps，並確認選取所有翻譯及字"
+"典)\n"
+"\n"
+
+msgid ""
+"\n"
+"Gramps Environment variables:\n"
+msgstr ""
+"\n"
+"Gramps 環境變數：\n"
+
+msgid "found"
+msgstr "已找到"
+
+msgid ""
+"Sphinx is a tool that builds the Gramps development documentation and man "
+"pages\n"
+msgstr "Sphinx 是用來建立 Gramps 開發文件與 man 手冊的工具\n"

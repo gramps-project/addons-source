@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,10 +12,100 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Map tiles"
+msgstr "地図タイル"
+
+msgid ""
+"Set the size of the heatmap points.\n"
+"Default: 15"
+msgstr ""
+"ヒートマップポイントのサイズを設定します。\n"
+"デフォルト: 15"
+
+msgid "File path"
+msgstr "ファイルパス"
+
+msgid ""
+"For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
+"the characters space, underline and hypen are allowed. The file name also "
+"has to start and end with an alphanumeric character.The file extention "
+"'.html' is added by the report."
+msgstr ""
+"ファイル名には英字 (A-Z, a-z）、数字 (0-9）、スペース、アンダースコア、ハイフ"
+"ンのみ使用できます。ファイル名は英数字で始まり、英数字で終わる必要がありま"
+"す。拡張子 '.html' はレポートによって追加されます。"
+
+msgid "File name"
+msgstr "ファイル名"
+
+msgid "Enable custom start position"
+msgstr "カスタム開始位置を有効にする"
+
+msgid ""
+"Enabling will force the map open at your custom start position and zoom."
+msgstr "有効にすると、カスタム開始位置とズームレベルで地図が開きます。"
+
+msgid "Start latitude"
+msgstr "開始緯度"
+
+msgid ""
+"Set custom start position latitude\n"
+"Default: 50.0"
+msgstr ""
+"カスタム開始位置の緯度を設定\n"
+"デフォルト: 50.0"
+
+msgid "Start longitude"
+msgstr "開始経度"
+
+msgid ""
+"Set custom start position longitude\n"
+"Default: 10.0"
+msgstr ""
+"カスタム開始位置の経度を設定\n"
+"デフォルト: 10.0"
+
+msgid "Start zoom"
+msgstr "開始ズーム"
+
+msgid ""
+"Set the value for the starting zoom\n"
+"Default: 5"
+msgstr ""
+"開始ズームの値を設定\n"
+"デフォルト: 5"
+
+msgid "Path does not exist."
+msgstr "パスが存在しません。"
+
+msgid "Invalid filename."
+msgstr "無効なファイル名です。"
+
 msgid "INFO"
 msgstr "INFO"
+
+msgid "Create a heatmap web report."
+msgstr "ヒートマップWebレポートを作成します。"
+
+msgid "Stamen Terrain"
+msgstr "Stamen Terrain"
+
+msgid "Stamen Terrain (Background only)"
+msgstr "Stamen Terrain (背景のみ）"
+
+msgid "Stamen Toner"
+msgstr "Stamen Toner"
+
+msgid "Stamen Watercolor"
+msgstr "Stamen Watercolor"
+
+msgid "CartoDB Positron"
+msgstr "CartoDB Positron"
+
+msgid "CartoDB DarkMatter"
+msgstr "CartoDB DarkMatter"

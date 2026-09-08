@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-08-05 18:01+0000\n"
+"PO-Revision-Date: 2026-08-29 07:51+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #, python-format
 msgid "Form: %s"
@@ -97,16 +97,16 @@ msgid "Rooms"
 msgstr "חדרים"
 
 msgid "County or Co. Borough"
-msgstr "מחוז או רובע מחוזי"
+msgstr "מחוז או עיר־מחוז"
 
 msgid "District Electoral Division or Ward"
-msgstr "חלוקה מחוזית לבחירות או רובע"
+msgstr "אזור בחירה מחוזי/רובע"
 
 msgid "Townland"
 msgstr "Townland"
 
 msgid "Urban Dist. Town or Village"
-msgstr "מחוז עירוני, עיירה או כפר"
+msgstr "נפה עירונית, עיירה או כפר"
 
 msgid "Street etc with No. of House"
 msgstr "רחוב ועוד עם מס׳ בית"
@@ -187,7 +187,7 @@ msgid "Superintendent Registrar's District"
 msgstr "מחוז הרשם המפקח"
 
 msgid "Registrar's District"
-msgstr "רשם של מחוז"
+msgstr "מחוז הרשם"
 
 msgid "Union"
 msgstr "איחוד"
@@ -1110,7 +1110,7 @@ msgid "10. Born within last twelve months"
 msgstr "10. נולדו בשנים־עשר החודשים האחרונים"
 
 msgid "11. Country or Province of Birth"
-msgstr "11. ארץ או פרובינציה של לידה"
+msgstr "11. מדינה או חבל הלידה"
 
 msgid "12. Religion"
 msgstr "12. דת"
@@ -1257,7 +1257,7 @@ msgid "Employees"
 msgstr "עובדים"
 
 msgid "20. Employer to state average number of hands employed during year"
-msgstr "20. מעסיק למדינה ממוצע מספר של עובדים מועסקים במהלך שנה"
+msgstr "20. מספר העובדים הממוצע שהעסיק המעסיק במהלך השנה"
 
 msgid "CanRead"
 msgstr "ניתן קריאה"
@@ -1329,7 +1329,7 @@ msgid "10. Age at last birthday"
 msgstr "10. גיל ביום ההולדת האחרון"
 
 msgid "11. Country or place of birth"
-msgstr "11. ארץ או מקום מתוך לידה"
+msgstr "11. מדינה או מקום לידה"
 
 msgid "12. Year of immigration to Canada, if an immigrant"
 msgstr "12. שנת הגירה לקנדה, אם מדובר במהגר"
@@ -1509,13 +1509,13 @@ msgid "OwnedAcres"
 msgstr "בבעלות אקרים"
 
 msgid "12. Real Estate Owned: Grand total of acres"
-msgstr "12. נכסי מקרקעין בבעלות: סך כל האקרים"
+msgstr "12. מקרקעין בבעלות: סך כל האקרים"
 
 msgid "OwnedLots"
 msgstr "בבעלות מגרשים"
 
 msgid "13. Real Estate Owned: Number of town or village lots"
-msgstr "13. נכסי מקרקעין בבעלות: מספר מגרשי עיירה או כפר"
+msgstr "13. מקרקעין בבעלות: מספר מגרשי עיירה או כפר"
 
 msgid "OwnedHouses"
 msgstr "בבעלות בתים"
@@ -1527,55 +1527,55 @@ msgid "OwnedStores"
 msgstr "בבעלות חנויות"
 
 msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
-msgstr "15. נכסי מקרקעין בבעלות: מספר חנויות, מחסנים ועוד"
+msgstr "15. מקרקעין בבעלות: מספר חנויות, מחסנים ועוד"
 
 msgid "OwnedBars"
 msgstr "בבעלות סרגל"
 
 msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
-msgstr "16. נכסי מקרקעין בבעלות: מספר אסמים, אורוות ומבני־עזר אחרים"
+msgstr "16. מקרקעין בבעלות: מספר אסמים, אורוות ומבני־עזר אחרים"
 
 msgid "OwnedSilos"
 msgstr "בבעלות ממגורות"
 
 msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
-msgstr "17. נכסי מקרקעין בבעלות: מספר ממגורות וקיבולת ברגל מעוקבת"
+msgstr "17. מקרקעין בבעלות: מספר ממגורות וקיבולת ברגל מעוקבת"
 
 msgid "OwnedFactories"
 msgstr "בבעלות מפעלים"
 
 msgid "18. Real Estate Owned: Number of manufacturing establishments"
-msgstr "18. נכסי מקרקעין בבעלות: מספר מפעלי ייצור"
+msgstr "18. מקרקעין בבעלות: מספר מפעלי ייצור"
 
 msgid "LeasedAcres"
 msgstr "אקרים בחכירה"
 
 msgid "19. Real Estate Leased: Grand total of acres"
-msgstr "19. נכסי מקרקעין בחכירה: סך כל האקרים"
+msgstr "19. מקרקעין חכורים: סך כל האקרים"
 
 msgid "LeasedLots"
 msgstr "חלקות חכורות"
 
 msgid "20. Real Estate Leased: Number of town or village lots"
-msgstr "20. נכסי מקרקעין בחכירה: מספר מגרשי עיירה או כפר"
+msgstr "20. מקרקעין חכורים: מספר מגרשי עיירה או כפר"
 
 msgid "LeasedHouses"
 msgstr "חכורים בתים"
 
 msgid "21. Real Estate Leased: Number of dwelling houses"
-msgstr "21. נכסי מקרקעין בחכירה: מספר בתי מגורים"
+msgstr "21. מקרקעין חכורים: מספר בתי מגורים"
 
 msgid "LeasedStores"
 msgstr "חכורים חנויות"
 
 msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
-msgstr "22. נכסי מקרקעין בחכירה: מספר חנויות, מחסנים ועוד"
+msgstr "22. מקרקעין חכורים: מספר חנויות, מחסנים ועוד"
 
 msgid "LeasedBarns"
 msgstr "אסמים חכורים"
 
 msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
-msgstr "23. נכסי מקרקעין בחכירה: מספר אסמים, אורוות ומבני־עזר אחרים"
+msgstr "23. מקרקעין חכורים: מספר אסמים, אורוות ומבני־עזר אחרים"
 
 msgid "LeasedSilos"
 msgstr "ממגורות חכורות"
@@ -1587,7 +1587,7 @@ msgid "LeasedFactories"
 msgstr "מפעלים חכורים"
 
 msgid "25. Real Estate Leased: Number of manufacturing establishments"
-msgstr "25. נכסי מקרקעין בחכירה: מספר מפעלי ייצור"
+msgstr "25. מקרקעין חכורים: מספר מפעלי ייצור"
 
 msgid "Denomination"
 msgstr "זרם דתי"
@@ -1677,7 +1677,7 @@ msgid "6. Age"
 msgstr "6. גיל"
 
 msgid "7. Country or place of birth"
-msgstr "7. ארץ או מקום מתוך לידה"
+msgstr "7. מדינה או מקום לידה"
 
 msgid "8. Year of immigration to Canada"
 msgstr "8. שנת הגירה לקנדה"
@@ -1743,7 +1743,7 @@ msgid "18. Employment other than at chief trade or occupation, if any"
 msgstr "18. תעסוקה שאינה המקצוע או משלח־היד העיקרי, אם קיימת"
 
 msgid "22. State where person employed"
-msgstr "22. מדינה היכן אדם מועסקים"
+msgstr "22. מדינת־משנה בה אדם מועסק"
 
 msgid "WeeksOccupation"
 msgstr "שבועות משלח יד"
@@ -1978,7 +1978,7 @@ msgid "EmploymentPlace"
 msgstr "מקום תעסוקה"
 
 msgid "26. State where person is employed"
-msgstr "26. מדינה היכן אדם מועסקים"
+msgstr "26. מדינת־משנה בה אדם מועסק"
 
 msgid "NARA publication"
 msgstr "NARA פרסום"
@@ -2356,7 +2356,7 @@ msgid "White persons illiterate over 20"
 msgstr "לבנים אנאלפביתים מעל גיל 20"
 
 msgid "State of"
-msgstr "מדינה מתוך"
+msgstr "מדינת־משנה של"
 
 msgid "Line No."
 msgstr "מס׳ שורה"
@@ -2365,7 +2365,7 @@ msgid "Family No."
 msgstr "מס' משפחה"
 
 msgid "Value of real estate"
-msgstr "ערך מתוך מקרקעין אחוזה"
+msgstr "ערך מקרקעין"
 
 msgid "Place of birth"
 msgstr "מקום הלידה"
@@ -2518,7 +2518,7 @@ msgid "Post Office"
 msgstr "דואר"
 
 msgid "Value of personal estate"
-msgstr "ערך מתוך אישי אחוזה"
+msgstr "ערך מקרקעין פרטיים"
 
 msgid "Live Stock June 1, 1860"
 msgstr "משק־חי יוני 1, 1860"
@@ -2644,7 +2644,7 @@ msgid "Number of days ill"
 msgstr "מספר ימי מחלה"
 
 msgid "Father of foreign birth"
-msgstr "אב שנולד בארץ זרה"
+msgstr "אב שנולד במדינה זרה"
 
 msgid "Mother of foreign birth"
 msgstr "אם מתוך זר לידה"
@@ -3085,7 +3085,7 @@ msgid "Disability Incurred"
 msgstr "נכות שנגרמה"
 
 msgid "State (or Territory) of"
-msgstr "מדינה (או טריטוריה) של"
+msgstr "מדינת־משנה (או טריטוריה) של"
 
 msgid "Division of County"
 msgstr "חלוקה מתוך מחוז"
@@ -3172,7 +3172,7 @@ msgid "Attended school since Sept. 1, 1909"
 msgstr "למד בבית־ספר מאז 1 בספטמבר 1909"
 
 msgid "Civil War veteran"
-msgstr "אזרחי מלחמה ותיק מלחמה"
+msgstr "ותיק מלחמת האזרחים"
 
 msgid "If owned, free or mortgaged"
 msgstr "אם בבעלות, חופשי או משועבד"
@@ -3274,7 +3274,7 @@ msgid "City (April 1, 1935)"
 msgstr "עיר (אפריל 1, 1935)"
 
 msgid "State (Territory/Country)"
-msgstr "מדינה (טריטוריה/ארץ)"
+msgstr "מדינת־משנה (טריטוריה/מדינה)"
 
 msgid "On a Farm (Y/N)"
 msgstr "בחווה (Y/N)"
@@ -3380,7 +3380,7 @@ msgid "Is he now married, widowed, divorced, separated, or never married?"
 msgstr "האם הוא נשוי כעת, אלמן, גרוש, פרוד או מעולם לא נישא?"
 
 msgid "What State (or foreign country) was he born in?"
-msgstr "באיזו מדינה (או ארץ זרה) הוא נולד?"
+msgstr "באיזו מדינת־משנה (או מדינה זרה) הוא נולד?"
 
 msgid "Is he naturalized?"
 msgstr "האם התאזרח?"
@@ -3423,7 +3423,7 @@ msgid "Type of work"
 msgstr "סוג עבודה"
 
 msgid "What kind of work was he doing?"
-msgstr "איזה סוג עבודה הוא ביצע?"
+msgstr "איזה סוג עבודה הוא עסק?"
 
 msgid "Business or industry"
 msgstr "עסק או ענף"
@@ -3450,13 +3450,13 @@ msgid "Was he living in this same county a year ago?"
 msgstr "האם הוא גר באותו מחוז לפני שנה?"
 
 msgid "State or foreign country"
-msgstr "מדינה או זר ארץ"
+msgstr "מדינת־משנה או מדינה זרה"
 
 msgid "What country was his father born in?"
-msgstr "מה ארץ היה שלו אב נולד ב?"
+msgstr "באיזו מדינה נולד אביו?"
 
 msgid "What country was his mother born in?"
-msgstr "מה ארץ היה שלו אם נולד ב?"
+msgstr "באיזו מדינה נולדה אימו?"
 
 msgid "Highest grade attended"
 msgstr "הכיתה הגבוהה ביותר שנלמדה"
@@ -3645,7 +3645,7 @@ msgid "County lived in when first placed on roll"
 msgstr "מחוז המגורים בעת הרישום הראשון ברשימה"
 
 msgid "Other states lived in and when"
-msgstr "מדינות אחרות שבהן התגורר ומתי"
+msgstr "מדינות־משנה אחרות שבהן התגורר ומתי"
 
 msgid "Moved to Alabama"
 msgstr "עבר לאלבמה"
@@ -3663,7 +3663,7 @@ msgid "Was it an Alabama Regiment"
 msgstr "האם היה זה רגימנט אלבמה"
 
 msgid "If not, give name of state"
-msgstr "אם לא, יש לציין את שם המדינה"
+msgstr "אם לא, נא לציין את שם מדינת־משנה"
 
 msgid "Name of your Captain"
 msgstr "שם הקפטן"
@@ -3831,7 +3831,7 @@ msgid "Relation to Family"
 msgstr "קשר למשפחה"
 
 msgid "Degree of Education"
-msgstr "דרגת מתוך השכלה"
+msgstr "רמת השכלה"
 
 msgid "Owner or Renter"
 msgstr "בעלים או שוכר"
@@ -3942,7 +3942,7 @@ msgid "Widowed"
 msgstr "אלמן"
 
 msgid "Years resident in the state"
-msgstr "שנים תושב במדינה"
+msgstr "שנות מגורים במדינת־משנה"
 
 msgid "Native voters"
 msgstr "מצביעים ילידים"
@@ -4044,10 +4044,10 @@ msgid "Place of birth, county"
 msgstr "מקום מתוך לידה, מחוז"
 
 msgid "Place of birth, state or territory"
-msgstr "מקום לידה, מדינה או טריטוריה"
+msgstr "מקום לידה, מדינת־משנה או טריטוריה"
 
 msgid "Place of birth, country"
-msgstr "מקום מתוך לידה, ארץ"
+msgstr "מקום לידה, מדינה"
 
 msgid "Father (N, Native; F, Foreign)"
 msgstr "אב (N, יליד; F, זר)"
@@ -4125,31 +4125,31 @@ msgid "Deaths in 1894"
 msgstr "פטירות ב־1894"
 
 msgid "Deaf and dumb not in State School for Deaf"
-msgstr "חירש ואילם לא במדינה בית־ספר עבור חירש"
+msgstr "חירש־אילם שאינו לומד בבית הספר המדינתי לחירשים"
 
 msgid "Blind not in State College for Blind"
-msgstr "עיוור לא במדינה מכללה עבור עיוור"
+msgstr "עיוור שאינו לומד בבית הספר המדינתי לעיוורים"
 
 msgid "Insane not in State Hospital for Insane"
 msgstr "חולי נפש שאינם בבית־חולים מדינתי לחולי נפש"
 
 msgid "Company if in Civil War"
-msgstr "פלוגה אם באזרחי מלחמה"
+msgstr "פלוגה במלחמת האזרחים"
 
 msgid "Regiment if in Civil War"
-msgstr "רגימנט אם באזרחי מלחמה"
+msgstr "גדוד במלחמת האזרחים"
 
 msgid "State if in Civil War"
-msgstr "מדינה אם באזרחי מלחמה"
+msgstr "מדינת־משנה אם מלחמת האזרחים"
 
 msgid "Arm of service and rank if in Civil War"
-msgstr "חיל שירות ודרגה אם השתתף במלחמת האזרחים"
+msgstr "חיל ודרגה אם במלחמת האזרחים"
 
 msgid "Regiment if in Mexican War"
 msgstr "רגימנט אם השתתף במלחמת מקסיקו"
 
 msgid "State if in Mexican War"
-msgstr "מדינה אם במלחמת מקסיקו"
+msgstr "מדינת־משנה אם במלחמת מקסיקו"
 
 msgid "Card No."
 msgstr "מס' כרטיס"
@@ -4254,7 +4254,7 @@ msgid "Military-Service in which war"
 msgstr "שירות צבאי – באיזו מלחמה"
 
 msgid "Military Service in; Civil War-Mexican War-Spanish War"
-msgstr "שירות צבאי ב־: מלחמת האזרחים – מלחמת מקסיקו – מלחמת ספרד"
+msgstr "שירות צבאי ב: מלחמת האזרחים – מלחמת מקסיקו – מלחמת ספרד"
 
 msgid "Military-Company"
 msgstr "צבא-פלוגה"
@@ -4269,10 +4269,10 @@ msgid "Military Service; Regiment"
 msgstr "צבאי שירות; רגימנט"
 
 msgid "Military-State"
-msgstr "צבא-מדינה"
+msgstr "צבא מדינת־משנה"
 
 msgid "Military Service; State"
-msgstr "צבאי שירות; מדינה"
+msgstr "צבאי שירות; מדינת־משנה"
 
 msgid "Military-Class of service"
 msgstr "שירות צבאי – סוג השירות"
@@ -4314,7 +4314,7 @@ msgid "Extent of Education Grammar"
 msgstr "היקף של חינוך דקדוק"
 
 msgid "Extent of Education High School"
-msgstr "היקף השכלה בבית־ספר תיכון"
+msgstr "היקף חינוך בבית־ספר תיכון"
 
 msgid "Extent of Education College"
 msgstr "היקף של חינוך מכללה"
@@ -4329,7 +4329,7 @@ msgid "Value of farm or home"
 msgstr "ערך החווה או הבית"
 
 msgid "Military Service: Civil War"
-msgstr "צבאי שירות: אזרחי מלחמה"
+msgstr "שירות צבאי: מלחמת האזרחים"
 
 msgid "Military Service: Mexican"
 msgstr "שירות צבאי: מקסיקני"
@@ -4350,7 +4350,7 @@ msgid "Military Service: Navy"
 msgstr "צבאי שירות: צי"
 
 msgid "Military Service: State"
-msgstr "צבאי שירות: מדינה"
+msgstr "שירות צבאי: מדינת־משנה"
 
 msgid "Military Service: Regiment"
 msgstr "צבאי שירות: רגימנט"
@@ -4464,13 +4464,13 @@ msgid "Parents Place of Marriage"
 msgstr "הורים מקום מתוך נישואין"
 
 msgid "Civil War Veteran"
-msgstr "אזרחי מלחמה ותיק מלחמה"
+msgstr "ותיק מלחמת האזרחים"
 
 msgid "Civil War Service Branch"
-msgstr "אזרחי מלחמה שירות ענף"
+msgstr "ענף שרות במלחמת האזרחים"
 
 msgid "Civil War State"
-msgstr "אזרחי מלחמה מדינה"
+msgstr "מדינת־משנה במלחמת האזרחים"
 
 msgid "Spanish-American War Veteran"
 msgstr "ותיק מלחמת ספרד–ארצות הברית"
@@ -4479,7 +4479,7 @@ msgid "Spanish-American War Service Branch"
 msgstr "זרוע שירות במלחמת ארצות הברית–ספרד"
 
 msgid "Spanish-American War State"
-msgstr "מדינת השירות במלחמת ספרד–ארצות הברית"
+msgstr "מדינת־משנה במלחמת ספרד–ארצות הברית"
 
 msgid "World War Veteran"
 msgstr "ותיק מלחמת העולם"
@@ -4488,7 +4488,7 @@ msgid "World War Service Branch"
 msgstr "זרוע שירות במלחמת העולם"
 
 msgid "World War State"
-msgstr "מדינה במלחמת העולם"
+msgstr "מדינת־משנה במלחמת העולם"
 
 msgid "Agricultural Pursuits"
 msgstr "עיסוקים חקלאיים"
@@ -4524,10 +4524,10 @@ msgid "Regiment"
 msgstr "רגימנט"
 
 msgid "Real Estate"
-msgstr "מקרקעין אחוזה"
+msgstr "מקרקעין"
 
 msgid "Personal Estate"
-msgstr "אישי אחוזה"
+msgstr "מקרקעין פרטי"
 
 msgid "Attended School"
 msgstr "למד בית־ספר"
@@ -4593,7 +4593,7 @@ msgid "Honorably discharged"
 msgstr "שוחרר בכבוד"
 
 msgid "State Enlisted"
-msgstr "מדינה התגייס"
+msgstr "במדינת־משנה בה התגייס"
 
 msgid "Arm of Service"
 msgstr "זרוע שירות"
@@ -4620,7 +4620,7 @@ msgid "Honorably discharged from military service"
 msgstr "שוחרר בכבוד משירות צבאי"
 
 msgid "State in which enlisted"
-msgstr "מדינה בש התגייס"
+msgstr "במדינת־משנה בה התגייס"
 
 msgid "Company or command"
 msgstr "חברה או פיקוד"
@@ -4653,7 +4653,7 @@ msgid "Number of house"
 msgstr "מספר בית"
 
 msgid "Year of immigration to the United States"
-msgstr "שנת הגירה לארצות הברית"
+msgstr "שנת ההגירה לארצות הברית"
 
 msgid "Naturalized, alien or first papers"
 msgstr "התאזרח, זר או מסמכים ראשונים"
@@ -4665,10 +4665,10 @@ msgid "Nativity"
 msgstr "מקום לידה"
 
 msgid "Father's Nativity"
-msgstr "אב של ארץ לידה"
+msgstr "מקום לידת האב"
 
 msgid "Mother's Nativity"
-msgstr "אם של ארץ לידה"
+msgstr "מקום לידת האם"
 
 msgid "Inhabitants in"
 msgstr "תושבים ב"
@@ -4677,10 +4677,10 @@ msgid "Served in Federal army during rebellion"
 msgstr "שירת בצבא הפדרלי במהלך המרד"
 
 msgid "Residence in State - Years"
-msgstr "מגורים במדינה - שנים"
+msgstr "מגורים במדינת־משנה – שנים"
 
 msgid "Residence in State - Months"
-msgstr "מגורים במדינה - חודשים"
+msgstr "מגורים במדינת־משנה – חודשים"
 
 msgid "Residence in District - Years"
 msgstr "מגורים במחוז - שנים"
@@ -5151,7 +5151,7 @@ msgid "Years in South Dakota"
 msgstr "שנים בדקוטה הדרומית"
 
 msgid "Years in United States"
-msgstr "שנים בארצות הברית"
+msgstr "מספר השנים בארצות הברית"
 
 msgid "Birthplace of Father"
 msgstr "מקום לידה מתוך אב"
@@ -5268,28 +5268,28 @@ msgid "Nativity - United States"
 msgstr "מקום לידה - ארצות הברית"
 
 msgid "Nativity - Germany"
-msgstr "ארץ לידה – גרמניה"
+msgstr "מקום לידה – גרמניה"
 
 msgid "Nativity - Great Britain"
-msgstr "ארץ לידה – בריטניה הגדולה"
+msgstr "מקום לידה – בריטניה"
 
 msgid "Nativity - Ireland"
-msgstr "ארץ לידה - אירלנד"
+msgstr "מקום לידה - אירלנד"
 
 msgid "Nativity - France"
-msgstr "ארץ לידה – צרפת"
+msgstr "מקום לידה – צרפת"
 
 msgid "Nativity - British America"
-msgstr "ארץ לידה – אמריקה הבריטית"
+msgstr "מקום לידה – אמריקה הבריטית"
 
 msgid "Nativity - Scandinavian"
-msgstr "ארץ לידה – סקנדינביה"
+msgstr "מקום לידה – סקנדינביה"
 
 msgid "Nativity - Holland"
-msgstr "ארץ לידה – הולנד"
+msgstr "מקום לידה – הולנד"
 
 msgid "Nativity - All other countries"
-msgstr "מקום לידה - כל אחר ארץ"
+msgstr "מקום לידה - כל שאר המדינות"
 
 msgid "Residing in the"
 msgstr "מתגורר ב"
@@ -5301,7 +5301,7 @@ msgid "Reg't."
 msgstr "Reg't."
 
 msgid "State or Vessel"
-msgstr "מדינה או כלי שיט"
+msgstr "מדינת־משנה או אוניה"
 
 msgid "Parents place of birth"
 msgstr "הורים מקום מתוך לידה"
@@ -5407,7 +5407,7 @@ msgid "Years in this occupation"
 msgstr "שנים בזה משלח יד"
 
 msgid "Education Level"
-msgstr "השכלה מפלס"
+msgstr "רמת השכלה"
 
 msgid "Social Security No."
 msgstr "מס' ביטוח לאומי"
@@ -5473,7 +5473,7 @@ msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
 msgstr "אזרח מלידה, אזרח שהתאזרח, זר, לא־אזרח או אינדיאני אזרח"
 
 msgid "If not a citizen, of what nation are you a citizen or subject?"
-msgstr "אם אינו אזרח, של איזו אומה הוא אזרח או נתין?"
+msgstr "אם לא אזרח, אז אזרח או נתין ל איזו מדינה?"
 
 msgid "Employer's Name & address"
 msgstr "שם המעסיק וכתובתו"
@@ -5492,7 +5492,7 @@ msgstr ""
 "לחלוטין בתמיכתך (נא לפרט מי)?"
 
 msgid "What military service have you had? (Branch, Years, Nation or State)"
-msgstr "איזה שירות צבאי היה? (זרוע, שנים, לאום או מדינה)"
+msgstr "פרטי השירות הצבאי: זרוע, שנות שירות, מדינה או מדינת־משנה"
 
 msgid "Do you claim exemption from draft (specify grounds)"
 msgstr "האם נטען לפטור מגיוס (נא לפרט נימוקים)"
@@ -5569,7 +5569,7 @@ msgid ""
 " No. and street or R.F.D. No., Town, County, State"
 msgstr ""
 "(2) כתובת או מקום מגורים\n"
-" מס׳ ורחוב או מס׳ R.F.D., עיירה, מחוז, מדינה"
+" מס׳ ורחוב או מס׳ R.F.D., עיירה, מחוז, מדינת־משנה"
 
 msgid "Mailing Address"
 msgstr "דואר כתובת"
@@ -5609,7 +5609,7 @@ msgstr ""
 "(6) בכל הטפסים האחרים"
 
 msgid "Country of Citizenship"
-msgstr "ארץ של אזרחות"
+msgstr "מדינת אזרחות"
 
 msgid ""
 "(6) On D.S.S. Form 1\n"
@@ -5898,7 +5898,7 @@ msgid "Formue"
 msgstr "רכוש"
 
 msgid "State Tax"
-msgstr "מס מדינה"
+msgstr "מסוי מדינת־משנה"
 
 msgid "Statsskat"
 msgstr "מס מדינה"
@@ -6260,7 +6260,7 @@ msgid "BIRTHPLACE of every Person."
 msgstr "מקום לידה של כל אדם."
 
 msgid "NATIONALITY of every Person born in a Foreign Country."
-msgstr "לאום של כל אדם שנולד בארץ זרה."
+msgstr "לאום של כל אדם שנולד במדינה זרה."
 
 msgid "INFIRMITY"
 msgstr "INFIRMITY"

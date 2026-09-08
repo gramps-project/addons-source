@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-31 17:35+0200\n"
+"POT-Creation-Date: 2026-08-06 07:24+0200\n"
 "PO-Revision-Date: 2025-11-17 06:51+0000\n"
 "Last-Translator: Fedir Zinchuk <fedikw@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -68,30 +68,14 @@ msgstr "Помилка сервера %s. Будь ласка, перевірт�
 msgid "Unexpected error: %s"
 msgstr "Неочікувана помилка: %s"
 
-msgid "Fetching remote data..."
-msgstr "Отримання віддалених даних..."
+msgid "Media files are in sync."
+msgstr "Медіафайли синхронізовані."
 
-msgid "Comparing local and remote data..."
-msgstr "Порівняння локальних та віддалених даних..."
+msgid "Username:"
+msgstr "Ім'я користувача:"
 
-msgid "Successfully applied changes to local database."
-msgstr "Зміни успішно застосовані до локальної бази даних."
-
-msgid "Continue without transport encryption?"
-msgstr "Продовжити без транспортного шифрування?"
-
-msgid ""
-"You have specified a URL with http scheme. If you continue, your password "
-"will be sent in clear text over the network. Use only for local testing!"
-msgstr ""
-"Ви вказали URL зі схемою http. Якщо ви продовжите, ваш пароль буде надіслано "
-"незашифрованим через мережу. Використовуйте тільки для локального тестування!"
-
-msgid "Continue with HTTP"
-msgstr "Продовжити з HTTP"
-
-msgid "Use HTTPS"
-msgstr "Використати HTTPS"
+msgid "Password:"
+msgstr "Пароль:"
 
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
@@ -120,56 +104,8 @@ msgstr ""
 "Якщо ви хочете об'єднати дві значно різні бази з можливістю ручних змін, "
 "використовуйте інструмент Import Merge Tool."
 
-msgid "Server URL: "
-msgstr "URL сервера: "
-
 msgid "Error:"
 msgstr "Помилка:"
 
-msgid "Bidirectional Synchronization"
-msgstr "Двостороння синхронізація"
-
-msgid "Reset remote to local"
-msgstr "Скинути віддалені дані до локальних"
-
-msgid "Reset local to remote"
-msgstr "Скинути локальні дані до віддалених"
-
-msgid "Local changes"
-msgstr "Локальні зміни"
-
-msgid "Modified"
-msgstr "Змінено"
-
-msgid "Remote changes"
-msgstr "Віддалені зміни"
-
-msgid "Simultaneous changes"
-msgstr "Одночасно змінено"
-
-msgid "Fetching information about media files..."
-msgstr "Отримання інформації про медіафайли..."
-
-msgid "Both trees are the same."
-msgstr "Обидва дерева однакові."
-
-msgid "Applying changes to local database ..."
-msgstr "Застосування змін до локальної бази даних ..."
-
-msgid "No changes to apply to local database."
-msgstr "Немає змін для застосування до локальної бази даних."
-
-msgid "Applying changes to remote database ..."
-msgstr "Застосування змін до віддаленої бази даних ..."
-
-msgid "No changes to apply to remote database."
-msgstr "Немає змін для застосування до віддаленої бази даних."
-
-msgid "Missing locally"
-msgstr "Відсутнє локально"
-
-msgid "Missing remotely"
-msgstr "Відсутнє віддалено"
-
-msgid "Media files are in sync."
-msgstr "Медіафайли синхронізовані."
+msgid "Copy"
+msgstr "Копіювати"

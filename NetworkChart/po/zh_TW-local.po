@@ -1,0 +1,431 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "File exists. Overwrite?"
+msgstr "檔案已存在。要覆寫嗎？"
+
+msgid "created"
+msgstr "已建立"
+
+msgid "last_written"
+msgstr "last_written"
+
+msgid "Main"
+msgstr "主要"
+
+msgid "Orthogonal (right angles in connectors)"
+msgstr "直角 (連接線呈直角)"
+
+msgid "Straight (no right angles in connectors)"
+msgstr "直線（連接線沒有直角）"
+
+msgid "Curved (curved and straight connectors)"
+msgstr "曲線 (彎曲及筆直的連接線)"
+
+msgid "Default (Orthogonal)"
+msgstr "預設（直角）"
+
+msgid "Select the graph line connector format."
+msgstr "選取圖表的連接線格式。"
+
+msgid "Top to Bottom"
+msgstr "由上至下"
+
+msgid "Left to Right"
+msgstr "由左至右"
+
+msgid "Bottom to Top"
+msgstr "由下至上"
+
+msgid "Right to Left"
+msgstr "由右至左"
+
+msgid "Default (Top to Bottom)"
+msgstr "預設 (由上至下)"
+
+msgid "Select the graph direction."
+msgstr "選取圖表方向。"
+
+msgid "URL Style"
+msgstr "URL 樣式"
+
+msgid "Include URLs from database."
+msgstr "包含資料庫中的網址。"
+
+msgid "Dynamic URL = Prefix + GrampID + Suffix"
+msgstr "動態網址 = 前綴 + GrampID + 後綴"
+
+msgid "Static URL = Prefix"
+msgstr "靜態網址 = 前綴"
+
+msgid "Don't include URLs"
+msgstr "不包含網址"
+
+msgid "Default (include)"
+msgstr "預設（包含）"
+
+msgid "Select URL style."
+msgstr "選擇 URL 樣式。"
+
+msgid "URL Prefix,Suffix"
+msgstr "URL 前綴、後綴"
+
+msgid ""
+"Enter the Prefix,Suffix (use comma)\n"
+"for dynamically generated URLs.\n"
+"URL = Prefix + GrampsID + Suffix."
+msgstr ""
+"輸入動態產生網址的\n"
+"前綴、後綴 (以逗號分隔)。\n"
+"網址 = 前綴 + GrampsID + 後綴。"
+
+msgid "Enter Font Name"
+msgstr "輸入字型名稱"
+
+msgid ""
+"Enter the primary font style for the chart.\n"
+"Must already be installed.\n"
+"White Rabbit can be obtained from\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+msgstr ""
+"輸入圖表的主要字型樣式。\n"
+"必須是已安裝的字型。\n"
+"White Rabbit 可從以下網址取得\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+
+msgid "Spacing (inch)"
+msgstr "間距 (英吋)"
+
+msgid ""
+"Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
+msgstr "請輸入「世代」之間的間距（英吋，0.1-5.0）。"
+
+msgid "Enter Chart Title"
+msgstr "輸入圖表標題"
+
+msgid "Set the title of the chart."
+msgstr "設定圖表標題。"
+
+msgid "Default (svg)"
+msgstr "預設 (svg)"
+
+msgid ""
+"svg - Scalable Vector Graphics file.\n"
+"pdf - Adobe Portable Document Format.\n"
+msgstr ""
+"svg - 可縮放向量圖形檔案。\n"
+"pdf - Adobe 可攜式文件格式。\n"
+
+msgid "The destination folder for generated files."
+msgstr "產生檔案的目的地資料夾。"
+
+msgid "network"
+msgstr "網絡"
+
+msgid "The filename for the generated svg network chart."
+msgstr "產生的 SVG 網絡圖檔名。"
+
+msgid "Different node shapes/edges for gender."
+msgstr "依性別使用不同的節點形狀／邊框。"
+
+msgid "Node differences for gender."
+msgstr "依性別區分節點。"
+
+msgid "Male Background"
+msgstr "男性背景"
+
+msgid "RGB-color for male box background."
+msgstr "男性方塊背景的 RGB 顏色。"
+
+msgid "Male Background Alpha"
+msgstr "男性背景不透明度"
+
+msgid "Alpha for Male box background (transparent=0, solid=255)."
+msgstr "男性方框背景的 Alpha 值 (透明=0，不透明=255)。"
+
+msgid "Male Box Edge"
+msgstr "男性方框邊框"
+
+msgid "RGB-color for Male box edge."
+msgstr "男性方框邊框的 RGB 色彩。"
+
+msgid "Female Background"
+msgstr "女性背景"
+
+msgid "RGB-color for Female box background."
+msgstr "女性方框背景的 RGB 色彩。"
+
+msgid "Female Background Alpha"
+msgstr "女性背景不透明度"
+
+msgid "Alpha for Female box background (transparent=0, solid=255)."
+msgstr "女性方框背景的 Alpha 值 (透明=0，不透明=255)。"
+
+msgid "Female Box Edge"
+msgstr "女性方塊邊框"
+
+msgid "RGB-color for Female box edge."
+msgstr "女性方塊邊框的 RGB 色彩。"
+
+msgid "Other Background"
+msgstr "其他性別背景"
+
+msgid "RGB-color for other box background."
+msgstr "其他方塊背景的 RGB 顏色。"
+
+msgid "Other Background Alpha"
+msgstr "其他性別背景不透明度"
+
+msgid "Alpha for Other box background (transparent=0, solid=255)."
+msgstr "其他性別方框背景的 Alpha 值 (透明=0，不透明=255)。"
+
+msgid "Family Connector Line"
+msgstr "家庭連接線"
+
+msgid "RGB-color for family connector line."
+msgstr "家庭連接線的 RGB 色彩。"
+
+msgid "Marriage Connector Line"
+msgstr "婚姻連接線"
+
+msgid "RGB-color for marriage connector line."
+msgstr "婚姻連接線的 RGB 色彩。"
+
+msgid "Highlight Connector Line"
+msgstr "醒目標示連接線"
+
+msgid ""
+"RGB-color for the highlighted path between two individuals.  If the "
+"graph.inverts, reverse the order to change."
+msgstr "兩個人物之間醒目標示路徑的 RGB 色彩。若圖形反轉，可將順序顛倒以變更。"
+
+msgid "Trim Box Edge"
+msgstr "裁剪方框邊框"
+
+msgid "RGB-color for box edge that has been trimmed."
+msgstr "已裁剪方框邊框的 RGB 色彩。"
+
+msgid "Remove color background on all nodes."
+msgstr "移除所有節點的背景色。"
+
+msgid "Removes color background for individuals (nodes) on chart."
+msgstr "移除圖表中人物 (節點) 的背景色。"
+
+msgid ""
+"Enter year to start\n"
+"rounding birthday\n"
+"to year only"
+msgstr ""
+"輸入起始年份，\n"
+"此年之後的生日\n"
+"僅顯示年份"
+
+msgid ""
+"Birthdays after this year are represented by the year only.  Invalid entries "
+"will be ignored."
+msgstr "晚於此年份的生日將僅以年份表示。無效的項目將被忽略。"
+
+msgid "Round birthday to year after year entered (above)."
+msgstr "輸入的年份 (上方) 之後，生日僅顯示年份。"
+
+msgid "Represent birthday by year only."
+msgstr "生日僅以年份表示。"
+
+msgid ""
+"Enter year to start\n"
+"rounding marriage\n"
+"date to year only"
+msgstr ""
+"輸入起始年份，\n"
+"此年之後的結婚日期\n"
+"僅顯示年份"
+
+msgid ""
+"Marriages after this year are represented bythe year only. Invalid entries "
+"will be ignored."
+msgstr "此年之後的婚姻僅以年份表示。無效輸入將被忽略。"
+
+msgid "Round marriage to year after year entered (above)."
+msgstr "輸入的年份 (上方) 之後，結婚日期僅顯示年份。"
+
+msgid "Represent marriage by year only."
+msgstr "結婚日期僅以年份表示。"
+
+msgid ""
+"Attempts to remove middle names.  Only works for entries with birth year in "
+"the record."
+msgstr "嘗試移除中間名。僅適用於記錄中有出生年份的項目。"
+
+msgid "Remove middle names."
+msgstr "移除中間名。"
+
+msgid "Allow inclusion of private records in chart."
+msgstr "允許在圖表中包含私密記錄。"
+
+msgid "Trim"
+msgstr "裁剪"
+
+msgid "Trim descendants"
+msgstr "裁剪後代"
+
+msgid "All descendants (children) of selected individuals will not be shown."
+msgstr "不顯示所選人物的所有後代 (子女)。"
+
+msgid "Enable trimming of descendants."
+msgstr "啟用後代裁剪。"
+
+msgid ""
+"You must enter valid person(s) before \n"
+"enabling trimming of descendants from tree."
+msgstr ""
+"啟用家族樹後代裁剪前，\n"
+"必須先輸入有效人物。"
+
+msgid "Trim ancestors"
+msgstr "裁剪祖先"
+
+msgid "All ancestors (parents) of selected individuals will not be shown."
+msgstr "不顯示所選人物的所有祖先 (父母)。"
+
+msgid "Enable trimming of ancestors."
+msgstr "啟用祖先裁剪。"
+
+msgid "Enable trimming of ancestors from tree."
+msgstr "啟用家族樹祖先裁剪。"
+
+msgid "Enable trim groups."
+msgstr "啟用群組裁剪。"
+
+msgid ""
+"Remove groups less than Min Group Size.  Automatic\n"
+"for databases with more than 1500 individuals."
+msgstr ""
+"移除小於群組大小下限的群組。\n"
+"人物超過 1500 人的資料庫會自動執行。"
+
+msgid "Min Group Size"
+msgstr "群組大小下限"
+
+msgid ""
+"Enter the minimum size group to display.\n"
+"Value may be 2 or greater."
+msgstr ""
+"輸入要顯示的群組大小下限。\n"
+"數值須為 2 或以上。"
+
+msgid ""
+"Select Start and\n"
+"End Individuals in\n"
+"displayed path(s).\n"
+"Select two"
+msgstr ""
+"請在顯示的路徑中選取\n"
+"起點與終點人物。\n"
+"選取兩人"
+
+msgid ""
+"Starting and ending person for displayed path(s).\n"
+"Select two people"
+msgstr ""
+"所顯示路徑的起點與終點人物。\n"
+"請選取兩個人物"
+
+msgid "Highlight path(s)"
+msgstr "醒目標示路徑"
+
+msgid "Direct"
+msgstr "直線"
+
+msgid "Any"
+msgstr "任何"
+
+msgid "Default (None)"
+msgstr "預設 (無)"
+
+msgid ""
+"None - Don't highlight paths.\n"
+"Direct - Highlight direct descendant/ancestor paths.\n"
+"Any - Highlight any path(s) including direct or indirect."
+msgstr ""
+"無：不要醒目顯示路徑。\n"
+"直接：醒目顯示直系後代／祖先路徑。\n"
+"任何：醒目顯示所有路徑，包括直接或間接路徑。"
+
+msgid "Show only path(s)"
+msgstr "僅顯示路徑"
+
+msgid "Default (none)"
+msgstr "預設 (無)"
+
+msgid ""
+"None - Don't show paths only.\n"
+"Direct - Show only direct descendant/ancestor paths.\n"
+"Any - Show only path(s) direct or indirect."
+msgstr ""
+"無：不限制為僅顯示路徑。\n"
+"直系：僅顯示直系後代／祖先路徑。\n"
+"任何：僅顯示直接或間接路徑。"
+
+msgid "Select person at center of selection radius in graph."
+msgstr "選取圖表中位於選取半徑中心的人物。"
+
+msgid ""
+"Max connections\n"
+"from center"
+msgstr ""
+"與中心人物的\n"
+"連結數上限"
+
+msgid ""
+"Enter the maximum number of connections allowed from\n"
+"the center person.  Value may be 1 or greater."
+msgstr ""
+"輸入與中心人物之間允許的連結數上限。\n"
+"數值須為 1 或以上。"
+
+msgid "Limit graph to max connections from center."
+msgstr "依與中心人物的連結數上限限制圖表。"
+
+msgid "Display up to max connections from central person."
+msgstr "顯示範圍以與中心人物的連結數上限為止。"
+
+msgid "Highlight central person in graph."
+msgstr "在圖表中醒目標示中心人物。"
+
+msgid "Add yellow color background to central person."
+msgstr "為中心人物加上黃色背景。"
+
+msgid "Use database handle instead of GrampID id in URLs."
+msgstr "網址中使用資料庫控制代碼代替 GrampID ID。"
+
+msgid ""
+"Use database handle instead of the gramps id for URLs.\n"
+"The handle should never change whereas gramps ids can."
+msgstr ""
+"網址中使用資料庫控制代碼代替 Gramps ID。\n"
+"控制代碼應永不變更，而 Gramps ID 可以變更。"
+
+msgid "Confirm overwrite file."
+msgstr "確認覆寫檔案。"
+
+msgid "Enable/disable confirmation of file overwrite."
+msgstr "啟用／停用檔案覆寫確認。"
+
+msgid "Network Chart"
+msgstr "網絡圖"
+
+msgid "Generates a family network chart."
+msgstr "產生家族網絡圖。"

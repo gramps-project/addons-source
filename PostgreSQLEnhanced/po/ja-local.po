@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#, python-brace-format
+msgid "Object {obj_type}:{handle} was modified by another user"
+msgstr "オブジェクト {obj_type}:{handle} は別のユーザーによって変更されました"
+
+msgid "pg_trgm extension required for duplicate detection"
+msgstr "重複検出には pg_trgm 拡張機能が必要です"
+
+msgid ""
+"psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
+"install 'psycopg[binary]'"
+msgstr ""
+"PostgreSQL Enhanced サポートには psycopg3 が必要です。次のコマンドでインス"
+"トールしてください: pip install 'psycopg[binary]'"
+
+#, python-format
+msgid ""
+"psycopg3 version %(installed)s is too old. Version %(required)s or newer is "
+"required."
+msgstr ""
+"psycopg3 バージョン %(installed)s は古すぎます。バージョン %(required)s 以上"
+"が必要です。"
+
+msgid "Database Backend"
+msgstr "データベースバックエンド"
+
+msgid "Database module"
+msgstr "データベースモジュール"
+
+msgid "JSONB support"
+msgstr "JSONB サポート"
+
+msgid "Version warning"
+msgstr "バージョン警告"
+
+#, python-format
+msgid "PostgreSQL %(version)s is below recommended version %(recommended)s"
+msgstr "PostgreSQL %(version)s は推奨バージョン %(recommended)s より下です"
+
+msgid "Extensions"
+msgstr "拡張機能"
+
+msgid "Database size"
+msgstr "データベースサイズ"
+
+#, python-format
+msgid "%(persons)d persons, %(families)d families, %(events)d events"
+msgstr "%(persons)d 人、%(families)d 家族、%(events)d イベント"
+
+msgid "Migration manager not initialized"
+msgstr "移行マネージャーが初期化されていません"
+
+msgid "Enhanced queries require JSONB support"
+msgstr "拡張クエリには JSONB サポートが必要です"
+
+msgid "Full-text search requires JSONB support or search capabilities"
+msgstr "全文検索には JSONB サポートまたは検索機能が必要です"
+
+msgid "Starting migration..."
+msgstr "移行を開始しています..."
+
+#, python-format
+msgid "Migrating %s objects..."
+msgstr "%s オブジェクトを移行中..."
+
+#, python-format, python-brace-format
+msgid "Migrated %s {obj_type} objects"
+msgstr "%s {obj_type} オブジェクトを移行しました"
+
+msgid "Migration completed!"
+msgstr "移行が完了しました！"
+
+msgid "Starting upgrade..."
+msgstr "アップグレードを開始しています..."
+
+#, python-format
+msgid "Upgrading %s objects..."
+msgstr "%s オブジェクトをアップグレード中..."
+
+msgid "Creating indexes..."
+msgstr "インデックスを作成中..."
+
+msgid "Upgrade completed!"
+msgstr "アップグレードが完了しました！"
+
+msgid "PostgreSQL Enhanced"
+msgstr "PostgreSQL 拡張"
+
+msgid "PostgreSQL _Enhanced Database"
+msgstr "PostgreSQL 拡張データベース(_E)"
+
+msgid ""
+"Advanced PostgreSQL backend with JSONB storage, graph database support "
+"(Apache AGE), vector similarity (pgvector), and AI/ML capabilities. For "
+"advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
+"compatible."
+msgstr ""
+"JSONBストレージ、グラフデータベースサポート (Apache AGE）、ベクトル類似性 "
+"(pgvector）、AI/ML機能を備えた高度なPostgreSQLバックエンド。上級者向け。拡張"
+"機能を備えたPostgreSQL 15+が必要。Gramps Web互換。"

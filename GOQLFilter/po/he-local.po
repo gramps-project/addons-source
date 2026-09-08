@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-04 08:52-0700\n"
-"PO-Revision-Date: 2026-08-05 18:01+0000\n"
+"PO-Revision-Date: 2026-08-29 07:51+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,13 +13,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
+
+msgid "GOQL expression"
+msgstr "ביטוי GOQL"
 
 msgid ""
 "Matches objects for which the given gramps-object-query-language where-"
 "expression evaluates to true"
 msgstr ""
 "התאמת עצמים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
+
+msgid "People matching the <GOQL expression>"
+msgstr "אנשים שתואמים <ביטוי GOQL>"
+
+msgid "Families matching the <GOQL expression>"
+msgstr "משפחות שתואמות <ביטוי GOQL>"
+
+msgid "Events matching the <GOQL expression>"
+msgstr "אירועים שתואמים <ביטוי GOQL>"
+
+msgid "Places matching the <GOQL expression>"
+msgstr "מקומות שתואמים <ביטוי GOQL>"
+
+msgid "Repositories matching the <GOQL expression>"
+msgstr "מאגרים שתואמים <ביטוי GOQL>"
+
+msgid "Sources matching the <GOQL expression>"
+msgstr "מקורות שתואמים <ביטוי GOQL>"
+
+msgid "Citations matching the <GOQL expression>"
+msgstr "מובאות שתואמות <ביטוי GOQL>"
+
+msgid "Media matching the <GOQL expression>"
+msgstr "מדיה שתואמת <ביטוי GOQL>"
+
+msgid "Notes matching the <GOQL expression>"
+msgstr "הערות שתואמות <ביטוי GOQL>"
 
 msgid "Person GOQL Filter"
 msgstr "מסנן GOQL לאדם"
@@ -31,10 +61,10 @@ msgid "GOQL Filter"
 msgstr "מסנן GOQL"
 
 msgid "Family GOQL Filter"
-msgstr "מסנן GOQL למשפחה"
+msgstr "מסנן משפחות GOQL"
 
 msgid "Gramplet providing a gramps-object-query-language family filter"
-msgstr "גרמפלט שמספק מסנן משפחה בשפת־שאילתות־עצמי־גרמפס (GOQL)"
+msgstr "גרמפלט שמספק מסנן משפחות בשפת־שאילתות־עצמי־גרמפס (GOQL)"
 
 msgid "Event GOQL Filter"
 msgstr "מסנן GOQL לאירוע"
@@ -80,6 +110,54 @@ msgstr "גרמפלט שמספק מסנן הערות בשפת־שאילתות־ע
 
 msgid "A gramps-object-query-language where-expression, e.g.\n"
 msgstr "ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), לדוגמה\n"
+
+msgid "Enter inserts a newline; Ctrl+Enter runs Find.\n"
+msgstr ""
+"הקשה על 'אנטר' מכניסה שורה חדשה, הקשה על 'קונטרול+אנטר' מפעילה חיפוש.\n"
+
+msgid "Up/Down at the first/last line recalls previous expressions.\n"
+msgstr "מקשי החצים למעלה/למטה בשורה הראשונה/אחרונה קוראת לביטויים קודמים.\n"
+
+msgid "Tab always completes -- it never inserts a tab character."
+msgstr "מקש הטבלר תמיד משלים -- הוא אף פעם לא מוסיף תו טבלר."
+
+#, python-format
+msgid "%s filter"
+msgstr "במסנן %s"
+
+msgid "This resets the filter parameters to empty state."
+msgstr "זה משצב את פרמטרי המסנן למצב ריק."
+
+msgid "This opens a dialog to save the current expression as a named filter."
+msgstr "פתיחת חלון שיח לשמירת הביטוי הנוכחי כמסנן עם שם."
+
+msgid "Open this gramplet's help page in a browser."
+msgstr "פתיחת עמוד העזרה של הגרמפלט בדפדפן."
+
+msgid "SQL"
+msgstr "SQL"
+
+msgid "Python evaluation"
+msgstr "הערכת פיתון"
+
+#, python-format
+msgid "Error applying filter: %s"
+msgstr "שגיאה בהחלת מסנן: %s"
+
+#, python-format
+msgid "Showing %(shown)d of %(total)d (%(method)s)"
+msgstr "הצגת %(shown)d מתוך %(total)d %(method)s"
+
+#, python-format
+msgid "Error resetting filter: %s"
+msgstr "שגיאה בשצוב מסנן: %s"
+
+msgid "Enter an expression first"
+msgstr "נא להזין ביטוי תחילה"
+
+#, python-brace-format
+msgid "Created by the GOQL Filter gramplet on {today}"
+msgstr "נוצר על ידי גרמפלט מסנן ה־GOQL ב־{today}"
 
 msgid ""
 "Matches people for which the given gramps-object-query-language where-"

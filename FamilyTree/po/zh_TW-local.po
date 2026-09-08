@@ -1,0 +1,187 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+#, python-format
+msgid "Family Tree for %s"
+msgstr "%s 的家族樹"
+
+msgid "Paper too small"
+msgstr "紙張太小"
+
+msgid "Some elements may not appear or be badly rendered."
+msgstr "部分元素可能無法顯示或呈現不佳。"
+
+msgid "Anonymous"
+msgstr "匿名"
+
+msgid "born"
+msgstr "出生"
+
+msgid "baptised"
+msgstr "受洗"
+
+msgid "died"
+msgstr "死亡"
+
+msgid "buried"
+msgstr "安葬"
+
+msgid "cremated"
+msgstr "火化"
+
+msgid "married"
+msgstr "結婚"
+
+msgid "divorced"
+msgstr "離婚"
+
+msgid "resident"
+msgstr "居住"
+
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "於 %(ymd_date)s"
+
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "於 %(ym_date)s"
+
+#, python-format
+msgid "in %(y_date)s"
+msgstr "於 %(y_date)s"
+
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "於 %(placeholder)s"
+
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "於 %(placeholder)s（%(partial)s）"
+
+#, python-format
+msgid "in %(place)s"
+msgstr "於 %(place)s"
+
+#, python-format
+msgid "(%(description)s)"
+msgstr "(%(description)s)"
+
+msgid "The center family for the tree"
+msgstr "家族樹的中心家庭"
+
+msgid "Ancestor Generations"
+msgstr "祖先世代數"
+
+msgid "The number of ancestor generations to include in the tree"
+msgstr "樹狀圖中要包含的祖先世代數"
+
+msgid "Descendant Generations"
+msgstr "後代世代數"
+
+msgid "The number of descendant generations to include in the tree"
+msgstr "家族樹中要包含的後代世代數"
+
+msgid "Kekule number of husband"
+msgstr "丈夫的 Kekule 編號"
+
+msgid ""
+"The Kekule number of the husband (central family). Set 0 to not show Kekule "
+"numbers"
+msgstr "丈夫 (中心家庭) 的 Kekule 編號。設為 0 可隱藏 Kekule 編號"
+
+msgid "Scale to fit on a single page"
+msgstr "縮放至單頁大小"
+
+msgid "Whether to scale to fit on a single page."
+msgstr "是否縮放至單頁大小。"
+
+msgid "No color"
+msgstr "無顏色"
+
+msgid "First generation"
+msgstr "第一代"
+
+msgid "Second generation"
+msgstr "第二代"
+
+msgid "Third generation"
+msgstr "第三代"
+
+msgid "Male line"
+msgstr "父系"
+
+msgid "Male line and illegitimate children"
+msgstr "男性支系及非婚生子女"
+
+msgid "Female line"
+msgstr "母系"
+
+msgid "Shuffle colors"
+msgstr "隨機排列色彩"
+
+msgid "Whether to shuffle colors or order them in rainbow fashion."
+msgstr "是否隨機排列色彩，或依彩虹順序排列。"
+
+msgid "Replace first name with call name"
+msgstr "以慣用名取代名字"
+
+msgid "Underline call name in first name / add call name to first name"
+msgstr "在名字中的慣用名加上底線／將慣用名加入名字"
+
+msgid "Include Occupation"
+msgstr "包含職業"
+
+msgid "Include Residence"
+msgstr "包含居住地"
+
+msgid "Print event data (dead person)"
+msgstr "列印事件資料 (已故人物)"
+
+msgid "Year only"
+msgstr "僅年份"
+
+msgid "Full date"
+msgstr "完整日期"
+
+msgid "Full date and place"
+msgstr "完整日期及地點"
+
+msgid "Print event data (living person)"
+msgstr "列印事件資料 (在世人物)"
+
+msgid "Fall back to baptism if birth event missing"
+msgstr "缺少出生事件時改用受洗事件"
+
+msgid "Fall back to burial or cremation if death event missing"
+msgstr "缺少死亡事件時改用安葬或火化事件"
+
+msgid "Protect private items"
+msgstr "保護私密項目"
+
+msgid "Include event description"
+msgstr "包含事件說明"
+
+msgid "Text Options"
+msgstr "文字選項"
+
+msgid "The style used for names."
+msgstr "姓名使用的樣式。"
+
+msgid "The style used for data (birth, death, marriage, divorce)."
+msgstr "資料 (出生、死亡、結婚、離婚) 使用的樣式。"
+
+msgid "Produces a graphical family tree."
+msgstr "產生圖形化家族樹。"

@@ -1,0 +1,49 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Ancestor"
+msgstr "祖先"
+
+msgid "The ancestor from which to start the line"
+msgstr "作為世系起點的先祖"
+
+msgid "Descendent"
+msgstr "後代"
+
+msgid "The descendent to which to build the line"
+msgstr "世系連線終點的後代"
+
+msgid "The style used for the title of the page."
+msgstr "頁面標題使用的樣式。"
+
+msgid "The style used for the title of a line."
+msgstr "世系標題使用的樣式。"
+
+#, python-format
+msgid "%(line)s. line:"
+msgstr "第 %(line)s 條世系："
+
+#, python-format
+msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
+msgstr "從 %(ancestor)s 到 %(descendent)s 的後代世系"
+
+msgid "Lines of Descendency Report"
+msgstr "後代世系報告"
+
+msgid ""
+"Prints out all descendency lines from a given ancestor to a given descendent "
+"in text."
+msgstr "以文字列出從指定祖先到指定後代的所有世系。"

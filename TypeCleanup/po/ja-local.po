@@ -1,0 +1,107 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Event Roles"
+msgstr "イベントロール"
+
+msgid "Event Types"
+msgstr "イベントタイプ"
+
+msgid "Family Relation Types"
+msgstr "家族関係タイプ"
+
+msgid "Child reference Types"
+msgstr "子参照タイプ"
+
+msgid "Name Origin Types"
+msgstr "名前の起源タイプ"
+
+msgid "Name Types"
+msgstr "名前タイプ"
+
+msgid "Note Types"
+msgstr "メモタイプ"
+
+msgid "Place Types"
+msgstr "場所タイプ"
+
+msgid "Repository Types"
+msgstr "リポジトリタイプ"
+
+msgid "Source Media Types"
+msgstr "ソースメディアタイプ"
+
+msgid "URL Types"
+msgstr "URLタイプ"
+
+msgid "Types Cleanup Tool"
+msgstr "タイプクリーンアップツール"
+
+msgid ""
+"Remove the selected type from the db.\n"
+"This does not change any referenced objects."
+msgstr ""
+"選択したタイプをデータベースから削除します。\n"
+"これは参照されているオブジェクトには影響しません。"
+
+msgid ""
+"Select a new name for the current type, prior to renaming the type in the "
+"referenced objects."
+msgstr ""
+"参照オブジェクト内のタイプを名前変更する前に、現在のタイプの新しい名前を選択"
+"してください。"
+
+msgid "Rename"
+msgstr "名前変更"
+
+msgid "Rename the selected type in all referenced objects."
+msgstr "すべての参照オブジェクト内の選択したタイプの名前を変更します。"
+
+msgid "Close the Type Cleanup Tool"
+msgstr "タイプクリーンアップツールを閉じる"
+
+msgid "Types"
+msgstr "タイプ"
+
+msgid "Type Cleanup Tool"
+msgstr "タイプクリーンアップツール"
+
+#, python-format
+msgid "Changing type from %(old_type)s to %(new_type)s."
+msgstr "タイプを %(old_type)s から %(new_type)s に変更しています。"
+
+msgid ""
+"Removing this custom type will eliminate it from the type selection drop "
+"down lists\n"
+"and further runs of this tool.\n"
+"\n"
+"However, it will not remove it from the referenced items in the database.\n"
+"If you want to change it in referenced items, use 'Rename'."
+msgstr ""
+"このカスタムタイプを削除すると、タイプ選択ドロップダウンリストと\n"
+"このツールの今後の実行から削除されます。\n"
+"\n"
+"ただし、データベース内の参照項目からは削除されません。\n"
+"参照項目内で変更したい場合は、「名前変更」を使用してください。"
+
+msgid "Type Cleanup"
+msgstr "タイプクリーンアップ"
+
+msgid "Clean up (remove) custom types"
+msgstr "カスタムタイプをクリーンアップ (削除）"

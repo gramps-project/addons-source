@@ -1,0 +1,172 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MediaMerge 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-09 10:02-0700\n"
+"PO-Revision-Date: 2026-09-04 16:46+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Generate Gramps Web API key"
+msgstr "Gramps Web API-sleutel genereren"
+
+msgid "Server URL"
+msgstr "Server-URL"
+
+msgid "e.g. https://your-server/api"
+msgstr "bijv. https://your-server/api"
+
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+msgid "Password"
+msgstr "Wachtwoord"
+
+msgid "Generate API Key"
+msgstr "API-sleutel genereren"
+
+msgid ""
+"Enter your server URL, username, and password, then click Generate API Key."
+msgstr ""
+"Voer uw server-URL, gebruikersnaam en wachtwoord in en klik vervolgens op "
+"API-sleutel genereren."
+
+msgid "GRAMPS_WEB_API_KEY"
+msgstr "GRAMPS_WEB_API_KEY"
+
+msgid "Copy"
+msgstr "Kopieer"
+
+msgid "Create Synced Family Tree for this key"
+msgstr "Maak een gesynchroniseerde stamboom voor deze sleutel"
+
+#, python-format
+msgid ""
+"Found an existing %s for this session. Click Create Synced Family Tree to "
+"use it directly, or fill in the form above to generate a different key."
+msgstr ""
+"Een bestaande %s gevonden voor deze sessie. Klik op Gesynchroniseerde "
+"stamboom aanmaken om deze direct te gebruiken of vul het bovenstaande "
+"formulier in om een andere sleutel te genereren."
+
+msgid "Please fill in the server URL, username, and password."
+msgstr "Vul de server-URL, gebruikersnaam en het wachtwoord in."
+
+msgid "Generating API key…"
+msgstr "API-sleutel genereren…"
+
+#, python-format
+msgid "Login failed (HTTP %d): check your username and password."
+msgstr ""
+"Inloggen mislukt (HTTP %d): Controleer uw gebruikersnaam en wachtwoord."
+
+#, python-format
+msgid "Server returned an error (HTTP %d %s): check the Server URL."
+msgstr ""
+"Server heeft een fout geretourneerd (HTTP %d %s): controleer de Server-URL."
+
+#, python-format
+msgid "Could not reach the server: check the Server URL. (%s)"
+msgstr "Kon de server niet bereiken: controleer de server-URL. (%s)"
+
+#, python-format
+msgid "Unexpected response from the server: %s"
+msgstr "Onverwachte reactie van de server: %s"
+
+#, python-format
+msgid "Error: %s"
+msgstr "Fout: %s"
+
+#, python-format
+msgid ""
+"Success. %s is now set for this Gramps session -- no restart needed. Copy "
+"the key below to also set it in your shell environment for next time."
+msgstr ""
+"Succes. %s is nu ingesteld voor deze Gramps-sessie -- geen herstart nodig. "
+"Kopieer de onderstaande sleutel om deze ook in te stellen in uw shell-"
+"omgeving voor de volgende keer."
+
+msgid "Looking up account identity…"
+msgstr "Accountidentiteit opzoeken…"
+
+#, python-format
+msgid ""
+"A Family Tree named \"%s\" already exists. Open it from Family Trees -> "
+"Manage Family Trees instead of creating another one."
+msgstr ""
+"Er bestaat al een stamboom met de naam \"%s\". Open deze met Stambomen - > "
+"Stambomen beheren in plaats van er nog een te maken."
+
+#, python-format
+msgid "Error creating Family Tree: %s"
+msgstr "Fout bij aanmaken van stamboom: %s"
+
+#, python-format
+msgid ""
+"Created Family Tree \"%s\". Open it from Family Trees -> Manage Family Trees "
+"to start syncing."
+msgstr ""
+"Stamboom \"%s\" aangemaakt. Open deze met Stambomen - > Stambomen beheren om "
+"de synchronisatie te starten."
+
+msgid ""
+"Turn a Gramps Web API server URL, username, and password into a "
+"GRAMPS_WEB_API_KEY value for GrampsWebApiDb, and optionally create a "
+"matching, correctly-named GrampsWebApiDb Family Tree for it."
+msgstr ""
+"Zet een Gramps Web API-server-URL, gebruikersnaam en wachtwoord om in een "
+"GRAMPS_WEB_API_KEY-waarde voor GrampsWebApiDb en maak er optioneel een "
+"bijpassende, correct genaamde GrampsWebApiDb-stamboom voor."
+
+msgid ""
+"The account authenticating via GRAMPS_WEB_API_KEY does not have permission "
+"on the server for this operation (HTTP 403 Forbidden). Generate a key for an "
+"account with sufficient permissions, or ask the server administrator to "
+"grant this one access."
+msgstr ""
+"De accountauthenticatie via GRAMPS_WEB_API_KEY heeft geen toestemming op de "
+"server voor deze bewerking (HTTP 403 Forbidden). Genereer een sleutel voor "
+"een account met voldoende machtigingen, of vraag de serverbeheerder om deze "
+"toegang te verlenen."
+
+#, python-format
+msgid ""
+"This Family Tree is named \"%(actual)s\", but GRAMPS_WEB_API_KEY currently "
+"authenticates as \"%(expected)s\". Rename this Family Tree to "
+"\"%(expected_typeable)s\" (Family Trees -> Manage Family Trees) if it's "
+"meant to mirror that account, or open/create the Family Tree already named "
+"that -- reusing this one would mix its existing local data with the other "
+"account's."
+msgstr ""
+"Deze stamboom heet \"%(actual)s\", maar GRAMPS_WEB_API_KEY authenticeert "
+"momenteel als \"%(expected)s\". Hernoem deze stamboom naar "
+"\"%(expected_typeable)s\" (Stambomen -> Stambomen beheren) als het de "
+"bedoeling is om dat account te spiegelen, of open/maak de stamboom aan die "
+"al zo is genoemd -- hergebruik van dit account zou de bestaande lokale "
+"gegevens combineren met die van het andere account."
+
+msgid "Retry local change after server conflict"
+msgstr "Lokale wijziging opnieuw proberen na serverconflict"
+
+msgid "Clear local mirror before full resync"
+msgstr "Lokale kopie verwijderen voor volledig nieuwe synchronisatie"
+
+msgid "GrampsWebApiDb"
+msgstr "GrampsWebApiDb"
+
+msgid "Gramps _Web API Database"
+msgstr "Gramps _Web API Database"
+
+msgid ""
+"Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) as a live "
+"database, mirrored locally for speed."
+msgstr ""
+"Gebruik een Gramps Web API server (bijvoorbeeld gramps-connect of Gramps "
+"Web) als live database, lokaal gespiegeld voor snelheid."

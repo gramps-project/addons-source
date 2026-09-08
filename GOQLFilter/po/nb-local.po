@@ -1,0 +1,93 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: nb\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-04 08:52-0700\n"
+"PO-Revision-Date: 2026-08-13 17:19+0000\n"
+"Last-Translator: Frode Jemtland <frode.jemtland@gmail.com>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
+"project/addons/nb_NO/>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.9.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+
+msgid "GOQL expression"
+msgstr "GOQL uttrykk"
+
+msgid "People matching the <GOQL expression>"
+msgstr "Personer som treffer <GOQL uttrykket>"
+
+msgid "Families matching the <GOQL expression>"
+msgstr "Familier som treffer <GOQL uttrykket>"
+
+msgid "Events matching the <GOQL expression>"
+msgstr "Hendelser som treffer <GOQL uttrykket>"
+
+msgid "Places matching the <GOQL expression>"
+msgstr "Steder som treffer <GOQL uttrykket>"
+
+msgid "Repositories matching the <GOQL expression>"
+msgstr "Arkiv som treffer <GOQL uttrykket>"
+
+msgid "Sources matching the <GOQL expression>"
+msgstr "Kilder som treffer <GOQL uttrykket>"
+
+msgid "Citations matching the <GOQL expression>"
+msgstr "Sitater som treffer <GOQL uttrykket>"
+
+msgid "Media matching the <GOQL expression>"
+msgstr "Meia som treffer <GOQL uttrykket>"
+
+msgid "Notes matching the <GOQL expression>"
+msgstr "Notater som treffer <GOQL uttrykket>"
+
+msgid "Person GOQL Filter"
+msgstr "GOQL personfilter"
+
+msgid "GOQL Filter"
+msgstr "GOQL filter"
+
+msgid "Family GOQL Filter"
+msgstr "GOQL familiefilter"
+
+msgid "Event GOQL Filter"
+msgstr "GOQL hendelsesfilter"
+
+msgid "Place GOQL Filter"
+msgstr "GOQL stedsfilter"
+
+msgid "Repository GOQL Filter"
+msgstr "GOQL arkivfilter"
+
+msgid "Source GOQL Filter"
+msgstr "GOQL kildefilter"
+
+msgid "Citation GOQL Filter"
+msgstr "GOQL sitatfilter"
+
+msgid "Gramplet providing a gramps-object-query-language citation filter"
+msgstr "Gramplet som gir gramps-object-query-language sitatfilter"
+
+msgid "Media GOQL Filter"
+msgstr "GOQL mediafilter"
+
+msgid "Note GOQL Filter"
+msgstr "GOQL notatfilter"
+
+#, python-format
+msgid "%s filter"
+msgstr "%s filter"
+
+msgid "Python evaluation"
+msgstr "Python-evaluering"
+
+msgid "Enter an expression first"
+msgstr "Skriv inn et uttrykk først"
+
+#, python-brace-format
+msgid "Created by the GOQL Filter gramplet on {today}"
+msgstr "Laget med GOQL Filter gramplet {today}"

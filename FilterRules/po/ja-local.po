@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -21,7 +21,10 @@ msgid "People related to <filter>"
 msgstr "<フィルター> に関連する人々"
 
 msgid "Matches people who are related to anybody matched by a person filter"
-msgstr "人物フィルタで一致した人物に関連する人物を検索する"
+msgstr "人物フィルターで一致した人物に関連する人物を検索する"
+
+msgid "Retrieving all sub-filter matches"
+msgstr "すべてのサブフィルター一致を取得中"
 
 msgid "People separated less than <N> degrees of <person>"
 msgstr "<person> から <N> 度以内の距離にある人々"
@@ -48,7 +51,7 @@ msgid "Does NOT match with selected Role"
 msgstr "選択した役割と一致しません"
 
 msgid "Finds the items that don't have event Roles of the selected type."
-msgstr "選択したタイプのイベント ロールを持たないアイテムを検索します。"
+msgstr "選択したタイプのイベントロールを持たない項目を検索します。"
 
 msgid "Inverse"
 msgstr "逆"
@@ -72,16 +75,16 @@ msgid "Families matching <event filter>"
 msgstr "<event filter> に一致する家族"
 
 msgid "Matches families that are matched by an event filter"
-msgstr "イベントフィルタで一致した家族を照合する"
+msgstr "イベントフィルターで一致した家族を照合する"
 
 msgid "Matches families matched by an event filter"
-msgstr "イベントフィルタで一致した家族を照合する"
+msgstr "イベントフィルターで一致した家族を照合する"
 
 msgid "Number of degrees of separation from person."
 msgstr "人物との分離度数。"
 
 msgid "Degrees:"
-msgstr "学位 :"
+msgstr "度数:"
 
 msgid "People with <count> of <event>"
 msgstr "<event> の <count> の人"
@@ -102,7 +105,7 @@ msgid "Include the parents in the matching families."
 msgstr "一致する家族に両親を含めます。"
 
 msgid "Family Filter name:"
-msgstr "家族フィルター名 :"
+msgstr "家族フィルター名:"
 
 msgid "People who are part of families matching <filter>"
 msgstr "<filter> に一致する家族の一員である人々"
@@ -112,6 +115,9 @@ msgstr "死亡時の年齢で人をフィルタリングする"
 
 msgid "Filter rule that matches people by their age at death"
 msgstr "人を死亡時の年齢で一致させるフィルタールール"
+
+msgid "Role:"
+msgstr "役割:"
 
 msgid "Multiple Parents Filter"
 msgstr "複数の親フィルター"
@@ -128,6 +134,12 @@ msgstr "アクティブな人"
 msgid "Matches sources with a particular value"
 msgstr "特定の値を持つソースを一致させる"
 
+msgid "Events from people with role"
+msgstr "役割を持つ人々からのイベント"
+
+msgid "Matches event of people filter with role"
+msgstr "選択した役割を持つ人物のイベントフィルターと照合する"
+
 msgid "Active person"
 msgstr "アクティブな人"
 
@@ -135,7 +147,7 @@ msgid "Matches the active person"
 msgstr "アクティブな人に一致"
 
 msgid "Age in years at person's death."
-msgstr "人が死亡したときの年齢。"
+msgstr "人が死亡したときの年齢 (年）。"
 
 msgid "Age:"
-msgstr "年齢 :"
+msgstr "年齢:"

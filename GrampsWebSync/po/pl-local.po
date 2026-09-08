@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-31 17:35+0200\n"
-"PO-Revision-Date: 2025-12-14 21:00+0000\n"
-"Last-Translator: WaldiS <sto@tutanota.de>\n"
+"POT-Creation-Date: 2026-08-06 07:24+0200\n"
+"PO-Revision-Date: 2026-08-12 22:56+0000\n"
+"Last-Translator: Artur <wy66m6xm@anonaddy.me>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
 "Language: pl\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
@@ -71,31 +71,8 @@ msgstr "Błąd serwera %s. Sprawdź połączenie."
 msgid "Unexpected error: %s"
 msgstr "Nieoczekiwany błąd: %s"
 
-msgid "Fetching remote data..."
-msgstr "Pobieranie zdalnych danych..."
-
-msgid "Comparing local and remote data..."
-msgstr "Porównywanie danych lokalnych i zdalnych..."
-
-msgid "Successfully applied changes to local database."
-msgstr "Pomyślnie zastosowano zmiany w lokalnej bazie danych."
-
-msgid "Continue without transport encryption?"
-msgstr "Kontynuować bez szyfrowania transmisji?"
-
-msgid ""
-"You have specified a URL with http scheme. If you continue, your password "
-"will be sent in clear text over the network. Use only for local testing!"
-msgstr ""
-"Podałeś adres URL ze schematem http. Jeśli będziesz kontynuować, twoje hasło "
-"zostanie wysłane w postaci zwykłego tekstu przez sieć. Używaj tylko do "
-"testów lokalnych!"
-
-msgid "Continue with HTTP"
-msgstr "Kontynuuj z HTTP"
-
-msgid "Use HTTPS"
-msgstr "Użyj HTTPS"
+msgid "Media files are in sync."
+msgstr "Pliki multimedialne są zsynchronizowane."
 
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
@@ -126,38 +103,8 @@ msgstr ""
 "Jeśli zamiast tego chcesz scalić dwa znacząco różne drzewa z możliwością "
 "ręcznych modyfikacji, użyj zamiast tego Narzędzia Scalania Importu."
 
-msgid "Server URL: "
-msgstr "Adres URL serwera: "
-
 msgid "Error:"
 msgstr "Błąd:"
 
-msgid "Bidirectional Synchronization"
-msgstr "Synchronizacja dwukierunkowa"
-
-msgid "Reset remote to local"
-msgstr "Resetuj zdalne do lokalnego"
-
-msgid "Reset local to remote"
-msgstr "Resetuj lokalne do zdalnego"
-
-msgid "Fetching information about media files..."
-msgstr "Pobieranie informacji o plikach multimedialnych..."
-
-msgid "Both trees are the same."
-msgstr "Oba drzewa są identyczne."
-
-msgid "Applying changes to remote database ..."
-msgstr "Stosowanie zmian w zdalnej bazie danych..."
-
-msgid "No changes to apply to remote database."
-msgstr "Brak zmian do zastosowania w zdalnej bazie danych."
-
-msgid "Missing locally"
-msgstr "Brakuje lokalnie"
-
-msgid "Missing remotely"
-msgstr "Brakuje zdalnie"
-
-msgid "Media files are in sync."
-msgstr "Pliki multimedialne są zsynchronizowane."
+msgid "Copy"
+msgstr "Kopiuj"

@@ -1,0 +1,406 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid ""
+"LifeLineChartView dependencies are missing. It is not possible to use this "
+"plugin without them."
+msgstr "缺少 LifeLineChartView 相依套件。沒有這些套件便無法使用此外掛。"
+
+#, python-brace-format
+msgid "cursor position at {date}"
+msgstr "游標位置：{date}"
+
+msgid "Hide person"
+msgstr "隱藏人物"
+
+msgid "Show person"
+msgstr "顯示人物"
+
+msgid "Show siblings"
+msgstr "顯示兄弟姊妹"
+
+msgid "Hide siblings"
+msgstr "隱藏兄弟姊妹"
+
+msgid "Show ancestors above "
+msgstr "在下列人物上方顯示祖先： "
+
+msgid "General Layout"
+msgstr "一般版面配置"
+
+msgid "Life Line Chart"
+msgstr "生命線圖"
+
+msgid "Zoom in"
+msgstr "放大"
+
+msgid "Ctrl"
+msgstr "Ctrl"
+
+msgid "Mouse wheel"
+msgstr "滑鼠滾輪"
+
+msgid "Zoom out"
+msgstr "縮小"
+
+msgid "Zoom to original"
+msgstr "縮放至原始大小"
+
+msgid "Zoom to best fit"
+msgstr "縮放至最適大小"
+
+msgid "Rebuild data cache"
+msgstr "重建資料快取"
+
+msgid "Revert the placement and person selection"
+msgstr "還原位置配置與人物選取"
+
+msgid "Open Life Line Chart help"
+msgstr "開啟 Life Line Chart 說明"
+
+msgid "Export View as SVG"
+msgstr "將檢視匯出為 SVG"
+
+msgid "Label Configuration"
+msgstr "標籤設定"
+
+msgid "Reset all settings"
+msgstr "重設所有設定"
+
+msgid "Life Line Ancestor Chart"
+msgstr "生命線祖先圖"
+
+msgid "Persons and their relation in a time based chart"
+msgstr "以時間圖表呈現人物及其關係"
+
+msgid "Life Line Descendant Chart"
+msgstr "生命線後代圖"
+
+msgid "Warp the chart shape"
+msgstr "扭曲圖表形狀"
+
+msgid "The overall shape of the chart can be warped."
+msgstr "可以扭曲圖表的整體形狀。"
+
+msgid "Normal grid shape"
+msgstr "標準格線形狀"
+
+msgid "Sine shape"
+msgstr "正弦曲線"
+
+msgid "Triangular shape"
+msgstr "三角形"
+
+msgid "Show photos"
+msgstr "顯示照片"
+
+msgid "Photos of the individual are shown."
+msgstr "顯示人物照片。"
+
+msgid "Photo size"
+msgstr "照片大小"
+
+msgid ""
+"Photos which are shown are fitted into a square of this extent. The size is "
+"given relative to the line thickness."
+msgstr "顯示的照片會縮放至此大小的正方形內。大小以線條粗細的相對值指定。"
+
+msgid "Total height"
+msgstr "總高度"
+
+msgid "Total height of the whole chart."
+msgstr "整張圖表的總高度。"
+
+msgid "Relative line thickness"
+msgstr "相對線條粗細"
+
+msgid ""
+"The line thickness of an individual is given relatively to the horizontal "
+"step size."
+msgstr "人物線條的粗細以水平步距的相對值指定。"
+
+msgid "Horizontal step size"
+msgstr "水平步進大小"
+
+msgid ""
+"This is the distance from one line to another. This value is also used for "
+"scaling of other items."
+msgstr "這是兩條線之間的距離。此值也用於縮放其他項目。"
+
+msgid "Show birth label"
+msgstr "顯示出生標籤"
+
+msgid "Activate the birth label."
+msgstr "啟用出生標籤。"
+
+msgid "Birth label along path"
+msgstr "出生標籤沿路徑排列"
+
+msgid "The birth label is aligned to the individual line."
+msgstr "出生標籤會對齊人物線條。"
+
+msgid "Birth label rotation"
+msgstr "出生標籤旋轉角度"
+
+msgid "The birth label is written in a text frame rotated by this value."
+msgstr "出生標籤會顯示在依此數值旋轉的文字框中。"
+
+msgid "Horizontal offset of birth label"
+msgstr "出生標籤水平位移"
+
+msgid ""
+"The birth label is moved horizontally by this value, which is given "
+"relatively to the font size."
+msgstr "出生標籤依此值水平移動，此值以字型大小的相對值指定。"
+
+msgid "Vertical offset of birth label"
+msgstr "出生標籤的垂直位移"
+
+msgid ""
+"The birth label is moved vertically by this value, which is given relatively "
+"to the font size."
+msgstr "出生標籤會依此數值垂直移動，該數值是相對於字型大小給定。"
+
+msgid "Wrap words in birth label"
+msgstr "出生標籤文字換行"
+
+msgid "The birth label content is wrapped where possible."
+msgstr "出生標籤內容會在可行處換行。"
+
+msgid "Birth label anchor"
+msgstr "出生標籤錨點"
+
+msgid "Text alignment of the birth label."
+msgstr "出生標籤的文字對齊方式。"
+
+msgid "Center"
+msgstr "置中"
+
+msgid "Show death label"
+msgstr "顯示死亡標籤"
+
+msgid "Activate the death label."
+msgstr "啟用死亡標籤。"
+
+msgid "Death label rotation"
+msgstr "死亡標籤旋轉角度"
+
+msgid "The death label is written in a text frame rotated by this value."
+msgstr "死亡標籤會寫入依此值旋轉的文字框。"
+
+msgid "Horizontal offset of death label"
+msgstr "死亡標籤水平位移"
+
+msgid ""
+"The death label is moved horizontally by this value, which is given "
+"relatively to the font size."
+msgstr "死亡標籤依此值水平移動，此值以字型大小的相對值指定。"
+
+msgid "Vertical offset of death label"
+msgstr "死亡標籤的垂直位移"
+
+msgid ""
+"The death label is moved vertically by this value, which is given relatively "
+"to the font size."
+msgstr "死亡標籤依此值垂直移動，此值以字型大小的相對值指定。"
+
+msgid "Wrap words in death label"
+msgstr "逝世標籤自動換行"
+
+msgid "The death label content is wrapped where possible."
+msgstr "死亡標籤內容會在可行處換行。"
+
+msgid "Death label anchor"
+msgstr "死亡標籤錨點"
+
+msgid "Text alignment of the death label."
+msgstr "死亡標籤的文字對齊方式。"
+
+msgid "Show marriage label"
+msgstr "顯示結婚標籤"
+
+msgid "Activate the marriage label."
+msgstr "啟用結婚標籤。"
+
+msgid "Fade individual color"
+msgstr "人物顏色漸變"
+
+msgid "The color of the individuals is faded to black with increasing age."
+msgstr "人物顏色會隨年齡增加而逐漸變黑。"
+
+msgid "Font name"
+msgstr "字型名稱"
+
+msgid "Name of the font family used for labels."
+msgstr "標籤使用的字型家族名稱。"
+
+msgid "Relative font size"
+msgstr "相對字型大小"
+
+msgid "The font size is given relatively to the line thickness."
+msgstr "字型大小以線條粗細的相對值指定。"
+
+msgid "Family shape"
+msgstr "家庭形狀"
+
+msgid "The shape of the families can be varied."
+msgstr "家庭的形狀可以變更。"
+
+msgid "Rectangular"
+msgstr "矩形"
+
+msgid "Softer"
+msgstr "柔和"
+
+msgid "Upper year minimum margin"
+msgstr "上方年份最小邊距"
+
+msgid ""
+"The upper bound of the chart is extended by at least this number of years."
+msgstr "圖表的上界至少延伸此年數。"
+
+msgid "Lower year minimum margin"
+msgstr "下方年份最小邊距"
+
+msgid ""
+"The lower bound of the chart is extended by at least this number of years."
+msgstr "圖表的下界至少延伸此年數。"
+
+msgid "Visualize connections"
+msgstr "視覺化關聯"
+
+msgid ""
+"Visualize the connections between families and individuals. This is for "
+"debugging purposes."
+msgstr "將家庭與人物之間的連結視覺化。此功能用於偵錯。"
+
+msgid "Visualize ambiguous placement"
+msgstr "將不明確的位置配置視覺化"
+
+msgid "Visualize automatically detected errors in the placement algorithm."
+msgstr "將配置演算法自動偵測的錯誤視覺化。"
+
+msgid "Coloring of individuals"
+msgstr "人物配色"
+
+msgid "There are different ways to determine the color of an individual."
+msgstr "有不同方式可決定人物的顏色。"
+
+msgid "Unique"
+msgstr "唯一"
+
+msgid "Based on surname"
+msgstr "依姓氏"
+
+msgid "Flip vertically"
+msgstr "垂直翻轉"
+
+msgid "If active, the chart is flipped vertically."
+msgstr "啟用後，圖表會垂直翻轉。"
+
+msgid "Line weighting"
+msgstr "線條粗細"
+
+msgid "The line width can be configured."
+msgstr "可以設定線條寬度。"
+
+msgid "none"
+msgstr "無"
+
+msgid "Show pedigree collapse"
+msgstr "顯示譜系重疊"
+
+msgid ""
+"Due to pedigree collapse one individual might appear several times in a "
+"simple ancestor chart. If this is active, then every individual only appears "
+"once."
+msgstr ""
+"譜系重疊可能使同一人物在簡單的祖先圖中出現多次。啟用後，每個人物只會出現一"
+"次。"
+
+msgid "Maximum number of generations"
+msgstr "最多世代數"
+
+msgid ""
+"if this number of generations has been reached, the algorithm doesn't go any "
+"deeper"
+msgstr "達到此世代數後，演算法便不再向下延伸"
+
+msgid "Fathers have the same color"
+msgstr "父親具有相同顏色"
+
+msgid ""
+"Starting from the root person, each father of an added individual has the "
+"same color as that individual."
+msgstr "從根人物開始，新增人物的每位父親都使用與該人物相同的顏色。"
+
+msgid "Maximum number of compression steps"
+msgstr "壓縮步驟數上限"
+
+msgid "Debugging of the compression algorithm. Abort after x steps."
+msgstr "壓縮演算法除錯。執行 x 個步驟後中止。"
+
+msgid "Maximum number of flipping steps"
+msgstr "翻轉步驟數上限"
+
+msgid "Debugging of the flipping algorithm. Abort after x steps."
+msgstr "翻轉演算法的偵錯。執行 x 個步驟後中止。"
+
+msgid "Compress the chart horizontally"
+msgstr "水平壓縮圖表"
+
+msgid ""
+"By default every individual has a unique horizontal slot. This can be "
+"inefficient with many generations. This algorithm lets several people share "
+"a horizontal slot, if they do not overlap."
+msgstr ""
+"預設每個人物各佔一個水平位置。世代較多時，這種方式可能不夠有效率。此演算法可"
+"讓位置不重疊的人物共用水平位置。"
+
+msgid "Flip families to reduce horizontal connections"
+msgstr "翻轉家庭以減少水平連線"
+
+msgid ""
+"Switch the position of mother and father in a family, to reduce the overall "
+"horizontal cross connections in larger graphs. This is happens if one person "
+"is shown in more than one family or it is caused by pedigree collapse."
+msgstr ""
+"交換家庭中父母的位置，以減少大型圖表的整體水平交叉連線。同一人物出現在多個家"
+"庭中，或發生譜系重疊時，便會出現這種情況。"
+
+msgid "Highlight descandants"
+msgstr "醒目標示後代"
+
+msgid "Highlight the persons which are descendants."
+msgstr "醒目標示身為後代的人物。"
+
+msgid "Number of descendants"
+msgstr "後代人數"
+
+msgid "Very soft"
+msgstr "非常柔和"
+
+msgid "General chart layout"
+msgstr "通用圖表版面配置"
+
+msgid "There are different layouts for descendant charts."
+msgstr "後代圖有不同的版面配置。"
+
+msgid "Parents enclose children"
+msgstr "父母包圍子女"
+
+msgid "Cactus"
+msgstr "仙人掌"

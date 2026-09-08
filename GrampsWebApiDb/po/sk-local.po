@@ -1,0 +1,171 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-09 10:02-0700\n"
+"PO-Revision-Date: 2026-09-06 12:51+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Generate Gramps Web API key"
+msgstr "Vygenerovať kľúč Gramps Web API"
+
+msgid "Server URL"
+msgstr "URL servera"
+
+msgid "e.g. https://your-server/api"
+msgstr "napr. https://vas-server/api"
+
+msgid "Username"
+msgstr "Používateľské meno"
+
+msgid "Password"
+msgstr "Heslo"
+
+msgid "Generate API Key"
+msgstr "Generovať API kľúč"
+
+msgid ""
+"Enter your server URL, username, and password, then click Generate API Key."
+msgstr ""
+"Zadajte URL servera, používateľské meno a heslo, potom kliknite na "
+"Vygenerovať API kľúč."
+
+msgid "GRAMPS_WEB_API_KEY"
+msgstr "GRAMPS_WEB_API_KEY"
+
+msgid "Copy"
+msgstr "Kopírovať"
+
+msgid "Create Synced Family Tree for this key"
+msgstr "Vytvoriť synchronizovaný rodinný strom pre tento kľúč"
+
+#, python-format
+msgid ""
+"Found an existing %s for this session. Click Create Synced Family Tree to "
+"use it directly, or fill in the form above to generate a different key."
+msgstr ""
+"Pre túto reláciu bol nájdený existujúci %s. Kliknite na Vytvoriť "
+"synchronizovaný rodinný strom, aby ste ho použili priamo, alebo vyplňte "
+"formulár vyššie na vygenerovanie iného kľúča."
+
+msgid "Please fill in the server URL, username, and password."
+msgstr "Prosím, vyplňte URL servera, používateľské meno a heslo."
+
+msgid "Generating API key…"
+msgstr "Generovanie API kľúča…"
+
+#, python-format
+msgid "Login failed (HTTP %d): check your username and password."
+msgstr ""
+"Prihlásenie zlyhalo (HTTP %d): skontrolujte vaše používateľské meno a heslo."
+
+#, python-format
+msgid "Server returned an error (HTTP %d %s): check the Server URL."
+msgstr "Server vrátil chybu (HTTP %d %s): skontrolujte URL servera."
+
+#, python-format
+msgid "Could not reach the server: check the Server URL. (%s)"
+msgstr "Nepodarilo sa spojiť so serverom: skontrolujte URL servera. (%s)"
+
+#, python-format
+msgid "Unexpected response from the server: %s"
+msgstr "Neočakávaná odpoveď zo servera: %s"
+
+#, python-format
+msgid "Error: %s"
+msgstr "Chyba: %s"
+
+#, python-format
+msgid ""
+"Success. %s is now set for this Gramps session -- no restart needed. Copy "
+"the key below to also set it in your shell environment for next time."
+msgstr ""
+"Úspech. %s je teraz nastavený pre túto reláciu Gramps -- reštart nie je "
+"potrebný. Skopírujte nižšie uvedený kľúč, aby ste ho nastavili aj v "
+"prostredí shellu pre budúce použitie."
+
+msgid "Looking up account identity…"
+msgstr "Vyhľadávanie identity účtu…"
+
+#, python-format
+msgid ""
+"A Family Tree named \"%s\" already exists. Open it from Family Trees -> "
+"Manage Family Trees instead of creating another one."
+msgstr ""
+"Rodinný strom s názvom „%s“ už existuje. Otvorte ho cez Rodinné stromy → "
+"Spravovať rodinné stromy namiesto vytvárania ďalšieho."
+
+#, python-format
+msgid "Error creating Family Tree: %s"
+msgstr "Chyba pri vytváraní rodinného stromu: %s"
+
+#, python-format
+msgid ""
+"Created Family Tree \"%s\". Open it from Family Trees -> Manage Family Trees "
+"to start syncing."
+msgstr ""
+"Vytvorený rodinný strom„%s“. Otvorte ho cez Rodinné stromy → Spravovať "
+"rodinné stromy, aby ste spustili synchronizáciu."
+
+msgid ""
+"Turn a Gramps Web API server URL, username, and password into a "
+"GRAMPS_WEB_API_KEY value for GrampsWebApiDb, and optionally create a "
+"matching, correctly-named GrampsWebApiDb Family Tree for it."
+msgstr ""
+"Preveďte URL servera Gramps Web API, používateľské meno a heslo na hodnotu "
+"GRAMPS_WEB_API_KEY pre GrampsWebApiDb a voliteľne vytvorte zodpovedajúci, "
+"správne pomenovaný rodinný strom GrampsWebApiDb."
+
+msgid ""
+"The account authenticating via GRAMPS_WEB_API_KEY does not have permission "
+"on the server for this operation (HTTP 403 Forbidden). Generate a key for an "
+"account with sufficient permissions, or ask the server administrator to "
+"grant this one access."
+msgstr ""
+"Účet, ktorý sa overuje sa cez GRAMPS_WEB_API_KEY, nemá na serveri oprávnenie "
+"na túto operáciu (HTTP 403 Forbidden). Vygenerujte kľúč pre účet s "
+"dostatočnými oprávneniami, alebo požiadajte administrátora servera, aby "
+"tomuto účtu udelil prístup."
+
+#, python-format
+msgid ""
+"This Family Tree is named \"%(actual)s\", but GRAMPS_WEB_API_KEY currently "
+"authenticates as \"%(expected)s\". Rename this Family Tree to "
+"\"%(expected_typeable)s\" (Family Trees -> Manage Family Trees) if it's "
+"meant to mirror that account, or open/create the Family Tree already named "
+"that -- reusing this one would mix its existing local data with the other "
+"account's."
+msgstr ""
+"Tento rodinný strom sa volá „%(actual)s“, ale GRAMPS_WEB_API_KEY ho "
+"momentálne overuje ako „%(expected)s“. Premenujte tento rodinný strom na "
+"„%(expected_typeable)s“ (Rodinné stromy → Spravovať rodinné stromy), ak má "
+"zrkadliť tento účet, alebo otvorte/vytvorte rodinný strom, ktorý už je tak "
+"pomenovaný -- opätovné použitie tohto stromu by zmiešalo jeho existujúce "
+"lokálne údaje s údajmi iného účtu."
+
+msgid "Retry local change after server conflict"
+msgstr "Zopakovať lokálnu zmenu po konflikte so serverom"
+
+msgid "Clear local mirror before full resync"
+msgstr "Vymazať lokálne zrkadlo pred úplnou resynchronizáciou"
+
+msgid "GrampsWebApiDb"
+msgstr "GrampsWebApiDb"
+
+msgid "Gramps _Web API Database"
+msgstr "Gramps _Web API databáza"
+
+msgid ""
+"Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) as a live "
+"database, mirrored locally for speed."
+msgstr ""
+"Použite server Gramps Web API (napr. gramps-connect alebo Gramps Web) ako "
+"skutočnú databázu, ktorá je kvôli rýchlosti lokálne zrkadlená."

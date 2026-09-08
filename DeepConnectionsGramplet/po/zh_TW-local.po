@@ -1,0 +1,148 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Deep Connections Gramplet"
+msgstr "深層關係 Gramplet"
+
+msgid "Gramplet showing a deep relationship between active and home people"
+msgstr "顯示目前人物與首頁人物之間深層關係的 Gramplet"
+
+msgid "Deep Connections"
+msgstr "深度關聯"
+
+msgid "⏸ Pause"
+msgstr "⏸ 暫停"
+
+msgid "Pause the current search"
+msgstr "暫停目前的搜尋"
+
+msgid "▶ Continue"
+msgstr "▶ 繼續"
+
+msgid "Continue searching for more relations"
+msgstr "繼續搜尋更多關係"
+
+msgid "📋 Copy"
+msgstr "📋 複製"
+
+msgid "Copy selected people to clipboard"
+msgstr "將選取的人物複製到剪貼簿"
+
+msgid "🗑 Clear"
+msgstr "🗑 清除"
+
+msgid "Clear all results and reset"
+msgstr "清除所有結果並重設"
+
+msgid "Ready to search"
+msgstr "已準備好搜尋"
+
+#, python-brace-format
+msgid ""
+"Search Depth: {depth} | People Processed: {processed} | Queue Size: "
+"{queue_size}"
+msgstr "搜尋深度：{depth} | 已處理人物：{processed} | 佇列大小：{queue_size}"
+
+msgid "mentioned in note"
+msgstr "在備註中提及"
+
+msgid "Note on Family"
+msgstr "家庭的備註"
+
+msgid "sibling"
+msgstr "兄弟姊妹"
+
+msgid "Note on Parent Family"
+msgstr "父母家庭的備註"
+
+#, python-format
+msgid "%s (association)"
+msgstr "%s（關聯）"
+
+msgid "Note on Person"
+msgstr "人物的備註"
+
+#, python-format
+msgid ""
+"\n"
+"   %s of "
+msgstr ""
+"\n"
+"   %s，對象是 "
+
+msgid "Error: No Home Person set"
+msgstr "錯誤：尚未設定首頁人物"
+
+msgid "No Active Person set."
+msgstr "尚未設定目前人物。"
+
+msgid "Error: No Active Person set"
+msgstr "錯誤：尚未設定目前人物"
+
+msgid "Initializing search..."
+msgstr "正在初始化搜尋..."
+
+msgid "Looking for relationship between\n"
+msgstr "正在尋找以下人物之間的關係\n"
+
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr "  <b>%s</b> (首頁人物) 與\n"
+
+#, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "  <b>%s</b> (目前人物)...\n"
+
+msgid "Searching for connections..."
+msgstr "正在搜尋關聯..."
+
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"找到關係 #%d： \n"
+"   "
+
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"已暫停。\n"
+"按下「繼續」以搜尋其他關係。\n"
+
+msgid "Paused - Press Continue to search for more relations"
+msgstr "已暫停 - 按「繼續」搜尋更多親屬關係"
+
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relation paths found."
+msgstr ""
+"\n"
+"搜尋完成。找到 %d 條關係路徑。"
+
+msgid "Search completed - {} relation paths found"
+msgstr "搜尋完成－找到 {} 條親屬關係路徑"
+
+msgid "Error during search: {}"
+msgstr "搜尋時發生錯誤：{}"
+
+msgid "Resuming search..."
+msgstr "正在繼續搜尋..."
+
+msgid "Search interrupted by user"
+msgstr "使用者已中斷搜尋"

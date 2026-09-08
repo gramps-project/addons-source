@@ -1,0 +1,104 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "The place was not found. You may clarify the search keywords."
+msgstr "找不到這個地點。您可以調整搜尋關鍵字。"
+
+msgid "Failed to search for the coordinates due to some unexpected error."
+msgstr "搜尋座標時發生非預期的錯誤，搜尋失敗。"
+
+msgid "The place was not found."
+msgstr "找不到該地點。"
+
+msgid "The place was not identified."
+msgstr "無法辨識地點。"
+
+msgid "Coordinates were not given."
+msgstr "未提供座標。"
+
+msgid "Failed to interpret the input format."
+msgstr "無法解讀輸入格式。"
+
+#, python-brace-format
+msgid "DB entry [{id}] {name}:"
+msgstr "資料庫項目 [{id}] {name}："
+
+msgid "Nothing has been searched yet"
+msgstr "尚未搜尋任何內容"
+
+msgid "No place is active"
+msgstr "目前未選取地點"
+
+msgid "Place Coordinate Gramplet view"
+msgstr "地點座標 Gramplet 檢視"
+
+msgid "View for the place coordinate gramplet."
+msgstr "地點座標 Gramplet 檢視。"
+
+msgid "Place and Coordinates"
+msgstr "地點與座標"
+
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr "簡化地點座標設定的 Gramplet"
+
+msgid "Place Coordinates"
+msgstr "地點座標"
+
+msgid "Place Coordinate Gramplet"
+msgstr "地點座標 Gramplet"
+
+msgid "Map Menu"
+msgstr "地圖選單"
+
+msgid "Add city as place"
+msgstr "將城市新增為地點"
+
+msgid "Add addess as place"
+msgstr "將地址新增為地點"
+
+msgid "Search for:"
+msgstr "搜尋："
+
+msgid "Found place:"
+msgstr "找到地點："
+
+msgid "No DB entry is selected"
+msgstr "未選取資料庫項目"
+
+msgid "Postal-Code:"
+msgstr "郵遞區號："
+
+msgid "Show found place externally in Google Maps"
+msgstr "在外部 Google Maps 中顯示找到的地點"
+
+msgid ""
+"Take last clicked position\n"
+"from Geography map"
+msgstr ""
+"從地理地圖取得\n"
+"上次點選的位置"
+
+msgid "Search location from DB"
+msgstr "從資料庫搜尋地點"
+
+msgid "Apply geo location to Database"
+msgstr "將地理位置套用至資料庫"
+
+msgid "Go"
+msgstr "前往"
+
+msgid "Show help"
+msgstr "顯示說明"

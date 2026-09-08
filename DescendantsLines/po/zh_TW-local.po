@@ -1,0 +1,344 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Descendants Lines"
+msgstr "後代連線"
+
+msgid "Produces descendants lines of a person"
+msgstr "產生人物的後代支系"
+
+msgid "Using SVG type for supplemental document is not supported!"
+msgstr "補充文件不支援 SVG 類型！"
+
+msgid "Output format"
+msgstr "輸出格式"
+
+msgid "PNG format"
+msgstr "PNG 格式"
+
+msgid "SVG format"
+msgstr "SVG 格式"
+
+msgid "PDF format"
+msgstr "PDF 格式"
+
+msgid "PS format"
+msgstr "PS 格式"
+
+msgid "The output format to be used"
+msgstr "要使用的輸出格式"
+
+msgid "The destination file for the content."
+msgstr "內容的目的地檔案。"
+
+msgid "The number of generations to include in the chart. (0 for unlimited)"
+msgstr "圖表中要包含的世代數。(0 表示不限)"
+
+msgid "Use d'Aboville descendant numbering system"
+msgstr "使用 d'Aboville 後代編號系統"
+
+msgid "Prepend name with d'Aboville descendant number in the chart."
+msgstr "在圖表中的姓名前加上 d'Aboville 後代編號。"
+
+msgid "Include an image"
+msgstr "包含圖片"
+
+msgid "Whether to include an image if one is available."
+msgstr "有圖片時是否包含圖片。"
+
+msgid "Max Image height"
+msgstr "圖片最大高度"
+
+msgid "Maximum image height in pixels, 0=don't scale for height."
+msgstr "圖片最大高度，單位為像素；0 表示不依高度縮放。"
+
+msgid "Max Image width"
+msgstr "圖片最大寬度"
+
+msgid "Maximum image width in pixels, 0=don't scale for width."
+msgstr "圖片最大寬度，單位為像素；0 表示不依寬度縮放。"
+
+msgid "Image Location"
+msgstr "圖片位置"
+
+msgid "Above text"
+msgstr "文字上方"
+
+msgid "Left of text"
+msgstr "文字左側"
+
+msgid "Position of image relative to text"
+msgstr "圖片相對於文字的位置"
+
+msgid "Colour Name by Gender"
+msgstr "依性別為姓名上色"
+
+msgid "Color the name to indicate a person's gender in the chart."
+msgstr "依性別為圖表中的人物姓名上色。"
+
+msgid "Use alternate events, if Primary event is not found"
+msgstr "找不到主要事件時，使用替代事件"
+
+msgid ""
+"For Birth (baptism, christen)\n"
+"   Marriage (marr_lic, engagement)\n"
+"   Divorce (annulment, div_filing),\n"
+"   Death (burial, cremation, probate)."
+msgstr ""
+"適用於出生（洗禮、命名禮）\n"
+"   婚姻（marr_lic、訂婚）\n"
+"   離婚（婚姻撤銷、div_filing），\n"
+"   死亡（安葬、火化、遺囑認證）。"
+
+msgid "Sort Events by Date"
+msgstr "依日期排序事件"
+
+msgid "Sort events by date (else use the order of the 'Display Format' above)."
+msgstr "依日期排序事件 (否則使用上方「顯示格式」的順序)。"
+
+msgid "Text style"
+msgstr "文字樣式"
+
+msgid "Center-aligned text"
+msgstr "文字置中對齊"
+
+msgid "Left-aligned text"
+msgstr "靠左對齊文字"
+
+msgid "Alignment of the text in the block for each person on the chart"
+msgstr "圖表中各人物區塊的文字對齊方式"
+
+msgid "Max Note Length"
+msgstr "備註最大長度"
+
+msgid ""
+"Maximum length of an event's note field in a text block, '$e(n)'\n"
+" 0=no limit "
+msgstr ""
+"文字區塊中事件備註欄位 '$e(n)' 的最大長度\n"
+" 0 表示不限 "
+
+msgid "Font Name"
+msgstr "字型名稱"
+
+msgid ""
+"Name of the Font to use. On Windows enter the file name of the .ttf at /"
+"Windows/Fonts"
+msgstr ""
+"要使用的字型名稱。在 Windows 上，請輸入 /Windows/Fonts 中 .ttf 檔案的檔名"
+
+msgid "Font base size"
+msgstr "字型基礎大小"
+
+msgid "Box around Person's block"
+msgstr "人物方塊外框"
+
+msgid "Draw a thin black box around each person' text block."
+msgstr "在每個人物的文字區塊周圍繪製黑色細框。"
+
+msgid "All Person's blocks have the same height"
+msgstr "所有人物區塊高度相同"
+
+msgid ""
+"All the blocks of all the person have the same height, which is the height "
+"of the highest block."
+msgstr "所有人物區塊使用相同高度，以最高區塊的高度為準。"
+
+msgid "All Person's blocks have the same width"
+msgstr "所有人物區塊寬度相同"
+
+msgid ""
+"All the blocks of all the person have the same width, which is the width of "
+"the widthest block."
+msgstr "所有人物區塊使用相同寬度，以最寬區塊的寬度為準。"
+
+msgid "Colour blocks by Generation"
+msgstr "依世代為區塊上色"
+
+msgid "Colour the background of text blocks by generation."
+msgstr "依世代為文字區塊背景上色。"
+
+msgid "Descend block colour intensity"
+msgstr "後代區塊色彩濃度"
+
+msgid ""
+"Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
+"colour"
+msgstr "後代區塊的背景色彩濃度，0 表示淡色，255 表示濃色"
+
+msgid "Spouse block colour intensity"
+msgstr "配偶區塊色彩強度"
+
+msgid ""
+"Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
+msgstr "配偶區塊的背景色彩濃度，0 表示淡色，255 表示濃色"
+
+msgid "Display Formats"
+msgstr "顯示格式"
+
+msgid "Name Display Format"
+msgstr "姓名顯示格式"
+
+msgid ""
+"f=first & middle names, l=surname, n=nickname,\n"
+"c=commonly used given name, t=title, s=suffix, g=family nick name\n"
+"See Wiki Manual > Reports > part 2"
+msgstr ""
+"f=名字與中間名，l=姓氏，n=暱稱，\n"
+"c=常用名字，t=頭銜，s=後綴，g=家族暱稱\n"
+"請參閱 Wiki 手冊 > 報告 > 第 2 部分"
+
+msgid ""
+"[event, list]$e(formating)\n"
+"See Wiki Manual > Reports > part 2\n"
+"formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
+msgstr ""
+"[event, list]$e(formating)\n"
+"請參閱 Wiki 手冊 > 報告 > 第 2 部分\n"
+"formating：dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
+
+msgid "Replace"
+msgstr "取代"
+
+msgid ""
+"i.e.\n"
+"United States of America/USA"
+msgstr ""
+"例如\n"
+"United States of America/USA"
+
+msgid "Spouse and Family"
+msgstr "配偶與家庭"
+
+msgid "Vertical edge descendant to spouse-bar"
+msgstr "後代至配偶橫線的垂直線段"
+
+msgid "The length of the vertical edge from descendant to spouse-bar."
+msgstr "後代至配偶橫線的垂直線段長度。"
+
+msgid "Vertical edge spouse-bar to spouse"
+msgstr "配偶橫線至配偶的垂直線段"
+
+msgid "The length of the vertical edge from spouse-bar to spouse."
+msgstr "從配偶列到配偶的垂直邊長。"
+
+msgid "Vertical space spouse-bar to other spouse"
+msgstr "配偶橫線至另一位配偶的垂直間距"
+
+msgid ""
+"The space to add between one spouse-bar and another spouse in case of "
+"multiple families with the same descendant."
+msgstr "同一後代有多個家庭時，一條配偶橫線與另一位配偶之間要增加的間距。"
+
+msgid "Horizontal space descendant to spouse"
+msgstr "後代至配偶的水平間距"
+
+msgid "The space to add between the descendant and the spouse."
+msgstr "後代與配偶之間要增加的間距。"
+
+msgid "Horizonal space family to family"
+msgstr "家庭之間的水平間距"
+
+msgid ""
+"The space to add between the more extern descendant (or spouse) of a family "
+"and the more extern descendant (or spouse) of the next family."
+msgstr ""
+"一個家庭最外側的後代 (或配偶) 與下一個家庭最外側的後代 (或配偶) 之間要增加的"
+"間距。"
+
+msgid "Horizontal distance spouse to family edge"
+msgstr "配偶到家庭邊緣的水平距離"
+
+msgid ""
+"If this value is 0, the children bar is centered under the spouse. The "
+"bigger the value, more the center is moved to the left towards the "
+"descendant."
+msgstr ""
+"值為 0 時，子女橫線會置中於配偶下方。值越大，中心越往左朝後代方向移動。"
+
+msgid "OL_PAD"
+msgstr "OL_PAD"
+
+msgid "The number of ??? pad"
+msgstr "??? pad 的數量"
+
+msgid "Vertical edge spouse-bar to child-bar"
+msgstr "配偶橫線至子女橫線的垂直線段"
+
+msgid "The length of the vertical edge from spouse-bar to child-bar."
+msgstr "配偶列到子女列之間的垂直邊長。"
+
+msgid "Children distance"
+msgstr "子女間距"
+
+msgid "The horizontal distance between two children of the same family."
+msgstr "同一家庭中兩名子女之間的水平距離。"
+
+msgid "Vertical edge child to child-bar"
+msgstr "子女至子女橫線的垂直線段"
+
+msgid "The length of the vertical edge from child to child-bar."
+msgstr "子女至子女橫線的垂直線段長度。"
+
+msgid "MIN_C_WIDTH"
+msgstr "MIN_C_WIDTH"
+
+msgid "The number of ??? min width"
+msgstr "??? 最小寬度的數值"
+
+msgid "Space around text"
+msgstr "文字周圍的間距"
+
+msgid "The space to add around the text block of a person."
+msgstr "人物文字區塊周圍要增加的留白。"
+
+msgid "Space between lines of text"
+msgstr "文字行距"
+
+msgid "The space to add between a line and the next in a person text block."
+msgstr "人物文字區塊中相鄰兩行之間要增加的間距。"
+
+msgid "Header and Footer"
+msgstr "頁首與頁尾"
+
+msgid "The text that will be written in the header of the document"
+msgstr "要寫入文件頁首的文字"
+
+msgid "The text that will be written in the footer of the document"
+msgstr "要寫入文件頁尾的文字"
+
+msgid "Title and footer coefficient"
+msgstr "標題與頁尾係數"
+
+msgid ""
+"A number that multiply the base size of the text in the title and in the "
+"footer"
+msgstr "乘上標題與頁尾文字基本大小的數字"
+
+msgid "Protect People, Images or Events that are marked Private"
+msgstr "保護標示為私密的人物、圖片或事件"
+
+msgid "The Privacy setting of only these types of Gramps objects are checked"
+msgstr "僅檢查這些類型的 Gramps 物件的隱私設定"
+
+msgid "Privacy text"
+msgstr "隱私文字"
+
+msgid "Text to display in block, when a Person is marked private"
+msgstr "人物標示為私密時，方塊中要顯示的文字"
+
+msgid "The default style."
+msgstr "預設樣式。"

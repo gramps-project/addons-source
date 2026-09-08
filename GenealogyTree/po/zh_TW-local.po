@@ -1,0 +1,91 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Ancestor tree using LaTeX genealogytree"
+msgstr "使用 LaTeX genealogytree 的祖先樹"
+
+msgid "Descendant tree using LaTeX genealogytree"
+msgstr "使用 LaTeX genealogytree 的後代樹"
+
+msgid "Grandparent Tree"
+msgstr "祖父母樹狀圖"
+
+msgid "Grandparent tree using LaTeX genealogytree"
+msgstr "使用 LaTeX genealogytree 的祖父母樹"
+
+msgid "Sandclock Tree"
+msgstr "沙漏樹"
+
+msgid "Sandclock tree using LaTeX genealogytree"
+msgstr "使用 LaTeX genealogytree 的沙漏樹"
+
+msgid "Sandclock Tree for a Family"
+msgstr "家庭沙漏樹"
+
+msgid "Sandclock tree for a family using LaTeX genealogytree"
+msgstr "使用 LaTeX genealogytree 的家庭沙漏樹"
+
+msgid "The center family for the report"
+msgstr "報告的中心家庭"
+
+msgid "Generations up"
+msgstr "向上推算世代數"
+
+msgid "Generations down"
+msgstr "向下推算世代數"
+
+msgid "Include siblings"
+msgstr "包含兄弟姊妹"
+
+msgid "Include siblings of ancestors."
+msgstr "包含祖先的兄弟姊妹。"
+
+msgid "Include images"
+msgstr "包含圖片"
+
+msgid "Include images of people in the nodes."
+msgstr "在節點中包含人物圖片。"
+
+msgid "Compact tree layout"
+msgstr "緊湊樹狀版面配置"
+
+msgid ""
+"Use the genealogytree 'database pole reduced' template, which packs more "
+"generations per page. Useful for large sandclock trees that otherwise clip "
+"off the rendered page."
+msgstr ""
+"使用 genealogytree 'database pole reduced' 範本，每頁可容納更多世代。適合大型"
+"沙漏樹，否則產生的頁面可能會被裁切。"
+
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr "人物 %s 並未同時有父系及母系的祖父母"
+
+msgid "Grandparent family spacing"
+msgstr "祖父母家庭間距"
+
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "祖父母家庭的額外間距 (mm)"
+
+msgid "First spouse left"
+msgstr "第一位配偶置左"
+
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
+msgstr ""
+"有多位配偶時，一律將第一位配偶置於左側。這有助於減少多次婚姻時連線交叉的情"
+"況。"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-10 19:07+0000\n"
+"PO-Revision-Date: 2026-08-29 07:51+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #, python-brace-format
 msgid "Failure writing {target_path}: {message}"
@@ -25,7 +25,7 @@ msgstr "כשל ביצירת מבנה מחיצות: %s"
 
 #, python-format
 msgid "Failed to copy web files : %s"
-msgstr "כשל בהעתקת קבצימרשתת: %s"
+msgstr "כשל בהעתקת קבצי מרשתת: %s"
 
 msgid "Ancestral Collapsible Tree Options"
 msgstr "אפשרויות אילן־יוחסים אבות קדמונים מתרחב"

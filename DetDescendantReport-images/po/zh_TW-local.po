@@ -1,0 +1,79 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Detailed Descendant Report With All Images"
+msgstr "包含所有圖片的詳細後代報告"
+
+msgid ""
+"Produces a detailed descendant report with all images and optional todo list."
+msgstr "產生包含所有圖片的詳細後代報告，並可選擇加入待辦清單。"
+
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s，%(place)s"
+
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#, python-format
+msgid "%(event_name)s: %(event_text)s"
+msgstr "%(event_name)s：%(event_text)s"
+
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s：%(name)s%(endnotes)s"
+
+#, python-format
+msgid "%(type)s: %(value)s"
+msgstr "%(type)s：%(value)s"
+
+msgid "List children"
+msgstr "列出子女"
+
+msgid "Add descendant reference in child list"
+msgstr "在子女清單加入後代參照"
+
+msgid "Include TODO notes"
+msgstr "包含待辦備註"
+
+msgid "Whether to include TODO notes."
+msgstr "是否包含待辦備註。"
+
+msgid "The style used for the title of the page."
+msgstr "頁面標題使用的樣式。"
+
+msgid "The style used for the children list."
+msgstr "子女清單使用的樣式。"
+
+msgid "The style used for the first personal entry."
+msgstr "第一個人物項目使用的樣式。"
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr "「更多資料」標題及伴侶標題使用的樣式。"
+
+msgid "The style used for additional detail data."
+msgstr "補充詳細資料使用的樣式。"
+
+msgid "The style used for image labels."
+msgstr "圖片標籤使用的樣式。"
+
+msgid "A style used for image captions."
+msgstr "圖片說明使用的樣式。"

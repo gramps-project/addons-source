@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:05-0700\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -32,6 +32,22 @@ msgstr "Gramps XML で etree をテストするための Gramplet"
 msgid "Invalid timestamp"
 msgstr "タイムスタンプが無効です"
 
+msgid ""
+"Select a Gramps XML file and\n"
+" click on the Run button."
+msgstr ""
+"Gramps XML ファイルを選択し、\n"
+" 実行ボタンをクリックします。"
+
+msgid "No file loaded..."
+msgstr "ファイルが読み込まれていません..."
+
+msgid "Number of additions and modifications back"
+msgstr "遡る追加・変更の件数"
+
+msgid "Print more informations on console"
+msgstr "コンソールにより多くの情報を出力"
+
 msgid "Is it a compressed .gramps?"
 msgstr "圧縮された.grampsですか?"
 
@@ -39,12 +55,26 @@ msgstr "圧縮された.grampsですか?"
 msgid "Cannot uncompress \"%s\""
 msgstr "\"%s\" を解凍できません"
 
+msgid "Is it a .gramps?"
+msgstr ".gramps ファイルですか?"
+
 #, python-format
 msgid "Cannot copy \"%s\""
 msgstr "\"%s\" をコピーできません"
 
 msgid "Sorry, no support for your OS yet!"
 msgstr "申し訳ございませんが、お使いの OS はまだサポートされていません!"
+
+msgid "Parsing issue"
+msgstr "解析の問題"
+
+#, python-format
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "\"%(file)s\" のコンテンツを解析できません"
+
+#, python-format
+msgid "XML: Last %s additions and modifications since %s, were on :\n"
+msgstr "XML : 直近の %s 件の追加・変更は %s 以降です :\n"
 
 #, python-format
 msgid ""
@@ -55,6 +85,102 @@ msgstr ""
 "\n"
 "XML : レコードとリレーションの数 : \t%s\n"
 "\n"
+
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"タグの数 : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%06s\n"
+msgstr ""
+"タグの数 : \n"
+"\t\t\t%06s\n"
+
+#, python-format
+msgid ""
+"Number of  events : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"イベントの  数 : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%06s\t|\t(%06s) and (%06s)* surnames\n"
+msgstr ""
+"人数 : \n"
+"\t\t\t%06s\t|\t(%06s) および (%06s)* 姓\n"
+
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"人数 : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of families : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"家族の数 : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of sources : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"ソースの数 : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of citations : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"引用の数 : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of places : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"場所の数 : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of media objects : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"メディア オブジェクトの数 : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of repositories : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"リポジトリの数 : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of notes : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"メモの数 : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
 
 #, python-format
 msgid ""
@@ -72,8 +198,135 @@ msgstr ""
 "* 家系図 ベースを読み込みました\n"
 " \"%s\"\n"
 
+msgid "Where is gzip?"
+msgstr "gzip はどこにありますか？"
+
+msgid "\"gzip\" is missing"
+msgstr "\"gzip\" がありません"
+
+msgid "Missing python3 lxml"
+msgstr "python3 lxml がありません"
+
+msgid "Please, try to install \"python3 lxml\" package."
+msgstr "\"python3 lxml\" パッケージをインストールしてみてください。"
+
+msgid "xmllint options"
+msgstr "xmllint オプション"
+
+msgid "debug places"
+msgstr "場所をデバッグ"
+
+msgid "debug xml"
+msgstr "xml をデバッグ"
+
+msgid "XSD validation (lxml)"
+msgstr "XSD 検証 (lxml)"
+
+#, python-format
+msgid "xmllint: skip DTD validation for \"%(file)s\""
+msgstr "xmllint: \"%(file)s\" の DTD 検証をスキップ"
+
+#, python-format
+msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
+msgstr "xmllint: \"%(file)s\" の RelaxNG 検証をスキップ"
+
+msgid "Custom \"test.xml\" file"
+msgstr "カスタム \"test.xml\" ファイル"
+
+msgid "Please try to fix \"test.xml\""
+msgstr "\"test.xml\" を修正してみてください"
+
+msgid "RelaxNG validation"
+msgstr "RelaxNG 検証"
+
+#, python-format
+msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
+msgstr "RelaxNG スキーマで \"%(file)s\" を検証できません"
+
+msgid "File issue"
+msgstr "ファイルの問題"
+
+#, python-format
+msgid "Cannot parse \"%(file)s\" via etree"
+msgstr "etree で \"%(file)s\" を解析できません"
+
+msgid "Parsing file..."
+msgstr "ファイルを解析中..."
+
+#, python-format
+msgid " - (%(lang)s)"
+msgstr " - (%(lang)s)"
+
+#, python-format
+msgid " - (? or %(lang)s)"
+msgstr " - (? または %(lang)s)"
+
+msgid "Missing header"
+msgstr "ヘッダーがありません"
+
+msgid ""
+"Not a valid .gramps.\n"
+"Cannot run the gramplet...\n"
+"Please, try to use a .gramps\n"
+"generated by Gramps 6.x."
+msgstr ""
+"有効な .gramps ではありません。\n"
+"グランプレットを実行できません...\n"
+"Gramps 6.x で生成された\n"
+".gramps を使用してみてください。"
+
+msgid "0"
+msgstr "0"
+
+msgid "File parsed with"
+msgstr "ファイルを解析しました"
+
+msgid "File was generated on "
+msgstr "ファイルは に生成されました "
+
+msgid " by Gramps "
+msgstr " by Gramps "
+
+msgid "Period: "
+msgstr "期間: "
+
+#, python-brace-format
+msgid "\t{number} surname"
+msgid_plural "\t{number} surnames; no frequency yet"
+msgstr[0] "\t{number} 姓"
+msgstr[1] "\t{number} 姓; まだ頻度はありません"
+
+#, python-brace-format
+msgid "\t{number} surname; no frequency yet"
+msgstr "\t{number} 姓; まだ頻度はありません"
+
+#, python-brace-format
+msgid "\t{number} place"
+msgid_plural "\t{number} places"
+msgstr[0] "\t{number} 件の場所"
+msgstr[1] ""
+
+#, python-brace-format
+msgid "\t{number} note"
+msgid_plural "\t{number} notes"
+msgstr[0] "\t{number} メモ"
+msgstr[1] ""
+
+#, python-brace-format
+msgid "\t{number} source"
+msgid_plural "\t{number} sources"
+msgstr[0] "\t{number} 件のソース"
+msgstr[1] ""
+
 msgid "Gallery.html"
 msgstr "Gallery.html"
+
+#, python-format
+msgid "1. Has generated a media index on \"%(file)s\".\n"
+msgstr "1. \"%(file)s\" にメディア インデックスを生成しました。\n"
+
+msgid "XML SyntaxError"
+msgstr "XML 構文エラー"
 
 msgid "Matches XSD schema."
 msgstr "XSD スキーマと一致します。"
@@ -104,3 +357,17 @@ msgstr "ノルウェー"
 
 msgid "Portugal"
 msgstr "ポルトガル"
+
+#, python-format
+msgid "2. Has generated \"%s\".\n"
+msgstr "2. \"%s\" を生成しました。\n"
+
+#, python-format
+msgid ""
+"Try to open\n"
+" \"%s\"\n"
+" into your preferred web navigator ..."
+msgstr ""
+"お好みの Web ナビゲータで\n"
+" \"%s\"\n"
+" を開いてみてください ..."

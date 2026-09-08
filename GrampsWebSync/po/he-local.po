@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-31 17:35+0200\n"
-"PO-Revision-Date: 2026-08-05 18:01+0000\n"
+"POT-Creation-Date: 2026-08-06 07:24+0200\n"
+"PO-Revision-Date: 2026-08-29 07:51+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,13 +13,28 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "Gramps Web Sync"
 msgstr "מרשתת גרמפס סנכרון"
 
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "מסנכרן מסד־נתונים מקומי עם מופע מרשתת גרמפס."
+
+#, python-format
+msgid "Gramps Web Sync %(addon)s, Web API %(api)s"
+msgstr "סנכרון Gramps Web %(addon)s API מרשתת %(api)s"
+
+#, python-format
+msgid "Gramps Web Sync %s"
+msgstr "סנכרון Gramps Web %s"
+
+msgid ""
+"This URL uses http, so your password will be sent in clear text. Use only "
+"for local testing."
+msgstr ""
+"כתובת URL זו משתמשת ב־http, כלומר, הססמה תישלח כמלל גלוי. יש להשתמש בזה "
+"לבדיקה מקומית בלבד."
 
 #, python-format
 msgid ""
@@ -73,6 +88,39 @@ msgid ""
 msgstr "אילן־היוחסין הוסגל במהלך סקירת השינויים. לא הוחל דבר. נא להשוות שוב."
 
 #, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s, but synchronization needs "
+"%(needed)s or newer. Please update the server."
+msgstr ""
+"שרת זה מירץ Gramps Web API %(found)s, אבל הסינכרון דורש %(needed)s או חדש "
+"יותר. נא לעדכן את השרת."
+
+#, python-format
+msgid ""
+"This server did not report a Gramps Web API version, so it is too old to "
+"synchronize with. Version %s or newer is needed."
+msgstr ""
+"השרת לא דיווח על גרסת Gramps Web API, לכן הוא ישן מדי מכדי להסתנכרן. נדרשת "
+"גרסה %s או חדשה יותר."
+
+#, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s. This version of Gramps works with "
+"Gramps Web API %(major)s, so synchronizing with this server needs a newer "
+"version of Gramps."
+msgstr ""
+"שרת זה מריץ את Gramps Web API %(found)s. גרסה זו של גרמפס עובדת עם Gramps "
+"Web API %(major)s, לכן סנכרון עם שרת זה דורש גרסה חדשה יותר של גרמפס."
+
+msgid ""
+"This server is not configured to use a background task queue. "
+"Synchronization needs one: without it, applying changes times out before the "
+"server has finished. Please enable it on the server."
+msgstr ""
+"שרת זה לא מוגדר להרצת תור משימות ברקע. לסנכרון נדרש אחד כזה: בלעדיו, פסק זמן "
+"להחלת שינויים יתרחש לפני שהשרת סיים. נא אפשר זאת בשרת."
+
+#, python-format
 msgid "The server could not apply the changes: %s"
 msgstr "השרת לא הצליח להחיל שינויים: %s"
 
@@ -84,65 +132,47 @@ msgstr "שגיאת שרת %s. נא לבדוק חיבור."
 msgid "Unexpected error: %s"
 msgstr "שגיאה בלתי צפויה: %s"
 
-msgid "Fetching remote data..."
-msgstr "מאחזר נתונים מרוחקים..."
+msgid "Signing in…"
+msgstr "מתבצעת התחברות…"
 
-msgid "Comparing local and remote data..."
-msgstr "השוואת מקומי ומרוחק נתונים..."
+msgid "Downloading the remote family tree…"
+msgstr "מתבצעת הורדתאילן־יוחסין מרוחק…"
 
-msgid "Successfully applied changes to local database."
-msgstr "בהצלחה הוחלו שינויים למקומי מסד־נתונים."
+msgid "Comparing the two family trees…"
+msgstr "מתבצאת השוואת שני אילנות־היוחסין…"
 
-msgid "Continue without transport encryption?"
-msgstr "להמשיך ללא הצפנת תעבורה?"
+msgid "Checking which media files are missing…"
+msgstr "מתבצעת בדיקת עצמי מדיה חסרים…"
 
-msgid ""
-"You have specified a URL with http scheme. If you continue, your password "
-"will be sent in clear text over the network. Use only for local testing!"
-msgstr ""
-"צוינה כתובת URL עם סכמת http. בהמשך, הססמה תישלח כמלל גלוי ברשת. יש להשתמש "
-"בכך לבדיקה מקומית בלבד!"
+msgid "Applied the changes to this computer."
+msgstr "החלת שינויים במחשב זה."
 
-msgid "Continue with HTTP"
-msgstr "המשך עם HTTP"
+msgid "Sending the changes to the server…"
+msgstr "השינויים נשלחים לשרת…"
 
-msgid "Use HTTPS"
-msgstr "שימוש ב־HTTPS"
+msgid "Downloading media files…"
+msgstr "מתבצעת הורדת קבצי מדיה…"
 
-msgid ""
-"This tool allows to synchronize the currently opened family tree with a "
-"remote family tree served by Gramps Web.\n"
-"\n"
-"The tool assumes that the two trees are derivatives of each other, i.e. one "
-"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
-"\n"
-"After successful synchronization, the two trees will be identical. "
-"Modifications will be propagated based on timestamps. You will be prompted "
-"for confirmation before any changes are made to the local or remote trees.\n"
-"\n"
-"If you instead want to merge two significantly different trees with the "
-"option to make manual modifications, use the Import Merge Tool instead."
-msgstr ""
-"כלי זה מאפשר לסנכרן את אילן־היוחסין שפתוח כעת עם אילן־יוחסין מרוחק שמוגש על "
-"ידי מרשתת גרמפס.\n"
-"\n"
-"הכלי מניח ששני האילנות נגזרים זה מזה, כלומר אחד מהם נוצר מייצוא Gramps XML "
-"(לא GEDCOM!) של האחר.\n"
-"\n"
-"לאחר סנכרון מוצלח, שני האילנות יהיו זהים. שינויים יופצו על בסיס חותמות זמן. "
-"תוצג בקשת אישור לפני ביצוע שינוי כלשהו באילן המקומי או המרוחק.\n"
-"\n"
-"אם במקום זאת נדרש למזג שני אילנות שונים משמעותית עם אפשרות לבצע שינויים "
-"ידניים, יש להשתמש בכלי מיזוג ייבוא."
+msgid "Uploading media files…"
+msgstr "מתבצעת העלאת קבצי מדיה…"
 
-msgid "Server URL: "
-msgstr "כתובת URL של השרת: "
+msgid "Connect"
+msgstr "התחברות"
 
-msgid "Error:"
-msgstr "שגיאה:"
+msgid "Apply changes"
+msgstr "החלת שינויים"
 
-msgid "Sync mode"
-msgstr "מצב סינכרון"
+msgid "Transfer media files"
+msgstr "העברת קבצי מדיה"
+
+msgid "Bidirectional synchronization"
+msgstr "סנכרון דו־כיווני"
+
+msgid "Reset the server to match this computer"
+msgstr "שיצוב השרת כך שיתאים למחשב זה"
+
+msgid "Reset this computer to match the server"
+msgstr "שיצוב מחשס זה כך שיתאים לשרת"
 
 msgid ""
 "Changes from both sides are combined. Objects edited in both places are "
@@ -159,72 +189,90 @@ msgid ""
 "discarded."
 msgstr "מחשב זה בנוי כך שהתאמות יתבצעו לשרת. כל שינוי שנעשה רק כאן יושלך."
 
-msgid "Bidirectional Synchronization"
-msgstr "סנכרון דו־כיווני"
-
-msgid "Reset remote to local"
-msgstr "שיצוב מצב מרוחק למקומי"
-
-msgid "Reset local to remote"
-msgstr "שיצוב מצב מקומי למרוחק"
-
-msgid "Warning:"
-msgstr "אזהרה:"
-
-msgid "Local changes"
-msgstr "שינויים מקומיים"
-
-msgid "Modified"
-msgstr "מוסגל"
-
-msgid "Remote changes"
-msgstr "שינויים מרחוק"
-
-msgid "Simultaneous changes"
-msgstr "שינויים בו־זמנית"
-
-msgid "Fetching information about media files..."
-msgstr "שליפת מידע על קובצי מדיה..."
-
-msgid "Both trees are the same."
-msgstr "שני אילנות הם אותו."
-
-msgid "Applying changes to local database ..."
-msgstr "החלת שינויים במסד נתונים מקומי ..."
-
-msgid "No changes to apply to local database."
-msgstr "אין שינויים להחלה על מסד־הנתונים המקומי."
-
-msgid "Applying changes to remote database ..."
-msgstr "החלת שינויים במסד נתונים מרוחק ..."
-
-msgid "No changes to apply to remote database."
-msgstr "אין שינויים להחלה על מסד־הנתונים המרוחק."
-
-msgid "Missing locally"
-msgstr "חסרים באופן מקומי"
-
-msgid "Missing remotely"
-msgstr "חסרים באופן מרוחק"
+#, python-format
+msgid "Will change on this computer (%s object)"
+msgid_plural "Will change on this computer (%s objects)"
+msgstr[0] "ישתנה במחשב זה (עצם %s)"
+msgstr[1] "ישתנו במחשב זה (%s עצמים)"
+msgstr[2] "ישתנו במחשב זה (%s עצמים)"
+msgstr[3] "ישתנו במחשב זה (%s עצמים)"
 
 #, python-format
-msgid "Downloading %s media file"
-msgid_plural "Downloading %s media files"
-msgstr[0] "הורדת קובץ מדיה %s"
-msgstr[1] "הורדת %s קבצי מדיה"
-msgstr[2] "הורדת %s קבצי מדיה"
-msgstr[3] "הורדת %s קבצי מדיה"
+msgid "Will change on the server (%s object)"
+msgid_plural "Will change on the server (%s objects)"
+msgstr[0] "ישתנה בשרת (עצם %s)"
+msgstr[1] "ישתנו בשרת (%s עצמים)"
+msgstr[2] "ישתנו בשרת (%s עצמים)"
+msgstr[3] "ישתנו בשרת (%s עצמים)"
 
 #, python-format
-msgid "Uploading %s media file"
-msgid_plural "Uploading %s media files"
-msgstr[0] "העלאת קובץ מדיה %s"
-msgstr[1] "העלאת %s קבצי מדיה"
-msgstr[2] "העלאת %s קבצי מדיה"
-msgstr[3] "העלאת %s קבצי מדיה"
+msgid "Add %s object"
+msgid_plural "Add %s objects"
+msgstr[0] "הוספת עצם %s"
+msgstr[1] "הוספת %s עצמים"
+msgstr[2] "הוספת %s עצמים"
+msgstr[3] "הוספת %s עצמים"
 
-msgid "Try again"
-msgstr "נא לנסות שוב"
+#, python-format
+msgid "Update %s object"
+msgid_plural "Update %s objects"
+msgstr[0] "עדכון עצם %s"
+msgstr[1] "עדכון %s עצמים"
+msgstr[2] "עדכון %s עצמים"
+msgstr[3] "עדכון %s עצמים"
+
+#, python-format
+msgid "Merge %s object"
+msgid_plural "Merge %s objects"
+msgstr[0] "הגירת עצם %s"
+msgstr[1] "הגירת %s עצמים"
+msgstr[2] "הגירת %s עצמים"
+msgstr[3] "הגירת %s עצמים"
+
+#, python-format
+msgid "Delete %s object"
+msgid_plural "Delete %s objects"
+msgstr[0] "מחיקת עצם %s"
+msgstr[1] "מחיקת %s עצמים"
+msgstr[2] "מחיקת %s עצמים"
+msgstr[3] "מחיקת %s עצמים"
+
+#, python-format
+msgid "%s object will be deleted on this computer."
+msgid_plural "%s objects will be deleted on this computer."
+msgstr[0] "עצם %s ימחק ממחשב זה."
+msgstr[1] "%s עצמים ימחקו ממחשב זה."
+msgstr[2] "%s עצמים ימחקו ממחשב זה."
+msgstr[3] "%s עצמים ימחקו ממחשב זה."
+
+#, python-format
+msgid "%s object will be deleted on the server."
+msgid_plural "%s objects will be deleted on the server."
+msgstr[0] "עצם %s ימחק מהשרת."
+msgstr[1] "%s עצמים ימחקו מהשרת."
+msgstr[2] "%s עצמים ימחקו מהשרת."
+msgstr[3] "%s עצמים ימחקו מהשרת."
+
+#, python-format
+msgid "%(down)s to download, %(up)s to upload"
+msgstr "%(down)s להורדה, %(up)s להעלאה"
+
+#, python-format
+msgid "Also transfer %(total)s media file (%(counts)s)"
+msgid_plural "Also transfer %(total)s media files (%(counts)s)"
+msgstr[0] "להעביר גם %(total)s קובץ מדיה %(counts)s"
+msgstr[1] "להעביר גם %(total)s קבצי מדיה %(counts)s"
+msgstr[2] "להעביר גם %(total)s קבצי מדיה %(counts)s"
+msgstr[3] "להעביר גם %(total)s קבצי מדיה %(counts)s"
+
+#, python-format
+msgid "%s media file is missing on both sides and cannot be transferred."
+msgid_plural ""
+"%s media files are missing on both sides and cannot be transferred."
+msgstr[0] "קובץ מדיה %s חסר בשני הצדדים ולא ניתנים להעברה."
+msgstr[1] "%s קבצי מדיה חסרים בשני הצדדים ולא ניתנו להעברה."
+msgstr[2] "%s קבצי מדיה חסרים בשני הצדדים ולא ניתנו להעברה."
+msgstr[3] "%s קבצי מדיה חסרים בשני הצדדים ולא ניתנו להעברה."
 
 #, python-format
 msgid "Applied %s change."
@@ -234,20 +282,11 @@ msgstr[1] "הוחלו %s שינויים."
 msgstr[2] "הוחלו %s שינויים."
 msgstr[3] "הוחלו %s שינויים."
 
-msgid "Media files are in sync."
-msgstr "קובצי המדיה מסונכרנים."
-
-#, python-format
-msgid "%s media file is missing on both sides and could not be transferred."
-msgid_plural ""
-"%s media files are missing on both sides and could not be transferred."
-msgstr[0] "קובץ מדיה %s חסר בשני הצדדים ולא ניתנים להעברה."
-msgstr[1] "%s קבצי מדיה חסרים בשני הצדדים ולא ניתנו להעברה."
-msgstr[2] "%s קבצי מדיה חסרים בשני הצדדים ולא ניתנו להעברה."
-msgstr[3] "%s קבצי מדיה חסרים בשני הצדדים ולא ניתנו להעברה."
-
 msgid "Both trees are already in sync."
 msgstr "שני אילנות־היוחסין מסונכרים כבר."
+
+msgid "Media files are in sync."
+msgstr "קובצי המדיה מסונכרנים."
 
 #, python-format
 msgid "Successfully downloaded %s media file."
@@ -280,3 +319,144 @@ msgstr[0] "אירעה שגיאה %s במהלך ההעלאה."
 msgstr[1] "אירעו %s שגיאות במהלך ההעלאה."
 msgstr[2] "אירעו %s שגיאות במהלך ההעלאה."
 msgstr[3] "אירעו %s שגיאות במהלך ההעלאה."
+
+msgid "No server configured"
+msgstr "אין שרת מתוצר"
+
+#, python-format
+msgid "%(user)s on %(server)s"
+msgstr "%(user)s ב־%(server)s"
+
+#, python-format
+msgid "%(where)s — %(synced)s"
+msgstr "%(where)s — %(synced)s"
+
+msgid "Never synced"
+msgstr "מעולם לא סונכרן"
+
+msgid "Last synced just now"
+msgstr "סונכר לאחרונה זה עתה"
+
+#, python-format
+msgid "Last synced %s minute ago"
+msgid_plural "Last synced %s minutes ago"
+msgstr[0] "סונכרן לאחרונה לפני דקה %s"
+msgstr[1] "סונכרן לאחרונה לפני %s דקות"
+msgstr[2] "סונכרן לאחרונה לפני %s דקות"
+msgstr[3] "סונכרן לאחרונה לפני %s דקות"
+
+#, python-format
+msgid "Last synced %s hour ago"
+msgid_plural "Last synced %s hours ago"
+msgstr[0] "סונכרן לאחרונה לפני שעה %s"
+msgstr[1] "סונכרן לאחרונה לפני %s שעות"
+msgstr[2] "סונכרן לאחרונה לפני %s שעות"
+msgstr[3] "סונכרן לאחרונה לפני %s שעות"
+
+#, python-format
+msgid "Last synced %s day ago"
+msgid_plural "Last synced %s days ago"
+msgstr[0] "סונכרן לאחרונה לפני יום %s"
+msgstr[1] "סונכרן לאחרונה לפני %s ימים"
+msgstr[2] "סונכרן לאחרונה לפני %s ימים"
+msgstr[3] "סונכרן לאחרונה לפני %s ימים"
+
+#, python-format
+msgid "Last synced on %s"
+msgstr "סונכרן לאחרונ ב־%s"
+
+msgid "_Try again"
+msgstr "_לנסות שוב"
+
+msgid "C_onnect"
+msgstr "לה_תחבר"
+
+msgid "Forget this server?"
+msgstr "האם לשכוח שרת זה?"
+
+msgid ""
+"The address, user name and password stored for this server will be removed, "
+"along with the record of when this family tree last synchronized with it. "
+"The next synchronization will compare the two trees from scratch."
+msgstr ""
+"הכתובת, שם משתמש וסיסמה שמאוחסנים עבור שרת זה יוסרו, יחד עם רשומת מועד "
+"סונכרן אחרון של אילן־יוחסין זה. הסינכרון הבא ישווה את שני אילנות־היוחסין "
+"מאפס."
+
+msgid "Forget"
+msgstr "לשכוח"
+
+msgid ""
+"These credentials were last used with a different family tree. Check the "
+"server before continuing."
+msgstr ""
+"השימוש האחרון בנתוני האמנה נעשה לאילן־יוחסין יוחסין שונה. נא לבדוק את השרת "
+"לפני המשך הפעולה."
+
+msgid "Change server…"
+msgstr "החלפת שרת…"
+
+msgid "Server URL:"
+msgstr "כתובת URL של השרת:"
+
+msgid "Username:"
+msgstr "שם משתמש:"
+
+msgid "Password:"
+msgstr "ססמה:"
+
+msgid "Remember password"
+msgstr "לזכור סיסמה"
+
+msgid "Forget this server"
+msgstr "לשכוח שרת זה"
+
+msgid "About this tool"
+msgstr "על כלי זה."
+
+msgid "Open the online manual"
+msgstr "פתיחת מדריך־המשתמש המקוון"
+
+msgid ""
+"This tool allows to synchronize the currently opened family tree with a "
+"remote family tree served by Gramps Web.\n"
+"\n"
+"The tool assumes that the two trees are derivatives of each other, i.e. one "
+"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
+"\n"
+"After successful synchronization, the two trees will be identical. "
+"Modifications will be propagated based on timestamps. You will be prompted "
+"for confirmation before any changes are made to the local or remote trees.\n"
+"\n"
+"If you instead want to merge two significantly different trees with the "
+"option to make manual modifications, use the Import Merge Tool instead."
+msgstr ""
+"כלי זה מאפשר לסנכרן את אילן־היוחסין שפתוח כעת עם אילן־יוחסין מרוחק שמוגש על "
+"ידי מרשתת גרמפס.\n"
+"\n"
+"הכלי מניח ששני האילנות נגזרים זה מזה, כלומר אחד מהם נוצר מייצוא Gramps XML "
+"(לא GEDCOM!) של האחר.\n"
+"\n"
+"לאחר סנכרון מוצלח, שני האילנות יהיו זהים. שינויים יופצו על בסיס חותמות זמן. "
+"תוצג בקשת אישור לפני ביצוע שינוי כלשהו באילן המקומי או המרוחק.\n"
+"\n"
+"אם במקום זאת נדרש למזג שני אילנות שונים משמעותית עם אפשרות לבצע שינויים "
+"ידניים, יש להשתמש בכלי מיזוג ייבוא."
+
+msgid "Error:"
+msgstr "שגיאה:"
+
+msgid "Warning:"
+msgstr "אזהרה:"
+
+msgid "Sync mode:"
+msgstr "מצב סינכרון:"
+
+msgid "Copy"
+msgstr "העתקה"
+
+msgid "Synchronization complete"
+msgstr "סנכרון הושלם"
+
+msgid "Synchronization failed"
+msgstr "סנכרון כשל"

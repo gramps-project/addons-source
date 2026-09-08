@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 22:17+0000\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,10 +12,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Query Gramplet"
+msgstr "クエリグランプレット"
+
+msgid "Gramplet for running SQL-like queries"
+msgstr "SQL ライクなクエリを実行するためのグランプレット"
+
+msgid "Query"
+msgstr "クエリ"
+
+msgid "Query Quickview"
+msgstr "クイックビュークエリ"
+
+msgid "Quick view for SQL-like running queries"
+msgstr "SQL ライクなクエリを実行するためのクイックビュー"
+
 msgid "Enter Python expressions"
 msgstr "Python式の入力"
+
+msgid "Enter SQL query"
+msgstr "SQL クエリを入力"
+
+#, python-brace-format
+msgid "{rows:d} rows processed in {secs} seconds.\n"
+msgstr "{secs} 秒で {rows:d} 行を処理しました。\n"
+
+msgid "Today"
+msgstr "今日"

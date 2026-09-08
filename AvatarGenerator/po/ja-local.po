@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,13 +12,71 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Avatar Generator Tool"
+msgstr "アバター生成ツール"
+
+msgid "A tool to add avatar pictures to your family tree"
+msgstr "家系図にアバター画像を追加するツール"
+
+msgid "single image mode"
+msgstr "単一画像モード"
+
+msgid "Choose how many images you'd like to use."
+msgstr "使用する画像の数を選択してください。"
+
+msgid "Image for people with unknown gender."
+msgstr "性別不明の人物の画像。"
+
+msgid "Image for males."
+msgstr "男性の画像。"
+
+msgid "Image for females"
+msgstr "女性の画像"
+
 msgid "Select filter to restrict people"
 msgstr "人を制限するフィルターの選択"
 
+msgid "Remove images from people"
+msgstr "人物から画像を削除"
+
+msgid "Remove selected image(s)."
+msgstr "選択した画像を削除します。"
+
+msgid "Avatar Generator"
+msgstr "アバター生成"
+
+msgid "Remove avatar images..."
+msgstr "アバター画像を削除..."
+
 msgid "INFO"
 msgstr "INFO"
+
+msgid "No media was removed."
+msgstr "メディアは削除されませんでした。"
+
+msgid "{} media references were removed from {} persons."
+msgstr "{} 個のメディア参照が {} 人の人物から削除されました。"
+
+msgid ""
+"\n"
+"{} HandleError occured, but were ignored."
+msgstr ""
+"\n"
+"{} 件の HandleError が発生しましたが、無視されました。"
+
+msgid "Add avatar images..."
+msgstr "アバター画像を追加..."
+
+msgid "{} avatar images were sucessfully added."
+msgstr "{} 個のアバター画像が正常に追加されました。"
+
+msgid "There was no avatar image to add. "
+msgstr "追加するアバター画像がありませんでした。 "
+
+msgid "All persons already had one."
+msgstr "全員がすでに所有していました。"

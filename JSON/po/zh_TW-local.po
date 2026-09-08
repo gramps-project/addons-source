@@ -1,0 +1,33 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "JSON Export"
+msgstr "JSON 匯出"
+
+msgid "This is a JSON export"
+msgstr "這是 JSON 匯出功能"
+
+msgid "JSON options"
+msgstr "JSON 選項"
+
+msgid "JSON Import"
+msgstr "JSON 匯入"
+
+msgid "This is a JSON import"
+msgstr "這是 JSON 匯入功能"
+
+msgid "JSON import"
+msgstr "JSON 匯入"

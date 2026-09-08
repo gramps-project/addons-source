@@ -1,0 +1,67 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "short for born|b."
+msgstr "生。"
+
+msgid "short for died|d."
+msgstr "卒。"
+
+msgid "short for baptized|bap."
+msgstr "洗。"
+
+msgid "short for christened|chr."
+msgstr "命名。"
+
+msgid "short for buried|bur."
+msgstr "葬。"
+
+msgid "short for cremated|crem."
+msgstr "火化。"
+
+msgid "Timeline pedigree"
+msgstr "時間軸譜系"
+
+msgid "Order by timeline"
+msgstr "依時間軸排序"
+
+msgid "Show lifespan"
+msgstr "顯示在世期間"
+
+msgid "Descendant Generations"
+msgstr "後代世代數"
+
+#, python-format
+msgid "%d generation"
+msgid_plural "%d generations"
+msgstr[0] "%d 代"
+
+msgid "Ancestor Generations"
+msgstr "祖先世代數"
+
+msgid "About Timeline Pedigree View"
+msgstr "關於時間軸譜系檢視"
+
+msgid "Timeline Pedigree"
+msgstr "時間軸譜系"
+
+msgid "Ancestry"
+msgstr "祖源"
+
+msgid ""
+"The view shows a timeline pedigree with ancestors and descendants of the "
+"selected person"
+msgstr "此檢視以時間軸譜系顯示所選人物的祖先與後代"

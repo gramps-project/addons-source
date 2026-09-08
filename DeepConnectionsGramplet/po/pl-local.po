@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-03 15:04-0700\n"
-"PO-Revision-Date: 2025-12-14 21:00+0000\n"
-"Last-Translator: WaldiS <sto@tutanota.de>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-08-12 22:56+0000\n"
+"Last-Translator: Artur <wy66m6xm@anonaddy.me>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/pl/>\n"
 "Language: pl\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: POLAND\n"
 "X-Poedit-Basepath: .\n"
@@ -27,6 +27,21 @@ msgstr "Gramplet pokazujący głębokie powiązania między osobą aktywną a do
 
 msgid "Deep Connections"
 msgstr "Głębokie połączenia"
+
+msgid "Pause the current search"
+msgstr "Wstrzymaj bieżące wyszukiwanie"
+
+msgid "▶ Continue"
+msgstr "▶ Kontynuuj"
+
+msgid "Copy selected people to clipboard"
+msgstr "Skopiuj wybrane osoby do schowka"
+
+msgid "🗑 Clear"
+msgstr "🗑 Wyczyść"
+
+msgid "Clear all results and reset"
+msgstr "Wyczyść wszystkie wyniki i zresetuj"
 
 msgid "mentioned in note"
 msgstr "wspomniane w notatce"
@@ -58,6 +73,9 @@ msgstr ""
 msgid "No Active Person set."
 msgstr "Nie wybrano aktywnej osoby."
 
+msgid "Initializing search..."
+msgstr "Inicjowanie wyszukiwania..."
+
 msgid "Looking for relationship between\n"
 msgstr "Szukam relacji między\n"
 
@@ -83,3 +101,9 @@ msgid ""
 msgstr ""
 "Pauza.\n"
 "Wciśnij Kontynuuj aby wyszukać dodatkowe relacje.\n"
+
+msgid "Error during search: {}"
+msgstr "Błąd podczas wyszukiwania: {}"
+
+msgid "Search interrupted by user"
+msgstr "Wyszukiwanie przerwane przez użytkownika"

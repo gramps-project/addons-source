@@ -1,0 +1,428 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-01 09:23-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Prerequisites Checker"
+msgstr "前提条件チェッカー"
+
+msgid "Prerequisites Checker Gramplet"
+msgstr "前提条件チェッカーグランプレット"
+
+msgid ""
+"Diagnostic Gramplet to help evaluate if <a href=\"https://gramps-project.org/"
+"\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
+"blob/master/README.md\">prerequisites</a> installed.\n"
+msgstr ""
+"<a href=\"https://gramps-project.org/\">Gramps</a> がすべての <a "
+"href=\"https://github.com/gramps-project/gramps/blob/master/README.md\">前提"
+"条件</a> をインストールしているかどうかを評価するのに役立つ診断グランプレッ"
+"ト。\n"
+
+msgid ""
+"Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
+"installed."
+msgstr ""
+"Gramps がすべての前提条件をインストールしているかどうかを評価するのに役立つ診"
+"断グランプレット。"
+
+msgid ""
+"\n"
+"<u><b>REQUIRED</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>必須</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>ABSOLUTELY REQUIRED</b>\n"
+" (Requires the minimum version or greater.)</i>:\n"
+msgstr ""
+"<i>以下のパッケージのインストールは <b>絶対に必須</b> です。\n"
+" (最小バージョン以上が必要です。)</i>:\n"
+
+msgid ""
+"\n"
+"<u><b>RECOMMENDED</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>推奨</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>STRONGLY RECOMMENDED</b> "
+"as necessary for Geography and Charts</i>:\n"
+msgstr ""
+"<i>以下のパッケージのインストールは、地理とチャートに必要として <b>強く推奨</"
+"b> されます</i>:\n"
+
+msgid ""
+"\n"
+"<u><b>Optional</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>オプション</b></u>\n"
+
+msgid "<i>Installations of the following packages are <b>optional</b></i>:\n"
+msgstr "<i>以下のパッケージのインストールは <b>オプションです</b> </i>:\n"
+
+msgid "Gtkspell enables spell checking in the notes.\n"
+msgstr "Gtkspell はメモでスペルチェックを有効にします。\n"
+
+msgid ""
+"Python Image Library (PIL) is needed for cropping images and LaTeX output."
+msgstr "Python Image Library (PIL) は画像の切り抜きと LaTeX 出力に必要です。"
+
+msgid ""
+"\n"
+"<u><b>Development & Translation Requirements</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>開発と翻訳の要件</b></u>\n"
+
+msgid ""
+"<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
+"intend to translate or do any development (addons etc.)</i>:\n"
+msgstr ""
+"<i>翻訳や開発 (アドオンなど）を行う場合は、以下のパッケージのインストールが "
+"<b>推奨されます</b> </i>:\n"
+
+msgid ""
+"\n"
+"<u><b>Optional packages required by Third-party Addons</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>サードパーティのアドオンに必要なオプションパッケージ</b></u>\n"
+
+msgid ""
+"<i>Prerequistes required for the following <a href=\"https://gramps-"
+"project.org/wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> "
+"to work</i>:\n"
+msgstr ""
+"<i>以下の <a href=\"https://gramps-project.org/wiki/index.php?title=Third-"
+"party_Addons\">サードパーティアドオン</a> が動作するために必要な前提条件</"
+"i>:\n"
+
+msgid ""
+"\n"
+"<u><b>Diagnostic checks</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>診断チェック</b></u>\n"
+
+msgid "Check for potential issues.\n"
+msgstr "潜在的な問題をチェックします。\n"
+
+msgid ""
+"\n"
+"Environment settings:\n"
+msgstr ""
+"\n"
+"環境設定:\n"
+
+msgid ""
+"\n"
+"\n"
+"<u><b>Locales available:</b></u>\n"
+msgstr ""
+"\n"
+"\n"
+"<u><b>利用可能なロケール:</b></u>\n"
+
+msgid ""
+"\n"
+"<u><b>Back Up Your Genealogy Files.</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>系譜ファイルをバックアップしてください。</b></u>\n"
+
+msgid ""
+"If you have a reason to be checking Prerequisites, it is the right time to "
+"back up your genealogy files, and then test your backups!\n"
+"\n"
+msgstr ""
+"前提条件をチェックする理由がある場合は、系譜ファイルをバックアップし、バック"
+"アップをテストする良い機会です！\n"
+"\n"
+
+msgid ""
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Backup to Gramps XML</a> You will find \"Make "
+"Backup...\" in the Family Tree menu of recent Gramps versions, otherwise use "
+"\"Export...\" in the same menu but uncheck privacy options in the Exporter "
+"Assistant in order to export all data.</i>\n"
+"\n"
+msgstr ""
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Gramps XML へのバックアップ</a> 最近の Gramps "
+"バージョンでは家系図メニューに「バックアップを作成...」があります。それ以外の"
+"場合は同じメニューの「エクスポート...」を使用しますが、すべてのデータをエクス"
+"ポートするにはエクスポーターアシスタントのプライバシーオプションのチェックを"
+"外してください。</i>\n"
+"\n"
+
+msgid ""
+" • Backups can be made at any time and, at a minimum, on the first day of "
+"every month. But preferrably more often.\n"
+msgstr ""
+" • バックアップはいつでも作成できます。少なくとも毎月1日に作成することをお勧"
+"めします。できればもっと頻繁に。\n"
+
+msgid ""
+" • It is strongly recommended to backup each of your Family Trees before any "
+"upgrade.\n"
+msgstr ""
+" • アップグレードの前に、各家庭用の家系図をバックアップすることを強くお勧めし"
+"ます。\n"
+
+msgid ""
+" • Test your backups by creating a new Family Tree and then importing the "
+"backup."
+msgstr ""
+" • 新しい家系図を作成し、バックアップをインポートして、バックアップをテストし"
+"てください。"
+
+msgid ", is the most current version.\n"
+msgstr "、は最新バージョンです。\n"
+
+#, python-format
+msgid ""
+"You have Gramps %s. Please make a backup and then upgrade.\n"
+"%s"
+msgstr ""
+"Gramps %s をお使いです。バックアップを作成してからアップグレードしてくださ"
+"い。\n"
+"%s"
+
+#, python-format
+msgid ""
+"You have Gramps %s installed; an unreleased development version. Thank you "
+"for contributing and testing; please report any issues. Backups are your "
+"friend.\n"
+msgstr ""
+"Gramps %s がインストールされています。これはリリースされていない開発バージョ"
+"ンです。貢献とテストに感謝します。問題があれば報告してください。バックアップ"
+"はあなたの味方です。\n"
+
+#, python-format
+msgid "You have Gramps %s. Congratulations, you have the current version.\n"
+msgstr "Gramps %s をお使いです。おめでとうございます。現在のバージョンです。\n"
+
+msgid " (Requires version "
+msgstr " (バージョン "
+
+msgid " or greater installed.)\n"
+msgstr " 以上がインストールされています。)\n"
+
+msgid " (Passed: version "
+msgstr " (合格: バージョン "
+
+msgid "unknown version"
+msgstr "不明なバージョン"
+
+msgid "DISPLAY not set"
+msgstr "DISPLAY が設定されていません"
+
+msgid " or greater.)\n"
+msgstr " 以上。)\n"
+
+msgid " (Requires "
+msgstr " (必要: "
+
+msgid " • Berkeley Database library (bsddb3: "
+msgstr " • Berkeley データベースライブラリ (bsddb3: "
+
+msgid ""
+")\n"
+"\tRequires  BerkeleyDB or Python-bsddb3 Python adapter and the Berkeley "
+"database"
+msgstr ""
+")\n"
+"\tBerkeleyDB または Python-bsddb3 Python アダプターと Berkeley データベースが"
+"必要です"
+
+msgid " • SQLite Database library (sqlite3: "
+msgstr " • SQLite データベースライブラリ (sqlite3: "
+
+msgid " • xdg-utils (Manual check see instructions link)"
+msgstr " • xdg-utils (手動チェック、手順リンクを参照)"
+
+msgid " • librsvg2 (Manual check see instructions link)"
+msgstr " • librsvg2 (手動チェック、手順リンクを参照)"
+
+msgid ""
+" • language-pack-gnome-xx (Manual check see instructions link) for your "
+"Language <show locale here TBD>"
+msgstr ""
+" • language-pack-gnome-xx (手動チェック、手順リンクを参照) あなたの言語用 <こ"
+"こにロケールを表示 TBD>"
+
+msgid " or greater installed.)"
+msgstr " 以上がインストールされています。)"
+
+msgid " or greater)"
+msgstr " 以上)"
+
+msgid "Graphviz not in system PATH"
+msgstr "Graphviz がシステム PATH にありません"
+
+msgid "Ghostscript not in system PATH"
+msgstr "Ghostscript がシステム PATH にありません"
+
+msgid " (Passed: version 0.5.x is installed.)"
+msgstr " (合格: バージョン 0.5.x がインストールされています。)"
+
+msgid " (Requires version 0.5.x)"
+msgstr " (バージョン 0.5.x が必要)"
+
+msgid " • python-fontconfig not found, (Requires version 0.5.x)"
+msgstr " • python-fontconfig が見つかりません (バージョン 0.5.x が必要)"
+
+msgid " • python-fontconfig installed, version unavailable"
+msgstr ""
+" • python-fontconfig はインストールされていますが、バージョンは不明です"
+
+msgid " or greater installed.) (enchant module: "
+msgstr " 以上がインストールされています。) (enchant モジュール: "
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+" • rcs %s TBD (合格: バージョン %s 以上がインストールされています。Microsoft "
+"Windows でない場合)"
+
+#, python-format
+msgid ""
+" • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+" • rcs %s TBD (バージョン %s 以上がインストールされている必要があります。"
+"Microsoft Windows でない場合)"
+
+msgid "exiv2 executable not installed, can't retrieve libexiv2 version."
+msgstr ""
+"exiv2 実行可能ファイルがインストールされていないため、libexiv2 バージョンを取"
+"得できません。"
+
+#, python-format
+msgid "GExiv2 : %s (Exiv2 library : %s)"
+msgstr "GExiv2 : %s (Exiv2 ライブラリ : %s)"
+
+msgid "found another font"
+msgstr "別のフォントが見つかりました"
+
+msgid ""
+"For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
+"white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
+msgstr ""
+"アドオン Networkchart では、フォント <a href=\"https://www.fontsquirrel.com/"
+"fonts/white-rabbit\">White Rabbit</a> が非常に読みやすい結果を提供します。\n"
+
+msgid "not installed"
+msgstr "インストールされていません"
+
+msgid "     and one of either: (pydotplus: "
+msgstr "     および次のいずれか: (pydotplus: "
+
+msgid ") or (pygraphviz: "
+msgstr ") または (pygraphviz: "
+
+msgid "Installed(MS-Windows)"
+msgstr "インストール済み (MS-Windows)"
+
+msgid "Installed(Linux/Mac)"
+msgstr "インストール済み (Linux/Mac)"
+
+msgid "not installed "
+msgstr "インストールされていません "
+
+msgid "not found."
+msgstr "見つかりませんでした。"
+
+msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
+msgstr ""
+"標準。合格: プログラムがインストールされています - 64bit Win OS 上の 32bit。"
+
+msgid ") (Requires the gramps addon listed under 'Plugin lib')"
+msgstr ") (「プラグインライブラリ」にリストされている gramps アドオンが必要)"
+
+msgid "DBF installed"
+msgstr "DBF インストール済み"
+
+msgid ".)(Requires version "
+msgstr "。)(バージョン "
+
+msgid " installed.)(Passed: version "
+msgstr " がインストールされています。)(合格: バージョン "
+
+#, python-format
+msgid "(OpenCV facedetection: %s)"
+msgstr "(OpenCV 顔検出: %s)"
+
+msgid " (lxml: not found. Requires version "
+msgstr " (lxml: 見つかりません。バージョン "
+
+msgid " • Requires: MongoDB TBD / pymongo TBD"
+msgstr " • 必要: MongoDB TBD / pymongo TBD"
+
+#, python-format
+msgid " • Operating System: %s"
+msgstr " • オペレーティングシステム: %s"
+
+msgid ""
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
+"a></b></u>\n"
+msgstr ""
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">ロケール設定:</a></"
+"b></u>\n"
+
+msgid "not set"
+msgstr "設定されていません"
+
+msgid "not tested"
+msgstr "テストされていません"
+
+msgid ""
+"\n"
+"Installed Locales\\Translations (If only English is listed please re-install "
+"Gramps again and make sure to select all the Translations and Dictionaries)\n"
+"\n"
+msgstr ""
+"\n"
+"インストールされているロケール/翻訳 (英語のみがリストされている場合は、"
+"Gramps を再インストールし、すべての翻訳と辞書が選択されていることを確認してく"
+"ださい)\n"
+"\n"
+
+msgid ""
+"\n"
+"Gramps Environment variables:\n"
+msgstr ""
+"\n"
+"Gramps 環境変数:\n"
+
+msgid "found"
+msgstr "見つかりました"
+
+msgid ""
+"Sphinx is a tool that builds the Gramps development documentation and man "
+"pages\n"
+msgstr "Sphinx は Gramps 開発ドキュメントと man ページを構築するツールです\n"

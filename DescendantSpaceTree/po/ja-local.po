@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-02 20:12-0600\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,16 +12,201 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Patriarchal Line (Male ancestor)"
+msgstr "父系 (男性祖先)"
+
+msgid "Matriarchal Line (Female ancestor)"
+msgstr "母系 (女性祖先)"
+
+msgid "Dark theme"
+msgstr "ダークテーマ"
+
+msgid "Light theme"
+msgstr "ライトテーマ"
+
+msgid "Continue Descendant Tree"
+msgstr "子孫ツリーを続ける"
+
+msgid "Alternate Descendant Tree"
+msgstr "代替子孫ツリー"
+
+msgid "Descendant SpaceTree"
+msgstr "子孫スペースツリー"
+
+msgid "Total descendants"
+msgstr "子孫の総数"
+
+msgid "Marriages/Families:<ul>"
+msgstr "結婚/家族:<ul>"
+
 msgid "Invalid Destination Directory"
 msgstr "無効な宛先ディレクトリ"
+
+#, python-format
+msgid ""
+"Destination Directory %s does not exist\n"
+"Do you want to attempt to create it."
+msgstr ""
+"宛先ディレクトリ %s が存在しません\n"
+"作成しますか。"
+
+#, python-format
+msgid "Failed to create %s: %s"
+msgstr "%s の作成に失敗: %s"
+
+#, python-format
+msgid "Failed to read proto file %s: %s"
+msgstr "プロトファイル %s の読み込みに失敗: %s"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite?"
+msgstr ""
+"宛先ファイル %s は既に存在します。\n"
+"上書きしますか?"
+
+msgid "Failed writing file: "
+msgstr "ファイルの書き込みに失敗: "
+
+msgid "Descendants of"
+msgstr "の子孫"
+
+msgid "How to Use the DescendantSpaceTree Viewer"
+msgstr "DescendantSpaceTree ビューアの使用方法"
+
+msgid ""
+"For the best viewing experience, maximize your browser window to use the "
+"entire screen.  A resize will reset the graph to the center person."
+msgstr ""
+"最適な表示にするには、ブラウザウィンドウを最大化して画面全体を使用してくださ"
+"い。サイズ変更すると、グラフは中心人物にリセットされます。"
+
+msgid "Click on a node to focus on a descendant and expand any children."
+msgstr "ノードをクリックして子孫にフォーカスし、子供を展開します。"
+
+msgid "Click and drag anywhere on the viewer to position the descendant tree."
+msgstr ""
+"ビューア上の任意の場所をクリックしてドラッグし、子孫ツリーの位置を調整しま"
+"す。"
+
+#. Translators: Please do not translate ___HELP_RESET_BUTTON___.
+msgid ""
+"Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
+"starting descendant."
+msgstr ""
+"リセットボタン ___HELP_RESET_BUTTON___ をクリックして、開始子孫に戻ります。"
+
+msgid ""
+"Search for a person by typing into the search box.  At least three "
+"characters are required to search.  Click on any of the suggestions to "
+"quickly navigate to that person.  A person may appear more than once in a "
+"search, a plus sign (+) after the name indicates that person appears as a "
+"spouse."
+msgstr ""
+"検索ボックスに入力して人物を検索します。検索には少なくとも3文字が必要です。提"
+"案のいずれかをクリックして、その人物にすばやく移動します。検索で人物が複数回"
+"表示されることがあり、名前の後のプラス記号(+)は、その人物が配偶者として表示さ"
+"れることを示します。"
+
+msgid ""
+"A descendant and any spouses are listed in the same node.  Children of all "
+"of the descendant's families are grouped together."
+msgstr ""
+"子孫とその配偶者は同じノードにリストされます。子孫のすべての家族の子供はグ"
+"ループ化されます。"
+
+msgid ""
+"Persons born after a specified date may not display their birth or death "
+"dates."
+msgstr ""
+"指定された日付以降に生まれた人物は、誕生日や死亡日が表示されない場合がありま"
+"す。"
+
+msgid ""
+"Person nodes are colored to indicate the number of children, the deeper tint "
+"of the coloring, the greater number of children."
+msgstr ""
+"人物ノードは子供の数を示すために色付けされ、色が濃いほど子供の数が多いことを"
+"示します。"
+
+msgid ""
+"The currently selected descendant and all of the ancestors of that person "
+"are highlighted in yellow."
+msgstr ""
+"現在選択されている子孫とその人物のすべての祖先は黄色で強調表示されます。"
+
+#. Translators: Please do not translate ___NAV_BUTTON_CONTINUE___ or ___NAV_BUTTON_ALT___.
+msgid ""
+"A person may occur in different branches.  This is usually because of inter-"
+"family marriages (such as that of cousins.)  In this case, a button will "
+"also appear for that person,  ___NAV_BUTTON_CONTINUE___ or "
+"___NAV_BUTTON_ALT___  to navigate the other branch.  Only one branch will "
+"expand descendants of this person. "
+msgstr ""
+"人物が異なるブランチに現れることがあります。これは通常、家族間の結婚 (いとこ"
+"同士など）が原因です。この場合、その人物にもボタンが表示され、"
+"___NAV_BUTTON_CONTINUE___ または ___NAV_BUTTON_ALT___ で他のブランチに移動で"
+"きます。この人物の子孫を展開するのは1つのブランチのみです。 "
+
+msgid ""
+"The following open source projects are used in building this viewer, see "
+"source code LICENSE*.txt files for complete licenses and required notices."
+msgstr ""
+"このビューアの構築には以下のオープンソースプロジェクトが使用されています。完"
+"全なライセンスと必要な通知については、ソースコードの LICENSE*.txt ファイルを"
+"参照してください。"
+
+msgid "Search. . ."
+msgstr "検索..."
 
 msgid "Include Generations"
 msgstr "世代を含める"
 
+msgid "Branch to expand when duplicated"
+msgstr "重複時に展開するブランチ"
+
+msgid ""
+"When a descendant appears more than once, prefer the selected lineage to "
+"expand descendancy line"
+msgstr "子孫が複数回出現する場合、選択された系統を優先して子孫系統を展開します"
+
+msgid "Maximum display birth year"
+msgstr "最大表示生年"
+
+msgid "Birth/death dates will not be displayed after this year"
+msgstr "この年以降の誕生日/死亡日は表示されません"
+
+msgid "Theme preference"
+msgstr "テーマの設定"
+
+msgid "Theme color preference for Space Tree"
+msgstr "スペースツリーのテーマカラー設定"
+
 msgid "The destination path for generated files."
 msgstr "生成されたファイルの保存先パス。"
+
+msgid "Destination File"
+msgstr "宛先ファイル"
+
+msgid "The destination file name for the report."
+msgstr "レポートの保存先ファイル名。"
+
+msgid "Open generated HTML file with default browser."
+msgstr "生成されたHTMLファイルを既定のブラウザで開きます。"
+
+msgid "Descendant Space Tree"
+msgstr "子孫スペースツリー"
+
+msgid ""
+"Generates a web page with an interactive graph of descendants represented as "
+"a Space Tree for efficient viewing, even with many descendants or "
+"generations."
+msgstr ""
+"多くの子孫や世代がいる場合でも効率的に表示できるよう、スペースツリーとして表"
+"現された子孫のインタラクティブグラフを含むWebページを生成します。"

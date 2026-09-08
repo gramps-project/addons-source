@@ -1,0 +1,115 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Failed writing "
+msgstr "寫入失敗 "
+
+msgid "Year of Birth of Center Person"
+msgstr "中心人物的出生年份"
+
+msgid "The year of birth of the center person. Estimate a year if unknown"
+msgstr "中心人物的出生年份。若未知，請估算年份"
+
+msgid "Destination directory"
+msgstr "目的地目錄"
+
+msgid "Path for generated files"
+msgstr "產生檔案的路徑"
+
+msgid "The destination file name for html content."
+msgstr "HTML 內容的目的檔案名稱。"
+
+msgid "Default Age"
+msgstr "預設年齡"
+
+msgid "Default age of parent when child is born with unknown year of birth"
+msgstr "子女出生年份不明時，假設父母在子女出生時的預設年齡"
+
+msgid "What to show"
+msgstr "顯示內容"
+
+msgid "Show GrampsID"
+msgstr "顯示 GrampsID"
+
+msgid "Show GrampsID on top right of the box"
+msgstr "在方塊右上角顯示 GrampsID"
+
+msgid "Optimize"
+msgstr "最佳化"
+
+msgid "Use as little space in horizontal direction as possible"
+msgstr "盡可能減少水平方向所佔的空間"
+
+msgid "Male Box Color"
+msgstr "男性方框顏色"
+
+msgid "Box background color for male person"
+msgstr "男性人物的方框背景色"
+
+msgid "Female Box Color"
+msgstr "女性方塊顏色"
+
+msgid "Box background color for female person"
+msgstr "女性人物的方框背景色"
+
+msgid "Number of pixel per year"
+msgstr "每年的像素數"
+
+msgid "How many pixel height is one year?"
+msgstr "每年對應多少像素高度？"
+
+msgid "Offset X Coordinate"
+msgstr "X 座標偏移量"
+
+msgid "How many pixel are unused besides the most left and most right boxes?"
+msgstr "最左側及最右側方框旁各保留多少像素空白？"
+
+msgid "Offset Y Coordinate"
+msgstr "Y 座標偏移量"
+
+msgid "How many pixel are unused above first box?"
+msgstr "第一個方塊上方有多少未使用的像素？"
+
+msgid "Width of a box in pixel"
+msgstr "方框寬度 (像素)"
+
+msgid "Width of the box of a person in pixel"
+msgstr "人物方塊的寬度（像素）"
+
+msgid "Horizontal space between boxes in pixel"
+msgstr "方塊間的水平間距（像素）"
+
+msgid "Minimum horizontal space between 2 boxes in pixel"
+msgstr "兩個方塊之間的最小水平間距（像素）"
+
+msgid "Length of vertical part of a line in pixel"
+msgstr "線條垂直部分的長度（像素）"
+
+msgid ""
+"Parent and child boxes are connected with lines. This is the length of the "
+"vertical part of the lines in pixel"
+msgstr "父母與子女方塊以線條連接。這是線條垂直部分的長度，以像素為單位"
+
+msgid "Number of pixel between left border and scale"
+msgstr "左邊界與刻度之間的像素數"
+
+msgid "Timeline Pedigree Report"
+msgstr "時間軸譜系報告"
+
+msgid ""
+"Creates an HTML webpage that uses JavaScript to show a pedigree block "
+"diagram arranged vertically by birth date"
+msgstr "建立 HTML 網頁，使用 JavaScript 顯示依出生日期垂直排列的譜系方塊圖"

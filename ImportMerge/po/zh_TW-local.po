@@ -1,0 +1,200 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Import and Merge tool"
+msgstr "匯入與合併工具"
+
+msgid ""
+"Compares a Gramps XML database with the current one, and allows merging of "
+"the differences."
+msgstr "比對 Gramps XML 資料庫與目前的資料庫，並可合併差異。"
+
+msgid "Import and merge a Gramps XML"
+msgstr "匯入並合併 Gramps XML"
+
+msgid "Missing"
+msgstr "缺少"
+
+msgid "Delete original"
+msgstr "刪除原始資料"
+
+msgid "Ignore"
+msgstr "忽略"
+
+msgid "Add Import"
+msgstr "新增匯入"
+
+msgid "Merge into original"
+msgstr "合併至原始資料"
+
+msgid "Merge into import"
+msgstr "合併至匯入資料"
+
+msgid "Replace with import"
+msgstr "以匯入資料取代"
+
+msgid "Keep original"
+msgstr "保留原始資料"
+
+msgid ""
+"Use buttons below to set the 'Action' for each difference.  No changes will "
+"be made to your tree until you press 'Done' and confirm."
+msgstr ""
+"使用下方按鈕設定每個差異的「動作」。在您按下 [完成] 並確認之前，家族樹不會有"
+"任何變更。"
+
+msgid ""
+"This item will be deleted from your tree.  Any referenced items were also "
+"marked for deletion."
+msgstr "此項目將從您的家族樹中刪除。所有被參照的項目也已標記為刪除。"
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked for Ignore."
+msgstr "家族樹中的此項目不會變更。所有引用的項目也已標記為忽略。"
+
+msgid ""
+"This item will be added to your tree.  Any referenced items were also marked "
+"for adding."
+msgstr "此項目將新增至家族樹。所有引用的項目也已標記為新增。"
+
+msgid ""
+"This item will be merged, saving data from your tree.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"此項目將會合併，並保留您家族樹中的資料。所有被參照的項目也已標記為合併或加"
+"入。"
+
+msgid ""
+"This item will be merged, using data from the import.  Any referenced items "
+"were also marked for merging or adding."
+msgstr "此項目將使用匯入資料進行合併。所有引用的項目也已標記為合併或新增。"
+
+msgid ""
+"The import data will entirely replace the data in your tree.  Any referenced "
+"items were also marked for replacement or removal."
+msgstr "匯入資料將完全取代家族樹中的資料。所有引用的項目也已標記為取代或移除。"
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked to keep."
+msgstr "家族樹中的此項目不會變更。所有引用的項目也已標記為保留。"
+
+msgid "Import Failure"
+msgstr "匯入失敗"
+
+msgid "Your Tree and import are the same."
+msgstr "您的家族樹與匯入資料相同。"
+
+msgid "your tree "
+msgstr "您的家族樹 "
+
+msgid "imported "
+msgstr "已匯入 "
+
+msgid "Original"
+msgstr "原始資料"
+
+msgid "Imported"
+msgstr "匯入資料"
+
+msgid "Result  "
+msgstr "結果  "
+
+msgid "Import and Merge"
+msgstr "匯入與合併"
+
+msgid "Replace"
+msgstr "取代"
+
+msgid ""
+"A '*' indicates that the action was automarked, a '?' indicates a conflict "
+"between automarks."
+msgstr "「*」表示動作已自動標記，「?」表示自動標記之間有衝突。"
+
+msgid "Import file"
+msgstr "匯入檔案"
+
+msgid "Select the difference you wish to examine."
+msgstr "選取要檢查的差異。"
+
+msgid "Object Name/Description"
+msgstr "物件名稱／說明"
+
+msgid ""
+"Data item details, showing the current treeitem, imported tree item, and "
+"result (when chosen)."
+msgstr ""
+"資料項目詳細資訊，顯示目前家族樹項目、匯入的家族樹項目，以及選取後的結果。"
+
+msgid "Object and item"
+msgstr "物件與項目"
+
+msgid "Differences"
+msgstr "差異"
+
+msgid "This button will ignore the difference, no changes to your tree."
+msgstr "此按鈕會忽略差異，不變更家族樹。"
+
+msgid "Unmark"
+msgstr "取消標記"
+
+msgid "This button will add the imported data as a new object to your tree."
+msgstr "此按鈕會將匯入的資料新增為家族樹中的新物件。"
+
+msgid "Done"
+msgstr "完成"
+
+msgid ""
+"This button will bring up a dialog allowing you to finalize your changes, or "
+"abandon them."
+msgstr "此按鈕會開啟對話方塊，讓您完成變更或放棄變更。"
+
+msgid "Merge Original"
+msgstr "合併原始資料"
+
+msgid ""
+"This button will merge the imported data into your tree with your tree data "
+"as a base."
+msgstr "此按鈕會以您的家族樹資料為基礎，將匯入資料合併至家族樹。"
+
+msgid "This button will replace your tree data with the imported data."
+msgstr "此按鈕會以匯入資料取代您的家族樹資料。"
+
+msgid "Merge Import"
+msgstr "合併匯入資料"
+
+msgid ""
+"This button will merge the imported data into your tree with the imported "
+"data as a base."
+msgstr "此按鈕會以匯入的資料為基礎，將資料合併至您的家族樹。"
+
+msgid "Edit Import"
+msgstr "編輯匯入資料"
+
+msgid ""
+"This button will edit the imported data.  The data will still need to be "
+"merged, added or replaced."
+msgstr "此按鈕會編輯匯入資料。編輯後仍須合併、新增或取代資料。"
+
+msgid "Show more details"
+msgstr "顯示更多詳細資訊"
+
+msgid "Automark Families"
+msgstr "自動標記家庭"
+
+msgid "Automark Parent Families"
+msgstr "自動標記父母家庭"

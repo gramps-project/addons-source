@@ -1,0 +1,443 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-06 07:24+0200\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Gramps Web Sync"
+msgstr "Gramps Web Sync"
+
+msgid "Synchronizes a local database with a Gramps Web instance."
+msgstr "ローカルデータベースをGramps Webインスタンスと同期します。"
+
+#, python-format
+msgid "Gramps Web Sync %(addon)s, Web API %(api)s"
+msgstr "Gramps Web Sync %(addon)s, Web API %(api)s"
+
+#, python-format
+msgid "Gramps Web Sync %s"
+msgstr "Gramps Web Sync %s"
+
+msgid ""
+"This URL uses http, so your password will be sent in clear text. Use only "
+"for local testing."
+msgstr ""
+"このURLはhttpを使用するため、パスワードは平文で送信されます。ローカルテストの"
+"みに使用してください。"
+
+#, python-format
+msgid ""
+"The system keyring could not be used. Snap confinement blocks access until "
+"you run: %s"
+msgstr ""
+"システムキーリングを使用できませんでした。Snapの制限により、以下を実行するま"
+"でアクセスがブロックされます: %s"
+
+msgid ""
+"The system keyring could not be used. You will need to enter your password "
+"each time."
+msgstr ""
+"システムキーリングを使用できませんでした。毎回パスワードを入力する必要があり"
+"ます。"
+
+msgid "Authentication failed. Please check your username and password."
+msgstr "認証に失敗しました。ユーザー名とパスワードを確認してください。"
+
+msgid "Access forbidden. Please check username and password."
+msgstr "アクセスが拒否されました。ユーザー名とパスワードを確認してください。"
+
+msgid "GrampsWeb service not found. Please check the URL."
+msgstr "GrampsWebサービスが見つかりません。URLを確認してください。"
+
+msgid "Too many requests, please try again in a few seconds."
+msgstr "リクエストが多すぎます。数秒後に再試行してください。"
+
+msgid "GrampsWeb tree is disabled."
+msgstr "GrampsWebツリーは無効になっています。"
+
+msgid "Connection failed. Please check the URL and your internet connection."
+msgstr "接続に失敗しました。URLとインターネット接続を確認してください。"
+
+msgid "Invalid server response. Please check the URL."
+msgstr "無効なサーバーレスポンスです。URLを確認してください。"
+
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+"あなたのユーザーには同期を使用するための十分なサーバー権限がありません。"
+
+msgid "Failed importing downloaded XML file."
+msgstr "ダウンロードしたXMLファイルのインポートに失敗しました。"
+
+msgid "Unable to synchronize changes to server: objects have been modified."
+msgstr "変更をサーバーに同期できません: オブジェクトが変更されています。"
+
+msgid "Unexpected error while applying changes."
+msgstr "変更適用中に予期しないエラーが発生しました。"
+
+msgid ""
+"The family tree was modified while the changes were being reviewed. Nothing "
+"has been applied. Please compare again."
+msgstr ""
+"変更のレビュー中に家系図が変更されました。何も適用されていません。再度比較し"
+"てください。"
+
+#, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s, but synchronization needs "
+"%(needed)s or newer. Please update the server."
+msgstr ""
+"このサーバーはGramps Web API %(found)s を実行していますが、同期には "
+"%(needed)s 以上が必要です。サーバーを更新してください。"
+
+#, python-format
+msgid ""
+"This server did not report a Gramps Web API version, so it is too old to "
+"synchronize with. Version %s or newer is needed."
+msgstr ""
+"このサーバーはGramps Web APIバージョンを報告しなかったため、同期するには古す"
+"ぎます。バージョン %s 以上が必要です。"
+
+#, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s. This version of Gramps works with "
+"Gramps Web API %(major)s, so synchronizing with this server needs a newer "
+"version of Gramps."
+msgstr ""
+"このサーバーはGramps Web API %(found)s を実行しています。このバージョンの"
+"GrampsはGramps Web API %(major)s で動作するため、このサーバーと同期するには新"
+"しいバージョンのGrampsが必要です。"
+
+msgid ""
+"This server is not configured to use a background task queue. "
+"Synchronization needs one: without it, applying changes times out before the "
+"server has finished. Please enable it on the server."
+msgstr ""
+"このサーバーはバックグラウンドタスクキューを使用するように設定されていませ"
+"ん。同期にはそれが必要です: これがないと、サーバーが完了する前に変更の適用が"
+"タイムアウトします。サーバーで有効にしてください。"
+
+#, python-format
+msgid "The server could not apply the changes: %s"
+msgstr "サーバーは変更を適用できませんでした: %s"
+
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "サーバーエラー %s。接続を確認してください。"
+
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "予期しないエラー: %s"
+
+msgid "Signing in…"
+msgstr "サインイン中…"
+
+msgid "Downloading the remote family tree…"
+msgstr "リモートの家系図をダウンロード中…"
+
+msgid "Comparing the two family trees…"
+msgstr "2つの家系図を比較中…"
+
+msgid "Checking which media files are missing…"
+msgstr "不足しているメディアファイルを確認中…"
+
+msgid "Applied the changes to this computer."
+msgstr "このコンピュータに変更を適用しました。"
+
+msgid "Sending the changes to the server…"
+msgstr "変更をサーバーに送信中…"
+
+msgid "Downloading media files…"
+msgstr "メディアファイルをダウンロード中…"
+
+msgid "Uploading media files…"
+msgstr "メディアファイルをアップロード中…"
+
+msgid "Connect"
+msgstr "接続"
+
+msgid "Apply changes"
+msgstr "変更を適用"
+
+msgid "Transfer media files"
+msgstr "メディアファイルを転送"
+
+msgid "Bidirectional synchronization"
+msgstr "双方向同期"
+
+msgid "Reset the server to match this computer"
+msgstr "このコンピュータに合わせてサーバーをリセット"
+
+msgid "Reset this computer to match the server"
+msgstr "サーバーに合わせてこのコンピュータをリセット"
+
+msgid ""
+"Changes from both sides are combined. Objects edited in both places are "
+"merged."
+msgstr ""
+"両方からの変更が結合されます。両方の場所で編集されたオブジェクトはマージされ"
+"ます。"
+
+msgid ""
+"The server is made to match this computer. Anything changed only on the "
+"server is discarded."
+msgstr ""
+"サーバーはこのコンピュータに合わせて調整されます。サーバーでのみ変更されたも"
+"のはすべて破棄されます。"
+
+msgid ""
+"This computer is made to match the server. Anything changed only here is "
+"discarded."
+msgstr ""
+"このコンピュータはサーバーに合わせて調整されます。ここでのみ変更されたものは"
+"すべて破棄されます。"
+
+#, python-format
+msgid "Will change on this computer (%s object)"
+msgid_plural "Will change on this computer (%s objects)"
+msgstr[0] "このコンピュータで変更されます (%s オブジェクト）"
+msgstr[1] ""
+
+#, python-format
+msgid "Will change on the server (%s object)"
+msgid_plural "Will change on the server (%s objects)"
+msgstr[0] "サーバーで変更されます (%s オブジェクト）"
+msgstr[1] ""
+
+#, python-format
+msgid "Add %s object"
+msgid_plural "Add %s objects"
+msgstr[0] "%s オブジェクトを追加"
+msgstr[1] ""
+
+#, python-format
+msgid "Update %s object"
+msgid_plural "Update %s objects"
+msgstr[0] "%s オブジェクトを更新"
+msgstr[1] ""
+
+#, python-format
+msgid "Merge %s object"
+msgid_plural "Merge %s objects"
+msgstr[0] "%s オブジェクトをマージ"
+msgstr[1] ""
+
+#, python-format
+msgid "Delete %s object"
+msgid_plural "Delete %s objects"
+msgstr[0] "%s オブジェクトを削除"
+msgstr[1] ""
+
+#, python-format
+msgid "%s object will be deleted on this computer."
+msgid_plural "%s objects will be deleted on this computer."
+msgstr[0] "%s オブジェクトがこのコンピュータで削除されます。"
+msgstr[1] ""
+
+#, python-format
+msgid "%s object will be deleted on the server."
+msgid_plural "%s objects will be deleted on the server."
+msgstr[0] "%s オブジェクトがサーバーで削除されます。"
+msgstr[1] ""
+
+#, python-format
+msgid "%(down)s to download, %(up)s to upload"
+msgstr "%(down)s ダウンロード、%(up)s アップロード"
+
+#, python-format
+msgid "Also transfer %(total)s media file (%(counts)s)"
+msgid_plural "Also transfer %(total)s media files (%(counts)s)"
+msgstr[0] "また %(total)s メディアファイルを転送 (%(counts)s）"
+msgstr[1] ""
+
+#, python-format
+msgid "%s media file is missing on both sides and cannot be transferred."
+msgid_plural ""
+"%s media files are missing on both sides and cannot be transferred."
+msgstr[0] "%s メディアファイルが両方の場所で不足しており、転送できません。"
+msgstr[1] ""
+
+#, python-format
+msgid "Applied %s change."
+msgid_plural "Applied %s changes."
+msgstr[0] "%s 件の変更を適用しました。"
+msgstr[1] ""
+
+msgid "Both trees are already in sync."
+msgstr "両方のツリーは既に同期しています。"
+
+msgid "Media files are in sync."
+msgstr "メディアファイルは同期しています。"
+
+#, python-format
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "%s メディアファイルのダウンロードに成功しました。"
+msgstr[1] ""
+
+#, python-format
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "ダウンロード中に %s 件のエラーが発生しました。"
+msgstr[1] ""
+
+#, python-format
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "%s メディアファイルのアップロードに成功しました。"
+msgstr[1] ""
+
+#, python-format
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "アップロード中に %s 件のエラーが発生しました。"
+msgstr[1] ""
+
+msgid "No server configured"
+msgstr "サーバーが設定されていません"
+
+#, python-format
+msgid "%(user)s on %(server)s"
+msgstr "%(server)s 上の %(user)s"
+
+#, python-format
+msgid "%(where)s — %(synced)s"
+msgstr "%(where)s — %(synced)s"
+
+msgid "Never synced"
+msgstr "一度も同期していません"
+
+msgid "Last synced just now"
+msgstr "最終同期: たった今"
+
+#, python-format
+msgid "Last synced %s minute ago"
+msgid_plural "Last synced %s minutes ago"
+msgstr[0] "最終同期: %s 分前"
+msgstr[1] ""
+
+#, python-format
+msgid "Last synced %s hour ago"
+msgid_plural "Last synced %s hours ago"
+msgstr[0] "最終同期: %s 時間前"
+msgstr[1] ""
+
+#, python-format
+msgid "Last synced %s day ago"
+msgid_plural "Last synced %s days ago"
+msgstr[0] "最終同期: %s 日前"
+msgstr[1] ""
+
+#, python-format
+msgid "Last synced on %s"
+msgstr "最終同期: %s"
+
+msgid "_Try again"
+msgstr "_再試行"
+
+msgid "C_onnect"
+msgstr "接続(_O)"
+
+msgid "Forget this server?"
+msgstr "このサーバーを忘れますか？"
+
+msgid ""
+"The address, user name and password stored for this server will be removed, "
+"along with the record of when this family tree last synchronized with it. "
+"The next synchronization will compare the two trees from scratch."
+msgstr ""
+"このサーバーに保存されたアドレス、ユーザー名、パスワードは、この家系図が最後"
+"にサーバーと同期した時刻の記録とともに削除されます。次の同期では、2つのツリー"
+"を最初から比較します。"
+
+msgid "Forget"
+msgstr "忘れる"
+
+msgid ""
+"These credentials were last used with a different family tree. Check the "
+"server before continuing."
+msgstr ""
+"これらの認証情報は最後に別の家系図で使用されました。続行する前にサーバーを確"
+"認してください。"
+
+msgid "Change server…"
+msgstr "サーバーを変更…"
+
+msgid "Server URL:"
+msgstr "サーバー URL:"
+
+msgid "Username:"
+msgstr "ユーザー名:"
+
+msgid "Password:"
+msgstr "パスワード:"
+
+msgid "Remember password"
+msgstr "パスワードを記憶"
+
+msgid "Forget this server"
+msgstr "このサーバーを忘れる"
+
+msgid "About this tool"
+msgstr "このツールについて"
+
+msgid "Open the online manual"
+msgstr "オンラインマニュアルを開く"
+
+msgid ""
+"This tool allows to synchronize the currently opened family tree with a "
+"remote family tree served by Gramps Web.\n"
+"\n"
+"The tool assumes that the two trees are derivatives of each other, i.e. one "
+"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
+"\n"
+"After successful synchronization, the two trees will be identical. "
+"Modifications will be propagated based on timestamps. You will be prompted "
+"for confirmation before any changes are made to the local or remote trees.\n"
+"\n"
+"If you instead want to merge two significantly different trees with the "
+"option to make manual modifications, use the Import Merge Tool instead."
+msgstr ""
+"このツールは、現在開いている家系図をGramps Webが提供するリモート家系図と同期"
+"することができます。\n"
+"\n"
+"このツールは、2つのツリーが互いに派生したものであることを前提としています。つ"
+"まり、一方のツリーが他方のGramps XML (GEDCOMではない！）エクスポートから作成"
+"されたものです。\n"
+"\n"
+"同期が成功すると、2つのツリーは同一になります。変更はタイムスタンプに基づいて"
+"伝播されます。ローカルまたはリモートのツリーに変更を加える前に確認を求めるプ"
+"ロンプトが表示されます。\n"
+"\n"
+"代わりに、手動で修正するオプションを付けて2つの大幅に異なるツリーをマージした"
+"い場合は、代わりにインポートマージツールを使用してください。"
+
+msgid "Error:"
+msgstr "エラー:"
+
+msgid "Warning:"
+msgstr "警告:"
+
+msgid "Sync mode:"
+msgstr "同期モード:"
+
+msgid "Copy"
+msgstr "コピー"
+
+msgid "Synchronization complete"
+msgstr "同期が完了しました"
+
+msgid "Synchronization failed"
+msgstr "同期に失敗しました"

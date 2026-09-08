@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,13 +12,67 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Set Privacy Tool"
+msgstr "プライバシー設定ツール"
+
+#, python-format
+msgid "Set private: %d %s\n"
+msgstr "非公開に設定: %d %s\n"
+
+#, python-format
+msgid "Not private: %d %s\n"
+msgstr "非公開でない: %d %s\n"
+
+msgid "Set persons private.."
+msgstr "人物を非公開に設定..."
+
+msgid "Set events private.."
+msgstr "イベントを非公開に設定..."
+
+msgid "Set media private.."
+msgstr "メディアを非公開に設定..."
+
+msgid "Set adresses private.."
+msgstr "住所を非公開に設定..."
+
+msgid "Set internet objects private.."
+msgstr "インターネットオブジェクトを非公開に設定..."
+
+msgid ""
+"The time range in years from today you want to set objects private.\n"
+"'0 years' = remove privacy from all objects."
+msgstr ""
+"今日からオブジェクトを非公開に設定する年数。\n"
+"'0年' = すべてのオブジェクトからプライバシーを削除。"
+
+msgid "Always private if no date."
+msgstr "日付がない場合は常に非公開。"
+
+msgid "If checked, all objects without a date will also be set private."
+msgstr "チェックすると、日付のないすべてのオブジェクトも非公開に設定されます。"
 
 msgid "Select filter to restrict people"
 msgstr "人を制限するフィルターの選択"
 
 msgid "Persons"
 msgstr "人物"
+
+msgid "Select filter to restrict events"
+msgstr "イベントを制限するフィルターを選択"
+
+msgid "Select filter to restrict medias"
+msgstr "メディアを制限するフィルターを選択"
+
+msgid "Internet type filter"
+msgstr "インターネットタイプフィルター"
+
+msgid "E-Mail"
+msgstr "Eメール"
+
+msgid "Set all objects of the last <number> of years private."
+msgstr "過去 <数> 年間のすべてのオブジェクトを非公開に設定します。"

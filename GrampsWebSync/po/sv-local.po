@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-31 17:35+0200\n"
-"PO-Revision-Date: 2026-08-03 04:02+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2026-08-06 07:24+0200\n"
+"PO-Revision-Date: 2026-08-31 17:51+0000\n"
+"Last-Translator: Eric Bjurvald <epg.bjurvald@gmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -12,13 +12,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Webb-synkronisering"
 
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Synkroniserar en lokal databas med en Gramps Webbinstans."
+
+msgid ""
+"This URL uses http, so your password will be sent in clear text. Use only "
+"for local testing."
+msgstr ""
+"Denna URL använder http, så ditt lösenord kommer att skickas i klartext. "
+"Använd endast för lokal testning."
 
 #, python-format
 msgid ""
@@ -80,6 +87,15 @@ msgstr ""
 "Släktträdet ändrades medan ändringarna granskades. Ingenting har tillämpats. "
 "Jämför igen."
 
+msgid ""
+"This server is not configured to use a background task queue. "
+"Synchronization needs one: without it, applying changes times out before the "
+"server has finished. Please enable it on the server."
+msgstr ""
+"Denna server är inte konfigurerad för att använda en bakgrundsuppgiftskö. "
+"Synkronisering behövs: utan den kan tillämpningen av ändringar avbrytas "
+"innan servern är klar. Vänligen aktivera den på servern."
+
 #, python-format
 msgid "The server could not apply the changes: %s"
 msgstr "Servern kunde inte tillämpa ändringarna: %s"
@@ -92,30 +108,222 @@ msgstr "Server-fel %s. Kontrollera din anslutning."
 msgid "Unexpected error: %s"
 msgstr "Oväntat fel: %s"
 
-msgid "Fetching remote data..."
-msgstr "Hämtar fjärrdata..."
+msgid "Signing in…"
+msgstr "Loggar in…"
 
-msgid "Comparing local and remote data..."
-msgstr "Jämför lokala- och fjärrdata..."
+msgid "Downloading the remote family tree…"
+msgstr "Laddar ner fjärrsläktträd…"
 
-msgid "Successfully applied changes to local database."
-msgstr "Ändringarna har tillämpats i den lokala databasen."
+msgid "Comparing the two family trees…"
+msgstr "Jämför de två släktträden…"
 
-msgid "Continue without transport encryption?"
-msgstr "Fortsätta utan transportkryptering?"
+msgid "Checking which media files are missing…"
+msgstr "Kontrollerar vilka mediefiler som saknas…"
+
+msgid "Applied the changes to this computer."
+msgstr "Tillämpade ändringarna på denna dator."
+
+msgid "Sending the changes to the server…"
+msgstr "Skickar ändringarna till servern…"
+
+msgid "Downloading media files…"
+msgstr "Laddar ner mediefiler…"
+
+msgid "Uploading media files…"
+msgstr "Laddar upp mediefiler…"
+
+msgid "Connect"
+msgstr "Anslut"
+
+msgid "Apply changes"
+msgstr "Tillämpa ändringar"
+
+msgid "Transfer media files"
+msgstr "För över mediefiler"
+
+msgid "Bidirectional synchronization"
+msgstr "Dubbelriktad synkronisering"
+
+msgid "Reset the server to match this computer"
+msgstr "Återställ servern för att matcha denna dator"
+
+msgid "Reset this computer to match the server"
+msgstr "Återställ denna dator för att matcha servern"
 
 msgid ""
-"You have specified a URL with http scheme. If you continue, your password "
-"will be sent in clear text over the network. Use only for local testing!"
+"Changes from both sides are combined. Objects edited in both places are "
+"merged."
 msgstr ""
-"Du har angett en URL med http-schema. Om du fortsätter skickas ditt lösenord "
-"i klartext över nätverket. Använd endast för lokal testning!"
+"Förändringar från båda sidor kombineras. Objekt som redigerats på båda "
+"ställena slås samman."
 
-msgid "Continue with HTTP"
-msgstr "Fortsätt med HTTP"
+msgid ""
+"The server is made to match this computer. Anything changed only on the "
+"server is discarded."
+msgstr ""
+"Servern är gjord för att matcha den här datorn. Allt som ändras endast på "
+"servern kasseras."
 
-msgid "Use HTTPS"
-msgstr "Använd HTTPS"
+msgid ""
+"This computer is made to match the server. Anything changed only here is "
+"discarded."
+msgstr ""
+"Den här datorn är gjord för att matcha servern. Allt som ändras endast här "
+"kasseras."
+
+#, python-format
+msgid "Will change on this computer (%s object)"
+msgid_plural "Will change on this computer (%s objects)"
+msgstr[0] "Kommer ändra på denna dator (%s objekt)"
+msgstr[1] "Kommer ändra på denna dator (%s objekt)"
+
+#, python-format
+msgid "Will change on the server (%s object)"
+msgid_plural "Will change on the server (%s objects)"
+msgstr[0] "Kommer ändra på servern (%s objekt)"
+msgstr[1] "Kommer ändra på servern (%s objekt)"
+
+#, python-format
+msgid "Add %s object"
+msgid_plural "Add %s objects"
+msgstr[0] "Lägg till %s objekt"
+msgstr[1] "Lägg till %s objekt"
+
+#, python-format
+msgid "Update %s object"
+msgid_plural "Update %s objects"
+msgstr[0] "Uppdatera %s objekt"
+msgstr[1] "Uppdatera %s objekt"
+
+#, python-format
+msgid "Merge %s object"
+msgid_plural "Merge %s objects"
+msgstr[0] "Slå ihop %s objekt"
+msgstr[1] "Slå ihop %s objekt"
+
+#, python-format
+msgid "Delete %s object"
+msgid_plural "Delete %s objects"
+msgstr[0] "Ta bort %s objekt"
+msgstr[1] "Ta bort %s objekt"
+
+#, python-format
+msgid "%s object will be deleted on this computer."
+msgid_plural "%s objects will be deleted on this computer."
+msgstr[0] "%s objekt kommer att tas bort från den här datorn."
+msgstr[1] "%s objekt kommer att tas bort från den här datorn."
+
+#, python-format
+msgid "%s object will be deleted on the server."
+msgid_plural "%s objects will be deleted on the server."
+msgstr[0] "%s objekt kommer att tas bort från servern."
+msgstr[1] "%s objekt kommer att tas bort från servern."
+
+#, python-format
+msgid "%(down)s to download, %(up)s to upload"
+msgstr "%(down)s till nedladdning, %(up)s till uppladdning"
+
+#, python-format
+msgid "Also transfer %(total)s media file (%(counts)s)"
+msgid_plural "Also transfer %(total)s media files (%(counts)s)"
+msgstr[0] "För också över %(total)s mediefil (%(counts)s)"
+msgstr[1] "För också över %(total)s mediefiler (%(counts)s)"
+
+#, python-format
+msgid "%s media file is missing on both sides and cannot be transferred."
+msgid_plural ""
+"%s media files are missing on both sides and cannot be transferred."
+msgstr[0] "%s mediafil saknas på båda sidor och kan inte överföras."
+msgstr[1] "%s mediafiler saknas på båda sidor och kan inte överföras."
+
+#, python-format
+msgid "Applied %s change."
+msgid_plural "Applied %s changes."
+msgstr[0] "Tillämpade %s ändring."
+msgstr[1] "Tillämpade %s ändringar."
+
+msgid "Both trees are already in sync."
+msgstr "Båda träden är redan synkroniserade."
+
+msgid "Media files are in sync."
+msgstr "Mediefiler är synkroniserade."
+
+#, python-format
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "Laddade ner %s mediefil med lyckat resultat."
+msgstr[1] "Laddade ner %s mediefiler med lyckat resultat."
+
+#, python-format
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "%s fel uppstod under nedladdningen."
+msgstr[1] "%s fel uppstod under nedladdningen."
+
+#, python-format
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "Laddade upp %s mediefil med lyckat resultat."
+msgstr[1] "Laddade upp %s mediefiler med lyckat resultat."
+
+#, python-format
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "%s fel uppstod under uppladdningen."
+msgstr[1] "%s fel uppstod under uppladdningen."
+
+msgid "_Try again"
+msgstr "_Försök igen"
+
+msgid "C_onnect"
+msgstr "A_nslut"
+
+msgid "Forget this server?"
+msgstr "Glöm denna server?"
+
+msgid ""
+"The address, user name and password stored for this server will be removed, "
+"along with the record of when this family tree last synchronized with it. "
+"The next synchronization will compare the two trees from scratch."
+msgstr ""
+"Webbadressen, användarnamnet och lösenordet som är lagrade för denna server "
+"kommer att tas bort, tillsammans med anteckningen om när detta släktträd "
+"senast synkroniserades med den. Nästa synkronisering kommer att jämföra de "
+"två träden från grunden."
+
+msgid "Forget"
+msgstr "Glöm"
+
+msgid ""
+"These credentials were last used with a different family tree. Check the "
+"server before continuing."
+msgstr ""
+"Dessa inloggningsuppgifter användes senast för ett annat släktträd. "
+"Kontrollera servern innan du fortsätter."
+
+msgid "Change server…"
+msgstr "Byt server…"
+
+msgid "Server URL:"
+msgstr "Server-URL:"
+
+msgid "Username:"
+msgstr "Användarnamn:"
+
+msgid "Password:"
+msgstr "Lösenord:"
+
+msgid "Remember password"
+msgstr "Kom ihåg lösenord"
+
+msgid "Forget this server"
+msgstr "Glöm denna server"
+
+msgid "About this tool"
+msgstr "Om detta verktyg"
+
+msgid "Open the online manual"
+msgstr "Öppna onlinehandboken"
 
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
@@ -145,138 +353,20 @@ msgstr ""
 "Om du istället vill sammanfoga två signifikant olika träd med möjlighet att "
 "göra manuella ändringar, använd verktyget Importera sammanfogning istället."
 
-msgid "Server URL: "
-msgstr "Server URL: "
-
 msgid "Error:"
 msgstr "Fel:"
-
-msgid "Sync mode"
-msgstr "Synkroniseringsläge"
-
-msgid ""
-"Changes from both sides are combined. Objects edited in both places are "
-"merged."
-msgstr ""
-"Förändringar från båda sidor kombineras. Objekt som redigerats på båda "
-"ställena slås samman."
-
-msgid ""
-"The server is made to match this computer. Anything changed only on the "
-"server is discarded."
-msgstr ""
-"Servern är gjord för att matcha den här datorn. Allt som ändras endast på "
-"servern kasseras."
-
-msgid ""
-"This computer is made to match the server. Anything changed only here is "
-"discarded."
-msgstr ""
-"Den här datorn är gjord för att matcha servern. Allt som ändras endast här "
-"kasseras."
-
-msgid "Bidirectional Synchronization"
-msgstr "Dubbelriktad synkronisering"
-
-msgid "Reset remote to local"
-msgstr "Återställ fjärr till lokalt läge"
-
-msgid "Reset local to remote"
-msgstr "Återställ lokalt till fjärrläge"
 
 msgid "Warning:"
 msgstr "Varning:"
 
-msgid "Local changes"
-msgstr "Lokala ändringar"
+msgid "Sync mode:"
+msgstr "Synkroniseringsläge:"
 
-msgid "Modified"
-msgstr "Ändrat"
+msgid "Copy"
+msgstr "Kopiera"
 
-msgid "Remote changes"
-msgstr "Fjärrändringar"
+msgid "Synchronization complete"
+msgstr "Synkroniseringen klar"
 
-msgid "Simultaneous changes"
-msgstr "Samtidiga förändringar"
-
-msgid "Fetching information about media files..."
-msgstr "Hämtar information om mediefiler..."
-
-msgid "Both trees are the same."
-msgstr "Båda träden är likadana."
-
-msgid "Applying changes to local database ..."
-msgstr "Tillämpar ändringar i den lokala databasen ..."
-
-msgid "No changes to apply to local database."
-msgstr "Inga ändringar som ska tillämpas på den lokala databasen."
-
-msgid "Applying changes to remote database ..."
-msgstr "Tillämpar ändringar i fjärrdatabasen ..."
-
-msgid "No changes to apply to remote database."
-msgstr "Inga ändringar som ska tillämpas på fjärrdatabasen."
-
-msgid "Missing locally"
-msgstr "Saknas lokalt"
-
-msgid "Missing remotely"
-msgstr "Saknas på distans"
-
-#, python-format
-msgid "Downloading %s media file"
-msgid_plural "Downloading %s media files"
-msgstr[0] "Laddar ner %s mediefil"
-msgstr[1] "Laddar ner %s mediefiler"
-
-#, python-format
-msgid "Uploading %s media file"
-msgid_plural "Uploading %s media files"
-msgstr[0] "Laddar upp %s mediefil"
-msgstr[1] "Laddar upp %s mediefiler"
-
-msgid "Try again"
-msgstr "Försök igen"
-
-#, python-format
-msgid "Applied %s change."
-msgid_plural "Applied %s changes."
-msgstr[0] "Tillämpade %s ändring."
-msgstr[1] "Tillämpade %s ändringar."
-
-msgid "Media files are in sync."
-msgstr "Mediefiler är synkroniserade."
-
-#, python-format
-msgid "%s media file is missing on both sides and could not be transferred."
-msgid_plural ""
-"%s media files are missing on both sides and could not be transferred."
-msgstr[0] "%s mediafil saknas på båda sidor och kunde inte överföras."
-msgstr[1] "%s mediafiler saknas på båda sidor och kunde inte överföras."
-
-msgid "Both trees are already in sync."
-msgstr "Båda träden är redan synkroniserade."
-
-#, python-format
-msgid "Successfully downloaded %s media file."
-msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "Laddade ner %s mediefil med lyckat resultat."
-msgstr[1] "Laddade ner %s mediefiler med lyckat resultat."
-
-#, python-format
-msgid "Encountered %s error during download."
-msgid_plural "Encountered %s errors during download."
-msgstr[0] "%s fel uppstod under nedladdningen."
-msgstr[1] "%s fel uppstod under nedladdningen."
-
-#, python-format
-msgid "Successfully uploaded %s media file."
-msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "Laddade upp %s mediefil med lyckat resultat."
-msgstr[1] "Laddade upp %s mediefiler med lyckat resultat."
-
-#, python-format
-msgid "Encountered %s error during upload."
-msgid_plural "Encountered %s errors during upload."
-msgstr[0] "%s fel uppstod under uppladdningen."
-msgstr[1] "%s fel uppstod under uppladdningen."
+msgid "Synchronization failed"
+msgstr "Synkroniseringen misslyckades"

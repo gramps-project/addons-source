@@ -1,0 +1,714 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Dynamic Web Report"
+msgstr "動態網頁報告"
+
+msgid "Produces dynamic web pages for the database"
+msgstr "為資料庫產生動態網頁"
+
+msgid "SVG graphical tree"
+msgstr "SVG 家族樹圖"
+
+msgid "Indexes pages"
+msgstr "索引頁"
+
+#, python-format
+msgid "Custom page %(index)i"
+msgstr "自訂頁面 %(index)i"
+
+msgid "Ascending tree"
+msgstr "祖先樹"
+
+msgid "Descending tree"
+msgstr "後代樹狀圖"
+
+msgid "Descending tree with spouses"
+msgstr "包含配偶的後代樹"
+
+msgid "Ascending and descending tree"
+msgstr "祖先與後代樹狀圖"
+
+msgid "Ascending and descending tree with spouses"
+msgstr "包含配偶的祖先與後代樹狀圖"
+
+msgid "Size proportional to number of ancestors"
+msgstr "大小與祖先人數成正比"
+
+msgid "Homogeneous parents distribution"
+msgstr "父母均勻分布"
+
+msgid "Age based gradient"
+msgstr "依年齡漸層上色"
+
+msgid "Gradient"
+msgstr "漸層"
+
+#, python-format
+msgid "Could not create the directory: %(path)s"
+msgstr "無法建立目錄：%(path)s"
+
+msgid "Dynamic Web Site Report"
+msgstr "動態網站報告"
+
+msgid "Exporting family tree data ..."
+msgstr "正在匯出家族樹資料 ..."
+
+#, python-format
+msgid "%(type)s: %(value)s"
+msgstr "%(type)s：%(value)s"
+
+#, python-format
+msgid "Impossible to convert \"%(path)s\" to a relative path."
+msgstr "無法將「%(path)s」轉換為相對路徑。"
+
+msgid ""
+"The pages configuration is not valid: several pages have the same content"
+msgstr "頁面設定無效：多個頁面具有相同內容"
+
+msgid "DynWeb|Home"
+msgstr "首頁"
+
+msgid "Tree"
+msgstr "樹狀圖"
+
+msgid "Search results"
+msgstr "搜尋結果"
+
+msgid "Indexes"
+msgstr "索引"
+
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(已從總計 _MAX_ 筆項目中篩選)"
+
+#, python-format
+msgid "(m. %s)"
+msgstr "(結婚 %s)"
+
+msgid "(sort by name)"
+msgstr "(依姓名排序)"
+
+msgid "(sort by quantity)"
+msgstr "(依數量排序)"
+
+msgid ": activate to sort column ascending"
+msgstr "：啟用即可依欄位遞增排序"
+
+msgid ": activate to sort column descending"
+msgstr "：啟用以依欄位遞減排序"
+
+msgid ""
+"<p>This page provides the SVG raw code.<br>Copy the contents into a text "
+"editor and save as an SVG file.<br>Make sure that the text editor encoding "
+"is UTF-8.</p>"
+msgstr ""
+"<p>本頁提供 SVG 原始碼。<br>將內容複製到文字編輯器，並儲存為 SVG 檔案。<br>請"
+"確認文字編輯器使用 UTF-8 編碼。</p>"
+
+msgid "Alternate Name"
+msgstr "別名"
+
+msgid "Click on the map to show it full-screen"
+msgstr "按一下地圖以全螢幕顯示"
+
+msgid "Configure"
+msgstr "設定"
+
+msgid "DynamicWeb_report#Help"
+msgstr "DynamicWeb_report#Help"
+
+msgid "Examples"
+msgstr "範例"
+
+msgid "F"
+msgstr "女"
+
+msgid "Families Index"
+msgstr "家庭索引"
+
+msgid "Family Nick Name"
+msgstr "家族暱稱"
+
+msgid "File ready"
+msgstr "檔案已就緒"
+
+msgid "Include dates columns on the index pages"
+msgstr "在索引頁面加入日期欄位"
+
+msgid "Include a column for media path on the index pages"
+msgstr "在索引頁面加入媒體路徑欄位"
+
+msgid "Include a map in the individuals and family pages"
+msgstr "在人物與家庭頁面中加入地圖"
+
+msgid "Include half and/ or step-siblings on the individual pages"
+msgstr "在個人頁面中包含同父異母／同母異父及／或繼兄弟姊妹"
+
+msgid "Include references in indexes"
+msgstr "在索引中包含參照"
+
+msgid "Insert sources author in the sources title"
+msgstr "在來源標題中加入來源作者"
+
+msgid "M"
+msgstr "男"
+
+msgid "Maximize"
+msgstr "最大化"
+
+msgid "Media Index"
+msgstr "媒體索引"
+
+msgid "Media Type"
+msgstr "媒體類型"
+
+msgid "No data available in table"
+msgstr "表格中沒有資料"
+
+msgid "No matching records found"
+msgstr "找不到相符的記錄"
+
+msgid "No matching surname."
+msgstr "找不到相符的姓氏。"
+
+msgid "Other participants"
+msgstr "其他參與者"
+
+msgid "Person page"
+msgstr "人物頁面"
+
+msgid "Person to search for"
+msgstr "要搜尋的人物"
+
+msgid "Persons Index"
+msgstr "人物索引"
+
+msgid "Persons"
+msgstr "人物"
+
+msgid "Places Index"
+msgstr "地點索引"
+
+msgid "Preparing file ..."
+msgstr "正在準備檔案 ..."
+
+msgid "Relationship to Father"
+msgstr "與父親的關係"
+
+msgid "Relationship to Mother"
+msgstr "與母親的關係"
+
+msgid "Repositories Index"
+msgstr "存放庫索引"
+
+msgid "Restore"
+msgstr "還原"
+
+msgid "Restore default settings"
+msgstr "還原預設設定"
+
+msgid "Show last modification time"
+msgstr "顯示最後修改時間"
+
+msgid "SVG tree children distribution"
+msgstr "SVG 家族樹子女分布"
+
+msgid "SVG tree configuration"
+msgstr "SVG 樹狀圖設定"
+
+msgid "SVG tree graph shape"
+msgstr "SVG 家族樹圖形狀"
+
+msgid "SVG tree graph type"
+msgstr "SVG 家族樹圖類型"
+
+msgid "SVG tree parents distribution"
+msgstr "SVG 家族樹父母分布"
+
+msgid "Save tree as file"
+msgstr "將樹狀圖儲存為檔案"
+
+msgid "Search:"
+msgstr "搜尋："
+
+msgid "Select the background color scheme"
+msgstr "選取背景配色"
+
+msgid "Select the children distribution (fan charts only)"
+msgstr "選取子女分布方式 (僅限扇形圖)"
+
+msgid "Select the number of ascending generations"
+msgstr "選取向上追溯的世代數"
+
+msgid "Select the number of descending generations"
+msgstr "選取向下延伸的世代數"
+
+msgid "Select the parents distribution (fan charts only)"
+msgstr "選取父母分布方式（僅適用於扇形圖）"
+
+msgid "Select the shape of graph"
+msgstr "選取圖表形狀"
+
+msgid "Select the type of graph"
+msgstr "選取圖表類型"
+
+msgid "Several matches.<br>Precise your search or choose in the lists below."
+msgstr "有多個相符結果。<br>請縮小搜尋範圍，或從下方清單中選擇。"
+
+msgid "Show _MENU_ entries"
+msgstr "顯示 _MENU_ 筆項目"
+
+msgid "Show duplicates"
+msgstr "顯示重複項目"
+
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "顯示第 0 至 0 筆，共 0 筆項目"
+
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "顯示第 _START_ 至 _END_ 筆，共 _TOTAL_ 筆項目"
+
+msgid "Sort by:"
+msgstr "排序依據："
+
+msgid "Sources Index"
+msgstr "來源索引"
+
+msgid "Suppress Gramps ID"
+msgstr "隱藏 Gramps ID"
+
+msgid "Surnames Index"
+msgstr "姓氏索引"
+
+msgid "U"
+msgstr "不詳"
+
+msgid "Use tabbed panels instead of sections"
+msgstr "使用分頁面板取代區段"
+
+msgid "Use the search box above in order to find a person."
+msgstr "使用上方的搜尋框尋找人物。"
+
+msgid "Use a table format for the surnames index"
+msgstr "姓氏索引使用表格格式"
+
+msgid "Use a table format for the persons index"
+msgstr "人物索引使用表格格式"
+
+msgid "Use a table format for the families index"
+msgstr "家庭索引使用表格格式"
+
+msgid "Use a table format for the sources index"
+msgstr "來源索引使用表格格式"
+
+msgid "Use a table format for the places index"
+msgstr "地點索引使用表格格式"
+
+msgid "Used for family"
+msgstr "用於家庭"
+
+msgid "Used for media"
+msgstr "用於媒體"
+
+msgid "Used for person"
+msgstr "用於人物"
+
+msgid "Used for place"
+msgstr "用於地點"
+
+msgid "Used for source"
+msgstr "用於來源"
+
+msgid "Web Link"
+msgstr "網頁連結"
+
+msgid ""
+"Whether to use a special color for the persons that appear several times in "
+"the SVG tree"
+msgstr "是否為 SVG 樹狀圖中重複出現的人物使用特別顏色"
+
+msgid "Without name"
+msgstr "無姓名"
+
+msgid "Without surname"
+msgstr "無姓氏"
+
+msgid "Without title"
+msgstr "無標題"
+
+msgid "Zoom in"
+msgstr "放大"
+
+msgid "Zoom out"
+msgstr "縮小"
+
+msgid "all"
+msgstr "全部"
+
+#, python-format
+msgid "Copying error: %(error)s"
+msgstr "複製錯誤：%(error)s"
+
+#, python-format
+msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
+msgstr "無法將 \"%(src)s\" 複製到 \"%(dst)s\""
+
+#, python-format
+msgid "Unable to copy web site template files from \"%(path)s\""
+msgstr "無法從「%(path)s」複製網站範本檔案"
+
+#, python-format
+msgid "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
+msgstr "保留「%(dst)s」(比「%(src)s」新)"
+
+#, python-format
+msgid "Copying \"%(src)s\" to \"%(dst)s\""
+msgstr "正在將「%(src)s」複製到「%(dst)s」"
+
+#, python-format
+msgid "Unable to overwrite archive file \"%(path)s\""
+msgstr "無法覆寫封存檔「%(path)s」"
+
+#, python-format
+msgid "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
+msgstr "無法將檔案「%(file)s」加入壓縮檔「%(archive)s」"
+
+#, python-format
+msgid "DynamicWebReport ignoring link type '%(class)s'"
+msgstr "DynamicWebReport 忽略連結類型「%(class)s」"
+
+#, python-format
+msgid "Family of %(father)s"
+msgstr "%(father)s 的家庭"
+
+#, python-format
+msgid "Family of %(mother)s"
+msgstr "%(mother)s 的家庭"
+
+msgid ""
+"In this note, the following special words are processed:\n"
+"__SEARCH_FORM__ is replaced by a search form.\n"
+"__NB_INDIVIDUALS__ is replaced by the number of persons.\n"
+"__NB_FAMILIES__ is replaced by the number of families.\n"
+"__NB_MEDIA__ is replaced by the number of media.\n"
+"__NB_SOURCES__ is replaced by the number of sources.\n"
+"__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
+"__NB_PLACES__ is replaced by the number of places.\n"
+"__MEDIA_<gid>__ is replaced by the media with Gramps ID <gid>.\n"
+"__THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID "
+"<gid>.\n"
+"__EXPORT_DATE__ is replaced by the current date.\n"
+"__GRAMPS_VERSION__ is replaced by the Gramps version.\n"
+"__GRAMPS_HOMEPAGE__ is replaced by the Gramps homepage link.\n"
+"URL starting with \"relative://relative.<link>\" are replaced by the "
+"relative URL \"<link>\".\n"
+msgstr ""
+"在此備註中，會處理下列特殊字詞：\n"
+"__SEARCH_FORM__ 會取代為搜尋表單。\n"
+"__NB_INDIVIDUALS__ 會取代為人物數。\n"
+"__NB_FAMILIES__ 會取代為家庭數。\n"
+"__NB_MEDIA__ 會取代為媒體數。\n"
+"__NB_SOURCES__ 會取代為來源數。\n"
+"__NB_REPOSITORIES__ 會取代為存放庫數。\n"
+"__NB_PLACES__ 會取代為地點數。\n"
+"__MEDIA_<gid>__ 會取代為具有 Gramps ID <gid> 的媒體。\n"
+"__THUMB_<gid>__ 會取代為具有 Gramps ID <gid> 之媒體的縮圖。\n"
+"__EXPORT_DATE__ 會取代為目前日期。\n"
+"__GRAMPS_VERSION__ 會取代為 Gramps 版本。\n"
+"__GRAMPS_HOMEPAGE__ 會取代為 Gramps 首頁連結。\n"
+"開頭為「relative://relative.<link>」的 URL 會取代為相對 URL「<link>」。\n"
+
+msgid "Store web pages in archive"
+msgstr "將網頁儲存為壓縮檔"
+
+msgid ""
+"Whether to create an archive file (in ZIP or TGZ format) containing the web "
+"site"
+msgstr "是否建立包含網站的壓縮檔 (ZIP 或 TGZ 格式)"
+
+msgid "Archive file"
+msgstr "壓縮檔"
+
+msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
+msgstr "壓縮檔名稱 (副檔名為「.zip」或「.tgz」)"
+
+msgid "Web site title"
+msgstr "網站標題"
+
+msgid "The title of the web site"
+msgstr "網站標題"
+
+msgid "Select filter to restrict people that appear on web site"
+msgstr "選取篩選器以限定網站上出現的人物"
+
+msgid "Name format (short)"
+msgstr "姓名格式 (簡短)"
+
+msgid "Select the format to display a shorter version of the names"
+msgstr "選取簡短姓名的顯示格式"
+
+msgid "Web site template"
+msgstr "網站範本"
+
+msgid "Select the template of the web site"
+msgstr "選擇網站範本"
+
+msgid "Include records marked private"
+msgstr "包含標示為私密的記錄"
+
+msgid "Whether to include private objects"
+msgstr "是否包含私密物件"
+
+msgid "Include Last Name Only"
+msgstr "僅包含姓氏"
+
+msgid "Include Full Name Only"
+msgstr "只包含全名"
+
+msgid ""
+"This allows you to restrict information on people who have not been dead for "
+"very long"
+msgstr "可限制顯示剛逝世不久的人物資訊"
+
+msgid "Export notes"
+msgstr "匯出備註"
+
+msgid "Whether to export notes in the web pages"
+msgstr "是否將備註匯出至網頁"
+
+msgid "Export sources"
+msgstr "匯出來源"
+
+msgid "Whether to export sources and citations in the web pages"
+msgstr "是否將來源及引用匯出至網頁"
+
+msgid "Export addresses"
+msgstr "匯出地址"
+
+msgid "Whether to export addresses in the web pages"
+msgstr "是否在網頁中匯出地址"
+
+msgid "Whether or not to include the Repository Pages."
+msgstr "是否包含存放庫頁面。"
+
+msgid "Include images and media"
+msgstr "包含圖片及媒體"
+
+msgid "Whether to include images and media in the web pages"
+msgstr "是否在網頁中包含圖片與媒體"
+
+msgid "Copy, rename files with an internal Gramps identifier"
+msgstr "複製，並以 Gramps 內部識別碼重新命名檔案"
+
+msgid "Copy, keep file names unchanged"
+msgstr "複製並保留原檔名"
+
+msgid "Do not copy, reference existing files"
+msgstr "不複製，參照現有檔案"
+
+msgid "Images and media"
+msgstr "圖片及媒體"
+
+msgid "Whether to make a copy of the media"
+msgstr "是否建立媒體副本"
+
+msgid "Print the notes type"
+msgstr "列出備註類型"
+
+msgid "Whether to print the notes type in the notes text"
+msgstr "是否在備註內容中顯示備註類型"
+
+msgid "Print place pages"
+msgstr "列印地點頁面"
+
+msgid "Whether to show pages for the places"
+msgstr "是否顯示地點頁面"
+
+msgid "Choose your choice of map service for creating the Place Map Pages"
+msgstr "選擇用來建立地點地圖頁面的地圖服務"
+
+msgid "Google map API key"
+msgstr "Google 地圖 API 金鑰"
+
+msgid "The API key used for the Google map"
+msgstr "Google 地圖使用的 API 金鑰"
+
+msgid "Whether or not to include family pages"
+msgstr "是否包含家庭頁面"
+
+msgid ""
+"Whether to include half and/ or step-siblings with the parents and siblings"
+msgstr "是否將同父異母、同母異父或繼手足列入父母和手足之中"
+
+msgid "Enable page configuration"
+msgstr "啟用頁面設定"
+
+msgid "Whether to enable page configuration"
+msgstr "是否啟用頁面設定"
+
+msgid "Whether to use tabbed panels for the different sections of the pages."
+msgstr "是否以分頁面板呈現頁面中的不同區段。"
+
+msgid "Whether to show the last modification time in the pages footer"
+msgstr "是否在頁尾顯示最後修改時間"
+
+msgid "Whether to insert sources author in the sources title"
+msgstr "是否在來源標題中加入來源作者"
+
+msgid "Whether to hide the Gramps ID"
+msgstr "是否隱藏 Gramps ID"
+
+msgid "List"
+msgstr "清單"
+
+msgid "Table"
+msgstr "表格"
+
+msgid "Default format for the surnames index"
+msgstr "姓氏索引的預設格式"
+
+msgid "The default format for the surnames index"
+msgstr "姓氏索引的預設格式"
+
+msgid "Default format for the persons index"
+msgstr "人物索引的預設格式"
+
+msgid "The default format for the persons index"
+msgstr "人物索引的預設格式"
+
+msgid "Default format for the families index"
+msgstr "家庭索引的預設格式"
+
+msgid "The default format for the families index"
+msgstr "家庭索引的預設格式"
+
+msgid "Default format for the sources index"
+msgstr "來源索引的預設格式"
+
+msgid "The default format for the sources index"
+msgstr "來源索引的預設格式"
+
+msgid "Default format for the places index"
+msgstr "地點索引的預設格式"
+
+msgid "The default format for the places index"
+msgstr "地點索引的預設格式"
+
+msgid ""
+"Whether to include dates columns (birth, death, marriage) on the index pages"
+msgstr "是否在索引頁加入日期欄（出生、死亡、婚姻）"
+
+msgid "Generate a families index page"
+msgstr "產生家庭索引頁面"
+
+msgid "Whether to generate an index page for families"
+msgstr "是否產生家庭索引頁面"
+
+msgid "Whether to include a column showing the media path"
+msgstr "是否包含顯示媒體路徑的欄位"
+
+msgid ""
+"Whether to include the references to the items in the index pages. For "
+"example, in the media index page, the names of the individuals, families, "
+"places, sources that reference the media."
+msgstr ""
+"是否在索引頁面包含項目的參照。例如，在媒體索引頁面列出參照該媒體的人物、家"
+"庭、地點及來源名稱。"
+
+msgid "Default number of entries in the indexes"
+msgstr "索引中的預設項目數"
+
+msgid "The default number of entries shown in one index page"
+msgstr "每個索引頁面預設顯示的項目數"
+
+msgid "Maximum number of generations"
+msgstr "最多世代數"
+
+msgid ""
+"The maximum number of generations to include in the ancestor and descendant "
+"trees and graphs"
+msgstr "祖先與後代樹狀圖及圖表中最多包含的世代數"
+
+msgid "Choose the default SVG tree graph type"
+msgstr "選擇預設的 SVG 家族樹圖類型"
+
+msgid "Choose the default SVG tree graph shape"
+msgstr "選擇預設 SVG 樹狀圖的形狀"
+
+msgid "Choose the default SVG tree parents distribution (for fan charts only)"
+msgstr "選擇預設的 SVG 樹狀圖父母分布方式（僅適用於扇形圖）"
+
+msgid "Choose the default SVG tree children distribution (for fan charts only)"
+msgstr "選擇預設 SVG 樹狀圖的子女分布方式（僅適用於扇形圖）"
+
+msgid ""
+"Choose the background color scheme for the persons in the SVG tree graph"
+msgstr "選擇 SVG 樹狀圖中人物的背景配色"
+
+msgid "Theme"
+msgstr "主題"
+
+msgid "Pages"
+msgstr "頁面"
+
+msgid "A note to be used as the page header"
+msgstr "作為頁首的備註"
+
+msgid "HTML user brand name / icon"
+msgstr "HTML 使用者品牌名稱／圖示"
+
+msgid "A note to be used as the brand name or image in the menu"
+msgstr "在選單中用作品牌名稱或圖片的備註"
+
+msgid "Custom pages"
+msgstr "自訂頁面"
+
+#, python-format
+msgid "Title for the custom page %(index)i"
+msgstr "自訂頁面 %(index)i 的標題"
+
+#, python-format
+msgid "Name for the custom page %(index)i"
+msgstr "自訂頁面 %(index)i 的名稱"
+
+#, python-format
+msgid "Note for custom page %(index)i"
+msgstr "自訂頁面 %(index)i 的備註"
+
+msgid "A note to be used for the custom page content.\n"
+msgstr "用作自訂頁面內容的備註。\n"
+
+#, python-format
+msgid "Menu for the custom page %(index)i"
+msgstr "自訂頁面 %(index)i 的選單"
+
+msgid "Whether to print a menu for the custom page"
+msgstr "是否為自訂頁面列出選單"
+
+msgid "Pages selection"
+msgstr "頁面選取"
+
+msgid "Number of pages"
+msgstr "頁面數量"
+
+msgid "Number pages in the web site menu."
+msgstr "網站選單中的頁面數量。"
+
+#, python-format
+msgid "Contents of page %(index)i"
+msgstr "第 %(index)i 頁內容"
+
+msgid "Contents of the page"
+msgstr "頁面內容"

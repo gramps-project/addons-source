@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-01 12:35+0000\n"
-"Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
+"POT-Creation-Date: 2026-08-06 07:24+0200\n"
+"PO-Revision-Date: 2026-08-13 17:19+0000\n"
+"Last-Translator: Frode Jemtland <frode.jemtland@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
 "Language: nb\n"
@@ -12,14 +12,47 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 
-msgid "Local changes"
-msgstr "Lokale endringer"
+msgid "Downloading the remote family tree…"
+msgstr "Laster ned det eksterne slektstreet…"
 
-msgid "Remote changes"
-msgstr "Eksterne endringer"
+msgid "Downloading media files…"
+msgstr "Laster ned mediafiler…"
 
-msgid "Simultaneous changes"
-msgstr "Samtidige endringer"
+msgid "Uploading media files…"
+msgstr "Laster opp mediafiler…"
+
+msgid "Connect"
+msgstr "Koble til"
+
+msgid "Apply changes"
+msgstr "Bruk endringene"
+
+msgid "Transfer media files"
+msgstr "Overfører mediafilene"
+
+#, python-format
+msgid "Add %s object"
+msgid_plural "Add %s objects"
+msgstr[0] "Legg til %s objekt"
+msgstr[1] "Legg til %s objekter"
+
+#, python-format
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "Lastet ned %s mediafil med suksess."
+msgstr[1] "Lastet ned %s mediafiler med suksess."
+
+#, python-format
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "Lastet opp %s mediafil med suksess."
+msgstr[1] "Lastet opp %s mediafiler med suksess."
+
+msgid "C_onnect"
+msgstr "K_oble til"
+
+msgid "Synchronization failed"
+msgstr "Synkroniseringen mislyktes"

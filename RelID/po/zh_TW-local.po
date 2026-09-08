@@ -1,0 +1,143 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Display relations and distances with the home person"
+msgstr "顯示與首頁人物的親屬關係及距離"
+
+msgid "Will display relational informations with the home person"
+msgstr "顯示與首頁人物的關係資訊"
+
+msgid "Relation and distances with root"
+msgstr "與根人物的關係及距離"
+
+msgid "Select filter to restrict people"
+msgstr "選取篩選器以限定人物範圍"
+
+msgid "Filter rule"
+msgstr "篩選規則"
+
+msgid "Select the filter rule"
+msgstr "選取篩選規則"
+
+msgid "Deep generations"
+msgstr "世代深度"
+
+msgid "How deep should we go?"
+msgstr "要追溯多深？"
+
+msgid "Rel_id"
+msgstr "關係 ID"
+
+msgid "Relation"
+msgstr "關係"
+
+msgid "up"
+msgstr "向上"
+
+msgid "down"
+msgstr "向下"
+
+msgid "Common MRA"
+msgstr "共同最近祖先"
+
+msgid "Rank"
+msgstr "階級"
+
+msgid "Period"
+msgstr "期間"
+
+msgid "Shared Subtree"
+msgstr "共用子樹"
+
+msgid "Centrality"
+msgstr "中心性"
+
+msgid "Unique Ancestors"
+msgstr "不重複祖先"
+
+msgid "Surname Diversity"
+msgstr "姓氏多樣性"
+
+msgid "Save"
+msgstr "儲存"
+
+msgid "Quit"
+msgstr "結束"
+
+msgid "No default person set."
+msgstr "尚未設定首頁人物。"
+
+msgid "Please wait, filtering..."
+msgstr "請稍候，正在篩選..."
+
+msgid "Network Metrics"
+msgstr "網絡指標"
+
+msgid "Enabled"
+msgstr "已啟用"
+
+msgid "Disabled"
+msgstr "Disabled"
+
+msgid "Enable or disable family network metrics"
+msgstr "啟用或停用家庭網路指標"
+
+msgid "Generating relation map..."
+msgstr "正在產生關係圖..."
+
+msgid ""
+"\n"
+"Filtering\tCurrent match\t\tTime of pass\n"
+msgstr ""
+"\n"
+"篩選\t目前相符項目\t\t處理時間\n"
+
+#, python-format
+msgid "%d/%d \t\t %d/%d \t\t%f"
+msgstr "%d/%d \t\t %d/%d \t\t%f"
+
+msgid "Folder Chooser"
+msgstr "資料夾選擇器"
+
+msgid "_Select"
+msgstr "選取(_S)"
+
+msgid "Please, select a folder"
+msgstr "請選取資料夾"
+
+msgid "Foldername need"
+msgstr "需要資料夾名稱"
+
+msgid "Foldername will be used for saving the content."
+msgstr "資料夾名稱將用於儲存內容。"
+
+msgid "Did you set a foldername?"
+msgstr "您設定資料夾名稱了嗎？"
+
+msgid "Cannot set a valid location."
+msgstr "無法設定有效位置。"
+
+msgid "Failed to save data."
+msgstr "儲存資料失敗。"
+
+msgid "Relationships Map and Tab"
+msgstr "關係圖與表格"
+
+msgid "Enable family network metrics"
+msgstr "啟用家庭網絡指標"
+
+msgid "Whether to calculate and display family network metrics."
+msgstr "是否計算並顯示家庭網絡指標。"

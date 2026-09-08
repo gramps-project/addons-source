@@ -1,0 +1,114 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Repositories Report Options"
+msgstr "存放庫報告選項"
+
+msgid "Produces a textual repositories report"
+msgstr "產生存放庫的文字報告"
+
+msgid "Repositories Report"
+msgstr "存放庫報告"
+
+msgid "Internet:"
+msgstr "網際網路："
+
+msgid "Publication information:"
+msgstr "出版資訊："
+
+msgid "Data:"
+msgstr "資料："
+
+msgid "Page:"
+msgstr "頁碼："
+
+msgid "Selection with a filter"
+msgstr "使用篩選器選取"
+
+msgid "Include repository's urls"
+msgstr "包含存放庫網址"
+
+msgid "Whether to include urls on repository."
+msgstr "是否包含存放庫的網址。"
+
+msgid "Include repository's address"
+msgstr "包含存放庫地址"
+
+msgid "Whether to include addresses on repository."
+msgstr "是否包含存放庫的地址。"
+
+msgid "Include source's author"
+msgstr "包含來源作者"
+
+msgid "Whether to include author."
+msgstr "是否包含作者。"
+
+msgid "Include source's abbreviation"
+msgstr "包含來源縮寫"
+
+msgid "Whether to include abbreviation."
+msgstr "是否包含縮寫。"
+
+msgid "Include source's publication information"
+msgstr "納入來源的出版資訊"
+
+msgid "Whether to include publication information."
+msgstr "是否包含出版資訊。"
+
+msgid "Include source's data"
+msgstr "包含來源資料"
+
+msgid "Whether to include keys and values."
+msgstr "是否包含鍵與值。"
+
+msgid "Whether to include notes on repositories and sources."
+msgstr "是否包含存放庫與來源的備註。"
+
+msgid "Include media"
+msgstr "包含媒體"
+
+msgid "Whether to include media."
+msgstr "是否包含媒體。"
+
+msgid "Include citations"
+msgstr "包含引用"
+
+msgid "Whether to include citations on sources."
+msgstr "是否在來源中包含引用。"
+
+msgid "Include private records"
+msgstr "包含私密記錄"
+
+msgid "Whether to include repositories and sources marked as private."
+msgstr "是否包含標記為私密的存放庫及來源。"
+
+msgid "Display empty values"
+msgstr "顯示空值"
+
+msgid "Whether to include key records with empty values."
+msgstr "是否包含有鍵名但值為空白的記錄。"
+
+msgid "The style used for the title of the report."
+msgstr "報告標題使用的樣式。"
+
+msgid "The style used for repository title."
+msgstr "存放庫標題使用的樣式。"
+
+msgid "The style used for each section."
+msgstr "各區段使用的樣式。"
+
+msgid "The style used for child section."
+msgstr "子區段使用的樣式。"

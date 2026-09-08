@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-08-04 08:52-0700\n"
-"PO-Revision-Date: 2026-08-05 18:01+0000\n"
+"PO-Revision-Date: 2026-09-04 16:45+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "GOQL expression"
+msgstr "GOQL-Ausdruck"
+
+msgid ""
+"Matches objects for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Liefert Objekte, für die der angegebene „where“-Ausdruck in der Gramps-"
+"Objekt-Abfragesprache den Wert „true“ ergibt"
+
+msgid "People matching the <GOQL expression>"
+msgstr "Personen, die dem <GOQL-Ausdruck> entsprechen"
+
+msgid "Families matching the <GOQL expression>"
+msgstr "Familien, die dem <GOQL-Ausdruck> entsprechen"
+
+msgid "Events matching the <GOQL expression>"
+msgstr "Ereignisse, die dem <GOQL-Ausdruck> entsprechen"
+
+msgid "Places matching the <GOQL expression>"
+msgstr "Orte, die dem <GOQL-Ausdruck> entsprechen"
+
+msgid "Repositories matching the <GOQL expression>"
+msgstr "Aufbewahrungsorte, die dem <GOQL-Ausdruck> entsprechen"
+
+msgid "Sources matching the <GOQL expression>"
+msgstr "Quellen, die dem <GOQL-Ausdruck> entsprechen"
+
+msgid "Citations matching the <GOQL expression>"
+msgstr "Quellenangaben, die dem <GOQL-Ausdruck> entsprechen"
+
+msgid "Media matching the <GOQL expression>"
+msgstr "Medien, die dem <GOQL-Ausdruck> entsprechen"
+
+msgid "Notes matching the <GOQL expression>"
+msgstr "Notizen, die dem <GOQL-Ausdruck> entsprechen"
 
 msgid "Person GOQL Filter"
 msgstr "GOQL-Filter für Personen"
@@ -88,3 +125,125 @@ msgid "Gramplet providing a gramps-object-query-language note filter"
 msgstr ""
 "Gramplet, das einen Notizenfilter für die Gramps-Objekt-Abfragesprache "
 "bereitstellt"
+
+msgid "A gramps-object-query-language where-expression, e.g.\n"
+msgstr "Ein „where“-Ausdruck in der Gramps-Objekt-Abfragesprache, z. B.\n"
+
+msgid "Enter inserts a newline; Ctrl+Enter runs Find.\n"
+msgstr ""
+"Mit der Eingabetaste wird ein Zeilenumbruch eingefügt; mit Strg+Eingabetaste "
+"wird die Suchfunktion aufgerufen.\n"
+
+msgid "Up/Down at the first/last line recalls previous expressions.\n"
+msgstr ""
+"Mit den Pfeiltasten „Auf“ und „Ab“ an der ersten bzw. letzten Zeile werden "
+"vorherige Ausdrücke aufgerufen.\n"
+
+msgid "Tab always completes -- it never inserts a tab character."
+msgstr ""
+"Die Tabulatortaste vervollständigt immer – sie fügt niemals ein "
+"Tabulatorzeichen ein."
+
+#, python-format
+msgid "%s filter"
+msgstr "%s Filter"
+
+msgid "This resets the filter parameters to empty state."
+msgstr ""
+"Dadurch werden die Filterparameter auf den leeren Zustand zurückgesetzt."
+
+msgid "This opens a dialog to save the current expression as a named filter."
+msgstr ""
+"Dadurch wird ein Dialogfeld geöffnet, in dem du den aktuellen Ausdruck als "
+"benannten Filter speichern kannst."
+
+msgid "Open this gramplet's help page in a browser."
+msgstr "Öffne die Hilfeseite dieses Gramplets in einem Browser."
+
+msgid "SQL"
+msgstr "SQL"
+
+msgid "Python evaluation"
+msgstr "Python-Auswertung"
+
+#, python-format
+msgid "Error applying filter: %s"
+msgstr "Fehler beim Anwenden des Filters: %s"
+
+#, python-format
+msgid "Showing %(shown)d of %(total)d (%(method)s)"
+msgstr "Anzeige von %(shown)d von %(total)d (%(method)s)"
+
+#, python-format
+msgid "Error resetting filter: %s"
+msgstr "Fehler beim Zurücksetzen des Filters: %s"
+
+msgid "Enter an expression first"
+msgstr "Gib zunächst einen Ausdruck ein"
+
+#, python-brace-format
+msgid "Created by the GOQL Filter gramplet on {today}"
+msgstr "Erstellt vom GOQL-Filter-Gramplet am {today}"
+
+msgid ""
+"Matches people for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Liefert Personen, für die der angegebene „where“-Ausdruck in der Gramps-"
+"Objekt-Abfragesprache den Wert „true“ ergibt"
+
+msgid ""
+"Matches families for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Liefert Familien, für die der angegebene „where“-Ausdruck in der Gramps-"
+"Objekt-Abfragesprache den Wert „true“ ergibt"
+
+msgid ""
+"Matches events for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Liefert Ereignisse, für die der angegebene „where“-Ausdruck in der Gramps-"
+"Objekt-Abfragesprache den Wert „true“ ergibt"
+
+msgid ""
+"Matches places for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Liefert Orte, für die der angegebene „where“-Ausdruck in der Gramps-Objekt-"
+"Abfragesprache den Wert „true“ ergibt"
+
+msgid ""
+"Matches repositories for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Liefert Aufbewahrungsorte, für die der angegebene „where“-Ausdruck in der "
+"Gramps-Objekt-Abfragesprache den Wert „true“ ergibt"
+
+msgid ""
+"Matches sources for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Liefert Quellen, für die der angegebene „where“-Ausdruck in der Gramps-"
+"Objekt-Abfragesprache den Wert „true“ ergibt"
+
+msgid ""
+"Matches citations for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Liefert Quellenangaben, für die der angegebene „where“-Ausdruck in der "
+"Gramps-Objekt-Abfragesprache den Wert „true“ ergibt"
+
+msgid ""
+"Matches media for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Liefert Medien, für die der angegebene „where“-Ausdruck in der Gramps-Objekt-"
+"Abfragesprache den Wert „true“ ergibt"
+
+msgid ""
+"Matches notes for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Liefert Notizen, für die der angegebene „where“-Ausdruck in der Gramps-"
+"Objekt-Abfragesprache den Wert „true“ ergibt"

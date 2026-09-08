@@ -1,0 +1,107 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "The place was not found. You may clarify the search keywords."
+msgstr "場所が見つかりませんでした。検索キーワードを明確にしてください。"
+
+msgid "Failed to search for the coordinates due to some unexpected error."
+msgstr "予期しないエラーにより座標の検索に失敗しました。"
+
+msgid "The place was not found."
+msgstr "場所が見つかりませんでした。"
+
+msgid "The place was not identified."
+msgstr "場所が特定できませんでした。"
+
+msgid "Coordinates were not given."
+msgstr "座標が指定されていません。"
+
+msgid "Failed to interpret the input format."
+msgstr "入力形式の解釈に失敗しました。"
+
+#, python-brace-format
+msgid "DB entry [{id}] {name}:"
+msgstr "DB エントリ [{id}] {name}:"
+
+msgid "Nothing has been searched yet"
+msgstr "まだ何も検索されていません"
+
+msgid "No place is active"
+msgstr "アクティブな場所がありません"
+
+msgid "Place Coordinate Gramplet view"
+msgstr "場所座標グランプレットビュー"
+
+msgid "View for the place coordinate gramplet."
+msgstr "場所座標グランプレットのビュー。"
+
+msgid "Place and Coordinates"
+msgstr "場所と座標"
+
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr "場所の座標設定を簡素化するグランプレット"
+
+msgid "Place Coordinates"
+msgstr "場所座標"
+
+msgid "Place Coordinate Gramplet"
+msgstr "場所座標グランプレット"
+
+msgid "Map Menu"
+msgstr "地図メニュー"
+
+msgid "Add city as place"
+msgstr "都市を場所として追加"
+
+msgid "Add addess as place"
+msgstr "住所を場所として追加"
+
+msgid "Search for:"
+msgstr "検索:"
+
+msgid "Found place:"
+msgstr "見つかった場所:"
+
+msgid "No DB entry is selected"
+msgstr "DB エントリが選択されていません"
+
+msgid "Postal-Code:"
+msgstr "郵便番号:"
+
+msgid "Show found place externally in Google Maps"
+msgstr "見つかった場所を外部の Google マップで表示"
+
+msgid ""
+"Take last clicked position\n"
+"from Geography map"
+msgstr ""
+"地理地図から\n"
+"最後にクリックした位置を取得"
+
+msgid "Search location from DB"
+msgstr "DB から場所を検索"
+
+msgid "Apply geo location to Database"
+msgstr "地理位置情報をデータベースに適用"
+
+msgid "Go"
+msgstr "実行"
+
+msgid "Show help"
+msgstr "ヘルプを表示"

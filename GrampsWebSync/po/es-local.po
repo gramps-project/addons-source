@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-31 17:35+0200\n"
+"POT-Creation-Date: 2026-08-06 07:24+0200\n"
 "PO-Revision-Date: 2026-07-24 05:14+0000\n"
 "Last-Translator: Juan Saavedra <jcsaaver@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
@@ -66,30 +66,14 @@ msgstr "Error del servidor %s. Por favor, compruebe su conexión."
 msgid "Unexpected error: %s"
 msgstr "Error inesperado: %s"
 
-msgid "Fetching remote data..."
-msgstr "Obteniendo datos remotos..."
+msgid "Media files are in sync."
+msgstr "Archivos de medio sincronizados."
 
-msgid "Comparing local and remote data..."
-msgstr "Comprobando datos locales y remotos…"
+msgid "Username:"
+msgstr "Nombre de usuario:"
 
-msgid "Successfully applied changes to local database."
-msgstr "Los cambios se aplicaron correctamente a la base de datos local."
-
-msgid "Continue without transport encryption?"
-msgstr "¿Continuar sin transporte con cifrado?"
-
-msgid ""
-"You have specified a URL with http scheme. If you continue, your password "
-"will be sent in clear text over the network. Use only for local testing!"
-msgstr ""
-"Tiene especificada una URL con esquema http. Si continua, su contraseña será "
-"enviada en texto claro sobre la red. ¡Solo utilize para pruebas locales!"
-
-msgid "Continue with HTTP"
-msgstr "Continuar con HTTP"
-
-msgid "Use HTTPS"
-msgstr "Utilizar HTTPS"
+msgid "Password:"
+msgstr "Contraseña:"
 
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
@@ -121,56 +105,8 @@ msgstr ""
 "opción de realizar modificaciones manuales, utilice en su lugar la "
 "herramienta Importar fusión."
 
-msgid "Server URL: "
-msgstr "URL del servidor: "
-
 msgid "Error:"
 msgstr "Error:"
 
-msgid "Bidirectional Synchronization"
-msgstr "Sincronización bidireccional"
-
-msgid "Reset remote to local"
-msgstr "Restablecer remoto a local"
-
-msgid "Reset local to remote"
-msgstr "Restablecer local a remoto"
-
-msgid "Local changes"
-msgstr "Cambios locales"
-
-msgid "Modified"
-msgstr "Modificado"
-
-msgid "Remote changes"
-msgstr "Cambios remotos"
-
-msgid "Simultaneous changes"
-msgstr "Cambios simultáneos"
-
-msgid "Fetching information about media files..."
-msgstr "Recuperando información sobre archivos multimedia…"
-
-msgid "Both trees are the same."
-msgstr "Ambos árboles son iguales."
-
-msgid "Applying changes to local database ..."
-msgstr "Aplicando cambios a la base de datos local…"
-
-msgid "No changes to apply to local database."
-msgstr "Sin cambios para aplicar a base de datos local."
-
-msgid "Applying changes to remote database ..."
-msgstr "Aplicar cambios en la base de datos remota ..."
-
-msgid "No changes to apply to remote database."
-msgstr "No es necesario aplicar ningún cambio a la base de datos remota."
-
-msgid "Missing locally"
-msgstr "Ausente localmente"
-
-msgid "Missing remotely"
-msgstr "Ausente remotamente"
-
-msgid "Media files are in sync."
-msgstr "Archivos de medio sincronizados."
+msgid "Copy"
+msgstr "Copiar"

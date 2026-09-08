@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-04-28 18:11+0000\n"
+"PO-Revision-Date: 2026-08-28 06:51+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #, python-format
 msgid "Form: %s"
@@ -27,8 +27,15 @@ msgstr "Rediger formular"
 msgid "Reference:"
 msgstr "Henvisning:"
 
+msgid "[Source recreated after deletion mid-form-edit]"
+msgstr "[Kilde gendannet efter sletning midt i formularredigeringen]"
+
 msgid "Headings"
 msgstr "Overskrifter"
+
+#, python-format
+msgid "Census Check for %s"
+msgstr "Folketællingskontrol for %s"
 
 msgid "Form Gramplet"
 msgstr "Form Gramplet"
@@ -45,8 +52,46 @@ msgstr "Rækkefølge"
 msgid "Form"
 msgstr "Formular"
 
+msgid "XML syntax error in Form definition file"
+msgstr "XML syntaks fejl i Formulardefinitionsfilen"
+
+msgid "Failed to read Form definition file"
+msgstr "Kunne ikke læse formulardefinitionsfilen filen"
+
+msgid "Invalid Form definition file"
+msgstr "Ugyldig Formulardefinitionsfil"
+
 msgid "Select Form"
 msgstr "Vælg formular"
+
+msgid "CensusCheck"
+msgstr "Folketællingskontrol"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"descendents"
+msgstr ""
+"Kontrollér om en folketællingsbegivenhed mangler for en person og nogle af "
+"deres efterkommere"
+
+msgid "CensusCheckUp"
+msgstr "Folketællingskontrol"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"ancestors"
+msgstr ""
+"Kontrollér hvorvidt nogen folketællingsbegivenhed mangler for en person og "
+"nogle af deres efterkommere"
+
+msgid "Total Area in Statute Acres"
+msgstr "Total Area in Statute Acres"
+
+msgid "Signature of Head of Household"
+msgstr "Signature of Head of Household"
+
+msgid "Signature of Enumerator"
+msgstr "Signature of Enumerator"
 
 msgid "Persons"
 msgstr "Personer"
@@ -54,11 +99,63 @@ msgstr "Personer"
 msgid "Rooms"
 msgstr "Værelser"
 
+msgid "County or Co. Borough"
+msgstr "County or Co. Borough"
+
+msgid "District Electoral Division or Ward"
+msgstr "District Electoral Division or Ward"
+
+msgid "Urban Dist. Town or Village"
+msgstr "Urban Dist. Town or Village"
+
+msgid "Street etc with No. of House"
+msgstr "Street etc with No. of House"
+
+msgid "No. of Schedule"
+msgstr "No. of Schedule"
+
+msgid "Name of Public Institution"
+msgstr "Name of Public Institution"
+
+msgid "Name and Surname"
+msgstr "Name and Surname"
+
 msgid "Relation"
 msgstr "Slægtskab"
 
+msgid "Relationship to Head of Household"
+msgstr "Relationship to Head of Household"
+
+msgid "Year Age"
+msgstr "Year Age"
+
+msgid "Age in months"
+msgstr "Age in months"
+
 msgid "Sex"
 msgstr "Køn"
+
+msgid "Marriage or Orphanhood"
+msgstr "Marriage or Orphanhood"
+
+msgid ""
+"\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
+"cannot speak Irish\""
+msgstr ""
+"\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
+"cannot speak Irish\""
+
+msgid "Years married in present Marriage"
+msgstr "Years married in present Marriage"
+
+msgid "Months Married"
+msgstr "Months Married"
+
+msgid "Months married in present Marriage"
+msgstr "Months married in present Marriage"
+
+msgid "Present Marriage Children"
+msgstr "Present Marriage Children"
 
 msgid "Condition"
 msgstr "Kondition"

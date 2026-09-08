@@ -1,0 +1,6466 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+#, python-format
+msgid "Form: %s"
+msgstr "表單：%s"
+
+msgid "New Form"
+msgstr "新增表單"
+
+msgid "Edit Form"
+msgstr "編輯表單"
+
+msgid "Reference:"
+msgstr "參考："
+
+msgid "[Source recreated after deletion mid-form-edit]"
+msgstr "[在編輯表單期間被刪除後重建的來源]"
+
+msgid "Headings"
+msgstr "標題"
+
+#, python-format
+msgid "Census Check for %s"
+msgstr "%s 的人口普查檢查"
+
+msgid "Form Gramplet"
+msgstr "表單 Gramplet"
+
+msgid "Gramplet interface for Forms"
+msgstr "Forms 的 Gramplet 介面"
+
+msgid "Forms"
+msgstr "表單"
+
+msgid "Order"
+msgstr "順序"
+
+msgid "Form"
+msgstr "表單"
+
+msgid "XML syntax error in Form definition file"
+msgstr "表單定義檔中的 XML 語法錯誤"
+
+msgid "Failed to read Form definition file"
+msgstr "無法讀取表單定義檔"
+
+msgid "Invalid Form definition file"
+msgstr "表單定義檔無效"
+
+msgid "Select Form"
+msgstr "選取表單"
+
+msgid "CensusCheck"
+msgstr "CensusCheck"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"descendents"
+msgstr "檢查人物及其部分後代是否缺少任何人口普查事件"
+
+msgid "CensusCheckUp"
+msgstr "CensusCheckUp"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"ancestors"
+msgstr "檢查人物及其部分祖先是否缺少任何人口普查事件"
+
+msgid "Total Area in Statute Acres"
+msgstr "法定英畝總面積"
+
+msgid "Signature of Head of Household"
+msgstr "戶長簽名"
+
+msgid "Signature of Enumerator"
+msgstr "調查員簽名"
+
+msgid "Persons"
+msgstr "人物"
+
+msgid "Rooms"
+msgstr "房間數"
+
+msgid "County or Co. Borough"
+msgstr "郡或郡級自治市"
+
+msgid "District Electoral Division or Ward"
+msgstr "地方選舉分區或市區"
+
+msgid "Townland"
+msgstr "Townland"
+
+msgid "Urban Dist. Town or Village"
+msgstr "Urban Dist. Town or Village"
+
+msgid "Street etc with No. of House"
+msgstr "街道等及門牌號碼"
+
+msgid "No. of Schedule"
+msgstr "No. of Schedule"
+
+msgid "Name of Public Institution"
+msgstr "公共機構名稱"
+
+msgid "Name and Surname"
+msgstr "名字及姓氏"
+
+msgid "Relation"
+msgstr "關係"
+
+msgid "Relationship to Head of Household"
+msgstr "與戶長的關係"
+
+msgid "Year Age"
+msgstr "年齡（歲）"
+
+msgid "Age in years"
+msgstr "年齡（歲）"
+
+msgid "Month Age"
+msgstr "月齡"
+
+msgid "Age in months"
+msgstr "月齡"
+
+msgid "Sex"
+msgstr "性別"
+
+msgid "Marriage or Orphanhood"
+msgstr "婚姻或孤兒狀態"
+
+msgid "Birthplace"
+msgstr "出生地"
+
+msgid "Irish Language"
+msgstr "愛爾蘭語"
+
+msgid ""
+"\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
+"cannot speak Irish\""
+msgstr ""
+"「僅愛爾蘭語」、「愛爾蘭語及英語」、「英語及愛爾蘭語」、「能閱讀但不會說愛爾"
+"蘭語」"
+
+msgid "Personal Occupation"
+msgstr "個人職業"
+
+msgid "Years Married"
+msgstr "已婚年數"
+
+msgid "Years married in present Marriage"
+msgstr "本次婚姻已婚年數"
+
+msgid "Months Married"
+msgstr "已婚月數"
+
+msgid "Months married in present Marriage"
+msgstr "本次婚姻已婚月數"
+
+msgid "Present Marriage Children"
+msgstr "本次婚姻的子女"
+
+msgid "Children born alive to present marriage"
+msgstr "本次婚姻中活產的子女"
+
+msgid "Total Children Under 16 Living"
+msgstr "健在未滿 16 歲子女總數"
+
+msgid "(1.) Entry no."
+msgstr "(1.) 登記編號。"
+
+msgid "Superintendent Registrar's District"
+msgstr "總登記官轄區"
+
+msgid "Registrar's District"
+msgstr "登記官轄區"
+
+msgid "Union"
+msgstr "Union"
+
+msgid "(10.) Signature of Registrar"
+msgstr "(10.) 登記官簽名"
+
+msgid "(11.) Baptismal Name if added after Registration of Birth, and Date"
+msgstr "(11.) 出生登記後補登的洗名及補登日期"
+
+msgid "(3.) Name (if any)"
+msgstr "(3.) 姓名（如有）"
+
+msgid "Place of Birth"
+msgstr "出生地"
+
+msgid "(2.) Date and Place of Birth"
+msgstr "(2.) 出生日期與地點"
+
+msgid "Date of Birth"
+msgstr "出生日期"
+
+msgid "(4.) M or F for male or female"
+msgstr "(4.) M 表示男性，F 表示女性"
+
+msgid "(5.) Name and Surname and Dwelling-place of Father"
+msgstr "(5.) 父親的名字、姓氏及居住地"
+
+msgid "(7.) Rank or Profession of Father"
+msgstr "(7.) 父親的身分或專業"
+
+msgid "(6.) Name and Surname and Maiden Surname of Mother"
+msgstr "(6.) 母親的名字、姓氏及婚前姓氏"
+
+msgid "Maiden Surname"
+msgstr "婚前姓氏"
+
+msgid "(8.) Signature, Qualification, and Residence of Informant"
+msgstr "(8.) 申報人的簽名、資格及居住地"
+
+msgid "When Registered"
+msgstr "登記時間"
+
+msgid "(9.) Date when birth was registered"
+msgstr "（9.）出生登記日期"
+
+msgid "Year"
+msgstr "年"
+
+msgid "Solemnized at the Catholic"
+msgstr "於天主教堂舉行"
+
+msgid "Certificate number"
+msgstr "證明文件編號"
+
+msgid "Page number"
+msgstr "頁碼"
+
+msgid "(1.) Entry No."
+msgstr "(1.) 登記編號。"
+
+msgid "(2.) When Married"
+msgstr "(2.) 結婚時間"
+
+msgid "(3.) Name and Surname"
+msgstr "(3.) 名字及姓氏"
+
+msgid "(4.) Full or Minor"
+msgstr "(4.) Full or Minor"
+
+msgid "Condition"
+msgstr "狀況"
+
+msgid "(5.) Bachelor or Spinster"
+msgstr "(5.) 未婚男性或未婚女性"
+
+msgid "(6.) Rank or Profession"
+msgstr "(6.) 身分或專業"
+
+msgid "Residence at the Time of Marriage"
+msgstr "結婚時的住所"
+
+msgid "(8.) Father's Name and Surname"
+msgstr "(8.) 父親的名字及姓氏"
+
+msgid "(9.) Rank or Profession of Father"
+msgstr "(9.) 父親的身分或專業"
+
+msgid "Signed"
+msgstr "簽署"
+
+msgid "(10.) When Registered"
+msgstr "(10.) 登記時間"
+
+msgid "(11.) Signature of Registrar"
+msgstr "(11.) 登記官簽名"
+
+msgid "Date of Death"
+msgstr "死亡日期"
+
+msgid "(2.) Date and Place of Death"
+msgstr "(2.) 死亡日期與地點"
+
+msgid "Place of Death"
+msgstr "死亡地點"
+
+msgid "(4.) M or F for Male or Female"
+msgstr "(4.) M 表示男性，F 表示女性"
+
+msgid "(5.) Widowed or Married"
+msgstr "(5.) 喪偶或已婚"
+
+msgid "(6.) Age last Birthday"
+msgstr "(6.) 上次生日的年齡"
+
+msgid "(7.) Rank, Profession, or Occupation"
+msgstr "(7.) 身分、專業或職業"
+
+msgid "(8.) Certified Cause of Death and Duration of Illness"
+msgstr "(8.) 經證明的死因及患病期間"
+
+msgid "Duration of Illness"
+msgstr "患病期間"
+
+msgid "Relation to deceased"
+msgstr "與死者的關係"
+
+msgid "(9.) e.g. Son, Daughter"
+msgstr "(9.) 例如兒子、女兒"
+
+msgid "(9.) e.g. Present at death"
+msgstr "(9.) 例如：死亡時在場"
+
+msgid "Schedule"
+msgstr "調查表"
+
+msgid "EnumDistrict"
+msgstr "EnumDistrict"
+
+msgid "Township"
+msgstr "鄉鎮"
+
+msgid "Comprising"
+msgstr "包含"
+
+msgid "OfTheSaid"
+msgstr "OfTheSaid"
+
+msgid "Enumerator"
+msgstr "普查員"
+
+msgid "1. Names of Inmates"
+msgstr "1. 住民姓名"
+
+msgid "2. Profession, Trade or Occupation"
+msgstr "2. 職業、行業或工作"
+
+msgid "BirthPlace"
+msgstr "BirthPlace"
+
+msgid "3. Place of Birth"
+msgstr "3. 出生地"
+
+msgid "4. Religion"
+msgstr "4. 宗教"
+
+msgid "5. Residence if Outside of Limits"
+msgstr "5. 居住於轄區外者的居住地"
+
+msgid "6. Age at Next Birthday"
+msgstr "6. 下次生日的年齡"
+
+msgid "SexMale"
+msgstr "男性"
+
+msgid "7. Sex: Male"
+msgstr "7. 性別：男"
+
+msgid "SexFemale"
+msgstr "SexFemale"
+
+msgid "8. Sex: Female"
+msgstr "8. 性別：女"
+
+msgid "MaritalStatus"
+msgstr "婚姻狀態"
+
+msgid "9. Married or Single"
+msgstr "9. 已婚或未婚"
+
+msgid "Coloured"
+msgstr "有色人種"
+
+msgid "10. Coloured Persons - Negroes"
+msgstr "10. 有色人種－黑人"
+
+msgid "Indians"
+msgstr "印第安人"
+
+msgid "11. Indians, if any"
+msgstr "11. 印第安人（若有）"
+
+msgid "ResidentsMale"
+msgstr "男性住戶"
+
+msgid "12. Residents: Members, Male"
+msgstr "12. 住戶：家庭成員，男"
+
+msgid "ResidentsFemale"
+msgstr "女性住戶"
+
+msgid "13. Residents: Members, Female"
+msgstr "13. 住戶：家庭成員，女性"
+
+msgid "NonMembersMale"
+msgstr "非家庭成員男性"
+
+msgid "14. Residents: Not Members: Male"
+msgstr "14. 住戶：非家庭成員：男"
+
+msgid "NonMembersFemale"
+msgstr "非家庭成員女性"
+
+msgid "15. Residents: Not Members: Female"
+msgstr "15. 住戶：非家庭成員：女"
+
+msgid "AbsentMembersMale"
+msgstr "不在家的男性成員"
+
+msgid "16. Members Absent: Male"
+msgstr "16. 不在家的家庭成員：男"
+
+msgid "AbsentMembersFemale"
+msgstr "不在家的女性成員"
+
+msgid "17. Members Absent: Female"
+msgstr "17. 外出的家庭成員：女性"
+
+msgid "DeafDumbMale"
+msgstr "聾啞男性"
+
+msgid "18. Deaf and Dumb: Male"
+msgstr "18. 聾啞人士：男"
+
+msgid "DeafDumbFemale"
+msgstr "聾啞女性"
+
+msgid "19. Deaf and Dumb: Female"
+msgstr "19. 聾啞人士：女"
+
+msgid "BlindMale"
+msgstr "男性盲人"
+
+msgid "20. Blind: Male"
+msgstr "20. 失明人士：男"
+
+msgid "BlindFemale"
+msgstr "女性盲人"
+
+msgid "21. Blind: Female"
+msgstr "21. 失明：女性"
+
+msgid "LunaticMale"
+msgstr "精神失常男性"
+
+msgid "22. Lunatics: Male"
+msgstr "22. 精神失常者：男"
+
+msgid "LunaticFemale"
+msgstr "精神失常女性"
+
+msgid "23. Lunatics: Female"
+msgstr "23. 精神失常者：女性"
+
+msgid "ScholarMale"
+msgstr "男學生"
+
+msgid "24. Attending School: Male"
+msgstr "24. 在學者：男"
+
+msgid "ScholarFemale"
+msgstr "在學女性"
+
+msgid "25. Attending School: Female"
+msgstr "25. 在學者：女"
+
+msgid "Birth1851Male"
+msgstr "Birth1851Male"
+
+msgid "26. Births During the Year 1851: Male"
+msgstr "26. 1851 年出生人數：男"
+
+msgid "Birth1851Female"
+msgstr "1851 年出生女性"
+
+msgid "27. Births During the Year 1851: Female"
+msgstr "27. 1851 年出生人數：女"
+
+msgid "Death1851Male"
+msgstr "Death1851Male"
+
+msgid "28. Deaths During the Year 1851: Male"
+msgstr "28. 1851 年死亡：男性"
+
+msgid "Death1851Female"
+msgstr "1851 年死亡女性"
+
+msgid "29. Deaths During the Year 1851: Female"
+msgstr "29. 1851 年死亡人數：女"
+
+msgid "DeathAgeCause"
+msgstr "DeathAgeCause"
+
+msgid "30. Age and Cause of Deaths"
+msgstr "30. 死亡年齡及死因"
+
+msgid "Houses"
+msgstr "房屋"
+
+msgid ""
+"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
+msgstr "31. 房屋：磚造、石造、框架式、原木、簡陋棚屋或其他住宅類型"
+
+msgid "HousesStories"
+msgstr "HousesStories"
+
+msgid "32. Houses: No. of Stories"
+msgstr "32. 房屋：樓層數"
+
+msgid "HousesFamilies"
+msgstr "房屋居住家庭數"
+
+msgid "33. No. of Families Occupying"
+msgstr "33. 居住家庭數"
+
+msgid "HousesVacant"
+msgstr "空置房屋"
+
+msgid "34. Houses: Vacant"
+msgstr "34. 房屋：空置"
+
+msgid "HousesBuilding"
+msgstr "興建中房屋"
+
+msgid "35. Houses: Building"
+msgstr "35. 房屋：興建中"
+
+msgid "Shops"
+msgstr "商店"
+
+msgid "36. Shops, Stores, Inns, Taverns etc."
+msgstr "36. 商店、店鋪、旅館、酒館等。"
+
+msgid "PublicBuildings"
+msgstr "公共建築"
+
+msgid "37. Public Buildings"
+msgstr "37. 公共建築"
+
+msgid "WorshipPlaces"
+msgstr "WorshipPlaces"
+
+msgid "38. Places of Worship"
+msgstr "38. 宗教場所"
+
+msgid "BuisnessInfo"
+msgstr "工商業資訊"
+
+msgid ""
+"39. Information on Mills, Factories etc., their cost, power, produce, etc."
+msgstr "39. 磨坊、工廠等的資訊，包括成本、動力、產品等。"
+
+msgid "NumEmployees"
+msgstr "受僱人數"
+
+msgid "40. Number of Persons Usually Employed Therein"
+msgstr "40. 通常在其中受僱的人數"
+
+msgid "41. General Remarks of the Enumerator"
+msgstr "41. 普查員的一般備註"
+
+msgid "1. Name of Occupier"
+msgstr "1. 占用人姓名"
+
+msgid "Concession"
+msgstr "Concession"
+
+msgid "2. Concession or Range"
+msgstr "2. Concession or Range"
+
+msgid "Lot"
+msgstr "Lot"
+
+msgid "3. Lot or part of Lot"
+msgstr "3. 地段或部分地段"
+
+msgid "AcresHeld"
+msgstr "持有土地英畝數"
+
+msgid "4. Number of Acres of Land: Held by each person or family"
+msgstr "4. 土地英畝數：各人或家庭持有"
+
+msgid "AcresCultivation"
+msgstr "耕作土地英畝數"
+
+msgid "5. Number of Acres of Land: Under Cultivation"
+msgstr "5. 土地英畝數：耕作中"
+
+msgid "AcresCrops"
+msgstr "AcresCrops"
+
+msgid "6. Number of Acres of Land: Under Crops in 1851"
+msgstr "6. 土地英畝數：1851 年種植作物"
+
+msgid "AcresPasture"
+msgstr "牧地英畝數"
+
+msgid "7. Number of Acres of Land: Under Pasture in 1851"
+msgstr "7. 土地英畝數：1851 年用作牧地"
+
+msgid "AcresGardens"
+msgstr "花園英畝數"
+
+msgid "8. Number of Acres of Land: Gardens or Orchards"
+msgstr "8. 土地英畝數：花園或果園"
+
+msgid "AcresWood"
+msgstr "林地英畝數"
+
+msgid "9. Number of Acres of Land: Under Wood or Wild"
+msgstr "9. 土地英畝數：林地或荒地"
+
+msgid "WheatAcres"
+msgstr "WheatAcres"
+
+msgid "10. Wheat: Acres"
+msgstr "10. 小麥：英畝"
+
+msgid "WheatBsh"
+msgstr "小麥蒲式耳數"
+
+msgid "11. Wheat: Produce Bsh."
+msgstr "11. 小麥：產量 (蒲式耳)。"
+
+msgid "BarleyAcres"
+msgstr "大麥英畝數"
+
+msgid "12. Barley: Acres"
+msgstr "12. 大麥：英畝"
+
+msgid "BarleyBsh"
+msgstr "大麥蒲式耳數"
+
+msgid "13. Barley: Produce Bsh."
+msgstr "13. 大麥：產量 (蒲式耳)。"
+
+msgid "RyeAcres"
+msgstr "黑麥英畝數"
+
+msgid "14. Rye: Acres"
+msgstr "14. 黑麥：英畝"
+
+msgid "RyeBsh"
+msgstr "RyeBsh"
+
+msgid "15. Rye: Produce Bsh."
+msgstr "15. 黑麥：產量 (蒲式耳)。"
+
+msgid "PeasAcres"
+msgstr "豌豆英畝數"
+
+msgid "16. Peas: Acres"
+msgstr "16. 豌豆：英畝"
+
+msgid "PeasBush"
+msgstr "豌豆蒲式耳數"
+
+msgid "17. Peas: Produce Bsh."
+msgstr "17. Peas: Produce Bsh."
+
+msgid "OatsAcres"
+msgstr "燕麥英畝數"
+
+msgid "18. Oats: Acres"
+msgstr "18. 燕麥：英畝"
+
+msgid "OatsBush"
+msgstr "燕麥蒲式耳數"
+
+msgid "19. Oats: Produce Bsh."
+msgstr "19. Oats: Produce Bsh."
+
+msgid "BWheatAcres"
+msgstr "蕎麥英畝數"
+
+msgid "20. B.Wheat: Acres"
+msgstr "20. 蕎麥：英畝"
+
+msgid "BWheatBush"
+msgstr "BWheatBush"
+
+msgid "21. B.Wheat: Produce Bsh."
+msgstr "21. 蕎麥：產量 (蒲式耳)。"
+
+msgid "CornAcres"
+msgstr "玉米英畝數"
+
+msgid "22. Corn: Acres"
+msgstr "22. 玉米：英畝數"
+
+msgid "CornBush"
+msgstr "玉米蒲式耳數"
+
+msgid "23. Corn: Produce Bsh."
+msgstr "23. Corn: Produce Bsh."
+
+msgid "PotatoesAcres"
+msgstr "馬鈴薯（英畝）"
+
+msgid "24. Potatoes: Acres"
+msgstr "24. 馬鈴薯：英畝"
+
+msgid "PotatoesBush"
+msgstr "馬鈴薯蒲式耳數"
+
+msgid "25. Potatoes: Produce Bsh."
+msgstr "25. 馬鈴薯：產量 (蒲式耳)。"
+
+msgid "TurnipsAcres"
+msgstr "蕪菁英畝數"
+
+msgid "26. Turnips: Acres"
+msgstr "26. 蕪菁：英畝"
+
+msgid "TurnipsBush"
+msgstr "TurnipsBush"
+
+msgid "27. Turnips: Produce Bsh."
+msgstr "27. 蕪菁：產量 (蒲式耳)。"
+
+msgid "CloverBush"
+msgstr "CloverBush"
+
+msgid "28. Clover, Timothy or other grass seed - Bsh."
+msgstr "28. 三葉草、梯牧草或其他草籽－蒲式耳。"
+
+msgid "CarrotsBush"
+msgstr "胡蘿蔔蒲式耳數"
+
+msgid "29. Carrots - Bsh."
+msgstr "29. 胡蘿蔔－Bsh."
+
+msgid "MangleWurtzel"
+msgstr "MangleWurtzel"
+
+msgid "30. Mangle Wurtzel"
+msgstr "30. Mangle Wurtzel"
+
+msgid "BeansBush"
+msgstr "豆類蒲式耳數"
+
+msgid "31. Beans Bush"
+msgstr "31. 豆類 (蒲式耳)"
+
+msgid "HopsLbs"
+msgstr "啤酒花磅數"
+
+msgid "32. Hops Lbs."
+msgstr "32. 啤酒花 (磅)。"
+
+msgid "HayQty"
+msgstr "HayQty"
+
+msgid "33. Hay, Bundles or Tons"
+msgstr "33. 乾草 (捆或噸)"
+
+msgid "FlaxLbs"
+msgstr "亞麻磅數"
+
+msgid "34. Flax or Hemp, Lbs."
+msgstr "34. 亞麻或大麻，磅。"
+
+msgid "TobaccoLbs"
+msgstr "菸草（磅）"
+
+msgid "35. Tobacco Lbs."
+msgstr "35. 菸草 (磅)。"
+
+msgid "WoolLbs."
+msgstr "羊毛磅數。"
+
+msgid "36. Wool Lbs."
+msgstr "36. 羊毛 (磅)。"
+
+msgid "Column37"
+msgstr "第 37 欄"
+
+msgid "37."
+msgstr "37."
+
+msgid "Column38"
+msgstr "第 38 欄"
+
+msgid "38."
+msgstr "38."
+
+msgid "Column39"
+msgstr "第 39 欄"
+
+msgid "39."
+msgstr "39."
+
+msgid "MapleSugarLbs"
+msgstr "MapleSugarLbs"
+
+msgid "40. Maple Sugar Lbs."
+msgstr "40. 楓糖（磅）。"
+
+msgid "CiderGalls"
+msgstr "CiderGalls"
+
+msgid "41. Cider Galls."
+msgstr "41. 蘋果酒 (加侖)。"
+
+msgid "ClothYards"
+msgstr "ClothYards"
+
+msgid "42. Fulled Cloth Yards"
+msgstr "42. Fulled Cloth Yards"
+
+msgid "LinnenYards"
+msgstr "亞麻布碼數"
+
+msgid "43. Linnen - Yds."
+msgstr "43. 亞麻布－碼。"
+
+msgid "FlannelYds"
+msgstr "FlannelYds"
+
+msgid "44. Flannel - Yds."
+msgstr "44. 法蘭絨－碼。"
+
+msgid "Bulls"
+msgstr "公牛"
+
+msgid "45. Bulls, Oxen or Steers"
+msgstr "45. 公牛、役牛或閹牛"
+
+msgid "Milch Cows"
+msgstr "乳牛"
+
+msgid "46. Milch Cows"
+msgstr "46. 乳牛"
+
+msgid "Calves"
+msgstr "小牛"
+
+msgid "47. Calves or Heifers"
+msgstr "47. 小牛或未產犢母牛"
+
+msgid "Horses"
+msgstr "馬匹"
+
+msgid "48. Horses of all ages"
+msgstr "48. 各年齡層馬匹"
+
+msgid "Sheep"
+msgstr "綿羊"
+
+msgid "49. Sheep"
+msgstr "49. 綿羊"
+
+msgid "Pigs"
+msgstr "豬"
+
+msgid "50. Pigs"
+msgstr "50. 豬"
+
+msgid "ButterLbs"
+msgstr "奶油磅數"
+
+msgid "51. Butter - Lbs."
+msgstr "51. 奶油 - 磅。"
+
+msgid "CheeseLbs"
+msgstr "乳酪磅數"
+
+msgid "52. Cheese - Lbs."
+msgstr "52. 乳酪－磅。"
+
+msgid "Beef"
+msgstr "牛肉"
+
+msgid "53. Beef - Barrels or Cwts."
+msgstr "53. 牛肉－桶或英擔。"
+
+msgid "Pork"
+msgstr "豬肉"
+
+msgid "54. Pork - Barrels or Cwts."
+msgstr "54. 豬肉－桶或英擔。"
+
+msgid "Fish"
+msgstr "魚"
+
+msgid "55. Quantity of Fish Cured"
+msgstr "55. 乾製、醃製或燻製魚類的數量"
+
+msgid "56. Remarks"
+msgstr "56. 備註"
+
+msgid "2. Profession, trade or occupation"
+msgstr "2. 職業、行業或工作"
+
+msgid "Married1851"
+msgstr "1851 年結婚"
+
+msgid "4. Married during the year"
+msgstr "4. 該年度結婚"
+
+msgid "5. Religion"
+msgstr "5. 宗教"
+
+msgid "6. Residence, if out of limits"
+msgstr "6. 居住於轄區外者的居住地"
+
+msgid "7. Age next Birthday"
+msgstr "7. 下次生日時的年齡"
+
+msgid "8. Sex: Male"
+msgstr "8. 性別：男"
+
+msgid "SexFemail"
+msgstr "女性"
+
+msgid "9. Sex:Female"
+msgstr "9. 性別：女性"
+
+msgid "10. Married or Single"
+msgstr "10. 已婚或單身"
+
+msgid "Widowers"
+msgstr "鰥夫"
+
+msgid "11. Widowers"
+msgstr "11. 鰥夫"
+
+msgid "Widows"
+msgstr "寡婦"
+
+msgid "12. Widows"
+msgstr "12. 寡婦"
+
+msgid "13. Coloured Persons, Mulato or Indians"
+msgstr "13. 有色人種、黑白混血者或印第安人"
+
+msgid "MemberMale"
+msgstr "男性成員"
+
+msgid "14. Members: Male"
+msgstr "14. 家庭成員：男"
+
+msgid "MemberFemale"
+msgstr "女性家庭成員"
+
+msgid "15. Members: Female"
+msgstr "15. 家庭成員：女"
+
+msgid "NotMemberMale"
+msgstr "NotMemberMale"
+
+msgid "16. Not Members: Male"
+msgstr "16. 非家庭成員：男"
+
+msgid "NotMemberFemale"
+msgstr "非家庭成員女性"
+
+msgid "17. Not Members: Female"
+msgstr "17. 非家庭成員：女性"
+
+msgid "MemberAbsentMale"
+msgstr "不在家的男性成員"
+
+msgid "18. Members Absent: Male"
+msgstr "18. 不在家的家庭成員：男"
+
+msgid "MemberAbsentFemale"
+msgstr "不在家的女性成員"
+
+msgid "19. Members Absent: Female"
+msgstr "19. 外出的家庭成員：女性"
+
+msgid "DeafDumb"
+msgstr "聾啞"
+
+msgid "20. Deaf and Dumb"
+msgstr "20. 聾啞人士"
+
+msgid "Blind"
+msgstr "盲人"
+
+msgid "21. Blind"
+msgstr "21. 失明"
+
+msgid "Lunatic"
+msgstr "精神失常"
+
+msgid "22. Lunatics or Idiots"
+msgstr "22. 精神失常或智能障礙者"
+
+msgid "23. Attending School within the year: Male"
+msgstr "23. 年內在學者：男"
+
+msgid "24. Attending School within the year: Female"
+msgstr "24. 該年度就學：女性"
+
+msgid "CantReadMale"
+msgstr "不識字男性"
+
+msgid "25. Persons over 20, who cannot read or write: Male"
+msgstr "25. 超過 20 歲且無法讀寫者：男"
+
+msgid "CantReadFemale"
+msgstr "不識字女性"
+
+msgid "26. Persons over 20, who cannot read or write: Female"
+msgstr "26. 超過 20 歲且無法讀寫者：女"
+
+msgid "Birth1860Male"
+msgstr "Birth1860Male"
+
+msgid "27. Births in 1860: Male"
+msgstr "27. 1860 年出生人數：男"
+
+msgid "Birth1860Female"
+msgstr "1860 年出生女性"
+
+msgid "28. Births in 1860: Female"
+msgstr "28. 1860 年出生：女性"
+
+msgid "Death1860Male"
+msgstr "1860 年死亡男性"
+
+msgid "29. Deaths in 1860: Male"
+msgstr "29. 1860 年死亡人數：男"
+
+msgid "Death1860Female"
+msgstr "1860 年死亡女性"
+
+msgid "30. Deaths in 1860: Female"
+msgstr "30. 1860 年死亡：女性"
+
+msgid "31. Age and cause of death"
+msgstr "31. 年齡與死亡原因"
+
+msgid "32. Houses: Brick, Stone, Frame, Log, etc."
+msgstr "32. 房屋：磚造、石造、框架式、原木等。"
+
+msgid "33. Houses: No. of Stories"
+msgstr "33. 房屋：樓層數"
+
+msgid "34. Houses: No. of families living in the house"
+msgstr "34. 房屋：屋內居住家庭數"
+
+msgid "35. Houses: Vacant"
+msgstr "35. 房屋：空置"
+
+msgid "HouseBeingBuilt"
+msgstr "興建中房屋"
+
+msgid "36. Houses: Being built"
+msgstr "36. 房屋：興建中"
+
+msgid "SubDistrict"
+msgstr "分區"
+
+msgid "Vessels"
+msgstr "船隻"
+
+msgid "1. Vessels"
+msgstr "1. 船隻"
+
+msgid "Shanties"
+msgstr "簡陋棚屋"
+
+msgid "2. Shanties"
+msgstr "2. 簡陋棚屋"
+
+msgid "HousesBeingBuilt"
+msgstr "在建房屋"
+
+msgid "3. Dwelling houses in construction"
+msgstr "3. 建造中的住宅"
+
+msgid "4. Dwelling houses unoccupied"
+msgstr "4. 無人居住的住宅"
+
+msgid "HousesInhabited"
+msgstr "有人居住的房屋"
+
+msgid "5. Dwelling houses inhabited"
+msgstr "5. 有人居住的住宅"
+
+msgid "6.Families"
+msgstr "6. 家庭"
+
+msgid "7. Names"
+msgstr "7. 姓名"
+
+msgid "8. Sex"
+msgstr "8. 性別"
+
+msgid "9. Age"
+msgstr "9. 年齡"
+
+msgid "Birth1871"
+msgstr "1871 年出生"
+
+msgid "10. Born within last twelve months"
+msgstr "10. 過去十二個月內出生"
+
+msgid "11. Country or Province of Birth"
+msgstr "11. 出生國家或省份"
+
+msgid "12. Religion"
+msgstr "12. 宗教"
+
+msgid "13. Origin"
+msgstr "13. 族裔"
+
+msgid "14. Profession, Occupation or Trade"
+msgstr "14. 專業、職業或行業"
+
+msgid "15. Married or Widowed"
+msgstr "15. 已婚或喪偶"
+
+msgid "Maried1871"
+msgstr "1871 年結婚"
+
+msgid "16. Married within last twelve months"
+msgstr "16. 過去十二個月內結婚"
+
+msgid "Scholar"
+msgstr "在學者"
+
+msgid "17. Going to school"
+msgstr "17. 就學狀況"
+
+msgid "CantRead"
+msgstr "無法閱讀"
+
+msgid "18. Over 20 unable to read"
+msgstr "18. 超過 20 歲且無法閱讀"
+
+msgid "CantWrite"
+msgstr "無法書寫"
+
+msgid "19. Over 20 unable to write"
+msgstr "19. 超過 20 歲且無法書寫"
+
+msgid "22. Unsound mind"
+msgstr "22. 心智失常"
+
+msgid "23. Date of Operations and Remarks"
+msgstr "23. 作業日期與備註"
+
+msgid "3. Houses in construction"
+msgstr "3. 興建中的房屋"
+
+msgid "4. Houses unoccupied"
+msgstr "4. 無人居住的房屋"
+
+msgid "5. Houses inhabited"
+msgstr "5. 有人居住的房屋數"
+
+msgid "6. Families"
+msgstr "6. 家庭"
+
+msgid "Birth1881"
+msgstr "1881 年出生"
+
+msgid "16. Going to school"
+msgstr "16. 就學狀況"
+
+msgid "17. Deaf and Dumb"
+msgstr "17. 聾啞人士"
+
+msgid "18. Blind"
+msgstr "18. 失明人士"
+
+msgid "19. Unsound mind"
+msgstr "19. 心智失常"
+
+msgid "20. Date of Operations and Remarks"
+msgstr "20. 作業日期與備註"
+
+msgid "1. Vessels and Shanties"
+msgstr "1. 船隻及簡陋棚屋"
+
+msgid "2. Houses in construction"
+msgstr "2. 興建中的房屋"
+
+msgid "3. Houses unoccupied"
+msgstr "3. 空置房屋"
+
+msgid "4. Houses inhabited"
+msgstr "4. 有人居住的房屋"
+
+msgid "5. Families"
+msgstr "5. 家庭"
+
+msgid "6. Names"
+msgstr "6. 姓名"
+
+msgid "7. Sex"
+msgstr "7. 性別"
+
+msgid "8. Age"
+msgstr "8. 年齡"
+
+msgid "9. Married or Widowed"
+msgstr "9. 已婚或喪偶"
+
+msgid "10. Relationship to Head of Family"
+msgstr "10. 與戶長的關係"
+
+msgid "12. FrenchCanadian"
+msgstr "12. 法裔加拿大人"
+
+msgid "BirthPlaceFather"
+msgstr "父親出生地"
+
+msgid "13. Birth Place of Father"
+msgstr "13. 父親出生地"
+
+msgid "BirthPlaceMother"
+msgstr "母親出生地"
+
+msgid "14. Birth Place of Mother"
+msgstr "14. 母親出生地"
+
+msgid "15. Religion"
+msgstr "15. 宗教"
+
+msgid "16. Profession, Occupation or Trade"
+msgstr "16. 專業、職業或行業"
+
+msgid "Employer"
+msgstr "雇主"
+
+msgid "17. Employers"
+msgstr "17. 雇主"
+
+msgid "Employee"
+msgstr "受僱者"
+
+msgid "18. Wage Earner"
+msgstr "18. 有薪工作者"
+
+msgid "Unemployed"
+msgstr "失業"
+
+msgid "19. Unemployed during week preceding Census"
+msgstr "19. 普查前一週失業"
+
+msgid "Employees"
+msgstr "受僱者"
+
+msgid "20. Employer to state average number of hands employed during year"
+msgstr "20. 雇主填寫年內平均僱用人數"
+
+msgid "CanRead"
+msgstr "能閱讀"
+
+msgid "21. Instruction: Read"
+msgstr "21. 教育：閱讀"
+
+msgid "CanWrite"
+msgstr "能書寫"
+
+msgid "22. Instruction: Write"
+msgstr "22. 教育：書寫"
+
+msgid "23. Deaf and Dumb"
+msgstr "23. 聾啞人士"
+
+msgid "24. Blind"
+msgstr "24. 失明人士"
+
+msgid "25. Unsound mind"
+msgstr "25. 心智失常"
+
+msgid "SubTitle"
+msgstr "副標題"
+
+msgid "PollSub"
+msgstr "投票分區"
+
+msgid "House"
+msgstr "房屋"
+
+msgid "1. Dwelling house"
+msgstr "1. 住宅"
+
+msgid "2. Family or household"
+msgstr "2. 家庭或住戶"
+
+msgid "3. Name of each person in family"
+msgstr "3. 家庭中每個人的姓名"
+
+msgid "4. Sex"
+msgstr "4. 性別"
+
+msgid "Colour"
+msgstr "膚色"
+
+msgid "5. Colour"
+msgstr "5. 膚色"
+
+msgid "6. Relation to head of family"
+msgstr "6. 與戶長的關係"
+
+msgid "7. Single, married, widowed, divorced or legally separated"
+msgstr "7. 單身、已婚、喪偶、離婚或合法分居"
+
+msgid "BirthMonth"
+msgstr "出生月份"
+
+msgid "8. Month and Date of Birth"
+msgstr "8. 出生月日"
+
+msgid "BirthYear"
+msgstr "出生年份"
+
+msgid "9. Year of birth"
+msgstr "9. 出生年份"
+
+msgid "10. Age at last birthday"
+msgstr "10. 上次生日的年齡"
+
+msgid "11. Country or place of birth"
+msgstr "11. 出生國家或地點"
+
+msgid "12. Year of immigration to Canada, if an immigrant"
+msgstr "12. 移民者移居加拿大的年份"
+
+msgid "13. Year of naturalization, if formerly an alien"
+msgstr "13. 歸化年份（若先前為外國人）"
+
+msgid "Race"
+msgstr "種族"
+
+msgid "14. Racial or tribal origin"
+msgstr "14. 種族或部族出身"
+
+msgid "Nationality"
+msgstr "國籍"
+
+msgid "15. Nationality"
+msgstr "15. 國籍"
+
+msgid "16. Religion"
+msgstr "16. 宗教"
+
+msgid "17. Profession, occupation, trade or means of living of each person"
+msgstr "17. 各人的專業、職業、行業或謀生方式"
+
+msgid "OwnMeans"
+msgstr "自有資產維生"
+
+msgid "18. Living on own means"
+msgstr "18. 靠自有資產維生"
+
+msgid "19. Employer"
+msgstr "19. 雇主"
+
+msgid "20. Employee"
+msgstr "20. 受僱者"
+
+msgid "SelfEmployed"
+msgstr "自營工作者"
+
+msgid "21. Working on own account"
+msgstr "21. 自營工作"
+
+msgid "WhereEmployed"
+msgstr "受僱地點"
+
+msgid "22. Working at trade in factory or in home"
+msgstr "22. 於工廠或家中從事行業工作"
+
+msgid "MonthsFactory"
+msgstr "工廠工作月數"
+
+msgid "23. Months employed at trade in factory"
+msgstr "23. 在工廠從事該行業的月數"
+
+msgid "MonthsHome"
+msgstr "居家工作月數"
+
+msgid "24. Months employed at trade in home"
+msgstr "24. 在家從事該行業的月數"
+
+msgid "MonthsOther"
+msgstr "其他工作月數"
+
+msgid "25. Months employed in other occupation than trace in factory or home"
+msgstr "25. 除工廠或住家工作外，從事其他職業的月數"
+
+msgid "EarningsOccupation"
+msgstr "職業收入"
+
+msgid "26. Earnings from occupation or trade"
+msgstr "26. 職業或行業收入"
+
+msgid "EarningsOther"
+msgstr "其他收入"
+
+msgid "27. Extra earning (From other than chief occupation or trade)"
+msgstr "27. 額外收入（來自主要職業或行業以外）"
+
+msgid "SchoolMonths"
+msgstr "在學月數"
+
+msgid "28. Months at school in 1910"
+msgstr "28. 1910 年就學月數"
+
+msgid "Read"
+msgstr "識字"
+
+msgid "29. Can read"
+msgstr "29. 能閱讀"
+
+msgid "Write"
+msgstr "書寫"
+
+msgid "30. Can write"
+msgstr "30. 能書寫"
+
+msgid "SpeakEnglish"
+msgstr "能說英語"
+
+msgid "31. Can speak English"
+msgstr "31. 能說英語"
+
+msgid "SpeakFrench"
+msgstr "能說法語"
+
+msgid "32. Can speak French"
+msgstr "32. 能說法文"
+
+msgid "33. Mother tongue (If spoken)"
+msgstr "33. 母語 (若仍使用)"
+
+msgid "Infirmities"
+msgstr "身心障礙"
+
+msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
+msgstr "34. 身心狀況：a. 聾啞；b. 失明；c. 心智失常"
+
+msgid "Name from Schedule 1"
+msgstr "來自附表 1 的姓名"
+
+msgid "Line on Schedule 2"
+msgstr "調查表 2 的行號"
+
+msgid "PageRef"
+msgstr "參照頁碼"
+
+msgid "2. Page from Schedule 1"
+msgstr "2. 調查表 1 的頁碼"
+
+msgid "LineRef"
+msgstr "參照行號"
+
+msgid "3. Line from Schedule 1"
+msgstr "3. 調查表 1 的行號"
+
+msgid "3. Place of Habitation"
+msgstr "3. 居住地"
+
+msgid "HousesConst"
+msgstr "興建中房屋"
+
+msgid "4. Houses: In construction"
+msgstr "4. 房屋：興建中"
+
+msgid "5. Houses: Vacant"
+msgstr "5. 房屋：空置"
+
+msgid "6. Houses: Inhabited"
+msgstr "6. 房屋：有人居住"
+
+msgid "Institution"
+msgstr "機構"
+
+msgid "7. Institution: Special or legal name"
+msgstr "7. 機構：特殊或法定名稱"
+
+msgid "Buildings"
+msgstr "建築物"
+
+msgid "8. Institution: Number of buildings"
+msgstr "8. 機構：建築物數量"
+
+msgid "9. Number of families in house or institution"
+msgstr "9. 房屋或機構內的家庭數"
+
+msgid "10. Number of rooms in house or institution for each famiy"
+msgstr "10. 房屋或機構中各家庭的房間數"
+
+msgid "Inmates"
+msgstr "收容人"
+
+msgid "11. Number of inmates in institution"
+msgstr "11. 機構內收容人數"
+
+msgid "OwnedAcres"
+msgstr "自有土地英畝數"
+
+msgid "12. Real Estate Owned: Grand total of acres"
+msgstr "12. 自有不動產：總英畝數"
+
+msgid "OwnedLots"
+msgstr "自有地段數"
+
+msgid "13. Real Estate Owned: Number of town or village lots"
+msgstr "13. 自有不動產：城鎮或村莊的地段數"
+
+msgid "OwnedHouses"
+msgstr "自有住宅數"
+
+msgid "14. Real Estate Owned: Number of dwelling houses"
+msgstr "14. 自有不動產：住宅棟數"
+
+msgid "OwnedStores"
+msgstr "自有商店數"
+
+msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
+msgstr "15. 自有不動產：商店、倉庫等數量。"
+
+msgid "OwnedBars"
+msgstr "自有穀倉數"
+
+msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
+msgstr "16. 擁有的不動產：穀倉、馬廄及其他附屬建築的數量"
+
+msgid "OwnedSilos"
+msgstr "自有筒倉數"
+
+msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
+msgstr "17. 自有不動產：筒倉數量及容量 (立方英尺)"
+
+msgid "OwnedFactories"
+msgstr "自有工廠數"
+
+msgid "18. Real Estate Owned: Number of manufacturing establishments"
+msgstr "18. 自有不動產：製造業場所數"
+
+msgid "LeasedAcres"
+msgstr "租用土地英畝數"
+
+msgid "19. Real Estate Leased: Grand total of acres"
+msgstr "19. 租用不動產：總英畝數"
+
+msgid "LeasedLots"
+msgstr "租用地段數"
+
+msgid "20. Real Estate Leased: Number of town or village lots"
+msgstr "20. 租用不動產：城鎮或村莊地段數"
+
+msgid "LeasedHouses"
+msgstr "租用住宅數"
+
+msgid "21. Real Estate Leased: Number of dwelling houses"
+msgstr "21. 租用不動產：住宅數量"
+
+msgid "LeasedStores"
+msgstr "租用商店數"
+
+msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
+msgstr "22. 租用不動產：商店、倉庫等數量。"
+
+msgid "LeasedBarns"
+msgstr "租用穀倉數"
+
+msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
+msgstr "23. 租用不動產：穀倉、馬廄和其他附屬建築的數量"
+
+msgid "LeasedSilos"
+msgstr "租用筒倉數"
+
+msgid "24. Real Estate Leased: Number of silos and capacity in cubic feet"
+msgstr "24. 租用不動產：筒倉數量及容量 (立方英尺)"
+
+msgid "LeasedFactories"
+msgstr "租用工廠數"
+
+msgid "25. Real Estate Leased: Number of manufacturing establishments"
+msgstr "25. 租用不動產：製造業場所數量"
+
+msgid "Denomination"
+msgstr "教派"
+
+msgid "26. Church or place of worship: Religious denomination"
+msgstr "26. 教堂或禮拜場所：宗教派別"
+
+msgid "Communicants"
+msgstr "領聖餐者"
+
+msgid "27. Church or place of worship: Number of communicants"
+msgstr "27. 教堂或禮拜場所：領聖餐者人數"
+
+msgid "Seating"
+msgstr "座位數"
+
+msgid "28. Church or place of worship: Seating capacity"
+msgstr "28. 教堂或禮拜場所：座位容量"
+
+msgid "SSDenomination"
+msgstr "主日學教派"
+
+msgid "29. Sunday School: Religious Denomination"
+msgstr "29. 主日學：宗教教派"
+
+msgid "SSTeachers"
+msgstr "主日學教師"
+
+msgid "30. Sunday School: Number of officers and teachers"
+msgstr "30. 主日學：職員及教師人數"
+
+msgid "SSScholars"
+msgstr "主日學學生"
+
+msgid "31. Sunday School: Number of Scholars"
+msgstr "31. 主日學：學生人數"
+
+msgid "SchoolRooms"
+msgstr "學校教室"
+
+msgid "32. School: Number of rooms"
+msgstr "32. 學校：房間數量"
+
+msgid "SchoolTeachers"
+msgstr "學校教師"
+
+msgid "33. School: Number of teachers"
+msgstr "33. 學校：教師人數"
+
+msgid "SchoolStudents"
+msgstr "學校學生"
+
+msgid "34. School: Number of Scholars"
+msgstr "34. 學校：學生人數"
+
+msgid "DateVisit"
+msgstr "訪查日期"
+
+msgid "35. Date of visit"
+msgstr "35. 訪查日期"
+
+msgid "Reason"
+msgstr "原因"
+
+msgid "36. The reason, if not enumerated on first visit"
+msgstr "36. 首次訪查未能登記的原因"
+
+msgid "DateEnum"
+msgstr "登記日期"
+
+msgid "37. Date when enumerated"
+msgstr "37. 登記日期"
+
+msgid "1. No. of family in order of visitation"
+msgstr "1. 依訪查順序編列的家庭編號"
+
+msgid "2. Name of each person in the family"
+msgstr "2. 家庭中每個人的姓名"
+
+msgid "3.Relation to head of family"
+msgstr "3. 與戶長的關係"
+
+msgid "5. Married, single, widowed or divorced"
+msgstr "5. 已婚、單身、喪偶或離婚"
+
+msgid "6. Age"
+msgstr "6. 年齡"
+
+msgid "7. Country or place of birth"
+msgstr "7. 出生國家或地點"
+
+msgid "8. Year of immigration to Canada"
+msgstr "8. 移居加拿大的年份"
+
+msgid "PostOffice"
+msgstr "郵局"
+
+msgid "9. Post office address"
+msgstr "9. 郵局地址"
+
+msgid "Section"
+msgstr "區段"
+
+msgid "10. Location: Section"
+msgstr "10. 位置：區段"
+
+msgid "11. Location: Township"
+msgstr "11. 位置：鄉鎮"
+
+msgid "12. Location: Range"
+msgstr "12. 位置：測量區列"
+
+msgid "Meridian"
+msgstr "子午線"
+
+msgid "13. Location: Meridian"
+msgstr "13. 位置：子午線"
+
+msgid "14. Livestock: Horses, all ages"
+msgstr "14. 牲畜：各年齡的馬"
+
+msgid "Cows"
+msgstr "母牛"
+
+msgid "15. Livestock: Milch cows"
+msgstr "15. 牲畜：乳牛"
+
+msgid "16. Other horned or meat cattle, all ages"
+msgstr "16. 各年齡的其他有角牛或肉牛"
+
+msgid "17. Sheep and lambs, all ages"
+msgstr "17. 各年齡的綿羊及羔羊"
+
+msgid "18. Hogs and pigs, all ages"
+msgstr "18. 各年齡的大小豬隻"
+
+msgid "4. Place of habitation"
+msgstr "4. 居住地"
+
+msgid "5. Sex"
+msgstr "5. 性別"
+
+msgid "8. Month of birth"
+msgstr "8. 出生月份"
+
+msgid "16. Chief occupation or trade"
+msgstr "16. 主要職業或行業"
+
+msgid "OtherEmployment"
+msgstr "其他工作"
+
+msgid "18. Employment other than at chief trade or occupation, if any"
+msgstr "18. 主要行業或職業以外的工作 (若有)"
+
+msgid "22. State where person employed"
+msgstr "22. 填寫受僱地點"
+
+msgid "WeeksOccupation"
+msgstr "主要職業工作週數"
+
+msgid "23. Weeks employed in 1910 at chief occupation or trade"
+msgstr "23. 1910 年從事主要職業或行業的週數"
+
+msgid "WeeksOther"
+msgstr "其他工作週數"
+
+msgid "24. Weeks employed in 1910 at other than chief occupation or trade"
+msgstr "24. 1910 年從事主要職業或行業以外工作的週數"
+
+msgid "HoursOccupation"
+msgstr "主要職業工時"
+
+msgid "25. Hours of working time per week at chief occupation"
+msgstr "25. 主要職業每週工作時數"
+
+msgid "HoursOther"
+msgstr "其他工作工時"
+
+msgid "26. Hours of working time per week at other occupation, if any"
+msgstr "26. 每週從事其他工作的時數 (若有)"
+
+msgid "27. Total earnings in 1910 from chief occupation or trade"
+msgstr "27. 1910 年主要職業或行業的總收入"
+
+msgid "28. Total earnings in 1910 from other than chief occupation or trade"
+msgstr "28. 1910 年主要職業或行業以外的總收入"
+
+msgid "Wages"
+msgstr "工資"
+
+msgid "29. Rate of earnings per hour when employed by the hour-Cents"
+msgstr "29. 按小時計酬者的每小時收入（分）"
+
+msgid "InsuranceLife"
+msgstr "人壽保險"
+
+msgid "30. Insurance: Upon life"
+msgstr "30. 保險：人壽"
+
+msgid "InsuranceAccident"
+msgstr "意外保險"
+
+msgid "31. Insurance: Against accident or illness"
+msgstr "31. 保險：意外或疾病"
+
+msgid "InsuranceCost"
+msgstr "保險費用"
+
+msgid "32. Insurance: Cost of insurance in census year"
+msgstr "32. 保險：普查年度的保險費用"
+
+msgid "33. Months at school in 1910"
+msgstr "33. 1910 年在學月數"
+
+msgid "34. Can Read"
+msgstr "34. 能閱讀"
+
+msgid "35. Can Write"
+msgstr "35. 能書寫"
+
+msgid "36. Language commonly spoken"
+msgstr "36. 常用語言"
+
+msgid "SchoolCost"
+msgstr "教育費用"
+
+msgid ""
+"37. Cost of education in 1910 for persons over 16 years of age at College, "
+"Convent or University"
+msgstr "37. 1910 年超過 16 歲、就讀學院、修道院學校或大學者的教育費用"
+
+msgid "38. Blind"
+msgstr "38. 失明"
+
+msgid "39. Deaf and dumb"
+msgstr "39. 聾啞"
+
+msgid "40. Crazy or lunatic"
+msgstr "40. 精神失常"
+
+msgid "Idiotic"
+msgstr "智能障礙"
+
+msgid "41. Idiotic or silly"
+msgstr "41. 智能障礙"
+
+msgid "1. House"
+msgstr "1. 房屋"
+
+msgid "Dwelling house"
+msgstr "住宅"
+
+msgid "2. Family"
+msgstr "2. 家庭"
+
+msgid "Family or household"
+msgstr "家庭或住戶"
+
+msgid "3. Name"
+msgstr "3. 姓名"
+
+msgid "Name of each person in family"
+msgstr "家庭中每個人的姓名"
+
+msgid "5. Relation to head of family"
+msgstr "5. 與戶長的關係"
+
+msgid "6. Single, married, widowed, divorced or legally separated"
+msgstr "6. 單身、已婚、喪偶、離婚或合法分居"
+
+msgid "7. Month of birth"
+msgstr "7. 出生月份"
+
+msgid "8. Age at last birthday"
+msgstr "8. 上次生日的年齡"
+
+msgid "9. Country or place of birth"
+msgstr "9. 出生國家或地點"
+
+msgid "10. Racial or tribal origin"
+msgstr "10. 種族或部族出身"
+
+msgid "11. Religion"
+msgstr "11. 宗教"
+
+msgid "12. Months at school in 1910"
+msgstr "12. 1910 年就學月數"
+
+msgid "13. Can Read"
+msgstr "13. 能閱讀"
+
+msgid "14. Can Write"
+msgstr "14. 能書寫"
+
+msgid "15. Language commonly spoken"
+msgstr "15. 常用語言"
+
+msgid ""
+"16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or "
+"lunatic"
+msgstr "16. 身心障礙：a. 失明；b. 聾啞；c. 智能障礙；d. 精神失常"
+
+msgid "1. Dwelling House"
+msgstr "1. 住宅"
+
+msgid "2. Family, Household or Institution"
+msgstr "2. 家庭、住戶或機構"
+
+msgid "3. Name of each person in family, household or institution"
+msgstr "3. 家庭、住戶或機構中每個人的姓名"
+
+msgid "MilitaryService"
+msgstr "服兵役"
+
+msgid "4. Military Service"
+msgstr "4. 服兵役"
+
+msgid "5. Place of Habitation: Township"
+msgstr "5. 居住地：鄉鎮"
+
+msgid "6. Place of Habitation: Range"
+msgstr "6. 居住地：測量區列"
+
+msgid "7. Place of Habitation: Meridian"
+msgstr "7. 居住地：子午線"
+
+msgid "8. Place of Habitation: Municipality"
+msgstr "8. 居住地：市鎮"
+
+msgid "9. Relationship to head of family or household"
+msgstr "9. 與家庭或住戶戶長的關係"
+
+msgid "10. Sex"
+msgstr "10. 性別"
+
+msgid "11. Single, married, widowed, divorced or legally separated"
+msgstr "11. 未婚、已婚、喪偶、離婚或依法分居"
+
+msgid "12. Age at last birthday"
+msgstr "12. 上次生日的年齡"
+
+msgid "13. Country or place of birth"
+msgstr "13. 出生國家或地點"
+
+msgid "14. Religion"
+msgstr "14. 宗教"
+
+msgid "15. Year of immigration to Canada"
+msgstr "15. 移居加拿大的年份"
+
+msgid "16. Year of naturalization"
+msgstr "16. 歸化年份"
+
+msgid "17. Nationality"
+msgstr "17. 國籍"
+
+msgid "18. Race or tribal origin"
+msgstr "18. 種族或部族出身"
+
+msgid "19. Can speak English"
+msgstr "19. 能說英語"
+
+msgid "20. Can speak French"
+msgstr "20. 能說法語"
+
+msgid "OtherLanguage"
+msgstr "其他語言"
+
+msgid "21. Other language spoken as mother tongue"
+msgstr "21. 作為母語使用的其他語言"
+
+msgid "22. Can Read"
+msgstr "22. 能閱讀"
+
+msgid "23. Can Write"
+msgstr "23. 會寫字"
+
+msgid "24. Chief occupation or trade"
+msgstr "24. 主要職業或行業"
+
+msgid "25. Employer, \"E\", Employee, \"W\""
+msgstr "25. 雇主（「E」）、員工（「W」）"
+
+msgid "EmploymentPlace"
+msgstr "受僱地點"
+
+msgid "26. State where person is employed"
+msgstr "26. 填寫受僱地點"
+
+msgid "NARA publication"
+msgstr "NARA 出版品"
+
+msgid "Roll No."
+msgstr "名冊編號。"
+
+msgid "Page No."
+msgstr "頁碼。"
+
+msgid "Sheet No."
+msgstr "表格編號。"
+
+msgid "Minor Civil Division"
+msgstr "基層行政區"
+
+msgid "County of"
+msgstr "所屬郡"
+
+msgid "District (or Territory) of"
+msgstr "所屬區 (或領地)"
+
+msgid "Free white males 16 & up"
+msgstr "16 歲以上自由身白人男性"
+
+msgid "Free white males under 16"
+msgstr "未滿 16 歲自由身白人男性"
+
+msgid "Free white females"
+msgstr "自由身白人女性"
+
+msgid "All other free persons"
+msgstr "所有其他自由民"
+
+msgid "Slaves"
+msgstr "奴隸"
+
+msgid "Enumeration Date"
+msgstr "普查日期"
+
+msgid "Free white males under 10"
+msgstr "未滿 10 歲自由身白人男性"
+
+msgid "Free white males 10-15"
+msgstr "10 至 15 歲自由身白人男性"
+
+msgid "Free white males 16-25"
+msgstr "16 至 25 歲自由身白人男性"
+
+msgid "Free white males 26-44"
+msgstr "26 至 44 歲自由身白人男性"
+
+msgid "Free white males 45 and over"
+msgstr "45 歲以上的自由白人男性"
+
+msgid "Free white females under 10"
+msgstr "未滿 10 歲自由身白人女性"
+
+msgid "Free white females 10-15"
+msgstr "自由白人女性 10-15 歲"
+
+msgid "Free white females 16-25"
+msgstr "16 至 25 歲自由身白人女性"
+
+msgid "Free white females 26-44"
+msgstr "26 至 44 歲自由身白人女性"
+
+msgid "Free white females 45 and over"
+msgstr "45 歲以上的自由白人女性"
+
+msgid "Free white males 16-18"
+msgstr "16 至 18 歲自由身白人男性"
+
+msgid "Foreigners not naturalized"
+msgstr "未歸化外國人"
+
+msgid "Persons engaged in Agriculture"
+msgstr "從事農業者"
+
+msgid "Persons engaged in Commerce"
+msgstr "從事商業的人員"
+
+msgid "Persons engaged in Manufactures"
+msgstr "從事製造業者"
+
+msgid "Slave males under 14"
+msgstr "未滿 14 歲男性奴隸"
+
+msgid "Slave males 14-25"
+msgstr "14 至 25 歲男性奴隸"
+
+msgid "Slave males 26-44"
+msgstr "26 至 44 歲男性奴隸"
+
+msgid "Slave males 45 and over"
+msgstr "45 歲以上男性奴隸"
+
+msgid "Slave females under 14"
+msgstr "未滿 14 歲女性奴隸"
+
+msgid "Slave females 14-25"
+msgstr "14-25 歲女性奴隸"
+
+msgid "Slave females 26-44"
+msgstr "26-44 歲女性奴隸"
+
+msgid "Slave females 45 and over"
+msgstr "45 歲以上女性奴隸"
+
+msgid "Free colored males under 14"
+msgstr "未滿 14 歲自由身有色人種男性"
+
+msgid "Free colored males 14-25"
+msgstr "14 至 25 歲自由身有色人種男性"
+
+msgid "Free colored males 26-44"
+msgstr "26 至 44 歲自由身有色人種男性"
+
+msgid "Free colored males 45 and over"
+msgstr "45 歲以上自由身有色人種男性"
+
+msgid "Free colored females under 14"
+msgstr "未滿 14 歲自由身有色人種女性"
+
+msgid "Free colored females 14-25"
+msgstr "14 至 25 歲的自由有色人種女性"
+
+msgid "Free colored females 26-44"
+msgstr "26-44 歲自由有色人種女性"
+
+msgid "Free colored females 45 and over"
+msgstr "45 歲以上的自由有色人種女性"
+
+msgid "Free white males under 5"
+msgstr "未滿 5 歲自由身白人男性"
+
+msgid "Free white males 5-9"
+msgstr "5 至 9 歲自由身白人男性"
+
+msgid "Free white males 10-14"
+msgstr "10 至 14 歲自由身白人男性"
+
+msgid "Free white males 15-20"
+msgstr "15 至 20 歲自由身白人男性"
+
+msgid "Free white males 20-29"
+msgstr "20 至 29 歲自由身白人男性"
+
+msgid "Free white males 30-39"
+msgstr "30 至 39 歲自由身白人男性"
+
+msgid "Free white males 40-49"
+msgstr "40 至 49 歲自由身白人男性"
+
+msgid "Free white males 50-59"
+msgstr "50 至 59 歲自由身白人男性"
+
+msgid "Free white males 60-69"
+msgstr "自由身白人男性 60-69 歲"
+
+msgid "Free white males 70-79"
+msgstr "70 至 79 歲自由身白人男性"
+
+msgid "Free white males 80-89"
+msgstr "80 至 89 歲自由身白人男性"
+
+msgid "Free white males 90-99"
+msgstr "自由白人男性 90-99 歲"
+
+msgid "Free white males 100 and over"
+msgstr "100 歲以上自由身白人男性"
+
+msgid "Free white females under 5"
+msgstr "未滿 5 歲的自由身白人女性"
+
+msgid "Free white females 5-9"
+msgstr "5 至 9 歲自由身白人女性"
+
+msgid "Free white females 10-14"
+msgstr "10 至 14 歲自由身白人女性"
+
+msgid "Free white females 15-20"
+msgstr "15-20 歲自由白人女性"
+
+msgid "Free white females 20-29"
+msgstr "20 至 29 歲自由身白人女性"
+
+msgid "Free white females 30-39"
+msgstr "30 至 39 歲的自由白人女性"
+
+msgid "Free white females 40-49"
+msgstr "40 至 49 歲自由身白人女性"
+
+msgid "Free white females 50-59"
+msgstr "自由白人女性 50-59 歲"
+
+msgid "Free white females 60-69"
+msgstr "自由白人女性 60-69 歲"
+
+msgid "Free white females 70-79"
+msgstr "自由白人女性 70-79 歲"
+
+msgid "Free white females 80-89"
+msgstr "80 至 89 歲自由身白人女性"
+
+msgid "Free white females 90-99"
+msgstr "90 至 99 歲自由身白人女性"
+
+msgid "Free white females 100 and over"
+msgstr "100 歲以上自由身白人女性"
+
+msgid "Slave males under 10"
+msgstr "未滿 10 歲男性奴隸"
+
+msgid "Slave males 10-23"
+msgstr "10 至 23 歲男性奴隸"
+
+msgid "Slave males 24-35"
+msgstr "24 至 35 歲男性奴隸"
+
+msgid "Slave males 36-54"
+msgstr "36 至 54 歲男性奴隸"
+
+msgid "Slave males 55-99"
+msgstr "55 至 99 歲男性奴隸"
+
+msgid "Slave males 100 and over"
+msgstr "100 歲以上男性奴隸"
+
+msgid "Slave females under 10"
+msgstr "未滿 10 歲女性奴隸"
+
+msgid "Slave females 10-23"
+msgstr "10 至 23 歲的女性奴隸"
+
+msgid "Slave females 24-35"
+msgstr "24-35 歲女性奴隸"
+
+msgid "Slave females 36-54"
+msgstr "36 至 54 歲女性奴隸"
+
+msgid "Slave females 55-99"
+msgstr "55-99 歲女性奴隸"
+
+msgid "Slave females 100 and over"
+msgstr "100 歲以上女性奴隸"
+
+msgid "Free colored males under 10"
+msgstr "未滿 10 歲自由身有色人種男性"
+
+msgid "Free colored males 10-23"
+msgstr "10 至 23 歲自由身有色人種男性"
+
+msgid "Free colored males 24-35"
+msgstr "24 至 35 歲自由身有色人種男性"
+
+msgid "Free colored males 36-54"
+msgstr "36 至 54 歲自由有色人種男性"
+
+msgid "Free colored males 55-99"
+msgstr "55 至 99 歲自由身有色人種男性"
+
+msgid "Free colored males 100 and over"
+msgstr "100 歲以上自由身有色人種男性"
+
+msgid "Free colored females under 10"
+msgstr "未滿 10 歲自由身有色人種女性"
+
+msgid "Free colored females 10-23"
+msgstr "10 至 23 歲自由身有色人種女性"
+
+msgid "Free colored females 24-35"
+msgstr "24 至 35 歲自由身有色人種女性"
+
+msgid "Free colored females 36-54"
+msgstr "36 至 54 歲自由身有色人種女性"
+
+msgid "Free colored females 55-99"
+msgstr "55 至 99 歲自由身有色人種女性"
+
+msgid "Free colored females 100 and over"
+msgstr "100 歲以上自由身有色人種女性"
+
+msgid "White persons deaf/dumb under 14"
+msgstr "未滿 14 歲的失聰／啞白人"
+
+msgid "White persons deaf/dumb 14-24"
+msgstr "14 至 24 歲聾啞白人"
+
+msgid "White persons deaf/dumb 25 and over"
+msgstr "25 歲以上聾啞白人"
+
+msgid "White persons blind"
+msgstr "失明白人"
+
+msgid "Aliens"
+msgstr "外國人"
+
+msgid "Slaves and colored persons deaf/dumb under 14"
+msgstr "未滿 14 歲聾啞奴隸及有色人種"
+
+msgid "Slaves and colored persons deaf/dumb 14-24"
+msgstr "聾/啞奴隸與有色人種 14-24 歲"
+
+msgid "Slaves and colored persons deaf/dumb 25 and over"
+msgstr "25 歲以上聾啞的奴隸及有色人種"
+
+msgid "Slaves and colored persons blind"
+msgstr "失明的奴隸與有色人種"
+
+msgid "Persons employed in Mining"
+msgstr "從事採礦業者"
+
+msgid "Persons employed in Agriculture"
+msgstr "從事農業者"
+
+msgid "Persons employed in Commerce"
+msgstr "從事商業者"
+
+msgid "Persons employed in Manufacture and trade"
+msgstr "從事製造業及手工業者"
+
+msgid "Persons employed in Navigation of the ocean"
+msgstr "從事遠洋航海的人員"
+
+msgid "Persons employed in Navigation of canals, lakes, rivers"
+msgstr "從事運河、湖泊、河川航運者"
+
+msgid "Learned professional engineers"
+msgstr "受過專業教育的工程師"
+
+msgid "Names of pensioners for Revolutionary or military services"
+msgstr "因參與獨立戰爭或服役而領取年金者的姓名"
+
+msgid "Ages"
+msgstr "年齡"
+
+msgid "White persons insane and idiots at public charge"
+msgstr "公費收容的白人（歷史分類：insane、idiots）"
+
+msgid "White persons insane and idiots at private charge"
+msgstr "由私人負擔照護費用的精神失常及智能障礙白人"
+
+msgid "Colored persons deaf/dumb"
+msgstr "聾啞有色人種"
+
+msgid "Colored persons blind"
+msgstr "失明有色人種"
+
+msgid "Colored persons insane and idiots at private charge"
+msgstr "由私人負擔照護費用的精神失常及智能障礙有色人種"
+
+msgid "Colored persons insane and idiots at public charge"
+msgstr "由公費收容、被歸類為精神失常或智能障礙的有色人種"
+
+msgid "Universities or college"
+msgstr "大學或學院"
+
+msgid "Number of students"
+msgstr "學生人數"
+
+msgid "Academies and Grammar Schools"
+msgstr "學院及文法學校"
+
+msgid "No. of scholars"
+msgstr "學生人數"
+
+msgid "Primary and Common Schools"
+msgstr "小學及普通學校"
+
+msgid "No. of scholars at public charge"
+msgstr "公費就學學生人數"
+
+msgid "White persons illiterate over 20"
+msgstr "超過 20 歲且不識字的白人"
+
+msgid "State of"
+msgstr "State of"
+
+msgid "Line No."
+msgstr "行號。"
+
+msgid "Family No."
+msgstr "家庭編號。"
+
+msgid "Value of real estate"
+msgstr "不動產價值"
+
+msgid "Place of birth"
+msgstr "出生地"
+
+msgid "Married within the year"
+msgstr "年內結婚"
+
+msgid "Attended school within the year"
+msgstr "年內曾在學"
+
+msgid "Illiterate and over 20"
+msgstr "超過 20 歲且不識字"
+
+msgid "Deaf, dumb, blind, insane, idiotic, pauper or convict"
+msgstr "聾、啞、失明、精神失常、智能障礙、貧民或受刑人"
+
+msgid "Production of Agriculture in"
+msgstr "農業產出地區"
+
+msgid "in the County of"
+msgstr "所在郡"
+
+msgid "Owner, Agent, or Manager"
+msgstr "所有人、代理人或管理人"
+
+msgid "Acres Improved"
+msgstr "改良土地英畝數"
+
+msgid "Acres Unimproved"
+msgstr "未開墾土地英畝數"
+
+msgid "Cash Value of Farm"
+msgstr "農場現金價值"
+
+msgid "Value of Farming Implements and Machinery"
+msgstr "農具及機械價值"
+
+msgid "Asses and Mules"
+msgstr "驢與騾"
+
+msgid "Working Oxen"
+msgstr "役牛"
+
+msgid "Other Cattle"
+msgstr "其他牛隻"
+
+msgid "Swine"
+msgstr "豬"
+
+msgid "Value of Live Stock"
+msgstr "牲畜價值"
+
+msgid "Wheat"
+msgstr "小麥"
+
+msgid "Indian Corn"
+msgstr "玉米"
+
+msgid "Oats"
+msgstr "燕麥"
+
+msgid "Rice"
+msgstr "稻米"
+
+msgid "Tobacco"
+msgstr "菸草"
+
+msgid "Ginned Cotton"
+msgstr "軋花棉"
+
+msgid "Wool"
+msgstr "羊毛"
+
+msgid "Peas and Beans"
+msgstr "豌豆及豆類"
+
+msgid "Irish Potatoes"
+msgstr "馬鈴薯"
+
+msgid "Sweet Potatoes"
+msgstr "甘藷"
+
+msgid "Barley"
+msgstr "大麥"
+
+msgid "Buckwheat"
+msgstr "蕎麥"
+
+msgid "Value of Orchard Products"
+msgstr "果園產品價值"
+
+msgid "Wine"
+msgstr "葡萄酒"
+
+msgid "Value of Market Gardens"
+msgstr "商品菜園價值"
+
+msgid "Butter"
+msgstr "奶油"
+
+msgid "Cheese"
+msgstr "乳酪"
+
+msgid "Hay"
+msgstr "乾草"
+
+msgid "Clover Seed"
+msgstr "三葉草種子"
+
+msgid "Other Grass Seeds"
+msgstr "其他草籽"
+
+msgid "Hops"
+msgstr "啤酒花"
+
+msgid "Hemp Dew Rotted"
+msgstr "露浸大麻"
+
+msgid "Hemp Water Rotted"
+msgstr "水漚大麻"
+
+msgid "Flax"
+msgstr "亞麻"
+
+msgid "Flaxseed"
+msgstr "亞麻籽"
+
+msgid "Silk Cocoons"
+msgstr "蠶繭"
+
+msgid "Maple Sugar"
+msgstr "楓糖"
+
+msgid "Cane Sugar"
+msgstr "蔗糖"
+
+msgid "Molasses"
+msgstr "糖蜜"
+
+msgid "Beeswax"
+msgstr "蜂蠟"
+
+msgid "Value of Homemade Manufactures"
+msgstr "家庭製品價值"
+
+msgid "Value of Animals Slaughtered"
+msgstr "屠宰動物價值"
+
+msgid "Post Office"
+msgstr "郵局"
+
+msgid "Value of personal estate"
+msgstr "動產價值"
+
+msgid "Live Stock June 1, 1860"
+msgstr "1860 年 6 月 1 日的牲畜"
+
+msgid "Produce during the year ending June 1, 1860"
+msgstr "截至 1860 年 6 月 1 日止一年的產出"
+
+msgid "Wheat, bushels of"
+msgstr "小麥（蒲式耳）"
+
+msgid "Rye, bushels of"
+msgstr "黑麥，蒲式耳數"
+
+msgid "Indian Corn, bushels of"
+msgstr "玉米，蒲式耳數"
+
+msgid "Oats, bushels of"
+msgstr "燕麥 (蒲式耳)"
+
+msgid "Rice, pounds of"
+msgstr "稻米（磅）"
+
+msgid "Tobacco, pounds of"
+msgstr "菸草磅數"
+
+msgid "Ginned Cotton, bales of 400 lbs."
+msgstr "軋花棉包數（每包 400 磅）。"
+
+msgid "Wool, pounds of"
+msgstr "羊毛磅數"
+
+msgid "Peas and Beans, bushels of"
+msgstr "豌豆及豆類 (蒲式耳)"
+
+msgid "Irish Potatoes, bushels of"
+msgstr "馬鈴薯 (蒲式耳)"
+
+msgid "Sweet Potatoes, bushels of"
+msgstr "甘藷 (蒲式耳)"
+
+msgid "Barley, bushels of"
+msgstr "大麥（蒲式耳）"
+
+msgid "Buckwheat, bushels of"
+msgstr "蕎麥 (蒲式耳)"
+
+msgid "Value of Orchard Products in $"
+msgstr "果園產品價值 ($)"
+
+msgid "Wine, gallons of"
+msgstr "葡萄酒 (加侖)"
+
+msgid "Value of products of market gardens"
+msgstr "商品菜園的農產品價值"
+
+msgid "Butter, pounds of"
+msgstr "奶油（磅）"
+
+msgid "Cheese, pounds of"
+msgstr "乳酪（磅）"
+
+msgid "Hay, tons of"
+msgstr "乾草（噸）"
+
+msgid "Clover Seed, bushels of"
+msgstr "三葉草種子（蒲式耳）"
+
+msgid "Other Grass Seeds, bushels of"
+msgstr "其他草籽 (蒲式耳)"
+
+msgid "Hops, pounds of"
+msgstr "啤酒花（磅）"
+
+msgid "Hemp Dew Rotted, tons of"
+msgstr "露漚大麻 (噸)"
+
+msgid "Hemp Water Rotted, tons of"
+msgstr "水漚大麻 (噸)"
+
+msgid "Flax, pounds of"
+msgstr "亞麻（磅）"
+
+msgid "Flaxseed, bushels of"
+msgstr "亞麻籽 (蒲式耳)"
+
+msgid "Silk Cocoons, pounds of"
+msgstr "蠶繭（磅）"
+
+msgid "Maple Sugar, pounds of"
+msgstr "楓糖 (磅)"
+
+msgid "Cane sugar, hogshead of 1,000 pounds"
+msgstr "蔗糖 (每大桶 1,000 磅)"
+
+msgid "Molasses, gallons of"
+msgstr "糖蜜 (加侖)"
+
+msgid "Beeswax, pounds of"
+msgstr "蜂蠟（磅）"
+
+msgid "Honey, pounds of"
+msgstr "蜂蜜 (磅)"
+
+msgid "Value of home-made manufactures"
+msgstr "家庭製品價值"
+
+msgid "Persons who Died during the Year ending 1 June 1860 in"
+msgstr "Persons who Died during the Year ending 1 June 1860 in"
+
+msgid "Free or slave"
+msgstr "自由人或奴隸"
+
+msgid "Married or widowed"
+msgstr "已婚或喪偶"
+
+msgid "Month in which person died"
+msgstr "人物死亡月份"
+
+msgid "Cause of death"
+msgstr "死因"
+
+msgid "Number of days ill"
+msgstr "生病天數"
+
+msgid "Father of foreign birth"
+msgstr "父親出生於外國"
+
+msgid "Mother of foreign birth"
+msgstr "母親出生於外國"
+
+msgid "Month, if born within the year"
+msgstr "若年內出生，填寫月份"
+
+msgid "Month, if married within the year"
+msgstr "若在一年內結婚，填寫月份"
+
+msgid "Cannot read"
+msgstr "無法閱讀"
+
+msgid "Cannot write"
+msgstr "無法書寫"
+
+msgid "Deaf, dumb, blind, insane or idiotic"
+msgstr "聾、啞、失明、精神失常或智能障礙"
+
+msgid "Male citizen 21 and over"
+msgstr "21 歲以上男性公民"
+
+msgid ""
+"Male citizen 21 and over where right to vote is denied on grounds other than "
+"rebellion or other crime"
+msgstr "21 歲以上男性公民，因叛亂或其他犯罪以外的原因遭剝奪投票權"
+
+msgid "Supervisor's Dist. No."
+msgstr "督導區編號。"
+
+msgid "Enumeration Dist. No."
+msgstr "普查區編號。"
+
+msgid "Month, if born within the census year"
+msgstr "月份（若出生於普查年度內）"
+
+msgid "Relationship to head"
+msgstr "與戶長的關係"
+
+msgid "Single"
+msgstr "單身"
+
+msgid "Widowed, divorced"
+msgstr "喪偶、離婚"
+
+msgid "Married during the census year"
+msgstr "於普查年度內結婚"
+
+msgid "Number of months unemployed during the census year"
+msgstr "普查年度內失業月數"
+
+msgid "Illness on day of enumeration"
+msgstr "普查當日患有的疾病"
+
+msgid "Deaf and dumb"
+msgstr "聾啞"
+
+msgid "Insane"
+msgstr "精神失常"
+
+msgid "Maimed, crippled, bedridden, or otherwise disabled"
+msgstr "傷殘、殘疾、臥床或有其他身心障礙者"
+
+msgid "Attended school within the census year"
+msgstr "普查年度內曾在學"
+
+msgid "Place of birth of father"
+msgstr "父親出生地"
+
+msgid "Place of birth of mother"
+msgstr "母親出生地"
+
+msgid "Owner"
+msgstr "擁有者"
+
+msgid "Rents for fixed money"
+msgstr "以固定金額承租"
+
+msgid "Rents for share of products"
+msgstr "以部分產出作為租金"
+
+msgid "Acres Tilled"
+msgstr "耕作土地英畝數"
+
+msgid "Acres Permanent Meadows, Pastures, Orchards, Vineyards"
+msgstr "永久草地、牧地、果園及葡萄園英畝數"
+
+msgid "Acres Woodland and forest"
+msgstr "林地及森林英畝數"
+
+msgid "Acres Other unimproved land"
+msgstr "其他未開墾土地英畝數"
+
+msgid "Value of Farm"
+msgstr "農場價值"
+
+msgid "Value of Implements and Machinery"
+msgstr "器具與機械價值"
+
+msgid "Cost of building and repairing fences in 1879"
+msgstr "1879 年建造及修繕圍籬的費用"
+
+msgid "Cost of Fertilizers purchased in 1879"
+msgstr "1879 年購買肥料的費用"
+
+msgid "Farm Labor Hiring 1879"
+msgstr "1879 年農業僱工"
+
+msgid "Weeks hired labor in 1879"
+msgstr "1879 年僱工週數"
+
+msgid "Estimated value of all farm productions for 1879"
+msgstr "1879 年所有農產品的估計價值"
+
+msgid "Acreage Grass Lands Mown in 1879"
+msgstr "1879 年收割牧草的草地面積（英畝）"
+
+msgid "Acreage Grass Lands Not Mown in 1879"
+msgstr "1879 年未割草地英畝數"
+
+msgid "Tons Hay Harvested in 1879"
+msgstr "1879 年收穫乾草噸數"
+
+msgid "Bushels Clover Seed Harvested in 1879"
+msgstr "1879 年收成的三葉草種子（蒲式耳）"
+
+msgid "Bushels Grass Seed Harvested in 1879"
+msgstr "1879 年收穫草籽蒲式耳數"
+
+msgid "Horses on hand"
+msgstr "現有馬匹"
+
+msgid "Mules and Asses on hand"
+msgstr "現有騾與驢"
+
+msgid "Working Oxen on hand"
+msgstr "現有役牛"
+
+msgid "Milch Cows on hand"
+msgstr "現有乳牛"
+
+msgid "Other Cattle on hand"
+msgstr "現有其他牛隻"
+
+msgid "Calves Dropped in 1879"
+msgstr "1879 年出生小牛"
+
+msgid "Cattle Purchased in 1879"
+msgstr "1879 年購入牛隻"
+
+msgid "Cattle Sold living in 1879"
+msgstr "1879 年活體出售牛隻"
+
+msgid "Cattle Slaughtered in 1879"
+msgstr "1879 年屠宰牛隻"
+
+msgid "Cattle Died, strayed, or stolen in 1879"
+msgstr "1879 年死亡、走失或遭竊牛隻"
+
+msgid "Gallons Milk Sold or sent to butter or cheese factories in 1879"
+msgstr "1879 年售出或送往奶油或乳酪工廠的牛奶加侖數"
+
+msgid "Pounds Butter made on farm in 1879"
+msgstr "1879 年農場製作奶油磅數"
+
+msgid "Pounds Cheese made on farm in 1879"
+msgstr "1879 年農場製作乳酪磅數"
+
+msgid "Sheep on hand"
+msgstr "現有綿羊"
+
+msgid "Lambs Dropped in 1879"
+msgstr "1879 年出生羔羊"
+
+msgid "Sheep and Lambs Purchased in 1879"
+msgstr "1879 年購入綿羊及羔羊"
+
+msgid "Sheep and Lambs Sold living in 1879"
+msgstr "1879 年活體出售綿羊及羔羊"
+
+msgid "Sheep and Lambs Slaughtered in 1879"
+msgstr "1879 年屠宰綿羊及羔羊"
+
+msgid "Sheep and Lambs Killed by dogs in 1879"
+msgstr "1879 年遭狗咬死的綿羊及羔羊"
+
+msgid "Sheep and Lambs Died of Disease in 1879"
+msgstr "1879 年因疾病死亡的綿羊及羔羊"
+
+msgid "Sheep and Lambs Died of stress or weather in 1879"
+msgstr "1879 年因緊迫或天候死亡的綿羊及羔羊"
+
+msgid "Number of Fleece, Spring 1880"
+msgstr "1880 年春季剪毛隻數"
+
+msgid "Pounds Wool, Spring 1880"
+msgstr "1880 年春季羊毛（磅）"
+
+msgid "Swine on hand"
+msgstr "現有豬隻"
+
+msgid "Barnyard Poultry on hand"
+msgstr "現有庭院家禽"
+
+msgid "Other Poultry on hand"
+msgstr "現有其他家禽"
+
+msgid "Dozen eggs produced in 1879"
+msgstr "1879 年產蛋打數"
+
+msgid "Acres Barley in 1879"
+msgstr "1879 年大麥英畝數"
+
+msgid "Bushels Barley in 1879"
+msgstr "1879 年大麥蒲式耳數"
+
+msgid "Acres Buckwheat in 1879"
+msgstr "1879 年蕎麥英畝數"
+
+msgid "Bushels Buckwheat in 1879"
+msgstr "1879 年蕎麥（蒲式耳）"
+
+msgid "Acres Indian Corn in 1879"
+msgstr "1879 年玉米種植面積（英畝）"
+
+msgid "Bushels Indian Corn in 1879"
+msgstr "1879 年玉米蒲式耳數"
+
+msgid "Acres Oats in 1879"
+msgstr "1879 年燕麥（英畝）"
+
+msgid "Bushels Oats in 1879"
+msgstr "1879 年燕麥蒲式耳數"
+
+msgid "Acres Rye in 1879"
+msgstr "1879 年黑麥英畝數"
+
+msgid "Bushels Rye in 1879"
+msgstr "1879 年黑麥（蒲式耳）"
+
+msgid "Acres Wheat in 1879"
+msgstr "1879 年小麥種植英畝數"
+
+msgid "Bushels Wheat in 1879"
+msgstr "1879 年小麥蒲式耳數"
+
+msgid "Bushels Canadian Peas in 1879"
+msgstr "1879 年加拿大豌豆蒲式耳數"
+
+msgid "Bushels Beans in 1879"
+msgstr "1879 年豆類蒲式耳數"
+
+msgid "Acres Flax in 1879"
+msgstr "1879 年亞麻種植英畝數"
+
+msgid "Bushels Flax Sued in 1879"
+msgstr "Bushels Flax Sued in 1879"
+
+msgid "Tons Flax Straw in 1879"
+msgstr "1879 年亞麻稈噸數"
+
+msgid "Pounds Flax Fiber in 1879"
+msgstr "1879 年亞麻纖維磅數"
+
+msgid "Acres Hemp in 1879"
+msgstr "1879 年大麻面積（英畝）"
+
+msgid "Tons Hemp in 1879"
+msgstr "1879 年大麻噸數"
+
+msgid "Acres Sorghum in 1879"
+msgstr "1879 年高粱英畝數"
+
+msgid "Pounds Sorghum Sugar in 1879"
+msgstr "1879 年高粱糖（磅）"
+
+msgid "Gallons Sorghum Molasses in 1879"
+msgstr "1879 年高粱糖蜜（加侖）"
+
+msgid "Pounds Maple Sugar in 1879"
+msgstr "1879 年楓糖磅數"
+
+msgid "Gallons Maple Molasses in 1879"
+msgstr "1879 年楓糖漿產量（加侖）"
+
+msgid "Acres Broom Corn in 1879"
+msgstr "1879 年 Broom Corn 英畝數"
+
+msgid "Pounds Broom Corn in 1879"
+msgstr "1879 年 Broom Corn（磅）"
+
+msgid "Acres Hops in 1879"
+msgstr "1879 年啤酒花面積（英畝）"
+
+msgid "Pounds Hops in 1879"
+msgstr "1879 年啤酒花重量（磅）"
+
+msgid "Acres Potatoes (Irish) in 1879"
+msgstr "1879 年馬鈴薯英畝數"
+
+msgid "Bushels Potatoes (Irish) in 1879"
+msgstr "1879 年馬鈴薯的蒲式耳數"
+
+msgid "Acres Potatoes (Sweet) in 1879"
+msgstr "1879 年甘藷英畝數"
+
+msgid "Bushels Potatoes (Sweet) in 1879"
+msgstr "1879 年甘藷（蒲式耳）"
+
+msgid "Acres Tobacco in 1879"
+msgstr "1879 年菸草英畝數"
+
+msgid "Pounds Tobacco in 1879"
+msgstr "1879 年菸草磅數"
+
+msgid "Acres Apple Orchards in 1879"
+msgstr "1879 年蘋果園英畝數"
+
+msgid "Number of Bearing Apple Trees in 1879"
+msgstr "1879 年結果蘋果樹數量"
+
+msgid "Bushels Apples in 1879"
+msgstr "1879 年蘋果蒲式耳數"
+
+msgid "Acres Peach Orchards in 1879"
+msgstr "1879 年桃園英畝數"
+
+msgid "Number of Bearing Peach Trees in 1879"
+msgstr "1879 年結果桃樹數量"
+
+msgid "Bushels Peaches in 1879"
+msgstr "1879 年桃子蒲式耳數"
+
+msgid "Total value of Orchard Products Sold or Consumed in 1879"
+msgstr "1879 年出售或自用的果園產品總價值"
+
+msgid "Acres Nurseries"
+msgstr "苗圃（英畝）"
+
+msgid "Value of Nursery Products Sold"
+msgstr "出售苗圃產品的價值"
+
+msgid "Acres Vineyards"
+msgstr "葡萄園面積（英畝）"
+
+msgid "Grapes sold in 1879"
+msgstr "1879 年售出的葡萄"
+
+msgid "Wine made in 1879"
+msgstr "1879 年釀製的葡萄酒"
+
+msgid "Value of Market Garden Produce Sold in 1879"
+msgstr "1879 年商業園藝作物的銷售額"
+
+msgid "Pounds Honey in 1879"
+msgstr "1879 年蜂蜜磅數"
+
+msgid "Pounds Beeswax in 1879"
+msgstr "1879 年蜂蠟磅數"
+
+msgid "Cords of Wood cut in 1879"
+msgstr "1879 年砍伐木材量（cord）"
+
+msgid "Value of forest products sold or consumed in 1879"
+msgstr "1879 年出售或自用的林產品價值"
+
+msgid "Street and No."
+msgstr "街道及門牌號碼。"
+
+msgid "Ward"
+msgstr "分區"
+
+msgid "Veteran of Civil War or widow of a veteran"
+msgstr "南北戰爭退伍軍人或退伍軍人遺孀"
+
+msgid "Single, married, widowed or divorced"
+msgstr "單身、已婚、喪偶或離婚"
+
+msgid "Mother of how many children and number of children living"
+msgstr "母親生育子女數及存活子女數"
+
+msgid "Number of years in US"
+msgstr "在美國居住年數"
+
+msgid "Naturalized"
+msgstr "已歸化"
+
+msgid "Naturalization papers taken out"
+msgstr "已申請歸化文件"
+
+msgid "Able to read"
+msgstr "能閱讀"
+
+msgid "Able to write"
+msgstr "能書寫"
+
+msgid "Able to speak English; if not, the language spoken"
+msgstr "能說英語；若否，填寫使用的語言"
+
+msgid "Suffering from disease"
+msgstr "患有疾病"
+
+msgid "Whether defective and name of defect"
+msgstr "是否有身心障礙及障礙名稱"
+
+msgid "Prisoner, convict, homeless child or pauper"
+msgstr "囚犯、受刑人、無家可歸兒童或貧民"
+
+msgid "Supplemental schedule and page"
+msgstr "補充調查表及頁碼"
+
+msgid "Supervisor's District No."
+msgstr "監督區編號。"
+
+msgid "Enumeration District No."
+msgstr "普查區編號。"
+
+msgid "Rank"
+msgstr "階級"
+
+msgid "Company"
+msgstr "連隊"
+
+msgid "Regiment/Vessel"
+msgstr "所屬團／船艦"
+
+msgid "Date Enlisted"
+msgstr "入伍日期"
+
+msgid "Date Discharged"
+msgstr "退伍日期"
+
+msgid "Length of Service"
+msgstr "服役年資"
+
+msgid "Disability Incurred"
+msgstr "服役導致的身心障礙"
+
+msgid "State (or Territory) of"
+msgstr "所屬州 (或領地)"
+
+msgid "Division of County"
+msgstr "郡分區"
+
+msgid "Name of Institution"
+msgstr "機構名稱"
+
+msgid "City, Town, Village"
+msgstr "城市、城鎮、村莊"
+
+msgid "Ward of city"
+msgstr "城市分區"
+
+msgid "Street Address"
+msgstr "街道地址"
+
+msgid "Relation to head"
+msgstr "與戶長的關係"
+
+msgid "Month of birth"
+msgstr "出生月份"
+
+msgid "Year of birth"
+msgstr "出生年份"
+
+msgid "Years of present marriage"
+msgstr "本次婚姻年數"
+
+msgid "Mother of how many children"
+msgstr "母親共生育多少子女"
+
+msgid "Number of children living"
+msgstr "在世子女人數"
+
+msgid "Year of immigration"
+msgstr "移民年份"
+
+msgid "Months not employed"
+msgstr "未就業月數"
+
+msgid "Attended school"
+msgstr "曾就學"
+
+msgid "Can read"
+msgstr "能閱讀"
+
+msgid "Can write"
+msgstr "能書寫"
+
+msgid "Can speak English"
+msgstr "能說英語"
+
+msgid "Home owned or rented"
+msgstr "住房自有或租用"
+
+msgid "Owned free or mortgaged"
+msgstr "自有房屋無抵押或有抵押"
+
+msgid "Farm or house"
+msgstr "農場或房屋"
+
+msgid "Number of farm schedule"
+msgstr "農場調查表編號"
+
+msgid "Naturalized or alien"
+msgstr "已歸化或外國人"
+
+msgid "Able to speak English; if not, language spoken"
+msgstr "能說英語；若否，填寫使用的語言"
+
+msgid "Nature of industry"
+msgstr "行業性質"
+
+msgid "Employer, employee or working on own account"
+msgstr "雇主、受僱者或自營者"
+
+msgid "Out of work"
+msgstr "失業"
+
+msgid "Weeks out of work in 1909"
+msgstr "1909 年失業週數"
+
+msgid "Attended school since Sept. 1, 1909"
+msgstr "自 1909 年 9 月 1 日起曾就讀學校"
+
+msgid "Civil War veteran"
+msgstr "南北戰爭退伍軍人"
+
+msgid "If owned, free or mortgaged"
+msgstr "若為自有，無抵押或有抵押"
+
+msgid "Year of naturalization"
+msgstr "歸化年份"
+
+msgid "Attended school since Sept. 1, 1919"
+msgstr "自 1919 年 9 月 1 日起就學"
+
+msgid "Mother tongue"
+msgstr "母語"
+
+msgid "Father mother tongue"
+msgstr "父親的母語"
+
+msgid "Mother's mother tongue"
+msgstr "母親的母語"
+
+msgid "Able to speak English"
+msgstr "能說英語"
+
+msgid "Industry"
+msgstr "行業"
+
+msgid "Employer, worker or working on own account"
+msgstr "雇主、受僱者或自營工作者"
+
+msgid "Incorporated place"
+msgstr "建制地區"
+
+msgid "Unincorporated place"
+msgstr "非建制地區"
+
+msgid "Value of home or monthly rental"
+msgstr "房屋價值或月租"
+
+msgid "Radio set"
+msgstr "收音機"
+
+msgid "Farm?"
+msgstr "農場？"
+
+msgid "Marital condition"
+msgstr "婚姻狀況"
+
+msgid "Age at first marriage"
+msgstr "初婚年齡"
+
+msgid "Attended school since Sept. 1, 1929"
+msgstr "自 1929 年 9 月 1 日起曾就學"
+
+msgid "Able to read and write"
+msgstr "能讀寫"
+
+msgid "Language before coming to US"
+msgstr "赴美前使用的語言"
+
+msgid "Class of worker"
+msgstr "工作身分"
+
+msgid "Employed"
+msgstr "受僱"
+
+msgid "Line number for unemployed"
+msgstr "失業者的行號"
+
+msgid "Veteran"
+msgstr "退伍軍人"
+
+msgid "What war"
+msgstr "哪場戰爭"
+
+msgid "Home Owned/Rented"
+msgstr "自有或租住的住宅"
+
+msgid "Home value/monthly rental"
+msgstr "房屋價值／每月租金"
+
+msgid "Color/Race"
+msgstr "膚色／種族"
+
+msgid "Age at Last Birthday"
+msgstr "上次生日的年齡"
+
+msgid "Marital Status"
+msgstr "婚姻狀態"
+
+msgid "Attended school/college since March 1, 1940"
+msgstr "自 1940 年 3 月 1 日起曾就讀學校／大學"
+
+msgid "Highest grade completed"
+msgstr "已完成的最高年級"
+
+msgid "Citizenship if foreign born"
+msgstr "海外出生者的公民身分"
+
+msgid "City (April 1, 1935)"
+msgstr "城市 (1935 年 4 月 1 日)"
+
+msgid "State (Territory/Country)"
+msgstr "州 (領地／國家)"
+
+msgid "On a Farm (Y/N)"
+msgstr "是否居於農場（Y/N）"
+
+msgid "At Work during week March 24-30"
+msgstr "3 月 24 至 30 日當週是否工作"
+
+msgid "public Emergency Work?"
+msgstr "從事公共緊急救濟工作嗎？"
+
+msgid "Seeking work?"
+msgstr "正在找工作嗎？"
+
+msgid "Have a Job?"
+msgstr "是否有工作？"
+
+msgid "housework (H), school (S), unable to work (U) or other (Ot)"
+msgstr "家務 (H)、就學 (S)、無法工作 (U) 或其他 (Ot)"
+
+msgid "# hours worked during week March 24-30, 1940"
+msgstr "1940 年 3 月 24 至 30 日當週工作時數"
+
+msgid "Weeks unemployed up to March 30, 1940"
+msgstr "截至 1940 年 3 月 30 日的失業週數"
+
+msgid "# weeks worked in 1939"
+msgstr "1939 年工作週數"
+
+msgid "Amount of money, wages, salary in 1939"
+msgstr "1939 年所得、工資及薪資金額"
+
+msgid "Income of more than $50 from other sources?"
+msgstr "其他來源的收入是否超過 $50？"
+
+msgid "Number of Farm Schedule"
+msgstr "農業調查表編號"
+
+msgid "Veteran?"
+msgstr "退伍軍人？"
+
+msgid "If child, veteran-father dead?"
+msgstr "若為兒童，其退伍軍人父親是否已故？"
+
+msgid "War/Military Service"
+msgstr "戰爭／服役"
+
+msgid "Have Federal SSN?"
+msgstr "是否擁有聯邦社會安全號碼（SSN）？"
+
+msgid "Deductions made in 1939?"
+msgstr "1939 年有扣除額？"
+
+msgid "If so, made from all, 1/2 or more, less from wages in 1939?"
+msgstr "若有扣款，1939 年計算扣款的工資占全部、一半以上或不到一半？"
+
+msgid "Usual Occupation"
+msgstr "通常從事的職業"
+
+msgid "Usual Industry"
+msgstr "通常從事的行業"
+
+msgid "Usual Class of Work"
+msgstr "通常的工作身分類別"
+
+msgid "If woman, married more than once?"
+msgstr "若為女性，是否結婚超過一次？"
+
+msgid "Number of children ever born"
+msgstr "曾生育的子女人數"
+
+msgid "Incorporated place or township"
+msgstr "建制地區或鄉鎮"
+
+msgid "E. D. Number"
+msgstr "普查區編號"
+
+msgid "Hotel, large rooming house, institution, military installation, etc."
+msgstr "飯店、大型寄宿屋、機構、軍事設施等。"
+
+msgid "Is this house on a farm (or ranch)?"
+msgstr "這棟房子位於農場（或牧場）嗎？"
+
+msgid "On 3+ acres of land?"
+msgstr "土地是否達 3 英畝？"
+
+msgid "Is this house on a place of three or more acres?"
+msgstr "這棟房屋是否位於三英畝以上的土地上？"
+
+msgid "Agricultural Questionnaire Number"
+msgstr "農業問卷編號"
+
+msgid "Age at last birthday"
+msgstr "上次生日的年齡"
+
+msgid "How old was he on his last birthday?"
+msgstr "他上次生日幾歲？"
+
+msgid "Marital status"
+msgstr "婚姻狀態"
+
+msgid "Is he now married, widowed, divorced, separated, or never married?"
+msgstr "他目前是已婚、喪偶、離婚、分居或從未結婚？"
+
+msgid "What State (or foreign country) was he born in?"
+msgstr "他出生於哪個州（或外國）？"
+
+msgid "Is he naturalized?"
+msgstr "他是否已歸化？"
+
+msgid "housework (H), work (W), unable to work (U) or other (Ot)"
+msgstr "家務 (H)、工作 (W)、無法工作 (U) 或其他 (Ot)"
+
+msgid ""
+"What was this person doing most of last week—working, keeping house, or "
+"something else?"
+msgstr "此人上週主要在做什麼——工作、料理家務或其他事情？"
+
+msgid "Worked last week? (Y/N)"
+msgstr "上週有工作嗎？(是／否)"
+
+msgid ""
+"Did this person do any work at all last week, not counting work around the "
+"house?"
+msgstr "不計家務，此人上週是否做過任何工作？"
+
+msgid "Looking for work?"
+msgstr "正在找工作嗎？"
+
+msgid "Was this person looking for work?"
+msgstr "此人當時是否在找工作？"
+
+msgid "Has a job or business?"
+msgstr "有工作或經營事業嗎？"
+
+msgid "Even though he didn’t work last week, does he have a job or business?"
+msgstr "雖然他上週沒有工作，但是否有職位或經營事業？"
+
+msgid "# hours worked last week"
+msgstr "上週工作時數"
+
+msgid "How many hours did he work last week?"
+msgstr "他上週工作幾小時？"
+
+msgid "Type of work"
+msgstr "工作類型"
+
+msgid "What kind of work was he doing?"
+msgstr "他從事哪一類工作？"
+
+msgid "Business or industry"
+msgstr "商業或產業"
+
+msgid "What kind of business or industry was he working in?"
+msgstr "他從事何種行業或產業？"
+
+msgid "Same house in Apr 1949?"
+msgstr "1949 年 4 月住在同一住所嗎？"
+
+msgid "Was he living in this same house a year ago?"
+msgstr "一年前是否住在同一間房子？"
+
+msgid "Farm in Apr 1949?"
+msgstr "1949 年 4 月是否居於農場？"
+
+msgid "Was he living on a farm a year ago?"
+msgstr "一年前他住在農場嗎？"
+
+msgid "Same county in Apr 1949?"
+msgstr "1949 年 4 月是否居住在同一郡？"
+
+msgid "Was he living in this same county a year ago?"
+msgstr "他一年前是否住在同一個郡？"
+
+msgid "State or foreign country"
+msgstr "州或外國國家"
+
+msgid "What country was his father born in?"
+msgstr "他的父親出生於哪個國家？"
+
+msgid "What country was his mother born in?"
+msgstr "他的母親出生於哪個國家？"
+
+msgid "Highest grade attended"
+msgstr "最高就讀年級"
+
+msgid "What is the highest grade of school that he has attended?"
+msgstr "他曾就讀的最高年級是幾年級？"
+
+msgid "Completed?"
+msgstr "已完成嗎？"
+
+msgid "Did he finish this grade?"
+msgstr "他是否完成這個年級？"
+
+msgid "Attended school since Feb 1, 1950?"
+msgstr "自 1950 年 2 月 1 日起曾在學嗎？"
+
+msgid "Has he attended school at any time since February 1st?"
+msgstr "自 2 月 1 日起是否曾就學？"
+
+msgid "How many weeks has he been looking for work?"
+msgstr "他找工作幾週了？"
+
+msgid "# weeks worked in 1949"
+msgstr "1949 年工作週數"
+
+msgid ""
+"Last year, in how many weeks did this person do any work at all, not "
+"counting work around the house?"
+msgstr "去年此人有幾週曾工作，不計家務？"
+
+msgid "Amount of wages/salary in 1949"
+msgstr "1949 年工資／薪資金額"
+
+msgid ""
+"Last year, how much money did he earn working as an employee for wages or "
+"salary?"
+msgstr "去年他以受僱身分工作，賺取多少工資或薪資？"
+
+msgid "Amount of money from own business in 1949"
+msgstr "1949 年自營事業收入金額"
+
+msgid ""
+"Last year, how much money did he earn working in his own business, "
+"professional practice, or farm?"
+msgstr "去年靠自己經營的事業、專業執業或農場賺了多少錢？"
+
+msgid "Amount of other income in 1949"
+msgstr "1949 年其他收入金額"
+
+msgid ""
+"Last year, how much money did he receive from interest, dividends, veteran’s "
+"allowances, pensions, rents, or other income?"
+msgstr "去年他從利息、股息、退伍軍人津貼、退休金、租金或其他收入獲得多少金額？"
+
+msgid "Relatives in household wages/salary in 1949"
+msgstr "同住親屬 1949 年的工資／薪資"
+
+msgid ""
+"Last year, how much money did his relatives in this household earn working "
+"for wages or salary?"
+msgstr "去年此住戶中他的親屬靠工資或薪水賺了多少錢？"
+
+msgid "Relatives in household earnings from own business in 1949"
+msgstr "同住親屬 1949 年的自營事業收入"
+
+msgid ""
+"Last year, how much money did his relatives in this household earn in own "
+"business, professional practice, or farm?"
+msgstr "去年此戶內的親屬從自營事業、專業執業或農場賺取多少金額？"
+
+msgid "Relatives in household other income in 1949"
+msgstr "同住親屬 1949 年的其他收入"
+
+msgid ""
+"Last year, how much money did his relatives in this household receive from "
+"interest, dividends, veteran’s allowances, pensions, rents, or other income?"
+msgstr ""
+"去年，這戶人家中他的親屬從利息、股利、退伍軍人津貼、年金、租金或其他收入獲得"
+"多少錢？"
+
+msgid "WWII Veteran?"
+msgstr "二戰退伍軍人？"
+
+msgid "Did he ever serve in the U. S. Armed Forces during World War II?"
+msgstr "他是否曾於第二次世界大戰期間在美國軍隊服役？"
+
+msgid "WWI Veteran?"
+msgstr "是第一次世界大戰退伍軍人嗎？"
+
+msgid "World War I?"
+msgstr "第一次世界大戰期間嗎？"
+
+msgid "Any other time, including present service?"
+msgstr "其他時期，包括目前服役嗎？"
+
+msgid "What kind of work did this person do in his last job?"
+msgstr "此人上一份工作從事什麼工作？"
+
+msgid "What kind of business or industry did he work in?"
+msgstr "他當時從事哪種業務或行業？"
+
+msgid "Class of worker [last job]"
+msgstr "工作身分 [最後一份工作]"
+
+msgid "Has this person been married more than once?"
+msgstr "此人是否結過不只一次婚？"
+
+msgid "# years since marriage ended"
+msgstr "婚姻結束至今的年數"
+
+msgid ""
+"How many years since this person was married, widowed, divorced, or "
+"separated?"
+msgstr "此人結婚、喪偶、離婚或分居至今已有幾年？"
+
+msgid "How many children has she ever borne, not counting stillbirths?"
+msgstr "她曾生育多少子女，不計死產？"
+
+msgid "Census Date"
+msgstr "人口普查日期"
+
+msgid "District of"
+msgstr "地區"
+
+msgid "Married Y/N"
+msgstr "已婚 是/否"
+
+msgid "Spouses Age"
+msgstr "配偶年齡"
+
+msgid "File No."
+msgstr "檔案編號。"
+
+msgid "Post Office Address"
+msgstr "郵局地址"
+
+msgid "Entered service as (rank)"
+msgstr "入伍時的軍階"
+
+msgid "Date Entered"
+msgstr "入伍日期"
+
+msgid "Place of Enlistment"
+msgstr "入伍地點"
+
+msgid "Name, Letter of Co., Number of Regiment"
+msgstr "名稱、連隊字母代號、團番號"
+
+msgid "Continued until"
+msgstr "持續到"
+
+msgid "Re-enlisted as"
+msgstr "再次入伍時的軍階"
+
+msgid "On date"
+msgstr "日期"
+
+msgid "and continued until"
+msgstr "並持續到"
+
+msgid "3rd enlistment"
+msgstr "第 3 次入伍"
+
+msgid "Enlisted on"
+msgstr "入伍日期"
+
+msgid "Enlistment Place"
+msgstr "入伍地點"
+
+msgid "in the command of"
+msgstr "所屬指揮官"
+
+msgid "Other service, if any"
+msgstr "其他服役經歷 (若有)"
+
+msgid "No. on pension roll"
+msgstr "年金名冊編號"
+
+msgid "County lived in when first placed on roll"
+msgstr "首次列入名冊時居住的郡"
+
+msgid "Other states lived in and when"
+msgstr "曾居住的其他州及時間"
+
+msgid "Moved to Alabama"
+msgstr "遷至阿拉巴馬州"
+
+msgid "Branch of service"
+msgstr "軍種"
+
+msgid "Letter of Company"
+msgstr "連隊字母代號"
+
+msgid "Number of Regiment"
+msgstr "團番號"
+
+msgid "Was it an Alabama Regiment"
+msgstr "是否為 Alabama Regiment"
+
+msgid "If not, give name of state"
+msgstr "若否，請填寫州名"
+
+msgid "Name of your Captain"
+msgstr "您的上尉姓名"
+
+msgid "Name of your Colonel"
+msgstr "你的上校姓名"
+
+msgid "By what other name was your Company called"
+msgstr "您的連隊還有什麼別稱"
+
+msgid "By what other name was your Regiment called"
+msgstr "您所屬的團還有什麼其他名稱"
+
+msgid "Battles in which you took part"
+msgstr "曾參與的戰役"
+
+msgid "Ever wounded"
+msgstr "是否曾受傷"
+
+msgid "When wounded"
+msgstr "受傷時間"
+
+msgid "In what battles"
+msgstr "參加過哪些戰役"
+
+msgid "Were you captured"
+msgstr "是否曾被俘"
+
+msgid "When captured"
+msgstr "被俘時間"
+
+msgid "Where captured"
+msgstr "被俘地點"
+
+msgid "Were you imprisoned"
+msgstr "是否曾被監禁"
+
+msgid "When imprisoned"
+msgstr "被囚禁時間"
+
+msgid "Where imprisoned"
+msgstr "被囚禁地點"
+
+msgid "How were you discharged"
+msgstr "退伍方式"
+
+msgid "Did you transfer to another Company or Command"
+msgstr "是否曾轉調至其他連隊或指揮單位"
+
+msgid "If so, give Company and Regiment"
+msgstr "若是，請填寫連隊與團"
+
+msgid "What branch of service and date of transfer"
+msgstr "轉調的軍種及日期"
+
+msgid "Captains name"
+msgstr "上尉姓名"
+
+msgid "Colonels name"
+msgstr "上校姓名"
+
+msgid "Length of service"
+msgstr "服役期間"
+
+msgid "Are you married"
+msgstr "是否已婚"
+
+msgid "Age of wife"
+msgstr "妻子的年齡"
+
+msgid "Birthplace of wife"
+msgstr "妻子出生地"
+
+msgid "Date married"
+msgstr "結婚日期"
+
+msgid "Place married"
+msgstr "結婚地點"
+
+msgid "When, where and circumstances you quit the service"
+msgstr "您何時、何地以及在何種情況下退伍"
+
+msgid "Paroled at close of war"
+msgstr "戰爭結束時獲假釋"
+
+msgid "If so, when"
+msgstr "若是，何時"
+
+msgid "and where"
+msgstr "以及地點"
+
+msgid "Have you your parole"
+msgstr "Have you your parole"
+
+msgid "Voting Precinct and County"
+msgstr "投票選區與郡"
+
+msgid "With whom are you living"
+msgstr "目前與誰同住"
+
+msgid "Regularly received your pension warrant"
+msgstr "是否定期收到年金支付憑證"
+
+msgid "If No give information regarding the same"
+msgstr "若否，請提供相關資訊"
+
+msgid "Witness name and P.O Address"
+msgstr "見證人姓名及郵局地址"
+
+msgid "Widow of"
+msgstr "某人的遺孀"
+
+msgid "Her age"
+msgstr "她的年齡"
+
+msgid "Her date of birth"
+msgstr "她的出生日期"
+
+msgid "Date of marriage"
+msgstr "結婚日期"
+
+msgid "Born within census year"
+msgstr "於普查年度內出生"
+
+msgid "Married during census year"
+msgstr "在普查年度結婚"
+
+msgid "Months unemployed during census year"
+msgstr "普查年度內失業月數"
+
+msgid "(Day of the Enumerator's visit) sick or temporarily disabled"
+msgstr "（調查員到訪當天）生病或暫時失能"
+
+msgid "Deaf and Dumb"
+msgstr "聾啞"
+
+msgid "Maimed, Crippled, Bedridden, or otherwise disabled."
+msgstr "肢體殘缺、行動障礙、臥床不起或其他障礙。"
+
+msgid "Can not read"
+msgstr "無法閱讀"
+
+msgid "Can not write"
+msgstr "不會寫字"
+
+msgid "Street Name"
+msgstr "街道名稱"
+
+msgid "House No."
+msgstr "門牌號碼。"
+
+msgid "Precinct No."
+msgstr "選區編號。"
+
+msgid "Inside or Outside City Limits"
+msgstr "市界內或市界外"
+
+msgid "Age Male"
+msgstr "男性年齡"
+
+msgid "Age Female"
+msgstr "女性年齡"
+
+msgid "Relation to Family"
+msgstr "與家庭的關係"
+
+msgid "Degree of Education"
+msgstr "教育程度"
+
+msgid "Owner or Renter"
+msgstr "屋主或承租人"
+
+msgid "In or Out"
+msgstr "In or Out"
+
+msgid "White Males Under 10"
+msgstr "未滿 10 歲白人男性"
+
+msgid "White Males 10 to 20"
+msgstr "10 至 20 歲白人男性"
+
+msgid "White Males 20 to 30"
+msgstr "20 至 30 歲白人男性"
+
+msgid "White Males 30 to 40"
+msgstr "30 至 40 歲白人男性"
+
+msgid "White Males 40 to 50"
+msgstr "40 至 50 歲白人男性"
+
+msgid "White Males 50 to 60"
+msgstr "50 至 60 歲白人男性"
+
+msgid "White Males 60 to 70"
+msgstr "60 至 70 歲白人男性"
+
+msgid "White Males 70 to 80"
+msgstr "70 至 80 歲白人男性"
+
+msgid "White Males 80 to 90"
+msgstr "80 至 90 歲白人男性"
+
+msgid "White Males Over 90"
+msgstr "超過 90 歲的白人男性"
+
+msgid "White Females Under 10"
+msgstr "未滿 10 歲白人女性"
+
+msgid "White Females 10 to 20"
+msgstr "10 至 20 歲白人女性"
+
+msgid "White Females 20 to 30"
+msgstr "20 至 30 歲白人女性"
+
+msgid "White Females 30 to 40"
+msgstr "30 至 40 歲白人女性"
+
+msgid "White Females 40 to 50"
+msgstr "40 至 50 歲白人女性"
+
+msgid "White Females 50 to 60"
+msgstr "50 至 60 歲白人女性"
+
+msgid "White Females 60 to 70"
+msgstr "60 至 70 歲白人女性"
+
+msgid "White Females 70 to 80"
+msgstr "70 至 80 歲白人女性"
+
+msgid "White Females 80 to 90"
+msgstr "80 至 90 歲白人女性"
+
+msgid "White Females Over 90"
+msgstr "超過 90 歲白人女性"
+
+msgid "Male Negroes and Mulattoes"
+msgstr "黑人與黑白混血男性"
+
+msgid "Female Negroes and Mulattoes"
+msgstr "黑人及黑白混血女性"
+
+msgid "Militia"
+msgstr "民兵"
+
+msgid "Manufactories of All Kinds"
+msgstr "各類製造工廠"
+
+msgid "Value of products of manufactories"
+msgstr "工廠產品價值"
+
+msgid "Value of products of Coal Mines"
+msgstr "煤礦產品價值"
+
+msgid "Pounds of Wool"
+msgstr "羊毛磅數"
+
+msgid "Number of Colleges"
+msgstr "學院數量"
+
+msgid "Number of Pupils"
+msgstr "學生人數"
+
+msgid "Number of Common Schools"
+msgstr "普通學校數量"
+
+msgid "Males over 21 years"
+msgstr "超過 21 歲男性"
+
+msgid "Males under 21 years"
+msgstr "未滿 21 歲男性"
+
+msgid "Total number"
+msgstr "總數"
+
+msgid "Widowed"
+msgstr "喪偶"
+
+msgid "Years resident in the state"
+msgstr "在該州居住年數"
+
+msgid "Native voters"
+msgstr "本國出生選民"
+
+msgid "Naturalized voters"
+msgstr "已歸化選民"
+
+msgid "Owners of land"
+msgstr "土地所有者"
+
+msgid "Paupers"
+msgstr "貧民"
+
+msgid "Acres of improved land"
+msgstr "已改良土地面積（英畝）"
+
+msgid "Acres of unimproved land"
+msgstr "未開墾土地英畝數"
+
+msgid "Acres in meadow"
+msgstr "草地英畝數"
+
+msgid "Tons of hay"
+msgstr "乾草噸數"
+
+msgid "Bushels of grass seed"
+msgstr "草籽蒲式耳數"
+
+msgid "Acres of spring wheat"
+msgstr "春小麥英畝數"
+
+msgid "Bushels harvested (spring wheat)"
+msgstr "收穫蒲式耳數（春小麥）"
+
+msgid "Acres of winter wheat"
+msgstr "冬小麥英畝數"
+
+msgid "Bushels harvested (winter wheat)"
+msgstr "收穫蒲式耳數（冬小麥）"
+
+msgid "Acres of oats"
+msgstr "燕麥英畝數"
+
+msgid "Bushels harvested (oats)"
+msgstr "收穫蒲式耳數 (燕麥)"
+
+msgid "Acres of corn"
+msgstr "玉米英畝數"
+
+msgid "Bushels harvested (corn)"
+msgstr "收穫蒲式耳數 (玉米)"
+
+msgid "Acres of potatoes"
+msgstr "馬鈴薯英畝數"
+
+msgid "Bushels harvested (potatoes)"
+msgstr "收穫蒲式耳數（馬鈴薯）"
+
+msgid "Number of hogs sold"
+msgstr "售出豬隻數量"
+
+msgid "Value of hogs sold"
+msgstr "出售豬隻價值"
+
+msgid "Number of cattle sold"
+msgstr "出售牛隻數量"
+
+msgid "Value of cattle sold"
+msgstr "出售牛隻的價值"
+
+msgid "Pounds of butter manufactured"
+msgstr "製作奶油磅數"
+
+msgid "Pounds of cheese"
+msgstr "乳酪磅數"
+
+msgid "Pounds of wool"
+msgstr "羊毛磅數"
+
+msgid "Value of domestic manufactures"
+msgstr "家庭製品價值"
+
+msgid "Value of general manufactures"
+msgstr "一般製品價值"
+
+msgid "Town of"
+msgstr "城鎮"
+
+msgid "City of"
+msgstr "城市"
+
+msgid "Township of"
+msgstr "所屬鄉鎮"
+
+msgid "Street and Number"
+msgstr "街道及門牌號碼"
+
+msgid "Place of birth, county"
+msgstr "出生地所在郡"
+
+msgid "Place of birth, state or territory"
+msgstr "出生地點，州或領地"
+
+msgid "Place of birth, country"
+msgstr "出生地、國家"
+
+msgid "Father (N, Native; F, Foreign)"
+msgstr "父親 (N，本國出生；F，外國出生)"
+
+msgid "Mother (N, Native; F, Foreign)"
+msgstr "母親 (N，本國出生；F，外國出生)"
+
+msgid "Subject to military duty"
+msgstr "有服兵役義務"
+
+msgid "Entitled to vote"
+msgstr "有投票權"
+
+msgid "Alien who has taken out first papers"
+msgstr "已提交入籍意向書的外國人"
+
+msgid "Alien who has not taken out first papers"
+msgstr "尚未取得初次申請文件的外籍人士"
+
+msgid "Over 10 and cannot read or write"
+msgstr "年逾 10 歲且不識字"
+
+msgid "Over 10 and can read but not write"
+msgstr "年逾 10 歲且能閱讀但不會書寫"
+
+msgid "Deaf and dumb, blind, insane, or idiotic"
+msgstr "聾啞、失明、精神失常或智能障礙"
+
+msgid "Age 18 or older"
+msgstr "年滿 18 歲"
+
+msgid "Age 5 to 18"
+msgstr "5 至 18 歲"
+
+msgid "Age under 5"
+msgstr "未滿 5 歲"
+
+msgid "White Male"
+msgstr "白人男性"
+
+msgid "White Female"
+msgstr "白人女性"
+
+msgid "Colored Male"
+msgstr "有色人種男性"
+
+msgid "Colored Female"
+msgstr "有色人種女性"
+
+msgid "Single, Widowed, or Divorced"
+msgstr "未婚、喪偶或離婚"
+
+msgid "Father (N,Native; F,Foreign)"
+msgstr "父親（N，本國出生；F，外國出生）"
+
+msgid "Mother (N,Native; F,Foreign)"
+msgstr "母親（N：本國出生；F：外國出生）"
+
+msgid "Religious belief"
+msgstr "宗教信仰"
+
+msgid "Can read but not write, over 10 years old"
+msgstr "超過 10 歲、會讀不會寫"
+
+msgid "Cannot read or write, over 10 years old"
+msgstr "年逾 10 歲且不會閱讀或書寫"
+
+msgid "Children over 6 and under 17 not attending school in 1894"
+msgstr "1894 年未就學且超過 6 歲、未滿 17 歲的兒童"
+
+msgid "Births in 1894"
+msgstr "1894 年出生人數"
+
+msgid "Deaths in 1894"
+msgstr "1894 年死亡人數"
+
+msgid "Deaf and dumb not in State School for Deaf"
+msgstr "未就讀州立聾人學校的聾啞人士"
+
+msgid "Blind not in State College for Blind"
+msgstr "未就讀州立盲人學院的失明人士"
+
+msgid "Insane not in State Hospital for Insane"
+msgstr "未入住州立精神病院的精神失常者"
+
+msgid "Company if in Civil War"
+msgstr "曾參加南北戰爭者所屬連隊"
+
+msgid "Regiment if in Civil War"
+msgstr "曾參加南北戰爭者所屬團"
+
+msgid "State if in Civil War"
+msgstr "曾參加南北戰爭者所屬州"
+
+msgid "Arm of service and rank if in Civil War"
+msgstr "曾參加南北戰爭者的兵種及軍階"
+
+msgid "Regiment if in Mexican War"
+msgstr "若參加墨西哥戰爭，請填寫所屬團"
+
+msgid "State if in Mexican War"
+msgstr "曾參加美墨戰爭者所屬州"
+
+msgid "Card No."
+msgstr "卡片編號。"
+
+msgid "P.O. Address"
+msgstr "郵政地址"
+
+msgid "P. O. Address"
+msgstr "郵政地址"
+
+msgid "Can you read?"
+msgstr "您會閱讀嗎？"
+
+msgid "Can you write?"
+msgstr "您會書寫嗎？"
+
+msgid "Color, White-Black-Yellow-Red"
+msgstr "膚色：白、黑、黃、紅"
+
+msgid "Place of Birth-Self"
+msgstr "本人出生地"
+
+msgid "Place of birth, Self"
+msgstr "本人出生地"
+
+msgid "Place of Birth-Mother"
+msgstr "母親出生地"
+
+msgid "Place of birth, Mother"
+msgstr "母親出生地"
+
+msgid "Place of Birth-Father"
+msgstr "父親出生地"
+
+msgid "Place of birth, Father"
+msgstr "父親出生地"
+
+msgid "Own home or farm"
+msgstr "自有住宅或農場"
+
+msgid "Do you own your home or farm?"
+msgstr "您是否擁有住宅或農場？"
+
+msgid "Value of home or farm"
+msgstr "住宅或農場價值"
+
+msgid "Entire value of home or farm?"
+msgstr "住宅或農場的總價值？"
+
+msgid "How much incumberance on home or farm"
+msgstr "住宅或農場的債務負擔金額"
+
+msgid "How much incumberance on your home or farm?"
+msgstr "您的住宅或農場有多少債務負擔？"
+
+msgid "If foreign born, are you naturalized"
+msgstr "若出生於國外，是否已入籍"
+
+msgid "If you are foreign born, are you naturalized?"
+msgstr "若您出生於國外，是否已入籍？"
+
+msgid "Years in U.S."
+msgstr "在美國居住年數。"
+
+msgid "Years in Iowa"
+msgstr "在 Iowa 居住年數"
+
+msgid "Years in Iowa>"
+msgstr "在 Iowa 居住年數>"
+
+msgid "Conjugal condition; Single-Married-Widowed-Divorced-Separated"
+msgstr "婚姻狀況；未婚、已婚、喪偶、離婚、分居"
+
+msgid "Months in school in 1904-Public"
+msgstr "1904 年在公立學校就讀月數"
+
+msgid "Months in school in 1904; Public"
+msgstr "1904 年就讀公立學校月數"
+
+msgid "Months in school in 1904-High"
+msgstr "1904 年在高中就讀月數"
+
+msgid "Months in school in 1904; High"
+msgstr "1904 年就學月數：高中"
+
+msgid "Months in school in 1904-Private"
+msgstr "1904 年在私立學校就讀月數"
+
+msgid "Months in school in 1904; Private"
+msgstr "1904 年就學月數；私立學校"
+
+msgid "Months in school in 1904-College"
+msgstr "1904 年在大學就讀月數"
+
+msgid "Months in school in 1904; College"
+msgstr "1904 年就學月數；大學"
+
+msgid "Months unemployed in 1904"
+msgstr "1904 年失業月數"
+
+msgid "Military-Service in which war"
+msgstr "兵役：參與的戰爭"
+
+msgid "Military Service in; Civil War-Mexican War-Spanish War"
+msgstr "曾參與的戰爭：內戰、墨西哥戰爭、西班牙戰爭"
+
+msgid "Military-Company"
+msgstr "兵役：連隊"
+
+msgid "Military Service; Company"
+msgstr "兵役；連隊"
+
+msgid "Military-Regiment"
+msgstr "兵役：團"
+
+msgid "Military Service; Regiment"
+msgstr "兵役；所屬團"
+
+msgid "Military-State"
+msgstr "兵役：州"
+
+msgid "Military Service; State"
+msgstr "兵役；州"
+
+msgid "Military-Class of service"
+msgstr "兵役：兵種"
+
+msgid "Military Service; Class of service; Cavalry-Infantry-Artillery-Navy"
+msgstr "兵役；兵種；騎兵、步兵、砲兵、海軍"
+
+msgid "Military-Date of enlistment"
+msgstr "兵役：入伍日期"
+
+msgid "Military Service; Date of enlistment"
+msgstr "兵役；入伍日期"
+
+msgid "Military-Date of discharge"
+msgstr "兵役：退伍日期"
+
+msgid "Military Service; Date of discharge"
+msgstr "服役：退伍日期"
+
+msgid "Military-Remarks"
+msgstr "兵役：備註"
+
+msgid "Military Service; Remarks"
+msgstr "兵役；備註"
+
+msgid "Town or Township"
+msgstr "城鎮或鄉鎮"
+
+msgid "Months in 1914 Unemployed"
+msgstr "1914 年失業月數"
+
+msgid "Earnings for 1914 from occupation"
+msgstr "1914 年職業收入"
+
+msgid "Extent of Education Common"
+msgstr "受教育程度：普通學校"
+
+msgid "Extent of Education Grammar"
+msgstr "受教育程度：文法學校"
+
+msgid "Extent of Education High School"
+msgstr "高中教育程度"
+
+msgid "Extent of Education College"
+msgstr "受教育程度：大學"
+
+msgid "Own house or farm"
+msgstr "自有房屋或農場"
+
+msgid "Incumbrance on farm or home"
+msgstr "農場或住宅的債務負擔"
+
+msgid "Value of farm or home"
+msgstr "農場或住宅價值"
+
+msgid "Military Service: Civil War"
+msgstr "兵役：南北戰爭"
+
+msgid "Military Service: Mexican"
+msgstr "兵役：美墨戰爭"
+
+msgid "Military Service: Spanish"
+msgstr "兵役：美西戰爭"
+
+msgid "Military Service: Infantry"
+msgstr "兵役：步兵"
+
+msgid "Military Service: Cavalry"
+msgstr "兵役：騎兵"
+
+msgid "Military Service: Artillery"
+msgstr "兵役：砲兵"
+
+msgid "Military Service: Navy"
+msgstr "兵役：海軍"
+
+msgid "Military Service: State"
+msgstr "兵役：州"
+
+msgid "Military Service: Regiment"
+msgstr "兵役：團"
+
+msgid "Military Service: Company"
+msgstr "兵役：連"
+
+msgid "Church Affiliation"
+msgstr "所屬教會"
+
+msgid "Father's Birthplace"
+msgstr "父親出生地"
+
+msgid "Mother's Birthplace"
+msgstr "母親出生地"
+
+msgid "Months in School 1914: Public"
+msgstr "1914 年就學月數：公立學校"
+
+msgid "Months in School 1914: High"
+msgstr "1914 年就學月數：高中"
+
+msgid "Months in School 1914: Private"
+msgstr "1914 年就學月數：私立"
+
+msgid "Months in School 1914: College"
+msgstr "1914 年就學月數：大學"
+
+msgid "Deaf"
+msgstr "失聰"
+
+msgid "Idiot"
+msgstr "Idiot"
+
+msgid "Naturalized if foreign born?"
+msgstr "若在國外出生，是否已歸化？"
+
+msgid "House Number"
+msgstr "門牌號碼"
+
+msgid "Color or Race"
+msgstr "膚色或種族"
+
+msgid "Home Owned or Rented"
+msgstr "自有或租住的住宅"
+
+msgid "Home Owned Free or Mortgaged"
+msgstr "自有住宅無抵押或有抵押貸款"
+
+msgid "Home Value"
+msgstr "住宅價值"
+
+msgid "Mortgage Debt"
+msgstr "抵押貸款債務"
+
+msgid "Monthly Rent"
+msgstr "每月租金"
+
+msgid "Insurance on Home"
+msgstr "住宅保險"
+
+msgid "Years in US"
+msgstr "在美國居住年數"
+
+msgid "Attended Rural School"
+msgstr "就讀鄉村學校"
+
+msgid "Attended Grade School"
+msgstr "就讀過小學"
+
+msgid "Attended High School"
+msgstr "就讀高中"
+
+msgid "Attended College"
+msgstr "就讀過大學"
+
+msgid "Highest Grade Rural School"
+msgstr "鄉村學校最高年級"
+
+msgid "Highest Grade Grammar School"
+msgstr "文法學校最高就讀年級"
+
+msgid "Highest Grade High School"
+msgstr "高中最高就讀年級"
+
+msgid "No. Years College"
+msgstr "大專就讀年數"
+
+msgid "Months in School 1924"
+msgstr "1924 年就學月數"
+
+msgid "Able to Read"
+msgstr "能閱讀"
+
+msgid "Able to Write"
+msgstr "能書寫"
+
+msgid "Father's Name"
+msgstr "父親姓名"
+
+msgid "Father's Place of Birth"
+msgstr "父親出生地"
+
+msgid "Mother's Name"
+msgstr "母親姓名"
+
+msgid "Mother's Place of Birth"
+msgstr "母親出生地"
+
+msgid "Parents Place of Marriage"
+msgstr "父母結婚地點"
+
+msgid "Civil War Veteran"
+msgstr "南北戰爭退伍軍人"
+
+msgid "Civil War Service Branch"
+msgstr "南北戰爭服役軍種"
+
+msgid "Civil War State"
+msgstr "南北戰爭服役州別"
+
+msgid "Spanish-American War Veteran"
+msgstr "美西戰爭退伍軍人"
+
+msgid "Spanish-American War Service Branch"
+msgstr "美西戰爭服役軍種"
+
+msgid "Spanish-American War State"
+msgstr "美西戰爭服役州別"
+
+msgid "World War Veteran"
+msgstr "世界大戰退伍軍人"
+
+msgid "World War Service Branch"
+msgstr "世界大戰服役軍種"
+
+msgid "World War State"
+msgstr "World War State"
+
+msgid "Agricultural Pursuits"
+msgstr "農業工作"
+
+msgid "Professional Services"
+msgstr "專業服務"
+
+msgid "Domestic/Personal Services"
+msgstr "家務／個人服務"
+
+msgid "Trade and Transportation"
+msgstr "貿易與運輸"
+
+msgid "Manufacturing and Mechanical"
+msgstr "製造與機械"
+
+msgid "Unclassified Laborer"
+msgstr "未分類勞工"
+
+msgid "Months unemployed due to illness"
+msgstr "因病失業的月數"
+
+msgid "Income lost due to illness"
+msgstr "因生病損失的收入"
+
+msgid "Months unemployed"
+msgstr "失業月數"
+
+msgid "Free Inhabitants in"
+msgstr "自由居民所在區域"
+
+msgid "Regiment"
+msgstr "所屬團"
+
+msgid "Real Estate"
+msgstr "不動產"
+
+msgid "Personal Estate"
+msgstr "動產"
+
+msgid "Attended School"
+msgstr "曾就學"
+
+msgid "Illiterate"
+msgstr "不識字"
+
+msgid "Disabled"
+msgstr "Disabled"
+
+msgid "Personal Property"
+msgstr "動產"
+
+msgid "Where From"
+msgstr "來自何處"
+
+msgid "School"
+msgstr "學校"
+
+msgid "Cannot Read 10-15"
+msgstr "不會閱讀，10 至 15 歲"
+
+msgid "Cannot Read 15-21"
+msgstr "不會閱讀，15 至 21 歲"
+
+msgid "Cannot Read 21+"
+msgstr "不會閱讀，21 歲以上"
+
+msgid "Cannot Write 10-15"
+msgstr "不會書寫，10 至 15 歲"
+
+msgid "Cannot Write 15-21"
+msgstr "不會書寫，15 至 21 歲"
+
+msgid "Cannot Write 21+"
+msgstr "不會書寫，21 歲以上"
+
+msgid "Cannot Read/Write 10-15"
+msgstr "10 至 15 歲無法讀寫者"
+
+msgid "Cannot Read/Write 15-21"
+msgstr "15 至 21 歲不識字／不會寫字"
+
+msgid "Cannot Read/Write 21+"
+msgstr "不會閱讀或書寫，21 歲以上"
+
+msgid "Widow(er)"
+msgstr "鰥夫／寡婦"
+
+msgid "Learning"
+msgstr "Learning"
+
+msgid "Illiteracy 10-15"
+msgstr "不識字，10 至 15 歲"
+
+msgid "Illiteracy 15-21"
+msgstr "不識字，15 至 21 歲"
+
+msgid "Illiteracy 21+"
+msgstr "21 歲以上不識字者"
+
+msgid "Honorably discharged"
+msgstr "光榮退伍"
+
+msgid "State Enlisted"
+msgstr "入伍州別"
+
+msgid "Arm of Service"
+msgstr "兵種"
+
+msgid "Prison"
+msgstr "監獄"
+
+msgid "Where from Kansas"
+msgstr "Where from Kansas"
+
+msgid "Trade or profession being learned"
+msgstr "正在學習的行業或專業"
+
+msgid "Illiterate and 10 to 15 years old"
+msgstr "不識字且年齡為 10 至 15 歲"
+
+msgid "Illiterate and 16 to 21 years old"
+msgstr "不識字且年齡為 16 至 21 歲"
+
+msgid "Illiterate and over 21"
+msgstr "不識字且年逾 21 歲"
+
+msgid "Honorably discharged from military service"
+msgstr "榮譽退伍"
+
+msgid "State in which enlisted"
+msgstr "入伍所在州"
+
+msgid "Company or command"
+msgstr "連隊或指揮單位"
+
+msgid "Regiment or other organization"
+msgstr "團或其他編制單位"
+
+msgid "Arm of service"
+msgstr "兵種"
+
+msgid "Prison in which confined as a prisoner of war"
+msgstr "作為戰俘被囚禁的監獄"
+
+msgid "Home owned free or mortgaged"
+msgstr "自有住宅是否有抵押"
+
+msgid "Where from to Kansas"
+msgstr "從何處前往堪薩斯"
+
+msgid "Number of months unemployed"
+msgstr "失業月數"
+
+msgid "Illiterate and 15 to 21 years old"
+msgstr "不識字且年齡為 15 至 21 歲"
+
+msgid "Number of volumes in home library"
+msgstr "家中藏書冊數"
+
+msgid "Number of house"
+msgstr "門牌號碼"
+
+msgid "Year of immigration to the United States"
+msgstr "移民至美國的年份"
+
+msgid "Naturalized, alien or first papers"
+msgstr "已入籍、外國人或已提交入籍意向書"
+
+msgid "Attended school within year"
+msgstr "該年度曾就學"
+
+msgid "Nativity"
+msgstr "出生地"
+
+msgid "Father's Nativity"
+msgstr "父親出生地"
+
+msgid "Mother's Nativity"
+msgstr "母親出生地"
+
+msgid "Inhabitants in"
+msgstr "居民所在區域"
+
+msgid "Served in Federal army during rebellion"
+msgstr "叛亂期間曾在聯邦軍服役"
+
+msgid "Residence in State - Years"
+msgstr "在州內居住年數"
+
+msgid "Residence in State - Months"
+msgstr "在州內居住月數"
+
+msgid "Residence in District - Years"
+msgstr "在區內居住年數"
+
+msgid "Residence in District - Months"
+msgstr "在區內居住月數"
+
+msgid "Months Employed"
+msgstr "就業月數"
+
+msgid "Solder/Sailor"
+msgstr "士兵／水手"
+
+msgid "Foreign father"
+msgstr "外國出生的父親"
+
+msgid "Foreign mother"
+msgstr "外國出生的母親"
+
+msgid "Organized Township"
+msgstr "已設行政建制的鎮區"
+
+msgid "Unorganized Township"
+msgstr "未組織的鄉鎮"
+
+msgid "Name of Village"
+msgstr "村莊名稱"
+
+msgid "Name of City"
+msgstr "城市名稱"
+
+msgid "Sub-division"
+msgstr "分區"
+
+msgid "Precincts"
+msgstr "選區"
+
+msgid "Enumerated date from"
+msgstr "普查開始日期"
+
+msgid "Enumerated date to"
+msgstr "普查結束日期"
+
+msgid "Enumeration number"
+msgstr "普查編號"
+
+msgid "Fathers birthplace"
+msgstr "父親出生地"
+
+msgid "Mothers birthplace"
+msgstr "母親出生地"
+
+msgid "Residence in District - years"
+msgstr "在區內居住年數"
+
+msgid "Residence in District - months"
+msgstr "在區內居住月數"
+
+msgid "Army service"
+msgstr "陸軍服役"
+
+msgid "Wars"
+msgstr "戰爭"
+
+msgid "White males under 10"
+msgstr "未滿 10 歲白人男性"
+
+msgid "White males 10-17"
+msgstr "10-17 歲白人男性"
+
+msgid "White males 18-20"
+msgstr "18 至 20 歲白人男性"
+
+msgid "White males 21-44"
+msgstr "21-44 歲白人男性"
+
+msgid "White males 45 and over"
+msgstr "45 歲以上白人男性"
+
+msgid "Total White Males"
+msgstr "白人男性總數"
+
+msgid "White females under 10"
+msgstr "未滿 10 歲白人女性"
+
+msgid "White females 10-17"
+msgstr "10 至 17 歲白人女性"
+
+msgid "White females 18-20"
+msgstr "18 至 20 歲白人女性"
+
+msgid "White females 21-44"
+msgstr "21 至 44 歲白人女性"
+
+msgid "White females 45 and over"
+msgstr "45 歲以上白人女性"
+
+msgid "Total White Females"
+msgstr "白人女性總數"
+
+msgid "Total White Population"
+msgstr "白人人口總數"
+
+msgid "White persons between 6 and 18"
+msgstr "6 至 18 歲白人"
+
+msgid "No. White persons who can read and write"
+msgstr "可讀寫的白人人數"
+
+msgid "Colored males under 10"
+msgstr "未滿 10 歲有色人種男性"
+
+msgid "Colored males 10-17"
+msgstr "10 至 17 歲有色人種男性"
+
+msgid "Colored males 18-20"
+msgstr "18 至 20 歲有色人種男性"
+
+msgid "Colored males 21-44"
+msgstr "21 至 44 歲有色人種男性"
+
+msgid "Colored males 45 and over"
+msgstr "45 歲以上有色人種男性"
+
+msgid "Total Colored Males"
+msgstr "有色人種男性總數"
+
+msgid "Colored females under 10"
+msgstr "未滿 10 歲有色人種女性"
+
+msgid "Colored females 10-17"
+msgstr "10 至 17 歲有色人種女性"
+
+msgid "Colored females 18-20"
+msgstr "18 至 20 歲有色人種女性"
+
+msgid "Colored females 21-44"
+msgstr "21 至 44 歲有色人種女性"
+
+msgid "Colored females 45 and over"
+msgstr "45 歲及以上有色人種女性"
+
+msgid "Total Colored Females"
+msgstr "有色人種女性總數"
+
+msgid "Total Colored Population"
+msgstr "有色人種總人口"
+
+msgid "Colored persons between 6 and 18"
+msgstr "6 至 18 歲有色人種人口"
+
+msgid "No. Colored persons who can read and write"
+msgstr "能閱讀及書寫的有色人種人數"
+
+msgid "Deaf and Dumb Males"
+msgstr "聾啞男性"
+
+msgid "Deaf and Dumb Males Age"
+msgstr "聾啞男性年齡"
+
+msgid "Deaf and Dumb Females"
+msgstr "聾啞女性"
+
+msgid "Deaf and Dumb Females Age"
+msgstr "聾啞女性年齡"
+
+msgid "Deaf and Dumb White"
+msgstr "聾啞白人"
+
+msgid "Deaf and Dumb Colored"
+msgstr "失聰／啞的有色人種"
+
+msgid "No. Deaf and Dumb taught to read and write"
+msgstr "受過讀寫教育的聾啞人數"
+
+msgid "Blind Males"
+msgstr "失明男性"
+
+msgid "Blind Males Age"
+msgstr "失明男性年齡"
+
+msgid "Blind Females"
+msgstr "失明女性"
+
+msgid "Blind Females Age"
+msgstr "失明女性年齡"
+
+msgid "Blind White"
+msgstr "失明白人"
+
+msgid "Blind Colored"
+msgstr "Blind Colored"
+
+msgid "No. Blind taught to read and write"
+msgstr "受過讀寫教育的失明人數"
+
+msgid "Insane Males"
+msgstr "精神失常男性"
+
+msgid "Insane Males Age"
+msgstr "Insane Males Age"
+
+msgid "Insane Females"
+msgstr "精神失常女性"
+
+msgid "Insane Females Age"
+msgstr "精神失常女性年齡"
+
+msgid "Insane White"
+msgstr "精神失常白人"
+
+msgid "Insane Colored"
+msgstr "精神失常有色人種"
+
+msgid "No. Insane taught to read and write"
+msgstr "受過讀寫教育的精神失常人數"
+
+msgid "Live Stock Horses"
+msgstr "牲畜：馬"
+
+msgid "Live Stock Mules"
+msgstr "牲畜：騾子"
+
+msgid "Live Stock Jacks"
+msgstr "Live Stock Jacks"
+
+msgid "Live Stock Jennies"
+msgstr "牲畜：母驢"
+
+msgid "Live Stock Cattle"
+msgstr "牲畜：牛"
+
+msgid "Live Stock Sheep"
+msgstr "活畜：綿羊"
+
+msgid "Live Stock Hogs"
+msgstr "牲畜：豬"
+
+msgid "Products Bushels Wheat"
+msgstr "小麥產量（蒲式耳）"
+
+msgid "Products Bushels Corn"
+msgstr "玉米產量（蒲式耳）"
+
+msgid "Products Bushels Oats"
+msgstr "燕麥產量（蒲式耳）"
+
+msgid "Products Bushels Barley"
+msgstr "產物：大麥 (蒲式耳)"
+
+msgid "Products Bushels Rye"
+msgstr "產物：黑麥 (蒲式耳)"
+
+msgid "Products Lbs. Tobacco"
+msgstr "菸草產量（磅）"
+
+msgid "Products Lbs. Wool"
+msgstr "產物：羊毛 (磅)"
+
+msgid "Products Lbs. Sugar"
+msgstr "糖產量（磅）"
+
+msgid "Products Tons Hay"
+msgstr "乾草產量（噸）"
+
+msgid "Products Tons Hemp"
+msgstr "產物：大麻 (噸)"
+
+msgid "Products Galls. Whiskey"
+msgstr "產物：威士忌 (加侖)"
+
+msgid "Products Galls. Wine"
+msgstr "產物：葡萄酒 (加侖)"
+
+msgid "Products Galls. Molasses"
+msgstr "產物：糖蜜 (加侖)"
+
+msgid "Total Population"
+msgstr "總人口"
+
+msgid "Building Material"
+msgstr "建築材料"
+
+msgid "Dwelling Value"
+msgstr "住宅價值"
+
+msgid "Birthplace (NY County or other)"
+msgstr "出生地（紐約州內的郡或其他地點）"
+
+msgid "Years resident in this city or town"
+msgstr "居住在這座城市或城鎮的年數"
+
+msgid "Native Voter"
+msgstr "本土出生的選民"
+
+msgid "Naturalized Voter"
+msgstr "已入籍的選民"
+
+msgid "Alien"
+msgstr "外僑"
+
+msgid "Persons of color not taxed"
+msgstr "不納稅的有色人種"
+
+msgid "Over 21/Illiterate"
+msgstr "超過 21 歲／不識字"
+
+msgid "Landowner"
+msgstr "土地所有人"
+
+msgid "Deaf, Dumb, Blind, Insane, Idiotic"
+msgstr "失聰、無法說話、失明、精神失常、智能障礙"
+
+msgid "Inhabitants in the"
+msgstr "居民所在區域"
+
+msgid "Parent of how many children"
+msgstr "育有幾名子女"
+
+msgid "Number of times married"
+msgstr "結婚次數"
+
+msgid "Place of Occupation"
+msgstr "職業地點"
+
+msgid "Land owner"
+msgstr "土地所有人"
+
+msgid "Now in army"
+msgstr "目前在陸軍服役"
+
+msgid "Now in navy"
+msgstr "目前在海軍服役"
+
+msgid "Formerly in army"
+msgstr "曾在陸軍服役"
+
+msgid "Formerly in navy"
+msgstr "曾在海軍服役"
+
+msgid "Usual place of employment (if not same city/town)"
+msgstr "平時工作地點（若與居住市／鎮不同）"
+
+msgid "Election District of the Town of"
+msgstr "此城鎮的選區"
+
+msgid "the County of"
+msgstr "the County of"
+
+msgid "Birth Country"
+msgstr "出生國家"
+
+msgid "Citizen or Alien"
+msgstr "公民或外僑"
+
+msgid "Inhabitants living in"
+msgstr "居民居住地"
+
+msgid "Election District, Ward"
+msgstr "選區、行政區"
+
+msgid "Number of years in the US"
+msgstr "在美國居住年數"
+
+msgid "Class"
+msgstr "類別"
+
+msgid "Inmate: Residence given when admitted"
+msgstr "收容人：入院時登記的住址"
+
+msgid "Inhabitants of Block No."
+msgstr "街區住民（街區編號）。"
+
+msgid "Election District No."
+msgstr "選區編號。"
+
+msgid "Ward No."
+msgstr "行政區編號。"
+
+msgid "City or Village"
+msgstr "城市或村莊"
+
+msgid "Assembly District No."
+msgstr "議會選區編號。"
+
+msgid "Where and When Naturalized"
+msgstr "入籍地點及時間"
+
+msgid "WM 21-60"
+msgstr "21 至 60 歲白人男性"
+
+msgid "WM under 21 above 60 "
+msgstr "未滿 21 歲或超過 60 歲的白人男性 "
+
+msgid "WF all ages"
+msgstr "各年齡白人女性"
+
+msgid "Blacks 12-50"
+msgstr "12 至 50 歲黑人"
+
+msgid "Blacks under 12 above 50"
+msgstr "未滿 12 歲或超過 50 歲的黑人"
+
+msgid "Native White Males"
+msgstr "本土出生的白人男性"
+
+msgid "Native White Females"
+msgstr "本土出生的白人女性"
+
+msgid "Native Colored Males"
+msgstr "本土出生的有色人種男性"
+
+msgid "Native Colored Females"
+msgstr "本國出生的有色人種女性"
+
+msgid "Foreign Males"
+msgstr "外國出生的男性"
+
+msgid "Foreign Females"
+msgstr "外國出生的女性"
+
+msgid "Male Children 5 and Under"
+msgstr "5 歲以下男童"
+
+msgid "Female Children 5 and Under"
+msgstr "5 歲以下女童"
+
+msgid "Males 5 to 20 Years of Age"
+msgstr "5 至 20 歲男性"
+
+msgid "Females 5 to 20 Years of Age"
+msgstr "5 至 20 歲女性"
+
+msgid "Males 20 to 60 Years of Age"
+msgstr "20 至 60 歲男性"
+
+msgid "Females 20 to 60 Years of Age"
+msgstr "20 至 60 歲女性"
+
+msgid "Males Over 60 Years of Age"
+msgstr "年逾 60 歲男性"
+
+msgid "Females Over 60 Years of Age"
+msgstr "年逾 60 歲女性"
+
+msgid "P.O."
+msgstr "郵局。"
+
+msgid "Sec."
+msgstr "區段。"
+
+msgid "T."
+msgstr "鎮區。"
+
+msgid "R."
+msgstr "R."
+
+msgid "No."
+msgstr "編號。"
+
+msgid "St./Ave "
+msgstr "街道／大道 "
+
+msgid "Hotel or Institution"
+msgstr "旅館或機構"
+
+msgid "Years in South Dakota"
+msgstr "在 South Dakota 居住年數"
+
+msgid "Years in United States"
+msgstr "在美國居留年數"
+
+msgid "Birthplace of Father"
+msgstr "父親出生地"
+
+msgid "Birthplace of Mother"
+msgstr "母親出生地"
+
+msgid "Black"
+msgstr "黑人"
+
+msgid "Red"
+msgstr "紅種人"
+
+msgid "Yellow"
+msgstr "黃種人"
+
+msgid "Divorced"
+msgstr "已離婚"
+
+msgid "Can Read"
+msgstr "會閱讀"
+
+msgid "Can't Read"
+msgstr "不會閱讀"
+
+msgid "Can Write"
+msgstr "會寫字"
+
+msgid "Can't Write"
+msgstr "不會寫字"
+
+msgid "Do you own your home or farm"
+msgstr "您是否擁有住宅或農場"
+
+msgid "Ancestry"
+msgstr "祖源"
+
+msgid "Father's birthplace"
+msgstr "父親出生地"
+
+msgid "Mother's birthplace"
+msgstr "母親出生地"
+
+msgid "Extent of Education"
+msgstr "教育程度"
+
+msgid "Graduate of"
+msgstr "畢業學校"
+
+msgid "Maiden name of wife"
+msgstr "妻子娘家姓氏"
+
+msgid "Year married"
+msgstr "結婚年份"
+
+msgid "Church affiliation"
+msgstr "所屬教會"
+
+msgid "If Foreign Born, are you Naturalized"
+msgstr "若出生於國外，是否已入籍"
+
+msgid "Years in S.D."
+msgstr "Years in S.D."
+
+msgid "Division"
+msgstr "分區"
+
+msgid "Male under 21"
+msgstr "未滿 21 歲男性"
+
+msgid "Male over 21"
+msgstr "年逾 21 歲男性"
+
+msgid "Female under 21"
+msgstr "未滿 21 歲女性"
+
+msgid "Female over 21"
+msgstr "超過 21 歲的女性"
+
+msgid "Town/City"
+msgstr "鎮／市"
+
+msgid "Heads of Families"
+msgstr "家戶戶長"
+
+msgid "White males"
+msgstr "白人男性"
+
+msgid "White females"
+msgstr "白人女性"
+
+msgid "Colored males"
+msgstr "有色人種男性"
+
+msgid "Colored females"
+msgstr "有色人種女性"
+
+msgid "Deaf & Dumb"
+msgstr "聾啞"
+
+msgid "Foreign Birth"
+msgstr "出生於外國"
+
+msgid "Inhabitants of"
+msgstr "居民所屬地區"
+
+msgid "in"
+msgstr "於"
+
+msgid "of"
+msgstr "的"
+
+msgid "Nativity - United States"
+msgstr "出生地：美國"
+
+msgid "Nativity - Germany"
+msgstr "出生地：德國"
+
+msgid "Nativity - Great Britain"
+msgstr "出生地－大不列顛"
+
+msgid "Nativity - Ireland"
+msgstr "出生地：愛爾蘭"
+
+msgid "Nativity - France"
+msgstr "出生地：法國"
+
+msgid "Nativity - British America"
+msgstr "出生地 - 英屬北美"
+
+msgid "Nativity - Scandinavian"
+msgstr "出生地：斯堪地那維亞"
+
+msgid "Nativity - Holland"
+msgstr "出生地：荷蘭"
+
+msgid "Nativity - All other countries"
+msgstr "出生地－所有其他國家"
+
+msgid "Residing in the"
+msgstr "居住地"
+
+msgid "Co."
+msgstr "Co."
+
+msgid "Reg't."
+msgstr "Reg't."
+
+msgid "State or Vessel"
+msgstr "州或船隻"
+
+msgid "Parents place of birth"
+msgstr "父母出生地"
+
+msgid "Owned/Rented"
+msgstr "自有／租用"
+
+msgid "Free/Mortgaged"
+msgstr "無抵押／有抵押"
+
+msgid "Farm/House"
+msgstr "農場／房屋"
+
+msgid "Certificate Number"
+msgstr "證明文件編號"
+
+msgid "Entry Number"
+msgstr "項目編號"
+
+msgid "Date Registered"
+msgstr "登記日期"
+
+msgid "Registrar"
+msgstr "登記官"
+
+msgid "Twin, triplet or other"
+msgstr "雙胞胎、三胞胎或其他"
+
+msgid "No. in order of birth"
+msgstr "出生順序"
+
+msgid "Legitimate"
+msgstr "婚生"
+
+msgid "Date of birth"
+msgstr "出生日期"
+
+msgid "Place of Record"
+msgstr "登記地點"
+
+msgid "Book/Volume"
+msgstr "簿冊／卷"
+
+msgid "Race/Color"
+msgstr "種族／膚色"
+
+msgid ""
+"STOP! If you want this record to be attached to the Parents move to Father."
+msgstr "請先停下！若要將這筆記錄附加至父母，請移至父親。"
+
+msgid "Mother (Maiden Name)"
+msgstr "母親 (婚前姓氏)"
+
+msgid "Residence of Parents"
+msgstr "父母住所"
+
+msgid "By Whom Reported"
+msgstr "填報者"
+
+msgid "Date Recorded"
+msgstr "記錄日期"
+
+msgid "License No."
+msgstr "執照編號。"
+
+msgid "Date of Marriage"
+msgstr "結婚日期"
+
+msgid "Married by"
+msgstr "證婚人"
+
+msgid "Place of Marriage"
+msgstr "結婚地點"
+
+msgid "Consent given by"
+msgstr "同意人"
+
+msgid "Bond/Licence"
+msgstr "結婚擔保文書／許可證"
+
+msgid "Length of Residence"
+msgstr "居住時間長度"
+
+msgid "Served in U.S. Military"
+msgstr "曾在美軍服役"
+
+msgid "Spouse's Name"
+msgstr "配偶姓名"
+
+msgid "Birth date of deceased"
+msgstr "死者出生日期"
+
+msgid "Industry or Business"
+msgstr "產業或行業"
+
+msgid "Name of employer"
+msgstr "雇主姓名"
+
+msgid "Date last worked"
+msgstr "最後工作日期"
+
+msgid "Years in this occupation"
+msgstr "從事此職業的年數"
+
+msgid "Education Level"
+msgstr "教育程度"
+
+msgid "Social Security No."
+msgstr "社會安全號碼。"
+
+msgid "Place of Burial"
+msgstr "安葬地點"
+
+msgid "Date of Burial"
+msgstr "安葬日期"
+
+msgid "Residence Place"
+msgstr "居住地點"
+
+msgid "Burial Date"
+msgstr "安葬日期"
+
+msgid "Burial Place"
+msgstr "安葬地點"
+
+msgid "Congressional District"
+msgstr "國會選區"
+
+msgid "in the Counties of"
+msgstr "所在各郡"
+
+msgid "in the month of"
+msgstr "所在月份"
+
+msgid "Age 1 July 1863"
+msgstr "1863 年 7 月 1 日的年齡"
+
+msgid "White or Colored"
+msgstr "白人或有色人種"
+
+msgid "Former Military Service"
+msgstr "以往兵役經歷"
+
+msgid "Station Headquarters"
+msgstr "駐地總部"
+
+msgid "Congr. Dist. of"
+msgstr "所屬國會選區"
+
+msgid "Card (A, B, or C)"
+msgstr "卡片（A、B 或 C）"
+
+msgid "Serial No."
+msgstr "序號。"
+
+msgid "Registration No."
+msgstr "登記號碼。"
+
+msgid "Order No."
+msgstr "順序號碼。"
+
+msgid "Age in yrs."
+msgstr "年齡 (歲)。"
+
+msgid "Home Address"
+msgstr "住家地址"
+
+msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
+msgstr "出生即具公民身分、歸化公民、外國人、非公民或具公民身分的印第安人"
+
+msgid "If not a citizen, of what nation are you a citizen or subject?"
+msgstr "若非公民，您是哪個國家的公民或臣民？"
+
+msgid "Employer's Name & address"
+msgstr "雇主姓名及地址"
+
+msgid "Nearest Relative"
+msgstr "最近親屬"
+
+msgid "Dependants & Address"
+msgstr "受扶養人及地址"
+
+msgid ""
+"Have you a father, mother, wife, child under 12, or a sister or brother "
+"under 12, solely dependent on your support (specify which)?"
+msgstr ""
+"您的父親、母親、妻子、未滿 12 歲的子女或兄弟姊妹，是否完全仰賴您扶養 (請指明"
+"是誰)？"
+
+msgid "What military service have you had? (Branch, Years, Nation or State)"
+msgstr "您曾服過哪些兵役？（軍種、年數、國家或州）"
+
+msgid "Do you claim exemption from draft (specify grounds)"
+msgstr "您是否申請免除徵兵 (請註明理由)"
+
+msgid "Race "
+msgstr "種族 "
+
+msgid "Build / Weight"
+msgstr "體格／體重"
+
+msgid "Hair Color"
+msgstr "髮色"
+
+msgid "Bald"
+msgstr "禿頭"
+
+msgid "Disability"
+msgstr "身心障礙"
+
+msgid "Place of Registration"
+msgstr "登記地點"
+
+msgid "Date of Registration"
+msgstr "登記日期"
+
+msgid "Serial Number"
+msgstr "序號"
+
+msgid "Order Number"
+msgstr "順序號碼"
+
+msgid "Registration Card"
+msgstr "登記卡"
+
+msgid ""
+"Found in lower left corner\n"
+"      D.S.S. Form 1\n"
+"        (Men 21 - 31)\n"
+"      D.S.S. Form 1 (Rev. 6-9-41)\n"
+"        (Men who turned 21 since 1st registration)\n"
+"      D.S.S. Form 1 (Rev. 1/1/42)\n"
+"        (Men born Feb 17, 1897 to Dec 31 1921)\n"
+"      D.S.S. Form 1 (Rev. 4/1/42)\n"
+"        (Men 45-64)\n"
+"      D.S.S. Form 1 (Rev. 6/1/42)\n"
+"        (Men 18-20)\n"
+"      D.S.S. Form 1 (Rev. 11/16/42)\n"
+"        (Men who turned 18 since\n"
+"         previous registration)"
+msgstr ""
+"見於左下角\n"
+"      D.S.S. Form 1\n"
+"        （21 - 31 歲男性）\n"
+"      D.S.S. Form 1 (Rev. 6-9-41)\n"
+"        （自第 1 次登記以來年滿 21 歲的男性）\n"
+"      D.S.S. Form 1 (Rev. 1/1/42)\n"
+"        （1897 年 2 月 17 日至 1921 年 12 月 31 日出生的男性）\n"
+"      D.S.S. Form 1 (Rev. 4/1/42)\n"
+"        （45-64 歲男性）\n"
+"      D.S.S. Form 1 (Rev. 6/1/42)\n"
+"        （18-20 歲男性）\n"
+"      D.S.S. Form 1 (Rev. 11/16/42)\n"
+"        （自前次登記以來\n"
+"         年滿 18 歲的男性）"
+
+msgid "(1) First, Middle, Last"
+msgstr "(1) 名、中間名、姓"
+
+msgid "Place of Residence"
+msgstr "居住地點"
+
+msgid ""
+"(2) Address or Place of Residence\n"
+" No. and street or R.F.D. No., Town, County, State"
+msgstr ""
+"(2) 地址或居住地點\n"
+" 門牌及街道或鄉村郵遞路線編號、城鎮、郡、州"
+
+msgid "Mailing Address"
+msgstr "通訊地址"
+
+msgid ""
+" Not used on D.S.S. Form 1\n"
+" (3) Used on all other forms"
+msgstr ""
+" 不用於 D.S.S. Form 1\n"
+" (3) 用於所有其他表格"
+
+msgid "Telephone"
+msgstr "電話"
+
+msgid ""
+"(3) On D.S.S. Form 1\n"
+"(4) On all other forms"
+msgstr ""
+"(3) 於 D.S.S. Form 1\n"
+"(4) 於所有其他表格"
+
+msgid ""
+"(4) On D.S.S. Form 1\n"
+"(5) On all other forms"
+msgstr ""
+"(4) 於 D.S.S. Form 1\n"
+"(5) 於所有其他表格"
+
+msgid "(Below Age in Years)"
+msgstr "(年齡欄下方，單位為歲)"
+
+msgid ""
+"(5) On D.S.S. Form 1\n"
+"(6) On all other forms"
+msgstr ""
+"(5) 於 D.S.S. Form 1\n"
+"(6) 於所有其他表格"
+
+msgid "Country of Citizenship"
+msgstr "國籍所屬國家"
+
+msgid ""
+"(6) On D.S.S. Form 1\n"
+"Not used on other forms"
+msgstr ""
+"(6) 適用於 D.S.S. 表單 1\n"
+"不適用於其他表單"
+
+msgid "Who will always know your address (Name & Address)"
+msgstr "始終知道您住址的人（姓名與地址）"
+
+msgid ""
+"(7 & 9) On D.S.S. Form 1\n"
+"(7) On all but D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) On D.S.S. Form 1 (Rev. 6-9-41)"
+msgstr ""
+"(7 & 9) On D.S.S. Form 1\n"
+"(7) On all but D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) On D.S.S. Form 1 (Rev. 6-9-41)"
+
+msgid "Relationship "
+msgstr "關係 "
+
+msgid "(8) Only on D.S.S. Form 1"
+msgstr "(8) 僅用於 D.S.S. Form 1"
+
+msgid "Occupation "
+msgstr "職業 "
+
+msgid "(7) Only on D.S.S. Form 1 (Rev. 6-9-41)"
+msgstr "(7) 僅用於 D.S.S. Form 1 (Rev. 6-9-41)"
+
+msgid ""
+"(10) On D.S.S. Form 1\n"
+"(9) On D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) on all others forms"
+msgstr ""
+"(10) 於 D.S.S. Form 1\n"
+"(9) 於 D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) 於所有其他表格"
+
+msgid "Place of employment or business"
+msgstr "工作或營業地點"
+
+msgid ""
+"(11) On D.S.S. Form 1\n"
+"(10) On D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(9) on all others forms"
+msgstr ""
+"(11) 於 D.S.S. Form 1\n"
+"(10) 於 D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(9) 於所有其他表格"
+
+msgid ""
+"White\n"
+"Negro\n"
+"Oriental\n"
+"Indian\n"
+"Filipino"
+msgstr ""
+"白人\n"
+"黑人\n"
+"東方人\n"
+"印第安人\n"
+"菲律賓人"
+
+msgid "Complexion"
+msgstr "膚色"
+
+msgid ""
+"Sallow\n"
+"Light\n"
+"Ruddy\n"
+"Dark\n"
+"Freckled\n"
+"Light brown\n"
+"Dark brown\n"
+"Black"
+msgstr ""
+"蠟黃\n"
+"白皙\n"
+"紅潤\n"
+"深色\n"
+"有雀斑\n"
+"淺棕色\n"
+"深棕色\n"
+"黑色"
+
+msgid "Eyes"
+msgstr "眼睛"
+
+msgid ""
+"Blue\n"
+"Gray\n"
+"Hazel\n"
+"Brown\n"
+"Black"
+msgstr ""
+"藍色\n"
+"灰色\n"
+"淡褐色\n"
+"棕色\n"
+"黑色"
+
+msgid "Hair"
+msgstr "頭髮"
+
+msgid ""
+"Blonde\n"
+"Red\n"
+"Brown\n"
+"Black\n"
+"Gray\n"
+"Bald"
+msgstr ""
+"金色\n"
+"紅色\n"
+"棕色\n"
+"黑色\n"
+"灰色\n"
+"禿頭"
+
+msgid "Other characteristics"
+msgstr "其他特徵"
+
+msgid "Date entered"
+msgstr "入伍日期"
+
+msgid "Place entered"
+msgstr "入伍地點"
+
+msgid "Term of enlistment"
+msgstr "服役期限"
+
+msgid "Eye color"
+msgstr "眼睛顏色"
+
+msgid "Hair color"
+msgstr "髮色"
+
+msgid "Rank in"
+msgstr "Rank in"
+
+msgid "Branch"
+msgstr "軍種"
+
+msgid "Regiment/Unit/Ship"
+msgstr "團／單位／艦艇"
+
+msgid "Service Number"
+msgstr "軍籍號碼"
+
+msgid "No. of enlistment"
+msgstr "入伍次數"
+
+msgid "Date discharged"
+msgstr "退伍日期"
+
+msgid "Place discharged"
+msgstr "退伍地點"
+
+msgid "Rank out"
+msgstr "退伍時軍階"
+
+msgid "Industry/Employer"
+msgstr "產業/雇主"
+
+msgid "Residents Status"
+msgstr "居民身分"
+
+msgid "Amt"
+msgstr "Amt"
+
+msgid "Town or City"
+msgstr "城鎮或城市"
+
+msgid "Herred eller By"
+msgstr "城鎮或城市"
+
+msgid "Sogn"
+msgstr "Sogn"
+
+msgid "Gade"
+msgstr "Gade"
+
+msgid "Gift"
+msgstr "Gift"
+
+msgid "Alder"
+msgstr "年齡"
+
+msgid "Stilling i familien"
+msgstr "家庭中的關係"
+
+msgid "Titel, Embed, Forretning, Håndværk"
+msgstr "Titel, Embed, Forretning, Håndværk"
+
+msgid "Stilling, embede eller erhverv"
+msgstr "職業"
+
+msgid "Where Born"
+msgstr "出生地"
+
+msgid "Fødested"
+msgstr "出生地"
+
+msgid "Erhverv"
+msgstr "職業"
+
+msgid "Trossamfund"
+msgstr "宗教"
+
+msgid "Sted"
+msgstr "地點"
+
+msgid "Comments"
+msgstr "註解"
+
+msgid "Bemærkninger"
+msgstr "註解"
+
+msgid "Place of Work"
+msgstr "工作地點"
+
+msgid "Arbejdssted"
+msgstr "工作地點"
+
+msgid "Fødselsdato"
+msgstr "Fødselsdato"
+
+msgid "Years at current residence"
+msgstr "在現居地居住年數"
+
+msgid "År tilflyttet"
+msgstr "在現居地居住年數"
+
+msgid "Previous residence"
+msgstr "先前居住地"
+
+msgid "Tilflyttet fra"
+msgstr "先前居住地"
+
+msgid "År gift"
+msgstr "結婚年份"
+
+msgid "Children Living"
+msgstr "在世子女"
+
+msgid "Levende børn"
+msgstr "在世子女"
+
+msgid "Children Dead"
+msgstr "已故子女"
+
+msgid "Døde børn"
+msgstr "已故子女"
+
+msgid "Køn"
+msgstr "Køn"
+
+msgid "Year stayed in parish"
+msgstr "居住於教區的年份"
+
+msgid "Hvilket aar taget ophold i sognet"
+msgstr "居住於教區的年份"
+
+msgid "Previous Residence"
+msgstr "先前居住地"
+
+msgid "Sidste bopæl inden tilflytning"
+msgstr "先前居住地"
+
+msgid "Bemærkning"
+msgstr "註解"
+
+msgid "Income"
+msgstr "收入"
+
+msgid "Indkomst"
+msgstr "收入"
+
+msgid "Assets"
+msgstr "資產"
+
+msgid "Formue"
+msgstr "資產"
+
+msgid "State Tax"
+msgstr "國稅"
+
+msgid "Statsskat"
+msgstr "國稅"
+
+msgid "Council"
+msgstr "議會"
+
+msgid "Kommuneskat"
+msgstr "Kommuneskat"
+
+msgid "Residence on 5 Nov 1924"
+msgstr "1924 年 11 月 5 日的居住地"
+
+msgid "Bopæl 5 nov 1924"
+msgstr "1924 年 11 月 5 日的居住地"
+
+msgid "Stay on 5 Nov 1929"
+msgstr "1929 年 11 月 5 日留宿"
+
+msgid "Ophold 5 nov 1929"
+msgstr "Ophold 5 nov 1929"
+
+msgid "Date Married"
+msgstr "結婚日期"
+
+msgid "Dato gift"
+msgstr "結婚日期"
+
+msgid "Event Place (Original)"
+msgstr "事件地點（原始）"
+
+msgid "Birth Year (Estimated)"
+msgstr "出生年份（估計）"
+
+msgid "Spouse's Gender"
+msgstr "配偶性別"
+
+msgid "Spouse's Age"
+msgstr "配偶年齡"
+
+msgid "Spouse's Birth Year (Estimated)"
+msgstr "配偶出生年份 (推估)"
+
+msgid "Spouse's Father's Name"
+msgstr "配偶父親姓名"
+
+msgid "Spouse's Mother's Name"
+msgstr "配偶母親姓名"
+
+msgid "Record Number"
+msgstr "記錄編號"
+
+msgid "Volume"
+msgstr "卷"
+
+msgid "Volume Beginning Year"
+msgstr "卷冊起始年份"
+
+msgid "Volume Ending Year"
+msgstr "冊次結束年份"
+
+msgid "Can read and write"
+msgstr "能讀寫"
+
+msgid "Military"
+msgstr "軍事"
+
+msgid "Taxes"
+msgstr "稅金"
+
+msgid "Type of roof"
+msgstr "屋頂類型"
+
+msgid "Arrived since"
+msgstr "抵達時間"
+
+msgid "Registration District"
+msgstr "登記區"
+
+msgid "Administrative Area"
+msgstr "行政區"
+
+msgid "County/Administrative Area"
+msgstr "郡／行政區"
+
+msgid "Banns/Licence"
+msgstr "結婚公告／許可證"
+
+msgid "Deceased"
+msgstr "已故"
+
+msgid "Maiden surname of woman who was married"
+msgstr "已婚女性的婚前姓氏"
+
+msgid "Usual Address"
+msgstr "通常居住地址"
+
+msgid "City or Borough"
+msgstr "城市或自治市"
+
+msgid "Parish or Township"
+msgstr "教區或鄉鎮"
+
+msgid "NAMES of each Person who abode therein the preceding Night."
+msgstr "前一晚在此居住的每個人的姓名。"
+
+msgid ""
+"AGE, rounded down to the nearest five years for those aged fifteen or over."
+msgstr "年齡，十五歲以上者向下取至最接近的五歲倍數。"
+
+msgid "PROFESSION, TRADE, EMPLOYMENT or of INDEPENDENT MEANS."
+msgstr "職業、行業、受僱工作或獨立生活來源。"
+
+msgid ""
+"Whether Born in same County (Y or N), Scotland (S), Ireland (I) or Foreign "
+"Parts (P)."
+msgstr "是否出生於同一郡（Y 或 N）、蘇格蘭（S）、愛爾蘭（I）或外國地區（P）。"
+
+msgid "Ecclesiastical District"
+msgstr "教會區"
+
+msgid ""
+"Name and Surname of each Person who abode in the house, on the Night of the "
+"30th March, 1851"
+msgstr "1851 年 3 月 30 日晚間在此屋居住的每個人的名字及姓氏"
+
+msgid "Relation to Head of Family"
+msgstr "與戶長的關係"
+
+msgid "Rank, Profession or Occupation"
+msgstr "身分、專業或職業"
+
+msgid "Whether Blind or Deaf and Dumb"
+msgstr "是否失明或聾啞"
+
+msgid "City or Municipal Borough"
+msgstr "城市或自治市"
+
+msgid "Municipal Ward"
+msgstr "市政分區"
+
+msgid "Parliamentary Borough"
+msgstr "國會選區"
+
+msgid "Hamlet or Tything"
+msgstr "小村落或十戶區"
+
+msgid "Name and Surname of each Person"
+msgstr "每個人的名字及姓氏"
+
+msgid "Rank, Profession of Occupation"
+msgstr "身分、專業或職業"
+
+msgid "Whether Blind, or Deaf-and-Dumb"
+msgstr "是否失明或聾啞"
+
+msgid "Civil Parish or Township"
+msgstr "民政教區或鄉鎮"
+
+msgid "Village or Hamlet"
+msgstr "村莊或小村落"
+
+msgid "Local Board or Improvement Commissioners District"
+msgstr "地方委員會或公共改善委員會轄區"
+
+msgid "NAME and Surname of each Person"
+msgstr "每個人的名字及姓氏"
+
+msgid "RELATION to Head of Family"
+msgstr "與戶長的關係"
+
+msgid "CONDITION"
+msgstr "狀況"
+
+msgid "AGE of"
+msgstr "年齡"
+
+msgid "Rank, Profession or OCCUPATION"
+msgstr "階級、專業或職業"
+
+msgid ""
+"Whether\n"
+"1. Deaf-and-Dumb\n"
+"2. Blind\n"
+"3. Imbecile or Idiot\n"
+"4. Lunatic"
+msgstr ""
+"是否為\n"
+"1. 聾啞\n"
+"2. 失明\n"
+"3. 智能障礙\n"
+"4. 精神失常"
+
+msgid "Town, Village or Hamlet"
+msgstr "城鎮、村莊或小村落"
+
+msgid "Urban Sanitary District"
+msgstr "都市衛生區"
+
+msgid "Rural Sanitary District"
+msgstr "鄉村衛生區"
+
+msgid "Ecclesiastical Parish or District"
+msgstr "教會教區或轄區"
+
+msgid "CONDITION as to Marriage"
+msgstr "婚姻狀態"
+
+msgid "AGE last Birthday of"
+msgstr "上次生日的年齡"
+
+msgid ""
+"If\n"
+"(1) Deaf-and-Dumb\n"
+"(2) Blind\n"
+"(3) Imbecile or Idiot\n"
+"(4) Lunatic"
+msgstr ""
+"是否為\n"
+"(1) 聾啞\n"
+"(2) 失明\n"
+"(3) 智能障礙\n"
+"(4) 精神失常"
+
+msgid "Administrative County"
+msgstr "行政郡"
+
+msgid "Civil Parish"
+msgstr "民政教區"
+
+msgid "Municipal Borough"
+msgstr "自治市"
+
+msgid "Parliamentary Borough or Division"
+msgstr "國會選區或分區"
+
+msgid "PROFESSION or OCCUPATION"
+msgstr "專業或職業"
+
+msgid "Neither"
+msgstr "皆非"
+
+msgid "Neither Employer nor Employed"
+msgstr "既非雇主也非受僱者"
+
+msgid ""
+"If\n"
+"(1) Deaf-and-Blind\n"
+"(2) Blind\n"
+"(3) Lunatic, Imbecile or Idiot"
+msgstr ""
+"是否為\n"
+"(1) 聾盲\n"
+"(2) 失明\n"
+"(3) 精神失常或智能障礙"
+
+msgid "Ecclesiastical Parish"
+msgstr "教會教區"
+
+msgid "County Borough, Municipal Borough, or Urban District"
+msgstr "郡級自治市、自治市或都市區"
+
+msgid "Ward of Municipal Borough or of Urban District"
+msgstr "自治市或都市區的分區"
+
+msgid "Rural District"
+msgstr "鄉村行政區"
+
+msgid "Town or Village or Hamlet"
+msgstr "城鎮、村莊或小村落"
+
+msgid "Condition as to Marriage"
+msgstr "婚姻狀態"
+
+msgid "Age last Birthday of"
+msgstr "上次生日的年齡"
+
+msgid "PROFESSION OR OCCUPATION"
+msgstr "專業或職業"
+
+msgid "Work Type"
+msgstr "工作類型"
+
+msgid "Employer, Worker or Own Account"
+msgstr "雇主、受僱者或自營工作者"
+
+msgid "At Home"
+msgstr "在家"
+
+msgid "If Working at Home"
+msgstr "若在家工作"
+
+msgid ""
+"If\n"
+"(1) Deaf and Dumb\n"
+"(2) Blind\n"
+"(3) Lunatic\n"
+"(4) Imbecile, feeble-minded"
+msgstr ""
+"If\n"
+"(1) Deaf and Dumb\n"
+"(2) Blind\n"
+"(3) Lunatic\n"
+"(4) Imbecile, feeble-minded"
+
+msgid "Registration Sub-District"
+msgstr "登記分區"
+
+msgid "Enumeration District"
+msgstr "普查區"
+
+msgid "Number of Rooms"
+msgstr "房間數"
+
+msgid "NAME AND SURNAME"
+msgstr "名字及姓氏"
+
+msgid "RELATIONSHIP to Head of Family"
+msgstr "與戶長之關係"
+
+msgid "AGE (last Birthday)"
+msgstr "年齡 (上次生日)"
+
+msgid ""
+"\"Single,\" \"Married,\" \"Widower,\" or \"Widow,\" for all persons aged 15 "
+"years and upwards."
+msgstr "「未婚」、「已婚」、「鰥夫」或「寡婦」，適用於所有年滿 15 歲者。"
+
+msgid "Completed Years the present Marriage has lasted."
+msgstr "目前婚姻已維持的完整年數。"
+
+msgid "Children Total"
+msgstr "子女總數"
+
+msgid "Total Children Born Alive."
+msgstr "活產子女總數。"
+
+msgid "Children still Living."
+msgstr "健在子女數。"
+
+msgid "Children Died"
+msgstr "已故子女"
+
+msgid "Children who have Died."
+msgstr "已死亡的子女。"
+
+msgid "Industry or Service with which worker is connected."
+msgstr "工作者所屬的行業或服務業。"
+
+msgid "Whether Employer, Worker or Working on Own Account"
+msgstr "是雇主、受雇者，還是自營者"
+
+msgid "Whether Working at Home"
+msgstr "是否在家工作"
+
+msgid "BIRTHPLACE of every Person."
+msgstr "每位人物的出生地點。"
+
+msgid "NATIONALITY of every Person born in a Foreign Country."
+msgstr "每位出生於外國的人士的國籍。"
+
+msgid "INFIRMITY"
+msgstr "身心障礙"
+
+msgid "NAME and SURNAME"
+msgstr "名字與姓氏"
+
+msgid "RELATIONSHIP to Head of Household"
+msgstr "與戶長的關係"
+
+msgid "AGE years"
+msgstr "年齡 (歲)"
+
+msgid "Age Months"
+msgstr "年齡 (月)"
+
+msgid "AGE months"
+msgstr "年齡 (月)"
+
+msgid "SEX"
+msgstr "性別"
+
+msgid "MARRIAGE or ORPHANHOOD"
+msgstr "婚姻或父母存歿狀況"
+
+msgid ""
+"If attending a School or any kind of Educational Institution for the purpose "
+"of receiving Instruction"
+msgstr "是否為接受教育而就讀學校或任何教育機構"
+
+msgid ""
+"State here the precise branch of Profession, Trade, Manufacture, Service, &c."
+msgstr "請在此填寫職業、貿易、製造業、服務業等的具體分支。"
+
+msgid "Number of living children"
+msgstr "在世子女人數"
+
+msgid "Total number under sixteen years of age. If none write \"None.\""
+msgstr "未滿十六歲的總人數。若無，請填寫「無」。"
+
+msgid "Ages of living children"
+msgstr "在世子女的年齡"
+
+msgid "For each child place a X in the column corresponding to its age."
+msgstr "為每名子女在其年齡對應的欄位中填入 X。"
+
+msgid "E.D. Letter Code"
+msgstr "E.D. 字母代碼"
+
+msgid "Borough, U.D. or R.D."
+msgstr "自治市、都市區或鄉村區。"
+
+msgid "Registration District and Sub-district"
+msgstr "登記區及分區"
+
+msgid "SURNAMES and OTHER NAMES."
+msgstr "姓氏及其他名字。"
+
+msgid "OVSPI"
+msgstr "OVSPI"
+
+msgid "O, V, S, P or I"
+msgstr "O、V、S、P 或 I"
+
+msgid "M or F"
+msgstr "男或女"
+
+msgid "S, M, W or D."
+msgstr "S、M、W 或 D。"
+
+msgid "PERSONAL OCCUPATION"
+msgstr "個人職業"
+
+msgid "Instructions"
+msgstr "說明"
+
+msgid "See INSTRUCTIONS"
+msgstr "請參閱說明"
+
+msgid "Language Spoken"
+msgstr "使用語言"
+
+msgid "LANGUAGE SPOKEN."
+msgstr "使用語言。"
+
+msgid "GROS Data"
+msgstr "GROS 資料"
+
+msgid "Born in County"
+msgstr "是否出生於本郡"
+
+msgid "Foreigner, Born England or Ireland"
+msgstr "外國人、出生於英格蘭或愛爾蘭"
+
+msgid "Quoad Sacra Parish"
+msgstr "Quoad Sacra 教區"
+
+msgid "Parliamentary Burgh"
+msgstr "國會選區自治市"
+
+msgid "Royal Burgh"
+msgstr "Royal Burgh"
+
+msgid "Town or Village"
+msgstr "城鎮或村莊"
+
+msgid "House Schedule No"
+msgstr "住戶調查表編號"
+
+msgid "Relation to Head"
+msgstr "與戶長的關係"
+
+msgid "Blind, or Deaf and Dumb"
+msgstr "失明或聾啞"
+
+msgid "No. Of Schedule"
+msgstr "調查表編號"
+
+msgid "Road, Street, etc, and No. or Name of House"
+msgstr "道路、街道等，以及門牌號碼或房屋名稱"
+
+msgid "House Inhabited"
+msgstr "有人居住的房屋"
+
+msgid "House U or B"
+msgstr "House U or B"
+
+msgid "Rank, Profession, or Occupation"
+msgstr "身分、專業或職業"
+
+msgid "Whether Blind, or Deaf and Dumb"
+msgstr "是否失明或聾啞"
+
+msgid "No. of Children from 5 to 13 attending School"
+msgstr "5 至 13 歲就學兒童人數"
+
+msgid "WindowRooms"
+msgstr "WindowRooms"
+
+msgid "No. of Rooms with one or more Windows"
+msgstr "有一扇以上窗戶的房間數"
+
+msgid "Police Burgh"
+msgstr "Police Burgh"
+
+msgid "Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic"
+msgstr "是否為 1. 聾啞，2. 失明，3. 智能障礙，4. 精神失常"
+
+msgid "School Board District"
+msgstr "學校委員會轄區"
+
+msgid "School board District"
+msgstr "學校委員會轄區"
+
+msgid "Parliamentary Division"
+msgstr "國會選區"
+
+msgid "Municipal Burgh"
+msgstr "自治市鎮"
+
+msgid "Burgh Ward"
+msgstr "自治市分區"
+
+msgid "Island"
+msgstr "島嶼"
+
+msgid "Gaellic or G. & E."
+msgstr "蓋爾語或蓋爾語與英語（G. & E.）"
+
+msgid "Parish Ward"
+msgstr "Parish Ward"
+
+msgid "Profession or Occupation"
+msgstr "專業或職業"
+
+msgid "Employer, Worker or on Own Account"
+msgstr "雇主、受僱者或自營工作者"
+
+msgid "Working at Home"
+msgstr "居家工作"
+
+msgid "District Electoral Division"
+msgstr "選舉區"
+
+msgid "No. on Form B"
+msgstr "表單 B 編號"
+
+msgid "\"Read and Write\", \"Read\" or \"Cannot Read\""
+msgstr "「能讀寫」、「能閱讀」或「無法閱讀」"
+
+msgid ""
+"\"Irish\" or \"Irish & English\", in other cases no entry should be made"
+msgstr "「愛爾蘭文」或「愛爾蘭文及英文」，其他情況應留白"
+
+msgid ""
+"\"Deaf and Dumb\", \"Dumb only\", \"Blind\", \"Imbecile or Idiot\", or "
+"\"Lunatic\""
+msgstr "「聾啞」、「僅啞」、「失明」、「Imbecile 或 Idiot」或「精神失常」"
+
+msgid "Poor Law Union"
+msgstr "Poor Law Union"
+
+msgid "Barony"
+msgstr "男爵領區"
+
+msgid "Urban District"
+msgstr "都市行政區"
+
+msgid "Head of Family"
+msgstr "戶長"
+
+msgid "Total Children"
+msgstr "子女總數"
+
+msgid "Children born alive to present Marriage"
+msgstr "本次婚姻中活產的子女"

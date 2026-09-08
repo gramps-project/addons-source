@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,10 +12,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
+
+#, python-format
+msgid "All information about %s"
+msgstr "%s に関するすべての情報"
+
+msgid "Primary name"
+msgstr "主な名前"
+
+msgid "Alternate name"
+msgstr "別名"
+
+msgid " This is the primary birth event."
+msgstr " これは主な出生イベントです。"
+
+msgid " This is the primary death event."
+msgstr " これは主な死亡イベントです。"
 
 msgid "Relationship to Father"
 msgstr "父親との関係"
@@ -23,5 +39,91 @@ msgstr "父親との関係"
 msgid "Relationship to Mother"
 msgstr "母親との関係"
 
+msgid "Parent Family"
+msgstr "親家族"
+
+msgid ""
+"Details of any children and events etc. would be in a similar report for the "
+"father or mother."
+msgstr ""
+"子供やイベントなどの詳細は、父親または母親向けの同様のレポートに記載されま"
+"す。"
+
+msgid "Temple and status"
+msgstr "寺院とステータス"
+
+msgid "LDS Ordinance family"
+msgstr "LDS 儀式家族"
+
+msgid "LDS "
+msgstr "LDS "
+
+msgid "Street, City, County, State, Postal Code, Country, Phone number"
+msgstr "通り、都市、郡、州、郵便番号、国、電話番号"
+
+msgid "Media Reference"
+msgstr "メディア参照"
+
+msgid "Description and Path"
+msgstr "説明とパス"
+
+msgid "Referenced Region"
+msgstr "参照領域"
+
+msgid "Mime type"
+msgstr "Mime タイプ"
+
+msgid ""
+"Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
+msgstr "名: 敬称、名、接尾辞、呼称名、愛称、家族の愛称"
+
+msgid "Note type"
+msgstr "メモの種類"
+
+msgid "Parent Place"
+msgstr "親の場所"
+
+msgid "Alternate Location"
+msgstr "代替場所"
+
+msgid "Alternative Name"
+msgstr "別名"
+
+msgid "Latitude, Longitude"
+msgstr "緯度, 経度"
+
+msgid "Repository type"
+msgstr "リポジトリの種類"
+
+msgid "Repository reference"
+msgstr "リポジトリ参照"
+
+msgid "Media type"
+msgstr "メディアの種類"
+
+msgid "Origin type"
+msgstr "起源の種類"
+
+msgid "Prefix, surname, connector"
+msgstr "接頭辞、姓、接続詞"
+
+msgid "{This is the primary surname}"
+msgstr "{これは主な姓です}"
+
+msgid "Tag name"
+msgstr "タグ名"
+
+msgid "Tag colour and priority"
+msgstr "タグの色と優先度"
+
+msgid "No source information found"
+msgstr "ソース情報が見つかりません"
+
 msgid "The style used for the title of the page."
 msgstr "ページのタイトルに使用されるスタイル。"
+
+msgid "PersonEverything Report"
+msgstr "PersonEverything レポート"
+
+msgid "Produces a report containing everything about the active person"
+msgstr "アクティブな人物に関するすべてを含むレポートを生成します"

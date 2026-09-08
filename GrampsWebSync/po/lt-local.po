@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-31 17:35+0200\n"
+"POT-Creation-Date: 2026-08-06 07:24+0200\n"
 "PO-Revision-Date: 2026-01-04 20:01+0000\n"
 "Last-Translator: openSUSE Lietuviškai <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: Lithuanian <https://hosted.weblate.org/projects/gramps-"
@@ -18,38 +18,14 @@ msgstr ""
 "X-Poedit-Language: Lithuanian\n"
 "X-Poedit-Country: LITHUANIA\n"
 
-msgid "Successfully applied changes to local database."
-msgstr "Pakeitimai sėkmingai pritaikyti vietinėje duombazėje."
+msgid "Username:"
+msgstr "Naudotojas:"
 
-msgid "Continue with HTTP"
-msgstr "Tęsti su HTTP"
-
-msgid "Use HTTPS"
-msgstr "Naudoti HTTPS"
+msgid "Password:"
+msgstr "Slaptažodis:"
 
 msgid "Error:"
 msgstr "Klaida:"
 
-msgid "Bidirectional Synchronization"
-msgstr "Abipusis sinchronizavimas"
-
-msgid "Modified"
-msgstr "Keista"
-
-msgid "Remote changes"
-msgstr "Nuotoliniai pakeitimai"
-
-msgid "Both trees are the same."
-msgstr "Abu medžiai yra vienodi."
-
-msgid "Applying changes to local database ..."
-msgstr "Taikomi pakeitimai vietinėje duombazėje..."
-
-msgid "No changes to apply to local database."
-msgstr "Nėra pakeitimų, kuriuos būtų galima taikyti vietinei duombazei."
-
-msgid "Applying changes to remote database ..."
-msgstr "Taikomi pakeitimai nuotolinėje duombazėje..."
-
-msgid "No changes to apply to remote database."
-msgstr "Nėra pakeitimų, kuriuos būtų galima taikyti nuotolinei duombazei."
+msgid "Copy"
+msgstr "Kopijuoti"

@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Media Verify Tool"
+msgstr "媒體驗證工具"
+
+msgid "Moved/Renamed Files"
+msgstr "已移動／重新命名的檔案"
+
+msgid "Missing Files"
+msgstr "遺失的檔案"
+
+msgid "Duplicate Files"
+msgstr "重複檔案"
+
+msgid "Extra Files"
+msgstr "額外的檔案"
+
+msgid "No md5 Generated"
+msgstr "未產生 md5"
+
+msgid "Errors"
+msgstr "錯誤"
+
+msgid "Close the Media Verify Tool"
+msgstr "關閉媒體驗證工具"
+
+msgid "Generate"
+msgstr "產生"
+
+msgid "Generate md5 hashes for media objects"
+msgstr "為媒體物件產生 md5 雜湊值"
+
+msgid "Verify"
+msgstr "驗證"
+
+msgid "Check media paths and report missing, duplicate and extra files"
+msgstr "檢查媒體路徑，並回報遺失、重複及額外的檔案"
+
+msgid "Export the results to a text file"
+msgstr "將結果匯出為文字檔"
+
+msgid "Fix"
+msgstr "修正"
+
+msgid "Fix media paths of moved and renamed files"
+msgstr "修正已移動及重新命名檔案的媒體路徑"
+
+msgid "Verify Gramps media using md5 hashes"
+msgstr "使用 md5 雜湊值驗證 Gramps 媒體"
+
+msgid "Files"
+msgstr "檔案"
+
+msgid "Export results to a text file"
+msgstr "將結果匯出為文字檔"
+
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "寫入報告時發生錯誤：%s"
+
+msgid "Generating media hashes"
+msgstr "正在產生媒體雜湊值"
+
+msgid "Set media hashes"
+msgstr "設定媒體雜湊值"
+
+msgid ""
+"Media path not set.  You must set the \"Base path for relative media paths\" "
+"in the Preferences."
+msgstr "尚未設定媒體路徑。您必須在偏好設定中設定「相對媒體路徑的基底路徑」。"
+
+msgid "Finding files"
+msgstr "正在尋找檔案"
+
+msgid "Checking paths"
+msgstr "正在檢查路徑"
+
+msgid "Fixing file paths"
+msgstr "正在修正檔案路徑"
+
+msgid "Fix media paths"
+msgstr "修復媒體路徑"
+
+msgid "Media Verify"
+msgstr "媒體驗證"
+
+msgid "Verify that media is present in the correct path"
+msgstr "驗證媒體是否位於正確路徑"

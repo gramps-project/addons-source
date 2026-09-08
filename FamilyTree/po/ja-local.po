@@ -1,0 +1,190 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#, python-format
+msgid "Family Tree for %s"
+msgstr "%s の家系図"
+
+msgid "Paper too small"
+msgstr "用紙が小さすぎます"
+
+msgid "Some elements may not appear or be badly rendered."
+msgstr "一部の要素が表示されないか、正しくレンダリングされない場合があります。"
+
+msgid "Anonymous"
+msgstr "匿名"
+
+msgid "born"
+msgstr "出生"
+
+msgid "baptised"
+msgstr "洗礼"
+
+msgid "died"
+msgstr "死亡"
+
+msgid "buried"
+msgstr "埋葬"
+
+msgid "cremated"
+msgstr "火葬"
+
+msgid "married"
+msgstr "結婚"
+
+msgid "divorced"
+msgstr "離婚"
+
+msgid "resident"
+msgstr "居住"
+
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "%(ymd_date)s"
+
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "%(ym_date)s"
+
+#, python-format
+msgid "in %(y_date)s"
+msgstr "%(y_date)s"
+
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "%(placeholder)s"
+
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "%(placeholder)s (%(partial)s)"
+
+#, python-format
+msgid "in %(place)s"
+msgstr "%(place)s"
+
+#, python-format
+msgid "(%(description)s)"
+msgstr "(%(description)s)"
+
+msgid "The center family for the tree"
+msgstr "ツリーの中心家族"
+
+msgid "Ancestor Generations"
+msgstr "祖先世代"
+
+msgid "The number of ancestor generations to include in the tree"
+msgstr "ツリーに含める祖先世代の数"
+
+msgid "Descendant Generations"
+msgstr "子孫世代"
+
+msgid "The number of descendant generations to include in the tree"
+msgstr "ツリーに含める子孫世代の数"
+
+msgid "Kekule number of husband"
+msgstr "夫のケクレ番号"
+
+msgid ""
+"The Kekule number of the husband (central family). Set 0 to not show Kekule "
+"numbers"
+msgstr "夫 (中心家族）のケクレ番号。ケクレ番号を表示しない場合は0に設定"
+
+msgid "Scale to fit on a single page"
+msgstr "単一ページに収まるように拡大縮小"
+
+msgid "Whether to scale to fit on a single page."
+msgstr "単一ページに収まるように拡大縮小するかどうか。"
+
+msgid "No color"
+msgstr "色なし"
+
+msgid "First generation"
+msgstr "第一世代"
+
+msgid "Second generation"
+msgstr "第二世代"
+
+msgid "Third generation"
+msgstr "第三世代"
+
+msgid "Male line"
+msgstr "男系"
+
+msgid "Male line and illegitimate children"
+msgstr "男系と非嫡出子"
+
+msgid "Female line"
+msgstr "女系"
+
+msgid "Shuffle colors"
+msgstr "色をシャッフル"
+
+msgid "Whether to shuffle colors or order them in rainbow fashion."
+msgstr "色をシャッフルするか、虹色順に並べるか。"
+
+msgid "Replace first name with call name"
+msgstr "名前を呼称名に置き換える"
+
+msgid "Underline call name in first name / add call name to first name"
+msgstr "名前内の呼称名に下線を引く / 呼称名を名前に追加"
+
+msgid "Include Occupation"
+msgstr "職業を含める"
+
+msgid "Include Residence"
+msgstr "居住地を含める"
+
+msgid "Print event data (dead person)"
+msgstr "イベントデータを印刷 (死亡者）"
+
+msgid "Year only"
+msgstr "年のみ"
+
+msgid "Full date"
+msgstr "完全な日付"
+
+msgid "Full date and place"
+msgstr "完全な日付と場所"
+
+msgid "Print event data (living person)"
+msgstr "イベントデータを印刷 (存命者）"
+
+msgid "Fall back to baptism if birth event missing"
+msgstr "出生イベントがない場合は洗礼にフォールバック"
+
+msgid "Fall back to burial or cremation if death event missing"
+msgstr "死亡イベントがない場合は埋葬または火葬にフォールバック"
+
+msgid "Protect private items"
+msgstr "プライベート項目を保護"
+
+msgid "Include event description"
+msgstr "イベント説明を含める"
+
+msgid "Text Options"
+msgstr "テキストオプション"
+
+msgid "The style used for names."
+msgstr "名前に使用されるスタイル。"
+
+msgid "The style used for data (birth, death, marriage, divorce)."
+msgstr "データ (出生、死亡、結婚、離婚）に使用されるスタイル。"
+
+msgid "Produces a graphical family tree."
+msgstr "グラフィカルな家系図を生成します。"

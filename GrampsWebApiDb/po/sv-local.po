@@ -1,0 +1,111 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-09 10:02-0700\n"
+"PO-Revision-Date: 2026-08-31 17:51+0000\n"
+"Last-Translator: Eric Bjurvald <epg.bjurvald@gmail.com>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.9.dev0\n"
+
+msgid "Generate Gramps Web API key"
+msgstr "Generera Gramps Web API-nyckel"
+
+msgid "Server URL"
+msgstr "Server-URL"
+
+msgid "e.g. https://your-server/api"
+msgstr "t.ex. https://din-server/api"
+
+msgid "Username"
+msgstr "Användarnamn"
+
+msgid "Password"
+msgstr "Lösenord"
+
+msgid "Generate API Key"
+msgstr "Generera API-nyckel"
+
+msgid ""
+"Enter your server URL, username, and password, then click Generate API Key."
+msgstr ""
+"Ange din server-URL, användarnamn och lösenord och klicka sedan på Generera "
+"API-nyckel."
+
+msgid "GRAMPS_WEB_API_KEY"
+msgstr "GRAMPS_WEB_API_KEY"
+
+msgid "Copy"
+msgstr "Kopiera"
+
+msgid "Create Synced Family Tree for this key"
+msgstr "Skapa synkroniserat släktträd för denna nyckel"
+
+#, python-format
+msgid ""
+"Found an existing %s for this session. Click Create Synced Family Tree to "
+"use it directly, or fill in the form above to generate a different key."
+msgstr ""
+"Hittade en befintlig %s för den här sessionen. Klicka på Skapa synkroniserat "
+"släktträd för att använda den direkt, eller fyll i formuläret ovan för att "
+"generera en annan nyckel."
+
+msgid "Please fill in the server URL, username, and password."
+msgstr "Vänligen fyll i server-URL, användarnamn och lösenord."
+
+msgid "Generating API key…"
+msgstr "Genererar API-nyckel…"
+
+#, python-format
+msgid "Login failed (HTTP %d): check your username and password."
+msgstr ""
+"Inloggningen misslyckades (HTTP %d): kontrollera ditt användarnamn och "
+"lösenord."
+
+#, python-format
+msgid "Server returned an error (HTTP %d %s): check the Server URL."
+msgstr "Servern returnerade ett fel (HTTP %d %s): kontrollera server-URL:en."
+
+#, python-format
+msgid "Could not reach the server: check the Server URL. (%s)"
+msgstr "Kan inte komma åt servern: kontrollera server-URL:en. (%s)"
+
+#, python-format
+msgid "Unexpected response from the server: %s"
+msgstr "Oväntat svar från servern: %s"
+
+#, python-format
+msgid "Error: %s"
+msgstr "Fel: %s"
+
+#, python-format
+msgid ""
+"Success. %s is now set for this Gramps session -- no restart needed. Copy "
+"the key below to also set it in your shell environment for next time."
+msgstr ""
+"Lyckad. %s är nu satt för denna Gramps-session -- ingen omstart krävs. "
+"Kopiera nyckeln nedan för att lägga till den i din skalmiljö till nästa gång."
+
+msgid "Looking up account identity…"
+msgstr "Kollar upp kontoidentitet…"
+
+#, python-format
+msgid ""
+"A Family Tree named \"%s\" already exists. Open it from Family Trees -> "
+"Manage Family Trees instead of creating another one."
+msgstr ""
+"Ett släktträd med namnet \"%s\" finns redan. Öppna det från Släktträd -> "
+"Hantera Släktträd istället för att skapa ett till."
+
+#, python-format
+msgid "Error creating Family Tree: %s"
+msgstr "Fel vid skapande av släktträd: %s"
+
+msgid "Clear local mirror before full resync"
+msgstr "Töm lokal version före fullständing omsynkronisering"

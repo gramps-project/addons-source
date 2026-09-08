@@ -1,0 +1,535 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "No title"
+msgstr "タイトルなし"
+
+msgid "No data available."
+msgstr "データがありません。"
+
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "の歴史的行政区画"
+
+msgid "Foundation date:"
+msgstr "設立日:"
+
+msgid "Note:"
+msgstr "メモ:"
+
+msgid "Coordinates:"
+msgstr "座標:"
+
+msgid "Administrative history"
+msgstr "行政史"
+
+msgid "Data provided to AI:"
+msgstr "AIに提供されたデータ:"
+
+msgid "Full hierarchy"
+msgstr "完全な階層"
+
+msgid "Place Type:"
+msgstr "場所の種類:"
+
+msgid "Last Retrieved At:"
+msgstr "最終取得日時:"
+
+msgid "Save Coordinates to the Place"
+msgstr "座標を場所に保存"
+
+msgid "AI provider is disabled"
+msgstr "AIプロバイダーは無効です"
+
+msgid "No AI API key provided"
+msgstr "AI APIキーが提供されていません"
+
+msgid "AI-generated historical place data is currently disabled"
+msgstr "AI生成による歴史的な場所データは現在無効です"
+
+msgid "AI provider is unknown. Please check your AI provider settings."
+msgstr "AIプロバイダーが不明です。AIプロバイダーの設定を確認してください。"
+
+msgid "⏳ Generating historical place data, please wait..."
+msgstr "⏳ 歴史的な場所データを生成中です。お待ちください..."
+
+msgid "Keys"
+msgstr "キー"
+
+msgid "Website URL"
+msgstr "ウェブサイト URL"
+
+msgid "Add link to note"
+msgstr "リンクをメモに追加"
+
+msgid "Add link to attribute"
+msgstr "属性へのリンクを追加"
+
+msgid "Show QR-code"
+msgstr "QRコードを表示"
+
+msgid "Copy link to clipboard"
+msgstr "リンクをクリップボードにコピー"
+
+msgid "Hide link for selected item"
+msgstr "選択した項目のリンクを非表示"
+
+msgid "Hide link for all items"
+msgstr "すべての項目のリンクを非表示"
+
+msgid "Edit Attribute with the Link"
+msgstr "リンク付きの属性を編集"
+
+msgid "Edit Note with the Link"
+msgstr "リンク付きのメモを編集"
+
+msgid "Edit Internet link"
+msgstr "インターネットリンクを編集"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 AI提案"
+
+msgid "Attribute no longer matches this WebSearch row"
+msgstr "属性がこのWebSearch行と一致しなくなりました"
+
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr "属性が存在しなくなりました。追加アイコンは削除されました"
+
+msgid "Note no longer exists"
+msgstr "メモが存在しなくなりました"
+
+msgid "Note no longer exists. The extra icon is removed"
+msgstr "メモが存在しなくなりました。追加アイコンは削除されました"
+
+msgid "Internet link no longer matches this WebSearch row"
+msgstr "インターネットリンクがこのWebSearch行と一致しなくなりました"
+
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+"📌 この '{title}' Webリンクは、WebSearchグランプレット (v. {version}) によっ"
+"て将来の参照用にアーカイブされました:\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"このリンクを使用して、ソースを再訪し、このエンティティに関連する情報を検証で"
+"きます。"
+
+#, python-format
+msgid "Note #%(id)s has been successfully added"
+msgstr "メモ #%(id)s が正常に追加されました"
+
+msgid "Error creating note"
+msgstr "メモの作成中にエラーが発生しました"
+
+msgid "URL is copied to the Clipboard"
+msgstr "URLがクリップボードにコピーされました"
+
+msgid "WebSearch Link"
+msgstr "WebSearch リンク"
+
+msgid "Attribute has been successfully added"
+msgstr "属性が正常に追加されました"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "タイトル: {title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "置換済み: {keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "空: {keys}"
+
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "コメント: {comment}"
+
+msgid "Column - Icons"
+msgstr "列 - アイコン"
+
+msgid "Column - Source Types (flags)"
+msgstr "列 - ソースタイプ (フラグ)"
+
+msgid "Column - Keys"
+msgstr "列 - キー"
+
+msgid "Column - Title"
+msgstr "列 - タイトル"
+
+msgid "Column - Website Url"
+msgstr "列 - ウェブサイト URL"
+
+msgid "Column - Comment"
+msgstr "列 - コメント"
+
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "アイコン - 訪問済み URL (チェックマーク)"
+
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "アイコン - 保存済み URL (フロッピーディスク)"
+
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "アイコン - UID属性にリンクされたURL (UIDバッジ)"
+
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "アイコン - 地域CSVファイルからのURL (フラグ)"
+
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "アイコン - 静的CSVファイルからのURL (赤いピン)"
+
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "アイコン - 共通CSVファイルからのURL (地球)"
+
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "アイコン - クロスCSVファイルからのURL (シャッフル矢印)"
+
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr ""
+"アイコン - カスタムユーザーディレクトリからのURL (スプレッドシートアイコン)"
+
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "アイコン - 「属性」タブからのURL (「A」アイコン)"
+
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "アイコン - 「インターネット」タブからのURL (「I」アイコン)"
+
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "アイコン - 「メモ」タブからのURL (「N」アイコン)"
+
+msgid "QR-code"
+msgstr "QRコード"
+
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ 依存関係 \"qrcode\" が不足しています"
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ QRコード生成エラー:\n"
+"元のエラー: “{}”"
+
+msgid "Note Link (parsed)"
+msgstr "メモリンク (解析済み)"
+
+msgid "Note Link (internal)"
+msgstr "メモリンク (内部)"
+
+msgid "Note Link (external)"
+msgstr "メモリンク (外部)"
+
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 WebSearchについて"
+
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr ""
+"WebSearchは、系譜関連のウェブサイトを検索するのに役立つGramps用のグランプレッ"
+"トです。"
+
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"CSVベースのリンクテンプレート、AI支援サイト検出、メモや属性との直接統合をサ"
+"ポートしています。"
+
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ システム情報"
+
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **不足:** `qrcode`"
+
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ このPythonライブラリはシステムで利用できません。"
+
+msgid "Without it, QR code generation will not work."
+msgstr "これがないと、QRコード生成は機能しません。"
+
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 通常は次のコマンドでインストールします: `pip install qrcode[pil]`"
+
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr ""
+"*注: 一部のオペレーティングシステムや環境では、代替のインストール方法が必要な"
+"場合があります。*"
+
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **不足:** `openai`"
+
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr "ℹ️ このライブラリはOpenAIベースの機能にアクセスするために必要です。"
+
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr "これがないと、AI生成サイト提案と場所の履歴は無効になります。"
+
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 通常は次のコマンドでインストールします: `pip install openai`"
+
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **不足:** `requests`"
+
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ このライブラリはWeb APIとの通信に使用されます。"
+
+msgid "Without it, external data sources may not be accessible."
+msgstr "これがないと、外部データソースにアクセスできない場合があります。"
+
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 通常は次のコマンドでインストールします: `pip install requests`"
+
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 データファイルの場所"
+
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr ""
+"以下は、WebSearchで使用されるシステムおよびユーザー定義データファイルへのパス"
+"です。"
+
+msgid "#### CSV File Paths"
+msgstr "#### CSVファイルパス"
+
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr "- **システムパス:** `{dir|%s}` – 組み込みCSVファイルを含みます"
+
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr "- **ユーザー定義パス:** `{dir|%s}` – カスタムユーザー定義CSVファイル用"
+
+msgid "#### JSON File Paths"
+msgstr "#### JSONファイルパス"
+
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr ""
+"- **システムパス:** `{dir|%s}` – 組み込みの attribute_mapping.json ファイルを"
+"含みます"
+
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **ユーザー定義パス:** `{dir|%s}` – カスタムユーザー定義 "
+"attribute_mapping.json ファイル用"
+
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr ""
+"  💡 *ヒント: 上のパスをクリックすると、ファイルマネージャーで開きます。*"
+
+msgid "📖 View detailed usage in: "
+msgstr "📖 詳細な使用方法はこちら: "
+
+msgid "## 💬 Support"
+msgstr "## 💬 サポート"
+
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 作成者およびメンテナー: Yurii Liubymyi"
+
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr ""
+"💬 ヘルプやフィードバックについては、Grampsフォーラムで `@Urchello` に言及し"
+"てください:"
+
+msgid "Gramps Forum (Discourse)"
+msgstr "Grampsフォーラム (Discourse)"
+
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr "✅ バグ報告と機能リクエストは完全に **無料** です。"
+
+msgid "GitHub Issues"
+msgstr "GitHub Issues"
+
+msgid "Gramps Bug Tracker"
+msgstr "Gramps バグトラッカー"
+
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 WebSearch グランプレット バージョン: `%s`"
+
+msgid "Middle Name Handling"
+msgstr "ミドルネームの処理"
+
+msgid "Leave alone"
+msgstr "そのままにする"
+
+msgid "Separate"
+msgstr "分離"
+
+msgid "URL Compactness Level"
+msgstr "URLのコンパクトさレベル"
+
+msgid "Shortest - No Prefix, No Keys"
+msgstr "最短 - プレフィックスなし、キーなし"
+
+msgid "Compact - No Prefix, Keys Without Attributes"
+msgstr "コンパクト - プレフィックスなし、属性なしのキー"
+
+msgid "Compact - No Prefix, Keys With Attributes"
+msgstr "コンパクト - プレフィックスなし、属性付きのキー"
+
+msgid "Long - Without Prefix on the Left"
+msgstr "長い - 左側にプレフィックスなし"
+
+msgid "URL Prefix Replacement"
+msgstr "URL プレフィックスの置換"
+
+msgid "AI Provider"
+msgstr "AIプロバイダー"
+
+msgid "(Disabled)"
+msgstr "(無効)"
+
+msgid "OpenAI"
+msgstr "OpenAI"
+
+msgid "Mistral AI"
+msgstr "Mistral AI"
+
+msgid "OpenAI API Key"
+msgstr "OpenAI APIキー"
+
+msgid "OpenAI Model"
+msgstr "OpenAIモデル"
+
+msgid "Mistral API Key"
+msgstr "Mistral APIキー"
+
+msgid "Mistral Model"
+msgstr "Mistralモデル"
+
+msgid "Show Links From the 'Attributes' tab"
+msgstr "「属性」タブからのリンクを表示"
+
+msgid "Show Links From the 'Internet' tab"
+msgstr "「インターネット」タブからのリンクを表示"
+
+msgid "Show Links From the Notes"
+msgstr "メモからのリンクを表示"
+
+msgid "Enable AI-generated historical place data"
+msgstr "AI生成による歴史的な場所データを有効にする"
+
+msgid "Custom country code for AI notes (optional)"
+msgstr "AIメモのカスタム国コード (オプション）"
+
+msgid "Enable CSV Files"
+msgstr "CSVファイルを有効にする"
+
+msgid "Display Columns"
+msgstr "表示列"
+
+msgid "Display Icons"
+msgstr "アイコンを表示"
+
+msgid "WebSearch"
+msgstr "WebSearch"
+
+msgid ""
+"Customized queries for online services based on the active Person, Place, "
+"Family, or Source record"
+msgstr ""
+"アクティブな人物、場所、家族、またはソースレコードに基づいたオンラインサービ"
+"ス用のカスタマイズされたクエリ"
+
+#, python-format
+msgid "Visited: %s"
+msgstr "訪問済み: %s"
+
+#, python-format
+msgid "Link: %s"
+msgstr "リンク: %s"
+
+#, python-format
+msgid "Attribute: %s"
+msgstr "属性: %s"
+
+#, python-format
+msgid "Value: %s"
+msgstr "値: %s"
+
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "ファイルから読み込まれました: %s"
+
+#, python-format
+msgid "Domain: %s"
+msgstr "ドメイン: %s"
+
+#, python-format
+msgid "Object: %s"
+msgstr "オブジェクト: %s"
+
+#, python-format
+msgid "Pattern: %s"
+msgstr "パターン: %s"
+
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "オブジェクト Gramps ID: %s"
+
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s: %s → %s: %s"
+
+msgid "Link visited"
+msgstr "リンク訪問済み"
+
+msgid "Link saved to Note"
+msgstr "リンクがメモに保存されました"
+
+msgid "Link saved to Attribute"
+msgstr "リンクを属性に保存しました"
+
+msgid "Place history loaded"
+msgstr "場所の履歴を読み込みました"
+
+msgid "Domain skipped"
+msgstr "ドメインがスキップされました"
+
+msgid "Link hidden for object"
+msgstr "オブジェクトのリンクが非表示になりました"
+
+msgid "Link hidden for all objects"
+msgstr "すべてのオブジェクトのリンクが非表示になりました"
+
+msgid "Attribute updated"
+msgstr "属性が更新されました"
+
+msgid "Note updated"
+msgstr "メモが更新されました"

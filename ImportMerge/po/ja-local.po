@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,10 +12,216 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Import and Merge tool"
+msgstr "インポートおよびマージツール"
+
+msgid ""
+"Compares a Gramps XML database with the current one, and allows merging of "
+"the differences."
+msgstr ""
+"Gramps XMLデータベースを現在のものと比較し、差分のマージを可能にします。"
+
+msgid "Import and merge a Gramps XML"
+msgstr "Gramps XMLをインポートしてマージ"
+
+msgid "Missing"
+msgstr "欠落"
+
+msgid "Delete original"
+msgstr "元のものを削除"
+
+msgid "Ignore"
+msgstr "無視"
+
+msgid "Add Import"
+msgstr "インポートを追加"
+
+msgid "Merge into original"
+msgstr "元のものにマージ"
+
+msgid "Merge into import"
+msgstr "インポートにマージ"
+
+msgid "Replace with import"
+msgstr "インポートで置き換え"
+
+msgid "Keep original"
+msgstr "オリジナルを保持"
+
+msgid ""
+"Use buttons below to set the 'Action' for each difference.  No changes will "
+"be made to your tree until you press 'Done' and confirm."
+msgstr ""
+"以下のボタンを使用して各差分の「アクション」を設定します。「完了」を押して確"
+"認するまで、ツリーに変更は加えられません。"
+
+msgid ""
+"This item will be deleted from your tree.  Any referenced items were also "
+"marked for deletion."
+msgstr ""
+"この項目はツリーから削除されます。参照されている項目も削除対象としてマークさ"
+"れています。"
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked for Ignore."
+msgstr ""
+"この項目はツリーで変更されません。参照されている項目も無視対象としてマークさ"
+"れています。"
+
+msgid ""
+"This item will be added to your tree.  Any referenced items were also marked "
+"for adding."
+msgstr ""
+"この項目はツリーに追加されます。参照されている項目も追加対象としてマークされ"
+"ています。"
+
+msgid ""
+"This item will be merged, saving data from your tree.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"この項目はマージされ、ツリーのデータが保存されます。参照されている項目もマー"
+"ジまたは追加対象としてマークされています。"
+
+msgid ""
+"This item will be merged, using data from the import.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"この項目はマージされ、インポートのデータが使用されます。参照されている項目も"
+"マージまたは追加対象としてマークされています。"
+
+msgid ""
+"The import data will entirely replace the data in your tree.  Any referenced "
+"items were also marked for replacement or removal."
+msgstr ""
+"インポートデータはツリーのデータを完全に置き換えます。参照されている項目も置"
+"き換えまたは削除対象としてマークされています。"
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked to keep."
+msgstr ""
+"この項目はツリーで変更されません。参照されている項目も保持対象としてマークさ"
+"れています。"
+
+msgid "Import Failure"
+msgstr "インポート失敗"
+
+msgid "Your Tree and import are the same."
+msgstr "ツリーとインポートは同一です。"
+
+msgid "your tree "
+msgstr "あなたのツリー "
+
+msgid "imported "
+msgstr "インポート済み "
+
+msgid "Original"
+msgstr "オリジナル"
+
+msgid "Imported"
+msgstr "インポート済み"
+
+msgid "Result  "
+msgstr "結果  "
+
+msgid "Import and Merge"
+msgstr "インポートとマージ"
+
 msgid "Replace"
 msgstr "置き換え"
+
+msgid ""
+"A '*' indicates that the action was automarked, a '?' indicates a conflict "
+"between automarks."
+msgstr ""
+"'*' はアクションが自動マークされたことを示し、'?' は自動マーク間の競合を示し"
+"ます。"
+
+msgid "Import file"
+msgstr "インポートファイル"
+
+msgid "Select the difference you wish to examine."
+msgstr "調べたい差分を選択してください。"
+
+msgid "Object Name/Description"
+msgstr "オブジェクト名/説明"
+
+msgid ""
+"Data item details, showing the current treeitem, imported tree item, and "
+"result (when chosen)."
+msgstr ""
+"データ項目の詳細。現在のツリー項目、インポートされたツリー項目、および結果 "
+"(選択時）を表示します。"
+
+msgid "Object and item"
+msgstr "オブジェクトとアイテム"
+
+msgid "Differences"
+msgstr "相違点"
+
+msgid "This button will ignore the difference, no changes to your tree."
+msgstr "このボタンは差分を無視し、ツリーに変更は加えません。"
+
+msgid "Unmark"
+msgstr "マーク解除"
+
+msgid "This button will add the imported data as a new object to your tree."
+msgstr ""
+"このボタンはインポートデータを新しいオブジェクトとしてツリーに追加します。"
+
+msgid "Done"
+msgstr "完了"
+
+msgid ""
+"This button will bring up a dialog allowing you to finalize your changes, or "
+"abandon them."
+msgstr ""
+"このボタンは、変更を確定するか破棄するかを選択するダイアログを表示します。"
+
+msgid "Merge Original"
+msgstr "オリジナルをマージ"
+
+msgid ""
+"This button will merge the imported data into your tree with your tree data "
+"as a base."
+msgstr ""
+"このボタンは、ツリーデータをベースとしてインポートデータをツリーにマージしま"
+"す。"
+
+msgid "This button will replace your tree data with the imported data."
+msgstr "このボタンは、ツリーデータをインポートデータで置き換えます。"
+
+msgid "Merge Import"
+msgstr "インポートをマージ"
+
+msgid ""
+"This button will merge the imported data into your tree with the imported "
+"data as a base."
+msgstr ""
+"このボタンは、インポートデータをベースとしてインポートデータをツリーにマージ"
+"します。"
+
+msgid "Edit Import"
+msgstr "インポートを編集"
+
+msgid ""
+"This button will edit the imported data.  The data will still need to be "
+"merged, added or replaced."
+msgstr ""
+"このボタンはインポートデータを編集します。データは引き続きマージ、追加、また"
+"は置き換えの必要があります。"
+
+msgid "Show more details"
+msgstr "詳細を表示"
+
+msgid "Automark Families"
+msgstr "家族を自動マーク"
+
+msgid "Automark Parent Families"
+msgstr "親家族を自動マーク"

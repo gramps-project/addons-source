@@ -1,0 +1,50 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Gramplet for importing text"
+msgstr "用於匯入文字的 Gramplet"
+
+msgid "VCard import"
+msgstr "匯入 VCard"
+
+#, python-format
+msgid ""
+"The opened file has media path %s, which conflicts with the media path of "
+"the family tree you import into. The original media path has been retained. "
+"Copy the files to a correct directory or change the media path in the "
+"Preferences."
+msgstr ""
+"開啟的檔案使用媒體路徑 %s，與您要匯入的家族樹媒體路徑衝突。已保留原始媒體路"
+"徑。請將檔案複製至正確目錄，或在偏好設定中變更媒體路徑。"
+
+msgid ""
+"Enter text to import and then click\n"
+"the Import button at bottom"
+msgstr ""
+"輸入要匯入的文字，然後按一下\n"
+"底部的 [匯入] 按鈕"
+
+msgid "_Import"
+msgstr "匯入(_I)"
+
+msgid "Import done"
+msgstr "匯入完成"
+
+msgid "Importing Text..."
+msgstr "正在匯入文字..."
+
+msgid "Can't determine type of import"
+msgstr "無法判斷匯入類型"

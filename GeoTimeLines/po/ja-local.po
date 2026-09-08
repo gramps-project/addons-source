@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "TimeLines Map"
+msgstr "タイムラインマップ"
+
+msgid "Choose View Format"
+msgstr "表示形式を選択"
+
+msgid "Almost done"
+msgstr "ほぼ完了"
+
+msgid "Gathering data"
+msgstr "データを収集中"
+
+#, python-format
+msgid "Number of Persons: %s"
+msgstr "人物数: %s"
+
+msgid ""
+"Stagger the map markers\n"
+"to differentiate different\n"
+"markers at the same location"
+msgstr ""
+"マップマーカーを千鳥配置して\n"
+"同じ場所にある異なる\n"
+"マーカーを区別する"
+
+msgid ""
+"Stagger Radius (hectometers)\n"
+"as measured along the equator\n"
+"(includes latitude distortion)"
+msgstr ""
+"千鳥配置の半径 (ヘクトメートル）\n"
+"赤道に沿って測定\n"
+" (緯度による歪みを含む）"
+
+msgid ""
+"Display markers for unknown ancestors\n"
+"based on earliest descendant location"
+msgstr ""
+"不明な祖先のマーカーを\n"
+"最も早い子孫の場所に基づいて表示"
+
+msgid ""
+"Days to keep lines on the map after\n"
+"an event"
+msgstr ""
+"イベント後にマップ上に\n"
+"ラインを保持する日数"
+
+msgid "Use custom map icons"
+msgstr "カスタムマップアイコンを使用"
+
+msgid ""
+"If there is no birth event for a person, their age\n"
+"is assumed to be this at their first event"
+msgstr ""
+"人物に出生イベントがない場合、\n"
+"最初のイベント時の年齢はこれと仮定されます"
+
+msgid ""
+"If there is no death event for a person, they will\n"
+"be assumed dead at this age"
+msgstr ""
+"人物に死亡イベントがない場合、\n"
+"この年齢で死亡したと仮定されます"
+
+msgid "Number of steps"
+msgstr "ステップ数"
+
+msgid "Type of steps"
+msgstr "ステップの種類"
+
+msgid "Steps per millisecond"
+msgstr "ミリ秒あたりのステップ数"
+
+msgid "Initial map view on Gramps startup"
+msgstr "Gramps起動時の初期マップビュー"
+
+msgid ""
+"Initial map view after startup and\n"
+"after changing the active person"
+msgstr ""
+"起動後およびアクティブな人物\n"
+"変更後の初期マップビュー"
+
+msgid "Show map travel lines on startup"
+msgstr "起動時にマップ移動ラインを表示"
+
+msgid "Show time ticks on navigation bar on startup"
+msgstr "起動時にナビゲーションバーにタイムティックを表示"
+
+msgid "TimeLines Map options"
+msgstr "タイムラインマップオプション"
+
+msgid ""
+"A view showing all the places visited by a person or persons on various date."
+msgstr "人物または複数の人物が様々な日付に訪れたすべての場所を表示するビュー。"
+
+msgid "TimeLines map"
+msgstr "タイムラインマップ"

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,10 +12,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
+
+#, python-format
+msgid "%(abbrev)s %(date)s in %(place)s"
+msgstr "%(abbrev)s %(date)s in %(place)s"
+
+#, python-format
+msgid "%(abbrev)s %(date)s%(place)s"
+msgstr "%(abbrev)s %(date)s%(place)s"
+
+msgid "Add existing child to family"
+msgstr "既存の子を家族に追加"
+
+#, python-format
+msgid "%(event_type)s: %(date)s in %(place)s"
+msgstr "%(event_type)s: %(date)s in %(place)s"
+
+#, python-format
+msgid "%(event_type)s: %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#, python-format
+msgid "%(event_type)s: %(place)s"
+msgstr "%(event_type)s: %(place)s"
 
 msgid "Click to make this event active"
 msgstr "このイベントをアクティブにするにはクリックしてください"
@@ -25,6 +48,9 @@ msgstr "このリンクをクリックしてアクセス"
 
 msgid ": "
 msgstr ": "
+
+msgid "Combined"
+msgstr "統合"
 
 msgid "A view showing relationships and events for a person"
 msgstr "人物の関係とイベントを表示するビュー"
@@ -37,6 +63,9 @@ msgstr ""
 "訪問先の「デフォルトの人」を設定する必要があります。 「人物ビュー」を選択し、"
 "「ホーム人物」にする人物を選択してから、メニューの「編集」->「ホーム人物を設"
 "定」で選択内容を確認します。"
+
+msgid "Order"
+msgstr "順序"
 
 msgid "Edit the active event"
 msgstr "アクティブなイベントを編集する"

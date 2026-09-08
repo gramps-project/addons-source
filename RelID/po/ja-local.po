@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-02 10:11+0100\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -29,6 +29,21 @@ msgstr "ルートとの関係と距離"
 msgid "Select filter to restrict people"
 msgstr "人を制限するフィルターの選択"
 
+msgid "Filter rule"
+msgstr "フィルタールール"
+
+msgid "Select the filter rule"
+msgstr "フィルタールールを選択"
+
+msgid "Deep generations"
+msgstr "深い世代"
+
+msgid "How deep should we go?"
+msgstr "どのくらい深く進むべきですか？"
+
+msgid "Rel_id"
+msgstr "Rel_id"
+
 msgid "Relation"
 msgstr "関係"
 
@@ -39,25 +54,93 @@ msgid "down"
 msgstr "下"
 
 msgid "Common MRA"
-msgstr "一般的なMRA"
+msgstr "共通のMRA"
 
 msgid "Rank"
-msgstr "ランク"
+msgstr "階級"
 
 msgid "Period"
 msgstr "期間"
 
+msgid "Shared Subtree"
+msgstr "共有サブツリー"
+
+msgid "Centrality"
+msgstr "中心性"
+
+msgid "Unique Ancestors"
+msgstr "固有の祖先"
+
+msgid "Surname Diversity"
+msgstr "姓の多様性"
+
 msgid "Save"
 msgstr "保存"
+
+msgid "Quit"
+msgstr "終了"
+
+msgid "No default person set."
+msgstr "既定の人物が設定されていません。"
 
 msgid "Please wait, filtering..."
 msgstr "お待ちください。フィルタリング中です..."
 
+msgid "Network Metrics"
+msgstr "ネットワークメトリクス"
+
+msgid "Enabled"
+msgstr "有効"
+
+msgid "Disabled"
+msgstr "障害者"
+
+msgid "Enable or disable family network metrics"
+msgstr "家族ネットワークメトリクスを有効または無効にします"
+
 msgid "Generating relation map..."
 msgstr "関係マップを生成中..."
+
+msgid ""
+"\n"
+"Filtering\tCurrent match\t\tTime of pass\n"
+msgstr ""
+"\n"
+"フィルタリング\t現在の一致\t\tパスの時間\n"
+
+#, python-format
+msgid "%d/%d \t\t %d/%d \t\t%f"
+msgstr "%d/%d \t\t %d/%d \t\t%f"
 
 msgid "Folder Chooser"
 msgstr "フォルダー選択"
 
+msgid "_Select"
+msgstr "選択(_S)"
+
 msgid "Please, select a folder"
 msgstr "フォルダーを選択してください"
+
+msgid "Foldername need"
+msgstr "フォルダー名が必要です"
+
+msgid "Foldername will be used for saving the content."
+msgstr "フォルダー名は内容の保存に使用されます。"
+
+msgid "Did you set a foldername?"
+msgstr "フォルダー名を設定しましたか？"
+
+msgid "Cannot set a valid location."
+msgstr "有効な場所を設定できません。"
+
+msgid "Failed to save data."
+msgstr "データの保存に失敗しました。"
+
+msgid "Relationships Map and Tab"
+msgstr "関係マップとタブ"
+
+msgid "Enable family network metrics"
+msgstr "家族ネットワークメトリクスを有効にする"
+
+msgid "Whether to calculate and display family network metrics."
+msgstr "家族ネットワークメトリクスを計算して表示するかどうか。"

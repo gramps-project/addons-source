@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -20,5 +20,34 @@ msgstr ""
 msgid "Ancestor"
 msgstr "祖先"
 
+msgid "The ancestor from which to start the line"
+msgstr "系統を開始する祖先"
+
+msgid "Descendent"
+msgstr "子孫"
+
+msgid "The descendent to which to build the line"
+msgstr "系統を構築する子孫"
+
 msgid "The style used for the title of the page."
 msgstr "ページのタイトルに使用されるスタイル。"
+
+msgid "The style used for the title of a line."
+msgstr "系統のタイトルに使用されるスタイル。"
+
+#, python-format
+msgid "%(line)s. line:"
+msgstr "%(line)s. 系統:"
+
+#, python-format
+msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
+msgstr "%(ancestor)s から %(descendent)s への子孫系統"
+
+msgid "Lines of Descendency Report"
+msgstr "子孫系統レポート"
+
+msgid ""
+"Prints out all descendency lines from a given ancestor to a given descendent "
+"in text."
+msgstr ""
+"指定された祖先から指定された子孫までのすべての系統をテキストで出力します。"

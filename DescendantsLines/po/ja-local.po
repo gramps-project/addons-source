@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,10 +12,343 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Descendants Lines"
+msgstr "子孫系統"
+
+msgid "Produces descendants lines of a person"
+msgstr "人物の子孫系統を生成します"
+
+msgid "Using SVG type for supplemental document is not supported!"
+msgstr "補足文書にSVGタイプを使用することはサポートされていません!"
+
+msgid "Output format"
+msgstr "出力形式"
+
+msgid "PNG format"
+msgstr "PNG形式"
+
+msgid "SVG format"
+msgstr "SVG形式"
+
+msgid "PDF format"
+msgstr "PDF形式"
+
+msgid "PS format"
+msgstr "PS形式"
+
+msgid "The output format to be used"
+msgstr "使用される出力形式"
+
+msgid "The destination file for the content."
+msgstr "コンテンツの保存先ファイル。"
+
+msgid "The number of generations to include in the chart. (0 for unlimited)"
+msgstr "チャートに含める世代数。(0は無制限)"
+
+msgid "Use d'Aboville descendant numbering system"
+msgstr "d'Aboville 子孫番号付けシステムを使用"
+
+msgid "Prepend name with d'Aboville descendant number in the chart."
+msgstr "チャート内の名前に d'Aboville 子孫番号を前置します。"
+
+msgid "Include an image"
+msgstr "画像を含める"
+
+msgid "Whether to include an image if one is available."
+msgstr "利用可能な場合に画像を含めるかどうか。"
+
+msgid "Max Image height"
+msgstr "最大画像高さ"
+
+msgid "Maximum image height in pixels, 0=don't scale for height."
+msgstr "最大画像高さ (ピクセル)、0=高さで拡大縮小しない。"
+
+msgid "Max Image width"
+msgstr "最大画像幅"
+
+msgid "Maximum image width in pixels, 0=don't scale for width."
+msgstr "最大画像幅 (ピクセル)、0=幅で拡大縮小しない。"
+
+msgid "Image Location"
+msgstr "画像の位置"
+
+msgid "Above text"
+msgstr "テキストの上"
+
+msgid "Left of text"
+msgstr "テキストの左"
+
+msgid "Position of image relative to text"
+msgstr "テキストに対する画像の位置"
+
+msgid "Colour Name by Gender"
+msgstr "性別で名前を色分け"
+
+msgid "Color the name to indicate a person's gender in the chart."
+msgstr "チャート内で人物の性別を示すために名前を色付けします。"
+
+msgid "Use alternate events, if Primary event is not found"
+msgstr "プライマリイベントが見つからない場合、代替イベントを使用"
+
+msgid ""
+"For Birth (baptism, christen)\n"
+"   Marriage (marr_lic, engagement)\n"
+"   Divorce (annulment, div_filing),\n"
+"   Death (burial, cremation, probate)."
+msgstr ""
+"出生 (洗礼、幼児洗礼)\n"
+"   結婚 (結婚許可証、婚約)\n"
+"   離婚 (婚姻無効、離婚申請)、\n"
+"   死亡 (埋葬、火葬、検認)。"
+
+msgid "Sort Events by Date"
+msgstr "イベントを日付で並べ替え"
+
+msgid "Sort events by date (else use the order of the 'Display Format' above)."
+msgstr ""
+"イベントを日付で並べ替え (そうでない場合は、上記の「表示形式」の順序を使用)。"
+
+msgid "Text style"
+msgstr "テキストスタイル"
+
+msgid "Center-aligned text"
+msgstr "中央揃えテキスト"
+
+msgid "Left-aligned text"
+msgstr "左揃えテキスト"
+
+msgid "Alignment of the text in the block for each person on the chart"
+msgstr "チャート上の各人物のブロック内のテキストの配置"
+
+msgid "Max Note Length"
+msgstr "最大メモ長"
+
+msgid ""
+"Maximum length of an event's note field in a text block, '$e(n)'\n"
+" 0=no limit "
+msgstr ""
+"テキストブロック内のイベントのメモフィールドの最大長、'$e(n)'\n"
+" 0=制限なし "
+
+msgid "Font Name"
+msgstr "フォント名"
+
+msgid ""
+"Name of the Font to use. On Windows enter the file name of the .ttf at /"
+"Windows/Fonts"
+msgstr ""
+"使用するフォントの名前。Windows では、/Windows/Fonts にある .ttf のファイル名"
+"を入力します"
+
+msgid "Font base size"
+msgstr "ベースフォントサイズ"
+
+msgid "Box around Person's block"
+msgstr "人物ブロックの周囲にボックス"
+
+msgid "Draw a thin black box around each person' text block."
+msgstr "各人物のテキストブロックの周囲に細い黒いボックスを描きます。"
+
+msgid "All Person's blocks have the same height"
+msgstr "すべての人物ブロックの高さを同じにする"
+
+msgid ""
+"All the blocks of all the person have the same height, which is the height "
+"of the highest block."
+msgstr ""
+"すべての人物のブロックの高さは、最も高いブロックの高さと同じになります。"
+
+msgid "All Person's blocks have the same width"
+msgstr "すべての人物ブロックの幅を同じにする"
+
+msgid ""
+"All the blocks of all the person have the same width, which is the width of "
+"the widthest block."
+msgstr "すべての人物のブロックの幅は、最も広いブロックの幅と同じになります。"
+
+msgid "Colour blocks by Generation"
+msgstr "世代でブロックを色分け"
+
+msgid "Colour the background of text blocks by generation."
+msgstr "テキストブロックの背景を世代で色分けします。"
+
+msgid "Descend block colour intensity"
+msgstr "子孫ブロックの色の濃さ"
+
+msgid ""
+"Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
+"colour"
+msgstr "子孫ブロックの背景色の濃さ、0=薄い、255=濃い色"
+
+msgid "Spouse block colour intensity"
+msgstr "配偶者ブロックの色の濃さ"
+
+msgid ""
+"Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
+msgstr "配偶者ブロックの背景色の濃さ、0=薄い、255=濃い色"
+
+msgid "Display Formats"
+msgstr "表示形式"
+
+msgid "Name Display Format"
+msgstr "名前の表示形式"
+
+msgid ""
+"f=first & middle names, l=surname, n=nickname,\n"
+"c=commonly used given name, t=title, s=suffix, g=family nick name\n"
+"See Wiki Manual > Reports > part 2"
+msgstr ""
+"f=名とミドルネーム、l=姓、n=愛称、\n"
+"c=一般的に使われる名前、t=敬称、s=接尾辞、g=家族の愛称\n"
+"Wikiマニュアル > レポート > パート2 を参照"
+
+msgid ""
+"[event, list]$e(formating)\n"
+"See Wiki Manual > Reports > part 2\n"
+"formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
+msgstr ""
+"[イベント、リスト]$e(書式)\n"
+"Wikiマニュアル > レポート > パート2 を参照\n"
+"書式: 日付=d(ymdMo) 場所=D(elcuspnoitxy) メモ=n 省略タイプ=t"
+
 msgid "Replace"
 msgstr "置き換え"
+
+msgid ""
+"i.e.\n"
+"United States of America/USA"
+msgstr ""
+"例:\n"
+"United States of America/USA"
+
+msgid "Spouse and Family"
+msgstr "配偶者と家族"
+
+msgid "Vertical edge descendant to spouse-bar"
+msgstr "子孫から配偶者バーへの垂直エッジ"
+
+msgid "The length of the vertical edge from descendant to spouse-bar."
+msgstr "子孫から配偶者バーまでの垂直エッジの長さ。"
+
+msgid "Vertical edge spouse-bar to spouse"
+msgstr "配偶者バーから配偶者への垂直エッジ"
+
+msgid "The length of the vertical edge from spouse-bar to spouse."
+msgstr "配偶者バーから配偶者までの垂直エッジの長さ。"
+
+msgid "Vertical space spouse-bar to other spouse"
+msgstr "配偶者バーと他の配偶者の間の垂直スペース"
+
+msgid ""
+"The space to add between one spouse-bar and another spouse in case of "
+"multiple families with the same descendant."
+msgstr ""
+"同じ子孫を持つ複数の家族がいる場合に、ある配偶者バーと別の配偶者の間に追加す"
+"るスペース。"
+
+msgid "Horizontal space descendant to spouse"
+msgstr "子孫と配偶者の間の水平スペース"
+
+msgid "The space to add between the descendant and the spouse."
+msgstr "子孫と配偶者の間に追加するスペース。"
+
+msgid "Horizonal space family to family"
+msgstr "家族間の水平スペース"
+
+msgid ""
+"The space to add between the more extern descendant (or spouse) of a family "
+"and the more extern descendant (or spouse) of the next family."
+msgstr ""
+"ある家族の最も外側の子孫 (または配偶者）と、次の家族の最も外側の子孫 (または"
+"配偶者）の間に追加するスペース。"
+
+msgid "Horizontal distance spouse to family edge"
+msgstr "配偶者から家族端までの水平距離"
+
+msgid ""
+"If this value is 0, the children bar is centered under the spouse. The "
+"bigger the value, more the center is moved to the left towards the "
+"descendant."
+msgstr ""
+"この値が0の場合、子供バーは配偶者の下で中央に配置されます。値が大きいほど、中"
+"心は子孫に向かって左に移動します。"
+
+msgid "OL_PAD"
+msgstr "OL_PAD"
+
+msgid "The number of ??? pad"
+msgstr "??? パッドの数"
+
+msgid "Vertical edge spouse-bar to child-bar"
+msgstr "配偶者バーから子供バーへの垂直エッジ"
+
+msgid "The length of the vertical edge from spouse-bar to child-bar."
+msgstr "配偶者バーから子供バーまでの垂直エッジの長さ。"
+
+msgid "Children distance"
+msgstr "子供の距離"
+
+msgid "The horizontal distance between two children of the same family."
+msgstr "同じ家族の2人の子供の間の水平距離。"
+
+msgid "Vertical edge child to child-bar"
+msgstr "子供から子供バーへの垂直エッジ"
+
+msgid "The length of the vertical edge from child to child-bar."
+msgstr "子供から子供バーまでの垂直エッジの長さ。"
+
+msgid "MIN_C_WIDTH"
+msgstr "MIN_C_WIDTH"
+
+msgid "The number of ??? min width"
+msgstr "??? 最小幅の数"
+
+msgid "Space around text"
+msgstr "テキスト周辺のスペース"
+
+msgid "The space to add around the text block of a person."
+msgstr "人物のテキストブロックの周囲に追加するスペース。"
+
+msgid "Space between lines of text"
+msgstr "テキスト行間のスペース"
+
+msgid "The space to add between a line and the next in a person text block."
+msgstr "人物のテキストブロック内の行と次の行の間に追加するスペース。"
+
+msgid "Header and Footer"
+msgstr "ヘッダーとフッター"
+
+msgid "The text that will be written in the header of the document"
+msgstr "ドキュメントのヘッダーに書き込まれるテキスト"
+
+msgid "The text that will be written in the footer of the document"
+msgstr "ドキュメントのフッターに書き込まれるテキスト"
+
+msgid "Title and footer coefficient"
+msgstr "タイトルとフッターの係数"
+
+msgid ""
+"A number that multiply the base size of the text in the title and in the "
+"footer"
+msgstr "タイトルとフッターのテキストの基本サイズに乗算する数値"
+
+msgid "Protect People, Images or Events that are marked Private"
+msgstr "非公開とマークされた人物、画像、イベントを保護"
+
+msgid "The Privacy setting of only these types of Gramps objects are checked"
+msgstr ""
+"これらのタイプのGrampsオブジェクトのみプライバシー設定がチェックされます"
+
+msgid "Privacy text"
+msgstr "プライバシーテキスト"
+
+msgid "Text to display in block, when a Person is marked private"
+msgstr "人物が非公開とマークされたときにブロックに表示するテキスト"
+
+msgid "The default style."
+msgstr "デフォルトのスタイル。"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-31 17:35+0200\n"
-"PO-Revision-Date: 2026-07-30 22:02+0000\n"
+"POT-Creation-Date: 2026-08-06 07:24+0200\n"
+"PO-Revision-Date: 2026-08-07 07:57+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
@@ -69,30 +69,37 @@ msgstr "Sunucu hatası %s. Lütfen bağlantınızı kontrol edin."
 msgid "Unexpected error: %s"
 msgstr "Beklenmeyen hata: %s"
 
-msgid "Fetching remote data..."
-msgstr "Uzak veriler alınıyor..."
+msgid "Both trees are already in sync."
+msgstr "İki ağaç da zaten senkronize durumda."
 
-msgid "Comparing local and remote data..."
-msgstr "Yerel ve uzaktan gelen verileri karşılaştırma..."
+msgid "Media files are in sync."
+msgstr "Medya dosyaları senkronize durumda."
 
-msgid "Successfully applied changes to local database."
-msgstr "Değişiklikler yerel veritabanına başarıyla uygulandı."
+#, python-format
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "%s medya dosyası başarıyla indirildi."
 
-msgid "Continue without transport encryption?"
-msgstr "Taşıma şifrelemesi olmadan devam edilsin mi?"
+#, python-format
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "İndirme sırasında %s hata oluştu."
 
-msgid ""
-"You have specified a URL with http scheme. If you continue, your password "
-"will be sent in clear text over the network. Use only for local testing!"
-msgstr ""
-"HTTP şemasıyla bir URL belirttiniz. Devam ederseniz, şifreniz ağ üzerinden "
-"düz metin olarak gönderilecektir. Yalnızca yerel test için kullanın!"
+#, python-format
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "%s medya dosyası başarıyla yüklendi."
 
-msgid "Continue with HTTP"
-msgstr "HTTP ile devam edin"
+#, python-format
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "Yükleme sırasında %s hata oluştu."
 
-msgid "Use HTTPS"
-msgstr "HTTPS kullanın"
+msgid "Username:"
+msgstr "Kullanıcı adı:"
+
+msgid "Password:"
+msgstr "Şifre:"
 
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
@@ -122,53 +129,11 @@ msgstr ""
 "iki ağacı birleştirmek istiyorsanız, bunun yerine İçe Aktarma Birleştirme "
 "Aracını kullanın."
 
-msgid "Server URL: "
-msgstr "Sunucu URL adresi: "
-
 msgid "Error:"
 msgstr "Hata:"
 
-msgid "Bidirectional Synchronization"
-msgstr "Çift Yönlü Senkronizasyon"
+msgid "Warning:"
+msgstr "Uyarı:"
 
-msgid "Reset remote to local"
-msgstr "Uzak adresi yerel adrese sıfırla"
-
-msgid "Reset local to remote"
-msgstr "Yerel olanı uzak olana sıfırla"
-
-msgid "Local changes"
-msgstr "Yerel değişiklikler"
-
-msgid "Remote changes"
-msgstr "Uzak değişiklikler"
-
-msgid "Simultaneous changes"
-msgstr "Eş zamanlı değişiklikler"
-
-msgid "Fetching information about media files..."
-msgstr "Medya dosyaları hakkında bilgi alınıyor..."
-
-msgid "Both trees are the same."
-msgstr "Her iki ağaç da aynı."
-
-msgid "Applying changes to local database ..."
-msgstr "Yerel veritabanına değişiklikler uygulanıyor..."
-
-msgid "No changes to apply to local database."
-msgstr "Yerel veritabanına uygulanacak herhangi bir değişiklik yok."
-
-msgid "Applying changes to remote database ..."
-msgstr "Uzak veritabanına değişiklikler uygulanıyor..."
-
-msgid "No changes to apply to remote database."
-msgstr "Uzak veritabanına uygulanacak değişiklik yok."
-
-msgid "Missing locally"
-msgstr "Yerel olarak kayıp"
-
-msgid "Missing remotely"
-msgstr "Uzaktan kayıp"
-
-msgid "Media files are in sync."
-msgstr "Medya dosyaları senkronize durumda."
+msgid "Copy"
+msgstr "Kopyala"

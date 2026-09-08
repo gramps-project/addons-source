@@ -1,0 +1,129 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Sources and Citations Report"
+msgstr "來源與引用報告"
+
+msgid "Provides a source and Citations Report with notes"
+msgstr "提供包含備註的來源與引用報告"
+
+#, python-format
+msgid "Key: %s"
+msgstr "索引鍵：%s"
+
+msgid "Citations:"
+msgstr "引用："
+
+#, python-format
+msgid "%d"
+msgstr "%d"
+
+#, python-format
+msgid "  %s"
+msgstr "  %s"
+
+#, python-format
+msgid " - %s "
+msgstr " - %s "
+
+#, python-format
+msgid "   Type: %s"
+msgstr "   類型：%s"
+
+#, python-format
+msgid "   N-ID: %s"
+msgstr "   N-ID：%s"
+
+#, python-format
+msgid "   %s"
+msgstr "   %s"
+
+#, python-format
+msgid "%s"
+msgstr "%s"
+
+#, python-format
+msgid "   ( %s )"
+msgstr "   ( %s )"
+
+msgid "   Spouses: "
+msgstr "   配偶： "
+
+#, python-format
+msgid "%s "
+msgstr "%s "
+
+#, python-format
+msgid "and %s "
+msgstr "和 %s "
+
+#, python-format
+msgid " %s"
+msgstr " %s"
+
+msgid "Title of the Report"
+msgstr "報告標題"
+
+msgid "Title string for the report."
+msgstr "報告的標題文字。"
+
+msgid "Subtitle of the Report"
+msgstr "報告副標題"
+
+msgid "Subtitle string for the report."
+msgstr "報告的副標題文字。"
+
+msgid "researcher name"
+msgstr "研究者姓名"
+
+msgid "Select sources using a filter"
+msgstr "使用篩選器選取來源"
+
+msgid "Show persons"
+msgstr "顯示人物"
+
+msgid "Whether to show events and persons mentioned in the note"
+msgstr "是否顯示備註中提到的事件與人物"
+
+msgid "The style used for the title of the report."
+msgstr "報告標題使用的樣式。"
+
+msgid "The style used for the subtitle of the report."
+msgstr "報告副標題使用的樣式。"
+
+msgid "The style used for the footer of the report."
+msgstr "報告頁尾使用的樣式。"
+
+msgid "The style used for source title."
+msgstr "來源標題使用的樣式。"
+
+msgid "The style used for source subtitle."
+msgstr "來源副標題所使用的樣式。"
+
+msgid "The style used for Source details."
+msgstr "來源詳細資訊使用的樣式。"
+
+msgid "The style used for citation title."
+msgstr "引用標題使用的樣式。"
+
+msgid "The style used for a column title."
+msgstr "欄位標題使用的樣式。"
+
+msgid "The style used for each section."
+msgstr "各區段使用的樣式。"
+
+msgid "The style used for event and person details."
+msgstr "事件與人物詳細資訊使用的樣式。"

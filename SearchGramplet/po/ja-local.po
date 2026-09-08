@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-23 09:41-0800\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -20,8 +20,63 @@ msgstr ""
 msgid "Search"
 msgstr "検索"
 
+msgid "Gramplet for search objects in database."
+msgstr "データベース内のオブジェクトを検索するためのグランプレット。"
+
+msgid "Show bookmarked first"
+msgstr "ブックマークを先に表示"
+
+msgid "Sort by object type"
+msgstr "オブジェクトタイプで並べ替え"
+
 msgid "Persons"
 msgstr "人物"
 
+msgid "Menu to set search objects"
+msgstr "検索オブジェクトを設定するメニュー"
+
+msgid "Select objects to search"
+msgstr "検索するオブジェクトを選択"
+
+msgid "SearchGramplet configuration menu"
+msgstr "SearchGramplet 設定メニュー"
+
+#, python-format
+msgid "found: %s"
+msgstr "検索結果: %s"
+
+msgid "No matches..."
+msgstr "一致なし..."
+
+msgid "Start type to search"
+msgstr "検索を開始するタイプ"
+
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+"オブジェクトを検索するために入力を開始します。\n"
+"すべてのオブジェクトを表示するには、「*」記号のみを入力します。"
+
 msgid "Search..."
 msgstr "検索..."
+
+msgid "Remove from bookmarks"
+msgstr "ブックマークから削除"
+
+msgid "Add to bookmarks"
+msgstr "ブックマークに追加"
+
+#, python-format
+msgid "Birth: %s"
+msgstr "出生: %s"
+
+#, python-format
+msgid "Death: %s"
+msgstr "死亡: %s"
+
+msgid "Set as Active person"
+msgstr "アクティブな人として設定"
+
+msgid "Set as Home person"
+msgstr "ホームパーソンとして設定"

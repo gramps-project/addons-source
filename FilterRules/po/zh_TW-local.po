@@ -1,0 +1,150 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "People related to <filter>"
+msgstr "與 <filter> 有關係的人物"
+
+msgid "Matches people who are related to anybody matched by a person filter"
+msgstr "比對與人物篩選器結果中任一人物有親屬關係的人物"
+
+msgid "Retrieving all sub-filter matches"
+msgstr "正在取得所有子篩選器的相符結果"
+
+msgid "People separated less than <N> degrees of <person>"
+msgstr "與 <person> 相隔少於 <N> 層親屬關係的人物"
+
+msgid "Filter rule that matches relatives by degrees of separation"
+msgstr "依相隔關係數比對親屬的篩選規則"
+
+msgid "Source matching parameters"
+msgstr "來源比對參數"
+
+msgid "Matches Sources with values containing the chosen parameters"
+msgstr "比對欄位值包含所選參數的來源"
+
+msgid "People with multiple parent records"
+msgstr "具有多組父母記錄的人物"
+
+msgid "Matches people who have more than one set of parents"
+msgstr "符合有超過一組父母的人物"
+
+msgid "Match associations of <person filter>"
+msgstr "符合 <person filter> 的關聯"
+
+msgid "Does NOT match with selected Role"
+msgstr "不符合選取的角色"
+
+msgid "Finds the items that don't have event Roles of the selected type."
+msgstr "尋找沒有指定類型事件角色的項目。"
+
+msgid "Inverse"
+msgstr "反向"
+
+msgid "People with events with the <role>"
+msgstr "具有 <role> 角色事件的人物"
+
+msgid "Matches people with an event with a selected role"
+msgstr "符合具有指定角色事件的人物"
+
+msgid "Families with events with the <role>"
+msgstr "以 <role> 角色參與事件的家庭"
+
+msgid "Matches families with an event with a selected role"
+msgstr "符合具有指定角色事件的家庭"
+
+msgid "Events of families matching a <family filter>"
+msgstr "符合 <family filter> 的家庭事件"
+
+msgid "Families matching <event filter>"
+msgstr "符合 <event filter> 的家庭"
+
+msgid "Matches families that are matched by an event filter"
+msgstr "符合事件篩選器所比對的家庭"
+
+msgid "Matches families matched by an event filter"
+msgstr "符合事件篩選器所比對的家庭"
+
+msgid "Number of degrees of separation from person."
+msgstr "與此人物相隔的親屬關係層數。"
+
+msgid "Degrees:"
+msgstr "相隔關係數："
+
+msgid "People with <count> of <event>"
+msgstr "具有 <count> 個 <event> 的人物"
+
+msgid "Matches persons which have events of given type and number."
+msgstr "符合具有指定類型及數量事件的人物。"
+
+msgid "Include Children"
+msgstr "包含子女"
+
+msgid "Include the children in the matching families."
+msgstr "包含相符家庭中的子女。"
+
+msgid "Include Parents"
+msgstr "包含父母"
+
+msgid "Include the parents in the matching families."
+msgstr "包含相符家庭中的父母。"
+
+msgid "Family Filter name:"
+msgstr "家庭篩選器名稱："
+
+msgid "People who are part of families matching <filter>"
+msgstr "屬於符合 <filter> 家庭的人物"
+
+msgid "Filter people by their age at death"
+msgstr "依死亡年齡篩選人物"
+
+msgid "Filter rule that matches people by their age at death"
+msgstr "依死亡年齡比對人物的篩選規則"
+
+msgid "Role:"
+msgstr "角色："
+
+msgid "Multiple Parents Filter"
+msgstr "多組父母篩選器"
+
+msgid "People with events with a selected role"
+msgstr "具有指定角色事件的人物"
+
+msgid "Families with events with a selected role"
+msgstr "具有指定角色事件的家庭"
+
+msgid "The active Person"
+msgstr "目前人物"
+
+msgid "Matches sources with a particular value"
+msgstr "符合具有特定值的來源"
+
+msgid "Events from people with role"
+msgstr "具有指定角色之人物的事件"
+
+msgid "Matches event of people filter with role"
+msgstr "符合人物篩選器且具有指定角色的事件"
+
+msgid "Active person"
+msgstr "目前人物"
+
+msgid "Matches the active person"
+msgstr "符合目前人物"
+
+msgid "Age in years at person's death."
+msgstr "人物死亡時的歲數。"
+
+msgid "Age:"
+msgstr "年齡："

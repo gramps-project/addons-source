@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-31 17:35+0200\n"
-"PO-Revision-Date: 2026-08-03 04:01+0000\n"
+"POT-Creation-Date: 2026-08-06 07:24+0200\n"
+"PO-Revision-Date: 2026-09-04 16:46+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,13 +12,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 
 msgid "Gramps Web Sync"
-msgstr "Sincronização \"web\" do Gramps"
+msgstr "Sincronização web do Gramps"
 
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Sincroniza uma base de dados local com uma instância do Gramps Web."
+
+#, python-format
+msgid "Gramps Web Sync %(addon)s, Web API %(api)s"
+msgstr "Gramps Web Sync %(addon)s, Web API %(api)s"
+
+#, python-format
+msgid "Gramps Web Sync %s"
+msgstr "Sincronização web do Gramps %s"
+
+msgid ""
+"This URL uses http, so your password will be sent in clear text. Use only "
+"for local testing."
+msgstr ""
+"Este URL usa http, a sua senha será enviada em texto simples. Utilize apenas "
+"para testes locais."
 
 #, python-format
 msgid ""
@@ -81,6 +96,43 @@ msgstr ""
 "revistas. Nenhuma alteração foi aplicada. Por favor, compare novamente."
 
 #, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s, but synchronization needs "
+"%(needed)s or newer. Please update the server."
+msgstr ""
+"Este servidor executa a API Web do Gramps %(found)s, mas a sincronização "
+"requer a versão %(needed)s ou mais recente. Por favor, actualize o servidor."
+
+#, python-format
+msgid ""
+"This server did not report a Gramps Web API version, so it is too old to "
+"synchronize with. Version %s or newer is needed."
+msgstr ""
+"Este servidor não indicou a versão da API Web do Gramps, pelo que é "
+"demasiado antigo para permitir a sincronização. É necessária a versão %s ou "
+"uma versão mais recente."
+
+#, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s. This version of Gramps works with "
+"Gramps Web API %(major)s, so synchronizing with this server needs a newer "
+"version of Gramps."
+msgstr ""
+"Este servidor utiliza a API Web do Gramps %(found)s. Esta versão do Gramps é "
+"compatível com a API Web do Gramps %(major)s, pelo que a sincronização com "
+"este servidor requer uma versão mais recente do Gramps."
+
+msgid ""
+"This server is not configured to use a background task queue. "
+"Synchronization needs one: without it, applying changes times out before the "
+"server has finished. Please enable it on the server."
+msgstr ""
+"Este servidor não está configurado para utilizar uma fila de tarefas em 2º "
+"plano. A sincronização necessita dessa fila: sem ela, a aplicação das "
+"alterações atinge o tempo limite antes de o servidor ter concluído o "
+"processo. Por favor, active-a."
+
+#, python-format
 msgid "The server could not apply the changes: %s"
 msgstr "O servidor não conseguiu aplicar as alterações: %s"
 
@@ -92,30 +144,265 @@ msgstr "Erro de servidor %s. Por favor, verifique a ligação."
 msgid "Unexpected error: %s"
 msgstr "Erro inesperado: %s"
 
-msgid "Fetching remote data..."
-msgstr "A obter dados remotos..."
+msgid "Signing in…"
+msgstr "A iniciar sessão…"
 
-msgid "Comparing local and remote data..."
-msgstr "A comparar dados locais e remotos..."
+msgid "Downloading the remote family tree…"
+msgstr "A transferir a árvore genealógica remota…"
 
-msgid "Successfully applied changes to local database."
-msgstr "Aplicadas com êxito as alterações à base de dados local."
+msgid "Comparing the two family trees…"
+msgstr "A comparar as duas árvores…"
 
-msgid "Continue without transport encryption?"
-msgstr "Continuar sem a encriptação de transporte?"
+msgid "Checking which media files are missing…"
+msgstr "A procurar multimédia em falta…"
+
+msgid "Applied the changes to this computer."
+msgstr "Alterações aplicadas a este computador."
+
+msgid "Sending the changes to the server…"
+msgstr "A enviar as alterações para o servidor…"
+
+msgid "Downloading media files…"
+msgstr "A transferir ficheiros multimédia…"
+
+msgid "Uploading media files…"
+msgstr "A enviar ficheiros multimédia…"
+
+msgid "Connect"
+msgstr "Ligar"
+
+msgid "Apply changes"
+msgstr "Aplicar alterações"
+
+msgid "Transfer media files"
+msgstr "Transferir ficheiros multimédia"
+
+msgid "Bidirectional synchronization"
+msgstr "Sincronização bidireccional"
+
+msgid "Reset the server to match this computer"
+msgstr "Repor o servidor para igualar este computador"
+
+msgid "Reset this computer to match the server"
+msgstr "Repor este computador para igualar o servidor"
 
 msgid ""
-"You have specified a URL with http scheme. If you continue, your password "
-"will be sent in clear text over the network. Use only for local testing!"
+"Changes from both sides are combined. Objects edited in both places are "
+"merged."
 msgstr ""
-"Especificou um URL com esquema http. Se continuar, a sua senha será enviada "
-"em texto simples através da rede. Utilize apenas para testes locais!"
+"As alterações de ambos os lados são combinadas. Os objectos editados em "
+"ambos os locais são unidos."
 
-msgid "Continue with HTTP"
-msgstr "Continuar com HTTP"
+msgid ""
+"The server is made to match this computer. Anything changed only on the "
+"server is discarded."
+msgstr ""
+"O servidor foi feito para corresponder a este computador. Qualquer alteração "
+"feita no servidor é descartada."
 
-msgid "Use HTTPS"
-msgstr "Usar HTTPS"
+msgid ""
+"This computer is made to match the server. Anything changed only here is "
+"discarded."
+msgstr ""
+"Este computador foi feito para corresponder ao servidor. Qualquer alteração "
+"feita aqui é ignorada."
+
+#, python-format
+msgid "Will change on this computer (%s object)"
+msgid_plural "Will change on this computer (%s objects)"
+msgstr[0] "Vai mudar neste computador (%s objecto)"
+msgstr[1] "Vão mudar neste computador (%s objectos)"
+
+#, python-format
+msgid "Will change on the server (%s object)"
+msgid_plural "Will change on the server (%s objects)"
+msgstr[0] "Vai mudar no servidor (objecto %s)"
+msgstr[1] "Vão mudar no servidor (%s objectos)"
+
+#, python-format
+msgid "Add %s object"
+msgid_plural "Add %s objects"
+msgstr[0] "Adicionar %s objecto"
+msgstr[1] "Adicionar %s objectos"
+
+#, python-format
+msgid "Update %s object"
+msgid_plural "Update %s objects"
+msgstr[0] "Actualizar %s objecto"
+msgstr[1] "Actualizar %s objectos"
+
+#, python-format
+msgid "Merge %s object"
+msgid_plural "Merge %s objects"
+msgstr[0] "Unir %s objecto"
+msgstr[1] "Unir %s objectos"
+
+#, python-format
+msgid "Delete %s object"
+msgid_plural "Delete %s objects"
+msgstr[0] "Eliminar %s objecto"
+msgstr[1] "Eliminar %s objectos"
+
+#, python-format
+msgid "%s object will be deleted on this computer."
+msgid_plural "%s objects will be deleted on this computer."
+msgstr[0] "Será eliminado %s objecto neste computador."
+msgstr[1] "Serão eliminados %s objectos neste computador."
+
+#, python-format
+msgid "%s object will be deleted on the server."
+msgid_plural "%s objects will be deleted on the server."
+msgstr[0] "Será eliminado %s objecto no servidor."
+msgstr[1] "Serão eliminados %s objectos no servidor."
+
+#, python-format
+msgid "%(down)s to download, %(up)s to upload"
+msgstr "%(down)s para transferir, %(up)s para enviar"
+
+#, python-format
+msgid "Also transfer %(total)s media file (%(counts)s)"
+msgid_plural "Also transfer %(total)s media files (%(counts)s)"
+msgstr[0] "Transferir também %(total)s ficheiro multimédia (%(counts)s)"
+msgstr[1] "Transferir também %(total)s ficheiros multimédia (%(counts)s)"
+
+#, python-format
+msgid "%s media file is missing on both sides and cannot be transferred."
+msgid_plural ""
+"%s media files are missing on both sides and cannot be transferred."
+msgstr[0] ""
+"O ficheiro multimédia %s não existe em nenhum dos lados e não foi possível "
+"transferi-lo."
+msgstr[1] ""
+"Os ficheiros multimédia %s não existem em nenhum dos lados e não foi "
+"possível transferi-los."
+
+#, python-format
+msgid "Applied %s change."
+msgid_plural "Applied %s changes."
+msgstr[0] "Aplicar %s alteração."
+msgstr[1] "Aplicar %s alterações."
+
+msgid "Both trees are already in sync."
+msgstr "As árvores já estão sincronizadas."
+
+msgid "Media files are in sync."
+msgstr "Multimédia sincronizada."
+
+#, python-format
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "Transferiu com êxito %s ficheiro multimédia."
+msgstr[1] "Transferiu com êxito %s ficheiros multimédia."
+
+#, python-format
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "Encontrado %s erro durante a transferência."
+msgstr[1] "Encontrados %s erros durante a transferência."
+
+#, python-format
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "Envio com êxito de %s ficheiro multimédia."
+msgstr[1] "Envio com êxito de %s ficheiros multimédia."
+
+#, python-format
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "%s erro encontrado durante o envio."
+msgstr[1] "%s erros encontrados durante o envio."
+
+msgid "No server configured"
+msgstr "Nenhum servidor configurado"
+
+#, python-format
+msgid "%(user)s on %(server)s"
+msgstr "%(user)s no %(server)s"
+
+#, python-format
+msgid "%(where)s — %(synced)s"
+msgstr "%(where)s — %(synced)s"
+
+msgid "Never synced"
+msgstr "Nunca sincronizado"
+
+msgid "Last synced just now"
+msgstr "Sincronizado agora mesmo"
+
+#, python-format
+msgid "Last synced %s minute ago"
+msgid_plural "Last synced %s minutes ago"
+msgstr[0] "Última sincronização há %s minuto"
+msgstr[1] "Última sincronização há %s minutos"
+
+#, python-format
+msgid "Last synced %s hour ago"
+msgid_plural "Last synced %s hours ago"
+msgstr[0] "Última sincronização há %s hora"
+msgstr[1] "Última sincronização há %s horas"
+
+#, python-format
+msgid "Last synced %s day ago"
+msgid_plural "Last synced %s days ago"
+msgstr[0] "Última sincronização há %s dia"
+msgstr[1] "Última sincronização há %s dias"
+
+#, python-format
+msgid "Last synced on %s"
+msgstr "Última sincronização a %s"
+
+msgid "_Try again"
+msgstr "_Tentar novamente"
+
+msgid "C_onnect"
+msgstr "Li_gar"
+
+msgid "Forget this server?"
+msgstr "Esquecer este servidor?"
+
+msgid ""
+"The address, user name and password stored for this server will be removed, "
+"along with the record of when this family tree last synchronized with it. "
+"The next synchronization will compare the two trees from scratch."
+msgstr ""
+"O endereço, o utilizador e a senha gravados para este servidor serão "
+"eliminados, juntamente com o registo da última vez que esta árvore "
+"genealógica foi sincronizada com o mesmo. A próxima sincronização comparará "
+"as duas árvores a partir do início."
+
+msgid "Forget"
+msgstr "Esquecer"
+
+msgid ""
+"These credentials were last used with a different family tree. Check the "
+"server before continuing."
+msgstr ""
+"Estas credenciais foram utilizadas pela última vez com uma árvore "
+"genealógica diferente. Verifique o servidor antes de continuar."
+
+msgid "Change server…"
+msgstr "Alterar servidor…"
+
+msgid "Server URL:"
+msgstr "URL do servidor:"
+
+msgid "Username:"
+msgstr "Utilizador:"
+
+msgid "Password:"
+msgstr "Senha:"
+
+msgid "Remember password"
+msgstr "Lembrar senha"
+
+msgid "Forget this server"
+msgstr "Esquecer este servidor"
+
+msgid "About this tool"
+msgstr "Acerca da ferramenta"
+
+msgid "Open the online manual"
+msgstr "Abrir o manual em linha"
 
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
@@ -147,142 +434,20 @@ msgstr ""
 "com a opção de efectuar modificações manuais, utilize a Ferramenta de união "
 "de importação."
 
-msgid "Server URL: "
-msgstr "URL do servidor: "
-
 msgid "Error:"
 msgstr "Erro:"
-
-msgid "Sync mode"
-msgstr "Modo de sincronização"
-
-msgid ""
-"Changes from both sides are combined. Objects edited in both places are "
-"merged."
-msgstr ""
-"As alterações de ambos os lados são combinadas. Os objectos editados em "
-"ambos os locais são unidos."
-
-msgid ""
-"The server is made to match this computer. Anything changed only on the "
-"server is discarded."
-msgstr ""
-"O servidor foi feito para corresponder a este computador. Qualquer alteração "
-"feita no servidor é descartada."
-
-msgid ""
-"This computer is made to match the server. Anything changed only here is "
-"discarded."
-msgstr ""
-"Este computador foi feito para corresponder ao servidor. Qualquer alteração "
-"feita aqui é ignorada."
-
-msgid "Bidirectional Synchronization"
-msgstr "Sincronização bidireccional"
-
-msgid "Reset remote to local"
-msgstr "Repor a remota com a local"
-
-msgid "Reset local to remote"
-msgstr "Repor a local com a remota"
 
 msgid "Warning:"
 msgstr "Aviso:"
 
-msgid "Local changes"
-msgstr "Alterações locais"
+msgid "Sync mode:"
+msgstr "Modo de sincronização:"
 
-msgid "Modified"
-msgstr "Modificado"
+msgid "Copy"
+msgstr "Copiar"
 
-msgid "Remote changes"
-msgstr "Alterações remotas"
+msgid "Synchronization complete"
+msgstr "Sincronização concluída"
 
-msgid "Simultaneous changes"
-msgstr "Alterações simultâneas"
-
-msgid "Fetching information about media files..."
-msgstr "A obter informação sobre multimédia..."
-
-msgid "Both trees are the same."
-msgstr "As árvores são idênticas."
-
-msgid "Applying changes to local database ..."
-msgstr "Aplicar alterações à base de dados local."
-
-msgid "No changes to apply to local database."
-msgstr "Não aplicar alterações à base de dados local."
-
-msgid "Applying changes to remote database ..."
-msgstr "A aplicar alterações à base de dados remota..."
-
-msgid "No changes to apply to remote database."
-msgstr "Não há alterações a aplicar à base de dados remota."
-
-msgid "Missing locally"
-msgstr "Locais em falta"
-
-msgid "Missing remotely"
-msgstr "Remotos em falta"
-
-#, python-format
-msgid "Downloading %s media file"
-msgid_plural "Downloading %s media files"
-msgstr[0] "A transferir %s ficheiro multimédia"
-msgstr[1] "A transferir %s ficheiros multimédia"
-
-#, python-format
-msgid "Uploading %s media file"
-msgid_plural "Uploading %s media files"
-msgstr[0] "A enviar %s ficheiro multimédia"
-msgstr[1] "A enviar %s ficheiros multimédia"
-
-msgid "Try again"
-msgstr "Tentar novamente"
-
-#, python-format
-msgid "Applied %s change."
-msgid_plural "Applied %s changes."
-msgstr[0] "Aplicar %s alteração."
-msgstr[1] "Aplicar %s alterações."
-
-msgid "Media files are in sync."
-msgstr "Multimédia sincronizada."
-
-#, python-format
-msgid "%s media file is missing on both sides and could not be transferred."
-msgid_plural ""
-"%s media files are missing on both sides and could not be transferred."
-msgstr[0] ""
-"O ficheiro multimédia %s não existe em nenhum dos lados e não foi possível "
-"transferi-lo."
-msgstr[1] ""
-"Os ficheiros multimédia %s não existem em nenhum dos lados e não foi "
-"possível transferi-los."
-
-msgid "Both trees are already in sync."
-msgstr "As árvores já estão sincronizadas."
-
-#, python-format
-msgid "Successfully downloaded %s media file."
-msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "Transferiu com êxito %s ficheiro multimédia."
-msgstr[1] "Transferiu com êxito %s ficheiros multimédia."
-
-#, python-format
-msgid "Encountered %s error during download."
-msgid_plural "Encountered %s errors during download."
-msgstr[0] "Encontrado %s erro durante a transferência."
-msgstr[1] "Encontrados %s erros durante a transferência."
-
-#, python-format
-msgid "Successfully uploaded %s media file."
-msgid_plural "Successfully uploaded %s media files."
-msgstr[0] "Envio com êxito de %s ficheiro multimédia."
-msgstr[1] "Envio com êxito de %s ficheiros multimédia."
-
-#, python-format
-msgid "Encountered %s error during upload."
-msgid_plural "Encountered %s errors during upload."
-msgstr[0] "%s erro encontrado durante o envio."
-msgstr[1] "%s erros encontrados durante o envio."
+msgid "Synchronization failed"
+msgstr "A sincronização falhou"

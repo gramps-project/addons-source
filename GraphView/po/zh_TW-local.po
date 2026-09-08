@@ -1,0 +1,373 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Graph View"
+msgstr "關係圖檢視"
+
+msgid "Show IDs"
+msgstr "顯示 ID"
+
+msgid "Show avatars"
+msgstr "顯示頭像"
+
+msgid "Highlight the home person"
+msgstr "突顯首頁人物"
+
+msgid "Show full dates"
+msgstr "顯示完整日期"
+
+msgid "Show places"
+msgstr "顯示地點"
+
+msgid "Vertical: Top to Bottom"
+msgstr "垂直：由上至下"
+
+msgid "Vertical: Bottom to Top"
+msgstr "垂直：由下至上"
+
+msgid "Horizontal: Left to Right"
+msgstr "水平：由左至右"
+
+msgid "Horizontal: Right to Left"
+msgstr "水平：由右至左"
+
+msgid "Time Direction"
+msgstr "時間方向"
+
+msgid "Limit number of people displayed (use 0 for unlimited)"
+msgstr "限制顯示的人物數量（0 代表不限）"
+
+msgid "Person theme"
+msgstr "人物佈景主題"
+
+msgid "Path color to home person"
+msgstr "連往首頁人物的路徑色彩"
+
+msgid "Font:"
+msgstr "字型："
+
+msgid "Avatars style"
+msgstr "頭像樣式"
+
+msgid "PNG files"
+msgstr "PNG 檔案"
+
+msgid "Male avatar:"
+msgstr "男性頭像："
+
+msgid "Choose male avatar"
+msgstr "選擇男性頭像"
+
+msgid "Female avatar:"
+msgstr "女性頭像："
+
+msgid "Choose female avatar"
+msgstr "選擇女性頭像"
+
+msgid "Unknown avatar:"
+msgstr "性別不明頭像："
+
+msgid "Choose Unknown avatar"
+msgstr "選擇性別不明頭像"
+
+msgid "Other avatar:"
+msgstr "其他性別頭像："
+
+msgid "Choose Other avatar"
+msgstr "選擇其他性別頭像"
+
+msgid "Active person border size"
+msgstr "目前人物框線大小"
+
+msgid "Person border size"
+msgstr "人物邊框大小"
+
+msgid "Themes"
+msgstr "佈景主題"
+
+msgid "Show animation"
+msgstr "顯示動畫"
+
+msgid "Animation speed (1..5 and 5 is the slower)"
+msgstr "動畫速度 (1..5，5 最慢)"
+
+msgid "Animation count (0..8 use 0 to turn off)"
+msgstr "動畫次數（0 至 8；使用 0 關閉）"
+
+msgid "Animation"
+msgstr "動畫"
+
+msgid "Search in all database"
+msgstr "搜尋整個資料庫"
+
+msgid "Also apply search by all database."
+msgstr "也搜尋整個資料庫。"
+
+msgid "Show person images"
+msgstr "顯示人物圖片"
+
+msgid "Show persons thumbnails in search result list."
+msgstr "在搜尋結果清單中顯示人物縮圖。"
+
+msgid "Show bookmarked first"
+msgstr "優先顯示書籤人物"
+
+msgid "Show bookmarked persons first in search result list."
+msgstr "在搜尋結果清單中優先顯示已加入書籤的人物。"
+
+msgid "Select a dot file name"
+msgstr "選取 dot 檔名"
+
+msgid "Zoom in"
+msgstr "放大"
+
+msgid "Zoom out"
+msgstr "縮小"
+
+msgid "Zoom to original"
+msgstr "縮放至原始大小"
+
+msgid "Zoom to best fit"
+msgstr "縮放至最適大小"
+
+msgid "Go to active person"
+msgstr "前往目前人物"
+
+msgid "Go to bookmark"
+msgstr "前往書籤"
+
+msgid "Center view on selected bookmark"
+msgstr "將檢視置中於選取的書籤"
+
+msgid "Bookmarks for current graph"
+msgstr "目前圖表的書籤"
+
+msgid "Other Bookmarks"
+msgstr "其他書籤"
+
+msgid "Vertical spacing between generations"
+msgstr "世代之間的垂直間距"
+
+msgid "Horizontal spacing between generations"
+msgstr "世代之間的水平間距"
+
+msgid "Spacings"
+msgstr "間距"
+
+msgid "All connected"
+msgstr "所有有連結的人物"
+
+msgid ""
+"Show all connected persons limited by generation restrictions.\n"
+"Works slow, so don't set large generation values."
+msgstr ""
+"顯示世代限制範圍內所有有連結的人物。\n"
+"執行速度較慢，請勿設定過大的世代數。"
+
+msgid "Add active person"
+msgstr "加入目前人物"
+
+msgid "Call the bookmark editor"
+msgstr "開啟書籤編輯器"
+
+msgid ""
+"You don't have any bookmarks yet...\n"
+"Try to add some frequently used persons to speedup navigation."
+msgstr ""
+"您還沒有任何書籤...\n"
+"試著加入一些常用人物，以加快導覽。"
+
+msgid "No bookmarks for this graph..."
+msgstr "此圖表沒有書籤..."
+
+msgid "No other bookmarks..."
+msgstr "沒有其他書籤..."
+
+#, python-format
+msgid "found: %s"
+msgstr "找到：%s"
+
+#, python-format
+msgid ""
+"Add active person to bookmarks\n"
+"%s"
+msgstr ""
+"將目前人物加入書籤\n"
+"%s"
+
+#, python-format
+msgid ""
+"Person <b><i>%s</i></b> is not in the current view.\n"
+"Do you want to set it active and rebuild view?"
+msgstr ""
+"人物 <b><i>%s</i></b> 不在目前檢視中。\n"
+"要將其設為目前人物並重建檢視嗎？"
+
+msgid "Change active person?"
+msgstr "要變更目前人物嗎？"
+
+#, python-brace-format
+msgid ""
+"This graph would contain at least {people_count} people, which exceeds the "
+"limit of {people_limit} people. For performance reasons, at least "
+"{people_missing} people won't be shown. You can change this limit in the "
+"view configuration."
+msgstr ""
+"此圖至少會包含 {people_count} 個人物，超過 {people_limit} 人的上限。為維持效"
+"能，至少有 {people_missing} 人不會顯示。您可以在檢視設定中變更此上限。"
+
+msgid "Incomplete graph"
+msgstr "不完整的關係圖"
+
+msgid "Image on right side"
+msgstr "圖片置於右側"
+
+msgid "Image on left side"
+msgstr "左側圖片"
+
+#, python-format
+msgid "%s "
+msgstr "%s "
+
+msgid "<b>Tags:</b>"
+msgstr "<b>標籤：</b>"
+
+msgid "Lines type"
+msgstr "線條類型"
+
+msgid "Direct"
+msgstr "直線"
+
+msgid "Curves"
+msgstr "曲線"
+
+msgid "Ortho"
+msgstr "直角折線"
+
+msgid "Copy"
+msgstr "複製"
+
+msgid "No Events for this person"
+msgstr "此人物沒有事件"
+
+msgid "Select tags for person"
+msgstr "選取人物標籤"
+
+msgid "Add new family"
+msgstr "新增家庭"
+
+msgid "Add parents"
+msgstr "新增父母"
+
+msgid "Set as home person"
+msgstr "設為首頁人物"
+
+msgid "Show path to home person"
+msgstr "顯示前往首頁人物的路徑"
+
+msgid "Remove from bookmarks"
+msgstr "從書籤移除"
+
+msgid "Add to bookmarks"
+msgstr "加入書籤"
+
+msgid "No Events for this family"
+msgstr "此家庭沒有事件"
+
+msgid "Select tags for family"
+msgstr "選取家庭標籤"
+
+msgid "Add father"
+msgstr "新增父親"
+
+msgid "Add mother"
+msgstr "新增母親"
+
+msgid "About Graph View"
+msgstr "關於關係圖檢視"
+
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "正在為人物 (%s) 新增標籤"
+
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "正在新增標籤至家庭 (%s)"
+
+#, python-format
+msgid "Deleting the person [%s] will remove it from the database."
+msgstr "刪除人物 [%s] 會將其從資料庫移除。"
+
+#, python-format
+msgid "Delete family [%s]?"
+msgstr "要刪除家庭 [%s] 嗎？"
+
+msgid "Deleting the family will remove it from the database."
+msgstr "刪除家庭會將其從資料庫移除。"
+
+#, python-format
+msgid "Delete Family [%s]"
+msgstr "刪除家庭 [%s]"
+
+msgid "Dynamic and interactive graph of relations"
+msgstr "動態互動式關係圖"
+
+msgid "Dark (default)"
+msgstr "深色（預設）"
+
+msgid "Light"
+msgstr "淺色"
+
+msgid "Cartoon"
+msgstr "卡通"
+
+msgid "Modern"
+msgstr "現代"
+
+msgid "Generic (dark)"
+msgstr "通用（深色）"
+
+msgid "Generic (gray)"
+msgstr "通用 (灰色)"
+
+msgid "Generic (light)"
+msgstr "通用 (淺色)"
+
+msgid "Persons from current graph"
+msgstr "目前關係圖中的人物"
+
+msgid "Other persons from database"
+msgstr "資料庫中的其他人物"
+
+msgid "No persons found..."
+msgstr "找不到人物..."
+
+msgid ""
+"Search people in the current visible graph and database.\n"
+"Use <Ctrl+F> to make search entry active."
+msgstr ""
+"搜尋目前可見關係圖與資料庫中的人物。\n"
+"使用 <Ctrl+F> 啟用搜尋輸入欄位。"
+
+msgid "Search..."
+msgstr "搜尋..."
+
+#, python-format
+msgid "<b>%s:</b>"
+msgstr "<b>%s：</b>"
+
+msgid "Partners"
+msgstr "伴侶"

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,10 +12,75 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "TR-Title"
+msgstr "TR-タイトル"
+
+#, python-format
+msgid "Report on Notes Tagged '%s'"
+msgstr "タグ '%s' が付いたメモのレポート"
+
+msgid "TR-Heading"
+msgstr "TR-見出し"
+
+msgid "NoteTable"
+msgstr "メモテーブル"
+
+msgid "TR-Table"
+msgstr "TR-テーブル"
+
+msgid "TR-TableCell"
+msgstr "TR-テーブルセル"
+
+msgid "TR-Normal-Bold"
+msgstr "TR-ノーマル-ボールド"
+
+msgid "TR-Normal"
+msgstr "TR-ノーマル"
+
+msgid "TR-Note"
+msgstr "TR-メモ"
+
+msgid "TR-BorderCell"
+msgstr "TR-ボーダーセル"
+
+msgid "date: "
+msgstr "日付: "
+
+msgid "place: "
+msgstr "場所: "
+
+msgid "Note Type"
+msgstr "メモの種類"
+
+msgid "Group by reference type"
+msgstr "参照タイプでグループ化"
+
+msgid "Group notes by Family, Person, Place, etc."
+msgstr "メモを家族、人物、場所などでグループ化."
+
 msgid "The style used for the title of the page."
 msgstr "ページのタイトルに使用されるスタイル。"
+
+msgid "The basic style used for the table cell display."
+msgstr "テーブルセルの表示に使用される基本スタイル。"
+
+msgid "The basic style used for the table border cell display."
+msgstr "テーブルボーダーセルの表示に使用される基本スタイル。"
+
+msgid "The basic style used for the table display."
+msgstr "テーブルの表示に使用される基本スタイル。"
+
+msgid "Todo Report"
+msgstr "ToDoレポート"
+
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"特定のタグが付いたすべてのメモと、それが参照するレコード (人物、家族、イベン"
+"トなど）のリストを生成します。"

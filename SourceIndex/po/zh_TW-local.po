@@ -1,0 +1,428 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-13 23:40+0000\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Sources Index"
+msgstr "來源索引"
+
+msgid "BirthIndex"
+msgstr "BirthIndex"
+
+msgid "MarriageIndex"
+msgstr "MarriageIndex"
+
+msgid "DeathIndex"
+msgstr "DeathIndex"
+
+msgid "CensusIndex"
+msgstr "CensusIndex"
+
+msgid "SourceIndex"
+msgstr "SourceIndex"
+
+msgid "*** Error: Must install either ElementTree or lxml."
+msgstr "*** 錯誤：必須安裝 ElementTree 或 lxml。"
+
+msgid "must install either ElementTree or lxml"
+msgstr "必須安裝 ElementTree 或 lxml"
+
+msgid "index"
+msgstr "索引"
+
+msgid "_File"
+msgstr "檔案(_F)"
+
+msgid "Import CSV"
+msgstr "匯入 CSV"
+
+msgid "Display all"
+msgstr "全部顯示"
+
+msgid "Display only births"
+msgstr "僅顯示出生"
+
+msgid "Births/Baptisms"
+msgstr "出生／受洗"
+
+msgid "Display only marriages"
+msgstr "僅顯示婚姻"
+
+msgid "Marriages/Families"
+msgstr "婚姻／家庭"
+
+msgid "Display only deaths"
+msgstr "只顯示死亡紀錄"
+
+msgid "Deaths/Burials"
+msgstr "死亡／安葬"
+
+msgid "Display only censuses"
+msgstr "僅顯示人口普查"
+
+msgid "Censuses"
+msgstr "人口普查"
+
+msgid "About this utility."
+msgstr "關於此工具。"
+
+msgid "About dialog"
+msgstr "關於對話方塊"
+
+msgid "New birth or baptism"
+msgstr "新增出生或受洗"
+
+msgid "add birth act"
+msgstr "新增出生登記紀錄"
+
+msgid "New marriage"
+msgstr "新增婚姻"
+
+msgid "add marriage act"
+msgstr "新增婚姻登記紀錄"
+
+msgid "New death or burial"
+msgstr "新增死亡或埋葬"
+
+msgid "add death act"
+msgstr "新增死亡登記紀錄"
+
+msgid "New census"
+msgstr "新增人口普查"
+
+msgid "add census"
+msgstr "新增人口普查"
+
+msgid "Select a birth source"
+msgstr "選取出生來源"
+
+msgid "birth"
+msgstr "出生"
+
+msgid "Select a marriage source"
+msgstr "選取婚姻來源"
+
+msgid "Select a death source"
+msgstr "選取死亡來源"
+
+msgid "Select a census source"
+msgstr "選取人口普查來源"
+
+msgid "census"
+msgstr "人口普查"
+
+msgid "Select a repository storing a source"
+msgstr "選取收藏此來源的存放庫"
+
+msgid "repositories"
+msgstr "存放庫"
+
+msgid "Selected view"
+msgstr "選取的檢視"
+
+msgid ""
+"Records transcriptions ... births/deaths/marriages/censuses with common "
+"fields: id, repository, person name, birth date and place, parents."
+msgstr ""
+"抄錄出生／死亡／婚姻／人口普查記錄，包含共同欄位：ID、存放庫、人物姓名、出生"
+"日期及地點、父母。"
+
+msgid "Info:"
+msgstr "資訊："
+
+msgid "Death act:"
+msgstr "死亡登記紀錄："
+
+msgid "Reference:"
+msgstr "參考："
+
+msgid "Volume:"
+msgstr "卷："
+
+msgid "<b>Death act</b>"
+msgstr "<b>死亡登記紀錄</b>"
+
+msgid "First name:"
+msgstr "名字："
+
+msgid "Age:"
+msgstr "年齡："
+
+msgid "<b>Image</b>"
+msgstr "<b>圖片</b>"
+
+msgid "<b>Repository</b>"
+msgstr "<b>存放庫</b>"
+
+msgid "<b>Data person</b>"
+msgstr "<b>人物資料</b>"
+
+msgid "Origin:"
+msgstr "原籍："
+
+msgid "Occupation:"
+msgstr "職業："
+
+msgid "Live:"
+msgstr "居住："
+
+msgid "<b>Witness:</b>"
+msgstr "<b>見證人：</b>"
+
+msgid "Birth date:"
+msgstr "出生日期："
+
+msgid "Birth place:"
+msgstr "出生地點："
+
+msgid "Note:"
+msgstr "備註："
+
+msgid "Spouse name:"
+msgstr "配偶姓名："
+
+msgid "Marriage date:"
+msgstr "結婚日期："
+
+msgid "Marriage place:"
+msgstr "結婚地點："
+
+msgid "<b>Data mother</b>"
+msgstr "<b>母親資料</b>"
+
+msgid "<b>Data father</b>"
+msgstr "<b>父親資料</b>"
+
+msgid "<b>Spouse</b> "
+msgstr "<b>配偶</b> "
+
+msgid "alive"
+msgstr "在世"
+
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"見證人 1、姓氏、名字、年齡、職業；見證人 2、姓氏、名字、年齡、職業等等 ..."
+
+msgid "witness"
+msgstr "見證人"
+
+msgid "<b>Witness</b>"
+msgstr "<b>見證人</b>"
+
+msgid "Names:"
+msgstr "姓名："
+
+msgid "First names:"
+msgstr "名字："
+
+msgid "<b>Census</b>"
+msgstr "<b>人口普查</b>"
+
+msgid "Death date:"
+msgstr "死亡日期："
+
+msgid "Death place:"
+msgstr "死亡地點："
+
+msgid "Family status:"
+msgstr "家庭狀況："
+
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr "順序、人物、姓氏、名字、年齡、狀態、職業等等 ..."
+
+msgid "Birth act:"
+msgstr "出生登記紀錄："
+
+msgid ""
+"Volume\n"
+"    Page:"
+msgstr ""
+"卷\n"
+"    頁："
+
+msgid "The source title"
+msgstr "來源標題"
+
+msgid "The volume or page of this source"
+msgstr "此來源的卷或頁"
+
+msgid "select the gender/sex"
+msgstr "選取性別"
+
+msgid "The names of the main person written into the source"
+msgstr "來源中記載的主要人物姓名"
+
+msgid "The first names of the main person written into the source"
+msgstr "來源中記載的主要人物名字"
+
+msgid "Other:"
+msgstr "其他："
+
+msgid "Repository title"
+msgstr "存放庫標題"
+
+msgid "<b><i>Repository</i></b>"
+msgstr "<b><i>存放庫</i></b>"
+
+msgid ""
+"Spouse\n"
+"names:"
+msgstr ""
+"配偶\n"
+"姓名："
+
+msgid ""
+"Marriage\n"
+"date:"
+msgstr ""
+"結婚\n"
+"日期："
+
+msgid ""
+"Death\n"
+"date:"
+msgstr ""
+"死亡\n"
+"日期："
+
+msgid ""
+"<b>Witness\n"
+"Godfather\n"
+"Godmother:</b>"
+msgstr ""
+"<b>見證人\n"
+"教父\n"
+"教母：</b>"
+
+msgid "Call number:"
+msgstr "索書號："
+
+msgid "The call number into the repository"
+msgstr "存放庫中的索書號"
+
+msgid "<b><i>Data person</i></b>"
+msgstr "<b><i>人物資料</i></b>"
+
+msgid "<b><i>Data margin</i></b>"
+msgstr "<b><i>邊註資料</i></b>"
+
+msgid "<b><i>Data father</i></b>"
+msgstr "<b><i>父親資料</i></b>"
+
+msgid "<b><i>Data mother</i></b>"
+msgstr "<b><i>母親資料</i></b>"
+
+msgid ""
+"witness1, name, given, age, occupation;\n"
+"witness2, name, given, age, occupation;\n"
+"godfather, name, given, age, occupation;\n"
+"etc ..."
+msgstr ""
+"見證人 1、姓氏、名字、年齡、職業；\n"
+"見證人 2、姓氏、名字、年齡、職業；\n"
+"教父、姓氏、名字、年齡、職業；\n"
+"等等 ..."
+
+msgid ""
+"Marriage\n"
+"place:"
+msgstr ""
+"結婚\n"
+"地點："
+
+msgid ""
+"Death\n"
+"place:"
+msgstr ""
+"死亡\n"
+"地點："
+
+msgid ""
+"Birth\n"
+"place:"
+msgstr ""
+"出生\n"
+"地點："
+
+msgid "Origine:"
+msgstr "原籍："
+
+msgid "<b><i>Citation</i></b>"
+msgstr "<b><i>引用</i></b>"
+
+msgid "<b><i>Source</i></b>"
+msgstr "<b><i>來源</i></b>"
+
+msgid "Marriage act:"
+msgstr "婚姻登記紀錄："
+
+msgid "m. date:"
+msgstr "婚期："
+
+msgid "m. place:"
+msgstr "結婚地點："
+
+msgid "d.contract:"
+msgstr "契約日期："
+
+msgid "dates banns:"
+msgstr "結婚預告日期："
+
+msgid "p.contract:"
+msgstr "契約地點："
+
+msgid "places banns:"
+msgstr "結婚預告地點："
+
+msgid "<b>Data union</b>"
+msgstr "<b>結合資料</b>"
+
+msgid "<b>Marriage act</b>"
+msgstr "<b>婚姻登記紀錄</b>"
+
+msgid ""
+"<b>Data father\n"
+"spouse1</b>"
+msgstr ""
+"<b>配偶 1 的\n"
+"父親資料</b>"
+
+msgid ""
+"<b>Data mother\n"
+"spouse1</b>"
+msgstr ""
+"<b>配偶 1 的\n"
+"母親資料</b>"
+
+msgid ""
+"<b>Data mother\n"
+"spouse2</b>"
+msgstr ""
+"<b>配偶 2 的\n"
+"母親資料</b>"
+
+msgid ""
+"<b>Data father\n"
+"spouse2</b>"
+msgstr ""
+"<b>配偶 2 的\n"
+"父親資料</b>"
+
+msgid "<b>Data spouse1</b>"
+msgstr "<b>配偶 1 資料</b>"
+
+msgid "<b>Data spouse2</b>"
+msgstr "<b>配偶 2 資料</b>"

@@ -1,0 +1,111 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
+msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
+
+msgid "Replace existing references to the person being assigned without asking"
+msgstr "割り当てようとしている人物への既存の参照を確認せずに置き換える"
+
+msgid "Face detection"
+msgstr "顔検出"
+
+msgid "Minimum face width (px)"
+msgstr "最小顔幅 (ピクセル)"
+
+msgid "Minimum face height (px)"
+msgstr "最小顔高さ (ピクセル)"
+
+msgid "Detect faces inside existing boxes"
+msgstr "既存のボックス内の顔を検出"
+
+msgid "Sensitivity (1 min .. 20 max)"
+msgstr "感度 (最小 1 .. 最大 20)"
+
+msgid "Add Person"
+msgstr "人物を追加"
+
+msgid "Clear Reference"
+msgstr "参照をクリア"
+
+msgid "Remove Selection"
+msgstr "選択を削除"
+
+msgid "Edit referenced Person"
+msgstr "参照されている人物を編集"
+
+msgid "Zoom In"
+msgstr "拡大"
+
+msgid "Zoom Out"
+msgstr "縮小"
+
+msgid "Detect faces"
+msgstr "顔を検出"
+
+msgid "Detect faces (OpenCV module required)"
+msgstr "顔を検出 (OpenCV モジュールが必要)"
+
+msgid "XMP Region Name"
+msgstr "XMP 領域名"
+
+msgid "Set as active person"
+msgstr "アクティブな人として設定"
+
+msgid "_Select"
+msgstr "選択(_S)"
+
+#, python-brace-format
+msgid "Replace to {0}"
+msgstr "{0} に置き換え"
+
+msgid "Detecting faces..."
+msgstr "顔を検出中..."
+
+msgid "Detection finished"
+msgstr "検出終了"
+
+#, python-brace-format
+msgid "Another region of this image is associated with {name}. Remove it?"
+msgstr "この画像の別の領域が {name} に関連付けられています。削除しますか？"
+
+#, python-brace-format
+msgid ""
+"{count} other regions of this image are associated with {name}. Remove them?"
+msgstr ""
+"この画像の {count} 個の他の領域が {name} に関連付けられています。削除します"
+"か？"
+
+#, python-format
+msgid "Male person|Dead at %s"
+msgstr "男性| %s に死亡"
+
+#, python-format
+msgid "Female person|Dead at %s"
+msgstr "女性| %s に死亡"
+
+#, python-format
+msgid "Unknown gender person|Dead at %s"
+msgstr "性別不明| %s に死亡"
+
+msgid "Photo Tagging"
+msgstr "写真タグ付け"
+
+msgid "Gramplet for tagging people in photos"
+msgstr "写真内の人物にタグ付けするためのグランプレット"

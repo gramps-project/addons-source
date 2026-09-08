@@ -1,0 +1,515 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "No title"
+msgstr "無標題"
+
+msgid "No data available."
+msgstr "沒有可用資料。"
+
+msgid "HISTORICAL ADMINISTRATIVE DIVISIONS OF"
+msgstr "歷史行政區劃所屬地"
+
+msgid "Foundation date:"
+msgstr "建立日期："
+
+msgid "Note:"
+msgstr "備註："
+
+msgid "Coordinates:"
+msgstr "座標："
+
+msgid "Administrative history"
+msgstr "行政沿革"
+
+msgid "Data provided to AI:"
+msgstr "提供給 AI 的資料："
+
+msgid "Full hierarchy"
+msgstr "完整階層"
+
+msgid "Place Type:"
+msgstr "地點類型："
+
+msgid "Last Retrieved At:"
+msgstr "上次擷取時間："
+
+msgid "Save Coordinates to the Place"
+msgstr "將座標儲存到地點"
+
+msgid "AI provider is disabled"
+msgstr "AI 提供者已停用"
+
+msgid "No AI API key provided"
+msgstr "未提供 AI API 金鑰"
+
+msgid "AI-generated historical place data is currently disabled"
+msgstr "目前已停用 AI 產生的歷史地點資料"
+
+msgid "AI provider is unknown. Please check your AI provider settings."
+msgstr "不明的 AI 提供者。請檢查 AI 提供者設定。"
+
+msgid "⏳ Generating historical place data, please wait..."
+msgstr "⏳ 正在產生歷史地點資料，請稍候…"
+
+msgid "Keys"
+msgstr "索引鍵"
+
+msgid "Website URL"
+msgstr "網站網址"
+
+msgid "Add link to note"
+msgstr "將連結加入備註"
+
+msgid "Add link to attribute"
+msgstr "將連結新增至屬性"
+
+msgid "Show QR-code"
+msgstr "顯示 QR Code"
+
+msgid "Copy link to clipboard"
+msgstr "複製連結至剪貼簿"
+
+msgid "Hide link for selected item"
+msgstr "隱藏所選項目的連結"
+
+msgid "Hide link for all items"
+msgstr "隱藏所有項目的連結"
+
+msgid "Edit Attribute with the Link"
+msgstr "編輯包含此連結的屬性"
+
+msgid "Edit Note with the Link"
+msgstr "編輯包含此連結的備註"
+
+msgid "Edit Internet link"
+msgstr "編輯網際網路連結"
+
+msgid "🔍 AI Suggestions"
+msgstr "🔍 AI 建議"
+
+msgid "Attribute no longer matches this WebSearch row"
+msgstr "屬性已不再符合此 WebSearch 資料列"
+
+msgid "Attribute no longer exists. The extra icon is removed"
+msgstr "屬性已不存在。已移除額外圖示"
+
+msgid "Note no longer exists"
+msgstr "備註已不存在"
+
+msgid "Note no longer exists. The extra icon is removed"
+msgstr "備註已不存在。已移除額外圖示"
+
+msgid "Internet link no longer matches this WebSearch row"
+msgstr "網際網路連結不再符合此 WebSearch 列"
+
+#, python-brace-format
+msgid ""
+"📌 This '{title}' web link was archived for future reference by the "
+"WebSearch gramplet (v. {version}):\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"You can use this link to revisit the source and verify the information "
+"related to this entity."
+msgstr ""
+"📌 WebSearch Gramplet (v. {version}) 已封存「{title}」網頁連結，以供日後參"
+"考：\n"
+"\n"
+"🔗 {url}\n"
+"\n"
+"您可以使用此連結重新查看來源，並驗證與此實體相關的資訊。"
+
+#, python-format
+msgid "Note #%(id)s has been successfully added"
+msgstr "已成功新增備註 #%(id)s"
+
+msgid "Error creating note"
+msgstr "建立備註時發生錯誤"
+
+msgid "URL is copied to the Clipboard"
+msgstr "URL 已複製到剪貼簿"
+
+msgid "WebSearch Link"
+msgstr "WebSearch 連結"
+
+msgid "Attribute has been successfully added"
+msgstr "已成功新增屬性"
+
+#, python-brace-format
+msgid "Title: {title}"
+msgstr "標題：{title}"
+
+#, python-brace-format
+msgid "Replaced: {keys}"
+msgstr "已取代：{keys}"
+
+#, python-brace-format
+msgid "Empty: {keys}"
+msgstr "空白：{keys}"
+
+#, python-brace-format
+msgid "Comment: {comment}"
+msgstr "註解：{comment}"
+
+msgid "Column - Icons"
+msgstr "欄位 - 圖示"
+
+msgid "Column - Source Types (flags)"
+msgstr "欄位：來源類型（旗標）"
+
+msgid "Column - Keys"
+msgstr "欄位 - 索引鍵"
+
+msgid "Column - Title"
+msgstr "欄位 - 標題"
+
+msgid "Column - Website Url"
+msgstr "欄位 - 網站網址"
+
+msgid "Column - Comment"
+msgstr "欄位 - 註解"
+
+msgid "Icon - Visited URLs (checkmark)"
+msgstr "圖示 - 已瀏覽的網址 (勾號)"
+
+msgid "Icon - Saved URLs (floppy disk)"
+msgstr "圖示 - 已儲存的網址 (磁碟片)"
+
+msgid "Icon - URLs linked to UID attributes (UID badge)"
+msgstr "圖示 - 連結至 UID 屬性的網址 (UID 徽章)"
+
+msgid "Icon - URLs from regional CSV files (flag)"
+msgstr "圖示 - 來自區域 CSV 檔案的網址 (旗幟)"
+
+msgid "Icon - URLs from static CSV files (red pin)"
+msgstr "圖示 - 來自靜態 CSV 檔案的網址 (紅色圖釘)"
+
+msgid "Icon - URLs from common CSV files (earth)"
+msgstr "圖示 - 來自通用 CSV 檔案的網址（地球）"
+
+msgid "Icon - URLs from cross CSV files (shuffle arrows)"
+msgstr "圖示－來自跨 CSV 檔案的網址（交換箭頭）"
+
+msgid "Icon - URLs from custom user directory (spreadsheet icon)"
+msgstr "圖示 - 來自使用者自訂目錄的網址 (試算表圖示)"
+
+msgid "Icon - URLs from the 'Attributes' tab ('A' icon)"
+msgstr "圖示 - 來自 [屬性] 分頁的網址 (「A」圖示)"
+
+msgid "Icon - URLs from the 'Internet' tab ('I' icon)"
+msgstr "圖示 - 來自 [網際網路] 分頁的網址 (「I」圖示)"
+
+msgid "Icon - URLs from the 'Notes' tab ('N' icon)"
+msgstr "圖示 - 來自「備註」分頁的 URL (「N」圖示)"
+
+msgid "QR-code"
+msgstr "QR Code"
+
+msgid "⚠ Missing dependency \"qrcode\""
+msgstr "⚠ 缺少相依套件「qrcode」"
+
+msgid ""
+"⚠ Error generating QR code:\n"
+"Original error: “{}”"
+msgstr ""
+"⚠ 產生 QR 碼時發生錯誤：\n"
+"原始錯誤：“{}”"
+
+msgid "Note Link (parsed)"
+msgstr "備註連結 (已解析)"
+
+msgid "Note Link (internal)"
+msgstr "備註連結 (內部)"
+
+msgid "Note Link (external)"
+msgstr "備註連結（外部）"
+
+msgid "## 🧩 About WebSearch"
+msgstr "## 🧩 關於 WebSearch"
+
+msgid ""
+"WebSearch is a Gramplet for Gramps that helps you search genealogy-related "
+"websites."
+msgstr "WebSearch 是 Gramps 的 Gramplet，可協助您搜尋家譜相關網站。"
+
+msgid ""
+"It supports CSV-based link templates, AI-assisted site discovery, and direct "
+"integration with notes and attributes."
+msgstr ""
+"它支援以 CSV 為基礎的連結範本、AI 輔助網站探索，以及與備註和屬性的直接整合。"
+
+msgid "## ⚙️ System Information"
+msgstr "## ⚙️ 系統資訊"
+
+msgid "🔻 **Missing:** `qrcode`"
+msgstr "🔻 **缺少：** `qrcode`"
+
+msgid "ℹ️ This Python library is not available in your system."
+msgstr "ℹ️ 系統中沒有此 Python 程式庫。"
+
+msgid "Without it, QR code generation will not work."
+msgstr "沒有它，就無法產生 QR 碼。"
+
+msgid "💡 Usually installed with: `pip install qrcode[pil]`"
+msgstr "💡 通常可用此指令安裝：`pip install qrcode[pil]`"
+
+msgid ""
+"*Note: Some operating systems or environments may require alternative "
+"installation methods.*"
+msgstr "*備註：部分作業系統或環境可能需要其他安裝方式。*"
+
+msgid "🔻 **Missing:** `openai`"
+msgstr "🔻 **缺少：** `openai`"
+
+msgid "ℹ️ This library is required for accessing OpenAI-based features."
+msgstr "ℹ️ 存取以 OpenAI 為基礎的功能需要此函式庫。"
+
+msgid ""
+"Without it, AI-generated site suggestions and place history will be disabled."
+msgstr "缺少此套件時，將停用 AI 產生的網站建議及地點歷史。"
+
+msgid "💡 Usually installed with: `pip install openai`"
+msgstr "💡 通常請使用以下指令安裝：`pip install openai`"
+
+msgid "🔻 **Missing:** `requests`"
+msgstr "🔻 **缺少：** `requests`"
+
+msgid "ℹ️ This library is used to communicate with web APIs."
+msgstr "ℹ️ 此程式庫用於與網頁 API 通訊。"
+
+msgid "Without it, external data sources may not be accessible."
+msgstr "缺少此套件時，可能無法存取外部資料來源。"
+
+msgid "💡 Usually installed with: `pip install requests`"
+msgstr "💡 通常可用此指令安裝：`pip install requests`"
+
+msgid "## 📂 Data File Locations"
+msgstr "## 📂 資料檔案位置"
+
+msgid ""
+"Below are the paths to system and user-defined data files used by WebSearch."
+msgstr "以下是 WebSearch 使用的系統和使用者自訂資料檔案路徑。"
+
+msgid "#### CSV File Paths"
+msgstr "#### CSV 檔案路徑"
+
+#, python-format
+msgid "- **System path:** `{dir|%s}` – contains the built-in CSV files"
+msgstr "- **系統路徑：**`{dir|%s}` – 包含內建的 CSV 檔案"
+
+#, python-format
+msgid "- **User-defined path:** `{dir|%s}` – for custom user-defined CSV files"
+msgstr "- **使用者自訂路徑：** `{dir|%s}` – 用於使用者自訂的 CSV 檔案"
+
+msgid "#### JSON File Paths"
+msgstr "#### JSON 檔案路徑"
+
+#, python-format
+msgid ""
+"- **System path:** `{dir|%s}` – contains the built-in attribute_mapping.json "
+"file"
+msgstr "- **系統路徑：** `{dir|%s}` – 包含內建的 attribute_mapping.json 檔案"
+
+#, python-format
+msgid ""
+"- **User-defined path:** `{dir|%s}` – for custom user-defined "
+"attribute_mapping.json file"
+msgstr ""
+"- **使用者自訂路徑：** `{dir|%s}` – 用於自訂的 attribute_mapping.json 檔案"
+
+msgid "  💡 *Tip: click any path above to open it in your file manager.*"
+msgstr "  💡 *提示：按一下上方任一路徑，即可在檔案管理員中開啟。*"
+
+msgid "📖 View detailed usage in: "
+msgstr "📖 詳細用法請參閱： "
+
+msgid "## 💬 Support"
+msgstr "## 💬 支援"
+
+msgid "👤 Created and maintained by Yurii Liubymyi"
+msgstr "👤 由 Yurii Liubymyi 建立與維護"
+
+msgid ""
+"💬 For help or feedback, feel free to mention `@Urchello` on the Gramps "
+"forum:"
+msgstr "💬 如需協助或提供意見，歡迎在 Gramps 論壇提及 `@Urchello`："
+
+msgid "Gramps Forum (Discourse)"
+msgstr "Gramps 論壇 (Discourse)"
+
+msgid "✅ Bug reports and feature requests are completely **free of charge**."
+msgstr "✅ 錯誤回報及功能請求完全**免費**。"
+
+msgid "GitHub Issues"
+msgstr "GitHub Issues"
+
+msgid "Gramps Bug Tracker"
+msgstr "Gramps 錯誤追蹤系統"
+
+#, python-format
+msgid "🧩 WebSearch Gramplet version: `%s`"
+msgstr "🧩 WebSearch Gramplet 版本：`%s`"
+
+msgid "Middle Name Handling"
+msgstr "中間名處理"
+
+msgid "Leave alone"
+msgstr "維持原狀"
+
+msgid "Separate"
+msgstr "分開"
+
+msgid "URL Compactness Level"
+msgstr "網址精簡程度"
+
+msgid "Shortest - No Prefix, No Keys"
+msgstr "最短 - 無前綴、無索引鍵"
+
+msgid "Compact - No Prefix, Keys Without Attributes"
+msgstr "精簡 - 無前綴、索引鍵不含屬性"
+
+msgid "Compact - No Prefix, Keys With Attributes"
+msgstr "精簡 - 無前綴、索引鍵附屬性"
+
+msgid "Long - Without Prefix on the Left"
+msgstr "完整 - 左側無前綴"
+
+msgid "URL Prefix Replacement"
+msgstr "URL 前綴取代"
+
+msgid "AI Provider"
+msgstr "AI 提供者"
+
+msgid "(Disabled)"
+msgstr "(已停用)"
+
+msgid "OpenAI"
+msgstr "OpenAI"
+
+msgid "Mistral AI"
+msgstr "Mistral AI"
+
+msgid "OpenAI API Key"
+msgstr "OpenAI API 金鑰"
+
+msgid "OpenAI Model"
+msgstr "OpenAI 模型"
+
+msgid "Mistral API Key"
+msgstr "Mistral API 金鑰"
+
+msgid "Mistral Model"
+msgstr "Mistral 模型"
+
+msgid "Show Links From the 'Attributes' tab"
+msgstr "顯示 [屬性] 分頁中的連結"
+
+msgid "Show Links From the 'Internet' tab"
+msgstr "顯示 [網際網路] 分頁中的連結"
+
+msgid "Show Links From the Notes"
+msgstr "顯示備註中的連結"
+
+msgid "Enable AI-generated historical place data"
+msgstr "啟用 AI 產生的歷史地點資料"
+
+msgid "Custom country code for AI notes (optional)"
+msgstr "AI 備註的自訂國家／地區代碼 (選填)"
+
+msgid "Enable CSV Files"
+msgstr "啟用 CSV 檔案"
+
+msgid "Display Columns"
+msgstr "顯示欄位"
+
+msgid "Display Icons"
+msgstr "顯示圖示"
+
+msgid "WebSearch"
+msgstr "WebSearch"
+
+msgid ""
+"Customized queries for online services based on the active Person, Place, "
+"Family, or Source record"
+msgstr "根據目前的人物、地點、家庭或來源記錄，自訂線上服務查詢"
+
+#, python-format
+msgid "Visited: %s"
+msgstr "已瀏覽：%s"
+
+#, python-format
+msgid "Link: %s"
+msgstr "連結：%s"
+
+#, python-format
+msgid "Attribute: %s"
+msgstr "屬性：%s"
+
+#, python-format
+msgid "Value: %s"
+msgstr "值：%s"
+
+#, python-format
+msgid "Loaded from file: %s"
+msgstr "載入來源檔案：%s"
+
+#, python-format
+msgid "Domain: %s"
+msgstr "網域：%s"
+
+#, python-format
+msgid "Object: %s"
+msgstr "物件：%s"
+
+#, python-format
+msgid "Pattern: %s"
+msgstr "模式：%s"
+
+#, python-format
+msgid "Object Gramps ID: %s"
+msgstr "物件 Gramps ID：%s"
+
+#, python-format
+msgid "%s: %s → %s: %s"
+msgstr "%s：%s → %s：%s"
+
+msgid "Link visited"
+msgstr "已瀏覽連結"
+
+msgid "Link saved to Note"
+msgstr "已將連結儲存至備註"
+
+msgid "Link saved to Attribute"
+msgstr "已將連結儲存至屬性"
+
+msgid "Place history loaded"
+msgstr "已載入地點歷史"
+
+msgid "Domain skipped"
+msgstr "已略過網域"
+
+msgid "Link hidden for object"
+msgstr "已為此物件隱藏連結"
+
+msgid "Link hidden for all objects"
+msgstr "已對所有物件隱藏連結"
+
+msgid "Attribute updated"
+msgstr "已更新屬性"
+
+msgid "Note updated"
+msgstr "已更新備註"

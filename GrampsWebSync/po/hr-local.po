@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-31 17:35+0200\n"
+"POT-Creation-Date: 2026-08-06 07:24+0200\n"
 "PO-Revision-Date: 2026-05-17 15:49+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
@@ -64,30 +64,14 @@ msgstr "Greška servera %s. Provjeri vezu."
 msgid "Unexpected error: %s"
 msgstr "Neočekivana greška: %s"
 
-msgid "Fetching remote data..."
-msgstr "Dohvaćanje ne-lokalnih zapisa …"
+msgid "Media files are in sync."
+msgstr "Medijske datoteke su sinkronizirane."
 
-msgid "Comparing local and remote data..."
-msgstr "Uspoređivanje lokalnih i ne-lokalnih podataka …"
+msgid "Username:"
+msgstr "Korisničko ime:"
 
-msgid "Successfully applied changes to local database."
-msgstr "Promjene na lokalnoj bazi podataka su uspješno primijenjene."
-
-msgid "Continue without transport encryption?"
-msgstr "Nastaviti bez šifriranja prijenosa?"
-
-msgid ""
-"You have specified a URL with http scheme. If you continue, your password "
-"will be sent in clear text over the network. Use only for local testing!"
-msgstr ""
-"Zadan je URL s http shemom. Ako nastaviš, tvoja će se lozinka poslati u "
-"nešifriranom obliku putem mreže. Koristi samo za lokalno testiranje!"
-
-msgid "Continue with HTTP"
-msgstr "Nastavi s HTTP-om"
-
-msgid "Use HTTPS"
-msgstr "Koristi HTTPS"
+msgid "Password:"
+msgstr "Lozinka:"
 
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
@@ -116,56 +100,8 @@ msgstr ""
 "Ako umjesto toga želiš spojiti dva znatno različita rodoslova uz mogućnost "
 "ručnih promjena, koristi alat za uvoz i spajanje."
 
-msgid "Server URL: "
-msgstr "URL servera: "
-
 msgid "Error:"
 msgstr "Greška:"
 
-msgid "Bidirectional Synchronization"
-msgstr "Dvosmjerna sinkronizacija"
-
-msgid "Reset remote to local"
-msgstr "Resetiraj ne-lokalne u lokalne podatke"
-
-msgid "Reset local to remote"
-msgstr "Resetiraj lokalne u ne-lokalne podatke"
-
-msgid "Local changes"
-msgstr "Lokalne promjene"
-
-msgid "Modified"
-msgstr "Promijenjeno"
-
-msgid "Remote changes"
-msgstr "Ne-lokalne promjene"
-
-msgid "Simultaneous changes"
-msgstr "Istovremene promjene"
-
-msgid "Fetching information about media files..."
-msgstr "Dohvaćanje podataka o medijskim datotekama …"
-
-msgid "Both trees are the same."
-msgstr "Oba rodoslova su jednaka."
-
-msgid "Applying changes to local database ..."
-msgstr "Primjena promjena na lokalnu bazu podataka …"
-
-msgid "No changes to apply to local database."
-msgstr "Nema primijenjivih promjena na lokalnu bazu podataka."
-
-msgid "Applying changes to remote database ..."
-msgstr "Primjena promjena na ne-lokalnu bazu podataka …"
-
-msgid "No changes to apply to remote database."
-msgstr "Nema promjena za ne-lokalnu bazu podataka."
-
-msgid "Missing locally"
-msgstr "Nedostaje lokalno"
-
-msgid "Missing remotely"
-msgstr "Nedostaje ne-lokalno"
-
-msgid "Media files are in sync."
-msgstr "Medijske datoteke su sinkronizirane."
+msgid "Copy"
+msgstr "Kopiraj"

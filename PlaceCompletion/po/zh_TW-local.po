@@ -1,0 +1,245 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "PlaceCompletion"
+msgstr "PlaceCompletion"
+
+msgid ""
+"Provides a browsable list of selected places, with possibility to complete/"
+"parse/set the attribute fields."
+msgstr "提供可瀏覽的所選地點清單，並可補齊、解析或設定屬性欄位。"
+
+msgid ""
+"Place Completion by parsing, file lookup and batch setting of place "
+"attributes"
+msgstr "透過解析、檔案查詢及批次設定地點屬性來補齊地點"
+
+msgid "Error in PlaceCompletion.py"
+msgstr "PlaceCompletion.py 發生錯誤"
+
+msgid "Non existing group used in get"
+msgstr "get 操作中使用了不存在的群組"
+
+#, python-format
+msgid "PlaceCompletion is unable to create %s %s"
+msgstr "PlaceCompletion 無法建立 %s %s"
+
+msgid "Places tool"
+msgstr "地點工具"
+
+msgid "Missing regex groups in match lat/lon"
+msgstr "比對緯度／經度時缺少正規表示式群組"
+
+#, python-format
+msgid ""
+"Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
+msgstr "經緯度比對必須包含正規表示式群組 %(lat)s 及 %(lon)s。正在結束"
+
+msgid "Non valid regex for match lat/lon"
+msgstr "比對緯度／經度的正規表示式無效"
+
+msgid "Non valid regular expression given to find lat/lon. Quiting."
+msgstr "用於比對緯度／經度的正規表示式無效，正在結束。"
+
+msgid "Finding Places and appropriate changes"
+msgstr "正在尋找地點及適當的變更"
+
+msgid "Filtering"
+msgstr "正在篩選"
+
+msgid "Loading lat/lon file in Memory..."
+msgstr "正在將 lat/lon 檔案載入記憶體…"
+
+msgid "Examining places"
+msgstr "正在檢查地點"
+
+msgid "Set Tag"
+msgstr "設定標籤"
+
+msgid "Doing Place changes"
+msgstr "正在變更地點"
+
+msgid "No place record was modified."
+msgstr "未修改任何地點記錄。"
+
+msgid "1 place record was modified."
+msgstr "已修改 1 筆地點記錄。"
+
+#, python-format
+msgid "%d place records were modified."
+msgstr "已修改 %d 筆地點記錄。"
+
+msgid "Change places"
+msgstr "變更地點"
+
+msgid "The selected file is a directory, not a file."
+msgstr "選取的項目是目錄，不是檔案。"
+
+msgid "The file you want to access is not a regular file."
+msgstr "您要存取的檔案不是一般檔案。"
+
+msgid "The file does not exist."
+msgstr "檔案不存在。"
+
+msgid "Problem reading file"
+msgstr "讀取檔案時發生問題"
+
+#, python-format
+msgid "invalid lat or lon value, %(lat)s, %(lon)s"
+msgstr "緯度或經度值無效：%(lat)s、%(lon)s"
+
+msgid "No lat/lon conversion"
+msgstr "不轉換經緯度"
+
+msgid "All in degree notation"
+msgstr "全部使用度數表示"
+
+msgid "All in decimal notation"
+msgstr "全部採用十進位表示法"
+
+msgid "Correct -50° in 50°S"
+msgstr "將 -50° 修正為 50°S"
+
+msgid "No changes"
+msgstr "沒有變更"
+
+msgid "City[, State]"
+msgstr "城市[, 州]"
+
+msgid "City,PostalCode,Country"
+msgstr "City,PostalCode,Country"
+
+msgid "City[(Street;Locality;Parish)],PostalCode,Country"
+msgstr "城市[(街道;地區;堂區)],郵遞區號,國家"
+
+msgid "TitleStart [, City] [, State]"
+msgstr "標題開頭 [, 城市] [, 州]"
+
+msgid "TitleStart [, City] [, County] [, State] [, Country]"
+msgstr "TitleStart [, City] [, County] [, State] [, Country]"
+
+msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
+msgstr "標題開頭 [, 城市] [, 郵遞區號] [, 郡] [, 州] [, 國家]"
+
+msgid "Don't search"
+msgstr "不要搜尋"
+
+msgid "GeoNames country file, city search"
+msgstr "GeoNames 國家檔案，城市搜尋"
+
+msgid "GeoNames country file, city localized variants search"
+msgstr "GeoNames 國家檔案，城市在地化變體搜尋"
+
+msgid "GeoNames country file, county/city search"
+msgstr "GeoNames 國家檔案，郡／城市搜尋"
+
+msgid "GeoNames country file, title begin, general search"
+msgstr "GeoNames 國家檔案，標題開頭，一般搜尋"
+
+msgid "GeoNames USA state file, city search"
+msgstr "GeoNames 美國州別檔案，城市搜尋"
+
+msgid "GNS Geonet country file, city search"
+msgstr "GNS Geonet 國家檔案，城市搜尋"
+
+msgid "GNS Geonet country file, county/city search"
+msgstr "GNS Geonet 國家檔案，郡／城市搜尋"
+
+msgid "GNS Geonet country file, title begin, general search"
+msgstr "GNS Geonet 國家檔案，標題開頭，一般搜尋"
+
+msgid "Wikipedia CSV Dump"
+msgstr "Wikipedia CSV 傾印檔"
+
+msgid "All Places"
+msgstr "所有地點"
+
+msgid "No Latitude/Longitude given"
+msgstr "未提供緯度／經度"
+
+msgid "_Google Maps"
+msgstr "_Google 地圖"
+
+msgid "Apply all suggested changes"
+msgstr "套用所有建議的變更"
+
+msgid "Selection of the Places you want to complete:"
+msgstr "選取要補齊的地點："
+
+msgid "Parish:"
+msgstr "教區："
+
+msgid "Place _filter:"
+msgstr "地點篩選器(_F)："
+
+msgid "Count_ry:"
+msgstr "國家(_R)："
+
+msgid "C_enter latitude:"
+msgstr "中心緯度(_E)："
+
+msgid "Center longitude:"
+msgstr "中心經度："
+
+msgid "Places in a rectangle:"
+msgstr "矩形範圍內的地點："
+
+msgid "Height:"
+msgstr "高度："
+
+msgid "1. Look up latitude and longitude:"
+msgstr "1. 查詢緯度與經度："
+
+msgid "Search in:"
+msgstr "搜尋範圍："
+
+msgid "Select A File"
+msgstr "選取檔案"
+
+msgid "Parse as:"
+msgstr "解析方式："
+
+msgid "2. Conversion of existing title or position:"
+msgstr "2. 轉換現有的標題或位置："
+
+msgid "Change title into:"
+msgstr "將標題變更為："
+
+msgid "Convert lat/lon as:"
+msgstr "轉換經緯度為："
+
+msgid ""
+"Or define a simple\n"
+"title format:"
+msgstr ""
+"或定義簡單的\n"
+"標題格式："
+
+msgid ""
+"Available variables: city, street, locality, parish, county, state, country, "
+"postal_code"
+msgstr ""
+"可用變數：city、street、locality、parish、county、state、country、postal_code"
+
+msgid ""
+"Delete to delete a row, Double-click on the row to edit place with changes "
+"pre-entered, \n"
+"Press Tab on a row or Google Maps button to see place on a map. Press Apply "
+"to do all changes automatically"
+msgstr ""
+"按 Delete 刪除資料列，連按兩下資料列可編輯已預填變更的地點，\n"
+"在資料列上按 Tab 或按下 Google Maps 按鈕可在地圖上查看地點。按下 [套用] 可自"
+"動執行所有變更"

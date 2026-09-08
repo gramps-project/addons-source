@@ -1,0 +1,161 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-09 10:02-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Generate Gramps Web API key"
+msgstr "產生 Gramps Web API 金鑰"
+
+msgid "Server URL"
+msgstr "伺服器網址"
+
+msgid "e.g. https://your-server/api"
+msgstr "例如 https://your-server/api"
+
+msgid "Username"
+msgstr "使用者名稱"
+
+msgid "Password"
+msgstr "密碼"
+
+msgid "Generate API Key"
+msgstr "產生 API 金鑰"
+
+msgid ""
+"Enter your server URL, username, and password, then click Generate API Key."
+msgstr "輸入伺服器網址、使用者名稱及密碼，然後按一下 [產生 API 金鑰]。"
+
+msgid "GRAMPS_WEB_API_KEY"
+msgstr "GRAMPS_WEB_API_KEY"
+
+msgid "Copy"
+msgstr "複製"
+
+msgid "Create Synced Family Tree for this key"
+msgstr "用此金鑰建立同步的家族樹"
+
+#, python-format
+msgid ""
+"Found an existing %s for this session. Click Create Synced Family Tree to "
+"use it directly, or fill in the form above to generate a different key."
+msgstr ""
+"找到此工作階段既有的 %s。按一下「建立同步的家族樹」以直接使用，或填寫上方表單"
+"以產生不同的金鑰。"
+
+msgid "Please fill in the server URL, username, and password."
+msgstr "請填寫伺服器 URL、使用者名稱和密碼。"
+
+msgid "Generating API key…"
+msgstr "正在產生 API 金鑰…"
+
+#, python-format
+msgid "Login failed (HTTP %d): check your username and password."
+msgstr "登入失敗 (HTTP %d)：請檢查使用者名稱及密碼。"
+
+#, python-format
+msgid "Server returned an error (HTTP %d %s): check the Server URL."
+msgstr "伺服器傳回錯誤 (HTTP %d %s)：請檢查伺服器網址。"
+
+#, python-format
+msgid "Could not reach the server: check the Server URL. (%s)"
+msgstr "無法連線至伺服器：請檢查伺服器網址。(%s)"
+
+#, python-format
+msgid "Unexpected response from the server: %s"
+msgstr "伺服器回應非預期的內容：%s"
+
+#, python-format
+msgid "Error: %s"
+msgstr "錯誤：%s"
+
+#, python-format
+msgid ""
+"Success. %s is now set for this Gramps session -- no restart needed. Copy "
+"the key below to also set it in your shell environment for next time."
+msgstr ""
+"成功。此 Gramps 工作階段已設定 %s，無須重新啟動。請複製下方金鑰，也在 Shell "
+"環境中設定，以便下次使用。"
+
+msgid "Looking up account identity…"
+msgstr "正在查詢帳號身分…"
+
+#, python-format
+msgid ""
+"A Family Tree named \"%s\" already exists. Open it from Family Trees -> "
+"Manage Family Trees instead of creating another one."
+msgstr ""
+"名為「%s」的家族樹已存在。請從 [家族樹] -> [管理家族樹] 開啟，無須另建一棵。"
+
+#, python-format
+msgid "Error creating Family Tree: %s"
+msgstr "建立家族樹時發生錯誤：%s"
+
+#, python-format
+msgid ""
+"Created Family Tree \"%s\". Open it from Family Trees -> Manage Family Trees "
+"to start syncing."
+msgstr "已建立家族樹「%s」。請從 [家族樹] -> [管理家族樹] 開啟以開始同步。"
+
+msgid ""
+"Turn a Gramps Web API server URL, username, and password into a "
+"GRAMPS_WEB_API_KEY value for GrampsWebApiDb, and optionally create a "
+"matching, correctly-named GrampsWebApiDb Family Tree for it."
+msgstr ""
+"將 Gramps Web API 伺服器網址、使用者名稱及密碼轉換為 GrampsWebApiDb 使用的 "
+"GRAMPS_WEB_API_KEY 值，並可選擇為其建立名稱正確且相符的 GrampsWebApiDb 家族"
+"樹。"
+
+msgid ""
+"The account authenticating via GRAMPS_WEB_API_KEY does not have permission "
+"on the server for this operation (HTTP 403 Forbidden). Generate a key for an "
+"account with sufficient permissions, or ask the server administrator to "
+"grant this one access."
+msgstr ""
+"透過 GRAMPS_WEB_API_KEY 驗證的帳號沒有在伺服器上執行此操作的權限（HTTP 403 "
+"Forbidden）。請為具備足夠權限的帳號產生金鑰，或請伺服器管理員授予此帳號存取"
+"權。"
+
+#, python-format
+msgid ""
+"This Family Tree is named \"%(actual)s\", but GRAMPS_WEB_API_KEY currently "
+"authenticates as \"%(expected)s\". Rename this Family Tree to "
+"\"%(expected_typeable)s\" (Family Trees -> Manage Family Trees) if it's "
+"meant to mirror that account, or open/create the Family Tree already named "
+"that -- reusing this one would mix its existing local data with the other "
+"account's."
+msgstr ""
+"此家族樹名為 \"%(actual)s\"，但 GRAMPS_WEB_API_KEY 目前驗證的帳號是 "
+"\"%(expected)s\"。如果此家族樹是要與該帳號的資料保持一致，請將它重新命名為 "
+"\"%(expected_typeable)s\"（Family Trees -> Manage Family Trees）；或者開啟或"
+"建立名稱相同的家族樹——繼續使用此家族樹，會將其既有的本機資料與另一個帳號的資"
+"料混在一起。"
+
+msgid "Retry local change after server conflict"
+msgstr "伺服器衝突後重試本機變更"
+
+msgid "Clear local mirror before full resync"
+msgstr "完整重新同步前清除本機鏡像"
+
+msgid "GrampsWebApiDb"
+msgstr "GrampsWebApiDb"
+
+msgid "Gramps _Web API Database"
+msgstr "Gramps _Web API 資料庫"
+
+msgid ""
+"Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) as a live "
+"database, mirrored locally for speed."
+msgstr ""
+"將 Gramps Web API 伺服器 (例如 gramps-connect 或 Gramps Web) 作為即時資料庫，"
+"並在本機建立鏡像以提升速度。"

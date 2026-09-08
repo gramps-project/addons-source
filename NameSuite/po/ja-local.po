@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-24 01:13-0700\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,10 +12,170 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Audit Given and Patronymic Names"
+msgstr "名前と父称名の監査"
+
+msgid ""
+"Tools to rename given name, audit and infer patronymic (East Slavic) names."
+msgstr "名前の変更、父称 (東スラブ）名の監査と推論を行うツール。"
+
+msgid "Patronymic Suggestion"
+msgstr "父称の提案"
+
+msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
+msgstr "ナビゲーション中に (東スラブ）父称名をリアルタイムで提案します。"
+
+msgid "Auditing Settings"
+msgstr "監査設定"
+
+msgid "All Records"
+msgstr "すべてのレコード"
+
+msgid "Males Only"
+msgstr "男性のみ"
+
+msgid "Females Only"
+msgstr "女性のみ"
+
+msgid "Configure Rules..."
+msgstr "ルールを設定..."
+
+msgid "Match Pre-Revolutionary Orthography"
+msgstr "革命前の正書法に一致"
+
+msgid "Audit Database"
+msgstr "データベースを監査"
+
+msgid "Select All Safe Corrections"
+msgstr "安全な修正をすべて選択"
+
+msgid "Apply Selected Corrections"
+msgstr "選択した修正を適用"
+
+msgid "Configure Rules"
+msgstr "ルールを設定"
+
+msgid "Individual"
+msgstr "個人"
+
+msgid "Current"
+msgstr "現在"
+
+msgid "Correction"
+msgstr "修正"
+
+msgid "Conf"
+msgstr "設定"
+
+msgid "Ref Year"
+msgstr "参照年"
+
+msgid "Explanation"
+msgstr "説明"
+
+msgid "Audit Complete!"
+msgstr "監査完了！"
+
+msgid "No Results"
+msgstr "結果なし"
+
+msgid "No issues found."
+msgstr "問題は見つかりませんでした。"
+
+msgid "Use"
+msgstr "使用"
+
+msgid "Search and Replace Options"
+msgstr "検索と置換のオプション"
+
+msgid "Source Name:"
+msgstr "ソース名:"
+
+msgid "e.g. Иоанн"
+msgstr "例: Иоанн"
+
+msgid "Target Name:"
+msgstr "ターゲット名:"
+
+msgid "e.g. Иван"
+msgstr "例: Иван"
+
+msgid "Match Mode:"
+msgstr "一致モード:"
+
+msgid "Exact Match"
+msgstr "完全一致"
+
+msgid "Substring"
+msgstr "部分文字列"
+
+msgid "Regular Expression"
+msgstr "正規表現"
+
+msgid "Scan for Names"
+msgstr "名前をスキャン"
+
+msgid "Preserve original name as alternative"
+msgstr "元の名前を別名として保存"
+
 msgid "Select All"
 msgstr "すべて選択"
+
+msgid "Proposed"
+msgstr "提案"
+
+msgid "Infer East Slavic Patronymics"
+msgstr "東スラブの父称を推論"
+
+msgid "Rename Given Names"
+msgstr "名を変更"
+
+msgid "Audit Patronymics"
+msgstr "父称を監査"
+
+#, python-brace-format
+msgid ""
+"Missing Patronymic Detected.\n"
+"Suggested: {0}\n"
+"Based on father: {1}"
+msgstr ""
+"欠落している父称が検出されました。\n"
+"提案: {0}\n"
+"父親に基づく: {1}"
+
+msgid "Navigate to an individual to check patronymic status."
+msgstr "個人に移動して父称の状態を確認します。"
+
+msgid "No active person selected."
+msgstr "アクティブな人物が選択されていません。"
+
+msgid ""
+"Patronymic inference can't be inferred for non-binary or unknown genders."
+msgstr "ノンバイナリーまたは不明な性別の場合は父称を推論できません。"
+
+msgid "Individual already has a recorded patronymic."
+msgstr "個人には既に記録された父称があります。"
+
+msgid "No attached father found in database family records."
+msgstr "データベースの家族記録に添付された父親が見つかりません。"
+
+msgid "Father lacks a recorded first name."
+msgstr "父親には記録された名前がありません。"
+
+msgid "Could not generate valid morphology patterns."
+msgstr "有効な形態パターンを生成できませんでした。"
+
+msgid "Patronymic applied successfully!"
+msgstr "父称が正常に適用されました！"
+
+msgid "Apply Suggestion"
+msgstr "提案を適用"
+
+#, python-format
+msgid "%(prog)s: error: %(message)s\n"
+msgstr "%(prog)s: エラー: %(message)s\n"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-24 01:13-0700\n"
-"PO-Revision-Date: 2026-06-01 12:35+0000\n"
-"Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
+"PO-Revision-Date: 2026-08-13 17:19+0000\n"
+"Last-Translator: Frode Jemtland <frode.jemtland@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
 "Language: nb\n"
@@ -12,8 +12,50 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "All Records"
+msgstr "Alle registreringer"
+
+msgid "Audit Database"
+msgstr "Revider databasen"
+
+msgid "Apply Selected Corrections"
+msgstr "Bruk valgte korrigeringer"
+
+msgid "Correction"
+msgstr "Korrigering"
+
+msgid "Ref Year"
+msgstr "Ref. år"
+
+msgid "Explanation"
+msgstr "Forklaring"
+
+msgid "No Results"
+msgstr "Tomt resultat"
+
+msgid "Source Name:"
+msgstr "Kildenavn:"
+
+msgid "Substring"
+msgstr "Delstreng"
+
+msgid "Scan for Names"
+msgstr "Skann etter navn"
 
 msgid "Select All"
 msgstr "Velg alle"
+
+msgid "Proposed"
+msgstr "Foreslått"
+
+msgid "Rename Given Names"
+msgstr "Endre fornavn"
+
+msgid "No active person selected."
+msgstr "Ingen aktiv person valgt."
+
+msgid "Apply Suggestion"
+msgstr "Bruk foreslåtte endringer"

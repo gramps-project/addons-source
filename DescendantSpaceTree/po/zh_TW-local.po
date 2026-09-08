@@ -1,0 +1,196 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Patriarchal Line (Male ancestor)"
+msgstr "父系 (男性祖先)"
+
+msgid "Matriarchal Line (Female ancestor)"
+msgstr "母系 (女性祖先)"
+
+msgid "Dark theme"
+msgstr "深色主題"
+
+msgid "Light theme"
+msgstr "淺色主題"
+
+msgid "Continue Descendant Tree"
+msgstr "繼續後代樹狀圖"
+
+msgid "Alternate Descendant Tree"
+msgstr "另一種後代樹"
+
+msgid "Descendant SpaceTree"
+msgstr "後代 SpaceTree"
+
+msgid "Total descendants"
+msgstr "後代總人數"
+
+msgid "Marriages/Families:<ul>"
+msgstr "婚姻／家庭：<ul>"
+
+msgid "Invalid Destination Directory"
+msgstr "目的地目錄無效"
+
+#, python-format
+msgid ""
+"Destination Directory %s does not exist\n"
+"Do you want to attempt to create it."
+msgstr ""
+"目的地目錄 %s 不存在\n"
+"是否要嘗試建立。"
+
+#, python-format
+msgid "Failed to create %s: %s"
+msgstr "無法建立 %s：%s"
+
+#, python-format
+msgid "Failed to read proto file %s: %s"
+msgstr "無法讀取原型檔案 %s：%s"
+
+#, python-format
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite?"
+msgstr ""
+"目的地檔案 %s 已存在。\n"
+"要覆寫嗎？"
+
+msgid "Failed writing file: "
+msgstr "寫入檔案失敗： "
+
+msgid "Descendants of"
+msgstr "後代的起點人物"
+
+msgid "How to Use the DescendantSpaceTree Viewer"
+msgstr "如何使用 DescendantSpaceTree 檢視器"
+
+msgid ""
+"For the best viewing experience, maximize your browser window to use the "
+"entire screen.  A resize will reset the graph to the center person."
+msgstr ""
+"為獲得最佳瀏覽體驗，請將瀏覽器視窗最大化，以使用整個螢幕。調整視窗大小會將圖"
+"表重設回中心人物。"
+
+msgid "Click on a node to focus on a descendant and expand any children."
+msgstr "按一下節點，即可聚焦於該後代並展開其子女。"
+
+msgid "Click and drag anywhere on the viewer to position the descendant tree."
+msgstr "在檢視器任意位置按住並拖曳，即可移動後代樹狀圖。"
+
+#. Translators: Please do not translate ___HELP_RESET_BUTTON___.
+msgid ""
+"Click on the reset button ___HELP_RESET_BUTTON___ to reset back to the "
+"starting descendant."
+msgstr "按一下重設按鈕 ___HELP_RESET_BUTTON___，即可回到起始後代。"
+
+msgid ""
+"Search for a person by typing into the search box.  At least three "
+"characters are required to search.  Click on any of the suggestions to "
+"quickly navigate to that person.  A person may appear more than once in a "
+"search, a plus sign (+) after the name indicates that person appears as a "
+"spouse."
+msgstr ""
+"在搜尋框中輸入文字來搜尋人物，至少需要輸入三個字元。按一下任一建議結果，即可"
+"快速前往該人物。同一人物可能在搜尋結果中出現多次；姓名後的加號 (+) 表示該人物"
+"以配偶身分出現。"
+
+msgid ""
+"A descendant and any spouses are listed in the same node.  Children of all "
+"of the descendant's families are grouped together."
+msgstr "後代及其配偶會列在同一個節點中。該後代所有家庭的子女會合併分組。"
+
+msgid ""
+"Persons born after a specified date may not display their birth or death "
+"dates."
+msgstr "在指定日期之後出生的人物，可能不會顯示其出生或死亡日期。"
+
+msgid ""
+"Person nodes are colored to indicate the number of children, the deeper tint "
+"of the coloring, the greater number of children."
+msgstr "人物節點以色彩表示子女人數，色彩越深，子女越多。"
+
+msgid ""
+"The currently selected descendant and all of the ancestors of that person "
+"are highlighted in yellow."
+msgstr "目前選取的後代及其所有祖先都會以黃色醒目顯示。"
+
+#. Translators: Please do not translate ___NAV_BUTTON_CONTINUE___ or ___NAV_BUTTON_ALT___.
+msgid ""
+"A person may occur in different branches.  This is usually because of inter-"
+"family marriages (such as that of cousins.)  In this case, a button will "
+"also appear for that person,  ___NAV_BUTTON_CONTINUE___ or "
+"___NAV_BUTTON_ALT___  to navigate the other branch.  Only one branch will "
+"expand descendants of this person. "
+msgstr ""
+"同一人物可能出現在不同分支，通常是家族間通婚 (例如堂表親結婚) 所致。此時，該"
+"人物也會顯示 ___NAV_BUTTON_CONTINUE___ 或 ___NAV_BUTTON_ALT___ 按鈕，可用來前"
+"往另一個分支。此人物的後代只會在其中一個分支展開。 "
+
+msgid ""
+"The following open source projects are used in building this viewer, see "
+"source code LICENSE*.txt files for complete licenses and required notices."
+msgstr ""
+"本檢視器使用下列開放原始碼專案建置，完整授權條款及必要聲明請參閱原始碼中的 "
+"LICENSE*.txt 檔案。"
+
+msgid "Search. . ."
+msgstr "搜尋. . ."
+
+msgid "Include Generations"
+msgstr "包含世代數"
+
+msgid "Branch to expand when duplicated"
+msgstr "重複出現時要展開的分支"
+
+msgid ""
+"When a descendant appears more than once, prefer the selected lineage to "
+"expand descendancy line"
+msgstr "當後代出現多次時，優先展開選取譜系的後代支系"
+
+msgid "Maximum display birth year"
+msgstr "最晚顯示的出生年份"
+
+msgid "Birth/death dates will not be displayed after this year"
+msgstr "不顯示此年份之後的出生／死亡日期"
+
+msgid "Theme preference"
+msgstr "主題偏好設定"
+
+msgid "Theme color preference for Space Tree"
+msgstr "Space Tree 的主題色彩偏好設定"
+
+msgid "The destination path for generated files."
+msgstr "產生檔案的目的地路徑。"
+
+msgid "Destination File"
+msgstr "目的地檔案"
+
+msgid "The destination file name for the report."
+msgstr "報告的目的地檔名。"
+
+msgid "Open generated HTML file with default browser."
+msgstr "使用預設瀏覽器開啟產生的 HTML 檔案。"
+
+msgid "Descendant Space Tree"
+msgstr "Descendant Space Tree"
+
+msgid ""
+"Generates a web page with an interactive graph of descendants represented as "
+"a Space Tree for efficient viewing, even with many descendants or "
+"generations."
+msgstr ""
+"產生網頁，以 Space Tree 呈現可互動的後代圖，即使後代或世代眾多，也能有效瀏"
+"覽。"

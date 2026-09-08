@@ -1,0 +1,66 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Historical Context"
+msgstr "歷史脈絡"
+
+msgid "Lists relevant historical events during the lifetime of a Person"
+msgstr "列出人物在世期間的相關歷史事件"
+
+msgid "Rows starting with this in the text column will be hidden "
+msgstr "文字欄位以此內容開頭的資料列會隱藏 "
+
+msgid "Use filter "
+msgstr "使用篩選器 "
+
+msgid "Show outside life span "
+msgstr "顯示在世期間以外的事件 "
+
+msgid "Use full dates"
+msgstr "使用完整日期"
+
+msgid "Foreground color items in lifespan"
+msgstr "生卒年項目前景色彩"
+
+msgid "Background color items in lifespan"
+msgstr "壽命項目背景顏色"
+
+msgid "Foreground color items outside lifespan"
+msgstr "在世期間以外項目的前景色"
+
+msgid "Background color items outside lifespan"
+msgstr "在世期間以外項目的背景色"
+
+msgid "Select from files"
+msgstr "從檔案選取"
+
+msgid "Invalid date "
+msgstr "日期無效 "
+
+msgid " in line: "
+msgstr " 行： "
+
+msgid "Error:"
+msgstr "錯誤："
+
+msgid ": line does not contain four sections separated by semicolons in : \""
+msgstr "：此行在下列內容中未包含以分號分隔的四個區段：「"
+
+msgid "Cannot open URL: "
+msgstr "無法開啟網址： "
+
+msgid "Double click row to follow link"
+msgstr "連按兩下資料列即可前往連結"

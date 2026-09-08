@@ -1,0 +1,93 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Sort Children in Birth order"
+msgstr "子供を出生順に並べ替える"
+
+msgid ""
+"Looks through families, looking for children that are not in birth order.  "
+"User can accept individual suggestions to correct, edit the birth order "
+"manually, accept all those families that have all children with proper birth "
+"dates, or accept all."
+msgstr ""
+"家族を調べて、出生順に並んでいない子供を探します。ユーザーは個別の提案を受け"
+"入れて修正したり、出生順序を手動で編集したり、すべての子供に正しい誕生日があ"
+"る家族をすべて受け入れたり、すべてを受け入れたりできます。"
+
+msgid "No families need sorting"
+msgstr "並べ替えが必要な家族はありません"
+
+msgid "No children were out of birth order."
+msgstr "出生順序が正しくない子供はいません。"
+
+msgid "Edit Families"
+msgstr "家族を編集"
+
+msgid "Looking for children birth order"
+msgstr "子の出生順を検索中"
+
+msgid "Select the family you wish to examine."
+msgstr "調査したい家族を選択してください。"
+
+msgid "Accept All"
+msgstr "すべて受け入れる"
+
+msgid "This button will sort all of the families listed."
+msgstr "このボタンは、リストされているすべての家族を並べ替えます。"
+
+msgid "Accept All *"
+msgstr "すべて受け入れる *"
+
+msgid ""
+"This button will sort all the families with '*'.  In these families, all the "
+"children have valid dates, so the sort is unambiguous."
+msgstr ""
+"このボタンは、「*」が付いているすべての家族を並べ替えます。これらの家族では、"
+"すべての子供に有効な日付があるため、並べ替えは明確です。"
+
+msgid "Accept"
+msgstr "受け入れる"
+
+msgid ""
+"This button will accept only the family selected and save it as shown in "
+"lower right pane."
+msgstr ""
+"このボタンは、選択された家族のみを受け入れ、右下のペインに表示されているよう"
+"に保存します。"
+
+msgid "Done"
+msgstr "完了"
+
+msgid "This button will exit, with remaining families unchanged."
+msgstr "このボタンは、残りの家族を変更せずに終了します。"
+
+msgid "Current sort"
+msgstr "現在の並べ替え"
+
+msgid "Proposed sort"
+msgstr "提案された並べ替え"
+
+msgid ""
+"When satisfied with the sort, use 'Accept' button below to accept the "
+"changes.  If you wish to adjust the order, select the child you wish to "
+"move, and use 'Up' or 'Down' buttons below to move them."
+msgstr ""
+"並べ替えに満足したら、下の「Accept」ボタンを使用して変更を受け入れます。順序"
+"を調整したい場合は、移動したい子供を選択し、下の「Up」または「Down」ボタンを"
+"使用して移動します。"

@@ -1,0 +1,204 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-04 08:52-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "GOQL expression"
+msgstr "GOQL 運算式"
+
+msgid ""
+"Matches objects for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr "符合指定 gramps-object-query-language where 運算式結果為真的物件"
+
+msgid "People matching the <GOQL expression>"
+msgstr "符合 <GOQL expression> 的人物"
+
+msgid "Families matching the <GOQL expression>"
+msgstr "符合 <GOQL expression> 的家庭"
+
+msgid "Events matching the <GOQL expression>"
+msgstr "符合 <GOQL expression> 的事件"
+
+msgid "Places matching the <GOQL expression>"
+msgstr "符合 <GOQL expression> 的地點"
+
+msgid "Repositories matching the <GOQL expression>"
+msgstr "符合 <GOQL expression> 的存放庫"
+
+msgid "Sources matching the <GOQL expression>"
+msgstr "符合 <GOQL expression> 的來源"
+
+msgid "Citations matching the <GOQL expression>"
+msgstr "符合 <GOQL expression> 的引用"
+
+msgid "Media matching the <GOQL expression>"
+msgstr "符合 <GOQL expression> 的媒體"
+
+msgid "Notes matching the <GOQL expression>"
+msgstr "符合 <GOQL expression> 的備註"
+
+msgid "Person GOQL Filter"
+msgstr "人物 GOQL 篩選器"
+
+msgid "Gramplet providing a gramps-object-query-language person filter"
+msgstr "提供 gramps-object-query-language 人物篩選器的 Gramplet"
+
+msgid "GOQL Filter"
+msgstr "GOQL Filter"
+
+msgid "Family GOQL Filter"
+msgstr "家庭 GOQL 篩選器"
+
+msgid "Gramplet providing a gramps-object-query-language family filter"
+msgstr "提供 gramps-object-query-language 家庭篩選器的 Gramplet"
+
+msgid "Event GOQL Filter"
+msgstr "事件 GOQL 篩選器"
+
+msgid "Gramplet providing a gramps-object-query-language event filter"
+msgstr "提供 gramps-object-query-language 事件篩選器的 Gramplet"
+
+msgid "Place GOQL Filter"
+msgstr "地點 GOQL 篩選器"
+
+msgid "Gramplet providing a gramps-object-query-language place filter"
+msgstr "提供 gramps-object-query-language 地點篩選器的 Gramplet"
+
+msgid "Repository GOQL Filter"
+msgstr "存放庫 GOQL 篩選器"
+
+msgid "Gramplet providing a gramps-object-query-language repository filter"
+msgstr "提供 gramps-object-query-language 存放庫篩選器的 Gramplet"
+
+msgid "Source GOQL Filter"
+msgstr "來源 GOQL 篩選器"
+
+msgid "Gramplet providing a gramps-object-query-language source filter"
+msgstr "提供 gramps-object-query-language 來源篩選器的 Gramplet"
+
+msgid "Citation GOQL Filter"
+msgstr "引用 GOQL 篩選器"
+
+msgid "Gramplet providing a gramps-object-query-language citation filter"
+msgstr "提供 gramps-object-query-language 引用篩選器的 Gramplet"
+
+msgid "Media GOQL Filter"
+msgstr "媒體 GOQL 篩選器"
+
+msgid "Gramplet providing a gramps-object-query-language media filter"
+msgstr "提供 gramps-object-query-language 媒體篩選器的 Gramplet"
+
+msgid "Note GOQL Filter"
+msgstr "備註 GOQL 篩選器"
+
+msgid "Gramplet providing a gramps-object-query-language note filter"
+msgstr "提供 gramps-object-query-language 備註篩選器的 Gramplet"
+
+msgid "A gramps-object-query-language where-expression, e.g.\n"
+msgstr "一個 gramps-object-query-language 的 where 運算式，例如。\n"
+
+msgid "Enter inserts a newline; Ctrl+Enter runs Find.\n"
+msgstr "Enter 會插入換行；Ctrl+Enter 會執行尋找。\n"
+
+msgid "Up/Down at the first/last line recalls previous expressions.\n"
+msgstr "在第一行／最後一行按上／下鍵，可叫出先前的運算式。\n"
+
+msgid "Tab always completes -- it never inserts a tab character."
+msgstr "Tab 一律用於自動補完，不會插入定位字元。"
+
+#, python-format
+msgid "%s filter"
+msgstr "%s 篩選器"
+
+msgid "This resets the filter parameters to empty state."
+msgstr "這會將篩選條件重設為空白狀態。"
+
+msgid "This opens a dialog to save the current expression as a named filter."
+msgstr "這會開啟對話方塊，將目前的運算式儲存為具名篩選器。"
+
+msgid "Open this gramplet's help page in a browser."
+msgstr "在瀏覽器中開啟此 Gramplet 的說明頁面。"
+
+msgid "SQL"
+msgstr "SQL"
+
+msgid "Python evaluation"
+msgstr "Python 求值"
+
+#, python-format
+msgid "Error applying filter: %s"
+msgstr "套用篩選器時發生錯誤：%s"
+
+#, python-format
+msgid "Showing %(shown)d of %(total)d (%(method)s)"
+msgstr "顯示 %(total)d 筆中的 %(shown)d 筆 (%(method)s)"
+
+#, python-format
+msgid "Error resetting filter: %s"
+msgstr "重設篩選器時發生錯誤：%s"
+
+msgid "Enter an expression first"
+msgstr "請先輸入運算式"
+
+#, python-brace-format
+msgid "Created by the GOQL Filter gramplet on {today}"
+msgstr "由 GOQL Filter Gramplet 於 {today} 建立"
+
+msgid ""
+"Matches people for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr "符合指定 gramps-object-query-language where 運算式結果為真的人物"
+
+msgid ""
+"Matches families for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr "符合指定 gramps-object-query-language where 運算式結果為真的家庭"
+
+msgid ""
+"Matches events for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr "符合指定 gramps-object-query-language where 運算式結果為真的事件"
+
+msgid ""
+"Matches places for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr "符合指定 gramps-object-query-language where 運算式結果為真的地點"
+
+msgid ""
+"Matches repositories for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr "符合指定 gramps-object-query-language where 運算式結果為 true 的存放庫"
+
+msgid ""
+"Matches sources for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr "符合指定 gramps-object-query-language where 運算式結果為真的來源"
+
+msgid ""
+"Matches citations for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr "符合指定 gramps-object-query-language where 運算式結果為真的引用"
+
+msgid ""
+"Matches media for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr "符合指定 gramps-object-query-language where 運算式結果為 true 的媒體"
+
+msgid ""
+"Matches notes for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"符合指定 gramps-object-query-language where-expression 且運算結果為 true 的備"
+"註"

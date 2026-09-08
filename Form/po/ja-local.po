@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,16 +12,6458 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+#, python-format
+msgid "Form: %s"
+msgstr "フォーム: %s"
+
+msgid "New Form"
+msgstr "新しいフォーム"
+
+msgid "Edit Form"
+msgstr "フォームを編集"
+
+msgid "Reference:"
+msgstr "参照:"
+
+msgid "[Source recreated after deletion mid-form-edit]"
+msgstr "[フォーム編集途中の削除後にソースが再作成されました]"
+
+msgid "Headings"
+msgstr "見出し"
+
+#, python-format
+msgid "Census Check for %s"
+msgstr "%s の国勢調査チェック"
+
+msgid "Form Gramplet"
+msgstr "フォーム グランプレット"
+
+msgid "Gramplet interface for Forms"
+msgstr "フォームのためのグランプレットインターフェース"
+
+msgid "Forms"
+msgstr "フォーム"
+
+msgid "Order"
+msgstr "順序"
+
+msgid "Form"
+msgstr "フォーム"
+
+msgid "XML syntax error in Form definition file"
+msgstr "フォーム定義ファイルにXML構文エラーがあります"
+
+msgid "Failed to read Form definition file"
+msgstr "フォーム定義ファイルの読み込みに失敗しました"
+
+msgid "Invalid Form definition file"
+msgstr "無効なフォーム定義ファイル"
+
+msgid "Select Form"
+msgstr "フォームを選択"
+
+msgid "CensusCheck"
+msgstr "国勢調査チェック"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"descendents"
+msgstr "人物とその子孫の一部について国勢調査イベントが欠落していないか確認"
+
+msgid "CensusCheckUp"
+msgstr "国勢調査チェックアップ"
+
+msgid ""
+"Check whether any Census events are missing for a person and some of their "
+"ancestors"
+msgstr "人物とその祖先の一部について国勢調査イベントが欠落していないか確認"
+
+msgid "Total Area in Statute Acres"
+msgstr "法定エーカーでの総面積"
+
+msgid "Signature of Head of Household"
+msgstr "世帯主の署名"
+
+msgid "Signature of Enumerator"
+msgstr "調査員の署名"
+
 msgid "Persons"
 msgstr "人物"
+
+msgid "Rooms"
+msgstr "部屋"
+
+msgid "County or Co. Borough"
+msgstr "郡または郡特別区"
+
+msgid "District Electoral Division or Ward"
+msgstr "選挙区または区"
+
+msgid "Townland"
+msgstr "タウンランド"
+
+msgid "Urban Dist. Town or Village"
+msgstr "都市地区の町または村"
+
+msgid "Street etc with No. of House"
+msgstr "通りなどと番地"
+
+msgid "No. of Schedule"
+msgstr "調査番号"
+
+msgid "Name of Public Institution"
+msgstr "公立施設の名称"
+
+msgid "Name and Surname"
+msgstr "名と姓"
 
 msgid "Relation"
 msgstr "関係"
 
+msgid "Relationship to Head of Household"
+msgstr "世帯主との関係"
+
+msgid "Year Age"
+msgstr "年齢 (年）"
+
+msgid "Age in years"
+msgstr "年齢 (年）"
+
+msgid "Month Age"
+msgstr "年齢 (月）"
+
+msgid "Age in months"
+msgstr "年齢 (月）"
+
+msgid "Sex"
+msgstr "性別"
+
+msgid "Marriage or Orphanhood"
+msgstr "結婚または孤児"
+
+msgid "Birthplace"
+msgstr "出生地"
+
+msgid "Irish Language"
+msgstr "アイルランド語"
+
+msgid ""
+"\"Irish only\", \"Irish and English\", \"English and Irish\", \"Read but "
+"cannot speak Irish\""
+msgstr ""
+"「アイルランド語のみ」「アイルランド語と英語」「英語とアイルランド語」「読み"
+"書き可だがアイルランド語を話せない」"
+
+msgid "Personal Occupation"
+msgstr "個人の職業"
+
+msgid "Years Married"
+msgstr "結婚年数"
+
+msgid "Years married in present Marriage"
+msgstr "現在の結婚での結婚年数"
+
+msgid "Months Married"
+msgstr "結婚してからの月数"
+
+msgid "Months married in present Marriage"
+msgstr "現在の結婚での結婚月数"
+
+msgid "Present Marriage Children"
+msgstr "現在の結婚の子供"
+
+msgid "Children born alive to present marriage"
+msgstr "現在の結婚で出生した子供"
+
+msgid "Total Children Under 16 Living"
+msgstr "16歳未満の存命の子供総数"
+
+msgid "(1.) Entry no."
+msgstr "(1.) 登録番号"
+
+msgid "Superintendent Registrar's District"
+msgstr "監督登録官地区"
+
+msgid "Registrar's District"
+msgstr "登録官地区"
+
+msgid "Union"
+msgstr "連合"
+
+msgid "(10.) Signature of Registrar"
+msgstr "(10.) 登録官の署名"
+
+msgid "(11.) Baptismal Name if added after Registration of Birth, and Date"
+msgstr "(11.) 出生登録後に追加された洗礼名と日付"
+
+msgid "(3.) Name (if any)"
+msgstr "(3.) 名前 (ある場合）"
+
+msgid "Place of Birth"
+msgstr "出生地"
+
+msgid "(2.) Date and Place of Birth"
+msgstr "(2.) 生年月日と出生地"
+
+msgid "Date of Birth"
+msgstr "生年月日"
+
+msgid "(4.) M or F for male or female"
+msgstr "(4.) 男性はM、女性はF"
+
+msgid "(5.) Name and Surname and Dwelling-place of Father"
+msgstr "(5.) 父親の姓名と居住地"
+
+msgid "(7.) Rank or Profession of Father"
+msgstr "(7.) 父親の階級または職業"
+
+msgid "(6.) Name and Surname and Maiden Surname of Mother"
+msgstr "(6.) 母親の姓名と旧姓"
+
+msgid "Maiden Surname"
+msgstr "旧姓"
+
+msgid "(8.) Signature, Qualification, and Residence of Informant"
+msgstr "(8.) 申告者の署名、資格、および居住地"
+
+msgid "When Registered"
+msgstr "登録日"
+
+msgid "(9.) Date when birth was registered"
+msgstr "(9.) 出生が登録された日付"
+
+msgid "Year"
+msgstr "年"
+
+msgid "Solemnized at the Catholic"
+msgstr "カトリックで執り行われる"
+
+msgid "Certificate number"
+msgstr "証明書番号"
+
+msgid "Page number"
+msgstr "ページ番号"
+
+msgid "(1.) Entry No."
+msgstr "(1.) 登録番号"
+
+msgid "(2.) When Married"
+msgstr "(2.) 結婚日"
+
+msgid "(3.) Name and Surname"
+msgstr "(3.) 姓名"
+
+msgid "(4.) Full or Minor"
+msgstr "(4.) 成年または未成年"
+
+msgid "Condition"
+msgstr "状態"
+
+msgid "(5.) Bachelor or Spinster"
+msgstr "(5.) 独身男性または独身女性"
+
+msgid "(6.) Rank or Profession"
+msgstr "(6.) 階級または職業"
+
+msgid "Residence at the Time of Marriage"
+msgstr "結婚時の住所"
+
+msgid "(8.) Father's Name and Surname"
+msgstr "(8.) 父親の姓名"
+
+msgid "(9.) Rank or Profession of Father"
+msgstr "(9.) 父親の階級または職業"
+
+msgid "Signed"
+msgstr "署名"
+
+msgid "(10.) When Registered"
+msgstr "(10.) 登録日"
+
+msgid "(11.) Signature of Registrar"
+msgstr "(11.) 登録官の署名"
+
+msgid "Date of Death"
+msgstr "死亡日"
+
+msgid "(2.) Date and Place of Death"
+msgstr "(2.) 死亡日と死亡場所"
+
+msgid "Place of Death"
+msgstr "死亡場所"
+
+msgid "(4.) M or F for Male or Female"
+msgstr "(4.) 男性はM、女性はF"
+
+msgid "(5.) Widowed or Married"
+msgstr "(5.) 寡夫/寡婦または既婚"
+
+msgid "(6.) Age last Birthday"
+msgstr "(6.) 最終誕生日の年齢"
+
+msgid "(7.) Rank, Profession, or Occupation"
+msgstr "(7.) 階級、職業、または就業"
+
+msgid "(8.) Certified Cause of Death and Duration of Illness"
+msgstr "(8.) 証明された死亡原因と罹病期間"
+
+msgid "Duration of Illness"
+msgstr "罹病期間"
+
+msgid "Relation to deceased"
+msgstr "故人との関係"
+
+msgid "(9.) e.g. Son, Daughter"
+msgstr "(9.) 例: 息子、娘"
+
+msgid "(9.) e.g. Present at death"
+msgstr "(9.) 例: 死亡時に立ち会い"
+
+msgid "Schedule"
+msgstr "スケジュール"
+
+msgid "EnumDistrict"
+msgstr "EnumDistrict"
+
+msgid "Township"
+msgstr "タウンシップ"
+
+msgid "Comprising"
+msgstr "含む"
+
+msgid "OfTheSaid"
+msgstr "上記の"
+
+msgid "Enumerator"
+msgstr "調査員"
+
+msgid "1. Names of Inmates"
+msgstr "1. 居住者の名前"
+
+msgid "2. Profession, Trade or Occupation"
+msgstr "2. 職業、業種、または就業"
+
+msgid "BirthPlace"
+msgstr "出生地"
+
+msgid "3. Place of Birth"
+msgstr "3. 出生地"
+
+msgid "4. Religion"
+msgstr "4. 宗教"
+
+msgid "5. Residence if Outside of Limits"
+msgstr "5. 区域外の居住地"
+
+msgid "6. Age at Next Birthday"
+msgstr "6. 次の誕生日の年齢"
+
+msgid "SexMale"
+msgstr "性別男性"
+
+msgid "7. Sex: Male"
+msgstr "7. 性別: 男性"
+
+msgid "SexFemale"
+msgstr "性別女性"
+
+msgid "8. Sex: Female"
+msgstr "8. 性別: 女性"
+
+msgid "MaritalStatus"
+msgstr "配偶者の有無"
+
+msgid "9. Married or Single"
+msgstr "9. 既婚または未婚"
+
+msgid "Coloured"
+msgstr "有色人種"
+
+msgid "10. Coloured Persons - Negroes"
+msgstr "10. 有色人種 - 黒人"
+
+msgid "Indians"
+msgstr "インディアン"
+
+msgid "11. Indians, if any"
+msgstr "11. インディアン (該当する場合）"
+
+msgid "ResidentsMale"
+msgstr "居住者男性"
+
+msgid "12. Residents: Members, Male"
+msgstr "12. 居住者: 会員、男性"
+
+msgid "ResidentsFemale"
+msgstr "居住者女性"
+
+msgid "13. Residents: Members, Female"
+msgstr "13. 居住者: 会員、女性"
+
+msgid "NonMembersMale"
+msgstr "非会員男性"
+
+msgid "14. Residents: Not Members: Male"
+msgstr "14. 居住者: 非会員: 男性"
+
+msgid "NonMembersFemale"
+msgstr "非会員女性"
+
+msgid "15. Residents: Not Members: Female"
+msgstr "15. 居住者: 非会員: 女性"
+
+msgid "AbsentMembersMale"
+msgstr "不在会員男性"
+
+msgid "16. Members Absent: Male"
+msgstr "16. 不在会員: 男性"
+
+msgid "AbsentMembersFemale"
+msgstr "不在会員女性"
+
+msgid "17. Members Absent: Female"
+msgstr "17. 不在会員: 女性"
+
+msgid "DeafDumbMale"
+msgstr "聾唖男性"
+
+msgid "18. Deaf and Dumb: Male"
+msgstr "18. 聾唖: 男性"
+
+msgid "DeafDumbFemale"
+msgstr "聾唖女性"
+
+msgid "19. Deaf and Dumb: Female"
+msgstr "19. 聾唖: 女性"
+
+msgid "BlindMale"
+msgstr "盲目男性"
+
+msgid "20. Blind: Male"
+msgstr "20. 盲目: 男性"
+
+msgid "BlindFemale"
+msgstr "盲目女性"
+
+msgid "21. Blind: Female"
+msgstr "21. 盲目: 女性"
+
+msgid "LunaticMale"
+msgstr "精神異常男性"
+
+msgid "22. Lunatics: Male"
+msgstr "22. 精神異常者: 男性"
+
+msgid "LunaticFemale"
+msgstr "精神異常女性"
+
+msgid "23. Lunatics: Female"
+msgstr "23. 精神異常者: 女性"
+
+msgid "ScholarMale"
+msgstr "就学者男性"
+
+msgid "24. Attending School: Male"
+msgstr "24. 就学者: 男性"
+
+msgid "ScholarFemale"
+msgstr "就学者女性"
+
+msgid "25. Attending School: Female"
+msgstr "25. 就学者: 女性"
+
+msgid "Birth1851Male"
+msgstr "1851年出生男性"
+
+msgid "26. Births During the Year 1851: Male"
+msgstr "26. 1851年中の出生: 男性"
+
+msgid "Birth1851Female"
+msgstr "1851年出生女性"
+
+msgid "27. Births During the Year 1851: Female"
+msgstr "27. 1851年中の出生: 女性"
+
+msgid "Death1851Male"
+msgstr "1851年死亡男性"
+
+msgid "28. Deaths During the Year 1851: Male"
+msgstr "28. 1851年中の死亡: 男性"
+
+msgid "Death1851Female"
+msgstr "1851年死亡女性"
+
+msgid "29. Deaths During the Year 1851: Female"
+msgstr "29. 1851年中の死亡: 女性"
+
+msgid "DeathAgeCause"
+msgstr "死亡年齢原因"
+
+msgid "30. Age and Cause of Deaths"
+msgstr "30. 死亡年齢と原因"
+
+msgid "Houses"
+msgstr "住宅"
+
+msgid ""
+"31. Houses: Brick, Stone, Frame, Log, Shanty, or other kinds of residence"
+msgstr "31. 住宅: 煉瓦、石、枠組、丸太、掘っ立て小屋、またはその他の居住形態"
+
+msgid "HousesStories"
+msgstr "住宅階数"
+
+msgid "32. Houses: No. of Stories"
+msgstr "32. 住宅: 階数"
+
+msgid "HousesFamilies"
+msgstr "住宅家族数"
+
+msgid "33. No. of Families Occupying"
+msgstr "33. 居住家族数"
+
+msgid "HousesVacant"
+msgstr "空き家"
+
+msgid "34. Houses: Vacant"
+msgstr "34. 住宅: 空き"
+
+msgid "HousesBuilding"
+msgstr "建築中住宅"
+
+msgid "35. Houses: Building"
+msgstr "35. 住宅: 建築中"
+
+msgid "Shops"
+msgstr "店舗"
+
+msgid "36. Shops, Stores, Inns, Taverns etc."
+msgstr "36. 店舗、商店、旅館、酒場など."
+
+msgid "PublicBuildings"
+msgstr "公共建築物"
+
+msgid "37. Public Buildings"
+msgstr "37. 公共建築物"
+
+msgid "WorshipPlaces"
+msgstr "礼拝所"
+
+msgid "38. Places of Worship"
+msgstr "38. 礼拝所"
+
+msgid "BuisnessInfo"
+msgstr "事業情報"
+
+msgid ""
+"39. Information on Mills, Factories etc., their cost, power, produce, etc."
+msgstr "39. 製粉所、工場などの情報、その費用、動力、生産物など。"
+
+msgid "NumEmployees"
+msgstr "従業員数"
+
+msgid "40. Number of Persons Usually Employed Therein"
+msgstr "40. 通常そこで雇用されている人数"
+
+msgid "41. General Remarks of the Enumerator"
+msgstr "41. 調査員の総括所見"
+
+msgid "1. Name of Occupier"
+msgstr "1. 占有者の名前"
+
+msgid "Concession"
+msgstr "譲与地"
+
+msgid "2. Concession or Range"
+msgstr "2. 譲与地または地区"
+
+msgid "Lot"
+msgstr "区画"
+
+msgid "3. Lot or part of Lot"
+msgstr "3. 区画または区画の一部"
+
+msgid "AcresHeld"
+msgstr "所有エーカー"
+
+msgid "4. Number of Acres of Land: Held by each person or family"
+msgstr "4. 土地のエーカー数: 各人または家族が所有"
+
+msgid "AcresCultivation"
+msgstr "耕作エーカー"
+
+msgid "5. Number of Acres of Land: Under Cultivation"
+msgstr "5. 土地のエーカー数: 耕作中"
+
+msgid "AcresCrops"
+msgstr "作物エーカー"
+
+msgid "6. Number of Acres of Land: Under Crops in 1851"
+msgstr "6. 土地のエーカー数: 1851年の作物"
+
+msgid "AcresPasture"
+msgstr "牧草地エーカー"
+
+msgid "7. Number of Acres of Land: Under Pasture in 1851"
+msgstr "7. 土地のエーカー数: 1851年の牧草地"
+
+msgid "AcresGardens"
+msgstr "庭園エーカー"
+
+msgid "8. Number of Acres of Land: Gardens or Orchards"
+msgstr "8. 土地のエーカー数: 庭園または果樹園"
+
+msgid "AcresWood"
+msgstr "林地エーカー"
+
+msgid "9. Number of Acres of Land: Under Wood or Wild"
+msgstr "9. 土地のエーカー数: 林地または荒地"
+
+msgid "WheatAcres"
+msgstr "小麦エーカー"
+
+msgid "10. Wheat: Acres"
+msgstr "10. 小麦: エーカー"
+
+msgid "WheatBsh"
+msgstr "小麦 (ブッシェル)"
+
+msgid "11. Wheat: Produce Bsh."
+msgstr "11. 小麦: 生産量 (ブッシェル)"
+
+msgid "BarleyAcres"
+msgstr "大麦エーカー"
+
+msgid "12. Barley: Acres"
+msgstr "12. 大麦: エーカー"
+
+msgid "BarleyBsh"
+msgstr "大麦 (ブッシェル)"
+
+msgid "13. Barley: Produce Bsh."
+msgstr "13. 大麦: 生産量 (ブッシェル)"
+
+msgid "RyeAcres"
+msgstr "ライ麦エーカー"
+
+msgid "14. Rye: Acres"
+msgstr "14. ライ麦: エーカー"
+
+msgid "RyeBsh"
+msgstr "ライ麦 (ブッシェル)"
+
+msgid "15. Rye: Produce Bsh."
+msgstr "15. ライ麦: 生産量 (ブッシェル)"
+
+msgid "PeasAcres"
+msgstr "エンドウエーカー"
+
+msgid "16. Peas: Acres"
+msgstr "16. エンドウ: エーカー"
+
+msgid "PeasBush"
+msgstr "エンドウ (ブッシェル)"
+
+msgid "17. Peas: Produce Bsh."
+msgstr "17. エンドウ: 生産量 (ブッシェル)"
+
+msgid "OatsAcres"
+msgstr "オート麦エーカー"
+
+msgid "18. Oats: Acres"
+msgstr "18. オート麦: エーカー"
+
+msgid "OatsBush"
+msgstr "オート麦 (ブッシェル)"
+
+msgid "19. Oats: Produce Bsh."
+msgstr "19. オート麦: 生産量 (ブッシェル)"
+
+msgid "BWheatAcres"
+msgstr "蕎麦エーカー"
+
+msgid "20. B.Wheat: Acres"
+msgstr "20. 蕎麦: エーカー"
+
+msgid "BWheatBush"
+msgstr "蕎麦 (ブッシェル)"
+
+msgid "21. B.Wheat: Produce Bsh."
+msgstr "21. 蕎麦: 生産量 (ブッシェル)"
+
+msgid "CornAcres"
+msgstr "トウモロコシエーカー"
+
+msgid "22. Corn: Acres"
+msgstr "22. トウモロコシ: エーカー"
+
+msgid "CornBush"
+msgstr "トウモロコシ(ブッシェル)"
+
+msgid "23. Corn: Produce Bsh."
+msgstr "23. トウモロコシ: 生産量 (ブッシェル)"
+
+msgid "PotatoesAcres"
+msgstr "ジャガイモエーカー"
+
+msgid "24. Potatoes: Acres"
+msgstr "24. ジャガイモ: エーカー"
+
+msgid "PotatoesBush"
+msgstr "ジャガイモ(ブッシェル)"
+
+msgid "25. Potatoes: Produce Bsh."
+msgstr "25. ジャガイモ: 生産量 (ブッシェル)"
+
+msgid "TurnipsAcres"
+msgstr "カブエーカー"
+
+msgid "26. Turnips: Acres"
+msgstr "26. カブ: エーカー"
+
+msgid "TurnipsBush"
+msgstr "カブ(ブッシェル)"
+
+msgid "27. Turnips: Produce Bsh."
+msgstr "27. カブ: 生産量 (ブッシェル)"
+
+msgid "CloverBush"
+msgstr "クローバー(ブッシェル)"
+
+msgid "28. Clover, Timothy or other grass seed - Bsh."
+msgstr "28. クローバー、チモシーまたは他の牧草種子 - (ブッシェル)"
+
+msgid "CarrotsBush"
+msgstr "ニンジン(ブッシェル)"
+
+msgid "29. Carrots - Bsh."
+msgstr "29. ニンジン - (ブッシェル)"
+
+msgid "MangleWurtzel"
+msgstr "マンゴール"
+
+msgid "30. Mangle Wurtzel"
+msgstr "30. マンゴール"
+
+msgid "BeansBush"
+msgstr "豆(ブッシェル)"
+
+msgid "31. Beans Bush"
+msgstr "31. 豆 (ブッシェル)"
+
+msgid "HopsLbs"
+msgstr "ホップポンド"
+
+msgid "32. Hops Lbs."
+msgstr "32. ホップ ポンド"
+
+msgid "HayQty"
+msgstr "干草量"
+
+msgid "33. Hay, Bundles or Tons"
+msgstr "33. 干草、束またはトン"
+
+msgid "FlaxLbs"
+msgstr "亜麻ポンド"
+
+msgid "34. Flax or Hemp, Lbs."
+msgstr "34. 亜麻または麻、ポンド"
+
+msgid "TobaccoLbs"
+msgstr "タバコポンド"
+
+msgid "35. Tobacco Lbs."
+msgstr "35. タバコ ポンド"
+
+msgid "WoolLbs."
+msgstr "羊毛ポンド"
+
+msgid "36. Wool Lbs."
+msgstr "36. 羊毛 ポンド"
+
+msgid "Column37"
+msgstr "列37"
+
+msgid "37."
+msgstr "37."
+
+msgid "Column38"
+msgstr "列38"
+
+msgid "38."
+msgstr "38."
+
+msgid "Column39"
+msgstr "列39"
+
+msgid "39."
+msgstr "39."
+
+msgid "MapleSugarLbs"
+msgstr "メープルシュガーポンド"
+
+msgid "40. Maple Sugar Lbs."
+msgstr "40. メープルシュガー ポンド"
+
+msgid "CiderGalls"
+msgstr "サイダーガロン"
+
+msgid "41. Cider Galls."
+msgstr "41. サイダー ガロン"
+
+msgid "ClothYards"
+msgstr "布ヤード"
+
+msgid "42. Fulled Cloth Yards"
+msgstr "42. 縮絨布 ヤード"
+
+msgid "LinnenYards"
+msgstr "リネンヤード"
+
+msgid "43. Linnen - Yds."
+msgstr "43. リネン - ヤード"
+
+msgid "FlannelYds"
+msgstr "フランネルヤード"
+
+msgid "44. Flannel - Yds."
+msgstr "44. フランネル - ヤード"
+
+msgid "Bulls"
+msgstr "雄牛"
+
+msgid "45. Bulls, Oxen or Steers"
+msgstr "45. 雄牛、去勢牛、または若去勢牛"
+
+msgid "Milch Cows"
+msgstr "乳牛"
+
+msgid "46. Milch Cows"
+msgstr "46. 乳牛"
+
+msgid "Calves"
+msgstr "子牛"
+
+msgid "47. Calves or Heifers"
+msgstr "47. 子牛または若雌牛"
+
+msgid "Horses"
+msgstr "馬"
+
+msgid "48. Horses of all ages"
+msgstr "48. 全年齢の馬"
+
+msgid "Sheep"
+msgstr "羊"
+
+msgid "49. Sheep"
+msgstr "49. 羊"
+
+msgid "Pigs"
+msgstr "豚"
+
+msgid "50. Pigs"
+msgstr "50. 豚"
+
+msgid "ButterLbs"
+msgstr "バターポンド"
+
+msgid "51. Butter - Lbs."
+msgstr "51. バター - ポンド"
+
+msgid "CheeseLbs"
+msgstr "チーズポンド"
+
+msgid "52. Cheese - Lbs."
+msgstr "52. チーズ - ポンド"
+
+msgid "Beef"
+msgstr "牛肉"
+
+msgid "53. Beef - Barrels or Cwts."
+msgstr "53. 牛肉 - 樽またはハンドレッドウェイト"
+
+msgid "Pork"
+msgstr "豚肉"
+
+msgid "54. Pork - Barrels or Cwts."
+msgstr "54. 豚肉 - 樽またはハンドレッドウェイト"
+
+msgid "Fish"
+msgstr "魚"
+
+msgid "55. Quantity of Fish Cured"
+msgstr "55. 加工魚の量"
+
+msgid "56. Remarks"
+msgstr "56. 備考"
+
+msgid "2. Profession, trade or occupation"
+msgstr "2. 職業、業種、または就業"
+
+msgid "Married1851"
+msgstr "1851年結婚"
+
+msgid "4. Married during the year"
+msgstr "4. 年中に結婚"
+
+msgid "5. Religion"
+msgstr "5. 宗教"
+
+msgid "6. Residence, if out of limits"
+msgstr "6. 居住地 (区域外の場合）"
+
+msgid "7. Age next Birthday"
+msgstr "7. 次の誕生日の年齢"
+
+msgid "8. Sex: Male"
+msgstr "8. 性別: 男性"
+
+msgid "SexFemail"
+msgstr "性別女性"
+
+msgid "9. Sex:Female"
+msgstr "9. 性別:女性"
+
+msgid "10. Married or Single"
+msgstr "10. 既婚または未婚"
+
+msgid "Widowers"
+msgstr "寡夫"
+
+msgid "11. Widowers"
+msgstr "11. 寡夫"
+
+msgid "Widows"
+msgstr "寡婦"
+
+msgid "12. Widows"
+msgstr "12. 寡婦"
+
+msgid "13. Coloured Persons, Mulato or Indians"
+msgstr "13. 有色人種、ムラート、またはインディアン"
+
+msgid "MemberMale"
+msgstr "会員男性"
+
+msgid "14. Members: Male"
+msgstr "14. 会員: 男性"
+
+msgid "MemberFemale"
+msgstr "会員女性"
+
+msgid "15. Members: Female"
+msgstr "15. 会員: 女性"
+
+msgid "NotMemberMale"
+msgstr "非会員男性"
+
+msgid "16. Not Members: Male"
+msgstr "16. 非会員: 男性"
+
+msgid "NotMemberFemale"
+msgstr "非会員女性"
+
+msgid "17. Not Members: Female"
+msgstr "17. 非会員: 女性"
+
+msgid "MemberAbsentMale"
+msgstr "不在会員男性"
+
+msgid "18. Members Absent: Male"
+msgstr "18. 不在会員: 男性"
+
+msgid "MemberAbsentFemale"
+msgstr "不在会員女性"
+
+msgid "19. Members Absent: Female"
+msgstr "19. 不在会員: 女性"
+
+msgid "DeafDumb"
+msgstr "聾唖"
+
+msgid "20. Deaf and Dumb"
+msgstr "20. 聾唖"
+
+msgid "Blind"
+msgstr "盲目"
+
+msgid "21. Blind"
+msgstr "21. 盲目"
+
+msgid "Lunatic"
+msgstr "精神異常者"
+
+msgid "22. Lunatics or Idiots"
+msgstr "22. 精神異常者または白痴"
+
+msgid "23. Attending School within the year: Male"
+msgstr "23. 年中就学者: 男性"
+
+msgid "24. Attending School within the year: Female"
+msgstr "24. 年中就学者: 女性"
+
+msgid "CantReadMale"
+msgstr "読み書き不能男性"
+
+msgid "25. Persons over 20, who cannot read or write: Male"
+msgstr "25. 20歳以上で読み書きができない者: 男性"
+
+msgid "CantReadFemale"
+msgstr "読み書き不能女性"
+
+msgid "26. Persons over 20, who cannot read or write: Female"
+msgstr "26. 20歳以上で読み書きができない者: 女性"
+
+msgid "Birth1860Male"
+msgstr "1860年出生男性"
+
+msgid "27. Births in 1860: Male"
+msgstr "27. 1860年の出生: 男性"
+
+msgid "Birth1860Female"
+msgstr "1860年出生女性"
+
+msgid "28. Births in 1860: Female"
+msgstr "28. 1860年の出生: 女性"
+
+msgid "Death1860Male"
+msgstr "1860年死亡男性"
+
+msgid "29. Deaths in 1860: Male"
+msgstr "29. 1860年の死亡: 男性"
+
+msgid "Death1860Female"
+msgstr "1860年死亡女性"
+
+msgid "30. Deaths in 1860: Female"
+msgstr "30. 1860年の死亡: 女性"
+
+msgid "31. Age and cause of death"
+msgstr "31. 死亡年齢と原因"
+
+msgid "32. Houses: Brick, Stone, Frame, Log, etc."
+msgstr "32. 住宅: 煉瓦、石、枠組、丸太など."
+
+msgid "33. Houses: No. of Stories"
+msgstr "33. 住宅: 階数"
+
+msgid "34. Houses: No. of families living in the house"
+msgstr "34. 住宅: その家に住む家族数"
+
+msgid "35. Houses: Vacant"
+msgstr "35. 住宅: 空き"
+
+msgid "HouseBeingBuilt"
+msgstr "建築中住宅"
+
+msgid "36. Houses: Being built"
+msgstr "36. 住宅: 建築中"
+
+msgid "SubDistrict"
+msgstr "小区"
+
+msgid "Vessels"
+msgstr "船舶"
+
+msgid "1. Vessels"
+msgstr "1. 船舶"
+
+msgid "Shanties"
+msgstr "掘っ立て小屋"
+
+msgid "2. Shanties"
+msgstr "2. 掘っ立て小屋"
+
+msgid "HousesBeingBuilt"
+msgstr "建築中住宅"
+
+msgid "3. Dwelling houses in construction"
+msgstr "3. 建築中の住宅"
+
+msgid "4. Dwelling houses unoccupied"
+msgstr "4. 空き住宅"
+
+msgid "HousesInhabited"
+msgstr "居住住宅"
+
+msgid "5. Dwelling houses inhabited"
+msgstr "5. 居住中の住宅"
+
+msgid "6.Families"
+msgstr "6. 家族"
+
+msgid "7. Names"
+msgstr "7. 名前"
+
+msgid "8. Sex"
+msgstr "8. 性別"
+
+msgid "9. Age"
+msgstr "9. 年齢"
+
+msgid "Birth1871"
+msgstr "1871年出生"
+
+msgid "10. Born within last twelve months"
+msgstr "10. 過去12ヶ月以内に出生"
+
+msgid "11. Country or Province of Birth"
+msgstr "11. 出生国または州"
+
+msgid "12. Religion"
+msgstr "12. 宗教"
+
+msgid "13. Origin"
+msgstr "13. 出身地"
+
+msgid "14. Profession, Occupation or Trade"
+msgstr "14. 職業、就業、または業種"
+
+msgid "15. Married or Widowed"
+msgstr "15. 既婚または未亡人"
+
+msgid "Maried1871"
+msgstr "1871年結婚"
+
+msgid "16. Married within last twelve months"
+msgstr "16. 過去12ヶ月以内に結婚"
+
+msgid "Scholar"
+msgstr "就学者"
+
+msgid "17. Going to school"
+msgstr "17. 就学中"
+
+msgid "CantRead"
+msgstr "読み書き不能"
+
+msgid "18. Over 20 unable to read"
+msgstr "18. 20歳以上で読み書き不能"
+
+msgid "CantWrite"
+msgstr "書き書き不能"
+
+msgid "19. Over 20 unable to write"
+msgstr "19. 20歳以上で書き書き不能"
+
+msgid "22. Unsound mind"
+msgstr "22. 精神異常"
+
+msgid "23. Date of Operations and Remarks"
+msgstr "23. 操作日と備考"
+
+msgid "3. Houses in construction"
+msgstr "3. 建築中の住宅"
+
+msgid "4. Houses unoccupied"
+msgstr "4. 空き住宅"
+
+msgid "5. Houses inhabited"
+msgstr "5. 居住中の住宅"
+
+msgid "6. Families"
+msgstr "6. 家族"
+
+msgid "Birth1881"
+msgstr "1881年出生"
+
+msgid "16. Going to school"
+msgstr "16. 就学中"
+
+msgid "17. Deaf and Dumb"
+msgstr "17. 聾唖"
+
+msgid "18. Blind"
+msgstr "18. 盲目"
+
+msgid "19. Unsound mind"
+msgstr "19. 精神異常"
+
+msgid "20. Date of Operations and Remarks"
+msgstr "20. 操作日と備考"
+
+msgid "1. Vessels and Shanties"
+msgstr "1. 船舶と掘っ立て小屋"
+
+msgid "2. Houses in construction"
+msgstr "2. 建築中の住宅"
+
+msgid "3. Houses unoccupied"
+msgstr "3. 空き住宅"
+
+msgid "4. Houses inhabited"
+msgstr "4. 居住中の住宅"
+
+msgid "5. Families"
+msgstr "5. 家族"
+
+msgid "6. Names"
+msgstr "6. 名前"
+
+msgid "7. Sex"
+msgstr "7. 性別"
+
+msgid "8. Age"
+msgstr "8. 年齢"
+
+msgid "9. Married or Widowed"
+msgstr "9. 既婚または未亡人"
+
+msgid "10. Relationship to Head of Family"
+msgstr "10. 世帯主との関係"
+
+msgid "12. FrenchCanadian"
+msgstr "12. フランス系カナダ人"
+
+msgid "BirthPlaceFather"
+msgstr "父親の出生地"
+
+msgid "13. Birth Place of Father"
+msgstr "13. 父親の出生地"
+
+msgid "BirthPlaceMother"
+msgstr "母親の出生地"
+
+msgid "14. Birth Place of Mother"
+msgstr "14. 母親の出生地"
+
+msgid "15. Religion"
+msgstr "15. 宗教"
+
+msgid "16. Profession, Occupation or Trade"
+msgstr "16. 職業、就業、または業種"
+
+msgid "Employer"
+msgstr "雇用主"
+
+msgid "17. Employers"
+msgstr "17. 雇用主"
+
+msgid "Employee"
+msgstr "従業員"
+
+msgid "18. Wage Earner"
+msgstr "18. 賃金労働者"
+
+msgid "Unemployed"
+msgstr "失業者"
+
+msgid "19. Unemployed during week preceding Census"
+msgstr "19. 国勢調査前週に失業"
+
+msgid "Employees"
+msgstr "従業員"
+
+msgid "20. Employer to state average number of hands employed during year"
+msgstr "20. 雇用主は年間平均雇用者数を記入"
+
+msgid "CanRead"
+msgstr "読み書き可"
+
+msgid "21. Instruction: Read"
+msgstr "21. 教育: 読み書き"
+
+msgid "CanWrite"
+msgstr "書き書き可"
+
+msgid "22. Instruction: Write"
+msgstr "22. 教育: 書き書き"
+
+msgid "23. Deaf and Dumb"
+msgstr "23. 聾唖"
+
+msgid "24. Blind"
+msgstr "24. 盲目"
+
+msgid "25. Unsound mind"
+msgstr "25. 精神異常"
+
+msgid "SubTitle"
+msgstr "サブタイトル"
+
+msgid "PollSub"
+msgstr "投票小区"
+
+msgid "House"
+msgstr "住宅"
+
+msgid "1. Dwelling house"
+msgstr "1. 住宅"
+
+msgid "2. Family or household"
+msgstr "2. 家族または世帯"
+
+msgid "3. Name of each person in family"
+msgstr "3. 家族各人の名前"
+
+msgid "4. Sex"
+msgstr "4. 性別"
+
+msgid "Colour"
+msgstr "人種"
+
+msgid "5. Colour"
+msgstr "5. 人種"
+
+msgid "6. Relation to head of family"
+msgstr "6. 世帯主との関係"
+
+msgid "7. Single, married, widowed, divorced or legally separated"
+msgstr "7. 未婚、既婚、寡夫/寡婦、離婚、または別居"
+
+msgid "BirthMonth"
+msgstr "出生月"
+
+msgid "8. Month and Date of Birth"
+msgstr "8. 出生月日"
+
+msgid "BirthYear"
+msgstr "出生年"
+
+msgid "9. Year of birth"
+msgstr "9. 出生年"
+
+msgid "10. Age at last birthday"
+msgstr "10. 最終誕生日の年齢"
+
+msgid "11. Country or place of birth"
+msgstr "11. 出生国または場所"
+
+msgid "12. Year of immigration to Canada, if an immigrant"
+msgstr "12. カナダへの移民年 (移民の場合）"
+
+msgid "13. Year of naturalization, if formerly an alien"
+msgstr "13. 帰化年 (以前外国人であった場合）"
+
+msgid "Race"
+msgstr "人種"
+
+msgid "14. Racial or tribal origin"
+msgstr "14. 人種または部族の起源"
+
+msgid "Nationality"
+msgstr "国籍"
+
+msgid "15. Nationality"
+msgstr "15. 国籍"
+
+msgid "16. Religion"
+msgstr "16. 宗教"
+
+msgid "17. Profession, occupation, trade or means of living of each person"
+msgstr "17. 各人の職業、就業、業種、または生計手段"
+
+msgid "OwnMeans"
+msgstr "自営"
+
+msgid "18. Living on own means"
+msgstr "18. 自営で生活"
+
+msgid "19. Employer"
+msgstr "19. 雇用主"
+
+msgid "20. Employee"
+msgstr "20. 従業員"
+
+msgid "SelfEmployed"
+msgstr "自営業者"
+
+msgid "21. Working on own account"
+msgstr "21. 自営業"
+
+msgid "WhereEmployed"
+msgstr "雇用場所"
+
+msgid "22. Working at trade in factory or in home"
+msgstr "22. 工場または自宅で従事"
+
+msgid "MonthsFactory"
+msgstr "工場月数"
+
+msgid "23. Months employed at trade in factory"
+msgstr "23. 工場での従事月数"
+
+msgid "MonthsHome"
+msgstr "自宅月数"
+
+msgid "24. Months employed at trade in home"
+msgstr "24. 自宅での従事月数"
+
+msgid "MonthsOther"
+msgstr "その他月数"
+
+msgid "25. Months employed in other occupation than trace in factory or home"
+msgstr "25. 工場または自宅以外の職業での従事月数"
+
+msgid "EarningsOccupation"
+msgstr "職業収入"
+
+msgid "26. Earnings from occupation or trade"
+msgstr "26. 職業または業種からの収入"
+
+msgid "EarningsOther"
+msgstr "その他収入"
+
+msgid "27. Extra earning (From other than chief occupation or trade)"
+msgstr "27. 追加収入 (主たる職業または業種以外から）"
+
+msgid "SchoolMonths"
+msgstr "就学月数"
+
+msgid "28. Months at school in 1910"
+msgstr "28. 1910年の就学月数"
+
+msgid "Read"
+msgstr "読み書き"
+
+msgid "29. Can read"
+msgstr "29. 読み書き可"
+
+msgid "Write"
+msgstr "書き書き"
+
+msgid "30. Can write"
+msgstr "30. 書き書き可"
+
+msgid "SpeakEnglish"
+msgstr "英語話者"
+
+msgid "31. Can speak English"
+msgstr "31. 英語を話せる"
+
+msgid "SpeakFrench"
+msgstr "フランス語話者"
+
+msgid "32. Can speak French"
+msgstr "32. フランス語を話せる"
+
+msgid "33. Mother tongue (If spoken)"
+msgstr "33. 母語 (話す場合）"
+
+msgid "Infirmities"
+msgstr "障害"
+
+msgid "34. Infirmities: a. Deaf and dumb; b. Blind; c. Unsound mind"
+msgstr "34. 障害: a. 聾唖; b. 盲目; c. 精神異常"
+
+msgid "Name from Schedule 1"
+msgstr "スケジュール1の名前"
+
+msgid "Line on Schedule 2"
+msgstr "スケジュール2の行"
+
+msgid "PageRef"
+msgstr "ページ参照"
+
+msgid "2. Page from Schedule 1"
+msgstr "2. スケジュール1のページ"
+
+msgid "LineRef"
+msgstr "行参照"
+
+msgid "3. Line from Schedule 1"
+msgstr "3. スケジュール1の行"
+
+msgid "3. Place of Habitation"
+msgstr "3. 居住地"
+
+msgid "HousesConst"
+msgstr "建築中住宅"
+
+msgid "4. Houses: In construction"
+msgstr "4. 住宅: 建築中"
+
+msgid "5. Houses: Vacant"
+msgstr "5. 住宅: 空き"
+
+msgid "6. Houses: Inhabited"
+msgstr "6. 住宅: 居住中"
+
+msgid "Institution"
+msgstr "施設"
+
+msgid "7. Institution: Special or legal name"
+msgstr "7. 施設: 特別または正式名称"
+
+msgid "Buildings"
+msgstr "建物"
+
+msgid "8. Institution: Number of buildings"
+msgstr "8. 施設: 建物数"
+
+msgid "9. Number of families in house or institution"
+msgstr "9. 住宅または施設内の家族数"
+
+msgid "10. Number of rooms in house or institution for each famiy"
+msgstr "10. 各家族の住宅または施設内の部屋数"
+
+msgid "Inmates"
+msgstr "居住者"
+
+msgid "11. Number of inmates in institution"
+msgstr "11. 施設内の居住者数"
+
+msgid "OwnedAcres"
+msgstr "所有エーカー"
+
+msgid "12. Real Estate Owned: Grand total of acres"
+msgstr "12. 所有不動産: 総エーカー数"
+
+msgid "OwnedLots"
+msgstr "所有区画"
+
+msgid "13. Real Estate Owned: Number of town or village lots"
+msgstr "13. 所有不動産: 町または村の区画数"
+
+msgid "OwnedHouses"
+msgstr "所有住宅"
+
+msgid "14. Real Estate Owned: Number of dwelling houses"
+msgstr "14. 所有不動産: 住宅数"
+
+msgid "OwnedStores"
+msgstr "所有店舗"
+
+msgid "15. Real Estate Owned: Number of stores, warehouses, etc."
+msgstr "15. 所有不動産: 店舗、倉庫などの数."
+
+msgid "OwnedBars"
+msgstr "所有納屋"
+
+msgid "16. Real Estate Owned: Number of barns, stables and other outbuildings"
+msgstr "16. 所有不動産: 納屋、厩舎、その他の付属建物の数"
+
+msgid "OwnedSilos"
+msgstr "所有サイロ"
+
+msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
+msgstr "17. 所有不動産: サイロの数と容量 (立方フィート）"
+
+msgid "OwnedFactories"
+msgstr "所有工場"
+
+msgid "18. Real Estate Owned: Number of manufacturing establishments"
+msgstr "18. 所有不動産: 製造施設の数"
+
+msgid "LeasedAcres"
+msgstr "賃貸エーカー"
+
+msgid "19. Real Estate Leased: Grand total of acres"
+msgstr "19. 賃貸不動産: 総エーカー数"
+
+msgid "LeasedLots"
+msgstr "賃貸区画"
+
+msgid "20. Real Estate Leased: Number of town or village lots"
+msgstr "20. 賃貸不動産: 町または村の区画数"
+
+msgid "LeasedHouses"
+msgstr "賃貸住宅"
+
+msgid "21. Real Estate Leased: Number of dwelling houses"
+msgstr "21. 賃貸不動産: 住宅数"
+
+msgid "LeasedStores"
+msgstr "賃貸店舗"
+
+msgid "22. Real Estate Leased: Number of stores, warehouses, etc."
+msgstr "22. 賃貸不動産: 店舗、倉庫などの数."
+
+msgid "LeasedBarns"
+msgstr "賃貸納屋"
+
+msgid "23. Real Estate Leased: Number of barns, stables and other outbuildings"
+msgstr "23. 賃貸不動産: 納屋、厩舎、その他の付属建物の数"
+
+msgid "LeasedSilos"
+msgstr "賃貸サイロ"
+
+msgid "24. Real Estate Leased: Number of silos and capacity in cubic feet"
+msgstr "24. 賃貸不動産: サイロの数と容量 (立方フィート）"
+
+msgid "LeasedFactories"
+msgstr "賃貸工場"
+
+msgid "25. Real Estate Leased: Number of manufacturing establishments"
+msgstr "25. 賃貸不動産: 製造施設の数"
+
+msgid "Denomination"
+msgstr "教派"
+
+msgid "26. Church or place of worship: Religious denomination"
+msgstr "26. 教会または礼拝所: 宗教教派"
+
+msgid "Communicants"
+msgstr "聖餐参加者"
+
+msgid "27. Church or place of worship: Number of communicants"
+msgstr "27. 教会または礼拝所: 聖餐参加者数"
+
+msgid "Seating"
+msgstr "座席"
+
+msgid "28. Church or place of worship: Seating capacity"
+msgstr "28. 教会または礼拝所: 収容人数"
+
+msgid "SSDenomination"
+msgstr "日曜学校教派"
+
+msgid "29. Sunday School: Religious Denomination"
+msgstr "29. 日曜学校: 宗教教派"
+
+msgid "SSTeachers"
+msgstr "日曜学校教師"
+
+msgid "30. Sunday School: Number of officers and teachers"
+msgstr "30. 日曜学校: 役員と教師の数"
+
+msgid "SSScholars"
+msgstr "日曜学校生徒"
+
+msgid "31. Sunday School: Number of Scholars"
+msgstr "31. 日曜学校: 生徒数"
+
+msgid "SchoolRooms"
+msgstr "教室"
+
+msgid "32. School: Number of rooms"
+msgstr "32. 学校: 教室数"
+
+msgid "SchoolTeachers"
+msgstr "学校教師"
+
+msgid "33. School: Number of teachers"
+msgstr "33. 学校: 教師数"
+
+msgid "SchoolStudents"
+msgstr "学校生徒"
+
+msgid "34. School: Number of Scholars"
+msgstr "34. 学校: 生徒数"
+
+msgid "DateVisit"
+msgstr "訪問日"
+
+msgid "35. Date of visit"
+msgstr "35. 訪問日"
+
+msgid "Reason"
+msgstr "理由"
+
+msgid "36. The reason, if not enumerated on first visit"
+msgstr "36. 初回訪問時に調査されなかった理由"
+
+msgid "DateEnum"
+msgstr "調査日"
+
+msgid "37. Date when enumerated"
+msgstr "37. 調査日"
+
+msgid "1. No. of family in order of visitation"
+msgstr "1. 訪問順の家族番号"
+
+msgid "2. Name of each person in the family"
+msgstr "2. 家族各人の名前"
+
+msgid "3.Relation to head of family"
+msgstr "3. 世帯主との関係"
+
+msgid "5. Married, single, widowed or divorced"
+msgstr "5. 既婚、未婚、寡夫/寡婦、または離婚"
+
+msgid "6. Age"
+msgstr "6. 年齢"
+
+msgid "7. Country or place of birth"
+msgstr "7. 出生国または場所"
+
+msgid "8. Year of immigration to Canada"
+msgstr "8. カナダへの移民年"
+
+msgid "PostOffice"
+msgstr "郵便局"
+
+msgid "9. Post office address"
+msgstr "9. 郵便局の住所"
+
+msgid "Section"
+msgstr "セクション"
+
+msgid "10. Location: Section"
+msgstr "10. 場所: 区画"
+
+msgid "11. Location: Township"
+msgstr "11. 場所: タウンシップ"
+
+msgid "12. Location: Range"
+msgstr "12. 場所: 地区"
+
+msgid "Meridian"
+msgstr "子午線"
+
+msgid "13. Location: Meridian"
+msgstr "13. 場所: 子午線"
+
+msgid "14. Livestock: Horses, all ages"
+msgstr "14. 家畜: 馬 (全年齢）"
+
+msgid "Cows"
+msgstr "牛"
+
+msgid "15. Livestock: Milch cows"
+msgstr "15. 家畜: 乳牛"
+
+msgid "16. Other horned or meat cattle, all ages"
+msgstr "16. その他の有角または肉用牛 (全年齢）"
+
+msgid "17. Sheep and lambs, all ages"
+msgstr "17. 羊と子羊 (全年齢）"
+
+msgid "18. Hogs and pigs, all ages"
+msgstr "18. 豚 (全年齢）"
+
+msgid "4. Place of habitation"
+msgstr "4. 居住地"
+
+msgid "5. Sex"
+msgstr "5. 性別"
+
+msgid "8. Month of birth"
+msgstr "8. 出生月"
+
+msgid "16. Chief occupation or trade"
+msgstr "16. 主たる職業または業種"
+
+msgid "OtherEmployment"
+msgstr "その他の就業"
+
+msgid "18. Employment other than at chief trade or occupation, if any"
+msgstr "18. 主たる業種または職業以外の就業 (該当する場合）"
+
+msgid "22. State where person employed"
+msgstr "22. 就業州"
+
+msgid "WeeksOccupation"
+msgstr "就業週数"
+
+msgid "23. Weeks employed in 1910 at chief occupation or trade"
+msgstr "23. 1910年の主たる職業または業種での就業週数"
+
+msgid "WeeksOther"
+msgstr "その他就業週数"
+
+msgid "24. Weeks employed in 1910 at other than chief occupation or trade"
+msgstr "24. 1910年の主たる職業または業種以外での就業週数"
+
+msgid "HoursOccupation"
+msgstr "就業時間"
+
+msgid "25. Hours of working time per week at chief occupation"
+msgstr "25. 主たる職業の週労働時間"
+
+msgid "HoursOther"
+msgstr "その他就業時間"
+
+msgid "26. Hours of working time per week at other occupation, if any"
+msgstr "26. その他の職業の週労働時間 (該当する場合）"
+
+msgid "27. Total earnings in 1910 from chief occupation or trade"
+msgstr "27. 1910年の主たる職業または業種からの総収入"
+
+msgid "28. Total earnings in 1910 from other than chief occupation or trade"
+msgstr "28. 1910年の主たる職業または業種以外からの総収入"
+
+msgid "Wages"
+msgstr "賃金"
+
+msgid "29. Rate of earnings per hour when employed by the hour-Cents"
+msgstr "29. 時間給での収入率 (セント）"
+
+msgid "InsuranceLife"
+msgstr "生命保険"
+
+msgid "30. Insurance: Upon life"
+msgstr "30. 保険: 生命"
+
+msgid "InsuranceAccident"
+msgstr "傷害保険"
+
+msgid "31. Insurance: Against accident or illness"
+msgstr "31. 保険: 傷害または疾病"
+
+msgid "InsuranceCost"
+msgstr "保険費用"
+
+msgid "32. Insurance: Cost of insurance in census year"
+msgstr "32. 保険: 国勢調査年の保険費用"
+
+msgid "33. Months at school in 1910"
+msgstr "33. 1910年の就学月数"
+
+msgid "34. Can Read"
+msgstr "34. 読み書き可"
+
+msgid "35. Can Write"
+msgstr "35. 書き書き可"
+
+msgid "36. Language commonly spoken"
+msgstr "36. 日常的に話す言語"
+
+msgid "SchoolCost"
+msgstr "教育費"
+
+msgid ""
+"37. Cost of education in 1910 for persons over 16 years of age at College, "
+"Convent or University"
+msgstr "37. 1910年の16歳以上の大学、修道院学校、または大学での教育費"
+
+msgid "38. Blind"
+msgstr "38. 盲目"
+
+msgid "39. Deaf and dumb"
+msgstr "39. 聾唖"
+
+msgid "40. Crazy or lunatic"
+msgstr "40. 精神異常"
+
+msgid "Idiotic"
+msgstr "白痴"
+
+msgid "41. Idiotic or silly"
+msgstr "41. 白痴または愚鈍"
+
+msgid "1. House"
+msgstr "1. 住宅"
+
+msgid "Dwelling house"
+msgstr "住宅"
+
+msgid "2. Family"
+msgstr "2. 家族"
+
+msgid "Family or household"
+msgstr "家族または世帯"
+
+msgid "3. Name"
+msgstr "3. 名前"
+
+msgid "Name of each person in family"
+msgstr "家族各人の名前"
+
+msgid "5. Relation to head of family"
+msgstr "5. 世帯主との関係"
+
+msgid "6. Single, married, widowed, divorced or legally separated"
+msgstr "6. 未婚、既婚、寡夫/寡婦、離婚、または別居"
+
+msgid "7. Month of birth"
+msgstr "7. 出生月"
+
+msgid "8. Age at last birthday"
+msgstr "8. 最終誕生日の年齢"
+
+msgid "9. Country or place of birth"
+msgstr "9. 出生国または場所"
+
+msgid "10. Racial or tribal origin"
+msgstr "10. 人種または部族の起源"
+
+msgid "11. Religion"
+msgstr "11. 宗教"
+
+msgid "12. Months at school in 1910"
+msgstr "12. 1910年の就学月数"
+
+msgid "13. Can Read"
+msgstr "13. 読み書き可"
+
+msgid "14. Can Write"
+msgstr "14. 書き書き可"
+
+msgid "15. Language commonly spoken"
+msgstr "15. 日常的に話す言語"
+
+msgid ""
+"16. Infirmities: a. blind; b. deaf and dumb; c. idotic or silly; d. crazy or "
+"lunatic"
+msgstr "16. 障害: a. 盲目; b. 聾唖; c. 白痴または愚鈍; d. 精神異常"
+
+msgid "1. Dwelling House"
+msgstr "1. 住宅"
+
+msgid "2. Family, Household or Institution"
+msgstr "2. 家族、世帯、または施設"
+
+msgid "3. Name of each person in family, household or institution"
+msgstr "3. 家族、世帯、または施設内の各人の名前"
+
+msgid "MilitaryService"
+msgstr "兵役"
+
+msgid "4. Military Service"
+msgstr "4. 兵役"
+
+msgid "5. Place of Habitation: Township"
+msgstr "5. 居住地: タウンシップ"
+
+msgid "6. Place of Habitation: Range"
+msgstr "6. 居住地: 地区"
+
+msgid "7. Place of Habitation: Meridian"
+msgstr "7. 居住地: 子午線"
+
+msgid "8. Place of Habitation: Municipality"
+msgstr "8. 居住地: 自治体"
+
+msgid "9. Relationship to head of family or household"
+msgstr "9. 世帯主または家族の長との関係"
+
+msgid "10. Sex"
+msgstr "10. 性別"
+
+msgid "11. Single, married, widowed, divorced or legally separated"
+msgstr "11. 未婚、既婚、寡夫/寡婦、離婚、または別居"
+
+msgid "12. Age at last birthday"
+msgstr "12. 最終誕生日の年齢"
+
+msgid "13. Country or place of birth"
+msgstr "13. 出生国または場所"
+
+msgid "14. Religion"
+msgstr "14. 宗教"
+
+msgid "15. Year of immigration to Canada"
+msgstr "15. カナダへの移民年"
+
+msgid "16. Year of naturalization"
+msgstr "16. 帰化年"
+
+msgid "17. Nationality"
+msgstr "17. 国籍"
+
+msgid "18. Race or tribal origin"
+msgstr "18. 人種または部族の起源"
+
+msgid "19. Can speak English"
+msgstr "19. 英語を話せる"
+
+msgid "20. Can speak French"
+msgstr "20. フランス語を話せる"
+
+msgid "OtherLanguage"
+msgstr "その他の言語"
+
+msgid "21. Other language spoken as mother tongue"
+msgstr "21. 母語として話されるその他の言語"
+
+msgid "22. Can Read"
+msgstr "22. 読み書き可"
+
+msgid "23. Can Write"
+msgstr "23. 書き書き可"
+
+msgid "24. Chief occupation or trade"
+msgstr "24. 主たる職業または業種"
+
+msgid "25. Employer, \"E\", Employee, \"W\""
+msgstr "25. 雇用主 \"E\"、従業員 \"W\""
+
+msgid "EmploymentPlace"
+msgstr "就業場所"
+
+msgid "26. State where person is employed"
+msgstr "26. 就業州"
+
+msgid "NARA publication"
+msgstr "NARA出版物"
+
+msgid "Roll No."
+msgstr "ロール番号"
+
+msgid "Page No."
+msgstr "ページ番号"
+
+msgid "Sheet No."
+msgstr "シート番号"
+
+msgid "Minor Civil Division"
+msgstr "小区画"
+
+msgid "County of"
+msgstr "郡"
+
+msgid "District (or Territory) of"
+msgstr "地区 (または準州）"
+
+msgid "Free white males 16 & up"
+msgstr "16歳以上の自由白人男性"
+
+msgid "Free white males under 16"
+msgstr "16歳未満の自由白人男性"
+
+msgid "Free white females"
+msgstr "自由白人女性"
+
+msgid "All other free persons"
+msgstr "その他の自由民"
+
+msgid "Slaves"
+msgstr "奴隷"
+
+msgid "Enumeration Date"
+msgstr "調査日"
+
+msgid "Free white males under 10"
+msgstr "10歳未満の自由白人男性"
+
+msgid "Free white males 10-15"
+msgstr "10-15歳の自由白人男性"
+
+msgid "Free white males 16-25"
+msgstr "16-25歳の自由白人男性"
+
+msgid "Free white males 26-44"
+msgstr "26-44歳の自由白人男性"
+
+msgid "Free white males 45 and over"
+msgstr "45歳以上の自由白人男性"
+
+msgid "Free white females under 10"
+msgstr "10歳未満の自由白人女性"
+
+msgid "Free white females 10-15"
+msgstr "10-15歳の自由白人女性"
+
+msgid "Free white females 16-25"
+msgstr "16-25歳の自由白人女性"
+
+msgid "Free white females 26-44"
+msgstr "26-44歳の自由白人女性"
+
+msgid "Free white females 45 and over"
+msgstr "45歳以上の自由白人女性"
+
+msgid "Free white males 16-18"
+msgstr "16-18歳の自由白人男性"
+
+msgid "Foreigners not naturalized"
+msgstr "帰化していない外国人"
+
+msgid "Persons engaged in Agriculture"
+msgstr "農業従事者"
+
+msgid "Persons engaged in Commerce"
+msgstr "商業従事者"
+
+msgid "Persons engaged in Manufactures"
+msgstr "製造業従事者"
+
+msgid "Slave males under 14"
+msgstr "14歳未満の奴隷男性"
+
+msgid "Slave males 14-25"
+msgstr "14-25歳の奴隷男性"
+
+msgid "Slave males 26-44"
+msgstr "26-44歳の奴隷男性"
+
+msgid "Slave males 45 and over"
+msgstr "45歳以上の奴隷男性"
+
+msgid "Slave females under 14"
+msgstr "14歳未満の奴隷女性"
+
+msgid "Slave females 14-25"
+msgstr "14-25歳の奴隷女性"
+
+msgid "Slave females 26-44"
+msgstr "26-44歳の奴隷女性"
+
+msgid "Slave females 45 and over"
+msgstr "45歳以上の奴隷女性"
+
+msgid "Free colored males under 14"
+msgstr "14歳未満の自由有色男性"
+
+msgid "Free colored males 14-25"
+msgstr "14-25歳の自由有色男性"
+
+msgid "Free colored males 26-44"
+msgstr "26-44歳の自由有色男性"
+
+msgid "Free colored males 45 and over"
+msgstr "45歳以上の自由有色男性"
+
+msgid "Free colored females under 14"
+msgstr "14歳未満の自由有色女性"
+
+msgid "Free colored females 14-25"
+msgstr "14-25歳の自由有色女性"
+
+msgid "Free colored females 26-44"
+msgstr "26-44歳の自由有色女性"
+
+msgid "Free colored females 45 and over"
+msgstr "45歳以上の自由有色女性"
+
+msgid "Free white males under 5"
+msgstr "5歳未満の自由白人男性"
+
+msgid "Free white males 5-9"
+msgstr "5-9歳の自由白人男性"
+
+msgid "Free white males 10-14"
+msgstr "10-14歳の自由白人男性"
+
+msgid "Free white males 15-20"
+msgstr "15-20歳の自由白人男性"
+
+msgid "Free white males 20-29"
+msgstr "20-29歳の自由白人男性"
+
+msgid "Free white males 30-39"
+msgstr "30-39歳の自由白人男性"
+
+msgid "Free white males 40-49"
+msgstr "40-49歳の自由白人男性"
+
+msgid "Free white males 50-59"
+msgstr "50-59歳の自由白人男性"
+
+msgid "Free white males 60-69"
+msgstr "60-69歳の自由白人男性"
+
+msgid "Free white males 70-79"
+msgstr "70-79歳の自由白人男性"
+
+msgid "Free white males 80-89"
+msgstr "80-89歳の自由白人男性"
+
+msgid "Free white males 90-99"
+msgstr "90-99歳の自由白人男性"
+
+msgid "Free white males 100 and over"
+msgstr "100歳以上の自由白人男性"
+
+msgid "Free white females under 5"
+msgstr "5歳未満の自由白人女性"
+
+msgid "Free white females 5-9"
+msgstr "5-9歳の自由白人女性"
+
+msgid "Free white females 10-14"
+msgstr "10-14歳の自由白人女性"
+
+msgid "Free white females 15-20"
+msgstr "15-20歳の自由白人女性"
+
+msgid "Free white females 20-29"
+msgstr "20-29歳の自由白人女性"
+
+msgid "Free white females 30-39"
+msgstr "30-39歳の自由白人女性"
+
+msgid "Free white females 40-49"
+msgstr "40-49歳の自由白人女性"
+
+msgid "Free white females 50-59"
+msgstr "50-59歳の自由白人女性"
+
+msgid "Free white females 60-69"
+msgstr "60-69歳の自由白人女性"
+
+msgid "Free white females 70-79"
+msgstr "70-79歳の自由白人女性"
+
+msgid "Free white females 80-89"
+msgstr "80-89歳の自由白人女性"
+
+msgid "Free white females 90-99"
+msgstr "90-99歳の自由白人女性"
+
+msgid "Free white females 100 and over"
+msgstr "100歳以上の自由白人女性"
+
+msgid "Slave males under 10"
+msgstr "10歳未満の奴隷男性"
+
+msgid "Slave males 10-23"
+msgstr "10-23歳の奴隷男性"
+
+msgid "Slave males 24-35"
+msgstr "24-35歳の奴隷男性"
+
+msgid "Slave males 36-54"
+msgstr "36-54歳の奴隷男性"
+
+msgid "Slave males 55-99"
+msgstr "55-99歳の奴隷男性"
+
+msgid "Slave males 100 and over"
+msgstr "100歳以上の奴隷男性"
+
+msgid "Slave females under 10"
+msgstr "10歳未満の奴隷女性"
+
+msgid "Slave females 10-23"
+msgstr "10-23歳の奴隷女性"
+
+msgid "Slave females 24-35"
+msgstr "24-35歳の奴隷女性"
+
+msgid "Slave females 36-54"
+msgstr "36-54歳の奴隷女性"
+
+msgid "Slave females 55-99"
+msgstr "55-99歳の奴隷女性"
+
+msgid "Slave females 100 and over"
+msgstr "100歳以上の奴隷女性"
+
+msgid "Free colored males under 10"
+msgstr "10歳未満の自由有色男性"
+
+msgid "Free colored males 10-23"
+msgstr "10-23歳の自由有色男性"
+
+msgid "Free colored males 24-35"
+msgstr "24-35歳の自由有色男性"
+
+msgid "Free colored males 36-54"
+msgstr "36-54歳の自由有色男性"
+
+msgid "Free colored males 55-99"
+msgstr "55-99歳の自由有色男性"
+
+msgid "Free colored males 100 and over"
+msgstr "100歳以上の自由有色男性"
+
+msgid "Free colored females under 10"
+msgstr "10歳未満の自由有色女性"
+
+msgid "Free colored females 10-23"
+msgstr "10-23歳の自由有色女性"
+
+msgid "Free colored females 24-35"
+msgstr "24-35歳の自由有色女性"
+
+msgid "Free colored females 36-54"
+msgstr "36-54歳の自由有色女性"
+
+msgid "Free colored females 55-99"
+msgstr "55-99歳の自由有色女性"
+
+msgid "Free colored females 100 and over"
+msgstr "100歳以上の自由有色女性"
+
+msgid "White persons deaf/dumb under 14"
+msgstr "14歳未満の聾唖の白人"
+
+msgid "White persons deaf/dumb 14-24"
+msgstr "14-24歳の聾唖の白人"
+
+msgid "White persons deaf/dumb 25 and over"
+msgstr "25歳以上の聾唖の白人"
+
+msgid "White persons blind"
+msgstr "盲目の白人"
+
+msgid "Aliens"
+msgstr "外国人"
+
+msgid "Slaves and colored persons deaf/dumb under 14"
+msgstr "14歳未満の聾唖の奴隷および有色人"
+
+msgid "Slaves and colored persons deaf/dumb 14-24"
+msgstr "14-24歳の聾唖の奴隷および有色人"
+
+msgid "Slaves and colored persons deaf/dumb 25 and over"
+msgstr "25歳以上の聾唖の奴隷および有色人"
+
+msgid "Slaves and colored persons blind"
+msgstr "盲目の奴隷および有色人"
+
+msgid "Persons employed in Mining"
+msgstr "鉱業従事者"
+
+msgid "Persons employed in Agriculture"
+msgstr "農業従事者"
+
+msgid "Persons employed in Commerce"
+msgstr "商業従事者"
+
+msgid "Persons employed in Manufacture and trade"
+msgstr "製造業および商業従事者"
+
+msgid "Persons employed in Navigation of the ocean"
+msgstr "大洋航海従事者"
+
+msgid "Persons employed in Navigation of canals, lakes, rivers"
+msgstr "運河、湖、河川の航海従事者"
+
+msgid "Learned professional engineers"
+msgstr "専門技術者"
+
+msgid "Names of pensioners for Revolutionary or military services"
+msgstr "独立戦争または軍役の年金受給者名"
+
+msgid "Ages"
+msgstr "年齢"
+
+msgid "White persons insane and idiots at public charge"
+msgstr "公費負担の精神異常および白痴の白人"
+
+msgid "White persons insane and idiots at private charge"
+msgstr "私費負担の精神異常および白痴の白人"
+
+msgid "Colored persons deaf/dumb"
+msgstr "聾唖の有色人"
+
+msgid "Colored persons blind"
+msgstr "盲目の有色人"
+
+msgid "Colored persons insane and idiots at private charge"
+msgstr "私費負担の精神異常および白痴の有色人"
+
+msgid "Colored persons insane and idiots at public charge"
+msgstr "公費負担の精神異常および白痴の有色人"
+
+msgid "Universities or college"
+msgstr "大学"
+
+msgid "Number of students"
+msgstr "学生数"
+
+msgid "Academies and Grammar Schools"
+msgstr "アカデミーおよびグラマースクール"
+
+msgid "No. of scholars"
+msgstr "生徒数"
+
+msgid "Primary and Common Schools"
+msgstr "初等学校"
+
+msgid "No. of scholars at public charge"
+msgstr "公費負担の生徒数"
+
+msgid "White persons illiterate over 20"
+msgstr "20歳以上の非識字の白人"
+
+msgid "State of"
+msgstr "州"
+
+msgid "Line No."
+msgstr "行番号"
+
+msgid "Family No."
+msgstr "家族番号"
+
+msgid "Value of real estate"
+msgstr "不動産価値"
+
+msgid "Place of birth"
+msgstr "出生地"
+
+msgid "Married within the year"
+msgstr "年内に結婚"
+
+msgid "Attended school within the year"
+msgstr "年内に就学"
+
+msgid "Illiterate and over 20"
+msgstr "20歳以上の非識字"
+
+msgid "Deaf, dumb, blind, insane, idiotic, pauper or convict"
+msgstr "聾唖、盲目、精神異常、白痴、貧困者、または囚人"
+
+msgid "Production of Agriculture in"
+msgstr "農業生産高"
+
+msgid "in the County of"
+msgstr "郡内"
+
+msgid "Owner, Agent, or Manager"
+msgstr "所有者、代理人、または管理者"
+
+msgid "Acres Improved"
+msgstr "改良エーカー"
+
+msgid "Acres Unimproved"
+msgstr "未改良エーカー"
+
+msgid "Cash Value of Farm"
+msgstr "農場の現金価値"
+
+msgid "Value of Farming Implements and Machinery"
+msgstr "農機具および機械の価値"
+
+msgid "Asses and Mules"
+msgstr "ロバとラバ"
+
+msgid "Working Oxen"
+msgstr "使役牛"
+
+msgid "Other Cattle"
+msgstr "その他の牛"
+
+msgid "Swine"
+msgstr "豚"
+
+msgid "Value of Live Stock"
+msgstr "家畜の価値"
+
+msgid "Wheat"
+msgstr "小麦"
+
+msgid "Indian Corn"
+msgstr "トウモロコシ"
+
+msgid "Oats"
+msgstr "オート麦"
+
+msgid "Rice"
+msgstr "米"
+
+msgid "Tobacco"
+msgstr "タバコ"
+
+msgid "Ginned Cotton"
+msgstr "綿花 (繰り棉）"
+
+msgid "Wool"
+msgstr "羊毛"
+
+msgid "Peas and Beans"
+msgstr "エンドウ豆と豆類"
+
+msgid "Irish Potatoes"
+msgstr "ジャガイモ"
+
+msgid "Sweet Potatoes"
+msgstr "サツマイモ"
+
+msgid "Barley"
+msgstr "大麦"
+
+msgid "Buckwheat"
+msgstr "蕎麦"
+
+msgid "Value of Orchard Products"
+msgstr "果樹園製品の価値"
+
+msgid "Wine"
+msgstr "ワイン"
+
+msgid "Value of Market Gardens"
+msgstr "市場菜園の価値"
+
+msgid "Butter"
+msgstr "バター"
+
+msgid "Cheese"
+msgstr "チーズ"
+
+msgid "Hay"
+msgstr "干草"
+
+msgid "Clover Seed"
+msgstr "クローバー種子"
+
+msgid "Other Grass Seeds"
+msgstr "その他の牧草種子"
+
+msgid "Hops"
+msgstr "ホップ"
+
+msgid "Hemp Dew Rotted"
+msgstr "麻 (露腐れ処理）"
+
+msgid "Hemp Water Rotted"
+msgstr "麻 (水腐れ処理）"
+
+msgid "Flax"
+msgstr "亜麻"
+
+msgid "Flaxseed"
+msgstr "亜麻仁"
+
+msgid "Silk Cocoons"
+msgstr "繭"
+
+msgid "Maple Sugar"
+msgstr "メープルシュガー"
+
+msgid "Cane Sugar"
+msgstr "サトウキビ砂糖"
+
+msgid "Molasses"
+msgstr "糖蜜"
+
+msgid "Beeswax"
+msgstr "蜜蝋"
+
+msgid "Value of Homemade Manufactures"
+msgstr "自家製製品の価値"
+
+msgid "Value of Animals Slaughtered"
+msgstr "屠殺された動物の価値"
+
+msgid "Post Office"
+msgstr "郵便局"
+
+msgid "Value of personal estate"
+msgstr "個人財産の価値"
+
+msgid "Live Stock June 1, 1860"
+msgstr "1860年6月1日の家畜"
+
+msgid "Produce during the year ending June 1, 1860"
+msgstr "1860年6月1日までの年間生産高"
+
+msgid "Wheat, bushels of"
+msgstr "小麦 (ブッシェル)"
+
+msgid "Rye, bushels of"
+msgstr "ライ麦 (ブッシェル)"
+
+msgid "Indian Corn, bushels of"
+msgstr "トウモロコシ (ブッシェル)"
+
+msgid "Oats, bushels of"
+msgstr "オート麦 (ブッシェル)"
+
+msgid "Rice, pounds of"
+msgstr "米 (ポンド）"
+
+msgid "Tobacco, pounds of"
+msgstr "タバコ (ポンド）"
+
+msgid "Ginned Cotton, bales of 400 lbs."
+msgstr "綿花 (400ポンド俵）"
+
+msgid "Wool, pounds of"
+msgstr "羊毛 (ポンド）"
+
+msgid "Peas and Beans, bushels of"
+msgstr "エンドウ豆と豆類 (ブッシェル)"
+
+msgid "Irish Potatoes, bushels of"
+msgstr "ジャガイモ (ブッシェル)"
+
+msgid "Sweet Potatoes, bushels of"
+msgstr "サツマイモ (ブッシェル)"
+
+msgid "Barley, bushels of"
+msgstr "大麦 (ブッシェル)"
+
+msgid "Buckwheat, bushels of"
+msgstr "蕎麦 (ブッシェル)"
+
+msgid "Value of Orchard Products in $"
+msgstr "果樹園製品の価値 ($）"
+
+msgid "Wine, gallons of"
+msgstr "ワイン (ガロン）"
+
+msgid "Value of products of market gardens"
+msgstr "市場菜園製品の価値"
+
+msgid "Butter, pounds of"
+msgstr "バター (ポンド）"
+
+msgid "Cheese, pounds of"
+msgstr "チーズ (ポンド）"
+
+msgid "Hay, tons of"
+msgstr "干草 (トン）"
+
+msgid "Clover Seed, bushels of"
+msgstr "クローバー種子 (ブッシェル)"
+
+msgid "Other Grass Seeds, bushels of"
+msgstr "その他の牧草種子 (ブッシェル)"
+
+msgid "Hops, pounds of"
+msgstr "ホップ (ポンド）"
+
+msgid "Hemp Dew Rotted, tons of"
+msgstr "麻 (露腐れ処理、トン）"
+
+msgid "Hemp Water Rotted, tons of"
+msgstr "麻 (水腐れ処理、トン）"
+
+msgid "Flax, pounds of"
+msgstr "亜麻 (ポンド）"
+
+msgid "Flaxseed, bushels of"
+msgstr "亜麻仁 (ブッシェル)"
+
+msgid "Silk Cocoons, pounds of"
+msgstr "繭 (ポンド）"
+
+msgid "Maple Sugar, pounds of"
+msgstr "メープルシュガー (ポンド）"
+
+msgid "Cane sugar, hogshead of 1,000 pounds"
+msgstr "サトウキビ砂糖 (1,000ポンド樽）"
+
+msgid "Molasses, gallons of"
+msgstr "糖蜜 (ガロン）"
+
+msgid "Beeswax, pounds of"
+msgstr "蜜蝋 (ポンド）"
+
+msgid "Honey, pounds of"
+msgstr "蜂蜜 (ポンド）"
+
+msgid "Value of home-made manufactures"
+msgstr "自家製製品の価値"
+
+msgid "Persons who Died during the Year ending 1 June 1860 in"
+msgstr "1860年6月1日までの年間に死亡した人々"
+
+msgid "Free or slave"
+msgstr "自由民または奴隷"
+
+msgid "Married or widowed"
+msgstr "既婚または寡夫/寡婦"
+
+msgid "Month in which person died"
+msgstr "死亡月"
+
+msgid "Cause of death"
+msgstr "死亡原因"
+
+msgid "Number of days ill"
+msgstr "罹病日数"
+
+msgid "Father of foreign birth"
+msgstr "父親は外国生まれ"
+
+msgid "Mother of foreign birth"
+msgstr "母親は外国生まれ"
+
+msgid "Month, if born within the year"
+msgstr "月 (年内に出生した場合）"
+
+msgid "Month, if married within the year"
+msgstr "月 (年内に結婚した場合）"
+
+msgid "Cannot read"
+msgstr "読み書き不能"
+
+msgid "Cannot write"
+msgstr "書き書き不能"
+
+msgid "Deaf, dumb, blind, insane or idiotic"
+msgstr "聾唖、盲目、精神異常、または白痴"
+
+msgid "Male citizen 21 and over"
+msgstr "21歳以上の男性市民"
+
+msgid ""
+"Male citizen 21 and over where right to vote is denied on grounds other than "
+"rebellion or other crime"
+msgstr "反乱やその他の犯罪以外の理由で投票権を否定されている21歳以上の男性市民"
+
+msgid "Supervisor's Dist. No."
+msgstr "監督地区番号"
+
+msgid "Enumeration Dist. No."
+msgstr "調査地区番号"
+
+msgid "Month, if born within the census year"
+msgstr "月 (国勢調査年内に出生した場合）"
+
+msgid "Relationship to head"
+msgstr "世帯主との関係"
+
+msgid "Single"
+msgstr "未婚"
+
+msgid "Widowed, divorced"
+msgstr "寡夫/寡婦、離婚"
+
+msgid "Married during the census year"
+msgstr "国勢調査年内に結婚"
+
+msgid "Number of months unemployed during the census year"
+msgstr "国勢調査年内の失業月数"
+
+msgid "Illness on day of enumeration"
+msgstr "調査日の病気"
+
+msgid "Deaf and dumb"
+msgstr "聾唖"
+
+msgid "Insane"
+msgstr "精神異常"
+
+msgid "Maimed, crippled, bedridden, or otherwise disabled"
+msgstr "負傷、障害、寝たきり、またはその他の障害"
+
+msgid "Attended school within the census year"
+msgstr "国勢調査年内に就学"
+
+msgid "Place of birth of father"
+msgstr "父親の出生地"
+
+msgid "Place of birth of mother"
+msgstr "母親の出生地"
+
+msgid "Owner"
+msgstr "所有者"
+
+msgid "Rents for fixed money"
+msgstr "固定賃料"
+
+msgid "Rents for share of products"
+msgstr "収穫物の分け前賃料"
+
+msgid "Acres Tilled"
+msgstr "耕作エーカー"
+
+msgid "Acres Permanent Meadows, Pastures, Orchards, Vineyards"
+msgstr "永久的な牧草地、放牧地、果樹園、ブドウ園のエーカー"
+
+msgid "Acres Woodland and forest"
+msgstr "林地および森林のエーカー"
+
+msgid "Acres Other unimproved land"
+msgstr "その他の未改良地のエーカー"
+
+msgid "Value of Farm"
+msgstr "農場価値"
+
+msgid "Value of Implements and Machinery"
+msgstr "農機具および機械の価値"
+
+msgid "Cost of building and repairing fences in 1879"
+msgstr "1879年のフェンスの建設および修理費用"
+
+msgid "Cost of Fertilizers purchased in 1879"
+msgstr "1879年に購入した肥料の費用"
+
+msgid "Farm Labor Hiring 1879"
+msgstr "1879年の農業労働者雇用"
+
+msgid "Weeks hired labor in 1879"
+msgstr "1879年の雇用労働者の週数"
+
+msgid "Estimated value of all farm productions for 1879"
+msgstr "1879年の全農業生産高の推定価値"
+
+msgid "Acreage Grass Lands Mown in 1879"
+msgstr "1879年に刈り取られた草地のエーカー"
+
+msgid "Acreage Grass Lands Not Mown in 1879"
+msgstr "1879年に刈り取られなかった草地のエーカー"
+
+msgid "Tons Hay Harvested in 1879"
+msgstr "1879年の干草収穫量 (トン）"
+
+msgid "Bushels Clover Seed Harvested in 1879"
+msgstr "1879年のクローバー種子収穫量 (ブッシェル)"
+
+msgid "Bushels Grass Seed Harvested in 1879"
+msgstr "1879年の牧草種子収穫量 (ブッシェル)"
+
+msgid "Horses on hand"
+msgstr "馬の保有数"
+
+msgid "Mules and Asses on hand"
+msgstr "ラバとロバの保有数"
+
+msgid "Working Oxen on hand"
+msgstr "使役牛の保有数"
+
+msgid "Milch Cows on hand"
+msgstr "乳牛の保有数"
+
+msgid "Other Cattle on hand"
+msgstr "その他の牛の保有数"
+
+msgid "Calves Dropped in 1879"
+msgstr "1879年の子牛の出生数"
+
+msgid "Cattle Purchased in 1879"
+msgstr "1879年の牛の購入数"
+
+msgid "Cattle Sold living in 1879"
+msgstr "1879年に生体販売された牛の数"
+
+msgid "Cattle Slaughtered in 1879"
+msgstr "1879年に屠殺された牛の数"
+
+msgid "Cattle Died, strayed, or stolen in 1879"
+msgstr "1879年に死亡、迷走、または盗難にあった牛の数"
+
+msgid "Gallons Milk Sold or sent to butter or cheese factories in 1879"
+msgstr "1879年に販売またはバター・チーズ工場に送られた牛乳のガロン数"
+
+msgid "Pounds Butter made on farm in 1879"
+msgstr "1879年に農場で生産されたバターのポンド数"
+
+msgid "Pounds Cheese made on farm in 1879"
+msgstr "1879年に農場で生産されたチーズのポンド数"
+
+msgid "Sheep on hand"
+msgstr "羊の保有数"
+
+msgid "Lambs Dropped in 1879"
+msgstr "1879年の子羊の出生数"
+
+msgid "Sheep and Lambs Purchased in 1879"
+msgstr "1879年の羊と子羊の購入数"
+
+msgid "Sheep and Lambs Sold living in 1879"
+msgstr "1879年に生体販売された羊と子羊の数"
+
+msgid "Sheep and Lambs Slaughtered in 1879"
+msgstr "1879年に屠殺された羊と子羊の数"
+
+msgid "Sheep and Lambs Killed by dogs in 1879"
+msgstr "1879年に犬に殺された羊と子羊の数"
+
+msgid "Sheep and Lambs Died of Disease in 1879"
+msgstr "1879年に病気で死亡した羊と子羊の数"
+
+msgid "Sheep and Lambs Died of stress or weather in 1879"
+msgstr "1879年にストレスまたは天候で死亡した羊と子羊の数"
+
+msgid "Number of Fleece, Spring 1880"
+msgstr "1880年春の毛刈り数"
+
+msgid "Pounds Wool, Spring 1880"
+msgstr "1880年春の羊毛ポンド数"
+
+msgid "Swine on hand"
+msgstr "豚の保有数"
+
+msgid "Barnyard Poultry on hand"
+msgstr "庭先の家禽の保有数"
+
+msgid "Other Poultry on hand"
+msgstr "その他の家禽の保有数"
+
+msgid "Dozen eggs produced in 1879"
+msgstr "1879年の卵生産数 (ダース）"
+
+msgid "Acres Barley in 1879"
+msgstr "1879年の大麦作付エーカー"
+
+msgid "Bushels Barley in 1879"
+msgstr "1879年の大麦収穫量 (ブッシェル)"
+
+msgid "Acres Buckwheat in 1879"
+msgstr "1879年の蕎麦作付エーカー"
+
+msgid "Bushels Buckwheat in 1879"
+msgstr "1879年の蕎麦収穫量 (ブッシェル)"
+
+msgid "Acres Indian Corn in 1879"
+msgstr "1879年のトウモロコシ作付エーカー"
+
+msgid "Bushels Indian Corn in 1879"
+msgstr "1879年のトウモロコシ収穫量 (ブッシェル)"
+
+msgid "Acres Oats in 1879"
+msgstr "1879年のオート麦作付エーカー"
+
+msgid "Bushels Oats in 1879"
+msgstr "1879年のオート麦収穫量 (ブッシェル)"
+
+msgid "Acres Rye in 1879"
+msgstr "1879年のライ麦作付エーカー"
+
+msgid "Bushels Rye in 1879"
+msgstr "1879年のライ麦収穫量 (ブッシェル)"
+
+msgid "Acres Wheat in 1879"
+msgstr "1879年の小麦作付エーカー"
+
+msgid "Bushels Wheat in 1879"
+msgstr "1879年の小麦収穫量 (ブッシェル)"
+
+msgid "Bushels Canadian Peas in 1879"
+msgstr "1879年のカナダエンドウ豆収穫量 (ブッシェル)"
+
+msgid "Bushels Beans in 1879"
+msgstr "1879年の豆類収穫量 (ブッシェル)"
+
+msgid "Acres Flax in 1879"
+msgstr "1879年の亜麻作付エーカー"
+
+msgid "Bushels Flax Sued in 1879"
+msgstr "1879年の亜麻種子収穫量 (ブッシェル)"
+
+msgid "Tons Flax Straw in 1879"
+msgstr "1879年の亜麻藁 (トン）"
+
+msgid "Pounds Flax Fiber in 1879"
+msgstr "1879年の亜麻繊維 (ポンド）"
+
+msgid "Acres Hemp in 1879"
+msgstr "1879年の麻作付エーカー"
+
+msgid "Tons Hemp in 1879"
+msgstr "1879年の麻 (トン）"
+
+msgid "Acres Sorghum in 1879"
+msgstr "1879年のソルガム作付エーカー"
+
+msgid "Pounds Sorghum Sugar in 1879"
+msgstr "1879年のソルガム砂糖 (ポンド）"
+
+msgid "Gallons Sorghum Molasses in 1879"
+msgstr "1879年のソルガム糖蜜 (ガロン）"
+
+msgid "Pounds Maple Sugar in 1879"
+msgstr "1879年のメープルシュガー (ポンド）"
+
+msgid "Gallons Maple Molasses in 1879"
+msgstr "1879年のメープル糖蜜 (ガロン）"
+
+msgid "Acres Broom Corn in 1879"
+msgstr "1879年のモロコシ作付エーカー"
+
+msgid "Pounds Broom Corn in 1879"
+msgstr "1879年のモロコシ (ポンド）"
+
+msgid "Acres Hops in 1879"
+msgstr "1879年のホップ作付エーカー"
+
+msgid "Pounds Hops in 1879"
+msgstr "1879年のホップ (ポンド）"
+
+msgid "Acres Potatoes (Irish) in 1879"
+msgstr "1879年のジャガイモ作付エーカー"
+
+msgid "Bushels Potatoes (Irish) in 1879"
+msgstr "1879年のジャガイモ収穫量 (ブッシェル)"
+
+msgid "Acres Potatoes (Sweet) in 1879"
+msgstr "1879年のサツマイモ作付エーカー"
+
+msgid "Bushels Potatoes (Sweet) in 1879"
+msgstr "1879年のサツマイモ収穫量 (ブッシェル)"
+
+msgid "Acres Tobacco in 1879"
+msgstr "1879年のタバコ作付エーカー"
+
+msgid "Pounds Tobacco in 1879"
+msgstr "1879年のタバコ (ポンド）"
+
+msgid "Acres Apple Orchards in 1879"
+msgstr "1879年のリンゴ園エーカー"
+
+msgid "Number of Bearing Apple Trees in 1879"
+msgstr "1879年の結実リンゴ樹数"
+
+msgid "Bushels Apples in 1879"
+msgstr "1879年のリンゴ収穫量 (ブッシェル)"
+
+msgid "Acres Peach Orchards in 1879"
+msgstr "1879年の桃園エーカー"
+
+msgid "Number of Bearing Peach Trees in 1879"
+msgstr "1879年の結実桃樹数"
+
+msgid "Bushels Peaches in 1879"
+msgstr "1879年の桃収穫量 (ブッシェル)"
+
+msgid "Total value of Orchard Products Sold or Consumed in 1879"
+msgstr "1879年に販売または消費された果樹園製品の総価値"
+
+msgid "Acres Nurseries"
+msgstr "苗圃エーカー"
+
+msgid "Value of Nursery Products Sold"
+msgstr "販売された苗圃製品の価値"
+
+msgid "Acres Vineyards"
+msgstr "ブドウ園エーカー"
+
+msgid "Grapes sold in 1879"
+msgstr "1879年に販売されたブドウ"
+
+msgid "Wine made in 1879"
+msgstr "1879年に醸造されたワイン"
+
+msgid "Value of Market Garden Produce Sold in 1879"
+msgstr "1879年に販売された市場菜園生産物の価値"
+
+msgid "Pounds Honey in 1879"
+msgstr "1879年の蜂蜜 (ポンド）"
+
+msgid "Pounds Beeswax in 1879"
+msgstr "1879年の蜜蝋 (ポンド）"
+
+msgid "Cords of Wood cut in 1879"
+msgstr "1879年に伐採された薪のコード数"
+
+msgid "Value of forest products sold or consumed in 1879"
+msgstr "1879年に販売または消費された林産物の価値"
+
+msgid "Street and No."
+msgstr "通りと番地"
+
+msgid "Ward"
+msgstr "区"
+
+msgid "Veteran of Civil War or widow of a veteran"
+msgstr "南北戦争の退役軍人または退役軍人の未亡人"
+
+msgid "Single, married, widowed or divorced"
+msgstr "未婚、既婚、寡夫/寡婦、または離婚"
+
+msgid "Mother of how many children and number of children living"
+msgstr "子供の総数と存命の子供数"
+
+msgid "Number of years in US"
+msgstr "米国滞在年数"
+
+msgid "Naturalized"
+msgstr "帰化済み"
+
+msgid "Naturalization papers taken out"
+msgstr "帰化申請書提出済み"
+
+msgid "Able to read"
+msgstr "読み書き可"
+
+msgid "Able to write"
+msgstr "書き書き可"
+
+msgid "Able to speak English; if not, the language spoken"
+msgstr "英語を話せるか (話せない場合は話す言語）"
+
+msgid "Suffering from disease"
+msgstr "病気にかかっている"
+
+msgid "Whether defective and name of defect"
+msgstr "障害の有無と障害名"
+
+msgid "Prisoner, convict, homeless child or pauper"
+msgstr "囚人、受刑者、ホームレスの子供、または貧困者"
+
+msgid "Supplemental schedule and page"
+msgstr "補足スケジュールとページ"
+
+msgid "Supervisor's District No."
+msgstr "監督地区番号"
+
+msgid "Enumeration District No."
+msgstr "調査地区番号"
+
 msgid "Rank"
-msgstr "ランク"
+msgstr "階級"
+
+msgid "Company"
+msgstr "中隊"
+
+msgid "Regiment/Vessel"
+msgstr "連隊/艦艇"
+
+msgid "Date Enlisted"
+msgstr "入隊日"
+
+msgid "Date Discharged"
+msgstr "除隊日"
+
+msgid "Length of Service"
+msgstr "服務期間"
+
+msgid "Disability Incurred"
+msgstr "負った障害"
+
+msgid "State (or Territory) of"
+msgstr "州 (または準州）"
+
+msgid "Division of County"
+msgstr "郡の区画"
+
+msgid "Name of Institution"
+msgstr "施設名"
+
+msgid "City, Town, Village"
+msgstr "都市、町、村"
+
+msgid "Ward of city"
+msgstr "市の区"
+
+msgid "Street Address"
+msgstr "番地"
+
+msgid "Relation to head"
+msgstr "世帯主との関係"
+
+msgid "Month of birth"
+msgstr "出生月"
+
+msgid "Year of birth"
+msgstr "生年"
+
+msgid "Years of present marriage"
+msgstr "現在の結婚年数"
+
+msgid "Mother of how many children"
+msgstr "子供の総数"
+
+msgid "Number of children living"
+msgstr "存命の子供数"
+
+msgid "Year of immigration"
+msgstr "移民年"
+
+msgid "Months not employed"
+msgstr "失業月数"
+
+msgid "Attended school"
+msgstr "就学済み"
+
+msgid "Can read"
+msgstr "読み書き可"
+
+msgid "Can write"
+msgstr "書き書き可"
+
+msgid "Can speak English"
+msgstr "英語を話せる"
+
+msgid "Home owned or rented"
+msgstr "自宅所有または賃貸"
+
+msgid "Owned free or mortgaged"
+msgstr "完全所有または抵当付き"
+
+msgid "Farm or house"
+msgstr "農場または住宅"
+
+msgid "Number of farm schedule"
+msgstr "農場スケジュール番号"
+
+msgid "Naturalized or alien"
+msgstr "帰化済みまたは外国人"
+
+msgid "Able to speak English; if not, language spoken"
+msgstr "英語を話せるか (話せない場合は話す言語）"
+
+msgid "Nature of industry"
+msgstr "産業の種類"
+
+msgid "Employer, employee or working on own account"
+msgstr "雇用主、従業員、または自営"
+
+msgid "Out of work"
+msgstr "失業中"
+
+msgid "Weeks out of work in 1909"
+msgstr "1909年の失業週数"
+
+msgid "Attended school since Sept. 1, 1909"
+msgstr "1909年9月1日以降に就学"
+
+msgid "Civil War veteran"
+msgstr "南北戦争の退役軍人"
+
+msgid "If owned, free or mortgaged"
+msgstr "所有の場合、完全所有または抵当付き"
+
+msgid "Year of naturalization"
+msgstr "帰化年"
+
+msgid "Attended school since Sept. 1, 1919"
+msgstr "1919年9月1日以降に就学"
+
+msgid "Mother tongue"
+msgstr "母語"
+
+msgid "Father mother tongue"
+msgstr "父親の母語"
+
+msgid "Mother's mother tongue"
+msgstr "母親の母語"
+
+msgid "Able to speak English"
+msgstr "英語を話せる"
+
+msgid "Industry"
+msgstr "産業"
+
+msgid "Employer, worker or working on own account"
+msgstr "雇用主、労働者、または自営"
+
+msgid "Incorporated place"
+msgstr "法人化された場所"
+
+msgid "Unincorporated place"
+msgstr "法人化されていない場所"
+
+msgid "Value of home or monthly rental"
+msgstr "自宅の価値または月額賃料"
+
+msgid "Radio set"
+msgstr "ラジオの所有"
+
+msgid "Farm?"
+msgstr "農場？"
+
+msgid "Marital condition"
+msgstr "婚姻状態"
+
+msgid "Age at first marriage"
+msgstr "初婚年齢"
+
+msgid "Attended school since Sept. 1, 1929"
+msgstr "1929年9月1日以降に就学"
+
+msgid "Able to read and write"
+msgstr "読み書き可"
+
+msgid "Language before coming to US"
+msgstr "米国来航前の言語"
+
+msgid "Class of worker"
+msgstr "労働者階級"
+
+msgid "Employed"
+msgstr "被雇用者"
+
+msgid "Line number for unemployed"
+msgstr "失業者の行番号"
+
+msgid "Veteran"
+msgstr "退役軍人"
+
+msgid "What war"
+msgstr "従軍した戦争"
+
+msgid "Home Owned/Rented"
+msgstr "自宅所有/賃貸"
+
+msgid "Home value/monthly rental"
+msgstr "自宅価値/月額賃料"
+
+msgid "Color/Race"
+msgstr "色/人種"
+
+msgid "Age at Last Birthday"
+msgstr "最終誕生日の年齢"
+
+msgid "Marital Status"
+msgstr "婚姻状態"
+
+msgid "Attended school/college since March 1, 1940"
+msgstr "1940年3月1日以降に学校/大学に就学"
+
+msgid "Highest grade completed"
+msgstr "最終学歴"
+
+msgid "Citizenship if foreign born"
+msgstr "外国生まれの場合の市民権"
+
+msgid "City (April 1, 1935)"
+msgstr "都市 (1935年4月1日）"
+
+msgid "State (Territory/Country)"
+msgstr "州 (準州/国）"
+
+msgid "On a Farm (Y/N)"
+msgstr "農場居住 (Y/N）"
+
+msgid "At Work during week March 24-30"
+msgstr "3月24-30日の週に就業"
+
+msgid "public Emergency Work?"
+msgstr "公共緊急事業？"
+
+msgid "Seeking work?"
+msgstr "求職中？"
+
+msgid "Have a Job?"
+msgstr "仕事あり？"
+
+msgid "housework (H), school (S), unable to work (U) or other (Ot)"
+msgstr "家事 (H）、学校 (S）、就業不能 (U）、その他 (Ot）"
+
+msgid "# hours worked during week March 24-30, 1940"
+msgstr "1940年3月24-30日の週の労働時間数"
+
+msgid "Weeks unemployed up to March 30, 1940"
+msgstr "1940年3月30日までの失業週数"
+
+msgid "# weeks worked in 1939"
+msgstr "1939年の就業週数"
+
+msgid "Amount of money, wages, salary in 1939"
+msgstr "1939年の賃金・給与額"
+
+msgid "Income of more than $50 from other sources?"
+msgstr "その他の収入が50ドル以上？"
+
+msgid "Number of Farm Schedule"
+msgstr "農場スケジュール番号"
+
+msgid "Veteran?"
+msgstr "退役軍人？"
+
+msgid "If child, veteran-father dead?"
+msgstr "子供の場合、退役軍人の父親は死亡？"
+
+msgid "War/Military Service"
+msgstr "戦争/軍役"
+
+msgid "Have Federal SSN?"
+msgstr "連邦社会保障番号あり？"
+
+msgid "Deductions made in 1939?"
+msgstr "1939年に控除あり？"
+
+msgid "If so, made from all, 1/2 or more, less from wages in 1939?"
+msgstr "場合、賃金からの控除は全額、半分以上、半分未満？"
+
+msgid "Usual Occupation"
+msgstr "通常の職業"
+
+msgid "Usual Industry"
+msgstr "通常の産業"
+
+msgid "Usual Class of Work"
+msgstr "通常の労働階級"
+
+msgid "If woman, married more than once?"
+msgstr "女性の場合、複数回結婚？"
+
+msgid "Number of children ever born"
+msgstr "出生した子供の総数"
+
+msgid "Incorporated place or township"
+msgstr "法人化された場所またはタウンシップ"
+
+msgid "E. D. Number"
+msgstr "調査地区番号"
+
+msgid "Hotel, large rooming house, institution, military installation, etc."
+msgstr "ホテル、大きな下宿、施設、軍事施設など。"
+
+msgid "Is this house on a farm (or ranch)?"
+msgstr "この家は農場 (または牧場）にある？"
+
+msgid "On 3+ acres of land?"
+msgstr "3エーカー以上の土地？"
+
+msgid "Is this house on a place of three or more acres?"
+msgstr "この家は3エーカー以上の土地にある？"
+
+msgid "Agricultural Questionnaire Number"
+msgstr "農業質問票番号"
+
+msgid "Age at last birthday"
+msgstr "最終誕生日の年齢"
+
+msgid "How old was he on his last birthday?"
+msgstr "最後の誕生日の年齢は？"
+
+msgid "Marital status"
+msgstr "婚姻状態"
+
+msgid "Is he now married, widowed, divorced, separated, or never married?"
+msgstr "現在、既婚、寡夫/寡婦、離婚、別居、未婚のいずれ？"
+
+msgid "What State (or foreign country) was he born in?"
+msgstr "どの州 (または外国）で生まれた？"
+
+msgid "Is he naturalized?"
+msgstr "帰化している？"
+
+msgid "housework (H), work (W), unable to work (U) or other (Ot)"
+msgstr "家事 (H）、就業 (W）、就業不能 (U）、その他 (Ot）"
+
+msgid ""
+"What was this person doing most of last week—working, keeping house, or "
+"something else?"
+msgstr "この人は先週のほとんど何をしていましたか—就業、家事、その他？"
+
+msgid "Worked last week? (Y/N)"
+msgstr "先週就業した？ (Y/N）"
+
+msgid ""
+"Did this person do any work at all last week, not counting work around the "
+"house?"
+msgstr "この人は先週、家事以外の仕事を少しでもしましたか？"
+
+msgid "Looking for work?"
+msgstr "求職中？"
+
+msgid "Was this person looking for work?"
+msgstr "この人は求職中でしたか？"
+
+msgid "Has a job or business?"
+msgstr "仕事または事業を持っている？"
+
+msgid "Even though he didn’t work last week, does he have a job or business?"
+msgstr "先週働いていなくても、仕事や事業を持っていますか？"
+
+msgid "# hours worked last week"
+msgstr "先週の労働時間数"
+
+msgid "How many hours did he work last week?"
+msgstr "先週何時間働きましたか？"
+
+msgid "Type of work"
+msgstr "仕事の種類"
+
+msgid "What kind of work was he doing?"
+msgstr "どのような仕事をしていましたか？"
+
+msgid "Business or industry"
+msgstr "事業または産業"
+
+msgid "What kind of business or industry was he working in?"
+msgstr "どのような事業または産業で働いていましたか？"
+
+msgid "Same house in Apr 1949?"
+msgstr "1949年4月と同じ家？"
+
+msgid "Was he living in this same house a year ago?"
+msgstr "1年前も同じ家に住んでいましたか？"
+
+msgid "Farm in Apr 1949?"
+msgstr "1949年4月に農場？"
+
+msgid "Was he living on a farm a year ago?"
+msgstr "1年前は農場に住んでいましたか？"
+
+msgid "Same county in Apr 1949?"
+msgstr "1949年4月と同じ郡？"
+
+msgid "Was he living in this same county a year ago?"
+msgstr "1年前も同じ郡に住んでいましたか？"
+
+msgid "State or foreign country"
+msgstr "州または外国"
+
+msgid "What country was his father born in?"
+msgstr "父親はどの国で生まれましたか？"
+
+msgid "What country was his mother born in?"
+msgstr "母親はどの国で生まれましたか？"
+
+msgid "Highest grade attended"
+msgstr "最高就学学年"
+
+msgid "What is the highest grade of school that he has attended?"
+msgstr "彼が就学した最高学年は？"
+
+msgid "Completed?"
+msgstr "修了した？"
+
+msgid "Did he finish this grade?"
+msgstr "その学年を修了しましたか？"
+
+msgid "Attended school since Feb 1, 1950?"
+msgstr "1950年2月1日以降に就学？"
+
+msgid "Has he attended school at any time since February 1st?"
+msgstr "2月1日以降に学校に通ったことはありますか？"
+
+msgid "How many weeks has he been looking for work?"
+msgstr "何週間求職していますか？"
+
+msgid "# weeks worked in 1949"
+msgstr "1949年の就業週数"
+
+msgid ""
+"Last year, in how many weeks did this person do any work at all, not "
+"counting work around the house?"
+msgstr "昨年、この人は家事以外の仕事を何週間しましたか？"
+
+msgid "Amount of wages/salary in 1949"
+msgstr "1949年の賃金/給与額"
+
+msgid ""
+"Last year, how much money did he earn working as an employee for wages or "
+"salary?"
+msgstr "昨年、従業員としての賃金や給与でいくら稼ぎましたか？"
+
+msgid "Amount of money from own business in 1949"
+msgstr "1949年の自営業からの収入額"
+
+msgid ""
+"Last year, how much money did he earn working in his own business, "
+"professional practice, or farm?"
+msgstr "昨年、自営業、専門職、または農場でいくら稼ぎましたか？"
+
+msgid "Amount of other income in 1949"
+msgstr "1949年のその他の収入額"
+
+msgid ""
+"Last year, how much money did he receive from interest, dividends, veteran’s "
+"allowances, pensions, rents, or other income?"
+msgstr ""
+"昨年、利子、配当、退役軍人手当、年金、賃貸料、その他の収入でいくら受け取りま"
+"したか？"
+
+msgid "Relatives in household wages/salary in 1949"
+msgstr "世帯内の親族の1949年賃金/給与"
+
+msgid ""
+"Last year, how much money did his relatives in this household earn working "
+"for wages or salary?"
+msgstr "昨年、この世帯の親族は賃金や給与でいくら稼ぎましたか？"
+
+msgid "Relatives in household earnings from own business in 1949"
+msgstr "世帯内の親族の1949年自営業収入"
+
+msgid ""
+"Last year, how much money did his relatives in this household earn in own "
+"business, professional practice, or farm?"
+msgstr "昨年、この世帯の親族は自営業、専門職、または農場でいくら稼ぎましたか？"
+
+msgid "Relatives in household other income in 1949"
+msgstr "世帯内の親族の1949年その他収入"
+
+msgid ""
+"Last year, how much money did his relatives in this household receive from "
+"interest, dividends, veteran’s allowances, pensions, rents, or other income?"
+msgstr ""
+"昨年、この世帯の親族は利子、配当、退役軍人手当、年金、賃貸料、その他の収入で"
+"いくら受け取りましたか？"
+
+msgid "WWII Veteran?"
+msgstr "第二次世界大戦の退役軍人？"
+
+msgid "Did he ever serve in the U. S. Armed Forces during World War II?"
+msgstr "第二次世界大戦中に米軍に従軍したことはありますか？"
+
+msgid "WWI Veteran?"
+msgstr "第一次世界大戦の退役軍人？"
+
+msgid "World War I?"
+msgstr "第一次世界大戦？"
+
+msgid "Any other time, including present service?"
+msgstr "現在の服務を含む他の時期？"
+
+msgid "What kind of work did this person do in his last job?"
+msgstr "この人は最後の仕事でどのような仕事をしていましたか？"
+
+msgid "What kind of business or industry did he work in?"
+msgstr "彼はどのような事業または産業で働いていましたか？"
+
+msgid "Class of worker [last job]"
+msgstr "労働者階級 [最後の仕事]"
+
+msgid "Has this person been married more than once?"
+msgstr "この人は複数回結婚したことがありますか？"
+
+msgid "# years since marriage ended"
+msgstr "結婚終了からの年数"
+
+msgid ""
+"How many years since this person was married, widowed, divorced, or "
+"separated?"
+msgstr "この人が結婚、寡夫/寡婦、離婚、別居してから何年経ちますか？"
+
+msgid "How many children has she ever borne, not counting stillbirths?"
+msgstr "死産を除いて、彼女は何人の子供を産みましたか？"
+
+msgid "Census Date"
+msgstr "国勢調査日"
+
+msgid "District of"
+msgstr "地区"
+
+msgid "Married Y/N"
+msgstr "既婚 Y/N"
+
+msgid "Spouses Age"
+msgstr "配偶者の年齢"
+
+msgid "File No."
+msgstr "ファイル番号"
+
+msgid "Post Office Address"
+msgstr "郵便局住所"
+
+msgid "Entered service as (rank)"
+msgstr "入隊時の階級"
+
+msgid "Date Entered"
+msgstr "入隊日"
+
+msgid "Place of Enlistment"
+msgstr "入隊場所"
+
+msgid "Name, Letter of Co., Number of Regiment"
+msgstr "名前、中隊記号、連隊番号"
+
+msgid "Continued until"
+msgstr "続けた期間"
+
+msgid "Re-enlisted as"
+msgstr "再入隊時の階級"
+
+msgid "On date"
+msgstr "日付"
+
+msgid "and continued until"
+msgstr "そして続けた期間"
+
+msgid "3rd enlistment"
+msgstr "3度目の入隊"
+
+msgid "Enlisted on"
+msgstr "入隊日"
+
+msgid "Enlistment Place"
+msgstr "入隊場所"
+
+msgid "in the command of"
+msgstr "の指揮下で"
+
+msgid "Other service, if any"
+msgstr "その他の服務 (ある場合）"
+
+msgid "No. on pension roll"
+msgstr "年金台帳番号"
+
+msgid "County lived in when first placed on roll"
+msgstr "最初に台帳に登録された時の居住郡"
+
+msgid "Other states lived in and when"
+msgstr "居住した他の州と時期"
+
+msgid "Moved to Alabama"
+msgstr "アラバマ州に移住"
+
+msgid "Branch of service"
+msgstr "服務種別"
+
+msgid "Letter of Company"
+msgstr "中隊記号"
+
+msgid "Number of Regiment"
+msgstr "連隊番号"
+
+msgid "Was it an Alabama Regiment"
+msgstr "アラバマ連隊か"
+
+msgid "If not, give name of state"
+msgstr "違う場合、州名を記入"
+
+msgid "Name of your Captain"
+msgstr "大尉の名前"
+
+msgid "Name of your Colonel"
+msgstr "大佐の名前"
+
+msgid "By what other name was your Company called"
+msgstr "中隊の別名"
+
+msgid "By what other name was your Regiment called"
+msgstr "連隊の別名"
+
+msgid "Battles in which you took part"
+msgstr "参加した戦闘"
+
+msgid "Ever wounded"
+msgstr "負傷経験"
+
+msgid "When wounded"
+msgstr "負傷日"
+
+msgid "In what battles"
+msgstr "どの戦闘で"
+
+msgid "Were you captured"
+msgstr "捕虜になったか"
+
+msgid "When captured"
+msgstr "捕虜になった日"
+
+msgid "Where captured"
+msgstr "捕虜になった場所"
+
+msgid "Were you imprisoned"
+msgstr "収監されたか"
+
+msgid "When imprisoned"
+msgstr "収監日"
+
+msgid "Where imprisoned"
+msgstr "収監場所"
+
+msgid "How were you discharged"
+msgstr "除隊方法"
+
+msgid "Did you transfer to another Company or Command"
+msgstr "他の中隊または指揮下に転属したか"
+
+msgid "If so, give Company and Regiment"
+msgstr "場合、中隊と連隊を記入"
+
+msgid "What branch of service and date of transfer"
+msgstr "轉属先の服務種別と日付"
+
+msgid "Captains name"
+msgstr "大尉の名前"
+
+msgid "Colonels name"
+msgstr "大佐の名前"
+
+msgid "Length of service"
+msgstr "服務期間"
+
+msgid "Are you married"
+msgstr "結婚しているか"
+
+msgid "Age of wife"
+msgstr "妻の年齢"
+
+msgid "Birthplace of wife"
+msgstr "妻の出生地"
+
+msgid "Date married"
+msgstr "結婚日"
+
+msgid "Place married"
+msgstr "結婚場所"
+
+msgid "When, where and circumstances you quit the service"
+msgstr "除隊した時期、場所、状況"
+
+msgid "Paroled at close of war"
+msgstr "戦争終了時に仮釈放"
+
+msgid "If so, when"
+msgstr "場合、時期"
+
+msgid "and where"
+msgstr "と場所"
+
+msgid "Have you your parole"
+msgstr "仮釈放証書を持っているか"
+
+msgid "Voting Precinct and County"
+msgstr "投票区と郡"
+
+msgid "With whom are you living"
+msgstr "誰と同居しているか"
+
+msgid "Regularly received your pension warrant"
+msgstr "年金証書を定期的に受け取っている"
+
+msgid "If No give information regarding the same"
+msgstr "いいえの場合、その情報を記入"
+
+msgid "Witness name and P.O Address"
+msgstr "証人の名前と郵便局住所"
+
+msgid "Widow of"
+msgstr "の未亡人"
+
+msgid "Her age"
+msgstr "彼女の年齢"
+
+msgid "Her date of birth"
+msgstr "彼女の生年月日"
+
+msgid "Date of marriage"
+msgstr "結婚日"
+
+msgid "Born within census year"
+msgstr "国勢調査年内に出生"
+
+msgid "Married during census year"
+msgstr "国勢調査年内に結婚"
+
+msgid "Months unemployed during census year"
+msgstr "国勢調査年内の失業月数"
+
+msgid "(Day of the Enumerator's visit) sick or temporarily disabled"
+msgstr "(調査員訪問日）病気または一時的障害"
+
+msgid "Deaf and Dumb"
+msgstr "聾唖"
+
+msgid "Maimed, Crippled, Bedridden, or otherwise disabled."
+msgstr "負傷、障害、寝たきり、またはその他の障害。"
+
+msgid "Can not read"
+msgstr "読み書き不能"
+
+msgid "Can not write"
+msgstr "書き書き不能"
+
+msgid "Street Name"
+msgstr "通り名"
+
+msgid "House No."
+msgstr "番地"
+
+msgid "Precinct No."
+msgstr "区番号"
+
+msgid "Inside or Outside City Limits"
+msgstr "市域内または市域外"
+
+msgid "Age Male"
+msgstr "年齢 (男性）"
+
+msgid "Age Female"
+msgstr "年齢 (女性）"
+
+msgid "Relation to Family"
+msgstr "家族との関係"
+
+msgid "Degree of Education"
+msgstr "教育程度"
+
+msgid "Owner or Renter"
+msgstr "所有者または賃借人"
+
+msgid "In or Out"
+msgstr "内または外"
+
+msgid "White Males Under 10"
+msgstr "10歳未満の白人男性"
+
+msgid "White Males 10 to 20"
+msgstr "10-20歳の白人男性"
+
+msgid "White Males 20 to 30"
+msgstr "20-30歳の白人男性"
+
+msgid "White Males 30 to 40"
+msgstr "30-40歳の白人男性"
+
+msgid "White Males 40 to 50"
+msgstr "40-50歳の白人男性"
+
+msgid "White Males 50 to 60"
+msgstr "50-60歳の白人男性"
+
+msgid "White Males 60 to 70"
+msgstr "60-70歳の白人男性"
+
+msgid "White Males 70 to 80"
+msgstr "70-80歳の白人男性"
+
+msgid "White Males 80 to 90"
+msgstr "80-90歳の白人男性"
+
+msgid "White Males Over 90"
+msgstr "90歳以上の白人男性"
+
+msgid "White Females Under 10"
+msgstr "10歳未満の白人女性"
+
+msgid "White Females 10 to 20"
+msgstr "10-20歳の白人女性"
+
+msgid "White Females 20 to 30"
+msgstr "20-30歳の白人女性"
+
+msgid "White Females 30 to 40"
+msgstr "30-40歳の白人女性"
+
+msgid "White Females 40 to 50"
+msgstr "40-50歳の白人女性"
+
+msgid "White Females 50 to 60"
+msgstr "50-60歳の白人女性"
+
+msgid "White Females 60 to 70"
+msgstr "60-70歳の白人女性"
+
+msgid "White Females 70 to 80"
+msgstr "70-80歳の白人女性"
+
+msgid "White Females 80 to 90"
+msgstr "80-90歳の白人女性"
+
+msgid "White Females Over 90"
+msgstr "90歳以上の白人女性"
+
+msgid "Male Negroes and Mulattoes"
+msgstr "黒人およびムラートの男性"
+
+msgid "Female Negroes and Mulattoes"
+msgstr "黒人およびムラートの女性"
+
+msgid "Militia"
+msgstr "民兵"
+
+msgid "Manufactories of All Kinds"
+msgstr "あらゆる種類の製造所"
+
+msgid "Value of products of manufactories"
+msgstr "製造所製品の価値"
+
+msgid "Value of products of Coal Mines"
+msgstr "炭鉱製品の価値"
+
+msgid "Pounds of Wool"
+msgstr "羊毛のポンド数"
+
+msgid "Number of Colleges"
+msgstr "大学数"
+
+msgid "Number of Pupils"
+msgstr "生徒数"
+
+msgid "Number of Common Schools"
+msgstr "公立学校数"
+
+msgid "Males over 21 years"
+msgstr "21歳以上の男性"
+
+msgid "Males under 21 years"
+msgstr "21歳未満の男性"
+
+msgid "Total number"
+msgstr "総数"
+
+msgid "Widowed"
+msgstr "寡夫/寡婦"
+
+msgid "Years resident in the state"
+msgstr "州居住年数"
+
+msgid "Native voters"
+msgstr "生来の有権者"
+
+msgid "Naturalized voters"
+msgstr "帰化した有権者"
+
+msgid "Owners of land"
+msgstr "土地所有者"
+
+msgid "Paupers"
+msgstr "貧困者"
+
+msgid "Acres of improved land"
+msgstr "改良地のエーカー"
+
+msgid "Acres of unimproved land"
+msgstr "未改良地のエーカー"
+
+msgid "Acres in meadow"
+msgstr "牧草地のエーカー"
+
+msgid "Tons of hay"
+msgstr "干草のトン数"
+
+msgid "Bushels of grass seed"
+msgstr "牧草種子の数 (ブッシェル)"
+
+msgid "Acres of spring wheat"
+msgstr "春小麦のエーカー"
+
+msgid "Bushels harvested (spring wheat)"
+msgstr "収穫量 (春小麦、(ブッシェル)）"
+
+msgid "Acres of winter wheat"
+msgstr "冬小麦のエーカー"
+
+msgid "Bushels harvested (winter wheat)"
+msgstr "収穫量 (冬小麦、(ブッシェル)）"
+
+msgid "Acres of oats"
+msgstr "オート麦のエーカー"
+
+msgid "Bushels harvested (oats)"
+msgstr "収穫量 (オート麦、(ブッシェル)）"
+
+msgid "Acres of corn"
+msgstr "トウモロコシのエーカー"
+
+msgid "Bushels harvested (corn)"
+msgstr "収穫量 (トウモロコシ、(ブッシェル)）"
+
+msgid "Acres of potatoes"
+msgstr "ジャガイモのエーカー"
+
+msgid "Bushels harvested (potatoes)"
+msgstr "収穫量 (ジャガイモ、(ブッシェル)）"
+
+msgid "Number of hogs sold"
+msgstr "販売された豚の数"
+
+msgid "Value of hogs sold"
+msgstr "販売された豚の価値"
+
+msgid "Number of cattle sold"
+msgstr "販売された牛の数"
+
+msgid "Value of cattle sold"
+msgstr "販売された牛の価値"
+
+msgid "Pounds of butter manufactured"
+msgstr "製造されたバターのポンド数"
+
+msgid "Pounds of cheese"
+msgstr "チーズのポンド数"
+
+msgid "Pounds of wool"
+msgstr "羊毛のポンド数"
+
+msgid "Value of domestic manufactures"
+msgstr "国内製造品の価値"
+
+msgid "Value of general manufactures"
+msgstr "一般製造品の価値"
+
+msgid "Town of"
+msgstr "町"
+
+msgid "City of"
+msgstr "市"
+
+msgid "Township of"
+msgstr "タウンシップ"
+
+msgid "Street and Number"
+msgstr "通りと番地"
+
+msgid "Place of birth, county"
+msgstr "出生地 (郡）"
+
+msgid "Place of birth, state or territory"
+msgstr "出生地 (州または準州）"
+
+msgid "Place of birth, country"
+msgstr "出生地 (国）"
+
+msgid "Father (N, Native; F, Foreign)"
+msgstr "父親 (N、米国生まれ; F、外国生まれ）"
+
+msgid "Mother (N, Native; F, Foreign)"
+msgstr "母親 (N、米国生まれ; F、外国生まれ）"
+
+msgid "Subject to military duty"
+msgstr "兵役義務あり"
+
+msgid "Entitled to vote"
+msgstr "投票権あり"
+
+msgid "Alien who has taken out first papers"
+msgstr "一次申請書を提出した外国人"
+
+msgid "Alien who has not taken out first papers"
+msgstr "一次申請書を提出していない外国人"
+
+msgid "Over 10 and cannot read or write"
+msgstr "10歳以上で読み書き不能"
+
+msgid "Over 10 and can read but not write"
+msgstr "10歳以上で読み書き可だが書き書き不能"
+
+msgid "Deaf and dumb, blind, insane, or idiotic"
+msgstr "聾唖、盲目、精神異常、または白痴"
+
+msgid "Age 18 or older"
+msgstr "18歳以上"
+
+msgid "Age 5 to 18"
+msgstr "5-18歳"
+
+msgid "Age under 5"
+msgstr "5歳未満"
+
+msgid "White Male"
+msgstr "白人男性"
+
+msgid "White Female"
+msgstr "白人女性"
+
+msgid "Colored Male"
+msgstr "有色男性"
+
+msgid "Colored Female"
+msgstr "有色女性"
+
+msgid "Single, Widowed, or Divorced"
+msgstr "未婚、寡夫/寡婦、または離婚"
+
+msgid "Father (N,Native; F,Foreign)"
+msgstr "父親 (N、米国生まれ; F、外国生まれ）"
+
+msgid "Mother (N,Native; F,Foreign)"
+msgstr "母親 (N、米国生まれ; F、外国生まれ）"
+
+msgid "Religious belief"
+msgstr "宗教信仰"
+
+msgid "Can read but not write, over 10 years old"
+msgstr "10歳以上で読み書き可だが書き書き不能"
+
+msgid "Cannot read or write, over 10 years old"
+msgstr "10歳以上で読み書き不能"
+
+msgid "Children over 6 and under 17 not attending school in 1894"
+msgstr "1894年に就学していない6歳以上17歳未満の子供"
+
+msgid "Births in 1894"
+msgstr "1894年の出生"
+
+msgid "Deaths in 1894"
+msgstr "1894年の死亡"
+
+msgid "Deaf and dumb not in State School for Deaf"
+msgstr "州立聾学校に在籍していない聾唖者"
+
+msgid "Blind not in State College for Blind"
+msgstr "州立盲学校に在籍していない盲人"
+
+msgid "Insane not in State Hospital for Insane"
+msgstr "州立精神病院に入院していない精神異常者"
+
+msgid "Company if in Civil War"
+msgstr "南北戦争参加時の中隊"
+
+msgid "Regiment if in Civil War"
+msgstr "南北戦争参加時の連隊"
+
+msgid "State if in Civil War"
+msgstr "南北戦争参加時の州"
+
+msgid "Arm of service and rank if in Civil War"
+msgstr "南北戦争参加時の服務種別と階級"
+
+msgid "Regiment if in Mexican War"
+msgstr "米墨戦争参加時の連隊"
+
+msgid "State if in Mexican War"
+msgstr "米墨戦争参加時の州"
+
+msgid "Card No."
+msgstr "カード番号"
+
+msgid "P.O. Address"
+msgstr "郵便局住所"
+
+msgid "P. O. Address"
+msgstr "郵便局住所"
+
+msgid "Can you read?"
+msgstr "読み書きできますか？"
+
+msgid "Can you write?"
+msgstr "書き書きできますか？"
+
+msgid "Color, White-Black-Yellow-Red"
+msgstr "色、白人-黒人-黄色人種-赤人種"
+
+msgid "Place of Birth-Self"
+msgstr "出生地 (本人）"
+
+msgid "Place of birth, Self"
+msgstr "出生地 (本人）"
+
+msgid "Place of Birth-Mother"
+msgstr "出生地 (母親）"
+
+msgid "Place of birth, Mother"
+msgstr "出生地 (母親）"
+
+msgid "Place of Birth-Father"
+msgstr "出生地 (父親）"
+
+msgid "Place of birth, Father"
+msgstr "出生地 (父親）"
+
+msgid "Own home or farm"
+msgstr "自宅または農場を所有"
+
+msgid "Do you own your home or farm?"
+msgstr "自宅または農場を所有していますか？"
+
+msgid "Value of home or farm"
+msgstr "自宅または農場の価値"
+
+msgid "Entire value of home or farm?"
+msgstr "自宅または農場の総価値？"
+
+msgid "How much incumberance on home or farm"
+msgstr "自宅または農場の負債額"
+
+msgid "How much incumberance on your home or farm?"
+msgstr "自宅または農場の負債額は？"
+
+msgid "If foreign born, are you naturalized"
+msgstr "外国生まれの場合、帰化していますか"
+
+msgid "If you are foreign born, are you naturalized?"
+msgstr "外国生まれの場合、帰化していますか？"
+
+msgid "Years in U.S."
+msgstr "米国居住年数"
+
+msgid "Years in Iowa"
+msgstr "アイオワ州居住年数"
+
+msgid "Years in Iowa>"
+msgstr "アイオワ州居住年数>"
+
+msgid "Conjugal condition; Single-Married-Widowed-Divorced-Separated"
+msgstr "婚姻状態; 未婚-既婚-寡夫/寡婦-離婚-別居"
+
+msgid "Months in school in 1904-Public"
+msgstr "1904年の就学月数-公立"
+
+msgid "Months in school in 1904; Public"
+msgstr "1904年の就学月数; 公立"
+
+msgid "Months in school in 1904-High"
+msgstr "1904年の就学月数-高等学校"
+
+msgid "Months in school in 1904; High"
+msgstr "1904年の就学月数; 高等学校"
+
+msgid "Months in school in 1904-Private"
+msgstr "1904年の就学月数-私立"
+
+msgid "Months in school in 1904; Private"
+msgstr "1904年の就学月数; 私立"
+
+msgid "Months in school in 1904-College"
+msgstr "1904年の就学月数-大学"
+
+msgid "Months in school in 1904; College"
+msgstr "1904年の就学月数; 大学"
+
+msgid "Months unemployed in 1904"
+msgstr "1904年の失業月数"
+
+msgid "Military-Service in which war"
+msgstr "軍役-従軍した戦争"
+
+msgid "Military Service in; Civil War-Mexican War-Spanish War"
+msgstr "軍役; 南北戦争-米墨戦争-米西戦争"
+
+msgid "Military-Company"
+msgstr "軍役-中隊"
+
+msgid "Military Service; Company"
+msgstr "軍役; 中隊"
+
+msgid "Military-Regiment"
+msgstr "軍役-連隊"
+
+msgid "Military Service; Regiment"
+msgstr "軍役; 連隊"
+
+msgid "Military-State"
+msgstr "軍役-州"
+
+msgid "Military Service; State"
+msgstr "軍役; 州"
+
+msgid "Military-Class of service"
+msgstr "軍役-服務種別"
+
+msgid "Military Service; Class of service; Cavalry-Infantry-Artillery-Navy"
+msgstr "軍役; 服務種別; 騎兵-歩兵-砲兵-海軍"
+
+msgid "Military-Date of enlistment"
+msgstr "軍役-入隊日"
+
+msgid "Military Service; Date of enlistment"
+msgstr "軍役; 入隊日"
+
+msgid "Military-Date of discharge"
+msgstr "軍役-除隊日"
+
+msgid "Military Service; Date of discharge"
+msgstr "軍役; 除隊日"
+
+msgid "Military-Remarks"
+msgstr "軍役-備考"
+
+msgid "Military Service; Remarks"
+msgstr "軍役; 備考"
+
+msgid "Town or Township"
+msgstr "町またはタウンシップ"
+
+msgid "Months in 1914 Unemployed"
+msgstr "1914年の失業月数"
+
+msgid "Earnings for 1914 from occupation"
+msgstr "1914年の職業収入"
+
+msgid "Extent of Education Common"
+msgstr "教育程度 初等"
+
+msgid "Extent of Education Grammar"
+msgstr "教育程度 中等"
+
+msgid "Extent of Education High School"
+msgstr "教育程度 高等学校"
+
+msgid "Extent of Education College"
+msgstr "教育程度 大学"
+
+msgid "Own house or farm"
+msgstr "自宅または農場を所有"
+
+msgid "Incumbrance on farm or home"
+msgstr "農場または自宅の負債"
+
+msgid "Value of farm or home"
+msgstr "農場または自宅の価値"
+
+msgid "Military Service: Civil War"
+msgstr "軍役: 南北戦争"
+
+msgid "Military Service: Mexican"
+msgstr "軍役: 米墨戦争"
+
+msgid "Military Service: Spanish"
+msgstr "軍役: 米西戦争"
+
+msgid "Military Service: Infantry"
+msgstr "軍役: 歩兵"
+
+msgid "Military Service: Cavalry"
+msgstr "軍役: 騎兵"
+
+msgid "Military Service: Artillery"
+msgstr "軍役: 砲兵"
+
+msgid "Military Service: Navy"
+msgstr "軍役: 海軍"
+
+msgid "Military Service: State"
+msgstr "軍役: 州"
+
+msgid "Military Service: Regiment"
+msgstr "軍役: 連隊"
+
+msgid "Military Service: Company"
+msgstr "軍役: 中隊"
+
+msgid "Church Affiliation"
+msgstr "教会所属"
+
+msgid "Father's Birthplace"
+msgstr "父親の出生地"
+
+msgid "Mother's Birthplace"
+msgstr "母親の出生地"
+
+msgid "Months in School 1914: Public"
+msgstr "1914年の就学月数: 公立"
+
+msgid "Months in School 1914: High"
+msgstr "1914年の就学月数: 高等学校"
+
+msgid "Months in School 1914: Private"
+msgstr "1914年の就学月数: 私立"
+
+msgid "Months in School 1914: College"
+msgstr "1914年の就学月数: 大学"
+
+msgid "Deaf"
+msgstr "聾"
+
+msgid "Idiot"
+msgstr "白痴"
+
+msgid "Naturalized if foreign born?"
+msgstr "外国生まれの場合、帰化している？"
+
+msgid "House Number"
+msgstr "番地"
+
+msgid "Color or Race"
+msgstr "色または人種"
+
+msgid "Home Owned or Rented"
+msgstr "自宅所有または賃貸"
+
+msgid "Home Owned Free or Mortgaged"
+msgstr "自宅完全所有または抵当付き"
+
+msgid "Home Value"
+msgstr "自宅価値"
+
+msgid "Mortgage Debt"
+msgstr "抵当債務"
+
+msgid "Monthly Rent"
+msgstr "月額賃料"
+
+msgid "Insurance on Home"
+msgstr "自宅保険"
+
+msgid "Years in US"
+msgstr "米国居住年数"
+
+msgid "Attended Rural School"
+msgstr "地方学校に就学"
+
+msgid "Attended Grade School"
+msgstr "小学校に就学"
+
+msgid "Attended High School"
+msgstr "高等学校に就学"
+
+msgid "Attended College"
+msgstr "大学に就学"
+
+msgid "Highest Grade Rural School"
+msgstr "地方学校の最高学年"
+
+msgid "Highest Grade Grammar School"
+msgstr "中等学校の最高学年"
+
+msgid "Highest Grade High School"
+msgstr "高等学校の最高学年"
+
+msgid "No. Years College"
+msgstr "大学在学年数"
+
+msgid "Months in School 1924"
+msgstr "1924年の就学月数"
+
+msgid "Able to Read"
+msgstr "読み書き可"
+
+msgid "Able to Write"
+msgstr "書き書き可"
+
+msgid "Father's Name"
+msgstr "父親の名前"
+
+msgid "Father's Place of Birth"
+msgstr "父親の出生地"
+
+msgid "Mother's Name"
+msgstr "母親の名前"
+
+msgid "Mother's Place of Birth"
+msgstr "母親の出生地"
+
+msgid "Parents Place of Marriage"
+msgstr "両親の結婚場所"
+
+msgid "Civil War Veteran"
+msgstr "南北戦争の退役軍人"
+
+msgid "Civil War Service Branch"
+msgstr "南北戦争の服務種別"
+
+msgid "Civil War State"
+msgstr "南北戦争の州"
+
+msgid "Spanish-American War Veteran"
+msgstr "米西戦争の退役軍人"
+
+msgid "Spanish-American War Service Branch"
+msgstr "米西戦争の服務種別"
+
+msgid "Spanish-American War State"
+msgstr "米西戦争の州"
+
+msgid "World War Veteran"
+msgstr "第一次世界大戦の退役軍人"
+
+msgid "World War Service Branch"
+msgstr "第一次世界大戦の服務種別"
+
+msgid "World War State"
+msgstr "第一次世界大戦の州"
+
+msgid "Agricultural Pursuits"
+msgstr "農業従事"
+
+msgid "Professional Services"
+msgstr "専門サービス"
+
+msgid "Domestic/Personal Services"
+msgstr "家事/個人サービス"
+
+msgid "Trade and Transportation"
+msgstr "商業および運輸"
+
+msgid "Manufacturing and Mechanical"
+msgstr "製造および機械"
+
+msgid "Unclassified Laborer"
+msgstr "分類不能な労働者"
+
+msgid "Months unemployed due to illness"
+msgstr "病気による失業月数"
+
+msgid "Income lost due to illness"
+msgstr "病気による収入損失"
+
+msgid "Months unemployed"
+msgstr "失業月数"
+
+msgid "Free Inhabitants in"
+msgstr "自由住民"
+
+msgid "Regiment"
+msgstr "連隊"
+
+msgid "Real Estate"
+msgstr "不動産"
+
+msgid "Personal Estate"
+msgstr "個人財産"
+
+msgid "Attended School"
+msgstr "就学済み"
+
+msgid "Illiterate"
+msgstr "非識字"
+
+msgid "Disabled"
+msgstr "障害者"
+
+msgid "Personal Property"
+msgstr "個人財産"
+
+msgid "Where From"
+msgstr "出身"
+
+msgid "School"
+msgstr "学校"
+
+msgid "Cannot Read 10-15"
+msgstr "読み書き不能 10-15歳"
+
+msgid "Cannot Read 15-21"
+msgstr "読み書き不能 15-21歳"
+
+msgid "Cannot Read 21+"
+msgstr "読み書き不能 21歳以上"
+
+msgid "Cannot Write 10-15"
+msgstr "書き書き不能 10-15歳"
+
+msgid "Cannot Write 15-21"
+msgstr "書き書き不能 15-21歳"
+
+msgid "Cannot Write 21+"
+msgstr "書き書き不能 21歳以上"
+
+msgid "Cannot Read/Write 10-15"
+msgstr "読み書き不能 10-15歳"
+
+msgid "Cannot Read/Write 15-21"
+msgstr "読み書き不能 15-21歳"
+
+msgid "Cannot Read/Write 21+"
+msgstr "読み書き不能 21歳以上"
+
+msgid "Widow(er)"
+msgstr "寡夫/寡婦"
+
+msgid "Learning"
+msgstr "学習"
+
+msgid "Illiteracy 10-15"
+msgstr "非識字 10-15歳"
+
+msgid "Illiteracy 15-21"
+msgstr "非識字 15-21歳"
+
+msgid "Illiteracy 21+"
+msgstr "非識字 21歳以上"
+
+msgid "Honorably discharged"
+msgstr "名誉除隊"
+
+msgid "State Enlisted"
+msgstr "入隊州"
+
+msgid "Arm of Service"
+msgstr "服務種別"
+
+msgid "Prison"
+msgstr "刑務所"
+
+msgid "Where from Kansas"
+msgstr "カンザス州からの出身"
+
+msgid "Trade or profession being learned"
+msgstr "学んでいる職業または専門職"
+
+msgid "Illiterate and 10 to 15 years old"
+msgstr "非識字かつ10-15歳"
+
+msgid "Illiterate and 16 to 21 years old"
+msgstr "非識字かつ16-21歳"
+
+msgid "Illiterate and over 21"
+msgstr "非識字かつ21歳以上"
+
+msgid "Honorably discharged from military service"
+msgstr "軍役から名誉除隊"
+
+msgid "State in which enlisted"
+msgstr "入隊した州"
+
+msgid "Company or command"
+msgstr "中隊または指揮下"
+
+msgid "Regiment or other organization"
+msgstr "連隊またはその他の組織"
+
+msgid "Arm of service"
+msgstr "服務種別"
+
+msgid "Prison in which confined as a prisoner of war"
+msgstr "捕虜として収容された刑務所"
+
+msgid "Home owned free or mortgaged"
+msgstr "自宅完全所有または抵当付き"
+
+msgid "Where from to Kansas"
+msgstr "カンザス州への出身"
+
+msgid "Number of months unemployed"
+msgstr "失業月数"
+
+msgid "Illiterate and 15 to 21 years old"
+msgstr "非識字かつ15-21歳"
+
+msgid "Number of volumes in home library"
+msgstr "自宅図書館の蔵書数"
+
+msgid "Number of house"
+msgstr "番地"
+
+msgid "Year of immigration to the United States"
+msgstr "米国への移民年"
+
+msgid "Naturalized, alien or first papers"
+msgstr "帰化済み、外国人、または一次申請書"
+
+msgid "Attended school within year"
+msgstr "年内に就学"
+
+msgid "Nativity"
+msgstr "出生"
+
+msgid "Father's Nativity"
+msgstr "父親の出生"
+
+msgid "Mother's Nativity"
+msgstr "母親の出生"
+
+msgid "Inhabitants in"
+msgstr "居住者"
+
+msgid "Served in Federal army during rebellion"
+msgstr "南北戦争中に連邦軍に従軍"
+
+msgid "Residence in State - Years"
+msgstr "州居住年数"
+
+msgid "Residence in State - Months"
+msgstr "州居住月数"
+
+msgid "Residence in District - Years"
+msgstr "地区居住年数"
+
+msgid "Residence in District - Months"
+msgstr "地区居住月数"
+
+msgid "Months Employed"
+msgstr "就業月数"
+
+msgid "Solder/Sailor"
+msgstr "兵士/水兵"
+
+msgid "Foreign father"
+msgstr "外国生まれの父親"
+
+msgid "Foreign mother"
+msgstr "外国生まれの母親"
+
+msgid "Organized Township"
+msgstr "組織化されたタウンシップ"
+
+msgid "Unorganized Township"
+msgstr "未組織のタウンシップ"
+
+msgid "Name of Village"
+msgstr "村名"
+
+msgid "Name of City"
+msgstr "市名"
+
+msgid "Sub-division"
+msgstr "小区分"
+
+msgid "Precincts"
+msgstr "区"
+
+msgid "Enumerated date from"
+msgstr "調査開始日"
+
+msgid "Enumerated date to"
+msgstr "調査終了日"
+
+msgid "Enumeration number"
+msgstr "調査番号"
+
+msgid "Fathers birthplace"
+msgstr "父親の出生地"
+
+msgid "Mothers birthplace"
+msgstr "母親の出生地"
+
+msgid "Residence in District - years"
+msgstr "地区居住年数"
+
+msgid "Residence in District - months"
+msgstr "地区居住月数"
+
+msgid "Army service"
+msgstr "陸軍服務"
+
+msgid "Wars"
+msgstr "戦争"
+
+msgid "White males under 10"
+msgstr "10歳未満の白人男性"
+
+msgid "White males 10-17"
+msgstr "10-17歳の白人男性"
+
+msgid "White males 18-20"
+msgstr "18-20歳の白人男性"
+
+msgid "White males 21-44"
+msgstr "21-44歳の白人男性"
+
+msgid "White males 45 and over"
+msgstr "45歳以上の白人男性"
+
+msgid "Total White Males"
+msgstr "白人男性総数"
+
+msgid "White females under 10"
+msgstr "10歳未満の白人女性"
+
+msgid "White females 10-17"
+msgstr "10-17歳の白人女性"
+
+msgid "White females 18-20"
+msgstr "18-20歳の白人女性"
+
+msgid "White females 21-44"
+msgstr "21-44歳の白人女性"
+
+msgid "White females 45 and over"
+msgstr "45歳以上の白人女性"
+
+msgid "Total White Females"
+msgstr "白人女性総数"
+
+msgid "Total White Population"
+msgstr "白人人口総数"
+
+msgid "White persons between 6 and 18"
+msgstr "6-18歳の白人"
+
+msgid "No. White persons who can read and write"
+msgstr "読み書き可能な白人人数"
+
+msgid "Colored males under 10"
+msgstr "10歳未満の有色男性"
+
+msgid "Colored males 10-17"
+msgstr "10-17歳の有色男性"
+
+msgid "Colored males 18-20"
+msgstr "18-20歳の有色男性"
+
+msgid "Colored males 21-44"
+msgstr "21-44歳の有色男性"
+
+msgid "Colored males 45 and over"
+msgstr "45歳以上の有色男性"
+
+msgid "Total Colored Males"
+msgstr "有色男性総数"
+
+msgid "Colored females under 10"
+msgstr "10歳未満の有色女性"
+
+msgid "Colored females 10-17"
+msgstr "10-17歳の有色女性"
+
+msgid "Colored females 18-20"
+msgstr "18-20歳の有色女性"
+
+msgid "Colored females 21-44"
+msgstr "21-44歳の有色女性"
+
+msgid "Colored females 45 and over"
+msgstr "45歳以上の有色女性"
+
+msgid "Total Colored Females"
+msgstr "有色女性総数"
+
+msgid "Total Colored Population"
+msgstr "有色人口総数"
+
+msgid "Colored persons between 6 and 18"
+msgstr "6-18歳の有色人"
+
+msgid "No. Colored persons who can read and write"
+msgstr "読み書き可能な有色人数"
+
+msgid "Deaf and Dumb Males"
+msgstr "聾唖の男性"
+
+msgid "Deaf and Dumb Males Age"
+msgstr "聾唖の男性の年齢"
+
+msgid "Deaf and Dumb Females"
+msgstr "聾唖の女性"
+
+msgid "Deaf and Dumb Females Age"
+msgstr "聾唖の女性の年齢"
+
+msgid "Deaf and Dumb White"
+msgstr "聾唖の白人"
+
+msgid "Deaf and Dumb Colored"
+msgstr "聾唖の有色人"
+
+msgid "No. Deaf and Dumb taught to read and write"
+msgstr "読み書きを教えられた聾唖者数"
+
+msgid "Blind Males"
+msgstr "盲目の男性"
+
+msgid "Blind Males Age"
+msgstr "盲目の男性の年齢"
+
+msgid "Blind Females"
+msgstr "盲目の女性"
+
+msgid "Blind Females Age"
+msgstr "盲目の女性の年齢"
+
+msgid "Blind White"
+msgstr "盲目の白人"
+
+msgid "Blind Colored"
+msgstr "盲目の有色人"
+
+msgid "No. Blind taught to read and write"
+msgstr "読み書きを教えられた盲人数"
+
+msgid "Insane Males"
+msgstr "精神異常の男性"
+
+msgid "Insane Males Age"
+msgstr "精神異常の男性の年齢"
+
+msgid "Insane Females"
+msgstr "精神異常の女性"
+
+msgid "Insane Females Age"
+msgstr "精神異常の女性の年齢"
+
+msgid "Insane White"
+msgstr "精神異常の白人"
+
+msgid "Insane Colored"
+msgstr "精神異常の有色人"
+
+msgid "No. Insane taught to read and write"
+msgstr "読み書きを教えられた精神異常者数"
+
+msgid "Live Stock Horses"
+msgstr "家畜 馬"
+
+msgid "Live Stock Mules"
+msgstr "家畜 ラバ"
+
+msgid "Live Stock Jacks"
+msgstr "家畜 ロバの雄"
+
+msgid "Live Stock Jennies"
+msgstr "家畜 ロバの雌"
+
+msgid "Live Stock Cattle"
+msgstr "家畜 牛"
+
+msgid "Live Stock Sheep"
+msgstr "家畜 羊"
+
+msgid "Live Stock Hogs"
+msgstr "家畜 豚"
+
+msgid "Products Bushels Wheat"
+msgstr "生産物 小麦 (ブッシェル)"
+
+msgid "Products Bushels Corn"
+msgstr "生産物 トウモロコシ (ブッシェル)"
+
+msgid "Products Bushels Oats"
+msgstr "生産物 オート麦 (ブッシェル)"
+
+msgid "Products Bushels Barley"
+msgstr "生産物 大麦 (ブッシェル)"
+
+msgid "Products Bushels Rye"
+msgstr "生産物 ライ麦 (ブッシェル)"
+
+msgid "Products Lbs. Tobacco"
+msgstr "生産物 タバコ (ポンド）"
+
+msgid "Products Lbs. Wool"
+msgstr "生産物 羊毛 (ポンド）"
+
+msgid "Products Lbs. Sugar"
+msgstr "生産物 砂糖 (ポンド）"
+
+msgid "Products Tons Hay"
+msgstr "生産物 干草 (トン）"
+
+msgid "Products Tons Hemp"
+msgstr "生産物 麻 (トン）"
+
+msgid "Products Galls. Whiskey"
+msgstr "生産物 ウイスキー (ガロン）"
+
+msgid "Products Galls. Wine"
+msgstr "生産物 ワイン (ガロン）"
+
+msgid "Products Galls. Molasses"
+msgstr "生産物 糖蜜 (ガロン）"
+
+msgid "Total Population"
+msgstr "総人口"
+
+msgid "Building Material"
+msgstr "建材"
+
+msgid "Dwelling Value"
+msgstr "住宅価値"
+
+msgid "Birthplace (NY County or other)"
+msgstr "出生地 (NY郡またはその他）"
+
+msgid "Years resident in this city or town"
+msgstr "この都市または町の居住年数"
+
+msgid "Native Voter"
+msgstr "生来の有権者"
+
+msgid "Naturalized Voter"
+msgstr "帰化した有権者"
+
+msgid "Alien"
+msgstr "外国人"
+
+msgid "Persons of color not taxed"
+msgstr "課税されていない有色人"
+
+msgid "Over 21/Illiterate"
+msgstr "21歳以上/非識字"
+
+msgid "Landowner"
+msgstr "地主"
+
+msgid "Deaf, Dumb, Blind, Insane, Idiotic"
+msgstr "聾唖、盲目、精神異常、白痴"
+
+msgid "Inhabitants in the"
+msgstr "居住者"
+
+msgid "Parent of how many children"
+msgstr "子供の数"
+
+msgid "Number of times married"
+msgstr "結婚回数"
+
+msgid "Place of Occupation"
+msgstr "就業場所"
+
+msgid "Land owner"
+msgstr "地主"
+
+msgid "Now in army"
+msgstr "現在陸軍に在籍"
+
+msgid "Now in navy"
+msgstr "現在海軍に在籍"
+
+msgid "Formerly in army"
+msgstr "以前陸軍に在籍"
+
+msgid "Formerly in navy"
+msgstr "以前海軍に在籍"
+
+msgid "Usual place of employment (if not same city/town)"
+msgstr "通常の就業場所 (同じ都市/町でない場合）"
+
+msgid "Election District of the Town of"
+msgstr "町の選挙区"
+
+msgid "the County of"
+msgstr "郡"
+
+msgid "Birth Country"
+msgstr "出生国"
+
+msgid "Citizen or Alien"
+msgstr "市民または外国人"
+
+msgid "Inhabitants living in"
+msgstr "居住者"
+
+msgid "Election District, Ward"
+msgstr "選挙区、区"
+
+msgid "Number of years in the US"
+msgstr "米国居住年数"
+
+msgid "Class"
+msgstr "クラス"
+
+msgid "Inmate: Residence given when admitted"
+msgstr "入所者: 入所時に記入された住所"
+
+msgid "Inhabitants of Block No."
+msgstr "街区の居住者"
+
+msgid "Election District No."
+msgstr "選挙区番号"
+
+msgid "Ward No."
+msgstr "区番号"
+
+msgid "City or Village"
+msgstr "都市または村"
+
+msgid "Assembly District No."
+msgstr "議会地区番号"
+
+msgid "Where and When Naturalized"
+msgstr "帰化場所と帰化日"
+
+msgid "WM 21-60"
+msgstr "白人男性 21-60歳"
+
+msgid "WM under 21 above 60 "
+msgstr "白人男性 21歳未満および60歳以上 "
+
+msgid "WF all ages"
+msgstr "白人女性 全年齢"
+
+msgid "Blacks 12-50"
+msgstr "黒人 12-50歳"
+
+msgid "Blacks under 12 above 50"
+msgstr "黒人 12歳未満および50歳以上"
+
+msgid "Native White Males"
+msgstr "米国生まれの白人男性"
+
+msgid "Native White Females"
+msgstr "米国生まれの白人女性"
+
+msgid "Native Colored Males"
+msgstr "米国生まれの有色男性"
+
+msgid "Native Colored Females"
+msgstr "米国生まれの有色女性"
+
+msgid "Foreign Males"
+msgstr "外国生まれの男性"
+
+msgid "Foreign Females"
+msgstr "外国生まれの女性"
+
+msgid "Male Children 5 and Under"
+msgstr "5歳以下の男児"
+
+msgid "Female Children 5 and Under"
+msgstr "5歳以下の女児"
+
+msgid "Males 5 to 20 Years of Age"
+msgstr "5-20歳の男性"
+
+msgid "Females 5 to 20 Years of Age"
+msgstr "5-20歳の女性"
+
+msgid "Males 20 to 60 Years of Age"
+msgstr "20-60歳の男性"
+
+msgid "Females 20 to 60 Years of Age"
+msgstr "20-60歳の女性"
+
+msgid "Males Over 60 Years of Age"
+msgstr "60歳以上の男性"
+
+msgid "Females Over 60 Years of Age"
+msgstr "60歳以上の女性"
+
+msgid "P.O."
+msgstr "郵便局"
+
+msgid "Sec."
+msgstr "区"
+
+msgid "T."
+msgstr "T."
+
+msgid "R."
+msgstr "R."
+
+msgid "No."
+msgstr "番号"
+
+msgid "St./Ave "
+msgstr "通り/アベニュー "
+
+msgid "Hotel or Institution"
+msgstr "ホテルまたは施設"
+
+msgid "Years in South Dakota"
+msgstr "サウスダコタ州居住年数"
+
+msgid "Years in United States"
+msgstr "米国居住年数"
+
+msgid "Birthplace of Father"
+msgstr "父親の出生地"
+
+msgid "Birthplace of Mother"
+msgstr "母親の出生地"
+
+msgid "Black"
+msgstr "黒人"
+
+msgid "Red"
+msgstr "赤人種"
+
+msgid "Yellow"
+msgstr "黄色人種"
+
+msgid "Divorced"
+msgstr "離婚"
+
+msgid "Can Read"
+msgstr "読み書き可"
+
+msgid "Can't Read"
+msgstr "読み書き不能"
+
+msgid "Can Write"
+msgstr "書き書き可"
+
+msgid "Can't Write"
+msgstr "書き書き不能"
+
+msgid "Do you own your home or farm"
+msgstr "自宅または農場を所有していますか"
+
+msgid "Ancestry"
+msgstr "祖先"
+
+msgid "Father's birthplace"
+msgstr "父親の出生地"
+
+msgid "Mother's birthplace"
+msgstr "母親の出生地"
+
+msgid "Extent of Education"
+msgstr "教育程度"
+
+msgid "Graduate of"
+msgstr "卒業"
+
+msgid "Maiden name of wife"
+msgstr "妻の旧姓"
+
+msgid "Year married"
+msgstr "結婚年"
+
+msgid "Church affiliation"
+msgstr "教会所属"
+
+msgid "If Foreign Born, are you Naturalized"
+msgstr "外国生まれの場合、帰化していますか"
+
+msgid "Years in S.D."
+msgstr "サウスダコタ州居住年数"
+
+msgid "Division"
+msgstr "師団"
+
+msgid "Male under 21"
+msgstr "21歳未満の男性"
+
+msgid "Male over 21"
+msgstr "21歳以上の男性"
+
+msgid "Female under 21"
+msgstr "21歳未満の女性"
+
+msgid "Female over 21"
+msgstr "21歳以上の女性"
+
+msgid "Town/City"
+msgstr "町/都市"
+
+msgid "Heads of Families"
+msgstr "世帯主"
+
+msgid "White males"
+msgstr "白人男性"
+
+msgid "White females"
+msgstr "白人女性"
+
+msgid "Colored males"
+msgstr "有色男性"
+
+msgid "Colored females"
+msgstr "有色女性"
+
+msgid "Deaf & Dumb"
+msgstr "聾唖"
+
+msgid "Foreign Birth"
+msgstr "外国生まれ"
+
+msgid "Inhabitants of"
+msgstr "居住者"
+
+msgid "of"
+msgstr "の"
+
+msgid "Nativity - United States"
+msgstr "出生 - 米国"
+
+msgid "Nativity - Germany"
+msgstr "出生 - ドイツ"
+
+msgid "Nativity - Great Britain"
+msgstr "出生 - イギリス"
+
+msgid "Nativity - Ireland"
+msgstr "出生 - アイルランド"
+
+msgid "Nativity - France"
+msgstr "出生 - フランス"
+
+msgid "Nativity - British America"
+msgstr "出生 - 英領アメリカ"
+
+msgid "Nativity - Scandinavian"
+msgstr "出生 - スカンジナビア"
+
+msgid "Nativity - Holland"
+msgstr "出生 - オランダ"
+
+msgid "Nativity - All other countries"
+msgstr "出生 - その他の国"
+
+msgid "Residing in the"
+msgstr "居住"
+
+msgid "Co."
+msgstr "郡"
+
+msgid "Reg't."
+msgstr "連隊"
+
+msgid "State or Vessel"
+msgstr "州または艦艇"
+
+msgid "Parents place of birth"
+msgstr "両親の出生地"
+
+msgid "Owned/Rented"
+msgstr "所有/賃貸"
+
+msgid "Free/Mortgaged"
+msgstr "完全所有/抵当付き"
+
+msgid "Farm/House"
+msgstr "農場/住宅"
+
+msgid "Certificate Number"
+msgstr "証明書番号"
+
+msgid "Entry Number"
+msgstr "登録番号"
+
+msgid "Date Registered"
+msgstr "登録日"
+
+msgid "Registrar"
+msgstr "登録官"
+
+msgid "Twin, triplet or other"
+msgstr "双子、三つ子、その他"
+
+msgid "No. in order of birth"
+msgstr "出生順序番号"
+
+msgid "Legitimate"
+msgstr "嫡出"
+
+msgid "Date of birth"
+msgstr "生年月日"
+
+msgid "Place of Record"
+msgstr "記録場所"
+
+msgid "Book/Volume"
+msgstr "書籍/巻"
+
+msgid "Race/Color"
+msgstr "人種/色"
+
+msgid ""
+"STOP! If you want this record to be attached to the Parents move to Father."
+msgstr "停止！この記録を両親に添付したい場合は、父親に移動してください。"
+
+msgid "Mother (Maiden Name)"
+msgstr "母親 (旧姓）"
+
+msgid "Residence of Parents"
+msgstr "両親の住所"
+
+msgid "By Whom Reported"
+msgstr "申告者"
+
+msgid "Date Recorded"
+msgstr "記録日"
+
+msgid "License No."
+msgstr "許可証番号"
+
+msgid "Date of Marriage"
+msgstr "結婚日"
+
+msgid "Married by"
+msgstr "執り行った者"
+
+msgid "Place of Marriage"
+msgstr "結婚場所"
+
+msgid "Consent given by"
+msgstr "同意者"
+
+msgid "Bond/Licence"
+msgstr "証書/許可証"
+
+msgid "Length of Residence"
+msgstr "居住期間"
+
+msgid "Served in U.S. Military"
+msgstr "米軍に従軍"
+
+msgid "Spouse's Name"
+msgstr "配偶者の名前"
+
+msgid "Birth date of deceased"
+msgstr "故人の生年月日"
+
+msgid "Industry or Business"
+msgstr "産業または事業"
+
+msgid "Name of employer"
+msgstr "雇用主名"
+
+msgid "Date last worked"
+msgstr "最終就業日"
+
+msgid "Years in this occupation"
+msgstr "この職業の年数"
+
+msgid "Education Level"
+msgstr "教育レベル"
+
+msgid "Social Security No."
+msgstr "社会保障番号"
+
+msgid "Place of Burial"
+msgstr "埋葬場所"
+
+msgid "Date of Burial"
+msgstr "埋葬日"
+
+msgid "Residence Place"
+msgstr "住所"
+
+msgid "Burial Date"
+msgstr "埋葬日"
+
+msgid "Burial Place"
+msgstr "埋葬場所"
+
+msgid "Congressional District"
+msgstr "議会地区"
+
+msgid "in the Counties of"
+msgstr "郡内"
+
+msgid "in the month of"
+msgstr "月"
+
+msgid "Age 1 July 1863"
+msgstr "1863年7月1日時点の年齢"
+
+msgid "White or Colored"
+msgstr "白人または有色人"
+
+msgid "Former Military Service"
+msgstr "以前の軍役"
+
+msgid "Station Headquarters"
+msgstr "駐屯地本部"
+
+msgid "Congr. Dist. of"
+msgstr "議会地区"
+
+msgid "Card (A, B, or C)"
+msgstr "カード (A、B、またはC）"
+
+msgid "Serial No."
+msgstr "通し番号"
+
+msgid "Registration No."
+msgstr "登録番号"
+
+msgid "Order No."
+msgstr "命令番号"
+
+msgid "Age in yrs."
+msgstr "年齢 (歳）"
+
+msgid "Home Address"
+msgstr "自宅住所"
+
+msgid "Natural-born, Naturalized Citizen, Alien, Noncitizen or citizen Indian"
+msgstr "生来の市民、帰化市民、外国人、非市民、または市民インディアン"
+
+msgid "If not a citizen, of what nation are you a citizen or subject?"
+msgstr "市民でない場合、どの国の市民または臣民ですか？"
+
+msgid "Employer's Name & address"
+msgstr "雇用主名と住所"
+
+msgid "Nearest Relative"
+msgstr "最寄りの親族"
+
+msgid "Dependants & Address"
+msgstr "扶養家族と住所"
+
+msgid ""
+"Have you a father, mother, wife, child under 12, or a sister or brother "
+"under 12, solely dependent on your support (specify which)?"
+msgstr ""
+"あなたの扶養に完全に依存している父親、母親、妻、12歳未満の子供、または12歳未"
+"満の姉妹・兄弟がいますか (該当するものを指定）？"
+
+msgid "What military service have you had? (Branch, Years, Nation or State)"
+msgstr "どのような軍役経験がありますか？ (服務種別、年数、国または州）"
+
+msgid "Do you claim exemption from draft (specify grounds)"
+msgstr "徴兵免除を主張しますか (理由を指定）"
+
+msgid "Race "
+msgstr "人種 "
+
+msgid "Build / Weight"
+msgstr "体格 / 体重"
+
+msgid "Hair Color"
+msgstr "髪の色"
+
+msgid "Bald"
+msgstr "禿げ"
+
+msgid "Disability"
+msgstr "障害"
+
+msgid "Place of Registration"
+msgstr "登録場所"
+
+msgid "Date of Registration"
+msgstr "登録日"
+
+msgid "Serial Number"
+msgstr "通し番号"
+
+msgid "Order Number"
+msgstr "命令番号"
+
+msgid "Registration Card"
+msgstr "登録カード"
+
+msgid ""
+"Found in lower left corner\n"
+"      D.S.S. Form 1\n"
+"        (Men 21 - 31)\n"
+"      D.S.S. Form 1 (Rev. 6-9-41)\n"
+"        (Men who turned 21 since 1st registration)\n"
+"      D.S.S. Form 1 (Rev. 1/1/42)\n"
+"        (Men born Feb 17, 1897 to Dec 31 1921)\n"
+"      D.S.S. Form 1 (Rev. 4/1/42)\n"
+"        (Men 45-64)\n"
+"      D.S.S. Form 1 (Rev. 6/1/42)\n"
+"        (Men 18-20)\n"
+"      D.S.S. Form 1 (Rev. 11/16/42)\n"
+"        (Men who turned 18 since\n"
+"         previous registration)"
+msgstr ""
+"左下隅に記載\n"
+"      D.S.S. Form 1\n"
+"         (男性 21-31歳）\n"
+"      D.S.S. Form 1 (Rev. 6-9-41)\n"
+"         (最初の登録以降に21歳になった男性）\n"
+"      D.S.S. Form 1 (Rev. 1/1/42)\n"
+"         (1897年2月17日から1921年12月31日生まれの男性）\n"
+"      D.S.S. Form 1 (Rev. 4/1/42)\n"
+"         (男性 45-64歳）\n"
+"      D.S.S. Form 1 (Rev. 6/1/42)\n"
+"         (男性 18-20歳）\n"
+"      D.S.S. Form 1 (Rev. 11/16/42)\n"
+"         (前回の登録以降に18歳になった男性）"
+
+msgid "(1) First, Middle, Last"
+msgstr "(1) 名、ミドルネーム、姓"
+
+msgid "Place of Residence"
+msgstr "住所"
+
+msgid ""
+"(2) Address or Place of Residence\n"
+" No. and street or R.F.D. No., Town, County, State"
+msgstr ""
+"(2) 住所\n"
+" 番地と通りまたはR.F.D.番号、町、郡、州"
+
+msgid "Mailing Address"
+msgstr "郵送先住所"
+
+msgid ""
+" Not used on D.S.S. Form 1\n"
+" (3) Used on all other forms"
+msgstr ""
+" D.S.S. Form 1では使用されません\n"
+" (3) その他のすべてのフォームで使用"
+
+msgid "Telephone"
+msgstr "電話"
+
+msgid ""
+"(3) On D.S.S. Form 1\n"
+"(4) On all other forms"
+msgstr ""
+"(3) D.S.S. Form 1の場合\n"
+"(4) その他のすべてのフォームの場合"
+
+msgid ""
+"(4) On D.S.S. Form 1\n"
+"(5) On all other forms"
+msgstr ""
+"(4) D.S.S. Form 1の場合\n"
+"(5) その他のすべてのフォームの場合"
+
+msgid "(Below Age in Years)"
+msgstr "(年齢の下)"
+
+msgid ""
+"(5) On D.S.S. Form 1\n"
+"(6) On all other forms"
+msgstr ""
+"(5) D.S.S. Form 1の場合\n"
+"(6) その他のすべてのフォームの場合"
+
+msgid "Country of Citizenship"
+msgstr "市民権の国"
+
+msgid ""
+"(6) On D.S.S. Form 1\n"
+"Not used on other forms"
+msgstr ""
+"(6) D.S.S. Form 1の場合\n"
+"他のフォームでは使用されません"
+
+msgid "Who will always know your address (Name & Address)"
+msgstr "常にあなたの住所を知っている人 (名前と住所）"
+
+msgid ""
+"(7 & 9) On D.S.S. Form 1\n"
+"(7) On all but D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) On D.S.S. Form 1 (Rev. 6-9-41)"
+msgstr ""
+"(7 & 9) D.S.S. Form 1の場合\n"
+"(7) D.S.S. Form 1 (Rev. 6-9-41) 以外のすべて\n"
+"(8) D.S.S. Form 1 (Rev. 6-9-41) の場合"
+
+msgid "Relationship "
+msgstr "関係 "
+
+msgid "(8) Only on D.S.S. Form 1"
+msgstr "(8) D.S.S. Form 1のみ"
+
+msgid "Occupation "
+msgstr "職業 "
+
+msgid "(7) Only on D.S.S. Form 1 (Rev. 6-9-41)"
+msgstr "(7) D.S.S. Form 1 (Rev. 6-9-41) のみ"
+
+msgid ""
+"(10) On D.S.S. Form 1\n"
+"(9) On D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(8) on all others forms"
+msgstr ""
+"(10) D.S.S. Form 1の場合\n"
+"(9) D.S.S. Form 1 (Rev. 6-9-41) の場合\n"
+"(8) その他のすべてのフォームの場合"
+
+msgid "Place of employment or business"
+msgstr "雇用先または事業の場所"
+
+msgid ""
+"(11) On D.S.S. Form 1\n"
+"(10) On D.S.S. Form 1 (Rev. 6-9-41)\n"
+"(9) on all others forms"
+msgstr ""
+"(11) D.S.S. Form 1の場合\n"
+"(10) D.S.S. Form 1 (Rev. 6-9-41) の場合\n"
+"(9) その他のすべてのフォームの場合"
+
+msgid ""
+"White\n"
+"Negro\n"
+"Oriental\n"
+"Indian\n"
+"Filipino"
+msgstr ""
+"白人\n"
+"黒人\n"
+"東洋人\n"
+"インディアン\n"
+"フィリピノ"
+
+msgid "Complexion"
+msgstr "肌の色"
+
+msgid ""
+"Sallow\n"
+"Light\n"
+"Ruddy\n"
+"Dark\n"
+"Freckled\n"
+"Light brown\n"
+"Dark brown\n"
+"Black"
+msgstr ""
+"浅黒い\n"
+"明るい\n"
+"赤みがかった\n"
+"濃い\n"
+"そばかすがある\n"
+"薄茶色\n"
+"濃い茶色\n"
+"黒色"
+
+msgid "Eyes"
+msgstr "目の色"
+
+msgid ""
+"Blue\n"
+"Gray\n"
+"Hazel\n"
+"Brown\n"
+"Black"
+msgstr ""
+"青\n"
+"灰色\n"
+"ヘーゼル\n"
+"茶色\n"
+"黒"
+
+msgid "Hair"
+msgstr "髪の色"
+
+msgid ""
+"Blonde\n"
+"Red\n"
+"Brown\n"
+"Black\n"
+"Gray\n"
+"Bald"
+msgstr ""
+"ブロンド\n"
+"赤毛\n"
+"茶色\n"
+"黒\n"
+"灰色\n"
+"禿げ"
+
+msgid "Other characteristics"
+msgstr "その他の特徴"
+
+msgid "Date entered"
+msgstr "入隊日"
+
+msgid "Place entered"
+msgstr "入隊場所"
+
+msgid "Term of enlistment"
+msgstr "入隊期間"
+
+msgid "Eye color"
+msgstr "目の色"
+
+msgid "Hair color"
+msgstr "髪の色"
+
+msgid "Rank in"
+msgstr "入隊時の階級"
+
+msgid "Branch"
+msgstr "軍種"
+
+msgid "Regiment/Unit/Ship"
+msgstr "連隊/部隊/艦艇"
+
+msgid "Service Number"
+msgstr "軍人番号"
+
+msgid "No. of enlistment"
+msgstr "入隊番号"
+
+msgid "Date discharged"
+msgstr "除隊日"
+
+msgid "Place discharged"
+msgstr "除隊場所"
+
+msgid "Rank out"
+msgstr "除隊時の階級"
+
+msgid "Industry/Employer"
+msgstr "産業/雇用主"
+
+msgid "Residents Status"
+msgstr "居住者のステータス"
+
+msgid "Amt"
+msgstr "郡"
+
+msgid "Town or City"
+msgstr "町または都市"
+
+msgid "Herred eller By"
+msgstr "地区または町"
+
+msgid "Sogn"
+msgstr "教区"
+
+msgid "Gade"
+msgstr "通り"
+
+msgid "Gift"
+msgstr "既婚"
+
+msgid "Alder"
+msgstr "年齢"
+
+msgid "Stilling i familien"
+msgstr "家族内での立場"
+
+msgid "Titel, Embed, Forretning, Håndværk"
+msgstr "肩書、役職、職業、手工業"
+
+msgid "Stilling, embede eller erhverv"
+msgstr "地位、役職、または職業"
+
+msgid "Where Born"
+msgstr "出生地"
+
+msgid "Fødested"
+msgstr "出生地"
+
+msgid "Erhverv"
+msgstr "職業"
+
+msgid "Trossamfund"
+msgstr "信条"
+
+msgid "Sted"
+msgstr "場所"
+
+msgid "Comments"
+msgstr "コメント"
+
+msgid "Bemærkninger"
+msgstr "備考"
+
+msgid "Place of Work"
+msgstr "勤務地"
+
+msgid "Arbejdssted"
+msgstr "勤務地"
+
+msgid "Fødselsdato"
+msgstr "生年月日"
+
+msgid "Years at current residence"
+msgstr "現住所での居住年数"
+
+msgid "År tilflyttet"
+msgstr "転入年"
+
+msgid "Previous residence"
+msgstr "以前の住所"
+
+msgid "Tilflyttet fra"
+msgstr "転入元"
+
+msgid "År gift"
+msgstr "結婚年"
+
+msgid "Children Living"
+msgstr "存命の子供"
+
+msgid "Levende børn"
+msgstr "存命の子供"
+
+msgid "Children Dead"
+msgstr "死亡した子供"
+
+msgid "Døde børn"
+msgstr "死亡した子供"
+
+msgid "Køn"
+msgstr "性別"
+
+msgid "Year stayed in parish"
+msgstr "教区滞在年"
+
+msgid "Hvilket aar taget ophold i sognet"
+msgstr "教区に滞在を開始した年"
+
+msgid "Previous Residence"
+msgstr "以前の住所"
+
+msgid "Sidste bopæl inden tilflytning"
+msgstr "転入前の最後の住所"
+
+msgid "Bemærkning"
+msgstr "備考"
+
+msgid "Income"
+msgstr "収入"
+
+msgid "Indkomst"
+msgstr "収入"
+
+msgid "Assets"
+msgstr "資産"
+
+msgid "Formue"
+msgstr "資産"
+
+msgid "State Tax"
+msgstr "国税"
+
+msgid "Statsskat"
+msgstr "国税"
+
+msgid "Council"
+msgstr "地方税"
+
+msgid "Kommuneskat"
+msgstr "地方税"
+
+msgid "Residence on 5 Nov 1924"
+msgstr "1924年11月5日の住所"
+
+msgid "Bopæl 5 nov 1924"
+msgstr "1924年11月5日の住所"
+
+msgid "Stay on 5 Nov 1929"
+msgstr "1929年11月5日の滞在"
+
+msgid "Ophold 5 nov 1929"
+msgstr "1929年11月5日の滞在"
+
+msgid "Date Married"
+msgstr "結婚日"
+
+msgid "Dato gift"
+msgstr "結婚日"
+
+msgid "Event Place (Original)"
+msgstr "イベント場所 (原本）"
+
+msgid "Birth Year (Estimated)"
+msgstr "生年 (推定）"
+
+msgid "Spouse's Gender"
+msgstr "配偶者の性別"
+
+msgid "Spouse's Age"
+msgstr "配偶者の年齢"
+
+msgid "Spouse's Birth Year (Estimated)"
+msgstr "配偶者の生年 (推定）"
+
+msgid "Spouse's Father's Name"
+msgstr "配偶者の父親の名前"
+
+msgid "Spouse's Mother's Name"
+msgstr "配偶者の母親の名前"
+
+msgid "Record Number"
+msgstr "レコード番号"
+
+msgid "Volume"
+msgstr "巻"
+
+msgid "Volume Beginning Year"
+msgstr "巻の開始年"
+
+msgid "Volume Ending Year"
+msgstr "巻の終了年"
+
+msgid "Can read and write"
+msgstr "読み書き可"
+
+msgid "Military"
+msgstr "軍役"
+
+msgid "Taxes"
+msgstr "税金"
+
+msgid "Type of roof"
+msgstr "屋根の種類"
+
+msgid "Arrived since"
+msgstr "以来の到着"
+
+msgid "Registration District"
+msgstr "登録地区"
+
+msgid "Administrative Area"
+msgstr "行政区域"
+
+msgid "County/Administrative Area"
+msgstr "郡/行政区域"
+
+msgid "Banns/Licence"
+msgstr "結婚予告/許可証"
+
+msgid "Deceased"
+msgstr "故人"
+
+msgid "Maiden surname of woman who was married"
+msgstr "結婚した女性の旧姓"
+
+msgid "Usual Address"
+msgstr "通常の住所"
+
+msgid "City or Borough"
+msgstr "都市または特別区"
+
+msgid "Parish or Township"
+msgstr "教区またはタウンシップ"
+
+msgid "NAMES of each Person who abode therein the preceding Night."
+msgstr "前夜そこに居住していた各人の名前。"
+
+msgid ""
+"AGE, rounded down to the nearest five years for those aged fifteen or over."
+msgstr "年齢 (15歳以上の場合は5年単位で切り捨て）。"
+
+msgid "PROFESSION, TRADE, EMPLOYMENT or of INDEPENDENT MEANS."
+msgstr "職業、業種、就業、または自営。"
+
+msgid ""
+"Whether Born in same County (Y or N), Scotland (S), Ireland (I) or Foreign "
+"Parts (P)."
+msgstr ""
+"同一郡出身か (Y/N)、スコットランド (S)、アイルランド (I)、または海外 (P)。"
+
+msgid "Ecclesiastical District"
+msgstr "教会管区"
+
+msgid ""
+"Name and Surname of each Person who abode in the house, on the Night of the "
+"30th March, 1851"
+msgstr "1851年3月30日の夜に家に居住していた各人の姓名"
+
+msgid "Relation to Head of Family"
+msgstr "世帯主との関係"
+
+msgid "Rank, Profession or Occupation"
+msgstr "階級、職業、または就業"
+
+msgid "Whether Blind or Deaf and Dumb"
+msgstr "盲目または聾唖か"
+
+msgid "City or Municipal Borough"
+msgstr "都市または市特別区"
+
+msgid "Municipal Ward"
+msgstr "市区"
+
+msgid "Parliamentary Borough"
+msgstr "議会特別区"
+
+msgid "Hamlet or Tything"
+msgstr "小村または小地区"
+
+msgid "Name and Surname of each Person"
+msgstr "各人の姓名"
+
+msgid "Rank, Profession of Occupation"
+msgstr "階級、職業、または就業"
+
+msgid "Whether Blind, or Deaf-and-Dumb"
+msgstr "盲目、または聾唖か"
+
+msgid "Civil Parish or Township"
+msgstr "行政教区またはタウンシップ"
+
+msgid "Village or Hamlet"
+msgstr "村または小村"
+
+msgid "Local Board or Improvement Commissioners District"
+msgstr "地方委員会または改良委員地区"
+
+msgid "NAME and Surname of each Person"
+msgstr "各人の姓名"
+
+msgid "RELATION to Head of Family"
+msgstr "世帯主との関係"
+
+msgid "CONDITION"
+msgstr "状態"
+
+msgid "AGE of"
+msgstr "年齢"
+
+msgid "Rank, Profession or OCCUPATION"
+msgstr "階級、職業、または就業"
+
+msgid ""
+"Whether\n"
+"1. Deaf-and-Dumb\n"
+"2. Blind\n"
+"3. Imbecile or Idiot\n"
+"4. Lunatic"
+msgstr ""
+"該当する場合:\n"
+"1. 聾唖\n"
+"2. 盲目\n"
+"3. 低能または白痴\n"
+"4. 精神異常"
+
+msgid "Town, Village or Hamlet"
+msgstr "町、村、または小村"
+
+msgid "Urban Sanitary District"
+msgstr "都市衛生地区"
+
+msgid "Rural Sanitary District"
+msgstr "地方衛生地区"
+
+msgid "Ecclesiastical Parish or District"
+msgstr "教会教区または地区"
+
+msgid "CONDITION as to Marriage"
+msgstr "婚姻状態"
+
+msgid "AGE last Birthday of"
+msgstr "最終誕生日の年齢"
+
+msgid ""
+"If\n"
+"(1) Deaf-and-Dumb\n"
+"(2) Blind\n"
+"(3) Imbecile or Idiot\n"
+"(4) Lunatic"
+msgstr ""
+"該当する場合:\n"
+"(1) 聾唖\n"
+"(2) 盲目\n"
+"(3) 低能または白痴\n"
+"(4) 精神異常"
+
+msgid "Administrative County"
+msgstr "行政郡"
+
+msgid "Civil Parish"
+msgstr "行政教区"
+
+msgid "Municipal Borough"
+msgstr "市特別区"
+
+msgid "Parliamentary Borough or Division"
+msgstr "議会特別区または区"
+
+msgid "PROFESSION or OCCUPATION"
+msgstr "職業または就業"
+
+msgid "Neither"
+msgstr "どちらでもない"
+
+msgid "Neither Employer nor Employed"
+msgstr "雇用主でも被雇用者でもない"
+
+msgid ""
+"If\n"
+"(1) Deaf-and-Blind\n"
+"(2) Blind\n"
+"(3) Lunatic, Imbecile or Idiot"
+msgstr ""
+"該当する場合:\n"
+"(1) 聾唖盲目\n"
+"(2) 盲目\n"
+"(3) 精神異常、低能、または白痴"
+
+msgid "Ecclesiastical Parish"
+msgstr "教会教区"
+
+msgid "County Borough, Municipal Borough, or Urban District"
+msgstr "郡特別区、市特別区、または都市地区"
+
+msgid "Ward of Municipal Borough or of Urban District"
+msgstr "市特別区または都市地区の区"
+
+msgid "Rural District"
+msgstr "地方地区"
+
+msgid "Town or Village or Hamlet"
+msgstr "町、村、または小村"
+
+msgid "Condition as to Marriage"
+msgstr "婚姻状態"
+
+msgid "Age last Birthday of"
+msgstr "最終誕生日の年齢"
+
+msgid "PROFESSION OR OCCUPATION"
+msgstr "職業または就業"
+
+msgid "Work Type"
+msgstr "仕事の種類"
+
+msgid "Employer, Worker or Own Account"
+msgstr "雇用主、労働者、または自営"
+
+msgid "At Home"
+msgstr "自宅"
+
+msgid "If Working at Home"
+msgstr "自宅で働く場合"
+
+msgid ""
+"If\n"
+"(1) Deaf and Dumb\n"
+"(2) Blind\n"
+"(3) Lunatic\n"
+"(4) Imbecile, feeble-minded"
+msgstr ""
+"該当する場合:\n"
+"(1) 聾唖\n"
+"(2) 盲目\n"
+"(3) 精神異常\n"
+"(4) 低能、薄弱"
+
+msgid "Registration Sub-District"
+msgstr "登録小区"
+
+msgid "Enumeration District"
+msgstr "調査区"
+
+msgid "Number of Rooms"
+msgstr "部屋数"
+
+msgid "NAME AND SURNAME"
+msgstr "姓名"
+
+msgid "RELATIONSHIP to Head of Family"
+msgstr "世帯主との関係"
+
+msgid "AGE (last Birthday)"
+msgstr "年齢 (最終誕生日）"
+
+msgid ""
+"\"Single,\" \"Married,\" \"Widower,\" or \"Widow,\" for all persons aged 15 "
+"years and upwards."
+msgstr "15歳以上の全員について「未婚」「既婚」「寡夫」「寡婦」。"
+
+msgid "Completed Years the present Marriage has lasted."
+msgstr "現在の結婚が続いた満年数。"
+
+msgid "Children Total"
+msgstr "子供総数"
+
+msgid "Total Children Born Alive."
+msgstr "出生した子供の総数。"
+
+msgid "Children still Living."
+msgstr "まだ存命の子供。"
+
+msgid "Children Died"
+msgstr "死亡した子供"
+
+msgid "Children who have Died."
+msgstr "死亡した子供。"
+
+msgid "Industry or Service with which worker is connected."
+msgstr "労働者が関連する産業またはサービス。"
+
+msgid "Whether Employer, Worker or Working on Own Account"
+msgstr "雇用主、労働者、または自営か"
+
+msgid "Whether Working at Home"
+msgstr "自宅で働くか"
+
+msgid "BIRTHPLACE of every Person."
+msgstr "各人の出生地。"
+
+msgid "NATIONALITY of every Person born in a Foreign Country."
+msgstr "外国生まれの各人の国籍。"
+
+msgid "INFIRMITY"
+msgstr "障害"
+
+msgid "NAME and SURNAME"
+msgstr "姓名"
+
+msgid "RELATIONSHIP to Head of Household"
+msgstr "世帯主との関係"
+
+msgid "AGE years"
+msgstr "年齢 (歳）"
+
+msgid "Age Months"
+msgstr "年齢 (月）"
+
+msgid "AGE months"
+msgstr "年齢 (月）"
+
+msgid "SEX"
+msgstr "性別"
+
+msgid "MARRIAGE or ORPHANHOOD"
+msgstr "結婚または孤児"
+
+msgid ""
+"If attending a School or any kind of Educational Institution for the purpose "
+"of receiving Instruction"
+msgstr "教育を受けるために学校または教育機関に通っている場合"
+
+msgid ""
+"State here the precise branch of Profession, Trade, Manufacture, Service, &c."
+msgstr "ここに職業、業種、製造、サービスなどの正確な分野を記入。"
+
+msgid "Number of living children"
+msgstr "存命の子供の数"
+
+msgid "Total number under sixteen years of age. If none write \"None.\""
+msgstr "16歳未満の総数。いない場合は「なし」と記入。"
+
+msgid "Ages of living children"
+msgstr "存命の子供の年齢"
+
+msgid "For each child place a X in the column corresponding to its age."
+msgstr "各子供について、年齢に対応する列にXを記入。"
+
+msgid "E.D. Letter Code"
+msgstr "調査区文字コード"
+
+msgid "Borough, U.D. or R.D."
+msgstr "特別区、都市地区、または地方地区"
+
+msgid "Registration District and Sub-district"
+msgstr "登録地区と小区"
+
+msgid "SURNAMES and OTHER NAMES."
+msgstr "姓とその他の名前。"
+
+msgid "OVSPI"
+msgstr "OVSPI"
+
+msgid "O, V, S, P or I"
+msgstr "O, V, S, P または I"
+
+msgid "M or F"
+msgstr "M または F"
+
+msgid "S, M, W or D."
+msgstr "S, M, W または D"
+
+msgid "PERSONAL OCCUPATION"
+msgstr "個人の職業"
+
+msgid "Instructions"
+msgstr "指示"
+
+msgid "See INSTRUCTIONS"
+msgstr "指示を参照"
+
+msgid "Language Spoken"
+msgstr "話される言語"
+
+msgid "LANGUAGE SPOKEN."
+msgstr "話される言語。"
+
+msgid "GROS Data"
+msgstr "GROSデータ"
+
+msgid "Born in County"
+msgstr "郡内出生"
+
+msgid "Foreigner, Born England or Ireland"
+msgstr "外国人、イングランドまたはアイルランド生まれ"
+
+msgid "Quoad Sacra Parish"
+msgstr "特別教区"
+
+msgid "Parliamentary Burgh"
+msgstr "議会バラ"
+
+msgid "Royal Burgh"
+msgstr "王立バラ"
+
+msgid "Town or Village"
+msgstr "町または村"
+
+msgid "House Schedule No"
+msgstr "住宅調査番号"
+
+msgid "Relation to Head"
+msgstr "世帯主との関係"
+
+msgid "Blind, or Deaf and Dumb"
+msgstr "盲目、または聾唖"
+
+msgid "No. Of Schedule"
+msgstr "調査番号"
+
+msgid "Road, Street, etc, and No. or Name of House"
+msgstr "道路、通りなど、および番地または住宅名"
+
+msgid "House Inhabited"
+msgstr "居住中の住宅"
+
+msgid "House U or B"
+msgstr "住宅 U または B"
+
+msgid "Rank, Profession, or Occupation"
+msgstr "階級、職業、または就業"
+
+msgid "Whether Blind, or Deaf and Dumb"
+msgstr "盲目、または聾唖か"
+
+msgid "No. of Children from 5 to 13 attending School"
+msgstr "5歳から13歳の就学児童数"
+
+msgid "WindowRooms"
+msgstr "窓のある部屋"
+
+msgid "No. of Rooms with one or more Windows"
+msgstr "窓が1つ以上ある部屋数"
+
+msgid "Police Burgh"
+msgstr "警察バラ"
+
+msgid "Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic"
+msgstr "該当する場合: 1. 聾唖 2. 盲目 3. 低能または白痴 4. 精神異常"
+
+msgid "School Board District"
+msgstr "教育委員会地区"
+
+msgid "School board District"
+msgstr "教育委員会地区"
+
+msgid "Parliamentary Division"
+msgstr "議会区"
+
+msgid "Municipal Burgh"
+msgstr "市バラ"
+
+msgid "Burgh Ward"
+msgstr "バラ区"
+
+msgid "Island"
+msgstr "島"
+
+msgid "Gaellic or G. & E."
+msgstr "ゲール語またはG. & E."
+
+msgid "Parish Ward"
+msgstr "教区区"
+
+msgid "Profession or Occupation"
+msgstr "職業または就業"
+
+msgid "Employer, Worker or on Own Account"
+msgstr "雇用主、労働者、または自営"
+
+msgid "Working at Home"
+msgstr "自宅で働く"
+
+msgid "District Electoral Division"
+msgstr "選挙区"
+
+msgid "No. on Form B"
+msgstr "様式Bの番号"
+
+msgid "\"Read and Write\", \"Read\" or \"Cannot Read\""
+msgstr "「読み書き可能」、「読み取り可能」、または「読み取り不可」"
+
+msgid ""
+"\"Irish\" or \"Irish & English\", in other cases no entry should be made"
+msgstr ""
+"「アイルランド語」または「アイルランド語と英語」、それ以外の場合は記入不要"
+
+msgid ""
+"\"Deaf and Dumb\", \"Dumb only\", \"Blind\", \"Imbecile or Idiot\", or "
+"\"Lunatic\""
+msgstr "「聾唖」「唖のみ」「盲目」「低能または白痴」「精神異常」"
+
+msgid "Poor Law Union"
+msgstr "救貧法連合"
+
+msgid "Barony"
+msgstr "男爵領"
+
+msgid "Urban District"
+msgstr "都市地区"
+
+msgid "Head of Family"
+msgstr "世帯主"
+
+msgid "Total Children"
+msgstr "子供総数"
+
+msgid "Children born alive to present Marriage"
+msgstr "現在の結婚で出生した子供"

@@ -1,0 +1,88 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "The Tool requires at least one tag to execute."
+msgstr "執行此工具至少需要一個標籤。"
+
+msgid "ERROR"
+msgstr "錯誤"
+
+msgid "Add/Remove"
+msgstr "新增／移除"
+
+msgid "Add or remove tags from objects."
+msgstr "為物件新增或移除標籤。"
+
+msgid "Add Tags"
+msgstr "新增標籤"
+
+msgid "Remove Tags"
+msgstr "移除標籤"
+
+msgid "General options"
+msgstr "一般選項"
+
+msgid "Choose a category."
+msgstr "選擇類別。"
+
+msgid "Choose Tag"
+msgstr "選擇標籤"
+
+msgid "Choose a tag to remove."
+msgstr "選擇要移除的標籤。"
+
+msgid "Persons"
+msgstr "人物"
+
+msgid "Filter options"
+msgstr "篩選選項"
+
+#, python-format
+msgid "All %s"
+msgstr "所有 %s"
+
+msgid "Add/Remove Tag Tool"
+msgstr "新增／移除標籤工具"
+
+msgid ""
+"Unable to run the tool. Please check if your database contains tags, filters "
+"and objects."
+msgstr "無法執行此工具。請檢查您的資料庫是否包含標籤、篩選器和物件。"
+
+msgid "WARNING"
+msgstr "警告"
+
+#, python-format
+msgid "No %s objects were found in database."
+msgstr "資料庫中找不到 %s 物件。"
+
+msgid "Process tags..."
+msgstr "正在處理標籤..."
+
+msgid "added"
+msgstr "已新增"
+
+msgid "removed"
+msgstr "已移除"
+
+msgid "Tag '{}' was {} to {} {} objects.\n"
+msgstr "標籤「{}」的操作為「{}」，共處理 {} 個 {} 物件。\n"
+
+msgid "INFO"
+msgstr "資訊"
+
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr "為人物、事件等群組新增或移除標籤。"

@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "AncestorFill"
+msgstr "祖先填補"
+
+msgid "Report on the filling of the tree"
+msgstr "家族樹完整度報告"
+
+#, python-format
+msgid "AncestorFill for %s"
+msgstr "%s 的祖先填補"
+
+msgid "Generation "
+msgstr "世代 "
+
+msgid "Number of Ancestors found "
+msgstr "找到的祖先人數 "
+
+msgid "Percent of Ancestors found "
+msgstr "已找到祖先的百分比 "
+
+msgid "Number of unique Ancestors found "
+msgstr "找到的不重複祖先人數 "
+
+msgid "Number of theoretical Ancestors "
+msgstr "理論上的祖先人數 "
+
+msgid "Pedigree Collapse "
+msgstr "祖先重複率 "
+
+msgid "Total Number of Ancestors found "
+msgstr "找到的祖先總人數 "
+
+msgid "Total Number of unique Ancestors found "
+msgstr "找到的不重複祖先總數 "
+
+msgid ""
+"\n"
+"\n"
+"Note: This report only counts ancestors with a parent-child relationship of "
+"birth."
+msgstr ""
+"\n"
+"\n"
+"注意：本報告只計算親子關係為親生的祖先。"
+
+msgid "Filled digit"
+msgstr "百分比小數位數"
+
+msgid ""
+"The number of digits after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr "報告中各世代已找到祖先的百分比要顯示的小數位數"
+
+msgid "Collapsed digit"
+msgstr "重複率小數位數"
+
+msgid ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+msgstr "報告中祖先重複率要顯示的小數位數"
+
+msgid "Display theoretical"
+msgstr "顯示理論值"
+
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr "是否依世代顯示理論上的祖先人數"
+
+msgid "The style used for the title of the page."
+msgstr "頁面標題使用的樣式。"

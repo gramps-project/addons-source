@@ -1,0 +1,366 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "lxml"
+msgstr "lxml"
+
+msgid "Gramplet for testing lxml and XSLT"
+msgstr "用於測試 lxml 及 XSLT 的 Gramplet"
+
+msgid "etree"
+msgstr "etree"
+
+msgid "Gramplet for testing etree with Gramps XML"
+msgstr "用於透過 Gramps XML 測試 etree 的 Gramplet"
+
+msgid "Invalid timestamp"
+msgstr "時間戳記無效"
+
+msgid ""
+"Select a Gramps XML file and\n"
+" click on the Run button."
+msgstr ""
+"選取 Gramps XML 檔案，然後\n"
+"按一下 [執行] 按鈕。"
+
+msgid "No file loaded..."
+msgstr "未載入檔案..."
+
+msgid "Number of additions and modifications back"
+msgstr "要回溯的新增與修改數量"
+
+msgid "Print more informations on console"
+msgstr "在主控台顯示更多資訊"
+
+msgid "Is it a compressed .gramps?"
+msgstr "這是壓縮的 .gramps 檔案嗎？"
+
+#, python-format
+msgid "Cannot uncompress \"%s\""
+msgstr "無法解壓縮 \"%s\""
+
+msgid "Is it a .gramps?"
+msgstr "這是 .gramps 檔案嗎？"
+
+#, python-format
+msgid "Cannot copy \"%s\""
+msgstr "無法複製「%s」"
+
+msgid "Sorry, no support for your OS yet!"
+msgstr "抱歉，尚未支援您的作業系統！"
+
+msgid "Parsing issue"
+msgstr "解析問題"
+
+#, python-format
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "無法解析「%(file)s」的內容"
+
+#, python-format
+msgid "XML: Last %s additions and modifications since %s, were on :\n"
+msgstr "XML：最近 %s 次新增與修改 (自 %s 起) 的時間如下：\n"
+
+#, python-format
+msgid ""
+"\n"
+"XML: Number of records and relations : \t%s\n"
+"\n"
+msgstr ""
+"\n"
+"XML：記錄與關聯數量：\t%s\n"
+"\n"
+
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"標籤數：\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%06s\n"
+msgstr ""
+"標籤數：\n"
+"\t\t\t%06s\n"
+
+#, python-format
+msgid ""
+"Number of  events : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"事件數：\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%06s\t|\t(%06s) and (%06s)* surnames\n"
+msgstr ""
+"人物數：\n"
+"\t\t\t%06s\t|\t(%06s) 及 (%06s)* 個姓氏\n"
+
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"人物數：\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of families : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"家庭數量：\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of sources : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"來源數：\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of citations : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"引用數量：\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of places : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"地點數：\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of media objects : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"媒體物件數量： \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of repositories : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"存放庫數量： \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"Number of notes : \n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+msgstr ""
+"備註數：\n"
+"\t\t\t%06s\t|\t(%06s)*\n"
+
+#, python-format
+msgid ""
+"\n"
+"XML: Number of additional records and relations: \t%s\n"
+msgstr ""
+"\n"
+"XML：額外記錄與關係數：\t%s\n"
+
+#, python-format
+msgid ""
+"* loaded Family Tree base:\n"
+" \"%s\"\n"
+msgstr ""
+"* 已載入的家族樹資料庫：\n"
+" 「%s」\n"
+
+msgid "Where is gzip?"
+msgstr "gzip 在哪裡？"
+
+msgid "\"gzip\" is missing"
+msgstr "缺少「gzip」"
+
+msgid "Missing python3 lxml"
+msgstr "缺少 python3 lxml"
+
+msgid "Please, try to install \"python3 lxml\" package."
+msgstr "請嘗試安裝「python3 lxml」套件。"
+
+msgid "xmllint options"
+msgstr "xmllint 選項"
+
+msgid "debug places"
+msgstr "地點偵錯"
+
+msgid "debug xml"
+msgstr "XML 偵錯"
+
+msgid "XSD validation (lxml)"
+msgstr "XSD 驗證 (lxml)"
+
+#, python-format
+msgid "xmllint: skip DTD validation for \"%(file)s\""
+msgstr "xmllint：略過「%(file)s」的 DTD 驗證"
+
+#, python-format
+msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
+msgstr "xmllint：略過「%(file)s」的 RelaxNG 驗證"
+
+msgid "Custom \"test.xml\" file"
+msgstr "自訂 \"test.xml\" 檔案"
+
+msgid "Please try to fix \"test.xml\""
+msgstr "請嘗試修正「test.xml」"
+
+msgid "RelaxNG validation"
+msgstr "RelaxNG 驗證"
+
+#, python-format
+msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
+msgstr "無法透過 RelaxNG 結構描述驗證「%(file)s」"
+
+msgid "File issue"
+msgstr "檔案問題"
+
+#, python-format
+msgid "Cannot parse \"%(file)s\" via etree"
+msgstr "無法透過 etree 解析「%(file)s」"
+
+msgid "Parsing file..."
+msgstr "正在解析檔案..."
+
+#, python-format
+msgid " - (%(lang)s)"
+msgstr " - (%(lang)s)"
+
+#, python-format
+msgid " - (? or %(lang)s)"
+msgstr " - （? 或 %(lang)s）"
+
+msgid "Missing header"
+msgstr "缺少標頭"
+
+msgid ""
+"Not a valid .gramps.\n"
+"Cannot run the gramplet...\n"
+"Please, try to use a .gramps\n"
+"generated by Gramps 6.x."
+msgstr ""
+"不是有效的 .gramps 檔案。\n"
+"無法執行 Gramplet...\n"
+"請嘗試使用 Gramps 6.x\n"
+"產生的 .gramps 檔案。"
+
+msgid "0"
+msgstr "0"
+
+msgid "File parsed with"
+msgstr "檔案解析工具"
+
+msgid "File was generated on "
+msgstr "檔案產生於 "
+
+msgid " by Gramps "
+msgstr " 由 Gramps "
+
+msgid "Period: "
+msgstr "期間： "
+
+#, python-brace-format
+msgid "\t{number} surname"
+msgid_plural "\t{number} surnames; no frequency yet"
+msgstr[0] "\t{number} 姓氏；尚無頻率資料"
+
+#, python-brace-format
+msgid "\t{number} surname; no frequency yet"
+msgstr "\t{number} 個姓氏；尚無頻率資料"
+
+#, python-brace-format
+msgid "\t{number} place"
+msgid_plural "\t{number} places"
+msgstr[0] "\t{number} 個地點"
+
+#, python-brace-format
+msgid "\t{number} note"
+msgid_plural "\t{number} notes"
+msgstr[0] "\t{number} 個備註"
+
+#, python-brace-format
+msgid "\t{number} source"
+msgid_plural "\t{number} sources"
+msgstr[0] "\t{number} 個來源"
+
+msgid "Gallery.html"
+msgstr "Gallery.html"
+
+#, python-format
+msgid "1. Has generated a media index on \"%(file)s\".\n"
+msgstr "1. 已在「%(file)s」產生媒體索引。\n"
+
+msgid "XML SyntaxError"
+msgstr "XML 語法錯誤"
+
+msgid "Matches XSD schema."
+msgstr "符合 XSD 結構描述。"
+
+msgid "xmllint: skip DTD validation"
+msgstr "xmllint：略過 DTD 驗證"
+
+msgid "I am looking at ..."
+msgstr "我正在查看 ..."
+
+msgid "Content generated by Gramps"
+msgstr "由 Gramps 產生的內容"
+
+msgid "List of sources"
+msgstr "來源清單"
+
+msgid "Australia"
+msgstr "澳洲"
+
+msgid "Brazil"
+msgstr "巴西"
+
+msgid "India"
+msgstr "印度"
+
+msgid "Norway"
+msgstr "挪威"
+
+msgid "Portugal"
+msgstr "葡萄牙"
+
+#, python-format
+msgid "2. Has generated \"%s\".\n"
+msgstr "2. 已產生「%s」。\n"
+
+#, python-format
+msgid ""
+"Try to open\n"
+" \"%s\"\n"
+" into your preferred web navigator ..."
+msgstr ""
+"嘗試在您偏好的網頁瀏覽器中開啟\n"
+" 「%s」\n"
+" ..."

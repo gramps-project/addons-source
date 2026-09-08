@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,13 +12,130 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Graph View"
+msgstr "グラフビュー"
+
+msgid "Show IDs"
+msgstr "IDを表示"
+
+msgid "Show avatars"
+msgstr "アバターを表示"
+
+msgid "Highlight the home person"
+msgstr "ホームパーソンを強調表示"
+
+msgid "Show full dates"
+msgstr "完全な日付を表示"
+
+msgid "Show places"
+msgstr "場所を表示"
+
+msgid "Vertical: Top to Bottom"
+msgstr "垂直: 上から下"
+
+msgid "Vertical: Bottom to Top"
+msgstr "垂直: 下から上"
+
+msgid "Horizontal: Left to Right"
+msgstr "水平: 左から右"
+
+msgid "Horizontal: Right to Left"
+msgstr "水平: 右から左"
+
+msgid "Time Direction"
+msgstr "時間の方向"
+
+msgid "Limit number of people displayed (use 0 for unlimited)"
+msgstr "表示する人物数の制限 (0は無制限）"
+
+msgid "Person theme"
+msgstr "人物テーマ"
+
+msgid "Path color to home person"
+msgstr "ホームパーソンへのパス色"
+
+msgid "Font:"
+msgstr "フォント:"
+
+msgid "Avatars style"
+msgstr "アバタースタイル"
+
+msgid "PNG files"
+msgstr "PNGファイル"
+
+msgid "Male avatar:"
+msgstr "男性アバター:"
+
+msgid "Choose male avatar"
+msgstr "男性アバターを選択"
+
+msgid "Female avatar:"
+msgstr "女性アバター:"
+
+msgid "Choose female avatar"
+msgstr "女性アバターを選択"
+
+msgid "Unknown avatar:"
+msgstr "不明アバター:"
+
+msgid "Choose Unknown avatar"
+msgstr "不明アバターを選択"
+
+msgid "Other avatar:"
+msgstr "その他アバター:"
+
+msgid "Choose Other avatar"
+msgstr "その他アバターを選択"
+
+msgid "Active person border size"
+msgstr "アクティブな人の境界線のサイズ"
+
+msgid "Person border size"
+msgstr "人物の境界線のサイズ"
+
+msgid "Themes"
+msgstr "テーマ"
+
+msgid "Show animation"
+msgstr "アニメーションを表示"
+
+msgid "Animation speed (1..5 and 5 is the slower)"
+msgstr "アニメーション速度 (1..5、5が最も遅い）"
+
+msgid "Animation count (0..8 use 0 to turn off)"
+msgstr "アニメーションカウント (0..8、0はオフ）"
+
+msgid "Animation"
+msgstr "アニメーション"
+
+msgid "Search in all database"
+msgstr "全データベースを検索"
+
+msgid "Also apply search by all database."
+msgstr "全データベースによる検索も適用します。"
+
+msgid "Show person images"
+msgstr "人物画像を表示"
+
+msgid "Show persons thumbnails in search result list."
+msgstr "検索結果リストに人物のサムネイルを表示します。"
+
+msgid "Show bookmarked first"
+msgstr "ブックマークを先に表示"
+
+msgid "Show bookmarked persons first in search result list."
+msgstr "検索結果リストでブックマークされた人物を先に表示します。"
+
 msgid "Search"
 msgstr "検索"
+
+msgid "Select a dot file name"
+msgstr "dotファイル名を選択"
 
 msgid "Zoom in"
 msgstr "ズームイン"
@@ -26,12 +143,168 @@ msgstr "ズームイン"
 msgid "Zoom out"
 msgstr "ズームアウト"
 
+msgid "Zoom to original"
+msgstr "元のサイズにズーム"
+
+msgid "Zoom to best fit"
+msgstr "最適なサイズにズーム"
+
+msgid "Go to active person"
+msgstr "アクティブな人へ移動"
+
+msgid "Go to bookmark"
+msgstr "ブックマークへ移動"
+
+msgid "Center view on selected bookmark"
+msgstr "選択したブックマークにビューを中央揃え"
+
+msgid "Bookmarks for current graph"
+msgstr "現在のグラフのブックマーク"
+
+msgid "Other Bookmarks"
+msgstr "その他のブックマーク"
+
+msgid "Vertical spacing between generations"
+msgstr "世代間の垂直間隔"
+
+msgid "Horizontal spacing between generations"
+msgstr "世代間の水平間隔"
+
+msgid "Spacings"
+msgstr "間隔"
+
+msgid "All connected"
+msgstr "すべて接続"
+
+msgid ""
+"Show all connected persons limited by generation restrictions.\n"
+"Works slow, so don't set large generation values."
+msgstr ""
+"世代制限で制限されたすべての接続人物を表示します。\n"
+"動作が遅いため、大きな世代値を設定しないでください。"
+
+msgid "Add active person"
+msgstr "アクティブな人を追加"
+
+msgid "Call the bookmark editor"
+msgstr "ブックマークエディタを呼び出す"
+
+msgid ""
+"You don't have any bookmarks yet...\n"
+"Try to add some frequently used persons to speedup navigation."
+msgstr ""
+"まだブックマークがありません...\n"
+"ナビゲーションを高速化するために、よく使う人物を追加してみてください。"
+
+msgid "No bookmarks for this graph..."
+msgstr "このグラフのブックマークはありません..."
+
+msgid "No other bookmarks..."
+msgstr "他のブックマークはありません..."
+
+#, python-format
+msgid "found: %s"
+msgstr "検索結果: %s"
+
+#, python-format
+msgid ""
+"Add active person to bookmarks\n"
+"%s"
+msgstr ""
+"アクティブな人をブックマークに追加\n"
+"%s"
+
+#, python-format
+msgid ""
+"Person <b><i>%s</i></b> is not in the current view.\n"
+"Do you want to set it active and rebuild view?"
+msgstr ""
+"人物 <b><i>%s</i></b> は現在のビューにありません。\n"
+"アクティブに設定してビューを再構築しますか？"
+
+msgid "Change active person?"
+msgstr "アクティブな人を変更しますか？"
+
+#, python-brace-format
+msgid ""
+"This graph would contain at least {people_count} people, which exceeds the "
+"limit of {people_limit} people. For performance reasons, at least "
+"{people_missing} people won't be shown. You can change this limit in the "
+"view configuration."
+msgstr ""
+"このグラフには少なくとも {people_count} 人の人物が含まれることになり、制限 "
+"{people_limit} 人を超えます。パフォーマンス上の理由から、少なくとも"
+"{people_missing} 人は表示されません。この制限はビュー設定で変更できます。"
+
+msgid "Incomplete graph"
+msgstr "不完全なグラフ"
+
+msgid "Image on right side"
+msgstr "画像を右側に"
+
+msgid "Image on left side"
+msgstr "画像を左側に"
+
 #, python-format
 msgid "%s "
 msgstr "%s "
 
+msgid "<b>Tags:</b>"
+msgstr "<b>タグ:</b>"
+
+msgid "Lines type"
+msgstr "線の種類"
+
+msgid "Direct"
+msgstr "直線"
+
+msgid "Curves"
+msgstr "曲線"
+
+msgid "Ortho"
+msgstr "直交"
+
+msgid "Copy"
+msgstr "コピー"
+
+msgid "No Events for this person"
+msgstr "この人物にはイベントがありません"
+
+msgid "Select tags for person"
+msgstr "人物のタグを選択"
+
+msgid "Add new family"
+msgstr "新しい家族を追加"
+
+msgid "Add parents"
+msgstr "親を追加"
+
 msgid "Set as home person"
 msgstr "ホームユーザーとして設定"
+
+msgid "Show path to home person"
+msgstr "ホームパーソンへのパスを表示"
+
+msgid "Remove from bookmarks"
+msgstr "ブックマークから削除"
+
+msgid "Add to bookmarks"
+msgstr "ブックマークに追加"
+
+msgid "No Events for this family"
+msgstr "この家族にはイベントがありません"
+
+msgid "Select tags for family"
+msgstr "家族のタグを選択"
+
+msgid "Add father"
+msgstr "父親を追加"
+
+msgid "Add mother"
+msgstr "母親を追加"
+
+msgid "About Graph View"
+msgstr "グラフビューについて"
 
 #, python-format
 msgid "Adding Tags to person (%s)"
@@ -41,5 +314,67 @@ msgstr "人物 (%s) にタグを追加"
 msgid "Adding Tags to family (%s)"
 msgstr "家族 (%s) にタグを追加"
 
+#, python-format
+msgid "Deleting the person [%s] will remove it from the database."
+msgstr "人物 [%s] を削除すると、データベースから削除されます。"
+
+#, python-format
+msgid "Delete family [%s]?"
+msgstr "家族 [%s] を削除しますか？"
+
+msgid "Deleting the family will remove it from the database."
+msgstr "家族を削除すると、データベースから削除されます。"
+
+#, python-format
+msgid "Delete Family [%s]"
+msgstr "家族 [%s] を削除"
+
+msgid "Dynamic and interactive graph of relations"
+msgstr "動的でインタラクティブな関係グラフ"
+
+msgid "Dark (default)"
+msgstr "ダーク (デフォルト）"
+
+msgid "Light"
+msgstr "ライト"
+
+msgid "Cartoon"
+msgstr "カートゥーン"
+
+msgid "Modern"
+msgstr "モダン"
+
+msgid "Generic (dark)"
+msgstr "ジェネリック (ダーク）"
+
+msgid "Generic (gray)"
+msgstr "ジェネリック (グレー）"
+
+msgid "Generic (light)"
+msgstr "ジェネリック (ライト）"
+
+msgid "Persons from current graph"
+msgstr "現在のグラフの人物"
+
+msgid "Other persons from database"
+msgstr "データベースのその他の人物"
+
+msgid "No persons found..."
+msgstr "人物は見つかりませんでした..."
+
+msgid ""
+"Search people in the current visible graph and database.\n"
+"Use <Ctrl+F> to make search entry active."
+msgstr ""
+"現在表示されているグラフとデータベース内の人物を検索します。\n"
+"<Ctrl+F> で検索入力欄をアクティブにします。"
+
 msgid "Search..."
 msgstr "検索..."
+
+#, python-format
+msgid "<b>%s:</b>"
+msgstr "<b>%s:</b>"
+
+msgid "Partners"
+msgstr "パートナー"

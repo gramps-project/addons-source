@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -71,12 +71,19 @@ msgid "Exporting family tree data ..."
 msgstr "家系図データのエクスポート中..."
 
 #, python-format
+msgid "%(type)s: %(value)s"
+msgstr "%(type)s: %(value)s"
+
+#, python-format
 msgid "Impossible to convert \"%(path)s\" to a relative path."
 msgstr "\"%(path)s\" を相対パスに変換できません。"
 
 msgid ""
 "The pages configuration is not valid: several pages have the same content"
 msgstr "ページ構成が無効です : 複数のページに同じコンテンツがあります"
+
+msgid "DynWeb|Home"
+msgstr "DynWeb|ホーム"
 
 msgid "Tree"
 msgstr "ツリー"
@@ -89,6 +96,10 @@ msgstr "インデックス"
 
 msgid "(filtered from _MAX_ total entries)"
 msgstr "(合計 _MAX_ 件のエントリからフィルタリング)"
+
+#, python-format
+msgid "(m. %s)"
+msgstr "(m. %s)"
 
 msgid "(sort by name)"
 msgstr "(名前で並べ替え)"
@@ -108,8 +119,8 @@ msgid ""
 "is UTF-8.</p>"
 msgstr ""
 "<p>このページでは、SVG の生のコードを提供します。<br>内容をテキスト エディ"
-"ターにコピーし、SVG ファイルとして保存します。<br>テキスト エディターのエン"
-"コーディングが UTF-8 であることを確認してください。</p>"
+"ターにコピーし、SVG ファイルとして保存します。<br>テキスト エディタのエンコー"
+"ディングが UTF-8 であることを確認してください。</p>"
 
 msgid "Alternate Name"
 msgstr "別名"
@@ -119,6 +130,9 @@ msgstr "地図をクリックすると全画面で表示されます"
 
 msgid "Configure"
 msgstr "設定"
+
+msgid "DynamicWeb_report#Help"
+msgstr "DynamicWeb_report#Help"
 
 msgid "Examples"
 msgstr "例"
@@ -130,7 +144,7 @@ msgid "Families Index"
 msgstr "家族のインデックス"
 
 msgid "Family Nick Name"
-msgstr "家族のニックネーム"
+msgstr "家族の愛称"
 
 msgid "File ready"
 msgstr "ファイル準備完了"
@@ -259,11 +273,17 @@ msgid "Several matches.<br>Precise your search or choose in the lists below."
 msgstr ""
 "複数の一致があります。<br>検索を絞り込むか、下のリストから選択してください。"
 
+msgid "Show _MENU_ entries"
+msgstr "Show _MENU_ entries"
+
 msgid "Show duplicates"
 msgstr "重複を表示"
 
 msgid "Showing 0 to 0 of 0 entries"
 msgstr "0 件中 0 件から0 件を表示"
+
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "Showing _START_ to _END_ of _TOTAL_ entries"
 
 msgid "Sort by:"
 msgstr "並べ替え :"
@@ -595,7 +615,7 @@ msgstr "場所インデックスのデフォルト形式"
 
 msgid ""
 "Whether to include dates columns (birth, death, marriage) on the index pages"
-msgstr "インデックスページに日付列（生年月日、死亡日、結婚日）を含めるかどうか"
+msgstr "インデックスページに日付列 (生年月日、死亡日、結婚日）を含めるかどうか"
 
 msgid "Generate a families index page"
 msgstr "家族インデックスページを生成する"
@@ -611,8 +631,8 @@ msgid ""
 "example, in the media index page, the names of the individuals, families, "
 "places, sources that reference the media."
 msgstr ""
-"インデックス ページにアイテムへの参照を含めるかどうか。たとえば、メディア イ"
-"ンデックス ページでは、メディアを参照する個人、家族、場所、ソースの名前などで"
+"インデックス ページに項目への参照を含めるかどうか。たとえば、メディア イン"
+"デックス ページでは、メディアを参照する個人、家族、場所、ソースの名前などで"
 "す。"
 
 msgid "Default number of entries in the indexes"

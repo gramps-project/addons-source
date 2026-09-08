@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 22:50+0000\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,13 +12,244 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
+
+#, python-format
+msgid "sp. see  %(reference)s : %(spouse)s"
+msgstr "配偶者 参照 %(reference)s : %(spouse)s"
+
+#, python-format
+msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
+msgstr ""
+"レポート参照: %(report)s, 参照: %(reference)s : %(person)s & %(spouse)s"
+
+msgid "Descendants Report"
+msgstr "子孫レポート"
+
+#, python-format
+msgid "Writing %s reports..."
+msgstr "%s レポートを書き込み中..."
+
+#, python-brace-format
+msgid "{report_count}. Descendants of {name}"
+msgstr "{report_count}. {name} の子孫"
+
+#, python-brace-format
+msgid "{report_count:d}. {name}"
+msgstr "{report_count:d}. {name}"
+
+msgid "Select filter to restrict people that appear in the report"
+msgstr "レポートに表示される人物を制限するフィルターを選択"
 
 msgid "Whether to show duplicate family trees in the report."
 msgstr "レポートに重複した家系図を表示するかどうか。"
 
 msgid "The style used for the title of the page."
 msgstr "ページのタイトルに使用されるスタイル。"
+
+msgid "The style used for the table of contents header."
+msgstr "目次ヘッダーに使用されるスタイル。"
+
+msgid "The style used for the table of contents detail."
+msgstr "目次の詳細に使用されるスタイル。"
+
+msgid "Detailed Descendants Report"
+msgstr "詳細子孫レポート"
+
+#, python-format
+msgid "Generating %s report references..."
+msgstr "%s レポートの参照を生成中..."
+
+#, python-format
+msgid "%(report_count)s. Descendant Report for %(person_name)s"
+msgstr "%(report_count)s. %(person_name)s の子孫レポート"
+
+msgid "Index of Places"
+msgstr "場所のインデックス"
+
+msgid "Index of Dates"
+msgstr "日付のインデックス"
+
+msgid "Index of Names"
+msgstr "名前のインデックス"
+
+msgid "Report, Generation, Person, Name"
+msgstr "レポート、世代、人物、名前"
+
+#, python-brace-format
+msgid "See Report : {report}, Generation : {generation}, Person : {person}"
+msgstr "レポート参照 : {report}, 世代 : {generation}, 人物 : {person}"
+
+#, python-format
+msgid "Report appearances for %s"
+msgstr "%s のレポート登場箇所"
+
+#, python-brace-format
+msgid "Spouse of: Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "配偶者: レポート: {report}, 世代: {generation}, 人物: {person}"
+
+#, python-brace-format
+msgid "Report: {report}, Generation: {generation}, Person: {person}"
+msgstr "レポート: {report}, 世代: {generation}, 人物: {person}"
+
+#, python-format
+msgid "%(event_name)s of %(name)s "
+msgstr "%(name)s の %(event_name)s "
+
+#, python-format
+msgid "%(event_name)s of %(name)s and %(mate)s "
+msgstr "%(name)s と %(mate)s の %(event_name)s "
+
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s、%(place)s"
+
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#, python-format
+msgid ". Ref: %(repno)s %(gen)s %(per)s "
+msgstr ". 参照: %(repno)s %(gen)s %(per)s "
+
+#, python-format
+msgid "%(event_name)s:"
+msgstr "%(event_name)s:"
+
+#, python-format
+msgid " %(event_text)s"
+msgstr " %(event_text)s"
+
+#, python-brace-format
+msgid "Ref: {number}. {name}"
+msgstr "参照: {number}. {name}"
+
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
+#, python-format
+msgid "%(type)s:"
+msgstr "%(type)s:"
+
+#, python-format
+msgid " %(value)s%(endnotes)s"
+msgstr " %(value)s%(endnotes)s"
+
+msgid "List children"
+msgstr "子供を一覧表示"
+
+msgid "Add descendant reference in child list"
+msgstr "子供リストに子孫参照を追加"
+
+msgid "Include Index of Names"
+msgstr "名前のインデックスを含める"
+
+msgid "Whether to include the index of Names at the end of the report."
+msgstr "レポートの最後に名前のインデックスを含めるかどうか。"
+
+msgid "Include index of Dates"
+msgstr "日付のインデックスを含める"
+
+msgid "Whether to include the index of Dates at the end of the report."
+msgstr "レポートの最後に日付のインデックスを含めるかどうか。"
+
+msgid "Include index of Places"
+msgstr "場所のインデックスを含める"
+
+msgid "Whether to include the index of Places at the end of the report."
+msgstr "レポートの最後に場所のインデックスを含めるかどうか。"
+
+msgid "Include the 'Report appearances' section with each person"
+msgstr "各人物に「レポート登場箇所」セクションを含める"
+
+msgid ""
+"The 'Report appearances' section shows other places in the report where the "
+"person is mentioned."
+msgstr ""
+"「レポート登場箇所」セクションには、レポート内でその人物が言及されている他の"
+"場所が表示されます。"
+
+msgid "The style used for the children list."
+msgstr "子供リストに使用されるスタイル。"
+
+msgid "The basic style used for Note header."
+msgstr "メモヘッダーに使用される基本スタイル。"
+
+msgid "The style used for the first personal entry."
+msgstr "最初の個人エントリに使用されるスタイル。"
+
+msgid "The style used for the More About header and for headers of mates."
+msgstr "「詳細」ヘッダーと配偶者のヘッダーに使用されるスタイル。"
+
+msgid "The style used for additional detail data."
+msgstr "追加の詳細データに使用されるスタイル。"
+
+msgid "The style used for note detail data."
+msgstr "メモの詳細データに使用されるスタイル。"
+
+msgid "The style used for the date in the Index of Dates."
+msgstr "日付インデックスの日付に使用されるスタイル。"
+
+msgid "The style used for the events in the Index of Dates."
+msgstr "日付インデックスのイベントに使用されるスタイル。"
+
+msgid "The style used for the header in the Index of Names."
+msgstr "名前インデックスのヘッダーに使用されるスタイル。"
+
+msgid "The style used for the references in the Index of Names."
+msgstr "名前インデックスの参照に使用されるスタイル。"
+
+msgid "The style used for the header in the Index of Places."
+msgstr "場所インデックスのヘッダーに使用されるスタイル。"
+
+msgid "The style used for the references in the Index of Places."
+msgstr "場所インデックスの参照に使用されるスタイル。"
+
+msgid "Descendant Book"
+msgstr "子孫ブック"
+
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr "指定されたクエリに基づいて1つ以上の子孫レポートを生成します。"
+
+msgid "Detailed Descendant Book"
+msgstr "詳細子孫ブック"
+
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr "指定されたクエリに基づいて1つ以上の詳細な子孫レポートを生成します。"
+
+#, python-format
+msgid "Deep pruning ascendants from %s people..."
+msgstr "%s 人の祖先を深く刈り込み中..."
+
+#, python-format
+msgid "Pruning ascendants from %s people..."
+msgstr "%s 人の祖先を刈り込み中..."
+
+#, python-format
+msgid "Getting ascendants from %s people..."
+msgstr "%s 人から祖先を取得中..."
+
+#, python-format
+msgid "Verifying descendants from %s people..."
+msgstr "%s 人の子孫を検証中..."
+
+#, python-format
+msgid "Getting missing descendants from %s people..."
+msgstr "%s 人から不足している子孫を取得中..."
+
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr "刈り込み後の %s 人の子孫を検証中..."
+
+#, python-format
+msgid "Getting missing descendants from %s people ..."
+msgstr "%s 人から不足している子孫を取得中..."

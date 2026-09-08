@@ -1,0 +1,167 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-09 10:02-0700\n"
+"PO-Revision-Date: 2026-08-29 07:51+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
+"addons/he/>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 2026.9.dev0\n"
+
+msgid "Generate Gramps Web API key"
+msgstr "חילול מפתח API מרשתת גרמפס"
+
+msgid "Server URL"
+msgstr "כתובת URL של השרת"
+
+msgid "e.g. https://your-server/api"
+msgstr "לדוגמה https://your-server/api"
+
+msgid "Username"
+msgstr "שם משתמש"
+
+msgid "Password"
+msgstr "סיסמה"
+
+msgid "Generate API Key"
+msgstr "חילול מפתח API"
+
+msgid ""
+"Enter your server URL, username, and password, then click Generate API Key."
+msgstr ""
+"נא להזין כתבת URL של השרת, שם משתמש וסיסמה, לאחר מכן להקיש על חילול מפתח API."
+
+msgid "GRAMPS_WEB_API_KEY"
+msgstr "GRAMPS_WEB_API_KEY"
+
+msgid "Copy"
+msgstr "העתקה"
+
+msgid "Create Synced Family Tree for this key"
+msgstr "יצירת אילן־יוחסין מסונכרן עבורמפתח זה"
+
+#, python-format
+msgid ""
+"Found an existing %s for this session. Click Create Synced Family Tree to "
+"use it directly, or fill in the form above to generate a different key."
+msgstr ""
+"נמצא %s קיים לשיח זה. נא להקיש על יצירת אילן־יוחסין מסונכרן כדי להשתמש בו "
+"באופן ישיר, או למלא את הטופס מעל לחילול מפתח שונה."
+
+msgid "Please fill in the server URL, username, and password."
+msgstr "נא להזין את כתובת ה־URL של השרת, שם משתמש וססמה."
+
+msgid "Generating API key…"
+msgstr "מתבצע חילול מפתח API…"
+
+#, python-format
+msgid "Login failed (HTTP %d): check your username and password."
+msgstr "התחברות כשלה (HTTP %d):  נא לבדוק שם משתמש וסיסמה."
+
+#, python-format
+msgid "Server returned an error (HTTP %d %s): check the Server URL."
+msgstr "השרת החזיר שגיאה (HTTP %d %s): נא לבדוק את כתובת ה־URL של השרת."
+
+#, python-format
+msgid "Could not reach the server: check the Server URL. (%s)"
+msgstr "השרת לא נגיש: נא לבדוק את כתובת ה־URL של השרת. (%s)"
+
+#, python-format
+msgid "Unexpected response from the server: %s"
+msgstr "תגובה בלתי צפויה מהשרת: %s"
+
+#, python-format
+msgid "Error: %s"
+msgstr "שגיאה: %s"
+
+#, python-format
+msgid ""
+"Success. %s is now set for this Gramps session -- no restart needed. Copy "
+"the key below to also set it in your shell environment for next time."
+msgstr ""
+"הצלחה. %s מוגדר כעת לשיח גרמפס זה -- שתחול לא נדרש. נא להעתיק את המפתח מטה "
+"כדי להגדיר אותו גם בסביבת המעטפת לפעם הבאה."
+
+msgid "Looking up account identity…"
+msgstr "מתבצע חפוש זהות חשבון…"
+
+#, python-format
+msgid ""
+"A Family Tree named \"%s\" already exists. Open it from Family Trees -> "
+"Manage Family Trees instead of creating another one."
+msgstr ""
+"אילן־יוחסין בשם '%s' קיים כבר. ניתן לפתוח אותו מתפריט 'אילנות־יוחסין -> "
+"ניהול אילנות־יוחסין' במקום ליצור אחד נוסף."
+
+#, python-format
+msgid "Error creating Family Tree: %s"
+msgstr "שגיאה ביצרת אילן־יוחסין: %s"
+
+#, python-format
+msgid ""
+"Created Family Tree \"%s\". Open it from Family Trees -> Manage Family Trees "
+"to start syncing."
+msgstr ""
+"אילן־יוחסין '%s' נוצר. ניתן לפתוח אותו מתפריט 'אילנות־יוחסין -> ניהול אילנות־"
+"יוחסין' כדי להתחיל לסנכרן."
+
+msgid ""
+"Turn a Gramps Web API server URL, username, and password into a "
+"GRAMPS_WEB_API_KEY value for GrampsWebApiDb, and optionally create a "
+"matching, correctly-named GrampsWebApiDb Family Tree for it."
+msgstr ""
+"הפיכת כתובת URL של שרת API מרשתת גרמפס, שם משתמש וסיסמה לערך "
+"GRAMPS_WEB_API_KEY עבור GrampsWebApiDb, לחלופין לצור עבורו אילן־יוחסין תואם "
+"בשם הנכון של GrampsWebApiDb."
+
+msgid ""
+"The account authenticating via GRAMPS_WEB_API_KEY does not have permission "
+"on the server for this operation (HTTP 403 Forbidden). Generate a key for an "
+"account with sufficient permissions, or ask the server administrator to "
+"grant this one access."
+msgstr ""
+"אין הרשאה בשרת לפעולת אימות חשבון באמצעות GRAMPS_WEB_API_KEY (HTTP 403 "
+"אסור). נא ליצור מפתח לחשבון עם הרשאות מספקות, או לבקש ממנהל השרת להעניק "
+"גישהלחשבון זה."
+
+#, python-format
+msgid ""
+"This Family Tree is named \"%(actual)s\", but GRAMPS_WEB_API_KEY currently "
+"authenticates as \"%(expected)s\". Rename this Family Tree to "
+"\"%(expected_typeable)s\" (Family Trees -> Manage Family Trees) if it's "
+"meant to mirror that account, or open/create the Family Tree already named "
+"that -- reusing this one would mix its existing local data with the other "
+"account's."
+msgstr ""
+"אילן־היוחסין נקרא \"%(actual)s\", אבל GRAMPS_WEB_API_KEY מאמת כרגע "
+"כ־\"%(expected)s\". נא לשנות את שם אילן־יוחסין זה "
+"ל־\"%(expected_typeable)s\" (אילנות־יוחסין -> ניהול אילנות־יוחסין) אם הוא "
+"אמור לשקף את החשבון הזה, או לפתוח/ליצור את אילן־היוחסין שכבר נקרא כך – שימוש "
+"חוזר באילן־יוחסין זה יגרום לערבב הנתונים המקומיים הקיימים שלו עם אלה של "
+"החשבון האחר."
+
+msgid "Retry local change after server conflict"
+msgstr "לנסות שנוי מקומי שוב לאחר התנגשות בשרת"
+
+msgid "Clear local mirror before full resync"
+msgstr "נא לנקות ראי מקומי לפני סינכרון חוזר מלא"
+
+msgid "GrampsWebApiDb"
+msgstr "GrampsWebApiDb"
+
+msgid "Gramps _Web API Database"
+msgstr "מסד־נתוני _מרשתת גרמפש"
+
+msgid ""
+"Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) as a live "
+"database, mirrored locally for speed."
+msgstr ""
+"שימוש בשרת API גרמפס מרשתת (לדוגמה gramps-connect או Gramps Web) כמסד נתונים "
+"פעיל, עם שיקוף מקומי להגברת מהירות."

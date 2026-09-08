@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,16 +12,82 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "The Tool requires at least one tag to execute."
+msgstr "このツールを実行するには少なくとも1つのタグが必要です。"
+
+msgid "ERROR"
+msgstr "エラー"
+
+msgid "Add/Remove"
+msgstr "追加/削除"
+
+msgid "Add or remove tags from objects."
+msgstr "オブジェクトにタグを追加または削除します。"
+
+msgid "Add Tags"
+msgstr "タグを追加"
+
+msgid "Remove Tags"
+msgstr "タグを削除"
+
 msgid "General options"
 msgstr "全般オプション"
+
+msgid "Choose a category."
+msgstr "カテゴリを選択してください。"
+
+msgid "Choose Tag"
+msgstr "タグを選択"
+
+msgid "Choose a tag to remove."
+msgstr "削除するタグを選択してください。"
 
 msgid "Persons"
 msgstr "人物"
 
+msgid "Filter options"
+msgstr "フィルターオプション"
+
+#, python-format
+msgid "All %s"
+msgstr "すべての %s"
+
+msgid "Add/Remove Tag Tool"
+msgstr "タグ追加/削除ツール"
+
+msgid ""
+"Unable to run the tool. Please check if your database contains tags, filters "
+"and objects."
+msgstr ""
+"ツールを実行できません。データベースにタグ、フィルター、オブジェクトが含まれ"
+"ているか確認してください。"
+
+msgid "WARNING"
+msgstr "警告"
+
+#, python-format
+msgid "No %s objects were found in database."
+msgstr "データベースに %s オブジェクトが見つかりませんでした。"
+
+msgid "Process tags..."
+msgstr "タグを処理中..."
+
+msgid "added"
+msgstr "追加されました"
+
+msgid "removed"
+msgstr "削除されました"
+
+msgid "Tag '{}' was {} to {} {} objects.\n"
+msgstr "タグ '{}' は {} 個の {} オブジェクトに {} されました。\n"
+
 msgid "INFO"
 msgstr "INFO"
+
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr "人物、イベントなどのグループにタグを追加または削除します。"

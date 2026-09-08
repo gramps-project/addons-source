@@ -1,0 +1,79 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Avatar Generator Tool"
+msgstr "頭像產生工具"
+
+msgid "A tool to add avatar pictures to your family tree"
+msgstr "用來將頭像圖片加入家族樹的工具"
+
+msgid "single image mode"
+msgstr "單張圖片模式"
+
+msgid "Choose how many images you'd like to use."
+msgstr "選擇要使用幾張圖片。"
+
+msgid "Image for people with unknown gender."
+msgstr "性別不詳人物使用的圖片。"
+
+msgid "Image for males."
+msgstr "男性使用的圖片。"
+
+msgid "Image for females"
+msgstr "女性圖片"
+
+msgid "Select filter to restrict people"
+msgstr "選取篩選器以限定人物範圍"
+
+msgid "Remove images from people"
+msgstr "移除人物的圖片"
+
+msgid "Remove selected image(s)."
+msgstr "移除選取的圖片。"
+
+msgid "Avatar Generator"
+msgstr "頭像產生器"
+
+msgid "Remove avatar images..."
+msgstr "移除頭像圖片..."
+
+msgid "INFO"
+msgstr "資訊"
+
+msgid "No media was removed."
+msgstr "沒有移除任何媒體。"
+
+msgid "{} media references were removed from {} persons."
+msgstr "已移除 {} 個媒體參照，涉及 {} 位人物。"
+
+msgid ""
+"\n"
+"{} HandleError occured, but were ignored."
+msgstr ""
+"\n"
+"已發生 {} HandleError，但已忽略。"
+
+msgid "Add avatar images..."
+msgstr "新增頭像圖片…"
+
+msgid "{} avatar images were sucessfully added."
+msgstr "已成功新增 {} 張頭像圖片。"
+
+msgid "There was no avatar image to add. "
+msgstr "沒有可新增的頭像圖片。 "
+
+msgid "All persons already had one."
+msgstr "所有人物都已有一張。"

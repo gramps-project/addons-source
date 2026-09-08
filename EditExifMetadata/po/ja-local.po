@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-13 17:12+0100\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,10 +12,293 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 msgid "Edit Image Exif Metadata"
 msgstr "画像の Exif メタデータ を編集"
+
+msgid "Gramplet to view, edit, and save image Exif metadata"
+msgstr "画像の Exif メタデータを表示、編集、保存するグランプレット"
+
+msgid "Edit Exif Metadata"
+msgstr "Exif メタデータの編集"
+
+msgid "<-- Image Types -->"
+msgstr "<-- 画像タイプ -->"
+
+msgid ""
+"Warning:  Changing this entry will update the Media object title field in "
+"Gramps not Exiv2 metadata."
+msgstr ""
+"警告: このエントリを変更すると、Exiv2メタデータではなくGrampsのメディアオブ"
+"ジェクトのタイトルフィールドが更新されます。"
+
+msgid "Provide a short description for this image."
+msgstr "この画像の短い説明を入力してください。"
+
+msgid ""
+"Enter the Artist/ Author of this image.  The person's name or the company "
+"who is responsible for the creation of this image."
+msgstr ""
+"この画像のアーティスト/作者を入力してください。この画像の作成に責任を持つ個人"
+"の名前または会社名です。"
+
+msgid "Enter the copyright information for this image. \n"
+msgstr "この画像の著作権情報を入力してください。 \n"
+
+msgid ""
+"The original date/ time when the image was first created/ taken as in a "
+"photograph.\n"
+"Example: 1830-01-1 09:30:59"
+msgstr ""
+"画像が最初に作成/撮影された元の日付/時刻 (写真の場合）。\n"
+"例: 1830-01-1 09:30:59"
+
+msgid ""
+"This is the date/ time that the image was last changed/ modified.\n"
+"Example: 2011-05-24 14:30:00"
+msgstr ""
+"画像が最後に変更/修正された日付/時刻です。\n"
+"例: 2011-05-24 14:30:00"
+
+msgid ""
+"Enter the Latitude GPS coordinates for this image,\n"
+"Example: -43.722965, -43:43:22, 38° 38′ 03″ N"
+msgstr ""
+"この画像の緯度GPS座標を入力してください。\n"
+"例: -43.722965, -43:43:22, 38° 38′ 03″ N"
+
+msgid ""
+"Enter the Longitude GPS coordinates for this image,\n"
+"Example: -10.396378, -10:23:46, 105° 6′ 6″ W"
+msgstr ""
+"この画像の経度GPS座標を入力してください。\n"
+"例: -10.396378, -10:23:46, 105° 6′ 6″ W"
+
+msgid ""
+"This is the measurement of Above or Below Sea Level.  It is measured in "
+"meters.  Example: 200.558, -200.558"
+msgstr ""
+"これは海抜または海面下の測定値です。メートル単位で測定されます。例: 200.558, "
+"-200.558"
+
+msgid ""
+"Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
+"web browser."
+msgstr ""
+"Webブラウザで「Edit Image Exif Metadata」のGramps Wikiヘルプページを表示しま"
+"す。"
+
+msgid ""
+"This will open up a new window to allow you to edit/ modify this image's "
+"Exif metadata.\n"
+"  It will also allow you to be able to Save the modified metadata."
+msgstr ""
+"この画像のExifメタデータを編集/修正できる新しいウィンドウを開きます。\n"
+"修正したメタデータを保存することもできます。"
+
+msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
+msgstr "サムネイル表示領域を示すポップアップウィンドウを生成します"
+
+msgid ""
+"Select from a drop- down box the image file type that you would like to "
+"convert your non- Exiv2 compatible media object to."
+msgstr ""
+"ドロップダウンボックスから、Exiv2非互換のメディアオブジェクトを変換する画像"
+"ファイルタイプを選択してください。"
+
+msgid ""
+"If your image is not of an image type that can have Exif metadata read/ "
+"written to/from, convert it to a type that can?"
+msgstr ""
+"画像がExifメタデータの読み取り/書き込みが可能な画像タイプでない場合、可能なタ"
+"イプに変換しますか？"
+
+msgid ""
+"WARNING:  This will completely erase all Exif metadata from this image!  Are "
+"you sure that you want to do this?"
+msgstr ""
+"警告: この画像からすべてのExifメタデータが完全に消去されます！本当に実行しま"
+"すか？"
+
+msgid "Clear GPS"
+msgstr "GPSをクリア"
+
+msgid "Thumbnail"
+msgstr "サムネイル"
+
+msgid "Copy"
+msgstr "コピー"
+
+msgid "Select an image to begin..."
+msgstr "画像を選択して開始してください..."
+
+msgid ""
+"Image is NOT readable,\n"
+"Please choose a different image..."
+msgstr ""
+"画像を読み込めません。\n"
+"別の画像を選択してください..."
+
+msgid "Please convert this image to an Exiv2- compatible image type..."
+msgstr "この画像をExiv2互換の画像タイプに変換してください..."
+
+#, python-brace-format
+msgid "Image Size : {width} x {height} pixels"
+msgstr "画像サイズ: {width} x {height} ピクセル"
+
+msgid ""
+"Image is NOT writable,\n"
+"You will NOT be able to save Exif metadata...."
+msgstr ""
+"画像は書き込み可能ではありません。\n"
+"Exifメタデータを保存できません...."
+
+msgid "Click Close to close this Thumbnail View Area."
+msgstr "このサムネイル表示領域を閉じるには「閉じる」をクリックしてください。"
+
+msgid "Thumbnail View Area"
+msgstr "サムネイル表示領域"
+
+msgid ""
+"WARNING: You are about to convert this image into a .jpeg image.  Are you "
+"sure that you want to do this?"
+msgstr ""
+"警告: この画像を.jpeg画像に変換しようとしています。本当に実行しますか？"
+
+msgid "Convert and Delete"
+msgstr "変換して削除"
+
+msgid ""
+"Your image has been converted and the original file has been deleted, and "
+"the full path has been updated!"
+msgstr "画像が変換され、元のファイルは削除され、フルパスが更新されました！"
+
+msgid ""
+"There has been an error, Please check your source and destination file "
+"paths..."
+msgstr "エラーが発生しました。ソースと宛先のファイルパスを確認してください..."
+
+msgid ""
+"There was an error in deleting the original file.  You will need to delete "
+"it yourself!"
+msgstr ""
+"元のファイルの削除中にエラーが発生しました。自分で削除する必要があります！"
+
+msgid "There was an error in converting your image file."
+msgstr "画像ファイルの変換中にエラーが発生しました。"
+
+msgid "Media Path Update"
+msgstr "メディアパスの更新"
+
+msgid "There has been an error in updating the image file's path!"
+msgstr "画像ファイルのパスの更新中にエラーが発生しました！"
+
+msgid ""
+"Click the close button when you are finished modifying this image's Exif "
+"metadata."
+msgstr ""
+"この画像のExifメタデータの修正が完了したら、閉じるボタンをクリックしてくださ"
+"い。"
+
+msgid "Saves a copy of the data fields into the image's Exif metadata."
+msgstr "データフィールドのコピーを画像のExifメタデータに保存します。"
+
+msgid "Re -display the data fields that were cleared from the Edit Area."
+msgstr "編集領域からクリアされたデータフィールドを再表示します。"
+
+msgid "This button will clear all of the data fields shown here."
+msgstr ""
+"このボタンは、ここに表示されているすべてのデータフィールドをクリアします。"
+
+msgid "This button will clear all of the GPS fields shown here."
+msgstr ""
+"このボタンは、ここに表示されているすべてのGPSフィールドをクリアします。"
+
+msgid ""
+"Closes this popup Edit window.\n"
+"WARNING: This action will NOT Save any changes/ modification made to this "
+"image's Exif metadata."
+msgstr ""
+"このポップアップ編集ウィンドウを閉じます。\n"
+"警告: この操作では、この画像のExifメタデータに加えられた変更/修正は保存されま"
+"せん。"
+
+msgid "Media Object Title"
+msgstr "メディアオブジェクトのタイトル"
+
+msgid "media Title: "
+msgstr "メディアタイトル: "
+
+msgid "General Data"
+msgstr "全般データ"
+
+msgid "Description: "
+msgstr "説明: "
+
+msgid "Artist: "
+msgstr "アーティスト: "
+
+msgid "Copyright: "
+msgstr "著作権: "
+
+msgid "Date/ Time"
+msgstr "日付/時刻"
+
+msgid "Original: "
+msgstr "オリジナル: "
+
+msgid "Modified: "
+msgstr "変更日時: "
+
+msgid "Latitude/ Longitude/ Altitude GPS coordinates"
+msgstr "緯度/経度/高度のGPS座標"
+
+msgid "Latitude :"
+msgstr "緯度:"
+
+msgid "Longitude :"
+msgstr "経度:"
+
+msgid "Altitude :"
+msgstr "高度:"
+
+msgid "Bad Date/Time"
+msgstr "不正な日時"
+
+msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
+msgstr "無効な緯度です (構文: 18°9′48.21″S, -18.2412 または -18:9:48.21)"
+
+msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
+msgstr "無効な経度です (構文: 18°9′48.21″E, -18.2412 または -18:9:48.21)"
+
+msgid ""
+"WARNING!  You are about to completely delete the Exif metadata from this "
+"image."
+msgstr "警告！この画像からExifメタデータを完全に削除しようとしています。"
+
+msgid "Delete?"
+msgstr "削除しますか？"
+
+msgid ""
+"WARNING!  You are about to completely delete the GPS metadata from this "
+"image."
+msgstr "警告！この画像からGPSメタデータを完全に削除しようとしています。"
+
+msgid "Media Title Update"
+msgstr "メディアタイトルの更新"
+
+msgid "Media Object Date Created"
+msgstr "メディアオブジェクトの作成日"
+
+msgid "Saving Exif metadata to this image..."
+msgstr "この画像にExifメタデータを保存中..."
+
+msgid "All Exif metadata has been deleted from this image..."
+msgstr "この画像からすべてのExifメタデータが削除されました..."
+
+msgid "There was an error in stripping the Exif metadata from this image..."
+msgstr "この画像からExifメタデータを削除する際にエラーが発生しました..."

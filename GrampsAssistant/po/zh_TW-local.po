@@ -1,0 +1,137 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-03 09:03-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid ""
+"You are a helpful genealogy assistant with access to the user's Gramps "
+"database. Answer questions about people, families, events, and "
+"relationships. When you need information from the database, call the "
+"provided tools — never write code, simulate results, or make up data. If no "
+"tool exists for the requested information, say so plainly."
+msgstr ""
+"你是可存取使用者 Gramps 資料庫的家族史助理。請回答關於人物、家庭、事件和關係"
+"的問題。需要資料庫資訊時，請呼叫提供的工具——切勿撰寫程式碼、模擬結果或捏造資"
+"料。若沒有可取得所需資訊的工具，請直接說明。"
+
+msgid "Gramps Assistant settings"
+msgstr "Gramps Assistant 設定"
+
+msgid "Clear conversation and context"
+msgstr "清除對話與上下文"
+
+msgid "Send"
+msgstr "傳送"
+
+msgid "Gramps Assistant:"
+msgstr "Gramps Assistant："
+
+msgid ""
+"Ask me anything about the Gramps program or your specific Gramps family "
+"tree. Use the ⚙ button to configure the AI.\n"
+msgstr ""
+"您可以詢問任何關於 Gramps 程式或您 Gramps 家族樹的問題。使用 ⚙ 按鈕設定 "
+"AI。\n"
+
+msgid ""
+"\n"
+"No model configured. Please click the Settings button to choose a backend "
+"and model before chatting.\n"
+msgstr ""
+"\n"
+"尚未設定模型。請先按一下「設定」按鈕，選擇後端與模型再開始聊天。\n"
+
+msgid "Thinking..."
+msgstr "思考中..."
+
+#, python-brace-format
+msgid ""
+"API key error: the environment variable {var} is not set or is invalid. Set "
+"it before launching Gramps:\n"
+"  export {var}=your-key-here"
+msgstr ""
+"API 金鑰錯誤：環境變數 {var} 未設定或無效。請在啟動 Gramps 前設定：\n"
+"  export {var}=your-key-here"
+
+msgid ""
+"API key error: this provider requires an API key. Open Settings and enter "
+"the environment variable name for your API key (e.g. OPENAI_API_KEY)."
+msgstr ""
+"API 金鑰錯誤：此提供者需要 API 金鑰。請開啟設定，輸入 API 金鑰的環境變數名稱 "
+"(例如 OPENAI_API_KEY)。"
+
+msgid "Done.\n"
+msgstr "完成。\n"
+
+msgid "System Prompt:"
+msgstr "系統提示詞："
+
+msgid "Simplify tools (recommended for smaller/local models)"
+msgstr "簡化工具 (建議較小型／本機模型使用)"
+
+msgid ""
+"When enabled, only the tools relevant to your question are sent to the "
+"model. This improves performance with smaller local models."
+msgstr ""
+"啟用後，只會將與問題相關的工具傳送給模型。這可改善較小型本機模型的效能。"
+
+msgid "Use Local Model"
+msgstr "使用本機模型"
+
+msgid ""
+"URL of a local OpenAI-compatible server. Ollama: http://localhost:11434  LM "
+"Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
+msgstr ""
+"本機 OpenAI 相容伺服器的網址。Ollama：http://localhost:11434  LM Studio："
+"http://localhost:1234  llama.cpp：http://localhost:8080"
+
+msgid "model name (leave blank for LM Studio / llama.cpp)"
+msgstr "模型名稱 (LM Studio / llama.cpp 請留空)"
+
+msgid ""
+"Model to request from the local server. Required for Ollama (e.g. llama3.1). "
+"Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
+msgstr ""
+"向本機伺服器要求的模型。Ollama 必填 (例如 llama3.1)。LM Studio 或 llama.cpp "
+"請留空，這兩者會使用已載入的模型。"
+
+msgid "Model:"
+msgstr "模型："
+
+msgid "Use Foundational Model"
+msgstr "使用基礎模型"
+
+msgid "e.g. OPENAI_API_KEY"
+msgstr "例如 OPENAI_API_KEY"
+
+msgid "Name of the environment variable holding your API key."
+msgstr "存放 API 金鑰的環境變數名稱。"
+
+msgid "API key env var:"
+msgstr "API 金鑰環境變數："
+
+msgid "Backend:"
+msgstr "後端："
+
+msgid "Base URL:"
+msgstr "基底網址："
+
+msgid "Model name:"
+msgstr "模型名稱："
+
+msgid "Gramps Assistant"
+msgstr "Gramps 小幫手"
+
+msgid "AI assistant for querying your Gramps family tree"
+msgstr "用於查詢 Gramps 家族樹的 AI 助理"

@@ -1,0 +1,45 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Cultural ministry (France)"
+msgstr "文化部 (法國)"
+
+msgid "Genealogical bank"
+msgstr "家譜資料庫"
+
+msgid "OrigineFile (Quebec)"
+msgstr "OrigineFile (魁北克)"
+
+msgid "Cyber genealogy"
+msgstr "Cyber genealogy"
+
+msgid "RetroNews (Bnf)"
+msgstr "RetroNews (Bnf)"
+
+msgid "Hathi Trust Digital Library (fr)"
+msgstr "Hathi Trust Digital Library (fr)"
+
+msgid "Open Library (fr)"
+msgstr "Open Library (fr)"
+
+msgid "Belgium's Archives"
+msgstr "比利時檔案館"
+
+msgid "FR Web Connect Pack"
+msgstr "法國網路連線套件"
+
+msgid "Collection of Web sites for the FR (requires libwebconnect)"
+msgstr "法國網站集合 (需要 libwebconnect)"

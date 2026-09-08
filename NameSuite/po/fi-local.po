@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-24 01:13-0700\n"
-"PO-Revision-Date: 2026-06-02 18:04+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,8 +12,154 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
+
+msgid "Audit Given and Patronymic Names"
+msgstr "Tarkistetaan etunimi ja patronyymi / matronyymi"
+
+msgid ""
+"Tools to rename given name, audit and infer patronymic (East Slavic) names."
+msgstr ""
+"Työkalu etunimen ja (itäslaavilaisten) patronyyminimien tarkistamiseksi."
+
+msgid "Patronymic Suggestion"
+msgstr "Ehdotus isännimeksi"
+
+msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
+msgstr ""
+"Ehdottaa (itäslaavilaisia) patronyyminimiä välittömästi navigoinnin aikana."
+
+msgid "Auditing Settings"
+msgstr "Tarkastuksen asetukset"
+
+msgid "All Records"
+msgstr "Kaikki tietueet"
+
+msgid "Configure Rules..."
+msgstr "Sääntöjen asettaminen"
+
+msgid "Match Pre-Revolutionary Orthography"
+msgstr "Käytä vallankumousta edeltänyttä venäjän kielen oikeinkirjoitusta"
+
+msgid "Audit Database"
+msgstr "Tarkasta tietokanta"
+
+msgid "Select All Safe Corrections"
+msgstr "Valitse kaikki turvalliset korjaukset"
+
+msgid "Apply Selected Corrections"
+msgstr "Toteuta valitut korjaukset"
+
+msgid "Configure Rules"
+msgstr "Aseta säännöt"
+
+msgid "Individual"
+msgstr "Henkilö"
+
+msgid "Current"
+msgstr "Nykyinen"
+
+msgid "Correction"
+msgstr "Korjaus"
+
+msgid "Explanation"
+msgstr "Selitys"
+
+msgid "Audit Complete!"
+msgstr "Tarkastus valmis!"
+
+msgid "No Results"
+msgstr "Ei tuloksia"
+
+msgid "No issues found."
+msgstr "Henkilöitä ei löytynyt."
+
+msgid "Search and Replace Options"
+msgstr "Haku- ja korvausasetukset"
+
+msgid "Source Name:"
+msgstr "Lähteen nimi:"
+
+msgid "e.g. Иоанн"
+msgstr "esim. Johannes"
+
+msgid "Target Name:"
+msgstr "Nimi:"
+
+msgid "e.g. Иван"
+msgstr "esim. Matti"
+
+msgid "Match Mode:"
+msgstr "Vertailutapa:"
+
+msgid "Exact Match"
+msgstr "Tarkka osuma"
+
+msgid "Substring"
+msgstr "Osamerkkijono"
+
+msgid "Regular Expression"
+msgstr "Säännöllinen lauseke"
+
+msgid "Scan for Names"
+msgstr "Etsi nimellä"
+
+msgid "Preserve original name as alternative"
+msgstr "Säilytä alkuperäinen nimi vaihtoehtona"
 
 msgid "Select All"
 msgstr "Valitse kaikki"
+
+msgid "Proposed"
+msgstr "Ehdotettu"
+
+msgid "Infer East Slavic Patronymics"
+msgstr "Käytä itäslaavilaista patronyymiä"
+
+msgid "Rename Given Names"
+msgstr "Muokkaa etunimiä"
+
+msgid "Audit Patronymics"
+msgstr "Muokkaa patronyymejä"
+
+#, python-brace-format
+msgid ""
+"Missing Patronymic Detected.\n"
+"Suggested: {0}\n"
+"Based on father: {1}"
+msgstr ""
+"Puuttuva patronyymi havaittu.\n"
+"Ehdotus: {0}\n"
+"Isän mukaan: {1}"
+
+msgid "Navigate to an individual to check patronymic status."
+msgstr "Siirry henkilön tarkastaaksesi patronyymin."
+
+msgid "No active person selected."
+msgstr "Aktiivista henkilöä ei ole asetettu."
+
+msgid ""
+"Patronymic inference can't be inferred for non-binary or unknown genders."
+msgstr ""
+"Isännimeä ei voi päätellä ei-binäärisen tai tuntemattoman sukupuolen "
+"perusteella."
+
+msgid "Individual already has a recorded patronymic."
+msgstr "Henkilölle on jo kirjattu patronyymi."
+
+msgid "No attached father found in database family records."
+msgstr "Isää ei ole asetettu sukutietokannassa."
+
+msgid "Father lacks a recorded first name."
+msgstr "Isälle ei ole merkitty etunimeä."
+
+msgid "Patronymic applied successfully!"
+msgstr "Isännimi lisätty onnistuneesti!"
+
+msgid "Apply Suggestion"
+msgstr "Käytä ehdotusta"
+
+#, python-format
+msgid "%(prog)s: error: %(message)s\n"
+msgstr "%(prog)s: virhe: %(message)s\n"

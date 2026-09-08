@@ -1,0 +1,228 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-04 08:52-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "GOQL expression"
+msgstr "GOQL 式"
+
+msgid ""
+"Matches objects for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"指定されたGrampsオブジェクトクエリ言語のwhere式が真と評価されるオブジェクトに"
+"一致します"
+
+msgid "People matching the <GOQL expression>"
+msgstr "<GOQL式> に一致する人物"
+
+msgid "Families matching the <GOQL expression>"
+msgstr "<GOQL expression> に一致する家族"
+
+msgid "Events matching the <GOQL expression>"
+msgstr "<GOQL式> に一致するイベント"
+
+msgid "Places matching the <GOQL expression>"
+msgstr "<GOQL式> に一致する場所"
+
+msgid "Repositories matching the <GOQL expression>"
+msgstr "<GOQL式> に一致するリポジトリ"
+
+msgid "Sources matching the <GOQL expression>"
+msgstr "<GOQL expression> に一致するソース"
+
+msgid "Citations matching the <GOQL expression>"
+msgstr "<GOQL式> に一致する引用"
+
+msgid "Media matching the <GOQL expression>"
+msgstr "<GOQL式> に一致するメディア"
+
+msgid "Notes matching the <GOQL expression>"
+msgstr "<GOQL式> に一致するメモ"
+
+msgid "Person GOQL Filter"
+msgstr "人物 GOQL フィルター"
+
+msgid "Gramplet providing a gramps-object-query-language person filter"
+msgstr "Grampsオブジェクトクエリ言語の人物フィルターを提供するグランプレット"
+
+msgid "GOQL Filter"
+msgstr "GOQLフィルター"
+
+msgid "Family GOQL Filter"
+msgstr "家族 GOQL フィルター"
+
+msgid "Gramplet providing a gramps-object-query-language family filter"
+msgstr "Grampsオブジェクトクエリ言語の家族フィルターを提供するグランプレット"
+
+msgid "Event GOQL Filter"
+msgstr "イベントGOQLフィルター"
+
+msgid "Gramplet providing a gramps-object-query-language event filter"
+msgstr ""
+"Grampsオブジェクトクエリ言語のイベントフィルターを提供するグランプレット"
+
+msgid "Place GOQL Filter"
+msgstr "場所 GOQL フィルター"
+
+msgid "Gramplet providing a gramps-object-query-language place filter"
+msgstr "Grampsオブジェクトクエリ言語の場所フィルターを提供するグランプレット"
+
+msgid "Repository GOQL Filter"
+msgstr "リポジトリGOQLフィルター"
+
+msgid "Gramplet providing a gramps-object-query-language repository filter"
+msgstr ""
+"Grampsオブジェクトクエリ言語のリポジトリフィルターを提供するグランプレット"
+
+msgid "Source GOQL Filter"
+msgstr "ソース GOQL フィルター"
+
+msgid "Gramplet providing a gramps-object-query-language source filter"
+msgstr "Grampsオブジェクトクエリ言語のソースフィルターを提供するグランプレット"
+
+msgid "Citation GOQL Filter"
+msgstr "引用 GOQL フィルター"
+
+msgid "Gramplet providing a gramps-object-query-language citation filter"
+msgstr "Grampsオブジェクトクエリ言語の引用フィルターを提供するグランプレット"
+
+msgid "Media GOQL Filter"
+msgstr "メディア GOQL フィルター"
+
+msgid "Gramplet providing a gramps-object-query-language media filter"
+msgstr ""
+"Grampsオブジェクトクエリ言語のメディアフィルターを提供するグランプレット"
+
+msgid "Note GOQL Filter"
+msgstr "メモGOQLフィルター"
+
+msgid "Gramplet providing a gramps-object-query-language note filter"
+msgstr "Grampsオブジェクトクエリ言語のメモフィルターを提供するグランプレット"
+
+msgid "A gramps-object-query-language where-expression, e.g.\n"
+msgstr "Grampsオブジェクトクエリ言語のwhere式、例:\n"
+
+msgid "Enter inserts a newline; Ctrl+Enter runs Find.\n"
+msgstr "Enterで改行、Ctrl+Enterで検索を実行します。\n"
+
+msgid "Up/Down at the first/last line recalls previous expressions.\n"
+msgstr "最初/最後の行で上下キーを押すと、以前の式を呼び出します。\n"
+
+msgid "Tab always completes -- it never inserts a tab character."
+msgstr "Tabは常に補完を行います -- タブ文字を挿入することはありません。"
+
+#, python-format
+msgid "%s filter"
+msgstr "%sフィルター"
+
+msgid "This resets the filter parameters to empty state."
+msgstr "フィルターパラメータを空の状態にリセットします。"
+
+msgid "This opens a dialog to save the current expression as a named filter."
+msgstr "現在の式を名前付きフィルターとして保存するダイアログを開きます。"
+
+msgid "Open this gramplet's help page in a browser."
+msgstr "このグランプレットのヘルプページをブラウザで開きます。"
+
+msgid "SQL"
+msgstr "SQL"
+
+msgid "Python evaluation"
+msgstr "Python 評価"
+
+#, python-format
+msgid "Error applying filter: %s"
+msgstr "フィルター適用中にエラーが発生しました: %s"
+
+#, python-format
+msgid "Showing %(shown)d of %(total)d (%(method)s)"
+msgstr "%(total)d 件中 %(shown)d 件を表示 (%(method)s)"
+
+#, python-format
+msgid "Error resetting filter: %s"
+msgstr "フィルターのリセットエラー: %s"
+
+msgid "Enter an expression first"
+msgstr "まず式を入力してください"
+
+#, python-brace-format
+msgid "Created by the GOQL Filter gramplet on {today}"
+msgstr "{today} に GOQL フィルターグランプレットによって作成されました"
+
+msgid ""
+"Matches people for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"指定されたGrampsオブジェクトクエリ言語のwhere式が真と評価される人物に一致しま"
+"す"
+
+msgid ""
+"Matches families for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"指定されたGrampsオブジェクトクエリ言語のwhere式が真と評価される家族に一致しま"
+"す"
+
+msgid ""
+"Matches events for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"指定されたGrampsオブジェクトクエリ言語のwhere式が真と評価されるイベントに一致"
+"します"
+
+msgid ""
+"Matches places for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"指定されたGrampsオブジェクトクエリ言語のwhere式が真と評価される場所に一致しま"
+"す"
+
+msgid ""
+"Matches repositories for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"指定されたGrampsオブジェクトクエリ言語のwhere式が真と評価されるリポジトリに一"
+"致します"
+
+msgid ""
+"Matches sources for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"指定されたGrampsオブジェクトクエリ言語のwhere式が真と評価されるソースに一致し"
+"ます"
+
+msgid ""
+"Matches citations for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"指定されたGrampsオブジェクトクエリ言語のwhere式が真と評価される引用に一致しま"
+"す"
+
+msgid ""
+"Matches media for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"指定されたGrampsオブジェクトクエリ言語のwhere式が真と評価されるメディアに一致"
+"します"
+
+msgid ""
+"Matches notes for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"指定されたGrampsオブジェクトクエリ言語のwhere式が真と評価されるメモに一致しま"
+"す"

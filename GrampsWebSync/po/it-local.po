@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-31 17:35+0200\n"
+"POT-Creation-Date: 2026-08-06 07:24+0200\n"
 "PO-Revision-Date: 2026-07-31 16:24+0000\n"
 "Last-Translator: medardo <medardo@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
@@ -65,78 +65,11 @@ msgstr "Errore del server %s. Controlla la connessione."
 msgid "Unexpected error: %s"
 msgstr "Errore inaspettato: %s"
 
-msgid "Fetching remote data..."
-msgstr "Recupero dei dati remoti..."
-
-msgid "Comparing local and remote data..."
-msgstr "Confronto tra dati locali e remoti..."
-
-msgid "Successfully applied changes to local database."
-msgstr "Le modifiche al database locale sono state applicate con successo."
-
-msgid "Continue without transport encryption?"
-msgstr "Vuoi continuare senza crittografia del traffico?"
-
-msgid ""
-"You have specified a URL with http scheme. If you continue, your password "
-"will be sent in clear text over the network. Use only for local testing!"
-msgstr ""
-"Hai specificato un URL con uno schema http. Se continui, la tua password "
-"verrà inviata come testo in chiaro sulla rete. Da usare solo per test locali!"
-
-msgid "Continue with HTTP"
-msgstr "Continua con HTTP"
-
-msgid "Use HTTPS"
-msgstr "Usa HTTPS"
-
-msgid "Server URL: "
-msgstr "URL del server: "
+msgid "Media files are in sync."
+msgstr "I file multimediali sono sincronizzati."
 
 msgid "Error:"
 msgstr "Errore:"
 
-msgid "Bidirectional Synchronization"
-msgstr "Sincronizzazione bidirezionale"
-
-msgid "Reset remote to local"
-msgstr "Reimposta da remoto a locale"
-
-msgid "Reset local to remote"
-msgstr "Reimposta da locale a remoto"
-
-msgid "Local changes"
-msgstr "Modifiche locali"
-
-msgid "Remote changes"
-msgstr "Modifiche remote"
-
-msgid "Simultaneous changes"
-msgstr "Modifiche simultanee"
-
-msgid "Fetching information about media files..."
-msgstr "Recupero delle informazioni sui file multimediali..."
-
-msgid "Both trees are the same."
-msgstr "Entrambi gli alberi sono lo stesso."
-
-msgid "Applying changes to local database ..."
-msgstr "Applicazione delle modifiche al database locale..."
-
-msgid "No changes to apply to local database."
-msgstr "Nessuna modifica da applicare al database locale."
-
-msgid "Applying changes to remote database ..."
-msgstr "Applicazione delle modifiche al database remoto..."
-
-msgid "No changes to apply to remote database."
-msgstr "Nessuna modifica da applicare al database remoto."
-
-msgid "Missing locally"
-msgstr "Mancante in locale"
-
-msgid "Missing remotely"
-msgstr "Mancante in remoto"
-
-msgid "Media files are in sync."
-msgstr "I file multimediali sono sincronizzati."
+msgid "Copy"
+msgstr "Copia"

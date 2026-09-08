@@ -1,0 +1,73 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "PhpGedView"
+msgstr "PhpGedView"
+
+msgid "Download a GEDCOM file from a phpGedView server."
+msgstr "從 phpGedView 伺服器下載 GEDCOM 檔案。"
+
+msgid "Fetching index list..."
+msgstr "正在取得索引清單..."
+
+msgid "Fetching records..."
+msgstr "正在取得記錄..."
+
+msgid "Logging in..."
+msgstr "正在登入..."
+
+msgid "Fetching GEDCOM..."
+msgstr "正在取得 GEDCOM..."
+
+msgid "Importing GEDCOM..."
+msgstr "正在匯入 GEDCOM..."
+
+msgid "Error: login failed"
+msgstr "錯誤：登入失敗"
+
+msgid "done."
+msgstr "完成。"
+
+msgid "Connecting..."
+msgstr "正在連線..."
+
+msgid "Get version..."
+msgstr "取得版本..."
+
+#, python-format
+msgid "Version %s"
+msgstr "版本 %s"
+
+msgid "Reading file list..."
+msgstr "正在讀取檔案清單..."
+
+msgid "Error: Invalid URL"
+msgstr "錯誤：網址無效"
+
+msgid "- default -"
+msgstr "- 預設 -"
+
+msgid "phpGedView import"
+msgstr "phpGedView 匯入"
+
+msgid "http://"
+msgstr "http://"
+
+msgid "Username:"
+msgstr "使用者名稱："
+
+msgid "Password:"
+msgstr "密碼："

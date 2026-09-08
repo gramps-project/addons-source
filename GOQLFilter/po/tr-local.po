@@ -1,0 +1,232 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 4.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-04 08:52-0700\n"
+"PO-Revision-Date: 2026-08-07 07:57+0000\n"
+"Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/tr/>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Language: tr\n"
+"X-Source-Language: C\n"
+
+msgid "GOQL expression"
+msgstr "GOQL ifadesi"
+
+msgid ""
+"Matches objects for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Verilen gramps nesnesi sorgu dilindeki ifadenin doğru olarak "
+"değerlendirildiği nesnelerle eşleşir"
+
+msgid "People matching the <GOQL expression>"
+msgstr "<GOQL ifadesi> ile eşleşen kişiler"
+
+msgid "Families matching the <GOQL expression>"
+msgstr "<GOQL ifadesi> ile eşleşen aileler"
+
+msgid "Events matching the <GOQL expression>"
+msgstr "<GOQL ifadesi> ile eşleşen etkinlikler"
+
+msgid "Places matching the <GOQL expression>"
+msgstr "<GOQL ifadesi> ile eşleşen yerler"
+
+msgid "Repositories matching the <GOQL expression>"
+msgstr "<GOQL ifadesi> ile eşleşen depolar"
+
+msgid "Sources matching the <GOQL expression>"
+msgstr "<GOQL ifadesi> ile eşleşen kaynaklar"
+
+msgid "Citations matching the <GOQL expression>"
+msgstr "<GOQL ifadesi> ile eşleşen alıntılar"
+
+msgid "Media matching the <GOQL expression>"
+msgstr "<GOQL ifadesi> ile eşleşen medya"
+
+msgid "Notes matching the <GOQL expression>"
+msgstr "<GOQL ifadesi> ile eşleşen notlar"
+
+msgid "Person GOQL Filter"
+msgstr "Kişi GOQL Filtresi"
+
+msgid "Gramplet providing a gramps-object-query-language person filter"
+msgstr ""
+"Gramplet, Gramps nesne sorgulama dili ile kişi filtreleme özelliği sunuyor"
+
+msgid "GOQL Filter"
+msgstr "GOQL Filtresi"
+
+msgid "Family GOQL Filter"
+msgstr "Aile GOQL Filtresi"
+
+msgid "Gramplet providing a gramps-object-query-language family filter"
+msgstr "Gramplet, Gramps nesne sorgulama dili için bir aile filtresi sağlıyor"
+
+msgid "Event GOQL Filter"
+msgstr "Etkinlik GOQL Filtresi"
+
+msgid "Gramplet providing a gramps-object-query-language event filter"
+msgstr "Gramplet, Gramps Nesne Sorgu Dili için bir etkinlik filtresi sağlıyor"
+
+msgid "Place GOQL Filter"
+msgstr "GOQL Filtresini Yerleştir"
+
+msgid "Gramplet providing a gramps-object-query-language place filter"
+msgstr "Gramplet, Gramps nesne sorgulama dili için yer filtresi sağlıyor"
+
+msgid "Repository GOQL Filter"
+msgstr "Depo GOQL Filtresi"
+
+msgid "Gramplet providing a gramps-object-query-language repository filter"
+msgstr "Gramplet, Gramps Nesne Sorgu Dili için bir depo filtresi sağlıyor"
+
+msgid "Source GOQL Filter"
+msgstr "Kaynak GOQL Filtresi"
+
+msgid "Gramplet providing a gramps-object-query-language source filter"
+msgstr ""
+"Gramplet, Gramps nesne sorgulama dili için bir kaynak filtresi sağlıyor"
+
+msgid "Citation GOQL Filter"
+msgstr "Alıntı GOQL Filtresi"
+
+msgid "Gramplet providing a gramps-object-query-language citation filter"
+msgstr ""
+"Gramplet, Gramps nesne sorgulama dili için bir alıntı filtresi sağlıyor"
+
+msgid "Media GOQL Filter"
+msgstr "Medya GOQL Filtresi"
+
+msgid "Gramplet providing a gramps-object-query-language media filter"
+msgstr "Gramplet, Gramps nesne sorgulama dili için bir medya filtresi sağlıyor"
+
+msgid "Note GOQL Filter"
+msgstr "Not GOQL Filtresi"
+
+msgid "Gramplet providing a gramps-object-query-language note filter"
+msgstr "Gramplet, Gramps nesne sorgu dili için not filtresi sağlıyor"
+
+msgid "A gramps-object-query-language where-expression, e.g.\n"
+msgstr "Gramps nesne sorgulama dilinde, örneğin şu ifade kullanılır\n"
+
+msgid "Enter inserts a newline; Ctrl+Enter runs Find.\n"
+msgstr ""
+"Enter tuşu yeni satır ekler; Ctrl+Enter tuşu ise Bul işlevini çalıştırır.\n"
+
+msgid "Up/Down at the first/last line recalls previous expressions.\n"
+msgstr ""
+"İlk/son satırdaki Yukarı/Aşağı düğmeleri önceki ifadeleri hatırlatır.\n"
+
+msgid "Tab always completes -- it never inserts a tab character."
+msgstr "Sekme tuşu her zaman tamamlanır -- asla sekme karakteri eklenmez."
+
+#, python-format
+msgid "%s filter"
+msgstr "%s filtresi"
+
+msgid "This resets the filter parameters to empty state."
+msgstr "Bu işlem, filtre parametrelerini boş duruma sıfırlar."
+
+msgid "This opens a dialog to save the current expression as a named filter."
+msgstr ""
+"Bu, mevcut ifadeyi adlandırılmış bir filtre olarak kaydetmek için bir "
+"iletişim kutusu açar."
+
+msgid "Open this gramplet's help page in a browser."
+msgstr "Bu grampletin yardım sayfasını bir tarayıcıda açın."
+
+msgid "SQL"
+msgstr "SQL"
+
+msgid "Python evaluation"
+msgstr "Python değerlendirmesi"
+
+#, python-format
+msgid "Error applying filter: %s"
+msgstr "Filtre uygulanırken hata oluştu: %s"
+
+#, python-format
+msgid "Showing %(shown)d of %(total)d (%(method)s)"
+msgstr "Gösterilen %(shown)d / %(total)d (%(method)s)"
+
+#, python-format
+msgid "Error resetting filter: %s"
+msgstr "Filtre sıfırlama hatası: %s"
+
+msgid "Enter an expression first"
+msgstr "Önce bir ifade girin"
+
+#, python-brace-format
+msgid "Created by the GOQL Filter gramplet on {today}"
+msgstr "{today} tarihinde GOQL Filter grampleti tarafından oluşturuldu"
+
+msgid ""
+"Matches people for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Verilen gramps nesnesinin sorgu dilinde ifadenin doğru olarak "
+"değerlendirildiği kişileri eşleştirir"
+
+msgid ""
+"Matches families for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Verilen gramps nesnesi sorgu dilinde ifadenin doğru olarak değerlendirildiği "
+"ailelerle eşleşir"
+
+msgid ""
+"Matches events for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Verilen gramps nesnesi sorgu dilindeki ifadenin doğru olarak "
+"değerlendirildiği olaylarla eşleşir"
+
+msgid ""
+"Matches places for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Verilen gramps nesnesi sorgu dilindeki ifadenin doğru olarak "
+"değerlendirildiği yerlerle eşleşir"
+
+msgid ""
+"Matches repositories for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Verilen gramps nesnesi sorgu dilinde ifadesinin doğru olarak "
+"değerlendirildiği depoları eşleştirir"
+
+msgid ""
+"Matches sources for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Verilen gramps nesnesi sorgu dilinin, ifadenin doğru olarak "
+"değerlendirildiği kaynaklarıyla eşleşir"
+
+msgid ""
+"Matches citations for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Verilen gramps nesnesi sorgu dilinin ifadesinin doğru olarak "
+"değerlendirildiği alıntıları eşleştirir"
+
+msgid ""
+"Matches media for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Verilen gramps nesnesi sorgu dilinde ifadenin doğru olarak değerlendirildiği "
+"medyaları eşleştirir"
+
+msgid ""
+"Matches notes for which the given gramps-object-query-language where-"
+"expression evaluates to true"
+msgstr ""
+"Verilen gramps nesnesi sorgu dilinde ifadenin doğru olarak değerlendirildiği "
+"notlarla eşleşir"

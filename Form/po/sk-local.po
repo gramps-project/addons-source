@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-08-05 18:02+0000\n"
+"PO-Revision-Date: 2026-09-06 12:51+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 
 #, python-format
 msgid "Form: %s"
@@ -883,13 +883,13 @@ msgid "Beef"
 msgstr "Hovädzie mäso"
 
 msgid "53. Beef - Barrels or Cwts."
-msgstr "53. Hovädzie mäso – barely alebo centnery"
+msgstr "53. Hovädzie mäso - barely alebo centnery"
 
 msgid "Pork"
 msgstr "Bravčové mäso"
 
 msgid "54. Pork - Barrels or Cwts."
-msgstr "54. Bravčové mäso – barely alebo centnery"
+msgstr "54. Bravčové mäso - barely alebo centnery"
 
 msgid "Fish"
 msgstr "Ryby"

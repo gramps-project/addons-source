@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-08-28 06:51+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "People related to <filter>"
 msgstr "Personer relateret til <filter>"
@@ -20,6 +20,9 @@ msgstr "Personer relateret til <filter>"
 msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
 "Matchende personer, der er relateret til alle der matcher et personfilter"
+
+msgid "Retrieving all sub-filter matches"
+msgstr "Henter alle underfiltermatches"
 
 msgid "People separated less than <N> degrees of <person>"
 msgstr "Personer delt af mindre end <N> grader af <person>"
@@ -111,6 +114,9 @@ msgstr "Filtrer person efter alder ved død"
 msgid "Filter rule that matches people by their age at death"
 msgstr "Filterregel der matcher personer efter  deres alder ved død"
 
+msgid "Role:"
+msgstr "Rolle:"
+
 msgid "Multiple Parents Filter"
 msgstr "Flere forældrefiltre"
 
@@ -125,6 +131,12 @@ msgstr "Fokuspersonen"
 
 msgid "Matches sources with a particular value"
 msgstr "Matcher kilder medf en bestemt værdi"
+
+msgid "Events from people with role"
+msgstr "Begivenheder fra personer med rolle"
+
+msgid "Matches event of people filter with role"
+msgstr "Matcher begivenheder for personer med rolle"
 
 msgid "Active person"
 msgstr "Fokuspersin"

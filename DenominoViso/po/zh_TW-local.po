@@ -1,0 +1,401 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "No Source"
+msgstr "無來源"
+
+msgid "onclick"
+msgstr "onclick"
+
+msgid "onmouseover"
+msgstr "onmouseover"
+
+msgid "Ancestor"
+msgstr "祖先"
+
+msgid "Descendant"
+msgstr "後代"
+
+msgid "Fan"
+msgstr "扇形"
+
+msgid "Growth Spiral"
+msgstr "生長螺旋"
+
+msgid "Mandelbrot Tree"
+msgstr "曼德博樹"
+
+msgid "Pythagoras Tree"
+msgstr "畢氏樹"
+
+msgid "right to left"
+msgstr "由右至左"
+
+msgid "left to right"
+msgstr "由左至右"
+
+msgid "top to bottom"
+msgstr "由上至下"
+
+msgid "bottom to top"
+msgstr "由下至上"
+
+msgid "role"
+msgstr "角色"
+
+msgid "description"
+msgstr "說明"
+
+msgid "witnesses"
+msgstr "見證人"
+
+#, python-brace-format
+msgid "Failure writing {target_path}: {message}"
+msgstr "寫入 {target_path} 失敗：{message}"
+
+msgid "No central person selected"
+msgstr "尚未選取中心人物"
+
+msgid "Unknown time direction"
+msgstr "未知的時間方向"
+
+msgid "author"
+msgstr "作者"
+
+msgid "publication_info"
+msgstr "publication_info"
+
+msgid "abbreviation"
+msgstr "縮寫"
+
+msgid "volume"
+msgstr "卷"
+
+msgid "of"
+msgstr "的"
+
+msgid "the chart type runs out of bounds"
+msgstr "圖表類型超出範圍"
+
+msgid "in"
+msgstr "於"
+
+msgid "DenominoViso Options"
+msgstr "DenominoViso 選項"
+
+msgid "The destination file for the html-content."
+msgstr "HTML 內容的目的地檔案。"
+
+msgid "Central Person"
+msgstr "中心人物"
+
+msgid "The central person for the tree"
+msgstr "家族樹的中心人物"
+
+msgid "Title of the webpage"
+msgstr "網頁標題"
+
+msgid "Any string you wish."
+msgstr "任何您想要的字串。"
+
+msgid "Display mode"
+msgstr "顯示模式"
+
+msgid "Either plot ancestor or descendants graph."
+msgstr "繪製祖先圖或後代圖。"
+
+msgid "Display type"
+msgstr "顯示類型"
+
+msgid "The type of graph to create."
+msgstr "要建立的圖表類型。"
+
+msgid "Direction of time"
+msgstr "時間方向"
+
+msgid "Direction in which time increases."
+msgstr "時間遞增的方向。"
+
+msgid "Max chart width (%)"
+msgstr "圖表最大寬度 (%)"
+
+msgid "Width of the tree as fraction of the browser window"
+msgstr "樹狀圖寬度占瀏覽器視窗的比例"
+
+msgid "Max chart height (px)"
+msgstr "圖表最大高度 (px)"
+
+msgid "Height of the tree in pixels."
+msgstr "樹狀圖高度（像素）。"
+
+msgid "Closing remarks"
+msgstr "結語"
+
+msgid ""
+"List of strings, free text added at the bottom, for example for a copyright "
+"notice."
+msgstr "在底部加入的自由文字字串清單，例如版權聲明。"
+
+msgid "Include Options"
+msgstr "包含項目選項"
+
+msgid "Include private records"
+msgstr "包含私密記錄"
+
+msgid "Whether to leave out private data."
+msgstr "是否省略私密資料。"
+
+msgid "Include Events"
+msgstr "包含事件"
+
+msgid "Whether to include a person's events."
+msgstr "是否包含人物的事件。"
+
+msgid "Include birth children"
+msgstr "包含子女出生"
+
+msgid "Whether to include the birth of children in the list of events."
+msgstr "是否在事件清單中包含子女出生事件。"
+
+msgid "Include death relatives"
+msgstr "包含親屬死亡"
+
+msgid ""
+"Whether to include the death of relatives during the lifetime of person."
+msgstr "是否包含人物在世期間親屬的死亡事件。"
+
+msgid "Include witness note"
+msgstr "包含見證人備註"
+
+msgid ""
+"Whether to include the note belonging to a witness (if the event_format "
+"contains <witnesses>)"
+msgstr "是否包含見證人的備註（若 event_format 包含 <witnesses>）"
+
+msgid "Whether to include a person's attributes"
+msgstr "是否包含人物的屬性"
+
+msgid "Whether to include a person's addresses."
+msgstr "是否包含人物的地址。"
+
+msgid "Include Note"
+msgstr "包含備註"
+
+msgid "Whether to include a person's note."
+msgstr "是否包含人物的備註。"
+
+msgid "Include URL"
+msgstr "包含網址"
+
+msgid "Whether to include a person's internet address."
+msgstr "是否包含人物的網際網路位址。"
+
+msgid "Include URL description"
+msgstr "包含網址說明"
+
+msgid "Whether to include the description of the first URL"
+msgstr "是否包含第一個網址的說明"
+
+msgid "Include Sources"
+msgstr "包含來源"
+
+msgid "Whether to include a person's sources."
+msgstr "是否包含人物的來源。"
+
+msgid "Image Options"
+msgstr "圖片選項"
+
+msgid "Include Photos/Images from Gallery"
+msgstr "包含藝廊中的相片／圖片"
+
+msgid "Whether to include images"
+msgstr "是否包含圖片"
+
+msgid "Copy Image"
+msgstr "複製圖片"
+
+msgid "Copy the images to a designated directory."
+msgstr "將圖片複製到指定目錄。"
+
+msgid "Images with Attribute"
+msgstr "具有指定屬性的圖片"
+
+msgid "Determine images with which attributes to in/exclude"
+msgstr "決定要包含或排除具有哪些屬性的圖片"
+
+msgid "Include Image source references"
+msgstr "包含圖片來源參照"
+
+msgid "Whether to include references for images"
+msgstr "是否包含圖片的參照"
+
+msgid "Source reference attribute"
+msgstr "來源參照屬性"
+
+msgid "Image attribute that should be used as source reference"
+msgstr "要作為來源參照的圖片屬性"
+
+msgid "Style Options"
+msgstr "樣式選項"
+
+msgid "Color of active person:"
+msgstr "目前人物的色彩："
+
+msgid "RGB-color of geometric shape of the activated person."
+msgstr "目前人物幾何圖形的 RGB 色彩。"
+
+msgid "Color of found persons:"
+msgstr "找到人物的色彩："
+
+msgid "RGB-color of geometric shape of the persons found."
+msgstr "找到人物幾何圖形的 RGB 色彩。"
+
+msgid "Color of male persons:"
+msgstr "男性人物的色彩："
+
+msgid "RGB-color of geometric shape of the male persons."
+msgstr "男性人物幾何圖形的 RGB 色彩。"
+
+msgid "Colour of female persons:"
+msgstr "女性人物的顏色："
+
+msgid "RGB-color of geometric shape of the female persons."
+msgstr "女性人物幾何圖形的 RGB 色彩。"
+
+msgid "Width of rectangle (hrd):"
+msgstr "矩形寬度 (hrd)："
+
+msgid ""
+"The width of a person rectangle of the regular chart type expressed as "
+"fraction of the horizontal rectangle distance."
+msgstr "一般圖表類型中，人物矩形寬度占矩形水平間距的比例。"
+
+msgid "Height of rectangle (hrd):"
+msgstr "矩形高度 (hrd)："
+
+msgid ""
+"The height of a person rectangle of the regular chart type expressed as "
+"fraction of the horizontal rectangle distance."
+msgstr "一般圖表類型中，人物矩形高度占矩形水平間距的比例。"
+
+msgid "Vertical distance of rectangles (hrd):"
+msgstr "矩形垂直間距 (hrd)："
+
+msgid ""
+"The vertical distance of person rectangles of the regular chart type "
+"expressed as fraction of the horizontal rectangle distance."
+msgstr "一般圖表類型中，人物方塊的垂直距離，以水平方塊距離的比例表示。"
+
+msgid "Extra style settings:"
+msgstr "額外樣式設定："
+
+msgid "Whatever css style settings are needed."
+msgstr "所需的各項 CSS 樣式設定。"
+
+msgid "Mouse event handler"
+msgstr "滑鼠事件處理常式"
+
+msgid "Mouse handler used to interact with visitor of webpage."
+msgstr "用來與網頁訪客互動的滑鼠事件處理常式。"
+
+msgid "Birth relationship linestyle"
+msgstr "出生關係線條樣式"
+
+msgid ""
+"List of lists where each sublist is a list with information about the dash "
+"pattern of lines connecting children to parents."
+msgstr "由多個子清單組成的清單，每個子清單記錄子女與父母連線的虛線樣式。"
+
+msgid "Source confidence color"
+msgstr "來源可信度色彩"
+
+msgid ""
+"List of lists where each sublist is a list with information on the color to "
+"use for a certain confidence level."
+msgstr "由多個子清單組成的清單，每個子清單記錄特定可信度等級要使用的色彩。"
+
+msgid "Event format"
+msgstr "事件格式"
+
+msgid "at"
+msgstr "於"
+
+msgid ""
+"List os strings with placeholders for events. Known placeholders: <type>, "
+"<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
+"<attribute-value>."
+msgstr ""
+"含有事件預留位置的字串清單。已知的預留位置：<type>、<role>、<date>、<place>、"
+"<description>、<witnesses>、<source> 及任何 <attribute-value>。"
+
+msgid "Source format"
+msgstr "來源格式"
+
+msgid ""
+"List of strings with placeholders for sources. Known placeholders: <title>, "
+"<volume>, <author>, <publication_info> and <abbreviation>."
+msgstr ""
+"含有來源預留位置的字串清單。已知的預留位置：<title>、<volume>、<author>、"
+"<publication_info> 及 <abbreviation>。"
+
+msgid "restricted to:"
+msgstr "限制為："
+
+msgid "to directory:"
+msgstr "至目錄："
+
+msgid "Save images in ..."
+msgstr "將圖片儲存於 ..."
+
+msgid "should be"
+msgstr "應為"
+
+msgid "Included"
+msgstr "已包含"
+
+msgid "Excluded"
+msgstr "排除"
+
+msgid "Name HTML-wrapper file"
+msgstr "HTML-wrapper 檔案名稱"
+
+msgid "Save HTML-wrapper file as ..."
+msgstr "將 HTML 包裝檔另存為 ..."
+
+msgid "Give a filename ..."
+msgstr "指定檔名 ..."
+
+msgid "Relation type"
+msgstr "關係類型"
+
+msgid "Use dashed linestyle"
+msgstr "使用虛線樣式"
+
+msgid "Dash length"
+msgstr "虛線長度"
+
+msgid "Inter-dash length"
+msgstr "虛線間隔長度"
+
+msgid "DenominoViso"
+msgstr "DenominoViso"
+
+msgid ""
+"Generates a web (HTML) page with a graphical representation of ancestors/"
+"descendants (SVG) where details about individuals become visible upon mouse-"
+"events."
+msgstr ""
+"產生 HTML 網頁，以 SVG 圖形呈現祖先／後代；以滑鼠操作時可顯示人物詳細資料。"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-31 17:35+0200\n"
-"PO-Revision-Date: 2026-08-05 18:02+0000\n"
+"POT-Creation-Date: 2026-08-06 07:24+0200\n"
+"PO-Revision-Date: 2026-09-06 12:51+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,13 +12,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Web Sync"
 
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Synchronizuje lokálnu databázu s inštanciou Gramps Web."
+
+#, python-format
+msgid "Gramps Web Sync %(addon)s, Web API %(api)s"
+msgstr "Gramps Web Sync %(addon)s, Web API %(api)s"
+
+#, python-format
+msgid "Gramps Web Sync %s"
+msgstr "Gramps Web Sync %s"
+
+msgid ""
+"This URL uses http, so your password will be sent in clear text. Use only "
+"for local testing."
+msgstr ""
+"Táto URL používa http, takže vaše heslo bude odoslané v čitateľnej podobe. "
+"Používajte len na lokálne testovanie."
 
 #, python-format
 msgid ""
@@ -80,6 +95,41 @@ msgstr ""
 "Prosím, porovnajte znova."
 
 #, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s, but synchronization needs "
+"%(needed)s or newer. Please update the server."
+msgstr ""
+"Tento server používa Gramps Web API %(found)s, ale synchronizácia vyžaduje "
+"verziu %(needed)s alebo novšiu. Aktualizujte prosím server."
+
+#, python-format
+msgid ""
+"This server did not report a Gramps Web API version, so it is too old to "
+"synchronize with. Version %s or newer is needed."
+msgstr ""
+"Tento server neoznámil verziu Gramps Web API, takže je príliš starý na "
+"synchronizáciu. Potrebná je verzia %s alebo novšia."
+
+#, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s. This version of Gramps works with "
+"Gramps Web API %(major)s, so synchronizing with this server needs a newer "
+"version of Gramps."
+msgstr ""
+"Tento server používa Gramps Web API %(found)s. Táto verzia Gramps pracuje s "
+"Gramps Web API %(major)s, preto synchronizácia s týmto serverom vyžaduje "
+"novšiu verziu Gramps."
+
+msgid ""
+"This server is not configured to use a background task queue. "
+"Synchronization needs one: without it, applying changes times out before the "
+"server has finished. Please enable it on the server."
+msgstr ""
+"Tento server nie je nakonfigurovaný na používanie fronty úloh na pozadí. "
+"Synchronizácia ju potrebuje: bez nej dôjde k časovému limitu pri aplikovaní "
+"zmien skôr, ako server dokončí spracovanie. Prosím, povoľte ju na serveri."
+
+#, python-format
 msgid "The server could not apply the changes: %s"
 msgstr "Server nemohol aplikovať zmeny: %s"
 
@@ -91,67 +141,47 @@ msgstr "Chyba servera %s. Skontrolujte svoje pripojenie."
 msgid "Unexpected error: %s"
 msgstr "Neočakávaná chyba: %s"
 
-msgid "Fetching remote data..."
-msgstr "Získavanie vzdialených údajov..."
+msgid "Signing in…"
+msgstr "Prihlasovanie…"
 
-msgid "Comparing local and remote data..."
-msgstr "Porovnávanie miestnych a vzdialených údajov..."
+msgid "Downloading the remote family tree…"
+msgstr "Sťahovanie vzdialeného rodinného stromu…"
 
-msgid "Successfully applied changes to local database."
-msgstr "Zmeny boli úspešne aplikované v lokálnej databáze."
+msgid "Comparing the two family trees…"
+msgstr "Porovnávanie dvoch rodinných stromov…"
 
-msgid "Continue without transport encryption?"
-msgstr "Pokračovať bez šifrovania prenosu?"
+msgid "Checking which media files are missing…"
+msgstr "Kontrola chýbajúcich mediálnych súborov…"
 
-msgid ""
-"You have specified a URL with http scheme. If you continue, your password "
-"will be sent in clear text over the network. Use only for local testing!"
-msgstr ""
-"Zadali ste URL so schémou http. Ak budete pokračovať, vaše heslo bude "
-"odoslané cez sieť v nezakódovanej podobe. Používajte len na lokálne "
-"testovanie!"
+msgid "Applied the changes to this computer."
+msgstr "Zmeny boli aplikované na tomto počítači."
 
-msgid "Continue with HTTP"
-msgstr "Pokračovať s HTTP"
+msgid "Sending the changes to the server…"
+msgstr "Odosielanie zmien na server…"
 
-msgid "Use HTTPS"
-msgstr "Použiť HTTPS"
+msgid "Downloading media files…"
+msgstr "Sťahovanie mediálnych súborov…"
 
-msgid ""
-"This tool allows to synchronize the currently opened family tree with a "
-"remote family tree served by Gramps Web.\n"
-"\n"
-"The tool assumes that the two trees are derivatives of each other, i.e. one "
-"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
-"\n"
-"After successful synchronization, the two trees will be identical. "
-"Modifications will be propagated based on timestamps. You will be prompted "
-"for confirmation before any changes are made to the local or remote trees.\n"
-"\n"
-"If you instead want to merge two significantly different trees with the "
-"option to make manual modifications, use the Import Merge Tool instead."
-msgstr ""
-"Tento nástroj umožňuje synchronizovať aktuálne otvorený rodokmeň so "
-"vzdialeným rodokmeňom, ktorý poskytuje Gramps Web.\n"
-"\n"
-"Nástroj predpokladá, že oba stromy sú vzájomne odvodené, t. j. jeden z nich "
-"bol vytvorený z exportu druhého pomocou Gramps XML (nie GEDCOM!).\n"
-"\n"
-"Po úspešnej synchronizácii budú oba stromy identické. Zmeny sa budú šíriť na "
-"základe časových pečiatok. Pred vykonaním akýchkoľvek zmien v miestnom alebo "
-"vzdialenom strome budete vyzvaní na potvrdenie.\n"
-"\n"
-"Ak chcete namiesto toho zlúčiť dva výrazne odlišné stromy s možnosťou "
-"vykonať ručné úpravy, použite namiesto toho nástroj na import a zlúčenie."
+msgid "Uploading media files…"
+msgstr "Nahrávanie mediálnych súborov…"
 
-msgid "Server URL: "
-msgstr "URL servera: "
+msgid "Connect"
+msgstr "Pripojiť"
 
-msgid "Error:"
-msgstr "Chyba:"
+msgid "Apply changes"
+msgstr "Aplikovať zmeny"
 
-msgid "Sync mode"
-msgstr "Synchronizovaný režim"
+msgid "Transfer media files"
+msgstr "Preniesť mediálne súbory"
+
+msgid "Bidirectional synchronization"
+msgstr "Obojsmerná synchronizácia"
+
+msgid "Reset the server to match this computer"
+msgstr "Resetovať server, aby zodpovedal tomuto počítaču"
+
+msgid "Reset this computer to match the server"
+msgstr "Resetovať tento počítač, aby zodpovedal serveru"
 
 msgid ""
 "Changes from both sides are combined. Objects edited in both places are "
@@ -174,70 +204,82 @@ msgstr ""
 "Tento počítač sa upraví tak, aby zodpovedal serveru. Čokoľvek zmenené len tu "
 "sa vyradí."
 
-msgid "Bidirectional Synchronization"
-msgstr "Obojsmerná synchronizácia"
-
-msgid "Reset remote to local"
-msgstr "Obnoviť vzdialené na lokálne"
-
-msgid "Reset local to remote"
-msgstr "Obnoviť lokálne na vzdialené"
-
-msgid "Warning:"
-msgstr "Upozornenie:"
-
-msgid "Local changes"
-msgstr "Lokálne zmeny"
-
-msgid "Modified"
-msgstr "Zmenený"
-
-msgid "Remote changes"
-msgstr "Vzdialené zmeny"
-
-msgid "Simultaneous changes"
-msgstr "Súbežné zmeny"
-
-msgid "Fetching information about media files..."
-msgstr "Načítavanie informácií o mediálnych súboroch..."
-
-msgid "Both trees are the same."
-msgstr "Obidva stromy sú rovnaké."
-
-msgid "Applying changes to local database ..."
-msgstr "Aplikovanie zmien do lokálnej databázy ..."
-
-msgid "No changes to apply to local database."
-msgstr "Žiadne zmeny na aplikovanie do lokálnej databázy."
-
-msgid "Applying changes to remote database ..."
-msgstr "Aplikovanie zmien do vzdialenej databázy ..."
-
-msgid "No changes to apply to remote database."
-msgstr "Žiadne zmeny na aplikovanie do vzdialenej databázy."
-
-msgid "Missing locally"
-msgstr "Chýbajúce lokálne"
-
-msgid "Missing remotely"
-msgstr "Chýbajúce vzdialene"
+#, python-format
+msgid "Will change on this computer (%s object)"
+msgid_plural "Will change on this computer (%s objects)"
+msgstr[0] "Na tomto počítači sa zmení (%s objekt)"
+msgstr[1] "Na tomto počítači sa zmenia (%s objekty)"
+msgstr[2] "Na tomto počítači sa zmení (%s objektov)"
 
 #, python-format
-msgid "Downloading %s media file"
-msgid_plural "Downloading %s media files"
-msgstr[0] "Sťahovanie %s mediálneho súboru"
-msgstr[1] "Sťahovanie %s mediálnych súborov"
-msgstr[2] "Sťahovanie %s mediálnych súborov"
+msgid "Will change on the server (%s object)"
+msgid_plural "Will change on the server (%s objects)"
+msgstr[0] "Na serveri sa zmení (%s objekt)"
+msgstr[1] "Na serveri sa zmenia (%s objekty)"
+msgstr[2] "Na serveri sa zmení (%s objektov)"
 
 #, python-format
-msgid "Uploading %s media file"
-msgid_plural "Uploading %s media files"
-msgstr[0] "Nahrávanie %s mediálneho súboru"
-msgstr[1] "Nahrávanie %s mediálnych súborov"
-msgstr[2] "Nahrávanie %s mediálnych súborov"
+msgid "Add %s object"
+msgid_plural "Add %s objects"
+msgstr[0] "Pridať %s objekt"
+msgstr[1] "Pridať %s objekty"
+msgstr[2] "Pridať %s objektov"
 
-msgid "Try again"
-msgstr "Skúste znova"
+#, python-format
+msgid "Update %s object"
+msgid_plural "Update %s objects"
+msgstr[0] "Aktualizovať %s objekt"
+msgstr[1] "Aktualizovať %s objekty"
+msgstr[2] "Aktualizovať %s objektov"
+
+#, python-format
+msgid "Merge %s object"
+msgid_plural "Merge %s objects"
+msgstr[0] "Zlúčiť %s objekt"
+msgstr[1] "Zlúčiť %s objekty"
+msgstr[2] "Zlúčiť %s objektov"
+
+#, python-format
+msgid "Delete %s object"
+msgid_plural "Delete %s objects"
+msgstr[0] "Odstrániť %s objekt"
+msgstr[1] "Odstrániť %s objekty"
+msgstr[2] "Odstrániť %s objektov"
+
+#, python-format
+msgid "%s object will be deleted on this computer."
+msgid_plural "%s objects will be deleted on this computer."
+msgstr[0] "Na tomto počítači bude odstránený %s objekt."
+msgstr[1] "Na tomto počítači budú odstránené %s objekty."
+msgstr[2] "Na tomto počítači bude odstránených %s objektov."
+
+#, python-format
+msgid "%s object will be deleted on the server."
+msgid_plural "%s objects will be deleted on the server."
+msgstr[0] "Na serveri bude odstránený %s objekt."
+msgstr[1] "Na serveri budú odstránené %s objekty."
+msgstr[2] "Na serveri bude odstránených %s objektov."
+
+#, python-format
+msgid "%(down)s to download, %(up)s to upload"
+msgstr "%(down)s na stiahnutie, %(up)s na odoslanie"
+
+#, python-format
+msgid "Also transfer %(total)s media file (%(counts)s)"
+msgid_plural "Also transfer %(total)s media files (%(counts)s)"
+msgstr[0] "Preniesť tiež %(total)s mediálny súbor (%(counts)s)"
+msgstr[1] "Preniesť tiež %(total)s mediálne súbory (%(counts)s)"
+msgstr[2] "Preniesť tiež %(total)s mediálnych súborov (%(counts)s)"
+
+#, python-format
+msgid "%s media file is missing on both sides and cannot be transferred."
+msgid_plural ""
+"%s media files are missing on both sides and cannot be transferred."
+msgstr[0] "%s mediálny súbor chýba na oboch stranách a nemôže byť prenesený."
+msgstr[1] ""
+"%s mediálne súbory chýbajú na oboch stranách a nemôžu byť prenesené."
+msgstr[2] ""
+"%s mediálnych súborov chýba na oboch stranách a nemôžu byť prenesené."
 
 #, python-format
 msgid "Applied %s change."
@@ -246,22 +288,11 @@ msgstr[0] "Aplikovaná %s zmena."
 msgstr[1] "Aplikované %s zmeny."
 msgstr[2] "Aplikovaných %s zmien."
 
-msgid "Media files are in sync."
-msgstr "Mediálne súbory sú synchronizované."
-
-#, python-format
-msgid "%s media file is missing on both sides and could not be transferred."
-msgid_plural ""
-"%s media files are missing on both sides and could not be transferred."
-msgstr[0] ""
-"%s mediálny súbor chýba na oboch stranách a nepodarilo sa ho preniesť."
-msgstr[1] ""
-"%s mediálne súbory chýbajú na oboch stranách a nepodarilo sa ich preniesť."
-msgstr[2] ""
-"%s mediálnych súborov chýba na oboch stranách a nepodarilo sa ich preniesť."
-
 msgid "Both trees are already in sync."
 msgstr "Obidva stromy sú už synchronizované."
+
+msgid "Media files are in sync."
+msgstr "Mediálne súbory sú synchronizované."
 
 #, python-format
 msgid "Successfully downloaded %s media file."
@@ -290,3 +321,143 @@ msgid_plural "Encountered %s errors during upload."
 msgstr[0] "Počas nahrávania sa vyskytla %s chyba."
 msgstr[1] "Počas nahrávania sa vyskytli %s chyby."
 msgstr[2] "Počas nahrávania sa vyskytlo %s chýb."
+
+msgid "No server configured"
+msgstr "Žiadny server nie je nakonfigurovaný"
+
+#, python-format
+msgid "%(user)s on %(server)s"
+msgstr "%(user)s na %(server)s"
+
+#, python-format
+msgid "%(where)s — %(synced)s"
+msgstr "%(where)s — %(synced)s"
+
+msgid "Never synced"
+msgstr "Nikdy nebolo synchronizované"
+
+msgid "Last synced just now"
+msgstr "Naposledy synchronizované práve teraz"
+
+#, python-format
+msgid "Last synced %s minute ago"
+msgid_plural "Last synced %s minutes ago"
+msgstr[0] "Naposledy synchronizované pred %s minútou"
+msgstr[1] "Naposledy synchronizované pred %s minútami"
+msgstr[2] "Naposledy synchronizované pred %s minútami"
+
+#, python-format
+msgid "Last synced %s hour ago"
+msgid_plural "Last synced %s hours ago"
+msgstr[0] "Naposledy synchronizované pred %s hodinou"
+msgstr[1] "Naposledy synchronizované pred %s hodinami"
+msgstr[2] "Naposledy synchronizované pred %s hodinami"
+
+#, python-format
+msgid "Last synced %s day ago"
+msgid_plural "Last synced %s days ago"
+msgstr[0] "Naposledy synchronizované pred %s dňom"
+msgstr[1] "Naposledy synchronizované pred %s dňami"
+msgstr[2] "Naposledy synchronizované pred %s dňami"
+
+#, python-format
+msgid "Last synced on %s"
+msgstr "Naposledy synchronizované dňa %s"
+
+msgid "_Try again"
+msgstr "_Skúste znova"
+
+msgid "C_onnect"
+msgstr "P_ripojiť"
+
+msgid "Forget this server?"
+msgstr "Zabudnúť tento server?"
+
+msgid ""
+"The address, user name and password stored for this server will be removed, "
+"along with the record of when this family tree last synchronized with it. "
+"The next synchronization will compare the two trees from scratch."
+msgstr ""
+"Adresa, používateľské meno a heslo uložené pre tento server budú odstránené "
+"spolu so záznamom o tom, kedy sa tento rodinný strom naposledy "
+"synchronizoval. Pri ďalšej synchronizácii sa oba stromy budú porovnávať od "
+"začiatku."
+
+msgid "Forget"
+msgstr "Zabudnúť"
+
+msgid ""
+"These credentials were last used with a different family tree. Check the "
+"server before continuing."
+msgstr ""
+"Tieto prihlasovacie údaje boli naposledy použité s iným rodinným stromom. "
+"Pred pokračovaním skontrolujte server."
+
+msgid "Change server…"
+msgstr "Zmeniť server…"
+
+msgid "Server URL:"
+msgstr "URL servera:"
+
+msgid "Username:"
+msgstr "Používateľské meno:"
+
+msgid "Password:"
+msgstr "Heslo:"
+
+msgid "Remember password"
+msgstr "Zapamätať heslo"
+
+msgid "Forget this server"
+msgstr "Zabudnúť tento server"
+
+msgid "About this tool"
+msgstr "O tomto nástroji"
+
+msgid "Open the online manual"
+msgstr "Otvoriť online manuál"
+
+msgid ""
+"This tool allows to synchronize the currently opened family tree with a "
+"remote family tree served by Gramps Web.\n"
+"\n"
+"The tool assumes that the two trees are derivatives of each other, i.e. one "
+"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
+"\n"
+"After successful synchronization, the two trees will be identical. "
+"Modifications will be propagated based on timestamps. You will be prompted "
+"for confirmation before any changes are made to the local or remote trees.\n"
+"\n"
+"If you instead want to merge two significantly different trees with the "
+"option to make manual modifications, use the Import Merge Tool instead."
+msgstr ""
+"Tento nástroj umožňuje synchronizovať aktuálne otvorený rodokmeň so "
+"vzdialeným rodokmeňom, ktorý poskytuje Gramps Web.\n"
+"\n"
+"Nástroj predpokladá, že oba stromy sú vzájomne odvodené, t. j. jeden z nich "
+"bol vytvorený z exportu druhého pomocou Gramps XML (nie GEDCOM!).\n"
+"\n"
+"Po úspešnej synchronizácii budú oba stromy identické. Zmeny sa budú šíriť na "
+"základe časových pečiatok. Pred vykonaním akýchkoľvek zmien v miestnom alebo "
+"vzdialenom strome budete vyzvaní na potvrdenie.\n"
+"\n"
+"Ak chcete namiesto toho zlúčiť dva výrazne odlišné stromy s možnosťou "
+"vykonať ručné úpravy, použite namiesto toho nástroj na import a zlúčenie."
+
+msgid "Error:"
+msgstr "Chyba:"
+
+msgid "Warning:"
+msgstr "Upozornenie:"
+
+msgid "Sync mode:"
+msgstr "Synchronizovaný režim:"
+
+msgid "Copy"
+msgstr "Kopírovať"
+
+msgid "Synchronization complete"
+msgstr "Synchronizácia dokončená"
+
+msgid "Synchronization failed"
+msgstr "Synchronizácia zlyhala"

@@ -1,0 +1,125 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Family Sheet"
+msgstr "家族シート"
+
+msgid ""
+"Produces a family sheet showing full information about a person and his/her "
+"partners and children."
+msgstr ""
+"人物とそのパートナー、子供に関する完全な情報を示す家族シートを生成します。"
+
+#, python-format
+msgid "→ %s"
+msgstr "→ %s"
+
+#, python-format
+msgid "Address (%(date)s): %(location)s"
+msgstr "住所 (%(date)s): %(location)s"
+
+#, python-format
+msgid "Address: %(location)s"
+msgstr "住所: %(location)s"
+
+#, python-format
+msgid "; %(type)s: %(value)s"
+msgstr "; %(type)s: %(value)s"
+
+msgid "Source references:"
+msgstr "ソース参照:"
+
+#, python-format
+msgid ", page %s"
+msgstr ", ページ %s"
+
+msgid "Notes:"
+msgstr "メモ:"
+
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "%(ymd_date)s"
+
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "%(ym_date)s"
+
+#, python-format
+msgid "in %(y_date)s"
+msgstr "%(y_date)s"
+
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "%(placeholder)s"
+
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "%(placeholder)s (%(partial)s)"
+
+#, python-format
+msgid "in %(place)s"
+msgstr "%(place)s"
+
+msgid "Center person"
+msgstr "中心人物"
+
+msgid "The person whose partners and children are printed"
+msgstr "パートナーと子供が印刷される人物"
+
+msgid "Print sheets for"
+msgstr "シートを印刷する対象"
+
+msgid "Center person only"
+msgstr "中心人物のみ"
+
+msgid "Center person and descendants in side branches"
+msgstr "中心人物とサイドブランチの子孫"
+
+msgid "Center person and all descendants"
+msgstr "中心人物とすべての子孫"
+
+msgid "Whether to include descendants, and which ones."
+msgstr "子孫を含めるかどうか、およびどの子孫を含めるか。"
+
+msgid "Replace first name with call name"
+msgstr "名前を呼称名に置き換える"
+
+msgid "Underline call name in first name / add call name to first name"
+msgstr "名前内の呼称名に下線を引く / 呼称名を名前に追加"
+
+msgid "Whether to include call name, and how."
+msgstr "呼称名を含めるかどうか、およびその方法。"
+
+msgid "Print placeholders for missing information"
+msgstr "欠落情報のプレースホルダーを印刷"
+
+msgid "The basic style used for the text display"
+msgstr "テキスト表示に使用される基本スタイル"
+
+msgid "The style used for the page key on the top"
+msgstr "上部のページキーに使用されるスタイル"
+
+msgid "The style used for names"
+msgstr "名前に使用されるスタイル"
+
+msgid "The style used for numbers"
+msgstr "数字に使用されるスタイル"
+
+msgid "The style used for footnotes (notes and source references)"
+msgstr "脚注 (メモとソース参照）に使用されるスタイル"

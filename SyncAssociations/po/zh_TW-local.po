@@ -1,0 +1,36 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Sync Associations"
+msgstr "同步關聯"
+
+msgid ""
+"Traverses the Person list for all Associations that are bi-directional and "
+"adds any which are missing to the Associated Person."
+msgstr "遍歷人物清單中的所有雙向關聯，並為關聯人物補上任何缺少的關聯。"
+
+#, python-format
+msgid "Add %s reciprocal association"
+msgstr "新增 %s 的反向關聯"
+
+msgid "{} Reciprocal associations created"
+msgstr "已建立 {} 個相互關聯"
+
+msgid "All reciprocal associations exist, none created"
+msgstr "所有相互關聯皆已存在，未建立任何關聯"
+
+msgid "No existing associations, so no reciprocal ones needed"
+msgstr "沒有現有關聯，因此無須建立相互關聯"

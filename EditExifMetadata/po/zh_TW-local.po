@@ -1,0 +1,281 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Edit Image Exif Metadata"
+msgstr "編輯圖片 Exif 中繼資料"
+
+msgid "Gramplet to view, edit, and save image Exif metadata"
+msgstr "用來檢視、編輯及儲存圖片 Exif 中繼資料的 Gramplet"
+
+msgid "Edit Exif Metadata"
+msgstr "編輯 Exif 中繼資料"
+
+msgid "<-- Image Types -->"
+msgstr "<-- 圖片類型 -->"
+
+msgid ""
+"Warning:  Changing this entry will update the Media object title field in "
+"Gramps not Exiv2 metadata."
+msgstr ""
+"警告：變更此項目會更新 Gramps 中媒體物件的標題欄位，而非 Exiv2 中繼資料。"
+
+msgid "Provide a short description for this image."
+msgstr "為此圖片提供簡短說明。"
+
+msgid ""
+"Enter the Artist/ Author of this image.  The person's name or the company "
+"who is responsible for the creation of this image."
+msgstr "輸入此圖片的藝術家／作者。也就是創作此圖片的人名或公司名稱。"
+
+msgid "Enter the copyright information for this image. \n"
+msgstr "輸入此影像的著作權資訊。 \n"
+
+msgid ""
+"The original date/ time when the image was first created/ taken as in a "
+"photograph.\n"
+"Example: 1830-01-1 09:30:59"
+msgstr ""
+"首次建立或拍攝圖片的原始日期／時間，例如相片的拍攝時間。\n"
+"範例：1830-01-1 09:30:59"
+
+msgid ""
+"This is the date/ time that the image was last changed/ modified.\n"
+"Example: 2011-05-24 14:30:00"
+msgstr ""
+"圖片最後變更／修改的日期／時間。\n"
+"範例：2011-05-24 14:30:00"
+
+msgid ""
+"Enter the Latitude GPS coordinates for this image,\n"
+"Example: -43.722965, -43:43:22, 38° 38′ 03″ N"
+msgstr ""
+"輸入此圖片的 GPS 緯度座標，\n"
+"範例：-43.722965、-43:43:22、38° 38′ 03″ N"
+
+msgid ""
+"Enter the Longitude GPS coordinates for this image,\n"
+"Example: -10.396378, -10:23:46, 105° 6′ 6″ W"
+msgstr ""
+"輸入此圖片的 GPS 經度座標，\n"
+"範例：-10.396378、-10:23:46、105° 6′ 6″ W"
+
+msgid ""
+"This is the measurement of Above or Below Sea Level.  It is measured in "
+"meters.  Example: 200.558, -200.558"
+msgstr "高於或低於海平面的高度，以公尺為單位。範例：200.558、-200.558"
+
+msgid ""
+"Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
+"web browser."
+msgstr "在網頁瀏覽器中顯示 Gramps Wiki 的「編輯圖片 Exif 中繼資料」說明頁面。"
+
+msgid ""
+"This will open up a new window to allow you to edit/ modify this image's "
+"Exif metadata.\n"
+"  It will also allow you to be able to Save the modified metadata."
+msgstr ""
+"開啟新視窗，讓您編輯／修改此圖片的 Exif 中繼資料。\n"
+"  也可儲存修改後的中繼資料。"
+
+msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
+msgstr "會開啟顯示縮圖檢視區的彈出式視窗"
+
+msgid ""
+"Select from a drop- down box the image file type that you would like to "
+"convert your non- Exiv2 compatible media object to."
+msgstr "請從下拉式方塊選擇圖片檔類型，用來轉換不相容於 Exiv2 的媒體物件。"
+
+msgid ""
+"If your image is not of an image type that can have Exif metadata read/ "
+"written to/from, convert it to a type that can?"
+msgstr "如果圖片類型不支援讀寫 Exif 中繼資料，要將它轉換為支援的類型嗎？"
+
+msgid ""
+"WARNING:  This will completely erase all Exif metadata from this image!  Are "
+"you sure that you want to do this?"
+msgstr "警告：這會完全清除此圖片的所有 Exif 中繼資料！確定要這麼做嗎？"
+
+msgid "Clear GPS"
+msgstr "清除 GPS"
+
+msgid "Thumbnail"
+msgstr "縮圖"
+
+msgid "Copy"
+msgstr "複製"
+
+msgid "Select an image to begin..."
+msgstr "請選取圖片以開始…"
+
+msgid ""
+"Image is NOT readable,\n"
+"Please choose a different image..."
+msgstr ""
+"無法讀取圖片，\n"
+"請選擇其他圖片..."
+
+msgid "Please convert this image to an Exiv2- compatible image type..."
+msgstr "請將此圖片轉換為與 Exiv2 相容的圖片格式..."
+
+#, python-brace-format
+msgid "Image Size : {width} x {height} pixels"
+msgstr "圖片大小：{width} x {height} 像素"
+
+msgid ""
+"Image is NOT writable,\n"
+"You will NOT be able to save Exif metadata...."
+msgstr ""
+"無法寫入圖片，\n"
+"您將無法儲存 Exif 中繼資料...."
+
+msgid "Click Close to close this Thumbnail View Area."
+msgstr "按一下「關閉」以關閉此縮圖檢視區域。"
+
+msgid "Thumbnail View Area"
+msgstr "縮圖檢視區域"
+
+msgid ""
+"WARNING: You are about to convert this image into a .jpeg image.  Are you "
+"sure that you want to do this?"
+msgstr "警告：您即將把此圖片轉換為 .jpeg 圖片。確定要這麼做嗎？"
+
+msgid "Convert and Delete"
+msgstr "轉換並刪除"
+
+msgid ""
+"Your image has been converted and the original file has been deleted, and "
+"the full path has been updated!"
+msgstr "圖片已轉換，原始檔案已刪除，完整路徑也已更新！"
+
+msgid ""
+"There has been an error, Please check your source and destination file "
+"paths..."
+msgstr "發生錯誤，請檢查來源與目的地檔案路徑..."
+
+msgid ""
+"There was an error in deleting the original file.  You will need to delete "
+"it yourself!"
+msgstr "刪除原始檔案時發生錯誤。您必須自行刪除它！"
+
+msgid "There was an error in converting your image file."
+msgstr "轉換圖片檔案時發生錯誤。"
+
+msgid "Media Path Update"
+msgstr "媒體路徑更新"
+
+msgid "There has been an error in updating the image file's path!"
+msgstr "更新圖片檔案路徑時發生錯誤！"
+
+msgid ""
+"Click the close button when you are finished modifying this image's Exif "
+"metadata."
+msgstr "完成修改此圖片的 Exif 中繼資料後，請按一下關閉按鈕。"
+
+msgid "Saves a copy of the data fields into the image's Exif metadata."
+msgstr "將資料欄位的副本儲存到圖片的 Exif 中繼資料。"
+
+msgid "Re -display the data fields that were cleared from the Edit Area."
+msgstr "重新顯示已從編輯區域清除的資料欄位。"
+
+msgid "This button will clear all of the data fields shown here."
+msgstr "這個按鈕會清除這裡顯示的所有資料欄位。"
+
+msgid "This button will clear all of the GPS fields shown here."
+msgstr "這個按鈕會清除此處顯示的所有 GPS 欄位。"
+
+msgid ""
+"Closes this popup Edit window.\n"
+"WARNING: This action will NOT Save any changes/ modification made to this "
+"image's Exif metadata."
+msgstr ""
+"關閉此彈出的編輯視窗。\n"
+"警告：此動作不會儲存對此圖片 Exif 中繼資料所做的任何變更／修改。"
+
+msgid "Media Object Title"
+msgstr "媒體物件標題"
+
+msgid "media Title: "
+msgstr "媒體標題： "
+
+msgid "General Data"
+msgstr "一般資料"
+
+msgid "Description: "
+msgstr "說明： "
+
+msgid "Artist: "
+msgstr "創作者： "
+
+msgid "Copyright: "
+msgstr "著作權： "
+
+msgid "Date/ Time"
+msgstr "日期／時間"
+
+msgid "Original: "
+msgstr "原始： "
+
+msgid "Modified: "
+msgstr "已修改： "
+
+msgid "Latitude/ Longitude/ Altitude GPS coordinates"
+msgstr "GPS 緯度／經度／海拔座標"
+
+msgid "Latitude :"
+msgstr "緯度："
+
+msgid "Longitude :"
+msgstr "經度："
+
+msgid "Altitude :"
+msgstr "海拔高度："
+
+msgid "Bad Date/Time"
+msgstr "日期／時間有誤"
+
+msgid "Invalid latitude (syntax: 18°9′48.21″S, -18.2412 or -18:9:48.21)"
+msgstr "緯度無效 (語法：18°9′48.21″S、-18.2412 或 -18:9:48.21)"
+
+msgid "Invalid longitude (syntax: 18°9′48.21″E, -18.2412 or -18:9:48.21)"
+msgstr "無效的經度（語法：18°9′48.21″E、-18.2412 或 -18:9:48.21）"
+
+msgid ""
+"WARNING!  You are about to completely delete the Exif metadata from this "
+"image."
+msgstr "警告！您即將完全刪除此圖片的 Exif 中繼資料。"
+
+msgid "Delete?"
+msgstr "要刪除嗎？"
+
+msgid ""
+"WARNING!  You are about to completely delete the GPS metadata from this "
+"image."
+msgstr "警告！您即將完全刪除此圖片的 GPS 中繼資料。"
+
+msgid "Media Title Update"
+msgstr "媒體標題更新"
+
+msgid "Media Object Date Created"
+msgstr "媒體物件建立日期"
+
+msgid "Saving Exif metadata to this image..."
+msgstr "正在將 Exif 中繼資料儲存至此圖片..."
+
+msgid "All Exif metadata has been deleted from this image..."
+msgstr "已刪除此圖片的所有 Exif 中繼資料..."
+
+msgid "There was an error in stripping the Exif metadata from this image..."
+msgstr "移除此圖片的 Exif 中繼資料時發生錯誤..."

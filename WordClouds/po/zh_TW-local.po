@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-29 09:56-0700\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Click place name to view references"
+msgstr "按一下地點名稱以查看參照"
+
+msgid "Click given name to view people with that given name"
+msgstr "按一下名字，查看同名的人物"
+
+msgid "Given Name Word Cloud"
+msgstr "名字文字雲"
+
+msgid "Gramplet showing all given names as a word cloud"
+msgstr "以文字雲顯示所有名字的 Gramplet"
+
+msgid "Surname Word Cloud"
+msgstr "姓氏文字雲"
+
+msgid "Gramplet showing all surnames as a word cloud"
+msgstr "以文字雲顯示所有姓氏的 Gramplet"
+
+msgid "Place Word Cloud"
+msgstr "地點文字雲"
+
+msgid "Gramplet showing all places as a word cloud"
+msgstr "將所有地點以文字雲顯示的 Gramplet"
+
+#, python-format
+msgid "Number of %s"
+msgstr "%s 的數量"
+
+msgid "Color (low)"
+msgstr "顏色 (低)"
+
+msgid "Color (high)"
+msgstr "顏色 (高)"
+
+msgid "Hover color"
+msgstr "游標暫留顏色"
+
+msgid "Layout quality"
+msgstr "版面配置品質"
+
+msgid "Filter missing/unknown words"
+msgstr "篩選遺漏／未知字詞"
+
+#, python-format
+msgid "[Missing %s]"
+msgstr "[缺少 %s]"
+
+msgid "Click surname to view people with that surname"
+msgstr "點選姓氏可查看同姓人物"

@@ -1,0 +1,398 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.2.0-dev\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-06 07:24+0200\n"
+"PO-Revision-Date: 2026-09-06 12:53+0000\n"
+"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/gramps-project/addons/zh_Hant/>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
+
+msgid "Gramps Web Sync"
+msgstr "Gramps Web Sync"
+
+msgid "Synchronizes a local database with a Gramps Web instance."
+msgstr "將本機資料庫與 Gramps Web 執行個體同步。"
+
+#, python-format
+msgid "Gramps Web Sync %(addon)s, Web API %(api)s"
+msgstr "Gramps Web Sync %(addon)s，Web API %(api)s"
+
+#, python-format
+msgid "Gramps Web Sync %s"
+msgstr "Gramps Web 同步 %s"
+
+msgid ""
+"This URL uses http, so your password will be sent in clear text. Use only "
+"for local testing."
+msgstr "此網址使用 http，因此密碼會以明文傳送。僅限本機測試使用。"
+
+#, python-format
+msgid ""
+"The system keyring could not be used. Snap confinement blocks access until "
+"you run: %s"
+msgstr "無法使用系統金鑰圈。Snap 沙箱限制了存取權，請執行下列命令後再試：%s"
+
+msgid ""
+"The system keyring could not be used. You will need to enter your password "
+"each time."
+msgstr "無法使用系統鑰匙圈。您每次都必須輸入密碼。"
+
+msgid "Authentication failed. Please check your username and password."
+msgstr "驗證失敗。請檢查使用者名稱及密碼。"
+
+msgid "Access forbidden. Please check username and password."
+msgstr "存取遭拒。請檢查使用者名稱和密碼。"
+
+msgid "GrampsWeb service not found. Please check the URL."
+msgstr "找不到 GrampsWeb 服務。請檢查網址。"
+
+msgid "Too many requests, please try again in a few seconds."
+msgstr "請求過多，請幾秒後再試。"
+
+msgid "GrampsWeb tree is disabled."
+msgstr "GrampsWeb 家族樹已停用。"
+
+msgid "Connection failed. Please check the URL and your internet connection."
+msgstr "連線失敗。請檢查網址及網際網路連線。"
+
+msgid "Invalid server response. Please check the URL."
+msgstr "伺服器回應無效。請檢查網址。"
+
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr "您的使用者帳號在伺服器上沒有足夠的權限使用同步功能。"
+
+msgid "Failed importing downloaded XML file."
+msgstr "匯入下載的 XML 檔案失敗。"
+
+msgid "Unable to synchronize changes to server: objects have been modified."
+msgstr "無法將變更同步至伺服器：物件已遭修改。"
+
+msgid "Unexpected error while applying changes."
+msgstr "套用變更時發生非預期的錯誤。"
+
+msgid ""
+"The family tree was modified while the changes were being reviewed. Nothing "
+"has been applied. Please compare again."
+msgstr "檢閱變更期間，家族樹已遭修改。尚未套用任何內容。請重新比對。"
+
+#, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s, but synchronization needs "
+"%(needed)s or newer. Please update the server."
+msgstr ""
+"此伺服器執行 Gramps Web API %(found)s，但同步需要 %(needed)s 或更新版本。請更"
+"新伺服器。"
+
+#, python-format
+msgid ""
+"This server did not report a Gramps Web API version, so it is too old to "
+"synchronize with. Version %s or newer is needed."
+msgstr ""
+"此伺服器未回報 Gramps Web API 版本，表示版本太舊，無法同步。需要 %s 或更新版"
+"本。"
+
+#, python-format
+msgid ""
+"This server runs Gramps Web API %(found)s. This version of Gramps works with "
+"Gramps Web API %(major)s, so synchronizing with this server needs a newer "
+"version of Gramps."
+msgstr ""
+"此伺服器執行 Gramps Web API %(found)s。此版本的 Gramps 支援 Gramps Web API "
+"%(major)s，因此需要更新版本的 Gramps 才能與此伺服器同步。"
+
+msgid ""
+"This server is not configured to use a background task queue. "
+"Synchronization needs one: without it, applying changes times out before the "
+"server has finished. Please enable it on the server."
+msgstr ""
+"此伺服器尚未設定使用背景工作佇列。同步需要背景工作佇列：沒有它，套用變更會在"
+"伺服器完成前逾時。請在伺服器上啟用背景工作佇列。"
+
+#, python-format
+msgid "The server could not apply the changes: %s"
+msgstr "伺服器無法套用變更：%s"
+
+#, python-format
+msgid "Server error %s. Please check your connection."
+msgstr "伺服器錯誤 %s。請檢查連線。"
+
+#, python-format
+msgid "Unexpected error: %s"
+msgstr "非預期的錯誤：%s"
+
+msgid "Signing in…"
+msgstr "正在登入…"
+
+msgid "Downloading the remote family tree…"
+msgstr "正在下載遠端家族樹…"
+
+msgid "Comparing the two family trees…"
+msgstr "正在比較兩個家族樹…"
+
+msgid "Checking which media files are missing…"
+msgstr "正在檢查缺少哪些媒體檔案…"
+
+msgid "Applied the changes to this computer."
+msgstr "已將變更套用至此電腦。"
+
+msgid "Sending the changes to the server…"
+msgstr "正在將變更傳送至伺服器…"
+
+msgid "Downloading media files…"
+msgstr "正在下載媒體檔案…"
+
+msgid "Uploading media files…"
+msgstr "正在上傳媒體檔案…"
+
+msgid "Connect"
+msgstr "連線"
+
+msgid "Apply changes"
+msgstr "套用變更"
+
+msgid "Transfer media files"
+msgstr "傳輸媒體檔案"
+
+msgid "Bidirectional synchronization"
+msgstr "雙向同步"
+
+msgid "Reset the server to match this computer"
+msgstr "重設伺服器，使其與此電腦一致"
+
+msgid "Reset this computer to match the server"
+msgstr "重設此電腦，使其與伺服器一致"
+
+msgid ""
+"Changes from both sides are combined. Objects edited in both places are "
+"merged."
+msgstr "會整合兩邊的變更。兩邊都編輯過的物件會進行合併。"
+
+msgid ""
+"The server is made to match this computer. Anything changed only on the "
+"server is discarded."
+msgstr "將使伺服器與此電腦一致。僅在伺服器上進行的變更將會捨棄。"
+
+msgid ""
+"This computer is made to match the server. Anything changed only here is "
+"discarded."
+msgstr "將使此電腦與伺服器一致。僅在此電腦上進行的變更將會捨棄。"
+
+#, python-format
+msgid "Will change on this computer (%s object)"
+msgid_plural "Will change on this computer (%s objects)"
+msgstr[0] "將在此電腦上變更 (%s 個物件)"
+
+#, python-format
+msgid "Will change on the server (%s object)"
+msgid_plural "Will change on the server (%s objects)"
+msgstr[0] "將在伺服器上變更 (%s 個物件)"
+
+#, python-format
+msgid "Add %s object"
+msgid_plural "Add %s objects"
+msgstr[0] "新增 %s 個物件"
+
+#, python-format
+msgid "Update %s object"
+msgid_plural "Update %s objects"
+msgstr[0] "更新 %s 個物件"
+
+#, python-format
+msgid "Merge %s object"
+msgid_plural "Merge %s objects"
+msgstr[0] "合併 %s 個物件"
+
+#, python-format
+msgid "Delete %s object"
+msgid_plural "Delete %s objects"
+msgstr[0] "刪除 %s 個物件"
+
+#, python-format
+msgid "%s object will be deleted on this computer."
+msgid_plural "%s objects will be deleted on this computer."
+msgstr[0] "此電腦上的 %s 個物件將被刪除。"
+
+#, python-format
+msgid "%s object will be deleted on the server."
+msgid_plural "%s objects will be deleted on the server."
+msgstr[0] "伺服器上的 %s 個物件將被刪除。"
+
+#, python-format
+msgid "%(down)s to download, %(up)s to upload"
+msgstr "待下載：%(down)s，待上傳：%(up)s"
+
+#, python-format
+msgid "Also transfer %(total)s media file (%(counts)s)"
+msgid_plural "Also transfer %(total)s media files (%(counts)s)"
+msgstr[0] "同時傳輸 %(total)s 個媒體檔案 (%(counts)s)"
+
+#, python-format
+msgid "%s media file is missing on both sides and cannot be transferred."
+msgid_plural ""
+"%s media files are missing on both sides and cannot be transferred."
+msgstr[0] "有 %s 個媒體檔案在兩端皆遺失，無法傳輸。"
+
+#, python-format
+msgid "Applied %s change."
+msgid_plural "Applied %s changes."
+msgstr[0] "已套用 %s 項變更。"
+
+msgid "Both trees are already in sync."
+msgstr "兩個家族樹的資料已一致。"
+
+msgid "Media files are in sync."
+msgstr "媒體檔案已同步。"
+
+#, python-format
+msgid "Successfully downloaded %s media file."
+msgid_plural "Successfully downloaded %s media files."
+msgstr[0] "已成功下載 %s 個媒體檔案。"
+
+#, python-format
+msgid "Encountered %s error during download."
+msgid_plural "Encountered %s errors during download."
+msgstr[0] "下載期間遇到 %s 個錯誤。"
+
+#, python-format
+msgid "Successfully uploaded %s media file."
+msgid_plural "Successfully uploaded %s media files."
+msgstr[0] "已成功上傳 %s 個媒體檔案。"
+
+#, python-format
+msgid "Encountered %s error during upload."
+msgid_plural "Encountered %s errors during upload."
+msgstr[0] "上傳期間遇到 %s 個錯誤。"
+
+msgid "No server configured"
+msgstr "未設定伺服器"
+
+#, python-format
+msgid "%(user)s on %(server)s"
+msgstr "%(server)s 上的 %(user)s"
+
+#, python-format
+msgid "%(where)s — %(synced)s"
+msgstr "%(where)s — %(synced)s"
+
+msgid "Never synced"
+msgstr "從未同步"
+
+msgid "Last synced just now"
+msgstr "上次同步：剛剛"
+
+#, python-format
+msgid "Last synced %s minute ago"
+msgid_plural "Last synced %s minutes ago"
+msgstr[0] "上次同步：%s 分鐘前"
+
+#, python-format
+msgid "Last synced %s hour ago"
+msgid_plural "Last synced %s hours ago"
+msgstr[0] "上次同步是 %s 小時前"
+
+#, python-format
+msgid "Last synced %s day ago"
+msgid_plural "Last synced %s days ago"
+msgstr[0] "上次同步：%s 天前"
+
+#, python-format
+msgid "Last synced on %s"
+msgstr "上次同步時間：%s"
+
+msgid "_Try again"
+msgstr "再試一次(_T)"
+
+msgid "C_onnect"
+msgstr "連線(_O)"
+
+msgid "Forget this server?"
+msgstr "要忘記這台伺服器嗎？"
+
+msgid ""
+"The address, user name and password stored for this server will be removed, "
+"along with the record of when this family tree last synchronized with it. "
+"The next synchronization will compare the two trees from scratch."
+msgstr ""
+"將移除此伺服器儲存的地址、使用者名稱及密碼，以及此家族樹上次與其同步的時間記"
+"錄。下次同步時會重新完整比對兩棵家族樹。"
+
+msgid "Forget"
+msgstr "移除"
+
+msgid ""
+"These credentials were last used with a different family tree. Check the "
+"server before continuing."
+msgstr "這組憑證上次用於另一棵家族樹。請先檢查伺服器再繼續。"
+
+msgid "Change server…"
+msgstr "變更伺服器…"
+
+msgid "Server URL:"
+msgstr "伺服器 URL："
+
+msgid "Username:"
+msgstr "使用者名稱："
+
+msgid "Password:"
+msgstr "密碼："
+
+msgid "Remember password"
+msgstr "記住密碼"
+
+msgid "Forget this server"
+msgstr "移除此伺服器"
+
+msgid "About this tool"
+msgstr "關於此工具"
+
+msgid "Open the online manual"
+msgstr "開啟線上手冊"
+
+msgid ""
+"This tool allows to synchronize the currently opened family tree with a "
+"remote family tree served by Gramps Web.\n"
+"\n"
+"The tool assumes that the two trees are derivatives of each other, i.e. one "
+"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
+"\n"
+"After successful synchronization, the two trees will be identical. "
+"Modifications will be propagated based on timestamps. You will be prompted "
+"for confirmation before any changes are made to the local or remote trees.\n"
+"\n"
+"If you instead want to merge two significantly different trees with the "
+"option to make manual modifications, use the Import Merge Tool instead."
+msgstr ""
+"此工具可讓您將目前開啟的家族樹與由 Gramps Web 託管的遠端家族樹進行同步。\n"
+"\n"
+"此工具假設兩個家族樹互為衍生關係，亦即其中一個是由另一個匯出的 Gramps XML"
+"（非 GEDCOM！）所建立。\n"
+"\n"
+"同步成功後，兩個家族樹將完全相同。系統會依據時間戳記同步修改內容。在對本機或"
+"遠端家族樹進行任何變更前，都會提示您確認。\n"
+"\n"
+"若您想要合併兩個有顯著差異的家族樹並手動進行修改，請改用「匯入合併工具」。"
+
+msgid "Error:"
+msgstr "錯誤："
+
+msgid "Warning:"
+msgstr "警告："
+
+msgid "Sync mode:"
+msgstr "同步模式："
+
+msgid "Copy"
+msgstr "複製"
+
+msgid "Synchronization complete"
+msgstr "同步完成"
+
+msgid "Synchronization failed"
+msgstr "同步失敗"

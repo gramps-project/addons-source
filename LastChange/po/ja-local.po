@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,10 +12,68 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.9.1.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+msgid "Last Change Report"
+msgstr "最終変更レポート"
+
+msgid "You must select at least one type of record."
+msgstr "少なくとも1つのレコードタイプを選択する必要があります。"
+
+msgid "People Changed"
+msgstr "変更された人物"
+
+msgid "Changed On"
+msgstr "変更日"
+
+msgid "Families Changed"
+msgstr "変更された家族"
+
+msgid "Family Surname"
+msgstr "家族の姓"
+
+#, python-format
+msgid "%s and %s"
+msgstr "%s と %s"
+
+msgid "Events Changed"
+msgstr "変更されたイベント"
+
+msgid "Places Changed"
+msgstr "変更された場所"
+
+msgid "Media Changed"
+msgstr "メディアが変更されました"
+
+msgid "Sources Changed"
+msgstr "変更されたソース"
+
+msgid "Notes Changed"
+msgstr "変更されたメモ"
+
+msgid "Citations Changed"
+msgstr "変更された引用"
+
+msgid "Select From"
+msgstr "選択元"
+
 msgid "The style used for the title of the page."
 msgstr "ページのタイトルに使用されるスタイル。"
+
+msgid "The style used for normal text"
+msgstr "通常のテキストに使用されるスタイル"
+
+msgid "changed on"
+msgstr "変更日"
+
+msgid "List the last ten person records that have been changed"
+msgstr "変更された最新の10件の人物レコードを一覧表示"
+
+msgid "Latest Changes"
+msgstr "最新の変更"
+
+msgid "Report of the last records that have been changed"
+msgstr "変更された最新のレコードのレポート"
