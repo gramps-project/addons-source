@@ -74,6 +74,11 @@ from gramps.gen.const import GRAMPS_LOCALE as glocale
 LOG = logging.getLogger(".shareddbapi")
 _LOG = logging.getLogger(DBLOGNAME)
 
+# Fixed, table-size-independent autovacuum analyze settings applied to each
+# per-tree table at schema creation -- see _create_schema().
+SHARED_TABLE_ANALYZE_SCALE_FACTOR = 0
+SHARED_TABLE_ANALYZE_THRESHOLD = 5000
+
 
 class SharedDBAPI(DbGeneric):
     """
@@ -270,6 +275,40 @@ class SharedDBAPI(DbGeneric):
             "unknown INTEGER"
             ")"
         )
+
+        # Every one of these tables holds all trees' rows together, so
+        # autovacuum's default analyze threshold -- a fixed count plus a
+        # fraction of the *whole* table's row count -- is sized against all
+        # trees combined. A single tree's import or edit burst can leave
+        # the planner's statistics for that tree stale until enough
+        # unrelated activity elsewhere pushes the combined table past that
+        # threshold, which can make it pick a badly wrong plan (e.g. a
+        # secondary index instead of the primary key) for that tree's rows.
+        # A fixed, table-size-independent threshold lets autovacuum notice
+        # and re-analyze after any one tree's typical-sized batch of
+        # changes, regardless of how large the shared table has grown.
+        for table in (
+            "person",
+            "family",
+            "source",
+            "citation",
+            "event",
+            "media",
+            "place",
+            "repository",
+            "note",
+            "tag",
+            "reference",
+            "name_group",
+            "metadata",
+            "gender_stats",
+        ):
+            self.dbapi.execute(
+                f"ALTER TABLE {table} SET ("
+                f"autovacuum_analyze_scale_factor = {SHARED_TABLE_ANALYZE_SCALE_FACTOR}, "
+                f"autovacuum_analyze_threshold = {SHARED_TABLE_ANALYZE_THRESHOLD}"
+                ")"
+            )
 
         self._create_secondary_columns()
 
