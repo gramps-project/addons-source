@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-12 22:55+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ImportGedcom7/importgedcom7.gpr.py:23
+msgid "GEDCOM 7"
+msgstr ""
+
+#: ImportGedcom7/importgedcom7.gpr.py:24
+msgid "Import GEDCOM 7 files"
+msgstr ""
+
+#: ImportGedcom7/import_gedcom7.py:60
+msgid "People"
+msgstr ""
+
+#: ImportGedcom7/import_gedcom7.py:61
+msgid "Families"
+msgstr ""
+
+#: ImportGedcom7/import_gedcom7.py:62
+msgid "Events"
+msgstr ""
+
+#: ImportGedcom7/import_gedcom7.py:63
+msgid "Places"
+msgstr ""
+
+#: ImportGedcom7/import_gedcom7.py:64
+msgid "Sources"
+msgstr ""
+
+#: ImportGedcom7/import_gedcom7.py:65
+msgid "Citations"
+msgstr ""
+
+#: ImportGedcom7/import_gedcom7.py:66
+msgid "Repositories"
+msgstr ""
+
+#: ImportGedcom7/import_gedcom7.py:67
+msgid "Media"
+msgstr ""
+
+#: ImportGedcom7/import_gedcom7.py:68
+msgid "Notes"
+msgstr ""
+
+#: ImportGedcom7/import_gedcom7.py:69
+msgid "Tags"
+msgstr ""
+
+#: ImportGedcom7/import_gedcom7.py:81
+msgid "Results"
+msgstr ""
+
+#: ImportGedcom7/import_gedcom7.py:81
+msgid "No objects were imported"
+msgstr ""
+
+#: ImportGedcom7/import_gedcom7.py:97
+#, python-format
+msgid "%s could not be opened"
+msgstr ""
+
+#: ImportGedcom7/import_gedcom7.py:102
+msgid "Invalid GEDCOM 7 file"
+msgstr ""
+
+#: ImportGedcom7/import_gedcom7.py:103 ImportGedcom7/import_gedcom7.py:113
+#, python-format
+msgid "%s could not be imported"
+msgstr ""
+
+#: ImportGedcom7/import_gedcom7.py:112
+msgid "Error reading GEDCOM 7 file"
+msgstr ""
