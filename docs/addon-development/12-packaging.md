@@ -17,11 +17,17 @@
   branch and gramps61 for master.
 -->
 
-## Overview
+## Summary
 
 From "works on my machine" to "users can install it from the addon manager." This chapter is the source-to-distribution pipeline: how `addons-source` becomes a `.addon.tgz` in `addons`, how the in-app addon manager picks it up, and what to send upstream.
 
 The normative *rules* a submission must satisfy (branch targeting, version-field discipline, PR body shape, Mantis trailers) live in [16-guidelines](16-guidelines.md). This page covers the *workflow* — what to run, what files appear, where they end up.
+
+The mental model comes first, because the rest only makes sense once you have it: **three repositories** side by side, with `gramps` supplying the API you build against, `addons-source` holding the source you edit, and `addons` holding the built output you never edit by hand. Inside `addons`, each Gramps minor gets its own subdirectory, which is why an addon can support several versions at once. Then the practical setup: the **initial clone** of all three, and the **build prerequisites** — chiefly the `GRAMPSPATH` that points the build at a Gramps checkout.
+
+`make.py` is the tool that does the work, and the page gives it a **cheat sheet** of targets plus a breakdown of exactly **what `build` packages** into a `.addon.tgz`. The **localisation flow** is a self-contained run through the translation side of packaging: adding a language, refreshing an existing one, the one-time `template.pot` header edit, and — the part people get wrong — which generated files belong in the commit and which are build output that must not be. **Publishing to `addons/`** covers the last mechanical step, where the built package and the refreshed listing JSON land in the repository the in-app addon manager actually reads over HTTPS.
+
+Two habits get sections of their own. **Edit `addons-source`, not the live plugin directory** is the one that costs people real work: the live plugin directory is a sync *target*, so edits made there are silently overwritten the next time the source syncs across. And the page closes with the two submission paths — **submitting a new addon** and **updating an existing one** — which differ enough in expectations to be worth reading separately.
 
 ## The three repositories
 
@@ -85,19 +91,20 @@ See [14-compatibility](14-compatibility.md) for branch-targeting guidance per Gr
 
 ## Build prerequisites
 
-`make.py` calls out to two environment things and one OS tool:
+`make.py` calls out to one environment variable and one OS tool:
 
-- **`GRAMPSPATH`** — absolute path to your `gramps/` clone.
-- **`LANGUAGE`** — must be set to `en_US.UTF-8` for the build to run.
+- **`GRAMPSPATH`** — absolute path to your `gramps/` clone, with the *matching* branch checked out (`maintenance/gramps60` in core when building `gramps60` here). `make.py` does have a default (`../../..`), but it assumes one specific workspace layout — always set it explicitly.
 - **`intltool`** — `sudo apt-get install intltool` on Debian/Ubuntu.
 
 The standard invocation:
 
 ```bash
-GRAMPSPATH=/path/to/gramps LANGUAGE='en_US.UTF-8' python3 make.py gramps60 <command> <Addon>
+GRAMPSPATH=/path/to/gramps python3 make.py gramps60 <command> <Addon>
 ```
 
-Cumbersome to type each time. Set the env vars in your shell startup once; only the `make.py` line varies per command.
+**Changed in 6.0**: `LANGUAGE='en_US.UTF-8'` is no longer needed. Older instructions prefix every `make.py` call with it; on 6.0 and later the variable is unused (`make.py` on `maintenance/gramps60` never reads it), and upstream's [`AGENTS.md`](https://github.com/gramps-project/addons-source/blob/maintenance/gramps61/AGENTS.md) says so explicitly. Harmless if it's still in your shell profile.
+
+Cumbersome to type each time. Set `GRAMPSPATH` in your shell startup once; only the `make.py` line varies per command.
 
 In the examples below, `gramps60` is the maintenance/gramps60 target; substitute `gramps61` when you're working on the master branch.
 
@@ -115,8 +122,10 @@ In the examples below, `gramps60` is the maintenance/gramps60 target; substitute
 | `make.py gramps60 listing <Addon>`       | Refresh `addons/gramps60/listings/*.json` so the addon manager sees it        |
 | `make.py gramps60 clean <Addon>`         | Delete generated files (`locale/`, `*.mo`) — run before `git add`             |
 | `make.py gramps60 build all`             | Build every addon                                                             |
+| `make.py gramps60 as-needed`             | Build / list / clean only what is out of date, repo-wide                      |
+| `make.py gramps60 manifest-check`        | Validate every addon's `MANIFEST` file                                        |
 
-`build` includes `compile`, so the standard release cycle is `clean` → edit → `build` → `listing` → commit + push to `addons/`.
+`build` includes `compile`, so the standard release cycle is `clean` → edit → `build` → `listing` → commit + push to `addons/`. `as-needed` is the repo-wide shortcut for that cycle when you don't want to name addons individually.
 
 ### What `build` packages
 

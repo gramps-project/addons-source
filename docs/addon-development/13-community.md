@@ -8,9 +8,15 @@
   Everything here happens on the wiki / forum / Mantis, not in a repo.
 -->
 
-## Overview
+## Summary
 
 When the PR is merged and the package published ([Packaging](12-packaging.md)), the addon *exists* — but nobody can find it, read about it, or reach you about it. This page covers the four steps that make a merged addon part of the ecosystem: the addon-list entry, the addon's own wiki page, the announcement, and the ongoing support duty. None of them touch code; all of them decide whether the addon gets used.
+
+**Listing** means adding a row to the release's addon list on the wiki, copying the skeleton from an existing entry. It is worth understanding why this is separate work: the Plugin Manager's download listing is what *Gramps* reads, while the wiki list is what *people* browse — an addon needs both, and publishing only produces the first. **Documenting** means giving the addon its own wiki page — the page the list's first column links to — following the conventional skeleton of Usage, Features, Prerequisites, and Issues, carrying the standard third-party banner. **Announcing** on the Gramps forum is the step authors skip most often, and an unannounced addon is effectively invisible to the users who would have wanted it.
+
+**Support** is the open-ended one. Register on the Mantis tracker and check it: nothing routes reports about your addon to you automatically, so they sit unread unless you look. Expect reports to be vague or wrong about the cause — users don't read code — and answer them generously, since a curt reply from an addon's own author undoes the announcement faster than anything else.
+
+A closing section, **why addons exist**, is worth reading before the maintenance years rather than during them: the addon channel is deliberately low-barrier — the project has never refused an addon — precisely so that experimental, niche, and never-going-into-core work has somewhere to live and evolve.
 
 ## List your addon
 
