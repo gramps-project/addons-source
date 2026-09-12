@@ -19,8 +19,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-03 12:30-0700\n"
-"PO-Revision-Date: 2026-08-31 17:51+0000\n"
-"Last-Translator: Eric Bjurvald <epg.bjurvald@gmail.com>\n"
+"PO-Revision-Date: 2026-09-10 08:51+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.9.1\n"
 
 msgid "Birthdays"
 msgstr "Födelsedagar"
@@ -1109,7 +1109,7 @@ msgstr "Söker förnamn"
 
 #: ChangeGivenNames/ChangeGivenNames.py:204
 msgid "Affected Names"
-msgstr "Påverkat namn"
+msgstr "Berörda namn"
 
 #: ChangeGivenNames/changenames.glade:32
 msgid ""
@@ -1312,8 +1312,8 @@ msgid ""
 "Edit -> Set Home Person."
 msgstr ""
 "Du behöver definiera en 'standardperson' att gå till. Välj Personvy, välj "
-"den person du vill ha som 'hemperson'. Bekräfta ditt val via menyn Redigera "
-"-> Välj Hemperson."
+"den person du vill ha som 'hemperson'. Bekräfta ditt val via menyn "
+"Redigera -> Välj Hemperson."
 
 #: CombinedView/personpage.py:306 CombinedView/personpage.py:368
 msgid "Add existing child to family"
@@ -1481,7 +1481,7 @@ msgid ""
 "representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
 "library."
 msgstr ""
-"Skapar en webbsida med en grafiskt ättlingatavla (SVG) som ett hopfällbart "
+"Skapar en webbsida med en grafisk ättlingatavla (SVG) som ett hopfällbart "
 "indraget träd med hjälp av D3,js javaskript-bibliotek."
 
 #: D3Charts/DescendantIndentedTree.py:678
@@ -5455,27 +5455,26 @@ msgstr "Hämtar alla underfilterträffar"
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:174
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:973
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1053
-#, fuzzy
-#| msgid "Ancestor Generations"
 msgid "Ancestor Tree Expanded"
-msgstr "Färfädersgenertioner"
+msgstr "Expanderat förfädersträd"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:29
 msgid ""
 "Expanded Ancestor Graph showing direct ancestors, siblings, cousins and "
 "spouses."
 msgstr ""
+"Expanderad förfädersgraf som visar direkta förfäder, syskon, kusiner och "
+"makar."
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:190
-#, fuzzy, python-format
-#| msgid "Ancestors places for %s"
+#, python-format
 msgid "Ancestor Tree Expanded for %s"
-msgstr "Förfädernas boplatser för %s"
+msgstr "Expanderat förfädersträd för %s"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:544
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:606
 msgid "Tree Truncated"
-msgstr ""
+msgstr "Avkortat träd"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:545
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:607
@@ -5486,43 +5485,39 @@ msgid ""
 "Please reduce the number of generations or disable some options to see all "
 "branches."
 msgstr ""
+"Det genererade trädet nådde säkerhetsgränsen på 400 personer och har "
+"avkortats.\n"
+"\n"
+"Var god minska antalet generationer eller inaktivera vissa alternativ för "
+"att se alla grenar."
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1182
-#, fuzzy
-#| msgid "Shows the number of descendants of the current person"
 msgid "Include descendants of the center person"
-msgstr "Visar antal ättlingar till aktuell person"
+msgstr "Inkludera ättlingar till mittenpersonen"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1183
-#, fuzzy
-#| msgid "Shows the number of descendants of the current person"
 msgid ""
 "Whether to display the children and full descending lines of the center "
 "person"
-msgstr "Visar antal ättlingar till aktuell person"
+msgstr ""
+"Huruvida man ska visa barnen och hela nedåtgående linjer för mittenpersonen"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1190
-#, fuzzy
-#| msgid "Include siblings of ancestors."
 msgid "Include siblings of ancestors"
-msgstr "Ta med syskon för anor."
+msgstr "Ta med syskon för anor"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1191
-#, fuzzy
-#| msgid "Whether to display the theoretical number of ancestor by generation"
 msgid "Whether to display the siblings of direct ancestors"
-msgstr "Huruvida det teoretiska antalet förfäder ska visas per generation"
+msgstr "Huruvida syskon till direkta förfäder ska visas"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1194
 msgid "Include cousins (collateral descendants)"
-msgstr ""
+msgstr "Inkludera kusiner (medföljande ättlingar)"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1195
-#, fuzzy
-#| msgid "Whether to display the theoretical number of ancestor by generation"
 msgid ""
 "Whether to display the cousins and descendants of the ancestors' siblings"
-msgstr "Huruvida det teoretiska antalet förfäder ska visas per generation"
+msgstr "Huruvida kusinerna och ättlingarna till förfädernas syskon ska visas"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1202
 #: FamilyTree/FamilyTree.py:1051
@@ -5531,32 +5526,24 @@ msgid "Descendant Generations"
 msgstr "Ättlingagenerationer"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1203
-#, fuzzy
-#| msgid "The number of descendant generations to include in the tree"
 msgid "The number of descendant generations to include"
-msgstr "Antal ättlingagenerationer som skall tas med i trädet"
+msgstr "Antalet ättlingar som ska inkluderas"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1242
-#, fuzzy
-#| msgid "Whether to include the index of Names at the end of the report."
 msgid "Whether to resize the page to fit the size of the tree."
-msgstr "Huruvida ta med namnindex i slutet av rapporten."
+msgstr "Om sidan ska ändras så att den passar trädets storlek."
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1262
-#, fuzzy
-#| msgid "Use a table format for the families index"
 msgid "Use random colors for family lines"
-msgstr "Använd ett tabellformat för familjeindexet"
+msgstr "Använd slumpmässiga färger för familjelinjer"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1263
 msgid "Draw each family's connecting lines with a distinct color."
-msgstr ""
+msgstr "Rita varje familjs anslutande linjer med en distinkt färg."
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1372
-#, fuzzy
-#| msgid "The style used for names."
 msgid "The bold style used for the names."
-msgstr "Mall för namn."
+msgstr "Den feta stilen som används för namnen."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
@@ -15442,30 +15429,26 @@ msgid "Select Form"
 msgstr "Välj formulär"
 
 #: GOQLFilter/goql.gpr.py:31
-#, fuzzy
-#| msgid "Person Filter Editor"
 msgid "Person GOQL Filter"
-msgstr "Redigera personfilter"
+msgstr "GOQL-filter för person"
 
 #: GOQLFilter/goql.gpr.py:32
 msgid "Gramplet providing a gramps-object-query-language person filter"
 msgstr ""
+"Gramplet som tillhandahåller ett personfilter för gramps-object-query-"
+"language"
 
 #: GOQLFilter/goql.gpr.py:39 GOQLFilter/goql.gpr.py:58
 #: GOQLFilter/goql.gpr.py:77 GOQLFilter/goql.gpr.py:96
 #: GOQLFilter/goql.gpr.py:117 GOQLFilter/goql.gpr.py:136
 #: GOQLFilter/goql.gpr.py:155 GOQLFilter/goql.gpr.py:174
 #: GOQLFilter/goql.gpr.py:193
-#, fuzzy
-#| msgid "Filtering"
 msgid "GOQL Filter"
-msgstr "Filtrering"
+msgstr "GOQL-filter"
 
 #: GOQLFilter/goql.gpr.py:50
-#, fuzzy
-#| msgid "Family Filter name:"
 msgid "Family GOQL Filter"
-msgstr "Familjefilter namn:"
+msgstr "GOQL-filter för familj"
 
 #: GOQLFilter/goql.gpr.py:51
 msgid "Gramplet providing a gramps-object-query-language family filter"

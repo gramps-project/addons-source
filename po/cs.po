@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-03 12:30-0700\n"
-"PO-Revision-Date: 2026-08-17 17:58+0000\n"
+"PO-Revision-Date: 2026-09-12 15:52+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
 "addons/cs/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
@@ -18679,7 +18679,7 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:119
 msgid "Parents enclose children"
-msgstr ""
+msgstr "Rodiče obklopují děti"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:120
 msgid "Cactus"
@@ -20878,7 +20878,7 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:763
 msgid "Currently Enclosed Places"
-msgstr ""
+msgstr "Aktuálně podřazená místa"
 
 #: PlaceCleanup/placecleanup.glade:775
 msgid ""
@@ -20889,14 +20889,21 @@ msgid ""
 "is changed to the next level GeoNames place.  This may result in some unused "
 "places remaining in your database."
 msgstr ""
+"Při čištění místa, které je již součástí většího celku, má tato volba vliv "
+"na prováděné úkony.\n"
+"Je-li vybrána možnost „<b>Zachovat aktuální začlenění</b>“, nedojde k žádným "
+"změnám nadřazeného místa.\n"
+"Je-li vybrána možnost „<b>Nahradit začleněním podle GeoNames</b>“, bude "
+"podřazené místo změněno na místo další úrovně z GeoNames. To může mít za "
+"následek, že ve vaší databázi zůstanou některá nepoužívaná místa."
 
 #: PlaceCleanup/placecleanup.glade:780
 msgid "Keep current Enclosure"
-msgstr ""
+msgstr "Zachovat aktuální začlenění"
 
 #: PlaceCleanup/placecleanup.glade:795
 msgid "Replace with GeoNames Enclosure"
-msgstr ""
+msgstr "Nahradit začleněním podle GeoNames"
 
 #: PlaceCleanup/placecleanup.glade:851
 msgid ""
@@ -20920,6 +20927,9 @@ msgid ""
 "For use when the initial component of the Title is too detailed to be found "
 "in the gazetteer."
 msgstr ""
+"Název rozdělte, ručně upravte a začleňte do místa na další úrovni "
+"hierarchie.  Použijte v případě, že počáteční část názvu je příliš podrobná "
+"na to, aby ji bylo možné najít v zeměpisném slovníku."
 
 #: PlaceCleanup/placecleanup.glade:958
 msgid "Next Place"
@@ -21055,12 +21065,16 @@ msgid ""
 "One of the places you are merging encloses the other!\n"
 "Please choose another place."
 msgstr ""
+"Jedno z míst, která slučujete, zahrnuje druhé!\n"
+"Vyberte prosím jiné místo."
 
 #: PlaceCleanup/placecleanup.py:759
 msgid ""
 "The place you chose is enclosed in the place you are workin on!\n"
 "Please cancel and choose another place."
 msgstr ""
+"Místo, které jste vybrali, je součástí místa, na kterém právě pracujete!\n"
+"Zrušte prosím výběr a vyberte jiné místo."
 
 #: PlaceCleanup/placecleanup.py:946
 msgid "GeoNames web site"
@@ -21559,7 +21573,7 @@ msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:111
 msgid "New enclosing place"
-msgstr ""
+msgstr "Nové nadřazené místo"
 
 #: PlaceUpdate/PlaceUpdate.py:119
 msgid "Timespan:"
@@ -21567,11 +21581,11 @@ msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:123
 msgid "Set timespan for enclosing places"
-msgstr ""
+msgstr "Nastavte časové období pro nadřazená místa"
 
 #: PlaceUpdate/PlaceUpdate.py:159
 msgid "Clear original enclosing places"
-msgstr ""
+msgstr "Vymazat původní nadřazená místa"
 
 #: PlaceUpdate/PlaceUpdate.py:162
 msgid "Clear tags"
