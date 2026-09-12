@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-09 00:00+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ContextView.py:452 ContextView.gpr.py:30
+msgid "Context"
+msgstr ""
+
+#: ContextView.py:520
+msgid "Show the previous family"
+msgstr ""
+
+#: ContextView.py:523
+msgid "Show the next family"
+msgstr ""
+
+#: ContextView.py:847
+msgid "No person is active."
+msgstr ""
+
+#: ContextView.py:863
+#, python-format
+msgid "Family %(current)d of %(total)d"
+msgstr ""
+
+#: ContextView.py:870
+#, python-format
+msgid "family %d lies toward the home person"
+msgstr ""
+
+#: ContextView.py:928
+msgid "<b>Bold</b> marks the way to the home person"
+msgstr ""
+
+#: ContextView.py:1315
+msgid "Pre_vious"
+msgstr ""
+
+#: ContextView.py:1316
+msgid "_Next"
+msgstr ""
+
+#: ContextView.py:1317
+msgid "_Home"
+msgstr ""
+
+#: ContextView.py:1325
+msgid "Set _Home Person"
+msgstr ""
+
+#: ContextView.py:1337 ContextView.py:1547
+msgid "Show siblings"
+msgstr ""
+
+#: ContextView.py:1338 ContextView.py:1533
+msgid "Show images"
+msgstr ""
+
+#: ContextView.py:1339 ContextView.py:1554
+msgid "Show marriage data"
+msgstr ""
+
+#: ContextView.py:1350
+msgid "About Context View"
+msgstr ""
+
+#: ContextView.py:1371
+msgid "_Edit"
+msgstr ""
+
+#: ContextView.py:1376
+msgid "_Copy"
+msgstr ""
+
+#: ContextView.py:1389
+msgid "Edit Family"
+msgstr ""
+
+#: ContextView.py:1405
+msgid "Unknown"
+msgstr ""
+
+#: ContextView.py:1430
+msgid "Spouses"
+msgstr ""
+
+#: ContextView.py:1442
+msgid "Siblings"
+msgstr ""
+
+#: ContextView.py:1448
+msgid "Children"
+msgstr ""
+
+#: ContextView.py:1454
+msgid "Parents"
+msgstr ""
+
+#: ContextView.py:1459
+msgid "Related"
+msgstr ""
+
+#: ContextView.py:1540
+msgid "Show tag colour"
+msgstr ""
+
+#: ContextView.py:1561
+msgid "Details in each box"
+msgstr ""
+
+#: ContextView.py:1565
+msgid "Name only"
+msgstr ""
+
+#: ContextView.py:1566
+msgid "Name and dates"
+msgstr ""
+
+#: ContextView.py:1567
+msgid "Name, dates and places"
+msgstr ""
+
+#: ContextView.py:1571
+msgid "Layout"
+msgstr ""
+
+#: ContextView.py:1618
+msgid "Organize Bookmarks"
+msgstr ""
+
+#: ContextView.gpr.py:32
+msgid ""
+"A chart placing a person in the context of their immediate family: the "
+"couple in the centre, each partner's parents above them, their children "
+"below, and each partner's siblings in a column to their own side, eldest at "
+"the top. Click any box to re-centre the chart on that person; the name in "
+"bold marks the way back to the home person."
+msgstr ""
+
+#: ContextView.gpr.py:46
+msgid "Charts"
+msgstr ""
