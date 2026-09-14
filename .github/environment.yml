@@ -1,0 +1,23 @@
+name: addons-ci
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pygobject
+  - gtk3
+  - pip
+  # Addon runtime deps (dbf, networkx, lxml, svgwrite, boto3, etc.) are
+  # installed at CI runtime by ci.yml's auto-derive step from .gpr.py
+  # requires_mod — single source of truth. Keep only the stable base
+  # here (Gramps + orjson for plugin registration).
+  #
+  # NOTE: gramps is installed from PyPI via the `pip:` block below (conda-forge
+  # is NOT the source), and the pin is a deliberate per-series bound. `<6.1`
+  # can never resolve 6.1, so on a maintenance/gramps61 (or later) branch this
+  # file MUST be bumped (e.g. to ">=6.1,<6.2") — the workflows derive the series
+  # automatically, but this pin does not and will otherwise validate addons
+  # against 6.0.x forever (see .github/CI-MAINTAINER.md and ci.yml's "Report
+  # gramps-vs-branch series" step, which warns loudly when the two diverge).
+  - pip:
+      - "gramps>=6.0,<6.1"
+      - orjson
