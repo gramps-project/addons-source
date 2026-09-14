@@ -20,7 +20,6 @@
 # `_` is injected into this file's namespace by the plugin registrar, and is
 # already the addon's own translator; it must not be defined here.
 #
-from gramps.gen.plug._pluginreg import *
 
 MODULE_VERSION = "6.0"
 
@@ -45,7 +44,6 @@ register(
     authors_email=["aje.baugh@gmail.com"],
     category=("Ancestry", _("Charts")),
     viewclass="ContextView",
-    order=END,
     stock_icon="gramps-relation",
     help_url="Addon:Context_View",
 )
