@@ -16,11 +16,15 @@
     - report-generation.md (88L) — Text / Draw / Graphviz / Web categorisation
 -->
 
-## Overview
+## Summary
 
 The curated `gramps.gen.*` surface addons are allowed to import. `gen` is the self-contained core submodule (it must not import from `gui` or `plugins`); importing only from `gen` keeps an addon portable across UI variants and testable without a display.
 
-This page is a navigator, not a generated API dump. For exhaustive signatures, read the source of the module referenced — the [upstream Sphinx docs](https://gramps-project.org/docs/) carry the same information formatted for browsing.
+This page is a navigator, not a generated API dump. For exhaustive signatures, read the source of the module referenced — the [upstream Sphinx docs](https://gramps-project.org/docs/) carry the same information formatted for browsing. What it gives you instead is the shape of the surface: which module to reach for, what it is for, and which of the many things in `gen` an addon should actually depend on.
+
+**Allowed surface** groups the API by the job you are doing. *Database* is the `DbReadBase` / `DbWriteBase` entry point and its lookup and iteration methods. *Object model* is the primary and secondary object classes — Person, Family, Event, Place and the rest, plus the Name, Date, and Attribute types they contain. *Types and IDs*, *Errors*, and *Plugin base classes* cover the enumerations, the exception hierarchy worth catching, and the classes each addon kind subclasses. Report authors get three sections of their own: *Report categories*, the *Document API* — the docgen calls that let one report render to PDF, ODF, or HTML without knowing which — and *Paper geometry* for the Draw and Tree categories that lay out on a physical page. The rest covers *Locale and translation*, *Filters and selection*, *Logging*, and the *Simple Access* convenience layer that Quick Views are written against.
+
+**What's NOT API** is the section that saves the most rework. `gramps.gui.*` and `gramps.plugins.*` are internal to the distribution: importing from them is what makes an addon break on the next Gramps release. A few GUI kinds unavoidably touch `gui`, and those exceptions are named — but the guidance is to keep logic behind a `gen`-only boundary so it stays testable without a display, and to ask upstream to promote anything genuinely missing into `gen` rather than reaching around it.
 
 ## Allowed surface
 

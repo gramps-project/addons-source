@@ -19,9 +19,13 @@
   restart cycle) is not re-explained.
 -->
 
-## Overview
+## Summary
 
 End-to-end walkthroughs that take an author from empty folder to working addon. Each tutorial picks one kind, covers registration, implementation, and the reload cycle, and points at the conventions used to test it.
+
+Five kinds are worked through here — Gramplet, Tool, Report, Quick View, and filter Rule. Between them they exercise most of the machinery an addon author meets: reading the database, subscribing to database signals, writing inside a transaction, driving the docgen abstraction that keeps a report independent of its output format, hooking into a context menu, and slotting a rule into the filter engine. Every tutorial is a working addon whose files are given whole rather than as elided fragments, so the code on the page is the code you can run.
+
+The five follow the same shape, so once you have read one you can skim the rest: **Layout** (the files and the folder), the **`.gpr.py`** registration in full with its kind-specific fields called out, the **implementation module** in full, **What's new** (what this tutorial adds that the earlier ones didn't), and **Try it** (how to load it and confirm it works). What the tutorials deliberately leave out — license headers and type hints, both required in shipped addons — is spelled out in [A note on tutorial-style code](#a-note-on-tutorial-style-code) below.
 
 Read these in order or skip to the one that matches what you're building — they're independent. They assume you've already followed [the getting-started walkthrough in 01-overview](01-overview.md#your-first-addon-a-minimal-gramplet), so we don't re-explain the user plugin directory or the restart cycle.
 
@@ -37,18 +41,25 @@ For the conceptual map, see [01-overview](01-overview.md). For the full inventor
 
 ### A note on tutorial-style code
 
-The implementation modules below show the smallest code that demonstrates each kind. Two things are deliberately omitted to keep the lesson in focus, and both are **required** for shipped addons:
+The implementation modules below show the smallest code that demonstrates each kind. Three things are deliberately omitted to keep the lesson in focus, and all three belong in a shipped addon:
 
 - A **GPL-2.0-or-later license header** at the top of every `.py` file. Copy the header from any existing addon, or see [16-guidelines → Coding style](16-guidelines.md#coding-style).
 - **Type hints** on public functions and methods (Python 3.10+ syntax — `X | None`, `list[X]`). The tutorials skip them for readability; production addons should include them per [16-guidelines → Coding style](16-guidelines.md#coding-style).
+- A **guarded translator binding**. Every module below binds `_` with the bare one-liner `_ = glocale.get_addon_translator(__file__).gettext`. That call raises `ValueError` for a user whose language list has no `en`/`C` entry when the addon has no compiled `locale/` — which is exactly the state these tutorial addons are in. Shipped addons wrap it in `try` / `except ValueError` and fall back to `glocale.translation`; see [04-fundamentals → Translation](04-fundamentals.md#translation).
 
-Both are CI-checked on gramps core PRs (Black formats around the license header; `mypy` verifies the type hints); addons-source doesn't gate on them today but the rules apply to addon code regardless.
+The first two are CI-checked on gramps core PRs (Black formats around the license header; `mypy` verifies the type hints); addons-source doesn't gate on any of the three today, but the rules apply to addon code regardless.
 
 ## A live Gramplet
 
 **Goal.** Build a sidebar Gramplet that reads the active person from the database and shows their direct events, refreshing whenever the active person changes or the database is updated.
 
 The Hello Gramplet from [the overview's walkthrough](01-overview.md#your-first-addon-a-minimal-gramplet) was static text. This one is dynamic — it subscribes to signals and re-reads the DB on each update.
+
+**What the user sees.** A panel in the sidebar showing the active person's Gramps ID in bold, then one line per event recorded directly against that person — the event type and its date. Click a different person in the People view and the panel redraws for them; edit one of their events in another window and the panel picks the change up on its own, with no refresh button to press.
+
+**What it teaches.** Three mechanisms nearly every non-trivial Gramplet needs. Subscribing to database signals through `self.connect()` rather than `self.dbstate.db.connect()`, so Gramps tracks the subscriptions and tears them down when the Gramplet closes or the tree is swapped — the forgotten-disconnect bug class simply doesn't arise. Overriding `active_changed()` so the widget follows the user's navigation instead of showing whatever was current when it loaded. And dereferencing event *refs* into real Event objects, which is the handle-following pattern the whole database API is built on ([Data access](05-data-access.md)). Underneath all three sits the Gramplet lifecycle split: `init()` runs once to build the static parts, `main()` runs on every refresh.
+
+**Why this example.** Direct events only — nothing inherited from the person's families, no sorting, no filtering — keeps the module short enough to read in one pass. Each of those omissions is a natural next exercise: family events come from the person's family handles, and sorting by date means comparing `Date` objects rather than the strings they render to.
 
 ### Layout
 
@@ -149,6 +160,12 @@ For the API surface this tutorial used (handles, refs, `iter_*`, `commit_*`), se
 **Goal.** A menu-launched Tool that scans the database for people with no recorded birth date and shows the list in a dialog.
 
 Tools differ from gramplets in two ways: they're invoked from the Tools menu (not always visible), and they always carry an Options class — even a tool with no options must register an empty `ToolOptions` subclass.
+
+**What the user sees.** An entry under *Tools → Analysis and Exploration*. Choosing it walks every person in the tree and puts up a modal dialog listing the Gramps ID and name of each one whose birth date is unknown — whether because no birth event is attached at all, or because a birth event exists but carries an empty date. If every person does have a date, the dialog says so rather than showing an empty list: a clean result still deserves an answer.
+
+**What it teaches.** The Tool / ToolOptions pair, and the fact that a GUI tool does its work *in `__init__`* — there is no separate `run()` to override, which surprises most people once. It also shows a whole-database scan done the cheap way, iterating with `db.iter_people()` instead of materialising a list, and the two-step check that separates "no birth event" from "birth event with no date" — a distinction that quietly breaks data-quality reports that only test for the first.
+
+**Why this example.** A data-quality scan is the archetypal Tool: read everything, decide something, report back. This one stays deliberately read-only, with the write path split out into a separate [Writing data](#writing-data) section below, so the `DbTxn` rule every mutating tool must follow is visible on its own rather than tangled into the example.
 
 ### Layout
 
@@ -260,13 +277,19 @@ After restart, the tool appears in *Tools → Analysis and Exploration → Missi
 
 ## A text Report
 
-**Goal.** A simple text report that summarises the database — number of people, number of families, count by gender. Produces the same content through PDF, HTML, ODF, or any other docgen-supported format.
+**Goal.** A simple text report that summarises the database — total people, counts by gender, and surname statistics. Produces the same content through PDF, HTML, ODF, or any other docgen-supported format.
 
 Reports are the heaviest of the everyday addon kinds. Three pieces work together:
 
 - A **Report** class that knows how to walk the data and emit it as paragraphs and tables, leaving format details to the docgen.
 - An **Options** class that defines user-adjustable options and the paragraph / font styles.
 - A **registration** call wiring both into the menu.
+
+**What the user sees.** An entry under *Reports → Text Reports*. Choosing it opens the standard report dialog — output format, target file, and the one option this report contributes — and produces a short document: a title, the total number of people, the counts by gender, how many distinct surnames the tree holds, and which surname is the most common with its count. Run the same report as PDF, as ODF, and as plain text and you get the same content three times, each rendered in that format's idiom.
+
+**What it teaches.** The three-part structure above, and the one idea that sets reports apart from every other addon kind: you never write output. You make `start_paragraph(style)` / `write_text()` / `end_paragraph()` calls against `self.doc`, and whichever document generator the user picked turns them into a PDF, an ODF file, or HTML. That is why the style names (`DBS-Title`, `DBS-Normal`) are defined in the Options class rather than the report body — fonts and layout are the Options class's business, content is the Report's. The example also carries the standard localisation option, which is the reason for `self._()` alongside the module-level `_()`: report *output* follows the locale the user chose for this run, which need not be the locale the interface is running in.
+
+**Why this example.** Counting is the least interesting thing a report can do, and that is the point — with the data-walking reduced to a couple of `Counter` tallies, what remains on the page is the report scaffolding itself. Swap `_count()` for something substantial and everything around it stays exactly as written.
 
 ### Layout
 
@@ -427,6 +450,12 @@ For more on the docgen abstraction, see [Report Generation](https://gramps-proje
 
 Quick Views are the shortest path to a usable report. There's no class to subclass and no options form to maintain — just a `run()` function and the registration. They're written against the **Simple Access API** (`SimpleAccess`, `SimpleDoc`), which trades some power for very little code.
 
+**What the user sees.** A *Quick View → Siblings* item on the right-click menu of any person, in the People view or the person editor. Choosing it opens a small window headed with that person's name and a three-column table — person, gender, birth date — of their brothers and sisters, gathered from every family in which they appear as a child, so half-siblings from a parent's second family are included. The rows are live: clicking one navigates to that person.
+
+**What it teaches.** The Simple Access layer, which is the reason the whole addon is one short function. `sdb.child_in()`, `sdb.children()`, `sdb.name()`, and `sdb.birth_date()` each hide a handle dereference and a formatting decision you would otherwise write out by hand. Around that: the fixed `run(database, document, person)` signature the QuickView kind imposes, `QuickTable` for output whose rows link back to real Gramps objects, and `document.has_data` — the flag that lets Gramps tell "this person has no siblings" apart from "the Quick View produced nothing".
+
+**Why this example.** Siblings aren't stored anywhere. Nothing in the database records them; they have to be derived by going up to each family the person is a child in and back down to its other children — which is the shape of most genealogical questions worth asking. It also has one small correctness detail of the kind real addons are full of: the person themselves appears in that child list and has to be skipped.
+
 ### Layout
 
 ```
@@ -505,6 +534,12 @@ For Quick Views that don't fit the Simple Access surface, you can reach for the 
 **Goal.** A filter rule "Has at least N children" that the user can add to a custom person filter from the Filter Editor.
 
 Filter rules are the smallest addon kind by line count and the one with the most reuse: a single rule, written once, drops into every filter the user composes — search, narrative website, reports, gramplets that accept a filter.
+
+**What the user sees.** A new entry, *People with at least N children*, in the *Family filters* group of *Edit → Person Filter Editor → Add → Add Rule*, with a single input box labelled "Minimum count:". Added to a filter, it is indistinguishable from a built-in rule — it combines with other rules in the same filter, and travels everywhere that filter is used.
+
+**What it teaches.** How declarative a rule is. `labels` declares the inputs and produces the dialog's text boxes; the values come back on `self.list` as raw strings straight from the GUI, which is why the example parses them defensively rather than trusting the input. `name`, `category`, and `description` are read directly off the class — no instance exists yet when Gramps builds the Add Rule dialog. All the actual work happens in `apply_to_one()`, called once per person, returning `True` or `False`. The counting short-circuits: once the running total reaches the minimum, it stops walking families rather than finishing the count it no longer needs.
+
+**Why this example.** It shows the best effort-to-reach ratio in the whole plugin system. One small class gets you a rule that every filter-aware part of Gramps can use — search, reports, the narrative website, filter gramplets — with no integration work in any of them, because the filter framework is uniform. The [Optional hooks](#optional-hooks) section then covers `prepare()` and `reset()`, for rules whose per-object work is expensive enough to be worth precomputing once instead of repeating for every person in the tree.
 
 ### Layout
 

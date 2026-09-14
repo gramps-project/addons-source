@@ -2,11 +2,21 @@
 
 [Index](01-overview.md) · [Next →](02-tutorials.md)
 
-## Overview
+## Summary
 
 A Gramps **addon** extends the application without modifying core. You add a feature, ship it on your own schedule, and users install it from the in-app Plugin Manager — no fork of Gramps, no waiting on a core release to put new functionality in front of people. An addon is just a folder of Python on the plugin path, so the barrier to entry is low; the trade-off is that you build against Gramps' API and track it across versions. This is how most of Gramps' reports, tools, and gramplets are delivered, and the same door is open to you.
 
-Addons are discovered from the plugin directory; see [the addon list](https://gramps-project.org/wiki/index.php/6.0_Addons) for what ships today.
+**What you actually write.** Two files are the minimum: a registration file, `<Addon>.gpr.py`, that declares the addon to Gramps, and an implementation module that Gramps imports the first time the addon is used. Optional `po/` and `tests/` directories sit alongside them. Gramps scans every `.gpr.py` at startup and builds its plugin catalog from the `register(...)` calls; implementation modules load **lazily**. There is no build step and no manifest beyond the registration file — [see below](#anatomy-of-an-addon).
+
+**What you can extend.** Gramps has no single "addon" shape: sixteen registration kinds each plug in at a different extension point — Gramplets, Views, Reports, Tools, Importers, Exporters, Quick Views, Docgens, Sidebars, Map services, Relationship calculators, filter Rules, Database backends, Thumbnailers, citation formatters, and a catch-all `GENERAL` kind for shared libraries. The kind you pick determines the registration fields, the base class you subclass, and where the addon surfaces in the UI. The full catalogue is [Addon Kinds](03-addon-kinds.md); [the addon list](https://gramps-project.org/wiki/index.php/6.0_Addons) shows what already ships.
+
+**What you build against.** An addon targets one Gramps minor version, declared as `gramps_target_version` in the registration — "6.0" means the 6.0 API on the `maintenance/gramps60` branch. Addons import from `gramps.gen.*`, the headless core; `gramps.gui.*` is available to GUI kinds but is a less stable surface. The API you may rely on is curated in [API Reference](06-api-reference.md), and what shifts between versions is in [Compatibility](14-compatibility.md) and [What's New](15-whats-new.md).
+
+**How it reaches users.** Three levels of ambition, and you can stop at any of them. Keep the addon in your own plugin directory and it is yours alone. Hand someone the folder and they drop it into theirs. Or submit it to the `addons-source` repository upstream, where `make.py` packages it into an `.addon.tgz` in the `addons` repository and refreshes the listing JSON that the in-app Plugin Manager fetches over HTTPS — at which point every Gramps user on that version can find and install it. That pipeline is [Packaging](12-packaging.md); what happens afterwards — the addon-list entry, the wiki page, the support duty — is [Community](13-community.md).
+
+**What is expected of you.** The bar is deliberately lower than for core, but two rules never soften: every new `.py` file carries a GPL-2.0-or-later license header with a copyright line, and every user-visible string is wrapped in `_()` so it can be translated. Beyond that: a test where the change is testable, code that passes the static checks, and — counter-intuitively — *not* touching the `version` field in a submission, since the release build manages it. All of it is written out, MUST by MUST, in [Rules](16-guidelines.md).
+
+**Who this is for.** Anyone writing or maintaining a Gramps addon — from a one-file Gramplet for personal use to a published addon with translations and a maintainer. If you are changing Gramps itself rather than extending it, you want the Core Development section instead.
 
 This page is the **start point** for the section: first a map to every other page, then everything a first-time author needs to go from "Gramps is installed" to "my addon shows up in the menu" — anatomy, prerequisites, and a minimal working Gramplet. The normative MUST / SHOULD rules every addon is held to live in [Rules](16-guidelines.md).
 

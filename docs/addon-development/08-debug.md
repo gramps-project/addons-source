@@ -11,11 +11,17 @@
   PrerequisitesCheckerGramplet, the Mac no-debug-mode caveat).
 -->
 
-## Overview
+## Summary
 
 How to see what an addon is actually doing — where it logs, how to enable verbose output, and the patterns for reproducing a problem without sitting through a full Gramps launch cycle each time.
 
 Most addon bugs are reachable through three escalating tools, in order: read the log window, enable per-logger debug output, or write a tight repro script that bypasses the GUI entirely. The heavier tools (pdb, gdb) are documented at the bottom for the cases where the lighter ones don't suffice.
+
+The page works up that ladder. **Where addon output goes** establishes the two surfaces every logging call feeds — the in-app log window under *Help → Log*, always populated, and stderr, populated only when Gramps was launched from a terminal — and why `print()` reaches neither. **Default log levels** explains that Gramps runs the root logger at `WARNING`, so your `DEBUG` and `INFO` lines are invisible until you lower the bar, either with the `--debug=<logger_name>` command-line flag or with a module-level override kept strictly to development. **Reproduction scripts that bypass the GUI** is the technique that saves the most time: driving your addon's logic directly against a database, with no launch cycle and no clicking, so the edit-run-observe loop takes seconds. **`PrerequisitesCheckerGramplet`** is the in-app diagnostic for the class of problem that turns out to be a missing or wrong-versioned dependency rather than a bug in your code.
+
+**Platform notes** matter more than they look: the three platforms are not equivalent for debugging. Linux behaves as documented; on Windows the launcher usually has no terminal attached, so you launch from MSYS2 UCRT64 to see stderr; and macOS has no debug-mode equivalent at all, which is why some Mac problems can only be triaged through the reporter's screenshots. **Heavier tools** closes the page with `pdb`, `python -m trace`, `gdb` for the C layer under PyGObject, and profiling for problems that are about speed rather than correctness.
+
+If your symptom is already a recognisable one, go to [Troubleshoot](09-troubleshoot.md) first — it indexes the common failures by what you see. This page is the technique reference behind it.
 
 ## Where addon output goes
 

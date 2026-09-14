@@ -2,7 +2,7 @@
 
 [← Previous](14-compatibility.md) · [Index](01-overview.md) · [Next →](16-guidelines.md)
 
-## Overview
+## Summary
 
 API and convention changes that affect addon authors, per Gramps minor release. The audience is someone with a working addon on the previous version asking *"what do I need to know before I bump `gramps_target_version`?"*
 
@@ -14,7 +14,11 @@ This page is the **addon-author slice** of the change log. It's not the full rel
 - per-addon translation / locale plumbing,
 - the addon discovery and loading mechanism.
 
-For the practical *how to port* guidance — what to check on a cross-version port, when to maintain parallel branches — see [14-compatibility](14-compatibility.md). This page is the inventory; 14-compatibility is the procedure.
+Each release gets its own section, and within it the same four headings: **Added**, **Changed**, **Deprecated**, **Removed**. That shape is deliberate — it maps to the four things a port has to react to. *Added* is opportunity you can ignore safely. *Changed* is where an addon that still runs may now behave differently. *Deprecated* is a deadline you have until the next major release to meet. *Removed* is the one that breaks on load. Reading a release section top to bottom therefore goes from optional to urgent.
+
+Currently covered: **Gramps 6.1** and **Gramps 6.0** in full, with **earlier releases** summarised rather than enumerated, since an addon that far behind needs a port rather than a change list. **How to read this page** sets out the two conventions worth knowing before you rely on an entry: sections are *incremental*, describing the delta from the previous minor rather than the cumulative surface, and entries carry an inline citation to the upstream commit or PR where one exists, so any claim here can be checked against the source. Entries without a citation record conventions that emerged rather than discrete changes.
+
+For the current surface — what exists right now, rather than what changed — use [06-api-reference](06-api-reference.md). For the practical *how to port* guidance — what to check on a cross-version port, when to maintain parallel branches — see [14-compatibility](14-compatibility.md). This page is the inventory; 14-compatibility is the procedure.
 
 ## Gramps 6.1
 

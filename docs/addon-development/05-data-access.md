@@ -15,7 +15,7 @@
   actually need.
 -->
 
-## Overview
+## Summary
 
 Every addon that does anything useful with a family tree reads or writes through the **database API** — the `DbReadBase` / `DbWriteBase` interface implemented by Gramps' database backends (BSDDB historically, SQLite from 6.0 onward).
 
@@ -26,6 +26,12 @@ db = dbstate.db   # this is your entry point
 ```
 
 The same `db` works for read-only addons (reports, gramplets, quick views) and for tools that mutate data. Mutation goes through transactions; see [Mutating data](#mutating-data) below.
+
+The page follows the order in which questions actually come up. It starts with the distinction that trips up nearly everyone — **handles versus Gramps IDs**: the handle is the immutable internal key you traverse the data with, the `gramps_id` (`I0042`, `P0001`) is the user-facing label that users can and do change, and mixing them up produces code that works on your tree and fails on someone else's. Then **reading one object at a time** by handle or ID, and **iterating whole object types** with the cursor and iterator methods that keep memory flat on large trees.
+
+From there it gets into structure: **following references** from one object to another (a Person to their Families, a Family to its Events, an Event to its Place), and **backlinks** — the reverse question, "what refers to this object?", which is how you find every citation of a source or every event at a place. **Filters** covers reusing Gramps' own filter machinery instead of hand-rolling selection logic. **Mutating data** covers the write path: every change goes inside a `DbTxn` transaction, which is what makes it undoable in the UI and atomic on failure.
+
+Two shorter sections close it out: **testing data access** — how to exercise this code without a GUI, cross-referenced to [Testing](07-testing.md) — and **performance notes** on the access patterns that stay fast as trees grow into the tens of thousands of objects.
 
 ## Identifying objects: handles vs Gramps IDs
 
