@@ -105,18 +105,6 @@ def _make_dbapi_instance():
     return db
 
 
-def _executed_create_table_names(db):
-    """Table names from every CREATE TABLE statement _create_schema() issued,
-    excluding "trees" -- the one shared, not per-tree, table."""
-    names = [
-        call.args[0].split()[2]
-        for call in db.dbapi.execute.call_args_list
-        if call.args[0].startswith("CREATE TABLE ")
-    ]
-    names.remove("trees")
-    return set(names)
-
-
 class TestCreateSchemaAnalyzeThresholds(unittest.TestCase):
     def _executed_alter_table_sql(self, db):
         return [
@@ -129,7 +117,10 @@ class TestCreateSchemaAnalyzeThresholds(unittest.TestCase):
         db = _make_dbapi_instance()
         db._create_schema(json_data=True)
 
-        expected_tables = _executed_create_table_names(db)
+        # _create_schema() exposes the definitive per-tree table list it
+        # just used, rather than the test reverse-engineering it by
+        # parsing the CREATE TABLE statements sent to the mock.
+        self.assertNotIn("trees", db._per_tree_tables)
 
         altered_tables = set()
         for sql in self._executed_alter_table_sql(db):
@@ -144,7 +135,7 @@ class TestCreateSchemaAnalyzeThresholds(unittest.TestCase):
                 sql,
             )
 
-        self.assertEqual(altered_tables, expected_tables)
+        self.assertEqual(altered_tables, set(db._per_tree_tables))
 
     def test_alters_after_creating_the_table(self):
         db = _make_dbapi_instance()

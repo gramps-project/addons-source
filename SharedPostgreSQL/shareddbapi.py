@@ -157,138 +157,109 @@ class SharedDBAPI(DbGeneric):
             "uuid VARCHAR(50) UNIQUE NOT NULL"
             ")"
         )
-        self.dbapi.execute(
-            "CREATE TABLE person "
-            "("
-            "treeid INTEGER NOT NULL, "
-            "handle VARCHAR(50) NOT NULL, "
-            "PRIMARY KEY (treeid, handle), "
-            "given_name TEXT, "
-            "surname TEXT, "
-            f"{col_data}"
-            ")"
-        )
-        self.dbapi.execute(
-            "CREATE TABLE family "
-            "("
-            "treeid INTEGER NOT NULL, "
-            "handle VARCHAR(50) NOT NULL, "
-            "PRIMARY KEY (treeid, handle), "
-            f"{col_data}"
-            ")"
-        )
-        self.dbapi.execute(
-            "CREATE TABLE source "
-            "("
-            "treeid INTEGER NOT NULL, "
-            "handle VARCHAR(50) NOT NULL, "
-            "PRIMARY KEY (treeid, handle), "
-            f"{col_data}"
-            ")"
-        )
-        self.dbapi.execute(
-            "CREATE TABLE citation "
-            "("
-            "treeid INTEGER NOT NULL, "
-            "handle VARCHAR(50) NOT NULL, "
-            "PRIMARY KEY (treeid, handle), "
-            f"{col_data}"
-            ")"
-        )
-        self.dbapi.execute(
-            "CREATE TABLE event "
-            "("
-            "treeid INTEGER NOT NULL, "
-            "handle VARCHAR(50) NOT NULL, "
-            "PRIMARY KEY (treeid, handle), "
-            f"{col_data}"
-            ")"
-        )
-        self.dbapi.execute(
-            "CREATE TABLE media "
-            "("
-            "treeid INTEGER NOT NULL, "
-            "handle VARCHAR(50) NOT NULL, "
-            "PRIMARY KEY (treeid, handle), "
-            f"{col_data}"
-            ")"
-        )
-        self.dbapi.execute(
-            "CREATE TABLE place "
-            "("
-            "treeid INTEGER NOT NULL, "
-            "handle VARCHAR(50) NOT NULL, "
-            "PRIMARY KEY (treeid, handle), "
-            "enclosed_by VARCHAR(50), "
-            f"{col_data}"
-            ")"
-        )
-        self.dbapi.execute(
-            "CREATE TABLE repository "
-            "("
-            "treeid INTEGER NOT NULL, "
-            "handle VARCHAR(50) NOT NULL, "
-            "PRIMARY KEY (treeid, handle), "
-            f"{col_data}"
-            ")"
-        )
-        self.dbapi.execute(
-            "CREATE TABLE note "
-            "("
-            "treeid INTEGER NOT NULL, "
-            "handle VARCHAR(50) NOT NULL, "
-            "PRIMARY KEY (treeid, handle), "
-            f"{col_data}"
-            ")"
-        )
-        self.dbapi.execute(
-            "CREATE TABLE tag "
-            "("
-            "treeid INTEGER NOT NULL, "
-            "handle VARCHAR(50) NOT NULL, "
-            "PRIMARY KEY (treeid, handle), "
-            f"{col_data}"
-            ")"
-        )
-        # Secondary:
-        self.dbapi.execute(
-            "CREATE TABLE reference "
-            "("
-            "treeid INTEGER, "
-            "obj_handle VARCHAR(50), "
-            "obj_class TEXT, "
-            "ref_handle VARCHAR(50), "
-            "ref_class TEXT"
-            ")"
-        )
-        self.dbapi.execute(
-            "CREATE TABLE name_group "
-            "("
-            "treeid INTEGER NOT NULL, "
-            "name VARCHAR(50) NOT NULL, "
-            "PRIMARY KEY (treeid, name), "
-            "grouping TEXT"
-            ")"
-        )
-        self.dbapi.execute(
-            "CREATE TABLE metadata "
-            "("
-            "treeid INTEGER NOT NULL, "
-            "setting VARCHAR(50) NOT NULL, "
-            "PRIMARY KEY (treeid, setting), "
-            f"{meta_col_data}"
-            ")"
-        )
-        self.dbapi.execute(
-            "CREATE TABLE gender_stats "
-            "("
-            "treeid INTEGER NOT NULL, "
-            "given_name TEXT, "
-            "female INTEGER, "
-            "male INTEGER, "
-            "unknown INTEGER"
-            ")"
-        )
+
+        # Column definitions for every table whose rows are shared across
+        # all trees (as opposed to "trees" itself, which holds one row per
+        # tree, not per-tree rows, so none of this applies to it). This
+        # dict is the single source of truth for which tables get created
+        # below and, via its keys, which tables get the fixed autovacuum
+        # analyze threshold applied further down -- see
+        # SHARED_TABLE_ANALYZE_* at the top of this module.
+        per_tree_table_schema = {
+            "person": (
+                "treeid INTEGER NOT NULL, "
+                "handle VARCHAR(50) NOT NULL, "
+                "PRIMARY KEY (treeid, handle), "
+                "given_name TEXT, "
+                "surname TEXT, "
+                f"{col_data}"
+            ),
+            "family": (
+                "treeid INTEGER NOT NULL, "
+                "handle VARCHAR(50) NOT NULL, "
+                "PRIMARY KEY (treeid, handle), "
+                f"{col_data}"
+            ),
+            "source": (
+                "treeid INTEGER NOT NULL, "
+                "handle VARCHAR(50) NOT NULL, "
+                "PRIMARY KEY (treeid, handle), "
+                f"{col_data}"
+            ),
+            "citation": (
+                "treeid INTEGER NOT NULL, "
+                "handle VARCHAR(50) NOT NULL, "
+                "PRIMARY KEY (treeid, handle), "
+                f"{col_data}"
+            ),
+            "event": (
+                "treeid INTEGER NOT NULL, "
+                "handle VARCHAR(50) NOT NULL, "
+                "PRIMARY KEY (treeid, handle), "
+                f"{col_data}"
+            ),
+            "media": (
+                "treeid INTEGER NOT NULL, "
+                "handle VARCHAR(50) NOT NULL, "
+                "PRIMARY KEY (treeid, handle), "
+                f"{col_data}"
+            ),
+            "place": (
+                "treeid INTEGER NOT NULL, "
+                "handle VARCHAR(50) NOT NULL, "
+                "PRIMARY KEY (treeid, handle), "
+                "enclosed_by VARCHAR(50), "
+                f"{col_data}"
+            ),
+            "repository": (
+                "treeid INTEGER NOT NULL, "
+                "handle VARCHAR(50) NOT NULL, "
+                "PRIMARY KEY (treeid, handle), "
+                f"{col_data}"
+            ),
+            "note": (
+                "treeid INTEGER NOT NULL, "
+                "handle VARCHAR(50) NOT NULL, "
+                "PRIMARY KEY (treeid, handle), "
+                f"{col_data}"
+            ),
+            "tag": (
+                "treeid INTEGER NOT NULL, "
+                "handle VARCHAR(50) NOT NULL, "
+                "PRIMARY KEY (treeid, handle), "
+                f"{col_data}"
+            ),
+            # Secondary:
+            "reference": (
+                "treeid INTEGER, "
+                "obj_handle VARCHAR(50), "
+                "obj_class TEXT, "
+                "ref_handle VARCHAR(50), "
+                "ref_class TEXT"
+            ),
+            "name_group": (
+                "treeid INTEGER NOT NULL, "
+                "name VARCHAR(50) NOT NULL, "
+                "PRIMARY KEY (treeid, name), "
+                "grouping TEXT"
+            ),
+            "metadata": (
+                "treeid INTEGER NOT NULL, "
+                "setting VARCHAR(50) NOT NULL, "
+                "PRIMARY KEY (treeid, setting), "
+                f"{meta_col_data}"
+            ),
+            "gender_stats": (
+                "treeid INTEGER NOT NULL, "
+                "given_name TEXT, "
+                "female INTEGER, "
+                "male INTEGER, "
+                "unknown INTEGER"
+            ),
+        }
+
+        for table, columns in per_tree_table_schema.items():
+            self.dbapi.execute(f"CREATE TABLE {table} ({columns})")
 
         # Every one of these tables holds all trees' rows together, so
         # autovacuum's default analyze threshold -- a fixed count plus a
@@ -301,28 +272,17 @@ class SharedDBAPI(DbGeneric):
         # A fixed, table-size-independent threshold lets autovacuum notice
         # and re-analyze after any one tree's typical-sized batch of
         # changes, regardless of how large the shared table has grown.
-        for table in (
-            "person",
-            "family",
-            "source",
-            "citation",
-            "event",
-            "media",
-            "place",
-            "repository",
-            "note",
-            "tag",
-            "reference",
-            "name_group",
-            "metadata",
-            "gender_stats",
-        ):
+        for table in per_tree_table_schema:
             self.dbapi.execute(
                 f"ALTER TABLE {table} SET ("
                 f"autovacuum_analyze_scale_factor = {SHARED_TABLE_ANALYZE_SCALE_FACTOR}, "
                 f"autovacuum_analyze_threshold = {SHARED_TABLE_ANALYZE_THRESHOLD}"
                 ")"
             )
+
+        # Exposed for tests: the definitive list of per-tree tables, as
+        # actually used above, rather than a second hardcoded copy.
+        self._per_tree_tables = tuple(per_tree_table_schema)
 
         self._create_secondary_columns()
 
