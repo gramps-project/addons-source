@@ -91,25 +91,8 @@ except Exception as _err:
     raise unittest.SkipTest("SharedPostgreSQL module unavailable: %s" % _err)
 
 # The addon imports shareddbapi by bare name, the way Gramps loads addons, so
-# reach the base class through the MRO rather than importing it a second time.
+# reach the base class through the MRO rather than importing it directly.
 SharedDBAPI = SharedPostgreSQL.__bases__[0]
-
-PER_TREE_TABLES = {
-    "person",
-    "family",
-    "source",
-    "citation",
-    "event",
-    "media",
-    "place",
-    "repository",
-    "note",
-    "tag",
-    "reference",
-    "name_group",
-    "metadata",
-    "gender_stats",
-}
 
 
 def _make_dbapi_instance():
@@ -120,6 +103,18 @@ def _make_dbapi_instance():
     db._create_secondary_columns = mock.MagicMock()
     db._quote_column = lambda name: name
     return db
+
+
+def _executed_create_table_names(db):
+    """Table names from every CREATE TABLE statement _create_schema() issued,
+    excluding "trees" -- the one shared, not per-tree, table."""
+    names = [
+        call.args[0].split()[2]
+        for call in db.dbapi.execute.call_args_list
+        if call.args[0].startswith("CREATE TABLE ")
+    ]
+    names.remove("trees")
+    return set(names)
 
 
 class TestCreateSchemaAnalyzeThresholds(unittest.TestCase):
@@ -134,6 +129,8 @@ class TestCreateSchemaAnalyzeThresholds(unittest.TestCase):
         db = _make_dbapi_instance()
         db._create_schema(json_data=True)
 
+        expected_tables = _executed_create_table_names(db)
+
         altered_tables = set()
         for sql in self._executed_alter_table_sql(db):
             table = sql.split()[2]
@@ -147,7 +144,7 @@ class TestCreateSchemaAnalyzeThresholds(unittest.TestCase):
                 sql,
             )
 
-        self.assertEqual(altered_tables, PER_TREE_TABLES)
+        self.assertEqual(altered_tables, expected_tables)
 
     def test_alters_after_creating_the_table(self):
         db = _make_dbapi_instance()
