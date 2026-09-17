@@ -75,9 +75,23 @@ LOG = logging.getLogger(".shareddbapi")
 _LOG = logging.getLogger(DBLOGNAME)
 
 # Fixed, table-size-independent autovacuum analyze settings applied to each
-# per-tree table at schema creation -- see _create_schema().
+# per-tree table at schema creation -- see _create_schema(). These are
+# per-table storage parameters, so once set they take precedence over any
+# autovacuum_analyze_scale_factor / autovacuum_analyze_threshold configured
+# server-wide in postgresql.conf for these 14 tables; an operator tuning
+# autovacuum globally will see no effect here unless they also change (or
+# reset, with "ALTER TABLE <table> RESET (...)") these table-level settings.
+#
+# They are applied only when a brand-new shared database's schema is first
+# created. To apply the same values to an existing deployment, run for each
+# of the 14 per-tree tables listed in the loop below:
+#
+#   ALTER TABLE <table> SET (
+#       autovacuum_analyze_scale_factor = 0,
+#       autovacuum_analyze_threshold = 1000
+#   );
 SHARED_TABLE_ANALYZE_SCALE_FACTOR = 0
-SHARED_TABLE_ANALYZE_THRESHOLD = 5000
+SHARED_TABLE_ANALYZE_THRESHOLD = 1000
 
 
 class SharedDBAPI(DbGeneric):
