@@ -122,6 +122,20 @@ _DOWNLOAD_CHUNK_SIZE = 1024 * 64
 #: ?background=1 (same gate GrampsWebSync's webapihandler.commit() uses).
 BACKGROUND_MIN_API_VERSION = (2, 7)
 
+#: First gramps-web-api version whose GET /transactions/history/
+#: understands after_id/before_id, the exact transaction-id cursor
+#: get_transaction_history() now sends on every call (PR #925/#927,
+#: both first released in this version) -- see that method's own
+#: docstring on why it switched off the older, float timestamp-based
+#: ``after`` cursor. Unlike BACKGROUND_MIN_API_VERSION, there is no safe
+#: fallback for an older server here: gramps-web-api's own query-arg
+#: parser rejects any *unrecognized* query argument outright (RAISE, not
+#: silently ignore -- see its api/util.py Parser), so after_id 422s
+#: every single history request on a server below this version.
+#: grampswebapidb.py checks this once at load() (_check_history_cursor_
+#: support_async()) and refuses to open rather than let every poll fail.
+HISTORY_ID_CURSOR_MIN_API_VERSION = (3, 21)
+
 #: How long to keep polling GET /tasks/<id> for a backgrounded push before
 #: giving up, and how long to wait between polls. The give-up is a
 #: TimeoutError (an OSError subclass), so callers that treat connection
@@ -295,6 +309,10 @@ class WebApiHandler:
         self._refresh_token = refresh_token
         self._access_token: str | None = None
         self._metadata: dict[str, Any] | None = None
+        #: Last ETag get_transaction_history() saw, echoed back as
+        #: If-None-Match on the next call -- see that method's own
+        #: docstring for why.
+        self._history_etag: str | None = None
         self._ctx = (
             create_macos_ssl_context() if platform.system() == "Darwin" else None
         )
@@ -580,6 +598,39 @@ class WebApiHandler:
                 return self._get_json(url, retry=False)
             raise
 
+    def _post_json(self, url: str, retry: bool = True) -> tuple[Any, int]:
+        """POST ``url`` with the bearer token and an empty body, returning
+        ``(body, status)`` -- unlike _get_json(), the status code itself
+        is meaningful here (202 "queued, go poll the task" vs. 200/201
+        "already done"), the same distinction push_transaction() draws
+        for its own background=1 POST. Used by download_export()."""
+        req = Request(
+            url,
+            data=b"",
+            method="POST",
+            headers={
+                "Authorization": f"Bearer {self.access_token}",
+                "User-Agent": "GrampsWebApiDb",
+            },
+        )
+        try:
+            with self._open(req) as res:
+                return json.load(res), res.getcode()
+        except HTTPError as exc:
+            if exc.code == 401 and retry:
+                sleep(RATE_LIMIT_BACKOFF)
+                self._authenticate()
+                return self._post_json(url, retry=False)
+            if exc.code == 429 and retry:
+                sleep(RATE_LIMIT_BACKOFF)
+                return self._post_json(url, retry=False)
+            raise
+        except (URLError, socket.timeout):
+            if retry:
+                sleep(1)
+                return self._post_json(url, retry=False)
+            raise
+
     def _get_binary(self, url: str, retry: bool = True, on_chunk=None) -> bytes:
         """GET ``url`` with the bearer token and return the raw response
         body, unlike _get_json() -- for endpoints that return a file
@@ -633,26 +684,53 @@ class WebApiHandler:
                 return self._get_binary(url, retry=False, on_chunk=on_chunk)
             raise
 
-    def download_export(self, extension: str = "gramps", on_chunk=None) -> bytes:
+    def download_export(
+        self, extension: str = "gramps", on_chunk=None, on_wait=None
+    ) -> bytes:
         """
         Download a full backup export of the tree from the server --
         by default a gzip-compressed Gramps XML file, the exact on-disk
-        shape Gramps' own ImportXml importer already reads (confirmed
-        against a live server: GET /exporters/gramps/file runs
-        synchronously and streams the file back, no task polling
-        needed). Used by grampswebapidb.py's WebApiDB._full_resync_async()
-        to rebuild the local mirror wholesale when the transaction-history
-        feed can't describe what changed -- see that method's own doc
-        comment on why.
+        shape Gramps' own ImportXml importer already reads. Used by
+        grampswebapidb.py's WebApiDB._full_resync_async() to rebuild the
+        local mirror wholesale when the transaction-history feed can't
+        describe what changed -- see that method's own doc comment on
+        why.
 
-        ``on_chunk`` is passed through to _get_binary(): a hook called as
-        the bytes arrive, so a caller on a GUI thread blocking on this
-        call can keep its main loop alive across what is easily the
-        longest single transfer this client makes. See _get_binary()'s
-        own docstring for why grampswebapidb.py no longer passes this.
+        Goes through POST /exporters/<extension>/file, not the GET
+        variant of the same URL. GET runs the export inline on the
+        request thread gramps-web-api answers it on -- fine for a small
+        tree, but it ties up a web worker for however long a large
+        export takes, and exists server-side only for backwards
+        compatibility. POST triggers the same run_export() through
+        Celery when a task queue is configured (202 -- poll
+        wait_for_task(), same as push_transaction(background=True)) or
+        inline otherwise (201 -- the finished file's own url comes back
+        immediately in the response body); this is the same request
+        Gramps Web's own frontend makes for every export (see
+        gramps-connect's store/exportersApi.ts, runExport()). Either
+        way, the actual bytes are then one more GET, to a
+        ``/exporters/<extension>/file/processed/<uuid>.<ext>`` url the
+        task/response names -- delete-on-read server-side, so this can
+        only succeed once. That url comes back as a path only (already
+        prefixed with "/api"), so it's resolved against this handler's
+        own scheme+host rather than against self.url (which already
+        ends in "/api" itself).
+
+        ``on_chunk``/``on_wait`` are passed through to _get_binary()/
+        wait_for_task() respectively: hooks a caller on a GUI thread can
+        use to keep its main loop alive across what is easily the
+        longest-running operation this client makes. See
+        _get_binary()'s own docstring on why grampswebapidb.py no
+        longer passes on_chunk.
         """
         url = f"{self.url}/exporters/{extension}/file"
-        return self._get_binary(url, on_chunk=on_chunk)
+        result, status = self._post_json(url)
+        if status == 202:
+            task_body = self.wait_for_task(result["task"]["id"], on_wait=on_wait)
+            result = task_body.get("result_object") or {}
+        origin = urlparse(self.url)
+        file_url = f"{origin.scheme}://{origin.netloc}{result['url']}"
+        return self._get_binary(file_url, on_chunk=on_chunk)
 
     def get_missing_files(self) -> list[dict[str, Any]]:
         """
@@ -761,27 +839,119 @@ class WebApiHandler:
         return True
 
     def get_transaction_history(
-        self, after: float = 0, page: int = 1, pagesize: int = 100
+        self,
+        after_id: int = 0,
+        page: int = 1,
+        pagesize: int = 100,
+        sort: str = "id",
+        after: float | None = None,
+        retry: bool = True,
     ) -> tuple[list[dict[str, Any]], int]:
         """
-        Fetch one page of the server's transaction history committed
-        after ``after`` (a Unix timestamp), ascending by transaction id,
-        including the post-change raw object data.
+        Fetch one page of the server's transaction history with an id
+        strictly greater than ``after_id``, sorted per ``sort``
+        ("id" ascending by default), including the post-change raw
+        object data.
 
-        :returns: ``(transactions, total_count)``. ``total_count`` comes
-            from the ``X-Total-Count`` response header, so the caller can
-            tell whether more pages remain.
+        Cursors on the transaction id, not a timestamp. gramps-web-api
+        compares the older, timestamp-based ``after`` param as
+        ``after * 1e9`` server-side, and that float round-trip (a Python
+        float here, re-parsed as a server float after a trip through the
+        query string) can lose enough precision to make the same
+        trailing transaction compare as "still after the cursor"
+        forever -- an infinite-redelivery loop: harmless (replaying an
+        already-applied change is a no-op -- see grampswebapidb.py's
+        _apply_change()) but wasteful, forever, on every poll tick.
+        ``after_id`` is an exact integer compare (gramps-web-api PR
+        #927), with no such failure mode. gramps-connect's own browser
+        client hit this exact loop (Gramplets re-running on every 5s
+        poll indefinitely) and made the identical switch -- see its
+        store/historyPoll.ts, commit 5ae65da.
+
+        ``after`` (the old timestamp cursor) is still accepted, off by
+        default, purely for grampswebapidb.py's own
+        _migrate_sync_cursor_to_id() -- a one-time upgrade of a mirror
+        whose persisted cursor predates this method's switch to
+        after_id, which has nothing but that old timestamp to ask the
+        server "where was I" with. New code should use after_id.
+
+        Sends the previous call's ETag as If-None-Match. gramps-web-api
+        >= 3.21.0's history endpoint (the same release that added
+        after_id -- see HISTORY_ID_CURSOR_MIN_API_VERSION) computes that
+        from a cheap aggregate query (max transaction id, count) plus
+        the request's own args, and checks it *before* doing any
+        change-log query/serialize work -- answering a bodyless 304 when
+        nothing matching those args has changed since (see
+        gramps_webapi/api/resources/history.py's transactions_etag()/
+        etag_unchanged()). Unlike after_id, an older server simply
+        never sends an ETag back, so self._history_etag stays None and
+        this addon never sends If-None-Match either -- no version gate
+        needed for this half. grampswebapidb.py's
+        _poll_tick() calls this with the same (after_id, page, pagesize)
+        every idle tick until new data actually moves the cursor
+        forward, which is exactly the steady state this turns into a
+        cheap 304 instead of a full fetch -- the same optimization
+        gramps-connect's store/historyPoll.ts adopted for its own poll
+        loop. Sending a *stale* etag left over from a different set of
+        args is harmless: those args are folded into the etag too, so a
+        mismatched one just never matches and the server answers
+        normally with a fresh one.
+
+        :returns: ``(transactions, total_count)``. On a 304,
+            ``transactions`` is ``[]`` -- total_count still comes from
+            the X-Total-Count header, which the server sends either way
+            -- so an idle tick with nothing new looks to the caller
+            exactly like a tick that fetched an empty page the slow way.
         """
         params = {
-            "after": after,
+            "after_id": after_id,
             "new": "1",
-            "sort": "id",
+            "sort": sort,
             "page": page,
             "pagesize": pagesize,
         }
+        if after is not None:
+            params["after"] = after
         url = f"{self.url}/transactions/history/?{urlencode(params)}"
-        body, headers = self._get_json(url)
-        total_count = int(headers.get("X-Total-Count", len(body)))
+        headers = {
+            "Authorization": f"Bearer {self.access_token}",
+            "User-Agent": "GrampsWebApiDb",
+        }
+        if self._history_etag is not None:
+            headers["If-None-Match"] = self._history_etag
+        req = Request(url, headers=headers)
+        try:
+            with self._open(req) as res:
+                status = res.getcode()
+                response_headers = dict(res.headers)
+                if status == 304:
+                    body: list = []
+                else:
+                    body = json.load(res)
+                    etag = response_headers.get("ETag")
+                    if etag is not None:
+                        self._history_etag = etag
+        except HTTPError as exc:
+            if exc.code == 401 and retry:
+                sleep(RATE_LIMIT_BACKOFF)
+                self._authenticate()
+                return self.get_transaction_history(
+                    after_id, page, pagesize, sort, after, retry=False
+                )
+            if exc.code == 429 and retry:
+                sleep(RATE_LIMIT_BACKOFF)
+                return self.get_transaction_history(
+                    after_id, page, pagesize, sort, after, retry=False
+                )
+            raise
+        except (URLError, socket.timeout):
+            if retry:
+                sleep(1)
+                return self.get_transaction_history(
+                    after_id, page, pagesize, sort, after, retry=False
+                )
+            raise
+        total_count = int(response_headers.get("X-Total-Count", len(body)))
         return body, total_count
 
     def wait_for_task(
@@ -790,7 +960,7 @@ class WebApiHandler:
         timeout: float = TASK_TIMEOUT,
         poll_interval: float = TASK_POLL_INTERVAL,
         on_wait=None,
-    ) -> None:
+    ) -> dict:
         """Poll GET /tasks/<id> until a backgrounded server task finishes.
 
         ``on_wait``, if given, is called with no arguments once per poll,
@@ -804,13 +974,17 @@ class WebApiHandler:
         unused by that caller, for the same vendored-package reason
         _get_binary()'s ``on_chunk`` is.
 
-        Returns normally on SUCCESS. A FAILURE/REVOKED task raises --
-        WebApiPushConflict if it failed the server's old-data check (the
-        same "Object has changed" sentinel a synchronous push reports as
-        HTTP 400, so the caller's conflict handling works identically
-        either way), otherwise ValueError carrying the server's message.
-        Gives up after ``timeout`` seconds with a TimeoutError, which is
-        an OSError and so reads as a transient/connection-ish failure to
+        Returns the task's own status body on SUCCESS -- its
+        "result_object" key holds whatever the task function returned
+        server-side (e.g. download_export()'s ``{"url": ...}``);
+        push_transaction() doesn't need it and just discards it. A
+        FAILURE/REVOKED task raises instead -- WebApiPushConflict if it
+        failed the server's old-data check (the same "Object has
+        changed" sentinel a synchronous push reports as HTTP 400, so the
+        caller's conflict handling works identically either way),
+        otherwise ValueError carrying the server's message. Gives up
+        after ``timeout`` seconds with a TimeoutError, which is an
+        OSError and so reads as a transient/connection-ish failure to
         callers rather than a refusal.
         """
         deadline = time.monotonic() + timeout
@@ -818,7 +992,7 @@ class WebApiHandler:
             body, _headers = self._get_json(f"{self.url}/tasks/{task_id}")
             state = body.get("state")
             if state == "SUCCESS":
-                return
+                return body
             if state in ("FAILURE", "REVOKED"):
                 message = _task_error_message(body)
                 if message == _CONFLICT_MESSAGE:

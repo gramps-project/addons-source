@@ -331,7 +331,7 @@ unreachable -- not a conflict), the local commit has already happened and
 is never rolled back, but until now nothing remembered that the push
 still needed to go out -- "the next successful push or read sync" above
 was aspirational, not implemented. _push_payload_async() now persists such a
-payload (via _set_metadata(), the same mechanism sync_last_time already
+payload (via _set_metadata(), the same mechanism sync_last_id already
 uses, so it survives close()/reopen) to a "pending_pushes" queue instead
 of just logging and forgetting it. _flush_pending_pushes_async(), called at the
 top of every _sync_from_server_async() (both the load()-time call and every
@@ -366,7 +366,7 @@ otherwise, not just log an extra line.
 The most likely such rejection is a permissions one, and _check_
 permissions() checks for it up front at load() -- but only ViewPrivate is
 fatal to opening the tree at all: gates GET /transactions/history/, and its
-absence would otherwise be *silent* rather than merely loud, since GET
+absence would otherwise be *silent* rather than merely loud, since POST
 /exporters/gramps/file does not refuse a request lacking it -- it passes
 view_private=has_permissions({PERM_VIEW_PRIVATE}) into the export task
 (exporters.py), so an under-privileged caller gets a privacy-filtered
@@ -437,12 +437,17 @@ transient server error and be queued for retry forever.
 The mirror stays current while the tree is open, not just at load() time:
 load() also schedules a GLib.timeout_add_seconds() tick (POLL_INTERVAL_SECONDS)
 that re-runs _sync_from_server_async() for as long as the database stays
-open -- the same timestamp-cursor poll gramps-connect's browser client uses
-against this same endpoint (see gramps-connect's store/historyPoll.ts), so a
-change made from any other client shows up here without closing and
-reopening the tree. Its network legs run on a worker thread (see "Keeping
-the GUI alive" below), so a poll's round trip no longer costs the window a
-UI pause the way it once did. close() cancels the pending timeout so a
+open -- the same id-cursor poll gramps-connect's browser client uses against
+this same endpoint (see gramps-connect's store/historyPoll.ts), so a change
+made from any other client shows up here without closing and reopening the
+tree. The cursor (sync_last_id) is a transaction id, not a timestamp -- see
+get_transaction_history()'s own docstring on why cursoring on the older,
+float timestamp-based ``after`` param risked an infinite-redelivery loop,
+and _migrate_sync_cursor_to_id() for how an existing mirror's old
+timestamp cursor is upgraded, once, the first sync after this addon
+switched. Its network legs run on a worker thread (see "Keeping the GUI
+alive" below), so a poll's round trip no longer costs the window a UI
+pause the way it once did. close() cancels the pending timeout so a
 closed database doesn't keep polling.
 
 A server that stops answering does not interrupt the session: the poll
@@ -451,6 +456,19 @@ it lasts, and picks the mirror up again from the persisted sync cursor on
 the first tick that succeeds -- meanwhile local edits go on working
 against the mirror and queue for push (see _queue_pending_push()). See
 _poll_tick() and _record_poll_failure().
+
+The poll also backs off, independently of any outage, once this
+particular tree has gone POLL_IDLE_THRESHOLD_SECONDS with no local
+activity -- widening to POLL_IDLE_INTERVAL_SECONDS instead of the errorless
+POLL_INTERVAL_SECONDS an otherwise-healthy poll would use. "Activity" is
+any local self.dbapi read or write that isn't this addon replaying the
+server's own changes onto itself (_wrap_dbapi_execute()), so it snaps
+back the moment anyone browses or edits again, and the still-running poll
+picks up whatever changed elsewhere the next time it fires. This has
+nothing to do with GTK window focus or visibility -- this DATABASE plugin
+has no window to ask (see "Keeping the GUI alive" below) -- so a window
+that is focused but simply being read, with no clicks, backs off exactly
+like one that is minimized. See _on_poll_success().
 
 Keeping the GUI alive
 ---------------------
@@ -612,7 +630,7 @@ import os
 import re
 from copy import deepcopy
 from tempfile import NamedTemporaryFile
-from time import monotonic, time
+from time import monotonic
 from urllib.error import HTTPError, URLError
 
 from gi.repository import GLib
@@ -642,7 +660,12 @@ from gramps.plugins.db.dbapi.sqlite import SQLite
 from gramps.plugins.importer.importxml import importData
 
 from taskrunner import GLibTaskRunner, IoRunner
-from webapi_client import WebApiHandler, WebApiPushConflict, parse_version
+from webapi_client import (
+    HISTORY_ID_CURSOR_MIN_API_VERSION,
+    WebApiHandler,
+    WebApiPushConflict,
+    parse_version,
+)
 
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -658,6 +681,26 @@ SYNC_PAGE_SIZE = 100
 #: database stays open -- see the module docstring's note on why this runs
 #: synchronously on the GTK main thread rather than a background timer.
 POLL_INTERVAL_SECONDS = 10
+
+#: How long (seconds) since the last local self.dbapi touch -- any read
+#: or write, see _wrap_dbapi_execute() -- before _on_poll_success() treats
+#: this tree as idle and widens the record poll to
+#: POLL_IDLE_INTERVAL_SECONDS. A proxy for "nobody is actually looking at
+#: this Gramps window right now" (minimized, backgrounded, or just left
+#: open and unused) that needs no Gtk window-focus dependency -- see the
+#: module docstring on why this DATABASE plugin avoids one. The trade:
+#: a window that's focused but passively being read (no clicks, so no
+#: db access) looks the same as one that's minimized, and backs off the
+#: same way. Comfortably longer than an ordinary pause between clicks so
+#: routine browsing doesn't flap between the two intervals.
+POLL_IDLE_THRESHOLD_SECONDS = 180
+
+#: The record poll's interval once POLL_IDLE_THRESHOLD_SECONDS of local
+#: inactivity has passed. Any local dbapi touch snaps the very next tick
+#: back down to POLL_INTERVAL_SECONDS -- see _on_poll_success(). Smaller
+#: than POLL_BACKOFF_MAX_SECONDS and chosen independently of it: idling is
+#: not an outage, and there is no reason to let the two share a policy.
+POLL_IDLE_INTERVAL_SECONDS = 60
 
 #: How often (seconds) load() and the ongoing poll re-scan for media files
 #: missing locally or on the server -- see _sync_media_files(). Coarser
@@ -773,7 +816,7 @@ GRANULAR_REBUILD_MAX_CHANGES = 500
 #: calls require_permissions([PERM_VIEW_PRIVATE]) outright (see
 #: gramps_webapi/api/resources/history.py), so the whole incremental sync
 #: 403s without it. It matters just as much for _full_resync()'s fallback,
-#: which fails *silently* rather than loudly instead: GET /exporters/
+#: which fails *silently* rather than loudly instead: POST /exporters/
 #: gramps/file doesn't refuse the request, it passes
 #: view_private=has_permissions({PERM_VIEW_PRIVATE}) into the export task
 #: (exporters.py), so a caller lacking it gets a privacy-filtered export
@@ -2014,6 +2057,13 @@ class WebApiDB(SQLite):
     #: flag above.
     _polling_abandoned = False
 
+    #: monotonic() timestamp of the last local self.dbapi touch -- set by
+    #: _wrap_dbapi_execute() and read by _on_poll_success() to decide
+    #: between POLL_INTERVAL_SECONDS and POLL_IDLE_INTERVAL_SECONDS. 0
+    #: (i.e. "long ago") until _initialize() wraps self.dbapi, which is
+    #: also the safe default for a tree that fails to load.
+    _last_local_activity = 0
+
     def requires_login(self):
         # Credentials come from GRAMPS_WEB_API_KEY, not a login dialog.
         return False
@@ -2035,6 +2085,49 @@ class WebApiDB(SQLite):
         # Local mirror: reuse SQLite's own _initialize for the on-disk
         # cache file, then sync from the server on load().
         super()._initialize(directory, username, password)
+        self._wrap_dbapi_execute()
+
+    def _wrap_dbapi_execute(self):
+        """Instrument self.dbapi.execute() to timestamp local DB activity
+        into self._last_local_activity, read by _on_poll_success() to
+        decide the next record-poll interval -- see
+        POLL_IDLE_THRESHOLD_SECONDS.
+
+        Every one of DBAPI's own read/write helpers (_get_raw_data(),
+        _has_handle(), commit_person(), ...) funnels through this one
+        Connection.execute() call (gramps/plugins/db/dbapi/dbapi.py),
+        which makes it the one place that catches all of them without
+        instrumenting each call site individually, or every public
+        get_*_from_handle()-style method this class inherits. Shadows
+        the bound method on this Connection *instance* only -- nothing
+        about SQLite's Connection class itself needs changing, and nothing
+        outside this addon's own self.dbapi is affected.
+
+        Skipped while self._pulling is set: that flag already marks
+        exactly the writes this addon makes on the *server's* behalf --
+        replaying incoming sync pages and reimporting a full resync (see
+        the module docstring's own note on self._pulling) -- which would
+        otherwise make an actively-shared tree with other users editing
+        it look permanently "busy" here even while this particular
+        window sits minimized and untouched, defeating the point of
+        POLL_IDLE_THRESHOLD_SECONDS entirely. Genuine local reads
+        (browsing) and writes (editing) always run with self._pulling
+        false, so they still count.
+
+        self.dbapi is only ever touched from the main thread (see the
+        module docstring's "Keeping the GUI alive" section), so this
+        needs no locking: the plain monotonic() write below can't race
+        against another one.
+        """
+        real_execute = self.dbapi.execute
+
+        def execute(*args, **kwargs):
+            if not self._pulling:
+                self._last_local_activity = monotonic()
+            return real_execute(*args, **kwargs)
+
+        self.dbapi.execute = execute
+        self._last_local_activity = monotonic()
 
     def load(self, *args, **kwargs):
         # callback is Gramps' own load-progress hook -- position 2 in
@@ -2101,6 +2194,13 @@ class WebApiDB(SQLite):
                     on_done, on_error
                 ),
                 15,
+            ),
+            (
+                "history API version",
+                lambda on_done, on_error: self._check_history_cursor_support_async(
+                    on_done, on_error
+                ),
+                18,
             ),
         ):
             result = self._run_async_to_completion(start_chain)
@@ -2217,7 +2317,7 @@ class WebApiDB(SQLite):
         Nothing else ties a local mirror to one particular server account:
         there is no per-tree settings.ini (see the module docstring), and
         _sync_from_server() only ever asks for changes *after* its stored
-        sync_last_time -- it has no way to notice the mirror belongs to a
+        sync_last_id -- it has no way to notice the mirror belongs to a
         different account entirely and would just quietly go on mixing old
         and new data. Requiring (and reading back) the account identity in
         the tree's own display name catches that at load time instead, and
@@ -2406,6 +2506,75 @@ class WebApiDB(SQLite):
                         "actual": reported,
                         "required": ".".join(
                             str(part) for part in MIN_SERVER_GRAMPS_VERSION
+                        ),
+                    },
+                    self._directory,
+                )
+            )
+
+        def on_fetch_error(exc):
+            if isinstance(exc, _CONNECTION_ERRORS):
+                on_error(
+                    DbConnectionError(_describe_connection_error(exc), self._directory)
+                )
+            else:
+                on_error(exc)
+
+        self.io_runner.run(
+            fetch, self._guarded(on_fetched), self._guarded(on_fetch_error)
+        )
+
+    def _check_history_cursor_support_async(self, on_done, on_error):
+        """Fail at load() if the server's gramps-web-api is too old to
+        understand the after_id/before_id transaction-id cursor
+        get_transaction_history() now sends on every history request --
+        see that method's own docstring on why it switched off the
+        older, float timestamp-based ``after`` cursor.
+
+        Unlike a stale sync cursor, which _migrate_sync_cursor_to_id()
+        can upgrade in place, there is no graceful degradation available
+        for the *server* being too old: gramps-web-api's own query-arg
+        parser rejects any *unrecognized* query argument outright
+        (RAISE, not silently ignore -- see its api/util.py Parser), so
+        an older server 422s every single history request the moment it
+        sees after_id at all -- there would be nothing left to poll
+        with. Checked here, up front, the same way
+        _check_server_version_async() already gates an incompatible
+        Gramps library version, rather than discovered later as a
+        mysterious sync failure.
+
+        Deliberately lenient about *not knowing*, like
+        _check_server_version_async(): a server that doesn't report an
+        API version, or reports one this can't parse, is allowed
+        through rather than blocked on a guess.
+
+        Runs on io_runner for the same reason _check_identity_async()
+        does.
+        """
+
+        def fetch():
+            return self.web_client.get_api_version()
+
+        def on_fetched(reported):
+            version = parse_version(reported)
+            if version is None or version >= HISTORY_ID_CURSOR_MIN_API_VERSION:
+                on_done(True)
+                return
+            on_error(
+                DbConnectionError(
+                    _(
+                        "This server runs Gramps Web API %(actual)s, but "
+                        "this addon needs %(required)s or newer: older "
+                        "versions do not understand the exact "
+                        "transaction-id cursor this addon uses to poll "
+                        "for changes, and reject every such request "
+                        "outright. Upgrade the Gramps Web API server (or "
+                        "ask its administrator to)."
+                    )
+                    % {
+                        "actual": reported,
+                        "required": ".".join(
+                            str(part) for part in HISTORY_ID_CURSOR_MIN_API_VERSION
                         ),
                     },
                     self._directory,
@@ -2618,14 +2787,22 @@ class WebApiDB(SQLite):
         return GLib.SOURCE_CONTINUE
 
     def _on_poll_success(self, applied):
-        """_poll_tick()'s on_done -- see that method."""
+        """_poll_tick()'s on_done -- see that method. Also where the next
+        interval is chosen between POLL_INTERVAL_SECONDS and, once
+        POLL_IDLE_THRESHOLD_SECONDS of local inactivity has passed,
+        POLL_IDLE_INTERVAL_SECONDS -- see that constant's own docstring.
+        """
         if self._poll_failures:
             LOG.info(
                 "Sync from server succeeded again after %d failed attempt(s).",
                 self._poll_failures,
             )
             self._poll_failures = 0
-        self._reschedule_poll(POLL_INTERVAL_SECONDS)
+        idle_for = monotonic() - self._last_local_activity
+        if idle_for >= POLL_IDLE_THRESHOLD_SECONDS:
+            self._reschedule_poll(POLL_IDLE_INTERVAL_SECONDS)
+        else:
+            self._reschedule_poll(POLL_INTERVAL_SECONDS)
 
     def _on_poll_error(self, exc):
         """_poll_tick()'s on_error -- see that method."""
@@ -3296,7 +3473,7 @@ class WebApiDB(SQLite):
         """Persist a payload whose push failed for a connectivity reason,
         so _flush_pending_pushes() can retry it later -- including after a
         close()/reopen, since this goes through _set_metadata() (the same
-        mechanism sync_last_time already uses) rather than an in-memory
+        mechanism sync_last_id already uses) rather than an in-memory
         list. See the module docstring.
 
         ``message`` (see push_transaction()'s docstring) is persisted
@@ -3762,29 +3939,29 @@ class WebApiDB(SQLite):
         function's docstring) -- and a final 100 once everything,
         including request_rebuild(), has finished.
 
-        Also (re)sets sync_last_time to a timestamp taken right before
-        the export download starts, so the next incremental sync asks
-        the history feed for changes after that point instead of
+        Also (re)sets sync_last_id to the server's own newest transaction
+        id as of right before the export download starts (see
+        _fetch_newest_transaction_id()), so the next incremental sync
+        asks the history feed for changes after that point instead of
         wherever the walk that triggered this rebuild happened to leave
         the cursor -- for the totals-shortfall case, that walk can be a
-        single empty page, which leaves sync_last_time at its untouched
+        single empty page, which leaves sync_last_id at its untouched
         starting value (0 for a brand new mirror) rather than anywhere
-        near "now". Left uncorrected, every later poll asks for history
-        "after 0" forever on a server whose history can't describe its
-        own data anyway, so it's a harmless no-op -- but a *push
-        conflict*'s own recovery (resync then retry) uses that exact
-        same stuck cursor, so the resync it does can never actually pick
-        up what changed and the retry is doomed to repeat the same
-        conflict and give up. Taken before the download rather than
-        after: a transaction the server commits while the export is
-        being generated or transferred is safer to see again on the
-        next poll (re-applying an already-reflected change is a no-op)
-        than to have it fall silently before the cursor and only be
-        discovered next time a shortfall check runs.
+        near "current". Left uncorrected, every later poll asks for
+        history "after id 0" forever on a server whose history can't
+        describe its own data anyway, so it's a harmless no-op -- but a
+        *push conflict*'s own recovery (resync then retry) uses that
+        exact same stuck cursor, so the resync it does can never
+        actually pick up what changed and the retry is doomed to repeat
+        the same conflict and give up. Fetched before the download
+        rather than after: a transaction the server commits while the
+        export is being generated or transferred is safer to see again
+        on the next poll (re-applying an already-reflected change is a
+        no-op) than to have it fall silently before the cursor and only
+        be discovered next time a shortfall check runs.
         """
         if progress_callback is not None:
             progress_callback(0)
-        sync_cutoff = time()
         started = monotonic()
         # Captured once, up front, and reused for every hop below --
         # deliberately not re-wrapped via self._guarded() partway through
@@ -3798,7 +3975,10 @@ class WebApiDB(SQLite):
             # io_runner: network + disk only -- the single longest
             # transfer this addon makes. No on_chunk to pump for anymore
             # (a worker thread has nothing to hand back to); one plain
-            # read is fine.
+            # read is fine. The newest-transaction-id lookup goes first,
+            # per this method's own docstring on why "before the
+            # download" matters.
+            sync_cursor = self._fetch_newest_transaction_id()
             data = self.web_client.download_export()
             LOG.debug(
                 "resync: downloaded a %.1f MB export in %.2fs",
@@ -3807,10 +3987,10 @@ class WebApiDB(SQLite):
             )
             with NamedTemporaryFile(suffix=".gramps", delete=False) as tmp_file:
                 tmp_file.write(data)
-                return tmp_file.name
+                return tmp_file.name, sync_cursor
 
-        def rebuild(tmp_path):
-            # runner: clear + reimport + rebuild-signal + sync_last_time,
+        def rebuild(tmp_path, sync_cursor):
+            # runner: clear + reimport + rebuild-signal + sync_last_id,
             # all in one main-thread callback body -- see this method's
             # own docstring on why that's the point, not incidental.
             if self._run_id != run_id:
@@ -3871,11 +4051,11 @@ class WebApiDB(SQLite):
             finally:
                 self._pulling = False
                 os.remove(tmp_path)
-            self._set_metadata("sync_last_time", sync_cutoff)
+            self._set_metadata("sync_last_id", sync_cursor)
             if progress_callback is not None:
                 progress_callback(100)
 
-        def on_downloaded(tmp_path):
+        def on_downloaded(result):
             # Deliberately NOT wrapped in self._guarded(): tmp_path is a
             # real resource (a downloaded temp file) that needs cleaning
             # up even if the tree closed while the download was in
@@ -3889,7 +4069,10 @@ class WebApiDB(SQLite):
             # from inside this always-firing callback would capture
             # self._run_id as it is *now* (already stale, in the case
             # this comment is about), defeating the check entirely.
-            self.runner.run(lambda: rebuild(tmp_path), guarded_done, guarded_error)
+            tmp_path, sync_cursor = result
+            self.runner.run(
+                lambda: rebuild(tmp_path, sync_cursor), guarded_done, guarded_error
+            )
 
         self.io_runner.run(download, on_downloaded, guarded_error)
 
@@ -3948,7 +4131,7 @@ class WebApiDB(SQLite):
         Body is otherwise a direct copy of _full_resync_async()'s
         rebuild() (see that method for the fuller explanation of each
         step): download, clear every local primary object, reimport,
-        signal a rebuild, and advance sync_last_time.
+        signal a rebuild, and advance sync_last_id.
 
         The download itself IS still run on io_runner and awaited via
         _run_async_to_completion(), unlike everything after it -- unlike
@@ -3977,11 +4160,15 @@ class WebApiDB(SQLite):
         DOWNLOAD_END_PCT = 30
         REIMPORT_START_PCT = 30
 
-        sync_cutoff = time()
         started = monotonic()
 
         def download():
-            return self.web_client.download_export()
+            # The newest-transaction-id lookup goes first, per
+            # _full_resync_async()'s own docstring on why "before the
+            # download" matters for this cursor.
+            sync_cursor = self._fetch_newest_transaction_id()
+            data = self.web_client.download_export()
+            return data, sync_cursor
 
         # Ticks once a second, capped at DOWNLOAD_END_PCT, for as long as
         # the download is in flight -- fires because
@@ -4002,7 +4189,7 @@ class WebApiDB(SQLite):
             pulse_source_id = GLib.timeout_add_seconds(1, pulse)
 
         try:
-            data = self._run_async_to_completion(
+            result = self._run_async_to_completion(
                 lambda on_done, on_error: self.io_runner.run(
                     download, self._guarded(on_done), self._guarded(on_error)
                 )
@@ -4010,7 +4197,7 @@ class WebApiDB(SQLite):
         finally:
             if pulse_source_id is not None:
                 GLib.source_remove(pulse_source_id)
-        if data is None:
+        if result is None:
             # Tree closed while the download was in flight -- see
             # _run_async_to_completion()'s own docstring. Not expected in
             # practice for load()'s bootstrap case (see this method's own
@@ -4018,6 +4205,7 @@ class WebApiDB(SQLite):
             # this file does rather than assumed away.
             LOG.debug("bootstrap resync: tree closed during download; aborting")
             return
+        data, sync_cursor = result
         LOG.debug(
             "bootstrap resync: downloaded a %.1f MB export in %.2fs",
             len(data) / (1024 * 1024),
@@ -4082,7 +4270,7 @@ class WebApiDB(SQLite):
         finally:
             self._pulling = False
             os.remove(tmp_path)
-        self._set_metadata("sync_last_time", sync_cutoff)
+        self._set_metadata("sync_last_id", sync_cursor)
         if progress_callback is not None:
             progress_callback(100)
 
@@ -4218,17 +4406,17 @@ class WebApiDB(SQLite):
         self, on_done, on_error, progress_callback=None, verify_totals=False
     ):
         """
-        Pull every transaction after the last-seen timestamp and replay
-        its changes into the local mirror. Calls on_done(applied) with
-        the number of changes applied.
+        Pull every transaction with an id after the last-seen one and
+        replay its changes into the local mirror. Calls on_done(applied)
+        with the number of changes applied.
 
         An empty "changes" list on a transaction is not a no-op: it is
         what a batch=True commit leaves behind (see the module
         docstring's note on trans.batch guards around trans.add()) --
         something happened server-side that this feed cannot describe.
         Flagged rather than silently skipped; _full_resync_async() is
-        the fallback once the whole page range has been walked (so
-        sync_last_time still advances past it and any *describable*
+        the fallback once the whole page range has been walked (so the
+        sync cursor still advances past it and any *describable*
         changes around it are applied normally either way). A feed that
         is empty *altogether*, or too sparse to account for what the
         server holds, is the same kind of gap and gets the same
@@ -4238,7 +4426,7 @@ class WebApiDB(SQLite):
 
         progress_callback, if given, is called with an int 0-100 after
         each page -- see load()'s callback param. "total" comes from the
-        server's X-Total-Count for this "after" filter (get_transaction_
+        server's X-Total-Count for this "after_id" filter (get_transaction_
         history()'s docstring), so it stays a stable denominator across
         pages barring concurrent server-side writes during the sync.
 
@@ -4252,11 +4440,11 @@ class WebApiDB(SQLite):
         """
         started = monotonic()
 
-        def after_flush(_result):
-            after = self._get_metadata("sync_last_time", default=0)
-            LOG.debug("sync: asking for transactions after %s", after)
+        def begin_sync(after_id):
+            LOG.debug("sync: asking for transactions after id %s", after_id)
             self._sync_page(
-                after=after,
+                after_id=after_id,
+                cursor=after_id,
                 page=1,
                 seen=0,
                 applied=0,
@@ -4269,11 +4457,90 @@ class WebApiDB(SQLite):
                 on_error=on_error,
             )
 
+        def after_flush(_result):
+            after_id = self._get_metadata("sync_last_id", default=None)
+            if after_id is not None:
+                begin_sync(after_id)
+                return
+            # No id-cursor persisted yet -- either a brand new mirror
+            # (nothing to migrate, start at 0, same as always) or one
+            # whose cursor still predates the after_id switch (see
+            # get_transaction_history()'s own docstring on why that
+            # switch happened) and needs its one-time upgrade. old_after
+            # is read here, on the main thread, because self.dbapi --
+            # what self._get_metadata() touches -- is main-thread-only;
+            # _migrate_sync_cursor_to_id() itself runs on io_runner and
+            # must not touch it.
+            old_after = self._get_metadata("sync_last_time", default=None)
+            if old_after is None:
+                self._set_metadata("sync_last_id", 0)
+                begin_sync(0)
+                return
+
+            def migrate():
+                # io_runner: network only.
+                return self._migrate_sync_cursor_to_id(old_after)
+
+            def on_migrated(new_after_id):
+                self._set_metadata("sync_last_id", new_after_id)
+                begin_sync(new_after_id)
+
+            self.io_runner.run(
+                migrate, self._guarded(on_migrated), self._guarded(on_error)
+            )
+
         self._flush_pending_pushes_async(after_flush, on_error)
+
+    def _fetch_newest_transaction_id(self):
+        """io_runner: the server's own current highest transaction id, or
+        0 if its history is empty. Pure network -- safe to call from
+        io_runner. Shared by _migrate_sync_cursor_to_id() (a mirror's
+        one-time cursor upgrade) and _full_resync_async()/
+        _bootstrap_full_resync() (marking "everything as of this
+        wholesale export is already reflected locally" -- see either
+        method's own docstring on why it needs this rather than a
+        wall-clock timestamp)."""
+        newest, _total = self.web_client.get_transaction_history(
+            after_id=0, page=1, pagesize=1, sort="-id"
+        )
+        return newest[0]["id"] if newest else 0
+
+    def _migrate_sync_cursor_to_id(self, old_after):
+        """io_runner: the network half of the one-time upgrade from the
+        old timestamp-based sync cursor (sync_last_time) to the exact
+        transaction-id cursor (sync_last_id) -- see get_transaction_
+        history()'s own docstring on why this addon switched, and
+        _sync_from_server_async()'s after_flush() for the main-thread
+        bookkeeping around this call.
+
+        Asks the server, with the *old* timestamp cursor, for the
+        single oldest transaction after it (sort=id ascending,
+        pagesize=1) and starts the new cursor one below that
+        transaction's own id -- so the very next id-cursored fetch sees
+        that transaction again exactly once (a safe, idempotent replay
+        -- see _apply_change()) rather than risk the float round-trip
+        this migration exists to get away from having silently skipped
+        past it.
+
+        A mirror that was already fully caught up as of the old cursor
+        (nothing found after it) instead bootstraps from the server's
+        current newest transaction id (_fetch_newest_transaction_id()),
+        the same way gramps-connect's own pollHistory() seeds a fresh
+        session: there is nothing older to safely re-see, and starting
+        at 0 would mean replaying the server's entire history for a
+        mirror that didn't need any of it.
+        """
+        transactions, _total = self.web_client.get_transaction_history(
+            after=old_after, page=1, pagesize=1
+        )
+        if transactions:
+            return transactions[0]["id"] - 1
+        return self._fetch_newest_transaction_id()
 
     def _sync_page(
         self,
-        after,
+        after_id,
+        cursor,
         page,
         seen,
         applied,
@@ -4287,20 +4554,35 @@ class WebApiDB(SQLite):
     ):
         """_sync_from_server_async()'s per-page step: fetches one page
         on io_runner, applies it on runner, and recurses for the next
-        page until the feed runs dry or hands back a short page."""
+        page until the feed runs dry or hands back a short page.
+
+        ``after_id`` is the *filter* sent to get_transaction_history()
+        on every page of this walk, and deliberately never changes
+        between recursive calls: gramps-web-api applies page/pagesize as
+        an offset into the already-after_id-filtered set (undodb.
+        get_transactions()), so advancing after_id at the same time as
+        page -- what this method used to do, back when the filter was
+        the timestamp-based ``after`` and got reassigned to the running
+        max seen each page -- silently skips a whole page's worth of
+        transactions every time pagination continues past the first
+        page. ``cursor`` is the separate, genuinely-advancing bookkeeping
+        value (the highest transaction id actually seen so far in this
+        walk) that _finish_sync() eventually persists as sync_last_id;
+        it plays no part in the query itself.
+        """
         run_id = self._run_id
 
         def fetch():
             # io_runner: network only.
             return self.web_client.get_transaction_history(
-                after=after, page=page, pagesize=SYNC_PAGE_SIZE
+                after_id=after_id, page=page, pagesize=SYNC_PAGE_SIZE
             )
 
         def on_fetched(result):
             transactions, total = result
             if not transactions:
                 self._finish_sync(
-                    after,
+                    cursor,
                     seen,
                     applied,
                     skipped,
@@ -4330,7 +4612,7 @@ class WebApiDB(SQLite):
                         "discarding it"
                     )
                     return None
-                new_after = after
+                new_cursor = cursor
                 # (obj_class, handle) -> trans_type, collapsed to the
                 # net effect within this page -- see
                 # _emit_change_signals().
@@ -4362,11 +4644,11 @@ class WebApiDB(SQLite):
                                     # logged per change, which would be
                                     # one line per row of the feed.
                                     new_skipped += 1
-                            new_after = max(new_after, server_trans["timestamp"])
+                            new_cursor = max(new_cursor, server_trans["id"])
                 finally:
                     self._pulling = False
                 self._emit_change_signals(net_changes)
-                return new_after, new_applied, new_skipped, new_needs_full_resync
+                return new_cursor, new_applied, new_skipped, new_needs_full_resync
 
             def on_applied(result2):
                 if result2 is None:
@@ -4377,7 +4659,7 @@ class WebApiDB(SQLite):
                     # narrower gap where it closed after.
                     return
                 (
-                    new_after,
+                    new_cursor,
                     new_applied,
                     new_skipped,
                     new_needs_full_resync,
@@ -4390,13 +4672,13 @@ class WebApiDB(SQLite):
                     len(transactions),
                     total,
                     new_applied,
-                    new_after,
+                    new_cursor,
                 )
                 if progress_callback is not None and total:
                     progress_callback(min(100, int(new_seen * 100 / total)))
                 if len(transactions) < SYNC_PAGE_SIZE:
                     self._finish_sync(
-                        new_after,
+                        new_cursor,
                         new_seen,
                         new_applied,
                         new_skipped,
@@ -4409,7 +4691,8 @@ class WebApiDB(SQLite):
                     )
                 else:
                     self._sync_page(
-                        after=new_after,
+                        after_id=after_id,
+                        cursor=new_cursor,
                         page=page + 1,
                         seen=new_seen,
                         applied=new_applied,
@@ -4430,7 +4713,7 @@ class WebApiDB(SQLite):
 
     def _finish_sync(
         self,
-        after,
+        after_id,
         seen,
         applied,
         skipped,
@@ -4449,7 +4732,7 @@ class WebApiDB(SQLite):
         main thread (either from on_fetched()'s own immediate branch or
         from apply_page()'s on_applied(), a runner step's on_success),
         so self._set_metadata() here is safe."""
-        self._set_metadata("sync_last_time", after)
+        self._set_metadata("sync_last_id", after_id)
         LOG.debug(
             "sync: %d change(s) applied, %d skipped, from %d transaction(s) "
             "in %.2fs; cursor now %s",
@@ -4457,7 +4740,7 @@ class WebApiDB(SQLite):
             skipped,
             seen,
             monotonic() - started,
-            after,
+            after_id,
         )
 
         def maybe_full_resync(needs_resync):
@@ -4504,7 +4787,7 @@ class WebApiDB(SQLite):
         Comparing totals rather than asking whether the feed came back
         empty is what makes that case detectable at all. An empty feed is
         only the extreme of it: one API edit against a history-less server
-        is enough to hand back a transaction, advance sync_last_time, and
+        is enough to hand back a transaction, advance sync_last_id, and
         make the sync look like it worked. Both counts cover the same ten
         primary types (webapi_client.OBJECT_COUNT_KEYS mirrors Gramps'
         own DbGeneric.get_total()), so equality is the invariant this

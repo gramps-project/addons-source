@@ -30,7 +30,7 @@ connection. This isolates exactly the logic this addon adds:
 
   - transaction_to_json(): local DbTxn -> flat change-list payload
   - _apply_change(): one server change -> a commit_*/remove_* call
-  - _sync_from_server(): pagination + sync_last_time bookkeeping
+  - _sync_from_server(): pagination + sync_last_id bookkeeping
   - transaction_commit(): push-after-commit, ordering, and error swallowing
 
 Run with::
@@ -151,6 +151,13 @@ def new_instance():
     db = WebApiDB.__new__(WebApiDB)
     db.runner = InlineTaskRunner()
     db.io_runner = InlineTaskRunner()
+    # Real _initialize() timestamps this via _wrap_dbapi_execute(), which
+    # never runs here (there is no real self.dbapi to wrap) -- default to
+    # "just active" rather than the class attribute's 0 (i.e. "idle for
+    # decades"), so a test that isn't exercising POLL_IDLE_THRESHOLD_SECONDS
+    # itself doesn't accidentally trip it. See TestIdlePollBackoff for
+    # tests that do.
+    db._last_local_activity = time.monotonic()
     return db
 
 
@@ -433,7 +440,7 @@ class TestSyncFromServer(unittest.TestCase):
     def test_stops_after_short_page(self):
         change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
         self.db.web_client.get_transaction_history.return_value = (
-            [{"timestamp": 5.0, "changes": [change]}],
+            [{"id": 5, "timestamp": 5.0, "changes": [change]}],
             1,
         )
         with mock.patch.object(self.db, "_apply_change", return_value=True) as apply:
@@ -444,10 +451,10 @@ class TestSyncFromServer(unittest.TestCase):
 
     def test_pagination_continues_on_full_page(self):
         full_page = [
-            {"timestamp": float(i), "changes": []}
+            {"id": i + 1, "timestamp": float(i), "changes": []}
             for i in range(grampswebapidb.SYNC_PAGE_SIZE)
         ]
-        short_page = [{"timestamp": 999.0, "changes": []}]
+        short_page = [{"id": 999, "timestamp": 999.0, "changes": []}]
         self.db.web_client.get_transaction_history.side_effect = [
             (full_page, len(full_page) + 1),
             (short_page, 1),
@@ -458,27 +465,40 @@ class TestSyncFromServer(unittest.TestCase):
         calls = self.db.web_client.get_transaction_history.call_args_list
         self.assertEqual(calls[0].kwargs["page"], 1)
         self.assertEqual(calls[1].kwargs["page"], 2)
+        # after_id (the filter) must stay fixed across every page of one
+        # walk: the server applies page/pagesize as an offset *into* the
+        # already-after_id-filtered set (gramps-web-api's undodb.
+        # get_transactions()), so advancing after_id alongside page --
+        # what an earlier version of this method did -- would silently
+        # skip a whole page's worth of transactions on page 2 onward.
+        # See _sync_page()'s own docstring.
+        self.assertEqual(calls[0].kwargs["after_id"], 0)
+        self.assertEqual(calls[1].kwargs["after_id"], 0)
 
-    def test_no_transactions_leaves_sync_time_unchanged(self):
-        self.metadata["sync_last_time"] = 42.0
+    def test_no_transactions_leaves_sync_cursor_unchanged(self):
+        # Set directly (not via a migration) so this exercises the
+        # ordinary "already on an id cursor" path, not
+        # _migrate_sync_cursor_to_id() -- see TestSyncCursorMigration.
+        self.metadata["sync_last_id"] = 42
         self.db.web_client.get_transaction_history.return_value = ([], 0)
         applied = self._sync()
         self.assertEqual(applied, 0)
-        self.assertEqual(self.metadata["sync_last_time"], 42.0)
+        self.assertEqual(self.metadata["sync_last_id"], 42)
 
-    def test_sync_last_time_advances_to_max_timestamp_seen(self):
+    def test_sync_cursor_advances_to_max_id_seen(self):
         page = [
-            {"timestamp": 10.0, "changes": []},
-            {"timestamp": 30.0, "changes": []},
-            {"timestamp": 20.0, "changes": []},
+            {"id": 10, "timestamp": 10.0, "changes": []},
+            {"id": 30, "timestamp": 30.0, "changes": []},
+            {"id": 20, "timestamp": 20.0, "changes": []},
         ]
         self.db.web_client.get_transaction_history.return_value = (page, 3)
         self._sync()
-        self.assertEqual(self.metadata["sync_last_time"], 30.0)
+        self.assertEqual(self.metadata["sync_last_id"], 30)
 
     def test_unrecognized_changes_are_not_counted(self):
         page = [
             {
+                "id": 1,
                 "timestamp": 1.0,
                 "changes": [
                     {"obj_class": "Bogus", "trans_type": TXNADD, "obj_handle": "H1"}
@@ -492,7 +512,7 @@ class TestSyncFromServer(unittest.TestCase):
     def test_emits_a_signal_per_applied_change(self):
         change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
         self.db.web_client.get_transaction_history.return_value = (
-            [{"timestamp": 5.0, "changes": [change]}],
+            [{"id": 5, "timestamp": 5.0, "changes": [change]}],
             1,
         )
         with mock.patch.object(self.db, "_apply_change", return_value=True):
@@ -504,12 +524,14 @@ class TestSyncFromServer(unittest.TestCase):
         # the net (delete) signal should fire, not both.
         page = [
             {
+                "id": 1,
                 "timestamp": 1.0,
                 "changes": [
                     {"obj_class": "Person", "trans_type": TXNUPD, "obj_handle": "H1"}
                 ],
             },
             {
+                "id": 2,
                 "timestamp": 2.0,
                 "changes": [
                     {"obj_class": "Person", "trans_type": TXNDEL, "obj_handle": "H1"}
@@ -524,6 +546,7 @@ class TestSyncFromServer(unittest.TestCase):
     def test_unrecognized_changes_emit_no_signal(self):
         page = [
             {
+                "id": 1,
                 "timestamp": 1.0,
                 "changes": [
                     {"obj_class": "Bogus", "trans_type": TXNADD, "obj_handle": "H1"}
@@ -538,12 +561,12 @@ class TestSyncFromServer(unittest.TestCase):
         # _poll_tick()'s background call relies on this: no callback means
         # no attempt to report progress, so a periodic poll can't raise
         # trying to call None.
-        page = [{"timestamp": 1.0, "changes": []}]
+        page = [{"id": 1, "timestamp": 1.0, "changes": []}]
         self.db.web_client.get_transaction_history.return_value = (page, 1)
         self._sync()  # must not raise
 
     def test_progress_reported_as_percent_of_total(self):
-        page = [{"timestamp": 1.0, "changes": []}] * 25
+        page = [{"id": 1, "timestamp": 1.0, "changes": []}] * 25
         self.db.web_client.get_transaction_history.return_value = (page, 100)
         progress = mock.MagicMock()
         self._sync(progress_callback=progress)
@@ -551,10 +574,10 @@ class TestSyncFromServer(unittest.TestCase):
 
     def test_progress_accumulates_and_caps_at_100_across_pages(self):
         full_page = [
-            {"timestamp": float(i), "changes": []}
+            {"id": i + 1, "timestamp": float(i), "changes": []}
             for i in range(grampswebapidb.SYNC_PAGE_SIZE)
         ]
-        short_page = [{"timestamp": 999.0, "changes": []}]
+        short_page = [{"id": 999, "timestamp": 999.0, "changes": []}]
         total = grampswebapidb.SYNC_PAGE_SIZE  # short page pushes seen > total
         self.db.web_client.get_transaction_history.side_effect = [
             (full_page, total),
@@ -568,14 +591,14 @@ class TestSyncFromServer(unittest.TestCase):
         # An empty-history sync (a brand new server-side tree, or nothing
         # new since last sync) has no meaningful denominator to report
         # against -- guards a ZeroDivisionError, not just noise.
-        page = [{"timestamp": 1.0, "changes": []}]
+        page = [{"id": 1, "timestamp": 1.0, "changes": []}]
         self.db.web_client.get_transaction_history.return_value = (page, 0)
         progress = mock.MagicMock()
         self._sync(progress_callback=progress)
         progress.assert_not_called()
 
     def test_progress_callback_passed_through_to_full_resync(self):
-        page = [{"timestamp": 1.0, "changes": []}]
+        page = [{"id": 1, "timestamp": 1.0, "changes": []}]
         self.db.web_client.get_transaction_history.return_value = (page, 1)
         progress = mock.MagicMock()
         self._sync(progress_callback=progress)
@@ -591,7 +614,7 @@ class TestSyncFromServer(unittest.TestCase):
         # reconciliation for later genuine local batch operations.
         change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
         self.db.web_client.get_transaction_history.return_value = (
-            [{"timestamp": 5.0, "changes": [change]}],
+            [{"id": 5, "timestamp": 5.0, "changes": [change]}],
             1,
         )
         seen = {}
@@ -608,7 +631,7 @@ class TestSyncFromServer(unittest.TestCase):
     def test_pulling_flag_is_cleared_even_if_replay_raises(self):
         change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
         self.db.web_client.get_transaction_history.return_value = (
-            [{"timestamp": 5.0, "changes": [change]}],
+            [{"id": 5, "timestamp": 5.0, "changes": [change]}],
             1,
         )
         with mock.patch.object(
@@ -617,6 +640,103 @@ class TestSyncFromServer(unittest.TestCase):
             with self.assertRaises(RuntimeError):
                 self._sync()
         self.assertFalse(self.db._pulling)
+
+
+# -------------------------------------------------------------------------
+#
+# TestSyncCursorMigration
+#
+# _sync_from_server_async()'s after_flush() picks the id-cursor
+# get_transaction_history() now uses (see that method's own docstring on
+# why): straight from sync_last_id if a mirror already has one, 0 for a
+# brand new mirror (nothing to migrate), or -- the one-time case --
+# derived from a mirror's older, timestamp-based sync_last_time via
+# _migrate_sync_cursor_to_id().
+#
+# -------------------------------------------------------------------------
+class TestSyncCursorMigration(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+        self.db.web_client = mock.MagicMock()
+        self.db.emit = mock.MagicMock()  # see TestSyncFromServer.setUp's note
+        self.metadata = {}
+        self.db._get_metadata = lambda key, default=0: self.metadata.get(key, default)
+        self.db._set_metadata = (
+            lambda key, value, use_txn=True: self.metadata.__setitem__(key, value)
+        )
+        self.patcher = mock.patch.object(grampswebapidb, "DbTxn", FakeDbTxn)
+        self.patcher.start()
+        self.addCleanup(self.patcher.stop)
+        self.db._full_resync_async = mock.MagicMock(side_effect=stub_async_done(None))
+
+    def _sync(self):
+        """See TestSyncFromServer._sync()."""
+        result = {}
+        self.db._sync_from_server_async(
+            on_done=lambda applied: result.update(done=applied),
+            on_error=lambda exc: result.update(error=exc),
+        )
+        if "error" in result:
+            raise result["error"]
+        return result.get("done")
+
+    def test_fresh_mirror_starts_at_zero_with_no_extra_network_call(self):
+        # Neither sync_last_id nor the old sync_last_time exists --
+        # nothing to migrate, so this must not spend a network call
+        # asking the server about a cursor that was never set.
+        self.db.web_client.get_transaction_history.return_value = ([], 0)
+        self._sync()
+        self.assertEqual(self.db.web_client.get_transaction_history.call_count, 1)
+        self.assertEqual(
+            self.db.web_client.get_transaction_history.call_args.kwargs["after_id"], 0
+        )
+        self.assertEqual(self.metadata["sync_last_id"], 0)
+
+    def test_mirror_already_on_id_cursor_skips_migration(self):
+        self.metadata["sync_last_id"] = 99
+        self.db.web_client.get_transaction_history.return_value = ([], 0)
+        self._sync()
+        self.assertEqual(self.db.web_client.get_transaction_history.call_count, 1)
+        self.assertEqual(
+            self.db.web_client.get_transaction_history.call_args.kwargs["after_id"], 99
+        )
+
+    def test_old_timestamp_cursor_migrates_using_the_oldest_transaction_after_it(self):
+        self.metadata["sync_last_time"] = 100.0
+        self.db.web_client.get_transaction_history.side_effect = [
+            # _migrate_sync_cursor_to_id()'s own lookup, keyed on the old
+            # timestamp cursor.
+            ([{"id": 55, "timestamp": 101.0, "changes": []}], 1),
+            # The ordinary _sync_page() fetch that follows, now cursored
+            # on id 54 -- one below the oldest transaction just found, so
+            # the very next fetch sees it again exactly once.
+            ([], 0),
+        ]
+        self._sync()
+        calls = self.db.web_client.get_transaction_history.call_args_list
+        self.assertEqual(calls[0].kwargs["after"], 100.0)
+        self.assertEqual(calls[1].kwargs["after_id"], 54)
+        self.assertEqual(self.metadata["sync_last_id"], 54)
+        # The legacy key is left alone -- harmless, and not this
+        # migration's job to clean up.
+        self.assertEqual(self.metadata["sync_last_time"], 100.0)
+
+    def test_old_timestamp_cursor_with_nothing_after_it_bootstraps_from_newest(self):
+        # A mirror that was fully caught up as of the old cursor: there
+        # is nothing older to safely re-see, so this bootstraps from the
+        # server's current newest transaction id instead of replaying
+        # everything from 0.
+        self.metadata["sync_last_time"] = 100.0
+        self.db.web_client.get_transaction_history.side_effect = [
+            ([], 0),  # migration lookup: nothing after the old cursor
+            ([{"id": 200, "timestamp": 500.0, "changes": []}], 1),  # newest-id lookup
+            ([], 0),  # the ordinary _sync_page() fetch that follows
+        ]
+        self._sync()
+        calls = self.db.web_client.get_transaction_history.call_args_list
+        self.assertEqual(calls[1].kwargs["sort"], "-id")
+        self.assertEqual(calls[2].kwargs["after_id"], 200)
+        self.assertEqual(self.metadata["sync_last_id"], 200)
 
 
 # -------------------------------------------------------------------------
@@ -659,7 +779,7 @@ class TestFullResyncTrigger(unittest.TestCase):
         return result.get("done")
 
     def test_empty_changes_transaction_triggers_full_resync(self):
-        page = [{"timestamp": 1.0, "changes": []}]
+        page = [{"id": 1, "timestamp": 1.0, "changes": []}]
         self.db.web_client.get_transaction_history.return_value = (page, 1)
         self._sync()
         self.db._full_resync_async.assert_called_once_with(
@@ -668,7 +788,7 @@ class TestFullResyncTrigger(unittest.TestCase):
 
     def test_normal_transactions_do_not_trigger_full_resync(self):
         change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
-        page = [{"timestamp": 1.0, "changes": [change]}]
+        page = [{"id": 1, "timestamp": 1.0, "changes": [change]}]
         self.db.web_client.get_transaction_history.return_value = (page, 1)
         with mock.patch.object(self.db, "_apply_change", return_value=True):
             self._sync()
@@ -680,8 +800,8 @@ class TestFullResyncTrigger(unittest.TestCase):
         # history feed genuinely has no record of need the fallback.
         change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
         page = [
-            {"timestamp": 1.0, "changes": []},
-            {"timestamp": 2.0, "changes": [change]},
+            {"id": 1, "timestamp": 1.0, "changes": []},
+            {"id": 2, "timestamp": 2.0, "changes": [change]},
         ]
         self.db.web_client.get_transaction_history.return_value = (page, 2)
         with mock.patch.object(self.db, "_apply_change", return_value=True):
@@ -691,11 +811,11 @@ class TestFullResyncTrigger(unittest.TestCase):
             mock.ANY, mock.ANY, progress_callback=None
         )
 
-    def test_marker_still_advances_sync_last_time(self):
-        page = [{"timestamp": 42.0, "changes": []}]
+    def test_marker_still_advances_sync_cursor(self):
+        page = [{"id": 42, "timestamp": 42.0, "changes": []}]
         self.db.web_client.get_transaction_history.return_value = (page, 1)
         self._sync()
-        self.assertEqual(self.metadata["sync_last_time"], 42.0)
+        self.assertEqual(self.metadata["sync_last_id"], 42)
 
     def test_short_mirror_triggers_full_resync(self):
         # A server whose tree was populated without gramps-web-api
@@ -716,7 +836,7 @@ class TestFullResyncTrigger(unittest.TestCase):
         # useless: one API edit against a history-less server hands back a
         # transaction and advances the cursor, so the sync looks fine.
         change = {"obj_class": "Person", "trans_type": TXNADD, "obj_handle": "H1"}
-        page = [{"timestamp": 1786645046.3, "changes": [change]}]
+        page = [{"id": 12345, "timestamp": 1786645046.3, "changes": [change]}]
         self.db.web_client.get_transaction_history.return_value = (page, 1)
         self.db.web_client.get_object_count.return_value = 26541
         with mock.patch.object(self.db, "_apply_change", return_value=True):
@@ -724,7 +844,7 @@ class TestFullResyncTrigger(unittest.TestCase):
                 with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
                     applied = self._sync(verify_totals=True)
         self.assertEqual(applied, 1)
-        self.assertEqual(self.metadata["sync_last_time"], 1786645046.3)
+        self.assertEqual(self.metadata["sync_last_id"], 12345)
         self.db._full_resync_async.assert_called_once_with(
             mock.ANY, mock.ANY, progress_callback=None
         )
@@ -795,6 +915,10 @@ class TestFullResync(unittest.TestCase):
         self.db = new_instance()
         self.db.web_client = mock.MagicMock()
         self.db.web_client.download_export.return_value = b"fake gramps xml bytes"
+        # download() also fetches the server's current newest transaction
+        # id before the export, to seed sync_last_id -- see
+        # _fetch_newest_transaction_id()/_full_resync_async()'s docstring.
+        self.db.web_client.get_transaction_history.return_value = ([], 0)
         self.db.emit = mock.MagicMock()  # see TestSyncFromServer.setUp's note
         # _full_resync_async() reports the rebuilt total at DEBUG; there's
         # no real dbapi connection behind these stubs to count.
@@ -1050,31 +1174,30 @@ class TestFullResync(unittest.TestCase):
         import_progress_user.assert_not_called()
         self.assertIsInstance(captured["user"], grampswebapidb.User)
 
-    def test_advances_sync_last_time_past_the_stuck_cursor(self):
+    def test_advances_sync_last_id_past_the_stuck_cursor(self):
         # A totals-shortfall rebuild (_mirror_is_short_of_the_server_async())
         # can be triggered by a history feed whose very first page came
-        # back empty, which leaves sync_last_time at whatever it started
-        # as (0 for a brand new mirror) instead of anywhere near "now".
-        # Left alone, a push conflict's own "resync from the server, then
-        # retry" recovery reuses that same stuck cursor and so can never
-        # actually pick up what changed -- see the module's
+        # back empty, which leaves sync_last_id at whatever it started
+        # as (0 for a brand new mirror) instead of anywhere near
+        # "current". Left alone, a push conflict's own "resync from the
+        # server, then retry" recovery reuses that same stuck cursor and
+        # so can never actually pick up what changed -- see the module's
         # _full_resync_async() docstring. Confirm the rebuild now leaves
-        # a fresh, roughly-"now" cursor behind instead.
+        # the server's current newest transaction id behind instead.
         for key, name in grampswebapidb.KEY_TO_NAME_MAP.items():
             if key not in grampswebapidb.CLASS_TO_KEY_MAP.values():
                 continue
             setattr(self.db, f"get_{name}_handles", mock.MagicMock(return_value=[]))
             setattr(self.db, f"remove_{name}", mock.MagicMock())
-        before = time.time()
+        self.db.web_client.get_transaction_history.return_value = (
+            [{"id": 777, "timestamp": 1.0, "changes": []}],
+            1,
+        )
         with mock.patch.object(grampswebapidb, "importData"):
             self._resync()
-        after = time.time()
-        self.db._set_metadata.assert_called_once_with("sync_last_time", mock.ANY)
-        cutoff = self.db._set_metadata.call_args.args[1]
-        self.assertGreaterEqual(cutoff, before)
-        self.assertLessEqual(cutoff, after)
+        self.db._set_metadata.assert_called_once_with("sync_last_id", 777)
 
-    def test_does_not_advance_sync_last_time_if_the_reimport_raises(self):
+    def test_does_not_advance_sync_last_id_if_the_reimport_raises(self):
         # A rebuild that failed partway through left the mirror in an
         # unknown state (same reasoning as test_failed_import_does_not_
         # trigger_rebuild() above) -- advancing the cursor anyway would
@@ -1151,6 +1274,10 @@ class TestBootstrapFullResync(unittest.TestCase):
         self.db = new_instance()
         self.db.web_client = mock.MagicMock()
         self.db.web_client.download_export.return_value = b"fake gramps xml bytes"
+        # download() also fetches the server's current newest transaction
+        # id before the export, to seed sync_last_id -- see
+        # _fetch_newest_transaction_id()/_full_resync_async()'s docstring.
+        self.db.web_client.get_transaction_history.return_value = ([], 0)
         self.db.emit = mock.MagicMock()
         self.db.get_total = mock.MagicMock(return_value=0)
         self.db._set_metadata = mock.MagicMock()
@@ -1199,7 +1326,7 @@ class TestBootstrapFullResync(unittest.TestCase):
         self.db.web_client.download_export.assert_called_once_with()
         import_data.assert_called_once()
         self.assertIsInstance(import_data.call_args.args[2], grampswebapidb.User)
-        self.db._set_metadata.assert_called_once_with("sync_last_time", mock.ANY)
+        self.db._set_metadata.assert_called_once_with("sync_last_id", mock.ANY)
         emitted = [call.args[0] for call in self.db.emit.call_args_list]
         self.assertIn("person-rebuild", emitted)
 
@@ -1530,6 +1657,9 @@ class TestTransactionCommit(unittest.TestCase):
         self.db.web_client.push_transaction.side_effect = WebApiPushConflict(
             "Object has changed"
         )
+        # download() also fetches the server's current newest transaction
+        # id before the export itself -- see _fetch_newest_transaction_id().
+        self.db.web_client.get_transaction_history.return_value = ([], 0)
 
         def close_mid_download():
             self.db._run_id += 1
@@ -3875,9 +4005,20 @@ class TestMisc(unittest.TestCase):
     def test_initialize_stores_web_client_and_calls_super(self):
         db = new_instance()
         sentinel_client = mock.MagicMock()
+
+        # The real SQLite._initialize() is what sets self.dbapi in
+        # production; stubbed out here (this test is only about
+        # _initialize()'s own logic), so it has to be faked in too --
+        # _wrap_dbapi_execute() (called right after super()._initialize())
+        # needs *something* with an execute() attribute to wrap.
+        def fake_super_init(*_args, **_kwargs):
+            db.dbapi = mock.MagicMock()
+
         with mock.patch.object(
             grampswebapidb.WebApiHandler, "from_env", return_value=sentinel_client
-        ), mock.patch.object(grampswebapidb.SQLite, "_initialize") as super_init:
+        ), mock.patch.object(
+            grampswebapidb.SQLite, "_initialize", side_effect=fake_super_init
+        ) as super_init:
             db._initialize("/tmp/some-tree", "user", "pw")
         self.assertIs(db.web_client, sentinel_client)
         super_init.assert_called_once_with("/tmp/some-tree", "user", "pw")
@@ -4331,6 +4472,10 @@ class TestCheckPermissions(unittest.TestCase):
         ) as check, mock.patch.object(
             self.db, "_check_server_version_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
+            self.db,
+            "_check_history_cursor_support_async",
+            side_effect=stub_async_done(True),
+        ), mock.patch.object(
             self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ), mock.patch.object(
             self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
@@ -4350,6 +4495,10 @@ class TestCheckPermissions(unittest.TestCase):
         ) as check, mock.patch.object(
             self.db, "_check_server_version_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
+            self.db,
+            "_check_history_cursor_support_async",
+            side_effect=stub_async_done(True),
+        ), mock.patch.object(
             self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ), mock.patch.object(
             self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
@@ -4366,6 +4515,10 @@ class TestCheckPermissions(unittest.TestCase):
             self.db, "_check_permissions_async", side_effect=stub_async_done(True)
         ) as check, mock.patch.object(
             self.db, "_check_server_version_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db,
+            "_check_history_cursor_support_async",
+            side_effect=stub_async_done(True),
         ), mock.patch.object(
             self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ), mock.patch.object(
@@ -4424,6 +4577,58 @@ class TestCheckServerVersion(unittest.TestCase):
         )
         with self.assertRaises(DbConnectionError):
             run_check(self.db, "_check_server_version_async")
+
+
+# -------------------------------------------------------------------------
+#
+# TestCheckHistoryCursorSupport
+#
+# gramps-web-api's own query-arg parser rejects any unrecognized query
+# argument outright, so a server older than HISTORY_ID_CURSOR_MIN_API_
+# VERSION 422s every GET /transactions/history/ call once this addon's
+# get_transaction_history() starts sending after_id -- checked here, up
+# front, the same way TestCheckServerVersion's Gramps-library check is.
+#
+# -------------------------------------------------------------------------
+class TestCheckHistoryCursorSupport(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+        self.db._directory = "/tmp/tree"
+        self.db.web_client = mock.MagicMock()
+
+    def test_supported_version_passes(self):
+        self.db.web_client.get_api_version.return_value = "3.21.0"
+        run_check(self.db, "_check_history_cursor_support_async")  # must not raise
+
+    def test_newer_version_passes(self):
+        self.db.web_client.get_api_version.return_value = "3.22.1"
+        run_check(self.db, "_check_history_cursor_support_async")  # must not raise
+
+    def test_too_old_raises_naming_both_versions(self):
+        self.db.web_client.get_api_version.return_value = "3.20.1"
+        with self.assertRaises(DbConnectionError) as ctx:
+            run_check(self.db, "_check_history_cursor_support_async")
+        message = str(ctx.exception)
+        self.assertIn("3.20.1", message)
+        self.assertIn("3.21", message)
+
+    def test_unknown_version_is_allowed_through(self):
+        # Better to try and let the 422 path surface an actually
+        # incompatible server than to block every unreported version on
+        # a guess.
+        self.db.web_client.get_api_version.return_value = None
+        run_check(self.db, "_check_history_cursor_support_async")  # must not raise
+
+    def test_unparseable_version_is_allowed_through(self):
+        self.db.web_client.get_api_version.return_value = "some-dev-build"
+        run_check(self.db, "_check_history_cursor_support_async")  # must not raise
+
+    def test_connection_error_is_wrapped(self):
+        self.db.web_client.get_api_version.side_effect = HTTPError(
+            "https://example.com/api/metadata/", 500, "boom", None, None
+        )
+        with self.assertRaises(DbConnectionError):
+            run_check(self.db, "_check_history_cursor_support_async")
 
 
 # -------------------------------------------------------------------------
@@ -4557,6 +4762,10 @@ class TestPolling(unittest.TestCase):
         ), mock.patch.object(
             self.db, "_check_server_version_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
+            self.db,
+            "_check_history_cursor_support_async",
+            side_effect=stub_async_done(True),
+        ), mock.patch.object(
             self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ) as sync, mock.patch.object(
             self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
@@ -4599,6 +4808,10 @@ class TestPolling(unittest.TestCase):
         ), mock.patch.object(
             self.db, "_check_server_version_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
+            self.db,
+            "_check_history_cursor_support_async",
+            side_effect=stub_async_done(True),
+        ), mock.patch.object(
             self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ), mock.patch.object(
             self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
@@ -4623,6 +4836,10 @@ class TestPolling(unittest.TestCase):
             self.db, "_check_permissions_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
             self.db, "_check_server_version_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db,
+            "_check_history_cursor_support_async",
+            side_effect=stub_async_done(True),
         ), mock.patch.object(
             self.db, "_bootstrap_full_resync"
         ) as bootstrap, mock.patch.object(
@@ -4656,6 +4873,10 @@ class TestPolling(unittest.TestCase):
         ), mock.patch.object(
             self.db, "_check_server_version_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
+            self.db,
+            "_check_history_cursor_support_async",
+            side_effect=stub_async_done(True),
+        ), mock.patch.object(
             self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ) as sync, mock.patch.object(
             self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
@@ -4684,6 +4905,10 @@ class TestPolling(unittest.TestCase):
         ), mock.patch.object(
             self.db, "_check_server_version_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
+            self.db,
+            "_check_history_cursor_support_async",
+            side_effect=stub_async_done(True),
+        ), mock.patch.object(
             self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ) as sync, mock.patch.object(
             self.db, "_sync_media_files_async", side_effect=stub_async_done((0, 0))
@@ -4709,6 +4934,10 @@ class TestPolling(unittest.TestCase):
             self.db, "_check_permissions_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
             self.db, "_check_server_version_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db,
+            "_check_history_cursor_support_async",
+            side_effect=stub_async_done(True),
         ), mock.patch.object(
             self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ), mock.patch.object(
@@ -4739,6 +4968,10 @@ class TestPolling(unittest.TestCase):
             self.db, "_check_permissions_async", side_effect=stub_async_done(True)
         ), mock.patch.object(
             self.db, "_check_server_version_async", side_effect=stub_async_done(True)
+        ), mock.patch.object(
+            self.db,
+            "_check_history_cursor_support_async",
+            side_effect=stub_async_done(True),
         ), mock.patch.object(
             self.db, "_sync_from_server_async", side_effect=stub_async_done(0)
         ), mock.patch.object(
@@ -5125,6 +5358,89 @@ class TestPolling(unittest.TestCase):
         # _syncing (only cleared there) is still True -- close() resets
         # it directly instead (see TestClose).
         self.assertTrue(self.db._syncing)
+
+
+# -------------------------------------------------------------------------
+#
+# TestIdlePollBackoff
+#
+# _on_poll_success() widens the record poll to POLL_IDLE_INTERVAL_SECONDS
+# once this tree has gone POLL_IDLE_THRESHOLD_SECONDS with no local
+# self.dbapi activity (see the module docstring's polling section and
+# _wrap_dbapi_execute()'s own docstring) -- independent of the ordinary
+# error-backoff path TestPolling above already covers.
+#
+# -------------------------------------------------------------------------
+class TestIdlePollBackoff(unittest.TestCase):
+    def setUp(self):
+        self.db = new_instance()
+        self.db._poll_source_id = 1
+
+    def test_recent_activity_keeps_the_normal_interval(self):
+        # _reschedule_poll() is a no-op when the interval doesn't change
+        # (the common case); start from a different one so switching back
+        # to POLL_INTERVAL_SECONDS is an observable reschedule.
+        self.db._poll_interval = grampswebapidb.POLL_IDLE_INTERVAL_SECONDS
+        self.db._last_local_activity = time.monotonic()
+        with mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds", return_value=7
+        ) as timeout_add, mock.patch.object(grampswebapidb.GLib, "source_remove"):
+            self.db._on_poll_success(0)
+        timeout_add.assert_called_once_with(
+            grampswebapidb.POLL_INTERVAL_SECONDS, self.db._poll_tick
+        )
+
+    def test_long_idle_widens_the_interval(self):
+        self.db._last_local_activity = time.monotonic() - (
+            grampswebapidb.POLL_IDLE_THRESHOLD_SECONDS + 1
+        )
+        with mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds", return_value=7
+        ) as timeout_add, mock.patch.object(grampswebapidb.GLib, "source_remove"):
+            self.db._on_poll_success(0)
+        timeout_add.assert_called_once_with(
+            grampswebapidb.POLL_IDLE_INTERVAL_SECONDS, self.db._poll_tick
+        )
+
+    def test_activity_after_idling_snaps_back_to_the_normal_interval(self):
+        self.db._poll_interval = grampswebapidb.POLL_IDLE_INTERVAL_SECONDS
+        self.db._last_local_activity = time.monotonic()
+        with mock.patch.object(
+            grampswebapidb.GLib, "timeout_add_seconds", return_value=7
+        ) as timeout_add, mock.patch.object(grampswebapidb.GLib, "source_remove"):
+            self.db._on_poll_success(0)
+        timeout_add.assert_called_once_with(
+            grampswebapidb.POLL_INTERVAL_SECONDS, self.db._poll_tick
+        )
+
+    def test_wrap_dbapi_execute_timestamps_a_genuine_call(self):
+        self.db.dbapi = mock.MagicMock()
+        self.db._pulling = False
+        self.db._last_local_activity = 0
+        self.db._wrap_dbapi_execute()
+        self.db.dbapi.execute("SELECT 1")
+        self.assertGreater(self.db._last_local_activity, 0)
+
+    def test_wrap_dbapi_execute_ignores_calls_while_pulling(self):
+        # Replaying the server's own changes onto the local mirror must
+        # not look like local activity -- see _wrap_dbapi_execute()'s own
+        # docstring on why that would defeat the point of this feature on
+        # an actively shared tree.
+        self.db.dbapi = mock.MagicMock()
+        self.db._last_local_activity = 0
+        self.db._wrap_dbapi_execute()
+        self.db._last_local_activity = 0  # _wrap_dbapi_execute() itself sets "now"
+        self.db._pulling = True
+        self.db.dbapi.execute("SELECT 1")
+        self.assertEqual(self.db._last_local_activity, 0)
+
+    def test_wrap_dbapi_execute_still_calls_through(self):
+        self.db.dbapi = mock.MagicMock()
+        original_execute = self.db.dbapi.execute
+        self.db._pulling = False
+        self.db._wrap_dbapi_execute()
+        self.db.dbapi.execute("SELECT 1", ["arg"])
+        original_execute.assert_called_once_with("SELECT 1", ["arg"])
 
 
 # -------------------------------------------------------------------------
