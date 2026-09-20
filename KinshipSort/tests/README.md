@@ -15,7 +15,7 @@ Use an isolated `GRAMPSHOME`; importing the repo-root `tests` package applies
 the repository's central GTK/GDK pins before loading GUI model modules:
 
 ```sh
-python3 -m unittest tests KinshipSort.tests.test_gramps_integration -v
+python3 -m unittest tests.__init__ KinshipSort.tests.test_gramps_integration -v
 ```
 
 All database fixtures are synthetic and temporary. Missing Gramps/PyGObject
@@ -24,6 +24,9 @@ runs without generated files. The Polish translation check skips unless the
 catalog has been compiled to `locale/pl/LC_MESSAGES/addon.mo`.
 
 These tests exercise real Gramps models, without opening application windows.
+They also compare degree and generation values with Gramps'
+`RelationshipCalculator` on a fixture with recorded common ancestors,
+including a related spouse, multiple parent families and non-birth exclusions.
 The `test_gramps_integration.py` name intentionally uses the all-platform
 `test_` prefix: it can run wherever Gramps 6.0/GTK 3 are available.
 

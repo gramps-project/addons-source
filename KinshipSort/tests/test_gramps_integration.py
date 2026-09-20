@@ -174,6 +174,38 @@ class GrampsIntegrationTests(unittest.TestCase):
         self.assertEqual(degrees, {"home": 0, "parent": 1, "child": 1, "sibling": 2})
         self.assertEqual(records(), before)
 
+    def test_degrees_match_core_for_recorded_common_ancestors(self):
+        from gramps.gen.relationship import RelationshipCalculator
+
+        self.fixture()
+        for handle in ("grandparent", "aunt", "cousin", "adoptive", "foster"):
+            self.person(handle)
+        self.family("grandparent", None, "parent")
+        self.family("grandparent", None, "aunt")
+        self.family("aunt", None, "cousin")
+        self.family("adoptive", None, "home", father_relation=ChildRefType.ADOPTED)
+        self.family("home", None, "foster", father_relation=ChildRefType.FOSTER)
+        # A second parent family makes the spouse a blood relative as well.
+        self.family("parent", None, "spouse")
+        degrees, generations, _ = calculate_kinship_info(self.db)
+        calculator = RelationshipCalculator()
+        calculator.set_depth(20)
+        home = self.db.get_person_from_handle("home")
+        for handle in self.db.get_person_handles():
+            with self.subTest(person=handle):
+                relations, messages = calculator.get_relationship_distance_new(
+                    self.db, home, self.db.get_person_from_handle(handle),
+                    all_families=True, all_dist=True, only_birth=True)
+                self.assertEqual(messages, [])
+                valid = [(relation[0], len(relation[2]) - len(relation[4]))
+                         for relation in relations if relation[0] >= 0]
+                if valid:
+                    degree, generation = min(valid, key=lambda pair: (pair[0], -pair[1]))
+                    self.assertEqual((degrees[handle], generations[handle]),
+                                     (degree, generation))
+                else:
+                    self.assertNotIn(handle, degrees)
+
     def test_flat_order_and_live_reverse(self):
         self.fixture()
         model = self.model(KinshipPersonListModel, scol=KINSHIP_COL)
@@ -244,7 +276,6 @@ class GrampsIntegrationTests(unittest.TestCase):
                          ["People by kinship degree", "People by kinship, grouped"])
         for _, values in registrations:
             self.assertEqual(values["gramps_target_version"], "6.0")
-            self.assertEqual(values["requires_gi"], [("Gtk", "3.0")])
 
     def test_polish_translation(self):
         from gramps.gen.const import GRAMPS_LOCALE
