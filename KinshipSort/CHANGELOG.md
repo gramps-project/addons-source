@@ -2,6 +2,9 @@
 
 ## 0.2.8 — publication preparation
 
+- Skip kinship calculations when the column is hidden; calculate fresh values
+  when it is shown again. Rank surname groups only when sorting by kinship.
+
 - Add English interface text and a Polish translation catalog.
 - Add GPL-2.0-or-later headers, license text and attribution of adapted Gramps
   grouped-view behavior.

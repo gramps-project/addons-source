@@ -218,7 +218,18 @@ def _kinship_sort_key(data, degrees, generations=None):
 class KinshipColumnsMixin:
     """Add the calculated kinship column to a standard People model."""
 
-    def _init_kinship(self, db):
+    def _init_kinship(self, db, sort_map):
+        # No map means all model columns are available, as in Gramps' models.
+        # With a map, only visible columns can be selected for sorting.
+        if sort_map and not any(
+            column[0] and column[1] == KINSHIP_COL for column in sort_map
+        ):
+            self.kinship_degrees = {}
+            self.generation_levels = {}
+            self.home_handle = (
+                db.get_default_handle() if db is not None and db.is_open() else None
+            )
+            return
         (
             self.kinship_degrees,
             self.generation_levels,
@@ -256,7 +267,7 @@ class KinshipPersonListModel(KinshipColumnsMixin, PeopleBaseModel, FlatBaseModel
         sort_map=None,
     ):
         PeopleBaseModel.__init__(self, db)
-        self._init_kinship(db)
+        self._init_kinship(db, sort_map)
         self._extend_people_columns()
 
         FlatBaseModel.__init__(
@@ -292,7 +303,7 @@ class KinshipPersonTreeModel(KinshipColumnsMixin, PeopleBaseModel, TreeBaseModel
         sort_map=None,
     ):
         PeopleBaseModel.__init__(self, db)
-        self._init_kinship(db)
+        self._init_kinship(db, sort_map)
         self._extend_people_columns()
         self.group_degrees = {}
 
@@ -312,8 +323,11 @@ class KinshipPersonTreeModel(KinshipColumnsMixin, PeopleBaseModel, TreeBaseModel
         self.number_items = self.db.get_number_of_people
 
     def rebuild_data(self, data_filter=None, data_filter2=None, skip=[]):
-        """Refresh surname-group degrees before rebuilding the tree."""
-        self.group_degrees = self._calculate_group_degrees(self.db)
+        """Calculate surname-group degrees only for kinship sorting."""
+        self.group_degrees = (
+            self._calculate_group_degrees(self.db)
+            if self.sort_col == KINSHIP_COL else {}
+        )
         return TreeBaseModel.rebuild_data(
             self, data_filter=data_filter, data_filter2=data_filter2, skip=skip
         )
