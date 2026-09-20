@@ -27,6 +27,9 @@ These tests exercise real Gramps models, without opening application windows.
 They also compare degree and generation values with Gramps'
 `RelationshipCalculator` on a fixture with recorded common ancestors,
 including a related spouse, multiple parent families and non-birth exclusions.
+Regression fixtures also cover siblings without parent records, their
+descendants and cousins, each missing-parent slot, later parent entry,
+unchanged genealogical records and separation of unrelated families.
 The `test_gramps_integration.py` name intentionally uses the all-platform
 `test_` prefix: it can run wherever Gramps 6.0/GTK 3 are available.
 

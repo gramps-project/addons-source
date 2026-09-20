@@ -101,6 +101,19 @@ class GrampsIntegrationTests(unittest.TestCase):
             self.db.commit_person(person, transaction)
         return family
 
+    def sibling(self, family, child, father_relation=ChildRefType.BIRTH,
+                mother_relation=ChildRefType.BIRTH):
+        ref = ChildRef()
+        ref.ref = child
+        ref.set_father_relation(father_relation)
+        ref.set_mother_relation(mother_relation)
+        family.add_child_ref(ref)
+        with DbTxn("Add synthetic sibling", self.db) as transaction:
+            self.db.commit_family(family, transaction)
+            person = self.db.get_person_from_handle(child)
+            person.add_parent_family_handle(family.handle)
+            self.db.commit_person(person, transaction)
+
     def fixture(self):
         for handle, surname in [("home", "Baker"), ("parent", "Baker"),
                                 ("sibling", "Baker"), ("child", "Baker"),
@@ -216,6 +229,93 @@ class GrampsIntegrationTests(unittest.TestCase):
         descending = self.model(KinshipPersonListModel, scol=KINSHIP_COL,
                                 order=Gtk.SortType.DESCENDING)
         self.assertEqual(self.handles(descending), list(reversed(expected)))
+
+    def test_siblings_and_descendants_without_recorded_parents(self):
+        for handle in ("home", "brother", "sister", "niece", "grandniece",
+                       "child", "spouse", "other_family"):
+            self.person(handle)
+        family = self.family(None, None, "home")
+        self.sibling(family, "brother")
+        self.sibling(family, "sister")
+        self.family("brother", None, "niece")
+        self.family("niece", None, "grandniece")
+        self.family("home", "spouse", "child")
+        self.family(None, None, "other_family")
+        self.db.set_default_person_handle("home")
+        def records():
+            return ([self.db.get_person_from_handle(h).serialize()
+                     for h in sorted(self.db.get_person_handles())],
+                    [self.db.get_family_from_handle(h).serialize()
+                     for h in sorted(self.db.get_family_handles())])
+        before = records()
+        degrees, generations, _ = calculate_kinship_info(self.db)
+        expected = {"home": 0, "brother": 2, "sister": 2, "niece": 3,
+                    "grandniece": 4, "child": 1}
+        self.assertEqual(degrees, expected)
+        self.assertEqual(generations, {"home": 0, "brother": 0, "sister": 0,
+                                      "niece": -1, "grandniece": -2, "child": -1})
+        for cls in (KinshipPersonListModel, KinshipPersonTreeModel):
+            model = self.model(cls, scol=KINSHIP_COL)
+            self.assertEqual(model.kinship_degrees, expected)
+        self.assertEqual(records(), before)
+        self.db.set_default_person_handle("child")
+        degrees, generations, _ = calculate_kinship_info(self.db)
+        self.assertEqual((degrees["brother"], generations["brother"]), (3, 1))
+        self.assertEqual((degrees["niece"], generations["niece"]), (4, 0))
+        self.assertEqual(degrees["grandniece"], 5)
+
+    def test_missing_parent_requires_birth_relation_to_the_same_parent(self):
+        for missing in ("father", "mother", "both"):
+            with self.subTest(missing=missing):
+                names = {role: f"{missing}-{role}" for role in
+                         ("home", "sibling", "opposite", "adopted", "foster", "known")}
+                for handle in names.values():
+                    self.person(handle)
+                father = names["known"] if missing == "mother" else None
+                mother = names["known"] if missing == "father" else None
+                birth = (ChildRefType.BIRTH, ChildRefType.ADOPTED)
+                if missing == "mother":
+                    birth = tuple(reversed(birth))
+                family = self.family(father, mother, names["home"], *birth)
+                self.sibling(family, names["sibling"], *birth)
+                self.sibling(family, names["opposite"], *reversed(birth))
+                self.sibling(family, names["adopted"],
+                             ChildRefType.ADOPTED, ChildRefType.ADOPTED)
+                self.sibling(family, names["foster"],
+                             ChildRefType.FOSTER, ChildRefType.FOSTER)
+                self.db.set_default_person_handle(names["home"])
+                degrees, _, _ = calculate_kinship_info(self.db)
+                self.assertEqual(degrees, {names["home"]: 0, names["sibling"]: 2})
+
+    def test_adding_parent_preserves_sibling_degrees(self):
+        for handle in ("home", "sibling", "niece", "parent"):
+            self.person(handle)
+        family = self.family(None, None, "home")
+        self.sibling(family, "sibling")
+        self.family("sibling", None, "niece")
+        self.db.set_default_person_handle("home")
+        before, _, _ = calculate_kinship_info(self.db)
+        self.assertEqual(before, {"home": 0, "sibling": 2, "niece": 3})
+        family.set_father_handle("parent")
+        with DbTxn("Record previously unknown parent", self.db) as transaction:
+            self.db.commit_family(family, transaction)
+            parent = self.db.get_person_from_handle("parent")
+            parent.add_family_handle(family.handle)
+            self.db.commit_person(parent, transaction)
+        after, _, _ = calculate_kinship_info(self.db)
+        self.assertEqual(after, dict(before, parent=1))
+
+    def test_separate_unknown_parent_families_do_not_infer_transitive_kinship(self):
+        for handle in ("home", "half_sibling", "other_half_sibling", "niece"):
+            self.person(handle)
+        first = self.family(None, None, "home", mother_relation=ChildRefType.ADOPTED)
+        self.sibling(first, "half_sibling", mother_relation=ChildRefType.ADOPTED)
+        second = self.family(None, None, "half_sibling", father_relation=ChildRefType.ADOPTED)
+        self.sibling(second, "other_half_sibling", father_relation=ChildRefType.ADOPTED)
+        self.family("half_sibling", None, "niece")
+        self.db.set_default_person_handle("home")
+        degrees, _, _ = calculate_kinship_info(self.db)
+        self.assertEqual(degrees, {"home": 0, "half_sibling": 2, "niece": 3})
 
     def test_group_order_and_reverse(self):
         self.fixture()

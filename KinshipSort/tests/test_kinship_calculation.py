@@ -68,6 +68,16 @@ class KinshipCalculationTests(unittest.TestCase):
     def test_home_only(self):
         self.assertEqual(self.calculate([]), ({"home": 0}, {"home": 0}))
 
+    def test_anonymous_parents_need_no_orderable_handles(self):
+        father, mother = object(), object()
+        edges = [(father, "home"), (mother, "home"),
+                 (father, "sibling"), (mother, "sibling"),
+                 ("sibling", "niece")]
+        result = self.calculate(edges)
+        self.assertEqual(result, reference("home", *maps(edges)))
+        self.assertEqual(result[0]["sibling"], 2)
+        self.assertEqual(result[0]["niece"], 3)
+
     def test_direct_ancestors_and_descendants(self):
         degrees, generations = self.calculate([
             ("grandparent", "parent"), ("parent", "home"),
