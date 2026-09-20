@@ -26,6 +26,7 @@ import tempfile
 from types import SimpleNamespace
 import sys
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -332,6 +333,59 @@ class GrampsIntegrationTests(unittest.TestCase):
                 model = self.model(cls, scol=0)
                 self.assertEqual(self.handles(model),
                                  ["spouse", "child", "home", "parent", "sibling", "stranger"])
+
+    def test_hidden_kinship_skips_calculation(self):
+        self.fixture()
+        for cls in (KinshipPersonListModel, KinshipPersonTreeModel):
+            for columns in (
+                [(True, 0)],
+                [(False, KINSHIP_COL), (True, 0)],
+            ):
+                with self.subTest(model=cls.__name__, columns=columns):
+                    with patch("kinshipsort.calculate_kinship_info") as calculate, patch.object(
+                        KinshipPersonTreeModel, "_calculate_group_degrees"
+                    ) as groups:
+                        model = self.model(cls, scol=0, sort_map=columns)
+                        calculate.assert_not_called()
+                        groups.assert_not_called()
+                    self.assertEqual(model.kinship_degrees, {})
+                    self.assertEqual(model.generation_levels, {})
+                    self.assertEqual(model.home_handle, "home")
+                    self.assertEqual(self.handles(model),
+                                     ["spouse", "child", "home", "parent", "sibling", "stranger"])
+
+    def test_visible_kinship_is_calculated_when_sorting_by_name(self):
+        self.fixture()
+        for cls in (KinshipPersonListModel, KinshipPersonTreeModel):
+            with self.subTest(model=cls.__name__):
+                with patch("kinshipsort.calculate_kinship_info",
+                           wraps=calculate_kinship_info) as calculate, patch.object(
+                    KinshipPersonTreeModel, "_calculate_group_degrees"
+                ) as groups:
+                    model = self.model(cls, scol=0,
+                                       sort_map=[(True, 0), (True, KINSHIP_COL)])
+                    calculate.assert_called_once_with(self.db)
+                    groups.assert_not_called()
+                self.assertEqual(model.kinship_degrees["sibling"], 2)
+                self.assertEqual(model.column_kinship_degree(
+                    self.db.get_person_from_handle("sibling")), "2")
+                self.assertEqual(self.handles(model)[0], "spouse")
+
+    def test_showing_kinship_uses_current_home_and_relationships(self):
+        self.fixture()
+        for cls in (KinshipPersonListModel, KinshipPersonTreeModel):
+            self.model(cls, scol=0, sort_map=[(True, 0), (False, KINSHIP_COL)])
+        self.family("stranger", None, "home")
+        self.db.set_default_person_handle("child")
+        # Changing column visibility rebuilds the model in Gramps ListView.
+        for cls in (KinshipPersonListModel, KinshipPersonTreeModel):
+            with self.subTest(model=cls.__name__):
+                model = self.model(cls, scol=0,
+                                   sort_map=[(True, 0), (True, KINSHIP_COL)])
+                self.assertEqual(model.home_handle, "child")
+                self.assertEqual(model.kinship_degrees["child"], 0)
+                self.assertEqual(model.kinship_degrees["spouse"], 1)
+                self.assertEqual(model.kinship_degrees["stranger"], 2)
 
     def test_column_map_with_kinship_moved_to_first(self):
         self.fixture()
