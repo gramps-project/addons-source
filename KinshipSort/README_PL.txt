@@ -29,7 +29,18 @@ partnerstwo, adopcja, opieka zastępcza i powiązania osobowe nie tworzą
 biologicznego pokrewieństwa. Nie dopuszczamy drogi przez wspólne dziecko do
 małżonka. Małżonek będący krewnym otrzyma stopień przez wspólnego przodka.
 
-Puste pole oznacza, że zapisane dane nie pozwalają ustalić pokrewieństwa.
+Rodzice nie muszą mieć własnych rekordów. Dzieci zapisane we wspólnej rodzinie
+z relacją urodzenia do tego samego rodzica są rodzeństwem biologicznym nawet
+wtedy, gdy nie wpisano jednego lub obojga rodziców. Rodzeństwo otrzymuje
+stopień 2, jego dzieci — 3, a kuzyni pierwszego stopnia — 4. Obliczenia
+obejmują także dalszych potomków. Brakujący rodzic jest uwzględniany wyłącznie
+w pamięci; dodatek nie tworzy żadnych osób w bazie. Relację urodzenia
+sprawdzamy oddzielnie dla ojca i matki. Nie utożsamiamy nieznanych rodziców
+z różnych rodzin ani nie traktujemy adopcji jako pokrewieństwa biologicznego.
+
+Puste pole oznacza, że zapisane dane, w tym relacje rodzeństwa, nie pozwalają
+ustalić pokrewieństwa. Sama obecność w drzewie, wspólne nazwisko lub wynik
+DNA bez zapisanej drogi rodzinnej nie określają dokładnego stopnia.
 Nie dowodzi, że osoby biologicznie nie są spokrewnione. Wynik jest liczbą
 kroków genealogicznych, a nie współczynnikiem genetycznym. Bez Osoby głównej
 wszystkie stopnie są puste.
@@ -84,7 +95,8 @@ STAN WERSJI 0.2.8
 Dodano angielskie teksty, polskie tłumaczenie, dokumentację, licencję oraz
 informacje o pochodzeniu fragmentów kodu. Wydzielono obliczenia do osobnego
 modułu i dodano testy. Zabezpieczono brak bazy oraz odwołanie do nieistniejącej
-Osoby głównej. Zachowano algorytm wersji 0.2.7.
+Osoby głównej. Uzupełniono obliczenia o rodzeństwo oraz jego potomków także
+w rodzinach bez wpisanych rodziców.
 
 Wersja pozostaje eksperymentalna. Testy modeli i obliczeń nie zastępują
 sprawdzenia okien, odświeżania po edycji i działania na innych systemach.

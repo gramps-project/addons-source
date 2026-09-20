@@ -23,6 +23,7 @@
 # ------------------------------------------------------------------------
 from collections import deque
 from heapq import heappop, heappush
+from itertools import count
 
 
 def _ancestor_distances(home_handle, parents):
@@ -78,6 +79,9 @@ def calculate_kinship_from_relations(home_handle, parents, children):
     # handle -> (minimum degree, preferred generation for that degree)
     best = {}
     queue = []
+    # Equal-cost entries may include opaque markers for unrecorded parents.
+    # A sequence number avoids comparing markers with real person handles.
+    sequence = count()
 
     # Variable source costs mean an ordinary FIFO multi-source BFS is not
     # sufficient.  A small Dijkstra-style priority queue gives the same exact
@@ -91,10 +95,11 @@ def calculate_kinship_from_relations(home_handle, parents, children):
             or (candidate[0] == old[0] and candidate[1] > old[1])
         ):
             best[ancestor_handle] = candidate
-            heappush(queue, (up_distance, -up_distance, ancestor_handle))
+            heappush(queue, (up_distance, -up_distance,
+                            next(sequence), ancestor_handle))
 
     while queue:
-        degree, negative_generation, handle = heappop(queue)
+        degree, negative_generation, _, handle = heappop(queue)
         generation = -negative_generation
 
         # Ignore an entry that became obsolete after a better path was found.
@@ -114,7 +119,7 @@ def calculate_kinship_from_relations(home_handle, parents, children):
                 best[child_handle] = (child_degree, child_generation)
                 heappush(
                     queue,
-                    (child_degree, -child_generation, child_handle),
+                    (child_degree, -child_generation, next(sequence), child_handle),
                 )
 
     degrees = {handle: values[0] for handle, values in best.items()}

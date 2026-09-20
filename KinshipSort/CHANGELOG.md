@@ -6,7 +6,12 @@
 - Add GPL-2.0-or-later headers, license text and attribution of adapted Gramps
   grouped-view behavior.
 - Extract biological graph calculations into a module that can be tested
-  without Gramps or GTK, retaining the 0.2.7 calculation algorithm.
+  without Gramps or GTK.
+- Count Birth siblings in a shared family even when one or both parents have
+  no person records: degree 2 for siblings, 3 for their children and 4 for
+  first cousins. Include further descendants without creating database records.
+- Keep each missing parent local to its family and check Birth per parent,
+  avoiding false connections through adoption, spouses or sibling chains.
 - Return empty results when no database is open or the saved Home Person
   handle no longer exists, avoiding a Gramps `HandleError`.
 - Document descending sort behavior, the meaning of blank degrees, filtering

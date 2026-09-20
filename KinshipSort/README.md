@@ -32,8 +32,21 @@ kinship. A spouse who is also a biological relative is counted through the
 common ancestor. The invalid path `Home -> shared child -> spouse` is never
 used. Multiple valid paths use the smallest degree.
 
+**Parents do not need their own person records.** Children recorded in the
+same family as Birth children of the same parent are biological siblings
+even if that parent, or both parents, have not been entered. Siblings have
+degree 2, their children degree 3, and first cousins degree 4. These paths
+continue through further descendants. The calculation represents each
+missing parent within that family in memory; it never creates people in
+the database. Birth is checked separately for each parent, so adoption or
+foster links do not become biological links. Unknown parents in different
+families are not assumed to be the same person.
+
 A blank means no biological relationship can be established from the recorded
-data; it is not proof that two people have no biological relationship.
+data, including recorded sibling relationships; it is not proof that two
+people have no biological relationship. Merely being present in the same
+tree, sharing a surname, or having DNA evidence without a recorded family
+path is not enough to calculate an exact genealogical degree.
 This is a count of genealogical steps, not a genetic kinship coefficient.
 Selecting another active person does not change the reference; change the
 **Home Person** to calculate relative to somebody else.

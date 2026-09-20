@@ -32,7 +32,8 @@ view: a flat list and a surname-grouped tree.  It does not write calculated
 kinship degrees to the genealogy database.
 
 Kinship degree is the minimum number of biological parent/child steps along
-a path going up to a common ancestor and then down to a relative. It is
+a path going up to a common ancestor and then down to a relative. A shared
+Birth parent in a family need not have a person record. The degree is
 calculated relative to the database Home Person, not the active selection.
 Flat-list ties are ordered by generation, then the normal Gramps name key.
 Grouped-view ties use the normal name key. Other columns retain their normal
@@ -89,11 +90,16 @@ NO_SURNAME = config.get("preferences.no-surname-text")
 
 
 def _biological_relations(db):
-    """Return biological parent and child maps.
+    """Return biological parent/child maps and anonymous parent markers.
 
-    The result is ``(parents, children)`` where both mappings contain only
-    birth relations from Gramps ChildRef objects.  Keeping the two directions
-    separate is important: a valid biological kinship path may go from the
+    The result is ``(parents, children, anonymous)``. Both mappings contain
+    only Birth relations from Gramps ChildRef objects. Each empty parent
+    slot gets a family-local anonymous marker, shared by children whose
+    relation to that parent is Birth. Siblings therefore remain related
+    when neither parent has a person record. Markers exist only in memory
+    and are excluded from the results exposed to the views.
+
+    Keeping the two directions separate is important: a valid path may go from the
     Home Person upward to a common ancestor and then downward to a relative,
     but it must never go downward first and then upward through the other
     parent of a shared child.  The latter would incorrectly classify spouses
@@ -101,6 +107,7 @@ def _biological_relations(db):
     """
     parents = defaultdict(set)
     children = defaultdict(set)
+    anonymous = set()
 
     for family_handle in db.get_family_handles():
         family = db.get_family_from_handle(family_handle)
@@ -109,27 +116,27 @@ def _biological_relations(db):
 
         father_handle = family.get_father_handle()
         mother_handle = family.get_mother_handle()
+        if not father_handle:
+            father_handle = object()
+            anonymous.add(father_handle)
+        if not mother_handle:
+            mother_handle = object()
+            anonymous.add(mother_handle)
 
         for child_ref in family.get_child_ref_list():
             child_handle = child_ref.ref
             if not child_handle:
                 continue
 
-            if (
-                father_handle
-                and child_ref.get_father_relation() == ChildRefType.BIRTH
-            ):
+            if child_ref.get_father_relation() == ChildRefType.BIRTH:
                 parents[child_handle].add(father_handle)
                 children[father_handle].add(child_handle)
 
-            if (
-                mother_handle
-                and child_ref.get_mother_relation() == ChildRefType.BIRTH
-            ):
+            if child_ref.get_mother_relation() == ChildRefType.BIRTH:
                 parents[child_handle].add(mother_handle)
                 children[mother_handle].add(child_handle)
 
-    return parents, children
+    return parents, children, anonymous
 
 
 def calculate_kinship_info(db):
@@ -145,9 +152,10 @@ def calculate_kinship_info(db):
     descendants and collateral relatives such as siblings and cousins.
 
     The calculation uses one multi-source downward traversal from all
-    biological ancestors of Home.  This keeps the result identical to the
-    previous common-ancestor definition while avoiding repeated scans of the
-    same descendant branches.
+    biological ancestors of Home, including unnamed parents implied by
+    Birth child references within a family. Siblings without parent records
+    have degree 2; their descendants and cousins use the same paths.
+    No inferred parent records are written to the database.
 
     ``degrees`` stores the minimum number of biological parent/child steps in
     any valid common-ancestor path.  ``generations`` stores the relative
@@ -164,11 +172,15 @@ def calculate_kinship_info(db):
     if home is None:
         return {}, {}, None
 
-    parents, children = _biological_relations(db)
+    parents, children, anonymous = _biological_relations(db)
     degrees, generations = calculate_kinship_from_relations(
         home_handle, parents, children
     )
 
+    degrees = {handle: value for handle, value in degrees.items()
+               if handle not in anonymous}
+    generations = {handle: value for handle, value in generations.items()
+                   if handle not in anonymous}
     return degrees, generations, home_handle
 
 
