@@ -8,7 +8,7 @@ register(TOOL,
         "existing ones) and adds missing 'Marriage' events to families, "
         "so that GEDCOM export produces the tags Familio expects."
     ),
-    version = '1.0.0',
+    version = '1.0.1',
     gramps_target_version="6.0",
     status=STABLE,
     fname='FamilioPrepTool.py',
