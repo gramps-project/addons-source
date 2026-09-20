@@ -1,0 +1,156 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: FamilioPrepTool 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-20 00:00+0000\n"
+"PO-Revision-Date: 2026-09-20 00:00+0000\n"
+"Last-Translator: Claude\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: FamilioPrepTool.gpr.py
+msgid "Prepare for Familio export"
+msgstr "Preparar para exportar a Familio"
+
+#: FamilioPrepTool.gpr.py
+msgid "Adds a missing _UID attribute to persons (without overwriting existing ones) and adds missing 'Marriage' events to families, so that GEDCOM export produces the tags Familio expects."
+msgstr "Añade el atributo _UID que falte a las personas (sin sobrescribir los existentes) y añade los eventos de 'Matrimonio' que falten a las familias, para que la exportación a GEDCOM genere las etiquetas que espera Familio."
+
+#: FamilioPrepTool.py
+msgid "_UID attribute"
+msgstr "Atributo _UID"
+
+#: FamilioPrepTool.py
+msgid "Add _UID attribute to persons who don't have one"
+msgstr "Añadir el atributo _UID a las personas que no lo tengan"
+
+#: FamilioPrepTool.py
+msgid "Existing _UID attributes are never modified or overwritten"
+msgstr "Los atributos _UID existentes nunca se modifican ni se sobrescriben"
+
+#: FamilioPrepTool.py
+msgid "Attribute type"
+msgstr "Tipo de atributo"
+
+#: FamilioPrepTool.py
+msgid "Name of the attribute type to add"
+msgstr "Nombre del tipo de atributo que se añadirá"
+
+#: FamilioPrepTool.py
+msgid "Value template"
+msgstr "Plantilla de valor"
+
+#: FamilioPrepTool.py
+msgid "Supported macros: ${GUID} - a new random GUID, ${NAME} - the person's name"
+msgstr "Macros admitidas: ${GUID} - un nuevo GUID aleatorio, ${NAME} - el nombre de la persona"
+
+#: FamilioPrepTool.py
+msgid "Marriage events"
+msgstr "Eventos de matrimonio"
+
+#: FamilioPrepTool.py
+msgid "Add missing 'Marriage' events to families"
+msgstr "Añadir eventos de 'Matrimonio' faltantes a las familias"
+
+#: FamilioPrepTool.py
+msgid "Gramps only writes the required MARR tags on GEDCOM export if the family has an explicit 'Marriage' event"
+msgstr "Gramps solo escribe las etiquetas MARR necesarias al exportar a GEDCOM si la familia tiene un evento explícito de 'Matrimonio'"
+
+#: FamilioPrepTool.py
+msgid "Fallback for unknown status (Unknown)"
+msgstr "Valor de reserva para estado desconocido (Unknown)"
+
+#: FamilioPrepTool.py
+msgid "marriage (legally married)"
+msgstr "marriage (matrimonio legal)"
+
+#: FamilioPrepTool.py
+msgid "not married (unmarried)"
+msgstr "not married (sin casar)"
+
+#: FamilioPrepTool.py
+msgid "civil (civil union)"
+msgstr "civil (unión civil)"
+
+#: FamilioPrepTool.py
+msgid "unknown (unknown)"
+msgstr "unknown (desconocido)"
+
+#: FamilioPrepTool.py
+msgid "This value is written to MARR.TYPE when the family's relationship status in Gramps is 'Unknown'"
+msgstr "Este valor se escribe en MARR.TYPE cuando el estado de relación de la familia en Gramps es 'Desconocido'"
+
+#: FamilioPrepTool.py
+msgid "Results"
+msgstr "Resultados"
+
+#: FamilioPrepTool.py
+msgid ""
+"No attribute type set for _UID, skipping this step.\n"
+""
+msgstr ""
+"No se ha definido un tipo de atributo para _UID, se omite este paso.\n"
+""
+
+#: FamilioPrepTool.py
+#, python-format
+msgid ""
+"Adding attribute '%s'...\n"
+""
+msgstr ""
+"Añadiendo el atributo '%s'...\n"
+""
+
+#: FamilioPrepTool.py
+msgid "Processing people..."
+msgstr "Procesando personas..."
+
+#: FamilioPrepTool.py
+#, python-format
+msgid ""
+"Added '%s' attributes: %d\n"
+"\n"
+""
+msgstr ""
+"Atributos '%s' añadidos: %d\n"
+"\n"
+""
+
+#: FamilioPrepTool.py
+msgid ""
+"Adding 'Marriage' events...\n"
+""
+msgstr ""
+"Añadiendo eventos de 'Matrimonio'...\n"
+""
+
+#: FamilioPrepTool.py
+msgid "Processing families..."
+msgstr "Procesando familias..."
+
+#: FamilioPrepTool.py
+#, python-format
+msgid ""
+"Added new 'Marriage' events: %d\n"
+""
+msgstr ""
+"Nuevos eventos de 'Matrimonio' añadidos: %d\n"
+""
+
+#: FamilioPrepTool.py
+msgid "Prepare Familio export"
+msgstr "Preparar exportación a Familio"
+
+#: FamilioPrepTool.py
+#, python-format
+msgid ""
+"\n"
+"Done. _UID added: %d, marriage events added: %d\n"
+""
+msgstr ""
+"\n"
+"Listo. _UID añadidos: %d, eventos de matrimonio añadidos: %d\n"
+""

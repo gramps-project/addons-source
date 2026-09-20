@@ -1,0 +1,156 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: FamilioPrepTool 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-20 00:00+0000\n"
+"PO-Revision-Date: 2026-09-20 00:00+0000\n"
+"Last-Translator: Claude\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: FamilioPrepTool.gpr.py
+msgid "Prepare for Familio export"
+msgstr "Подготовка к экспорту в Familio"
+
+#: FamilioPrepTool.gpr.py
+msgid "Adds a missing _UID attribute to persons (without overwriting existing ones) and adds missing 'Marriage' events to families, so that GEDCOM export produces the tags Familio expects."
+msgstr "Добавляет отсутствующий атрибут _UID персонам (не перезаписывая уже существующие) и добавляет недостающие события 'Брак' семьям, чтобы экспорт в GEDCOM формировал теги, которые ожидает Familio."
+
+#: FamilioPrepTool.py
+msgid "_UID attribute"
+msgstr "Атрибут _UID"
+
+#: FamilioPrepTool.py
+msgid "Add _UID attribute to persons who don't have one"
+msgstr "Добавлять атрибут _UID персонам, у которых его нет"
+
+#: FamilioPrepTool.py
+msgid "Existing _UID attributes are never modified or overwritten"
+msgstr "Существующие атрибуты _UID НЕ изменяются и НЕ перезаписываются"
+
+#: FamilioPrepTool.py
+msgid "Attribute type"
+msgstr "Тип атрибута"
+
+#: FamilioPrepTool.py
+msgid "Name of the attribute type to add"
+msgstr "Название типа атрибута, который будет добавлен"
+
+#: FamilioPrepTool.py
+msgid "Value template"
+msgstr "Шаблон значения"
+
+#: FamilioPrepTool.py
+msgid "Supported macros: ${GUID} - a new random GUID, ${NAME} - the person's name"
+msgstr "Поддерживаемые макросы: ${GUID} - новый случайный GUID, ${NAME} - имя персоны"
+
+#: FamilioPrepTool.py
+msgid "Marriage events"
+msgstr "События брака"
+
+#: FamilioPrepTool.py
+msgid "Add missing 'Marriage' events to families"
+msgstr "Добавлять недостающие события 'Брак' семьям"
+
+#: FamilioPrepTool.py
+msgid "Gramps only writes the required MARR tags on GEDCOM export if the family has an explicit 'Marriage' event"
+msgstr "Gramps записывает нужные MARR-теги при экспорте в GEDCOM только если у семьи явно есть событие 'Брак'"
+
+#: FamilioPrepTool.py
+msgid "Fallback for unknown status (Unknown)"
+msgstr "Замена для неизвестного статуса (Unknown)"
+
+#: FamilioPrepTool.py
+msgid "marriage (legally married)"
+msgstr "marriage (Законный брак)"
+
+#: FamilioPrepTool.py
+msgid "not married (unmarried)"
+msgstr "not married (Вне брака)"
+
+#: FamilioPrepTool.py
+msgid "civil (civil union)"
+msgstr "civil (Гражданский союз)"
+
+#: FamilioPrepTool.py
+msgid "unknown (unknown)"
+msgstr "unknown (Неизвестно)"
+
+#: FamilioPrepTool.py
+msgid "This value is written to MARR.TYPE when the family's relationship status in Gramps is 'Unknown'"
+msgstr "Этот тег запишется в MARR.TYPE, если у семьи статус в Gramps указан как 'Неизвестно'"
+
+#: FamilioPrepTool.py
+msgid "Results"
+msgstr "Результаты"
+
+#: FamilioPrepTool.py
+msgid ""
+"No attribute type set for _UID, skipping this step.\n"
+""
+msgstr ""
+"Тип атрибута для _UID не задан, пропускаю этот шаг.\n"
+""
+
+#: FamilioPrepTool.py
+#, python-format
+msgid ""
+"Adding attribute '%s'...\n"
+""
+msgstr ""
+"Добавление атрибута '%s'...\n"
+""
+
+#: FamilioPrepTool.py
+msgid "Processing people..."
+msgstr "Обработка персон..."
+
+#: FamilioPrepTool.py
+#, python-format
+msgid ""
+"Added '%s' attributes: %d\n"
+"\n"
+""
+msgstr ""
+"Добавлено атрибутов '%s': %d\n"
+"\n"
+""
+
+#: FamilioPrepTool.py
+msgid ""
+"Adding 'Marriage' events...\n"
+""
+msgstr ""
+"Добавление событий 'Брак'...\n"
+""
+
+#: FamilioPrepTool.py
+msgid "Processing families..."
+msgstr "Обработка семей..."
+
+#: FamilioPrepTool.py
+#, python-format
+msgid ""
+"Added new 'Marriage' events: %d\n"
+""
+msgstr ""
+"Добавлено новых событий 'Брак': %d\n"
+""
+
+#: FamilioPrepTool.py
+msgid "Prepare Familio export"
+msgstr "Подготовка экспорта в Familio"
+
+#: FamilioPrepTool.py
+#, python-format
+msgid ""
+"\n"
+"Done. _UID added: %d, marriage events added: %d\n"
+""
+msgstr ""
+"\n"
+"Готово. _UID добавлено: %d, событий брака добавлено: %d\n"
+""
