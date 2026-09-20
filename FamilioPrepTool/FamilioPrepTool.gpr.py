@@ -1,13 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# ВАЖНО: если у вас уже были зарегистрированы отдельные плагины
-# AddMarriageEvents и SetAttribute (свои .gpr.py файлы) - удалите или
-# переименуйте их id/fname, чтобы избежать дублирования в списке инструментов.
-#
-# Проверьте и при необходимости поправьте gramps_target_version под вашу
-# версию Gramps (uistate.get_active/set_active стабильны с давних версий,
-# но API MenuToolOptions в редких случаях отличается между релизами).
-
 register(TOOL,
     id='familiopreptool',
     name=_("Prepare for Familio export"),
