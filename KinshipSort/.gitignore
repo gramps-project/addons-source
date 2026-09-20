@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+locale/
+*.addon.tgz
+po/template.pot
