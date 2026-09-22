@@ -66,6 +66,7 @@ from gramps.gen.utils.db import (
     find_parents,
     find_witnessed_people,
     get_birth_or_fallback,
+    get_death_or_fallback,
     get_marriage_or_fallback,
 )
 from gramps.gen.utils.file import media_path_full
@@ -111,6 +112,55 @@ BAR_DROP = 24  # how far a joining bar sits above the boxes it feeds
 def _line_height(maxlines):
     """Box height needed for the given number of text lines."""
     return {1: 34, 3: 70, 5: 106}.get(maxlines, 70)
+
+
+# -------------------------------------------------------------------------
+#
+# ContextFormattingHelper
+#
+# -------------------------------------------------------------------------
+class ContextFormattingHelper(FormattingHelper):
+    """
+    A FormattingHelper that writes a symbol only where an event stands
+    behind it.
+
+    The core helper writes the birth and death symbols on every person it
+    formats, so somebody with no death event at all is drawn exactly like
+    somebody whose death is recorded but undated.  Graph View and Family
+    Tree View show a symbol only where the database holds the event, and
+    this chart follows them: no event, no symbol; an event without a date
+    keeps its symbol, undated.  Whether the person is old enough to be
+    presumed dead plays no part in it, in those charts or in this one.
+    """
+
+    def format_person(self, person, line_count, use_markup=False):
+        """Format a person, dropping the lines no event stands behind."""
+        text = FormattingHelper.format_person(
+            self, person, line_count, use_markup
+        )
+        if not person:
+            return text
+        unknown = []
+        if self.bth and not get_birth_or_fallback(self.dbstate.db, person):
+            unknown.append(self.bth)
+        if self.dth and not get_death_or_fallback(self.dbstate.db, person):
+            unknown.append(self.dth)
+        if not unknown:
+            return text
+        # A dropped symbol takes with it the place line indented under it,
+        # which with no event behind it is blank in any case.
+        kept = []
+        indented = False
+        for line in text.split("\n"):
+            if any(line.startswith(symbol) for symbol in unknown):
+                indented = True
+                continue
+            if indented and not line.strip():
+                indented = False
+                continue
+            indented = False
+            kept.append(line)
+        return "\n".join(kept).rstrip()
 
 
 # -------------------------------------------------------------------------
@@ -458,7 +508,9 @@ class ContextView(NavigationView):
         uistate.connect("placeformat-changed", self.person_rebuild)
         uistate.connect("font-changed", self.person_rebuild)
 
-        self.format_helper = FormattingHelper(self.dbstate, self.uistate)
+        self.format_helper = ContextFormattingHelper(
+            self.dbstate, self.uistate
+        )
 
         self.scrolledwindow = None
         self.canvas = None
