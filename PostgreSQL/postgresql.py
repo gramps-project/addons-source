@@ -207,15 +207,7 @@ class Connection:
             )
 
     def execute(self, *args, **kwargs):
-        sql = args[0].replace("?", "%s")      # qmark → format paramstyle
-        sql = sql.replace(" REGEXP ", " ~ ")  # SQLite REGEXP → PostgreSQL ~
-        # TODO: remove when gramps PR #2178 (_quote_column) is merged into core
-        sql = sql.replace("ON media(desc)", "ON media(desc_)")
-        sql = re.sub(r'\bBLOB\b', 'BYTEA', sql)  # SQLite BLOB → PostgreSQL BYTEA
-        sql = re.sub(r'\bLIMIT\s+(-?\d+)\s*,\s*(-?\d+)',
-                     lambda m: f'LIMIT {"ALL" if m.group(2) == "-1" else m.group(2)} OFFSET {m.group(1)}',
-                     sql, flags=re.IGNORECASE)  # LIMIT offset, count → LIMIT count OFFSET offset
-        sql = re.sub(r'\bLIMIT\s+-1\b', 'LIMIT ALL', sql, flags=re.IGNORECASE)  # LIMIT -1 → LIMIT ALL
+        sql = _translate_sql(args[0])
         if len(args) > 1:
             args = args[1]
         else:
@@ -286,6 +278,27 @@ class Connection:
         return Cursor(self.__connection)
 
 
+def _translate_sql(query):
+    """
+    Translate an SQLite-flavoured SQL statement to PostgreSQL.
+
+    :param query: the statement to translate.
+    :type query: str
+    :returns: the translated statement.
+    :rtype: str
+    """
+    sql = query.replace("?", "%s")      # qmark → format paramstyle
+    sql = sql.replace(" REGEXP ", " ~ ")  # SQLite REGEXP → PostgreSQL ~
+    # TODO: remove when gramps PR #2178 (_quote_column) is merged into core
+    sql = sql.replace("ON media(desc)", "ON media(desc_)")
+    sql = re.sub(r'\bBLOB\b', 'BYTEA', sql)  # SQLite BLOB → PostgreSQL BYTEA
+    sql = re.sub(r'\bLIMIT\s+(-?\d+)\s*,\s*(-?\d+)',
+                 lambda m: f'LIMIT {"ALL" if m.group(2) == "-1" else m.group(2)} OFFSET {m.group(1)}',
+                 sql, flags=re.IGNORECASE)  # LIMIT offset, count → LIMIT count OFFSET offset
+    sql = re.sub(r'\bLIMIT\s+-1\b', 'LIMIT ALL', sql, flags=re.IGNORECASE)  # LIMIT -1 → LIMIT ALL
+    return sql
+
+
 # -------------------------------------------------------------------------
 #
 # Cursor class
@@ -312,7 +325,8 @@ class Cursor:
         :param kwargs: arguments to be passed to the sqlite3 execute statement
         :type kwargs: list
         """
-        self.__cursor.execute(*args, **kwargs)
+        sql = _translate_sql(args[0])
+        self.__cursor.execute(sql, *args[1:], **kwargs)
 
     def fetchmany(self):
         """

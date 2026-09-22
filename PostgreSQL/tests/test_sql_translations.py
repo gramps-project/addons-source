@@ -76,7 +76,7 @@ if "GRAMPS_RESOURCES" not in os.environ:
     )
 
 try:
-    from PostgreSQL.postgresql import Connection, PostgreSQL
+    from PostgreSQL.postgresql import Connection, Cursor, PostgreSQL
 except Exception as _err:
     raise unittest.SkipTest("PostgreSQL module unavailable: %s" % _err)
 
@@ -102,6 +102,18 @@ def _translated(sql):
     return cursor.execute.call_args[0][0]
 
 
+def _cursor_execute_call(*args, **kwargs):
+    """Return the call_args that Cursor.execute() passes to the underlying
+    psycopg2 cursor, given the same (sql[, params]) args a caller like
+    gramps-web-api's dbapi.cursor().execute() would pass."""
+    mock_connection = mock.MagicMock()
+    mock_psycopg2_cursor = mock.MagicMock()
+    mock_connection.cursor.return_value = mock_psycopg2_cursor
+    with Cursor(mock_connection) as cur:
+        cur.execute(*args, **kwargs)
+    return mock_psycopg2_cursor.execute.call_args
+
+
 # -------------------------------------------------------------------------
 #
 # TestExecuteQmarkParamstyle
@@ -124,6 +136,44 @@ class TestExecuteQmarkParamstyle(unittest.TestCase):
     def test_no_placeholders_unchanged(self):
         sql = "SELECT * FROM person"
         self.assertEqual(_translated(sql), sql)
+
+
+# -------------------------------------------------------------------------
+#
+# TestCursorExecuteQmarkParamstyle
+#
+# -------------------------------------------------------------------------
+class TestCursorExecuteQmarkParamstyle(unittest.TestCase):
+    """? → %s substitution in Cursor.execute(), i.e. the `with
+    dbapi.cursor() as cur: cur.execute(...)` path used by raw-SQL callers
+    like gramps-web-api's preload_event_backlinks(), as opposed to the
+    connection-level dbapi.execute() covered by TestExecuteQmarkParamstyle
+    above. Before this fix, Cursor.execute() passed SQL straight to
+    psycopg2 untranslated, so `?` placeholders raised a raw syntax error
+    instead of running -- see gramps-project/gramps-web-api#999.
+    """
+
+    def test_single_placeholder_with_params(self):
+        call = _cursor_execute_call(
+            "SELECT * FROM reference WHERE ref_class = ?", ["Event"]
+        )
+        sql, params = call[0]
+        self.assertEqual(sql, "SELECT * FROM reference WHERE ref_class = %s")
+        self.assertEqual(params, ["Event"])
+
+    def test_multiple_placeholders(self):
+        call = _cursor_execute_call(
+            "SELECT * FROM reference WHERE ref_class = ? AND treeid = ?",
+            ["Event", 7],
+        )
+        sql, params = call[0]
+        self.assertEqual(sql.count("%s"), 2)
+        self.assertNotIn("?", sql)
+        self.assertEqual(params, ["Event", 7])
+
+    def test_no_params_no_placeholders(self):
+        call = _cursor_execute_call("SELECT * FROM person")
+        self.assertEqual(call[0], ("SELECT * FROM person",))
 
 
 # -------------------------------------------------------------------------
