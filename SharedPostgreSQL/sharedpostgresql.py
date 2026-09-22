@@ -67,7 +67,12 @@ class SharedPostgreSQL(SharedDBAPI):
 
     def _sql_type(self, schema_type, max_length):
         result = super()._sql_type(schema_type, max_length)
-        return "bytea" if result == "BLOB" else result
+        if result == "BLOB":
+            return "bytea"
+        # INTEGER is 32-bit in PostgreSQL; "change" timestamps overflow in 2038.
+        if schema_type == "integer":
+            return "BIGINT"
+        return result
 
     def get_summary(self):
         """
