@@ -63,6 +63,17 @@ import sys
 import time
 import unittest
 
+# README.md's documented invocation (`cd live_tests && python3 test_live_
+# ....py`) has Python add this script's own directory to sys.path
+# automatically, which is what a bare `import live_harness` relies on.
+# That doesn't happen under `python3 -m unittest GrampsWebApiDb.live_
+# tests.test_live_...` (the invocation style the addon's own tests/
+# suite uses, per the repo's CLAUDE.md) -- sys.path there only has the
+# caller's cwd, not this directory -- so add it explicitly.
+LIVE_TESTS_DIR = os.path.dirname(os.path.abspath(__file__))
+if LIVE_TESTS_DIR not in sys.path:
+    sys.path.insert(0, LIVE_TESTS_DIR)
+
 import live_harness
 from live_harness import RestClient, TEST_TAG, import_webapidb, mint_api_key, new_mirror_dir
 
