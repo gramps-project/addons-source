@@ -1454,6 +1454,19 @@ class TestTransactionCommit(unittest.TestCase):
     def setUp(self):
         self.db = new_instance()
         self.db.web_client = mock.MagicMock()
+        # A couple of tests below set self.db._missing_write_permissions
+        # to exercise the real rejection path, which calls
+        # _notify_missing_write_permission() -- on a host with a display,
+        # has_display() is True and that pops a real, modal GTK dialog
+        # that blocks the test run until dismissed by hand. These tests
+        # aren't about the dialog itself (see TestNotifyMissingWrite
+        # Permission for that), so suppress it the same has_display()
+        # way _notify_missing_write_permission() checks.
+        self.patcher = mock.patch.object(
+            grampswebapidb, "has_display", return_value=False
+        )
+        self.patcher.start()
+        self.addCleanup(self.patcher.stop)
         # A push that fails for a connectivity reason now persists the
         # payload via _set_metadata() for later retry (see
         # TestPendingPushQueue), so even the plain push tests here need
@@ -2175,6 +2188,15 @@ class TestConflictRetryAgainstARealDatabase(unittest.TestCase):
 # -------------------------------------------------------------------------
 class TestMissingWritePermissionsAgainstARealDatabase(unittest.TestCase):
     def setUp(self):
+        # See TestTransactionCommit.setUp(): rejecting a commit here
+        # calls _notify_missing_write_permission(), which pops a real
+        # modal dialog on a host with a display unless has_display() is
+        # suppressed.
+        self.patcher = mock.patch.object(
+            grampswebapidb, "has_display", return_value=False
+        )
+        self.patcher.start()
+        self.addCleanup(self.patcher.stop)
         tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
         self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
         db = make_database("sqlite")
@@ -3886,6 +3908,14 @@ class TestUndoRedo(unittest.TestCase):
     def setUp(self):
         self.db = new_instance()
         self.db.undodb = mock.MagicMock()
+        # See TestTransactionCommit.setUp(): the missing-write-
+        # permissions tests below reject through the same real dialog
+        # path unless has_display() is suppressed.
+        self.patcher = mock.patch.object(
+            grampswebapidb, "has_display", return_value=False
+        )
+        self.patcher.start()
+        self.addCleanup(self.patcher.stop)
 
     def test_undo_pushes_with_undo_flag(self):
         txn = FakeTransaction([(0, TXNADD, "H1", None, person_data("H1"))])
