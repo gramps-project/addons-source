@@ -48,8 +48,9 @@ from gi.repository import Gtk, Gdk
 from gramps.gen.lib.json_utils import object_to_dict
 from gramps.gen.merge.diff import diff_items
 from gramps.gen.dbstate import DbState
-from gramps.gen.utils.db import get_participant_from_event
+from gramps.gen.utils.db import get_participant_from_event, navigation_label
 from gramps.gen.db import DbTxn
+from gramps.gen.db.dbconst import CLASS_TO_KEY_MAP
 from gramps.gui.plug import tool
 from gramps.gui.display import display_url
 from gramps.gui.managedwindow import ManagedWindow
@@ -142,6 +143,10 @@ ACT_ACT = [(A_NONE, A_NONE, A_NONE),
 
 OBJ_LST = ['Family', 'Person', 'Citation', 'Event', 'Media', 'Note', 'Place',
            'Repository', 'Source', 'Tag']
+# Any further primary types known to the database follow the core ten.
+OBJ_LST += [name for name in CLASS_TO_KEY_MAP if name not in OBJ_LST]
+# The following maps a db signal name prefix back to its object type
+OBJ_BY_SIGNAL = {name.lower(): name for name in OBJ_LST}
 # The following is so the translations file will contain the main object names
 OBJ_XLT = [_('Family'), _('Person'), _('Citation'), _('Event'), _('Media'),
            _('Note'), _('Place'), _('Repository'), _('Source'), _('Tag')]
@@ -1045,7 +1050,7 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
         referenced, this will end up with no action initially.
         Should never get a delete operation'''
         edit_hndl = self.diff_list[self.diff_iter][HNDL]
-        obj_type = args[0].capitalize()
+        obj_type = OBJ_BY_SIGNAL[args[0]]
         handle_func1 = self.db1.method('get_%s_from_handle', obj_type)
         handle_func2 = self.db2.method('get_%s_from_handle', obj_type)
         if args[1] == 'update':
@@ -1246,9 +1251,14 @@ class MySa(SimpleAccess):
             return (self.gid(obj), trunc(obj.get()))
         elif isinstance(obj, Tag):
             return ("", obj.name)
-        else:
-            return ("", "Error: incorrect object class in describe: '%s'"
-                    % type(obj))
+        # Other primary types use the label shown in the navigator.
+        label, dummy = navigation_label(self.dbase, obj.__class__.__name__,
+                                        obj)
+        if label:
+            gid = self.gid(obj)
+            return (gid, trunc(label.replace("[%s] " % gid, "", 1)))
+        return ("", "Error: incorrect object class in describe: '%s'"
+                % type(obj))
 
 
 def trunc(content):
