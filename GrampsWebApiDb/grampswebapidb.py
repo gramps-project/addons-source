@@ -1515,6 +1515,49 @@ def _restore_birth_death_indices(db, snapshot, trans):
     return restored
 
 
+def _apply_true_birth_death_indices(db, true_indices, trans):
+    """_bootstrap_full_resync()'s counterpart to _restore_birth_death_indices():
+    correct birth_ref_index/death_ref_index against the server's own true
+    values (``true_indices``, a {handle: (birth_ref_index, death_ref_index)}
+    map from WebApiHandler.get_person_birth_death_indices()) rather than a
+    prior local snapshot.
+
+    _restore_birth_death_indices() only has something to restore *from* --
+    a mirror already holds a value worth preserving across the wipe this
+    resync just did. A brand-new bootstrap mirror has no such value (see
+    _snapshot_birth_death_indices()'s own docstring): the local snapshot
+    it captures right before the wipe is always empty, so nothing was ever
+    corrected on the very sync where ImportXml's document-order heuristic
+    is *most* likely to disagree with the truth -- confirmed live
+    (live_tests/test_live_birth_death_index_bootstrap.py) to produce a
+    wrong-forever index and a permanently false push conflict on that
+    person's very first future edit, no matter what the edit was actually
+    about (diff_items() compares the whole object, not just what changed
+    -- see the module docstring).
+
+    Ground truth instead of a carried-forward guess: for every Person
+    ImportXml just recomputed a heuristic value for, if the server's real
+    value differs, use that instead. Same self._pulling-context and
+    commit-count-return contract as _restore_birth_death_indices().
+    """
+    corrected = 0
+    for handle, (true_birth, true_death) in true_indices.items():
+        if not db.has_person_handle(handle):
+            continue
+        person = db.get_person_from_handle(handle)
+        changed = False
+        if true_birth != person.birth_ref_index:
+            person.birth_ref_index = true_birth
+            changed = True
+        if true_death != person.death_ref_index:
+            person.death_ref_index = true_death
+            changed = True
+        if changed:
+            db.commit_person(person, trans)
+            corrected += 1
+    return corrected
+
+
 def _diff_snapshots(before, after):
     """Diff two {(obj_class, handle): data} snapshots (_snapshot_all_
     objects()'s own shape) into a transaction_to_json()-shaped change
@@ -3138,6 +3181,24 @@ class WebApiDB(SQLite):
         (_queue_pending_push()) rather than raced against whatever is in
         flight -- deferred, not dropped: _finish_async_op() flushes the
         queue once the in-flight chain completes.
+
+        self._recording_note (set only around _record_conflict_notes()'s
+        own commit -- see that method) is the one exception: it never
+        queues, even when self._syncing is held. That docstring claims
+        attaching a note is "safe even if that push itself hits a
+        conflict" purely because merge() unions list-valued changes --
+        but that safety only actually applies to a push that goes out
+        through _push_payload_async()'s own resync-then-merge conflict
+        handling, not to one sitting in the pending-push queue, whose own
+        conflict handling has always been (and, after a reentrancy hazard
+        found trying to change it -- see _flush_one_pending_push()'s
+        on_push_error -- still is) an unconditional drop. Confirmed live
+        (live_tests/test_live_repeated_conflict_note_trail.py) that a
+        note commit landing in the queue this way lost the note with
+        nothing to show for it, exactly contradicting that docstring.
+        _send_note_payload_best_effort() sends it immediately instead --
+        a single attempt, no resync, no retry, no queueing -- so it never
+        reaches that path in the first place.
         """
         if not payload:
             if is_retry and self._retry_chain_done is not None:
@@ -3145,6 +3206,11 @@ class WebApiDB(SQLite):
             return
         if not is_retry:
             if self._syncing:
+                if self._recording_note:
+                    self._send_note_payload_best_effort(
+                        payload, undo=undo, message=message
+                    )
+                    return
                 self._queue_pending_push(payload, undo=undo, message=message)
                 return
             self._syncing = True
@@ -3156,6 +3222,56 @@ class WebApiDB(SQLite):
         self._push_payload_async(
             payload, on_done, on_error, undo=undo, is_retry=is_retry, message=message
         )
+
+    def _send_note_payload_best_effort(self, payload, undo=False, message=None):
+        """Push a message-note commit right now, bypassing both the
+        self._syncing single-flight gate and the pending-push queue --
+        see _start_push()'s own docstring for why self._recording_note
+        routes here instead of queuing like any other payload would.
+
+        Deliberately does *not* go through _push_payload_async(): that
+        method's conflict handling triggers a full resync
+        (_resync_after_conflict_async() -> _full_resync_async()), which
+        touches self.dbapi -- exactly what self._syncing exists to keep
+        only one chain doing at a time (see _start_push()'s docstring).
+        Firing that here, concurrently with whatever outer chain is still
+        running (and still holds self._syncing), would race it. A single,
+        best-effort attempt with no resync/retry/requeue on failure is
+        the safe trade: this is pure network I/O on io_runner, no
+        self.dbapi touch, so nothing here can race the outer chain either
+        way -- and if this one attempt fails for any reason, including a
+        genuine conflict, it's logged and left at that, same as this
+        addon already accepts for a plain connectivity failure that
+        doesn't get queued. No further note-about-this-note is recorded
+        either: self._recording_note is still True for the whole
+        duration (see _record_conflict_notes()), so a nested
+        transaction_commit() from this call's own failure handling would
+        itself just recurse into this same method -- avoided entirely by
+        not attempting one.
+        """
+
+        def do_push():
+            # io_runner: pure network, no self.dbapi touch -- see
+            # _push_payload_async()'s do_push() for why
+            # _use_background_push() belongs here too.
+            background = self._use_background_push(payload)
+            self.web_client.push_transaction(
+                payload, undo=undo, background=background, message=message
+            )
+
+        def on_sent(_result):
+            pass
+
+        def on_send_error(exc):
+            LOG.warning(
+                "Could not send a message-note commit immediately (%s); "
+                "not queued or retried, to avoid racing the chain it's "
+                "reporting on. The note exists locally but the server "
+                "won't see it this session.",
+                exc,
+            )
+
+        self.io_runner.run(do_push, self._guarded(on_sent), self._guarded(on_send_error))
 
     def _finish_async_op(self, on_done):
         """Wrap a top-level async chain's true completion handler so
@@ -3354,27 +3470,77 @@ class WebApiDB(SQLite):
         retry's local commit as the finish line -- see _start_push()'s
         docstring for the bug this specifically fixes.
         """
-        if undo or is_retry:
+        def give_up():
             LOG.warning(
                 "Giving up on %d local change(s) after a repeated or "
                 "undo/redo conflict; the local mirror was not resent to "
                 "the server.",
                 len(payload),
             )
+            # Same "never let a discarded edit vanish without a trace"
+            # commitment as every other give-up point in this file (a
+            # fresh push's non-retryable rejection, a queued push that
+            # conflicts or is non-retryable on replay, a queue eviction --
+            # see _record_undelivered_push_notes()'s own docstring). This
+            # one was the sole exception: a retry (or undo/redo) that
+            # conflicts *again* dropped the payload with nothing but this
+            # log line -- confirmed live (live_tests/
+            # test_live_repeated_conflict_note_trail.py) to leave zero
+            # trace on the server-side object at all, not even a Note.
+            # _is_message_note_push() still guards this the same way it
+            # guards every other call site, so a note-commit that itself
+            # loses this same race doesn't recurse.
+            if not _is_message_note_push(message):
+                self._record_undelivered_push_notes(
+                    payload,
+                    "it conflicted with the server's current data a second "
+                    "time and could not be reconciled automatically",
+                )
             on_done(None)
+
+        if undo or is_retry:
+            # undo/redo: retrying against data that changed underneath it
+            # is a murkier case (are we replaying the reversal, or the
+            # original edit?) than retrying a plain commit -- left as
+            # resync-and-give-up unconditionally, same as before this
+            # feature existed; see the module docstring.
+            #
+            # is_retry: the retry's own nested push conflicted *again*.
+            # A "retry harder for a provably safe, collision-free edit"
+            # policy was attempted here (see git history) and reverted:
+            # repeatedly reapplying the *same* fixed payload against a
+            # local mirror that a previous attempt already merged into is
+            # not equivalent to a fresh retry from the original intent,
+            # and produced real, incorrect "genuine collision" reports on
+            # the second attempt for a purely list-additive edit (an
+            # already-merged attribute re-diffed against the same
+            # original "new" was misread as two different, conflicting
+            # items) -- confirmed while building the regression tests for
+            # it, not just a hypothetical concern. Giving up after one
+            # retry, unconditionally, is the safe, correct behavior until
+            # a real fix computes a fresh "new" for each additional
+            # attempt instead of resubmitting a stale one.
+            give_up()
             return
 
-        # This call is itself already known-valid (reached only via a
-        # self._guarded() callback further up the chain), but scheduling
-        # run_retry() below is a fresh hop through the main loop
-        # (self.runner.run() -> another GLib.idle_add) -- close() could
-        # still run in that narrow gap before run_retry() actually
-        # executes. Re-checked inside run_retry() itself, same reasoning
-        # as _full_resync_async()'s rebuild() -- see that method's
-        # comment for the fuller explanation of why a fresh self._guarded()
-        # wrapping alone can't catch this (it only stops the *outcome*
-        # from being delivered, not the DbTxn from running in the first
-        # place).
+        self._schedule_retry(payload, undo, on_done, on_error, message=message)
+
+    def _schedule_retry(self, payload, undo, on_done, on_error, message=None):
+        """_after_conflict_resync()'s "actually run the retry attempt"
+        step.
+
+        This call is itself already known-valid (reached only via a
+        self._guarded() callback further up the chain), but scheduling
+        run_retry() below is a fresh hop through the main loop
+        (self.runner.run() -> another GLib.idle_add) -- close() could
+        still run in that narrow gap before run_retry() actually
+        executes. Re-checked inside run_retry() itself, same reasoning
+        as _full_resync_async()'s rebuild() -- see that method's comment
+        for the fuller explanation of why a fresh self._guarded()
+        wrapping alone can't catch this (it only stops the *outcome*
+        from being delivered, not the DbTxn from running in the first
+        place).
+        """
         run_id = self._run_id
 
         def on_retry_db_error(exc):
@@ -3602,6 +3768,30 @@ class WebApiDB(SQLite):
 
         def on_push_error(exc):
             if isinstance(exc, WebApiPushConflict):
+                # A resync-then-merge treatment (the same one a fresh
+                # conflict gets, via _after_conflict_resync()) was tried
+                # here and reverted: it's genuinely unsafe as a general
+                # queue-flush policy. The reconciliation it triggers can
+                # itself commit further local objects (tag creation,
+                # note attachment) whose *own* pushes can land back in
+                # this exact queue while _flush_one_pending_push()'s own
+                # recursion is still unwinding over the same closure-
+                # captured ``pending`` list -- confirmed to actually
+                # happen (a live rerun produced a real "pop from empty
+                # list" crash from the reentrant pop, and a runaway
+                # cascade of "give up" notes about the tag-creation
+                # sub-commits' own failed pushes, each one _is_message_
+                # note_push() doesn't recognize as a note-commit itself).
+                # Dropping is the honest outcome for the general case:
+                # a queued payload's "old" snapshot is stale by
+                # definition, so a merge here can't reliably tell a
+                # genuine collision apart from an uncontested one either.
+                # See _start_push()'s own comment for the *narrower* fix
+                # that actually closes the gap this was trying to solve
+                # (a note-commit specifically getting queued and lost)
+                # without this general reentrancy hazard: a note-record
+                # push no longer queues behind self._syncing in the first
+                # place, so it essentially never reaches this branch.
                 LOG.warning(
                     "A queued push of %d change(s) conflicts with the "
                     "server's current data and cannot be replayed safely; "
@@ -3772,8 +3962,27 @@ class WebApiDB(SQLite):
         conflict, since attaching a note is a list-valued change
         merge() already unions correctly (unlike the scalar edit this
         note exists to record in the first place).
+
+        Also forces self._retrying False for the duration, saving and
+        restoring whatever it was: with an inline (synchronous) runner --
+        every unit test in this file, and in effect on a very fast
+        connection -- _retry_after_conflict()'s own DbTxn.__exit__() ->
+        transaction_commit() -> ... -> a give-up that calls here (see
+        _after_conflict_resync()) all happen nested *inside* that same
+        DbTxn's __exit__ call, before its own `finally: self._retrying =
+        False` ever runs. Left alone, transaction_commit() reads
+        self._retrying (still True from the *outer* retry) for this
+        method's own tag/note commits and treats them as
+        is_retry=True -- stealing the outer retry chain's own
+        self._retry_chain_done/_retry_chain_error instead of completing
+        independently, and skipping the queue-vs-immediate routing
+        _start_push() would otherwise apply. This bookkeeping is not
+        itself a conflict retry no matter what call stack it happens to
+        run on top of.
         """
         self._recording_note = True
+        was_retrying = self._retrying
+        self._retrying = False
         try:
             message_tag = self._get_or_create_tag(MESSAGE_TAG_NAME)
             todo_tag = self._get_or_create_tag(MESSAGE_TODO_OPEN_TAG_NAME)
@@ -3801,6 +4010,7 @@ class WebApiDB(SQLite):
                     getattr(self, f"commit_{name}")(obj, trans)
         finally:
             self._recording_note = False
+            self._retrying = was_retrying
 
     def _record_undelivered_push_notes(self, payload, reason):
         """Attach a gramps-connect-style "message" Note to every add/
@@ -4168,7 +4378,13 @@ class WebApiDB(SQLite):
             # download" matters for this cursor.
             sync_cursor = self._fetch_newest_transaction_id()
             data = self.web_client.download_export()
-            return data, sync_cursor
+            # Bootstrap has no prior local mirror to carry a correct
+            # birth_ref_index/death_ref_index forward from (see
+            # _apply_true_birth_death_indices()'s docstring) -- fetch the
+            # server's ground truth instead, on this same io_runner
+            # network call alongside the export itself.
+            true_birth_death_indices = self.web_client.get_person_birth_death_indices()
+            return data, sync_cursor, true_birth_death_indices
 
         # Ticks once a second, capped at DOWNLOAD_END_PCT, for as long as
         # the download is in flight -- fires because
@@ -4205,7 +4421,7 @@ class WebApiDB(SQLite):
             # this file does rather than assumed away.
             LOG.debug("bootstrap resync: tree closed during download; aborting")
             return
-        data, sync_cursor = result
+        data, sync_cursor, true_birth_death_indices = result
         LOG.debug(
             "bootstrap resync: downloaded a %.1f MB export in %.2fs",
             len(data) / (1024 * 1024),
@@ -4217,7 +4433,6 @@ class WebApiDB(SQLite):
         self._pulling = True
         try:
             before = self._snapshot_all_objects()
-            birth_death_snapshot = _snapshot_birth_death_indices(self)
             cleared = 0
             with DbTxn(
                 _("Clear local mirror before full resync"), self, batch=True
@@ -4250,21 +4465,23 @@ class WebApiDB(SQLite):
                 self.get_total(),
                 monotonic() - imported_at,
             )
-            if birth_death_snapshot:
+            if true_birth_death_indices:
                 with DbTxn(
-                    _("Restore birth/death event references lost on reimport"),
+                    _("Correct birth/death event references against the "
+                      "server"),
                     self,
                     batch=True,
                 ) as trans:
-                    restored = _restore_birth_death_indices(
-                        self, birth_death_snapshot, trans
+                    corrected = _apply_true_birth_death_indices(
+                        self, true_birth_death_indices, trans
                     )
-                if restored:
+                if corrected:
                     LOG.debug(
-                        "bootstrap resync: restored birth/death event "
-                        "reference index on %d person(s) Gramps XML "
-                        "re-import can't preserve",
-                        restored,
+                        "bootstrap resync: corrected birth/death event "
+                        "reference index on %d person(s) against the "
+                        "server's ground truth (Gramps XML re-import "
+                        "can't preserve either field at all)",
+                        corrected,
                     )
             self._describe_resync_to_views(before)
         finally:
