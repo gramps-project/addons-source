@@ -561,6 +561,49 @@ class WebApiHandler:
         version = parse_version(self.get_api_version())
         return version is not None and version >= BACKGROUND_MIN_API_VERSION
 
+    def get_person_birth_death_indices(self) -> dict[str, tuple[int, int]]:
+        """{handle: (birth_ref_index, death_ref_index)} for every Person
+        the server currently holds -- the ground truth for the one thing
+        a Gramps XML export/reimport cannot preserve (see
+        grampswebapidb.py's _snapshot_birth_death_indices() docstring:
+        neither field has any XML representation at all, so ImportXml
+        recomputes both by a document-order heuristic that's only
+        sometimes right). GET /people/ serializes with
+        GrampsJSONEncoder.extract_object() -- not the data_to_object()-
+        compatible shape (see _resync_after_conflict_async()'s docstring
+        on why that rules out reconstructing a whole Person from it) --
+        but it does include these two plain integer fields verbatim, and
+        that's all this needs.
+
+        Costs one full paginated listing of the tree's People endpoint --
+        proportionate for a bootstrap resync, which already does a
+        full-tree XML export/reimport of comparable size; deliberately
+        *not* called on every ordinary conflict-triggered resync, where a
+        local mirror already has a correct prior value to carry forward
+        instead (see _bootstrap_full_resync()'s own comment on why
+        bootstrap specifically has no such value to carry).
+        """
+        result: dict[str, tuple[int, int]] = {}
+        page = 1
+        pagesize = 200
+        while True:
+            params = {"page": page, "pagesize": pagesize}
+            data, _headers = self._get_json(f"{self.url}/people/?{urlencode(params)}")
+            if not data:
+                break
+            for person in data:
+                handle = person.get("handle")
+                if handle is None:
+                    continue
+                result[handle] = (
+                    person.get("birth_ref_index", -1),
+                    person.get("death_ref_index", -1),
+                )
+            if len(data) < pagesize:
+                break
+            page += 1
+        return result
+
     def get_identity(self) -> str:
         """ "<username>@<hostname>" identifying the account+server this
         handler authenticates as -- see grampswebapidb.py's

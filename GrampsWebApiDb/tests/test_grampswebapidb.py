@@ -1689,13 +1689,22 @@ class TestTransactionCommit(unittest.TestCase):
             side_effect=stub_async_done(None),
         ) as resync, mock.patch.object(
             self.db, "_retry_after_conflict"
-        ) as retry:
+        ) as retry, mock.patch.object(
+            self.db, "_record_undelivered_push_notes"
+        ) as record_note:
             with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
                 self.db._start_push(
                     transaction_to_json(trans), is_retry=True
                 )  # must not raise
         self.assertEqual(resync.call_count, 1)
         retry.assert_not_called()
+        # Confirmed live (live_tests/test_live_repeated_conflict_note_trail.py)
+        # that a second conflict on the retry used to drop the payload
+        # with nothing but the log line above -- no Note, no trace at
+        # all. _after_conflict_resync()'s give-up branch now leaves the
+        # same kind of trace every other give-up point in this file does.
+        record_note.assert_called_once()
+        self.assertEqual(record_note.call_args[0][0], transaction_to_json(trans))
 
     def test_undo_conflict_is_not_retried(self):
         # Retrying an undo/redo against data that changed underneath it is
@@ -1714,11 +1723,14 @@ class TestTransactionCommit(unittest.TestCase):
             side_effect=stub_async_done(None),
         ) as resync, mock.patch.object(
             self.db, "_retry_after_conflict"
-        ) as retry:
+        ) as retry, mock.patch.object(
+            self.db, "_record_undelivered_push_notes"
+        ) as record_note:
             with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
                 self.db._start_push(transaction_to_json(trans), undo=True)
         self.assertEqual(resync.call_count, 1)
         retry.assert_not_called()
+        record_note.assert_called_once()
 
     def test_missing_write_permissions_rejects_before_local_commit(self):
         # self._missing_write_permissions is set once at load() by
@@ -2126,6 +2138,26 @@ class TestConflictRetryAgainstARealDatabase(unittest.TestCase):
         final = self.db.get_person_from_handle(self.handle)
         self.assertTrue(final.get_privacy())
         self.assertEqual(len(final.get_attribute_list()), 1)
+
+    def test_repeated_conflict_gives_up_and_leaves_a_note(self):
+        # The retry's own nested push conflicting *again* gives up
+        # unconditionally (see _after_conflict_resync()'s own comment on
+        # why a "retry harder for collision-free edits" policy was tried
+        # and reverted) -- but, unlike before that gap was closed, it
+        # must still leave a Note explaining the loss rather than
+        # vanishing without a trace.
+        self.db.web_client.push_transaction.side_effect = WebApiPushConflict(
+            "Object has changed"
+        )
+
+        with self._stub_full_resync_to(self._make_server_fresh()):
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING") as cm:
+                self._add_an_attribute()
+
+        self.assertTrue(any("Giving up" in line for line in cm.output))
+        final = self.db.get_person_from_handle(self.handle)
+        self.assertEqual(len(final.get_attribute_list()), 0)
+        self.assertEqual(len(final.get_note_list()), 1)
 
 
 # -------------------------------------------------------------------------
@@ -6097,7 +6129,12 @@ class TestPendingPushQueue(unittest.TestCase):
     def test_flush_drops_a_queued_push_that_now_conflicts(self):
         # A queued payload's "old" snapshot is stale by definition, so the
         # resync-and-merge path can't be applied to it -- dropping it is
-        # the honest outcome, loudly logged.
+        # the honest outcome, loudly logged. A resync-then-merge treatment
+        # was tried here and reverted: it's a real reentrancy hazard, not
+        # just a stale-"old" precision concern -- see on_push_error's own
+        # comment for what it does instead to close the actual gap this
+        # was aiming at (a note-commit specifically getting queued and
+        # lost).
         self.metadata["pending_pushes"] = [
             {"payload": self._payload("H1"), "undo": False},
             {"payload": self._payload("H2"), "undo": False},
