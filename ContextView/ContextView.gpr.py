@@ -35,7 +35,7 @@ register(
         "on that person; the name in bold marks the way back to the home "
         "person."
     ),
-    version = '1.0.1',
+    version = '1.0.2',
     gramps_target_version=MODULE_VERSION,
     status=STABLE,
     audience=EVERYONE,
