@@ -3866,6 +3866,16 @@ class WebApiDB(SQLite):
         this as one runner (main-thread) step, since it's 100% local DB
         work with no network of its own.
 
+        Also logs a diagnostic warning, separately from
+        _conflict_summary_lines()'s notes, whenever the just-resynced
+        server copy turns out to be byte-for-byte identical (by
+        diff_items()'s own rules) to the "old" the original push was
+        rejected against -- a signal the rejection may have been
+        transient rather than a real, lasting server-side edit. See the
+        comment at that check for why silence from
+        _conflict_summary_lines() alone can't be read as that signal
+        (an uncontested list-additive edit is silent too).
+
         Any genuine conflict _merge_or_overwrite() had to resolve
         automatically -- a discarded scalar field, a demoted primary
         name, an actively-resolved field like Citation confidence, or a
@@ -3897,6 +3907,35 @@ class WebApiDB(SQLite):
                         if has_handle(handle):
                             current = getattr(self, f"get_{name}_from_handle")(handle)
                             old_data = entry.get("old")
+                            if old_data is not None and not diff_items(
+                                entry["_class"], old_data, object_to_dict(current)
+                            ):
+                                # The server rejected the original push as
+                                # "Object has changed", yet the mirror this
+                                # very resync just downloaded is identical
+                                # (by the server's own diff_items() rules --
+                                # see push_transaction()'s docstring on why
+                                # they must agree) to what we sent as "old".
+                                # A real edit merges here with zero lines
+                                # too (list-additive changes never conflict
+                                # -- see _conflict_summary_lines()'s own
+                                # docstring), so that silence alone doesn't
+                                # distinguish "nothing to report" from "this
+                                # rejection looks spurious in hindsight" --
+                                # this does, by checking the one comparison
+                                # that actually matters directly.
+                                LOG.warning(
+                                    "Conflict retry for %s %s: the server "
+                                    "rejected the original push as changed, "
+                                    "but the freshly-resynced server copy "
+                                    "is identical to what was sent as "
+                                    '"old" -- the rejection may have been '
+                                    "transient (a change already reverted "
+                                    "or reapplied before this resync) "
+                                    "rather than a lasting server-side edit.",
+                                    entry["_class"],
+                                    handle,
+                                )
                             pruned = []
                             merged = _merge_or_overwrite(
                                 current, obj, self, old_data=old_data, pruned=pruned

@@ -2172,6 +2172,44 @@ class TestConflictRetryAgainstARealDatabase(unittest.TestCase):
         self.assertEqual(len(final.get_attribute_list()), 0)
         self.assertEqual(len(final.get_note_list()), 1)
 
+    def test_retry_flags_a_resync_that_matches_the_rejected_old(self):
+        # A plain attribute add is list-additive: merge() unions it
+        # without any two-sided disagreement, so _conflict_summary_
+        # lines() stays silent here exactly as it would for a genuine,
+        # successful merge -- that silence alone can't tell "fine,
+        # nothing to report" apart from "the resync shows the server
+        # never actually diverged from what we sent as 'old' at all".
+        # Resyncing to the *same* stale_local the original push was
+        # rejected against (instead of _make_server_fresh()'s diverged
+        # copy) simulates exactly that second case.
+        stale_local = remove_object(
+            object_to_data(self.db.get_person_from_handle(self.handle))
+        )
+        calls = self._push_conflicts_once_then_succeeds()
+
+        with self._stub_full_resync_to(stale_local):
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING") as cm:
+                self._add_an_attribute()
+
+        self.assertEqual(len(calls), 2)
+        self.assertTrue(any("identical to what was sent" in line for line in cm.output))
+
+    def test_retry_does_not_flag_a_genuine_divergence(self):
+        # The ordinary case (_make_server_fresh() actually diverged the
+        # server side) must not trip the new diagnostic -- the expected
+        # "Server rejected..." warning every conflict logs is fine, this
+        # just confirms the new, separate message isn't also emitted.
+        calls = self._push_conflicts_once_then_succeeds()
+
+        with self._stub_full_resync_to(self._make_server_fresh()):
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING") as cm:
+                self._add_an_attribute()
+
+        self.assertEqual(len(calls), 2)
+        self.assertFalse(
+            any("identical to what was sent" in line for line in cm.output)
+        )
+
 
 # -------------------------------------------------------------------------
 #
