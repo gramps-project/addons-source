@@ -34,14 +34,6 @@ import tempfile
 import unittest
 from types import MethodType, SimpleNamespace
 
-try:
-    import gi
-
-    gi.require_version("Gtk", "3.0")
-    gi.require_version("Gdk", "3.0")
-except (ImportError, ValueError, AttributeError) as err:
-    raise unittest.SkipTest("GTK 3.0 / PyGObject not available: %s" % err)
-
 # ------------------------
 # Gramps modules
 # ------------------------
