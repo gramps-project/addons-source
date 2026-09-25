@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 10:14-0700\n"
-"PO-Revision-Date: 2026-09-04 16:46+0000\n"
+"PO-Revision-Date: 2026-09-25 18:51+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -280,115 +280,89 @@ msgstr "Verificar dados de associação"
 #: AssociationsTool/associationstool.gpr.py:44
 msgid "Display all person Associations in a sortable, hotlinked table"
 msgstr ""
+"Mostrar todas as associações de indivíduos numa tabela ordenável e com "
+"hiperligações"
 
 #: AssociationsTool/associationstool.py:130
 msgid "Associations state tool"
 msgstr "Ferramenta de estado das associações"
 
 #: AssociationsTool/associationstool.py:181
-#, fuzzy, python-format
-#| msgid "Error applying filter: %s"
+#, python-format
 msgid "Error initializing data: %s"
-msgstr "Erro ao aplicar o filtro: %s"
+msgstr "Erro ao inicializar os dados: %s"
 
 #: AssociationsTool/associationstool.py:222
-#, fuzzy, python-format
-#| msgid "Error resetting filter: %s"
+#, python-format
 msgid "Error processing person %s: %s"
-msgstr "Erro ao repor o filtro: %s"
+msgstr "Erro ao processar o indivíduo %s: %s"
 
 #: AssociationsTool/associationstool.py:252
-#, fuzzy
-#| msgid "Process relationships..."
 msgid "Processing associations..."
-msgstr "Processar parentescos..."
+msgstr "A processar associações..."
 
 #: AssociationsTool/associationstool.py:257
-#, fuzzy, python-format
-#| msgid "Could not create the directory: %(path)s"
+#, python-format
 msgid "Could not create progress dialog: %s"
-msgstr "Impossível criar a pasta: %(path)s"
+msgstr "Impossível criar diálogo de progresso: %s"
 
 #: AssociationsTool/associationstool.py:281
-#, fuzzy, python-format
-#| msgid "Produces descendants lines of a person"
+#, python-format
 msgid "Processing %d of %d persons"
-msgstr "Produz linhas de descendentes de um indivíduo"
+msgstr "A processar %d de %d indivíduos"
 
 #: AssociationsTool/associationstool.py:347
-#, fuzzy, python-format
-#| msgid "Error applying filter: %s"
+#, python-format
 msgid "Error displaying associations: %s"
-msgstr "Erro ao aplicar o filtro: %s"
+msgstr "Erro ao mostrar associações: %s"
 
 #: AssociationsTool/associationstool.py:365
 #: AssociationsTool/associationstool.py:448
-#, fuzzy
-#| msgid "Street Name"
 msgid "Starting Name"
-msgstr "Nome da rua"
+msgstr "Nome inicial"
 
 #: AssociationsTool/associationstool.py:368
 #: AssociationsTool/associationstool.py:451
-#, fuzzy
-#| msgid "Sync Associations"
 msgid "Associate"
-msgstr "Sincronizar associações"
+msgstr "Associar"
 
 #: AssociationsTool/associationstool.py:427
 #: AssociationsTool/associationstool.py:459
-#, fuzzy, python-format
-#| msgid "No source information found"
+#, python-format
 msgid "Total associations found: %d"
-msgstr "Sem informações de fontes"
+msgstr "Total de associações encontradas: %d"
 
 #: AssociationsTool/associationstool.py:553
-#, fuzzy
-#| msgid "Edit referenced Person"
 msgid "Edit Starting Person"
-msgstr "Editar indivíduo referenciado"
+msgstr "Editar indivíduo inicial"
 
 #: AssociationsTool/associationstool.py:554
-#, fuzzy
-#| msgid "Edit referenced Person"
 msgid "Edit Associate Person"
-msgstr "Editar indivíduo referenciado"
+msgstr "Editar indivíduo associado"
 
 #: AssociationsTool/associationstool.py:555
-#, fuzzy
-#| msgid "Edit selection"
 msgid "Edit Association"
-msgstr "Editar selecção"
+msgstr "Editar associação"
 
 #: AssociationsTool/associationstool.py:557
-#, fuzzy
-#| msgid "Copy to clipboard"
 msgid "Copy row to clipboard"
-msgstr "Copiar para a memória"
+msgstr "Copiar linha para a memória"
 
 #: AssociationsTool/associationstool.py:558
-#, fuzzy
-#| msgid "Enumerated date from"
 msgid "Create Note from row"
-msgstr "Data de recenseamento de"
+msgstr "Criar nota para a linha"
 
 #: AssociationsTool/associationstool.py:672
-#, fuzzy
-#| msgid "Sync Associations"
 msgid "Association:"
-msgstr "Sincronizar associações"
+msgstr "Associação:"
 
 #: AssociationsTool/associationstool.py:673
-#, fuzzy
-#| msgid "Starting migration..."
 msgid "Starting Person"
-msgstr "A iniciar a migração..."
+msgstr "Indivíduo inicial"
 
 #: AssociationsTool/associationstool.py:675
-#, fuzzy
-#| msgid "Lines type"
 msgid "Link type"
-msgstr "Tipo de linhas"
+msgstr "Tipo de ligação"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
@@ -1439,7 +1413,7 @@ msgstr ": "
 
 #: ContextView/ContextView.gpr.py:29 ContextView/ContextView.py:502
 msgid "Context"
-msgstr ""
+msgstr "Contexto"
 
 #: ContextView/ContextView.gpr.py:31
 msgid ""
@@ -1449,37 +1423,37 @@ msgid ""
 "the top. Click any box to re-centre the chart on that person; the name in "
 "bold marks the way back to the home person."
 msgstr ""
+"Um gráfico que situa uma pessoa no contexto da sua família mais próxima: o "
+"casal no centro, os pais de cada um acima deles, os filhos abaixo e os "
+"irmãos de cada um numa coluna ao seu lado, com o mais velho no topo. Clique "
+"em qualquer caixa para recentrar o gráfico nessa pessoa; o nome em negrito "
+"indica o caminho de regresso ao indivíduo inicial."
 
 #: ContextView/ContextView.py:572
 msgid "Show the previous family"
-msgstr ""
+msgstr "Mostrar a família anterior"
 
 #: ContextView/ContextView.py:575
-#, fuzzy
-#| msgid "Show more details"
 msgid "Show the next family"
-msgstr "Mostrar mais detalhes"
+msgstr "Mostrar a família seguinte"
 
 #: ContextView/ContextView.py:899
-#, fuzzy
-#| msgid "No place is active"
 msgid "No person is active."
-msgstr "Nenhum local activo"
+msgstr "Nenhum indivíduo activo."
 
 #: ContextView/ContextView.py:915
 #, python-format
 msgid "Family %(current)d of %(total)d"
-msgstr ""
+msgstr "Família %(current)d de %(total)d"
 
 #: ContextView/ContextView.py:922
-#, fuzzy, python-format
-#| msgid "Highlight the home person"
+#, python-format
 msgid "family %d lies toward the home person"
-msgstr "Realçar o indivíduo inicial"
+msgstr "família %d tende para o indivíduo inicial"
 
 #: ContextView/ContextView.py:980
 msgid "<b>Bold</b> marks the way to the home person"
-msgstr ""
+msgstr "<b>Negrito</b> marca o regresso ao indivíduo inicial"
 
 #: ContextView/ContextView.py:1389 ContextView/ContextView.py:1599
 #: LifeLineChartView/lifelinechart.py:2622
@@ -1487,38 +1461,28 @@ msgid "Show siblings"
 msgstr "Mostrar irmãos"
 
 #: ContextView/ContextView.py:1402
-#, fuzzy
-#| msgid "About Quilt View"
 msgid "About Context View"
-msgstr "Acerca do gráfico de retalhos"
+msgstr "Acerca da vista contextual"
 
 #: ContextView/ContextView.py:1592
-#, fuzzy
-#| msgid "Show Flag Icons"
 msgid "Show tag colour"
-msgstr "Mostrar ícones de bandeiras"
+msgstr "Mostrar cor da etiqueta"
 
 #: ContextView/ContextView.py:1613
 msgid "Details in each box"
-msgstr ""
+msgstr "Detalhes em cada caixa"
 
 #: ContextView/ContextView.py:1617
-#, fuzzy
-#| msgid "Name of City"
 msgid "Name only"
-msgstr "Nome da cidade"
+msgstr "Só nome"
 
 #: ContextView/ContextView.py:1618
-#, fuzzy
-#| msgid "Name and Surname"
 msgid "Name and dates"
-msgstr "Nome e apelido"
+msgstr "Nome e datas"
 
 #: ContextView/ContextView.py:1619
-#, fuzzy
-#| msgid "Full date and place"
 msgid "Name, dates and places"
-msgstr "Data completa e local"
+msgstr "Nome, datas e locais"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
@@ -6553,16 +6517,12 @@ msgstr ""
 "Compara indivíduos aparentados com qualquer um que cumpra um filtro pessoal"
 
 #: FilterRules/matcheventfilterrole.gpr.py:7
-#, fuzzy
-#| msgid "People with events with the <role>"
 msgid "People from event with role"
-msgstr "Indivíduos com eventos com o <papel>"
+msgstr "Indivíduos do evento com papel"
 
 #: FilterRules/matcheventfilterrole.gpr.py:8
-#, fuzzy
-#| msgid "Matches event of people filter with role"
 msgid "Matches people of event filter with role"
-msgstr "Compara eventos de indivíduos filtrados por papel"
+msgstr "Compara indivíduos do filtro do evento com papel"
 
 #: FilterRules/matcheventfilterrole.py:55
 #: FilterRules/matchpersonfilterrole.py:69
@@ -6570,26 +6530,20 @@ msgid "Role:"
 msgstr "Papel:"
 
 #: FilterRules/matcheventfilterrole.py:56
-#, fuzzy
-#| msgid "People with events with the <role>"
 msgid "Persons with events matching the <event filter> with role"
-msgstr "Indivíduos com eventos com o <papel>"
+msgstr "Indivíduos com eventos que cumprem o <filtro de evento> com papel"
 
 #: FilterRules/matchparentoffilterfamily.gpr.py:7
-#, fuzzy
-#| msgid "Parent Family"
 msgid "Parents of family filter"
-msgstr "Família-mãe"
+msgstr "Pais do filtro de famílias"
 
 #: FilterRules/matchparentoffilterfamily.gpr.py:8
-#, fuzzy
-#| msgid "Matches event of people filter with role"
 msgid "Matches parent of family filter"
-msgstr "Compara eventos de indivíduos filtrados por papel"
+msgstr "Compara pais do filtro de famílias"
 
 #: FilterRules/matchparentoffilterfamily.py:60
 msgid "Parents of <filter> family match"
-msgstr ""
+msgstr "Pais da comparação do <filtro> de famílias"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
@@ -16363,7 +16317,7 @@ msgstr "Erro GetGOV: %s"
 
 #: GetGOV/getgov.py:421
 msgid "GOV link"
-msgstr ""
+msgstr "Ligação GOV"
 
 #: GetGOV/getgov.py:428
 #, python-format
@@ -16466,10 +16420,8 @@ msgid "Clear conversation and context"
 msgstr "Conversa e contexto claros"
 
 #: GrampsAssistant/grampsassistant.py:220
-#, fuzzy
-#| msgid "Gramps Assistant settings"
 msgid "Open the Gramps Assistant wiki page"
-msgstr "Definições do assistente Gramps"
+msgstr "Abrir a página wiki do assistente Gramps"
 
 #: GrampsAssistant/grampsassistant.py:396
 #: GrampsAssistant/grampsassistant.py:760
@@ -16660,6 +16612,11 @@ msgid ""
 "this Family Tree. Opening it as-is would leave the local mirror silently "
 "incomplete or unable to save changes back."
 msgstr ""
+"A conta que se autentica através da GRAMPS_WEB_API_KEY não tem permissões de "
+"servidor necessárias à extensão: %(missing)s. Conceda, pelo menos, o papel "
+"\"%(role)s\" no servidor (ou peça a um administrador que o faça) e depois "
+"reabra esta árvore. Abri-la como está deixaria o espelho local incompleto "
+"sem pré-aviso ou sem poder gravar as alterações no servidor."
 
 #: GrampsWebApiDb/grampswebapidb.py:741
 #, python-format
@@ -16669,6 +16626,11 @@ msgid ""
 "history in a format it cannot read. Upgrade the Gramps installation behind "
 "the Gramps Web API server (or ask its administrator to)."
 msgstr ""
+"Este servidor corre o Gramps %(actual)s, mas a extensão requer um servidor "
+"que execute o Gramps %(required)s ou uma versão mais recente: os servidores "
+"mais antigos serializam o seu histórico de transacções num formato que a "
+"extensão não consegue ler. Actualize o Gramps por trás do servidor da API "
+"Web do Gramps (ou peça ao administrador que o faça)."
 
 #: GrampsWebApiDb/grampswebapidb.py:1008
 msgid "Retry local change after server conflict"
@@ -17386,11 +17348,9 @@ msgstr "Gráfico"
 
 #: GrampyScript/GrampyScript.py:480 GrampyScript/GrampyScript.py:551
 msgid "Ready... (Tab for completions)"
-msgstr ""
+msgstr "Pronto... (Tab para conclusões)"
 
 #: GrampyScript/GrampyScript.py:505
-#, fuzzy
-#| msgid "No title"
 msgid "Untitled"
 msgstr "Sem título"
 
@@ -17399,34 +17359,35 @@ msgid ""
 "If you continue without saving, the changes you have made to this script "
 "will be lost."
 msgstr ""
+"Se continuar sem gravar, as alterações feitas a este script serão perdidas."
 
 #: GrampyScript/GrampyScript.py:1332
 msgid "Gram.py Script Edited Data"
 msgstr "Dados editados pelo escrito Gram.py"
 
 #: GrampyScript/script_descriptions.py:44
-#, fuzzy
-#| msgid "All Names of All People"
 msgid "List All People"
-msgstr "Todos os nomes de todos os indivíduos"
+msgstr "Listar todos os indivíduos"
 
 #: GrampyScript/script_descriptions.py:46
 msgid ""
 "Iterate over every person in the database and show their Gramps ID, given "
 "name, surname, and gender in the results table."
 msgstr ""
+"Percorrer todos os indivíduos na base de dados e mostrar a respectiva ID "
+"Gramps, nome próprio, apelido e sexo na tabela de resultados."
 
 #: GrampyScript/script_descriptions.py:51
-#, fuzzy
-#| msgid "Family Surname"
 msgid "Filter By Surname"
-msgstr "Apelido de família"
+msgstr "Filtrar por apelido"
 
 #: GrampyScript/script_descriptions.py:53
 msgid ""
 "List only the people whose surname matches a given value — a starting point "
 "for narrowing any report down by a condition."
 msgstr ""
+"Listar só indivíduos cujo apelido corresponda a um dado valor — um ponto de "
+"partida para restringir qualquer relatório com base numa condição."
 
 #: GrampyScript/script_descriptions.py:58 Overview/Overview.gpr.py:45
 msgid "Family Overview"
@@ -17437,20 +17398,25 @@ msgid ""
 "List every family together with the father, the mother, and how many "
 "children they have — a quick way to spot families that look incomplete."
 msgstr ""
+"Listar todas as famílias, indicando o pai, a mãe e o número de filhos que "
+"têm — uma forma rápida de identificar famílias que parecem estar incompletas."
 
 #: GrampyScript/script_descriptions.py:66
 msgid "Gender Breakdown (Pie Chart)"
-msgstr ""
+msgstr "Distribuição por sexo (gráfico circular)"
 
 #: GrampyScript/script_descriptions.py:68
 msgid ""
 "Count how many people are male, female, or of unknown gender, then draw a "
 "pie chart of the totals. Check the Chart tab after running."
 msgstr ""
+"Conta quantos indivíduos são do sexo masculino, feminino ou desconhecido e "
+"depois desenhar um gráfico circular com os totais. Veja o separador «Gráfico"
+"» após a execução."
 
 #: GrampyScript/script_descriptions.py:74
 msgid "Age At Death Histogram"
-msgstr ""
+msgstr "Histograma de idade ao óbito"
 
 #: GrampyScript/script_descriptions.py:76
 msgid ""
@@ -17458,10 +17424,13 @@ msgid ""
 "in whole years and draw a histogram of the distribution. Check the Chart tab "
 "after running."
 msgstr ""
+"Para todos os que tenham tanto um nascimento como um óbito, calcula a sua "
+"idade em anos inteiros e elabora um histograma da distribuição. Veja o "
+"separador «Gráfico» após a execução."
 
 #: GrampyScript/script_descriptions.py:82
 msgid "Mark Unsourced People As Private"
-msgstr ""
+msgstr "Marcar indivíduos sem fontes como Privado"
 
 #: GrampyScript/script_descriptions.py:84
 msgid ""
@@ -17469,10 +17438,14 @@ msgid ""
 "them as private, wrapped in begin_changes()/end_changes() so the edits "
 "happen inside a single, undoable transaction."
 msgstr ""
+"Exemplo de edição em lote: localizar todos os indivíduos que não tenham "
+"citações associadas e marcá-las como privadas, dentro das funções "
+"begin_changes()/end_changes(), para que as edições ocorram dentro de uma "
+"única transacção reversível."
 
 #: GrampyScript/script_descriptions.py:91
 msgid "CSV-Ready People Report"
-msgstr ""
+msgstr "Relatório CSV de indivíduos"
 
 #: GrampyScript/script_descriptions.py:93
 msgid ""
@@ -17480,42 +17453,49 @@ msgid ""
 "person. Once it runs, use Data > Save as CSV or Copy to clipboard to export "
 "the Table tab's contents."
 msgstr ""
+"Cria um relatório tabular simples — ID, nome, sexo, ano de nascimento — para "
+"cada pessoa. Depois de o executar, utilize Dados &gt; Gravar como CSV ou "
+"Copiar para a memória para exportar o conteúdo do separador \"Tabela\"."
 
 #: GrampyScript/script_descriptions.py:99
-#, fuzzy
-#| msgid "Active Person : "
 msgid "Active Person Summary"
-msgstr "Indivíduo activo: "
+msgstr "Resumo do indivíduo activo"
 
 #: GrampyScript/script_descriptions.py:101
 msgid ""
 "Show a compact family summary for the currently active person: their record, "
 "parents, spouse, and children."
 msgstr ""
+"Mostra um resumo familiar conciso do indivíduo activo: o seu registo, pais, "
+"cônjuge e filhos."
 
 #: GrampyScript/script_descriptions.py:106
 msgid "Report On Selected People"
-msgstr ""
+msgstr "Relatório da selecção actual"
 
 #: GrampyScript/script_descriptions.py:108
 msgid ""
 "List just the people currently selected (highlighted) in the People view. "
 "Select some rows in the People view before running this script."
 msgstr ""
+"Mostra só indivíduos seleccionados (destacados) na vista \"Indivíduos\". "
+"Seleccione algumas linhas nessa vista antes de executar isto."
 
 #: GrampyScript/script_descriptions.py:114
 msgid "Find People Missing A Birth Date"
-msgstr ""
+msgstr "Localizar indivíduos sem data de nascimento"
 
 #: GrampyScript/script_descriptions.py:116
 msgid ""
 "Data-quality check: list every person who has no recorded birth event, so "
 "you can prioritize research on those records."
 msgstr ""
+"Verificação da qualidade dos dados: lista todos os que não têm qualquer "
+"registo de nascimento, para que se possa priorizar esses registos."
 
 #: GrampyScript/script_descriptions.py:121
 msgid "Births Per Decade (Import Example)"
-msgstr ""
+msgstr "Nascimentos por década (exemplo de importação)"
 
 #: GrampyScript/script_descriptions.py:123
 msgid ""
@@ -17523,12 +17503,14 @@ msgid ""
 "script_helpers.py in this same folder — a template for sharing helper code "
 "between your own scripts with a plain 'import' statement."
 msgstr ""
+"Conta os nascimentos por década, utilizando a função decade() importada do "
+"ficheiro script_helpers.py, nesta mesma pasta — um modelo para partilhar "
+"código auxiliar entre os seus próprios scripts através de uma simples "
+"instrução «import»."
 
 #: GrampyScript/script_descriptions.py:130
-#, fuzzy
-#| msgid "Custom \"test.xml\" file"
 msgid "Custom Filter Example"
-msgstr "Ficheiro \"test.xml\" personalizado"
+msgstr "Exemplo de filtro personalizado"
 
 #: GrampyScript/script_descriptions.py:132
 msgid ""
@@ -17537,10 +17519,14 @@ msgid ""
 "you've already created; if the name doesn't match one, a warning shows up in "
 "the Output tab instead."
 msgstr ""
+"Executa um dos seus próprios filtros personalizados (do gramplet/editor «"
+"Filtros») por nome, utilizando a função custom_filter(). Substitua «filtro "
+"de exemplo» pelo nome de um filtro que já tenha criado; se o nome não "
+"corresponder a nenhum filtro, será exibido um aviso no separador «Saída»."
 
 #: GrampyScript/script_descriptions.py:140
 msgid "Delete Unused Repositories (Delete Example)"
-msgstr ""
+msgstr "Eliminar repositórios não utilizados (exemplo de eliminação)"
 
 #: GrampyScript/script_descriptions.py:142
 msgid ""
@@ -17549,6 +17535,11 @@ msgid ""
 "unlikely to actually delete anything — it's meant to show the pattern, "
 "wrapped in begin_changes()/end_changes() as a single undoable transaction."
 msgstr ""
+"Demonstra a função delete(): remove qualquer registo do repositório ao qual "
+"nenhum outro elemento da árvore faça referência. A maioria das árvores não "
+"tem repositórios não utilizados, pelo que é improvável que isto elimine "
+"efectivamente alguma coisa — destina-se a mostrar o padrão, envolvido em "
+"begin_changes()/end_changes() como uma única transação reversível."
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -24569,40 +24560,28 @@ msgid "The style used for event and person details."
 msgstr "O estilo usado para detalhes do evento e pessoais."
 
 #: Sqlite/ExportSql.py:1720
-#, fuzzy
-#| msgid "January"
 msgid "January 1"
-msgstr "Janeiro"
+msgstr "1 de Janeiro"
 
 #: Sqlite/ExportSql.py:1721
-#, fuzzy
-#| msgid "March"
 msgid "March 1"
-msgstr "Março"
+msgstr "1 de Março"
 
 #: Sqlite/ExportSql.py:1722
-#, fuzzy
-#| msgid "March"
 msgid "March 25"
-msgstr "Março"
+msgstr "25 de Março"
 
 #: Sqlite/ExportSql.py:1723
-#, fuzzy
-#| msgid "September"
 msgid "September 1"
-msgstr "Setembro"
+msgstr "1 de Setembro"
 
 #: Sqlite/ExportSql.py:1749
-#, fuzzy
-#| msgid "Widowed"
 msgid "Flowed"
-msgstr "Enviuvados"
+msgstr "Fluído"
 
 #: Sqlite/ExportSql.py:1750
-#, fuzzy
-#| msgid "PS format"
 msgid "Preformatted"
-msgstr "Formato PS"
+msgstr "Pré-formatado"
 
 #: Sqlite/ExportSql.py:1953
 #, python-format
