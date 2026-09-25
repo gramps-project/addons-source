@@ -628,6 +628,7 @@ import json
 import logging
 import os
 import re
+import unicodedata
 from copy import deepcopy
 from tempfile import NamedTemporaryFile
 from time import monotonic
@@ -1558,6 +1559,81 @@ def _apply_true_birth_death_indices(db, true_indices, trans):
     return corrected
 
 
+def _normalize_strings_to_nfc(data):
+    """Return a copy of an object_to_dict()-shaped value with every
+    string leaf run through unicodedata.normalize("NFC", ...), used by
+    _normalize_reimported_text() below. NFC (precomposed) is the
+    canonical target: the form GEDCOM and most other genealogy tooling
+    already assumes, and the form this addon otherwise treats every
+    string as being in without ever checking.
+    """
+    if isinstance(data, dict):
+        return {key: _normalize_strings_to_nfc(value) for key, value in data.items()}
+    if isinstance(data, list):
+        return [_normalize_strings_to_nfc(item) for item in data]
+    if isinstance(data, str):
+        return unicodedata.normalize("NFC", data)
+    return data
+
+
+def _normalize_reimported_text(db, trans):
+    """Canonicalize every primary object's text to NFC right after a
+    fresh reimport -- called from both _full_resync_async()'s rebuild()
+    and _bootstrap_full_resync(), under the same self._pulling context
+    those already hold, same "correct what the reimport can't be
+    trusted to preserve" shape as _restore_birth_death_indices()/
+    _apply_true_birth_death_indices() above.
+
+    Uses db._iter_raw_data() (see _snapshot_all_objects()'s own
+    docstring) rather than a per-handle get_<type>_from_handle() fetch,
+    for the same reason it does: one bulk SELECT per object type
+    (O(types)), not O(handles) individual ones -- and it hands back the
+    same json_utils-shaped, "_object"-stripped-after-remove_object()
+    form data_to_object() needs, with no live-object round trip needed
+    first.
+
+    Suspected (unconfirmed -- see TODO.md) fix for a spurious push
+    conflict on an object nobody actually edited: Gramps XML export/
+    import is not guaranteed to preserve Unicode normalization form
+    (NFC vs NFD) byte-for-byte, the same class of round-trip-fidelity
+    gap birth_ref_index/death_ref_index already turned out to have (see
+    _snapshot_birth_death_indices()'s own docstring) -- just a gap with
+    an actual XML representation to fall back on here, unlike that
+    case, so there is no local "before" value worth preserving instead;
+    NFC is applied unconditionally regardless of what either side
+    previously held.
+
+    diff_items() -- both this addon's own (_diff_snapshots() and the
+    merge helpers below) and gramps-web-api's own old_unchanged()
+    server-side -- compares every string leaf with plain "==", which
+    treats a precomposed "ń" and a decomposed "n" + combining acute as
+    genuinely different text even though they render identically and
+    the user never touched that field. Left uncorrected, that drift
+    survives every future resync (re-exporting/re-importing the same
+    bytes just reproduces the same form again), so the very next edit
+    to that object -- regardless of what it actually touches -- would
+    spuriously conflict, forever: exactly _push_payload_async()'s
+    resync-then-retry-conflicts-again give-up path.
+
+    O(every primary object) once per resync -- real cost, but the same
+    order of magnitude _snapshot_all_objects() already pays in the same
+    resync for its own before/after comparison, and only an object
+    whose text actually needs correcting gets a commit (most won't).
+    Returns the number of objects corrected, same convention as
+    _restore_birth_death_indices()/_apply_true_birth_death_indices().
+    """
+    corrected = 0
+    for key in set(CLASS_TO_KEY_MAP.values()):
+        name = KEY_TO_NAME_MAP[key]
+        for handle, data in db._iter_raw_data(key):
+            data = remove_object(data)
+            normalized = _normalize_strings_to_nfc(data)
+            if normalized != data:
+                getattr(db, f"commit_{name}")(data_to_object(normalized), trans)
+                corrected += 1
+    return corrected
+
+
 def _diff_snapshots(before, after):
     """Diff two {(obj_class, handle): data} snapshots (_snapshot_all_
     objects()'s own shape) into a transaction_to_json()-shaped change
@@ -1612,6 +1688,70 @@ def _diff_snapshots(before, after):
                 }
             )
     return entries
+
+
+def _walk_conflict_diff(obj_class, handle, old, new, path=""):
+    """Diagnostic aid for TODO.md's open "spurious first-push conflict"
+    gap: recursively walk two object_to_dict() shapes (the same "old"
+    payload snapshot and current-object shape old_unchanged()/
+    diff_items() compare server-side) and LOG.warning() every leaf that
+    actually differs, skipping "change" the same way diff_items() does
+    so this doesn't just repeat what's already known to be ignored.
+
+    The server's 400 only ever says "Object has changed", never which
+    field -- this exists to answer that, called right after a resync has
+    brought the local mirror to the server's true current state (see
+    _log_conflict_field_diffs()), so "old" vs the now-current object is
+    exactly the disagreement that caused the conflict.
+
+    Flags a string leaf that's only unequal before NFC normalization as
+    a likely decomposed-vs-precomposed Unicode mismatch (e.g. a
+    diacritic typed through macOS's native text input as "n" + a
+    combining accent, compared against a precomposed "ń" the server
+    holds) rather than a genuine edit -- suspected but unconfirmed; see
+    TODO.md.
+    """
+    if old == new:
+        return
+    if isinstance(old, dict) and isinstance(new, dict):
+        for key in old.keys() | new.keys():
+            if key == "change":
+                continue
+            _walk_conflict_diff(
+                obj_class, handle, old.get(key), new.get(key), f"{path}.{key}"
+            )
+        return
+    if isinstance(old, list) and isinstance(new, list):
+        for i, (item_old, item_new) in enumerate(zip(old, new)):
+            _walk_conflict_diff(
+                obj_class, handle, item_old, item_new, f"{path}[{i}]"
+            )
+        if len(old) != len(new):
+            LOG.warning(
+                "conflict-diff: %s %s%s -- list length differs (%d vs %d)",
+                obj_class, handle, path, len(old), len(new),
+            )
+        return
+    if isinstance(old, str) and isinstance(new, str):
+        nfc_equal = unicodedata.normalize("NFC", old) == unicodedata.normalize(
+            "NFC", new
+        )
+        LOG.warning(
+            "conflict-diff: %s %s%s differs: %r vs %r%s",
+            obj_class,
+            handle,
+            path,
+            old,
+            new,
+            " [NFC-EQUAL -- looks like a Unicode normalization "
+            "(NFC/NFD) mismatch, not a real edit]"
+            if nfc_equal
+            else "",
+        )
+        return
+    LOG.warning(
+        "conflict-diff: %s %s%s differs: %r vs %r", obj_class, handle, path, old, new
+    )
 
 
 #: object_to_dict() keys that never represent a real field edit: "change"
@@ -3038,6 +3178,46 @@ class WebApiDB(SQLite):
             )
         self._media_poll_failures += 1
 
+    def _commit_base(self, obj, obj_key, trans, change_time):
+        """Normalize every string field on ``obj`` to NFC before DBAPI's
+        own _commit_base() ever serializes it to storage -- the single
+        choke point every commit_<type>() method (DbGeneric) funnels
+        through, for every write this local mirror ever makes: an
+        ordinary local edit, and _apply_change()'s replay of an
+        incrementally pulled server change alike. Confirmed ImportXml
+        (the reimport _full_resync_async()/_bootstrap_full_resync() run)
+        commits the same way -- self.db.commit_person()/commit_family()/
+        ... -- not some bulk/raw bypass, so nothing writes a primary
+        object without passing through here.
+
+        Deliberately skipped when trans.batch: a reimport's own DbTxn is
+        batch=True, and DBAPI._commit_base() itself already skips its
+        usual per-object trans.add() bookkeeping in that case -- paying
+        a fresh object_to_dict()/data_to_object() round trip here
+        regardless would add real cost to every one of a resync's
+        potentially tens of thousands of objects, whether or not that
+        particular object needs correcting. _normalize_reimported_text()
+        (called once, in bulk, via _iter_raw_data(), right after the
+        reimport itself -- see _full_resync_async()'s rebuild()) is the
+        batch-mode equivalent of this, and re-commits only the objects
+        that actually need it.
+
+        See _normalize_strings_to_nfc() for why NFC, and TODO.md gap 7
+        for the bug this and _normalize_reimported_text() exist to
+        close -- two directions of the same round-trip-fidelity
+        problem: this one stops the addon itself (or whatever handed it
+        the text -- GTK, an input method, anything upstream of Gramps)
+        from ever being the source of a Unicode-normalization mismatch;
+        _normalize_reimported_text() cleans one up after the fact if it
+        arrived via a reimport instead.
+        """
+        if not trans.batch:
+            data = object_to_dict(obj)
+            normalized = _normalize_strings_to_nfc(data)
+            if normalized != data:
+                obj = data_to_object(normalized)
+        return super()._commit_base(obj, obj_key, trans, change_time)
+
     def transaction_begin(self, transaction):
         """Hook DbTxn.__enter__ (which calls this immediately, before the
         transaction's body runs) to snapshot every primary object's full
@@ -3447,6 +3627,40 @@ class WebApiDB(SQLite):
             do_push, self._guarded(on_pushed), self._guarded(on_push_error)
         )
 
+    def _log_conflict_field_diffs(self, payload):
+        """Diagnostic aid, called right after a resync has brought the
+        local mirror to the server's true current state (see
+        _after_conflict_resync(), which calls this before deciding
+        retry-vs-give-up either way): for each conflicting entry, diff
+        its pre-conflict "old" snapshot against the now-current local
+        copy of that same object and LOG.warning() what actually
+        differs, via _walk_conflict_diff().
+
+        Answers a question the server's own 400 never does -- which
+        field disagreed -- for TODO.md's open "spurious first-push
+        conflict on a freshly-resynced mirror, no other editor involved"
+        gap. A delete entry or one whose "old" is already None (a fresh
+        add) has nothing to diff against; skipped, same as
+        _record_undelivered_push_notes() skips a delete for the same
+        reason.
+        """
+        for entry in payload:
+            if entry["type"] == "delete" or entry.get("old") is None:
+                continue
+            key = CLASS_TO_KEY_MAP.get(entry["_class"])
+            if key is None:
+                continue
+            name = KEY_TO_NAME_MAP[key]
+            handle = entry["handle"]
+            if not getattr(self, f"has_{name}_handle")(handle):
+                continue
+            current = getattr(self, f"get_{name}_from_handle")(handle)
+            current_dict = object_to_dict(current)
+            if diff_items(entry["_class"], entry["old"], current_dict):
+                _walk_conflict_diff(
+                    entry["_class"], handle, entry["old"], current_dict
+                )
+
     def _after_conflict_resync(
         self, payload, undo, is_retry, on_done, on_error, message=None
     ):
@@ -3470,6 +3684,8 @@ class WebApiDB(SQLite):
         retry's local commit as the finish line -- see _start_push()'s
         docstring for the bug this specifically fixes.
         """
+        self._log_conflict_field_diffs(payload)
+
         def give_up():
             LOG.warning(
                 "Giving up on %d local change(s) after a repeated or "
@@ -4280,6 +4496,19 @@ class WebApiDB(SQLite):
                     self.get_total(),
                     monotonic() - imported_at,
                 )
+                with DbTxn(
+                    _("Normalize Unicode text form lost on reimport"),
+                    self,
+                    batch=True,
+                ) as trans:
+                    normalized = _normalize_reimported_text(self, trans)
+                if normalized:
+                    LOG.debug(
+                        "resync: normalized Unicode text form on %d "
+                        "object(s) Gramps XML re-import doesn't preserve "
+                        "consistently",
+                        normalized,
+                    )
                 if birth_death_snapshot:
                     with DbTxn(
                         _("Restore birth/death event references lost on reimport"),
@@ -4504,6 +4733,19 @@ class WebApiDB(SQLite):
                 self.get_total(),
                 monotonic() - imported_at,
             )
+            with DbTxn(
+                _("Normalize Unicode text form lost on reimport"),
+                self,
+                batch=True,
+            ) as trans:
+                normalized = _normalize_reimported_text(self, trans)
+            if normalized:
+                LOG.debug(
+                    "bootstrap resync: normalized Unicode text form on %d "
+                    "object(s) Gramps XML re-import doesn't preserve "
+                    "consistently",
+                    normalized,
+                )
             if true_birth_death_indices:
                 with DbTxn(
                     _("Correct birth/death event references against the "
