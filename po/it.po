@@ -68,8 +68,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-03 12:30-0700\n"
-"PO-Revision-Date: 2026-07-31 16:24+0000\n"
-"Last-Translator: medardo <medardo@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-09-10 08:51+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -77,7 +77,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.9.1\n"
 
 msgid "Birthdays"
 msgstr "Compleanni"
@@ -92,17 +92,13 @@ msgid "Only show birthdays with tag"
 msgstr "Mostra solo compleanni con etichetta"
 
 msgid "Proximity to current date"
-msgstr ""
+msgstr "Vicinanza alla data odierna"
 
-#, fuzzy
-#| msgid "Sort by "
 msgid "Sort birthdays by"
-msgstr "Ordina per "
+msgstr "Ordina compleanni per"
 
-#, fuzzy
-#| msgid "Birth date of deceased"
 msgid "Sort dates of death by"
-msgstr "Data di nascita del deceduto"
+msgstr "Ordina le date di decesso in base a"
 
 msgid "a gramplet that displays death dates in sorted order"
 msgstr "Un gramplet che visualizza le date di decesso in ordine cronologico"
@@ -1380,10 +1376,8 @@ msgstr ""
 "persona principale."
 
 #: CombinedView/personpage.py:306 CombinedView/personpage.py:368
-#, fuzzy
-#| msgid "Adding Tags to family (%s)"
 msgid "Add existing child to family"
-msgstr "Aggiunta di etichette alla famiglia (%s)"
+msgstr "Aggiungi figlio esistente alla famiglia"
 
 #: CombinedView/personpage.py:597
 #, python-format
@@ -3904,6 +3898,9 @@ msgid ""
 "bigger the value, more the center is moved to the left towards the "
 "descendant."
 msgstr ""
+"Se questo valore è 0, la barra dei figli viene centrata sotto quella del "
+"coniuge. Maggiore è il valore, più il centro viene spostato a sinistra, "
+"verso il discendente."
 
 #: DescendantsLines/DescendantsLines.py:1752
 msgid "OL_PAD"
@@ -3923,11 +3920,11 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1763
 msgid "Children distance"
-msgstr ""
+msgstr "Distanza tra i figli"
 
 #: DescendantsLines/DescendantsLines.py:1764
 msgid "The horizontal distance between two children of the same family."
-msgstr ""
+msgstr "La distanza orizzontale tra due figli della stessa famiglia."
 
 #: DescendantsLines/DescendantsLines.py:1768
 msgid "Vertical edge child to child-bar"
@@ -4414,7 +4411,7 @@ msgstr "Massimizza"
 
 #: DynamicWeb/dynamicweb.py:3026
 msgid "Media Index"
-msgstr ""
+msgstr "Indice dei file multimediali"
 
 #: DynamicWeb/dynamicweb.py:3027
 msgid "Media Type"
@@ -4921,6 +4918,7 @@ msgstr ""
 #: DynamicWeb/dynamicweb.py:4983
 msgid "Whether to insert sources author in the sources title"
 msgstr ""
+"Se inserire il nome dell'autore nelle fonti, o solo il titolo delle fonti"
 
 #: DynamicWeb/dynamicweb.py:4988
 msgid "Whether to hide the Gramps ID"
@@ -4978,6 +4976,8 @@ msgstr "Il formato predefinito per l'indice dei luoghi"
 msgid ""
 "Whether to include dates columns (birth, death, marriage) on the index pages"
 msgstr ""
+"Se includere le colonne relative alle date (nascita, morte, matrimonio) "
+"nelle pagine dell'indice"
 
 #: DynamicWeb/dynamicweb.py:5058
 msgid "Generate a families index page"
@@ -4999,6 +4999,10 @@ msgid ""
 "example, in the media index page, the names of the individuals, families, "
 "places, sources that reference the media."
 msgstr ""
+"Se includere i riferimenti agli elementi nelle pagine dell'indice. Ad "
+"esempio, nella pagina dell'indice dei contenuti multimediali, i nomi delle "
+"persone, delle famiglie, dei luoghi e delle fonti a cui fanno riferimento "
+"tali contenuti."
 
 #: DynamicWeb/dynamicweb.py:5080
 msgid "Default number of entries in the indexes"
@@ -5032,15 +5036,20 @@ msgstr "Scegli la forma predefinita del grafico ad albero SVG"
 #: DynamicWeb/dynamicweb.py:5123
 msgid "Choose the default SVG tree parents distribution (for fan charts only)"
 msgstr ""
+"Scegli la distribuzione predefinita dei genitori nell'albero SVG (solo per i "
+"grafici a ventaglio)"
 
 #: DynamicWeb/dynamicweb.py:5133
 msgid "Choose the default SVG tree children distribution (for fan charts only)"
 msgstr ""
+"Scegli la distribuzione predefinita dei figli nell'albero SVG (solo per i "
+"grafici a ventaglio)"
 
 #: DynamicWeb/dynamicweb.py:5144
 msgid ""
 "Choose the background color scheme for the persons in the SVG tree graph"
 msgstr ""
+"Scegli lo schema di colori di sfondo per le persone nel grafico ad albero SVG"
 
 #: DynamicWeb/dynamicweb.py:5152 Themes/themes.py:175 Themes/themes.py:225
 msgid "Theme"
@@ -5092,7 +5101,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5227
 msgid "Whether to print a menu for the custom page"
-msgstr ""
+msgstr "Indica se stampare un menu per le pagine personalizzate"
 
 #: DynamicWeb/dynamicweb.py:5231
 msgid "Pages selection"
@@ -5532,6 +5541,9 @@ msgid ""
 "and children of attached families, recursively) stopping at persons in "
 "<Filter>."
 msgstr ""
+"Trova le persone raggiungibili a partire da <Persona> (percorrendo "
+"ricorsivamente tutti i genitori e i figli delle famiglie collegate), "
+"fermandosi alle persone presenti in <Filtro>."
 
 #: ExcludeSubtreeFilter/excludesubtree.py:121
 #: FilterRules/isrelatedwithfiltermatch.py:80
@@ -5581,12 +5593,11 @@ msgid "Include descendants of the center person"
 msgstr "Mostra il numero di discendenti della persona corrente"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1183
-#, fuzzy
-#| msgid "Shows the number of descendants of the current person"
 msgid ""
 "Whether to display the children and full descending lines of the center "
 "person"
-msgstr "Mostra il numero di discendenti della persona corrente"
+msgstr ""
+"Se visualizzare i figli e tutte le linee discendenti della persona centrale"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1190
 #, fuzzy
@@ -12063,7 +12074,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:682 Form/form_us.xml.h:721
 msgid "Number of children living"
-msgstr ""
+msgstr "Numero di figli viventi"
 
 #: Form/form_us.xml.h:686 Form/form_us.xml.h:725 Form/form_us.xml.h:764
 #: Form/form_us.xml.h:813
@@ -12367,7 +12378,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:884
 msgid "Number of children ever born"
-msgstr ""
+msgstr "Numero di figli avuti in totale"
 
 #: Form/form_us.xml.h:889
 msgid "Incorporated place or township"
@@ -12663,7 +12674,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:972
 msgid "How many children has she ever borne, not counting stillbirths?"
-msgstr ""
+msgstr "Quanti figli ha partorito in totale, senza contare quelli nati morti?"
 
 #: Form/form_us.xml.h:973
 msgid "Census Date"
@@ -13387,6 +13398,8 @@ msgstr ""
 #: Form/form_us.xml.h:1296
 msgid "Children over 6 and under 17 not attending school in 1894"
 msgstr ""
+"Figli di età compresa tra i 6 e i 17 anni che nel 1894 non frequentavano la "
+"scuola"
 
 #: Form/form_us.xml.h:1298
 msgid "Births in 1894"
@@ -14568,7 +14581,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:1908
 msgid "Parent of how many children"
-msgstr ""
+msgstr "Genitore di quanti figli"
 
 #: Form/form_us.xml.h:1909
 msgid "Number of times married"
@@ -14712,11 +14725,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:2029
 msgid "Male Children 5 and Under"
-msgstr ""
+msgstr "Bambini di sesso maschile di età pari o inferiore a 5 anni"
 
 #: Form/form_us.xml.h:2030
 msgid "Female Children 5 and Under"
-msgstr ""
+msgstr "Bambini di sesso femminile di età pari o inferiore a 5 anni"
 
 #: Form/form_us.xml.h:2031
 msgid "Males 5 to 20 Years of Age"
@@ -16797,7 +16810,7 @@ msgstr ""
 
 #: GrampsWebSync/presentation.py:270
 msgid "Checking which media files are missing…"
-msgstr ""
+msgstr "Verifica dei file multimediali mancanti…"
 
 #: GrampsWebSync/presentation.py:271
 msgid "Applied the changes to this computer."
@@ -16810,16 +16823,12 @@ msgid "Sending the changes to the server…"
 msgstr "Impossibile sincronizzare le modifiche al server."
 
 #: GrampsWebSync/presentation.py:284
-#, fuzzy
-#| msgid "Downloading %s media file(s)"
 msgid "Downloading media files…"
-msgstr "Scaricamento di %s file multimediali"
+msgstr "Scaricamento dei file multimediali…"
 
 #: GrampsWebSync/presentation.py:285
-#, fuzzy
-#| msgid "Uploading %s media file(s)"
 msgid "Uploading media files…"
-msgstr "Caricamento di %s file multimediali"
+msgstr "Caricamento dei file multimediali…"
 
 #: GrampsWebSync/presentation.py:293
 #, fuzzy
@@ -16834,10 +16843,8 @@ msgid "Apply changes"
 msgstr "Modifiche locali"
 
 #: GrampsWebSync/presentation.py:296
-#, fuzzy
-#| msgid "Uploading %s media file(s)"
 msgid "Transfer media files"
-msgstr "Caricamento di %s file multimediali"
+msgstr "Trasferisci file multimediali"
 
 #: GrampsWebSync/presentation.py:304
 #, fuzzy
@@ -16939,8 +16946,8 @@ msgstr ""
 #, python-format
 msgid "Also transfer %(total)s media file (%(counts)s)"
 msgid_plural "Also transfer %(total)s media files (%(counts)s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Trasferisci anche %(total)s file multimediale (%(counts)s)"
+msgstr[1] "Trasferisci anche %(total)s file multimediali (%(counts)s)"
 
 #: GrampsWebSync/presentation.py:658
 #, python-format
@@ -16948,7 +16955,10 @@ msgid "%s media file is missing on both sides and cannot be transferred."
 msgid_plural ""
 "%s media files are missing on both sides and cannot be transferred."
 msgstr[0] ""
+"%s file multimediale manca da entrambe le parti, e non può essere trasferito."
 msgstr[1] ""
+"%s file multimediali mancano da entrambe le parti, e non possono essere "
+"trasferiti."
 
 #: GrampsWebSync/presentation.py:681
 #, python-format
