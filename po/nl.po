@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 10:14-0700\n"
-"PO-Revision-Date: 2026-09-04 16:46+0000\n"
+"PO-Revision-Date: 2026-09-25 18:51+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -189,7 +189,7 @@ msgstr "Een pagina toevoegen met het aantal voorouders per generatie."
 
 #: AncestryTableReport/AncestryTableReport.py:495
 msgid "Mask the name of the calendar in the dates"
-msgstr "Masker de naam van de kalender in de data"
+msgstr "De naam van de kalender maskeren in de datums"
 
 #: AncestryTableReport/AncestryTableReport.py:496
 msgid ""
@@ -197,7 +197,7 @@ msgid ""
 "calendar in the dates."
 msgstr ""
 "Standaard toont Gramps, met uitzondering van de Gregoriaanse data, de naam "
-"van de kalender in de data."
+"van de kalender in de datums."
 
 #: AncestryTableReport/AncestryTableReport.py:519
 #: RepositoriesReport/RepositoriesReport.py:175
@@ -284,120 +284,92 @@ msgstr "Archief-assistent"
 
 #: AssociationsTool/associationstool.gpr.py:43
 msgid "Check Associations data"
-msgstr "Connectiegegevens controleren"
+msgstr "Relatiegegevens controleren"
 
 #: AssociationsTool/associationstool.gpr.py:44
 msgid "Display all person Associations in a sortable, hotlinked table"
-msgstr ""
+msgstr "Alle persoonsrelaties weergeven in een sorteerbare tabel met hyperlinks"
 
 #: AssociationsTool/associationstool.py:130
 msgid "Associations state tool"
-msgstr "Connectiegegevens status-hulpmiddel"
+msgstr "Relatiegegevens status-hulpmiddel"
 
 #: AssociationsTool/associationstool.py:181
-#, fuzzy, python-format
-#| msgid "Error applying filter: %s"
+#, python-format
 msgid "Error initializing data: %s"
-msgstr "Fout bij toepassing filter: %s"
+msgstr "Fout bij gegevens initialiseren: %s"
 
 #: AssociationsTool/associationstool.py:222
-#, fuzzy, python-format
-#| msgid "Error resetting filter: %s"
+#, python-format
 msgid "Error processing person %s: %s"
-msgstr "Fout bij herstel van filter: %s"
+msgstr "Fout bij verwerken persoon %s: %s"
 
 #: AssociationsTool/associationstool.py:252
-#, fuzzy
-#| msgid "Process relationships..."
 msgid "Processing associations..."
 msgstr "Relaties verwerken..."
 
 #: AssociationsTool/associationstool.py:257
-#, fuzzy, python-format
-#| msgid "Could not create the directory: %(path)s"
+#, python-format
 msgid "Could not create progress dialog: %s"
-msgstr "Kan de directory niet maken: %(path)s"
+msgstr "Kon voortgangsdialoog niet smaken: %s"
 
 #: AssociationsTool/associationstool.py:281
-#, fuzzy, python-format
-#| msgid "Produces descendants lines of a person"
+#, python-format
 msgid "Processing %d of %d persons"
-msgstr "Produceert afstammelingslijnen van een persoon"
+msgstr "%d van %d personen verwerken"
 
 #: AssociationsTool/associationstool.py:347
-#, fuzzy, python-format
-#| msgid "Error applying filter: %s"
+#, python-format
 msgid "Error displaying associations: %s"
-msgstr "Fout bij toepassing filter: %s"
+msgstr "Fout bij weergeven van relaties: %s"
 
 #: AssociationsTool/associationstool.py:365
 #: AssociationsTool/associationstool.py:448
-#, fuzzy
-#| msgid "Street Name"
 msgid "Starting Name"
-msgstr "Straatnaam"
+msgstr "Startnaam"
 
 #: AssociationsTool/associationstool.py:368
 #: AssociationsTool/associationstool.py:451
-#, fuzzy
-#| msgid "Sync Associations"
 msgid "Associate"
-msgstr "Connecties synchroniseren"
+msgstr "Relateren"
 
 #: AssociationsTool/associationstool.py:427
 #: AssociationsTool/associationstool.py:459
-#, fuzzy, python-format
-#| msgid "No source information found"
+#, python-format
 msgid "Total associations found: %d"
-msgstr "Geen broninformatie gevonden"
+msgstr "Totaal aantal gevonden relaties: %d"
 
 #: AssociationsTool/associationstool.py:553
-#, fuzzy
-#| msgid "Edit referenced Person"
 msgid "Edit Starting Person"
-msgstr "Bewerk gerefereerd persoon"
+msgstr "Startpersoon bewerken"
 
 #: AssociationsTool/associationstool.py:554
-#, fuzzy
-#| msgid "Edit referenced Person"
 msgid "Edit Associate Person"
-msgstr "Bewerk gerefereerd persoon"
+msgstr "Gerelateerde persoon bewerke"
 
 #: AssociationsTool/associationstool.py:555
-#, fuzzy
-#| msgid "Edit selection"
 msgid "Edit Association"
-msgstr "Selectie bewerken"
+msgstr "Relatie bewerken"
 
 #: AssociationsTool/associationstool.py:557
-#, fuzzy
-#| msgid "Copy to clipboard"
 msgid "Copy row to clipboard"
-msgstr "Kopiëren naar klembord"
+msgstr "Rij kopiëren naar klembord"
 
 #: AssociationsTool/associationstool.py:558
-#, fuzzy
-#| msgid "Enumerated date from"
 msgid "Create Note from row"
-msgstr "Opgesomde datum van"
+msgstr "Notitie maken vanuit rij"
 
 #: AssociationsTool/associationstool.py:672
-#, fuzzy
-#| msgid "Sync Associations"
 msgid "Association:"
-msgstr "Connecties synchroniseren"
+msgstr "Relatie:"
 
 #: AssociationsTool/associationstool.py:673
-#, fuzzy
-#| msgid "Starting migration..."
 msgid "Starting Person"
-msgstr "Migratie starten…"
+msgstr "Startpersoon"
 
 #: AssociationsTool/associationstool.py:675
-#, fuzzy
-#| msgid "Lines type"
 msgid "Link type"
-msgstr "Type lijnen"
+msgstr "Type koppeling"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
@@ -1466,7 +1438,7 @@ msgstr ": "
 
 #: ContextView/ContextView.gpr.py:29 ContextView/ContextView.py:502
 msgid "Context"
-msgstr ""
+msgstr "Context"
 
 #: ContextView/ContextView.gpr.py:31
 msgid ""
@@ -1476,37 +1448,38 @@ msgid ""
 "the top. Click any box to re-centre the chart on that person; the name in "
 "bold marks the way back to the home person."
 msgstr ""
+"Een diagram die een persoon in de context van zijn directe familie plaatst: "
+"het echtpaar in het midden, de ouders van elke partner erboven, de kinderen "
+"eronder en de broers en zussen van elke partner in een kolom aan hun eigen "
+"kant, de oudste bovenaan. Klik op een kader om het diagram opnieuw op die "
+"persoon te centreren; de vetgedrukte naam markeert de weg terug naar de "
+"centrale persoon."
 
 #: ContextView/ContextView.py:572
 msgid "Show the previous family"
-msgstr ""
+msgstr "Vorige gezin weergeven"
 
 #: ContextView/ContextView.py:575
-#, fuzzy
-#| msgid "Show more details"
 msgid "Show the next family"
-msgstr "Meer details weergeven"
+msgstr "Volgende gezin weergeven"
 
 #: ContextView/ContextView.py:899
-#, fuzzy
-#| msgid "No place is active"
 msgid "No person is active."
-msgstr "Geen plaats is actief"
+msgstr "Geen persoon actief."
 
 #: ContextView/ContextView.py:915
 #, python-format
 msgid "Family %(current)d of %(total)d"
-msgstr ""
+msgstr "Gezin %(current)d van %(total)d"
 
 #: ContextView/ContextView.py:922
-#, fuzzy, python-format
-#| msgid "Highlight the home person"
+#, python-format
 msgid "family %d lies toward the home person"
-msgstr "Markeer de centrale persoon"
+msgstr "gezin %d ligt richting centrale persoon"
 
 #: ContextView/ContextView.py:980
 msgid "<b>Bold</b> marks the way to the home person"
-msgstr ""
+msgstr "<b>Vet</b> markeert richting de centrale persoon"
 
 #: ContextView/ContextView.py:1389 ContextView/ContextView.py:1599
 #: LifeLineChartView/lifelinechart.py:2622
@@ -1514,38 +1487,28 @@ msgid "Show siblings"
 msgstr "Broers/zussen weergeven"
 
 #: ContextView/ContextView.py:1402
-#, fuzzy
-#| msgid "About Quilt View"
 msgid "About Context View"
-msgstr "Over Quiltweergave"
+msgstr "Over Contextweergave"
 
 #: ContextView/ContextView.py:1592
-#, fuzzy
-#| msgid "Show Flag Icons"
 msgid "Show tag colour"
-msgstr "Pictogrammen van vlaggen weergeven"
+msgstr "Labelkleur weergeven"
 
 #: ContextView/ContextView.py:1613
 msgid "Details in each box"
-msgstr ""
+msgstr "Details in elk kader"
 
 #: ContextView/ContextView.py:1617
-#, fuzzy
-#| msgid "Name of City"
 msgid "Name only"
-msgstr "Stadsnaam"
+msgstr "Alleen naam"
 
 #: ContextView/ContextView.py:1618
-#, fuzzy
-#| msgid "Name and Surname"
 msgid "Name and dates"
-msgstr "Naam en achternaam"
+msgstr "Naam en datums"
 
 #: ContextView/ContextView.py:1619
-#, fuzzy
-#| msgid "Full date and place"
 msgid "Name, dates and places"
-msgstr "Volledige datum en plaats"
+msgstr "Naam, datums en plaatsen"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
@@ -2157,7 +2120,7 @@ msgstr "Dubbelklik op een rij om naar de overeenkomstige persoon te navigeren."
 
 #: DNAMatches/dnamatches.py:195
 msgid "Right click to edit selected association."
-msgstr "Klik met de rechtermuisknop om de geselecteerde connectie te bewerken."
+msgstr "Klik met de rechtermuisknop om de geselecteerde relatie te bewerken."
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
@@ -2442,11 +2405,11 @@ msgstr "Overlijdensdatum"
 
 #: DateOfDeathGramplet/DateOfDeathGramplet.gpr.py:25
 msgid "a gramplet that displays death dates in sorted order"
-msgstr "een gramplet die overlijdensdata in gesorteerde volgorde weergeeft"
+msgstr "een gramplet die overlijdensdatums weergeeft in gesorteerde volgorde"
 
 #: DateOfDeathGramplet/DateOfDeathGramplet.py:40
 msgid "Sort dates of death by"
-msgstr "Overlijdensdata sorteren op"
+msgstr "Overlijdensdatums sorteren op"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
@@ -2483,7 +2446,7 @@ msgstr "📋 Kopiëren"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:120
 msgid "Copy selected people to clipboard"
-msgstr "Geselecteerde personen naar klembord kopiëren"
+msgstr "Geselecteerde personen kopiëren naar klembord"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:128
 msgid "🗑 Clear"
@@ -2525,7 +2488,7 @@ msgstr "Opmerking over ouders"
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:278
 #, python-format
 msgid "%s (association)"
-msgstr "%s (convectie)"
+msgstr "%s (relatie)"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:283
 msgid "Note on Person"
@@ -3388,7 +3351,7 @@ msgstr "Of de namenindex aan het einde van het rapport moet worden opgenomen."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1517
 msgid "Include index of Dates"
-msgstr "Index van datums toevoegen"
+msgstr "Inclusief index van datums"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1518
 msgid "Whether to include the index of Dates at the end of the report."
@@ -3449,12 +3412,12 @@ msgstr "De stijl die wordt gebruikt voor detailgegevens van opmerkingen."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1674
 msgid "The style used for the date in the Index of Dates."
-msgstr "De stijl die wordt gebruikt voor de datum in de index van datums."
+msgstr "De datumstijl die wordt gebruikt in de index van datums."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1684
 msgid "The style used for the events in the Index of Dates."
 msgstr ""
-"De stijl die wordt gebruikt voor de gebeurtenissen in de Index of Dates."
+"De stijl die wordt gebruikt voor de gebeurtenissen in de index van datums."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1694
 msgid "The style used for the header in the Index of Names."
@@ -4553,7 +4516,7 @@ msgstr "Bestand klaar"
 
 #: DynamicWeb/dynamicweb.py:2986 DynamicWeb/dynamicweb.py:5037
 msgid "Include dates columns on the index pages"
-msgstr "Neem kolommen met datums op de indexpagina's op"
+msgstr "Kolommen met datums opnemen in de indexpagina's"
 
 #: DynamicWeb/dynamicweb.py:2994 DynamicWeb/dynamicweb.py:5066
 msgid "Include a column for media path on the index pages"
@@ -6450,7 +6413,7 @@ msgstr "Stamboom DNA importeren"
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
 msgstr ""
-"{} Connecties gemaakt met DNA-gegevens. {} haplogroep-kenmerken aangemaakt \n"
+"{} Relaties gemaakt met DNA-gegevens. {} haplogroep-kenmerken aangemaakt \n"
 
 #: FamilyTreeDNA/ftdna_import.py:228
 msgid "No Family Finder File specified"
@@ -6463,7 +6426,7 @@ msgstr "Geen segmentbestand opgegeven"
 #: FamilyTreeDNA/ftdna_import.py:236
 msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
 msgstr ""
-"Geen connecties gevonden in FTdna-notities. Geen haplogroep-kenmerken "
+"Geen relaties gevonden in FTdna-notities. Geen haplogroep-kenmerken "
 "aangemaakt."
 
 #: FamilyTreeDNA/ftdna_import.py:307
@@ -6474,32 +6437,32 @@ msgstr "%s haplogroep-attribuut toevoegen"
 #: FamilyTreeDNA/ftdna_import.py:350
 #, python-format
 msgid "Add %s DNA Association"
-msgstr "%s DNA-connectie toevoegen"
+msgstr "%s DNA-relatie toevoegen"
 
 #: FamilyTreeDNA/ftdna_import.py:367
 #, python-format
 msgid "Create Note for %s DNA Association"
-msgstr "Notitie voor %s DNA-connectie aanmaken"
+msgstr "Notitie aanmaken voor %s DNA-relatie"
 
 #: FamilyTreeDNA/ftdna_import.py:369
 #, python-format
 msgid "Add Note to %s DNA Association"
-msgstr "Opmerking toevoegen aan %s DNA-connectie"
+msgstr "Opmerking toevoegen aan %s DNA-relatie"
 
 #: FamilyTreeDNA/ftdna_import.py:385
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr "Bronvermelding voor %s DNA-connectie aanmaken"
+msgstr "Bronvermelding aanmaken voor %s DNA-relatie"
 
 #: FamilyTreeDNA/ftdna_import.py:390
 #, python-format
 msgid "Create Citation for %s DNA Association"
-msgstr "Citaat voor %s DNA-connectie aanmaken"
+msgstr "Citaat aanmaken voor %s DNA-relatie"
 
 #: FamilyTreeDNA/ftdna_import.py:394
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr "Citaat aan %s DNA-connectie toevoegen"
+msgstr "Citaat toevoegen aan %s DNA-relatie"
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
@@ -6540,7 +6503,7 @@ msgstr "Leeftijd:"
 #: FilterRules/associationsofpersonmatch.py:65
 #: FilterRules/associationsofpersonmatch.py:66
 msgid "Match associations of <person filter>"
-msgstr "Overeenkomsten zoeken in connecties van <person filter>"
+msgstr "Overeenkomsten zoeken in relaties van <person filter>"
 
 #: FilterRules/degreesofseparation.gpr.py:25
 #: FilterRules/degreesofseparation.py:79
@@ -6674,16 +6637,12 @@ msgstr ""
 "met een persoonsfilter"
 
 #: FilterRules/matcheventfilterrole.gpr.py:7
-#, fuzzy
-#| msgid "People with events with the <role>"
 msgid "People from event with role"
-msgstr "Personen met gebeurtenissen met de <rol>"
+msgstr "Personen van gebeurtenissen met de rol"
 
 #: FilterRules/matcheventfilterrole.gpr.py:8
-#, fuzzy
-#| msgid "Matches event of people filter with role"
 msgid "Matches people of event filter with role"
-msgstr "Overeenkomst met gefilterde personen met rol"
+msgstr "Overeenkomst met personen van gefilterde gebeurtenis met rol"
 
 #: FilterRules/matcheventfilterrole.py:55
 #: FilterRules/matchpersonfilterrole.py:69
@@ -6691,26 +6650,22 @@ msgid "Role:"
 msgstr "Rol:"
 
 #: FilterRules/matcheventfilterrole.py:56
-#, fuzzy
-#| msgid "People with events with the <role>"
 msgid "Persons with events matching the <event filter> with role"
-msgstr "Personen met gebeurtenissen met de <rol>"
+msgstr ""
+"Personen met gebeurtenissen die overeenkomen met het <gebeurtenisfilter> met "
+"rol"
 
 #: FilterRules/matchparentoffilterfamily.gpr.py:7
-#, fuzzy
-#| msgid "Parent Family"
 msgid "Parents of family filter"
-msgstr "Bovenliggende familie"
+msgstr "Ouders van gezinsfilter"
 
 #: FilterRules/matchparentoffilterfamily.gpr.py:8
-#, fuzzy
-#| msgid "Matches event of people filter with role"
 msgid "Matches parent of family filter"
-msgstr "Overeenkomst met gefilterde personen met rol"
+msgstr "Komt overeen met ouder-van-gezinsfilter"
 
 #: FilterRules/matchparentoffilterfamily.py:60
 msgid "Parents of <filter> family match"
-msgstr ""
+msgstr "Ouders van <filter> gezinsovereenkomst"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
@@ -11247,7 +11202,7 @@ msgstr "Blanke krankzinnigen en idioten op openbare kosten"
 
 #: Form/form_us.xml.h:239
 msgid "White persons insane and idiots at private charge"
-msgstr "Blanke krankzinnigen en idioten op privé-kosten"
+msgstr "Blanke personen die geestesziek of zwakzinnig zijn, op eigen kosten"
 
 #: Form/form_us.xml.h:240
 msgid "Colored persons deaf/dumb"
@@ -11259,7 +11214,9 @@ msgstr "Gekleurde blinde personen"
 
 #: Form/form_us.xml.h:242
 msgid "Colored persons insane and idiots at private charge"
-msgstr "Gekleurde personen krankzinnig en idioten op privé-kosten"
+msgstr ""
+"Mensen met een donkere huidskleur, geesteszieken en zwakzinnigen op "
+"particuliere kosten"
 
 #: Form/form_us.xml.h:243
 msgid "Colored persons insane and idiots at public charge"
@@ -16497,7 +16454,7 @@ msgstr "GetGOV-fout: %s"
 
 #: GetGOV/getgov.py:421
 msgid "GOV link"
-msgstr ""
+msgstr "GOV-llink"
 
 #: GetGOV/getgov.py:428
 #, python-format
@@ -16600,10 +16557,8 @@ msgid "Clear conversation and context"
 msgstr "Gesprek en context wissen"
 
 #: GrampsAssistant/grampsassistant.py:220
-#, fuzzy
-#| msgid "Gramps Assistant settings"
 msgid "Open the Gramps Assistant wiki page"
-msgstr "Gramps Assistent instellingen"
+msgstr "Gramps Assistent wiki-pagina openen"
 
 #: GrampsAssistant/grampsassistant.py:396
 #: GrampsAssistant/grampsassistant.py:760
@@ -16794,6 +16749,11 @@ msgid ""
 "this Family Tree. Opening it as-is would leave the local mirror silently "
 "incomplete or unable to save changes back."
 msgstr ""
+"De accountverificatie via GRAMPS_WEB_API_KEY vereist servertoestemming(en) "
+"voor deze uitbreiding: %(missing)s. Ken op de server ten minste de rol \"%"
+"(role)s\" toe (of vraag een beheerder dit te doen), en open opnieuw deze "
+"Stamboom. In de huidige toestand blijft de lokale spiegel ongemerkt "
+"incompleet en kunnen aanpassingen mogelijk niet worden opgeslagen."
 
 #: GrampsWebApiDb/grampswebapidb.py:741
 #, python-format
@@ -16803,6 +16763,11 @@ msgid ""
 "history in a format it cannot read. Upgrade the Gramps installation behind "
 "the Gramps Web API server (or ask its administrator to)."
 msgstr ""
+"De server draait Gramps %(actual)s, maar deze uitbreiding verlangt een "
+"server met Gramps %(required)s of nieuwer: oudere servers serialiseren hun "
+"transactiegeschiedenis in een formaat dat het niet kan lezen. Upgrade de "
+"Gramps-installatie achter de Gramps Web API-server (of vraag de beheerder "
+"dit uit te voeren)."
 
 #: GrampsWebApiDb/grampswebapidb.py:1008
 msgid "Retry local change after server conflict"
@@ -17517,47 +17482,47 @@ msgstr "Grafiek"
 
 #: GrampyScript/GrampyScript.py:480 GrampyScript/GrampyScript.py:551
 msgid "Ready... (Tab for completions)"
-msgstr ""
+msgstr "Klaar… (Tabblad voor voltooiingen)"
 
 #: GrampyScript/GrampyScript.py:505
-#, fuzzy
-#| msgid "No title"
 msgid "Untitled"
-msgstr "Geen titel"
+msgstr "Zonder titel"
 
 #: GrampyScript/GrampyScript.py:534
 msgid ""
 "If you continue without saving, the changes you have made to this script "
 "will be lost."
 msgstr ""
+"Als u doorgaat zonder op te slaan, gaan de wijzigingen die u in dit script "
+"hebt aangebracht verloren."
 
 #: GrampyScript/GrampyScript.py:1332
 msgid "Gram.py Script Edited Data"
 msgstr "Gram.py-script heeft gegevens bewerkt"
 
 #: GrampyScript/script_descriptions.py:44
-#, fuzzy
-#| msgid "All Names of All People"
 msgid "List All People"
-msgstr "Alle namen van alle personen"
+msgstr "Lijst van alle personen"
 
 #: GrampyScript/script_descriptions.py:46
 msgid ""
 "Iterate over every person in the database and show their Gramps ID, given "
 "name, surname, and gender in the results table."
 msgstr ""
+"Loop langs elke persoon in de database en toon hun Gramps-ID, voornaam, "
+"achternaam en geslacht in de resultatentabel."
 
 #: GrampyScript/script_descriptions.py:51
-#, fuzzy
-#| msgid "Family Surname"
 msgid "Filter By Surname"
-msgstr "Achternaam gezin"
+msgstr "Filteren op achternaam"
 
 #: GrampyScript/script_descriptions.py:53
 msgid ""
 "List only the people whose surname matches a given value — a starting point "
 "for narrowing any report down by a condition."
 msgstr ""
+"Vermeld alleen de personen wier achternaam overeenkomt met een bepaalde "
+"waarde — een startpunt voor het beperken van elk rapport tot een voorwaarde."
 
 #: GrampyScript/script_descriptions.py:58 Overview/Overview.gpr.py:45
 msgid "Family Overview"
@@ -17568,20 +17533,25 @@ msgid ""
 "List every family together with the father, the mother, and how many "
 "children they have — a quick way to spot families that look incomplete."
 msgstr ""
+"Vermeld elk gezin samen met de vader, de moeder en aantal kinderen — een "
+"snelle manier om gezinnen te zien die er onvolledig uitzien."
 
 #: GrampyScript/script_descriptions.py:66
 msgid "Gender Breakdown (Pie Chart)"
-msgstr ""
+msgstr "Uitsplitsing naar geslacht (cirkeldiagram)"
 
 #: GrampyScript/script_descriptions.py:68
 msgid ""
 "Count how many people are male, female, or of unknown gender, then draw a "
 "pie chart of the totals. Check the Chart tab after running."
 msgstr ""
+"Tel hoeveel personen mannelijk, vrouwelijk of van onbekend geslacht zijn en "
+"stel een cirkeldiagram op van de totalen. Zie na uitvoering het tabblad "
+"Grafiek."
 
 #: GrampyScript/script_descriptions.py:74
 msgid "Age At Death Histogram"
-msgstr ""
+msgstr "Histogram Leeftijd bij overlijden"
 
 #: GrampyScript/script_descriptions.py:76
 msgid ""
@@ -17589,10 +17559,13 @@ msgid ""
 "in whole years and draw a histogram of the distribution. Check the Chart tab "
 "after running."
 msgstr ""
+"Bereken voor elke persoon van wie zowel de geboorte- als sterfdatum bekend "
+"zijn de leeftijd in hele jaren en stel een histogram op van de verdeling. "
+"Zie na uitvoering het tabblad Grafiek."
 
 #: GrampyScript/script_descriptions.py:82
 msgid "Mark Unsourced People As Private"
-msgstr ""
+msgstr "Markeer personen zonder bornvermelding als privé"
 
 #: GrampyScript/script_descriptions.py:84
 msgid ""
@@ -17600,10 +17573,14 @@ msgid ""
 "them as private, wrapped in begin_changes()/end_changes() so the edits "
 "happen inside a single, undoable transaction."
 msgstr ""
+"Voorbeeld voor reeksbewerking: zoek elke persoon aan wie geen citaten zijn "
+"toegevoegd en markeer deze als privé, omsloten met start_changes()/"
+"end_changes(), zodat de bewerkingen plaatsvinden binnen een enkele, niet-uit "
+"te voeren transactie."
 
 #: GrampyScript/script_descriptions.py:91
 msgid "CSV-Ready People Report"
-msgstr ""
+msgstr "CSV-gereed Personenrapportage"
 
 #: GrampyScript/script_descriptions.py:93
 msgid ""
@@ -17611,42 +17588,52 @@ msgid ""
 "person. Once it runs, use Data > Save as CSV or Copy to clipboard to export "
 "the Table tab's contents."
 msgstr ""
+"Bouw een eenvoudig rapport in tabelvorm met voor elke persoon: ID, naam, "
+"geslacht, geboortejaar. Als deze is uitgevoerd, kunt u Gegevens > Opslaan "
+"als CSV of Kopiëren naar het klembord gebruiken om de inhoud van het tabblad "
+"Tabel te exporteren."
 
 #: GrampyScript/script_descriptions.py:99
-#, fuzzy
-#| msgid "Active Person : "
 msgid "Active Person Summary"
-msgstr "Actief persoon : "
+msgstr "Actief persoon samenvatting"
 
 #: GrampyScript/script_descriptions.py:101
 msgid ""
 "Show a compact family summary for the currently active person: their record, "
 "parents, spouse, and children."
 msgstr ""
+"Toon een compacte gezinssamenvatting voor de momenteel actieve persoon: "
+"gegevens, ouders, partner en kinderen."
 
 #: GrampyScript/script_descriptions.py:106
 msgid "Report On Selected People"
-msgstr ""
+msgstr "Rapportage van geselecteerde personen"
 
 #: GrampyScript/script_descriptions.py:108
 msgid ""
 "List just the people currently selected (highlighted) in the People view. "
 "Select some rows in the People view before running this script."
 msgstr ""
+"Vermeld alleen de mensen die momenteel zijn geselecteerd (gemarkeerd) in de "
+"weergave Personen. Selecteer enkele rijen in de weergave Personen voordat u "
+"dit script uitvoert."
 
 #: GrampyScript/script_descriptions.py:114
 msgid "Find People Missing A Birth Date"
-msgstr ""
+msgstr "Vind personen zonder geboortedatum"
 
 #: GrampyScript/script_descriptions.py:116
 msgid ""
 "Data-quality check: list every person who has no recorded birth event, so "
 "you can prioritize research on those records."
 msgstr ""
+"Kwaliteitscontrole: vermeld elke persoon zonder geregistreerde "
+"geboortegebeurtenis, zodat u prioriteit kunt geven aan onderzoek naar die "
+"gegevens."
 
 #: GrampyScript/script_descriptions.py:121
 msgid "Births Per Decade (Import Example)"
-msgstr ""
+msgstr "Geboorten per decennium (importvoorbeeld)"
 
 #: GrampyScript/script_descriptions.py:123
 msgid ""
@@ -17654,12 +17641,13 @@ msgid ""
 "script_helpers.py in this same folder — a template for sharing helper code "
 "between your own scripts with a plain 'import' statement."
 msgstr ""
+"Telt geboorten per decennium, met behulp van een functie decennium() uit "
+"script_helpers.py in deze zelfde map — een sjabloon voor het delen van "
+"helpercode tussen uw eigen scripts met een gewone 'import'-instructie."
 
 #: GrampyScript/script_descriptions.py:130
-#, fuzzy
-#| msgid "Custom \"test.xml\" file"
 msgid "Custom Filter Example"
-msgstr "Aangepast \"test.xml\" bestand"
+msgstr "Voorbeeld van een aangepast filter"
 
 #: GrampyScript/script_descriptions.py:132
 msgid ""
@@ -17668,10 +17656,14 @@ msgid ""
 "you've already created; if the name doesn't match one, a warning shows up in "
 "the Output tab instead."
 msgstr ""
+"Voert een van uw eigen aangepaste filters (van de Filters gramplet/editor) "
+"uit met behulp van custom_filter(). Wijzig 'voorbeeldfilter' in de naam van "
+"een filter dat u al hebt gemaakt; als de naam niet overeenkomt, verschijnt "
+"er in plaats daarvan een waarschuwing op het tabblad Uitvoer."
 
 #: GrampyScript/script_descriptions.py:140
 msgid "Delete Unused Repositories (Delete Example)"
-msgstr ""
+msgstr "Ongebruikte opslagplaatsen verwijderen (voorbeeld verwijderen)"
 
 #: GrampyScript/script_descriptions.py:142
 msgid ""
@@ -17680,6 +17672,11 @@ msgid ""
 "unlikely to actually delete anything — it's meant to show the pattern, "
 "wrapped in begin_changes()/end_changes() as a single undoable transaction."
 msgstr ""
+"Demonstreert delete(): verwijdert elke loze opslagplaatsverwijzing uit de "
+"stamboom. De meeste stambomen hebben geen ongebruikte opslagplaatsen, dus "
+"het is onwaarschijnlijk dat dit daadwerkelijk iets zal verwijderen. Het is "
+"de bedoeling dat het patroon, omsloten met begin_changes()/end_changes(), "
+"wordt weergegeven als een enkele niet-verwijderbare transactie."
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -19590,7 +19587,7 @@ msgstr "Lijsttype"
 
 #: ListeEclair/ListeEclair.py:284
 msgid "Include private data"
-msgstr "Voeg privégegevens toe"
+msgstr "Inclusief privégegevens"
 
 #: ListeEclair/ListeEclair.py:301
 msgid "The style used for the liste eclair."
@@ -20434,7 +20431,7 @@ msgstr "Verwijder de middelste namen."
 
 #: NetworkChart/NetworkChart.py:1112
 msgid "Allow inclusion of private records in chart."
-msgstr "Sta opname van privérecords in de grafiek toe."
+msgstr "Opname van privégegevens in het diagram toestaan."
 
 #: NetworkChart/NetworkChart.py:1117
 msgid "Trim"
@@ -23752,8 +23749,8 @@ msgstr "Of er broncitaten moeten worden opgenomen."
 #: RepositoriesReport/RepositoriesReportAlt.py:473
 msgid "Whether to include repositories and sources marked as private."
 msgstr ""
-"Of bibliotheken en bronnen moeten worden opgenomen die als privé zijn "
-"gemarkeerd."
+"Of bibliotheken en bronnen die als privé zijn gemarkeerd moeten worden "
+"opgenomen."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:476
 msgid "Display empty values"
@@ -23974,12 +23971,12 @@ msgstr "Markeer privé hulpmiddel"
 
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:25
 msgid "Set all objects of the last <number> of years private."
-msgstr "Markeer alle objecten van de afgelopen <aantal> jaren op privé."
+msgstr "Alle objecten van de afgelopen <aantal> jaren als privé markeren."
 
 #: SetPrivacyTool/SetPrivacyTool.py:90
 #, python-format
 msgid "Set private: %d %s\n"
-msgstr "Markeer privé %d %s\n"
+msgstr "Privé markeren: %d %s\n"
 
 #: SetPrivacyTool/SetPrivacyTool.py:92
 #, python-format
@@ -23988,23 +23985,23 @@ msgstr "Niet privé: %d %s\n"
 
 #: SetPrivacyTool/SetPrivacyTool.py:107
 msgid "Set persons private.."
-msgstr "Markeer personen op privé."
+msgstr "Personen als privé markeren…"
 
 #: SetPrivacyTool/SetPrivacyTool.py:157
 msgid "Set events private.."
-msgstr "Markeer gebeurtenissen op privé."
+msgstr "Gebeurtenissen als privé markeren…"
 
 #: SetPrivacyTool/SetPrivacyTool.py:197
 msgid "Set media private.."
-msgstr "Markeer media op privé."
+msgstr "Media als privé markeren…"
 
 #: SetPrivacyTool/SetPrivacyTool.py:230
 msgid "Set adresses private.."
-msgstr "Stel privéadressen in..."
+msgstr "Adressen als privé markeren..."
 
 #: SetPrivacyTool/SetPrivacyTool.py:259
 msgid "Set internet objects private.."
-msgstr "Internetobjecten instellen op privé..."
+msgstr "Internetobjecten als privé markeren..."
 
 #: SetPrivacyTool/SetPrivacyTool.py:301
 msgid ""
@@ -24013,7 +24010,7 @@ msgid ""
 msgstr ""
 "Het tijdsbereik in jaren vanaf vandaag dat u objecten als privé wilt "
 "markeren.\n"
-"'0 jaar' = verwijder privacy van alle objecten."
+"'0 jaar' = privacy verwijderen van alle objecten."
 
 #: SetPrivacyTool/SetPrivacyTool.py:306
 msgid "Always private if no date."
@@ -24022,7 +24019,7 @@ msgstr "Altijd privé als er geen datum is."
 #: SetPrivacyTool/SetPrivacyTool.py:307
 msgid "If checked, all objects without a date will also be set private."
 msgstr ""
-"Indien aangevinkt, worden alle objecten zonder datum ook als privé "
+"Indien geactiveerd, worden alle objecten zonder datum ook als privé "
 "gemarkeerd."
 
 #: SetPrivacyTool/SetPrivacyTool.py:324
@@ -24535,7 +24532,7 @@ msgstr "o.contrac:"
 
 #: SourceIndex/marriage.glade:131
 msgid "dates banns:"
-msgstr "datums huwelijksaankondigingen:"
+msgstr "huwelijksaankondigingen:"
 
 #: SourceIndex/marriage.glade:149
 msgid "p.contract:"
@@ -24748,40 +24745,28 @@ msgstr ""
 "De stijl die wordt gebruikt voor details over gebeurtenissen en personen."
 
 #: Sqlite/ExportSql.py:1720
-#, fuzzy
-#| msgid "January"
 msgid "January 1"
-msgstr "Januari"
+msgstr "1 januari"
 
 #: Sqlite/ExportSql.py:1721
-#, fuzzy
-#| msgid "March"
 msgid "March 1"
-msgstr "Maart"
+msgstr "1 maart"
 
 #: Sqlite/ExportSql.py:1722
-#, fuzzy
-#| msgid "March"
 msgid "March 25"
-msgstr "Maart"
+msgstr "25 maart"
 
 #: Sqlite/ExportSql.py:1723
-#, fuzzy
-#| msgid "September"
 msgid "September 1"
-msgstr "September"
+msgstr "1 september"
 
 #: Sqlite/ExportSql.py:1749
-#, fuzzy
-#| msgid "Widowed"
 msgid "Flowed"
-msgstr "Weduwnaar"
+msgstr "Vloeiend"
 
 #: Sqlite/ExportSql.py:1750
-#, fuzzy
-#| msgid "PS format"
 msgid "Preformatted"
-msgstr "PS bestand"
+msgstr "Voorgeformatteerd"
 
 #: Sqlite/ExportSql.py:1953
 #, python-format
@@ -24848,33 +24833,33 @@ msgstr "Creëer toewijzing"
 #: SyncAssociations/syncAssociations.py:134
 #: SyncAssociations/syncAssociations.py:138
 msgid "Sync Associations"
-msgstr "Connecties synchroniseren"
+msgstr "Relaties synchroniseren"
 
 #: SyncAssociations/syncAssociations.gpr.py:6
 msgid ""
 "Traverses the Person list for all Associations that are bi-directional and "
 "adds any which are missing to the Associated Person."
 msgstr ""
-"Doorloopt de lijst met personen voor alle connecties die bidirectioneel zijn "
-"en voegt alle ontbrekende toe aan de geassocieerde persoon."
+"Doorloopt de lijst met personen voor alle relaties die bidirectioneel zijn "
+"en voegt alle ontbrekende toe aan de gerelateerde persoon."
 
 #: SyncAssociations/syncAssociations.py:124
 #, python-format
 msgid "Add %s reciprocal association"
-msgstr "%s wederzijdse connectie toevoegen"
+msgstr "%s wederzijdse relatie toevoegen"
 
 #: SyncAssociations/syncAssociations.py:131
 #, python-brace-format
 msgid "{} Reciprocal associations created"
-msgstr "{} Wederzijdse connecties aangemaakt"
+msgstr "{} Wederzijdse relaties aangemaakt"
 
 #: SyncAssociations/syncAssociations.py:135
 msgid "All reciprocal associations exist, none created"
-msgstr "Alle wederzijdse connecties bestaan, geen aangemaakt"
+msgstr "Alle wederzijdse relaties bestaan, geen aangemaakt"
 
 #: SyncAssociations/syncAssociations.py:139
 msgid "No existing associations, so no reciprocal ones needed"
-msgstr "Geen bestaande connecties, dus geen wederzijdse nodig"
+msgstr "Geen bestaande relaties, dus geen wederzijdse nodig"
 
 #: TMGimporter/importtmg.gpr.py:45
 msgid "TMG Project Backup"
@@ -26297,7 +26282,7 @@ msgstr "QR-code weergeven"
 
 #: WebSearch/WebSearch.py:1641
 msgid "Copy link to clipboard"
-msgstr "Koppeling naar klembord kopiëren"
+msgstr "Koppeling kopiëren naar klembord"
 
 #: WebSearch/WebSearch.py:1644
 msgid "Hide link for selected item"
