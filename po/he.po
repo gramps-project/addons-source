@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-03 12:30-0700\n"
-"PO-Revision-Date: 2026-08-29 07:51+0000\n"
+"PO-Revision-Date: 2026-09-10 08:51+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.9.1\n"
 
 msgid "Birthdays"
 msgstr "ימי הולדת"
@@ -5343,27 +5343,25 @@ msgstr "אחזור כל התאמות מסננני המשנה"
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:174
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:973
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1053
-#, fuzzy
-#| msgid "Ancestor Generations"
 msgid "Ancestor Tree Expanded"
-msgstr "דורות אבות"
+msgstr "אילן אבות־קדמוים הורחב"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:29
 msgid ""
 "Expanded Ancestor Graph showing direct ancestors, siblings, cousins and "
 "spouses."
 msgstr ""
+"תרשים אבות קדמונים מורחב שמציג אבות קדמונים ישירים, אחאים, בני דודים וזוגאים."
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:190
-#, fuzzy, python-format
-#| msgid "Ancestors places for %s"
+#, python-format
 msgid "Ancestor Tree Expanded for %s"
-msgstr "אבות מקומות עבור %s"
+msgstr "אילן אבות־קדמונים של %s הורחב"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:544
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:606
 msgid "Tree Truncated"
-msgstr ""
+msgstr "האילן קוצץ"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:545
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:607
@@ -5374,43 +5372,36 @@ msgid ""
 "Please reduce the number of generations or disable some options to see all "
 "branches."
 msgstr ""
+"האילן שחולל הגיע למגבלת הבטיחות של 400 אנשים ונקטע.\n"
+"\n"
+"נא לצמצם את מספר הדורות או להשבית מספר אפשרויות כדי לראות את כל הענפים."
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1182
-#, fuzzy
-#| msgid "Shows the number of descendants of the current person"
 msgid "Include descendants of the center person"
-msgstr "הצגת מספר הצאצאים של האדם הנוכחי"
+msgstr "הכללת צאצאי האדם המרכזי"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1183
-#, fuzzy
-#| msgid "Shows the number of descendants of the current person"
 msgid ""
 "Whether to display the children and full descending lines of the center "
 "person"
-msgstr "הצגת מספר הצאצאים של האדם הנוכחי"
+msgstr "האם להציג את הצאצאים וקו צאצאים מלא של האדם המרכזי"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1190
-#, fuzzy
-#| msgid "Include siblings of ancestors."
 msgid "Include siblings of ancestors"
-msgstr "לכלול אחאים של אבות."
+msgstr "הכללת אחאים של אבות־קדמונים"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1191
-#, fuzzy
-#| msgid "Whether to display the theoretical number of ancestor by generation"
 msgid "Whether to display the siblings of direct ancestors"
-msgstr "האם להציג את המספר התיאורטי של אבות קדמונים לפי דור"
+msgstr "האם להציג את צאצאי אבות־קדמונים ישירים"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1194
 msgid "Include cousins (collateral descendants)"
-msgstr ""
+msgstr "הכללת בני דודים (צאצאים נלווים)"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1195
-#, fuzzy
-#| msgid "Whether to display the theoretical number of ancestor by generation"
 msgid ""
 "Whether to display the cousins and descendants of the ancestors' siblings"
-msgstr "האם להציג את המספר התיאורטי של אבות קדמונים לפי דור"
+msgstr "האם להציג בני דודים ואת צאצאי האבות־הקדמונים"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1202
 #: FamilyTree/FamilyTree.py:1051
@@ -5419,32 +5410,24 @@ msgid "Descendant Generations"
 msgstr "דורות צאצאים"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1203
-#, fuzzy
-#| msgid "The number of descendant generations to include in the tree"
 msgid "The number of descendant generations to include"
-msgstr "מספר צאצא דורות שיש לכלול באילן"
+msgstr "מספר דורות צאצאים שיכללו"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1242
-#, fuzzy
-#| msgid "Whether to include the index of Names at the end of the report."
 msgid "Whether to resize the page to fit the size of the tree."
-msgstr "האם לכלול את מפתח השמות בסוף הדוח."
+msgstr "האם לשדוד מחדש את העמוד כדי להתאימו לאילן."
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1262
-#, fuzzy
-#| msgid "Use a table format for the families index"
 msgid "Use random colors for family lines"
-msgstr "שימוש טבלה תסדיר עבור משפחות מפתח"
+msgstr "להשתמש בצבעים אקראיים לקוי משפחות"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1263
 msgid "Draw each family's connecting lines with a distinct color."
-msgstr ""
+msgstr "לשרטט קווי חיבור משפחה בצבע נפרד."
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1372
-#, fuzzy
-#| msgid "The style used for names."
 msgid "The bold style used for the names."
-msgstr "הסגנון שמשמש לשמות."
+msgstr "הסגנון המודגש שמשמש לשמות."
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
