@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 10:14-0700\n"
-"PO-Revision-Date: 2026-09-12 15:52+0000\n"
+"PO-Revision-Date: 2026-09-25 18:51+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -282,115 +282,89 @@ msgstr "Kontrola údajov o asociáciách"
 #: AssociationsTool/associationstool.gpr.py:44
 msgid "Display all person Associations in a sortable, hotlinked table"
 msgstr ""
+"Zobrazí všetky asociácie osôb v tabuľke, ktorú je možné triediť a ktorá "
+"obsahuje aktívne odkazy"
 
 #: AssociationsTool/associationstool.py:130
 msgid "Associations state tool"
 msgstr "Nástroj stavu asociácií"
 
 #: AssociationsTool/associationstool.py:181
-#, fuzzy, python-format
-#| msgid "Error applying filter: %s"
+#, python-format
 msgid "Error initializing data: %s"
-msgstr "Chyba pri aplikovaní filtra: %s"
+msgstr "Chyba pri inicializácii údajov: %s"
 
 #: AssociationsTool/associationstool.py:222
-#, fuzzy, python-format
-#| msgid "Error resetting filter: %s"
+#, python-format
 msgid "Error processing person %s: %s"
-msgstr "Chyba pri resetovaní filtra: %s"
+msgstr "Chyba pri spracovaní osoby %s: %s"
 
 #: AssociationsTool/associationstool.py:252
-#, fuzzy
-#| msgid "Process relationships..."
 msgid "Processing associations..."
-msgstr "Spracovať vzťahy..."
+msgstr "Spracovávanie asociácií..."
 
 #: AssociationsTool/associationstool.py:257
-#, fuzzy, python-format
-#| msgid "Could not create the directory: %(path)s"
+#, python-format
 msgid "Could not create progress dialog: %s"
-msgstr "Nepodarilo sa vytvoriť adresár: %(path)s"
+msgstr "Nepodarilo sa vytvoriť dialóg priebehu: %s"
 
 #: AssociationsTool/associationstool.py:281
-#, fuzzy, python-format
-#| msgid "Produces descendants lines of a person"
+#, python-format
 msgid "Processing %d of %d persons"
-msgstr "Vytvára línie potomkov osoby"
+msgstr "Spracovávanie %d z %d osôb"
 
 #: AssociationsTool/associationstool.py:347
-#, fuzzy, python-format
-#| msgid "Error applying filter: %s"
+#, python-format
 msgid "Error displaying associations: %s"
-msgstr "Chyba pri aplikovaní filtra: %s"
+msgstr "Chyba pri zobrazovaní asociácií: %s"
 
 #: AssociationsTool/associationstool.py:365
 #: AssociationsTool/associationstool.py:448
-#, fuzzy
-#| msgid "Street Name"
 msgid "Starting Name"
-msgstr "Názov ulice"
+msgstr "Východiskové meno"
 
 #: AssociationsTool/associationstool.py:368
 #: AssociationsTool/associationstool.py:451
-#, fuzzy
-#| msgid "Sync Associations"
 msgid "Associate"
-msgstr "Synchronizácia asociácií"
+msgstr "Asociovaná osoba"
 
 #: AssociationsTool/associationstool.py:427
 #: AssociationsTool/associationstool.py:459
-#, fuzzy, python-format
-#| msgid "No source information found"
+#, python-format
 msgid "Total associations found: %d"
-msgstr "Neboli nájdené žiadne informácie o zdroji"
+msgstr "Celkový počet nájdených asociácií: %d"
 
 #: AssociationsTool/associationstool.py:553
-#, fuzzy
-#| msgid "Edit referenced Person"
 msgid "Edit Starting Person"
-msgstr "Upraviť odkazovanú osobu"
+msgstr "Upraviť východiskovú osobu"
 
 #: AssociationsTool/associationstool.py:554
-#, fuzzy
-#| msgid "Edit referenced Person"
 msgid "Edit Associate Person"
-msgstr "Upraviť odkazovanú osobu"
+msgstr "Upraviť asociovanú osobu"
 
 #: AssociationsTool/associationstool.py:555
-#, fuzzy
-#| msgid "Edit selection"
 msgid "Edit Association"
-msgstr "Upraviť výber"
+msgstr "Upraviť asociáciu"
 
 #: AssociationsTool/associationstool.py:557
-#, fuzzy
-#| msgid "Copy to clipboard"
 msgid "Copy row to clipboard"
-msgstr "Kopírovať do schránky"
+msgstr "Kopírovať riadok do schránky"
 
 #: AssociationsTool/associationstool.py:558
-#, fuzzy
-#| msgid "Enumerated date from"
 msgid "Create Note from row"
-msgstr "Dátum sčítania od"
+msgstr "Vytvoriť poznámku z riadku"
 
 #: AssociationsTool/associationstool.py:672
-#, fuzzy
-#| msgid "Sync Associations"
 msgid "Association:"
-msgstr "Synchronizácia asociácií"
+msgstr "Asociácia:"
 
 #: AssociationsTool/associationstool.py:673
-#, fuzzy
-#| msgid "Starting migration..."
 msgid "Starting Person"
-msgstr "Začiatok migrácie..."
+msgstr "Východisková osoba"
 
 #: AssociationsTool/associationstool.py:675
-#, fuzzy
-#| msgid "Lines type"
 msgid "Link type"
-msgstr "Typ čiar"
+msgstr "Typ prepojenia"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
@@ -468,7 +442,7 @@ msgstr "Nástroj na generovanie avatarov"
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:25
 msgid "A tool to add avatar pictures to your family tree"
-msgstr "Nástroj na pridávanie obrázkov avatarov do vášho rodinného stromu"
+msgstr "Nástroj na pridávanie obrázkov avatarov do vášho rodostromu"
 
 #: AvatarGenerator/AvatarGenerator.py:59
 msgid "single image mode"
@@ -583,11 +557,11 @@ msgstr " 👣 Ďalšie kroky:\n"
 
 #: Betawhatsnext/Betawhatsnext.py:50
 msgid "  •  From the \"Family Trees\" menu,"
-msgstr "  •  Z menu \"Rodinné stromy\","
+msgstr "  •  Z menu \"Rodostromy\","
 
 #: Betawhatsnext/Betawhatsnext.py:51
 msgid " use the \"Manage Family Trees...\" option to"
-msgstr " použite možnosť \"Spravovať rodinné stromy...\" na"
+msgstr " použite možnosť \"Správa rodostromov...\" na"
 
 #: Betawhatsnext/Betawhatsnext.py:52
 msgid " create a New (or to select an existing) Tree database.\n"
@@ -595,7 +569,7 @@ msgstr " vytvorte novú (alebo vyberte existujúcu) databázu stromu.\n"
 
 #: Betawhatsnext/Betawhatsnext.py:53
 msgid "  •  Click the \"Load Family Tree\" button to begin"
-msgstr "  •  Kliknutím na tlačidlo \"Načítať rodinný strom\" začnete"
+msgstr "  •  Kliknutím na tlačidlo \"Načítať rodostrom\" začnete"
 
 #: Betawhatsnext/Betawhatsnext.py:54
 msgid ""
@@ -677,7 +651,7 @@ msgstr ""
 "\n"
 "Alebo importujte ľudí z externého súboru:\n"
 " • Externý súbor je možné použiť na doplnenie stromu cez \"Importovať...\" v "
-"menu \"Rodinné stromy\"."
+"menu \"Rodostromy\"."
 
 #: Betawhatsnext/Betawhatsnext.py:254
 msgid ""
@@ -1447,7 +1421,7 @@ msgstr ": "
 
 #: ContextView/ContextView.gpr.py:29 ContextView/ContextView.py:502
 msgid "Context"
-msgstr ""
+msgstr "Kontext"
 
 #: ContextView/ContextView.gpr.py:31
 msgid ""
@@ -1457,37 +1431,37 @@ msgid ""
 "the top. Click any box to re-centre the chart on that person; the name in "
 "bold marks the way back to the home person."
 msgstr ""
+"Diagram umiestňujúci osobu do kontextu jej najbližšej rodiny: pár uprostred, "
+"rodičia každého z partnerov nad nimi, ich deti pod nimi a súrodenci každého "
+"z partnerov v stĺpci po ich strane, pričom najstarší je hore. Kliknutím na "
+"ľubovoľné políčko znovu vycentrujete diagram na danú osobu; meno tučným "
+"písmom označuje cestu späť k domovskej osobe."
 
 #: ContextView/ContextView.py:572
 msgid "Show the previous family"
-msgstr ""
+msgstr "Zobraziť predchádzajúcu rodinu"
 
 #: ContextView/ContextView.py:575
-#, fuzzy
-#| msgid "Show more details"
 msgid "Show the next family"
-msgstr "Zobraziť viac podrobností"
+msgstr "Zobraziť nasledujúcu rodinu"
 
 #: ContextView/ContextView.py:899
-#, fuzzy
-#| msgid "No place is active"
 msgid "No person is active."
-msgstr "Žiadne miesto nie je aktívne"
+msgstr "Žiadna osoba nie je aktívna."
 
 #: ContextView/ContextView.py:915
 #, python-format
 msgid "Family %(current)d of %(total)d"
-msgstr ""
+msgstr "Rodina %(current)d z %(total)d"
 
 #: ContextView/ContextView.py:922
-#, fuzzy, python-format
-#| msgid "Highlight the home person"
+#, python-format
 msgid "family %d lies toward the home person"
-msgstr "Zvýrazniť domovskú osobu"
+msgstr "rodina %d leží smerom k domovskej osobe"
 
 #: ContextView/ContextView.py:980
 msgid "<b>Bold</b> marks the way to the home person"
-msgstr ""
+msgstr "<b>Tučné písmo</b> označuje cestu k domovskej osobe"
 
 #: ContextView/ContextView.py:1389 ContextView/ContextView.py:1599
 #: LifeLineChartView/lifelinechart.py:2622
@@ -1495,38 +1469,28 @@ msgid "Show siblings"
 msgstr "Zobraziť súrodencov"
 
 #: ContextView/ContextView.py:1402
-#, fuzzy
-#| msgid "About Quilt View"
 msgid "About Context View"
-msgstr "O pohľade Quilt"
+msgstr "O pohľade Kontext"
 
 #: ContextView/ContextView.py:1592
-#, fuzzy
-#| msgid "Show Flag Icons"
 msgid "Show tag colour"
-msgstr "Zobraziť ikony vlajok"
+msgstr "Zobraziť farbu štítku"
 
 #: ContextView/ContextView.py:1613
 msgid "Details in each box"
-msgstr ""
+msgstr "Podrobnosti v každom políčku"
 
 #: ContextView/ContextView.py:1617
-#, fuzzy
-#| msgid "Name of City"
 msgid "Name only"
-msgstr "Názov mesta"
+msgstr "Iba meno"
 
 #: ContextView/ContextView.py:1618
-#, fuzzy
-#| msgid "Name and Surname"
 msgid "Name and dates"
-msgstr "Meno a priezvisko"
+msgstr "Meno a dátumy"
 
 #: ContextView/ContextView.py:1619
-#, fuzzy
-#| msgid "Full date and place"
 msgid "Name, dates and places"
-msgstr "Úplný dátum a miesto"
+msgstr "Meno, dátumy a miesta"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
@@ -1728,7 +1692,7 @@ msgstr "Veľkosť písma v pixeloch pre každý uzol."
 #: D3Charts/DescendantIndentedTree.py:1852
 #: DescendantBooks/DescendantBookReport.py:552
 msgid "Whether to show duplicate family trees in the report."
-msgstr "Či sa majú v správe zobraziť duplicitné rodinné stromy."
+msgstr "Či sa majú v správe zobraziť duplicitné rodostromy."
 
 #: D3Charts/DescendantIndentedTree.py:1856
 msgid "Expanded Row Background Color"
@@ -2240,11 +2204,11 @@ msgstr "na"
 #: DataEntryGramplet/DataEntryGramplet.py:428
 #: DataEntryGramplet/DataEntryGramplet.py:507
 msgid "No Family Tree is open."
-msgstr "Nie je otvorený žiadny rodinný strom."
+msgstr "Nie je otvorený žiadny rodostrom."
 
 #: DataEntryGramplet/DataEntryGramplet.py:429
 msgid "Please open a Family Tree to edit data."
-msgstr "Prosím, na úpravu údajov otvorte rodinný strom."
+msgstr "Prosím, na úpravu údajov otvorte rodostrom."
 
 #: DataEntryGramplet/DataEntryGramplet.py:446
 #: DataEntryGramplet/DataEntryGramplet.py:578
@@ -2254,7 +2218,7 @@ msgstr "Gramplet Editovanie údajov: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:508
 msgid "Please open a Family Tree before adding a person."
-msgstr "Prosím, otvorte pred pridávaním osoby rodinný strom."
+msgstr "Prosím, pred pridávaním osoby otvorte rodostrom."
 
 #: DataEntryGramplet/DataEntryGramplet.py:524
 msgid "Can't add new person."
@@ -4206,7 +4170,7 @@ msgstr "Nič nepridané"
 
 #: Differences/differences.py:337
 msgid "Family Tree file"
-msgstr "Súbor Family Tree"
+msgstr "Súbor rodostromu"
 
 #: Differences/differences.py:339
 msgid "Select a .gpkg or .gramps file"
@@ -4381,7 +4345,7 @@ msgstr "Správa dynamickej webovej stránky"
 
 #: DynamicWeb/dynamicweb.py:811
 msgid "Exporting family tree data ..."
-msgstr "Exportovanie údajov rodinného stromu ..."
+msgstr "Exportovanie údajov rodostromu ..."
 
 #: DynamicWeb/dynamicweb.py:2006
 #, python-format
@@ -6091,12 +6055,12 @@ msgstr "Štýl použitý pre poznámky pod čiarou (poznámky a odkazy na zdroje
 
 #: FamilyTree/FamilyTree.gpr.py:5
 msgid "Produces a graphical family tree."
-msgstr "Vytvorí grafický rodinný strom."
+msgstr "Vytvorí grafický rodostrom."
 
 #: FamilyTree/FamilyTree.py:102
 #, python-format
 msgid "Family Tree for %s"
-msgstr "Rodinný strom pre %s"
+msgstr "Rodostrom pre %s"
 
 #: FamilyTree/FamilyTree.py:152
 msgid "Paper too small"
@@ -6393,7 +6357,7 @@ msgstr "Aktívna Osoba"
 
 #: FilterRules/activepersonrule.py:58
 msgid "Matches the active person"
-msgstr "Nájde aktívnu osobu"
+msgstr "Zodpovedá aktívnej osobe"
 
 #: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:90
 #: FilterRules/ageatdeath.py:92
@@ -6402,7 +6366,7 @@ msgstr "Filtrovať ľudí podľa ich veku v čase úmrtia"
 
 #: FilterRules/ageatdeath.gpr.py:26
 msgid "Filter rule that matches people by their age at death"
-msgstr "Pravidlo filtra, ktoré nájde ľudí podľa ich veku v čase úmrtia"
+msgstr "Pravidlo filtra, ktoré zodpovedá ľuďom podľa ich veku v čase úmrtia"
 
 #: FilterRules/ageatdeath.py:65
 msgid "Age in years at person's death."
@@ -6423,7 +6387,7 @@ msgstr "Vek:"
 #: FilterRules/associationsofpersonmatch.py:65
 #: FilterRules/associationsofpersonmatch.py:66
 msgid "Match associations of <person filter>"
-msgstr "Nájde asociácie osoby vyhovujúcej filtru <person filter>"
+msgstr "Zodpovedá asociáciám podľa filtra osôb <person filter>"
 
 #: FilterRules/degreesofseparation.gpr.py:25
 #: FilterRules/degreesofseparation.py:79
@@ -6433,7 +6397,7 @@ msgstr "Ľudia, ktorí sú vzdialení menej ako <N> stupňov od osoby <person>"
 #: FilterRules/degreesofseparation.gpr.py:26
 #: FilterRules/degreesofseparation.py:81
 msgid "Filter rule that matches relatives by degrees of separation"
-msgstr "Pravidlo filtra, ktoré nájde príbuzných podľa stupňa vzdialenosti"
+msgstr "Pravidlo filtra, ktoré zodpovedá príbuzným podľa stupňa vzdialenosti"
 
 #: FilterRules/degreesofseparation.py:66
 msgid "Number of degrees of separation from person."
@@ -6450,7 +6414,7 @@ msgstr "Rodiny, ktoré vyhovujú filtru <event filter>"
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:26
 msgid "Matches families that are matched by an event filter"
-msgstr "Nájde rodiny, ktoré vyhovujú filtru udalostí"
+msgstr "Zodpovedá rodinám, ktoré vyhovujú filtru udalostí"
 
 #: FilterRules/familieswitheventfiltermatch.py:47
 msgid "Matches families matched by an event filter"
@@ -6462,7 +6426,7 @@ msgstr "Ľudia s udalosťami s vybranou rolou"
 
 #: FilterRules/hasrolerule.gpr.py:28 FilterRules/hasrolerule.py:99
 msgid "Matches people with an event with a selected role"
-msgstr "Nájde ľudí s udalosťou s vybranou rolou"
+msgstr "Zodpovedá ľuďom s udalosťou s vybranou rolou"
 
 #: FilterRules/hasrolerule.gpr.py:43
 msgid "Families with events with a selected role"
@@ -6470,7 +6434,7 @@ msgstr "Rodiny s udalosťami s vybranou rolou"
 
 #: FilterRules/hasrolerule.gpr.py:44 FilterRules/hasrolerule.py:114
 msgid "Matches families with an event with a selected role"
-msgstr "Nájde rodiny s udalosťou s vybranou rolou"
+msgstr "Zodpovedá rodinám s udalosťou s vybranou rolou"
 
 #: FilterRules/hasrolerule.py:71
 msgid "Does NOT match with selected Role"
@@ -6494,15 +6458,15 @@ msgstr "Rodiny s udalosťami s rolou <role>"
 
 #: FilterRules/hassourcefilter.gpr.py:28
 msgid "Source matching parameters"
-msgstr "Parametre pre vyhľadávanie zdrojov"
+msgstr "Zdroj zodpovedajúci parametrom"
 
 #: FilterRules/hassourcefilter.gpr.py:29
 msgid "Matches Sources with values containing the chosen parameters"
-msgstr "Nájde zdroje, ktorých hodnoty obsahujú zvolené parametre"
+msgstr "Zodpovedá zdrojom, ktorých hodnoty obsahujú zvolené parametre"
 
 #: FilterRules/hassourcefilter.py:58
 msgid "Matches sources with a particular value"
-msgstr "Nájde zdroje s konkrétnou hodnotou"
+msgstr "Zodpovedá zdrojom s konkrétnou hodnotou"
 
 #: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
 #: FilterRules/infamilyrule.py:144 FilterRules/infamilyrule.py:145
@@ -6511,7 +6475,7 @@ msgstr "Ľudia, ktorí sú súčasťou rodín, ktoré vyhovujú filtru <filter>"
 
 #: FilterRules/infamilyrule.py:67 FilterRules/infamilyrule.py:142
 msgid "Include Children"
-msgstr "Zahrnúť Deti"
+msgstr "Zahrnutie detí"
 
 #: FilterRules/infamilyrule.py:68
 msgid "Include the children in the matching families."
@@ -6519,7 +6483,7 @@ msgstr "Zahrnie deti vo vyhovujúcich rodinách."
 
 #: FilterRules/infamilyrule.py:94 FilterRules/infamilyrule.py:143
 msgid "Include Parents"
-msgstr "Zahrnúť Rodičia"
+msgstr "Zahrnutie rodičov"
 
 #: FilterRules/infamilyrule.py:95
 msgid "Include the parents in the matching families."
@@ -6545,20 +6509,16 @@ msgstr "Ľudia v príbuzenskom vzťahu s <filter>"
 #: FilterRules/isrelatedwithfiltermatch.py:68
 msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
-"Nájde ľudí, ktorí sú v príbuzenskom vzťahu s kýmkoľvek, kto vyhovuje filtru "
-"osôb"
+"Zodpovedá ľuďom, ktorí sú v príbuzenskom vzťahu s kýmkoľvek, kto vyhovuje "
+"filtru osôb"
 
 #: FilterRules/matcheventfilterrole.gpr.py:7
-#, fuzzy
-#| msgid "People with events with the <role>"
 msgid "People from event with role"
-msgstr "Ľudia s udalosťami s rolou <role>"
+msgstr "Ľudia z udalosti s rolou"
 
 #: FilterRules/matcheventfilterrole.gpr.py:8
-#, fuzzy
-#| msgid "Matches event of people filter with role"
 msgid "Matches people of event filter with role"
-msgstr "Zodpovedá udalostam podľa filtra osôb a ich role"
+msgstr "Zodpovedá ľuďom podľa filtra udalostí s rolou"
 
 #: FilterRules/matcheventfilterrole.py:55
 #: FilterRules/matchpersonfilterrole.py:69
@@ -6566,26 +6526,20 @@ msgid "Role:"
 msgstr "Rola:"
 
 #: FilterRules/matcheventfilterrole.py:56
-#, fuzzy
-#| msgid "People with events with the <role>"
 msgid "Persons with events matching the <event filter> with role"
-msgstr "Ľudia s udalosťami s rolou <role>"
+msgstr "Ľudia s udalosťami zodpovedajúcimi <event filter> s rolou"
 
 #: FilterRules/matchparentoffilterfamily.gpr.py:7
-#, fuzzy
-#| msgid "Parent Family"
 msgid "Parents of family filter"
-msgstr "Rodina rodičov"
+msgstr "Rodičia podľa filtra rodín"
 
 #: FilterRules/matchparentoffilterfamily.gpr.py:8
-#, fuzzy
-#| msgid "Matches event of people filter with role"
 msgid "Matches parent of family filter"
-msgstr "Zodpovedá udalostam podľa filtra osôb a ich role"
+msgstr "Zodpovedá rodičovi podľa filtra rodín"
 
 #: FilterRules/matchparentoffilterfamily.py:60
 msgid "Parents of <filter> family match"
-msgstr ""
+msgstr "Rodičia rodiny vyhovujúcej filtru <filter>"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
@@ -6605,7 +6559,7 @@ msgstr "Ľudia s viacerými záznamami o rodičoch"
 
 #: FilterRules/multipleparents.py:56
 msgid "Matches people who have more than one set of parents"
-msgstr "Nájde ľudí, ktorí majú viac ako jednu sadu rodičov"
+msgstr "Zodpovedá ľuďom, ktorí majú viac ako jednu sadu rodičov"
 
 #: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:71
 msgid "People with <count> of <event>"
@@ -6634,7 +6588,7 @@ msgid ""
 "Matches recorded descendants of person following mitochondrial inheritance "
 "patterns."
 msgstr ""
-"Zhoduje sa so zaznamenanými potomkami osoby podľa vzorcov mitochondriálnej "
+"Zodpovedá zaznamenaným potomkom osoby podľa vzorcov mitochondriálnej "
 "dedičnosti."
 
 #: FilterRules2/mtinheritanceoffiltermatch.gpr.py:25
@@ -6688,8 +6642,8 @@ msgid ""
 "Matches all descendants of <person> following a X-chromosomal inheritance "
 "pattern."
 msgstr ""
-"Zhoduje sa so všetkými potomkami osoby <person> podľa vzorca X-"
-"chromozomálnej dedičnosti."
+"Zodpovedá všetkým potomkom osoby <person> podľa vzorca X-chromozomálnej "
+"dedičnosti."
 
 #: FilterRules2/yinheritance.gpr.py:25 FilterRules2/yinheritance.py:62
 msgid "Y-chromosomal inheritance of <person>"
@@ -6700,7 +6654,7 @@ msgid ""
 "Matches recorded descendants of person following Y-chromosomal inheritance "
 "patterns."
 msgstr ""
-"Zhoduje sa so zaznamenanými potomkami osoby podľa vzorcov Y-chromozomálnej "
+"Zodpovedá zaznamenaným potomkom osoby podľa vzorcov Y-chromozomálnej "
 "dedičnosti."
 
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
@@ -16166,19 +16120,19 @@ msgstr "Strom starých rodičov s použitím LaTeX genealogytree"
 
 #: GenealogyTree/treeplugins.gpr.py:105
 msgid "Sandclock Tree"
-msgstr "Presýpacie hodiny - strom"
+msgstr "Strom presýpacie hodiny"
 
 #: GenealogyTree/treeplugins.gpr.py:106
 msgid "Sandclock tree using LaTeX genealogytree"
-msgstr "Presýpacie hodiny - strom s použitím LaTeX genealogytree"
+msgstr "Strom presýpacie hodiny s použitím LaTeX genealogytree"
 
 #: GenealogyTree/treeplugins.gpr.py:130
 msgid "Sandclock Tree for a Family"
-msgstr "Presýpacie hodiny - strom pre rodinu"
+msgstr "Strom presýpacie hodiny pre rodinu"
 
 #: GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
-msgstr "Presýpacie hodiny - strom pre rodinu s použitím LaTeX genealogytree"
+msgstr "Strom presýpacie hodiny pre rodinu s použitím LaTeX genealogytree"
 
 #: GeoAncestor/GeoAncestor.gpr.py:31 GeoAncestor/GeoAncestor.gpr.py:41
 msgid "Ancestors map"
@@ -16362,7 +16316,7 @@ msgstr "Chyba GetGOV: %s"
 
 #: GetGOV/getgov.py:421
 msgid "GOV link"
-msgstr ""
+msgstr "Odkaz na GOV"
 
 #: GetGOV/getgov.py:428
 #, python-format
@@ -16439,9 +16393,7 @@ msgstr "Asistent Gramps"
 
 #: GrampsAssistant/grampsassistant.gpr.py:27
 msgid "AI assistant for querying your Gramps family tree"
-msgstr ""
-"AI asistent na získavanie informácií o vašom rodinnom strome v programe "
-"Gramps"
+msgstr "AI asistent na dopytovanie vášho rodostromu v Gramps"
 
 #: GrampsAssistant/grampsassistant.py:61
 msgid ""
@@ -16466,10 +16418,8 @@ msgid "Clear conversation and context"
 msgstr "Vymazať konverzáciu a kontext"
 
 #: GrampsAssistant/grampsassistant.py:220
-#, fuzzy
-#| msgid "Gramps Assistant settings"
 msgid "Open the Gramps Assistant wiki page"
-msgstr "Nastavenia asistenta Gramps"
+msgstr "Otvoriť wiki stránku asistenta Gramps"
 
 #: GrampsAssistant/grampsassistant.py:396
 #: GrampsAssistant/grampsassistant.py:760
@@ -16643,12 +16593,12 @@ msgid ""
 "that -- reusing this one would mix its existing local data with the other "
 "account's."
 msgstr ""
-"Tento rodinný strom sa volá „%(actual)s“, ale GRAMPS_WEB_API_KEY ho "
-"momentálne overuje ako „%(expected)s“. Premenujte tento rodinný strom na "
-"„%(expected_typeable)s“ (Rodinné stromy → Spravovať rodinné stromy), ak má "
-"zrkadliť tento účet, alebo otvorte/vytvorte rodinný strom, ktorý už je tak "
-"pomenovaný -- opätovné použitie tohto stromu by zmiešalo jeho existujúce "
-"lokálne údaje s údajmi iného účtu."
+"Tento rodostrom sa volá „%(actual)s“, ale GRAMPS_WEB_API_KEY ho momentálne "
+"overuje ako „%(expected)s“. Premenujte tento rodostrom na „%"
+"(expected_typeable)s“ (Rodostromy → Správa rodostromov), ak má zrkadliť "
+"tento účet, alebo otvorte/vytvorte rodostrom, ktorý už je tak pomenovaný -- "
+"opätovné použitie tohto stromu by zmiešalo jeho existujúce lokálne údaje s "
+"údajmi iného účtu."
 
 #: GrampsWebApiDb/grampswebapidb.py:703
 #, python-format
@@ -16659,6 +16609,11 @@ msgid ""
 "this Family Tree. Opening it as-is would leave the local mirror silently "
 "incomplete or unable to save changes back."
 msgstr ""
+"Účet overujúci sa cez GRAMPS_WEB_API_KEY nemá serverové oprávnenia, ktoré "
+"tento doplnok vyžaduje: %(missing)s. Udeľte mu na serveri aspoň rolu „%(role)"
+"s“ (alebo požiadajte administrátora), potom znova otvorte tento rodostrom. "
+"Otvorenie v aktuálnom stave by spôsobilo, že lokálna kópia by zostala "
+"neúplná alebo by nebolo možné uložiť zmeny späť."
 
 #: GrampsWebApiDb/grampswebapidb.py:741
 #, python-format
@@ -16668,6 +16623,11 @@ msgid ""
 "history in a format it cannot read. Upgrade the Gramps installation behind "
 "the Gramps Web API server (or ask its administrator to)."
 msgstr ""
+"Tento server beží na Gramps %(actual)s, ale tento doplnok vyžaduje server s "
+"Gramps %(required)s alebo novším: staršie servery serializujú históriu "
+"transakcií vo formáte, ktorý tento doplnok nedokáže prečítať. Aktualizujte "
+"inštaláciu Gramps za serverom Gramps Web API (alebo o to požiadajte jeho "
+"administrátora)."
 
 #: GrampsWebApiDb/grampswebapidb.py:1008
 msgid "Retry local change after server conflict"
@@ -16689,7 +16649,7 @@ msgid ""
 msgstr ""
 "Preveďte URL servera Gramps Web API, používateľské meno a heslo na hodnotu "
 "GRAMPS_WEB_API_KEY pre GrampsWebApiDb a voliteľne vytvorte zodpovedajúci, "
-"správne pomenovaný rodinný strom GrampsWebApiDb."
+"správne pomenovaný rodostrom GrampsWebApiDb."
 
 #: GrampsWebApiDb/mintapikeytool.py:141
 msgid "Server URL"
@@ -16724,7 +16684,7 @@ msgstr "GRAMPS_WEB_API_KEY"
 
 #: GrampsWebApiDb/mintapikeytool.py:182
 msgid "Create Synced Family Tree for this key"
-msgstr "Vytvoriť synchronizovaný rodinný strom pre tento kľúč"
+msgstr "Vytvoriť synchronizovaný rodostrom pre tento kľúč"
 
 #: GrampsWebApiDb/mintapikeytool.py:197
 #, python-format
@@ -16733,8 +16693,8 @@ msgid ""
 "use it directly, or fill in the form above to generate a different key."
 msgstr ""
 "Pre túto reláciu bol nájdený existujúci %s. Kliknite na Vytvoriť "
-"synchronizovaný rodinný strom, aby ste ho použili priamo, alebo vyplňte "
-"formulár vyššie na vygenerovanie iného kľúča."
+"synchronizovaný rodostrom, aby ste ho použili priamo, alebo vyplňte formulár "
+"vyššie na vygenerovanie iného kľúča."
 
 #: GrampsWebApiDb/mintapikeytool.py:222
 msgid "Please fill in the server URL, username, and password."
@@ -16790,13 +16750,13 @@ msgid ""
 "A Family Tree named \"%s\" already exists. Open it from Family Trees -> "
 "Manage Family Trees instead of creating another one."
 msgstr ""
-"Rodinný strom s názvom „%s“ už existuje. Otvorte ho cez Rodinné stromy → "
-"Spravovať rodinné stromy namiesto vytvárania ďalšieho."
+"Rodostrom s názvom „%s“ už existuje. Otvorte ho cez Rodostromy → Správa "
+"rodostromov namiesto vytvárania ďalšieho."
 
 #: GrampsWebApiDb/mintapikeytool.py:352
 #, python-format
 msgid "Error creating Family Tree: %s"
-msgstr "Chyba pri vytváraní rodinného stromu: %s"
+msgstr "Chyba pri vytváraní rodostromu: %s"
 
 #: GrampsWebApiDb/mintapikeytool.py:358
 #, python-format
@@ -16804,8 +16764,8 @@ msgid ""
 "Created Family Tree \"%s\". Open it from Family Trees -> Manage Family Trees "
 "to start syncing."
 msgstr ""
-"Vytvorený rodinný strom„%s“. Otvorte ho cez Rodinné stromy → Spravovať "
-"rodinné stromy, aby ste spustili synchronizáciu."
+"Bol vytvorený rodostrom„%s“. Otvorte ho cez Rodostromy → Správa rodostromov, "
+"aby ste spustili synchronizáciu."
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:230
 #: GrampsWebSync/grampswebsync.py:295
@@ -16835,9 +16795,8 @@ msgid ""
 "The next synchronization will compare the two trees from scratch."
 msgstr ""
 "Adresa, používateľské meno a heslo uložené pre tento server budú odstránené "
-"spolu so záznamom o tom, kedy sa tento rodinný strom naposledy "
-"synchronizoval. Pri ďalšej synchronizácii sa oba stromy budú porovnávať od "
-"začiatku."
+"spolu so záznamom o tom, kedy sa tento rodostrom naposledy synchronizoval. "
+"Pri ďalšej synchronizácii sa oba stromy budú porovnávať od začiatku."
 
 #: GrampsWebSync/grampswebsync.py:378
 msgid "Forget"
@@ -16848,8 +16807,8 @@ msgid ""
 "These credentials were last used with a different family tree. Check the "
 "server before continuing."
 msgstr ""
-"Tieto prihlasovacie údaje boli naposledy použité s iným rodinným stromom. "
-"Pred pokračovaním skontrolujte server."
+"Tieto prihlasovacie údaje boli naposledy použité s iným rodostromom. Pred "
+"pokračovaním skontrolujte server."
 
 #: GrampsWebSync/grampswebsync.py:585
 msgid "Change server…"
@@ -16898,8 +16857,8 @@ msgid ""
 "If you instead want to merge two significantly different trees with the "
 "option to make manual modifications, use the Import Merge Tool instead."
 msgstr ""
-"Tento nástroj umožňuje synchronizovať aktuálne otvorený rodokmeň so "
-"vzdialeným rodokmeňom, ktorý poskytuje Gramps Web.\n"
+"Tento nástroj umožňuje synchronizovať aktuálne otvorený rodostrom so "
+"vzdialeným rodostromom, ktorý poskytuje Gramps Web.\n"
 "\n"
 "Nástroj predpokladá, že oba stromy sú vzájomne odvodené, t. j. jeden z nich "
 "bol vytvorený z exportu druhého pomocou Gramps XML (nie GEDCOM!).\n"
@@ -16985,7 +16944,7 @@ msgstr "Príliš veľa požiadaviek, skúste to prosím o niekoľko sekúnd nesk
 
 #: GrampsWebSync/presentation.py:212
 msgid "GrampsWeb tree is disabled."
-msgstr "GrampsWeb tree je deaktivovaný."
+msgstr "Strom GrampsWeb je deaktivovaný."
 
 #: GrampsWebSync/presentation.py:214
 msgid "Connection failed. Please check the URL and your internet connection."
@@ -17020,7 +16979,7 @@ msgid ""
 "The family tree was modified while the changes were being reviewed. Nothing "
 "has been applied. Please compare again."
 msgstr ""
-"Rodinný strom bol modifikovaný počas kontroly zmien. Nič nebolo aplikované. "
+"Rodostrom bol modifikovaný počas kontroly zmien. Nič nebolo aplikované. "
 "Prosím, porovnajte znova."
 
 #: GrampsWebSync/presentation.py:235
@@ -17083,11 +17042,11 @@ msgstr "Prihlasovanie…"
 
 #: GrampsWebSync/presentation.py:268
 msgid "Downloading the remote family tree…"
-msgstr "Sťahovanie vzdialeného rodinného stromu…"
+msgstr "Sťahovanie vzdialeného rodostromu…"
 
 #: GrampsWebSync/presentation.py:269
 msgid "Comparing the two family trees…"
-msgstr "Porovnávanie dvoch rodinných stromov…"
+msgstr "Porovnávanie dvoch rodostromov…"
 
 #: GrampsWebSync/presentation.py:270
 msgid "Checking which media files are missing…"
@@ -17394,47 +17353,47 @@ msgstr "Graf"
 
 #: GrampyScript/GrampyScript.py:480 GrampyScript/GrampyScript.py:551
 msgid "Ready... (Tab for completions)"
-msgstr ""
+msgstr "Pripravené... (tlačidlo Tab pre dopĺňanie)"
 
 #: GrampyScript/GrampyScript.py:505
-#, fuzzy
-#| msgid "No title"
 msgid "Untitled"
-msgstr "Žiadny názov"
+msgstr "Bez názvu"
 
 #: GrampyScript/GrampyScript.py:534
 msgid ""
 "If you continue without saving, the changes you have made to this script "
 "will be lost."
 msgstr ""
+"Ak budete pokračovať bez uloženia, zmeny, ktoré ste v tomto skripte "
+"vykonali, sa stratia."
 
 #: GrampyScript/GrampyScript.py:1332
 msgid "Gram.py Script Edited Data"
 msgstr "Údaje upravené skriptom Gram.py"
 
 #: GrampyScript/script_descriptions.py:44
-#, fuzzy
-#| msgid "All Names of All People"
 msgid "List All People"
-msgstr "Všetky mená všetkých ľudí"
+msgstr "Zoznam všetkých ľudí"
 
 #: GrampyScript/script_descriptions.py:46
 msgid ""
 "Iterate over every person in the database and show their Gramps ID, given "
 "name, surname, and gender in the results table."
 msgstr ""
+"Prejdite všetky osoby v databáze a v tabuľke výsledkov zobrazte ich Gramps "
+"ID, dané (krstné) meno, priezvisko a pohlavie."
 
 #: GrampyScript/script_descriptions.py:51
-#, fuzzy
-#| msgid "Family Surname"
 msgid "Filter By Surname"
-msgstr "Priezvisko rodiny"
+msgstr "Filtrovať podľa priezviska"
 
 #: GrampyScript/script_descriptions.py:53
 msgid ""
 "List only the people whose surname matches a given value — a starting point "
 "for narrowing any report down by a condition."
 msgstr ""
+"Zoznam len tých osôb, ktorých priezvisko zodpovedá zadanej hodnote — "
+"východiskový bod pre zúženie akejkoľvek správy podľa podmienky."
 
 #: GrampyScript/script_descriptions.py:58 Overview/Overview.gpr.py:45
 msgid "Family Overview"
@@ -17445,20 +17404,25 @@ msgid ""
 "List every family together with the father, the mother, and how many "
 "children they have — a quick way to spot families that look incomplete."
 msgstr ""
+"Zoznam všetkých rodín spolu s otcom, matkou a počtom detí, ktoré majú — "
+"rýchly spôsob, ako odhaliť rodiny, ktoré vyzerajú byť neúplné."
 
 #: GrampyScript/script_descriptions.py:66
 msgid "Gender Breakdown (Pie Chart)"
-msgstr ""
+msgstr "Rozdelenie podľa pohlavia (koláčový graf)"
 
 #: GrampyScript/script_descriptions.py:68
 msgid ""
 "Count how many people are male, female, or of unknown gender, then draw a "
 "pie chart of the totals. Check the Chart tab after running."
 msgstr ""
+"Spočítať, koľko osôb je mužského, ženského alebo neznámeho pohlavia, a potom "
+"nakresliť koláčový graf s celkovými hodnotami. Po spustení skontrolujte "
+"kartu Graf."
 
 #: GrampyScript/script_descriptions.py:74
 msgid "Age At Death Histogram"
-msgstr ""
+msgstr "Histogram veku v čase úmrtia"
 
 #: GrampyScript/script_descriptions.py:76
 msgid ""
@@ -17466,10 +17430,13 @@ msgid ""
 "in whole years and draw a histogram of the distribution. Check the Chart tab "
 "after running."
 msgstr ""
+"Pre všetkých, ktorí majú zaznamenané narodenie aj úmrtie, vypočítať vek v "
+"celých rokoch a nakresliť histogram rozdelenia. Po spustení skontrolujte "
+"kartu Graf."
 
 #: GrampyScript/script_descriptions.py:82
 msgid "Mark Unsourced People As Private"
-msgstr ""
+msgstr "Označiť osoby bez zdrojov ako súkromné"
 
 #: GrampyScript/script_descriptions.py:84
 msgid ""
@@ -17477,10 +17444,14 @@ msgid ""
 "them as private, wrapped in begin_changes()/end_changes() so the edits "
 "happen inside a single, undoable transaction."
 msgstr ""
+"Príklad hromadnej úpravy: vyhľadajte všetky osoby, ktoré nemajú priradené "
+"žiadne citácie, a označte ich ako súkromné, zabalené do begin_changes()/"
+"end_changes(), aby sa úpravy vykonali v rámci jednej transakcie, ktorú je "
+"možné vrátiť späť."
 
 #: GrampyScript/script_descriptions.py:91
 msgid "CSV-Ready People Report"
-msgstr ""
+msgstr "Správa o osobách pripravená na export do CSV"
 
 #: GrampyScript/script_descriptions.py:93
 msgid ""
@@ -17488,42 +17459,49 @@ msgid ""
 "person. Once it runs, use Data > Save as CSV or Copy to clipboard to export "
 "the Table tab's contents."
 msgstr ""
+"Vytvorte jednoduchú tabuľkovú správu — ID, meno, pohlavie, rok narodenia — "
+"pre každú osobu. Po spustení použite možnosť Údaje > Uložiť ako CSV alebo "
+"Kopírovať do schránky na export obsahu karty Tabuľka."
 
 #: GrampyScript/script_descriptions.py:99
-#, fuzzy
-#| msgid "Active Person : "
 msgid "Active Person Summary"
-msgstr "Aktívna osoba : "
+msgstr "Súhrn o aktívnej osobe"
 
 #: GrampyScript/script_descriptions.py:101
 msgid ""
 "Show a compact family summary for the currently active person: their record, "
 "parents, spouse, and children."
 msgstr ""
+"Zobrazte stručný prehľad rodiny pre aktuálne aktívnu osobu: jej záznam, "
+"rodičov, manžela a deti."
 
 #: GrampyScript/script_descriptions.py:106
 msgid "Report On Selected People"
-msgstr ""
+msgstr "Správa o vybraných osobách"
 
 #: GrampyScript/script_descriptions.py:108
 msgid ""
 "List just the people currently selected (highlighted) in the People view. "
 "Select some rows in the People view before running this script."
 msgstr ""
+"Zoznam len tých osôb, ktoré sú aktuálne vybrané (zvýraznené) v pohľade "
+"Ľudia. Pred spustením tohto skriptu vyberte niektoré riadky v pohľade Ľudia."
 
 #: GrampyScript/script_descriptions.py:114
 msgid "Find People Missing A Birth Date"
-msgstr ""
+msgstr "Vyhľadanie osôb bez dátumu narodenia"
 
 #: GrampyScript/script_descriptions.py:116
 msgid ""
 "Data-quality check: list every person who has no recorded birth event, so "
 "you can prioritize research on those records."
 msgstr ""
+"Kontrola kvality údajov: zoznam všetkých osôb, ktoré nemajú zaznamenanú "
+"udalosť narodenia, aby ste mohli uprednostniť výskum týchto záznamov."
 
 #: GrampyScript/script_descriptions.py:121
 msgid "Births Per Decade (Import Example)"
-msgstr ""
+msgstr "Narodenia podľa desaťročia (príklad importu)"
 
 #: GrampyScript/script_descriptions.py:123
 msgid ""
@@ -17531,12 +17509,14 @@ msgid ""
 "script_helpers.py in this same folder — a template for sharing helper code "
 "between your own scripts with a plain 'import' statement."
 msgstr ""
+"Počíta narodenia podľa desaťročí pomocou funkcie decade() importovanej zo "
+"script_helpers.py v tomto istom priečinku — ide o šablónu na zdieľanie "
+"pomocného kódu medzi vašimi vlastnými skriptami pomocou jednoduchého príkazu "
+"„import“."
 
 #: GrampyScript/script_descriptions.py:130
-#, fuzzy
-#| msgid "Custom \"test.xml\" file"
 msgid "Custom Filter Example"
-msgstr "Vlastný súbor \"test.xml\""
+msgstr "Príklad vlastného filtra"
 
 #: GrampyScript/script_descriptions.py:132
 msgid ""
@@ -17545,10 +17525,14 @@ msgid ""
 "you've already created; if the name doesn't match one, a warning shows up in "
 "the Output tab instead."
 msgstr ""
+"Spustí jeden z vašich vlastných filtrov (z grampletu/editora Filtre) podľa "
+"názvu pomocou funkcie custom_filter(). Zmeňte „example filter“ na názov "
+"filtra, ktorý ste už vytvorili; ak sa názov nezhoduje so žiadnym existujúcim "
+"filtrom, na karte Výstup sa namiesto toho zobrazí upozornenie."
 
 #: GrampyScript/script_descriptions.py:140
 msgid "Delete Unused Repositories (Delete Example)"
-msgstr ""
+msgstr "Odstránenie nepoužívaných repozitárov (príklad odstránenia)"
 
 #: GrampyScript/script_descriptions.py:142
 msgid ""
@@ -17557,6 +17541,12 @@ msgid ""
 "unlikely to actually delete anything — it's meant to show the pattern, "
 "wrapped in begin_changes()/end_changes() as a single undoable transaction."
 msgstr ""
+"Demonštruje použitie funkcie delete(): odstráni akýkoľvek záznam typu "
+"Repozitár, na ktorý sa v rodostrome neodvolává žiadny iný záznam. Väčšina "
+"rodostromov nemá žiadne nepoužívané repozitáre, takže je nepravdepodobné, že "
+"by sa niečo skutočne odstránilo — ide o ukážku vzoru, zabalenú v "
+"begin_changes()/end_changes() ako jednu transakciu, ktorú je možné vrátiť "
+"späť."
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -18450,7 +18440,7 @@ msgid ""
 "Preferences."
 msgstr ""
 "Otvorený súbor má cestu k médiám %s, ktorá je v konflikte s cestou k médiám "
-"rodinného stromu, do ktorého ho importujete. Pôvodná cesta k médiám bola "
+"rodostromu, do ktorého ho importujete. Pôvodná cesta k médiám bola "
 "zachovaná. Skopírujte súbory do správneho adresára alebo zmeňte cestu k "
 "médiám v Predvoľbách."
 
@@ -22634,10 +22624,10 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
-"<i><a href=\"https://gramps-project.org/wiki/index.php?"
-"title=How_to_make_a_backup\">Zálohovanie do Gramps XML</a> V posledných "
-"verziách programu Gramps nájdete v ponuke Rodinný strom možnosť \"Vytvoriť "
-"zálohu...\", v opačnom prípade použite v tej istej ponuke možnosť "
+"<i><a href=\"https://gramps-project.org/wiki/"
+"index.php?title=How_to_make_a_backup\">Zálohovanie do Gramps XML</a> V "
+"posledných verziách programu Gramps nájdete v menu Rodostrom možnosť "
+"\"Vytvoriť zálohu...\", v opačnom prípade použite v tom istom menu možnosť "
 "\"Exportovať...\", ale zrušte označenie volieb ochrany osobných údajov v "
 "Asistentovi exportéra, aby ste exportovali všetky údaje.</i>\n"
 "\n"
@@ -22655,15 +22645,15 @@ msgid ""
 " • It is strongly recommended to backup each of your Family Trees before any "
 "upgrade.\n"
 msgstr ""
-" • Dôrazne odporúčame zálohovať každý z vašich rodinných stromov pred "
-"akoukoľvek aktualizáciou.\n"
+" • Dôrazne odporúčame zálohovať každý z vašich rodostromov pred akoukoľvek "
+"aktualizáciou.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:348
 msgid ""
 " • Test your backups by creating a new Family Tree and then importing the "
 "backup."
 msgstr ""
-" Otestujte svoje zálohy vytvorením nového rodinného stromu a následným "
+" Otestujte svoje zálohy vytvorením nového rodostromu a následným "
 "importovaním zálohy."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:370
@@ -23075,7 +23065,7 @@ msgstr "Quilt Chart"
 #: QuiltView/QuiltView.gpr.py:25
 msgid "The view shows a quilt chart visualisation of a family tree"
 msgstr ""
-"Tento pohľad zobrazuje vizualizáciu rodinného stromu vo forme quilt chart "
+"Tento pohľad zobrazuje vizualizáciu rodostromu vo forme quilt chart "
 "(prešívaná prikrývka)"
 
 #: QuiltView/QuiltView.py:223
@@ -23187,7 +23177,7 @@ msgstr "Počkaj na mňa"
 
 #: RUWebConnectPack/RUWebPack.py:46
 msgid "All Russia Family Tree (forum)"
-msgstr "Rodinný strom celého Ruska (fórum)"
+msgstr "Rodostrom celého Ruska (fórum)"
 
 #: RUWebConnectPack/RUWebPack.py:47
 msgid "Yandex people"
@@ -24567,40 +24557,28 @@ msgid "The style used for event and person details."
 msgstr "Štýl použitý pre detaily udalostí a osôb."
 
 #: Sqlite/ExportSql.py:1720
-#, fuzzy
-#| msgid "January"
 msgid "January 1"
-msgstr "Január"
+msgstr "1. január"
 
 #: Sqlite/ExportSql.py:1721
-#, fuzzy
-#| msgid "March"
 msgid "March 1"
-msgstr "Marec"
+msgstr "1. marec"
 
 #: Sqlite/ExportSql.py:1722
-#, fuzzy
-#| msgid "March"
 msgid "March 25"
-msgstr "Marec"
+msgstr "25. marec"
 
 #: Sqlite/ExportSql.py:1723
-#, fuzzy
-#| msgid "September"
 msgid "September 1"
-msgstr "September"
+msgstr "1. september"
 
 #: Sqlite/ExportSql.py:1749
-#, fuzzy
-#| msgid "Widowed"
 msgid "Flowed"
-msgstr "Ovdovení"
+msgstr "Obtekajúci text"
 
 #: Sqlite/ExportSql.py:1750
-#, fuzzy
-#| msgid "PS format"
 msgid "Preformatted"
-msgstr "Formát PS"
+msgstr "Predformátované"
 
 #: Sqlite/ExportSql.py:1953
 #, python-format
@@ -24842,9 +24820,9 @@ msgid ""
 "\n"
 "Please create a new empty Family Tree before importing a TMG backup file."
 msgstr ""
-"Aktuálny rodinný strom nie je prázdny.\n"
+"Aktuálny rodostrom nie je prázdny.\n"
 "\n"
-"Pred importom záložného súboru TMG vytvorte nový prázdny rodinný strom."
+"Pred importom záložného súboru TMG vytvorte nový prázdny rodostrom."
 
 #: TMGimporter/libtmg.py:2353
 msgid ""
@@ -24951,7 +24929,7 @@ msgid ""
 "tree that match today's day and month."
 msgstr ""
 "Konfigurovateľný program, ktorý vám zobrazí pripojené udalosti z vášho "
-"rodinného stromu, ktoré zodpovedajú dnešnému dňu a mesiacu."
+"rodostromu, ktoré zodpovedajú dnešnému dňu a mesiacu."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:105
 msgid "Database is not open, can't check history right now."
@@ -25866,7 +25844,7 @@ msgstr "Základný štýl použitý pre zobrazenie tabuľky."
 
 #: Topola/Topola.gpr.py:4
 msgid "Interactive Family Tree"
-msgstr "Interaktívny rodinný strom"
+msgstr "Interaktívny rodostrom"
 
 #: Topola/Topola.gpr.py:5
 msgid "Opens an interactive tree in the browser"
@@ -27028,7 +27006,7 @@ msgid ""
 "* loaded Family Tree base:\n"
 " \"%s\"\n"
 msgstr ""
-"* načítaná databáza Rodinného stromu:\n"
+"* načítaná databáza Rodostromu:\n"
 " \"%s\"\n"
 
 #: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:20
