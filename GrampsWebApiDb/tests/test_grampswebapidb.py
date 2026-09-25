@@ -53,6 +53,7 @@ import sys
 import tempfile
 import threading
 import time
+import unicodedata
 import unittest
 from urllib.error import HTTPError, URLError
 from unittest import mock
@@ -95,6 +96,8 @@ from GrampsWebApiDb.grampswebapidb import (
     WebApiDB,
     WebApiPushConflict,
     _diff_snapshots,
+    _normalize_reimported_text,
+    _normalize_strings_to_nfc,
     _restore_birth_death_indices,
     _snapshot_birth_death_indices,
     transaction_to_json,
@@ -3004,6 +3007,176 @@ class TestBirthDeathIndexPreservedAcrossResync(unittest.TestCase):
             restored = _restore_birth_death_indices(self.db, snapshot, trans)
 
         self.assertEqual(restored, 0)
+
+
+class TestNormalizeStringsToNfc(unittest.TestCase):
+    """_normalize_strings_to_nfc() itself -- the pure recursive walk,
+    independent of any real database."""
+
+    def test_normalizes_a_bare_string(self):
+        decomposed = unicodedata.normalize("NFD", "Zieliński")
+        self.assertNotEqual(decomposed, "Zieliński")  # the test means something
+        self.assertEqual(_normalize_strings_to_nfc(decomposed), "Zieliński")
+
+    def test_already_nfc_is_returned_unchanged(self):
+        self.assertEqual(_normalize_strings_to_nfc("Zieliński"), "Zieliński")
+
+    def test_recurses_into_dicts_and_lists(self):
+        decomposed = unicodedata.normalize("NFD", "Zieliński")
+        data = {"surname": decomposed, "aka": [decomposed, "plain"], "change": 12345}
+        result = _normalize_strings_to_nfc(data)
+        self.assertEqual(result["surname"], "Zieliński")
+        self.assertEqual(result["aka"], ["Zieliński", "plain"])
+        self.assertEqual(result["change"], 12345)  # non-strings pass through
+
+    def test_non_string_leaves_are_untouched(self):
+        data = {"private": True, "gender": 1, "note_list": []}
+        self.assertEqual(_normalize_strings_to_nfc(data), data)
+
+
+class TestNormalizeReimportedText(unittest.TestCase):
+    """_normalize_reimported_text() against a real DBAPI database --
+    suspected (see TODO.md) fix for a spurious push conflict on an
+    object nobody actually edited: Gramps XML export/import is not
+    guaranteed to preserve Unicode normalization form (NFC vs NFD)
+    byte-for-byte, and diff_items() -- both this addon's own and
+    gramps-web-api's old_unchanged() server-side -- compares strings
+    with plain "==", so a precomposed "ń" and a decomposed "n" +
+    combining acute read as genuinely different text even though they
+    render identically and nobody touched that field. These tests mimic
+    what a real ImportXml round trip losing NFC could leave behind,
+    the same way TestBirthDeathIndexPreservedAcrossResync mimics
+    ImportXml's own birth/death recompute, without needing a real
+    export/reimport round trip to reproduce it.
+    """
+
+    def setUp(self):
+        tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
+        self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
+        self.db = make_database("sqlite")
+        self.db.load(tmpdir)
+        self.addCleanup(self.db.close)
+
+    def test_decomposed_text_is_rewritten_to_nfc(self):
+        decomposed = unicodedata.normalize("NFD", "Zieliński")
+        self.assertNotEqual(decomposed, "Zieliński")  # the test means something
+        with DbTxn("mimic a reimport that lost NFC", self.db, batch=True) as trans:
+            person = Person()
+            person.set_gramps_id("I0001")
+            name = person.get_primary_name()
+            surname = name.get_primary_surname()
+            surname.set_surname(decomposed)
+            self.db.add_person(person, trans)
+            handle = person.handle
+
+        with DbTxn("normalize", self.db, batch=True) as trans:
+            corrected = _normalize_reimported_text(self.db, trans)
+
+        self.assertEqual(corrected, 1)
+        fixed = self.db.get_person_from_handle(handle)
+        self.assertEqual(
+            fixed.get_primary_name().get_primary_surname().get_surname(),
+            "Zieliński",
+        )
+
+    def test_already_nfc_text_is_left_alone(self):
+        with DbTxn("seed", self.db, batch=True) as trans:
+            person = Person()
+            person.set_gramps_id("I0001")
+            person.get_primary_name().get_primary_surname().set_surname(
+                "Zieliński"
+            )
+            self.db.add_person(person, trans)
+
+        with DbTxn("normalize", self.db, batch=True) as trans:
+            corrected = _normalize_reimported_text(self.db, trans)
+
+        # Nothing needed correcting -- no spurious commit, no bogus
+        # "N object(s) normalized" log line an operator would otherwise
+        # have to puzzle over.
+        self.assertEqual(corrected, 0)
+
+    def test_plain_ascii_data_is_untouched(self):
+        with DbTxn("seed", self.db, batch=True) as trans:
+            person = Person()
+            person.set_gramps_id("I0001")
+            person.get_primary_name().get_primary_surname().set_surname("Smith")
+            self.db.add_person(person, trans)
+
+        with DbTxn("normalize", self.db, batch=True) as trans:
+            corrected = _normalize_reimported_text(self.db, trans)
+
+        self.assertEqual(corrected, 0)
+
+
+class TestCommitBaseNormalizesText(unittest.TestCase):
+    """WebApiDB._commit_base() -- the single choke point every
+    commit_<type>() funnels through -- normalizes text to NFC on an
+    ordinary (non-batch) commit, the other half of TODO.md gap 7's fix
+    alongside _normalize_reimported_text(): this one stops the addon
+    itself from ever being the *source* of a Unicode-normalization
+    mismatch, rather than cleaning one up after a reimport. Deliberately
+    leaves a batch=True commit alone -- see that method's own docstring
+    on why -- so a simulated-reimport-shaped batch commit here is
+    expected to come back through unnormalized; that path is
+    _normalize_reimported_text()'s job, covered by
+    TestNormalizeReimportedText above.
+    """
+
+    def setUp(self):
+        tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
+        self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
+        db = make_database("sqlite")
+        db.load(tmpdir)
+        # Same minimal reclassify-a-real-DBAPI-db-as-WebApiDB shape as
+        # TestConflictRetryAgainstARealDatabase.setUp() -- see that
+        # method's own comment. web_client is mocked so the ordinary
+        # (non-batch) DbTxn below can commit through transaction_commit()
+        # -> _start_push() without a real network call; nothing here
+        # asserts on what got pushed.
+        db.__class__ = WebApiDB
+        db.web_client = mock.MagicMock()
+        db.runner = InlineTaskRunner()
+        db.io_runner = InlineTaskRunner()
+        db._syncing = False
+        db._retrying = False
+        db._pulling = False
+        db._get_metadata = lambda key, default=0: default
+        db._set_metadata = lambda key, value, use_txn=True: None
+        db.emit = mock.MagicMock()
+        self.db = db
+        self.addCleanup(self.db.close)
+
+    def test_ordinary_commit_normalizes_decomposed_text(self):
+        decomposed = unicodedata.normalize("NFD", "Zieliński")
+        self.assertNotEqual(decomposed, "Zieliński")  # the test means something
+        with DbTxn("edit", self.db) as trans:
+            person = Person()
+            person.set_gramps_id("I0001")
+            person.get_primary_name().get_primary_surname().set_surname(decomposed)
+            self.db.add_person(person, trans)
+            handle = person.handle
+
+        stored = self.db.get_person_from_handle(handle)
+        self.assertEqual(
+            stored.get_primary_name().get_primary_surname().get_surname(),
+            "Zieliński",
+        )
+
+    def test_batch_commit_is_left_for_normalize_reimported_text_instead(self):
+        decomposed = unicodedata.normalize("NFD", "Zieliński")
+        with DbTxn("simulated reimport", self.db, batch=True) as trans:
+            person = Person()
+            person.set_gramps_id("I0001")
+            person.get_primary_name().get_primary_surname().set_surname(decomposed)
+            self.db.add_person(person, trans)
+            handle = person.handle
+
+        stored = self.db.get_person_from_handle(handle)
+        self.assertEqual(
+            stored.get_primary_name().get_primary_surname().get_surname(),
+            decomposed,
+        )
 
 
 class TestDescribeResyncToViews(unittest.TestCase):
