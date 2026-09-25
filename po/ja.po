@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-03 12:30-0700\n"
+"POT-Creation-Date: 2026-09-24 10:14-0700\n"
 "PO-Revision-Date: 2026-09-07 01:41+0000\n"
 "Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
@@ -22,33 +22,6 @@ msgstr ""
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
-
-msgid "Birthdays"
-msgstr "誕生日"
-
-msgid "Ignore birthdays with tag"
-msgstr "タグで誕生日を無視する"
-
-msgid "Month and day"
-msgstr "月と日"
-
-msgid "Only show birthdays with tag"
-msgstr "タグが付いた誕生日のみを表示"
-
-msgid "Proximity to current date"
-msgstr "現在の日付との近接性"
-
-msgid "Sort birthdays by"
-msgstr "誕生日の並べ替え"
-
-msgid "Sort dates of death by"
-msgstr "死亡日の並べ替え"
-
-msgid "a gramplet that displays death dates in sorted order"
-msgstr "死亡日を並べ替え順に表示するグランプレット"
-
-msgid "a gramplet that displays the birthdays of the living people"
-msgstr "存命人物の誕生日を表示するグランプレット"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -297,26 +270,122 @@ msgstr ""
 msgid "Archive Assist"
 msgstr "アーカイブアシスト"
 
-#: AssociationsTool/associationstool.gpr.py:36
+#: AssociationsTool/associationstool.gpr.py:43
 msgid "Check Associations data"
 msgstr "関連付けデータを確認する"
 
-#: AssociationsTool/associationstool.gpr.py:37
-msgid "Will check the data on Association for people."
-msgstr "人々のための関連付けのデータを確認する。"
+#: AssociationsTool/associationstool.gpr.py:44
+msgid "Display all person Associations in a sortable, hotlinked table"
+msgstr ""
 
-#: AssociationsTool/associationstool.py:53
+#: AssociationsTool/associationstool.py:130
 msgid "Associations state tool"
 msgstr "関連付けの状態ツール"
 
-#: AssociationsTool/associationstool.py:81
-msgid "Type of link"
-msgstr "リンクの種類"
+#: AssociationsTool/associationstool.py:181
+#, fuzzy, python-format
+#| msgid "Error applying filter: %s"
+msgid "Error initializing data: %s"
+msgstr "フィルター適用中にエラーが発生しました: %s"
 
-#: AssociationsTool/associationstool.py:82
+#: AssociationsTool/associationstool.py:222
+#, fuzzy, python-format
+#| msgid "Error resetting filter: %s"
+msgid "Error processing person %s: %s"
+msgstr "フィルターのリセットエラー: %s"
+
+#: AssociationsTool/associationstool.py:252
 #, fuzzy
-msgid "Of"
-msgstr "Of"
+#| msgid "Process relationships..."
+msgid "Processing associations..."
+msgstr "関係を処理中..."
+
+#: AssociationsTool/associationstool.py:257
+#, fuzzy, python-format
+#| msgid "Could not create the directory: %(path)s"
+msgid "Could not create progress dialog: %s"
+msgstr "ディレクトリを作成できませんでした : %(path)s"
+
+#: AssociationsTool/associationstool.py:281
+#, fuzzy, python-format
+#| msgid "Produces descendants lines of a person"
+msgid "Processing %d of %d persons"
+msgstr "人物の子孫系統を生成します"
+
+#: AssociationsTool/associationstool.py:347
+#, fuzzy, python-format
+#| msgid "Error applying filter: %s"
+msgid "Error displaying associations: %s"
+msgstr "フィルター適用中にエラーが発生しました: %s"
+
+#: AssociationsTool/associationstool.py:365
+#: AssociationsTool/associationstool.py:448
+#, fuzzy
+#| msgid "Street Name"
+msgid "Starting Name"
+msgstr "通り名"
+
+#: AssociationsTool/associationstool.py:368
+#: AssociationsTool/associationstool.py:451
+#, fuzzy
+#| msgid "Sync Associations"
+msgid "Associate"
+msgstr "関連付けを同期"
+
+#: AssociationsTool/associationstool.py:427
+#: AssociationsTool/associationstool.py:459
+#, fuzzy, python-format
+#| msgid "No source information found"
+msgid "Total associations found: %d"
+msgstr "ソース情報が見つかりません"
+
+#: AssociationsTool/associationstool.py:553
+#, fuzzy
+#| msgid "Edit referenced Person"
+msgid "Edit Starting Person"
+msgstr "参照されている人物を編集"
+
+#: AssociationsTool/associationstool.py:554
+#, fuzzy
+#| msgid "Edit referenced Person"
+msgid "Edit Associate Person"
+msgstr "参照されている人物を編集"
+
+#: AssociationsTool/associationstool.py:555
+#, fuzzy
+#| msgid "Edit selection"
+msgid "Edit Association"
+msgstr "選択を編集"
+
+#: AssociationsTool/associationstool.py:557
+#, fuzzy
+#| msgid "Copy to clipboard"
+msgid "Copy row to clipboard"
+msgstr "クリップボードにコピー"
+
+#: AssociationsTool/associationstool.py:558
+#, fuzzy
+#| msgid "Enumerated date from"
+msgid "Create Note from row"
+msgstr "調査開始日"
+
+#: AssociationsTool/associationstool.py:672
+#, fuzzy
+#| msgid "Sync Associations"
+msgid "Association:"
+msgstr "関連付けを同期"
+
+#: AssociationsTool/associationstool.py:673
+#, fuzzy
+#| msgid "Starting migration..."
+msgid "Starting Person"
+msgstr "移行を開始しています..."
+
+#: AssociationsTool/associationstool.py:675
+#, fuzzy
+#| msgid "Lines type"
+msgid "Link type"
+msgstr "線の種類"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
@@ -450,10 +519,12 @@ msgid "No media was removed."
 msgstr "メディアは削除されませんでした。"
 
 #: AvatarGenerator/AvatarGenerator.py:213
+#, python-brace-format
 msgid "{} media references were removed from {} persons."
 msgstr "{} 個のメディア参照が {} 人の人物から削除されました。"
 
 #: AvatarGenerator/AvatarGenerator.py:216
+#, python-brace-format
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
@@ -467,6 +538,7 @@ msgid "Add avatar images..."
 msgstr "アバター画像を追加..."
 
 #: AvatarGenerator/AvatarGenerator.py:314
+#, python-brace-format
 msgid "{} avatar images were sucessfully added."
 msgstr "{} 個のアバター画像が正常に追加されました。"
 
@@ -793,6 +865,37 @@ msgstr "家族を編集"
 #: BirthOrder/birthorder.py:275
 msgid "Looking for children birth order"
 msgstr "子の出生順を検索中"
+
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:34
+msgid "Birthdays"
+msgstr "誕生日"
+
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:27
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "存命人物の誕生日を表示するグランプレット"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:47
+msgid "Sort birthdays by"
+msgstr "誕生日の並べ替え"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:49
+#: DateOfDeathGramplet/DateOfDeathGramplet.py:42
+msgid "Proximity to current date"
+msgstr "現在の日付との近接性"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:50
+#: DateOfDeathGramplet/DateOfDeathGramplet.py:43
+msgid "Month and day"
+msgstr "月と日"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:53
+msgid "Ignore birthdays with tag"
+msgstr "タグで誕生日を無視する"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:54
+msgid "Only show birthdays with tag"
+msgstr "タグが付いた誕生日のみを表示"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:194
@@ -1125,8 +1228,8 @@ msgstr "チャットウィズツリー"
 msgid "Type a message..."
 msgstr "メッセージを入力..."
 
-#: ChatWithTree/ChatWithTree.py:153 GrampsAssistant/grampsassistant.py:216
-#: GrampsAssistant/grampsassistant.py:920
+#: ChatWithTree/ChatWithTree.py:153 GrampsAssistant/grampsassistant.py:223
+#: GrampsAssistant/grampsassistant.py:931
 msgid "Send"
 msgstr "送信"
 
@@ -1152,6 +1255,7 @@ msgid "An error occurred while processing your query."
 msgstr "クエリの処理中にエラーが発生しました。"
 
 #: ChatWithTree/chatwithllm.py:119
+#, python-brace-format
 msgid "Tree: '{}'"
 msgstr "ツリー: '{}'"
 
@@ -1281,7 +1385,7 @@ msgstr "タグを表示"
 msgid "Vertical Details"
 msgstr "垂直方向の詳細"
 
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:79
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:78
 msgid "Order"
 msgstr "順序"
 
@@ -1325,6 +1429,89 @@ msgstr "このリンクをクリックしてアクセス"
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
 msgstr ": "
+
+#: ContextView/ContextView.gpr.py:29 ContextView/ContextView.py:502
+msgid "Context"
+msgstr ""
+
+#: ContextView/ContextView.gpr.py:31
+msgid ""
+"A chart placing a person in the context of their immediate family: the "
+"couple in the centre, each partner's parents above them, their children "
+"below, and each partner's siblings in a column to their own side, eldest at "
+"the top. Click any box to re-centre the chart on that person; the name in "
+"bold marks the way back to the home person."
+msgstr ""
+
+#: ContextView/ContextView.py:572
+msgid "Show the previous family"
+msgstr ""
+
+#: ContextView/ContextView.py:575
+#, fuzzy
+#| msgid "Show more details"
+msgid "Show the next family"
+msgstr "詳細を表示"
+
+#: ContextView/ContextView.py:899
+#, fuzzy
+#| msgid "No place is active"
+msgid "No person is active."
+msgstr "アクティブな場所がありません"
+
+#: ContextView/ContextView.py:915
+#, python-format
+msgid "Family %(current)d of %(total)d"
+msgstr ""
+
+#: ContextView/ContextView.py:922
+#, fuzzy, python-format
+#| msgid "Highlight the home person"
+msgid "family %d lies toward the home person"
+msgstr "ホームパーソンを強調表示"
+
+#: ContextView/ContextView.py:980
+msgid "<b>Bold</b> marks the way to the home person"
+msgstr ""
+
+#: ContextView/ContextView.py:1389 ContextView/ContextView.py:1599
+#: LifeLineChartView/lifelinechart.py:2622
+msgid "Show siblings"
+msgstr "兄弟姉妹を表示"
+
+#: ContextView/ContextView.py:1402
+#, fuzzy
+#| msgid "About Quilt View"
+msgid "About Context View"
+msgstr "キルトビューについて"
+
+#: ContextView/ContextView.py:1592
+#, fuzzy
+#| msgid "Show page numbers"
+msgid "Show tag colour"
+msgstr "ページ番号を表示"
+
+#: ContextView/ContextView.py:1613
+msgid "Details in each box"
+msgstr ""
+
+#: ContextView/ContextView.py:1617
+#, fuzzy
+#| msgid "Name of City"
+msgid "Name only"
+msgstr "市名"
+
+#: ContextView/ContextView.py:1618
+#, fuzzy
+#| msgid "Name and Surname"
+msgid "Name and dates"
+msgstr "名と姓"
+
+#: ContextView/ContextView.py:1619
+#, fuzzy
+#| msgid "Full date and place"
+msgid "Name, dates and places"
+msgstr "完全な日付と場所"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
@@ -1968,8 +2155,8 @@ msgstr "ソース?"
 msgid "Surname, Given"
 msgstr "姓、名"
 
-#: DataEntryGramplet/DataEntryGramplet.py:89 GrampyScript/GrampyScript.py:127
-#: GrampyScript/GrampyScript.py:147 GrampyScript/GrampyScript.py:304
+#: DataEntryGramplet/DataEntryGramplet.py:89 GrampyScript/GrampyScript.py:155
+#: GrampyScript/GrampyScript.py:175 GrampyScript/GrampyScript.py:337
 #: NoteGramplet/NoteGramplet.py:111 PDFForms/generatepdfform.py:258
 #: RelID/relation_tab.py:363
 msgid "Save"
@@ -2178,8 +2365,8 @@ msgstr "計算"
 
 #: DateCalculator/DateCalculator.py:107
 #: EditExifMetadata/editexifmetadata.py:219
-#: GrampsWebApiDb/mintapikeytool.py:176 GrampsWebSync/grampswebsync.py:1063
-#: GraphView/graphview.py:3873
+#: GrampsWebApiDb/mintapikeytool.py:176 GrampsWebSync/grampswebsync.py:1114
+#: GraphView/graphview.py:3866
 msgid "Copy"
 msgstr "コピー"
 
@@ -2199,6 +2386,20 @@ msgstr "エラー: 少なくとも1つの式は日付でなければなりませ
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
 msgstr "上の入力欄に式を入力し、「計算」をクリックしてください。"
+
+#: DateOfDeathGramplet/DateOfDeathGramplet.gpr.py:24
+#: DateOfDeathGramplet/DateOfDeathGramplet.gpr.py:34 Form/form_ie.xml.h:114
+#: Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
+msgid "Date of Death"
+msgstr "死亡日"
+
+#: DateOfDeathGramplet/DateOfDeathGramplet.gpr.py:25
+msgid "a gramplet that displays death dates in sorted order"
+msgstr "死亡日を並べ替え順に表示するグランプレット"
+
+#: DateOfDeathGramplet/DateOfDeathGramplet.py:40
+msgid "Sort dates of death by"
+msgstr "死亡日の並べ替え"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
@@ -2260,28 +2461,28 @@ msgstr ""
 msgid "mentioned in note"
 msgstr "メモ内で言及"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:245
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:251
 msgid "Note on Family"
 msgstr "家族に関するメモ"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:258
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:264
 msgid "sibling"
 msgstr "兄弟姉妹"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:268
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:274
 msgid "Note on Parent Family"
 msgstr "親家族に関するメモ"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:272
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:278
 #, python-format
 msgid "%s (association)"
 msgstr "%s (関連付け)"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:277
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:283
 msgid "Note on Person"
 msgstr "人物に関するメモ"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:308
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:330
 #, python-format
 msgid ""
 "\n"
@@ -2290,41 +2491,41 @@ msgstr ""
 "\n"
 "   %s の "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:336
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:358
 msgid "Error: No Home Person set"
 msgstr "エラー: ホームパーソンが設定されていません"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:341
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:363
 msgid "No Active Person set."
 msgstr "アクティブな人が設定されていません。"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:342
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:364
 msgid "Error: No Active Person set"
 msgstr "エラー: アクティブな人物が設定されていません"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:347
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:369
 msgid "Initializing search..."
 msgstr "検索を初期化中..."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:366
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:388
 msgid "Looking for relationship between\n"
 msgstr "間の関係を検索中\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:367
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:389
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
 msgstr "  <b>%s</b> (ホームパーソン) と\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:368
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:390
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (アクティブな人)...\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:382
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:404
 msgid "Searching for connections..."
 msgstr "接続を検索中..."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:402
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:424
 #, python-format
 msgid ""
 "Found relation #%d: \n"
@@ -2333,7 +2534,7 @@ msgstr ""
 "関係 #%d を発見: \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:423
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:445
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
@@ -2341,11 +2542,11 @@ msgstr ""
 "一時停止中。\n"
 "続行を押して追加の関係を検索します。\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:427
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:449
 msgid "Paused - Press Continue to search for more relations"
 msgstr "一時停止中 - 続行を押してより多くの関係を検索"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:456
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:491
 #, python-format
 msgid ""
 "\n"
@@ -2354,19 +2555,21 @@ msgstr ""
 "\n"
 "検索が完了しました。%d 件の関係パスが見つかりました。"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:460
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:495
+#, python-brace-format
 msgid "Search completed - {} relation paths found"
 msgstr "検索完了 - {} 件の関係パスが見つかりました"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:471
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:506
+#, python-brace-format
 msgid "Error during search: {}"
 msgstr "検索中にエラーが発生しました: {}"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:481
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:516
 msgid "Resuming search..."
 msgstr "検索を再開しています..."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:489
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:524
 msgid "Search interrupted by user"
 msgstr "ユーザーによって検索が中断されました"
 
@@ -3446,103 +3649,103 @@ msgstr "子孫系統"
 msgid "Produces descendants lines of a person"
 msgstr "人物の子孫系統を生成します"
 
-#: DescendantsLines/DescendantsLines.py:472
+#: DescendantsLines/DescendantsLines.py:477
 msgid "Using SVG type for supplemental document is not supported!"
 msgstr "補足文書にSVGタイプを使用することはサポートされていません!"
 
-#: DescendantsLines/DescendantsLines.py:1540
+#: DescendantsLines/DescendantsLines.py:1545
 msgid "Output format"
 msgstr "出力形式"
 
-#: DescendantsLines/DescendantsLines.py:1541
+#: DescendantsLines/DescendantsLines.py:1546
 msgid "PNG format"
 msgstr "PNG形式"
 
-#: DescendantsLines/DescendantsLines.py:1542
+#: DescendantsLines/DescendantsLines.py:1547
 msgid "SVG format"
 msgstr "SVG形式"
 
-#: DescendantsLines/DescendantsLines.py:1543
+#: DescendantsLines/DescendantsLines.py:1548
 msgid "PDF format"
 msgstr "PDF形式"
 
-#: DescendantsLines/DescendantsLines.py:1544
+#: DescendantsLines/DescendantsLines.py:1549
 msgid "PS format"
 msgstr "PS形式"
 
-#: DescendantsLines/DescendantsLines.py:1545
+#: DescendantsLines/DescendantsLines.py:1550
 msgid "The output format to be used"
 msgstr "使用される出力形式"
 
-#: DescendantsLines/DescendantsLines.py:1550
+#: DescendantsLines/DescendantsLines.py:1555
 msgid "The destination file for the content."
 msgstr "コンテンツの保存先ファイル。"
 
-#: DescendantsLines/DescendantsLines.py:1554
+#: DescendantsLines/DescendantsLines.py:1559
 msgid "The number of generations to include in the chart. (0 for unlimited)"
 msgstr "チャートに含める世代数。(0は無制限)"
 
-#: DescendantsLines/DescendantsLines.py:1559
+#: DescendantsLines/DescendantsLines.py:1564
 msgid "Use d'Aboville descendant numbering system"
 msgstr "d'Aboville 子孫番号付けシステムを使用"
 
-#: DescendantsLines/DescendantsLines.py:1561
+#: DescendantsLines/DescendantsLines.py:1566
 msgid "Prepend name with d'Aboville descendant number in the chart."
 msgstr "チャート内の名前に d'Aboville 子孫番号を前置します。"
 
-#: DescendantsLines/DescendantsLines.py:1564
+#: DescendantsLines/DescendantsLines.py:1569
 msgid "Include an image"
 msgstr "画像を含める"
 
-#: DescendantsLines/DescendantsLines.py:1565
+#: DescendantsLines/DescendantsLines.py:1570
 msgid "Whether to include an image if one is available."
 msgstr "利用可能な場合に画像を含めるかどうか。"
 
-#: DescendantsLines/DescendantsLines.py:1569
+#: DescendantsLines/DescendantsLines.py:1574
 msgid "Max Image height"
 msgstr "最大画像高さ"
 
-#: DescendantsLines/DescendantsLines.py:1570
+#: DescendantsLines/DescendantsLines.py:1575
 msgid "Maximum image height in pixels, 0=don't scale for height."
 msgstr "最大画像高さ (ピクセル)、0=高さで拡大縮小しない。"
 
-#: DescendantsLines/DescendantsLines.py:1574
+#: DescendantsLines/DescendantsLines.py:1579
 msgid "Max Image width"
 msgstr "最大画像幅"
 
-#: DescendantsLines/DescendantsLines.py:1575
+#: DescendantsLines/DescendantsLines.py:1580
 msgid "Maximum image width in pixels, 0=don't scale for width."
 msgstr "最大画像幅 (ピクセル)、0=幅で拡大縮小しない。"
 
-#: DescendantsLines/DescendantsLines.py:1579
+#: DescendantsLines/DescendantsLines.py:1584
 msgid "Image Location"
 msgstr "画像の位置"
 
-#: DescendantsLines/DescendantsLines.py:1580
+#: DescendantsLines/DescendantsLines.py:1585
 msgid "Above text"
 msgstr "テキストの上"
 
-#: DescendantsLines/DescendantsLines.py:1581
+#: DescendantsLines/DescendantsLines.py:1586
 msgid "Left of text"
 msgstr "テキストの左"
 
-#: DescendantsLines/DescendantsLines.py:1582
+#: DescendantsLines/DescendantsLines.py:1587
 msgid "Position of image relative to text"
 msgstr "テキストに対する画像の位置"
 
-#: DescendantsLines/DescendantsLines.py:1588
+#: DescendantsLines/DescendantsLines.py:1593
 msgid "Colour Name by Gender"
 msgstr "性別で名前を色分け"
 
-#: DescendantsLines/DescendantsLines.py:1590
+#: DescendantsLines/DescendantsLines.py:1595
 msgid "Color the name to indicate a person's gender in the chart."
 msgstr "チャート内で人物の性別を示すために名前を色付けします。"
 
-#: DescendantsLines/DescendantsLines.py:1594
+#: DescendantsLines/DescendantsLines.py:1599
 msgid "Use alternate events, if Primary event is not found"
 msgstr "プライマリイベントが見つからない場合、代替イベントを使用"
 
-#: DescendantsLines/DescendantsLines.py:1595
+#: DescendantsLines/DescendantsLines.py:1600
 msgid ""
 "For Birth (baptism, christen)\n"
 "   Marriage (marr_lic, engagement)\n"
@@ -3554,36 +3757,36 @@ msgstr ""
 "   離婚 (婚姻無効、離婚申請)、\n"
 "   死亡 (埋葬、火葬、検認)。"
 
-#: DescendantsLines/DescendantsLines.py:1601
+#: DescendantsLines/DescendantsLines.py:1606
 msgid "Sort Events by Date"
 msgstr "イベントを日付で並べ替え"
 
-#: DescendantsLines/DescendantsLines.py:1602
+#: DescendantsLines/DescendantsLines.py:1607
 msgid "Sort events by date (else use the order of the 'Display Format' above)."
 msgstr ""
 "イベントを日付で並べ替え (そうでない場合は、上記の「表示形式」の順序を使用)。"
 
-#: DescendantsLines/DescendantsLines.py:1606
+#: DescendantsLines/DescendantsLines.py:1611
 msgid "Text style"
 msgstr "テキストスタイル"
 
-#: DescendantsLines/DescendantsLines.py:1607
+#: DescendantsLines/DescendantsLines.py:1612
 msgid "Center-aligned text"
 msgstr "中央揃えテキスト"
 
-#: DescendantsLines/DescendantsLines.py:1608
+#: DescendantsLines/DescendantsLines.py:1613
 msgid "Left-aligned text"
 msgstr "左揃えテキスト"
 
-#: DescendantsLines/DescendantsLines.py:1609
+#: DescendantsLines/DescendantsLines.py:1614
 msgid "Alignment of the text in the block for each person on the chart"
 msgstr "チャート上の各人物のブロック内のテキストの配置"
 
-#: DescendantsLines/DescendantsLines.py:1613
+#: DescendantsLines/DescendantsLines.py:1618
 msgid "Max Note Length"
 msgstr "最大メモ長"
 
-#: DescendantsLines/DescendantsLines.py:1614
+#: DescendantsLines/DescendantsLines.py:1619
 msgid ""
 "Maximum length of an event's note field in a text block, '$e(n)'\n"
 " 0=no limit "
@@ -3591,11 +3794,11 @@ msgstr ""
 "テキストブロック内のイベントのメモフィールドの最大長、'$e(n)'\n"
 " 0=制限なし "
 
-#: DescendantsLines/DescendantsLines.py:1618
+#: DescendantsLines/DescendantsLines.py:1623
 msgid "Font Name"
 msgstr "フォント名"
 
-#: DescendantsLines/DescendantsLines.py:1620
+#: DescendantsLines/DescendantsLines.py:1625
 msgid ""
 "Name of the Font to use. On Windows enter the file name of the .ttf at /"
 "Windows/Fonts"
@@ -3603,75 +3806,75 @@ msgstr ""
 "使用するフォントの名前。Windows では、/Windows/Fonts にある .ttf のファイル名"
 "を入力します"
 
-#: DescendantsLines/DescendantsLines.py:1623
+#: DescendantsLines/DescendantsLines.py:1628
 msgid "Font base size"
 msgstr "ベースフォントサイズ"
 
-#: DescendantsLines/DescendantsLines.py:1629
+#: DescendantsLines/DescendantsLines.py:1634
 msgid "Box around Person's block"
 msgstr "人物ブロックの周囲にボックス"
 
-#: DescendantsLines/DescendantsLines.py:1630
+#: DescendantsLines/DescendantsLines.py:1635
 msgid "Draw a thin black box around each person' text block."
 msgstr "各人物のテキストブロックの周囲に細い黒いボックスを描きます。"
 
-#: DescendantsLines/DescendantsLines.py:1634
+#: DescendantsLines/DescendantsLines.py:1639
 msgid "All Person's blocks have the same height"
 msgstr "すべての人物ブロックの高さを同じにする"
 
-#: DescendantsLines/DescendantsLines.py:1635
+#: DescendantsLines/DescendantsLines.py:1640
 msgid ""
 "All the blocks of all the person have the same height, which is the height "
 "of the highest block."
 msgstr ""
 "すべての人物のブロックの高さは、最も高いブロックの高さと同じになります。"
 
-#: DescendantsLines/DescendantsLines.py:1640
+#: DescendantsLines/DescendantsLines.py:1645
 msgid "All Person's blocks have the same width"
 msgstr "すべての人物ブロックの幅を同じにする"
 
-#: DescendantsLines/DescendantsLines.py:1641
+#: DescendantsLines/DescendantsLines.py:1646
 msgid ""
 "All the blocks of all the person have the same width, which is the width of "
 "the widthest block."
 msgstr "すべての人物のブロックの幅は、最も広いブロックの幅と同じになります。"
 
-#: DescendantsLines/DescendantsLines.py:1646
+#: DescendantsLines/DescendantsLines.py:1651
 msgid "Colour blocks by Generation"
 msgstr "世代でブロックを色分け"
 
-#: DescendantsLines/DescendantsLines.py:1647
+#: DescendantsLines/DescendantsLines.py:1652
 msgid "Colour the background of text blocks by generation."
 msgstr "テキストブロックの背景を世代で色分けします。"
 
-#: DescendantsLines/DescendantsLines.py:1651
+#: DescendantsLines/DescendantsLines.py:1656
 msgid "Descend block colour intensity"
 msgstr "子孫ブロックの色の濃さ"
 
-#: DescendantsLines/DescendantsLines.py:1652
+#: DescendantsLines/DescendantsLines.py:1657
 msgid ""
 "Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
 "colour"
 msgstr "子孫ブロックの背景色の濃さ、0=薄い、255=濃い色"
 
-#: DescendantsLines/DescendantsLines.py:1656
+#: DescendantsLines/DescendantsLines.py:1661
 msgid "Spouse block colour intensity"
 msgstr "配偶者ブロックの色の濃さ"
 
-#: DescendantsLines/DescendantsLines.py:1657
+#: DescendantsLines/DescendantsLines.py:1662
 msgid ""
 "Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
 msgstr "配偶者ブロックの背景色の濃さ、0=薄い、255=濃い色"
 
-#: DescendantsLines/DescendantsLines.py:1662
+#: DescendantsLines/DescendantsLines.py:1667
 msgid "Display Formats"
 msgstr "表示形式"
 
-#: DescendantsLines/DescendantsLines.py:1664
+#: DescendantsLines/DescendantsLines.py:1669
 msgid "Name Display Format"
 msgstr "名前の表示形式"
 
-#: DescendantsLines/DescendantsLines.py:1667
+#: DescendantsLines/DescendantsLines.py:1672
 msgid ""
 "f=first & middle names, l=surname, n=nickname,\n"
 "c=commonly used given name, t=title, s=suffix, g=family nick name\n"
@@ -3681,8 +3884,8 @@ msgstr ""
 "c=一般的に使われる名前、t=敬称、s=接尾辞、g=家族の愛称\n"
 "Wikiマニュアル > レポート > パート2 を参照"
 
-#: DescendantsLines/DescendantsLines.py:1679
-#: DescendantsLines/DescendantsLines.py:1698
+#: DescendantsLines/DescendantsLines.py:1684
+#: DescendantsLines/DescendantsLines.py:1703
 msgid ""
 "[event, list]$e(formating)\n"
 "See Wiki Manual > Reports > part 2\n"
@@ -3692,13 +3895,13 @@ msgstr ""
 "Wikiマニュアル > レポート > パート2 を参照\n"
 "書式: 日付=d(ymdMo) 場所=D(elcuspnoitxy) メモ=n 省略タイプ=t"
 
-#: DescendantsLines/DescendantsLines.py:1705
+#: DescendantsLines/DescendantsLines.py:1710
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
 #: ImportMerge/importmerge.glade:407 ImportMerge/importmerge.py:912
 msgid "Replace"
 msgstr "置き換え"
 
-#: DescendantsLines/DescendantsLines.py:1710
+#: DescendantsLines/DescendantsLines.py:1715
 msgid ""
 "i.e.\n"
 "United States of America/USA"
@@ -3706,31 +3909,31 @@ msgstr ""
 "例:\n"
 "United States of America/USA"
 
-#: DescendantsLines/DescendantsLines.py:1714
+#: DescendantsLines/DescendantsLines.py:1719
 msgid "Spouse and Family"
 msgstr "配偶者と家族"
 
-#: DescendantsLines/DescendantsLines.py:1716
+#: DescendantsLines/DescendantsLines.py:1721
 msgid "Vertical edge descendant to spouse-bar"
 msgstr "子孫から配偶者バーへの垂直エッジ"
 
-#: DescendantsLines/DescendantsLines.py:1717
+#: DescendantsLines/DescendantsLines.py:1722
 msgid "The length of the vertical edge from descendant to spouse-bar."
 msgstr "子孫から配偶者バーまでの垂直エッジの長さ。"
 
-#: DescendantsLines/DescendantsLines.py:1721
+#: DescendantsLines/DescendantsLines.py:1726
 msgid "Vertical edge spouse-bar to spouse"
 msgstr "配偶者バーから配偶者への垂直エッジ"
 
-#: DescendantsLines/DescendantsLines.py:1722
+#: DescendantsLines/DescendantsLines.py:1727
 msgid "The length of the vertical edge from spouse-bar to spouse."
 msgstr "配偶者バーから配偶者までの垂直エッジの長さ。"
 
-#: DescendantsLines/DescendantsLines.py:1726
+#: DescendantsLines/DescendantsLines.py:1731
 msgid "Vertical space spouse-bar to other spouse"
 msgstr "配偶者バーと他の配偶者の間の垂直スペース"
 
-#: DescendantsLines/DescendantsLines.py:1727
+#: DescendantsLines/DescendantsLines.py:1732
 msgid ""
 "The space to add between one spouse-bar and another spouse in case of "
 "multiple families with the same descendant."
@@ -3738,19 +3941,19 @@ msgstr ""
 "同じ子孫を持つ複数の家族がいる場合に、ある配偶者バーと別の配偶者の間に追加す"
 "るスペース。"
 
-#: DescendantsLines/DescendantsLines.py:1732
+#: DescendantsLines/DescendantsLines.py:1737
 msgid "Horizontal space descendant to spouse"
 msgstr "子孫と配偶者の間の水平スペース"
 
-#: DescendantsLines/DescendantsLines.py:1733
+#: DescendantsLines/DescendantsLines.py:1738
 msgid "The space to add between the descendant and the spouse."
 msgstr "子孫と配偶者の間に追加するスペース。"
 
-#: DescendantsLines/DescendantsLines.py:1738
+#: DescendantsLines/DescendantsLines.py:1743
 msgid "Horizonal space family to family"
 msgstr "家族間の水平スペース"
 
-#: DescendantsLines/DescendantsLines.py:1739
+#: DescendantsLines/DescendantsLines.py:1744
 msgid ""
 "The space to add between the more extern descendant (or spouse) of a family "
 "and the more extern descendant (or spouse) of the next family."
@@ -3758,11 +3961,11 @@ msgstr ""
 "ある家族の最も外側の子孫 (または配偶者）と、次の家族の最も外側の子孫 (または"
 "配偶者）の間に追加するスペース。"
 
-#: DescendantsLines/DescendantsLines.py:1744
+#: DescendantsLines/DescendantsLines.py:1749
 msgid "Horizontal distance spouse to family edge"
 msgstr "配偶者から家族端までの水平距離"
 
-#: DescendantsLines/DescendantsLines.py:1745
+#: DescendantsLines/DescendantsLines.py:1750
 msgid ""
 "If this value is 0, the children bar is centered under the spouse. The "
 "bigger the value, more the center is moved to the left towards the "
@@ -3771,102 +3974,102 @@ msgstr ""
 "この値が0の場合、子供バーは配偶者の下で中央に配置されます。値が大きいほど、中"
 "心は子孫に向かって左に移動します。"
 
-#: DescendantsLines/DescendantsLines.py:1752
+#: DescendantsLines/DescendantsLines.py:1757
 msgid "OL_PAD"
 msgstr "OL_PAD"
 
-#: DescendantsLines/DescendantsLines.py:1753
+#: DescendantsLines/DescendantsLines.py:1758
 msgid "The number of ??? pad"
 msgstr "??? パッドの数"
 
-#: DescendantsLines/DescendantsLines.py:1756
+#: DescendantsLines/DescendantsLines.py:1761
 msgid "Vertical edge spouse-bar to child-bar"
 msgstr "配偶者バーから子供バーへの垂直エッジ"
 
-#: DescendantsLines/DescendantsLines.py:1757
+#: DescendantsLines/DescendantsLines.py:1762
 msgid "The length of the vertical edge from spouse-bar to child-bar."
 msgstr "配偶者バーから子供バーまでの垂直エッジの長さ。"
 
-#: DescendantsLines/DescendantsLines.py:1763
+#: DescendantsLines/DescendantsLines.py:1768
 msgid "Children distance"
 msgstr "子供の距離"
 
-#: DescendantsLines/DescendantsLines.py:1764
+#: DescendantsLines/DescendantsLines.py:1769
 msgid "The horizontal distance between two children of the same family."
 msgstr "同じ家族の2人の子供の間の水平距離。"
 
-#: DescendantsLines/DescendantsLines.py:1768
+#: DescendantsLines/DescendantsLines.py:1773
 msgid "Vertical edge child to child-bar"
 msgstr "子供から子供バーへの垂直エッジ"
 
-#: DescendantsLines/DescendantsLines.py:1770
+#: DescendantsLines/DescendantsLines.py:1775
 msgid "The length of the vertical edge from child to child-bar."
 msgstr "子供から子供バーまでの垂直エッジの長さ。"
 
-#: DescendantsLines/DescendantsLines.py:1773
+#: DescendantsLines/DescendantsLines.py:1778
 msgid "MIN_C_WIDTH"
 msgstr "MIN_C_WIDTH"
 
-#: DescendantsLines/DescendantsLines.py:1774
+#: DescendantsLines/DescendantsLines.py:1779
 msgid "The number of ??? min width"
 msgstr "??? 最小幅の数"
 
-#: DescendantsLines/DescendantsLines.py:1779
+#: DescendantsLines/DescendantsLines.py:1784
 msgid "Space around text"
 msgstr "テキスト周辺のスペース"
 
-#: DescendantsLines/DescendantsLines.py:1780
+#: DescendantsLines/DescendantsLines.py:1785
 msgid "The space to add around the text block of a person."
 msgstr "人物のテキストブロックの周囲に追加するスペース。"
 
-#: DescendantsLines/DescendantsLines.py:1784
+#: DescendantsLines/DescendantsLines.py:1789
 msgid "Space between lines of text"
 msgstr "テキスト行間のスペース"
 
-#: DescendantsLines/DescendantsLines.py:1785
+#: DescendantsLines/DescendantsLines.py:1790
 msgid "The space to add between a line and the next in a person text block."
 msgstr "人物のテキストブロック内の行と次の行の間に追加するスペース。"
 
-#: DescendantsLines/DescendantsLines.py:1790
+#: DescendantsLines/DescendantsLines.py:1795
 msgid "Header and Footer"
 msgstr "ヘッダーとフッター"
 
-#: DescendantsLines/DescendantsLines.py:1793
+#: DescendantsLines/DescendantsLines.py:1798
 msgid "The text that will be written in the header of the document"
 msgstr "ドキュメントのヘッダーに書き込まれるテキスト"
 
-#: DescendantsLines/DescendantsLines.py:1798
+#: DescendantsLines/DescendantsLines.py:1803
 msgid "The text that will be written in the footer of the document"
 msgstr "ドキュメントのフッターに書き込まれるテキスト"
 
-#: DescendantsLines/DescendantsLines.py:1802
+#: DescendantsLines/DescendantsLines.py:1807
 msgid "Title and footer coefficient"
 msgstr "タイトルとフッターの係数"
 
-#: DescendantsLines/DescendantsLines.py:1803
+#: DescendantsLines/DescendantsLines.py:1808
 msgid ""
 "A number that multiply the base size of the text in the title and in the "
 "footer"
 msgstr "タイトルとフッターのテキストの基本サイズに乗算する数値"
 
-#: DescendantsLines/DescendantsLines.py:1810
+#: DescendantsLines/DescendantsLines.py:1815
 msgid "Protect People, Images or Events that are marked Private"
 msgstr "非公開とマークされた人物、画像、イベントを保護"
 
-#: DescendantsLines/DescendantsLines.py:1812
+#: DescendantsLines/DescendantsLines.py:1817
 msgid "The Privacy setting of only these types of Gramps objects are checked"
 msgstr ""
 "これらのタイプのGrampsオブジェクトのみプライバシー設定がチェックされます"
 
-#: DescendantsLines/DescendantsLines.py:1816
+#: DescendantsLines/DescendantsLines.py:1821
 msgid "Privacy text"
 msgstr "プライバシーテキスト"
 
-#: DescendantsLines/DescendantsLines.py:1817
+#: DescendantsLines/DescendantsLines.py:1822
 msgid "Text to display in block, when a Person is marked private"
 msgstr "人物が非公開とマークされたときにブロックに表示するテキスト"
 
-#: DescendantsLines/DescendantsLines.py:1832
+#: DescendantsLines/DescendantsLines.py:1837
 msgid "The default style."
 msgstr "デフォルトのスタイル。"
 
@@ -4516,12 +4719,12 @@ msgstr "姓なし"
 msgid "Without title"
 msgstr "タイトルなし"
 
-#: DynamicWeb/dynamicweb.py:3165 GraphView/graphview.py:1095
+#: DynamicWeb/dynamicweb.py:3165 GraphView/graphview.py:1088
 #: LifeLineChartView/lifelinechartview.py:508
 msgid "Zoom in"
 msgstr "ズームイン"
 
-#: DynamicWeb/dynamicweb.py:3166 GraphView/graphview.py:1102
+#: DynamicWeb/dynamicweb.py:3166 GraphView/graphview.py:1095
 #: LifeLineChartView/lifelinechartview.py:518
 msgid "Zoom out"
 msgstr "ズームアウト"
@@ -4793,7 +4996,7 @@ msgstr "Gramps IDを非表示にするかどうか"
 msgid "List"
 msgstr "リスト"
 
-#: DynamicWeb/dynamicweb.py:4997 GrampyScript/GrampyScript.py:382
+#: DynamicWeb/dynamicweb.py:4997 GrampyScript/GrampyScript.py:443
 msgid "Table"
 msgstr "表"
 
@@ -4904,7 +5107,7 @@ msgid ""
 "Choose the background color scheme for the persons in the SVG tree graph"
 msgstr "SVGツリーグラフ内の人物の背景色スキームを選択します"
 
-#: DynamicWeb/dynamicweb.py:5152 Themes/themes.py:175 Themes/themes.py:225
+#: DynamicWeb/dynamicweb.py:5152 Themes/themes.py:179 Themes/themes.py:229
 msgid "Theme"
 msgstr "テーマ"
 
@@ -6078,6 +6281,7 @@ msgid "FamilyTree DNA Import"
 msgstr "家系図 DNA のインポート"
 
 #: FamilyTreeDNA/ftdna_import.py:224
+#, python-brace-format
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
 msgstr ""
@@ -6293,6 +6497,45 @@ msgstr "<フィルター> に関連する人々"
 msgid "Matches people who are related to anybody matched by a person filter"
 msgstr "人物フィルターで一致した人物に関連する人物を検索する"
 
+#: FilterRules/matcheventfilterrole.gpr.py:7
+#, fuzzy
+#| msgid "People with events with the <role>"
+msgid "People from event with role"
+msgstr "<role> のイベントを持つ人々"
+
+#: FilterRules/matcheventfilterrole.gpr.py:8
+#, fuzzy
+#| msgid "Matches event of people filter with role"
+msgid "Matches people of event filter with role"
+msgstr "選択した役割を持つ人物のイベントフィルターと照合する"
+
+#: FilterRules/matcheventfilterrole.py:55
+#: FilterRules/matchpersonfilterrole.py:69
+msgid "Role:"
+msgstr "役割:"
+
+#: FilterRules/matcheventfilterrole.py:56
+#, fuzzy
+#| msgid "People with events with the <role>"
+msgid "Persons with events matching the <event filter> with role"
+msgstr "<role> のイベントを持つ人々"
+
+#: FilterRules/matchparentoffilterfamily.gpr.py:7
+#, fuzzy
+#| msgid "Parent Family"
+msgid "Parents of family filter"
+msgstr "親家族"
+
+#: FilterRules/matchparentoffilterfamily.gpr.py:8
+#, fuzzy
+#| msgid "Matches event of people filter with role"
+msgid "Matches parent of family filter"
+msgstr "選択した役割を持つ人物のイベントフィルターと照合する"
+
+#: FilterRules/matchparentoffilterfamily.py:60
+msgid "Parents of <filter> family match"
+msgstr ""
+
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
 msgstr "役割を持つ人々からのイベント"
@@ -6300,10 +6543,6 @@ msgstr "役割を持つ人々からのイベント"
 #: FilterRules/matchpersonfilterrole.gpr.py:8
 msgid "Matches event of people filter with role"
 msgstr "選択した役割を持つ人物のイベントフィルターと照合する"
-
-#: FilterRules/matchpersonfilterrole.py:69
-msgid "Role:"
-msgstr "役割:"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
@@ -6489,19 +6728,19 @@ msgstr "[フォーム編集途中の削除後にソースが再作成されま�
 msgid "Headings"
 msgstr "見出し"
 
-#: Form/form.py:82
+#: Form/form.py:81
 msgid "Form"
 msgstr "フォーム"
 
-#: Form/form.py:174
+#: Form/form.py:173
 msgid "XML syntax error in Form definition file"
 msgstr "フォーム定義ファイルにXML構文エラーがあります"
 
-#: Form/form.py:185
+#: Form/form.py:184
 msgid "Failed to read Form definition file"
 msgstr "フォーム定義ファイルの読み込みに失敗しました"
 
-#: Form/form.py:194
+#: Form/form.py:193
 msgid "Invalid Form definition file"
 msgstr "無効なフォーム定義ファイル"
 
@@ -10158,10 +10397,6 @@ msgstr "(10.) 登録日"
 #: Form/form_ie.xml.h:111
 msgid "(11.) Signature of Registrar"
 msgstr "(11.) 登録官の署名"
-
-#: Form/form_ie.xml.h:114 Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
-msgid "Date of Death"
-msgstr "死亡日"
 
 #: Form/form_ie.xml.h:115 Form/form_ie.xml.h:117
 msgid "(2.) Date and Place of Death"
@@ -15991,22 +16226,26 @@ msgid "GetGOV error: %s"
 msgstr "GetGOV エラー : %s"
 
 #: GetGOV/getgov.py:421
+msgid "GOV link"
+msgstr ""
+
+#: GetGOV/getgov.py:428
 #, python-format
 msgid "GOV error on id %s with code: "
 msgstr "コード付き ID %s で GOV エラー : "
 
-#: GetGOV/getgov.py:555
+#: GetGOV/getgov.py:562
 #, python-format
 msgctxt "end"
 msgid "from %(begin)s to %(end)s"
 msgstr "%(begin)s から %(end)s へ"
 
-#: GetGOV/getgov.py:557
+#: GetGOV/getgov.py:564
 #, python-format
 msgid "after %s"
 msgstr "%s 以降"
 
-#: GetGOV/getgov.py:559
+#: GetGOV/getgov.py:566
 #, python-format
 msgid "before %s"
 msgstr "%s 以前"
@@ -16059,7 +16298,7 @@ msgstr ""
 "を上書きしますか?"
 
 #: GrampsAssistant/grampsassistant.gpr.py:26
-#: GrampsAssistant/grampsassistant.py:1417
+#: GrampsAssistant/grampsassistant.py:1428
 msgid "Gramps Assistant"
 msgstr "Grampsアシスタント"
 
@@ -16067,7 +16306,7 @@ msgstr "Grampsアシスタント"
 msgid "AI assistant for querying your Gramps family tree"
 msgstr "Gramps家系図を照会するためのAIアシスタント"
 
-#: GrampsAssistant/grampsassistant.py:58
+#: GrampsAssistant/grampsassistant.py:61
 msgid ""
 "You are a helpful genealogy assistant with access to the user's Gramps "
 "database. Answer questions about people, families, events, and "
@@ -16081,20 +16320,26 @@ msgstr ""
 "いたり、結果をシミュレートしたり、データをでっち上げたりしないでください。要"
 "求された情報のためのツールが存在しない場合は、その旨を明確に伝えてください。"
 
-#: GrampsAssistant/grampsassistant.py:209
+#: GrampsAssistant/grampsassistant.py:212
 msgid "Gramps Assistant settings"
 msgstr "Gramps アシスタント設定"
 
-#: GrampsAssistant/grampsassistant.py:213
+#: GrampsAssistant/grampsassistant.py:216
 msgid "Clear conversation and context"
 msgstr "会話とコンテキストをクリア"
 
-#: GrampsAssistant/grampsassistant.py:388
-#: GrampsAssistant/grampsassistant.py:749
+#: GrampsAssistant/grampsassistant.py:220
+#, fuzzy
+#| msgid "Gramps Assistant settings"
+msgid "Open the Gramps Assistant wiki page"
+msgstr "Gramps アシスタント設定"
+
+#: GrampsAssistant/grampsassistant.py:396
+#: GrampsAssistant/grampsassistant.py:760
 msgid "Gramps Assistant:"
 msgstr "Grampsアシスタント:"
 
-#: GrampsAssistant/grampsassistant.py:390
+#: GrampsAssistant/grampsassistant.py:398
 msgid ""
 "Ask me anything about the Gramps program or your specific Gramps family "
 "tree. Use the ⚙ button to configure the AI.\n"
@@ -16102,7 +16347,7 @@ msgstr ""
 "GrampsプログラムやあなたのGramps家系図について何でも質問してください。⚙ ボタ"
 "ンでAIを設定してください。\n"
 
-#: GrampsAssistant/grampsassistant.py:720
+#: GrampsAssistant/grampsassistant.py:731
 msgid ""
 "\n"
 "No model configured. Please click the Settings button to choose a backend "
@@ -16112,11 +16357,11 @@ msgstr ""
 "モデルが設定されていません。チャットする前に、設定ボタンをクリックしてバック"
 "エンドとモデルを選択してください。\n"
 
-#: GrampsAssistant/grampsassistant.py:755
+#: GrampsAssistant/grampsassistant.py:766
 msgid "Thinking..."
 msgstr "考え中..."
 
-#: GrampsAssistant/grampsassistant.py:824
+#: GrampsAssistant/grampsassistant.py:835
 #, python-brace-format
 msgid ""
 "API key error: the environment variable {var} is not set or is invalid. Set "
@@ -16127,7 +16372,7 @@ msgstr ""
 "前に設定してください:\n"
 "  export {var}=your-key-here"
 
-#: GrampsAssistant/grampsassistant.py:830
+#: GrampsAssistant/grampsassistant.py:841
 msgid ""
 "API key error: this provider requires an API key. Open Settings and enter "
 "the environment variable name for your API key (e.g. OPENAI_API_KEY)."
@@ -16135,19 +16380,19 @@ msgstr ""
 "APIキーエラー: このプロバイダーはAPIキーを必要とします。設定を開き、APIキーの"
 "環境変数名を入力してください (例: OPENAI_API_KEY）。"
 
-#: GrampsAssistant/grampsassistant.py:973
+#: GrampsAssistant/grampsassistant.py:984
 msgid "Done.\n"
 msgstr "完了。\n"
 
-#: GrampsAssistant/grampsassistant.py:1203
+#: GrampsAssistant/grampsassistant.py:1214
 msgid "System Prompt:"
 msgstr "システムプロンプト:"
 
-#: GrampsAssistant/grampsassistant.py:1217
+#: GrampsAssistant/grampsassistant.py:1228
 msgid "Simplify tools (recommended for smaller/local models)"
 msgstr "ツールを簡素化 (小規模/ローカルモデルに推奨）"
 
-#: GrampsAssistant/grampsassistant.py:1221
+#: GrampsAssistant/grampsassistant.py:1232
 msgid ""
 "When enabled, only the tools relevant to your question are sent to the "
 "model. This improves performance with smaller local models."
@@ -16155,11 +16400,11 @@ msgstr ""
 "有効にすると、質問に関連するツールのみがモデルに送信されます。これにより、小"
 "規模なローカルモデルでのパフォーマンスが向上します。"
 
-#: GrampsAssistant/grampsassistant.py:1230
+#: GrampsAssistant/grampsassistant.py:1241
 msgid "Use Local Model"
 msgstr "ローカルモデルを使用"
 
-#: GrampsAssistant/grampsassistant.py:1249
+#: GrampsAssistant/grampsassistant.py:1260
 msgid ""
 "URL of a local OpenAI-compatible server. Ollama: http://localhost:11434  LM "
 "Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
@@ -16167,11 +16412,11 @@ msgstr ""
 "ローカルのOpenAI互換サーバーのURL。Ollama: http://localhost:11434  LM "
 "Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
 
-#: GrampsAssistant/grampsassistant.py:1257
+#: GrampsAssistant/grampsassistant.py:1268
 msgid "model name (leave blank for LM Studio / llama.cpp)"
 msgstr "モデル名 (LM Studio / llama.cppの場合は空白）"
 
-#: GrampsAssistant/grampsassistant.py:1260
+#: GrampsAssistant/grampsassistant.py:1271
 msgid ""
 "Model to request from the local server. Required for Ollama (e.g. llama3.1). "
 "Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
@@ -16180,36 +16425,36 @@ msgstr ""
 "Studioまたはllama.cppの場合は空白にします。これらの場合は読み込まれているモデ"
 "ルが使用されます。"
 
-#: GrampsAssistant/grampsassistant.py:1267
-#: GrampsAssistant/grampsassistant.py:1311
+#: GrampsAssistant/grampsassistant.py:1278
+#: GrampsAssistant/grampsassistant.py:1322
 msgid "Model:"
 msgstr "モデル:"
 
-#: GrampsAssistant/grampsassistant.py:1273
+#: GrampsAssistant/grampsassistant.py:1284
 msgid "Use Foundational Model"
 msgstr "基盤モデルを使用"
 
-#: GrampsAssistant/grampsassistant.py:1315
+#: GrampsAssistant/grampsassistant.py:1326
 msgid "e.g. OPENAI_API_KEY"
 msgstr "例: OPENAI_API_KEY"
 
-#: GrampsAssistant/grampsassistant.py:1317
+#: GrampsAssistant/grampsassistant.py:1328
 msgid "Name of the environment variable holding your API key."
 msgstr "APIキーを保持する環境変数の名前。"
 
-#: GrampsAssistant/grampsassistant.py:1319
+#: GrampsAssistant/grampsassistant.py:1330
 msgid "API key env var:"
 msgstr "APIキー環境変数:"
 
-#: GrampsAssistant/grampsassistant.py:1322
+#: GrampsAssistant/grampsassistant.py:1333
 msgid "Backend:"
 msgstr "バックエンド:"
 
-#: GrampsAssistant/grampsassistant.py:1334
+#: GrampsAssistant/grampsassistant.py:1345
 msgid "Base URL:"
 msgstr "ベース URL:"
 
-#: GrampsAssistant/grampsassistant.py:1338
+#: GrampsAssistant/grampsassistant.py:1349
 msgid "Model name:"
 msgstr "モデル名:"
 
@@ -16237,7 +16482,7 @@ msgstr ""
 "Gramps Web APIサーバー (例: gramps-connect または Gramps Web）をライブデータ"
 "ベースとして使用し、速度のためにローカルにミラーリングします。"
 
-#: GrampsWebApiDb/grampswebapidb.py:262
+#: GrampsWebApiDb/grampswebapidb.py:447
 msgid ""
 "The account authenticating via GRAMPS_WEB_API_KEY does not have permission "
 "on the server for this operation (HTTP 403 Forbidden). Generate a key for an "
@@ -16249,7 +16494,7 @@ msgstr ""
 "成するか、サーバー管理者にこのアカウントへのアクセス権の付与を依頼してくださ"
 "い。"
 
-#: GrampsWebApiDb/grampswebapidb.py:422
+#: GrampsWebApiDb/grampswebapidb.py:656
 #, python-format
 msgid ""
 "This Family Tree is named \"%(actual)s\", but GRAMPS_WEB_API_KEY currently "
@@ -16266,11 +16511,30 @@ msgstr ""
 "-- これを再利用すると、既存のローカルデータと他のアカウントのデータが混ざって"
 "しまいます。"
 
-#: GrampsWebApiDb/grampswebapidb.py:550
+#: GrampsWebApiDb/grampswebapidb.py:703
+#, python-format
+msgid ""
+"The account authenticating via GRAMPS_WEB_API_KEY is missing server "
+"permission(s) this addon requires: %(missing)s. Grant it at least the "
+"\"%(role)s\" role on the server (or ask an administrator to), then reopen "
+"this Family Tree. Opening it as-is would leave the local mirror silently "
+"incomplete or unable to save changes back."
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.py:741
+#, python-format
+msgid ""
+"This server runs Gramps %(actual)s, but this addon needs a server running "
+"Gramps %(required)s or newer: older servers serialize their transaction "
+"history in a format it cannot read. Upgrade the Gramps installation behind "
+"the Gramps Web API server (or ask its administrator to)."
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.py:1008
 msgid "Retry local change after server conflict"
 msgstr "サーバー競合後にローカル変更を再試行"
 
-#: GrampsWebApiDb/grampswebapidb.py:668
+#: GrampsWebApiDb/grampswebapidb.py:1228
 msgid "Clear local mirror before full resync"
 msgstr "完全再同期の前にローカルミラーをクリア"
 
@@ -16403,8 +16667,8 @@ msgstr ""
 "家系図 \"%s\" を作成しました。同期を開始するには、家系図 -> 家系図の管理 から"
 "開いてください。"
 
-#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:204
-#: GrampsWebSync/grampswebsync.py:269
+#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:230
+#: GrampsWebSync/grampswebsync.py:295
 msgid "Gramps Web Sync"
 msgstr "Gramps Web Sync"
 
@@ -16412,19 +16676,19 @@ msgstr "Gramps Web Sync"
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "ローカルデータベースをGramps Webインスタンスと同期します。"
 
-#: GrampsWebSync/grampswebsync.py:249
+#: GrampsWebSync/grampswebsync.py:275
 msgid "_Try again"
 msgstr "_再試行"
 
-#: GrampsWebSync/grampswebsync.py:250
+#: GrampsWebSync/grampswebsync.py:276
 msgid "C_onnect"
 msgstr "接続(_O)"
 
-#: GrampsWebSync/grampswebsync.py:345
+#: GrampsWebSync/grampswebsync.py:371
 msgid "Forget this server?"
 msgstr "このサーバーを忘れますか？"
 
-#: GrampsWebSync/grampswebsync.py:347
+#: GrampsWebSync/grampswebsync.py:373
 msgid ""
 "The address, user name and password stored for this server will be removed, "
 "along with the record of when this family tree last synchronized with it. "
@@ -16434,11 +16698,11 @@ msgstr ""
 "にサーバーと同期した時刻の記録とともに削除されます。次の同期では、2つのツリー"
 "を最初から比較します。"
 
-#: GrampsWebSync/grampswebsync.py:352
+#: GrampsWebSync/grampswebsync.py:378
 msgid "Forget"
 msgstr "忘れる"
 
-#: GrampsWebSync/grampswebsync.py:480
+#: GrampsWebSync/grampswebsync.py:508
 msgid ""
 "These credentials were last used with a different family tree. Check the "
 "server before continuing."
@@ -16446,39 +16710,39 @@ msgstr ""
 "これらの認証情報は最後に別の家系図で使用されました。続行する前にサーバーを確"
 "認してください。"
 
-#: GrampsWebSync/grampswebsync.py:556
+#: GrampsWebSync/grampswebsync.py:585
 msgid "Change server…"
 msgstr "サーバーを変更…"
 
-#: GrampsWebSync/grampswebsync.py:591
+#: GrampsWebSync/grampswebsync.py:620
 msgid "Server URL:"
 msgstr "サーバー URL:"
 
-#: GrampsWebSync/grampswebsync.py:593 PhpGedView/phpgedview.glade:170
+#: GrampsWebSync/grampswebsync.py:622 PhpGedView/phpgedview.glade:170
 msgid "Username:"
 msgstr "ユーザー名:"
 
-#: GrampsWebSync/grampswebsync.py:594 PhpGedView/phpgedview.glade:182
+#: GrampsWebSync/grampswebsync.py:623 PhpGedView/phpgedview.glade:182
 msgid "Password:"
 msgstr "パスワード:"
 
-#: GrampsWebSync/grampswebsync.py:598
+#: GrampsWebSync/grampswebsync.py:627
 msgid "Remember password"
 msgstr "パスワードを記憶"
 
-#: GrampsWebSync/grampswebsync.py:610
+#: GrampsWebSync/grampswebsync.py:639
 msgid "Forget this server"
 msgstr "このサーバーを忘れる"
 
-#: GrampsWebSync/grampswebsync.py:641
+#: GrampsWebSync/grampswebsync.py:670
 msgid "About this tool"
 msgstr "このツールについて"
 
-#: GrampsWebSync/grampswebsync.py:645
+#: GrampsWebSync/grampswebsync.py:674
 msgid "Open the online manual"
 msgstr "オンラインマニュアルを開く"
 
-#: GrampsWebSync/grampswebsync.py:658
+#: GrampsWebSync/grampswebsync.py:687
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
 "remote family tree served by Gramps Web.\n"
@@ -16507,24 +16771,24 @@ msgstr ""
 "代わりに、手動で修正するオプションを付けて2つの大幅に異なるツリーをマージした"
 "い場合は、代わりにインポートマージツールを使用してください。"
 
-#: GrampsWebSync/grampswebsync.py:729 HistContext/HistContext.py:289
+#: GrampsWebSync/grampswebsync.py:758 HistContext/HistContext.py:289
 #: HistContext/HistContext.py:333 HistContext/HistContext.py:420
 msgid "Error:"
 msgstr "エラー:"
 
-#: GrampsWebSync/grampswebsync.py:756 GrampsWebSync/grampswebsync.py:1012
+#: GrampsWebSync/grampswebsync.py:785 GrampsWebSync/grampswebsync.py:1065
 msgid "Warning:"
 msgstr "警告:"
 
-#: GrampsWebSync/grampswebsync.py:901
+#: GrampsWebSync/grampswebsync.py:947
 msgid "Sync mode:"
 msgstr "同期モード:"
 
-#: GrampsWebSync/grampswebsync.py:1077
+#: GrampsWebSync/grampswebsync.py:1129
 msgid "Synchronization complete"
 msgstr "同期が完了しました"
 
-#: GrampsWebSync/grampswebsync.py:1084
+#: GrampsWebSync/grampswebsync.py:1136
 msgid "Synchronization failed"
 msgstr "同期に失敗しました"
 
@@ -16925,53 +17189,211 @@ msgstr "Gram.py スクリプト"
 msgid "Run a special Gramps Python script"
 msgstr "特別なGramps Pythonスクリプトを実行"
 
-#: GrampyScript/GrampyScript.py:91
+#: GrampyScript/GrampyScript.py:88
 msgid "Load query from a .script file"
 msgstr ".script ファイルからクエリを読み込む"
 
-#: GrampyScript/GrampyScript.py:121
+#: GrampyScript/GrampyScript.py:149
 msgid "Save query to a .script file"
 msgstr "クエリを .script ファイルとして保存"
 
-#: GrampyScript/GrampyScript.py:141
+#: GrampyScript/GrampyScript.py:169
 msgid "Download results as a CSV file"
 msgstr "結果をCSVファイルとしてダウンロード"
 
-#: GrampyScript/GrampyScript.py:303
+#: GrampyScript/GrampyScript.py:336
 msgid "Open..."
 msgstr "開く..."
 
-#: GrampyScript/GrampyScript.py:305
+#: GrampyScript/GrampyScript.py:338
 msgid "Save as..."
 msgstr "名前を付けて保存..."
 
-#: GrampyScript/GrampyScript.py:319
+#: GrampyScript/GrampyScript.py:356
 msgid "Save as CSV"
 msgstr "CSVとして保存"
 
-#: GrampyScript/GrampyScript.py:320
+#: GrampyScript/GrampyScript.py:357
 msgid "Copy to clipboard"
 msgstr "クリップボードにコピー"
 
-#: GrampyScript/GrampyScript.py:395
-msgid "Chart"
-msgstr "チャート"
-
-#: GrampyScript/GrampyScript.py:400
+#: GrampyScript/GrampyScript.py:424
 msgid "Execute <Alt+Enter>"
 msgstr "実行 <Alt+Enter>"
 
-#: GrampyScript/GrampyScript.py:402
+#: GrampyScript/GrampyScript.py:426
 msgid "Execute the script"
 msgstr "スクリプトを実行"
 
-#: GrampyScript/GrampyScript.py:416
-msgid "Ready..."
-msgstr "準備完了..."
+#: GrampyScript/GrampyScript.py:456
+msgid "Chart"
+msgstr "チャート"
 
-#: GrampyScript/GrampyScript.py:1028
+#: GrampyScript/GrampyScript.py:480 GrampyScript/GrampyScript.py:551
+msgid "Ready... (Tab for completions)"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:505
+#, fuzzy
+#| msgid "No title"
+msgid "Untitled"
+msgstr "タイトルなし"
+
+#: GrampyScript/GrampyScript.py:534
+msgid ""
+"If you continue without saving, the changes you have made to this script "
+"will be lost."
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:1332
 msgid "Gram.py Script Edited Data"
 msgstr "Gram.py スクリプト編集データ"
+
+#: GrampyScript/script_descriptions.py:44
+#, fuzzy
+#| msgid "All Names of All People"
+msgid "List All People"
+msgstr "全人物の全名称"
+
+#: GrampyScript/script_descriptions.py:46
+msgid ""
+"Iterate over every person in the database and show their Gramps ID, given "
+"name, surname, and gender in the results table."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:51
+#, fuzzy
+#| msgid "Family Surname"
+msgid "Filter By Surname"
+msgstr "家族の姓"
+
+#: GrampyScript/script_descriptions.py:53
+msgid ""
+"List only the people whose surname matches a given value — a starting point "
+"for narrowing any report down by a condition."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:58 Overview/Overview.gpr.py:45
+msgid "Family Overview"
+msgstr "家族概要"
+
+#: GrampyScript/script_descriptions.py:60
+msgid ""
+"List every family together with the father, the mother, and how many "
+"children they have — a quick way to spot families that look incomplete."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:66
+msgid "Gender Breakdown (Pie Chart)"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:68
+msgid ""
+"Count how many people are male, female, or of unknown gender, then draw a "
+"pie chart of the totals. Check the Chart tab after running."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:74
+msgid "Age At Death Histogram"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:76
+msgid ""
+"For everyone with both a birth and a death event recorded, compute their age "
+"in whole years and draw a histogram of the distribution. Check the Chart tab "
+"after running."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:82
+msgid "Mark Unsourced People As Private"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:84
+msgid ""
+"Batch-edit example: find every person who has no citations attached and flag "
+"them as private, wrapped in begin_changes()/end_changes() so the edits "
+"happen inside a single, undoable transaction."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:91
+msgid "CSV-Ready People Report"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:93
+msgid ""
+"Build a simple tabular report — ID, name, gender, birth year — for every "
+"person. Once it runs, use Data > Save as CSV or Copy to clipboard to export "
+"the Table tab's contents."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:99
+#, fuzzy
+#| msgid "Active Person : "
+msgid "Active Person Summary"
+msgstr "アクティブな人 : "
+
+#: GrampyScript/script_descriptions.py:101
+msgid ""
+"Show a compact family summary for the currently active person: their record, "
+"parents, spouse, and children."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:106
+msgid "Report On Selected People"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:108
+msgid ""
+"List just the people currently selected (highlighted) in the People view. "
+"Select some rows in the People view before running this script."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:114
+msgid "Find People Missing A Birth Date"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:116
+msgid ""
+"Data-quality check: list every person who has no recorded birth event, so "
+"you can prioritize research on those records."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:121
+msgid "Births Per Decade (Import Example)"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:123
+msgid ""
+"Counts births by decade, using a decade() function imported from "
+"script_helpers.py in this same folder — a template for sharing helper code "
+"between your own scripts with a plain 'import' statement."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:130
+#, fuzzy
+#| msgid "Custom \"test.xml\" file"
+msgid "Custom Filter Example"
+msgstr "カスタム \"test.xml\" ファイル"
+
+#: GrampyScript/script_descriptions.py:132
+msgid ""
+"Runs one of your own custom filters (from the Filters gramplet/editor) by "
+"name using custom_filter(). Change 'example filter' to the name of a filter "
+"you've already created; if the name doesn't match one, a warning shows up in "
+"the Output tab instead."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:140
+msgid "Delete Unused Repositories (Delete Example)"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:142
+msgid ""
+"Demonstrates delete(): removes any Repository record that nothing else in "
+"the tree refers to. Most trees have no unused repositories, so this is "
+"unlikely to actually delete anything — it's meant to show the pattern, "
+"wrapped in begin_changes()/end_changes() as a single undoable transaction."
+msgstr ""
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -17002,7 +17424,7 @@ msgid "Generic (light)"
 msgstr "ジェネリック (ライト）"
 
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
-#: GraphView/graphview.py:189
+#: GraphView/graphview.py:182
 msgid "Graph View"
 msgstr "グラフビュー"
 
@@ -17010,203 +17432,203 @@ msgstr "グラフビュー"
 msgid "Dynamic and interactive graph of relations"
 msgstr "動的でインタラクティブな関係グラフ"
 
-#: GraphView/graphview.py:754
+#: GraphView/graphview.py:747
 msgid "Show IDs"
 msgstr "IDを表示"
 
-#: GraphView/graphview.py:757
+#: GraphView/graphview.py:750
 msgid "Show avatars"
 msgstr "アバターを表示"
 
-#: GraphView/graphview.py:760 GraphView/graphview.py:3746
+#: GraphView/graphview.py:753 GraphView/graphview.py:3739
 msgid "Highlight the home person"
 msgstr "ホームパーソンを強調表示"
 
-#: GraphView/graphview.py:764 GraphView/graphview.py:3754
+#: GraphView/graphview.py:757 GraphView/graphview.py:3747
 msgid "Show full dates"
 msgstr "完全な日付を表示"
 
-#: GraphView/graphview.py:768 GraphView/graphview.py:3762
+#: GraphView/graphview.py:761 GraphView/graphview.py:3755
 msgid "Show places"
 msgstr "場所を表示"
 
-#: GraphView/graphview.py:784
+#: GraphView/graphview.py:777
 msgid "Horizontal: Left to Right"
 msgstr "水平: 左から右"
 
-#: GraphView/graphview.py:784
+#: GraphView/graphview.py:777
 msgid "Horizontal: Right to Left"
 msgstr "水平: 右から左"
 
-#: GraphView/graphview.py:784
+#: GraphView/graphview.py:777
 msgid "Vertical: Bottom to Top"
 msgstr "垂直: 下から上"
 
-#: GraphView/graphview.py:784
+#: GraphView/graphview.py:777
 msgid "Vertical: Top to Bottom"
 msgstr "垂直: 上から下"
 
-#: GraphView/graphview.py:786
+#: GraphView/graphview.py:779
 msgid "Time Direction"
 msgstr "時間の方向"
 
-#: GraphView/graphview.py:791
+#: GraphView/graphview.py:784
 msgid "Limit number of people displayed (use 0 for unlimited)"
 msgstr "表示する人物数の制限 (0は無制限）"
 
-#: GraphView/graphview.py:812
+#: GraphView/graphview.py:805
 msgid "Person theme"
 msgstr "人物テーマ"
 
-#: GraphView/graphview.py:817
+#: GraphView/graphview.py:810
 msgid "Path color to home person"
 msgstr "ホームパーソンへのパス色"
 
-#: GraphView/graphview.py:821
+#: GraphView/graphview.py:814
 msgid "Font:"
 msgstr "フォント:"
 
-#: GraphView/graphview.py:835
+#: GraphView/graphview.py:828
 msgid "Avatars style"
 msgstr "アバタースタイル"
 
-#: GraphView/graphview.py:841
+#: GraphView/graphview.py:834
 msgid "PNG files"
 msgstr "PNGファイル"
 
-#: GraphView/graphview.py:846
+#: GraphView/graphview.py:839
 msgid "Male avatar:"
 msgstr "男性アバター:"
 
-#: GraphView/graphview.py:847
+#: GraphView/graphview.py:840
 msgid "Choose male avatar"
 msgstr "男性アバターを選択"
 
-#: GraphView/graphview.py:859
+#: GraphView/graphview.py:852
 msgid "Female avatar:"
 msgstr "女性アバター:"
 
-#: GraphView/graphview.py:860
+#: GraphView/graphview.py:853
 msgid "Choose female avatar"
 msgstr "女性アバターを選択"
 
-#: GraphView/graphview.py:872
+#: GraphView/graphview.py:865
 msgid "Unknown avatar:"
 msgstr "不明アバター:"
 
-#: GraphView/graphview.py:873
+#: GraphView/graphview.py:866
 msgid "Choose Unknown avatar"
 msgstr "不明アバターを選択"
 
-#: GraphView/graphview.py:885
+#: GraphView/graphview.py:878
 msgid "Other avatar:"
 msgstr "その他アバター:"
 
-#: GraphView/graphview.py:886
+#: GraphView/graphview.py:879
 msgid "Choose Other avatar"
 msgstr "その他アバターを選択"
 
-#: GraphView/graphview.py:900
+#: GraphView/graphview.py:893
 msgid "Active person border size"
 msgstr "アクティブな人の境界線のサイズ"
 
-#: GraphView/graphview.py:905
+#: GraphView/graphview.py:898
 msgid "Person border size"
 msgstr "人物の境界線のサイズ"
 
-#: GraphView/graphview.py:908
+#: GraphView/graphview.py:901
 msgid "Themes"
 msgstr "テーマ"
 
-#: GraphView/graphview.py:921 GraphView/graphview.py:3780
+#: GraphView/graphview.py:914 GraphView/graphview.py:3773
 msgid "Show animation"
 msgstr "アニメーションを表示"
 
-#: GraphView/graphview.py:925
+#: GraphView/graphview.py:918
 msgid "Animation speed (1..5 and 5 is the slower)"
 msgstr "アニメーション速度 (1..5、5が最も遅い）"
 
-#: GraphView/graphview.py:929
+#: GraphView/graphview.py:922
 msgid "Animation count (0..8 use 0 to turn off)"
 msgstr "アニメーションカウント (0..8、0はオフ）"
 
-#: GraphView/graphview.py:938
+#: GraphView/graphview.py:931
 msgid "Animation"
 msgstr "アニメーション"
 
-#: GraphView/graphview.py:952
+#: GraphView/graphview.py:945
 msgid "Search in all database"
 msgstr "全データベースを検索"
 
-#: GraphView/graphview.py:954
+#: GraphView/graphview.py:947
 msgid "Also apply search by all database."
 msgstr "全データベースによる検索も適用します。"
 
-#: GraphView/graphview.py:957
+#: GraphView/graphview.py:950
 msgid "Show person images"
 msgstr "人物画像を表示"
 
-#: GraphView/graphview.py:960
+#: GraphView/graphview.py:953
 msgid "Show persons thumbnails in search result list."
 msgstr "検索結果リストに人物のサムネイルを表示します。"
 
-#: GraphView/graphview.py:963 SearchGramplet/SearchGramplet.py:102
+#: GraphView/graphview.py:956 SearchGramplet/SearchGramplet.py:102
 msgid "Show bookmarked first"
 msgstr "ブックマークを先に表示"
 
-#: GraphView/graphview.py:966
+#: GraphView/graphview.py:959
 msgid "Show bookmarked persons first in search result list."
 msgstr "検索結果リストでブックマークされた人物を先に表示します。"
 
-#: GraphView/graphview.py:999
+#: GraphView/graphview.py:992
 msgid "Select a dot file name"
 msgstr "dotファイル名を選択"
 
-#: GraphView/graphview.py:1109 LifeLineChartView/lifelinechartview.py:527
+#: GraphView/graphview.py:1102 LifeLineChartView/lifelinechartview.py:527
 msgid "Zoom to original"
 msgstr "元のサイズにズーム"
 
-#: GraphView/graphview.py:1116 LifeLineChartView/lifelinechartview.py:534
+#: GraphView/graphview.py:1109 LifeLineChartView/lifelinechartview.py:534
 msgid "Zoom to best fit"
 msgstr "最適なサイズにズーム"
 
-#: GraphView/graphview.py:1123
+#: GraphView/graphview.py:1116
 msgid "Go to active person"
 msgstr "アクティブな人へ移動"
 
-#: GraphView/graphview.py:1128
+#: GraphView/graphview.py:1121
 msgid "Go to bookmark"
 msgstr "ブックマークへ移動"
 
-#: GraphView/graphview.py:1130
+#: GraphView/graphview.py:1123
 msgid "Center view on selected bookmark"
 msgstr "選択したブックマークにビューを中央揃え"
 
-#: GraphView/graphview.py:1132
+#: GraphView/graphview.py:1125
 msgid "Bookmarks for current graph"
 msgstr "現在のグラフのブックマーク"
 
-#: GraphView/graphview.py:1133
+#: GraphView/graphview.py:1126
 msgid "Other Bookmarks"
 msgstr "その他のブックマーク"
 
-#: GraphView/graphview.py:1179
+#: GraphView/graphview.py:1172
 msgid "Vertical spacing between generations"
 msgstr "世代間の垂直間隔"
 
-#: GraphView/graphview.py:1184
+#: GraphView/graphview.py:1177
 msgid "Horizontal spacing between generations"
 msgstr "世代間の水平間隔"
 
-#: GraphView/graphview.py:1188
+#: GraphView/graphview.py:1181
 msgid "Spacings"
 msgstr "間隔"
 
-#: GraphView/graphview.py:1193
+#: GraphView/graphview.py:1186
 msgid "All connected"
 msgstr "すべて接続"
 
-#: GraphView/graphview.py:1195
+#: GraphView/graphview.py:1188
 msgid ""
 "Show all connected persons limited by generation restrictions.\n"
 "Works slow, so don't set large generation values."
@@ -17214,15 +17636,15 @@ msgstr ""
 "世代制限で制限されたすべての接続人物を表示します。\n"
 "動作が遅いため、大きな世代値を設定しないでください。"
 
-#: GraphView/graphview.py:1337
+#: GraphView/graphview.py:1330
 msgid "Add active person"
 msgstr "アクティブな人を追加"
 
-#: GraphView/graphview.py:1342
+#: GraphView/graphview.py:1335
 msgid "Call the bookmark editor"
 msgstr "ブックマークエディタを呼び出す"
 
-#: GraphView/graphview.py:1399
+#: GraphView/graphview.py:1392
 msgid ""
 "You don't have any bookmarks yet...\n"
 "Try to add some frequently used persons to speedup navigation."
@@ -17230,22 +17652,22 @@ msgstr ""
 "まだブックマークがありません...\n"
 "ナビゲーションを高速化するために、よく使う人物を追加してみてください。"
 
-#: GraphView/graphview.py:1407
+#: GraphView/graphview.py:1400
 msgid "No bookmarks for this graph..."
 msgstr "このグラフのブックマークはありません..."
 
-#: GraphView/graphview.py:1412
+#: GraphView/graphview.py:1405
 msgid "No other bookmarks..."
 msgstr "他のブックマークはありません..."
 
-#: GraphView/graphview.py:1417 GraphView/graphview.py:1419
+#: GraphView/graphview.py:1410 GraphView/graphview.py:1412
 #: GraphView/search_widget.py:233 GraphView/search_widget.py:252
 #: SearchGramplet/SearchGramplet.py:259 SearchGramplet/SearchGramplet.py:281
 #, python-format
 msgid "found: %s"
 msgstr "検索結果: %s"
 
-#: GraphView/graphview.py:1429
+#: GraphView/graphview.py:1422
 #, python-format
 msgid ""
 "Add active person to bookmarks\n"
@@ -17254,7 +17676,7 @@ msgstr ""
 "アクティブな人をブックマークに追加\n"
 "%s"
 
-#: GraphView/graphview.py:1516
+#: GraphView/graphview.py:1509
 #, python-format
 msgid ""
 "Person <b><i>%s</i></b> is not in the current view.\n"
@@ -17263,11 +17685,11 @@ msgstr ""
 "人物 <b><i>%s</i></b> は現在のビューにありません。\n"
 "アクティブに設定してビューを再構築しますか？"
 
-#: GraphView/graphview.py:1519
+#: GraphView/graphview.py:1512
 msgid "Change active person?"
 msgstr "アクティブな人を変更しますか？"
 
-#: GraphView/graphview.py:2668
+#: GraphView/graphview.py:2661
 #, python-brace-format
 msgid ""
 "This graph would contain at least {people_count} people, which exceeds the "
@@ -17279,129 +17701,129 @@ msgstr ""
 "{people_limit} 人を超えます。パフォーマンス上の理由から、少なくとも"
 "{people_missing} 人は表示されません。この制限はビュー設定で変更できます。"
 
-#: GraphView/graphview.py:2678
+#: GraphView/graphview.py:2671
 msgid "Incomplete graph"
 msgstr "不完全なグラフ"
 
-#: GraphView/graphview.py:3047
+#: GraphView/graphview.py:3040
 msgid "Image on right side"
 msgstr "画像を右側に"
 
-#: GraphView/graphview.py:3068
+#: GraphView/graphview.py:3061
 msgid "Image on left side"
 msgstr "画像を左側に"
 
-#: GraphView/graphview.py:3168 GraphView/graphview.py:3169
-#: GraphView/graphview.py:3181 GraphView/graphview.py:3182
+#: GraphView/graphview.py:3161 GraphView/graphview.py:3162
+#: GraphView/graphview.py:3174 GraphView/graphview.py:3175
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
 #, python-format
 msgid "%s "
 msgstr "%s "
 
-#: GraphView/graphview.py:3405
+#: GraphView/graphview.py:3398
 msgid "<b>Tags:</b>"
 msgstr "<b>タグ:</b>"
 
-#: GraphView/graphview.py:3789
+#: GraphView/graphview.py:3782
 msgid "Lines type"
 msgstr "線の種類"
 
-#: GraphView/graphview.py:3793 NetworkChart/NetworkChart.py:1174
+#: GraphView/graphview.py:3786 NetworkChart/NetworkChart.py:1174
 #: NetworkChart/NetworkChart.py:1188
 msgid "Direct"
 msgstr "直線"
 
-#: GraphView/graphview.py:3801
+#: GraphView/graphview.py:3794
 msgid "Curves"
 msgstr "曲線"
 
-#: GraphView/graphview.py:3809
+#: GraphView/graphview.py:3802
 msgid "Ortho"
 msgstr "直交"
 
-#: GraphView/graphview.py:3885
+#: GraphView/graphview.py:3878
 msgid "No Events for this person"
 msgstr "この人物にはイベントがありません"
 
-#: GraphView/graphview.py:3906
+#: GraphView/graphview.py:3899
 msgid "Select tags for person"
 msgstr "人物のタグを選択"
 
-#: GraphView/graphview.py:3917
+#: GraphView/graphview.py:3910
 msgid "Add new family"
 msgstr "新しい家族を追加"
 
-#: GraphView/graphview.py:4035
+#: GraphView/graphview.py:4028
 msgid "Add parents"
 msgstr "親を追加"
 
-#: GraphView/graphview.py:4058 QuiltView/QuiltView.py:1445
+#: GraphView/graphview.py:4051 QuiltView/QuiltView.py:1445
 msgid "Set as home person"
 msgstr "ホームユーザーとして設定"
 
-#: GraphView/graphview.py:4061
+#: GraphView/graphview.py:4054
 msgid "Show path to home person"
 msgstr "ホームパーソンへのパスを表示"
 
-#: GraphView/graphview.py:4067 GraphView/search_widget.py:286
+#: GraphView/graphview.py:4060 GraphView/search_widget.py:286
 #: GraphView/search_widget.py:364 SearchGramplet/SearchGramplet.py:637
 #: SearchGramplet/SearchGramplet.py:769
 msgid "Remove from bookmarks"
 msgstr "ブックマークから削除"
 
-#: GraphView/graphview.py:4070 GraphView/search_widget.py:294
+#: GraphView/graphview.py:4063 GraphView/search_widget.py:294
 #: GraphView/search_widget.py:377 SearchGramplet/SearchGramplet.py:645
 #: SearchGramplet/SearchGramplet.py:782
 msgid "Add to bookmarks"
 msgstr "ブックマークに追加"
 
-#: GraphView/graphview.py:4171
+#: GraphView/graphview.py:4164
 msgid "No Events for this family"
 msgstr "この家族にはイベントがありません"
 
-#: GraphView/graphview.py:4192
+#: GraphView/graphview.py:4185
 msgid "Select tags for family"
 msgstr "家族のタグを選択"
 
-#: GraphView/graphview.py:4211
+#: GraphView/graphview.py:4204
 msgid "Add father"
 msgstr "父親を追加"
 
-#: GraphView/graphview.py:4220
+#: GraphView/graphview.py:4213
 msgid "Add mother"
 msgstr "母親を追加"
 
-#: GraphView/graphview.py:4323
+#: GraphView/graphview.py:4316
 msgid "About Graph View"
 msgstr "グラフビューについて"
 
-#: GraphView/graphview.py:4548 GraphView/graphview.py:4594
+#: GraphView/graphview.py:4541 GraphView/graphview.py:4587
 #: QuiltView/QuiltView.py:1601
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr "人物 (%s) にタグを追加"
 
-#: GraphView/graphview.py:4553 GraphView/graphview.py:4605
+#: GraphView/graphview.py:4546 GraphView/graphview.py:4598
 #: QuiltView/QuiltView.py:1606
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "家族 (%s) にタグを追加"
 
-#: GraphView/graphview.py:4679
+#: GraphView/graphview.py:4672
 #, python-format
 msgid "Deleting the person [%s] will remove it from the database."
 msgstr "人物 [%s] を削除すると、データベースから削除されます。"
 
-#: GraphView/graphview.py:4708
+#: GraphView/graphview.py:4701
 #, python-format
 msgid "Delete family [%s]?"
 msgstr "家族 [%s] を削除しますか？"
 
-#: GraphView/graphview.py:4709
+#: GraphView/graphview.py:4702
 msgid "Deleting the family will remove it from the database."
 msgstr "家族を削除すると、データベースから削除されます。"
 
-#: GraphView/graphview.py:4720
+#: GraphView/graphview.py:4713
 #, python-format
 msgid "Delete Family [%s]"
 msgstr "家族 [%s] を削除"
@@ -18703,10 +19125,6 @@ msgstr "人物を非表示"
 msgid "Show person"
 msgstr "人物を表示"
 
-#: LifeLineChartView/lifelinechart.py:2622
-msgid "Show siblings"
-msgstr "兄弟姉妹を表示"
-
 #: LifeLineChartView/lifelinechart.py:2627
 msgid "Hide siblings"
 msgstr "兄弟姉妹を非表示"
@@ -19120,33 +19538,28 @@ msgstr "国立公文書館"
 msgid "Who (re)searches who?"
 msgstr "誰が誰を (再）検索する？"
 
-#: NameSuite/.venv/lib/python3.12/site-packages/mypy/main.py:450
-#, python-format
-msgid "%(prog)s: error: %(message)s\n"
-msgstr "%(prog)s: エラー: %(message)s\n"
-
-#: NameSuite/name_processor.gpr.py:6
+#: NameSuite/name_processor.gpr.py:26
 msgid "Audit Given and Patronymic Names"
 msgstr "名前と父称名の監査"
 
-#: NameSuite/name_processor.gpr.py:9
+#: NameSuite/name_processor.gpr.py:29
 msgid ""
 "Tools to rename given name, audit and infer patronymic (East Slavic) names."
 msgstr "名前の変更、父称 (東スラブ）名の監査と推論を行うツール。"
 
-#: NameSuite/name_processor.gpr.py:25 NameSuite/name_processor.gpr.py:37
+#: NameSuite/name_processor.gpr.py:45 NameSuite/name_processor.gpr.py:57
 msgid "Patronymic Suggestion"
 msgstr "父称の提案"
 
-#: NameSuite/name_processor.gpr.py:27
+#: NameSuite/name_processor.gpr.py:47
 msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
 msgstr "ナビゲーション中に (東スラブ）父称名をリアルタイムで提案します。"
 
-#: NameSuite/name_processor/views/base_tab.py:150
+#: NameSuite/name_processor/views/base_tab.py:164
 msgid "Use"
 msgstr "使用"
 
-#: NameSuite/name_processor/views/gramplet.py:32
+#: NameSuite/name_processor/views/gramplet.py:45
 #, python-brace-format
 msgid ""
 "Missing Patronymic Detected.\n"
@@ -19157,179 +19570,179 @@ msgstr ""
 "提案: {0}\n"
 "父親に基づく: {1}"
 
-#: NameSuite/name_processor/views/gramplet.py:34
+#: NameSuite/name_processor/views/gramplet.py:47
 msgid "Navigate to an individual to check patronymic status."
 msgstr "個人に移動して父称の状態を確認します。"
 
-#: NameSuite/name_processor/views/gramplet.py:35
+#: NameSuite/name_processor/views/gramplet.py:48
 msgid "No active person selected."
 msgstr "アクティブな人物が選択されていません。"
 
-#: NameSuite/name_processor/views/gramplet.py:37
+#: NameSuite/name_processor/views/gramplet.py:50
 msgid ""
 "Patronymic inference can't be inferred for non-binary or unknown genders."
 msgstr "ノンバイナリーまたは不明な性別の場合は父称を推論できません。"
 
-#: NameSuite/name_processor/views/gramplet.py:40
+#: NameSuite/name_processor/views/gramplet.py:53
 msgid "Individual already has a recorded patronymic."
 msgstr "個人には既に記録された父称があります。"
 
-#: NameSuite/name_processor/views/gramplet.py:43
+#: NameSuite/name_processor/views/gramplet.py:56
 msgid "No attached father found in database family records."
 msgstr "データベースの家族記録に添付された父親が見つかりません。"
 
-#: NameSuite/name_processor/views/gramplet.py:46
+#: NameSuite/name_processor/views/gramplet.py:59
 msgid "Father lacks a recorded first name."
 msgstr "父親には記録された名前がありません。"
 
-#: NameSuite/name_processor/views/gramplet.py:49
+#: NameSuite/name_processor/views/gramplet.py:62
 msgid "Could not generate valid morphology patterns."
 msgstr "有効な形態パターンを生成できませんでした。"
 
-#: NameSuite/name_processor/views/gramplet.py:51
+#: NameSuite/name_processor/views/gramplet.py:64
 msgid "Patronymic applied successfully!"
 msgstr "父称が正常に適用されました！"
 
-#: NameSuite/name_processor/views/gramplet.py:77
+#: NameSuite/name_processor/views/gramplet.py:90
 msgid "Apply Suggestion"
 msgstr "提案を適用"
 
-#: NameSuite/name_processor/views/tool.py:92
+#: NameSuite/name_processor/views/tool.py:105
 msgid "Infer East Slavic Patronymics"
 msgstr "東スラブの父称を推論"
 
-#: NameSuite/name_processor/views/tool.py:112
+#: NameSuite/name_processor/views/tool.py:125
 msgid "Rename Given Names"
 msgstr "名を変更"
 
-#: NameSuite/name_processor/views/tool.py:115
+#: NameSuite/name_processor/views/tool.py:128
 msgid "Audit Patronymics"
 msgstr "父称を監査"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:68
+#: NameSuite/name_processor/views/tool_audit_tab.py:80
 msgid "Auditing Settings"
 msgstr "監査設定"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:76
+#: NameSuite/name_processor/views/tool_audit_tab.py:88
 msgid "All Records"
 msgstr "すべてのレコード"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:77
+#: NameSuite/name_processor/views/tool_audit_tab.py:89
 msgid "Males Only"
 msgstr "男性のみ"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:78
+#: NameSuite/name_processor/views/tool_audit_tab.py:90
 msgid "Females Only"
 msgstr "女性のみ"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:82
+#: NameSuite/name_processor/views/tool_audit_tab.py:94
 msgid "Configure Rules..."
 msgstr "ルールを設定..."
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:87
+#: NameSuite/name_processor/views/tool_audit_tab.py:99
 msgid "Match Pre-Revolutionary Orthography"
 msgstr "革命前の正書法に一致"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:95
+#: NameSuite/name_processor/views/tool_audit_tab.py:107
 msgid "Audit Database"
 msgstr "データベースを監査"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:117
+#: NameSuite/name_processor/views/tool_audit_tab.py:129
 msgid "Select All Safe Corrections"
 msgstr "安全な修正をすべて選択"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:122
-#: NameSuite/name_processor/views/tool_rename_tab.py:116
+#: NameSuite/name_processor/views/tool_audit_tab.py:134
+#: NameSuite/name_processor/views/tool_rename_tab.py:128
 msgid "Apply Selected Corrections"
 msgstr "選択した修正を適用"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:162
+#: NameSuite/name_processor/views/tool_audit_tab.py:174
 msgid "Configure Rules"
 msgstr "ルールを設定"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:186
-#: NameSuite/name_processor/views/tool_rename_tab.py:156
+#: NameSuite/name_processor/views/tool_audit_tab.py:198
+#: NameSuite/name_processor/views/tool_rename_tab.py:168
 msgid "Individual"
 msgstr "個人"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:190
-#: NameSuite/name_processor/views/tool_rename_tab.py:158
+#: NameSuite/name_processor/views/tool_audit_tab.py:202
+#: NameSuite/name_processor/views/tool_rename_tab.py:170
 msgid "Current"
 msgstr "現在"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:193
+#: NameSuite/name_processor/views/tool_audit_tab.py:205
 msgid "Correction"
 msgstr "修正"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:200
+#: NameSuite/name_processor/views/tool_audit_tab.py:212
 msgid "Conf"
 msgstr "設定"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:201
+#: NameSuite/name_processor/views/tool_audit_tab.py:213
 msgid "Ref Year"
 msgstr "参照年"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:204
+#: NameSuite/name_processor/views/tool_audit_tab.py:216
 msgid "Explanation"
 msgstr "説明"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:243
+#: NameSuite/name_processor/views/tool_audit_tab.py:255
 msgid "Audit Complete!"
 msgstr "監査完了！"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:248
+#: NameSuite/name_processor/views/tool_audit_tab.py:260
 msgid "No Results"
 msgstr "結果なし"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:248
+#: NameSuite/name_processor/views/tool_audit_tab.py:260
 msgid "No issues found."
 msgstr "問題は見つかりませんでした。"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:63
+#: NameSuite/name_processor/views/tool_rename_tab.py:75
 msgid "Search and Replace Options"
 msgstr "検索と置換のオプション"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:70
+#: NameSuite/name_processor/views/tool_rename_tab.py:82
 msgid "Source Name:"
 msgstr "ソース名:"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:72
+#: NameSuite/name_processor/views/tool_rename_tab.py:84
 msgid "e.g. Иоанн"
 msgstr "例: Иоанн"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:75
+#: NameSuite/name_processor/views/tool_rename_tab.py:87
 msgid "Target Name:"
 msgstr "ターゲット名:"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:77
+#: NameSuite/name_processor/views/tool_rename_tab.py:89
 msgid "e.g. Иван"
 msgstr "例: Иван"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:80
+#: NameSuite/name_processor/views/tool_rename_tab.py:92
 msgid "Match Mode:"
 msgstr "一致モード:"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:82
+#: NameSuite/name_processor/views/tool_rename_tab.py:94
 msgid "Exact Match"
 msgstr "完全一致"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:83
+#: NameSuite/name_processor/views/tool_rename_tab.py:95
 msgid "Substring"
 msgstr "部分文字列"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:84
+#: NameSuite/name_processor/views/tool_rename_tab.py:96
 msgid "Regular Expression"
 msgstr "正規表現"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:88
+#: NameSuite/name_processor/views/tool_rename_tab.py:100
 msgid "Scan for Names"
 msgstr "名前をスキャン"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:93
+#: NameSuite/name_processor/views/tool_rename_tab.py:105
 msgid "Preserve original name as alternative"
 msgstr "元の名前を別名として保存"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:160
+#: NameSuite/name_processor/views/tool_rename_tab.py:172
 msgid "Proposed"
 msgstr "提案"
 
@@ -20013,6 +20426,7 @@ msgid "Percent"
 msgstr "割合"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:65
+#, python-brace-format
 msgid ""
 "There were {} of {} ancestors ({}) found.\n"
 "Only individual ancestors were counted. Duplicates caused by pedigree "
@@ -20065,10 +20479,6 @@ msgstr "人物のイベント概要を表示するグランプレット"
 msgid "Overview"
 msgstr "概要"
 
-#: Overview/Overview.gpr.py:45
-msgid "Family Overview"
-msgstr "家族概要"
-
 #: Overview/Overview.gpr.py:46
 msgid "Gramplet showing an overview of events for a family"
 msgstr "家族のイベント概要を表示するグランプレット"
@@ -20085,11 +20495,11 @@ msgid ""
 msgstr ""
 "空白の入力可能PDFフォームを生成: 国勢調査/イベントフォームまたは家系図。"
 
-#: PDFForms/PDFForms.gpr.py:46
+#: PDFForms/PDFForms.gpr.py:47
 msgid "Import Fillable PDF Forms"
 msgstr "入力可能PDFフォームをインポート"
 
-#: PDFForms/PDFForms.gpr.py:48
+#: PDFForms/PDFForms.gpr.py:49
 msgid ""
 "Import genealogy data from a PDF form. Send the PDF template to others to "
 "fill out and return."
@@ -21126,11 +21536,11 @@ msgstr "PlaceCompletion は %s %s を作成できません"
 msgid "Places tool"
 msgstr "場所ツール"
 
-#: PlaceCompletion/PlaceCompletion.py:408
+#: PlaceCompletion/PlaceCompletion.py:410
 msgid "Missing regex groups in match lat/lon"
 msgstr "緯度/経度の一致に正規表現グループがありません"
 
-#: PlaceCompletion/PlaceCompletion.py:409
+#: PlaceCompletion/PlaceCompletion.py:412
 #, python-format
 msgid ""
 "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
@@ -21138,166 +21548,166 @@ msgstr ""
 "正規表現グループ %(lat)s と %(lon)s は緯度/経度の一致に存在する必要がありま"
 "す。終了します"
 
-#: PlaceCompletion/PlaceCompletion.py:419
+#: PlaceCompletion/PlaceCompletion.py:424
 msgid "Non valid regex for match lat/lon"
 msgstr "緯度/経度の一致に無効な正規表現です"
 
-#: PlaceCompletion/PlaceCompletion.py:420
+#: PlaceCompletion/PlaceCompletion.py:425
 msgid "Non valid regular expression given to find lat/lon. Quiting."
 msgstr "緯度/経度を見つけるための無効な正規表現が指定されました。終了します。"
 
-#: PlaceCompletion/PlaceCompletion.py:479
+#: PlaceCompletion/PlaceCompletion.py:484
 msgid "Finding Places and appropriate changes"
 msgstr "場所と適切な変更を見つける"
 
-#: PlaceCompletion/PlaceCompletion.py:481
+#: PlaceCompletion/PlaceCompletion.py:486
 msgid "Filtering"
 msgstr "フィルタリング"
 
-#: PlaceCompletion/PlaceCompletion.py:491
+#: PlaceCompletion/PlaceCompletion.py:496
 msgid "Loading lat/lon file in Memory..."
 msgstr "緯度/経度ファイルをメモリにロード中..."
 
-#: PlaceCompletion/PlaceCompletion.py:497
+#: PlaceCompletion/PlaceCompletion.py:502
 msgid "Examining places"
 msgstr "場所を調査中"
 
-#: PlaceCompletion/PlaceCompletion.py:685
+#: PlaceCompletion/PlaceCompletion.py:690
 msgid "Set Tag"
 msgstr "タグを設定"
 
-#: PlaceCompletion/PlaceCompletion.py:687
+#: PlaceCompletion/PlaceCompletion.py:692
 msgid "Doing Place changes"
 msgstr "場所の変更を実行中"
 
-#: PlaceCompletion/PlaceCompletion.py:731
+#: PlaceCompletion/PlaceCompletion.py:736
 msgid "No place record was modified."
 msgstr "場所レコードは変更されませんでした。"
 
-#: PlaceCompletion/PlaceCompletion.py:733
+#: PlaceCompletion/PlaceCompletion.py:738
 msgid "1 place record was modified."
 msgstr "1 件の場所レコードが変更されました。"
 
-#: PlaceCompletion/PlaceCompletion.py:735
+#: PlaceCompletion/PlaceCompletion.py:740
 #, python-format
 msgid "%d place records were modified."
 msgstr "%d 件の場所レコードが変更されました。"
 
-#: PlaceCompletion/PlaceCompletion.py:736
+#: PlaceCompletion/PlaceCompletion.py:741
 msgid "Change places"
 msgstr "場所を変更"
 
-#: PlaceCompletion/PlaceCompletion.py:809
+#: PlaceCompletion/PlaceCompletion.py:814
 msgid "The selected file is a directory, not a file."
 msgstr "選択されたファイルはディレクトリであり、ファイルではありません。"
 
-#: PlaceCompletion/PlaceCompletion.py:820
+#: PlaceCompletion/PlaceCompletion.py:825
 msgid "The file you want to access is not a regular file."
 msgstr "アクセスしようとしているファイルは通常のファイルではありません。"
 
-#: PlaceCompletion/PlaceCompletion.py:826
+#: PlaceCompletion/PlaceCompletion.py:831
 msgid "The file does not exist."
 msgstr "ファイルが存在しません。"
 
-#: PlaceCompletion/PlaceCompletion.py:858
+#: PlaceCompletion/PlaceCompletion.py:863
 msgid "Problem reading file"
 msgstr "ファイルの読み取り中に問題が発生しました"
 
-#: PlaceCompletion/PlaceCompletion.py:970
-#: PlaceCompletion/PlaceCompletion.py:982
+#: PlaceCompletion/PlaceCompletion.py:975
+#: PlaceCompletion/PlaceCompletion.py:987
 #, python-format
 msgid "invalid lat or lon value, %(lat)s, %(lon)s"
 msgstr "無効な緯度または経度の値です。%(lat)s, %(lon)s"
 
-#: PlaceCompletion/PlaceCompletion.py:1135
+#: PlaceCompletion/PlaceCompletion.py:1140
 msgid "No lat/lon conversion"
 msgstr "緯度/経度の変換なし"
 
-#: PlaceCompletion/PlaceCompletion.py:1136
+#: PlaceCompletion/PlaceCompletion.py:1141
 msgid "All in degree notation"
 msgstr "すべて度数表記"
 
-#: PlaceCompletion/PlaceCompletion.py:1137
+#: PlaceCompletion/PlaceCompletion.py:1142
 msgid "All in decimal notation"
 msgstr "すべて十進表記"
 
-#: PlaceCompletion/PlaceCompletion.py:1138
+#: PlaceCompletion/PlaceCompletion.py:1143
 msgid "Correct -50° in 50°S"
 msgstr "-50° を 50°S に修正"
 
-#: PlaceCompletion/PlaceCompletion.py:1142
+#: PlaceCompletion/PlaceCompletion.py:1147
 msgid "No changes"
 msgstr "変更なし"
 
-#: PlaceCompletion/PlaceCompletion.py:1143
+#: PlaceCompletion/PlaceCompletion.py:1148
 msgid "City[, State]"
 msgstr "都市[, 州]"
 
-#: PlaceCompletion/PlaceCompletion.py:1145
+#: PlaceCompletion/PlaceCompletion.py:1150
 msgid "City,PostalCode,Country"
 msgstr "都市,郵便番号,国"
 
-#: PlaceCompletion/PlaceCompletion.py:1147
+#: PlaceCompletion/PlaceCompletion.py:1152
 msgid "City[(Street;Locality;Parish)],PostalCode,Country"
 msgstr "都市[(通り;地区;教区)],郵便番号,国"
 
-#: PlaceCompletion/PlaceCompletion.py:1149
+#: PlaceCompletion/PlaceCompletion.py:1154
 msgid "TitleStart [, City] [, State]"
 msgstr "タイトル開始 [, 都市] [, 州]"
 
-#: PlaceCompletion/PlaceCompletion.py:1151
+#: PlaceCompletion/PlaceCompletion.py:1156
 msgid "TitleStart [, City] [, County] [, State] [, Country]"
 msgstr "タイトル開始 [, 都市] [, 郡] [, 州] [, 国]"
 
-#: PlaceCompletion/PlaceCompletion.py:1153
+#: PlaceCompletion/PlaceCompletion.py:1158
 msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
 msgstr "タイトル開始 [, 都市] [, 郵便番号] [, 郡] [, 州] [, 国]"
 
-#: PlaceCompletion/PlaceCompletion.py:1177
+#: PlaceCompletion/PlaceCompletion.py:1182
 msgid "Don't search"
 msgstr "検索しない"
 
-#: PlaceCompletion/PlaceCompletion.py:1180
+#: PlaceCompletion/PlaceCompletion.py:1185
 msgid "GeoNames country file, city search"
 msgstr "GeoNames 国ファイル、都市検索"
 
-#: PlaceCompletion/PlaceCompletion.py:1185
+#: PlaceCompletion/PlaceCompletion.py:1190
 msgid "GeoNames country file, city localized variants search"
 msgstr "GeoNames 国ファイル、都市のローカライズされたバリアント検索"
 
-#: PlaceCompletion/PlaceCompletion.py:1190
+#: PlaceCompletion/PlaceCompletion.py:1195
 msgid "GeoNames country file, county/city search"
 msgstr "GeoNames 国ファイル、郡/都市検索"
 
-#: PlaceCompletion/PlaceCompletion.py:1202
+#: PlaceCompletion/PlaceCompletion.py:1207
 msgid "GeoNames country file, title begin, general search"
 msgstr "GeoNames 国ファイル、タイトル開始、一般検索"
 
-#: PlaceCompletion/PlaceCompletion.py:1207
+#: PlaceCompletion/PlaceCompletion.py:1212
 msgid "GeoNames USA state file, city search"
 msgstr "GeoNames 米国州ファイル、都市検索"
 
-#: PlaceCompletion/PlaceCompletion.py:1221
+#: PlaceCompletion/PlaceCompletion.py:1226
 msgid "GNS Geonet country file, city search"
 msgstr "GNS Geonet 国ファイル、都市検索"
 
-#: PlaceCompletion/PlaceCompletion.py:1228
+#: PlaceCompletion/PlaceCompletion.py:1233
 msgid "GNS Geonet country file, county/city search"
 msgstr "GNS Geonet 国ファイル、郡/都市検索"
 
-#: PlaceCompletion/PlaceCompletion.py:1236
+#: PlaceCompletion/PlaceCompletion.py:1241
 msgid "GNS Geonet country file, title begin, general search"
 msgstr "GNS Geonet 国ファイル、タイトル開始、一般検索"
 
-#: PlaceCompletion/PlaceCompletion.py:1244
+#: PlaceCompletion/PlaceCompletion.py:1249
 msgid "Wikipedia CSV Dump"
 msgstr "Wikipedia CSV ダンプ"
 
-#: PlaceCompletion/PlaceCompletion.py:1332
+#: PlaceCompletion/PlaceCompletion.py:1337
 msgid "All Places"
 msgstr "すべての場所"
 
-#: PlaceCompletion/PlaceCompletion.py:1335
+#: PlaceCompletion/PlaceCompletion.py:1340
 msgid "No Latitude/Longitude given"
 msgstr "緯度/経度が指定されていません"
 
@@ -21377,7 +21787,7 @@ msgstr ""
 "または簡潔な\n"
 "タイトル形式を定義:"
 
-#: PlaceCompletion/placecompletion.glade:730
+#: PlaceCompletion/placecompletion.glade:739
 msgid ""
 "Available variables: city, street, locality, parish, county, state, country, "
 "postal_code"
@@ -21385,7 +21795,7 @@ msgstr ""
 "利用可能な変数: city, street, locality, parish, county, state, country, "
 "postal_code"
 
-#: PlaceCompletion/placecompletion.glade:820
+#: PlaceCompletion/placecompletion.glade:829
 msgid ""
 "Delete to delete a row, Double-click on the row to edit place with changes "
 "pre-entered, \n"
@@ -21433,44 +21843,44 @@ msgstr "場所の座標設定を簡素化するグランプレット"
 msgid "Place Coordinates"
 msgstr "場所座標"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:231
 msgid "The place was not found. You may clarify the search keywords."
 msgstr "場所が見つかりませんでした。検索キーワードを明確にしてください。"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:219
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:247
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:235
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:266
 msgid "Failed to search for the coordinates due to some unexpected error."
 msgstr "予期しないエラーにより座標の検索に失敗しました。"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:263
 msgid "The place was not found."
 msgstr "場所が見つかりませんでした。"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:288
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:319
 msgid "The place was not identified."
 msgstr "場所が特定できませんでした。"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:290
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:321
 msgid "Coordinates were not given."
 msgstr "座標が指定されていません。"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:286
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:305
 msgid "Failed to interpret the input format."
 msgstr "入力形式の解釈に失敗しました。"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:351
 #, python-brace-format
 msgid "DB entry [{id}] {name}:"
 msgstr "DB エントリ [{id}] {name}:"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:356
 #: PlaceCoordinateGramplet/placecoordinate.glade:132
 msgid "Nothing has been searched yet"
 msgstr "まだ何も検索されていません"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:378
 msgid "No place is active"
 msgstr "アクティブな場所がありません"
 
@@ -21597,6 +22007,7 @@ msgid "Setting place properties"
 msgstr "場所のプロパティを設定中"
 
 #: PlaceUpdate/PlaceUpdate.py:294
+#, python-brace-format
 msgid "Regex operation failed: {}"
 msgstr "正規表現操作に失敗しました: {}"
 
@@ -22829,6 +23240,7 @@ msgid "removed"
 msgstr "削除されました"
 
 #: RemoveTagTool/RemoveTagTool.py:269
+#, python-brace-format
 msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr "タグ '{}' は {} 個の {} オブジェクトに {} されました。\n"
 
@@ -23930,14 +24342,50 @@ msgstr "列タイトルに使用されるスタイル。"
 msgid "The style used for event and person details."
 msgstr "イベントや人物の詳細に使用されるスタイル。"
 
-#: Sqlite/ExportSql.py:1346
+#: Sqlite/ExportSql.py:1720
+#, fuzzy
+#| msgid "January"
+msgid "January 1"
+msgstr "1月"
+
+#: Sqlite/ExportSql.py:1721
+#, fuzzy
+#| msgid "March"
+msgid "March 1"
+msgstr "3月"
+
+#: Sqlite/ExportSql.py:1722
+#, fuzzy
+#| msgid "March"
+msgid "March 25"
+msgstr "3月"
+
+#: Sqlite/ExportSql.py:1723
+#, fuzzy
+#| msgid "September"
+msgid "September 1"
+msgstr "9月"
+
+#: Sqlite/ExportSql.py:1749
+#, fuzzy
+#| msgid "Widowed"
+msgid "Flowed"
+msgstr "寡夫/寡婦"
+
+#: Sqlite/ExportSql.py:1750
+#, fuzzy
+#| msgid "PS format"
+msgid "Preformatted"
+msgstr "PS形式"
+
+#: Sqlite/ExportSql.py:1953
 #, python-format
 msgid "Export Complete: %d second"
 msgid_plural "Export Complete: %d seconds"
 msgstr[0] "エクスポート完了 : %d 秒"
 msgstr[1] ""
 
-#: Sqlite/ImportSql.py:893
+#: Sqlite/ImportSql.py:899
 #, python-format
 msgid "Import Complete: %d second"
 msgid_plural "Import Complete: %d seconds"
@@ -23956,12 +24404,12 @@ msgstr "SQLiteは一般的なローカルデータベース形式です"
 msgid "SQLite Export"
 msgstr "SQLite エクスポート"
 
-#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:3
-#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:11
+#: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:3
+#: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:11
 msgid "Surname Mapping"
 msgstr "姓マッピング"
 
-#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:4
+#: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:4
 msgid "Gramplet for editing the grouping of surnames"
 msgstr "姓のグループ化を編集するためのグランプレット"
 
@@ -24011,6 +24459,7 @@ msgid "Add %s reciprocal association"
 msgstr "%s の相互関連付けを追加"
 
 #: SyncAssociations/syncAssociations.py:131
+#, python-brace-format
 msgid "{} Reciprocal associations created"
 msgstr "{} 件の相互関連付けが作成されました"
 
@@ -24249,19 +24698,19 @@ msgstr ""
 "テーマとフォントを簡単に調整するための設定の追加。 Windows ユーザーにとって特"
 "に便利です。"
 
-#: Themes/themes.py:172 Themes/themes.py:190
+#: Themes/themes.py:176 Themes/themes.py:194
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "テーマはGTK_THEMEによってハードコードされています"
 
-#: Themes/themes.py:180
+#: Themes/themes.py:184
 msgid "Dark Variant"
 msgstr "ダーク テーマ"
 
-#: Themes/themes.py:198
+#: Themes/themes.py:202
 msgid "Font"
 msgstr "フォント"
 
-#: Themes/themes.py:214
+#: Themes/themes.py:218
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "スクロールバーを修正しました (再起動が必要です)"
 
@@ -25912,6 +26361,7 @@ msgid "⚠ Missing dependency \"qrcode\""
 msgstr "⚠ 依存関係 \"qrcode\" が不足しています"
 
 #: WebSearch/qr_window.py:120
+#, python-brace-format
 msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
@@ -26109,11 +26559,11 @@ msgstr "etree"
 msgid "Gramplet for testing etree with Gramps XML"
 msgstr "Gramps XML で etree をテストするための Gramplet"
 
-#: lxml/etreeGramplet.py:83 lxml/lxmlGramplet.py:115
+#: lxml/etreeGramplet.py:83 lxml/lxmlGramplet.py:113
 msgid "Invalid timestamp"
 msgstr "タイムスタンプが無効です"
 
-#: lxml/etreeGramplet.py:130 lxml/lxmlGramplet.py:173
+#: lxml/etreeGramplet.py:130 lxml/lxmlGramplet.py:181
 msgid ""
 "Select a Gramps XML file and\n"
 " click on the Run button."
@@ -26121,7 +26571,7 @@ msgstr ""
 "Gramps XML ファイルを選択し、\n"
 " 実行ボタンをクリックします。"
 
-#: lxml/etreeGramplet.py:155 lxml/lxmlGramplet.py:197
+#: lxml/etreeGramplet.py:155 lxml/lxmlGramplet.py:205
 msgid "No file loaded..."
 msgstr "ファイルが読み込まれていません..."
 
@@ -26138,7 +26588,7 @@ msgstr "コンソールにより多くの情報を出力"
 msgid "Cannot uncompress \"%s\""
 msgstr "\"%s\" を解凍できません"
 
-#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:334
+#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:342
 msgid "Is it a compressed .gramps?"
 msgstr "圧縮された.grampsですか?"
 
@@ -26147,7 +26597,7 @@ msgstr "圧縮された.grampsですか?"
 msgid "Cannot copy \"%s\""
 msgstr "\"%s\" をコピーできません"
 
-#: lxml/etreeGramplet.py:265 lxml/lxmlGramplet.py:348
+#: lxml/etreeGramplet.py:265 lxml/lxmlGramplet.py:356
 msgid "Is it a .gramps?"
 msgstr ".gramps ファイルですか?"
 
@@ -26155,12 +26605,12 @@ msgstr ".gramps ファイルですか?"
 msgid "Sorry, no support for your OS yet!"
 msgstr "申し訳ございませんが、お使いの OS はまだサポートされていません!"
 
-#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:420
+#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:428
 #, python-format
 msgid "Cannot parse content of \"%(file)s\""
 msgstr "\"%(file)s\" のコンテンツを解析できません"
 
-#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:420
+#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:428
 msgid "Parsing issue"
 msgstr "解析の問題"
 
@@ -26314,93 +26764,93 @@ msgstr "lxml"
 msgid "Gramplet for testing lxml and XSLT"
 msgstr "lxml と XSLT をテストするための Gramplet"
 
-#: lxml/lxmlGramplet.py:72
+#: lxml/lxmlGramplet.py:144
 msgid "\"gzip\" is missing"
 msgstr "\"gzip\" がありません"
 
-#: lxml/lxmlGramplet.py:72
+#: lxml/lxmlGramplet.py:144
 msgid "Where is gzip?"
 msgstr "gzip はどこにありますか？"
 
-#: lxml/lxmlGramplet.py:94
+#: lxml/lxmlGramplet.py:146
 msgid "Missing python3 lxml"
 msgstr "python3 lxml がありません"
 
-#: lxml/lxmlGramplet.py:94
+#: lxml/lxmlGramplet.py:147
 msgid "Please, try to install \"python3 lxml\" package."
 msgstr "\"python3 lxml\" パッケージをインストールしてみてください。"
 
-#: lxml/lxmlGramplet.py:255 lxml/lxmlGramplet.py:273 lxml/lxmlGramplet.py:749
+#: lxml/lxmlGramplet.py:263 lxml/lxmlGramplet.py:281 lxml/lxmlGramplet.py:757
 msgid "xmllint options"
 msgstr "xmllint オプション"
 
-#: lxml/lxmlGramplet.py:264 lxml/lxmlGramplet.py:282
+#: lxml/lxmlGramplet.py:272 lxml/lxmlGramplet.py:290
 msgid "debug places"
 msgstr "場所をデバッグ"
 
-#: lxml/lxmlGramplet.py:265 lxml/lxmlGramplet.py:283
+#: lxml/lxmlGramplet.py:273 lxml/lxmlGramplet.py:291
 msgid "debug xml"
 msgstr "xml をデバッグ"
 
-#: lxml/lxmlGramplet.py:382
+#: lxml/lxmlGramplet.py:390
 msgid "XSD validation (lxml)"
 msgstr "XSD 検証 (lxml)"
 
-#: lxml/lxmlGramplet.py:390
+#: lxml/lxmlGramplet.py:398
 #, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
 msgstr "xmllint: \"%(file)s\" の DTD 検証をスキップ"
 
-#: lxml/lxmlGramplet.py:407
+#: lxml/lxmlGramplet.py:415
 #, python-format
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
 msgstr "xmllint: \"%(file)s\" の RelaxNG 検証をスキップ"
 
-#: lxml/lxmlGramplet.py:423
+#: lxml/lxmlGramplet.py:431
 msgid "Custom \"test.xml\" file"
 msgstr "カスタム \"test.xml\" ファイル"
 
-#: lxml/lxmlGramplet.py:423
+#: lxml/lxmlGramplet.py:431
 msgid "Please try to fix \"test.xml\""
 msgstr "\"test.xml\" を修正してみてください"
 
-#: lxml/lxmlGramplet.py:432
+#: lxml/lxmlGramplet.py:440
 #, python-format
 msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
 msgstr "RelaxNG スキーマで \"%(file)s\" を検証できません"
 
-#: lxml/lxmlGramplet.py:432
+#: lxml/lxmlGramplet.py:440
 msgid "RelaxNG validation"
 msgstr "RelaxNG 検証"
 
-#: lxml/lxmlGramplet.py:445
+#: lxml/lxmlGramplet.py:453
 #, python-format
 msgid "Cannot parse \"%(file)s\" via etree"
 msgstr "etree で \"%(file)s\" を解析できません"
 
-#: lxml/lxmlGramplet.py:445
+#: lxml/lxmlGramplet.py:453
 msgid "File issue"
 msgstr "ファイルの問題"
 
-#: lxml/lxmlGramplet.py:484
+#: lxml/lxmlGramplet.py:492
 msgid "Parsing file..."
 msgstr "ファイルを解析中..."
 
-#: lxml/lxmlGramplet.py:569
+#: lxml/lxmlGramplet.py:577
 #, python-format
 msgid " - (%(lang)s)"
 msgstr " - (%(lang)s)"
 
-#: lxml/lxmlGramplet.py:572
+#: lxml/lxmlGramplet.py:580
 #, python-format
 msgid " - (? or %(lang)s)"
 msgstr " - (? または %(lang)s)"
 
-#: lxml/lxmlGramplet.py:609
+#: lxml/lxmlGramplet.py:617
 msgid "Missing header"
 msgstr "ヘッダーがありません"
 
-#: lxml/lxmlGramplet.py:609 lxml/lxmlGramplet.py:719
+#: lxml/lxmlGramplet.py:617 lxml/lxmlGramplet.py:727
 msgid ""
 "Not a valid .gramps.\n"
 "Cannot run the gramplet...\n"
@@ -26412,119 +26862,119 @@ msgstr ""
 "Gramps 6.x で生成された\n"
 ".gramps を使用してみてください。"
 
-#: lxml/lxmlGramplet.py:622 lxml/lxmlGramplet.py:627 lxml/lxmlGramplet.py:632
-#: lxml/lxmlGramplet.py:637
+#: lxml/lxmlGramplet.py:630 lxml/lxmlGramplet.py:635 lxml/lxmlGramplet.py:640
+#: lxml/lxmlGramplet.py:645
 msgid "0"
 msgstr "0"
 
-#: lxml/lxmlGramplet.py:652
+#: lxml/lxmlGramplet.py:660
 msgid "File parsed with"
 msgstr "ファイルを解析しました"
 
-#: lxml/lxmlGramplet.py:654
+#: lxml/lxmlGramplet.py:662
 msgid " by Gramps "
 msgstr " by Gramps "
 
-#: lxml/lxmlGramplet.py:654
+#: lxml/lxmlGramplet.py:662
 msgid "File was generated on "
 msgstr "ファイルは に生成されました "
 
-#: lxml/lxmlGramplet.py:656
+#: lxml/lxmlGramplet.py:664
 msgid "Period: "
 msgstr "期間: "
 
-#: lxml/lxmlGramplet.py:659 lxml/lxmlGramplet.py:663
+#: lxml/lxmlGramplet.py:667 lxml/lxmlGramplet.py:671
 #, python-brace-format
 msgid "\t{number} surname"
 msgid_plural "\t{number} surnames; no frequency yet"
 msgstr[0] "\t{number} 姓"
 msgstr[1] "\t{number} 姓; まだ頻度はありません"
 
-#: lxml/lxmlGramplet.py:659
+#: lxml/lxmlGramplet.py:667
 #, python-brace-format
 msgid "\t{number} surname; no frequency yet"
 msgstr "\t{number} 姓; まだ頻度はありません"
 
-#: lxml/lxmlGramplet.py:660 lxml/lxmlGramplet.py:667
+#: lxml/lxmlGramplet.py:668 lxml/lxmlGramplet.py:675
 #, python-brace-format
 msgid "\t{number} place"
 msgid_plural "\t{number} places"
 msgstr[0] "\t{number} 件の場所"
 msgstr[1] ""
 
-#: lxml/lxmlGramplet.py:661 lxml/lxmlGramplet.py:671
+#: lxml/lxmlGramplet.py:669 lxml/lxmlGramplet.py:679
 #, python-brace-format
 msgid "\t{number} note"
 msgid_plural "\t{number} notes"
 msgstr[0] "\t{number} メモ"
 msgstr[1] ""
 
-#: lxml/lxmlGramplet.py:675
+#: lxml/lxmlGramplet.py:683
 #, python-brace-format
 msgid "\t{number} source"
 msgid_plural "\t{number} sources"
 msgstr[0] "\t{number} 件のソース"
 msgstr[1] ""
 
-#: lxml/lxmlGramplet.py:694 lxml/lxmlGramplet.py:919
+#: lxml/lxmlGramplet.py:702 lxml/lxmlGramplet.py:927
 msgid "Gallery.html"
 msgstr "Gallery.html"
 
-#: lxml/lxmlGramplet.py:695
+#: lxml/lxmlGramplet.py:703
 #, python-format
 msgid "1. Has generated a media index on \"%(file)s\".\n"
 msgstr "1. \"%(file)s\" にメディア インデックスを生成しました。\n"
 
-#: lxml/lxmlGramplet.py:719
+#: lxml/lxmlGramplet.py:727
 msgid "XML SyntaxError"
 msgstr "XML 構文エラー"
 
-#: lxml/lxmlGramplet.py:723
+#: lxml/lxmlGramplet.py:731
 msgid "Matches XSD schema."
 msgstr "XSD スキーマと一致します。"
 
-#: lxml/lxmlGramplet.py:763
+#: lxml/lxmlGramplet.py:771
 msgid "xmllint: skip DTD validation"
 msgstr "xmllint : DTD 検証をスキップする"
 
-#: lxml/lxmlGramplet.py:787
+#: lxml/lxmlGramplet.py:795
 msgid "I am looking at ..."
 msgstr "私が見ているのは..."
 
-#: lxml/lxmlGramplet.py:788
+#: lxml/lxmlGramplet.py:796
 msgid "Content generated by Gramps"
 msgstr "Grampsによって生成されたコンテンツ"
 
-#: lxml/lxmlGramplet.py:791
+#: lxml/lxmlGramplet.py:799
 msgid "List of sources"
 msgstr "ソースのリスト"
 
-#: lxml/lxmlGramplet.py:810
+#: lxml/lxmlGramplet.py:818
 msgid "Australia"
 msgstr "オーストラリア"
 
-#: lxml/lxmlGramplet.py:811
+#: lxml/lxmlGramplet.py:819
 msgid "Brazil"
 msgstr "ブラジル"
 
-#: lxml/lxmlGramplet.py:822
+#: lxml/lxmlGramplet.py:830
 msgid "India"
 msgstr "インド"
 
-#: lxml/lxmlGramplet.py:824
+#: lxml/lxmlGramplet.py:832
 msgid "Norway"
 msgstr "ノルウェー"
 
-#: lxml/lxmlGramplet.py:825
+#: lxml/lxmlGramplet.py:833
 msgid "Portugal"
 msgstr "ポルトガル"
 
-#: lxml/lxmlGramplet.py:896
+#: lxml/lxmlGramplet.py:904
 #, python-format
 msgid "2. Has generated \"%s\".\n"
 msgstr "2. \"%s\" を生成しました。\n"
 
-#: lxml/lxmlGramplet.py:898
+#: lxml/lxmlGramplet.py:906
 #, python-format
 msgid ""
 "Try to open\n"
@@ -26534,6 +26984,23 @@ msgstr ""
 "お好みの Web ナビゲータで\n"
 " \"%s\"\n"
 " を開いてみてください ..."
+
+#~ msgid "Will check the data on Association for people."
+#~ msgstr "人々のための関連付けのデータを確認する。"
+
+#~ msgid "Type of link"
+#~ msgstr "リンクの種類"
+
+#, fuzzy
+#~ msgid "Of"
+#~ msgstr "Of"
+
+#~ msgid "Ready..."
+#~ msgstr "準備完了..."
+
+#, python-format
+#~ msgid "%(prog)s: error: %(message)s\n"
+#~ msgstr "%(prog)s: エラー: %(message)s\n"
 
 #~ msgid "Search"
 #~ msgstr "検索"
