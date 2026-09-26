@@ -380,14 +380,19 @@ not exist carries its own risk — see the `force=1` option considered
 and rejected above), but worth checking first if `_walk_conflict_diff()`
 ever flags a field none of the above explains:
 
-- **Locale-sensitive type resolution** — the precedent this repo
-  already has: this file's own `CLAUDE.md` notes `LANGUAGE=en_US.UTF-8`
-  used to be required and no longer is for v6.0+, meaning a
-  `GrampsType` (event/attribute/name type, ...) has previously
-  round-tripped through locale-aware string matching. The server and a
-  client are separate Gramps processes with no guarantee of matching
-  locale environments. Not checked live: no way to control the demo
-  server's own locale from this addon's side.
+- **Locale-sensitive type resolution — checked 2026-09-26, refuted by
+  design, not just by luck.** Read `GrampsType.set_from_xml_str()`/
+  `xml_str()` (gen/lib/grampstype.py) directly: standard types
+  round-trip through `_E2IMAP`/`_I2EMAP`, built from `_DATAMAP`'s
+  *third* column (a fixed English/canonical string), never the
+  *second* (the localized display string) `_S2IMAP` uses for GUI
+  matching only. A Gramps XML file's `type` values are provably
+  locale-independent regardless of what locale the server or a given
+  client runs under; a custom type is stored as whatever literal text
+  the user typed, also locale-independent by definition. Struck from
+  this list -- CLAUDE.md's `LANGUAGE=en_US.UTF-8` note is about
+  something else (matching translated strings for a *different*
+  purpose), not evidence this candidate was ever real.
 - **Version skew** between the server's Gramps/gramps-web-api version
   and a given client's — any "recompute on import" heuristic (not just
   birth/death index) can behave differently across point releases. Not
@@ -404,6 +409,11 @@ ever flags a field none of the above explains:
   order after a bootstrap resync). `TestRoundTripFidelitySweep`
   (`live_tests/test_live_round_trip_fidelity_sweep.py`) covers all
   three in one bootstrap.
+- **Bookmarks — checked 2026-09-26, confirmed safe by design.** Read
+  `ImportXml.start_bookmark()` (gen/lib/importxml.py) directly: every
+  bookmark type's handler checks `handle not in db.X_bookmarks.get()`
+  before appending, properly deduplicated -- unlike name-formats (gap
+  10), which has no equivalent check. Not the same growth risk.
 
 ### 8. A Tag's own handle is not stable across separate server exports — **defensive fix shipped, root cause NOT reproduced independently — see update below**
 
@@ -623,9 +633,82 @@ compliant parser, so there is nothing left to verify about *whether*
 it happens, only that this addon corrects for it -- which the tests
 above confirm directly.
 
+### 10. Researcher info and name-format entries get clobbered/duplicated by every resync — **fixed**
+
+Found while systematically checking what *other* local settings or
+XML import/export differences could matter, prompted directly by a
+user question after gaps 7-9. Neither of these two causes a false push
+conflict the way every other gap in this file does -- Researcher and
+name-formats are pure local metadata, never pushed to or read as
+ground truth from the server -- but both are real, confirmed local
+data loss/corrosion, exactly on-topic for that question.
+
+**Researcher info.** `ImportXml.import_researcher`
+(gramps/plugins/importer/importxml.py) is set from
+`self.db.get_total() == 0` at `__init__` time -- true not only for a
+genuine first bootstrap but for *every* resync this addon runs, since
+the "clear local mirror" step always empties every primary object
+first. Confirmed live: gramps-web-api's own export always carries this
+demo dataset's own baked-in researcher (`<resname>Alex Roitman,,,
+</resname>`), not this mirror's own -- so uncorrected, any Researcher
+info a user configures for this tree (Edit > Preferences > Researcher)
+gets silently replaced with that on the very next resync, which can
+happen within seconds of any push conflict, or on the periodic
+totals-check poll.
+
+**Name-format duplication.** `ImportXml.parse()` unconditionally does
+`self.db.name_formats += self.name_formats` for whatever
+`<name-formats>` entries the export declares (gramps-web-api's own
+export always includes at least one: "SURNAME, Given (Common)"), on
+every single import -- not gated by `import_researcher`'s emptiness
+check at all. A colliding *number* gets remapped to a new one
+(`ImportXml.remap_name_format()`) rather than treated as the same
+entry, so a genuinely identical format becomes a new, distinct entry
+every time. Confirmed by direct reproduction: three resyncs of the
+same data left three separate copies of "SURNAME, Given (Common)"
+under numbers -1, -2, -3. Left uncorrected, this grows without bound
+for as long as the mirror keeps resyncing, silently bloating the
+persisted metadata and the Name Editor's own format list with an
+ever-growing wall of visually-identical entries.
+
+**Status: implemented**, same "snapshot before the clear step, correct
+after the reimport" shape as gaps 4/8's own fixes:
+
+- `_snapshot_researcher()`/`_restore_researcher_if_locally_set()`:
+  a deep copy of `get_researcher()` (a live, mutable object
+  `set_researcher()` mutates in place, so a plain reference would
+  silently track the reimport's own overwrite) taken before the clear
+  step; restored after the reimport only if it held anything worth
+  keeping (a blank snapshot -- a genuine first bootstrap -- is left
+  alone, adopting whatever the reimport set, same asymmetry gap 4's
+  bootstrap/resync split already has).
+- `_snapshot_name_formats()`/`_deduplicate_name_formats()`: a shallow
+  copy of `db.name_formats` taken before the clear step; after the
+  reimport, any newly-added entry whose (name, fmt_str, active) content
+  matches one already present before this resync is removed again,
+  `name_displayer.set_name_format()` re-registering the corrected list.
+  Only prevents *further* growth from this point forward -- does not
+  retroactively collapse duplicates an earlier resync (before this fix
+  shipped) already left behind.
+
+Both wired into the same two call sites as every other reimport
+correction (`_full_resync_async()`'s `rebuild()` and
+`_bootstrap_full_resync()`), right after tag restabilization.
+`getattr(db, "owner"/"name_formats", ...)` guards throughout: unit
+tests construct a `WebApiDB` via `WebApiDB.__new__()`, bypassing
+`DbGeneric.__init__()`'s defaults entirely (see
+`tests/test_grampswebapidb.py`'s `new_instance()`), same guard
+`_reimport_preserving_server_gramps_ids()` (gap 7) already needed.
+
+Covered by `TestRestoreResearcherIfLocallySet` and
+`TestDeduplicateNameFormats` (real-DB integration, real `ImportXml`
+round trips) -- each includes a test that reproduces the bug directly
+against plain `ImportXml`/repeated reimports before showing the fix
+corrects it, same pattern as every other gap in this file.
+
 ## Performance
 
-### 10. Media poll rescans everything, on the main thread, every 5 minutes
+### 11. Media poll rescans everything, on the main thread, every 5 minutes
 
 `_scan_and_resolve_media()` (grampswebapidb.py:3512) does `iter_media()` +
 `os.path.exists()` for every Media object, on the GTK main thread, every

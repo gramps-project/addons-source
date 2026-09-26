@@ -650,8 +650,9 @@ from gramps.gen.db.dbconst import (
     TXNUPD,
 )
 from gramps.gen.db.exceptions import DbConnectionError, DbWriteFailure
+from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.errors import HandleError
-from gramps.gen.lib import Note, NoteType, Tag
+from gramps.gen.lib import Note, NoteType, Researcher, Tag
 from gramps.gen.lib.baseobj import BaseObject
 from gramps.gen.lib.json_utils import data_to_object, object_to_dict, remove_object
 from gramps.gen.merge.diff import diff_items
@@ -1667,6 +1668,139 @@ def _restabilize_tag_handles(db, before_by_name, trans):
         db.remove_tag(new_handle, trans)
         db.add_tag(revived[old_handle], trans)
     return len(rewrite)
+
+
+def _snapshot_researcher(db):
+    """A deep copy of this mirror's current Researcher info, taken
+    right before a resync's own "clear local mirror" step --
+    get_researcher() (DbGeneric) returns the live, mutable Researcher
+    instance ImportXml itself later overwrites in place
+    (set_researcher() -> Researcher.set_from()), so a plain reference
+    here would silently track the reimport's own overwrite instead of
+    freezing the prior value. See
+    _restore_researcher_if_locally_set()'s own docstring for why this
+    needs preserving across a reimport at all.
+
+    getattr(..., None) rather than get_researcher() (a plain ``return
+    self.owner``): unit tests construct a WebApiDB via
+    WebApiDB.__new__(), bypassing DbGeneric.__init__() (and its
+    ``self.owner = Researcher()`` default) entirely -- see
+    tests/test_grampswebapidb.py's new_instance(). Real usage always
+    has gone through __init__ by the time this runs.
+    """
+    return deepcopy(getattr(db, "owner", None) or Researcher())
+
+
+def _restore_researcher_if_locally_set(db, snapshot):
+    """Restore this mirror's own Researcher info after a reimport, if
+    the snapshot (_snapshot_researcher()'s return value, taken before
+    the "clear local mirror" step) had anything worth keeping.
+
+    ImportXml.import_researcher (gramps/plugins/importer/importxml.py)
+    is set from ``self.db.get_total() == 0`` at __init__ time -- true
+    not only for a genuine first bootstrap but for *every* resync this
+    addon ever runs, since the "clear local mirror" step always empties
+    every primary object first. Confirmed live: gramps-web-api's own
+    export always carries this demo dataset's own baked-in researcher
+    ("Alex Roitman,,,"), not this mirror's own -- so left uncorrected,
+    this field gets silently overwritten with that on every single
+    resync, not just the first, potentially within seconds of any push
+    conflict.
+
+    Researcher is never pushed to, or read as ground truth from, the
+    server by this addon at all -- pure local convenience data, the
+    same category _snapshot_birth_death_indices()'s own bootstrap case
+    has no server ground truth for either -- so this mirror's own prior
+    value, not whatever a particular export happens to carry, is what's
+    worth keeping. A blank snapshot (a genuine first bootstrap, nothing
+    ever configured for this tree) is left alone, adopting whatever the
+    reimport set instead -- same asymmetry
+    _restore_birth_death_indices()/_apply_true_birth_death_indices()
+    already have between a resync and a bootstrap.
+
+    Returns True if a restore was needed and performed, False if the
+    snapshot was blank or already matches what the reimport set.
+    """
+    blank = Researcher().serialize()
+    if snapshot.serialize() == blank:
+        return False
+    current = getattr(db, "owner", None)
+    if current is not None and current.serialize() == snapshot.serialize():
+        return False
+    db.set_researcher(snapshot)
+    return True
+
+
+def _snapshot_name_formats(db):
+    """A shallow copy of this mirror's current custom name-format
+    entries, taken right before a resync's own "clear local mirror"
+    step -- see _deduplicate_name_formats()'s own docstring for why
+    this needs preserving. Each entry is a plain (number, name,
+    fmt_str, active) tuple (immutable), so a shallow list copy is
+    enough -- no deepcopy needed here, unlike _snapshot_researcher()'s
+    live, mutable Researcher instance.
+
+    getattr(..., []) for the same WebApiDB.__new__()-bypasses-__init__()
+    reason _snapshot_researcher() guards against -- see that function's
+    own docstring.
+    """
+    return list(getattr(db, "name_formats", []))
+
+
+def _deduplicate_name_formats(db, before):
+    """Remove any name-format entry ImportXml just re-added that
+    duplicates one already present before this resync's reimport --
+    called right after the reimport, alongside this file's other
+    "correct what the reimport can't be trusted to preserve" passes.
+
+    ImportXml.parse() (gramps/plugins/importer/importxml.py) always
+    does ``self.db.name_formats += self.name_formats`` for whatever
+    <name-formats> entries the export declares, unconditionally, on
+    every single import -- not gated by whether the target database
+    was originally empty, unlike its researcher-import handling right
+    next to it (see _restore_researcher_if_locally_set()'s own
+    docstring). A colliding *number* gets remapped to a new one
+    (ImportXml.remap_name_format()) rather than treated as the same
+    entry, so a genuinely identical format -- this addon's own
+    reimported export always declares at least the one gramps-web-api
+    includes -- becomes a new, distinct entry every time. Confirmed by
+    direct reproduction: three resyncs of the same data left three
+    separate copies of "SURNAME, Given (Common)" under numbers -1, -2,
+    -3. Left uncorrected, this grows without bound for as long as the
+    mirror keeps resyncing (every push conflict, plus the periodic
+    totals-check poll), silently bloating the persisted metadata and
+    the Name Editor's own format list with an ever-growing wall of
+    visually-identical entries.
+
+    Content, not number, is this mirror's own idea of "the same
+    format" for this purpose: an entry surviving this pass is one
+    whose (name, fmt_str, active) doesn't match anything already
+    present before the reimport ran, or that was already present
+    verbatim (same number too) before it. name_displayer.
+    set_name_format() is called again with the corrected list,
+    matching ImportXml's own registration call, so the global
+    name-format registry doesn't keep a duplicate registered either.
+
+    Only prevents *further* growth from this point forward -- does not
+    retroactively collapse duplicates a resync before this fix already
+    left behind, the same conservative scope _normalize_reimported_
+    text() takes for text it hasn't already visited.
+
+    Returns the number of duplicate entries removed.
+    """
+    before_content = {(name, fmt_str, active) for _, name, fmt_str, active in before}
+    kept = []
+    removed = 0
+    for entry in getattr(db, "name_formats", []):
+        _number, name, fmt_str, active = entry
+        if entry not in before and (name, fmt_str, active) in before_content:
+            removed += 1
+            continue
+        kept.append(entry)
+    if removed:
+        db.name_formats = kept
+        name_displayer.set_name_format(db.name_formats)
+    return removed
 
 
 def _normalize_strings_to_nfc(data):
@@ -4697,6 +4831,8 @@ class WebApiDB(SQLite):
                 before = self._snapshot_all_objects()
                 birth_death_snapshot = _snapshot_birth_death_indices(self)
                 tag_snapshot = _snapshot_tag_handles_by_name(self)
+                researcher_snapshot = _snapshot_researcher(self)
+                name_formats_snapshot = _snapshot_name_formats(self)
                 cleared = 0
                 with DbTxn(
                     _("Clear local mirror before full resync"), self, batch=True
@@ -4766,6 +4902,18 @@ class WebApiDB(SQLite):
                             "separate exports",
                             restabilized,
                         )
+                if _restore_researcher_if_locally_set(self, researcher_snapshot):
+                    LOG.debug(
+                        "resync: restored this mirror's own Researcher info "
+                        "ImportXml overwrote with the export's own"
+                    )
+                deduped = _deduplicate_name_formats(self, name_formats_snapshot)
+                if deduped:
+                    LOG.debug(
+                        "resync: removed %d duplicate name-format entry/"
+                        "entries ImportXml re-added",
+                        deduped,
+                    )
                 self._describe_resync_to_views(before)
             finally:
                 self._pulling = False
@@ -4943,6 +5091,8 @@ class WebApiDB(SQLite):
         try:
             before = self._snapshot_all_objects()
             tag_snapshot = _snapshot_tag_handles_by_name(self)
+            researcher_snapshot = _snapshot_researcher(self)
+            name_formats_snapshot = _snapshot_name_formats(self)
             cleared = 0
             with DbTxn(
                 _("Clear local mirror before full resync"), self, batch=True
@@ -5020,6 +5170,18 @@ class WebApiDB(SQLite):
                         "across separate exports",
                         restabilized,
                     )
+            if _restore_researcher_if_locally_set(self, researcher_snapshot):
+                LOG.debug(
+                    "bootstrap resync: restored this mirror's own Researcher "
+                    "info ImportXml overwrote with the export's own"
+                )
+            deduped = _deduplicate_name_formats(self, name_formats_snapshot)
+            if deduped:
+                LOG.debug(
+                    "bootstrap resync: removed %d duplicate name-format "
+                    "entry/entries ImportXml re-added",
+                    deduped,
+                )
             self._describe_resync_to_views(before)
         finally:
             self._pulling = False
