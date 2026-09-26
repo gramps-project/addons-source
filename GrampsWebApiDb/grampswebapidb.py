@@ -644,6 +644,7 @@ from gramps.gen.db.dbconst import (
     DBMODE_W,
     KEY_TO_CLASS_MAP,
     KEY_TO_NAME_MAP,
+    TAG_KEY,
     TXNADD,
     TXNDEL,
     TXNUPD,
@@ -1557,6 +1558,115 @@ def _apply_true_birth_death_indices(db, true_indices, trans):
             db.commit_person(person, trans)
             corrected += 1
     return corrected
+
+
+def _snapshot_tag_handles_by_name(db):
+    """{tag name: handle} for every Tag in the local mirror, taken right
+    before a resync's own "clear local mirror" step -- the identity
+    _restabilize_tag_handles() tries to preserve across the reimport
+    that follows it. Empty for a genuine bootstrap (nothing local to
+    preserve yet), which makes that call a safe no-op there -- same
+    convention as _snapshot_birth_death_indices().
+
+    A plain per-handle get_tag_from_handle() loop rather than
+    _iter_raw_data()'s bulk form (contrast _normalize_reimported_text()):
+    there are normally only a handful of Tags in a whole tree, nowhere
+    near the O(handles) cost concern bulk-scanning Person/Event exists
+    to avoid.
+    """
+    return {db.get_tag_from_handle(h).get_name(): h for h in db.get_tag_handles()}
+
+
+def _restabilize_tag_handles(db, before_by_name, trans):
+    """Rewrite every reimported Tag reference back onto this mirror's
+    own previously-established handle for that same tag name, and
+    remove the now-orphaned duplicate the reimport just created.
+
+    Reported live (addons-source#1030): the exact same Tag, attached to
+    the exact same Person, with nothing about either edited, came back
+    under a different raw handle on three separate, directly-
+    consecutive resyncs within one session -- confirmed not a local
+    artifact: ImportXml.inaugurate() (gramps/plugins/importer/
+    importxml.py) always *preserves* whatever handle a Gramps XML file
+    specifies for an object already absent from the target database
+    (which every object is, right after this resync's own "clear local
+    mirror" step), the same mechanism that keeps every Person's handle
+    stable across every resync in the same logs. The only way three
+    separate exports of unchanged data produce three different handles
+    for the same Tag, with Person/Event/... all staying stable, is that
+    gramps-web-api's own export generator does not treat a Tag as a
+    persisted object with a stable handle the way Gramps core does, and
+    mints one fresh, per export, purely to produce valid Gramps XML --
+    the same category of round-trip-fidelity gap as birth_ref_index/
+    death_ref_index and the Unicode NFC mismatch (see
+    _snapshot_birth_death_indices()/_normalize_reimported_text()), just
+    with no representation gap this time: the *value* itself is simply
+    not reproducible, so the fix is to keep this mirror's own previous
+    handle instead of adopting whatever the latest export happened to
+    mint. Since tag_list is a plain handle list (TagBase -- mixed in
+    only via gen/lib/primaryobj.py, confirmed no secondary/child object
+    class mixes it in directly, unlike note_list/citation_list -- see
+    _prune_dangling_references()'s own docstring on why *those* need
+    _iter_referents()'s recursion and this doesn't), every object
+    carrying the tag looks genuinely edited to diff_items() on every
+    single future resync, forever -- the same permanent, first-push,
+    no-real-editor-involved conflict shape as both of those.
+
+    Called from both _full_resync_async()'s rebuild() and
+    _bootstrap_full_resync(), right after the reimport (and after
+    _normalize_reimported_text(), though order between the two doesn't
+    matter -- neither touches the other's field), under the same
+    self._pulling context those already hold. before_by_name is
+    _snapshot_tag_handles_by_name()'s own return value, taken before the
+    "clear local mirror" step.
+
+    One pass over every non-Tag primary object (O(objects), not O(stale
+    tags) x O(objects)): a get_tag_list() lookup rather than an
+    _iter_raw_data() bulk read like _normalize_reimported_text(), since
+    unlike that method every one of TAG_KEY's siblings needs checking
+    regardless (a live object's own tag_list, not a string leaf buried
+    arbitrarily deep), so there's no cheaper raw-data shortcut available.
+
+    The old Tag object itself no longer exists to rewrite references
+    *onto* -- it was removed by this same resync's own "clear local
+    mirror" step, same as everything else. Its content (name, color,
+    priority -- whatever the reimport actually brought back) is revived
+    under the *old* handle instead of being discarded: remove_tag() the
+    reimport's own new-handle copy, re-set its handle to the old one,
+    and add_tag() it back -- the same set_handle()-then-add_* pattern
+    ImportXml.inaugurate() itself uses to place an object under a
+    caller-chosen handle rather than a freshly generated one. Leaving
+    the new copy in place under the old handle's *references* without
+    this step would trade one round-trip-fidelity bug for a worse one:
+    a Person whose tag_list points at a Tag that no longer exists at
+    all.
+
+    Returns the number of Tag objects whose handle was rewritten back.
+    """
+    rewrite = {}
+    revived = {}
+    for new_handle in list(db.get_tag_handles()):
+        tag = db.get_tag_from_handle(new_handle)
+        old_handle = before_by_name.get(tag.get_name())
+        if old_handle is not None and old_handle != new_handle:
+            rewrite[new_handle] = old_handle
+            tag.set_handle(old_handle)
+            revived[old_handle] = tag
+    if not rewrite:
+        return 0
+    for key in set(CLASS_TO_KEY_MAP.values()) - {TAG_KEY}:
+        name = KEY_TO_NAME_MAP[key]
+        for handle in list(getattr(db, f"get_{name}_handles")()):
+            obj = getattr(db, f"get_{name}_from_handle")(handle)
+            tag_list = obj.get_tag_list()
+            if not any(h in rewrite for h in tag_list):
+                continue
+            obj.set_tag_list([rewrite.get(h, h) for h in tag_list])
+            getattr(db, f"commit_{name}")(obj, trans)
+    for new_handle, old_handle in rewrite.items():
+        db.remove_tag(new_handle, trans)
+        db.add_tag(revived[old_handle], trans)
+    return len(rewrite)
 
 
 def _normalize_strings_to_nfc(data):
@@ -4311,6 +4421,82 @@ class WebApiDB(SQLite):
         if conflicts:
             self._record_conflict_notes(conflicts)
 
+    def _reimport_preserving_server_gramps_ids(self, tmp_path, import_user):
+        """importData(self, tmp_path, import_user), with this mirror's
+        own ID-prefix formats neutralized for the duration of the call
+        so every gramps_id in the reimported server export survives
+        byte-for-byte, instead of being silently rewritten to match
+        whatever ID Formats this *local* Gramps installation happens to
+        have configured.
+
+        gramps.plugins.importer.importxml.ImportXml.legalize_id() runs
+        every imported gramps_id through db.id2user_format() (built by
+        DbGeneric.set_person_id_prefix() et al, gen/db/generic.py) to
+        match the target database's own prefix -- desirable when
+        importing someone else's GEDCOM/XML into an established tree,
+        but wrong here: this reimport's only purpose is to reproduce the
+        server's data exactly. ID Formats (Edit > Preferences > ID
+        Formats) is a global, per-*user* Gramps preference, not
+        per-tree -- gen/dbstate.py's change_database_noclose() applies
+        whatever it currently holds to any tree opened, once, right
+        before load() runs. A local preference wider than the server's
+        own -- reported live: a user's local "I%08d" default against a
+        server tree using plain "I%04d" -- makes every bootstrap and
+        every resync silently widen every person's (and every other
+        primary type's) gramps_id, permanently, for the rest of the
+        session. Since gramps_id is part of the payload
+        transaction_to_json() sends on every push, that mismatch alone
+        makes the server's own byte-for-byte "Object has changed" check
+        reject literally the next edit to any object -- no real
+        conflict, and no Unicode normalization drift (see
+        _normalize_reimported_text()), required. See
+        addons-source#1030's "gramps_id differs: 'I1106' vs
+        'I00001106'" report for the field-diff that surfaced this.
+
+        Fixed by setting every *_prefix to a bare "<letter>%d" --
+        DbGeneric.__id2user_format()'s regex only recognizes a zero- or
+        space-padded width flag ("%04d", "% 4d", ...), so a bare "%d"
+        falls through to its identity closure_func() and every imported
+        gramps_id passes through unchanged. Restored in the finally so
+        an object created locally afterward (e.g. this file's own
+        "message-note" conflict record, or anything added while
+        offline) still gets an ID in this installation's own configured
+        format. getattr(..., default) guards each save/restore because
+        unit tests construct a WebApiDB directly (make_database() +
+        load()) without going through DbState, so these attributes may
+        not exist yet -- real usage always has them set by
+        change_database_noclose() before load() ever runs.
+        """
+        saved = {
+            attr: getattr(self, attr, default)
+            for attr, default in (
+                ("person_prefix", "I%04d"),
+                ("media_prefix", "O%04d"),
+                ("family_prefix", "F%04d"),
+                ("source_prefix", "S%04d"),
+                ("citation_prefix", "C%04d"),
+                ("place_prefix", "P%04d"),
+                ("event_prefix", "E%04d"),
+                ("repository_prefix", "R%04d"),
+                ("note_prefix", "N%04d"),
+            )
+        }
+        self.set_prefixes("I%d", "O%d", "F%d", "S%d", "C%d", "P%d", "E%d", "R%d", "N%d")
+        try:
+            importData(self, tmp_path, import_user)
+        finally:
+            self.set_prefixes(
+                saved["person_prefix"],
+                saved["media_prefix"],
+                saved["family_prefix"],
+                saved["source_prefix"],
+                saved["citation_prefix"],
+                saved["place_prefix"],
+                saved["event_prefix"],
+                saved["repository_prefix"],
+                saved["note_prefix"],
+            )
+
     def _resync_after_conflict_async(self, on_done, on_error):
         """Rebuild the local mirror from a fresh server export
         (_full_resync_async()) before a conflict retry -- called by
@@ -4472,6 +4658,7 @@ class WebApiDB(SQLite):
             try:
                 before = self._snapshot_all_objects()
                 birth_death_snapshot = _snapshot_birth_death_indices(self)
+                tag_snapshot = _snapshot_tag_handles_by_name(self)
                 cleared = 0
                 with DbTxn(
                     _("Clear local mirror before full resync"), self, batch=True
@@ -4490,7 +4677,7 @@ class WebApiDB(SQLite):
                     if progress_callback is not None
                     else User()
                 )
-                importData(self, tmp_path, import_user)
+                self._reimport_preserving_server_gramps_ids(tmp_path, import_user)
                 LOG.debug(
                     "resync: reimport left %d object(s) (%.2fs)",
                     self.get_total(),
@@ -4524,6 +4711,22 @@ class WebApiDB(SQLite):
                             "index on %d person(s) Gramps XML re-import "
                             "can't preserve",
                             restored,
+                        )
+                if tag_snapshot:
+                    with DbTxn(
+                        _("Restabilize tag handles churned by reimport"),
+                        self,
+                        batch=True,
+                    ) as trans:
+                        restabilized = _restabilize_tag_handles(
+                            self, tag_snapshot, trans
+                        )
+                    if restabilized:
+                        LOG.debug(
+                            "resync: restabilized %d tag handle(s) gramps-web-"
+                            "api's own export doesn't keep stable across "
+                            "separate exports",
+                            restabilized,
                         )
                 self._describe_resync_to_views(before)
             finally:
@@ -4701,6 +4904,7 @@ class WebApiDB(SQLite):
         self._pulling = True
         try:
             before = self._snapshot_all_objects()
+            tag_snapshot = _snapshot_tag_handles_by_name(self)
             cleared = 0
             with DbTxn(
                 _("Clear local mirror before full resync"), self, batch=True
@@ -4727,7 +4931,7 @@ class WebApiDB(SQLite):
                 import_user = _import_progress_user(rescaled_progress)
             else:
                 import_user = User()
-            importData(self, tmp_path, import_user)
+            self._reimport_preserving_server_gramps_ids(tmp_path, import_user)
             LOG.debug(
                 "bootstrap resync: reimport left %d object(s) (%.2fs)",
                 self.get_total(),
@@ -4763,6 +4967,20 @@ class WebApiDB(SQLite):
                         "server's ground truth (Gramps XML re-import "
                         "can't preserve either field at all)",
                         corrected,
+                    )
+            if tag_snapshot:
+                with DbTxn(
+                    _("Restabilize tag handles churned by reimport"),
+                    self,
+                    batch=True,
+                ) as trans:
+                    restabilized = _restabilize_tag_handles(self, tag_snapshot, trans)
+                if restabilized:
+                    LOG.debug(
+                        "bootstrap resync: restabilized %d tag handle(s) "
+                        "gramps-web-api's own export doesn't keep stable "
+                        "across separate exports",
+                        restabilized,
                     )
             self._describe_resync_to_views(before)
         finally:
