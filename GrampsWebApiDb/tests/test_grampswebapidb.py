@@ -3044,7 +3044,7 @@ _ONE_PERSON_XML = """<?xml version="1.0" encoding="UTF-8"?>
 
 
 class TestReimportPreservesServerGrampsIds(unittest.TestCase):
-    """_reimport_preserving_server_gramps_ids() -- addons-source#1030,
+    """_reimport_neutralizing_local_settings() -- addons-source#1030,
     reported live: the very same Person's gramps_id read 'I1106' as
     originally pushed but 'I00001106' after a push-conflict resync
     reimported the server's own export, with no edit to gramps_id
@@ -3124,7 +3124,7 @@ class TestReimportPreservesServerGrampsIds(unittest.TestCase):
     def test_reimport_does_not_widen_the_servers_gramps_id(self):
         path = self._write_server_export("I1106")
 
-        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+        self.db._reimport_neutralizing_local_settings(path, grampswebapidb.User())
 
         (handle,) = self.db.get_person_handles()
         self.assertEqual(self.db.get_person_from_handle(handle).gramps_id, "I1106")
@@ -3148,10 +3148,241 @@ class TestReimportPreservesServerGrampsIds(unittest.TestCase):
         # this user's own configured format.
         path = self._write_server_export("I1106")
 
-        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+        self.db._reimport_neutralizing_local_settings(path, grampswebapidb.User())
 
         self.assertEqual(self.db.person_prefix, "I%08d")
         self.assertEqual(self.db.find_next_note_gramps_id(), "N0000")
+
+
+class TestReimportSuppressesTagOnImport(unittest.TestCase):
+    """_reimport_neutralizing_local_settings() -- TODO.md gap 8's
+    confirmed root cause, live 2026-09-26: with the local "Tag on
+    import" preference on (Edit > Preferences > ID Formats' neighboring
+    tab; off by default), ImportXml.parse() creates a brand-new,
+    never-persisted Tag on *every* reimport and attaches it to every
+    object -- gone the moment the next resync's "clear local mirror"
+    step runs, so a fresh one gets minted under a new handle each time.
+    That churn is what addons-source#1030 actually reported as
+    `Person.tag_list[0] differs` on every resync -- not a gramps-web-api
+    export-generation instability, which five separate live checks
+    (TODO.md gap 8) found no evidence of at all.
+
+    Neutralized via set_feature("skip-import-additions", True) -- the
+    one existing, purpose-built Gramps-core mechanism ImportXml.
+    importData() itself already checks before ever reading
+    "Tag on import" -- rather than a config override or an
+    after-the-fact correction like _restabilize_tag_handles() (kept
+    regardless, as defense in depth against any *other* source of tag
+    handle churn).
+    """
+
+    def setUp(self):
+        tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
+        self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
+        self.tmpdir = tmpdir
+        self.db = make_database("sqlite")
+        self.db.load(tmpdir)
+        self.addCleanup(self.db.close)
+        self.db.__class__ = WebApiDB
+        self.db.web_client = mock.MagicMock()
+        self.db.runner = InlineTaskRunner()
+        self.db.io_runner = InlineTaskRunner()
+        self.db._syncing = False
+        self.db._retrying = False
+        self.db._pulling = True
+        self.db._get_metadata = lambda key, default=0: default
+        self.db._set_metadata = lambda key, value, use_txn=True: None
+        self.db.set_prefixes(
+            "I%04d",
+            "O%04d",
+            "F%04d",
+            "S%04d",
+            "C%04d",
+            "P%04d",
+            "E%04d",
+            "R%04d",
+            "N%04d",
+        )
+        # Stands in for this local Gramps installation having "Tag on
+        # import" enabled -- confirmed live to reproduce
+        # addons-source#1030's exact symptom.
+        self.addCleanup(
+            grampswebapidb.config.set,
+            "preferences.tag-on-import",
+            grampswebapidb.config.get("preferences.tag-on-import"),
+        )
+        self.addCleanup(
+            grampswebapidb.config.set,
+            "preferences.tag-on-import-format",
+            grampswebapidb.config.get("preferences.tag-on-import-format"),
+        )
+        grampswebapidb.config.set("preferences.tag-on-import", True)
+        grampswebapidb.config.set("preferences.tag-on-import-format", "%Y-%m-%d")
+
+    def _write_server_export(self):
+        path = os.path.join(self.tmpdir, "server_export.gramps")
+        with open(path, "w") as f:
+            f.write(
+                _ONE_PERSON_XML.format(
+                    handle="h00000000000000000001", gramps_id="I0001"
+                )
+            )
+        return path
+
+    def test_reimport_does_not_pick_up_a_tag_on_import(self):
+        path = self._write_server_export()
+
+        self.db._reimport_neutralizing_local_settings(path, grampswebapidb.User())
+
+        (handle,) = self.db.get_person_handles()
+        self.assertEqual(self.db.get_person_from_handle(handle).get_tag_list(), [])
+        self.assertEqual(self.db.get_tag_handles(), [])
+
+    def test_plain_importdata_reproduces_the_reported_tag_pollution(self):
+        # Confirms the bug is real, not hypothetical: the exact same
+        # reimport, without the fix, really does attach a fresh,
+        # never-persisted tag every time.
+        path = self._write_server_export()
+
+        grampswebapidb.importData(self.db, path, grampswebapidb.User())
+
+        (handle,) = self.db.get_person_handles()
+        tag_list = self.db.get_person_from_handle(handle).get_tag_list()
+        self.assertEqual(len(tag_list), 1)
+        # Not a hardcoded date -- it's whatever "today" resolves to via
+        # the same format string ImportXml itself uses, so this doesn't
+        # break the day after it's written.
+        self.assertEqual(
+            self.db.get_tag_from_handle(tag_list[0]).get_name(),
+            time.strftime("%Y-%m-%d"),
+        )
+
+    def test_repeated_reimports_would_otherwise_churn_the_handle(self):
+        # The actual reported shape: two directly-consecutive resyncs
+        # of unchanged data produce two *different* tag handles when
+        # nothing suppresses "Tag on import" -- the same pattern
+        # _restabilize_tag_handles() exists to correct after the fact
+        # for any other cause, but this one is prevented outright.
+        path = self._write_server_export()
+
+        grampswebapidb.importData(self.db, path, grampswebapidb.User())
+        (handle,) = self.db.get_person_handles()
+        first_tag = self.db.get_person_from_handle(handle).get_tag_list()[0]
+
+        with DbTxn("clear", self.db, batch=True) as trans:
+            self.db.remove_person(handle, trans)
+            for tag_handle in list(self.db.get_tag_handles()):
+                self.db.remove_tag(tag_handle, trans)
+        grampswebapidb.importData(self.db, path, grampswebapidb.User())
+        second_tag = self.db.get_person_from_handle(handle).get_tag_list()[0]
+
+        self.assertNotEqual(first_tag, second_tag)
+
+    def test_local_preference_survives_for_a_real_user_initiated_import(self):
+        # Restored after the reimport, not left permanently suppressed
+        # -- a real Import menu action a user runs afterward must still
+        # honor their own "Tag on import" preference.
+        path = self._write_server_export()
+
+        self.db._reimport_neutralizing_local_settings(path, grampswebapidb.User())
+
+        self.assertTrue(grampswebapidb.config.get("preferences.tag-on-import"))
+        self.assertIsNone(self.db.get_feature("skip-import-additions"))
+
+
+class TestReimportHonorsExportMediaPath(unittest.TestCase):
+    """_reimport_neutralizing_local_settings() -- found by the same
+    local-settings audit that found "Tag on import" (TODO.md gap 8):
+    ImportXml.stop_mediapath() only honors the export's own declared
+    <mediapath> if the local "ignore the XML file's own media path"
+    preference (paths.ignore-xml-mediapath, off by default) is off.
+    Lower risk than gap 8 (db.set_mediapath() is itself gated on
+    "not already set", so it can only ever fire once per local mirror's
+    lifetime, not churn on every resync) but the same category of gap,
+    so neutralized the same way: forced off for the duration of the
+    reimport, so this mirror always reflects whatever the server's own
+    export declares regardless of this local preference.
+    """
+
+    def setUp(self):
+        tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
+        self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
+        self.tmpdir = tmpdir
+        self.db = make_database("sqlite")
+        self.db.load(tmpdir)
+        self.addCleanup(self.db.close)
+        self.db.__class__ = WebApiDB
+        self.db.web_client = mock.MagicMock()
+        self.db.runner = InlineTaskRunner()
+        self.db.io_runner = InlineTaskRunner()
+        self.db._syncing = False
+        self.db._retrying = False
+        self.db._pulling = True
+        # Deliberately *not* stubbing _get_metadata()/_set_metadata()
+        # the way other classes in this file do: get_mediapath()/
+        # set_mediapath() (DbGeneric) go through real metadata storage,
+        # unlike Researcher/name_formats' in-memory-until-close()
+        # attributes -- a no-op stub would silently discard what this
+        # test needs to observe. The real sqlite-backed load() above
+        # already provides working metadata storage on its own.
+        self.db.set_prefixes(
+            "I%04d",
+            "O%04d",
+            "F%04d",
+            "S%04d",
+            "C%04d",
+            "P%04d",
+            "E%04d",
+            "R%04d",
+            "N%04d",
+        )
+        self.addCleanup(
+            grampswebapidb.config.set,
+            "paths.ignore-xml-mediapath",
+            grampswebapidb.config.get("paths.ignore-xml-mediapath"),
+        )
+        # Stands in for this local Gramps installation having chosen to
+        # ignore whatever media path an imported XML file declares.
+        grampswebapidb.config.set("paths.ignore-xml-mediapath", True)
+
+    def _write_server_export(self):
+        path = os.path.join(self.tmpdir, "server_export.gramps")
+        with open(path, "w") as f:
+            f.write(
+                '<?xml version="1.0" encoding="UTF-8"?>\n'
+                '<database xmlns="http://gramps-project.org/xml/1.7.1/">\n'
+                "  <header>\n"
+                '    <created date="2024-01-01" version="6.0.0"/>\n'
+                "    <mediapath>/srv/gramps-media</mediapath>\n"
+                "  </header>\n"
+                "  <people/>\n"
+                "</database>\n"
+            )
+        return path
+
+    def test_reimport_adopts_the_exports_own_media_path(self):
+        path = self._write_server_export()
+
+        self.db._reimport_neutralizing_local_settings(path, grampswebapidb.User())
+
+        self.assertEqual(self.db.get_mediapath(), "/srv/gramps-media")
+
+    def test_plain_importdata_ignores_it_when_locally_configured_to(self):
+        # Confirms the bug is real: the exact same import, without the
+        # fix, really does skip the export's own media path when this
+        # local preference says to.
+        path = self._write_server_export()
+
+        grampswebapidb.importData(self.db, path, grampswebapidb.User())
+
+        self.assertFalse(self.db.get_mediapath())
+
+    def test_local_preference_survives_for_a_real_user_initiated_import(self):
+        path = self._write_server_export()
+
+        self.db._reimport_neutralizing_local_settings(path, grampswebapidb.User())
+
+        self.assertTrue(grampswebapidb.config.get("paths.ignore-xml-mediapath"))
 
 
 #: A minimal, valid Gramps XML document holding one person carrying one
@@ -3251,7 +3482,7 @@ class TestRestabilizeTagHandles(unittest.TestCase):
                 self.db.remove_person(handle, trans)
             for handle in list(self.db.get_tag_handles()):
                 self.db.remove_tag(handle, trans)
-        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+        self.db._reimport_neutralizing_local_settings(path, grampswebapidb.User())
 
     def test_plain_reimport_reproduces_the_reported_handle_churn(self):
         # Confirms the bug _restabilize_tag_handles() exists to prevent
@@ -3326,7 +3557,7 @@ def _new_metadata_test_db(tmpdir):
     _snapshot_researcher()/_restore_researcher_if_locally_set()/
     _snapshot_name_formats()/_deduplicate_name_formats(), none of which
     need any primary objects, just a real ImportXml round trip via
-    _reimport_preserving_server_gramps_ids()."""
+    _reimport_neutralizing_local_settings()."""
     db = make_database("sqlite")
     db.load(tmpdir)
     db.__class__ = WebApiDB
@@ -3374,7 +3605,7 @@ class TestRestoreResearcherIfLocallySet(unittest.TestCase):
         snapshot = _snapshot_researcher(self.db)
 
         path = self._write_export()
-        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+        self.db._reimport_neutralizing_local_settings(path, grampswebapidb.User())
         # Confirms the bug is real without the fix: ImportXml really did
         # overwrite it, since get_total() == 0 here just like a real
         # resync's "clear local mirror" step leaves it.
@@ -3393,7 +3624,7 @@ class TestRestoreResearcherIfLocallySet(unittest.TestCase):
         # bootstrap.
         snapshot = _snapshot_researcher(self.db)
         path = self._write_export()
-        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+        self.db._reimport_neutralizing_local_settings(path, grampswebapidb.User())
 
         restored = _restore_researcher_if_locally_set(self.db, snapshot)
 
@@ -3406,7 +3637,7 @@ class TestRestoreResearcherIfLocallySet(unittest.TestCase):
         self.db.set_researcher(local)
         snapshot = _snapshot_researcher(self.db)
         path = self._write_export()
-        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+        self.db._reimport_neutralizing_local_settings(path, grampswebapidb.User())
 
         restored = _restore_researcher_if_locally_set(self.db, snapshot)
 
@@ -3446,7 +3677,7 @@ class TestDeduplicateNameFormats(unittest.TestCase):
         # leave three separate copies, exactly as reported live.
         path = self._write_export()
         for _ in range(3):
-            self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+            self.db._reimport_neutralizing_local_settings(path, grampswebapidb.User())
 
         self.assertEqual(
             [entry[1:] for entry in self.db.name_formats],
@@ -3455,10 +3686,10 @@ class TestDeduplicateNameFormats(unittest.TestCase):
 
     def test_deduplicate_removes_the_reimports_own_duplicate(self):
         path = self._write_export()
-        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+        self.db._reimport_neutralizing_local_settings(path, grampswebapidb.User())
         snapshot = _snapshot_name_formats(self.db)
 
-        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+        self.db._reimport_neutralizing_local_settings(path, grampswebapidb.User())
         self.assertEqual(len(self.db.name_formats), 2)  # the bug, reproduced
 
         removed = _deduplicate_name_formats(self.db, snapshot)
@@ -3469,7 +3700,7 @@ class TestDeduplicateNameFormats(unittest.TestCase):
     def test_a_genuinely_different_format_is_kept(self):
         snapshot = _snapshot_name_formats(self.db)  # empty -- first bootstrap
         path = self._write_export()
-        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+        self.db._reimport_neutralizing_local_settings(path, grampswebapidb.User())
 
         removed = _deduplicate_name_formats(self.db, snapshot)
 

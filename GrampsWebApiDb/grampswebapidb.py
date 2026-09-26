@@ -636,6 +636,7 @@ from urllib.error import HTTPError, URLError
 
 from gi.repository import GLib
 
+from gramps.gen.config import config
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.constfunc import has_display
 from gramps.gen.db import DbTxn
@@ -4593,53 +4594,87 @@ class WebApiDB(SQLite):
         if conflicts:
             self._record_conflict_notes(conflicts)
 
-    def _reimport_preserving_server_gramps_ids(self, tmp_path, import_user):
-        """importData(self, tmp_path, import_user), with this mirror's
-        own ID-prefix formats neutralized for the duration of the call
-        so every gramps_id in the reimported server export survives
-        byte-for-byte, instead of being silently rewritten to match
-        whatever ID Formats this *local* Gramps installation happens to
-        have configured.
+    def _reimport_neutralizing_local_settings(self, tmp_path, import_user):
+        """importData(self, tmp_path, import_user), with every local
+        Gramps setting known to affect what ImportXml does neutralized
+        for the duration of the call -- ID Formats, "Tag on import",
+        and "ignore the XML file's own media path" -- so a bootstrap or
+        resync reproduces the server's data exactly, regardless of what
+        this *local* Gramps installation happens to have configured.
+        Restored in the finally either way.
 
-        gramps.plugins.importer.importxml.ImportXml.legalize_id() runs
-        every imported gramps_id through db.id2user_format() (built by
-        DbGeneric.set_person_id_prefix() et al, gen/db/generic.py) to
-        match the target database's own prefix -- desirable when
-        importing someone else's GEDCOM/XML into an established tree,
-        but wrong here: this reimport's only purpose is to reproduce the
-        server's data exactly. ID Formats (Edit > Preferences > ID
-        Formats) is a global, per-*user* Gramps preference, not
-        per-tree -- gen/dbstate.py's change_database_noclose() applies
-        whatever it currently holds to any tree opened, once, right
-        before load() runs. A local preference wider than the server's
-        own -- reported live: a user's local "I%08d" default against a
-        server tree using plain "I%04d" -- makes every bootstrap and
-        every resync silently widen every person's (and every other
-        primary type's) gramps_id, permanently, for the rest of the
-        session. Since gramps_id is part of the payload
-        transaction_to_json() sends on every push, that mismatch alone
-        makes the server's own byte-for-byte "Object has changed" check
-        reject literally the next edit to any object -- no real
-        conflict, and no Unicode normalization drift (see
-        _normalize_reimported_text()), required. See
-        addons-source#1030's "gramps_id differs: 'I1106' vs
-        'I00001106'" report for the field-diff that surfaced this.
+        This reimport's only purpose is to mirror the server -- unlike
+        an ordinary user-initiated Import (GEDCOM, someone else's
+        Gramps XML into an established tree), where every one of these
+        settings is exactly the point. TODO.md gaps 7 and 8 are each a
+        real report of one of these leaking into this addon's own
+        internal resync/bootstrap mechanism, not a real Import a user
+        asked for:
 
-        Fixed by setting every *_prefix to a bare "<letter>%d" --
-        DbGeneric.__id2user_format()'s regex only recognizes a zero- or
-        space-padded width flag ("%04d", "% 4d", ...), so a bare "%d"
-        falls through to its identity closure_func() and every imported
-        gramps_id passes through unchanged. Restored in the finally so
-        an object created locally afterward (e.g. this file's own
-        "message-note" conflict record, or anything added while
-        offline) still gets an ID in this installation's own configured
-        format. getattr(..., default) guards each save/restore because
-        unit tests construct a WebApiDB directly (make_database() +
-        load()) without going through DbState, so these attributes may
-        not exist yet -- real usage always has them set by
-        change_database_noclose() before load() ever runs.
+        - **ID Formats** (Edit > Preferences > ID Formats) -- gap 7,
+          reported live: a local "I%08d" default against a server using
+          plain "I%04d" silently widened every gramps_id, permanently,
+          on every bootstrap and resync (`ImportXml.legalize_id()` ->
+          `db.id2user_format()`, built from `DbGeneric.
+          set_person_id_prefix()` et al). Neutralized by setting every
+          `*_prefix` to a bare `"<letter>%d"` --
+          `DbGeneric.__id2user_format()`'s regex only recognizes a
+          zero- or space-padded width flag (`"%04d"`, `"% 4d"`, ...),
+          so a bare `"%d"` falls through to its identity closure_func()
+          and every imported gramps_id passes through unchanged.
+        - **"Tag on import"** (`preferences.tag-on-import`/
+          `-format`, default off) -- gap 8, confirmed live 2026-09-26:
+          `ImportXml.parse()`'s own `default_tag_format` handling
+          creates a brand-new `Tag()` named from
+          `time.strftime(format)` and attaches it to *every* object in
+          the import, unconditionally, if this preference is on.
+          That Tag is added inside the reimport's own `batch=True`
+          DbTxn, which `transaction_commit()` never pushes while
+          `self._pulling` is set -- so it never reaches the server, and
+          the local "clear local mirror" step before the *next* resync
+          wipes it, so `ImportXml` mints a completely new one under a
+          fresh handle every single time. This is TODO.md gap 8's
+          confirmed root cause: no export-generation instability on
+          gramps-web-api's side at all (five separate live checks found
+          none), a purely local, per-installation artifact that also
+          explains why the very first push after such a bootstrap can
+          conflict with no other editor or edit involved -- the local
+          mirror and the server disagree on `tag_list` from the moment
+          bootstrap finishes. Neutralized via `set_feature(
+          "skip-import-additions", True)` -- the same existing,
+          purpose-built Gramps-core mechanism `gen/db/utils.py`'s
+          `import_as_dict()` already uses for an identical
+          "importing programmatically, not on the user's behalf"
+          reason (`ImportXml.importData()` itself checks this feature
+          before ever reading `tag-on-import` at all, so this is a
+          single flag away, not a config override). `_restabilize_tag_
+          handles()` is kept regardless as defense in depth against any
+          *other*, still-unidentified source of tag-handle churn -- see
+          its own docstring -- but this removes the one root cause this
+          investigation actually found and confirmed.
+        - **"ignore the XML file's own media path"**
+          (`paths.ignore-xml-mediapath`, default off) -- not yet
+          reported live, found by the same audit that found "Tag on
+          import": `ImportXml.stop_mediapath()` only honors the
+          export's own declared `<mediapath>` if this is off locally.
+          Lower risk than the other two (`self.db.set_mediapath()`
+          itself is gated on `not self.db.get_mediapath()`, so it can
+          only ever fire once per local mirror's lifetime, not churn on
+          every resync) but the same category of "a local preference
+          decides what this internal mechanism does" gap, so neutralized
+          the same way: forced off for the duration, so this mirror
+          always reflects whatever the server's own export declares.
+
+        getattr(..., default)/get_feature()'s own None-safe default
+        guard each save/restore because unit tests construct a WebApiDB
+        directly (make_database() + load()) without going through
+        DbState, so these attributes/features may not exist yet -- real
+        usage always has the prefixes set by change_database_noclose()
+        before load() ever runs (the feature flag and mediapath config
+        have no such real-usage guarantee either way, hence the
+        explicit default here too).
         """
-        saved = {
+        saved_prefixes = {
             attr: getattr(self, attr, default)
             for attr, default in (
                 ("person_prefix", "I%04d"),
@@ -4653,21 +4688,46 @@ class WebApiDB(SQLite):
                 ("note_prefix", "N%04d"),
             )
         }
+
+        # get_feature()/set_feature() (DbReadBase) read/write
+        # self.__feature, initialized by DbReadBase.__init__() -- same
+        # unit-test gap as the prefixes above (WebApiDB.__new__() skips
+        # it entirely), but a method call raising AttributeError deep
+        # inside itself rather than a missing plain attribute, so it
+        # needs its own try/except rather than a getattr() default.
+        def _get_feature_or(default):
+            try:
+                return self.get_feature("skip-import-additions")
+            except AttributeError:
+                return default
+
+        def _set_feature_safely(value):
+            try:
+                self.set_feature("skip-import-additions", value)
+            except AttributeError:
+                pass
+
+        saved_skip_additions = _get_feature_or(None)
+        saved_ignore_mediapath = config.get("paths.ignore-xml-mediapath")
         self.set_prefixes("I%d", "O%d", "F%d", "S%d", "C%d", "P%d", "E%d", "R%d", "N%d")
+        _set_feature_safely(True)
+        config.set("paths.ignore-xml-mediapath", False)
         try:
             importData(self, tmp_path, import_user)
         finally:
             self.set_prefixes(
-                saved["person_prefix"],
-                saved["media_prefix"],
-                saved["family_prefix"],
-                saved["source_prefix"],
-                saved["citation_prefix"],
-                saved["place_prefix"],
-                saved["event_prefix"],
-                saved["repository_prefix"],
-                saved["note_prefix"],
+                saved_prefixes["person_prefix"],
+                saved_prefixes["media_prefix"],
+                saved_prefixes["family_prefix"],
+                saved_prefixes["source_prefix"],
+                saved_prefixes["citation_prefix"],
+                saved_prefixes["place_prefix"],
+                saved_prefixes["event_prefix"],
+                saved_prefixes["repository_prefix"],
+                saved_prefixes["note_prefix"],
             )
+            _set_feature_safely(saved_skip_additions)
+            config.set("paths.ignore-xml-mediapath", saved_ignore_mediapath)
 
     def _resync_after_conflict_async(self, on_done, on_error):
         """Rebuild the local mirror from a fresh server export
@@ -4851,7 +4911,7 @@ class WebApiDB(SQLite):
                     if progress_callback is not None
                     else User()
                 )
-                self._reimport_preserving_server_gramps_ids(tmp_path, import_user)
+                self._reimport_neutralizing_local_settings(tmp_path, import_user)
                 LOG.debug(
                     "resync: reimport left %d object(s) (%.2fs)",
                     self.get_total(),
@@ -5119,7 +5179,7 @@ class WebApiDB(SQLite):
                 import_user = _import_progress_user(rescaled_progress)
             else:
                 import_user = User()
-            self._reimport_preserving_server_gramps_ids(tmp_path, import_user)
+            self._reimport_neutralizing_local_settings(tmp_path, import_user)
             LOG.debug(
                 "bootstrap resync: reimport left %d object(s) (%.2fs)",
                 self.get_total(),
