@@ -4597,11 +4597,10 @@ class WebApiDB(SQLite):
     def _reimport_neutralizing_local_settings(self, tmp_path, import_user):
         """importData(self, tmp_path, import_user), with every local
         Gramps setting known to affect what ImportXml does neutralized
-        for the duration of the call -- ID Formats, "Tag on import",
-        and "ignore the XML file's own media path" -- so a bootstrap or
-        resync reproduces the server's data exactly, regardless of what
-        this *local* Gramps installation happens to have configured.
-        Restored in the finally either way.
+        for the duration of the call -- ID Formats and "Tag on import"
+        -- so a bootstrap or resync reproduces the server's data
+        exactly, regardless of what this *local* Gramps installation
+        happens to have configured. Restored in the finally either way.
 
         This reimport's only purpose is to mirror the server -- unlike
         an ordinary user-initiated Import (GEDCOM, someone else's
@@ -4652,27 +4651,34 @@ class WebApiDB(SQLite):
           *other*, still-unidentified source of tag-handle churn -- see
           its own docstring -- but this removes the one root cause this
           investigation actually found and confirmed.
-        - **"ignore the XML file's own media path"**
-          (`paths.ignore-xml-mediapath`, default off) -- not yet
-          reported live, found by the same audit that found "Tag on
-          import": `ImportXml.stop_mediapath()` only honors the
-          export's own declared `<mediapath>` if this is off locally.
-          Lower risk than the other two (`self.db.set_mediapath()`
-          itself is gated on `not self.db.get_mediapath()`, so it can
-          only ever fire once per local mirror's lifetime, not churn on
-          every resync) but the same category of "a local preference
-          decides what this internal mechanism does" gap, so neutralized
-          the same way: forced off for the duration, so this mirror
-          always reflects whatever the server's own export declares.
+
+        Deliberately does **not** touch `paths.ignore-xml-mediapath`
+        (a similarly-shaped local preference gating
+        `ImportXml.stop_mediapath()`, considered alongside "Tag on
+        import"): that setting doesn't exist at all on this addon's
+        actual target line, `maintenance/gramps60` (confirmed by
+        reading `gen/config.py` there directly) -- it's a
+        `gramps61`-or-later addition, and `config.get()`/`config.set()`
+        raise `AttributeError` for any unregistered name rather than
+        returning a default. An earlier version of this method touched
+        it based on reading newer core source without checking against
+        the actual target version first, and crashed `load()` outright
+        for every 6.0.x user (reported live 2026-09-26) -- worse than
+        the gap it was meant to close, since gramps60's own
+        `ImportXml.stop_mediapath()` has no local-preference gate to
+        neutralize in the first place there (it unconditionally does
+        `self.mediapath = tag`). See TODO.md gap 8's own update for the
+        full incident; the fix is to not touch a setting that isn't
+        there, not to guard the touch.
 
         getattr(..., default)/get_feature()'s own None-safe default
         guard each save/restore because unit tests construct a WebApiDB
         directly (make_database() + load()) without going through
         DbState, so these attributes/features may not exist yet -- real
         usage always has the prefixes set by change_database_noclose()
-        before load() ever runs (the feature flag and mediapath config
-        have no such real-usage guarantee either way, hence the
-        explicit default here too).
+        before load() ever runs (the feature flag has no such
+        real-usage guarantee either way, hence the explicit default
+        here too).
         """
         saved_prefixes = {
             attr: getattr(self, attr, default)
@@ -4708,10 +4714,8 @@ class WebApiDB(SQLite):
                 pass
 
         saved_skip_additions = _get_feature_or(None)
-        saved_ignore_mediapath = config.get("paths.ignore-xml-mediapath")
         self.set_prefixes("I%d", "O%d", "F%d", "S%d", "C%d", "P%d", "E%d", "R%d", "N%d")
         _set_feature_safely(True)
-        config.set("paths.ignore-xml-mediapath", False)
         try:
             importData(self, tmp_path, import_user)
         finally:
@@ -4727,7 +4731,6 @@ class WebApiDB(SQLite):
                 saved_prefixes["note_prefix"],
             )
             _set_feature_safely(saved_skip_additions)
-            config.set("paths.ignore-xml-mediapath", saved_ignore_mediapath)
 
     def _resync_after_conflict_async(self, on_done, on_error):
         """Rebuild the local mirror from a fresh server export
