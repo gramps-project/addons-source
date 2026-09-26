@@ -88,6 +88,7 @@ from gramps.gen.lib import (
     Note,
     NoteType,
     Person,
+    Researcher,
     Tag,
 )
 from gramps.gen.lib.json_utils import data_to_object, object_to_data, remove_object
@@ -97,13 +98,17 @@ from GrampsWebApiDb.grampswebapidb import (
     GRANULAR_REBUILD_MAX_CHANGES,
     WebApiDB,
     WebApiPushConflict,
+    _deduplicate_name_formats,
     _diff_snapshots,
     _normalize_line_endings,
     _normalize_reimported_text,
     _normalize_strings_to_nfc,
     _restabilize_tag_handles,
     _restore_birth_death_indices,
+    _restore_researcher_if_locally_set,
     _snapshot_birth_death_indices,
+    _snapshot_name_formats,
+    _snapshot_researcher,
     _snapshot_tag_handles_by_name,
     transaction_to_json,
 )
@@ -3294,6 +3299,182 @@ class TestRestabilizeTagHandles(unittest.TestCase):
         self.assertEqual(restabilized, 0)
         person = self.db.get_person_from_handle(self.person_handle)
         self.assertEqual(person.get_tag_list(), [new_tag_handle])
+
+
+#: A minimal Gramps XML document with just a header -- enough to exercise
+#: ImportXml's researcher/name-formats handling without needing any
+#: people at all (get_total() stays 0 throughout regardless).
+_RESEARCHER_AND_NAME_FORMAT_XML = """<?xml version="1.0" encoding="UTF-8"?>
+<database xmlns="http://gramps-project.org/xml/1.7.1/">
+  <header>
+    <created date="2024-01-01" version="6.0.0"/>
+    <researcher>
+      <resname>{researcher_name}</resname>
+    </researcher>
+    <name-formats>
+      <format number="-1" name="SURNAME, Given (Common)" fmt_str="SURNAME, given (common)" active="1"/>
+    </name-formats>
+  </header>
+  <people/>
+</database>
+"""
+
+
+def _new_metadata_test_db(tmpdir):
+    """A real, already-initialized WebApiDB, same reclassify-a-real-
+    DBAPI-db trick TestRestabilizeTagHandles.setUp() uses -- for testing
+    _snapshot_researcher()/_restore_researcher_if_locally_set()/
+    _snapshot_name_formats()/_deduplicate_name_formats(), none of which
+    need any primary objects, just a real ImportXml round trip via
+    _reimport_preserving_server_gramps_ids()."""
+    db = make_database("sqlite")
+    db.load(tmpdir)
+    db.__class__ = WebApiDB
+    db.web_client = mock.MagicMock()
+    db.runner = InlineTaskRunner()
+    db.io_runner = InlineTaskRunner()
+    db._syncing = False
+    db._retrying = False
+    db._pulling = True
+    db._get_metadata = lambda key, default=0: default
+    db._set_metadata = lambda key, value, use_txn=True: None
+    return db
+
+
+class TestRestoreResearcherIfLocallySet(unittest.TestCase):
+    """_snapshot_researcher()/_restore_researcher_if_locally_set() --
+    TODO.md gap 10, confirmed live: gramps-web-api's own export always
+    carries this demo dataset's own baked-in researcher
+    ("Alex Roitman,,,"), not this mirror's own, and
+    ImportXml.import_researcher is true on *every* resync
+    (self.db.get_total() == 0 right after this addon's own "clear local
+    mirror" step), not only a genuine first bootstrap.
+    """
+
+    def setUp(self):
+        tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
+        self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
+        self.tmpdir = tmpdir
+        self.db = _new_metadata_test_db(tmpdir)
+        self.addCleanup(self.db.close)
+
+    def _write_export(self, researcher_name="Alex Roitman,,,"):
+        path = os.path.join(self.tmpdir, "server_export.gramps")
+        with open(path, "w") as f:
+            f.write(
+                _RESEARCHER_AND_NAME_FORMAT_XML.format(researcher_name=researcher_name)
+            )
+        return path
+
+    def test_local_researcher_survives_a_resync(self):
+        local = Researcher()
+        local.set_name("Doug Blank")
+        local.set_email("doug@example.com")
+        self.db.set_researcher(local)
+        snapshot = _snapshot_researcher(self.db)
+
+        path = self._write_export()
+        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+        # Confirms the bug is real without the fix: ImportXml really did
+        # overwrite it, since get_total() == 0 here just like a real
+        # resync's "clear local mirror" step leaves it.
+        self.assertEqual(self.db.get_researcher().get_name(), "Alex Roitman,,,")
+
+        restored = _restore_researcher_if_locally_set(self.db, snapshot)
+
+        self.assertTrue(restored)
+        self.assertEqual(self.db.get_researcher().get_name(), "Doug Blank")
+        self.assertEqual(self.db.get_researcher().get_email(), "doug@example.com")
+
+    def test_a_blank_local_researcher_is_left_alone(self):
+        # A genuine first bootstrap: nothing configured locally yet --
+        # same asymmetry _restore_birth_death_indices()/
+        # _apply_true_birth_death_indices() have between a resync and a
+        # bootstrap.
+        snapshot = _snapshot_researcher(self.db)
+        path = self._write_export()
+        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+
+        restored = _restore_researcher_if_locally_set(self.db, snapshot)
+
+        self.assertFalse(restored)
+        self.assertEqual(self.db.get_researcher().get_name(), "Alex Roitman,,,")
+
+    def test_no_restore_needed_if_already_matching(self):
+        local = Researcher()
+        local.set_name("Alex Roitman,,,")
+        self.db.set_researcher(local)
+        snapshot = _snapshot_researcher(self.db)
+        path = self._write_export()
+        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+
+        restored = _restore_researcher_if_locally_set(self.db, snapshot)
+
+        self.assertFalse(restored)
+
+
+class TestDeduplicateNameFormats(unittest.TestCase):
+    """_snapshot_name_formats()/_deduplicate_name_formats() -- TODO.md
+    gap 10, confirmed by direct reproduction: ImportXml.parse() always
+    does ``self.db.name_formats += self.name_formats`` for whatever
+    <name-formats> the export declares, unconditionally, with a
+    colliding number remapped to a new one rather than treated as the
+    same entry -- so a genuinely identical format grows a new permanent
+    duplicate on every single resync.
+    """
+
+    def setUp(self):
+        tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
+        self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
+        self.tmpdir = tmpdir
+        self.db = _new_metadata_test_db(tmpdir)
+        self.addCleanup(self.db.close)
+
+    def _write_export(self):
+        path = os.path.join(self.tmpdir, "server_export.gramps")
+        with open(path, "w") as f:
+            f.write(
+                _RESEARCHER_AND_NAME_FORMAT_XML.format(
+                    researcher_name="Alex Roitman,,,"
+                )
+            )
+        return path
+
+    def test_plain_reimport_reproduces_the_reported_duplication(self):
+        # Confirms the bug _deduplicate_name_formats() exists to prevent
+        # is real, not hypothetical: three resyncs of the same data
+        # leave three separate copies, exactly as reported live.
+        path = self._write_export()
+        for _ in range(3):
+            self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+
+        self.assertEqual(
+            [entry[1:] for entry in self.db.name_formats],
+            [("SURNAME, Given (Common)", "SURNAME, given (common)", True)] * 3,
+        )
+
+    def test_deduplicate_removes_the_reimports_own_duplicate(self):
+        path = self._write_export()
+        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+        snapshot = _snapshot_name_formats(self.db)
+
+        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+        self.assertEqual(len(self.db.name_formats), 2)  # the bug, reproduced
+
+        removed = _deduplicate_name_formats(self.db, snapshot)
+
+        self.assertEqual(removed, 1)
+        self.assertEqual(len(self.db.name_formats), 1)
+
+    def test_a_genuinely_different_format_is_kept(self):
+        snapshot = _snapshot_name_formats(self.db)  # empty -- first bootstrap
+        path = self._write_export()
+        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+
+        removed = _deduplicate_name_formats(self.db, snapshot)
+
+        self.assertEqual(removed, 0)
+        self.assertEqual(len(self.db.name_formats), 1)
 
 
 class TestNormalizeStringsToNfc(unittest.TestCase):
