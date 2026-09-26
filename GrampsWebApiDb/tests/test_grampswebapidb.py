@@ -85,6 +85,8 @@ from gramps.gen.lib import (
     EventRef,
     EventRoleType,
     EventType,
+    Note,
+    NoteType,
     Person,
     Tag,
 )
@@ -96,6 +98,7 @@ from GrampsWebApiDb.grampswebapidb import (
     WebApiDB,
     WebApiPushConflict,
     _diff_snapshots,
+    _normalize_line_endings,
     _normalize_reimported_text,
     _normalize_strings_to_nfc,
     _restabilize_tag_handles,
@@ -3318,6 +3321,33 @@ class TestNormalizeStringsToNfc(unittest.TestCase):
         self.assertEqual(_normalize_strings_to_nfc(data), data)
 
 
+class TestNormalizeLineEndings(unittest.TestCase):
+    """_normalize_line_endings() itself -- the pure recursive walk,
+    independent of any real database. See TODO.md gap 9: XML 1.0's own
+    spec mandates any compliant parser collapse "\r\n"/"\r" to "\n" in
+    character data, confirmed live for a reimported Note's text."""
+
+    def test_crlf_is_collapsed_to_lf(self):
+        self.assertEqual(_normalize_line_endings("a\r\nb\r\nc"), "a\nb\nc")
+
+    def test_bare_cr_is_collapsed_to_lf(self):
+        self.assertEqual(_normalize_line_endings("a\rb"), "a\nb")
+
+    def test_already_lf_only_is_returned_unchanged(self):
+        self.assertEqual(_normalize_line_endings("a\nb\nc"), "a\nb\nc")
+
+    def test_recurses_into_dicts_and_lists(self):
+        data = {"text": "a\r\nb", "aka": ["c\r\nd", "plain"], "change": 12345}
+        result = _normalize_line_endings(data)
+        self.assertEqual(result["text"], "a\nb")
+        self.assertEqual(result["aka"], ["c\nd", "plain"])
+        self.assertEqual(result["change"], 12345)  # non-strings pass through
+
+    def test_non_string_leaves_are_untouched(self):
+        data = {"private": True, "gender": 1, "note_list": []}
+        self.assertEqual(_normalize_line_endings(data), data)
+
+
 class TestNormalizeReimportedText(unittest.TestCase):
     """_normalize_reimported_text() against a real DBAPI database --
     suspected (see TODO.md) fix for a spurious push conflict on an
@@ -3392,6 +3422,27 @@ class TestNormalizeReimportedText(unittest.TestCase):
 
         self.assertEqual(corrected, 0)
 
+    def test_crlf_note_text_is_rewritten_to_lf(self):
+        # TODO.md gap 9, confirmed live: a Note pushed with "\r\n" line
+        # endings comes back "\n"-only after a real bootstrap resync --
+        # XML 1.0 itself mandates this in any compliant parser, so this
+        # mimics what a real reimport reliably does, the same way this
+        # class's NFC tests mimic what a real reimport can lose.
+        with DbTxn("mimic a reimport that lost CRLF", self.db, batch=True) as trans:
+            note = Note()
+            note.set_gramps_id("N0001")
+            note.set_type(NoteType.GENERAL)
+            note.set("Line one\r\nLine two\r\nLine three")
+            self.db.add_note(note, trans)
+            handle = note.handle
+
+        with DbTxn("normalize", self.db, batch=True) as trans:
+            corrected = _normalize_reimported_text(self.db, trans)
+
+        self.assertEqual(corrected, 1)
+        fixed = self.db.get_note_from_handle(handle)
+        self.assertEqual(fixed.get(), "Line one\nLine two\nLine three")
+
 
 class TestCommitBaseNormalizesText(unittest.TestCase):
     """WebApiDB._commit_base() -- the single choke point every
@@ -3446,6 +3497,21 @@ class TestCommitBaseNormalizesText(unittest.TestCase):
             stored.get_primary_name().get_primary_surname().get_surname(),
             "Zieliński",
         )
+
+    def test_ordinary_commit_normalizes_crlf_line_endings(self):
+        # TODO.md gap 9's other half: this addon itself must never be
+        # the *source* of a "\r\n" mismatch either, same shape as the
+        # NFC case above.
+        with DbTxn("edit", self.db) as trans:
+            note = Note()
+            note.set_gramps_id("N0001")
+            note.set_type(NoteType.GENERAL)
+            note.set("Line one\r\nLine two")
+            self.db.add_note(note, trans)
+            handle = note.handle
+
+        stored = self.db.get_note_from_handle(handle)
+        self.assertEqual(stored.get(), "Line one\nLine two")
 
     def test_batch_commit_is_left_for_normalize_reimported_text_instead(self):
         decomposed = unicodedata.normalize("NFD", "Zieliński")

@@ -1686,13 +1686,40 @@ def _normalize_strings_to_nfc(data):
     return data
 
 
+def _normalize_line_endings(data):
+    """Return a copy of an object_to_dict()-shaped value with every
+    string leaf's line endings collapsed to a bare "\\n", used by
+    _normalize_reimported_text() below alongside _normalize_strings_to_
+    nfc() -- same recursive shape, a different axis of "the form this
+    addon otherwise treats every string as being in without ever
+    checking" (see TODO.md gap 9).
+
+    Confirmed live: a Note pushed with "\\r\\n" line endings comes back
+    "\\n"-only after a real bootstrap resync. Not a Gramps or gramps-
+    web-api choice to fix on either side -- XML 1.0's own spec (section
+    2.11, "End-of-Line Handling") requires every compliant parser to
+    normalize "\\r\\n" (and a bare "\\r") in character data to "\\n"
+    before an application ever sees it, so this happens the moment such
+    text is serialized into a Gramps XML export at all, unconditionally,
+    regardless of what wrote the export or what reads it back.
+    """
+    if isinstance(data, dict):
+        return {key: _normalize_line_endings(value) for key, value in data.items()}
+    if isinstance(data, list):
+        return [_normalize_line_endings(item) for item in data]
+    if isinstance(data, str):
+        return data.replace("\r\n", "\n").replace("\r", "\n")
+    return data
+
+
 def _normalize_reimported_text(db, trans):
-    """Canonicalize every primary object's text to NFC right after a
-    fresh reimport -- called from both _full_resync_async()'s rebuild()
-    and _bootstrap_full_resync(), under the same self._pulling context
-    those already hold, same "correct what the reimport can't be
-    trusted to preserve" shape as _restore_birth_death_indices()/
-    _apply_true_birth_death_indices() above.
+    """Canonicalize every primary object's text to NFC, with "\\n"-only
+    line endings, right after a fresh reimport -- called from both
+    _full_resync_async()'s rebuild() and _bootstrap_full_resync(),
+    under the same self._pulling context those already hold, same
+    "correct what the reimport can't be trusted to preserve" shape as
+    _restore_birth_death_indices()/_apply_true_birth_death_indices()
+    above.
 
     Uses db._iter_raw_data() (see _snapshot_all_objects()'s own
     docstring) rather than a per-handle get_<type>_from_handle() fetch,
@@ -1702,23 +1729,32 @@ def _normalize_reimported_text(db, trans):
     form data_to_object() needs, with no live-object round trip needed
     first.
 
-    Suspected (unconfirmed -- see TODO.md) fix for a spurious push
-    conflict on an object nobody actually edited: Gramps XML export/
-    import is not guaranteed to preserve Unicode normalization form
-    (NFC vs NFD) byte-for-byte, the same class of round-trip-fidelity
-    gap birth_ref_index/death_ref_index already turned out to have (see
-    _snapshot_birth_death_indices()'s own docstring) -- just a gap with
-    an actual XML representation to fall back on here, unlike that
-    case, so there is no local "before" value worth preserving instead;
-    NFC is applied unconditionally regardless of what either side
-    previously held.
+    Two independent round-trip-fidelity gaps, corrected together here
+    since both are "a reimport can silently change a string field with
+    no edit involved" (TODO.md gaps 7 and 9):
+
+    - Unicode normalization form (NFC vs NFD) -- suspected, not fully
+      confirmed live -- Gramps XML export/import is not guaranteed to
+      preserve it byte-for-byte, the same class of round-trip-fidelity
+      gap birth_ref_index/death_ref_index already turned out to have
+      (see _snapshot_birth_death_indices()'s own docstring). NFC is
+      applied unconditionally regardless of what either side previously
+      held -- there is no local "before" value worth preserving instead
+      here, unlike the birth/death case, since a Gramps XML export does
+      have an actual representation for the text to fall back on.
+    - "\\r\\n"/"\\r" line endings -- confirmed live (see
+      _normalize_line_endings()'s own docstring): XML 1.0 itself
+      mandates every compliant parser collapse these to "\\n" in
+      character data, so this is unconditional and unavoidable on the
+      reimport side by construction, not merely suspected.
 
     diff_items() -- both this addon's own (_diff_snapshots() and the
     merge helpers below) and gramps-web-api's own old_unchanged()
     server-side -- compares every string leaf with plain "==", which
-    treats a precomposed "ń" and a decomposed "n" + combining acute as
-    genuinely different text even though they render identically and
-    the user never touched that field. Left uncorrected, that drift
+    treats a precomposed "ń" and a decomposed "n" + combining acute (or
+    "\\r\\n" vs "\\n") as genuinely different text even though they
+    render identically (or are byte-identical once actually displayed)
+    and the user never touched that field. Left uncorrected, that drift
     survives every future resync (re-exporting/re-importing the same
     bytes just reproduces the same form again), so the very next edit
     to that object -- regardless of what it actually touches -- would
@@ -1737,7 +1773,7 @@ def _normalize_reimported_text(db, trans):
         name = KEY_TO_NAME_MAP[key]
         for handle, data in db._iter_raw_data(key):
             data = remove_object(data)
-            normalized = _normalize_strings_to_nfc(data)
+            normalized = _normalize_line_endings(_normalize_strings_to_nfc(data))
             if normalized != data:
                 getattr(db, f"commit_{name}")(data_to_object(normalized), trans)
                 corrected += 1
@@ -3289,16 +3325,17 @@ class WebApiDB(SQLite):
         self._media_poll_failures += 1
 
     def _commit_base(self, obj, obj_key, trans, change_time):
-        """Normalize every string field on ``obj`` to NFC before DBAPI's
-        own _commit_base() ever serializes it to storage -- the single
-        choke point every commit_<type>() method (DbGeneric) funnels
-        through, for every write this local mirror ever makes: an
-        ordinary local edit, and _apply_change()'s replay of an
-        incrementally pulled server change alike. Confirmed ImportXml
-        (the reimport _full_resync_async()/_bootstrap_full_resync() run)
-        commits the same way -- self.db.commit_person()/commit_family()/
-        ... -- not some bulk/raw bypass, so nothing writes a primary
-        object without passing through here.
+        """Normalize every string field on ``obj`` to NFC, with "\\n"-
+        only line endings, before DBAPI's own _commit_base() ever
+        serializes it to storage -- the single choke point every
+        commit_<type>() method (DbGeneric) funnels through, for every
+        write this local mirror ever makes: an ordinary local edit, and
+        _apply_change()'s replay of an incrementally pulled server
+        change alike. Confirmed ImportXml (the reimport
+        _full_resync_async()/_bootstrap_full_resync() run) commits the
+        same way -- self.db.commit_person()/commit_family()/... -- not
+        some bulk/raw bypass, so nothing writes a primary object without
+        passing through here.
 
         Deliberately skipped when trans.batch: a reimport's own DbTxn is
         batch=True, and DBAPI._commit_base() itself already skips its
@@ -3312,18 +3349,19 @@ class WebApiDB(SQLite):
         batch-mode equivalent of this, and re-commits only the objects
         that actually need it.
 
-        See _normalize_strings_to_nfc() for why NFC, and TODO.md gap 7
-        for the bug this and _normalize_reimported_text() exist to
-        close -- two directions of the same round-trip-fidelity
-        problem: this one stops the addon itself (or whatever handed it
-        the text -- GTK, an input method, anything upstream of Gramps)
-        from ever being the source of a Unicode-normalization mismatch;
+        See _normalize_strings_to_nfc()/_normalize_line_endings() for
+        why, and TODO.md gaps 7 and 9 for the two round-trip-fidelity
+        bugs this and _normalize_reimported_text() exist to close --
+        two directions of the same problem each: this one stops the
+        addon itself (or whatever handed it the text -- GTK, an input
+        method, pasted Windows-authored text, anything upstream of
+        Gramps) from ever being the source of a mismatch;
         _normalize_reimported_text() cleans one up after the fact if it
         arrived via a reimport instead.
         """
         if not trans.batch:
             data = object_to_dict(obj)
-            normalized = _normalize_strings_to_nfc(data)
+            normalized = _normalize_line_endings(_normalize_strings_to_nfc(data))
             if normalized != data:
                 obj = data_to_object(normalized)
         return super()._commit_base(obj, obj_key, trans, change_time)

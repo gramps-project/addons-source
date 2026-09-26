@@ -37,10 +37,12 @@ gap reproduced, but they share one class-level fixture pass.
 Checks, and why each was picked from TODO.md's list:
 
 - Empty string vs. None/omitted-element ambiguity on an Attribute value.
-- Note styled-text tag ranges/line-ending normalization: does "\\r\\n"
-  survive, and does it survive *consistently* with whatever the server
-  itself considers the object's true state (not just "does it look the
-  same", which a client-only round trip can't tell you).
+- Note styled-text tag ranges/line-ending normalization: "\\r\\n" cannot
+  survive a resync at all (XML 1.0 itself mandates normalizing it to
+  "\\n" in any compliant parser -- confirmed live, now TODO.md gap 9),
+  so this check instead confirms the *fix*'s guarantee --
+  _normalize_line_endings() -- that the local mirror always lands on
+  "\\n"-only consistently, the same form a resync forces regardless.
 - Place lat/long precision (stored as a string in Gramps, per TODO.md,
   so unlikely but "worth remembering if it ever comes up").
 - Event ref list order on a Person with two events -- the general case
@@ -203,16 +205,28 @@ class TestRoundTripFidelitySweep(unittest.TestCase):
                 )
 
             with self.subTest("CRLF line endings"):
+                # Confirmed live 2026-09-26 (TODO.md gap 9): "\r\n"
+                # cannot survive a bootstrap resync byte-for-byte --
+                # XML 1.0's own spec mandates any compliant parser
+                # collapse it to "\n" in character data, so this is
+                # structural, not a bug to chase on the reimport side.
+                # The fix (_normalize_line_endings(), grampswebapidb.py)
+                # is instead about *consistency*: this local mirror must
+                # always land on "\n"-only, the same form ImportXml's
+                # own parsing already forces here, so a later edit made
+                # *through this addon* (which now also normalizes on
+                # every commit) never disagrees with what a resync
+                # would produce.
                 local_note = db.get_note_from_handle(crlf_note.handle)
                 local_text = local_note.get()
+                expected = crlf_note.get().replace("\r\n", "\n")
                 print(f"[crlf] pushed={crlf_note.get()!r}  local={local_text!r}")
                 self.assertEqual(
                     local_text,
-                    crlf_note.get(),
-                    "a Note's line endings did not survive a bootstrap "
-                    "resync byte-for-byte -- see TODO.md gap 7's "
-                    "'Note styled-text tag ranges, or line-ending "
-                    "normalization' candidate",
+                    expected,
+                    "a Note's line endings did not come back consistently "
+                    "normalized to '\\n' after a bootstrap resync -- see "
+                    "TODO.md gap 9",
                 )
 
             with self.subTest("place lat/long precision"):
