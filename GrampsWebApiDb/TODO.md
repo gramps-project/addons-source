@@ -528,7 +528,7 @@ own NFC theory hasn't been separately confirmed either. But gap 8
 itself should be treated as **still open** -- root cause not found,
 four theories eliminated -- not as closed by this fix.
 
-### 9. Note text with `\r\n` line endings does not survive a resync byte-for-byte — **confirmed live, not yet fixed**
+### 9. Note text with `\r\n` line endings does not survive a resync byte-for-byte — **mitigated, root cause confirmed (structural, not Gramps-specific)**
 
 Confirmed live 2026-09-26 (`TestRoundTripFidelitySweep`,
 `live_tests/test_live_round_trip_fidelity_sweep.py`): a Note pushed
@@ -563,24 +563,34 @@ conflict, forever. Not yet confirmed which side gramps-web-api's own
 comparison would call "correct" here, the same open question gap 7's
 NFC fix carries.
 
-**Fix sketch**, mirroring gap 7's two-layer NFC approach exactly:
+**Status: implemented**, mirroring gap 7's two-layer NFC approach
+exactly -- a new `_normalize_line_endings()` (grampswebapidb.py, same
+recursive-walk shape as `_normalize_strings_to_nfc()`) collapsing
+`\r\n`/`\r` to `\n`, composed with the NFC pass at both existing choke
+points rather than duplicated as a separate walk:
 
-1. Bulk-correct every Note's text to `\n`-only right after each
-   reimport (`_normalize_reimported_text()`'s existing per-object walk
-   already visits every field; a `\r\n`/`\r` -> `\n` pass could ride
-   along with the NFC one, or run as a sibling pass over `Note.text`
-   specifically).
-2. Normalize on every local, non-batch commit too
-   (`WebApiDB._commit_base()`, same choke point the NFC fix already
-   uses), so this addon itself never introduces `\r\n` into a Note from
-   an edit made through it, regardless of what upstream (GTK, an input
-   method, a pasted block of Windows-authored text) handed it.
+1. `_normalize_reimported_text()` now applies
+   `_normalize_line_endings(_normalize_strings_to_nfc(data))` in its
+   existing per-object bulk pass, so a Note whose text survived a
+   reimport with CRLF endings gets corrected right alongside an NFC
+   fix, in the same commit if both apply.
+2. `WebApiDB._commit_base()` applies the same composed transform on
+   every local, non-batch commit, so this addon itself never introduces
+   `\r\n` into a Note from an edit made through it, regardless of what
+   upstream (GTK, an input method, a pasted block of Windows-authored
+   text) handed it.
 
-Not yet implemented -- this addon's own text areas already normally
-produce `\n`-only text from GTK's own multi-line entry widgets on most
-platforms, so this is lower urgency than gaps 1-8 were, but real:
-anyone pasting Windows-authored text (or importing a GEDCOM/Word
-document body) into a Note is exposed to it.
+Covered by `TestNormalizeLineEndings` (the pure recursive walk),
+`TestNormalizeReimportedText.test_crlf_note_text_is_rewritten_to_lf`,
+and `TestCommitBaseNormalizesText.
+test_ordinary_commit_normalizes_crlf_line_endings` -- same three-class
+split as gap 7's own NFC coverage.
+
+Confirmed unconditional (not merely suspected, unlike gap 7's own NFC
+theory): XML 1.0's spec makes this normalization mandatory for any
+compliant parser, so there is nothing left to verify about *whether*
+it happens, only that this addon corrects for it -- which the tests
+above confirm directly.
 
 ## Performance
 
