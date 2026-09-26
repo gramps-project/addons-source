@@ -98,8 +98,10 @@ from GrampsWebApiDb.grampswebapidb import (
     _diff_snapshots,
     _normalize_reimported_text,
     _normalize_strings_to_nfc,
+    _restabilize_tag_handles,
     _restore_birth_death_indices,
     _snapshot_birth_death_indices,
+    _snapshot_tag_handles_by_name,
     transaction_to_json,
 )
 from GrampsWebApiDb.tests.fakes import FakeHandleDb, InlineTaskRunner
@@ -976,6 +978,13 @@ class TestFullResync(unittest.TestCase):
         fake_person.get_event_ref_list.return_value = []
         self.db.get_person_from_handle = mock.MagicMock(return_value=fake_person)
         self.db.has_person_handle = mock.MagicMock(return_value=True)
+        # _snapshot_tag_handles_by_name()/_restabilize_tag_handles() look
+        # up "H1" as a Tag via this -- same name before and after the
+        # (faked) reimport keeps the restabilize step a no-op, same as
+        # everything else this wiring-only test fakes out.
+        fake_tag = mock.MagicMock()
+        fake_tag.get_name.return_value = "SomeTag"
+        self.db.get_tag_from_handle = mock.MagicMock(return_value=fake_tag)
 
         # Enough net "adds" (see _diff_snapshots()) to land above
         # GRANULAR_REBUILD_MAX_CHANGES, so this reimport is the
@@ -3007,6 +3016,281 @@ class TestBirthDeathIndexPreservedAcrossResync(unittest.TestCase):
             restored = _restore_birth_death_indices(self.db, snapshot, trans)
 
         self.assertEqual(restored, 0)
+
+
+#: A minimal, valid Gramps XML document holding one person with a
+#: caller-chosen gramps_id -- enough for a real ImportXml run. Same
+#: shape as test_reconcile_batch_commit_real_db.py's PERSON_XML,
+#: redefined here rather than shared (see this addon's no-__init__.py
+#: namespace-package layout: each tests/ module stands alone).
+_ONE_PERSON_XML = """<?xml version="1.0" encoding="UTF-8"?>
+<database xmlns="http://gramps-project.org/xml/1.7.1/">
+  <header><created date="2024-01-01" version="6.0.0"/></header>
+  <people>
+    <person handle="_{handle}" id="{gramps_id}">
+      <gender>U</gender>
+    </person>
+  </people>
+</database>
+"""
+
+
+class TestReimportPreservesServerGrampsIds(unittest.TestCase):
+    """_reimport_preserving_server_gramps_ids() -- addons-source#1030,
+    reported live: the very same Person's gramps_id read 'I1106' as
+    originally pushed but 'I00001106' after a push-conflict resync
+    reimported the server's own export, with no edit to gramps_id
+    itself involved anywhere in the chain.
+
+    gramps.plugins.importer.importxml.ImportXml.legalize_id() runs
+    every imported gramps_id through db.id2user_format() to match
+    whatever ID Formats the *local* Gramps installation has configured
+    -- a global, per-user preference (Edit > Preferences > ID Formats),
+    applied to any tree by gen/dbstate.py's change_database_noclose()
+    before load() ever runs, not anything this addon or the server
+    controls. A local preference wider than the server's own -- "I%08d"
+    here, matching the live report, against a server tree's plain
+    "I%04d" -- silently widens every gramps_id on every bootstrap and
+    every resync. Since gramps_id is part of the payload
+    transaction_to_json() sends on every push, that mismatch alone is
+    enough to make the server's own byte-for-byte "Object has changed"
+    check reject the very next edit to *any* object -- no real
+    conflict, and no Unicode normalization drift, required.
+    """
+
+    def setUp(self):
+        tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
+        self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
+        self.tmpdir = tmpdir
+        self.db = make_database("sqlite")
+        self.db.load(tmpdir)
+        self.addCleanup(self.db.close)
+        # Same reclassification trick as TestBirthDeathIndexPreservedAcross
+        # Resync/TestReconcileBatchCommitAgainstARealDatabase -- a real,
+        # already-initialized DBAPI backend, without going through
+        # WebApiDB's network-dependent load().
+        self.db.__class__ = WebApiDB
+        # Same stub set as TestReconcileBatchCommitAgainstARealDatabase --
+        # a real, batch=True DbTxn commit (the reimport itself) otherwise
+        # tries to push through a real WebApiDB and hits attributes
+        # load()'s network-dependent setup would normally provide.
+        self.db.web_client = mock.MagicMock()
+        self.db.runner = InlineTaskRunner()
+        self.db.io_runner = InlineTaskRunner()
+        self.db._syncing = False
+        self.db._retrying = False
+        # Same context real callers reimport under (rebuild()/
+        # _bootstrap_full_resync() both set this before their own
+        # importData() call): transaction_commit() only reconciles/
+        # pushes a batch DbTxn when *not* pulling (see its own
+        # docstring), and ImportXml's reimport is exactly the
+        # server-to-local replay that flag exists to mark.
+        self.db._pulling = True
+        self.db._get_metadata = lambda key, default=0: default
+        self.db._set_metadata = lambda key, value, use_txn=True: None
+        # Stands in for change_database_noclose() applying this user's
+        # own global ID Formats preference when the tree was opened --
+        # wider than the server tree's own, matching the live report.
+        self.db.set_prefixes(
+            "I%08d",
+            "O%04d",
+            "F%04d",
+            "S%04d",
+            "C%04d",
+            "P%04d",
+            "E%04d",
+            "R%04d",
+            "N%04d",
+        )
+
+    def _write_server_export(self, gramps_id):
+        path = os.path.join(self.tmpdir, "server_export.gramps")
+        with open(path, "w") as f:
+            f.write(
+                _ONE_PERSON_XML.format(
+                    handle="h00000000000000000001", gramps_id=gramps_id
+                )
+            )
+        return path
+
+    def test_reimport_does_not_widen_the_servers_gramps_id(self):
+        path = self._write_server_export("I1106")
+
+        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+
+        (handle,) = self.db.get_person_handles()
+        self.assertEqual(self.db.get_person_from_handle(handle).gramps_id, "I1106")
+
+    def test_plain_importdata_reproduces_the_reported_widening(self):
+        # Confirms the bug this method exists to prevent is real, not
+        # hypothetical: the exact same reimport, without the fix, really
+        # does widen the id the way addons-source#1030 reported.
+        path = self._write_server_export("I1106")
+
+        grampswebapidb.importData(self.db, path, grampswebapidb.User())
+
+        (handle,) = self.db.get_person_handles()
+        self.assertEqual(self.db.get_person_from_handle(handle).gramps_id, "I00001106")
+
+    def test_local_id_format_preference_survives_for_new_local_objects(self):
+        # Restored after the reimport, not left at the neutralized
+        # passthrough used during it -- an object created locally
+        # afterward (this file's own "message-note" conflict record, or
+        # anything a user adds while offline) must still get an id in
+        # this user's own configured format.
+        path = self._write_server_export("I1106")
+
+        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+
+        self.assertEqual(self.db.person_prefix, "I%08d")
+        self.assertEqual(self.db.find_next_note_gramps_id(), "N0000")
+
+
+#: A minimal, valid Gramps XML document holding one person carrying one
+#: tag reference -- enough for a real ImportXml run exercising tagref/
+#: tag handling specifically (contrast _ONE_PERSON_XML above, which has
+#: no tag at all).
+_ONE_PERSON_WITH_TAG_XML = """<?xml version="1.0" encoding="UTF-8"?>
+<database xmlns="http://gramps-project.org/xml/1.7.1/">
+  <header><created date="2024-01-01" version="6.0.0"/></header>
+  <people>
+    <person handle="_{person_handle}" id="{gramps_id}">
+      <gender>U</gender>
+      <tagref hlink="_{tag_handle}"/>
+    </person>
+  </people>
+  <tags>
+    <tag handle="_{tag_handle}" name="{tag_name}" priority="0" color="#000000000000"/>
+  </tags>
+</database>
+"""
+
+
+class TestRestabilizeTagHandles(unittest.TestCase):
+    """_snapshot_tag_handles_by_name()/_restabilize_tag_handles() --
+    addons-source#1030, reported live: the exact same Tag, attached to
+    the exact same Person, with nothing about either edited, came back
+    under a different raw handle on three separate, directly-
+    consecutive resyncs within one session -- confirmed (see
+    _restabilize_tag_handles()'s own docstring) not explainable by
+    anything local: ImportXml always preserves whatever handle a Gramps
+    XML file specifies for an object absent from the target database,
+    the same mechanism that keeps every Person's own handle stable
+    across every resync in the same logs. The server's own export
+    generator (gramps-web-api) is the only thing left that could make a
+    Tag's own handle churn across otherwise-identical exports.
+    """
+
+    def setUp(self):
+        tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
+        self.addCleanup(shutil.rmtree, tmpdir, ignore_errors=True)
+        self.tmpdir = tmpdir
+        self.db = make_database("sqlite")
+        self.db.load(tmpdir)
+        self.addCleanup(self.db.close)
+        self.db.__class__ = WebApiDB
+        # Same stub set as TestReimportPreservesServerGrampsIds -- a
+        # real, batch=True DbTxn commit (the reimport itself) otherwise
+        # tries to push through a real WebApiDB.
+        self.db.web_client = mock.MagicMock()
+        self.db.runner = InlineTaskRunner()
+        self.db.io_runner = InlineTaskRunner()
+        self.db._syncing = False
+        self.db._retrying = False
+        self.db._pulling = True
+        self.db._get_metadata = lambda key, default=0: default
+        self.db._set_metadata = lambda key, value, use_txn=True: None
+        self.db.set_prefixes(
+            "I%04d",
+            "O%04d",
+            "F%04d",
+            "S%04d",
+            "C%04d",
+            "P%04d",
+            "E%04d",
+            "R%04d",
+            "N%04d",
+        )
+        self.person_handle = "h00000000000000000001"
+        self.old_tag_handle = "h00000000000000000002"
+        with DbTxn("seed", self.db) as trans:
+            tag = Tag()
+            tag.set_handle(self.old_tag_handle)
+            tag.set_name("message")
+            self.db.add_tag(tag, trans)
+            person = Person()
+            person.set_gramps_id("I0001")
+            person.set_handle(self.person_handle)
+            person.add_tag(self.old_tag_handle)
+            self.db.add_person(person, trans)
+
+    def _write_server_export(self, new_tag_handle, tag_name="message"):
+        path = os.path.join(self.tmpdir, "server_export.gramps")
+        with open(path, "w") as f:
+            f.write(
+                _ONE_PERSON_WITH_TAG_XML.format(
+                    person_handle=self.person_handle,
+                    gramps_id="I0001",
+                    tag_handle=new_tag_handle,
+                    tag_name=tag_name,
+                )
+            )
+        return path
+
+    def _clear_and_reimport(self, path):
+        with DbTxn("clear", self.db, batch=True) as trans:
+            for handle in list(self.db.get_person_handles()):
+                self.db.remove_person(handle, trans)
+            for handle in list(self.db.get_tag_handles()):
+                self.db.remove_tag(handle, trans)
+        self.db._reimport_preserving_server_gramps_ids(path, grampswebapidb.User())
+
+    def test_plain_reimport_reproduces_the_reported_handle_churn(self):
+        # Confirms the bug _restabilize_tag_handles() exists to prevent
+        # is real, not hypothetical: without it, the same tag name comes
+        # back attached to the Person under a brand-new handle, and the
+        # old one is simply gone (never referenced again) -- exactly the
+        # tag_list[0] mismatch addons-source#1030 reported.
+        new_tag_handle = "h00000000000000000099"
+        path = self._write_server_export(new_tag_handle)
+        self._clear_and_reimport(path)
+
+        person = self.db.get_person_from_handle(self.person_handle)
+        self.assertEqual(person.get_tag_list(), [new_tag_handle])
+
+    def test_restabilize_rewrites_the_reference_back_to_the_old_handle(self):
+        new_tag_handle = "h00000000000000000099"
+        snapshot = _snapshot_tag_handles_by_name(self.db)
+        path = self._write_server_export(new_tag_handle)
+        self._clear_and_reimport(path)
+
+        with DbTxn("restabilize", self.db, batch=True) as trans:
+            restabilized = _restabilize_tag_handles(self.db, snapshot, trans)
+
+        self.assertEqual(restabilized, 1)
+        person = self.db.get_person_from_handle(self.person_handle)
+        self.assertEqual(person.get_tag_list(), [self.old_tag_handle])
+        # The reimport's own duplicate (new_tag_handle) is gone, and the
+        # original tag -- now holding the churned-in name unchanged --
+        # is the only one left.
+        self.assertFalse(self.db.has_tag_handle(new_tag_handle))
+        self.assertEqual(self.db.get_tag_handles(), [self.old_tag_handle])
+
+    def test_a_genuinely_new_tag_is_left_alone(self):
+        # No prior local tag of this name existed -- nothing to
+        # stabilize back to, so the reimported tag (and its handle)
+        # stand as-is, same as a real new tag added on the server would.
+        snapshot = _snapshot_tag_handles_by_name(self.db)
+        new_tag_handle = "h00000000000000000099"
+        path = self._write_server_export(new_tag_handle, tag_name="brand-new-tag")
+        self._clear_and_reimport(path)
+
+        with DbTxn("restabilize", self.db, batch=True) as trans:
+            restabilized = _restabilize_tag_handles(self.db, snapshot, trans)
+
+        self.assertEqual(restabilized, 0)
+        person = self.db.get_person_from_handle(self.person_handle)
+        self.assertEqual(person.get_tag_list(), [new_tag_handle])
 
 
 class TestNormalizeStringsToNfc(unittest.TestCase):

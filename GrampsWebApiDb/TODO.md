@@ -401,9 +401,74 @@ ever flags a field none of the above explains:
   not a float, so unlikely to be a precision issue, but worth
   remembering if it ever comes up.
 
+### 8. A Tag's own handle is not stable across separate server exports — **mitigated, server-side root cause unconfirmed**
+
+Reported live (macOS, Gramps 6.0.8, 2026-09-25), on a Person with no
+Unicode in its name and after confirming gap 7's local ID-Formats
+theory was *not* the cause (the user's local `iprefix` was corrected to
+match the server's own `I%04d` first, and the conflict recurred
+identically): `_log_conflict_field_diffs()` showed only one disagreeing
+field on every retry, `Person.tag_list[0]`, and its value was a
+different raw handle on each of three separate, directly-consecutive
+resyncs within one session, for a Tag nothing else about had changed.
+
+Traced into `gramps.plugins.importer.importxml.ImportXml.inaugurate()`:
+it always *preserves* whatever handle a Gramps XML file specifies for
+an object already absent from the target database, which every object
+is right after this addon's own "clear local mirror" resync step --
+confirmed by the same logs' Person handle staying perfectly stable
+across the same three resyncs. `replace_import_handle` (the one thing
+that would override this) was ruled out too: it applies uniformly to
+every object type, and would have made the Person's own handle churn
+just as much as the Tag's. With every local explanation eliminated, the
+only thing left that can make three exports of unchanged data disagree
+about one Tag's handle is the server's own export generator
+(gramps-web-api): it apparently does not treat a Tag as a persisted
+object with a stable handle the way Gramps core does, and mints a fresh
+one, per export, purely to produce valid Gramps XML -- not confirmed by
+reading gramps-web-api's own source (out of scope for this addon's
+repo), but consistent with every piece of client-side evidence and
+nothing left unexplained.
+
+Same category of bug as gaps 4 and 7: `diff_items()` treats the churn
+as a real edit to every object carrying the tag, on every single future
+resync, forever -- a permanent, first-push, no-real-editor-involved
+conflict on any object that happens to carry a Tag, independent of
+Unicode or ID Formats.
+
+**Status: mitigated, pending confirmation.**
+`_snapshot_tag_handles_by_name()`/`_restabilize_tag_handles()`
+(grampswebapidb.py) snapshot `{tag name: handle}` right before each
+resync's "clear local mirror" step, then afterward rewrite any
+reimported Tag whose name matches a pre-existing one back onto that old
+handle -- across every primary object's `tag_list` (confirmed `TagBase`
+is mixed in only via `gen/lib/primaryobj.py`, no secondary/child object
+carries one directly, so no `_iter_referents()`-style recursion is
+needed here, unlike `_prune_dangling_references()`) -- and revive the
+reimport's own content under that old handle via the same
+`set_handle()`-then-`add_tag()` pattern `inaugurate()` itself uses,
+rather than leaving a dangling reference to a Tag that resync's own
+clear step already removed. Called from both `_full_resync_async()`'s
+`rebuild()` and `_bootstrap_full_resync()`, right after the reimport,
+under the same `self._pulling` context those already hold. A
+genuinely new tag (no matching name existed before) is left untouched,
+same as gap 4's birth/death restore leaves a genuinely new state alone.
+
+Covered by `TestRestabilizeTagHandles` (real-DB integration, a real
+`ImportXml` round trip): confirms the churn is real without the fix, a
+matching-name tag gets rewritten back and the reimport's duplicate is
+removed with no dangling reference left behind, and a genuinely new tag
+name is left alone.
+
+**Next step:** same as gap 7 -- get a real reproduction with this fix
+in place. If the theory is right, `conflict-diff` should stop flagging
+`tag_list` for this object, and the conflict-diff-mediated `Object has
+changed` rejections against gramps-connect.duckdns.org's demo tree
+should stop recurring for it.
+
 ## Performance
 
-### 8. Media poll rescans everything, on the main thread, every 5 minutes
+### 9. Media poll rescans everything, on the main thread, every 5 minutes
 
 `_scan_and_resolve_media()` (grampswebapidb.py:3512) does `iter_media()` +
 `os.path.exists()` for every Media object, on the GTK main thread, every
