@@ -386,22 +386,26 @@ ever flags a field none of the above explains:
   `GrampsType` (event/attribute/name type, ...) has previously
   round-tripped through locale-aware string matching. The server and a
   client are separate Gramps processes with no guarantee of matching
-  locale environments.
+  locale environments. Not checked live: no way to control the demo
+  server's own locale from this addon's side.
 - **Version skew** between the server's Gramps/gramps-web-api version
   and a given client's — any "recompute on import" heuristic (not just
-  birth/death index) can behave differently across point releases.
-- **Empty-string vs. `None` / omitted-element ambiguity** on an
-  optional text field, if the exporter's "nothing here" representation
-  and the importer's default for a missing element don't agree.
+  birth/death index) can behave differently across point releases. Not
+  checked live: only one server version available to test against.
 - **Note styled-text tag ranges, or line-ending normalization**
-  (`\r\n` vs `\n`) if anything in the transfer path touches it.
-- Lower confidence, listed for completeness: reference-list reordering
-  (event_ref_list, citation_list, ...) if any path sorts rather than
-  preserves file order; Place lat/long is stored as a string in Gramps,
-  not a float, so unlikely to be a precision issue, but worth
-  remembering if it ever comes up.
+  (`\r\n` vs `\n`) — **confirmed live 2026-09-26**, promoted to gap 9
+  below.
+- **Checked live 2026-09-26, not reproduced:** empty-string vs. `None`/
+  omitted-element ambiguity (an Attribute value pushed as `""` came
+  back `""`, not `None`, after a real bootstrap resync); Place lat/long
+  precision (a 16-decimal-digit value round-tripped exactly, unsurprising
+  given TODO.md already expected this since it's stored as a string,
+  not a float); `event_ref_list` order (two events stayed in push
+  order after a bootstrap resync). `TestRoundTripFidelitySweep`
+  (`live_tests/test_live_round_trip_fidelity_sweep.py`) covers all
+  three in one bootstrap.
 
-### 8. A Tag's own handle is not stable across separate server exports — **mitigated, server-side root cause unconfirmed**
+### 8. A Tag's own handle is not stable across separate server exports — **defensive fix shipped, root cause NOT reproduced independently — see update below**
 
 Reported live (macOS, Gramps 6.0.8, 2026-09-25), on a Person with no
 Unicode in its name and after confirming gap 7's local ID-Formats
@@ -460,15 +464,127 @@ matching-name tag gets rewritten back and the reimport's duplicate is
 removed with no dangling reference left behind, and a genuinely new tag
 name is left alone.
 
-**Next step:** same as gap 7 -- get a real reproduction with this fix
-in place. If the theory is right, `conflict-diff` should stop flagging
-`tag_list` for this object, and the conflict-diff-mediated `Object has
-changed` rejections against gramps-connect.duckdns.org's demo tree
-should stop recurring for it.
+**Update (2026-09-26): the server-side theory did not reproduce.**
+`live_tests/diagnose_export_tag_handle_stability.py` -- a standalone
+script, bypassing this addon and `ImportXml` entirely -- created a
+plain Tag via an ordinary `/transactions/` add, then called
+`WebApiHandler.download_export()` twice back to back with zero edits
+in between, and diffed the raw XML's `<tag handle="...">` attribute
+directly. Result: **identical handle both times.** gramps-web-api does
+not, in general, mint a fresh handle per export.
+
+This does not mean gap 8's live symptom (`tag_list[0]` differing across
+resyncs) was imagined -- only that "the server churns every Tag's
+handle on every export" is not the right explanation for it.
+
+**Further update (same day): all four follow-up theories also failed
+to reproduce.** In order:
+
+1. `MESSAGE_TAG_NAME`/`MESSAGE_TODO_OPEN_TAG_NAME` specifically
+   (`diagnose_tag_list_shape_stability.py`'s `check_message_tags()`) --
+   this addon's own convention tags, shared with gramps-connect's
+   `notesApi.ts`, on the theory one of them might be a synthesized
+   export-time view rather than a real persisted Tag row. **Stable**
+   across two exports, both tags.
+2. A Person with three ordinary tags in a fixed order
+   (`check_tag_list_order()`), on the theory `_walk_conflict_diff()`'s
+   positional list comparison (`zip(old, new)`) could present a pure
+   *reordering* as `"tag_list[0] differs"` with no tag identity
+   actually unstable. **Stable** -- identical order both times.
+3. The actual reported Person (`VJFKQCFO7WESWPNKHE`), fetched directly
+   via `GET /people/VJFKQCFO7WESWPNKHE`: `tag_list` is now `[]` --
+   empty. Whatever tag(s) it carried during the original report are
+   gone (removed since, on a heavily shared/reused demo tree), so the
+   *exact* originally-reported case can no longer be inspected
+   directly.
+4. Two genuinely legacy tags already on the tree from well before this
+   investigation (`complete`, `ToDo` -- `change` timestamps in the
+   1288512442/1288512479 range, October 2010, and shorter,
+   non-UUID-shaped handles unlike every tag created through a modern
+   `/transactions/` POST) on the theory that only tags predating some
+   handle-persistence migration might be affected. **Stable** across
+   two exports, both tags.
+
+Four independent theories, zero reproductions, against the real server,
+each via a real, isolated round trip. What's left unexplained is
+whether the actual trigger needs the *full* concurrent conflict-
+resync-retry sequence (real background `io_runner` timing, not this
+diagnostic approach's strictly sequential one call than the next) or a
+race between overlapping export requests -- neither of which a
+sequential, single-threaded diagnostic can surface. Also worth noting
+for whoever picks this up next: the demo server returned a transient
+502/timeout partway through this session's testing, recovering on its
+own a few minutes later -- plausibly this addon's own repeated
+bootstrap/resync/export load during a concentrated testing session,
+worth pacing out rather than firing many resyncs back to back against
+this specific shared, small instance.
+
+**The fix already shipped is still worth keeping regardless**: reviving
+a reimported Tag under its previous stable handle (when one exists) is
+correct behavior on its own merits even if this specific server-side
+theory turns out not to be gap 8's real explanation, the same way
+`_normalize_reimported_text()` (gap 7) is safe to keep even where its
+own NFC theory hasn't been separately confirmed either. But gap 8
+itself should be treated as **still open** -- root cause not found,
+four theories eliminated -- not as closed by this fix.
+
+### 9. Note text with `\r\n` line endings does not survive a resync byte-for-byte — **confirmed live, not yet fixed**
+
+Confirmed live 2026-09-26 (`TestRoundTripFidelitySweep`,
+`live_tests/test_live_round_trip_fidelity_sweep.py`): a Note pushed
+with `"Line one\r\nLine two\r\nLine three"` came back from a real
+bootstrap resync as `"Line one\nLine two\nLine three"` -- `\r\n`
+silently collapsed to `\n`. The other three fidelity candidates checked
+in the same test (empty-string Attribute value, Place lat/long
+precision, `event_ref_list` order) all round-tripped exactly; this one
+didn't.
+
+Likely cause, and likely *not* fixable by changing how this addon reads
+the downloaded file: XML 1.0's own spec (section 2.11, "End-of-Line
+Handling") *requires* a compliant parser to normalize every `\r\n` (and
+every bare `\r`) in character data to a single `\n` before an
+application ever sees it -- this isn't a Gramps or gramps-web-api
+choice, every XML parser does this, including whatever SAX/expat layer
+`ImportXml` uses. Once `\r\n` text has been serialized into the
+`.gramps` export's XML at all, a compliant reimport is *guaranteed* to
+hand it back as `\n` -- there is no reimport-side fix available, only a
+"never let this addon be the one to introduce the mismatch" fix, same
+shape as gap 7's Unicode NFC mitigation.
+
+Same failure mode as every other round-trip-fidelity gap in this file:
+if the server's own stored copy keeps the original `\r\n` (a plain
+JSON/database string field, not XML, so nothing forces it to
+normalize) while this addon's local mirror always normalizes to `\n`
+on every reimport, `diff_items()` -- both this addon's own and
+gramps-web-api's server-side `old_unchanged()` -- would see a permanent
+mismatch on that Note's text field, and the very next edit to *that*
+Note (regardless of what the edit itself touches) would spuriously
+conflict, forever. Not yet confirmed which side gramps-web-api's own
+comparison would call "correct" here, the same open question gap 7's
+NFC fix carries.
+
+**Fix sketch**, mirroring gap 7's two-layer NFC approach exactly:
+
+1. Bulk-correct every Note's text to `\n`-only right after each
+   reimport (`_normalize_reimported_text()`'s existing per-object walk
+   already visits every field; a `\r\n`/`\r` -> `\n` pass could ride
+   along with the NFC one, or run as a sibling pass over `Note.text`
+   specifically).
+2. Normalize on every local, non-batch commit too
+   (`WebApiDB._commit_base()`, same choke point the NFC fix already
+   uses), so this addon itself never introduces `\r\n` into a Note from
+   an edit made through it, regardless of what upstream (GTK, an input
+   method, a pasted block of Windows-authored text) handed it.
+
+Not yet implemented -- this addon's own text areas already normally
+produce `\n`-only text from GTK's own multi-line entry widgets on most
+platforms, so this is lower urgency than gaps 1-8 were, but real:
+anyone pasting Windows-authored text (or importing a GEDCOM/Word
+document body) into a Note is exposed to it.
 
 ## Performance
 
-### 9. Media poll rescans everything, on the main thread, every 5 minutes
+### 10. Media poll rescans everything, on the main thread, every 5 minutes
 
 `_scan_and_resolve_media()` (grampswebapidb.py:3512) does `iter_media()` +
 `os.path.exists()` for every Media object, on the GTK main thread, every
