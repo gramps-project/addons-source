@@ -2227,4 +2227,246 @@
             </column>
         </section>
     </form>
+    <form id='CA1931' type='Census' title='1931 Canadian Census' date='1931-06-01'>
+        <heading>
+            <_attribute>Province</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Electoral District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Enumeration Sub-district</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Municipality</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Page</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Enumerator</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Line</_attribute>
+                <size>2</size>
+                <_longname>Line</_longname>
+            </column>
+            <column>
+                <_attribute>House</_attribute>
+                <size>3</size>
+                <_longname>1. Dwelling House</_longname>
+            </column>
+            <column>
+                <_attribute>Family</_attribute>
+                <size>3</size>
+                <_longname>2. Family, Household or Institution</_longname>
+            </column>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>20</size>
+                <_longname>3. Name of each person in family, household or institution</_longname>
+            </column>
+            <column>
+                <_attribute>Section</_attribute>
+                <size>3</size>
+                <_longname>4. Place of Abode: Section</_longname>
+            </column>
+            <column>
+                <_attribute>Township</_attribute>
+                <size>3</size>
+                <_longname>4a. Place of Abode: Township</_longname>
+            </column>
+            <column>
+                <_attribute>Range</_attribute>
+                <size>3</size>
+                <_longname>4b. Place of Abode: Range</_longname>
+            </column>
+            <column>
+                <_attribute>Meridian</_attribute>
+                <size>3</size>
+                <_longname>4c. Place of Abode: Meridian</_longname>
+            </column>
+            <column>
+                <_attribute>HomeOwned</_attribute>
+                <size>3</size>
+                <_longname>5. Home Owned or rented</_longname>
+            </column>
+            <column>
+                <_attribute>HomeValue</_attribute>
+                <size>10</size>
+                <_longname>6. If owned give value. If rented give rent paid per month</_longname>
+            </column>
+            <column>
+                <_attribute>ClassOfHouse</_attribute>
+                <size>10</size>
+                <_longname>7. Class of Home</_longname>
+            </column>
+            <column>
+                <_attribute>Construction</_attribute>
+                <size>20</size>
+                <_longname>8. Materials of Construction</_longname>
+            </column>
+            <column>
+                <_attribute>Rooms</_attribute>
+                <size>5</size>
+                <_longname>9. Rooms occupied by this family</_longname>
+            </column>
+            <column>
+                <_attribute>Radio</_attribute>
+                <size>3</size>
+                <_longname>10. Has this family a radio?</_longname>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>20</size>
+                <_longname>11. Relationship to head of family or household</_longname>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+                <size>1</size>
+                <_longname>12. Sex</_longname>
+            </column>
+            <column>
+                <_attribute>MaritalStatus</_attribute>
+                <size>1</size>
+                <_longname>13. Single, married, widowed, divorced</_longname>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>3</size>
+                <_longname>14. Age at last birthday</_longname>
+            </column>
+            <column>
+                <_attribute>BirthPlace</_attribute>
+                <size>20</size>
+                <_longname>15. Country or place of birth</_longname>
+            </column>
+            <column>
+                <_attribute>FatherBirthPlace</_attribute>
+                <size>20</size>
+                <_longname>16. Fathers Country or place of birth</_longname>
+            </column>
+            <column>
+                <_attribute>MotherBirthPlace</_attribute>
+                <size>20</size>
+                <_longname>17. Monther Country or place of birth</_longname>
+            </column>
+            <column>
+                <_attribute>Immigration</_attribute>
+                <size>6</size>
+                <_longname>18. Year of immigraion to Canada</_longname>
+            </column>
+            <column>
+                <_attribute>Naturalization</_attribute>
+                <size>6</size>
+                <_longname>19. Year of Naturalization</_longname>
+            </column>
+            <column>
+                <_attribute>Nationality</_attribute>
+                <size>20</size>
+                <_longname>20. Nationality</_longname>
+            </column>
+            <column>
+                <_attribute>Race</_attribute>
+                <size>20</size>
+                <_longname>21. Racial Origins</_longname>
+            </column>
+            <column>
+                <_attribute>SpeakEnglish</_attribute>
+                <size>1</size>
+                <_longname>22. Can speak English</_longname>
+            </column>
+            <column>
+                <_attribute>SpeakFrench</_attribute>
+                <size>1</size>
+                <_longname>23. Can speak French</_longname>
+            </column>
+            <column>
+                <_attribute>OtherLanguage</_attribute>
+                <size>20</size>
+                <_longname>24. Other language spoken as mother tongue</_longname>
+            </column>
+            <column>
+                <_attribute>Religion</_attribute>
+                <size>20</size>
+                <_longname>25. Religious body, Denomination or Community</_longname>
+            </column>
+            <column>
+                <_attribute>CanRead</_attribute>
+                <size>1</size>
+                <_longname>26. Can Read and write</_longname>
+            </column>
+            <column>
+                <_attribute>MonthsAtSchool</_attribute>
+                <size>6</size>
+                <_longname>27. Months at school since Sept. 1, 1930</_longname>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>20</size>
+                <_longname>28. Trade, profession or particular kind of work</_longname>
+            </column>
+            <column>
+                <_attribute>Industry</_attribute>
+                <size>20</size>
+                <_longname>29. Industry or business in which engaged</_longname>
+            </column>
+            <column>
+                <_attribute>ClassOfWorker</_attribute>
+                <size>3</size>
+                <_longname>30. Class of worker</_longname>
+            </column>
+            <column>
+                <_attribute>Earning</_attribute>
+                <size>10</size>
+                <_longname>31. Total earning in the last 12 months</_longname>
+            </column>
+            <column>
+                <_attribute>Working</_attribute>
+                <size>1</size>
+                <_longname>32. If an employee, were you at work Monday June 1st. 1931</_longname>
+            </column>
+            <column>
+                <_attribute>Absent</_attribute>
+                <size>20</size>
+                <_longname>33. If not at work, why were you not at work on Monday 1st. 1931</_longname>
+            </column>
+            <column>
+                <_attribute>Unemployed</_attribute>
+                <size>5</size>
+                <_longname>34. Total number of weeks unemployed in last 12 months</_longname>
+            </column>
+            <column>
+                <_attribute>NoJob</_attribute>
+                <size>5</size>
+                <_longname>35. Weeks unemploted: No job</_longname>
+            </column>
+            <column>
+                <_attribute>Illbess</_attribute>
+                <size>5</size>
+                <_longname>36. Weeks unemploted: Illness</_longname>
+            </column>
+            <column>
+                <_attribute>Accident</_attribute>
+                <size>5</size>
+                <_longname>37. Weeks unemploted: Accident</_longname>
+            </column>
+            <column>
+                <_attribute>Strike</_attribute>
+                <size>5</size>
+                <_longname>38. Weeks unemploted: Strike or Lock-out</_longname>
+            </column>
+            <column>
+                <_attribute>Lay-off</_attribute>
+                <size>5</size>
+                <_longname>39. Weeks unemploted: Lay-off</_longname>
+            </column>
+            <column>
+                <_attribute>Other</_attribute>
+                <size>5</size>
+                <_longname>40. Weeks unemploted: Other causes</_longname>
+            </column>
+        </section>
+    </form>
 </forms>
