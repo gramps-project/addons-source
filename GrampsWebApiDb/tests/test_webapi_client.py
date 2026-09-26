@@ -568,20 +568,40 @@ class TestTransactionHistory(unittest.TestCase):
 
     def test_request_shape_and_total_count_header(self):
         handler = self._authed_handler()
-        body = [{"id": 1, "timestamp": 10.0, "changes": []}]
+        body = [{"id": 101, "timestamp": 10.0, "changes": []}]
         fake = QueuedUrlopen([FakeResponse(body, headers={"X-Total-Count": "5"})])
         with mock.patch.object(webapi_client, "urlopen", fake):
             transactions, total = handler.get_transaction_history(
-                after=100, page=2, pagesize=50
+                after_id=100, page=2, pagesize=50
             )
         self.assertEqual(transactions, body)
         self.assertEqual(total, 5)
         url = fake.requests[0].full_url
-        self.assertIn("after=100", url)
+        self.assertIn("after_id=100", url)
+        self.assertNotIn("after=", url)
         self.assertIn("new=1", url)
         self.assertIn("sort=id", url)
         self.assertIn("page=2", url)
         self.assertIn("pagesize=50", url)
+
+    def test_sort_is_configurable(self):
+        # _migrate_sync_cursor_to_id()'s own bootstrap-newest lookup asks
+        # for "-id" instead of the ascending default.
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse([{"id": 9, "timestamp": 1.0, "changes": []}])])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.get_transaction_history(sort="-id", pagesize=1)
+        self.assertIn("sort=-id", fake.requests[0].full_url)
+
+    def test_legacy_after_param_is_sent_only_when_given(self):
+        # Off by default -- only _migrate_sync_cursor_to_id() ever passes
+        # it, to ask the server about a mirror's old timestamp cursor.
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse([])])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.get_transaction_history(after=123.5)
+        self.assertIn("after=123.5", fake.requests[0].full_url)
+        self.assertIn("after_id=0", fake.requests[0].full_url)
 
     def test_total_count_falls_back_to_body_length(self):
         handler = self._authed_handler()
@@ -591,6 +611,66 @@ class TestTransactionHistory(unittest.TestCase):
             _transactions, total = handler.get_transaction_history()
         self.assertEqual(total, 3)
 
+    def test_first_call_sends_no_if_none_match(self):
+        # Nothing to revalidate against yet.
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse([], headers={"ETag": '"abc"'})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.get_transaction_history()
+        self.assertIsNone(fake.requests[0].get_header("If-none-match"))
+
+    def test_etag_from_one_call_is_echoed_on_the_next(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                FakeResponse([], headers={"ETag": '"abc"'}),
+                FakeResponse([], headers={"ETag": '"def"'}),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.get_transaction_history()
+            handler.get_transaction_history()
+        self.assertEqual(fake.requests[1].get_header("If-none-match"), '"abc"')
+
+    def test_304_returns_no_transactions_but_keeps_the_total_count_header(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                FakeResponse([], headers={"ETag": '"abc"'}),
+                FakeResponse(
+                    None, headers={"ETag": '"abc"', "X-Total-Count": "42"}, status=304
+                ),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.get_transaction_history()
+            transactions, total = handler.get_transaction_history()
+        self.assertEqual(transactions, [])
+        self.assertEqual(total, 42)
+        # A 304 doesn't re-send a body, but its ETag (unchanged) is still
+        # the right one to keep echoing back next time.
+        self.assertEqual(handler._history_etag, '"abc"')
+
+    def test_a_fresh_200_after_a_304_updates_the_stored_etag(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                FakeResponse([], headers={"ETag": '"abc"'}),
+                FakeResponse(
+                    None, headers={"ETag": '"abc"', "X-Total-Count": "1"}, status=304
+                ),
+                FakeResponse(
+                    [{"id": 2, "timestamp": 2.0, "changes": []}],
+                    headers={"ETag": '"ghi"', "X-Total-Count": "2"},
+                ),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.get_transaction_history()
+            handler.get_transaction_history()
+            handler.get_transaction_history()
+        self.assertEqual(handler._history_etag, '"ghi"')
+
 
 # -------------------------------------------------------------------------
 #
@@ -599,9 +679,14 @@ class TestTransactionHistory(unittest.TestCase):
 # -------------------------------------------------------------------------
 class TestDownloadExport(unittest.TestCase):
     """download_export() (grampswebapidb.py's _full_resync() fallback)
-    hits GET /exporters/<extension>/file and returns the raw body,
-    sharing _get_binary()'s 401/429/network retry behavior with
-    _get_json()."""
+    POSTs /exporters/<extension>/file rather than GET-ing it -- see that
+    method's own docstring on why -- then follows whatever url the
+    response (201, run inline) or the finished task (202, run via
+    Celery -- result_object) names, and GETs the raw bytes from there.
+    """
+
+    PROCESSED_URL = "/api/exporters/gramps/file/processed/abc123.gramps.gz"
+    PROCESSED_FULL_URL = f"https://example.com{PROCESSED_URL}"
 
     def _authed_handler(self):
         fake = QueuedUrlopen([FakeResponse({"access_token": token("AT0")})])
@@ -609,15 +694,64 @@ class TestDownloadExport(unittest.TestCase):
             handler = WebApiHandler("https://example.com/api", refresh_token="RT")
         return handler
 
-    def test_request_url_and_returns_raw_bytes(self):
+    def test_inline_201_result_is_downloaded_from_its_own_url(self):
+        # No Celery queue configured server-side: run_task() ran the
+        # export inline and the POST response already names the
+        # finished file, no task to poll.
         handler = self._authed_handler()
-        fake = QueuedUrlopen([FakeBinaryResponse(b"gzip-bytes-here")])
+        fake = QueuedUrlopen(
+            [
+                FakeResponse({"url": self.PROCESSED_URL}, status=201),
+                FakeBinaryResponse(b"gzip-bytes-here"),
+            ]
+        )
         with mock.patch.object(webapi_client, "urlopen", fake):
             data = handler.download_export()
         self.assertEqual(data, b"gzip-bytes-here")
         self.assertEqual(
             fake.requests[0].full_url, "https://example.com/api/exporters/gramps/file"
         )
+        self.assertEqual(fake.requests[0].get_method(), "POST")
+        self.assertEqual(fake.requests[1].full_url, self.PROCESSED_FULL_URL)
+
+    def test_202_task_is_polled_then_downloaded_from_its_result_url(self):
+        # A Celery queue is configured: the POST only queues the work,
+        # so this has to poll GET /tasks/<id> (wait_for_task()) before
+        # it even knows what url to download.
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                FakeResponse({"task": {"id": "T9", "href": "/api/tasks/T9"}}, status=202),
+                FakeResponse(
+                    {"state": "SUCCESS", "result_object": {"url": self.PROCESSED_URL}}
+                ),
+                FakeBinaryResponse(b"gzip-bytes-here"),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            data = handler.download_export()
+        self.assertEqual(data, b"gzip-bytes-here")
+        self.assertEqual(fake.requests[1].full_url, "https://example.com/api/tasks/T9")
+        self.assertEqual(fake.requests[2].full_url, self.PROCESSED_FULL_URL)
+
+    def test_on_wait_fires_while_the_background_task_is_polled(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                FakeResponse({"task": {"id": "T9"}}, status=202),
+                FakeResponse({"state": "PENDING"}),
+                FakeResponse(
+                    {"state": "SUCCESS", "result_object": {"url": self.PROCESSED_URL}}
+                ),
+                FakeBinaryResponse(b"data"),
+            ]
+        )
+        calls = []
+        with mock.patch.object(webapi_client, "urlopen", fake), mock.patch.object(
+            webapi_client, "sleep"
+        ):
+            handler.download_export(on_wait=lambda: calls.append(1))
+        self.assertEqual(len(calls), 1)
 
     def test_on_chunk_streams_the_body_and_fires_between_chunks(self):
         # A multi-megabyte export read in one go is one uninterruptible
@@ -625,7 +759,12 @@ class TestDownloadExport(unittest.TestCase):
         # stopped responding. See grampswebapidb._pump_main_loop().
         handler = self._authed_handler()
         body = b"x" * (webapi_client._DOWNLOAD_CHUNK_SIZE * 2 + 17)
-        fake = QueuedUrlopen([FakeChunkedResponse(body)])
+        fake = QueuedUrlopen(
+            [
+                FakeResponse({"url": self.PROCESSED_URL}, status=201),
+                FakeChunkedResponse(body),
+            ]
+        )
         calls = []
         with mock.patch.object(webapi_client, "urlopen", fake):
             data = handler.download_export(on_chunk=lambda: calls.append(1))
@@ -636,25 +775,38 @@ class TestDownloadExport(unittest.TestCase):
         # FakeBinaryResponse.read() takes no size argument, so this also
         # pins that the unchunked path stays a plain read().
         handler = self._authed_handler()
-        fake = QueuedUrlopen([FakeBinaryResponse(b"gzip-bytes-here")])
+        fake = QueuedUrlopen(
+            [
+                FakeResponse({"url": self.PROCESSED_URL}, status=201),
+                FakeBinaryResponse(b"gzip-bytes-here"),
+            ]
+        )
         with mock.patch.object(webapi_client, "urlopen", fake):
             self.assertEqual(handler.download_export(), b"gzip-bytes-here")
 
     def test_extension_is_configurable(self):
         handler = self._authed_handler()
-        fake = QueuedUrlopen([FakeBinaryResponse(b"gedcom-bytes")])
+        fake = QueuedUrlopen(
+            [
+                FakeResponse(
+                    {"url": "/api/exporters/ged/file/processed/x.ged"}, status=201
+                ),
+                FakeBinaryResponse(b"gedcom-bytes"),
+            ]
+        )
         with mock.patch.object(webapi_client, "urlopen", fake):
             handler.download_export(extension="ged")
         self.assertEqual(
             fake.requests[0].full_url, "https://example.com/api/exporters/ged/file"
         )
 
-    def test_401_triggers_reauth_and_retry(self):
+    def test_401_on_the_post_triggers_reauth_and_retry(self):
         handler = self._authed_handler()
         fake = QueuedUrlopen(
             [
                 http_error(401),
                 FakeResponse({"access_token": token("AT1")}),  # the re-auth call
+                FakeResponse({"url": self.PROCESSED_URL}, status=201),
                 FakeBinaryResponse(b"data-after-reauth"),
             ]
         )
@@ -664,9 +816,15 @@ class TestDownloadExport(unittest.TestCase):
             data = handler.download_export()
         self.assertEqual(data, b"data-after-reauth")
 
-    def test_429_retries_once(self):
+    def test_429_on_the_post_retries_once(self):
         handler = self._authed_handler()
-        fake = QueuedUrlopen([http_error(429), FakeBinaryResponse(b"data")])
+        fake = QueuedUrlopen(
+            [
+                http_error(429),
+                FakeResponse({"url": self.PROCESSED_URL}, status=201),
+                FakeBinaryResponse(b"data"),
+            ]
+        )
         with mock.patch.object(webapi_client, "urlopen", fake), mock.patch.object(
             webapi_client, "sleep"
         ):

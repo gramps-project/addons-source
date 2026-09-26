@@ -331,7 +331,7 @@ unreachable -- not a conflict), the local commit has already happened and
 is never rolled back, but until now nothing remembered that the push
 still needed to go out -- "the next successful push or read sync" above
 was aspirational, not implemented. _push_payload_async() now persists such a
-payload (via _set_metadata(), the same mechanism sync_last_time already
+payload (via _set_metadata(), the same mechanism sync_last_id already
 uses, so it survives close()/reopen) to a "pending_pushes" queue instead
 of just logging and forgetting it. _flush_pending_pushes_async(), called at the
 top of every _sync_from_server_async() (both the load()-time call and every
@@ -366,7 +366,7 @@ otherwise, not just log an extra line.
 The most likely such rejection is a permissions one, and _check_
 permissions() checks for it up front at load() -- but only ViewPrivate is
 fatal to opening the tree at all: gates GET /transactions/history/, and its
-absence would otherwise be *silent* rather than merely loud, since GET
+absence would otherwise be *silent* rather than merely loud, since POST
 /exporters/gramps/file does not refuse a request lacking it -- it passes
 view_private=has_permissions({PERM_VIEW_PRIVATE}) into the export task
 (exporters.py), so an under-privileged caller gets a privacy-filtered
@@ -437,12 +437,17 @@ transient server error and be queued for retry forever.
 The mirror stays current while the tree is open, not just at load() time:
 load() also schedules a GLib.timeout_add_seconds() tick (POLL_INTERVAL_SECONDS)
 that re-runs _sync_from_server_async() for as long as the database stays
-open -- the same timestamp-cursor poll gramps-connect's browser client uses
-against this same endpoint (see gramps-connect's store/historyPoll.ts), so a
-change made from any other client shows up here without closing and
-reopening the tree. Its network legs run on a worker thread (see "Keeping
-the GUI alive" below), so a poll's round trip no longer costs the window a
-UI pause the way it once did. close() cancels the pending timeout so a
+open -- the same id-cursor poll gramps-connect's browser client uses against
+this same endpoint (see gramps-connect's store/historyPoll.ts), so a change
+made from any other client shows up here without closing and reopening the
+tree. The cursor (sync_last_id) is a transaction id, not a timestamp -- see
+get_transaction_history()'s own docstring on why cursoring on the older,
+float timestamp-based ``after`` param risked an infinite-redelivery loop,
+and _migrate_sync_cursor_to_id() for how an existing mirror's old
+timestamp cursor is upgraded, once, the first sync after this addon
+switched. Its network legs run on a worker thread (see "Keeping the GUI
+alive" below), so a poll's round trip no longer costs the window a UI
+pause the way it once did. close() cancels the pending timeout so a
 closed database doesn't keep polling.
 
 A server that stops answering does not interrupt the session: the poll
@@ -451,6 +456,19 @@ it lasts, and picks the mirror up again from the persisted sync cursor on
 the first tick that succeeds -- meanwhile local edits go on working
 against the mirror and queue for push (see _queue_pending_push()). See
 _poll_tick() and _record_poll_failure().
+
+The poll also backs off, independently of any outage, once this
+particular tree has gone POLL_IDLE_THRESHOLD_SECONDS with no local
+activity -- widening to POLL_IDLE_INTERVAL_SECONDS instead of the errorless
+POLL_INTERVAL_SECONDS an otherwise-healthy poll would use. "Activity" is
+any local self.dbapi read or write that isn't this addon replaying the
+server's own changes onto itself (_wrap_dbapi_execute()), so it snaps
+back the moment anyone browses or edits again, and the still-running poll
+picks up whatever changed elsewhere the next time it fires. This has
+nothing to do with GTK window focus or visibility -- this DATABASE plugin
+has no window to ask (see "Keeping the GUI alive" below) -- so a window
+that is focused but simply being read, with no clicks, backs off exactly
+like one that is minimized. See _on_poll_success().
 
 Keeping the GUI alive
 ---------------------
@@ -610,9 +628,10 @@ import json
 import logging
 import os
 import re
+import unicodedata
 from copy import deepcopy
 from tempfile import NamedTemporaryFile
-from time import monotonic, time
+from time import monotonic
 from urllib.error import HTTPError, URLError
 
 from gi.repository import GLib
@@ -625,13 +644,15 @@ from gramps.gen.db.dbconst import (
     DBMODE_W,
     KEY_TO_CLASS_MAP,
     KEY_TO_NAME_MAP,
+    TAG_KEY,
     TXNADD,
     TXNDEL,
     TXNUPD,
 )
 from gramps.gen.db.exceptions import DbConnectionError, DbWriteFailure
+from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.errors import HandleError
-from gramps.gen.lib import Note, NoteType, Tag
+from gramps.gen.lib import Note, NoteType, Researcher, Tag
 from gramps.gen.lib.baseobj import BaseObject
 from gramps.gen.lib.json_utils import data_to_object, object_to_dict, remove_object
 from gramps.gen.merge.diff import diff_items
@@ -642,7 +663,12 @@ from gramps.plugins.db.dbapi.sqlite import SQLite
 from gramps.plugins.importer.importxml import importData
 
 from taskrunner import GLibTaskRunner, IoRunner
-from webapi_client import WebApiHandler, WebApiPushConflict, parse_version
+from webapi_client import (
+    HISTORY_ID_CURSOR_MIN_API_VERSION,
+    WebApiHandler,
+    WebApiPushConflict,
+    parse_version,
+)
 
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -658,6 +684,26 @@ SYNC_PAGE_SIZE = 100
 #: database stays open -- see the module docstring's note on why this runs
 #: synchronously on the GTK main thread rather than a background timer.
 POLL_INTERVAL_SECONDS = 10
+
+#: How long (seconds) since the last local self.dbapi touch -- any read
+#: or write, see _wrap_dbapi_execute() -- before _on_poll_success() treats
+#: this tree as idle and widens the record poll to
+#: POLL_IDLE_INTERVAL_SECONDS. A proxy for "nobody is actually looking at
+#: this Gramps window right now" (minimized, backgrounded, or just left
+#: open and unused) that needs no Gtk window-focus dependency -- see the
+#: module docstring on why this DATABASE plugin avoids one. The trade:
+#: a window that's focused but passively being read (no clicks, so no
+#: db access) looks the same as one that's minimized, and backs off the
+#: same way. Comfortably longer than an ordinary pause between clicks so
+#: routine browsing doesn't flap between the two intervals.
+POLL_IDLE_THRESHOLD_SECONDS = 180
+
+#: The record poll's interval once POLL_IDLE_THRESHOLD_SECONDS of local
+#: inactivity has passed. Any local dbapi touch snaps the very next tick
+#: back down to POLL_INTERVAL_SECONDS -- see _on_poll_success(). Smaller
+#: than POLL_BACKOFF_MAX_SECONDS and chosen independently of it: idling is
+#: not an outage, and there is no reason to let the two share a policy.
+POLL_IDLE_INTERVAL_SECONDS = 60
 
 #: How often (seconds) load() and the ongoing poll re-scan for media files
 #: missing locally or on the server -- see _sync_media_files(). Coarser
@@ -773,7 +819,7 @@ GRANULAR_REBUILD_MAX_CHANGES = 500
 #: calls require_permissions([PERM_VIEW_PRIVATE]) outright (see
 #: gramps_webapi/api/resources/history.py), so the whole incremental sync
 #: 403s without it. It matters just as much for _full_resync()'s fallback,
-#: which fails *silently* rather than loudly instead: GET /exporters/
+#: which fails *silently* rather than loudly instead: POST /exporters/
 #: gramps/file doesn't refuse the request, it passes
 #: view_private=has_permissions({PERM_VIEW_PRIVATE}) into the export task
 #: (exporters.py), so a caller lacking it gets a privacy-filtered export
@@ -1472,6 +1518,402 @@ def _restore_birth_death_indices(db, snapshot, trans):
     return restored
 
 
+def _apply_true_birth_death_indices(db, true_indices, trans):
+    """_bootstrap_full_resync()'s counterpart to _restore_birth_death_indices():
+    correct birth_ref_index/death_ref_index against the server's own true
+    values (``true_indices``, a {handle: (birth_ref_index, death_ref_index)}
+    map from WebApiHandler.get_person_birth_death_indices()) rather than a
+    prior local snapshot.
+
+    _restore_birth_death_indices() only has something to restore *from* --
+    a mirror already holds a value worth preserving across the wipe this
+    resync just did. A brand-new bootstrap mirror has no such value (see
+    _snapshot_birth_death_indices()'s own docstring): the local snapshot
+    it captures right before the wipe is always empty, so nothing was ever
+    corrected on the very sync where ImportXml's document-order heuristic
+    is *most* likely to disagree with the truth -- confirmed live
+    (live_tests/test_live_birth_death_index_bootstrap.py) to produce a
+    wrong-forever index and a permanently false push conflict on that
+    person's very first future edit, no matter what the edit was actually
+    about (diff_items() compares the whole object, not just what changed
+    -- see the module docstring).
+
+    Ground truth instead of a carried-forward guess: for every Person
+    ImportXml just recomputed a heuristic value for, if the server's real
+    value differs, use that instead. Same self._pulling-context and
+    commit-count-return contract as _restore_birth_death_indices().
+    """
+    corrected = 0
+    for handle, (true_birth, true_death) in true_indices.items():
+        if not db.has_person_handle(handle):
+            continue
+        person = db.get_person_from_handle(handle)
+        changed = False
+        if true_birth != person.birth_ref_index:
+            person.birth_ref_index = true_birth
+            changed = True
+        if true_death != person.death_ref_index:
+            person.death_ref_index = true_death
+            changed = True
+        if changed:
+            db.commit_person(person, trans)
+            corrected += 1
+    return corrected
+
+
+def _snapshot_tag_handles_by_name(db):
+    """{tag name: handle} for every Tag in the local mirror, taken right
+    before a resync's own "clear local mirror" step -- the identity
+    _restabilize_tag_handles() tries to preserve across the reimport
+    that follows it. Empty for a genuine bootstrap (nothing local to
+    preserve yet), which makes that call a safe no-op there -- same
+    convention as _snapshot_birth_death_indices().
+
+    A plain per-handle get_tag_from_handle() loop rather than
+    _iter_raw_data()'s bulk form (contrast _normalize_reimported_text()):
+    there are normally only a handful of Tags in a whole tree, nowhere
+    near the O(handles) cost concern bulk-scanning Person/Event exists
+    to avoid.
+    """
+    return {db.get_tag_from_handle(h).get_name(): h for h in db.get_tag_handles()}
+
+
+def _restabilize_tag_handles(db, before_by_name, trans):
+    """Rewrite every reimported Tag reference back onto this mirror's
+    own previously-established handle for that same tag name, and
+    remove the now-orphaned duplicate the reimport just created.
+
+    Reported live (addons-source#1030): the exact same Tag, attached to
+    the exact same Person, with nothing about either edited, came back
+    under a different raw handle on three separate, directly-
+    consecutive resyncs within one session -- confirmed not a local
+    artifact: ImportXml.inaugurate() (gramps/plugins/importer/
+    importxml.py) always *preserves* whatever handle a Gramps XML file
+    specifies for an object already absent from the target database
+    (which every object is, right after this resync's own "clear local
+    mirror" step), the same mechanism that keeps every Person's handle
+    stable across every resync in the same logs. The only way three
+    separate exports of unchanged data produce three different handles
+    for the same Tag, with Person/Event/... all staying stable, is that
+    gramps-web-api's own export generator does not treat a Tag as a
+    persisted object with a stable handle the way Gramps core does, and
+    mints one fresh, per export, purely to produce valid Gramps XML --
+    the same category of round-trip-fidelity gap as birth_ref_index/
+    death_ref_index and the Unicode NFC mismatch (see
+    _snapshot_birth_death_indices()/_normalize_reimported_text()), just
+    with no representation gap this time: the *value* itself is simply
+    not reproducible, so the fix is to keep this mirror's own previous
+    handle instead of adopting whatever the latest export happened to
+    mint. Since tag_list is a plain handle list (TagBase -- mixed in
+    only via gen/lib/primaryobj.py, confirmed no secondary/child object
+    class mixes it in directly, unlike note_list/citation_list -- see
+    _prune_dangling_references()'s own docstring on why *those* need
+    _iter_referents()'s recursion and this doesn't), every object
+    carrying the tag looks genuinely edited to diff_items() on every
+    single future resync, forever -- the same permanent, first-push,
+    no-real-editor-involved conflict shape as both of those.
+
+    Called from both _full_resync_async()'s rebuild() and
+    _bootstrap_full_resync(), right after the reimport (and after
+    _normalize_reimported_text(), though order between the two doesn't
+    matter -- neither touches the other's field), under the same
+    self._pulling context those already hold. before_by_name is
+    _snapshot_tag_handles_by_name()'s own return value, taken before the
+    "clear local mirror" step.
+
+    One pass over every non-Tag primary object (O(objects), not O(stale
+    tags) x O(objects)): a get_tag_list() lookup rather than an
+    _iter_raw_data() bulk read like _normalize_reimported_text(), since
+    unlike that method every one of TAG_KEY's siblings needs checking
+    regardless (a live object's own tag_list, not a string leaf buried
+    arbitrarily deep), so there's no cheaper raw-data shortcut available.
+
+    The old Tag object itself no longer exists to rewrite references
+    *onto* -- it was removed by this same resync's own "clear local
+    mirror" step, same as everything else. Its content (name, color,
+    priority -- whatever the reimport actually brought back) is revived
+    under the *old* handle instead of being discarded: remove_tag() the
+    reimport's own new-handle copy, re-set its handle to the old one,
+    and add_tag() it back -- the same set_handle()-then-add_* pattern
+    ImportXml.inaugurate() itself uses to place an object under a
+    caller-chosen handle rather than a freshly generated one. Leaving
+    the new copy in place under the old handle's *references* without
+    this step would trade one round-trip-fidelity bug for a worse one:
+    a Person whose tag_list points at a Tag that no longer exists at
+    all.
+
+    Returns the number of Tag objects whose handle was rewritten back.
+    """
+    rewrite = {}
+    revived = {}
+    for new_handle in list(db.get_tag_handles()):
+        tag = db.get_tag_from_handle(new_handle)
+        old_handle = before_by_name.get(tag.get_name())
+        if old_handle is not None and old_handle != new_handle:
+            rewrite[new_handle] = old_handle
+            tag.set_handle(old_handle)
+            revived[old_handle] = tag
+    if not rewrite:
+        return 0
+    for key in set(CLASS_TO_KEY_MAP.values()) - {TAG_KEY}:
+        name = KEY_TO_NAME_MAP[key]
+        for handle in list(getattr(db, f"get_{name}_handles")()):
+            obj = getattr(db, f"get_{name}_from_handle")(handle)
+            tag_list = obj.get_tag_list()
+            if not any(h in rewrite for h in tag_list):
+                continue
+            obj.set_tag_list([rewrite.get(h, h) for h in tag_list])
+            getattr(db, f"commit_{name}")(obj, trans)
+    for new_handle, old_handle in rewrite.items():
+        db.remove_tag(new_handle, trans)
+        db.add_tag(revived[old_handle], trans)
+    return len(rewrite)
+
+
+def _snapshot_researcher(db):
+    """A deep copy of this mirror's current Researcher info, taken
+    right before a resync's own "clear local mirror" step --
+    get_researcher() (DbGeneric) returns the live, mutable Researcher
+    instance ImportXml itself later overwrites in place
+    (set_researcher() -> Researcher.set_from()), so a plain reference
+    here would silently track the reimport's own overwrite instead of
+    freezing the prior value. See
+    _restore_researcher_if_locally_set()'s own docstring for why this
+    needs preserving across a reimport at all.
+
+    getattr(..., None) rather than get_researcher() (a plain ``return
+    self.owner``): unit tests construct a WebApiDB via
+    WebApiDB.__new__(), bypassing DbGeneric.__init__() (and its
+    ``self.owner = Researcher()`` default) entirely -- see
+    tests/test_grampswebapidb.py's new_instance(). Real usage always
+    has gone through __init__ by the time this runs.
+    """
+    return deepcopy(getattr(db, "owner", None) or Researcher())
+
+
+def _restore_researcher_if_locally_set(db, snapshot):
+    """Restore this mirror's own Researcher info after a reimport, if
+    the snapshot (_snapshot_researcher()'s return value, taken before
+    the "clear local mirror" step) had anything worth keeping.
+
+    ImportXml.import_researcher (gramps/plugins/importer/importxml.py)
+    is set from ``self.db.get_total() == 0`` at __init__ time -- true
+    not only for a genuine first bootstrap but for *every* resync this
+    addon ever runs, since the "clear local mirror" step always empties
+    every primary object first. Confirmed live: gramps-web-api's own
+    export always carries this demo dataset's own baked-in researcher
+    ("Alex Roitman,,,"), not this mirror's own -- so left uncorrected,
+    this field gets silently overwritten with that on every single
+    resync, not just the first, potentially within seconds of any push
+    conflict.
+
+    Researcher is never pushed to, or read as ground truth from, the
+    server by this addon at all -- pure local convenience data, the
+    same category _snapshot_birth_death_indices()'s own bootstrap case
+    has no server ground truth for either -- so this mirror's own prior
+    value, not whatever a particular export happens to carry, is what's
+    worth keeping. A blank snapshot (a genuine first bootstrap, nothing
+    ever configured for this tree) is left alone, adopting whatever the
+    reimport set instead -- same asymmetry
+    _restore_birth_death_indices()/_apply_true_birth_death_indices()
+    already have between a resync and a bootstrap.
+
+    Returns True if a restore was needed and performed, False if the
+    snapshot was blank or already matches what the reimport set.
+    """
+    blank = Researcher().serialize()
+    if snapshot.serialize() == blank:
+        return False
+    current = getattr(db, "owner", None)
+    if current is not None and current.serialize() == snapshot.serialize():
+        return False
+    db.set_researcher(snapshot)
+    return True
+
+
+def _snapshot_name_formats(db):
+    """A shallow copy of this mirror's current custom name-format
+    entries, taken right before a resync's own "clear local mirror"
+    step -- see _deduplicate_name_formats()'s own docstring for why
+    this needs preserving. Each entry is a plain (number, name,
+    fmt_str, active) tuple (immutable), so a shallow list copy is
+    enough -- no deepcopy needed here, unlike _snapshot_researcher()'s
+    live, mutable Researcher instance.
+
+    getattr(..., []) for the same WebApiDB.__new__()-bypasses-__init__()
+    reason _snapshot_researcher() guards against -- see that function's
+    own docstring.
+    """
+    return list(getattr(db, "name_formats", []))
+
+
+def _deduplicate_name_formats(db, before):
+    """Remove any name-format entry ImportXml just re-added that
+    duplicates one already present before this resync's reimport --
+    called right after the reimport, alongside this file's other
+    "correct what the reimport can't be trusted to preserve" passes.
+
+    ImportXml.parse() (gramps/plugins/importer/importxml.py) always
+    does ``self.db.name_formats += self.name_formats`` for whatever
+    <name-formats> entries the export declares, unconditionally, on
+    every single import -- not gated by whether the target database
+    was originally empty, unlike its researcher-import handling right
+    next to it (see _restore_researcher_if_locally_set()'s own
+    docstring). A colliding *number* gets remapped to a new one
+    (ImportXml.remap_name_format()) rather than treated as the same
+    entry, so a genuinely identical format -- this addon's own
+    reimported export always declares at least the one gramps-web-api
+    includes -- becomes a new, distinct entry every time. Confirmed by
+    direct reproduction: three resyncs of the same data left three
+    separate copies of "SURNAME, Given (Common)" under numbers -1, -2,
+    -3. Left uncorrected, this grows without bound for as long as the
+    mirror keeps resyncing (every push conflict, plus the periodic
+    totals-check poll), silently bloating the persisted metadata and
+    the Name Editor's own format list with an ever-growing wall of
+    visually-identical entries.
+
+    Content, not number, is this mirror's own idea of "the same
+    format" for this purpose: an entry surviving this pass is one
+    whose (name, fmt_str, active) doesn't match anything already
+    present before the reimport ran, or that was already present
+    verbatim (same number too) before it. name_displayer.
+    set_name_format() is called again with the corrected list,
+    matching ImportXml's own registration call, so the global
+    name-format registry doesn't keep a duplicate registered either.
+
+    Only prevents *further* growth from this point forward -- does not
+    retroactively collapse duplicates a resync before this fix already
+    left behind, the same conservative scope _normalize_reimported_
+    text() takes for text it hasn't already visited.
+
+    Returns the number of duplicate entries removed.
+    """
+    before_content = {(name, fmt_str, active) for _, name, fmt_str, active in before}
+    kept = []
+    removed = 0
+    for entry in getattr(db, "name_formats", []):
+        _number, name, fmt_str, active = entry
+        if entry not in before and (name, fmt_str, active) in before_content:
+            removed += 1
+            continue
+        kept.append(entry)
+    if removed:
+        db.name_formats = kept
+        name_displayer.set_name_format(db.name_formats)
+    return removed
+
+
+def _normalize_strings_to_nfc(data):
+    """Return a copy of an object_to_dict()-shaped value with every
+    string leaf run through unicodedata.normalize("NFC", ...), used by
+    _normalize_reimported_text() below. NFC (precomposed) is the
+    canonical target: the form GEDCOM and most other genealogy tooling
+    already assumes, and the form this addon otherwise treats every
+    string as being in without ever checking.
+    """
+    if isinstance(data, dict):
+        return {key: _normalize_strings_to_nfc(value) for key, value in data.items()}
+    if isinstance(data, list):
+        return [_normalize_strings_to_nfc(item) for item in data]
+    if isinstance(data, str):
+        return unicodedata.normalize("NFC", data)
+    return data
+
+
+def _normalize_line_endings(data):
+    """Return a copy of an object_to_dict()-shaped value with every
+    string leaf's line endings collapsed to a bare "\\n", used by
+    _normalize_reimported_text() below alongside _normalize_strings_to_
+    nfc() -- same recursive shape, a different axis of "the form this
+    addon otherwise treats every string as being in without ever
+    checking" (see TODO.md gap 9).
+
+    Confirmed live: a Note pushed with "\\r\\n" line endings comes back
+    "\\n"-only after a real bootstrap resync. Not a Gramps or gramps-
+    web-api choice to fix on either side -- XML 1.0's own spec (section
+    2.11, "End-of-Line Handling") requires every compliant parser to
+    normalize "\\r\\n" (and a bare "\\r") in character data to "\\n"
+    before an application ever sees it, so this happens the moment such
+    text is serialized into a Gramps XML export at all, unconditionally,
+    regardless of what wrote the export or what reads it back.
+    """
+    if isinstance(data, dict):
+        return {key: _normalize_line_endings(value) for key, value in data.items()}
+    if isinstance(data, list):
+        return [_normalize_line_endings(item) for item in data]
+    if isinstance(data, str):
+        return data.replace("\r\n", "\n").replace("\r", "\n")
+    return data
+
+
+def _normalize_reimported_text(db, trans):
+    """Canonicalize every primary object's text to NFC, with "\\n"-only
+    line endings, right after a fresh reimport -- called from both
+    _full_resync_async()'s rebuild() and _bootstrap_full_resync(),
+    under the same self._pulling context those already hold, same
+    "correct what the reimport can't be trusted to preserve" shape as
+    _restore_birth_death_indices()/_apply_true_birth_death_indices()
+    above.
+
+    Uses db._iter_raw_data() (see _snapshot_all_objects()'s own
+    docstring) rather than a per-handle get_<type>_from_handle() fetch,
+    for the same reason it does: one bulk SELECT per object type
+    (O(types)), not O(handles) individual ones -- and it hands back the
+    same json_utils-shaped, "_object"-stripped-after-remove_object()
+    form data_to_object() needs, with no live-object round trip needed
+    first.
+
+    Two independent round-trip-fidelity gaps, corrected together here
+    since both are "a reimport can silently change a string field with
+    no edit involved" (TODO.md gaps 7 and 9):
+
+    - Unicode normalization form (NFC vs NFD) -- suspected, not fully
+      confirmed live -- Gramps XML export/import is not guaranteed to
+      preserve it byte-for-byte, the same class of round-trip-fidelity
+      gap birth_ref_index/death_ref_index already turned out to have
+      (see _snapshot_birth_death_indices()'s own docstring). NFC is
+      applied unconditionally regardless of what either side previously
+      held -- there is no local "before" value worth preserving instead
+      here, unlike the birth/death case, since a Gramps XML export does
+      have an actual representation for the text to fall back on.
+    - "\\r\\n"/"\\r" line endings -- confirmed live (see
+      _normalize_line_endings()'s own docstring): XML 1.0 itself
+      mandates every compliant parser collapse these to "\\n" in
+      character data, so this is unconditional and unavoidable on the
+      reimport side by construction, not merely suspected.
+
+    diff_items() -- both this addon's own (_diff_snapshots() and the
+    merge helpers below) and gramps-web-api's own old_unchanged()
+    server-side -- compares every string leaf with plain "==", which
+    treats a precomposed "ń" and a decomposed "n" + combining acute (or
+    "\\r\\n" vs "\\n") as genuinely different text even though they
+    render identically (or are byte-identical once actually displayed)
+    and the user never touched that field. Left uncorrected, that drift
+    survives every future resync (re-exporting/re-importing the same
+    bytes just reproduces the same form again), so the very next edit
+    to that object -- regardless of what it actually touches -- would
+    spuriously conflict, forever: exactly _push_payload_async()'s
+    resync-then-retry-conflicts-again give-up path.
+
+    O(every primary object) once per resync -- real cost, but the same
+    order of magnitude _snapshot_all_objects() already pays in the same
+    resync for its own before/after comparison, and only an object
+    whose text actually needs correcting gets a commit (most won't).
+    Returns the number of objects corrected, same convention as
+    _restore_birth_death_indices()/_apply_true_birth_death_indices().
+    """
+    corrected = 0
+    for key in set(CLASS_TO_KEY_MAP.values()):
+        name = KEY_TO_NAME_MAP[key]
+        for handle, data in db._iter_raw_data(key):
+            data = remove_object(data)
+            normalized = _normalize_line_endings(_normalize_strings_to_nfc(data))
+            if normalized != data:
+                getattr(db, f"commit_{name}")(data_to_object(normalized), trans)
+                corrected += 1
+    return corrected
+
+
 def _diff_snapshots(before, after):
     """Diff two {(obj_class, handle): data} snapshots (_snapshot_all_
     objects()'s own shape) into a transaction_to_json()-shaped change
@@ -1526,6 +1968,70 @@ def _diff_snapshots(before, after):
                 }
             )
     return entries
+
+
+def _walk_conflict_diff(obj_class, handle, old, new, path=""):
+    """Diagnostic aid for TODO.md's open "spurious first-push conflict"
+    gap: recursively walk two object_to_dict() shapes (the same "old"
+    payload snapshot and current-object shape old_unchanged()/
+    diff_items() compare server-side) and LOG.warning() every leaf that
+    actually differs, skipping "change" the same way diff_items() does
+    so this doesn't just repeat what's already known to be ignored.
+
+    The server's 400 only ever says "Object has changed", never which
+    field -- this exists to answer that, called right after a resync has
+    brought the local mirror to the server's true current state (see
+    _log_conflict_field_diffs()), so "old" vs the now-current object is
+    exactly the disagreement that caused the conflict.
+
+    Flags a string leaf that's only unequal before NFC normalization as
+    a likely decomposed-vs-precomposed Unicode mismatch (e.g. a
+    diacritic typed through macOS's native text input as "n" + a
+    combining accent, compared against a precomposed "ń" the server
+    holds) rather than a genuine edit -- suspected but unconfirmed; see
+    TODO.md.
+    """
+    if old == new:
+        return
+    if isinstance(old, dict) and isinstance(new, dict):
+        for key in old.keys() | new.keys():
+            if key == "change":
+                continue
+            _walk_conflict_diff(
+                obj_class, handle, old.get(key), new.get(key), f"{path}.{key}"
+            )
+        return
+    if isinstance(old, list) and isinstance(new, list):
+        for i, (item_old, item_new) in enumerate(zip(old, new)):
+            _walk_conflict_diff(
+                obj_class, handle, item_old, item_new, f"{path}[{i}]"
+            )
+        if len(old) != len(new):
+            LOG.warning(
+                "conflict-diff: %s %s%s -- list length differs (%d vs %d)",
+                obj_class, handle, path, len(old), len(new),
+            )
+        return
+    if isinstance(old, str) and isinstance(new, str):
+        nfc_equal = unicodedata.normalize("NFC", old) == unicodedata.normalize(
+            "NFC", new
+        )
+        LOG.warning(
+            "conflict-diff: %s %s%s differs: %r vs %r%s",
+            obj_class,
+            handle,
+            path,
+            old,
+            new,
+            " [NFC-EQUAL -- looks like a Unicode normalization "
+            "(NFC/NFD) mismatch, not a real edit]"
+            if nfc_equal
+            else "",
+        )
+        return
+    LOG.warning(
+        "conflict-diff: %s %s%s differs: %r vs %r", obj_class, handle, path, old, new
+    )
 
 
 #: object_to_dict() keys that never represent a real field edit: "change"
@@ -2014,6 +2520,13 @@ class WebApiDB(SQLite):
     #: flag above.
     _polling_abandoned = False
 
+    #: monotonic() timestamp of the last local self.dbapi touch -- set by
+    #: _wrap_dbapi_execute() and read by _on_poll_success() to decide
+    #: between POLL_INTERVAL_SECONDS and POLL_IDLE_INTERVAL_SECONDS. 0
+    #: (i.e. "long ago") until _initialize() wraps self.dbapi, which is
+    #: also the safe default for a tree that fails to load.
+    _last_local_activity = 0
+
     def requires_login(self):
         # Credentials come from GRAMPS_WEB_API_KEY, not a login dialog.
         return False
@@ -2035,6 +2548,49 @@ class WebApiDB(SQLite):
         # Local mirror: reuse SQLite's own _initialize for the on-disk
         # cache file, then sync from the server on load().
         super()._initialize(directory, username, password)
+        self._wrap_dbapi_execute()
+
+    def _wrap_dbapi_execute(self):
+        """Instrument self.dbapi.execute() to timestamp local DB activity
+        into self._last_local_activity, read by _on_poll_success() to
+        decide the next record-poll interval -- see
+        POLL_IDLE_THRESHOLD_SECONDS.
+
+        Every one of DBAPI's own read/write helpers (_get_raw_data(),
+        _has_handle(), commit_person(), ...) funnels through this one
+        Connection.execute() call (gramps/plugins/db/dbapi/dbapi.py),
+        which makes it the one place that catches all of them without
+        instrumenting each call site individually, or every public
+        get_*_from_handle()-style method this class inherits. Shadows
+        the bound method on this Connection *instance* only -- nothing
+        about SQLite's Connection class itself needs changing, and nothing
+        outside this addon's own self.dbapi is affected.
+
+        Skipped while self._pulling is set: that flag already marks
+        exactly the writes this addon makes on the *server's* behalf --
+        replaying incoming sync pages and reimporting a full resync (see
+        the module docstring's own note on self._pulling) -- which would
+        otherwise make an actively-shared tree with other users editing
+        it look permanently "busy" here even while this particular
+        window sits minimized and untouched, defeating the point of
+        POLL_IDLE_THRESHOLD_SECONDS entirely. Genuine local reads
+        (browsing) and writes (editing) always run with self._pulling
+        false, so they still count.
+
+        self.dbapi is only ever touched from the main thread (see the
+        module docstring's "Keeping the GUI alive" section), so this
+        needs no locking: the plain monotonic() write below can't race
+        against another one.
+        """
+        real_execute = self.dbapi.execute
+
+        def execute(*args, **kwargs):
+            if not self._pulling:
+                self._last_local_activity = monotonic()
+            return real_execute(*args, **kwargs)
+
+        self.dbapi.execute = execute
+        self._last_local_activity = monotonic()
 
     def load(self, *args, **kwargs):
         # callback is Gramps' own load-progress hook -- position 2 in
@@ -2101,6 +2657,13 @@ class WebApiDB(SQLite):
                     on_done, on_error
                 ),
                 15,
+            ),
+            (
+                "history API version",
+                lambda on_done, on_error: self._check_history_cursor_support_async(
+                    on_done, on_error
+                ),
+                18,
             ),
         ):
             result = self._run_async_to_completion(start_chain)
@@ -2217,7 +2780,7 @@ class WebApiDB(SQLite):
         Nothing else ties a local mirror to one particular server account:
         there is no per-tree settings.ini (see the module docstring), and
         _sync_from_server() only ever asks for changes *after* its stored
-        sync_last_time -- it has no way to notice the mirror belongs to a
+        sync_last_id -- it has no way to notice the mirror belongs to a
         different account entirely and would just quietly go on mixing old
         and new data. Requiring (and reading back) the account identity in
         the tree's own display name catches that at load time instead, and
@@ -2406,6 +2969,75 @@ class WebApiDB(SQLite):
                         "actual": reported,
                         "required": ".".join(
                             str(part) for part in MIN_SERVER_GRAMPS_VERSION
+                        ),
+                    },
+                    self._directory,
+                )
+            )
+
+        def on_fetch_error(exc):
+            if isinstance(exc, _CONNECTION_ERRORS):
+                on_error(
+                    DbConnectionError(_describe_connection_error(exc), self._directory)
+                )
+            else:
+                on_error(exc)
+
+        self.io_runner.run(
+            fetch, self._guarded(on_fetched), self._guarded(on_fetch_error)
+        )
+
+    def _check_history_cursor_support_async(self, on_done, on_error):
+        """Fail at load() if the server's gramps-web-api is too old to
+        understand the after_id/before_id transaction-id cursor
+        get_transaction_history() now sends on every history request --
+        see that method's own docstring on why it switched off the
+        older, float timestamp-based ``after`` cursor.
+
+        Unlike a stale sync cursor, which _migrate_sync_cursor_to_id()
+        can upgrade in place, there is no graceful degradation available
+        for the *server* being too old: gramps-web-api's own query-arg
+        parser rejects any *unrecognized* query argument outright
+        (RAISE, not silently ignore -- see its api/util.py Parser), so
+        an older server 422s every single history request the moment it
+        sees after_id at all -- there would be nothing left to poll
+        with. Checked here, up front, the same way
+        _check_server_version_async() already gates an incompatible
+        Gramps library version, rather than discovered later as a
+        mysterious sync failure.
+
+        Deliberately lenient about *not knowing*, like
+        _check_server_version_async(): a server that doesn't report an
+        API version, or reports one this can't parse, is allowed
+        through rather than blocked on a guess.
+
+        Runs on io_runner for the same reason _check_identity_async()
+        does.
+        """
+
+        def fetch():
+            return self.web_client.get_api_version()
+
+        def on_fetched(reported):
+            version = parse_version(reported)
+            if version is None or version >= HISTORY_ID_CURSOR_MIN_API_VERSION:
+                on_done(True)
+                return
+            on_error(
+                DbConnectionError(
+                    _(
+                        "This server runs Gramps Web API %(actual)s, but "
+                        "this addon needs %(required)s or newer: older "
+                        "versions do not understand the exact "
+                        "transaction-id cursor this addon uses to poll "
+                        "for changes, and reject every such request "
+                        "outright. Upgrade the Gramps Web API server (or "
+                        "ask its administrator to)."
+                    )
+                    % {
+                        "actual": reported,
+                        "required": ".".join(
+                            str(part) for part in HISTORY_ID_CURSOR_MIN_API_VERSION
                         ),
                     },
                     self._directory,
@@ -2618,14 +3250,22 @@ class WebApiDB(SQLite):
         return GLib.SOURCE_CONTINUE
 
     def _on_poll_success(self, applied):
-        """_poll_tick()'s on_done -- see that method."""
+        """_poll_tick()'s on_done -- see that method. Also where the next
+        interval is chosen between POLL_INTERVAL_SECONDS and, once
+        POLL_IDLE_THRESHOLD_SECONDS of local inactivity has passed,
+        POLL_IDLE_INTERVAL_SECONDS -- see that constant's own docstring.
+        """
         if self._poll_failures:
             LOG.info(
                 "Sync from server succeeded again after %d failed attempt(s).",
                 self._poll_failures,
             )
             self._poll_failures = 0
-        self._reschedule_poll(POLL_INTERVAL_SECONDS)
+        idle_for = monotonic() - self._last_local_activity
+        if idle_for >= POLL_IDLE_THRESHOLD_SECONDS:
+            self._reschedule_poll(POLL_IDLE_INTERVAL_SECONDS)
+        else:
+            self._reschedule_poll(POLL_INTERVAL_SECONDS)
 
     def _on_poll_error(self, exc):
         """_poll_tick()'s on_error -- see that method."""
@@ -2818,6 +3458,48 @@ class WebApiDB(SQLite):
             )
         self._media_poll_failures += 1
 
+    def _commit_base(self, obj, obj_key, trans, change_time):
+        """Normalize every string field on ``obj`` to NFC, with "\\n"-
+        only line endings, before DBAPI's own _commit_base() ever
+        serializes it to storage -- the single choke point every
+        commit_<type>() method (DbGeneric) funnels through, for every
+        write this local mirror ever makes: an ordinary local edit, and
+        _apply_change()'s replay of an incrementally pulled server
+        change alike. Confirmed ImportXml (the reimport
+        _full_resync_async()/_bootstrap_full_resync() run) commits the
+        same way -- self.db.commit_person()/commit_family()/... -- not
+        some bulk/raw bypass, so nothing writes a primary object without
+        passing through here.
+
+        Deliberately skipped when trans.batch: a reimport's own DbTxn is
+        batch=True, and DBAPI._commit_base() itself already skips its
+        usual per-object trans.add() bookkeeping in that case -- paying
+        a fresh object_to_dict()/data_to_object() round trip here
+        regardless would add real cost to every one of a resync's
+        potentially tens of thousands of objects, whether or not that
+        particular object needs correcting. _normalize_reimported_text()
+        (called once, in bulk, via _iter_raw_data(), right after the
+        reimport itself -- see _full_resync_async()'s rebuild()) is the
+        batch-mode equivalent of this, and re-commits only the objects
+        that actually need it.
+
+        See _normalize_strings_to_nfc()/_normalize_line_endings() for
+        why, and TODO.md gaps 7 and 9 for the two round-trip-fidelity
+        bugs this and _normalize_reimported_text() exist to close --
+        two directions of the same problem each: this one stops the
+        addon itself (or whatever handed it the text -- GTK, an input
+        method, pasted Windows-authored text, anything upstream of
+        Gramps) from ever being the source of a mismatch;
+        _normalize_reimported_text() cleans one up after the fact if it
+        arrived via a reimport instead.
+        """
+        if not trans.batch:
+            data = object_to_dict(obj)
+            normalized = _normalize_line_endings(_normalize_strings_to_nfc(data))
+            if normalized != data:
+                obj = data_to_object(normalized)
+        return super()._commit_base(obj, obj_key, trans, change_time)
+
     def transaction_begin(self, transaction):
         """Hook DbTxn.__enter__ (which calls this immediately, before the
         transaction's body runs) to snapshot every primary object's full
@@ -2961,6 +3643,24 @@ class WebApiDB(SQLite):
         (_queue_pending_push()) rather than raced against whatever is in
         flight -- deferred, not dropped: _finish_async_op() flushes the
         queue once the in-flight chain completes.
+
+        self._recording_note (set only around _record_conflict_notes()'s
+        own commit -- see that method) is the one exception: it never
+        queues, even when self._syncing is held. That docstring claims
+        attaching a note is "safe even if that push itself hits a
+        conflict" purely because merge() unions list-valued changes --
+        but that safety only actually applies to a push that goes out
+        through _push_payload_async()'s own resync-then-merge conflict
+        handling, not to one sitting in the pending-push queue, whose own
+        conflict handling has always been (and, after a reentrancy hazard
+        found trying to change it -- see _flush_one_pending_push()'s
+        on_push_error -- still is) an unconditional drop. Confirmed live
+        (live_tests/test_live_repeated_conflict_note_trail.py) that a
+        note commit landing in the queue this way lost the note with
+        nothing to show for it, exactly contradicting that docstring.
+        _send_note_payload_best_effort() sends it immediately instead --
+        a single attempt, no resync, no retry, no queueing -- so it never
+        reaches that path in the first place.
         """
         if not payload:
             if is_retry and self._retry_chain_done is not None:
@@ -2968,6 +3668,11 @@ class WebApiDB(SQLite):
             return
         if not is_retry:
             if self._syncing:
+                if self._recording_note:
+                    self._send_note_payload_best_effort(
+                        payload, undo=undo, message=message
+                    )
+                    return
                 self._queue_pending_push(payload, undo=undo, message=message)
                 return
             self._syncing = True
@@ -2979,6 +3684,56 @@ class WebApiDB(SQLite):
         self._push_payload_async(
             payload, on_done, on_error, undo=undo, is_retry=is_retry, message=message
         )
+
+    def _send_note_payload_best_effort(self, payload, undo=False, message=None):
+        """Push a message-note commit right now, bypassing both the
+        self._syncing single-flight gate and the pending-push queue --
+        see _start_push()'s own docstring for why self._recording_note
+        routes here instead of queuing like any other payload would.
+
+        Deliberately does *not* go through _push_payload_async(): that
+        method's conflict handling triggers a full resync
+        (_resync_after_conflict_async() -> _full_resync_async()), which
+        touches self.dbapi -- exactly what self._syncing exists to keep
+        only one chain doing at a time (see _start_push()'s docstring).
+        Firing that here, concurrently with whatever outer chain is still
+        running (and still holds self._syncing), would race it. A single,
+        best-effort attempt with no resync/retry/requeue on failure is
+        the safe trade: this is pure network I/O on io_runner, no
+        self.dbapi touch, so nothing here can race the outer chain either
+        way -- and if this one attempt fails for any reason, including a
+        genuine conflict, it's logged and left at that, same as this
+        addon already accepts for a plain connectivity failure that
+        doesn't get queued. No further note-about-this-note is recorded
+        either: self._recording_note is still True for the whole
+        duration (see _record_conflict_notes()), so a nested
+        transaction_commit() from this call's own failure handling would
+        itself just recurse into this same method -- avoided entirely by
+        not attempting one.
+        """
+
+        def do_push():
+            # io_runner: pure network, no self.dbapi touch -- see
+            # _push_payload_async()'s do_push() for why
+            # _use_background_push() belongs here too.
+            background = self._use_background_push(payload)
+            self.web_client.push_transaction(
+                payload, undo=undo, background=background, message=message
+            )
+
+        def on_sent(_result):
+            pass
+
+        def on_send_error(exc):
+            LOG.warning(
+                "Could not send a message-note commit immediately (%s); "
+                "not queued or retried, to avoid racing the chain it's "
+                "reporting on. The note exists locally but the server "
+                "won't see it this session.",
+                exc,
+            )
+
+        self.io_runner.run(do_push, self._guarded(on_sent), self._guarded(on_send_error))
 
     def _finish_async_op(self, on_done):
         """Wrap a top-level async chain's true completion handler so
@@ -3154,6 +3909,40 @@ class WebApiDB(SQLite):
             do_push, self._guarded(on_pushed), self._guarded(on_push_error)
         )
 
+    def _log_conflict_field_diffs(self, payload):
+        """Diagnostic aid, called right after a resync has brought the
+        local mirror to the server's true current state (see
+        _after_conflict_resync(), which calls this before deciding
+        retry-vs-give-up either way): for each conflicting entry, diff
+        its pre-conflict "old" snapshot against the now-current local
+        copy of that same object and LOG.warning() what actually
+        differs, via _walk_conflict_diff().
+
+        Answers a question the server's own 400 never does -- which
+        field disagreed -- for TODO.md's open "spurious first-push
+        conflict on a freshly-resynced mirror, no other editor involved"
+        gap. A delete entry or one whose "old" is already None (a fresh
+        add) has nothing to diff against; skipped, same as
+        _record_undelivered_push_notes() skips a delete for the same
+        reason.
+        """
+        for entry in payload:
+            if entry["type"] == "delete" or entry.get("old") is None:
+                continue
+            key = CLASS_TO_KEY_MAP.get(entry["_class"])
+            if key is None:
+                continue
+            name = KEY_TO_NAME_MAP[key]
+            handle = entry["handle"]
+            if not getattr(self, f"has_{name}_handle")(handle):
+                continue
+            current = getattr(self, f"get_{name}_from_handle")(handle)
+            current_dict = object_to_dict(current)
+            if diff_items(entry["_class"], entry["old"], current_dict):
+                _walk_conflict_diff(
+                    entry["_class"], handle, entry["old"], current_dict
+                )
+
     def _after_conflict_resync(
         self, payload, undo, is_retry, on_done, on_error, message=None
     ):
@@ -3177,27 +3966,79 @@ class WebApiDB(SQLite):
         retry's local commit as the finish line -- see _start_push()'s
         docstring for the bug this specifically fixes.
         """
-        if undo or is_retry:
+        self._log_conflict_field_diffs(payload)
+
+        def give_up():
             LOG.warning(
                 "Giving up on %d local change(s) after a repeated or "
                 "undo/redo conflict; the local mirror was not resent to "
                 "the server.",
                 len(payload),
             )
+            # Same "never let a discarded edit vanish without a trace"
+            # commitment as every other give-up point in this file (a
+            # fresh push's non-retryable rejection, a queued push that
+            # conflicts or is non-retryable on replay, a queue eviction --
+            # see _record_undelivered_push_notes()'s own docstring). This
+            # one was the sole exception: a retry (or undo/redo) that
+            # conflicts *again* dropped the payload with nothing but this
+            # log line -- confirmed live (live_tests/
+            # test_live_repeated_conflict_note_trail.py) to leave zero
+            # trace on the server-side object at all, not even a Note.
+            # _is_message_note_push() still guards this the same way it
+            # guards every other call site, so a note-commit that itself
+            # loses this same race doesn't recurse.
+            if not _is_message_note_push(message):
+                self._record_undelivered_push_notes(
+                    payload,
+                    "it conflicted with the server's current data a second "
+                    "time and could not be reconciled automatically",
+                )
             on_done(None)
+
+        if undo or is_retry:
+            # undo/redo: retrying against data that changed underneath it
+            # is a murkier case (are we replaying the reversal, or the
+            # original edit?) than retrying a plain commit -- left as
+            # resync-and-give-up unconditionally, same as before this
+            # feature existed; see the module docstring.
+            #
+            # is_retry: the retry's own nested push conflicted *again*.
+            # A "retry harder for a provably safe, collision-free edit"
+            # policy was attempted here (see git history) and reverted:
+            # repeatedly reapplying the *same* fixed payload against a
+            # local mirror that a previous attempt already merged into is
+            # not equivalent to a fresh retry from the original intent,
+            # and produced real, incorrect "genuine collision" reports on
+            # the second attempt for a purely list-additive edit (an
+            # already-merged attribute re-diffed against the same
+            # original "new" was misread as two different, conflicting
+            # items) -- confirmed while building the regression tests for
+            # it, not just a hypothetical concern. Giving up after one
+            # retry, unconditionally, is the safe, correct behavior until
+            # a real fix computes a fresh "new" for each additional
+            # attempt instead of resubmitting a stale one.
+            give_up()
             return
 
-        # This call is itself already known-valid (reached only via a
-        # self._guarded() callback further up the chain), but scheduling
-        # run_retry() below is a fresh hop through the main loop
-        # (self.runner.run() -> another GLib.idle_add) -- close() could
-        # still run in that narrow gap before run_retry() actually
-        # executes. Re-checked inside run_retry() itself, same reasoning
-        # as _full_resync_async()'s rebuild() -- see that method's
-        # comment for the fuller explanation of why a fresh self._guarded()
-        # wrapping alone can't catch this (it only stops the *outcome*
-        # from being delivered, not the DbTxn from running in the first
-        # place).
+        self._schedule_retry(payload, undo, on_done, on_error, message=message)
+
+    def _schedule_retry(self, payload, undo, on_done, on_error, message=None):
+        """_after_conflict_resync()'s "actually run the retry attempt"
+        step.
+
+        This call is itself already known-valid (reached only via a
+        self._guarded() callback further up the chain), but scheduling
+        run_retry() below is a fresh hop through the main loop
+        (self.runner.run() -> another GLib.idle_add) -- close() could
+        still run in that narrow gap before run_retry() actually
+        executes. Re-checked inside run_retry() itself, same reasoning
+        as _full_resync_async()'s rebuild() -- see that method's comment
+        for the fuller explanation of why a fresh self._guarded()
+        wrapping alone can't catch this (it only stops the *outcome*
+        from being delivered, not the DbTxn from running in the first
+        place).
+        """
         run_id = self._run_id
 
         def on_retry_db_error(exc):
@@ -3296,7 +4137,7 @@ class WebApiDB(SQLite):
         """Persist a payload whose push failed for a connectivity reason,
         so _flush_pending_pushes() can retry it later -- including after a
         close()/reopen, since this goes through _set_metadata() (the same
-        mechanism sync_last_time already uses) rather than an in-memory
+        mechanism sync_last_id already uses) rather than an in-memory
         list. See the module docstring.
 
         ``message`` (see push_transaction()'s docstring) is persisted
@@ -3425,6 +4266,30 @@ class WebApiDB(SQLite):
 
         def on_push_error(exc):
             if isinstance(exc, WebApiPushConflict):
+                # A resync-then-merge treatment (the same one a fresh
+                # conflict gets, via _after_conflict_resync()) was tried
+                # here and reverted: it's genuinely unsafe as a general
+                # queue-flush policy. The reconciliation it triggers can
+                # itself commit further local objects (tag creation,
+                # note attachment) whose *own* pushes can land back in
+                # this exact queue while _flush_one_pending_push()'s own
+                # recursion is still unwinding over the same closure-
+                # captured ``pending`` list -- confirmed to actually
+                # happen (a live rerun produced a real "pop from empty
+                # list" crash from the reentrant pop, and a runaway
+                # cascade of "give up" notes about the tag-creation
+                # sub-commits' own failed pushes, each one _is_message_
+                # note_push() doesn't recognize as a note-commit itself).
+                # Dropping is the honest outcome for the general case:
+                # a queued payload's "old" snapshot is stale by
+                # definition, so a merge here can't reliably tell a
+                # genuine collision apart from an uncontested one either.
+                # See _start_push()'s own comment for the *narrower* fix
+                # that actually closes the gap this was trying to solve
+                # (a note-commit specifically getting queued and lost)
+                # without this general reentrancy hazard: a note-record
+                # push no longer queues behind self._syncing in the first
+                # place, so it essentially never reaches this branch.
                 LOG.warning(
                     "A queued push of %d change(s) conflicts with the "
                     "server's current data and cannot be replayed safely; "
@@ -3499,6 +4364,16 @@ class WebApiDB(SQLite):
         this as one runner (main-thread) step, since it's 100% local DB
         work with no network of its own.
 
+        Also logs a diagnostic warning, separately from
+        _conflict_summary_lines()'s notes, whenever the just-resynced
+        server copy turns out to be byte-for-byte identical (by
+        diff_items()'s own rules) to the "old" the original push was
+        rejected against -- a signal the rejection may have been
+        transient rather than a real, lasting server-side edit. See the
+        comment at that check for why silence from
+        _conflict_summary_lines() alone can't be read as that signal
+        (an uncontested list-additive edit is silent too).
+
         Any genuine conflict _merge_or_overwrite() had to resolve
         automatically -- a discarded scalar field, a demoted primary
         name, an actively-resolved field like Citation confidence, or a
@@ -3530,6 +4405,35 @@ class WebApiDB(SQLite):
                         if has_handle(handle):
                             current = getattr(self, f"get_{name}_from_handle")(handle)
                             old_data = entry.get("old")
+                            if old_data is not None and not diff_items(
+                                entry["_class"], old_data, object_to_dict(current)
+                            ):
+                                # The server rejected the original push as
+                                # "Object has changed", yet the mirror this
+                                # very resync just downloaded is identical
+                                # (by the server's own diff_items() rules --
+                                # see push_transaction()'s docstring on why
+                                # they must agree) to what we sent as "old".
+                                # A real edit merges here with zero lines
+                                # too (list-additive changes never conflict
+                                # -- see _conflict_summary_lines()'s own
+                                # docstring), so that silence alone doesn't
+                                # distinguish "nothing to report" from "this
+                                # rejection looks spurious in hindsight" --
+                                # this does, by checking the one comparison
+                                # that actually matters directly.
+                                LOG.warning(
+                                    "Conflict retry for %s %s: the server "
+                                    "rejected the original push as changed, "
+                                    "but the freshly-resynced server copy "
+                                    "is identical to what was sent as "
+                                    '"old" -- the rejection may have been '
+                                    "transient (a change already reverted "
+                                    "or reapplied before this resync) "
+                                    "rather than a lasting server-side edit.",
+                                    entry["_class"],
+                                    handle,
+                                )
                             pruned = []
                             merged = _merge_or_overwrite(
                                 current, obj, self, old_data=old_data, pruned=pruned
@@ -3595,8 +4499,27 @@ class WebApiDB(SQLite):
         conflict, since attaching a note is a list-valued change
         merge() already unions correctly (unlike the scalar edit this
         note exists to record in the first place).
+
+        Also forces self._retrying False for the duration, saving and
+        restoring whatever it was: with an inline (synchronous) runner --
+        every unit test in this file, and in effect on a very fast
+        connection -- _retry_after_conflict()'s own DbTxn.__exit__() ->
+        transaction_commit() -> ... -> a give-up that calls here (see
+        _after_conflict_resync()) all happen nested *inside* that same
+        DbTxn's __exit__ call, before its own `finally: self._retrying =
+        False` ever runs. Left alone, transaction_commit() reads
+        self._retrying (still True from the *outer* retry) for this
+        method's own tag/note commits and treats them as
+        is_retry=True -- stealing the outer retry chain's own
+        self._retry_chain_done/_retry_chain_error instead of completing
+        independently, and skipping the queue-vs-immediate routing
+        _start_push() would otherwise apply. This bookkeeping is not
+        itself a conflict retry no matter what call stack it happens to
+        run on top of.
         """
         self._recording_note = True
+        was_retrying = self._retrying
+        self._retrying = False
         try:
             message_tag = self._get_or_create_tag(MESSAGE_TAG_NAME)
             todo_tag = self._get_or_create_tag(MESSAGE_TODO_OPEN_TAG_NAME)
@@ -3624,6 +4547,7 @@ class WebApiDB(SQLite):
                     getattr(self, f"commit_{name}")(obj, trans)
         finally:
             self._recording_note = False
+            self._retrying = was_retrying
 
     def _record_undelivered_push_notes(self, payload, reason):
         """Attach a gramps-connect-style "message" Note to every add/
@@ -3668,6 +4592,82 @@ class WebApiDB(SQLite):
             )
         if conflicts:
             self._record_conflict_notes(conflicts)
+
+    def _reimport_preserving_server_gramps_ids(self, tmp_path, import_user):
+        """importData(self, tmp_path, import_user), with this mirror's
+        own ID-prefix formats neutralized for the duration of the call
+        so every gramps_id in the reimported server export survives
+        byte-for-byte, instead of being silently rewritten to match
+        whatever ID Formats this *local* Gramps installation happens to
+        have configured.
+
+        gramps.plugins.importer.importxml.ImportXml.legalize_id() runs
+        every imported gramps_id through db.id2user_format() (built by
+        DbGeneric.set_person_id_prefix() et al, gen/db/generic.py) to
+        match the target database's own prefix -- desirable when
+        importing someone else's GEDCOM/XML into an established tree,
+        but wrong here: this reimport's only purpose is to reproduce the
+        server's data exactly. ID Formats (Edit > Preferences > ID
+        Formats) is a global, per-*user* Gramps preference, not
+        per-tree -- gen/dbstate.py's change_database_noclose() applies
+        whatever it currently holds to any tree opened, once, right
+        before load() runs. A local preference wider than the server's
+        own -- reported live: a user's local "I%08d" default against a
+        server tree using plain "I%04d" -- makes every bootstrap and
+        every resync silently widen every person's (and every other
+        primary type's) gramps_id, permanently, for the rest of the
+        session. Since gramps_id is part of the payload
+        transaction_to_json() sends on every push, that mismatch alone
+        makes the server's own byte-for-byte "Object has changed" check
+        reject literally the next edit to any object -- no real
+        conflict, and no Unicode normalization drift (see
+        _normalize_reimported_text()), required. See
+        addons-source#1030's "gramps_id differs: 'I1106' vs
+        'I00001106'" report for the field-diff that surfaced this.
+
+        Fixed by setting every *_prefix to a bare "<letter>%d" --
+        DbGeneric.__id2user_format()'s regex only recognizes a zero- or
+        space-padded width flag ("%04d", "% 4d", ...), so a bare "%d"
+        falls through to its identity closure_func() and every imported
+        gramps_id passes through unchanged. Restored in the finally so
+        an object created locally afterward (e.g. this file's own
+        "message-note" conflict record, or anything added while
+        offline) still gets an ID in this installation's own configured
+        format. getattr(..., default) guards each save/restore because
+        unit tests construct a WebApiDB directly (make_database() +
+        load()) without going through DbState, so these attributes may
+        not exist yet -- real usage always has them set by
+        change_database_noclose() before load() ever runs.
+        """
+        saved = {
+            attr: getattr(self, attr, default)
+            for attr, default in (
+                ("person_prefix", "I%04d"),
+                ("media_prefix", "O%04d"),
+                ("family_prefix", "F%04d"),
+                ("source_prefix", "S%04d"),
+                ("citation_prefix", "C%04d"),
+                ("place_prefix", "P%04d"),
+                ("event_prefix", "E%04d"),
+                ("repository_prefix", "R%04d"),
+                ("note_prefix", "N%04d"),
+            )
+        }
+        self.set_prefixes("I%d", "O%d", "F%d", "S%d", "C%d", "P%d", "E%d", "R%d", "N%d")
+        try:
+            importData(self, tmp_path, import_user)
+        finally:
+            self.set_prefixes(
+                saved["person_prefix"],
+                saved["media_prefix"],
+                saved["family_prefix"],
+                saved["source_prefix"],
+                saved["citation_prefix"],
+                saved["place_prefix"],
+                saved["event_prefix"],
+                saved["repository_prefix"],
+                saved["note_prefix"],
+            )
 
     def _resync_after_conflict_async(self, on_done, on_error):
         """Rebuild the local mirror from a fresh server export
@@ -3762,29 +4762,29 @@ class WebApiDB(SQLite):
         function's docstring) -- and a final 100 once everything,
         including request_rebuild(), has finished.
 
-        Also (re)sets sync_last_time to a timestamp taken right before
-        the export download starts, so the next incremental sync asks
-        the history feed for changes after that point instead of
+        Also (re)sets sync_last_id to the server's own newest transaction
+        id as of right before the export download starts (see
+        _fetch_newest_transaction_id()), so the next incremental sync
+        asks the history feed for changes after that point instead of
         wherever the walk that triggered this rebuild happened to leave
         the cursor -- for the totals-shortfall case, that walk can be a
-        single empty page, which leaves sync_last_time at its untouched
+        single empty page, which leaves sync_last_id at its untouched
         starting value (0 for a brand new mirror) rather than anywhere
-        near "now". Left uncorrected, every later poll asks for history
-        "after 0" forever on a server whose history can't describe its
-        own data anyway, so it's a harmless no-op -- but a *push
-        conflict*'s own recovery (resync then retry) uses that exact
-        same stuck cursor, so the resync it does can never actually pick
-        up what changed and the retry is doomed to repeat the same
-        conflict and give up. Taken before the download rather than
-        after: a transaction the server commits while the export is
-        being generated or transferred is safer to see again on the
-        next poll (re-applying an already-reflected change is a no-op)
-        than to have it fall silently before the cursor and only be
-        discovered next time a shortfall check runs.
+        near "current". Left uncorrected, every later poll asks for
+        history "after id 0" forever on a server whose history can't
+        describe its own data anyway, so it's a harmless no-op -- but a
+        *push conflict*'s own recovery (resync then retry) uses that
+        exact same stuck cursor, so the resync it does can never
+        actually pick up what changed and the retry is doomed to repeat
+        the same conflict and give up. Fetched before the download
+        rather than after: a transaction the server commits while the
+        export is being generated or transferred is safer to see again
+        on the next poll (re-applying an already-reflected change is a
+        no-op) than to have it fall silently before the cursor and only
+        be discovered next time a shortfall check runs.
         """
         if progress_callback is not None:
             progress_callback(0)
-        sync_cutoff = time()
         started = monotonic()
         # Captured once, up front, and reused for every hop below --
         # deliberately not re-wrapped via self._guarded() partway through
@@ -3798,7 +4798,10 @@ class WebApiDB(SQLite):
             # io_runner: network + disk only -- the single longest
             # transfer this addon makes. No on_chunk to pump for anymore
             # (a worker thread has nothing to hand back to); one plain
-            # read is fine.
+            # read is fine. The newest-transaction-id lookup goes first,
+            # per this method's own docstring on why "before the
+            # download" matters.
+            sync_cursor = self._fetch_newest_transaction_id()
             data = self.web_client.download_export()
             LOG.debug(
                 "resync: downloaded a %.1f MB export in %.2fs",
@@ -3807,10 +4810,10 @@ class WebApiDB(SQLite):
             )
             with NamedTemporaryFile(suffix=".gramps", delete=False) as tmp_file:
                 tmp_file.write(data)
-                return tmp_file.name
+                return tmp_file.name, sync_cursor
 
-        def rebuild(tmp_path):
-            # runner: clear + reimport + rebuild-signal + sync_last_time,
+        def rebuild(tmp_path, sync_cursor):
+            # runner: clear + reimport + rebuild-signal + sync_last_id,
             # all in one main-thread callback body -- see this method's
             # own docstring on why that's the point, not incidental.
             if self._run_id != run_id:
@@ -3827,6 +4830,9 @@ class WebApiDB(SQLite):
             try:
                 before = self._snapshot_all_objects()
                 birth_death_snapshot = _snapshot_birth_death_indices(self)
+                tag_snapshot = _snapshot_tag_handles_by_name(self)
+                researcher_snapshot = _snapshot_researcher(self)
+                name_formats_snapshot = _snapshot_name_formats(self)
                 cleared = 0
                 with DbTxn(
                     _("Clear local mirror before full resync"), self, batch=True
@@ -3845,12 +4851,25 @@ class WebApiDB(SQLite):
                     if progress_callback is not None
                     else User()
                 )
-                importData(self, tmp_path, import_user)
+                self._reimport_preserving_server_gramps_ids(tmp_path, import_user)
                 LOG.debug(
                     "resync: reimport left %d object(s) (%.2fs)",
                     self.get_total(),
                     monotonic() - imported_at,
                 )
+                with DbTxn(
+                    _("Normalize Unicode text form lost on reimport"),
+                    self,
+                    batch=True,
+                ) as trans:
+                    normalized = _normalize_reimported_text(self, trans)
+                if normalized:
+                    LOG.debug(
+                        "resync: normalized Unicode text form on %d "
+                        "object(s) Gramps XML re-import doesn't preserve "
+                        "consistently",
+                        normalized,
+                    )
                 if birth_death_snapshot:
                     with DbTxn(
                         _("Restore birth/death event references lost on reimport"),
@@ -3867,15 +4886,43 @@ class WebApiDB(SQLite):
                             "can't preserve",
                             restored,
                         )
+                if tag_snapshot:
+                    with DbTxn(
+                        _("Restabilize tag handles churned by reimport"),
+                        self,
+                        batch=True,
+                    ) as trans:
+                        restabilized = _restabilize_tag_handles(
+                            self, tag_snapshot, trans
+                        )
+                    if restabilized:
+                        LOG.debug(
+                            "resync: restabilized %d tag handle(s) gramps-web-"
+                            "api's own export doesn't keep stable across "
+                            "separate exports",
+                            restabilized,
+                        )
+                if _restore_researcher_if_locally_set(self, researcher_snapshot):
+                    LOG.debug(
+                        "resync: restored this mirror's own Researcher info "
+                        "ImportXml overwrote with the export's own"
+                    )
+                deduped = _deduplicate_name_formats(self, name_formats_snapshot)
+                if deduped:
+                    LOG.debug(
+                        "resync: removed %d duplicate name-format entry/"
+                        "entries ImportXml re-added",
+                        deduped,
+                    )
                 self._describe_resync_to_views(before)
             finally:
                 self._pulling = False
                 os.remove(tmp_path)
-            self._set_metadata("sync_last_time", sync_cutoff)
+            self._set_metadata("sync_last_id", sync_cursor)
             if progress_callback is not None:
                 progress_callback(100)
 
-        def on_downloaded(tmp_path):
+        def on_downloaded(result):
             # Deliberately NOT wrapped in self._guarded(): tmp_path is a
             # real resource (a downloaded temp file) that needs cleaning
             # up even if the tree closed while the download was in
@@ -3889,7 +4936,10 @@ class WebApiDB(SQLite):
             # from inside this always-firing callback would capture
             # self._run_id as it is *now* (already stale, in the case
             # this comment is about), defeating the check entirely.
-            self.runner.run(lambda: rebuild(tmp_path), guarded_done, guarded_error)
+            tmp_path, sync_cursor = result
+            self.runner.run(
+                lambda: rebuild(tmp_path, sync_cursor), guarded_done, guarded_error
+            )
 
         self.io_runner.run(download, on_downloaded, guarded_error)
 
@@ -3948,7 +4998,7 @@ class WebApiDB(SQLite):
         Body is otherwise a direct copy of _full_resync_async()'s
         rebuild() (see that method for the fuller explanation of each
         step): download, clear every local primary object, reimport,
-        signal a rebuild, and advance sync_last_time.
+        signal a rebuild, and advance sync_last_id.
 
         The download itself IS still run on io_runner and awaited via
         _run_async_to_completion(), unlike everything after it -- unlike
@@ -3977,11 +5027,21 @@ class WebApiDB(SQLite):
         DOWNLOAD_END_PCT = 30
         REIMPORT_START_PCT = 30
 
-        sync_cutoff = time()
         started = monotonic()
 
         def download():
-            return self.web_client.download_export()
+            # The newest-transaction-id lookup goes first, per
+            # _full_resync_async()'s own docstring on why "before the
+            # download" matters for this cursor.
+            sync_cursor = self._fetch_newest_transaction_id()
+            data = self.web_client.download_export()
+            # Bootstrap has no prior local mirror to carry a correct
+            # birth_ref_index/death_ref_index forward from (see
+            # _apply_true_birth_death_indices()'s docstring) -- fetch the
+            # server's ground truth instead, on this same io_runner
+            # network call alongside the export itself.
+            true_birth_death_indices = self.web_client.get_person_birth_death_indices()
+            return data, sync_cursor, true_birth_death_indices
 
         # Ticks once a second, capped at DOWNLOAD_END_PCT, for as long as
         # the download is in flight -- fires because
@@ -4002,7 +5062,7 @@ class WebApiDB(SQLite):
             pulse_source_id = GLib.timeout_add_seconds(1, pulse)
 
         try:
-            data = self._run_async_to_completion(
+            result = self._run_async_to_completion(
                 lambda on_done, on_error: self.io_runner.run(
                     download, self._guarded(on_done), self._guarded(on_error)
                 )
@@ -4010,7 +5070,7 @@ class WebApiDB(SQLite):
         finally:
             if pulse_source_id is not None:
                 GLib.source_remove(pulse_source_id)
-        if data is None:
+        if result is None:
             # Tree closed while the download was in flight -- see
             # _run_async_to_completion()'s own docstring. Not expected in
             # practice for load()'s bootstrap case (see this method's own
@@ -4018,6 +5078,7 @@ class WebApiDB(SQLite):
             # this file does rather than assumed away.
             LOG.debug("bootstrap resync: tree closed during download; aborting")
             return
+        data, sync_cursor, true_birth_death_indices = result
         LOG.debug(
             "bootstrap resync: downloaded a %.1f MB export in %.2fs",
             len(data) / (1024 * 1024),
@@ -4029,7 +5090,9 @@ class WebApiDB(SQLite):
         self._pulling = True
         try:
             before = self._snapshot_all_objects()
-            birth_death_snapshot = _snapshot_birth_death_indices(self)
+            tag_snapshot = _snapshot_tag_handles_by_name(self)
+            researcher_snapshot = _snapshot_researcher(self)
+            name_formats_snapshot = _snapshot_name_formats(self)
             cleared = 0
             with DbTxn(
                 _("Clear local mirror before full resync"), self, batch=True
@@ -4056,33 +5119,74 @@ class WebApiDB(SQLite):
                 import_user = _import_progress_user(rescaled_progress)
             else:
                 import_user = User()
-            importData(self, tmp_path, import_user)
+            self._reimport_preserving_server_gramps_ids(tmp_path, import_user)
             LOG.debug(
                 "bootstrap resync: reimport left %d object(s) (%.2fs)",
                 self.get_total(),
                 monotonic() - imported_at,
             )
-            if birth_death_snapshot:
+            with DbTxn(
+                _("Normalize Unicode text form lost on reimport"),
+                self,
+                batch=True,
+            ) as trans:
+                normalized = _normalize_reimported_text(self, trans)
+            if normalized:
+                LOG.debug(
+                    "bootstrap resync: normalized Unicode text form on %d "
+                    "object(s) Gramps XML re-import doesn't preserve "
+                    "consistently",
+                    normalized,
+                )
+            if true_birth_death_indices:
                 with DbTxn(
-                    _("Restore birth/death event references lost on reimport"),
+                    _("Correct birth/death event references against the "
+                      "server"),
                     self,
                     batch=True,
                 ) as trans:
-                    restored = _restore_birth_death_indices(
-                        self, birth_death_snapshot, trans
+                    corrected = _apply_true_birth_death_indices(
+                        self, true_birth_death_indices, trans
                     )
-                if restored:
+                if corrected:
                     LOG.debug(
-                        "bootstrap resync: restored birth/death event "
-                        "reference index on %d person(s) Gramps XML "
-                        "re-import can't preserve",
-                        restored,
+                        "bootstrap resync: corrected birth/death event "
+                        "reference index on %d person(s) against the "
+                        "server's ground truth (Gramps XML re-import "
+                        "can't preserve either field at all)",
+                        corrected,
                     )
+            if tag_snapshot:
+                with DbTxn(
+                    _("Restabilize tag handles churned by reimport"),
+                    self,
+                    batch=True,
+                ) as trans:
+                    restabilized = _restabilize_tag_handles(self, tag_snapshot, trans)
+                if restabilized:
+                    LOG.debug(
+                        "bootstrap resync: restabilized %d tag handle(s) "
+                        "gramps-web-api's own export doesn't keep stable "
+                        "across separate exports",
+                        restabilized,
+                    )
+            if _restore_researcher_if_locally_set(self, researcher_snapshot):
+                LOG.debug(
+                    "bootstrap resync: restored this mirror's own Researcher "
+                    "info ImportXml overwrote with the export's own"
+                )
+            deduped = _deduplicate_name_formats(self, name_formats_snapshot)
+            if deduped:
+                LOG.debug(
+                    "bootstrap resync: removed %d duplicate name-format "
+                    "entry/entries ImportXml re-added",
+                    deduped,
+                )
             self._describe_resync_to_views(before)
         finally:
             self._pulling = False
             os.remove(tmp_path)
-        self._set_metadata("sync_last_time", sync_cutoff)
+        self._set_metadata("sync_last_id", sync_cursor)
         if progress_callback is not None:
             progress_callback(100)
 
@@ -4218,17 +5322,17 @@ class WebApiDB(SQLite):
         self, on_done, on_error, progress_callback=None, verify_totals=False
     ):
         """
-        Pull every transaction after the last-seen timestamp and replay
-        its changes into the local mirror. Calls on_done(applied) with
-        the number of changes applied.
+        Pull every transaction with an id after the last-seen one and
+        replay its changes into the local mirror. Calls on_done(applied)
+        with the number of changes applied.
 
         An empty "changes" list on a transaction is not a no-op: it is
         what a batch=True commit leaves behind (see the module
         docstring's note on trans.batch guards around trans.add()) --
         something happened server-side that this feed cannot describe.
         Flagged rather than silently skipped; _full_resync_async() is
-        the fallback once the whole page range has been walked (so
-        sync_last_time still advances past it and any *describable*
+        the fallback once the whole page range has been walked (so the
+        sync cursor still advances past it and any *describable*
         changes around it are applied normally either way). A feed that
         is empty *altogether*, or too sparse to account for what the
         server holds, is the same kind of gap and gets the same
@@ -4238,7 +5342,7 @@ class WebApiDB(SQLite):
 
         progress_callback, if given, is called with an int 0-100 after
         each page -- see load()'s callback param. "total" comes from the
-        server's X-Total-Count for this "after" filter (get_transaction_
+        server's X-Total-Count for this "after_id" filter (get_transaction_
         history()'s docstring), so it stays a stable denominator across
         pages barring concurrent server-side writes during the sync.
 
@@ -4252,11 +5356,11 @@ class WebApiDB(SQLite):
         """
         started = monotonic()
 
-        def after_flush(_result):
-            after = self._get_metadata("sync_last_time", default=0)
-            LOG.debug("sync: asking for transactions after %s", after)
+        def begin_sync(after_id):
+            LOG.debug("sync: asking for transactions after id %s", after_id)
             self._sync_page(
-                after=after,
+                after_id=after_id,
+                cursor=after_id,
                 page=1,
                 seen=0,
                 applied=0,
@@ -4269,11 +5373,90 @@ class WebApiDB(SQLite):
                 on_error=on_error,
             )
 
+        def after_flush(_result):
+            after_id = self._get_metadata("sync_last_id", default=None)
+            if after_id is not None:
+                begin_sync(after_id)
+                return
+            # No id-cursor persisted yet -- either a brand new mirror
+            # (nothing to migrate, start at 0, same as always) or one
+            # whose cursor still predates the after_id switch (see
+            # get_transaction_history()'s own docstring on why that
+            # switch happened) and needs its one-time upgrade. old_after
+            # is read here, on the main thread, because self.dbapi --
+            # what self._get_metadata() touches -- is main-thread-only;
+            # _migrate_sync_cursor_to_id() itself runs on io_runner and
+            # must not touch it.
+            old_after = self._get_metadata("sync_last_time", default=None)
+            if old_after is None:
+                self._set_metadata("sync_last_id", 0)
+                begin_sync(0)
+                return
+
+            def migrate():
+                # io_runner: network only.
+                return self._migrate_sync_cursor_to_id(old_after)
+
+            def on_migrated(new_after_id):
+                self._set_metadata("sync_last_id", new_after_id)
+                begin_sync(new_after_id)
+
+            self.io_runner.run(
+                migrate, self._guarded(on_migrated), self._guarded(on_error)
+            )
+
         self._flush_pending_pushes_async(after_flush, on_error)
+
+    def _fetch_newest_transaction_id(self):
+        """io_runner: the server's own current highest transaction id, or
+        0 if its history is empty. Pure network -- safe to call from
+        io_runner. Shared by _migrate_sync_cursor_to_id() (a mirror's
+        one-time cursor upgrade) and _full_resync_async()/
+        _bootstrap_full_resync() (marking "everything as of this
+        wholesale export is already reflected locally" -- see either
+        method's own docstring on why it needs this rather than a
+        wall-clock timestamp)."""
+        newest, _total = self.web_client.get_transaction_history(
+            after_id=0, page=1, pagesize=1, sort="-id"
+        )
+        return newest[0]["id"] if newest else 0
+
+    def _migrate_sync_cursor_to_id(self, old_after):
+        """io_runner: the network half of the one-time upgrade from the
+        old timestamp-based sync cursor (sync_last_time) to the exact
+        transaction-id cursor (sync_last_id) -- see get_transaction_
+        history()'s own docstring on why this addon switched, and
+        _sync_from_server_async()'s after_flush() for the main-thread
+        bookkeeping around this call.
+
+        Asks the server, with the *old* timestamp cursor, for the
+        single oldest transaction after it (sort=id ascending,
+        pagesize=1) and starts the new cursor one below that
+        transaction's own id -- so the very next id-cursored fetch sees
+        that transaction again exactly once (a safe, idempotent replay
+        -- see _apply_change()) rather than risk the float round-trip
+        this migration exists to get away from having silently skipped
+        past it.
+
+        A mirror that was already fully caught up as of the old cursor
+        (nothing found after it) instead bootstraps from the server's
+        current newest transaction id (_fetch_newest_transaction_id()),
+        the same way gramps-connect's own pollHistory() seeds a fresh
+        session: there is nothing older to safely re-see, and starting
+        at 0 would mean replaying the server's entire history for a
+        mirror that didn't need any of it.
+        """
+        transactions, _total = self.web_client.get_transaction_history(
+            after=old_after, page=1, pagesize=1
+        )
+        if transactions:
+            return transactions[0]["id"] - 1
+        return self._fetch_newest_transaction_id()
 
     def _sync_page(
         self,
-        after,
+        after_id,
+        cursor,
         page,
         seen,
         applied,
@@ -4287,20 +5470,35 @@ class WebApiDB(SQLite):
     ):
         """_sync_from_server_async()'s per-page step: fetches one page
         on io_runner, applies it on runner, and recurses for the next
-        page until the feed runs dry or hands back a short page."""
+        page until the feed runs dry or hands back a short page.
+
+        ``after_id`` is the *filter* sent to get_transaction_history()
+        on every page of this walk, and deliberately never changes
+        between recursive calls: gramps-web-api applies page/pagesize as
+        an offset into the already-after_id-filtered set (undodb.
+        get_transactions()), so advancing after_id at the same time as
+        page -- what this method used to do, back when the filter was
+        the timestamp-based ``after`` and got reassigned to the running
+        max seen each page -- silently skips a whole page's worth of
+        transactions every time pagination continues past the first
+        page. ``cursor`` is the separate, genuinely-advancing bookkeeping
+        value (the highest transaction id actually seen so far in this
+        walk) that _finish_sync() eventually persists as sync_last_id;
+        it plays no part in the query itself.
+        """
         run_id = self._run_id
 
         def fetch():
             # io_runner: network only.
             return self.web_client.get_transaction_history(
-                after=after, page=page, pagesize=SYNC_PAGE_SIZE
+                after_id=after_id, page=page, pagesize=SYNC_PAGE_SIZE
             )
 
         def on_fetched(result):
             transactions, total = result
             if not transactions:
                 self._finish_sync(
-                    after,
+                    cursor,
                     seen,
                     applied,
                     skipped,
@@ -4330,7 +5528,7 @@ class WebApiDB(SQLite):
                         "discarding it"
                     )
                     return None
-                new_after = after
+                new_cursor = cursor
                 # (obj_class, handle) -> trans_type, collapsed to the
                 # net effect within this page -- see
                 # _emit_change_signals().
@@ -4362,11 +5560,11 @@ class WebApiDB(SQLite):
                                     # logged per change, which would be
                                     # one line per row of the feed.
                                     new_skipped += 1
-                            new_after = max(new_after, server_trans["timestamp"])
+                            new_cursor = max(new_cursor, server_trans["id"])
                 finally:
                     self._pulling = False
                 self._emit_change_signals(net_changes)
-                return new_after, new_applied, new_skipped, new_needs_full_resync
+                return new_cursor, new_applied, new_skipped, new_needs_full_resync
 
             def on_applied(result2):
                 if result2 is None:
@@ -4377,7 +5575,7 @@ class WebApiDB(SQLite):
                     # narrower gap where it closed after.
                     return
                 (
-                    new_after,
+                    new_cursor,
                     new_applied,
                     new_skipped,
                     new_needs_full_resync,
@@ -4390,13 +5588,13 @@ class WebApiDB(SQLite):
                     len(transactions),
                     total,
                     new_applied,
-                    new_after,
+                    new_cursor,
                 )
                 if progress_callback is not None and total:
                     progress_callback(min(100, int(new_seen * 100 / total)))
                 if len(transactions) < SYNC_PAGE_SIZE:
                     self._finish_sync(
-                        new_after,
+                        new_cursor,
                         new_seen,
                         new_applied,
                         new_skipped,
@@ -4409,7 +5607,8 @@ class WebApiDB(SQLite):
                     )
                 else:
                     self._sync_page(
-                        after=new_after,
+                        after_id=after_id,
+                        cursor=new_cursor,
                         page=page + 1,
                         seen=new_seen,
                         applied=new_applied,
@@ -4430,7 +5629,7 @@ class WebApiDB(SQLite):
 
     def _finish_sync(
         self,
-        after,
+        after_id,
         seen,
         applied,
         skipped,
@@ -4449,7 +5648,7 @@ class WebApiDB(SQLite):
         main thread (either from on_fetched()'s own immediate branch or
         from apply_page()'s on_applied(), a runner step's on_success),
         so self._set_metadata() here is safe."""
-        self._set_metadata("sync_last_time", after)
+        self._set_metadata("sync_last_id", after_id)
         LOG.debug(
             "sync: %d change(s) applied, %d skipped, from %d transaction(s) "
             "in %.2fs; cursor now %s",
@@ -4457,7 +5656,7 @@ class WebApiDB(SQLite):
             skipped,
             seen,
             monotonic() - started,
-            after,
+            after_id,
         )
 
         def maybe_full_resync(needs_resync):
@@ -4504,7 +5703,7 @@ class WebApiDB(SQLite):
         Comparing totals rather than asking whether the feed came back
         empty is what makes that case detectable at all. An empty feed is
         only the extreme of it: one API edit against a history-less server
-        is enough to hand back a transaction, advance sync_last_time, and
+        is enough to hand back a transaction, advance sync_last_id, and
         make the sync look like it worked. Both counts cover the same ten
         primary types (webapi_client.OBJECT_COUNT_KEYS mirrors Gramps'
         own DbGeneric.get_total()), so equality is the invariant this
