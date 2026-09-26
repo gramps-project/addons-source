@@ -506,18 +506,41 @@ to reproduce.** In order:
    two exports, both tags.
 
 Four independent theories, zero reproductions, against the real server,
-each via a real, isolated round trip. What's left unexplained is
-whether the actual trigger needs the *full* concurrent conflict-
-resync-retry sequence (real background `io_runner` timing, not this
-diagnostic approach's strictly sequential one call than the next) or a
-race between overlapping export requests -- neither of which a
-sequential, single-threaded diagnostic can surface. Also worth noting
-for whoever picks this up next: the demo server returned a transient
-502/timeout partway through this session's testing, recovering on its
-own a few minutes later -- plausibly this addon's own repeated
-bootstrap/resync/export load during a concentrated testing session,
-worth pacing out rather than firing many resyncs back to back against
-this specific shared, small instance.
+each via a real, isolated round trip. Also worth noting for whoever
+picks this up next: the demo server returned a transient 502/timeout
+partway through this session's testing, recovering on its own a few
+minutes later -- plausibly this addon's own repeated bootstrap/resync/
+export load during a concentrated testing session, worth pacing out
+rather than firing many resyncs back to back against this specific
+shared, small instance.
+
+**Fifth check (same day): the real conflict-retry chain itself, not
+just an isolated resync.** All four checks above triggered a resync
+directly from test code -- sequential, no other timing involved. The
+one shape not yet tried was the *actual* production chain the report
+happened in: a real push, a real "Object has changed" rejection, the
+real `_resync_after_conflict_async()` -> `_retry_after_conflict()` ->
+conflict -> resync -> give-up sequence, under real `GLibTaskRunner`/
+`IoRunner` async timing (`InlineTaskRunner`'s synchronous collapse
+can't reproduce this at all -- see
+`test_live_repeated_conflict_note_trail.py`'s own docstring).
+`test_live_tag_survives_real_conflict_retry_chain.py` builds exactly
+this: a real out-of-band edit forces the first conflict for real, the
+retry's own nested push is forced to conflict a second time
+deterministically (same injection
+`test_live_repeated_conflict_note_trail.py` uses), on a Person carrying
+a real Tag throughout. Two full resyncs happen inside one chain --
+directly matching the report's own back-to-back timing. Captured every
+`WARNING` `_log_conflict_field_diffs()`/`_walk_conflict_diff()` emit
+during the whole chain (the same diagnostic mechanism the original
+report's own log lines came from) via `assertLogs()`, not just the
+tag's final handle.
+
+**Result: still stable.** The tag's local handle was identical before
+and after the full two-resync chain, and not one of the captured
+warnings mentioned `tag_list` -- only the genuine `gender` collision
+this test deliberately forced. Five independent theories now, zero
+reproductions, including the one shape closest to the original report.
 
 **The fix already shipped is still worth keeping regardless**: reviving
 a reimported Tag under its previous stable handle (when one exists) is
@@ -526,7 +549,15 @@ theory turns out not to be gap 8's real explanation, the same way
 `_normalize_reimported_text()` (gap 7) is safe to keep even where its
 own NFC theory hasn't been separately confirmed either. But gap 8
 itself should be treated as **still open** -- root cause not found,
-four theories eliminated -- not as closed by this fix.
+five theories eliminated -- not as closed by this fix. What's left
+unexplained, genuinely not testable without either server-side access
+or a fresh live report: whether the original account/tree state at the
+time of the report (now moved on -- the reported Person's `tag_list` is
+empty today) had something this addon's own test fixtures don't
+replicate, or a race between truly *overlapping* export requests
+(two `download_export()` calls actually in flight at once, e.g. a
+poll tick firing mid-resync) that even real conflict-retry timing
+here didn't happen to trigger.
 
 ### 9. Note text with `\r\n` line endings does not survive a resync byte-for-byte — **mitigated, root cause confirmed (structural, not Gramps-specific)**
 
