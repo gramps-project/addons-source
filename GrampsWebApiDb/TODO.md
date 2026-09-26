@@ -415,7 +415,7 @@ ever flags a field none of the above explains:
   before appending, properly deduplicated -- unlike name-formats (gap
   10), which has no equivalent check. Not the same growth risk.
 
-### 8. A Tag's own handle is not stable across separate server exports — **defensive fix shipped, root cause NOT reproduced independently — see update below**
+### 8. A Tag's own handle is not stable across separate server exports — **closed: root cause confirmed and fixed**
 
 Reported live (macOS, Gramps 6.0.8, 2026-09-25), on a Person with no
 Unicode in its name and after confirming gap 7's local ID-Formats
@@ -568,6 +568,94 @@ replicate, or a race between truly *overlapping* export requests
 (two `download_export()` calls actually in flight at once, e.g. a
 poll tick firing mid-resync) that even real conflict-retry timing
 here didn't happen to trigger.
+
+**Root cause found (2026-09-26, from a fresh live report on the fixed
+build).** Gary re-tested against everything above already shipped (the
+ID-Formats fix, `_restabilize_tag_handles()`, the CRLF fix, the
+Researcher/name-formats fix -- confirmed live: his log shows "resync:
+removed 1 duplicate name-format entry/entries ImportXml re-added"
+firing correctly) and still hit the exact original symptom, twice in a
+row, with **no `"resync: restabilized N tag handle(s)"` line at all**
+-- meaning `_restabilize_tag_handles()` found nothing to correct, yet
+the handle still changed. Querying the actual churned handles directly
+against the live server (`GET /tags/<handle>`) settled it: **all three
+returned 404.** They were never real, persisted Tag resources at
+all -- unlike every tag used in all five negative checks above, all of
+which were confirmed to exist and stay stable via that same endpoint.
+
+Traced to `gramps.plugins.importer.importxml.importData()`'s own
+wrapper (not `ImportXml`/`GrampsParser` itself): it reads
+`config.get("preferences.tag-on-import")` (default off; Edit >
+Preferences, a "tag records with the same date of import" option) and,
+if on, constructs `GrampsParser` with `default_tag_format` set. Every
+one of `start_person()`/`start_family()`/`start_event()`/
+`start_place()`/`start_note()` then does
+`if self.default_tag: obj.add_tag(self.default_tag.handle)`,
+unconditionally, for every object in the import -- a Tag created via
+`self.db.add_tag(self.default_tag, self.trans)` inside the reimport's
+own `batch=True` DbTxn, which `transaction_commit()` never pushes to
+the server while `self._pulling` is set. So if this preference is on,
+it **never reaches the server**, and this addon's own "clear local
+mirror" step wipes it before the very next resync, which mints a
+completely new one under a fresh handle -- confirmed by direct
+reproduction (three resyncs of the same data produced three different
+handles for a tag named after today's date). Also explains the
+first-push-conflicts-with-no-real-editor shape every earlier report in
+this file shared: bootstrap's own `tag_snapshot` is empty (nothing to
+restabilize against yet, by design -- see `_restabilize_tag_handles()`'s
+own docstring), so this phantom tag is accepted as-is at bootstrap,
+and the local mirror disagrees with the server's real (empty) `tag_list`
+from the moment bootstrap finishes -- no out-of-band edit needed for
+the very first push to conflict.
+
+**Status: implemented, and reframed per direct instruction:** rather
+than only correcting this after the fact (`_restabilize_tag_handles()`,
+kept as defense in depth against any *other*, still-unidentified
+source of churn), this addon must not let *any* local setting affect
+its own internal bootstrap/resync mechanism at all -- the same
+principle behind gap 7's ID-Formats fix, now applied comprehensively
+rather than one report at a time. `_reimport_preserving_server_gramps_
+ids()` is renamed `_reimport_neutralizing_local_settings()` and now
+neutralizes three local settings for the duration of every reimport,
+not one:
+
+1. **ID Formats** (gap 7, unchanged).
+2. **"Tag on import"** -- neutralized via
+   `set_feature("skip-import-additions", True)`, the same existing,
+   purpose-built Gramps-core mechanism `gen/db/utils.py`'s
+   `import_as_dict()` already uses for an identical "importing
+   programmatically, not on the user's behalf" reason --
+   `ImportXml.importData()` itself checks this feature before ever
+   reading `tag-on-import` at all, so this is a single flag, not a
+   config override.
+3. **"Ignore the XML file's own media path"**
+   (`paths.ignore-xml-mediapath`, default off) -- found by the same
+   audit, not yet reported live. Lower risk (`db.set_mediapath()` is
+   itself gated on "not already set," so it can only ever fire once per
+   local mirror's lifetime, not churn every resync) but the same
+   category of gap, so neutralized the same way: forced off for the
+   duration, so this mirror always reflects whatever the server's
+   export declares regardless of this local preference.
+
+All three restored in the `finally` regardless of outcome, so a real
+user-initiated Import run afterward still honors their own preferences.
+`getattr(...)`/a local try/except around `get_feature()` guard every
+save/restore, for the same `WebApiDB.__new__()`-bypasses-`__init__()`
+unit-test-fixture reason gap 7's own fix already needed.
+
+Covered by `TestReimportSuppressesTagOnImport` (reproduces the churn
+against plain `importData()`, confirms the fix prevents it across
+repeated reimports, confirms the local preference survives for a real
+Import afterward) and `TestReimportHonorsExportMediaPath` (same shape,
+for the media-path setting).
+
+**No live re-confirmation yet** -- this fix hasn't been verified
+against the live server the way every earlier fix in this file was,
+since the root cause is now understood precisely enough (a local
+Preferences toggle, not server behavior) that a live round trip
+wouldn't add information a real ImportXml-driven unit test doesn't
+already give directly. Next real-world confirmation is Gary's own next
+test.
 
 ### 9. Note text with `\r\n` line endings does not survive a resync byte-for-byte — **mitigated, root cause confirmed (structural, not Gramps-specific)**
 
