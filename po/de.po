@@ -23,8 +23,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-03 12:30-0700\n"
-"PO-Revision-Date: 2026-09-04 16:45+0000\n"
+"POT-Creation-Date: 2026-09-24 10:14-0700\n"
+"PO-Revision-Date: 2026-09-25 18:51+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,34 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
-
-msgid "Birthdays"
-msgstr "Geburtstage"
-
-msgid "Ignore birthdays with tag"
-msgstr "Geburtstage mit Etikett ignorieren"
-
-msgid "Month and day"
-msgstr "Monat und Tag"
-
-msgid "Only show birthdays with tag"
-msgstr "Nur Geburtstage mit Etikett anzeigen"
-
-msgid "Proximity to current date"
-msgstr "Nähe zum aktuellen Datum"
-
-msgid "Sort birthdays by"
-msgstr "Geburtstage sortieren nach"
-
-msgid "Sort dates of death by"
-msgstr "Todesdaten sortieren nach"
-
-msgid "a gramplet that displays death dates in sorted order"
-msgstr "Ein Gramplet, das Sterbedaten in sortierter Reihenfolge anzeigt"
-
-msgid "a gramplet that displays the birthdays of the living people"
-msgstr "ein Gramplet, das die Geburtstage der lebenden Personen anzeigt"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -321,25 +294,96 @@ msgstr ""
 msgid "Archive Assist"
 msgstr "Archiv-Assistent"
 
-#: AssociationsTool/associationstool.gpr.py:36
+#: AssociationsTool/associationstool.gpr.py:43
 msgid "Check Associations data"
 msgstr "Verknüpfungsdaten prüfen"
 
-#: AssociationsTool/associationstool.gpr.py:37
-msgid "Will check the data on Association for people."
-msgstr "Überprüft die Verbindungsdaten für Personen."
+#: AssociationsTool/associationstool.gpr.py:44
+msgid "Display all person Associations in a sortable, hotlinked table"
+msgstr ""
+"Alle Personenzuordnungen in einer sortierbaren Tabelle mit Hyperlinks "
+"anzeigen"
 
-#: AssociationsTool/associationstool.py:53
+#: AssociationsTool/associationstool.py:130
 msgid "Associations state tool"
 msgstr "Verbindungszustand-Werkzeug"
 
-#: AssociationsTool/associationstool.py:81
-msgid "Type of link"
-msgstr "Art der Verknüpfung"
+#: AssociationsTool/associationstool.py:181
+#, python-format
+msgid "Error initializing data: %s"
+msgstr "Fehler beim Initialisieren der Daten: %s"
 
-#: AssociationsTool/associationstool.py:82
-msgid "Of"
-msgstr "Von"
+#: AssociationsTool/associationstool.py:222
+#, python-format
+msgid "Error processing person %s: %s"
+msgstr "Fehler bei der Verarbeitung der Person %s: %s"
+
+#: AssociationsTool/associationstool.py:252
+msgid "Processing associations..."
+msgstr "Zuordnungen werden verarbeitet..."
+
+#: AssociationsTool/associationstool.py:257
+#, python-format
+msgid "Could not create progress dialog: %s"
+msgstr "Der Fortschrittsdialog konnte nicht erstellt werden: %s"
+
+#: AssociationsTool/associationstool.py:281
+#, python-format
+msgid "Processing %d of %d persons"
+msgstr "%d von %d Personen werden verarbeitet"
+
+#: AssociationsTool/associationstool.py:347
+#, python-format
+msgid "Error displaying associations: %s"
+msgstr "Fehler beim Anzeigen der Zuordnungen: %s"
+
+#: AssociationsTool/associationstool.py:365
+#: AssociationsTool/associationstool.py:448
+msgid "Starting Name"
+msgstr "Startname"
+
+#: AssociationsTool/associationstool.py:368
+#: AssociationsTool/associationstool.py:451
+msgid "Associate"
+msgstr "Zuordnen"
+
+#: AssociationsTool/associationstool.py:427
+#: AssociationsTool/associationstool.py:459
+#, python-format
+msgid "Total associations found: %d"
+msgstr "Gesamtzahl der gefundenen Zuordnungen: %d"
+
+#: AssociationsTool/associationstool.py:553
+msgid "Edit Starting Person"
+msgstr "Startperson bearbeiten"
+
+#: AssociationsTool/associationstool.py:554
+msgid "Edit Associate Person"
+msgstr "Zugeordnete Person bearbeiten"
+
+#: AssociationsTool/associationstool.py:555
+msgid "Edit Association"
+msgstr "Zuordnung bearbeiten"
+
+#: AssociationsTool/associationstool.py:557
+msgid "Copy row to clipboard"
+msgstr "Zeile in die Zwischenablage kopieren"
+
+#: AssociationsTool/associationstool.py:558
+msgid "Create Note from row"
+msgstr "Notiz aus Zeile erstellen"
+
+#: AssociationsTool/associationstool.py:672
+msgid "Association:"
+msgstr "Zuordnungen:"
+
+#: AssociationsTool/associationstool.py:673
+msgid "Starting Person"
+msgstr "Startperson"
+
+#: AssociationsTool/associationstool.py:675
+msgid "Link type"
+msgstr "Linktyp"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
@@ -473,10 +517,12 @@ msgid "No media was removed."
 msgstr "Es wurden keine Medien entfernt."
 
 #: AvatarGenerator/AvatarGenerator.py:213
+#, python-brace-format
 msgid "{} media references were removed from {} persons."
 msgstr "{} Medienreferenzen wurden entfernt von {} Personen."
 
 #: AvatarGenerator/AvatarGenerator.py:216
+#, python-brace-format
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
@@ -490,6 +536,7 @@ msgid "Add avatar images..."
 msgstr "Avatarbilder hinzufügen..."
 
 #: AvatarGenerator/AvatarGenerator.py:314
+#, python-brace-format
 msgid "{} avatar images were sucessfully added."
 msgstr "{} Avatar-Bilder wurden erfolgreich hinzugefügt."
 
@@ -828,6 +875,37 @@ msgstr "Familien Bearbeiten"
 #: BirthOrder/birthorder.py:275
 msgid "Looking for children birth order"
 msgstr "Suche nach der Geburtsreihenfolge der Kinder"
+
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:34
+msgid "Birthdays"
+msgstr "Geburtstage"
+
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:27
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "ein Gramplet, das die Geburtstage der lebenden Personen anzeigt"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:47
+msgid "Sort birthdays by"
+msgstr "Geburtstage sortieren nach"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:49
+#: DateOfDeathGramplet/DateOfDeathGramplet.py:42
+msgid "Proximity to current date"
+msgstr "Nähe zum aktuellen Datum"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:50
+#: DateOfDeathGramplet/DateOfDeathGramplet.py:43
+msgid "Month and day"
+msgstr "Monat und Tag"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:53
+msgid "Ignore birthdays with tag"
+msgstr "Geburtstage mit Etikett ignorieren"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:54
+msgid "Only show birthdays with tag"
+msgstr "Nur Geburtstage mit Etikett anzeigen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:194
@@ -1172,8 +1250,8 @@ msgstr "Mit Baum kommunizieren"
 msgid "Type a message..."
 msgstr "Gib eine Nachricht ein..."
 
-#: ChatWithTree/ChatWithTree.py:153 GrampsAssistant/grampsassistant.py:216
-#: GrampsAssistant/grampsassistant.py:920
+#: ChatWithTree/ChatWithTree.py:153 GrampsAssistant/grampsassistant.py:223
+#: GrampsAssistant/grampsassistant.py:931
 msgid "Send"
 msgstr "Senden"
 
@@ -1201,6 +1279,7 @@ msgid "An error occurred while processing your query."
 msgstr "Bei der Bearbeitung deiner Anfrage ist ein Fehler aufgetreten."
 
 #: ChatWithTree/chatwithllm.py:119
+#, python-brace-format
 msgid "Tree: '{}'"
 msgstr "Baum: '{}'"
 
@@ -1333,7 +1412,7 @@ msgstr "Etiketten anzeigen"
 msgid "Vertical Details"
 msgstr "Vertikale Details"
 
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:79
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:78
 msgid "Order"
 msgstr "Reihenfolge"
 
@@ -1378,6 +1457,80 @@ msgstr "Klicke, um diesen Link zu besuchen"
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
 msgstr ": "
+
+#: ContextView/ContextView.gpr.py:29 ContextView/ContextView.py:502
+msgid "Context"
+msgstr "Kontext"
+
+#: ContextView/ContextView.gpr.py:31
+msgid ""
+"A chart placing a person in the context of their immediate family: the "
+"couple in the centre, each partner's parents above them, their children "
+"below, and each partner's siblings in a column to their own side, eldest at "
+"the top. Click any box to re-centre the chart on that person; the name in "
+"bold marks the way back to the home person."
+msgstr ""
+"Ein Diagramm, das eine Person in den Kontext ihrer unmittelbaren Familie "
+"einordnet: Das Paar steht in der Mitte, darüber die Eltern der jeweiligen "
+"Partner, darunter die Kinder und in einer Spalte an der jeweiligen Seite die "
+"Geschwister der Partner, wobei der Älteste ganz oben steht. Klick auf ein "
+"beliebiges Feld, um das Diagramm auf diese Person zu zentrieren; der "
+"fettgedruckte Name markiert den Weg zurück zur Ausgangsperson."
+
+#: ContextView/ContextView.py:572
+msgid "Show the previous family"
+msgstr "Die vorherige Familie anzeigen"
+
+#: ContextView/ContextView.py:575
+msgid "Show the next family"
+msgstr "Die nächste Familie anzeigen"
+
+#: ContextView/ContextView.py:899
+msgid "No person is active."
+msgstr "Es ist keine Person aktiv."
+
+#: ContextView/ContextView.py:915
+#, python-format
+msgid "Family %(current)d of %(total)d"
+msgstr "Familie %(current)d von %(total)d"
+
+#: ContextView/ContextView.py:922
+#, python-format
+msgid "family %d lies toward the home person"
+msgstr "Familie %d liegt in Richtung der Hauptperson"
+
+#: ContextView/ContextView.py:980
+msgid "<b>Bold</b> marks the way to the home person"
+msgstr "<b>Fettdruck</b> weist den Weg zur Hauptperson"
+
+#: ContextView/ContextView.py:1389 ContextView/ContextView.py:1599
+#: LifeLineChartView/lifelinechart.py:2622
+msgid "Show siblings"
+msgstr "Geschwister zeigen"
+
+#: ContextView/ContextView.py:1402
+msgid "About Context View"
+msgstr "Über Kontextansicht"
+
+#: ContextView/ContextView.py:1592
+msgid "Show tag colour"
+msgstr "Etikettenfarbe anzeigen"
+
+#: ContextView/ContextView.py:1613
+msgid "Details in each box"
+msgstr "Details in jedem Kasten"
+
+#: ContextView/ContextView.py:1617
+msgid "Name only"
+msgstr "Nur Name"
+
+#: ContextView/ContextView.py:1618
+msgid "Name and dates"
+msgstr "Name und Daten"
+
+#: ContextView/ContextView.py:1619
+msgid "Name, dates and places"
+msgstr "Name, Daten und Orte"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
@@ -2037,8 +2190,8 @@ msgstr "Quellen?"
 msgid "Surname, Given"
 msgstr "Nachname, Vorname"
 
-#: DataEntryGramplet/DataEntryGramplet.py:89 GrampyScript/GrampyScript.py:127
-#: GrampyScript/GrampyScript.py:147 GrampyScript/GrampyScript.py:304
+#: DataEntryGramplet/DataEntryGramplet.py:89 GrampyScript/GrampyScript.py:155
+#: GrampyScript/GrampyScript.py:175 GrampyScript/GrampyScript.py:337
 #: NoteGramplet/NoteGramplet.py:111 PDFForms/generatepdfform.py:258
 #: RelID/relation_tab.py:363
 msgid "Save"
@@ -2247,8 +2400,8 @@ msgstr "Berechnen"
 
 #: DateCalculator/DateCalculator.py:107
 #: EditExifMetadata/editexifmetadata.py:219
-#: GrampsWebApiDb/mintapikeytool.py:176 GrampsWebSync/grampswebsync.py:1063
-#: GraphView/graphview.py:3873
+#: GrampsWebApiDb/mintapikeytool.py:176 GrampsWebSync/grampswebsync.py:1114
+#: GraphView/graphview.py:3866
 msgid "Copy"
 msgstr "Kopieren"
 
@@ -2268,6 +2421,20 @@ msgstr "Fehler: Mindestens ein Ausdruck muss ein Datum sein"
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
 msgstr "Gib einen Ausdruck in die Felder oben ein und klicke auf Berechnen."
+
+#: DateOfDeathGramplet/DateOfDeathGramplet.gpr.py:24
+#: DateOfDeathGramplet/DateOfDeathGramplet.gpr.py:34 Form/form_ie.xml.h:114
+#: Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
+msgid "Date of Death"
+msgstr "Sterbedatum"
+
+#: DateOfDeathGramplet/DateOfDeathGramplet.gpr.py:25
+msgid "a gramplet that displays death dates in sorted order"
+msgstr "Ein Gramplet, das Sterbedaten in sortierter Reihenfolge anzeigt"
+
+#: DateOfDeathGramplet/DateOfDeathGramplet.py:40
+msgid "Sort dates of death by"
+msgstr "Todesdaten sortieren nach"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
@@ -2331,28 +2498,28 @@ msgstr ""
 msgid "mentioned in note"
 msgstr "In Notiz erwähnt"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:245
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:251
 msgid "Note on Family"
 msgstr "Notiz zur Familie"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:258
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:264
 msgid "sibling"
 msgstr "Geschwister"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:268
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:274
 msgid "Note on Parent Family"
 msgstr "Notiz zur Elternfamilie"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:272
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:278
 #, python-format
 msgid "%s (association)"
 msgstr "%s (Assoziation)"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:277
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:283
 msgid "Note on Person"
 msgstr "Notiz zur Person"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:308
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:330
 #, python-format
 msgid ""
 "\n"
@@ -2361,41 +2528,41 @@ msgstr ""
 "\n"
 "   %s von "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:336
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:358
 msgid "Error: No Home Person set"
 msgstr "Fehler: Keine Hauptperson festgelegt"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:341
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:363
 msgid "No Active Person set."
 msgstr "Keine aktive Person festgelegt."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:342
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:364
 msgid "Error: No Active Person set"
 msgstr "Fehler: Keine aktive Person festgelegt"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:347
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:369
 msgid "Initializing search..."
 msgstr "Suche wird initialisiert..."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:366
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:388
 msgid "Looking for relationship between\n"
 msgstr "Suche nach Beziehung zwischen\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:367
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:389
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
 msgstr "  <b>%s</b> (Hauptperson) und\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:368
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:390
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (Aktive Person)...\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:382
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:404
 msgid "Searching for connections..."
 msgstr "Nach Verbindungen suchen..."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:402
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:424
 #, python-format
 msgid ""
 "Found relation #%d: \n"
@@ -2404,7 +2571,7 @@ msgstr ""
 "Beziehung #%d gefunden: \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:423
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:445
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
@@ -2412,11 +2579,11 @@ msgstr ""
 "Angehalten.\n"
 "Klicke auf Weiter, um nach weiteren Beziehungen zu suchen.\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:427
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:449
 msgid "Paused - Press Continue to search for more relations"
 msgstr "Angehalten – Klicke auf Weiter, um nach weiteren Beziehungen zu suchen"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:456
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:491
 #, python-format
 msgid ""
 "\n"
@@ -2425,19 +2592,21 @@ msgstr ""
 "\n"
 "Suche abgeschlossen. %d Beziehungspfade gefunden."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:460
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:495
+#, python-brace-format
 msgid "Search completed - {} relation paths found"
 msgstr "Suche abgeschlossen – {} Beziehungspfade gefunden"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:471
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:506
+#, python-brace-format
 msgid "Error during search: {}"
 msgstr "Fehler bei der Suche: {}"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:481
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:516
 msgid "Resuming search..."
 msgstr "Suche wird fortgesetzt..."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:489
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:524
 msgid "Search interrupted by user"
 msgstr "Suche vom Benutzer unterbrochen"
 
@@ -3547,112 +3716,112 @@ msgstr "Nachkommenschaftslinien"
 msgid "Produces descendants lines of a person"
 msgstr "Erzeugt Nachkommenlinien einer Person"
 
-#: DescendantsLines/DescendantsLines.py:472
+#: DescendantsLines/DescendantsLines.py:477
 msgid "Using SVG type for supplemental document is not supported!"
 msgstr ""
 "Die Verwendung des SVG-Typs für ergänzende Dokumente wird nicht unterstützt!"
 
-#: DescendantsLines/DescendantsLines.py:1540
+#: DescendantsLines/DescendantsLines.py:1545
 msgid "Output format"
 msgstr "Ausgabeformat"
 
-#: DescendantsLines/DescendantsLines.py:1541
+#: DescendantsLines/DescendantsLines.py:1546
 msgid "PNG format"
 msgstr "PNG-Format"
 
-#: DescendantsLines/DescendantsLines.py:1542
+#: DescendantsLines/DescendantsLines.py:1547
 msgid "SVG format"
 msgstr "SVG-Format"
 
-#: DescendantsLines/DescendantsLines.py:1543
+#: DescendantsLines/DescendantsLines.py:1548
 msgid "PDF format"
 msgstr "PDF-Format"
 
-#: DescendantsLines/DescendantsLines.py:1544
+#: DescendantsLines/DescendantsLines.py:1549
 msgid "PS format"
 msgstr "PS-Format"
 
-#: DescendantsLines/DescendantsLines.py:1545
+#: DescendantsLines/DescendantsLines.py:1550
 msgid "The output format to be used"
 msgstr "Das zu verwendende Ausgabeformat"
 
-#: DescendantsLines/DescendantsLines.py:1550
+#: DescendantsLines/DescendantsLines.py:1555
 msgid "The destination file for the content."
 msgstr "Die Zieldatei für den Inhalt."
 
-#: DescendantsLines/DescendantsLines.py:1554
+#: DescendantsLines/DescendantsLines.py:1559
 msgid "The number of generations to include in the chart. (0 for unlimited)"
 msgstr ""
 "Die Anzahl der Generationen, die in das Diagramm aufgenommen werden sollen. "
 "(0 für unbegrenzt)"
 
-#: DescendantsLines/DescendantsLines.py:1559
+#: DescendantsLines/DescendantsLines.py:1564
 msgid "Use d'Aboville descendant numbering system"
 msgstr "Verwende d'Aboville Nachkommennummerierungssystem"
 
-#: DescendantsLines/DescendantsLines.py:1561
+#: DescendantsLines/DescendantsLines.py:1566
 msgid "Prepend name with d'Aboville descendant number in the chart."
 msgstr ""
 "Den Namen mit der Nummer des Nachkommen von d'Aboville in der Grafik "
 "voranstellen."
 
-#: DescendantsLines/DescendantsLines.py:1564
+#: DescendantsLines/DescendantsLines.py:1569
 msgid "Include an image"
 msgstr "Bild einfügen"
 
-#: DescendantsLines/DescendantsLines.py:1565
+#: DescendantsLines/DescendantsLines.py:1570
 msgid "Whether to include an image if one is available."
 msgstr "Ob ein Bild eingefügt werden soll, wenn eines verfügbar ist."
 
-#: DescendantsLines/DescendantsLines.py:1569
+#: DescendantsLines/DescendantsLines.py:1574
 msgid "Max Image height"
 msgstr "Maximale Bildhöhe"
 
-#: DescendantsLines/DescendantsLines.py:1570
+#: DescendantsLines/DescendantsLines.py:1575
 msgid "Maximum image height in pixels, 0=don't scale for height."
 msgstr "Maximale Bildhöhe in Pixeln, 0 = Höhe nicht skalieren."
 
-#: DescendantsLines/DescendantsLines.py:1574
+#: DescendantsLines/DescendantsLines.py:1579
 msgid "Max Image width"
 msgstr "Maximale Bildbreite"
 
-#: DescendantsLines/DescendantsLines.py:1575
+#: DescendantsLines/DescendantsLines.py:1580
 msgid "Maximum image width in pixels, 0=don't scale for width."
 msgstr "Maximale Bildbreite in Pixeln, 0 = keine Skalierung der Breite."
 
-#: DescendantsLines/DescendantsLines.py:1579
+#: DescendantsLines/DescendantsLines.py:1584
 msgid "Image Location"
 msgstr "Bildposition"
 
-#: DescendantsLines/DescendantsLines.py:1580
+#: DescendantsLines/DescendantsLines.py:1585
 msgid "Above text"
 msgstr "Über dem Text"
 
-#: DescendantsLines/DescendantsLines.py:1581
+#: DescendantsLines/DescendantsLines.py:1586
 msgid "Left of text"
 msgstr "Links vom Text"
 
-#: DescendantsLines/DescendantsLines.py:1582
+#: DescendantsLines/DescendantsLines.py:1587
 msgid "Position of image relative to text"
 msgstr "Position des Bildes relativ zum Text"
 
-#: DescendantsLines/DescendantsLines.py:1588
+#: DescendantsLines/DescendantsLines.py:1593
 msgid "Colour Name by Gender"
 msgstr "Farbe Name nach Geschlecht"
 
-#: DescendantsLines/DescendantsLines.py:1590
+#: DescendantsLines/DescendantsLines.py:1595
 msgid "Color the name to indicate a person's gender in the chart."
 msgstr ""
 "Den Namen einfärben, um das Geschlecht einer Person in dem Diagramm "
 "anzuzeigen."
 
-#: DescendantsLines/DescendantsLines.py:1594
+#: DescendantsLines/DescendantsLines.py:1599
 msgid "Use alternate events, if Primary event is not found"
 msgstr ""
 "Verwende alternative Ereignisse, wenn das primäre Ereignis nicht gefunden "
 "wird"
 
-#: DescendantsLines/DescendantsLines.py:1595
+#: DescendantsLines/DescendantsLines.py:1600
 msgid ""
 "For Birth (baptism, christen)\n"
 "   Marriage (marr_lic, engagement)\n"
@@ -3664,37 +3833,37 @@ msgstr ""
 "   Scheidung (Annullierung, Scheidungsantrag),\n"
 "   Tod (Beerdigung, Einäscherung, Nachlassverfahren)."
 
-#: DescendantsLines/DescendantsLines.py:1601
+#: DescendantsLines/DescendantsLines.py:1606
 msgid "Sort Events by Date"
 msgstr "Ereignisse nach Datum sortieren"
 
-#: DescendantsLines/DescendantsLines.py:1602
+#: DescendantsLines/DescendantsLines.py:1607
 msgid "Sort events by date (else use the order of the 'Display Format' above)."
 msgstr ""
 "Ereignisse nach Datum sortieren (ansonsten die Reihenfolge des obigen "
 "'Anzeigeformats' verwenden)."
 
-#: DescendantsLines/DescendantsLines.py:1606
+#: DescendantsLines/DescendantsLines.py:1611
 msgid "Text style"
 msgstr "Textstil"
 
-#: DescendantsLines/DescendantsLines.py:1607
+#: DescendantsLines/DescendantsLines.py:1612
 msgid "Center-aligned text"
 msgstr "Zentrierter Text"
 
-#: DescendantsLines/DescendantsLines.py:1608
+#: DescendantsLines/DescendantsLines.py:1613
 msgid "Left-aligned text"
 msgstr "Linksbündiger Text"
 
-#: DescendantsLines/DescendantsLines.py:1609
+#: DescendantsLines/DescendantsLines.py:1614
 msgid "Alignment of the text in the block for each person on the chart"
 msgstr "Ausrichtung des Textes im Block für jede Person in der Tabelle"
 
-#: DescendantsLines/DescendantsLines.py:1613
+#: DescendantsLines/DescendantsLines.py:1618
 msgid "Max Note Length"
 msgstr "Maximale Notizlänge"
 
-#: DescendantsLines/DescendantsLines.py:1614
+#: DescendantsLines/DescendantsLines.py:1619
 msgid ""
 "Maximum length of an event's note field in a text block, '$e(n)'\n"
 " 0=no limit "
@@ -3703,11 +3872,11 @@ msgstr ""
 "'$e(n)'.\n"
 " 0=keine Begrenzung "
 
-#: DescendantsLines/DescendantsLines.py:1618
+#: DescendantsLines/DescendantsLines.py:1623
 msgid "Font Name"
 msgstr "Schriftart"
 
-#: DescendantsLines/DescendantsLines.py:1620
+#: DescendantsLines/DescendantsLines.py:1625
 msgid ""
 "Name of the Font to use. On Windows enter the file name of the .ttf at /"
 "Windows/Fonts"
@@ -3715,23 +3884,23 @@ msgstr ""
 "Name der zu verwendenden Schriftart. Gib unter Windows den Dateinamen der "
 "TTF-Datei unter /Windows/Fonts ein"
 
-#: DescendantsLines/DescendantsLines.py:1623
+#: DescendantsLines/DescendantsLines.py:1628
 msgid "Font base size"
 msgstr "Standardschriftgröße"
 
-#: DescendantsLines/DescendantsLines.py:1629
+#: DescendantsLines/DescendantsLines.py:1634
 msgid "Box around Person's block"
 msgstr "Kasten um den Block der Person"
 
-#: DescendantsLines/DescendantsLines.py:1630
+#: DescendantsLines/DescendantsLines.py:1635
 msgid "Draw a thin black box around each person' text block."
 msgstr "Zeichne einen dünnen schwarzen Rahmen um den Textblock jeder Person."
 
-#: DescendantsLines/DescendantsLines.py:1634
+#: DescendantsLines/DescendantsLines.py:1639
 msgid "All Person's blocks have the same height"
 msgstr "Alle Blöcke von Person haben die gleiche Höhe"
 
-#: DescendantsLines/DescendantsLines.py:1635
+#: DescendantsLines/DescendantsLines.py:1640
 msgid ""
 "All the blocks of all the person have the same height, which is the height "
 "of the highest block."
@@ -3739,11 +3908,11 @@ msgstr ""
 "Alle Blöcke aller Personen haben dieselbe Höhe, nämlich die Höhe des "
 "höchsten Blocks."
 
-#: DescendantsLines/DescendantsLines.py:1640
+#: DescendantsLines/DescendantsLines.py:1645
 msgid "All Person's blocks have the same width"
 msgstr "Alle Blöcke von Person haben die gleiche Breite"
 
-#: DescendantsLines/DescendantsLines.py:1641
+#: DescendantsLines/DescendantsLines.py:1646
 msgid ""
 "All the blocks of all the person have the same width, which is the width of "
 "the widthest block."
@@ -3751,19 +3920,19 @@ msgstr ""
 "Alle Blöcke aller Personen haben dieselbe Breite, nämlich die Breite des "
 "breitesten Blocks."
 
-#: DescendantsLines/DescendantsLines.py:1646
+#: DescendantsLines/DescendantsLines.py:1651
 msgid "Colour blocks by Generation"
 msgstr "Blöcke nach Generation färben"
 
-#: DescendantsLines/DescendantsLines.py:1647
+#: DescendantsLines/DescendantsLines.py:1652
 msgid "Colour the background of text blocks by generation."
 msgstr "Den Hintergrund von Textblöcken nach Generation einfärben."
 
-#: DescendantsLines/DescendantsLines.py:1651
+#: DescendantsLines/DescendantsLines.py:1656
 msgid "Descend block colour intensity"
 msgstr "Blockfarbintensität verringern"
 
-#: DescendantsLines/DescendantsLines.py:1652
+#: DescendantsLines/DescendantsLines.py:1657
 msgid ""
 "Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
 "colour"
@@ -3771,26 +3940,26 @@ msgstr ""
 "Intensität der Hintergrundfarbe im Nachkommenblock, 0 = schwach, 255 = "
 "intensive Farbe"
 
-#: DescendantsLines/DescendantsLines.py:1656
+#: DescendantsLines/DescendantsLines.py:1661
 msgid "Spouse block colour intensity"
 msgstr "Intensität der Blockfarbe für Ehepartner"
 
-#: DescendantsLines/DescendantsLines.py:1657
+#: DescendantsLines/DescendantsLines.py:1662
 msgid ""
 "Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
 msgstr ""
 "Intensität der Hintergrundfarbe im Ehepartnerblock, 0 = schwach, 255 = "
 "intensive Farbe"
 
-#: DescendantsLines/DescendantsLines.py:1662
+#: DescendantsLines/DescendantsLines.py:1667
 msgid "Display Formats"
 msgstr "Anzeigeformate"
 
-#: DescendantsLines/DescendantsLines.py:1664
+#: DescendantsLines/DescendantsLines.py:1669
 msgid "Name Display Format"
 msgstr "Name Anzeigeformat"
 
-#: DescendantsLines/DescendantsLines.py:1667
+#: DescendantsLines/DescendantsLines.py:1672
 msgid ""
 "f=first & middle names, l=surname, n=nickname,\n"
 "c=commonly used given name, t=title, s=suffix, g=family nick name\n"
@@ -3800,8 +3969,8 @@ msgstr ""
 "c=häufig verwendeter Vorname, t=Titel, s=Suffix, g=Familienspitzname\n"
 "Siehe Wiki-Handbuch > Berichte > Teil 2"
 
-#: DescendantsLines/DescendantsLines.py:1679
-#: DescendantsLines/DescendantsLines.py:1698
+#: DescendantsLines/DescendantsLines.py:1684
+#: DescendantsLines/DescendantsLines.py:1703
 msgid ""
 "[event, list]$e(formating)\n"
 "See Wiki Manual > Reports > part 2\n"
@@ -3811,13 +3980,13 @@ msgstr ""
 "Siehe Wiki-Handbuch > Berichte > Teil 2\n"
 "Formatierung: Daten=d(ymdMo) Orte=D(elcuspnoitxy) Notizen=n Abgekürzter Typ=t"
 
-#: DescendantsLines/DescendantsLines.py:1705
+#: DescendantsLines/DescendantsLines.py:1710
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
 #: ImportMerge/importmerge.glade:407 ImportMerge/importmerge.py:912
 msgid "Replace"
 msgstr "Ersetzen"
 
-#: DescendantsLines/DescendantsLines.py:1710
+#: DescendantsLines/DescendantsLines.py:1715
 msgid ""
 "i.e.\n"
 "United States of America/USA"
@@ -3825,32 +3994,32 @@ msgstr ""
 "d. h.\n"
 "Vereinigte Staaten von Amerika/USA"
 
-#: DescendantsLines/DescendantsLines.py:1714
+#: DescendantsLines/DescendantsLines.py:1719
 msgid "Spouse and Family"
 msgstr "Ehepartner und Familie"
 
-#: DescendantsLines/DescendantsLines.py:1716
+#: DescendantsLines/DescendantsLines.py:1721
 msgid "Vertical edge descendant to spouse-bar"
 msgstr "Vertikale Kante, die zum Ehepartner-Balken hin abfällt"
 
-#: DescendantsLines/DescendantsLines.py:1717
+#: DescendantsLines/DescendantsLines.py:1722
 msgid "The length of the vertical edge from descendant to spouse-bar."
 msgstr "Die Länge der vertikalen Kante vom Nachkommen zum Ehepartnerbalken."
 
-#: DescendantsLines/DescendantsLines.py:1721
+#: DescendantsLines/DescendantsLines.py:1726
 msgid "Vertical edge spouse-bar to spouse"
 msgstr "Vertikale Kante Ehepartnerleiste zu Ehepartner"
 
-#: DescendantsLines/DescendantsLines.py:1722
+#: DescendantsLines/DescendantsLines.py:1727
 msgid "The length of the vertical edge from spouse-bar to spouse."
 msgstr ""
 "Die Länge der vertikalen Kante von der Ehepartnerleiste zum Ehepartner."
 
-#: DescendantsLines/DescendantsLines.py:1726
+#: DescendantsLines/DescendantsLines.py:1731
 msgid "Vertical space spouse-bar to other spouse"
 msgstr "Vertikaler Abstand zwischen Ehepartnerleiste und anderem Ehepartner"
 
-#: DescendantsLines/DescendantsLines.py:1727
+#: DescendantsLines/DescendantsLines.py:1732
 msgid ""
 "The space to add between one spouse-bar and another spouse in case of "
 "multiple families with the same descendant."
@@ -3859,21 +4028,21 @@ msgstr ""
 "Ehepartnerleiste eingefügt werden muss, wenn mehrere Familien denselben "
 "Nachkommen haben."
 
-#: DescendantsLines/DescendantsLines.py:1732
+#: DescendantsLines/DescendantsLines.py:1737
 msgid "Horizontal space descendant to spouse"
 msgstr "Horizontaler Raum für Nachkommen des Ehepartners"
 
-#: DescendantsLines/DescendantsLines.py:1733
+#: DescendantsLines/DescendantsLines.py:1738
 msgid "The space to add between the descendant and the spouse."
 msgstr ""
 "Der Abstand, der zwischen dem Nachkommen und dem Ehepartner eingefügt werden "
 "soll."
 
-#: DescendantsLines/DescendantsLines.py:1738
+#: DescendantsLines/DescendantsLines.py:1743
 msgid "Horizonal space family to family"
 msgstr "Horizontaler Abstand von Familie zu Familie"
 
-#: DescendantsLines/DescendantsLines.py:1739
+#: DescendantsLines/DescendantsLines.py:1744
 msgid ""
 "The space to add between the more extern descendant (or spouse) of a family "
 "and the more extern descendant (or spouse) of the next family."
@@ -3882,11 +4051,11 @@ msgstr ""
 "Familie und dem äußersten Nachkommen (oder Ehepartner) der nächsten Familie "
 "eingefügt werden soll."
 
-#: DescendantsLines/DescendantsLines.py:1744
+#: DescendantsLines/DescendantsLines.py:1749
 msgid "Horizontal distance spouse to family edge"
 msgstr "Horizontaler Abstand zwischen Ehepartner und Familienrand"
 
-#: DescendantsLines/DescendantsLines.py:1745
+#: DescendantsLines/DescendantsLines.py:1750
 msgid ""
 "If this value is 0, the children bar is centered under the spouse. The "
 "bigger the value, more the center is moved to the left towards the "
@@ -3896,83 +4065,83 @@ msgstr ""
 "zentriert. Je größer der Wert, desto weiter wird die Mitte nach links in "
 "Richtung der Nachkommen verschoben."
 
-#: DescendantsLines/DescendantsLines.py:1752
+#: DescendantsLines/DescendantsLines.py:1757
 msgid "OL_PAD"
 msgstr "OL_FELD"
 
-#: DescendantsLines/DescendantsLines.py:1753
+#: DescendantsLines/DescendantsLines.py:1758
 msgid "The number of ??? pad"
 msgstr "Die Anzahl der ??? Felder"
 
-#: DescendantsLines/DescendantsLines.py:1756
+#: DescendantsLines/DescendantsLines.py:1761
 msgid "Vertical edge spouse-bar to child-bar"
 msgstr "Vertikale Kante der Ehepartnerleiste zur Kinderleiste"
 
-#: DescendantsLines/DescendantsLines.py:1757
+#: DescendantsLines/DescendantsLines.py:1762
 msgid "The length of the vertical edge from spouse-bar to child-bar."
 msgstr ""
 "Die Länge der vertikalen Kante von der Ehepartnerleiste bis zur Kinderleiste."
 
-#: DescendantsLines/DescendantsLines.py:1763
+#: DescendantsLines/DescendantsLines.py:1768
 msgid "Children distance"
 msgstr "Kinderabstand"
 
-#: DescendantsLines/DescendantsLines.py:1764
+#: DescendantsLines/DescendantsLines.py:1769
 msgid "The horizontal distance between two children of the same family."
 msgstr "Der horizontale Abstand zwischen zwei Kindern derselben Familie."
 
-#: DescendantsLines/DescendantsLines.py:1768
+#: DescendantsLines/DescendantsLines.py:1773
 msgid "Vertical edge child to child-bar"
 msgstr "Vertikale Kante Kind zu Kindleiste"
 
-#: DescendantsLines/DescendantsLines.py:1770
+#: DescendantsLines/DescendantsLines.py:1775
 msgid "The length of the vertical edge from child to child-bar."
 msgstr "Die Länge der vertikalen Kante vom Kind zu der Kindleiste."
 
-#: DescendantsLines/DescendantsLines.py:1773
+#: DescendantsLines/DescendantsLines.py:1778
 msgid "MIN_C_WIDTH"
 msgstr "MIN_K_BREITE"
 
-#: DescendantsLines/DescendantsLines.py:1774
+#: DescendantsLines/DescendantsLines.py:1779
 msgid "The number of ??? min width"
 msgstr "Die Anzahl der ??? min Breite"
 
-#: DescendantsLines/DescendantsLines.py:1779
+#: DescendantsLines/DescendantsLines.py:1784
 msgid "Space around text"
 msgstr "Abstand um Text herum"
 
-#: DescendantsLines/DescendantsLines.py:1780
+#: DescendantsLines/DescendantsLines.py:1785
 msgid "The space to add around the text block of a person."
 msgstr ""
 "Der Abstand, der um den Textblock einer Person herum hinzugefügt werden soll."
 
-#: DescendantsLines/DescendantsLines.py:1784
+#: DescendantsLines/DescendantsLines.py:1789
 msgid "Space between lines of text"
 msgstr "Abstand zwischen Textzeilen"
 
-#: DescendantsLines/DescendantsLines.py:1785
+#: DescendantsLines/DescendantsLines.py:1790
 msgid "The space to add between a line and the next in a person text block."
 msgstr ""
 "Der Abstand, der zwischen einer Zeile und der nächsten in einem "
 "Personentextblock eingefügt werden soll."
 
-#: DescendantsLines/DescendantsLines.py:1790
+#: DescendantsLines/DescendantsLines.py:1795
 msgid "Header and Footer"
 msgstr "Kopf- und Fußzeile"
 
-#: DescendantsLines/DescendantsLines.py:1793
+#: DescendantsLines/DescendantsLines.py:1798
 msgid "The text that will be written in the header of the document"
 msgstr "Der Text, der in die Kopfzeile des Dokuments geschrieben wird"
 
-#: DescendantsLines/DescendantsLines.py:1798
+#: DescendantsLines/DescendantsLines.py:1803
 msgid "The text that will be written in the footer of the document"
 msgstr "Der Text, der in die Fußzeile des Dokuments geschrieben wird"
 
-#: DescendantsLines/DescendantsLines.py:1802
+#: DescendantsLines/DescendantsLines.py:1807
 msgid "Title and footer coefficient"
 msgstr "Titel- und Fußzeilenkoeffizient"
 
-#: DescendantsLines/DescendantsLines.py:1803
+#: DescendantsLines/DescendantsLines.py:1808
 msgid ""
 "A number that multiply the base size of the text in the title and in the "
 "footer"
@@ -3980,29 +4149,29 @@ msgstr ""
 "Eine Zahl, die die Basisgröße des Textes im Titel und in der Fußzeile "
 "vervielfacht"
 
-#: DescendantsLines/DescendantsLines.py:1810
+#: DescendantsLines/DescendantsLines.py:1815
 msgid "Protect People, Images or Events that are marked Private"
 msgstr ""
 "Personen, Bilder oder Ereignisse schützen, die als vertraulich "
 "gekennzeichnet sind"
 
-#: DescendantsLines/DescendantsLines.py:1812
+#: DescendantsLines/DescendantsLines.py:1817
 msgid "The Privacy setting of only these types of Gramps objects are checked"
 msgstr ""
 "Die Datenschutzeinstellung nur für diese Arten von Gramps-Objekten ist "
 "aktiviert"
 
-#: DescendantsLines/DescendantsLines.py:1816
+#: DescendantsLines/DescendantsLines.py:1821
 msgid "Privacy text"
 msgstr "Datenschutztext"
 
-#: DescendantsLines/DescendantsLines.py:1817
+#: DescendantsLines/DescendantsLines.py:1822
 msgid "Text to display in block, when a Person is marked private"
 msgstr ""
 "Text, der im Block angezeigt wird, wenn eine Person als vertraulich markiert "
 "ist"
 
-#: DescendantsLines/DescendantsLines.py:1832
+#: DescendantsLines/DescendantsLines.py:1837
 msgid "The default style."
 msgstr "Der Standardstil."
 
@@ -4664,12 +4833,12 @@ msgstr "Ohne Nachnahme"
 msgid "Without title"
 msgstr "Ohne Titel"
 
-#: DynamicWeb/dynamicweb.py:3165 GraphView/graphview.py:1095
+#: DynamicWeb/dynamicweb.py:3165 GraphView/graphview.py:1088
 #: LifeLineChartView/lifelinechartview.py:508
 msgid "Zoom in"
 msgstr "Vergrößern"
 
-#: DynamicWeb/dynamicweb.py:3166 GraphView/graphview.py:1102
+#: DynamicWeb/dynamicweb.py:3166 GraphView/graphview.py:1095
 #: LifeLineChartView/lifelinechartview.py:518
 msgid "Zoom out"
 msgstr "Verkleinern"
@@ -4956,7 +5125,7 @@ msgstr "Ob die Gramps ID versteckt werden soll"
 msgid "List"
 msgstr "Liste"
 
-#: DynamicWeb/dynamicweb.py:4997 GrampyScript/GrampyScript.py:382
+#: DynamicWeb/dynamicweb.py:4997 GrampyScript/GrampyScript.py:443
 msgid "Table"
 msgstr "Tabelle"
 
@@ -5075,7 +5244,7 @@ msgid ""
 msgstr ""
 "Wähle die Farbschema für den Hintergrund der Personen im SVG-Baumdiagramm"
 
-#: DynamicWeb/dynamicweb.py:5152 Themes/themes.py:175 Themes/themes.py:225
+#: DynamicWeb/dynamicweb.py:5152 Themes/themes.py:179 Themes/themes.py:229
 msgid "Theme"
 msgstr "Thema"
 
@@ -6284,6 +6453,7 @@ msgid "FamilyTree DNA Import"
 msgstr "FamilyTree-DNA-Import"
 
 #: FamilyTreeDNA/ftdna_import.py:224
+#, python-brace-format
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
 msgstr ""
@@ -6502,6 +6672,36 @@ msgstr ""
 "Entspricht Personen, die mit einer Person verwandt sind, die durch einen "
 "Personenfilter gefunden wurde"
 
+#: FilterRules/matcheventfilterrole.gpr.py:7
+msgid "People from event with role"
+msgstr "Personen vom Ereignis mit einer Rolle"
+
+#: FilterRules/matcheventfilterrole.gpr.py:8
+msgid "Matches people of event filter with role"
+msgstr "Entspricht Personen mit dem Ereignisfilter mit der Rolle"
+
+#: FilterRules/matcheventfilterrole.py:55
+#: FilterRules/matchpersonfilterrole.py:69
+msgid "Role:"
+msgstr "Rolle:"
+
+#: FilterRules/matcheventfilterrole.py:56
+msgid "Persons with events matching the <event filter> with role"
+msgstr ""
+"Personen, mit Ereignissen, die dem <Ereignisfilter> mit Rolle entsprechen"
+
+#: FilterRules/matchparentoffilterfamily.gpr.py:7
+msgid "Parents of family filter"
+msgstr "Eltern des Familienfilters"
+
+#: FilterRules/matchparentoffilterfamily.gpr.py:8
+msgid "Matches parent of family filter"
+msgstr "Entspricht Elternteil des Familienfilters"
+
+#: FilterRules/matchparentoffilterfamily.py:60
+msgid "Parents of <filter> family match"
+msgstr ""
+
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
 msgstr "Ereignisse von Personen mit einer bestimmten Rolle"
@@ -6510,10 +6710,6 @@ msgstr "Ereignisse von Personen mit einer bestimmten Rolle"
 msgid "Matches event of people filter with role"
 msgstr ""
 "Gibt Ereignisse an, bei denen der Personenfilter mit der Rolle übereinstimmt"
-
-#: FilterRules/matchpersonfilterrole.py:69
-msgid "Role:"
-msgstr "Rolle:"
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
@@ -6721,19 +6917,19 @@ msgstr ""
 msgid "Headings"
 msgstr "Überschriften"
 
-#: Form/form.py:82
+#: Form/form.py:81
 msgid "Form"
 msgstr "Formular"
 
-#: Form/form.py:174
+#: Form/form.py:173
 msgid "XML syntax error in Form definition file"
 msgstr "XML-Syntaxfehler in der Formulardefinitionsdatei"
 
-#: Form/form.py:185
+#: Form/form.py:184
 msgid "Failed to read Form definition file"
 msgstr "Das Lesen der Formulardefinitionsdatei ist fehlgeschlagen"
 
-#: Form/form.py:194
+#: Form/form.py:193
 msgid "Invalid Form definition file"
 msgstr "Ungültige Formulardefinitionsdatei"
 
@@ -10441,10 +10637,6 @@ msgstr "(10.) Datum der Registrierung"
 #: Form/form_ie.xml.h:111
 msgid "(11.) Signature of Registrar"
 msgstr "(11.) Unterschrift des Registrars"
-
-#: Form/form_ie.xml.h:114 Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
-msgid "Date of Death"
-msgstr "Sterbedatum"
 
 #: Form/form_ie.xml.h:115 Form/form_ie.xml.h:117
 msgid "(2.) Date and Place of Death"
@@ -16356,22 +16548,26 @@ msgid "GetGOV error: %s"
 msgstr "GetGOV-Fehler: %s"
 
 #: GetGOV/getgov.py:421
+msgid "GOV link"
+msgstr "GOV-Link"
+
+#: GetGOV/getgov.py:428
 #, python-format
 msgid "GOV error on id %s with code: "
 msgstr "GOV-Fehler bei ID %s mit Code: "
 
-#: GetGOV/getgov.py:555
+#: GetGOV/getgov.py:562
 #, python-format
 msgctxt "end"
 msgid "from %(begin)s to %(end)s"
 msgstr "von %(begin)s bis %(end)s"
 
-#: GetGOV/getgov.py:557
+#: GetGOV/getgov.py:564
 #, python-format
 msgid "after %s"
 msgstr "nach %s"
 
-#: GetGOV/getgov.py:559
+#: GetGOV/getgov.py:566
 #, python-format
 msgid "before %s"
 msgstr "vor %s"
@@ -16424,7 +16620,7 @@ msgstr ""
 "im Benutzerverzeichnis „%s“ überschreiben?"
 
 #: GrampsAssistant/grampsassistant.gpr.py:26
-#: GrampsAssistant/grampsassistant.py:1417
+#: GrampsAssistant/grampsassistant.py:1428
 msgid "Gramps Assistant"
 msgstr "Gramps-Assistent"
 
@@ -16432,7 +16628,7 @@ msgstr "Gramps-Assistent"
 msgid "AI assistant for querying your Gramps family tree"
 msgstr "KI-Assistent zur Abfrage deines Gramps-Stammbaums"
 
-#: GrampsAssistant/grampsassistant.py:58
+#: GrampsAssistant/grampsassistant.py:61
 msgid ""
 "You are a helpful genealogy assistant with access to the user's Gramps "
 "database. Answer questions about people, families, events, and "
@@ -16448,20 +16644,24 @@ msgstr ""
 "angeforderten Informationen kein Werkzeug gibt, gib dies klar und deutlich "
 "an."
 
-#: GrampsAssistant/grampsassistant.py:209
+#: GrampsAssistant/grampsassistant.py:212
 msgid "Gramps Assistant settings"
 msgstr "Gramps Assistent-Einstellungen"
 
-#: GrampsAssistant/grampsassistant.py:213
+#: GrampsAssistant/grampsassistant.py:216
 msgid "Clear conversation and context"
 msgstr "Kommunikation und Kontext leeren"
 
-#: GrampsAssistant/grampsassistant.py:388
-#: GrampsAssistant/grampsassistant.py:749
+#: GrampsAssistant/grampsassistant.py:220
+msgid "Open the Gramps Assistant wiki page"
+msgstr "Öffne die Wiki-Seite zum Gramps-Assistenten"
+
+#: GrampsAssistant/grampsassistant.py:396
+#: GrampsAssistant/grampsassistant.py:760
 msgid "Gramps Assistant:"
 msgstr "Gramps-Assistent:"
 
-#: GrampsAssistant/grampsassistant.py:390
+#: GrampsAssistant/grampsassistant.py:398
 msgid ""
 "Ask me anything about the Gramps program or your specific Gramps family "
 "tree. Use the ⚙ button to configure the AI.\n"
@@ -16470,7 +16670,7 @@ msgstr ""
 "Gramps-Stammbaum wissen möchtest. Nutze die Schaltfläche ⚙, um die KI zu "
 "konfigurieren.\n"
 
-#: GrampsAssistant/grampsassistant.py:720
+#: GrampsAssistant/grampsassistant.py:731
 msgid ""
 "\n"
 "No model configured. Please click the Settings button to choose a backend "
@@ -16480,11 +16680,11 @@ msgstr ""
 "Es wurde kein Modell konfiguriert. Bitte klicke auf die Schaltfläche "
 "„Einstellungen“, um vor dem Chatten ein Backend und ein Modell auszuwählen.\n"
 
-#: GrampsAssistant/grampsassistant.py:755
+#: GrampsAssistant/grampsassistant.py:766
 msgid "Thinking..."
 msgstr "Ich denke nach..."
 
-#: GrampsAssistant/grampsassistant.py:824
+#: GrampsAssistant/grampsassistant.py:835
 #, python-brace-format
 msgid ""
 "API key error: the environment variable {var} is not set or is invalid. Set "
@@ -16495,7 +16695,7 @@ msgstr ""
 "ungültig. Stelle sie vor dem Start von Gramps ein:\n"
 "  export {var}=dein-Schlüssel-hier"
 
-#: GrampsAssistant/grampsassistant.py:830
+#: GrampsAssistant/grampsassistant.py:841
 msgid ""
 "API key error: this provider requires an API key. Open Settings and enter "
 "the environment variable name for your API key (e.g. OPENAI_API_KEY)."
@@ -16504,19 +16704,19 @@ msgstr ""
 "die Einstellungen und gib den Namen der Umgebungsvariablen für deinen API-"
 "Schlüssel ein (z. B. OPENAI_API_KEY)."
 
-#: GrampsAssistant/grampsassistant.py:973
+#: GrampsAssistant/grampsassistant.py:984
 msgid "Done.\n"
 msgstr "Fertig.\n"
 
-#: GrampsAssistant/grampsassistant.py:1203
+#: GrampsAssistant/grampsassistant.py:1214
 msgid "System Prompt:"
 msgstr "System Prompt:"
 
-#: GrampsAssistant/grampsassistant.py:1217
+#: GrampsAssistant/grampsassistant.py:1228
 msgid "Simplify tools (recommended for smaller/local models)"
 msgstr "Werkzeuge vereinfachen (empfohlen für kleinere/lokale Modelle)"
 
-#: GrampsAssistant/grampsassistant.py:1221
+#: GrampsAssistant/grampsassistant.py:1232
 msgid ""
 "When enabled, only the tools relevant to your question are sent to the "
 "model. This improves performance with smaller local models."
@@ -16525,11 +16725,11 @@ msgstr ""
 "Werkzeuge an das Modell gesendet. Dies verbessert die Leistung bei kleineren "
 "lokalen Modellen."
 
-#: GrampsAssistant/grampsassistant.py:1230
+#: GrampsAssistant/grampsassistant.py:1241
 msgid "Use Local Model"
 msgstr "Lokales Modell verwenden"
 
-#: GrampsAssistant/grampsassistant.py:1249
+#: GrampsAssistant/grampsassistant.py:1260
 msgid ""
 "URL of a local OpenAI-compatible server. Ollama: http://localhost:11434  LM "
 "Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
@@ -16538,11 +16738,11 @@ msgstr ""
 "localhost:11434  LM Studio: http://localhost:1234  llama.cpp: http://"
 "localhost:8080"
 
-#: GrampsAssistant/grampsassistant.py:1257
+#: GrampsAssistant/grampsassistant.py:1268
 msgid "model name (leave blank for LM Studio / llama.cpp)"
 msgstr "Modellname (bei LM Studio / llama.cpp leer lassen)"
 
-#: GrampsAssistant/grampsassistant.py:1260
+#: GrampsAssistant/grampsassistant.py:1271
 msgid ""
 "Model to request from the local server. Required for Ollama (e.g. llama3.1). "
 "Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
@@ -16551,36 +16751,36 @@ msgstr ""
 "llama3.1). Bei LM Studio oder llama.cpp, die das jeweils geladene Modell "
 "verwenden, bitte leer lassen."
 
-#: GrampsAssistant/grampsassistant.py:1267
-#: GrampsAssistant/grampsassistant.py:1311
+#: GrampsAssistant/grampsassistant.py:1278
+#: GrampsAssistant/grampsassistant.py:1322
 msgid "Model:"
 msgstr "Modell:"
 
-#: GrampsAssistant/grampsassistant.py:1273
+#: GrampsAssistant/grampsassistant.py:1284
 msgid "Use Foundational Model"
 msgstr "Grundlegendes Modell verwenden"
 
-#: GrampsAssistant/grampsassistant.py:1315
+#: GrampsAssistant/grampsassistant.py:1326
 msgid "e.g. OPENAI_API_KEY"
 msgstr "z. B. OPENAI_API_KEY"
 
-#: GrampsAssistant/grampsassistant.py:1317
+#: GrampsAssistant/grampsassistant.py:1328
 msgid "Name of the environment variable holding your API key."
 msgstr "Name der Umgebungsvariable, die deinen API-Schlüssel enthält."
 
-#: GrampsAssistant/grampsassistant.py:1319
+#: GrampsAssistant/grampsassistant.py:1330
 msgid "API key env var:"
 msgstr "API-Schlüssel Umgebungsvariable:"
 
-#: GrampsAssistant/grampsassistant.py:1322
+#: GrampsAssistant/grampsassistant.py:1333
 msgid "Backend:"
 msgstr "Backend:"
 
-#: GrampsAssistant/grampsassistant.py:1334
+#: GrampsAssistant/grampsassistant.py:1345
 msgid "Base URL:"
 msgstr "Basis-URL:"
 
-#: GrampsAssistant/grampsassistant.py:1338
+#: GrampsAssistant/grampsassistant.py:1349
 msgid "Model name:"
 msgstr "Modellname:"
 
@@ -16609,7 +16809,7 @@ msgstr ""
 "als Live-Datenbank, die aus Gründen der Geschwindigkeit lokal gespiegelt "
 "wird."
 
-#: GrampsWebApiDb/grampswebapidb.py:262
+#: GrampsWebApiDb/grampswebapidb.py:447
 msgid ""
 "The account authenticating via GRAMPS_WEB_API_KEY does not have permission "
 "on the server for this operation (HTTP 403 Forbidden). Generate a key for an "
@@ -16622,7 +16822,7 @@ msgstr ""
 "Berechtigungen oder bitte den Serveradministrator, diesem Konto Zugriff zu "
 "gewähren."
 
-#: GrampsWebApiDb/grampswebapidb.py:422
+#: GrampsWebApiDb/grampswebapidb.py:656
 #, python-format
 msgid ""
 "This Family Tree is named \"%(actual)s\", but GRAMPS_WEB_API_KEY currently "
@@ -16639,11 +16839,42 @@ msgstr ""
 "bereits diesen Namen trägt – die Wiederverwendung dieses Stammbaums würde "
 "dessen vorhandene lokale Daten mit denen des anderen Kontos vermischen."
 
-#: GrampsWebApiDb/grampswebapidb.py:550
+#: GrampsWebApiDb/grampswebapidb.py:703
+#, python-format
+msgid ""
+"The account authenticating via GRAMPS_WEB_API_KEY is missing server "
+"permission(s) this addon requires: %(missing)s. Grant it at least the "
+"\"%(role)s\" role on the server (or ask an administrator to), then reopen "
+"this Family Tree. Opening it as-is would leave the local mirror silently "
+"incomplete or unable to save changes back."
+msgstr ""
+"Dem Konto, das sich über GRAMPS_WEB_API_KEY authentifiziert, fehlen die für "
+"diese Erweiterung erforderlichen Serverberechtigungen: %(missing)s. Weise "
+"ihm auf dem Server mindestens die Rolle „%(role)s“ zu (oder bitte einen "
+"Administrator darum), und öffne diesen Stammbaum anschließend erneut. "
+"Würdest du ihn in seinem aktuellen Zustand öffnen, bliebe der lokale Spiegel "
+"unbemerkt unvollständig oder es könnten keine Änderungen zurückgespeichert "
+"werden."
+
+#: GrampsWebApiDb/grampswebapidb.py:741
+#, python-format
+msgid ""
+"This server runs Gramps %(actual)s, but this addon needs a server running "
+"Gramps %(required)s or newer: older servers serialize their transaction "
+"history in a format it cannot read. Upgrade the Gramps installation behind "
+"the Gramps Web API server (or ask its administrator to)."
+msgstr ""
+"Auf diesem Server läuft Gramps %(actual)s, diese Erweiterung benötigt jedoch "
+"einen Server, auf dem Gramps %(required)s oder eine neuere Version läuft: "
+"Ältere Server speichern ihren Transaktionsverlauf in einem Format, das diese "
+"Erweiterung nicht lesen kann. Aktualisiere die Gramps-Installation hinter "
+"dem Gramps-Web-API-Server (oder bitten dessen Administrator darum)."
+
+#: GrampsWebApiDb/grampswebapidb.py:1008
 msgid "Retry local change after server conflict"
 msgstr "Lokale Änderung nach Serverkonflikt erneut versuchen"
 
-#: GrampsWebApiDb/grampswebapidb.py:668
+#: GrampsWebApiDb/grampswebapidb.py:1228
 msgid "Clear local mirror before full resync"
 msgstr "Lokalen Spiegel vor der vollständigen Neusynchronisierung löschen"
 
@@ -16781,8 +17012,8 @@ msgstr ""
 "Der Stammbaum „%s“ wurde erstellt. Öffne ihn unter „Stammbäume“ -> "
 "„Stammbäume verwalten“, um die Synchronisierung zu starten."
 
-#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:204
-#: GrampsWebSync/grampswebsync.py:269
+#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:230
+#: GrampsWebSync/grampswebsync.py:295
 msgid "Gramps Web Sync"
 msgstr "Gramps-Web-Synchronisierung"
 
@@ -16790,19 +17021,19 @@ msgstr "Gramps-Web-Synchronisierung"
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Synchronisiert eine lokale Datenbank mit einer Gramps-Webinstanz."
 
-#: GrampsWebSync/grampswebsync.py:249
+#: GrampsWebSync/grampswebsync.py:275
 msgid "_Try again"
 msgstr "_Versuche es noch einmal"
 
-#: GrampsWebSync/grampswebsync.py:250
+#: GrampsWebSync/grampswebsync.py:276
 msgid "C_onnect"
 msgstr "Ver_binden"
 
-#: GrampsWebSync/grampswebsync.py:345
+#: GrampsWebSync/grampswebsync.py:371
 msgid "Forget this server?"
 msgstr "Diesen Server vergessen?"
 
-#: GrampsWebSync/grampswebsync.py:347
+#: GrampsWebSync/grampswebsync.py:373
 msgid ""
 "The address, user name and password stored for this server will be removed, "
 "along with the record of when this family tree last synchronized with it. "
@@ -16813,11 +17044,11 @@ msgstr ""
 "Stammbaum zuletzt mit dem Server synchronisiert wurde. Bei der nächsten "
 "Synchronisierung werden die beiden Stammbäume von Grund auf neu verglichen."
 
-#: GrampsWebSync/grampswebsync.py:352
+#: GrampsWebSync/grampswebsync.py:378
 msgid "Forget"
 msgstr "Vergessen"
 
-#: GrampsWebSync/grampswebsync.py:480
+#: GrampsWebSync/grampswebsync.py:508
 msgid ""
 "These credentials were last used with a different family tree. Check the "
 "server before continuing."
@@ -16825,39 +17056,39 @@ msgstr ""
 "Diese Anmeldedaten wurden zuletzt für einen anderen Stammbaum verwendet. "
 "Überprüfe den Server, bevor du fortfährst."
 
-#: GrampsWebSync/grampswebsync.py:556
+#: GrampsWebSync/grampswebsync.py:585
 msgid "Change server…"
 msgstr "Server wechseln…"
 
-#: GrampsWebSync/grampswebsync.py:591
+#: GrampsWebSync/grampswebsync.py:620
 msgid "Server URL:"
 msgstr "Server-URL:"
 
-#: GrampsWebSync/grampswebsync.py:593 PhpGedView/phpgedview.glade:170
+#: GrampsWebSync/grampswebsync.py:622 PhpGedView/phpgedview.glade:170
 msgid "Username:"
 msgstr "Benutzername:"
 
-#: GrampsWebSync/grampswebsync.py:594 PhpGedView/phpgedview.glade:182
+#: GrampsWebSync/grampswebsync.py:623 PhpGedView/phpgedview.glade:182
 msgid "Password:"
 msgstr "Kennwort:"
 
-#: GrampsWebSync/grampswebsync.py:598
+#: GrampsWebSync/grampswebsync.py:627
 msgid "Remember password"
 msgstr "Passwort speichern"
 
-#: GrampsWebSync/grampswebsync.py:610
+#: GrampsWebSync/grampswebsync.py:639
 msgid "Forget this server"
 msgstr "Diesen Server vergessen"
 
-#: GrampsWebSync/grampswebsync.py:641
+#: GrampsWebSync/grampswebsync.py:670
 msgid "About this tool"
 msgstr "Über dieses Werkzeug"
 
-#: GrampsWebSync/grampswebsync.py:645
+#: GrampsWebSync/grampswebsync.py:674
 msgid "Open the online manual"
 msgstr "Das Online-Handbuch öffnen"
 
-#: GrampsWebSync/grampswebsync.py:658
+#: GrampsWebSync/grampswebsync.py:687
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
 "remote family tree served by Gramps Web.\n"
@@ -16889,24 +17120,24 @@ msgstr ""
 "manueller Änderungen zusammenführen möchtest, verwende das Import- und "
 "Zusammenführungs-Werkzeug."
 
-#: GrampsWebSync/grampswebsync.py:729 HistContext/HistContext.py:289
+#: GrampsWebSync/grampswebsync.py:758 HistContext/HistContext.py:289
 #: HistContext/HistContext.py:333 HistContext/HistContext.py:420
 msgid "Error:"
 msgstr "Fehler:"
 
-#: GrampsWebSync/grampswebsync.py:756 GrampsWebSync/grampswebsync.py:1012
+#: GrampsWebSync/grampswebsync.py:785 GrampsWebSync/grampswebsync.py:1065
 msgid "Warning:"
 msgstr "Warnung:"
 
-#: GrampsWebSync/grampswebsync.py:901
+#: GrampsWebSync/grampswebsync.py:947
 msgid "Sync mode:"
 msgstr "Synchronisierungsmodus:"
 
-#: GrampsWebSync/grampswebsync.py:1077
+#: GrampsWebSync/grampswebsync.py:1129
 msgid "Synchronization complete"
 msgstr "Synchronisierung abgeschlossen"
 
-#: GrampsWebSync/grampswebsync.py:1084
+#: GrampsWebSync/grampswebsync.py:1136
 msgid "Synchronization failed"
 msgstr "Die Synchronisierung ist fehlgeschlagen"
 
@@ -17323,53 +17554,227 @@ msgstr "Gram.py-Skript"
 msgid "Run a special Gramps Python script"
 msgstr "Ein spezielles Gramps-Python-Skript ausführen"
 
-#: GrampyScript/GrampyScript.py:91
+#: GrampyScript/GrampyScript.py:88
 msgid "Load query from a .script file"
 msgstr "Abfrage aus einer .script-Datei laden"
 
-#: GrampyScript/GrampyScript.py:121
+#: GrampyScript/GrampyScript.py:149
 msgid "Save query to a .script file"
 msgstr "Abfrage in einer .script-Datei speichern"
 
-#: GrampyScript/GrampyScript.py:141
+#: GrampyScript/GrampyScript.py:169
 msgid "Download results as a CSV file"
 msgstr "Ergebnisse als CSV-Datei herunterladen"
 
-#: GrampyScript/GrampyScript.py:303
+#: GrampyScript/GrampyScript.py:336
 msgid "Open..."
 msgstr "Öffnen..."
 
-#: GrampyScript/GrampyScript.py:305
+#: GrampyScript/GrampyScript.py:338
 msgid "Save as..."
 msgstr "Speichern unter..."
 
-#: GrampyScript/GrampyScript.py:319
+#: GrampyScript/GrampyScript.py:356
 msgid "Save as CSV"
 msgstr "Als CSV speichern"
 
-#: GrampyScript/GrampyScript.py:320
+#: GrampyScript/GrampyScript.py:357
 msgid "Copy to clipboard"
 msgstr "In die Zwischenablage kopieren"
 
-#: GrampyScript/GrampyScript.py:395
-msgid "Chart"
-msgstr "Diagramm"
-
-#: GrampyScript/GrampyScript.py:400
+#: GrampyScript/GrampyScript.py:424
 msgid "Execute <Alt+Enter>"
 msgstr "Ausführen <Alt+Enter>"
 
-#: GrampyScript/GrampyScript.py:402
+#: GrampyScript/GrampyScript.py:426
 msgid "Execute the script"
 msgstr "Das Skript ausführen"
 
-#: GrampyScript/GrampyScript.py:416
-msgid "Ready..."
-msgstr "Fertig..."
+#: GrampyScript/GrampyScript.py:456
+msgid "Chart"
+msgstr "Diagramm"
 
-#: GrampyScript/GrampyScript.py:1028
+#: GrampyScript/GrampyScript.py:480 GrampyScript/GrampyScript.py:551
+msgid "Ready... (Tab for completions)"
+msgstr "Fertig... (Tab für Vervollständigungen)"
+
+#: GrampyScript/GrampyScript.py:505
+msgid "Untitled"
+msgstr "Unbetitelt"
+
+#: GrampyScript/GrampyScript.py:534
+msgid ""
+"If you continue without saving, the changes you have made to this script "
+"will be lost."
+msgstr ""
+"Wenn du ohne zu speichern fortfährst, gehen die Änderungen, die du an diesem "
+"Skript vorgenommen hast, verloren."
+
+#: GrampyScript/GrampyScript.py:1332
 msgid "Gram.py Script Edited Data"
 msgstr "Mit Gram.py bearbeitete Daten"
+
+#: GrampyScript/script_descriptions.py:44
+msgid "List All People"
+msgstr "Alle Personen auflisten"
+
+#: GrampyScript/script_descriptions.py:46
+msgid ""
+"Iterate over every person in the database and show their Gramps ID, given "
+"name, surname, and gender in the results table."
+msgstr ""
+"Durchlaufe alle Personen in der Datenbank und zeige deren Gramps-ID, "
+"Vornamen, Nachnamen und Geschlecht in der Ergebnistabelle an."
+
+#: GrampyScript/script_descriptions.py:51
+msgid "Filter By Surname"
+msgstr "Nach Nachnamen filtern"
+
+#: GrampyScript/script_descriptions.py:53
+msgid ""
+"List only the people whose surname matches a given value — a starting point "
+"for narrowing any report down by a condition."
+msgstr ""
+"Nur die Personen auflisten, deren Nachname mit einem bestimmten Wert "
+"übereinstimmt – ein Ausgangspunkt, um einen Bericht anhand einer Bedingung "
+"einzugrenzen."
+
+#: GrampyScript/script_descriptions.py:58 Overview/Overview.gpr.py:45
+msgid "Family Overview"
+msgstr "Familienübersicht"
+
+#: GrampyScript/script_descriptions.py:60
+msgid ""
+"List every family together with the father, the mother, and how many "
+"children they have — a quick way to spot families that look incomplete."
+msgstr ""
+"Alle Familien zusammen mit dem Vater, der Mutter und der Anzahl ihrer Kinder "
+"auflisten – so lassen sich Familien, die unvollständig erscheinen, schnell "
+"erkennen."
+
+#: GrampyScript/script_descriptions.py:66
+msgid "Gender Breakdown (Pie Chart)"
+msgstr "Aufschlüsselung nach Geschlecht (Kreisdiagramm)"
+
+#: GrampyScript/script_descriptions.py:68
+msgid ""
+"Count how many people are male, female, or of unknown gender, then draw a "
+"pie chart of the totals. Check the Chart tab after running."
+msgstr ""
+"Zählt, wie viele Personen männlich, weiblich oder von unbekanntem Geschlecht "
+"sind, und erstellt dann ein Kreisdiagramm mit den Gesamtzahlen. Sieh dir "
+"nach der Ausführung die Registerkarte Diagramm an."
+
+#: GrampyScript/script_descriptions.py:74
+msgid "Age At Death Histogram"
+msgstr "Histogramm zum Sterbealter"
+
+#: GrampyScript/script_descriptions.py:76
+msgid ""
+"For everyone with both a birth and a death event recorded, compute their age "
+"in whole years and draw a histogram of the distribution. Check the Chart tab "
+"after running."
+msgstr ""
+"Für alle Personen, für die sowohl ein Geburts- als auch ein Todesdatum "
+"erfasst ist, wird das Alter in ganzen Jahren berechnet und ein Histogramm "
+"der Verteilung erstellt. Sieh dir nach der Ausführung die Registerkarte "
+"Diagramm an."
+
+#: GrampyScript/script_descriptions.py:82
+msgid "Mark Unsourced People As Private"
+msgstr "Personen ohne Quellenangabe als vertraulich kennzeichnen"
+
+#: GrampyScript/script_descriptions.py:84
+msgid ""
+"Batch-edit example: find every person who has no citations attached and flag "
+"them as private, wrapped in begin_changes()/end_changes() so the edits "
+"happen inside a single, undoable transaction."
+msgstr ""
+"Beispiel für eine Massenbearbeitung: Alle Personen suchen, denen keine "
+"Fundstellen zugeordnet sind, und sie als privat kennzeichnen, wobei der "
+"Vorgang in `begin_changes()`/`end_changes()` eingeschlossen wird, damit die "
+"Änderungen innerhalb einer einzigen, rückgängig machbaren Transaktion "
+"erfolgen."
+
+#: GrampyScript/script_descriptions.py:91
+msgid "CSV-Ready People Report"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:93
+msgid ""
+"Build a simple tabular report — ID, name, gender, birth year — for every "
+"person. Once it runs, use Data > Save as CSV or Copy to clipboard to export "
+"the Table tab's contents."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:99
+#, fuzzy
+#| msgid "Active Person : "
+msgid "Active Person Summary"
+msgstr "Aktive Person: "
+
+#: GrampyScript/script_descriptions.py:101
+msgid ""
+"Show a compact family summary for the currently active person: their record, "
+"parents, spouse, and children."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:106
+msgid "Report On Selected People"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:108
+msgid ""
+"List just the people currently selected (highlighted) in the People view. "
+"Select some rows in the People view before running this script."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:114
+msgid "Find People Missing A Birth Date"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:116
+msgid ""
+"Data-quality check: list every person who has no recorded birth event, so "
+"you can prioritize research on those records."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:121
+msgid "Births Per Decade (Import Example)"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:123
+msgid ""
+"Counts births by decade, using a decade() function imported from "
+"script_helpers.py in this same folder — a template for sharing helper code "
+"between your own scripts with a plain 'import' statement."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:130
+#, fuzzy
+#| msgid "Custom \"test.xml\" file"
+msgid "Custom Filter Example"
+msgstr "Benutzerdefinierte „test.xml“-Datei"
+
+#: GrampyScript/script_descriptions.py:132
+msgid ""
+"Runs one of your own custom filters (from the Filters gramplet/editor) by "
+"name using custom_filter(). Change 'example filter' to the name of a filter "
+"you've already created; if the name doesn't match one, a warning shows up in "
+"the Output tab instead."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:140
+msgid "Delete Unused Repositories (Delete Example)"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:142
+msgid ""
+"Demonstrates delete(): removes any Repository record that nothing else in "
+"the tree refers to. Most trees have no unused repositories, so this is "
+"unlikely to actually delete anything — it's meant to show the pattern, "
+"wrapped in begin_changes()/end_changes() as a single undoable transaction."
+msgstr ""
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -17400,7 +17805,7 @@ msgid "Generic (light)"
 msgstr "Generisch (hell)"
 
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
-#: GraphView/graphview.py:189
+#: GraphView/graphview.py:182
 msgid "Graph View"
 msgstr "Diagrammansicht"
 
@@ -17408,203 +17813,203 @@ msgstr "Diagrammansicht"
 msgid "Dynamic and interactive graph of relations"
 msgstr "Dynamisches und interaktives Beziehungsdiagramm"
 
-#: GraphView/graphview.py:754
+#: GraphView/graphview.py:747
 msgid "Show IDs"
 msgstr "IDs anzeigen"
 
-#: GraphView/graphview.py:757
+#: GraphView/graphview.py:750
 msgid "Show avatars"
 msgstr "Avatare anzeigen"
 
-#: GraphView/graphview.py:760 GraphView/graphview.py:3746
+#: GraphView/graphview.py:753 GraphView/graphview.py:3739
 msgid "Highlight the home person"
 msgstr "Die Hausperson hervorheben"
 
-#: GraphView/graphview.py:764 GraphView/graphview.py:3754
+#: GraphView/graphview.py:757 GraphView/graphview.py:3747
 msgid "Show full dates"
 msgstr "Vollständige Daten anzeigen"
 
-#: GraphView/graphview.py:768 GraphView/graphview.py:3762
+#: GraphView/graphview.py:761 GraphView/graphview.py:3755
 msgid "Show places"
 msgstr "Orte zeigen"
 
-#: GraphView/graphview.py:784
+#: GraphView/graphview.py:777
 msgid "Horizontal: Left to Right"
 msgstr "Horizontal: Von links nach rechts"
 
-#: GraphView/graphview.py:784
+#: GraphView/graphview.py:777
 msgid "Horizontal: Right to Left"
 msgstr "Horizontal: Von rechts nach links"
 
-#: GraphView/graphview.py:784
+#: GraphView/graphview.py:777
 msgid "Vertical: Bottom to Top"
 msgstr "Vertikal: Von unten nach oben"
 
-#: GraphView/graphview.py:784
+#: GraphView/graphview.py:777
 msgid "Vertical: Top to Bottom"
 msgstr "Vertikal: Von oben nach unten"
 
-#: GraphView/graphview.py:786
+#: GraphView/graphview.py:779
 msgid "Time Direction"
 msgstr "Zeitrichtung"
 
-#: GraphView/graphview.py:791
+#: GraphView/graphview.py:784
 msgid "Limit number of people displayed (use 0 for unlimited)"
 msgstr "Anzahl der angezeigten Personen begrenzen (für unbegrenzt 0 verwenden)"
 
-#: GraphView/graphview.py:812
+#: GraphView/graphview.py:805
 msgid "Person theme"
 msgstr "Personenthema"
 
-#: GraphView/graphview.py:817
+#: GraphView/graphview.py:810
 msgid "Path color to home person"
 msgstr "Pfadfarbe zur Hauptperson"
 
-#: GraphView/graphview.py:821
+#: GraphView/graphview.py:814
 msgid "Font:"
 msgstr "Schrift:"
 
-#: GraphView/graphview.py:835
+#: GraphView/graphview.py:828
 msgid "Avatars style"
 msgstr "Avatarstil"
 
-#: GraphView/graphview.py:841
+#: GraphView/graphview.py:834
 msgid "PNG files"
 msgstr "PNG-Dateien"
 
-#: GraphView/graphview.py:846
+#: GraphView/graphview.py:839
 msgid "Male avatar:"
 msgstr "Männlicher Avatar:"
 
-#: GraphView/graphview.py:847
+#: GraphView/graphview.py:840
 msgid "Choose male avatar"
 msgstr "Männlichen Avatar auswählen"
 
-#: GraphView/graphview.py:859
+#: GraphView/graphview.py:852
 msgid "Female avatar:"
 msgstr "Weiblicher Avatar:"
 
-#: GraphView/graphview.py:860
+#: GraphView/graphview.py:853
 msgid "Choose female avatar"
 msgstr "Weiblichen Avatar auswählen"
 
-#: GraphView/graphview.py:872
+#: GraphView/graphview.py:865
 msgid "Unknown avatar:"
 msgstr "Unbekannter Avatar:"
 
-#: GraphView/graphview.py:873
+#: GraphView/graphview.py:866
 msgid "Choose Unknown avatar"
 msgstr "Avatar für Unbekannt auswählen"
 
-#: GraphView/graphview.py:885
+#: GraphView/graphview.py:878
 msgid "Other avatar:"
 msgstr "Anderer Avatar:"
 
-#: GraphView/graphview.py:886
+#: GraphView/graphview.py:879
 msgid "Choose Other avatar"
 msgstr "Avatar für Andere auswählen"
 
-#: GraphView/graphview.py:900
+#: GraphView/graphview.py:893
 msgid "Active person border size"
 msgstr "Randgröße für aktive Person"
 
-#: GraphView/graphview.py:905
+#: GraphView/graphview.py:898
 msgid "Person border size"
 msgstr "Randgröße für Person"
 
-#: GraphView/graphview.py:908
+#: GraphView/graphview.py:901
 msgid "Themes"
 msgstr "Themen"
 
-#: GraphView/graphview.py:921 GraphView/graphview.py:3780
+#: GraphView/graphview.py:914 GraphView/graphview.py:3773
 msgid "Show animation"
 msgstr "Animation anzeigen"
 
-#: GraphView/graphview.py:925
+#: GraphView/graphview.py:918
 msgid "Animation speed (1..5 and 5 is the slower)"
 msgstr "Animationsgeschwindigkeit (1..5, wobei 5 die langsamste ist)"
 
-#: GraphView/graphview.py:929
+#: GraphView/graphview.py:922
 msgid "Animation count (0..8 use 0 to turn off)"
 msgstr "Anzahl der Animationen (0..8, 0 zum Ausschalten verwenden)"
 
-#: GraphView/graphview.py:938
+#: GraphView/graphview.py:931
 msgid "Animation"
 msgstr "Animation"
 
-#: GraphView/graphview.py:952
+#: GraphView/graphview.py:945
 msgid "Search in all database"
 msgstr "Suche in allen Datenbanken"
 
-#: GraphView/graphview.py:954
+#: GraphView/graphview.py:947
 msgid "Also apply search by all database."
 msgstr "Wende die Suche auch auf alle Datenbanken an."
 
-#: GraphView/graphview.py:957
+#: GraphView/graphview.py:950
 msgid "Show person images"
 msgstr "Personenbilder anzeigen"
 
-#: GraphView/graphview.py:960
+#: GraphView/graphview.py:953
 msgid "Show persons thumbnails in search result list."
 msgstr "Zeige Personen-Miniaturansichten in der Suchergebnisliste an."
 
-#: GraphView/graphview.py:963 SearchGramplet/SearchGramplet.py:102
+#: GraphView/graphview.py:956 SearchGramplet/SearchGramplet.py:102
 msgid "Show bookmarked first"
 msgstr "Zuerst mit Lesezeichen versehene anzeigen"
 
-#: GraphView/graphview.py:966
+#: GraphView/graphview.py:959
 msgid "Show bookmarked persons first in search result list."
 msgstr "Personen mit Lesezeichen zuerst in der Suchergebnisliste anzeigen."
 
-#: GraphView/graphview.py:999
+#: GraphView/graphview.py:992
 msgid "Select a dot file name"
 msgstr "Wähle einen dot-Dateinamen"
 
-#: GraphView/graphview.py:1109 LifeLineChartView/lifelinechartview.py:527
+#: GraphView/graphview.py:1102 LifeLineChartView/lifelinechartview.py:527
 msgid "Zoom to original"
 msgstr "Auf Originalgröße vergrößern"
 
-#: GraphView/graphview.py:1116 LifeLineChartView/lifelinechartview.py:534
+#: GraphView/graphview.py:1109 LifeLineChartView/lifelinechartview.py:534
 msgid "Zoom to best fit"
 msgstr "Zoomen, um bestmöglich anzupassen"
 
-#: GraphView/graphview.py:1123
+#: GraphView/graphview.py:1116
 msgid "Go to active person"
 msgstr "Gehe zur aktiven Person"
 
-#: GraphView/graphview.py:1128
+#: GraphView/graphview.py:1121
 msgid "Go to bookmark"
 msgstr "Gehe zum Lesezeichen"
 
-#: GraphView/graphview.py:1130
+#: GraphView/graphview.py:1123
 msgid "Center view on selected bookmark"
 msgstr "Zentriere Ansicht auf ausgewähltes Lesezeichen"
 
-#: GraphView/graphview.py:1132
+#: GraphView/graphview.py:1125
 msgid "Bookmarks for current graph"
 msgstr "Lesezeichen für das aktuelles Diagramm"
 
-#: GraphView/graphview.py:1133
+#: GraphView/graphview.py:1126
 msgid "Other Bookmarks"
 msgstr "Andere Lesezeichen"
 
-#: GraphView/graphview.py:1179
+#: GraphView/graphview.py:1172
 msgid "Vertical spacing between generations"
 msgstr "Vertikaler Abstand zwischen den Generationen"
 
-#: GraphView/graphview.py:1184
+#: GraphView/graphview.py:1177
 msgid "Horizontal spacing between generations"
 msgstr "Horizontaler Abstand zwischen den Generationen"
 
-#: GraphView/graphview.py:1188
+#: GraphView/graphview.py:1181
 msgid "Spacings"
 msgstr "Abstände"
 
-#: GraphView/graphview.py:1193
+#: GraphView/graphview.py:1186
 msgid "All connected"
 msgstr "Alle verbunden"
 
-#: GraphView/graphview.py:1195
+#: GraphView/graphview.py:1188
 msgid ""
 "Show all connected persons limited by generation restrictions.\n"
 "Works slow, so don't set large generation values."
@@ -17613,15 +18018,15 @@ msgstr ""
 "eingeschränkt sind.\n"
 "Funktioniert langsam, daher keine großen Generationswerte einstellen."
 
-#: GraphView/graphview.py:1337
+#: GraphView/graphview.py:1330
 msgid "Add active person"
 msgstr "Aktive Person hinzufügen"
 
-#: GraphView/graphview.py:1342
+#: GraphView/graphview.py:1335
 msgid "Call the bookmark editor"
 msgstr "Den Lesezeicheneditor aufrufen"
 
-#: GraphView/graphview.py:1399
+#: GraphView/graphview.py:1392
 msgid ""
 "You don't have any bookmarks yet...\n"
 "Try to add some frequently used persons to speedup navigation."
@@ -17630,22 +18035,22 @@ msgstr ""
 "Füge einige häufig verwendete Personen hinzu, um die Navigation zu "
 "beschleunigen."
 
-#: GraphView/graphview.py:1407
+#: GraphView/graphview.py:1400
 msgid "No bookmarks for this graph..."
 msgstr "Keine Lesezeichen für dieses Diagramm..."
 
-#: GraphView/graphview.py:1412
+#: GraphView/graphview.py:1405
 msgid "No other bookmarks..."
 msgstr "Keine anderen Lesezeichen..."
 
-#: GraphView/graphview.py:1417 GraphView/graphview.py:1419
+#: GraphView/graphview.py:1410 GraphView/graphview.py:1412
 #: GraphView/search_widget.py:233 GraphView/search_widget.py:252
 #: SearchGramplet/SearchGramplet.py:259 SearchGramplet/SearchGramplet.py:281
 #, python-format
 msgid "found: %s"
 msgstr "gefunden: %s"
 
-#: GraphView/graphview.py:1429
+#: GraphView/graphview.py:1422
 #, python-format
 msgid ""
 "Add active person to bookmarks\n"
@@ -17654,7 +18059,7 @@ msgstr ""
 "Aktive Person zu Lesezeichen hinzufügen\n"
 "%s"
 
-#: GraphView/graphview.py:1516
+#: GraphView/graphview.py:1509
 #, python-format
 msgid ""
 "Person <b><i>%s</i></b> is not in the current view.\n"
@@ -17663,11 +18068,11 @@ msgstr ""
 "Person <b><i>%s</i></b> ist nicht in der aktuellen Ansicht enthalten.\n"
 "Möchtest du sie aktivieren und die Ansicht neu erstellen?"
 
-#: GraphView/graphview.py:1519
+#: GraphView/graphview.py:1512
 msgid "Change active person?"
 msgstr "Aktive Person ändern?"
 
-#: GraphView/graphview.py:2668
+#: GraphView/graphview.py:2661
 #, python-brace-format
 msgid ""
 "This graph would contain at least {people_count} people, which exceeds the "
@@ -17680,130 +18085,130 @@ msgstr ""
 "werden mindestens {people_missing} Personen nicht angezeigt. Du kannst diese "
 "Grenze in der Ansichtskonfiguration ändern."
 
-#: GraphView/graphview.py:2678
+#: GraphView/graphview.py:2671
 msgid "Incomplete graph"
 msgstr "Unvollständiges Diagramm"
 
-#: GraphView/graphview.py:3047
+#: GraphView/graphview.py:3040
 msgid "Image on right side"
 msgstr "Bild auf der rechten Seite"
 
-#: GraphView/graphview.py:3068
+#: GraphView/graphview.py:3061
 msgid "Image on left side"
 msgstr "Bild auf der linken Seite"
 
-#: GraphView/graphview.py:3168 GraphView/graphview.py:3169
-#: GraphView/graphview.py:3181 GraphView/graphview.py:3182
+#: GraphView/graphview.py:3161 GraphView/graphview.py:3162
+#: GraphView/graphview.py:3174 GraphView/graphview.py:3175
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
 #, python-format
 msgid "%s "
 msgstr "%s "
 
-#: GraphView/graphview.py:3405
+#: GraphView/graphview.py:3398
 msgid "<b>Tags:</b>"
 msgstr "<b>Etiketten::</b>"
 
-#: GraphView/graphview.py:3789
+#: GraphView/graphview.py:3782
 msgid "Lines type"
 msgstr "Linienart"
 
-#: GraphView/graphview.py:3793 NetworkChart/NetworkChart.py:1174
+#: GraphView/graphview.py:3786 NetworkChart/NetworkChart.py:1174
 #: NetworkChart/NetworkChart.py:1188
 msgid "Direct"
 msgstr "Direkt"
 
-#: GraphView/graphview.py:3801
+#: GraphView/graphview.py:3794
 msgid "Curves"
 msgstr "Kurven"
 
-#: GraphView/graphview.py:3809
+#: GraphView/graphview.py:3802
 msgid "Ortho"
 msgstr "Orthogonal"
 
-#: GraphView/graphview.py:3885
+#: GraphView/graphview.py:3878
 msgid "No Events for this person"
 msgstr "Keine Ereignisse für diese Person"
 
-#: GraphView/graphview.py:3906
+#: GraphView/graphview.py:3899
 msgid "Select tags for person"
 msgstr "Etiketten für Person auswählen"
 
-#: GraphView/graphview.py:3917
+#: GraphView/graphview.py:3910
 msgid "Add new family"
 msgstr "Neue Familie hinzufügen"
 
-#: GraphView/graphview.py:4035
+#: GraphView/graphview.py:4028
 msgid "Add parents"
 msgstr "Eltern hinzufügen"
 
-#: GraphView/graphview.py:4058 QuiltView/QuiltView.py:1445
+#: GraphView/graphview.py:4051 QuiltView/QuiltView.py:1445
 msgid "Set as home person"
 msgstr "Als Hauptperson festlegen"
 
-#: GraphView/graphview.py:4061
+#: GraphView/graphview.py:4054
 msgid "Show path to home person"
 msgstr "Weg zur Hauptperson anzeigen"
 
-#: GraphView/graphview.py:4067 GraphView/search_widget.py:286
+#: GraphView/graphview.py:4060 GraphView/search_widget.py:286
 #: GraphView/search_widget.py:364 SearchGramplet/SearchGramplet.py:637
 #: SearchGramplet/SearchGramplet.py:769
 msgid "Remove from bookmarks"
 msgstr "Aus den Lesezeichen entfernen"
 
-#: GraphView/graphview.py:4070 GraphView/search_widget.py:294
+#: GraphView/graphview.py:4063 GraphView/search_widget.py:294
 #: GraphView/search_widget.py:377 SearchGramplet/SearchGramplet.py:645
 #: SearchGramplet/SearchGramplet.py:782
 msgid "Add to bookmarks"
 msgstr "Zu den Lesezeichen hinzufügen"
 
-#: GraphView/graphview.py:4171
+#: GraphView/graphview.py:4164
 msgid "No Events for this family"
 msgstr "Keine Ereignisse für diese Familie"
 
-#: GraphView/graphview.py:4192
+#: GraphView/graphview.py:4185
 msgid "Select tags for family"
 msgstr "Etiketten für Familie auswählen"
 
-#: GraphView/graphview.py:4211
+#: GraphView/graphview.py:4204
 msgid "Add father"
 msgstr "Vater hinzufügen"
 
-#: GraphView/graphview.py:4220
+#: GraphView/graphview.py:4213
 msgid "Add mother"
 msgstr "Mutter hinzufügen"
 
-#: GraphView/graphview.py:4323
+#: GraphView/graphview.py:4316
 msgid "About Graph View"
 msgstr "Über die Diagrammansicht"
 
-#: GraphView/graphview.py:4548 GraphView/graphview.py:4594
+#: GraphView/graphview.py:4541 GraphView/graphview.py:4587
 #: QuiltView/QuiltView.py:1601
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr "Hinzufügen von Etiketten zur Person (%s)"
 
-#: GraphView/graphview.py:4553 GraphView/graphview.py:4605
+#: GraphView/graphview.py:4546 GraphView/graphview.py:4598
 #: QuiltView/QuiltView.py:1606
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "Hinzufügen von Etiketten zur Familie (%s)"
 
-#: GraphView/graphview.py:4679
+#: GraphView/graphview.py:4672
 #, python-format
 msgid "Deleting the person [%s] will remove it from the database."
 msgstr ""
 "Durch das Löschen der Person [%s] wird diese aus der Datenbank entfernt."
 
-#: GraphView/graphview.py:4708
+#: GraphView/graphview.py:4701
 #, python-format
 msgid "Delete family [%s]?"
 msgstr "Familie [%s] löschen?"
 
-#: GraphView/graphview.py:4709
+#: GraphView/graphview.py:4702
 msgid "Deleting the family will remove it from the database."
 msgstr "Durch das Löschen der Familie wird diese aus der Datenbank entfernt."
 
-#: GraphView/graphview.py:4720
+#: GraphView/graphview.py:4713
 #, python-format
 msgid "Delete Family [%s]"
 msgstr "Familie [%s] löschen"
@@ -19164,10 +19569,6 @@ msgstr "Person ausblenden"
 msgid "Show person"
 msgstr "Person zeigen"
 
-#: LifeLineChartView/lifelinechart.py:2622
-msgid "Show siblings"
-msgstr "Geschwister zeigen"
-
 #: LifeLineChartView/lifelinechart.py:2627
 msgid "Hide siblings"
 msgstr "Geschwister ausblenden"
@@ -19583,36 +19984,31 @@ msgstr "Nationales Archiv"
 msgid "Who (re)searches who?"
 msgstr "Wer erforscht/sucht wen?"
 
-#: NameSuite/.venv/lib/python3.12/site-packages/mypy/main.py:450
-#, python-format
-msgid "%(prog)s: error: %(message)s\n"
-msgstr "%(prog)s: Fehler: %(message)s\n"
-
-#: NameSuite/name_processor.gpr.py:6
+#: NameSuite/name_processor.gpr.py:26
 msgid "Audit Given and Patronymic Names"
 msgstr "Prüfung der Vornamen und patronymischen Namen"
 
-#: NameSuite/name_processor.gpr.py:9
+#: NameSuite/name_processor.gpr.py:29
 msgid ""
 "Tools to rename given name, audit and infer patronymic (East Slavic) names."
 msgstr ""
 "Werkzeuge zum Umbenennen von Vornamen sowie zur Überprüfung und Ableitung "
 "von Patronymika (ostslawische Namen)."
 
-#: NameSuite/name_processor.gpr.py:25 NameSuite/name_processor.gpr.py:37
+#: NameSuite/name_processor.gpr.py:45 NameSuite/name_processor.gpr.py:57
 msgid "Patronymic Suggestion"
 msgstr "Patronymischer Vorschlag"
 
-#: NameSuite/name_processor.gpr.py:27
+#: NameSuite/name_processor.gpr.py:47
 msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
 msgstr ""
 "Schlägt während der Navigation in Echtzeit (ostslawische) Patronymnamen vor."
 
-#: NameSuite/name_processor/views/base_tab.py:150
+#: NameSuite/name_processor/views/base_tab.py:164
 msgid "Use"
 msgstr "Verwendung"
 
-#: NameSuite/name_processor/views/gramplet.py:32
+#: NameSuite/name_processor/views/gramplet.py:45
 #, python-brace-format
 msgid ""
 "Missing Patronymic Detected.\n"
@@ -19623,182 +20019,182 @@ msgstr ""
 "Vorschlag: {0}\n"
 "Basierend auf dem Vater: {1}"
 
-#: NameSuite/name_processor/views/gramplet.py:34
+#: NameSuite/name_processor/views/gramplet.py:47
 msgid "Navigate to an individual to check patronymic status."
 msgstr "Navigiere zu einer Person, um den Status des Patronyms zu überprüfen."
 
-#: NameSuite/name_processor/views/gramplet.py:35
+#: NameSuite/name_processor/views/gramplet.py:48
 msgid "No active person selected."
 msgstr "Keine aktive Person ausgewählt."
 
-#: NameSuite/name_processor/views/gramplet.py:37
+#: NameSuite/name_processor/views/gramplet.py:50
 msgid ""
 "Patronymic inference can't be inferred for non-binary or unknown genders."
 msgstr ""
 "Bei nicht-binären oder unbekannten Geschlechtern kann kein Patronym "
 "abgeleitet werden."
 
-#: NameSuite/name_processor/views/gramplet.py:40
+#: NameSuite/name_processor/views/gramplet.py:53
 msgid "Individual already has a recorded patronymic."
 msgstr "Für diese Person ist bereits ein Patronymikum erfasst."
 
-#: NameSuite/name_processor/views/gramplet.py:43
+#: NameSuite/name_processor/views/gramplet.py:56
 msgid "No attached father found in database family records."
 msgstr ""
 "Keine Angaben zu einem Vater in den Familiendaten der Datenbank gefunden."
 
-#: NameSuite/name_processor/views/gramplet.py:46
+#: NameSuite/name_processor/views/gramplet.py:59
 msgid "Father lacks a recorded first name."
 msgstr "Der Vorname des Vaters ist nicht angegeben."
 
-#: NameSuite/name_processor/views/gramplet.py:49
+#: NameSuite/name_processor/views/gramplet.py:62
 msgid "Could not generate valid morphology patterns."
 msgstr "Es konnten keine gültigen Morphologiemuster generiert werden."
 
-#: NameSuite/name_processor/views/gramplet.py:51
+#: NameSuite/name_processor/views/gramplet.py:64
 msgid "Patronymic applied successfully!"
 msgstr "Patronymikum erfolgreich eingefügt!"
 
-#: NameSuite/name_processor/views/gramplet.py:77
+#: NameSuite/name_processor/views/gramplet.py:90
 msgid "Apply Suggestion"
 msgstr "Vorschlag anwenden"
 
-#: NameSuite/name_processor/views/tool.py:92
+#: NameSuite/name_processor/views/tool.py:105
 msgid "Infer East Slavic Patronymics"
 msgstr "Ostslawische Patronymika ableiten"
 
-#: NameSuite/name_processor/views/tool.py:112
+#: NameSuite/name_processor/views/tool.py:125
 msgid "Rename Given Names"
 msgstr "Vornamen umbenennen"
 
-#: NameSuite/name_processor/views/tool.py:115
+#: NameSuite/name_processor/views/tool.py:128
 msgid "Audit Patronymics"
 msgstr "Prüfung der Patronymika"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:68
+#: NameSuite/name_processor/views/tool_audit_tab.py:80
 msgid "Auditing Settings"
 msgstr "Prüfungseinstellungen"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:76
+#: NameSuite/name_processor/views/tool_audit_tab.py:88
 msgid "All Records"
 msgstr "Alle Datensätze"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:77
+#: NameSuite/name_processor/views/tool_audit_tab.py:89
 msgid "Males Only"
 msgstr "Nur männlich"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:78
+#: NameSuite/name_processor/views/tool_audit_tab.py:90
 msgid "Females Only"
 msgstr "Nur weiblich"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:82
+#: NameSuite/name_processor/views/tool_audit_tab.py:94
 msgid "Configure Rules..."
 msgstr "Regeln konfigurieren..."
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:87
+#: NameSuite/name_processor/views/tool_audit_tab.py:99
 msgid "Match Pre-Revolutionary Orthography"
 msgstr "Anpassung an die vorrevolutionäre Rechtschreibung"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:95
+#: NameSuite/name_processor/views/tool_audit_tab.py:107
 msgid "Audit Database"
 msgstr "Datenbank überprüfen"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:117
+#: NameSuite/name_processor/views/tool_audit_tab.py:129
 msgid "Select All Safe Corrections"
 msgstr "Alle sicheren Korrekturen auswählen"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:122
-#: NameSuite/name_processor/views/tool_rename_tab.py:116
+#: NameSuite/name_processor/views/tool_audit_tab.py:134
+#: NameSuite/name_processor/views/tool_rename_tab.py:128
 msgid "Apply Selected Corrections"
 msgstr "Ausgewählte Korrekturen anwenden"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:162
+#: NameSuite/name_processor/views/tool_audit_tab.py:174
 msgid "Configure Rules"
 msgstr "Regeln konfigurieren"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:186
-#: NameSuite/name_processor/views/tool_rename_tab.py:156
+#: NameSuite/name_processor/views/tool_audit_tab.py:198
+#: NameSuite/name_processor/views/tool_rename_tab.py:168
 msgid "Individual"
 msgstr "Einzelperson"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:190
-#: NameSuite/name_processor/views/tool_rename_tab.py:158
+#: NameSuite/name_processor/views/tool_audit_tab.py:202
+#: NameSuite/name_processor/views/tool_rename_tab.py:170
 msgid "Current"
 msgstr "Aktuell"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:193
+#: NameSuite/name_processor/views/tool_audit_tab.py:205
 msgid "Correction"
 msgstr "Korrektur"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:200
+#: NameSuite/name_processor/views/tool_audit_tab.py:212
 msgid "Conf"
 msgstr "Konf"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:201
+#: NameSuite/name_processor/views/tool_audit_tab.py:213
 msgid "Ref Year"
 msgstr "Ref. Jahr"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:204
+#: NameSuite/name_processor/views/tool_audit_tab.py:216
 msgid "Explanation"
 msgstr "Erläuterung"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:243
+#: NameSuite/name_processor/views/tool_audit_tab.py:255
 msgid "Audit Complete!"
 msgstr "Prüfung abgeschlossen!"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:248
+#: NameSuite/name_processor/views/tool_audit_tab.py:260
 msgid "No Results"
 msgstr "Keine Ergebnisse"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:248
+#: NameSuite/name_processor/views/tool_audit_tab.py:260
 msgid "No issues found."
 msgstr "Keine Probleme gefunden."
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:63
+#: NameSuite/name_processor/views/tool_rename_tab.py:75
 msgid "Search and Replace Options"
 msgstr "Suchen und Ersetzen – Optionen"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:70
+#: NameSuite/name_processor/views/tool_rename_tab.py:82
 msgid "Source Name:"
 msgstr "Quellenname:"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:72
+#: NameSuite/name_processor/views/tool_rename_tab.py:84
 msgid "e.g. Иоанн"
 msgstr "z. B. Иоанн"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:75
+#: NameSuite/name_processor/views/tool_rename_tab.py:87
 msgid "Target Name:"
 msgstr "Zielname:"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:77
+#: NameSuite/name_processor/views/tool_rename_tab.py:89
 msgid "e.g. Иван"
 msgstr "z.B. Иван"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:80
+#: NameSuite/name_processor/views/tool_rename_tab.py:92
 msgid "Match Mode:"
 msgstr "Auswahlmodus:"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:82
+#: NameSuite/name_processor/views/tool_rename_tab.py:94
 msgid "Exact Match"
 msgstr "Exakte Übereinstimmung"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:83
+#: NameSuite/name_processor/views/tool_rename_tab.py:95
 msgid "Substring"
 msgstr "Teilzeichenfolge"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:84
+#: NameSuite/name_processor/views/tool_rename_tab.py:96
 msgid "Regular Expression"
 msgstr "Regulärer Ausdruck"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:88
+#: NameSuite/name_processor/views/tool_rename_tab.py:100
 msgid "Scan for Names"
 msgstr "Nach Namen suchen"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:93
+#: NameSuite/name_processor/views/tool_rename_tab.py:105
 msgid "Preserve original name as alternative"
 msgstr "Ursprünglichen Namen als Alternative beibehalten"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:160
+#: NameSuite/name_processor/views/tool_rename_tab.py:172
 msgid "Proposed"
 msgstr "Vorgeschlagen"
 
@@ -20492,6 +20888,7 @@ msgid "Percent"
 msgstr "Prozent"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:65
+#, python-brace-format
 msgid ""
 "There were {} of {} ancestors ({}) found.\n"
 "Only individual ancestors were counted. Duplicates caused by pedigree "
@@ -20545,10 +20942,6 @@ msgstr "Gramplet zeigt eine Übersicht der Ereignisse für eine Person"
 msgid "Overview"
 msgstr "Übersicht"
 
-#: Overview/Overview.gpr.py:45
-msgid "Family Overview"
-msgstr "Familienübersicht"
-
 #: Overview/Overview.gpr.py:46
 msgid "Gramplet showing an overview of events for a family"
 msgstr "Gramplet zeigt eine Übersicht über Ereignisse für eine Familie"
@@ -20566,11 +20959,11 @@ msgstr ""
 "Erstellt leere, ausfüllbare PDF-Formulare: Volkszählungs-/"
 "Ereignisseformulare oder Ahnentafeln."
 
-#: PDFForms/PDFForms.gpr.py:46
+#: PDFForms/PDFForms.gpr.py:47
 msgid "Import Fillable PDF Forms"
 msgstr "Ausfüllbare PDF-Formulare importieren"
 
-#: PDFForms/PDFForms.gpr.py:48
+#: PDFForms/PDFForms.gpr.py:49
 msgid ""
 "Import genealogy data from a PDF form. Send the PDF template to others to "
 "fill out and return."
@@ -21644,11 +22037,11 @@ msgstr "OrtVervollständigung kann %s %s nicht erstellen"
 msgid "Places tool"
 msgstr "Ortewerkzeug"
 
-#: PlaceCompletion/PlaceCompletion.py:408
+#: PlaceCompletion/PlaceCompletion.py:410
 msgid "Missing regex groups in match lat/lon"
 msgstr "Fehlende reguläre Ausdrücke-Gruppen in Übereinstimmung Breite/Länge"
 
-#: PlaceCompletion/PlaceCompletion.py:409
+#: PlaceCompletion/PlaceCompletion.py:412
 #, python-format
 msgid ""
 "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
@@ -21656,170 +22049,170 @@ msgstr ""
 "Regulärer Ausdruck Gruppen %(lat)s und %(lon)s müssen in Länge/Breite "
 "Gegenstück vorhanden sein. Abbruch"
 
-#: PlaceCompletion/PlaceCompletion.py:419
+#: PlaceCompletion/PlaceCompletion.py:424
 msgid "Non valid regex for match lat/lon"
 msgstr ""
 "Ungültiger regulärer Ausdruck für die Übereinstimmung von Breiten- und "
 "Längengrad"
 
-#: PlaceCompletion/PlaceCompletion.py:420
+#: PlaceCompletion/PlaceCompletion.py:425
 msgid "Non valid regular expression given to find lat/lon. Quiting."
 msgstr ""
 "Ungültiger regulärer Ausdruck zur Ermittlung von Breiten- und Längengrad "
 "angegeben. Abbruch."
 
-#: PlaceCompletion/PlaceCompletion.py:479
+#: PlaceCompletion/PlaceCompletion.py:484
 msgid "Finding Places and appropriate changes"
 msgstr "Orte finden und geeignete Änderungen vornehmen"
 
-#: PlaceCompletion/PlaceCompletion.py:481
+#: PlaceCompletion/PlaceCompletion.py:486
 msgid "Filtering"
 msgstr "Filtern"
 
-#: PlaceCompletion/PlaceCompletion.py:491
+#: PlaceCompletion/PlaceCompletion.py:496
 msgid "Loading lat/lon file in Memory..."
 msgstr "Laden der Breite/Länge Datei in den Speicher..."
 
-#: PlaceCompletion/PlaceCompletion.py:497
+#: PlaceCompletion/PlaceCompletion.py:502
 msgid "Examining places"
 msgstr "Orte untersuchen"
 
-#: PlaceCompletion/PlaceCompletion.py:685
+#: PlaceCompletion/PlaceCompletion.py:690
 msgid "Set Tag"
 msgstr "Etikett setzen"
 
-#: PlaceCompletion/PlaceCompletion.py:687
+#: PlaceCompletion/PlaceCompletion.py:692
 msgid "Doing Place changes"
 msgstr "Änderungen am Ort vornehmen"
 
-#: PlaceCompletion/PlaceCompletion.py:731
+#: PlaceCompletion/PlaceCompletion.py:736
 msgid "No place record was modified."
 msgstr "Es wurde kein Ortsdatensatz geändert."
 
-#: PlaceCompletion/PlaceCompletion.py:733
+#: PlaceCompletion/PlaceCompletion.py:738
 msgid "1 place record was modified."
 msgstr "1 Ortsdatensatz wurde geändert."
 
-#: PlaceCompletion/PlaceCompletion.py:735
+#: PlaceCompletion/PlaceCompletion.py:740
 #, python-format
 msgid "%d place records were modified."
 msgstr "%d Ortsdatensätze wurden geändert."
 
-#: PlaceCompletion/PlaceCompletion.py:736
+#: PlaceCompletion/PlaceCompletion.py:741
 msgid "Change places"
 msgstr "Orte ändern"
 
-#: PlaceCompletion/PlaceCompletion.py:809
+#: PlaceCompletion/PlaceCompletion.py:814
 msgid "The selected file is a directory, not a file."
 msgstr "Die ausgewählte Datei ist ein Verzeichnis, keine Datei."
 
-#: PlaceCompletion/PlaceCompletion.py:820
+#: PlaceCompletion/PlaceCompletion.py:825
 msgid "The file you want to access is not a regular file."
 msgstr "Die Datei, auf die du zugreifen möchtest, ist keine reguläre Datei."
 
-#: PlaceCompletion/PlaceCompletion.py:826
+#: PlaceCompletion/PlaceCompletion.py:831
 msgid "The file does not exist."
 msgstr "Die Datei existiert nicht."
 
-#: PlaceCompletion/PlaceCompletion.py:858
+#: PlaceCompletion/PlaceCompletion.py:863
 msgid "Problem reading file"
 msgstr "Problem beim Lesen der Datei"
 
-#: PlaceCompletion/PlaceCompletion.py:970
-#: PlaceCompletion/PlaceCompletion.py:982
+#: PlaceCompletion/PlaceCompletion.py:975
+#: PlaceCompletion/PlaceCompletion.py:987
 #, python-format
 msgid "invalid lat or lon value, %(lat)s, %(lon)s"
 msgstr "Ungültiger Breiten oder Längen Wert %(lat)s, %(lon)s"
 
-#: PlaceCompletion/PlaceCompletion.py:1135
+#: PlaceCompletion/PlaceCompletion.py:1140
 msgid "No lat/lon conversion"
 msgstr "Keine Breiten-/Längenumrechnung"
 
-#: PlaceCompletion/PlaceCompletion.py:1136
+#: PlaceCompletion/PlaceCompletion.py:1141
 msgid "All in degree notation"
 msgstr "Alle in Grad-Notation"
 
-#: PlaceCompletion/PlaceCompletion.py:1137
+#: PlaceCompletion/PlaceCompletion.py:1142
 msgid "All in decimal notation"
 msgstr "Alle in Dezimalschreibweise"
 
-#: PlaceCompletion/PlaceCompletion.py:1138
+#: PlaceCompletion/PlaceCompletion.py:1143
 msgid "Correct -50° in 50°S"
 msgstr "Korrigiere -50° in 50°S"
 
-#: PlaceCompletion/PlaceCompletion.py:1142
+#: PlaceCompletion/PlaceCompletion.py:1147
 msgid "No changes"
 msgstr "Keine Änderungen"
 
-#: PlaceCompletion/PlaceCompletion.py:1143
+#: PlaceCompletion/PlaceCompletion.py:1148
 msgid "City[, State]"
 msgstr "Ort[, Staat]"
 
-#: PlaceCompletion/PlaceCompletion.py:1145
+#: PlaceCompletion/PlaceCompletion.py:1150
 msgid "City,PostalCode,Country"
 msgstr "Ort, PLZ, Land"
 
-#: PlaceCompletion/PlaceCompletion.py:1147
+#: PlaceCompletion/PlaceCompletion.py:1152
 msgid "City[(Street;Locality;Parish)],PostalCode,Country"
 msgstr "Stadt[(Straße;Lokalität;Gemeinde)],PLZ,Land"
 
-#: PlaceCompletion/PlaceCompletion.py:1149
+#: PlaceCompletion/PlaceCompletion.py:1154
 msgid "TitleStart [, City] [, State]"
 msgstr "TitelStart [, Stadt] [,Staat]"
 
-#: PlaceCompletion/PlaceCompletion.py:1151
+#: PlaceCompletion/PlaceCompletion.py:1156
 msgid "TitleStart [, City] [, County] [, State] [, Country]"
 msgstr "TitelStart [, Stadt] [, Kreis][, Staat][, Land]"
 
-#: PlaceCompletion/PlaceCompletion.py:1153
+#: PlaceCompletion/PlaceCompletion.py:1158
 msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
 msgstr "TitelStart [, Stadt][,PLZ] [, Kreis][, Staat][, Land]"
 
-#: PlaceCompletion/PlaceCompletion.py:1177
+#: PlaceCompletion/PlaceCompletion.py:1182
 msgid "Don't search"
 msgstr "Nicht suchen"
 
-#: PlaceCompletion/PlaceCompletion.py:1180
+#: PlaceCompletion/PlaceCompletion.py:1185
 msgid "GeoNames country file, city search"
 msgstr "GeoNames-Länderdatei, Stadtsuche"
 
-#: PlaceCompletion/PlaceCompletion.py:1185
+#: PlaceCompletion/PlaceCompletion.py:1190
 msgid "GeoNames country file, city localized variants search"
 msgstr "GeoNames-Länderdatei, Suche nach lokalisierten Varianten von Städten"
 
-#: PlaceCompletion/PlaceCompletion.py:1190
+#: PlaceCompletion/PlaceCompletion.py:1195
 msgid "GeoNames country file, county/city search"
 msgstr "GeoNames-Länderdatei, Suche nach Landkreisen/Städten"
 
-#: PlaceCompletion/PlaceCompletion.py:1202
+#: PlaceCompletion/PlaceCompletion.py:1207
 msgid "GeoNames country file, title begin, general search"
 msgstr "GeoNames-Länderdatei, Titelbeginn, allgemeine Suche"
 
-#: PlaceCompletion/PlaceCompletion.py:1207
+#: PlaceCompletion/PlaceCompletion.py:1212
 msgid "GeoNames USA state file, city search"
 msgstr "GeoNames USA-Bundesstaaten-Datei, Stadtsuche"
 
-#: PlaceCompletion/PlaceCompletion.py:1221
+#: PlaceCompletion/PlaceCompletion.py:1226
 msgid "GNS Geonet country file, city search"
 msgstr "GNS Geonet-Länderdatei, Stadtsuche"
 
-#: PlaceCompletion/PlaceCompletion.py:1228
+#: PlaceCompletion/PlaceCompletion.py:1233
 msgid "GNS Geonet country file, county/city search"
 msgstr "GNS Geonet-Länderdatei, Suche nach Landkreisen/Städten"
 
-#: PlaceCompletion/PlaceCompletion.py:1236
+#: PlaceCompletion/PlaceCompletion.py:1241
 msgid "GNS Geonet country file, title begin, general search"
 msgstr "GNS Geonet-Länderdatei, Titelbeginn, allgemeine Suche"
 
-#: PlaceCompletion/PlaceCompletion.py:1244
+#: PlaceCompletion/PlaceCompletion.py:1249
 msgid "Wikipedia CSV Dump"
 msgstr "Wikipedia-CSV- Auszug"
 
-#: PlaceCompletion/PlaceCompletion.py:1332
+#: PlaceCompletion/PlaceCompletion.py:1337
 msgid "All Places"
 msgstr "Alle Orte"
 
-#: PlaceCompletion/PlaceCompletion.py:1335
+#: PlaceCompletion/PlaceCompletion.py:1340
 msgid "No Latitude/Longitude given"
 msgstr "Keine Breiten-/Längengrade angegeben"
 
@@ -21899,7 +22292,7 @@ msgstr ""
 "Oder definiere ein einfaches\n"
 "Titelformat:"
 
-#: PlaceCompletion/placecompletion.glade:730
+#: PlaceCompletion/placecompletion.glade:739
 msgid ""
 "Available variables: city, street, locality, parish, county, state, country, "
 "postal_code"
@@ -21907,7 +22300,7 @@ msgstr ""
 "Verfügbare Variablen: city, street, locality, parish, county, state, "
 "country, postal_code"
 
-#: PlaceCompletion/placecompletion.glade:820
+#: PlaceCompletion/placecompletion.glade:829
 msgid ""
 "Delete to delete a row, Double-click on the row to edit place with changes "
 "pre-entered, \n"
@@ -21956,46 +22349,46 @@ msgstr "Gramplet, das die Bestimmung der Koordinaten eines Ortes vereinfacht"
 msgid "Place Coordinates"
 msgstr "Ortskoordinaten"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:231
 msgid "The place was not found. You may clarify the search keywords."
 msgstr "Der Ort wurde nicht gefunden. Bitte präzisiere die Suchbegriffe."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:219
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:247
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:235
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:266
 msgid "Failed to search for the coordinates due to some unexpected error."
 msgstr ""
 "Die Suche nach den Koordinaten ist aufgrund eines unerwarteten Fehlers "
 "fehlgeschlagen."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:263
 msgid "The place was not found."
 msgstr "Der Ort wurde nicht gefunden."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:288
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:319
 msgid "The place was not identified."
 msgstr "Der Ort wurde nicht identifiziert."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:290
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:321
 msgid "Coordinates were not given."
 msgstr "Koordinaten wurden nicht angegeben."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:286
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:305
 msgid "Failed to interpret the input format."
 msgstr "Das Eingabeformat konnte nicht interpretiert werden."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:351
 #, python-brace-format
 msgid "DB entry [{id}] {name}:"
 msgstr "DB Eintrag [{id}] {name}:"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:356
 #: PlaceCoordinateGramplet/placecoordinate.glade:132
 msgid "Nothing has been searched yet"
 msgstr "Es wurde noch nichts gesucht"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:378
 msgid "No place is active"
 msgstr "Kein Ort ist aktiv"
 
@@ -22123,6 +22516,7 @@ msgid "Setting place properties"
 msgstr "Eigenschaften des Ortes festlegen"
 
 #: PlaceUpdate/PlaceUpdate.py:294
+#, python-brace-format
 msgid "Regex operation failed: {}"
 msgstr "Regulärer-Ausdruck Operation fehlgeschlagen: {}"
 
@@ -23367,6 +23761,7 @@ msgid "removed"
 msgstr "entfernt"
 
 #: RemoveTagTool/RemoveTagTool.py:269
+#, python-brace-format
 msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr "Das Etikett „{}“ war {} zu {} {} Objekten.\n"
 
@@ -24476,14 +24871,50 @@ msgstr "Der für einen Spaltentitel verwendete Stil."
 msgid "The style used for event and person details."
 msgstr "Der für Ereignis- und Personendetails verwendete Stil."
 
-#: Sqlite/ExportSql.py:1346
+#: Sqlite/ExportSql.py:1720
+#, fuzzy
+#| msgid "January"
+msgid "January 1"
+msgstr "Januar"
+
+#: Sqlite/ExportSql.py:1721
+#, fuzzy
+#| msgid "March"
+msgid "March 1"
+msgstr "März"
+
+#: Sqlite/ExportSql.py:1722
+#, fuzzy
+#| msgid "March"
+msgid "March 25"
+msgstr "März"
+
+#: Sqlite/ExportSql.py:1723
+#, fuzzy
+#| msgid "September"
+msgid "September 1"
+msgstr "September"
+
+#: Sqlite/ExportSql.py:1749
+#, fuzzy
+#| msgid "Widowed"
+msgid "Flowed"
+msgstr "Verwitwet"
+
+#: Sqlite/ExportSql.py:1750
+#, fuzzy
+#| msgid "PS format"
+msgid "Preformatted"
+msgstr "PS-Format"
+
+#: Sqlite/ExportSql.py:1953
 #, python-format
 msgid "Export Complete: %d second"
 msgid_plural "Export Complete: %d seconds"
 msgstr[0] "Export abgeschlossen: %d Sekunde"
 msgstr[1] "Export abgeschlossen: %d Sekunden"
 
-#: Sqlite/ImportSql.py:893
+#: Sqlite/ImportSql.py:899
 #, python-format
 msgid "Import Complete: %d second"
 msgid_plural "Import Complete: %d seconds"
@@ -24502,12 +24933,12 @@ msgstr "SQLite ist ein gängiges lokales Datenbankformat"
 msgid "SQLite Export"
 msgstr "SQLite Export"
 
-#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:3
-#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:11
+#: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:3
+#: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:11
 msgid "Surname Mapping"
 msgstr "Nachnamenszuordnung"
 
-#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:4
+#: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:4
 msgid "Gramplet for editing the grouping of surnames"
 msgstr "Gramplet zum Bearbeiten der Gruppierung von Nachnamen"
 
@@ -24557,6 +24988,7 @@ msgid "Add %s reciprocal association"
 msgstr "%s reziproke Assoziation hinzufügen"
 
 #: SyncAssociations/syncAssociations.py:131
+#, python-brace-format
 msgid "{} Reciprocal associations created"
 msgstr "{} Gegenseitige Verknüpfungen erstellt"
 
@@ -24798,19 +25230,19 @@ msgstr ""
 "Ein Zusatz zu den Einstellungen zur einfachen Anpassung von Themen und "
 "Schriftarten.  Besonders nützlich für Windows-Benutzer."
 
-#: Themes/themes.py:172 Themes/themes.py:190
+#: Themes/themes.py:176 Themes/themes.py:194
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Das Thema ist durch GTK_THEME hart kodiert"
 
-#: Themes/themes.py:180
+#: Themes/themes.py:184
 msgid "Dark Variant"
 msgstr "Dunkle Variante"
 
-#: Themes/themes.py:198
+#: Themes/themes.py:202
 msgid "Font"
 msgstr "Schrift"
 
-#: Themes/themes.py:214
+#: Themes/themes.py:218
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Feste Bildlaufleiste (erfordert Neustart)"
 
@@ -26495,6 +26927,7 @@ msgid "⚠ Missing dependency \"qrcode\""
 msgstr "⚠ Fehlende Abhängigkeit „qrcode“"
 
 #: WebSearch/qr_window.py:120
+#, python-brace-format
 msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
@@ -26694,11 +27127,11 @@ msgstr "etree"
 msgid "Gramplet for testing etree with Gramps XML"
 msgstr "Gramplet zum Testen von etree mit Gramps-XML"
 
-#: lxml/etreeGramplet.py:83 lxml/lxmlGramplet.py:115
+#: lxml/etreeGramplet.py:83 lxml/lxmlGramplet.py:113
 msgid "Invalid timestamp"
 msgstr "Ungültiger Zeitstempel"
 
-#: lxml/etreeGramplet.py:130 lxml/lxmlGramplet.py:173
+#: lxml/etreeGramplet.py:130 lxml/lxmlGramplet.py:181
 msgid ""
 "Select a Gramps XML file and\n"
 " click on the Run button."
@@ -26706,7 +27139,7 @@ msgstr ""
 "Wähle eine Gramps-XML-Datei aus und\n"
 "klicke auf die Schaltfläche „Ausführen“."
 
-#: lxml/etreeGramplet.py:155 lxml/lxmlGramplet.py:197
+#: lxml/etreeGramplet.py:155 lxml/lxmlGramplet.py:205
 msgid "No file loaded..."
 msgstr "Keine Datei geladen..."
 
@@ -26723,7 +27156,7 @@ msgstr "Weitere Informationen auf der Konsole anzeigen"
 msgid "Cannot uncompress \"%s\""
 msgstr "Dekomprimierung von „%s“ nicht möglich"
 
-#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:334
+#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:342
 msgid "Is it a compressed .gramps?"
 msgstr "Ist es eine komprimierte .gramps?"
 
@@ -26732,7 +27165,7 @@ msgstr "Ist es eine komprimierte .gramps?"
 msgid "Cannot copy \"%s\""
 msgstr "Kann „%s” nicht kopieren"
 
-#: lxml/etreeGramplet.py:265 lxml/lxmlGramplet.py:348
+#: lxml/etreeGramplet.py:265 lxml/lxmlGramplet.py:356
 msgid "Is it a .gramps?"
 msgstr "Ist das eine .gramps-Datei?"
 
@@ -26740,12 +27173,12 @@ msgstr "Ist das eine .gramps-Datei?"
 msgid "Sorry, no support for your OS yet!"
 msgstr "Entschuldigung, noch keine Unterstützung für dein Betriebssystem!"
 
-#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:420
+#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:428
 #, python-format
 msgid "Cannot parse content of \"%(file)s\""
 msgstr "Kann den Inhalt von „%(file)s” nicht analysieren"
 
-#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:420
+#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:428
 msgid "Parsing issue"
 msgstr "Analyseproblem"
 
@@ -26899,93 +27332,93 @@ msgstr "lxml"
 msgid "Gramplet for testing lxml and XSLT"
 msgstr "Gramplet zum Testen von lxml und XSLT"
 
-#: lxml/lxmlGramplet.py:72
+#: lxml/lxmlGramplet.py:144
 msgid "\"gzip\" is missing"
 msgstr "„gzip” fehlt"
 
-#: lxml/lxmlGramplet.py:72
+#: lxml/lxmlGramplet.py:144
 msgid "Where is gzip?"
 msgstr "Wo ist gzip?"
 
-#: lxml/lxmlGramplet.py:94
+#: lxml/lxmlGramplet.py:146
 msgid "Missing python3 lxml"
 msgstr "Fehlende Python3 lxml"
 
-#: lxml/lxmlGramplet.py:94
+#: lxml/lxmlGramplet.py:147
 msgid "Please, try to install \"python3 lxml\" package."
 msgstr "Bitte versuche das Paket „python3 lxml” zu installieren."
 
-#: lxml/lxmlGramplet.py:255 lxml/lxmlGramplet.py:273 lxml/lxmlGramplet.py:749
+#: lxml/lxmlGramplet.py:263 lxml/lxmlGramplet.py:281 lxml/lxmlGramplet.py:757
 msgid "xmllint options"
 msgstr "xmllint-Optionen"
 
-#: lxml/lxmlGramplet.py:264 lxml/lxmlGramplet.py:282
+#: lxml/lxmlGramplet.py:272 lxml/lxmlGramplet.py:290
 msgid "debug places"
 msgstr "Orte Fehlersuche"
 
-#: lxml/lxmlGramplet.py:265 lxml/lxmlGramplet.py:283
+#: lxml/lxmlGramplet.py:273 lxml/lxmlGramplet.py:291
 msgid "debug xml"
 msgstr "xml Fehlersuche"
 
-#: lxml/lxmlGramplet.py:382
+#: lxml/lxmlGramplet.py:390
 msgid "XSD validation (lxml)"
 msgstr "XSD-Prüfung (lxml)"
 
-#: lxml/lxmlGramplet.py:390
+#: lxml/lxmlGramplet.py:398
 #, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
 msgstr "xmllint: überspringe DTD-Validierung für „%(file)s”"
 
-#: lxml/lxmlGramplet.py:407
+#: lxml/lxmlGramplet.py:415
 #, python-format
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
 msgstr "xmllint: überspringe RelaxNG-Prüfung für „%(file)s”"
 
-#: lxml/lxmlGramplet.py:423
+#: lxml/lxmlGramplet.py:431
 msgid "Custom \"test.xml\" file"
 msgstr "Benutzerdefinierte „test.xml“-Datei"
 
-#: lxml/lxmlGramplet.py:423
+#: lxml/lxmlGramplet.py:431
 msgid "Please try to fix \"test.xml\""
 msgstr "Bitte versuche, „test.xml“ zu korrigieren"
 
-#: lxml/lxmlGramplet.py:432
+#: lxml/lxmlGramplet.py:440
 #, python-format
 msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
 msgstr "Kann „%(file)s” nicht mit RelaxNG-Schema prüfen"
 
-#: lxml/lxmlGramplet.py:432
+#: lxml/lxmlGramplet.py:440
 msgid "RelaxNG validation"
 msgstr "RelaxNG-Prüfung"
 
-#: lxml/lxmlGramplet.py:445
+#: lxml/lxmlGramplet.py:453
 #, python-format
 msgid "Cannot parse \"%(file)s\" via etree"
 msgstr "Kann „%(file)s” nicht mit etree analysieren"
 
-#: lxml/lxmlGramplet.py:445
+#: lxml/lxmlGramplet.py:453
 msgid "File issue"
 msgstr "Dateiproblem"
 
-#: lxml/lxmlGramplet.py:484
+#: lxml/lxmlGramplet.py:492
 msgid "Parsing file..."
 msgstr "Analysiere Datei..."
 
-#: lxml/lxmlGramplet.py:569
+#: lxml/lxmlGramplet.py:577
 #, python-format
 msgid " - (%(lang)s)"
 msgstr " - (%(lang)s)"
 
-#: lxml/lxmlGramplet.py:572
+#: lxml/lxmlGramplet.py:580
 #, python-format
 msgid " - (? or %(lang)s)"
 msgstr " - (? oder %(lang)s)"
 
-#: lxml/lxmlGramplet.py:609
+#: lxml/lxmlGramplet.py:617
 msgid "Missing header"
 msgstr "Fehlende Kopfzeile"
 
-#: lxml/lxmlGramplet.py:609 lxml/lxmlGramplet.py:719
+#: lxml/lxmlGramplet.py:617 lxml/lxmlGramplet.py:727
 msgid ""
 "Not a valid .gramps.\n"
 "Cannot run the gramplet...\n"
@@ -26997,119 +27430,119 @@ msgstr ""
 "Bitte versuche, eine .gramps zu verwenden\n"
 "die mit Gramps 6.x erzeugt wurde."
 
-#: lxml/lxmlGramplet.py:622 lxml/lxmlGramplet.py:627 lxml/lxmlGramplet.py:632
-#: lxml/lxmlGramplet.py:637
+#: lxml/lxmlGramplet.py:630 lxml/lxmlGramplet.py:635 lxml/lxmlGramplet.py:640
+#: lxml/lxmlGramplet.py:645
 msgid "0"
 msgstr "0"
 
-#: lxml/lxmlGramplet.py:652
+#: lxml/lxmlGramplet.py:660
 msgid "File parsed with"
 msgstr "Datei analysiert mit"
 
-#: lxml/lxmlGramplet.py:654
+#: lxml/lxmlGramplet.py:662
 msgid " by Gramps "
 msgstr " von Gramps "
 
-#: lxml/lxmlGramplet.py:654
+#: lxml/lxmlGramplet.py:662
 msgid "File was generated on "
 msgstr "Datei wurde erstellt am "
 
-#: lxml/lxmlGramplet.py:656
+#: lxml/lxmlGramplet.py:664
 msgid "Period: "
 msgstr "Zeitraum: "
 
-#: lxml/lxmlGramplet.py:659 lxml/lxmlGramplet.py:663
+#: lxml/lxmlGramplet.py:667 lxml/lxmlGramplet.py:671
 #, python-brace-format
 msgid "\t{number} surname"
 msgid_plural "\t{number} surnames; no frequency yet"
 msgstr[0] "\t{number} Nachname"
 msgstr[1] "\t{number} Nachnamen; noch keine Häufigkeit"
 
-#: lxml/lxmlGramplet.py:659
+#: lxml/lxmlGramplet.py:667
 #, python-brace-format
 msgid "\t{number} surname; no frequency yet"
 msgstr "\t{number} Nachname; noch keine Häufigkeit"
 
-#: lxml/lxmlGramplet.py:660 lxml/lxmlGramplet.py:667
+#: lxml/lxmlGramplet.py:668 lxml/lxmlGramplet.py:675
 #, python-brace-format
 msgid "\t{number} place"
 msgid_plural "\t{number} places"
 msgstr[0] "\t{number} Ort"
 msgstr[1] "\t{number} Orte"
 
-#: lxml/lxmlGramplet.py:661 lxml/lxmlGramplet.py:671
+#: lxml/lxmlGramplet.py:669 lxml/lxmlGramplet.py:679
 #, python-brace-format
 msgid "\t{number} note"
 msgid_plural "\t{number} notes"
 msgstr[0] "\t{number} Notit"
 msgstr[1] "\t{number} Notizen"
 
-#: lxml/lxmlGramplet.py:675
+#: lxml/lxmlGramplet.py:683
 #, python-brace-format
 msgid "\t{number} source"
 msgid_plural "\t{number} sources"
 msgstr[0] "\t{number} Quelle"
 msgstr[1] "\t{number} Quellen"
 
-#: lxml/lxmlGramplet.py:694 lxml/lxmlGramplet.py:919
+#: lxml/lxmlGramplet.py:702 lxml/lxmlGramplet.py:927
 msgid "Gallery.html"
 msgstr "Galerie.html"
 
-#: lxml/lxmlGramplet.py:695
+#: lxml/lxmlGramplet.py:703
 #, python-format
 msgid "1. Has generated a media index on \"%(file)s\".\n"
 msgstr "1. Hat einen Medienindex in „%(file)s“ erstellt.\n"
 
-#: lxml/lxmlGramplet.py:719
+#: lxml/lxmlGramplet.py:727
 msgid "XML SyntaxError"
 msgstr "XML-Syntaxfehler"
 
-#: lxml/lxmlGramplet.py:723
+#: lxml/lxmlGramplet.py:731
 msgid "Matches XSD schema."
 msgstr "Entspricht XSD-Schema."
 
-#: lxml/lxmlGramplet.py:763
+#: lxml/lxmlGramplet.py:771
 msgid "xmllint: skip DTD validation"
 msgstr "xmllint: DTD-Prüfung überspringen"
 
-#: lxml/lxmlGramplet.py:787
+#: lxml/lxmlGramplet.py:795
 msgid "I am looking at ..."
 msgstr "Ich suche in …"
 
-#: lxml/lxmlGramplet.py:788
+#: lxml/lxmlGramplet.py:796
 msgid "Content generated by Gramps"
 msgstr "Inhalt generiert von Gramps"
 
-#: lxml/lxmlGramplet.py:791
+#: lxml/lxmlGramplet.py:799
 msgid "List of sources"
 msgstr "Liste der Quellen"
 
-#: lxml/lxmlGramplet.py:810
+#: lxml/lxmlGramplet.py:818
 msgid "Australia"
 msgstr "Australien"
 
-#: lxml/lxmlGramplet.py:811
+#: lxml/lxmlGramplet.py:819
 msgid "Brazil"
 msgstr "Brasilien"
 
-#: lxml/lxmlGramplet.py:822
+#: lxml/lxmlGramplet.py:830
 msgid "India"
 msgstr "Indien"
 
-#: lxml/lxmlGramplet.py:824
+#: lxml/lxmlGramplet.py:832
 msgid "Norway"
 msgstr "Norwegen"
 
-#: lxml/lxmlGramplet.py:825
+#: lxml/lxmlGramplet.py:833
 msgid "Portugal"
 msgstr "Portugal"
 
-#: lxml/lxmlGramplet.py:896
+#: lxml/lxmlGramplet.py:904
 #, python-format
 msgid "2. Has generated \"%s\".\n"
 msgstr "2. Hat „%s“ erstellt.\n"
 
-#: lxml/lxmlGramplet.py:898
+#: lxml/lxmlGramplet.py:906
 #, python-format
 msgid ""
 "Try to open\n"
@@ -27119,6 +27552,22 @@ msgstr ""
 "Versuche \n"
 " „%s“\n"
 " in deinem bevorzugten Web- Browser zu öffnen ..."
+
+#~ msgid "Will check the data on Association for people."
+#~ msgstr "Überprüft die Verbindungsdaten für Personen."
+
+#~ msgid "Type of link"
+#~ msgstr "Art der Verknüpfung"
+
+#~ msgid "Of"
+#~ msgstr "Von"
+
+#~ msgid "Ready..."
+#~ msgstr "Fertig..."
+
+#, python-format
+#~ msgid "%(prog)s: error: %(message)s\n"
+#~ msgstr "%(prog)s: Fehler: %(message)s\n"
 
 #~ msgid "Fetching remote data..."
 #~ msgstr "Ferndaten werden abgerufen..."
@@ -27386,9 +27835,6 @@ msgstr ""
 #~ msgid "Show User Data Icon"
 #~ msgstr "Symbol für Benutzerdaten anzeigen"
 
-#~ msgid "Show Flag Icons"
-#~ msgstr "Flaggensymbole anzeigen"
-
 #~ msgid "Vars"
 #~ msgstr "Varianten"
 
@@ -27514,9 +27960,6 @@ msgstr ""
 
 #~ msgid "Home"
 #~ msgstr "Anfang"
-
-#~ msgid "Age at Death"
-#~ msgstr "Alter beim Tod"
 
 #~ msgid "Include Family Map Pages with all places shown on the map"
 #~ msgstr ""
