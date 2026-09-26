@@ -616,8 +616,8 @@ its own internal bootstrap/resync mechanism at all -- the same
 principle behind gap 7's ID-Formats fix, now applied comprehensively
 rather than one report at a time. `_reimport_preserving_server_gramps_
 ids()` is renamed `_reimport_neutralizing_local_settings()` and now
-neutralizes three local settings for the duration of every reimport,
-not one:
+neutralizes two local settings for the duration of every reimport, not
+one:
 
 1. **ID Formats** (gap 7, unchanged).
 2. **"Tag on import"** -- neutralized via
@@ -628,34 +628,63 @@ not one:
    `ImportXml.importData()` itself checks this feature before ever
    reading `tag-on-import` at all, so this is a single flag, not a
    config override.
-3. **"Ignore the XML file's own media path"**
-   (`paths.ignore-xml-mediapath`, default off) -- found by the same
-   audit, not yet reported live. Lower risk (`db.set_mediapath()` is
-   itself gated on "not already set," so it can only ever fire once per
-   local mirror's lifetime, not churn every resync) but the same
-   category of gap, so neutralized the same way: forced off for the
-   duration, so this mirror always reflects whatever the server's
-   export declares regardless of this local preference.
 
-All three restored in the `finally` regardless of outcome, so a real
-user-initiated Import run afterward still honors their own preferences.
-`getattr(...)`/a local try/except around `get_feature()` guard every
-save/restore, for the same `WebApiDB.__new__()`-bypasses-`__init__()`
-unit-test-fixture reason gap 7's own fix already needed.
+Both restored in the `finally` regardless of outcome, so a real
+user-initiated Import run afterward still honors the user's own
+preferences. `getattr(...)`/a local try/except around `get_feature()`
+guard every save/restore, for the same
+`WebApiDB.__new__()`-bypasses-`__init__()` unit-test-fixture reason
+gap 7's own fix already needed.
 
 Covered by `TestReimportSuppressesTagOnImport` (reproduces the churn
 against plain `importData()`, confirms the fix prevents it across
 repeated reimports, confirms the local preference survives for a real
-Import afterward) and `TestReimportHonorsExportMediaPath` (same shape,
-for the media-path setting).
+Import afterward).
 
-**No live re-confirmation yet** -- this fix hasn't been verified
-against the live server the way every earlier fix in this file was,
-since the root cause is now understood precisely enough (a local
-Preferences toggle, not server behavior) that a live round trip
-wouldn't add information a real ImportXml-driven unit test doesn't
-already give directly. Next real-world confirmation is Gary's own next
-test.
+**Incident (2026-09-26, caught the same day): a third setting was
+included in the first version of this fix, and it crashed `load()` for
+every 6.0.x user.** A third local preference, "ignore the XML file's
+own media path" (`paths.ignore-xml-mediapath`, gating
+`ImportXml.stop_mediapath()`), was found by the same audit and
+neutralized the same way -- based on reading `gen/config.py` on
+whatever core checkout happened to be on disk in the dev sandbox at the
+time, which turned out to be a `gramps61`-line checkout, **not**
+`maintenance/gramps60`, this addon's actual target
+(`CLAUDE.md`/this file's own header). `paths.ignore-xml-mediapath`
+does not exist as a registered setting on `gramps60` at all, and
+`config.get()`/`config.set()` raise `AttributeError` for any
+unregistered name (no default, unlike a dict) -- so every single
+`load()` on 6.0.x crashed outright the moment this shipped, reported
+live within hours by Gary trying to open a tree at all. Worse than the
+gap it was meant to close, and never should have shipped: the fix was
+neither tested against, nor even read against, the addon's own stated
+target version.
+
+Doubly moot on top of being broken: `gramps60`'s own
+`ImportXml.stop_mediapath()` has no local-preference gate to
+neutralize in the first place there -- it unconditionally does
+`self.mediapath = tag`, confirmed by reading that exact line on
+`maintenance/gramps60` directly. There was never anything to neutralize
+for this addon's real target version.
+
+**Fixed by removing the mediapath piece entirely** -- not guarding it,
+removing it, since the setting and the behavior it would have gated
+both don't exist on the target line. `TestReimportHonorsExportMediaPath`
+(which tested it) removed with it. All 468 unit tests re-verified
+directly against a real `maintenance/gramps60` worktree (not the dev
+sandbox's ambient checkout, whatever branch that happens to be on) --
+this is now how every claim in this file should be checked before
+shipping, not after a live report catches it. `preferences.tag-on-import`/
+`preferences.tag-on-import-format`/`skip-import-additions` were each
+independently confirmed present and unchanged on `gramps60` too, so the
+rest of this fix stands as originally shipped.
+
+**No live re-confirmation of the underlying tag-on-import fix yet** --
+the root cause is understood precisely enough (a local Preferences
+toggle, not server behavior) that a live round trip wouldn't add
+information a real `ImportXml`-driven unit test doesn't already give
+directly. Next real-world confirmation is Gary's own next test, now
+against a build that actually loads.
 
 ### 9. Note text with `\r\n` line endings does not survive a resync byte-for-byte — **mitigated, root cause confirmed (structural, not Gramps-specific)**
 
