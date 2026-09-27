@@ -972,7 +972,16 @@ class WebApiHandler:
         req = Request(url, headers=headers)
         try:
             with self._open(req) as res:
-                response_headers = dict(res.headers)
+                # Not dict(res.headers): a real server's header names
+                # aren't guaranteed to arrive in the exact case this
+                # code spells them (gramps-web-api's own front end sends
+                # "Etag", not "ETag") -- HTTP header names are case-
+                # insensitive (RFC 7230 3.2), and res.headers (an
+                # email.message.Message) honors that in its own .get(),
+                # but dict(res.headers) flattens it into a plain dict
+                # keyed by whatever case the server used, silently
+                # breaking a differently-cased .get("ETag") lookup.
+                response_headers = res.headers
                 body = json.load(res)
                 etag = response_headers.get("ETag")
                 if etag is not None:
@@ -987,7 +996,7 @@ class WebApiHandler:
                 # still sends X-Total-Count/ETag as response headers, on
                 # the HTTPError itself rather than a `res` there's no
                 # `with` block for.
-                response_headers = dict(exc.headers)
+                response_headers = exc.headers
                 body: list = []
                 etag = response_headers.get("ETag")
                 if etag is not None:
