@@ -1349,6 +1349,15 @@ class SharedDBAPI(DbGeneric):
         else:
             return "BLOB"
 
+    def _column_sql_type(self, field, schema_type, max_length):
+        """
+        Return the SQL type for the secondary column of the given field.
+
+        Override in dialect subclasses that need a type per field rather
+        than per schema type.
+        """
+        return self._sql_type(schema_type, max_length)
+
     def _create_secondary_columns(self):
         """
         Create secondary columns.
@@ -1369,7 +1378,7 @@ class SharedDBAPI(DbGeneric):
             table_name = cls.__name__.lower()
             for field, schema_type, max_length in cls.get_secondary_fields():
                 if field != "handle":
-                    sql_type = self._sql_type(schema_type, max_length)
+                    sql_type = self._column_sql_type(field, schema_type, max_length)
                     self.dbapi.execute(
                         "ALTER TABLE %s ADD COLUMN %s %s"
                         % (table_name, self._quote_column(field), sql_type)
