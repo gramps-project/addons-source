@@ -44,6 +44,7 @@ Run with::
 #
 # -------------------------------------------------------------------------
 import base64
+import email.message
 import io
 import json
 import os
@@ -184,6 +185,20 @@ def http_error_with_body(code, body, url="https://example.com/api"):
     real gramps-web-api error response (abort_with_message()) looks."""
     fp = io.BytesIO(json.dumps(body).encode())
     return HTTPError(url, code, f"HTTP {code}", None, fp)
+
+
+def real_shaped_headers(pairs: dict) -> email.message.Message:
+    """A header container shaped like what urllib actually hands back
+    (res.headers / exc.headers are email.message.Message instances, not
+    plain dicts) -- its .get() is case-insensitive by design (email
+    header names are, per RFC 5322/2822), unlike a plain dict built via
+    dict(some_message), which flattens to whatever case the server
+    happened to use and makes a differently-cased .get() lookup silently
+    miss. gramps-web-api's own front end sends "Etag", not "ETag"."""
+    msg = email.message.Message()
+    for key, value in pairs.items():
+        msg[key] = value
+    return msg
 
 
 def http_error_304(headers, url="https://example.com/api"):
@@ -642,6 +657,25 @@ class TestTransactionHistory(unittest.TestCase):
             handler.get_transaction_history()
         self.assertEqual(fake.requests[1].get_header("If-none-match"), '"abc"')
 
+    def test_etag_is_read_case_insensitively_like_a_real_header(self):
+        # Caught live against the real demo server: gramps-web-api sends
+        # the header as "Etag", not "ETag". A plain dict(res.headers)
+        # lookup of "ETag" against that silently misses it forever,
+        # which means If-None-Match is never sent and get_transaction_
+        # history() never receives a real 304 -- the underlying cause the
+        # dead 304-handling branch was found alongside.
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                FakeResponse([], headers=real_shaped_headers({"Etag": '"abc"'})),
+                FakeResponse([], headers=real_shaped_headers({"Etag": '"def"'})),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.get_transaction_history()
+            handler.get_transaction_history()
+        self.assertEqual(fake.requests[1].get_header("If-none-match"), '"abc"')
+
     def test_304_returns_no_transactions_but_keeps_the_total_count_header(self):
         handler = self._authed_handler()
         fake = QueuedUrlopen(
@@ -676,6 +710,27 @@ class TestTransactionHistory(unittest.TestCase):
             handler.get_transaction_history()
             handler.get_transaction_history()
         self.assertEqual(handler._history_etag, '"ghi"')
+
+    def test_304_reads_etag_and_total_count_case_insensitively(self):
+        # Same real-header-casing concern as test_etag_is_read_case_
+        # insensitively_like_a_real_header above, but on the except-
+        # HTTPError 304 branch, whose exc.headers is a real header
+        # object too, not a plain dict.
+        handler = self._authed_handler()
+        fake = QueuedUrlopen(
+            [
+                FakeResponse([], headers=real_shaped_headers({"Etag": '"abc"'})),
+                http_error_304(
+                    real_shaped_headers({"Etag": '"abc"', "X-Total-Count": "42"})
+                ),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.get_transaction_history()
+            transactions, total = handler.get_transaction_history()
+        self.assertEqual(transactions, [])
+        self.assertEqual(total, 42)
+        self.assertEqual(handler._history_etag, '"abc"')
 
 
 # -------------------------------------------------------------------------
