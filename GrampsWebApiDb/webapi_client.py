@@ -573,7 +573,10 @@ class WebApiHandler:
         compatible shape (see _resync_after_conflict_async()'s docstring
         on why that rules out reconstructing a whole Person from it) --
         but it does include these two plain integer fields verbatim, and
-        that's all this needs.
+        that's all this needs -- so the request asks for just
+        handle/birth_ref_index/death_ref_index via the ``keys`` param
+        (GrampsJSONEncoder.response() / extract_object(), gramps-web-api's
+        base.py) rather than paying to serialize a full Person per row.
 
         Costs one full paginated listing of the tree's People endpoint --
         proportionate for a bootstrap resync, which already does a
@@ -587,7 +590,11 @@ class WebApiHandler:
         page = 1
         pagesize = 200
         while True:
-            params = {"page": page, "pagesize": pagesize}
+            params = {
+                "page": page,
+                "pagesize": pagesize,
+                "keys": "handle,birth_ref_index,death_ref_index",
+            }
             data, _headers = self._get_json(f"{self.url}/people/?{urlencode(params)}")
             if not data:
                 break
@@ -965,28 +972,39 @@ class WebApiHandler:
         req = Request(url, headers=headers)
         try:
             with self._open(req) as res:
-                status = res.getcode()
                 response_headers = dict(res.headers)
-                if status == 304:
-                    body: list = []
-                else:
-                    body = json.load(res)
-                    etag = response_headers.get("ETag")
-                    if etag is not None:
-                        self._history_etag = etag
+                body = json.load(res)
+                etag = response_headers.get("ETag")
+                if etag is not None:
+                    self._history_etag = etag
         except HTTPError as exc:
-            if exc.code == 401 and retry:
+            if exc.code == 304:
+                # urlopen treats a 304 as an HTTP error (anything outside
+                # 200-299 goes through HTTPErrorProcessor), so a
+                # not-modified reply never reaches the success path above
+                # -- it lands here instead. The body is intentionally
+                # absent (that's the whole point of 304), but the server
+                # still sends X-Total-Count/ETag as response headers, on
+                # the HTTPError itself rather than a `res` there's no
+                # `with` block for.
+                response_headers = dict(exc.headers)
+                body: list = []
+                etag = response_headers.get("ETag")
+                if etag is not None:
+                    self._history_etag = etag
+            elif exc.code == 401 and retry:
                 sleep(RATE_LIMIT_BACKOFF)
                 self._authenticate()
                 return self.get_transaction_history(
                     after_id, page, pagesize, sort, after, retry=False
                 )
-            if exc.code == 429 and retry:
+            elif exc.code == 429 and retry:
                 sleep(RATE_LIMIT_BACKOFF)
                 return self.get_transaction_history(
                     after_id, page, pagesize, sort, after, retry=False
                 )
-            raise
+            else:
+                raise
         except (URLError, socket.timeout):
             if retry:
                 sleep(1)

@@ -186,6 +186,16 @@ def http_error_with_body(code, body, url="https://example.com/api"):
     return HTTPError(url, code, f"HTTP {code}", None, fp)
 
 
+def http_error_304(headers, url="https://example.com/api"):
+    """A 304 Not Modified the way urlopen actually delivers one: as an
+    HTTPError (HTTPErrorProcessor raises for anything outside 200-299,
+    304 included), carrying the response headers on ``.headers`` rather
+    than a body. A plain FakeResponse(status=304) -- returned, not
+    raised -- can never happen for real and masks get_transaction_history()
+    not handling this case."""
+    return HTTPError(url, 304, "Not Modified", headers, None)
+
+
 class QueuedUrlopen:
     """``urlopen`` replacement that returns/raises each queued item in turn,
     recording every ``Request`` it was called with."""
@@ -637,9 +647,7 @@ class TestTransactionHistory(unittest.TestCase):
         fake = QueuedUrlopen(
             [
                 FakeResponse([], headers={"ETag": '"abc"'}),
-                FakeResponse(
-                    None, headers={"ETag": '"abc"', "X-Total-Count": "42"}, status=304
-                ),
+                http_error_304({"ETag": '"abc"', "X-Total-Count": "42"}),
             ]
         )
         with mock.patch.object(webapi_client, "urlopen", fake):
@@ -656,9 +664,7 @@ class TestTransactionHistory(unittest.TestCase):
         fake = QueuedUrlopen(
             [
                 FakeResponse([], headers={"ETag": '"abc"'}),
-                FakeResponse(
-                    None, headers={"ETag": '"abc"', "X-Total-Count": "1"}, status=304
-                ),
+                http_error_304({"ETag": '"abc"', "X-Total-Count": "1"}),
                 FakeResponse(
                     [{"id": 2, "timestamp": 2.0, "changes": []}],
                     headers={"ETag": '"ghi"', "X-Total-Count": "2"},
@@ -670,6 +676,41 @@ class TestTransactionHistory(unittest.TestCase):
             handler.get_transaction_history()
             handler.get_transaction_history()
         self.assertEqual(handler._history_etag, '"ghi"')
+
+
+# -------------------------------------------------------------------------
+#
+# TestPersonBirthDeathIndices
+#
+# -------------------------------------------------------------------------
+class TestPersonBirthDeathIndices(unittest.TestCase):
+    def _authed_handler(self):
+        fake = QueuedUrlopen([FakeResponse({"access_token": token("AT0")})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler = WebApiHandler("https://example.com/api", refresh_token="RT")
+        return handler
+
+    def test_requests_only_the_three_keys_it_needs(self):
+        # Asking the server to serialize a full Person per row (the
+        # default GET /people/ shape) costs far more than this needs --
+        # the keys param cuts the response down to just what's read below.
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse([])])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler.get_person_birth_death_indices()
+        url = fake.requests[0].full_url
+        self.assertIn("keys=handle%2Cbirth_ref_index%2Cdeath_ref_index", url)
+
+    def test_builds_handle_to_indices_map(self):
+        handler = self._authed_handler()
+        page = [
+            {"handle": "H1", "birth_ref_index": 0, "death_ref_index": 1},
+            {"handle": "H2", "birth_ref_index": -1, "death_ref_index": -1},
+        ]
+        fake = QueuedUrlopen([FakeResponse(page)])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            result = handler.get_person_birth_death_indices()
+        self.assertEqual(result, {"H1": (0, 1), "H2": (-1, -1)})
 
 
 # -------------------------------------------------------------------------
