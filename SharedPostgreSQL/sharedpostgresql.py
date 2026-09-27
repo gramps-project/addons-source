@@ -67,12 +67,16 @@ class SharedPostgreSQL(SharedDBAPI):
 
     def _sql_type(self, schema_type, max_length):
         result = super()._sql_type(schema_type, max_length)
-        if result == "BLOB":
-            return "bytea"
-        # INTEGER is 32-bit in PostgreSQL; "change" timestamps overflow in 2038.
-        if schema_type == "integer":
+        return "bytea" if result == "BLOB" else result
+
+    def _column_sql_type(self, field, schema_type, max_length):
+        # Change times are Unix timestamps, which overflow PostgreSQL's
+        # 32-bit INTEGER in 2038. Other integer columns keep that type:
+        # widening one changes which operators accept it, e.g. a bigint
+        # cannot index a jsonb array.
+        if field == "change":
             return "BIGINT"
-        return result
+        return self._sql_type(schema_type, max_length)
 
     def get_summary(self):
         """

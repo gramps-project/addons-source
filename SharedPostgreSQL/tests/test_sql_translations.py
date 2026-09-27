@@ -336,16 +336,65 @@ class TestSharedPostgreSQLSqlType(unittest.TestCase):
         self.pg = SharedPostgreSQL.__new__(SharedPostgreSQL)
 
     def test_blob_becomes_bytea(self):
-        with mock.patch.object(SharedDBAPI, "_sql_type", return_value="BLOB"):
-            self.assertEqual(self.pg._sql_type("blob_field", 0), "bytea")
+        self.assertEqual(self.pg._sql_type("blob", 0), "bytea")
 
     def test_text_unchanged(self):
-        with mock.patch.object(SharedDBAPI, "_sql_type", return_value="TEXT"):
-            self.assertEqual(self.pg._sql_type("text_field", 255), "TEXT")
+        self.assertEqual(self.pg._sql_type("string", 0), "TEXT")
 
     def test_integer_unchanged(self):
-        with mock.patch.object(SharedDBAPI, "_sql_type", return_value="INTEGER"):
-            self.assertEqual(self.pg._sql_type("int_field", 0), "INTEGER")
+        self.assertEqual(self.pg._sql_type("integer", 0), "INTEGER")
+
+
+# -------------------------------------------------------------------------
+#
+# TestSharedPostgreSQLColumnSqlType
+#
+# -------------------------------------------------------------------------
+class TestSharedPostgreSQLColumnSqlType(unittest.TestCase):
+    """Only the "change" column is widened to BIGINT."""
+
+    def setUp(self):
+        self.pg = SharedPostgreSQL.__new__(SharedPostgreSQL)
+
+    def column_types(self, cls):
+        return {
+            field: self.pg._column_sql_type(field, schema_type, max_length)
+            for field, schema_type, max_length in cls.get_secondary_fields()
+        }
+
+    def test_change_is_bigint(self):
+        """A Unix timestamp overflows a 32-bit INTEGER in 2038."""
+        from gramps.gen.lib import Person
+
+        self.assertEqual(self.column_types(Person)["change"], "BIGINT")
+
+    def test_ref_index_stays_integer(self):
+        """GOQL indexes event_ref_list with jsonb -> <column>, and PostgreSQL
+        has no jsonb -> bigint operator."""
+        from gramps.gen.lib import Person
+
+        types = self.column_types(Person)
+        self.assertEqual(types["birth_ref_index"], "INTEGER")
+        self.assertEqual(types["death_ref_index"], "INTEGER")
+
+    def test_other_integer_fields_stay_integer(self):
+        from gramps.gen.lib import Citation, Note, Person, Tag
+
+        self.assertEqual(self.column_types(Person)["gender"], "INTEGER")
+        self.assertEqual(self.column_types(Citation)["confidence"], "INTEGER")
+        self.assertEqual(self.column_types(Note)["format"], "INTEGER")
+        self.assertEqual(self.column_types(Tag)["priority"], "INTEGER")
+
+    def test_non_integer_fields_unaffected(self):
+        from gramps.gen.lib import Media
+
+        types = self.column_types(Media)
+        self.assertEqual(types["gramps_id"], "TEXT")
+        self.assertEqual(types["private"], "INTEGER")
+
+    def test_base_class_ignores_field_name(self):
+        base = SharedDBAPI.__new__(SharedDBAPI)
+        self.assertEqual(base._column_sql_type("change", "integer", None), "INTEGER")
 
 
 # -------------------------------------------------------------------------
