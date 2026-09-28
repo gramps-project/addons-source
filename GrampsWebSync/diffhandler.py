@@ -175,10 +175,13 @@ class WebApiSyncDiffHandler:
         self,
     ) -> dict[tuple[str, str], tuple[GrampsObject, GrampsObject]]:
         """Objects that have been modifed in both databases."""
+        # bind once: each property access rebuilds the whole dict
+        modified_in_db1 = self.modified_in_db1
+        modified_in_db2 = self.modified_in_db2
         return {
             k: v
             for k, v in self.differences.items()
-            if k not in self.modified_in_db1 and k not in self.modified_in_db2
+            if k not in modified_in_db1 and k not in modified_in_db2
         }
 
     @property
@@ -202,15 +205,17 @@ class WebApiSyncDiffHandler:
     @property
     def deleted_from_db1(self) -> dict[tuple[str, str], GrampsObject]:
         """Objects that have been deleted from db1."""
+        added_to_db2 = self.added_to_db2
         return {
-            k: v for k, v in self.missing_from_db1.items() if k not in self.added_to_db2
+            k: v for k, v in self.missing_from_db1.items() if k not in added_to_db2
         }
 
     @property
     def deleted_from_db2(self) -> dict[tuple[str, str], GrampsObject]:
         """Objects that have been deleted from db2."""
+        added_to_db1 = self.added_to_db1
         return {
-            k: v for k, v in self.missing_from_db2.items() if k not in self.added_to_db1
+            k: v for k, v in self.missing_from_db2.items() if k not in added_to_db1
         }
 
     def get_changes(self) -> Actions:
