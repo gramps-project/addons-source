@@ -266,7 +266,33 @@ both pollers; `load()` resets the flag) and a new `TestNotifyFatalPollError`
 (mirrors `TestImportProgressUser`'s `has_display()`/import-failure
 coverage for the dialog itself).
 
-### 7. Spurious push conflict from a Unicode normalization mismatch — **mitigated, root cause unconfirmed**
+### 7. Spurious push conflict from a Unicode normalization mismatch — **closed: root cause confirmed live and fixed (2026-09-28)**
+
+**Resolution.** The NFC mitigation described further below was itself
+the cause. Confirmed live with
+`live_tests/test_live_unicode_normalization_conflict.py`:
+
+| server stores surname as | local after bootstrap | first edit |
+|---|---|---|
+| NFC | NFC | pushed |
+| NFD | **NFC** (rewritten by `_normalize_reimported_text()`) | rejected, retry rejected, edit lost |
+| NFD, NFC rewrite stubbed out | NFD | pushed |
+
+A Gramps XML export/reimport preserves Unicode form byte-for-byte, and
+the server keeps whatever form it was given, so rewriting the local
+mirror to NFC made every push's "old" snapshot disagree with an
+NFD-stored object — forever, since each resync rewrote it again. Also
+explains why `_walk_conflict_diff()` never showed anything: both sides
+it compares are local, and both were NFC. Removed the NFC rewrite from
+`_normalize_reimported_text()` and `WebApiDB._commit_base()` (local,
+non-batch commits) and deleted
+`_normalize_strings_to_nfc()`; `\r\n` normalization (gap 9) is
+unchanged. `_walk_conflict_diff()`'s NFC-EQUAL flag is kept as a
+diagnostic. The original Zieliński report fits: that name was very
+likely stored NFD on the server (e.g. from a macOS-produced import).
+
+The history below is kept for context; its "leading theory" was wrong
+in direction, not in category.
 
 Reported live (macOS, Gramps 6.0.6, 2026-09-24): opening a tree
 (bootstrap resync, 10669 objects, three poll ticks all reporting zero
@@ -282,6 +308,50 @@ so the edit was discarded with literally no trace on the server, the
 exact failure `live_tests/test_live_repeated_conflict_note_trail.py`
 exists to catch — just triggered by a real first conflict with no
 out-of-band editor, which that test doesn't reproduce.
+
+**Note-send conflict: root cause confirmed live and fixed (2026-09-28).**
+Reproduced 3/3 with `live_tests/test_live_repeated_conflict_note_trail.py`;
+the conflict-diff logged `attribute_list -- list length differs (1 vs
+0)`. `_retry_after_conflict()` recorded its merge-conflict note
+("gender discarded") immediately after its own local commit, while that
+retry's push was still in flight — so the note's "old" snapshot of the
+Person already carried the retry's not-yet-landed edit (the attribute),
+and the server rejected it every time the note went out first (and
+always, when the retry itself was then rejected). Fixed by deferring
+those notes until the retry's push resolves (`_schedule_retry()`'s
+`run_retry()` → `chain_done`/`chain_error`, via
+`_retry_after_conflict()`'s `deferred_notes`): recorded on success,
+dropped on failure — a give-up now calls `on_error` and leaves only its
+own undelivered-edit note, since the merge the dropped note describes
+never reached the server. Covered by
+`test_a_retry_that_gives_up_drops_its_merge_conflict_note`.
+
+Fixing that also needed `_start_push()`'s empty-payload branch to
+ignore `self._pulling` commits: under a synchronous runner a resync's
+reimport nests inside the retry with `self._retrying` still set, and its
+empty commit was completing the retry chain early.
+
+`_send_note_payload_best_effort()` additionally keeps one bounded
+resync-and-reattach retry on a `WebApiPushConflict` (see its docstring
+and `_record_conflict_notes()`'s `_retry_on_conflict` param), as a
+fallback for a note that still loses to a genuinely concurrent edit.
+A note send that fails on connectivity/5xx is queued via
+`_queue_pending_push()` rather than dropped (conflicts excluded).
+Covered by `test_a_note_push_that_fails_on_connectivity_is_queued`.
+
+Found along the way: whenever `self._syncing` was already clear at
+note-recording time, note bookkeeping pushes (the note and its tag
+commits) went through the general conflict/retry machinery instead,
+whose retry recommits under a generic description that
+`_is_message_note_push()` doesn't recognize — so a second conflict
+recorded a note about the note, recursively (hundreds of pushes under
+an always-conflicting mock; `test_repeated_conflict_gives_up_and_
+leaves_a_note` was failing on HEAD because of it). `_start_push()` now
+routes every `self._recording_note` push to
+`_send_note_payload_best_effort()` unconditionally, and that method's
+one retry claims `self._syncing` itself when nothing else holds it.
+Covered by `test_a_conflicted_note_push_is_resynced_and_reattached_once`
+and `test_a_note_push_that_keeps_conflicting_is_retried_only_once`.
 
 Same category of bug as gap 4 (`birth_ref_index`/`death_ref_index`):
 Gramps XML export/import is not guaranteed to preserve everything
@@ -749,6 +819,28 @@ theory): XML 1.0's spec makes this normalization mandatory for any
 compliant parser, so there is nothing left to verify about *whether*
 it happens, only that this addon corrects for it -- which the tests
 above confirm directly.
+
+**Server-stored `\r\n`: confirmed live and fixed (2026-09-28).**
+`live_tests/test_live_crlf_note_edit_conflict.py`: the server kept
+`'Line one\r\nLine two'`, the mirror had `\n`, and an edit to that Note
+was rejected, retried, rejected, and given up -- with no trace at all,
+since a Note can't carry the undelivered-edit note. Fixed at push time:
+`_align_note_line_endings_with_server()` (via `_payload_for_server()`,
+used by all three push paths, skipped for undo) fetches the server's
+text (`WebApiHandler.get_note_text()`) for any multi-line Note
+update/delete and substitutes it into "old" when it differs only by line
+endings; "new" keeps `\n`, so the edit also normalizes the server copy.
+Root cause is Gramps' exporter writing `\r` raw instead of `&#13;`.
+
+Original analysis: gap 7 showed the server
+keeps text in exactly the form it was given. So a Note the *server*
+stores with `\r\n` (written by Gramps Web or any other client) will
+always be `\n` in this mirror after a reimport, and every later edit to
+that Note will conflict, resync, and give up -- the same failure gap 7
+had, except here the reimport side can't be fixed (XML mandates it).
+(Incremental pulls are unaffected: they commit batch=True, which
+`_commit_base()` skips, so a Note changed server-side after a resync
+keeps its `\r\n`.)
 
 ### 10. Researcher info and name-format entries get clobbered/duplicated by every resync — **fixed**
 

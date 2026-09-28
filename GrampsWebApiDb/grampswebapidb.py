@@ -1600,7 +1600,7 @@ def _restabilize_tag_handles(db, before_by_name, trans):
     persisted object with a stable handle the way Gramps core does, and
     mints one fresh, per export, purely to produce valid Gramps XML --
     the same category of round-trip-fidelity gap as birth_ref_index/
-    death_ref_index and the Unicode NFC mismatch (see
+    death_ref_index and "\\r\\n" line endings (see
     _snapshot_birth_death_indices()/_normalize_reimported_text()), just
     with no representation gap this time: the *value* itself is simply
     not reproducible, so the fix is to keep this mirror's own previous
@@ -1804,39 +1804,23 @@ def _deduplicate_name_formats(db, before):
     return removed
 
 
-def _normalize_strings_to_nfc(data):
-    """Return a copy of an object_to_dict()-shaped value with every
-    string leaf run through unicodedata.normalize("NFC", ...), used by
-    _normalize_reimported_text() below. NFC (precomposed) is the
-    canonical target: the form GEDCOM and most other genealogy tooling
-    already assumes, and the form this addon otherwise treats every
-    string as being in without ever checking.
-    """
-    if isinstance(data, dict):
-        return {key: _normalize_strings_to_nfc(value) for key, value in data.items()}
-    if isinstance(data, list):
-        return [_normalize_strings_to_nfc(item) for item in data]
-    if isinstance(data, str):
-        return unicodedata.normalize("NFC", data)
-    return data
-
-
 def _normalize_line_endings(data):
     """Return a copy of an object_to_dict()-shaped value with every
     string leaf's line endings collapsed to a bare "\\n", used by
-    _normalize_reimported_text() below alongside _normalize_strings_to_
-    nfc() -- same recursive shape, a different axis of "the form this
-    addon otherwise treats every string as being in without ever
-    checking" (see TODO.md gap 9).
+    _normalize_reimported_text() below (see TODO.md gap 9).
+
+    Deliberately *not* also normalizing Unicode form (NFC/NFD): a Gramps
+    XML export/reimport preserves it byte-for-byte, and the server keeps
+    whatever form it was given, so rewriting it locally only manufactures
+    the very mismatch it was meant to prevent -- confirmed live (TODO.md
+    gap 7, live_tests/test_live_unicode_normalization_conflict.py).
 
     Confirmed live: a Note pushed with "\\r\\n" line endings comes back
-    "\\n"-only after a real bootstrap resync. Not a Gramps or gramps-
-    web-api choice to fix on either side -- XML 1.0's own spec (section
-    2.11, "End-of-Line Handling") requires every compliant parser to
-    normalize "\\r\\n" (and a bare "\\r") in character data to "\\n"
-    before an application ever sees it, so this happens the moment such
-    text is serialized into a Gramps XML export at all, unconditionally,
-    regardless of what wrote the export or what reads it back.
+    "\\n"-only after a real bootstrap resync. Gramps' own exporter
+    (exportxml.py's write_text()) keeps "\\r" but writes it raw rather
+    than as "&#13;", and XML 1.0 (section 2.11) requires every parser to
+    turn a raw "\\r\\n"/"\\r" into "\\n" -- so no released Gramps export
+    can carry it, and the reimport side can't recover it.
     """
     if isinstance(data, dict):
         return {key: _normalize_line_endings(value) for key, value in data.items()}
@@ -1847,9 +1831,43 @@ def _normalize_line_endings(data):
     return data
 
 
+def _align_note_line_endings_with_server(payload, get_note_text):
+    """Return ``payload`` with each Note update/delete's "old" text
+    replaced by the server's own, when the two differ only in line
+    endings (TODO.md gap 9): a reimport always leaves the mirror's copy
+    "\\n"-only, while the server keeps whatever it was given, so an
+    "old" built from the mirror never matches a "\\r\\n"-stored Note and
+    old_unchanged() rejects every edit to it -- confirmed live
+    (live_tests/test_live_crlf_note_edit_conflict.py). "new" is left
+    alone, so the edit itself also rewrites the server's copy to "\\n".
+
+    Only multi-line text is checked (a Note with no "\\n" locally can't
+    have had one collapsed), so ordinary pushes cost no extra request.
+    Runs on io_runner (``get_note_text`` is a network call).
+    """
+    aligned = []
+    for entry in payload:
+        old = entry.get("old")
+        if entry.get("_class") == "Note" and old is not None:
+            local = (old.get("text") or {}).get("string")
+            if local and "\n" in local:
+                server = get_note_text(entry["handle"])
+                if (
+                    server is not None
+                    and server != local
+                    and _normalize_line_endings(server) == local
+                ):
+                    entry = {
+                        **entry,
+                        "old": {**old, "text": {**old["text"], "string": server}},
+                    }
+        aligned.append(entry)
+    return aligned
+
+
 def _normalize_reimported_text(db, trans):
-    """Canonicalize every primary object's text to NFC, with "\\n"-only
-    line endings, right after a fresh reimport -- called from both
+    """Canonicalize every primary object's text to "\\n"-only line
+    endings right after a fresh reimport -- called from both
     _full_resync_async()'s rebuild() and _bootstrap_full_resync(),
     under the same self._pulling context those already hold, same
     "correct what the reimport can't be trusted to preserve" shape as
@@ -1864,32 +1882,18 @@ def _normalize_reimported_text(db, trans):
     form data_to_object() needs, with no live-object round trip needed
     first.
 
-    Two independent round-trip-fidelity gaps, corrected together here
-    since both are "a reimport can silently change a string field with
-    no edit involved" (TODO.md gaps 7 and 9):
-
-    - Unicode normalization form (NFC vs NFD) -- suspected, not fully
-      confirmed live -- Gramps XML export/import is not guaranteed to
-      preserve it byte-for-byte, the same class of round-trip-fidelity
-      gap birth_ref_index/death_ref_index already turned out to have
-      (see _snapshot_birth_death_indices()'s own docstring). NFC is
-      applied unconditionally regardless of what either side previously
-      held -- there is no local "before" value worth preserving instead
-      here, unlike the birth/death case, since a Gramps XML export does
-      have an actual representation for the text to fall back on.
-    - "\\r\\n"/"\\r" line endings -- confirmed live (see
-      _normalize_line_endings()'s own docstring): XML 1.0 itself
-      mandates every compliant parser collapse these to "\\n" in
-      character data, so this is unconditional and unavoidable on the
-      reimport side by construction, not merely suspected.
+    "\\r\\n"/"\\r" line endings -- confirmed live (see
+    _normalize_line_endings()'s own docstring): XML 1.0 itself mandates
+    every compliant parser collapse these to "\\n" in character data, so
+    this is unconditional and unavoidable on the reimport side by
+    construction (TODO.md gap 9). Unicode normalization form is left
+    alone -- the reimport preserves it, see that docstring.
 
     diff_items() -- both this addon's own (_diff_snapshots() and the
     merge helpers below) and gramps-web-api's own old_unchanged()
     server-side -- compares every string leaf with plain "==", which
-    treats a precomposed "ń" and a decomposed "n" + combining acute (or
-    "\\r\\n" vs "\\n") as genuinely different text even though they
-    render identically (or are byte-identical once actually displayed)
-    and the user never touched that field. Left uncorrected, that drift
+    treats "\\r\\n" vs "\\n" as genuinely different text even though the
+    user never touched that field. Left uncorrected, that drift
     survives every future resync (re-exporting/re-importing the same
     bytes just reproduces the same form again), so the very next edit
     to that object -- regardless of what it actually touches -- would
@@ -1908,7 +1912,7 @@ def _normalize_reimported_text(db, trans):
         name = KEY_TO_NAME_MAP[key]
         for handle, data in db._iter_raw_data(key):
             data = remove_object(data)
-            normalized = _normalize_line_endings(_normalize_strings_to_nfc(data))
+            normalized = _normalize_line_endings(data)
             if normalized != data:
                 getattr(db, f"commit_{name}")(data_to_object(normalized), trans)
                 corrected += 1
@@ -2456,6 +2460,21 @@ class WebApiDB(SQLite):
     #: that must go on being allowed to commit locally regardless of
     #: self._missing_write_permissions, the same as _pulling.
     _recording_note = False
+
+    #: The ``conflicts`` list _record_conflict_notes() is currently
+    #: attaching, stashed here just before its own DbTxn so _start_push()
+    #: can hand it to _send_note_payload_best_effort() -- which, if this
+    #: specific note-attach push itself conflicts, uses it to resync and
+    #: reattach the note fresh exactly once, rather than giving up
+    #: immediately with the note stranded only in the local mirror. See
+    #: _send_note_payload_best_effort()'s docstring. None whenever the
+    #: current note-attach push is not eligible for that retry (a plain
+    #: send, or already itself a retry -- _record_conflict_notes()'s own
+    #: ``_retry_on_conflict=False`` call), read-and-cleared by
+    #: _start_push() the moment it's used so a later, unrelated
+    #: note-attach push started while this instance is otherwise idle
+    #: never inherits a stale value.
+    _note_retry_conflicts = None
 
     #: Set for the duration of any async operation that owns the mirror
     #: -- a record/media sync, or (since the move off reentrant pumping)
@@ -3460,8 +3479,9 @@ class WebApiDB(SQLite):
         self._media_poll_failures += 1
 
     def _commit_base(self, obj, obj_key, trans, change_time):
-        """Normalize every string field on ``obj`` to NFC, with "\\n"-
-        only line endings, before DBAPI's own _commit_base() ever
+        """Normalize every string field on ``obj`` to "\\n"-only line
+        endings (not Unicode form -- see _normalize_line_endings())
+        before DBAPI's own _commit_base() ever
         serializes it to storage -- the single choke point every
         commit_<type>() method (DbGeneric) funnels through, for every
         write this local mirror ever makes: an ordinary local edit, and
@@ -3484,10 +3504,10 @@ class WebApiDB(SQLite):
         batch-mode equivalent of this, and re-commits only the objects
         that actually need it.
 
-        See _normalize_strings_to_nfc()/_normalize_line_endings() for
-        why, and TODO.md gaps 7 and 9 for the two round-trip-fidelity
-        bugs this and _normalize_reimported_text() exist to close --
-        two directions of the same problem each: this one stops the
+        See _normalize_line_endings() for why, and TODO.md gap 9 for the
+        round-trip-fidelity bug this and _normalize_reimported_text()
+        exist to close -- two directions of the same problem: this one
+        stops the
         addon itself (or whatever handed it the text -- GTK, an input
         method, pasted Windows-authored text, anything upstream of
         Gramps) from ever being the source of a mismatch;
@@ -3496,7 +3516,7 @@ class WebApiDB(SQLite):
         """
         if not trans.batch:
             data = object_to_dict(obj)
-            normalized = _normalize_line_endings(_normalize_strings_to_nfc(data))
+            normalized = _normalize_line_endings(data)
             if normalized != data:
                 obj = data_to_object(normalized)
         return super()._commit_base(obj, obj_key, trans, change_time)
@@ -3660,20 +3680,45 @@ class WebApiDB(SQLite):
         note commit landing in the queue this way lost the note with
         nothing to show for it, exactly contradicting that docstring.
         _send_note_payload_best_effort() sends it immediately instead --
-        a single attempt, no resync, no retry, no queueing -- so it never
-        reaches that path in the first place.
+        no queueing, so it never reaches that path in the first place --
+        and, if this specific send itself conflicts, one bounded
+        resync-and-reattach retry of its own; see that method's
+        docstring and self._note_retry_conflicts.
         """
         if not payload:
-            if is_retry and self._retry_chain_done is not None:
+            # A self._pulling commit (a resync's own reimport) is never
+            # the retry's own commit, even when a synchronous runner
+            # nests it inside one with self._retrying still set -- it
+            # must not complete the retry chain early.
+            if (
+                is_retry
+                and self._retry_chain_done is not None
+                and not self._pulling
+            ):
                 self._retry_chain_done(None)
             return
         if not is_retry:
+            if self._recording_note:
+                # Regardless of self._syncing: note bookkeeping (the note
+                # itself *and* the tag commits _get_or_create_tag() makes
+                # for it) must never enter _push_payload_async()'s own
+                # conflict -> resync -> retry -> give-up machinery. Its
+                # retry recommits under a generic description, so a
+                # give-up there no longer matches _is_message_note_push()
+                # and records a note about the note -- which recursed
+                # without bound whenever self._syncing happened to be
+                # clear here (e.g. after _push_payload_async()'s
+                # non-retryable branch releases it before recording).
+                retry_conflicts = self._note_retry_conflicts
+                self._note_retry_conflicts = None
+                self._send_note_payload_best_effort(
+                    payload,
+                    undo=undo,
+                    message=message,
+                    retry_conflicts=retry_conflicts,
+                )
+                return
             if self._syncing:
-                if self._recording_note:
-                    self._send_note_payload_best_effort(
-                        payload, undo=undo, message=message
-                    )
-                    return
                 self._queue_pending_push(payload, undo=undo, message=message)
                 return
             self._syncing = True
@@ -3686,31 +3731,78 @@ class WebApiDB(SQLite):
             payload, on_done, on_error, undo=undo, is_retry=is_retry, message=message
         )
 
-    def _send_note_payload_best_effort(self, payload, undo=False, message=None):
+    def _payload_for_server(self, payload, undo=False):
+        """The payload to actually send: Note "old" text aligned with the
+        server's line endings (_align_note_line_endings_with_server()).
+        Skipped for undo=True, where the server swaps old/new and
+        compares the payload's "new" instead. Network call -- io_runner
+        only."""
+        if undo:
+            return payload
+        return _align_note_line_endings_with_server(
+            payload, self.web_client.get_note_text
+        )
+
+    def _send_note_payload_best_effort(
+        self, payload, undo=False, message=None, retry_conflicts=None
+    ):
         """Push a message-note commit right now, bypassing both the
         self._syncing single-flight gate and the pending-push queue --
         see _start_push()'s own docstring for why self._recording_note
         routes here instead of queuing like any other payload would.
 
-        Deliberately does *not* go through _push_payload_async(): that
-        method's conflict handling triggers a full resync
-        (_resync_after_conflict_async() -> _full_resync_async()), which
-        touches self.dbapi -- exactly what self._syncing exists to keep
-        only one chain doing at a time (see _start_push()'s docstring).
-        Firing that here, concurrently with whatever outer chain is still
-        running (and still holds self._syncing), would race it. A single,
-        best-effort attempt with no resync/retry/requeue on failure is
-        the safe trade: this is pure network I/O on io_runner, no
-        self.dbapi touch, so nothing here can race the outer chain either
-        way -- and if this one attempt fails for any reason, including a
-        genuine conflict, it's logged and left at that, same as this
-        addon already accepts for a plain connectivity failure that
-        doesn't get queued. No further note-about-this-note is recorded
-        either: self._recording_note is still True for the whole
-        duration (see _record_conflict_notes()), so a nested
-        transaction_commit() from this call's own failure handling would
-        itself just recurse into this same method -- avoided entirely by
-        not attempting one.
+        Deliberately does *not* go through _push_payload_async() for this
+        first attempt: that method's conflict handling triggers a full
+        resync (_resync_after_conflict_async() -> _full_resync_async()),
+        which touches self.dbapi -- exactly what self._syncing exists to
+        keep only one chain doing at a time (see _start_push()'s
+        docstring), and firing that unconditionally, on every note send,
+        concurrently with whatever outer chain may still be running,
+        would race it far more often than the conflict this exists to
+        recover from actually occurs. A single, best-effort attempt with
+        no up-front resync is the trade for the common case: this is pure
+        network I/O on io_runner, no self.dbapi touch, so nothing here
+        can race the outer chain either way.
+
+        retry_conflicts changes what happens on that attempt's failure.
+        ``None`` (a plain send, or this is already itself the one retry
+        -- see _record_conflict_notes()'s own ``_retry_on_conflict``)
+        means the old behavior: log and stop, the note stays local-only
+        for this session. Otherwise -- the original, ``_retry_on_
+        conflict=True`` call -- a WebApiPushConflict specifically (the
+        one failure mode with an actual fix available: the local mirror
+        this note's "old" snapshot was built from was, or has since
+        become, stale relative to the server) gets exactly one recovery
+        attempt: a full resync, the same _resync_after_conflict_async()
+        every other conflicted push in this file already uses, followed
+        by _record_conflict_notes(retry_conflicts, _retry_on_conflict=
+        False) to rebuild and reattach the note fresh against the
+        now-current local mirror -- not a bare resend of this same
+        payload, whose "old" would still be exactly as stale as what
+        just got rejected. Bounded to one attempt (the recursive call's
+        own self._note_retry_conflicts is None -- see _start_push()) so
+        a genuinely hot object can't send this into an unbounded loop,
+        same ceiling _after_conflict_resync() already holds the main
+        edit's own retry to.
+
+        If self._syncing is already clear when that retry starts (the
+        outer chain finished first, or _push_payload_async()'s
+        non-retryable branch released it before recording), the retry
+        claims it for the resync's duration and releases it through
+        _finish_async_op(). If it's still held by the outer chain, the
+        retry runs under that chain's claim -- the same overlap every
+        note-recording call site already accepts.
+
+        A connectivity/5xx failure (_is_retryable_push_error(), conflicts
+        excluded) is queued via _queue_pending_push() like any other
+        push. Anything else (a second genuine conflict after the retry,
+        a permanent 4xx, the resync itself failing) is logged and left
+        at that. No further
+        note-about-this-note is recorded either way: self._recording_note
+        is still True for the whole duration (see
+        _record_conflict_notes()), so a nested transaction_commit() from
+        this call's own failure handling would itself just recurse into
+        this same method -- avoided entirely by not attempting one.
         """
 
         def do_push():
@@ -3719,18 +3811,87 @@ class WebApiDB(SQLite):
             # _use_background_push() belongs here too.
             background = self._use_background_push(payload)
             self.web_client.push_transaction(
-                payload, undo=undo, background=background, message=message
+                self._payload_for_server(payload, undo),
+                undo=undo,
+                background=background,
+                message=message,
             )
 
         def on_sent(_result):
             pass
 
         def on_send_error(exc):
+            if retry_conflicts is not None and isinstance(exc, WebApiPushConflict):
+                LOG.warning(
+                    "Message-note commit conflicted (%s); resyncing once "
+                    "and reattaching it fresh instead of giving up "
+                    "immediately.",
+                    exc,
+                )
+
+                # Hold self._syncing across the resync when nothing else
+                # does, so a poll tick or fresh edit can't start its own
+                # dbapi-touching chain underneath it; released through
+                # _finish_async_op() so anything queued meanwhile flushes.
+                release = None
+                if not self._syncing:
+                    self._syncing = True
+                    release = self._finish_async_op(None)
+
+                def on_resync_done(_result):
+                    # Which field made the server reject this note's own
+                    # "old" snapshot? See TODO.md gap #7.
+                    if not self._log_conflict_field_diffs(payload):
+                        LOG.warning(
+                            "conflict-diff: the rejected message-note "
+                            "push's snapshot matches the freshly-resynced "
+                            "local copy exactly -- whatever the server "
+                            "disagreed with doesn't survive a resync."
+                        )
+                    try:
+                        self._record_conflict_notes(
+                            retry_conflicts, _retry_on_conflict=False
+                        )
+                    finally:
+                        if release is not None:
+                            release(None)
+
+                def on_resync_error(resync_exc):
+                    if release is not None:
+                        release(None)
+                    LOG.warning(
+                        "Could not resync after a message-note conflict "
+                        "(%s); the note was not resent. The note exists "
+                        "locally but the server won't see it this "
+                        "session.",
+                        resync_exc,
+                    )
+
+                # _full_resync_async() already wraps on_done/on_error in
+                # self._guarded() itself -- no need to do it again here.
+                self._resync_after_conflict_async(
+                    on_done=on_resync_done, on_error=on_resync_error
+                )
+                return
+            if not isinstance(exc, WebApiPushConflict) and _is_retryable_push_error(
+                exc
+            ):
+                # Connectivity/5xx: queue it like any other push. The
+                # queue replays it on the next successful contact; if the
+                # replay itself conflicts it's dropped there, and
+                # _is_message_note_push() keeps that from recording a
+                # note about the note.
+                LOG.warning(
+                    "Could not send a message-note commit (%s); queued for "
+                    "retry on the next successful contact with the server.",
+                    exc,
+                )
+                self._queue_pending_push(payload, undo=undo, message=message)
+                return
             LOG.warning(
-                "Could not send a message-note commit immediately (%s); "
-                "not queued or retried, to avoid racing the chain it's "
-                "reporting on. The note exists locally but the server "
-                "won't see it this session.",
+                "Could not send a message-note commit (%s); not retried "
+                "again. The note exists locally but the server won't see "
+                "it this session.",
                 exc,
             )
 
@@ -3826,7 +3987,10 @@ class WebApiDB(SQLite):
                 " background" if background else "",
             )
             self.web_client.push_transaction(
-                payload, undo=undo, background=background, message=message
+                self._payload_for_server(payload, undo),
+                undo=undo,
+                background=background,
+                message=message,
             )
             LOG.debug("push: accepted in %.2fs", monotonic() - started)
 
@@ -3926,7 +4090,11 @@ class WebApiDB(SQLite):
         add) has nothing to diff against; skipped, same as
         _record_undelivered_push_notes() skips a delete for the same
         reason.
+
+        Returns True if any entry differed, False if every comparable
+        entry matched its resynced copy exactly.
         """
+        any_diff = False
         for entry in payload:
             if entry["type"] == "delete" or entry.get("old") is None:
                 continue
@@ -3940,9 +4108,11 @@ class WebApiDB(SQLite):
             current = getattr(self, f"get_{name}_from_handle")(handle)
             current_dict = object_to_dict(current)
             if diff_items(entry["_class"], entry["old"], current_dict):
+                any_diff = True
                 _walk_conflict_diff(
                     entry["_class"], handle, entry["old"], current_dict
                 )
+        return any_diff
 
     def _after_conflict_resync(
         self, payload, undo, is_retry, on_done, on_error, message=None
@@ -3995,7 +4165,11 @@ class WebApiDB(SQLite):
                     "it conflicted with the server's current data a second "
                     "time and could not be reconciled automatically",
                 )
-            on_done(None)
+            # on_error, not on_done: the edit did not reach the server.
+            # For a retry, that tells run_retry()'s chain_error to drop
+            # its deferred conflict notes; for a top-level undo/redo the
+            # two are the same _finish_async_op() wrapper anyway.
+            on_error(None)
 
         if undo or is_retry:
             # undo/redo: retrying against data that changed underneath it
@@ -4094,9 +4268,32 @@ class WebApiDB(SQLite):
             # on_retry_db_error) is a valid reason for this chain to stop
             # here instead of via that recursive push's own eventual
             # on_done/on_error.
-            self._retry_chain_done, self._retry_chain_error = on_done, on_error
+            # Conflict notes wait for this retry's own push to resolve:
+            # sent any earlier, a note's "old" snapshot of the object
+            # already carries the retry's not-yet-landed edit, so the
+            # server rejects it as changed -- confirmed live
+            # (test_live_repeated_conflict_note_trail.py, conflict-diff
+            # on attribute_list). On failure -- including
+            # _after_conflict_resync()'s give-up, which leaves its own
+            # undelivered-edit note -- they're dropped: the merge they
+            # describe never reached the server, and a connectivity
+            # failure's queued replay would conflict the same way.
+            deferred_notes = []
+            notes_handled = []
+
+            def chain_done(result):
+                if deferred_notes and not notes_handled:
+                    notes_handled.append(True)
+                    self._record_conflict_notes(list(deferred_notes))
+                on_done(result)
+
+            def chain_error(exc):
+                notes_handled.append(True)
+                on_error(exc)
+
+            self._retry_chain_done, self._retry_chain_error = chain_done, chain_error
             try:
-                self._retry_after_conflict(payload)
+                self._retry_after_conflict(payload, deferred_notes=deferred_notes)
             finally:
                 self._retry_chain_done = None
                 self._retry_chain_error = None
@@ -4252,7 +4449,7 @@ class WebApiDB(SQLite):
             # _use_background_push() belongs here too.
             background = self._use_background_push(entry["payload"])
             self.web_client.push_transaction(
-                entry["payload"],
+                self._payload_for_server(entry["payload"], entry.get("undo", False)),
                 undo=entry.get("undo", False),
                 background=background,
                 message=entry.get("message"),
@@ -4334,7 +4531,7 @@ class WebApiDB(SQLite):
             do_push, self._guarded(on_pushed), self._guarded(on_push_error)
         )
 
-    def _retry_after_conflict(self, payload):
+    def _retry_after_conflict(self, payload, deferred_notes=None):
         """Reapply each locally-intended change as a fresh local edit --
         see the module docstring's write-through section. An add/update
         whose object still exists is combined with the current object via
@@ -4386,9 +4583,16 @@ class WebApiDB(SQLite):
         else. An uncontested edit, or two different items both
         surviving a list union, produces no lines and is never recorded
         -- see TODO.md's "Only do for CONFLICTS" note.
+
+        ``deferred_notes``, if given, is a list this fills in *instead*
+        of recording anything -- _schedule_retry()'s run_retry() passes
+        one so the notes wait until this retry's own push has resolved.
+        Filled during the loop, not after: the push this DbTxn's exit
+        starts can resolve before this method returns (synchronously,
+        under InlineTaskRunner), and the caller reads it then.
         """
         self._retrying = True
-        conflicts = []
+        conflicts = deferred_notes if deferred_notes is not None else []
         try:
             with DbTxn(_("Retry local change after server conflict"), self) as trans:
                 for entry in payload:
@@ -4448,7 +4652,7 @@ class WebApiDB(SQLite):
                         getattr(self, f"commit_{name}")(obj, trans)
         finally:
             self._retrying = False
-        if conflicts:
+        if conflicts and deferred_notes is None:
             self._record_conflict_notes(conflicts)
 
     def _get_or_create_tag(self, name):
@@ -4474,7 +4678,7 @@ class WebApiDB(SQLite):
             self.commit_tag(tag, trans)
         return tag
 
-    def _record_conflict_notes(self, conflicts):
+    def _record_conflict_notes(self, conflicts, _retry_on_conflict=True):
         """Attach one gramps-connect-style "message" Note per conflicted
         object, recording exactly what _retry_after_conflict() had to
         resolve automatically -- see the module docstring's "silently
@@ -4486,6 +4690,16 @@ class WebApiDB(SQLite):
         _conflict_summary_lines()'s own list of ready-made, human-
         readable strings -- already filtered to genuine conflicts only,
         nothing left for this method to decide.
+
+        ``_retry_on_conflict`` (default True) stashes ``conflicts`` on
+        self._note_retry_conflicts right before the note-attach DbTxn
+        below, for _start_push()/_send_note_payload_best_effort() to use
+        if that specific push conflicts -- see that method's docstring
+        for what the retry actually does and why it has to rebuild the
+        note rather than just resend it. False is _send_note_payload_
+        best_effort()'s own recursive call, once that retry has already
+        happened once: this method doesn't loop on its own, the caller
+        bounds it to a single attempt.
 
         Runs as its own, separate local transaction, called only after
         _retry_after_conflict()'s own DbTxn has already committed --
@@ -4524,6 +4738,13 @@ class WebApiDB(SQLite):
         try:
             message_tag = self._get_or_create_tag(MESSAGE_TAG_NAME)
             todo_tag = self._get_or_create_tag(MESSAGE_TODO_OPEN_TAG_NAME)
+            # Scoped to just this DbTxn's own push -- not set any earlier
+            # (the tag-creation DbTxns above go through this same
+            # self._recording_note routing too, and would otherwise
+            # consume it first; see self._note_retry_conflicts' own
+            # docstring) -- and always cleared after, win or lose, so a
+            # later unrelated note-attach push never inherits it.
+            self._note_retry_conflicts = conflicts if _retry_on_conflict else None
             with DbTxn(_message_note_description(), self) as trans:
                 for obj_class, name, handle, lines in conflicts:
                     get_from_handle = getattr(self, f"get_{name}_from_handle", None)
@@ -4549,6 +4770,14 @@ class WebApiDB(SQLite):
         finally:
             self._recording_note = False
             self._retrying = was_retrying
+            # Defensive: normally already read-and-cleared by
+            # _start_push() the moment the DbTxn above committed. Only
+            # left set here if that commit's push took some other route
+            # entirely (e.g. self._syncing was already clear, so it went
+            # through the ordinary _push_payload_async() path instead --
+            # which has its own, already-correct conflict handling and
+            # never looks at this attribute).
+            self._note_retry_conflicts = None
 
     def _record_undelivered_push_notes(self, payload, reason):
         """Attach a gramps-connect-style "message" Note to every add/
