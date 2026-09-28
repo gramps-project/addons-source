@@ -100,9 +100,9 @@ from GrampsWebApiDb.grampswebapidb import (
     WebApiPushConflict,
     _deduplicate_name_formats,
     _diff_snapshots,
+    _align_note_line_endings_with_server,
     _normalize_line_endings,
     _normalize_reimported_text,
-    _normalize_strings_to_nfc,
     _restabilize_tag_handles,
     _restore_birth_death_indices,
     _restore_researcher_if_locally_set,
@@ -1609,7 +1609,7 @@ class TestTransactionCommit(unittest.TestCase):
         # already-known, bulk-imported object -- see the module
         # docstring and _resync_after_conflict_async().
         self.assertEqual(resync.call_count, 1)
-        retry.assert_called_once_with(mock.ANY)
+        retry.assert_called_once_with(mock.ANY, deferred_notes=mock.ANY)
         payload = retry.call_args[0][0]
         self.assertEqual(payload[0]["handle"], "H1")
 
@@ -2192,6 +2192,54 @@ class TestConflictRetryAgainstARealDatabase(unittest.TestCase):
         self.assertEqual(len(final.get_attribute_list()), 0)
         self.assertEqual(len(final.get_note_list()), 1)
 
+    def _push_recording_messages(self, note_conflicts):
+        """Every push conflicts except message-note pushes after the
+        first ``note_conflicts`` of them; returns the list of messages
+        pushed, in order."""
+        messages = []
+        note_message = grampswebapidb._message_note_description()
+
+        def fake_push(payload, undo=False, background=False, message=None):
+            messages.append(message)
+            if message == note_message:
+                if messages.count(note_message) > note_conflicts:
+                    return
+            raise WebApiPushConflict("Object has changed")
+
+        self.db.web_client.push_transaction.side_effect = fake_push
+        return messages
+
+    def test_a_conflicted_note_push_is_resynced_and_reattached_once(self):
+        messages = self._push_recording_messages(note_conflicts=1)
+
+        with self._stub_full_resync_to(self._make_server_fresh()):
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING") as cm:
+                self._add_an_attribute()
+
+        note_message = grampswebapidb._message_note_description()
+        self.assertEqual(messages.count(note_message), 2)
+        self.assertTrue(
+            any("reattaching it fresh" in line for line in cm.output)
+        )
+        final = self.db.get_person_from_handle(self.handle)
+        self.assertEqual(len(final.get_note_list()), 1)
+
+    def test_a_note_push_that_keeps_conflicting_is_retried_only_once(self):
+        messages = self._push_recording_messages(note_conflicts=99)
+
+        with self._stub_full_resync_to(self._make_server_fresh()):
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING"):
+                self._add_an_attribute()
+
+        note_message = grampswebapidb._message_note_description()
+        self.assertEqual(messages.count(note_message), 2)
+        # Note bookkeeping never enters the general retry machinery, so
+        # no retry of it is ever pushed under the generic description.
+        self.assertLessEqual(
+            messages.count("Retry local change after server conflict"), 1
+        )
+        self.assertFalse(self.db._syncing)
+
     def test_retry_flags_a_resync_that_matches_the_rejected_old(self):
         # A plain attribute add is list-additive: merge() unions it
         # without any two-sided disagreement, so _conflict_summary_
@@ -2434,6 +2482,36 @@ class TestConflictNoteRecording(unittest.TestCase):
         self.assertIsNotNone(todo_tag)
         self.assertIn(message_tag.handle, note.get_tag_list())
         self.assertIn(todo_tag.handle, note.get_tag_list())
+
+    def test_a_retry_that_gives_up_drops_its_merge_conflict_note(self):
+        # The retry resolves a genuine gender collision, but its own push
+        # is rejected again: the "gender discarded" note describes a
+        # merge that never reached the server, so only the give-up's
+        # own undelivered-edit note is left.
+        server_fresh = self._current_data()
+        server_fresh["gender"] = Person.MALE
+        note_message = grampswebapidb._message_note_description()
+
+        def fake_push(payload, undo=False, background=False, message=None):
+            if message != note_message:
+                raise WebApiPushConflict("Object has changed")
+
+        self.db.web_client.push_transaction.side_effect = fake_push
+
+        with self._stub_full_resync_to(server_fresh):
+            with self.assertLogs(grampswebapidb.LOG, level="WARNING") as cm:
+                with DbTxn("edit", self.db) as trans:
+                    person = self.db.get_person_from_handle(self.handle)
+                    person.set_gender(Person.UNKNOWN)
+                    self.db.commit_person(person, trans)
+
+        self.assertTrue(any("Giving up" in line for line in cm.output))
+        final = self.db.get_person_from_handle(self.handle)
+        note_handles = final.get_note_list()
+        self.assertEqual(len(note_handles), 1)
+        text = self.db.get_note_from_handle(note_handles[0]).get()
+        self.assertIn("could not be synced", text)
+        self.assertNotIn("gender", text)
 
     def test_a_conflict_resolved_entirely_by_merge_leaves_no_note(self):
         # Same shape as TestConflictRetryAgainstARealDatabase's own
@@ -2775,6 +2853,37 @@ class TestUndeliveredPushNotes(unittest.TestCase):
 
         final = self.db.get_person_from_handle(self.handle)
         self.assertEqual(len(final.get_note_list()), 1)
+
+    def test_a_note_push_that_fails_on_connectivity_is_queued(self):
+        # The edit is permanently rejected (so a note is recorded), then
+        # the connection drops: the note's own push must be queued for
+        # later, not logged and lost.
+        self.metadata = {}
+        self.db._get_metadata = lambda key, default=0: self.metadata.get(key, default)
+        self.db._set_metadata = (
+            lambda key, value, use_txn=True: self.metadata.__setitem__(key, value)
+        )
+        forbidden = self._forbidden()
+        calls = []
+
+        def fake_push(payload, undo=False, background=False, message=None):
+            calls.append(message)
+            if len(calls) == 1:
+                raise forbidden
+            raise URLError("connection refused")
+
+        self.db.web_client.push_transaction.side_effect = fake_push
+
+        with self.assertLogs(grampswebapidb.LOG, level="WARNING") as cm:
+            with DbTxn("edit", self.db) as trans:
+                person = self.db.get_person_from_handle(self.handle)
+                person.set_privacy(True)
+                self.db.commit_person(person, trans)
+
+        note_message = grampswebapidb._message_note_description()
+        queued = [e.get("message") for e in self.metadata.get("pending_pushes", [])]
+        self.assertIn(note_message, queued)
+        self.assertTrue(any("queued for retry" in line for line in cm.output))
 
     def _use_persisted_metadata(self, pending_pushes):
         # A real dict-backed store, not a single shared list handed back
@@ -3613,31 +3722,6 @@ class TestDeduplicateNameFormats(unittest.TestCase):
         self.assertEqual(len(self.db.name_formats), 1)
 
 
-class TestNormalizeStringsToNfc(unittest.TestCase):
-    """_normalize_strings_to_nfc() itself -- the pure recursive walk,
-    independent of any real database."""
-
-    def test_normalizes_a_bare_string(self):
-        decomposed = unicodedata.normalize("NFD", "Zieliński")
-        self.assertNotEqual(decomposed, "Zieliński")  # the test means something
-        self.assertEqual(_normalize_strings_to_nfc(decomposed), "Zieliński")
-
-    def test_already_nfc_is_returned_unchanged(self):
-        self.assertEqual(_normalize_strings_to_nfc("Zieliński"), "Zieliński")
-
-    def test_recurses_into_dicts_and_lists(self):
-        decomposed = unicodedata.normalize("NFD", "Zieliński")
-        data = {"surname": decomposed, "aka": [decomposed, "plain"], "change": 12345}
-        result = _normalize_strings_to_nfc(data)
-        self.assertEqual(result["surname"], "Zieliński")
-        self.assertEqual(result["aka"], ["Zieliński", "plain"])
-        self.assertEqual(result["change"], 12345)  # non-strings pass through
-
-    def test_non_string_leaves_are_untouched(self):
-        data = {"private": True, "gender": 1, "note_list": []}
-        self.assertEqual(_normalize_strings_to_nfc(data), data)
-
-
 class TestNormalizeLineEndings(unittest.TestCase):
     """_normalize_line_endings() itself -- the pure recursive walk,
     independent of any real database. See TODO.md gap 9: XML 1.0's own
@@ -3665,21 +3749,50 @@ class TestNormalizeLineEndings(unittest.TestCase):
         self.assertEqual(_normalize_line_endings(data), data)
 
 
+class TestAlignNoteLineEndingsWithServer(unittest.TestCase):
+    """_align_note_line_endings_with_server(): TODO.md gap 9 -- a Note
+    the server stores with "\\r\\n" is "\\n"-only in the mirror after any
+    reimport, so its push's "old" must carry the server's own text."""
+
+    def _entry(self, text, type_="update", cls="Note"):
+        old = {"_class": cls, "handle": "N1", "text": {"string": text, "tags": []}}
+        new = {**old, "text": {"string": text + "\nedited", "tags": []}}
+        return {"type": type_, "_class": cls, "handle": "N1", "old": old, "new": new}
+
+    def test_crlf_server_text_replaces_the_mirrors_lf_old(self):
+        entry = self._entry("a\nb")
+        [out] = _align_note_line_endings_with_server([entry], lambda h: "a\r\nb")
+        self.assertEqual(out["old"]["text"]["string"], "a\r\nb")
+        self.assertEqual(out["new"]["text"]["string"], "a\nb\nedited")
+        self.assertEqual(entry["old"]["text"]["string"], "a\nb")  # input untouched
+
+    def test_a_real_server_side_change_is_left_to_conflict(self):
+        entry = self._entry("a\nb")
+        [out] = _align_note_line_endings_with_server([entry], lambda h: "a\r\nX")
+        self.assertEqual(out["old"]["text"]["string"], "a\nb")
+
+    def test_single_line_text_makes_no_request(self):
+        fetch = mock.MagicMock()
+        _align_note_line_endings_with_server([self._entry("one line")], fetch)
+        fetch.assert_not_called()
+
+    def test_other_classes_adds_and_missing_notes_are_untouched(self):
+        fetch = mock.MagicMock(return_value=None)
+        person = self._entry("a\nb", cls="Person")
+        add = {**self._entry("a\nb"), "type": "add", "old": None}
+        gone = self._entry("a\nb")
+        out = _align_note_line_endings_with_server([person, add, gone], fetch)
+        self.assertEqual(out, [person, add, gone])
+        fetch.assert_called_once_with("N1")  # only the Note update asks
+
+
 class TestNormalizeReimportedText(unittest.TestCase):
-    """_normalize_reimported_text() against a real DBAPI database --
-    suspected (see TODO.md) fix for a spurious push conflict on an
-    object nobody actually edited: Gramps XML export/import is not
-    guaranteed to preserve Unicode normalization form (NFC vs NFD)
-    byte-for-byte, and diff_items() -- both this addon's own and
-    gramps-web-api's old_unchanged() server-side -- compares strings
-    with plain "==", so a precomposed "ń" and a decomposed "n" +
-    combining acute read as genuinely different text even though they
-    render identically and nobody touched that field. These tests mimic
-    what a real ImportXml round trip losing NFC could leave behind,
-    the same way TestBirthDeathIndexPreservedAcrossResync mimics
-    ImportXml's own birth/death recompute, without needing a real
-    export/reimport round trip to reproduce it.
-    """
+    """_normalize_reimported_text() against a real DBAPI database: fixes
+    "\\r\\n" line endings a reimport can't preserve (TODO.md gap 9), and
+    must leave Unicode normalization form alone -- the server keeps
+    whatever form it was given and the reimport preserves it, so
+    rewriting it locally caused the very conflict it was meant to
+    prevent (TODO.md gap 7, confirmed live)."""
 
     def setUp(self):
         tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
@@ -3688,10 +3801,10 @@ class TestNormalizeReimportedText(unittest.TestCase):
         self.db.load(tmpdir)
         self.addCleanup(self.db.close)
 
-    def test_decomposed_text_is_rewritten_to_nfc(self):
+    def test_decomposed_text_is_preserved(self):
         decomposed = unicodedata.normalize("NFD", "Zieliński")
         self.assertNotEqual(decomposed, "Zieliński")  # the test means something
-        with DbTxn("mimic a reimport that lost NFC", self.db, batch=True) as trans:
+        with DbTxn("reimport of NFD server data", self.db, batch=True) as trans:
             person = Person()
             person.set_gramps_id("I0001")
             name = person.get_primary_name()
@@ -3703,11 +3816,11 @@ class TestNormalizeReimportedText(unittest.TestCase):
         with DbTxn("normalize", self.db, batch=True) as trans:
             corrected = _normalize_reimported_text(self.db, trans)
 
-        self.assertEqual(corrected, 1)
-        fixed = self.db.get_person_from_handle(handle)
+        self.assertEqual(corrected, 0)
+        kept = self.db.get_person_from_handle(handle)
         self.assertEqual(
-            fixed.get_primary_name().get_primary_surname().get_surname(),
-            "Zieliński",
+            kept.get_primary_name().get_primary_surname().get_surname(),
+            decomposed,
         )
 
     def test_already_nfc_text_is_left_alone(self):
@@ -3743,8 +3856,7 @@ class TestNormalizeReimportedText(unittest.TestCase):
         # TODO.md gap 9, confirmed live: a Note pushed with "\r\n" line
         # endings comes back "\n"-only after a real bootstrap resync --
         # XML 1.0 itself mandates this in any compliant parser, so this
-        # mimics what a real reimport reliably does, the same way this
-        # class's NFC tests mimic what a real reimport can lose.
+        # mimics what a real reimport reliably does.
         with DbTxn("mimic a reimport that lost CRLF", self.db, batch=True) as trans:
             note = Note()
             note.set_gramps_id("N0001")
@@ -3763,17 +3875,10 @@ class TestNormalizeReimportedText(unittest.TestCase):
 
 class TestCommitBaseNormalizesText(unittest.TestCase):
     """WebApiDB._commit_base() -- the single choke point every
-    commit_<type>() funnels through -- normalizes text to NFC on an
-    ordinary (non-batch) commit, the other half of TODO.md gap 7's fix
-    alongside _normalize_reimported_text(): this one stops the addon
-    itself from ever being the *source* of a Unicode-normalization
-    mismatch, rather than cleaning one up after a reimport. Deliberately
-    leaves a batch=True commit alone -- see that method's own docstring
-    on why -- so a simulated-reimport-shaped batch commit here is
-    expected to come back through unnormalized; that path is
-    _normalize_reimported_text()'s job, covered by
-    TestNormalizeReimportedText above.
-    """
+    commit_<type>() funnels through -- normalizes "\\r\\n" line endings
+    on an ordinary (non-batch) commit (TODO.md gap 9), and must leave
+    Unicode normalization form alone (gap 7: rewriting it made every
+    edit to an NFD-stored object conflict)."""
 
     def setUp(self):
         tmpdir = tempfile.mkdtemp(prefix="grampswebapidb_test_")
@@ -3799,7 +3904,7 @@ class TestCommitBaseNormalizesText(unittest.TestCase):
         self.db = db
         self.addCleanup(self.db.close)
 
-    def test_ordinary_commit_normalizes_decomposed_text(self):
+    def test_ordinary_commit_preserves_decomposed_text(self):
         decomposed = unicodedata.normalize("NFD", "Zieliński")
         self.assertNotEqual(decomposed, "Zieliński")  # the test means something
         with DbTxn("edit", self.db) as trans:
@@ -3812,13 +3917,12 @@ class TestCommitBaseNormalizesText(unittest.TestCase):
         stored = self.db.get_person_from_handle(handle)
         self.assertEqual(
             stored.get_primary_name().get_primary_surname().get_surname(),
-            "Zieliński",
+            decomposed,
         )
 
     def test_ordinary_commit_normalizes_crlf_line_endings(self):
         # TODO.md gap 9's other half: this addon itself must never be
-        # the *source* of a "\r\n" mismatch either, same shape as the
-        # NFC case above.
+        # the *source* of a "\r\n" mismatch either.
         with DbTxn("edit", self.db) as trans:
             note = Note()
             note.set_gramps_id("N0001")
@@ -3830,7 +3934,7 @@ class TestCommitBaseNormalizesText(unittest.TestCase):
         stored = self.db.get_note_from_handle(handle)
         self.assertEqual(stored.get(), "Line one\nLine two")
 
-    def test_batch_commit_is_left_for_normalize_reimported_text_instead(self):
+    def test_batch_commit_preserves_decomposed_text(self):
         decomposed = unicodedata.normalize("NFD", "Zieliński")
         with DbTxn("simulated reimport", self.db, batch=True) as trans:
             person = Person()
@@ -4010,7 +4114,7 @@ class TestSyncingStaysHeldAcrossNestedRetryPush(unittest.TestCase):
         def fake_full_resync_async(on_done, on_error, progress_callback=None):
             on_done(None)
 
-        def fake_retry(payload):
+        def fake_retry(payload, deferred_notes=None):
             # Standing in for _retry_after_conflict()'s real DbTxn body:
             # its own DbTxn.__exit__ is what triggers the nested
             # transaction_commit() -> _start_push(is_retry=True) call in

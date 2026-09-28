@@ -207,8 +207,15 @@ class TestRepeatedConflictNoteTrail(unittest.TestCase):
             # Let every async chain this triggered (push -> conflict ->
             # resync -> retry -> push -> conflict -> resync -> give up ->
             # any note-commit -> its own push/queue) actually finish.
-            live_harness.pump_glib(20)
-
+            # Pump until a note lands server-side (or give up after
+            # 120s): a note-send that conflicts gets one resync-and-
+            # reattach retry, i.e. a second full export/reimport plus
+            # another push, which a fixed 20s window doesn't cover.
+            deadline = time.monotonic() + 120
+            while time.monotonic() < deadline:
+                live_harness.pump_glib(5)
+                if self.client.get(f"/people/{person.handle}").get("note_list"):
+                    break
 
             server_person = self.client.get(f"/people/{person.handle}")
             server_gender = server_person.get("gender")

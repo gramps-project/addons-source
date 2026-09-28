@@ -796,6 +796,19 @@ class WebApiHandler:
         body, _headers = self._get_json(f"{self.url}/media/?filemissing=1")
         return body
 
+    def get_note_text(self, handle: str) -> str | None:
+        """The server's own current text for Note ``handle``, exactly as
+        stored (GET /notes/<handle>'s text.string -- a plain JSON string,
+        so "\\r\\n" survives, unlike a Gramps XML export). None if the
+        Note no longer exists server-side."""
+        try:
+            body, _headers = self._get_json(f"{self.url}/notes/{handle}")
+        except HTTPError as exc:
+            if exc.code == 404:
+                return None
+            raise
+        return (body.get("text") or {}).get("string")
+
     def download_media_file(self, handle: str, path: str, retry: bool = True) -> None:
         """
         Download one media file from the server and write it to

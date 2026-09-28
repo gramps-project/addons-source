@@ -121,7 +121,12 @@ class TestMediaMissingFilesAndUpload(unittest.TestCase):
     def _is_in_missing_list(self, handle):
         return any(m.get("handle") == handle for m in self.handler.get_missing_files())
 
-    def _wait_until_not_missing(self, handle, attempts=20, delay=3.0):
+    def _wait_until_not_missing(self, handle, attempts=40, delay=3.0):
+        # 120s ceiling, not 60s: confirmed live (2026-09-28) that the
+        # demo server's own GET /media/?filemissing=1 index can lag a
+        # real, already-succeeded upload past the original 60s window --
+        # not a client-side bug, so this waits longer rather than
+        # retrying the upload itself.
         for attempt in range(attempts):
             if not self._is_in_missing_list(handle):
                 return

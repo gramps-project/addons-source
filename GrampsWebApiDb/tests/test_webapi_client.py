@@ -970,6 +970,29 @@ class TestGetMissingFiles(unittest.TestCase):
             self.assertEqual(handler.get_missing_files(), [])
 
 
+class TestGetNoteText(unittest.TestCase):
+    """get_note_text() returns GET /notes/<handle>'s raw text.string --
+    "\\r\\n" intact -- or None for a Note the server no longer has."""
+
+    def _authed_handler(self):
+        fake = QueuedUrlopen([FakeResponse({"access_token": token("AT0")})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            return WebApiHandler("https://example.com/api", refresh_token="RT")
+
+    def test_returns_raw_text(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([FakeResponse({"text": {"string": "a\r\nb", "tags": []}})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertEqual(handler.get_note_text("N1"), "a\r\nb")
+        self.assertEqual(fake.requests[0].full_url, "https://example.com/api/notes/N1")
+
+    def test_missing_note_is_none(self):
+        handler = self._authed_handler()
+        fake = QueuedUrlopen([http_error(404)])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            self.assertIsNone(handler.get_note_text("N1"))
+
+
 # -------------------------------------------------------------------------
 #
 # TestDownloadMediaFile
