@@ -28,7 +28,7 @@ register(
         "for it."
     ),
     status=BETA,
-    version = '0.1.4',
+    version = '0.1.5',
     gramps_target_version="6.0",
     fname="mintapikeytool.py",
     authors=["Doug Blank"],
