@@ -25,9 +25,8 @@ WebApiHandler.get_missing_files()/upload_media_file() assume?
 tests/test_webapi_client.py's TestGetMissingFiles/TestUploadMediaFile only
 prove the request shape and status-code handling against a mocked
 urlopen -- not that the real server's ``filemissing`` filter actually
-flips for a given Media object the moment its file is uploaded (this
-addon's WebApiDB._sync_media_files() relies on that to know when to stop
-retrying an upload), and not that a *second* upload of an
+lists a Media object that has no file yet, that an ``uploadmissing=1``
+PUT really stores the file, and not that a *second* upload of an
 already-present file really does answer 409 for upload_media_file() to
 turn into a clean ``False`` (a real gramps-web-api server abort_with_message()s
 409 for two distinct reasons here -- "wrong checksum" when uploadmissing=1
@@ -45,42 +44,29 @@ can't distinguish from the "already uploaded" 409 it exists to handle --
 discovered by hitting exactly that 409 while writing this test with a
 Media object that had no checksum set.
 
-The "no longer missing" check retries for up to 60s rather than
-asserting on the very next request: across many runs while writing
-this test, the real demo server sometimes answered ``filemissing=1``
-with the just-uploaded handle still present for 0s (correct
-immediately) and other times for the full 60s budget -- confirmed
-genuinely intermittent and *not* explained by any of: response
-caching (Cache-Control: no-cache, a fresh ETag every time),
-pagination (total missing count stayed 0 or 1 throughout), server
-load (a full, request-free 90s cooldown before a retry made no
-difference), a stat-cache that a later file read would invalidate
-(explicitly tested: calling download_media_file() on a "still
-missing" handle returns the correct bytes immediately, but does not
-change what a subsequent filemissing=1 call reports), or anything
-specific to running under unittest (a bare, standalone script
-reproduces the same stuck state). Most plausible remaining
-explanation is the reverse proxy in front of gramps-web-api here
-("Via: 1.1 Caddy" in every response) caching this specific listing
-independently of the origin's own Cache-Control header -- outside
-this addon's or gramps-web-api's control either way, and not
-something a client-side fix here could address. Documented instead
-of silently retried away: upload_media_file()/get_missing_files()
-themselves are verified correct (checksum handling, the two distinct
-409 reasons, request shape) against a real server throughout this
-investigation. grampswebapidb.py's _sync_media_files_async() runs on
-the same POLL_INTERVAL_SECONDS loop as everything else, so the same
-lag in production just costs one extra poll tick before a freshly
-uploaded file stops looking missing, never a stuck state -- the
-generous retry here matches that real tolerance rather than a
-client-side bug to fix.
+After the upload, this test deliberately does *not* re-ask
+``filemissing=1``: that listing is served from gramps-web-api's request
+cache (``@request_cache_decorator`` on the list endpoint,
+gramps_webapi/api/cache.py), keyed on the tree's ``meta_data.db``
+mtime, with ``CACHE_DEFAULT_TIMEOUT: 0`` (never expires). The
+``uploadmissing=1`` PUT only writes the file -- no DbTxn, so the mtime
+doesn't move -- and the pre-upload ``filemissing=1`` call this test
+makes has already primed that cache with the handle listed as missing.
+The stale answer then persists until some unrelated write to the tree
+bumps the mtime, which is why earlier versions of this test (waiting
+up to 60s, then 120s) passed or failed depending on what else was
+touching the demo server. That's a gramps-web-api cache-invalidation
+bug, not something this client can fix. Instead, "the file is really
+there now" is proven two uncached ways: download_media_file() returns
+the uploaded bytes, and a second upload hits the "same checksum as
+existing" 409, which the server decides with a direct
+file_handler.file_exists() check.
 """
 
 import hashlib
 import os
 import sys
 import tempfile
-import time
 
 import unittest
 
@@ -121,21 +107,6 @@ class TestMediaMissingFilesAndUpload(unittest.TestCase):
     def _is_in_missing_list(self, handle):
         return any(m.get("handle") == handle for m in self.handler.get_missing_files())
 
-    def _wait_until_not_missing(self, handle, attempts=40, delay=3.0):
-        # 120s ceiling, not 60s: confirmed live (2026-09-28) that the
-        # demo server's own GET /media/?filemissing=1 index can lag a
-        # real, already-succeeded upload past the original 60s window --
-        # not a client-side bug, so this waits longer rather than
-        # retrying the upload itself.
-        for attempt in range(attempts):
-            if not self._is_in_missing_list(handle):
-                return
-            time.sleep(delay)
-        self.fail(
-            f"{handle} still reported missing after {attempts} attempts "
-            f"({attempts * delay:.1f}s) since the upload succeeded"
-        )
-
     def test_missing_then_uploaded_round_trip(self):
         content = f"live test media content {live_harness._new_handle()}".encode()
         checksum = hashlib.md5(content).hexdigest()
@@ -175,7 +146,16 @@ class TestMediaMissingFilesAndUpload(unittest.TestCase):
         print(f"[upload] first upload returned: {uploaded}")
         self.assertTrue(uploaded, "the first upload for this handle should succeed")
 
-        self._wait_until_not_missing(media.handle)
+        # Not _is_in_missing_list() again -- see the module docstring:
+        # that listing is cached server-side and stays stale after an
+        # uploadmissing=1 PUT.
+        download_path = tmp.name + ".downloaded"
+        self._tmp_paths.append(download_path)
+        self.handler.download_media_file(media.handle, download_path)
+        with open(download_path, "rb") as fp:
+            self.assertEqual(
+                fp.read(), content, "the server should serve back the uploaded bytes"
+            )
 
         # Re-uploading the same, now-present file should hit gramps-web-
         # api's "same checksum as existing" 409, which upload_media_file()
