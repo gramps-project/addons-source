@@ -31,6 +31,7 @@ from grampswebsync import (
     PANE_RESULT,
     PANE_REVIEW,
     PANE_WORKING,
+    change_server_offered,
 )
 from session import State, WORKING_STATES
 
@@ -67,3 +68,16 @@ class PaneMappingTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ChangeServerTest(unittest.TestCase):
+    """Where the context strip offers "Change server…"."""
+
+    def test_not_on_the_connect_pane(self) -> None:
+        """There it would only lead back to the pane already showing."""
+        self.assertFalse(change_server_offered(State.CONNECT))
+
+    def test_everywhere_else(self) -> None:
+        for state in set(State) - {State.CONNECT}:
+            with self.subTest(state=state):
+                self.assertTrue(change_server_offered(state))
