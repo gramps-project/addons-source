@@ -32,6 +32,8 @@ from __future__ import annotations
 
 import logging
 import os
+import platform
+import subprocess
 import threading
 import time
 from collections.abc import Callable
@@ -53,6 +55,17 @@ LEGACY_TIMESTAMP = "credentials.timestamp"
 #: snapd interface granting access to ``org.freedesktop.secrets``. Declared by
 #: the Gramps snap but manually connected, so it is off until the user says so.
 SNAP_KEYRING_INTERFACE = "password-manager-service"
+
+#: macOS' keychain command line tool. Used when the ``keyring`` package is
+#: missing, which it is in the macOS Gramps bundle.
+MACOS_SECURITY = "/usr/bin/security"
+
+#: Exit status of ``security`` for an item that does not exist.
+SECURITY_ITEM_NOT_FOUND = 44
+
+#: How long a ``security`` call may take. It can block on a dialog asking the
+#: user to unlock the keychain, so this is generous.
+SECURITY_TIMEOUT = 60
 
 
 def normalize_url(url: str) -> str:
@@ -104,6 +117,109 @@ def snap_connect_command() -> str | None:
     return f"snap connect {name}:{SNAP_KEYRING_INTERFACE}"
 
 
+def parse_security_password(output: bytes) -> str:
+    """Return the secret from the stderr of ``security find-generic-password -g``.
+
+    ``security`` prints ``password: "<text>"`` when the secret is plain ASCII
+    without quotes or backslashes, and ``password: 0x<hex>  "<escaped>"``
+    otherwise. The hex form is unambiguous, so it is what gets decoded; a
+    quoted value is never mistaken for hex because it keeps its quotes.
+
+    :param output: The raw stderr of the command.
+    :returns: The stored secret.
+    :raises ValueError: If the output holds no recognizable password line.
+    """
+    for line in output.decode("utf-8", "replace").splitlines():
+        if not line.startswith("password:"):
+            continue
+        value = line[len("password:") :].strip()
+        if not value:
+            return ""
+        if value.startswith("0x"):
+            return bytes.fromhex(value[2:].split()[0]).decode("utf-8")
+        if len(value) >= 2 and value[0] == value[-1] == '"':
+            return value[1:-1]
+        break
+    raise ValueError("Unexpected output from security find-generic-password")
+
+
+class MacOSKeychain:
+    """The macOS login keychain, through ``/usr/bin/security``.
+
+    Stands in for the ``keyring`` package where that is missing: it provides
+    the three functions :class:`Keyring` calls, and raises on failure the same
+    way. Items use the same service and account names as ``keyring`` would.
+
+    The secret never appears in a command line, which other processes of the
+    same user can read. It is written through ``security -i``, which takes
+    its command on stdin, and read back from the ``-g`` output on stderr.
+    """
+
+    @staticmethod
+    def is_available() -> bool:
+        """Whether this is macOS with the ``security`` tool present."""
+        return platform.system() == "Darwin" and os.access(MACOS_SECURITY, os.X_OK)
+
+    @staticmethod
+    def _quote(value: str) -> str:
+        """Quote ``value`` as one argument of a ``security -i`` command.
+
+        :raises ValueError: For a line break, which would end the command.
+        """
+        if "\n" in value or "\r" in value:
+            raise ValueError("A line break cannot be stored in the keychain")
+        return '"' + value.replace("\\", "\\\\").replace('"', '\\"') + '"'
+
+    @staticmethod
+    def _run(args: list[str], stdin: bytes | None = None):
+        """Run ``security`` with ``args`` and return the completed process."""
+        return subprocess.run(
+            [MACOS_SECURITY, *args],
+            input=stdin,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.PIPE,
+            timeout=SECURITY_TIMEOUT,
+            check=False,
+        )
+
+    def get_password(self, service: str, username: str) -> str | None:
+        """Return the stored secret, or ``None`` if there is none."""
+        result = self._run(
+            ["find-generic-password", "-s", service, "-a", username, "-g"]
+        )
+        if result.returncode == SECURITY_ITEM_NOT_FOUND:
+            return None
+        if result.returncode != 0:
+            raise OSError(result.stderr.decode("utf-8", "replace").strip())
+        return parse_security_password(result.stderr)
+
+    def set_password(self, service: str, username: str, password: str) -> None:
+        """Store ``password``, replacing any existing item.
+
+        ``security -i`` does not report every failed write, so the item is
+        read back to confirm it.
+        """
+        command = "add-generic-password -U -s %s -a %s -w %s\n" % (
+            self._quote(service),
+            self._quote(username),
+            self._quote(password),
+        )
+        result = self._run(["-i"], stdin=command.encode("utf-8"))
+        if result.returncode != 0:
+            raise OSError(result.stderr.decode("utf-8", "replace").strip())
+        if self.get_password(service, username) != password:
+            raise OSError("The keychain did not store the password")
+
+    def delete_password(self, service: str, username: str) -> None:
+        """Remove the stored item.
+
+        :raises OSError: If there is no such item, like ``keyring`` does.
+        """
+        result = self._run(["delete-generic-password", "-s", service, "-a", username])
+        if result.returncode != 0:
+            raise OSError(result.stderr.decode("utf-8", "replace").strip())
+
+
 class Keyring:
     """The system keyring, degrading to unavailable instead of raising.
 
@@ -115,6 +231,9 @@ class Keyring:
 
     After a failure the keyring is marked unavailable and no further calls are
     attempted for the lifetime of this object.
+
+    On macOS without the ``keyring`` package -- the case in the Gramps bundle --
+    the login keychain is used through :class:`MacOSKeychain` instead.
     """
 
     def __init__(self) -> None:
@@ -127,6 +246,9 @@ class Keyring:
         try:
             import keyring
         except Exception as exc:  # noqa: BLE001 -- absence is not an error here
+            if MacOSKeychain.is_available():
+                LOG.info("Keyring package not available; using the macOS keychain.")
+                return MacOSKeychain()
             LOG.warning("Keyring is not available: %s", exc)
             self.unavailable = KeyringUnavailable(str(exc), snap_connect_command())
             return None
