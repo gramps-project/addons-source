@@ -39,6 +39,12 @@ from typing import Any
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
+from const import (
+    AUTH_PASSWORD,
+    AUTH_SYNC_TOKEN,
+    SYNC_TOKEN_LABEL,
+    SYNC_TOKEN_LABEL_MAX_LENGTH,
+)
 from gramps.gen.lib.json_utils import remove_object
 from gramps.gen.db import KEY_TO_CLASS_MAP, DbTxn
 from gramps.gen.db.dbconst import TXNADD, TXNDEL, TXNUPD
@@ -163,6 +169,16 @@ def create_macos_ssl_context() -> ssl.SSLContext:
     return ctx
 
 
+def device_label() -> str:
+    """Return the label for this computer's sync token."""
+    host = socket.gethostname().split(".")[0] or "this computer"
+    return (SYNC_TOKEN_LABEL % host)[:SYNC_TOKEN_LABEL_MAX_LENGTH]
+
+
+class SyncTokensUnsupported(Exception):
+    """The server can't create per-device sync tokens."""
+
+
 def decode_jwt_payload(jwt: str) -> dict[str, Any]:
     """Decode and return the payload from a JWT."""
     payload_part = jwt.split(".")[1]
@@ -183,11 +199,17 @@ class WebApiHandler:
         username: str,
         password: str,
         download_callback: Callable | None = None,
+        auth: str = AUTH_PASSWORD,
     ) -> None:
-        """Initialize given URL, user name, and password."""
+        """Initialize given URL, user name, and password.
+
+        :param auth: :data:`const.AUTH_SYNC_TOKEN` if ``password`` is a sync
+            token stored in place of the password.
+        """
         self.url = url.rstrip("/")
         self.username = username
         self.password = password
+        self.auth = auth
         self._access_token: str | None = None
         self.download_callback = download_callback
         # Determine the appropriate SSL context based on platform
@@ -244,11 +266,21 @@ class WebApiHandler:
             self._metadata = json.load(res)
 
     def fetch_token(self) -> None:
-        """Fetch and store an access token."""
+        """Fetch and store an access token.
+
+        A sync token is exchanged for an access token instead. There is no
+        refresh token then: the exchange is repeated when the access token
+        runs out, which :attr:`access_token` already does.
+        """
         LOG.debug("Fetching an access token from the server")
-        data = json.dumps({"username": self.username, "password": self.password})
+        if self.auth == AUTH_SYNC_TOKEN:
+            endpoint = "token/sync/"
+            data = json.dumps({"token": self.password})
+        else:
+            endpoint = "token/"
+            data = json.dumps({"username": self.username, "password": self.password})
         req = Request(
-            f"{self.url}/token/",
+            f"{self.url}/{endpoint}",
             data=data.encode(),
             headers={"Content-Type": "application/json", "User-Agent": "GrampsWebSync"},
         )
@@ -261,6 +293,47 @@ class WebApiHandler:
                 return self.fetch_token()
             raise
         self._access_token = res_json["access_token"]
+
+    def _call(self, method: str, path: str, body: dict | None = None) -> Any:
+        """Call an authenticated JSON endpoint and return the decoded reply."""
+        req = Request(
+            f"{self.url}/{path}",
+            data=json.dumps(body).encode() if body is not None else None,
+            method=method,
+            headers={
+                "Authorization": f"Bearer {self.access_token}",
+                "Content-Type": "application/json",
+                "User-Agent": "GrampsWebSync",
+            },
+        )
+        with self._open(req) as res:
+            raw = res.read()
+        return json.loads(raw) if raw else None
+
+    def create_sync_token(self, label: str) -> str:
+        """Create a sync token for this computer and return its value.
+
+        Needs a password login. A token left with the same label, from an
+        earlier sign-in on this computer, is revoked and replaced.
+
+        :raises SyncTokensUnsupported: If the server has no per-device sync
+            tokens (Gramps Web API before they were added).
+        """
+        path = "users/-/access-tokens/sync/tokens/"
+        try:
+            return self._call("POST", path, {"label": label})["token"]
+        except HTTPError as exc:
+            if exc.code in (404, 405, 422):
+                raise SyncTokensUnsupported(str(exc.code)) from exc
+            if exc.code != 409:
+                raise
+        # 409: the label exists already, or the maximum is reached. Replacing
+        # this computer's own token resolves the first; the second then fails
+        # again and propagates.
+        for token in self._call("GET", path):
+            if token.get("label") == label:
+                self._call("DELETE", f"{path}{token['id']}/")
+        return self._call("POST", path, {"label": label})["token"]
 
     def get_permissions(self) -> set[str]:
         """Get the permissions of the current user."""

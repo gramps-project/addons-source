@@ -49,6 +49,7 @@ from const import (
     A_UPD_LOC,
     A_UPD_REM,
     API_MAJOR_TEXT,
+    AUTH_SYNC_TOKEN,
     MIN_API_VERSION_TEXT,
     MODE_BIDIRECTIONAL,
     MODE_RESET_TO_LOCAL,
@@ -188,7 +189,7 @@ def keyring_message(problem: KeyringUnavailable) -> str:
     )
 
 
-def error_message(kind: ErrorKind, detail: str = "") -> str:
+def error_message(kind: ErrorKind, detail: str = "", auth: str = "") -> str:
     """Return the localized message for an error kind.
 
     Translation lives here rather than in :mod:`session` so the flow logic can
@@ -196,8 +197,18 @@ def error_message(kind: ErrorKind, detail: str = "") -> str:
 
     :param kind: The classification recorded by the session.
     :param detail: Optional extra context, e.g. an HTTP status.
+    :param auth: What the failed attempt signed in with. A saved sync token
+        gets its own wording: the user typed nothing that could be wrong.
     :returns: A message suitable for display.
     """
+    if auth == AUTH_SYNC_TOKEN and kind is ErrorKind.AUTH_FAILED:
+        return _(
+            "The saved sign-in for this server is no longer valid, for "
+            "example because it was revoked in Gramps Web. Please enter "
+            "your password."
+        )
+    if auth == AUTH_SYNC_TOKEN and kind is ErrorKind.FORBIDDEN:
+        return _("Access forbidden. The account may be disabled.")
     messages = {
         ErrorKind.AUTH_FAILED: _(
             "Authentication failed. Please check your username and password."

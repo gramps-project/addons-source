@@ -39,12 +39,19 @@ from __future__ import annotations
 
 import logging
 from collections.abc import Callable
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from enum import Enum, auto
 from pathlib import Path
 from typing import Any, Protocol
 
-from const import API_MAJOR, MIN_API_VERSION, MODE_BIDIRECTIONAL, Actions
+from const import (
+    API_MAJOR,
+    AUTH_PASSWORD,
+    AUTH_SYNC_TOKEN,
+    MIN_API_VERSION,
+    MODE_BIDIRECTIONAL,
+    Actions,
+)
 from diffhandler import (
     WebApiSyncDiffHandler,
     changes_to_actions,
@@ -54,7 +61,13 @@ from diffhandler import (
 from gramps.gen.db import DbTxn
 from gramps.gen.db.utils import import_as_dict
 from gramps.gen.errors import HandleError
-from webapihandler import ServerTaskFailed, parse_version, transaction_to_json
+from webapihandler import (
+    ServerTaskFailed,
+    SyncTokensUnsupported,
+    device_label,
+    parse_version,
+    transaction_to_json,
+)
 
 LOG = logging.getLogger("grampswebsync")
 
@@ -258,6 +271,8 @@ class Backend(Protocol):
 
     def upload_media_file(self, handle: str, path: str) -> bool: ...
 
+    def create_sync_token(self, label: str) -> str: ...
+
 
 class CredentialStore(Protocol):
     """Persistence for server credentials and per-server sync baselines."""
@@ -268,13 +283,22 @@ class CredentialStore(Protocol):
 
     def get_password(self) -> str | None: ...
 
+    def get_auth(self) -> str: ...
+
     def get_timestamp(self, url: str, username: str) -> float: ...
 
     def set_timestamp(self, url: str, username: str, timestamp: float) -> None: ...
 
     def save_credentials(
-        self, url: str, username: str, password: str, remember_password: bool = True
+        self,
+        url: str,
+        username: str,
+        password: str,
+        remember_password: bool = True,
+        auth: str = AUTH_PASSWORD,
     ) -> None: ...
+
+    def forget_secret(self, url: str, username: str) -> None: ...
 
 
 class MediaStore(Protocol):
@@ -326,6 +350,8 @@ class Connection:
     :param task_queue: Whether it runs transactions in the background.
     :param tree_name: What the server calls the tree it serves.
     :param permissions: What the authenticated account may do.
+    :param sync_token: A sync token created for this computer, to store in
+        place of the password; ``None`` if none was created.
     """
 
     backend: Backend
@@ -333,6 +359,7 @@ class Connection:
     task_queue: bool
     tree_name: str
     permissions: set[str]
+    sync_token: str | None = None
 
 
 # ------------------------------------------------------------
@@ -389,7 +416,7 @@ class SyncSession:
         self,
         db,
         user,
-        backend_factory: Callable[[str, str, str], Backend],
+        backend_factory: Callable[..., Backend],
         credentials: CredentialStore,
         media: MediaStore,
         runner: TaskRunner,
@@ -402,7 +429,7 @@ class SyncSession:
         :param db: The local (currently open) Gramps database.
         :param user: A :class:`gramps.gen.user.User` for import/diff progress.
         :param backend_factory: Builds a :class:`Backend` from url, username
-            and password.
+            and password, and the ``auth`` method as a keyword.
         :param credentials: Where credentials and sync baselines live.
         :param media: Access to local media files.
         :param runner: Executes steps that touch a database, on the main loop.
@@ -433,6 +460,8 @@ class SyncSession:
         self.username: str = ""
         self.password: str = ""
         self.remember_password: bool = True
+        #: What :attr:`password` is: the password, or a stored sync token.
+        self.auth: str = AUTH_PASSWORD
         #: The server's Gramps Web API version, once it has reported one.
         self.api_version: str | None = None
         #: What the server calls the tree it serves, once it has said.
@@ -620,6 +649,7 @@ class SyncSession:
         username: str,
         password: str,
         remember_password: bool = True,
+        auth: str = AUTH_PASSWORD,
     ) -> None:
         """Connect, authenticate, then download and diff the remote tree.
 
@@ -631,8 +661,11 @@ class SyncSession:
 
         :param url: Server URL, already sanitized by the caller.
         :param username: Login name.
-        :param password: Password.
-        :param remember_password: Whether the password may be stored.
+        :param password: Password, or the stored sync token.
+        :param remember_password: Whether the password may be stored. After a
+            password login, a sync token is stored in its place where the
+            server supports that.
+        :param auth: One of the ``AUTH_*`` constants from :mod:`const`.
         """
         self.login_error = None
         # These describe the server, and the view displays them. Left set,
@@ -644,6 +677,7 @@ class SyncSession:
         self.username = username
         self.password = password
         self.remember_password = remember_password
+        self.auth = auth
         self._goto(State.CONNECTING)
         self.io_runner.run(
             self._connect,
@@ -742,14 +776,40 @@ class SyncSession:
     def _connect(self) -> Connection:
         """Authenticate and read what the server can do. Network only."""
         self._status_from_worker(STATUS_CONNECTING)
-        backend = self._backend_factory(self.url, self.username, self.password)
-        return Connection(
+        backend = self._backend_factory(
+            self.url, self.username, self.password, auth=self.auth
+        )
+        connection = Connection(
             backend=backend,
             api_version=backend.get_api_version(),
             task_queue=backend.has_task_queue(),
             tree_name=backend.get_tree_name(),
             permissions=backend.get_permissions(),
         )
+        if (
+            self.auth == AUTH_PASSWORD
+            and self.remember_password
+            and self._reject_server(connection) is None
+        ):
+            connection = replace(
+                connection, sync_token=self._create_sync_token(backend)
+            )
+        return connection
+
+    @staticmethod
+    def _create_sync_token(backend: Backend) -> str | None:
+        """Create a sync token to remember instead of the password.
+
+        Never fails the login: without a token, the password is remembered
+        as before.
+        """
+        try:
+            return backend.create_sync_token(device_label())
+        except SyncTokensUnsupported:
+            LOG.info("Server has no per-device sync tokens; keeping the password.")
+        except Exception as exc:  # noqa: BLE001 -- falls back, never fails login
+            LOG.warning("Could not create a sync token, keeping the password: %s", exc)
+        return None
 
     def _on_connected(self, connection: Connection) -> None:
         """Store the credentials and start comparing, back on the main loop."""
@@ -764,8 +824,15 @@ class SyncSession:
             self._goto(State.CONNECT)
             return
         self.backend = connection.backend
+        if connection.sync_token:
+            # Remembered in place of the password, which isn't kept anywhere.
+            self.password, self.auth = connection.sync_token, AUTH_SYNC_TOKEN
         self.credentials.save_credentials(
-            self.url, self.username, self.password, self.remember_password
+            self.url,
+            self.username,
+            self.password,
+            self.remember_password,
+            auth=self.auth,
         )
         self._start_compare()
 
@@ -775,6 +842,13 @@ class SyncSession:
             return
         self.backend = None
         self.login_error = self._classify(exc, login=True)
+        if (
+            self.auth == AUTH_SYNC_TOKEN
+            and self.login_error.kind is ErrorKind.AUTH_FAILED
+        ):
+            # Revoked in Gramps Web, or replaced by another sign-in: drop it,
+            # so the password is asked for instead.
+            self.credentials.forget_secret(self.url, self.username)
         self._goto(State.CONNECT)
 
     @staticmethod

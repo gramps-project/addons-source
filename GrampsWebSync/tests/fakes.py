@@ -38,12 +38,13 @@ from pathlib import Path
 from typing import Any
 from urllib.error import HTTPError
 
-from const import MIN_API_VERSION_TEXT
+from const import AUTH_PASSWORD, MIN_API_VERSION_TEXT
 from gramps.cli.user import User
 from gramps.gen.db import DbTxn
 from gramps.gen.db.utils import make_database
 from gramps.gen.lib.json_utils import data_to_object
 from gramps.plugins.export.exportxml import export_data
+from webapihandler import SyncTokensUnsupported
 
 #: Permissions a Gramps Web user needs for a sync to be allowed to proceed.
 DEFAULT_PERMISSIONS = frozenset({"ViewPrivate", "EditObject", "AddObject"})
@@ -79,6 +80,7 @@ class FakeGrampsWebServer:
         stands for a server too old to report one at all.
     :param task_queue: Whether the server reports a background task queue.
     :param tree_name: What the server calls the tree it serves.
+    :param sync_tokens: Whether the server can create per-device sync tokens.
     """
 
     def __init__(
@@ -89,6 +91,7 @@ class FakeGrampsWebServer:
         api_version: str | None = DEFAULT_API_VERSION,
         task_queue: bool = True,
         tree_name: str = "Family Tree",
+        sync_tokens: bool = True,
     ) -> None:
         if db is None:
             db = make_database("sqlite")
@@ -99,6 +102,9 @@ class FakeGrampsWebServer:
         self.api_version = api_version
         self.task_queue = task_queue
         self.tree_name = tree_name
+        self.sync_tokens = sync_tokens
+        #: Labels of the sync tokens created, in order.
+        self.token_labels: list[str] = []
         self.user = User(auto_accept=True, quiet=True)
 
         #: Handles of media objects whose file the server actually holds.
@@ -241,6 +247,14 @@ class FakeGrampsWebServer:
         self.media_files[handle] = Path(path).read_bytes()
         return True
 
+    def create_sync_token(self, label: str) -> str:
+        """Create a sync token for ``label`` and return its value."""
+        self._enter("create_sync_token")
+        if not self.sync_tokens:
+            raise SyncTokensUnsupported("404")
+        self.token_labels.append(label)
+        return f"sync-token-{len(self.token_labels)}"
+
     # --------------------------------------------------------
     # Lifecycle
     # --------------------------------------------------------
@@ -334,6 +348,10 @@ class MemoryCredentialStore:
         #: Every ``(url, username, password)`` passed to
         #: :meth:`save_credentials`.
         self.saved: list[tuple[str, str, str]] = []
+        #: What the stored secret is.
+        self.auth = AUTH_PASSWORD
+        #: Every ``(url, username)`` passed to :meth:`forget_secret`.
+        self.forgotten: list[tuple[str, str]] = []
 
     @property
     def timestamp(self) -> float:
@@ -353,6 +371,9 @@ class MemoryCredentialStore:
     def get_password(self) -> str | None:
         return self.password
 
+    def get_auth(self) -> str:
+        return self.auth
+
     def get_timestamp(self, url: str, username: str) -> float:
         return self.timestamps.get((url, username), 0.0)
 
@@ -362,14 +383,26 @@ class MemoryCredentialStore:
         self.username = username
 
     def save_credentials(
-        self, url: str, username: str, password: str, remember_password: bool = True
+        self,
+        url: str,
+        username: str,
+        password: str,
+        remember_password: bool = True,
+        auth: str = AUTH_PASSWORD,
     ) -> None:
         self.url = url
         self.username = username
+        self.auth = auth if remember_password else AUTH_PASSWORD
         self.password = password if remember_password else None
         self.remembered[(url, username)] = remember_password
         self.timestamps.setdefault((url, username), 0.0)
         self.saved.append((url, username, password))
+
+
+    def forget_secret(self, url: str, username: str) -> None:
+        self.forgotten.append((url, username))
+        self.password = None
+        self.auth = AUTH_PASSWORD
 
 
 class DirectoryMediaStore:
