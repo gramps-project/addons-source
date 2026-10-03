@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 10:14-0700\n"
-"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"PO-Revision-Date: 2026-09-30 15:23+0000\n"
 "Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -276,116 +276,88 @@ msgstr "関連付けデータを確認する"
 
 #: AssociationsTool/associationstool.gpr.py:44
 msgid "Display all person Associations in a sortable, hotlinked table"
-msgstr ""
+msgstr "すべての人物の関連付けを、並べ替え可能でリンク付きの表に表示します"
 
 #: AssociationsTool/associationstool.py:130
 msgid "Associations state tool"
 msgstr "関連付けの状態ツール"
 
 #: AssociationsTool/associationstool.py:181
-#, fuzzy, python-format
-#| msgid "Error applying filter: %s"
+#, python-format
 msgid "Error initializing data: %s"
-msgstr "フィルター適用中にエラーが発生しました: %s"
+msgstr "データの初期化中にエラーが発生しました: %s"
 
 #: AssociationsTool/associationstool.py:222
-#, fuzzy, python-format
-#| msgid "Error resetting filter: %s"
+#, python-format
 msgid "Error processing person %s: %s"
-msgstr "フィルターのリセットエラー: %s"
+msgstr "人物 %s の処理中にエラーが発生しました: %s"
 
 #: AssociationsTool/associationstool.py:252
-#, fuzzy
-#| msgid "Process relationships..."
 msgid "Processing associations..."
-msgstr "関係を処理中..."
+msgstr "関連付けを処理中..."
 
 #: AssociationsTool/associationstool.py:257
-#, fuzzy, python-format
-#| msgid "Could not create the directory: %(path)s"
+#, python-format
 msgid "Could not create progress dialog: %s"
-msgstr "ディレクトリを作成できませんでした : %(path)s"
+msgstr "進捗ダイアログを作成できませんでした: %s"
 
 #: AssociationsTool/associationstool.py:281
-#, fuzzy, python-format
-#| msgid "Produces descendants lines of a person"
+#, python-format
 msgid "Processing %d of %d persons"
-msgstr "人物の子孫系統を生成します"
+msgstr "人物を処理中 (%d / %d)"
 
 #: AssociationsTool/associationstool.py:347
-#, fuzzy, python-format
-#| msgid "Error applying filter: %s"
+#, python-format
 msgid "Error displaying associations: %s"
-msgstr "フィルター適用中にエラーが発生しました: %s"
+msgstr "関連付けの表示中にエラーが発生しました: %s"
 
 #: AssociationsTool/associationstool.py:365
 #: AssociationsTool/associationstool.py:448
-#, fuzzy
-#| msgid "Street Name"
 msgid "Starting Name"
-msgstr "通り名"
+msgstr "開始側の名前"
 
 #: AssociationsTool/associationstool.py:368
 #: AssociationsTool/associationstool.py:451
-#, fuzzy
-#| msgid "Sync Associations"
 msgid "Associate"
-msgstr "関連付けを同期"
+msgstr "関連付け先"
 
 #: AssociationsTool/associationstool.py:427
 #: AssociationsTool/associationstool.py:459
-#, fuzzy, python-format
-#| msgid "No source information found"
+#, python-format
 msgid "Total associations found: %d"
-msgstr "ソース情報が見つかりません"
+msgstr "見つかった関連付けの合計: %d"
 
 #: AssociationsTool/associationstool.py:553
-#, fuzzy
-#| msgid "Edit referenced Person"
 msgid "Edit Starting Person"
-msgstr "参照されている人物を編集"
+msgstr "開始側の人物を編集"
 
 #: AssociationsTool/associationstool.py:554
-#, fuzzy
-#| msgid "Edit referenced Person"
 msgid "Edit Associate Person"
-msgstr "参照されている人物を編集"
+msgstr "関連付け先の人物を編集"
 
 #: AssociationsTool/associationstool.py:555
-#, fuzzy
-#| msgid "Edit selection"
 msgid "Edit Association"
-msgstr "選択を編集"
+msgstr "関連付けを編集"
 
 #: AssociationsTool/associationstool.py:557
-#, fuzzy
-#| msgid "Copy to clipboard"
 msgid "Copy row to clipboard"
-msgstr "クリップボードにコピー"
+msgstr "行をクリップボードにコピー"
 
 #: AssociationsTool/associationstool.py:558
-#, fuzzy
-#| msgid "Enumerated date from"
 msgid "Create Note from row"
-msgstr "調査開始日"
+msgstr "行からメモを作成"
 
 #: AssociationsTool/associationstool.py:672
-#, fuzzy
-#| msgid "Sync Associations"
 msgid "Association:"
-msgstr "関連付けを同期"
+msgstr "関連付け:"
 
 #: AssociationsTool/associationstool.py:673
-#, fuzzy
-#| msgid "Starting migration..."
 msgid "Starting Person"
-msgstr "移行を開始しています..."
+msgstr "開始側の人物"
 
 #: AssociationsTool/associationstool.py:675
-#, fuzzy
-#| msgid "Lines type"
 msgid "Link type"
-msgstr "線の種類"
+msgstr "リンクの種類"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
@@ -668,12 +640,12 @@ msgstr ""
 " 👣 次のステップ :\n"
 " 家族とその家族内の人物を追加 :\n"
 "  • 家族は「追加」メニューから追加できます\n"
-"  • 配偶者 (「父/パートナー1」または「母/パートナー2」）パネルまたは「子供」"
-"タブで「+」 (プラス）を押すと、人物を追加できます。\n"
+"  • 配偶者 (「父/パートナー1」または「母/パートナー2」)パネルまたは「子供」"
+"タブで「+」 (プラス)を押すと、人物を追加できます。\n"
 "\n"
 "または外部ファイルから人物をインポートする :\n"
-"  • 「家系図」メニューの「インポート...」を使用して、外部ファイルを使用してツ"
-"リーを作成することができます。"
+"  • 「家系図」メニューの「インポート...」を使用して、外部ファイルを使用して"
+"ツリーを作成することができます。"
 
 #: Betawhatsnext/Betawhatsnext.py:254
 msgid ""
@@ -1012,7 +984,6 @@ msgstr ""
 "イベントを追加および削除するために使用されます。\n"
 "\n"
 "使用方法 :\n"
-"\n"
 "1. [オプション] タブに移動します\n"
 "2. [ ] 削除オプションをチェックして、以前の推定値を削除します\n"
 "3. 日付付きまたは日付なしのイベントの日付を追加するには、日付追加オプションを"
@@ -1204,7 +1175,8 @@ msgid ""
 "Gramps can convert to correct capitalization. \n"
 "Select the names you wish Gramps to convert. "
 msgstr ""
-"以下は Gramps が正しい大文字/小文字に変換できる名前のリストです。\n"
+"以下は、Gramps が正しい大文字/小文字に\n"
+"変換できる名前のリストです。\n"
 "Gramps に変換させたい名前を選択してください。 "
 
 #: ChangeGivenNames/changenames.glade:107
@@ -1432,7 +1404,7 @@ msgstr ": "
 
 #: ContextView/ContextView.gpr.py:29 ContextView/ContextView.py:502
 msgid "Context"
-msgstr ""
+msgstr "コンテキスト"
 
 #: ContextView/ContextView.gpr.py:31
 msgid ""
@@ -1442,37 +1414,36 @@ msgid ""
 "the top. Click any box to re-centre the chart on that person; the name in "
 "bold marks the way back to the home person."
 msgstr ""
+"人物を身近な家族の中に配置して表示するチャートです。中央に夫婦、その上に各"
+"パートナーの両親、下に子供、各パートナーの兄弟姉妹はそれぞれの側の列に年長者"
+"を上にして表示します。ボックスをクリックすると、その人物を中心にチャートを再"
+"描画します。太字の名前はホームパーソンへ戻る経路を示します。"
 
 #: ContextView/ContextView.py:572
 msgid "Show the previous family"
-msgstr ""
+msgstr "前の家族を表示"
 
 #: ContextView/ContextView.py:575
-#, fuzzy
-#| msgid "Show more details"
 msgid "Show the next family"
-msgstr "詳細を表示"
+msgstr "次の家族を表示"
 
 #: ContextView/ContextView.py:899
-#, fuzzy
-#| msgid "No place is active"
 msgid "No person is active."
-msgstr "アクティブな場所がありません"
+msgstr "アクティブな人物がありません。"
 
 #: ContextView/ContextView.py:915
 #, python-format
 msgid "Family %(current)d of %(total)d"
-msgstr ""
+msgstr "家族 %(current)d / %(total)d"
 
 #: ContextView/ContextView.py:922
-#, fuzzy, python-format
-#| msgid "Highlight the home person"
+#, python-format
 msgid "family %d lies toward the home person"
-msgstr "ホームパーソンを強調表示"
+msgstr "家族 %d はホームパーソンの方向にあります"
 
 #: ContextView/ContextView.py:980
 msgid "<b>Bold</b> marks the way to the home person"
-msgstr ""
+msgstr "<b>太字</b> はホームパーソンへの経路を示します"
 
 #: ContextView/ContextView.py:1389 ContextView/ContextView.py:1599
 #: LifeLineChartView/lifelinechart.py:2622
@@ -1480,38 +1451,28 @@ msgid "Show siblings"
 msgstr "兄弟姉妹を表示"
 
 #: ContextView/ContextView.py:1402
-#, fuzzy
-#| msgid "About Quilt View"
 msgid "About Context View"
-msgstr "キルトビューについて"
+msgstr "コンテキストビューについて"
 
 #: ContextView/ContextView.py:1592
-#, fuzzy
-#| msgid "Show page numbers"
 msgid "Show tag colour"
-msgstr "ページ番号を表示"
+msgstr "タグの色を表示"
 
 #: ContextView/ContextView.py:1613
 msgid "Details in each box"
-msgstr ""
+msgstr "各ボックス内の詳細"
 
 #: ContextView/ContextView.py:1617
-#, fuzzy
-#| msgid "Name of City"
 msgid "Name only"
-msgstr "市名"
+msgstr "名前のみ"
 
 #: ContextView/ContextView.py:1618
-#, fuzzy
-#| msgid "Name and Surname"
 msgid "Name and dates"
-msgstr "名と姓"
+msgstr "名前と日付"
 
 #: ContextView/ContextView.py:1619
-#, fuzzy
-#| msgid "Full date and place"
 msgid "Name, dates and places"
-msgstr "完全な日付と場所"
+msgstr "名前、日付、場所"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
@@ -2218,7 +2179,6 @@ msgstr "アクティブデータのコピー"
 #: DataEntryGramplet/DataEntryGramplet.py:178
 #: DataEntryGramplet/DataEntryGramplet.py:315 DenominoViso/DenominoViso.py:2002
 #: Form/form_us.xml.h:2259
-#, fuzzy
 msgid "in"
 msgstr "in"
 
@@ -3015,7 +2975,6 @@ msgid "Event format"
 msgstr "イベント形式"
 
 #: DenominoViso/DenominoViso.py:2751
-#, fuzzy
 msgid "at"
 msgstr "at"
 
@@ -3586,9 +3545,9 @@ msgid ""
 "expand descendants of this person. "
 msgstr ""
 "人物が異なるブランチに現れることがあります。これは通常、家族間の結婚 (いとこ"
-"同士など）が原因です。この場合、その人物にもボタンが表示され、"
-"___NAV_BUTTON_CONTINUE___ または ___NAV_BUTTON_ALT___ で他のブランチに移動で"
-"きます。この人物の子孫を展開するのは1つのブランチのみです。 "
+"同士など)が原因です。この場合、その人物にもボタンが表示され"
+"、___NAV_BUTTON_CONTINUE___ または ___NAV_BUTTON_ALT___ で他のブランチに移動"
+"できます。この人物の子孫を展開するのは1つのブランチのみです。 "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:989
 msgid ""
@@ -3958,8 +3917,8 @@ msgid ""
 "The space to add between the more extern descendant (or spouse) of a family "
 "and the more extern descendant (or spouse) of the next family."
 msgstr ""
-"ある家族の最も外側の子孫 (または配偶者）と、次の家族の最も外側の子孫 (または"
-"配偶者）の間に追加するスペース。"
+"ある家族の最も外側の子孫 (または配偶者)と、次の家族の最も外側の子孫 (または配"
+"偶者)の間に追加するスペース。"
 
 #: DescendantsLines/DescendantsLines.py:1749
 msgid "Horizontal distance spouse to family edge"
@@ -4223,11 +4182,11 @@ msgid ""
 "25% of their DNA similar to half-siblings instead of 12.5% like normal first "
 "cousins.\n"
 msgstr ""
-"ダブル (一従）いとこは、家族Aの2人の兄弟が家族Bの2人の兄弟と結婚したときに発"
-"生します。彼らの子供は互いにダブルいとこであり、通常の一従いとこが6人の祖父母"
-"を持つ代わりに、同じ4人の祖父母を共有します。したがって、彼らは通常の一従いと"
-"こよりも遺伝的に近く、通常の一従いとこの12.5%ではなく、半兄弟に似た25%のDNAを"
-"共有します。\n"
+"ダブル (一従)いとこは、家族Aの2人の兄弟が家族Bの2人の兄弟と結婚したときに発生"
+"します。彼らの子供は互いにダブルいとこであり、通常の一従いとこが6人の祖父母を"
+"持つ代わりに、同じ4人の祖父母を共有します。したがって、彼らは通常の一従いとこ"
+"よりも遺伝的に近く、通常の一従いとこの12.5%ではなく、半兄弟に似た25%のDNAを共"
+"有します。\n"
 
 #: DoubleCousins/double_cousins.py:136
 msgid "No double cousins were found in your database."
@@ -4613,7 +4572,7 @@ msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3099
 msgid "Show _MENU_ entries"
-msgstr "Show _MENU_ entries"
+msgstr "_MENU_ 件表示"
 
 #: DynamicWeb/dynamicweb.py:3100 DynamicWeb/dynamicweb.py:5165
 msgid "Show duplicates"
@@ -4621,11 +4580,11 @@ msgstr "重複を表示"
 
 #: DynamicWeb/dynamicweb.py:3101
 msgid "Showing 0 to 0 of 0 entries"
-msgstr "0 件中 0 件から0 件を表示"
+msgstr "0 件中 0 件から 0 件を表示"
 
 #: DynamicWeb/dynamicweb.py:3104
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
-msgstr "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "_TOTAL_ 件中 _START_ から _END_ 件を表示"
 
 #: DynamicWeb/dynamicweb.py:3107
 msgid "Sort by:"
@@ -5043,7 +5002,7 @@ msgstr "場所インデックスのデフォルト形式"
 #: DynamicWeb/dynamicweb.py:5040
 msgid ""
 "Whether to include dates columns (birth, death, marriage) on the index pages"
-msgstr "インデックスページに日付列 (生年月日、死亡日、結婚日）を含めるかどうか"
+msgstr "インデックスページに日付列 (生年月日、死亡日、結婚日)を含めるかどうか"
 
 #: DynamicWeb/dynamicweb.py:5058
 msgid "Generate a families index page"
@@ -5229,7 +5188,7 @@ msgid ""
 "photograph.\n"
 "Example: 1830-01-1 09:30:59"
 msgstr ""
-"画像が最初に作成/撮影された元の日付/時刻 (写真の場合）。\n"
+"画像が最初に作成/撮影された元の日付/時刻 (写真の場合)。\n"
 "例: 1830-01-1 09:30:59"
 
 #: EditExifMetadata/editexifmetadata.py:177
@@ -5298,16 +5257,16 @@ msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
 msgstr ""
-"画像がExifメタデータの読み取り/書き込みが可能な画像タイプでない場合、可能なタ"
-"イプに変換しますか？"
+"画像がExifメタデータの読み取り/書き込みが可能な画像タイプでない場合、可能な"
+"タイプに変換しますか?"
 
 #: EditExifMetadata/editexifmetadata.py:213
 msgid ""
 "WARNING:  This will completely erase all Exif metadata from this image!  Are "
 "you sure that you want to do this?"
 msgstr ""
-"警告: この画像からすべてのExifメタデータが完全に消去されます！本当に実行しま"
-"すか？"
+"警告: この画像からすべてのExifメタデータが完全に消去されます!本当に実行します"
+"か?"
 
 #: EditExifMetadata/editexifmetadata.py:217
 msgid "Clear GPS"
@@ -5359,8 +5318,7 @@ msgstr "サムネイル表示領域"
 msgid ""
 "WARNING: You are about to convert this image into a .jpeg image.  Are you "
 "sure that you want to do this?"
-msgstr ""
-"警告: この画像を.jpeg画像に変換しようとしています。本当に実行しますか？"
+msgstr "警告: この画像を.jpeg画像に変換しようとしています。本当に実行しますか?"
 
 #: EditExifMetadata/editexifmetadata.py:730
 msgid "Convert and Delete"
@@ -5370,7 +5328,7 @@ msgstr "変換して削除"
 msgid ""
 "Your image has been converted and the original file has been deleted, and "
 "the full path has been updated!"
-msgstr "画像が変換され、元のファイルは削除され、フルパスが更新されました！"
+msgstr "画像が変換され、元のファイルは削除され、フルパスが更新されました!"
 
 #: EditExifMetadata/editexifmetadata.py:816
 msgid ""
@@ -5382,8 +5340,7 @@ msgstr "エラーが発生しました。ソースと宛先のファイルパス
 msgid ""
 "There was an error in deleting the original file.  You will need to delete "
 "it yourself!"
-msgstr ""
-"元のファイルの削除中にエラーが発生しました。自分で削除する必要があります！"
+msgstr "元のファイルの削除中にエラーが発生しました。自分で削除する必要があります!"
 
 #: EditExifMetadata/editexifmetadata.py:838
 msgid "There was an error in converting your image file."
@@ -5395,7 +5352,7 @@ msgstr "メディアパスの更新"
 
 #: EditExifMetadata/editexifmetadata.py:857
 msgid "There has been an error in updating the image file's path!"
-msgstr "画像ファイルのパスの更新中にエラーが発生しました！"
+msgstr "画像ファイルのパスの更新中にエラーが発生しました!"
 
 #: EditExifMetadata/editexifmetadata.py:890
 msgid ""
@@ -5501,18 +5458,18 @@ msgstr "無効な経度です (構文: 18°9′48.21″E, -18.2412 または -18
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image."
-msgstr "警告！この画像からExifメタデータを完全に削除しようとしています。"
+msgstr "警告!この画像からExifメタデータを完全に削除しようとしています。"
 
 #: EditExifMetadata/editexifmetadata.py:1142
 #: EditExifMetadata/editexifmetadata.py:1154
 msgid "Delete?"
-msgstr "削除しますか？"
+msgstr "削除しますか?"
 
 #: EditExifMetadata/editexifmetadata.py:1152
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image."
-msgstr "警告！この画像からGPSメタデータを完全に削除しようとしています。"
+msgstr "警告!この画像からGPSメタデータを完全に削除しようとしています。"
 
 #: EditExifMetadata/editexifmetadata.py:1337
 msgid "Media Title Update"
@@ -5582,7 +5539,7 @@ msgstr "正規表現を許可します。"
 #: ExcludeSubtreeFilter/excludesubtree.gpr.py:24
 #: ExcludeSubtreeFilter/excludesubtree.py:106
 msgid "People reachable from <Person>, stopping at <Filter> matches"
-msgstr "<Person> から到達可能な人々 (<Filter>に一致する人で停止）"
+msgstr "<Person> から到達可能な人々 (<Filter>に一致する人で停止)"
 
 #: ExcludeSubtreeFilter/excludesubtree.gpr.py:26
 #: ExcludeSubtreeFilter/excludesubtree.py:109
@@ -5592,7 +5549,7 @@ msgid ""
 "<Filter>."
 msgstr ""
 "<Person> から開始して到達可能な人々 (付属する家族のすべての親と子を再帰的に辿"
-"る）に一致し、<Filter>内の人物で停止します。"
+"る)に一致し、<Filter>内の人物で停止します。"
 
 #: ExcludeSubtreeFilter/excludesubtree.py:121
 #: FilterRules/isrelatedwithfiltermatch.py:80
@@ -5603,10 +5560,8 @@ msgstr "すべてのサブフィルター一致を取得中"
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:174
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:973
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1053
-#, fuzzy
-#| msgid "Ancestor Generations"
 msgid "Ancestor Tree Expanded"
-msgstr "祖先世代"
+msgstr "拡張祖先ツリー"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.gpr.py:29
 msgid ""
@@ -5615,10 +5570,9 @@ msgid ""
 msgstr "直系の祖先、兄弟姉妹、いとこ、および配偶者を表示する拡張祖先図。"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:190
-#, fuzzy, python-format
-#| msgid "Ancestors places for %s"
+#, python-format
 msgid "Ancestor Tree Expanded for %s"
-msgstr "%s の祖先の場所"
+msgstr "%s の拡張祖先ツリー"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:544
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:606
@@ -5640,39 +5594,31 @@ msgstr ""
 "ください。"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1182
-#, fuzzy
-#| msgid "Shows the number of descendants of the current person"
 msgid "Include descendants of the center person"
-msgstr "現在の人物の子孫の数を表示します"
+msgstr "中心人物の子孫を含める"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1183
-#, fuzzy
-#| msgid "Shows the number of descendants of the current person"
 msgid ""
 "Whether to display the children and full descending lines of the center "
 "person"
-msgstr "現在の人物の子孫の数を表示します"
+msgstr "中心人物の子供と、すべての子孫の系統を表示するかどうか"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1190
 msgid "Include siblings of ancestors"
 msgstr "先祖の兄弟姉妹も含める"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1191
-#, fuzzy
-#| msgid "Whether to display the theoretical number of ancestor by generation"
 msgid "Whether to display the siblings of direct ancestors"
-msgstr "世代ごとに祖先の理論的な数を表示するかどうか"
+msgstr "直系の祖先の兄弟姉妹を表示するかどうか"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1194
 msgid "Include cousins (collateral descendants)"
 msgstr "いとこ (傍系の子孫) を含める"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1195
-#, fuzzy
-#| msgid "Whether to display the theoretical number of ancestor by generation"
 msgid ""
 "Whether to display the cousins and descendants of the ancestors' siblings"
-msgstr "世代ごとに祖先の理論的な数を表示するかどうか"
+msgstr "祖先の兄弟姉妹のいとこと子孫を表示するかどうか"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1202
 #: FamilyTree/FamilyTree.py:1051
@@ -5681,32 +5627,24 @@ msgid "Descendant Generations"
 msgstr "子孫世代"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1203
-#, fuzzy
-#| msgid "The number of descendant generations to include in the tree"
 msgid "The number of descendant generations to include"
-msgstr "ツリーに含める子孫世代の数"
+msgstr "含める子孫の世代数"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1242
-#, fuzzy
-#| msgid "Whether to include the index of Names at the end of the report."
 msgid "Whether to resize the page to fit the size of the tree."
-msgstr "レポートの最後に名前のインデックスを含めるかどうか。"
+msgstr "ツリーのサイズに合わせてページをリサイズするかどうか。"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1262
-#, fuzzy
-#| msgid "Use a table format for the families index"
 msgid "Use random colors for family lines"
-msgstr "家族インデックスには表形式を使用する"
+msgstr "家系の線にランダムな色を使用する"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1263
 msgid "Draw each family's connecting lines with a distinct color."
 msgstr "各家族をつなぐ線を、それぞれ異なる色で描いてください。"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1372
-#, fuzzy
-#| msgid "The style used for names."
 msgid "The bold style used for the names."
-msgstr "名前に使用されるスタイル。"
+msgstr "名前に使用される太字スタイル。"
 
 #: ExportPersonGexf/exportpersongexf.gpr.py:30
 msgid "Person GEXF"
@@ -5730,8 +5668,7 @@ msgstr "Prologエクスポート"
 
 #: ExportProlog/ExportProlog.gpr.py:6
 msgid "Exports data into a Prolog fact format.  Data is in Unicode (utf-8)"
-msgstr ""
-"データをPrologファクト形式でエクスポートします。データはUnicode (utf-8）です"
+msgstr "データをPrologファクト形式でエクスポートします。データはUnicode (utf-8)です"
 
 #: ExportRaw/ExportRaw.gpr.py:4
 msgid "Raw Export"
@@ -5773,8 +5710,8 @@ msgid ""
 "(add to group), or <shift> (extend group) click, or with <ctrl> or <shift> "
 "arrow keys and 'space'.  Or <ctrl>'a' for select all."
 msgstr ""
-"選択された行のチェックマークを切り替えます。行は <ctrl> (グループに追加）、"
-"<shift> (グループを拡張）クリック、または <ctrl> や <shift> 矢印キーと "
+"選択された行のチェックマークを切り替えます。行は <ctrl> (グループに追加)"
+"、<shift> (グループを拡張)クリック、または <ctrl> や <shift> 矢印キーと "
 "'space' で選択できます。または <ctrl>'a' で全て選択します。"
 
 #: ExtractCity/extractcity.gpr.py:34
@@ -6040,7 +5977,7 @@ msgstr "数字に使用されるスタイル"
 
 #: FamilySheet/FamilySheet.py:948
 msgid "The style used for footnotes (notes and source references)"
-msgstr "脚注 (メモとソース参照）に使用されるスタイル"
+msgstr "脚注 (メモとソース参照)に使用されるスタイル"
 
 #: FamilyTree/FamilyTree.gpr.py:5
 msgid "Produces a graphical family tree."
@@ -6125,7 +6062,7 @@ msgstr "夫のケクレ番号"
 msgid ""
 "The Kekule number of the husband (central family). Set 0 to not show Kekule "
 "numbers"
-msgstr "夫 (中心家族）のケクレ番号。ケクレ番号を表示しない場合は0に設定"
+msgstr "夫 (中心家族)のケクレ番号。ケクレ番号を表示しない場合は0に設定"
 
 #: FamilyTree/FamilyTree.py:1059
 msgid "Scale to fit on a single page"
@@ -6181,7 +6118,7 @@ msgstr "居住地を含める"
 
 #: FamilyTree/FamilyTree.py:1100
 msgid "Print event data (dead person)"
-msgstr "イベントデータを印刷 (死亡者）"
+msgstr "イベントデータを印刷 (死亡者)"
 
 #: FamilyTree/FamilyTree.py:1103 FamilyTree/FamilyTree.py:1111
 msgid "Year only"
@@ -6197,7 +6134,7 @@ msgstr "完全な日付と場所"
 
 #: FamilyTree/FamilyTree.py:1108
 msgid "Print event data (living person)"
-msgstr "イベントデータを印刷 (存命者）"
+msgstr "イベントデータを印刷 (存命者)"
 
 #: FamilyTree/FamilyTree.py:1116
 msgid "Fall back to baptism if birth event missing"
@@ -6225,7 +6162,7 @@ msgstr "名前に使用されるスタイル。"
 
 #: FamilyTree/FamilyTree.py:1170
 msgid "The style used for data (birth, death, marriage, divorce)."
-msgstr "データ (出生、死亡、結婚、離婚）に使用されるスタイル。"
+msgstr "データ (出生、死亡、結婚、離婚)に使用されるスタイル。"
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:4
 msgid "FamilyTree DNA"
@@ -6357,7 +6294,7 @@ msgstr "人を死亡時の年齢で一致させるフィルタールール"
 
 #: FilterRules/ageatdeath.py:65
 msgid "Age in years at person's death."
-msgstr "人が死亡したときの年齢 (年）。"
+msgstr "人が死亡したときの年齢 (年)。"
 
 #: FilterRules/ageatdeath.py:89 SourceIndex/birth.glade:544
 #: SourceIndex/birth.glade:762 SourceIndex/census.glade:286
@@ -6498,16 +6435,12 @@ msgid "Matches people who are related to anybody matched by a person filter"
 msgstr "人物フィルターで一致した人物に関連する人物を検索する"
 
 #: FilterRules/matcheventfilterrole.gpr.py:7
-#, fuzzy
-#| msgid "People with events with the <role>"
 msgid "People from event with role"
-msgstr "<role> のイベントを持つ人々"
+msgstr "役割付きイベントの人物"
 
 #: FilterRules/matcheventfilterrole.gpr.py:8
-#, fuzzy
-#| msgid "Matches event of people filter with role"
 msgid "Matches people of event filter with role"
-msgstr "選択した役割を持つ人物のイベントフィルターと照合する"
+msgstr "役割付きでイベントフィルターに一致する人物に一致します"
 
 #: FilterRules/matcheventfilterrole.py:55
 #: FilterRules/matchpersonfilterrole.py:69
@@ -6515,26 +6448,20 @@ msgid "Role:"
 msgstr "役割:"
 
 #: FilterRules/matcheventfilterrole.py:56
-#, fuzzy
-#| msgid "People with events with the <role>"
 msgid "Persons with events matching the <event filter> with role"
-msgstr "<role> のイベントを持つ人々"
+msgstr "役割付きで<イベントフィルター>に一致するイベントを持つ人物"
 
 #: FilterRules/matchparentoffilterfamily.gpr.py:7
-#, fuzzy
-#| msgid "Parent Family"
 msgid "Parents of family filter"
-msgstr "親家族"
+msgstr "家族フィルターの両親"
 
 #: FilterRules/matchparentoffilterfamily.gpr.py:8
-#, fuzzy
-#| msgid "Matches event of people filter with role"
 msgid "Matches parent of family filter"
-msgstr "選択した役割を持つ人物のイベントフィルターと照合する"
+msgstr "家族フィルターに一致する家族の両親に一致します"
 
 #: FilterRules/matchparentoffilterfamily.py:60
 msgid "Parents of <filter> family match"
-msgstr ""
+msgstr "<filter>に一致する家族の両親"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
@@ -6572,7 +6499,7 @@ msgstr "<person> の母系祖先"
 #: FilterRules2/matrilinealprogenitrix.gpr.py:26
 #: FilterRules2/matrilinealprogenitrix.py:64
 msgid "Matches the earliest recorded matrilineal ancestor mother."
-msgstr "記録上最も古い母系祖先 (母親）に一致します。"
+msgstr "記録上最も古い母系祖先 (母親)に一致します。"
 
 #: FilterRules2/mtinheritance.gpr.py:25 FilterRules2/mtinheritance.py:62
 msgid "Mitochondrial inheritance of <person>"
@@ -6605,7 +6532,7 @@ msgstr "<person> の父系祖先"
 #: FilterRules2/patrilinealprogenitor.gpr.py:26
 #: FilterRules2/patrilinealprogenitor.py:64
 msgid "Matches the earliest recorded patrilineal ancestor father."
-msgstr "記録上最も古い父系祖先 (父親）に一致します。"
+msgstr "記録上最も古い父系祖先 (父親)に一致します。"
 
 #: FilterRules2/xchromancestors.gpr.py:25 FilterRules2/xchromancestors.py:67
 msgid "X-chromosomal ancestors of <person>"
@@ -6850,7 +6777,7 @@ msgstr "インディアン"
 
 #: Form/form_ca.xml.h:31
 msgid "11. Indians, if any"
-msgstr "11. インディアン (該当する場合）"
+msgstr "11. インディアン (該当する場合)"
 
 #: Form/form_ca.xml.h:32
 msgid "ResidentsMale"
@@ -7551,7 +7478,7 @@ msgstr "5. 宗教"
 
 #: Form/form_ca.xml.h:227
 msgid "6. Residence, if out of limits"
-msgstr "6. 居住地 (区域外の場合）"
+msgstr "6. 居住地 (区域外の場合)"
 
 #: Form/form_ca.xml.h:229
 msgid "7. Age next Birthday"
@@ -7887,19 +7814,19 @@ msgstr "17. 就学中"
 
 #: Form/form_ca.xml.h:330
 msgid "CantRead"
-msgstr "読み書き不能"
+msgstr "読めない"
 
 #: Form/form_ca.xml.h:331
 msgid "18. Over 20 unable to read"
-msgstr "18. 20歳以上で読み書き不能"
+msgstr "18. 20歳以上で読めない"
 
 #: Form/form_ca.xml.h:332
 msgid "CantWrite"
-msgstr "書き書き不能"
+msgstr "書けない"
 
 #: Form/form_ca.xml.h:333
 msgid "19. Over 20 unable to write"
-msgstr "19. 20歳以上で書き書き不能"
+msgstr "19. 20歳以上で書けない"
 
 #: Form/form_ca.xml.h:339
 msgid "22. Unsound mind"
@@ -8079,19 +8006,19 @@ msgstr "20. 雇用主は年間平均雇用者数を記入"
 
 #: Form/form_ca.xml.h:439 Form/form_ca.xml.h:846
 msgid "CanRead"
-msgstr "読み書き可"
+msgstr "読める"
 
 #: Form/form_ca.xml.h:440
 msgid "21. Instruction: Read"
-msgstr "21. 教育: 読み書き"
+msgstr "21. 教育: 読み"
 
 #: Form/form_ca.xml.h:441 Form/form_ca.xml.h:848
 msgid "CanWrite"
-msgstr "書き書き可"
+msgstr "書ける"
 
 #: Form/form_ca.xml.h:442
 msgid "22. Instruction: Write"
-msgstr "22. 教育: 書き書き"
+msgstr "22. 教育: 書き"
 
 #: Form/form_ca.xml.h:444
 msgid "23. Deaf and Dumb"
@@ -8176,11 +8103,11 @@ msgstr "11. 出生国または場所"
 
 #: Form/form_ca.xml.h:483 Form/form_ca.xml.h:694
 msgid "12. Year of immigration to Canada, if an immigrant"
-msgstr "12. カナダへの移民年 (移民の場合）"
+msgstr "12. カナダへの移民年 (移民の場合)"
 
 #: Form/form_ca.xml.h:485 Form/form_ca.xml.h:696
 msgid "13. Year of naturalization, if formerly an alien"
-msgstr "13. 帰化年 (以前外国人であった場合）"
+msgstr "13. 帰化年 (以前外国人であった場合)"
 
 #: Form/form_ca.xml.h:486 Form/form_ca.xml.h:697 Form/form_ca.xml.h:779
 #: Form/form_ca.xml.h:838 Form/form_us.xml.h:904 Form/form_us.xml.h:979
@@ -8288,7 +8215,7 @@ msgstr "その他収入"
 
 #: Form/form_ca.xml.h:513
 msgid "27. Extra earning (From other than chief occupation or trade)"
-msgstr "27. 追加収入 (主たる職業または業種以外から）"
+msgstr "27. 追加収入 (主たる職業または業種以外から)"
 
 #: Form/form_ca.xml.h:514 Form/form_ca.xml.h:735 Form/form_ca.xml.h:783
 msgid "SchoolMonths"
@@ -8302,21 +8229,21 @@ msgstr "28. 1910年の就学月数"
 #: Form/form_us.xml.h:1414 Form/form_us.xml.h:2103 Form/form_us.xml.h:2141
 #: Form/form_us.xml.h:2179 Form/form_us.xml.h:2217
 msgid "Read"
-msgstr "読み書き"
+msgstr "読み"
 
 #: Form/form_ca.xml.h:517
 msgid "29. Can read"
-msgstr "29. 読み書き可"
+msgstr "29. 読める"
 
 #: Form/form_ca.xml.h:518 Form/form_ca.xml.h:739 Form/form_ca.xml.h:787
 #: Form/form_us.xml.h:1415 Form/form_us.xml.h:2104 Form/form_us.xml.h:2142
 #: Form/form_us.xml.h:2180 Form/form_us.xml.h:2218
 msgid "Write"
-msgstr "書き書き"
+msgstr "書き"
 
 #: Form/form_ca.xml.h:519
 msgid "30. Can write"
-msgstr "30. 書き書き可"
+msgstr "30. 書ける"
 
 #: Form/form_ca.xml.h:520 Form/form_ca.xml.h:840
 msgid "SpeakEnglish"
@@ -8336,7 +8263,7 @@ msgstr "32. フランス語を話せる"
 
 #: Form/form_ca.xml.h:525
 msgid "33. Mother tongue (If spoken)"
-msgstr "33. 母語 (話す場合）"
+msgstr "33. 母語 (話す場合)"
 
 #: Form/form_ca.xml.h:526 Form/form_ca.xml.h:791
 msgid "Infirmities"
@@ -8473,7 +8400,7 @@ msgstr "所有サイロ"
 
 #: Form/form_ca.xml.h:574
 msgid "17. Real Estate Owned: Number of silos and capacity in cubic feet"
-msgstr "17. 所有不動産: サイロの数と容量 (立方フィート）"
+msgstr "17. 所有不動産: サイロの数と容量 (立方フィート)"
 
 #: Form/form_ca.xml.h:575
 msgid "OwnedFactories"
@@ -8529,7 +8456,7 @@ msgstr "賃貸サイロ"
 
 #: Form/form_ca.xml.h:588
 msgid "24. Real Estate Leased: Number of silos and capacity in cubic feet"
-msgstr "24. 賃貸不動産: サイロの数と容量 (立方フィート）"
+msgstr "24. 賃貸不動産: サイロの数と容量 (立方フィート)"
 
 #: Form/form_ca.xml.h:589
 msgid "LeasedFactories"
@@ -8697,7 +8624,7 @@ msgstr "13. 場所: 子午線"
 
 #: Form/form_ca.xml.h:651
 msgid "14. Livestock: Horses, all ages"
-msgstr "14. 家畜: 馬 (全年齢）"
+msgstr "14. 家畜: 馬 (全年齢)"
 
 #: Form/form_ca.xml.h:652
 msgid "Cows"
@@ -8709,15 +8636,15 @@ msgstr "15. 家畜: 乳牛"
 
 #: Form/form_ca.xml.h:655
 msgid "16. Other horned or meat cattle, all ages"
-msgstr "16. その他の有角または肉用牛 (全年齢）"
+msgstr "16. その他の有角または肉用牛 (全年齢)"
 
 #: Form/form_ca.xml.h:657
 msgid "17. Sheep and lambs, all ages"
-msgstr "17. 羊と子羊 (全年齢）"
+msgstr "17. 羊と子羊 (全年齢)"
 
 #: Form/form_ca.xml.h:659
 msgid "18. Hogs and pigs, all ages"
-msgstr "18. 豚 (全年齢）"
+msgstr "18. 豚 (全年齢)"
 
 #: Form/form_ca.xml.h:678
 msgid "4. Place of habitation"
@@ -8741,7 +8668,7 @@ msgstr "その他の就業"
 
 #: Form/form_ca.xml.h:706
 msgid "18. Employment other than at chief trade or occupation, if any"
-msgstr "18. 主たる業種または職業以外の就業 (該当する場合）"
+msgstr "18. 主たる業種または職業以外の就業 (該当する場合)"
 
 #: Form/form_ca.xml.h:714
 msgid "22. State where person employed"
@@ -8777,7 +8704,7 @@ msgstr "その他就業時間"
 
 #: Form/form_ca.xml.h:722
 msgid "26. Hours of working time per week at other occupation, if any"
-msgstr "26. その他の職業の週労働時間 (該当する場合）"
+msgstr "26. その他の職業の週労働時間 (該当する場合)"
 
 #: Form/form_ca.xml.h:724
 msgid "27. Total earnings in 1910 from chief occupation or trade"
@@ -8793,7 +8720,7 @@ msgstr "賃金"
 
 #: Form/form_ca.xml.h:728
 msgid "29. Rate of earnings per hour when employed by the hour-Cents"
-msgstr "29. 時間給での収入率 (セント）"
+msgstr "29. 時間給での収入率 (セント)"
 
 #: Form/form_ca.xml.h:729
 msgid "InsuranceLife"
@@ -8825,11 +8752,11 @@ msgstr "33. 1910年の就学月数"
 
 #: Form/form_ca.xml.h:738
 msgid "34. Can Read"
-msgstr "34. 読み書き可"
+msgstr "34. 読める"
 
 #: Form/form_ca.xml.h:740
 msgid "35. Can Write"
-msgstr "35. 書き書き可"
+msgstr "35. 書ける"
 
 #: Form/form_ca.xml.h:742
 msgid "36. Language commonly spoken"
@@ -8925,11 +8852,11 @@ msgstr "12. 1910年の就学月数"
 
 #: Form/form_ca.xml.h:786
 msgid "13. Can Read"
-msgstr "13. 読み書き可"
+msgstr "13. 読める"
 
 #: Form/form_ca.xml.h:788
 msgid "14. Can Write"
-msgstr "14. 書き書き可"
+msgstr "14. 書ける"
 
 #: Form/form_ca.xml.h:790
 msgid "15. Language commonly spoken"
@@ -9035,11 +8962,11 @@ msgstr "21. 母語として話されるその他の言語"
 
 #: Form/form_ca.xml.h:847
 msgid "22. Can Read"
-msgstr "22. 読み書き可"
+msgstr "22. 読める"
 
 #: Form/form_ca.xml.h:849
 msgid "23. Can Write"
-msgstr "23. 書き書き可"
+msgstr "23. 書ける"
 
 #: Form/form_ca.xml.h:851
 msgid "24. Chief occupation or trade"
@@ -9498,7 +9425,7 @@ msgstr "前夜そこに居住していた各人の名前。"
 #: Form/form_gb.xml.h:64
 msgid ""
 "AGE, rounded down to the nearest five years for those aged fifteen or over."
-msgstr "年齢 (15歳以上の場合は5年単位で切り捨て）。"
+msgstr "年齢 (15歳以上の場合は5年単位で切り捨て)。"
 
 #: Form/form_gb.xml.h:66
 msgid "PROFESSION, TRADE, EMPLOYMENT or of INDEPENDENT MEANS."
@@ -9790,7 +9717,7 @@ msgstr "世帯主との関係"
 
 #: Form/form_gb.xml.h:205 Form/form_gb.xml.h:338
 msgid "AGE (last Birthday)"
-msgstr "年齢 (最終誕生日）"
+msgstr "年齢 (最終誕生日)"
 
 #: Form/form_gb.xml.h:207 Form/form_gb.xml.h:340
 msgid ""
@@ -9870,15 +9797,15 @@ msgstr "世帯主との関係"
 
 #: Form/form_gb.xml.h:239 Form/form_gb.xml.h:374
 msgid "AGE years"
-msgstr "年齢 (歳）"
+msgstr "年齢 (歳)"
 
 #: Form/form_gb.xml.h:240 Form/form_gb.xml.h:375
 msgid "Age Months"
-msgstr "年齢 (月）"
+msgstr "年齢 (月)"
 
 #: Form/form_gb.xml.h:241 Form/form_gb.xml.h:376
 msgid "AGE months"
-msgstr "年齢 (月）"
+msgstr "年齢 (月)"
 
 #: Form/form_gb.xml.h:243 Form/form_gb.xml.h:378
 msgid "SEX"
@@ -10228,19 +10155,19 @@ msgstr "世帯主との関係"
 
 #: Form/form_ie.xml.h:19
 msgid "Year Age"
-msgstr "年齢 (年）"
+msgstr "年齢 (年)"
 
 #: Form/form_ie.xml.h:20 Form/form_us.xml.h:2561
 msgid "Age in years"
-msgstr "年齢 (年）"
+msgstr "年齢 (年)"
 
 #: Form/form_ie.xml.h:21
 msgid "Month Age"
-msgstr "年齢 (月）"
+msgstr "年齢 (月)"
 
 #: Form/form_ie.xml.h:22
 msgid "Age in months"
-msgstr "年齢 (月）"
+msgstr "年齢 (月)"
 
 #: Form/form_ie.xml.h:25
 msgid "Marriage or Orphanhood"
@@ -10304,7 +10231,7 @@ msgstr "(11.) 出生登録後に追加された洗礼名と日付"
 
 #: Form/form_ie.xml.h:48
 msgid "(3.) Name (if any)"
-msgstr "(3.) 名前 (ある場合）"
+msgstr "(3.) 名前 (ある場合)"
 
 #: Form/form_ie.xml.h:50 Form/form_ie.xml.h:52
 msgid "(2.) Date and Place of Birth"
@@ -10444,11 +10371,11 @@ msgstr "(9.) 例: 死亡時に立ち会い"
 
 #: Form/form_pl.xml.h:5
 msgid "Event Place (Original)"
-msgstr "イベント場所 (原本）"
+msgstr "イベント場所 (原本)"
 
 #: Form/form_pl.xml.h:8 Form/form_pl.xml.h:36
 msgid "Birth Year (Estimated)"
-msgstr "生年 (推定）"
+msgstr "生年 (推定)"
 
 #: Form/form_pl.xml.h:9 Form/form_pl.xml.h:26 Form/form_pl.xml.h:37
 #: Form/form_us.xml.h:1453 Form/form_us.xml.h:2449 Form/form_us.xml.h:2472
@@ -10477,7 +10404,7 @@ msgstr "配偶者の年齢"
 
 #: Form/form_pl.xml.h:14 Form/form_pl.xml.h:42
 msgid "Spouse's Birth Year (Estimated)"
-msgstr "配偶者の生年 (推定）"
+msgstr "配偶者の生年 (推定)"
 
 #: Form/form_pl.xml.h:15 Form/form_pl.xml.h:43
 msgid "Spouse's Father's Name"
@@ -10583,7 +10510,7 @@ msgstr "郡"
 #: Form/form_us.xml.h:7 Form/form_us.xml.h:20 Form/form_us.xml.h:41
 #: Form/form_us.xml.h:62 Form/form_us.xml.h:102 Form/form_us.xml.h:171
 msgid "District (or Territory) of"
-msgstr "地区 (または準州）"
+msgstr "地区 (または準州)"
 
 #: Form/form_us.xml.h:9
 msgid "Free white males 16 & up"
@@ -11193,7 +11120,7 @@ msgstr "タバコ"
 
 #: Form/form_us.xml.h:299
 msgid "Ginned Cotton"
-msgstr "綿花 (繰り棉）"
+msgstr "綿花 (繰り棉)"
 
 #: Form/form_us.xml.h:300
 msgid "Wool"
@@ -11257,11 +11184,11 @@ msgstr "ホップ"
 
 #: Form/form_us.xml.h:315
 msgid "Hemp Dew Rotted"
-msgstr "麻 (露腐れ処理）"
+msgstr "麻 (露腐れ処理)"
 
 #: Form/form_us.xml.h:316
 msgid "Hemp Water Rotted"
-msgstr "麻 (水腐れ処理）"
+msgstr "麻 (水腐れ処理)"
 
 #: Form/form_us.xml.h:317
 msgid "Flax"
@@ -11336,19 +11263,19 @@ msgstr "オート麦 (ブッシェル)"
 
 #: Form/form_us.xml.h:377
 msgid "Rice, pounds of"
-msgstr "米 (ポンド）"
+msgstr "米 (ポンド)"
 
 #: Form/form_us.xml.h:378
 msgid "Tobacco, pounds of"
-msgstr "タバコ (ポンド）"
+msgstr "タバコ (ポンド)"
 
 #: Form/form_us.xml.h:379
 msgid "Ginned Cotton, bales of 400 lbs."
-msgstr "綿花 (400ポンド俵）"
+msgstr "綿花 (400ポンド俵)"
 
 #: Form/form_us.xml.h:380
 msgid "Wool, pounds of"
-msgstr "羊毛 (ポンド）"
+msgstr "羊毛 (ポンド)"
 
 #: Form/form_us.xml.h:381
 msgid "Peas and Beans, bushels of"
@@ -11372,11 +11299,11 @@ msgstr "蕎麦 (ブッシェル)"
 
 #: Form/form_us.xml.h:386
 msgid "Value of Orchard Products in $"
-msgstr "果樹園製品の価値 ($）"
+msgstr "果樹園製品の価値 ($)"
 
 #: Form/form_us.xml.h:387
 msgid "Wine, gallons of"
-msgstr "ワイン (ガロン）"
+msgstr "ワイン (ガロン)"
 
 #: Form/form_us.xml.h:388
 msgid "Value of products of market gardens"
@@ -11384,15 +11311,15 @@ msgstr "市場菜園製品の価値"
 
 #: Form/form_us.xml.h:389
 msgid "Butter, pounds of"
-msgstr "バター (ポンド）"
+msgstr "バター (ポンド)"
 
 #: Form/form_us.xml.h:390
 msgid "Cheese, pounds of"
-msgstr "チーズ (ポンド）"
+msgstr "チーズ (ポンド)"
 
 #: Form/form_us.xml.h:391
 msgid "Hay, tons of"
-msgstr "干草 (トン）"
+msgstr "干草 (トン)"
 
 #: Form/form_us.xml.h:392
 msgid "Clover Seed, bushels of"
@@ -11404,19 +11331,19 @@ msgstr "その他の牧草種子 (ブッシェル)"
 
 #: Form/form_us.xml.h:394
 msgid "Hops, pounds of"
-msgstr "ホップ (ポンド）"
+msgstr "ホップ (ポンド)"
 
 #: Form/form_us.xml.h:395
 msgid "Hemp Dew Rotted, tons of"
-msgstr "麻 (露腐れ処理、トン）"
+msgstr "麻 (露腐れ処理、トン)"
 
 #: Form/form_us.xml.h:396
 msgid "Hemp Water Rotted, tons of"
-msgstr "麻 (水腐れ処理、トン）"
+msgstr "麻 (水腐れ処理、トン)"
 
 #: Form/form_us.xml.h:397
 msgid "Flax, pounds of"
-msgstr "亜麻 (ポンド）"
+msgstr "亜麻 (ポンド)"
 
 #: Form/form_us.xml.h:398
 msgid "Flaxseed, bushels of"
@@ -11424,27 +11351,27 @@ msgstr "亜麻仁 (ブッシェル)"
 
 #: Form/form_us.xml.h:399
 msgid "Silk Cocoons, pounds of"
-msgstr "繭 (ポンド）"
+msgstr "繭 (ポンド)"
 
 #: Form/form_us.xml.h:400
 msgid "Maple Sugar, pounds of"
-msgstr "メープルシュガー (ポンド）"
+msgstr "メープルシュガー (ポンド)"
 
 #: Form/form_us.xml.h:401
 msgid "Cane sugar, hogshead of 1,000 pounds"
-msgstr "サトウキビ砂糖 (1,000ポンド樽）"
+msgstr "サトウキビ砂糖 (1,000ポンド樽)"
 
 #: Form/form_us.xml.h:402
 msgid "Molasses, gallons of"
-msgstr "糖蜜 (ガロン）"
+msgstr "糖蜜 (ガロン)"
 
 #: Form/form_us.xml.h:403
 msgid "Beeswax, pounds of"
-msgstr "蜜蝋 (ポンド）"
+msgstr "蜜蝋 (ポンド)"
 
 #: Form/form_us.xml.h:404
 msgid "Honey, pounds of"
-msgstr "蜂蜜 (ポンド）"
+msgstr "蜂蜜 (ポンド)"
 
 #: Form/form_us.xml.h:405
 msgid "Value of home-made manufactures"
@@ -11484,21 +11411,21 @@ msgstr "母親は外国生まれ"
 
 #: Form/form_us.xml.h:446
 msgid "Month, if born within the year"
-msgstr "月 (年内に出生した場合）"
+msgstr "月 (年内に出生した場合)"
 
 #: Form/form_us.xml.h:447
 msgid "Month, if married within the year"
-msgstr "月 (年内に結婚した場合）"
+msgstr "月 (年内に結婚した場合)"
 
 #: Form/form_us.xml.h:449 Form/form_us.xml.h:485 Form/form_us.xml.h:1125
 #: Form/form_us.xml.h:1868
 msgid "Cannot read"
-msgstr "読み書き不能"
+msgstr "読めない"
 
 #: Form/form_us.xml.h:450 Form/form_us.xml.h:486 Form/form_us.xml.h:1126
 #: Form/form_us.xml.h:1869
 msgid "Cannot write"
-msgstr "書き書き不能"
+msgstr "書けない"
 
 #: Form/form_us.xml.h:451
 msgid "Deaf, dumb, blind, insane or idiotic"
@@ -11529,7 +11456,7 @@ msgstr "調査地区番号"
 
 #: Form/form_us.xml.h:470 Form/form_us.xml.h:1110 Form/form_us.xml.h:1853
 msgid "Month, if born within the census year"
-msgstr "月 (国勢調査年内に出生した場合）"
+msgstr "月 (国勢調査年内に出生した場合)"
 
 #: Form/form_us.xml.h:471 Form/form_us.xml.h:618 Form/form_us.xml.h:714
 #: Form/form_us.xml.h:757 Form/form_us.xml.h:797 Form/form_us.xml.h:1075
@@ -11664,7 +11591,7 @@ msgstr "1879年に刈り取られなかった草地のエーカー"
 
 #: Form/form_us.xml.h:519
 msgid "Tons Hay Harvested in 1879"
-msgstr "1879年の干草収穫量 (トン）"
+msgstr "1879年の干草収穫量 (トン)"
 
 #: Form/form_us.xml.h:520
 msgid "Bushels Clover Seed Harvested in 1879"
@@ -11780,7 +11707,7 @@ msgstr "その他の家禽の保有数"
 
 #: Form/form_us.xml.h:548
 msgid "Dozen eggs produced in 1879"
-msgstr "1879年の卵生産数 (ダース）"
+msgstr "1879年の卵生産数 (ダース)"
 
 #: Form/form_us.xml.h:550
 msgid "Acres Barley in 1879"
@@ -11848,11 +11775,11 @@ msgstr "1879年の亜麻種子収穫量 (ブッシェル)"
 
 #: Form/form_us.xml.h:566
 msgid "Tons Flax Straw in 1879"
-msgstr "1879年の亜麻藁 (トン）"
+msgstr "1879年の亜麻藁 (トン)"
 
 #: Form/form_us.xml.h:567
 msgid "Pounds Flax Fiber in 1879"
-msgstr "1879年の亜麻繊維 (ポンド）"
+msgstr "1879年の亜麻繊維 (ポンド)"
 
 #: Form/form_us.xml.h:568
 msgid "Acres Hemp in 1879"
@@ -11860,7 +11787,7 @@ msgstr "1879年の麻作付エーカー"
 
 #: Form/form_us.xml.h:569
 msgid "Tons Hemp in 1879"
-msgstr "1879年の麻 (トン）"
+msgstr "1879年の麻 (トン)"
 
 #: Form/form_us.xml.h:570
 msgid "Acres Sorghum in 1879"
@@ -11868,19 +11795,19 @@ msgstr "1879年のソルガム作付エーカー"
 
 #: Form/form_us.xml.h:571
 msgid "Pounds Sorghum Sugar in 1879"
-msgstr "1879年のソルガム砂糖 (ポンド）"
+msgstr "1879年のソルガム砂糖 (ポンド)"
 
 #: Form/form_us.xml.h:572
 msgid "Gallons Sorghum Molasses in 1879"
-msgstr "1879年のソルガム糖蜜 (ガロン）"
+msgstr "1879年のソルガム糖蜜 (ガロン)"
 
 #: Form/form_us.xml.h:573
 msgid "Pounds Maple Sugar in 1879"
-msgstr "1879年のメープルシュガー (ポンド）"
+msgstr "1879年のメープルシュガー (ポンド)"
 
 #: Form/form_us.xml.h:574
 msgid "Gallons Maple Molasses in 1879"
-msgstr "1879年のメープル糖蜜 (ガロン）"
+msgstr "1879年のメープル糖蜜 (ガロン)"
 
 #: Form/form_us.xml.h:575
 msgid "Acres Broom Corn in 1879"
@@ -11888,7 +11815,7 @@ msgstr "1879年のモロコシ作付エーカー"
 
 #: Form/form_us.xml.h:576
 msgid "Pounds Broom Corn in 1879"
-msgstr "1879年のモロコシ (ポンド）"
+msgstr "1879年のモロコシ (ポンド)"
 
 #: Form/form_us.xml.h:577
 msgid "Acres Hops in 1879"
@@ -11896,7 +11823,7 @@ msgstr "1879年のホップ作付エーカー"
 
 #: Form/form_us.xml.h:578
 msgid "Pounds Hops in 1879"
-msgstr "1879年のホップ (ポンド）"
+msgstr "1879年のホップ (ポンド)"
 
 #: Form/form_us.xml.h:579
 msgid "Acres Potatoes (Irish) in 1879"
@@ -11920,7 +11847,7 @@ msgstr "1879年のタバコ作付エーカー"
 
 #: Form/form_us.xml.h:584
 msgid "Pounds Tobacco in 1879"
-msgstr "1879年のタバコ (ポンド）"
+msgstr "1879年のタバコ (ポンド)"
 
 #: Form/form_us.xml.h:585
 msgid "Acres Apple Orchards in 1879"
@@ -11976,11 +11903,11 @@ msgstr "1879年に販売された市場菜園生産物の価値"
 
 #: Form/form_us.xml.h:598
 msgid "Pounds Honey in 1879"
-msgstr "1879年の蜂蜜 (ポンド）"
+msgstr "1879年の蜂蜜 (ポンド)"
 
 #: Form/form_us.xml.h:599
 msgid "Pounds Beeswax in 1879"
-msgstr "1879年の蜜蝋 (ポンド）"
+msgstr "1879年の蜜蝋 (ポンド)"
 
 #: Form/form_us.xml.h:600
 msgid "Cords of Wood cut in 1879"
@@ -12030,16 +11957,16 @@ msgstr "帰化申請書提出済み"
 #: Form/form_us.xml.h:633 Form/form_us.xml.h:733 Form/form_us.xml.h:768
 #: Form/form_us.xml.h:1619
 msgid "Able to read"
-msgstr "読み書き可"
+msgstr "読める"
 
 #: Form/form_us.xml.h:634 Form/form_us.xml.h:734 Form/form_us.xml.h:769
 #: Form/form_us.xml.h:1620
 msgid "Able to write"
-msgstr "書き書き可"
+msgstr "書ける"
 
 #: Form/form_us.xml.h:635
 msgid "Able to speak English; if not, the language spoken"
-msgstr "英語を話せるか (話せない場合は話す言語）"
+msgstr "英語を話せるか (話せない場合は話す言語)"
 
 #: Form/form_us.xml.h:636
 msgid "Suffering from disease"
@@ -12098,7 +12025,7 @@ msgstr "負った障害"
 
 #: Form/form_us.xml.h:660 Form/form_us.xml.h:702 Form/form_us.xml.h:745
 msgid "State (or Territory) of"
-msgstr "州 (または準州）"
+msgstr "州 (または準州)"
 
 #: Form/form_us.xml.h:666 Form/form_us.xml.h:708 Form/form_us.xml.h:750
 #: Form/form_us.xml.h:785 Form/form_us.xml.h:828
@@ -12159,11 +12086,11 @@ msgstr "就学済み"
 
 #: Form/form_us.xml.h:693 Form/form_us.xml.h:1320
 msgid "Can read"
-msgstr "読み書き可"
+msgstr "読める"
 
 #: Form/form_us.xml.h:694 Form/form_us.xml.h:1322
 msgid "Can write"
-msgstr "書き書き可"
+msgstr "書ける"
 
 #: Form/form_us.xml.h:695
 msgid "Can speak English"
@@ -12195,7 +12122,7 @@ msgstr "帰化済みまたは外国人"
 
 #: Form/form_us.xml.h:727
 msgid "Able to speak English; if not, language spoken"
-msgstr "英語を話せるか (話せない場合は話す言語）"
+msgstr "英語を話せるか (話せない場合は話す言語)"
 
 #: Form/form_us.xml.h:729
 msgid "Nature of industry"
@@ -12271,7 +12198,7 @@ msgstr "ラジオの所有"
 
 #: Form/form_us.xml.h:801 Form/form_us.xml.h:842 Form/form_us.xml.h:898
 msgid "Farm?"
-msgstr "農場？"
+msgstr "農場?"
 
 #: Form/form_us.xml.h:805
 msgid "Marital condition"
@@ -12346,15 +12273,15 @@ msgstr "外国生まれの場合の市民権"
 
 #: Form/form_us.xml.h:852
 msgid "City (April 1, 1935)"
-msgstr "都市 (1935年4月1日）"
+msgstr "都市 (1935年4月1日)"
 
 #: Form/form_us.xml.h:854
 msgid "State (Territory/Country)"
-msgstr "州 (準州/国）"
+msgstr "州 (準州/国)"
 
 #: Form/form_us.xml.h:855
 msgid "On a Farm (Y/N)"
-msgstr "農場居住 (Y/N）"
+msgstr "農場居住 (Y/N)"
 
 #: Form/form_us.xml.h:856
 msgid "At Work during week March 24-30"
@@ -12362,19 +12289,19 @@ msgstr "3月24-30日の週に就業"
 
 #: Form/form_us.xml.h:857
 msgid "public Emergency Work?"
-msgstr "公共緊急事業？"
+msgstr "公共緊急事業?"
 
 #: Form/form_us.xml.h:858
 msgid "Seeking work?"
-msgstr "求職中？"
+msgstr "求職中?"
 
 #: Form/form_us.xml.h:859
 msgid "Have a Job?"
-msgstr "仕事あり？"
+msgstr "仕事あり?"
 
 #: Form/form_us.xml.h:860
 msgid "housework (H), school (S), unable to work (U) or other (Ot)"
-msgstr "家事 (H）、学校 (S）、就業不能 (U）、その他 (Ot）"
+msgstr "家事 (H)、学校 (S)、就業不能 (U)、その他 (Ot)"
 
 #: Form/form_us.xml.h:861
 msgid "# hours worked during week March 24-30, 1940"
@@ -12394,7 +12321,7 @@ msgstr "1939年の賃金・給与額"
 
 #: Form/form_us.xml.h:868
 msgid "Income of more than $50 from other sources?"
-msgstr "その他の収入が50ドル以上？"
+msgstr "その他の収入が50ドル以上?"
 
 #: Form/form_us.xml.h:869
 msgid "Number of Farm Schedule"
@@ -12402,11 +12329,11 @@ msgstr "農場スケジュール番号"
 
 #: Form/form_us.xml.h:873
 msgid "Veteran?"
-msgstr "退役軍人？"
+msgstr "退役軍人?"
 
 #: Form/form_us.xml.h:874
 msgid "If child, veteran-father dead?"
-msgstr "子供の場合、退役軍人の父親は死亡？"
+msgstr "子供の場合、退役軍人の父親は死亡?"
 
 #: Form/form_us.xml.h:875
 msgid "War/Military Service"
@@ -12414,15 +12341,15 @@ msgstr "戦争/軍役"
 
 #: Form/form_us.xml.h:876
 msgid "Have Federal SSN?"
-msgstr "連邦社会保障番号あり？"
+msgstr "連邦社会保障番号あり?"
 
 #: Form/form_us.xml.h:877
 msgid "Deductions made in 1939?"
-msgstr "1939年に控除あり？"
+msgstr "1939年に控除あり?"
 
 #: Form/form_us.xml.h:878
 msgid "If so, made from all, 1/2 or more, less from wages in 1939?"
-msgstr "場合、賃金からの控除は全額、半分以上、半分未満？"
+msgstr "場合、賃金からの控除は全額、半分以上、半分未満?"
 
 #: Form/form_us.xml.h:879
 msgid "Usual Occupation"
@@ -12438,7 +12365,7 @@ msgstr "通常の労働階級"
 
 #: Form/form_us.xml.h:882
 msgid "If woman, married more than once?"
-msgstr "女性の場合、複数回結婚？"
+msgstr "女性の場合、複数回結婚?"
 
 #: Form/form_us.xml.h:884
 msgid "Number of children ever born"
@@ -12458,15 +12385,15 @@ msgstr "ホテル、大きな下宿、施設、軍事施設など。"
 
 #: Form/form_us.xml.h:899
 msgid "Is this house on a farm (or ranch)?"
-msgstr "この家は農場 (または牧場）にある？"
+msgstr "この家は農場 (または牧場)にある?"
 
 #: Form/form_us.xml.h:900
 msgid "On 3+ acres of land?"
-msgstr "3エーカー以上の土地？"
+msgstr "3エーカー以上の土地?"
 
 #: Form/form_us.xml.h:901
 msgid "Is this house on a place of three or more acres?"
-msgstr "この家は3エーカー以上の土地にある？"
+msgstr "この家は3エーカー以上の土地にある?"
 
 #: Form/form_us.xml.h:902
 msgid "Agricultural Questionnaire Number"
@@ -12478,7 +12405,7 @@ msgstr "最終誕生日の年齢"
 
 #: Form/form_us.xml.h:907
 msgid "How old was he on his last birthday?"
-msgstr "最後の誕生日の年齢は？"
+msgstr "最後の誕生日の年齢は?"
 
 #: Form/form_us.xml.h:908 Form/form_us.xml.h:2537
 msgid "Marital status"
@@ -12486,51 +12413,51 @@ msgstr "婚姻状態"
 
 #: Form/form_us.xml.h:909
 msgid "Is he now married, widowed, divorced, separated, or never married?"
-msgstr "現在、既婚、寡夫/寡婦、離婚、別居、未婚のいずれ？"
+msgstr "現在、既婚、寡夫/寡婦、離婚、別居、未婚のいずれ?"
 
 #: Form/form_us.xml.h:911
 msgid "What State (or foreign country) was he born in?"
-msgstr "どの州 (または外国）で生まれた？"
+msgstr "どの州 (または外国)で生まれた?"
 
 #: Form/form_us.xml.h:912
 msgid "Is he naturalized?"
-msgstr "帰化している？"
+msgstr "帰化している?"
 
 #: Form/form_us.xml.h:913
 msgid "housework (H), work (W), unable to work (U) or other (Ot)"
-msgstr "家事 (H）、就業 (W）、就業不能 (U）、その他 (Ot）"
+msgstr "家事 (H)、就業 (W)、就業不能 (U)、その他 (Ot)"
 
 #: Form/form_us.xml.h:914
 msgid ""
 "What was this person doing most of last week—working, keeping house, or "
 "something else?"
-msgstr "この人は先週のほとんど何をしていましたか—就業、家事、その他？"
+msgstr "この人は先週のほとんど何をしていましたか—就業、家事、その他?"
 
 #: Form/form_us.xml.h:915
 msgid "Worked last week? (Y/N)"
-msgstr "先週就業した？ (Y/N）"
+msgstr "先週就業した? (Y/N)"
 
 #: Form/form_us.xml.h:916
 msgid ""
 "Did this person do any work at all last week, not counting work around the "
 "house?"
-msgstr "この人は先週、家事以外の仕事を少しでもしましたか？"
+msgstr "この人は先週、家事以外の仕事を少しでもしましたか?"
 
 #: Form/form_us.xml.h:917
 msgid "Looking for work?"
-msgstr "求職中？"
+msgstr "求職中?"
 
 #: Form/form_us.xml.h:918
 msgid "Was this person looking for work?"
-msgstr "この人は求職中でしたか？"
+msgstr "この人は求職中でしたか?"
 
 #: Form/form_us.xml.h:919
 msgid "Has a job or business?"
-msgstr "仕事または事業を持っている？"
+msgstr "仕事または事業を持っている?"
 
 #: Form/form_us.xml.h:920
 msgid "Even though he didn’t work last week, does he have a job or business?"
-msgstr "先週働いていなくても、仕事や事業を持っていますか？"
+msgstr "先週働いていなくても、仕事や事業を持っていますか?"
 
 #: Form/form_us.xml.h:921
 msgid "# hours worked last week"
@@ -12538,7 +12465,7 @@ msgstr "先週の労働時間数"
 
 #: Form/form_us.xml.h:922
 msgid "How many hours did he work last week?"
-msgstr "先週何時間働きましたか？"
+msgstr "先週何時間働きましたか?"
 
 #: Form/form_us.xml.h:923
 msgid "Type of work"
@@ -12546,7 +12473,7 @@ msgstr "仕事の種類"
 
 #: Form/form_us.xml.h:924
 msgid "What kind of work was he doing?"
-msgstr "どのような仕事をしていましたか？"
+msgstr "どのような仕事をしていましたか?"
 
 #: Form/form_us.xml.h:925
 msgid "Business or industry"
@@ -12554,31 +12481,31 @@ msgstr "事業または産業"
 
 #: Form/form_us.xml.h:926
 msgid "What kind of business or industry was he working in?"
-msgstr "どのような事業または産業で働いていましたか？"
+msgstr "どのような事業または産業で働いていましたか?"
 
 #: Form/form_us.xml.h:928
 msgid "Same house in Apr 1949?"
-msgstr "1949年4月と同じ家？"
+msgstr "1949年4月と同じ家?"
 
 #: Form/form_us.xml.h:929
 msgid "Was he living in this same house a year ago?"
-msgstr "1年前も同じ家に住んでいましたか？"
+msgstr "1年前も同じ家に住んでいましたか?"
 
 #: Form/form_us.xml.h:930
 msgid "Farm in Apr 1949?"
-msgstr "1949年4月に農場？"
+msgstr "1949年4月に農場?"
 
 #: Form/form_us.xml.h:931
 msgid "Was he living on a farm a year ago?"
-msgstr "1年前は農場に住んでいましたか？"
+msgstr "1年前は農場に住んでいましたか?"
 
 #: Form/form_us.xml.h:932
 msgid "Same county in Apr 1949?"
-msgstr "1949年4月と同じ郡？"
+msgstr "1949年4月と同じ郡?"
 
 #: Form/form_us.xml.h:933
 msgid "Was he living in this same county a year ago?"
-msgstr "1年前も同じ郡に住んでいましたか？"
+msgstr "1年前も同じ郡に住んでいましたか?"
 
 #: Form/form_us.xml.h:935
 msgid "State or foreign country"
@@ -12586,11 +12513,11 @@ msgstr "州または外国"
 
 #: Form/form_us.xml.h:937
 msgid "What country was his father born in?"
-msgstr "父親はどの国で生まれましたか？"
+msgstr "父親はどの国で生まれましたか?"
 
 #: Form/form_us.xml.h:939
 msgid "What country was his mother born in?"
-msgstr "母親はどの国で生まれましたか？"
+msgstr "母親はどの国で生まれましたか?"
 
 #: Form/form_us.xml.h:940
 msgid "Highest grade attended"
@@ -12598,27 +12525,27 @@ msgstr "最高就学学年"
 
 #: Form/form_us.xml.h:941
 msgid "What is the highest grade of school that he has attended?"
-msgstr "彼が就学した最高学年は？"
+msgstr "彼が就学した最高学年は?"
 
 #: Form/form_us.xml.h:942
 msgid "Completed?"
-msgstr "修了した？"
+msgstr "修了した?"
 
 #: Form/form_us.xml.h:943
 msgid "Did he finish this grade?"
-msgstr "その学年を修了しましたか？"
+msgstr "その学年を修了しましたか?"
 
 #: Form/form_us.xml.h:944
 msgid "Attended school since Feb 1, 1950?"
-msgstr "1950年2月1日以降に就学？"
+msgstr "1950年2月1日以降に就学?"
 
 #: Form/form_us.xml.h:945
 msgid "Has he attended school at any time since February 1st?"
-msgstr "2月1日以降に学校に通ったことはありますか？"
+msgstr "2月1日以降に学校に通ったことはありますか?"
 
 #: Form/form_us.xml.h:946
 msgid "How many weeks has he been looking for work?"
-msgstr "何週間求職していますか？"
+msgstr "何週間求職していますか?"
 
 #: Form/form_us.xml.h:947
 msgid "# weeks worked in 1949"
@@ -12628,7 +12555,7 @@ msgstr "1949年の就業週数"
 msgid ""
 "Last year, in how many weeks did this person do any work at all, not "
 "counting work around the house?"
-msgstr "昨年、この人は家事以外の仕事を何週間しましたか？"
+msgstr "昨年、この人は家事以外の仕事を何週間しましたか?"
 
 #: Form/form_us.xml.h:949
 msgid "Amount of wages/salary in 1949"
@@ -12638,7 +12565,7 @@ msgstr "1949年の賃金/給与額"
 msgid ""
 "Last year, how much money did he earn working as an employee for wages or "
 "salary?"
-msgstr "昨年、従業員としての賃金や給与でいくら稼ぎましたか？"
+msgstr "昨年、従業員としての賃金や給与でいくら稼ぎましたか?"
 
 #: Form/form_us.xml.h:951
 msgid "Amount of money from own business in 1949"
@@ -12648,7 +12575,7 @@ msgstr "1949年の自営業からの収入額"
 msgid ""
 "Last year, how much money did he earn working in his own business, "
 "professional practice, or farm?"
-msgstr "昨年、自営業、専門職、または農場でいくら稼ぎましたか？"
+msgstr "昨年、自営業、専門職、または農場でいくら稼ぎましたか?"
 
 #: Form/form_us.xml.h:953
 msgid "Amount of other income in 1949"
@@ -12660,7 +12587,7 @@ msgid ""
 "allowances, pensions, rents, or other income?"
 msgstr ""
 "昨年、利子、配当、退役軍人手当、年金、賃貸料、その他の収入でいくら受け取りま"
-"したか？"
+"したか?"
 
 #: Form/form_us.xml.h:955
 msgid "Relatives in household wages/salary in 1949"
@@ -12670,7 +12597,7 @@ msgstr "世帯内の親族の1949年賃金/給与"
 msgid ""
 "Last year, how much money did his relatives in this household earn working "
 "for wages or salary?"
-msgstr "昨年、この世帯の親族は賃金や給与でいくら稼ぎましたか？"
+msgstr "昨年、この世帯の親族は賃金や給与でいくら稼ぎましたか?"
 
 #: Form/form_us.xml.h:957
 msgid "Relatives in household earnings from own business in 1949"
@@ -12680,7 +12607,7 @@ msgstr "世帯内の親族の1949年自営業収入"
 msgid ""
 "Last year, how much money did his relatives in this household earn in own "
 "business, professional practice, or farm?"
-msgstr "昨年、この世帯の親族は自営業、専門職、または農場でいくら稼ぎましたか？"
+msgstr "昨年、この世帯の親族は自営業、専門職、または農場でいくら稼ぎましたか?"
 
 #: Form/form_us.xml.h:959
 msgid "Relatives in household other income in 1949"
@@ -12692,35 +12619,35 @@ msgid ""
 "interest, dividends, veteran’s allowances, pensions, rents, or other income?"
 msgstr ""
 "昨年、この世帯の親族は利子、配当、退役軍人手当、年金、賃貸料、その他の収入で"
-"いくら受け取りましたか？"
+"いくら受け取りましたか?"
 
 #: Form/form_us.xml.h:961
 msgid "WWII Veteran?"
-msgstr "第二次世界大戦の退役軍人？"
+msgstr "第二次世界大戦の退役軍人?"
 
 #: Form/form_us.xml.h:962
 msgid "Did he ever serve in the U. S. Armed Forces during World War II?"
-msgstr "第二次世界大戦中に米軍に従軍したことはありますか？"
+msgstr "第二次世界大戦中に米軍に従軍したことはありますか?"
 
 #: Form/form_us.xml.h:963
 msgid "WWI Veteran?"
-msgstr "第一次世界大戦の退役軍人？"
+msgstr "第一次世界大戦の退役軍人?"
 
 #: Form/form_us.xml.h:964
 msgid "World War I?"
-msgstr "第一次世界大戦？"
+msgstr "第一次世界大戦?"
 
 #: Form/form_us.xml.h:965
 msgid "Any other time, including present service?"
-msgstr "現在の服務を含む他の時期？"
+msgstr "現在の服務を含む他の時期?"
 
 #: Form/form_us.xml.h:966
 msgid "What kind of work did this person do in his last job?"
-msgstr "この人は最後の仕事でどのような仕事をしていましたか？"
+msgstr "この人は最後の仕事でどのような仕事をしていましたか?"
 
 #: Form/form_us.xml.h:967
 msgid "What kind of business or industry did he work in?"
-msgstr "彼はどのような事業または産業で働いていましたか？"
+msgstr "彼はどのような事業または産業で働いていましたか?"
 
 #: Form/form_us.xml.h:968
 msgid "Class of worker [last job]"
@@ -12728,7 +12655,7 @@ msgstr "労働者階級 [最後の仕事]"
 
 #: Form/form_us.xml.h:969
 msgid "Has this person been married more than once?"
-msgstr "この人は複数回結婚したことがありますか？"
+msgstr "この人は複数回結婚したことがありますか?"
 
 #: Form/form_us.xml.h:970
 msgid "# years since marriage ended"
@@ -12738,11 +12665,11 @@ msgstr "結婚終了からの年数"
 msgid ""
 "How many years since this person was married, widowed, divorced, or "
 "separated?"
-msgstr "この人が結婚、寡夫/寡婦、離婚、別居してから何年経ちますか？"
+msgstr "この人が結婚、寡夫/寡婦、離婚、別居してから何年経ちますか?"
 
 #: Form/form_us.xml.h:972
 msgid "How many children has she ever borne, not counting stillbirths?"
-msgstr "死産を除いて、彼女は何人の子供を産みましたか？"
+msgstr "死産を除いて、彼女は何人の子供を産みましたか?"
 
 #: Form/form_us.xml.h:973
 msgid "Census Date"
@@ -12818,7 +12745,7 @@ msgstr "の指揮下で"
 
 #: Form/form_us.xml.h:1001
 msgid "Other service, if any"
-msgstr "その他の服務 (ある場合）"
+msgstr "その他の服務 (ある場合)"
 
 #: Form/form_us.xml.h:1004
 msgid "No. on pension roll"
@@ -13030,7 +12957,7 @@ msgstr "国勢調査年内の失業月数"
 
 #: Form/form_us.xml.h:1080
 msgid "(Day of the Enumerator's visit) sick or temporarily disabled"
-msgstr "(調査員訪問日）病気または一時的障害"
+msgstr "(調査員訪問日)病気または一時的障害"
 
 #: Form/form_us.xml.h:1082 Form/form_us.xml.h:1213
 msgid "Deaf and Dumb"
@@ -13042,11 +12969,11 @@ msgstr "負傷、障害、寝たきり、またはその他の障害。"
 
 #: Form/form_us.xml.h:1087
 msgid "Can not read"
-msgstr "読み書き不能"
+msgstr "読めない"
 
 #: Form/form_us.xml.h:1088
 msgid "Can not write"
-msgstr "書き書き不能"
+msgstr "書けない"
 
 #: Form/form_us.xml.h:1103
 msgid "Street Name"
@@ -13066,11 +12993,11 @@ msgstr "市域内または市域外"
 
 #: Form/form_us.xml.h:1137 Form/form_us.xml.h:1153
 msgid "Age Male"
-msgstr "年齢 (男性）"
+msgstr "年齢 (男性)"
 
 #: Form/form_us.xml.h:1138 Form/form_us.xml.h:1154
 msgid "Age Female"
-msgstr "年齢 (女性）"
+msgstr "年齢 (女性)"
 
 #: Form/form_us.xml.h:1140
 msgid "Relation to Family"
@@ -13272,7 +13199,7 @@ msgstr "春小麦のエーカー"
 
 #: Form/form_us.xml.h:1225
 msgid "Bushels harvested (spring wheat)"
-msgstr "収穫量 (春小麦、(ブッシェル)）"
+msgstr "収穫量 (春小麦、(ブッシェル))"
 
 #: Form/form_us.xml.h:1226
 msgid "Acres of winter wheat"
@@ -13280,7 +13207,7 @@ msgstr "冬小麦のエーカー"
 
 #: Form/form_us.xml.h:1227
 msgid "Bushels harvested (winter wheat)"
-msgstr "収穫量 (冬小麦、(ブッシェル)）"
+msgstr "収穫量 (冬小麦、(ブッシェル))"
 
 #: Form/form_us.xml.h:1228
 msgid "Acres of oats"
@@ -13288,7 +13215,7 @@ msgstr "オート麦のエーカー"
 
 #: Form/form_us.xml.h:1229
 msgid "Bushels harvested (oats)"
-msgstr "収穫量 (オート麦、(ブッシェル)）"
+msgstr "収穫量 (オート麦、(ブッシェル))"
 
 #: Form/form_us.xml.h:1230
 msgid "Acres of corn"
@@ -13296,7 +13223,7 @@ msgstr "トウモロコシのエーカー"
 
 #: Form/form_us.xml.h:1231
 msgid "Bushels harvested (corn)"
-msgstr "収穫量 (トウモロコシ、(ブッシェル)）"
+msgstr "収穫量 (トウモロコシ、(ブッシェル))"
 
 #: Form/form_us.xml.h:1232
 msgid "Acres of potatoes"
@@ -13304,7 +13231,7 @@ msgstr "ジャガイモのエーカー"
 
 #: Form/form_us.xml.h:1233
 msgid "Bushels harvested (potatoes)"
-msgstr "収穫量 (ジャガイモ、(ブッシェル)）"
+msgstr "収穫量 (ジャガイモ、(ブッシェル))"
 
 #: Form/form_us.xml.h:1234
 msgid "Number of hogs sold"
@@ -13362,23 +13289,23 @@ msgstr "通りと番地"
 
 #: Form/form_us.xml.h:1259
 msgid "Place of birth, county"
-msgstr "出生地 (郡）"
+msgstr "出生地 (郡)"
 
 #: Form/form_us.xml.h:1260
 msgid "Place of birth, state or territory"
-msgstr "出生地 (州または準州）"
+msgstr "出生地 (州または準州)"
 
 #: Form/form_us.xml.h:1261
 msgid "Place of birth, country"
-msgstr "出生地 (国）"
+msgstr "出生地 (国)"
 
 #: Form/form_us.xml.h:1262
 msgid "Father (N, Native; F, Foreign)"
-msgstr "父親 (N、米国生まれ; F、外国生まれ）"
+msgstr "父親 (N、米国生まれ; F、外国生まれ)"
 
 #: Form/form_us.xml.h:1263
 msgid "Mother (N, Native; F, Foreign)"
-msgstr "母親 (N、米国生まれ; F、外国生まれ）"
+msgstr "母親 (N、米国生まれ; F、外国生まれ)"
 
 #: Form/form_us.xml.h:1264 Form/form_us.xml.h:1292
 msgid "Subject to military duty"
@@ -13402,7 +13329,7 @@ msgstr "10歳以上で読み書き不能"
 
 #: Form/form_us.xml.h:1269
 msgid "Over 10 and can read but not write"
-msgstr "10歳以上で読み書き可だが書き書き不能"
+msgstr "10歳以上で読めるが書けない"
 
 #: Form/form_us.xml.h:1270
 msgid "Deaf and dumb, blind, insane, or idiotic"
@@ -13442,11 +13369,11 @@ msgstr "未婚、寡夫/寡婦、または離婚"
 
 #: Form/form_us.xml.h:1288
 msgid "Father (N,Native; F,Foreign)"
-msgstr "父親 (N、米国生まれ; F、外国生まれ）"
+msgstr "父親 (N、米国生まれ; F、外国生まれ)"
 
 #: Form/form_us.xml.h:1289
 msgid "Mother (N,Native; F,Foreign)"
-msgstr "母親 (N、米国生まれ; F、外国生まれ）"
+msgstr "母親 (N、米国生まれ; F、外国生まれ)"
 
 #: Form/form_us.xml.h:1291
 msgid "Religious belief"
@@ -13454,7 +13381,7 @@ msgstr "宗教信仰"
 
 #: Form/form_us.xml.h:1294
 msgid "Can read but not write, over 10 years old"
-msgstr "10歳以上で読み書き可だが書き書き不能"
+msgstr "10歳以上で読めるが書けない"
 
 #: Form/form_us.xml.h:1295
 msgid "Cannot read or write, over 10 years old"
@@ -13524,11 +13451,11 @@ msgstr "郵便局住所"
 
 #: Form/form_us.xml.h:1321
 msgid "Can you read?"
-msgstr "読み書きできますか？"
+msgstr "読めますか?"
 
 #: Form/form_us.xml.h:1323
 msgid "Can you write?"
-msgstr "書き書きできますか？"
+msgstr "書けますか?"
 
 #: Form/form_us.xml.h:1325
 msgid "Color, White-Black-Yellow-Red"
@@ -13536,27 +13463,27 @@ msgstr "色、白人-黒人-黄色人種-赤人種"
 
 #: Form/form_us.xml.h:1328
 msgid "Place of Birth-Self"
-msgstr "出生地 (本人）"
+msgstr "出生地 (本人)"
 
 #: Form/form_us.xml.h:1329
 msgid "Place of birth, Self"
-msgstr "出生地 (本人）"
+msgstr "出生地 (本人)"
 
 #: Form/form_us.xml.h:1330
 msgid "Place of Birth-Mother"
-msgstr "出生地 (母親）"
+msgstr "出生地 (母親)"
 
 #: Form/form_us.xml.h:1331
 msgid "Place of birth, Mother"
-msgstr "出生地 (母親）"
+msgstr "出生地 (母親)"
 
 #: Form/form_us.xml.h:1332
 msgid "Place of Birth-Father"
-msgstr "出生地 (父親）"
+msgstr "出生地 (父親)"
 
 #: Form/form_us.xml.h:1333
 msgid "Place of birth, Father"
-msgstr "出生地 (父親）"
+msgstr "出生地 (父親)"
 
 #: Form/form_us.xml.h:1334
 msgid "Own home or farm"
@@ -13564,7 +13491,7 @@ msgstr "自宅または農場を所有"
 
 #: Form/form_us.xml.h:1335
 msgid "Do you own your home or farm?"
-msgstr "自宅または農場を所有していますか？"
+msgstr "自宅または農場を所有していますか?"
 
 #: Form/form_us.xml.h:1336
 msgid "Value of home or farm"
@@ -13572,7 +13499,7 @@ msgstr "自宅または農場の価値"
 
 #: Form/form_us.xml.h:1337
 msgid "Entire value of home or farm?"
-msgstr "自宅または農場の総価値？"
+msgstr "自宅または農場の総価値?"
 
 #: Form/form_us.xml.h:1338
 msgid "How much incumberance on home or farm"
@@ -13580,7 +13507,7 @@ msgstr "自宅または農場の負債額"
 
 #: Form/form_us.xml.h:1339
 msgid "How much incumberance on your home or farm?"
-msgstr "自宅または農場の負債額は？"
+msgstr "自宅または農場の負債額は?"
 
 #: Form/form_us.xml.h:1340
 msgid "If foreign born, are you naturalized"
@@ -13588,7 +13515,7 @@ msgstr "外国生まれの場合、帰化していますか"
 
 #: Form/form_us.xml.h:1341
 msgid "If you are foreign born, are you naturalized?"
-msgstr "外国生まれの場合、帰化していますか？"
+msgstr "外国生まれの場合、帰化していますか?"
 
 #: Form/form_us.xml.h:1342 Form/form_us.xml.h:1343 Form/form_us.xml.h:1421
 #: Form/form_us.xml.h:2110 Form/form_us.xml.h:2148 Form/form_us.xml.h:2186
@@ -13829,7 +13756,7 @@ msgstr "白痴"
 
 #: Form/form_us.xml.h:1420
 msgid "Naturalized if foreign born?"
-msgstr "外国生まれの場合、帰化している？"
+msgstr "外国生まれの場合、帰化している?"
 
 #: Form/form_us.xml.h:1429 Form/form_us.xml.h:2332
 msgid "Color or Race"
@@ -13901,11 +13828,11 @@ msgstr "1924年の就学月数"
 
 #: Form/form_us.xml.h:1450
 msgid "Able to Read"
-msgstr "読み書き可"
+msgstr "読める"
 
 #: Form/form_us.xml.h:1451
 msgid "Able to Write"
-msgstr "書き書き可"
+msgstr "書ける"
 
 #: Form/form_us.xml.h:1454
 msgid "Father's Place of Birth"
@@ -14030,27 +13957,27 @@ msgstr "学校"
 
 #: Form/form_us.xml.h:1508
 msgid "Cannot Read 10-15"
-msgstr "読み書き不能 10-15歳"
+msgstr "読めない 10-15歳"
 
 #: Form/form_us.xml.h:1509
 msgid "Cannot Read 15-21"
-msgstr "読み書き不能 15-21歳"
+msgstr "読めない 15-21歳"
 
 #: Form/form_us.xml.h:1510
 msgid "Cannot Read 21+"
-msgstr "読み書き不能 21歳以上"
+msgstr "読めない 21歳以上"
 
 #: Form/form_us.xml.h:1511
 msgid "Cannot Write 10-15"
-msgstr "書き書き不能 10-15歳"
+msgstr "書けない 10-15歳"
 
 #: Form/form_us.xml.h:1512
 msgid "Cannot Write 15-21"
-msgstr "書き書き不能 15-21歳"
+msgstr "書けない 15-21歳"
 
 #: Form/form_us.xml.h:1513
 msgid "Cannot Write 21+"
-msgstr "書き書き不能 21歳以上"
+msgstr "書けない 21歳以上"
 
 #: Form/form_us.xml.h:1514
 msgid "Cannot Read/Write 10-15"
@@ -14547,35 +14474,35 @@ msgstr "生産物 ライ麦 (ブッシェル)"
 
 #: Form/form_us.xml.h:1760 Form/form_us.xml.h:1833
 msgid "Products Lbs. Tobacco"
-msgstr "生産物 タバコ (ポンド）"
+msgstr "生産物 タバコ (ポンド)"
 
 #: Form/form_us.xml.h:1761 Form/form_us.xml.h:1834
 msgid "Products Lbs. Wool"
-msgstr "生産物 羊毛 (ポンド）"
+msgstr "生産物 羊毛 (ポンド)"
 
 #: Form/form_us.xml.h:1762 Form/form_us.xml.h:1835
 msgid "Products Lbs. Sugar"
-msgstr "生産物 砂糖 (ポンド）"
+msgstr "生産物 砂糖 (ポンド)"
 
 #: Form/form_us.xml.h:1763 Form/form_us.xml.h:1836
 msgid "Products Tons Hay"
-msgstr "生産物 干草 (トン）"
+msgstr "生産物 干草 (トン)"
 
 #: Form/form_us.xml.h:1764 Form/form_us.xml.h:1837
 msgid "Products Tons Hemp"
-msgstr "生産物 麻 (トン）"
+msgstr "生産物 麻 (トン)"
 
 #: Form/form_us.xml.h:1765 Form/form_us.xml.h:1838
 msgid "Products Galls. Whiskey"
-msgstr "生産物 ウイスキー (ガロン）"
+msgstr "生産物 ウイスキー (ガロン)"
 
 #: Form/form_us.xml.h:1766 Form/form_us.xml.h:1839
 msgid "Products Galls. Wine"
-msgstr "生産物 ワイン (ガロン）"
+msgstr "生産物 ワイン (ガロン)"
 
 #: Form/form_us.xml.h:1767 Form/form_us.xml.h:1840
 msgid "Products Galls. Molasses"
-msgstr "生産物 糖蜜 (ガロン）"
+msgstr "生産物 糖蜜 (ガロン)"
 
 #: Form/form_us.xml.h:1768 Form/form_us.xml.h:1841
 msgid "Total Population"
@@ -14591,7 +14518,7 @@ msgstr "住宅価値"
 
 #: Form/form_us.xml.h:1885 Form/form_us.xml.h:1907 Form/form_us.xml.h:1936
 msgid "Birthplace (NY County or other)"
-msgstr "出生地 (NY郡またはその他）"
+msgstr "出生地 (NY郡またはその他)"
 
 #: Form/form_us.xml.h:1888
 msgid "Years resident in this city or town"
@@ -14664,7 +14591,7 @@ msgstr "以前海軍に在籍"
 
 #: Form/form_us.xml.h:1941
 msgid "Usual place of employment (if not same city/town)"
-msgstr "通常の就業場所 (同じ都市/町でない場合）"
+msgstr "通常の就業場所 (同じ都市/町でない場合)"
 
 #: Form/form_us.xml.h:1949
 msgid "Election District of the Town of"
@@ -14868,19 +14795,19 @@ msgstr "離婚"
 
 #: Form/form_us.xml.h:2067
 msgid "Can Read"
-msgstr "読み書き可"
+msgstr "読める"
 
 #: Form/form_us.xml.h:2068
 msgid "Can't Read"
-msgstr "読み書き不能"
+msgstr "読めない"
 
 #: Form/form_us.xml.h:2069
 msgid "Can Write"
-msgstr "書き書き可"
+msgstr "書ける"
 
 #: Form/form_us.xml.h:2070
 msgid "Can't Write"
-msgstr "書き書き不能"
+msgstr "書けない"
 
 #: Form/form_us.xml.h:2083 Form/form_us.xml.h:2120 Form/form_us.xml.h:2158
 #: Form/form_us.xml.h:2196
@@ -15089,11 +15016,11 @@ msgstr "人種/色"
 #: Form/form_us.xml.h:2380
 msgid ""
 "STOP! If you want this record to be attached to the Parents move to Father."
-msgstr "停止！この記録を両親に添付したい場合は、父親に移動してください。"
+msgstr "停止!この記録を両親に添付したい場合は、父親に移動してください。"
 
 #: Form/form_us.xml.h:2381
 msgid "Mother (Maiden Name)"
-msgstr "母親 (旧姓）"
+msgstr "母親 (旧姓)"
 
 #: Form/form_us.xml.h:2382
 msgid "Residence of Parents"
@@ -15221,7 +15148,7 @@ msgstr "議会地区"
 
 #: Form/form_us.xml.h:2519
 msgid "Card (A, B, or C)"
-msgstr "カード (A、B、またはC）"
+msgstr "カード (A、B、またはC)"
 
 #: Form/form_us.xml.h:2521
 msgid "Serial No."
@@ -15237,7 +15164,7 @@ msgstr "命令番号"
 
 #: Form/form_us.xml.h:2525
 msgid "Age in yrs."
-msgstr "年齢 (歳）"
+msgstr "年齢 (歳)"
 
 #: Form/form_us.xml.h:2526
 msgid "Home Address"
@@ -15249,7 +15176,7 @@ msgstr "生来の市民、帰化市民、外国人、非市民、または市民
 
 #: Form/form_us.xml.h:2531
 msgid "If not a citizen, of what nation are you a citizen or subject?"
-msgstr "市民でない場合、どの国の市民または臣民ですか？"
+msgstr "市民でない場合、どの国の市民または臣民ですか?"
 
 #: Form/form_us.xml.h:2533 Form/form_us.xml.h:2575
 msgid "Employer's Name & address"
@@ -15269,15 +15196,15 @@ msgid ""
 "under 12, solely dependent on your support (specify which)?"
 msgstr ""
 "あなたの扶養に完全に依存している父親、母親、妻、12歳未満の子供、または12歳未"
-"満の姉妹・兄弟がいますか (該当するものを指定）？"
+"満の姉妹・兄弟がいますか (該当するものを指定)?"
 
 #: Form/form_us.xml.h:2538
 msgid "What military service have you had? (Branch, Years, Nation or State)"
-msgstr "どのような軍役経験がありますか？ (服務種別、年数、国または州）"
+msgstr "どのような軍役経験がありますか? (服務種別、年数、国または州)"
 
 #: Form/form_us.xml.h:2539
 msgid "Do you claim exemption from draft (specify grounds)"
-msgstr "徴兵免除を主張しますか (理由を指定）"
+msgstr "徴兵免除を主張しますか (理由を指定)"
 
 #: Form/form_us.xml.h:2540
 msgid "Race "
@@ -15334,17 +15261,18 @@ msgid ""
 msgstr ""
 "左下隅に記載\n"
 "      D.S.S. Form 1\n"
-"         (男性 21-31歳）\n"
+"         (男性 21-31歳)\n"
 "      D.S.S. Form 1 (Rev. 6-9-41)\n"
-"         (最初の登録以降に21歳になった男性）\n"
+"         (最初の登録以降に21歳になった男性)\n"
 "      D.S.S. Form 1 (Rev. 1/1/42)\n"
-"         (1897年2月17日から1921年12月31日生まれの男性）\n"
+"         (1897年2月17日から1921年12月31日生まれの男性)\n"
 "      D.S.S. Form 1 (Rev. 4/1/42)\n"
-"         (男性 45-64歳）\n"
+"         (男性 45-64歳)\n"
 "      D.S.S. Form 1 (Rev. 6/1/42)\n"
-"         (男性 18-20歳）\n"
+"         (男性 18-20歳)\n"
 "      D.S.S. Form 1 (Rev. 11/16/42)\n"
-"         (前回の登録以降に18歳になった男性）"
+"         (前回の登録以降に\n"
+"         18歳になった男性)"
 
 #: Form/form_us.xml.h:2554
 msgid "(1) First, Middle, Last"
@@ -15420,7 +15348,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:2569
 msgid "Who will always know your address (Name & Address)"
-msgstr "常にあなたの住所を知っている人 (名前と住所）"
+msgstr "常にあなたの住所を知っている人 (名前と住所)"
 
 #: Form/form_us.xml.h:2570
 msgid ""
@@ -15898,11 +15826,11 @@ msgstr ""
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
-msgstr "GEDCOM拡張 (GED2）をエクスポート"
+msgstr "GEDCOM拡張 (GED2)をエクスポート"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:33
 msgid "GEDCOM Extensions (GED2)"
-msgstr "GEDCOM拡張 (GED2）"
+msgstr "GEDCOM拡張 (GED2)"
 
 #: GedcomExtensions/GedcomExtensions.gpr.py:34
 msgid "Extensions to the common GEDCOM format."
@@ -16123,9 +16051,9 @@ msgid ""
 "as measured along the equator\n"
 "(includes latitude distortion)"
 msgstr ""
-"千鳥配置の半径 (ヘクトメートル）\n"
+"千鳥配置の半径 (ヘクトメートル)\n"
 "赤道に沿って測定\n"
-" (緯度による歪みを含む）"
+" (緯度による歪みを含む)"
 
 #: GeoTimeLines/GeoTimeLines.py:1794
 msgid ""
@@ -16227,7 +16155,7 @@ msgstr "GetGOV エラー : %s"
 
 #: GetGOV/getgov.py:421
 msgid "GOV link"
-msgstr ""
+msgstr "GOVリンク"
 
 #: GetGOV/getgov.py:428
 #, python-format
@@ -16329,10 +16257,8 @@ msgid "Clear conversation and context"
 msgstr "会話とコンテキストをクリア"
 
 #: GrampsAssistant/grampsassistant.py:220
-#, fuzzy
-#| msgid "Gramps Assistant settings"
 msgid "Open the Gramps Assistant wiki page"
-msgstr "Gramps アシスタント設定"
+msgstr "Gramps AssistantのWikiページを開く"
 
 #: GrampsAssistant/grampsassistant.py:396
 #: GrampsAssistant/grampsassistant.py:760
@@ -16378,7 +16304,7 @@ msgid ""
 "the environment variable name for your API key (e.g. OPENAI_API_KEY)."
 msgstr ""
 "APIキーエラー: このプロバイダーはAPIキーを必要とします。設定を開き、APIキーの"
-"環境変数名を入力してください (例: OPENAI_API_KEY）。"
+"環境変数名を入力してください (例: OPENAI_API_KEY)。"
 
 #: GrampsAssistant/grampsassistant.py:984
 msgid "Done.\n"
@@ -16390,7 +16316,7 @@ msgstr "システムプロンプト:"
 
 #: GrampsAssistant/grampsassistant.py:1228
 msgid "Simplify tools (recommended for smaller/local models)"
-msgstr "ツールを簡素化 (小規模/ローカルモデルに推奨）"
+msgstr "ツールを簡素化 (小規模/ローカルモデルに推奨)"
 
 #: GrampsAssistant/grampsassistant.py:1232
 msgid ""
@@ -16414,16 +16340,16 @@ msgstr ""
 
 #: GrampsAssistant/grampsassistant.py:1268
 msgid "model name (leave blank for LM Studio / llama.cpp)"
-msgstr "モデル名 (LM Studio / llama.cppの場合は空白）"
+msgstr "モデル名 (LM Studio / llama.cppの場合は空白)"
 
 #: GrampsAssistant/grampsassistant.py:1271
 msgid ""
 "Model to request from the local server. Required for Ollama (e.g. llama3.1). "
 "Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
 msgstr ""
-"ローカルサーバーに要求するモデル。Ollamaの場合は必須 (例: llama3.1）。LM "
-"Studioまたはllama.cppの場合は空白にします。これらの場合は読み込まれているモデ"
-"ルが使用されます。"
+"ローカルサーバーに要求するモデル。Ollamaの場合は必須 (例: llama3.1)。LM "
+"Studioまたはllama.cppの場合は空白にします。これらの場合は読み込まれている"
+"モデルが使用されます。"
 
 #: GrampsAssistant/grampsassistant.py:1278
 #: GrampsAssistant/grampsassistant.py:1322
@@ -16464,7 +16390,7 @@ msgstr "GrampsChat"
 
 #: GrampsChat/GrampsChat.gpr.py:5
 msgid "AI Chatbot Gramplet (requires connecting to an LLM service)"
-msgstr "AIチャットボットグランプレット (LLMサービスへの接続が必要）"
+msgstr "AIチャットボットグランプレット (LLMサービスへの接続が必要)"
 
 #: GrampsWebApiDb/grampswebapidb.gpr.py:24
 msgid "GrampsWebApiDb"
@@ -16479,8 +16405,8 @@ msgid ""
 "Use a Gramps Web API server (e.g. gramps-connect or Gramps Web) as a live "
 "database, mirrored locally for speed."
 msgstr ""
-"Gramps Web APIサーバー (例: gramps-connect または Gramps Web）をライブデータ"
-"ベースとして使用し、速度のためにローカルにミラーリングします。"
+"Gramps Web APIサーバー (例: gramps-connect または Gramps Web)を"
+"ライブデータベースとして使用し、速度のためにローカルにミラーリングします。"
 
 #: GrampsWebApiDb/grampswebapidb.py:447
 msgid ""
@@ -16490,9 +16416,9 @@ msgid ""
 "grant this one access."
 msgstr ""
 "GRAMPS_WEB_API_KEY で認証しているアカウントには、この操作に対するサーバー上の"
-"権限がありません (HTTP 403 Forbidden）。十分な権限を持つアカウントのキーを生"
-"成するか、サーバー管理者にこのアカウントへのアクセス権の付与を依頼してくださ"
-"い。"
+"権限がありません (HTTP 403 Forbidden)。十分な権限を持つアカウントのキーを生成"
+"するか、サーバー管理者にこのアカウントへのアクセス権の付与を依頼してください"
+"。"
 
 #: GrampsWebApiDb/grampswebapidb.py:656
 #, python-format
@@ -16504,12 +16430,12 @@ msgid ""
 "that -- reusing this one would mix its existing local data with the other "
 "account's."
 msgstr ""
-"この家系図の名前は \"%(actual)s\" ですが、GRAMPS_WEB_API_KEY は現在 "
-"\"%(expected)s\" として認証されています。このアカウントをミラーリングすること"
-"を意図している場合は、この家系図の名前を \"%(expected_typeable)s\" に変更する"
-"か (家系図 -> 家系図の管理）、すでにその名前の家系図を開く/作成してください "
-"-- これを再利用すると、既存のローカルデータと他のアカウントのデータが混ざって"
-"しまいます。"
+"この家系図の名前は \"%(actual)s\" ですが、GRAMPS_WEB_API_KEY は現在 \"%"
+"(expected)s\" として認証されています。このアカウントをミラーリングすることを"
+"意図している場合は、この家系図の名前を \"%(expected_typeable)s\" に変更する"
+"か (家系図 -> 家系図の管理)、すでにその名前の家系図を開く/作成してくださ"
+"い -- これを再利用すると、既存のローカルデータと他のアカウントのデータが混ざ"
+"ってしまいます。"
 
 #: GrampsWebApiDb/grampswebapidb.py:703
 #, python-format
@@ -16520,6 +16446,11 @@ msgid ""
 "this Family Tree. Opening it as-is would leave the local mirror silently "
 "incomplete or unable to save changes back."
 msgstr ""
+"GRAMPS_WEB_API_KEYで認証されているアカウントに、このアドオンが必要とする"
+"サーバー権限が不足しています: %(missing)s。サーバー上で少なくとも\"%(role)"
+"s\"ロールを付与するか(または管理者に依頼して)、この家系図を開き直してください"
+"。このまま開くと、ローカルミラーが気付かないうちに不完全な状態になるか、変更"
+"をサーバーに保存できなくなります。"
 
 #: GrampsWebApiDb/grampswebapidb.py:741
 #, python-format
@@ -16529,6 +16460,11 @@ msgid ""
 "history in a format it cannot read. Upgrade the Gramps installation behind "
 "the Gramps Web API server (or ask its administrator to)."
 msgstr ""
+"このサーバーはGramps %(actual)sで動作していますが、このアドオンにはGramps %"
+"(required)s以降で動作するサーバーが必要です。古いサーバーはトランザクション履"
+"歴を、このアドオンが読み取れない形式でシリアライズします。Gramps Web API"
+"サーバーの背後にあるGrampsをアップグレードしてください(または管理者に依頼して"
+"ください)。"
 
 #: GrampsWebApiDb/grampswebapidb.py:1008
 msgid "Retry local change after server conflict"
@@ -16607,19 +16543,17 @@ msgstr "APIキーを生成中…"
 #: GrampsWebApiDb/mintapikeytool.py:260
 #, python-format
 msgid "Login failed (HTTP %d): check your username and password."
-msgstr ""
-"ログインに失敗しました (HTTP %d）: ユーザー名とパスワードを確認してください。"
+msgstr "ログインに失敗しました (HTTP %d): ユーザー名とパスワードを確認してください。"
 
 #: GrampsWebApiDb/mintapikeytool.py:263
 #, python-format
 msgid "Server returned an error (HTTP %d %s): check the Server URL."
-msgstr ""
-"サーバーがエラーを返しました (HTTP %d %s）: サーバーURLを確認してください。"
+msgstr "サーバーがエラーを返しました (HTTP %d %s): サーバーURLを確認してください。"
 
 #: GrampsWebApiDb/mintapikeytool.py:271
 #, python-format
 msgid "Could not reach the server: check the Server URL. (%s)"
-msgstr "サーバーに到達できませんでした: サーバーURLを確認してください。 (%s）"
+msgstr "サーバーに到達できませんでした: サーバーURLを確認してください。 (%s)"
 
 #: GrampsWebApiDb/mintapikeytool.py:274
 #, python-format
@@ -16686,7 +16620,7 @@ msgstr "接続(_O)"
 
 #: GrampsWebSync/grampswebsync.py:371
 msgid "Forget this server?"
-msgstr "このサーバーを忘れますか？"
+msgstr "このサーバーを忘れますか?"
 
 #: GrampsWebSync/grampswebsync.py:373
 msgid ""
@@ -16761,12 +16695,12 @@ msgstr ""
 "することができます。\n"
 "\n"
 "このツールは、2つのツリーが互いに派生したものであることを前提としています。つ"
-"まり、一方のツリーが他方のGramps XML (GEDCOMではない！）エクスポートから作成"
-"されたものです。\n"
+"まり、一方のツリーが他方のGramps XML (GEDCOMではない!)エクスポートから作成さ"
+"れたものです。\n"
 "\n"
 "同期が成功すると、2つのツリーは同一になります。変更はタイムスタンプに基づいて"
-"伝播されます。ローカルまたはリモートのツリーに変更を加える前に確認を求めるプ"
-"ロンプトが表示されます。\n"
+"伝播されます。ローカルまたはリモートのツリーに変更を加える前に確認を求める"
+"プロンプトが表示されます。\n"
 "\n"
 "代わりに、手動で修正するオプションを付けて2つの大幅に異なるツリーをマージした"
 "い場合は、代わりにインポートマージツールを使用してください。"
@@ -17018,57 +16952,57 @@ msgstr ""
 #, python-format
 msgid "Will change on this computer (%s object)"
 msgid_plural "Will change on this computer (%s objects)"
-msgstr[0] "このコンピュータで変更されます (%s オブジェクト）"
-msgstr[1] ""
+msgstr[0] "このコンピュータで変更されます (%s オブジェクト)"
+msgstr[1] "このコンピュータで変更されます (%s オブジェクト)"
 
 #: GrampsWebSync/presentation.py:582
 #, python-format
 msgid "Will change on the server (%s object)"
 msgid_plural "Will change on the server (%s objects)"
-msgstr[0] "サーバーで変更されます (%s オブジェクト）"
-msgstr[1] ""
+msgstr[0] "サーバーで変更されます (%s オブジェクト)"
+msgstr[1] "サーバーで変更されます (%s オブジェクト)"
 
 #: GrampsWebSync/presentation.py:593
 #, python-format
 msgid "Add %s object"
 msgid_plural "Add %s objects"
 msgstr[0] "%s オブジェクトを追加"
-msgstr[1] ""
+msgstr[1] "%s オブジェクトを追加"
 
 #: GrampsWebSync/presentation.py:594
 #, python-format
 msgid "Update %s object"
 msgid_plural "Update %s objects"
 msgstr[0] "%s オブジェクトを更新"
-msgstr[1] ""
+msgstr[1] "%s オブジェクトを更新"
 
 #: GrampsWebSync/presentation.py:595
 #, python-format
 msgid "Merge %s object"
 msgid_plural "Merge %s objects"
 msgstr[0] "%s オブジェクトをマージ"
-msgstr[1] ""
+msgstr[1] "%s オブジェクトをマージ"
 
 #: GrampsWebSync/presentation.py:596
 #, python-format
 msgid "Delete %s object"
 msgid_plural "Delete %s objects"
 msgstr[0] "%s オブジェクトを削除"
-msgstr[1] ""
+msgstr[1] "%s オブジェクトを削除"
 
 #: GrampsWebSync/presentation.py:615
 #, python-format
 msgid "%s object will be deleted on this computer."
 msgid_plural "%s objects will be deleted on this computer."
 msgstr[0] "%s オブジェクトがこのコンピュータで削除されます。"
-msgstr[1] ""
+msgstr[1] "%s オブジェクトがこのコンピュータで削除されます。"
 
 #: GrampsWebSync/presentation.py:624
 #, python-format
 msgid "%s object will be deleted on the server."
 msgid_plural "%s objects will be deleted on the server."
 msgstr[0] "%s オブジェクトがサーバーで削除されます。"
-msgstr[1] ""
+msgstr[1] "%s オブジェクトがサーバーで削除されます。"
 
 #: GrampsWebSync/presentation.py:636
 #, python-format
@@ -17079,8 +17013,8 @@ msgstr "%(down)s ダウンロード、%(up)s アップロード"
 #, python-format
 msgid "Also transfer %(total)s media file (%(counts)s)"
 msgid_plural "Also transfer %(total)s media files (%(counts)s)"
-msgstr[0] "また %(total)s メディアファイルを転送 (%(counts)s）"
-msgstr[1] ""
+msgstr[0] "また %(total)s メディアファイルを転送 (%(counts)s)"
+msgstr[1] "また %(total)s メディアファイルを転送 (%(counts)s)"
 
 #: GrampsWebSync/presentation.py:658
 #, python-format
@@ -17088,14 +17022,14 @@ msgid "%s media file is missing on both sides and cannot be transferred."
 msgid_plural ""
 "%s media files are missing on both sides and cannot be transferred."
 msgstr[0] "%s メディアファイルが両方の場所で不足しており、転送できません。"
-msgstr[1] ""
+msgstr[1] "%s メディアファイルが両方の場所で不足しており、転送できません。"
 
 #: GrampsWebSync/presentation.py:681
 #, python-format
 msgid "Applied %s change."
 msgid_plural "Applied %s changes."
 msgstr[0] "%s 件の変更を適用しました。"
-msgstr[1] ""
+msgstr[1] "%s 件の変更を適用しました。"
 
 #: GrampsWebSync/presentation.py:684
 msgid "Both trees are already in sync."
@@ -17110,28 +17044,28 @@ msgstr "メディアファイルは同期しています。"
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
 msgstr[0] "%s メディアファイルのダウンロードに成功しました。"
-msgstr[1] ""
+msgstr[1] "%s メディアファイルのダウンロードに成功しました。"
 
 #: GrampsWebSync/presentation.py:717
 #, python-format
 msgid "Encountered %s error during download."
 msgid_plural "Encountered %s errors during download."
 msgstr[0] "ダウンロード中に %s 件のエラーが発生しました。"
-msgstr[1] ""
+msgstr[1] "ダウンロード中に %s 件のエラーが発生しました。"
 
 #: GrampsWebSync/presentation.py:727
 #, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
 msgstr[0] "%s メディアファイルのアップロードに成功しました。"
-msgstr[1] ""
+msgstr[1] "%s メディアファイルのアップロードに成功しました。"
 
 #: GrampsWebSync/presentation.py:736
 #, python-format
 msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
 msgstr[0] "アップロード中に %s 件のエラーが発生しました。"
-msgstr[1] ""
+msgstr[1] "アップロード中に %s 件のエラーが発生しました。"
 
 #: GrampsWebSync/presentation.py:768
 msgid "No server configured"
@@ -17160,21 +17094,21 @@ msgstr "最終同期: たった今"
 msgid "Last synced %s minute ago"
 msgid_plural "Last synced %s minutes ago"
 msgstr[0] "最終同期: %s 分前"
-msgstr[1] ""
+msgstr[1] "最終同期: %s 分前"
 
 #: GrampsWebSync/presentation.py:801
 #, python-format
 msgid "Last synced %s hour ago"
 msgid_plural "Last synced %s hours ago"
 msgstr[0] "最終同期: %s 時間前"
-msgstr[1] ""
+msgstr[1] "最終同期: %s 時間前"
 
 #: GrampsWebSync/presentation.py:806
 #, python-format
 msgid "Last synced %s day ago"
 msgid_plural "Last synced %s days ago"
 msgstr[0] "最終同期: %s 日前"
-msgstr[1] ""
+msgstr[1] "最終同期: %s 日前"
 
 #: GrampsWebSync/presentation.py:807
 #, python-format
@@ -17231,47 +17165,45 @@ msgstr "チャート"
 
 #: GrampyScript/GrampyScript.py:480 GrampyScript/GrampyScript.py:551
 msgid "Ready... (Tab for completions)"
-msgstr ""
+msgstr "準備完了... (Tabキーで補完)"
 
 #: GrampyScript/GrampyScript.py:505
-#, fuzzy
-#| msgid "No title"
 msgid "Untitled"
-msgstr "タイトルなし"
+msgstr "無題"
 
 #: GrampyScript/GrampyScript.py:534
 msgid ""
 "If you continue without saving, the changes you have made to this script "
 "will be lost."
-msgstr ""
+msgstr "保存せずに続行すると、このスクリプトに加えた変更は失われます。"
 
 #: GrampyScript/GrampyScript.py:1332
 msgid "Gram.py Script Edited Data"
 msgstr "Gram.py スクリプト編集データ"
 
 #: GrampyScript/script_descriptions.py:44
-#, fuzzy
-#| msgid "All Names of All People"
 msgid "List All People"
-msgstr "全人物の全名称"
+msgstr "全人物を一覧表示"
 
 #: GrampyScript/script_descriptions.py:46
 msgid ""
 "Iterate over every person in the database and show their Gramps ID, given "
 "name, surname, and gender in the results table."
 msgstr ""
+"データベース内のすべての人物を順に処理し、Gramps ID、名、姓、性別を結果の表に"
+"表示します。"
 
 #: GrampyScript/script_descriptions.py:51
-#, fuzzy
-#| msgid "Family Surname"
 msgid "Filter By Surname"
-msgstr "家族の姓"
+msgstr "姓で絞り込み"
 
 #: GrampyScript/script_descriptions.py:53
 msgid ""
 "List only the people whose surname matches a given value — a starting point "
 "for narrowing any report down by a condition."
 msgstr ""
+"姓が指定した値に一致する人物のみを一覧表示します。条件でレポートを絞り込むた"
+"めの出発点となります。"
 
 #: GrampyScript/script_descriptions.py:58 Overview/Overview.gpr.py:45
 msgid "Family Overview"
@@ -17282,20 +17214,24 @@ msgid ""
 "List every family together with the father, the mother, and how many "
 "children they have — a quick way to spot families that look incomplete."
 msgstr ""
+"すべての家族を、父親、母親、子供の数とともに一覧表示します。不完全に見える家"
+"族をすばやく見つけるのに便利です。"
 
 #: GrampyScript/script_descriptions.py:66
 msgid "Gender Breakdown (Pie Chart)"
-msgstr ""
+msgstr "性別の内訳 (円グラフ)"
 
 #: GrampyScript/script_descriptions.py:68
 msgid ""
 "Count how many people are male, female, or of unknown gender, then draw a "
 "pie chart of the totals. Check the Chart tab after running."
 msgstr ""
+"男性、女性、性別不明の人数を数え、合計を円グラフで描画します。実行後に"
+"チャートタブを確認してください。"
 
 #: GrampyScript/script_descriptions.py:74
 msgid "Age At Death Histogram"
-msgstr ""
+msgstr "死亡時年齢のヒストグラム"
 
 #: GrampyScript/script_descriptions.py:76
 msgid ""
@@ -17303,10 +17239,13 @@ msgid ""
 "in whole years and draw a histogram of the distribution. Check the Chart tab "
 "after running."
 msgstr ""
+"出生イベントと死亡イベントの両方が記録されているすべての人物について、満年齢"
+"を計算し、分布をヒストグラムで描画します。実行後にチャートタブを確認してくだ"
+"さい。"
 
 #: GrampyScript/script_descriptions.py:82
 msgid "Mark Unsourced People As Private"
-msgstr ""
+msgstr "出典のない人物を非公開に設定"
 
 #: GrampyScript/script_descriptions.py:84
 msgid ""
@@ -17314,10 +17253,13 @@ msgid ""
 "them as private, wrapped in begin_changes()/end_changes() so the edits "
 "happen inside a single, undoable transaction."
 msgstr ""
+"一括編集の例: 引用が1件も付いていないすべての人物を検索して非公開に設定します"
+"。begin_changes()/end_changes()で囲むことで、編集は1回の取り消し可能な"
+"トランザクション内で行われます。"
 
 #: GrampyScript/script_descriptions.py:91
 msgid "CSV-Ready People Report"
-msgstr ""
+msgstr "CSV用の人物レポート"
 
 #: GrampyScript/script_descriptions.py:93
 msgid ""
@@ -17325,42 +17267,49 @@ msgid ""
 "person. Once it runs, use Data > Save as CSV or Copy to clipboard to export "
 "the Table tab's contents."
 msgstr ""
+"すべての人物について、ID、名前、性別、出生年からなる簡単な表形式のレポートを"
+"作成します。実行後、データ > CSVとして保存 または クリップボードにコピー を使"
+"うと、表タブの内容をエクスポートできます。"
 
 #: GrampyScript/script_descriptions.py:99
-#, fuzzy
-#| msgid "Active Person : "
 msgid "Active Person Summary"
-msgstr "アクティブな人 : "
+msgstr "アクティブな人物のサマリー"
 
 #: GrampyScript/script_descriptions.py:101
 msgid ""
 "Show a compact family summary for the currently active person: their record, "
 "parents, spouse, and children."
 msgstr ""
+"現在アクティブな人物の簡易的な家族サマリーを表示します: 本人の記録、両親、配"
+"偶者、子供。"
 
 #: GrampyScript/script_descriptions.py:106
 msgid "Report On Selected People"
-msgstr ""
+msgstr "選択した人物のレポート"
 
 #: GrampyScript/script_descriptions.py:108
 msgid ""
 "List just the people currently selected (highlighted) in the People view. "
 "Select some rows in the People view before running this script."
 msgstr ""
+"人物ビューで現在選択されている(ハイライトされている)人物のみを一覧表示します"
+"。このスクリプトを実行する前に、人物ビューでいくつかの行を選択してください。"
 
 #: GrampyScript/script_descriptions.py:114
 msgid "Find People Missing A Birth Date"
-msgstr ""
+msgstr "出生日がない人物を検索"
 
 #: GrampyScript/script_descriptions.py:116
 msgid ""
 "Data-quality check: list every person who has no recorded birth event, so "
 "you can prioritize research on those records."
 msgstr ""
+"データ品質チェック: 出生イベントが記録されていないすべての人物を一覧表示しま"
+"す。これらの記録の調査を優先するのに役立ちます。"
 
 #: GrampyScript/script_descriptions.py:121
 msgid "Births Per Decade (Import Example)"
-msgstr ""
+msgstr "10年ごとの出生数 (インポートの例)"
 
 #: GrampyScript/script_descriptions.py:123
 msgid ""
@@ -17368,12 +17317,13 @@ msgid ""
 "script_helpers.py in this same folder — a template for sharing helper code "
 "between your own scripts with a plain 'import' statement."
 msgstr ""
+"同じフォルダー内のscript_helpers.pyからインポートしたdecade()関数を使って、10"
+"年ごとの出生数を集計します。通常のimport文で自作スクリプト間でヘルパーコード"
+"を共有するためのテンプレートです。"
 
 #: GrampyScript/script_descriptions.py:130
-#, fuzzy
-#| msgid "Custom \"test.xml\" file"
 msgid "Custom Filter Example"
-msgstr "カスタム \"test.xml\" ファイル"
+msgstr "カスタムフィルターの例"
 
 #: GrampyScript/script_descriptions.py:132
 msgid ""
@@ -17382,10 +17332,14 @@ msgid ""
 "you've already created; if the name doesn't match one, a warning shows up in "
 "the Output tab instead."
 msgstr ""
+"custom_filter()を使って、自作のカスタムフィルター(フィルターのガジェット/"
+"エディターで作成したもの)を名前で実行します。'example filter'を作成済みの"
+"フィルター名に変更してください。名前が一致しない場合は、代わりに出力タブに警"
+"告が表示されます。"
 
 #: GrampyScript/script_descriptions.py:140
 msgid "Delete Unused Repositories (Delete Example)"
-msgstr ""
+msgstr "未使用のリポジトリを削除 (削除の例)"
 
 #: GrampyScript/script_descriptions.py:142
 msgid ""
@@ -17394,10 +17348,15 @@ msgid ""
 "unlikely to actually delete anything — it's meant to show the pattern, "
 "wrapped in begin_changes()/end_changes() as a single undoable transaction."
 msgstr ""
+"delete()のデモです: ツリー内のほかのどこからも参照されていない"
+"リポジトリレコードを削除します。ほとんどのツリーには未使用のリポジトリがない"
+"ため、実際に削除されることはまずありません。パターンを示すためのもので、"
+"begin_changes()/end_changes()で囲んで、1回の取り消し可能なトランザクションと"
+"して実行されます。"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
-msgstr "ダーク (デフォルト）"
+msgstr "ダーク (デフォルト)"
 
 #: GraphView/avatars.py:61
 msgid "Light"
@@ -17413,15 +17372,15 @@ msgstr "モダン"
 
 #: GraphView/avatars.py:65
 msgid "Generic (dark)"
-msgstr "ジェネリック (ダーク）"
+msgstr "ジェネリック (ダーク)"
 
 #: GraphView/avatars.py:66
 msgid "Generic (gray)"
-msgstr "ジェネリック (グレー）"
+msgstr "ジェネリック (グレー)"
 
 #: GraphView/avatars.py:67
 msgid "Generic (light)"
-msgstr "ジェネリック (ライト）"
+msgstr "ジェネリック (ライト)"
 
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
 #: GraphView/graphview.py:182
@@ -17474,7 +17433,7 @@ msgstr "時間の方向"
 
 #: GraphView/graphview.py:784
 msgid "Limit number of people displayed (use 0 for unlimited)"
-msgstr "表示する人物数の制限 (0は無制限）"
+msgstr "表示する人物数の制限 (0は無制限)"
 
 #: GraphView/graphview.py:805
 msgid "Person theme"
@@ -17546,11 +17505,11 @@ msgstr "アニメーションを表示"
 
 #: GraphView/graphview.py:918
 msgid "Animation speed (1..5 and 5 is the slower)"
-msgstr "アニメーション速度 (1..5、5が最も遅い）"
+msgstr "アニメーション速度 (1..5、5が最も遅い)"
 
 #: GraphView/graphview.py:922
 msgid "Animation count (0..8 use 0 to turn off)"
-msgstr "アニメーションカウント (0..8、0はオフ）"
+msgstr "アニメーションカウント (0..8、0はオフ)"
 
 #: GraphView/graphview.py:931
 msgid "Animation"
@@ -17683,11 +17642,11 @@ msgid ""
 "Do you want to set it active and rebuild view?"
 msgstr ""
 "人物 <b><i>%s</i></b> は現在のビューにありません。\n"
-"アクティブに設定してビューを再構築しますか？"
+"アクティブに設定してビューを再構築しますか?"
 
 #: GraphView/graphview.py:1512
 msgid "Change active person?"
-msgstr "アクティブな人を変更しますか？"
+msgstr "アクティブな人を変更しますか?"
 
 #: GraphView/graphview.py:2661
 #, python-brace-format
@@ -17817,7 +17776,7 @@ msgstr "人物 [%s] を削除すると、データベースから削除されま
 #: GraphView/graphview.py:4701
 #, python-format
 msgid "Delete family [%s]?"
-msgstr "家族 [%s] を削除しますか？"
+msgstr "家族 [%s] を削除しますか?"
 
 #: GraphView/graphview.py:4702
 msgid "Deleting the family will remove it from the database."
@@ -17976,9 +17935,9 @@ msgid ""
 "has to start and end with an alphanumeric character.The file extention "
 "'.html' is added by the report."
 msgstr ""
-"ファイル名には英字 (A-Z, a-z）、数字 (0-9）、スペース、アンダースコア、ハイフ"
-"ンのみ使用できます。ファイル名は英数字で始まり、英数字で終わる必要がありま"
-"す。拡張子 '.html' はレポートによって追加されます。"
+"ファイル名には英字 (A-Z, a-z)、数字 (0-9)、スペース、アンダースコア、ハイフン"
+"のみ使用できます。ファイル名は英数字で始まり、英数字で終わる必要があります。"
+"拡張子 '.html' はレポートによって追加されます。"
 
 #: Heatmap/heatmap.py:103
 msgid "File name"
@@ -18043,7 +18002,7 @@ msgstr "Stamen Terrain"
 
 #: Heatmap/utils.py:58
 msgid "Stamen Terrain (Background only)"
-msgstr "Stamen Terrain (背景のみ）"
+msgstr "Stamen Terrain (背景のみ)"
 
 #: Heatmap/utils.py:61
 msgid "Stamen Toner"
@@ -18332,7 +18291,7 @@ msgid ""
 "result (when chosen)."
 msgstr ""
 "データ項目の詳細。現在のツリー項目、インポートされたツリー項目、および結果 "
-"(選択時）を表示します。"
+"(選択時)を表示します。"
 
 #: ImportMerge/importmerge.glade:248
 msgid "Object and item"
@@ -19291,7 +19250,7 @@ msgstr "メディアの結合"
 msgid "{number_of} media merged"
 msgid_plural "{number_of} media merged"
 msgstr[0] "{number_of} 個のメディアが結合済み"
-msgstr[1] ""
+msgstr[1] "{number_of} 個のメディアが結合済み"
 
 #: MediaMerge/mediamerge.py:157
 msgid "No media items merged."
@@ -19376,7 +19335,7 @@ msgstr "メディアの幅"
 #: MediaReport/media_report.py:452
 #, no-python-format
 msgid "Maximum media width in % of available page width."
-msgstr "利用可能なページ幅に対する最大メディア幅 (%）"
+msgstr "利用可能なページ幅に対する最大メディア幅 (%)"
 
 #: MediaReport/media_report.py:456
 msgid "Media height"
@@ -19385,7 +19344,7 @@ msgstr "メディアの高さ"
 #: MediaReport/media_report.py:458
 #, no-python-format
 msgid "Maximum media height in % of available page height."
-msgstr "利用可能なページ高さに対する最大メディア高さ (%）"
+msgstr "利用可能なページ高さに対する最大メディア高さ (%)"
 
 #: MediaVerify/MediaVerify.gpr.py:31
 msgid "Media Verify"
@@ -19520,7 +19479,7 @@ msgstr "MongoDB データベース"
 
 #: NLWebConnectPack/NLWebPack.gpr.py:13
 msgid "Collection of Web sites for the Netherlands (requires libwebconnect)"
-msgstr "オランダ向けのWebサイトコレクション (libwebconnectが必要）"
+msgstr "オランダ向けのWebサイトコレクション (libwebconnectが必要)"
 
 #: NLWebConnectPack/NLWebPack.py:34
 msgid "Open Archives"
@@ -19536,7 +19495,7 @@ msgstr "国立公文書館"
 
 #: NLWebConnectPack/NLWebPack.py:38
 msgid "Who (re)searches who?"
-msgstr "誰が誰を (再）検索する？"
+msgstr "誰が誰を (再)検索する?"
 
 #: NameSuite/name_processor.gpr.py:26
 msgid "Audit Given and Patronymic Names"
@@ -19545,7 +19504,7 @@ msgstr "名前と父称名の監査"
 #: NameSuite/name_processor.gpr.py:29
 msgid ""
 "Tools to rename given name, audit and infer patronymic (East Slavic) names."
-msgstr "名前の変更、父称 (東スラブ）名の監査と推論を行うツール。"
+msgstr "名前の変更、父称 (東スラブ)名の監査と推論を行うツール。"
 
 #: NameSuite/name_processor.gpr.py:45 NameSuite/name_processor.gpr.py:57
 msgid "Patronymic Suggestion"
@@ -19553,7 +19512,7 @@ msgstr "父称の提案"
 
 #: NameSuite/name_processor.gpr.py:47
 msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
-msgstr "ナビゲーション中に (東スラブ）父称名をリアルタイムで提案します。"
+msgstr "ナビゲーション中に (東スラブ)父称名をリアルタイムで提案します。"
 
 #: NameSuite/name_processor/views/base_tab.py:164
 msgid "Use"
@@ -19601,7 +19560,7 @@ msgstr "有効な形態パターンを生成できませんでした。"
 
 #: NameSuite/name_processor/views/gramplet.py:64
 msgid "Patronymic applied successfully!"
-msgstr "父称が正常に適用されました！"
+msgstr "父称が正常に適用されました!"
 
 #: NameSuite/name_processor/views/gramplet.py:90
 msgid "Apply Suggestion"
@@ -19688,7 +19647,7 @@ msgstr "説明"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:255
 msgid "Audit Complete!"
-msgstr "監査完了！"
+msgstr "監査完了!"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:260
 msgid "No Results"
@@ -19756,7 +19715,7 @@ msgstr "家族ネットワークチャートを生成します。"
 
 #: NetworkChart/NetworkChart.py:244
 msgid "File exists. Overwrite?"
-msgstr "ファイルが存在します。上書きしますか？"
+msgstr "ファイルが存在します。上書きしますか?"
 
 #: NetworkChart/NetworkChart.py:898
 msgid "created"
@@ -19772,19 +19731,19 @@ msgstr "メイン"
 
 #: NetworkChart/NetworkChart.py:916
 msgid "Orthogonal (right angles in connectors)"
-msgstr "直交 (コネクタに直角を使用）"
+msgstr "直交 (コネクタに直角を使用)"
 
 #: NetworkChart/NetworkChart.py:917
 msgid "Straight (no right angles in connectors)"
-msgstr "直線 (コネクタに直角なし）"
+msgstr "直線 (コネクタに直角なし)"
 
 #: NetworkChart/NetworkChart.py:918
 msgid "Curved (curved and straight connectors)"
-msgstr "曲線 (曲線と直線のコネクタ）"
+msgstr "曲線 (曲線と直線のコネクタ)"
 
 #: NetworkChart/NetworkChart.py:920
 msgid "Default (Orthogonal)"
-msgstr "デフォルト (直交）"
+msgstr "デフォルト (直交)"
 
 #: NetworkChart/NetworkChart.py:925
 msgid "Select the graph line connector format."
@@ -19808,7 +19767,7 @@ msgstr "右から左"
 
 #: NetworkChart/NetworkChart.py:933
 msgid "Default (Top to Bottom)"
-msgstr "デフォルト (上から下）"
+msgstr "デフォルト (上から下)"
 
 #: NetworkChart/NetworkChart.py:936
 msgid "Select the graph direction."
@@ -19836,7 +19795,7 @@ msgstr "URLを含めない"
 
 #: NetworkChart/NetworkChart.py:945
 msgid "Default (include)"
-msgstr "デフォルト (含める）"
+msgstr "デフォルト (含める)"
 
 #: NetworkChart/NetworkChart.py:948
 msgid "Select URL style."
@@ -19853,7 +19812,7 @@ msgid ""
 "URL = Prefix + GrampsID + Suffix."
 msgstr ""
 "動的に生成されるURLの\n"
-"プレフィックス、サフィックス (カンマ区切り）を入力します。\n"
+"プレフィックス、サフィックス (カンマ区切り)を入力します。\n"
 "URL = プレフィックス + GrampsID + サフィックス。"
 
 #: NetworkChart/NetworkChart.py:957
@@ -19874,12 +19833,12 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:964
 msgid "Spacing (inch)"
-msgstr "間隔 (インチ）"
+msgstr "間隔 (インチ)"
 
 #: NetworkChart/NetworkChart.py:965
 msgid ""
 "Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
-msgstr "\"世代\" 間の距離をインチ単位で入力します (0.1-5.0）。"
+msgstr "\"世代\" 間の距離をインチ単位で入力します (0.1-5.0)。"
 
 #: NetworkChart/NetworkChart.py:969
 msgid "Enter Chart Title"
@@ -19891,7 +19850,7 @@ msgstr "チャートのタイトルを設定します。"
 
 #: NetworkChart/NetworkChart.py:976
 msgid "Default (svg)"
-msgstr "デフォルト (svg）"
+msgstr "デフォルト (svg)"
 
 #: NetworkChart/NetworkChart.py:979
 msgid ""
@@ -19932,7 +19891,7 @@ msgstr "男性の背景のアルファ"
 
 #: NetworkChart/NetworkChart.py:1014
 msgid "Alpha for Male box background (transparent=0, solid=255)."
-msgstr "男性ボックス背景のアルファ (透明=0、不透明=255）。"
+msgstr "男性ボックス背景のアルファ (透明=0、不透明=255)。"
 
 #: NetworkChart/NetworkChart.py:1018
 msgid "Male Box Edge"
@@ -19953,7 +19912,7 @@ msgstr "女性の背景のアルファ"
 
 #: NetworkChart/NetworkChart.py:1028
 msgid "Alpha for Female box background (transparent=0, solid=255)."
-msgstr "女性ボックス背景のアルファ (透明=0、不透明=255）。"
+msgstr "女性ボックス背景のアルファ (透明=0、不透明=255)。"
 
 #: NetworkChart/NetworkChart.py:1033
 msgid "Female Box Edge"
@@ -19977,7 +19936,7 @@ msgstr "その他の背景のアルファ"
 
 #: NetworkChart/NetworkChart.py:1043
 msgid "Alpha for Other box background (transparent=0, solid=255)."
-msgstr "その他のボックス背景のアルファ (透明=0、不透明=255）。"
+msgstr "その他のボックス背景のアルファ (透明=0、不透明=255)。"
 
 #: NetworkChart/NetworkChart.py:1047
 msgid "Family Connector Line"
@@ -20021,7 +19980,7 @@ msgstr "すべてのノードの色背景を削除。"
 
 #: NetworkChart/NetworkChart.py:1068
 msgid "Removes color background for individuals (nodes) on chart."
-msgstr "チャート上の個人 (ノード）の色背景を削除します。"
+msgstr "チャート上の個人 (ノード)の色背景を削除します。"
 
 #: NetworkChart/NetworkChart.py:1073
 msgid ""
@@ -20042,7 +20001,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1080
 msgid "Round birthday to year after year entered (above)."
-msgstr "誕生日を (上記で）入力した年以降は年のみに丸める。"
+msgstr "誕生日を (上記で)入力した年以降は年のみに丸める。"
 
 #: NetworkChart/NetworkChart.py:1082
 msgid "Represent birthday by year only."
@@ -20066,7 +20025,7 @@ msgstr "この年以降の結婚は年のみで表示されます。無効なエ
 
 #: NetworkChart/NetworkChart.py:1092
 msgid "Round marriage to year after year entered (above)."
-msgstr "結婚を (上記で）入力した年以降は年のみに丸める。"
+msgstr "結婚を (上記で)入力した年以降は年のみに丸める。"
 
 #: NetworkChart/NetworkChart.py:1094
 msgid "Represent marriage by year only."
@@ -20098,7 +20057,7 @@ msgstr "子孫をトリム"
 
 #: NetworkChart/NetworkChart.py:1121
 msgid "All descendants (children) of selected individuals will not be shown."
-msgstr "選択された個人のすべての子孫 (子供）は表示されません。"
+msgstr "選択された個人のすべての子孫 (子供)は表示されません。"
 
 #: NetworkChart/NetworkChart.py:1127
 msgid "Enable trimming of descendants."
@@ -20118,7 +20077,7 @@ msgstr "祖先をトリム"
 
 #: NetworkChart/NetworkChart.py:1135
 msgid "All ancestors (parents) of selected individuals will not be shown."
-msgstr "選択された個人のすべての祖先 (親）は表示されません。"
+msgstr "選択された個人のすべての祖先 (親)は表示されません。"
 
 #: NetworkChart/NetworkChart.py:1141
 msgid "Enable trimming of ancestors."
@@ -20182,7 +20141,7 @@ msgstr "任意"
 
 #: NetworkChart/NetworkChart.py:1176
 msgid "Default (None)"
-msgstr "デフォルト (なし）"
+msgstr "デフォルト (なし)"
 
 #: NetworkChart/NetworkChart.py:1181
 msgid ""
@@ -20200,7 +20159,7 @@ msgstr "パスのみを表示"
 
 #: NetworkChart/NetworkChart.py:1189
 msgid "Default (none)"
-msgstr "デフォルト (なし）"
+msgstr "デフォルト (なし)"
 
 #: NetworkChart/NetworkChart.py:1193
 msgid ""
@@ -20432,7 +20391,7 @@ msgid ""
 "Only individual ancestors were counted. Duplicates caused by pedigree "
 "collapse were ignored."
 msgstr ""
-"{} 人の祖先のうち {} 人 ({}%）が見つかりました。\n"
+"{} 人の祖先のうち {} 人 ({}%)が見つかりました。\n"
 "個人の祖先のみがカウントされました。家系崩壊による重複は無視されました。"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
@@ -20537,7 +20496,7 @@ msgstr "行:"
 
 #: PDFForms/generatepdfform.py:186
 msgid "(Rows only affect multi-row sections such as census household lists.)"
-msgstr "(行は国勢調査世帯リストなどの複数行セクションにのみ影響します。）"
+msgstr "(行は国勢調査世帯リストなどの複数行セクションにのみ影響します。)"
 
 #: PDFForms/generatepdfform.py:200
 msgid "Generations:"
@@ -20545,7 +20504,7 @@ msgstr "世代数:"
 
 #: PDFForms/generatepdfform.py:213
 msgid "Includes subject plus up to 5 ancestor generations (2–32 people)."
-msgstr "対象者と最大5世代の祖先 (2〜32人）を含みます。"
+msgstr "対象者と最大5世代の祖先 (2〜32人)を含みます。"
 
 #: PDFForms/generatepdfform.py:252
 msgid "Save PDF as…"
@@ -20682,7 +20641,7 @@ msgid ""
 msgstr ""
 "'%s' にGrampsフォームIDが見つかりませんでした。\n"
 "\n"
-"インポートできるのはGrampsで生成されたPDF (系図またはフォームテンプレート）の"
+"インポートできるのはGrampsで生成されたPDF (系図またはフォームテンプレート)の"
 "みです。"
 
 #: Participants/Participants.gpr.py:32
@@ -20733,7 +20692,7 @@ msgstr "タイトル表示に使用される基本スタイル。"
 
 #: PedigreeChart/PedigreeChart.py:749
 msgid "Style used for names (only for PDF document and PostScript)."
-msgstr "名前に使用されるスタイル (PDFドキュメントとPostScriptのみ）。"
+msgstr "名前に使用されるスタイル (PDFドキュメントとPostScriptのみ)。"
 
 #: PedigreeChart/PedigreeChart.py:758
 msgid "Style used for labels and captions."
@@ -21017,7 +20976,7 @@ msgstr "検出終了"
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:961
 #, python-brace-format
 msgid "Another region of this image is associated with {name}. Remove it?"
-msgstr "この画像の別の領域が {name} に関連付けられています。削除しますか？"
+msgstr "この画像の別の領域が {name} に関連付けられています。削除しますか?"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:964
 #, python-brace-format
@@ -21025,7 +20984,7 @@ msgid ""
 "{count} other regions of this image are associated with {name}. Remove them?"
 msgstr ""
 "この画像の {count} 個の他の領域が {name} に関連付けられています。削除します"
-"か？"
+"か?"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1116
 #, python-format
@@ -21121,7 +21080,7 @@ msgstr "現在の主な名前。"
 
 #: PlaceCleanup/placecleanup.glade:102
 msgid "The postal code for the place, if any."
-msgstr "その場所の郵便番号 (ある場合）。"
+msgstr "その場所の郵便番号 (ある場合)。"
 
 #: PlaceCleanup/placecleanup.glade:114
 msgid "What type of place this is. Eg 'Country', 'City', ... ."
@@ -21447,7 +21406,7 @@ msgid ""
 "One of the places you are merging encloses the other!\n"
 "Please choose another place."
 msgstr ""
-"マージしようとしている場所の一方が他方を囲んでいます！\n"
+"マージしようとしている場所の一方が他方を囲んでいます!\n"
 "別の場所を選択してください。"
 
 #: PlaceCleanup/placecleanup.py:759
@@ -21455,7 +21414,7 @@ msgid ""
 "The place you chose is enclosed in the place you are workin on!\n"
 "Please cancel and choose another place."
 msgstr ""
-"選択した場所は、作業中の場所に囲まれています！\n"
+"選択した場所は、作業中の場所に囲まれています!\n"
 "キャンセルして別の場所を選択してください。"
 
 #: PlaceCleanup/placecleanup.py:946
@@ -21491,7 +21450,7 @@ msgstr "ソース/リポジトリ/メモを追加 (%s)"
 
 #: PlaceCleanup/placecleanup.py:1075
 msgid "This Place is not used!"
-msgstr "この場所は使用されていません！"
+msgstr "この場所は使用されていません!"
 
 #: PlaceCleanup/placecleanup.py:1076
 msgid ""
@@ -22136,7 +22095,7 @@ msgstr "%s {obj_type} オブジェクトを移行しました"
 
 #: PostgreSQLEnhanced/migration.py:209
 msgid "Migration completed!"
-msgstr "移行が完了しました！"
+msgstr "移行が完了しました!"
 
 #: PostgreSQLEnhanced/migration.py:438
 msgid "Starting upgrade..."
@@ -22153,7 +22112,7 @@ msgstr "インデックスを作成中..."
 
 #: PostgreSQLEnhanced/migration.py:489
 msgid "Upgrade completed!"
-msgstr "アップグレードが完了しました！"
+msgstr "アップグレードが完了しました!"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.gpr.py:28
 msgid "PostgreSQL Enhanced"
@@ -22170,9 +22129,9 @@ msgid ""
 "advanced users. Requires PostgreSQL 15+ with extensions. Gramps Web "
 "compatible."
 msgstr ""
-"JSONBストレージ、グラフデータベースサポート (Apache AGE）、ベクトル類似性 "
-"(pgvector）、AI/ML機能を備えた高度なPostgreSQLバックエンド。上級者向け。拡張"
-"機能を備えたPostgreSQL 15+が必要。Gramps Web互換。"
+"JSONBストレージ、グラフデータベースサポート (Apache AGE)、ベクトル類似性 "
+"(pgvector)、AI/ML機能を備えた高度なPostgreSQLバックエンド。上級者向け。拡張機"
+"能を備えたPostgreSQL 15+が必要。Gramps Web互換。"
 
 #: PostgreSQLEnhanced/postgresqlenhanced.py:155
 msgid ""
@@ -22339,7 +22298,7 @@ msgid ""
 "<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
 "intend to translate or do any development (addons etc.)</i>:\n"
 msgstr ""
-"<i>翻訳や開発 (アドオンなど）を行う場合は、以下のパッケージのインストールが "
+"<i>翻訳や開発 (アドオンなど)を行う場合は、以下のパッケージのインストールが "
 "<b>推奨されます</b> </i>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:277
@@ -22404,8 +22363,8 @@ msgid ""
 "back up your genealogy files, and then test your backups!\n"
 "\n"
 msgstr ""
-"前提条件をチェックする理由がある場合は、系譜ファイルをバックアップし、バック"
-"アップをテストする良い機会です！\n"
+"前提条件をチェックする理由がある場合は、系譜ファイルをバックアップし、"
+"バックアップをテストする良い機会です!\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:326
@@ -22812,7 +22771,7 @@ msgstr "Python Shell"
 
 #: PythonGramplet/PythonGramplet.gpr.py:5
 msgid "Interactive Python interpreter"
-msgstr "Interactive Python interpreter"
+msgstr "対話型Pythonインタープリター"
 
 #: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
 msgid "Enter Python expressions"
@@ -23008,7 +22967,7 @@ msgstr "深い世代"
 
 #: RelID/relation_tab.py:322
 msgid "How deep should we go?"
-msgstr "どのくらい深く進むべきですか？"
+msgstr "どのくらい深く進むべきですか?"
 
 #: RelID/relation_tab.py:339 RelID/relation_tab.py:601
 msgid "Rel_id"
@@ -23109,7 +23068,7 @@ msgstr "有効な場所を設定できません。"
 
 #: RelID/relation_tab.py:655
 msgid "Did you set a foldername?"
-msgstr "フォルダー名を設定しましたか？"
+msgstr "フォルダー名を設定しましたか?"
 
 #: RelID/relation_tab.py:676
 msgid "Failed to save data."
@@ -23393,7 +23352,7 @@ msgid ""
 "Upload media files to S3 (or compatible) object-based storage via the "
 "command line."
 msgstr ""
-"コマンドライン経由でメディアファイルを S3 (または互換）オブジェクトストレージ"
+"コマンドライン経由でメディアファイルを S3 (または互換)オブジェクトストレージ"
 "にアップロードします。"
 
 #: SVWebconnectPack/SVWebPack.gpr.py:11
@@ -24343,54 +24302,42 @@ msgid "The style used for event and person details."
 msgstr "イベントや人物の詳細に使用されるスタイル。"
 
 #: Sqlite/ExportSql.py:1720
-#, fuzzy
-#| msgid "January"
 msgid "January 1"
-msgstr "1月"
+msgstr "1月1日"
 
 #: Sqlite/ExportSql.py:1721
-#, fuzzy
-#| msgid "March"
 msgid "March 1"
-msgstr "3月"
+msgstr "3月1日"
 
 #: Sqlite/ExportSql.py:1722
-#, fuzzy
-#| msgid "March"
 msgid "March 25"
-msgstr "3月"
+msgstr "3月25日"
 
 #: Sqlite/ExportSql.py:1723
-#, fuzzy
-#| msgid "September"
 msgid "September 1"
-msgstr "9月"
+msgstr "9月1日"
 
 #: Sqlite/ExportSql.py:1749
-#, fuzzy
-#| msgid "Widowed"
 msgid "Flowed"
-msgstr "寡夫/寡婦"
+msgstr "フロー"
 
 #: Sqlite/ExportSql.py:1750
-#, fuzzy
-#| msgid "PS format"
 msgid "Preformatted"
-msgstr "PS形式"
+msgstr "整形済み"
 
 #: Sqlite/ExportSql.py:1953
 #, python-format
 msgid "Export Complete: %d second"
 msgid_plural "Export Complete: %d seconds"
 msgstr[0] "エクスポート完了 : %d 秒"
-msgstr[1] ""
+msgstr[1] "エクスポート完了 : %d 秒"
 
 #: Sqlite/ImportSql.py:899
 #, python-format
 msgid "Import Complete: %d second"
 msgid_plural "Import Complete: %d seconds"
 msgstr[0] "インポート完了 : %d 秒"
-msgstr[1] ""
+msgstr[1] "インポート完了 : %d 秒"
 
 #: Sqlite/Sqlite.gpr.py:4
 msgid "SQLite Import"
@@ -24631,7 +24578,7 @@ msgstr ""
 "TMG バックアップファイルを読み取れませんでした: PJC バージョン情報が欠落して"
 "いるか、読み取れません。\n"
 "\n"
-"TMG 9.02 以降 (PjcVersion >= 11.0）で作成されたバックアップを使用していること"
+"TMG 9.02 以降 (PjcVersion >= 11.0)で作成されたバックアップを使用していること"
 "を確認してください。"
 
 #: TMGimporter/libtmg.py:2365
@@ -24651,7 +24598,7 @@ msgid ""
 "Addon:TMGimporter#Before_Import_From_TMG_Backup_file"
 msgstr ""
 "このバックアップは古いバージョンの TMG (PjcVersion %(ver)s、TMG 9.01 以前に相"
-"当）で作成されました。\n"
+"当)で作成されました。\n"
 "\n"
 "TMG プロジェクトをバージョン 9.05 にアップグレードして新しいバックアップを作"
 "成し、再度インポートしてください。\n"
@@ -24737,7 +24684,7 @@ msgstr "%(date)s の家族史 ...\n"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:107
 msgid "... nothing happened!  Check again tomorrow!"
-msgstr "... 何も起こりませんでした！ 明日もう一度確認してください！"
+msgstr "... 何も起こりませんでした! 明日もう一度確認してください!"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:111
 msgid "Report only living tree members"
@@ -24753,7 +24700,7 @@ msgstr "並べ替え "
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:114
 msgid "Sort in ascending order?"
-msgstr "昇順で並べ替えますか？"
+msgstr "昇順で並べ替えますか?"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:127
 msgid "February"
@@ -25329,7 +25276,7 @@ msgstr "1年あたりのピクセル数"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:916
 msgid "How many pixel height is one year?"
-msgstr "1年は何ピクセルの高さですか？"
+msgstr "1年は何ピクセルの高さですか?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:921
 msgid "Offset X Coordinate"
@@ -25337,7 +25284,7 @@ msgstr "X座標オフセット"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:923
 msgid "How many pixel are unused besides the most left and most right boxes?"
-msgstr "一番左と一番右のボックスのほかに未使用のピクセルはいくつですか？"
+msgstr "一番左と一番右のボックスのほかに未使用のピクセルはいくつですか?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:928
 msgid "Offset Y Coordinate"
@@ -25345,35 +25292,35 @@ msgstr "Y座標オフセット"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:929
 msgid "How many pixel are unused above first box?"
-msgstr "最初のボックスの上に未使用のピクセルはいくつですか？"
+msgstr "最初のボックスの上に未使用のピクセルはいくつですか?"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:932
 msgid "Width of a box in pixel"
-msgstr "ボックスの幅 (ピクセル）"
+msgstr "ボックスの幅 (ピクセル)"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:933
 msgid "Width of the box of a person in pixel"
-msgstr "人物のボックスの幅 (ピクセル）"
+msgstr "人物のボックスの幅 (ピクセル)"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:936
 msgid "Horizontal space between boxes in pixel"
-msgstr "ボックス間の水平スペース (ピクセル）"
+msgstr "ボックス間の水平スペース (ピクセル)"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:939
 msgid "Minimum horizontal space between 2 boxes in pixel"
-msgstr "2つのボックス間の最小水平スペース (ピクセル）"
+msgstr "2つのボックス間の最小水平スペース (ピクセル)"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:945
 msgid "Length of vertical part of a line in pixel"
-msgstr "線の垂直部分の長さ (ピクセル）"
+msgstr "線の垂直部分の長さ (ピクセル)"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:947
 msgid ""
 "Parent and child boxes are connected with lines. This is the length of the "
 "vertical part of the lines in pixel"
 msgstr ""
-"親と子のボックスは線で接続されています。これは線の垂直部分の長さ (ピクセル）"
-"です"
+"親と子のボックスは線で接続されています。これは線の垂直部分の長さ (ピクセル)で"
+"す"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:954
 #: TimePedigreeHTML/TimePedigreeHtml.py:956
@@ -25409,7 +25356,7 @@ msgstr "寿命を表示"
 msgid "%d generation"
 msgid_plural "%d generations"
 msgstr[0] "%d 世代"
-msgstr[1] ""
+msgstr[1] "%d 世代"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1504
 msgid "About Timeline Pedigree View"
@@ -25479,8 +25426,8 @@ msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
-"特定のタグが付いたすべてのメモと、それが参照するレコード (人物、家族、イベン"
-"トなど）のリストを生成します。"
+"特定のタグが付いたすべてのメモと、それが参照するレコード (人物、家族、"
+"イベントなど)のリストを生成します。"
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
@@ -25611,7 +25558,7 @@ msgstr "タイプクリーンアップ"
 
 #: TypeCleanup/type_cleanup.gpr.py:31
 msgid "Clean up (remove) custom types"
-msgstr "カスタムタイプをクリーンアップ (削除）"
+msgstr "カスタムタイプをクリーンアップ (削除)"
 
 #: TypeCleanup/type_cleanup.py:101
 msgid "Event Roles"
@@ -26455,7 +26402,7 @@ msgstr "AI生成による歴史的な場所データを有効にする"
 
 #: WebSearch/settings_ui_manager.py:215
 msgid "Custom country code for AI notes (optional)"
-msgstr "AIメモのカスタム国コード (オプション）"
+msgstr "AIメモのカスタム国コード (オプション)"
 
 #: WebSearch/settings_ui_manager.py:244
 msgid "Enable CSV Files"
@@ -26770,7 +26717,7 @@ msgstr "\"gzip\" がありません"
 
 #: lxml/lxmlGramplet.py:144
 msgid "Where is gzip?"
-msgstr "gzip はどこにありますか？"
+msgstr "gzip はどこにありますか?"
 
 #: lxml/lxmlGramplet.py:146
 msgid "Missing python3 lxml"
@@ -26900,21 +26847,21 @@ msgstr "\t{number} 姓; まだ頻度はありません"
 msgid "\t{number} place"
 msgid_plural "\t{number} places"
 msgstr[0] "\t{number} 件の場所"
-msgstr[1] ""
+msgstr[1] "\t{number} 件の場所"
 
 #: lxml/lxmlGramplet.py:669 lxml/lxmlGramplet.py:679
 #, python-brace-format
 msgid "\t{number} note"
 msgid_plural "\t{number} notes"
 msgstr[0] "\t{number} メモ"
-msgstr[1] ""
+msgstr[1] "\t{number} メモ"
 
 #: lxml/lxmlGramplet.py:683
 #, python-brace-format
 msgid "\t{number} source"
 msgid_plural "\t{number} sources"
 msgstr[0] "\t{number} 件のソース"
-msgstr[1] ""
+msgstr[1] "\t{number} 件のソース"
 
 #: lxml/lxmlGramplet.py:702 lxml/lxmlGramplet.py:927
 msgid "Gallery.html"
