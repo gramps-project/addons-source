@@ -42,7 +42,7 @@ import tempfile
 from dataclasses import dataclass
 from typing import Any
 
-from const import MODE_BIDIRECTIONAL
+from const import AUTH_PASSWORD, MODE_BIDIRECTIONAL
 from gramps.cli.user import User
 from gramps.gen.db import DbTxn
 from gramps.gen.db.utils import import_as_dict, make_database
@@ -296,6 +296,9 @@ class SyncScenario:
         self.clock = FrozenClock()
         self.credentials = MemoryCredentialStore()
         self.listener = RecordingListener()
+        #: Every ``(url, username, password, auth)`` the session built a
+        #: backend from.
+        self.backend_calls: list[tuple[str, str, str, str]] = []
 
     # --------------------------------------------------------
     # Setup
@@ -338,13 +341,18 @@ class SyncScenario:
         return SyncSession(
             db=self.db1,
             user=self.user,
-            backend_factory=lambda url, username, password: server,
+            backend_factory=self._factory,
             credentials=self.credentials,
             media=DirectoryMediaStore(self.local_media_dir),
             runner=InlineTaskRunner(),
             clock=self.clock,
             listener=self.listener,
         )
+
+    def _factory(self, url: str, username: str, password: str, auth: str):
+        """Hand out the fake server, recording how the session signed in."""
+        self.backend_calls.append((url, username, password, auth))
+        return self._require_shared()
 
     # --------------------------------------------------------
     # Running
@@ -357,6 +365,8 @@ class SyncScenario:
         url: str = DEFAULT_URL,
         username: str = DEFAULT_USERNAME,
         password: str = "secret",
+        auth: str = AUTH_PASSWORD,
+        remember_password: bool = True,
     ) -> RunResult:
         """Drive a complete sync, answering the confirmation.
 
@@ -369,11 +379,15 @@ class SyncScenario:
             the object changes.
         :param url: Server URL to submit.
         :param username: User name to submit.
-        :param password: Password to submit.
+        :param password: Password, or stored sync token, to submit.
+        :param auth: What ``password`` is.
+        :param remember_password: Whether the sign-in may be stored.
         :returns: A :class:`RunResult` describing the run.
         """
         session = self.make_session()
-        session.submit_credentials(url, username, password)
+        session.submit_credentials(
+            url, username, password, remember_password, auth=auth
+        )
 
         if session.state is State.REVIEW and confirm:
             session.confirm(mode, transfer_media)
