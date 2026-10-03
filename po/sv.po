@@ -20,8 +20,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 10:14-0700\n"
-"PO-Revision-Date: 2026-09-27 07:51+0000\n"
-"Last-Translator: SimplyRAR <simply.rar@gmail.com>\n"
+"PO-Revision-Date: 2026-09-30 15:23+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -292,116 +292,88 @@ msgstr "Kontrollera relationsdata"
 
 #: AssociationsTool/associationstool.gpr.py:44
 msgid "Display all person Associations in a sortable, hotlinked table"
-msgstr ""
+msgstr "Visa alla personkopplingar i en sorterbar tabell med länkar"
 
 #: AssociationsTool/associationstool.py:130
 msgid "Associations state tool"
 msgstr "Verktyg för släktskapstillstånd"
 
 #: AssociationsTool/associationstool.py:181
-#, fuzzy, python-format
-#| msgid "Error: login failed"
+#, python-format
 msgid "Error initializing data: %s"
-msgstr "Fel: inloggning misslyckades"
+msgstr "Fel vid initiering av data: %s"
 
 #: AssociationsTool/associationstool.py:222
-#, fuzzy, python-format
-#| msgid "Error creating note"
+#, python-format
 msgid "Error processing person %s: %s"
-msgstr "Fel vid skapande av notis"
+msgstr "Fel vid bearbetning av person %s: %s"
 
 #: AssociationsTool/associationstool.py:252
-#, fuzzy
-#| msgid "Process relationships..."
 msgid "Processing associations..."
-msgstr "Bearbetar släktskap..."
+msgstr "Bearbetar associationer..."
 
 #: AssociationsTool/associationstool.py:257
-#, fuzzy, python-format
-#| msgid "Could not create the directory: %(path)s"
+#, python-format
 msgid "Could not create progress dialog: %s"
-msgstr "Kunde inte skapa katalogen: %(path)s"
+msgstr "Det gick inte att skapa förloppsdialogrutan: %s"
 
 #: AssociationsTool/associationstool.py:281
-#, fuzzy, python-format
-#| msgid "Produces descendants lines of a person"
+#, python-format
 msgid "Processing %d of %d persons"
-msgstr "Producerar ättlingslinjer för en person"
+msgstr "Bearbetar %d av %d personer"
 
 #: AssociationsTool/associationstool.py:347
-#, fuzzy, python-format
-#| msgid "Error: login failed"
+#, python-format
 msgid "Error displaying associations: %s"
-msgstr "Fel: inloggning misslyckades"
+msgstr "Fel vid visning av associationer: %s"
 
 #: AssociationsTool/associationstool.py:365
 #: AssociationsTool/associationstool.py:448
-#, fuzzy
-#| msgid "Street Name"
 msgid "Starting Name"
-msgstr "Gatunamn"
+msgstr "Startnamn"
 
 #: AssociationsTool/associationstool.py:368
 #: AssociationsTool/associationstool.py:451
-#, fuzzy
-#| msgid "Sync Associations"
 msgid "Associate"
-msgstr "Synkronisera föreningar"
+msgstr "Associera"
 
 #: AssociationsTool/associationstool.py:427
 #: AssociationsTool/associationstool.py:459
-#, fuzzy, python-format
-#| msgid "No source information found"
+#, python-format
 msgid "Total associations found: %d"
-msgstr "Ingen källinformation funnen"
+msgstr "Totalt antal hittade associationer: %d"
 
 #: AssociationsTool/associationstool.py:553
-#, fuzzy
-#| msgid "Edit referenced Person"
 msgid "Edit Starting Person"
-msgstr "Redigera refererad person"
+msgstr "Redigera startperson"
 
 #: AssociationsTool/associationstool.py:554
-#, fuzzy
-#| msgid "Edit referenced Person"
 msgid "Edit Associate Person"
-msgstr "Redigera refererad person"
+msgstr "Redigera associerad person"
 
 #: AssociationsTool/associationstool.py:555
-#, fuzzy
-#| msgid "Edit selection"
 msgid "Edit Association"
-msgstr "Redigera val"
+msgstr "Redigera associering"
 
 #: AssociationsTool/associationstool.py:557
-#, fuzzy
-#| msgid "Copy to clipboard"
 msgid "Copy row to clipboard"
-msgstr "Kopiera till urklipp"
+msgstr "Kopiera rad till urklipp"
 
 #: AssociationsTool/associationstool.py:558
-#, fuzzy
-#| msgid "Enumerated date from"
 msgid "Create Note from row"
-msgstr "Uppräknat datum från"
+msgstr "Skapa anteckning från rad"
 
 #: AssociationsTool/associationstool.py:672
-#, fuzzy
-#| msgid "Sync Associations"
 msgid "Association:"
-msgstr "Synkronisera föreningar"
+msgstr "Associering:"
 
 #: AssociationsTool/associationstool.py:673
-#, fuzzy
-#| msgid "Starting migration..."
 msgid "Starting Person"
-msgstr "Startar migrering..."
+msgstr "Startperson"
 
 #: AssociationsTool/associationstool.py:675
-#, fuzzy
-#| msgid "Lines type"
 msgid "Link type"
-msgstr "Linjetyp"
+msgstr "Länktyp"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
@@ -1454,7 +1426,7 @@ msgstr ": "
 
 #: ContextView/ContextView.gpr.py:29 ContextView/ContextView.py:502
 msgid "Context"
-msgstr ""
+msgstr "Sammanhang"
 
 #: ContextView/ContextView.gpr.py:31
 msgid ""
@@ -1464,37 +1436,37 @@ msgid ""
 "the top. Click any box to re-centre the chart on that person; the name in "
 "bold marks the way back to the home person."
 msgstr ""
+"Ett diagram som placerar en person i sin närmaste familjs sammanhang: paret "
+"i mitten, vardera partnerns föräldrar ovanför, deras barn nedanför och "
+"vardera partnerns syskon i en kolumn på respektive sida, med det äldsta "
+"syskonet högst upp. Klicka på en ruta för att centrera om diagrammet kring "
+"den personen; namnet i fetstil visar vägen tillbaka till utgångspersonen."
 
 #: ContextView/ContextView.py:572
 msgid "Show the previous family"
-msgstr ""
+msgstr "Visa föregående familj"
 
 #: ContextView/ContextView.py:575
-#, fuzzy
-#| msgid "Show more details"
 msgid "Show the next family"
-msgstr "Visa fler detaljer"
+msgstr "Visa nästa familj"
 
 #: ContextView/ContextView.py:899
-#, fuzzy
-#| msgid "No place is active"
 msgid "No person is active."
-msgstr "Ingen plats är aktiv"
+msgstr "Ingen person är aktiv."
 
 #: ContextView/ContextView.py:915
 #, python-format
 msgid "Family %(current)d of %(total)d"
-msgstr ""
+msgstr "Familj %(current)d av %(total)d"
 
 #: ContextView/ContextView.py:922
-#, fuzzy, python-format
-#| msgid "Highlight the home person"
+#, python-format
 msgid "family %d lies toward the home person"
-msgstr "Markera hempersonen"
+msgstr "familj %d ligger mot hempersonen"
 
 #: ContextView/ContextView.py:980
 msgid "<b>Bold</b> marks the way to the home person"
-msgstr ""
+msgstr "<b>Fetstil</b> visar vägen till hempersonen"
 
 #: ContextView/ContextView.py:1389 ContextView/ContextView.py:1599
 #: LifeLineChartView/lifelinechart.py:2622
@@ -1502,38 +1474,28 @@ msgid "Show siblings"
 msgstr "Visa syskon"
 
 #: ContextView/ContextView.py:1402
-#, fuzzy
-#| msgid "About Quilt View"
 msgid "About Context View"
-msgstr "Om Quiltad visning"
+msgstr "Om sammanhangsvisning"
 
 #: ContextView/ContextView.py:1592
-#, fuzzy
-#| msgid "Show Flag Icons"
 msgid "Show tag colour"
-msgstr "Visa flaggikoner"
+msgstr "Visa taggfärg"
 
 #: ContextView/ContextView.py:1613
 msgid "Details in each box"
-msgstr ""
+msgstr "Detaljer i varje ruta"
 
 #: ContextView/ContextView.py:1617
-#, fuzzy
-#| msgid "Name Type"
 msgid "Name only"
-msgstr "Namntyp"
+msgstr "Endast namn"
 
 #: ContextView/ContextView.py:1618
-#, fuzzy
-#| msgid "Name and Surname"
 msgid "Name and dates"
-msgstr "Namn och efternamn"
+msgstr "Namn och datum"
 
 #: ContextView/ContextView.py:1619
-#, fuzzy
-#| msgid "Full date and place"
 msgid "Name, dates and places"
-msgstr "Komplett datum och plats"
+msgstr "Namn, datum och platser"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
@@ -6543,16 +6505,12 @@ msgstr ""
 "Matchar personer som är relaterade till någon som matchas av ett personfilter"
 
 #: FilterRules/matcheventfilterrole.gpr.py:7
-#, fuzzy
-#| msgid "People with events with the <role>"
 msgid "People from event with role"
-msgstr "Personer med händelser med <rollen>"
+msgstr "Personer från händelse med roll"
 
 #: FilterRules/matcheventfilterrole.gpr.py:8
-#, fuzzy
-#| msgid "Matches event of people filter with role"
 msgid "Matches people of event filter with role"
-msgstr "Matchar personer med en händelse filtrerad med roll"
+msgstr "Matchar personer från händelsefiltret med roll"
 
 #: FilterRules/matcheventfilterrole.py:55
 #: FilterRules/matchpersonfilterrole.py:69
@@ -6560,26 +6518,20 @@ msgid "Role:"
 msgstr "Roll:"
 
 #: FilterRules/matcheventfilterrole.py:56
-#, fuzzy
-#| msgid "People with events with the <role>"
 msgid "Persons with events matching the <event filter> with role"
-msgstr "Personer med händelser med <rollen>"
+msgstr "Personer med händelser som matchar <event filter> med roll"
 
 #: FilterRules/matchparentoffilterfamily.gpr.py:7
-#, fuzzy
-#| msgid "Parent Family"
 msgid "Parents of family filter"
-msgstr "Föräldrafamilj"
+msgstr "Filtret för familjens föräldrar"
 
 #: FilterRules/matchparentoffilterfamily.gpr.py:8
-#, fuzzy
-#| msgid "Matches event of people filter with role"
 msgid "Matches parent of family filter"
-msgstr "Matchar personer med en händelse filtrerad med roll"
+msgstr "Matchar föräldrar med hjälp av familjefiltret"
 
 #: FilterRules/matchparentoffilterfamily.py:60
 msgid "Parents of <filter> family match"
-msgstr ""
+msgstr "Föräldrar till <filter> familjematchning"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
@@ -15690,24 +15642,28 @@ msgstr "GOQL-filter för familj"
 #: GOQLFilter/goql.gpr.py:51
 msgid "Gramplet providing a gramps-object-query-language family filter"
 msgstr ""
+"Gramplet som tillhandahåller ett familjefilter baserat på Gramps "
+"objektfrågespråk"
 
 #: GOQLFilter/goql.gpr.py:69
 msgid "Event GOQL Filter"
-msgstr ""
+msgstr "Händelse-GOQL-filter"
 
 #: GOQLFilter/goql.gpr.py:70
 msgid "Gramplet providing a gramps-object-query-language event filter"
 msgstr ""
+"Gramplet som tillhandahåller ett händelsefilter baserat på Gramps "
+"objektfrågespråk"
 
 #: GOQLFilter/goql.gpr.py:88
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place GOQL Filter"
-msgstr "Plata_filter:"
+msgstr "Placera GOQL-filter"
 
 #: GOQLFilter/goql.gpr.py:89
 msgid "Gramplet providing a gramps-object-query-language place filter"
 msgstr ""
+"Gramplet som tillhandahåller ett platsfilter baserat på Gramps "
+"objektfrågespråk"
 
 #: GOQLFilter/goql.gpr.py:107
 msgid "Repository GOQL Filter"
@@ -15716,92 +15672,93 @@ msgstr "GOQL arkivfilter"
 #: GOQLFilter/goql.gpr.py:109
 msgid "Gramplet providing a gramps-object-query-language repository filter"
 msgstr ""
+"Gramplet som tillhandahåller ett arkivfilter baserat på Gramps "
+"objektfrågespråk"
 
 #: GOQLFilter/goql.gpr.py:128
-#, fuzzy
-#| msgid "Source type"
 msgid "Source GOQL Filter"
-msgstr "Typ av källa"
+msgstr "GOQL källfilter"
 
 #: GOQLFilter/goql.gpr.py:129
 msgid "Gramplet providing a gramps-object-query-language source filter"
 msgstr ""
+"Gramplet som tillhandahåller ett källfilter baserat på Gramps "
+"objektfrågespråk"
 
 #: GOQLFilter/goql.gpr.py:147
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Citation GOQL Filter"
-msgstr "Släktskap med far"
+msgstr "GOQL citeringsfilter"
 
 #: GOQLFilter/goql.gpr.py:148
-#, fuzzy
-#| msgid "Gramplet showing relatives in a relation"
 msgid "Gramplet providing a gramps-object-query-language citation filter"
-msgstr "Gramplet som visar släktingar i en relation"
+msgstr ""
+"Gramplet som tillhandahåller ett citeringsfilter baserat på Gramps "
+"objektfrågespråk"
 
 #: GOQLFilter/goql.gpr.py:166
-#, fuzzy
-#| msgid "Media Object Title"
 msgid "Media GOQL Filter"
-msgstr "Mediaobjekttitel"
+msgstr "GOQL mediafilter"
 
 #: GOQLFilter/goql.gpr.py:167
 msgid "Gramplet providing a gramps-object-query-language media filter"
 msgstr ""
+"Gramplet som tillhandahåller ett mediafilter baserat på Gramps "
+"objektfrågespråk"
 
 #: GOQLFilter/goql.gpr.py:185
-#, fuzzy
-#| msgid "Note on Family"
 msgid "Note GOQL Filter"
-msgstr "Anteckning för familj"
+msgstr "GOQL notisfilter"
 
 #: GOQLFilter/goql.gpr.py:186
 msgid "Gramplet providing a gramps-object-query-language note filter"
 msgstr ""
+"Gramplet som tillhandahåller ett notisfilter baserat på Gramps "
+"objektfrågespråk"
 
 #: GOQLFilter/goql.py:186
 msgid "A gramps-object-query-language where-expression, e.g.\n"
-msgstr ""
+msgstr "Ett where-uttryck för Gramps objektfrågespråk, t.ex.\n"
 
 #: GOQLFilter/goql.py:188
 msgid "Enter inserts a newline; Ctrl+Enter runs Find.\n"
-msgstr ""
+msgstr "Enter infogar en ny rad; Ctrl+Enter kör Sök.\n"
 
 #: GOQLFilter/goql.py:189
 msgid "Up/Down at the first/last line recalls previous expressions.\n"
-msgstr ""
+msgstr "Upp/ned vid första/sista raden hämtar tidigare uttryck.\n"
 
 #: GOQLFilter/goql.py:190
 msgid "Tab always completes -- it never inserts a tab character."
 msgstr ""
+"Tab-tangenten utför alltid komplettering – den infogar aldrig ett "
+"tabulatortecken."
 
 #: GOQLFilter/goql.py:213
-#, fuzzy, python-format
-#| msgid "Use filter "
+#, python-format
 msgid "%s filter"
-msgstr "Använd filter "
+msgstr "%s-filter"
 
 #: GOQLFilter/goql.py:233
 msgid "This resets the filter parameters to empty state."
-msgstr ""
+msgstr "Detta återställer filterparametrarna till ett tomt läge."
 
 #: GOQLFilter/goql.py:239
 msgid "This opens a dialog to save the current expression as a named filter."
 msgstr ""
+"Detta öppnar en dialogruta för att spara det aktuella uttrycket som ett "
+"namngivet filter."
 
 #: GOQLFilter/goql.py:244
 msgid "Open this gramplet's help page in a browser."
-msgstr ""
+msgstr "Öppna den här gramplettens hjälpsida i en webbläsare."
 
 #: GOQLFilter/goql.py:402
 msgid "SQL"
-msgstr ""
+msgstr "SQL"
 
 #: GOQLFilter/goql.py:403
-#, fuzzy
-#| msgid "Python Shell"
 msgid "Python evaluation"
-msgstr "Python-skal"
+msgstr "Utvärdering av Python"
 
 #: GOQLFilter/goql.py:523
 #, fuzzy, python-format
@@ -15829,11 +15786,11 @@ msgstr "Skriv ett python uttryck"
 #: GOQLFilter/goql.py:560
 #, python-brace-format
 msgid "Created by the GOQL Filter gramplet on {today}"
-msgstr ""
+msgstr "Skapad av GOQL-filtergrampletten den {today}"
 
 #: GOQLFilter/whereexprrule.gpr.py:30 GOQLFilter/whereexprrule.py:261
 msgid "People matching the <GOQL expression>"
-msgstr ""
+msgstr "Personer som matchar <GOQL-uttrycket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:32
 msgid ""
@@ -15842,10 +15799,8 @@ msgid ""
 msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:50 GOQLFilter/whereexprrule.py:266
-#, fuzzy
-#| msgid "Families matching <event filter>"
 msgid "Families matching the <GOQL expression>"
-msgstr "Familjer som matchar <händelsefilter>"
+msgstr "Familjer som matchar <GOQL-uttrycket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:52
 msgid ""
@@ -15855,7 +15810,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:70 GOQLFilter/whereexprrule.py:271
 msgid "Events matching the <GOQL expression>"
-msgstr ""
+msgstr "Händelser som matchar <GOQL-uttrycket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:72
 msgid ""
@@ -15865,7 +15820,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:90 GOQLFilter/whereexprrule.py:276
 msgid "Places matching the <GOQL expression>"
-msgstr ""
+msgstr "Platser som matchar <GOQL-uttrycket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:92
 msgid ""
@@ -15875,7 +15830,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:110 GOQLFilter/whereexprrule.py:281
 msgid "Repositories matching the <GOQL expression>"
-msgstr ""
+msgstr "Arkivplatser som matchar <GOQL-uttrycket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:112
 msgid ""
@@ -15884,10 +15839,8 @@ msgid ""
 msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:130 GOQLFilter/whereexprrule.py:286
-#, fuzzy
-#| msgid "Source matching parameters"
 msgid "Sources matching the <GOQL expression>"
-msgstr "Parametrar för källmatchning"
+msgstr "Källor som matchar <GOQL-uttrycket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:132
 msgid ""
@@ -15897,7 +15850,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:150 GOQLFilter/whereexprrule.py:291
 msgid "Citations matching the <GOQL expression>"
-msgstr ""
+msgstr "Citeringar som matchar <GOQL-uttrycket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:152
 msgid ""
@@ -15907,7 +15860,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:170 GOQLFilter/whereexprrule.py:296
 msgid "Media matching the <GOQL expression>"
-msgstr ""
+msgstr "Media som matchar <GOQL-uttrycket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:172
 msgid ""
@@ -15917,7 +15870,7 @@ msgstr ""
 
 #: GOQLFilter/whereexprrule.gpr.py:190 GOQLFilter/whereexprrule.py:301
 msgid "Notes matching the <GOQL expression>"
-msgstr ""
+msgstr "Anteckningar som matchar <GOQL-uttrycket>"
 
 #: GOQLFilter/whereexprrule.gpr.py:192
 msgid ""
@@ -15926,10 +15879,8 @@ msgid ""
 msgstr ""
 
 #: GOQLFilter/whereexprrule.py:212
-#, fuzzy
-#| msgid "Allow regular expressions."
 msgid "GOQL expression"
-msgstr "Tillåt reguljära uttryck."
+msgstr "GOQL-uttrycket"
 
 #: GOQLFilter/whereexprrule.py:214
 msgid ""
