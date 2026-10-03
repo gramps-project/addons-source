@@ -120,6 +120,16 @@ PANE_FOR_STATE: dict[State, str] = {
 #: would leave no record of how far it got.
 WRITING_STATES = (State.APPLYING, State.TRANSFERRING)
 
+
+def change_server_offered(state: State) -> bool:
+    """Whether the context strip offers "Change server…" in ``state``.
+
+    Not on the connect pane: the server is being edited right there, and the
+    button would only lead back to the same pane, which reads as if it did
+    nothing.
+    """
+    return state is not State.CONNECT
+
 #: Response ids for the buttons the dialog adds itself.
 RESPONSE_CONNECT = 1
 RESPONSE_APPLY = 2
@@ -493,6 +503,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             format_last_synced(self.credentials.get_timestamp(url, username)),
         )
         self.context.update(title, subtitle)
+        self.context.set_change_offered(change_server_offered(state))
         self.context.set_busy(state in WRITING_STATES)
 
     def _connect_notices(self) -> list[str]:
@@ -585,6 +596,8 @@ class ContextStrip(Gtk.Box):
         self.change_button = Gtk.Button(label=_("Change server…"))
         self.change_button.set_valign(Gtk.Align.CENTER)
         self.change_button.connect("clicked", on_change_server)
+        # Shown and hidden explicitly; kept out of show_all() for that.
+        self.change_button.set_no_show_all(True)
         self.pack_start(self.change_button, False, False, 0)
 
     def update(self, title: str, subtitle: str) -> None:
@@ -599,6 +612,10 @@ class ContextStrip(Gtk.Box):
     def set_busy(self, busy: bool) -> None:
         """Block a server switch while a sync is running."""
         self.change_button.set_sensitive(not busy)
+
+    def set_change_offered(self, offered: bool) -> None:
+        """Show the server switch, or hide it where it would mean nothing."""
+        self.change_button.set_visible(offered)
 
 
 class ConnectPane(Gtk.Box):
