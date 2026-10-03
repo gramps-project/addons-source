@@ -24,7 +24,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 10:14-0700\n"
-"PO-Revision-Date: 2026-09-04 16:45+0000\n"
+"PO-Revision-Date: 2026-09-27 07:51+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -296,120 +296,94 @@ msgstr "Archiv-Assistent"
 
 #: AssociationsTool/associationstool.gpr.py:43
 msgid "Check Associations data"
-msgstr "Verknüpfungsdaten prüfen"
+msgstr "Zuordnungsdaten prüfen"
 
 #: AssociationsTool/associationstool.gpr.py:44
 msgid "Display all person Associations in a sortable, hotlinked table"
 msgstr ""
+"Alle Personenzuordnungen in einer sortierbaren Tabelle mit Hyperlinks "
+"anzeigen"
 
 #: AssociationsTool/associationstool.py:130
 msgid "Associations state tool"
-msgstr "Verbindungszustand-Werkzeug"
+msgstr "Zuordnungswerkzeug"
 
 #: AssociationsTool/associationstool.py:181
-#, fuzzy, python-format
-#| msgid "Error applying filter: %s"
+#, python-format
 msgid "Error initializing data: %s"
-msgstr "Fehler beim Anwenden des Filters: %s"
+msgstr "Fehler beim Initialisieren der Daten: %s"
 
 #: AssociationsTool/associationstool.py:222
-#, fuzzy, python-format
-#| msgid "Error resetting filter: %s"
+#, python-format
 msgid "Error processing person %s: %s"
-msgstr "Fehler beim Zurücksetzen des Filters: %s"
+msgstr "Fehler bei der Verarbeitung der Person %s: %s"
 
 #: AssociationsTool/associationstool.py:252
-#, fuzzy
-#| msgid "Process relationships..."
 msgid "Processing associations..."
-msgstr "Verarbeite Beziehungen..."
+msgstr "Zuordnungen werden verarbeitet..."
 
 #: AssociationsTool/associationstool.py:257
-#, fuzzy, python-format
-#| msgid "Could not create the directory: %(path)s"
+#, python-format
 msgid "Could not create progress dialog: %s"
-msgstr "Das Verzeichnis konnte nicht erstellt werden: %(path)s"
+msgstr "Der Fortschrittsdialog konnte nicht erstellt werden: %s"
 
 #: AssociationsTool/associationstool.py:281
-#, fuzzy, python-format
-#| msgid "Produces descendants lines of a person"
+#, python-format
 msgid "Processing %d of %d persons"
-msgstr "Erzeugt Nachkommenlinien einer Person"
+msgstr "%d von %d Personen werden verarbeitet"
 
 #: AssociationsTool/associationstool.py:347
-#, fuzzy, python-format
-#| msgid "Error applying filter: %s"
+#, python-format
 msgid "Error displaying associations: %s"
-msgstr "Fehler beim Anwenden des Filters: %s"
+msgstr "Fehler beim Anzeigen der Zuordnungen: %s"
 
 #: AssociationsTool/associationstool.py:365
 #: AssociationsTool/associationstool.py:448
-#, fuzzy
-#| msgid "Street Name"
 msgid "Starting Name"
-msgstr "Straßenname"
+msgstr "Startname"
 
 #: AssociationsTool/associationstool.py:368
 #: AssociationsTool/associationstool.py:451
-#, fuzzy
-#| msgid "Sync Associations"
 msgid "Associate"
-msgstr "Zuordnungen synchronisieren"
+msgstr "Zuordnen"
 
 #: AssociationsTool/associationstool.py:427
 #: AssociationsTool/associationstool.py:459
-#, fuzzy, python-format
-#| msgid "No source information found"
+#, python-format
 msgid "Total associations found: %d"
-msgstr "Keine Quelleninformation gefunden"
+msgstr "Gesamtzahl der gefundenen Zuordnungen: %d"
 
 #: AssociationsTool/associationstool.py:553
-#, fuzzy
-#| msgid "Edit referenced Person"
 msgid "Edit Starting Person"
-msgstr "Referenzierte Person bearbeiten"
+msgstr "Startperson bearbeiten"
 
 #: AssociationsTool/associationstool.py:554
-#, fuzzy
-#| msgid "Edit referenced Person"
 msgid "Edit Associate Person"
-msgstr "Referenzierte Person bearbeiten"
+msgstr "Zugeordnete Person bearbeiten"
 
 #: AssociationsTool/associationstool.py:555
-#, fuzzy
-#| msgid "Edit selection"
 msgid "Edit Association"
-msgstr "Auswahl bearbeiten"
+msgstr "Zuordnung bearbeiten"
 
 #: AssociationsTool/associationstool.py:557
-#, fuzzy
-#| msgid "Copy to clipboard"
 msgid "Copy row to clipboard"
-msgstr "In die Zwischenablage kopieren"
+msgstr "Zeile in die Zwischenablage kopieren"
 
 #: AssociationsTool/associationstool.py:558
-#, fuzzy
-#| msgid "Enumerated date from"
 msgid "Create Note from row"
-msgstr "Zählung Datum von"
+msgstr "Notiz aus Zeile erstellen"
 
 #: AssociationsTool/associationstool.py:672
-#, fuzzy
-#| msgid "Sync Associations"
 msgid "Association:"
-msgstr "Zuordnungen synchronisieren"
+msgstr "Zuordnungen:"
 
 #: AssociationsTool/associationstool.py:673
-#, fuzzy
-#| msgid "Starting migration..."
 msgid "Starting Person"
-msgstr "Migration wird gestartet..."
+msgstr "Startperson"
 
 #: AssociationsTool/associationstool.py:675
-#, fuzzy
-#| msgid "Lines type"
 msgid "Link type"
-msgstr "Linienart"
+msgstr "Linktyp"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
@@ -1486,7 +1460,7 @@ msgstr ": "
 
 #: ContextView/ContextView.gpr.py:29 ContextView/ContextView.py:502
 msgid "Context"
-msgstr ""
+msgstr "Kontext"
 
 #: ContextView/ContextView.gpr.py:31
 msgid ""
@@ -1496,37 +1470,38 @@ msgid ""
 "the top. Click any box to re-centre the chart on that person; the name in "
 "bold marks the way back to the home person."
 msgstr ""
+"Ein Diagramm, das eine Person in den Kontext ihrer unmittelbaren Familie "
+"einordnet: Das Paar steht in der Mitte, darüber die Eltern der jeweiligen "
+"Partner, darunter die Kinder und in einer Spalte an der jeweiligen Seite die "
+"Geschwister der Partner, wobei der Älteste ganz oben steht. Klick auf ein "
+"beliebiges Feld, um das Diagramm auf diese Person zu zentrieren; der "
+"fettgedruckte Name markiert den Weg zurück zur Ausgangsperson."
 
 #: ContextView/ContextView.py:572
 msgid "Show the previous family"
-msgstr ""
+msgstr "Die vorherige Familie anzeigen"
 
 #: ContextView/ContextView.py:575
-#, fuzzy
-#| msgid "Show more details"
 msgid "Show the next family"
-msgstr "Weitere Details anzeigen"
+msgstr "Die nächste Familie anzeigen"
 
 #: ContextView/ContextView.py:899
-#, fuzzy
-#| msgid "No place is active"
 msgid "No person is active."
-msgstr "Kein Ort ist aktiv"
+msgstr "Es ist keine Person aktiv."
 
 #: ContextView/ContextView.py:915
 #, python-format
 msgid "Family %(current)d of %(total)d"
-msgstr ""
+msgstr "Familie %(current)d von %(total)d"
 
 #: ContextView/ContextView.py:922
-#, fuzzy, python-format
-#| msgid "Highlight the home person"
+#, python-format
 msgid "family %d lies toward the home person"
-msgstr "Die Hausperson hervorheben"
+msgstr "Familie %d liegt in Richtung der Hauptperson"
 
 #: ContextView/ContextView.py:980
 msgid "<b>Bold</b> marks the way to the home person"
-msgstr ""
+msgstr "<b>Fettdruck</b> weist den Weg zur Hauptperson"
 
 #: ContextView/ContextView.py:1389 ContextView/ContextView.py:1599
 #: LifeLineChartView/lifelinechart.py:2622
@@ -1534,38 +1509,28 @@ msgid "Show siblings"
 msgstr "Geschwister zeigen"
 
 #: ContextView/ContextView.py:1402
-#, fuzzy
-#| msgid "About Quilt View"
 msgid "About Context View"
-msgstr "Über Steppansicht"
+msgstr "Über Kontextansicht"
 
 #: ContextView/ContextView.py:1592
-#, fuzzy
-#| msgid "Show Flag Icons"
 msgid "Show tag colour"
-msgstr "Flaggensymbole anzeigen"
+msgstr "Etikettenfarbe anzeigen"
 
 #: ContextView/ContextView.py:1613
 msgid "Details in each box"
-msgstr ""
+msgstr "Details in jedem Kasten"
 
 #: ContextView/ContextView.py:1617
-#, fuzzy
-#| msgid "Name of City"
 msgid "Name only"
-msgstr "Name der Stadt"
+msgstr "Nur Name"
 
 #: ContextView/ContextView.py:1618
-#, fuzzy
-#| msgid "Name and Surname"
 msgid "Name and dates"
-msgstr "Vorname und Nachname"
+msgstr "Name und Daten"
 
 #: ContextView/ContextView.py:1619
-#, fuzzy
-#| msgid "Full date and place"
 msgid "Name, dates and places"
-msgstr "Vollständiges Datum und Ort"
+msgstr "Name, Daten und Orte"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
@@ -2178,9 +2143,7 @@ msgstr ""
 
 #: DNAMatches/dnamatches.py:195
 msgid "Right click to edit selected association."
-msgstr ""
-"Klicke mit der rechten Maustaste, um die ausgewählte Assoziation zu "
-"bearbeiten."
+msgstr "Rechtsklick zum Bearbeiten der ausgewählten Zuordnung."
 
 #: DNAMatches/dnamatches.py:210
 msgid "LEGEND"
@@ -2548,7 +2511,7 @@ msgstr "Notiz zur Elternfamilie"
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:278
 #, python-format
 msgid "%s (association)"
-msgstr "%s (Assoziation)"
+msgstr "%s (Zuordnung)"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:283
 msgid "Note on Person"
@@ -6492,8 +6455,8 @@ msgstr "FamilyTree-DNA-Import"
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
 msgstr ""
-"{} Verknüpfungen mit DNA-Daten erstellt. {} Haplogruppen-Attribute "
-"erstellt \n"
+"{} Zuordnungen mit DNA-Daten erstellt. {} Attribute der Haplogruppe erstellt "
+"\n"
 
 #: FamilyTreeDNA/ftdna_import.py:228
 msgid "No Family Finder File specified"
@@ -6506,8 +6469,8 @@ msgstr "Keine Segmentdatei angegeben"
 #: FamilyTreeDNA/ftdna_import.py:236
 msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
 msgstr ""
-"Keine Verbindungen in FTdna Notizen gefunden. Keine Haplogruppen-Attribute "
-"erstellt."
+"In den FTdna-Notizen wurden keine Zuordnungen gefunden. Es wurden keine "
+"Haplogruppen-Attribute erstellt."
 
 #: FamilyTreeDNA/ftdna_import.py:307
 #, python-format
@@ -6517,12 +6480,12 @@ msgstr "%s Haplogruppen-Attribut hinzufügen"
 #: FamilyTreeDNA/ftdna_import.py:350
 #, python-format
 msgid "Add %s DNA Association"
-msgstr "DNA-Assoziation %s hinzufügen"
+msgstr "%s-DNA-Assoziation hinzufügen"
 
 #: FamilyTreeDNA/ftdna_import.py:367
 #, python-format
 msgid "Create Note for %s DNA Association"
-msgstr "Notiz für %s DNA- Verbindung erstellen"
+msgstr "Notiz zur %s-DNA-Assoziation erstellen"
 
 #: FamilyTreeDNA/ftdna_import.py:369
 #, python-format
@@ -6532,17 +6495,17 @@ msgstr "Notiz zu %s DNA-Assoziation hinzufügen"
 #: FamilyTreeDNA/ftdna_import.py:385
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr "Quellenangabe für die %s-DNA-Assoziation erstellen"
+msgstr "Quelle für die %s-DNA-Assoziation erstellen"
 
 #: FamilyTreeDNA/ftdna_import.py:390
 #, python-format
 msgid "Create Citation for %s DNA Association"
-msgstr "Quellenangabe für %s DNA-Verbindung erstellen"
+msgstr "Quellenangabe für %s DNA-Assoziation erstellen"
 
 #: FamilyTreeDNA/ftdna_import.py:394
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr "Quellenangabe zu %s DNA-Verbindung hinzufügen"
+msgstr "Quellenangabe zu %s DNA-Assoziation hinzufügen"
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
@@ -6708,17 +6671,12 @@ msgstr ""
 "Personenfilter gefunden wurde"
 
 #: FilterRules/matcheventfilterrole.gpr.py:7
-#, fuzzy
-#| msgid "People with events with the <role>"
 msgid "People from event with role"
-msgstr "Personen mit Ereignissen mit der <Rolle>"
+msgstr "Personen vom Ereignis mit einer Rolle"
 
 #: FilterRules/matcheventfilterrole.gpr.py:8
-#, fuzzy
-#| msgid "Matches event of people filter with role"
 msgid "Matches people of event filter with role"
-msgstr ""
-"Gibt Ereignisse an, bei denen der Personenfilter mit der Rolle übereinstimmt"
+msgstr "Entspricht Personen mit dem Ereignisfilter mit der Rolle"
 
 #: FilterRules/matcheventfilterrole.py:55
 #: FilterRules/matchpersonfilterrole.py:69
@@ -6726,27 +6684,21 @@ msgid "Role:"
 msgstr "Rolle:"
 
 #: FilterRules/matcheventfilterrole.py:56
-#, fuzzy
-#| msgid "People with events with the <role>"
 msgid "Persons with events matching the <event filter> with role"
-msgstr "Personen mit Ereignissen mit der <Rolle>"
+msgstr ""
+"Personen, mit Ereignissen, die dem <Ereignisfilter> mit Rolle entsprechen"
 
 #: FilterRules/matchparentoffilterfamily.gpr.py:7
-#, fuzzy
-#| msgid "Parent Family"
 msgid "Parents of family filter"
-msgstr "Eltern Familie"
+msgstr "Eltern des Familienfilters"
 
 #: FilterRules/matchparentoffilterfamily.gpr.py:8
-#, fuzzy
-#| msgid "Matches event of people filter with role"
 msgid "Matches parent of family filter"
-msgstr ""
-"Gibt Ereignisse an, bei denen der Personenfilter mit der Rolle übereinstimmt"
+msgstr "Entspricht Elternteil des Familienfilters"
 
 #: FilterRules/matchparentoffilterfamily.py:60
 msgid "Parents of <filter> family match"
-msgstr ""
+msgstr "Eltern der Familie, die dem Familie<Filter> entspricht"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
@@ -16595,7 +16547,7 @@ msgstr "GetGOV-Fehler: %s"
 
 #: GetGOV/getgov.py:421
 msgid "GOV link"
-msgstr ""
+msgstr "GOV-Link"
 
 #: GetGOV/getgov.py:428
 #, python-format
@@ -16699,10 +16651,8 @@ msgid "Clear conversation and context"
 msgstr "Kommunikation und Kontext leeren"
 
 #: GrampsAssistant/grampsassistant.py:220
-#, fuzzy
-#| msgid "Gramps Assistant settings"
 msgid "Open the Gramps Assistant wiki page"
-msgstr "Gramps Assistent-Einstellungen"
+msgstr "Öffne die Wiki-Seite zum Gramps-Assistenten"
 
 #: GrampsAssistant/grampsassistant.py:396
 #: GrampsAssistant/grampsassistant.py:760
@@ -16896,6 +16846,13 @@ msgid ""
 "this Family Tree. Opening it as-is would leave the local mirror silently "
 "incomplete or unable to save changes back."
 msgstr ""
+"Dem Konto, das sich über GRAMPS_WEB_API_KEY authentifiziert, fehlen die für "
+"diese Erweiterung erforderlichen Serverberechtigungen: %(missing)s. Weise "
+"ihm auf dem Server mindestens die Rolle „%(role)s“ zu (oder bitte einen "
+"Administrator darum), und öffne diesen Stammbaum anschließend erneut. "
+"Würdest du ihn in seinem aktuellen Zustand öffnen, bliebe der lokale Spiegel "
+"unbemerkt unvollständig oder es könnten keine Änderungen zurückgespeichert "
+"werden."
 
 #: GrampsWebApiDb/grampswebapidb.py:741
 #, python-format
@@ -16905,6 +16862,11 @@ msgid ""
 "history in a format it cannot read. Upgrade the Gramps installation behind "
 "the Gramps Web API server (or ask its administrator to)."
 msgstr ""
+"Auf diesem Server läuft Gramps %(actual)s, diese Erweiterung benötigt jedoch "
+"einen Server, auf dem Gramps %(required)s oder eine neuere Version läuft: "
+"Ältere Server speichern ihren Transaktionsverlauf in einem Format, das diese "
+"Erweiterung nicht lesen kann. Aktualisiere die Gramps-Installation hinter "
+"dem Gramps-Web-API-Server (oder bitten dessen Administrator darum)."
 
 #: GrampsWebApiDb/grampswebapidb.py:1008
 msgid "Retry local change after server conflict"
@@ -17632,47 +17594,48 @@ msgstr "Diagramm"
 
 #: GrampyScript/GrampyScript.py:480 GrampyScript/GrampyScript.py:551
 msgid "Ready... (Tab for completions)"
-msgstr ""
+msgstr "Fertig... (Tab für Vervollständigungen)"
 
 #: GrampyScript/GrampyScript.py:505
-#, fuzzy
-#| msgid "No title"
 msgid "Untitled"
-msgstr "Kein Titel"
+msgstr "Unbetitelt"
 
 #: GrampyScript/GrampyScript.py:534
 msgid ""
 "If you continue without saving, the changes you have made to this script "
 "will be lost."
 msgstr ""
+"Wenn du ohne zu speichern fortfährst, gehen die Änderungen, die du an diesem "
+"Skript vorgenommen hast, verloren."
 
 #: GrampyScript/GrampyScript.py:1332
 msgid "Gram.py Script Edited Data"
 msgstr "Mit Gram.py bearbeitete Daten"
 
 #: GrampyScript/script_descriptions.py:44
-#, fuzzy
-#| msgid "All Names of All People"
 msgid "List All People"
-msgstr "Alle Namen aller Personen"
+msgstr "Alle Personen auflisten"
 
 #: GrampyScript/script_descriptions.py:46
 msgid ""
 "Iterate over every person in the database and show their Gramps ID, given "
 "name, surname, and gender in the results table."
 msgstr ""
+"Durchlaufe alle Personen in der Datenbank und zeige deren Gramps-ID, "
+"Vornamen, Nachnamen und Geschlecht in der Ergebnistabelle an."
 
 #: GrampyScript/script_descriptions.py:51
-#, fuzzy
-#| msgid "Family Surname"
 msgid "Filter By Surname"
-msgstr "Familiennachname"
+msgstr "Nach Nachnamen filtern"
 
 #: GrampyScript/script_descriptions.py:53
 msgid ""
 "List only the people whose surname matches a given value — a starting point "
 "for narrowing any report down by a condition."
 msgstr ""
+"Nur die Personen auflisten, deren Nachname mit einem bestimmten Wert "
+"übereinstimmt – ein Ausgangspunkt, um einen Bericht anhand einer Bedingung "
+"einzugrenzen."
 
 #: GrampyScript/script_descriptions.py:58 Overview/Overview.gpr.py:45
 msgid "Family Overview"
@@ -17683,22 +17646,26 @@ msgid ""
 "List every family together with the father, the mother, and how many "
 "children they have — a quick way to spot families that look incomplete."
 msgstr ""
+"Alle Familien zusammen mit dem Vater, der Mutter und der Anzahl ihrer Kinder "
+"auflisten – so lassen sich Familien, die unvollständig erscheinen, schnell "
+"erkennen."
 
 #: GrampyScript/script_descriptions.py:66
 msgid "Gender Breakdown (Pie Chart)"
-msgstr ""
+msgstr "Aufschlüsselung nach Geschlecht (Kreisdiagramm)"
 
 #: GrampyScript/script_descriptions.py:68
 msgid ""
 "Count how many people are male, female, or of unknown gender, then draw a "
 "pie chart of the totals. Check the Chart tab after running."
 msgstr ""
+"Zählt, wie viele Personen männlich, weiblich oder von unbekanntem Geschlecht "
+"sind, und erstellt dann ein Kreisdiagramm mit den Gesamtzahlen. Sieh dir "
+"nach der Ausführung die Registerkarte Diagramm an."
 
 #: GrampyScript/script_descriptions.py:74
-#, fuzzy
-#| msgid "Age at Death"
 msgid "Age At Death Histogram"
-msgstr "Alter beim Tod"
+msgstr "Histogramm zum Sterbealter"
 
 #: GrampyScript/script_descriptions.py:76
 msgid ""
@@ -17706,10 +17673,14 @@ msgid ""
 "in whole years and draw a histogram of the distribution. Check the Chart tab "
 "after running."
 msgstr ""
+"Für alle Personen, für die sowohl ein Geburts- als auch ein Todesdatum "
+"erfasst ist, wird das Alter in ganzen Jahren berechnet und ein Histogramm "
+"der Verteilung erstellt. Sieh dir nach der Ausführung die Registerkarte "
+"Diagramm an."
 
 #: GrampyScript/script_descriptions.py:82
 msgid "Mark Unsourced People As Private"
-msgstr ""
+msgstr "Personen ohne Quellenangabe als vertraulich kennzeichnen"
 
 #: GrampyScript/script_descriptions.py:84
 msgid ""
@@ -17717,10 +17688,15 @@ msgid ""
 "them as private, wrapped in begin_changes()/end_changes() so the edits "
 "happen inside a single, undoable transaction."
 msgstr ""
+"Beispiel für eine Massenbearbeitung: Alle Personen suchen, denen keine "
+"Fundstellen zugeordnet sind, und sie als privat kennzeichnen, wobei der "
+"Vorgang in `begin_changes()`/`end_changes()` eingeschlossen wird, damit die "
+"Änderungen innerhalb einer einzigen, rückgängig machbaren Transaktion "
+"erfolgen."
 
 #: GrampyScript/script_descriptions.py:91
 msgid "CSV-Ready People Report"
-msgstr ""
+msgstr "CSV-fähiger Personenbericht"
 
 #: GrampyScript/script_descriptions.py:93
 msgid ""
@@ -17728,42 +17704,52 @@ msgid ""
 "person. Once it runs, use Data > Save as CSV or Copy to clipboard to export "
 "the Table tab's contents."
 msgstr ""
+"Erstellt für jede Person einen einfachen tabellarischen Bericht – ID, Name, "
+"Geschlecht, Geburtsjahr. Nach der Ausführung kannst du den Inhalt der "
+"Registerkarte Tabelle über Daten > Als CSV speichern oder In die "
+"Zwischenablage kopieren exportieren."
 
 #: GrampyScript/script_descriptions.py:99
-#, fuzzy
-#| msgid "Active Person : "
 msgid "Active Person Summary"
-msgstr "Aktive Person: "
+msgstr "Zusammenfassung Aktive Person"
 
 #: GrampyScript/script_descriptions.py:101
 msgid ""
 "Show a compact family summary for the currently active person: their record, "
 "parents, spouse, and children."
 msgstr ""
+"Zeige eine kompakte Familienübersicht für die derzeit aktive Person an: "
+"ihren Datensatz, ihre Eltern, ihren Ehepartner und ihre Kinder."
 
 #: GrampyScript/script_descriptions.py:106
 msgid "Report On Selected People"
-msgstr ""
+msgstr "Bericht über ausgewählte Personen"
 
 #: GrampyScript/script_descriptions.py:108
 msgid ""
 "List just the people currently selected (highlighted) in the People view. "
 "Select some rows in the People view before running this script."
 msgstr ""
+"Listet nur die Personen auf, die derzeit in der Ansicht Personen ausgewählt "
+"(markiert) sind. Wähle einige Zeilen in der Ansicht Personen aus, bevor du "
+"dieses Skript ausführst."
 
 #: GrampyScript/script_descriptions.py:114
 msgid "Find People Missing A Birth Date"
-msgstr ""
+msgstr "Personen suchen, bei denen das Geburtsdatum fehlt"
 
 #: GrampyScript/script_descriptions.py:116
 msgid ""
 "Data-quality check: list every person who has no recorded birth event, so "
 "you can prioritize research on those records."
 msgstr ""
+"Prüfung der Datenqualität: Auflistung aller Personen, für die kein "
+"Geburtsereignis erfasst ist, damit du die Recherche zu diesen Datensätzen "
+"vorrangig behandeln kannst."
 
 #: GrampyScript/script_descriptions.py:121
 msgid "Births Per Decade (Import Example)"
-msgstr ""
+msgstr "Geburten pro Jahrzehnt (Importbeispiel)"
 
 #: GrampyScript/script_descriptions.py:123
 msgid ""
@@ -17771,12 +17757,14 @@ msgid ""
 "script_helpers.py in this same folder — a template for sharing helper code "
 "between your own scripts with a plain 'import' statement."
 msgstr ""
+"Zählt Geburten nach Jahrzehnt, unter Verwendung der Funktion „decade()“, die "
+"aus der Datei script_helpers.py in diesem Ordner importiert wird – eine "
+"Vorlage, um Hilfscode zwischen deinen eigenen Skripten mithilfe einer "
+"einfachen „import“-Anweisung gemeinsam zu nutzen."
 
 #: GrampyScript/script_descriptions.py:130
-#, fuzzy
-#| msgid "Custom \"test.xml\" file"
 msgid "Custom Filter Example"
-msgstr "Benutzerdefinierte „test.xml“-Datei"
+msgstr "Beispiel für einen benutzerdefinierten Filter"
 
 #: GrampyScript/script_descriptions.py:132
 msgid ""
@@ -17785,10 +17773,15 @@ msgid ""
 "you've already created; if the name doesn't match one, a warning shows up in "
 "the Output tab instead."
 msgstr ""
+"Führt einen deiner benutzerdefinierten Filter (aus dem Gramplet/Editor „"
+"Filter“) anhand seines Namens mit der Funktion `custom_filter()` aus. "
+"Ersetze „Beispielfilter“ durch den Namen eines Filters, den du bereits "
+"erstellt hast; wenn der Name mit keinem Filter übereinstimmt, wird "
+"stattdessen auf der Registerkarte Ausgabe eine Warnung angezeigt."
 
 #: GrampyScript/script_descriptions.py:140
 msgid "Delete Unused Repositories (Delete Example)"
-msgstr ""
+msgstr "Nicht verwendete Aufbewahrungsorte löschen (Beispiel zum Löschen)"
 
 #: GrampyScript/script_descriptions.py:142
 msgid ""
@@ -17797,6 +17790,13 @@ msgid ""
 "unlikely to actually delete anything — it's meant to show the pattern, "
 "wrapped in begin_changes()/end_changes() as a single undoable transaction."
 msgstr ""
+"Veranschaulicht die Funktion delete(): Entfernt jeden Aufbewahrungsort-"
+"Eintrag, auf den sonst nichts in der Baumstruktur verweist. Da die meisten "
+"Baumstrukturen keine ungenutzten Repositorys enthalten, ist es "
+"unwahrscheinlich, dass dadurch tatsächlich etwas gelöscht wird – die "
+"Funktion dient lediglich dazu, das Muster zu veranschaulichen, und ist mit "
+"begin_changes()/end_changes() als einzelne rückgängig machbare Transaktion "
+"umschlossen."
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -24894,40 +24894,28 @@ msgid "The style used for event and person details."
 msgstr "Der für Ereignis- und Personendetails verwendete Stil."
 
 #: Sqlite/ExportSql.py:1720
-#, fuzzy
-#| msgid "January"
 msgid "January 1"
-msgstr "Januar"
+msgstr "1. Januar"
 
 #: Sqlite/ExportSql.py:1721
-#, fuzzy
-#| msgid "March"
 msgid "March 1"
-msgstr "März"
+msgstr "1. März"
 
 #: Sqlite/ExportSql.py:1722
-#, fuzzy
-#| msgid "March"
 msgid "March 25"
-msgstr "März"
+msgstr "25. März"
 
 #: Sqlite/ExportSql.py:1723
-#, fuzzy
-#| msgid "September"
 msgid "September 1"
-msgstr "September"
+msgstr "1. September"
 
 #: Sqlite/ExportSql.py:1749
-#, fuzzy
-#| msgid "Widowed"
 msgid "Flowed"
-msgstr "Verwitwet"
+msgstr "Fließend"
 
 #: Sqlite/ExportSql.py:1750
-#, fuzzy
-#| msgid "PS format"
 msgid "Preformatted"
-msgstr "PS-Format"
+msgstr "Vorformatiert"
 
 #: Sqlite/ExportSql.py:1953
 #, python-format
@@ -25007,22 +24995,23 @@ msgstr ""
 #: SyncAssociations/syncAssociations.py:124
 #, python-format
 msgid "Add %s reciprocal association"
-msgstr "%s reziproke Assoziation hinzufügen"
+msgstr "%s als wechselseitige Zuordnung hinzufügen"
 
 #: SyncAssociations/syncAssociations.py:131
 #, python-brace-format
 msgid "{} Reciprocal associations created"
-msgstr "{} Gegenseitige Verknüpfungen erstellt"
+msgstr "{} Wechselseitige Zuordnung erstellt"
 
 #: SyncAssociations/syncAssociations.py:135
 msgid "All reciprocal associations exist, none created"
-msgstr "Alle wechselseitigen Verknüpfungen bestehen, keine wurde erstellt"
+msgstr ""
+"Alle wechselseitigen Zuordnungen existieren bereits, keine wurde erstellt"
 
 #: SyncAssociations/syncAssociations.py:139
 msgid "No existing associations, so no reciprocal ones needed"
 msgstr ""
-"Keine bestehenden Verbindungen, daher keine gegenseitigen Verbindungen "
-"erforderlich"
+"Es gibt keine bestehenden Zuordnungen, daher sind keine wechselseitigen "
+"Zuordnungen erforderlich"
 
 #: TMGimporter/importtmg.gpr.py:45
 msgid "TMG Project Backup"
