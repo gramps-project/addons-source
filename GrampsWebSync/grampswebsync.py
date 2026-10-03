@@ -39,8 +39,9 @@ from adapters import (
     GrampsMediaStore,
     IoRunner,
     SystemClock,
+    normalize_url,
 )
-from const import MODE_BIDIRECTIONAL, SYNC_MODES
+from const import AUTH_PASSWORD, AUTH_SYNC_TOKEN, MODE_BIDIRECTIONAL, SYNC_MODES
 from diffhandler import changes_to_actions
 from gi.repository import GLib, Gtk, Pango
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -71,7 +72,7 @@ from presentation import (
     verb_label,
     version_line,
 )
-from session import WORKING_STATES, State, SyncSession
+from session import WORKING_STATES, ErrorKind, State, SyncSession
 from webapihandler import WebApiHandler
 
 assert glocale is not None  # for type checker
@@ -215,6 +216,10 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self._phase_started = time.monotonic()
 
         self.credentials = ConfigCredentialStore(tree_id=dbstate.db.get_dbid())
+        #: A sync token stored for a server, and the ``(url, username)`` it
+        #: belongs to. Used when the password field is left empty.
+        self._saved_token: str | None = None
+        self._saved_for: tuple[str, str] | None = None
         self.session = SyncSession(
             db=dbstate.db,
             user=self._user,
@@ -304,9 +309,11 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         """Override :class:`.ManagedWindow` method."""
         return (_("Gramps Web Sync"), None)
 
-    def _make_backend(self, url: str, username: str, password: str) -> WebApiHandler:
+    def _make_backend(
+        self, url: str, username: str, password: str, auth: str = AUTH_PASSWORD
+    ) -> WebApiHandler:
         """Build the real Web API handler. Injected into the session."""
-        return WebApiHandler(url, username, password, None)
+        return WebApiHandler(url, username, password, None, auth=auth)
 
     # --------------------------------------------------------
     # Lifecycle
@@ -324,6 +331,11 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         url = self.credentials.get_url()
         username = self.credentials.get_username()
         password = self.credentials.get_password() or ""
+        if password and self.credentials.get_auth() == AUTH_SYNC_TOKEN:
+            # Never shown or sent as a password; see _submit().
+            self._saved_token = password
+            self._saved_for = (normalize_url(url), username)
+            password = ""
         self.connect_pane.set_credentials(url, username, password)
         self.connect_pane.set_notices(self._connect_notices())
         self.connect_pane.set_can_forget(bool(url))
@@ -331,7 +343,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             self.credentials.get_remember_password()
         )
         self._refresh_password_storage()
-        if url and username and password and self.credentials.is_for_open_tree():
+        saved = password or self._saved_sign_in_applies()
+        if url and username and saved and self.credentials.is_for_open_tree():
             self._submit()
         else:
             self._render(self.session.state)
@@ -393,6 +406,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             return
         LOG.info("Forgetting the stored server.")
         self.credentials.forget(url, username)
+        self._saved_token = self._saved_for = None
         self.connect_pane.set_credentials("", "", "")
         # Also drops the session's copy of the connection, which the context
         # strip and the version footer are rendered from.
@@ -402,12 +416,22 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         """Hand what the connect pane holds to the session."""
         url = sanitize_url(self.connect_pane.url.get_text())
         self.connect_pane.set_url(url)
+        username = self.connect_pane.username.get_text()
+        password = self.connect_pane.password.get_text()
+        if not password and self._saved_sign_in_applies():
+            assert self._saved_token  # for type checker
+            password, auth = self._saved_token, AUTH_SYNC_TOKEN
+        else:
+            auth = AUTH_PASSWORD
         self.session.submit_credentials(
-            url,
-            self.connect_pane.username.get_text(),
-            self.connect_pane.password.get_text(),
-            self.connect_pane.remember_password,
+            url, username, password, self.connect_pane.remember_password, auth=auth
         )
+
+    def _saved_sign_in_applies(self) -> bool:
+        """Whether a stored sync token belongs to the server and user entered."""
+        url = normalize_url(sanitize_url(self.connect_pane.url.get_text()))
+        username = self.connect_pane.username.get_text()
+        return self._saved_token is not None and self._saved_for == (url, username)
 
     # --------------------------------------------------------
     # SessionListener
@@ -458,8 +482,14 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             if error is None:
                 self.connect_pane.clear_error()
             else:
+                if (
+                    self.session.auth == AUTH_SYNC_TOKEN
+                    and error.kind is ErrorKind.AUTH_FAILED
+                ):
+                    # The session dropped it from the keyring already.
+                    self._saved_token = self._saved_for = None
                 self.connect_pane.show_error(
-                    error_message(error.kind, error.detail)
+                    error_message(error.kind, error.detail, self.session.auth)
                 )
             self.connect_pane.set_notices(self._connect_notices())
             self.connect_pane.set_can_forget(bool(self.credentials.get_url()))
@@ -534,6 +564,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def _on_connect_fields_changed(self) -> None:
         """Keep the Connect button in step with the entries."""
+        self.connect_pane.set_saved_sign_in(self._saved_sign_in_applies())
         self.button_connect.set_sensitive(self.connect_pane.complete)
 
     # --------------------------------------------------------
@@ -643,7 +674,15 @@ class ConnectPane(Gtk.Box):
 
         self.remember_check = Gtk.CheckButton(label=_("Remember password"))
         self.remember_check.set_active(True)
+        self.remember_check.set_tooltip_text(
+            _(
+                "Where the server supports it, a sign-in token for this "
+                "computer is stored instead of the password."
+            )
+        )
         self.pack_start(self.remember_check, False, False, 0)
+        #: Whether a stored sign-in can stand in for an empty password.
+        self._saved_sign_in = False
 
         self.scheme_label = self._hidden_label()
         self.pack_start(self.scheme_label, False, False, 0)
@@ -757,13 +796,21 @@ class ConnectPane(Gtk.Box):
         if self.url.get_text() != url:
             self.url.set_text(url)
 
+    def set_saved_sign_in(self, saved: bool) -> None:
+        """Say whether a stored sign-in is used if the password is left empty."""
+        self._saved_sign_in = saved
+        self.password.set_placeholder_text(_("Saved on this computer") if saved else "")
+
     @property
     def complete(self) -> bool:
-        """Whether all three fields have something in them."""
+        """Whether there is enough to connect with.
+
+        The password may be left empty where a stored sign-in applies.
+        """
         return bool(
             self.url.get_text()
             and self.username.get_text()
-            and self.password.get_text()
+            and (self.password.get_text() or self._saved_sign_in)
         )
 
     def show_error(self, message: str) -> None:

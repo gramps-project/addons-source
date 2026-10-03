@@ -40,6 +40,7 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any
 
+from const import AUTH_PASSWORD
 from gi.repository import GLib
 from gramps.gen.config import config as configman
 from gramps.gen.utils.file import media_path_full
@@ -503,6 +504,15 @@ class ConfigCredentialStore:
             return None
         return self.keyring.get(url, username)
 
+    def get_auth(self) -> str:
+        """Return what the stored secret of the entry on offer is.
+
+        :returns: One of the ``AUTH_*`` constants from :mod:`const`. Entries
+            from before sync tokens hold a password.
+        """
+        entry = self._current()
+        return entry.get("auth", AUTH_PASSWORD) if entry else AUTH_PASSWORD
+
     def get_remember_password(self) -> bool:
         """Whether the entry on offer is allowed to keep its password.
 
@@ -570,7 +580,12 @@ class ConfigCredentialStore:
         entry["tree_id"] = self.tree_id
 
     def save_credentials(
-        self, url: str, username: str, password: str, remember_password: bool = True
+        self,
+        url: str,
+        username: str,
+        password: str,
+        remember_password: bool = True,
+        auth: str = AUTH_PASSWORD,
     ) -> None:
         """Persist one server entry, and its password if asked to.
 
@@ -582,6 +597,8 @@ class ConfigCredentialStore:
         :param username: The account name.
         :param password: The password, stored only if ``remember_password``.
         :param remember_password: Whether the password may go to the keyring.
+        :param auth: What ``password`` is. A sync token created after a
+            password login is stored in the password's place.
         """
         url = normalize_url(url)
         servers = self._servers()
@@ -590,6 +607,7 @@ class ConfigCredentialStore:
             entry = {"url": url, "username": username, "timestamp": 0.0}
             servers.append(entry)
         entry["remember_password"] = remember_password
+        entry["auth"] = auth if remember_password else AUTH_PASSWORD
 
         if remember_password:
             self.keyring.set(url, username, password)
@@ -600,6 +618,20 @@ class ConfigCredentialStore:
 
         self.config.set("credentials.last_used", [url, username])
         self._write(servers)
+
+    def forget_secret(self, url: str, username: str) -> None:
+        """Drop the stored secret of one entry, keeping the entry itself.
+
+        Used when a stored sync token stops working: the entry and its sync
+        baseline stay, and the password is asked for again.
+        """
+        url = normalize_url(url)
+        servers = self._servers()
+        entry = self._find(servers, url, username)
+        if entry is not None:
+            entry["auth"] = AUTH_PASSWORD
+            self._write(servers)
+        self.keyring.delete(url, username)
 
     def forget(self, url: str, username: str) -> None:
         """Remove one server entry entirely, keyring item included."""
