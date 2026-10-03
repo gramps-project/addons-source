@@ -98,3 +98,15 @@ MIN_API_VERSION_TEXT = f"{MIN_API_VERSION[0]}.{MIN_API_VERSION[1]}"
 
 #: :data:`API_MAJOR` as it is written out for the user.
 API_MAJOR_TEXT = str(API_MAJOR)
+
+#: What the secret stored for a server is: the password, or a sync token the
+#: addon created in its place (Gramps Web API with per-device sync tokens).
+AUTH_PASSWORD = "password"
+AUTH_SYNC_TOKEN = "sync_token"
+
+#: Label of the sync token this computer creates, so the user can tell the
+#: devices apart in Gramps Web; ``%s`` is the host name.
+SYNC_TOKEN_LABEL = "Gramps Web Sync on %s"
+
+#: Longest label the server accepts.
+SYNC_TOKEN_LABEL_MAX_LENGTH = 100
