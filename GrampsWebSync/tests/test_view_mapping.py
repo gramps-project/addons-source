@@ -66,10 +66,6 @@ class PaneMappingTest(unittest.TestCase):
         self.assertEqual(set(WORKING_STATES), set(State) - waiting)
 
 
-if __name__ == "__main__":
-    unittest.main()
-
-
 class ChangeServerTest(unittest.TestCase):
     """Where the context strip offers "Change server…"."""
 
@@ -81,3 +77,7 @@ class ChangeServerTest(unittest.TestCase):
         for state in set(State) - {State.CONNECT}:
             with self.subTest(state=state):
                 self.assertTrue(change_server_offered(state))
+
+
+if __name__ == "__main__":
+    unittest.main()
