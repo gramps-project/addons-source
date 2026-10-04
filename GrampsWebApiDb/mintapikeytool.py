@@ -20,12 +20,19 @@
 
 """Tools/Utilities/Generate Gramps Web API key
 
-Dialog front end for WebApiHandler.mint_api_key() (webapi_client.py):
+Dialog front end for WebApiHandler.mint_sync_api_key() (webapi_client.py):
 username/password in, a GRAMPS_WEB_API_KEY value out. Exists because
 generating a key otherwise requires either a shell with the standalone
 gramps-api-client package installed, or hand-writing the three lines of
 Python from GrampsWebApiDb's own README -- this tool is that same call
 behind a form, for anyone who just wants the key string.
+
+The key holds a sync token (gramps-web-api v3.23.0+), named after the
+"Key name" field -- by default this computer's hostname -- so the user
+can tell their devices' keys apart and remove one without affecting the
+others, and so a leaked key can't change the account. Against an older
+server, which has no sync tokens, it falls back to mint_api_key()'s
+refresh-token key, and says so: that kind can't be removed on its own.
 
 A TOOL rather than a gramplet: generating a key is a one-off setup action,
 not something worth keeping permanently docked in a gramplet bar. It
@@ -58,6 +65,7 @@ explicit dbid instead of the configured default backend. See README.md's
 # ------------------------------------------------------------------------
 import os
 import re
+import socket
 import threading
 from urllib.error import HTTPError, URLError
 
@@ -79,7 +87,11 @@ from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.plug import tool
 from gramps.gui.utils import text_to_clipboard
 
-from webapi_client import API_KEY_ENV_VAR, WebApiHandler
+from webapi_client import (
+    API_KEY_ENV_VAR,
+    SyncTokensUnsupportedError,
+    WebApiHandler,
+)
 
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -107,7 +119,8 @@ _WEBAPIDB_ID = "grampswebapidb"
 class MintApiKeyTool(tool.Tool, ManagedWindow):
     """
     Dialog that turns a server URL + username + password into a
-    GRAMPS_WEB_API_KEY value, via WebApiHandler.mint_api_key().
+    GRAMPS_WEB_API_KEY value, via WebApiHandler.mint_sync_api_key() (or
+    mint_api_key() on a server too old for sync tokens).
     """
 
     def __init__(self, dbstate, user, options_class, name, callback=None):
@@ -144,6 +157,16 @@ class MintApiKeyTool(tool.Tool, ManagedWindow):
         self.password_entry = self.__add_entry(vbox, _("Password"))
         self.password_entry.set_visibility(False)
         self.password_entry.connect("activate", self.mint_clicked)
+        self.label_entry = self.__add_entry(
+            vbox,
+            _("Key name"),
+            _(
+                "Shown in your account's list of API keys, so you can tell "
+                "this computer's key apart and remove it later"
+            ),
+        )
+        self.label_entry.set_text(_("Gramps on %s") % socket.gethostname())
+        self.label_entry.connect("activate", self.mint_clicked)
 
         button_box = Gtk.ButtonBox()
         button_box.set_layout(Gtk.ButtonBoxStyle.START)
@@ -217,6 +240,7 @@ class MintApiKeyTool(tool.Tool, ManagedWindow):
         url = self.url_entry.get_text().strip()
         username = self.username_entry.get_text().strip()
         password = self.password_entry.get_text()
+        label = self.label_entry.get_text().strip()
         if not url or not username or not password:
             self.status_label.set_text(
                 _("Please fill in the server URL, username, and password.")
@@ -233,28 +257,47 @@ class MintApiKeyTool(tool.Tool, ManagedWindow):
         if self.mint_thread and self.mint_thread.is_alive():
             return
         self.mint_thread = threading.Thread(
-            target=self._mint_api_key, args=(url, username, password)
+            target=self._mint_api_key, args=(url, username, password, label)
         )
         self.mint_thread.daemon = True
         self.mint_thread.start()
 
-    def _mint_api_key(self, url, username, password):
-        """Run off the GTK main thread; hands the result back via idle_add."""
+    def _mint_api_key(self, url, username, password, label):
+        """Run off the GTK main thread; hands the result back via idle_add.
+
+        Prefers a sync-token key; falls back to a refresh-token key only
+        when the server is too old to create sync tokens."""
+        label = label or _("Gramps on %s") % socket.gethostname()
         try:
-            key = WebApiHandler.mint_api_key(url, username, password)
+            try:
+                key = WebApiHandler.mint_sync_api_key(url, username, password, label)
+                revocable = True
+            except SyncTokensUnsupportedError:
+                key = WebApiHandler.mint_api_key(url, username, password)
+                revocable = False
         except _MINT_ERRORS as exc:
-            GLib.idle_add(self._mint_failed, self._describe_mint_error(exc))
+            GLib.idle_add(self._mint_failed, self._describe_mint_error(exc, label))
         else:
-            GLib.idle_add(self._mint_succeeded, key)
+            GLib.idle_add(self._mint_succeeded, key, revocable)
 
     @staticmethod
-    def _describe_mint_error(exc):
+    def _describe_mint_error(exc, label=""):
         """
-        Turn a mint_api_key() exception into a message that says which of
-        URL/username/password is the likely problem, instead of a raw
-        urllib exception the user has to decode themselves.
+        Turn a mint_sync_api_key()/mint_api_key() exception into a message
+        that says which of URL/username/password/key name is the likely
+        problem, instead of a raw urllib exception the user has to decode
+        themselves.
         """
         if isinstance(exc, HTTPError):
+            if exc.code == 409:
+                return (
+                    _(
+                        'You already have an API key named "%s". Choose a '
+                        "different Key name, or remove the old key from your "
+                        "account first."
+                    )
+                    % label
+                )
             if exc.code in (401, 403):
                 return (
                     _("Login failed (HTTP %d): check your username and password.")
@@ -277,10 +320,10 @@ class MintApiKeyTool(tool.Tool, ManagedWindow):
         self.mint_button.set_sensitive(True)
         return False
 
-    def _mint_succeeded(self, key):
+    def _mint_succeeded(self, key, revocable):
         os.environ[API_KEY_ENV_VAR] = key
         self.key_entry.set_text(key)
-        self.status_label.set_text(
+        message = (
             _(
                 "Success. %s is now set for this Gramps session -- no "
                 "restart needed. Copy the key below to also set it in your "
@@ -288,6 +331,13 @@ class MintApiKeyTool(tool.Tool, ManagedWindow):
             )
             % API_KEY_ENV_VAR
         )
+        if not revocable:
+            message += " " + _(
+                "This server is too old for removable API keys, so this key "
+                "gives full access to your account and can't be removed on "
+                "its own. Keep it as safe as your password."
+            )
+        self.status_label.set_text(message)
         self.mint_button.set_sensitive(True)
         self.create_tree_button.set_sensitive(True)
         self.key_entry.grab_focus()

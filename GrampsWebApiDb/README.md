@@ -15,14 +15,15 @@ cursor.
 ## Credentials
 
 The addon takes a single credential, via the `GRAMPS_WEB_API_KEY`
-environment variable, shaped `<REFRESH_TOKEN>*<BASE64URL(URL)>`. There is
+environment variable, shaped `<TOKEN>*<BASE64URL(URL)>`. There is
 deliberately no login dialog wired into WebApiDB itself, and no per-tree
 settings.ini. Generate one once via username/password.
 
 The easiest way is the **Generate Gramps Web API key** tool (this addon
 also installs `mintapikeytool.py`/`mintapikeytool.gpr.py`): open it from
 Tools → Utilities → Generate Gramps Web API key, enter the server URL,
-username, and password, and click **Generate API Key**. Gramps only shows
+username, and password, and a **Key name** for this computer (it defaults
+to the hostname), then click **Generate API Key**. Gramps only shows
 the Tools menu once *some* Family Tree is open -- it doesn't have to be a
 WebApiDB one, even an empty local tree works, so open (or create) one
 first if you don't already have one open. On success the tool sets
@@ -49,31 +50,33 @@ its own repo, e.g. `pip install -e path/to/gramps-api-client`):
 export GRAMPS_WEB_API_KEY=$(gramps-api-client generate-key --url https://your-server/api --username youruser)
 ```
 
-or from Python, using either that package's `Client.mint_api_key(url,
-username, password)` or this addon's own vendored copy,
-`WebApiHandler.mint_api_key(url, username, password)` (see
-`webapi_client.py`) — same method, same result, no addon-specific
-dependency either way.
+or from Python, using this addon's own vendored client,
+`WebApiHandler.mint_sync_api_key(url, username, password, label)` (see
+`webapi_client.py`). A key created in another client's API keys list
+(e.g. gramps-connect's user menu → API keys...) works just the same.
 
-**Security tradeoff:** the token embedded in `GRAMPS_WEB_API_KEY` is a
-standard JWT *refresh* token obtained from the server's normal `/token/`
-login endpoint — the same endpoint and flow the official web client uses,
-not an undocumented or exploited access path. gramps-web-api leaves refresh
-tokens non-expiring by default, so this key is a long-lived, general-purpose
-credential carrying the full permissions of the account that minted it. It
-is *not* the same as a real scoped, independently revocable personal access
-token (gramps-web-api has that machinery, but it isn't generally wired into
-request auth yet). Practically, that means:
+**Two kinds of key.** The `TOKEN` half is one of:
 
-* A leaked `GRAMPS_WEB_API_KEY` is as damaging as a leaked password — it
-  grants full account access until the underlying password is changed.
-  There is no "revoke this key" action independent of that.
-* Treat it accordingly: don't commit it, don't log it, and store it the
-  same way you'd store a password.
+* A **sync token** (gramps-web-api v3.23.0 and later) — what the tool
+  creates. It's a named, per-device key: you can see when each one was
+  last used and remove one without affecting your other devices. The
+  access it grants is limited to reading and editing the tree (including
+  private records); it can't change your account's e-mail or password.
+  WebApiDB trades it for short-lived access tokens at `/token/sync/`.
+* A JWT **refresh** token from the server's normal `/token/` login — what
+  the tool falls back to against a server older than v3.23.0, and what
+  `WebApiHandler.mint_api_key()` and `gramps-api-client generate-key`
+  create. gramps-web-api leaves refresh tokens non-expiring by default, so
+  this key carries the full permissions of the account that minted it and
+  can't be revoked: not even changing the password invalidates it — only
+  deleting the account does. Prefer a sync token wherever the server
+  supports one.
 
-This is a documented engineering tradeoff, made because the properly-scoped
-alternative isn't available server-side today — not a vulnerability in
-gramps-web-api or a loophole being exploited.
+The addon tells the two apart by shape (a JWT always contains `.`, a sync
+token never does), so either works in `GRAMPS_WEB_API_KEY` with no other
+setting. Either way, treat the key like a password: don't commit it,
+don't log it, and if a sync-token key leaks, remove it from your
+account's API keys list and generate a new one.
 
 ## Family Tree naming
 
