@@ -72,9 +72,11 @@ except ImportError as _err:
 
 from GrampsWebApiDb import webapi_client
 from GrampsWebApiDb.webapi_client import (
+    SyncTokensUnsupportedError,
     WebApiHandler,
     WebApiPushConflict,
     decode_jwt_payload,
+    is_sync_token,
     make_api_key,
     parse_api_key,
 )
@@ -342,13 +344,132 @@ class TestAuthentication(unittest.TestCase):
                 WebApiHandler.from_env()
 
     def test_from_env_builds_handler_from_refresh_key(self):
-        key = make_api_key("RT9", "https://example.com/api")
+        # A real refresh token is a JWT; is_sync_token() goes by that shape.
+        refresh = fake_jwt({"type": "refresh"})
+        key = make_api_key(refresh, "https://example.com/api")
         fake = QueuedUrlopen([FakeResponse({"access_token": token("AT9")})])
         with mock.patch.dict(os.environ, {webapi_client.API_KEY_ENV_VAR: key}):
             with mock.patch.object(webapi_client, "urlopen", fake):
                 handler = WebApiHandler.from_env()
         self.assertEqual(handler.url, "https://example.com/api")
         self.assertEqual(handler._access_token, token("AT9"))
+        self.assertEqual(
+            fake.requests[0].full_url, "https://example.com/api/token/refresh/"
+        )
+
+
+# -------------------------------------------------------------------------
+#
+# TestSyncToken
+#
+# -------------------------------------------------------------------------
+#: secrets.token_urlsafe(32): 43 base64url characters, never a "."
+SYNC_TOKEN = "Zx3_kQ-7aB9cD0eF1gH2iJ3kL4mN5oP6qR7sT8uV9wX"
+
+
+class TestSyncToken(unittest.TestCase):
+    """Sync-token keys (gramps-web-api v3.23.0+): told apart from refresh
+    tokens by shape, exchanged at /token/sync/, and minted via
+    /users/-/access-tokens/sync/tokens/."""
+
+    def test_is_sync_token_goes_by_shape(self):
+        self.assertTrue(is_sync_token(SYNC_TOKEN))
+        self.assertFalse(is_sync_token(fake_jwt({"type": "refresh"})))
+
+    def test_from_api_key_with_sync_token_exchanges_it(self):
+        key = make_api_key(SYNC_TOKEN, "https://example.com/api")
+        fake = QueuedUrlopen([FakeResponse({"access_token": token("AT-sync")})])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler = WebApiHandler.from_api_key(key)
+        self.assertEqual(handler._access_token, token("AT-sync"))
+        self.assertIsNone(handler._refresh_token)
+        req = fake.requests[0]
+        self.assertEqual(req.full_url, "https://example.com/api/token/sync/")
+        self.assertEqual(req.get_method(), "POST")
+        self.assertEqual(json.loads(req.data), {"token": SYNC_TOKEN})
+        self.assertIsNone(req.get_header("Authorization"))
+
+    def test_sync_token_is_exchanged_again_when_access_token_nears_expiry(self):
+        soon = fake_jwt({"exp": time_now() + 30})  # < 60s left
+        fake = QueuedUrlopen(
+            [
+                FakeResponse({"access_token": soon}),
+                FakeResponse({"access_token": token("AT-fresh")}),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            handler = WebApiHandler("https://example.com/api", sync_token="S1")
+            self.assertEqual(handler.access_token, token("AT-fresh"))
+        self.assertEqual(
+            [r.full_url for r in fake.requests],
+            ["https://example.com/api/token/sync/"] * 2,
+        )
+
+    def test_sync_token_exchange_retries_once_on_rate_limit(self):
+        fake = QueuedUrlopen(
+            [http_error(429), FakeResponse({"access_token": token("AT")})]
+        )
+        with (
+            mock.patch.object(webapi_client, "urlopen", fake),
+            mock.patch.object(webapi_client, "sleep"),
+        ):
+            handler = WebApiHandler("https://example.com/api", sync_token="S1")
+        self.assertEqual(handler._access_token, token("AT"))
+        self.assertEqual(len(fake.requests), 2)
+
+    def test_removed_sync_token_raises(self):
+        fake = QueuedUrlopen([http_error(401)])
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            with self.assertRaises(HTTPError):
+                WebApiHandler("https://example.com/api", sync_token="S1")
+
+    def test_mint_sync_api_key_creates_labelled_token(self):
+        fake = QueuedUrlopen(
+            [
+                FakeResponse({"access_token": token("AT1"), "refresh_token": "RT1"}),
+                FakeResponse({"id": 7, "label": "laptop", "token": SYNC_TOKEN}),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            key = WebApiHandler.mint_sync_api_key(
+                "https://example.com/api", "alice", "secret", "laptop"
+            )
+        self.assertEqual(parse_api_key(key), (SYNC_TOKEN, "https://example.com/api"))
+        req = fake.requests[1]
+        self.assertEqual(
+            req.full_url,
+            "https://example.com/api/users/-/access-tokens/sync/tokens/",
+        )
+        self.assertEqual(req.get_method(), "POST")
+        self.assertEqual(json.loads(req.data), {"label": "laptop"})
+        self.assertEqual(req.get_header("Authorization"), f"Bearer {token('AT1')}")
+
+    def test_mint_sync_api_key_on_old_server_raises_unsupported(self):
+        fake = QueuedUrlopen(
+            [
+                FakeResponse({"access_token": token("AT1"), "refresh_token": "RT1"}),
+                http_error(404),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            with self.assertRaises(SyncTokensUnsupportedError):
+                WebApiHandler.mint_sync_api_key(
+                    "https://example.com/api", "alice", "secret", "laptop"
+                )
+
+    def test_mint_sync_api_key_duplicate_label_raises_http_error(self):
+        fake = QueuedUrlopen(
+            [
+                FakeResponse({"access_token": token("AT1"), "refresh_token": "RT1"}),
+                http_error(409),
+            ]
+        )
+        with mock.patch.object(webapi_client, "urlopen", fake):
+            with self.assertRaises(HTTPError) as ctx:
+                WebApiHandler.mint_sync_api_key(
+                    "https://example.com/api", "alice", "secret", "laptop"
+                )
+        self.assertEqual(ctx.exception.code, 409)
 
 
 # -------------------------------------------------------------------------

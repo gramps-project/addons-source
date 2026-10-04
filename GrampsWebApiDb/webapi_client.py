@@ -48,19 +48,24 @@ both directions.
 Credentials
 -----------
 Two ways in: username+password (POST /token/, matches GrampsWebSync), or
-a GRAMPS_WEB_API_KEY-shaped string: "<REFRESH_TOKEN>*<BASE64URL(URL)>".
+a GRAMPS_WEB_API_KEY-shaped string: "<TOKEN>*<BASE64URL(URL)>", where
+TOKEN is one of:
 
-The REFRESH_TOKEN half is a JWT *refresh* token obtained once via
-POST /token/ with include_refresh (gramps-web-api's JWT_REFRESH_TOKEN_EXPIRES
-is False by default, so it doesn't expire on its own). From then on,
-POST /token/refresh/ trades it for fresh short-lived access tokens --
-no username/password re-entry, no server-side change needed. This is
-*not* the same as a real scoped/revocable personal access token
-(gramps-web-api has that machinery too, but today it's hardcoded to a
-single "anniversaries_ics" scope and isn't wired into general request
-auth) -- it's a shortcut that works today at the cost of not being
-independently revocable. '*' is a safe delimiter here: neither a JWT
-(base64url segments joined by '.') nor base64url output ever contains it.
+- a *sync token* (gramps-web-api v3.23.0+): a named, per-device key the
+  user creates -- with mint_sync_api_key(), or e.g. in gramps-connect's
+  user menu, API keys... -- and can remove on its own at any time.
+  POST /token/sync/ trades it for a short-lived access token that can
+  read and edit the tree but not the account. This is the kind to prefer.
+- a JWT *refresh* token, obtained once via POST /token/ with
+  include_refresh (mint_api_key()). gramps-web-api's
+  JWT_REFRESH_TOKEN_EXPIRES is False by default, so it never expires, and
+  POST /token/refresh/ trades it for access tokens with the account's full
+  permissions. Nothing short of deleting the account revokes it -- not even
+  a password change.
+
+The two are told apart by shape (is_sync_token()): a JWT always contains
+".", a sync token never does. '*' is a safe delimiter: neither a token nor
+base64url output ever contains it.
 """
 
 from __future__ import annotations
@@ -89,8 +94,8 @@ API_KEY_ENV_VAR = "GRAMPS_WEB_API_KEY"
 #: hangs Gramps with no way out.
 TIMEOUT = 60
 
-#: gramps-web-api rate-limits /token/ and /token/refresh/ to 1/second (no
-#: Retry-After header is sent on 429); this is how long to back off before
+#: gramps-web-api rate-limits /token/, /token/refresh/ and /token/sync/ to
+#: 1/second (no Retry-After header is sent on 429); this is how long to back off before
 #: the one retry attempt. Found by live testing: minting a key and then
 #: immediately constructing another WebApiHandler in the same second
 #: reliably 429s otherwise.
@@ -266,7 +271,11 @@ def decode_jwt_payload(jwt: str) -> dict[str, Any]:
 
 
 def parse_api_key(api_key: str) -> tuple[str, str]:
-    """Split a GRAMPS_WEB_API_KEY value into ``(refresh_token, url)``."""
+    """Split a GRAMPS_WEB_API_KEY value into ``(token, url)``.
+
+    The token is either a refresh token or a sync token -- see
+    is_sync_token().
+    """
     try:
         token, encoded_url = api_key.split("*", 1)
     except ValueError as exc:
@@ -283,10 +292,24 @@ def parse_api_key(api_key: str) -> tuple[str, str]:
     return token, url
 
 
-def make_api_key(refresh_token: str, url: str) -> str:
-    """Build a GRAMPS_WEB_API_KEY value from a refresh token and URL."""
+def is_sync_token(token: str) -> bool:
+    """Whether the token half of a key is a sync token rather than a refresh
+    token. A refresh token is a JWT, which always contains ".", while a sync
+    token -- gramps-web-api's per-device persistent token (v3.23.0,
+    secrets.token_urlsafe) -- never does."""
+    return "." not in token
+
+
+def make_api_key(token: str, url: str) -> str:
+    """Build a GRAMPS_WEB_API_KEY value from a refresh or sync token and
+    URL."""
     encoded_url = base64.urlsafe_b64encode(url.encode("utf-8")).decode("ascii")
-    return f"{refresh_token}*{encoded_url.rstrip('=')}"
+    return f"{token}*{encoded_url.rstrip('=')}"
+
+
+class SyncTokensUnsupportedError(ValueError):
+    """The server predates sync tokens (gramps-web-api < v3.23.0), so
+    mint_sync_api_key() can't create one -- fall back to mint_api_key()."""
 
 
 class WebApiHandler:
@@ -298,15 +321,17 @@ class WebApiHandler:
         username: str | None = None,
         password: str | None = None,
         refresh_token: str | None = None,
+        sync_token: str | None = None,
     ) -> None:
         """
-        Initialize given a server URL, plus either a username+password or
-        a non-expiring refresh token (exactly one of the two is expected).
+        Initialize given a server URL, plus exactly one credential: a
+        username+password, a non-expiring refresh token, or a sync token.
         """
         self.url = url.rstrip("/")
         self.username = username
         self.password = password
         self._refresh_token = refresh_token
+        self._sync_token = sync_token
         self._access_token: str | None = None
         self._metadata: dict[str, Any] | None = None
         #: Last ETag get_transaction_history() saw, echoed back as
@@ -322,6 +347,8 @@ class WebApiHandler:
     def from_api_key(cls, api_key: str) -> "WebApiHandler":
         """Build a handler from a GRAMPS_WEB_API_KEY-shaped string."""
         token, url = parse_api_key(api_key)
+        if is_sync_token(token):
+            return cls(url, sync_token=token)
         return cls(url, refresh_token=token)
 
     @classmethod
@@ -349,6 +376,41 @@ class WebApiHandler:
         if not handler._refresh_token:
             raise ValueError("Server did not return a refresh token")
         return make_api_key(handler._refresh_token, handler.url)
+
+    @classmethod
+    def mint_sync_api_key(
+        cls, url: str, username: str, password: str, label: str
+    ) -> str:
+        """
+        Like mint_api_key(), but the returned key holds a new sync token
+        named ``label`` (POST /users/-/access-tokens/sync/tokens/) instead
+        of a refresh token: the user can remove it on its own, from any
+        client that lists their API keys, and its access tokens can't
+        change the account. Needs gramps-web-api v3.23.0+; an older
+        server answers 404, raised here as SyncTokensUnsupportedError. A
+        label already in use answers 409, raised as the HTTPError itself.
+        """
+        handler = cls(url, username=username, password=password)
+        req = Request(
+            f"{handler.url}/users/-/access-tokens/sync/tokens/",
+            data=json.dumps({"label": label}).encode(),
+            method="POST",
+            headers={
+                "Authorization": f"Bearer {handler.access_token}",
+                "Content-Type": "application/json",
+                "User-Agent": "GrampsWebApiDb",
+            },
+        )
+        try:
+            with handler._open(req) as res:
+                res_json = json.load(res)
+        except HTTPError as exc:
+            if exc.code == 404:
+                raise SyncTokensUnsupportedError(
+                    "Server does not support sync tokens"
+                ) from exc
+            raise
+        return make_api_key(res_json["token"], handler.url)
 
     def _open(self, req: Request):
         """Open ``req`` with this handler's SSL context and timeout.
@@ -416,10 +478,54 @@ class WebApiHandler:
 
     def _authenticate(self) -> None:
         """Get a fresh access token, via whichever credential we hold."""
-        if self._refresh_token:
+        if self._sync_token:
+            self._exchange_sync_token()
+        elif self._refresh_token:
             self._refresh_access_token()
         else:
             self.fetch_token()
+
+    def _exchange_sync_token(self, retry_on_rate_limit: bool = True) -> None:
+        """Trade the stored sync token for a new access token.
+
+        POST /token/sync/ returns an access token only, never a refresh
+        token, so this simply runs again whenever the access token runs out.
+        The access token it returns can read the tree (private records
+        included) and add, edit and delete objects, but can't change the
+        account (gramps-web-api's ACCESS_TOKEN_SCOPE_PERMISSIONS) -- exactly
+        the _PERM_VIEW_PRIVATE and _WRITE_PERMISSIONS grampswebapidb.py
+        checks for. A removed key answers 401.
+        """
+        LOG.debug("Exchanging sync token for an access token")
+        req = Request(
+            f"{self.url}/token/sync/",
+            data=json.dumps({"token": self._sync_token}).encode(),
+            headers={
+                "Content-Type": "application/json",
+                "User-Agent": "GrampsWebApiDb",
+            },
+        )
+        try:
+            with self._open(req) as res:
+                res_json = json.load(res)
+        except HTTPError as exc:
+            if exc.code == 429 and retry_on_rate_limit:
+                sleep(RATE_LIMIT_BACKOFF)
+                return self._exchange_sync_token(retry_on_rate_limit=False)
+            if "/api" not in self.url:
+                self.url = f"{self.url}/api"
+                return self._exchange_sync_token(
+                    retry_on_rate_limit=retry_on_rate_limit
+                )
+            raise
+        except (UnicodeDecodeError, json.JSONDecodeError):
+            if "/api" not in self.url:
+                self.url = f"{self.url}/api"
+                return self._exchange_sync_token(
+                    retry_on_rate_limit=retry_on_rate_limit
+                )
+            raise
+        self._access_token = res_json["access_token"]
 
     def fetch_token(self, retry_on_rate_limit: bool = True) -> None:
         """Fetch and store an access token via username+password."""
@@ -502,10 +608,11 @@ class WebApiHandler:
         """Name of the user this handler is authenticated as.
 
         Set directly for a username+password login (mint_api_key()); the
-        refresh-token credential the normal from_env() path uses carries no
-        plaintext username (the access token's "sub" claim is a user id,
-        not a name -- see gramps-web-api's token.py), so it is resolved
-        once via GET /users/-/ (the "current user" alias) and cached here.
+        refresh- or sync-token credential the normal from_env() path uses
+        carries no plaintext username (the access token's "sub" claim is a
+        user id, not a name -- see gramps-web-api's token.py), so it is
+        resolved once via GET /users/-/ (the "current user" alias) and
+        cached here.
         """
         if self.username is None:
             data, _headers = self._get_json(f"{self.url}/users/-/")

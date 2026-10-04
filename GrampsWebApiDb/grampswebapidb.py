@@ -55,10 +55,10 @@ server: read-only endpoints (auth, /trees/, /people/ counts, etc.) work
 fine, but _sync_from_server_async() cannot deserialize its transaction history.
 
 Credentials come from a single environment variable, GRAMPS_WEB_API_KEY
-(see webapi_client.py for its "<REFRESH_TOKEN>*<BASE64URL(URL)>" shape and
-the tradeoffs of using a refresh token here rather than a real scoped
-personal-access-token). There is deliberately no per-tree settings.ini and
-no login dialog: the same env var also works as a bare SDK credential
+(see webapi_client.py for its "<TOKEN>*<BASE64URL(URL)>" shape, and the
+two kinds of TOKEN it accepts: a revocable, scoped sync token or a
+non-expiring refresh token). There is deliberately no per-tree settings.ini
+and no login dialog: the same env var also works as a bare SDK credential
 (WebApiHandler.from_env()) for scripts that talk to the server directly,
 without going through Gramps at all -- one credential, two consumers.
 
@@ -3313,8 +3313,8 @@ class WebApiDB(SQLite):
         once _is_retryable_push_error() says a poll's own request was
         permanently rejected, not merely unreachable -- most plausibly
         the account GRAMPS_WEB_API_KEY authenticates as no longer being
-        valid (a revoked/expired refresh token, or the server itself
-        having been reset: a fresh database behind the same URL, the old
+        valid (a removed sync token, a deleted account, or the server
+        itself having been reset: a fresh database behind the same URL, the old
         account simply gone). Both timers share the one credential, so a
         rejection on either means neither can succeed again -- this
         stops both, not just whichever poller noticed first.
