@@ -13,9 +13,13 @@
   is. Cross-reference 15-rules for the normative form.
 -->
 
-## Overview
+## Summary
 
 What automated checks run against addon code, locally and in CI, and how to keep an addon passing them. The goal is "PR opens green" — every check below catches a class of issue cheaper than a maintainer review round.
+
+Each check gets a section of its own, in roughly the order it will bite you: **pre-commit** as the harness that runs the rest, then **Black** (formatting), **`mypy`** (static types), **`ruff`** restricted to the E9 / F63 / F7 / F82 rule sets that catch genuine breakage rather than style, **`py_compile` / `ast.parse`** as the syntax floor every file must clear, **`msgfmt`** validating the translation catalogues in `po/`, and **`pylint`** — useful, but scored rather than gated. A separate section covers **verifying `requires_mod`**, which no linter checks: an importable-name mistake there passes every static check and fails only at load time on a user's machine.
+
+The page then turns to the parts of the coding standard you can check yourself before review, because a human will otherwise raise them: **import grouping**, **callback naming**, **class headers**, **member-name conventions**, and the no-TAB rule. It closes with a **run-everything-locally** recipe — the sequence to execute before pushing so the PR opens green rather than going red and needing a second round.
 
 The checks vary by repo. Two combinations matter; the cheat sheet:
 
