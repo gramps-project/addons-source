@@ -1,24 +1,52 @@
 # -*- coding: utf-8 -*-
-"""
-Gramps - a GTK+/GNOME based genealogy program
-Circle Tree View — descendant tree with circular nodes
-Compatible with Gramps 6.0.x
-License: GNU GPL v2 or later
+#
+# Gramps - a GTK+/GNOME based genealogy program
+#
+# Copyright (C) 2026 vadim Verenich
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
 
-Version 1.4.0: Full support for multiple spouses/marriages per person.
-Children are properly grouped under their respective marriage midpoints.
 """
+Circle Tree View (Charts category): descendant tree with circular nodes.
 """
-Circle Tree View (Charts category).
-Install into:
-  ~/.gramps/gramps60/plugins/CircleTreeView/
-or
-  %AppData%\gramps\gramps60\plugins\CircleTreeView\
-"""
+
+# -------------------------------------------------------------------------
+#
+# Python modules
+#
+# -------------------------------------------------------------------------
+import itertools
 import math
 import re
-from gi.repository import Gtk, Gdk, cairo, Pango, PangoCairo
+
+# -------------------------------------------------------------------------
+#
+# GTK modules
+#
+# -------------------------------------------------------------------------
+import cairo
+from gi.repository import Gtk, Gdk, Pango, PangoCairo
+
+# -------------------------------------------------------------------------
+#
+# Gramps modules
+#
+# -------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -26,15 +54,16 @@ except ValueError:
 _ = _trans.gettext
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
-from gramps.gen.lib import Person
 from gramps.gui.views.navigationview import NavigationView
 from gramps.gui.views.bookmarks import PersonBookmarks
 
 CFG = {
     "node_r": 36.0,
     "h_gap": 28.0,
+    "fam_gap": 56.0,  # extra space between the children of different partners
     "v_gap": 64.0,
     "spouse_gap": 32.0,
+    "bus_pad": 10.0,  # clearance used to decide whether two buses collide
     "pad": 40.0,
     "font_size": 11,
     "title_size": 16,
@@ -48,31 +77,65 @@ CFG = {
     "active_fill": (0.90, 0.85, 0.70),
 }
 
+# Left to right order of the partner groups around a person.
+_SIDE_ORDER = {"L": 0, "M": 1, "R": 2}
+
+
+class Union:
+    """
+    The children a person has with one partner.
+
+    side is "R" (partner drawn to the right of the person), "L" (partner drawn
+    to the left) or "M" (no partner drawn: unknown/missing partner, or
+    partners that could not be shown; children hang from the person).
+    """
+
+    __slots__ = ("side", "spouse_name", "children", "_spouse", "_ax", "_ay")
+
+    def __init__(self, side, spouse_name=None, children=None):
+        self.side = side
+        self.spouse_name = spouse_name
+        self.children = children if children is not None else []
+        self._spouse = None  # layout node of the partner circle
+        self._ax = 0.0  # x where the line down to the children starts
+        self._ay = 0.0  # y where the line down to the children starts
+
+    @property
+    def has_partner(self):
+        return self.spouse_name is not None and self.side in ("L", "R")
+
 
 class TNode:
-    """Mutable tree node supporting multiple families."""
+    """Mutable tree node for layout."""
+
     __slots__ = (
         "handle",
         "name",
-        "families",
+        "unions",
         "_sub_w",
         "_x",
         "_y",
-        "_cx",
         "_gen",
         "_is_spouse",
     )
 
-    def __init__(self, handle, name, families=None):
+    def __init__(self, handle, name, unions=None):
         self.handle = handle
         self.name = name or ""
-        self.families = families if families is not None else []
+        self.unions = unions if unions is not None else []
         self._sub_w = 0.0
         self._x = 0.0
         self._y = 0.0
-        self._cx = 0.0
         self._gen = 0
         self._is_spouse = False
+
+    @property
+    def children(self):
+        return [c for u in self.unions for c in u.children]
+
+
+def ordered_unions(node):
+    return sorted(node.unions, key=lambda u: _SIDE_ORDER[u.side])
 
 
 def strip_patronymic(name):
@@ -86,7 +149,7 @@ def strip_patronymic(name):
     )
     if trail:
         suffix = trail.group(1)
-        name = name[:trail.start()].strip()
+        name = name[: trail.start()].strip()
 
     def is_pat(w):
         clean = re.sub(r"[.,;:]", "", w)
@@ -105,22 +168,13 @@ def strip_patronymic(name):
 def count_nodes(node):
     if not node:
         return 0
-    total = 1
-    for sp, children in node.families:
-        if sp:
-            total += 1
-        total += sum(count_nodes(c) for c in children)
-    return total
+    return 1 + sum(count_nodes(c) for c in node.children)
 
 
 def tree_depth(node):
-    if not node:
-        return 0
-    depths = [1]
-    for sp, children in node.families:
-        for c in children:
-            depths.append(1 + tree_depth(c))
-    return max(depths)
+    if not node or not node.children:
+        return 1
+    return 1 + max(tree_depth(c) for c in node.children)
 
 
 def auto_max_generations(total, depth):
@@ -140,217 +194,159 @@ def auto_max_generations(total, depth):
 def trim_tree(node, max_gen, current=0):
     if not node:
         return None
-    trimmed_families = []
-    if max_gen <= 0 or current < max_gen:
-        for spouse_name, children in node.families:
-            kids = [trim_tree(c, max_gen, current + 1) for c in children]
+    unions = []
+    for u in node.unions:
+        kids = []
+        if max_gen <= 0 or current < max_gen:
+            kids = [trim_tree(c, max_gen, current + 1) for c in u.children]
             kids = [k for k in kids if k]
-            trimmed_families.append((spouse_name, kids))
-    return TNode(node.handle, node.name, trimmed_families)
+        unions.append(Union(u.side, u.spouse_name, kids))
+    return TNode(node.handle, node.name, unions)
 
 
 class LayoutEngine:
     """
-    Multi-spouse Layout Engine:
-    Handles 1, 2, or 3+ spouses per person by placing spouses left/right 
-    and routing child lines from respective marriage midpoints.
+    Three-phase layout with orthogonal parent-child routing:
+      Phase 1 - position every node circle.
+      Phase 2 - shift coordinates to ensure positive padding.
+      Phase 3 - build orthogonal connectors.
+
+    A person can have several partner groups (one per partner, plus one for
+    children without a known partner).  Each group gets its own block of
+    children, separated from the next by CFG["fam_gap"], and its own line
+    down from the person/partner.  If the horizontal "bus" lines of two groups
+    would run into each other they are drawn at different heights.
     """
 
-    def kids_width(self, children):
-        if not children:
-            return 0.0
-        return sum(c._sub_w for c in children) + CFG["h_gap"] * (len(children) - 1)
+    # ---- measuring ------------------------------------------------------
 
-    def measure_chunk(self, chunk):
+    def _own_width(self, node):
         r = CFG["node_r"]
-        spouse_gap = CFG["spouse_gap"]
-        h_gap = CFG["h_gap"]
+        partners = sum(1 for u in node.unions if u.has_partner)
+        return 2 * r + partners * (CFG["spouse_gap"] + 2 * r)
 
-        if not chunk:
-            return 2 * r, 0.0, spouse_gap, 0.0, 0.0
+    def _kids_width(self, union):
+        if not union.children:
+            return 0.0
+        total = sum(c._sub_w for c in union.children)
+        return total + CFG["h_gap"] * (len(union.children) - 1)
 
-        f0 = chunk[0]
-        sp0, kids0 = f0
-        w0 = self.kids_width(kids0)
-
-        if len(chunk) == 1:
-            req_gap = spouse_gap
-            m0_rel = (r + req_gap / 2.0) if sp0 else 0.0
-            left_rel = -r
-            right_rel = (2 * r + req_gap + r) if sp0 else r
-
-            if kids0:
-                left_rel = min(left_rel, m0_rel - w0 / 2.0)
-                right_rel = max(right_rel, m0_rel + w0 / 2.0)
-
-            chunk_w = right_rel - left_rel
-            p_rel_x = -left_rel
-            return chunk_w, p_rel_x, req_gap, w0, 0.0
-
-        # Two families in a block (Spouse 1 left, Person center, Spouse 2 right)
-        f1 = chunk[1]
-        sp1, kids1 = f1
-        w1 = self.kids_width(kids1)
-
-        default_dist = 2 * r + spouse_gap
-        req_dist = max(default_dist, (w0 + w1) / 2.0 + h_gap) if (kids0 and kids1) else default_dist
-        req_gap = max(spouse_gap, req_dist - 2 * r)
-
-        m0_rel = - (r + req_gap / 2.0) if sp0 else 0.0
-        m1_rel = (r + req_gap / 2.0) if sp1 else 0.0
-
-        left_rel = - (2 * r + req_gap + r) if sp0 else -r
-        right_rel = (2 * r + req_gap + r) if sp1 else r
-
-        if kids0:
-            left_rel = min(left_rel, m0_rel - w0 / 2.0)
-            right_rel = max(right_rel, m0_rel + w0 / 2.0)
-        if kids1:
-            left_rel = min(left_rel, m0_rel - w1 / 2.0)
-            right_rel = max(right_rel, m1_rel + w1 / 2.0)
-
-        chunk_w = right_rel - left_rel
-        p_rel_x = -left_rel
-        return chunk_w, p_rel_x, req_gap, w0, w1
+    def _blocks_width(self, node):
+        widths = [self._kids_width(u) for u in node.unions if u.children]
+        if not widths:
+            return 0.0
+        return sum(widths) + CFG["fam_gap"] * (len(widths) - 1)
 
     def measure(self, node):
-        for sp, kids in node.families:
-            for ch in kids:
-                self.measure(ch)
-
-        if not node.families:
-            node._sub_w = 2 * CFG["node_r"]
-            return node._sub_w
-
-        chunks = [node.families[i:i+2] for i in range(0, len(node.families), 2)]
-        total_w = 0.0
-        for i, chunk in enumerate(chunks):
-            cw, _, _, _, _ = self.measure_chunk(chunk)
-            total_w += cw
-            if i > 0:
-                total_w += CFG["h_gap"]
-        node._sub_w = total_w
+        for ch in node.children:
+            self.measure(ch)
+        node._sub_w = max(self._own_width(node), self._blocks_width(node))
         return node._sub_w
+
+    # ---- bus heights ----------------------------------------------------
+
+    def _assign_levels(self, unions):
+        """
+        Choose a height level (0 = nearest the parents) for the bus line of
+        each union so that lines of different unions do not merge or cross.
+        """
+        n = len(unions)
+        if n < 2:
+            return [0] * n
+        pad = CFG["bus_pad"]
+        info = []
+        for u in unions:
+            xs = [c._x for c in u.children]
+            lo = min(xs + [u._ax]) - pad
+            hi = max(xs + [u._ax]) + pad
+            info.append((u._ax, xs, lo, hi))
+
+        def penalty(levels):
+            total = 0
+            for i in range(n):
+                for j in range(i + 1, n):
+                    if not (info[i][2] < info[j][3] and info[j][2] < info[i][3]):
+                        continue  # horizontal extents do not meet
+                    if levels[i] == levels[j]:
+                        total += 100  # buses would merge
+                        continue
+                    shallow, deep = (i, j) if levels[i] < levels[j] else (j, i)
+                    a_s, xs_s, lo_s, hi_s = info[shallow]
+                    a_d, xs_d, lo_d, hi_d = info[deep]
+                    # children verticals of the shallow bus cross the deep bus
+                    total += sum(1 for x in xs_s if lo_d < x < hi_d)
+                    # anchor vertical of the deep bus crosses the shallow bus
+                    if lo_s < a_d < hi_s:
+                        total += 1
+            return total
+
+        best = None
+        best_levels = [0] * n
+        for levels in itertools.product(range(n), repeat=n):
+            p = penalty(levels)
+            if best is None or p < best:
+                best = p
+                best_levels = list(levels)
+        return best_levels
+
+    # ---- layout ---------------------------------------------------------
 
     def layout(self, root):
         if not root:
             return [], [], 100.0, 100.0
         self.measure(root)
         nodes = []
+        blood = []
         pad = CFG["pad"]
         r = CFG["node_r"]
         v_step = 2 * r + CFG["v_gap"]
-        links = []
+        step = 2 * r + CFG["spouse_gap"]
 
         def place(node, x_left, gen):
             y = pad + 40 + gen * v_step
+            own = self._own_width(node)
+            block_w = node._sub_w
+            unions = ordered_unions(node)
 
-            if not node.families:
-                cx = x_left + node._sub_w / 2.0
-                node._x = cx
-                node._y = y
-                node._cx = cx
-                node._gen = gen
-                nodes.append(node)
-                return
+            # the row of circles: [left partner] person [right partner]
+            cursor = x_left + (block_w - own) / 2.0 + r
+            partner_x = {}
+            if any(u.side == "L" and u.has_partner for u in unions):
+                partner_x["L"] = cursor
+                cursor += step
+            node._x = cursor
+            node._y = y
+            node._gen = gen
+            if any(u.side == "R" and u.has_partner for u in unions):
+                partner_x["R"] = cursor + step
+            nodes.append(node)
+            blood.append(node)
 
-            chunks = [node.families[i:i+2] for i in range(0, len(node.families), 2)]
-            cur_x = x_left
-
-            for chunk in chunks:
-                cw, p_rel_x, req_gap, w0, w1 = self.measure_chunk(chunk)
-                px = cur_x + p_rel_x
-                node._x = px
-                node._y = y
-                node._cx = px
-                node._gen = gen
-                nodes.append(node)
-
-                # --- First family of the block ---
-                sp0, kids0 = chunk[0]
-                if len(chunk) == 1:
-                    # Single marriage: spouse on the right
-                    if sp0:
-                        sx0 = px + (2 * r + req_gap)
-                        sp_node = TNode(None, sp0, [])
-                        sp_node._x = sx0
-                        sp_node._y = y
-                        sp_node._cx = px
-                        sp_node._is_spouse = True
-                        sp_node._gen = gen
-                        nodes.append(sp_node)
-                        m0 = (px + sx0) / 2.0
-                        links.append(("spouse", px + r, y, sx0 - r, y))
-                    else:
-                        m0 = px
+            for u in unions:
+                if u.has_partner:
+                    sp = TNode(None, u.spouse_name)
+                    sp._x = partner_x[u.side]
+                    sp._y = y
+                    sp._gen = gen
+                    sp._is_spouse = True
+                    u._spouse = sp
+                    u._ax = (node._x + sp._x) / 2.0
+                    u._ay = y
+                    nodes.append(sp)
                 else:
-                    # Two marriages: first spouse on the left
-                    if sp0:
-                        sx0 = px - (2 * r + req_gap)
-                        sp_node = TNode(None, sp0, [])
-                        sp_node._x = sx0
-                        sp_node._y = y
-                        sp_node._cx = px
-                        sp_node._is_spouse = True
-                        sp_node._gen = gen
-                        nodes.append(sp_node)
-                        m0 = (sx0 + px) / 2.0
-                        links.append(("spouse", sx0 + r, y, px - r, y))
-                    else:
-                        m0 = px
+                    u._spouse = None
+                    u._ax = node._x
+                    u._ay = y + r
 
-                if kids0:
-                    k0_left = m0 - w0 / 2.0
-                    for ch in kids0:
-                        place(ch, k0_left, gen + 1)
-                        k0_left += ch._sub_w + CFG["h_gap"]
-
-                    mid_y = y + r + CFG["v_gap"] / 2.0
-                    start_y = y if sp0 else y + r
-                    links.append(("v", m0, start_y, m0, mid_y))
-                    child_xs = [ch._x for ch in kids0]
-                    left = min(child_xs + [m0])
-                    right = max(child_xs + [m0])
-                    if abs(right - left) > 0.5:
-                        links.append(("h", left, mid_y, right, mid_y))
-                    for ch in kids0:
-                        links.append(("v", ch._x, mid_y, ch._x, ch._y - r))
-
-                # --- Second family of the block (2nd spouse on the right) ---
-                if len(chunk) > 1:
-                    sp1, kids1 = chunk[1]
-                    if sp1:
-                        sx1 = px + (2 * r + req_gap)
-                        sp_node = TNode(None, sp1, [])
-                        sp_node._x = sx1
-                        sp_node._y = y
-                        sp_node._cx = px
-                        sp_node._is_spouse = True
-                        sp_node._gen = gen
-                        nodes.append(sp_node)
-                        m1 = (px + sx1) / 2.0
-                        links.append(("spouse", px + r, y, sx1 - r, y))
-                    else:
-                        m1 = px
-
-                    if kids1:
-                        k1_left = m1 - w1 / 2.0
-                        for ch in kids1:
-                            place(ch, k1_left, gen + 1)
-                            k1_left += ch._sub_w + CFG["h_gap"]
-
-                        mid_y = y + r + CFG["v_gap"] / 2.0
-                        start_y = y if sp1 else y + r
-                        links.append(("v", m1, start_y, m1, mid_y))
-                        child_xs = [ch._x for ch in kids1]
-                        left = min(child_xs + [m1])
-                        right = max(child_xs + [m1])
-                        if abs(right - left) > 0.5:
-                            links.append(("h", left, mid_y, right, mid_y))
-                        for ch in kids1:
-                            links.append(("v", ch._x, mid_y, ch._x, ch._y - r))
-
-                cur_x += cw + CFG["h_gap"]
+            # children blocks, one per union, left to right
+            k_left = x_left + (block_w - self._blocks_width(node)) / 2.0
+            for u in unions:
+                if not u.children:
+                    continue
+                for ch in u.children:
+                    place(ch, k_left, gen + 1)
+                    k_left += ch._sub_w + CFG["h_gap"]
+                k_left += CFG["fam_gap"] - CFG["h_gap"]
 
         place(root, 0.0, 0)
 
@@ -362,14 +358,43 @@ class LayoutEngine:
         shift = pad - min_x
         for n in nodes:
             n._x += shift
-            n._cx += shift
+        for n in blood:
+            for u in n.unions:
+                u._ax += shift
+
+        links = []
+        for node in blood:
+            unions = ordered_unions(node)
+            for u in unions:
+                if u._spouse is not None:
+                    a, b = sorted((node._x, u._spouse._x))
+                    links.append(("spouse", a + r, node._y, b - r, node._y))
+
+            active = [u for u in unions if u.children]
+            if not active:
+                continue
+            levels = self._assign_levels(active)
+            ranks = sorted(set(levels))
+            for u, lv in zip(active, levels):
+                rank = ranks.index(lv)
+                mid_y = (
+                    node._y + r + CFG["v_gap"] * (rank + 1) / (len(ranks) + 1.0)
+                )
+                links.append(("v", u._ax, u._ay, u._ax, mid_y))
+                child_xs = [ch._x for ch in u.children]
+                left = min(child_xs + [u._ax])
+                right = max(child_xs + [u._ax])
+                if abs(right - left) > 0.5:
+                    links.append(("h", left, mid_y, right, mid_y))
+                for ch in u.children:
+                    links.append(("v", ch._x, mid_y, ch._x, ch._y - r))
 
         clean = []
         for t, x1, y1, x2, y2 in links:
             dx = abs(x1 - x2)
             dy = abs(y1 - y2)
             if dx <= 0.5 or dy <= 0.5:
-                clean.append((t, x1 + shift, y1, x2 + shift, y2))
+                clean.append((t, x1, y1, x2, y2))
 
         return nodes, clean, width, height
 
@@ -387,6 +412,7 @@ class CircleTreeCanvas(Gtk.DrawingArea):
         self.offset_x = 0.0
         self.offset_y = 0.0
         self._drag = None
+        self._needs_center = True
         self.set_can_focus(True)
         self.add_events(
             Gdk.EventMask.BUTTON_PRESS_MASK
@@ -406,22 +432,43 @@ class CircleTreeCanvas(Gtk.DrawingArea):
         self.canvas_w = max(float(width), 100.0)
         self.canvas_h = max(float(height), 100.0)
         self.title = title or ""
+        # A new scene (new tree, new active person) is always brought into
+        # view; this is done at draw time, when the widget size is known.
+        self._needs_center = True
+        self.queue_draw()
+
+    def _compute_center(self):
+        """Center the chart in the visible area; False if size not known."""
+        aw = self.get_allocated_width()
+        ah = self.get_allocated_height()
+        if aw <= 1 or ah <= 1:
+            return False
+        self.offset_x = (aw - self.canvas_w * self.scale) / 2.0
+        # keep the top of a tall chart visible instead of cutting it off
+        self.offset_y = max(0.0, (ah - self.canvas_h * self.scale) / 2.0)
+        self._needs_center = False
+        return True
+
+    def center(self, *_args):
+        """Bring the chart back to the middle of the window."""
+        if not self._compute_center():
+            self._needs_center = True
         self.queue_draw()
 
     def on_draw(self, _widget, cr):
+        if self._needs_center:
+            self._compute_center()
         cr.set_source_rgb(*CFG["bg"])
         cr.paint()
-        
-        # Version stamp
-        cr.set_source_rgb(0.6, 0.55, 0.5)
-        vl = self.create_pango_layout("CircleTree 1.4.0 (multi-spouse)")
-        vl.set_font_description(Pango.FontDescription("Sans 9"))
-        cr.move_to(8, 6)
-        PangoCairo.show_layout(cr, vl)
-        
         cr.save()
         cr.translate(self.offset_x, self.offset_y)
         cr.scale(self.scale, self.scale)
+        self._paint_scene(cr)
+        cr.restore()
+        return False
+
+    def _paint_scene(self, cr):
+        """Draw title, links and nodes in scene coordinates."""
         if self.title:
             cr.set_source_rgb(*CFG["title"])
             layout = self.create_pango_layout(self.title)
@@ -431,11 +478,11 @@ class CircleTreeCanvas(Gtk.DrawingArea):
             tw, th = layout.get_pixel_size()
             cr.move_to(self.canvas_w / 2 - tw / 2, 8)
             PangoCairo.show_layout(cr, layout)
-            
+
         cr.set_line_width(CFG["line_width"])
         cr.set_line_cap(cairo.LineCap.SQUARE)
         cr.set_source_rgb(*CFG["line"])
-        
+
         for kind, x1, y1, x2, y2 in self.links:
             dx = abs(x1 - x2)
             dy = abs(y1 - y2)
@@ -450,33 +497,32 @@ class CircleTreeCanvas(Gtk.DrawingArea):
                 layout = self.create_pango_layout("∞")
                 layout.set_font_description(Pango.FontDescription("Serif 14"))
                 tw, th = layout.get_pixel_size()
-                
+
                 cr.new_path()
                 cr.set_source_rgb(*CFG["bg"])
                 cr.rectangle(mx - tw / 2.0 - 2, my - th / 2.0 - 1, tw + 4, th + 2)
                 cr.fill()
-                
+
                 cr.set_source_rgb(*CFG["line"])
                 cr.move_to(mx - tw / 2.0, my - th / 2.0)
                 PangoCairo.show_layout(cr, layout)
-                
+
         r = CFG["node_r"]
         active = self.view.get_active()
-        
+
         for n in self.nodes:
             cr.new_path()
             is_active = bool(n.handle) and n.handle == active
             cr.arc(n._x, n._y, r, 0, 2 * math.pi)
-            cr.set_source_rgb(*(CFG["active_fill"] if is_active else CFG["circle_fill"]))
+            cr.set_source_rgb(
+                *(CFG["active_fill"] if is_active else CFG["circle_fill"])
+            )
             cr.fill_preserve()
             cr.set_source_rgb(*CFG["circle_stroke"])
             cr.set_line_width(1.5)
             cr.stroke()
-            
+
             self._draw_node_label(cr, n._x, n._y, r, n.name or "")
-            
-        cr.restore()
-        return False
 
     def _to_scene(self, x, y):
         return (x - self.offset_x) / self.scale, (y - self.offset_y) / self.scale
@@ -510,16 +556,25 @@ class CircleTreeCanvas(Gtk.DrawingArea):
 
     def on_scroll(self, _widget, event):
         if event.direction == Gdk.ScrollDirection.UP:
-            self.scale = min(2.5, self.scale * 1.1)
+            factor = 1.1
         elif event.direction == Gdk.ScrollDirection.DOWN:
-            self.scale = max(0.3, self.scale / 1.1)
+            factor = 1 / 1.1
+        else:
+            return False
+        # zoom around the pointer so the chart does not drift out of view
+        sx, sy = self._to_scene(event.x, event.y)
+        self.scale = min(2.5, max(0.3, self.scale * factor))
+        self.offset_x = event.x - sx * self.scale
+        self.offset_y = event.y - sy * self.scale
+        self._needs_center = False
         self.queue_draw()
         return True
 
     def _draw_node_label(self, cr, cx, cy, radius, label):
+        """Fit multi-line label inside the circle with automatic font sizing."""
         if not label:
             return
-        
+
         raw_lines = label.split("\n")
         max_w = radius * 1.6
         max_h = radius * 1.6
@@ -527,7 +582,7 @@ class CircleTreeCanvas(Gtk.DrawingArea):
         cr.set_source_rgb(*CFG["text"])
         base = CFG["font_size"]
         chosen = None
-        
+
         for fsize in range(base, 5, -1):
             font = Pango.FontDescription("Serif Italic %d" % fsize)
             line_h = fsize + 3
@@ -568,6 +623,7 @@ class CircleTreeCanvas(Gtk.DrawingArea):
             PangoCairo.show_layout(cr, layout)
 
     def export_svg(self, path):
+        """Write SVG as plain XML."""
         w = int(self.canvas_w)
         h = int(self.canvas_h)
         r = CFG["node_r"]
@@ -613,7 +669,8 @@ class CircleTreeCanvas(Gtk.DrawingArea):
             if kind == "spouse":
                 mx, my = (x1 + x2) / 2.0, (y1 + y2) / 2.0
                 lines.append(
-                    '<rect x="%.1f" y="%.1f" width="18" height="14" fill="rgb(%d,%d,%d)"/>'
+                    '<rect x="%.1f" y="%.1f" width="18" height="14" '
+                    'fill="rgb(%d,%d,%d)"/>'
                     % (
                         mx - 9,
                         my - 7,
@@ -659,7 +716,7 @@ class CircleTreeCanvas(Gtk.DrawingArea):
                 '<circle cx="%.1f" cy="%.1f" r="%.1f" fill="%s" '
                 'stroke="%s" stroke-width="1.5"/>' % (n._x, n._y, r, f, cstroke)
             )
-            
+
             wrapped = (n.name or "").split("\n")
             line_h = 12
             start_y = n._y - ((len(wrapped) - 1) * line_h) / 2.0 + 4
@@ -685,47 +742,21 @@ class CircleTreeCanvas(Gtk.DrawingArea):
         )
 
     def export_png(self, path, scale=2):
+        """Render the whole chart (independent of pan/zoom) to a PNG file."""
         w = max(1, int(self.canvas_w * scale))
         h = max(1, int(self.canvas_h * scale))
-        try:
-            import cairo as pycairo  # type: ignore
-            surface = pycairo.ImageSurface(pycairo.FORMAT_ARGB32, w, h)
-            cr = pycairo.Context(surface)
-            cr.scale(scale, scale)
-            ox, oy, sc = self.offset_x, self.offset_y, self.scale
-            self.offset_x = self.offset_y = 0.0
-            self.scale = 1.0
-            self.on_draw(self, cr)
-            self.offset_x, self.offset_y, self.scale = ox, oy, sc
-            surface.write_to_png(path)
-            return
-        except Exception:
-            pass
-        try:
-            surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
-            cr = cairo.Context(surface)
-            cr.scale(scale, scale)
-            ox, oy, sc = self.offset_x, self.offset_y, self.scale
-            self.offset_x = self.offset_y = 0.0
-            self.scale = 1.0
-            self.on_draw(self, cr)
-            self.offset_x, self.offset_y, self.scale = ox, oy, sc
-            if hasattr(surface, "write_to_png"):
-                surface.write_to_png(path)
-                return
-        except Exception:
-            pass
-        svg_path = path if path.lower().endswith(".svg") else path + ".svg"
-        if svg_path == path:
-            svg_path = path[:-4] + ".svg" if path.lower().endswith(".png") else path + ".svg"
-        self.export_svg(svg_path)
-        raise RuntimeError(
-            _("PNG export needs pycairo. Saved SVG instead:\n%s") % svg_path
-        )
+        surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h)
+        cr = cairo.Context(surface)
+        cr.scale(scale, scale)
+        cr.set_source_rgb(*CFG["bg"])
+        cr.paint()
+        self._paint_scene(cr)
+        surface.write_to_png(path)
 
 
 class CircleTreeView(NavigationView):
     """Charts view: circular-node descendant tree of the active person."""
+
     CONFIGSETTINGS = (
         ("interface.circletree-show-dates", True),
         ("interface.circletree-strip-patronymic", True),
@@ -803,6 +834,10 @@ class CircleTreeView(NavigationView):
         btn_ref = Gtk.Button(label=_("Refresh"))
         btn_ref.connect("clicked", lambda *_: self.build_tree())
         bar.pack_end(btn_ref, False, False, 0)
+        btn_center = Gtk.Button(label=_("Center"))
+        btn_center.set_tooltip_text(_("Move the chart back to the middle"))
+        btn_center.connect("clicked", self.on_center)
+        bar.pack_end(btn_center, False, False, 0)
         vbox.pack_start(bar, False, False, 0)
         scrolled = Gtk.ScrolledWindow()
         scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
@@ -811,6 +846,10 @@ class CircleTreeView(NavigationView):
         vbox.pack_start(scrolled, True, True, 0)
         vbox.show_all()
         return vbox
+
+    def on_center(self, *_args):
+        if self.canvas:
+            self.canvas.center()
 
     def build_tree(self):
         if self.canvas is None:
@@ -865,7 +904,7 @@ class CircleTreeView(NavigationView):
 
     def _person_label(self, person):
         raw_name = name_displayer.display(person)
-        
+
         if self.strip_patronymics:
             raw_name = strip_patronymic(raw_name)
 
@@ -873,12 +912,14 @@ class CircleTreeView(NavigationView):
         last_name = ""
 
         if ", " in raw_name:
+            # Format "Surname (incl. von), Given [Patronymic]"
             parts = raw_name.split(", ", 1)
             last_name = parts[0].strip()
             given_part = parts[1].strip()
             given_words = given_part.split()
             first_name = given_words[0] if given_words else ""
         else:
+            # Format "Given [Middle] [von] Surname"
             words = raw_name.strip().split()
             if len(words) == 1:
                 first_name = words[0]
@@ -913,45 +954,69 @@ class CircleTreeView(NavigationView):
 
         return "\n".join(lines) if lines else raw_name
 
+    @staticmethod
+    def _other_parent(family, handle):
+        """Handle of the parent in this family who is not 'handle'."""
+        if family.get_father_handle() == handle:
+            return family.get_mother_handle()
+        return family.get_father_handle()
+
     def _build_descendants(self, person, visited=None):
+        """
+        Build the descendant tree of person, covering all of the person's
+        families.  Families with the same partner are merged.  The first two
+        partners are drawn (right, then left of the person); children of
+        families without a known partner, and of any further partners, hang
+        from the person without a partner circle.
+        """
         if visited is None:
             visited = set()
         handle = person.handle
         if handle in visited:
             return None
         visited.add(handle)
+        db = self.dbstate.db
 
-        families = []
-        # Process ALL families of the person from Gramps (break removed)
+        partner_groups = []  # [partner handle, label, children]
+        by_partner = {}
+        loose = []  # children without a partner circle
+
         for fhandle in person.get_family_handle_list():
-            family = self.dbstate.db.get_family_from_handle(fhandle)
+            family = db.get_family_from_handle(fhandle)
             if not family:
                 continue
-            spouse_name = None
-            if self.show_spouses:
-                if person.get_gender() == Person.MALE:
-                    sh = family.get_mother_handle()
-                else:
-                    sh = family.get_father_handle()
-                if sh:
-                    sp = self.dbstate.db.get_person_from_handle(sh)
-                    if sp:
-                        spouse_name = self._person_label(sp)
-
-            children_nodes = []
+            kids = []
             for child_ref in family.get_child_ref_list():
-                child = self.dbstate.db.get_person_from_handle(
-                    child_ref.get_reference_handle()
-                )
+                child = db.get_person_from_handle(child_ref.get_reference_handle())
                 if child:
                     cn = self._build_descendants(child, visited)
                     if cn:
-                        children_nodes.append(cn)
+                        kids.append(cn)
 
-            if spouse_name or children_nodes:
-                families.append((spouse_name, children_nodes))
+            spouse = None
+            sp_handle = None
+            if self.show_spouses:
+                sp_handle = self._other_parent(family, handle)
+                if sp_handle:
+                    spouse = db.get_person_from_handle(sp_handle)
+            if spouse is None:
+                loose.extend(kids)
+                continue
+            group = by_partner.get(sp_handle)
+            if group is None:
+                group = [sp_handle, self._person_label(spouse), []]
+                by_partner[sp_handle] = group
+                partner_groups.append(group)
+            group[2].extend(kids)
 
-        return TNode(handle, self._person_label(person), families)
+        unions = []
+        for group, side in zip(partner_groups[:2], ("R", "L")):
+            unions.append(Union(side, group[1], group[2]))
+        for group in partner_groups[2:]:
+            loose.extend(group[2])
+        if loose:
+            unions.append(Union("M", None, loose))
+        return TNode(handle, self._person_label(person), unions)
 
     def goto_handle(self, handle):
         self.dirty = True
@@ -991,6 +1056,7 @@ class CircleTreeView(NavigationView):
                 self.canvas.export_png(path)
         except Exception as err:
             from gramps.gui.dialog import ErrorDialog
+
             ErrorDialog(_("Export failed"), str(err), parent=self.uistate.window)
 
     additional_ui = [
