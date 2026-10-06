@@ -63,6 +63,7 @@ explicit dbid instead of the configured default backend. See README.md's
 # Standard Python modules
 #
 # ------------------------------------------------------------------------
+import json
 import os
 import re
 import socket
@@ -115,6 +116,25 @@ _FAMILY_TREE_NAME_UNSAFE_CHARS = re.compile(r"[':<>|,;=\"\[\]\.\+\*\/\?\\]")
 #: The DATABASE plugin id grampswebapidb.gpr.py registers WebApiDB under.
 _WEBAPIDB_ID = "grampswebapidb"
 
+#: gramps-web-api's ACCESS_TOKEN_LABEL_MAX_LENGTH: a longer key name is
+#: rejected with a 422, so the Key name field never accepts more.
+_KEY_NAME_MAX_LENGTH = 100
+
+
+def _default_key_name():
+    """ "Gramps on <hostname>", cut to fit _KEY_NAME_MAX_LENGTH."""
+    return (_("Gramps on %s") % socket.gethostname())[:_KEY_NAME_MAX_LENGTH]
+
+
+def _server_error_message(exc):
+    """The message from a gramps-web-api error body
+    (``{"error": {"message": ...}}``), or "" if there isn't one."""
+    try:
+        body = json.loads(exc.read())
+        return str(body["error"]["message"])
+    except Exception:  # no/empty/non-JSON body, or a different shape
+        return ""
+
 
 class MintApiKeyTool(tool.Tool, ManagedWindow):
     """
@@ -165,7 +185,8 @@ class MintApiKeyTool(tool.Tool, ManagedWindow):
                 "this computer's key apart and remove it later"
             ),
         )
-        self.label_entry.set_text(_("Gramps on %s") % socket.gethostname())
+        self.label_entry.set_max_length(_KEY_NAME_MAX_LENGTH)
+        self.label_entry.set_text(_default_key_name())
         self.label_entry.connect("activate", self.mint_clicked)
 
         button_box = Gtk.ButtonBox()
@@ -267,7 +288,7 @@ class MintApiKeyTool(tool.Tool, ManagedWindow):
 
         Prefers a sync-token key; falls back to a refresh-token key only
         when the server is too old to create sync tokens."""
-        label = label or _("Gramps on %s") % socket.gethostname()
+        label = label or _default_key_name()
         try:
             try:
                 key = WebApiHandler.mint_sync_api_key(url, username, password, label)
@@ -289,6 +310,17 @@ class MintApiKeyTool(tool.Tool, ManagedWindow):
         themselves.
         """
         if isinstance(exc, HTTPError):
+            server_message = _server_error_message(exc)
+            # The sync-token endpoint answers 409 both for a duplicate
+            # name ("An access token with this label exists") and for an
+            # account already at its 20-key limit ("Maximum number of
+            # access tokens reached"); only the message tells them apart.
+            if exc.code == 409 and "maximum" in server_message.lower():
+                return _(
+                    "Your account already has the maximum number of API "
+                    "keys. Remove a key you no longer use from your account, "
+                    "then try again."
+                )
             if exc.code == 409:
                 return (
                     _(
@@ -302,6 +334,11 @@ class MintApiKeyTool(tool.Tool, ManagedWindow):
                 return (
                     _("Login failed (HTTP %d): check your username and password.")
                     % exc.code
+                )
+            if server_message:
+                return _("Server returned an error (HTTP %d): %s") % (
+                    exc.code,
+                    server_message,
                 )
             return _("Server returned an error (HTTP %d %s): check the Server URL.") % (
                 exc.code,
