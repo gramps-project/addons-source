@@ -21,7 +21,8 @@
 """
 Unit tests for mintapikeytool.MintApiKeyTool's key minting: preferring a
 sync-token key, falling back to a refresh-token key only on a server too
-old for sync tokens, and explaining a duplicate key name.
+old for sync tokens, and explaining a duplicate key name or a full
+key list.
 
 The dialog itself isn't built: the methods under test are called unbound
 on a mock ``self``, with GLib.idle_add run inline.
@@ -31,6 +32,8 @@ Run with::
     python3 -m unittest GrampsWebApiDb.tests.test_mintapikeytool -v
 """
 
+import io
+import json
 import os
 import sys
 import unittest
@@ -54,6 +57,13 @@ except ImportError as _err:
     raise unittest.SkipTest("gramps package not available: %s" % _err)
 
 URL = "https://example.com/api"
+
+
+def http_error_with_message(code, message):
+    """An HTTPError carrying gramps-web-api's {"error": {"message": ...}}
+    body, the way abort_with_message() sends it."""
+    body = json.dumps({"error": {"code": code, "message": message}}).encode()
+    return HTTPError(URL, code, "HTTP %d" % code, None, io.BytesIO(body))
 
 
 class TestMintApiKey(unittest.TestCase):
@@ -117,6 +127,50 @@ class TestMintApiKey(unittest.TestCase):
         message = self.tool._mint_failed.call_args.args[0]
         self.assertIn('"laptop"', message)
         self.tool._mint_succeeded.assert_not_called()
+
+    def test_duplicate_key_name_with_server_message(self):
+        conflict = http_error_with_message(
+            409, "An access token with this label exists"
+        )
+        with mock.patch.object(
+            WebApiHandler, "mint_sync_api_key", side_effect=conflict
+        ):
+            self._mint()
+        self.assertIn('"laptop"', self.tool._mint_failed.call_args.args[0])
+
+    def test_key_limit_is_not_reported_as_duplicate_name(self):
+        conflict = http_error_with_message(
+            409, "Maximum number of access tokens reached"
+        )
+        with (
+            mock.patch.object(WebApiHandler, "mint_sync_api_key", side_effect=conflict),
+            mock.patch.object(WebApiHandler, "mint_api_key") as mint_refresh,
+        ):
+            self._mint()
+        mint_refresh.assert_not_called()
+        message = self.tool._mint_failed.call_args.args[0]
+        self.assertIn("maximum number of API keys", message)
+        self.assertNotIn('"laptop"', message)
+
+    def test_other_error_shows_server_message(self):
+        error = http_error_with_message(422, "Label too long")
+        with mock.patch.object(WebApiHandler, "mint_sync_api_key", side_effect=error):
+            self._mint()
+        self.assertIn("Label too long", self.tool._mint_failed.call_args.args[0])
+
+    def test_default_key_name_fits_server_limit(self):
+        with (
+            mock.patch.object(
+                mintapikeytool.socket, "gethostname", return_value="h" * 300
+            ),
+            mock.patch.object(
+                WebApiHandler, "mint_sync_api_key", return_value="SYNCKEY"
+            ) as mint_sync,
+        ):
+            self._mint(label="")
+        self.assertEqual(
+            len(mint_sync.call_args.args[3]), mintapikeytool._KEY_NAME_MAX_LENGTH
+        )
 
     def test_login_failure_is_not_retried_as_refresh_key(self):
         with (

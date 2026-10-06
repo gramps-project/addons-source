@@ -388,7 +388,9 @@ class WebApiHandler:
         client that lists their API keys, and its access tokens can't
         change the account. Needs gramps-web-api v3.23.0+; an older
         server answers 404, raised here as SyncTokensUnsupportedError. A
-        label already in use answers 409, raised as the HTTPError itself.
+        label already in use, or an account already holding the server's
+        maximum number of sync tokens (20), answers 409, raised as the
+        HTTPError itself -- its body's message tells the two apart.
         """
         handler = cls(url, username=username, password=password)
         req = Request(
