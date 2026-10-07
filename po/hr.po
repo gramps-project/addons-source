@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 10:14-0700\n"
-"PO-Revision-Date: 2026-05-17 15:49+0000\n"
+"PO-Revision-Date: 2026-10-07 16:52+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.10.1.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -294,107 +294,81 @@ msgid "Associations state tool"
 msgstr "Alat za stanja veza"
 
 #: AssociationsTool/associationstool.py:181
-#, fuzzy, python-format
-#| msgid "Error: login failed"
+#, python-format
 msgid "Error initializing data: %s"
-msgstr "Greška: neuspjela prijava"
+msgstr "Greška prilikom inicijaliziranja podataka: %s"
 
 #: AssociationsTool/associationstool.py:222
-#, fuzzy, python-format
-#| msgid "Error creating note"
+#, python-format
 msgid "Error processing person %s: %s"
-msgstr "Greška pri stvaranju zabilješke"
+msgstr "Greška prilikom obrade osobe %s: %s"
 
 #: AssociationsTool/associationstool.py:252
-#, fuzzy
-#| msgid "Process relationships..."
 msgid "Processing associations..."
-msgstr "Obrada veza …"
+msgstr "Obrada veza …"
 
 #: AssociationsTool/associationstool.py:257
-#, fuzzy, python-format
-#| msgid "Could not create the directory: %(path)s"
+#, python-format
 msgid "Could not create progress dialog: %s"
-msgstr "Nije bilo moguće stvoriti direktorij: %(path)s"
+msgstr "Nije bilo moguće stvoriti dijalog napretka: %s"
 
 #: AssociationsTool/associationstool.py:281
-#, fuzzy, python-format
-#| msgid "Produces descendants lines of a person"
+#, python-format
 msgid "Processing %d of %d persons"
-msgstr "Stvara linije potomaka za jednu osobu"
+msgstr "Obrađuje se %d od %d osoba"
 
 #: AssociationsTool/associationstool.py:347
-#, fuzzy, python-format
-#| msgid "Error: login failed"
+#, python-format
 msgid "Error displaying associations: %s"
-msgstr "Greška: neuspjela prijava"
+msgstr "Greška prilikom prikazivanja veza: %s"
 
 #: AssociationsTool/associationstool.py:365
 #: AssociationsTool/associationstool.py:448
-#, fuzzy
-#| msgid "Street Name"
 msgid "Starting Name"
-msgstr "Ime ulice"
+msgstr "Početno ime"
 
 #: AssociationsTool/associationstool.py:368
 #: AssociationsTool/associationstool.py:451
-#, fuzzy
-#| msgid "Sync Associations"
 msgid "Associate"
-msgstr "Sinkroniziraj veze"
+msgstr "Poveži"
 
 #: AssociationsTool/associationstool.py:427
 #: AssociationsTool/associationstool.py:459
-#, fuzzy, python-format
-#| msgid "No source information found"
+#, python-format
 msgid "Total associations found: %d"
-msgstr "Podaci o izvoru nisu pronađeni"
+msgstr "Ukupno pronađenih veza: %d"
 
 #: AssociationsTool/associationstool.py:553
-#, fuzzy
-#| msgid "Edit referenced Person"
 msgid "Edit Starting Person"
-msgstr "Uredi referneciranu osobu"
+msgstr "Uredi početnu osobu"
 
 #: AssociationsTool/associationstool.py:554
-#, fuzzy
-#| msgid "Edit referenced Person"
 msgid "Edit Associate Person"
-msgstr "Uredi referneciranu osobu"
+msgstr "Uredi povezanu osobu"
 
 #: AssociationsTool/associationstool.py:555
-#, fuzzy
-#| msgid "Edit selection"
 msgid "Edit Association"
-msgstr "Uredi odabir"
+msgstr "Uredi vezu"
 
 #: AssociationsTool/associationstool.py:557
-#, fuzzy
-#| msgid "Copy to clipboard"
 msgid "Copy row to clipboard"
-msgstr "Kopiraj u međuspremnik"
+msgstr "Kopiraj redak u međuspremnik"
 
 #: AssociationsTool/associationstool.py:558
 msgid "Create Note from row"
-msgstr ""
+msgstr "Stvori zabilješku iz retka"
 
 #: AssociationsTool/associationstool.py:672
-#, fuzzy
-#| msgid "Sync Associations"
 msgid "Association:"
-msgstr "Sinkroniziraj veze"
+msgstr "Veza:"
 
 #: AssociationsTool/associationstool.py:673
-#, fuzzy
-#| msgid "Starting migration..."
 msgid "Starting Person"
-msgstr "Pokretanje migracije …"
+msgstr "Početna osoba"
 
 #: AssociationsTool/associationstool.py:675
-#, fuzzy
-#| msgid "Lines type"
 msgid "Link type"
-msgstr "Vrsta linija"
+msgstr "Vrsta poveznice"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
@@ -883,10 +857,8 @@ msgid "a gramplet that displays the birthdays of the living people"
 msgstr "gramplet prikazuje rođendane živih osoba"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:47
-#, fuzzy
-#| msgid "Sort by "
 msgid "Sort birthdays by"
-msgstr "Razvrstaj po "
+msgstr "Razvrstaj rođendane po"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:49
 #: DateOfDeathGramplet/DateOfDeathGramplet.py:42
@@ -1471,10 +1443,8 @@ msgid "Show the next family"
 msgstr "Prikaži više detalja"
 
 #: ContextView/ContextView.py:899
-#, fuzzy
-#| msgid "No place is active"
 msgid "No person is active."
-msgstr "Nijedno mjesto nije aktivno"
+msgstr "Nijedna osoba nije aktivna."
 
 #: ContextView/ContextView.py:915
 #, python-format
@@ -1482,10 +1452,9 @@ msgid "Family %(current)d of %(total)d"
 msgstr ""
 
 #: ContextView/ContextView.py:922
-#, fuzzy, python-format
-#| msgid "Highlight the home person"
+#, python-format
 msgid "family %d lies toward the home person"
-msgstr "Istakni početnu osobu"
+msgstr "obitelj %d leži u smjeru početne osobe"
 
 #: ContextView/ContextView.py:980
 msgid "<b>Bold</b> marks the way to the home person"
@@ -2284,7 +2253,7 @@ msgstr "Nije moguće dodati novu osobu kao roditelja."
 #: DataEntryGramplet/DataEntryGramplet.py:569
 #: DataEntryGramplet/DataEntryGramplet.py:574
 msgid "Please set an active person."
-msgstr "Postavi aktivnu osobu."
+msgstr "Postavi jednu aktivnu osobu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:535
 #: DataEntryGramplet/DataEntryGramplet.py:554
@@ -2583,7 +2552,7 @@ msgstr ""
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:495
 #, python-brace-format
 msgid "Search completed - {} relation paths found"
-msgstr "Pretraga je završena – broj pronađenih srodstva: %d"
+msgstr "Pretraga je završena – broj pronađenih staza srodstva: {}"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:506
 #, python-brace-format
@@ -4148,7 +4117,7 @@ msgstr "Sitl korišten za etikete slika."
 
 #: DetDescendantReport-images/detdescendantreporti.py:1425
 msgid "A style used for image captions."
-msgstr "Sitl korišten za podnaslove slika."
+msgstr "Sitl koji se koristi za opise slika."
 
 #: DetId/DetId.gpr.py:31
 msgid "Deterministic ID"
@@ -5714,10 +5683,8 @@ msgid ""
 msgstr "Prikazuje broj potomaka trenutačno odabrane osobe"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1190
-#, fuzzy
-#| msgid "Include siblings of ancestors."
 msgid "Include siblings of ancestors"
-msgstr "Uključi braću/sestre predaka."
+msgstr "Uključi braću predaka"
 
 #: ExpandedAncestorTree/ExpandedAncestorTree.py:1191
 #, fuzzy
@@ -9540,7 +9507,7 @@ msgstr "Potpisano"
 
 #: Form/form_gb.xml.h:23
 msgid "Banns/Licence"
-msgstr "Najave vjenčanja/Vjenčani list"
+msgstr "Najava vjenčanja/Vjenčani list"
 
 #: Form/form_gb.xml.h:31 Form/form_gb.xml.h:34
 msgid "Deceased"
@@ -15706,10 +15673,8 @@ msgid "Select Form"
 msgstr "Odaberi obrazac"
 
 #: GOQLFilter/goql.gpr.py:31
-#, fuzzy
-#| msgid "Person Filter Editor"
 msgid "Person GOQL Filter"
-msgstr "Uređivač filtra za osobe"
+msgstr "GOQL filtar za osobe"
 
 #: GOQLFilter/goql.gpr.py:32
 msgid "Gramplet providing a gramps-object-query-language person filter"
@@ -15720,16 +15685,12 @@ msgstr ""
 #: GOQLFilter/goql.gpr.py:117 GOQLFilter/goql.gpr.py:136
 #: GOQLFilter/goql.gpr.py:155 GOQLFilter/goql.gpr.py:174
 #: GOQLFilter/goql.gpr.py:193
-#, fuzzy
-#| msgid "Filtering"
 msgid "GOQL Filter"
-msgstr "Filtriranje"
+msgstr "GOQL filtar"
 
 #: GOQLFilter/goql.gpr.py:50
-#, fuzzy
-#| msgid "Family Filter name:"
 msgid "Family GOQL Filter"
-msgstr "Ime filtra obitelji:"
+msgstr "GOQL filtar za obitelji"
 
 #: GOQLFilter/goql.gpr.py:51
 msgid "Gramplet providing a gramps-object-query-language family filter"
@@ -15737,47 +15698,39 @@ msgstr ""
 
 #: GOQLFilter/goql.gpr.py:69
 msgid "Event GOQL Filter"
-msgstr ""
+msgstr "GOQL filtar za događaje"
 
 #: GOQLFilter/goql.gpr.py:70
 msgid "Gramplet providing a gramps-object-query-language event filter"
 msgstr ""
 
 #: GOQLFilter/goql.gpr.py:88
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Place GOQL Filter"
-msgstr "Filtar mjesta:"
+msgstr "GOQL filtar za mjesta"
 
 #: GOQLFilter/goql.gpr.py:89
 msgid "Gramplet providing a gramps-object-query-language place filter"
 msgstr ""
 
 #: GOQLFilter/goql.gpr.py:107
-#, fuzzy
-#| msgid "Repository title"
 msgid "Repository GOQL Filter"
-msgstr "Naslov spremišta"
+msgstr "GOQL filtar za spremišta"
 
 #: GOQLFilter/goql.gpr.py:109
 msgid "Gramplet providing a gramps-object-query-language repository filter"
 msgstr ""
 
 #: GOQLFilter/goql.gpr.py:128
-#, fuzzy
-#| msgid "Source type"
 msgid "Source GOQL Filter"
-msgstr "Vrsta izvora"
+msgstr "GOQL filtar za izvore"
 
 #: GOQLFilter/goql.gpr.py:129
 msgid "Gramplet providing a gramps-object-query-language source filter"
 msgstr ""
 
 #: GOQLFilter/goql.gpr.py:147
-#, fuzzy
-#| msgid "Relationship to Father"
 msgid "Citation GOQL Filter"
-msgstr "Srodstvo s ocem"
+msgstr "GOQL filtar za citate"
 
 #: GOQLFilter/goql.gpr.py:148
 #, fuzzy
@@ -15786,20 +15739,16 @@ msgid "Gramplet providing a gramps-object-query-language citation filter"
 msgstr "Gramplet za prikaz veza srodnika"
 
 #: GOQLFilter/goql.gpr.py:166
-#, fuzzy
-#| msgid "Media Object Title"
 msgid "Media GOQL Filter"
-msgstr "Naslov medijskog objekta"
+msgstr "GOQL filtar za medije"
 
 #: GOQLFilter/goql.gpr.py:167
 msgid "Gramplet providing a gramps-object-query-language media filter"
 msgstr ""
 
 #: GOQLFilter/goql.gpr.py:185
-#, fuzzy
-#| msgid "Note Link (internal)"
 msgid "Note GOQL Filter"
-msgstr "Poveznica zabilješke (interna)"
+msgstr "GOQL filtar za zabilješke"
 
 #: GOQLFilter/goql.gpr.py:186
 msgid "Gramplet providing a gramps-object-query-language note filter"
@@ -15822,10 +15771,9 @@ msgid "Tab always completes -- it never inserts a tab character."
 msgstr ""
 
 #: GOQLFilter/goql.py:213
-#, fuzzy, python-format
-#| msgid "Use filter "
+#, python-format
 msgid "%s filter"
-msgstr "Koristi filtar "
+msgstr "%s filtar"
 
 #: GOQLFilter/goql.py:233
 msgid "This resets the filter parameters to empty state."
@@ -15850,10 +15798,9 @@ msgid "Python evaluation"
 msgstr "Python konzola"
 
 #: GOQLFilter/goql.py:523
-#, fuzzy, python-format
-#| msgid "Error: login failed"
+#, python-format
 msgid "Error applying filter: %s"
-msgstr "Greška: neuspjela prijava"
+msgstr "Greška prilikom primjene filtra: %s"
 
 #: GOQLFilter/goql.py:526
 #, python-format
@@ -15861,10 +15808,9 @@ msgid "Showing %(shown)d of %(total)d (%(method)s)"
 msgstr ""
 
 #: GOQLFilter/goql.py:541
-#, fuzzy, python-format
-#| msgid "Error creating note"
+#, python-format
 msgid "Error resetting filter: %s"
-msgstr "Greška pri stvaranju zabilješke"
+msgstr "Greška prilikom resetiranja filtra: %s"
 
 #: GOQLFilter/goql.py:548
 #, fuzzy
@@ -15972,10 +15918,8 @@ msgid ""
 msgstr ""
 
 #: GOQLFilter/whereexprrule.py:212
-#, fuzzy
-#| msgid "Allow regular expressions."
 msgid "GOQL expression"
-msgstr "Dozvoli regularne izraze."
+msgstr "GOQL izraz"
 
 #: GOQLFilter/whereexprrule.py:214
 msgid ""
@@ -16602,6 +16546,11 @@ msgid ""
 "history in a format it cannot read. Upgrade the Gramps installation behind "
 "the Gramps Web API server (or ask its administrator to)."
 msgstr ""
+"Ovaj server koristi Gramps %(actual)s, međutim ovaj dodatak zahtijeva server "
+"koji koristi Gramps %(required)s ili noviju verziju: starije verzije servera "
+"serijaliziraju svoju povijest transakcija u formatu koji ovaj dodatak ne "
+"može pročitati. Nadogradi instalaciju Grampsa koja se nalazi iza Gramps Web "
+"API servera (ili zamoli administratora da to učini)."
 
 #: GrampsWebApiDb/grampswebapidb.py:1008
 msgid "Retry local change after server conflict"
@@ -16623,10 +16572,8 @@ msgid ""
 msgstr ""
 
 #: GrampsWebApiDb/mintapikeytool.py:141
-#, fuzzy
-#| msgid "Server URL: "
 msgid "Server URL"
-msgstr "URL servera: "
+msgstr "URL servera"
 
 #: GrampsWebApiDb/mintapikeytool.py:141
 msgid "e.g. https://your-server/api"
@@ -16679,16 +16626,14 @@ msgid "Please fill in the server URL, username, and password."
 msgstr "Pristup zabranjen. Provjeri korisničko ime i lozinku."
 
 #: GrampsWebApiDb/mintapikeytool.py:229
-#, fuzzy
-#| msgid "Generation "
 msgid "Generating API key…"
-msgstr "Generacija "
+msgstr "Generiranje API ključa …"
 
 #: GrampsWebApiDb/mintapikeytool.py:260
-#, fuzzy, python-format
-#| msgid "Authentication failed. Please check your username and password."
+#, python-format
 msgid "Login failed (HTTP %d): check your username and password."
-msgstr "Autentifikacija nije uspjela. Provjeri svoje korisničko ime i lozinku."
+msgstr ""
+"Prijava nije uspjela (HTTP %d): provjeri svoje korisničko ime i lozinku."
 
 #: GrampsWebApiDb/mintapikeytool.py:263
 #, python-format
@@ -16707,10 +16652,9 @@ msgid "Unexpected response from the server: %s"
 msgstr "Neočekivana greška: %s"
 
 #: GrampsWebApiDb/mintapikeytool.py:277 GrampsWebApiDb/mintapikeytool.py:369
-#, fuzzy, python-format
-#| msgid "Error:"
+#, python-format
 msgid "Error: %s"
-msgstr "Greška:"
+msgstr "Greška: %s"
 
 #: GrampsWebApiDb/mintapikeytool.py:286
 #, python-format
@@ -16731,10 +16675,9 @@ msgid ""
 msgstr ""
 
 #: GrampsWebApiDb/mintapikeytool.py:352
-#, fuzzy, python-format
-#| msgid "Error creating note"
+#, python-format
 msgid "Error creating Family Tree: %s"
-msgstr "Greška pri stvaranju zabilješke"
+msgstr "Greška prilikom stvaranja rodoslova: %s"
 
 #: GrampsWebApiDb/mintapikeytool.py:358
 #, python-format
@@ -16742,6 +16685,8 @@ msgid ""
 "Created Family Tree \"%s\". Open it from Family Trees -> Manage Family Trees "
 "to start syncing."
 msgstr ""
+"Rodoslov „%s” je stvoren. Otvori ga putem Rodoslovi -> Upravljaj rodoslovima "
+"za pokretanje sinkronizacije."
 
 #: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:230
 #: GrampsWebSync/grampswebsync.py:295
@@ -16754,17 +16699,15 @@ msgstr "Sinkronizira lokalnu bazu podataka s Gramps Web instancom."
 
 #: GrampsWebSync/grampswebsync.py:275
 msgid "_Try again"
-msgstr ""
+msgstr "_Pokušaj ponovo"
 
 #: GrampsWebSync/grampswebsync.py:276
-#, fuzzy
-#| msgid "Connecting..."
 msgid "C_onnect"
-msgstr "Povezivanje …"
+msgstr "P_oveži"
 
 #: GrampsWebSync/grampswebsync.py:371
 msgid "Forget this server?"
-msgstr ""
+msgstr "Zaboraviti ovaj server?"
 
 #: GrampsWebSync/grampswebsync.py:373
 msgid ""
@@ -16772,26 +16715,29 @@ msgid ""
 "along with the record of when this family tree last synchronized with it. "
 "The next synchronization will compare the two trees from scratch."
 msgstr ""
+"Za ovaj server spremljena adresa, korisničko ime i lozinka će se ukloniti "
+"zajedno s podacima o tome kada je ovaj rodoslov zadnji put sinkroniziran s "
+"njim. Sljedeća sinkronizacija će ispočetka usporediti oba rodoslova."
 
 #: GrampsWebSync/grampswebsync.py:378
 msgid "Forget"
-msgstr ""
+msgstr "Zaboravi"
 
 #: GrampsWebSync/grampswebsync.py:508
 msgid ""
 "These credentials were last used with a different family tree. Check the "
 "server before continuing."
 msgstr ""
+"Ovi podaci za prijavu su zadnji put korišteni s jednim drugim rodoslovom. "
+"Provjeri server prije nastavljanja."
 
 #: GrampsWebSync/grampswebsync.py:585
 msgid "Change server…"
-msgstr ""
+msgstr "Promijeni server …"
 
 #: GrampsWebSync/grampswebsync.py:620
-#, fuzzy
-#| msgid "Server URL: "
 msgid "Server URL:"
-msgstr "URL servera: "
+msgstr "URL servera:"
 
 #: GrampsWebSync/grampswebsync.py:622 PhpGedView/phpgedview.glade:170
 msgid "Username:"
@@ -16803,21 +16749,19 @@ msgstr "Lozinka:"
 
 #: GrampsWebSync/grampswebsync.py:627
 msgid "Remember password"
-msgstr ""
+msgstr "Zapamti lozinku"
 
 #: GrampsWebSync/grampswebsync.py:639
 msgid "Forget this server"
-msgstr ""
+msgstr "Zaboravi ovaj server"
 
 #: GrampsWebSync/grampswebsync.py:670
-#, fuzzy
-#| msgid "About this utility."
 msgid "About this tool"
-msgstr "O ovom dodatku."
+msgstr "O ovom alatu"
 
 #: GrampsWebSync/grampswebsync.py:674
 msgid "Open the online manual"
-msgstr ""
+msgstr "Otvori online priručnik"
 
 #: GrampsWebSync/grampswebsync.py:687
 msgid ""
@@ -16853,49 +16797,38 @@ msgid "Error:"
 msgstr "Greška:"
 
 #: GrampsWebSync/grampswebsync.py:785 GrampsWebSync/grampswebsync.py:1065
-#, fuzzy
-#| msgid "Learning"
 msgid "Warning:"
-msgstr "Učenje"
+msgstr "Upozorenje:"
 
 #: GrampsWebSync/grampswebsync.py:947
 msgid "Sync mode:"
-msgstr ""
+msgstr "Modus sinkronizacije:"
 
 #: GrampsWebSync/grampswebsync.py:1129
-#, fuzzy
-#| msgid "Migration completed!"
 msgid "Synchronization complete"
-msgstr "Migracija završena!"
+msgstr "Sinkronizacija je završena"
 
 #: GrampsWebSync/grampswebsync.py:1136
-#, fuzzy
-#| msgid "Generation "
 msgid "Synchronization failed"
-msgstr "Generacija "
+msgstr "Sinkronizacija nije uspjela"
 
 #: GrampsWebSync/presentation.py:128
 #, python-format
 msgid "Gramps Web Sync %(addon)s, Web API %(api)s"
-msgstr ""
+msgstr "Gramps Web sinkronizacija %(addon)s, Web API %(api)s"
 
 #: GrampsWebSync/presentation.py:132
-#, fuzzy, python-format
-#| msgid "Gramps Web Sync"
+#, python-format
 msgid "Gramps Web Sync %s"
-msgstr "Gramps Web sinkronizacija"
+msgstr "Gramps Web sinkronizacija %s"
 
 #: GrampsWebSync/presentation.py:164
-#, fuzzy
-#| msgid ""
-#| "You have specified a URL with http scheme. If you continue, your password "
-#| "will be sent in clear text over the network. Use only for local testing!"
 msgid ""
 "This URL uses http, so your password will be sent in clear text. Use only "
 "for local testing."
 msgstr ""
-"Zadan je URL s http shemom. Ako nastaviš, tvoja će se lozinka poslati u "
-"nešifriranom obliku putem mreže. Koristi samo za lokalno testiranje!"
+"Ovaj URL koristi HTTP, tako da će se tvoja lozinka poslati kao nešifrirani "
+"tekst. Koristi samo za lokalno testiranje."
 
 #: GrampsWebSync/presentation.py:182
 #, python-format
@@ -16916,7 +16849,7 @@ msgstr "Autentifikacija nije uspjela. Provjeri svoje korisničko ime i lozinku."
 
 #: GrampsWebSync/presentation.py:206
 msgid "Access forbidden. Please check username and password."
-msgstr "Pristup zabranjen. Provjeri korisničko ime i lozinku."
+msgstr "Pristup je zabranjen. Provjeri korisničko ime i lozinku."
 
 #: GrampsWebSync/presentation.py:208
 msgid "GrampsWeb service not found. Please check the URL."
@@ -16994,7 +16927,7 @@ msgstr ""
 #: GrampsWebSync/presentation.py:256
 #, python-format
 msgid "The server could not apply the changes: %s"
-msgstr ""
+msgstr "Server nije mogao primijeniti promjene: %s"
 
 #: GrampsWebSync/presentation.py:258
 #, python-format
@@ -17008,177 +16941,160 @@ msgstr "Neočekivana greška: %s"
 
 #: GrampsWebSync/presentation.py:267
 msgid "Signing in…"
-msgstr ""
+msgstr "Prijava …"
 
 #: GrampsWebSync/presentation.py:268
-#, fuzzy
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
 msgid "Downloading the remote family tree…"
-msgstr "Preuzima se %s medijska datoteka"
+msgstr "Preuzimanje udaljenog rodoslova …"
 
 #: GrampsWebSync/presentation.py:269
 msgid "Comparing the two family trees…"
-msgstr ""
+msgstr "Uspoređivanje dvaju rodoslova …"
 
 #: GrampsWebSync/presentation.py:270
 msgid "Checking which media files are missing…"
-msgstr ""
+msgstr "Provjera nedostajućih medijskih datoteka …"
 
 #: GrampsWebSync/presentation.py:271
 msgid "Applied the changes to this computer."
-msgstr ""
+msgstr "Promjene su primijenjene na ovom računalu."
 
 #: GrampsWebSync/presentation.py:272
-#, fuzzy
-#| msgid "Unable to synchronize changes to server."
 msgid "Sending the changes to the server…"
-msgstr "Nije moguće sinkronizirati promjene sa serverom."
+msgstr "Slanje promjena na server …"
 
 #: GrampsWebSync/presentation.py:284
-#, fuzzy
-#| msgid "Downloading %s media file"
-#| msgid_plural "Downloading %s media files"
 msgid "Downloading media files…"
-msgstr "Preuzima se %s medijska datoteka"
+msgstr "Preuzimanje medijskih datoteka …"
 
 #: GrampsWebSync/presentation.py:285
-#, fuzzy
-#| msgid "Uploading %s media file"
-#| msgid_plural "Uploading %s media files"
 msgid "Uploading media files…"
-msgstr "Prenosi se %s medijska datoteka"
+msgstr "Prijenos medijskih datoteka …"
 
 #: GrampsWebSync/presentation.py:293
-#, fuzzy
-#| msgid "Connecting..."
 msgid "Connect"
-msgstr "Povezivanje …"
+msgstr "Poveži"
 
 #: GrampsWebSync/presentation.py:295
-#, fuzzy
-#| msgid "No changes"
 msgid "Apply changes"
-msgstr "Bez promjena"
+msgstr "Primijeni promjene"
 
 #: GrampsWebSync/presentation.py:296
-#, fuzzy
-#| msgid "Uploading %s media file"
-#| msgid_plural "Uploading %s media files"
 msgid "Transfer media files"
-msgstr "Prenosi se %s medijska datoteka"
+msgstr "Prenesi medijske datoteke"
 
 #: GrampsWebSync/presentation.py:304
-#, fuzzy
-#| msgid "Bidirectional Synchronization"
 msgid "Bidirectional synchronization"
 msgstr "Dvosmjerna sinkronizacija"
 
 #: GrampsWebSync/presentation.py:305
 msgid "Reset the server to match this computer"
-msgstr ""
+msgstr "Resetiraj server da odgovara ovom računalu"
 
 #: GrampsWebSync/presentation.py:306
 msgid "Reset this computer to match the server"
-msgstr ""
+msgstr "Resetiraj ovo računalo da odgovara serveru"
 
 #: GrampsWebSync/presentation.py:319
 msgid ""
 "Changes from both sides are combined. Objects edited in both places are "
 "merged."
 msgstr ""
+"Promjene s obiju strana su spojene. Objekti koji su na obama mjesta uređeni "
+"su spojeni."
 
 #: GrampsWebSync/presentation.py:323
 msgid ""
 "The server is made to match this computer. Anything changed only on the "
 "server is discarded."
 msgstr ""
+"Server je usklađen s ovim računalom. Sve promjene koje se urade samo na "
+"serveru se odbacuju."
 
 #: GrampsWebSync/presentation.py:327
 msgid ""
 "This computer is made to match the server. Anything changed only here is "
 "discarded."
 msgstr ""
+"Ovo je računalo usklađeno sa serverom. Sve promjene koje su napravljene samo "
+"ovdje će se odbaciti."
 
 #: GrampsWebSync/presentation.py:574
 #, python-format
 msgid "Will change on this computer (%s object)"
 msgid_plural "Will change on this computer (%s objects)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Promijenit će se na ovom računalu (%s objekt)"
+msgstr[1] "Promijenit će se na ovom računalu (%s objekta)"
+msgstr[2] "Promijenit će se na ovom računalu (%s objekata)"
 
 #: GrampsWebSync/presentation.py:582
 #, python-format
 msgid "Will change on the server (%s object)"
 msgid_plural "Will change on the server (%s objects)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Promijenit će se na serveru (%s objekt)"
+msgstr[1] "Promijenit će se na serveru (%s objekta)"
+msgstr[2] "Promijenit će se na serveru (%s objekata)"
 
 #: GrampsWebSync/presentation.py:593
-#, fuzzy, python-format
-#| msgid "Add Test Note"
+#, python-format
 msgid "Add %s object"
 msgid_plural "Add %s objects"
-msgstr[0] "Dodaj testnu zabilješku"
-msgstr[1] "Dodaj testnu zabilješku"
-msgstr[2] "Dodaj testnu zabilješku"
+msgstr[0] "Dodaj %s objekt"
+msgstr[1] "Dodaj %s objekta"
+msgstr[2] "Dodaj %s objekata"
 
 #: GrampsWebSync/presentation.py:594
-#, fuzzy, python-format
-#| msgid "Upgrading %s objects..."
+#, python-format
 msgid "Update %s object"
 msgid_plural "Update %s objects"
-msgstr[0] "Nadograđuju se %s objekta …"
-msgstr[1] "Nadograđuju se %s objekta …"
-msgstr[2] "Nadograđuju se %s objekta …"
+msgstr[0] "Aktualiziraj %s objekt"
+msgstr[1] "Aktualiziraj %s objekta"
+msgstr[2] "Aktualiziraj %s objekata"
 
 #: GrampsWebSync/presentation.py:595
-#, fuzzy, python-format
-#| msgid "Migrating %s objects..."
+#, python-format
 msgid "Merge %s object"
 msgid_plural "Merge %s objects"
-msgstr[0] "Migriraju se %s objekta …"
-msgstr[1] "Migriraju se %s objekta …"
-msgstr[2] "Migriraju se %s objekta …"
+msgstr[0] "Spoji %s objekt"
+msgstr[1] "Spoji %s objekta"
+msgstr[2] "Spoji %s objekata"
 
 #: GrampsWebSync/presentation.py:596
 #, python-format
 msgid "Delete %s object"
 msgid_plural "Delete %s objects"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Izbriši %s objekt"
+msgstr[1] "Izbriši %s objekta"
+msgstr[2] "Izbriši %s objekata"
 
 #: GrampsWebSync/presentation.py:615
 #, python-format
 msgid "%s object will be deleted on this computer."
 msgid_plural "%s objects will be deleted on this computer."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%s objekt će se izbrisati na ovom računalu."
+msgstr[1] "%s objekta će se izbrisati na ovom računalu."
+msgstr[2] "%s objekata će se izbrisati na ovom računalu."
 
 #: GrampsWebSync/presentation.py:624
 #, python-format
 msgid "%s object will be deleted on the server."
 msgid_plural "%s objects will be deleted on the server."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%s objekt će se izbrisati na serveru."
+msgstr[1] "%s objekta će se izbrisati na serveru."
+msgstr[2] "%s objekata će se izbrisati na serveru."
 
 #: GrampsWebSync/presentation.py:636
 #, python-format
 msgid "%(down)s to download, %(up)s to upload"
-msgstr ""
+msgstr "%(down)s za preuzeti, %(up)s za prenijeti"
 
 #: GrampsWebSync/presentation.py:642
 #, python-format
 msgid "Also transfer %(total)s media file (%(counts)s)"
 msgid_plural "Also transfer %(total)s media files (%(counts)s)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Također prenesi %(total)s medijsku datoteku (%(counts)s)"
+msgstr[1] "Također prenesi %(total)s medijske datoteke (%(counts)s)"
+msgstr[2] "Također prenesi %(total)s medijskih datoteka (%(counts)s)"
 
 #: GrampsWebSync/presentation.py:658
 #, python-format
@@ -17186,70 +17102,63 @@ msgid "%s media file is missing on both sides and cannot be transferred."
 msgid_plural ""
 "%s media files are missing on both sides and cannot be transferred."
 msgstr[0] ""
+"%s medijska datoteka nedostaje na objema stranama i ne može se prenijeti."
 msgstr[1] ""
+"%s medijske datoteke nedostaju na objema stranama i ne mogu se prenijeti."
 msgstr[2] ""
+"%s medijskih datoteka nedostaju na objema stranama i ne mogu se prenijeti."
 
 #: GrampsWebSync/presentation.py:681
 #, python-format
 msgid "Applied %s change."
 msgid_plural "Applied %s changes."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Primijenjena je %s promjena."
+msgstr[1] "Primijenjene su %s promjene."
+msgstr[2] "Primijenjeno je %s promjena."
 
 #: GrampsWebSync/presentation.py:684
-#, fuzzy
-#| msgid "Both trees are the same."
 msgid "Both trees are already in sync."
-msgstr "Oba rodoslova su jednaka."
+msgstr "Oba rodoslova su već jednaka."
 
 #: GrampsWebSync/presentation.py:689
 msgid "Media files are in sync."
-msgstr "Medijske datoteke su sinkronizirane."
+msgstr "Medijske datoteke su jednake."
 
 #: GrampsWebSync/presentation.py:708
-#, fuzzy, python-format
-#| msgid "Successfully downloaded %s media file."
-#| msgid_plural "Successfully downloaded %s media files."
+#, python-format
 msgid "Successfully downloaded %s media file."
 msgid_plural "Successfully downloaded %s media files."
-msgstr[0] "Broj uspješno preuzetih medijskih datoteka: %s."
-msgstr[1] "Broj uspješno preuzetih medijskih datoteka: %s."
-msgstr[2] "Broj uspješno preuzetih medijskih datoteka: %s."
+msgstr[0] "Uspješno je preuzeta %s medijska datoteka."
+msgstr[1] "Uspješno su preuzete %s medijske datoteke."
+msgstr[2] "Uspješno je preuzeto %s medijskih datoteka."
 
 #: GrampsWebSync/presentation.py:717
-#, fuzzy, python-format
-#| msgid "Encountered %s error during download."
-#| msgid_plural "Encountered %s errors during download."
+#, python-format
 msgid "Encountered %s error during download."
 msgid_plural "Encountered %s errors during download."
 msgstr[0] "Tijekom preuzimanja se dogodila %s greška."
-msgstr[1] "Tijekom preuzimanja se dogodila %s greška."
-msgstr[2] "Tijekom preuzimanja se dogodila %s greška."
+msgstr[1] "Tijekom preuzimanja su se dogodile %s greške."
+msgstr[2] "Tijekom preuzimanja se dogodilo %s grešaka."
 
 #: GrampsWebSync/presentation.py:727
-#, fuzzy, python-format
-#| msgid "Successfully uploaded %s media file."
-#| msgid_plural "Successfully uploaded %s media files."
+#, python-format
 msgid "Successfully uploaded %s media file."
 msgid_plural "Successfully uploaded %s media files."
 msgstr[0] "Uspješno je prenesena %s medijska datoteka."
-msgstr[1] "Uspješno je prenesena %s medijska datoteka."
-msgstr[2] "Uspješno je prenesena %s medijska datoteka."
+msgstr[1] "Uspješno su se prenijele %s medijske datoteke."
+msgstr[2] "Uspješno je preneseno %s medijskih datoteka."
 
 #: GrampsWebSync/presentation.py:736
-#, fuzzy, python-format
-#| msgid "Encountered %s error during upload."
-#| msgid_plural "Encountered %s errors during upload."
+#, python-format
 msgid "Encountered %s error during upload."
 msgid_plural "Encountered %s errors during upload."
 msgstr[0] "Tijekom prijenosa se dogodila %s greška."
-msgstr[1] "Tijekom prijenosa se dogodila %s greška."
-msgstr[2] "Tijekom prijenosa se dogodila %s greška."
+msgstr[1] "Tijekom prijenosa su se dogodile %s greške."
+msgstr[2] "Tijekom prijenosa se dogodilo %s grešaka."
 
 #: GrampsWebSync/presentation.py:768
 msgid "No server configured"
-msgstr ""
+msgstr "Nijedan server nije konfiguriran"
 
 #: GrampsWebSync/presentation.py:769
 #, python-format
@@ -17444,10 +17353,8 @@ msgid ""
 msgstr ""
 
 #: GrampyScript/script_descriptions.py:99
-#, fuzzy
-#| msgid "Active Person : "
 msgid "Active Person Summary"
-msgstr "Aktivna osoba: "
+msgstr "Sažetak aktivne osobe"
 
 #: GrampyScript/script_descriptions.py:101
 msgid ""
@@ -19766,28 +19673,20 @@ msgid "Auditing Settings"
 msgstr ""
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:88
-#, fuzzy
-#| msgid "Place of Record"
 msgid "All Records"
-msgstr "Mjesto zapisa"
+msgstr "Svi zapisi"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:89
-#, fuzzy
-#| msgid "Male line"
 msgid "Males Only"
-msgstr "Muška loza"
+msgstr "Samo muškarci"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:90
-#, fuzzy
-#| msgid "Female line"
 msgid "Females Only"
-msgstr "Ženska loza"
+msgstr "Samo žene"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:94
-#, fuzzy
-#| msgid "Configure"
 msgid "Configure Rules..."
-msgstr "Konfiguriraj"
+msgstr "Konfiguriraj pravila …"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:99
 msgid "Match Pre-Revolutionary Orthography"
@@ -19800,10 +19699,8 @@ msgid "Audit Database"
 msgstr "Uredi oznake"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:129
-#, fuzzy
-#| msgid "Select the graph direction."
 msgid "Select All Safe Corrections"
-msgstr "Odaberi smjer dijagrama."
+msgstr "Odaberi sve sigurne ispravke"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:134
 #: NameSuite/name_processor/views/tool_rename_tab.py:128
@@ -19813,10 +19710,8 @@ msgid "Apply Selected Corrections"
 msgstr "Primijeni na odabrana mjesta"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:174
-#, fuzzy
-#| msgid "Configure"
 msgid "Configure Rules"
-msgstr "Konfiguriraj"
+msgstr "Konfiguriraj pravila"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:198
 #: NameSuite/name_processor/views/tool_rename_tab.py:168
@@ -19827,34 +19722,24 @@ msgstr "Indija"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:202
 #: NameSuite/name_processor/views/tool_rename_tab.py:170
-#, fuzzy
-#| msgid "Current sort"
 msgid "Current"
-msgstr "Trenutačno razvrstavanje"
+msgstr "Trenutačno"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:205
-#, fuzzy
-#| msgid "Section"
 msgid "Correction"
-msgstr "Odsječak"
+msgstr "Ispravak"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:212
-#, fuzzy
-#| msgid "Configure"
 msgid "Conf"
 msgstr "Konfiguriraj"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:213
-#, fuzzy
-#| msgid "Event Year"
 msgid "Ref Year"
-msgstr "Godina događaja"
+msgstr "Referentna godina"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:216
-#, fuzzy
-#| msgid "Relation"
 msgid "Explanation"
-msgstr "Srodstvo"
+msgstr "Obrazloženje"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:255
 #, fuzzy
@@ -19863,16 +19748,12 @@ msgid "Audit Complete!"
 msgstr "Migracija završena!"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:260
-#, fuzzy
-#| msgid "Result"
 msgid "No Results"
-msgstr "Rezultat"
+msgstr "Nema rezultata"
 
 #: NameSuite/name_processor/views/tool_audit_tab.py:260
-#, fuzzy
-#| msgid "No persons found..."
 msgid "No issues found."
-msgstr "Nijedna osoba nije pronađena …"
+msgstr "Nijedan problem nije pronađen."
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:75
 #, fuzzy
@@ -19915,10 +19796,8 @@ msgid "Substring"
 msgstr "Pod-kotar"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:96
-#, fuzzy
-#| msgid "Allow regular expressions."
 msgid "Regular Expression"
-msgstr "Dozvoli regularne izraze."
+msgstr "Regularni izraz"
 
 #: NameSuite/name_processor/views/tool_rename_tab.py:100
 #, fuzzy
@@ -20719,112 +20598,94 @@ msgid "Output file:"
 msgstr "Izlazni format"
 
 #: PDFForms/generatepdfform.py:107
-#, fuzzy
-#| msgid "Browser"
 msgid "Browse…"
-msgstr "Preglednik"
+msgstr "Pregledaj …"
 
 #: PDFForms/generatepdfform.py:116
 msgid "Open PDF after generating"
-msgstr ""
+msgstr "Otvori PDF nakon generiranja"
 
 #: PDFForms/generatepdfform.py:157
-#, fuzzy
-#| msgid "Form"
 msgid "Form:"
-msgstr "Obrazac"
+msgstr "Obrazac:"
 
 #: PDFForms/generatepdfform.py:174
 msgid "Rows:"
-msgstr ""
+msgstr "Redci:"
 
 #: PDFForms/generatepdfform.py:186
 msgid "(Rows only affect multi-row sections such as census household lists.)"
 msgstr ""
+"(Redci utječu samo na odjeljke s više redaka, kao što su popisi kućanstava u "
+"popisu stanovništva.)"
 
 #: PDFForms/generatepdfform.py:200
-#, fuzzy
-#| msgid "Generation"
 msgid "Generations:"
-msgstr "Generacija"
+msgstr "Generacije:"
 
 #: PDFForms/generatepdfform.py:213
 msgid "Includes subject plus up to 5 ancestor generations (2–32 people)."
-msgstr ""
+msgstr "Uključuje dotičnu osobu plus do 5 generacija predaka (2 do 32 osobe)."
 
 #: PDFForms/generatepdfform.py:252
 msgid "Save PDF as…"
-msgstr ""
+msgstr "Spremi PDF kao …"
 
 #: PDFForms/generatepdfform.py:263
-#, fuzzy
-#| msgid "PNG files"
 msgid "PDF files"
-msgstr "PNG datoteke"
+msgstr "PDF datoteke"
 
 #: PDFForms/generatepdfform.py:283
 msgid "No output file"
-msgstr ""
+msgstr "Nema datoteke rezultata"
 
 #: PDFForms/generatepdfform.py:283
-#, fuzzy
-#| msgid "Please set an active person."
 msgid "Please specify an output file path."
-msgstr "Postavi aktivnu osobu."
+msgstr "Odredi stazu za datoteke rezultata."
 
 #: PDFForms/generatepdfform.py:293
-#, fuzzy
-#| msgid "Nothing is selected"
 msgid "No form selected"
-msgstr "Ništa nije odabrano"
+msgstr "Nijedan obrazac nije odabran"
 
 #: PDFForms/generatepdfform.py:293
-#, fuzzy
-#| msgid "Please, select a folder"
 msgid "Please select a census form."
-msgstr "Odaberi jednu mapu"
+msgstr "Odaberi jedan obrazac za popis stanovništva."
 
 #: PDFForms/generatepdfform.py:299
-#, fuzzy
-#| msgid "not found."
 msgid "Form not found"
-msgstr "nije pronađen."
+msgstr "Obrazac nije pronađen"
 
 #: PDFForms/generatepdfform.py:306
-#, fuzzy
-#| msgid "Generation "
 msgid "Generation failed"
-msgstr "Generacija "
+msgstr "Generiranje nije uspjelo"
 
 #: PDFForms/generatepdfform.py:317
-#, fuzzy
-#| msgid "Generate"
 msgid "PDF generated"
-msgstr "Generiraj"
+msgstr "PDF je generiran"
 
 #: PDFForms/importformpdf.py:180
 msgid "Form addon required"
-msgstr ""
+msgstr "Potreban je dodatak „Obrazac”"
 
 #: PDFForms/importformpdf.py:181
 msgid ""
 "The Form addon must be installed to import Form PDF files.\n"
 "Please install the Form addon and restart Gramps."
 msgstr ""
+"Za uvoz PDF datoteka s obrascima, dodatak „Obrazac” mora biti instaliran.\n"
+"Instaliraj dodatak „Obrazac” i ponovo pokreni Gramps."
 
 #: PDFForms/importformpdf.py:189
 msgid "Not a Form PDF"
-msgstr ""
+msgstr "Nije PDF obrazac"
 
 #: PDFForms/importformpdf.py:190
 msgid "The _form_id field is missing or empty."
-msgstr ""
+msgstr "Polje _form_id nedostaje ili je prazno."
 
 #: PDFForms/importformpdf.py:197
-#, fuzzy
-#| msgid "Unknown avatar:"
 msgid "Unknown form ID"
-msgstr "Nepoznat avatar:"
+msgstr "Nepoznat ID obrasca"
 
 #: PDFForms/importformpdf.py:198
 #, python-format
@@ -20832,39 +20693,34 @@ msgid ""
 "Form ID '%(id)s' is not recognised by the Form addon.\n"
 "Known IDs: %(known)s"
 msgstr ""
+"Dodatak „Obrasci” ne prepoznaje ID obrasca „%(id)s”.\n"
+"Poznati ID-ovi: %(known)s"
 
 #: PDFForms/importformpdf.py:221
 #, python-format
 msgid "Import Form PDF: %s"
-msgstr ""
+msgstr "Uvezi PDF obrazac: %s"
 
 #: PDFForms/importpdf.py:187
-#, fuzzy
-#| msgid ""
-#| "psycopg3 is required for PostgreSQL Enhanced support. Install with: pip "
-#| "install 'psycopg[binary]'"
 msgid ""
 "The pypdf package is required to import PDF pedigree forms.\n"
 "Install it with:  pip install pypdf"
 msgstr ""
-"Za podršku za prošireni PostgreSQL potreban je psycopg3. Instaliraj ga "
-"pomoću: pip install 'psycopg[binary]'"
+"Za uvoz PDF obrazaca porijekla potreban je paket pypdf.\n"
+"Instaliraj ga pomoću naredbe: pip install pypdf"
 
 #: PDFForms/importpdf.py:195
-#, fuzzy, python-format
-#| msgid "Failed to copy web files : %s"
+#, python-format
 msgid "Could not open PDF file: %s"
-msgstr "Neuspjelo kopiranje web datoteka: %s"
+msgstr "Nije bilo moguće otvoriti PDF datoteku: %s"
 
 #: PDFForms/importpdf.py:399
-#, fuzzy
-#| msgid "Add descendant reference in child list"
 msgid "Add media reference: PDF import"
-msgstr "Dodaj reference potomaka u popisu djece"
+msgstr "Dodaj reference medija: PDF uvoz"
 
 #: PDFForms/importpdf.py:448
 msgid "PDF import: no data found"
-msgstr ""
+msgstr "Uvoz PDF-a: nije pronađen nijedan podatak"
 
 #: PDFForms/importpdf.py:449
 msgid ""
@@ -20875,25 +20731,23 @@ msgstr ""
 
 #: PDFForms/importpdf.py:471
 msgid "Bad references in PDF import"
-msgstr ""
+msgstr "Loše reference u PDF uvozu"
 
 #: PDFForms/importpdf.py:492
 msgid "PDF import error"
-msgstr ""
+msgstr "Greška pri uvozu PDF-a"
 
 #: PDFForms/importpdf.py:503
-#, fuzzy
-#| msgid "No data available."
 msgid "Form importer unavailable"
-msgstr "Nema podataka."
+msgstr "Uvoznik obrazaca nije dostupan"
 
 #: PDFForms/importpdf.py:504
 msgid "importformpdf.py is missing from the PDFForms addon directory."
-msgstr ""
+msgstr "Datoteka „importformpdf.py” nedostaje u direktoriju dodataka PDFForms."
 
 #: PDFForms/importpdf.py:510
 msgid "PDF import: unrecognized format"
-msgstr ""
+msgstr "Uvoz PDF-a: neprepoznati format"
 
 #: PDFForms/importpdf.py:511
 #, python-format
@@ -20902,10 +20756,14 @@ msgid ""
 "\n"
 "Only PDFs generated by Gramps (pedigree or form templates) can be imported."
 msgstr ""
+"ID Gramps obrasca nije pronađen u „%s”.\n"
+"\n"
+"Uvesti se mogu samo PDF-ovi koje je generirao Gramps (porijeklo ili "
+"predlošci obrazaca)."
 
 #: Participants/Participants.gpr.py:32
 msgid "Gramplet showing the participants in an event"
-msgstr "Gramplet prikazuje sudionike jedong događaja"
+msgstr "Gramplet prikazuje sudionike pri jednom događaju"
 
 #: Participants/Participants.py:75
 msgid "Double-click on a row to edit the selected participant."
@@ -20955,7 +20813,7 @@ msgstr "Sitl korišten za imena (samo za PDF i PostScript datoteke)."
 
 #: PedigreeChart/PedigreeChart.py:758
 msgid "Style used for labels and captions."
-msgstr "Sitl korišten za etikete i opise."
+msgstr "Sitl koji se koristi za etikete i opise."
 
 #: PersonEverything/PersonEverything.gpr.py:32
 msgid "PersonEverything Report"
@@ -24599,40 +24457,28 @@ msgid "The style used for event and person details."
 msgstr "Stil koji se koristi za detalje događaja i osobe."
 
 #: Sqlite/ExportSql.py:1720
-#, fuzzy
-#| msgid "January"
 msgid "January 1"
-msgstr "Siječanj"
+msgstr "1. siječnja"
 
 #: Sqlite/ExportSql.py:1721
-#, fuzzy
-#| msgid "March"
 msgid "March 1"
-msgstr "Ožujak"
+msgstr "1. ožujka"
 
 #: Sqlite/ExportSql.py:1722
-#, fuzzy
-#| msgid "March"
 msgid "March 25"
-msgstr "Ožujak"
+msgstr "25. ožujka"
 
 #: Sqlite/ExportSql.py:1723
-#, fuzzy
-#| msgid "September"
 msgid "September 1"
-msgstr "Rujan"
+msgstr "1. rujna"
 
 #: Sqlite/ExportSql.py:1749
-#, fuzzy
-#| msgid "Widowed"
 msgid "Flowed"
-msgstr "Obudovjeli"
+msgstr "Tečno"
 
 #: Sqlite/ExportSql.py:1750
-#, fuzzy
-#| msgid "PS format"
 msgid "Preformatted"
-msgstr "PS format"
+msgstr "Unaprijed formatirano"
 
 #: Sqlite/ExportSql.py:1953
 #, python-format
@@ -26804,10 +26650,9 @@ msgid "Gramplet showing all places as a word cloud"
 msgstr "Gramplet za prikaz veza srodnika"
 
 #: WordClouds/cloudgramplet.py:147 WordClouds/cloudgramplet.py:225
-#, fuzzy, python-format
-#| msgid "Number of pages"
+#, python-format
 msgid "Number of %s"
-msgstr "Broj stranica"
+msgstr "Broj %s"
 
 #: WordClouds/cloudgramplet.py:149 WordClouds/cloudgramplet.py:227
 msgid "Color (low)"
@@ -26832,10 +26677,9 @@ msgid "Filter missing/unknown words"
 msgstr ""
 
 #: WordClouds/cloudgramplet.py:207
-#, fuzzy, python-format
-#| msgid "[Missing]"
+#, python-format
 msgid "[Missing %s]"
-msgstr "[Nedostaje]"
+msgstr "[%s nedostaje]"
 
 #: WordClouds/givennamewordcloudgramplet.py:50
 msgid "Click given name to view people with that given name"
