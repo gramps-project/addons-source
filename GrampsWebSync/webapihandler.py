@@ -44,6 +44,7 @@ from const import (
     AUTH_SYNC_TOKEN,
     SYNC_TOKEN_LABEL,
     SYNC_TOKEN_LABEL_MAX_LENGTH,
+    SYNC_TOKEN_MAX_PER_USER,
 )
 from gramps.gen.lib.json_utils import remove_object
 from gramps.gen.db import KEY_TO_CLASS_MAP, DbTxn
@@ -173,6 +174,28 @@ def device_label() -> str:
     """Return the label for this computer's sync token."""
     host = socket.gethostname().split(".")[0] or "this computer"
     return (SYNC_TOKEN_LABEL % host)[:SYNC_TOKEN_LABEL_MAX_LENGTH]
+
+
+def numbered_label(label: str, number: int) -> str:
+    """Return ``label`` with `` (number)`` appended, within the length limit.
+
+    Used when another computer's token already has this computer's label,
+    for example because both have the same host name.
+    """
+    suffix = f" ({number})"
+    return label[: SYNC_TOKEN_LABEL_MAX_LENGTH - len(suffix)] + suffix
+
+
+def is_label_conflict(exc: HTTPError) -> bool:
+    """Whether a 409 is about the label, rather than the token limit.
+
+    The server answers 409 for both; only its message tells them apart.
+    """
+    try:
+        message = json.loads(exc.read())["error"]["message"]
+    except Exception:  # noqa: BLE001 -- no body, or not the API's error shape
+        return False
+    return "label" in str(message).lower()
 
 
 class SyncTokensUnsupported(Exception):
@@ -310,30 +333,47 @@ class WebApiHandler:
             raw = res.read()
         return json.loads(raw) if raw else None
 
-    def create_sync_token(self, label: str) -> str:
-        """Create a sync token for this computer and return its value.
+    def create_sync_token(self, label: str) -> tuple[str, int]:
+        """Create a sync token for this computer.
 
-        Needs a password login. A token left with the same label, from an
-        earlier sign-in on this computer, is revoked and replaced.
+        Needs a password login. Nothing is deleted: if another token already
+        has ``label``, for example on a computer with the same host name, the
+        label is numbered, ``"... (2)"`` and so on.
 
+        :returns: The token value and its id, which revokes it later.
         :raises SyncTokensUnsupported: If the server has no per-device sync
-            tokens (Gramps Web API before they were added).
+            tokens (Gramps Web API before 3.23).
+        :raises HTTPError: For anything else, such as the token limit.
         """
         path = "users/-/access-tokens/sync/tokens/"
-        try:
-            return self._call("POST", path, {"label": label})["token"]
-        except HTTPError as exc:
-            if exc.code in (404, 405, 422):
-                raise SyncTokensUnsupported(str(exc.code)) from exc
-            if exc.code != 409:
+        for number in range(1, SYNC_TOKEN_MAX_PER_USER + 1):
+            candidate = label if number == 1 else numbered_label(label, number)
+            try:
+                reply = self._call("POST", path, {"label": candidate})
+            except HTTPError as exc:
+                if exc.code == 404:
+                    raise SyncTokensUnsupported(str(exc.code)) from exc
+                if (
+                    exc.code == 409
+                    and number < SYNC_TOKEN_MAX_PER_USER
+                    and is_label_conflict(exc)
+                ):
+                    continue
                 raise
-        # 409: the label exists already, or the maximum is reached. Replacing
-        # this computer's own token resolves the first; the second then fails
-        # again and propagates.
-        for token in self._call("GET", path):
-            if token.get("label") == label:
-                self._call("DELETE", f"{path}{token['id']}/")
-        return self._call("POST", path, {"label": label})["token"]
+            return reply["token"], reply["id"]
+        raise AssertionError("unreachable")  # the last attempt returns or raises
+
+    def revoke_sync_token(self, token_id: int) -> None:
+        """Revoke one of the user's sync tokens. Needs a password login.
+
+        A token that is gone already, revoked in Gramps Web for example, is
+        not an error.
+        """
+        try:
+            self._call("DELETE", f"users/-/access-tokens/sync/tokens/{token_id}/")
+        except HTTPError as exc:
+            if exc.code != 404:
+                raise
 
     def get_permissions(self) -> set[str]:
         """Get the permissions of the current user."""

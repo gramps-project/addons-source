@@ -672,14 +672,8 @@ class ConnectPane(Gtk.Box):
         self.password.set_visibility(False)
         self.password.set_input_purpose(Gtk.InputPurpose.PASSWORD)
 
-        self.remember_check = Gtk.CheckButton(label=_("Remember password"))
+        self.remember_check = Gtk.CheckButton(label=_("Stay signed in"))
         self.remember_check.set_active(True)
-        self.remember_check.set_tooltip_text(
-            _(
-                "Where the server supports it, a sign-in token for this "
-                "computer is stored instead of the password."
-            )
-        )
         self.pack_start(self.remember_check, False, False, 0)
         #: Whether a stored sign-in can stand in for an empty password.
         self._saved_sign_in = False
