@@ -105,6 +105,8 @@ class FakeGrampsWebServer:
         self.sync_tokens = sync_tokens
         #: Labels of the sync tokens created, in order.
         self.token_labels: list[str] = []
+        #: Ids of the sync tokens revoked, in order.
+        self.revoked: list[int] = []
         self.user = User(auto_accept=True, quiet=True)
 
         #: Handles of media objects whose file the server actually holds.
@@ -247,13 +249,19 @@ class FakeGrampsWebServer:
         self.media_files[handle] = Path(path).read_bytes()
         return True
 
-    def create_sync_token(self, label: str) -> str:
-        """Create a sync token for ``label`` and return its value."""
+    def create_sync_token(self, label: str) -> tuple[str, int]:
+        """Create a sync token for ``label``; return its value and id."""
         self._enter("create_sync_token")
         if not self.sync_tokens:
             raise SyncTokensUnsupported("404")
         self.token_labels.append(label)
-        return f"sync-token-{len(self.token_labels)}"
+        number = len(self.token_labels)
+        return f"sync-token-{number}", 100 + number
+
+    def revoke_sync_token(self, token_id: int) -> None:
+        """Revoke the sync token with ``token_id``."""
+        self._enter("revoke_sync_token")
+        self.revoked.append(token_id)
 
     # --------------------------------------------------------
     # Lifecycle
@@ -352,6 +360,8 @@ class MemoryCredentialStore:
         self.auth = AUTH_PASSWORD
         #: Every ``(url, username)`` passed to :meth:`forget_secret`.
         self.forgotten: list[tuple[str, str]] = []
+        #: ``(url, username)`` -> id of this computer's sync token.
+        self.token_ids: dict[tuple[str, str], int] = {}
 
     @property
     def timestamp(self) -> float:
@@ -374,6 +384,9 @@ class MemoryCredentialStore:
     def get_auth(self) -> str:
         return self.auth
 
+    def get_token_id(self, url: str, username: str) -> int | None:
+        return self.token_ids.get((url, username))
+
     def get_timestamp(self, url: str, username: str) -> float:
         return self.timestamps.get((url, username), 0.0)
 
@@ -386,23 +399,29 @@ class MemoryCredentialStore:
         self,
         url: str,
         username: str,
-        password: str,
+        password: str | None,
         remember_password: bool = True,
         auth: str = AUTH_PASSWORD,
+        token_id: int | None = None,
     ) -> None:
         self.url = url
         self.username = username
-        self.auth = auth if remember_password else AUTH_PASSWORD
-        self.password = password if remember_password else None
+        stored = remember_password and password is not None
+        self.auth = auth if stored else AUTH_PASSWORD
+        self.password = password if stored else None
         self.remembered[(url, username)] = remember_password
+        if token_id is None:
+            self.token_ids.pop((url, username), None)
+        else:
+            self.token_ids[(url, username)] = token_id
         self.timestamps.setdefault((url, username), 0.0)
         self.saved.append((url, username, password))
-
 
     def forget_secret(self, url: str, username: str) -> None:
         self.forgotten.append((url, username))
         self.password = None
         self.auth = AUTH_PASSWORD
+        self.token_ids.pop((url, username), None)
 
 
 class DirectoryMediaStore:

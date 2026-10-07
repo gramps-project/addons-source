@@ -271,7 +271,9 @@ class Backend(Protocol):
 
     def upload_media_file(self, handle: str, path: str) -> bool: ...
 
-    def create_sync_token(self, label: str) -> str: ...
+    def create_sync_token(self, label: str) -> tuple[str, int]: ...
+
+    def revoke_sync_token(self, token_id: int) -> None: ...
 
 
 class CredentialStore(Protocol):
@@ -289,13 +291,16 @@ class CredentialStore(Protocol):
 
     def set_timestamp(self, url: str, username: str, timestamp: float) -> None: ...
 
+    def get_token_id(self, url: str, username: str) -> int | None: ...
+
     def save_credentials(
         self,
         url: str,
         username: str,
-        password: str,
+        password: str | None,
         remember_password: bool = True,
         auth: str = AUTH_PASSWORD,
+        token_id: int | None = None,
     ) -> None: ...
 
     def forget_secret(self, url: str, username: str) -> None: ...
@@ -352,6 +357,12 @@ class Connection:
     :param permissions: What the authenticated account may do.
     :param sync_token: A sync token created for this computer, to store in
         place of the password; ``None`` if none was created.
+    :param token_id: The id of this computer's sync token on the server after
+        a password sign-in, to revoke it at the next one; ``None`` if it has
+        none.
+    :param keep_password: Whether the password may be stored when no token
+        was created. Only for servers without sync tokens: where the server
+        has them but creating one failed, nothing is stored.
     """
 
     backend: Backend
@@ -360,6 +371,8 @@ class Connection:
     tree_name: str
     permissions: set[str]
     sync_token: str | None = None
+    token_id: int | None = None
+    keep_password: bool = True
 
 
 # ------------------------------------------------------------
@@ -462,6 +475,9 @@ class SyncSession:
         self.remember_password: bool = True
         #: What :attr:`password` is: the password, or a stored sync token.
         self.auth: str = AUTH_PASSWORD
+        #: This computer's sync token on the server when the attempt began,
+        #: read on the main loop so the worker need not touch the store.
+        self._token_id: int | None = None
         #: The server's Gramps Web API version, once it has reported one.
         self.api_version: str | None = None
         #: What the server calls the tree it serves, once it has said.
@@ -662,9 +678,10 @@ class SyncSession:
         :param url: Server URL, already sanitized by the caller.
         :param username: Login name.
         :param password: Password, or the stored sync token.
-        :param remember_password: Whether the password may be stored. After a
-            password login, a sync token is stored in its place where the
-            server supports that.
+        :param remember_password: Whether to stay signed in. After a password
+            login, a sync token is stored in the password's place where the
+            server supports that; either way, this computer's previous token
+            is revoked.
         :param auth: One of the ``AUTH_*`` constants from :mod:`const`.
         """
         self.login_error = None
@@ -678,6 +695,7 @@ class SyncSession:
         self.password = password
         self.remember_password = remember_password
         self.auth = auth
+        self._token_id = self.credentials.get_token_id(url, username)
         self._goto(State.CONNECTING)
         self.io_runner.run(
             self._connect,
@@ -786,30 +804,36 @@ class SyncSession:
             tree_name=backend.get_tree_name(),
             permissions=backend.get_permissions(),
         )
-        if (
-            self.auth == AUTH_PASSWORD
-            and self.remember_password
-            and self._reject_server(connection) is None
-        ):
-            connection = replace(
-                connection, sync_token=self._create_sync_token(backend)
-            )
+        if self.auth == AUTH_PASSWORD and self._reject_server(connection) is None:
+            connection = self._replace_sync_token(backend, connection)
         return connection
 
-    @staticmethod
-    def _create_sync_token(backend: Backend) -> str | None:
-        """Create a sync token to remember instead of the password.
+    def _replace_sync_token(
+        self, backend: Backend, connection: Connection
+    ) -> Connection:
+        """Revoke this computer's sync token, and create a new one if asked to.
 
-        Never fails the login: without a token, the password is remembered
-        as before.
+        Runs after a password sign-in only, since tokens are managed with the
+        account's own permissions. Never fails the login.
         """
+        token_id = self._token_id
+        if token_id is not None:
+            try:
+                backend.revoke_sync_token(token_id)
+                token_id = None
+            except Exception as exc:  # noqa: BLE001 -- kept, retried next time
+                LOG.warning("Could not revoke the previous sync token: %s", exc)
+        if not self.remember_password:
+            return replace(connection, token_id=token_id)
         try:
-            return backend.create_sync_token(device_label())
+            token, new_id = backend.create_sync_token(device_label())
         except SyncTokensUnsupported:
             LOG.info("Server has no per-device sync tokens; keeping the password.")
-        except Exception as exc:  # noqa: BLE001 -- falls back, never fails login
-            LOG.warning("Could not create a sync token, keeping the password: %s", exc)
-        return None
+            return replace(connection, token_id=token_id)
+        except Exception as exc:  # noqa: BLE001 -- signs in without storing
+            LOG.warning("Could not create a sync token, storing nothing: %s", exc)
+            return replace(connection, token_id=token_id, keep_password=False)
+        return replace(connection, sync_token=token, token_id=new_id)
 
     def _on_connected(self, connection: Connection) -> None:
         """Store the credentials and start comparing, back on the main loop."""
@@ -824,15 +848,23 @@ class SyncSession:
             self._goto(State.CONNECT)
             return
         self.backend = connection.backend
-        if connection.sync_token:
-            # Remembered in place of the password, which isn't kept anywhere.
-            self.password, self.auth = connection.sync_token, AUTH_SYNC_TOKEN
+        secret: str | None = self.password
+        token_id = self._token_id
+        if self.auth == AUTH_PASSWORD:
+            token_id = connection.token_id
+            if connection.sync_token:
+                # Remembered in place of the password, which isn't kept anywhere.
+                secret = connection.sync_token
+                self.password, self.auth = connection.sync_token, AUTH_SYNC_TOKEN
+            elif not connection.keep_password:
+                secret = None
         self.credentials.save_credentials(
             self.url,
             self.username,
-            self.password,
+            secret,
             self.remember_password,
             auth=self.auth,
+            token_id=token_id,
         )
         self._start_compare()
 
@@ -846,8 +878,8 @@ class SyncSession:
             self.auth == AUTH_SYNC_TOKEN
             and self.login_error.kind is ErrorKind.AUTH_FAILED
         ):
-            # Revoked in Gramps Web, or replaced by another sign-in: drop it,
-            # so the password is asked for instead.
+            # Revoked in Gramps Web: drop it, so the password is asked for
+            # instead.
             self.credentials.forget_secret(self.url, self.username)
         self._goto(State.CONNECT)
 
