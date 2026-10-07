@@ -513,6 +513,12 @@ class ConfigCredentialStore:
         entry = self._current()
         return entry.get("auth", AUTH_PASSWORD) if entry else AUTH_PASSWORD
 
+    def get_token_id(self, url: str, username: str) -> int | None:
+        """Return the id of this computer's sync token on one server, if any."""
+        entry = self._find(self._servers(), normalize_url(url), username)
+        token_id = entry.get("token_id") if entry else None
+        return token_id if isinstance(token_id, int) else None
+
     def get_remember_password(self) -> bool:
         """Whether the entry on offer is allowed to keep its password.
 
@@ -583,9 +589,10 @@ class ConfigCredentialStore:
         self,
         url: str,
         username: str,
-        password: str,
+        password: str | None,
         remember_password: bool = True,
         auth: str = AUTH_PASSWORD,
+        token_id: int | None = None,
     ) -> None:
         """Persist one server entry, and its password if asked to.
 
@@ -595,10 +602,13 @@ class ConfigCredentialStore:
 
         :param url: The server URL, already sanitized by the caller.
         :param username: The account name.
-        :param password: The password, stored only if ``remember_password``.
+        :param password: The password, stored only if ``remember_password``;
+            ``None`` stores nothing, keeping the choice for next time.
         :param remember_password: Whether the password may go to the keyring.
         :param auth: What ``password`` is. A sync token created after a
             password login is stored in the password's place.
+        :param token_id: The id of this computer's sync token on the server,
+            revoked at the next password sign-in; ``None`` if it has none.
         """
         url = normalize_url(url)
         servers = self._servers()
@@ -607,9 +617,14 @@ class ConfigCredentialStore:
             entry = {"url": url, "username": username, "timestamp": 0.0}
             servers.append(entry)
         entry["remember_password"] = remember_password
-        entry["auth"] = auth if remember_password else AUTH_PASSWORD
+        stored = remember_password and password is not None
+        entry["auth"] = auth if stored else AUTH_PASSWORD
+        if token_id is None:
+            entry.pop("token_id", None)
+        else:
+            entry["token_id"] = token_id
 
-        if remember_password:
+        if stored:
             self.keyring.set(url, username, password)
         else:
             # Turning the setting off has to erase what is already stored, not
@@ -630,6 +645,8 @@ class ConfigCredentialStore:
         entry = self._find(servers, url, username)
         if entry is not None:
             entry["auth"] = AUTH_PASSWORD
+            # A token the server turned down has nothing left to revoke.
+            entry.pop("token_id", None)
             self._write(servers)
         self.keyring.delete(url, username)
 

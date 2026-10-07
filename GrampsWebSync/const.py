@@ -110,3 +110,7 @@ SYNC_TOKEN_LABEL = "Gramps Web Sync on %s"
 
 #: Longest label the server accepts.
 SYNC_TOKEN_LABEL_MAX_LENGTH = 100
+
+#: Most sync tokens the server keeps per user, and so the most labels worth
+#: trying when another computer already uses this one's name.
+SYNC_TOKEN_MAX_PER_USER = 20
