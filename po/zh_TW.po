@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 4.2.0-dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-03 12:30-0700\n"
+"POT-Creation-Date: 2026-09-24 10:14-0700\n"
 "PO-Revision-Date: 2026-09-06 12:53+0000\n"
 "Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
@@ -24,33 +24,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2026.9.1.dev0\n"
-
-msgid "Birthdays"
-msgstr "生日"
-
-msgid "Ignore birthdays with tag"
-msgstr "忽略具有指定標籤的人物生日"
-
-msgid "Month and day"
-msgstr "月與日"
-
-msgid "Only show birthdays with tag"
-msgstr "僅顯示具有指定標籤的人物生日"
-
-msgid "Proximity to current date"
-msgstr "與目前日期的遠近"
-
-msgid "Sort birthdays by"
-msgstr "生日排序依據"
-
-msgid "Sort dates of death by"
-msgstr "逝世日期排序依據"
-
-msgid "a gramplet that displays death dates in sorted order"
-msgstr "依排序順序顯示逝世日期的 Gramplet"
-
-msgid "a gramplet that displays the birthdays of the living people"
-msgstr "顯示在世人物生日的 Gramplet"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -296,25 +269,122 @@ msgstr "解析來自 Riksarkivet 與 ArkivDigital 的字串以建立來源與引
 msgid "Archive Assist"
 msgstr "Archive Assist"
 
-#: AssociationsTool/associationstool.gpr.py:36
+#: AssociationsTool/associationstool.gpr.py:43
 msgid "Check Associations data"
 msgstr "檢查關聯資料"
 
-#: AssociationsTool/associationstool.gpr.py:37
-msgid "Will check the data on Association for people."
-msgstr "檢查人物的關聯資料。"
+#: AssociationsTool/associationstool.gpr.py:44
+msgid "Display all person Associations in a sortable, hotlinked table"
+msgstr ""
 
-#: AssociationsTool/associationstool.py:53
+#: AssociationsTool/associationstool.py:130
 msgid "Associations state tool"
 msgstr "關聯狀態工具"
 
-#: AssociationsTool/associationstool.py:81
-msgid "Type of link"
-msgstr "連結類型"
+#: AssociationsTool/associationstool.py:181
+#, fuzzy, python-format
+#| msgid "Error applying filter: %s"
+msgid "Error initializing data: %s"
+msgstr "套用篩選器時發生錯誤：%s"
 
-#: AssociationsTool/associationstool.py:82
-msgid "Of"
-msgstr "的"
+#: AssociationsTool/associationstool.py:222
+#, fuzzy, python-format
+#| msgid "Error resetting filter: %s"
+msgid "Error processing person %s: %s"
+msgstr "重設篩選器時發生錯誤：%s"
+
+#: AssociationsTool/associationstool.py:252
+#, fuzzy
+#| msgid "Process relationships..."
+msgid "Processing associations..."
+msgstr "處理關係…"
+
+#: AssociationsTool/associationstool.py:257
+#, fuzzy, python-format
+#| msgid "Could not create the directory: %(path)s"
+msgid "Could not create progress dialog: %s"
+msgstr "無法建立目錄：%(path)s"
+
+#: AssociationsTool/associationstool.py:281
+#, fuzzy, python-format
+#| msgid "Produces descendants lines of a person"
+msgid "Processing %d of %d persons"
+msgstr "產生人物的後代支系"
+
+#: AssociationsTool/associationstool.py:347
+#, fuzzy, python-format
+#| msgid "Error applying filter: %s"
+msgid "Error displaying associations: %s"
+msgstr "套用篩選器時發生錯誤：%s"
+
+#: AssociationsTool/associationstool.py:365
+#: AssociationsTool/associationstool.py:448
+#, fuzzy
+#| msgid "Street Name"
+msgid "Starting Name"
+msgstr "街道名稱"
+
+#: AssociationsTool/associationstool.py:368
+#: AssociationsTool/associationstool.py:451
+#, fuzzy
+#| msgid "Sync Associations"
+msgid "Associate"
+msgstr "同步關聯"
+
+#: AssociationsTool/associationstool.py:427
+#: AssociationsTool/associationstool.py:459
+#, fuzzy, python-format
+#| msgid "No source information found"
+msgid "Total associations found: %d"
+msgstr "找不到來源資訊"
+
+#: AssociationsTool/associationstool.py:553
+#, fuzzy
+#| msgid "Edit referenced Person"
+msgid "Edit Starting Person"
+msgstr "編輯被參照的人物"
+
+#: AssociationsTool/associationstool.py:554
+#, fuzzy
+#| msgid "Edit referenced Person"
+msgid "Edit Associate Person"
+msgstr "編輯被參照的人物"
+
+#: AssociationsTool/associationstool.py:555
+#, fuzzy
+#| msgid "Edit selection"
+msgid "Edit Association"
+msgstr "編輯選取項目"
+
+#: AssociationsTool/associationstool.py:557
+#, fuzzy
+#| msgid "Copy to clipboard"
+msgid "Copy row to clipboard"
+msgstr "複製到剪貼簿"
+
+#: AssociationsTool/associationstool.py:558
+#, fuzzy
+#| msgid "Enumerated date from"
+msgid "Create Note from row"
+msgstr "普查開始日期"
+
+#: AssociationsTool/associationstool.py:672
+#, fuzzy
+#| msgid "Sync Associations"
+msgid "Association:"
+msgstr "同步關聯"
+
+#: AssociationsTool/associationstool.py:673
+#, fuzzy
+#| msgid "Starting migration..."
+msgid "Starting Person"
+msgstr "正在開始移轉..."
+
+#: AssociationsTool/associationstool.py:675
+#, fuzzy
+#| msgid "Lines type"
+msgid "Link type"
+msgstr "線條類型"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
@@ -448,10 +518,12 @@ msgid "No media was removed."
 msgstr "沒有移除任何媒體。"
 
 #: AvatarGenerator/AvatarGenerator.py:213
+#, python-brace-format
 msgid "{} media references were removed from {} persons."
 msgstr "已移除 {} 個媒體參照，涉及 {} 位人物。"
 
 #: AvatarGenerator/AvatarGenerator.py:216
+#, python-brace-format
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
@@ -465,6 +537,7 @@ msgid "Add avatar images..."
 msgstr "新增頭像圖片…"
 
 #: AvatarGenerator/AvatarGenerator.py:314
+#, python-brace-format
 msgid "{} avatar images were sucessfully added."
 msgstr "已成功新增 {} 張頭像圖片。"
 
@@ -780,6 +853,37 @@ msgstr "編輯家庭"
 #: BirthOrder/birthorder.py:275
 msgid "Looking for children birth order"
 msgstr "正在檢查子女的出生順序"
+
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:34
+msgid "Birthdays"
+msgstr "生日"
+
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:27
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "顯示在世人物生日的 Gramplet"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:47
+msgid "Sort birthdays by"
+msgstr "生日排序依據"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:49
+#: DateOfDeathGramplet/DateOfDeathGramplet.py:42
+msgid "Proximity to current date"
+msgstr "與目前日期的遠近"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:50
+#: DateOfDeathGramplet/DateOfDeathGramplet.py:43
+msgid "Month and day"
+msgstr "月與日"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:53
+msgid "Ignore birthdays with tag"
+msgstr "忽略具有指定標籤的人物生日"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:54
+msgid "Only show birthdays with tag"
+msgstr "僅顯示具有指定標籤的人物生日"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:194
@@ -1106,8 +1210,8 @@ msgstr "Chat With Tree"
 msgid "Type a message..."
 msgstr "輸入訊息..."
 
-#: ChatWithTree/ChatWithTree.py:153 GrampsAssistant/grampsassistant.py:216
-#: GrampsAssistant/grampsassistant.py:920
+#: ChatWithTree/ChatWithTree.py:153 GrampsAssistant/grampsassistant.py:223
+#: GrampsAssistant/grampsassistant.py:931
 msgid "Send"
 msgstr "傳送"
 
@@ -1132,6 +1236,7 @@ msgid "An error occurred while processing your query."
 msgstr "處理您的查詢時發生錯誤。"
 
 #: ChatWithTree/chatwithllm.py:119
+#, python-brace-format
 msgid "Tree: '{}'"
 msgstr "家族樹：'{}'"
 
@@ -1260,7 +1365,7 @@ msgstr "顯示標籤"
 msgid "Vertical Details"
 msgstr "直向詳細資料"
 
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:79
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:78
 msgid "Order"
 msgstr "順序"
 
@@ -1270,8 +1375,8 @@ msgid ""
 "the person you want as 'Home Person', then confirm your choice via the menu "
 "Edit -> Set Home Person."
 msgstr ""
-"您需要設定要前往的「預設人物」。請選取人物檢視，選取要設為「首頁人物」的人物"
-"，再透過「編輯 → 設為首頁人物」選單確認。"
+"您需要設定要前往的「預設人物」。請選取人物檢視，選取要設為「首頁人物」的人"
+"物，再透過「編輯 → 設為首頁人物」選單確認。"
 
 #: CombinedView/personpage.py:306 CombinedView/personpage.py:368
 msgid "Add existing child to family"
@@ -1303,6 +1408,89 @@ msgstr "點擊以造訪此連結"
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
 msgstr "： "
+
+#: ContextView/ContextView.gpr.py:29 ContextView/ContextView.py:502
+msgid "Context"
+msgstr ""
+
+#: ContextView/ContextView.gpr.py:31
+msgid ""
+"A chart placing a person in the context of their immediate family: the "
+"couple in the centre, each partner's parents above them, their children "
+"below, and each partner's siblings in a column to their own side, eldest at "
+"the top. Click any box to re-centre the chart on that person; the name in "
+"bold marks the way back to the home person."
+msgstr ""
+
+#: ContextView/ContextView.py:572
+msgid "Show the previous family"
+msgstr ""
+
+#: ContextView/ContextView.py:575
+#, fuzzy
+#| msgid "Show more details"
+msgid "Show the next family"
+msgstr "顯示更多詳細資訊"
+
+#: ContextView/ContextView.py:899
+#, fuzzy
+#| msgid "No place is active"
+msgid "No person is active."
+msgstr "目前未選取地點"
+
+#: ContextView/ContextView.py:915
+#, python-format
+msgid "Family %(current)d of %(total)d"
+msgstr ""
+
+#: ContextView/ContextView.py:922
+#, fuzzy, python-format
+#| msgid "Highlight the home person"
+msgid "family %d lies toward the home person"
+msgstr "突顯首頁人物"
+
+#: ContextView/ContextView.py:980
+msgid "<b>Bold</b> marks the way to the home person"
+msgstr ""
+
+#: ContextView/ContextView.py:1389 ContextView/ContextView.py:1599
+#: LifeLineChartView/lifelinechart.py:2622
+msgid "Show siblings"
+msgstr "顯示兄弟姊妹"
+
+#: ContextView/ContextView.py:1402
+#, fuzzy
+#| msgid "About Quilt View"
+msgid "About Context View"
+msgstr "關於拼布檢視"
+
+#: ContextView/ContextView.py:1592
+#, fuzzy
+#| msgid "Show page numbers"
+msgid "Show tag colour"
+msgstr "顯示頁碼"
+
+#: ContextView/ContextView.py:1613
+msgid "Details in each box"
+msgstr ""
+
+#: ContextView/ContextView.py:1617
+#, fuzzy
+#| msgid "Name of City"
+msgid "Name only"
+msgstr "城市名稱"
+
+#: ContextView/ContextView.py:1618
+#, fuzzy
+#| msgid "Name and Surname"
+msgid "Name and dates"
+msgstr "名字及姓氏"
+
+#: ContextView/ContextView.py:1619
+#, fuzzy
+#| msgid "Full date and place"
+msgid "Name, dates and places"
+msgstr "完整日期及地點"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
@@ -1434,7 +1622,8 @@ msgid ""
 "Generates a web page with a graphical representation of descendants (SVG) "
 "representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
 "library."
-msgstr "產生網頁，以 D3.js JavaScript 函式庫的可收合縮排樹狀布局呈現後代圖 (SVG)。"
+msgstr ""
+"產生網頁，以 D3.js JavaScript 函式庫的可收合縮排樹狀布局呈現後代圖 (SVG)。"
 
 #: D3Charts/DescendantIndentedTree.py:678
 #, python-format
@@ -1938,8 +2127,8 @@ msgstr "來源？"
 msgid "Surname, Given"
 msgstr "姓氏、名字"
 
-#: DataEntryGramplet/DataEntryGramplet.py:89 GrampyScript/GrampyScript.py:127
-#: GrampyScript/GrampyScript.py:147 GrampyScript/GrampyScript.py:304
+#: DataEntryGramplet/DataEntryGramplet.py:89 GrampyScript/GrampyScript.py:155
+#: GrampyScript/GrampyScript.py:175 GrampyScript/GrampyScript.py:337
 #: NoteGramplet/NoteGramplet.py:111 PDFForms/generatepdfform.py:258
 #: RelID/relation_tab.py:363
 msgid "Save"
@@ -2147,8 +2336,8 @@ msgstr "計算"
 
 #: DateCalculator/DateCalculator.py:107
 #: EditExifMetadata/editexifmetadata.py:219
-#: GrampsWebApiDb/mintapikeytool.py:176 GrampsWebSync/grampswebsync.py:1063
-#: GraphView/graphview.py:3873
+#: GrampsWebApiDb/mintapikeytool.py:176 GrampsWebSync/grampswebsync.py:1114
+#: GraphView/graphview.py:3866
 msgid "Copy"
 msgstr "複製"
 
@@ -2168,6 +2357,20 @@ msgstr "錯誤：至少必須有一個運算式是日期"
 #: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
 msgstr "請在上方欄位輸入運算式，然後按一下「計算」。"
+
+#: DateOfDeathGramplet/DateOfDeathGramplet.gpr.py:24
+#: DateOfDeathGramplet/DateOfDeathGramplet.gpr.py:34 Form/form_ie.xml.h:114
+#: Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
+msgid "Date of Death"
+msgstr "死亡日期"
+
+#: DateOfDeathGramplet/DateOfDeathGramplet.gpr.py:25
+msgid "a gramplet that displays death dates in sorted order"
+msgstr "依排序順序顯示逝世日期的 Gramplet"
+
+#: DateOfDeathGramplet/DateOfDeathGramplet.py:40
+msgid "Sort dates of death by"
+msgstr "逝世日期排序依據"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
@@ -2228,28 +2431,28 @@ msgstr "搜尋深度：{depth} | 已處理人物：{processed} | 佇列大小：
 msgid "mentioned in note"
 msgstr "在備註中提及"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:245
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:251
 msgid "Note on Family"
 msgstr "家庭的備註"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:258
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:264
 msgid "sibling"
 msgstr "兄弟姊妹"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:268
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:274
 msgid "Note on Parent Family"
 msgstr "父母家庭的備註"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:272
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:278
 #, python-format
 msgid "%s (association)"
 msgstr "%s（關聯）"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:277
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:283
 msgid "Note on Person"
 msgstr "人物的備註"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:308
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:330
 #, python-format
 msgid ""
 "\n"
@@ -2258,41 +2461,41 @@ msgstr ""
 "\n"
 "   %s，對象是 "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:336
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:358
 msgid "Error: No Home Person set"
 msgstr "錯誤：尚未設定首頁人物"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:341
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:363
 msgid "No Active Person set."
 msgstr "尚未設定目前人物。"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:342
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:364
 msgid "Error: No Active Person set"
 msgstr "錯誤：尚未設定目前人物"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:347
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:369
 msgid "Initializing search..."
 msgstr "正在初始化搜尋..."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:366
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:388
 msgid "Looking for relationship between\n"
 msgstr "正在尋找以下人物之間的關係\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:367
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:389
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
 msgstr "  <b>%s</b> (首頁人物) 與\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:368
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:390
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (目前人物)...\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:382
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:404
 msgid "Searching for connections..."
 msgstr "正在搜尋關聯..."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:402
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:424
 #, python-format
 msgid ""
 "Found relation #%d: \n"
@@ -2301,7 +2504,7 @@ msgstr ""
 "找到關係 #%d： \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:423
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:445
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
@@ -2309,11 +2512,11 @@ msgstr ""
 "已暫停。\n"
 "按下「繼續」以搜尋其他關係。\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:427
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:449
 msgid "Paused - Press Continue to search for more relations"
 msgstr "已暫停 - 按「繼續」搜尋更多親屬關係"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:456
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:491
 #, python-format
 msgid ""
 "\n"
@@ -2322,19 +2525,21 @@ msgstr ""
 "\n"
 "搜尋完成。找到 %d 條關係路徑。"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:460
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:495
+#, python-brace-format
 msgid "Search completed - {} relation paths found"
 msgstr "搜尋完成－找到 {} 條親屬關係路徑"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:471
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:506
+#, python-brace-format
 msgid "Error during search: {}"
 msgstr "搜尋時發生錯誤：{}"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:481
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:516
 msgid "Resuming search..."
 msgstr "正在繼續搜尋..."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:489
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:524
 msgid "Search interrupted by user"
 msgstr "使用者已中斷搜尋"
 
@@ -2347,7 +2552,8 @@ msgid ""
 "Generates a web (HTML) page with a graphical representation of ancestors/"
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
-msgstr "產生 HTML 網頁，以 SVG 圖形呈現祖先／後代；以滑鼠操作時可顯示人物詳細資料。"
+msgstr ""
+"產生 HTML 網頁，以 SVG 圖形呈現祖先／後代；以滑鼠操作時可顯示人物詳細資料。"
 
 #: DenominoViso/DenominoViso.py:180
 msgid "No Source"
@@ -2775,8 +2981,8 @@ msgid ""
 "<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
 "<attribute-value>."
 msgstr ""
-"含有事件預留位置的字串清單。已知的預留位置：<type>、<role>、<date>、<place>"
-"、<description>、<witnesses>、<source> 及任何 <attribute-value>。"
+"含有事件預留位置的字串清單。已知的預留位置：<type>、<role>、<date>、<place>、"
+"<description>、<witnesses>、<source> 及任何 <attribute-value>。"
 
 #: DenominoViso/DenominoViso.py:2758
 msgid "Source format"
@@ -2787,8 +2993,8 @@ msgid ""
 "List of strings with placeholders for sources. Known placeholders: <title>, "
 "<volume>, <author>, <publication_info> and <abbreviation>."
 msgstr ""
-"含有來源預留位置的字串清單。已知的預留位置：<title>、<volume>、<author>"
-"、<publication_info> 及 <abbreviation>。"
+"含有來源預留位置的字串清單。已知的預留位置：<title>、<volume>、<author>、"
+"<publication_info> 及 <abbreviation>。"
 
 #: DenominoViso/DenominoViso.py:2820
 msgid "restricted to:"
@@ -3173,8 +3379,8 @@ msgid ""
 "a Space Tree for efficient viewing, even with many descendants or "
 "generations."
 msgstr ""
-"產生網頁，以 Space Tree 呈現可互動的後代圖，即使後代或世代眾多，也能有效瀏覽"
-"。"
+"產生網頁，以 Space Tree 呈現可互動的後代圖，即使後代或世代眾多，也能有效瀏"
+"覽。"
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:102
 msgid "Patriarchal Line (Male ancestor)"
@@ -3382,103 +3588,103 @@ msgstr "後代連線"
 msgid "Produces descendants lines of a person"
 msgstr "產生人物的後代支系"
 
-#: DescendantsLines/DescendantsLines.py:472
+#: DescendantsLines/DescendantsLines.py:477
 msgid "Using SVG type for supplemental document is not supported!"
 msgstr "補充文件不支援 SVG 類型！"
 
-#: DescendantsLines/DescendantsLines.py:1540
+#: DescendantsLines/DescendantsLines.py:1545
 msgid "Output format"
 msgstr "輸出格式"
 
-#: DescendantsLines/DescendantsLines.py:1541
+#: DescendantsLines/DescendantsLines.py:1546
 msgid "PNG format"
 msgstr "PNG 格式"
 
-#: DescendantsLines/DescendantsLines.py:1542
+#: DescendantsLines/DescendantsLines.py:1547
 msgid "SVG format"
 msgstr "SVG 格式"
 
-#: DescendantsLines/DescendantsLines.py:1543
+#: DescendantsLines/DescendantsLines.py:1548
 msgid "PDF format"
 msgstr "PDF 格式"
 
-#: DescendantsLines/DescendantsLines.py:1544
+#: DescendantsLines/DescendantsLines.py:1549
 msgid "PS format"
 msgstr "PS 格式"
 
-#: DescendantsLines/DescendantsLines.py:1545
+#: DescendantsLines/DescendantsLines.py:1550
 msgid "The output format to be used"
 msgstr "要使用的輸出格式"
 
-#: DescendantsLines/DescendantsLines.py:1550
+#: DescendantsLines/DescendantsLines.py:1555
 msgid "The destination file for the content."
 msgstr "內容的目的地檔案。"
 
-#: DescendantsLines/DescendantsLines.py:1554
+#: DescendantsLines/DescendantsLines.py:1559
 msgid "The number of generations to include in the chart. (0 for unlimited)"
 msgstr "圖表中要包含的世代數。(0 表示不限)"
 
-#: DescendantsLines/DescendantsLines.py:1559
+#: DescendantsLines/DescendantsLines.py:1564
 msgid "Use d'Aboville descendant numbering system"
 msgstr "使用 d'Aboville 後代編號系統"
 
-#: DescendantsLines/DescendantsLines.py:1561
+#: DescendantsLines/DescendantsLines.py:1566
 msgid "Prepend name with d'Aboville descendant number in the chart."
 msgstr "在圖表中的姓名前加上 d'Aboville 後代編號。"
 
-#: DescendantsLines/DescendantsLines.py:1564
+#: DescendantsLines/DescendantsLines.py:1569
 msgid "Include an image"
 msgstr "包含圖片"
 
-#: DescendantsLines/DescendantsLines.py:1565
+#: DescendantsLines/DescendantsLines.py:1570
 msgid "Whether to include an image if one is available."
 msgstr "有圖片時是否包含圖片。"
 
-#: DescendantsLines/DescendantsLines.py:1569
+#: DescendantsLines/DescendantsLines.py:1574
 msgid "Max Image height"
 msgstr "圖片最大高度"
 
-#: DescendantsLines/DescendantsLines.py:1570
+#: DescendantsLines/DescendantsLines.py:1575
 msgid "Maximum image height in pixels, 0=don't scale for height."
 msgstr "圖片最大高度，單位為像素；0 表示不依高度縮放。"
 
-#: DescendantsLines/DescendantsLines.py:1574
+#: DescendantsLines/DescendantsLines.py:1579
 msgid "Max Image width"
 msgstr "圖片最大寬度"
 
-#: DescendantsLines/DescendantsLines.py:1575
+#: DescendantsLines/DescendantsLines.py:1580
 msgid "Maximum image width in pixels, 0=don't scale for width."
 msgstr "圖片最大寬度，單位為像素；0 表示不依寬度縮放。"
 
-#: DescendantsLines/DescendantsLines.py:1579
+#: DescendantsLines/DescendantsLines.py:1584
 msgid "Image Location"
 msgstr "圖片位置"
 
-#: DescendantsLines/DescendantsLines.py:1580
+#: DescendantsLines/DescendantsLines.py:1585
 msgid "Above text"
 msgstr "文字上方"
 
-#: DescendantsLines/DescendantsLines.py:1581
+#: DescendantsLines/DescendantsLines.py:1586
 msgid "Left of text"
 msgstr "文字左側"
 
-#: DescendantsLines/DescendantsLines.py:1582
+#: DescendantsLines/DescendantsLines.py:1587
 msgid "Position of image relative to text"
 msgstr "圖片相對於文字的位置"
 
-#: DescendantsLines/DescendantsLines.py:1588
+#: DescendantsLines/DescendantsLines.py:1593
 msgid "Colour Name by Gender"
 msgstr "依性別為姓名上色"
 
-#: DescendantsLines/DescendantsLines.py:1590
+#: DescendantsLines/DescendantsLines.py:1595
 msgid "Color the name to indicate a person's gender in the chart."
 msgstr "依性別為圖表中的人物姓名上色。"
 
-#: DescendantsLines/DescendantsLines.py:1594
+#: DescendantsLines/DescendantsLines.py:1599
 msgid "Use alternate events, if Primary event is not found"
 msgstr "找不到主要事件時，使用替代事件"
 
-#: DescendantsLines/DescendantsLines.py:1595
+#: DescendantsLines/DescendantsLines.py:1600
 msgid ""
 "For Birth (baptism, christen)\n"
 "   Marriage (marr_lic, engagement)\n"
@@ -3490,35 +3696,35 @@ msgstr ""
 "   離婚（婚姻撤銷、div_filing），\n"
 "   死亡（安葬、火化、遺囑認證）。"
 
-#: DescendantsLines/DescendantsLines.py:1601
+#: DescendantsLines/DescendantsLines.py:1606
 msgid "Sort Events by Date"
 msgstr "依日期排序事件"
 
-#: DescendantsLines/DescendantsLines.py:1602
+#: DescendantsLines/DescendantsLines.py:1607
 msgid "Sort events by date (else use the order of the 'Display Format' above)."
 msgstr "依日期排序事件 (否則使用上方「顯示格式」的順序)。"
 
-#: DescendantsLines/DescendantsLines.py:1606
+#: DescendantsLines/DescendantsLines.py:1611
 msgid "Text style"
 msgstr "文字樣式"
 
-#: DescendantsLines/DescendantsLines.py:1607
+#: DescendantsLines/DescendantsLines.py:1612
 msgid "Center-aligned text"
 msgstr "文字置中對齊"
 
-#: DescendantsLines/DescendantsLines.py:1608
+#: DescendantsLines/DescendantsLines.py:1613
 msgid "Left-aligned text"
 msgstr "靠左對齊文字"
 
-#: DescendantsLines/DescendantsLines.py:1609
+#: DescendantsLines/DescendantsLines.py:1614
 msgid "Alignment of the text in the block for each person on the chart"
 msgstr "圖表中各人物區塊的文字對齊方式"
 
-#: DescendantsLines/DescendantsLines.py:1613
+#: DescendantsLines/DescendantsLines.py:1618
 msgid "Max Note Length"
 msgstr "備註最大長度"
 
-#: DescendantsLines/DescendantsLines.py:1614
+#: DescendantsLines/DescendantsLines.py:1619
 msgid ""
 "Maximum length of an event's note field in a text block, '$e(n)'\n"
 " 0=no limit "
@@ -3526,84 +3732,85 @@ msgstr ""
 "文字區塊中事件備註欄位 '$e(n)' 的最大長度\n"
 " 0 表示不限 "
 
-#: DescendantsLines/DescendantsLines.py:1618
+#: DescendantsLines/DescendantsLines.py:1623
 msgid "Font Name"
 msgstr "字型名稱"
 
-#: DescendantsLines/DescendantsLines.py:1620
+#: DescendantsLines/DescendantsLines.py:1625
 msgid ""
 "Name of the Font to use. On Windows enter the file name of the .ttf at /"
 "Windows/Fonts"
-msgstr "要使用的字型名稱。在 Windows 上，請輸入 /Windows/Fonts 中 .ttf 檔案的檔名"
+msgstr ""
+"要使用的字型名稱。在 Windows 上，請輸入 /Windows/Fonts 中 .ttf 檔案的檔名"
 
-#: DescendantsLines/DescendantsLines.py:1623
+#: DescendantsLines/DescendantsLines.py:1628
 msgid "Font base size"
 msgstr "字型基礎大小"
 
-#: DescendantsLines/DescendantsLines.py:1629
+#: DescendantsLines/DescendantsLines.py:1634
 msgid "Box around Person's block"
 msgstr "人物方塊外框"
 
-#: DescendantsLines/DescendantsLines.py:1630
+#: DescendantsLines/DescendantsLines.py:1635
 msgid "Draw a thin black box around each person' text block."
 msgstr "在每個人物的文字區塊周圍繪製黑色細框。"
 
-#: DescendantsLines/DescendantsLines.py:1634
+#: DescendantsLines/DescendantsLines.py:1639
 msgid "All Person's blocks have the same height"
 msgstr "所有人物區塊高度相同"
 
-#: DescendantsLines/DescendantsLines.py:1635
+#: DescendantsLines/DescendantsLines.py:1640
 msgid ""
 "All the blocks of all the person have the same height, which is the height "
 "of the highest block."
 msgstr "所有人物區塊使用相同高度，以最高區塊的高度為準。"
 
-#: DescendantsLines/DescendantsLines.py:1640
+#: DescendantsLines/DescendantsLines.py:1645
 msgid "All Person's blocks have the same width"
 msgstr "所有人物區塊寬度相同"
 
-#: DescendantsLines/DescendantsLines.py:1641
+#: DescendantsLines/DescendantsLines.py:1646
 msgid ""
 "All the blocks of all the person have the same width, which is the width of "
 "the widthest block."
 msgstr "所有人物區塊使用相同寬度，以最寬區塊的寬度為準。"
 
-#: DescendantsLines/DescendantsLines.py:1646
+#: DescendantsLines/DescendantsLines.py:1651
 msgid "Colour blocks by Generation"
 msgstr "依世代為區塊上色"
 
-#: DescendantsLines/DescendantsLines.py:1647
+#: DescendantsLines/DescendantsLines.py:1652
 msgid "Colour the background of text blocks by generation."
 msgstr "依世代為文字區塊背景上色。"
 
-#: DescendantsLines/DescendantsLines.py:1651
+#: DescendantsLines/DescendantsLines.py:1656
 msgid "Descend block colour intensity"
 msgstr "後代區塊色彩濃度"
 
-#: DescendantsLines/DescendantsLines.py:1652
+#: DescendantsLines/DescendantsLines.py:1657
 msgid ""
 "Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
 "colour"
 msgstr "後代區塊的背景色彩濃度，0 表示淡色，255 表示濃色"
 
-#: DescendantsLines/DescendantsLines.py:1656
+#: DescendantsLines/DescendantsLines.py:1661
 msgid "Spouse block colour intensity"
 msgstr "配偶區塊色彩強度"
 
-#: DescendantsLines/DescendantsLines.py:1657
+#: DescendantsLines/DescendantsLines.py:1662
 msgid ""
 "Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
 msgstr "配偶區塊的背景色彩濃度，0 表示淡色，255 表示濃色"
 
-#: DescendantsLines/DescendantsLines.py:1662
+#: DescendantsLines/DescendantsLines.py:1667
 msgid "Display Formats"
 msgstr "顯示格式"
 
-#: DescendantsLines/DescendantsLines.py:1664
+#: DescendantsLines/DescendantsLines.py:1669
 msgid "Name Display Format"
 msgstr "姓名顯示格式"
 
-#: DescendantsLines/DescendantsLines.py:1667
+#: DescendantsLines/DescendantsLines.py:1672
 msgid ""
 "f=first & middle names, l=surname, n=nickname,\n"
 "c=commonly used given name, t=title, s=suffix, g=family nick name\n"
@@ -3613,8 +3820,8 @@ msgstr ""
 "c=常用名字，t=頭銜，s=後綴，g=家族暱稱\n"
 "請參閱 Wiki 手冊 > 報告 > 第 2 部分"
 
-#: DescendantsLines/DescendantsLines.py:1679
-#: DescendantsLines/DescendantsLines.py:1698
+#: DescendantsLines/DescendantsLines.py:1684
+#: DescendantsLines/DescendantsLines.py:1703
 msgid ""
 "[event, list]$e(formating)\n"
 "See Wiki Manual > Reports > part 2\n"
@@ -3624,13 +3831,13 @@ msgstr ""
 "請參閱 Wiki 手冊 > 報告 > 第 2 部分\n"
 "formating：dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
 
-#: DescendantsLines/DescendantsLines.py:1705
+#: DescendantsLines/DescendantsLines.py:1710
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
 #: ImportMerge/importmerge.glade:407 ImportMerge/importmerge.py:912
 msgid "Replace"
 msgstr "取代"
 
-#: DescendantsLines/DescendantsLines.py:1710
+#: DescendantsLines/DescendantsLines.py:1715
 msgid ""
 "i.e.\n"
 "United States of America/USA"
@@ -3638,49 +3845,49 @@ msgstr ""
 "例如\n"
 "United States of America/USA"
 
-#: DescendantsLines/DescendantsLines.py:1714
+#: DescendantsLines/DescendantsLines.py:1719
 msgid "Spouse and Family"
 msgstr "配偶與家庭"
 
-#: DescendantsLines/DescendantsLines.py:1716
+#: DescendantsLines/DescendantsLines.py:1721
 msgid "Vertical edge descendant to spouse-bar"
 msgstr "後代至配偶橫線的垂直線段"
 
-#: DescendantsLines/DescendantsLines.py:1717
+#: DescendantsLines/DescendantsLines.py:1722
 msgid "The length of the vertical edge from descendant to spouse-bar."
 msgstr "後代至配偶橫線的垂直線段長度。"
 
-#: DescendantsLines/DescendantsLines.py:1721
+#: DescendantsLines/DescendantsLines.py:1726
 msgid "Vertical edge spouse-bar to spouse"
 msgstr "配偶橫線至配偶的垂直線段"
 
-#: DescendantsLines/DescendantsLines.py:1722
+#: DescendantsLines/DescendantsLines.py:1727
 msgid "The length of the vertical edge from spouse-bar to spouse."
 msgstr "從配偶列到配偶的垂直邊長。"
 
-#: DescendantsLines/DescendantsLines.py:1726
+#: DescendantsLines/DescendantsLines.py:1731
 msgid "Vertical space spouse-bar to other spouse"
 msgstr "配偶橫線至另一位配偶的垂直間距"
 
-#: DescendantsLines/DescendantsLines.py:1727
+#: DescendantsLines/DescendantsLines.py:1732
 msgid ""
 "The space to add between one spouse-bar and another spouse in case of "
 "multiple families with the same descendant."
 msgstr "同一後代有多個家庭時，一條配偶橫線與另一位配偶之間要增加的間距。"
 
-#: DescendantsLines/DescendantsLines.py:1732
+#: DescendantsLines/DescendantsLines.py:1737
 msgid "Horizontal space descendant to spouse"
 msgstr "後代至配偶的水平間距"
 
-#: DescendantsLines/DescendantsLines.py:1733
+#: DescendantsLines/DescendantsLines.py:1738
 msgid "The space to add between the descendant and the spouse."
 msgstr "後代與配偶之間要增加的間距。"
 
-#: DescendantsLines/DescendantsLines.py:1738
+#: DescendantsLines/DescendantsLines.py:1743
 msgid "Horizonal space family to family"
 msgstr "家庭之間的水平間距"
 
-#: DescendantsLines/DescendantsLines.py:1739
+#: DescendantsLines/DescendantsLines.py:1744
 msgid ""
 "The space to add between the more extern descendant (or spouse) of a family "
 "and the more extern descendant (or spouse) of the next family."
@@ -3688,112 +3895,113 @@ msgstr ""
 "一個家庭最外側的後代 (或配偶) 與下一個家庭最外側的後代 (或配偶) 之間要增加的"
 "間距。"
 
-#: DescendantsLines/DescendantsLines.py:1744
+#: DescendantsLines/DescendantsLines.py:1749
 msgid "Horizontal distance spouse to family edge"
 msgstr "配偶到家庭邊緣的水平距離"
 
-#: DescendantsLines/DescendantsLines.py:1745
+#: DescendantsLines/DescendantsLines.py:1750
 msgid ""
 "If this value is 0, the children bar is centered under the spouse. The "
 "bigger the value, more the center is moved to the left towards the "
 "descendant."
-msgstr "值為 0 時，子女橫線會置中於配偶下方。值越大，中心越往左朝後代方向移動。"
+msgstr ""
+"值為 0 時，子女橫線會置中於配偶下方。值越大，中心越往左朝後代方向移動。"
 
-#: DescendantsLines/DescendantsLines.py:1752
+#: DescendantsLines/DescendantsLines.py:1757
 msgid "OL_PAD"
 msgstr "OL_PAD"
 
-#: DescendantsLines/DescendantsLines.py:1753
+#: DescendantsLines/DescendantsLines.py:1758
 msgid "The number of ??? pad"
 msgstr "??? pad 的數量"
 
-#: DescendantsLines/DescendantsLines.py:1756
+#: DescendantsLines/DescendantsLines.py:1761
 msgid "Vertical edge spouse-bar to child-bar"
 msgstr "配偶橫線至子女橫線的垂直線段"
 
-#: DescendantsLines/DescendantsLines.py:1757
+#: DescendantsLines/DescendantsLines.py:1762
 msgid "The length of the vertical edge from spouse-bar to child-bar."
 msgstr "配偶列到子女列之間的垂直邊長。"
 
-#: DescendantsLines/DescendantsLines.py:1763
+#: DescendantsLines/DescendantsLines.py:1768
 msgid "Children distance"
 msgstr "子女間距"
 
-#: DescendantsLines/DescendantsLines.py:1764
+#: DescendantsLines/DescendantsLines.py:1769
 msgid "The horizontal distance between two children of the same family."
 msgstr "同一家庭中兩名子女之間的水平距離。"
 
-#: DescendantsLines/DescendantsLines.py:1768
+#: DescendantsLines/DescendantsLines.py:1773
 msgid "Vertical edge child to child-bar"
 msgstr "子女至子女橫線的垂直線段"
 
-#: DescendantsLines/DescendantsLines.py:1770
+#: DescendantsLines/DescendantsLines.py:1775
 msgid "The length of the vertical edge from child to child-bar."
 msgstr "子女至子女橫線的垂直線段長度。"
 
-#: DescendantsLines/DescendantsLines.py:1773
+#: DescendantsLines/DescendantsLines.py:1778
 msgid "MIN_C_WIDTH"
 msgstr "MIN_C_WIDTH"
 
-#: DescendantsLines/DescendantsLines.py:1774
+#: DescendantsLines/DescendantsLines.py:1779
 msgid "The number of ??? min width"
 msgstr "??? 最小寬度的數值"
 
-#: DescendantsLines/DescendantsLines.py:1779
+#: DescendantsLines/DescendantsLines.py:1784
 msgid "Space around text"
 msgstr "文字周圍的間距"
 
-#: DescendantsLines/DescendantsLines.py:1780
+#: DescendantsLines/DescendantsLines.py:1785
 msgid "The space to add around the text block of a person."
 msgstr "人物文字區塊周圍要增加的留白。"
 
-#: DescendantsLines/DescendantsLines.py:1784
+#: DescendantsLines/DescendantsLines.py:1789
 msgid "Space between lines of text"
 msgstr "文字行距"
 
-#: DescendantsLines/DescendantsLines.py:1785
+#: DescendantsLines/DescendantsLines.py:1790
 msgid "The space to add between a line and the next in a person text block."
 msgstr "人物文字區塊中相鄰兩行之間要增加的間距。"
 
-#: DescendantsLines/DescendantsLines.py:1790
+#: DescendantsLines/DescendantsLines.py:1795
 msgid "Header and Footer"
 msgstr "頁首與頁尾"
 
-#: DescendantsLines/DescendantsLines.py:1793
+#: DescendantsLines/DescendantsLines.py:1798
 msgid "The text that will be written in the header of the document"
 msgstr "要寫入文件頁首的文字"
 
-#: DescendantsLines/DescendantsLines.py:1798
+#: DescendantsLines/DescendantsLines.py:1803
 msgid "The text that will be written in the footer of the document"
 msgstr "要寫入文件頁尾的文字"
 
-#: DescendantsLines/DescendantsLines.py:1802
+#: DescendantsLines/DescendantsLines.py:1807
 msgid "Title and footer coefficient"
 msgstr "標題與頁尾係數"
 
-#: DescendantsLines/DescendantsLines.py:1803
+#: DescendantsLines/DescendantsLines.py:1808
 msgid ""
 "A number that multiply the base size of the text in the title and in the "
 "footer"
 msgstr "乘上標題與頁尾文字基本大小的數字"
 
-#: DescendantsLines/DescendantsLines.py:1810
+#: DescendantsLines/DescendantsLines.py:1815
 msgid "Protect People, Images or Events that are marked Private"
 msgstr "保護標示為私密的人物、圖片或事件"
 
-#: DescendantsLines/DescendantsLines.py:1812
+#: DescendantsLines/DescendantsLines.py:1817
 msgid "The Privacy setting of only these types of Gramps objects are checked"
 msgstr "僅檢查這些類型的 Gramps 物件的隱私設定"
 
-#: DescendantsLines/DescendantsLines.py:1816
+#: DescendantsLines/DescendantsLines.py:1821
 msgid "Privacy text"
 msgstr "隱私文字"
 
-#: DescendantsLines/DescendantsLines.py:1817
+#: DescendantsLines/DescendantsLines.py:1822
 msgid "Text to display in block, when a Person is marked private"
 msgstr "人物標示為私密時，方塊中要顯示的文字"
 
-#: DescendantsLines/DescendantsLines.py:1832
+#: DescendantsLines/DescendantsLines.py:1837
 msgid "The default style."
 msgstr "預設樣式。"
 
@@ -4439,12 +4647,12 @@ msgstr "無姓氏"
 msgid "Without title"
 msgstr "無標題"
 
-#: DynamicWeb/dynamicweb.py:3165 GraphView/graphview.py:1095
+#: DynamicWeb/dynamicweb.py:3165 GraphView/graphview.py:1088
 #: LifeLineChartView/lifelinechartview.py:508
 msgid "Zoom in"
 msgstr "放大"
 
-#: DynamicWeb/dynamicweb.py:3166 GraphView/graphview.py:1102
+#: DynamicWeb/dynamicweb.py:3166 GraphView/graphview.py:1095
 #: LifeLineChartView/lifelinechartview.py:518
 msgid "Zoom out"
 msgstr "縮小"
@@ -4714,7 +4922,7 @@ msgstr "是否隱藏 Gramps ID"
 msgid "List"
 msgstr "清單"
 
-#: DynamicWeb/dynamicweb.py:4997 GrampyScript/GrampyScript.py:382
+#: DynamicWeb/dynamicweb.py:4997 GrampyScript/GrampyScript.py:443
 msgid "Table"
 msgstr "表格"
 
@@ -4781,8 +4989,8 @@ msgid ""
 "example, in the media index page, the names of the individuals, families, "
 "places, sources that reference the media."
 msgstr ""
-"是否在索引頁面包含項目的參照。例如，在媒體索引頁面列出參照該媒體的人物、家庭"
-"、地點及來源名稱。"
+"是否在索引頁面包含項目的參照。例如，在媒體索引頁面列出參照該媒體的人物、家"
+"庭、地點及來源名稱。"
 
 #: DynamicWeb/dynamicweb.py:5080
 msgid "Default number of entries in the indexes"
@@ -4824,7 +5032,7 @@ msgid ""
 "Choose the background color scheme for the persons in the SVG tree graph"
 msgstr "選擇 SVG 樹狀圖中人物的背景配色"
 
-#: DynamicWeb/dynamicweb.py:5152 Themes/themes.py:175 Themes/themes.py:225
+#: DynamicWeb/dynamicweb.py:5152 Themes/themes.py:179 Themes/themes.py:229
 msgid "Theme"
 msgstr "主題"
 
@@ -4920,7 +5128,8 @@ msgstr "<-- 圖片類型 -->"
 msgid ""
 "Warning:  Changing this entry will update the Media object title field in "
 "Gramps not Exiv2 metadata."
-msgstr "警告：變更此項目會更新 Gramps 中媒體物件的標題欄位，而非 Exiv2 中繼資料。"
+msgstr ""
+"警告：變更此項目會更新 Gramps 中媒體物件的標題欄位，而非 Exiv2 中繼資料。"
 
 #: EditExifMetadata/editexifmetadata.py:165
 msgid "Provide a short description for this image."
@@ -5475,8 +5684,8 @@ msgid ""
 "Below is a list of Places with the possible data that can be extracted from "
 "the place title. Select the places you wish Gramps to convert."
 msgstr ""
-"以下列出各個地點，以及可能從地點標題擷取的資料。請選取要讓 Gramps 轉換的地點"
-"。"
+"以下列出各個地點，以及可能從地點標題擷取的資料。請選取要讓 Gramps 轉換的地"
+"點。"
 
 #: FRWebConnectPack/FRWebPack.gpr.py:11
 msgid "FR Web Connect Pack"
@@ -5953,6 +6162,7 @@ msgid "FamilyTree DNA Import"
 msgstr "FamilyTree DNA 匯入"
 
 #: FamilyTreeDNA/ftdna_import.py:224
+#, python-brace-format
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
 msgstr "已建立 {} 筆含 DNA 資料的關聯。已建立 {} 筆單倍群屬性 \n"
@@ -6164,6 +6374,45 @@ msgstr "與 <filter> 有關係的人物"
 msgid "Matches people who are related to anybody matched by a person filter"
 msgstr "比對與人物篩選器結果中任一人物有親屬關係的人物"
 
+#: FilterRules/matcheventfilterrole.gpr.py:7
+#, fuzzy
+#| msgid "People with events with the <role>"
+msgid "People from event with role"
+msgstr "具有 <role> 角色事件的人物"
+
+#: FilterRules/matcheventfilterrole.gpr.py:8
+#, fuzzy
+#| msgid "Matches event of people filter with role"
+msgid "Matches people of event filter with role"
+msgstr "符合人物篩選器且具有指定角色的事件"
+
+#: FilterRules/matcheventfilterrole.py:55
+#: FilterRules/matchpersonfilterrole.py:69
+msgid "Role:"
+msgstr "角色："
+
+#: FilterRules/matcheventfilterrole.py:56
+#, fuzzy
+#| msgid "People with events with the <role>"
+msgid "Persons with events matching the <event filter> with role"
+msgstr "具有 <role> 角色事件的人物"
+
+#: FilterRules/matchparentoffilterfamily.gpr.py:7
+#, fuzzy
+#| msgid "Parent Family"
+msgid "Parents of family filter"
+msgstr "父母家庭"
+
+#: FilterRules/matchparentoffilterfamily.gpr.py:8
+#, fuzzy
+#| msgid "Matches event of people filter with role"
+msgid "Matches parent of family filter"
+msgstr "符合人物篩選器且具有指定角色的事件"
+
+#: FilterRules/matchparentoffilterfamily.py:60
+msgid "Parents of <filter> family match"
+msgstr ""
+
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
 msgstr "具有指定角色之人物的事件"
@@ -6171,10 +6420,6 @@ msgstr "具有指定角色之人物的事件"
 #: FilterRules/matchpersonfilterrole.gpr.py:8
 msgid "Matches event of people filter with role"
 msgstr "符合人物篩選器且具有指定角色的事件"
-
-#: FilterRules/matchpersonfilterrole.py:69
-msgid "Role:"
-msgstr "角色："
 
 #: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
@@ -6359,19 +6604,19 @@ msgstr "[在編輯表單期間被刪除後重建的來源]"
 msgid "Headings"
 msgstr "標題"
 
-#: Form/form.py:82
+#: Form/form.py:81
 msgid "Form"
 msgstr "表單"
 
-#: Form/form.py:174
+#: Form/form.py:173
 msgid "XML syntax error in Form definition file"
 msgstr "表單定義檔中的 XML 語法錯誤"
 
-#: Form/form.py:185
+#: Form/form.py:184
 msgid "Failed to read Form definition file"
 msgstr "無法讀取表單定義檔"
 
-#: Form/form.py:194
+#: Form/form.py:193
 msgid "Invalid Form definition file"
 msgstr "表單定義檔無效"
 
@@ -10026,10 +10271,6 @@ msgstr "(10.) 登記時間"
 #: Form/form_ie.xml.h:111
 msgid "(11.) Signature of Registrar"
 msgstr "(11.) 登記官簽名"
-
-#: Form/form_ie.xml.h:114 Form/form_us.xml.h:2455 Form/form_us.xml.h:2494
-msgid "Date of Death"
-msgstr "死亡日期"
 
 #: Form/form_ie.xml.h:115 Form/form_ie.xml.h:117
 msgid "(2.) Date and Place of Death"
@@ -15576,8 +15817,8 @@ msgid ""
 "Always put first of multiple spouses on the left. This can help reduce line-"
 "crossings with multiple marriages."
 msgstr ""
-"有多位配偶時，一律將第一位配偶置於左側。這有助於減少多次婚姻時連線交叉的情況"
-"。"
+"有多位配偶時，一律將第一位配偶置於左側。這有助於減少多次婚姻時連線交叉的情"
+"況。"
 
 #: GenealogyTree/gt_grandparent.py:119
 #, python-format
@@ -15836,22 +16077,26 @@ msgid "GetGOV error: %s"
 msgstr "GetGOV 錯誤：%s"
 
 #: GetGOV/getgov.py:421
+msgid "GOV link"
+msgstr ""
+
+#: GetGOV/getgov.py:428
 #, python-format
 msgid "GOV error on id %s with code: "
 msgstr "ID %s 的 GOV 錯誤，代碼： "
 
-#: GetGOV/getgov.py:555
+#: GetGOV/getgov.py:562
 #, python-format
 msgctxt "end"
 msgid "from %(begin)s to %(end)s"
 msgstr "從 %(begin)s 到 %(end)s"
 
-#: GetGOV/getgov.py:557
+#: GetGOV/getgov.py:564
 #, python-format
 msgid "after %s"
 msgstr "%s 之後"
 
-#: GetGOV/getgov.py:559
+#: GetGOV/getgov.py:566
 #, python-format
 msgid "before %s"
 msgstr "在 %s 之前"
@@ -15904,7 +16149,7 @@ msgstr ""
 "(位於使用者家目錄「%s」) 嗎？"
 
 #: GrampsAssistant/grampsassistant.gpr.py:26
-#: GrampsAssistant/grampsassistant.py:1417
+#: GrampsAssistant/grampsassistant.py:1428
 msgid "Gramps Assistant"
 msgstr "Gramps 小幫手"
 
@@ -15912,7 +16157,7 @@ msgstr "Gramps 小幫手"
 msgid "AI assistant for querying your Gramps family tree"
 msgstr "用於查詢 Gramps 家族樹的 AI 助理"
 
-#: GrampsAssistant/grampsassistant.py:58
+#: GrampsAssistant/grampsassistant.py:61
 msgid ""
 "You are a helpful genealogy assistant with access to the user's Gramps "
 "database. Answer questions about people, families, events, and "
@@ -15924,28 +16169,34 @@ msgstr ""
 "的問題。需要資料庫資訊時，請呼叫提供的工具——切勿撰寫程式碼、模擬結果或捏造資"
 "料。若沒有可取得所需資訊的工具，請直接說明。"
 
-#: GrampsAssistant/grampsassistant.py:209
+#: GrampsAssistant/grampsassistant.py:212
 msgid "Gramps Assistant settings"
 msgstr "Gramps Assistant 設定"
 
-#: GrampsAssistant/grampsassistant.py:213
+#: GrampsAssistant/grampsassistant.py:216
 msgid "Clear conversation and context"
 msgstr "清除對話與上下文"
 
-#: GrampsAssistant/grampsassistant.py:388
-#: GrampsAssistant/grampsassistant.py:749
+#: GrampsAssistant/grampsassistant.py:220
+#, fuzzy
+#| msgid "Gramps Assistant settings"
+msgid "Open the Gramps Assistant wiki page"
+msgstr "Gramps Assistant 設定"
+
+#: GrampsAssistant/grampsassistant.py:396
+#: GrampsAssistant/grampsassistant.py:760
 msgid "Gramps Assistant:"
 msgstr "Gramps Assistant："
 
-#: GrampsAssistant/grampsassistant.py:390
+#: GrampsAssistant/grampsassistant.py:398
 msgid ""
 "Ask me anything about the Gramps program or your specific Gramps family "
 "tree. Use the ⚙ button to configure the AI.\n"
 msgstr ""
-"您可以詢問任何關於 Gramps 程式或您 Gramps 家族樹的問題。使用 ⚙ 按鈕設定 AI"
-"。\n"
+"您可以詢問任何關於 Gramps 程式或您 Gramps 家族樹的問題。使用 ⚙ 按鈕設定 "
+"AI。\n"
 
-#: GrampsAssistant/grampsassistant.py:720
+#: GrampsAssistant/grampsassistant.py:731
 msgid ""
 "\n"
 "No model configured. Please click the Settings button to choose a backend "
@@ -15954,11 +16205,11 @@ msgstr ""
 "\n"
 "尚未設定模型。請先按一下「設定」按鈕，選擇後端與模型再開始聊天。\n"
 
-#: GrampsAssistant/grampsassistant.py:755
+#: GrampsAssistant/grampsassistant.py:766
 msgid "Thinking..."
 msgstr "思考中..."
 
-#: GrampsAssistant/grampsassistant.py:824
+#: GrampsAssistant/grampsassistant.py:835
 #, python-brace-format
 msgid ""
 "API key error: the environment variable {var} is not set or is invalid. Set "
@@ -15968,7 +16219,7 @@ msgstr ""
 "API 金鑰錯誤：環境變數 {var} 未設定或無效。請在啟動 Gramps 前設定：\n"
 "  export {var}=your-key-here"
 
-#: GrampsAssistant/grampsassistant.py:830
+#: GrampsAssistant/grampsassistant.py:841
 msgid ""
 "API key error: this provider requires an API key. Open Settings and enter "
 "the environment variable name for your API key (e.g. OPENAI_API_KEY)."
@@ -15976,41 +16227,42 @@ msgstr ""
 "API 金鑰錯誤：此提供者需要 API 金鑰。請開啟設定，輸入 API 金鑰的環境變數名稱 "
 "(例如 OPENAI_API_KEY)。"
 
-#: GrampsAssistant/grampsassistant.py:973
+#: GrampsAssistant/grampsassistant.py:984
 msgid "Done.\n"
 msgstr "完成。\n"
 
-#: GrampsAssistant/grampsassistant.py:1203
+#: GrampsAssistant/grampsassistant.py:1214
 msgid "System Prompt:"
 msgstr "系統提示詞："
 
-#: GrampsAssistant/grampsassistant.py:1217
+#: GrampsAssistant/grampsassistant.py:1228
 msgid "Simplify tools (recommended for smaller/local models)"
 msgstr "簡化工具 (建議較小型／本機模型使用)"
 
-#: GrampsAssistant/grampsassistant.py:1221
+#: GrampsAssistant/grampsassistant.py:1232
 msgid ""
 "When enabled, only the tools relevant to your question are sent to the "
 "model. This improves performance with smaller local models."
-msgstr "啟用後，只會將與問題相關的工具傳送給模型。這可改善較小型本機模型的效能。"
+msgstr ""
+"啟用後，只會將與問題相關的工具傳送給模型。這可改善較小型本機模型的效能。"
 
-#: GrampsAssistant/grampsassistant.py:1230
+#: GrampsAssistant/grampsassistant.py:1241
 msgid "Use Local Model"
 msgstr "使用本機模型"
 
-#: GrampsAssistant/grampsassistant.py:1249
+#: GrampsAssistant/grampsassistant.py:1260
 msgid ""
 "URL of a local OpenAI-compatible server. Ollama: http://localhost:11434  LM "
 "Studio: http://localhost:1234  llama.cpp: http://localhost:8080"
 msgstr ""
-"本機 OpenAI 相容伺服器的網址。Ollama：http://localhost:11434  LM "
-"Studio：http://localhost:1234  llama.cpp：http://localhost:8080"
+"本機 OpenAI 相容伺服器的網址。Ollama：http://localhost:11434  LM Studio："
+"http://localhost:1234  llama.cpp：http://localhost:8080"
 
-#: GrampsAssistant/grampsassistant.py:1257
+#: GrampsAssistant/grampsassistant.py:1268
 msgid "model name (leave blank for LM Studio / llama.cpp)"
 msgstr "模型名稱 (LM Studio / llama.cpp 請留空)"
 
-#: GrampsAssistant/grampsassistant.py:1260
+#: GrampsAssistant/grampsassistant.py:1271
 msgid ""
 "Model to request from the local server. Required for Ollama (e.g. llama3.1). "
 "Leave blank for LM Studio or llama.cpp, which use whatever model is loaded."
@@ -16018,36 +16270,36 @@ msgstr ""
 "向本機伺服器要求的模型。Ollama 必填 (例如 llama3.1)。LM Studio 或 llama.cpp "
 "請留空，這兩者會使用已載入的模型。"
 
-#: GrampsAssistant/grampsassistant.py:1267
-#: GrampsAssistant/grampsassistant.py:1311
+#: GrampsAssistant/grampsassistant.py:1278
+#: GrampsAssistant/grampsassistant.py:1322
 msgid "Model:"
 msgstr "模型："
 
-#: GrampsAssistant/grampsassistant.py:1273
+#: GrampsAssistant/grampsassistant.py:1284
 msgid "Use Foundational Model"
 msgstr "使用基礎模型"
 
-#: GrampsAssistant/grampsassistant.py:1315
+#: GrampsAssistant/grampsassistant.py:1326
 msgid "e.g. OPENAI_API_KEY"
 msgstr "例如 OPENAI_API_KEY"
 
-#: GrampsAssistant/grampsassistant.py:1317
+#: GrampsAssistant/grampsassistant.py:1328
 msgid "Name of the environment variable holding your API key."
 msgstr "存放 API 金鑰的環境變數名稱。"
 
-#: GrampsAssistant/grampsassistant.py:1319
+#: GrampsAssistant/grampsassistant.py:1330
 msgid "API key env var:"
 msgstr "API 金鑰環境變數："
 
-#: GrampsAssistant/grampsassistant.py:1322
+#: GrampsAssistant/grampsassistant.py:1333
 msgid "Backend:"
 msgstr "後端："
 
-#: GrampsAssistant/grampsassistant.py:1334
+#: GrampsAssistant/grampsassistant.py:1345
 msgid "Base URL:"
 msgstr "基底網址："
 
-#: GrampsAssistant/grampsassistant.py:1338
+#: GrampsAssistant/grampsassistant.py:1349
 msgid "Model name:"
 msgstr "模型名稱："
 
@@ -16075,7 +16327,7 @@ msgstr ""
 "將 Gramps Web API 伺服器 (例如 gramps-connect 或 Gramps Web) 作為即時資料庫，"
 "並在本機建立鏡像以提升速度。"
 
-#: GrampsWebApiDb/grampswebapidb.py:262
+#: GrampsWebApiDb/grampswebapidb.py:447
 msgid ""
 "The account authenticating via GRAMPS_WEB_API_KEY does not have permission "
 "on the server for this operation (HTTP 403 Forbidden). Generate a key for an "
@@ -16083,10 +16335,10 @@ msgid ""
 "grant this one access."
 msgstr ""
 "透過 GRAMPS_WEB_API_KEY 驗證的帳號沒有在伺服器上執行此操作的權限（HTTP 403 "
-"Forbidden）。請為具備足夠權限的帳號產生金鑰，或請伺服器管理員授予此帳號存取權"
-"。"
+"Forbidden）。請為具備足夠權限的帳號產生金鑰，或請伺服器管理員授予此帳號存取"
+"權。"
 
-#: GrampsWebApiDb/grampswebapidb.py:422
+#: GrampsWebApiDb/grampswebapidb.py:656
 #, python-format
 msgid ""
 "This Family Tree is named \"%(actual)s\", but GRAMPS_WEB_API_KEY currently "
@@ -16096,17 +16348,36 @@ msgid ""
 "that -- reusing this one would mix its existing local data with the other "
 "account's."
 msgstr ""
-"此家族樹名為 \"%(actual)s\"，但 GRAMPS_WEB_API_KEY 目前驗證的帳號是 \"%"
-"(expected)s\"。如果此家族樹是要與該帳號的資料保持一致，請將它重新命名為 \"%"
-"(expected_typeable)s\"（Family Trees -> Manage Family Trees）；或者開啟或建立"
-"名稱相同的家族樹——繼續使用此家族樹，會將其既有的本機資料與另一個帳號的資料混"
-"在一起。"
+"此家族樹名為 \"%(actual)s\"，但 GRAMPS_WEB_API_KEY 目前驗證的帳號是 "
+"\"%(expected)s\"。如果此家族樹是要與該帳號的資料保持一致，請將它重新命名為 "
+"\"%(expected_typeable)s\"（Family Trees -> Manage Family Trees）；或者開啟或"
+"建立名稱相同的家族樹——繼續使用此家族樹，會將其既有的本機資料與另一個帳號的資"
+"料混在一起。"
 
-#: GrampsWebApiDb/grampswebapidb.py:550
+#: GrampsWebApiDb/grampswebapidb.py:703
+#, python-format
+msgid ""
+"The account authenticating via GRAMPS_WEB_API_KEY is missing server "
+"permission(s) this addon requires: %(missing)s. Grant it at least the "
+"\"%(role)s\" role on the server (or ask an administrator to), then reopen "
+"this Family Tree. Opening it as-is would leave the local mirror silently "
+"incomplete or unable to save changes back."
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.py:741
+#, python-format
+msgid ""
+"This server runs Gramps %(actual)s, but this addon needs a server running "
+"Gramps %(required)s or newer: older servers serialize their transaction "
+"history in a format it cannot read. Upgrade the Gramps installation behind "
+"the Gramps Web API server (or ask its administrator to)."
+msgstr ""
+
+#: GrampsWebApiDb/grampswebapidb.py:1008
 msgid "Retry local change after server conflict"
 msgstr "伺服器衝突後重試本機變更"
 
-#: GrampsWebApiDb/grampswebapidb.py:668
+#: GrampsWebApiDb/grampswebapidb.py:1228
 msgid "Clear local mirror before full resync"
 msgstr "完整重新同步前清除本機鏡像"
 
@@ -16121,8 +16392,8 @@ msgid ""
 "matching, correctly-named GrampsWebApiDb Family Tree for it."
 msgstr ""
 "將 Gramps Web API 伺服器網址、使用者名稱及密碼轉換為 GrampsWebApiDb 使用的 "
-"GRAMPS_WEB_API_KEY 值，並可選擇為其建立名稱正確且相符的 GrampsWebApiDb 家族樹"
-"。"
+"GRAMPS_WEB_API_KEY 值，並可選擇為其建立名稱正確且相符的 GrampsWebApiDb 家族"
+"樹。"
 
 #: GrampsWebApiDb/mintapikeytool.py:141
 msgid "Server URL"
@@ -16217,7 +16488,8 @@ msgstr "正在查詢帳號身分…"
 msgid ""
 "A Family Tree named \"%s\" already exists. Open it from Family Trees -> "
 "Manage Family Trees instead of creating another one."
-msgstr "名為「%s」的家族樹已存在。請從 [家族樹] -> [管理家族樹] 開啟，無須另建一棵。"
+msgstr ""
+"名為「%s」的家族樹已存在。請從 [家族樹] -> [管理家族樹] 開啟，無須另建一棵。"
 
 #: GrampsWebApiDb/mintapikeytool.py:352
 #, python-format
@@ -16231,8 +16503,8 @@ msgid ""
 "to start syncing."
 msgstr "已建立家族樹「%s」。請從 [家族樹] -> [管理家族樹] 開啟以開始同步。"
 
-#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:204
-#: GrampsWebSync/grampswebsync.py:269
+#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:230
+#: GrampsWebSync/grampswebsync.py:295
 msgid "Gramps Web Sync"
 msgstr "Gramps Web Sync"
 
@@ -16240,19 +16512,19 @@ msgstr "Gramps Web Sync"
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "將本機資料庫與 Gramps Web 執行個體同步。"
 
-#: GrampsWebSync/grampswebsync.py:249
+#: GrampsWebSync/grampswebsync.py:275
 msgid "_Try again"
 msgstr "再試一次(_T)"
 
-#: GrampsWebSync/grampswebsync.py:250
+#: GrampsWebSync/grampswebsync.py:276
 msgid "C_onnect"
 msgstr "連線(_O)"
 
-#: GrampsWebSync/grampswebsync.py:345
+#: GrampsWebSync/grampswebsync.py:371
 msgid "Forget this server?"
 msgstr "要忘記這台伺服器嗎？"
 
-#: GrampsWebSync/grampswebsync.py:347
+#: GrampsWebSync/grampswebsync.py:373
 msgid ""
 "The address, user name and password stored for this server will be removed, "
 "along with the record of when this family tree last synchronized with it. "
@@ -16261,49 +16533,49 @@ msgstr ""
 "將移除此伺服器儲存的地址、使用者名稱及密碼，以及此家族樹上次與其同步的時間記"
 "錄。下次同步時會重新完整比對兩棵家族樹。"
 
-#: GrampsWebSync/grampswebsync.py:352
+#: GrampsWebSync/grampswebsync.py:378
 msgid "Forget"
 msgstr "移除"
 
-#: GrampsWebSync/grampswebsync.py:480
+#: GrampsWebSync/grampswebsync.py:508
 msgid ""
 "These credentials were last used with a different family tree. Check the "
 "server before continuing."
 msgstr "這組憑證上次用於另一棵家族樹。請先檢查伺服器再繼續。"
 
-#: GrampsWebSync/grampswebsync.py:556
+#: GrampsWebSync/grampswebsync.py:585
 msgid "Change server…"
 msgstr "變更伺服器…"
 
-#: GrampsWebSync/grampswebsync.py:591
+#: GrampsWebSync/grampswebsync.py:620
 msgid "Server URL:"
 msgstr "伺服器 URL："
 
-#: GrampsWebSync/grampswebsync.py:593 PhpGedView/phpgedview.glade:170
+#: GrampsWebSync/grampswebsync.py:622 PhpGedView/phpgedview.glade:170
 msgid "Username:"
 msgstr "使用者名稱："
 
-#: GrampsWebSync/grampswebsync.py:594 PhpGedView/phpgedview.glade:182
+#: GrampsWebSync/grampswebsync.py:623 PhpGedView/phpgedview.glade:182
 msgid "Password:"
 msgstr "密碼："
 
-#: GrampsWebSync/grampswebsync.py:598
+#: GrampsWebSync/grampswebsync.py:627
 msgid "Remember password"
 msgstr "記住密碼"
 
-#: GrampsWebSync/grampswebsync.py:610
+#: GrampsWebSync/grampswebsync.py:639
 msgid "Forget this server"
 msgstr "移除此伺服器"
 
-#: GrampsWebSync/grampswebsync.py:641
+#: GrampsWebSync/grampswebsync.py:670
 msgid "About this tool"
 msgstr "關於此工具"
 
-#: GrampsWebSync/grampswebsync.py:645
+#: GrampsWebSync/grampswebsync.py:674
 msgid "Open the online manual"
 msgstr "開啟線上手冊"
 
-#: GrampsWebSync/grampswebsync.py:658
+#: GrampsWebSync/grampswebsync.py:687
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
 "remote family tree served by Gramps Web.\n"
@@ -16320,32 +16592,32 @@ msgid ""
 msgstr ""
 "此工具可讓您將目前開啟的家族樹與由 Gramps Web 託管的遠端家族樹進行同步。\n"
 "\n"
-"此工具假設兩個家族樹互為衍生關係，亦即其中一個是由另一個匯出的 Gramps XML（"
-"非 GEDCOM！）所建立。\n"
+"此工具假設兩個家族樹互為衍生關係，亦即其中一個是由另一個匯出的 Gramps XML"
+"（非 GEDCOM！）所建立。\n"
 "\n"
 "同步成功後，兩個家族樹將完全相同。系統會依據時間戳記同步修改內容。在對本機或"
 "遠端家族樹進行任何變更前，都會提示您確認。\n"
 "\n"
 "若您想要合併兩個有顯著差異的家族樹並手動進行修改，請改用「匯入合併工具」。"
 
-#: GrampsWebSync/grampswebsync.py:729 HistContext/HistContext.py:289
+#: GrampsWebSync/grampswebsync.py:758 HistContext/HistContext.py:289
 #: HistContext/HistContext.py:333 HistContext/HistContext.py:420
 msgid "Error:"
 msgstr "錯誤："
 
-#: GrampsWebSync/grampswebsync.py:756 GrampsWebSync/grampswebsync.py:1012
+#: GrampsWebSync/grampswebsync.py:785 GrampsWebSync/grampswebsync.py:1065
 msgid "Warning:"
 msgstr "警告："
 
-#: GrampsWebSync/grampswebsync.py:901
+#: GrampsWebSync/grampswebsync.py:947
 msgid "Sync mode:"
 msgstr "同步模式："
 
-#: GrampsWebSync/grampswebsync.py:1077
+#: GrampsWebSync/grampswebsync.py:1129
 msgid "Synchronization complete"
 msgstr "同步完成"
 
-#: GrampsWebSync/grampswebsync.py:1084
+#: GrampsWebSync/grampswebsync.py:1136
 msgid "Synchronization failed"
 msgstr "同步失敗"
 
@@ -16453,8 +16725,8 @@ msgid ""
 "Gramps Web API %(major)s, so synchronizing with this server needs a newer "
 "version of Gramps."
 msgstr ""
-"此伺服器執行 Gramps Web API %(found)s。此版本的 Gramps 支援 Gramps Web API %"
-"(major)s，因此需要更新版本的 Gramps 才能與此伺服器同步。"
+"此伺服器執行 Gramps Web API %(found)s。此版本的 Gramps 支援 Gramps Web API "
+"%(major)s，因此需要更新版本的 Gramps 才能與此伺服器同步。"
 
 #: GrampsWebSync/presentation.py:250
 msgid ""
@@ -16711,53 +16983,211 @@ msgstr "Gram.py 指令碼"
 msgid "Run a special Gramps Python script"
 msgstr "執行特殊的 Gramps Python 指令碼"
 
-#: GrampyScript/GrampyScript.py:91
+#: GrampyScript/GrampyScript.py:88
 msgid "Load query from a .script file"
 msgstr "從 .script 檔案載入查詢"
 
-#: GrampyScript/GrampyScript.py:121
+#: GrampyScript/GrampyScript.py:149
 msgid "Save query to a .script file"
 msgstr "將查詢儲存為 .script 檔案"
 
-#: GrampyScript/GrampyScript.py:141
+#: GrampyScript/GrampyScript.py:169
 msgid "Download results as a CSV file"
 msgstr "將結果下載為 CSV 檔案"
 
-#: GrampyScript/GrampyScript.py:303
+#: GrampyScript/GrampyScript.py:336
 msgid "Open..."
 msgstr "開啟..."
 
-#: GrampyScript/GrampyScript.py:305
+#: GrampyScript/GrampyScript.py:338
 msgid "Save as..."
 msgstr "另存新檔..."
 
-#: GrampyScript/GrampyScript.py:319
+#: GrampyScript/GrampyScript.py:356
 msgid "Save as CSV"
 msgstr "另存為 CSV"
 
-#: GrampyScript/GrampyScript.py:320
+#: GrampyScript/GrampyScript.py:357
 msgid "Copy to clipboard"
 msgstr "複製到剪貼簿"
 
-#: GrampyScript/GrampyScript.py:395
-msgid "Chart"
-msgstr "圖表"
-
-#: GrampyScript/GrampyScript.py:400
+#: GrampyScript/GrampyScript.py:424
 msgid "Execute <Alt+Enter>"
 msgstr "執行 <Alt+Enter>"
 
-#: GrampyScript/GrampyScript.py:402
+#: GrampyScript/GrampyScript.py:426
 msgid "Execute the script"
 msgstr "執行指令稿"
 
-#: GrampyScript/GrampyScript.py:416
-msgid "Ready..."
-msgstr "就緒..."
+#: GrampyScript/GrampyScript.py:456
+msgid "Chart"
+msgstr "圖表"
 
-#: GrampyScript/GrampyScript.py:1028
+#: GrampyScript/GrampyScript.py:480 GrampyScript/GrampyScript.py:551
+msgid "Ready... (Tab for completions)"
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:505
+#, fuzzy
+#| msgid "No title"
+msgid "Untitled"
+msgstr "無標題"
+
+#: GrampyScript/GrampyScript.py:534
+msgid ""
+"If you continue without saving, the changes you have made to this script "
+"will be lost."
+msgstr ""
+
+#: GrampyScript/GrampyScript.py:1332
 msgid "Gram.py Script Edited Data"
 msgstr "Gram.py 指令碼編輯的資料"
+
+#: GrampyScript/script_descriptions.py:44
+#, fuzzy
+#| msgid "All Names of All People"
+msgid "List All People"
+msgstr "所有人物的全部姓名"
+
+#: GrampyScript/script_descriptions.py:46
+msgid ""
+"Iterate over every person in the database and show their Gramps ID, given "
+"name, surname, and gender in the results table."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:51
+#, fuzzy
+#| msgid "Family Surname"
+msgid "Filter By Surname"
+msgstr "家族姓氏"
+
+#: GrampyScript/script_descriptions.py:53
+msgid ""
+"List only the people whose surname matches a given value — a starting point "
+"for narrowing any report down by a condition."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:58 Overview/Overview.gpr.py:45
+msgid "Family Overview"
+msgstr "家庭總覽"
+
+#: GrampyScript/script_descriptions.py:60
+msgid ""
+"List every family together with the father, the mother, and how many "
+"children they have — a quick way to spot families that look incomplete."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:66
+msgid "Gender Breakdown (Pie Chart)"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:68
+msgid ""
+"Count how many people are male, female, or of unknown gender, then draw a "
+"pie chart of the totals. Check the Chart tab after running."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:74
+msgid "Age At Death Histogram"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:76
+msgid ""
+"For everyone with both a birth and a death event recorded, compute their age "
+"in whole years and draw a histogram of the distribution. Check the Chart tab "
+"after running."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:82
+msgid "Mark Unsourced People As Private"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:84
+msgid ""
+"Batch-edit example: find every person who has no citations attached and flag "
+"them as private, wrapped in begin_changes()/end_changes() so the edits "
+"happen inside a single, undoable transaction."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:91
+msgid "CSV-Ready People Report"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:93
+msgid ""
+"Build a simple tabular report — ID, name, gender, birth year — for every "
+"person. Once it runs, use Data > Save as CSV or Copy to clipboard to export "
+"the Table tab's contents."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:99
+#, fuzzy
+#| msgid "Active Person : "
+msgid "Active Person Summary"
+msgstr "目前人物： "
+
+#: GrampyScript/script_descriptions.py:101
+msgid ""
+"Show a compact family summary for the currently active person: their record, "
+"parents, spouse, and children."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:106
+msgid "Report On Selected People"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:108
+msgid ""
+"List just the people currently selected (highlighted) in the People view. "
+"Select some rows in the People view before running this script."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:114
+msgid "Find People Missing A Birth Date"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:116
+msgid ""
+"Data-quality check: list every person who has no recorded birth event, so "
+"you can prioritize research on those records."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:121
+msgid "Births Per Decade (Import Example)"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:123
+msgid ""
+"Counts births by decade, using a decade() function imported from "
+"script_helpers.py in this same folder — a template for sharing helper code "
+"between your own scripts with a plain 'import' statement."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:130
+#, fuzzy
+#| msgid "Custom \"test.xml\" file"
+msgid "Custom Filter Example"
+msgstr "自訂 \"test.xml\" 檔案"
+
+#: GrampyScript/script_descriptions.py:132
+msgid ""
+"Runs one of your own custom filters (from the Filters gramplet/editor) by "
+"name using custom_filter(). Change 'example filter' to the name of a filter "
+"you've already created; if the name doesn't match one, a warning shows up in "
+"the Output tab instead."
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:140
+msgid "Delete Unused Repositories (Delete Example)"
+msgstr ""
+
+#: GrampyScript/script_descriptions.py:142
+msgid ""
+"Demonstrates delete(): removes any Repository record that nothing else in "
+"the tree refers to. Most trees have no unused repositories, so this is "
+"unlikely to actually delete anything — it's meant to show the pattern, "
+"wrapped in begin_changes()/end_changes() as a single undoable transaction."
+msgstr ""
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -16788,7 +17218,7 @@ msgid "Generic (light)"
 msgstr "通用 (淺色)"
 
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
-#: GraphView/graphview.py:189
+#: GraphView/graphview.py:182
 msgid "Graph View"
 msgstr "關係圖檢視"
 
@@ -16796,203 +17226,203 @@ msgstr "關係圖檢視"
 msgid "Dynamic and interactive graph of relations"
 msgstr "動態互動式關係圖"
 
-#: GraphView/graphview.py:754
+#: GraphView/graphview.py:747
 msgid "Show IDs"
 msgstr "顯示 ID"
 
-#: GraphView/graphview.py:757
+#: GraphView/graphview.py:750
 msgid "Show avatars"
 msgstr "顯示頭像"
 
-#: GraphView/graphview.py:760 GraphView/graphview.py:3746
+#: GraphView/graphview.py:753 GraphView/graphview.py:3739
 msgid "Highlight the home person"
 msgstr "突顯首頁人物"
 
-#: GraphView/graphview.py:764 GraphView/graphview.py:3754
+#: GraphView/graphview.py:757 GraphView/graphview.py:3747
 msgid "Show full dates"
 msgstr "顯示完整日期"
 
-#: GraphView/graphview.py:768 GraphView/graphview.py:3762
+#: GraphView/graphview.py:761 GraphView/graphview.py:3755
 msgid "Show places"
 msgstr "顯示地點"
 
-#: GraphView/graphview.py:784
+#: GraphView/graphview.py:777
 msgid "Horizontal: Left to Right"
 msgstr "水平：由左至右"
 
-#: GraphView/graphview.py:784
+#: GraphView/graphview.py:777
 msgid "Horizontal: Right to Left"
 msgstr "水平：由右至左"
 
-#: GraphView/graphview.py:784
+#: GraphView/graphview.py:777
 msgid "Vertical: Bottom to Top"
 msgstr "垂直：由下至上"
 
-#: GraphView/graphview.py:784
+#: GraphView/graphview.py:777
 msgid "Vertical: Top to Bottom"
 msgstr "垂直：由上至下"
 
-#: GraphView/graphview.py:786
+#: GraphView/graphview.py:779
 msgid "Time Direction"
 msgstr "時間方向"
 
-#: GraphView/graphview.py:791
+#: GraphView/graphview.py:784
 msgid "Limit number of people displayed (use 0 for unlimited)"
 msgstr "限制顯示的人物數量（0 代表不限）"
 
-#: GraphView/graphview.py:812
+#: GraphView/graphview.py:805
 msgid "Person theme"
 msgstr "人物佈景主題"
 
-#: GraphView/graphview.py:817
+#: GraphView/graphview.py:810
 msgid "Path color to home person"
 msgstr "連往首頁人物的路徑色彩"
 
-#: GraphView/graphview.py:821
+#: GraphView/graphview.py:814
 msgid "Font:"
 msgstr "字型："
 
-#: GraphView/graphview.py:835
+#: GraphView/graphview.py:828
 msgid "Avatars style"
 msgstr "頭像樣式"
 
-#: GraphView/graphview.py:841
+#: GraphView/graphview.py:834
 msgid "PNG files"
 msgstr "PNG 檔案"
 
-#: GraphView/graphview.py:846
+#: GraphView/graphview.py:839
 msgid "Male avatar:"
 msgstr "男性頭像："
 
-#: GraphView/graphview.py:847
+#: GraphView/graphview.py:840
 msgid "Choose male avatar"
 msgstr "選擇男性頭像"
 
-#: GraphView/graphview.py:859
+#: GraphView/graphview.py:852
 msgid "Female avatar:"
 msgstr "女性頭像："
 
-#: GraphView/graphview.py:860
+#: GraphView/graphview.py:853
 msgid "Choose female avatar"
 msgstr "選擇女性頭像"
 
-#: GraphView/graphview.py:872
+#: GraphView/graphview.py:865
 msgid "Unknown avatar:"
 msgstr "性別不明頭像："
 
-#: GraphView/graphview.py:873
+#: GraphView/graphview.py:866
 msgid "Choose Unknown avatar"
 msgstr "選擇性別不明頭像"
 
-#: GraphView/graphview.py:885
+#: GraphView/graphview.py:878
 msgid "Other avatar:"
 msgstr "其他性別頭像："
 
-#: GraphView/graphview.py:886
+#: GraphView/graphview.py:879
 msgid "Choose Other avatar"
 msgstr "選擇其他性別頭像"
 
-#: GraphView/graphview.py:900
+#: GraphView/graphview.py:893
 msgid "Active person border size"
 msgstr "目前人物框線大小"
 
-#: GraphView/graphview.py:905
+#: GraphView/graphview.py:898
 msgid "Person border size"
 msgstr "人物邊框大小"
 
-#: GraphView/graphview.py:908
+#: GraphView/graphview.py:901
 msgid "Themes"
 msgstr "佈景主題"
 
-#: GraphView/graphview.py:921 GraphView/graphview.py:3780
+#: GraphView/graphview.py:914 GraphView/graphview.py:3773
 msgid "Show animation"
 msgstr "顯示動畫"
 
-#: GraphView/graphview.py:925
+#: GraphView/graphview.py:918
 msgid "Animation speed (1..5 and 5 is the slower)"
 msgstr "動畫速度 (1..5，5 最慢)"
 
-#: GraphView/graphview.py:929
+#: GraphView/graphview.py:922
 msgid "Animation count (0..8 use 0 to turn off)"
 msgstr "動畫次數（0 至 8；使用 0 關閉）"
 
-#: GraphView/graphview.py:938
+#: GraphView/graphview.py:931
 msgid "Animation"
 msgstr "動畫"
 
-#: GraphView/graphview.py:952
+#: GraphView/graphview.py:945
 msgid "Search in all database"
 msgstr "搜尋整個資料庫"
 
-#: GraphView/graphview.py:954
+#: GraphView/graphview.py:947
 msgid "Also apply search by all database."
 msgstr "也搜尋整個資料庫。"
 
-#: GraphView/graphview.py:957
+#: GraphView/graphview.py:950
 msgid "Show person images"
 msgstr "顯示人物圖片"
 
-#: GraphView/graphview.py:960
+#: GraphView/graphview.py:953
 msgid "Show persons thumbnails in search result list."
 msgstr "在搜尋結果清單中顯示人物縮圖。"
 
-#: GraphView/graphview.py:963 SearchGramplet/SearchGramplet.py:102
+#: GraphView/graphview.py:956 SearchGramplet/SearchGramplet.py:102
 msgid "Show bookmarked first"
 msgstr "優先顯示書籤人物"
 
-#: GraphView/graphview.py:966
+#: GraphView/graphview.py:959
 msgid "Show bookmarked persons first in search result list."
 msgstr "在搜尋結果清單中優先顯示已加入書籤的人物。"
 
-#: GraphView/graphview.py:999
+#: GraphView/graphview.py:992
 msgid "Select a dot file name"
 msgstr "選取 dot 檔名"
 
-#: GraphView/graphview.py:1109 LifeLineChartView/lifelinechartview.py:527
+#: GraphView/graphview.py:1102 LifeLineChartView/lifelinechartview.py:527
 msgid "Zoom to original"
 msgstr "縮放至原始大小"
 
-#: GraphView/graphview.py:1116 LifeLineChartView/lifelinechartview.py:534
+#: GraphView/graphview.py:1109 LifeLineChartView/lifelinechartview.py:534
 msgid "Zoom to best fit"
 msgstr "縮放至最適大小"
 
-#: GraphView/graphview.py:1123
+#: GraphView/graphview.py:1116
 msgid "Go to active person"
 msgstr "前往目前人物"
 
-#: GraphView/graphview.py:1128
+#: GraphView/graphview.py:1121
 msgid "Go to bookmark"
 msgstr "前往書籤"
 
-#: GraphView/graphview.py:1130
+#: GraphView/graphview.py:1123
 msgid "Center view on selected bookmark"
 msgstr "將檢視置中於選取的書籤"
 
-#: GraphView/graphview.py:1132
+#: GraphView/graphview.py:1125
 msgid "Bookmarks for current graph"
 msgstr "目前圖表的書籤"
 
-#: GraphView/graphview.py:1133
+#: GraphView/graphview.py:1126
 msgid "Other Bookmarks"
 msgstr "其他書籤"
 
-#: GraphView/graphview.py:1179
+#: GraphView/graphview.py:1172
 msgid "Vertical spacing between generations"
 msgstr "世代之間的垂直間距"
 
-#: GraphView/graphview.py:1184
+#: GraphView/graphview.py:1177
 msgid "Horizontal spacing between generations"
 msgstr "世代之間的水平間距"
 
-#: GraphView/graphview.py:1188
+#: GraphView/graphview.py:1181
 msgid "Spacings"
 msgstr "間距"
 
-#: GraphView/graphview.py:1193
+#: GraphView/graphview.py:1186
 msgid "All connected"
 msgstr "所有有連結的人物"
 
-#: GraphView/graphview.py:1195
+#: GraphView/graphview.py:1188
 msgid ""
 "Show all connected persons limited by generation restrictions.\n"
 "Works slow, so don't set large generation values."
@@ -17000,15 +17430,15 @@ msgstr ""
 "顯示世代限制範圍內所有有連結的人物。\n"
 "執行速度較慢，請勿設定過大的世代數。"
 
-#: GraphView/graphview.py:1337
+#: GraphView/graphview.py:1330
 msgid "Add active person"
 msgstr "加入目前人物"
 
-#: GraphView/graphview.py:1342
+#: GraphView/graphview.py:1335
 msgid "Call the bookmark editor"
 msgstr "開啟書籤編輯器"
 
-#: GraphView/graphview.py:1399
+#: GraphView/graphview.py:1392
 msgid ""
 "You don't have any bookmarks yet...\n"
 "Try to add some frequently used persons to speedup navigation."
@@ -17016,22 +17446,22 @@ msgstr ""
 "您還沒有任何書籤...\n"
 "試著加入一些常用人物，以加快導覽。"
 
-#: GraphView/graphview.py:1407
+#: GraphView/graphview.py:1400
 msgid "No bookmarks for this graph..."
 msgstr "此圖表沒有書籤..."
 
-#: GraphView/graphview.py:1412
+#: GraphView/graphview.py:1405
 msgid "No other bookmarks..."
 msgstr "沒有其他書籤..."
 
-#: GraphView/graphview.py:1417 GraphView/graphview.py:1419
+#: GraphView/graphview.py:1410 GraphView/graphview.py:1412
 #: GraphView/search_widget.py:233 GraphView/search_widget.py:252
 #: SearchGramplet/SearchGramplet.py:259 SearchGramplet/SearchGramplet.py:281
 #, python-format
 msgid "found: %s"
 msgstr "找到：%s"
 
-#: GraphView/graphview.py:1429
+#: GraphView/graphview.py:1422
 #, python-format
 msgid ""
 "Add active person to bookmarks\n"
@@ -17040,7 +17470,7 @@ msgstr ""
 "將目前人物加入書籤\n"
 "%s"
 
-#: GraphView/graphview.py:1516
+#: GraphView/graphview.py:1509
 #, python-format
 msgid ""
 "Person <b><i>%s</i></b> is not in the current view.\n"
@@ -17049,11 +17479,11 @@ msgstr ""
 "人物 <b><i>%s</i></b> 不在目前檢視中。\n"
 "要將其設為目前人物並重建檢視嗎？"
 
-#: GraphView/graphview.py:1519
+#: GraphView/graphview.py:1512
 msgid "Change active person?"
 msgstr "要變更目前人物嗎？"
 
-#: GraphView/graphview.py:2668
+#: GraphView/graphview.py:2661
 #, python-brace-format
 msgid ""
 "This graph would contain at least {people_count} people, which exceeds the "
@@ -17064,129 +17494,129 @@ msgstr ""
 "此圖至少會包含 {people_count} 個人物，超過 {people_limit} 人的上限。為維持效"
 "能，至少有 {people_missing} 人不會顯示。您可以在檢視設定中變更此上限。"
 
-#: GraphView/graphview.py:2678
+#: GraphView/graphview.py:2671
 msgid "Incomplete graph"
 msgstr "不完整的關係圖"
 
-#: GraphView/graphview.py:3047
+#: GraphView/graphview.py:3040
 msgid "Image on right side"
 msgstr "圖片置於右側"
 
-#: GraphView/graphview.py:3068
+#: GraphView/graphview.py:3061
 msgid "Image on left side"
 msgstr "左側圖片"
 
-#: GraphView/graphview.py:3168 GraphView/graphview.py:3169
-#: GraphView/graphview.py:3181 GraphView/graphview.py:3182
+#: GraphView/graphview.py:3161 GraphView/graphview.py:3162
+#: GraphView/graphview.py:3174 GraphView/graphview.py:3175
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
 #, python-format
 msgid "%s "
 msgstr "%s "
 
-#: GraphView/graphview.py:3405
+#: GraphView/graphview.py:3398
 msgid "<b>Tags:</b>"
 msgstr "<b>標籤：</b>"
 
-#: GraphView/graphview.py:3789
+#: GraphView/graphview.py:3782
 msgid "Lines type"
 msgstr "線條類型"
 
-#: GraphView/graphview.py:3793 NetworkChart/NetworkChart.py:1174
+#: GraphView/graphview.py:3786 NetworkChart/NetworkChart.py:1174
 #: NetworkChart/NetworkChart.py:1188
 msgid "Direct"
 msgstr "直線"
 
-#: GraphView/graphview.py:3801
+#: GraphView/graphview.py:3794
 msgid "Curves"
 msgstr "曲線"
 
-#: GraphView/graphview.py:3809
+#: GraphView/graphview.py:3802
 msgid "Ortho"
 msgstr "直角折線"
 
-#: GraphView/graphview.py:3885
+#: GraphView/graphview.py:3878
 msgid "No Events for this person"
 msgstr "此人物沒有事件"
 
-#: GraphView/graphview.py:3906
+#: GraphView/graphview.py:3899
 msgid "Select tags for person"
 msgstr "選取人物標籤"
 
-#: GraphView/graphview.py:3917
+#: GraphView/graphview.py:3910
 msgid "Add new family"
 msgstr "新增家庭"
 
-#: GraphView/graphview.py:4035
+#: GraphView/graphview.py:4028
 msgid "Add parents"
 msgstr "新增父母"
 
-#: GraphView/graphview.py:4058 QuiltView/QuiltView.py:1445
+#: GraphView/graphview.py:4051 QuiltView/QuiltView.py:1445
 msgid "Set as home person"
 msgstr "設為首頁人物"
 
-#: GraphView/graphview.py:4061
+#: GraphView/graphview.py:4054
 msgid "Show path to home person"
 msgstr "顯示前往首頁人物的路徑"
 
-#: GraphView/graphview.py:4067 GraphView/search_widget.py:286
+#: GraphView/graphview.py:4060 GraphView/search_widget.py:286
 #: GraphView/search_widget.py:364 SearchGramplet/SearchGramplet.py:637
 #: SearchGramplet/SearchGramplet.py:769
 msgid "Remove from bookmarks"
 msgstr "從書籤移除"
 
-#: GraphView/graphview.py:4070 GraphView/search_widget.py:294
+#: GraphView/graphview.py:4063 GraphView/search_widget.py:294
 #: GraphView/search_widget.py:377 SearchGramplet/SearchGramplet.py:645
 #: SearchGramplet/SearchGramplet.py:782
 msgid "Add to bookmarks"
 msgstr "加入書籤"
 
-#: GraphView/graphview.py:4171
+#: GraphView/graphview.py:4164
 msgid "No Events for this family"
 msgstr "此家庭沒有事件"
 
-#: GraphView/graphview.py:4192
+#: GraphView/graphview.py:4185
 msgid "Select tags for family"
 msgstr "選取家庭標籤"
 
-#: GraphView/graphview.py:4211
+#: GraphView/graphview.py:4204
 msgid "Add father"
 msgstr "新增父親"
 
-#: GraphView/graphview.py:4220
+#: GraphView/graphview.py:4213
 msgid "Add mother"
 msgstr "新增母親"
 
-#: GraphView/graphview.py:4323
+#: GraphView/graphview.py:4316
 msgid "About Graph View"
 msgstr "關於關係圖檢視"
 
-#: GraphView/graphview.py:4548 GraphView/graphview.py:4594
+#: GraphView/graphview.py:4541 GraphView/graphview.py:4587
 #: QuiltView/QuiltView.py:1601
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr "正在為人物 (%s) 新增標籤"
 
-#: GraphView/graphview.py:4553 GraphView/graphview.py:4605
+#: GraphView/graphview.py:4546 GraphView/graphview.py:4598
 #: QuiltView/QuiltView.py:1606
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "正在新增標籤至家庭 (%s)"
 
-#: GraphView/graphview.py:4679
+#: GraphView/graphview.py:4672
 #, python-format
 msgid "Deleting the person [%s] will remove it from the database."
 msgstr "刪除人物 [%s] 會將其從資料庫移除。"
 
-#: GraphView/graphview.py:4708
+#: GraphView/graphview.py:4701
 #, python-format
 msgid "Delete family [%s]?"
 msgstr "要刪除家庭 [%s] 嗎？"
 
-#: GraphView/graphview.py:4709
+#: GraphView/graphview.py:4702
 msgid "Deleting the family will remove it from the database."
 msgstr "刪除家庭會將其從資料庫移除。"
 
-#: GraphView/graphview.py:4720
+#: GraphView/graphview.py:4713
 #, python-format
 msgid "Delete Family [%s]"
 msgstr "刪除家庭 [%s]"
@@ -17638,8 +18068,8 @@ msgid ""
 "Copy the files to a correct directory or change the media path in the "
 "Preferences."
 msgstr ""
-"開啟的檔案使用媒體路徑 %s，與您要匯入的家族樹媒體路徑衝突。已保留原始媒體路徑"
-"。請將檔案複製至正確目錄，或在偏好設定中變更媒體路徑。"
+"開啟的檔案使用媒體路徑 %s，與您要匯入的家族樹媒體路徑衝突。已保留原始媒體路"
+"徑。請將檔案複製至正確目錄，或在偏好設定中變更媒體路徑。"
 
 #: ImportGramplet/ImportGramplet.py:172
 msgid ""
@@ -17687,7 +18117,8 @@ msgstr "物件名稱／說明"
 msgid ""
 "Data item details, showing the current treeitem, imported tree item, and "
 "result (when chosen)."
-msgstr "資料項目詳細資訊，顯示目前家族樹項目、匯入的家族樹項目，以及選取後的結果。"
+msgstr ""
+"資料項目詳細資訊，顯示目前家族樹項目、匯入的家族樹項目，以及選取後的結果。"
 
 #: ImportMerge/importmerge.glade:248
 msgid "Object and item"
@@ -17835,8 +18266,8 @@ msgid ""
 "This item will be merged, saving data from your tree.  Any referenced items "
 "were also marked for merging or adding."
 msgstr ""
-"此項目將會合併，並保留您家族樹中的資料。所有被參照的項目也已標記為合併或加入"
-"。"
+"此項目將會合併，並保留您家族樹中的資料。所有被參照的項目也已標記為合併或加"
+"入。"
 
 #: ImportMerge/importmerge.py:127
 msgid ""
@@ -18328,8 +18759,8 @@ msgid ""
 "simple ancestor chart. If this is active, then every individual only appears "
 "once."
 msgstr ""
-"譜系重疊可能使同一人物在簡單的祖先圖中出現多次。啟用後，每個人物只會出現一次"
-"。"
+"譜系重疊可能使同一人物在簡單的祖先圖中出現多次。啟用後，每個人物只會出現一"
+"次。"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:102
 msgid ""
@@ -18440,10 +18871,6 @@ msgstr "隱藏人物"
 #: LifeLineChartView/lifelinechart.py:2597
 msgid "Show person"
 msgstr "顯示人物"
-
-#: LifeLineChartView/lifelinechart.py:2622
-msgid "Show siblings"
-msgstr "顯示兄弟姊妹"
 
 #: LifeLineChartView/lifelinechart.py:2627
 msgid "Hide siblings"
@@ -18849,33 +19276,28 @@ msgstr "National Archive"
 msgid "Who (re)searches who?"
 msgstr "誰在尋找／研究誰？"
 
-#: NameSuite/.venv/lib/python3.12/site-packages/mypy/main.py:450
-#, python-format
-msgid "%(prog)s: error: %(message)s\n"
-msgstr "%(prog)s：錯誤：%(message)s\n"
-
-#: NameSuite/name_processor.gpr.py:6
+#: NameSuite/name_processor.gpr.py:26
 msgid "Audit Given and Patronymic Names"
 msgstr "稽核名字與父名"
 
-#: NameSuite/name_processor.gpr.py:9
+#: NameSuite/name_processor.gpr.py:29
 msgid ""
 "Tools to rename given name, audit and infer patronymic (East Slavic) names."
 msgstr "用於重新命名名字、稽核及推算東斯拉夫父名的工具。"
 
-#: NameSuite/name_processor.gpr.py:25 NameSuite/name_processor.gpr.py:37
+#: NameSuite/name_processor.gpr.py:45 NameSuite/name_processor.gpr.py:57
 msgid "Patronymic Suggestion"
 msgstr "父名建議"
 
-#: NameSuite/name_processor.gpr.py:27
+#: NameSuite/name_processor.gpr.py:47
 msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
 msgstr "在瀏覽人物時，即時建議東斯拉夫父名。"
 
-#: NameSuite/name_processor/views/base_tab.py:150
+#: NameSuite/name_processor/views/base_tab.py:164
 msgid "Use"
 msgstr "使用"
 
-#: NameSuite/name_processor/views/gramplet.py:32
+#: NameSuite/name_processor/views/gramplet.py:45
 #, python-brace-format
 msgid ""
 "Missing Patronymic Detected.\n"
@@ -18886,179 +19308,179 @@ msgstr ""
 "建議：{0}\n"
 "依據父親：{1}"
 
-#: NameSuite/name_processor/views/gramplet.py:34
+#: NameSuite/name_processor/views/gramplet.py:47
 msgid "Navigate to an individual to check patronymic status."
 msgstr "前往人物以檢查父名狀態。"
 
-#: NameSuite/name_processor/views/gramplet.py:35
+#: NameSuite/name_processor/views/gramplet.py:48
 msgid "No active person selected."
 msgstr "未選取目前人物。"
 
-#: NameSuite/name_processor/views/gramplet.py:37
+#: NameSuite/name_processor/views/gramplet.py:50
 msgid ""
 "Patronymic inference can't be inferred for non-binary or unknown genders."
 msgstr "無法為非二元或不明性別推算父名。"
 
-#: NameSuite/name_processor/views/gramplet.py:40
+#: NameSuite/name_processor/views/gramplet.py:53
 msgid "Individual already has a recorded patronymic."
 msgstr "此人物已有父名記錄。"
 
-#: NameSuite/name_processor/views/gramplet.py:43
+#: NameSuite/name_processor/views/gramplet.py:56
 msgid "No attached father found in database family records."
 msgstr "在資料庫家庭記錄中找不到關聯的父親。"
 
-#: NameSuite/name_processor/views/gramplet.py:46
+#: NameSuite/name_processor/views/gramplet.py:59
 msgid "Father lacks a recorded first name."
 msgstr "父親沒有名字記錄。"
 
-#: NameSuite/name_processor/views/gramplet.py:49
+#: NameSuite/name_processor/views/gramplet.py:62
 msgid "Could not generate valid morphology patterns."
 msgstr "無法產生有效的詞形變化規則。"
 
-#: NameSuite/name_processor/views/gramplet.py:51
+#: NameSuite/name_processor/views/gramplet.py:64
 msgid "Patronymic applied successfully!"
 msgstr "已成功套用父名！"
 
-#: NameSuite/name_processor/views/gramplet.py:77
+#: NameSuite/name_processor/views/gramplet.py:90
 msgid "Apply Suggestion"
 msgstr "套用建議"
 
-#: NameSuite/name_processor/views/tool.py:92
+#: NameSuite/name_processor/views/tool.py:105
 msgid "Infer East Slavic Patronymics"
 msgstr "推算東斯拉夫父名"
 
-#: NameSuite/name_processor/views/tool.py:112
+#: NameSuite/name_processor/views/tool.py:125
 msgid "Rename Given Names"
 msgstr "重新命名名字"
 
-#: NameSuite/name_processor/views/tool.py:115
+#: NameSuite/name_processor/views/tool.py:128
 msgid "Audit Patronymics"
 msgstr "稽核父名"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:68
+#: NameSuite/name_processor/views/tool_audit_tab.py:80
 msgid "Auditing Settings"
 msgstr "稽核設定"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:76
+#: NameSuite/name_processor/views/tool_audit_tab.py:88
 msgid "All Records"
 msgstr "所有紀錄"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:77
+#: NameSuite/name_processor/views/tool_audit_tab.py:89
 msgid "Males Only"
 msgstr "僅男性"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:78
+#: NameSuite/name_processor/views/tool_audit_tab.py:90
 msgid "Females Only"
 msgstr "僅女性"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:82
+#: NameSuite/name_processor/views/tool_audit_tab.py:94
 msgid "Configure Rules..."
 msgstr "設定規則..."
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:87
+#: NameSuite/name_processor/views/tool_audit_tab.py:99
 msgid "Match Pre-Revolutionary Orthography"
 msgstr "比對革命前拼字法"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:95
+#: NameSuite/name_processor/views/tool_audit_tab.py:107
 msgid "Audit Database"
 msgstr "稽核資料庫"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:117
+#: NameSuite/name_processor/views/tool_audit_tab.py:129
 msgid "Select All Safe Corrections"
 msgstr "選取所有安全的修正"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:122
-#: NameSuite/name_processor/views/tool_rename_tab.py:116
+#: NameSuite/name_processor/views/tool_audit_tab.py:134
+#: NameSuite/name_processor/views/tool_rename_tab.py:128
 msgid "Apply Selected Corrections"
 msgstr "套用選取的修正"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:162
+#: NameSuite/name_processor/views/tool_audit_tab.py:174
 msgid "Configure Rules"
 msgstr "設定規則"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:186
-#: NameSuite/name_processor/views/tool_rename_tab.py:156
+#: NameSuite/name_processor/views/tool_audit_tab.py:198
+#: NameSuite/name_processor/views/tool_rename_tab.py:168
 msgid "Individual"
 msgstr "人物"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:190
-#: NameSuite/name_processor/views/tool_rename_tab.py:158
+#: NameSuite/name_processor/views/tool_audit_tab.py:202
+#: NameSuite/name_processor/views/tool_rename_tab.py:170
 msgid "Current"
 msgstr "目前值"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:193
+#: NameSuite/name_processor/views/tool_audit_tab.py:205
 msgid "Correction"
 msgstr "修正值"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:200
+#: NameSuite/name_processor/views/tool_audit_tab.py:212
 msgid "Conf"
 msgstr "信心度"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:201
+#: NameSuite/name_processor/views/tool_audit_tab.py:213
 msgid "Ref Year"
 msgstr "參考年份"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:204
+#: NameSuite/name_processor/views/tool_audit_tab.py:216
 msgid "Explanation"
 msgstr "說明"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:243
+#: NameSuite/name_processor/views/tool_audit_tab.py:255
 msgid "Audit Complete!"
 msgstr "稽核完成！"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:248
+#: NameSuite/name_processor/views/tool_audit_tab.py:260
 msgid "No Results"
 msgstr "無結果"
 
-#: NameSuite/name_processor/views/tool_audit_tab.py:248
+#: NameSuite/name_processor/views/tool_audit_tab.py:260
 msgid "No issues found."
 msgstr "未發現問題。"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:63
+#: NameSuite/name_processor/views/tool_rename_tab.py:75
 msgid "Search and Replace Options"
 msgstr "搜尋與取代選項"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:70
+#: NameSuite/name_processor/views/tool_rename_tab.py:82
 msgid "Source Name:"
 msgstr "來源名字："
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:72
+#: NameSuite/name_processor/views/tool_rename_tab.py:84
 msgid "e.g. Иоанн"
 msgstr "例如 Иоанн"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:75
+#: NameSuite/name_processor/views/tool_rename_tab.py:87
 msgid "Target Name:"
 msgstr "目標名稱："
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:77
+#: NameSuite/name_processor/views/tool_rename_tab.py:89
 msgid "e.g. Иван"
 msgstr "例如 Иван"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:80
+#: NameSuite/name_processor/views/tool_rename_tab.py:92
 msgid "Match Mode:"
 msgstr "比對模式："
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:82
+#: NameSuite/name_processor/views/tool_rename_tab.py:94
 msgid "Exact Match"
 msgstr "完全符合"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:83
+#: NameSuite/name_processor/views/tool_rename_tab.py:95
 msgid "Substring"
 msgstr "子字串"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:84
+#: NameSuite/name_processor/views/tool_rename_tab.py:96
 msgid "Regular Expression"
 msgstr "正規表示式"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:88
+#: NameSuite/name_processor/views/tool_rename_tab.py:100
 msgid "Scan for Names"
 msgstr "掃描名字"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:93
+#: NameSuite/name_processor/views/tool_rename_tab.py:105
 msgid "Preserve original name as alternative"
 msgstr "將原始名字保留為別名"
 
-#: NameSuite/name_processor/views/tool_rename_tab.py:160
+#: NameSuite/name_processor/views/tool_rename_tab.py:172
 msgid "Proposed"
 msgstr "建議值"
 
@@ -19731,6 +20153,7 @@ msgid "Percent"
 msgstr "百分比"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:65
+#, python-brace-format
 msgid ""
 "There were {} of {} ancestors ({}) found.\n"
 "Only individual ancestors were counted. Duplicates caused by pedigree "
@@ -19783,10 +20206,6 @@ msgstr "顯示人物事件總覽的 Gramplet"
 msgid "Overview"
 msgstr "總覽"
 
-#: Overview/Overview.gpr.py:45
-msgid "Family Overview"
-msgstr "家庭總覽"
-
 #: Overview/Overview.gpr.py:46
 msgid "Gramplet showing an overview of events for a family"
 msgstr "顯示家庭事件總覽的 Gramplet"
@@ -19802,11 +20221,11 @@ msgid ""
 "charts."
 msgstr "產生可填寫的空白 PDF 表單：人口普查／事件表單或 Ahnentafel 譜系圖。"
 
-#: PDFForms/PDFForms.gpr.py:46
+#: PDFForms/PDFForms.gpr.py:47
 msgid "Import Fillable PDF Forms"
 msgstr "匯入可填寫的 PDF 表單"
 
-#: PDFForms/PDFForms.gpr.py:48
+#: PDFForms/PDFForms.gpr.py:49
 msgid ""
 "Import genealogy data from a PDF form. Send the PDF template to others to "
 "fill out and return."
@@ -20621,7 +21040,8 @@ msgstr ""
 msgid ""
 "Checking the 'Populated' checkbox causes the GeoNames search to include "
 "'Populted places', places where people live and work."
-msgstr "勾選 [聚居地] 方塊後，GeoNames 會搜尋「聚居地」，也就是人們居住及工作的地點。"
+msgstr ""
+"勾選 [聚居地] 方塊後，GeoNames 會搜尋「聚居地」，也就是人們居住及工作的地點。"
 
 #: PlaceCleanup/placecleanup.glade:1116
 msgid "Populated"
@@ -20640,7 +21060,8 @@ msgid ""
 "Checking the 'Spot' checkbox cause the GeoNames search to include a wide "
 "variety of other places in the search (churches, burial grounds, buildings "
 "etc.)."
-msgstr "勾選 [地點] 方塊後，GeoNames 會搜尋各種其他地點 (教堂、墓地、建築物等)。"
+msgstr ""
+"勾選 [地點] 方塊後，GeoNames 會搜尋各種其他地點 (教堂、墓地、建築物等)。"
 
 #: PlaceCleanup/placecleanup.glade:1160
 msgid "Admin"
@@ -20819,176 +21240,176 @@ msgstr "PlaceCompletion 無法建立 %s %s"
 msgid "Places tool"
 msgstr "地點工具"
 
-#: PlaceCompletion/PlaceCompletion.py:408
+#: PlaceCompletion/PlaceCompletion.py:410
 msgid "Missing regex groups in match lat/lon"
 msgstr "比對緯度／經度時缺少正規表示式群組"
 
-#: PlaceCompletion/PlaceCompletion.py:409
+#: PlaceCompletion/PlaceCompletion.py:412
 #, python-format
 msgid ""
 "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
 msgstr "經緯度比對必須包含正規表示式群組 %(lat)s 及 %(lon)s。正在結束"
 
-#: PlaceCompletion/PlaceCompletion.py:419
+#: PlaceCompletion/PlaceCompletion.py:424
 msgid "Non valid regex for match lat/lon"
 msgstr "比對緯度／經度的正規表示式無效"
 
-#: PlaceCompletion/PlaceCompletion.py:420
+#: PlaceCompletion/PlaceCompletion.py:425
 msgid "Non valid regular expression given to find lat/lon. Quiting."
 msgstr "用於比對緯度／經度的正規表示式無效，正在結束。"
 
-#: PlaceCompletion/PlaceCompletion.py:479
+#: PlaceCompletion/PlaceCompletion.py:484
 msgid "Finding Places and appropriate changes"
 msgstr "正在尋找地點及適當的變更"
 
-#: PlaceCompletion/PlaceCompletion.py:481
+#: PlaceCompletion/PlaceCompletion.py:486
 msgid "Filtering"
 msgstr "正在篩選"
 
-#: PlaceCompletion/PlaceCompletion.py:491
+#: PlaceCompletion/PlaceCompletion.py:496
 msgid "Loading lat/lon file in Memory..."
 msgstr "正在將 lat/lon 檔案載入記憶體…"
 
-#: PlaceCompletion/PlaceCompletion.py:497
+#: PlaceCompletion/PlaceCompletion.py:502
 msgid "Examining places"
 msgstr "正在檢查地點"
 
-#: PlaceCompletion/PlaceCompletion.py:685
+#: PlaceCompletion/PlaceCompletion.py:690
 msgid "Set Tag"
 msgstr "設定標籤"
 
-#: PlaceCompletion/PlaceCompletion.py:687
+#: PlaceCompletion/PlaceCompletion.py:692
 msgid "Doing Place changes"
 msgstr "正在變更地點"
 
-#: PlaceCompletion/PlaceCompletion.py:731
+#: PlaceCompletion/PlaceCompletion.py:736
 msgid "No place record was modified."
 msgstr "未修改任何地點記錄。"
 
-#: PlaceCompletion/PlaceCompletion.py:733
+#: PlaceCompletion/PlaceCompletion.py:738
 msgid "1 place record was modified."
 msgstr "已修改 1 筆地點記錄。"
 
-#: PlaceCompletion/PlaceCompletion.py:735
+#: PlaceCompletion/PlaceCompletion.py:740
 #, python-format
 msgid "%d place records were modified."
 msgstr "已修改 %d 筆地點記錄。"
 
-#: PlaceCompletion/PlaceCompletion.py:736
+#: PlaceCompletion/PlaceCompletion.py:741
 msgid "Change places"
 msgstr "變更地點"
 
-#: PlaceCompletion/PlaceCompletion.py:809
+#: PlaceCompletion/PlaceCompletion.py:814
 msgid "The selected file is a directory, not a file."
 msgstr "選取的項目是目錄，不是檔案。"
 
-#: PlaceCompletion/PlaceCompletion.py:820
+#: PlaceCompletion/PlaceCompletion.py:825
 msgid "The file you want to access is not a regular file."
 msgstr "您要存取的檔案不是一般檔案。"
 
-#: PlaceCompletion/PlaceCompletion.py:826
+#: PlaceCompletion/PlaceCompletion.py:831
 msgid "The file does not exist."
 msgstr "檔案不存在。"
 
-#: PlaceCompletion/PlaceCompletion.py:858
+#: PlaceCompletion/PlaceCompletion.py:863
 msgid "Problem reading file"
 msgstr "讀取檔案時發生問題"
 
-#: PlaceCompletion/PlaceCompletion.py:970
-#: PlaceCompletion/PlaceCompletion.py:982
+#: PlaceCompletion/PlaceCompletion.py:975
+#: PlaceCompletion/PlaceCompletion.py:987
 #, python-format
 msgid "invalid lat or lon value, %(lat)s, %(lon)s"
 msgstr "緯度或經度值無效：%(lat)s、%(lon)s"
 
-#: PlaceCompletion/PlaceCompletion.py:1135
+#: PlaceCompletion/PlaceCompletion.py:1140
 msgid "No lat/lon conversion"
 msgstr "不轉換經緯度"
 
-#: PlaceCompletion/PlaceCompletion.py:1136
+#: PlaceCompletion/PlaceCompletion.py:1141
 msgid "All in degree notation"
 msgstr "全部使用度數表示"
 
-#: PlaceCompletion/PlaceCompletion.py:1137
+#: PlaceCompletion/PlaceCompletion.py:1142
 msgid "All in decimal notation"
 msgstr "全部採用十進位表示法"
 
-#: PlaceCompletion/PlaceCompletion.py:1138
+#: PlaceCompletion/PlaceCompletion.py:1143
 msgid "Correct -50° in 50°S"
 msgstr "將 -50° 修正為 50°S"
 
-#: PlaceCompletion/PlaceCompletion.py:1142
+#: PlaceCompletion/PlaceCompletion.py:1147
 msgid "No changes"
 msgstr "沒有變更"
 
-#: PlaceCompletion/PlaceCompletion.py:1143
+#: PlaceCompletion/PlaceCompletion.py:1148
 msgid "City[, State]"
 msgstr "城市[, 州]"
 
-#: PlaceCompletion/PlaceCompletion.py:1145
+#: PlaceCompletion/PlaceCompletion.py:1150
 msgid "City,PostalCode,Country"
 msgstr "City,PostalCode,Country"
 
-#: PlaceCompletion/PlaceCompletion.py:1147
+#: PlaceCompletion/PlaceCompletion.py:1152
 msgid "City[(Street;Locality;Parish)],PostalCode,Country"
 msgstr "城市[(街道;地區;堂區)],郵遞區號,國家"
 
-#: PlaceCompletion/PlaceCompletion.py:1149
+#: PlaceCompletion/PlaceCompletion.py:1154
 msgid "TitleStart [, City] [, State]"
 msgstr "標題開頭 [, 城市] [, 州]"
 
-#: PlaceCompletion/PlaceCompletion.py:1151
+#: PlaceCompletion/PlaceCompletion.py:1156
 msgid "TitleStart [, City] [, County] [, State] [, Country]"
 msgstr "TitleStart [, City] [, County] [, State] [, Country]"
 
-#: PlaceCompletion/PlaceCompletion.py:1153
+#: PlaceCompletion/PlaceCompletion.py:1158
 msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
 msgstr "標題開頭 [, 城市] [, 郵遞區號] [, 郡] [, 州] [, 國家]"
 
-#: PlaceCompletion/PlaceCompletion.py:1177
+#: PlaceCompletion/PlaceCompletion.py:1182
 msgid "Don't search"
 msgstr "不要搜尋"
 
-#: PlaceCompletion/PlaceCompletion.py:1180
+#: PlaceCompletion/PlaceCompletion.py:1185
 msgid "GeoNames country file, city search"
 msgstr "GeoNames 國家檔案，城市搜尋"
 
-#: PlaceCompletion/PlaceCompletion.py:1185
+#: PlaceCompletion/PlaceCompletion.py:1190
 msgid "GeoNames country file, city localized variants search"
 msgstr "GeoNames 國家檔案，城市在地化變體搜尋"
 
-#: PlaceCompletion/PlaceCompletion.py:1190
+#: PlaceCompletion/PlaceCompletion.py:1195
 msgid "GeoNames country file, county/city search"
 msgstr "GeoNames 國家檔案，郡／城市搜尋"
 
-#: PlaceCompletion/PlaceCompletion.py:1202
+#: PlaceCompletion/PlaceCompletion.py:1207
 msgid "GeoNames country file, title begin, general search"
 msgstr "GeoNames 國家檔案，標題開頭，一般搜尋"
 
-#: PlaceCompletion/PlaceCompletion.py:1207
+#: PlaceCompletion/PlaceCompletion.py:1212
 msgid "GeoNames USA state file, city search"
 msgstr "GeoNames 美國州別檔案，城市搜尋"
 
-#: PlaceCompletion/PlaceCompletion.py:1221
+#: PlaceCompletion/PlaceCompletion.py:1226
 msgid "GNS Geonet country file, city search"
 msgstr "GNS Geonet 國家檔案，城市搜尋"
 
-#: PlaceCompletion/PlaceCompletion.py:1228
+#: PlaceCompletion/PlaceCompletion.py:1233
 msgid "GNS Geonet country file, county/city search"
 msgstr "GNS Geonet 國家檔案，郡／城市搜尋"
 
-#: PlaceCompletion/PlaceCompletion.py:1236
+#: PlaceCompletion/PlaceCompletion.py:1241
 msgid "GNS Geonet country file, title begin, general search"
 msgstr "GNS Geonet 國家檔案，標題開頭，一般搜尋"
 
-#: PlaceCompletion/PlaceCompletion.py:1244
+#: PlaceCompletion/PlaceCompletion.py:1249
 msgid "Wikipedia CSV Dump"
 msgstr "Wikipedia CSV 傾印檔"
 
-#: PlaceCompletion/PlaceCompletion.py:1332
+#: PlaceCompletion/PlaceCompletion.py:1337
 msgid "All Places"
 msgstr "所有地點"
 
-#: PlaceCompletion/PlaceCompletion.py:1335
+#: PlaceCompletion/PlaceCompletion.py:1340
 msgid "No Latitude/Longitude given"
 msgstr "未提供緯度／經度"
 
@@ -21068,13 +21489,14 @@ msgstr ""
 "或定義簡單的\n"
 "標題格式："
 
-#: PlaceCompletion/placecompletion.glade:730
+#: PlaceCompletion/placecompletion.glade:739
 msgid ""
 "Available variables: city, street, locality, parish, county, state, country, "
 "postal_code"
-msgstr "可用變數：city、street、locality、parish、county、state、country、postal_code"
+msgstr ""
+"可用變數：city、street、locality、parish、county、state、country、postal_code"
 
-#: PlaceCompletion/placecompletion.glade:820
+#: PlaceCompletion/placecompletion.glade:829
 msgid ""
 "Delete to delete a row, Double-click on the row to edit place with changes "
 "pre-entered, \n"
@@ -21121,44 +21543,44 @@ msgstr "簡化地點座標設定的 Gramplet"
 msgid "Place Coordinates"
 msgstr "地點座標"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:231
 msgid "The place was not found. You may clarify the search keywords."
 msgstr "找不到這個地點。您可以調整搜尋關鍵字。"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:219
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:247
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:235
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:266
 msgid "Failed to search for the coordinates due to some unexpected error."
 msgstr "搜尋座標時發生非預期的錯誤，搜尋失敗。"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:263
 msgid "The place was not found."
 msgstr "找不到該地點。"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:288
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:319
 msgid "The place was not identified."
 msgstr "無法辨識地點。"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:290
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:321
 msgid "Coordinates were not given."
 msgstr "未提供座標。"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:286
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:305
 msgid "Failed to interpret the input format."
 msgstr "無法解讀輸入格式。"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:351
 #, python-brace-format
 msgid "DB entry [{id}] {name}:"
 msgstr "資料庫項目 [{id}] {name}："
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:356
 #: PlaceCoordinateGramplet/placecoordinate.glade:132
 msgid "Nothing has been searched yet"
 msgstr "尚未搜尋任何內容"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:378
 msgid "No place is active"
 msgstr "目前未選取地點"
 
@@ -21284,6 +21706,7 @@ msgid "Setting place properties"
 msgstr "正在設定地點屬性"
 
 #: PlaceUpdate/PlaceUpdate.py:294
+#, python-brace-format
 msgid "Regex operation failed: {}"
 msgstr "正規表示式操作失敗：{}"
 
@@ -21605,7 +22028,8 @@ msgstr ""
 msgid ""
 "<i>Installations of the following packages are <b>RECOMMENDED</b> if you "
 "intend to translate or do any development (addons etc.)</i>:\n"
-msgstr "<i>若您打算翻譯或進行任何開發 (附加元件等)，<b>建議</b>安裝以下套件</i>：\n"
+msgstr ""
+"<i>若您打算翻譯或進行任何開發 (附加元件等)，<b>建議</b>安裝以下套件</i>：\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:277
 msgid ""
@@ -21680,10 +22104,10 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
-"<i><a href=\"https://gramps-project.org/wiki/"
-"index.php?title=How_to_make_a_backup\">備份為 Gramps XML</a> 在近期版本的 "
-"Gramps 中，您可以在「家族樹」選單找到「製作備份...」；若沒有此選項，請使用同"
-"一選單中的「匯出...」，並取消勾選匯出助理中的隱私選項，以匯出所有資料。</i>\n"
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">備份為 Gramps XML</a> 在近期版本的 Gramps 中，您"
+"可以在「家族樹」選單找到「製作備份...」；若沒有此選項，請使用同一選單中的「匯"
+"出...」，並取消勾選匯出助理中的隱私選項，以匯出所有資料。</i>\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:336
@@ -21878,14 +22302,16 @@ msgstr " 或更新版本已安裝。) (enchant 模組： "
 msgid ""
 " • rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
 "Windows)"
-msgstr " • rcs %s 待確認 (通過：已安裝 %s 或更新版本。非 Microsoft Windows 系統適用)"
+msgstr ""
+" • rcs %s 待確認 (通過：已安裝 %s 或更新版本。非 Microsoft Windows 系統適用)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1209
 #, python-format
 msgid ""
 " • rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
 "Windows)"
-msgstr " • rcs %s 待確認 (需要安裝 %s 或更新版本。非 Microsoft Windows 系統適用)"
+msgstr ""
+" • rcs %s 待確認 (需要安裝 %s 或更新版本。非 Microsoft Windows 系統適用)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1326
 msgid "exiv2 executable not installed, can't retrieve libexiv2 version."
@@ -21989,10 +22415,10 @@ msgid ""
 "_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
 "a></b></u>\n"
 msgstr ""
-"<u><b><a href=\"https://gramps-project.org/wiki/"
-"index.php?title=Gramps_5.0_Wiki_Manual_-"
-"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">地區設定：</a></b>"
-"</u>\n"
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">地區設定：</a></"
+"b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2096
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2097
@@ -22124,8 +22550,8 @@ msgid ""
 "You have %(filter)d filtered people, %(count)d people shown on the tree and "
 "%(total)d people in your database."
 msgstr ""
-"目前有 %(filter)d 位經篩選的人物，樹狀圖顯示 %(count)d 位人物，資料庫中共有 %"
-"(total)d 位人物。"
+"目前有 %(filter)d 位經篩選的人物，樹狀圖顯示 %(count)d 位人物，資料庫中共有 "
+"%(total)d 位人物。"
 
 #: QuiltView/QuiltView.py:662
 msgid "Loading individuals"
@@ -22481,6 +22907,7 @@ msgid "removed"
 msgstr "已移除"
 
 #: RemoveTagTool/RemoveTagTool.py:269
+#, python-brace-format
 msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr "標籤「{}」的操作為「{}」，共處理 {} 個 {} 物件。\n"
 
@@ -23215,7 +23642,8 @@ msgstr "在世"
 msgid ""
 "witness1, name, given, age, occupation; witness2, name, given, age, "
 "occupation, etc ..."
-msgstr "見證人 1、姓氏、名字、年齡、職業；見證人 2、姓氏、名字、年齡、職業等等 ..."
+msgstr ""
+"見證人 1、姓氏、名字、年齡、職業；見證人 2、姓氏、名字、年齡、職業等等 ..."
 
 #: SourceIndex/index.glade:7
 msgid "index"
@@ -23577,13 +24005,49 @@ msgstr "欄位標題使用的樣式。"
 msgid "The style used for event and person details."
 msgstr "事件與人物詳細資訊使用的樣式。"
 
-#: Sqlite/ExportSql.py:1346
+#: Sqlite/ExportSql.py:1720
+#, fuzzy
+#| msgid "January"
+msgid "January 1"
+msgstr "一月"
+
+#: Sqlite/ExportSql.py:1721
+#, fuzzy
+#| msgid "March"
+msgid "March 1"
+msgstr "三月"
+
+#: Sqlite/ExportSql.py:1722
+#, fuzzy
+#| msgid "March"
+msgid "March 25"
+msgstr "三月"
+
+#: Sqlite/ExportSql.py:1723
+#, fuzzy
+#| msgid "September"
+msgid "September 1"
+msgstr "九月"
+
+#: Sqlite/ExportSql.py:1749
+#, fuzzy
+#| msgid "Widowed"
+msgid "Flowed"
+msgstr "喪偶"
+
+#: Sqlite/ExportSql.py:1750
+#, fuzzy
+#| msgid "PS format"
+msgid "Preformatted"
+msgstr "PS 格式"
+
+#: Sqlite/ExportSql.py:1953
 #, python-format
 msgid "Export Complete: %d second"
 msgid_plural "Export Complete: %d seconds"
 msgstr[0] "匯出完成：%d 秒"
 
-#: Sqlite/ImportSql.py:893
+#: Sqlite/ImportSql.py:899
 #, python-format
 msgid "Import Complete: %d second"
 msgid_plural "Import Complete: %d seconds"
@@ -23601,12 +24065,12 @@ msgstr "SQLite 是一種常見的本機資料庫格式"
 msgid "SQLite Export"
 msgstr "SQLite 匯出"
 
-#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:3
-#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:11
+#: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:3
+#: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:11
 msgid "Surname Mapping"
 msgstr "姓氏對應"
 
-#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:4
+#: SurnameMappingGramplet/SurnameMappingGramplet.gpr.py:4
 msgid "Gramplet for editing the grouping of surnames"
 msgstr "用於編輯姓氏分組的 Gramplet"
 
@@ -23654,6 +24118,7 @@ msgid "Add %s reciprocal association"
 msgstr "新增 %s 的反向關聯"
 
 #: SyncAssociations/syncAssociations.py:131
+#, python-brace-format
 msgid "{} Reciprocal associations created"
 msgstr "已建立 {} 個相互關聯"
 
@@ -23882,21 +24347,22 @@ msgstr "佈景主題偏好設定"
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
-msgstr "在偏好設定中新增簡易的佈景主題與字型調整功能，特別適合 Windows 使用者。"
+msgstr ""
+"在偏好設定中新增簡易的佈景主題與字型調整功能，特別適合 Windows 使用者。"
 
-#: Themes/themes.py:172 Themes/themes.py:190
+#: Themes/themes.py:176 Themes/themes.py:194
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "佈景主題由 GTK_THEME 固定指定"
 
-#: Themes/themes.py:180
+#: Themes/themes.py:184
 msgid "Dark Variant"
 msgstr "深色版本"
 
-#: Themes/themes.py:198
+#: Themes/themes.py:202
 msgid "Font"
 msgstr "字型"
 
-#: Themes/themes.py:214
+#: Themes/themes.py:218
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "固定捲軸 (需要重新啟動)"
 
@@ -24655,7 +25121,8 @@ msgstr "待辦事項報告"
 msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
-msgstr "產生含有指定標籤的所有備註清單，並附上參照這些備註的人物、家庭、事件等記錄。"
+msgstr ""
+"產生含有指定標籤的所有備註清單，並附上參照這些備註的人物、家庭、事件等記錄。"
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
@@ -25091,8 +25558,8 @@ msgid ""
 "You can use this link to revisit the source and verify the information "
 "related to this entity."
 msgstr ""
-"📌 WebSearch Gramplet (v. {version}) 已封存「{title}」網頁連結，以供日後參考"
-"：\n"
+"📌 WebSearch Gramplet (v. {version}) 已封存「{title}」網頁連結，以供日後參"
+"考：\n"
 "\n"
 "🔗 {url}\n"
 "\n"
@@ -25308,7 +25775,8 @@ msgstr "WebSearch 是 Gramps 的 Gramplet，可協助您搜尋家譜相關網站
 msgid ""
 "It supports CSV-based link templates, AI-assisted site discovery, and direct "
 "integration with notes and attributes."
-msgstr "它支援以 CSV 為基礎的連結範本、AI 輔助網站探索，以及與備註和屬性的直接整合。"
+msgstr ""
+"它支援以 CSV 為基礎的連結範本、AI 輔助網站探索，以及與備註和屬性的直接整合。"
 
 #: WebSearch/info_panel.py:125
 msgid "## ⚙️ System Information"
@@ -25409,7 +25877,8 @@ msgstr "- **系統路徑：** `{dir|%s}` – 包含內建的 attribute_mapping.j
 msgid ""
 "- **User-defined path:** `{dir|%s}` – for custom user-defined "
 "attribute_mapping.json file"
-msgstr "- **使用者自訂路徑：** `{dir|%s}` – 用於自訂的 attribute_mapping.json 檔案"
+msgstr ""
+"- **使用者自訂路徑：** `{dir|%s}` – 用於自訂的 attribute_mapping.json 檔案"
 
 #: WebSearch/info_panel.py:221
 msgid "  💡 *Tip: click any path above to open it in your file manager.*"
@@ -25515,6 +25984,7 @@ msgid "⚠ Missing dependency \"qrcode\""
 msgstr "⚠ 缺少相依套件「qrcode」"
 
 #: WebSearch/qr_window.py:120
+#, python-brace-format
 msgid ""
 "⚠ Error generating QR code:\n"
 "Original error: “{}”"
@@ -25712,11 +26182,11 @@ msgstr "etree"
 msgid "Gramplet for testing etree with Gramps XML"
 msgstr "用於透過 Gramps XML 測試 etree 的 Gramplet"
 
-#: lxml/etreeGramplet.py:83 lxml/lxmlGramplet.py:115
+#: lxml/etreeGramplet.py:83 lxml/lxmlGramplet.py:113
 msgid "Invalid timestamp"
 msgstr "時間戳記無效"
 
-#: lxml/etreeGramplet.py:130 lxml/lxmlGramplet.py:173
+#: lxml/etreeGramplet.py:130 lxml/lxmlGramplet.py:181
 msgid ""
 "Select a Gramps XML file and\n"
 " click on the Run button."
@@ -25724,7 +26194,7 @@ msgstr ""
 "選取 Gramps XML 檔案，然後\n"
 "按一下 [執行] 按鈕。"
 
-#: lxml/etreeGramplet.py:155 lxml/lxmlGramplet.py:197
+#: lxml/etreeGramplet.py:155 lxml/lxmlGramplet.py:205
 msgid "No file loaded..."
 msgstr "未載入檔案..."
 
@@ -25741,7 +26211,7 @@ msgstr "在主控台顯示更多資訊"
 msgid "Cannot uncompress \"%s\""
 msgstr "無法解壓縮 \"%s\""
 
-#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:334
+#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:342
 msgid "Is it a compressed .gramps?"
 msgstr "這是壓縮的 .gramps 檔案嗎？"
 
@@ -25750,7 +26220,7 @@ msgstr "這是壓縮的 .gramps 檔案嗎？"
 msgid "Cannot copy \"%s\""
 msgstr "無法複製「%s」"
 
-#: lxml/etreeGramplet.py:265 lxml/lxmlGramplet.py:348
+#: lxml/etreeGramplet.py:265 lxml/lxmlGramplet.py:356
 msgid "Is it a .gramps?"
 msgstr "這是 .gramps 檔案嗎？"
 
@@ -25758,12 +26228,12 @@ msgstr "這是 .gramps 檔案嗎？"
 msgid "Sorry, no support for your OS yet!"
 msgstr "抱歉，尚未支援您的作業系統！"
 
-#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:420
+#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:428
 #, python-format
 msgid "Cannot parse content of \"%(file)s\""
 msgstr "無法解析「%(file)s」的內容"
 
-#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:420
+#: lxml/etreeGramplet.py:296 lxml/lxmlGramplet.py:428
 msgid "Parsing issue"
 msgstr "解析問題"
 
@@ -25917,93 +26387,93 @@ msgstr "lxml"
 msgid "Gramplet for testing lxml and XSLT"
 msgstr "用於測試 lxml 及 XSLT 的 Gramplet"
 
-#: lxml/lxmlGramplet.py:72
+#: lxml/lxmlGramplet.py:144
 msgid "\"gzip\" is missing"
 msgstr "缺少「gzip」"
 
-#: lxml/lxmlGramplet.py:72
+#: lxml/lxmlGramplet.py:144
 msgid "Where is gzip?"
 msgstr "gzip 在哪裡？"
 
-#: lxml/lxmlGramplet.py:94
+#: lxml/lxmlGramplet.py:146
 msgid "Missing python3 lxml"
 msgstr "缺少 python3 lxml"
 
-#: lxml/lxmlGramplet.py:94
+#: lxml/lxmlGramplet.py:147
 msgid "Please, try to install \"python3 lxml\" package."
 msgstr "請嘗試安裝「python3 lxml」套件。"
 
-#: lxml/lxmlGramplet.py:255 lxml/lxmlGramplet.py:273 lxml/lxmlGramplet.py:749
+#: lxml/lxmlGramplet.py:263 lxml/lxmlGramplet.py:281 lxml/lxmlGramplet.py:757
 msgid "xmllint options"
 msgstr "xmllint 選項"
 
-#: lxml/lxmlGramplet.py:264 lxml/lxmlGramplet.py:282
+#: lxml/lxmlGramplet.py:272 lxml/lxmlGramplet.py:290
 msgid "debug places"
 msgstr "地點偵錯"
 
-#: lxml/lxmlGramplet.py:265 lxml/lxmlGramplet.py:283
+#: lxml/lxmlGramplet.py:273 lxml/lxmlGramplet.py:291
 msgid "debug xml"
 msgstr "XML 偵錯"
 
-#: lxml/lxmlGramplet.py:382
+#: lxml/lxmlGramplet.py:390
 msgid "XSD validation (lxml)"
 msgstr "XSD 驗證 (lxml)"
 
-#: lxml/lxmlGramplet.py:390
+#: lxml/lxmlGramplet.py:398
 #, python-format
 msgid "xmllint: skip DTD validation for \"%(file)s\""
 msgstr "xmllint：略過「%(file)s」的 DTD 驗證"
 
-#: lxml/lxmlGramplet.py:407
+#: lxml/lxmlGramplet.py:415
 #, python-format
 msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
 msgstr "xmllint：略過「%(file)s」的 RelaxNG 驗證"
 
-#: lxml/lxmlGramplet.py:423
+#: lxml/lxmlGramplet.py:431
 msgid "Custom \"test.xml\" file"
 msgstr "自訂 \"test.xml\" 檔案"
 
-#: lxml/lxmlGramplet.py:423
+#: lxml/lxmlGramplet.py:431
 msgid "Please try to fix \"test.xml\""
 msgstr "請嘗試修正「test.xml」"
 
-#: lxml/lxmlGramplet.py:432
+#: lxml/lxmlGramplet.py:440
 #, python-format
 msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
 msgstr "無法透過 RelaxNG 結構描述驗證「%(file)s」"
 
-#: lxml/lxmlGramplet.py:432
+#: lxml/lxmlGramplet.py:440
 msgid "RelaxNG validation"
 msgstr "RelaxNG 驗證"
 
-#: lxml/lxmlGramplet.py:445
+#: lxml/lxmlGramplet.py:453
 #, python-format
 msgid "Cannot parse \"%(file)s\" via etree"
 msgstr "無法透過 etree 解析「%(file)s」"
 
-#: lxml/lxmlGramplet.py:445
+#: lxml/lxmlGramplet.py:453
 msgid "File issue"
 msgstr "檔案問題"
 
-#: lxml/lxmlGramplet.py:484
+#: lxml/lxmlGramplet.py:492
 msgid "Parsing file..."
 msgstr "正在解析檔案..."
 
-#: lxml/lxmlGramplet.py:569
+#: lxml/lxmlGramplet.py:577
 #, python-format
 msgid " - (%(lang)s)"
 msgstr " - (%(lang)s)"
 
-#: lxml/lxmlGramplet.py:572
+#: lxml/lxmlGramplet.py:580
 #, python-format
 msgid " - (? or %(lang)s)"
 msgstr " - （? 或 %(lang)s）"
 
-#: lxml/lxmlGramplet.py:609
+#: lxml/lxmlGramplet.py:617
 msgid "Missing header"
 msgstr "缺少標頭"
 
-#: lxml/lxmlGramplet.py:609 lxml/lxmlGramplet.py:719
+#: lxml/lxmlGramplet.py:617 lxml/lxmlGramplet.py:727
 msgid ""
 "Not a valid .gramps.\n"
 "Cannot run the gramplet...\n"
@@ -26015,115 +26485,115 @@ msgstr ""
 "請嘗試使用 Gramps 6.x\n"
 "產生的 .gramps 檔案。"
 
-#: lxml/lxmlGramplet.py:622 lxml/lxmlGramplet.py:627 lxml/lxmlGramplet.py:632
-#: lxml/lxmlGramplet.py:637
+#: lxml/lxmlGramplet.py:630 lxml/lxmlGramplet.py:635 lxml/lxmlGramplet.py:640
+#: lxml/lxmlGramplet.py:645
 msgid "0"
 msgstr "0"
 
-#: lxml/lxmlGramplet.py:652
+#: lxml/lxmlGramplet.py:660
 msgid "File parsed with"
 msgstr "檔案解析工具"
 
-#: lxml/lxmlGramplet.py:654
+#: lxml/lxmlGramplet.py:662
 msgid " by Gramps "
 msgstr " 由 Gramps "
 
-#: lxml/lxmlGramplet.py:654
+#: lxml/lxmlGramplet.py:662
 msgid "File was generated on "
 msgstr "檔案產生於 "
 
-#: lxml/lxmlGramplet.py:656
+#: lxml/lxmlGramplet.py:664
 msgid "Period: "
 msgstr "期間： "
 
-#: lxml/lxmlGramplet.py:659 lxml/lxmlGramplet.py:663
+#: lxml/lxmlGramplet.py:667 lxml/lxmlGramplet.py:671
 #, python-brace-format
 msgid "\t{number} surname"
 msgid_plural "\t{number} surnames; no frequency yet"
 msgstr[0] "\t{number} 姓氏；尚無頻率資料"
 
-#: lxml/lxmlGramplet.py:659
+#: lxml/lxmlGramplet.py:667
 #, python-brace-format
 msgid "\t{number} surname; no frequency yet"
 msgstr "\t{number} 個姓氏；尚無頻率資料"
 
-#: lxml/lxmlGramplet.py:660 lxml/lxmlGramplet.py:667
+#: lxml/lxmlGramplet.py:668 lxml/lxmlGramplet.py:675
 #, python-brace-format
 msgid "\t{number} place"
 msgid_plural "\t{number} places"
 msgstr[0] "\t{number} 個地點"
 
-#: lxml/lxmlGramplet.py:661 lxml/lxmlGramplet.py:671
+#: lxml/lxmlGramplet.py:669 lxml/lxmlGramplet.py:679
 #, python-brace-format
 msgid "\t{number} note"
 msgid_plural "\t{number} notes"
 msgstr[0] "\t{number} 個備註"
 
-#: lxml/lxmlGramplet.py:675
+#: lxml/lxmlGramplet.py:683
 #, python-brace-format
 msgid "\t{number} source"
 msgid_plural "\t{number} sources"
 msgstr[0] "\t{number} 個來源"
 
-#: lxml/lxmlGramplet.py:694 lxml/lxmlGramplet.py:919
+#: lxml/lxmlGramplet.py:702 lxml/lxmlGramplet.py:927
 msgid "Gallery.html"
 msgstr "Gallery.html"
 
-#: lxml/lxmlGramplet.py:695
+#: lxml/lxmlGramplet.py:703
 #, python-format
 msgid "1. Has generated a media index on \"%(file)s\".\n"
 msgstr "1. 已在「%(file)s」產生媒體索引。\n"
 
-#: lxml/lxmlGramplet.py:719
+#: lxml/lxmlGramplet.py:727
 msgid "XML SyntaxError"
 msgstr "XML 語法錯誤"
 
-#: lxml/lxmlGramplet.py:723
+#: lxml/lxmlGramplet.py:731
 msgid "Matches XSD schema."
 msgstr "符合 XSD 結構描述。"
 
-#: lxml/lxmlGramplet.py:763
+#: lxml/lxmlGramplet.py:771
 msgid "xmllint: skip DTD validation"
 msgstr "xmllint：略過 DTD 驗證"
 
-#: lxml/lxmlGramplet.py:787
+#: lxml/lxmlGramplet.py:795
 msgid "I am looking at ..."
 msgstr "我正在查看 ..."
 
-#: lxml/lxmlGramplet.py:788
+#: lxml/lxmlGramplet.py:796
 msgid "Content generated by Gramps"
 msgstr "由 Gramps 產生的內容"
 
-#: lxml/lxmlGramplet.py:791
+#: lxml/lxmlGramplet.py:799
 msgid "List of sources"
 msgstr "來源清單"
 
-#: lxml/lxmlGramplet.py:810
+#: lxml/lxmlGramplet.py:818
 msgid "Australia"
 msgstr "澳洲"
 
-#: lxml/lxmlGramplet.py:811
+#: lxml/lxmlGramplet.py:819
 msgid "Brazil"
 msgstr "巴西"
 
-#: lxml/lxmlGramplet.py:822
+#: lxml/lxmlGramplet.py:830
 msgid "India"
 msgstr "印度"
 
-#: lxml/lxmlGramplet.py:824
+#: lxml/lxmlGramplet.py:832
 msgid "Norway"
 msgstr "挪威"
 
-#: lxml/lxmlGramplet.py:825
+#: lxml/lxmlGramplet.py:833
 msgid "Portugal"
 msgstr "葡萄牙"
 
-#: lxml/lxmlGramplet.py:896
+#: lxml/lxmlGramplet.py:904
 #, python-format
 msgid "2. Has generated \"%s\".\n"
 msgstr "2. 已產生「%s」。\n"
 
-#: lxml/lxmlGramplet.py:898
+#: lxml/lxmlGramplet.py:906
 #, python-format
 msgid ""
 "Try to open\n"
@@ -26133,3 +26603,19 @@ msgstr ""
 "嘗試在您偏好的網頁瀏覽器中開啟\n"
 " 「%s」\n"
 " ..."
+
+#~ msgid "Will check the data on Association for people."
+#~ msgstr "檢查人物的關聯資料。"
+
+#~ msgid "Type of link"
+#~ msgstr "連結類型"
+
+#~ msgid "Of"
+#~ msgstr "的"
+
+#~ msgid "Ready..."
+#~ msgstr "就緒..."
+
+#, python-format
+#~ msgid "%(prog)s: error: %(message)s\n"
+#~ msgstr "%(prog)s：錯誤：%(message)s\n"
