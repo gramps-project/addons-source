@@ -41,6 +41,7 @@ from collections import deque
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.utils.symbols import Symbols
+from gramps.gen.utils.db import get_marriage_or_fallback
 import gramps.gen.datehandler
 from gramps.gen.lib import ChildRefType
 from gramps.gen.plug import docgen
@@ -169,13 +170,14 @@ class PageLinks:
 #------------------------------------------------------------------------
 class PersonBox:
     """Represents an entry on the pedigree chart"""
-    def __init__(self, index, person_handle, report, page_link = None):
+    def __init__(self, index, person_handle, report, page_link = None, family_handle = None):
         """Initialize the class members.
 
         index - the person's place in the chart (1-15)
-        person_handle - the database identifier
-        report - a reference to the report object (used to find page dimentions)
+        person_handle - the database identifier for this person
+        report - a reference to the report object (used to find page dimensions)
         page_link - NOT USED
+        family_handle - the database identifier for the person's family
 
         """
         self.index = index
@@ -183,6 +185,7 @@ class PersonBox:
         self.report = report
         self.birth_symbol, self.marriage_symbol, self.death_symbol = report.bmd_symbols
         self.page_link = page_link
+        self.family_handle = family_handle
 
         self.title_style = 'PC-box_title' if _OUTPUT_FORMATS.get(report.format_name) else 'PC-box'
         self.content_style = 'PC-box'
@@ -263,18 +266,14 @@ class PersonBox:
 
             date = place = None
             if not self.isMother():
-                # we don't repeat this information for the mother
-                all_families = person.get_family_handle_list()
-                if len(all_families) > 0:
-                    family = self.report.database.get_family_from_handle(all_families[0])
-                    for evt_ref in family.get_event_ref_list():
-                        evt_handle = evt_ref.get_reference_handle()
-                        evt = self.report.database.get_event_from_handle(evt_handle)
-                        # Check for a marriage event
-                        evt_t = evt.get_type()
-                        if evt_t.is_marriage() or evt_t.is_marriage_fallback():
-                            date, place = self._getDateAndPlace(None, evt)
-                self.content += "\n" + self._makeContent(self.marriage_symbol, date, place)
+                # Note: we don't repeat this information for the mother
+                # Check for a marriage event
+                if self.family_handle is not None:
+                    family = self.report.database.get_family_from_handle(self.family_handle)
+                    if family:
+                        m_evt = get_marriage_or_fallback(self.report.database, family)
+                        date, place = self._getDateAndPlace(None, m_evt)
+                        self.content += "\n" + self._makeContent(self.marriage_symbol, date, place)
 
             date = place = None
             death_ref = person.get_death_ref()
@@ -595,7 +594,7 @@ class PedigreeChart(Report):
         family = self.database.get_family_from_handle(family_handle)
         return family.get_father_handle(), family.get_mother_handle()
 
-    def _get_parents(self, person_handle, index, gen_limit):
+    def _get_parents(self, person_handle, index, gen_limit, person_relationship=None):
         """
         Generate a list of the person's parents and their parents
         recursively up to max_generations.
@@ -603,6 +602,7 @@ class PedigreeChart(Report):
         person_handle: the center person
         index: the current index position of this person
         gen_limit: maximum number of generations for this page
+        person_relationship: the family_handle that connects this person their spouse (used to get the marriage event for this person)
 
         This function is based on AncestorTree.apply_filter().
 
@@ -610,14 +610,14 @@ class PedigreeChart(Report):
         if (not person_handle) or (index >= _MAX_INDEX_PER_PAGE) or (index >= 2**gen_limit):
             return
 
-        self.map[index] = PersonBox(index, person_handle, self)
+        self.map[index] = PersonBox(index, person_handle, self, family_handle=person_relationship)
 
         person = self.map[index].getPersonRecord()
         family_handle = person.get_main_parents_family_handle()
         if family_handle:
             father_handle, mother_handle = self.get_parents_handle(family_handle)
-            self._get_parents(father_handle, index * 2, gen_limit)
-            self._get_parents(mother_handle, index * 2 + 1, gen_limit)
+            self._get_parents(father_handle, index * 2, gen_limit, family_handle)
+            self._get_parents(mother_handle, index * 2 + 1, gen_limit, family_handle)
 
     # helper function from FamilyTree by Reinhard Mueller
     def get_font_height(self, style_name):
