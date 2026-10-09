@@ -50,6 +50,8 @@ from const import (
     AUTH_SYNC_TOKEN,
     MIN_API_VERSION,
     MODE_BIDIRECTIONAL,
+    TOKEN_PROBLEM_FAILED,
+    TOKEN_PROBLEM_LIMIT,
     Actions,
 )
 from diffhandler import (
@@ -276,6 +278,14 @@ class Backend(Protocol):
     def revoke_sync_token(self, token_id: int) -> None: ...
 
 
+class BackendFactory(Protocol):
+    """Builds a :class:`Backend` for one server and account."""
+
+    def __call__(
+        self, url: str, username: str, password: str, *, auth: str
+    ) -> Backend: ...
+
+
 class CredentialStore(Protocol):
     """Persistence for server credentials and per-server sync baselines."""
 
@@ -301,6 +311,7 @@ class CredentialStore(Protocol):
         remember_password: bool = True,
         auth: str = AUTH_PASSWORD,
         token_id: int | None = None,
+        token_problem: str | None = None,
     ) -> None: ...
 
     def forget_secret(self, url: str, username: str) -> None: ...
@@ -363,6 +374,9 @@ class Connection:
     :param keep_password: Whether the password may be stored when no token
         was created. Only for servers without sync tokens: where the server
         has them but creating one failed, nothing is stored.
+    :param token_problem: Why creating a token failed on a server that
+        supports them, one of the ``TOKEN_PROBLEM_*`` constants; ``None`` if
+        it didn't.
     """
 
     backend: Backend
@@ -373,6 +387,7 @@ class Connection:
     sync_token: str | None = None
     token_id: int | None = None
     keep_password: bool = True
+    token_problem: str | None = None
 
 
 # ------------------------------------------------------------
@@ -429,7 +444,7 @@ class SyncSession:
         self,
         db,
         user,
-        backend_factory: Callable[..., Backend],
+        backend_factory: BackendFactory,
         credentials: CredentialStore,
         media: MediaStore,
         runner: TaskRunner,
@@ -478,6 +493,9 @@ class SyncSession:
         #: This computer's sync token on the server when the attempt began,
         #: read on the main loop so the worker need not touch the store.
         self._token_id: int | None = None
+        #: Why no sync token was kept after the last password sign-in, one of
+        #: the ``TOKEN_PROBLEM_*`` constants, or ``None``.
+        self.token_problem: str | None = None
         #: The server's Gramps Web API version, once it has reported one.
         self.api_version: str | None = None
         #: What the server calls the tree it serves, once it has said.
@@ -832,7 +850,18 @@ class SyncSession:
             return replace(connection, token_id=token_id)
         except Exception as exc:  # noqa: BLE001 -- signs in without storing
             LOG.warning("Could not create a sync token, storing nothing: %s", exc)
-            return replace(connection, token_id=token_id, keep_password=False)
+            # Label conflicts are retried, so a 409 here is the token limit.
+            problem = (
+                TOKEN_PROBLEM_LIMIT
+                if getattr(exc, "code", None) == 409
+                else TOKEN_PROBLEM_FAILED
+            )
+            return replace(
+                connection,
+                token_id=token_id,
+                keep_password=False,
+                token_problem=problem,
+            )
         return replace(connection, sync_token=token, token_id=new_id)
 
     def _on_connected(self, connection: Connection) -> None:
@@ -850,8 +879,10 @@ class SyncSession:
         self.backend = connection.backend
         secret: str | None = self.password
         token_id = self._token_id
+        self.token_problem = None
         if self.auth == AUTH_PASSWORD:
             token_id = connection.token_id
+            self.token_problem = connection.token_problem
             if connection.sync_token:
                 # Remembered in place of the password, which isn't kept anywhere.
                 secret = connection.sync_token
@@ -865,6 +896,7 @@ class SyncSession:
             self.remember_password,
             auth=self.auth,
             token_id=token_id,
+            token_problem=self.token_problem,
         )
         self._start_compare()
 

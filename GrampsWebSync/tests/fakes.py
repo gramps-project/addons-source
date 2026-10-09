@@ -362,6 +362,8 @@ class MemoryCredentialStore:
         self.forgotten: list[tuple[str, str]] = []
         #: ``(url, username)`` -> id of this computer's sync token.
         self.token_ids: dict[tuple[str, str], int] = {}
+        #: Why no sync token is kept for the last-used entry.
+        self.token_problem: str | None = None
 
     @property
     def timestamp(self) -> float:
@@ -387,6 +389,9 @@ class MemoryCredentialStore:
     def get_token_id(self, url: str, username: str) -> int | None:
         return self.token_ids.get((url, username))
 
+    def get_token_problem(self) -> str | None:
+        return self.token_problem
+
     def get_timestamp(self, url: str, username: str) -> float:
         return self.timestamps.get((url, username), 0.0)
 
@@ -403,8 +408,10 @@ class MemoryCredentialStore:
         remember_password: bool = True,
         auth: str = AUTH_PASSWORD,
         token_id: int | None = None,
+        token_problem: str | None = None,
     ) -> None:
         self.url = url
+        self.token_problem = token_problem
         self.username = username
         stored = remember_password and password is not None
         self.auth = auth if stored else AUTH_PASSWORD
