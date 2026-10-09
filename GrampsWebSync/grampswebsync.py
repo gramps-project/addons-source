@@ -68,11 +68,12 @@ from presentation import (
     sanitize_url,
     state_label,
     status_message,
+    token_problem_message,
     transfer_message,
     verb_label,
     version_line,
 )
-from session import WORKING_STATES, ErrorKind, State, SyncSession
+from session import WORKING_STATES, State, SyncSession
 from webapihandler import WebApiHandler
 
 assert glocale is not None  # for type checker
@@ -330,13 +331,10 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         # deleting both trees.
         url = self.credentials.get_url()
         username = self.credentials.get_username()
-        password = self.credentials.get_password() or ""
-        if password and self.credentials.get_auth() == AUTH_SYNC_TOKEN:
-            # Never shown or sent as a password; see _submit().
-            self._saved_token = password
-            self._saved_for = (normalize_url(url), username)
-            password = ""
-        self.connect_pane.set_credentials(url, username, password)
+        self._load_saved_sign_in()
+        # A saved token is never shown or sent as a password; see _submit().
+        password = "" if self._saved_token else self.credentials.get_password()
+        self.connect_pane.set_credentials(url, username, password or "")
         self.connect_pane.set_notices(self._connect_notices())
         self.connect_pane.set_can_forget(bool(url))
         self.connect_pane.set_remember_password(
@@ -390,14 +388,25 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         """
         url = self.connect_pane.url.get_text()
         username = self.connect_pane.username.get_text()
+        message = _(
+            "The address, user name and password stored for this server "
+            "will be removed, along with the record of when this family "
+            "tree last synchronized with it. The next synchronization "
+            "will compare the two trees from scratch."
+        )
+        if self.credentials.get_token_id(url, username) is not None:
+            # Revoking needs a password sign-in, which a saved token isn't.
+            message = _(
+                "The address and user name stored for this server will be "
+                "removed, along with the record of when this family tree last "
+                "synchronized with it. The next synchronization will compare "
+                "the two trees from scratch.\n\n"
+                "This computer stays signed in to Gramps Web until you remove "
+                "it there, under Settings, Access tokens, Desktop sync."
+            )
         question = QuestionDialog2(
             _("Forget this server?"),
-            _(
-                "The address, user name and password stored for this server "
-                "will be removed, along with the record of when this family "
-                "tree last synchronized with it. The next synchronization "
-                "will compare the two trees from scratch."
-            ),
+            message,
             _("Forget"),
             _("Cancel"),
             parent=self.window,
@@ -426,6 +435,18 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.session.submit_credentials(
             url, username, password, self.connect_pane.remember_password, auth=auth
         )
+
+    def _load_saved_sign_in(self) -> None:
+        """Take the sync token stored for the server on offer, if there is one."""
+        token = self.credentials.get_password()
+        if token and self.credentials.get_auth() == AUTH_SYNC_TOKEN:
+            self._saved_token = token
+            self._saved_for = (
+                normalize_url(self.credentials.get_url()),
+                self.credentials.get_username(),
+            )
+        else:
+            self._saved_token = self._saved_for = None
 
     def _saved_sign_in_applies(self) -> bool:
         """Whether a stored sync token belongs to the server and user entered."""
@@ -478,16 +499,13 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
     def _prepare_pane(self, state: State) -> None:
         """Fill the pane for ``state`` with what the session now holds."""
         if state is State.CONNECT:
+            # A password sign-in since the window opened may have replaced
+            # the token, and a rejected one has been dropped from the store.
+            self._load_saved_sign_in()
             error = self.session.login_error
             if error is None:
                 self.connect_pane.clear_error()
             else:
-                if (
-                    self.session.auth == AUTH_SYNC_TOKEN
-                    and error.kind is ErrorKind.AUTH_FAILED
-                ):
-                    # The session dropped it from the keyring already.
-                    self._saved_token = self._saved_for = None
                 self.connect_pane.show_error(
                     error_message(error.kind, error.detail, self.session.auth)
                 )
@@ -502,9 +520,14 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             self.result_pane.prepare(self.session)
             # A keyring write happens after a successful connect, so its
             # failure can land once the user has left the connect pane.
+            notices = []
             problem = self.credentials.keyring_error()
             if problem is not None:
-                self.result_pane.show_notice(keyring_message(problem))
+                notices.append(keyring_message(problem))
+            if self.session.token_problem is not None:
+                notices.append(token_problem_message(self.session.token_problem))
+            if notices:
+                self.result_pane.show_notice("\n".join(notices))
 
     def _update_buttons(self, state: State) -> None:
         """Show the buttons that make sense in ``state``, and pick the default."""
@@ -553,6 +576,9 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         problem = self.credentials.keyring_error()
         if problem is not None:
             notices.append(keyring_message(problem))
+        token_problem = self.credentials.get_token_problem()
+        if token_problem is not None:
+            notices.append(token_problem_message(token_problem))
         return notices
 
     def _refresh_password_storage(self) -> None:

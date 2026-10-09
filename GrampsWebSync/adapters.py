@@ -519,6 +519,15 @@ class ConfigCredentialStore:
         token_id = entry.get("token_id") if entry else None
         return token_id if isinstance(token_id, int) else None
 
+    def get_token_problem(self) -> str | None:
+        """Return why no sync token is kept for the entry on offer, if known.
+
+        :returns: One of the ``TOKEN_PROBLEM_*`` constants from :mod:`const`,
+            or ``None``.
+        """
+        entry = self._current()
+        return entry.get("token_problem") if entry else None
+
     def get_remember_password(self) -> bool:
         """Whether the entry on offer is allowed to keep its password.
 
@@ -593,6 +602,7 @@ class ConfigCredentialStore:
         remember_password: bool = True,
         auth: str = AUTH_PASSWORD,
         token_id: int | None = None,
+        token_problem: str | None = None,
     ) -> None:
         """Persist one server entry, and its password if asked to.
 
@@ -609,6 +619,8 @@ class ConfigCredentialStore:
             password login is stored in the password's place.
         :param token_id: The id of this computer's sync token on the server,
             revoked at the next password sign-in; ``None`` if it has none.
+        :param token_problem: Why no sync token could be kept, shown on the
+            connect pane until one is; ``None`` if nothing went wrong.
         """
         url = normalize_url(url)
         servers = self._servers()
@@ -617,19 +629,25 @@ class ConfigCredentialStore:
             entry = {"url": url, "username": username, "timestamp": 0.0}
             servers.append(entry)
         entry["remember_password"] = remember_password
-        stored = remember_password and password is not None
-        entry["auth"] = auth if stored else AUTH_PASSWORD
         if token_id is None:
             entry.pop("token_id", None)
         else:
             entry["token_id"] = token_id
+        if token_problem is None:
+            entry.pop("token_problem", None)
+        else:
+            entry["token_problem"] = token_problem
 
+        stored = remember_password and password is not None
         if stored:
-            self.keyring.set(url, username, password)
+            # A failed write may leave the old password behind, which must
+            # not then be sent as a token.
+            stored = self.keyring.set(url, username, password)
         else:
             # Turning the setting off has to erase what is already stored, not
             # merely stop writing, or it appears to do nothing.
             self.keyring.delete(url, username)
+        entry["auth"] = auth if stored else AUTH_PASSWORD
 
         self.config.set("credentials.last_used", [url, username])
         self._write(servers)
