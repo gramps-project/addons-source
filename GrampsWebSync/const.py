@@ -114,3 +114,8 @@ SYNC_TOKEN_LABEL_MAX_LENGTH = 100
 #: Most sync tokens the server keeps per user, and so the most labels worth
 #: trying when another computer already uses this one's name.
 SYNC_TOKEN_MAX_PER_USER = 20
+
+#: Why no sync token could be created on a server that supports them: the
+#: account is at the token limit, or anything else (validation, server error).
+TOKEN_PROBLEM_LIMIT = "limit"
+TOKEN_PROBLEM_FAILED = "failed"

@@ -34,8 +34,14 @@ import unittest
 from unittest import mock
 from urllib.error import HTTPError
 
-from const import AUTH_PASSWORD, AUTH_SYNC_TOKEN, SYNC_TOKEN_LABEL_MAX_LENGTH
-from presentation import error_message
+from const import (
+    AUTH_PASSWORD,
+    AUTH_SYNC_TOKEN,
+    SYNC_TOKEN_LABEL_MAX_LENGTH,
+    TOKEN_PROBLEM_FAILED,
+    TOKEN_PROBLEM_LIMIT,
+)
+from presentation import error_message, token_problem_message
 from session import ErrorKind, State
 from webapihandler import (
     SyncTokensUnsupported,
@@ -129,6 +135,22 @@ class TokenSessionTest(unittest.TestCase):
         self.assertEqual(self.scenario.credentials.auth, AUTH_PASSWORD)
         # Still ticked next time.
         self.assertTrue(self.scenario.credentials.remembered[(URL, "owner")])
+
+    def test_failing_to_create_a_token_says_why(self) -> None:
+        """Remembered with the entry, so the connect pane can explain."""
+        cases = ((409, TOKEN_PROBLEM_LIMIT), (500, TOKEN_PROBLEM_FAILED))
+        for status, problem in cases:
+            with self.subTest(status=status):
+                self.scenario.server.fail_next("create_sync_token", http_error(status))
+                result = self.scenario.run()
+                self.assertEqual(result.session.token_problem, problem)
+                self.assertEqual(self.scenario.credentials.token_problem, problem)
+
+    def test_a_kept_sign_in_clears_the_problem(self) -> None:
+        self.scenario.credentials.token_problem = TOKEN_PROBLEM_LIMIT
+        result = self.scenario.run()
+        self.assertIsNone(result.session.token_problem)
+        self.assertIsNone(self.scenario.credentials.token_problem)
 
     def test_no_token_for_a_server_that_is_turned_away(self) -> None:
         self.scenario.server.task_queue = False
@@ -227,6 +249,22 @@ class TokenCredentialStoreTest(StoreTestCase):
         self.assertTrue(store.get_remember_password())
         self.assertIn((URL, "owner"), keyring.deleted)
 
+    def test_the_token_problem_is_kept_until_a_token_is(self) -> None:
+        store = self.make_store()
+        store.save_credentials(URL, "owner", None, token_problem=TOKEN_PROBLEM_LIMIT)
+        self.assertEqual(store.get_token_problem(), TOKEN_PROBLEM_LIMIT)
+        store.save_credentials(URL, "owner", TOKEN, auth=AUTH_SYNC_TOKEN, token_id=3)
+        self.assertIsNone(store.get_token_problem())
+
+    def test_a_failed_keyring_write_is_not_recorded_as_a_token(self) -> None:
+        """The keyring may still hold the old password, which isn't a token."""
+        keyring = FakeKeyring()
+        store = self.make_store(keyring=keyring)
+        store.save_credentials(URL, "owner", "secret")
+        keyring._fail = RuntimeError("locked")
+        store.save_credentials(URL, "owner", TOKEN, auth=AUTH_SYNC_TOKEN)
+        self.assertEqual(store.get_auth(), AUTH_PASSWORD)
+
     def test_forgetting_the_secret_drops_the_token_id(self) -> None:
         store = self.make_store()
         store.save_credentials(URL, "owner", TOKEN, auth=AUTH_SYNC_TOKEN, token_id=7)
@@ -257,6 +295,18 @@ class TokenErrorMessageTest(unittest.TestCase):
         self.assertIn(
             "username and password", error_message(ErrorKind.AUTH_FAILED, "401")
         )
+        self.assertEqual(
+            error_message(ErrorKind.AUTH_FAILED, "401"),
+            error_message(ErrorKind.AUTH_FAILED, "401", AUTH_PASSWORD),
+        )
+
+    def test_the_token_limit_says_where_to_remove_a_device(self) -> None:
+        message = token_problem_message(TOKEN_PROBLEM_LIMIT)
+        self.assertIn("too many devices", message)
+        self.assertIn("Desktop sync", message)
+
+    def test_other_token_problems_say_the_password_will_be_asked(self) -> None:
+        self.assertIn("password", token_problem_message(TOKEN_PROBLEM_FAILED))
 
 
 def jwt(**claims) -> str:

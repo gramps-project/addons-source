@@ -49,11 +49,13 @@ from const import (
     A_UPD_LOC,
     A_UPD_REM,
     API_MAJOR_TEXT,
+    AUTH_PASSWORD,
     AUTH_SYNC_TOKEN,
     MIN_API_VERSION_TEXT,
     MODE_BIDIRECTIONAL,
     MODE_RESET_TO_LOCAL,
     MODE_RESET_TO_REMOTE,
+    TOKEN_PROBLEM_LIMIT,
     Actions,
 )
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -172,6 +174,23 @@ def insecure_warning() -> str:
 # Errors, status and other wording the view shows verbatim
 #
 # ------------------------------------------------------------
+def token_problem_message(problem: str) -> str:
+    """Return the notice for a sign-in that couldn't be kept.
+
+    :param problem: One of the ``TOKEN_PROBLEM_*`` constants from :mod:`const`.
+    :returns: A message suitable for display.
+    """
+    if problem == TOKEN_PROBLEM_LIMIT:
+        return _(
+            "Couldn't keep you signed in: too many devices. Remove one in "
+            "Gramps Web under Settings, Access tokens, Desktop sync."
+        )
+    return _(
+        "Couldn't keep you signed in on this computer, so the password will "
+        "be asked for next time. Details are in the log."
+    )
+
+
 def keyring_message(problem: KeyringUnavailable) -> str:
     """Return the localized notice for an unusable keyring.
 
@@ -189,7 +208,7 @@ def keyring_message(problem: KeyringUnavailable) -> str:
     )
 
 
-def error_message(kind: ErrorKind, detail: str = "", auth: str = "") -> str:
+def error_message(kind: ErrorKind, detail: str = "", auth: str = AUTH_PASSWORD) -> str:
     """Return the localized message for an error kind.
 
     Translation lives here rather than in :mod:`session` so the flow logic can
