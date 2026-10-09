@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-03 12:17-0700\n"
-"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"PO-Revision-Date: 2026-09-30 15:23+0000\n"
 "Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
@@ -12,15 +12,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Ancestor Tree Expanded"
+msgstr "拡張祖先ツリー"
 
 msgid ""
 "Expanded Ancestor Graph showing direct ancestors, siblings, cousins and "
 "spouses."
 msgstr "直系の祖先、兄弟姉妹、いとこ、および配偶者を表示する拡張祖先図。"
+
+#, python-format
+msgid "Ancestor Tree Expanded for %s"
+msgstr "%s の拡張祖先ツリー"
 
 msgid "Tree Truncated"
 msgstr "切り詰められたツリー"
@@ -37,14 +44,41 @@ msgstr ""
 "すべてのツリーを表示するには、世代数を減らすか、一部のオプションを無効にして"
 "ください。"
 
+msgid "Include descendants of the center person"
+msgstr "中心人物の子孫を含める"
+
+msgid ""
+"Whether to display the children and full descending lines of the center "
+"person"
+msgstr "中心人物の子供と、すべての子孫の系統を表示するかどうか"
+
 msgid "Include siblings of ancestors"
 msgstr "先祖の兄弟姉妹も含める"
+
+msgid "Whether to display the siblings of direct ancestors"
+msgstr "直系の祖先の兄弟姉妹を表示するかどうか"
 
 msgid "Include cousins (collateral descendants)"
 msgstr "いとこ (傍系の子孫) を含める"
 
+msgid ""
+"Whether to display the cousins and descendants of the ancestors' siblings"
+msgstr "祖先の兄弟姉妹のいとこと子孫を表示するかどうか"
+
 msgid "Descendant Generations"
 msgstr "子孫世代"
 
+msgid "The number of descendant generations to include"
+msgstr "含める子孫の世代数"
+
+msgid "Whether to resize the page to fit the size of the tree."
+msgstr "ツリーのサイズに合わせてページをリサイズするかどうか。"
+
+msgid "Use random colors for family lines"
+msgstr "家系の線にランダムな色を使用する"
+
 msgid "Draw each family's connecting lines with a distinct color."
 msgstr "各家族をつなぐ線を、それぞれ異なる色で描いてください。"
+
+msgid "The bold style used for the names."
+msgstr "名前に使用される太字スタイル。"

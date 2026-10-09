@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-06 07:24+0200\n"
-"PO-Revision-Date: 2026-09-04 16:46+0000\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-09-25 18:51+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -12,13 +12,114 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 msgid "Gramps Web Sync"
 msgstr "Sincronização web do Gramps"
 
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Sincroniza uma base de dados local com uma instância do Gramps Web."
+
+msgid "_Try again"
+msgstr "_Tentar novamente"
+
+msgid "C_onnect"
+msgstr "Li_gar"
+
+msgid "Forget this server?"
+msgstr "Esquecer este servidor?"
+
+msgid ""
+"The address, user name and password stored for this server will be removed, "
+"along with the record of when this family tree last synchronized with it. "
+"The next synchronization will compare the two trees from scratch."
+msgstr ""
+"O endereço, o utilizador e a senha gravados para este servidor serão "
+"eliminados, juntamente com o registo da última vez que esta árvore "
+"genealógica foi sincronizada com o mesmo. A próxima sincronização comparará "
+"as duas árvores a partir do início."
+
+msgid "Forget"
+msgstr "Esquecer"
+
+msgid ""
+"These credentials were last used with a different family tree. Check the "
+"server before continuing."
+msgstr ""
+"Estas credenciais foram utilizadas pela última vez com uma árvore "
+"genealógica diferente. Verifique o servidor antes de continuar."
+
+msgid "Change server…"
+msgstr "Alterar servidor…"
+
+msgid "Server URL:"
+msgstr "URL do servidor:"
+
+msgid "Username:"
+msgstr "Utilizador:"
+
+msgid "Password:"
+msgstr "Senha:"
+
+msgid "Remember password"
+msgstr "Lembrar senha"
+
+msgid "Forget this server"
+msgstr "Esquecer este servidor"
+
+msgid "About this tool"
+msgstr "Acerca da ferramenta"
+
+msgid "Open the online manual"
+msgstr "Abrir o manual em linha"
+
+msgid ""
+"This tool allows to synchronize the currently opened family tree with a "
+"remote family tree served by Gramps Web.\n"
+"\n"
+"The tool assumes that the two trees are derivatives of each other, i.e. one "
+"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
+"\n"
+"After successful synchronization, the two trees will be identical. "
+"Modifications will be propagated based on timestamps. You will be prompted "
+"for confirmation before any changes are made to the local or remote trees.\n"
+"\n"
+"If you instead want to merge two significantly different trees with the "
+"option to make manual modifications, use the Import Merge Tool instead."
+msgstr ""
+"Esta ferramenta permite sincronizar a árvore genealógica actual com uma "
+"árvore genealógica remota servida pelo Gramps Web.\n"
+"\n"
+"A ferramenta assume que as duas árvores são derivadas uma da outra, ou seja, "
+"uma das duas foi criada a partir de uma exportação Gramps XML (não GEDCOM!) "
+"da outra.\n"
+"\n"
+"Após uma sincronização bem sucedida, as duas árvores serão idênticas. As "
+"modificações serão propagadas com base nos carimbos de data e hora. Será "
+"solicitada uma confirmação antes que quaisquer alterações sejam feitas nas "
+"árvores local ou remota.\n"
+"\n"
+"Se, em vez disso, pretender unir duas árvores significativamente diferentes "
+"com a opção de efectuar modificações manuais, utilize a Ferramenta de união "
+"de importação."
+
+msgid "Error:"
+msgstr "Erro:"
+
+msgid "Warning:"
+msgstr "Aviso:"
+
+msgid "Sync mode:"
+msgstr "Modo de sincronização:"
+
+msgid "Copy"
+msgstr "Copiar"
+
+msgid "Synchronization complete"
+msgstr "Sincronização concluída"
+
+msgid "Synchronization failed"
+msgstr "A sincronização falhou"
 
 #, python-format
 msgid "Gramps Web Sync %(addon)s, Web API %(api)s"
@@ -350,104 +451,3 @@ msgstr[1] "Última sincronização há %s dias"
 #, python-format
 msgid "Last synced on %s"
 msgstr "Última sincronização a %s"
-
-msgid "_Try again"
-msgstr "_Tentar novamente"
-
-msgid "C_onnect"
-msgstr "Li_gar"
-
-msgid "Forget this server?"
-msgstr "Esquecer este servidor?"
-
-msgid ""
-"The address, user name and password stored for this server will be removed, "
-"along with the record of when this family tree last synchronized with it. "
-"The next synchronization will compare the two trees from scratch."
-msgstr ""
-"O endereço, o utilizador e a senha gravados para este servidor serão "
-"eliminados, juntamente com o registo da última vez que esta árvore "
-"genealógica foi sincronizada com o mesmo. A próxima sincronização comparará "
-"as duas árvores a partir do início."
-
-msgid "Forget"
-msgstr "Esquecer"
-
-msgid ""
-"These credentials were last used with a different family tree. Check the "
-"server before continuing."
-msgstr ""
-"Estas credenciais foram utilizadas pela última vez com uma árvore "
-"genealógica diferente. Verifique o servidor antes de continuar."
-
-msgid "Change server…"
-msgstr "Alterar servidor…"
-
-msgid "Server URL:"
-msgstr "URL do servidor:"
-
-msgid "Username:"
-msgstr "Utilizador:"
-
-msgid "Password:"
-msgstr "Senha:"
-
-msgid "Remember password"
-msgstr "Lembrar senha"
-
-msgid "Forget this server"
-msgstr "Esquecer este servidor"
-
-msgid "About this tool"
-msgstr "Acerca da ferramenta"
-
-msgid "Open the online manual"
-msgstr "Abrir o manual em linha"
-
-msgid ""
-"This tool allows to synchronize the currently opened family tree with a "
-"remote family tree served by Gramps Web.\n"
-"\n"
-"The tool assumes that the two trees are derivatives of each other, i.e. one "
-"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
-"\n"
-"After successful synchronization, the two trees will be identical. "
-"Modifications will be propagated based on timestamps. You will be prompted "
-"for confirmation before any changes are made to the local or remote trees.\n"
-"\n"
-"If you instead want to merge two significantly different trees with the "
-"option to make manual modifications, use the Import Merge Tool instead."
-msgstr ""
-"Esta ferramenta permite sincronizar a árvore genealógica actual com uma "
-"árvore genealógica remota servida pelo Gramps Web.\n"
-"\n"
-"A ferramenta assume que as duas árvores são derivadas uma da outra, ou seja, "
-"uma das duas foi criada a partir de uma exportação Gramps XML (não GEDCOM!) "
-"da outra.\n"
-"\n"
-"Após uma sincronização bem sucedida, as duas árvores serão idênticas. As "
-"modificações serão propagadas com base nos carimbos de data e hora. Será "
-"solicitada uma confirmação antes que quaisquer alterações sejam feitas nas "
-"árvores local ou remota.\n"
-"\n"
-"Se, em vez disso, pretender unir duas árvores significativamente diferentes "
-"com a opção de efectuar modificações manuais, utilize a Ferramenta de união "
-"de importação."
-
-msgid "Error:"
-msgstr "Erro:"
-
-msgid "Warning:"
-msgstr "Aviso:"
-
-msgid "Sync mode:"
-msgstr "Modo de sincronização:"
-
-msgid "Copy"
-msgstr "Copiar"
-
-msgid "Synchronization complete"
-msgstr "Sincronização concluída"
-
-msgid "Synchronization failed"
-msgstr "A sincronização falhou"

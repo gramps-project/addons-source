@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-02 18:04+0000\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-09-30 15:23+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 msgid "Avatar Generator Tool"
 msgstr "Verktyg för att skapa avatarer"
@@ -56,9 +56,11 @@ msgstr "INFO"
 msgid "No media was removed."
 msgstr "Inget media togs bort."
 
+#, python-brace-format
 msgid "{} media references were removed from {} persons."
 msgstr "{} mediareferenser togs bort från {} personer."
 
+#, python-brace-format
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
@@ -69,6 +71,7 @@ msgstr ""
 msgid "Add avatar images..."
 msgstr "Lägg till avatarbilder..."
 
+#, python-brace-format
 msgid "{} avatar images were sucessfully added."
 msgstr "{} avatarbilder lades till."
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: 2026-06-09 08:01+0000\n"
 "Last-Translator: Vadim Barsukov <vadbars@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/gramps-project/"
@@ -59,9 +59,11 @@ msgstr "ИНФОРМАЦИЯ"
 msgid "No media was removed."
 msgstr "Изображения не были удалены."
 
+#, python-brace-format
 msgid "{} media references were removed from {} persons."
 msgstr "Было удалено {} ссылок на изображения у {} людей."
 
+#, python-brace-format
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
@@ -72,6 +74,7 @@ msgstr ""
 msgid "Add avatar images..."
 msgstr "Добавить изображения аватар..."
 
+#, python-brace-format
 msgid "{} avatar images were sucessfully added."
 msgstr "Было добавлено {} аватар."
 

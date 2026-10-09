@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2026-05-04 21:37+0000\n"
-"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-07-24 05:14+0000\n"
+"Last-Translator: Juan Saavedra <jcsaaver@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/es/>\n"
 "Language: es\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 msgid "Avatar Generator Tool"
 msgstr "Herramienta de generación de avatares"
@@ -56,9 +56,11 @@ msgstr "INF."
 msgid "No media was removed."
 msgstr "No se expulsó ningún medio."
 
+#, python-brace-format
 msgid "{} media references were removed from {} persons."
 msgstr "las referencias del medio {} fueron extraídas desde {} personas."
 
+#, python-brace-format
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
@@ -69,6 +71,7 @@ msgstr ""
 msgid "Add avatar images..."
 msgstr "Agrega imágenes de avatar…"
 
+#, python-brace-format
 msgid "{} avatar images were sucessfully added."
 msgstr "{} imágenes de avatar fue añadido correctamente."
 

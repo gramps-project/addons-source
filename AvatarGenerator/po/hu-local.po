@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2026-02-21 14:09+0000\n"
-"Last-Translator: Daniel Szollosi-Nagy <dsn-weblate@kdconsulting.net>\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-06-05 13:54+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hu/>\n"
 "Language: hu\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.16.1-dev\n"
+"X-Generator: Weblate 2026.6\n"
 
 msgid "Avatar Generator Tool"
 msgstr "Avatárt létrehozó eszköz"
@@ -56,9 +56,11 @@ msgstr "INFO"
 msgid "No media was removed."
 msgstr "Egyetlen média sem került eltávolításra."
 
+#, python-brace-format
 msgid "{} media references were removed from {} persons."
 msgstr "{} médiahivatkozás lett eltávolítva {} személytől."
 
+#, python-brace-format
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
@@ -69,6 +71,7 @@ msgstr ""
 msgid "Add avatar images..."
 msgstr "Avatár képek hozzáadása..."
 
+#, python-brace-format
 msgid "{} avatar images were sucessfully added."
 msgstr "{} avatár képet adtunk hozzá sikererrel."
 

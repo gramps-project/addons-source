@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 4.2.0-dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-06 07:24+0200\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: 2026-09-06 12:53+0000\n"
 "Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
@@ -19,6 +19,97 @@ msgstr "Gramps Web Sync"
 
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "將本機資料庫與 Gramps Web 執行個體同步。"
+
+msgid "_Try again"
+msgstr "再試一次(_T)"
+
+msgid "C_onnect"
+msgstr "連線(_O)"
+
+msgid "Forget this server?"
+msgstr "要忘記這台伺服器嗎？"
+
+msgid ""
+"The address, user name and password stored for this server will be removed, "
+"along with the record of when this family tree last synchronized with it. "
+"The next synchronization will compare the two trees from scratch."
+msgstr ""
+"將移除此伺服器儲存的地址、使用者名稱及密碼，以及此家族樹上次與其同步的時間記"
+"錄。下次同步時會重新完整比對兩棵家族樹。"
+
+msgid "Forget"
+msgstr "移除"
+
+msgid ""
+"These credentials were last used with a different family tree. Check the "
+"server before continuing."
+msgstr "這組憑證上次用於另一棵家族樹。請先檢查伺服器再繼續。"
+
+msgid "Change server…"
+msgstr "變更伺服器…"
+
+msgid "Server URL:"
+msgstr "伺服器 URL："
+
+msgid "Username:"
+msgstr "使用者名稱："
+
+msgid "Password:"
+msgstr "密碼："
+
+msgid "Remember password"
+msgstr "記住密碼"
+
+msgid "Forget this server"
+msgstr "移除此伺服器"
+
+msgid "About this tool"
+msgstr "關於此工具"
+
+msgid "Open the online manual"
+msgstr "開啟線上手冊"
+
+msgid ""
+"This tool allows to synchronize the currently opened family tree with a "
+"remote family tree served by Gramps Web.\n"
+"\n"
+"The tool assumes that the two trees are derivatives of each other, i.e. one "
+"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
+"\n"
+"After successful synchronization, the two trees will be identical. "
+"Modifications will be propagated based on timestamps. You will be prompted "
+"for confirmation before any changes are made to the local or remote trees.\n"
+"\n"
+"If you instead want to merge two significantly different trees with the "
+"option to make manual modifications, use the Import Merge Tool instead."
+msgstr ""
+"此工具可讓您將目前開啟的家族樹與由 Gramps Web 託管的遠端家族樹進行同步。\n"
+"\n"
+"此工具假設兩個家族樹互為衍生關係，亦即其中一個是由另一個匯出的 Gramps XML"
+"（非 GEDCOM！）所建立。\n"
+"\n"
+"同步成功後，兩個家族樹將完全相同。系統會依據時間戳記同步修改內容。在對本機或"
+"遠端家族樹進行任何變更前，都會提示您確認。\n"
+"\n"
+"若您想要合併兩個有顯著差異的家族樹並手動進行修改，請改用「匯入合併工具」。"
+
+msgid "Error:"
+msgstr "錯誤："
+
+msgid "Warning:"
+msgstr "警告："
+
+msgid "Sync mode:"
+msgstr "同步模式："
+
+msgid "Copy"
+msgstr "複製"
+
+msgid "Synchronization complete"
+msgstr "同步完成"
+
+msgid "Synchronization failed"
+msgstr "同步失敗"
 
 #, python-format
 msgid "Gramps Web Sync %(addon)s, Web API %(api)s"
@@ -305,94 +396,3 @@ msgstr[0] "上次同步：%s 天前"
 #, python-format
 msgid "Last synced on %s"
 msgstr "上次同步時間：%s"
-
-msgid "_Try again"
-msgstr "再試一次(_T)"
-
-msgid "C_onnect"
-msgstr "連線(_O)"
-
-msgid "Forget this server?"
-msgstr "要忘記這台伺服器嗎？"
-
-msgid ""
-"The address, user name and password stored for this server will be removed, "
-"along with the record of when this family tree last synchronized with it. "
-"The next synchronization will compare the two trees from scratch."
-msgstr ""
-"將移除此伺服器儲存的地址、使用者名稱及密碼，以及此家族樹上次與其同步的時間記"
-"錄。下次同步時會重新完整比對兩棵家族樹。"
-
-msgid "Forget"
-msgstr "移除"
-
-msgid ""
-"These credentials were last used with a different family tree. Check the "
-"server before continuing."
-msgstr "這組憑證上次用於另一棵家族樹。請先檢查伺服器再繼續。"
-
-msgid "Change server…"
-msgstr "變更伺服器…"
-
-msgid "Server URL:"
-msgstr "伺服器 URL："
-
-msgid "Username:"
-msgstr "使用者名稱："
-
-msgid "Password:"
-msgstr "密碼："
-
-msgid "Remember password"
-msgstr "記住密碼"
-
-msgid "Forget this server"
-msgstr "移除此伺服器"
-
-msgid "About this tool"
-msgstr "關於此工具"
-
-msgid "Open the online manual"
-msgstr "開啟線上手冊"
-
-msgid ""
-"This tool allows to synchronize the currently opened family tree with a "
-"remote family tree served by Gramps Web.\n"
-"\n"
-"The tool assumes that the two trees are derivatives of each other, i.e. one "
-"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
-"\n"
-"After successful synchronization, the two trees will be identical. "
-"Modifications will be propagated based on timestamps. You will be prompted "
-"for confirmation before any changes are made to the local or remote trees.\n"
-"\n"
-"If you instead want to merge two significantly different trees with the "
-"option to make manual modifications, use the Import Merge Tool instead."
-msgstr ""
-"此工具可讓您將目前開啟的家族樹與由 Gramps Web 託管的遠端家族樹進行同步。\n"
-"\n"
-"此工具假設兩個家族樹互為衍生關係，亦即其中一個是由另一個匯出的 Gramps XML"
-"（非 GEDCOM！）所建立。\n"
-"\n"
-"同步成功後，兩個家族樹將完全相同。系統會依據時間戳記同步修改內容。在對本機或"
-"遠端家族樹進行任何變更前，都會提示您確認。\n"
-"\n"
-"若您想要合併兩個有顯著差異的家族樹並手動進行修改，請改用「匯入合併工具」。"
-
-msgid "Error:"
-msgstr "錯誤："
-
-msgid "Warning:"
-msgstr "警告："
-
-msgid "Sync mode:"
-msgstr "同步模式："
-
-msgid "Copy"
-msgstr "複製"
-
-msgid "Synchronization complete"
-msgstr "同步完成"
-
-msgid "Synchronization failed"
-msgstr "同步失敗"

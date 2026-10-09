@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-06 07:24+0200\n"
-"PO-Revision-Date: 2026-09-06 12:51+0000\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-09-27 07:51+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,13 +12,110 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 msgid "Gramps Web Sync"
 msgstr "Gramps Web Sync"
 
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Synchronizuje lokálnu databázu s inštanciou Gramps Web."
+
+msgid "_Try again"
+msgstr "_Skúste znova"
+
+msgid "C_onnect"
+msgstr "P_ripojiť"
+
+msgid "Forget this server?"
+msgstr "Zabudnúť tento server?"
+
+msgid ""
+"The address, user name and password stored for this server will be removed, "
+"along with the record of when this family tree last synchronized with it. "
+"The next synchronization will compare the two trees from scratch."
+msgstr ""
+"Adresa, používateľské meno a heslo uložené pre tento server budú odstránené "
+"spolu so záznamom o tom, kedy sa tento rodostrom naposledy synchronizoval. "
+"Pri ďalšej synchronizácii sa oba stromy budú porovnávať od začiatku."
+
+msgid "Forget"
+msgstr "Zabudnúť"
+
+msgid ""
+"These credentials were last used with a different family tree. Check the "
+"server before continuing."
+msgstr ""
+"Tieto prihlasovacie údaje boli naposledy použité s iným rodostromom. Pred "
+"pokračovaním skontrolujte server."
+
+msgid "Change server…"
+msgstr "Zmeniť server…"
+
+msgid "Server URL:"
+msgstr "URL servera:"
+
+msgid "Username:"
+msgstr "Používateľské meno:"
+
+msgid "Password:"
+msgstr "Heslo:"
+
+msgid "Remember password"
+msgstr "Zapamätať heslo"
+
+msgid "Forget this server"
+msgstr "Zabudnúť tento server"
+
+msgid "About this tool"
+msgstr "O tomto nástroji"
+
+msgid "Open the online manual"
+msgstr "Otvoriť online manuál"
+
+msgid ""
+"This tool allows to synchronize the currently opened family tree with a "
+"remote family tree served by Gramps Web.\n"
+"\n"
+"The tool assumes that the two trees are derivatives of each other, i.e. one "
+"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
+"\n"
+"After successful synchronization, the two trees will be identical. "
+"Modifications will be propagated based on timestamps. You will be prompted "
+"for confirmation before any changes are made to the local or remote trees.\n"
+"\n"
+"If you instead want to merge two significantly different trees with the "
+"option to make manual modifications, use the Import Merge Tool instead."
+msgstr ""
+"Tento nástroj umožňuje synchronizovať aktuálne otvorený rodostrom so "
+"vzdialeným rodostromom, ktorý poskytuje Gramps Web.\n"
+"\n"
+"Nástroj predpokladá, že oba stromy sú vzájomne odvodené, t. j. jeden z nich "
+"bol vytvorený z exportu druhého pomocou Gramps XML (nie GEDCOM!).\n"
+"\n"
+"Po úspešnej synchronizácii budú oba stromy identické. Zmeny sa budú šíriť na "
+"základe časových pečiatok. Pred vykonaním akýchkoľvek zmien v miestnom alebo "
+"vzdialenom strome budete vyzvaní na potvrdenie.\n"
+"\n"
+"Ak chcete namiesto toho zlúčiť dva výrazne odlišné stromy s možnosťou "
+"vykonať ručné úpravy, použite namiesto toho nástroj na import a zlúčenie."
+
+msgid "Error:"
+msgstr "Chyba:"
+
+msgid "Warning:"
+msgstr "Upozornenie:"
+
+msgid "Sync mode:"
+msgstr "Synchronizovaný režim:"
+
+msgid "Copy"
+msgstr "Kopírovať"
+
+msgid "Synchronization complete"
+msgstr "Synchronizácia dokončená"
+
+msgid "Synchronization failed"
+msgstr "Synchronizácia zlyhala"
 
 #, python-format
 msgid "Gramps Web Sync %(addon)s, Web API %(api)s"
@@ -63,7 +160,7 @@ msgid "Too many requests, please try again in a few seconds."
 msgstr "Príliš veľa požiadaviek, skúste to prosím o niekoľko sekúnd neskôr."
 
 msgid "GrampsWeb tree is disabled."
-msgstr "GrampsWeb tree je deaktivovaný."
+msgstr "Strom GrampsWeb je deaktivovaný."
 
 msgid "Connection failed. Please check the URL and your internet connection."
 msgstr ""
@@ -91,7 +188,7 @@ msgid ""
 "The family tree was modified while the changes were being reviewed. Nothing "
 "has been applied. Please compare again."
 msgstr ""
-"Rodinný strom bol modifikovaný počas kontroly zmien. Nič nebolo aplikované. "
+"Rodostrom bol modifikovaný počas kontroly zmien. Nič nebolo aplikované. "
 "Prosím, porovnajte znova."
 
 #, python-format
@@ -145,10 +242,10 @@ msgid "Signing in…"
 msgstr "Prihlasovanie…"
 
 msgid "Downloading the remote family tree…"
-msgstr "Sťahovanie vzdialeného rodinného stromu…"
+msgstr "Sťahovanie vzdialeného rodostromu…"
 
 msgid "Comparing the two family trees…"
-msgstr "Porovnávanie dvoch rodinných stromov…"
+msgstr "Porovnávanie dvoch rodostromov…"
 
 msgid "Checking which media files are missing…"
 msgstr "Kontrola chýbajúcich mediálnych súborov…"
@@ -363,101 +460,3 @@ msgstr[2] "Naposledy synchronizované pred %s dňami"
 #, python-format
 msgid "Last synced on %s"
 msgstr "Naposledy synchronizované dňa %s"
-
-msgid "_Try again"
-msgstr "_Skúste znova"
-
-msgid "C_onnect"
-msgstr "P_ripojiť"
-
-msgid "Forget this server?"
-msgstr "Zabudnúť tento server?"
-
-msgid ""
-"The address, user name and password stored for this server will be removed, "
-"along with the record of when this family tree last synchronized with it. "
-"The next synchronization will compare the two trees from scratch."
-msgstr ""
-"Adresa, používateľské meno a heslo uložené pre tento server budú odstránené "
-"spolu so záznamom o tom, kedy sa tento rodinný strom naposledy "
-"synchronizoval. Pri ďalšej synchronizácii sa oba stromy budú porovnávať od "
-"začiatku."
-
-msgid "Forget"
-msgstr "Zabudnúť"
-
-msgid ""
-"These credentials were last used with a different family tree. Check the "
-"server before continuing."
-msgstr ""
-"Tieto prihlasovacie údaje boli naposledy použité s iným rodinným stromom. "
-"Pred pokračovaním skontrolujte server."
-
-msgid "Change server…"
-msgstr "Zmeniť server…"
-
-msgid "Server URL:"
-msgstr "URL servera:"
-
-msgid "Username:"
-msgstr "Používateľské meno:"
-
-msgid "Password:"
-msgstr "Heslo:"
-
-msgid "Remember password"
-msgstr "Zapamätať heslo"
-
-msgid "Forget this server"
-msgstr "Zabudnúť tento server"
-
-msgid "About this tool"
-msgstr "O tomto nástroji"
-
-msgid "Open the online manual"
-msgstr "Otvoriť online manuál"
-
-msgid ""
-"This tool allows to synchronize the currently opened family tree with a "
-"remote family tree served by Gramps Web.\n"
-"\n"
-"The tool assumes that the two trees are derivatives of each other, i.e. one "
-"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
-"\n"
-"After successful synchronization, the two trees will be identical. "
-"Modifications will be propagated based on timestamps. You will be prompted "
-"for confirmation before any changes are made to the local or remote trees.\n"
-"\n"
-"If you instead want to merge two significantly different trees with the "
-"option to make manual modifications, use the Import Merge Tool instead."
-msgstr ""
-"Tento nástroj umožňuje synchronizovať aktuálne otvorený rodokmeň so "
-"vzdialeným rodokmeňom, ktorý poskytuje Gramps Web.\n"
-"\n"
-"Nástroj predpokladá, že oba stromy sú vzájomne odvodené, t. j. jeden z nich "
-"bol vytvorený z exportu druhého pomocou Gramps XML (nie GEDCOM!).\n"
-"\n"
-"Po úspešnej synchronizácii budú oba stromy identické. Zmeny sa budú šíriť na "
-"základe časových pečiatok. Pred vykonaním akýchkoľvek zmien v miestnom alebo "
-"vzdialenom strome budete vyzvaní na potvrdenie.\n"
-"\n"
-"Ak chcete namiesto toho zlúčiť dva výrazne odlišné stromy s možnosťou "
-"vykonať ručné úpravy, použite namiesto toho nástroj na import a zlúčenie."
-
-msgid "Error:"
-msgstr "Chyba:"
-
-msgid "Warning:"
-msgstr "Upozornenie:"
-
-msgid "Sync mode:"
-msgstr "Synchronizovaný režim:"
-
-msgid "Copy"
-msgstr "Kopírovať"
-
-msgid "Synchronization complete"
-msgstr "Synchronizácia dokončená"
-
-msgid "Synchronization failed"
-msgstr "Synchronizácia zlyhala"

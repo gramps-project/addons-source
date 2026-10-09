@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 15:10-0800\n"
-"PO-Revision-Date: 2025-03-07 06:31+0000\n"
+"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"PO-Revision-Date: 2026-09-25 18:51+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,33 +12,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 msgid "Set Privacy Tool"
 msgstr "Markeer privé hulpmiddel"
 
 #, python-format
 msgid "Set private: %d %s\n"
-msgstr "Markeer privé %d %s\n"
+msgstr "Privé markeren: %d %s\n"
 
 #, python-format
 msgid "Not private: %d %s\n"
 msgstr "Niet privé: %d %s\n"
 
 msgid "Set persons private.."
-msgstr "Markeer personen op privé."
+msgstr "Personen als privé markeren…"
 
 msgid "Set events private.."
-msgstr "Markeer gebeurtenissen op privé."
+msgstr "Gebeurtenissen als privé markeren…"
 
 msgid "Set media private.."
-msgstr "Markeer media op privé."
+msgstr "Media als privé markeren…"
 
 msgid "Set adresses private.."
-msgstr "Stel privéadressen in..."
+msgstr "Adressen als privé markeren..."
 
 msgid "Set internet objects private.."
-msgstr "Internetobjecten instellen op privé..."
+msgstr "Internetobjecten als privé markeren..."
 
 msgid ""
 "The time range in years from today you want to set objects private.\n"
@@ -46,14 +46,14 @@ msgid ""
 msgstr ""
 "Het tijdsbereik in jaren vanaf vandaag dat u objecten als privé wilt "
 "markeren.\n"
-"'0 jaar' = verwijder privacy van alle objecten."
+"'0 jaar' = privacy verwijderen van alle objecten."
 
 msgid "Always private if no date."
 msgstr "Altijd privé als er geen datum is."
 
 msgid "If checked, all objects without a date will also be set private."
 msgstr ""
-"Indien aangevinkt, worden alle objecten zonder datum ook als privé "
+"Indien geactiveerd, worden alle objecten zonder datum ook als privé "
 "gemarkeerd."
 
 msgid "Select filter to restrict people"
@@ -75,4 +75,4 @@ msgid "E-Mail"
 msgstr "E-mail"
 
 msgid "Set all objects of the last <number> of years private."
-msgstr "Markeer alle objecten van de afgelopen <aantal> jaren op privé."
+msgstr "Alle objecten van de afgelopen <aantal> jaren als privé markeren."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 4.2.0-dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
 "PO-Revision-Date: 2026-09-06 12:53+0000\n"
 "Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
@@ -26,6 +26,7 @@ msgstr "遍歷人物清單中的所有雙向關聯，並為關聯人物補上任
 msgid "Add %s reciprocal association"
 msgstr "新增 %s 的反向關聯"
 
+#, python-brace-format
 msgid "{} Reciprocal associations created"
 msgstr "已建立 {} 個相互關聯"
 

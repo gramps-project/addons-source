@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:40+0000\n"
-"PO-Revision-Date: 2025-02-25 16:12+0000\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-08-28 06:51+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -12,10 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.2-dev\n"
-
-msgid "Sources Index"
-msgstr "Kildeindeks"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "BirthIndex"
 msgstr "Fødselsindeks"
@@ -30,6 +27,9 @@ msgid "CensusIndex"
 msgstr "Folketællingsindeks"
 
 msgid "SourceIndex"
+msgstr "Kildeindeks"
+
+msgid "Sources Index"
 msgstr "Kildeindeks"
 
 msgid "*** Error: Must install either ElementTree or lxml."
@@ -138,85 +138,6 @@ msgstr ""
 "Post transskribering fødsler/dødsfald/ægteskaber/folketællinger med fælles "
 "felter: id, arkiv, person, navn, fødselsdato og sted, forældre."
 
-msgid "Info:"
-msgstr "Info:"
-
-msgid "Death act:"
-msgstr "Dødshandling:"
-
-msgid "Reference:"
-msgstr "Henvisning:"
-
-msgid "Volume:"
-msgstr "Bind:"
-
-msgid "<b>Death act</b>"
-msgstr "<b>Dødshandling</b>"
-
-msgid "First name:"
-msgstr "Fornavn:"
-
-msgid "Age:"
-msgstr "Alder:"
-
-msgid "<b>Image</b>"
-msgstr "<b>Billede</b>"
-
-msgid "<b>Repository</b>"
-msgstr "<b>Arkiv</b>"
-
-msgid "<b>Data person</b>"
-msgstr "<b>Data person</b>"
-
-msgid "Origin:"
-msgstr "Oprindelse:"
-
-msgid "Occupation:"
-msgstr "Profession:"
-
-msgid "Live:"
-msgstr "Levende:"
-
-msgid "<b>Witness:</b>"
-msgstr "<b>Vidne:</b>"
-
-msgid "Birth date:"
-msgstr "Fødselsdato:"
-
-msgid "Birth place:"
-msgstr "Fødested:"
-
-msgid "Note:"
-msgstr "Note:"
-
-msgid "Spouse name:"
-msgstr "Ægtefælles navn:"
-
-msgid "Marriage date:"
-msgstr "Vielsesdato:"
-
-msgid "Marriage place:"
-msgstr "Vielsessted:"
-
-msgid "<b>Data mother</b>"
-msgstr "<b>Data moder</b>"
-
-msgid "<b>Data father</b>"
-msgstr "<b>Data fader</b>"
-
-msgid "<b>Spouse</b> "
-msgstr "<b>Ægtefælle</b> "
-
-msgid "alive"
-msgstr "i live"
-
-msgid ""
-"witness1, name, given, age, occupation; witness2, name, given, age, "
-"occupation, etc ..."
-msgstr ""
-"vidne1, navn, ,fornavn, alder, status, beskæftigelse;vidne2, navn, ,fornavn, "
-"alder, status, beskæftigelse, o.s.v..."
-
 msgid "witness"
 msgstr "vidner"
 
@@ -229,24 +150,26 @@ msgstr "Navne:"
 msgid "First names:"
 msgstr "Fornavne:"
 
-msgid "<b>Census</b>"
-msgstr "<b>Folketælling</b>"
+msgid "Age:"
+msgstr "Alder:"
 
-msgid "Death date:"
-msgstr "Dødsdato:"
+msgid "Origin:"
+msgstr "Oprindelse:"
 
-msgid "Death place:"
-msgstr "Dødssted:"
+msgid "Occupation:"
+msgstr "Profession:"
 
-msgid "Family status:"
-msgstr "Familiestatus:"
+msgid "Live:"
+msgstr "Levende:"
 
-msgid "order, person, surname, given, age, status, occupation, etc ..."
-msgstr ""
-"orden, person, efternavn, fornavn, alder, status, beskæftigelse, o.s.v..."
+msgid "Info:"
+msgstr "Info:"
 
 msgid "Birth act:"
 msgstr "Fødselshandling:"
+
+msgid "Reference:"
+msgstr "Henvisning:"
 
 msgid ""
 "Volume\n"
@@ -275,6 +198,9 @@ msgstr "Andre:"
 
 msgid "Repository title"
 msgstr "Arkivtitel"
+
+msgid "<b>Image</b>"
+msgstr "<b>Billede</b>"
 
 msgid "<b><i>Repository</i></b>"
 msgstr "<b><i>Arkiv</i></b>"
@@ -367,6 +293,80 @@ msgstr "<b><i>Kildehenvisning</i></b>"
 
 msgid "<b><i>Source</i></b>"
 msgstr "<b><i>Kilde</i></b>"
+
+msgid "Death act:"
+msgstr "Dødshandling:"
+
+msgid "Volume:"
+msgstr "Bind:"
+
+msgid "<b>Death act</b>"
+msgstr "<b>Dødshandling</b>"
+
+msgid "First name:"
+msgstr "Fornavn:"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Arkiv</b>"
+
+msgid "<b>Data person</b>"
+msgstr "<b>Data person</b>"
+
+msgid "<b>Witness:</b>"
+msgstr "<b>Vidne:</b>"
+
+msgid "Birth date:"
+msgstr "Fødselsdato:"
+
+msgid "Birth place:"
+msgstr "Fødested:"
+
+msgid "Note:"
+msgstr "Note:"
+
+msgid "Spouse name:"
+msgstr "Ægtefælles navn:"
+
+msgid "Marriage date:"
+msgstr "Vielsesdato:"
+
+msgid "Marriage place:"
+msgstr "Vielsessted:"
+
+msgid "<b>Data mother</b>"
+msgstr "<b>Data moder</b>"
+
+msgid "<b>Data father</b>"
+msgstr "<b>Data fader</b>"
+
+msgid "<b>Spouse</b> "
+msgstr "<b>Ægtefælle</b> "
+
+msgid "alive"
+msgstr "i live"
+
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"vidne1, navn, ,fornavn, alder, status, beskæftigelse;vidne2, navn, ,fornavn, "
+"alder, status, beskæftigelse, o.s.v..."
+
+msgid "<b>Census</b>"
+msgstr "<b>Folketælling</b>"
+
+msgid "Death date:"
+msgstr "Dødsdato:"
+
+msgid "Death place:"
+msgstr "Dødssted:"
+
+msgid "Family status:"
+msgstr "Familiestatus:"
+
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr ""
+"orden, person, efternavn, fornavn, alder, status, beskæftigelse, o.s.v..."
 
 msgid "Marriage act:"
 msgstr "Bryllupshandling:"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: 2026-07-24 05:14+0000\n"
 "Last-Translator: Juan Saavedra <jcsaaver@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
@@ -27,6 +27,9 @@ msgstr "Persona menos separada que <N> grados de <persona>"
 
 msgid "Filter rule that matches relatives by degrees of separation"
 msgstr "Regla de filtro que coincide relativas por grados de separación"
+
+msgid "Role:"
+msgstr "Rol:"
 
 msgid "Source matching parameters"
 msgstr "Origen coincide con parámetros"
@@ -113,9 +116,6 @@ msgstr "Filtro de gente por su edad en la defunción"
 
 msgid "Filter rule that matches people by their age at death"
 msgstr "Regla de filtro que coincida gente por su edad en la defunción"
-
-msgid "Role:"
-msgstr "Rol:"
 
 msgid "Multiple Parents Filter"
 msgstr "Filtro de Múltiples Ancestros"

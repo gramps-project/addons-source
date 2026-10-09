@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"PO-Revision-Date: 2026-09-30 15:23+0000\n"
 "Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
@@ -12,13 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 msgid "File exists. Overwrite?"
-msgstr "ファイルが存在します。上書きしますか？"
+msgstr "ファイルが存在します。上書きしますか?"
 
 msgid "created"
 msgstr "作成日"
@@ -30,16 +30,16 @@ msgid "Main"
 msgstr "メイン"
 
 msgid "Orthogonal (right angles in connectors)"
-msgstr "直交 (コネクタに直角を使用）"
+msgstr "直交 (コネクタに直角を使用)"
 
 msgid "Straight (no right angles in connectors)"
-msgstr "直線 (コネクタに直角なし）"
+msgstr "直線 (コネクタに直角なし)"
 
 msgid "Curved (curved and straight connectors)"
-msgstr "曲線 (曲線と直線のコネクタ）"
+msgstr "曲線 (曲線と直線のコネクタ)"
 
 msgid "Default (Orthogonal)"
-msgstr "デフォルト (直交）"
+msgstr "デフォルト (直交)"
 
 msgid "Select the graph line connector format."
 msgstr "グラフ線コネクタの形式を選択します。"
@@ -57,7 +57,7 @@ msgid "Right to Left"
 msgstr "右から左"
 
 msgid "Default (Top to Bottom)"
-msgstr "デフォルト (上から下）"
+msgstr "デフォルト (上から下)"
 
 msgid "Select the graph direction."
 msgstr "グラフの方向を選択します。"
@@ -78,7 +78,7 @@ msgid "Don't include URLs"
 msgstr "URLを含めない"
 
 msgid "Default (include)"
-msgstr "デフォルト (含める）"
+msgstr "デフォルト (含める)"
 
 msgid "Select URL style."
 msgstr "URLスタイルを選択します。"
@@ -92,7 +92,7 @@ msgid ""
 "URL = Prefix + GrampsID + Suffix."
 msgstr ""
 "動的に生成されるURLの\n"
-"プレフィックス、サフィックス (カンマ区切り）を入力します。\n"
+"プレフィックス、サフィックス (カンマ区切り)を入力します。\n"
 "URL = プレフィックス + GrampsID + サフィックス。"
 
 msgid "Enter Font Name"
@@ -110,11 +110,11 @@ msgstr ""
 "https://www.fontsquirrel.com/fonts/white-rabbit"
 
 msgid "Spacing (inch)"
-msgstr "間隔 (インチ）"
+msgstr "間隔 (インチ)"
 
 msgid ""
 "Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
-msgstr "\"世代\" 間の距離をインチ単位で入力します (0.1-5.0）。"
+msgstr "\"世代\" 間の距離をインチ単位で入力します (0.1-5.0)。"
 
 msgid "Enter Chart Title"
 msgstr "チャートのタイトルを入力"
@@ -123,7 +123,7 @@ msgid "Set the title of the chart."
 msgstr "チャートのタイトルを設定します。"
 
 msgid "Default (svg)"
-msgstr "デフォルト (svg）"
+msgstr "デフォルト (svg)"
 
 msgid ""
 "svg - Scalable Vector Graphics file.\n"
@@ -157,7 +157,7 @@ msgid "Male Background Alpha"
 msgstr "男性の背景のアルファ"
 
 msgid "Alpha for Male box background (transparent=0, solid=255)."
-msgstr "男性ボックス背景のアルファ (透明=0、不透明=255）。"
+msgstr "男性ボックス背景のアルファ (透明=0、不透明=255)。"
 
 msgid "Male Box Edge"
 msgstr "男性ボックスのエッジ"
@@ -175,7 +175,7 @@ msgid "Female Background Alpha"
 msgstr "女性の背景のアルファ"
 
 msgid "Alpha for Female box background (transparent=0, solid=255)."
-msgstr "女性ボックス背景のアルファ (透明=0、不透明=255）。"
+msgstr "女性ボックス背景のアルファ (透明=0、不透明=255)。"
 
 msgid "Female Box Edge"
 msgstr "女性ボックスのエッジ"
@@ -193,7 +193,7 @@ msgid "Other Background Alpha"
 msgstr "その他の背景のアルファ"
 
 msgid "Alpha for Other box background (transparent=0, solid=255)."
-msgstr "その他のボックス背景のアルファ (透明=0、不透明=255）。"
+msgstr "その他のボックス背景のアルファ (透明=0、不透明=255)。"
 
 msgid "Family Connector Line"
 msgstr "家族コネクタ線"
@@ -227,7 +227,7 @@ msgid "Remove color background on all nodes."
 msgstr "すべてのノードの色背景を削除。"
 
 msgid "Removes color background for individuals (nodes) on chart."
-msgstr "チャート上の個人 (ノード）の色背景を削除します。"
+msgstr "チャート上の個人 (ノード)の色背景を削除します。"
 
 msgid ""
 "Enter year to start\n"
@@ -245,7 +245,7 @@ msgstr ""
 "この年以降の誕生日は年のみで表示されます。無効なエントリは無視されます。"
 
 msgid "Round birthday to year after year entered (above)."
-msgstr "誕生日を (上記で）入力した年以降は年のみに丸める。"
+msgstr "誕生日を (上記で)入力した年以降は年のみに丸める。"
 
 msgid "Represent birthday by year only."
 msgstr "誕生日を年のみで表示。"
@@ -265,7 +265,7 @@ msgid ""
 msgstr "この年以降の結婚は年のみで表示されます。無効なエントリは無視されます。"
 
 msgid "Round marriage to year after year entered (above)."
-msgstr "結婚を (上記で）入力した年以降は年のみに丸める。"
+msgstr "結婚を (上記で)入力した年以降は年のみに丸める。"
 
 msgid "Represent marriage by year only."
 msgstr "結婚を年のみで表示。"
@@ -290,7 +290,7 @@ msgid "Trim descendants"
 msgstr "子孫をトリム"
 
 msgid "All descendants (children) of selected individuals will not be shown."
-msgstr "選択された個人のすべての子孫 (子供）は表示されません。"
+msgstr "選択された個人のすべての子孫 (子供)は表示されません。"
 
 msgid "Enable trimming of descendants."
 msgstr "子孫のトリムを有効にします。"
@@ -306,7 +306,7 @@ msgid "Trim ancestors"
 msgstr "祖先をトリム"
 
 msgid "All ancestors (parents) of selected individuals will not be shown."
-msgstr "選択された個人のすべての祖先 (親）は表示されません。"
+msgstr "選択された個人のすべての祖先 (親)は表示されません。"
 
 msgid "Enable trimming of ancestors."
 msgstr "祖先のトリムを有効にします。"
@@ -362,7 +362,7 @@ msgid "Any"
 msgstr "任意"
 
 msgid "Default (None)"
-msgstr "デフォルト (なし）"
+msgstr "デフォルト (なし)"
 
 msgid ""
 "None - Don't highlight paths.\n"
@@ -377,7 +377,7 @@ msgid "Show only path(s)"
 msgstr "パスのみを表示"
 
 msgid "Default (none)"
-msgstr "デフォルト (なし）"
+msgstr "デフォルト (なし)"
 
 msgid ""
 "None - Don't show paths only.\n"

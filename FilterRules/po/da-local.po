@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: 2026-08-28 06:51+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
@@ -29,6 +29,9 @@ msgstr "Personer delt af mindre end <N> grader af <person>"
 
 msgid "Filter rule that matches relatives by degrees of separation"
 msgstr "Filterregel der matcher slægtninge efter grader af deling"
+
+msgid "Role:"
+msgstr "Rolle:"
 
 msgid "Source matching parameters"
 msgstr "Kilde der matcher parametre"
@@ -113,9 +116,6 @@ msgstr "Filtrer person efter alder ved død"
 
 msgid "Filter rule that matches people by their age at death"
 msgstr "Filterregel der matcher personer efter  deres alder ved død"
-
-msgid "Role:"
-msgstr "Rolle:"
 
 msgid "Multiple Parents Filter"
 msgstr "Flere forældrefiltre"

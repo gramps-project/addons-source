@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-24 01:13-0700\n"
-"PO-Revision-Date: 2026-07-30 22:02+0000\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-08-07 07:57+0000\n"
 "Last-Translator: Osman Öz <osmanoz05@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.8.1.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
 "X-Language: tr\n"
 "X-Source-Language: C\n"
@@ -31,6 +31,59 @@ msgstr "Baba Adı Önerisi"
 
 msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
 msgstr "Gezinirken gerçek zamanlı olarak (Doğu Slav) baba adlarını önerir."
+
+msgid "Use"
+msgstr "Kullan"
+
+#, python-brace-format
+msgid ""
+"Missing Patronymic Detected.\n"
+"Suggested: {0}\n"
+"Based on father: {1}"
+msgstr ""
+"Eksik patronimik tespit edildi.\n"
+"Önerilen: {0}\n"
+"Babaya göre: {1}"
+
+msgid "Navigate to an individual to check patronymic status."
+msgstr "Bir kişinin patronimik durumunu kontrol etmek için ona gidin."
+
+msgid "No active person selected."
+msgstr "Etkin kişi ayarlanmadı."
+
+msgid ""
+"Patronymic inference can't be inferred for non-binary or unknown genders."
+msgstr ""
+"İkili cinsiyet sistemine uymayan veya cinsiyeti bilinmeyen kişiler için "
+"patronimik çıkarımı yapılamaz."
+
+msgid "Individual already has a recorded patronymic."
+msgstr "Kişinin kayıtlı bir patronimik adı zaten mevcut."
+
+msgid "No attached father found in database family records."
+msgstr ""
+"Veritabanındaki aile kayıtlarında babaya dair herhangi bir bilgi bulunamadı."
+
+msgid "Father lacks a recorded first name."
+msgstr "Babanın kayıtlı bir adı bulunmamaktadır."
+
+msgid "Could not generate valid morphology patterns."
+msgstr "Geçerli morfoloji kalıpları oluşturulamadı."
+
+msgid "Patronymic applied successfully!"
+msgstr "Patronimik adı başarıyla uygulandı!"
+
+msgid "Apply Suggestion"
+msgstr "Öneriyi Uygula"
+
+msgid "Infer East Slavic Patronymics"
+msgstr "Doğu Slav Patronimiklerini Çıkarımla"
+
+msgid "Rename Given Names"
+msgstr "Verilen Adları Yeniden Adlandır"
+
+msgid "Audit Patronymics"
+msgstr "Patronimiklerin Denetimi"
 
 msgid "Auditing Settings"
 msgstr "Denetim Ayarları"
@@ -89,9 +142,6 @@ msgstr "Sonuç Bulunamadı"
 msgid "No issues found."
 msgstr "Herhangi bir sorun bulunamadı."
 
-msgid "Use"
-msgstr "Kullan"
-
 msgid "Search and Replace Options"
 msgstr "Arama ve Değiştirme Seçenekleri"
 
@@ -130,57 +180,3 @@ msgstr "Tümünü seç"
 
 msgid "Proposed"
 msgstr "Önerilen"
-
-msgid "Infer East Slavic Patronymics"
-msgstr "Doğu Slav Patronimiklerini Çıkarımla"
-
-msgid "Rename Given Names"
-msgstr "Verilen Adları Yeniden Adlandır"
-
-msgid "Audit Patronymics"
-msgstr "Patronimiklerin Denetimi"
-
-#, python-brace-format
-msgid ""
-"Missing Patronymic Detected.\n"
-"Suggested: {0}\n"
-"Based on father: {1}"
-msgstr ""
-"Eksik patronimik tespit edildi.\n"
-"Önerilen: {0}\n"
-"Babaya göre: {1}"
-
-msgid "Navigate to an individual to check patronymic status."
-msgstr "Bir kişinin patronimik durumunu kontrol etmek için ona gidin."
-
-msgid "No active person selected."
-msgstr "Etkin kişi ayarlanmadı."
-
-msgid ""
-"Patronymic inference can't be inferred for non-binary or unknown genders."
-msgstr ""
-"İkili cinsiyet sistemine uymayan veya cinsiyeti bilinmeyen kişiler için "
-"patronimik çıkarımı yapılamaz."
-
-msgid "Individual already has a recorded patronymic."
-msgstr "Kişinin kayıtlı bir patronimik adı zaten mevcut."
-
-msgid "No attached father found in database family records."
-msgstr ""
-"Veritabanındaki aile kayıtlarında babaya dair herhangi bir bilgi bulunamadı."
-
-msgid "Father lacks a recorded first name."
-msgstr "Babanın kayıtlı bir adı bulunmamaktadır."
-
-msgid "Could not generate valid morphology patterns."
-msgstr "Geçerli morfoloji kalıpları oluşturulamadı."
-
-msgid "Patronymic applied successfully!"
-msgstr "Patronimik adı başarıyla uygulandı!"
-
-msgid "Apply Suggestion"
-msgstr "Öneriyi Uygula"
-
-#, python-format
-msgid "%(prog)s: error: %(message)s\n"
-msgstr "%(prog)s: hata: %(message)s\n"

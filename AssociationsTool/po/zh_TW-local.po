@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 4.2.0-dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: 2026-09-06 12:53+0000\n"
 "Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
@@ -17,14 +17,5 @@ msgstr ""
 msgid "Check Associations data"
 msgstr "檢查關聯資料"
 
-msgid "Will check the data on Association for people."
-msgstr "檢查人物的關聯資料。"
-
 msgid "Associations state tool"
 msgstr "關聯狀態工具"
-
-msgid "Type of link"
-msgstr "連結類型"
-
-msgid "Of"
-msgstr "的"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-03-06 17:38+0000\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-09-30 15:23+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -12,19 +12,70 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.3-dev\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 msgid "Check Associations data"
 msgstr "Kontrollera relationsdata"
 
-msgid "Will check the data on Association for people."
-msgstr "Kontrollerar uppgifterna om släktskap för personer."
+msgid "Display all person Associations in a sortable, hotlinked table"
+msgstr "Visa alla personkopplingar i en sorterbar tabell med länkar"
 
 msgid "Associations state tool"
 msgstr "Verktyg för släktskapstillstånd"
 
-msgid "Type of link"
-msgstr "Linktyp"
+#, python-format
+msgid "Error initializing data: %s"
+msgstr "Fel vid initiering av data: %s"
 
-msgid "Of"
-msgstr "Av"
+#, python-format
+msgid "Error processing person %s: %s"
+msgstr "Fel vid bearbetning av person %s: %s"
+
+msgid "Processing associations..."
+msgstr "Bearbetar associationer..."
+
+#, python-format
+msgid "Could not create progress dialog: %s"
+msgstr "Det gick inte att skapa förloppsdialogrutan: %s"
+
+#, python-format
+msgid "Processing %d of %d persons"
+msgstr "Bearbetar %d av %d personer"
+
+#, python-format
+msgid "Error displaying associations: %s"
+msgstr "Fel vid visning av associationer: %s"
+
+msgid "Starting Name"
+msgstr "Startnamn"
+
+msgid "Associate"
+msgstr "Associera"
+
+#, python-format
+msgid "Total associations found: %d"
+msgstr "Totalt antal hittade associationer: %d"
+
+msgid "Edit Starting Person"
+msgstr "Redigera startperson"
+
+msgid "Edit Associate Person"
+msgstr "Redigera associerad person"
+
+msgid "Edit Association"
+msgstr "Redigera associering"
+
+msgid "Copy row to clipboard"
+msgstr "Kopiera rad till urklipp"
+
+msgid "Create Note from row"
+msgstr "Skapa anteckning från rad"
+
+msgid "Association:"
+msgstr "Associering:"
+
+msgid "Starting Person"
+msgstr "Startperson"
+
+msgid "Link type"
+msgstr "Länktyp"

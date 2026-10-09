@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:40+0000\n"
-"PO-Revision-Date: 2025-03-11 19:37+0000\n"
-"Last-Translator: Yurii Liubymyi <jurchello@gmail.com>\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2025-11-17 06:51+0000\n"
+"Last-Translator: Fedir Zinchuk <fedikw@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/uk/>\n"
 "Language: uk\n"
@@ -13,10 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10.3-dev\n"
-
-msgid "Sources Index"
-msgstr "Індекс джерел"
+"X-Generator: Weblate 5.15-dev\n"
 
 msgid "BirthIndex"
 msgstr "Індекс народжень"
@@ -31,6 +28,9 @@ msgid "CensusIndex"
 msgstr "Індекс переписів"
 
 msgid "SourceIndex"
+msgstr "Індекс джерел"
+
+msgid "Sources Index"
 msgstr "Індекс джерел"
 
 msgid "*** Error: Must install either ElementTree or lxml."
@@ -139,85 +139,6 @@ msgstr ""
 "Записує транскрипції ... народжень/смертей/шлюбів/переписів із загальними "
 "полями: ID, сховище, ім'я особи, дата і місце народження, батьки."
 
-msgid "Info:"
-msgstr "Інформація:"
-
-msgid "Death act:"
-msgstr "Запис про смерть:"
-
-msgid "Reference:"
-msgstr "Посилання:"
-
-msgid "Volume:"
-msgstr "Том:"
-
-msgid "<b>Death act</b>"
-msgstr "<b>Запис про смерть</b>"
-
-msgid "First name:"
-msgstr "Ім'я:"
-
-msgid "Age:"
-msgstr "Вік:"
-
-msgid "<b>Image</b>"
-msgstr "<b>Зображення</b>"
-
-msgid "<b>Repository</b>"
-msgstr "<b>Сховище</b>"
-
-msgid "<b>Data person</b>"
-msgstr "<b>Дані особи</b>"
-
-msgid "Origin:"
-msgstr "Походження:"
-
-msgid "Occupation:"
-msgstr "Професія:"
-
-msgid "Live:"
-msgstr "Проживає:"
-
-msgid "<b>Witness:</b>"
-msgstr "<b>Свідок:</b>"
-
-msgid "Birth date:"
-msgstr "Дата народження:"
-
-msgid "Birth place:"
-msgstr "Місце народження:"
-
-msgid "Note:"
-msgstr "Примітка:"
-
-msgid "Spouse name:"
-msgstr "Ім'я подружжя:"
-
-msgid "Marriage date:"
-msgstr "Дата шлюбу:"
-
-msgid "Marriage place:"
-msgstr "Місце шлюбу:"
-
-msgid "<b>Data mother</b>"
-msgstr "<b>Дані матері</b>"
-
-msgid "<b>Data father</b>"
-msgstr "<b>Дані батька</b>"
-
-msgid "<b>Spouse</b> "
-msgstr "<b>Чоловік/Дружина</b> "
-
-msgid "alive"
-msgstr "живий/жива"
-
-msgid ""
-"witness1, name, given, age, occupation; witness2, name, given, age, "
-"occupation, etc ..."
-msgstr ""
-"свідок1, прізвище, ім'я, вік, професія; свідок2, прізвище, ім'я, вік, "
-"професія тощо ..."
-
 msgid "witness"
 msgstr "свідок"
 
@@ -230,23 +151,26 @@ msgstr "Імена:"
 msgid "First names:"
 msgstr "Імена:"
 
-msgid "<b>Census</b>"
-msgstr "<b>Перепис</b>"
+msgid "Age:"
+msgstr "Вік:"
 
-msgid "Death date:"
-msgstr "Дата смерті:"
+msgid "Origin:"
+msgstr "Походження:"
 
-msgid "Death place:"
-msgstr "Місце смерті:"
+msgid "Occupation:"
+msgstr "Професія:"
 
-msgid "Family status:"
-msgstr "Сімейний стан:"
+msgid "Live:"
+msgstr "Проживає:"
 
-msgid "order, person, surname, given, age, status, occupation, etc ..."
-msgstr "номер, особа, прізвище, ім'я, вік, статус, професія тощо ..."
+msgid "Info:"
+msgstr "Інформація:"
 
 msgid "Birth act:"
 msgstr "Запис про народження:"
+
+msgid "Reference:"
+msgstr "Посилання:"
 
 msgid ""
 "Volume\n"
@@ -275,6 +199,9 @@ msgstr "Інше:"
 
 msgid "Repository title"
 msgstr "Назва сховища"
+
+msgid "<b>Image</b>"
+msgstr "<b>Зображення</b>"
 
 msgid "<b><i>Repository</i></b>"
 msgstr "<b><i>Сховище</i></b>"
@@ -367,6 +294,79 @@ msgstr "<b><i>Цитування</i></b>"
 
 msgid "<b><i>Source</i></b>"
 msgstr "<b><i>Джерело</i></b>"
+
+msgid "Death act:"
+msgstr "Запис про смерть:"
+
+msgid "Volume:"
+msgstr "Том:"
+
+msgid "<b>Death act</b>"
+msgstr "<b>Запис про смерть</b>"
+
+msgid "First name:"
+msgstr "Ім'я:"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Сховище</b>"
+
+msgid "<b>Data person</b>"
+msgstr "<b>Дані особи</b>"
+
+msgid "<b>Witness:</b>"
+msgstr "<b>Свідок:</b>"
+
+msgid "Birth date:"
+msgstr "Дата народження:"
+
+msgid "Birth place:"
+msgstr "Місце народження:"
+
+msgid "Note:"
+msgstr "Примітка:"
+
+msgid "Spouse name:"
+msgstr "Ім'я подружжя:"
+
+msgid "Marriage date:"
+msgstr "Дата шлюбу:"
+
+msgid "Marriage place:"
+msgstr "Місце шлюбу:"
+
+msgid "<b>Data mother</b>"
+msgstr "<b>Дані матері</b>"
+
+msgid "<b>Data father</b>"
+msgstr "<b>Дані батька</b>"
+
+msgid "<b>Spouse</b> "
+msgstr "<b>Чоловік/Дружина</b> "
+
+msgid "alive"
+msgstr "живий/жива"
+
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"свідок1, прізвище, ім'я, вік, професія; свідок2, прізвище, ім'я, вік, "
+"професія тощо ..."
+
+msgid "<b>Census</b>"
+msgstr "<b>Перепис</b>"
+
+msgid "Death date:"
+msgstr "Дата смерті:"
+
+msgid "Death place:"
+msgstr "Місце смерті:"
+
+msgid "Family status:"
+msgstr "Сімейний стан:"
+
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr "номер, особа, прізвище, ім'я, вік, статус, професія тощо ..."
 
 msgid "Marriage act:"
 msgstr "Акт шлюбу:"

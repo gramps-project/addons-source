@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 4.2.0-dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-24 01:13-0700\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
 "PO-Revision-Date: 2026-09-06 12:53+0000\n"
 "Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
@@ -26,6 +26,56 @@ msgstr "父名建議"
 
 msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
 msgstr "在瀏覽人物時，即時建議東斯拉夫父名。"
+
+msgid "Use"
+msgstr "使用"
+
+#, python-brace-format
+msgid ""
+"Missing Patronymic Detected.\n"
+"Suggested: {0}\n"
+"Based on father: {1}"
+msgstr ""
+"偵測到缺少父名。\n"
+"建議：{0}\n"
+"依據父親：{1}"
+
+msgid "Navigate to an individual to check patronymic status."
+msgstr "前往人物以檢查父名狀態。"
+
+msgid "No active person selected."
+msgstr "未選取目前人物。"
+
+msgid ""
+"Patronymic inference can't be inferred for non-binary or unknown genders."
+msgstr "無法為非二元或不明性別推算父名。"
+
+msgid "Individual already has a recorded patronymic."
+msgstr "此人物已有父名記錄。"
+
+msgid "No attached father found in database family records."
+msgstr "在資料庫家庭記錄中找不到關聯的父親。"
+
+msgid "Father lacks a recorded first name."
+msgstr "父親沒有名字記錄。"
+
+msgid "Could not generate valid morphology patterns."
+msgstr "無法產生有效的詞形變化規則。"
+
+msgid "Patronymic applied successfully!"
+msgstr "已成功套用父名！"
+
+msgid "Apply Suggestion"
+msgstr "套用建議"
+
+msgid "Infer East Slavic Patronymics"
+msgstr "推算東斯拉夫父名"
+
+msgid "Rename Given Names"
+msgstr "重新命名名字"
+
+msgid "Audit Patronymics"
+msgstr "稽核父名"
 
 msgid "Auditing Settings"
 msgstr "稽核設定"
@@ -84,9 +134,6 @@ msgstr "無結果"
 msgid "No issues found."
 msgstr "未發現問題。"
 
-msgid "Use"
-msgstr "使用"
-
 msgid "Search and Replace Options"
 msgstr "搜尋與取代選項"
 
@@ -122,54 +169,3 @@ msgstr "將原始名字保留為別名"
 
 msgid "Proposed"
 msgstr "建議值"
-
-msgid "Infer East Slavic Patronymics"
-msgstr "推算東斯拉夫父名"
-
-msgid "Rename Given Names"
-msgstr "重新命名名字"
-
-msgid "Audit Patronymics"
-msgstr "稽核父名"
-
-#, python-brace-format
-msgid ""
-"Missing Patronymic Detected.\n"
-"Suggested: {0}\n"
-"Based on father: {1}"
-msgstr ""
-"偵測到缺少父名。\n"
-"建議：{0}\n"
-"依據父親：{1}"
-
-msgid "Navigate to an individual to check patronymic status."
-msgstr "前往人物以檢查父名狀態。"
-
-msgid "No active person selected."
-msgstr "未選取目前人物。"
-
-msgid ""
-"Patronymic inference can't be inferred for non-binary or unknown genders."
-msgstr "無法為非二元或不明性別推算父名。"
-
-msgid "Individual already has a recorded patronymic."
-msgstr "此人物已有父名記錄。"
-
-msgid "No attached father found in database family records."
-msgstr "在資料庫家庭記錄中找不到關聯的父親。"
-
-msgid "Father lacks a recorded first name."
-msgstr "父親沒有名字記錄。"
-
-msgid "Could not generate valid morphology patterns."
-msgstr "無法產生有效的詞形變化規則。"
-
-msgid "Patronymic applied successfully!"
-msgstr "已成功套用父名！"
-
-msgid "Apply Suggestion"
-msgstr "套用建議"
-
-#, python-format
-msgid "%(prog)s: error: %(message)s\n"
-msgstr "%(prog)s：錯誤：%(message)s\n"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"PO-Revision-Date: 2026-09-10 08:51+0000\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.9.1\n"
 
 #, python-format
 msgid "%(abbrev)s %(date)s in %(place)s"
@@ -21,6 +21,9 @@ msgstr "%(abbrev)s %(date)s presso %(place)s"
 #, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr "%(abbrev)s %(date)s%(place)s"
+
+msgid "Add existing child to family"
+msgstr "Aggiungi figlio esistente alla famiglia"
 
 #, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"

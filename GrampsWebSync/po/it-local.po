@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-06 07:24+0200\n"
-"PO-Revision-Date: 2026-07-31 16:24+0000\n"
-"Last-Translator: medardo <medardo@users.noreply.hosted.weblate.org>\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-09-10 08:51+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,13 +12,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.9.1\n"
 
 msgid "Gramps Web Sync"
 msgstr "Sincronizzazione Web di Gramps"
 
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Sincronizza un database locale con un'istanza web di Gramps."
+
+msgid "Error:"
+msgstr "Errore:"
+
+msgid "Copy"
+msgstr "Copia"
 
 msgid "Authentication failed. Please check your username and password."
 msgstr "Autenticazione non riuscita. Verifica nome utente e password."
@@ -65,11 +71,33 @@ msgstr "Errore del server %s. Controlla la connessione."
 msgid "Unexpected error: %s"
 msgstr "Errore inaspettato: %s"
 
+msgid "Checking which media files are missing…"
+msgstr "Verifica dei file multimediali mancanti…"
+
+msgid "Downloading media files…"
+msgstr "Scaricamento dei file multimediali…"
+
+msgid "Uploading media files…"
+msgstr "Caricamento dei file multimediali…"
+
+msgid "Transfer media files"
+msgstr "Trasferisci file multimediali"
+
+#, python-format
+msgid "Also transfer %(total)s media file (%(counts)s)"
+msgid_plural "Also transfer %(total)s media files (%(counts)s)"
+msgstr[0] "Trasferisci anche %(total)s file multimediale (%(counts)s)"
+msgstr[1] "Trasferisci anche %(total)s file multimediali (%(counts)s)"
+
+#, python-format
+msgid "%s media file is missing on both sides and cannot be transferred."
+msgid_plural ""
+"%s media files are missing on both sides and cannot be transferred."
+msgstr[0] ""
+"%s file multimediale manca da entrambe le parti, e non può essere trasferito."
+msgstr[1] ""
+"%s file multimediali mancano da entrambe le parti, e non possono essere "
+"trasferiti."
+
 msgid "Media files are in sync."
 msgstr "I file multimediali sono sincronizzati."
-
-msgid "Error:"
-msgstr "Errore:"
-
-msgid "Copy"
-msgstr "Copia"

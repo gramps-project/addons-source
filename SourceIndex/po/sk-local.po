@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:40+0000\n"
-"PO-Revision-Date: 2026-06-02 18:04+0000\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-09-27 07:51+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,10 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.6\n"
-
-msgid "Sources Index"
-msgstr "Register zdrojov"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 msgid "BirthIndex"
 msgstr "Register narodení"
@@ -30,6 +27,9 @@ msgid "CensusIndex"
 msgstr "Register sčítaní ľudu"
 
 msgid "SourceIndex"
+msgstr "Register zdrojov"
+
+msgid "Sources Index"
 msgstr "Register zdrojov"
 
 msgid "*** Error: Must install either ElementTree or lxml."
@@ -138,85 +138,6 @@ msgstr ""
 "Prepisy záznamov ... narodenia/úmrtia/sobáše/sčítania ľudu so spoločnými "
 "poľami: id, repozitár, meno osoby, dátum a miesto narodenia, rodičia."
 
-msgid "Info:"
-msgstr "Informácie:"
-
-msgid "Death act:"
-msgstr "Záznam o úmrtí:"
-
-msgid "Reference:"
-msgstr "Odkaz:"
-
-msgid "Volume:"
-msgstr "Zväzok:"
-
-msgid "<b>Death act</b>"
-msgstr "<b>Záznam o úmrtí</b>"
-
-msgid "First name:"
-msgstr "Prvé meno:"
-
-msgid "Age:"
-msgstr "Vek:"
-
-msgid "<b>Image</b>"
-msgstr "<b>Obrázok</b>"
-
-msgid "<b>Repository</b>"
-msgstr "<b>Repozitár</b>"
-
-msgid "<b>Data person</b>"
-msgstr "<b>Údaje o osobe</b>"
-
-msgid "Origin:"
-msgstr "Pôvod:"
-
-msgid "Occupation:"
-msgstr "Povolanie:"
-
-msgid "Live:"
-msgstr "Žije:"
-
-msgid "<b>Witness:</b>"
-msgstr "<b>Svedok:</b>"
-
-msgid "Birth date:"
-msgstr "Dátum narodenia:"
-
-msgid "Birth place:"
-msgstr "Miesto narodenia:"
-
-msgid "Note:"
-msgstr "Poznámka:"
-
-msgid "Spouse name:"
-msgstr "Meno manžela/manželky:"
-
-msgid "Marriage date:"
-msgstr "Dátum sobáša:"
-
-msgid "Marriage place:"
-msgstr "Miesto sobáša:"
-
-msgid "<b>Data mother</b>"
-msgstr "<b>Údaje o matke</b>"
-
-msgid "<b>Data father</b>"
-msgstr "<b>Údaje o otcovi</b>"
-
-msgid "<b>Spouse</b> "
-msgstr "<b>Manžel/manželka</b> "
-
-msgid "alive"
-msgstr "nažive"
-
-msgid ""
-"witness1, name, given, age, occupation; witness2, name, given, age, "
-"occupation, etc ..."
-msgstr ""
-"svedok1, meno, krstné meno, vek, povolanie; svedok2, meno, krstné meno, vek, "
-"povolanie, atď. ..."
-
 msgid "witness"
 msgstr "svedok"
 
@@ -229,24 +150,26 @@ msgstr "Mená:"
 msgid "First names:"
 msgstr "Prvé mená:"
 
-msgid "<b>Census</b>"
-msgstr "<b>Sčítanie ľudu</b>"
+msgid "Age:"
+msgstr "Vek:"
 
-msgid "Death date:"
-msgstr "Dátum úmrtia:"
+msgid "Origin:"
+msgstr "Pôvod:"
 
-msgid "Death place:"
-msgstr "Miesto úmrtia:"
+msgid "Occupation:"
+msgstr "Povolanie:"
 
-msgid "Family status:"
-msgstr "Rodinný stav:"
+msgid "Live:"
+msgstr "Žije:"
 
-msgid "order, person, surname, given, age, status, occupation, etc ..."
-msgstr ""
-"poradie, osoba, priezvisko, krstné meno, vek, stav, povolanie, atď. ..."
+msgid "Info:"
+msgstr "Informácie:"
 
 msgid "Birth act:"
 msgstr "Záznam o narodení:"
+
+msgid "Reference:"
+msgstr "Odkaz:"
 
 msgid ""
 "Volume\n"
@@ -275,6 +198,9 @@ msgstr "Ostatné:"
 
 msgid "Repository title"
 msgstr "Názov repozitára"
+
+msgid "<b>Image</b>"
+msgstr "<b>Obrázok</b>"
 
 msgid "<b><i>Repository</i></b>"
 msgstr "<b><i>Repozitár</i></b>"
@@ -367,6 +293,80 @@ msgstr "<b><i>Citácia</i></b>"
 
 msgid "<b><i>Source</i></b>"
 msgstr "<b><i>Zdroj</i></b>"
+
+msgid "Death act:"
+msgstr "Záznam o úmrtí:"
+
+msgid "Volume:"
+msgstr "Zväzok:"
+
+msgid "<b>Death act</b>"
+msgstr "<b>Záznam o úmrtí</b>"
+
+msgid "First name:"
+msgstr "Prvé meno:"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Repozitár</b>"
+
+msgid "<b>Data person</b>"
+msgstr "<b>Údaje o osobe</b>"
+
+msgid "<b>Witness:</b>"
+msgstr "<b>Svedok:</b>"
+
+msgid "Birth date:"
+msgstr "Dátum narodenia:"
+
+msgid "Birth place:"
+msgstr "Miesto narodenia:"
+
+msgid "Note:"
+msgstr "Poznámka:"
+
+msgid "Spouse name:"
+msgstr "Meno manžela/manželky:"
+
+msgid "Marriage date:"
+msgstr "Dátum sobáša:"
+
+msgid "Marriage place:"
+msgstr "Miesto sobáša:"
+
+msgid "<b>Data mother</b>"
+msgstr "<b>Údaje o matke</b>"
+
+msgid "<b>Data father</b>"
+msgstr "<b>Údaje o otcovi</b>"
+
+msgid "<b>Spouse</b> "
+msgstr "<b>Manžel/manželka</b> "
+
+msgid "alive"
+msgstr "nažive"
+
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"svedok1, meno, krstné meno, vek, povolanie; svedok2, meno, krstné meno, vek, "
+"povolanie, atď. ..."
+
+msgid "<b>Census</b>"
+msgstr "<b>Sčítanie ľudu</b>"
+
+msgid "Death date:"
+msgstr "Dátum úmrtia:"
+
+msgid "Death place:"
+msgstr "Miesto úmrtia:"
+
+msgid "Family status:"
+msgstr "Rodinný stav:"
+
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr ""
+"poradie, osoba, priezvisko, krstné meno, vek, stav, povolanie, atď. ..."
 
 msgid "Marriage act:"
 msgstr "Záznam o sobáši:"

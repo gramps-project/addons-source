@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:40+0000\n"
-"PO-Revision-Date: 2026-06-01 12:35+0000\n"
-"Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-08-13 17:19+0000\n"
+"Last-Translator: Frode Jemtland <frode.jemtland@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
 "project/addons/nb_NO/>\n"
 "Language: nb\n"
@@ -12,11 +12,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
-
-msgid "Sources Index"
-msgstr "Kilderegister"
 
 msgid "BirthIndex"
 msgstr "Fødselsregister"
@@ -31,6 +28,9 @@ msgid "CensusIndex"
 msgstr "Folketellingsregister"
 
 msgid "SourceIndex"
+msgstr "Kilderegister"
+
+msgid "Sources Index"
 msgstr "Kilderegister"
 
 msgid "index"
@@ -76,38 +76,14 @@ msgstr ""
 "Registrerer transkripsjoner … fødsler/dødsfall/ekteskap/folketellinger med "
 "vanlige felter: id, arkiv, personnavn, fødselsdato og fødested, foreldre."
 
-msgid "Reference:"
-msgstr "Referanse:"
-
-msgid "Volume:"
-msgstr "Volum:"
-
-msgid "<b>Repository</b>"
-msgstr "<b>Arkiv</b>"
+msgid "witness"
+msgstr "vitne"
 
 msgid "Origin:"
 msgstr "Opprinnelse:"
 
-msgid "Birth place:"
-msgstr "Fødested:"
-
-msgid "Note:"
-msgstr "Notat:"
-
-msgid "Marriage place:"
-msgstr "Vielsessted:"
-
-msgid "witness"
-msgstr "vitne"
-
-msgid "Death date:"
-msgstr "Dødsdato:"
-
-msgid "Death place:"
-msgstr "Dødssted:"
-
-msgid "Family status:"
-msgstr "Familiestatus:"
+msgid "Reference:"
+msgstr "Referanse:"
 
 msgid "The source title"
 msgstr "Kildetittel"
@@ -137,6 +113,30 @@ msgstr ""
 
 msgid "Origine:"
 msgstr "Opprinnelse:"
+
+msgid "Volume:"
+msgstr "Volum:"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Arkiv</b>"
+
+msgid "Birth place:"
+msgstr "Fødested:"
+
+msgid "Note:"
+msgstr "Notat:"
+
+msgid "Marriage place:"
+msgstr "Vielsessted:"
+
+msgid "Death date:"
+msgstr "Dødsdato:"
+
+msgid "Death place:"
+msgstr "Dødssted:"
+
+msgid "Family status:"
+msgstr "Familiestatus:"
 
 msgid "m. date:"
 msgstr "v. dato:"

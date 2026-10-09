@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-05-05 14:44+0000\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-10-07 16:52+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,19 +12,72 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.12-dev\n"
+"X-Generator: Weblate 2026.10.1.dev0\n"
 
 msgid "Check Associations data"
-msgstr "Verknüpfungsdaten prüfen"
+msgstr "Zuordnungsdaten prüfen"
 
-msgid "Will check the data on Association for people."
-msgstr "Überprüft die Verbindungsdaten für Personen."
+msgid "Display all person Associations in a sortable, hotlinked table"
+msgstr ""
+"Alle Personenzuordnungen in einer sortierbaren Tabelle mit Hyperlinks "
+"anzeigen"
 
 msgid "Associations state tool"
-msgstr "Verbindungszustand-Werkzeug"
+msgstr "Zuordnungswerkzeug"
 
-msgid "Type of link"
-msgstr "Art der Verknüpfung"
+#, python-format
+msgid "Error initializing data: %s"
+msgstr "Fehler beim Initialisieren der Daten: %s"
 
-msgid "Of"
-msgstr "Von"
+#, python-format
+msgid "Error processing person %s: %s"
+msgstr "Fehler bei der Verarbeitung der Person %s: %s"
+
+msgid "Processing associations..."
+msgstr "Zuordnungen werden verarbeitet..."
+
+#, python-format
+msgid "Could not create progress dialog: %s"
+msgstr "Der Fortschrittsdialog konnte nicht erstellt werden: %s"
+
+#, python-format
+msgid "Processing %d of %d persons"
+msgstr "%d von %d Personen werden verarbeitet"
+
+#, python-format
+msgid "Error displaying associations: %s"
+msgstr "Fehler beim Anzeigen der Zuordnungen: %s"
+
+msgid "Starting Name"
+msgstr "Startname"
+
+msgid "Associate"
+msgstr "Zuordnen"
+
+#, python-format
+msgid "Total associations found: %d"
+msgstr "Gesamtzahl der gefundenen Zuordnungen: %d"
+
+msgid "Edit Starting Person"
+msgstr "Startperson bearbeiten"
+
+msgid "Edit Associate Person"
+msgstr "Zugeordnete Person bearbeiten"
+
+msgid "Edit Association"
+msgstr "Zuordnung bearbeiten"
+
+msgid "Copy row to clipboard"
+msgstr "Zeile in die Zwischenablage kopieren"
+
+msgid "Create Note from row"
+msgstr "Notiz aus Zeile erstellen"
+
+msgid "Association:"
+msgstr "Zuordnungen:"
+
+msgid "Starting Person"
+msgstr "Startperson"
+
+msgid "Link type"
+msgstr "Linktyp"

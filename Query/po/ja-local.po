@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 22:17+0000\n"
-"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-09-30 15:23+0000\n"
 "Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
@@ -12,10 +12,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
+
+#, python-brace-format
+msgid "{rows:d} rows processed in {secs} seconds.\n"
+msgstr "{secs} 秒で {rows:d} 行を処理しました。\n"
+
+msgid "Today"
+msgstr "今日"
 
 msgid "Query Gramplet"
 msgstr "クエリグランプレット"
@@ -37,10 +44,3 @@ msgstr "Python式の入力"
 
 msgid "Enter SQL query"
 msgstr "SQL クエリを入力"
-
-#, python-brace-format
-msgid "{rows:d} rows processed in {secs} seconds.\n"
-msgstr "{secs} 秒で {rows:d} 行を処理しました。\n"
-
-msgid "Today"
-msgstr "今日"

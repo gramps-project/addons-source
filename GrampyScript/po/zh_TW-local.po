@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 4.2.0-dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: 2026-09-06 12:53+0000\n"
 "Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
@@ -19,6 +19,9 @@ msgstr "Gram.py 指令碼"
 
 msgid "Run a special Gramps Python script"
 msgstr "執行特殊的 Gramps Python 指令碼"
+
+msgid "Family Overview"
+msgstr "家庭總覽"
 
 msgid "Load query from a .script file"
 msgstr "從 .script 檔案載入查詢"
@@ -44,20 +47,17 @@ msgstr "另存為 CSV"
 msgid "Copy to clipboard"
 msgstr "複製到剪貼簿"
 
-msgid "Table"
-msgstr "表格"
-
-msgid "Chart"
-msgstr "圖表"
-
 msgid "Execute <Alt+Enter>"
 msgstr "執行 <Alt+Enter>"
 
 msgid "Execute the script"
 msgstr "執行指令稿"
 
-msgid "Ready..."
-msgstr "就緒..."
+msgid "Table"
+msgstr "表格"
+
+msgid "Chart"
+msgstr "圖表"
 
 msgid "Gram.py Script Edited Data"
 msgstr "Gram.py 指令碼編輯的資料"

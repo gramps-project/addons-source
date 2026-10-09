@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: 2026-08-12 22:56+0000\n"
 "Last-Translator: Artur <wy66m6xm@anonaddy.me>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/gramps-project/"
@@ -102,6 +102,7 @@ msgstr ""
 "Pauza.\n"
 "Wciśnij Kontynuuj aby wyszukać dodatkowe relacje.\n"
 
+#, python-brace-format
 msgid "Error during search: {}"
 msgstr "Błąd podczas wyszukiwania: {}"
 

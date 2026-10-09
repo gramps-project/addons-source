@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-31 16:24+0000\n"
-"Last-Translator: medardo <medardo@users.noreply.hosted.weblate.org>\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-09-10 08:51+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.9.1\n"
 
 #, python-format
 msgid "Form: %s"
@@ -258,6 +258,15 @@ msgstr "Vedovo, divorziato"
 msgid "Year of birth"
 msgstr "Anno di nascita"
 
+msgid "Number of children living"
+msgstr "Numero di figli viventi"
+
+msgid "Number of children ever born"
+msgstr "Numero di figli avuti in totale"
+
+msgid "How many children has she ever borne, not counting stillbirths?"
+msgstr "Quanti figli ha partorito in totale, senza contare quelli nati morti?"
+
 msgid "Married Y/N"
 msgstr "Sposato/a s/n"
 
@@ -276,14 +285,28 @@ msgstr "Livello di istruzione"
 msgid "City of"
 msgstr "Città di"
 
+msgid "Children over 6 and under 17 not attending school in 1894"
+msgstr ""
+"Figli di età compresa tra i 6 e i 17 anni che nel 1894 non frequentavano la "
+"scuola"
+
 msgid "Years in US"
 msgstr "Anni negli USA"
+
+msgid "Parent of how many children"
+msgstr "Genitore di quanti figli"
 
 msgid "Place of Occupation"
 msgstr "Luogo di lavoro"
 
 msgid "Birth Country"
 msgstr "Nazione di nascita"
+
+msgid "Male Children 5 and Under"
+msgstr "Bambini di sesso maschile di età pari o inferiore a 5 anni"
+
+msgid "Female Children 5 and Under"
+msgstr "Bambini di sesso femminile di età pari o inferiore a 5 anni"
 
 msgid "Year married"
 msgstr "Anno di matrimonio"

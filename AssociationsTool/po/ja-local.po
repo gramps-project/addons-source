@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-03-24 10:31+0000\n"
-"Last-Translator: coolz daddy <coolzdaddy55@gmail.com>\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-09-30 15:23+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 5.11-dev\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -20,11 +20,65 @@ msgstr ""
 msgid "Check Associations data"
 msgstr "関連付けデータを確認する"
 
-msgid "Will check the data on Association for people."
-msgstr "人々のための関連付けのデータを確認する。"
+msgid "Display all person Associations in a sortable, hotlinked table"
+msgstr "すべての人物の関連付けを、並べ替え可能でリンク付きの表に表示します"
 
 msgid "Associations state tool"
 msgstr "関連付けの状態ツール"
 
-msgid "Type of link"
+#, python-format
+msgid "Error initializing data: %s"
+msgstr "データの初期化中にエラーが発生しました: %s"
+
+#, python-format
+msgid "Error processing person %s: %s"
+msgstr "人物 %s の処理中にエラーが発生しました: %s"
+
+msgid "Processing associations..."
+msgstr "関連付けを処理中..."
+
+#, python-format
+msgid "Could not create progress dialog: %s"
+msgstr "進捗ダイアログを作成できませんでした: %s"
+
+#, python-format
+msgid "Processing %d of %d persons"
+msgstr "人物を処理中 (%d / %d)"
+
+#, python-format
+msgid "Error displaying associations: %s"
+msgstr "関連付けの表示中にエラーが発生しました: %s"
+
+msgid "Starting Name"
+msgstr "開始側の名前"
+
+msgid "Associate"
+msgstr "関連付け先"
+
+#, python-format
+msgid "Total associations found: %d"
+msgstr "見つかった関連付けの合計: %d"
+
+msgid "Edit Starting Person"
+msgstr "開始側の人物を編集"
+
+msgid "Edit Associate Person"
+msgstr "関連付け先の人物を編集"
+
+msgid "Edit Association"
+msgstr "関連付けを編集"
+
+msgid "Copy row to clipboard"
+msgstr "行をクリップボードにコピー"
+
+msgid "Create Note from row"
+msgstr "行からメモを作成"
+
+msgid "Association:"
+msgstr "関連付け:"
+
+msgid "Starting Person"
+msgstr "開始側の人物"
+
+msgid "Link type"
 msgstr "リンクの種類"

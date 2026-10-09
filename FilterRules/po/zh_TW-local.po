@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 4.2.0-dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: 2026-09-06 12:53+0000\n"
 "Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
@@ -28,6 +28,9 @@ msgstr "與 <person> 相隔少於 <N> 層親屬關係的人物"
 
 msgid "Filter rule that matches relatives by degrees of separation"
 msgstr "依相隔關係數比對親屬的篩選規則"
+
+msgid "Role:"
+msgstr "角色："
 
 msgid "Source matching parameters"
 msgstr "來源比對參數"
@@ -112,9 +115,6 @@ msgstr "依死亡年齡篩選人物"
 
 msgid "Filter rule that matches people by their age at death"
 msgstr "依死亡年齡比對人物的篩選規則"
-
-msgid "Role:"
-msgstr "角色："
 
 msgid "Multiple Parents Filter"
 msgstr "多組父母篩選器"

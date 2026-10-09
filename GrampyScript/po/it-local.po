@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-06-17 20:01+0000\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-09-10 08:51+0000\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
@@ -12,13 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
+"X-Generator: Weblate 2026.9.1\n"
 
 msgid "Gram.py Script"
 msgstr "Script Gram.py"
 
 msgid "Run a special Gramps Python script"
 msgstr "Esegue uno speciale script Python per Gramps"
+
+msgid "Family Overview"
+msgstr "Panoramica della famiglia"
 
 msgid "Load query from a .script file"
 msgstr "Carica richiesta da un file .script"
@@ -44,20 +47,17 @@ msgstr "Salva come CSV"
 msgid "Copy to clipboard"
 msgstr "Copia negli appunti"
 
-msgid "Table"
-msgstr "Tabella"
-
-msgid "Chart"
-msgstr "Grafico"
-
 msgid "Execute <Alt+Enter>"
 msgstr "Esegui <Alt+Invio>"
 
 msgid "Execute the script"
 msgstr "Esegui lo script"
 
-msgid "Ready..."
-msgstr "Pronto..."
+msgid "Table"
+msgstr "Tabella"
+
+msgid "Chart"
+msgstr "Grafico"
 
 msgid "Gram.py Script Edited Data"
 msgstr "Dati modificati tramite script Gram.py"

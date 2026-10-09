@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:40+0000\n"
-"PO-Revision-Date: 2026-06-20 17:01+0000\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-10-07 16:52+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,10 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.7.dev0\n"
-
-msgid "Sources Index"
-msgstr "Quellenverzeichnis"
+"X-Generator: Weblate 2026.10.1.dev0\n"
 
 msgid "BirthIndex"
 msgstr "Geburtsregister"
@@ -31,6 +28,9 @@ msgstr "Volkszählungsindex"
 
 msgid "SourceIndex"
 msgstr "Quellenindex"
+
+msgid "Sources Index"
+msgstr "Quellenverzeichnis"
 
 msgid "*** Error: Must install either ElementTree or lxml."
 msgstr "*** Fehler: ElementTree oder lxml muss installiert werden."
@@ -139,85 +139,6 @@ msgstr ""
 "Volkszählungen mit gemeinsamen Feldern: ID, Archiv, Name der Person, "
 "Geburtsdatum und -ort, Eltern."
 
-msgid "Info:"
-msgstr "Info:"
-
-msgid "Death act:"
-msgstr "Sterbeurkunde:"
-
-msgid "Reference:"
-msgstr "Referenz:"
-
-msgid "Volume:"
-msgstr "Band:"
-
-msgid "<b>Death act</b>"
-msgstr "<b>Sterbeurkunde</b>"
-
-msgid "First name:"
-msgstr "Vorname:"
-
-msgid "Age:"
-msgstr "Alter:"
-
-msgid "<b>Image</b>"
-msgstr "<b>Bild</b>"
-
-msgid "<b>Repository</b>"
-msgstr "<b>Aufbewahrungsort</b>"
-
-msgid "<b>Data person</b>"
-msgstr "<b>Datenperson</b>"
-
-msgid "Origin:"
-msgstr "Herkunft:"
-
-msgid "Occupation:"
-msgstr "Beruf:"
-
-msgid "Live:"
-msgstr "Lebt:"
-
-msgid "<b>Witness:</b>"
-msgstr "<b>Zeuge:</b>"
-
-msgid "Birth date:"
-msgstr "Geburtsdatum:"
-
-msgid "Birth place:"
-msgstr "Geburtsort:"
-
-msgid "Note:"
-msgstr "Notiz:"
-
-msgid "Spouse name:"
-msgstr "Name des Partners:"
-
-msgid "Marriage date:"
-msgstr "Heiratsdatum:"
-
-msgid "Marriage place:"
-msgstr "Heiratsort:"
-
-msgid "<b>Data mother</b>"
-msgstr "<b>Daten Mutter</b>"
-
-msgid "<b>Data father</b>"
-msgstr "<b>Daten Vater</b>"
-
-msgid "<b>Spouse</b> "
-msgstr "<b>Partner(in)</b> "
-
-msgid "alive"
-msgstr "lebt"
-
-msgid ""
-"witness1, name, given, age, occupation; witness2, name, given, age, "
-"occupation, etc ..."
-msgstr ""
-"Zeuge 1, Name, Vorname, Alter, Beruf; Zeuge 2, Name, Vorname, Alter, Beruf "
-"usw. ..."
-
 msgid "witness"
 msgstr "Zeuge"
 
@@ -230,23 +151,26 @@ msgstr "Namen:"
 msgid "First names:"
 msgstr "Vornamen:"
 
-msgid "<b>Census</b>"
-msgstr "<b>Volkszählung</b>"
+msgid "Age:"
+msgstr "Alter:"
 
-msgid "Death date:"
-msgstr "Todesdatum:"
+msgid "Origin:"
+msgstr "Herkunft:"
 
-msgid "Death place:"
-msgstr "Sterbeort:"
+msgid "Occupation:"
+msgstr "Beruf:"
 
-msgid "Family status:"
-msgstr "Familienstand:"
+msgid "Live:"
+msgstr "Lebt:"
 
-msgid "order, person, surname, given, age, status, occupation, etc ..."
-msgstr "Reihenfolge, Person, Nachname, Vorname, Alter, Status, Beruf usw. ..."
+msgid "Info:"
+msgstr "Info:"
 
 msgid "Birth act:"
 msgstr "Geburtsurkunde:"
+
+msgid "Reference:"
+msgstr "Referenz:"
 
 msgid ""
 "Volume\n"
@@ -275,6 +199,9 @@ msgstr "Andere:"
 
 msgid "Repository title"
 msgstr "Aufbewahrungsorttitel"
+
+msgid "<b>Image</b>"
+msgstr "<b>Bild</b>"
 
 msgid "<b><i>Repository</i></b>"
 msgstr "<b><i>Aufbewahrungsort</i></b>"
@@ -367,6 +294,79 @@ msgstr "<b><i>Quellenangabe</i></b>"
 
 msgid "<b><i>Source</i></b>"
 msgstr "<b><i>Quelle</i></b>"
+
+msgid "Death act:"
+msgstr "Sterbeurkunde:"
+
+msgid "Volume:"
+msgstr "Band:"
+
+msgid "<b>Death act</b>"
+msgstr "<b>Sterbeurkunde</b>"
+
+msgid "First name:"
+msgstr "Vorname:"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Aufbewahrungsort</b>"
+
+msgid "<b>Data person</b>"
+msgstr "<b>Datenperson</b>"
+
+msgid "<b>Witness:</b>"
+msgstr "<b>Zeuge:</b>"
+
+msgid "Birth date:"
+msgstr "Geburtsdatum:"
+
+msgid "Birth place:"
+msgstr "Geburtsort:"
+
+msgid "Note:"
+msgstr "Notiz:"
+
+msgid "Spouse name:"
+msgstr "Name des Partners:"
+
+msgid "Marriage date:"
+msgstr "Heiratsdatum:"
+
+msgid "Marriage place:"
+msgstr "Heiratsort:"
+
+msgid "<b>Data mother</b>"
+msgstr "<b>Daten Mutter</b>"
+
+msgid "<b>Data father</b>"
+msgstr "<b>Daten Vater</b>"
+
+msgid "<b>Spouse</b> "
+msgstr "<b>Partner(in)</b> "
+
+msgid "alive"
+msgstr "lebt"
+
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"Zeuge 1, Name, Vorname, Alter, Beruf; Zeuge 2, Name, Vorname, Alter, Beruf "
+"usw. ..."
+
+msgid "<b>Census</b>"
+msgstr "<b>Volkszählung</b>"
+
+msgid "Death date:"
+msgstr "Todesdatum:"
+
+msgid "Death place:"
+msgstr "Sterbeort:"
+
+msgid "Family status:"
+msgstr "Familienstand:"
+
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr "Reihenfolge, Person, Nachname, Vorname, Alter, Status, Beruf usw. ..."
 
 msgid "Marriage act:"
 msgstr "Heiratsakt:"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 4.2.0-dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: 2026-09-06 12:53+0000\n"
 "Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
@@ -56,9 +56,11 @@ msgstr "資訊"
 msgid "No media was removed."
 msgstr "沒有移除任何媒體。"
 
+#, python-brace-format
 msgid "{} media references were removed from {} persons."
 msgstr "已移除 {} 個媒體參照，涉及 {} 位人物。"
 
+#, python-brace-format
 msgid ""
 "\n"
 "{} HandleError occured, but were ignored."
@@ -69,6 +71,7 @@ msgstr ""
 msgid "Add avatar images..."
 msgstr "新增頭像圖片…"
 
+#, python-brace-format
 msgid "{} avatar images were sucessfully added."
 msgstr "已成功新增 {} 張頭像圖片。"
 

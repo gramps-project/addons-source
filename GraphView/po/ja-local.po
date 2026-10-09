@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-09-30 15:23+0000\n"
 "Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -51,7 +51,7 @@ msgid "Time Direction"
 msgstr "時間の方向"
 
 msgid "Limit number of people displayed (use 0 for unlimited)"
-msgstr "表示する人物数の制限 (0は無制限）"
+msgstr "表示する人物数の制限 (0は無制限)"
 
 msgid "Person theme"
 msgstr "人物テーマ"
@@ -105,10 +105,10 @@ msgid "Show animation"
 msgstr "アニメーションを表示"
 
 msgid "Animation speed (1..5 and 5 is the slower)"
-msgstr "アニメーション速度 (1..5、5が最も遅い）"
+msgstr "アニメーション速度 (1..5、5が最も遅い)"
 
 msgid "Animation count (0..8 use 0 to turn off)"
-msgstr "アニメーションカウント (0..8、0はオフ）"
+msgstr "アニメーションカウント (0..8、0はオフ)"
 
 msgid "Animation"
 msgstr "アニメーション"
@@ -220,10 +220,10 @@ msgid ""
 "Do you want to set it active and rebuild view?"
 msgstr ""
 "人物 <b><i>%s</i></b> は現在のビューにありません。\n"
-"アクティブに設定してビューを再構築しますか？"
+"アクティブに設定してビューを再構築しますか?"
 
 msgid "Change active person?"
-msgstr "アクティブな人を変更しますか？"
+msgstr "アクティブな人を変更しますか?"
 
 #, python-brace-format
 msgid ""
@@ -320,7 +320,7 @@ msgstr "人物 [%s] を削除すると、データベースから削除されま
 
 #, python-format
 msgid "Delete family [%s]?"
-msgstr "家族 [%s] を削除しますか？"
+msgstr "家族 [%s] を削除しますか?"
 
 msgid "Deleting the family will remove it from the database."
 msgstr "家族を削除すると、データベースから削除されます。"
@@ -333,7 +333,7 @@ msgid "Dynamic and interactive graph of relations"
 msgstr "動的でインタラクティブな関係グラフ"
 
 msgid "Dark (default)"
-msgstr "ダーク (デフォルト）"
+msgstr "ダーク (デフォルト)"
 
 msgid "Light"
 msgstr "ライト"
@@ -345,13 +345,13 @@ msgid "Modern"
 msgstr "モダン"
 
 msgid "Generic (dark)"
-msgstr "ジェネリック (ダーク）"
+msgstr "ジェネリック (ダーク)"
 
 msgid "Generic (gray)"
-msgstr "ジェネリック (グレー）"
+msgstr "ジェネリック (グレー)"
 
 msgid "Generic (light)"
-msgstr "ジェネリック (ライト）"
+msgstr "ジェネリック (ライト)"
 
 msgid "Persons from current graph"
 msgstr "現在のグラフの人物"

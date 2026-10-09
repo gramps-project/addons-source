@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-09-05 10:02+0000\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-09-27 07:51+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,19 +12,72 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.13.1-rc\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 msgid "Check Associations data"
 msgstr "Kontrola údajov o asociáciách"
 
-msgid "Will check the data on Association for people."
-msgstr "Skontroluje údaje o asociácii pre osoby."
+msgid "Display all person Associations in a sortable, hotlinked table"
+msgstr ""
+"Zobrazí všetky asociácie osôb v tabuľke, ktorú je možné triediť a ktorá "
+"obsahuje aktívne odkazy"
 
 msgid "Associations state tool"
 msgstr "Nástroj stavu asociácií"
 
-msgid "Type of link"
-msgstr "Typ odkazu"
+#, python-format
+msgid "Error initializing data: %s"
+msgstr "Chyba pri inicializácii údajov: %s"
 
-msgid "Of"
-msgstr "Z"
+#, python-format
+msgid "Error processing person %s: %s"
+msgstr "Chyba pri spracovaní osoby %s: %s"
+
+msgid "Processing associations..."
+msgstr "Spracovávanie asociácií..."
+
+#, python-format
+msgid "Could not create progress dialog: %s"
+msgstr "Nepodarilo sa vytvoriť dialóg priebehu: %s"
+
+#, python-format
+msgid "Processing %d of %d persons"
+msgstr "Spracovávanie %d z %d osôb"
+
+#, python-format
+msgid "Error displaying associations: %s"
+msgstr "Chyba pri zobrazovaní asociácií: %s"
+
+msgid "Starting Name"
+msgstr "Východiskové meno"
+
+msgid "Associate"
+msgstr "Asociovaná osoba"
+
+#, python-format
+msgid "Total associations found: %d"
+msgstr "Celkový počet nájdených asociácií: %d"
+
+msgid "Edit Starting Person"
+msgstr "Upraviť východiskovú osobu"
+
+msgid "Edit Associate Person"
+msgstr "Upraviť asociovanú osobu"
+
+msgid "Edit Association"
+msgstr "Upraviť asociáciu"
+
+msgid "Copy row to clipboard"
+msgstr "Kopírovať riadok do schránky"
+
+msgid "Create Note from row"
+msgstr "Vytvoriť poznámku z riadku"
+
+msgid "Association:"
+msgstr "Asociácia:"
+
+msgid "Starting Person"
+msgstr "Východisková osoba"
+
+msgid "Link type"
+msgstr "Typ prepojenia"

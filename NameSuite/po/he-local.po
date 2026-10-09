@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-24 01:13-0700\n"
-"PO-Revision-Date: 2026-08-05 18:01+0000\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-10-06 17:51+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.10.1.dev0\n"
 
 msgid "Audit Given and Patronymic Names"
 msgstr "ביקורת שמות פרטיים ושמות פטרונימיים"
@@ -27,6 +27,56 @@ msgstr "הצעת שם פטרוני"
 
 msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
 msgstr "הצעת שמות פטרונימיים (מזרח סלאביים) בזמן אמת תוך כדי ניווט."
+
+msgid "Use"
+msgstr "להשתמש"
+
+#, python-brace-format
+msgid ""
+"Missing Patronymic Detected.\n"
+"Suggested: {0}\n"
+"Based on father: {1}"
+msgstr ""
+"זוהה שם פטרונימי חסר.\n"
+"הוצע: {0}\n"
+"מבוסס על אב: {1}"
+
+msgid "Navigate to an individual to check patronymic status."
+msgstr "ניוט לאדם כדי לבדוק מצב שם פטרונימי."
+
+msgid "No active person selected."
+msgstr "לא נבחר אדם פעיל."
+
+msgid ""
+"Patronymic inference can't be inferred for non-binary or unknown genders."
+msgstr "לא ניתן להסיק שם פטרונימי למגדרים לא בינאריים או לא ידועים."
+
+msgid "Individual already has a recorded patronymic."
+msgstr "לאדם כבר יש שם פטרונימי רשום."
+
+msgid "No attached father found in database family records."
+msgstr "לא נמצא אב משוייך במסד נתוני רשומות משפחה."
+
+msgid "Father lacks a recorded first name."
+msgstr "לאב חסרה רשומת שם פרטי."
+
+msgid "Could not generate valid morphology patterns."
+msgstr "לא ניתן ליצור דפוסי מורפולוגיה תקינות."
+
+msgid "Patronymic applied successfully!"
+msgstr "פטרונימי הוחל בהצלחה!"
+
+msgid "Apply Suggestion"
+msgstr "החלת הצעה"
+
+msgid "Infer East Slavic Patronymics"
+msgstr "להסיק פטרוניים מזרח סלביים"
+
+msgid "Rename Given Names"
+msgstr "שינוי שמות פרטיים"
+
+msgid "Audit Patronymics"
+msgstr "ביקורת שמות פטרוניים"
 
 msgid "Auditing Settings"
 msgstr "הגררות ביקורת"
@@ -85,9 +135,6 @@ msgstr "אין תוצאות"
 msgid "No issues found."
 msgstr "לא נמצאו סוגיות."
 
-msgid "Use"
-msgstr "להשתמש"
-
 msgid "Search and Replace Options"
 msgstr "אפשרויות חיפוש והחלפה"
 
@@ -126,54 +173,3 @@ msgstr "לבחור הכול"
 
 msgid "Proposed"
 msgstr "מוצע"
-
-msgid "Infer East Slavic Patronymics"
-msgstr "להסיק פטרוניים מזרח סלביים"
-
-msgid "Rename Given Names"
-msgstr "שינוי שמות פרטיים"
-
-msgid "Audit Patronymics"
-msgstr "ביקורת שמות פטרוניים"
-
-#, python-brace-format
-msgid ""
-"Missing Patronymic Detected.\n"
-"Suggested: {0}\n"
-"Based on father: {1}"
-msgstr ""
-"זוהה שם פטרונימי חסר.\n"
-"הוצע: {0}\n"
-"מבוסס על אב: {1}"
-
-msgid "Navigate to an individual to check patronymic status."
-msgstr "ניוט לאדם כדי לבדוק מצב שם פטרונימי."
-
-msgid "No active person selected."
-msgstr "לא נבחר אדם פעיל."
-
-msgid ""
-"Patronymic inference can't be inferred for non-binary or unknown genders."
-msgstr "לא ניתן להסיק שם פטרונימי למגדרים לא בינאריים או לא ידועים."
-
-msgid "Individual already has a recorded patronymic."
-msgstr "לאדם כבר יש שם פטרונימי רשום."
-
-msgid "No attached father found in database family records."
-msgstr "לא נמצא אב משוייך במסד נתוני רשומות משפחה."
-
-msgid "Father lacks a recorded first name."
-msgstr "לאב חסרה רשומת שם פרטי."
-
-msgid "Could not generate valid morphology patterns."
-msgstr "לא ניתן ליצור דפוסי מורפולוגיה תקינות."
-
-msgid "Patronymic applied successfully!"
-msgstr "פטרונימי הוחל בהצלחה!"
-
-msgid "Apply Suggestion"
-msgstr "החלת הצעה"
-
-#, python-format
-msgid "%(prog)s: error: %(message)s\n"
-msgstr "%(prog)s: שגיאה: %(message)s\n"

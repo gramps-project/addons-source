@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-24 10:11-0700\n"
+"PO-Revision-Date: 2026-09-25 18:51+0000\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.10.dev0\n"
+
+msgid "Context"
+msgstr "Contexto"
+
+msgid ""
+"A chart placing a person in the context of their immediate family: the "
+"couple in the centre, each partner's parents above them, their children "
+"below, and each partner's siblings in a column to their own side, eldest at "
+"the top. Click any box to re-centre the chart on that person; the name in "
+"bold marks the way back to the home person."
+msgstr ""
+"Um gráfico que situa uma pessoa no contexto da sua família mais próxima: o "
+"casal no centro, os pais de cada um acima deles, os filhos abaixo e os "
+"irmãos de cada um numa coluna ao seu lado, com o mais velho no topo. Clique "
+"em qualquer caixa para recentrar o gráfico nessa pessoa; o nome em negrito "
+"indica o caminho de regresso ao indivíduo inicial."
+
+msgid "Show the previous family"
+msgstr "Mostrar a família anterior"
+
+msgid "Show the next family"
+msgstr "Mostrar a família seguinte"
+
+msgid "No person is active."
+msgstr "Nenhum indivíduo activo."
+
+#, python-format
+msgid "Family %(current)d of %(total)d"
+msgstr "Família %(current)d de %(total)d"
+
+#, python-format
+msgid "family %d lies toward the home person"
+msgstr "família %d tende para o indivíduo inicial"
+
+msgid "<b>Bold</b> marks the way to the home person"
+msgstr "<b>Negrito</b> marca o regresso ao indivíduo inicial"
+
+msgid "Show siblings"
+msgstr "Mostrar irmãos"
+
+msgid "About Context View"
+msgstr "Acerca da vista contextual"
+
+msgid "Show tag colour"
+msgstr "Mostrar cor da etiqueta"
+
+msgid "Details in each box"
+msgstr "Detalhes em cada caixa"
+
+msgid "Name only"
+msgstr "Só nome"
+
+msgid "Name and dates"
+msgstr "Nome e datas"
+
+msgid "Name, dates and places"
+msgstr "Nome, datas e locais"

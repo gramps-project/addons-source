@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2025-11-08 17:51+0000\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-09-25 18:51+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,19 +12,71 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 msgid "Check Associations data"
-msgstr "Connectiegegevens controleren"
+msgstr "Relatiegegevens controleren"
 
-msgid "Will check the data on Association for people."
-msgstr "Controleert de connectiegegevens van personen."
+msgid "Display all person Associations in a sortable, hotlinked table"
+msgstr ""
+"Alle persoonsrelaties weergeven in een sorteerbare tabel met hyperlinks"
 
 msgid "Associations state tool"
-msgstr "Connectiegegevens status-hulpmiddel"
+msgstr "Relatiegegevens status-hulpmiddel"
 
-msgid "Type of link"
-msgstr "Soort link"
+#, python-format
+msgid "Error initializing data: %s"
+msgstr "Fout bij gegevens initialiseren: %s"
 
-msgid "Of"
-msgstr "Van"
+#, python-format
+msgid "Error processing person %s: %s"
+msgstr "Fout bij verwerken persoon %s: %s"
+
+msgid "Processing associations..."
+msgstr "Relaties verwerken..."
+
+#, python-format
+msgid "Could not create progress dialog: %s"
+msgstr "Kon voortgangsdialoog niet smaken: %s"
+
+#, python-format
+msgid "Processing %d of %d persons"
+msgstr "%d van %d personen verwerken"
+
+#, python-format
+msgid "Error displaying associations: %s"
+msgstr "Fout bij weergeven van relaties: %s"
+
+msgid "Starting Name"
+msgstr "Startnaam"
+
+msgid "Associate"
+msgstr "Relateren"
+
+#, python-format
+msgid "Total associations found: %d"
+msgstr "Totaal aantal gevonden relaties: %d"
+
+msgid "Edit Starting Person"
+msgstr "Startpersoon bewerken"
+
+msgid "Edit Associate Person"
+msgstr "Gerelateerde persoon bewerke"
+
+msgid "Edit Association"
+msgstr "Relatie bewerken"
+
+msgid "Copy row to clipboard"
+msgstr "Rij kopiëren naar klembord"
+
+msgid "Create Note from row"
+msgstr "Notitie maken vanuit rij"
+
+msgid "Association:"
+msgstr "Relatie:"
+
+msgid "Starting Person"
+msgstr "Startpersoon"
+
+msgid "Link type"
+msgstr "Type koppeling"

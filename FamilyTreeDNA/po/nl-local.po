@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-05-30 20:01+0000\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-09-25 18:51+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 msgid "Family Finder Tool"
 msgstr "Family Finder Tool"
@@ -47,10 +47,11 @@ msgstr "Lees de Hulp-handleiding"
 msgid "FamilyTree DNA Import"
 msgstr "Stamboom DNA importeren"
 
+#, python-brace-format
 msgid ""
 "{} Associations with DNA data created. {} haplogroup Attributes created \n"
 msgstr ""
-"{} Connecties gemaakt met DNA-gegevens. {} haplogroep-kenmerken aangemaakt \n"
+"{} Relaties gemaakt met DNA-gegevens. {} haplogroep-kenmerken aangemaakt \n"
 
 msgid "No Family Finder File specified"
 msgstr "Geen Family Finder-bestand opgegeven"
@@ -60,7 +61,7 @@ msgstr "Geen segmentbestand opgegeven"
 
 msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
 msgstr ""
-"Geen connecties gevonden in FTdna-notities. Geen haplogroep-kenmerken "
+"Geen relaties gevonden in FTdna-notities. Geen haplogroep-kenmerken "
 "aangemaakt."
 
 #, python-format
@@ -69,27 +70,27 @@ msgstr "%s haplogroep-attribuut toevoegen"
 
 #, python-format
 msgid "Add %s DNA Association"
-msgstr "%s DNA-connectie toevoegen"
+msgstr "%s DNA-relatie toevoegen"
 
 #, python-format
 msgid "Create Note for %s DNA Association"
-msgstr "Notitie voor %s DNA-connectie aanmaken"
+msgstr "Notitie aanmaken voor %s DNA-relatie"
 
 #, python-format
 msgid "Add Note to %s DNA Association"
-msgstr "Opmerking toevoegen aan %s DNA-connectie"
+msgstr "Opmerking toevoegen aan %s DNA-relatie"
 
 #, python-format
 msgid "Create Source Citation for %s DNA Association"
-msgstr "Bronvermelding voor %s DNA-connectie aanmaken"
+msgstr "Bronvermelding aanmaken voor %s DNA-relatie"
 
 #, python-format
 msgid "Create Citation for %s DNA Association"
-msgstr "Citaat voor %s DNA-connectie aanmaken"
+msgstr "Citaat aanmaken voor %s DNA-relatie"
 
 #, python-format
 msgid "Add Citation to %s DNA Association"
-msgstr "Citaat aan %s DNA-connectie toevoegen"
+msgstr "Citaat toevoegen aan %s DNA-relatie"
 
 msgid "FamilyTree DNA"
 msgstr "FamilyTree DNA"

@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:40+0000\n"
-"PO-Revision-Date: 2025-09-22 19:02+0000\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-09-12 15:52+0000\n"
+"Last-Translator: Juha Mäkeläinen <juha.makelainen@iki.fi>\n"
 "Language-Team: Finnish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/fi/>\n"
 "Language: fi\n"
@@ -12,11 +12,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 "Generated-By: pygettext.py 1.4\n"
-
-msgid "Sources Index"
-msgstr "Lähteiden valikko"
 
 msgid "BirthIndex"
 msgstr "Syntymäpäivähakemisto"
@@ -32,6 +29,9 @@ msgstr "Väestönlaskennan hakemisto"
 
 msgid "SourceIndex"
 msgstr "Lähteiden hakemisto"
+
+msgid "Sources Index"
+msgstr "Lähteiden valikko"
 
 msgid "*** Error: Must install either ElementTree or lxml."
 msgstr "*** Virhe: Joko ElementTree tai lxml on asennettava."
@@ -140,85 +140,6 @@ msgstr ""
 "väestölaskenta yhteisillä kentillä: id, tietovarasto, henkilön nimi, "
 "syntymäaika ja -paikka, vanhemmat."
 
-msgid "Info:"
-msgstr "Tiedot:"
-
-msgid "Death act:"
-msgstr "Kuolintodistus:"
-
-msgid "Reference:"
-msgstr "Viite:"
-
-msgid "Volume:"
-msgstr "Vuosikerta:"
-
-msgid "<b>Death act</b>"
-msgstr "<b>Kuolintodistus</b>"
-
-msgid "First name:"
-msgstr "Etunimi:"
-
-msgid "Age:"
-msgstr "Ikä:"
-
-msgid "<b>Image</b>"
-msgstr "<b>Kuva</b>"
-
-msgid "<b>Repository</b>"
-msgstr "<b>Arkisto</b>"
-
-msgid "<b>Data person</b>"
-msgstr "<b>Henkilötiedot</b>"
-
-msgid "Origin:"
-msgstr "Alkuperä:"
-
-msgid "Occupation:"
-msgstr "Ammatti:"
-
-msgid "Live:"
-msgstr "Elää:"
-
-msgid "<b>Witness:</b>"
-msgstr "<b>Todistajat:</b>"
-
-msgid "Birth date:"
-msgstr "Syntymäpäivä:"
-
-msgid "Birth place:"
-msgstr "Syntymäpaikka:"
-
-msgid "Note:"
-msgstr "Lisätieto:"
-
-msgid "Spouse name:"
-msgstr "Puolison nimi:"
-
-msgid "Marriage date:"
-msgstr "Vihkipäivä:"
-
-msgid "Marriage place:"
-msgstr "Avioliiton solmimispaikka:"
-
-msgid "<b>Data mother</b>"
-msgstr "<b>Äidin tiedot</b>"
-
-msgid "<b>Data father</b>"
-msgstr "<b>Isän tiedot</b>"
-
-msgid "<b>Spouse</b> "
-msgstr "<b>Puoliso</b> "
-
-msgid "alive"
-msgstr "elossa"
-
-msgid ""
-"witness1, name, given, age, occupation; witness2, name, given, age, "
-"occupation, etc ..."
-msgstr ""
-"todistaja1, nimi, etunimi, ikä, ammatti; todistaja2, nimi,etunimi, ikä, "
-"ammatti, jne. ..."
-
 msgid "witness"
 msgstr "todistaja"
 
@@ -231,23 +152,26 @@ msgstr "Nimet:"
 msgid "First names:"
 msgstr "Etunimet:"
 
-msgid "<b>Census</b>"
-msgstr "<b>Väestönlaskenta</b>"
+msgid "Age:"
+msgstr "Ikä:"
 
-msgid "Death date:"
-msgstr "Kuolinpäivä:"
+msgid "Origin:"
+msgstr "Alkuperä:"
 
-msgid "Death place:"
-msgstr "Kuolinpaikka:"
+msgid "Occupation:"
+msgstr "Ammatti:"
 
-msgid "Family status:"
-msgstr "Perhetilanne:"
+msgid "Live:"
+msgstr "Elää:"
 
-msgid "order, person, surname, given, age, status, occupation, etc ..."
-msgstr "järjestys, henkilö, sukunimi, etunimi, ikä, asema, ammatti jne. ..."
+msgid "Info:"
+msgstr "Tiedot:"
 
 msgid "Birth act:"
 msgstr "Syntymätodistus:"
+
+msgid "Reference:"
+msgstr "Viite:"
 
 msgid ""
 "Volume\n"
@@ -276,6 +200,9 @@ msgstr "Muuta:"
 
 msgid "Repository title"
 msgstr "Arkiston nimi"
+
+msgid "<b>Image</b>"
+msgstr "<b>Kuva</b>"
 
 msgid "<b><i>Repository</i></b>"
 msgstr "<b><i>Arkisto</i></b>"
@@ -368,6 +295,79 @@ msgstr "<b><i>Lainaus</i></b>"
 
 msgid "<b><i>Source</i></b>"
 msgstr "<b><i>Lähde</i></b>"
+
+msgid "Death act:"
+msgstr "Kuolintodistus:"
+
+msgid "Volume:"
+msgstr "Vuosikerta:"
+
+msgid "<b>Death act</b>"
+msgstr "<b>Kuolintodistus</b>"
+
+msgid "First name:"
+msgstr "Etunimi:"
+
+msgid "<b>Repository</b>"
+msgstr "<b>Arkisto</b>"
+
+msgid "<b>Data person</b>"
+msgstr "<b>Henkilötiedot</b>"
+
+msgid "<b>Witness:</b>"
+msgstr "<b>Todistajat:</b>"
+
+msgid "Birth date:"
+msgstr "Syntymäpäivä:"
+
+msgid "Birth place:"
+msgstr "Syntymäpaikka:"
+
+msgid "Note:"
+msgstr "Lisätieto:"
+
+msgid "Spouse name:"
+msgstr "Puolison nimi:"
+
+msgid "Marriage date:"
+msgstr "Vihkipäivä:"
+
+msgid "Marriage place:"
+msgstr "Avioliiton solmimispaikka:"
+
+msgid "<b>Data mother</b>"
+msgstr "<b>Äidin tiedot</b>"
+
+msgid "<b>Data father</b>"
+msgstr "<b>Isän tiedot</b>"
+
+msgid "<b>Spouse</b> "
+msgstr "<b>Puoliso</b> "
+
+msgid "alive"
+msgstr "elossa"
+
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"todistaja1, nimi, etunimi, ikä, ammatti; todistaja2, nimi,etunimi, ikä, "
+"ammatti, jne. ..."
+
+msgid "<b>Census</b>"
+msgstr "<b>Väestönlaskenta</b>"
+
+msgid "Death date:"
+msgstr "Kuolinpäivä:"
+
+msgid "Death place:"
+msgstr "Kuolinpaikka:"
+
+msgid "Family status:"
+msgstr "Perhetilanne:"
+
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr "järjestys, henkilö, sukunimi, etunimi, ikä, asema, ammatti jne. ..."
 
 msgid "Marriage act:"
 msgstr "Vihkiminen:"

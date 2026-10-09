@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 4.2.0-dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
 "PO-Revision-Date: 2026-09-06 12:53+0000\n"
 "Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
@@ -78,6 +78,7 @@ msgstr "已新增"
 msgid "removed"
 msgstr "已移除"
 
+#, python-brace-format
 msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr "標籤「{}」的操作為「{}」，共處理 {} 個 {} 物件。\n"
 

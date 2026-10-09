@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: 2026-07-24 05:14+0000\n"
 "Last-Translator: Juan Saavedra <jcsaaver@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/gramps-project/"
@@ -137,9 +137,11 @@ msgstr ""
 "\n"
 "Búsqueda completada. %d caminos de relación encontrados."
 
+#, python-brace-format
 msgid "Search completed - {} relation paths found"
 msgstr "Búsqueda completada - {} caminos de relación encontrados"
 
+#, python-brace-format
 msgid "Error during search: {}"
 msgstr "Error durante la búsqueda: {}"
 

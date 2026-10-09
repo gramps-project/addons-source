@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 3.1.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-24 10:11-0700\n"
+"PO-Revision-Date: 2026-09-27 07:51+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 2026.10.dev0\n"
+
+msgid "Context"
+msgstr "Kontext"
+
+msgid ""
+"A chart placing a person in the context of their immediate family: the "
+"couple in the centre, each partner's parents above them, their children "
+"below, and each partner's siblings in a column to their own side, eldest at "
+"the top. Click any box to re-centre the chart on that person; the name in "
+"bold marks the way back to the home person."
+msgstr ""
+"Diagram umiestňujúci osobu do kontextu jej najbližšej rodiny: pár uprostred, "
+"rodičia každého z partnerov nad nimi, ich deti pod nimi a súrodenci každého "
+"z partnerov v stĺpci po ich strane, pričom najstarší je hore. Kliknutím na "
+"ľubovoľné políčko znovu vycentrujete diagram na danú osobu; meno tučným "
+"písmom označuje cestu späť k domovskej osobe."
+
+msgid "Show the previous family"
+msgstr "Zobraziť predchádzajúcu rodinu"
+
+msgid "Show the next family"
+msgstr "Zobraziť nasledujúcu rodinu"
+
+msgid "No person is active."
+msgstr "Žiadna osoba nie je aktívna."
+
+#, python-format
+msgid "Family %(current)d of %(total)d"
+msgstr "Rodina %(current)d z %(total)d"
+
+#, python-format
+msgid "family %d lies toward the home person"
+msgstr "rodina %d leží smerom k domovskej osobe"
+
+msgid "<b>Bold</b> marks the way to the home person"
+msgstr "<b>Tučné písmo</b> označuje cestu k domovskej osobe"
+
+msgid "Show siblings"
+msgstr "Zobraziť súrodencov"
+
+msgid "About Context View"
+msgstr "O pohľade Kontext"
+
+msgid "Show tag colour"
+msgstr "Zobraziť farbu štítku"
+
+msgid "Details in each box"
+msgstr "Podrobnosti v každom políčku"
+
+msgid "Name only"
+msgstr "Iba meno"
+
+msgid "Name and dates"
+msgstr "Meno a dátumy"
+
+msgid "Name, dates and places"
+msgstr "Meno, dátumy a miesta"

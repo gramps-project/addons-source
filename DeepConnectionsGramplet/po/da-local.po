@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-08-05 18:01+0000\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-08-28 06:51+0000\n"
 "Last-Translator: Kaj Arne Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/da/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 msgid "Deep Connections Gramplet"
 msgstr "Dybe forbindelser Gramplet"
@@ -135,9 +135,11 @@ msgstr ""
 "\n"
 "Søgning afsluttet. %d slægtskabslinjer fundet."
 
+#, python-brace-format
 msgid "Search completed - {} relation paths found"
 msgstr "Søgning afsluttet - {} slægtskabslinjer fundet"
 
+#, python-brace-format
 msgid "Error during search: {}"
 msgstr "Fejl ved søgning: {}"
 

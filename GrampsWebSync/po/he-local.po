@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-06 07:24+0200\n"
-"PO-Revision-Date: 2026-08-29 07:51+0000\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-10-06 17:51+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,13 +13,109 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.10.1.dev0\n"
 
 msgid "Gramps Web Sync"
 msgstr "מרשתת גרמפס סנכרון"
 
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "מסנכרן מסד־נתונים מקומי עם מופע מרשתת גרמפס."
+
+msgid "_Try again"
+msgstr "_לנסות שוב"
+
+msgid "C_onnect"
+msgstr "לה_תחבר"
+
+msgid "Forget this server?"
+msgstr "האם לשכוח שרת זה?"
+
+msgid ""
+"The address, user name and password stored for this server will be removed, "
+"along with the record of when this family tree last synchronized with it. "
+"The next synchronization will compare the two trees from scratch."
+msgstr ""
+"הכתובת, שם משתמש וסיסמה שמאוחסנים עבור שרת זה יוסרו, יחד עם רשומת מועד "
+"סונכרן אחרון של אילן־יוחסין זה. הסינכרון הבא ישווה את שני אילנות־היוחסין "
+"מאפס."
+
+msgid "Forget"
+msgstr "לשכוח"
+
+msgid ""
+"These credentials were last used with a different family tree. Check the "
+"server before continuing."
+msgstr ""
+"השימוש האחרון בנתוני האמנה נעשה לאילן־יוחסין יוחסין שונה. נא לבדוק את השרת "
+"לפני המשך הפעולה."
+
+msgid "Change server…"
+msgstr "החלפת שרת…"
+
+msgid "Server URL:"
+msgstr "כתובת URL של השרת:"
+
+msgid "Username:"
+msgstr "שם משתמש:"
+
+msgid "Password:"
+msgstr "ססמה:"
+
+msgid "Remember password"
+msgstr "לזכור סיסמה"
+
+msgid "Forget this server"
+msgstr "לשכוח שרת זה"
+
+msgid "About this tool"
+msgstr "על כלי זה."
+
+msgid "Open the online manual"
+msgstr "פתיחת מדריך־המשתמש המקוון"
+
+msgid ""
+"This tool allows to synchronize the currently opened family tree with a "
+"remote family tree served by Gramps Web.\n"
+"\n"
+"The tool assumes that the two trees are derivatives of each other, i.e. one "
+"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
+"\n"
+"After successful synchronization, the two trees will be identical. "
+"Modifications will be propagated based on timestamps. You will be prompted "
+"for confirmation before any changes are made to the local or remote trees.\n"
+"\n"
+"If you instead want to merge two significantly different trees with the "
+"option to make manual modifications, use the Import Merge Tool instead."
+msgstr ""
+"כלי זה מאפשר לסנכרן את אילן־היוחסין שפתוח כעת עם אילן־יוחסין מרוחק שמוגש על "
+"ידי מרשתת גרמפס.\n"
+"\n"
+"הכלי מניח ששני האילנות נגזרים זה מזה, כלומר אחד מהם נוצר מייצוא Gramps XML "
+"(לא GEDCOM!) של האחר.\n"
+"\n"
+"לאחר סנכרון מוצלח, שני האילנות יהיו זהים. שינויים יופצו על בסיס חותמות זמן. "
+"תוצג בקשת אישור לפני ביצוע שינוי כלשהו באילן המקומי או המרוחק.\n"
+"\n"
+"אם במקום זאת נדרש למזג שני אילנות שונים משמעותית עם אפשרות לבצע שינויים "
+"ידניים, יש להשתמש בכלי מיזוג ייבוא."
+
+msgid "Error:"
+msgstr "שגיאה:"
+
+msgid "Warning:"
+msgstr "אזהרה:"
+
+msgid "Sync mode:"
+msgstr "מצב סינכרון:"
+
+msgid "Copy"
+msgstr "העתקה"
+
+msgid "Synchronization complete"
+msgstr "סנכרון הושלם"
+
+msgid "Synchronization failed"
+msgstr "סנכרון כשל"
 
 #, python-format
 msgid "Gramps Web Sync %(addon)s, Web API %(api)s"
@@ -364,99 +460,3 @@ msgstr[3] "סונכרן לאחרונה לפני %s ימים"
 #, python-format
 msgid "Last synced on %s"
 msgstr "סונכרן לאחרונ ב־%s"
-
-msgid "_Try again"
-msgstr "_לנסות שוב"
-
-msgid "C_onnect"
-msgstr "לה_תחבר"
-
-msgid "Forget this server?"
-msgstr "האם לשכוח שרת זה?"
-
-msgid ""
-"The address, user name and password stored for this server will be removed, "
-"along with the record of when this family tree last synchronized with it. "
-"The next synchronization will compare the two trees from scratch."
-msgstr ""
-"הכתובת, שם משתמש וסיסמה שמאוחסנים עבור שרת זה יוסרו, יחד עם רשומת מועד "
-"סונכרן אחרון של אילן־יוחסין זה. הסינכרון הבא ישווה את שני אילנות־היוחסין "
-"מאפס."
-
-msgid "Forget"
-msgstr "לשכוח"
-
-msgid ""
-"These credentials were last used with a different family tree. Check the "
-"server before continuing."
-msgstr ""
-"השימוש האחרון בנתוני האמנה נעשה לאילן־יוחסין יוחסין שונה. נא לבדוק את השרת "
-"לפני המשך הפעולה."
-
-msgid "Change server…"
-msgstr "החלפת שרת…"
-
-msgid "Server URL:"
-msgstr "כתובת URL של השרת:"
-
-msgid "Username:"
-msgstr "שם משתמש:"
-
-msgid "Password:"
-msgstr "ססמה:"
-
-msgid "Remember password"
-msgstr "לזכור סיסמה"
-
-msgid "Forget this server"
-msgstr "לשכוח שרת זה"
-
-msgid "About this tool"
-msgstr "על כלי זה."
-
-msgid "Open the online manual"
-msgstr "פתיחת מדריך־המשתמש המקוון"
-
-msgid ""
-"This tool allows to synchronize the currently opened family tree with a "
-"remote family tree served by Gramps Web.\n"
-"\n"
-"The tool assumes that the two trees are derivatives of each other, i.e. one "
-"of the two was created from a Gramps XML (not GEDCOM!) export of the other.\n"
-"\n"
-"After successful synchronization, the two trees will be identical. "
-"Modifications will be propagated based on timestamps. You will be prompted "
-"for confirmation before any changes are made to the local or remote trees.\n"
-"\n"
-"If you instead want to merge two significantly different trees with the "
-"option to make manual modifications, use the Import Merge Tool instead."
-msgstr ""
-"כלי זה מאפשר לסנכרן את אילן־היוחסין שפתוח כעת עם אילן־יוחסין מרוחק שמוגש על "
-"ידי מרשתת גרמפס.\n"
-"\n"
-"הכלי מניח ששני האילנות נגזרים זה מזה, כלומר אחד מהם נוצר מייצוא Gramps XML "
-"(לא GEDCOM!) של האחר.\n"
-"\n"
-"לאחר סנכרון מוצלח, שני האילנות יהיו זהים. שינויים יופצו על בסיס חותמות זמן. "
-"תוצג בקשת אישור לפני ביצוע שינוי כלשהו באילן המקומי או המרוחק.\n"
-"\n"
-"אם במקום זאת נדרש למזג שני אילנות שונים משמעותית עם אפשרות לבצע שינויים "
-"ידניים, יש להשתמש בכלי מיזוג ייבוא."
-
-msgid "Error:"
-msgstr "שגיאה:"
-
-msgid "Warning:"
-msgstr "אזהרה:"
-
-msgid "Sync mode:"
-msgstr "מצב סינכרון:"
-
-msgid "Copy"
-msgstr "העתקה"
-
-msgid "Synchronization complete"
-msgstr "סנכרון הושלם"
-
-msgid "Synchronization failed"
-msgstr "סנכרון כשל"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-08-29 07:51+0000\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-10-06 17:51+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.10.1.dev0\n"
 
 msgid "People related to <filter>"
 msgstr "אנשים עם שיוך אל <מסנן>"
@@ -29,6 +29,18 @@ msgstr "אנשים בפער של פחות מ <N> דרגות מ<אדם>"
 
 msgid "Filter rule that matches relatives by degrees of separation"
 msgstr "כלל מסנן לאיתור קרובים לפי דרגות מרחק"
+
+msgid "Role:"
+msgstr "תפקיד:"
+
+msgid "Persons with events matching the <event filter> with role"
+msgstr "אנשים עם אירועם שתואמים <מסנן אירוים> עם תפקיד"
+
+msgid "People from event with role"
+msgstr "אנשים מאירועים עם תפקיד"
+
+msgid "Matches people of event filter with role"
+msgstr "התאמת אנשים ממסנן אירועים עם תפקיד"
 
 msgid "Source matching parameters"
 msgstr "מדדי התאמת מקורות"
@@ -114,9 +126,6 @@ msgstr "סינון אנשים לפי גילם בפטירתם"
 msgid "Filter rule that matches people by their age at death"
 msgstr "כלל סינון לאיתור לאנשים לפי גיל פטירתם"
 
-msgid "Role:"
-msgstr "תפקיד:"
-
 msgid "Multiple Parents Filter"
 msgstr "מסנן הורים מרובים"
 
@@ -128,6 +137,9 @@ msgstr "משפחות עם אירועים עם שנבחר תפקיד"
 
 msgid "The active Person"
 msgstr "האדם הפעיל"
+
+msgid "Parents of family filter"
+msgstr "הורים ממסנן משפחה"
 
 msgid "Matches sources with a particular value"
 msgstr "איתור מקורות עם ערך מסויים"

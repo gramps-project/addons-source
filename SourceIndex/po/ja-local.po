@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 23:40+0000\n"
-"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-09-30 15:23+0000\n"
 "Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
@@ -12,13 +12,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
-
-msgid "Sources Index"
-msgstr "ソース インデックス"
 
 msgid "BirthIndex"
 msgstr "出生インデックス"
@@ -34,6 +31,9 @@ msgstr "国勢調査インデックス"
 
 msgid "SourceIndex"
 msgstr "ソースインデックス"
+
+msgid "Sources Index"
+msgstr "ソース インデックス"
 
 msgid "*** Error: Must install either ElementTree or lxml."
 msgstr ""
@@ -143,83 +143,6 @@ msgstr ""
 "レコードの書き起こし ... 出生/死亡/結婚/国勢調査。共通フィールド: ID、リポジ"
 "トリ、人物名、生年月日と場所、両親。"
 
-msgid "Info:"
-msgstr "情報:"
-
-msgid "Death act:"
-msgstr "死亡記録:"
-
-msgid "Reference:"
-msgstr "参照:"
-
-msgid "Volume:"
-msgstr "巻:"
-
-msgid "<b>Death act</b>"
-msgstr "<b>死亡記録</b>"
-
-msgid "First name:"
-msgstr "名:"
-
-msgid "Age:"
-msgstr "年齢:"
-
-msgid "<b>Image</b>"
-msgstr "<b>画像</b>"
-
-msgid "<b>Repository</b>"
-msgstr "<b>リポジトリ</b>"
-
-msgid "<b>Data person</b>"
-msgstr "<b>人物データ</b>"
-
-msgid "Origin:"
-msgstr "起源:"
-
-msgid "Occupation:"
-msgstr "職業:"
-
-msgid "Live:"
-msgstr "存命:"
-
-msgid "<b>Witness:</b>"
-msgstr "<b>証人:</b>"
-
-msgid "Birth date:"
-msgstr "生年月日:"
-
-msgid "Birth place:"
-msgstr "出生地:"
-
-msgid "Note:"
-msgstr "メモ:"
-
-msgid "Spouse name:"
-msgstr "配偶者名:"
-
-msgid "Marriage date:"
-msgstr "結婚日:"
-
-msgid "Marriage place:"
-msgstr "結婚場所:"
-
-msgid "<b>Data mother</b>"
-msgstr "<b>母親データ</b>"
-
-msgid "<b>Data father</b>"
-msgstr "<b>父親データ</b>"
-
-msgid "<b>Spouse</b> "
-msgstr "<b>配偶者</b> "
-
-msgid "alive"
-msgstr "存命"
-
-msgid ""
-"witness1, name, given, age, occupation; witness2, name, given, age, "
-"occupation, etc ..."
-msgstr "証人1, 姓名, 年齢, 職業; 証人2, 姓名, 年齢, 職業など..."
-
 msgid "witness"
 msgstr "証人"
 
@@ -232,23 +155,26 @@ msgstr "名前:"
 msgid "First names:"
 msgstr "名:"
 
-msgid "<b>Census</b>"
-msgstr "<b>国勢調査</b>"
+msgid "Age:"
+msgstr "年齢:"
 
-msgid "Death date:"
-msgstr "死亡日:"
+msgid "Origin:"
+msgstr "起源:"
 
-msgid "Death place:"
-msgstr "死亡場所:"
+msgid "Occupation:"
+msgstr "職業:"
 
-msgid "Family status:"
-msgstr "家族の地位:"
+msgid "Live:"
+msgstr "存命:"
 
-msgid "order, person, surname, given, age, status, occupation, etc ..."
-msgstr "順序、人物、姓、名、年齢、地位、職業など..."
+msgid "Info:"
+msgstr "情報:"
 
 msgid "Birth act:"
 msgstr "出生記録:"
+
+msgid "Reference:"
+msgstr "参照:"
 
 msgid ""
 "Volume\n"
@@ -277,6 +203,9 @@ msgstr "その他:"
 
 msgid "Repository title"
 msgstr "リポジトリのタイトル"
+
+msgid "<b>Image</b>"
+msgstr "<b>画像</b>"
 
 msgid "<b><i>Repository</i></b>"
 msgstr "<b><i>リポジトリ</i></b>"
@@ -369,6 +298,77 @@ msgstr "<b><i>引用</i></b>"
 
 msgid "<b><i>Source</i></b>"
 msgstr "<b><i>ソース</i></b>"
+
+msgid "Death act:"
+msgstr "死亡記録:"
+
+msgid "Volume:"
+msgstr "巻:"
+
+msgid "<b>Death act</b>"
+msgstr "<b>死亡記録</b>"
+
+msgid "First name:"
+msgstr "名:"
+
+msgid "<b>Repository</b>"
+msgstr "<b>リポジトリ</b>"
+
+msgid "<b>Data person</b>"
+msgstr "<b>人物データ</b>"
+
+msgid "<b>Witness:</b>"
+msgstr "<b>証人:</b>"
+
+msgid "Birth date:"
+msgstr "生年月日:"
+
+msgid "Birth place:"
+msgstr "出生地:"
+
+msgid "Note:"
+msgstr "メモ:"
+
+msgid "Spouse name:"
+msgstr "配偶者名:"
+
+msgid "Marriage date:"
+msgstr "結婚日:"
+
+msgid "Marriage place:"
+msgstr "結婚場所:"
+
+msgid "<b>Data mother</b>"
+msgstr "<b>母親データ</b>"
+
+msgid "<b>Data father</b>"
+msgstr "<b>父親データ</b>"
+
+msgid "<b>Spouse</b> "
+msgstr "<b>配偶者</b> "
+
+msgid "alive"
+msgstr "存命"
+
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr "証人1, 姓名, 年齢, 職業; 証人2, 姓名, 年齢, 職業など..."
+
+msgid "<b>Census</b>"
+msgstr "<b>国勢調査</b>"
+
+msgid "Death date:"
+msgstr "死亡日:"
+
+msgid "Death place:"
+msgstr "死亡場所:"
+
+msgid "Family status:"
+msgstr "家族の地位:"
+
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr "順序、人物、姓、名、年齢、地位、職業など..."
 
 msgid "Marriage act:"
 msgstr "結婚記録:"

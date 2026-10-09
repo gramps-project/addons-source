@@ -1,0 +1,73 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-24 10:11-0700\n"
+"PO-Revision-Date: 2026-10-07 16:52+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.10.1.dev0\n"
+
+msgid "Context"
+msgstr "Kontext"
+
+msgid ""
+"A chart placing a person in the context of their immediate family: the "
+"couple in the centre, each partner's parents above them, their children "
+"below, and each partner's siblings in a column to their own side, eldest at "
+"the top. Click any box to re-centre the chart on that person; the name in "
+"bold marks the way back to the home person."
+msgstr ""
+"Ein Diagramm, das eine Person in den Kontext ihrer unmittelbaren Familie "
+"einordnet: Das Paar steht in der Mitte, darüber die Eltern der jeweiligen "
+"Partner, darunter die Kinder und in einer Spalte an der jeweiligen Seite die "
+"Geschwister der Partner, wobei der Älteste ganz oben steht. Klick auf ein "
+"beliebiges Feld, um das Diagramm auf diese Person zu zentrieren; der "
+"fettgedruckte Name markiert den Weg zurück zur Ausgangsperson."
+
+msgid "Show the previous family"
+msgstr "Die vorherige Familie anzeigen"
+
+msgid "Show the next family"
+msgstr "Die nächste Familie anzeigen"
+
+msgid "No person is active."
+msgstr "Es ist keine Person aktiv."
+
+#, python-format
+msgid "Family %(current)d of %(total)d"
+msgstr "Familie %(current)d von %(total)d"
+
+#, python-format
+msgid "family %d lies toward the home person"
+msgstr "Familie %d liegt in Richtung der Hauptperson"
+
+msgid "<b>Bold</b> marks the way to the home person"
+msgstr "<b>Fettdruck</b> weist den Weg zur Hauptperson"
+
+msgid "Show siblings"
+msgstr "Geschwister zeigen"
+
+msgid "About Context View"
+msgstr "Über Kontextansicht"
+
+msgid "Show tag colour"
+msgstr "Etikettenfarbe anzeigen"
+
+msgid "Details in each box"
+msgstr "Details in jedem Kasten"
+
+msgid "Name only"
+msgstr "Nur Name"
+
+msgid "Name and dates"
+msgstr "Name und Daten"
+
+msgid "Name, dates and places"
+msgstr "Name, Daten und Orte"

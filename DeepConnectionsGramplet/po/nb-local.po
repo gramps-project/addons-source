@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
 "PO-Revision-Date: 2026-08-13 17:19+0000\n"
 "Last-Translator: Frode Jemtland <frode.jemtland@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -69,6 +69,7 @@ msgstr ""
 "\n"
 "Søk fullført. %d slektskapslinjer funnet."
 
+#, python-brace-format
 msgid "Search completed - {} relation paths found"
 msgstr "Søk fullført – {} slektskapsstier funnet"
 

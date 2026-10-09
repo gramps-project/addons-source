@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 3.3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-09-07 01:41+0000\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-09-30 15:23+0000\n"
 "Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
 "addons/ja/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=0;\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 "X-Poedit-Language: Japanese\n"
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -32,6 +32,18 @@ msgstr "<person> から <N> 度以内の距離にある人々"
 msgid "Filter rule that matches relatives by degrees of separation"
 msgstr "遠縁の親戚を一致させるフィルタールール"
 
+msgid "Role:"
+msgstr "役割:"
+
+msgid "Persons with events matching the <event filter> with role"
+msgstr "役割付きで<イベントフィルター>に一致するイベントを持つ人物"
+
+msgid "People from event with role"
+msgstr "役割付きイベントの人物"
+
+msgid "Matches people of event filter with role"
+msgstr "役割付きでイベントフィルターに一致する人物に一致します"
+
 msgid "Source matching parameters"
 msgstr "ソース照合パラメータ"
 
@@ -43,6 +55,9 @@ msgstr "複数の親レコードを持つ人"
 
 msgid "Matches people who have more than one set of parents"
 msgstr "複数の親を持つユーザーを照合する"
+
+msgid "Parents of <filter> family match"
+msgstr "<filter>に一致する家族の両親"
 
 msgid "Match associations of <person filter>"
 msgstr "<person filter> の関連付けを一致させる"
@@ -116,9 +131,6 @@ msgstr "死亡時の年齢で人をフィルタリングする"
 msgid "Filter rule that matches people by their age at death"
 msgstr "人を死亡時の年齢で一致させるフィルタールール"
 
-msgid "Role:"
-msgstr "役割:"
-
 msgid "Multiple Parents Filter"
 msgstr "複数の親フィルター"
 
@@ -130,6 +142,12 @@ msgstr "役割を選択したイベントを持つ家族"
 
 msgid "The active Person"
 msgstr "アクティブな人"
+
+msgid "Parents of family filter"
+msgstr "家族フィルターの両親"
+
+msgid "Matches parent of family filter"
+msgstr "家族フィルターに一致する家族の両親に一致します"
 
 msgid "Matches sources with a particular value"
 msgstr "特定の値を持つソースを一致させる"
@@ -147,7 +165,7 @@ msgid "Matches the active person"
 msgstr "アクティブな人に一致"
 
 msgid "Age in years at person's death."
-msgstr "人が死亡したときの年齢 (年）。"
+msgstr "人が死亡したときの年齢 (年)。"
 
 msgid "Age:"
 msgstr "年齢:"

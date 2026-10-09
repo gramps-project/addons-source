@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-24 01:13-0700\n"
-"PO-Revision-Date: 2026-05-17 15:49+0000\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-10-07 16:52+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,7 +13,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.10.1.dev0\n"
+
+msgid "All Records"
+msgstr "Svi zapisi"
+
+msgid "Males Only"
+msgstr "Samo muškarci"
+
+msgid "Females Only"
+msgstr "Samo žene"
+
+msgid "Configure Rules..."
+msgstr "Konfiguriraj pravila …"
+
+msgid "Select All Safe Corrections"
+msgstr "Odaberi sve sigurne ispravke"
+
+msgid "Configure Rules"
+msgstr "Konfiguriraj pravila"
+
+msgid "Current"
+msgstr "Trenutačno"
+
+msgid "Correction"
+msgstr "Ispravak"
+
+msgid "Conf"
+msgstr "Konfiguriraj"
+
+msgid "Ref Year"
+msgstr "Referentna godina"
+
+msgid "Explanation"
+msgstr "Obrazloženje"
+
+msgid "No Results"
+msgstr "Nema rezultata"
+
+msgid "No issues found."
+msgstr "Nijedan problem nije pronađen."
+
+msgid "Regular Expression"
+msgstr "Regularni izraz"
 
 msgid "Select All"
 msgstr "Odaberi sve"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-24 01:13-0700\n"
-"PO-Revision-Date: 2026-08-05 18:01+0000\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-10-07 16:52+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.10.1.dev0\n"
 
 msgid "Audit Given and Patronymic Names"
 msgstr "Prüfung der Vornamen und patronymischen Namen"
@@ -29,6 +29,59 @@ msgstr "Patronymischer Vorschlag"
 msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
 msgstr ""
 "Schlägt während der Navigation in Echtzeit (ostslawische) Patronymnamen vor."
+
+msgid "Use"
+msgstr "Verwendung"
+
+#, python-brace-format
+msgid ""
+"Missing Patronymic Detected.\n"
+"Suggested: {0}\n"
+"Based on father: {1}"
+msgstr ""
+"Fehlendes Patronymikum erkannt.\n"
+"Vorschlag: {0}\n"
+"Basierend auf dem Vater: {1}"
+
+msgid "Navigate to an individual to check patronymic status."
+msgstr "Navigiere zu einer Person, um den Status des Patronyms zu überprüfen."
+
+msgid "No active person selected."
+msgstr "Keine aktive Person ausgewählt."
+
+msgid ""
+"Patronymic inference can't be inferred for non-binary or unknown genders."
+msgstr ""
+"Bei nicht-binären oder unbekannten Geschlechtern kann kein Patronym "
+"abgeleitet werden."
+
+msgid "Individual already has a recorded patronymic."
+msgstr "Für diese Person ist bereits ein Patronymikum erfasst."
+
+msgid "No attached father found in database family records."
+msgstr ""
+"Keine Angaben zu einem Vater in den Familiendaten der Datenbank gefunden."
+
+msgid "Father lacks a recorded first name."
+msgstr "Der Vorname des Vaters ist nicht angegeben."
+
+msgid "Could not generate valid morphology patterns."
+msgstr "Es konnten keine gültigen Morphologiemuster generiert werden."
+
+msgid "Patronymic applied successfully!"
+msgstr "Patronymikum erfolgreich eingefügt!"
+
+msgid "Apply Suggestion"
+msgstr "Vorschlag anwenden"
+
+msgid "Infer East Slavic Patronymics"
+msgstr "Ostslawische Patronymika ableiten"
+
+msgid "Rename Given Names"
+msgstr "Vornamen umbenennen"
+
+msgid "Audit Patronymics"
+msgstr "Prüfung der Patronymika"
 
 msgid "Auditing Settings"
 msgstr "Prüfungseinstellungen"
@@ -87,9 +140,6 @@ msgstr "Keine Ergebnisse"
 msgid "No issues found."
 msgstr "Keine Probleme gefunden."
 
-msgid "Use"
-msgstr "Verwendung"
-
 msgid "Search and Replace Options"
 msgstr "Suchen und Ersetzen – Optionen"
 
@@ -128,57 +178,3 @@ msgstr "Alle Auswählen"
 
 msgid "Proposed"
 msgstr "Vorgeschlagen"
-
-msgid "Infer East Slavic Patronymics"
-msgstr "Ostslawische Patronymika ableiten"
-
-msgid "Rename Given Names"
-msgstr "Vornamen umbenennen"
-
-msgid "Audit Patronymics"
-msgstr "Prüfung der Patronymika"
-
-#, python-brace-format
-msgid ""
-"Missing Patronymic Detected.\n"
-"Suggested: {0}\n"
-"Based on father: {1}"
-msgstr ""
-"Fehlendes Patronymikum erkannt.\n"
-"Vorschlag: {0}\n"
-"Basierend auf dem Vater: {1}"
-
-msgid "Navigate to an individual to check patronymic status."
-msgstr "Navigiere zu einer Person, um den Status des Patronyms zu überprüfen."
-
-msgid "No active person selected."
-msgstr "Keine aktive Person ausgewählt."
-
-msgid ""
-"Patronymic inference can't be inferred for non-binary or unknown genders."
-msgstr ""
-"Bei nicht-binären oder unbekannten Geschlechtern kann kein Patronym "
-"abgeleitet werden."
-
-msgid "Individual already has a recorded patronymic."
-msgstr "Für diese Person ist bereits ein Patronymikum erfasst."
-
-msgid "No attached father found in database family records."
-msgstr ""
-"Keine Angaben zu einem Vater in den Familiendaten der Datenbank gefunden."
-
-msgid "Father lacks a recorded first name."
-msgstr "Der Vorname des Vaters ist nicht angegeben."
-
-msgid "Could not generate valid morphology patterns."
-msgstr "Es konnten keine gültigen Morphologiemuster generiert werden."
-
-msgid "Patronymic applied successfully!"
-msgstr "Patronymikum erfolgreich eingefügt!"
-
-msgid "Apply Suggestion"
-msgstr "Vorschlag anwenden"
-
-#, python-format
-msgid "%(prog)s: error: %(message)s\n"
-msgstr "%(prog)s: Fehler: %(message)s\n"

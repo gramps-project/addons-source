@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:56-0800\n"
-"PO-Revision-Date: 2026-04-08 15:09+0000\n"
+"POT-Creation-Date: 2026-09-08 13:30-0700\n"
+"PO-Revision-Date: 2026-10-07 16:52+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -13,19 +13,67 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 2026.10.1.dev0\n"
 
 msgid "Check Associations data"
 msgstr "Provjeri podatke veza"
 
-msgid "Will check the data on Association for people."
-msgstr "Provjerava podatke veza za osobe."
-
 msgid "Associations state tool"
 msgstr "Alat za stanja veza"
 
-msgid "Type of link"
-msgstr "Vrsta poveznice"
+#, python-format
+msgid "Error initializing data: %s"
+msgstr "Greška prilikom inicijaliziranja podataka: %s"
 
-msgid "Of"
-msgstr "Od"
+#, python-format
+msgid "Error processing person %s: %s"
+msgstr "Greška prilikom obrade osobe %s: %s"
+
+msgid "Processing associations..."
+msgstr "Obrada veza …"
+
+#, python-format
+msgid "Could not create progress dialog: %s"
+msgstr "Nije bilo moguće stvoriti dijalog napretka: %s"
+
+#, python-format
+msgid "Processing %d of %d persons"
+msgstr "Obrađuje se %d od %d osoba"
+
+#, python-format
+msgid "Error displaying associations: %s"
+msgstr "Greška prilikom prikazivanja veza: %s"
+
+msgid "Starting Name"
+msgstr "Početno ime"
+
+msgid "Associate"
+msgstr "Poveži"
+
+#, python-format
+msgid "Total associations found: %d"
+msgstr "Ukupno pronađenih veza: %d"
+
+msgid "Edit Starting Person"
+msgstr "Uredi početnu osobu"
+
+msgid "Edit Associate Person"
+msgstr "Uredi povezanu osobu"
+
+msgid "Edit Association"
+msgstr "Uredi vezu"
+
+msgid "Copy row to clipboard"
+msgstr "Kopiraj redak u međuspremnik"
+
+msgid "Create Note from row"
+msgstr "Stvori zabilješku iz retka"
+
+msgid "Association:"
+msgstr "Veza:"
+
+msgid "Starting Person"
+msgstr "Početna osoba"
+
+msgid "Link type"
+msgstr "Vrsta poveznice"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-02 12:49-0700\n"
-"PO-Revision-Date: 2026-07-31 16:24+0000\n"
-"Last-Translator: medardo <medardo@users.noreply.hosted.weblate.org>\n"
+"PO-Revision-Date: 2026-09-10 08:51+0000\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.9.1\n"
 
 msgid "Dynamic Web Report"
 msgstr "Resoconto web dinamico"
@@ -160,6 +160,9 @@ msgstr "M"
 
 msgid "Maximize"
 msgstr "Massimizza"
+
+msgid "Media Index"
+msgstr "Indice dei file multimediali"
 
 msgid "Media Type"
 msgstr "Tipo oggetti multimediali"
@@ -488,6 +491,10 @@ msgstr ""
 "Indica se visualizzare o meno l'ora di ultima modifica nel piè di pagina "
 "delle pagine"
 
+msgid "Whether to insert sources author in the sources title"
+msgstr ""
+"Se inserire il nome dell'autore nelle fonti, o solo il titolo delle fonti"
+
 msgid "Whether to hide the Gramps ID"
 msgstr "Indica se nascondere o meno l'ID Gramps"
 
@@ -527,6 +534,12 @@ msgstr "Formato predefinito per l'indice dei luoghi"
 msgid "The default format for the places index"
 msgstr "Il formato predefinito per l'indice dei luoghi"
 
+msgid ""
+"Whether to include dates columns (birth, death, marriage) on the index pages"
+msgstr ""
+"Se includere le colonne relative alle date (nascita, morte, matrimonio) "
+"nelle pagine dell'indice"
+
 msgid "Generate a families index page"
 msgstr "Genera una pagina dell'indice delle famiglie"
 
@@ -537,6 +550,16 @@ msgid "Whether to include a column showing the media path"
 msgstr ""
 "Indica se includere o meno una colonna che mostra il percorso dell'oggetto "
 "multimediale"
+
+msgid ""
+"Whether to include the references to the items in the index pages. For "
+"example, in the media index page, the names of the individuals, families, "
+"places, sources that reference the media."
+msgstr ""
+"Se includere i riferimenti agli elementi nelle pagine dell'indice. Ad "
+"esempio, nella pagina dell'indice dei contenuti multimediali, i nomi delle "
+"persone, delle famiglie, dei luoghi e delle fonti a cui fanno riferimento "
+"tali contenuti."
 
 msgid "Default number of entries in the indexes"
 msgstr "Numero predefinito di voci negli indici"
@@ -560,6 +583,21 @@ msgstr "Scegli il tipo predefinito di grafico ad albero SVG"
 msgid "Choose the default SVG tree graph shape"
 msgstr "Scegli la forma predefinita del grafico ad albero SVG"
 
+msgid "Choose the default SVG tree parents distribution (for fan charts only)"
+msgstr ""
+"Scegli la distribuzione predefinita dei genitori nell'albero SVG (solo per i "
+"grafici a ventaglio)"
+
+msgid "Choose the default SVG tree children distribution (for fan charts only)"
+msgstr ""
+"Scegli la distribuzione predefinita dei figli nell'albero SVG (solo per i "
+"grafici a ventaglio)"
+
+msgid ""
+"Choose the background color scheme for the persons in the SVG tree graph"
+msgstr ""
+"Scegli lo schema di colori di sfondo per le persone nel grafico ad albero SVG"
+
 msgid "Theme"
 msgstr "Tema"
 
@@ -574,6 +612,9 @@ msgstr "Pagine personalizzate"
 
 msgid "A note to be used for the custom page content.\n"
 msgstr "Una nota da usare per il contenuto personalizzato della pagina.\n"
+
+msgid "Whether to print a menu for the custom page"
+msgstr "Indica se stampare un menu per le pagine personalizzate"
 
 msgid "Pages selection"
 msgstr "Seleziona pagine"

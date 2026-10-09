@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-24 01:13-0700\n"
-"PO-Revision-Date: 2026-08-05 18:02+0000\n"
+"POT-Creation-Date: 2026-09-08 13:31-0700\n"
+"PO-Revision-Date: 2026-09-27 07:51+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.8.1.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 msgid "Audit Given and Patronymic Names"
 msgstr "Kontrola daných (krstných) mien a patronymických mien"
@@ -29,6 +29,56 @@ msgstr "Návrh patronymického mena"
 msgid "Suggests (East Slavic) patronymic names in real-time as you navigate."
 msgstr ""
 "Navrhuje (východoslovanské) patronymické mená v reálnom čase počas navigácie."
+
+msgid "Use"
+msgstr "Použiť"
+
+#, python-brace-format
+msgid ""
+"Missing Patronymic Detected.\n"
+"Suggested: {0}\n"
+"Based on father: {1}"
+msgstr ""
+"Zistené chýbajúce patronymické meno.\n"
+"Navrhované: {0}\n"
+"Na základe otca: {1}"
+
+msgid "Navigate to an individual to check patronymic status."
+msgstr "Prejdite na konkrétnu osobu a skontrolujte stav otcovského mena."
+
+msgid "No active person selected."
+msgstr "Nebola vybraná žiadna aktívna osoba."
+
+msgid ""
+"Patronymic inference can't be inferred for non-binary or unknown genders."
+msgstr "Otcovské meno nemožno odvodiť pre nebinárne alebo neznáme pohlavia."
+
+msgid "Individual already has a recorded patronymic."
+msgstr "Osoba už má zaznamenané otcovské meno."
+
+msgid "No attached father found in database family records."
+msgstr "V databáze rodinných záznamov nebol nájdený žiadny priradený otec."
+
+msgid "Father lacks a recorded first name."
+msgstr "Otec nemá zaznamenané prvé (krstné) meno."
+
+msgid "Could not generate valid morphology patterns."
+msgstr "Nepodarilo sa vygenerovať platné morfologické vzory."
+
+msgid "Patronymic applied successfully!"
+msgstr "Otcovské meno bolo úspešne priradené!"
+
+msgid "Apply Suggestion"
+msgstr "Aplikovať návrh"
+
+msgid "Infer East Slavic Patronymics"
+msgstr "Odvodiť východoslovanské patronymá"
+
+msgid "Rename Given Names"
+msgstr "Premenovať dané (krstné) mená"
+
+msgid "Audit Patronymics"
+msgstr "Skontrolovať patronymá"
 
 msgid "Auditing Settings"
 msgstr "Nastavenia kontroly"
@@ -87,9 +137,6 @@ msgstr "Žiadne výsledky"
 msgid "No issues found."
 msgstr "Neboli nájdené žiadne problémy."
 
-msgid "Use"
-msgstr "Použiť"
-
 msgid "Search and Replace Options"
 msgstr "Možnosti vyhľadávania a nahradzovania"
 
@@ -128,54 +175,3 @@ msgstr "Vybrať všetky"
 
 msgid "Proposed"
 msgstr "Navrhované"
-
-msgid "Infer East Slavic Patronymics"
-msgstr "Odvodiť východoslovanské patronymá"
-
-msgid "Rename Given Names"
-msgstr "Premenovať dané (krstné) mená"
-
-msgid "Audit Patronymics"
-msgstr "Skontrolovať patronymá"
-
-#, python-brace-format
-msgid ""
-"Missing Patronymic Detected.\n"
-"Suggested: {0}\n"
-"Based on father: {1}"
-msgstr ""
-"Zistené chýbajúce patronymické meno.\n"
-"Navrhované: {0}\n"
-"Na základe otca: {1}"
-
-msgid "Navigate to an individual to check patronymic status."
-msgstr "Prejdite na konkrétnu osobu a skontrolujte stav otcovského mena."
-
-msgid "No active person selected."
-msgstr "Nebola vybraná žiadna aktívna osoba."
-
-msgid ""
-"Patronymic inference can't be inferred for non-binary or unknown genders."
-msgstr "Otcovské meno nemožno odvodiť pre nebinárne alebo neznáme pohlavia."
-
-msgid "Individual already has a recorded patronymic."
-msgstr "Osoba už má zaznamenané otcovské meno."
-
-msgid "No attached father found in database family records."
-msgstr "V databáze rodinných záznamov nebol nájdený žiadny priradený otec."
-
-msgid "Father lacks a recorded first name."
-msgstr "Otec nemá zaznamenané prvé (krstné) meno."
-
-msgid "Could not generate valid morphology patterns."
-msgstr "Nepodarilo sa vygenerovať platné morfologické vzory."
-
-msgid "Patronymic applied successfully!"
-msgstr "Otcovské meno bolo úspešne priradené!"
-
-msgid "Apply Suggestion"
-msgstr "Aplikovať návrh"
-
-#, python-format
-msgid "%(prog)s: error: %(message)s\n"
-msgstr "%(prog)s: chyba: %(message)s\n"

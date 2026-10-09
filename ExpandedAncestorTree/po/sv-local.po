@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-03 12:17-0700\n"
-"PO-Revision-Date: 2026-08-31 17:51+0000\n"
-"Last-Translator: Eric Bjurvald <epg.bjurvald@gmail.com>\n"
+"PO-Revision-Date: 2026-09-30 15:23+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -12,7 +12,74 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
+
+msgid "Ancestor Tree Expanded"
+msgstr "Expanderat förfädersträd"
+
+msgid ""
+"Expanded Ancestor Graph showing direct ancestors, siblings, cousins and "
+"spouses."
+msgstr ""
+"Expanderad förfädersgraf som visar direkta förfäder, syskon, kusiner och "
+"makar."
+
+#, python-format
+msgid "Ancestor Tree Expanded for %s"
+msgstr "Expanderat förfädersträd för %s"
+
+msgid "Tree Truncated"
+msgstr "Avkortat träd"
+
+msgid ""
+"The generated tree reached the 400 people safety limit and has been "
+"truncated.\n"
+"\n"
+"Please reduce the number of generations or disable some options to see all "
+"branches."
+msgstr ""
+"Det genererade trädet nådde säkerhetsgränsen på 400 personer och har "
+"avkortats.\n"
+"\n"
+"Var god minska antalet generationer eller inaktivera vissa alternativ för "
+"att se alla grenar."
+
+msgid "Include descendants of the center person"
+msgstr "Inkludera ättlingar till mittenpersonen"
+
+msgid ""
+"Whether to display the children and full descending lines of the center "
+"person"
+msgstr ""
+"Huruvida man ska visa barnen och hela nedåtgående linjer för mittenpersonen"
+
+msgid "Include siblings of ancestors"
+msgstr "Ta med syskon för anor"
+
+msgid "Whether to display the siblings of direct ancestors"
+msgstr "Huruvida syskon till direkta förfäder ska visas"
+
+msgid "Include cousins (collateral descendants)"
+msgstr "Inkludera kusiner (medföljande ättlingar)"
+
+msgid ""
+"Whether to display the cousins and descendants of the ancestors' siblings"
+msgstr "Huruvida kusinerna och ättlingarna till förfädernas syskon ska visas"
 
 msgid "Descendant Generations"
 msgstr "Ättlingagenerationer"
+
+msgid "The number of descendant generations to include"
+msgstr "Antalet ättlingar som ska inkluderas"
+
+msgid "Whether to resize the page to fit the size of the tree."
+msgstr "Om sidan ska ändras så att den passar trädets storlek."
+
+msgid "Use random colors for family lines"
+msgstr "Använd slumpmässiga färger för familjelinjer"
+
+msgid "Draw each family's connecting lines with a distinct color."
+msgstr "Rita varje familjs anslutande linjer med en distinkt färg."
+
+msgid "The bold style used for the names."
+msgstr "Den feta stilen som används för namnen."

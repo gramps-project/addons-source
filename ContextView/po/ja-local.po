@@ -1,0 +1,74 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 3.3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-24 10:11-0700\n"
+"PO-Revision-Date: 2026-09-30 15:23+0000\n"
+"Last-Translator: coolvitto <coolzdaddy55@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/gramps-project/"
+"addons/ja/>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=0;\n"
+"X-Generator: Weblate 2026.10.dev0\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Context"
+msgstr "コンテキスト"
+
+msgid ""
+"A chart placing a person in the context of their immediate family: the "
+"couple in the centre, each partner's parents above them, their children "
+"below, and each partner's siblings in a column to their own side, eldest at "
+"the top. Click any box to re-centre the chart on that person; the name in "
+"bold marks the way back to the home person."
+msgstr ""
+"人物を身近な家族の中に配置して表示するチャートです。中央に夫婦、その上に各"
+"パートナーの両親、下に子供、各パートナーの兄弟姉妹はそれぞれの側の列に年長者"
+"を上にして表示します。ボックスをクリックすると、その人物を中心にチャートを再"
+"描画します。太字の名前はホームパーソンへ戻る経路を示します。"
+
+msgid "Show the previous family"
+msgstr "前の家族を表示"
+
+msgid "Show the next family"
+msgstr "次の家族を表示"
+
+msgid "No person is active."
+msgstr "アクティブな人物がありません。"
+
+#, python-format
+msgid "Family %(current)d of %(total)d"
+msgstr "家族 %(current)d / %(total)d"
+
+#, python-format
+msgid "family %d lies toward the home person"
+msgstr "家族 %d はホームパーソンの方向にあります"
+
+msgid "<b>Bold</b> marks the way to the home person"
+msgstr "<b>太字</b> はホームパーソンへの経路を示します"
+
+msgid "Show siblings"
+msgstr "兄弟姉妹を表示"
+
+msgid "About Context View"
+msgstr "コンテキストビューについて"
+
+msgid "Show tag colour"
+msgstr "タグの色を表示"
+
+msgid "Details in each box"
+msgstr "各ボックス内の詳細"
+
+msgid "Name only"
+msgstr "名前のみ"
+
+msgid "Name and dates"
+msgstr "名前と日付"
+
+msgid "Name, dates and places"
+msgstr "名前、日付、場所"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-03 12:17-0700\n"
-"PO-Revision-Date: 2026-08-29 07:51+0000\n"
+"PO-Revision-Date: 2026-10-06 17:51+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -13,7 +13,70 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.9.dev0\n"
+"X-Generator: Weblate 2026.10.1.dev0\n"
+
+msgid "Ancestor Tree Expanded"
+msgstr "אילן אבות־קדמוים הורחב"
+
+msgid ""
+"Expanded Ancestor Graph showing direct ancestors, siblings, cousins and "
+"spouses."
+msgstr ""
+"תרשים אבות קדמונים מורחב שמציג אבות קדמונים ישירים, אחאים, בני דודים וזוגאים."
+
+#, python-format
+msgid "Ancestor Tree Expanded for %s"
+msgstr "אילן אבות־קדמונים של %s הורחב"
+
+msgid "Tree Truncated"
+msgstr "האילן קוצץ"
+
+msgid ""
+"The generated tree reached the 400 people safety limit and has been "
+"truncated.\n"
+"\n"
+"Please reduce the number of generations or disable some options to see all "
+"branches."
+msgstr ""
+"האילן שחולל הגיע למגבלת הבטיחות של 400 אנשים ונקטע.\n"
+"\n"
+"נא לצמצם את מספר הדורות או להשבית מספר אפשרויות כדי לראות את כל הענפים."
+
+msgid "Include descendants of the center person"
+msgstr "הכללת צאצאי האדם המרכזי"
+
+msgid ""
+"Whether to display the children and full descending lines of the center "
+"person"
+msgstr "האם להציג את הצאצאים וקו צאצאים מלא של האדם המרכזי"
+
+msgid "Include siblings of ancestors"
+msgstr "הכללת אחאים של אבות־קדמונים"
+
+msgid "Whether to display the siblings of direct ancestors"
+msgstr "האם להציג את צאצאי אבות־קדמונים ישירים"
+
+msgid "Include cousins (collateral descendants)"
+msgstr "הכללת בני דודים (צאצאים נלווים)"
+
+msgid ""
+"Whether to display the cousins and descendants of the ancestors' siblings"
+msgstr "האם להציג בני דודים ואת צאצאי האבות־הקדמונים"
 
 msgid "Descendant Generations"
 msgstr "דורות צאצאים"
+
+msgid "The number of descendant generations to include"
+msgstr "מספר דורות צאצאים שיכללו"
+
+msgid "Whether to resize the page to fit the size of the tree."
+msgstr "האם לשדוד מחדש את העמוד כדי להתאימו לאילן."
+
+msgid "Use random colors for family lines"
+msgstr "להשתמש בצבעים אקראיים לקוי משפחות"
+
+msgid "Draw each family's connecting lines with a distinct color."
+msgstr "לשרטט קווי חיבור משפחה בצבע נפרד."
+
+msgid "The bold style used for the names."
+msgstr "הסגנון המודגש שמשמש לשמות."
