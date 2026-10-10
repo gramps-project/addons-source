@@ -33,32 +33,65 @@ import tempfile
 import unittest
 
 # Set up test resources environment variables before importing any Gramps module
-ROOT_DIR = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", "..")
+#
+# Gramps needs authors.xml, gramps.png and COPYING at import time. In a source
+# checkout they are copied from the repository into a temporary resource
+# directory. When this test runs from an installed addon (no source checkout
+# anywhere above or beside the ``gramps`` package), the installed Gramps
+# already provides them, so the environment is left alone.
+_RESOURCE_FILES = (
+    ("data", "authors.xml"),
+    ("images", "gramps.png"),
+    ("COPYING",),
 )
+
+
+def _find_source_root() -> str | None:
+    """Return a Gramps source checkout root holding the resources, or None."""
+    candidates = [
+        os.path.abspath(
+            os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", "..")
+        )
+    ]
+    try:
+        import importlib.util
+
+        spec = importlib.util.find_spec("gramps")
+        for location in (spec.submodule_search_locations or []) if spec else []:
+            candidates.append(os.path.dirname(os.path.abspath(location)))
+    except (ImportError, ValueError):
+        pass
+    for candidate in candidates:
+        if all(os.path.isfile(os.path.join(candidate, *f)) for f in _RESOURCE_FILES):
+            return candidate
+    return None
+
+
 resource_path = os.environ.get("GRAMPS_RESOURCES")
 if not resource_path or not os.path.exists(
     os.path.join(resource_path, "gramps", "authors.xml")
 ):
-    resource_path = tempfile.mkdtemp(prefix="gramps-resources-")
-    os.makedirs(os.path.join(resource_path, "gramps", "images"), exist_ok=True)
-    os.makedirs(os.path.join(resource_path, "doc", "gramps"), exist_ok=True)
-    os.makedirs(os.path.join(resource_path, "locale"), exist_ok=True)
+    ROOT_DIR = _find_source_root()
+    if ROOT_DIR is not None:
+        resource_path = tempfile.mkdtemp(prefix="gramps-resources-")
+        os.makedirs(os.path.join(resource_path, "gramps", "images"), exist_ok=True)
+        os.makedirs(os.path.join(resource_path, "doc", "gramps"), exist_ok=True)
+        os.makedirs(os.path.join(resource_path, "locale"), exist_ok=True)
 
-    shutil.copyfile(
-        os.path.join(ROOT_DIR, "data", "authors.xml"),
-        os.path.join(resource_path, "gramps", "authors.xml"),
-    )
-    shutil.copyfile(
-        os.path.join(ROOT_DIR, "images", "gramps.png"),
-        os.path.join(resource_path, "gramps", "images", "gramps.png"),
-    )
-    shutil.copyfile(
-        os.path.join(ROOT_DIR, "COPYING"),
-        os.path.join(resource_path, "doc", "gramps", "COPYING"),
-    )
+        shutil.copyfile(
+            os.path.join(ROOT_DIR, "data", "authors.xml"),
+            os.path.join(resource_path, "gramps", "authors.xml"),
+        )
+        shutil.copyfile(
+            os.path.join(ROOT_DIR, "images", "gramps.png"),
+            os.path.join(resource_path, "gramps", "images", "gramps.png"),
+        )
+        shutil.copyfile(
+            os.path.join(ROOT_DIR, "COPYING"),
+            os.path.join(resource_path, "doc", "gramps", "COPYING"),
+        )
+        os.environ["GRAMPS_RESOURCES"] = resource_path
 
-os.environ["GRAMPS_RESOURCES"] = resource_path
 os.environ["HOME"] = os.environ.get("HOME") or tempfile.mkdtemp(prefix="gramps-home-")
 
 # -------------------------------------------------------------------------
