@@ -137,6 +137,49 @@ from gwizard import (
 from gwizardgedcom import GedGWizard
 
 
+def _find_sample_dir(*names: str) -> str | None:
+    """
+    Return a directory containing all of the named Gramps sample files.
+
+    ``gramps.gen.const.TEST_DIR`` only exists for a source checkout, so when
+    it is missing (installed Gramps, addon run) look in the usual example
+    locations instead. Returns None if the files cannot be found.
+    """
+    candidates = []
+    try:
+        from gramps.gen.const import TEST_DIR
+
+        candidates.append(TEST_DIR)
+    except ImportError:
+        pass
+    root = globals().get("ROOT_DIR")
+    if root:
+        candidates.append(os.path.join(root, "example", "gramps"))
+    for base in (
+        os.environ.get("GRAMPS_RESOURCES"),
+        os.path.join(sys.prefix, "share"),
+    ):
+        if base:
+            candidates.append(os.path.join(base, "doc", "gramps", "example", "gramps"))
+            candidates.append(os.path.join(base, "gramps", "example", "gramps"))
+    try:
+        import importlib.util
+
+        spec = importlib.util.find_spec("gramps")
+        for location in (spec.submodule_search_locations or []) if spec else []:
+            candidates.append(
+                os.path.join(
+                    os.path.dirname(os.path.abspath(location)), "example", "gramps"
+                )
+            )
+    except (ImportError, ValueError):
+        pass
+    for candidate in candidates:
+        if all(os.path.isfile(os.path.join(candidate, name)) for name in names):
+            return candidate
+    return None
+
+
 def _has_gtk_display() -> bool:
     """
     Return True only if a real Gtk display is available.
@@ -961,7 +1004,9 @@ class GWizardTest(unittest.TestCase):
             ("imp_sample.gramps", 42),
             ("exp_sample.gramps", 52),
         )
-        from gramps.gen.const import TEST_DIR
+        TEST_DIR = _find_sample_dir(*(name for name, _count in cases))
+        if TEST_DIR is None:
+            self.skipTest("imp_sample.gramps / exp_sample.gramps not found")
 
         for source_name, expected_count in cases:
             temp_path = os.path.join(
