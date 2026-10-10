@@ -17,7 +17,7 @@
 #
 
 """
-Large top-level comparison window showing the incoming GEDCOM tree side by
+Large top-level comparison window showing the incoming GEDCOM file side by
 side with the existing Gramps tree (destination on the right).
 """
 
@@ -27,8 +27,8 @@ side with the existing Gramps tree (destination on the right).
 #
 # -------------------------------------------------------------------------
 from __future__ import annotations
-import logging
 import os
+import logging
 from typing import Any
 
 # -------------------------------------------------------------------------
@@ -39,6 +39,7 @@ from typing import Any
 from gi.repository import Gtk
 from gi.repository import Pango
 from gi.repository import GLib
+from gi.repository import Gdk
 
 # -------------------------------------------------------------------------
 #
@@ -55,6 +56,7 @@ from gwizard import (
     safe_get_person,
     safe_get_place,
     safe_get_source,
+    vital_event_ref,
 )
 from gramps.gen.soundex import soundex
 from gramps.gen.types import PersonHandle
@@ -101,6 +103,7 @@ except ImportError:  # Gramps < 6.1 has no gramps.gen.fs package
 
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.dialog import ErrorDialog
+from gwizardlauncher import truncate_display_name
 
 # -------------------------------------------------------------------------
 #
@@ -176,9 +179,16 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         self.target_index: dict[str, str] = {}
         self._syncing = False
         self._rejected: dict[str, set[str]] = {}
+        # True once the user has resized/maximized the window themselves, so the
+        # state handler stops undoing their deliberate maximize. Must be
+        # initialised before cb_window_state_changed can read it.
+        self._user_resized = False
 
         self.set_title(_("GWizard Compare"))
-        self.set_default_size(1600, 900)
+        # Generous default size. The real size is fitted to the screen once
+        # the window is mapped (see _fit_window_to_screen), which also undoes
+        # any maximized state inherited from a maximized parent window.
+        self.set_default_size(1600, 810)
         if parent:
             self.set_transient_for(parent)
 
@@ -194,34 +204,17 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         self.paned = Gtk.HPaned()
         main_box.pack_start(self.paned, True, True, 0)
 
-        # Build panel titles, appending the incoming GEDCOM filename (if available).
-        incoming_title = _("Incoming GEDCOM Tree")
-        # Retrieve the GEDCOM path from the gwizard context; may be absent in tests.
-        gedcom_path = getattr(self.gwizard, "context", {}).get("gedcom_path", "")
-        if gedcom_path:
-            filename = os.path.basename(gedcom_path)
-            # Truncate long filenames while preserving the extension.
-            max_len = 30
-            if len(filename) > max_len:
-                name, ext = os.path.splitext(filename)
-                # Keep the extension and as much of the name as fits.
-                keep = max_len - len(ext) - 3  # space for "..."
-                if keep > 0:
-                    filename = f"{name[:keep]}...{ext}"
-                else:
-                    # If even the extension doesn't fit, just truncate aggressively.
-                    filename = f"{filename[:max_len-3]}..."
-            incoming_title = f"{incoming_title} ({filename})"
+        source_path = gwizard.context.get("gedcom_path")
+        incoming_title = _("Incoming GEDCOM")
+        if source_path:
+            filename = truncate_display_name(
+                os.path.basename(source_path), max_length=60, preserve_extension=True
+            )
+            incoming_title = _("Incoming GEDCOM: %s") % filename
+        tree_name = truncate_display_name(dbstate.db.get_dbname(), max_length=60)
+        current_title = _("Current Family Tree: %s") % tree_name
         self.left_panel = self._build_panel(incoming_title)
-        # Build right panel title with database name if available.
-        right_title = _("Current Family Tree")
-        try:
-            db_name = self.dbstate.db.get_dbname()
-        except Exception:
-            db_name = ""
-        if db_name:
-            right_title = f"{right_title} ({db_name})"
-        self.right_panel = self._build_panel(right_title)
+        self.right_panel = self._build_panel(current_title)
         self.paned.pack1(self.left_panel["frame"], True, False)
         self.paned.pack2(self.right_panel["frame"], True, False)
         # Split the two panels exactly in half once the window has been
@@ -244,6 +237,14 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         self._syncing_scroll = False
         self._scroll_debounce_id: int | None = None
         self.connect("delete-event", self.cb_delete_event)
+        # Fit the window to the screen once it is first mapped, and undo any
+        # maximized/fullscreen state the window manager inherits from a
+        # maximized transient parent. We hook window-state-event (rather than a
+        # timer retry) because GTK emits it right after the maximize actually
+        # happens, so is_maximized() is accurate and we never fight the WM
+        # blindly (see cb_window_state_changed).
+        self.connect("map-event", self.cb_map_event)
+        self.connect("window-state-event", self.cb_window_state_changed)
         left_vadj = self.left_panel["scrolled"].get_vadjustment()
         right_vadj = self.right_panel["scrolled"].get_vadjustment()
         left_hadj = self.left_panel["scrolled"].get_hadjustment()
@@ -255,6 +256,147 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         right_hadj.connect("value-changed", self.cb_right_hscroll_changed)
 
         self.select_category("person")
+
+    def cb_map_event(self, *_args: Any) -> bool:
+        """
+        Handle the window's first ``map-event``.
+
+        Fitting must wait until the window manager has finished mapping the
+        window and applying any state inherited from a transient parent, so
+        the real work is deferred to an idle callback.
+
+        :returns: ``False`` so the signal handler does not stop propagation.
+        :rtype: bool
+        """
+        GLib.idle_add(self._fit_window_to_screen)
+        return False
+
+    def cb_window_state_changed(self, _widget: Gtk.Widget, event: Any) -> bool:
+        """
+        Undo a maximized/fullscreened state inherited from a transient parent.
+
+        On Windows a transient window inherits its parent's maximized state, so
+        the compare window opens filling the screen and ``set_default_size`` is
+        ignored. GTK emits ``window-state-event`` right *after* the maximize is
+        applied, so this handler can react to it deterministically (unlike a
+        timer retry, which cannot know when the WM is done) and restore our
+        intended size. We only act when the maximize/fullscreen bit is actually
+        set, and ignore state changes the user triggers themselves.
+
+        :param _widget: The window (unused).
+        :param event: The ``Gdk.EventWindowState`` describing the state change.
+        :returns: ``False`` so the signal handler does not stop propagation.
+        :rtype: bool
+        """
+        try:
+            new_state = event.new_window_state
+        except Exception:
+            return False
+
+        maximized = (
+            bool(new_state & Gdk.WindowState.MAXIMIZED)
+            if hasattr(Gdk, "WindowState")
+            else False
+        )
+        fullscreen = (
+            bool(new_state & Gdk.WindowState.FULLSCREEN)
+            if hasattr(Gdk, "WindowState")
+            else False
+        )
+        if not (maximized or fullscreen):
+            return False
+
+        if self._user_resized:
+            # The user deliberately maximized it after it opened; respect that.
+            return False
+
+        # Undo the inherited maximize/fullscreen and re-apply our fitted size.
+        self.unmaximize()
+        self.unfullscreen()
+        self._fit_window_to_screen()
+        return False
+
+    def _fit_window_to_screen(self, *_args: Any) -> bool:
+        """
+        Fit the window to the monitor's usable area once it has been mapped.
+
+        The window is given a generous default size, but two things can make
+        it fill the screen regardless of that default:
+
+        * This window is transient for the main Gramps window. On Windows a
+          transient window inherits the parent's *maximized* state, so it opens
+          filling the screen and ``set_default_size`` is ignored. That inherited
+          maximize is undone by :meth:`cb_window_state_changed`.
+        * On small or HiDPI displays the default size can be taller than the
+          usable screen area, pushing the bottom off-screen.
+
+        This method resizes the window to the default size clamped to the work
+        area of the monitor it appears on, leaving a small margin. It is a
+        no-op while the window is still maximized/fullscreened so it never
+        fights the window manager.
+
+        :returns: ``False`` (this runs as a one-shot idle callback).
+        :rtype: bool
+        """
+        # If the window is (still) maximized or fullscreen, resizing now would
+        # be ignored by the WM; leave the sizing to the state handler which
+        # calls back in once the maximize has been undone.
+        #
+        # Note: Gtk.Window.is_fullscreen() is not available on every GTK3 build
+        # (it is absent in 3.24.x on Windows), so fullscreen is read from the
+        # underlying Gdk.Window state bitmask, consistent with
+        # cb_window_state_changed, rather than via a missing convenience method.
+        maximized = self.is_maximized()
+        fullscreen = False
+        gdk_window = Gtk.Widget.get_window(self)
+        if gdk_window is not None and hasattr(Gdk, "WindowState"):
+            state = gdk_window.get_state()
+            maximized = maximized or bool(state & Gdk.WindowState.MAXIMIZED)
+            fullscreen = bool(state & Gdk.WindowState.FULLSCREEN)
+        if maximized or fullscreen:
+            return False
+
+        try:
+            # ``gdk_window`` was resolved above for the state check; reuse it
+            # for the monitor lookup. ManagedWindow overrides get_window to
+            # return the window itself, so Gtk.Widget.get_window is required
+            # here to get the real Gdk.Window for the monitor APIs.
+            monitor = None
+            if gdk_window is not None:
+                display = self.get_display()
+                monitor = display.get_monitor_at_window(gdk_window)
+            if monitor is None:
+                display = self.get_display()
+                monitor = display.get_primary_monitor()
+            if monitor is None:
+                LOG.info(
+                    "Compare window fit: no monitor found; size=%s", self.get_size()
+                )
+                return False
+            geometry = monitor.get_geometry()
+
+            usable_w = max(320, geometry.width - 40)
+            usable_h = max(240, geometry.height - 80)
+            width, height = self.get_default_size()
+            new_w = min(width, usable_w)
+            new_h = min(height, usable_h)
+            LOG.info(
+                "Compare window fit: monitor=%dx%d usable=%dx%d target=%dx%d "
+                "current=%s maximized=%s",
+                geometry.width,
+                geometry.height,
+                usable_w,
+                usable_h,
+                new_w,
+                new_h,
+                self.get_size(),
+                self.is_maximized(),
+            )
+            self.resize(new_w, new_h)
+        except Exception:  # pragma: no cover - depends on the GTK/display setup
+            LOG.warning("Unable to clamp compare window size", exc_info=True)
+
+        return False
 
     # ------------------------------------------------------------------
     # Data population
@@ -595,17 +737,15 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
                 safe helper ``_get_event_year`` that retrieves the referenced
                 ``Event`` and extracts the year via ``get_date_object()``.
                 """
-                ev = person.get_birth_ref()
+                # Choose the correct database for the person whose birth year
+                # we are extracting. ``source`` lives in ``self.source_db``
+                # while ``target`` lives in the destination database
+                # ``self.dbstate.db``.
+                db_for_person = self.source_db if person is source else self.dbstate.db
+                ev = vital_event_ref(db_for_person, person, "birth")
                 if ev:
                     # ``_get_event_year`` returns an empty string when the
                     # event or its date is missing, so we treat that as None.
-                    # Choose the correct database for the person whose birth year
-                    # we are extracting. ``source`` lives in ``self.source_db``
-                    # while ``target`` lives in the destination database
-                    # ``self.dbstate.db``.
-                    db_for_person = (
-                        self.source_db if person is source else self.dbstate.db
-                    )
                     year = GWizardCompareWindow._get_event_year(ev, db_for_person)
                     if year:
                         return year
@@ -819,7 +959,11 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         scrolled = Gtk.ScrolledWindow()
         scrolled.set_shadow_type(Gtk.ShadowType.IN)
         scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-        scrolled.set_size_request(-1, 500)
+        # Small minimum height only. The window fills the screen tall when this
+        # pane demands hundreds of pixels, because GTK never sizes a window
+        # below its content's minimum request. This pane is packed with
+        # expand=True, so it still grows to fill whatever space is available.
+        scrolled.set_size_request(-1, 120)
         scrolled.add(tree)
         box.pack_start(scrolled, True, True, 0)
 
@@ -853,9 +997,14 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
             section_box.hide()
         detail_scrolled = Gtk.ScrolledWindow()
         detail_scrolled.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-        detail_scrolled.set_size_request(-1, 490)
+        # Keep the minimum small (see the record-list pane above): a large fixed
+        # minimum here forces the whole window to be tall and un-shrinkable.
+        detail_scrolled.set_size_request(-1, 120)
         detail_scrolled.add(detail_box)
-        box.pack_start(detail_scrolled, False, False, 0)
+        # Expand/fill so the detail pane grows to use leftover height instead of
+        # being locked to a fixed block; combined with the small minimum above,
+        # this lets the whole window shrink when the user resizes it smaller.
+        box.pack_start(detail_scrolled, True, True, 0)
 
         return {
             "frame": frame,
@@ -924,13 +1073,15 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         parts = []
         try:
             birth_year = GWizardCompareWindow._get_event_year(
-                person.get_birth_ref(), db
+                vital_event_ref(db, person, "birth"), db
             )
         except Exception:
             birth_year = ""
         if birth_year:
             parts.append("b. " + birth_year)
-        birth_place = GWizardCompareWindow._get_event_place(person.get_birth_ref(), db)
+        birth_place = GWizardCompareWindow._get_event_place(
+            vital_event_ref(db, person, "birth"), db
+        )
         if birth_place:
             parts.append(birth_place)
         return " ".join(parts)
@@ -942,7 +1093,7 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         """
         try:
             death_year = GWizardCompareWindow._get_event_year(
-                person.get_death_ref(), db
+                vital_event_ref(db, person, "death"), db
             )
         except Exception:
             death_year = ""
@@ -1497,9 +1648,15 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         lines.append(_("Gender: %s") % gender)
         if person.gramps_id:
             lines.append(_("ID: %s") % person.gramps_id)
-        birth_year = GWizardCompareWindow._get_event_year(person.get_birth_ref(), db)
-        death_year = GWizardCompareWindow._get_event_year(person.get_death_ref(), db)
-        birth_place = GWizardCompareWindow._get_event_place(person.get_birth_ref(), db)
+        birth_year = GWizardCompareWindow._get_event_year(
+            vital_event_ref(db, person, "birth"), db
+        )
+        death_year = GWizardCompareWindow._get_event_year(
+            vital_event_ref(db, person, "death"), db
+        )
+        birth_place = GWizardCompareWindow._get_event_place(
+            vital_event_ref(db, person, "birth"), db
+        )
         birth_part = ""
         if birth_year:
             birth_part = "b. " + birth_year

@@ -30,6 +30,7 @@ import abc
 import difflib
 import logging
 import re
+import unicodedata
 from typing import Any, NamedTuple
 
 # -------------------------------------------------------------------------
@@ -265,6 +266,170 @@ def safe_get_source(db: Any, handle: str | None) -> Any | None:
     return safe_get(db, handle, "get_source_from_handle", "source")
 
 
+def safe_get_repository(db: Any, handle: str | None) -> Any | None:
+    """Return the repository for handle, or None when it is empty or dangling."""
+    return safe_get(db, handle, "get_repository_from_handle", "repository")
+
+
+def vital_event_ref(db: Any, person: Person | None, kind: str) -> Any | None:
+    """Return the birth or death EventRef, with a type-scan fallback."""
+    if person is None or db is None:
+        return None
+    try:
+        ref = person.get_birth_ref() if kind == "birth" else person.get_death_ref()
+    except Exception:
+        ref = None
+    if ref is not None:
+        return ref
+    try:
+        refs = person.get_event_ref_list() or []
+    except Exception:
+        return None
+    want_birth = kind == "birth"
+    for cand in refs:
+        try:
+            event = safe_get_event(db, getattr(cand, "ref", None))
+        except Exception:
+            continue
+        if event is None:
+            continue
+        try:
+            etype = event.get_type()
+        except Exception:
+            continue
+        try:
+            is_match = etype.is_birth() if want_birth else etype.is_death()
+        except Exception:
+            continue
+        if is_match:
+            return cand
+    return None
+
+
+# ------------------------------------------------------------
+#
+# Source matching helpers
+#
+# ------------------------------------------------------------
+SOURCE_MATCHED = "matched"
+SOURCE_AMBIGUOUS = "ambiguous"
+SOURCE_NEW = "new"
+
+_MARKUP_TAG_RE = re.compile(r"</?[A-Za-z][^>]*>")
+
+
+def normalize_source_text(text: str | None) -> str:
+    """
+    Normalize source text for comparison.
+
+    Applies Unicode NFKC, removes simple HTML tags (titles exported from
+    FamilySearch carry ``<i>`` markup), collapses whitespace and casefolds.
+
+    :param text: Title, author, publication info or page text, or None.
+    :returns: The normalized text, '' for None or empty input.
+    """
+    text = unicodedata.normalize("NFKC", _MARKUP_TAG_RE.sub("", text or ""))
+    return " ".join(text.split()).casefold()
+
+
+def source_signature(source: Any) -> tuple[str, str, str] | None:
+    """
+    Return the (title, author, publication info) key used to match sources.
+
+    :param source: A Gramps ``Source``.
+    :returns: The normalized key, or None when the source has no title
+        (a source without a title is never matched).
+    """
+    title = normalize_source_text(source.get_title())
+    if not title:
+        return None
+    return (
+        title,
+        normalize_source_text(source.get_author()),
+        normalize_source_text(source.get_publication_info()),
+    )
+
+
+class SourceMatcher:
+    """
+    Find the source in ``db`` that an incoming source corresponds to.
+
+    Sources match only when title, author and publication info all agree
+    after normalization. When several sources in ``db`` share a key the
+    result is ambiguous and nothing is matched, so callers add a new
+    source instead of guessing. The index over ``db`` is built on first
+    use; sources created afterwards must be registered with :meth:`add`.
+    """
+
+    def __init__(self, db: Any) -> None:
+        self.db = db
+        self._index: dict[tuple[str, str, str], list[str]] | None = None
+
+    def _ensure_index(self) -> dict[tuple[str, str, str], list[str]]:
+        if self._index is None:
+            index: dict[tuple[str, str, str], list[str]] = {}
+            for source in self.db.iter_sources():
+                signature = source_signature(source)
+                if signature is not None:
+                    index.setdefault(signature, []).append(source.handle)
+            self._index = index
+        return self._index
+
+    def find(self, source: Any) -> tuple[str | None, str]:
+        """
+        Look up the counterpart of ``source`` in the database.
+
+        :returns: ``(handle, SOURCE_MATCHED)`` for exactly one match,
+            ``(None, SOURCE_AMBIGUOUS)`` for several, otherwise
+            ``(None, SOURCE_NEW)``.
+        """
+        signature = source_signature(source)
+        if signature is None:
+            return None, SOURCE_NEW
+        handles = self._ensure_index().get(signature, [])
+        if len(handles) == 1:
+            return handles[0], SOURCE_MATCHED
+        if len(handles) > 1:
+            return None, SOURCE_AMBIGUOUS
+        return None, SOURCE_NEW
+
+    def add(self, source: Any) -> None:
+        """Register a source that was just added to the database."""
+        signature = source_signature(source)
+        if signature is None:
+            return
+        handles = self._ensure_index().setdefault(signature, [])
+        if source.handle not in handles:
+            handles.append(source.handle)
+
+
+def source_match_report(source_db: Any, target_db: Any) -> list[dict[str, str]]:
+    """
+    Describe how each incoming source would be treated by a merge.
+
+    Read-only; useful for checking a real file against a real tree
+    before relying on source matching.
+
+    :returns: One dict per incoming source with ``title``, ``author``,
+        ``status`` (matched, ambiguous or new) and ``target_handle``,
+        sorted by status then title.
+    """
+    matcher = SourceMatcher(target_db)
+    rows = []
+    for source in source_db.iter_sources():
+        handle, status = matcher.find(source)
+        rows.append(
+            {
+                "title": source.get_title() or "",
+                "author": source.get_author() or "",
+                "status": status,
+                "target_handle": handle or "",
+            }
+        )
+    rows.sort(key=lambda r: (r["status"], r["title"].casefold()))
+    return rows
+
+
 # ------------------------------------------------------------
 #
 # Given-name matching helpers
@@ -464,8 +629,8 @@ class CandidateMatcher:
             score += surname_score
 
         # Birth date match helper (partial-date aware)
-        s_birth_ref = source.get_birth_ref()
-        t_birth_ref = target.get_birth_ref()
+        s_birth_ref = vital_event_ref(s_lookup_db, source, "birth")
+        t_birth_ref = vital_event_ref(self.db, target, "birth")
 
         if s_birth_ref and t_birth_ref:
             try:

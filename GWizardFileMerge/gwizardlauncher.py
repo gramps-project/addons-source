@@ -18,7 +18,7 @@
 # 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-"""Shared launcher for the GWizard File Merge flow."""
+"""Shared launcher for the GWizard Data Merge flow."""
 
 # -------------------------------------------------------------------------
 #
@@ -27,6 +27,7 @@
 # -------------------------------------------------------------------------
 from __future__ import annotations
 import logging
+import os
 from typing import Any
 
 # -------------------------------------------------------------------------
@@ -52,6 +53,23 @@ LOG = logging.getLogger(__name__)
 # GWizard launcher helpers
 #
 # ------------------------------------------------------------
+def truncate_display_name(
+    value: str, max_length: int = 30, preserve_extension: bool = False
+) -> str:
+    """Shorten a displayed filename or tree name to a preferred length."""
+    if len(value) <= max_length:
+        return value
+
+    if preserve_extension:
+        name, extension = os.path.splitext(value)
+        keep = max_length - len(extension) - 3
+        if keep <= 0:
+            return f"...{extension}"
+        return f"{name[:keep]}...{extension}"
+
+    return f"{value[:max_length - 3]}..."
+
+
 def _case_insensitive_pattern(extension: str) -> str:
     """
     Build a case-insensitive glob pattern for a file extension.

@@ -74,6 +74,11 @@ from gwizard import (
     safe_get_person,
     safe_get_place,
     safe_get_source,
+    vital_event_ref,
+    SOURCE_AMBIGUOUS,
+    SourceMatcher,
+    normalize_source_text,
+    source_signature,
 )
 
 # -------------------------------------------------------------------------
@@ -274,7 +279,7 @@ class GedGWizard(GWizardBase):
                         target_person.get_primary_name().get_name()
                     )
                     # Use formatted birth year if available
-                    birth_ref = target_person.get_birth_ref()
+                    birth_ref = vital_event_ref(self.db, target_person, "birth")
                     birth_yr = ""
                     if birth_ref:
                         birth_evt = safe_get_event(self.db, birth_ref.ref)
@@ -398,11 +403,28 @@ class GedGWizard(GWizardBase):
             )
         )
 
-        # Helper to extract event details
+        # Helper to extract event details for the primary event of a type.
+        # The primary (birth_ref/death_ref, else first of that type) feeds
+        # the mergeable top row; every other event of that type is listed
+        # under Events & Other Records by the merge dialog.
         def get_event_details(
             db: DbWriteBase, person: Person, event_type_val: int
         ) -> tuple[str, str, str]:
-            for ref in person.get_event_ref_list():
+            kind = "birth" if event_type_val == EventType.BIRTH else "death"
+            try:
+                primary = vital_event_ref(db, person, kind)
+            except Exception:
+                primary = None
+            ordered_refs: list[Any] = []
+            if primary is not None:
+                ordered_refs.append(primary)
+            try:
+                for ref in person.get_event_ref_list():
+                    if primary is None or ref.ref != primary.ref:
+                        ordered_refs.append(ref)
+            except Exception:
+                pass
+            for ref in ordered_refs:
                 try:
                     event = safe_get_event(db, ref.ref)
                     if event and event.get_type() == event_type_val:
@@ -466,6 +488,216 @@ class GedGWizard(GWizardBase):
             )
         )
 
+        # 6. Compare extra (non-primary) Birth and Death events.
+        # These are the events beyond the primary record and are surfaced as
+        # separate rows so the Diff list correctly flags a person when an
+        # alternate vital event exists on either side.
+        def get_event_details_for_event(
+            db: DbWriteBase, event: Event
+        ) -> tuple[str, str]:
+            dt_str = glocale.date_displayer.display(event.get_date_object())
+            place = ""
+            ph = event.get_place_handle()
+            if ph:
+                place_obj = safe_get_place(db, ph)
+                if place_obj:
+                    place = place_obj.get_title()
+            return dt_str, place
+
+        def get_extra_events(
+            db: DbWriteBase,
+            person: Person,
+            event_type_val: int,
+            primary_handle: str | None,
+        ) -> list[tuple[str, Event]]:
+            extra: list[tuple[str, Event]] = []
+            for ref in person.get_event_ref_list():
+                try:
+                    event = safe_get_event(db, ref.ref)
+                    if not event:
+                        continue
+                    if event.get_type() != event_type_val:
+                        continue
+                    if ref.ref == primary_handle:
+                        continue
+                    extra.append((ref.ref, event))
+                except Exception:
+                    continue
+            return extra
+
+        # Extra Birth events
+        s_birth_extra = get_extra_events(
+            source_db, s_person, EventType.BIRTH, s_birth_h
+        )
+        t_birth_extra = get_extra_events(self.db, t_person, EventType.BIRTH, t_birth_h)
+        for s_ref, s_ev in s_birth_extra:
+            s_dt, s_pl = get_event_details_for_event(source_db, s_ev)
+            s_val = f"{s_dt} ({s_pl})" if s_pl else s_dt
+            rows.append(
+                GWizardCompareRow(
+                    status="source_only",
+                    field=_("Birth"),
+                    source_val=s_val,
+                    target_val="",
+                    source_date=s_dt,
+                    target_date="",
+                    field_type="birth_event",
+                    extra_data={"source_handle": s_ref, "target_handle": ""},
+                )
+            )
+
+        for t_ref, t_ev in t_birth_extra:
+            t_dt, t_pl = get_event_details_for_event(self.db, t_ev)
+            t_val = f"{t_dt} ({t_pl})" if t_pl else t_dt
+            rows.append(
+                GWizardCompareRow(
+                    status="target_only",
+                    field=_("Birth"),
+                    source_val="",
+                    target_val=t_val,
+                    source_date="",
+                    target_date=t_dt,
+                    field_type="birth_event",
+                    extra_data={"source_handle": "", "target_handle": t_ref},
+                )
+            )
+
+        # Extra Death events
+        s_death_extra = get_extra_events(
+            source_db, s_person, EventType.DEATH, s_death_h
+        )
+        t_death_extra = get_extra_events(self.db, t_person, EventType.DEATH, t_death_h)
+        for s_ref, s_ev in s_death_extra:
+            s_dt, s_pl = get_event_details_for_event(source_db, s_ev)
+            s_val = f"{s_dt} ({s_pl})" if s_pl else s_dt
+            rows.append(
+                GWizardCompareRow(
+                    status="source_only",
+                    field=_("Death"),
+                    source_val=s_val,
+                    target_val="",
+                    source_date=s_dt,
+                    target_date="",
+                    field_type="death_event",
+                    extra_data={"source_handle": s_ref, "target_handle": ""},
+                )
+            )
+
+        for t_ref, t_ev in t_death_extra:
+            t_dt, t_pl = get_event_details_for_event(self.db, t_ev)
+            t_val = f"{t_dt} ({t_pl})" if t_pl else t_dt
+            rows.append(
+                GWizardCompareRow(
+                    status="target_only",
+                    field=_("Death"),
+                    source_val="",
+                    target_val=t_val,
+                    source_date="",
+                    target_date=t_dt,
+                    field_type="death_event",
+                    extra_data={"source_handle": "", "target_handle": t_ref},
+                )
+            )
+
+        # 7. Compare generic (non-Birth/non-Death) events. These are the
+        # "other" personal events (custom events and the like). They are
+        # paired by identical description first, then any remaining events
+        # are matched by ordinal position. This ensures a person who has a
+        # different number of generic events on each side -- for example two
+        # events in the GEDCOM file but three in the database -- is flagged
+        # as a difference rather than being silently ignored.
+        def generic_event_label(db: DbWriteBase, event: Event) -> str:
+            """Return a short display value for a generic event."""
+            desc = event.get_description() or ""
+            dt_str = ""
+            try:
+                dt_str = glocale.date_displayer.display(event.get_date_object())
+            except Exception:
+                dt_str = ""
+            label = desc or str(event.get_type())
+            if dt_str:
+                label = f"{label} ({dt_str})"
+            return label
+
+        def collect_generic_events(
+            db: DbWriteBase, person: Person
+        ) -> list[tuple[str, Event]]:
+            """Return (handle, Event) pairs for non-Birth/Death events."""
+            result: list[tuple[str, Event]] = []
+            for ref in person.get_event_ref_list():
+                try:
+                    event = safe_get_event(db, ref.ref)
+                except Exception:
+                    continue
+                if not event:
+                    continue
+                if event.get_type() in (EventType.BIRTH, EventType.DEATH):
+                    continue
+                result.append((ref.ref, event))
+            return result
+
+        def _norm(value: str) -> str:
+            return value.strip().lower()
+
+        s_generic = collect_generic_events(source_db, s_person)
+        t_generic = collect_generic_events(self.db, t_person)
+
+        # First pass: pair events whose display values are identical.
+        matched_target_idx: set[int] = set()
+        s_unmatched: list[tuple[str, str]] = []
+        for s_ref, s_ev in s_generic:
+            s_label = generic_event_label(source_db, s_ev)
+            found: int | None = None
+            for idx, (t_ref, t_ev) in enumerate(t_generic):
+                if idx in matched_target_idx:
+                    continue
+                if _norm(generic_event_label(self.db, t_ev)) == _norm(s_label):
+                    found = idx
+                    break
+            if found is None:
+                s_unmatched.append((s_ref, s_label))
+            else:
+                matched_target_idx.add(found)
+                t_ref, t_ev = t_generic[found]
+                rows.append(
+                    GWizardCompareRow(
+                        status="match",
+                        field=_("Event"),
+                        source_val=s_label,
+                        target_val=generic_event_label(self.db, t_ev),
+                        field_type="event",
+                        extra_data={"source_handle": s_ref, "target_handle": t_ref},
+                    )
+                )
+
+        # Second pass: pair leftover source and target events by position.
+        # Unequal counts therefore surface as differ/source_only/target_only.
+        t_remaining: list[tuple[str, str]] = [
+            (t_ref, generic_event_label(self.db, t_ev))
+            for idx, (t_ref, t_ev) in enumerate(t_generic)
+            if idx not in matched_target_idx
+        ]
+        pair_count = max(len(s_unmatched), len(t_remaining))
+        for i in range(pair_count):
+            s_ref = ""
+            s_label = ""
+            t_ref = ""
+            t_label = ""
+            if i < len(s_unmatched):
+                s_ref, s_label = s_unmatched[i]
+            if i < len(t_remaining):
+                t_ref, t_label = t_remaining[i]
+            rows.append(
+                GWizardCompareRow(
+                    status=get_status(s_label, t_label),
+                    field=_("Event"),
+                    source_val=s_label,
+                    target_val=t_label,
+                    field_type="event",
+                    extra_data={"source_handle": s_ref, "target_handle": t_ref},
+                )
+            )
+
         return rows
 
     def _apply(self, **kwargs: Any) -> bool:
@@ -496,6 +728,13 @@ class GedGWizard(GWizardBase):
         if not s_person:
             raise ValueError("Source person not found.")
 
+        source_matcher = SourceMatcher(self.db)
+
+        def fresh_gramps_id(obj: Any, has_gramps_id: Any) -> None:
+            """Clear a Gramps ID the target already uses so a new one is assigned."""
+            if obj.gramps_id and has_gramps_id(obj.gramps_id):
+                obj.set_gramps_id("")
+
         # Helper to get/create place
         def get_or_create_place(s_pl_handle: str | None, trans: Any) -> str | None:
             if not s_pl_handle:
@@ -513,10 +752,15 @@ class GedGWizard(GWizardBase):
                         return h
 
                 new_place = copy.deepcopy(s_place)
+                fresh_gramps_id(new_place, self.db.has_place_gramps_id)
                 self.db.add_place(new_place, trans)
                 return new_place.handle
             except Exception:
-                pass
+                LOG.warning(
+                    "Could not copy %s from the incoming file; it was skipped",
+                    "place",
+                    exc_info=True,
+                )
             return None
 
         # Helper to copy note
@@ -533,10 +777,15 @@ class GedGWizard(GWizardBase):
                 if not s_note:
                     return None
                 new_note = copy.deepcopy(s_note)
+                fresh_gramps_id(new_note, self.db.has_note_gramps_id)
                 self.db.add_note(new_note, trans)
                 return new_note.handle
             except Exception:
-                pass
+                LOG.warning(
+                    "Could not copy %s from the incoming file; it was skipped",
+                    "note",
+                    exc_info=True,
+                )
             return None
 
         # Helper to copy media
@@ -560,10 +809,15 @@ class GedGWizard(GWizardBase):
                         new_notes.append(new_nh)
                 new_media.set_note_list(new_notes)
 
+                fresh_gramps_id(new_media, self.db.has_media_gramps_id)
                 self.db.add_media(new_media, trans)
                 return new_media.handle
             except Exception:
-                pass
+                LOG.warning(
+                    "Could not copy %s from the incoming file; it was skipped",
+                    "media",
+                    exc_info=True,
+                )
             return None
 
         # Helper to copy repository
@@ -587,10 +841,15 @@ class GedGWizard(GWizardBase):
                         new_notes.append(new_nh)
                 new_repo.set_note_list(new_notes)
 
+                fresh_gramps_id(new_repo, self.db.has_repository_gramps_id)
                 self.db.add_repository(new_repo, trans)
                 return new_repo.handle
             except Exception:
-                pass
+                LOG.warning(
+                    "Could not copy %s from the incoming file; it was skipped",
+                    "repo",
+                    exc_info=True,
+                )
             return None
 
         # Helper to copy source
@@ -606,6 +865,20 @@ class GedGWizard(GWizardBase):
                 s_source = safe_get_source(source_db, s_source_handle)
                 if not s_source:
                     return None
+                existing_handle, status = source_matcher.find(s_source)
+                if existing_handle:
+                    LOG.info(
+                        "Source %r matches existing source %s; reusing it",
+                        s_source.get_title(),
+                        existing_handle,
+                    )
+                    return existing_handle
+                if status == SOURCE_AMBIGUOUS:
+                    LOG.warning(
+                        "Source %r matches several sources in the family tree; "
+                        "adding it as a new source",
+                        s_source.get_title(),
+                    )
                 new_source = copy.deepcopy(s_source)
                 new_notes = []
                 for nh in new_source.get_note_list():
@@ -624,10 +897,16 @@ class GedGWizard(GWizardBase):
                     if new_rh:
                         rref.set_reference_handle(new_rh)
 
+                fresh_gramps_id(new_source, self.db.has_source_gramps_id)
                 self.db.add_source(new_source, trans)
+                source_matcher.add(new_source)
                 return new_source.handle
             except Exception:
-                pass
+                LOG.warning(
+                    "Could not copy %s from the incoming file; it was skipped",
+                    "source",
+                    exc_info=True,
+                )
             return None
 
         # Helper to copy citation
@@ -660,10 +939,15 @@ class GedGWizard(GWizardBase):
                 if new_sh:
                     new_citation.set_reference_handle(new_sh)
 
+                fresh_gramps_id(new_citation, self.db.has_citation_gramps_id)
                 self.db.add_citation(new_citation, trans)
                 return new_citation.handle
             except Exception:
-                pass
+                LOG.warning(
+                    "Could not copy %s from the incoming file; it was skipped",
+                    "citation",
+                    exc_info=True,
+                )
             return None
 
         # Helper to resolve references on an Event
@@ -718,16 +1002,70 @@ class GedGWizard(GWizardBase):
                     return None
 
                 new_event = copy.deepcopy(s_event)
+                if new_event.handle and self.db.has_event_handle(new_event.handle):
+                    new_event.set_handle(None)
                 new_place = get_or_create_place(s_event.get_place_handle(), trans)
                 new_event.set_place_handle(new_place)
                 resolve_references_for_event(new_event, trans)
+                fresh_gramps_id(new_event, self.db.has_event_gramps_id)
                 self.db.add_event(new_event, trans)
                 return new_event.handle
             except Exception:
-                pass
+                LOG.warning(
+                    "Could not copy %s from the incoming file; it was skipped",
+                    "event",
+                    exc_info=True,
+                )
             return None
 
-        with DbTxn(_("GWizard File Merge"), self.db) as trans:
+        def citation_signature(db: Any, citation_handle: str) -> tuple[str, ...] | None:
+            """
+            Return a (source key, page) tuple for a citation.
+
+            The source key is the matcher's (title, author, publication
+            info) key, so two citations compare equal when they cite the
+            same source and page even though their handles differ.
+            Returns None when the citation cannot be read.
+            """
+            try:
+                citation = db.get_citation_from_handle(citation_handle)
+                if not citation:
+                    return None
+                source = safe_get_source(db, citation.get_reference_handle())
+                ident = (source_signature(source) if source else None) or (
+                    "handle",
+                    "",
+                    citation.get_reference_handle() or "",
+                )
+                return tuple(ident) + (normalize_source_text(citation.get_page()),)
+            except Exception:
+                LOG.warning(
+                    "Could not read citation %s", citation_handle, exc_info=True
+                )
+                return None
+
+        def copy_new_citations(owner: Any, s_owner: Any, trans: Any) -> None:
+            """
+            Add the incoming object's citations to ``owner``, skipping any
+            that ``owner`` already has (same source title, author and page).
+            """
+            existing = {
+                citation_signature(self.db, h) for h in owner.get_citation_list()
+            }
+            existing.discard(None)
+            for s_handle in s_owner.get_citation_list():
+                signature = citation_signature(source_db, s_handle)
+                if signature is not None and signature in existing:
+                    continue
+                new_handle = copy_citation(s_handle, trans)
+                if not new_handle:
+                    LOG.warning("Citation %s could not be copied; skipped", s_handle)
+                    continue
+                owner.add_citation(new_handle)
+                if signature is not None:
+                    existing.add(signature)
+
+        with DbTxn(_("GWizard Data Merge"), self.db) as trans:
             if target_person_handle is None:
                 # Add as entirely new person
                 new_person = copy.deepcopy(s_person)
@@ -765,7 +1103,7 @@ class GedGWizard(GWizardBase):
 
                 birth_idx = new_person.birth_ref_index
                 death_idx = new_person.death_ref_index
-                new_event_refs = []
+                new_event_refs: list[Any] = []
                 new_birth_idx = new_death_idx = -1
                 for idx, event_ref in enumerate(new_person.get_event_ref_list()):
                     target_event_handle = copy_event(event_ref.ref, trans)
@@ -835,21 +1173,31 @@ class GedGWizard(GWizardBase):
                         if idx < len(s_list):
                             t_surn.set_prefix(s_list[idx].get_prefix())
 
+                # 2c. Citations on the primary name and on the person
+                if resolutions.get("name_sources") == "source":
+                    copy_new_citations(
+                        t_person.get_primary_name(), s_person.get_primary_name(), trans
+                    )
+                if resolutions.get("person_sources") == "source":
+                    copy_new_citations(t_person, s_person, trans)
+
                 # 3. Gender
                 if resolutions.get("gender") == "source":
                     t_person.set_gender(s_person.get_gender())
 
-                # Helper to extract event details to match comparison
+                # Helper to extract the primary event handle to match comparison:
+                # the birth_ref/death_ref when set, else the first event of
+                # that type. Alternate births/deaths merge via "event:" keys.
                 def get_source_event_handle(
                     person: Person, event_type_val: int
                 ) -> str | None:
-                    for ref in person.get_event_ref_list():
-                        try:
-                            event = safe_get_event(source_db, ref.ref)
-                            if event and event.get_type() == event_type_val:
-                                return event.handle
-                        except Exception:
-                            continue
+                    kind = "birth" if event_type_val == EventType.BIRTH else "death"
+                    try:
+                        primary = vital_event_ref(source_db, person, kind)
+                    except Exception:
+                        primary = None
+                    if primary is not None:
+                        return primary.ref
                     return None
 
                 # 4. Birth Event

@@ -63,7 +63,7 @@ class GWizardMergeToolOptions(tool.ToolOptions):
 # ------------------------------------------------------------
 class GWizardMergeTool(tool.Tool):
     """
-    Launch the GWizard File Merge flow.
+    Launch the GWizard Data Merge flow.
 
     Thin wrapper around the shared launcher: ask for a source file,
     load it, and open the side-by-side compare window. Identical to
