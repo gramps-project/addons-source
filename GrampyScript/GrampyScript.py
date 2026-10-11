@@ -57,6 +57,7 @@ from gramps.gui.editors import (
     EditSource,
 )
 from datadict2 import DataDict2, NoneData, set_sa
+from goql_support import GOQLUnavailableError, make_iterator
 
 _ = glocale.translation.gettext
 
@@ -283,6 +284,7 @@ class GrampyScript(Gramplet):
             self.statusmsg.set_text("Current filename: %r" % self.last_filename)
             self.ebuf.set_text(
                 """# This is a sample script
+# people() gives the first 50 people; people(limit=None) gives everyone.
 
 for person in people():
     row(person)
@@ -1037,56 +1039,27 @@ for person in people():
             if self.CHANGING:
                 self.db._txn_commit()
 
-        def _iter_raw_person_data():
-            for handle, data in self.db._iter_raw_person_data():
-                yield DataDict2(dict(data), callback=self.callback)
-
-        def _iter_raw_family_data():
-            for handle, data in self.db._iter_raw_family_data():
-                yield DataDict2(dict(data), callback=self.callback)
-
-        def _iter_raw_note_data():
-            for handle, data in self.db._iter_raw_note_data():
-                yield DataDict2(dict(data), callback=self.callback)
-
-        def _iter_raw_place_data():
-            for handle, data in self.db._iter_raw_place_data():
-                yield DataDict2(dict(data), callback=self.callback)
-
-        def _iter_raw_repository_data():
-            for handle, data in self.db._iter_raw_repository_data():
-                yield DataDict2(dict(data), callback=self.callback)
-
-        def _iter_raw_citation_data():
-            for handle, data in self.db._iter_raw_citation_data():
-                yield DataDict2(dict(data), callback=self.callback)
-
-        def _iter_raw_source_data():
-            for handle, data in self.db._iter_raw_source_data():
-                yield DataDict2(dict(data), callback=self.callback)
-
-        def _iter_raw_event_data():
-            for handle, data in self.db._iter_raw_event_data():
-                yield DataDict2(dict(data), callback=self.callback)
-
-        def _iter_raw_media_data():
-            for handle, data in self.db._iter_raw_media_data():
-                yield DataDict2(dict(data), callback=self.callback)
+        def _make_iterator(class_name):
+            return make_iterator(
+                self.db,
+                class_name,
+                lambda data: DataDict2(dict(data), callback=self.callback),
+            )
 
         def columns(*column_names):
             self.column_names = [str(column_name) for column_name in column_names]
 
         row = self.row
 
-        people = _iter_raw_person_data
-        families = _iter_raw_family_data
-        notes = _iter_raw_note_data
-        events = _iter_raw_event_data
-        repositories = _iter_raw_repository_data
-        citations = _iter_raw_citation_data
-        sources = _iter_raw_source_data
-        media = _iter_raw_media_data
-        places = _iter_raw_place_data
+        people = _make_iterator("Person")
+        families = _make_iterator("Family")
+        notes = _make_iterator("Note")
+        events = _make_iterator("Event")
+        repositories = _make_iterator("Repository")
+        citations = _make_iterator("Citation")
+        sources = _make_iterator("Source")
+        media = _make_iterator("Media")
+        places = _make_iterator("Place")
 
         active_note = self.get_active_data("Note")
         active_media = self.get_active_data("Media")
@@ -1151,6 +1124,8 @@ for person in people():
         self.count = 0
         try:
             exec(code)
+        except GOQLUnavailableError as err:
+            print(err)
         except Exception:
             traceback.print_exc(file=sys.stdout)
         print("Executed: %r" % self.last_filename)
