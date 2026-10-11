@@ -7,7 +7,7 @@ Table tab's contents.
 
 columns("Person", "Gender", "Birth Year")
 
-for person in people():
+for person in people(limit=None):
     birth = person.birth
     birth_year = birth.get_date_object().get_year() if birth else ""
     row(

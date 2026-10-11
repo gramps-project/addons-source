@@ -5,7 +5,7 @@ chart of the totals. Check the Chart tab after running.
 """
 
 counts = counter()
-for person in people():
+for person in people(limit=None):
     counts[person.gender] += 1
 
 chart("pie", counts)

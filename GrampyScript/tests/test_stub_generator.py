@@ -84,7 +84,11 @@ class TestRenderStubSource(unittest.TestCase):
     def test_generator_functions_present(self):
         source = render_stub_source(build_registry())
         for func_name, row_type in GENERATOR_ROW_TYPES.items():
-            self.assertIn("def %s() -> Iterator[%s]: ..." % (func_name, row_type), source)
+            self.assertIn(
+                "def %s(where: str = None, order: list = None, limit: int = 50)"
+                " -> Iterator[%s]: ..." % (func_name, row_type),
+                source,
+            )
 
     def test_empty_registry_still_valid(self):
         source = render_stub_source({}, generator_row_types={}, table_functions={})

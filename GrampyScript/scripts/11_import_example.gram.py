@@ -10,7 +10,7 @@ from script_helpers import decade
 columns("Decade", "Births")
 
 counts = counter()
-for person in people():
+for person in people(limit=None):
     birth = person.birth
     if birth:
         year = birth.get_date_object().get_year()

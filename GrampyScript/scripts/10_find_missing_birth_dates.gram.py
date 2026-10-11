@@ -4,6 +4,6 @@ Data-quality check: list every person who has no recorded birth event, so you
 can prioritize research on those records.
 """
 
-for person in people():
+for person in people(limit=None):
     if not person.birth:
         row(person)
