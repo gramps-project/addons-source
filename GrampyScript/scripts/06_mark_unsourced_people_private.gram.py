@@ -8,7 +8,7 @@ inside a single, undoable transaction.
 begin_changes("Mark unsourced people as private")
 
 count = 0
-for person in people():
+for person in people(limit=None):
     if len(person.citations) == 0 and not person.private:
         person.private = True
         count += 1

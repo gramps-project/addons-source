@@ -9,7 +9,7 @@ begin_changes()/end_changes() as a single undoable transaction.
 begin_changes("Delete unused repositories")
 
 count = 0
-for repository in repositories():
+for repository in repositories(limit=None):
     if not repository.back_references:
         delete(repository)
         count += 1

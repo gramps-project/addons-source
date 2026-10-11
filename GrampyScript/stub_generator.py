@@ -65,6 +65,9 @@ GENERATOR_ROW_TYPES = {
     "places": "Place",
 }
 
+# Parameters every generator above takes (goql_support.make_iterator).
+GENERATOR_PARAMS = ["where: str = None", "order: list = None", "limit: int = 50"]
+
 # active_* name -> row type, mirrors the active_* bindings in
 # GrampyScript.execute_code(). These are declared as plain module-level
 # annotations (no value), which is enough for jedi to resolve attribute
@@ -276,7 +279,10 @@ def render_stub_source(
                 lines.append("    %s: %s" % (field_name, type_))
         lines.append("")
     for func_name, row_type in generator_row_types.items():
-        lines.append("def %s() -> Iterator[%s]: ..." % (func_name, row_type))
+        lines.append(
+            "def %s(%s) -> Iterator[%s]: ..."
+            % (func_name, ", ".join(GENERATOR_PARAMS), row_type)
+        )
     if table_functions:
         row_union = "Union[%s]" % ", ".join(sorted(set(generator_row_types.values())))
         for func_name, params in table_functions.items():

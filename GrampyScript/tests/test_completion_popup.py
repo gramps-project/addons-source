@@ -114,15 +114,15 @@ class TestAccept(unittest.TestCase):
         window.destroy()
 
     def test_accept_no_arg_function_places_cursor_after_parens(self):
-        # "peop" has only one match (people()), so trigger() inserts it
-        # directly -- exercises the same accept() cursor-placement code
+        # "end_ch" has only one match (end_changes()), so trigger() inserts
+        # it directly -- exercises the same accept() cursor-placement code
         # path as a manual popover selection would.
-        controller, buffer, window = _make_controller("peop")
+        controller, buffer, window = _make_controller("end_ch")
         controller.trigger()
         text = buffer.get_text(buffer.get_start_iter(), buffer.get_end_iter(), True)
-        self.assertEqual(text, "people()")
+        self.assertEqual(text, "end_changes()")
         cursor = buffer.get_iter_at_mark(buffer.get_insert()).get_offset()
-        self.assertEqual(cursor, len("people()"))
+        self.assertEqual(cursor, len("end_changes()"))
         window.destroy()
 
     def test_accept_function_with_args_places_cursor_between_parens(self):

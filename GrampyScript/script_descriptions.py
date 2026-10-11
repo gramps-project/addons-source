@@ -51,7 +51,9 @@ SCRIPT_DESCRIPTIONS = {
         _("Filter By Surname"),
         _(
             "List only the people whose surname matches a given value — a "
-            "starting point for narrowing any report down by a condition."
+            "starting point for narrowing any report down by a condition. The "
+            "condition is a where= query, so the database finds the matches "
+            "instead of the script checking every person."
         ),
     ),
     "03_family_overview.gram.py": (

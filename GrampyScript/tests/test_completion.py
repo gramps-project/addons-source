@@ -174,11 +174,20 @@ class TestCompletionItems(_MockSaBase):
         )
 
     def test_no_arg_function_gets_parens_appended(self):
-        # people() takes no arguments -- cursor lands after "()".
+        # end_changes() takes no arguments -- cursor lands after "()".
+        items = get_completion_items("end_ch", 1, len("end_ch"), {})
+        matching = [i for i in items if i["name"] == "end_changes()"]
+        self.assertEqual(
+            matching,
+            [{"name": "end_changes()", "complete": "anges()", "cursor_offset": 0}],
+        )
+
+    def test_generator_with_optional_args_lands_cursor_between_parens(self):
+        # people(where=, order=, limit=) -- all optional, but still arguments.
         items = get_completion_items("peop", 1, len("peop"), {})
         matching = [i for i in items if i["name"] == "people()"]
         self.assertEqual(
-            matching, [{"name": "people()", "complete": "le()", "cursor_offset": 0}]
+            matching, [{"name": "people()", "complete": "le()", "cursor_offset": 1}]
         )
 
     def test_function_with_args_lands_cursor_between_parens(self):

@@ -6,7 +6,7 @@ running.
 """
 
 ages = []
-for person in people():
+for person in people(limit=None):
     age = person.age
     if age:
         ages.append(age.tuple()[0])
