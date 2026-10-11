@@ -1310,7 +1310,16 @@ def register_gramps_tools(dbstate, uistate):
 
         ## Iterators
           people(), families(), events(), places(), sources(), citations(),
-          media(), notes(), repositories()   -- all records of that type
+          media(), notes(), repositories()
+              -- records of that type, the FIRST 50 ONLY by default. Pass
+              limit=None whenever the script needs every record (counts,
+              charts, reports, edits). All take:
+              where="..."  -- a GOQL expression, run as an SQL query, e.g.
+                  people(where="surname == 'Smith'", limit=None)
+                  people(where="birth.date.sortval > 0 and "
+                               "birth.date.sortval < Date('1800')")
+              order=[{"column": "surname", "direction": "asc"}]
+              limit=50     -- most records to yield; None for all
           selected("Person")   -- currently selected rows in the active view
           filtered("Person")   -- currently filtered rows in the active view
           custom_filter(name, namespace="Person")  -- rows matching an existing
@@ -1389,26 +1398,27 @@ def register_gramps_tools(dbstate, uistate):
 
         ## Making database edits
           begin_changes()
-          for person in people():
+          for person in people(limit=None):
               if condition:
                   person.private = True   # triggers auto-commit via callback
           end_changes()
 
           begin_changes()
-          for repo in repositories():
+          for repo in repositories(limit=None):
               if not repo.back_references:
                   delete(repo)   # deletes the record itself
           end_changes()
 
         Example -- people born before 1800:
-            for person in people():
-                year = person.birth.get_date_object().get_year()
-                if year and year < 1800:
-                    row(person.gramps_id, person.name, year)
+            for person in people(
+                where="birth.date.sortval > 0 and birth.date.sortval < Date('1800')",
+                limit=None,
+            ):
+                row(person.gramps_id, person.name, person.birth.get_date_object().get_year())
 
         Example -- count births by decade (with chart):
             counts = counter()
-            for person in people():
+            for person in people(limit=None):
                 year = person.birth.get_date_object().get_year()
                 if year:
                     counts[year // 10 * 10] += 1
@@ -1417,7 +1427,7 @@ def register_gramps_tools(dbstate, uistate):
             chart("bar", counts)
 
         Example -- families with child count:
-            for family in families():
+            for family in families(limit=None):
                 row(family.gramps_id, family.father, family.mother, len(family.children))
 
         Write clean, readable code -- it will be shown to the user so they can
