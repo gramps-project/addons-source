@@ -1270,6 +1270,11 @@ def register_gramps_tools(dbstate, uistate):
           citations(), media(), notes(), repositories(), selected(), filtered(),
           custom_filter(), active_person, active_family, ..., today, counter()
 
+        people() and the other iterators yield only the first 50 records
+        unless given limit=None, so never count with len(list(people())).
+        Count a whole table with database.get_number_of_people() (etc.), and
+        a subset with len(list(people(where="...", limit=None))).
+
         In addition, any Gramps lib class can be imported normally:
           from gramps.gen.lib import Person, Event, Date
 
