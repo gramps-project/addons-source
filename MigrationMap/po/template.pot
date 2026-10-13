@@ -1,0 +1,83 @@
+# Translations template for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-06-01 16:03-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: MigrationMap/MigrationMap.py:337
+msgid "Collecting located events..."
+msgstr ""
+
+#: MigrationMap/MigrationMap.py:299
+msgid ""
+"Connect each person's locations in time order with a line that grows as "
+"the animation plays."
+msgstr ""
+
+#: MigrationMap/MigrationMap.py:297
+msgid "Draw migration paths"
+msgstr ""
+
+#: MigrationMap/MigrationMap.gpr.py:30
+msgid ""
+"Generate an animated, interactive map of how people and families moved "
+"over time, built from dated events whose places have coordinates. Opens "
+"in your web browser with a timeline you can play."
+msgstr ""
+
+#: MigrationMap/MigrationMap.py:413
+#, python-format
+msgid ""
+"Mapped %(events)d located events for %(people)d people, "
+"%(start)d-%(end)d.\n"
+msgstr ""
+
+#: MigrationMap/MigrationMap.gpr.py:28 MigrationMap/MigrationMap.py:323
+msgid "Migration Map"
+msgstr ""
+
+#: MigrationMap/MigrationMap.py:397
+#, python-format
+msgid "Migration Map - %s"
+msgstr ""
+
+#: MigrationMap/MigrationMap.py:390
+msgid ""
+"No dated events with coordinates were found. Add place coordinates first "
+"(for example with the Geocode Places tool), then run this again.\n"
+msgstr ""
+
+#: MigrationMap/MigrationMap.py:418
+#, python-format
+msgid "Opening: %s\n"
+msgstr ""
+
+#: MigrationMap/MigrationMap.py:295 MigrationMap/MigrationMap.py:329
+msgid "Options"
+msgstr ""
+
+#: MigrationMap/MigrationMap.py:304
+msgid "Output HTML file (blank = temp file)"
+msgstr ""
+
+#: MigrationMap/MigrationMap.py:386
+msgid "Results"
+msgstr ""
+
+#: MigrationMap/MigrationMap.py:305
+msgid "Where to write the map; left blank uses a temp file."
+msgstr ""
+
