@@ -8,11 +8,17 @@
   Cite path:lines or commit/PR# explicitly so this chapter can be audited.
 -->
 
-## Overview
+## Summary
 
 How an addon survives — or fails — across Gramps versions. Two things to understand: the `gramps_target_version` contract (Gramps' minor matters; majors aren't even discussed), and the concrete deltas between adjacent maintenance branches that bite ports in practice.
 
 A working addon for Gramps 6.0 is usually a working addon for 6.1 with **zero** code changes. The exceptions are documented here; when in doubt, the safest move is to maintain one addon folder per Gramps minor in parallel `maintenance/gramps*` branches of `addons-source`.
+
+The page starts with the contract itself — what **`gramps_target_version`** actually promises, and how to support several minors at once without forking your own code. **Branch targeting for fixes** answers the question that follows immediately: given a bug that affects two releases, which branch does the fix go to, and how does it reach the other. Then the section that earns the page its keep — **"applies cleanly" is not "remains correct"**: a patch that merges without conflict onto another branch can still be wrong there, because the surrounding code has moved. Cherry-picking is not verification.
+
+**Notable 6.0 → 6.1 deltas** is the concrete inventory for the port most authors face now: plugin discovery following symlinks (which changes the development loop on Linux and macOS), the Windows toolchain move to UCRT64, the GExiv2 version-handling rewrite, and the BSDDB-on-Windows skip. **Reading the deprecation signal** covers how upstream telegraphs that something is going away, so you can act on a warning rather than on a breakage. The page closes with **sanity checks before a port** — the short list to run before claiming an addon supports a new minor.
+
+This page is the *procedure*; the per-release inventory of what changed is [What's New](15-whats-new.md).
 
 ## `gramps_target_version` semantics
 
