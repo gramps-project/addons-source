@@ -271,7 +271,7 @@ class Connection:
         self.__cursor.execute("COMMIT;")
 
     def rollback(self):
-        self.__connection.rollback()
+        self.__cursor.execute("ROLLBACK;")
 
     def table_exists(self, table):
         self.__cursor.execute(
