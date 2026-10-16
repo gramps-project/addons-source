@@ -4,13 +4,14 @@
 # Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
 # Avi Markovitz <avi.markovitz@gmail.com>, 2019, 2025, 2026.
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2025.
+# Avi Markovitz <avma@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-09-24 10:14-0700\n"
-"PO-Revision-Date: 2026-10-10 20:16+0000\n"
-"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"PO-Revision-Date: 2026-10-16 14:21+0000\n"
+"Last-Translator: Avi Markovitz <avma@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
 "Language: he\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.10.1.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -17179,10 +17180,12 @@ msgid ""
 "Count how many people are male, female, or of unknown gender, then draw a "
 "pie chart of the totals. Check the Chart tab after running."
 msgstr ""
+"ספרית כמה אנשים הם במגדר: זכר, נקבה, לא ידוע, הצגת סיכום התוצאות בתרשים "
+"עוגה. לאחר ההרצה יש לבדוק את לשונית התרשים."
 
 #: GrampyScript/script_descriptions.py:74
 msgid "Age At Death Histogram"
-msgstr ""
+msgstr "תרשים שכיחויות גיל בעת פטירה"
 
 #: GrampyScript/script_descriptions.py:76
 msgid ""
@@ -17214,20 +17217,20 @@ msgid ""
 msgstr ""
 
 #: GrampyScript/script_descriptions.py:99
-#, fuzzy
-#| msgid "Active Person : "
 msgid "Active Person Summary"
-msgstr "אדם פעיל: "
+msgstr "אדם פעיל: תקציר"
 
 #: GrampyScript/script_descriptions.py:101
 msgid ""
 "Show a compact family summary for the currently active person: their record, "
 "parents, spouse, and children."
 msgstr ""
+"הצגת תקציר משפחה צמום עבור האדם הפעיל הנוכחי: הרשומות שלהם, הוריהם,בני זוגם "
+"וצאצאיהם."
 
 #: GrampyScript/script_descriptions.py:106
 msgid "Report On Selected People"
-msgstr ""
+msgstr "דיווח על אנשים שנבחרו"
 
 #: GrampyScript/script_descriptions.py:108
 msgid ""
@@ -17257,10 +17260,8 @@ msgid ""
 msgstr ""
 
 #: GrampyScript/script_descriptions.py:130
-#, fuzzy
-#| msgid "Custom \"test.xml\" file"
 msgid "Custom Filter Example"
-msgstr "קובץ 'test.xml' מותאם"
+msgstr "דוגמת מסנן מותאם אישית"
 
 #: GrampyScript/script_descriptions.py:132
 msgid ""
@@ -17272,7 +17273,7 @@ msgstr ""
 
 #: GrampyScript/script_descriptions.py:140
 msgid "Delete Unused Repositories (Delete Example)"
-msgstr ""
+msgstr "מחיקת מאגרים שלא בשימוש (דוגמת מחיקה)"
 
 #: GrampyScript/script_descriptions.py:142
 msgid ""
@@ -24152,40 +24153,28 @@ msgid "The style used for event and person details."
 msgstr "הסגנון שמשמש לפרטי אירוע ואדם."
 
 #: Sqlite/ExportSql.py:1720
-#, fuzzy
-#| msgid "January"
 msgid "January 1"
-msgstr "ינואר"
+msgstr "1 בינואר"
 
 #: Sqlite/ExportSql.py:1721
-#, fuzzy
-#| msgid "March"
 msgid "March 1"
-msgstr "מרץ"
+msgstr "1 במרץ"
 
 #: Sqlite/ExportSql.py:1722
-#, fuzzy
-#| msgid "March"
 msgid "March 25"
-msgstr "מרץ"
+msgstr "25 במרץ"
 
 #: Sqlite/ExportSql.py:1723
-#, fuzzy
-#| msgid "September"
 msgid "September 1"
-msgstr "ספטמבר"
+msgstr "1 בספטמבר"
 
 #: Sqlite/ExportSql.py:1749
-#, fuzzy
-#| msgid "Widowed"
 msgid "Flowed"
-msgstr "אלמן"
+msgstr "גלישת מלל"
 
 #: Sqlite/ExportSql.py:1750
-#, fuzzy
-#| msgid "PS format"
 msgid "Preformatted"
-msgstr "תסדיר PS"
+msgstr "מתוסדר מראש"
 
 #: Sqlite/ExportSql.py:1953
 #, python-format
