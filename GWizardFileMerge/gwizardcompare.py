@@ -1229,7 +1229,10 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         if is_people:
             total = len(self.diff_list)
             pos = (self.diff_index + 1) if has_diffs else 0
-            self.diff_label.set_text(_("Differences: %d of %d") % (pos, total))
+            self.diff_label.set_text(
+                _("Differences: %(current)d of %(total)d")
+                % {"current": pos, "total": total}
+            )
         else:
             self.diff_label.set_text("")
 
@@ -1748,7 +1751,10 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
                 pass
         description = clean(event.get_description() or "")
         parts = [part for part in (date_str, place) if part]
-        line = _("%s: %s") % (type_name, ", ".join(parts))
+        line = _("%(type)s: %(details)s") % {
+            "type": type_name,
+            "details": ", ".join(parts),
+        }
         if description:
             line += " (%s)" % description
         return line
@@ -1765,7 +1771,11 @@ class GWizardCompareWindow(ManagedWindow, Gtk.Window):
         ):
             for related in relateds:
                 lines.append(
-                    _("%s: %s") % (label, self._related_name_with_vitals(related, db))
+                    _("%(label)s: %(details)s")
+                    % {
+                        "label": label,
+                        "details": self._related_name_with_vitals(related, db),
+                    }
                 )
         spouses = self._get_spouse_persons(person, db)
         if spouses:

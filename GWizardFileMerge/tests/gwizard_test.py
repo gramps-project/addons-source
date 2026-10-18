@@ -31,6 +31,7 @@ import shutil
 import sys
 import tempfile
 import unittest
+from typing import Any
 
 # Set up test resources environment variables before importing any Gramps module
 #
@@ -107,6 +108,7 @@ from gramps.gen.lib import (
     Person,
     Event,
     Place,
+    Source,
     Surname,
     Name,
     Date,
@@ -1399,6 +1401,144 @@ class GWizardTest(unittest.TestCase):
         finally:
             if os.path.exists(temp_path):
                 os.remove(temp_path)
+
+
+# ------------------------------------------------------------
+#
+# GWizardSourceMediaMergeTest
+#
+# ------------------------------------------------------------
+class GWizardSourceMediaMergeTest(unittest.TestCase):
+    """
+    Merge the layered source/citation/media fixture into a target database.
+
+    Uses ``data/gwizard_mergefrom_sources.ged`` (3 people, 9 sources in
+    Evidence Explained / Chicago / free-form styles, 10 citations, 3
+    repositories, 9 media objects) and verifies the whole
+    repository -> source -> citation -> media chain survives a merge.
+    """
+
+    FIXTURE_DIR = os.path.join(os.path.dirname(__file__), "data")
+    GEDCOM_PATH = os.path.join(FIXTURE_DIR, "gwizard_mergefrom_sources.ged")
+
+    def setUp(self) -> None:
+        """Set up an empty target database."""
+        self.db = make_database("sqlite")
+        self.db.load(":memory:")
+
+    def _load_source_db(self) -> tuple[Any, list[Any]]:
+        """Connect and load the fixture, returning wizard and people."""
+        gwizard = GedGWizard(self.db)
+        self.assertTrue(gwizard.run_step("connect", gedcom_path=self.GEDCOM_PATH))
+        people = gwizard.run_step("load")
+        self.assertEqual(len(people), 3)
+        return gwizard, people
+
+    def _source_person_by_name(self, people: list[Any], first: str) -> Any:
+        """Return the source person with the given first name."""
+        for person in people:
+            if person.get_primary_name().first_name == first:
+                return person
+        self.fail(f"source person {first!r} not found")
+
+    def test_fixture_loads_expected_counts(self) -> None:
+        """The fixture loads with all sources, citations, repos, media."""
+        if not os.path.isfile(self.GEDCOM_PATH):
+            self.skipTest("gwizard_mergefrom_sources.ged not found")
+        gwizard, _people = self._load_source_db()
+        source_db = gwizard.context["source_db"]
+        self.assertEqual(source_db.get_number_of_sources(), 9)
+        self.assertEqual(source_db.get_number_of_citations(), 10)
+        self.assertEqual(source_db.get_number_of_repositories(), 3)
+        self.assertEqual(source_db.get_number_of_media(), 9)
+
+    def test_add_new_preserves_source_citation_media_chain(self) -> None:
+        """Add-as-new copies the citation and its media image."""
+        if not os.path.isfile(self.GEDCOM_PATH):
+            self.skipTest("gwizard_mergefrom_sources.ged not found")
+        gwizard, people = self._load_source_db()
+        erik = self._source_person_by_name(people, "Erik")
+        self.assertTrue(
+            gwizard.run_step(
+                "apply",
+                source_person_handle=erik.handle,
+                target_person_handle=None,
+                resolutions={},
+            )
+        )
+        added = list(self.db.iter_person_handles())
+        self.assertEqual(len(added), 1)
+        person = self.db.get_person_from_handle(added[0])
+        event = self.db.get_event_from_handle(person.get_birth_ref().ref)
+        citations = event.get_citation_list()
+        self.assertTrue(citations)
+        citation = self.db.get_citation_from_handle(citations[0])
+        self.assertIn("1910-0042", citation.get_page())
+        source = self.db.get_source_from_handle(citation.get_reference_handle())
+        self.assertIn("Birth Certificates", source.get_title())
+        self.assertTrue(citation.media_list)
+        media = self.db.get_media_from_handle(
+            citation.media_list[0].get_reference_handle()
+        )
+        self.assertTrue(media.get_path().endswith("birth_certificate.png"))
+        self.assertTrue(os.path.isfile(media.get_path()))
+
+    def test_merge_reuses_matching_source(self) -> None:
+        """A target source with identical title/author/pubinfo is reused."""
+        if not os.path.isfile(self.GEDCOM_PATH):
+            self.skipTest("gwizard_mergefrom_sources.ged not found")
+        with DbTxn("Add matching source", self.db) as trans:
+            existing = Source()
+            existing.set_title("United States Census, 1930")
+            existing.set_author("United States. Bureau of the Census")
+            existing.set_publication_info(
+                "Washington, D.C.: National Archives and Records "
+                "Administration, microfilm publication T626."
+            )
+            self.db.add_source(existing, trans)
+        gwizard, people = self._load_source_db()
+        nils = self._source_person_by_name(people, "Nils")
+        self.assertTrue(
+            gwizard.run_step(
+                "apply",
+                source_person_handle=nils.handle,
+                target_person_handle=None,
+                resolutions={},
+            )
+        )
+        titles = [
+            self.db.get_source_from_handle(h).get_title()
+            for h in self.db.iter_source_handles()
+        ]
+        self.assertEqual(titles.count("United States Census, 1930"), 1)
+
+    def test_all_fixture_styles_survive_add_new(self) -> None:
+        """Every style (EE/Chicago/free-form/platform) round-trips."""
+        if not os.path.isfile(self.GEDCOM_PATH):
+            self.skipTest("gwizard_mergefrom_sources.ged not found")
+        gwizard, people = self._load_source_db()
+        for first in ("Erik", "Anna", "Nils"):
+            source_person = self._source_person_by_name(people, first)
+            self.assertTrue(
+                gwizard.run_step(
+                    "apply",
+                    source_person_handle=source_person.handle,
+                    target_person_handle=None,
+                    resolutions={},
+                )
+            )
+        self.assertEqual(self.db.get_number_of_sources(), 9)
+        # 9, not 10: the 10th citation sits on the F1 family marriage
+        # event, and add-as-new deliberately drops family links.
+        self.assertEqual(self.db.get_number_of_citations(), 9)
+        self.assertEqual(self.db.get_number_of_repositories(), 3)
+        self.assertEqual(self.db.get_number_of_media(), 9)
+        for handle in self.db.iter_media_handles():
+            media = self.db.get_media_from_handle(handle)
+            self.assertTrue(
+                os.path.isfile(media.get_path()),
+                f"missing media file: {media.get_path()}",
+            )
 
 
 # ------------------------------------------------------------
