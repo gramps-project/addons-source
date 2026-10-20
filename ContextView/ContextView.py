@@ -85,7 +85,13 @@ from gramps.gui.utils import (
 from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gui.views.navigationview import NavigationView
 
-_ = glocale.get_addon_translator(__file__).sgettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    # No catalogue for the user's language: fall back to Gramps's own
+    # translator, or the import fails and the view will not load.
+    _trans = glocale.translation
+_ = _trans.sgettext
 
 # A wiki page title, which display_help() expands against the Gramps wiki.
 HELP_URL = "Addon:Context_View"
