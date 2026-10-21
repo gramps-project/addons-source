@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-24 10:14-0700\n"
+"POT-Creation-Date: 2026-10-18 11:42-0700\n"
 "PO-Revision-Date: 2008-02-22 23:19+0100\n"
 "Last-Translator: Bernard Banko <bernard.banko (afna) siol.net>\n"
 "Language-Team: lugos slovenizacija <lugos-slo at lugos.si>\n"
@@ -2063,6 +2063,7 @@ msgid "Abandon"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
+#: GWizardFileMerge/gwizardmergedialog.py:537
 msgid "New person"
 msgstr ""
 
@@ -15585,6 +15586,361 @@ msgid ""
 "expression evaluates to true"
 msgstr ""
 
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:19
+msgid "GWizard File Merge"
+msgstr ""
+
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:21
+msgid ""
+"Family Tree Processing Tool to compare another genealogy file (GEDCOM, "
+"Gramps XML, ...) side-by-side with the open Family Tree and merge selected "
+"differences person by person."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:120
+#, fuzzy
+msgid "Configure Connection"
+msgstr "Izbira orodij"
+
+#: GWizardFileMerge/gwizard.py:121
+msgid "Load Data"
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:122
+msgid "Find Matching Persons"
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:123
+msgid "Compare Differences"
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:124
+msgid "Apply Changes"
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:137
+msgid "Configure file path or authenticate with online service."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:138
+msgid "Load/parse the external genealogy data into memory."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:139
+msgid "Search for potential matches in your database."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:140
+msgid "Compare fields side-by-side between the source and target."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:141
+msgid "Merge selected changes or add new records to the database."
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:167
+#: GWizardFileMerge/gwizardcompare.py:187
+msgid "GWizard Compare"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:173
+msgid "No source database available for comparison"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:208
+#: GWizardFileMerge/gwizardmergedialog.py:586
+msgid "Incoming GEDCOM"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:213
+#: GWizardFileMerge/gwizardmergedialog.py:593
+#, python-format
+msgid "Incoming GEDCOM: %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:215
+#: GWizardFileMerge/gwizardmergedialog.py:597
+#, python-format
+msgid "Current Family Tree: %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:426
+msgid "Populate Failed"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:876
+msgid "Merge..."
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:878
+msgid "Open the field-by-field merge dialog for the selected pair"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:883
+#: GWizardFileMerge/gwizardcompare.py:1224
+msgid "Add as New..."
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:885
+#: GWizardFileMerge/gwizardcompare.py:1226
+msgid "Add the selected incoming person as a new person"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:926
+msgid "Record"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:932
+msgid "Born"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:933
+msgid "Died"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:975
+#: GWizardFileMerge/gwizardmergedialog.py:740
+msgid "Individual Details"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:976
+#: GWizardFileMerge/gwizardmergedialog.py:813
+#, fuzzy
+msgid "Family Relations"
+msgstr "V sorodu"
+
+#: GWizardFileMerge/gwizardcompare.py:978
+#: GWizardFileMerge/gwizardmergedialog.py:859
+msgid "Events & Other Records"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1216
+msgid "Not a Match"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1219
+msgid ""
+"These are different people: unpair them so the incoming person can be added "
+"as new"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1232
+#, python-format
+msgid "Differences: %d of %d"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1484
+msgid "(none)"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1648
+#, python-format
+msgid "Gender: %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1650
+#, fuzzy, python-format
+msgid "ID: %s"
+msgstr "datum smrti"
+
+#: GWizardFileMerge/gwizardcompare.py:1677
+#, python-format
+msgid "FamilySearch: %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1751
+#: GWizardFileMerge/gwizardcompare.py:1768
+#: GWizardFileMerge/gwizardmergedialog.py:451
+#, fuzzy, python-format
+msgid "%s: %s"
+msgstr "Dodaj nov dogodek"
+
+#: GWizardFileMerge/gwizardcompare.py:2008
+#, fuzzy
+msgid "Add as New failed"
+msgstr "Dodaj nov dogodek"
+
+#: GWizardFileMerge/gwizardgedcom.py:351
+#: GWizardFileMerge/gwizardmergedialog.py:745
+#, fuzzy
+#| msgid "Checking Place Titles"
+msgid "Given Name"
+msgstr "Preverjanje nazivov krajev"
+
+#: GWizardFileMerge/gwizardgedcom.py:377
+#: GWizardFileMerge/gwizardmergedialog.py:761
+msgid "Surname Prefix"
+msgstr ""
+
+#: GWizardFileMerge/gwizardgedcom.py:1068
+msgid "GWizard Data Merge"
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:113
+#, fuzzy
+msgid "Genealogy files"
+msgstr "Splošno"
+
+#: GWizardFileMerge/gwizardlauncher.py:129
+#, fuzzy
+#| msgid "Select filter to restrict people"
+msgid "Select File to Compare"
+msgstr "Izberi filter za omejitev oseb"
+
+#: GWizardFileMerge/gwizardlauncher.py:158
+msgid "The selected file is missing."
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:161
+msgid "Could not read the selected file."
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:201
+msgid "Loading Data Merge"
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:202
+#: GWizardFileMerge/gwizardlauncher.py:206
+msgid "Reading the selected file..."
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:214
+msgid "Load Failed"
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:216
+msgid "Building the comparison window..."
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:256
+#, fuzzy
+#| msgid "Checking Place Titles"
+msgid "Untitled source"
+msgstr "Preverjanje nazivov krajev"
+
+#: GWizardFileMerge/gwizardmergedialog.py:265
+#, python-format
+msgid "page %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:287
+#, python-format
+msgid "via %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:315
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#: LifeLineChartView/_dummy_translation_string_po.py:98
+msgid "none"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#, python-format
+msgid "Sources: %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:377
+msgid "GWizard Merge"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:385
+msgid "No source database available for merge"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:394
+#, python-format
+msgid "Source person no longer exists: %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:400
+#, python-format
+msgid "Target person no longer exists: %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:531
+msgid "→"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:599
+msgid "Current Family Tree"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:767
+msgid "Name Sources"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:807
+msgid "Person Sources"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1093
+msgid "=>"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1094
+#, python-format
+msgid "Move %s to current family tree"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1102
+msgid "✓"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1286
+#, python-format
+msgid "%d Citations"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1288
+#, python-format
+msgid "%d Sources"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1290
+#, python-format
+msgid "%d Notes"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1292
+#, fuzzy, python-format
+msgid "%d Media Records"
+msgstr "Filter za predmete"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1294
+#, python-format
+msgid "%d Repositories"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1297
+#, python-format
+msgid ""
+"The data being merged contains references to external objects that do not "
+"exist in your family tree:\n"
+"\n"
+"%s\n"
+"\n"
+"To prevent broken links, these missing references must be imported along "
+"with your selected details. Do you confirm importing these missing "
+"references?"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1310
+#, python-format
+msgid ""
+"%d source already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgid_plural ""
+"%d sources already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1324
+msgid "Confirm Importing Missing References"
+msgstr ""
+
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
 msgstr ""
@@ -18543,10 +18899,6 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:97
 msgid "The line width can be configured."
-msgstr ""
-
-#: LifeLineChartView/_dummy_translation_string_po.py:98
-msgid "none"
 msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
