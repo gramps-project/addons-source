@@ -52,6 +52,8 @@ one recorded parent family is not accelerated -- see that PR's description
 for why, and what it would take to fix).
 """
 
+import heapq
+
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.lib import ChildRefType
 from gramps.gen.relationship import RelationshipCalculator, get_relationship_calculator
@@ -94,11 +96,97 @@ class FastRelationshipMixin:
         last_kept = None
         for i in order:
             rel_str = pairs[i][0]
-            if last_kept is not None and len(last_kept) < len(rel_str) and rel_str.startswith(last_kept):
+            if (
+                last_kept is not None
+                and len(last_kept) < len(rel_str)
+                and rel_str.startswith(last_kept)
+            ):
                 continue
             keep.add(i)
             last_kept = rel_str
         return [pairs[i] for i in sorted(keep)]
+
+    @staticmethod
+    def _common_candidates(sides, cap):
+        """Yield `(rel1, fam1, rel2, fam2, handle)` for every pairing of a
+        first-person path with a second-person path to the same common
+        ancestor. `sides` is a list of `(handle, first_pairs,
+        second_pairs)`, each pairs list holding `(rel_str, rel_fam)`.
+
+        When fewer pairings exist than `cap` they are yielded in plain
+        nested order, since the cap cannot be reached and the caller
+        sorts by (rank, yield order) anyway. Otherwise they come off a
+        heap in global (rank, ancestor, first index, second index) order,
+        so stopping at the cap keeps the nearest paths -- per-ancestor
+        ordering alone would let one ancestor's farther pairs fill the
+        cap before a nearer pair of its own, or of the next ancestor, is
+        reached. Both orders agree on ties, so the results are the same.
+        Each side is sorted by (length, original index); from pair
+        (i, j) the heap is fed (i, j + 1), plus (i + 1, 0) when j == 0,
+        whose keys are strictly greater -- so every pair is produced
+        exactly once, in order, and only as far as needed.
+        """
+        if cap is None or sum(len(f) * len(s) for _h, f, s in sides) <= cap:
+            for handle, first_pairs, second_pairs in sides:
+                for rel1, fam1 in first_pairs:
+                    for rel2, fam2 in second_pairs:
+                        yield rel1, fam1, rel2, fam2, handle
+            return
+        ordered = []
+        heap = []
+        for hidx, (handle, first_pairs, second_pairs) in enumerate(sides):
+            first_sorted, second_sorted = [
+                sorted(
+                    (len(rel), oidx, rel, fam) for oidx, (rel, fam) in enumerate(pairs)
+                )
+                for pairs in (first_pairs, second_pairs)
+            ]
+            ordered.append((handle, first_sorted, second_sorted))
+            heap.append(
+                (
+                    first_sorted[0][0] + second_sorted[0][0],
+                    hidx,
+                    first_sorted[0][1],
+                    second_sorted[0][1],
+                    0,
+                    0,
+                )
+            )
+        heapq.heapify(heap)
+        while heap:
+            _rank, hidx, _oi, _oj, i, j = heapq.heappop(heap)
+            handle, first_sorted, second_sorted = ordered[hidx]
+            if j + 1 < len(second_sorted):
+                heapq.heappush(
+                    heap,
+                    (
+                        first_sorted[i][0] + second_sorted[j + 1][0],
+                        hidx,
+                        first_sorted[i][1],
+                        second_sorted[j + 1][1],
+                        i,
+                        j + 1,
+                    ),
+                )
+            if j == 0 and i + 1 < len(first_sorted):
+                heapq.heappush(
+                    heap,
+                    (
+                        first_sorted[i + 1][0] + second_sorted[0][0],
+                        hidx,
+                        first_sorted[i + 1][1],
+                        second_sorted[0][1],
+                        i + 1,
+                        0,
+                    ),
+                )
+            yield (
+                first_sorted[i][2],
+                first_sorted[i][3],
+                second_sorted[j][2],
+                second_sorted[j][3],
+                handle,
+            )
 
     def get_relationship_distance_new(
         self,
@@ -262,73 +350,70 @@ class FastRelationshipMixin:
         # behavior change (see `set_max_common_results`) -- not a change
         # to the earlier `__apply_filter` fix's byte-identical guarantee,
         # which this cap sits downstream of.
-        handles_by_min_rank = sorted(
-            (h for h in second_map if h in first_map),
-            key=lambda h: min(len(s) for s in first_map[h][0])
-            + min(len(s) for s in second_map[h][0]),
-        )
-        capped = False
-        for person_handle in handles_by_min_rank:
-            if capped:
-                break
-            first_pairs = self._prefix_minimal(
-                list(zip(first_map[person_handle][0], first_map[person_handle][1]))
+        # see `_common_candidates` for how nearest-first is guaranteed
+        sides = [
+            (
+                person_handle,
+                *[
+                    self._prefix_minimal(
+                        list(zip(pmap[person_handle][0], pmap[person_handle][1]))
+                    )
+                    for pmap in (first_map, second_map)
+                ],
             )
-            second_pairs = self._prefix_minimal(
-                list(zip(second_map[person_handle][0], second_map[person_handle][1]))
-            )
-            for rel1, fam1 in first_pairs:
-                if capped:
-                    break
-                for rel2, fam2 in second_pairs:
-                    rank = len(rel1) + len(rel2)
-                    dominated = False
-                    for cut in range(len(rel1) + 1):
-                        for rec in exact_rel1.get(rel1[:cut], ()):
-                            if not rec["alive"]:
-                                continue
-                            other_rel2 = rec["rel2"]
-                            if rec["rank"] <= rank and other_rel2 == rel2[: len(other_rel2)]:
-                                dominated = True
-                                break
-                        if dominated:
-                            break
-                    if dominated:
+            for person_handle in second_map
+            if person_handle in first_map
+        ]
+        for rel1, fam1, rel2, fam2, person_handle in self._common_candidates(
+            sides, cap
+        ):
+            rank = len(rel1) + len(rel2)
+            dominated = False
+            for cut in range(len(rel1) + 1):
+                for rec in exact_rel1.get(rel1[:cut], ()):
+                    if not rec["alive"]:
                         continue
-                    rec = {
-                        "alive": True,
-                        "rank": rank,
-                        "handle": person_handle,
-                        "rel1": rel1,
-                        "fam1": fam1,
-                        "rel2": rel2,
-                        "fam2": fam2,
-                        "seq": seq,
-                    }
-                    seq += 1
-                    exact_rel1.setdefault(rel1, []).append(rec)
-                    for cut in range(len(rel1) + 1):
-                        prefix_to_rel1.setdefault(rel1[:cut], set()).add(rel1)
-                    # this new (nearer-or-equal) record may make an
-                    # already-kept, farther record redundant -- mirrors
-                    # the original's own "superset deletion" step
-                    for other_exact in prefix_to_rel1.get(rel1, ()):
-                        for other in exact_rel1.get(other_exact, ()):
-                            if (
-                                other is not rec
-                                and other["alive"]
-                                and other["rank"] >= rank
-                                and rel2 == other["rel2"][: len(rel2)]
-                            ):
-                                other["alive"] = False
-                                alive_count -= 1
-                    alive_count += 1
-                    if cap is not None and alive_count >= cap:
-                        capped = True
+                    other_rel2 = rec["rel2"]
+                    if rec["rank"] <= rank and other_rel2 == rel2[: len(other_rel2)]:
+                        dominated = True
                         break
+                if dominated:
+                    break
+            if dominated:
+                continue
+            rec = {
+                "alive": True,
+                "rank": rank,
+                "handle": person_handle,
+                "rel1": rel1,
+                "fam1": fam1,
+                "rel2": rel2,
+                "fam2": fam2,
+                "seq": seq,
+            }
+            seq += 1
+            exact_rel1.setdefault(rel1, []).append(rec)
+            for cut in range(len(rel1) + 1):
+                prefix_to_rel1.setdefault(rel1[:cut], set()).add(rel1)
+            # this new (nearer-or-equal) record may make an
+            # already-kept, farther record redundant -- mirrors
+            # the original's own "superset deletion" step
+            for other_exact in prefix_to_rel1.get(rel1, ()):
+                for other in exact_rel1.get(other_exact, ()):
+                    if (
+                        other is not rec
+                        and other["alive"]
+                        and other["rank"] >= rank
+                        and rel2 == other["rel2"][: len(rel2)]
+                    ):
+                        other["alive"] = False
+                        alive_count -= 1
+            alive_count += 1
+            if cap is not None and alive_count >= cap:
+                break
         all_records = [r for recs in exact_rel1.values() for r in recs if r["alive"]]
-        # rank ascending, ties broken by generation order -- reconstructs
-        # the exact ordering the original's insertion-sort produced
+        # rank ascending, ties broken by `_common_candidates` yield order
+        # -- common-ancestor order, then each side's original path order
         all_records.sort(key=lambda r: (r["rank"], r["seq"]))
         common = [
             (r["rank"], r["handle"], r["rel1"], r["fam1"], r["rel2"], r["fam2"])
@@ -383,49 +468,61 @@ class FastRelationshipMixin:
         This does the same check via a per-handle prefix index bounded
         by generation depth instead.
 
-        Only checks the new entry against previously-seen ones for this
-        handle, not all pairs -- sufficient, because the original
-        `return`s the instant a loop is found, so by the time a new
-        entry is being added, no loop can exist among the entries
-        already there (else this call would have already stopped).
+        The index must cover *every* path recorded for `handle`, not just
+        the ones appended through here: the first path to a handle (and
+        any injected sibling path) is written to `pmap` directly, and
+        missing it lets a path that loops back through `handle` go
+        undetected and keep recursing. So any entries not yet indexed
+        are picked up from `pmap[handle][0]` on each call.
+
+        Once a loop has been seen for `handle` it stays seen, matching
+        the original: its full re-scan finds the same looping pair on
+        every later append, so it stops recursing above `handle` on
+        every later visit too.
+
+        A loop also marks every ancestor-closure still being assembled
+        (`memo["open"]`) as cut short, so none of them gets cached.
 
         Returns True if a loop was detected (caller should stop, as the
         original does via its own `return`).
         """
-        idx = memo["pmap_loop_index"].setdefault(handle, {"exact": set(), "prefix": {}})
+        idx = memo["pmap_loop_index"].setdefault(
+            handle, {"exact": set(), "prefix": {}, "count": 0, "relation": None}
+        )
         exact, prefix = idx["exact"], idx["prefix"]
-        loop = False
-        shorter_existing = None
-        for cut in range(len(rel_str)):
-            if rel_str[:cut] in exact:
-                loop = True
-                shorter_existing = rel_str[:cut]
-                break
-        longer_existing = None
-        if not loop:
-            for other in prefix.get(rel_str, ()):
-                if len(other) > len(rel_str):
-                    loop = True
-                    longer_existing = other
-                    break
         pmap[handle][0] += [rel_str]
         pmap[handle][1] += [rel_fam]
-        if loop:
-            self.__loop_detected = True
-            relation = rel_str[len(shorter_existing):] if shorter_existing is not None else longer_existing[len(rel_str):]
-            self.__msg += [
-                _("Relationship loop detected:")
-                + " "
-                + _("Person %(person)s connects to himself via %(relation)s")
-                % {
-                    "person": person.get_primary_name().get_name(),
-                    "relation": relation,
-                }
-            ]
-        exact.add(rel_str)
-        for cut in range(len(rel_str) + 1):
-            prefix.setdefault(rel_str[:cut], set()).add(rel_str)
-        return loop
+        paths = pmap[handle][0]
+        for path in paths[idx["count"] :]:
+            if idx["relation"] is None:
+                for cut in range(len(path)):
+                    if path[:cut] in exact:
+                        idx["relation"] = path[cut:]
+                        break
+                else:
+                    for other in prefix.get(path, ()):
+                        if len(other) > len(path):
+                            idx["relation"] = other[len(path) :]
+                            break
+            exact.add(path)
+            for cut in range(len(path) + 1):
+                prefix.setdefault(path[:cut], set()).add(path)
+        idx["count"] = len(paths)
+        if idx["relation"] is None:
+            return False
+        for rec in memo["open"]:
+            rec["loop_cut"] = True
+        self.__loop_detected = True
+        self.__msg += [
+            _("Relationship loop detected:")
+            + " "
+            + _("Person %(person)s connects to himself via %(relation)s")
+            % {
+                "person": person.get_primary_name().get_name(),
+                "relation": idx["relation"],
+            }
+        ]
+        return True
 
     def __apply_filter(
         self,
@@ -493,7 +590,9 @@ class FastRelationshipMixin:
             # had lookup of all parents, we call that a crosslink
             if not stoprecursemap:
                 self.__crosslinks = True
-            if self._pmap_append_checked(memo, pmap, person.handle, rel_str, rel_fam, person):
+            if self._pmap_append_checked(
+                memo, pmap, person.handle, rel_str, rel_fam, person
+            ):
                 return
         elif store:
             pmap[person.handle] = [[rel_str], [rel_fam]]
@@ -547,8 +646,23 @@ class FastRelationshipMixin:
                 # which would re-expand descendants that are already
                 # separately present as their own entries in this same
                 # closure.
+                #
+                # A loop detected at one entry stops the walk above that
+                # person only, exactly as a fresh visit would `return`
+                # there; the rest of the closure is still applied. The
+                # entries are in visit order and a (str, fam) prefix pins
+                # down a unique route, so the looping person's own
+                # ancestors are the entries extending its suffix.
+                loop_cuts = []
                 for kind, suffix_str, suffix_fam, target in cached["entries"]:
                     if len(suffix_str) > budget_needed:
+                        continue
+                    if any(
+                        len(suffix_str) > len(cut_str)
+                        and suffix_str.startswith(cut_str)
+                        and suffix_fam[: len(cut_fam)] == cut_fam
+                        for cut_str, cut_fam in loop_cuts
+                    ):
                         continue
                     full_str = rel_str + suffix_str
                     full_fam = rel_fam + suffix_fam
@@ -560,13 +674,21 @@ class FastRelationshipMixin:
                         if target_handle in pmap:
                             if not stoprecursemap:
                                 self.__crosslinks = True
-                            if self._pmap_append_checked(memo, pmap, target_handle, full_str, full_fam, target):
-                                return
+                            if self._pmap_append_checked(
+                                memo, pmap, target_handle, full_str, full_fam, target
+                            ):
+                                loop_cuts.append((suffix_str, suffix_fam))
+                                continue
                         elif store:
                             pmap[target_handle] = [[full_str], [full_fam]]
                         for rec in memo["open"]:
                             rec["deltas"].append(
-                                ("v", full_str[rec["base_str"] :], full_fam[rec["base_fam"] :], target)
+                                (
+                                    "v",
+                                    full_str[rec["base_str"] :],
+                                    full_fam[rec["base_fam"] :],
+                                    target,
+                                )
                             )
                     else:  # "s": a sibling injected via the no-recorded-
                         # parents case below, a direct pmap write in the
@@ -580,13 +702,23 @@ class FastRelationshipMixin:
                             pmap[target] = [[full_str], [full_fam]]
                         for rec in memo["open"]:
                             rec["deltas"].append(
-                                ("s", full_str[rec["base_str"] :], full_fam[rec["base_fam"] :], target)
+                                (
+                                    "s",
+                                    full_str[rec["base_str"] :],
+                                    full_fam[rec["base_fam"] :],
+                                    target,
+                                )
                             )
                 return
 
         recorder = None
         if only_one_family:
-            recorder = {"base_str": len(rel_str), "base_fam": len(rel_fam), "deltas": []}
+            recorder = {
+                "base_str": len(rel_str),
+                "base_fam": len(rel_fam),
+                "deltas": [],
+                "loop_cut": False,
+            }
             memo["open"].append(recorder)
 
         try:
@@ -691,6 +823,9 @@ class FastRelationshipMixin:
         else:
             if recorder is not None:
                 memo["open"].pop()
+            # a closure cut short by a loop depends on the route that
+            # reached it, so it must not be replayed for a different one
+            if recorder is not None and not recorder["loop_cut"]:
                 memo["closure"][person.handle] = {
                     "budget": budget_needed,
                     "entries": recorder["deltas"],
