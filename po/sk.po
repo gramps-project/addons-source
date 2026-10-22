@@ -7,13 +7,14 @@
 # Jozef Riha, 2017.
 # Milan <mobrcian@hotmail.com>, 2025, 2026.
 # Jozef Gaal <preklady@mayday.sk>, 2025.
+# Milan <milan@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-24 10:14-0700\n"
-"PO-Revision-Date: 2026-09-27 07:51+0000\n"
-"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"POT-Creation-Date: 2026-10-18 11:42-0700\n"
+"PO-Revision-Date: 2026-10-21 18:51+0000\n"
+"Last-Translator: Milan <milan@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
 "Language: sk\n"
@@ -21,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -2147,6 +2148,7 @@ msgid "Abandon"
 msgstr "Opustiť"
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
+#: GWizardFileMerge/gwizardmergedialog.py:537
 msgid "New person"
 msgstr "Nová osoba"
 
@@ -3575,7 +3577,7 @@ msgstr ""
 "manželstvám medzi rodinami (napríklad medzi bratrancami a sesternicami).  V "
 "takomto prípade sa pre túto osobu zobrazí aj tlačidlo  "
 "___NAV_BUTTON_CONTINUE___ alebo ___NAV_BUTTON_ALT___  na prechod do inej "
-"vetvy.  Iba jedna vetva rozbalí potomkov tejto osoby. "
+"vetvy.  Potomkov tejto osoby rozbalí iba jedna vetva. "
 
 #: DescendantSpaceTree/DescendantSpaceTree.py:989
 msgid ""
@@ -15983,6 +15985,369 @@ msgstr ""
 "Zodpovedá objektom, pre ktoré sa daný výraz WHERE v Gramps Object Query "
 "Language vyhodnotí ako pravdivý"
 
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:19
+msgid "GWizard File Merge"
+msgstr "GWizard Zlúčenie súborov"
+
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:21
+msgid ""
+"Family Tree Processing Tool to compare another genealogy file (GEDCOM, "
+"Gramps XML, ...) side-by-side with the open Family Tree and merge selected "
+"differences person by person."
+msgstr ""
+"Nástroj na spracovanie rodostromu, ktorý umožňuje porovnať iný genealogický "
+"súbor (GEDCOM, Gramps XML, ...) vedľa otvoreného rodostromu a zlúčiť vybrané "
+"rozdiely po jednotlivých osobách."
+
+#: GWizardFileMerge/gwizard.py:120
+msgid "Configure Connection"
+msgstr "Konfigurácia pripojenia"
+
+#: GWizardFileMerge/gwizard.py:121
+msgid "Load Data"
+msgstr "Načítanie údajov"
+
+#: GWizardFileMerge/gwizard.py:122
+msgid "Find Matching Persons"
+msgstr "Vyhľadanie zodpovedajúcich osôb"
+
+#: GWizardFileMerge/gwizard.py:123
+msgid "Compare Differences"
+msgstr "Porovnanie rozdielov"
+
+#: GWizardFileMerge/gwizard.py:124
+msgid "Apply Changes"
+msgstr "Aplikovanie zmien"
+
+#: GWizardFileMerge/gwizard.py:137
+msgid "Configure file path or authenticate with online service."
+msgstr "Konfigurujte cestu k súboru alebo sa autentifikujte u online služby."
+
+#: GWizardFileMerge/gwizard.py:138
+msgid "Load/parse the external genealogy data into memory."
+msgstr "Načítajte/spracujte externé genealogické údaje do pamäte."
+
+#: GWizardFileMerge/gwizard.py:139
+msgid "Search for potential matches in your database."
+msgstr "Hľadajte potenciálne zhody vo svojej databáze."
+
+#: GWizardFileMerge/gwizard.py:140
+msgid "Compare fields side-by-side between the source and target."
+msgstr "Porovnajte vedľa seba polia medzi zdrojom a cieľom."
+
+#: GWizardFileMerge/gwizard.py:141
+msgid "Merge selected changes or add new records to the database."
+msgstr "Zlúčte vybrané zmeny alebo pridajte nové záznamy do databázy."
+
+#: GWizardFileMerge/gwizardcompare.py:167
+#: GWizardFileMerge/gwizardcompare.py:187
+msgid "GWizard Compare"
+msgstr "Porovnanie GWizard"
+
+#: GWizardFileMerge/gwizardcompare.py:173
+msgid "No source database available for comparison"
+msgstr "Na porovnanie nie je k dispozícii zdrojová databáza"
+
+#: GWizardFileMerge/gwizardcompare.py:208
+#: GWizardFileMerge/gwizardmergedialog.py:586
+msgid "Incoming GEDCOM"
+msgstr "Vstupný GEDCOM"
+
+#: GWizardFileMerge/gwizardcompare.py:213
+#: GWizardFileMerge/gwizardmergedialog.py:593
+#, python-format
+msgid "Incoming GEDCOM: %s"
+msgstr "Vstupný GEDCOM: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:215
+#: GWizardFileMerge/gwizardmergedialog.py:597
+#, python-format
+msgid "Current Family Tree: %s"
+msgstr "Aktuálny rodostrom: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:426
+msgid "Populate Failed"
+msgstr "Naplnenie zlyhalo"
+
+#: GWizardFileMerge/gwizardcompare.py:876
+msgid "Merge..."
+msgstr "Zlúčiť..."
+
+#: GWizardFileMerge/gwizardcompare.py:878
+msgid "Open the field-by-field merge dialog for the selected pair"
+msgstr "Otvorí dialóg zlúčenia po jednotlivých poliach pre vybranú dvojicu"
+
+#: GWizardFileMerge/gwizardcompare.py:883
+#: GWizardFileMerge/gwizardcompare.py:1224
+msgid "Add as New..."
+msgstr "Pridať ako novú..."
+
+#: GWizardFileMerge/gwizardcompare.py:885
+#: GWizardFileMerge/gwizardcompare.py:1226
+msgid "Add the selected incoming person as a new person"
+msgstr "Pridá vybranú vstupnú osobu ako novú osobu"
+
+#: GWizardFileMerge/gwizardcompare.py:926
+msgid "Record"
+msgstr "Záznam"
+
+#: GWizardFileMerge/gwizardcompare.py:932
+msgid "Born"
+msgstr "Narodenie"
+
+#: GWizardFileMerge/gwizardcompare.py:933
+msgid "Died"
+msgstr "Úmrtie"
+
+#: GWizardFileMerge/gwizardcompare.py:975
+#: GWizardFileMerge/gwizardmergedialog.py:740
+msgid "Individual Details"
+msgstr "Podrobnosti o osobe"
+
+#: GWizardFileMerge/gwizardcompare.py:976
+#: GWizardFileMerge/gwizardmergedialog.py:813
+msgid "Family Relations"
+msgstr "Rodinné vzťahy"
+
+#: GWizardFileMerge/gwizardcompare.py:978
+#: GWizardFileMerge/gwizardmergedialog.py:859
+msgid "Events & Other Records"
+msgstr "Udalosti a iné záznamy"
+
+#: GWizardFileMerge/gwizardcompare.py:1216
+msgid "Not a Match"
+msgstr "Nie je zhoda"
+
+#: GWizardFileMerge/gwizardcompare.py:1219
+msgid ""
+"These are different people: unpair them so the incoming person can be added "
+"as new"
+msgstr ""
+"Ide o rôznych ľudí: zrušte ich spárovanie, aby bolo možné vstupnú osobu "
+"pridať ako novú"
+
+#: GWizardFileMerge/gwizardcompare.py:1232
+#, python-format
+msgid "Differences: %d of %d"
+msgstr "Rozdiely: %d z %d"
+
+#: GWizardFileMerge/gwizardcompare.py:1484
+msgid "(none)"
+msgstr "(žiadne)"
+
+#: GWizardFileMerge/gwizardcompare.py:1648
+#, python-format
+msgid "Gender: %s"
+msgstr "Pohlavie: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1650
+#, python-format
+msgid "ID: %s"
+msgstr "ID: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1677
+#, python-format
+msgid "FamilySearch: %s"
+msgstr "FamilySearch: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1751
+#: GWizardFileMerge/gwizardcompare.py:1768
+#: GWizardFileMerge/gwizardmergedialog.py:451
+#, python-format
+msgid "%s: %s"
+msgstr "%s: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:2008
+msgid "Add as New failed"
+msgstr "Pridanie ako novej osoby zlyhalo"
+
+#: GWizardFileMerge/gwizardgedcom.py:351
+#: GWizardFileMerge/gwizardmergedialog.py:745
+msgid "Given Name"
+msgstr "Dané (krstné) meno"
+
+#: GWizardFileMerge/gwizardgedcom.py:377
+#: GWizardFileMerge/gwizardmergedialog.py:761
+msgid "Surname Prefix"
+msgstr "Predpona priezviska"
+
+#: GWizardFileMerge/gwizardgedcom.py:1068
+msgid "GWizard Data Merge"
+msgstr "Zlúčenie údajov GWizard"
+
+#: GWizardFileMerge/gwizardlauncher.py:113
+msgid "Genealogy files"
+msgstr "Genealogické súbory"
+
+#: GWizardFileMerge/gwizardlauncher.py:129
+msgid "Select File to Compare"
+msgstr "Vyberte súbor na porovnanie"
+
+#: GWizardFileMerge/gwizardlauncher.py:158
+msgid "The selected file is missing."
+msgstr "Vybraný súbor chýba."
+
+#: GWizardFileMerge/gwizardlauncher.py:161
+msgid "Could not read the selected file."
+msgstr "Vybraný súbor se nepodarilo prečítať."
+
+#: GWizardFileMerge/gwizardlauncher.py:201
+msgid "Loading Data Merge"
+msgstr "Načítavanie zlúčenia údajov"
+
+#: GWizardFileMerge/gwizardlauncher.py:202
+#: GWizardFileMerge/gwizardlauncher.py:206
+msgid "Reading the selected file..."
+msgstr "Čítanie vybraného súboru..."
+
+#: GWizardFileMerge/gwizardlauncher.py:214
+msgid "Load Failed"
+msgstr "Načítanie zlyhalo"
+
+#: GWizardFileMerge/gwizardlauncher.py:216
+msgid "Building the comparison window..."
+msgstr "Vytváranie okna porovnania..."
+
+#: GWizardFileMerge/gwizardmergedialog.py:256
+msgid "Untitled source"
+msgstr "Zdroj bez názvu"
+
+#: GWizardFileMerge/gwizardmergedialog.py:265
+#, python-format
+msgid "page %s"
+msgstr "strana %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:287
+#, python-format
+msgid "via %s"
+msgstr "cez %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:315
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#: LifeLineChartView/_dummy_translation_string_po.py:98
+msgid "none"
+msgstr "žiadne"
+
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#, python-format
+msgid "Sources: %s"
+msgstr "Zdroje: %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:377
+msgid "GWizard Merge"
+msgstr "Zlúčenie GWizard"
+
+#: GWizardFileMerge/gwizardmergedialog.py:385
+msgid "No source database available for merge"
+msgstr "Na zlúčenie nie je k dispozícii zdrojová databáza"
+
+#: GWizardFileMerge/gwizardmergedialog.py:394
+#, python-format
+msgid "Source person no longer exists: %s"
+msgstr "Zdrojová osoba už neexistuje: %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:400
+#, python-format
+msgid "Target person no longer exists: %s"
+msgstr "Cieľová osoba už neexistuje: %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:531
+msgid "→"
+msgstr "→"
+
+#: GWizardFileMerge/gwizardmergedialog.py:599
+msgid "Current Family Tree"
+msgstr "Aktuálny rodostrom"
+
+#: GWizardFileMerge/gwizardmergedialog.py:767
+msgid "Name Sources"
+msgstr "Zdroje mena"
+
+#: GWizardFileMerge/gwizardmergedialog.py:807
+msgid "Person Sources"
+msgstr "Zdroje osoby"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1093
+msgid "=>"
+msgstr "=>"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1094
+#, python-format
+msgid "Move %s to current family tree"
+msgstr "Presunúť %s do aktuálneho rodostromu"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1102
+msgid "✓"
+msgstr "✓"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1286
+#, python-format
+msgid "%d Citations"
+msgstr "Počet citácií: %d"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1288
+#, python-format
+msgid "%d Sources"
+msgstr "Počet zdrojov: %d"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1290
+#, python-format
+msgid "%d Notes"
+msgstr "Počet poznámok: %d"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1292
+#, python-format
+msgid "%d Media Records"
+msgstr "Počet mediálnych záznamov: %d"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1294
+#, python-format
+msgid "%d Repositories"
+msgstr "Počet repozitárov: %d"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1297
+#, python-format
+msgid ""
+"The data being merged contains references to external objects that do not "
+"exist in your family tree:\n"
+"\n"
+"%s\n"
+"\n"
+"To prevent broken links, these missing references must be imported along "
+"with your selected details. Do you confirm importing these missing "
+"references?"
+msgstr ""
+"Údaje, ktoré sa zlučujú, obsahujú odkazy na externé objekty, ktoré vo vašom "
+"rodostrome neexistujú:\n"
+"\n"
+"%s\n"
+"\n"
+"Aby sa predišlo nefunkčným odkazom, tieto chýbajúce odkazy musia byť "
+"importované spolu s vybranými detailami. Potvrdzujete import týchto "
+"chýbajúcich odkazov?"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1310
+#, python-format
+msgid ""
+"%d source already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgid_plural ""
+"%d sources already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgstr[0] ""
+"%d zdroj, ktorý je už vo vašom rodostromel, bude znovu použitý (zhoda podľa "
+"názvu, autora a publikačných informácií)."
+msgstr[1] ""
+"%d zdroje, ktoré sú už vo vašom rodostrome, budú znovu použité (zhoda podľa "
+"názvu, autora a publikačných informácií)."
+msgstr[2] ""
+"%d zdrojov, ktoré sú už vo vašom rodostrome, bude znovu použitých (zhoda "
+"podľa názvu, autora a publikačných informácií)."
+
+#: GWizardFileMerge/gwizardmergedialog.py:1324
+msgid "Confirm Importing Missing References"
+msgstr "Potvrdenie importovania chýbajúcich odkazov"
+
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
 msgstr "Export rozšíření GEDCOM (GED2)"
@@ -16594,8 +16959,8 @@ msgid ""
 "account's."
 msgstr ""
 "Tento rodostrom sa volá „%(actual)s“, ale GRAMPS_WEB_API_KEY ho momentálne "
-"overuje ako „%(expected)s“. Premenujte tento rodostrom na „%"
-"(expected_typeable)s“ (Rodostromy → Správa rodostromov), ak má zrkadliť "
+"overuje ako „%(expected)s“. Premenujte tento rodostrom na "
+"„%(expected_typeable)s“ (Rodostromy → Správa rodostromov), ak má zrkadliť "
 "tento účet, alebo otvorte/vytvorte rodostrom, ktorý už je tak pomenovaný -- "
 "opätovné použitie tohto stromu by zmiešalo jeho existujúce lokálne údaje s "
 "údajmi iného účtu."
@@ -16610,10 +16975,10 @@ msgid ""
 "incomplete or unable to save changes back."
 msgstr ""
 "Účet overujúci sa cez GRAMPS_WEB_API_KEY nemá serverové oprávnenia, ktoré "
-"tento doplnok vyžaduje: %(missing)s. Udeľte mu na serveri aspoň rolu „%(role)"
-"s“ (alebo požiadajte administrátora), potom znova otvorte tento rodostrom. "
-"Otvorenie v aktuálnom stave by spôsobilo, že lokálna kópia by zostala "
-"neúplná alebo by nebolo možné uložiť zmeny späť."
+"tento doplnok vyžaduje: %(missing)s. Udeľte mu na serveri aspoň rolu "
+"„%(role)s“ (alebo požiadajte administrátora), potom znova otvorte tento "
+"rodostrom. Otvorenie v aktuálnom stave by spôsobilo, že lokálna kópia by "
+"zostala neúplná alebo by nebolo možné uložiť zmeny späť."
 
 #: GrampsWebApiDb/grampswebapidb.py:741
 #, python-format
@@ -19160,10 +19525,6 @@ msgstr "Odstupňovanie čiar"
 #: LifeLineChartView/_dummy_translation_string_po.py:97
 msgid "The line width can be configured."
 msgstr "Šírku čiar je možné konfigurovať."
-
-#: LifeLineChartView/_dummy_translation_string_po.py:98
-msgid "none"
-msgstr "žiadne"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 msgid "Show pedigree collapse"
@@ -22624,10 +22985,10 @@ msgid ""
 "Assistant in order to export all data.</i>\n"
 "\n"
 msgstr ""
-"<i><a href=\"https://gramps-project.org/wiki/"
-"index.php?title=How_to_make_a_backup\">Zálohovanie do Gramps XML</a> V "
-"posledných verziách programu Gramps nájdete v menu Rodostrom možnosť "
-"\"Vytvoriť zálohu...\", v opačnom prípade použite v tom istom menu možnosť "
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Zálohovanie do Gramps XML</a> V posledných "
+"verziách programu Gramps nájdete v menu Rodostrom možnosť \"Vytvoriť "
+"zálohu...\", v opačnom prípade použite v tom istom menu možnosť "
 "\"Exportovať...\", ale zrušte označenie volieb ochrany osobných údajov v "
 "Asistentovi exportéra, aby ste exportovali všetky údaje.</i>\n"
 "\n"
@@ -27336,9 +27697,6 @@ msgstr ""
 
 #~ msgid "Search"
 #~ msgstr "Vyhľadávanie"
-
-#~ msgid "Merge"
-#~ msgstr "Zlúčiť"
 
 #~ msgid "Wordle"
 #~ msgstr "Wordle"

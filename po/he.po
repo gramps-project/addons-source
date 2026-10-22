@@ -4,13 +4,14 @@
 # Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
 # Avi Markovitz <avi.markovitz@gmail.com>, 2019, 2025, 2026.
 # Yaron Shahrabani <sh.yaron@gmail.com>, 2025.
+# Avi Markovitz <avma@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-24 10:14-0700\n"
-"PO-Revision-Date: 2026-10-06 17:51+0000\n"
-"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"POT-Creation-Date: 2026-10-18 11:42-0700\n"
+"PO-Revision-Date: 2026-10-16 14:21+0000\n"
+"Last-Translator: Avi Markovitz <avma@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
 "Language: he\n"
@@ -19,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 2026.10.1.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -1424,10 +1425,9 @@ msgid "Family %(current)d of %(total)d"
 msgstr "משפחה %(current)d מתוך %(total)d"
 
 #: ContextView/ContextView.py:922
-#, fuzzy, python-format
-#| msgid "Highlight the home person"
+#, python-format
 msgid "family %d lies toward the home person"
-msgstr "הדגשת אדם הבית"
+msgstr "משפחה %d פונה אל אדם הבית"
 
 #: ContextView/ContextView.py:980
 msgid "<b>Bold</b> marks the way to the home person"
@@ -2114,6 +2114,7 @@ msgid "Abandon"
 msgstr "נטישה"
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
+#: GWizardFileMerge/gwizardmergedialog.py:537
 msgid "New person"
 msgstr "אדם חדש"
 
@@ -4338,7 +4339,7 @@ msgstr "הקשה על המפה תציג אותה במסך מלא"
 
 #: DynamicWeb/dynamicweb.py:2960
 msgid "Configure"
-msgstr "הגדרה"
+msgstr "לתצר"
 
 #: DynamicWeb/dynamicweb.py:2967
 msgid "DynamicWeb_report#Help"
@@ -6400,14 +6401,12 @@ msgid "Parents of family filter"
 msgstr "הורים ממסנן משפחה"
 
 #: FilterRules/matchparentoffilterfamily.gpr.py:8
-#, fuzzy
-#| msgid "Matches event of people filter with role"
 msgid "Matches parent of family filter"
-msgstr "התאמת אירוע של מסנן אנשים עם תפקיד"
+msgstr "התאמת הורה למסנן משפחה"
 
 #: FilterRules/matchparentoffilterfamily.py:60
 msgid "Parents of <filter> family match"
-msgstr ""
+msgstr "הורי משפחה שתואמת <מסנן>"
 
 #: FilterRules/matchpersonfilterrole.gpr.py:7
 msgid "Events from people with role"
@@ -15765,6 +15764,436 @@ msgid ""
 msgstr ""
 "התאמת עצמים שבהם ביטוי where בשפת־שאילתות־עצמי־גרמפס (GOQL), הוא 'true'"
 
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:19
+#, fuzzy
+#| msgid "Command Line Merge"
+msgid "GWizard File Merge"
+msgstr "מיזוג משורת פקודה"
+
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:21
+msgid ""
+"Family Tree Processing Tool to compare another genealogy file (GEDCOM, "
+"Gramps XML, ...) side-by-side with the open Family Tree and merge selected "
+"differences person by person."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:120
+#, fuzzy
+#| msgid "Deep Connections"
+msgid "Configure Connection"
+msgstr "חיבורים עמוקים"
+
+#: GWizardFileMerge/gwizard.py:121
+#, fuzzy
+#| msgid "Loading the data"
+msgid "Load Data"
+msgstr "טעינת הנתונים"
+
+#: GWizardFileMerge/gwizard.py:122
+#, fuzzy
+#| msgid "Edit Starting Person"
+msgid "Find Matching Persons"
+msgstr "עריכת אדם התחלה"
+
+#: GWizardFileMerge/gwizard.py:123
+#, fuzzy
+#| msgid "Differences"
+msgid "Compare Differences"
+msgstr "הבדלים"
+
+#: GWizardFileMerge/gwizard.py:124
+#, fuzzy
+#| msgid "Apply changes"
+msgid "Apply Changes"
+msgstr "החלת שינויים"
+
+#: GWizardFileMerge/gwizard.py:137
+msgid "Configure file path or authenticate with online service."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:138
+msgid "Load/parse the external genealogy data into memory."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:139
+msgid "Search for potential matches in your database."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:140
+msgid "Compare fields side-by-side between the source and target."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:141
+msgid "Merge selected changes or add new records to the database."
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:167
+#: GWizardFileMerge/gwizardcompare.py:187
+msgid "GWizard Compare"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:173
+msgid "No source database available for comparison"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:208
+#: GWizardFileMerge/gwizardmergedialog.py:586
+#, fuzzy
+#| msgid "Importing GEDCOM..."
+msgid "Incoming GEDCOM"
+msgstr "מייבא GEDCOM..."
+
+#: GWizardFileMerge/gwizardcompare.py:213
+#: GWizardFileMerge/gwizardmergedialog.py:593
+#, fuzzy, python-format
+#| msgid "Importing GEDCOM..."
+msgid "Incoming GEDCOM: %s"
+msgstr "מייבא GEDCOM..."
+
+#: GWizardFileMerge/gwizardcompare.py:215
+#: GWizardFileMerge/gwizardmergedialog.py:597
+#, fuzzy, python-format
+#| msgid "Error creating Family Tree: %s"
+msgid "Current Family Tree: %s"
+msgstr "שגיאה ביצרת אילן־יוחסין: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:426
+#, fuzzy
+#| msgid "Populated"
+msgid "Populate Failed"
+msgstr "אכלוס"
+
+#: GWizardFileMerge/gwizardcompare.py:876
+#, fuzzy
+#| msgid "Merge"
+msgid "Merge..."
+msgstr "מיזוג"
+
+#: GWizardFileMerge/gwizardcompare.py:878
+msgid "Open the field-by-field merge dialog for the selected pair"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:883
+#: GWizardFileMerge/gwizardcompare.py:1224
+#, fuzzy
+#| msgid "Add as a Wife"
+msgid "Add as New..."
+msgstr "הוספה כרעיה"
+
+#: GWizardFileMerge/gwizardcompare.py:885
+#: GWizardFileMerge/gwizardcompare.py:1226
+msgid "Add the selected incoming person as a new person"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:926
+#, fuzzy
+#| msgid "All Records"
+msgid "Record"
+msgstr "כל הרשומות"
+
+#: GWizardFileMerge/gwizardcompare.py:932
+msgid "Born"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:933
+msgid "Died"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:975
+#: GWizardFileMerge/gwizardmergedialog.py:740
+#, fuzzy
+#| msgid "Individual"
+msgid "Individual Details"
+msgstr "פרט"
+
+#: GWizardFileMerge/gwizardcompare.py:976
+#: GWizardFileMerge/gwizardmergedialog.py:813
+#, fuzzy
+#| msgid "Family Relation Types"
+msgid "Family Relations"
+msgstr "משפחה יוחסה סוג"
+
+#: GWizardFileMerge/gwizardcompare.py:978
+#: GWizardFileMerge/gwizardmergedialog.py:859
+msgid "Events & Other Records"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1216
+#, fuzzy
+#| msgid ""
+#| "No\n"
+#| "Matches"
+msgid "Not a Match"
+msgstr ""
+"לא נמצאו\n"
+"התאמות"
+
+#: GWizardFileMerge/gwizardcompare.py:1219
+msgid ""
+"These are different people: unpair them so the incoming person can be added "
+"as new"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1232
+#, fuzzy, python-format
+#| msgid "Differences"
+msgid "Differences: %d of %d"
+msgstr "הבדלים"
+
+#: GWizardFileMerge/gwizardcompare.py:1484
+#, fuzzy
+#| msgid "none"
+msgid "(none)"
+msgstr "אין"
+
+#: GWizardFileMerge/gwizardcompare.py:1648
+#, fuzzy, python-format
+#| msgid "found: %s"
+msgid "Gender: %s"
+msgstr "נמצא: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1650
+#, fuzzy, python-format
+#| msgid "   N-ID: %s"
+msgid "ID: %s"
+msgstr "   N-ID: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1677
+#, fuzzy, python-format
+#| msgid "FamilySearch.org"
+msgid "FamilySearch: %s"
+msgstr "FamilySearch.org"
+
+#: GWizardFileMerge/gwizardcompare.py:1751
+#: GWizardFileMerge/gwizardcompare.py:1768
+#: GWizardFileMerge/gwizardmergedialog.py:451
+#, fuzzy, python-format
+#| msgid "Added %s: %s "
+msgid "%s: %s"
+msgstr "נוסף %s: %s "
+
+#: GWizardFileMerge/gwizardcompare.py:2008
+#, fuzzy
+#| msgid "Add as a Child"
+msgid "Add as New failed"
+msgstr "הוספת כצאצא"
+
+#: GWizardFileMerge/gwizardgedcom.py:351
+#: GWizardFileMerge/gwizardmergedialog.py:745
+#, fuzzy
+#| msgid "Rename Given Names"
+msgid "Given Name"
+msgstr "שינוי שמות פרטיים"
+
+#: GWizardFileMerge/gwizardgedcom.py:377
+#: GWizardFileMerge/gwizardmergedialog.py:761
+#, fuzzy
+#| msgid "Surnames Index"
+msgid "Surname Prefix"
+msgstr "מפתח שם משפחה"
+
+#: GWizardFileMerge/gwizardgedcom.py:1068
+msgid "GWizard Data Merge"
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:113
+#, fuzzy
+#| msgid "Genealogy Online"
+msgid "Genealogy files"
+msgstr "Genealogy Online"
+
+#: GWizardFileMerge/gwizardlauncher.py:129
+#, fuzzy
+#| msgid "Select filter to restrict people"
+msgid "Select File to Compare"
+msgstr "בחירת מסנן להגבלת האנשים"
+
+#: GWizardFileMerge/gwizardlauncher.py:158
+#, fuzzy
+#| msgid "The selected file is a directory, not a file."
+msgid "The selected file is missing."
+msgstr "הקובץ שנבחר הוא 'מחיצה', לא 'קובץ'."
+
+#: GWizardFileMerge/gwizardlauncher.py:161
+#, fuzzy
+#| msgid "Could not reach the server: check the Server URL. (%s)"
+msgid "Could not read the selected file."
+msgstr "השרת לא נגיש: נא לבדוק את כתובת ה־URL של השרת. (%s)"
+
+#: GWizardFileMerge/gwizardlauncher.py:201
+#, fuzzy
+#| msgid "Loading the data"
+msgid "Loading Data Merge"
+msgstr "טעינת הנתונים"
+
+#: GWizardFileMerge/gwizardlauncher.py:202
+#: GWizardFileMerge/gwizardlauncher.py:206
+#, fuzzy
+#| msgid "Reading file list..."
+msgid "Reading the selected file..."
+msgstr "מתבצעת קריאת רשימת קבצים..."
+
+#: GWizardFileMerge/gwizardlauncher.py:214
+msgid "Load Failed"
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:216
+msgid "Building the comparison window..."
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:256
+#, fuzzy
+#| msgid "Untitled"
+msgid "Untitled source"
+msgstr "ללא כותרת"
+
+#: GWizardFileMerge/gwizardmergedialog.py:265
+#, fuzzy, python-format
+#| msgid ", page %s"
+msgid "page %s"
+msgstr ", עמוד %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:287
+#, python-format
+msgid "via %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:315
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#: LifeLineChartView/_dummy_translation_string_po.py:98
+msgid "none"
+msgstr "אין"
+
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#, fuzzy, python-format
+#| msgid "Sources?"
+msgid "Sources: %s"
+msgstr "מקורות?"
+
+#: GWizardFileMerge/gwizardmergedialog.py:377
+#, fuzzy
+#| msgid "Media Merge"
+msgid "GWizard Merge"
+msgstr "מיזוג מדיה"
+
+#: GWizardFileMerge/gwizardmergedialog.py:385
+#, fuzzy
+#| msgid "No data available in table"
+msgid "No source database available for merge"
+msgstr "אין נתונים זמין בטבלה"
+
+#: GWizardFileMerge/gwizardmergedialog.py:394
+#, fuzzy, python-format
+#| msgid "Note no longer exists"
+msgid "Source person no longer exists: %s"
+msgstr "ההערה אינה קיימת עוד"
+
+#: GWizardFileMerge/gwizardmergedialog.py:400
+#, fuzzy, python-format
+#| msgid "Note no longer exists"
+msgid "Target person no longer exists: %s"
+msgstr "ההערה אינה קיימת עוד"
+
+#: GWizardFileMerge/gwizardmergedialog.py:531
+#, fuzzy
+#| msgid "→ %s"
+msgid "→"
+msgstr "← %s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:599
+#, fuzzy
+#| msgid "Parent Family"
+msgid "Current Family Tree"
+msgstr "משפחת אב"
+
+#: GWizardFileMerge/gwizardmergedialog.py:767
+#, fuzzy
+#| msgid "No Source"
+msgid "Name Sources"
+msgstr "אין מקור"
+
+#: GWizardFileMerge/gwizardmergedialog.py:807
+#, fuzzy
+#| msgid "No Source"
+msgid "Person Sources"
+msgstr "אין מקור"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1093
+#, fuzzy
+#| msgid "="
+msgid "=>"
+msgstr "="
+
+#: GWizardFileMerge/gwizardmergedialog.py:1094
+#, fuzzy, python-format
+#| msgid "The center family for the tree"
+msgid "Move %s to current family tree"
+msgstr "המשפחה המרכזית עבור האילן"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1102
+msgid "✓"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1286
+#, fuzzy, python-format
+#| msgid "Citations:"
+msgid "%d Citations"
+msgstr "מובאות:"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1288
+#, fuzzy, python-format
+#| msgid "Sources?"
+msgid "%d Sources"
+msgstr "מקורות?"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1290
+#, fuzzy, python-format
+#| msgid "Notes:"
+msgid "%d Notes"
+msgstr "הערות:"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1292
+#, fuzzy, python-format
+#| msgid "Media Report"
+msgid "%d Media Records"
+msgstr "דוח מדיה"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1294
+#, fuzzy, python-format
+#| msgid "repositories"
+msgid "%d Repositories"
+msgstr "מאגרים"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1297
+#, python-format
+msgid ""
+"The data being merged contains references to external objects that do not "
+"exist in your family tree:\n"
+"\n"
+"%s\n"
+"\n"
+"To prevent broken links, these missing references must be imported along "
+"with your selected details. Do you confirm importing these missing "
+"references?"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1310
+#, python-format
+msgid ""
+"%d source already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgid_plural ""
+"%d sources already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1324
+msgid "Confirm Importing Missing References"
+msgstr ""
+
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
 msgstr "ייצוא הרחבות GEDCOM‏ (GED2)"
@@ -16095,7 +16524,7 @@ msgstr "שגיאת GetGOV: %s"
 
 #: GetGOV/getgov.py:421
 msgid "GOV link"
-msgstr ""
+msgstr "קישור GOV"
 
 #: GetGOV/getgov.py:428
 #, python-format
@@ -16197,10 +16626,8 @@ msgid "Clear conversation and context"
 msgstr "ניקוי שיחה ותוכן"
 
 #: GrampsAssistant/grampsassistant.py:220
-#, fuzzy
-#| msgid "Gramps Assistant settings"
 msgid "Open the Gramps Assistant wiki page"
-msgstr "הגדרות סייען גרמפס"
+msgstr "פתיחת עמוד סייען גרמפס בויקי"
 
 #: GrampsAssistant/grampsassistant.py:396
 #: GrampsAssistant/grampsassistant.py:760
@@ -16385,6 +16812,11 @@ msgid ""
 "this Family Tree. Opening it as-is would leave the local mirror silently "
 "incomplete or unable to save changes back."
 msgstr ""
+"לחשבון שמזדהה באמצעות GRAMPS_WEB_API_KEY חסרות הרשאות שרת שהתוסף הזה דורש: "
+"%(missing)s. יש להעניק לו לפחות את תפקיד ה־\"%(role)s\" בשרת (או לבקש זאת "
+"ממנהלן), לאחר מכן לפתוח מחדש אילן־יוחסין זה. פתיחתו במצב הנוכחי תגרום לכך "
+"שהעותק המקומי (Local Mirror)לא יהיה שלם באופן סמוי, או שלא ניתן יהיה לשמור "
+"שינויים למקור."
 
 #: GrampsWebApiDb/grampswebapidb.py:741
 #, python-format
@@ -16394,6 +16826,10 @@ msgid ""
 "history in a format it cannot read. Upgrade the Gramps installation behind "
 "the Gramps Web API server (or ask its administrator to)."
 msgstr ""
+"שרת זה מריץ גרמפס בגירסה %(actual)s, אך תוסף זה דורש שרת שמריץ גרמפס בגירסה "
+"%(required)s או חדשה יותר: שרתים ישנים יותר מקודדים (serialize) את היסטוריית "
+"השינויים בתסדיר שהתוסף אינו יכול לקרוא. יש לשדרג את התקנת גרמפס שמאחורי שרת "
+"גרמפס מרשתת API (או לבקש זאת ממנהל המערכת)."
 
 #: GrampsWebApiDb/grampswebapidb.py:1008
 msgid "Retry local change after server conflict"
@@ -17117,8 +17553,6 @@ msgid "Ready... (Tab for completions)"
 msgstr ""
 
 #: GrampyScript/GrampyScript.py:505
-#, fuzzy
-#| msgid "No title"
 msgid "Untitled"
 msgstr "ללא כותרת"
 
@@ -17126,35 +17560,35 @@ msgstr "ללא כותרת"
 msgid ""
 "If you continue without saving, the changes you have made to this script "
 "will be lost."
-msgstr ""
+msgstr "המשך מבלי לשמור, השינויים שבוצעו בתסריט זה יאבדו."
 
 #: GrampyScript/GrampyScript.py:1332
 msgid "Gram.py Script Edited Data"
 msgstr "Gram.py תסריט ערוכים נתונים"
 
 #: GrampyScript/script_descriptions.py:44
-#, fuzzy
-#| msgid "All Names of All People"
 msgid "List All People"
-msgstr "כל השמות של כל האנשים"
+msgstr "הצגת כל האנשים"
 
 #: GrampyScript/script_descriptions.py:46
 msgid ""
 "Iterate over every person in the database and show their Gramps ID, given "
 "name, surname, and gender in the results table."
 msgstr ""
+"חזרור על אדם במסד הנתונים להצגת מזהה גרמפס שלו, שם פרטית שם משפחה ומגדר "
+"בטבלת התוצאות."
 
 #: GrampyScript/script_descriptions.py:51
-#, fuzzy
-#| msgid "Family Surname"
 msgid "Filter By Surname"
-msgstr "משפחה שם משפחה"
+msgstr "סינון לפי שם משפחה"
 
 #: GrampyScript/script_descriptions.py:53
 msgid ""
 "List only the people whose surname matches a given value — a starting point "
 "for narrowing any report down by a condition."
 msgstr ""
+"הצגת האנשים ששם משפחתם תואם ערך נתון בלבד – נקודת פתיחה לצמצום דוח כלשהו על "
+"ידי תנאי."
 
 #: GrampyScript/script_descriptions.py:58 Overview/Overview.gpr.py:45
 msgid "Family Overview"
@@ -17165,20 +17599,24 @@ msgid ""
 "List every family together with the father, the mother, and how many "
 "children they have — a quick way to spot families that look incomplete."
 msgstr ""
+"הצגת כל משפחה יחד עם האב, האם ומספר הצאצאים שלהם — דרך מהירה לזהות משפחות "
+"שנראות לא שלמות."
 
 #: GrampyScript/script_descriptions.py:66
 msgid "Gender Breakdown (Pie Chart)"
-msgstr ""
+msgstr "פלוח מגדר ‏(תרשים עוגה)"
 
 #: GrampyScript/script_descriptions.py:68
 msgid ""
 "Count how many people are male, female, or of unknown gender, then draw a "
 "pie chart of the totals. Check the Chart tab after running."
 msgstr ""
+"ספרית כמה אנשים הם במגדר: זכר, נקבה, לא ידוע, הצגת סיכום התוצאות בתרשים "
+"עוגה. לאחר ההרצה יש לבדוק את לשונית התרשים."
 
 #: GrampyScript/script_descriptions.py:74
 msgid "Age At Death Histogram"
-msgstr ""
+msgstr "תרשים שכיחויות גיל בעת פטירה"
 
 #: GrampyScript/script_descriptions.py:76
 msgid ""
@@ -17210,20 +17648,20 @@ msgid ""
 msgstr ""
 
 #: GrampyScript/script_descriptions.py:99
-#, fuzzy
-#| msgid "Active Person : "
 msgid "Active Person Summary"
-msgstr "אדם פעיל: "
+msgstr "אדם פעיל: תקציר"
 
 #: GrampyScript/script_descriptions.py:101
 msgid ""
 "Show a compact family summary for the currently active person: their record, "
 "parents, spouse, and children."
 msgstr ""
+"הצגת תקציר משפחה צמום עבור האדם הפעיל הנוכחי: הרשומות שלהם, הוריהם,בני זוגם "
+"וצאצאיהם."
 
 #: GrampyScript/script_descriptions.py:106
 msgid "Report On Selected People"
-msgstr ""
+msgstr "דיווח על אנשים שנבחרו"
 
 #: GrampyScript/script_descriptions.py:108
 msgid ""
@@ -17253,10 +17691,8 @@ msgid ""
 msgstr ""
 
 #: GrampyScript/script_descriptions.py:130
-#, fuzzy
-#| msgid "Custom \"test.xml\" file"
 msgid "Custom Filter Example"
-msgstr "קובץ 'test.xml' מותאם"
+msgstr "דוגמת מסנן מותאם אישית"
 
 #: GrampyScript/script_descriptions.py:132
 msgid ""
@@ -17268,7 +17704,7 @@ msgstr ""
 
 #: GrampyScript/script_descriptions.py:140
 msgid "Delete Unused Repositories (Delete Example)"
-msgstr ""
+msgstr "מחיקת מאגרים שלא בשימוש (דוגמת מחיקה)"
 
 #: GrampyScript/script_descriptions.py:142
 msgid ""
@@ -18847,10 +19283,6 @@ msgstr "שקלול קווים"
 #: LifeLineChartView/_dummy_translation_string_po.py:97
 msgid "The line width can be configured."
 msgstr "ניתן להגדיר את רוחב הקו."
-
-#: LifeLineChartView/_dummy_translation_string_po.py:98
-msgid "none"
-msgstr "אין"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 msgid "Show pedigree collapse"
@@ -23671,7 +24103,7 @@ msgstr "<b><i>מקור</i></b>"
 
 #: SourceIndex/census.glade:7 SourceIndex/index.glade:768
 msgid "census"
-msgstr "מפקד אוכלוסין"
+msgstr "מפקד"
 
 #: SourceIndex/census.glade:160
 msgid "<b>Census</b>"
@@ -24148,40 +24580,28 @@ msgid "The style used for event and person details."
 msgstr "הסגנון שמשמש לפרטי אירוע ואדם."
 
 #: Sqlite/ExportSql.py:1720
-#, fuzzy
-#| msgid "January"
 msgid "January 1"
-msgstr "ינואר"
+msgstr "1 בינואר"
 
 #: Sqlite/ExportSql.py:1721
-#, fuzzy
-#| msgid "March"
 msgid "March 1"
-msgstr "מרץ"
+msgstr "1 במרץ"
 
 #: Sqlite/ExportSql.py:1722
-#, fuzzy
-#| msgid "March"
 msgid "March 25"
-msgstr "מרץ"
+msgstr "25 במרץ"
 
 #: Sqlite/ExportSql.py:1723
-#, fuzzy
-#| msgid "September"
 msgid "September 1"
-msgstr "ספטמבר"
+msgstr "1 בספטמבר"
 
 #: Sqlite/ExportSql.py:1749
-#, fuzzy
-#| msgid "Widowed"
 msgid "Flowed"
-msgstr "אלמן"
+msgstr "גלישת מלל"
 
 #: Sqlite/ExportSql.py:1750
-#, fuzzy
-#| msgid "PS format"
 msgid "Preformatted"
-msgstr "תסדיר PS"
+msgstr "מתוסדר מראש"
 
 #: Sqlite/ExportSql.py:1953
 #, python-format
@@ -26879,9 +27299,6 @@ msgstr ""
 
 #~ msgid "Search"
 #~ msgstr "חיפוש"
-
-#~ msgid "Merge"
-#~ msgstr "מיזוג"
 
 #~ msgid "Wordle"
 #~ msgstr "Wordle"

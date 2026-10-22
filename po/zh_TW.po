@@ -9,13 +9,14 @@
 # Yin Hoe TAN <astyh83@gmail.com>, 2014.
 # Anthony Fok (霍東靈) <foka@debian.org>, 2015.
 # Lee Vincent <vincentlee986@gmail.com>, 2026.
+# Arnie97 <arnie97@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 4.2.0-dev\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-24 10:14-0700\n"
-"PO-Revision-Date: 2026-09-06 12:53+0000\n"
-"Last-Translator: Lee Vincent <vincentlee986@gmail.com>\n"
+"POT-Creation-Date: 2026-10-18 11:42-0700\n"
+"PO-Revision-Date: 2026-10-20 04:57+0000\n"
+"Last-Translator: Arnie97 <arnie97@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/gramps-project/addons/zh_Hant/>\n"
 "Language: zh_TW\n"
@@ -23,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.9.1.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
@@ -2139,6 +2140,7 @@ msgid "Abandon"
 msgstr "放棄"
 
 #: DataEntryGramplet/DataEntryGramplet.py:97
+#: GWizardFileMerge/gwizardmergedialog.py:537
 msgid "New person"
 msgstr "新增人物"
 
@@ -15748,6 +15750,394 @@ msgid ""
 "expression evaluates to true"
 msgstr "符合指定 gramps-object-query-language where 運算式結果為真的物件"
 
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:19
+#, fuzzy
+#| msgid "Command Line Merge"
+msgid "GWizard File Merge"
+msgstr "命令列合併"
+
+#: GWizardFileMerge/GWizardFileMerge.gpr.py:21
+msgid ""
+"Family Tree Processing Tool to compare another genealogy file (GEDCOM, "
+"Gramps XML, ...) side-by-side with the open Family Tree and merge selected "
+"differences person by person."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:120
+#, fuzzy
+#| msgid "Deep Connections"
+msgid "Configure Connection"
+msgstr "深度關聯"
+
+#: GWizardFileMerge/gwizard.py:121
+#, fuzzy
+#| msgid "Loading the data"
+msgid "Load Data"
+msgstr "正在載入資料"
+
+#: GWizardFileMerge/gwizard.py:122
+#, fuzzy
+#| msgid "Edit referenced Person"
+msgid "Find Matching Persons"
+msgstr "編輯被參照的人物"
+
+#: GWizardFileMerge/gwizard.py:123
+#, fuzzy
+#| msgid "Differences"
+msgid "Compare Differences"
+msgstr "差異"
+
+#: GWizardFileMerge/gwizard.py:124
+#, fuzzy
+#| msgid "Apply changes"
+msgid "Apply Changes"
+msgstr "套用變更"
+
+#: GWizardFileMerge/gwizard.py:137
+msgid "Configure file path or authenticate with online service."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:138
+msgid "Load/parse the external genealogy data into memory."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:139
+msgid "Search for potential matches in your database."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:140
+msgid "Compare fields side-by-side between the source and target."
+msgstr ""
+
+#: GWizardFileMerge/gwizard.py:141
+msgid "Merge selected changes or add new records to the database."
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:167
+#: GWizardFileMerge/gwizardcompare.py:187
+msgid "GWizard Compare"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:173
+msgid "No source database available for comparison"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:208
+#: GWizardFileMerge/gwizardmergedialog.py:586
+#, fuzzy
+#| msgid "Importing GEDCOM..."
+msgid "Incoming GEDCOM"
+msgstr "正在匯入 GEDCOM..."
+
+#: GWizardFileMerge/gwizardcompare.py:213
+#: GWizardFileMerge/gwizardmergedialog.py:593
+#, python-format
+msgid "Incoming GEDCOM: %s"
+msgstr "正在匯入 GEDCOM：%s"
+
+#: GWizardFileMerge/gwizardcompare.py:215
+#: GWizardFileMerge/gwizardmergedialog.py:597
+#, python-format
+msgid "Current Family Tree: %s"
+msgstr "當前家族樹：%s"
+
+#: GWizardFileMerge/gwizardcompare.py:426
+#, fuzzy
+#| msgid "Populated"
+msgid "Populate Failed"
+msgstr "聚居地"
+
+#: GWizardFileMerge/gwizardcompare.py:876
+msgid "Merge..."
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:878
+msgid "Open the field-by-field merge dialog for the selected pair"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:883
+#: GWizardFileMerge/gwizardcompare.py:1224
+#, fuzzy
+#| msgid "Add as a Wife"
+msgid "Add as New..."
+msgstr "新增為妻子"
+
+#: GWizardFileMerge/gwizardcompare.py:885
+#: GWizardFileMerge/gwizardcompare.py:1226
+msgid "Add the selected incoming person as a new person"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:926
+#, fuzzy
+#| msgid "All Records"
+msgid "Record"
+msgstr "所有紀錄"
+
+#: GWizardFileMerge/gwizardcompare.py:932
+msgid "Born"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:933
+msgid "Died"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:975
+#: GWizardFileMerge/gwizardmergedialog.py:740
+#, fuzzy
+#| msgid "Individual"
+msgid "Individual Details"
+msgstr "人物"
+
+#: GWizardFileMerge/gwizardcompare.py:976
+#: GWizardFileMerge/gwizardmergedialog.py:813
+#, fuzzy
+#| msgid "Family Relation Types"
+msgid "Family Relations"
+msgstr "家庭關係類型"
+
+#: GWizardFileMerge/gwizardcompare.py:978
+#: GWizardFileMerge/gwizardmergedialog.py:859
+msgid "Events & Other Records"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1216
+msgid "Not a Match"
+msgstr "項目不匹配"
+
+#: GWizardFileMerge/gwizardcompare.py:1219
+msgid ""
+"These are different people: unpair them so the incoming person can be added "
+"as new"
+msgstr ""
+
+#: GWizardFileMerge/gwizardcompare.py:1232
+#, python-format
+msgid "Differences: %d of %d"
+msgstr "差異：%d / %d"
+
+#: GWizardFileMerge/gwizardcompare.py:1484
+msgid "(none)"
+msgstr "（無）"
+
+#: GWizardFileMerge/gwizardcompare.py:1648
+#, python-format
+msgid "Gender: %s"
+msgstr "性別：%s"
+
+#: GWizardFileMerge/gwizardcompare.py:1650
+#, python-format
+msgid "ID: %s"
+msgstr "ID：%s"
+
+#: GWizardFileMerge/gwizardcompare.py:1677
+#, python-format
+msgid "FamilySearch: %s"
+msgstr "FamilySearch: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:1751
+#: GWizardFileMerge/gwizardcompare.py:1768
+#: GWizardFileMerge/gwizardmergedialog.py:451
+#, python-format
+msgid "%s: %s"
+msgstr "%s: %s"
+
+#: GWizardFileMerge/gwizardcompare.py:2008
+#, fuzzy
+#| msgid "Add as a Child"
+msgid "Add as New failed"
+msgstr "新增為子女"
+
+#: GWizardFileMerge/gwizardgedcom.py:351
+#: GWizardFileMerge/gwizardmergedialog.py:745
+#, fuzzy
+#| msgid "Rename Given Names"
+msgid "Given Name"
+msgstr "重新命名名字"
+
+#: GWizardFileMerge/gwizardgedcom.py:377
+#: GWizardFileMerge/gwizardmergedialog.py:761
+#, fuzzy
+#| msgid "Surnames Index"
+msgid "Surname Prefix"
+msgstr "姓氏索引"
+
+#: GWizardFileMerge/gwizardgedcom.py:1068
+msgid "GWizard Data Merge"
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:113
+#, fuzzy
+#| msgid "Genealogy Online"
+msgid "Genealogy files"
+msgstr "Genealogy Online"
+
+#: GWizardFileMerge/gwizardlauncher.py:129
+#, fuzzy
+#| msgid "Select filter to restrict people"
+msgid "Select File to Compare"
+msgstr "選取篩選器以限定人物範圍"
+
+#: GWizardFileMerge/gwizardlauncher.py:158
+msgid "The selected file is missing."
+msgstr "選取的檔案不存在。"
+
+#: GWizardFileMerge/gwizardlauncher.py:161
+msgid "Could not read the selected file."
+msgstr "無法讀取所選檔案。"
+
+#: GWizardFileMerge/gwizardlauncher.py:201
+#, fuzzy
+#| msgid "Loading the data"
+msgid "Loading Data Merge"
+msgstr "正在載入資料"
+
+#: GWizardFileMerge/gwizardlauncher.py:202
+#: GWizardFileMerge/gwizardlauncher.py:206
+#, fuzzy
+#| msgid "Reading file list..."
+msgid "Reading the selected file..."
+msgstr "正在讀取檔案清單..."
+
+#: GWizardFileMerge/gwizardlauncher.py:214
+msgid "Load Failed"
+msgstr ""
+
+#: GWizardFileMerge/gwizardlauncher.py:216
+msgid "Building the comparison window..."
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:256
+#, fuzzy
+#| msgid "No title"
+msgid "Untitled source"
+msgstr "無標題"
+
+#: GWizardFileMerge/gwizardmergedialog.py:265
+#, fuzzy, python-format
+#| msgid ", page %s"
+msgid "page %s"
+msgstr "，第 %s 頁"
+
+#: GWizardFileMerge/gwizardmergedialog.py:287
+#, python-format
+msgid "via %s"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:315
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#: LifeLineChartView/_dummy_translation_string_po.py:98
+msgid "none"
+msgstr "無"
+
+#: GWizardFileMerge/gwizardmergedialog.py:327
+#, python-format
+msgid "Sources: %s"
+msgstr "來源：%s"
+
+#: GWizardFileMerge/gwizardmergedialog.py:377
+#, fuzzy
+#| msgid "Media Merge"
+msgid "GWizard Merge"
+msgstr "媒體合併"
+
+#: GWizardFileMerge/gwizardmergedialog.py:385
+#, fuzzy
+#| msgid "No data available in table"
+msgid "No source database available for merge"
+msgstr "表格中沒有資料"
+
+#: GWizardFileMerge/gwizardmergedialog.py:394
+#, python-format
+msgid "Source person no longer exists: %s"
+msgstr "來源人物 %s 已不存在"
+
+#: GWizardFileMerge/gwizardmergedialog.py:400
+#, python-format
+msgid "Target person no longer exists: %s"
+msgstr "目標人物 %s 已不存在"
+
+#: GWizardFileMerge/gwizardmergedialog.py:531
+msgid "→"
+msgstr "→"
+
+#: GWizardFileMerge/gwizardmergedialog.py:599
+msgid "Current Family Tree"
+msgstr "當前家族樹"
+
+#: GWizardFileMerge/gwizardmergedialog.py:767
+msgid "Name Sources"
+msgstr "姓名來源"
+
+#: GWizardFileMerge/gwizardmergedialog.py:807
+msgid "Person Sources"
+msgstr "人物來源"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1093
+msgid "=>"
+msgstr "=>"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1094
+#, python-format
+msgid "Move %s to current family tree"
+msgstr "將 %s 移動到當前家族樹"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1102
+msgid "✓"
+msgstr "✓"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1286
+#, python-format
+msgid "%d Citations"
+msgstr "%d 條引用"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1288
+#, python-format
+msgid "%d Sources"
+msgstr "%d 條來源"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1290
+#, python-format
+msgid "%d Notes"
+msgstr "%d 條備註"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1292
+#, python-format
+msgid "%d Media Records"
+msgstr "%d 份媒體資料"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1294
+#, fuzzy, python-format
+#| msgid "repositories"
+msgid "%d Repositories"
+msgstr "存放庫"
+
+#: GWizardFileMerge/gwizardmergedialog.py:1297
+#, python-format
+msgid ""
+"The data being merged contains references to external objects that do not "
+"exist in your family tree:\n"
+"\n"
+"%s\n"
+"\n"
+"To prevent broken links, these missing references must be imported along "
+"with your selected details. Do you confirm importing these missing "
+"references?"
+msgstr ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1310
+#, python-format
+msgid ""
+"%d source already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgid_plural ""
+"%d sources already in your family tree will be reused (matched by title, "
+"author and publication info)."
+msgstr[0] ""
+
+#: GWizardFileMerge/gwizardmergedialog.py:1324
+msgid "Confirm Importing Missing References"
+msgstr ""
+
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
 msgstr "匯出 GEDCOM 擴充格式 (GED2)"
@@ -18744,10 +19134,6 @@ msgstr "線條粗細"
 #: LifeLineChartView/_dummy_translation_string_po.py:97
 msgid "The line width can be configured."
 msgstr "可以設定線條寬度。"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:98
-msgid "none"
-msgstr "無"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 msgid "Show pedigree collapse"
