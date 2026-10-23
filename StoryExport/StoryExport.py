@@ -25,9 +25,11 @@ Connect Story Viewer (https://dsblank.github.io/gramps-connect-stories/)
 or any other program that reads the format.
 """
 
+import html
 import logging
 import os
 import re
+import tempfile
 
 from gi.repository import GLib, Gtk
 
@@ -35,7 +37,8 @@ from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.const import USER_HOME
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.proxy import LivingProxyDb, PrivateProxyDb
-from gramps.gui.dialog import ErrorDialog, OkDialog
+from gramps.gui.dialog import ErrorDialog, QuestionDialog2
+from gramps.gui.display import display_url
 from gramps.gui.plug import tool
 
 from storyexport_builder import (
@@ -43,6 +46,7 @@ from storyexport_builder import (
     build_story,
     left_out_reason,
     no_living_in_photo,
+    viewer_page,
 )
 
 _ = glocale.get_addon_translator(__file__).gettext
@@ -104,15 +108,34 @@ class StoryExport(tool.Tool):
             LOG.debug("story export failed", exc_info=True)
             ErrorDialog(_("Couldn't export the story"), str(err), parent=parent)
             return
-        OkDialog(
+        open_it = QuestionDialog2(
             _("Story saved"),
-            _(
-                "%(count)d slides saved to %(path)s.\n\nOpen it in the Gramps Connect "
-                "Story Viewer: https://dsblank.github.io/gramps-connect-stories/"
-            )
-            % {"count": count, "path": path},
+            html.escape(
+                _(
+                    "%(count)d slides saved to %(path)s.\n\nOpen it in the "
+                    "Gramps Connect Story Viewer: "
+                    "https://dsblank.github.io/gramps-connect-stories/"
+                )
+                % {"count": count, "path": path}
+            ),
+            _("_Open in Browser"),
+            _("_Close"),
             parent=parent,
-        )
+        ).run()
+        if open_it:
+            self.open_in_browser(path)
+
+    def open_in_browser(self, path):
+        """Show the saved story in the web browser, from a temporary page
+        holding it (see viewer_page)."""
+        with open(path, "rb") as handle:
+            story_zip = handle.read()
+        title = os.path.basename(path)[: -len(SUFFIX)] or _("Story")
+        with tempfile.NamedTemporaryFile(
+            "w", encoding="utf-8", prefix="story-", suffix=".html", delete=False
+        ) as page:
+            page.write(viewer_page(story_zip, title, glocale.lang[:2]))
+        display_url("file://" + page.name, self.uistate)
 
     def ask_options(self, parent, name):
         """(include private, include living) from the options dialog, or

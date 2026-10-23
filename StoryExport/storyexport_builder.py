@@ -24,6 +24,8 @@ opening slide -- as a gramps_connect_story.Story. No GUI imports, so it
 can be tested without a display; StoryExport.py is the tool around it.
 """
 
+import base64
+import html
 import os
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -41,6 +43,42 @@ from gramps_connect_story import Story
 _trans = glocale.get_addon_translator(__file__)
 _ = _trans.gettext
 ngettext = _trans.ngettext
+
+
+#: The story player, from the @gramps-connect/story npm package (any 0.1.x).
+PLAYER_URL = "https://cdn.jsdelivr.net/npm/@gramps-connect/story@0.1/dist/embed.js"
+
+_VIEWER_PAGE = """<!doctype html>
+<html lang="%(lang)s"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>%(title)s</title>
+<style>html,body{margin:0;height:100%%}
+gramps-connect-story{display:block;height:100vh}</style>
+<script type="module" src="%(player)s"></script>
+</head><body>
+<gramps-connect-story></gramps-connect-story>
+<script id="story" type="application/octet-stream">%(data)s</script>
+<script>
+const text = atob(document.getElementById("story").textContent);
+const bytes = new Uint8Array(text.length);
+for (let i = 0; i < text.length; i++) bytes[i] = text.charCodeAt(i);
+document.querySelector("gramps-connect-story").setAttribute("src",
+  URL.createObjectURL(new Blob([bytes], {type: "application/zip"})));
+</script>
+</body></html>
+"""
+
+
+def viewer_page(story_zip, title, lang="en"):
+    """A web page that plays the .story.zip (bytes) it contains, so a
+    browser can open it from disk: a page can't read a local file by its
+    path. The player comes from PLAYER_URL, so it needs the internet."""
+    return _VIEWER_PAGE % {
+        "lang": html.escape(lang or "en"),
+        "title": html.escape(title),
+        "player": PLAYER_URL,
+        "data": base64.b64encode(story_zip).decode("ascii"),
+    }
 
 
 class StoryExportError(Exception):
