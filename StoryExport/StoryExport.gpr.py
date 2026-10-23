@@ -21,11 +21,11 @@
 register(
     TOOL,
     id="storyexport",
-    name=_("Export Story"),
+    name=_("Generate Story"),
     description=_(
-        "Saves the active person's life as a story (.story.zip): a slideshow "
-        "of their events with dates, places and photos, for the Gramps "
-        "Connect Story Viewer"
+        "Generates the story of a person or a family (.story.zip): a "
+        "slideshow of their events with dates, places and photos, for the "
+        "Gramps Connect Story Viewer"
     ),
     version="1.0.0",
     gramps_target_version="6.0",
