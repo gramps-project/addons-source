@@ -93,6 +93,18 @@ _LOG = logging.getLogger(DBLOGNAME)
 SHARED_TABLE_ANALYZE_SCALE_FACTOR = 0
 SHARED_TABLE_ANALYZE_THRESHOLD = 1000
 
+# Row counts, per table, at which a batch transaction (an import, or a bulk
+# tool) runs ANALYZE on a table it is inserting into, before committing.
+# Autovacuum can't help here: a batch is one transaction, so its rows are
+# invisible to autovacuum until the very end. Until then the planner has no
+# statistics for a new tree's treeid, estimates it holds about one row, and
+# serves "WHERE handle = ? AND treeid = ?" lookups from a smaller
+# (treeid, <column>) index, filtering every row of the tree for each lookup
+# -- quadratic in the size of the import. ANALYZE inside the transaction does
+# count the transaction's own uncommitted rows, which puts the lookups back
+# on the primary key.
+BATCH_ANALYZE_AT_ROWS = (100, 1000, 10000, 100000)
+
 
 class SharedDBAPI(DbGeneric):
     """
@@ -381,6 +393,7 @@ class SharedDBAPI(DbGeneric):
             # Aborting the session completely will become impossible.
             self.abort_possible = False
         self.transaction = transaction
+        self._batch_inserts = {}
         self.dbapi.begin()
         return transaction
 
@@ -855,6 +868,8 @@ class SharedDBAPI(DbGeneric):
                 sql,
                 [self.dbapi.treeid, obj.handle, self.serializer.object_to_string(obj)],
             )
+            if trans.batch:
+                self._count_batch_insert(table)
         self._update_secondary_values(obj)
         if not trans.batch:
             self._update_backlinks(obj, trans)
@@ -902,8 +917,21 @@ class SharedDBAPI(DbGeneric):
             self.dbapi.execute(
                 sql, [self.dbapi.treeid, handle, self.serializer.data_to_string(data)]
             )
+            if self.transaction is not None and self.transaction.batch:
+                self._count_batch_insert(table)
 
         return
+
+    def _count_batch_insert(self, table):
+        """
+        Count a row inserted into table by the current batch transaction,
+        and ANALYZE the table at each BATCH_ANALYZE_AT_ROWS milestone.
+        """
+        count = self._batch_inserts.get(table, 0) + 1
+        self._batch_inserts[table] = count
+        if count in BATCH_ANALYZE_AT_ROWS:
+            _LOG.debug("    DBAPI ANALYZE %s after %d batch inserts", table, count)
+            self.dbapi.execute("ANALYZE %s" % table)
 
     def _update_backlinks(self, obj, transaction):
 
