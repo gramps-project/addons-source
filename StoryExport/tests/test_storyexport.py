@@ -66,6 +66,7 @@ from storyexport_builder import (
     no_living_in_photo,
     sort_year,
     to_edtf,
+    viewer_page,
 )
 
 
@@ -321,6 +322,19 @@ class StoryExportTest(unittest.TestCase):
         )
         self.assertIsNone(left_out_reason(self.db, self.anna, False, True))
         self.assertIsNone(left_out_reason(self.db, self.josef, False, False))
+
+    def test_viewer_page_holds_the_story(self):
+        import base64
+        import re
+
+        out = io.BytesIO()
+        build_story(self.db, self.josef).write(out)
+        page = viewer_page(out.getvalue(), "Josef <Meyer>", "de")
+        self.assertIn("Josef &lt;Meyer&gt;", page)
+        self.assertIn('<html lang="de">', page)
+        self.assertIn("@gramps-connect/story@0.1/dist/embed.js", page)
+        data = re.search(r'<script id="story"[^>]*>([^<]*)</script>', page)
+        self.assertEqual(base64.b64decode(data.group(1)), out.getvalue())
 
     def test_edtf(self):
         self.assertEqual(to_edtf(date(1850)), "1850")
